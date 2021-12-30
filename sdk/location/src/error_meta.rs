@@ -3,8 +3,7 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request was unsuccessful because of a conflict.</p>
     ConflictException(crate::error::ConflictException),
@@ -12,8 +11,7 @@ pub enum Error {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The resource that you've entered was not found in your AWS account.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The operation was denied because the request would exceed the maximum <a href="https://docs.aws.amazon.com/location/latest/developerguide/location-quotas.html">quota</a>
-    /// set for Amazon Location Service.</p>
+    /// <p>The operation was denied because the request would exceed the maximum <a href="https://docs.aws.amazon.com/location/latest/developerguide/location-quotas.html">quota</a> set for Amazon Location Service.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request was denied because of request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),

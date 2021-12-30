@@ -455,13 +455,11 @@ impl TagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartSchemaCreationOutput {
-    /// <p>The current state of the schema (PROCESSING, FAILED, SUCCESS, or NOT_APPLICABLE). When
-    /// the schema is in the ACTIVE state, you can add data.</p>
+    /// <p>The current state of the schema (PROCESSING, FAILED, SUCCESS, or NOT_APPLICABLE). When the schema is in the ACTIVE state, you can add data.</p>
     pub status: std::option::Option<crate::model::SchemaStatus>,
 }
 impl StartSchemaCreationOutput {
-    /// <p>The current state of the schema (PROCESSING, FAILED, SUCCESS, or NOT_APPLICABLE). When
-    /// the schema is in the ACTIVE state, you can add data.</p>
+    /// <p>The current state of the schema (PROCESSING, FAILED, SUCCESS, or NOT_APPLICABLE). When the schema is in the ACTIVE state, you can add data.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::SchemaStatus> {
         self.status.as_ref()
     }
@@ -482,14 +480,12 @@ pub mod start_schema_creation_output {
         pub(crate) status: std::option::Option<crate::model::SchemaStatus>,
     }
     impl Builder {
-        /// <p>The current state of the schema (PROCESSING, FAILED, SUCCESS, or NOT_APPLICABLE). When
-        /// the schema is in the ACTIVE state, you can add data.</p>
+        /// <p>The current state of the schema (PROCESSING, FAILED, SUCCESS, or NOT_APPLICABLE). When the schema is in the ACTIVE state, you can add data.</p>
         pub fn status(mut self, input: crate::model::SchemaStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The current state of the schema (PROCESSING, FAILED, SUCCESS, or NOT_APPLICABLE). When
-        /// the schema is in the ACTIVE state, you can add data.</p>
+        /// <p>The current state of the schema (PROCESSING, FAILED, SUCCESS, or NOT_APPLICABLE). When the schema is in the ACTIVE state, you can add data.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::SchemaStatus>,
@@ -518,8 +514,7 @@ impl StartSchemaCreationOutput {
 pub struct ListTypesOutput {
     /// <p>The <code>Type</code> objects.</p>
     pub types: std::option::Option<std::vec::Vec<crate::model::Type>>,
-    /// <p>An identifier to be passed in the next request to this operation to return the next set
-    /// of items in the list.</p>
+    /// <p>An identifier to be passed in the next request to this operation to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTypesOutput {
@@ -527,8 +522,7 @@ impl ListTypesOutput {
     pub fn types(&self) -> std::option::Option<&[crate::model::Type]> {
         self.types.as_deref()
     }
-    /// <p>An identifier to be passed in the next request to this operation to return the next set
-    /// of items in the list.</p>
+    /// <p>An identifier to be passed in the next request to this operation to return the next set of items in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -570,14 +564,12 @@ pub mod list_types_output {
             self.types = input;
             self
         }
-        /// <p>An identifier to be passed in the next request to this operation to return the next set
-        /// of items in the list.</p>
+        /// <p>An identifier to be passed in the next request to this operation to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier to be passed in the next request to this operation to return the next set
-        /// of items in the list.</p>
+        /// <p>An identifier to be passed in the next request to this operation to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -759,8 +751,7 @@ impl ListResolversByFunctionOutput {
 pub struct ListResolversOutput {
     /// <p>The <code>Resolver</code> objects.</p>
     pub resolvers: std::option::Option<std::vec::Vec<crate::model::Resolver>>,
-    /// <p>An identifier to be passed in the next request to this operation to return the next set
-    /// of items in the list.</p>
+    /// <p>An identifier to be passed in the next request to this operation to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListResolversOutput {
@@ -768,8 +759,7 @@ impl ListResolversOutput {
     pub fn resolvers(&self) -> std::option::Option<&[crate::model::Resolver]> {
         self.resolvers.as_deref()
     }
-    /// <p>An identifier to be passed in the next request to this operation to return the next set
-    /// of items in the list.</p>
+    /// <p>An identifier to be passed in the next request to this operation to return the next set of items in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -811,14 +801,12 @@ pub mod list_resolvers_output {
             self.resolvers = input;
             self
         }
-        /// <p>An identifier to be passed in the next request to this operation to return the next set
-        /// of items in the list.</p>
+        /// <p>An identifier to be passed in the next request to this operation to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier to be passed in the next request to this operation to return the next set
-        /// of items in the list.</p>
+        /// <p>An identifier to be passed in the next request to this operation to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -845,8 +833,7 @@ impl ListResolversOutput {
 pub struct ListGraphqlApisOutput {
     /// <p>The <code>GraphqlApi</code> objects.</p>
     pub graphql_apis: std::option::Option<std::vec::Vec<crate::model::GraphqlApi>>,
-    /// <p>An identifier to be passed in the next request to this operation to return the next set
-    /// of items in the list.</p>
+    /// <p>An identifier to be passed in the next request to this operation to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListGraphqlApisOutput {
@@ -854,8 +841,7 @@ impl ListGraphqlApisOutput {
     pub fn graphql_apis(&self) -> std::option::Option<&[crate::model::GraphqlApi]> {
         self.graphql_apis.as_deref()
     }
-    /// <p>An identifier to be passed in the next request to this operation to return the next set
-    /// of items in the list.</p>
+    /// <p>An identifier to be passed in the next request to this operation to return the next set of items in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -897,14 +883,12 @@ pub mod list_graphql_apis_output {
             self.graphql_apis = input;
             self
         }
-        /// <p>An identifier to be passed in the next request to this operation to return the next set
-        /// of items in the list.</p>
+        /// <p>An identifier to be passed in the next request to this operation to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier to be passed in the next request to this operation to return the next set
-        /// of items in the list.</p>
+        /// <p>An identifier to be passed in the next request to this operation to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -931,8 +915,7 @@ impl ListGraphqlApisOutput {
 pub struct ListFunctionsOutput {
     /// <p>A list of <code>Function</code> objects.</p>
     pub functions: std::option::Option<std::vec::Vec<crate::model::FunctionConfiguration>>,
-    /// <p>An identifier that was returned from the previous call to this operation, which can be
-    /// used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFunctionsOutput {
@@ -940,8 +923,7 @@ impl ListFunctionsOutput {
     pub fn functions(&self) -> std::option::Option<&[crate::model::FunctionConfiguration]> {
         self.functions.as_deref()
     }
-    /// <p>An identifier that was returned from the previous call to this operation, which can be
-    /// used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -984,14 +966,12 @@ pub mod list_functions_output {
             self.functions = input;
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1018,8 +998,7 @@ impl ListFunctionsOutput {
 pub struct ListDataSourcesOutput {
     /// <p>The <code>DataSource</code> objects.</p>
     pub data_sources: std::option::Option<std::vec::Vec<crate::model::DataSource>>,
-    /// <p>An identifier to be passed in the next request to this operation to return the next set
-    /// of items in the list.</p>
+    /// <p>An identifier to be passed in the next request to this operation to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDataSourcesOutput {
@@ -1027,8 +1006,7 @@ impl ListDataSourcesOutput {
     pub fn data_sources(&self) -> std::option::Option<&[crate::model::DataSource]> {
         self.data_sources.as_deref()
     }
-    /// <p>An identifier to be passed in the next request to this operation to return the next set
-    /// of items in the list.</p>
+    /// <p>An identifier to be passed in the next request to this operation to return the next set of items in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1070,14 +1048,12 @@ pub mod list_data_sources_output {
             self.data_sources = input;
             self
         }
-        /// <p>An identifier to be passed in the next request to this operation to return the next set
-        /// of items in the list.</p>
+        /// <p>An identifier to be passed in the next request to this operation to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier to be passed in the next request to this operation to return the next set
-        /// of items in the list.</p>
+        /// <p>An identifier to be passed in the next request to this operation to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1104,8 +1080,7 @@ impl ListDataSourcesOutput {
 pub struct ListApiKeysOutput {
     /// <p>The <code>ApiKey</code> objects.</p>
     pub api_keys: std::option::Option<std::vec::Vec<crate::model::ApiKey>>,
-    /// <p>An identifier to be passed in the next request to this operation to return the next set
-    /// of items in the list.</p>
+    /// <p>An identifier to be passed in the next request to this operation to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListApiKeysOutput {
@@ -1113,8 +1088,7 @@ impl ListApiKeysOutput {
     pub fn api_keys(&self) -> std::option::Option<&[crate::model::ApiKey]> {
         self.api_keys.as_deref()
     }
-    /// <p>An identifier to be passed in the next request to this operation to return the next set
-    /// of items in the list.</p>
+    /// <p>An identifier to be passed in the next request to this operation to return the next set of items in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1156,14 +1130,12 @@ pub mod list_api_keys_output {
             self.api_keys = input;
             self
         }
-        /// <p>An identifier to be passed in the next request to this operation to return the next set
-        /// of items in the list.</p>
+        /// <p>An identifier to be passed in the next request to this operation to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier to be passed in the next request to this operation to return the next set
-        /// of items in the list.</p>
+        /// <p>An identifier to be passed in the next request to this operation to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1242,15 +1214,13 @@ impl GetTypeOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSchemaCreationStatusOutput {
-    /// <p>The current state of the schema (PROCESSING, FAILED, SUCCESS, or NOT_APPLICABLE). When
-    /// the schema is in the ACTIVE state, you can add data.</p>
+    /// <p>The current state of the schema (PROCESSING, FAILED, SUCCESS, or NOT_APPLICABLE). When the schema is in the ACTIVE state, you can add data.</p>
     pub status: std::option::Option<crate::model::SchemaStatus>,
     /// <p>Detailed information about the status of the schema creation operation.</p>
     pub details: std::option::Option<std::string::String>,
 }
 impl GetSchemaCreationStatusOutput {
-    /// <p>The current state of the schema (PROCESSING, FAILED, SUCCESS, or NOT_APPLICABLE). When
-    /// the schema is in the ACTIVE state, you can add data.</p>
+    /// <p>The current state of the schema (PROCESSING, FAILED, SUCCESS, or NOT_APPLICABLE). When the schema is in the ACTIVE state, you can add data.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::SchemaStatus> {
         self.status.as_ref()
     }
@@ -1277,14 +1247,12 @@ pub mod get_schema_creation_status_output {
         pub(crate) details: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The current state of the schema (PROCESSING, FAILED, SUCCESS, or NOT_APPLICABLE). When
-        /// the schema is in the ACTIVE state, you can add data.</p>
+        /// <p>The current state of the schema (PROCESSING, FAILED, SUCCESS, or NOT_APPLICABLE). When the schema is in the ACTIVE state, you can add data.</p>
         pub fn status(mut self, input: crate::model::SchemaStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The current state of the schema (PROCESSING, FAILED, SUCCESS, or NOT_APPLICABLE). When
-        /// the schema is in the ACTIVE state, you can add data.</p>
+        /// <p>The current state of the schema (PROCESSING, FAILED, SUCCESS, or NOT_APPLICABLE). When the schema is in the ACTIVE state, you can add data.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::SchemaStatus>,
@@ -1377,14 +1345,12 @@ impl GetResolverOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIntrospectionSchemaOutput {
     /// <p>The schema, in GraphQL Schema Definition Language (SDL) format.</p>
-    /// <p>For more information, see the <a href="http://graphql.org/learn/schema/">GraphQL SDL
-    /// documentation</a>.</p>
+    /// <p>For more information, see the <a href="http://graphql.org/learn/schema/">GraphQL SDL documentation</a>.</p>
     pub schema: std::option::Option<aws_smithy_types::Blob>,
 }
 impl GetIntrospectionSchemaOutput {
     /// <p>The schema, in GraphQL Schema Definition Language (SDL) format.</p>
-    /// <p>For more information, see the <a href="http://graphql.org/learn/schema/">GraphQL SDL
-    /// documentation</a>.</p>
+    /// <p>For more information, see the <a href="http://graphql.org/learn/schema/">GraphQL SDL documentation</a>.</p>
     pub fn schema(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.schema.as_ref()
     }
@@ -1406,15 +1372,13 @@ pub mod get_introspection_schema_output {
     }
     impl Builder {
         /// <p>The schema, in GraphQL Schema Definition Language (SDL) format.</p>
-        /// <p>For more information, see the <a href="http://graphql.org/learn/schema/">GraphQL SDL
-        /// documentation</a>.</p>
+        /// <p>For more information, see the <a href="http://graphql.org/learn/schema/">GraphQL SDL documentation</a>.</p>
         pub fn schema(mut self, input: aws_smithy_types::Blob) -> Self {
             self.schema = Some(input);
             self
         }
         /// <p>The schema, in GraphQL Schema Definition Language (SDL) format.</p>
-        /// <p>For more information, see the <a href="http://graphql.org/learn/schema/">GraphQL SDL
-        /// documentation</a>.</p>
+        /// <p>For more information, see the <a href="http://graphql.org/learn/schema/">GraphQL SDL documentation</a>.</p>
         pub fn set_schema(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.schema = input;
             self

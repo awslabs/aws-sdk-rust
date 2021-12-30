@@ -14,14 +14,11 @@ pub struct CreateCertificateAuthorityError {
 pub enum CreateCertificateAuthorityErrorKind {
     /// <p>One or more of the specified arguments was not valid.</p>
     InvalidArgsException(crate::error::InvalidArgsException),
-    /// <p>The resource policy is invalid or is missing a required statement. For general
-    /// information about IAM policy and statement structure, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policies-json">Overview of JSON Policies</a>.</p>
+    /// <p>The resource policy is invalid or is missing a required statement. For general information about IAM policy and statement structure, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policies-json">Overview of JSON Policies</a>.</p>
     InvalidPolicyException(crate::error::InvalidPolicyException),
-    /// <p>The tag associated with the CA is not valid. The invalid argument is contained in the
-    /// message field.</p>
+    /// <p>The tag associated with the CA is not valid. The invalid argument is contained in the message field.</p>
     InvalidTagException(crate::error::InvalidTagException),
-    /// <p>An ACM Private CA quota has been exceeded. See the exception message returned to determine the
-    /// quota that was exceeded.</p>
+    /// <p>An ACM Private CA quota has been exceeded. See the exception message returned to determine the quota that was exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -143,8 +140,7 @@ pub struct CreateCertificateAuthorityAuditReportError {
 pub enum CreateCertificateAuthorityAuditReportErrorKind {
     /// <p>One or more of the specified arguments was not valid.</p>
     InvalidArgsException(crate::error::InvalidArgsException),
-    /// <p>The requested Amazon Resource Name (ARN) does not refer to an existing
-    /// resource.</p>
+    /// <p>The requested Amazon Resource Name (ARN) does not refer to an existing resource.</p>
     InvalidArnException(crate::error::InvalidArnException),
     /// <p>The state of the private CA does not allow this action to occur.</p>
     InvalidStateException(crate::error::InvalidStateException),
@@ -152,8 +148,7 @@ pub enum CreateCertificateAuthorityAuditReportErrorKind {
     RequestFailedException(crate::error::RequestFailedException),
     /// <p>Your request is already in progress.</p>
     RequestInProgressException(crate::error::RequestInProgressException),
-    /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy
-    /// cannot be found.</p>
+    /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -320,20 +315,17 @@ pub struct CreatePermissionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreatePermissionErrorKind {
-    /// <p>The requested Amazon Resource Name (ARN) does not refer to an existing
-    /// resource.</p>
+    /// <p>The requested Amazon Resource Name (ARN) does not refer to an existing resource.</p>
     InvalidArnException(crate::error::InvalidArnException),
     /// <p>The state of the private CA does not allow this action to occur.</p>
     InvalidStateException(crate::error::InvalidStateException),
-    /// <p>An ACM Private CA quota has been exceeded. See the exception message returned to determine the
-    /// quota that was exceeded.</p>
+    /// <p>An ACM Private CA quota has been exceeded. See the exception message returned to determine the quota that was exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The designated permission has already been given to the user.</p>
     PermissionAlreadyExistsException(crate::error::PermissionAlreadyExistsException),
     /// <p>The request has failed for an unspecified reason.</p>
     RequestFailedException(crate::error::RequestFailedException),
-    /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy
-    /// cannot be found.</p>
+    /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -473,13 +465,11 @@ pub struct DeleteCertificateAuthorityError {
 pub enum DeleteCertificateAuthorityErrorKind {
     /// <p>A previous update to your private CA is still ongoing.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
-    /// <p>The requested Amazon Resource Name (ARN) does not refer to an existing
-    /// resource.</p>
+    /// <p>The requested Amazon Resource Name (ARN) does not refer to an existing resource.</p>
     InvalidArnException(crate::error::InvalidArnException),
     /// <p>The state of the private CA does not allow this action to occur.</p>
     InvalidStateException(crate::error::InvalidStateException),
-    /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy
-    /// cannot be found.</p>
+    /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -603,15 +593,13 @@ pub struct DeletePermissionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeletePermissionErrorKind {
-    /// <p>The requested Amazon Resource Name (ARN) does not refer to an existing
-    /// resource.</p>
+    /// <p>The requested Amazon Resource Name (ARN) does not refer to an existing resource.</p>
     InvalidArnException(crate::error::InvalidArnException),
     /// <p>The state of the private CA does not allow this action to occur.</p>
     InvalidStateException(crate::error::InvalidStateException),
     /// <p>The request has failed for an unspecified reason.</p>
     RequestFailedException(crate::error::RequestFailedException),
-    /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy
-    /// cannot be found.</p>
+    /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -733,19 +721,15 @@ pub struct DeletePolicyError {
 pub enum DeletePolicyErrorKind {
     /// <p>A previous update to your private CA is still ongoing.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
-    /// <p>The requested Amazon Resource Name (ARN) does not refer to an existing
-    /// resource.</p>
+    /// <p>The requested Amazon Resource Name (ARN) does not refer to an existing resource.</p>
     InvalidArnException(crate::error::InvalidArnException),
     /// <p>The state of the private CA does not allow this action to occur.</p>
     InvalidStateException(crate::error::InvalidStateException),
-    /// <p>The current action was prevented because it would lock the caller out from performing
-    /// subsequent actions. Verify that the specified parameters would not result in the caller
-    /// being denied access to the resource. </p>
+    /// <p>The current action was prevented because it would lock the caller out from performing subsequent actions. Verify that the specified parameters would not result in the caller being denied access to the resource. </p>
     LockoutPreventedException(crate::error::LockoutPreventedException),
     /// <p>The request has failed for an unspecified reason.</p>
     RequestFailedException(crate::error::RequestFailedException),
-    /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy
-    /// cannot be found.</p>
+    /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -874,11 +858,9 @@ pub struct DescribeCertificateAuthorityError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeCertificateAuthorityErrorKind {
-    /// <p>The requested Amazon Resource Name (ARN) does not refer to an existing
-    /// resource.</p>
+    /// <p>The requested Amazon Resource Name (ARN) does not refer to an existing resource.</p>
     InvalidArnException(crate::error::InvalidArnException),
-    /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy
-    /// cannot be found.</p>
+    /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -986,11 +968,9 @@ pub struct DescribeCertificateAuthorityAuditReportError {
 pub enum DescribeCertificateAuthorityAuditReportErrorKind {
     /// <p>One or more of the specified arguments was not valid.</p>
     InvalidArgsException(crate::error::InvalidArgsException),
-    /// <p>The requested Amazon Resource Name (ARN) does not refer to an existing
-    /// resource.</p>
+    /// <p>The requested Amazon Resource Name (ARN) does not refer to an existing resource.</p>
     InvalidArnException(crate::error::InvalidArnException),
-    /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy
-    /// cannot be found.</p>
+    /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1118,8 +1098,7 @@ pub struct GetCertificateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetCertificateErrorKind {
-    /// <p>The requested Amazon Resource Name (ARN) does not refer to an existing
-    /// resource.</p>
+    /// <p>The requested Amazon Resource Name (ARN) does not refer to an existing resource.</p>
     InvalidArnException(crate::error::InvalidArnException),
     /// <p>The state of the private CA does not allow this action to occur.</p>
     InvalidStateException(crate::error::InvalidStateException),
@@ -1127,8 +1106,7 @@ pub enum GetCertificateErrorKind {
     RequestFailedException(crate::error::RequestFailedException),
     /// <p>Your request is already in progress.</p>
     RequestInProgressException(crate::error::RequestInProgressException),
-    /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy
-    /// cannot be found.</p>
+    /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1254,13 +1232,11 @@ pub struct GetCertificateAuthorityCertificateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetCertificateAuthorityCertificateErrorKind {
-    /// <p>The requested Amazon Resource Name (ARN) does not refer to an existing
-    /// resource.</p>
+    /// <p>The requested Amazon Resource Name (ARN) does not refer to an existing resource.</p>
     InvalidArnException(crate::error::InvalidArnException),
     /// <p>The state of the private CA does not allow this action to occur.</p>
     InvalidStateException(crate::error::InvalidStateException),
-    /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy
-    /// cannot be found.</p>
+    /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1386,8 +1362,7 @@ pub struct GetCertificateAuthorityCsrError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetCertificateAuthorityCsrErrorKind {
-    /// <p>The requested Amazon Resource Name (ARN) does not refer to an existing
-    /// resource.</p>
+    /// <p>The requested Amazon Resource Name (ARN) does not refer to an existing resource.</p>
     InvalidArnException(crate::error::InvalidArnException),
     /// <p>The state of the private CA does not allow this action to occur.</p>
     InvalidStateException(crate::error::InvalidStateException),
@@ -1395,8 +1370,7 @@ pub enum GetCertificateAuthorityCsrErrorKind {
     RequestFailedException(crate::error::RequestFailedException),
     /// <p>Your request is already in progress.</p>
     RequestInProgressException(crate::error::RequestInProgressException),
-    /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy
-    /// cannot be found.</p>
+    /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1527,15 +1501,13 @@ pub struct GetPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetPolicyErrorKind {
-    /// <p>The requested Amazon Resource Name (ARN) does not refer to an existing
-    /// resource.</p>
+    /// <p>The requested Amazon Resource Name (ARN) does not refer to an existing resource.</p>
     InvalidArnException(crate::error::InvalidArnException),
     /// <p>The state of the private CA does not allow this action to occur.</p>
     InvalidStateException(crate::error::InvalidStateException),
     /// <p>The request has failed for an unspecified reason.</p>
     RequestFailedException(crate::error::RequestFailedException),
-    /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy
-    /// cannot be found.</p>
+    /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1643,13 +1615,11 @@ pub struct ImportCertificateAuthorityCertificateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ImportCertificateAuthorityCertificateErrorKind {
-    /// <p>The certificate authority certificate you are importing does not comply with
-    /// conditions specified in the certificate that signed it.</p>
+    /// <p>The certificate authority certificate you are importing does not comply with conditions specified in the certificate that signed it.</p>
     CertificateMismatchException(crate::error::CertificateMismatchException),
     /// <p>A previous update to your private CA is still ongoing.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
-    /// <p>The requested Amazon Resource Name (ARN) does not refer to an existing
-    /// resource.</p>
+    /// <p>The requested Amazon Resource Name (ARN) does not refer to an existing resource.</p>
     InvalidArnException(crate::error::InvalidArnException),
     /// <p>The request action cannot be performed or is prohibited.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -1661,8 +1631,7 @@ pub enum ImportCertificateAuthorityCertificateErrorKind {
     RequestFailedException(crate::error::RequestFailedException),
     /// <p>Your request is already in progress.</p>
     RequestInProgressException(crate::error::RequestInProgressException),
-    /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy
-    /// cannot be found.</p>
+    /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1870,18 +1839,15 @@ pub struct IssueCertificateError {
 pub enum IssueCertificateErrorKind {
     /// <p>One or more of the specified arguments was not valid.</p>
     InvalidArgsException(crate::error::InvalidArgsException),
-    /// <p>The requested Amazon Resource Name (ARN) does not refer to an existing
-    /// resource.</p>
+    /// <p>The requested Amazon Resource Name (ARN) does not refer to an existing resource.</p>
     InvalidArnException(crate::error::InvalidArnException),
     /// <p>The state of the private CA does not allow this action to occur.</p>
     InvalidStateException(crate::error::InvalidStateException),
-    /// <p>An ACM Private CA quota has been exceeded. See the exception message returned to determine the
-    /// quota that was exceeded.</p>
+    /// <p>An ACM Private CA quota has been exceeded. See the exception message returned to determine the quota that was exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The certificate signing request is invalid.</p>
     MalformedCsrException(crate::error::MalformedCsrException),
-    /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy
-    /// cannot be found.</p>
+    /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2019,8 +1985,7 @@ pub struct ListCertificateAuthoritiesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListCertificateAuthoritiesErrorKind {
-    /// <p>The token specified in the <code>NextToken</code> argument is not valid. Use the token
-    /// returned from your previous call to <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a>.</p>
+    /// <p>The token specified in the <code>NextToken</code> argument is not valid. Use the token returned from your previous call to <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a>.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2113,18 +2078,15 @@ pub struct ListPermissionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListPermissionsErrorKind {
-    /// <p>The requested Amazon Resource Name (ARN) does not refer to an existing
-    /// resource.</p>
+    /// <p>The requested Amazon Resource Name (ARN) does not refer to an existing resource.</p>
     InvalidArnException(crate::error::InvalidArnException),
-    /// <p>The token specified in the <code>NextToken</code> argument is not valid. Use the token
-    /// returned from your previous call to <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a>.</p>
+    /// <p>The token specified in the <code>NextToken</code> argument is not valid. Use the token returned from your previous call to <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a>.</p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>The state of the private CA does not allow this action to occur.</p>
     InvalidStateException(crate::error::InvalidStateException),
     /// <p>The request has failed for an unspecified reason.</p>
     RequestFailedException(crate::error::RequestFailedException),
-    /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy
-    /// cannot be found.</p>
+    /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2250,13 +2212,11 @@ pub struct ListTagsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsErrorKind {
-    /// <p>The requested Amazon Resource Name (ARN) does not refer to an existing
-    /// resource.</p>
+    /// <p>The requested Amazon Resource Name (ARN) does not refer to an existing resource.</p>
     InvalidArnException(crate::error::InvalidArnException),
     /// <p>The state of the private CA does not allow this action to occur.</p>
     InvalidStateException(crate::error::InvalidStateException),
-    /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy
-    /// cannot be found.</p>
+    /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2360,22 +2320,17 @@ pub struct PutPolicyError {
 pub enum PutPolicyErrorKind {
     /// <p>A previous update to your private CA is still ongoing.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
-    /// <p>The requested Amazon Resource Name (ARN) does not refer to an existing
-    /// resource.</p>
+    /// <p>The requested Amazon Resource Name (ARN) does not refer to an existing resource.</p>
     InvalidArnException(crate::error::InvalidArnException),
-    /// <p>The resource policy is invalid or is missing a required statement. For general
-    /// information about IAM policy and statement structure, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policies-json">Overview of JSON Policies</a>.</p>
+    /// <p>The resource policy is invalid or is missing a required statement. For general information about IAM policy and statement structure, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policies-json">Overview of JSON Policies</a>.</p>
     InvalidPolicyException(crate::error::InvalidPolicyException),
     /// <p>The state of the private CA does not allow this action to occur.</p>
     InvalidStateException(crate::error::InvalidStateException),
-    /// <p>The current action was prevented because it would lock the caller out from performing
-    /// subsequent actions. Verify that the specified parameters would not result in the caller
-    /// being denied access to the resource. </p>
+    /// <p>The current action was prevented because it would lock the caller out from performing subsequent actions. Verify that the specified parameters would not result in the caller being denied access to the resource. </p>
     LockoutPreventedException(crate::error::LockoutPreventedException),
     /// <p>The request has failed for an unspecified reason.</p>
     RequestFailedException(crate::error::RequestFailedException),
-    /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy
-    /// cannot be found.</p>
+    /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2504,13 +2459,11 @@ pub struct RestoreCertificateAuthorityError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RestoreCertificateAuthorityErrorKind {
-    /// <p>The requested Amazon Resource Name (ARN) does not refer to an existing
-    /// resource.</p>
+    /// <p>The requested Amazon Resource Name (ARN) does not refer to an existing resource.</p>
     InvalidArnException(crate::error::InvalidArnException),
     /// <p>The state of the private CA does not allow this action to occur.</p>
     InvalidStateException(crate::error::InvalidStateException),
-    /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy
-    /// cannot be found.</p>
+    /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2625,15 +2578,13 @@ pub struct RevokeCertificateError {
 pub enum RevokeCertificateErrorKind {
     /// <p>A previous update to your private CA is still ongoing.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
-    /// <p>The requested Amazon Resource Name (ARN) does not refer to an existing
-    /// resource.</p>
+    /// <p>The requested Amazon Resource Name (ARN) does not refer to an existing resource.</p>
     InvalidArnException(crate::error::InvalidArnException),
     /// <p>The request action cannot be performed or is prohibited.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The state of the private CA does not allow this action to occur.</p>
     InvalidStateException(crate::error::InvalidStateException),
-    /// <p>An ACM Private CA quota has been exceeded. See the exception message returned to determine the
-    /// quota that was exceeded.</p>
+    /// <p>An ACM Private CA quota has been exceeded. See the exception message returned to determine the quota that was exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>Your request has already been completed.</p>
     RequestAlreadyProcessedException(crate::error::RequestAlreadyProcessedException),
@@ -2641,8 +2592,7 @@ pub enum RevokeCertificateErrorKind {
     RequestFailedException(crate::error::RequestFailedException),
     /// <p>Your request is already in progress.</p>
     RequestInProgressException(crate::error::RequestInProgressException),
-    /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy
-    /// cannot be found.</p>
+    /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2807,19 +2757,15 @@ pub struct TagCertificateAuthorityError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagCertificateAuthorityErrorKind {
-    /// <p>The requested Amazon Resource Name (ARN) does not refer to an existing
-    /// resource.</p>
+    /// <p>The requested Amazon Resource Name (ARN) does not refer to an existing resource.</p>
     InvalidArnException(crate::error::InvalidArnException),
     /// <p>The state of the private CA does not allow this action to occur.</p>
     InvalidStateException(crate::error::InvalidStateException),
-    /// <p>The tag associated with the CA is not valid. The invalid argument is contained in the
-    /// message field.</p>
+    /// <p>The tag associated with the CA is not valid. The invalid argument is contained in the message field.</p>
     InvalidTagException(crate::error::InvalidTagException),
-    /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy
-    /// cannot be found.</p>
+    /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>You can associate up to 50 tags with a private CA. Exception information is contained
-    /// in the exception message field.</p>
+    /// <p>You can associate up to 50 tags with a private CA. Exception information is contained in the exception message field.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2948,16 +2894,13 @@ pub struct UntagCertificateAuthorityError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagCertificateAuthorityErrorKind {
-    /// <p>The requested Amazon Resource Name (ARN) does not refer to an existing
-    /// resource.</p>
+    /// <p>The requested Amazon Resource Name (ARN) does not refer to an existing resource.</p>
     InvalidArnException(crate::error::InvalidArnException),
     /// <p>The state of the private CA does not allow this action to occur.</p>
     InvalidStateException(crate::error::InvalidStateException),
-    /// <p>The tag associated with the CA is not valid. The invalid argument is contained in the
-    /// message field.</p>
+    /// <p>The tag associated with the CA is not valid. The invalid argument is contained in the message field.</p>
     InvalidTagException(crate::error::InvalidTagException),
-    /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy
-    /// cannot be found.</p>
+    /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3081,16 +3024,13 @@ pub enum UpdateCertificateAuthorityErrorKind {
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>One or more of the specified arguments was not valid.</p>
     InvalidArgsException(crate::error::InvalidArgsException),
-    /// <p>The requested Amazon Resource Name (ARN) does not refer to an existing
-    /// resource.</p>
+    /// <p>The requested Amazon Resource Name (ARN) does not refer to an existing resource.</p>
     InvalidArnException(crate::error::InvalidArnException),
-    /// <p>The resource policy is invalid or is missing a required statement. For general
-    /// information about IAM policy and statement structure, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policies-json">Overview of JSON Policies</a>.</p>
+    /// <p>The resource policy is invalid or is missing a required statement. For general information about IAM policy and statement structure, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policies-json">Overview of JSON Policies</a>.</p>
     InvalidPolicyException(crate::error::InvalidPolicyException),
     /// <p>The state of the private CA does not allow this action to occur.</p>
     InvalidStateException(crate::error::InvalidStateException),
-    /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy
-    /// cannot be found.</p>
+    /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy cannot be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3219,8 +3159,7 @@ impl std::error::Error for UpdateCertificateAuthorityError {
     }
 }
 
-/// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy
-/// cannot be found.</p>
+/// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy cannot be found.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
@@ -3348,8 +3287,7 @@ impl InvalidStateException {
     }
 }
 
-/// <p>The resource policy is invalid or is missing a required statement. For general
-/// information about IAM policy and statement structure, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policies-json">Overview of JSON Policies</a>.</p>
+/// <p>The resource policy is invalid or is missing a required statement. For general information about IAM policy and statement structure, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policies-json">Overview of JSON Policies</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidPolicyException {
@@ -3413,8 +3351,7 @@ impl InvalidPolicyException {
     }
 }
 
-/// <p>The requested Amazon Resource Name (ARN) does not refer to an existing
-/// resource.</p>
+/// <p>The requested Amazon Resource Name (ARN) does not refer to an existing resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidArnException {
@@ -3606,8 +3543,7 @@ impl ConcurrentModificationException {
     }
 }
 
-/// <p>The tag associated with the CA is not valid. The invalid argument is contained in the
-/// message field.</p>
+/// <p>The tag associated with the CA is not valid. The invalid argument is contained in the message field.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidTagException {
@@ -3671,8 +3607,7 @@ impl InvalidTagException {
     }
 }
 
-/// <p>You can associate up to 50 tags with a private CA. Exception information is contained
-/// in the exception message field.</p>
+/// <p>You can associate up to 50 tags with a private CA. Exception information is contained in the exception message field.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyTagsException {
@@ -3928,8 +3863,7 @@ impl RequestAlreadyProcessedException {
     }
 }
 
-/// <p>An ACM Private CA quota has been exceeded. See the exception message returned to determine the
-/// quota that was exceeded.</p>
+/// <p>An ACM Private CA quota has been exceeded. See the exception message returned to determine the quota that was exceeded.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {
@@ -4057,9 +3991,7 @@ impl InvalidRequestException {
     }
 }
 
-/// <p>The current action was prevented because it would lock the caller out from performing
-/// subsequent actions. Verify that the specified parameters would not result in the caller
-/// being denied access to the resource. </p>
+/// <p>The current action was prevented because it would lock the caller out from performing subsequent actions. Verify that the specified parameters would not result in the caller being denied access to the resource. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LockoutPreventedException {
@@ -4123,8 +4055,7 @@ impl LockoutPreventedException {
     }
 }
 
-/// <p>The token specified in the <code>NextToken</code> argument is not valid. Use the token
-/// returned from your previous call to <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a>.</p>
+/// <p>The token specified in the <code>NextToken</code> argument is not valid. Use the token returned from your previous call to <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidNextTokenException {
@@ -4316,8 +4247,7 @@ impl MalformedCertificateException {
     }
 }
 
-/// <p>The certificate authority certificate you are importing does not comply with
-/// conditions specified in the certificate that signed it.</p>
+/// <p>The certificate authority certificate you are importing does not comply with conditions specified in the certificate that signed it.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CertificateMismatchException {

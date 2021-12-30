@@ -976,8 +976,7 @@ pub struct DescribeWarmPoolOutput {
     pub warm_pool_configuration: std::option::Option<crate::model::WarmPoolConfiguration>,
     /// <p>The instances that are currently in the warm pool.</p>
     pub instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
-    /// <p>The token for the next set of items to return. (You received this token from a
-    /// previous call.)</p>
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeWarmPoolOutput {
@@ -991,8 +990,7 @@ impl DescribeWarmPoolOutput {
     pub fn instances(&self) -> std::option::Option<&[crate::model::Instance]> {
         self.instances.as_deref()
     }
-    /// <p>The token for the next set of items to return. (You received this token from a
-    /// previous call.)</p>
+    /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1053,14 +1051,12 @@ pub mod describe_warm_pool_output {
             self.instances = input;
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a
-        /// previous call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a
-        /// previous call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1086,17 +1082,11 @@ impl DescribeWarmPoolOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTerminationPolicyTypesOutput {
-    /// <p>The termination policies supported by Amazon EC2 Auto Scaling: <code>OldestInstance</code>,
-    /// <code>OldestLaunchConfiguration</code>, <code>NewestInstance</code>,
-    /// <code>ClosestToNextInstanceHour</code>, <code>Default</code>,
-    /// <code>OldestLaunchTemplate</code>, and <code>AllocationStrategy</code>.</p>
+    /// <p>The termination policies supported by Amazon EC2 Auto Scaling: <code>OldestInstance</code>, <code>OldestLaunchConfiguration</code>, <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>, <code>Default</code>, <code>OldestLaunchTemplate</code>, and <code>AllocationStrategy</code>.</p>
     pub termination_policy_types: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeTerminationPolicyTypesOutput {
-    /// <p>The termination policies supported by Amazon EC2 Auto Scaling: <code>OldestInstance</code>,
-    /// <code>OldestLaunchConfiguration</code>, <code>NewestInstance</code>,
-    /// <code>ClosestToNextInstanceHour</code>, <code>Default</code>,
-    /// <code>OldestLaunchTemplate</code>, and <code>AllocationStrategy</code>.</p>
+    /// <p>The termination policies supported by Amazon EC2 Auto Scaling: <code>OldestInstance</code>, <code>OldestLaunchConfiguration</code>, <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>, <code>Default</code>, <code>OldestLaunchTemplate</code>, and <code>AllocationStrategy</code>.</p>
     pub fn termination_policy_types(&self) -> std::option::Option<&[std::string::String]> {
         self.termination_policy_types.as_deref()
     }
@@ -1122,20 +1112,14 @@ pub mod describe_termination_policy_types_output {
         ///
         /// To override the contents of this collection use [`set_termination_policy_types`](Self::set_termination_policy_types).
         ///
-        /// <p>The termination policies supported by Amazon EC2 Auto Scaling: <code>OldestInstance</code>,
-        /// <code>OldestLaunchConfiguration</code>, <code>NewestInstance</code>,
-        /// <code>ClosestToNextInstanceHour</code>, <code>Default</code>,
-        /// <code>OldestLaunchTemplate</code>, and <code>AllocationStrategy</code>.</p>
+        /// <p>The termination policies supported by Amazon EC2 Auto Scaling: <code>OldestInstance</code>, <code>OldestLaunchConfiguration</code>, <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>, <code>Default</code>, <code>OldestLaunchTemplate</code>, and <code>AllocationStrategy</code>.</p>
         pub fn termination_policy_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.termination_policy_types.unwrap_or_default();
             v.push(input.into());
             self.termination_policy_types = Some(v);
             self
         }
-        /// <p>The termination policies supported by Amazon EC2 Auto Scaling: <code>OldestInstance</code>,
-        /// <code>OldestLaunchConfiguration</code>, <code>NewestInstance</code>,
-        /// <code>ClosestToNextInstanceHour</code>, <code>Default</code>,
-        /// <code>OldestLaunchTemplate</code>, and <code>AllocationStrategy</code>.</p>
+        /// <p>The termination policies supported by Amazon EC2 Auto Scaling: <code>OldestInstance</code>, <code>OldestLaunchConfiguration</code>, <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>, <code>Default</code>, <code>OldestLaunchTemplate</code>, and <code>AllocationStrategy</code>.</p>
         pub fn set_termination_policy_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1164,10 +1148,7 @@ impl DescribeTerminationPolicyTypesOutput {
 pub struct DescribeTagsOutput {
     /// <p>One or more tags.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::TagDescription>>,
-    /// <p>A string that indicates that the response contains more items than can be returned in
-    /// a single response. To receive additional items, specify this string for the
-    /// <code>NextToken</code> value when requesting the next set of items. This value is
-    /// null when there are no more items to return.</p>
+    /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeTagsOutput {
@@ -1175,10 +1156,7 @@ impl DescribeTagsOutput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::TagDescription]> {
         self.tags.as_deref()
     }
-    /// <p>A string that indicates that the response contains more items than can be returned in
-    /// a single response. To receive additional items, specify this string for the
-    /// <code>NextToken</code> value when requesting the next set of items. This value is
-    /// null when there are no more items to return.</p>
+    /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1220,18 +1198,12 @@ pub mod describe_tags_output {
             self.tags = input;
             self
         }
-        /// <p>A string that indicates that the response contains more items than can be returned in
-        /// a single response. To receive additional items, specify this string for the
-        /// <code>NextToken</code> value when requesting the next set of items. This value is
-        /// null when there are no more items to return.</p>
+        /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A string that indicates that the response contains more items than can be returned in
-        /// a single response. To receive additional items, specify this string for the
-        /// <code>NextToken</code> value when requesting the next set of items. This value is
-        /// null when there are no more items to return.</p>
+        /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1259,10 +1231,7 @@ pub struct DescribeScheduledActionsOutput {
     /// <p>The scheduled actions.</p>
     pub scheduled_update_group_actions:
         std::option::Option<std::vec::Vec<crate::model::ScheduledUpdateGroupAction>>,
-    /// <p>A string that indicates that the response contains more items than can be returned in
-    /// a single response. To receive additional items, specify this string for the
-    /// <code>NextToken</code> value when requesting the next set of items. This value is
-    /// null when there are no more items to return.</p>
+    /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeScheduledActionsOutput {
@@ -1272,10 +1241,7 @@ impl DescribeScheduledActionsOutput {
     ) -> std::option::Option<&[crate::model::ScheduledUpdateGroupAction]> {
         self.scheduled_update_group_actions.as_deref()
     }
-    /// <p>A string that indicates that the response contains more items than can be returned in
-    /// a single response. To receive additional items, specify this string for the
-    /// <code>NextToken</code> value when requesting the next set of items. This value is
-    /// null when there are no more items to return.</p>
+    /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1324,18 +1290,12 @@ pub mod describe_scheduled_actions_output {
             self.scheduled_update_group_actions = input;
             self
         }
-        /// <p>A string that indicates that the response contains more items than can be returned in
-        /// a single response. To receive additional items, specify this string for the
-        /// <code>NextToken</code> value when requesting the next set of items. This value is
-        /// null when there are no more items to return.</p>
+        /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A string that indicates that the response contains more items than can be returned in
-        /// a single response. To receive additional items, specify this string for the
-        /// <code>NextToken</code> value when requesting the next set of items. This value is
-        /// null when there are no more items to return.</p>
+        /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1423,25 +1383,17 @@ impl DescribeScalingProcessTypesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeScalingActivitiesOutput {
-    /// <p>The scaling activities. Activities are sorted by start time. Activities still in
-    /// progress are described first.</p>
+    /// <p>The scaling activities. Activities are sorted by start time. Activities still in progress are described first.</p>
     pub activities: std::option::Option<std::vec::Vec<crate::model::Activity>>,
-    /// <p>A string that indicates that the response contains more items than can be returned in
-    /// a single response. To receive additional items, specify this string for the
-    /// <code>NextToken</code> value when requesting the next set of items. This value is
-    /// null when there are no more items to return.</p>
+    /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeScalingActivitiesOutput {
-    /// <p>The scaling activities. Activities are sorted by start time. Activities still in
-    /// progress are described first.</p>
+    /// <p>The scaling activities. Activities are sorted by start time. Activities still in progress are described first.</p>
     pub fn activities(&self) -> std::option::Option<&[crate::model::Activity]> {
         self.activities.as_deref()
     }
-    /// <p>A string that indicates that the response contains more items than can be returned in
-    /// a single response. To receive additional items, specify this string for the
-    /// <code>NextToken</code> value when requesting the next set of items. This value is
-    /// null when there are no more items to return.</p>
+    /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1468,16 +1420,14 @@ pub mod describe_scaling_activities_output {
         ///
         /// To override the contents of this collection use [`set_activities`](Self::set_activities).
         ///
-        /// <p>The scaling activities. Activities are sorted by start time. Activities still in
-        /// progress are described first.</p>
+        /// <p>The scaling activities. Activities are sorted by start time. Activities still in progress are described first.</p>
         pub fn activities(mut self, input: crate::model::Activity) -> Self {
             let mut v = self.activities.unwrap_or_default();
             v.push(input);
             self.activities = Some(v);
             self
         }
-        /// <p>The scaling activities. Activities are sorted by start time. Activities still in
-        /// progress are described first.</p>
+        /// <p>The scaling activities. Activities are sorted by start time. Activities still in progress are described first.</p>
         pub fn set_activities(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Activity>>,
@@ -1485,18 +1435,12 @@ pub mod describe_scaling_activities_output {
             self.activities = input;
             self
         }
-        /// <p>A string that indicates that the response contains more items than can be returned in
-        /// a single response. To receive additional items, specify this string for the
-        /// <code>NextToken</code> value when requesting the next set of items. This value is
-        /// null when there are no more items to return.</p>
+        /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A string that indicates that the response contains more items than can be returned in
-        /// a single response. To receive additional items, specify this string for the
-        /// <code>NextToken</code> value when requesting the next set of items. This value is
-        /// null when there are no more items to return.</p>
+        /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1523,10 +1467,7 @@ impl DescribeScalingActivitiesOutput {
 pub struct DescribePoliciesOutput {
     /// <p>The scaling policies.</p>
     pub scaling_policies: std::option::Option<std::vec::Vec<crate::model::ScalingPolicy>>,
-    /// <p>A string that indicates that the response contains more items than can be returned in
-    /// a single response. To receive additional items, specify this string for the
-    /// <code>NextToken</code> value when requesting the next set of items. This value is
-    /// null when there are no more items to return.</p>
+    /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribePoliciesOutput {
@@ -1534,10 +1475,7 @@ impl DescribePoliciesOutput {
     pub fn scaling_policies(&self) -> std::option::Option<&[crate::model::ScalingPolicy]> {
         self.scaling_policies.as_deref()
     }
-    /// <p>A string that indicates that the response contains more items than can be returned in
-    /// a single response. To receive additional items, specify this string for the
-    /// <code>NextToken</code> value when requesting the next set of items. This value is
-    /// null when there are no more items to return.</p>
+    /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1580,18 +1518,12 @@ pub mod describe_policies_output {
             self.scaling_policies = input;
             self
         }
-        /// <p>A string that indicates that the response contains more items than can be returned in
-        /// a single response. To receive additional items, specify this string for the
-        /// <code>NextToken</code> value when requesting the next set of items. This value is
-        /// null when there are no more items to return.</p>
+        /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A string that indicates that the response contains more items than can be returned in
-        /// a single response. To receive additional items, specify this string for the
-        /// <code>NextToken</code> value when requesting the next set of items. This value is
-        /// null when there are no more items to return.</p>
+        /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1619,10 +1551,7 @@ pub struct DescribeNotificationConfigurationsOutput {
     /// <p>The notification configurations.</p>
     pub notification_configurations:
         std::option::Option<std::vec::Vec<crate::model::NotificationConfiguration>>,
-    /// <p>A string that indicates that the response contains more items than can be returned in
-    /// a single response. To receive additional items, specify this string for the
-    /// <code>NextToken</code> value when requesting the next set of items. This value is
-    /// null when there are no more items to return.</p>
+    /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeNotificationConfigurationsOutput {
@@ -1632,10 +1561,7 @@ impl DescribeNotificationConfigurationsOutput {
     ) -> std::option::Option<&[crate::model::NotificationConfiguration]> {
         self.notification_configurations.as_deref()
     }
-    /// <p>A string that indicates that the response contains more items than can be returned in
-    /// a single response. To receive additional items, specify this string for the
-    /// <code>NextToken</code> value when requesting the next set of items. This value is
-    /// null when there are no more items to return.</p>
+    /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1684,18 +1610,12 @@ pub mod describe_notification_configurations_output {
             self.notification_configurations = input;
             self
         }
-        /// <p>A string that indicates that the response contains more items than can be returned in
-        /// a single response. To receive additional items, specify this string for the
-        /// <code>NextToken</code> value when requesting the next set of items. This value is
-        /// null when there are no more items to return.</p>
+        /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A string that indicates that the response contains more items than can be returned in
-        /// a single response. To receive additional items, specify this string for the
-        /// <code>NextToken</code> value when requesting the next set of items. This value is
-        /// null when there are no more items to return.</p>
+        /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1815,10 +1735,7 @@ pub struct DescribeLoadBalancerTargetGroupsOutput {
     /// <p>Information about the target groups.</p>
     pub load_balancer_target_groups:
         std::option::Option<std::vec::Vec<crate::model::LoadBalancerTargetGroupState>>,
-    /// <p>A string that indicates that the response contains more items than can be returned in
-    /// a single response. To receive additional items, specify this string for the
-    /// <code>NextToken</code> value when requesting the next set of items. This value is
-    /// null when there are no more items to return.</p>
+    /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeLoadBalancerTargetGroupsOutput {
@@ -1828,10 +1745,7 @@ impl DescribeLoadBalancerTargetGroupsOutput {
     ) -> std::option::Option<&[crate::model::LoadBalancerTargetGroupState]> {
         self.load_balancer_target_groups.as_deref()
     }
-    /// <p>A string that indicates that the response contains more items than can be returned in
-    /// a single response. To receive additional items, specify this string for the
-    /// <code>NextToken</code> value when requesting the next set of items. This value is
-    /// null when there are no more items to return.</p>
+    /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1880,18 +1794,12 @@ pub mod describe_load_balancer_target_groups_output {
             self.load_balancer_target_groups = input;
             self
         }
-        /// <p>A string that indicates that the response contains more items than can be returned in
-        /// a single response. To receive additional items, specify this string for the
-        /// <code>NextToken</code> value when requesting the next set of items. This value is
-        /// null when there are no more items to return.</p>
+        /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A string that indicates that the response contains more items than can be returned in
-        /// a single response. To receive additional items, specify this string for the
-        /// <code>NextToken</code> value when requesting the next set of items. This value is
-        /// null when there are no more items to return.</p>
+        /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1918,10 +1826,7 @@ impl DescribeLoadBalancerTargetGroupsOutput {
 pub struct DescribeLoadBalancersOutput {
     /// <p>The load balancers.</p>
     pub load_balancers: std::option::Option<std::vec::Vec<crate::model::LoadBalancerState>>,
-    /// <p>A string that indicates that the response contains more items than can be returned in
-    /// a single response. To receive additional items, specify this string for the
-    /// <code>NextToken</code> value when requesting the next set of items. This value is
-    /// null when there are no more items to return.</p>
+    /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeLoadBalancersOutput {
@@ -1929,10 +1834,7 @@ impl DescribeLoadBalancersOutput {
     pub fn load_balancers(&self) -> std::option::Option<&[crate::model::LoadBalancerState]> {
         self.load_balancers.as_deref()
     }
-    /// <p>A string that indicates that the response contains more items than can be returned in
-    /// a single response. To receive additional items, specify this string for the
-    /// <code>NextToken</code> value when requesting the next set of items. This value is
-    /// null when there are no more items to return.</p>
+    /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1975,18 +1877,12 @@ pub mod describe_load_balancers_output {
             self.load_balancers = input;
             self
         }
-        /// <p>A string that indicates that the response contains more items than can be returned in
-        /// a single response. To receive additional items, specify this string for the
-        /// <code>NextToken</code> value when requesting the next set of items. This value is
-        /// null when there are no more items to return.</p>
+        /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A string that indicates that the response contains more items than can be returned in
-        /// a single response. To receive additional items, specify this string for the
-        /// <code>NextToken</code> value when requesting the next set of items. This value is
-        /// null when there are no more items to return.</p>
+        /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2140,10 +2036,7 @@ pub struct DescribeLaunchConfigurationsOutput {
     /// <p>The launch configurations.</p>
     pub launch_configurations:
         std::option::Option<std::vec::Vec<crate::model::LaunchConfiguration>>,
-    /// <p>A string that indicates that the response contains more items than can be returned in
-    /// a single response. To receive additional items, specify this string for the
-    /// <code>NextToken</code> value when requesting the next set of items. This value is
-    /// null when there are no more items to return.</p>
+    /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeLaunchConfigurationsOutput {
@@ -2153,10 +2046,7 @@ impl DescribeLaunchConfigurationsOutput {
     ) -> std::option::Option<&[crate::model::LaunchConfiguration]> {
         self.launch_configurations.as_deref()
     }
-    /// <p>A string that indicates that the response contains more items than can be returned in
-    /// a single response. To receive additional items, specify this string for the
-    /// <code>NextToken</code> value when requesting the next set of items. This value is
-    /// null when there are no more items to return.</p>
+    /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2199,18 +2089,12 @@ pub mod describe_launch_configurations_output {
             self.launch_configurations = input;
             self
         }
-        /// <p>A string that indicates that the response contains more items than can be returned in
-        /// a single response. To receive additional items, specify this string for the
-        /// <code>NextToken</code> value when requesting the next set of items. This value is
-        /// null when there are no more items to return.</p>
+        /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A string that indicates that the response contains more items than can be returned in
-        /// a single response. To receive additional items, specify this string for the
-        /// <code>NextToken</code> value when requesting the next set of items. This value is
-        /// null when there are no more items to return.</p>
+        /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2237,10 +2121,7 @@ impl DescribeLaunchConfigurationsOutput {
 pub struct DescribeInstanceRefreshesOutput {
     /// <p>The instance refreshes for the specified group.</p>
     pub instance_refreshes: std::option::Option<std::vec::Vec<crate::model::InstanceRefresh>>,
-    /// <p>A string that indicates that the response contains more items than can be returned in
-    /// a single response. To receive additional items, specify this string for the
-    /// <code>NextToken</code> value when requesting the next set of items. This value is
-    /// null when there are no more items to return.</p>
+    /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeInstanceRefreshesOutput {
@@ -2248,10 +2129,7 @@ impl DescribeInstanceRefreshesOutput {
     pub fn instance_refreshes(&self) -> std::option::Option<&[crate::model::InstanceRefresh]> {
         self.instance_refreshes.as_deref()
     }
-    /// <p>A string that indicates that the response contains more items than can be returned in
-    /// a single response. To receive additional items, specify this string for the
-    /// <code>NextToken</code> value when requesting the next set of items. This value is
-    /// null when there are no more items to return.</p>
+    /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2294,18 +2172,12 @@ pub mod describe_instance_refreshes_output {
             self.instance_refreshes = input;
             self
         }
-        /// <p>A string that indicates that the response contains more items than can be returned in
-        /// a single response. To receive additional items, specify this string for the
-        /// <code>NextToken</code> value when requesting the next set of items. This value is
-        /// null when there are no more items to return.</p>
+        /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A string that indicates that the response contains more items than can be returned in
-        /// a single response. To receive additional items, specify this string for the
-        /// <code>NextToken</code> value when requesting the next set of items. This value is
-        /// null when there are no more items to return.</p>
+        /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2403,10 +2275,7 @@ pub struct DescribeAutoScalingInstancesOutput {
     /// <p>The instances.</p>
     pub auto_scaling_instances:
         std::option::Option<std::vec::Vec<crate::model::AutoScalingInstanceDetails>>,
-    /// <p>A string that indicates that the response contains more items than can be returned in
-    /// a single response. To receive additional items, specify this string for the
-    /// <code>NextToken</code> value when requesting the next set of items. This value is
-    /// null when there are no more items to return.</p>
+    /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAutoScalingInstancesOutput {
@@ -2416,10 +2285,7 @@ impl DescribeAutoScalingInstancesOutput {
     ) -> std::option::Option<&[crate::model::AutoScalingInstanceDetails]> {
         self.auto_scaling_instances.as_deref()
     }
-    /// <p>A string that indicates that the response contains more items than can be returned in
-    /// a single response. To receive additional items, specify this string for the
-    /// <code>NextToken</code> value when requesting the next set of items. This value is
-    /// null when there are no more items to return.</p>
+    /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2465,18 +2331,12 @@ pub mod describe_auto_scaling_instances_output {
             self.auto_scaling_instances = input;
             self
         }
-        /// <p>A string that indicates that the response contains more items than can be returned in
-        /// a single response. To receive additional items, specify this string for the
-        /// <code>NextToken</code> value when requesting the next set of items. This value is
-        /// null when there are no more items to return.</p>
+        /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A string that indicates that the response contains more items than can be returned in
-        /// a single response. To receive additional items, specify this string for the
-        /// <code>NextToken</code> value when requesting the next set of items. This value is
-        /// null when there are no more items to return.</p>
+        /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2503,10 +2363,7 @@ impl DescribeAutoScalingInstancesOutput {
 pub struct DescribeAutoScalingGroupsOutput {
     /// <p>The groups.</p>
     pub auto_scaling_groups: std::option::Option<std::vec::Vec<crate::model::AutoScalingGroup>>,
-    /// <p>A string that indicates that the response contains more items than can be returned in
-    /// a single response. To receive additional items, specify this string for the
-    /// <code>NextToken</code> value when requesting the next set of items. This value is
-    /// null when there are no more items to return.</p>
+    /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAutoScalingGroupsOutput {
@@ -2514,10 +2371,7 @@ impl DescribeAutoScalingGroupsOutput {
     pub fn auto_scaling_groups(&self) -> std::option::Option<&[crate::model::AutoScalingGroup]> {
         self.auto_scaling_groups.as_deref()
     }
-    /// <p>A string that indicates that the response contains more items than can be returned in
-    /// a single response. To receive additional items, specify this string for the
-    /// <code>NextToken</code> value when requesting the next set of items. This value is
-    /// null when there are no more items to return.</p>
+    /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2560,18 +2414,12 @@ pub mod describe_auto_scaling_groups_output {
             self.auto_scaling_groups = input;
             self
         }
-        /// <p>A string that indicates that the response contains more items than can be returned in
-        /// a single response. To receive additional items, specify this string for the
-        /// <code>NextToken</code> value when requesting the next set of items. This value is
-        /// null when there are no more items to return.</p>
+        /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A string that indicates that the response contains more items than can be returned in
-        /// a single response. To receive additional items, specify this string for the
-        /// <code>NextToken</code> value when requesting the next set of items. This value is
-        /// null when there are no more items to return.</p>
+        /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2660,11 +2508,9 @@ impl DescribeAdjustmentTypesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccountLimitsOutput {
-    /// <p>The maximum number of groups allowed for your account. The default is 200 groups per
-    /// Region.</p>
+    /// <p>The maximum number of groups allowed for your account. The default is 200 groups per Region.</p>
     pub max_number_of_auto_scaling_groups: std::option::Option<i32>,
-    /// <p>The maximum number of launch configurations allowed for your account. The default is
-    /// 200 launch configurations per Region.</p>
+    /// <p>The maximum number of launch configurations allowed for your account. The default is 200 launch configurations per Region.</p>
     pub max_number_of_launch_configurations: std::option::Option<i32>,
     /// <p>The current number of groups for your account.</p>
     pub number_of_auto_scaling_groups: std::option::Option<i32>,
@@ -2672,13 +2518,11 @@ pub struct DescribeAccountLimitsOutput {
     pub number_of_launch_configurations: std::option::Option<i32>,
 }
 impl DescribeAccountLimitsOutput {
-    /// <p>The maximum number of groups allowed for your account. The default is 200 groups per
-    /// Region.</p>
+    /// <p>The maximum number of groups allowed for your account. The default is 200 groups per Region.</p>
     pub fn max_number_of_auto_scaling_groups(&self) -> std::option::Option<i32> {
         self.max_number_of_auto_scaling_groups
     }
-    /// <p>The maximum number of launch configurations allowed for your account. The default is
-    /// 200 launch configurations per Region.</p>
+    /// <p>The maximum number of launch configurations allowed for your account. The default is 200 launch configurations per Region.</p>
     pub fn max_number_of_launch_configurations(&self) -> std::option::Option<i32> {
         self.max_number_of_launch_configurations
     }
@@ -2725,14 +2569,12 @@ pub mod describe_account_limits_output {
         pub(crate) number_of_launch_configurations: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The maximum number of groups allowed for your account. The default is 200 groups per
-        /// Region.</p>
+        /// <p>The maximum number of groups allowed for your account. The default is 200 groups per Region.</p>
         pub fn max_number_of_auto_scaling_groups(mut self, input: i32) -> Self {
             self.max_number_of_auto_scaling_groups = Some(input);
             self
         }
-        /// <p>The maximum number of groups allowed for your account. The default is 200 groups per
-        /// Region.</p>
+        /// <p>The maximum number of groups allowed for your account. The default is 200 groups per Region.</p>
         pub fn set_max_number_of_auto_scaling_groups(
             mut self,
             input: std::option::Option<i32>,
@@ -2740,14 +2582,12 @@ pub mod describe_account_limits_output {
             self.max_number_of_auto_scaling_groups = input;
             self
         }
-        /// <p>The maximum number of launch configurations allowed for your account. The default is
-        /// 200 launch configurations per Region.</p>
+        /// <p>The maximum number of launch configurations allowed for your account. The default is 200 launch configurations per Region.</p>
         pub fn max_number_of_launch_configurations(mut self, input: i32) -> Self {
             self.max_number_of_launch_configurations = Some(input);
             self
         }
-        /// <p>The maximum number of launch configurations allowed for your account. The default is
-        /// 200 launch configurations per Region.</p>
+        /// <p>The maximum number of launch configurations allowed for your account. The default is 200 launch configurations per Region.</p>
         pub fn set_max_number_of_launch_configurations(
             mut self,
             input: std::option::Option<i32>,
@@ -3220,14 +3060,12 @@ impl CancelInstanceRefreshOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchPutScheduledUpdateGroupActionOutput {
-    /// <p>The names of the scheduled actions that could not be created or updated, including an
-    /// error message.</p>
+    /// <p>The names of the scheduled actions that could not be created or updated, including an error message.</p>
     pub failed_scheduled_update_group_actions:
         std::option::Option<std::vec::Vec<crate::model::FailedScheduledUpdateGroupActionRequest>>,
 }
 impl BatchPutScheduledUpdateGroupActionOutput {
-    /// <p>The names of the scheduled actions that could not be created or updated, including an
-    /// error message.</p>
+    /// <p>The names of the scheduled actions that could not be created or updated, including an error message.</p>
     pub fn failed_scheduled_update_group_actions(
         &self,
     ) -> std::option::Option<&[crate::model::FailedScheduledUpdateGroupActionRequest]> {
@@ -3259,8 +3097,7 @@ pub mod batch_put_scheduled_update_group_action_output {
         ///
         /// To override the contents of this collection use [`set_failed_scheduled_update_group_actions`](Self::set_failed_scheduled_update_group_actions).
         ///
-        /// <p>The names of the scheduled actions that could not be created or updated, including an
-        /// error message.</p>
+        /// <p>The names of the scheduled actions that could not be created or updated, including an error message.</p>
         pub fn failed_scheduled_update_group_actions(
             mut self,
             input: crate::model::FailedScheduledUpdateGroupActionRequest,
@@ -3272,8 +3109,7 @@ pub mod batch_put_scheduled_update_group_action_output {
             self.failed_scheduled_update_group_actions = Some(v);
             self
         }
-        /// <p>The names of the scheduled actions that could not be created or updated, including an
-        /// error message.</p>
+        /// <p>The names of the scheduled actions that could not be created or updated, including an error message.</p>
         pub fn set_failed_scheduled_update_group_actions(
             mut self,
             input: std::option::Option<
@@ -3302,14 +3138,12 @@ impl BatchPutScheduledUpdateGroupActionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDeleteScheduledActionOutput {
-    /// <p>The names of the scheduled actions that could not be deleted, including an error
-    /// message.</p>
+    /// <p>The names of the scheduled actions that could not be deleted, including an error message.</p>
     pub failed_scheduled_actions:
         std::option::Option<std::vec::Vec<crate::model::FailedScheduledUpdateGroupActionRequest>>,
 }
 impl BatchDeleteScheduledActionOutput {
-    /// <p>The names of the scheduled actions that could not be deleted, including an error
-    /// message.</p>
+    /// <p>The names of the scheduled actions that could not be deleted, including an error message.</p>
     pub fn failed_scheduled_actions(
         &self,
     ) -> std::option::Option<&[crate::model::FailedScheduledUpdateGroupActionRequest]> {
@@ -3338,8 +3172,7 @@ pub mod batch_delete_scheduled_action_output {
         ///
         /// To override the contents of this collection use [`set_failed_scheduled_actions`](Self::set_failed_scheduled_actions).
         ///
-        /// <p>The names of the scheduled actions that could not be deleted, including an error
-        /// message.</p>
+        /// <p>The names of the scheduled actions that could not be deleted, including an error message.</p>
         pub fn failed_scheduled_actions(
             mut self,
             input: crate::model::FailedScheduledUpdateGroupActionRequest,
@@ -3349,8 +3182,7 @@ pub mod batch_delete_scheduled_action_output {
             self.failed_scheduled_actions = Some(v);
             self
         }
-        /// <p>The names of the scheduled actions that could not be deleted, including an error
-        /// message.</p>
+        /// <p>The names of the scheduled actions that could not be deleted, including an error message.</p>
         pub fn set_failed_scheduled_actions(
             mut self,
             input: std::option::Option<

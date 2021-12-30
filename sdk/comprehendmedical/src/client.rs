@@ -257,8 +257,7 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `DescribeEntitiesDetectionV2Job`.
     ///
-    /// <p>Gets the properties associated with a medical entities detection job. Use this operation
-    /// to get the status of a detection job.</p>
+    /// <p>Gets the properties associated with a medical entities detection job. Use this operation to get the status of a detection job.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEntitiesDetectionV2Job<
         C = aws_smithy_client::erase::DynConnector,
@@ -315,16 +314,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier that Amazon Comprehend Medical generated for the job. The
-        /// <code>StartEntitiesDetectionV2Job</code> operation returns this identifier in its
-        /// response.</p>
+        /// <p>The identifier that Amazon Comprehend Medical generated for the job. The <code>StartEntitiesDetectionV2Job</code> operation returns this identifier in its response.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.job_id(input.into());
             self
         }
-        /// <p>The identifier that Amazon Comprehend Medical generated for the job. The
-        /// <code>StartEntitiesDetectionV2Job</code> operation returns this identifier in its
-        /// response.</p>
+        /// <p>The identifier that Amazon Comprehend Medical generated for the job. The <code>StartEntitiesDetectionV2Job</code> operation returns this identifier in its response.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_job_id(input);
             self
@@ -332,8 +327,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeICD10CMInferenceJob`.
     ///
-    /// <p>Gets the properties associated with an InferICD10CM job. Use this operation to get the
-    /// status of an inference job.</p>
+    /// <p>Gets the properties associated with an InferICD10CM job. Use this operation to get the status of an inference job.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeICD10CMInferenceJob<
         C = aws_smithy_client::erase::DynConnector,
@@ -390,14 +384,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier that Amazon Comprehend Medical generated for the job. <code>The
-        /// StartICD10CMInferenceJob</code> operation returns this identifier in its response.</p>
+        /// <p>The identifier that Amazon Comprehend Medical generated for the job. <code>The StartICD10CMInferenceJob</code> operation returns this identifier in its response.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.job_id(input.into());
             self
         }
-        /// <p>The identifier that Amazon Comprehend Medical generated for the job. <code>The
-        /// StartICD10CMInferenceJob</code> operation returns this identifier in its response.</p>
+        /// <p>The identifier that Amazon Comprehend Medical generated for the job. <code>The StartICD10CMInferenceJob</code> operation returns this identifier in its response.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_job_id(input);
             self
@@ -405,8 +397,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribePHIDetectionJob`.
     ///
-    /// <p>Gets the properties associated with a protected health information (PHI) detection job.
-    /// Use this operation to get the status of a detection job.</p>
+    /// <p>Gets the properties associated with a protected health information (PHI) detection job. Use this operation to get the status of a detection job.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribePHIDetectionJob<
         C = aws_smithy_client::erase::DynConnector,
@@ -463,14 +454,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier that Amazon Comprehend Medical generated for the job. The <code>StartPHIDetectionJob</code>
-        /// operation returns this identifier in its response.</p>
+        /// <p>The identifier that Amazon Comprehend Medical generated for the job. The <code>StartPHIDetectionJob</code> operation returns this identifier in its response.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.job_id(input.into());
             self
         }
-        /// <p>The identifier that Amazon Comprehend Medical generated for the job. The <code>StartPHIDetectionJob</code>
-        /// operation returns this identifier in its response.</p>
+        /// <p>The identifier that Amazon Comprehend Medical generated for the job. The <code>StartPHIDetectionJob</code> operation returns this identifier in its response.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_job_id(input);
             self
@@ -478,8 +467,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeRxNormInferenceJob`.
     ///
-    /// <p>Gets the properties associated with an InferRxNorm job. Use this operation to get the
-    /// status of an inference job.</p>
+    /// <p>Gets the properties associated with an InferRxNorm job. Use this operation to get the status of an inference job.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRxNormInferenceJob<
         C = aws_smithy_client::erase::DynConnector,
@@ -536,14 +524,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier that Amazon Comprehend Medical generated for the job. The
-        /// StartRxNormInferenceJob operation returns this identifier in its response.</p>
+        /// <p>The identifier that Amazon Comprehend Medical generated for the job. The StartRxNormInferenceJob operation returns this identifier in its response.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.job_id(input.into());
             self
         }
-        /// <p>The identifier that Amazon Comprehend Medical generated for the job. The
-        /// StartRxNormInferenceJob operation returns this identifier in its response.</p>
+        /// <p>The identifier that Amazon Comprehend Medical generated for the job. The StartRxNormInferenceJob operation returns this identifier in its response.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_job_id(input);
             self
@@ -551,10 +537,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DetectEntities`.
     ///
-    /// <p>The <code>DetectEntities</code> operation is deprecated. You should use the <a>DetectEntitiesV2</a> operation instead.</p>
-    /// <p> Inspects the clinical text for a variety of medical entities and returns specific
-    /// information about them such as entity category, location, and confidence score on that
-    /// information .</p>
+    /// <p>The <code>DetectEntities</code> operation is deprecated. You should use the <code>DetectEntitiesV2</code> operation instead.</p>
+    /// <p> Inspects the clinical text for a variety of medical entities and returns specific information about them such as entity category, location, and confidence score on that information .</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetectEntities<
         C = aws_smithy_client::erase::DynConnector,
@@ -611,14 +595,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> A UTF-8 text string containing the clinical content being examined for entities. Each
-        /// string must contain fewer than 20,000 bytes of characters.</p>
+        /// <p> A UTF-8 text string containing the clinical content being examined for entities. Each string must contain fewer than 20,000 bytes of characters.</p>
         pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.text(input.into());
             self
         }
-        /// <p> A UTF-8 text string containing the clinical content being examined for entities. Each
-        /// string must contain fewer than 20,000 bytes of characters.</p>
+        /// <p> A UTF-8 text string containing the clinical content being examined for entities. Each string must contain fewer than 20,000 bytes of characters.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_text(input);
             self
@@ -626,16 +608,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DetectEntitiesV2`.
     ///
-    /// <p>Inspects the clinical text for a variety of medical entities and returns specific
-    /// information about them such as entity category, location, and confidence score on that
-    /// information. Amazon Comprehend Medical only detects medical entities in English language
-    /// texts.</p>
-    /// <p>The <code>DetectEntitiesV2</code> operation replaces the <a>DetectEntities</a>
-    /// operation. This new action uses a different model for determining the entities in your medical
-    /// text and changes the way that some entities are returned in the output. You should use the
-    /// <code>DetectEntitiesV2</code> operation in all new applications.</p>
-    /// <p>The <code>DetectEntitiesV2</code> operation returns the <code>Acuity</code> and
-    /// <code>Direction</code> entities as attributes instead of types. </p>
+    /// <p>Inspects the clinical text for a variety of medical entities and returns specific information about them such as entity category, location, and confidence score on that information. Amazon Comprehend Medical only detects medical entities in English language texts.</p>
+    /// <p>The <code>DetectEntitiesV2</code> operation replaces the <code>DetectEntities</code> operation. This new action uses a different model for determining the entities in your medical text and changes the way that some entities are returned in the output. You should use the <code>DetectEntitiesV2</code> operation in all new applications.</p>
+    /// <p>The <code>DetectEntitiesV2</code> operation returns the <code>Acuity</code> and <code>Direction</code> entities as attributes instead of types. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetectEntitiesV2<
         C = aws_smithy_client::erase::DynConnector,
@@ -692,14 +667,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A UTF-8 string containing the clinical content being examined for entities. Each string
-        /// must contain fewer than 20,000 bytes of characters.</p>
+        /// <p>A UTF-8 string containing the clinical content being examined for entities. Each string must contain fewer than 20,000 bytes of characters.</p>
         pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.text(input.into());
             self
         }
-        /// <p>A UTF-8 string containing the clinical content being examined for entities. Each string
-        /// must contain fewer than 20,000 bytes of characters.</p>
+        /// <p>A UTF-8 string containing the clinical content being examined for entities. Each string must contain fewer than 20,000 bytes of characters.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_text(input);
             self
@@ -707,9 +680,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DetectPHI`.
     ///
-    /// <p> Inspects the clinical text for protected health information (PHI) entities and returns
-    /// the entity category, location, and confidence score for each entity. Amazon Comprehend Medical
-    /// only detects entities in English language texts.</p>
+    /// <p> Inspects the clinical text for protected health information (PHI) entities and returns the entity category, location, and confidence score for each entity. Amazon Comprehend Medical only detects entities in English language texts.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetectPHI<
         C = aws_smithy_client::erase::DynConnector,
@@ -766,14 +737,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> A UTF-8 text string containing the clinical content being examined for PHI entities. Each
-        /// string must contain fewer than 20,000 bytes of characters.</p>
+        /// <p> A UTF-8 text string containing the clinical content being examined for PHI entities. Each string must contain fewer than 20,000 bytes of characters.</p>
         pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.text(input.into());
             self
         }
-        /// <p> A UTF-8 text string containing the clinical content being examined for PHI entities. Each
-        /// string must contain fewer than 20,000 bytes of characters.</p>
+        /// <p> A UTF-8 text string containing the clinical content being examined for PHI entities. Each string must contain fewer than 20,000 bytes of characters.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_text(input);
             self
@@ -781,10 +750,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `InferICD10CM`.
     ///
-    /// <p>InferICD10CM detects medical conditions as entities listed in a patient record and links
-    /// those entities to normalized concept identifiers in the ICD-10-CM knowledge base from the
-    /// Centers for Disease Control. Amazon Comprehend Medical only detects medical entities in
-    /// English language texts.  </p>
+    /// <p>InferICD10CM detects medical conditions as entities listed in a patient record and links those entities to normalized concept identifiers in the ICD-10-CM knowledge base from the Centers for Disease Control. Amazon Comprehend Medical only detects medical entities in English language texts. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct InferICD10CM<
         C = aws_smithy_client::erase::DynConnector,
@@ -841,14 +807,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The input text used for analysis. The input for InferICD10CM is a string from 1 to 10000
-        /// characters.</p>
+        /// <p>The input text used for analysis. The input for InferICD10CM is a string from 1 to 10000 characters.</p>
         pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.text(input.into());
             self
         }
-        /// <p>The input text used for analysis. The input for InferICD10CM is a string from 1 to 10000
-        /// characters.</p>
+        /// <p>The input text used for analysis. The input for InferICD10CM is a string from 1 to 10000 characters.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_text(input);
             self
@@ -856,9 +820,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `InferRxNorm`.
     ///
-    /// <p>InferRxNorm detects medications as entities listed in a patient record and links to the
-    /// normalized concept identifiers in the RxNorm database from the National Library of Medicine.
-    /// Amazon Comprehend Medical only detects medical entities in English language texts.  </p>
+    /// <p>InferRxNorm detects medications as entities listed in a patient record and links to the normalized concept identifiers in the RxNorm database from the National Library of Medicine. Amazon Comprehend Medical only detects medical entities in English language texts. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct InferRxNorm<
         C = aws_smithy_client::erase::DynConnector,
@@ -915,14 +877,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The input text used for analysis. The input for InferRxNorm is a string from 1 to 10000
-        /// characters.</p>
+        /// <p>The input text used for analysis. The input for InferRxNorm is a string from 1 to 10000 characters.</p>
         pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.text(input.into());
             self
         }
-        /// <p>The input text used for analysis. The input for InferRxNorm is a string from 1 to 10000
-        /// characters.</p>
+        /// <p>The input text used for analysis. The input for InferRxNorm is a string from 1 to 10000 characters.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_text(input);
             self
@@ -987,14 +947,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or
-        /// the date and time that they were submitted. You can only set one filter at a time.</p>
+        /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
         pub fn filter(mut self, input: crate::model::ComprehendMedicalAsyncJobFilter) -> Self {
             self.inner = self.inner.filter(input);
             self
         }
-        /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or
-        /// the date and time that they were submitted. You can only set one filter at a time.</p>
+        /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::ComprehendMedicalAsyncJobFilter>,
@@ -1082,14 +1040,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or
-        /// the date and time that they were submitted. You can only set one filter at a time.</p>
+        /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
         pub fn filter(mut self, input: crate::model::ComprehendMedicalAsyncJobFilter) -> Self {
             self.inner = self.inner.filter(input);
             self
         }
-        /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or
-        /// the date and time that they were submitted. You can only set one filter at a time.</p>
+        /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::ComprehendMedicalAsyncJobFilter>,
@@ -1120,8 +1076,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListPHIDetectionJobs`.
     ///
-    /// <p>Gets a list of protected health information (PHI) detection jobs that you have
-    /// submitted.</p>
+    /// <p>Gets a list of protected health information (PHI) detection jobs that you have submitted.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPHIDetectionJobs<
         C = aws_smithy_client::erase::DynConnector,
@@ -1178,14 +1133,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or
-        /// the date and time that they were submitted. You can only set one filter at a time.</p>
+        /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
         pub fn filter(mut self, input: crate::model::ComprehendMedicalAsyncJobFilter) -> Self {
             self.inner = self.inner.filter(input);
             self
         }
-        /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or
-        /// the date and time that they were submitted. You can only set one filter at a time.</p>
+        /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::ComprehendMedicalAsyncJobFilter>,
@@ -1273,14 +1226,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or
-        /// the date and time that they were submitted. You can only set one filter at a time.</p>
+        /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
         pub fn filter(mut self, input: crate::model::ComprehendMedicalAsyncJobFilter) -> Self {
             self.inner = self.inner.filter(input);
             self
         }
-        /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or
-        /// the date and time that they were submitted. You can only set one filter at a time.</p>
+        /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::ComprehendMedicalAsyncJobFilter>,
@@ -1311,8 +1262,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartEntitiesDetectionV2Job`.
     ///
-    /// <p>Starts an asynchronous medical entity detection job for a collection of documents. Use the
-    /// <code>DescribeEntitiesDetectionV2Job</code> operation to track the status of a job.</p>
+    /// <p>Starts an asynchronous medical entity detection job for a collection of documents. Use the <code>DescribeEntitiesDetectionV2Job</code> operation to track the status of a job.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartEntitiesDetectionV2Job<
         C = aws_smithy_client::erase::DynConnector,
@@ -1395,14 +1345,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_output_data_config(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-        /// grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
         pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.data_access_role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-        /// grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1420,14 +1368,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_job_name(input);
             self
         }
-        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical
-        /// generates one.</p>
+        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical generates one.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical
-        /// generates one.</p>
+        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical generates one.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1435,14 +1381,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_request_token(input);
             self
         }
-        /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a
-        /// key, the files are written in plain text.</p>
+        /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a key, the files are written in plain text.</p>
         pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_key(input.into());
             self
         }
-        /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a
-        /// key, the files are written in plain text.</p>
+        /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a key, the files are written in plain text.</p>
         pub fn set_kms_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_kms_key(input);
             self
@@ -1463,9 +1407,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartICD10CMInferenceJob`.
     ///
-    /// <p>Starts an asynchronous job to detect medical conditions and link them to the ICD-10-CM
-    /// ontology. Use the <code>DescribeICD10CMInferenceJob</code> operation to track the status of a
-    /// job.</p>
+    /// <p>Starts an asynchronous job to detect medical conditions and link them to the ICD-10-CM ontology. Use the <code>DescribeICD10CMInferenceJob</code> operation to track the status of a job.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartICD10CMInferenceJob<
         C = aws_smithy_client::erase::DynConnector,
@@ -1548,14 +1490,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_output_data_config(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-        /// grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
         pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.data_access_role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-        /// grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1573,14 +1513,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_job_name(input);
             self
         }
-        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical
-        /// generates one.</p>
+        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical generates one.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical
-        /// generates one.</p>
+        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical generates one.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1588,14 +1526,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_request_token(input);
             self
         }
-        /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a
-        /// key, the files are written in plain text.</p>
+        /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a key, the files are written in plain text.</p>
         pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_key(input.into());
             self
         }
-        /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a
-        /// key, the files are written in plain text.</p>
+        /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a key, the files are written in plain text.</p>
         pub fn set_kms_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_kms_key(input);
             self
@@ -1616,8 +1552,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartPHIDetectionJob`.
     ///
-    /// <p>Starts an asynchronous job to detect protected health information (PHI). Use the
-    /// <code>DescribePHIDetectionJob</code> operation to track the status of a job.</p>
+    /// <p>Starts an asynchronous job to detect protected health information (PHI). Use the <code>DescribePHIDetectionJob</code> operation to track the status of a job.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartPHIDetectionJob<
         C = aws_smithy_client::erase::DynConnector,
@@ -1700,14 +1635,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_output_data_config(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-        /// grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
         pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.data_access_role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-        /// grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1725,14 +1658,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_job_name(input);
             self
         }
-        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical
-        /// generates one.</p>
+        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical generates one.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical
-        /// generates one.</p>
+        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical generates one.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1740,14 +1671,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_request_token(input);
             self
         }
-        /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a
-        /// key, the files are written in plain text.</p>
+        /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a key, the files are written in plain text.</p>
         pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_key(input.into());
             self
         }
-        /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a
-        /// key, the files are written in plain text.</p>
+        /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a key, the files are written in plain text.</p>
         pub fn set_kms_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_kms_key(input);
             self
@@ -1768,9 +1697,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartRxNormInferenceJob`.
     ///
-    /// <p>Starts an asynchronous job to detect medication entities and link them to the RxNorm
-    /// ontology. Use the <code>DescribeRxNormInferenceJob</code> operation to track the status of a
-    /// job.</p>
+    /// <p>Starts an asynchronous job to detect medication entities and link them to the RxNorm ontology. Use the <code>DescribeRxNormInferenceJob</code> operation to track the status of a job.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartRxNormInferenceJob<
         C = aws_smithy_client::erase::DynConnector,
@@ -1853,14 +1780,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_output_data_config(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-        /// grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
         pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.data_access_role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-        /// grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1878,14 +1803,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_job_name(input);
             self
         }
-        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical
-        /// generates one.</p>
+        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical generates one.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical
-        /// generates one.</p>
+        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical generates one.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1893,14 +1816,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_request_token(input);
             self
         }
-        /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a
-        /// key, the files are written in plain text.</p>
+        /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a key, the files are written in plain text.</p>
         pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_key(input.into());
             self
         }
-        /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a
-        /// key, the files are written in plain text.</p>
+        /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a key, the files are written in plain text.</p>
         pub fn set_kms_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_kms_key(input);
             self

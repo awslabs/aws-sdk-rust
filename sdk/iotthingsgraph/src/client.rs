@@ -419,18 +419,14 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the device to be associated with the thing.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
         pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.entity_id(input.into());
             self
         }
         /// <p>The ID of the device to be associated with the thing.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
         pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_entity_id(input);
             self
@@ -448,9 +444,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateFlowTemplate`.
     ///
-    /// <p>Creates a workflow template. Workflows can be created only in the user's namespace. (The public namespace contains only
-    /// entities.) The workflow can contain only entities in the specified namespace. The workflow is validated against the entities in the
-    /// latest version of the user's namespace unless another namespace version is specified in the request.</p>
+    /// <p>Creates a workflow template. Workflows can be created only in the user's namespace. (The public namespace contains only entities.) The workflow can contain only entities in the specified namespace. The workflow is validated against the entities in the latest version of the user's namespace unless another namespace version is specified in the request.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFlowTemplate<
         C = aws_smithy_client::erase::DynConnector,
@@ -536,13 +530,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateSystemInstance`.
     ///
     /// <p>Creates a system instance. </p>
-    /// <p>This action validates the system instance, prepares the deployment-related resources. For Greengrass deployments, it updates the Greengrass group that is
-    /// specified by the <code>greengrassGroupName</code> parameter. It also adds a file to the S3 bucket specified by the <code>s3BucketName</code> parameter. You need to
-    /// call <code>DeploySystemInstance</code> after running this action.</p>
-    /// <p>For Greengrass deployments, since this action modifies and adds resources to a Greengrass group and an S3 bucket on the caller's behalf, the calling identity must have write permissions
-    /// to both the specified Greengrass group and S3 bucket. Otherwise, the call will fail with an authorization error.</p>
-    /// <p>For cloud deployments, this action requires a <code>flowActionsRoleArn</code> value. This is an IAM role
-    /// that has permissions to access AWS services, such as AWS Lambda and AWS IoT, that the flow uses when it executes.</p>
+    /// <p>This action validates the system instance, prepares the deployment-related resources. For Greengrass deployments, it updates the Greengrass group that is specified by the <code>greengrassGroupName</code> parameter. It also adds a file to the S3 bucket specified by the <code>s3BucketName</code> parameter. You need to call <code>DeploySystemInstance</code> after running this action.</p>
+    /// <p>For Greengrass deployments, since this action modifies and adds resources to a Greengrass group and an S3 bucket on the caller's behalf, the calling identity must have write permissions to both the specified Greengrass group and S3 bucket. Otherwise, the call will fail with an authorization error.</p>
+    /// <p>For cloud deployments, this action requires a <code>flowActionsRoleArn</code> value. This is an IAM role that has permissions to access AWS services, such as AWS Lambda and AWS IoT, that the flow uses when it executes.</p>
     /// <p>If the definition document doesn't specify a version of the user's namespace, the latest version will be used by default.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSystemInstance<
@@ -643,14 +633,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_target(input);
             self
         }
-        /// <p>The name of the Greengrass group where the system instance will be deployed. This value is required if
-        /// the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
+        /// <p>The name of the Greengrass group where the system instance will be deployed. This value is required if the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
         pub fn greengrass_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.greengrass_group_name(input.into());
             self
         }
-        /// <p>The name of the Greengrass group where the system instance will be deployed. This value is required if
-        /// the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
+        /// <p>The name of the Greengrass group where the system instance will be deployed. This value is required if the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
         pub fn set_greengrass_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -658,14 +646,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_greengrass_group_name(input);
             self
         }
-        /// <p>The name of the Amazon Simple Storage Service bucket that will be used to store and deploy the system instance's resource file. This value is required if
-        /// the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
+        /// <p>The name of the Amazon Simple Storage Service bucket that will be used to store and deploy the system instance's resource file. This value is required if the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
         pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.s3_bucket_name(input.into());
             self
         }
-        /// <p>The name of the Amazon Simple Storage Service bucket that will be used to store and deploy the system instance's resource file. This value is required if
-        /// the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
+        /// <p>The name of the Amazon Simple Storage Service bucket that will be used to store and deploy the system instance's resource file. This value is required if the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
         pub fn set_s3_bucket_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -686,16 +672,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_metrics_configuration(input);
             self
         }
-        /// <p>The ARN of the IAM role that AWS IoT Things Graph will assume when it executes the flow. This role must have
-        /// read and write access to AWS Lambda and AWS IoT and any other AWS services that the flow uses when it executes.  This
-        /// value is required if the value of the <code>target</code> parameter is <code>CLOUD</code>.</p>
+        /// <p>The ARN of the IAM role that AWS IoT Things Graph will assume when it executes the flow. This role must have read and write access to AWS Lambda and AWS IoT and any other AWS services that the flow uses when it executes. This value is required if the value of the <code>target</code> parameter is <code>CLOUD</code>.</p>
         pub fn flow_actions_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.flow_actions_role_arn(input.into());
             self
         }
-        /// <p>The ARN of the IAM role that AWS IoT Things Graph will assume when it executes the flow. This role must have
-        /// read and write access to AWS Lambda and AWS IoT and any other AWS services that the flow uses when it executes.  This
-        /// value is required if the value of the <code>target</code> parameter is <code>CLOUD</code>.</p>
+        /// <p>The ARN of the IAM role that AWS IoT Things Graph will assume when it executes the flow. This role must have read and write access to AWS Lambda and AWS IoT and any other AWS services that the flow uses when it executes. This value is required if the value of the <code>target</code> parameter is <code>CLOUD</code>.</p>
         pub fn set_flow_actions_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -706,8 +688,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateSystemTemplate`.
     ///
-    /// <p>Creates a system. The system is validated against the entities in the
-    /// latest version of the user's namespace unless another namespace version is specified in the request.</p>
+    /// <p>Creates a system. The system is validated against the entities in the latest version of the user's namespace unless another namespace version is specified in the request.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSystemTemplate<
         C = aws_smithy_client::erase::DynConnector,
@@ -792,8 +773,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteFlowTemplate`.
     ///
-    /// <p>Deletes a workflow. Any new system or deployment that contains this workflow will fail to update or deploy.
-    /// Existing deployments that contain the workflow will continue to run (since they use a snapshot of the workflow taken at the time of deployment).</p>
+    /// <p>Deletes a workflow. Any new system or deployment that contains this workflow will fail to update or deploy. Existing deployments that contain the workflow will continue to run (since they use a snapshot of the workflow taken at the time of deployment).</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFlowTemplate<
         C = aws_smithy_client::erase::DynConnector,
@@ -852,18 +832,14 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the workflow to be deleted.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the workflow to be deleted.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
@@ -931,8 +907,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteSystemInstance`.
     ///
-    /// <p>Deletes a system instance.
-    /// Only system instances that have never been deployed, or that have been undeployed can be deleted.</p>
+    /// <p>Deletes a system instance. Only system instances that have never been deployed, or that have been undeployed can be deleted.</p>
     /// <p>Users can create a new system instance that has the same ID as a deleted system instance.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSystemInstance<
@@ -1003,8 +978,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteSystemTemplate`.
     ///
-    /// <p>Deletes a system. New deployments can't contain the system after its deletion.
-    /// Existing deployments that contain the system will continue to work because they use a snapshot of the system that is taken when it is deployed.</p>
+    /// <p>Deletes a system. New deployments can't contain the system after its deletion. Existing deployments that contain the system will continue to work because they use a snapshot of the system that is taken when it is deployed.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSystemTemplate<
         C = aws_smithy_client::erase::DynConnector,
@@ -1063,18 +1037,14 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the system to be deleted.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the system to be deleted.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
@@ -1082,17 +1052,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeploySystemInstance`.
     ///
-    /// <p>
-    /// <b>Greengrass and Cloud Deployments</b>
-    /// </p>
+    /// <p> <b>Greengrass and Cloud Deployments</b> </p>
     /// <p>Deploys the system instance to the target specified in <code>CreateSystemInstance</code>. </p>
-    /// <p>
-    /// <b>Greengrass Deployments</b>
-    /// </p>
-    /// <p>If the system or any workflows and entities have been updated before this action is called, then the deployment will create a new Amazon Simple Storage Service
-    /// resource file and then deploy it.</p>
-    /// <p>Since this action creates a Greengrass deployment on the caller's behalf, the calling identity must have write permissions
-    /// to the specified Greengrass group. Otherwise, the call will fail with an authorization error.</p>
+    /// <p> <b>Greengrass Deployments</b> </p>
+    /// <p>If the system or any workflows and entities have been updated before this action is called, then the deployment will create a new Amazon Simple Storage Service resource file and then deploy it.</p>
+    /// <p>Since this action creates a Greengrass deployment on the caller's behalf, the calling identity must have write permissions to the specified Greengrass group. Otherwise, the call will fail with an authorization error.</p>
     /// <p>For information about the artifacts that get added to your Greengrass core device when you use this API, see <a href="https://docs.aws.amazon.com/thingsgraph/latest/ug/iot-tg-greengrass.html">AWS IoT Things Graph and AWS IoT Greengrass</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeploySystemInstance<
@@ -1152,18 +1116,14 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the system instance. This value is returned by the <code>CreateSystemInstance</code> action.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:deployment:DEPLOYMENTNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:deployment:DEPLOYMENTNAME</code> </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the system instance. This value is returned by the <code>CreateSystemInstance</code> action.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:deployment:DEPLOYMENTNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:deployment:DEPLOYMENTNAME</code> </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
@@ -1230,18 +1190,14 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the workflow to be deleted.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the workflow to be deleted.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
@@ -1308,18 +1264,14 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the system to delete.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the system to delete.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
@@ -1400,8 +1352,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DissociateEntityFromThing`.
     ///
-    /// <p>Dissociates a device entity from a concrete thing. The action takes only the type of the entity that you need to dissociate because only
-    /// one entity of a particular type can be associated with a thing.</p>
+    /// <p>Dissociates a device entity from a concrete thing. The action takes only the type of the entity that you need to dissociate because only one entity of a particular type can be associated with a thing.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DissociateEntityFromThing<
         C = aws_smithy_client::erase::DynConnector,
@@ -1484,36 +1435,17 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetEntities`.
     ///
-    /// <p>Gets definitions of the specified entities. Uses the latest version of the user's namespace by default. This API returns the
-    /// following TDM entities.</p>
+    /// <p>Gets definitions of the specified entities. Uses the latest version of the user's namespace by default. This API returns the following TDM entities.</p>
     /// <ul>
-    /// <li>
-    /// <p>Properties</p>
-    /// </li>
-    /// <li>
-    /// <p>States</p>
-    /// </li>
-    /// <li>
-    /// <p>Events</p>
-    /// </li>
-    /// <li>
-    /// <p>Actions</p>
-    /// </li>
-    /// <li>
-    /// <p>Capabilities</p>
-    /// </li>
-    /// <li>
-    /// <p>Mappings</p>
-    /// </li>
-    /// <li>
-    /// <p>Devices</p>
-    /// </li>
-    /// <li>
-    /// <p>Device Models</p>
-    /// </li>
-    /// <li>
-    /// <p>Services</p>
-    /// </li>
+    /// <li> <p>Properties</p> </li>
+    /// <li> <p>States</p> </li>
+    /// <li> <p>Events</p> </li>
+    /// <li> <p>Actions</p> </li>
+    /// <li> <p>Capabilities</p> </li>
+    /// <li> <p>Mappings</p> </li>
+    /// <li> <p>Devices</p> </li>
+    /// <li> <p>Device Models</p> </li>
+    /// <li> <p>Services</p> </li>
     /// </ul>
     /// <p>This action doesn't return definitions for systems, flows, and deployments.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -1578,18 +1510,14 @@ pub mod fluent_builders {
         ///
         /// <p>An array of entity IDs.</p>
         /// <p>The IDs should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
         pub fn ids(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.ids(input.into());
             self
         }
         /// <p>An array of entity IDs.</p>
         /// <p>The IDs should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
         pub fn set_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1669,18 +1597,14 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the workflow.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the workflow.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
@@ -1698,8 +1622,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetFlowTemplateRevisions`.
     ///
-    /// <p>Gets revisions of the specified workflow. Only the last 100 revisions are stored. If the workflow has been deprecated,
-    /// this action will return revisions that occurred before the deprecation. This action won't work for workflows that have been deleted.</p>
+    /// <p>Gets revisions of the specified workflow. Only the last 100 revisions are stored. If the workflow has been deprecated, this action will return revisions that occurred before the deprecation. This action won't work for workflows that have been deleted.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFlowTemplateRevisions<
         C = aws_smithy_client::erase::DynConnector,
@@ -1758,18 +1681,14 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the workflow.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the workflow.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
@@ -1916,18 +1835,14 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the system deployment instance. This value is returned by <code>CreateSystemInstance</code>.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:deployment:DEPLOYMENTNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:deployment:DEPLOYMENTNAME</code> </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the system deployment instance. This value is returned by <code>CreateSystemInstance</code>.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:deployment:DEPLOYMENTNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:deployment:DEPLOYMENTNAME</code> </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
@@ -1994,18 +1909,14 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the system to get. This ID must be in the user's namespace.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the system to get. This ID must be in the user's namespace.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
@@ -2023,8 +1934,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetSystemTemplateRevisions`.
     ///
-    /// <p>Gets revisions made to the specified system template. Only the previous 100 revisions are stored. If the system has been deprecated, this action will return
-    /// the revisions that occurred before its deprecation. This action won't work with systems that have been deleted.</p>
+    /// <p>Gets revisions made to the specified system template. Only the previous 100 revisions are stored. If the system has been deprecated, this action will return the revisions that occurred before its deprecation. This action won't work with systems that have been deleted.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSystemTemplateRevisions<
         C = aws_smithy_client::erase::DynConnector,
@@ -2083,18 +1993,14 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the system template.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the system template.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
@@ -2453,19 +2359,13 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Optional filter to apply to the search. Valid filters are <code>NAME</code>
-        /// <code>NAMESPACE</code>, <code>SEMANTIC_TYPE_PATH</code> and <code>REFERENCED_ENTITY_ID</code>.
-        /// <code>REFERENCED_ENTITY_ID</code> filters on entities that are used by the entity in the result set. For example,
-        /// you can filter on the ID of a property that is used in a state.</p>
+        /// <p>Optional filter to apply to the search. Valid filters are <code>NAME</code> <code>NAMESPACE</code>, <code>SEMANTIC_TYPE_PATH</code> and <code>REFERENCED_ENTITY_ID</code>. <code>REFERENCED_ENTITY_ID</code> filters on entities that are used by the entity in the result set. For example, you can filter on the ID of a property that is used in a state.</p>
         /// <p>Multiple filters function as OR criteria in the query. Multiple values passed inside the filter function as AND criteria.</p>
         pub fn filters(mut self, input: crate::model::EntityFilter) -> Self {
             self.inner = self.inner.filters(input);
             self
         }
-        /// <p>Optional filter to apply to the search. Valid filters are <code>NAME</code>
-        /// <code>NAMESPACE</code>, <code>SEMANTIC_TYPE_PATH</code> and <code>REFERENCED_ENTITY_ID</code>.
-        /// <code>REFERENCED_ENTITY_ID</code> filters on entities that are used by the entity in the result set. For example,
-        /// you can filter on the ID of a property that is used in a state.</p>
+        /// <p>Optional filter to apply to the search. Valid filters are <code>NAME</code> <code>NAMESPACE</code>, <code>SEMANTIC_TYPE_PATH</code> and <code>REFERENCED_ENTITY_ID</code>. <code>REFERENCED_ENTITY_ID</code> filters on entities that are used by the entity in the result set. For example, you can filter on the ID of a property that is used in a state.</p>
         /// <p>Multiple filters function as OR criteria in the query. Multiple values passed inside the filter function as AND criteria.</p>
         pub fn set_filters(
             mut self,
@@ -2797,15 +2697,13 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Optional filter to apply to the search. Valid filters are <code>SYSTEM_TEMPLATE_ID</code>, <code>STATUS</code>, and
-        /// <code>GREENGRASS_GROUP_NAME</code>.</p>
+        /// <p>Optional filter to apply to the search. Valid filters are <code>SYSTEM_TEMPLATE_ID</code>, <code>STATUS</code>, and <code>GREENGRASS_GROUP_NAME</code>.</p>
         /// <p>Multiple filters function as OR criteria in the query. Multiple values passed inside the filter function as AND criteria.</p>
         pub fn filters(mut self, input: crate::model::SystemInstanceFilter) -> Self {
             self.inner = self.inner.filters(input);
             self
         }
-        /// <p>Optional filter to apply to the search. Valid filters are <code>SYSTEM_TEMPLATE_ID</code>, <code>STATUS</code>, and
-        /// <code>GREENGRASS_GROUP_NAME</code>.</p>
+        /// <p>Optional filter to apply to the search. Valid filters are <code>SYSTEM_TEMPLATE_ID</code>, <code>STATUS</code>, and <code>GREENGRASS_GROUP_NAME</code>.</p>
         /// <p>Multiple filters function as OR criteria in the query. Multiple values passed inside the filter function as AND criteria.</p>
         pub fn set_filters(
             mut self,
@@ -2935,8 +2833,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SearchThings`.
     ///
     /// <p>Searches for things associated with the specified entity. You can search by both device and device model.</p>
-    /// <p>For example, if two different devices, camera1 and camera2, implement the camera device model, the user can associate thing1 to camera1 and thing2 to camera2.
-    /// <code>SearchThings(camera2)</code> will return only thing2, but <code>SearchThings(camera)</code> will return both thing1 and thing2.</p>
+    /// <p>For example, if two different devices, camera1 and camera2, implement the camera device model, the user can associate thing1 to camera1 and thing2 to camera2. <code>SearchThings(camera2)</code> will return only thing2, but <code>SearchThings(camera)</code> will return both thing1 and thing2.</p>
     /// <p>This action searches for exact matches and doesn't perform partial text matching.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchThings<
@@ -2996,18 +2893,14 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the entity to which the things are associated.</p>
         /// <p>The IDs should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
         pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.entity_id(input.into());
             self
         }
         /// <p>The ID of the entity to which the things are associated.</p>
         /// <p>The IDs should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
         pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_entity_id(input);
             self
@@ -3116,12 +3009,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of tags to add to the resource.></p>
+        /// <p>A list of tags to add to the resource.&gt;</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>A list of tags to add to the resource.></p>
+        /// <p>A list of tags to add to the resource.&gt;</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3291,8 +3184,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateFlowTemplate`.
     ///
-    /// <p>Updates the specified workflow. All deployed systems and system instances that use the workflow will see the changes in the flow when it is redeployed. If you don't want this
-    /// behavior, copy the workflow (creating a new workflow with a different ID), and update the copy. The workflow can contain only entities in the specified namespace. </p>
+    /// <p>Updates the specified workflow. All deployed systems and system instances that use the workflow will see the changes in the flow when it is redeployed. If you don't want this behavior, copy the workflow (creating a new workflow with a different ID), and update the copy. The workflow can contain only entities in the specified namespace. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFlowTemplate<
         C = aws_smithy_client::erase::DynConnector,
@@ -3351,18 +3243,14 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the workflow to be updated.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the workflow to be updated.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
@@ -3381,15 +3269,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the user's namespace.</p>
-        /// <p>If no value is specified, the latest version is used by default. Use the <code>GetFlowTemplateRevisions</code> if you want to find earlier revisions of the flow
-        /// to update.</p>
+        /// <p>If no value is specified, the latest version is used by default. Use the <code>GetFlowTemplateRevisions</code> if you want to find earlier revisions of the flow to update.</p>
         pub fn compatible_namespace_version(mut self, input: i64) -> Self {
             self.inner = self.inner.compatible_namespace_version(input);
             self
         }
         /// <p>The version of the user's namespace.</p>
-        /// <p>If no value is specified, the latest version is used by default. Use the <code>GetFlowTemplateRevisions</code> if you want to find earlier revisions of the flow
-        /// to update.</p>
+        /// <p>If no value is specified, the latest version is used by default. Use the <code>GetFlowTemplateRevisions</code> if you want to find earlier revisions of the flow to update.</p>
         pub fn set_compatible_namespace_version(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_compatible_namespace_version(input);
             self
@@ -3456,18 +3342,14 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the system to be updated.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the system to be updated.</p>
         /// <p>The ID should be in the following format.</p>
-        /// <p>
-        /// <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code>
-        /// </p>
+        /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
@@ -3500,17 +3382,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UploadEntityDefinitions`.
     ///
-    /// <p>Asynchronously uploads one or more entity definitions to the user's namespace. The <code>document</code> parameter is required if
-    /// <code>syncWithPublicNamespace</code> and <code>deleteExistingEntites</code> are false. If the <code>syncWithPublicNamespace</code> parameter  is set to
-    /// <code>true</code>, the user's namespace will synchronize with the latest version of the public namespace. If <code>deprecateExistingEntities</code> is set to true,
-    /// all entities in the latest version will be deleted before the new <code>DefinitionDocument</code> is uploaded.</p>
-    /// <p>When a user uploads entity definitions for the first time, the service creates a new namespace for the user. The new namespace tracks the public namespace. Currently users
-    /// can have only one namespace. The namespace version increments whenever a user uploads entity definitions that are backwards-incompatible and whenever a user sets the
-    /// <code>syncWithPublicNamespace</code> parameter or the <code>deprecateExistingEntities</code> parameter to <code>true</code>.</p>
+    /// <p>Asynchronously uploads one or more entity definitions to the user's namespace. The <code>document</code> parameter is required if <code>syncWithPublicNamespace</code> and <code>deleteExistingEntites</code> are false. If the <code>syncWithPublicNamespace</code> parameter is set to <code>true</code>, the user's namespace will synchronize with the latest version of the public namespace. If <code>deprecateExistingEntities</code> is set to true, all entities in the latest version will be deleted before the new <code>DefinitionDocument</code> is uploaded.</p>
+    /// <p>When a user uploads entity definitions for the first time, the service creates a new namespace for the user. The new namespace tracks the public namespace. Currently users can have only one namespace. The namespace version increments whenever a user uploads entity definitions that are backwards-incompatible and whenever a user sets the <code>syncWithPublicNamespace</code> parameter or the <code>deprecateExistingEntities</code> parameter to <code>true</code>.</p>
     /// <p>The IDs for all of the entities should be in URN format. Each entity must be in the user's namespace. Users can't create entities in the public namespace, but entity definitions can refer to entities in the public namespace.</p>
-    /// <p>Valid entities are <code>Device</code>, <code>DeviceModel</code>, <code>Service</code>, <code>Capability</code>, <code>State</code>, <code>Action</code>, <code>Event</code>, <code>Property</code>,
-    /// <code>Mapping</code>, <code>Enum</code>.
-    /// </p>
+    /// <p>Valid entities are <code>Device</code>, <code>DeviceModel</code>, <code>Service</code>, <code>Capability</code>, <code>State</code>, <code>Action</code>, <code>Event</code>, <code>Property</code>, <code>Mapping</code>, <code>Enum</code>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UploadEntityDefinitions<
         C = aws_smithy_client::erase::DynConnector,
@@ -3590,14 +3465,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sync_with_public_namespace(input);
             self
         }
-        /// <p>A Boolean that specifies whether to deprecate all entities in the latest version before uploading the new <code>DefinitionDocument</code>.
-        /// If set to <code>true</code>, the upload will create a new namespace version.</p>
+        /// <p>A Boolean that specifies whether to deprecate all entities in the latest version before uploading the new <code>DefinitionDocument</code>. If set to <code>true</code>, the upload will create a new namespace version.</p>
         pub fn deprecate_existing_entities(mut self, input: bool) -> Self {
             self.inner = self.inner.deprecate_existing_entities(input);
             self
         }
-        /// <p>A Boolean that specifies whether to deprecate all entities in the latest version before uploading the new <code>DefinitionDocument</code>.
-        /// If set to <code>true</code>, the upload will create a new namespace version.</p>
+        /// <p>A Boolean that specifies whether to deprecate all entities in the latest version before uploading the new <code>DefinitionDocument</code>. If set to <code>true</code>, the upload will create a new namespace version.</p>
         pub fn set_deprecate_existing_entities(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_deprecate_existing_entities(input);
             self

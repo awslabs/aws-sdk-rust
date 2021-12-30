@@ -23,14 +23,12 @@ pub mod associate_team_member_input {
             self.project_id = input;
             self
         }
-        /// <p>A user- or system-generated token that identifies the entity that requested the team
-        /// member association to the project. This token can be used to repeat the request.</p>
+        /// <p>A user- or system-generated token that identifies the entity that requested the team member association to the project. This token can be used to repeat the request.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>A user- or system-generated token that identifies the entity that requested the team
-        /// member association to the project. This token can be used to repeat the request.</p>
+        /// <p>A user- or system-generated token that identifies the entity that requested the team member association to the project. This token can be used to repeat the request.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -38,38 +36,32 @@ pub mod associate_team_member_input {
             self.client_request_token = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the IAM user you want to add to the AWS CodeStar
-        /// project.</p>
+        /// <p>The Amazon Resource Name (ARN) for the IAM user you want to add to the AWS CodeStar project.</p>
         pub fn user_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the IAM user you want to add to the AWS CodeStar
-        /// project.</p>
+        /// <p>The Amazon Resource Name (ARN) for the IAM user you want to add to the AWS CodeStar project.</p>
         pub fn set_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_arn = input;
             self
         }
-        /// <p>The AWS CodeStar project role that will apply to this user. This role determines what actions
-        /// a user can take in an AWS CodeStar project.</p>
+        /// <p>The AWS CodeStar project role that will apply to this user. This role determines what actions a user can take in an AWS CodeStar project.</p>
         pub fn project_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.project_role = Some(input.into());
             self
         }
-        /// <p>The AWS CodeStar project role that will apply to this user. This role determines what actions
-        /// a user can take in an AWS CodeStar project.</p>
+        /// <p>The AWS CodeStar project role that will apply to this user. This role determines what actions a user can take in an AWS CodeStar project.</p>
         pub fn set_project_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.project_role = input;
             self
         }
-        /// <p>Whether the team member is allowed to use an SSH public/private key pair to remotely
-        /// access project resources, for example Amazon EC2 instances.</p>
+        /// <p>Whether the team member is allowed to use an SSH public/private key pair to remotely access project resources, for example Amazon EC2 instances.</p>
         pub fn remote_access_allowed(mut self, input: bool) -> Self {
             self.remote_access_allowed = Some(input);
             self
         }
-        /// <p>Whether the team member is allowed to use an SSH public/private key pair to remotely
-        /// access project resources, for example Amazon EC2 instances.</p>
+        /// <p>Whether the team member is allowed to use an SSH public/private key pair to remotely access project resources, for example Amazon EC2 instances.</p>
         pub fn set_remote_access_allowed(mut self, input: std::option::Option<bool>) -> Self {
             self.remote_access_allowed = input;
             self
@@ -260,14 +252,12 @@ pub mod create_project_input {
             self.description = input;
             self
         }
-        /// <p>A user- or system-generated token that identifies the entity that requested project
-        /// creation. This token can be used to repeat the request.</p>
+        /// <p>A user- or system-generated token that identifies the entity that requested project creation. This token can be used to repeat the request.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>A user- or system-generated token that identifies the entity that requested project
-        /// creation. This token can be used to repeat the request.</p>
+        /// <p>A user- or system-generated token that identifies the entity that requested project creation. This token can be used to repeat the request.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -279,16 +269,14 @@ pub mod create_project_input {
         ///
         /// To override the contents of this collection use [`set_source_code`](Self::set_source_code).
         ///
-        /// <p>A list of the Code objects submitted with the project request. If this
-        /// parameter is specified, the request must also include the toolchain parameter.</p>
+        /// <p>A list of the Code objects submitted with the project request. If this parameter is specified, the request must also include the toolchain parameter.</p>
         pub fn source_code(mut self, input: crate::model::Code) -> Self {
             let mut v = self.source_code.unwrap_or_default();
             v.push(input);
             self.source_code = Some(v);
             self
         }
-        /// <p>A list of the Code objects submitted with the project request. If this
-        /// parameter is specified, the request must also include the toolchain parameter.</p>
+        /// <p>A list of the Code objects submitted with the project request. If this parameter is specified, the request must also include the toolchain parameter.</p>
         pub fn set_source_code(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Code>>,
@@ -296,14 +284,12 @@ pub mod create_project_input {
             self.source_code = input;
             self
         }
-        /// <p>The name of the toolchain template file submitted with the project request. If
-        /// this parameter is specified, the request must also include the sourceCode parameter.</p>
+        /// <p>The name of the toolchain template file submitted with the project request. If this parameter is specified, the request must also include the sourceCode parameter.</p>
         pub fn toolchain(mut self, input: crate::model::Toolchain) -> Self {
             self.toolchain = Some(input);
             self
         }
-        /// <p>The name of the toolchain template file submitted with the project request. If
-        /// this parameter is specified, the request must also include the sourceCode parameter.</p>
+        /// <p>The name of the toolchain template file submitted with the project request. If this parameter is specified, the request must also include the sourceCode parameter.</p>
         pub fn set_toolchain(
             mut self,
             input: std::option::Option<crate::model::Toolchain>,
@@ -508,14 +494,12 @@ pub mod create_user_profile_input {
             self.display_name = input;
             self
         }
-        /// <p>The email address that will be displayed as part of the user's profile in
-        /// AWS CodeStar.</p>
+        /// <p>The email address that will be displayed as part of the user's profile in AWS CodeStar.</p>
         pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
             self.email_address = Some(input.into());
             self
         }
-        /// <p>The email address that will be displayed as part of the user's profile in
-        /// AWS CodeStar.</p>
+        /// <p>The email address that will be displayed as part of the user's profile in AWS CodeStar.</p>
         pub fn set_email_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -523,16 +507,12 @@ pub mod create_user_profile_input {
             self.email_address = input;
             self
         }
-        /// <p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the
-        /// user remote access to project resources, this public key will be used along with the user's
-        /// private key for SSH access.</p>
+        /// <p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the user remote access to project resources, this public key will be used along with the user's private key for SSH access.</p>
         pub fn ssh_public_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.ssh_public_key = Some(input.into());
             self
         }
-        /// <p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the
-        /// user remote access to project resources, this public key will be used along with the user's
-        /// private key for SSH access.</p>
+        /// <p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the user remote access to project resources, this public key will be used along with the user's private key for SSH access.</p>
         pub fn set_ssh_public_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -699,14 +679,12 @@ pub mod delete_project_input {
             self.id = input;
             self
         }
-        /// <p>A user- or system-generated token that identifies the entity that requested project
-        /// deletion. This token can be used to repeat the request. </p>
+        /// <p>A user- or system-generated token that identifies the entity that requested project deletion. This token can be used to repeat the request. </p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>A user- or system-generated token that identifies the entity that requested project
-        /// deletion. This token can be used to repeat the request. </p>
+        /// <p>A user- or system-generated token that identifies the entity that requested project deletion. This token can be used to repeat the request. </p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -714,18 +692,12 @@ pub mod delete_project_input {
             self.client_request_token = input;
             self
         }
-        /// <p>Whether to send a delete request for the primary stack in AWS CloudFormation originally
-        /// used to generate the project and its resources. This option will delete all AWS resources for
-        /// the project (except for any buckets in Amazon S3) as well as deleting the project itself.
-        /// Recommended for most use cases.</p>
+        /// <p>Whether to send a delete request for the primary stack in AWS CloudFormation originally used to generate the project and its resources. This option will delete all AWS resources for the project (except for any buckets in Amazon S3) as well as deleting the project itself. Recommended for most use cases.</p>
         pub fn delete_stack(mut self, input: bool) -> Self {
             self.delete_stack = Some(input);
             self
         }
-        /// <p>Whether to send a delete request for the primary stack in AWS CloudFormation originally
-        /// used to generate the project and its resources. This option will delete all AWS resources for
-        /// the project (except for any buckets in Amazon S3) as well as deleting the project itself.
-        /// Recommended for most use cases.</p>
+        /// <p>Whether to send a delete request for the primary stack in AWS CloudFormation originally used to generate the project and its resources. This option will delete all AWS resources for the project (except for any buckets in Amazon S3) as well as deleting the project itself. Recommended for most use cases.</p>
         pub fn set_delete_stack(mut self, input: std::option::Option<bool>) -> Self {
             self.delete_stack = input;
             self
@@ -1346,14 +1318,12 @@ pub mod disassociate_team_member_input {
             self.project_id = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM user or group whom you want to remove from
-        /// the project.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM user or group whom you want to remove from the project.</p>
         pub fn user_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM user or group whom you want to remove from
-        /// the project.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM user or group whom you want to remove from the project.</p>
         pub fn set_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_arn = input;
             self
@@ -1506,14 +1476,12 @@ pub mod list_projects_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The continuation token to be used to return the next set of results, if the results
-        /// cannot be returned in one response.</p>
+        /// <p>The continuation token to be used to return the next set of results, if the results cannot be returned in one response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The continuation token to be used to return the next set of results, if the results
-        /// cannot be returned in one response.</p>
+        /// <p>The continuation token to be used to return the next set of results, if the results cannot be returned in one response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1684,14 +1652,12 @@ pub mod list_resources_input {
             self.project_id = input;
             self
         }
-        /// <p>The continuation token for the next set of results, if the results cannot be returned
-        /// in one response.</p>
+        /// <p>The continuation token for the next set of results, if the results cannot be returned in one response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The continuation token for the next set of results, if the results cannot be returned
-        /// in one response.</p>
+        /// <p>The continuation token for the next set of results, if the results cannot be returned in one response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2041,14 +2007,12 @@ pub mod list_team_members_input {
             self.project_id = input;
             self
         }
-        /// <p>The continuation token for the next set of results, if the results cannot be returned
-        /// in one response.</p>
+        /// <p>The continuation token for the next set of results, if the results cannot be returned in one response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The continuation token for the next set of results, if the results cannot be returned
-        /// in one response.</p>
+        /// <p>The continuation token for the next set of results, if the results cannot be returned in one response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2210,14 +2174,12 @@ pub mod list_user_profiles_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The continuation token for the next set of results, if the results cannot be returned
-        /// in one response.</p>
+        /// <p>The continuation token for the next set of results, if the results cannot be returned in one response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The continuation token for the next set of results, if the results cannot be returned
-        /// in one response.</p>
+        /// <p>The continuation token for the next set of results, if the results cannot be returned in one response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2923,42 +2885,32 @@ pub mod update_team_member_input {
             self.project_id = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the user for whom you want to change team membership
-        /// attributes.</p>
+        /// <p>The Amazon Resource Name (ARN) of the user for whom you want to change team membership attributes.</p>
         pub fn user_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the user for whom you want to change team membership
-        /// attributes.</p>
+        /// <p>The Amazon Resource Name (ARN) of the user for whom you want to change team membership attributes.</p>
         pub fn set_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_arn = input;
             self
         }
-        /// <p>The role assigned to the user in the project. Project roles have different levels of
-        /// access. For more information, see <a href="http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html">Working with
-        /// Teams</a> in the <i>AWS CodeStar User Guide</i>.</p>
+        /// <p>The role assigned to the user in the project. Project roles have different levels of access. For more information, see <a href="http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html">Working with Teams</a> in the <i>AWS CodeStar User Guide</i>.</p>
         pub fn project_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.project_role = Some(input.into());
             self
         }
-        /// <p>The role assigned to the user in the project. Project roles have different levels of
-        /// access. For more information, see <a href="http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html">Working with
-        /// Teams</a> in the <i>AWS CodeStar User Guide</i>.</p>
+        /// <p>The role assigned to the user in the project. Project roles have different levels of access. For more information, see <a href="http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html">Working with Teams</a> in the <i>AWS CodeStar User Guide</i>.</p>
         pub fn set_project_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.project_role = input;
             self
         }
-        /// <p>Whether a team member is allowed to remotely access project resources using the SSH
-        /// public key associated with the user's profile. Even if this is set to True, the user must
-        /// associate a public key with their profile before the user can access resources.</p>
+        /// <p>Whether a team member is allowed to remotely access project resources using the SSH public key associated with the user's profile. Even if this is set to True, the user must associate a public key with their profile before the user can access resources.</p>
         pub fn remote_access_allowed(mut self, input: bool) -> Self {
             self.remote_access_allowed = Some(input);
             self
         }
-        /// <p>Whether a team member is allowed to remotely access project resources using the SSH
-        /// public key associated with the user's profile. Even if this is set to True, the user must
-        /// associate a public key with their profile before the user can access resources.</p>
+        /// <p>Whether a team member is allowed to remotely access project resources using the SSH public key associated with the user's profile. Even if this is set to True, the user must associate a public key with their profile before the user can access resources.</p>
         pub fn set_remote_access_allowed(mut self, input: std::option::Option<bool>) -> Self {
             self.remote_access_allowed = input;
             self
@@ -3113,14 +3065,12 @@ pub mod update_user_profile_input {
         pub(crate) ssh_public_key: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name that will be displayed as the friendly name for the user in AWS
-        /// CodeStar.</p>
+        /// <p>The name that will be displayed as the friendly name for the user in AWS CodeStar.</p>
         pub fn user_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_arn = Some(input.into());
             self
         }
-        /// <p>The name that will be displayed as the friendly name for the user in AWS
-        /// CodeStar.</p>
+        /// <p>The name that will be displayed as the friendly name for the user in AWS CodeStar.</p>
         pub fn set_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_arn = input;
             self
@@ -3135,14 +3085,12 @@ pub mod update_user_profile_input {
             self.display_name = input;
             self
         }
-        /// <p>The email address that is displayed as part of the user's profile in AWS
-        /// CodeStar.</p>
+        /// <p>The email address that is displayed as part of the user's profile in AWS CodeStar.</p>
         pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
             self.email_address = Some(input.into());
             self
         }
-        /// <p>The email address that is displayed as part of the user's profile in AWS
-        /// CodeStar.</p>
+        /// <p>The email address that is displayed as part of the user's profile in AWS CodeStar.</p>
         pub fn set_email_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3150,16 +3098,12 @@ pub mod update_user_profile_input {
             self.email_address = input;
             self
         }
-        /// <p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the
-        /// user remote access to project resources, this public key will be used along with the user's
-        /// private key for SSH access.</p>
+        /// <p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the user remote access to project resources, this public key will be used along with the user's private key for SSH access.</p>
         pub fn ssh_public_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.ssh_public_key = Some(input.into());
             self
         }
-        /// <p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the
-        /// user remote access to project resources, this public key will be used along with the user's
-        /// private key for SSH access.</p>
+        /// <p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the user remote access to project resources, this public key will be used along with the user's private key for SSH access.</p>
         pub fn set_ssh_public_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3309,22 +3253,17 @@ impl UpdateUserProfileInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateUserProfileInput {
-    /// <p>The name that will be displayed as the friendly name for the user in AWS
-    /// CodeStar.</p>
+    /// <p>The name that will be displayed as the friendly name for the user in AWS CodeStar.</p>
     pub user_arn: std::option::Option<std::string::String>,
     /// <p>The name that is displayed as the friendly name for the user in AWS CodeStar.</p>
     pub display_name: std::option::Option<std::string::String>,
-    /// <p>The email address that is displayed as part of the user's profile in AWS
-    /// CodeStar.</p>
+    /// <p>The email address that is displayed as part of the user's profile in AWS CodeStar.</p>
     pub email_address: std::option::Option<std::string::String>,
-    /// <p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the
-    /// user remote access to project resources, this public key will be used along with the user's
-    /// private key for SSH access.</p>
+    /// <p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the user remote access to project resources, this public key will be used along with the user's private key for SSH access.</p>
     pub ssh_public_key: std::option::Option<std::string::String>,
 }
 impl UpdateUserProfileInput {
-    /// <p>The name that will be displayed as the friendly name for the user in AWS
-    /// CodeStar.</p>
+    /// <p>The name that will be displayed as the friendly name for the user in AWS CodeStar.</p>
     pub fn user_arn(&self) -> std::option::Option<&str> {
         self.user_arn.as_deref()
     }
@@ -3332,14 +3271,11 @@ impl UpdateUserProfileInput {
     pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
     }
-    /// <p>The email address that is displayed as part of the user's profile in AWS
-    /// CodeStar.</p>
+    /// <p>The email address that is displayed as part of the user's profile in AWS CodeStar.</p>
     pub fn email_address(&self) -> std::option::Option<&str> {
         self.email_address.as_deref()
     }
-    /// <p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the
-    /// user remote access to project resources, this public key will be used along with the user's
-    /// private key for SSH access.</p>
+    /// <p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the user remote access to project resources, this public key will be used along with the user's private key for SSH access.</p>
     pub fn ssh_public_key(&self) -> std::option::Option<&str> {
         self.ssh_public_key.as_deref()
     }
@@ -3361,16 +3297,11 @@ impl std::fmt::Debug for UpdateUserProfileInput {
 pub struct UpdateTeamMemberInput {
     /// <p>The ID of the project.</p>
     pub project_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the user for whom you want to change team membership
-    /// attributes.</p>
+    /// <p>The Amazon Resource Name (ARN) of the user for whom you want to change team membership attributes.</p>
     pub user_arn: std::option::Option<std::string::String>,
-    /// <p>The role assigned to the user in the project. Project roles have different levels of
-    /// access. For more information, see <a href="http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html">Working with
-    /// Teams</a> in the <i>AWS CodeStar User Guide</i>.</p>
+    /// <p>The role assigned to the user in the project. Project roles have different levels of access. For more information, see <a href="http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html">Working with Teams</a> in the <i>AWS CodeStar User Guide</i>.</p>
     pub project_role: std::option::Option<std::string::String>,
-    /// <p>Whether a team member is allowed to remotely access project resources using the SSH
-    /// public key associated with the user's profile. Even if this is set to True, the user must
-    /// associate a public key with their profile before the user can access resources.</p>
+    /// <p>Whether a team member is allowed to remotely access project resources using the SSH public key associated with the user's profile. Even if this is set to True, the user must associate a public key with their profile before the user can access resources.</p>
     pub remote_access_allowed: std::option::Option<bool>,
 }
 impl UpdateTeamMemberInput {
@@ -3378,20 +3309,15 @@ impl UpdateTeamMemberInput {
     pub fn project_id(&self) -> std::option::Option<&str> {
         self.project_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the user for whom you want to change team membership
-    /// attributes.</p>
+    /// <p>The Amazon Resource Name (ARN) of the user for whom you want to change team membership attributes.</p>
     pub fn user_arn(&self) -> std::option::Option<&str> {
         self.user_arn.as_deref()
     }
-    /// <p>The role assigned to the user in the project. Project roles have different levels of
-    /// access. For more information, see <a href="http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html">Working with
-    /// Teams</a> in the <i>AWS CodeStar User Guide</i>.</p>
+    /// <p>The role assigned to the user in the project. Project roles have different levels of access. For more information, see <a href="http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html">Working with Teams</a> in the <i>AWS CodeStar User Guide</i>.</p>
     pub fn project_role(&self) -> std::option::Option<&str> {
         self.project_role.as_deref()
     }
-    /// <p>Whether a team member is allowed to remotely access project resources using the SSH
-    /// public key associated with the user's profile. Even if this is set to True, the user must
-    /// associate a public key with their profile before the user can access resources.</p>
+    /// <p>Whether a team member is allowed to remotely access project resources using the SSH public key associated with the user's profile. Even if this is set to True, the user must associate a public key with their profile before the user can access resources.</p>
     pub fn remote_access_allowed(&self) -> std::option::Option<bool> {
         self.remote_access_allowed
     }
@@ -3506,15 +3432,13 @@ impl std::fmt::Debug for TagProjectInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUserProfilesInput {
-    /// <p>The continuation token for the next set of results, if the results cannot be returned
-    /// in one response.</p>
+    /// <p>The continuation token for the next set of results, if the results cannot be returned in one response.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a response.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListUserProfilesInput {
-    /// <p>The continuation token for the next set of results, if the results cannot be returned
-    /// in one response.</p>
+    /// <p>The continuation token for the next set of results, if the results cannot be returned in one response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3538,8 +3462,7 @@ impl std::fmt::Debug for ListUserProfilesInput {
 pub struct ListTeamMembersInput {
     /// <p>The ID of the project for which you want to list team members.</p>
     pub project_id: std::option::Option<std::string::String>,
-    /// <p>The continuation token for the next set of results, if the results cannot be returned
-    /// in one response.</p>
+    /// <p>The continuation token for the next set of results, if the results cannot be returned in one response.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of team members you want returned in a response.</p>
     pub max_results: std::option::Option<i32>,
@@ -3549,8 +3472,7 @@ impl ListTeamMembersInput {
     pub fn project_id(&self) -> std::option::Option<&str> {
         self.project_id.as_deref()
     }
-    /// <p>The continuation token for the next set of results, if the results cannot be returned
-    /// in one response.</p>
+    /// <p>The continuation token for the next set of results, if the results cannot be returned in one response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3610,8 +3532,7 @@ impl std::fmt::Debug for ListTagsForProjectInput {
 pub struct ListResourcesInput {
     /// <p>The ID of the project.</p>
     pub project_id: std::option::Option<std::string::String>,
-    /// <p>The continuation token for the next set of results, if the results cannot be returned
-    /// in one response.</p>
+    /// <p>The continuation token for the next set of results, if the results cannot be returned in one response.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum amount of data that can be contained in a single set of results.</p>
     pub max_results: std::option::Option<i32>,
@@ -3621,8 +3542,7 @@ impl ListResourcesInput {
     pub fn project_id(&self) -> std::option::Option<&str> {
         self.project_id.as_deref()
     }
-    /// <p>The continuation token for the next set of results, if the results cannot be returned
-    /// in one response.</p>
+    /// <p>The continuation token for the next set of results, if the results cannot be returned in one response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3645,15 +3565,13 @@ impl std::fmt::Debug for ListResourcesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProjectsInput {
-    /// <p>The continuation token to be used to return the next set of results, if the results
-    /// cannot be returned in one response.</p>
+    /// <p>The continuation token to be used to return the next set of results, if the results cannot be returned in one response.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum amount of data that can be contained in a single set of results.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListProjectsInput {
-    /// <p>The continuation token to be used to return the next set of results, if the results
-    /// cannot be returned in one response.</p>
+    /// <p>The continuation token to be used to return the next set of results, if the results cannot be returned in one response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3677,8 +3595,7 @@ impl std::fmt::Debug for ListProjectsInput {
 pub struct DisassociateTeamMemberInput {
     /// <p>The ID of the AWS CodeStar project from which you want to remove a team member.</p>
     pub project_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the IAM user or group whom you want to remove from
-    /// the project.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM user or group whom you want to remove from the project.</p>
     pub user_arn: std::option::Option<std::string::String>,
 }
 impl DisassociateTeamMemberInput {
@@ -3686,8 +3603,7 @@ impl DisassociateTeamMemberInput {
     pub fn project_id(&self) -> std::option::Option<&str> {
         self.project_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM user or group whom you want to remove from
-    /// the project.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM user or group whom you want to remove from the project.</p>
     pub fn user_arn(&self) -> std::option::Option<&str> {
         self.user_arn.as_deref()
     }
@@ -3770,13 +3686,9 @@ impl std::fmt::Debug for DeleteUserProfileInput {
 pub struct DeleteProjectInput {
     /// <p>The ID of the project to be deleted in AWS CodeStar.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>A user- or system-generated token that identifies the entity that requested project
-    /// deletion. This token can be used to repeat the request. </p>
+    /// <p>A user- or system-generated token that identifies the entity that requested project deletion. This token can be used to repeat the request. </p>
     pub client_request_token: std::option::Option<std::string::String>,
-    /// <p>Whether to send a delete request for the primary stack in AWS CloudFormation originally
-    /// used to generate the project and its resources. This option will delete all AWS resources for
-    /// the project (except for any buckets in Amazon S3) as well as deleting the project itself.
-    /// Recommended for most use cases.</p>
+    /// <p>Whether to send a delete request for the primary stack in AWS CloudFormation originally used to generate the project and its resources. This option will delete all AWS resources for the project (except for any buckets in Amazon S3) as well as deleting the project itself. Recommended for most use cases.</p>
     pub delete_stack: bool,
 }
 impl DeleteProjectInput {
@@ -3784,15 +3696,11 @@ impl DeleteProjectInput {
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>A user- or system-generated token that identifies the entity that requested project
-    /// deletion. This token can be used to repeat the request. </p>
+    /// <p>A user- or system-generated token that identifies the entity that requested project deletion. This token can be used to repeat the request. </p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p>Whether to send a delete request for the primary stack in AWS CloudFormation originally
-    /// used to generate the project and its resources. This option will delete all AWS resources for
-    /// the project (except for any buckets in Amazon S3) as well as deleting the project itself.
-    /// Recommended for most use cases.</p>
+    /// <p>Whether to send a delete request for the primary stack in AWS CloudFormation originally used to generate the project and its resources. This option will delete all AWS resources for the project (except for any buckets in Amazon S3) as well as deleting the project itself. Recommended for most use cases.</p>
     pub fn delete_stack(&self) -> bool {
         self.delete_stack
     }
@@ -3815,12 +3723,9 @@ pub struct CreateUserProfileInput {
     pub user_arn: std::option::Option<std::string::String>,
     /// <p>The name that will be displayed as the friendly name for the user in AWS CodeStar. </p>
     pub display_name: std::option::Option<std::string::String>,
-    /// <p>The email address that will be displayed as part of the user's profile in
-    /// AWS CodeStar.</p>
+    /// <p>The email address that will be displayed as part of the user's profile in AWS CodeStar.</p>
     pub email_address: std::option::Option<std::string::String>,
-    /// <p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the
-    /// user remote access to project resources, this public key will be used along with the user's
-    /// private key for SSH access.</p>
+    /// <p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the user remote access to project resources, this public key will be used along with the user's private key for SSH access.</p>
     pub ssh_public_key: std::option::Option<std::string::String>,
 }
 impl CreateUserProfileInput {
@@ -3832,14 +3737,11 @@ impl CreateUserProfileInput {
     pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
     }
-    /// <p>The email address that will be displayed as part of the user's profile in
-    /// AWS CodeStar.</p>
+    /// <p>The email address that will be displayed as part of the user's profile in AWS CodeStar.</p>
     pub fn email_address(&self) -> std::option::Option<&str> {
         self.email_address.as_deref()
     }
-    /// <p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the
-    /// user remote access to project resources, this public key will be used along with the user's
-    /// private key for SSH access.</p>
+    /// <p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the user remote access to project resources, this public key will be used along with the user's private key for SSH access.</p>
     pub fn ssh_public_key(&self) -> std::option::Option<&str> {
         self.ssh_public_key.as_deref()
     }
@@ -3865,14 +3767,11 @@ pub struct CreateProjectInput {
     pub id: std::option::Option<std::string::String>,
     /// <p>The description of the project, if any.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>A user- or system-generated token that identifies the entity that requested project
-    /// creation. This token can be used to repeat the request.</p>
+    /// <p>A user- or system-generated token that identifies the entity that requested project creation. This token can be used to repeat the request.</p>
     pub client_request_token: std::option::Option<std::string::String>,
-    /// <p>A list of the Code objects submitted with the project request. If this
-    /// parameter is specified, the request must also include the toolchain parameter.</p>
+    /// <p>A list of the Code objects submitted with the project request. If this parameter is specified, the request must also include the toolchain parameter.</p>
     pub source_code: std::option::Option<std::vec::Vec<crate::model::Code>>,
-    /// <p>The name of the toolchain template file submitted with the project request. If
-    /// this parameter is specified, the request must also include the sourceCode parameter.</p>
+    /// <p>The name of the toolchain template file submitted with the project request. If this parameter is specified, the request must also include the sourceCode parameter.</p>
     pub toolchain: std::option::Option<crate::model::Toolchain>,
     /// <p>The tags created for the project.</p>
     pub tags:
@@ -3891,18 +3790,15 @@ impl CreateProjectInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>A user- or system-generated token that identifies the entity that requested project
-    /// creation. This token can be used to repeat the request.</p>
+    /// <p>A user- or system-generated token that identifies the entity that requested project creation. This token can be used to repeat the request.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p>A list of the Code objects submitted with the project request. If this
-    /// parameter is specified, the request must also include the toolchain parameter.</p>
+    /// <p>A list of the Code objects submitted with the project request. If this parameter is specified, the request must also include the toolchain parameter.</p>
     pub fn source_code(&self) -> std::option::Option<&[crate::model::Code]> {
         self.source_code.as_deref()
     }
-    /// <p>The name of the toolchain template file submitted with the project request. If
-    /// this parameter is specified, the request must also include the sourceCode parameter.</p>
+    /// <p>The name of the toolchain template file submitted with the project request. If this parameter is specified, the request must also include the sourceCode parameter.</p>
     pub fn toolchain(&self) -> std::option::Option<&crate::model::Toolchain> {
         self.toolchain.as_ref()
     }
@@ -3934,17 +3830,13 @@ impl std::fmt::Debug for CreateProjectInput {
 pub struct AssociateTeamMemberInput {
     /// <p>The ID of the project to which you will add the IAM user.</p>
     pub project_id: std::option::Option<std::string::String>,
-    /// <p>A user- or system-generated token that identifies the entity that requested the team
-    /// member association to the project. This token can be used to repeat the request.</p>
+    /// <p>A user- or system-generated token that identifies the entity that requested the team member association to the project. This token can be used to repeat the request.</p>
     pub client_request_token: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) for the IAM user you want to add to the AWS CodeStar
-    /// project.</p>
+    /// <p>The Amazon Resource Name (ARN) for the IAM user you want to add to the AWS CodeStar project.</p>
     pub user_arn: std::option::Option<std::string::String>,
-    /// <p>The AWS CodeStar project role that will apply to this user. This role determines what actions
-    /// a user can take in an AWS CodeStar project.</p>
+    /// <p>The AWS CodeStar project role that will apply to this user. This role determines what actions a user can take in an AWS CodeStar project.</p>
     pub project_role: std::option::Option<std::string::String>,
-    /// <p>Whether the team member is allowed to use an SSH public/private key pair to remotely
-    /// access project resources, for example Amazon EC2 instances.</p>
+    /// <p>Whether the team member is allowed to use an SSH public/private key pair to remotely access project resources, for example Amazon EC2 instances.</p>
     pub remote_access_allowed: std::option::Option<bool>,
 }
 impl AssociateTeamMemberInput {
@@ -3952,23 +3844,19 @@ impl AssociateTeamMemberInput {
     pub fn project_id(&self) -> std::option::Option<&str> {
         self.project_id.as_deref()
     }
-    /// <p>A user- or system-generated token that identifies the entity that requested the team
-    /// member association to the project. This token can be used to repeat the request.</p>
+    /// <p>A user- or system-generated token that identifies the entity that requested the team member association to the project. This token can be used to repeat the request.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) for the IAM user you want to add to the AWS CodeStar
-    /// project.</p>
+    /// <p>The Amazon Resource Name (ARN) for the IAM user you want to add to the AWS CodeStar project.</p>
     pub fn user_arn(&self) -> std::option::Option<&str> {
         self.user_arn.as_deref()
     }
-    /// <p>The AWS CodeStar project role that will apply to this user. This role determines what actions
-    /// a user can take in an AWS CodeStar project.</p>
+    /// <p>The AWS CodeStar project role that will apply to this user. This role determines what actions a user can take in an AWS CodeStar project.</p>
     pub fn project_role(&self) -> std::option::Option<&str> {
         self.project_role.as_deref()
     }
-    /// <p>Whether the team member is allowed to use an SSH public/private key pair to remotely
-    /// access project resources, for example Amazon EC2 instances.</p>
+    /// <p>Whether the team member is allowed to use an SSH public/private key pair to remotely access project resources, for example Amazon EC2 instances.</p>
     pub fn remote_access_allowed(&self) -> std::option::Option<bool> {
         self.remote_access_allowed
     }

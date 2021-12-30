@@ -255,10 +255,7 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CreateApplication`.
     ///
-    /// <p>Creates an Amazon Web Services Migration Hub Refactor Spaces application. The account that owns the environment also owns the
-    /// applications created inside the environment, regardless of the account that creates the
-    /// application. Refactor Spaces provisions the Amazon API Gateway and Network Load Balancer for
-    /// the application proxy inside your account.</p>
+    /// <p>Creates an Amazon Web Services Migration Hub Refactor Spaces application. The account that owns the environment also owns the applications created inside the environment, regardless of the account that creates the application. Refactor Spaces provisions the Amazon API Gateway and Network Load Balancer for the application proxy inside your account.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateApplication<
         C = aws_smithy_client::erase::DynConnector,
@@ -361,14 +358,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_proxy_type(input);
             self
         }
-        /// <p>A wrapper object holding the API Gateway endpoint type and stage name for the
-        /// proxy. </p>
+        /// <p>A wrapper object holding the API Gateway endpoint type and stage name for the proxy. </p>
         pub fn api_gateway_proxy(mut self, input: crate::model::ApiGatewayProxyInput) -> Self {
             self.inner = self.inner.api_gateway_proxy(input);
             self
         }
-        /// <p>A wrapper object holding the API Gateway endpoint type and stage name for the
-        /// proxy. </p>
+        /// <p>A wrapper object holding the API Gateway endpoint type and stage name for the proxy. </p>
         pub fn set_api_gateway_proxy(
             mut self,
             input: std::option::Option<crate::model::ApiGatewayProxyInput>,
@@ -399,14 +394,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -414,11 +407,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateEnvironment`.
     ///
-    /// <p>Creates an Amazon Web Services Migration Hub Refactor Spaces environment. The caller owns the environment resource, and they
-    /// are referred to as the <i>environment owner</i>. The environment owner has
-    /// cross-account visibility and control of Refactor Spaces resources that are added to the environment
-    /// by other accounts that the environment is shared with. When creating an environment, Refactor Spaces
-    /// provisions a transit gateway in your account.</p>
+    /// <p>Creates an Amazon Web Services Migration Hub Refactor Spaces environment. The caller owns the environment resource, and they are referred to as the <i>environment owner</i>. The environment owner has cross-account visibility and control of Refactor Spaces resources that are added to the environment by other accounts that the environment is shared with. When creating an environment, Refactor Spaces provisions a transit gateway in your account.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEnvironment<
         C = aws_smithy_client::erase::DynConnector,
@@ -531,14 +520,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -546,42 +533,17 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateRoute`.
     ///
-    /// <p>Creates an Amazon Web Services Migration Hub Refactor Spaces route. The account owner of the service resource is always the
-    /// environment owner, regardless of which account creates the route. Routes target a service in
-    /// the application. If an application does not have any routes, then the first route must be
-    /// created as a <code>DEFAULT</code>
-    /// <code>RouteType</code>.</p>
-    /// <p>When you create a route, Refactor Spaces configures the Amazon API Gateway to send traffic
-    /// to the target service as follows:</p>
+    /// <p>Creates an Amazon Web Services Migration Hub Refactor Spaces route. The account owner of the service resource is always the environment owner, regardless of which account creates the route. Routes target a service in the application. If an application does not have any routes, then the first route must be created as a <code>DEFAULT</code> <code>RouteType</code>.</p>
+    /// <p>When you create a route, Refactor Spaces configures the Amazon API Gateway to send traffic to the target service as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>If the service has a URL endpoint, and the endpoint resolves to a private IP address,
-    /// Refactor Spaces routes traffic using the API Gateway VPC link. </p>
-    /// </li>
-    /// <li>
-    /// <p>If the service has a URL endpoint, and the endpoint resolves to a public IP address,
-    /// Refactor Spaces routes traffic over the public internet.</p>
-    /// </li>
-    /// <li>
-    /// <p>If the service has an Lambda function endpoint, then Refactor Spaces uses
-    /// the API Gateway
-    /// Lambda integration.</p>
-    /// </li>
+    /// <li> <p>If the service has a URL endpoint, and the endpoint resolves to a private IP address, Refactor Spaces routes traffic using the API Gateway VPC link. </p> </li>
+    /// <li> <p>If the service has a URL endpoint, and the endpoint resolves to a public IP address, Refactor Spaces routes traffic over the public internet.</p> </li>
+    /// <li> <p>If the service has an Lambda function endpoint, then Refactor Spaces uses the API Gateway Lambda integration.</p> </li>
     /// </ul>
-    /// <p>A health check is performed on the service when the route is created. If the health check
-    /// fails, the route transitions to <code>FAILED</code>, and no traffic is sent to the service.</p>
-    /// <p>For Lambda functions, the Lambda function state is checked. If
-    /// the function is not active, the function configuration is updated so that Lambda
-    /// resources are provisioned. If the Lambda state is <code>Failed</code>, then the
-    /// route creation fails. For more information, see the <a href="https://docs.aws.amazon.com/lambda/latest/dg/API_GetFunctionConfiguration.html#SSS-GetFunctionConfiguration-response-State">GetFunctionConfiguration's State response parameter</a> in the <i>Lambda Developer Guide</i>.</p>
-    /// <p>For public URLs, a connection is opened to the public endpoint. If the URL is not reachable,
-    /// the health check fails. For private URLs, a target group is created and the target group
-    /// health check is run.</p>
-    /// <p>The <code>HealthCheckProtocol</code>, <code>HealthCheckPort</code>, and
-    /// <code>HealthCheckPath</code> are the same protocol, port, and path specified in the URL or
-    /// health URL, if used. All other settings use the default values, as described in <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/target-group-health-checks.html">Health checks
-    /// for your target groups</a>. The health check is considered successful if at least one
-    /// target within the target group transitions to a healthy state.</p>
+    /// <p>A health check is performed on the service when the route is created. If the health check fails, the route transitions to <code>FAILED</code>, and no traffic is sent to the service.</p>
+    /// <p>For Lambda functions, the Lambda function state is checked. If the function is not active, the function configuration is updated so that Lambda resources are provisioned. If the Lambda state is <code>Failed</code>, then the route creation fails. For more information, see the <a href="https://docs.aws.amazon.com/lambda/latest/dg/API_GetFunctionConfiguration.html#SSS-GetFunctionConfiguration-response-State">GetFunctionConfiguration's State response parameter</a> in the <i>Lambda Developer Guide</i>.</p>
+    /// <p>For public URLs, a connection is opened to the public endpoint. If the URL is not reachable, the health check fails. For private URLs, a target group is created and the target group health check is run.</p>
+    /// <p>The <code>HealthCheckProtocol</code>, <code>HealthCheckPort</code>, and <code>HealthCheckPath</code> are the same protocol, port, and path specified in the URL or health URL, if used. All other settings use the default values, as described in <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/target-group-health-checks.html">Health checks for your target groups</a>. The health check is considered successful if at least one target within the target group transitions to a healthy state.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRoute<
         C = aws_smithy_client::erase::DynConnector,
@@ -664,14 +626,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_application_identifier(input);
             self
         }
-        /// <p>The ID of the service in which the route is created. Traffic that matches this route is
-        /// forwarded to this service.</p>
+        /// <p>The ID of the service in which the route is created. Traffic that matches this route is forwarded to this service.</p>
         pub fn service_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.service_identifier(input.into());
             self
         }
-        /// <p>The ID of the service in which the route is created. Traffic that matches this route is
-        /// forwarded to this service.</p>
+        /// <p>The ID of the service in which the route is created. Traffic that matches this route is forwarded to this service.</p>
         pub fn set_service_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -679,18 +639,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_service_identifier(input);
             self
         }
-        /// <p>The route type of the route. <code>DEFAULT</code> indicates that all traffic that does not
-        /// match another route is forwarded to the default route. Applications must have a default route
-        /// before any other routes can be created. <code>URI_PATH</code> indicates a route that is based
-        /// on a URI path.</p>
+        /// <p>The route type of the route. <code>DEFAULT</code> indicates that all traffic that does not match another route is forwarded to the default route. Applications must have a default route before any other routes can be created. <code>URI_PATH</code> indicates a route that is based on a URI path.</p>
         pub fn route_type(mut self, input: crate::model::RouteType) -> Self {
             self.inner = self.inner.route_type(input);
             self
         }
-        /// <p>The route type of the route. <code>DEFAULT</code> indicates that all traffic that does not
-        /// match another route is forwarded to the default route. Applications must have a default route
-        /// before any other routes can be created. <code>URI_PATH</code> indicates a route that is based
-        /// on a URI path.</p>
+        /// <p>The route type of the route. <code>DEFAULT</code> indicates that all traffic that does not match another route is forwarded to the default route. Applications must have a default route before any other routes can be created. <code>URI_PATH</code> indicates a route that is based on a URI path.</p>
         pub fn set_route_type(
             mut self,
             input: std::option::Option<crate::model::RouteType>,
@@ -734,14 +688,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -749,15 +701,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateService`.
     ///
-    /// <p>Creates an Amazon Web Services Migration Hub Refactor Spaces service. The account owner of the service is always the
-    /// environment owner, regardless of which account in the environment creates the service.
-    /// Services have either a URL endpoint in a virtual private cloud (VPC), or a Lambda
-    /// function endpoint.</p>
-    /// <important>
-    /// <p>If an Amazon Web Services resourceis launched in a service VPC, and you want it to be
-    /// accessible to all of an environment’s services with VPCs and routes, apply the
-    /// <code>RefactorSpacesSecurityGroup</code> to the resource. Alternatively, to add more
-    /// cross-account constraints, apply your own security group.</p>
+    /// <p>Creates an Amazon Web Services Migration Hub Refactor Spaces service. The account owner of the service is always the environment owner, regardless of which account in the environment creates the service. Services have either a URL endpoint in a virtual private cloud (VPC), or a Lambda function endpoint.</p> <important>
+    /// <p>If an Amazon Web Services resourceis launched in a service VPC, and you want it to be accessible to all of an environment’s services with VPCs and routes, apply the <code>RefactorSpacesSecurityGroup</code> to the resource. Alternatively, to add more cross-account constraints, apply your own security group.</p>
     /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateService<
@@ -933,14 +878,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -948,8 +891,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteApplication`.
     ///
-    /// <p>Deletes an Amazon Web Services Migration Hub Refactor Spaces application. Before you can delete an application, you must first
-    /// delete any services or routes within the application.</p>
+    /// <p>Deletes an Amazon Web Services Migration Hub Refactor Spaces application. Before you can delete an application, you must first delete any services or routes within the application.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteApplication<
         C = aws_smithy_client::erase::DynConnector,
@@ -1035,8 +977,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteEnvironment`.
     ///
-    /// <p>Deletes an Amazon Web Services Migration Hub Refactor Spaces environment. Before you can delete an environment, you must first
-    /// delete any applications and services within the environment.</p>
+    /// <p>Deletes an Amazon Web Services Migration Hub Refactor Spaces environment. Before you can delete an environment, you must first delete any applications and services within the environment.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEnvironment<
         C = aws_smithy_client::erase::DynConnector,
@@ -1348,21 +1289,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_environment_identifier(input);
             self
         }
-        /// <p>Deletes a Refactor Spaces service.</p>
-        /// <note>
-        /// <p>The <code>RefactorSpacesSecurityGroup</code> security group must be removed from all
-        /// Amazon Web Services resources in the virtual private cloud (VPC) prior to deleting a service with a URL
-        /// endpoint in a VPC.</p>
+        /// <p>Deletes a Refactor Spaces service.</p> <note>
+        /// <p>The <code>RefactorSpacesSecurityGroup</code> security group must be removed from all Amazon Web Services resources in the virtual private cloud (VPC) prior to deleting a service with a URL endpoint in a VPC.</p>
         /// </note>
         pub fn application_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.application_identifier(input.into());
             self
         }
-        /// <p>Deletes a Refactor Spaces service.</p>
-        /// <note>
-        /// <p>The <code>RefactorSpacesSecurityGroup</code> security group must be removed from all
-        /// Amazon Web Services resources in the virtual private cloud (VPC) prior to deleting a service with a URL
-        /// endpoint in a VPC.</p>
+        /// <p>Deletes a Refactor Spaces service.</p> <note>
+        /// <p>The <code>RefactorSpacesSecurityGroup</code> security group must be removed from all Amazon Web Services resources in the virtual private cloud (VPC) prior to deleting a service with a URL endpoint in a VPC.</p>
         /// </note>
         pub fn set_application_identifier(
             mut self,
@@ -1894,14 +1829,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -1909,8 +1842,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListEnvironments`.
     ///
-    /// <p>Lists Amazon Web Services Migration Hub Refactor Spaces environments owned by a caller account or shared with the caller
-    /// account. </p>
+    /// <p>Lists Amazon Web Services Migration Hub Refactor Spaces environments owned by a caller account or shared with the caller account. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEnvironments<
         C = aws_smithy_client::erase::DynConnector,
@@ -1977,14 +1909,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2072,14 +2002,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2180,14 +2108,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2288,14 +2214,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2303,8 +2227,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
-    /// <p>Lists the tags of a resource. The caller account must be the same as the resource’s
-    /// <code>OwnerAccountId</code>. Listing tags in other accounts is not supported. </p>
+    /// <p>Lists the tags of a resource. The caller account must be the same as the resource’s <code>OwnerAccountId</code>. Listing tags in other accounts is not supported. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -2374,10 +2297,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutResourcePolicy`.
     ///
-    /// <p>Attaches a resource-based permission policy to the Amazon Web Services Migration Hub Refactor Spaces environment. The policy
-    /// must contain the same actions and condition statements as the
-    /// <code>arn:aws:ram::aws:permission/AWSRAMDefaultPermissionRefactorSpacesEnvironment</code>
-    /// permission in Resource Access Manager. The policy must not contain new lines or blank lines. </p>
+    /// <p>Attaches a resource-based permission policy to the Amazon Web Services Migration Hub Refactor Spaces environment. The policy must contain the same actions and condition statements as the <code>arn:aws:ram::aws:permission/AWSRAMDefaultPermissionRefactorSpacesEnvironment</code> permission in Resource Access Manager. The policy must not contain new lines or blank lines. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutResourcePolicy<
         C = aws_smithy_client::erase::DynConnector,
@@ -2434,14 +2354,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource to which the policy is being attached.
-        /// </p>
+        /// <p>The Amazon Resource Name (ARN) of the resource to which the policy is being attached. </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource to which the policy is being attached.
-        /// </p>
+        /// <p>The Amazon Resource Name (ARN) of the resource to which the policy is being attached. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -2459,12 +2377,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Removes the tags of a given resource. Tags are metadata which can be used to manage a
-    /// resource. To tag a resource, the caller account must be the same as the resource’s
-    /// <code>OwnerAccountId</code>. Tagging resources in other accounts is not supported.</p>
-    /// <note>
-    /// <p>Amazon Web Services Migration Hub Refactor Spaces does not propagate tags to orchestrated resources, such as an
-    /// environment’s transit gateway.</p>
+    /// <p>Removes the tags of a given resource. Tags are metadata which can be used to manage a resource. To tag a resource, the caller account must be the same as the resource’s <code>OwnerAccountId</code>. Tagging resources in other accounts is not supported.</p> <note>
+    /// <p>Amazon Web Services Migration Hub Refactor Spaces does not propagate tags to orchestrated resources, such as an environment’s transit gateway.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
@@ -2558,9 +2472,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UntagResource`.
     ///
-    /// <p>Adds to or modifies the tags of the given resource. Tags are metadata which can be used to
-    /// manage a resource. To untag a resource, the caller account must be the same as the resource’s
-    /// <code>OwnerAccountId</code>. Untagging resources across accounts is not supported. </p>
+    /// <p>Adds to or modifies the tags of the given resource. Tags are metadata which can be used to manage a resource. To untag a resource, the caller account must be the same as the resource’s <code>OwnerAccountId</code>. Untagging resources across accounts is not supported. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,

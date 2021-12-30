@@ -3,21 +3,17 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateServiceOutput {
-    /// <p>A description of the App Runner service updated by this request. All configuration values in the returned <code>Service</code> structure reflect
-    /// configuration changes that are being applied by this request.</p>
+    /// <p>A description of the App Runner service updated by this request. All configuration values in the returned <code>Service</code> structure reflect configuration changes that are being applied by this request.</p>
     pub service: std::option::Option<crate::model::Service>,
-    /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <a>ListOperations</a> call to track
-    /// the operation's progress.</p>
+    /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <code>ListOperations</code> call to track the operation's progress.</p>
     pub operation_id: std::option::Option<std::string::String>,
 }
 impl UpdateServiceOutput {
-    /// <p>A description of the App Runner service updated by this request. All configuration values in the returned <code>Service</code> structure reflect
-    /// configuration changes that are being applied by this request.</p>
+    /// <p>A description of the App Runner service updated by this request. All configuration values in the returned <code>Service</code> structure reflect configuration changes that are being applied by this request.</p>
     pub fn service(&self) -> std::option::Option<&crate::model::Service> {
         self.service.as_ref()
     }
-    /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <a>ListOperations</a> call to track
-    /// the operation's progress.</p>
+    /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <code>ListOperations</code> call to track the operation's progress.</p>
     pub fn operation_id(&self) -> std::option::Option<&str> {
         self.operation_id.as_deref()
     }
@@ -40,26 +36,22 @@ pub mod update_service_output {
         pub(crate) operation_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A description of the App Runner service updated by this request. All configuration values in the returned <code>Service</code> structure reflect
-        /// configuration changes that are being applied by this request.</p>
+        /// <p>A description of the App Runner service updated by this request. All configuration values in the returned <code>Service</code> structure reflect configuration changes that are being applied by this request.</p>
         pub fn service(mut self, input: crate::model::Service) -> Self {
             self.service = Some(input);
             self
         }
-        /// <p>A description of the App Runner service updated by this request. All configuration values in the returned <code>Service</code> structure reflect
-        /// configuration changes that are being applied by this request.</p>
+        /// <p>A description of the App Runner service updated by this request. All configuration values in the returned <code>Service</code> structure reflect configuration changes that are being applied by this request.</p>
         pub fn set_service(mut self, input: std::option::Option<crate::model::Service>) -> Self {
             self.service = input;
             self
         }
-        /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <a>ListOperations</a> call to track
-        /// the operation's progress.</p>
+        /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <code>ListOperations</code> call to track the operation's progress.</p>
         pub fn operation_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.operation_id = Some(input.into());
             self
         }
-        /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <a>ListOperations</a> call to track
-        /// the operation's progress.</p>
+        /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <code>ListOperations</code> call to track the operation's progress.</p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.operation_id = input;
             self
@@ -144,13 +136,11 @@ impl TagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartDeploymentOutput {
-    /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <a>ListOperations</a> call to track
-    /// the operation's progress.</p>
+    /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <code>ListOperations</code> call to track the operation's progress.</p>
     pub operation_id: std::option::Option<std::string::String>,
 }
 impl StartDeploymentOutput {
-    /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <a>ListOperations</a> call to track
-    /// the operation's progress.</p>
+    /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <code>ListOperations</code> call to track the operation's progress.</p>
     pub fn operation_id(&self) -> std::option::Option<&str> {
         self.operation_id.as_deref()
     }
@@ -171,14 +161,12 @@ pub mod start_deployment_output {
         pub(crate) operation_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <a>ListOperations</a> call to track
-        /// the operation's progress.</p>
+        /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <code>ListOperations</code> call to track the operation's progress.</p>
         pub fn operation_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.operation_id = Some(input.into());
             self
         }
-        /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <a>ListOperations</a> call to track
-        /// the operation's progress.</p>
+        /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <code>ListOperations</code> call to track the operation's progress.</p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.operation_id = input;
             self
@@ -204,8 +192,7 @@ impl StartDeploymentOutput {
 pub struct ResumeServiceOutput {
     /// <p>A description of the App Runner service that this request just resumed.</p>
     pub service: std::option::Option<crate::model::Service>,
-    /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <a>ListOperations</a> call to track
-    /// the operation's progress.</p>
+    /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <code>ListOperations</code> call to track the operation's progress.</p>
     pub operation_id: std::option::Option<std::string::String>,
 }
 impl ResumeServiceOutput {
@@ -213,8 +200,7 @@ impl ResumeServiceOutput {
     pub fn service(&self) -> std::option::Option<&crate::model::Service> {
         self.service.as_ref()
     }
-    /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <a>ListOperations</a> call to track
-    /// the operation's progress.</p>
+    /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <code>ListOperations</code> call to track the operation's progress.</p>
     pub fn operation_id(&self) -> std::option::Option<&str> {
         self.operation_id.as_deref()
     }
@@ -247,14 +233,12 @@ pub mod resume_service_output {
             self.service = input;
             self
         }
-        /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <a>ListOperations</a> call to track
-        /// the operation's progress.</p>
+        /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <code>ListOperations</code> call to track the operation's progress.</p>
         pub fn operation_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.operation_id = Some(input.into());
             self
         }
-        /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <a>ListOperations</a> call to track
-        /// the operation's progress.</p>
+        /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <code>ListOperations</code> call to track the operation's progress.</p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.operation_id = input;
             self
@@ -281,8 +265,7 @@ impl ResumeServiceOutput {
 pub struct PauseServiceOutput {
     /// <p>A description of the App Runner service that this request just paused.</p>
     pub service: std::option::Option<crate::model::Service>,
-    /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <a>ListOperations</a> call to track
-    /// the operation's progress.</p>
+    /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <code>ListOperations</code> call to track the operation's progress.</p>
     pub operation_id: std::option::Option<std::string::String>,
 }
 impl PauseServiceOutput {
@@ -290,8 +273,7 @@ impl PauseServiceOutput {
     pub fn service(&self) -> std::option::Option<&crate::model::Service> {
         self.service.as_ref()
     }
-    /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <a>ListOperations</a> call to track
-    /// the operation's progress.</p>
+    /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <code>ListOperations</code> call to track the operation's progress.</p>
     pub fn operation_id(&self) -> std::option::Option<&str> {
         self.operation_id.as_deref()
     }
@@ -324,14 +306,12 @@ pub mod pause_service_output {
             self.service = input;
             self
         }
-        /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <a>ListOperations</a> call to track
-        /// the operation's progress.</p>
+        /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <code>ListOperations</code> call to track the operation's progress.</p>
         pub fn operation_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.operation_id = Some(input.into());
             self
         }
-        /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <a>ListOperations</a> call to track
-        /// the operation's progress.</p>
+        /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <code>ListOperations</code> call to track the operation's progress.</p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.operation_id = input;
             self
@@ -500,15 +480,13 @@ impl ListServicesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOperationsOutput {
-    /// <p>A list of operation summary information records. In a paginated request, the request returns up to <code>MaxResults</code> records for each
-    /// call.</p>
+    /// <p>A list of operation summary information records. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
     pub operation_summary_list: std::option::Option<std::vec::Vec<crate::model::OperationSummary>>,
     /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListOperationsOutput {
-    /// <p>A list of operation summary information records. In a paginated request, the request returns up to <code>MaxResults</code> records for each
-    /// call.</p>
+    /// <p>A list of operation summary information records. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
     pub fn operation_summary_list(&self) -> std::option::Option<&[crate::model::OperationSummary]> {
         self.operation_summary_list.as_deref()
     }
@@ -540,16 +518,14 @@ pub mod list_operations_output {
         ///
         /// To override the contents of this collection use [`set_operation_summary_list`](Self::set_operation_summary_list).
         ///
-        /// <p>A list of operation summary information records. In a paginated request, the request returns up to <code>MaxResults</code> records for each
-        /// call.</p>
+        /// <p>A list of operation summary information records. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
         pub fn operation_summary_list(mut self, input: crate::model::OperationSummary) -> Self {
             let mut v = self.operation_summary_list.unwrap_or_default();
             v.push(input);
             self.operation_summary_list = Some(v);
             self
         }
-        /// <p>A list of operation summary information records. In a paginated request, the request returns up to <code>MaxResults</code> records for each
-        /// call.</p>
+        /// <p>A list of operation summary information records. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
         pub fn set_operation_summary_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::OperationSummary>>,
@@ -587,16 +563,14 @@ impl ListOperationsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConnectionsOutput {
-    /// <p>A list of summary information records for connections. In a paginated request, the request returns up to <code>MaxResults</code> records for each
-    /// call.</p>
+    /// <p>A list of summary information records for connections. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
     pub connection_summary_list:
         std::option::Option<std::vec::Vec<crate::model::ConnectionSummary>>,
     /// <p>The token that you can pass in a subsequent request to get the next result page. Returned in a paginated request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListConnectionsOutput {
-    /// <p>A list of summary information records for connections. In a paginated request, the request returns up to <code>MaxResults</code> records for each
-    /// call.</p>
+    /// <p>A list of summary information records for connections. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
     pub fn connection_summary_list(
         &self,
     ) -> std::option::Option<&[crate::model::ConnectionSummary]> {
@@ -630,16 +604,14 @@ pub mod list_connections_output {
         ///
         /// To override the contents of this collection use [`set_connection_summary_list`](Self::set_connection_summary_list).
         ///
-        /// <p>A list of summary information records for connections. In a paginated request, the request returns up to <code>MaxResults</code> records for each
-        /// call.</p>
+        /// <p>A list of summary information records for connections. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
         pub fn connection_summary_list(mut self, input: crate::model::ConnectionSummary) -> Self {
             let mut v = self.connection_summary_list.unwrap_or_default();
             v.push(input);
             self.connection_summary_list = Some(v);
             self
         }
-        /// <p>A list of summary information records for connections. In a paginated request, the request returns up to <code>MaxResults</code> records for each
-        /// call.</p>
+        /// <p>A list of summary information records for connections. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
         pub fn set_connection_summary_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ConnectionSummary>>,
@@ -677,16 +649,14 @@ impl ListConnectionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAutoScalingConfigurationsOutput {
-    /// <p>A list of summary information records for auto scaling configurations. In a paginated request, the request returns up to <code>MaxResults</code>
-    /// records for each call.</p>
+    /// <p>A list of summary information records for auto scaling configurations. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
     pub auto_scaling_configuration_summary_list:
         std::option::Option<std::vec::Vec<crate::model::AutoScalingConfigurationSummary>>,
     /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAutoScalingConfigurationsOutput {
-    /// <p>A list of summary information records for auto scaling configurations. In a paginated request, the request returns up to <code>MaxResults</code>
-    /// records for each call.</p>
+    /// <p>A list of summary information records for auto scaling configurations. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
     pub fn auto_scaling_configuration_summary_list(
         &self,
     ) -> std::option::Option<&[crate::model::AutoScalingConfigurationSummary]> {
@@ -723,8 +693,7 @@ pub mod list_auto_scaling_configurations_output {
         ///
         /// To override the contents of this collection use [`set_auto_scaling_configuration_summary_list`](Self::set_auto_scaling_configuration_summary_list).
         ///
-        /// <p>A list of summary information records for auto scaling configurations. In a paginated request, the request returns up to <code>MaxResults</code>
-        /// records for each call.</p>
+        /// <p>A list of summary information records for auto scaling configurations. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
         pub fn auto_scaling_configuration_summary_list(
             mut self,
             input: crate::model::AutoScalingConfigurationSummary,
@@ -736,8 +705,7 @@ pub mod list_auto_scaling_configurations_output {
             self.auto_scaling_configuration_summary_list = Some(v);
             self
         }
-        /// <p>A list of summary information records for auto scaling configurations. In a paginated request, the request returns up to <code>MaxResults</code>
-        /// records for each call.</p>
+        /// <p>A list of summary information records for auto scaling configurations. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
         pub fn set_auto_scaling_configuration_summary_list(
             mut self,
             input: std::option::Option<
@@ -931,8 +899,7 @@ pub struct DescribeCustomDomainsOutput {
     pub dns_target: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the App Runner service whose associated custom domain names you want to describe.</p>
     pub service_arn: std::option::Option<std::string::String>,
-    /// <p>A list of descriptions of custom domain names that are associated with the service. In a paginated request, the request returns up to
-    /// <code>MaxResults</code> records per call.</p>
+    /// <p>A list of descriptions of custom domain names that are associated with the service. In a paginated request, the request returns up to <code>MaxResults</code> records per call.</p>
     pub custom_domains: std::option::Option<std::vec::Vec<crate::model::CustomDomain>>,
     /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -946,8 +913,7 @@ impl DescribeCustomDomainsOutput {
     pub fn service_arn(&self) -> std::option::Option<&str> {
         self.service_arn.as_deref()
     }
-    /// <p>A list of descriptions of custom domain names that are associated with the service. In a paginated request, the request returns up to
-    /// <code>MaxResults</code> records per call.</p>
+    /// <p>A list of descriptions of custom domain names that are associated with the service. In a paginated request, the request returns up to <code>MaxResults</code> records per call.</p>
     pub fn custom_domains(&self) -> std::option::Option<&[crate::model::CustomDomain]> {
         self.custom_domains.as_deref()
     }
@@ -1002,16 +968,14 @@ pub mod describe_custom_domains_output {
         ///
         /// To override the contents of this collection use [`set_custom_domains`](Self::set_custom_domains).
         ///
-        /// <p>A list of descriptions of custom domain names that are associated with the service. In a paginated request, the request returns up to
-        /// <code>MaxResults</code> records per call.</p>
+        /// <p>A list of descriptions of custom domain names that are associated with the service. In a paginated request, the request returns up to <code>MaxResults</code> records per call.</p>
         pub fn custom_domains(mut self, input: crate::model::CustomDomain) -> Self {
             let mut v = self.custom_domains.unwrap_or_default();
             v.push(input);
             self.custom_domains = Some(v);
             self
         }
-        /// <p>A list of descriptions of custom domain names that are associated with the service. In a paginated request, the request returns up to
-        /// <code>MaxResults</code> records per call.</p>
+        /// <p>A list of descriptions of custom domain names that are associated with the service. In a paginated request, the request returns up to <code>MaxResults</code> records per call.</p>
         pub fn set_custom_domains(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CustomDomain>>,
@@ -1119,8 +1083,7 @@ impl DescribeAutoScalingConfigurationOutput {
 pub struct DeleteServiceOutput {
     /// <p>A description of the App Runner service that this request just deleted.</p>
     pub service: std::option::Option<crate::model::Service>,
-    /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <a>ListOperations</a> call to track
-    /// the operation's progress.</p>
+    /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <code>ListOperations</code> call to track the operation's progress.</p>
     pub operation_id: std::option::Option<std::string::String>,
 }
 impl DeleteServiceOutput {
@@ -1128,8 +1091,7 @@ impl DeleteServiceOutput {
     pub fn service(&self) -> std::option::Option<&crate::model::Service> {
         self.service.as_ref()
     }
-    /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <a>ListOperations</a> call to track
-    /// the operation's progress.</p>
+    /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <code>ListOperations</code> call to track the operation's progress.</p>
     pub fn operation_id(&self) -> std::option::Option<&str> {
         self.operation_id.as_deref()
     }
@@ -1162,14 +1124,12 @@ pub mod delete_service_output {
             self.service = input;
             self
         }
-        /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <a>ListOperations</a> call to track
-        /// the operation's progress.</p>
+        /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <code>ListOperations</code> call to track the operation's progress.</p>
         pub fn operation_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.operation_id = Some(input.into());
             self
         }
-        /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <a>ListOperations</a> call to track
-        /// the operation's progress.</p>
+        /// <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <code>ListOperations</code> call to track the operation's progress.</p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.operation_id = input;
             self

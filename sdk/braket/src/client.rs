@@ -405,8 +405,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>Definition of the Amazon Braket job to be created. Specifies the container image the job uses and information
-        /// about the Python scripts used for entry and training.</p>
+        /// <p>Definition of the Amazon Braket job to be created. Specifies the container image the job uses and information about the Python scripts used for entry and training.</p>
         pub fn algorithm_specification(
             mut self,
             input: crate::model::AlgorithmSpecification,
@@ -414,8 +413,7 @@ pub mod fluent_builders {
             self.inner = self.inner.algorithm_specification(input);
             self
         }
-        /// <p>Definition of the Amazon Braket job to be created. Specifies the container image the job uses and information
-        /// about the Python scripts used for entry and training.</p>
+        /// <p>Definition of the Amazon Braket job to be created. Specifies the container image the job uses and information about the Python scripts used for entry and training.</p>
         pub fn set_algorithm_specification(
             mut self,
             input: std::option::Option<crate::model::AlgorithmSpecification>,
@@ -427,14 +425,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_input_data_config`](Self::set_input_data_config).
         ///
-        /// <p>A list of parameters that specify the name and type of input data and where it is
-        /// located.</p>
+        /// <p>A list of parameters that specify the name and type of input data and where it is located.</p>
         pub fn input_data_config(mut self, input: crate::model::InputFileConfig) -> Self {
             self.inner = self.inner.input_data_config(input);
             self
         }
-        /// <p>A list of parameters that specify the name and type of input data and where it is
-        /// located.</p>
+        /// <p>A list of parameters that specify the name and type of input data and where it is located.</p>
         pub fn set_input_data_config(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InputFileConfig>>,
@@ -442,14 +438,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_input_data_config(input);
             self
         }
-        /// <p>The path to the S3 location where you want to store job artifacts and the
-        /// encryption key used to store them.</p>
+        /// <p>The path to the S3 location where you want to store job artifacts and the encryption key used to store them.</p>
         pub fn output_data_config(mut self, input: crate::model::JobOutputDataConfig) -> Self {
             self.inner = self.inner.output_data_config(input);
             self
         }
-        /// <p>The path to the S3 location where you want to store job artifacts and the
-        /// encryption key used to store them.</p>
+        /// <p>The path to the S3 location where you want to store job artifacts and the encryption key used to store them.</p>
         pub fn set_output_data_config(
             mut self,
             input: std::option::Option<crate::model::JobOutputDataConfig>,
@@ -480,16 +474,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_job_name(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform
-        /// tasks on behalf of a user. It can access user resources, run an Amazon Braket job container
-        /// on behalf of user, and output resources to the users' s3 buckets.</p>
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform tasks on behalf of a user. It can access user resources, run an Amazon Braket job container on behalf of user, and output resources to the users' s3 buckets.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform
-        /// tasks on behalf of a user. It can access user resources, run an Amazon Braket job container
-        /// on behalf of user, and output resources to the users' s3 buckets.</p>
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform tasks on behalf of a user. It can access user resources, run an Amazon Braket job container on behalf of user, and output resources to the users' s3 buckets.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
@@ -507,14 +497,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_stopping_condition(input);
             self
         }
-        /// <p>Configuration of the resource instances to use while running the hybrid job on Amazon
-        /// Braket.</p>
+        /// <p>Configuration of the resource instances to use while running the hybrid job on Amazon Braket.</p>
         pub fn instance_config(mut self, input: crate::model::InstanceConfig) -> Self {
             self.inner = self.inner.instance_config(input);
             self
         }
-        /// <p>Configuration of the resource instances to use while running the hybrid job on Amazon
-        /// Braket.</p>
+        /// <p>Configuration of the resource instances to use while running the hybrid job on Amazon Braket.</p>
         pub fn set_instance_config(
             mut self,
             input: std::option::Option<crate::model::InstanceConfig>,
@@ -526,9 +514,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_hyper_parameters`](Self::set_hyper_parameters).
         ///
-        /// <p>Algorithm-specific parameters used by an Amazon Braket job that influence the quality of
-        /// the training job. The values are set with a string of JSON key:value pairs, where the key is the
-        /// name of the hyperparameter and the value is the value of th hyperparameter.</p>
+        /// <p>Algorithm-specific parameters used by an Amazon Braket job that influence the quality of the training job. The values are set with a string of JSON key:value pairs, where the key is the name of the hyperparameter and the value is the value of th hyperparameter.</p>
         pub fn hyper_parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -537,9 +523,7 @@ pub mod fluent_builders {
             self.inner = self.inner.hyper_parameters(k.into(), v.into());
             self
         }
-        /// <p>Algorithm-specific parameters used by an Amazon Braket job that influence the quality of
-        /// the training job. The values are set with a string of JSON key:value pairs, where the key is the
-        /// name of the hyperparameter and the value is the value of th hyperparameter.</p>
+        /// <p>Algorithm-specific parameters used by an Amazon Braket job that influence the quality of the training job. The values are set with a string of JSON key:value pairs, where the key is the name of the hyperparameter and the value is the value of th hyperparameter.</p>
         pub fn set_hyper_parameters(
             mut self,
             input: std::option::Option<
@@ -1197,14 +1181,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A token used for pagination of results returned in the response. Use the token returned
-        /// from the previous request to continue results where the previous request ended.</p>
+        /// <p>A token used for pagination of results returned in the response. Use the token returned from the previous request to continue results where the previous request ended.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token used for pagination of results returned in the response. Use the token returned
-        /// from the previous request to continue results where the previous request ended.</p>
+        /// <p>A token used for pagination of results returned in the response. Use the token returned from the previous request to continue results where the previous request ended.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self

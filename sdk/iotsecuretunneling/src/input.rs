@@ -20,14 +20,12 @@ pub mod close_tunnel_input {
             self.tunnel_id = input;
             self
         }
-        /// <p>When set to true, AWS IoT Secure Tunneling deletes the tunnel data
-        /// immediately.</p>
+        /// <p>When set to true, AWS IoT Secure Tunneling deletes the tunnel data immediately.</p>
         pub fn delete(mut self, input: bool) -> Self {
             self.delete = Some(input);
             self
         }
-        /// <p>When set to true, AWS IoT Secure Tunneling deletes the tunnel data
-        /// immediately.</p>
+        /// <p>When set to true, AWS IoT Secure Tunneling deletes the tunnel data immediately.</p>
         pub fn set_delete(mut self, input: std::option::Option<bool>) -> Self {
             self.delete = input;
             self
@@ -1432,8 +1430,7 @@ impl std::fmt::Debug for DescribeTunnelInput {
 pub struct CloseTunnelInput {
     /// <p>The ID of the tunnel to close.</p>
     pub tunnel_id: std::option::Option<std::string::String>,
-    /// <p>When set to true, AWS IoT Secure Tunneling deletes the tunnel data
-    /// immediately.</p>
+    /// <p>When set to true, AWS IoT Secure Tunneling deletes the tunnel data immediately.</p>
     pub delete: std::option::Option<bool>,
 }
 impl CloseTunnelInput {
@@ -1441,8 +1438,7 @@ impl CloseTunnelInput {
     pub fn tunnel_id(&self) -> std::option::Option<&str> {
         self.tunnel_id.as_deref()
     }
-    /// <p>When set to true, AWS IoT Secure Tunneling deletes the tunnel data
-    /// immediately.</p>
+    /// <p>When set to true, AWS IoT Secure Tunneling deletes the tunnel data immediately.</p>
     pub fn delete(&self) -> std::option::Option<bool> {
         self.delete
     }

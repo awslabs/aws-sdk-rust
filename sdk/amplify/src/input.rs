@@ -86,30 +86,22 @@ pub mod create_app_input {
             self.iam_service_role_arn = input;
             self
         }
-        /// <p> The OAuth token for a third-party source control system for an Amplify app. The OAuth
-        /// token is used to create a webhook and a read-only deploy key. The OAuth token is not
-        /// stored. </p>
+        /// <p> The OAuth token for a third-party source control system for an Amplify app. The OAuth token is used to create a webhook and a read-only deploy key. The OAuth token is not stored. </p>
         pub fn oauth_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.oauth_token = Some(input.into());
             self
         }
-        /// <p> The OAuth token for a third-party source control system for an Amplify app. The OAuth
-        /// token is used to create a webhook and a read-only deploy key. The OAuth token is not
-        /// stored. </p>
+        /// <p> The OAuth token for a third-party source control system for an Amplify app. The OAuth token is used to create a webhook and a read-only deploy key. The OAuth token is not stored. </p>
         pub fn set_oauth_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.oauth_token = input;
             self
         }
-        /// <p> The personal access token for a third-party source control system for an Amplify app.
-        /// The personal access token is used to create a webhook and a read-only deploy key. The
-        /// token is not stored. </p>
+        /// <p> The personal access token for a third-party source control system for an Amplify app. The personal access token is used to create a webhook and a read-only deploy key. The token is not stored. </p>
         pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.access_token = Some(input.into());
             self
         }
-        /// <p> The personal access token for a third-party source control system for an Amplify app.
-        /// The personal access token is used to create a webhook and a read-only deploy key. The
-        /// token is not stored. </p>
+        /// <p> The personal access token for a third-party source control system for an Amplify app. The personal access token is used to create a webhook and a read-only deploy key. The token is not stored. </p>
         pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.access_token = input;
             self
@@ -149,26 +141,22 @@ pub mod create_app_input {
             self.enable_branch_auto_build = input;
             self
         }
-        /// <p> Automatically disconnects a branch in the Amplify Console when you delete a branch
-        /// from your Git repository. </p>
+        /// <p> Automatically disconnects a branch in the Amplify Console when you delete a branch from your Git repository. </p>
         pub fn enable_branch_auto_deletion(mut self, input: bool) -> Self {
             self.enable_branch_auto_deletion = Some(input);
             self
         }
-        /// <p> Automatically disconnects a branch in the Amplify Console when you delete a branch
-        /// from your Git repository. </p>
+        /// <p> Automatically disconnects a branch in the Amplify Console when you delete a branch from your Git repository. </p>
         pub fn set_enable_branch_auto_deletion(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_branch_auto_deletion = input;
             self
         }
-        /// <p> Enables basic authorization for an Amplify app. This will apply to all branches that
-        /// are part of this app. </p>
+        /// <p> Enables basic authorization for an Amplify app. This will apply to all branches that are part of this app. </p>
         pub fn enable_basic_auth(mut self, input: bool) -> Self {
             self.enable_basic_auth = Some(input);
             self
         }
-        /// <p> Enables basic authorization for an Amplify app. This will apply to all branches that
-        /// are part of this app. </p>
+        /// <p> Enables basic authorization for an Amplify app. This will apply to all branches that are part of this app. </p>
         pub fn set_enable_basic_auth(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_basic_auth = input;
             self
@@ -895,14 +883,12 @@ pub mod create_branch_input {
             self.pull_request_environment_name = input;
             self
         }
-        /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify
-        /// app. </p>
+        /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
         pub fn backend_environment_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.backend_environment_arn = Some(input.into());
             self
         }
-        /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify
-        /// app. </p>
+        /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
         pub fn set_backend_environment_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1109,10 +1095,7 @@ pub mod create_deployment_input {
         ///
         /// To override the contents of this collection use [`set_file_map`](Self::set_file_map).
         ///
-        /// <p> An optional file map that contains the file name as the key and the file content md5
-        /// hash as the value. If this argument is provided, the service will generate a unique
-        /// upload URL per file. Otherwise, the service will only generate a single upload URL for
-        /// the zipped files. </p>
+        /// <p> An optional file map that contains the file name as the key and the file content md5 hash as the value. If this argument is provided, the service will generate a unique upload URL per file. Otherwise, the service will only generate a single upload URL for the zipped files. </p>
         pub fn file_map(
             mut self,
             k: impl Into<std::string::String>,
@@ -1123,10 +1106,7 @@ pub mod create_deployment_input {
             self.file_map = Some(hash_map);
             self
         }
-        /// <p> An optional file map that contains the file name as the key and the file content md5
-        /// hash as the value. If this argument is provided, the service will generate a unique
-        /// upload URL per file. Otherwise, the service will only generate a single upload URL for
-        /// the zipped files. </p>
+        /// <p> An optional file map that contains the file name as the key and the file content md5 hash as the value. If this argument is provided, the service will generate a unique upload URL per file. Otherwise, the service will only generate a single upload URL for the zipped files. </p>
         pub fn set_file_map(
             mut self,
             input: std::option::Option<
@@ -1391,14 +1371,12 @@ pub mod create_domain_association_input {
             self.auto_sub_domain_creation_patterns = input;
             self
         }
-        /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon
-        /// Resource Name (ARN) for automatically creating subdomains. </p>
+        /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for automatically creating subdomains. </p>
         pub fn auto_sub_domain_iam_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.auto_sub_domain_iam_role = Some(input.into());
             self
         }
-        /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon
-        /// Resource Name (ARN) for automatically creating subdomains. </p>
+        /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for automatically creating subdomains. </p>
         pub fn set_auto_sub_domain_iam_role(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2818,14 +2796,12 @@ pub mod generate_access_logs_input {
         pub(crate) app_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> The time at which the logs should start. The time range specified is inclusive of the
-        /// start time. </p>
+        /// <p> The time at which the logs should start. The time range specified is inclusive of the start time. </p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p> The time at which the logs should start. The time range specified is inclusive of the
-        /// start time. </p>
+        /// <p> The time at which the logs should start. The time range specified is inclusive of the start time. </p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2833,14 +2809,12 @@ pub mod generate_access_logs_input {
             self.start_time = input;
             self
         }
-        /// <p> The time at which the logs should end. The time range specified is inclusive of the
-        /// end time. </p>
+        /// <p> The time at which the logs should end. The time range specified is inclusive of the end time. </p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
-        /// <p> The time at which the logs should end. The time range specified is inclusive of the
-        /// end time. </p>
+        /// <p> The time at which the logs should end. The time range specified is inclusive of the end time. </p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -4228,14 +4202,12 @@ pub mod list_apps_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p> A pagination token. If non-null, the pagination token is returned in a result. Pass
-        /// its value in another request to retrieve more entries. </p>
+        /// <p> A pagination token. If non-null, the pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p> A pagination token. If non-null, the pagination token is returned in a result. Pass
-        /// its value in another request to retrieve more entries. </p>
+        /// <p> A pagination token. If non-null, the pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4422,16 +4394,12 @@ pub mod list_artifacts_input {
             self.job_id = input;
             self
         }
-        /// <p> A pagination token. Set to null to start listing artifacts from start. If a non-null
-        /// pagination token is returned in a result, pass its value in here to list more artifacts.
-        /// </p>
+        /// <p> A pagination token. Set to null to start listing artifacts from start. If a non-null pagination token is returned in a result, pass its value in here to list more artifacts. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p> A pagination token. Set to null to start listing artifacts from start. If a non-null
-        /// pagination token is returned in a result, pass its value in here to list more artifacts.
-        /// </p>
+        /// <p> A pagination token. Set to null to start listing artifacts from start. If a non-null pagination token is returned in a result, pass its value in here to list more artifacts. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4670,16 +4638,12 @@ pub mod list_backend_environments_input {
             self.environment_name = input;
             self
         }
-        /// <p> A pagination token. Set to null to start listing backend environments from the start.
-        /// If a non-null pagination token is returned in a result, pass its value in here to list
-        /// more backend environments. </p>
+        /// <p> A pagination token. Set to null to start listing backend environments from the start. If a non-null pagination token is returned in a result, pass its value in here to list more backend environments. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p> A pagination token. Set to null to start listing backend environments from the start.
-        /// If a non-null pagination token is returned in a result, pass its value in here to list
-        /// more backend environments. </p>
+        /// <p> A pagination token. Set to null to start listing backend environments from the start. If a non-null pagination token is returned in a result, pass its value in here to list more backend environments. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4874,16 +4838,12 @@ pub mod list_branches_input {
             self.app_id = input;
             self
         }
-        /// <p> A pagination token. Set to null to start listing branches from the start. If a
-        /// non-null pagination token is returned in a result, pass its value in here to list more
-        /// branches. </p>
+        /// <p> A pagination token. Set to null to start listing branches from the start. If a non-null pagination token is returned in a result, pass its value in here to list more branches. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p> A pagination token. Set to null to start listing branches from the start. If a
-        /// non-null pagination token is returned in a result, pass its value in here to list more
-        /// branches. </p>
+        /// <p> A pagination token. Set to null to start listing branches from the start. If a non-null pagination token is returned in a result, pass its value in here to list more branches. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5070,16 +5030,12 @@ pub mod list_domain_associations_input {
             self.app_id = input;
             self
         }
-        /// <p> A pagination token. Set to null to start listing apps from the start. If non-null, a
-        /// pagination token is returned in a result. Pass its value in here to list more projects.
-        /// </p>
+        /// <p> A pagination token. Set to null to start listing apps from the start. If non-null, a pagination token is returned in a result. Pass its value in here to list more projects. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p> A pagination token. Set to null to start listing apps from the start. If non-null, a
-        /// pagination token is returned in a result. Pass its value in here to list more projects.
-        /// </p>
+        /// <p> A pagination token. Set to null to start listing apps from the start. If non-null, a pagination token is returned in a result. Pass its value in here to list more projects. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5277,16 +5233,12 @@ pub mod list_jobs_input {
             self.branch_name = input;
             self
         }
-        /// <p> A pagination token. Set to null to start listing steps from the start. If a non-null
-        /// pagination token is returned in a result, pass its value in here to list more steps.
-        /// </p>
+        /// <p> A pagination token. Set to null to start listing steps from the start. If a non-null pagination token is returned in a result, pass its value in here to list more steps. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p> A pagination token. Set to null to start listing steps from the start. If a non-null
-        /// pagination token is returned in a result, pass its value in here to list more steps.
-        /// </p>
+        /// <p> A pagination token. Set to null to start listing steps from the start. If a non-null pagination token is returned in a result, pass its value in here to list more steps. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5640,16 +5592,12 @@ pub mod list_webhooks_input {
             self.app_id = input;
             self
         }
-        /// <p> A pagination token. Set to null to start listing webhooks from the start. If
-        /// non-null,the pagination token is returned in a result. Pass its value in here to list
-        /// more webhooks. </p>
+        /// <p> A pagination token. Set to null to start listing webhooks from the start. If non-null,the pagination token is returned in a result. Pass its value in here to list more webhooks. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p> A pagination token. Set to null to start listing webhooks from the start. If
-        /// non-null,the pagination token is returned in a result. Pass its value in here to list
-        /// more webhooks. </p>
+        /// <p> A pagination token. Set to null to start listing webhooks from the start. If non-null,the pagination token is returned in a result. Pass its value in here to list more webhooks. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5857,16 +5805,12 @@ pub mod start_deployment_input {
             self.job_id = input;
             self
         }
-        /// <p> The source URL for this deployment, used when calling start deployment without create
-        /// deployment. The source URL can be any HTTP GET URL that is publicly accessible and
-        /// downloads a single .zip file. </p>
+        /// <p> The source URL for this deployment, used when calling start deployment without create deployment. The source URL can be any HTTP GET URL that is publicly accessible and downloads a single .zip file. </p>
         pub fn source_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_url = Some(input.into());
             self
         }
-        /// <p> The source URL for this deployment, used when calling start deployment without create
-        /// deployment. The source URL can be any HTTP GET URL that is publicly accessible and
-        /// downloads a single .zip file. </p>
+        /// <p> The source URL for this deployment, used when calling start deployment without create deployment. The source URL can be any HTTP GET URL that is publicly accessible and downloads a single .zip file. </p>
         pub fn set_source_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source_url = input;
             self
@@ -6076,32 +6020,22 @@ pub mod start_job_input {
             self.branch_name = input;
             self
         }
-        /// <p> The unique ID for an existing job. This is required if the value of
-        /// <code>jobType</code> is <code>RETRY</code>. </p>
+        /// <p> The unique ID for an existing job. This is required if the value of <code>jobType</code> is <code>RETRY</code>. </p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
         }
-        /// <p> The unique ID for an existing job. This is required if the value of
-        /// <code>jobType</code> is <code>RETRY</code>. </p>
+        /// <p> The unique ID for an existing job. This is required if the value of <code>jobType</code> is <code>RETRY</code>. </p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
         }
-        /// <p> Describes the type for the job. The job type <code>RELEASE</code> starts a new job
-        /// with the latest change from the specified branch. This value is available only for apps
-        /// that are connected to a repository. The job type <code>RETRY</code> retries an existing
-        /// job. If the job type value is <code>RETRY</code>, the <code>jobId</code> is also
-        /// required. </p>
+        /// <p> Describes the type for the job. The job type <code>RELEASE</code> starts a new job with the latest change from the specified branch. This value is available only for apps that are connected to a repository. The job type <code>RETRY</code> retries an existing job. If the job type value is <code>RETRY</code>, the <code>jobId</code> is also required. </p>
         pub fn job_type(mut self, input: crate::model::JobType) -> Self {
             self.job_type = Some(input);
             self
         }
-        /// <p> Describes the type for the job. The job type <code>RELEASE</code> starts a new job
-        /// with the latest change from the specified branch. This value is available only for apps
-        /// that are connected to a repository. The job type <code>RETRY</code> retries an existing
-        /// job. If the job type value is <code>RETRY</code>, the <code>jobId</code> is also
-        /// required. </p>
+        /// <p> Describes the type for the job. The job type <code>RELEASE</code> starts a new job with the latest change from the specified branch. This value is available only for apps that are connected to a repository. The job type <code>RETRY</code> retries an existing job. If the job type value is <code>RETRY</code>, the <code>jobId</code> is also required. </p>
         pub fn set_job_type(mut self, input: std::option::Option<crate::model::JobType>) -> Self {
             self.job_type = input;
             self
@@ -7022,14 +6956,12 @@ pub mod update_app_input {
             self.enable_branch_auto_build = input;
             self
         }
-        /// <p> Automatically disconnects a branch in the Amplify Console when you delete a branch
-        /// from your Git repository. </p>
+        /// <p> Automatically disconnects a branch in the Amplify Console when you delete a branch from your Git repository. </p>
         pub fn enable_branch_auto_deletion(mut self, input: bool) -> Self {
             self.enable_branch_auto_deletion = Some(input);
             self
         }
-        /// <p> Automatically disconnects a branch in the Amplify Console when you delete a branch
-        /// from your Git repository. </p>
+        /// <p> Automatically disconnects a branch in the Amplify Console when you delete a branch from your Git repository. </p>
         pub fn set_enable_branch_auto_deletion(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_branch_auto_deletion = input;
             self
@@ -7157,30 +7089,22 @@ pub mod update_app_input {
             self.repository = input;
             self
         }
-        /// <p> The OAuth token for a third-party source control system for an Amplify app. The token
-        /// is used to create a webhook and a read-only deploy key. The OAuth token is not stored.
-        /// </p>
+        /// <p> The OAuth token for a third-party source control system for an Amplify app. The token is used to create a webhook and a read-only deploy key. The OAuth token is not stored. </p>
         pub fn oauth_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.oauth_token = Some(input.into());
             self
         }
-        /// <p> The OAuth token for a third-party source control system for an Amplify app. The token
-        /// is used to create a webhook and a read-only deploy key. The OAuth token is not stored.
-        /// </p>
+        /// <p> The OAuth token for a third-party source control system for an Amplify app. The token is used to create a webhook and a read-only deploy key. The OAuth token is not stored. </p>
         pub fn set_oauth_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.oauth_token = input;
             self
         }
-        /// <p> The personal access token for a third-party source control system for an Amplify app.
-        /// The token is used to create webhook and a read-only deploy key. The token is not stored.
-        /// </p>
+        /// <p> The personal access token for a third-party source control system for an Amplify app. The token is used to create webhook and a read-only deploy key. The token is not stored. </p>
         pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.access_token = Some(input.into());
             self
         }
-        /// <p> The personal access token for a third-party source control system for an Amplify app.
-        /// The token is used to create webhook and a read-only deploy key. The token is not stored.
-        /// </p>
+        /// <p> The personal access token for a third-party source control system for an Amplify app. The token is used to create webhook and a read-only deploy key. The token is not stored. </p>
         pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.access_token = input;
             self
@@ -7556,14 +7480,12 @@ pub mod update_branch_input {
             self.pull_request_environment_name = input;
             self
         }
-        /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify
-        /// app. </p>
+        /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
         pub fn backend_environment_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.backend_environment_arn = Some(input.into());
             self
         }
-        /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify
-        /// app. </p>
+        /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
         pub fn set_backend_environment_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7839,14 +7761,12 @@ pub mod update_domain_association_input {
             self.auto_sub_domain_creation_patterns = input;
             self
         }
-        /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon
-        /// Resource Name (ARN) for automatically creating subdomains. </p>
+        /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for automatically creating subdomains. </p>
         pub fn auto_sub_domain_iam_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.auto_sub_domain_iam_role = Some(input.into());
             self
         }
-        /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon
-        /// Resource Name (ARN) for automatically creating subdomains. </p>
+        /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for automatically creating subdomains. </p>
         pub fn set_auto_sub_domain_iam_role(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8265,8 +8185,7 @@ pub struct UpdateDomainAssociationInput {
     pub sub_domain_settings: std::option::Option<std::vec::Vec<crate::model::SubDomainSetting>>,
     /// <p> Sets the branch patterns for automatic subdomain creation. </p>
     pub auto_sub_domain_creation_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon
-    /// Resource Name (ARN) for automatically creating subdomains. </p>
+    /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for automatically creating subdomains. </p>
     pub auto_sub_domain_iam_role: std::option::Option<std::string::String>,
 }
 impl UpdateDomainAssociationInput {
@@ -8290,8 +8209,7 @@ impl UpdateDomainAssociationInput {
     pub fn auto_sub_domain_creation_patterns(&self) -> std::option::Option<&[std::string::String]> {
         self.auto_sub_domain_creation_patterns.as_deref()
     }
-    /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon
-    /// Resource Name (ARN) for automatically creating subdomains. </p>
+    /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for automatically creating subdomains. </p>
     pub fn auto_sub_domain_iam_role(&self) -> std::option::Option<&str> {
         self.auto_sub_domain_iam_role.as_deref()
     }
@@ -8350,8 +8268,7 @@ pub struct UpdateBranchInput {
     pub enable_pull_request_preview: std::option::Option<bool>,
     /// <p> The Amplify environment name for the pull request. </p>
     pub pull_request_environment_name: std::option::Option<std::string::String>,
-    /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify
-    /// app. </p>
+    /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
     pub backend_environment_arn: std::option::Option<std::string::String>,
 }
 impl UpdateBranchInput {
@@ -8423,8 +8340,7 @@ impl UpdateBranchInput {
     pub fn pull_request_environment_name(&self) -> std::option::Option<&str> {
         self.pull_request_environment_name.as_deref()
     }
-    /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify
-    /// app. </p>
+    /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
     pub fn backend_environment_arn(&self) -> std::option::Option<&str> {
         self.backend_environment_arn.as_deref()
     }
@@ -8478,8 +8394,7 @@ pub struct UpdateAppInput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p> Enables branch auto-building for an Amplify app. </p>
     pub enable_branch_auto_build: std::option::Option<bool>,
-    /// <p> Automatically disconnects a branch in the Amplify Console when you delete a branch
-    /// from your Git repository. </p>
+    /// <p> Automatically disconnects a branch in the Amplify Console when you delete a branch from your Git repository. </p>
     pub enable_branch_auto_deletion: std::option::Option<bool>,
     /// <p> Enables basic authorization for an Amplify app. </p>
     pub enable_basic_auth: std::option::Option<bool>,
@@ -8499,13 +8414,9 @@ pub struct UpdateAppInput {
     pub auto_branch_creation_config: std::option::Option<crate::model::AutoBranchCreationConfig>,
     /// <p> The name of the repository for an Amplify app </p>
     pub repository: std::option::Option<std::string::String>,
-    /// <p> The OAuth token for a third-party source control system for an Amplify app. The token
-    /// is used to create a webhook and a read-only deploy key. The OAuth token is not stored.
-    /// </p>
+    /// <p> The OAuth token for a third-party source control system for an Amplify app. The token is used to create a webhook and a read-only deploy key. The OAuth token is not stored. </p>
     pub oauth_token: std::option::Option<std::string::String>,
-    /// <p> The personal access token for a third-party source control system for an Amplify app.
-    /// The token is used to create webhook and a read-only deploy key. The token is not stored.
-    /// </p>
+    /// <p> The personal access token for a third-party source control system for an Amplify app. The token is used to create webhook and a read-only deploy key. The token is not stored. </p>
     pub access_token: std::option::Option<std::string::String>,
 }
 impl UpdateAppInput {
@@ -8540,8 +8451,7 @@ impl UpdateAppInput {
     pub fn enable_branch_auto_build(&self) -> std::option::Option<bool> {
         self.enable_branch_auto_build
     }
-    /// <p> Automatically disconnects a branch in the Amplify Console when you delete a branch
-    /// from your Git repository. </p>
+    /// <p> Automatically disconnects a branch in the Amplify Console when you delete a branch from your Git repository. </p>
     pub fn enable_branch_auto_deletion(&self) -> std::option::Option<bool> {
         self.enable_branch_auto_deletion
     }
@@ -8583,15 +8493,11 @@ impl UpdateAppInput {
     pub fn repository(&self) -> std::option::Option<&str> {
         self.repository.as_deref()
     }
-    /// <p> The OAuth token for a third-party source control system for an Amplify app. The token
-    /// is used to create a webhook and a read-only deploy key. The OAuth token is not stored.
-    /// </p>
+    /// <p> The OAuth token for a third-party source control system for an Amplify app. The token is used to create a webhook and a read-only deploy key. The OAuth token is not stored. </p>
     pub fn oauth_token(&self) -> std::option::Option<&str> {
         self.oauth_token.as_deref()
     }
-    /// <p> The personal access token for a third-party source control system for an Amplify app.
-    /// The token is used to create webhook and a read-only deploy key. The token is not stored.
-    /// </p>
+    /// <p> The personal access token for a third-party source control system for an Amplify app. The token is used to create webhook and a read-only deploy key. The token is not stored. </p>
     pub fn access_token(&self) -> std::option::Option<&str> {
         self.access_token.as_deref()
     }
@@ -8737,14 +8643,9 @@ pub struct StartJobInput {
     pub app_id: std::option::Option<std::string::String>,
     /// <p> The branch name for the job. </p>
     pub branch_name: std::option::Option<std::string::String>,
-    /// <p> The unique ID for an existing job. This is required if the value of
-    /// <code>jobType</code> is <code>RETRY</code>. </p>
+    /// <p> The unique ID for an existing job. This is required if the value of <code>jobType</code> is <code>RETRY</code>. </p>
     pub job_id: std::option::Option<std::string::String>,
-    /// <p> Describes the type for the job. The job type <code>RELEASE</code> starts a new job
-    /// with the latest change from the specified branch. This value is available only for apps
-    /// that are connected to a repository. The job type <code>RETRY</code> retries an existing
-    /// job. If the job type value is <code>RETRY</code>, the <code>jobId</code> is also
-    /// required. </p>
+    /// <p> Describes the type for the job. The job type <code>RELEASE</code> starts a new job with the latest change from the specified branch. This value is available only for apps that are connected to a repository. The job type <code>RETRY</code> retries an existing job. If the job type value is <code>RETRY</code>, the <code>jobId</code> is also required. </p>
     pub job_type: std::option::Option<crate::model::JobType>,
     /// <p> A descriptive reason for starting this job. </p>
     pub job_reason: std::option::Option<std::string::String>,
@@ -8764,16 +8665,11 @@ impl StartJobInput {
     pub fn branch_name(&self) -> std::option::Option<&str> {
         self.branch_name.as_deref()
     }
-    /// <p> The unique ID for an existing job. This is required if the value of
-    /// <code>jobType</code> is <code>RETRY</code>. </p>
+    /// <p> The unique ID for an existing job. This is required if the value of <code>jobType</code> is <code>RETRY</code>. </p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
-    /// <p> Describes the type for the job. The job type <code>RELEASE</code> starts a new job
-    /// with the latest change from the specified branch. This value is available only for apps
-    /// that are connected to a repository. The job type <code>RETRY</code> retries an existing
-    /// job. If the job type value is <code>RETRY</code>, the <code>jobId</code> is also
-    /// required. </p>
+    /// <p> Describes the type for the job. The job type <code>RELEASE</code> starts a new job with the latest change from the specified branch. This value is available only for apps that are connected to a repository. The job type <code>RETRY</code> retries an existing job. If the job type value is <code>RETRY</code>, the <code>jobId</code> is also required. </p>
     pub fn job_type(&self) -> std::option::Option<&crate::model::JobType> {
         self.job_type.as_ref()
     }
@@ -8819,9 +8715,7 @@ pub struct StartDeploymentInput {
     pub branch_name: std::option::Option<std::string::String>,
     /// <p> The job ID for this deployment, generated by the create deployment request. </p>
     pub job_id: std::option::Option<std::string::String>,
-    /// <p> The source URL for this deployment, used when calling start deployment without create
-    /// deployment. The source URL can be any HTTP GET URL that is publicly accessible and
-    /// downloads a single .zip file. </p>
+    /// <p> The source URL for this deployment, used when calling start deployment without create deployment. The source URL can be any HTTP GET URL that is publicly accessible and downloads a single .zip file. </p>
     pub source_url: std::option::Option<std::string::String>,
 }
 impl StartDeploymentInput {
@@ -8837,9 +8731,7 @@ impl StartDeploymentInput {
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
-    /// <p> The source URL for this deployment, used when calling start deployment without create
-    /// deployment. The source URL can be any HTTP GET URL that is publicly accessible and
-    /// downloads a single .zip file. </p>
+    /// <p> The source URL for this deployment, used when calling start deployment without create deployment. The source URL can be any HTTP GET URL that is publicly accessible and downloads a single .zip file. </p>
     pub fn source_url(&self) -> std::option::Option<&str> {
         self.source_url.as_deref()
     }
@@ -8861,9 +8753,7 @@ impl std::fmt::Debug for StartDeploymentInput {
 pub struct ListWebhooksInput {
     /// <p> The unique ID for an Amplify app. </p>
     pub app_id: std::option::Option<std::string::String>,
-    /// <p> A pagination token. Set to null to start listing webhooks from the start. If
-    /// non-null,the pagination token is returned in a result. Pass its value in here to list
-    /// more webhooks. </p>
+    /// <p> A pagination token. Set to null to start listing webhooks from the start. If non-null,the pagination token is returned in a result. Pass its value in here to list more webhooks. </p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p> The maximum number of records to list in a single response. </p>
     pub max_results: i32,
@@ -8873,9 +8763,7 @@ impl ListWebhooksInput {
     pub fn app_id(&self) -> std::option::Option<&str> {
         self.app_id.as_deref()
     }
-    /// <p> A pagination token. Set to null to start listing webhooks from the start. If
-    /// non-null,the pagination token is returned in a result. Pass its value in here to list
-    /// more webhooks. </p>
+    /// <p> A pagination token. Set to null to start listing webhooks from the start. If non-null,the pagination token is returned in a result. Pass its value in here to list more webhooks. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -8923,9 +8811,7 @@ pub struct ListJobsInput {
     pub app_id: std::option::Option<std::string::String>,
     /// <p> The name for a branch. </p>
     pub branch_name: std::option::Option<std::string::String>,
-    /// <p> A pagination token. Set to null to start listing steps from the start. If a non-null
-    /// pagination token is returned in a result, pass its value in here to list more steps.
-    /// </p>
+    /// <p> A pagination token. Set to null to start listing steps from the start. If a non-null pagination token is returned in a result, pass its value in here to list more steps. </p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p> The maximum number of records to list in a single response. </p>
     pub max_results: i32,
@@ -8939,9 +8825,7 @@ impl ListJobsInput {
     pub fn branch_name(&self) -> std::option::Option<&str> {
         self.branch_name.as_deref()
     }
-    /// <p> A pagination token. Set to null to start listing steps from the start. If a non-null
-    /// pagination token is returned in a result, pass its value in here to list more steps.
-    /// </p>
+    /// <p> A pagination token. Set to null to start listing steps from the start. If a non-null pagination token is returned in a result, pass its value in here to list more steps. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -8967,9 +8851,7 @@ impl std::fmt::Debug for ListJobsInput {
 pub struct ListDomainAssociationsInput {
     /// <p> The unique ID for an Amplify app. </p>
     pub app_id: std::option::Option<std::string::String>,
-    /// <p> A pagination token. Set to null to start listing apps from the start. If non-null, a
-    /// pagination token is returned in a result. Pass its value in here to list more projects.
-    /// </p>
+    /// <p> A pagination token. Set to null to start listing apps from the start. If non-null, a pagination token is returned in a result. Pass its value in here to list more projects. </p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p> The maximum number of records to list in a single response. </p>
     pub max_results: i32,
@@ -8979,9 +8861,7 @@ impl ListDomainAssociationsInput {
     pub fn app_id(&self) -> std::option::Option<&str> {
         self.app_id.as_deref()
     }
-    /// <p> A pagination token. Set to null to start listing apps from the start. If non-null, a
-    /// pagination token is returned in a result. Pass its value in here to list more projects.
-    /// </p>
+    /// <p> A pagination token. Set to null to start listing apps from the start. If non-null, a pagination token is returned in a result. Pass its value in here to list more projects. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -9006,9 +8886,7 @@ impl std::fmt::Debug for ListDomainAssociationsInput {
 pub struct ListBranchesInput {
     /// <p> The unique ID for an Amplify app. </p>
     pub app_id: std::option::Option<std::string::String>,
-    /// <p> A pagination token. Set to null to start listing branches from the start. If a
-    /// non-null pagination token is returned in a result, pass its value in here to list more
-    /// branches. </p>
+    /// <p> A pagination token. Set to null to start listing branches from the start. If a non-null pagination token is returned in a result, pass its value in here to list more branches. </p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p> The maximum number of records to list in a single response. </p>
     pub max_results: i32,
@@ -9018,9 +8896,7 @@ impl ListBranchesInput {
     pub fn app_id(&self) -> std::option::Option<&str> {
         self.app_id.as_deref()
     }
-    /// <p> A pagination token. Set to null to start listing branches from the start. If a
-    /// non-null pagination token is returned in a result, pass its value in here to list more
-    /// branches. </p>
+    /// <p> A pagination token. Set to null to start listing branches from the start. If a non-null pagination token is returned in a result, pass its value in here to list more branches. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -9047,9 +8923,7 @@ pub struct ListBackendEnvironmentsInput {
     pub app_id: std::option::Option<std::string::String>,
     /// <p> The name of the backend environment </p>
     pub environment_name: std::option::Option<std::string::String>,
-    /// <p> A pagination token. Set to null to start listing backend environments from the start.
-    /// If a non-null pagination token is returned in a result, pass its value in here to list
-    /// more backend environments. </p>
+    /// <p> A pagination token. Set to null to start listing backend environments from the start. If a non-null pagination token is returned in a result, pass its value in here to list more backend environments. </p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p> The maximum number of records to list in a single response. </p>
     pub max_results: i32,
@@ -9063,9 +8937,7 @@ impl ListBackendEnvironmentsInput {
     pub fn environment_name(&self) -> std::option::Option<&str> {
         self.environment_name.as_deref()
     }
-    /// <p> A pagination token. Set to null to start listing backend environments from the start.
-    /// If a non-null pagination token is returned in a result, pass its value in here to list
-    /// more backend environments. </p>
+    /// <p> A pagination token. Set to null to start listing backend environments from the start. If a non-null pagination token is returned in a result, pass its value in here to list more backend environments. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -9095,9 +8967,7 @@ pub struct ListArtifactsInput {
     pub branch_name: std::option::Option<std::string::String>,
     /// <p> The unique ID for a job. </p>
     pub job_id: std::option::Option<std::string::String>,
-    /// <p> A pagination token. Set to null to start listing artifacts from start. If a non-null
-    /// pagination token is returned in a result, pass its value in here to list more artifacts.
-    /// </p>
+    /// <p> A pagination token. Set to null to start listing artifacts from start. If a non-null pagination token is returned in a result, pass its value in here to list more artifacts. </p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p> The maximum number of records to list in a single response. </p>
     pub max_results: i32,
@@ -9115,9 +8985,7 @@ impl ListArtifactsInput {
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
-    /// <p> A pagination token. Set to null to start listing artifacts from start. If a non-null
-    /// pagination token is returned in a result, pass its value in here to list more artifacts.
-    /// </p>
+    /// <p> A pagination token. Set to null to start listing artifacts from start. If a non-null pagination token is returned in a result, pass its value in here to list more artifacts. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -9142,15 +9010,13 @@ impl std::fmt::Debug for ListArtifactsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAppsInput {
-    /// <p> A pagination token. If non-null, the pagination token is returned in a result. Pass
-    /// its value in another request to retrieve more entries. </p>
+    /// <p> A pagination token. If non-null, the pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p> The maximum number of records to list in a single response. </p>
     pub max_results: i32,
 }
 impl ListAppsInput {
-    /// <p> A pagination token. If non-null, the pagination token is returned in a result. Pass
-    /// its value in another request to retrieve more entries. </p>
+    /// <p> A pagination token. If non-null, the pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -9354,11 +9220,9 @@ impl std::fmt::Debug for GetAppInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GenerateAccessLogsInput {
-    /// <p> The time at which the logs should start. The time range specified is inclusive of the
-    /// start time. </p>
+    /// <p> The time at which the logs should start. The time range specified is inclusive of the start time. </p>
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p> The time at which the logs should end. The time range specified is inclusive of the
-    /// end time. </p>
+    /// <p> The time at which the logs should end. The time range specified is inclusive of the end time. </p>
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> The name of the domain. </p>
     pub domain_name: std::option::Option<std::string::String>,
@@ -9366,13 +9230,11 @@ pub struct GenerateAccessLogsInput {
     pub app_id: std::option::Option<std::string::String>,
 }
 impl GenerateAccessLogsInput {
-    /// <p> The time at which the logs should start. The time range specified is inclusive of the
-    /// start time. </p>
+    /// <p> The time at which the logs should start. The time range specified is inclusive of the start time. </p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p> The time at which the logs should end. The time range specified is inclusive of the
-    /// end time. </p>
+    /// <p> The time at which the logs should end. The time range specified is inclusive of the end time. </p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
@@ -9606,8 +9468,7 @@ pub struct CreateDomainAssociationInput {
     pub sub_domain_settings: std::option::Option<std::vec::Vec<crate::model::SubDomainSetting>>,
     /// <p> Sets the branch patterns for automatic subdomain creation. </p>
     pub auto_sub_domain_creation_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon
-    /// Resource Name (ARN) for automatically creating subdomains. </p>
+    /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for automatically creating subdomains. </p>
     pub auto_sub_domain_iam_role: std::option::Option<std::string::String>,
 }
 impl CreateDomainAssociationInput {
@@ -9631,8 +9492,7 @@ impl CreateDomainAssociationInput {
     pub fn auto_sub_domain_creation_patterns(&self) -> std::option::Option<&[std::string::String]> {
         self.auto_sub_domain_creation_patterns.as_deref()
     }
-    /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon
-    /// Resource Name (ARN) for automatically creating subdomains. </p>
+    /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for automatically creating subdomains. </p>
     pub fn auto_sub_domain_iam_role(&self) -> std::option::Option<&str> {
         self.auto_sub_domain_iam_role.as_deref()
     }
@@ -9661,10 +9521,7 @@ pub struct CreateDeploymentInput {
     pub app_id: std::option::Option<std::string::String>,
     /// <p> The name for the branch, for the job. </p>
     pub branch_name: std::option::Option<std::string::String>,
-    /// <p> An optional file map that contains the file name as the key and the file content md5
-    /// hash as the value. If this argument is provided, the service will generate a unique
-    /// upload URL per file. Otherwise, the service will only generate a single upload URL for
-    /// the zipped files. </p>
+    /// <p> An optional file map that contains the file name as the key and the file content md5 hash as the value. If this argument is provided, the service will generate a unique upload URL per file. Otherwise, the service will only generate a single upload URL for the zipped files. </p>
     pub file_map:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -9677,10 +9534,7 @@ impl CreateDeploymentInput {
     pub fn branch_name(&self) -> std::option::Option<&str> {
         self.branch_name.as_deref()
     }
-    /// <p> An optional file map that contains the file name as the key and the file content md5
-    /// hash as the value. If this argument is provided, the service will generate a unique
-    /// upload URL per file. Otherwise, the service will only generate a single upload URL for
-    /// the zipped files. </p>
+    /// <p> An optional file map that contains the file name as the key and the file content md5 hash as the value. If this argument is provided, the service will generate a unique upload URL per file. Otherwise, the service will only generate a single upload URL for the zipped files. </p>
     pub fn file_map(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -9739,8 +9593,7 @@ pub struct CreateBranchInput {
     pub enable_pull_request_preview: std::option::Option<bool>,
     /// <p> The Amplify environment name for the pull request. </p>
     pub pull_request_environment_name: std::option::Option<std::string::String>,
-    /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify
-    /// app. </p>
+    /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
     pub backend_environment_arn: std::option::Option<std::string::String>,
 }
 impl CreateBranchInput {
@@ -9819,8 +9672,7 @@ impl CreateBranchInput {
     pub fn pull_request_environment_name(&self) -> std::option::Option<&str> {
         self.pull_request_environment_name.as_deref()
     }
-    /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify
-    /// app. </p>
+    /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
     pub fn backend_environment_arn(&self) -> std::option::Option<&str> {
         self.backend_environment_arn.as_deref()
     }
@@ -9912,24 +9764,18 @@ pub struct CreateAppInput {
     pub platform: std::option::Option<crate::model::Platform>,
     /// <p> The AWS Identity and Access Management (IAM) service role for an Amplify app. </p>
     pub iam_service_role_arn: std::option::Option<std::string::String>,
-    /// <p> The OAuth token for a third-party source control system for an Amplify app. The OAuth
-    /// token is used to create a webhook and a read-only deploy key. The OAuth token is not
-    /// stored. </p>
+    /// <p> The OAuth token for a third-party source control system for an Amplify app. The OAuth token is used to create a webhook and a read-only deploy key. The OAuth token is not stored. </p>
     pub oauth_token: std::option::Option<std::string::String>,
-    /// <p> The personal access token for a third-party source control system for an Amplify app.
-    /// The personal access token is used to create a webhook and a read-only deploy key. The
-    /// token is not stored. </p>
+    /// <p> The personal access token for a third-party source control system for an Amplify app. The personal access token is used to create a webhook and a read-only deploy key. The token is not stored. </p>
     pub access_token: std::option::Option<std::string::String>,
     /// <p> The environment variables map for an Amplify app. </p>
     pub environment_variables:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p> Enables the auto building of branches for an Amplify app. </p>
     pub enable_branch_auto_build: std::option::Option<bool>,
-    /// <p> Automatically disconnects a branch in the Amplify Console when you delete a branch
-    /// from your Git repository. </p>
+    /// <p> Automatically disconnects a branch in the Amplify Console when you delete a branch from your Git repository. </p>
     pub enable_branch_auto_deletion: std::option::Option<bool>,
-    /// <p> Enables basic authorization for an Amplify app. This will apply to all branches that
-    /// are part of this app. </p>
+    /// <p> Enables basic authorization for an Amplify app. This will apply to all branches that are part of this app. </p>
     pub enable_basic_auth: std::option::Option<bool>,
     /// <p> The credentials for basic authorization for an Amplify app. </p>
     pub basic_auth_credentials: std::option::Option<std::string::String>,
@@ -9970,15 +9816,11 @@ impl CreateAppInput {
     pub fn iam_service_role_arn(&self) -> std::option::Option<&str> {
         self.iam_service_role_arn.as_deref()
     }
-    /// <p> The OAuth token for a third-party source control system for an Amplify app. The OAuth
-    /// token is used to create a webhook and a read-only deploy key. The OAuth token is not
-    /// stored. </p>
+    /// <p> The OAuth token for a third-party source control system for an Amplify app. The OAuth token is used to create a webhook and a read-only deploy key. The OAuth token is not stored. </p>
     pub fn oauth_token(&self) -> std::option::Option<&str> {
         self.oauth_token.as_deref()
     }
-    /// <p> The personal access token for a third-party source control system for an Amplify app.
-    /// The personal access token is used to create a webhook and a read-only deploy key. The
-    /// token is not stored. </p>
+    /// <p> The personal access token for a third-party source control system for an Amplify app. The personal access token is used to create a webhook and a read-only deploy key. The token is not stored. </p>
     pub fn access_token(&self) -> std::option::Option<&str> {
         self.access_token.as_deref()
     }
@@ -9993,13 +9835,11 @@ impl CreateAppInput {
     pub fn enable_branch_auto_build(&self) -> std::option::Option<bool> {
         self.enable_branch_auto_build
     }
-    /// <p> Automatically disconnects a branch in the Amplify Console when you delete a branch
-    /// from your Git repository. </p>
+    /// <p> Automatically disconnects a branch in the Amplify Console when you delete a branch from your Git repository. </p>
     pub fn enable_branch_auto_deletion(&self) -> std::option::Option<bool> {
         self.enable_branch_auto_deletion
     }
-    /// <p> Enables basic authorization for an Amplify app. This will apply to all branches that
-    /// are part of this app. </p>
+    /// <p> Enables basic authorization for an Amplify app. This will apply to all branches that are part of this app. </p>
     pub fn enable_basic_auth(&self) -> std::option::Option<bool> {
         self.enable_basic_auth
     }

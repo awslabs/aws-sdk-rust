@@ -995,7 +995,7 @@ impl DeleteSuggesterOutput {
     }
 }
 
-/// <p>The result of a <code><a>DeleteIndexField</a></code> request.</p>
+/// <p>The result of a <code><code>DeleteIndexField</code></code> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteIndexFieldOutput {
@@ -1052,7 +1052,7 @@ impl DeleteIndexFieldOutput {
     }
 }
 
-/// <p>The result of a <code><a>DeleteExpression</a></code> request. Specifies the expression being deleted.</p>
+/// <p>The result of a <code><code>DeleteExpression</code></code> request. Specifies the expression being deleted.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteExpressionOutput {
@@ -1280,7 +1280,7 @@ impl DefineSuggesterOutput {
     }
 }
 
-/// <p>The result of a <code><a>DefineIndexField</a></code> request. Contains the status of the newly-configured index field.</p>
+/// <p>The result of a <code><code>DefineIndexField</code></code> request. Contains the status of the newly-configured index field.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DefineIndexFieldOutput {
@@ -1394,15 +1394,15 @@ impl DefineExpressionOutput {
     }
 }
 
-/// <p>The result of a <code><a>DefineAnalysisScheme</a></code> request. Contains the status of the newly-configured analysis scheme.</p>
+/// <p>The result of a <code><code>DefineAnalysisScheme</code></code> request. Contains the status of the newly-configured analysis scheme.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DefineAnalysisSchemeOutput {
-    /// <p>The status and configuration of an  <code>AnalysisScheme</code>.</p>
+    /// <p>The status and configuration of an <code>AnalysisScheme</code>.</p>
     pub analysis_scheme: std::option::Option<crate::model::AnalysisSchemeStatus>,
 }
 impl DefineAnalysisSchemeOutput {
-    /// <p>The status and configuration of an  <code>AnalysisScheme</code>.</p>
+    /// <p>The status and configuration of an <code>AnalysisScheme</code>.</p>
     pub fn analysis_scheme(&self) -> std::option::Option<&crate::model::AnalysisSchemeStatus> {
         self.analysis_scheme.as_ref()
     }
@@ -1423,12 +1423,12 @@ pub mod define_analysis_scheme_output {
         pub(crate) analysis_scheme: std::option::Option<crate::model::AnalysisSchemeStatus>,
     }
     impl Builder {
-        /// <p>The status and configuration of an  <code>AnalysisScheme</code>.</p>
+        /// <p>The status and configuration of an <code>AnalysisScheme</code>.</p>
         pub fn analysis_scheme(mut self, input: crate::model::AnalysisSchemeStatus) -> Self {
             self.analysis_scheme = Some(input);
             self
         }
-        /// <p>The status and configuration of an  <code>AnalysisScheme</code>.</p>
+        /// <p>The status and configuration of an <code>AnalysisScheme</code>.</p>
         pub fn set_analysis_scheme(
             mut self,
             input: std::option::Option<crate::model::AnalysisSchemeStatus>,

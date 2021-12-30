@@ -336,8 +336,7 @@ pub struct ListWebsiteCertificateAuthoritiesOutput {
     /// <p>Information about the certificates.</p>
     pub website_certificate_authorities:
         std::option::Option<std::vec::Vec<crate::model::WebsiteCaSummary>>,
-    /// <p>The pagination token used to retrieve the next page of results for this operation. If
-    /// there are no more pages, this value is null.</p>
+    /// <p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListWebsiteCertificateAuthoritiesOutput {
@@ -347,8 +346,7 @@ impl ListWebsiteCertificateAuthoritiesOutput {
     ) -> std::option::Option<&[crate::model::WebsiteCaSummary]> {
         self.website_certificate_authorities.as_deref()
     }
-    /// <p>The pagination token used to retrieve the next page of results for this operation. If
-    /// there are no more pages, this value is null.</p>
+    /// <p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -397,14 +395,12 @@ pub mod list_website_certificate_authorities_output {
             self.website_certificate_authorities = input;
             self
         }
-        /// <p>The pagination token used to retrieve the next page of results for this operation. If
-        /// there are no more pages, this value is null.</p>
+        /// <p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token used to retrieve the next page of results for this operation. If
-        /// there are no more pages, this value is null.</p>
+        /// <p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -598,8 +594,7 @@ impl ListTagsForResourceOutput {
 pub struct ListFleetsOutput {
     /// <p>The summary list of the fleets.</p>
     pub fleet_summary_list: std::option::Option<std::vec::Vec<crate::model::FleetSummary>>,
-    /// <p>The pagination token used to retrieve the next page of results for this operation. If
-    /// there are no more pages, this value is null.</p>
+    /// <p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFleetsOutput {
@@ -607,8 +602,7 @@ impl ListFleetsOutput {
     pub fn fleet_summary_list(&self) -> std::option::Option<&[crate::model::FleetSummary]> {
         self.fleet_summary_list.as_deref()
     }
-    /// <p>The pagination token used to retrieve the next page of results for this operation. If
-    /// there are no more pages, this value is null.</p>
+    /// <p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -651,14 +645,12 @@ pub mod list_fleets_output {
             self.fleet_summary_list = input;
             self
         }
-        /// <p>The pagination token used to retrieve the next page of results for this operation. If
-        /// there are no more pages, this value is null.</p>
+        /// <p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token used to retrieve the next page of results for this operation. If
-        /// there are no more pages, this value is null.</p>
+        /// <p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -685,8 +677,7 @@ impl ListFleetsOutput {
 pub struct ListDomainsOutput {
     /// <p>Information about the domains.</p>
     pub domains: std::option::Option<std::vec::Vec<crate::model::DomainSummary>>,
-    /// <p>The pagination token used to retrieve the next page of results for this operation. If
-    /// there are no more pages, this value is null.</p>
+    /// <p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDomainsOutput {
@@ -694,8 +685,7 @@ impl ListDomainsOutput {
     pub fn domains(&self) -> std::option::Option<&[crate::model::DomainSummary]> {
         self.domains.as_deref()
     }
-    /// <p>The pagination token used to retrieve the next page of results for this operation. If
-    /// there are no more pages, this value is null.</p>
+    /// <p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -737,14 +727,12 @@ pub mod list_domains_output {
             self.domains = input;
             self
         }
-        /// <p>The pagination token used to retrieve the next page of results for this operation. If
-        /// there are no more pages, this value is null.</p>
+        /// <p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token used to retrieve the next page of results for this operation. If
-        /// there are no more pages, this value is null.</p>
+        /// <p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -771,8 +759,7 @@ impl ListDomainsOutput {
 pub struct ListDevicesOutput {
     /// <p>Information about the devices.</p>
     pub devices: std::option::Option<std::vec::Vec<crate::model::DeviceSummary>>,
-    /// <p>The pagination token used to retrieve the next page of results for this operation. If
-    /// there are no more pages, this value is null.</p>
+    /// <p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDevicesOutput {
@@ -780,8 +767,7 @@ impl ListDevicesOutput {
     pub fn devices(&self) -> std::option::Option<&[crate::model::DeviceSummary]> {
         self.devices.as_deref()
     }
-    /// <p>The pagination token used to retrieve the next page of results for this operation. If
-    /// there are no more pages, this value is null.</p>
+    /// <p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -823,14 +809,12 @@ pub mod list_devices_output {
             self.devices = input;
             self
         }
-        /// <p>The pagination token used to retrieve the next page of results for this operation. If
-        /// there are no more pages, this value is null.</p>
+        /// <p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token used to retrieve the next page of results for this operation. If
-        /// there are no more pages, this value is null.</p>
+        /// <p>The pagination token used to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1163,8 +1147,7 @@ pub struct DescribeFleetMetadataOutput {
     pub fleet_name: std::option::Option<std::string::String>,
     /// <p>The name to display.</p>
     pub display_name: std::option::Option<std::string::String>,
-    /// <p>The option to optimize for better performance by routing traffic through the closest
-    /// AWS Region to users, which may be outside of your home Region.</p>
+    /// <p>The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region.</p>
     pub optimize_for_end_user_location: std::option::Option<bool>,
     /// <p>The identifier used by users to sign in to the Amazon WorkLink app.</p>
     pub company_code: std::option::Option<std::string::String>,
@@ -1191,8 +1174,7 @@ impl DescribeFleetMetadataOutput {
     pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
     }
-    /// <p>The option to optimize for better performance by routing traffic through the closest
-    /// AWS Region to users, which may be outside of your home Region.</p>
+    /// <p>The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region.</p>
     pub fn optimize_for_end_user_location(&self) -> std::option::Option<bool> {
         self.optimize_for_end_user_location
     }
@@ -1293,14 +1275,12 @@ pub mod describe_fleet_metadata_output {
             self.display_name = input;
             self
         }
-        /// <p>The option to optimize for better performance by routing traffic through the closest
-        /// AWS Region to users, which may be outside of your home Region.</p>
+        /// <p>The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region.</p>
         pub fn optimize_for_end_user_location(mut self, input: bool) -> Self {
             self.optimize_for_end_user_location = Some(input);
             self
         }
-        /// <p>The option to optimize for better performance by routing traffic through the closest
-        /// AWS Region to users, which may be outside of your home Region.</p>
+        /// <p>The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region.</p>
         pub fn set_optimize_for_end_user_location(
             mut self,
             input: std::option::Option<bool>,

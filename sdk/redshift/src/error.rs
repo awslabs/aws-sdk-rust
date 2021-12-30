@@ -12,8 +12,7 @@ pub struct AcceptReservedNodeExchangeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AcceptReservedNodeExchangeErrorKind {
-    /// <p>Your request cannot be completed because a dependent internal service is
-    /// temporarily unavailable. Wait 30 to 60 seconds and try again.</p>
+    /// <p>Your request cannot be completed because a dependent internal service is temporarily unavailable. Wait 30 to 60 seconds and try again.</p>
     DependentServiceUnavailableFault(crate::error::DependentServiceUnavailableFault),
     /// <p>Indicates that the Reserved Node being exchanged is not in an active state.</p>
     InvalidReservedNodeStateFault(crate::error::InvalidReservedNodeStateFault),
@@ -192,8 +191,7 @@ pub struct AddPartnerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AddPartnerErrorKind {
-    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
-    /// </p>
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
     ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
     /// <p>The name of the partner was not found.</p>
     PartnerNotFoundFault(crate::error::PartnerNotFoundFault),
@@ -406,13 +404,11 @@ pub struct AuthorizeClusterSecurityGroupIngressError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AuthorizeClusterSecurityGroupIngressErrorKind {
-    /// <p>The specified CIDR block or EC2 security group is already authorized for the
-    /// specified cluster security group.</p>
+    /// <p>The specified CIDR block or EC2 security group is already authorized for the specified cluster security group.</p>
     AuthorizationAlreadyExistsFault(crate::error::AuthorizationAlreadyExistsFault),
     /// <p>The authorization quota for the cluster security group has been reached.</p>
     AuthorizationQuotaExceededFault(crate::error::AuthorizationQuotaExceededFault),
-    /// <p>The cluster security group name does not refer to an existing cluster security
-    /// group.</p>
+    /// <p>The cluster security group name does not refer to an existing cluster security group.</p>
     ClusterSecurityGroupNotFoundFault(crate::error::ClusterSecurityGroupNotFoundFault),
     /// <p>The state of the cluster security group is not <code>available</code>. </p>
     InvalidClusterSecurityGroupStateFault(crate::error::InvalidClusterSecurityGroupStateFault),
@@ -650,8 +646,7 @@ pub struct AuthorizeEndpointAccessError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AuthorizeEndpointAccessErrorKind {
-    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
-    /// </p>
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
     ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
     /// <p>The authorization already exists for this endpoint.</p>
     EndpointAuthorizationAlreadyExistsFault(crate::error::EndpointAuthorizationAlreadyExistsFault),
@@ -829,18 +824,15 @@ pub struct AuthorizeSnapshotAccessError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AuthorizeSnapshotAccessErrorKind {
-    /// <p>The specified CIDR block or EC2 security group is already authorized for the
-    /// specified cluster security group.</p>
+    /// <p>The specified CIDR block or EC2 security group is already authorized for the specified cluster security group.</p>
     AuthorizationAlreadyExistsFault(crate::error::AuthorizationAlreadyExistsFault),
     /// <p>The authorization quota for the cluster security group has been reached.</p>
     AuthorizationQuotaExceededFault(crate::error::AuthorizationQuotaExceededFault),
     /// <p>The snapshot identifier does not refer to an existing cluster snapshot.</p>
     ClusterSnapshotNotFoundFault(crate::error::ClusterSnapshotNotFoundFault),
-    /// <p>The request cannot be completed because a dependent service is throttling requests
-    /// made by Amazon Redshift on your behalf. Wait and retry the request.</p>
+    /// <p>The request cannot be completed because a dependent service is throttling requests made by Amazon Redshift on your behalf. Wait and retry the request.</p>
     DependentServiceRequestThrottlingFault(crate::error::DependentServiceRequestThrottlingFault),
-    /// <p>The specified cluster snapshot is not in the <code>available</code> state, or other
-    /// accounts are authorized to access the snapshot. </p>
+    /// <p>The specified cluster snapshot is not in the <code>available</code> state, or other accounts are authorized to access the snapshot. </p>
     InvalidClusterSnapshotStateFault(crate::error::InvalidClusterSnapshotStateFault),
     /// <p>The encryption key has exceeded its grant limit in Amazon Web Services KMS.</p>
     LimitExceededFault(crate::error::LimitExceededFault),
@@ -996,8 +988,7 @@ pub struct BatchDeleteClusterSnapshotsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchDeleteClusterSnapshotsErrorKind {
-    /// <p>The maximum number for a batch delete of snapshots has been reached. The limit is
-    /// 100. </p>
+    /// <p>The maximum number for a batch delete of snapshots has been reached. The limit is 100. </p>
     BatchDeleteRequestSizeExceededFault(crate::error::BatchDeleteRequestSizeExceededFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1094,8 +1085,7 @@ pub struct BatchModifyClusterSnapshotsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchModifyClusterSnapshotsErrorKind {
-    /// <p>The maximum number for snapshot identifiers has been reached. The limit is 100.
-    /// </p>
+    /// <p>The maximum number for snapshot identifiers has been reached. The limit is 100. </p>
     BatchModifyClusterSnapshotsLimitExceededFault(
         crate::error::BatchModifyClusterSnapshotsLimitExceededFault,
     ),
@@ -1210,8 +1200,7 @@ pub struct CancelResizeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CancelResizeErrorKind {
-    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
-    /// </p>
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
     ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
     /// <p>The specified cluster is not in the <code>available</code> state. </p>
     InvalidClusterStateFault(crate::error::InvalidClusterStateFault),
@@ -1331,16 +1320,13 @@ pub struct CopyClusterSnapshotError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CopyClusterSnapshotErrorKind {
-    /// <p>The value specified as a snapshot identifier is already used by an existing
-    /// snapshot.</p>
+    /// <p>The value specified as a snapshot identifier is already used by an existing snapshot.</p>
     ClusterSnapshotAlreadyExistsFault(crate::error::ClusterSnapshotAlreadyExistsFault),
     /// <p>The snapshot identifier does not refer to an existing cluster snapshot.</p>
     ClusterSnapshotNotFoundFault(crate::error::ClusterSnapshotNotFoundFault),
-    /// <p>The request would result in the user exceeding the allowed number of cluster
-    /// snapshots.</p>
+    /// <p>The request would result in the user exceeding the allowed number of cluster snapshots.</p>
     ClusterSnapshotQuotaExceededFault(crate::error::ClusterSnapshotQuotaExceededFault),
-    /// <p>The specified cluster snapshot is not in the <code>available</code> state, or other
-    /// accounts are authorized to access the snapshot. </p>
+    /// <p>The specified cluster snapshot is not in the <code>available</code> state, or other accounts are authorized to access the snapshot. </p>
     InvalidClusterSnapshotStateFault(crate::error::InvalidClusterSnapshotStateFault),
     /// <p>The retention period specified is either in the past or is not a valid value.</p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
@@ -1478,11 +1464,9 @@ pub struct CreateAuthenticationProfileError {
 pub enum CreateAuthenticationProfileErrorKind {
     /// <p>The authentication profile already exists.</p>
     AuthenticationProfileAlreadyExistsFault(crate::error::AuthenticationProfileAlreadyExistsFault),
-    /// <p>The size or number of authentication profiles has exceeded the quota.
-    /// The maximum length of the JSON string and maximum number of authentication profiles is determined by a quota for your account.</p>
+    /// <p>The size or number of authentication profiles has exceeded the quota. The maximum length of the JSON string and maximum number of authentication profiles is determined by a quota for your account.</p>
     AuthenticationProfileQuotaExceededFault(crate::error::AuthenticationProfileQuotaExceededFault),
-    /// <p>The authentication profile request is not valid. The profile name can't be null or empty.
-    /// The authentication profile API operation must be available in the Amazon Web Services Region.</p>
+    /// <p>The authentication profile request is not valid. The profile name can't be null or empty. The authentication profile API operation must be available in the Amazon Web Services Region.</p>
     InvalidAuthenticationProfileRequestFault(
         crate::error::InvalidAuthenticationProfileRequestFault,
     ),
@@ -1611,28 +1595,19 @@ pub enum CreateClusterErrorKind {
     ClusterAlreadyExistsFault(crate::error::ClusterAlreadyExistsFault),
     /// <p>The parameter group name does not refer to an existing parameter group.</p>
     ClusterParameterGroupNotFoundFault(crate::error::ClusterParameterGroupNotFoundFault),
-    /// <p>The request would exceed the allowed number of cluster instances for this account.
-    ///
-    /// For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a>
-    /// in the <i>Amazon Redshift Cluster Management Guide</i>.
-    /// </p>
+    /// <p>The request would exceed the allowed number of cluster instances for this account. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
     ClusterQuotaExceededFault(crate::error::ClusterQuotaExceededFault),
-    /// <p>The cluster security group name does not refer to an existing cluster security
-    /// group.</p>
+    /// <p>The cluster security group name does not refer to an existing cluster security group.</p>
     ClusterSecurityGroupNotFoundFault(crate::error::ClusterSecurityGroupNotFoundFault),
-    /// <p>The cluster subnet group name does not refer to an existing cluster subnet
-    /// group.</p>
+    /// <p>The cluster subnet group name does not refer to an existing cluster subnet group.</p>
     ClusterSubnetGroupNotFoundFault(crate::error::ClusterSubnetGroupNotFoundFault),
-    /// <p>The request cannot be completed because a dependent service is throttling requests
-    /// made by Amazon Redshift on your behalf. Wait and retry the request.</p>
+    /// <p>The request cannot be completed because a dependent service is throttling requests made by Amazon Redshift on your behalf. Wait and retry the request.</p>
     DependentServiceRequestThrottlingFault(crate::error::DependentServiceRequestThrottlingFault),
-    /// <p>There is no Amazon Redshift HSM client certificate with the specified
-    /// identifier.</p>
+    /// <p>There is no Amazon Redshift HSM client certificate with the specified identifier.</p>
     HsmClientCertificateNotFoundFault(crate::error::HsmClientCertificateNotFoundFault),
     /// <p>There is no Amazon Redshift HSM configuration with the specified identifier.</p>
     HsmConfigurationNotFoundFault(crate::error::HsmConfigurationNotFoundFault),
-    /// <p>The number of nodes specified exceeds the allotted capacity of the
-    /// cluster.</p>
+    /// <p>The number of nodes specified exceeds the allotted capacity of the cluster.</p>
     InsufficientClusterCapacityFault(crate::error::InsufficientClusterCapacityFault),
     /// <p>The cluster subnet group cannot be deleted because it is in use.</p>
     InvalidClusterSubnetGroupStateFault(crate::error::InvalidClusterSubnetGroupStateFault),
@@ -1643,8 +1618,7 @@ pub enum CreateClusterErrorKind {
     /// <p>The retention period specified is either in the past or is not a valid value.</p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
     InvalidRetentionPeriodFault(crate::error::InvalidRetentionPeriodFault),
-    /// <p>The requested subnet is not valid, or not all of the subnets are in the same
-    /// VPC.</p>
+    /// <p>The requested subnet is not valid, or not all of the subnets are in the same VPC.</p>
     InvalidSubnet(crate::error::InvalidSubnet),
     /// <p>The tag is invalid.</p>
     InvalidTagFault(crate::error::InvalidTagFault),
@@ -1656,11 +1630,7 @@ pub enum CreateClusterErrorKind {
     NumberOfNodesPerClusterLimitExceededFault(
         crate::error::NumberOfNodesPerClusterLimitExceededFault,
     ),
-    /// <p>The operation would exceed the number of nodes allotted to the account.
-    ///
-    /// For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a>
-    /// in the <i>Amazon Redshift Cluster Management Guide</i>.
-    /// </p>
+    /// <p>The operation would exceed the number of nodes allotted to the account. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
     NumberOfNodesQuotaExceededFault(crate::error::NumberOfNodesQuotaExceededFault),
     /// <p>We could not find the specified snapshot schedule. </p>
     SnapshotScheduleNotFoundFault(crate::error::SnapshotScheduleNotFoundFault),
@@ -1936,11 +1906,7 @@ pub struct CreateClusterParameterGroupError {
 pub enum CreateClusterParameterGroupErrorKind {
     /// <p>A cluster parameter group with the same name already exists.</p>
     ClusterParameterGroupAlreadyExistsFault(crate::error::ClusterParameterGroupAlreadyExistsFault),
-    /// <p>The request would result in the user exceeding the allowed number of cluster
-    /// parameter groups.
-    /// For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a>
-    /// in the <i>Amazon Redshift Cluster Management Guide</i>.
-    /// </p>
+    /// <p>The request would result in the user exceeding the allowed number of cluster parameter groups. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
     ClusterParameterGroupQuotaExceededFault(crate::error::ClusterParameterGroupQuotaExceededFault),
     /// <p>The tag is invalid.</p>
     InvalidTagFault(crate::error::InvalidTagFault),
@@ -2074,11 +2040,7 @@ pub struct CreateClusterSecurityGroupError {
 pub enum CreateClusterSecurityGroupErrorKind {
     /// <p>A cluster security group with the same name already exists.</p>
     ClusterSecurityGroupAlreadyExistsFault(crate::error::ClusterSecurityGroupAlreadyExistsFault),
-    /// <p>The request would result in the user exceeding the allowed number of cluster
-    /// security groups.
-    /// For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a>
-    /// in the <i>Amazon Redshift Cluster Management Guide</i>.
-    /// </p>
+    /// <p>The request would result in the user exceeding the allowed number of cluster security groups. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
     ClusterSecurityGroupQuotaExceededFault(crate::error::ClusterSecurityGroupQuotaExceededFault),
     /// <p>The tag is invalid.</p>
     InvalidTagFault(crate::error::InvalidTagFault),
@@ -2210,14 +2172,11 @@ pub struct CreateClusterSnapshotError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateClusterSnapshotErrorKind {
-    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
-    /// </p>
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
     ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
-    /// <p>The value specified as a snapshot identifier is already used by an existing
-    /// snapshot.</p>
+    /// <p>The value specified as a snapshot identifier is already used by an existing snapshot.</p>
     ClusterSnapshotAlreadyExistsFault(crate::error::ClusterSnapshotAlreadyExistsFault),
-    /// <p>The request would result in the user exceeding the allowed number of cluster
-    /// snapshots.</p>
+    /// <p>The request would result in the user exceeding the allowed number of cluster snapshots.</p>
     ClusterSnapshotQuotaExceededFault(crate::error::ClusterSnapshotQuotaExceededFault),
     /// <p>The specified cluster is not in the <code>available</code> state. </p>
     InvalidClusterStateFault(crate::error::InvalidClusterStateFault),
@@ -2381,26 +2340,15 @@ pub struct CreateClusterSubnetGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateClusterSubnetGroupErrorKind {
-    /// <p>A <i>ClusterSubnetGroupName</i> is already used by an existing
-    /// cluster subnet group. </p>
+    /// <p>A <i>ClusterSubnetGroupName</i> is already used by an existing cluster subnet group. </p>
     ClusterSubnetGroupAlreadyExistsFault(crate::error::ClusterSubnetGroupAlreadyExistsFault),
-    /// <p>The request would result in user exceeding the allowed number of cluster subnet
-    /// groups.
-    /// For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a>
-    /// in the <i>Amazon Redshift Cluster Management Guide</i>.
-    /// </p>
+    /// <p>The request would result in user exceeding the allowed number of cluster subnet groups. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
     ClusterSubnetGroupQuotaExceededFault(crate::error::ClusterSubnetGroupQuotaExceededFault),
-    /// <p>The request would result in user exceeding the allowed number of subnets in a
-    /// cluster subnet groups.
-    /// For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a>
-    /// in the <i>Amazon Redshift Cluster Management Guide</i>.
-    /// </p>
+    /// <p>The request would result in user exceeding the allowed number of subnets in a cluster subnet groups. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
     ClusterSubnetQuotaExceededFault(crate::error::ClusterSubnetQuotaExceededFault),
-    /// <p>The request cannot be completed because a dependent service is throttling requests
-    /// made by Amazon Redshift on your behalf. Wait and retry the request.</p>
+    /// <p>The request cannot be completed because a dependent service is throttling requests made by Amazon Redshift on your behalf. Wait and retry the request.</p>
     DependentServiceRequestThrottlingFault(crate::error::DependentServiceRequestThrottlingFault),
-    /// <p>The requested subnet is not valid, or not all of the subnets are in the same
-    /// VPC.</p>
+    /// <p>The requested subnet is not valid, or not all of the subnets are in the same VPC.</p>
     InvalidSubnet(crate::error::InvalidSubnet),
     /// <p>The tag is invalid.</p>
     InvalidTagFault(crate::error::InvalidTagFault),
@@ -2580,11 +2528,9 @@ pub struct CreateEndpointAccessError {
 pub enum CreateEndpointAccessErrorKind {
     /// <p>You are not authorized to access the cluster.</p>
     AccessToClusterDeniedFault(crate::error::AccessToClusterDeniedFault),
-    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
-    /// </p>
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
     ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
-    /// <p>The cluster subnet group name does not refer to an existing cluster subnet
-    /// group.</p>
+    /// <p>The cluster subnet group name does not refer to an existing cluster subnet group.</p>
     ClusterSubnetGroupNotFoundFault(crate::error::ClusterSubnetGroupNotFoundFault),
     /// <p>The account already has a Redshift-managed VPC endpoint with the given identifier.</p>
     EndpointAlreadyExistsFault(crate::error::EndpointAlreadyExistsFault),
@@ -2786,36 +2732,25 @@ pub struct CreateEventSubscriptionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateEventSubscriptionErrorKind {
-    /// <p>The request would exceed the allowed number of event subscriptions for this
-    /// account.
-    /// For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a>
-    /// in the <i>Amazon Redshift Cluster Management Guide</i>.
-    /// </p>
+    /// <p>The request would exceed the allowed number of event subscriptions for this account. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
     EventSubscriptionQuotaExceededFault(crate::error::EventSubscriptionQuotaExceededFault),
     /// <p>The tag is invalid.</p>
     InvalidTagFault(crate::error::InvalidTagFault),
-    /// <p>Amazon SNS has responded that there is a problem with the specified Amazon SNS
-    /// topic.</p>
+    /// <p>Amazon SNS has responded that there is a problem with the specified Amazon SNS topic.</p>
     SnsInvalidTopicFault(crate::error::SnsInvalidTopicFault),
     /// <p>You do not have permission to publish to the specified Amazon SNS topic.</p>
     SnsNoAuthorizationFault(crate::error::SnsNoAuthorizationFault),
-    /// <p>An Amazon SNS topic with the specified Amazon Resource Name (ARN) does not
-    /// exist.</p>
+    /// <p>An Amazon SNS topic with the specified Amazon Resource Name (ARN) does not exist.</p>
     SnsTopicArnNotFoundFault(crate::error::SnsTopicArnNotFoundFault),
     /// <p>The specified Amazon Redshift event source could not be found.</p>
     SourceNotFoundFault(crate::error::SourceNotFoundFault),
-    /// <p>There is already an existing event notification subscription with the specified
-    /// name.</p>
+    /// <p>There is already an existing event notification subscription with the specified name.</p>
     SubscriptionAlreadyExistFault(crate::error::SubscriptionAlreadyExistFault),
-    /// <p>The value specified for the event category was not one of the allowed values, or it
-    /// specified a category that does not apply to the specified source type. The allowed
-    /// values are Configuration, Management, Monitoring, and Security.</p>
+    /// <p>The value specified for the event category was not one of the allowed values, or it specified a category that does not apply to the specified source type. The allowed values are Configuration, Management, Monitoring, and Security.</p>
     SubscriptionCategoryNotFoundFault(crate::error::SubscriptionCategoryNotFoundFault),
     /// <p>An Amazon Redshift event with the specified event ID does not exist.</p>
     SubscriptionEventIdNotFoundFault(crate::error::SubscriptionEventIdNotFoundFault),
-    /// <p>The value specified for the event severity was not one of the allowed values, or it
-    /// specified a severity that does not apply to the specified source type. The allowed
-    /// values are ERROR and INFO.</p>
+    /// <p>The value specified for the event severity was not one of the allowed values, or it specified a severity that does not apply to the specified source type. The allowed values are ERROR and INFO.</p>
     SubscriptionSeverityNotFoundFault(crate::error::SubscriptionSeverityNotFoundFault),
     /// <p>You have exceeded the number of tags allowed.</p>
     TagLimitExceededFault(crate::error::TagLimitExceededFault),
@@ -3018,13 +2953,9 @@ pub struct CreateHsmClientCertificateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateHsmClientCertificateErrorKind {
-    /// <p>There is already an existing Amazon Redshift HSM client certificate with the specified
-    /// identifier.</p>
+    /// <p>There is already an existing Amazon Redshift HSM client certificate with the specified identifier.</p>
     HsmClientCertificateAlreadyExistsFault(crate::error::HsmClientCertificateAlreadyExistsFault),
-    /// <p>The quota for HSM client certificates has been reached.
-    /// For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a>
-    /// in the <i>Amazon Redshift Cluster Management Guide</i>.
-    /// </p>
+    /// <p>The quota for HSM client certificates has been reached. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
     HsmClientCertificateQuotaExceededFault(crate::error::HsmClientCertificateQuotaExceededFault),
     /// <p>The tag is invalid.</p>
     InvalidTagFault(crate::error::InvalidTagFault),
@@ -3156,13 +3087,9 @@ pub struct CreateHsmConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateHsmConfigurationErrorKind {
-    /// <p>There is already an existing Amazon Redshift HSM configuration with the specified
-    /// identifier.</p>
+    /// <p>There is already an existing Amazon Redshift HSM configuration with the specified identifier.</p>
     HsmConfigurationAlreadyExistsFault(crate::error::HsmConfigurationAlreadyExistsFault),
-    /// <p>The quota for HSM configurations has been reached.
-    /// For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a>
-    /// in the <i>Amazon Redshift Cluster Management Guide</i>.
-    /// </p>
+    /// <p>The quota for HSM configurations has been reached. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
     HsmConfigurationQuotaExceededFault(crate::error::HsmConfigurationQuotaExceededFault),
     /// <p>The tag is invalid.</p>
     InvalidTagFault(crate::error::InvalidTagFault),
@@ -3454,18 +3381,15 @@ pub struct CreateSnapshotCopyGrantError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateSnapshotCopyGrantErrorKind {
-    /// <p>The request cannot be completed because a dependent service is throttling requests
-    /// made by Amazon Redshift on your behalf. Wait and retry the request.</p>
+    /// <p>The request cannot be completed because a dependent service is throttling requests made by Amazon Redshift on your behalf. Wait and retry the request.</p>
     DependentServiceRequestThrottlingFault(crate::error::DependentServiceRequestThrottlingFault),
     /// <p>The tag is invalid.</p>
     InvalidTagFault(crate::error::InvalidTagFault),
     /// <p>The encryption key has exceeded its grant limit in Amazon Web Services KMS.</p>
     LimitExceededFault(crate::error::LimitExceededFault),
-    /// <p>The snapshot copy grant can't be created because a grant with the same name already
-    /// exists.</p>
+    /// <p>The snapshot copy grant can't be created because a grant with the same name already exists.</p>
     SnapshotCopyGrantAlreadyExistsFault(crate::error::SnapshotCopyGrantAlreadyExistsFault),
-    /// <p>The Amazon Web Services account has exceeded the maximum number of snapshot copy grants in this
-    /// region.</p>
+    /// <p>The Amazon Web Services account has exceeded the maximum number of snapshot copy grants in this region.</p>
     SnapshotCopyGrantQuotaExceededFault(crate::error::SnapshotCopyGrantQuotaExceededFault),
     /// <p>You have exceeded the number of tags allowed.</p>
     TagLimitExceededFault(crate::error::TagLimitExceededFault),
@@ -3891,8 +3815,7 @@ pub struct CreateUsageLimitError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateUsageLimitErrorKind {
-    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
-    /// </p>
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
     ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
     /// <p>The specified cluster is not in the <code>available</code> state. </p>
     InvalidClusterStateFault(crate::error::InvalidClusterStateFault),
@@ -4143,8 +4066,7 @@ pub struct DeleteAuthenticationProfileError {
 pub enum DeleteAuthenticationProfileErrorKind {
     /// <p>The authentication profile can't be found.</p>
     AuthenticationProfileNotFoundFault(crate::error::AuthenticationProfileNotFoundFault),
-    /// <p>The authentication profile request is not valid. The profile name can't be null or empty.
-    /// The authentication profile API operation must be available in the Amazon Web Services Region.</p>
+    /// <p>The authentication profile request is not valid. The profile name can't be null or empty. The authentication profile API operation must be available in the Amazon Web Services Region.</p>
     InvalidAuthenticationProfileRequestFault(
         crate::error::InvalidAuthenticationProfileRequestFault,
     ),
@@ -4256,14 +4178,11 @@ pub struct DeleteClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteClusterErrorKind {
-    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
-    /// </p>
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
     ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
-    /// <p>The value specified as a snapshot identifier is already used by an existing
-    /// snapshot.</p>
+    /// <p>The value specified as a snapshot identifier is already used by an existing snapshot.</p>
     ClusterSnapshotAlreadyExistsFault(crate::error::ClusterSnapshotAlreadyExistsFault),
-    /// <p>The request would result in the user exceeding the allowed number of cluster
-    /// snapshots.</p>
+    /// <p>The request would result in the user exceeding the allowed number of cluster snapshots.</p>
     ClusterSnapshotQuotaExceededFault(crate::error::ClusterSnapshotQuotaExceededFault),
     /// <p>The specified cluster is not in the <code>available</code> state. </p>
     InvalidClusterStateFault(crate::error::InvalidClusterStateFault),
@@ -4396,9 +4315,7 @@ pub struct DeleteClusterParameterGroupError {
 pub enum DeleteClusterParameterGroupErrorKind {
     /// <p>The parameter group name does not refer to an existing parameter group.</p>
     ClusterParameterGroupNotFoundFault(crate::error::ClusterParameterGroupNotFoundFault),
-    /// <p>The cluster parameter group action can not be completed because another task is in
-    /// progress that involves the parameter group. Wait a few moments and try the operation
-    /// again.</p>
+    /// <p>The cluster parameter group action can not be completed because another task is in progress that involves the parameter group. Wait a few moments and try the operation again.</p>
     InvalidClusterParameterGroupStateFault(crate::error::InvalidClusterParameterGroupStateFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4508,8 +4425,7 @@ pub struct DeleteClusterSecurityGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteClusterSecurityGroupErrorKind {
-    /// <p>The cluster security group name does not refer to an existing cluster security
-    /// group.</p>
+    /// <p>The cluster security group name does not refer to an existing cluster security group.</p>
     ClusterSecurityGroupNotFoundFault(crate::error::ClusterSecurityGroupNotFoundFault),
     /// <p>The state of the cluster security group is not <code>available</code>. </p>
     InvalidClusterSecurityGroupStateFault(crate::error::InvalidClusterSecurityGroupStateFault),
@@ -4623,8 +4539,7 @@ pub struct DeleteClusterSnapshotError {
 pub enum DeleteClusterSnapshotErrorKind {
     /// <p>The snapshot identifier does not refer to an existing cluster snapshot.</p>
     ClusterSnapshotNotFoundFault(crate::error::ClusterSnapshotNotFoundFault),
-    /// <p>The specified cluster snapshot is not in the <code>available</code> state, or other
-    /// accounts are authorized to access the snapshot. </p>
+    /// <p>The specified cluster snapshot is not in the <code>available</code> state, or other accounts are authorized to access the snapshot. </p>
     InvalidClusterSnapshotStateFault(crate::error::InvalidClusterSnapshotStateFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4730,8 +4645,7 @@ pub struct DeleteClusterSubnetGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteClusterSubnetGroupErrorKind {
-    /// <p>The cluster subnet group name does not refer to an existing cluster subnet
-    /// group.</p>
+    /// <p>The cluster subnet group name does not refer to an existing cluster subnet group.</p>
     ClusterSubnetGroupNotFoundFault(crate::error::ClusterSubnetGroupNotFoundFault),
     /// <p>The cluster subnet group cannot be deleted because it is in use.</p>
     InvalidClusterSubnetGroupStateFault(crate::error::InvalidClusterSubnetGroupStateFault),
@@ -4858,8 +4772,7 @@ pub struct DeleteEndpointAccessError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteEndpointAccessErrorKind {
-    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
-    /// </p>
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
     ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
     /// <p>The endpoint name doesn't refer to an existing endpoint.</p>
     EndpointNotFoundFault(crate::error::EndpointNotFoundFault),
@@ -5000,11 +4913,9 @@ pub struct DeleteEventSubscriptionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteEventSubscriptionErrorKind {
-    /// <p>The subscription request is invalid because it is a duplicate request. This
-    /// subscription request is already in progress.</p>
+    /// <p>The subscription request is invalid because it is a duplicate request. This subscription request is already in progress.</p>
     InvalidSubscriptionStateFault(crate::error::InvalidSubscriptionStateFault),
-    /// <p>An Amazon Redshift event notification subscription with the specified name does not
-    /// exist.</p>
+    /// <p>An Amazon Redshift event notification subscription with the specified name does not exist.</p>
     SubscriptionNotFoundFault(crate::error::SubscriptionNotFoundFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5108,11 +5019,9 @@ pub struct DeleteHsmClientCertificateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteHsmClientCertificateErrorKind {
-    /// <p>There is no Amazon Redshift HSM client certificate with the specified
-    /// identifier.</p>
+    /// <p>There is no Amazon Redshift HSM client certificate with the specified identifier.</p>
     HsmClientCertificateNotFoundFault(crate::error::HsmClientCertificateNotFoundFault),
-    /// <p>The specified HSM client certificate is not in the <code>available</code> state, or
-    /// it is still in use by one or more Amazon Redshift clusters.</p>
+    /// <p>The specified HSM client certificate is not in the <code>available</code> state, or it is still in use by one or more Amazon Redshift clusters.</p>
     InvalidHsmClientCertificateStateFault(crate::error::InvalidHsmClientCertificateStateFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5224,8 +5133,7 @@ pub struct DeleteHsmConfigurationError {
 pub enum DeleteHsmConfigurationErrorKind {
     /// <p>There is no Amazon Redshift HSM configuration with the specified identifier.</p>
     HsmConfigurationNotFoundFault(crate::error::HsmConfigurationNotFoundFault),
-    /// <p>The specified HSM configuration is not in the <code>available</code> state, or it
-    /// is still in use by one or more Amazon Redshift clusters.</p>
+    /// <p>The specified HSM configuration is not in the <code>available</code> state, or it is still in use by one or more Amazon Redshift clusters.</p>
     InvalidHsmConfigurationStateFault(crate::error::InvalidHsmConfigurationStateFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5331,8 +5239,7 @@ pub struct DeletePartnerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeletePartnerErrorKind {
-    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
-    /// </p>
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
     ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
     /// <p>The name of the partner was not found.</p>
     PartnerNotFoundFault(crate::error::PartnerNotFoundFault),
@@ -5545,11 +5452,9 @@ pub struct DeleteSnapshotCopyGrantError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteSnapshotCopyGrantErrorKind {
-    /// <p>The snapshot copy grant can't be deleted because it is used by one or more
-    /// clusters.</p>
+    /// <p>The snapshot copy grant can't be deleted because it is used by one or more clusters.</p>
     InvalidSnapshotCopyGrantStateFault(crate::error::InvalidSnapshotCopyGrantStateFault),
-    /// <p>The specified snapshot copy grant can't be found. Make sure that the name is typed
-    /// correctly and that the grant exists in the destination region.</p>
+    /// <p>The specified snapshot copy grant can't be found. Make sure that the name is typed correctly and that the grant exists in the destination region.</p>
     SnapshotCopyGrantNotFoundFault(crate::error::SnapshotCopyGrantNotFoundFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6055,8 +5960,7 @@ pub struct DescribeAuthenticationProfilesError {
 pub enum DescribeAuthenticationProfilesErrorKind {
     /// <p>The authentication profile can't be found.</p>
     AuthenticationProfileNotFoundFault(crate::error::AuthenticationProfileNotFoundFault),
-    /// <p>The authentication profile request is not valid. The profile name can't be null or empty.
-    /// The authentication profile API operation must be available in the Amazon Web Services Region.</p>
+    /// <p>The authentication profile request is not valid. The profile name can't be null or empty. The authentication profile API operation must be available in the Amazon Web Services Region.</p>
     InvalidAuthenticationProfileRequestFault(
         crate::error::InvalidAuthenticationProfileRequestFault,
     ),
@@ -6171,8 +6075,7 @@ pub struct DescribeClusterDbRevisionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeClusterDbRevisionsErrorKind {
-    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
-    /// </p>
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
     ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
     /// <p>The specified cluster is not in the <code>available</code> state. </p>
     InvalidClusterStateFault(crate::error::InvalidClusterStateFault),
@@ -6484,8 +6387,7 @@ pub struct DescribeClustersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeClustersErrorKind {
-    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
-    /// </p>
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
     ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
     /// <p>The tag is invalid.</p>
     InvalidTagFault(crate::error::InvalidTagFault),
@@ -6586,8 +6488,7 @@ pub struct DescribeClusterSecurityGroupsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeClusterSecurityGroupsErrorKind {
-    /// <p>The cluster security group name does not refer to an existing cluster security
-    /// group.</p>
+    /// <p>The cluster security group name does not refer to an existing cluster security group.</p>
     ClusterSecurityGroupNotFoundFault(crate::error::ClusterSecurityGroupNotFoundFault),
     /// <p>The tag is invalid.</p>
     InvalidTagFault(crate::error::InvalidTagFault),
@@ -6698,8 +6599,7 @@ pub struct DescribeClusterSnapshotsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeClusterSnapshotsErrorKind {
-    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
-    /// </p>
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
     ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
     /// <p>The snapshot identifier does not refer to an existing cluster snapshot.</p>
     ClusterSnapshotNotFoundFault(crate::error::ClusterSnapshotNotFoundFault),
@@ -6816,8 +6716,7 @@ pub struct DescribeClusterSubnetGroupsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeClusterSubnetGroupsErrorKind {
-    /// <p>The cluster subnet group name does not refer to an existing cluster subnet
-    /// group.</p>
+    /// <p>The cluster subnet group name does not refer to an existing cluster subnet group.</p>
     ClusterSubnetGroupNotFoundFault(crate::error::ClusterSubnetGroupNotFoundFault),
     /// <p>The tag is invalid.</p>
     InvalidTagFault(crate::error::InvalidTagFault),
@@ -7481,8 +7380,7 @@ pub struct DescribeEndpointAccessError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeEndpointAccessErrorKind {
-    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
-    /// </p>
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
     ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
     /// <p>The endpoint name doesn't refer to an existing endpoint.</p>
     EndpointNotFoundFault(crate::error::EndpointNotFoundFault),
@@ -7597,8 +7495,7 @@ pub struct DescribeEndpointAuthorizationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeEndpointAuthorizationErrorKind {
-    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
-    /// </p>
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
     ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
     /// <p>The requested operation isn't supported.</p>
     UnsupportedOperationFault(crate::error::UnsupportedOperationFault),
@@ -7875,8 +7772,7 @@ pub struct DescribeEventSubscriptionsError {
 pub enum DescribeEventSubscriptionsErrorKind {
     /// <p>The tag is invalid.</p>
     InvalidTagFault(crate::error::InvalidTagFault),
-    /// <p>An Amazon Redshift event notification subscription with the specified name does not
-    /// exist.</p>
+    /// <p>An Amazon Redshift event notification subscription with the specified name does not exist.</p>
     SubscriptionNotFoundFault(crate::error::SubscriptionNotFoundFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7978,8 +7874,7 @@ pub struct DescribeHsmClientCertificatesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeHsmClientCertificatesErrorKind {
-    /// <p>There is no Amazon Redshift HSM client certificate with the specified
-    /// identifier.</p>
+    /// <p>There is no Amazon Redshift HSM client certificate with the specified identifier.</p>
     HsmClientCertificateNotFoundFault(crate::error::HsmClientCertificateNotFoundFault),
     /// <p>The tag is invalid.</p>
     InvalidTagFault(crate::error::InvalidTagFault),
@@ -8198,8 +8093,7 @@ pub struct DescribeLoggingStatusError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeLoggingStatusErrorKind {
-    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
-    /// </p>
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
     ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8292,16 +8186,13 @@ pub struct DescribeNodeConfigurationOptionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeNodeConfigurationOptionsErrorKind {
-    /// <p>The owner of the specified snapshot has not authorized your account to access the
-    /// snapshot.</p>
+    /// <p>The owner of the specified snapshot has not authorized your account to access the snapshot.</p>
     AccessToSnapshotDeniedFault(crate::error::AccessToSnapshotDeniedFault),
-    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
-    /// </p>
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
     ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
     /// <p>The snapshot identifier does not refer to an existing cluster snapshot.</p>
     ClusterSnapshotNotFoundFault(crate::error::ClusterSnapshotNotFoundFault),
-    /// <p>The specified cluster snapshot is not in the <code>available</code> state, or other
-    /// accounts are authorized to access the snapshot. </p>
+    /// <p>The specified cluster snapshot is not in the <code>available</code> state, or other accounts are authorized to access the snapshot. </p>
     InvalidClusterSnapshotStateFault(crate::error::InvalidClusterSnapshotStateFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8523,8 +8414,7 @@ pub struct DescribePartnersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribePartnersErrorKind {
-    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
-    /// </p>
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
     ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
     /// <p>The partner integration is not authorized.</p>
     UnauthorizedPartnerIntegrationFault(crate::error::UnauthorizedPartnerIntegrationFault),
@@ -8758,8 +8648,7 @@ pub struct DescribeReservedNodeOfferingsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeReservedNodeOfferingsErrorKind {
-    /// <p>Your request cannot be completed because a dependent internal service is
-    /// temporarily unavailable. Wait 30 to 60 seconds and try again.</p>
+    /// <p>Your request cannot be completed because a dependent internal service is temporarily unavailable. Wait 30 to 60 seconds and try again.</p>
     DependentServiceUnavailableFault(crate::error::DependentServiceUnavailableFault),
     /// <p>Specified offering does not exist.</p>
     ReservedNodeOfferingNotFoundFault(crate::error::ReservedNodeOfferingNotFoundFault),
@@ -8889,8 +8778,7 @@ pub struct DescribeReservedNodesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeReservedNodesErrorKind {
-    /// <p>Your request cannot be completed because a dependent internal service is
-    /// temporarily unavailable. Wait 30 to 60 seconds and try again.</p>
+    /// <p>Your request cannot be completed because a dependent internal service is temporarily unavailable. Wait 30 to 60 seconds and try again.</p>
     DependentServiceUnavailableFault(crate::error::DependentServiceUnavailableFault),
     /// <p>The specified reserved compute node not found.</p>
     ReservedNodeNotFoundFault(crate::error::ReservedNodeNotFoundFault),
@@ -8998,8 +8886,7 @@ pub struct DescribeResizeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeResizeErrorKind {
-    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
-    /// </p>
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
     ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
     /// <p>A resize operation for the specified cluster is not found.</p>
     ResizeNotFoundFault(crate::error::ResizeNotFoundFault),
@@ -9205,8 +9092,7 @@ pub struct DescribeSnapshotCopyGrantsError {
 pub enum DescribeSnapshotCopyGrantsErrorKind {
     /// <p>The tag is invalid.</p>
     InvalidTagFault(crate::error::InvalidTagFault),
-    /// <p>The specified snapshot copy grant can't be found. Make sure that the name is typed
-    /// correctly and that the grant exists in the destination region.</p>
+    /// <p>The specified snapshot copy grant can't be found. Make sure that the name is typed correctly and that the grant exists in the destination region.</p>
     SnapshotCopyGrantNotFoundFault(crate::error::SnapshotCopyGrantNotFoundFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -9476,8 +9362,7 @@ pub struct DescribeTableRestoreStatusError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeTableRestoreStatusErrorKind {
-    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
-    /// </p>
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
     ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
     /// <p>The specified <code>TableRestoreRequestId</code> value was not found.</p>
     TableRestoreNotFoundFault(crate::error::TableRestoreNotFoundFault),
@@ -9679,8 +9564,7 @@ pub struct DescribeUsageLimitsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeUsageLimitsErrorKind {
-    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
-    /// </p>
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
     ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
     /// <p>The requested operation isn't supported.</p>
     UnsupportedOperationFault(crate::error::UnsupportedOperationFault),
@@ -9784,8 +9668,7 @@ pub struct DisableLoggingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisableLoggingErrorKind {
-    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
-    /// </p>
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
     ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
     /// <p>The specified cluster is not in the <code>available</code> state. </p>
     InvalidClusterStateFault(crate::error::InvalidClusterStateFault),
@@ -9886,8 +9769,7 @@ pub struct DisableSnapshotCopyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisableSnapshotCopyErrorKind {
-    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
-    /// </p>
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
     ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
     /// <p>The specified cluster is not in the <code>available</code> state. </p>
     InvalidClusterStateFault(crate::error::InvalidClusterStateFault),
@@ -10122,21 +10004,15 @@ pub struct EnableLoggingError {
 pub enum EnableLoggingErrorKind {
     /// <p>Could not find the specified S3 bucket.</p>
     BucketNotFoundFault(crate::error::BucketNotFoundFault),
-    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
-    /// </p>
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
     ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
-    /// <p>The cluster does not have read bucket or put object permissions on the S3 bucket
-    /// specified when enabling logging.</p>
+    /// <p>The cluster does not have read bucket or put object permissions on the S3 bucket specified when enabling logging.</p>
     InsufficientS3BucketPolicyFault(crate::error::InsufficientS3BucketPolicyFault),
     /// <p>The specified cluster is not in the <code>available</code> state. </p>
     InvalidClusterStateFault(crate::error::InvalidClusterStateFault),
-    /// <p>The S3 bucket name is invalid. For more information about naming rules, go to
-    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket
-    /// Restrictions and Limitations</a> in the Amazon Simple Storage Service (S3)
-    /// Developer Guide.</p>
+    /// <p>The S3 bucket name is invalid. For more information about naming rules, go to <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket Restrictions and Limitations</a> in the Amazon Simple Storage Service (S3) Developer Guide.</p>
     InvalidS3BucketNameFault(crate::error::InvalidS3BucketNameFault),
-    /// <p>The string specified for the logging S3 key prefix does not comply with the
-    /// documented constraints.</p>
+    /// <p>The string specified for the logging S3 key prefix does not comply with the documented constraints.</p>
     InvalidS3KeyPrefixFault(crate::error::InvalidS3KeyPrefixFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -10268,14 +10144,11 @@ pub struct EnableSnapshotCopyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum EnableSnapshotCopyErrorKind {
-    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
-    /// </p>
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
     ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
-    /// <p>Cross-region snapshot copy was temporarily disabled. Try your request
-    /// again.</p>
+    /// <p>Cross-region snapshot copy was temporarily disabled. Try your request again.</p>
     CopyToRegionDisabledFault(crate::error::CopyToRegionDisabledFault),
-    /// <p>The request cannot be completed because a dependent service is throttling requests
-    /// made by Amazon Redshift on your behalf. Wait and retry the request.</p>
+    /// <p>The request cannot be completed because a dependent service is throttling requests made by Amazon Redshift on your behalf. Wait and retry the request.</p>
     DependentServiceRequestThrottlingFault(crate::error::DependentServiceRequestThrottlingFault),
     /// <p>The specified options are incompatible.</p>
     IncompatibleOrderableOptions(crate::error::IncompatibleOrderableOptions),
@@ -10288,8 +10161,7 @@ pub enum EnableSnapshotCopyErrorKind {
     LimitExceededFault(crate::error::LimitExceededFault),
     /// <p>The cluster already has cross-region snapshot copy enabled.</p>
     SnapshotCopyAlreadyEnabledFault(crate::error::SnapshotCopyAlreadyEnabledFault),
-    /// <p>The specified snapshot copy grant can't be found. Make sure that the name is typed
-    /// correctly and that the grant exists in the destination region.</p>
+    /// <p>The specified snapshot copy grant can't be found. Make sure that the name is typed correctly and that the grant exists in the destination region.</p>
     SnapshotCopyGrantNotFoundFault(crate::error::SnapshotCopyGrantNotFoundFault),
     /// <p>Your account is not authorized to perform the requested operation.</p>
     UnauthorizedOperation(crate::error::UnauthorizedOperation),
@@ -10480,8 +10352,7 @@ pub struct GetClusterCredentialsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetClusterCredentialsErrorKind {
-    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
-    /// </p>
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
     ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
     /// <p>The requested operation isn't supported.</p>
     UnsupportedOperationFault(crate::error::UnsupportedOperationFault),
@@ -10585,13 +10456,11 @@ pub struct GetReservedNodeExchangeConfigurationOptionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetReservedNodeExchangeConfigurationOptionsErrorKind {
-    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
-    /// </p>
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
     ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
     /// <p>The snapshot identifier does not refer to an existing cluster snapshot.</p>
     ClusterSnapshotNotFoundFault(crate::error::ClusterSnapshotNotFoundFault),
-    /// <p>Your request cannot be completed because a dependent internal service is
-    /// temporarily unavailable. Wait 30 to 60 seconds and try again.</p>
+    /// <p>Your request cannot be completed because a dependent internal service is temporarily unavailable. Wait 30 to 60 seconds and try again.</p>
     DependentServiceUnavailableFault(crate::error::DependentServiceUnavailableFault),
     /// <p>Indicates that the Reserved Node being exchanged is not in an active state.</p>
     InvalidReservedNodeStateFault(crate::error::InvalidReservedNodeStateFault),
@@ -10804,8 +10673,7 @@ pub struct GetReservedNodeExchangeOfferingsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetReservedNodeExchangeOfferingsErrorKind {
-    /// <p>Your request cannot be completed because a dependent internal service is
-    /// temporarily unavailable. Wait 30 to 60 seconds and try again.</p>
+    /// <p>Your request cannot be completed because a dependent internal service is temporarily unavailable. Wait 30 to 60 seconds and try again.</p>
     DependentServiceUnavailableFault(crate::error::DependentServiceUnavailableFault),
     /// <p>Indicates that the Reserved Node being exchanged is not in an active state.</p>
     InvalidReservedNodeStateFault(crate::error::InvalidReservedNodeStateFault),
@@ -10980,8 +10848,7 @@ pub struct ModifyAquaConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyAquaConfigurationErrorKind {
-    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
-    /// </p>
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
     ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
     /// <p>The specified cluster is not in the <code>available</code> state. </p>
     InvalidClusterStateFault(crate::error::InvalidClusterStateFault),
@@ -11098,11 +10965,9 @@ pub struct ModifyAuthenticationProfileError {
 pub enum ModifyAuthenticationProfileErrorKind {
     /// <p>The authentication profile can't be found.</p>
     AuthenticationProfileNotFoundFault(crate::error::AuthenticationProfileNotFoundFault),
-    /// <p>The size or number of authentication profiles has exceeded the quota.
-    /// The maximum length of the JSON string and maximum number of authentication profiles is determined by a quota for your account.</p>
+    /// <p>The size or number of authentication profiles has exceeded the quota. The maximum length of the JSON string and maximum number of authentication profiles is determined by a quota for your account.</p>
     AuthenticationProfileQuotaExceededFault(crate::error::AuthenticationProfileQuotaExceededFault),
-    /// <p>The authentication profile request is not valid. The profile name can't be null or empty.
-    /// The authentication profile API operation must be available in the Amazon Web Services Region.</p>
+    /// <p>The authentication profile request is not valid. The profile name can't be null or empty. The authentication profile API operation must be available in the Amazon Web Services Region.</p>
     InvalidAuthenticationProfileRequestFault(
         crate::error::InvalidAuthenticationProfileRequestFault,
     ),
@@ -11229,24 +11094,19 @@ pub struct ModifyClusterError {
 pub enum ModifyClusterErrorKind {
     /// <p>The account already has a cluster with the given identifier.</p>
     ClusterAlreadyExistsFault(crate::error::ClusterAlreadyExistsFault),
-    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
-    /// </p>
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
     ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
     /// <p>The parameter group name does not refer to an existing parameter group.</p>
     ClusterParameterGroupNotFoundFault(crate::error::ClusterParameterGroupNotFoundFault),
-    /// <p>The cluster security group name does not refer to an existing cluster security
-    /// group.</p>
+    /// <p>The cluster security group name does not refer to an existing cluster security group.</p>
     ClusterSecurityGroupNotFoundFault(crate::error::ClusterSecurityGroupNotFoundFault),
-    /// <p>The request cannot be completed because a dependent service is throttling requests
-    /// made by Amazon Redshift on your behalf. Wait and retry the request.</p>
+    /// <p>The request cannot be completed because a dependent service is throttling requests made by Amazon Redshift on your behalf. Wait and retry the request.</p>
     DependentServiceRequestThrottlingFault(crate::error::DependentServiceRequestThrottlingFault),
-    /// <p>There is no Amazon Redshift HSM client certificate with the specified
-    /// identifier.</p>
+    /// <p>There is no Amazon Redshift HSM client certificate with the specified identifier.</p>
     HsmClientCertificateNotFoundFault(crate::error::HsmClientCertificateNotFoundFault),
     /// <p>There is no Amazon Redshift HSM configuration with the specified identifier.</p>
     HsmConfigurationNotFoundFault(crate::error::HsmConfigurationNotFoundFault),
-    /// <p>The number of nodes specified exceeds the allotted capacity of the
-    /// cluster.</p>
+    /// <p>The number of nodes specified exceeds the allotted capacity of the cluster.</p>
     InsufficientClusterCapacityFault(crate::error::InsufficientClusterCapacityFault),
     /// <p>The state of the cluster security group is not <code>available</code>. </p>
     InvalidClusterSecurityGroupStateFault(crate::error::InvalidClusterSecurityGroupStateFault),
@@ -11265,14 +11125,9 @@ pub enum ModifyClusterErrorKind {
     NumberOfNodesPerClusterLimitExceededFault(
         crate::error::NumberOfNodesPerClusterLimitExceededFault,
     ),
-    /// <p>The operation would exceed the number of nodes allotted to the account.
-    ///
-    /// For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a>
-    /// in the <i>Amazon Redshift Cluster Management Guide</i>.
-    /// </p>
+    /// <p>The operation would exceed the number of nodes allotted to the account. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
     NumberOfNodesQuotaExceededFault(crate::error::NumberOfNodesQuotaExceededFault),
-    /// <p>The number of tables in the cluster exceeds the limit for the requested new cluster
-    /// node type. </p>
+    /// <p>The number of tables in the cluster exceeds the limit for the requested new cluster node type. </p>
     TableLimitExceededFault(crate::error::TableLimitExceededFault),
     /// <p>Your account is not authorized to perform the requested operation.</p>
     UnauthorizedOperation(crate::error::UnauthorizedOperation),
@@ -11523,8 +11378,7 @@ pub struct ModifyClusterDbRevisionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyClusterDbRevisionErrorKind {
-    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
-    /// </p>
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
     ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
     /// <p>Cluster is already on the latest database revision.</p>
     ClusterOnLatestRevisionFault(crate::error::ClusterOnLatestRevisionFault),
@@ -11639,8 +11493,7 @@ pub struct ModifyClusterIamRolesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyClusterIamRolesErrorKind {
-    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
-    /// </p>
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
     ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
     /// <p>The specified cluster is not in the <code>available</code> state. </p>
     InvalidClusterStateFault(crate::error::InvalidClusterStateFault),
@@ -11744,8 +11597,7 @@ pub struct ModifyClusterMaintenanceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyClusterMaintenanceErrorKind {
-    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
-    /// </p>
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
     ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
     /// <p>The specified cluster is not in the <code>available</code> state. </p>
     InvalidClusterStateFault(crate::error::InvalidClusterStateFault),
@@ -11851,9 +11703,7 @@ pub struct ModifyClusterParameterGroupError {
 pub enum ModifyClusterParameterGroupErrorKind {
     /// <p>The parameter group name does not refer to an existing parameter group.</p>
     ClusterParameterGroupNotFoundFault(crate::error::ClusterParameterGroupNotFoundFault),
-    /// <p>The cluster parameter group action can not be completed because another task is in
-    /// progress that involves the parameter group. Wait a few moments and try the operation
-    /// again.</p>
+    /// <p>The cluster parameter group action can not be completed because another task is in progress that involves the parameter group. Wait a few moments and try the operation again.</p>
     InvalidClusterParameterGroupStateFault(crate::error::InvalidClusterParameterGroupStateFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -11965,8 +11815,7 @@ pub struct ModifyClusterSnapshotError {
 pub enum ModifyClusterSnapshotErrorKind {
     /// <p>The snapshot identifier does not refer to an existing cluster snapshot.</p>
     ClusterSnapshotNotFoundFault(crate::error::ClusterSnapshotNotFoundFault),
-    /// <p>The specified cluster snapshot is not in the <code>available</code> state, or other
-    /// accounts are authorized to access the snapshot. </p>
+    /// <p>The specified cluster snapshot is not in the <code>available</code> state, or other accounts are authorized to access the snapshot. </p>
     InvalidClusterSnapshotStateFault(crate::error::InvalidClusterSnapshotStateFault),
     /// <p>The retention period specified is either in the past or is not a valid value.</p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
@@ -12084,8 +11933,7 @@ pub struct ModifyClusterSnapshotScheduleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyClusterSnapshotScheduleErrorKind {
-    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
-    /// </p>
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
     ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
     /// <p>The cluster snapshot schedule state is not valid.</p>
     InvalidClusterSnapshotScheduleStateFault(
@@ -12213,20 +12061,13 @@ pub struct ModifyClusterSubnetGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyClusterSubnetGroupErrorKind {
-    /// <p>The cluster subnet group name does not refer to an existing cluster subnet
-    /// group.</p>
+    /// <p>The cluster subnet group name does not refer to an existing cluster subnet group.</p>
     ClusterSubnetGroupNotFoundFault(crate::error::ClusterSubnetGroupNotFoundFault),
-    /// <p>The request would result in user exceeding the allowed number of subnets in a
-    /// cluster subnet groups.
-    /// For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a>
-    /// in the <i>Amazon Redshift Cluster Management Guide</i>.
-    /// </p>
+    /// <p>The request would result in user exceeding the allowed number of subnets in a cluster subnet groups. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
     ClusterSubnetQuotaExceededFault(crate::error::ClusterSubnetQuotaExceededFault),
-    /// <p>The request cannot be completed because a dependent service is throttling requests
-    /// made by Amazon Redshift on your behalf. Wait and retry the request.</p>
+    /// <p>The request cannot be completed because a dependent service is throttling requests made by Amazon Redshift on your behalf. Wait and retry the request.</p>
     DependentServiceRequestThrottlingFault(crate::error::DependentServiceRequestThrottlingFault),
-    /// <p>The requested subnet is not valid, or not all of the subnets are in the same
-    /// VPC.</p>
+    /// <p>The requested subnet is not valid, or not all of the subnets are in the same VPC.</p>
     InvalidSubnet(crate::error::InvalidSubnet),
     /// <p>A specified subnet is already in use by another cluster.</p>
     SubnetAlreadyInUse(crate::error::SubnetAlreadyInUse),
@@ -12380,8 +12221,7 @@ pub struct ModifyEndpointAccessError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyEndpointAccessErrorKind {
-    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
-    /// </p>
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
     ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
     /// <p>The endpoint name doesn't refer to an existing endpoint.</p>
     EndpointNotFoundFault(crate::error::EndpointNotFoundFault),
@@ -12533,31 +12373,23 @@ pub struct ModifyEventSubscriptionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyEventSubscriptionErrorKind {
-    /// <p>The subscription request is invalid because it is a duplicate request. This
-    /// subscription request is already in progress.</p>
+    /// <p>The subscription request is invalid because it is a duplicate request. This subscription request is already in progress.</p>
     InvalidSubscriptionStateFault(crate::error::InvalidSubscriptionStateFault),
-    /// <p>Amazon SNS has responded that there is a problem with the specified Amazon SNS
-    /// topic.</p>
+    /// <p>Amazon SNS has responded that there is a problem with the specified Amazon SNS topic.</p>
     SnsInvalidTopicFault(crate::error::SnsInvalidTopicFault),
     /// <p>You do not have permission to publish to the specified Amazon SNS topic.</p>
     SnsNoAuthorizationFault(crate::error::SnsNoAuthorizationFault),
-    /// <p>An Amazon SNS topic with the specified Amazon Resource Name (ARN) does not
-    /// exist.</p>
+    /// <p>An Amazon SNS topic with the specified Amazon Resource Name (ARN) does not exist.</p>
     SnsTopicArnNotFoundFault(crate::error::SnsTopicArnNotFoundFault),
     /// <p>The specified Amazon Redshift event source could not be found.</p>
     SourceNotFoundFault(crate::error::SourceNotFoundFault),
-    /// <p>The value specified for the event category was not one of the allowed values, or it
-    /// specified a category that does not apply to the specified source type. The allowed
-    /// values are Configuration, Management, Monitoring, and Security.</p>
+    /// <p>The value specified for the event category was not one of the allowed values, or it specified a category that does not apply to the specified source type. The allowed values are Configuration, Management, Monitoring, and Security.</p>
     SubscriptionCategoryNotFoundFault(crate::error::SubscriptionCategoryNotFoundFault),
     /// <p>An Amazon Redshift event with the specified event ID does not exist.</p>
     SubscriptionEventIdNotFoundFault(crate::error::SubscriptionEventIdNotFoundFault),
-    /// <p>An Amazon Redshift event notification subscription with the specified name does not
-    /// exist.</p>
+    /// <p>An Amazon Redshift event notification subscription with the specified name does not exist.</p>
     SubscriptionNotFoundFault(crate::error::SubscriptionNotFoundFault),
-    /// <p>The value specified for the event severity was not one of the allowed values, or it
-    /// specified a severity that does not apply to the specified source type. The allowed
-    /// values are ERROR and INFO.</p>
+    /// <p>The value specified for the event severity was not one of the allowed values, or it specified a severity that does not apply to the specified source type. The allowed values are ERROR and INFO.</p>
     SubscriptionSeverityNotFoundFault(crate::error::SubscriptionSeverityNotFoundFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -12877,16 +12709,14 @@ pub struct ModifySnapshotCopyRetentionPeriodError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifySnapshotCopyRetentionPeriodErrorKind {
-    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
-    /// </p>
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
     ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
     /// <p>The specified cluster is not in the <code>available</code> state. </p>
     InvalidClusterStateFault(crate::error::InvalidClusterStateFault),
     /// <p>The retention period specified is either in the past or is not a valid value.</p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
     InvalidRetentionPeriodFault(crate::error::InvalidRetentionPeriodFault),
-    /// <p>Cross-region snapshot copy was temporarily disabled. Try your request
-    /// again.</p>
+    /// <p>Cross-region snapshot copy was temporarily disabled. Try your request again.</p>
     SnapshotCopyDisabledFault(crate::error::SnapshotCopyDisabledFault),
     /// <p>Your account is not authorized to perform the requested operation.</p>
     UnauthorizedOperation(crate::error::UnauthorizedOperation),
@@ -13274,8 +13104,7 @@ pub struct PauseClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PauseClusterErrorKind {
-    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
-    /// </p>
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
     ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
     /// <p>The specified cluster is not in the <code>available</code> state. </p>
     InvalidClusterStateFault(crate::error::InvalidClusterStateFault),
@@ -13380,10 +13209,7 @@ pub enum PurchaseReservedNodeOfferingErrorKind {
     ReservedNodeAlreadyExistsFault(crate::error::ReservedNodeAlreadyExistsFault),
     /// <p>Specified offering does not exist.</p>
     ReservedNodeOfferingNotFoundFault(crate::error::ReservedNodeOfferingNotFoundFault),
-    /// <p>Request would exceed the user's compute node quota.
-    /// For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a>
-    /// in the <i>Amazon Redshift Cluster Management Guide</i>.
-    /// </p>
+    /// <p>Request would exceed the user's compute node quota. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
     ReservedNodeQuotaExceededFault(crate::error::ReservedNodeQuotaExceededFault),
     /// <p>The requested operation isn't supported.</p>
     UnsupportedOperationFault(crate::error::UnsupportedOperationFault),
@@ -13521,8 +13347,7 @@ pub struct RebootClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RebootClusterErrorKind {
-    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
-    /// </p>
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
     ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
     /// <p>The specified cluster is not in the <code>available</code> state. </p>
     InvalidClusterStateFault(crate::error::InvalidClusterStateFault),
@@ -13718,9 +13543,7 @@ pub struct ResetClusterParameterGroupError {
 pub enum ResetClusterParameterGroupErrorKind {
     /// <p>The parameter group name does not refer to an existing parameter group.</p>
     ClusterParameterGroupNotFoundFault(crate::error::ClusterParameterGroupNotFoundFault),
-    /// <p>The cluster parameter group action can not be completed because another task is in
-    /// progress that involves the parameter group. Wait a few moments and try the operation
-    /// again.</p>
+    /// <p>The cluster parameter group action can not be completed because another task is in progress that involves the parameter group. Wait a few moments and try the operation again.</p>
     InvalidClusterParameterGroupStateFault(crate::error::InvalidClusterParameterGroupStateFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -13830,14 +13653,11 @@ pub struct ResizeClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ResizeClusterErrorKind {
-    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
-    /// </p>
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
     ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
-    /// <p>Your request cannot be completed because a dependent internal service is
-    /// temporarily unavailable. Wait 30 to 60 seconds and try again.</p>
+    /// <p>Your request cannot be completed because a dependent internal service is temporarily unavailable. Wait 30 to 60 seconds and try again.</p>
     DependentServiceUnavailableFault(crate::error::DependentServiceUnavailableFault),
-    /// <p>The number of nodes specified exceeds the allotted capacity of the
-    /// cluster.</p>
+    /// <p>The number of nodes specified exceeds the allotted capacity of the cluster.</p>
     InsufficientClusterCapacityFault(crate::error::InsufficientClusterCapacityFault),
     /// <p>The specified cluster is not in the <code>available</code> state. </p>
     InvalidClusterStateFault(crate::error::InvalidClusterStateFault),
@@ -13849,11 +13669,7 @@ pub enum ResizeClusterErrorKind {
     NumberOfNodesPerClusterLimitExceededFault(
         crate::error::NumberOfNodesPerClusterLimitExceededFault,
     ),
-    /// <p>The operation would exceed the number of nodes allotted to the account.
-    ///
-    /// For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a>
-    /// in the <i>Amazon Redshift Cluster Management Guide</i>.
-    /// </p>
+    /// <p>The operation would exceed the number of nodes allotted to the account. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
     NumberOfNodesQuotaExceededFault(crate::error::NumberOfNodesQuotaExceededFault),
     /// <p>User already has a reservation with the given identifier.</p>
     ReservedNodeAlreadyExistsFault(crate::error::ReservedNodeAlreadyExistsFault),
@@ -14081,43 +13897,31 @@ pub struct RestoreFromClusterSnapshotError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RestoreFromClusterSnapshotErrorKind {
-    /// <p>The owner of the specified snapshot has not authorized your account to access the
-    /// snapshot.</p>
+    /// <p>The owner of the specified snapshot has not authorized your account to access the snapshot.</p>
     AccessToSnapshotDeniedFault(crate::error::AccessToSnapshotDeniedFault),
     /// <p>The account already has a cluster with the given identifier.</p>
     ClusterAlreadyExistsFault(crate::error::ClusterAlreadyExistsFault),
     /// <p>The parameter group name does not refer to an existing parameter group.</p>
     ClusterParameterGroupNotFoundFault(crate::error::ClusterParameterGroupNotFoundFault),
-    /// <p>The request would exceed the allowed number of cluster instances for this account.
-    ///
-    /// For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a>
-    /// in the <i>Amazon Redshift Cluster Management Guide</i>.
-    /// </p>
+    /// <p>The request would exceed the allowed number of cluster instances for this account. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
     ClusterQuotaExceededFault(crate::error::ClusterQuotaExceededFault),
-    /// <p>The cluster security group name does not refer to an existing cluster security
-    /// group.</p>
+    /// <p>The cluster security group name does not refer to an existing cluster security group.</p>
     ClusterSecurityGroupNotFoundFault(crate::error::ClusterSecurityGroupNotFoundFault),
     /// <p>The snapshot identifier does not refer to an existing cluster snapshot.</p>
     ClusterSnapshotNotFoundFault(crate::error::ClusterSnapshotNotFoundFault),
-    /// <p>The cluster subnet group name does not refer to an existing cluster subnet
-    /// group.</p>
+    /// <p>The cluster subnet group name does not refer to an existing cluster subnet group.</p>
     ClusterSubnetGroupNotFoundFault(crate::error::ClusterSubnetGroupNotFoundFault),
-    /// <p>The request cannot be completed because a dependent service is throttling requests
-    /// made by Amazon Redshift on your behalf. Wait and retry the request.</p>
+    /// <p>The request cannot be completed because a dependent service is throttling requests made by Amazon Redshift on your behalf. Wait and retry the request.</p>
     DependentServiceRequestThrottlingFault(crate::error::DependentServiceRequestThrottlingFault),
-    /// <p>Your request cannot be completed because a dependent internal service is
-    /// temporarily unavailable. Wait 30 to 60 seconds and try again.</p>
+    /// <p>Your request cannot be completed because a dependent internal service is temporarily unavailable. Wait 30 to 60 seconds and try again.</p>
     DependentServiceUnavailableFault(crate::error::DependentServiceUnavailableFault),
-    /// <p>There is no Amazon Redshift HSM client certificate with the specified
-    /// identifier.</p>
+    /// <p>There is no Amazon Redshift HSM client certificate with the specified identifier.</p>
     HsmClientCertificateNotFoundFault(crate::error::HsmClientCertificateNotFoundFault),
     /// <p>There is no Amazon Redshift HSM configuration with the specified identifier.</p>
     HsmConfigurationNotFoundFault(crate::error::HsmConfigurationNotFoundFault),
-    /// <p>The number of nodes specified exceeds the allotted capacity of the
-    /// cluster.</p>
+    /// <p>The number of nodes specified exceeds the allotted capacity of the cluster.</p>
     InsufficientClusterCapacityFault(crate::error::InsufficientClusterCapacityFault),
-    /// <p>The specified cluster snapshot is not in the <code>available</code> state, or other
-    /// accounts are authorized to access the snapshot. </p>
+    /// <p>The specified cluster snapshot is not in the <code>available</code> state, or other accounts are authorized to access the snapshot. </p>
     InvalidClusterSnapshotStateFault(crate::error::InvalidClusterSnapshotStateFault),
     /// <p>The cluster subnet group cannot be deleted because it is in use.</p>
     InvalidClusterSubnetGroupStateFault(crate::error::InvalidClusterSubnetGroupStateFault),
@@ -14129,8 +13933,7 @@ pub enum RestoreFromClusterSnapshotErrorKind {
     InvalidReservedNodeStateFault(crate::error::InvalidReservedNodeStateFault),
     /// <p>The restore is invalid.</p>
     InvalidRestoreFault(crate::error::InvalidRestoreFault),
-    /// <p>The requested subnet is not valid, or not all of the subnets are in the same
-    /// VPC.</p>
+    /// <p>The requested subnet is not valid, or not all of the subnets are in the same VPC.</p>
     InvalidSubnet(crate::error::InvalidSubnet),
     /// <p>The tag is invalid.</p>
     InvalidTagFault(crate::error::InvalidTagFault),
@@ -14142,11 +13945,7 @@ pub enum RestoreFromClusterSnapshotErrorKind {
     NumberOfNodesPerClusterLimitExceededFault(
         crate::error::NumberOfNodesPerClusterLimitExceededFault,
     ),
-    /// <p>The operation would exceed the number of nodes allotted to the account.
-    ///
-    /// For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a>
-    /// in the <i>Amazon Redshift Cluster Management Guide</i>.
-    /// </p>
+    /// <p>The operation would exceed the number of nodes allotted to the account. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
     NumberOfNodesQuotaExceededFault(crate::error::NumberOfNodesQuotaExceededFault),
     /// <p>User already has a reservation with the given identifier.</p>
     ReservedNodeAlreadyExistsFault(crate::error::ReservedNodeAlreadyExistsFault),
@@ -14614,24 +14413,19 @@ pub struct RestoreTableFromClusterSnapshotError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RestoreTableFromClusterSnapshotErrorKind {
-    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
-    /// </p>
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
     ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
     /// <p>The snapshot identifier does not refer to an existing cluster snapshot.</p>
     ClusterSnapshotNotFoundFault(crate::error::ClusterSnapshotNotFoundFault),
-    /// <p>You have exceeded the allowed number of table restore requests. Wait for your
-    /// current table restore requests to complete before making a new request.</p>
+    /// <p>You have exceeded the allowed number of table restore requests. Wait for your current table restore requests to complete before making a new request.</p>
     InProgressTableRestoreQuotaExceededFault(
         crate::error::InProgressTableRestoreQuotaExceededFault,
     ),
-    /// <p>The specified cluster snapshot is not in the <code>available</code> state, or other
-    /// accounts are authorized to access the snapshot. </p>
+    /// <p>The specified cluster snapshot is not in the <code>available</code> state, or other accounts are authorized to access the snapshot. </p>
     InvalidClusterSnapshotStateFault(crate::error::InvalidClusterSnapshotStateFault),
     /// <p>The specified cluster is not in the <code>available</code> state. </p>
     InvalidClusterStateFault(crate::error::InvalidClusterStateFault),
-    /// <p>The value specified for the <code>sourceDatabaseName</code>,
-    /// <code>sourceSchemaName</code>, or <code>sourceTableName</code> parameter, or a
-    /// combination of these, doesn't exist in the snapshot.</p>
+    /// <p>The value specified for the <code>sourceDatabaseName</code>, <code>sourceSchemaName</code>, or <code>sourceTableName</code> parameter, or a combination of these, doesn't exist in the snapshot.</p>
     InvalidTableRestoreArgumentFault(crate::error::InvalidTableRestoreArgumentFault),
     /// <p>The requested operation isn't supported.</p>
     UnsupportedOperationFault(crate::error::UnsupportedOperationFault),
@@ -14807,11 +14601,9 @@ pub struct ResumeClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ResumeClusterErrorKind {
-    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
-    /// </p>
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
     ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
-    /// <p>The number of nodes specified exceeds the allotted capacity of the
-    /// cluster.</p>
+    /// <p>The number of nodes specified exceeds the allotted capacity of the cluster.</p>
     InsufficientClusterCapacityFault(crate::error::InsufficientClusterCapacityFault),
     /// <p>The specified cluster is not in the <code>available</code> state. </p>
     InvalidClusterStateFault(crate::error::InvalidClusterStateFault),
@@ -14921,11 +14713,9 @@ pub struct RevokeClusterSecurityGroupIngressError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RevokeClusterSecurityGroupIngressErrorKind {
-    /// <p>The specified CIDR IP range or EC2 security group is not authorized for the
-    /// specified cluster security group.</p>
+    /// <p>The specified CIDR IP range or EC2 security group is not authorized for the specified cluster security group.</p>
     AuthorizationNotFoundFault(crate::error::AuthorizationNotFoundFault),
-    /// <p>The cluster security group name does not refer to an existing cluster security
-    /// group.</p>
+    /// <p>The cluster security group name does not refer to an existing cluster security group.</p>
     ClusterSecurityGroupNotFoundFault(crate::error::ClusterSecurityGroupNotFoundFault),
     /// <p>The state of the cluster security group is not <code>available</code>. </p>
     InvalidClusterSecurityGroupStateFault(crate::error::InvalidClusterSecurityGroupStateFault),
@@ -15053,8 +14843,7 @@ pub struct RevokeEndpointAccessError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RevokeEndpointAccessErrorKind {
-    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
-    /// </p>
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
     ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
     /// <p>The authorization for this endpoint can't be found.</p>
     EndpointAuthorizationNotFoundFault(crate::error::EndpointAuthorizationNotFoundFault),
@@ -15221,11 +15010,9 @@ pub struct RevokeSnapshotAccessError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RevokeSnapshotAccessErrorKind {
-    /// <p>The owner of the specified snapshot has not authorized your account to access the
-    /// snapshot.</p>
+    /// <p>The owner of the specified snapshot has not authorized your account to access the snapshot.</p>
     AccessToSnapshotDeniedFault(crate::error::AccessToSnapshotDeniedFault),
-    /// <p>The specified CIDR IP range or EC2 security group is not authorized for the
-    /// specified cluster security group.</p>
+    /// <p>The specified CIDR IP range or EC2 security group is not authorized for the specified cluster security group.</p>
     AuthorizationNotFoundFault(crate::error::AuthorizationNotFoundFault),
     /// <p>The snapshot identifier does not refer to an existing cluster snapshot.</p>
     ClusterSnapshotNotFoundFault(crate::error::ClusterSnapshotNotFoundFault),
@@ -15338,11 +15125,9 @@ pub struct RotateEncryptionKeyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RotateEncryptionKeyErrorKind {
-    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
-    /// </p>
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
     ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
-    /// <p>The request cannot be completed because a dependent service is throttling requests
-    /// made by Amazon Redshift on your behalf. Wait and retry the request.</p>
+    /// <p>The request cannot be completed because a dependent service is throttling requests made by Amazon Redshift on your behalf. Wait and retry the request.</p>
     DependentServiceRequestThrottlingFault(crate::error::DependentServiceRequestThrottlingFault),
     /// <p>The specified cluster is not in the <code>available</code> state. </p>
     InvalidClusterStateFault(crate::error::InvalidClusterStateFault),
@@ -15459,8 +15244,7 @@ pub struct UpdatePartnerStatusError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdatePartnerStatusErrorKind {
-    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
-    /// </p>
+    /// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
     ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
     /// <p>The name of the partner was not found.</p>
     PartnerNotFoundFault(crate::error::PartnerNotFoundFault),
@@ -15694,8 +15478,7 @@ impl PartnerNotFoundFault {
     }
 }
 
-/// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
-/// </p>
+/// <p>The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClusterNotFoundFault {
@@ -15823,8 +15606,7 @@ impl InvalidClusterStateFault {
     }
 }
 
-/// <p>The request cannot be completed because a dependent service is throttling requests
-/// made by Amazon Redshift on your behalf. Wait and retry the request.</p>
+/// <p>The request cannot be completed because a dependent service is throttling requests made by Amazon Redshift on your behalf. Wait and retry the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DependentServiceRequestThrottlingFault {
@@ -15952,8 +15734,7 @@ impl ClusterSnapshotNotFoundFault {
     }
 }
 
-/// <p>The specified CIDR IP range or EC2 security group is not authorized for the
-/// specified cluster security group.</p>
+/// <p>The specified CIDR IP range or EC2 security group is not authorized for the specified cluster security group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuthorizationNotFoundFault {
@@ -16017,8 +15798,7 @@ impl AuthorizationNotFoundFault {
     }
 }
 
-/// <p>The owner of the specified snapshot has not authorized your account to access the
-/// snapshot.</p>
+/// <p>The owner of the specified snapshot has not authorized your account to access the snapshot.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessToSnapshotDeniedFault {
@@ -16402,8 +16182,7 @@ impl EndpointAuthorizationNotFoundFault {
     }
 }
 
-/// <p>The cluster security group name does not refer to an existing cluster security
-/// group.</p>
+/// <p>The cluster security group name does not refer to an existing cluster security group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClusterSecurityGroupNotFoundFault {
@@ -16467,8 +16246,7 @@ impl ClusterSecurityGroupNotFoundFault {
     }
 }
 
-/// <p>The number of nodes specified exceeds the allotted capacity of the
-/// cluster.</p>
+/// <p>The number of nodes specified exceeds the allotted capacity of the cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InsufficientClusterCapacityFault {
@@ -16596,9 +16374,7 @@ impl UnsupportedOperationFault {
     }
 }
 
-/// <p>The value specified for the <code>sourceDatabaseName</code>,
-/// <code>sourceSchemaName</code>, or <code>sourceTableName</code> parameter, or a
-/// combination of these, doesn't exist in the snapshot.</p>
+/// <p>The value specified for the <code>sourceDatabaseName</code>, <code>sourceSchemaName</code>, or <code>sourceTableName</code> parameter, or a combination of these, doesn't exist in the snapshot.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidTableRestoreArgumentFault {
@@ -16662,8 +16438,7 @@ impl InvalidTableRestoreArgumentFault {
     }
 }
 
-/// <p>The specified cluster snapshot is not in the <code>available</code> state, or other
-/// accounts are authorized to access the snapshot. </p>
+/// <p>The specified cluster snapshot is not in the <code>available</code> state, or other accounts are authorized to access the snapshot. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidClusterSnapshotStateFault {
@@ -16727,8 +16502,7 @@ impl InvalidClusterSnapshotStateFault {
     }
 }
 
-/// <p>You have exceeded the allowed number of table restore requests. Wait for your
-/// current table restore requests to complete before making a new request.</p>
+/// <p>You have exceeded the allowed number of table restore requests. Wait for your current table restore requests to complete before making a new request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InProgressTableRestoreQuotaExceededFault {
@@ -17240,11 +17014,7 @@ impl ReservedNodeAlreadyExistsFault {
     }
 }
 
-/// <p>The operation would exceed the number of nodes allotted to the account.
-///
-/// For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a>
-/// in the <i>Amazon Redshift Cluster Management Guide</i>.
-/// </p>
+/// <p>The operation would exceed the number of nodes allotted to the account. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NumberOfNodesQuotaExceededFault {
@@ -17567,8 +17337,7 @@ impl InvalidTagFault {
     }
 }
 
-/// <p>The requested subnet is not valid, or not all of the subnets are in the same
-/// VPC.</p>
+/// <p>The requested subnet is not valid, or not all of the subnets are in the same VPC.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidSubnet {
@@ -18016,8 +17785,7 @@ impl HsmConfigurationNotFoundFault {
     }
 }
 
-/// <p>There is no Amazon Redshift HSM client certificate with the specified
-/// identifier.</p>
+/// <p>There is no Amazon Redshift HSM client certificate with the specified identifier.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HsmClientCertificateNotFoundFault {
@@ -18081,8 +17849,7 @@ impl HsmClientCertificateNotFoundFault {
     }
 }
 
-/// <p>Your request cannot be completed because a dependent internal service is
-/// temporarily unavailable. Wait 30 to 60 seconds and try again.</p>
+/// <p>Your request cannot be completed because a dependent internal service is temporarily unavailable. Wait 30 to 60 seconds and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DependentServiceUnavailableFault {
@@ -18146,8 +17913,7 @@ impl DependentServiceUnavailableFault {
     }
 }
 
-/// <p>The cluster subnet group name does not refer to an existing cluster subnet
-/// group.</p>
+/// <p>The cluster subnet group name does not refer to an existing cluster subnet group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClusterSubnetGroupNotFoundFault {
@@ -18211,11 +17977,7 @@ impl ClusterSubnetGroupNotFoundFault {
     }
 }
 
-/// <p>The request would exceed the allowed number of cluster instances for this account.
-///
-/// For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a>
-/// in the <i>Amazon Redshift Cluster Management Guide</i>.
-/// </p>
+/// <p>The request would exceed the allowed number of cluster instances for this account. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClusterQuotaExceededFault {
@@ -18471,9 +18233,7 @@ impl UnsupportedOptionFault {
     }
 }
 
-/// <p>The cluster parameter group action can not be completed because another task is in
-/// progress that involves the parameter group. Wait a few moments and try the operation
-/// again.</p>
+/// <p>The cluster parameter group action can not be completed because another task is in progress that involves the parameter group. Wait a few moments and try the operation again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidClusterParameterGroupStateFault {
@@ -18601,10 +18361,7 @@ impl InvalidDataShareFault {
     }
 }
 
-/// <p>Request would exceed the user's compute node quota.
-/// For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a>
-/// in the <i>Amazon Redshift Cluster Management Guide</i>.
-/// </p>
+/// <p>Request would exceed the user's compute node quota. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReservedNodeQuotaExceededFault {
@@ -18924,8 +18681,7 @@ impl InvalidScheduleFault {
     }
 }
 
-/// <p>Cross-region snapshot copy was temporarily disabled. Try your request
-/// again.</p>
+/// <p>Cross-region snapshot copy was temporarily disabled. Try your request again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SnapshotCopyDisabledFault {
@@ -19246,9 +19002,7 @@ impl InvalidScheduledActionFault {
     }
 }
 
-/// <p>The value specified for the event severity was not one of the allowed values, or it
-/// specified a severity that does not apply to the specified source type. The allowed
-/// values are ERROR and INFO.</p>
+/// <p>The value specified for the event severity was not one of the allowed values, or it specified a severity that does not apply to the specified source type. The allowed values are ERROR and INFO.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubscriptionSeverityNotFoundFault {
@@ -19312,8 +19066,7 @@ impl SubscriptionSeverityNotFoundFault {
     }
 }
 
-/// <p>An Amazon Redshift event notification subscription with the specified name does not
-/// exist.</p>
+/// <p>An Amazon Redshift event notification subscription with the specified name does not exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubscriptionNotFoundFault {
@@ -19441,9 +19194,7 @@ impl SubscriptionEventIdNotFoundFault {
     }
 }
 
-/// <p>The value specified for the event category was not one of the allowed values, or it
-/// specified a category that does not apply to the specified source type. The allowed
-/// values are Configuration, Management, Monitoring, and Security.</p>
+/// <p>The value specified for the event category was not one of the allowed values, or it specified a category that does not apply to the specified source type. The allowed values are Configuration, Management, Monitoring, and Security.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubscriptionCategoryNotFoundFault {
@@ -19571,8 +19322,7 @@ impl SourceNotFoundFault {
     }
 }
 
-/// <p>An Amazon SNS topic with the specified Amazon Resource Name (ARN) does not
-/// exist.</p>
+/// <p>An Amazon SNS topic with the specified Amazon Resource Name (ARN) does not exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SnsTopicArnNotFoundFault {
@@ -19700,8 +19450,7 @@ impl SnsNoAuthorizationFault {
     }
 }
 
-/// <p>Amazon SNS has responded that there is a problem with the specified Amazon SNS
-/// topic.</p>
+/// <p>Amazon SNS has responded that there is a problem with the specified Amazon SNS topic.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SnsInvalidTopicFault {
@@ -19765,8 +19514,7 @@ impl SnsInvalidTopicFault {
     }
 }
 
-/// <p>The subscription request is invalid because it is a duplicate request. This
-/// subscription request is already in progress.</p>
+/// <p>The subscription request is invalid because it is a duplicate request. This subscription request is already in progress.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidSubscriptionStateFault {
@@ -19894,11 +19642,7 @@ impl SubnetAlreadyInUse {
     }
 }
 
-/// <p>The request would result in user exceeding the allowed number of subnets in a
-/// cluster subnet groups.
-/// For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a>
-/// in the <i>Amazon Redshift Cluster Management Guide</i>.
-/// </p>
+/// <p>The request would result in user exceeding the allowed number of subnets in a cluster subnet groups. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClusterSubnetQuotaExceededFault {
@@ -20090,8 +19834,7 @@ impl ClusterOnLatestRevisionFault {
     }
 }
 
-/// <p>The number of tables in the cluster exceeds the limit for the requested new cluster
-/// node type. </p>
+/// <p>The number of tables in the cluster exceeds the limit for the requested new cluster node type. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TableLimitExceededFault {
@@ -20155,8 +19898,7 @@ impl TableLimitExceededFault {
     }
 }
 
-/// <p>The authentication profile request is not valid. The profile name can't be null or empty.
-/// The authentication profile API operation must be available in the Amazon Web Services Region.</p>
+/// <p>The authentication profile request is not valid. The profile name can't be null or empty. The authentication profile API operation must be available in the Amazon Web Services Region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidAuthenticationProfileRequestFault {
@@ -20220,8 +19962,7 @@ impl InvalidAuthenticationProfileRequestFault {
     }
 }
 
-/// <p>The size or number of authentication profiles has exceeded the quota.
-/// The maximum length of the JSON string and maximum number of authentication profiles is determined by a quota for your account.</p>
+/// <p>The size or number of authentication profiles has exceeded the quota. The maximum length of the JSON string and maximum number of authentication profiles is determined by a quota for your account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuthenticationProfileQuotaExceededFault {
@@ -20413,8 +20154,7 @@ impl UnknownSnapshotCopyRegionFault {
     }
 }
 
-/// <p>The specified snapshot copy grant can't be found. Make sure that the name is typed
-/// correctly and that the grant exists in the destination region.</p>
+/// <p>The specified snapshot copy grant can't be found. Make sure that the name is typed correctly and that the grant exists in the destination region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SnapshotCopyGrantNotFoundFault {
@@ -20606,8 +20346,7 @@ impl IncompatibleOrderableOptions {
     }
 }
 
-/// <p>Cross-region snapshot copy was temporarily disabled. Try your request
-/// again.</p>
+/// <p>Cross-region snapshot copy was temporarily disabled. Try your request again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CopyToRegionDisabledFault {
@@ -20671,8 +20410,7 @@ impl CopyToRegionDisabledFault {
     }
 }
 
-/// <p>The string specified for the logging S3 key prefix does not comply with the
-/// documented constraints.</p>
+/// <p>The string specified for the logging S3 key prefix does not comply with the documented constraints.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidS3KeyPrefixFault {
@@ -20736,10 +20474,7 @@ impl InvalidS3KeyPrefixFault {
     }
 }
 
-/// <p>The S3 bucket name is invalid. For more information about naming rules, go to
-/// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket
-/// Restrictions and Limitations</a> in the Amazon Simple Storage Service (S3)
-/// Developer Guide.</p>
+/// <p>The S3 bucket name is invalid. For more information about naming rules, go to <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket Restrictions and Limitations</a> in the Amazon Simple Storage Service (S3) Developer Guide.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidS3BucketNameFault {
@@ -20803,8 +20538,7 @@ impl InvalidS3BucketNameFault {
     }
 }
 
-/// <p>The cluster does not have read bucket or put object permissions on the S3 bucket
-/// specified when enabling logging.</p>
+/// <p>The cluster does not have read bucket or put object permissions on the S3 bucket specified when enabling logging.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InsufficientS3BucketPolicyFault {
@@ -21316,8 +21050,7 @@ impl ReservedNodeExchangeNotFoundFault {
     }
 }
 
-/// <p>The snapshot copy grant can't be deleted because it is used by one or more
-/// clusters.</p>
+/// <p>The snapshot copy grant can't be deleted because it is used by one or more clusters.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidSnapshotCopyGrantStateFault {
@@ -21381,8 +21114,7 @@ impl InvalidSnapshotCopyGrantStateFault {
     }
 }
 
-/// <p>The specified HSM configuration is not in the <code>available</code> state, or it
-/// is still in use by one or more Amazon Redshift clusters.</p>
+/// <p>The specified HSM configuration is not in the <code>available</code> state, or it is still in use by one or more Amazon Redshift clusters.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidHsmConfigurationStateFault {
@@ -21446,8 +21178,7 @@ impl InvalidHsmConfigurationStateFault {
     }
 }
 
-/// <p>The specified HSM client certificate is not in the <code>available</code> state, or
-/// it is still in use by one or more Amazon Redshift clusters.</p>
+/// <p>The specified HSM client certificate is not in the <code>available</code> state, or it is still in use by one or more Amazon Redshift clusters.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidHsmClientCertificateStateFault {
@@ -21575,8 +21306,7 @@ impl InvalidClusterSubnetStateFault {
     }
 }
 
-/// <p>The request would result in the user exceeding the allowed number of cluster
-/// snapshots.</p>
+/// <p>The request would result in the user exceeding the allowed number of cluster snapshots.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClusterSnapshotQuotaExceededFault {
@@ -21640,8 +21370,7 @@ impl ClusterSnapshotQuotaExceededFault {
     }
 }
 
-/// <p>The value specified as a snapshot identifier is already used by an existing
-/// snapshot.</p>
+/// <p>The value specified as a snapshot identifier is already used by an existing snapshot.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClusterSnapshotAlreadyExistsFault {
@@ -21961,8 +21690,7 @@ impl ScheduleDefinitionTypeUnsupportedFault {
     }
 }
 
-/// <p>The Amazon Web Services account has exceeded the maximum number of snapshot copy grants in this
-/// region.</p>
+/// <p>The Amazon Web Services account has exceeded the maximum number of snapshot copy grants in this region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SnapshotCopyGrantQuotaExceededFault {
@@ -22026,8 +21754,7 @@ impl SnapshotCopyGrantQuotaExceededFault {
     }
 }
 
-/// <p>The snapshot copy grant can't be created because a grant with the same name already
-/// exists.</p>
+/// <p>The snapshot copy grant can't be created because a grant with the same name already exists.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SnapshotCopyGrantAlreadyExistsFault {
@@ -22219,10 +21946,7 @@ impl ScheduledActionAlreadyExistsFault {
     }
 }
 
-/// <p>The quota for HSM configurations has been reached.
-/// For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a>
-/// in the <i>Amazon Redshift Cluster Management Guide</i>.
-/// </p>
+/// <p>The quota for HSM configurations has been reached. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HsmConfigurationQuotaExceededFault {
@@ -22286,8 +22010,7 @@ impl HsmConfigurationQuotaExceededFault {
     }
 }
 
-/// <p>There is already an existing Amazon Redshift HSM configuration with the specified
-/// identifier.</p>
+/// <p>There is already an existing Amazon Redshift HSM configuration with the specified identifier.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HsmConfigurationAlreadyExistsFault {
@@ -22351,10 +22074,7 @@ impl HsmConfigurationAlreadyExistsFault {
     }
 }
 
-/// <p>The quota for HSM client certificates has been reached.
-/// For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a>
-/// in the <i>Amazon Redshift Cluster Management Guide</i>.
-/// </p>
+/// <p>The quota for HSM client certificates has been reached. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HsmClientCertificateQuotaExceededFault {
@@ -22418,8 +22138,7 @@ impl HsmClientCertificateQuotaExceededFault {
     }
 }
 
-/// <p>There is already an existing Amazon Redshift HSM client certificate with the specified
-/// identifier.</p>
+/// <p>There is already an existing Amazon Redshift HSM client certificate with the specified identifier.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HsmClientCertificateAlreadyExistsFault {
@@ -22483,8 +22202,7 @@ impl HsmClientCertificateAlreadyExistsFault {
     }
 }
 
-/// <p>There is already an existing event notification subscription with the specified
-/// name.</p>
+/// <p>There is already an existing event notification subscription with the specified name.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubscriptionAlreadyExistFault {
@@ -22548,11 +22266,7 @@ impl SubscriptionAlreadyExistFault {
     }
 }
 
-/// <p>The request would exceed the allowed number of event subscriptions for this
-/// account.
-/// For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a>
-/// in the <i>Amazon Redshift Cluster Management Guide</i>.
-/// </p>
+/// <p>The request would exceed the allowed number of event subscriptions for this account. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventSubscriptionQuotaExceededFault {
@@ -22872,11 +22586,7 @@ impl AccessToClusterDeniedFault {
     }
 }
 
-/// <p>The request would result in user exceeding the allowed number of cluster subnet
-/// groups.
-/// For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a>
-/// in the <i>Amazon Redshift Cluster Management Guide</i>.
-/// </p>
+/// <p>The request would result in user exceeding the allowed number of cluster subnet groups. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClusterSubnetGroupQuotaExceededFault {
@@ -22940,8 +22650,7 @@ impl ClusterSubnetGroupQuotaExceededFault {
     }
 }
 
-/// <p>A <i>ClusterSubnetGroupName</i> is already used by an existing
-/// cluster subnet group. </p>
+/// <p>A <i>ClusterSubnetGroupName</i> is already used by an existing cluster subnet group. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClusterSubnetGroupAlreadyExistsFault {
@@ -23005,11 +22714,7 @@ impl ClusterSubnetGroupAlreadyExistsFault {
     }
 }
 
-/// <p>The request would result in the user exceeding the allowed number of cluster
-/// security groups.
-/// For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a>
-/// in the <i>Amazon Redshift Cluster Management Guide</i>.
-/// </p>
+/// <p>The request would result in the user exceeding the allowed number of cluster security groups. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClusterSecurityGroupQuotaExceededFault {
@@ -23137,11 +22842,7 @@ impl ClusterSecurityGroupAlreadyExistsFault {
     }
 }
 
-/// <p>The request would result in the user exceeding the allowed number of cluster
-/// parameter groups.
-/// For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a>
-/// in the <i>Amazon Redshift Cluster Management Guide</i>.
-/// </p>
+/// <p>The request would result in the user exceeding the allowed number of cluster parameter groups. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClusterParameterGroupQuotaExceededFault {
@@ -23333,8 +23034,7 @@ impl AuthenticationProfileAlreadyExistsFault {
     }
 }
 
-/// <p>The maximum number for snapshot identifiers has been reached. The limit is 100.
-/// </p>
+/// <p>The maximum number for snapshot identifiers has been reached. The limit is 100. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchModifyClusterSnapshotsLimitExceededFault {
@@ -23398,8 +23098,7 @@ impl BatchModifyClusterSnapshotsLimitExceededFault {
     }
 }
 
-/// <p>The maximum number for a batch delete of snapshots has been reached. The limit is
-/// 100. </p>
+/// <p>The maximum number for a batch delete of snapshots has been reached. The limit is 100. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDeleteRequestSizeExceededFault {
@@ -23527,8 +23226,7 @@ impl AuthorizationQuotaExceededFault {
     }
 }
 
-/// <p>The specified CIDR block or EC2 security group is already authorized for the
-/// specified cluster security group.</p>
+/// <p>The specified CIDR block or EC2 security group is already authorized for the specified cluster security group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuthorizationAlreadyExistsFault {

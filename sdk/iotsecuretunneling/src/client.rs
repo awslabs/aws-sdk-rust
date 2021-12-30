@@ -143,9 +143,7 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CloseTunnel`.
     ///
-    /// <p>Closes a tunnel identified by the unique tunnel id. When a <code>CloseTunnel</code>
-    /// request is received, we close the WebSocket connections between the client and proxy
-    /// server so no data can be transmitted.</p>
+    /// <p>Closes a tunnel identified by the unique tunnel id. When a <code>CloseTunnel</code> request is received, we close the WebSocket connections between the client and proxy server so no data can be transmitted.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CloseTunnel<
         C = aws_smithy_client::erase::DynConnector,
@@ -212,14 +210,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tunnel_id(input);
             self
         }
-        /// <p>When set to true, AWS IoT Secure Tunneling deletes the tunnel data
-        /// immediately.</p>
+        /// <p>When set to true, AWS IoT Secure Tunneling deletes the tunnel data immediately.</p>
         pub fn delete(mut self, input: bool) -> Self {
             self.inner = self.inner.delete(input);
             self
         }
-        /// <p>When set to true, AWS IoT Secure Tunneling deletes the tunnel data
-        /// immediately.</p>
+        /// <p>When set to true, AWS IoT Secure Tunneling deletes the tunnel data immediately.</p>
         pub fn set_delete(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_delete(input);
             self
@@ -367,8 +363,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTunnels`.
     ///
-    /// <p>List all tunnels for an AWS account. Tunnels are listed by creation time in
-    /// descending order, newer tunnels will be listed before older tunnels.</p>
+    /// <p>List all tunnels for an AWS account. Tunnels are listed by creation time in descending order, newer tunnels will be listed before older tunnels.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTunnels<
         C = aws_smithy_client::erase::DynConnector,
@@ -458,8 +453,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `OpenTunnel`.
     ///
-    /// <p>Creates a new tunnel, and returns two client access tokens for clients to use to
-    /// connect to the AWS IoT Secure Tunneling proxy server.</p>
+    /// <p>Creates a new tunnel, and returns two client access tokens for clients to use to connect to the AWS IoT Secure Tunneling proxy server.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct OpenTunnel<
         C = aws_smithy_client::erase::DynConnector,

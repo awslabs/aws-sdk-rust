@@ -14,15 +14,13 @@ pub struct AcceptPageError {
 pub enum AcceptPageErrorKind {
     /// <p>You don't have sufficient access to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Unexpected error occurred while
-    /// processing the request.</p>
+    /// <p>Unexpected error occurred while processing the request.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Request references a resource that doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
-    /// service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -141,15 +139,13 @@ pub struct ActivateContactChannelError {
 pub enum ActivateContactChannelErrorKind {
     /// <p>You don't have sufficient access to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Unexpected error occurred while
-    /// processing the request.</p>
+    /// <p>Unexpected error occurred while processing the request.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Request references a resource that doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
-    /// service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -284,15 +280,13 @@ pub enum CreateContactErrorKind {
     ConflictException(crate::error::ConflictException),
     /// <p>The operation failed to due an encryption key error.</p>
     DataEncryptionException(crate::error::DataEncryptionException),
-    /// <p>Unexpected error occurred while
-    /// processing the request.</p>
+    /// <p>Unexpected error occurred while processing the request.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Request would cause a service quota to be exceeded.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
-    /// service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -433,13 +427,11 @@ pub enum CreateContactChannelErrorKind {
     ConflictException(crate::error::ConflictException),
     /// <p>The operation failed to due an encryption key error.</p>
     DataEncryptionException(crate::error::DataEncryptionException),
-    /// <p>Unexpected error occurred while
-    /// processing the request.</p>
+    /// <p>Unexpected error occurred while processing the request.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
-    /// service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -579,15 +571,13 @@ pub struct DeactivateContactChannelError {
 pub enum DeactivateContactChannelErrorKind {
     /// <p>You don't have sufficient access to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Unexpected error occurred while
-    /// processing the request.</p>
+    /// <p>Unexpected error occurred while processing the request.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Request references a resource that doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
-    /// service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -718,15 +708,13 @@ pub struct DeleteContactError {
 pub enum DeleteContactErrorKind {
     /// <p>You don't have sufficient access to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Unexpected error occurred while
-    /// processing the request.</p>
+    /// <p>Unexpected error occurred while processing the request.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Request references a resource that doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
-    /// service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -848,15 +836,13 @@ pub struct DeleteContactChannelError {
 pub enum DeleteContactChannelErrorKind {
     /// <p>You don't have sufficient access to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Unexpected error occurred while
-    /// processing the request.</p>
+    /// <p>Unexpected error occurred while processing the request.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Request references a resource that doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
-    /// service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -989,15 +975,13 @@ pub enum DescribeEngagementErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The operation failed to due an encryption key error.</p>
     DataEncryptionException(crate::error::DataEncryptionException),
-    /// <p>Unexpected error occurred while
-    /// processing the request.</p>
+    /// <p>Unexpected error occurred while processing the request.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Request references a resource that doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
-    /// service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1139,15 +1123,13 @@ pub enum DescribePageErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The operation failed to due an encryption key error.</p>
     DataEncryptionException(crate::error::DataEncryptionException),
-    /// <p>Unexpected error occurred while
-    /// processing the request.</p>
+    /// <p>Unexpected error occurred while processing the request.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Request references a resource that doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
-    /// service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1280,15 +1262,13 @@ pub enum GetContactErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The operation failed to due an encryption key error.</p>
     DataEncryptionException(crate::error::DataEncryptionException),
-    /// <p>Unexpected error occurred while
-    /// processing the request.</p>
+    /// <p>Unexpected error occurred while processing the request.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Request references a resource that doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
-    /// service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1415,15 +1395,13 @@ pub enum GetContactChannelErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The operation failed to due an encryption key error.</p>
     DataEncryptionException(crate::error::DataEncryptionException),
-    /// <p>Unexpected error occurred while
-    /// processing the request.</p>
+    /// <p>Unexpected error occurred while processing the request.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Request references a resource that doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
-    /// service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1563,15 +1541,13 @@ pub struct GetContactPolicyError {
 pub enum GetContactPolicyErrorKind {
     /// <p>You don't have sufficient access to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Unexpected error occurred while
-    /// processing the request.</p>
+    /// <p>Unexpected error occurred while processing the request.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Request references a resource that doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
-    /// service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1704,15 +1680,13 @@ pub enum ListContactChannelsErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The operation failed to due an encryption key error.</p>
     DataEncryptionException(crate::error::DataEncryptionException),
-    /// <p>Unexpected error occurred while
-    /// processing the request.</p>
+    /// <p>Unexpected error occurred while processing the request.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Request references a resource that doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
-    /// service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1852,13 +1826,11 @@ pub struct ListContactsError {
 pub enum ListContactsErrorKind {
     /// <p>You don't have sufficient access to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Unexpected error occurred while
-    /// processing the request.</p>
+    /// <p>Unexpected error occurred while processing the request.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
-    /// service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1971,13 +1943,11 @@ pub struct ListEngagementsError {
 pub enum ListEngagementsErrorKind {
     /// <p>You don't have sufficient access to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Unexpected error occurred while
-    /// processing the request.</p>
+    /// <p>Unexpected error occurred while processing the request.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
-    /// service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2093,15 +2063,13 @@ pub struct ListPageReceiptsError {
 pub enum ListPageReceiptsErrorKind {
     /// <p>You don't have sufficient access to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Unexpected error occurred while
-    /// processing the request.</p>
+    /// <p>Unexpected error occurred while processing the request.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Request references a resource that doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
-    /// service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2232,15 +2200,13 @@ pub struct ListPagesByContactError {
 pub enum ListPagesByContactErrorKind {
     /// <p>You don't have sufficient access to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Unexpected error occurred while
-    /// processing the request.</p>
+    /// <p>Unexpected error occurred while processing the request.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Request references a resource that doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
-    /// service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2371,15 +2337,13 @@ pub struct ListPagesByEngagementError {
 pub enum ListPagesByEngagementErrorKind {
     /// <p>You don't have sufficient access to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Unexpected error occurred while
-    /// processing the request.</p>
+    /// <p>Unexpected error occurred while processing the request.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Request references a resource that doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
-    /// service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2510,15 +2474,13 @@ pub struct ListTagsForResourceError {
 pub enum ListTagsForResourceErrorKind {
     /// <p>You don't have sufficient access to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Unexpected error occurred while
-    /// processing the request.</p>
+    /// <p>Unexpected error occurred while processing the request.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Request references a resource that doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
-    /// service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2651,15 +2613,13 @@ pub enum PutContactPolicyErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Updating or deleting a resource causes an inconsistent state.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>Unexpected error occurred while
-    /// processing the request.</p>
+    /// <p>Unexpected error occurred while processing the request.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Request references a resource that doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
-    /// service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2798,8 +2758,7 @@ pub enum SendActivationCodeErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The operation failed to due an encryption key error.</p>
     DataEncryptionException(crate::error::DataEncryptionException),
-    /// <p>Unexpected error occurred while
-    /// processing the request.</p>
+    /// <p>Unexpected error occurred while processing the request.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Request references a resource that doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2807,8 +2766,7 @@ pub enum SendActivationCodeErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
-    /// service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2959,15 +2917,13 @@ pub enum StartEngagementErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The operation failed to due an encryption key error.</p>
     DataEncryptionException(crate::error::DataEncryptionException),
-    /// <p>Unexpected error occurred while
-    /// processing the request.</p>
+    /// <p>Unexpected error occurred while processing the request.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Request references a resource that doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
-    /// service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3101,15 +3057,13 @@ pub struct StopEngagementError {
 pub enum StopEngagementErrorKind {
     /// <p>You don't have sufficient access to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Unexpected error occurred while
-    /// processing the request.</p>
+    /// <p>Unexpected error occurred while processing the request.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Request references a resource that doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
-    /// service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3234,8 +3188,7 @@ pub struct TagResourceError {
 pub enum TagResourceErrorKind {
     /// <p>You don't have sufficient access to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Unexpected error occurred while
-    /// processing the request.</p>
+    /// <p>Unexpected error occurred while processing the request.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Request references a resource that doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3243,8 +3196,7 @@ pub enum TagResourceErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
-    /// service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3372,15 +3324,13 @@ pub struct UntagResourceError {
 pub enum UntagResourceErrorKind {
     /// <p>You don't have sufficient access to perform this operation.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Unexpected error occurred while
-    /// processing the request.</p>
+    /// <p>Unexpected error occurred while processing the request.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Request references a resource that doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
-    /// service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3504,8 +3454,7 @@ pub enum UpdateContactErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The operation failed to due an encryption key error.</p>
     DataEncryptionException(crate::error::DataEncryptionException),
-    /// <p>Unexpected error occurred while
-    /// processing the request.</p>
+    /// <p>Unexpected error occurred while processing the request.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Request references a resource that doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3513,8 +3462,7 @@ pub enum UpdateContactErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
-    /// service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3658,15 +3606,13 @@ pub enum UpdateContactChannelErrorKind {
     ConflictException(crate::error::ConflictException),
     /// <p>The operation failed to due an encryption key error.</p>
     DataEncryptionException(crate::error::DataEncryptionException),
-    /// <p>Unexpected error occurred while
-    /// processing the request.</p>
+    /// <p>Unexpected error occurred while processing the request.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>Request references a resource that doesn't exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
-    /// service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3800,8 +3746,7 @@ impl std::error::Error for UpdateContactChannelError {
     }
 }
 
-/// <p>The input fails to satisfy the constraints specified by an Amazon Web Services
-/// service.</p>
+/// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationException {
@@ -4148,8 +4093,7 @@ impl ResourceNotFoundException {
     }
 }
 
-/// <p>Unexpected error occurred while
-/// processing the request.</p>
+/// <p>Unexpected error occurred while processing the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerException {

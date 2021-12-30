@@ -454,31 +454,21 @@ impl AsRef<str> for GrowthType {
     }
 }
 
-/// <p>A validator provides a syntactic or semantic check to ensure the configuration that you
-/// want to deploy functions as intended. To validate your application configuration data, you
-/// provide a schema or a Lambda function that runs against the configuration. The
-/// configuration deployment or update can only proceed when the configuration data is
-/// valid.</p>
+/// <p>A validator provides a syntactic or semantic check to ensure the configuration that you want to deploy functions as intended. To validate your application configuration data, you provide a schema or a Lambda function that runs against the configuration. The configuration deployment or update can only proceed when the configuration data is valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Validator {
-    /// <p>AppConfig supports validators of type <code>JSON_SCHEMA</code> and
-    /// <code>LAMBDA</code>
-    /// </p>
+    /// <p>AppConfig supports validators of type <code>JSON_SCHEMA</code> and <code>LAMBDA</code> </p>
     pub r#type: std::option::Option<crate::model::ValidatorType>,
-    /// <p>Either the JSON Schema content or the Amazon Resource Name (ARN) of an Lambda
-    /// function.</p>
+    /// <p>Either the JSON Schema content or the Amazon Resource Name (ARN) of an Lambda function.</p>
     pub content: std::option::Option<std::string::String>,
 }
 impl Validator {
-    /// <p>AppConfig supports validators of type <code>JSON_SCHEMA</code> and
-    /// <code>LAMBDA</code>
-    /// </p>
+    /// <p>AppConfig supports validators of type <code>JSON_SCHEMA</code> and <code>LAMBDA</code> </p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ValidatorType> {
         self.r#type.as_ref()
     }
-    /// <p>Either the JSON Schema content or the Amazon Resource Name (ARN) of an Lambda
-    /// function.</p>
+    /// <p>Either the JSON Schema content or the Amazon Resource Name (ARN) of an Lambda function.</p>
     pub fn content(&self) -> std::option::Option<&str> {
         self.content.as_deref()
     }
@@ -501,28 +491,22 @@ pub mod validator {
         pub(crate) content: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>AppConfig supports validators of type <code>JSON_SCHEMA</code> and
-        /// <code>LAMBDA</code>
-        /// </p>
+        /// <p>AppConfig supports validators of type <code>JSON_SCHEMA</code> and <code>LAMBDA</code> </p>
         pub fn r#type(mut self, input: crate::model::ValidatorType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>AppConfig supports validators of type <code>JSON_SCHEMA</code> and
-        /// <code>LAMBDA</code>
-        /// </p>
+        /// <p>AppConfig supports validators of type <code>JSON_SCHEMA</code> and <code>LAMBDA</code> </p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ValidatorType>) -> Self {
             self.r#type = input;
             self
         }
-        /// <p>Either the JSON Schema content or the Amazon Resource Name (ARN) of an Lambda
-        /// function.</p>
+        /// <p>Either the JSON Schema content or the Amazon Resource Name (ARN) of an Lambda function.</p>
         pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
             self.content = Some(input.into());
             self
         }
-        /// <p>Either the JSON Schema content or the Amazon Resource Name (ARN) of an Lambda
-        /// function.</p>
+        /// <p>Either the JSON Schema content or the Amazon Resource Name (ARN) of an Lambda function.</p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content = input;
             self
@@ -602,37 +586,25 @@ impl AsRef<str> for ValidatorType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeploymentEvent {
-    /// <p>The type of deployment event. Deployment event types include the start, stop, or
-    /// completion of a deployment; a percentage update; the start or stop of a bake period; and
-    /// the start or completion of a rollback.</p>
+    /// <p>The type of deployment event. Deployment event types include the start, stop, or completion of a deployment; a percentage update; the start or stop of a bake period; and the start or completion of a rollback.</p>
     pub event_type: std::option::Option<crate::model::DeploymentEventType>,
-    /// <p>The entity that triggered the deployment event. Events can be triggered by a user,
-    /// AppConfig, an Amazon CloudWatch alarm, or an internal error.</p>
+    /// <p>The entity that triggered the deployment event. Events can be triggered by a user, AppConfig, an Amazon CloudWatch alarm, or an internal error.</p>
     pub triggered_by: std::option::Option<crate::model::TriggeredBy>,
-    /// <p>A description of the deployment event. Descriptions include, but are not limited to, the
-    /// user account or the Amazon CloudWatch alarm ARN that initiated a rollback, the percentage of hosts
-    /// that received the deployment, or in the case of an internal error, a recommendation to
-    /// attempt a new deployment.</p>
+    /// <p>A description of the deployment event. Descriptions include, but are not limited to, the user account or the Amazon CloudWatch alarm ARN that initiated a rollback, the percentage of hosts that received the deployment, or in the case of an internal error, a recommendation to attempt a new deployment.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The date and time the event occurred.</p>
     pub occurred_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DeploymentEvent {
-    /// <p>The type of deployment event. Deployment event types include the start, stop, or
-    /// completion of a deployment; a percentage update; the start or stop of a bake period; and
-    /// the start or completion of a rollback.</p>
+    /// <p>The type of deployment event. Deployment event types include the start, stop, or completion of a deployment; a percentage update; the start or stop of a bake period; and the start or completion of a rollback.</p>
     pub fn event_type(&self) -> std::option::Option<&crate::model::DeploymentEventType> {
         self.event_type.as_ref()
     }
-    /// <p>The entity that triggered the deployment event. Events can be triggered by a user,
-    /// AppConfig, an Amazon CloudWatch alarm, or an internal error.</p>
+    /// <p>The entity that triggered the deployment event. Events can be triggered by a user, AppConfig, an Amazon CloudWatch alarm, or an internal error.</p>
     pub fn triggered_by(&self) -> std::option::Option<&crate::model::TriggeredBy> {
         self.triggered_by.as_ref()
     }
-    /// <p>A description of the deployment event. Descriptions include, but are not limited to, the
-    /// user account or the Amazon CloudWatch alarm ARN that initiated a rollback, the percentage of hosts
-    /// that received the deployment, or in the case of an internal error, a recommendation to
-    /// attempt a new deployment.</p>
+    /// <p>A description of the deployment event. Descriptions include, but are not limited to, the user account or the Amazon CloudWatch alarm ARN that initiated a rollback, the percentage of hosts that received the deployment, or in the case of an internal error, a recommendation to attempt a new deployment.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -663,16 +635,12 @@ pub mod deployment_event {
         pub(crate) occurred_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>The type of deployment event. Deployment event types include the start, stop, or
-        /// completion of a deployment; a percentage update; the start or stop of a bake period; and
-        /// the start or completion of a rollback.</p>
+        /// <p>The type of deployment event. Deployment event types include the start, stop, or completion of a deployment; a percentage update; the start or stop of a bake period; and the start or completion of a rollback.</p>
         pub fn event_type(mut self, input: crate::model::DeploymentEventType) -> Self {
             self.event_type = Some(input);
             self
         }
-        /// <p>The type of deployment event. Deployment event types include the start, stop, or
-        /// completion of a deployment; a percentage update; the start or stop of a bake period; and
-        /// the start or completion of a rollback.</p>
+        /// <p>The type of deployment event. Deployment event types include the start, stop, or completion of a deployment; a percentage update; the start or stop of a bake period; and the start or completion of a rollback.</p>
         pub fn set_event_type(
             mut self,
             input: std::option::Option<crate::model::DeploymentEventType>,
@@ -680,14 +648,12 @@ pub mod deployment_event {
             self.event_type = input;
             self
         }
-        /// <p>The entity that triggered the deployment event. Events can be triggered by a user,
-        /// AppConfig, an Amazon CloudWatch alarm, or an internal error.</p>
+        /// <p>The entity that triggered the deployment event. Events can be triggered by a user, AppConfig, an Amazon CloudWatch alarm, or an internal error.</p>
         pub fn triggered_by(mut self, input: crate::model::TriggeredBy) -> Self {
             self.triggered_by = Some(input);
             self
         }
-        /// <p>The entity that triggered the deployment event. Events can be triggered by a user,
-        /// AppConfig, an Amazon CloudWatch alarm, or an internal error.</p>
+        /// <p>The entity that triggered the deployment event. Events can be triggered by a user, AppConfig, an Amazon CloudWatch alarm, or an internal error.</p>
         pub fn set_triggered_by(
             mut self,
             input: std::option::Option<crate::model::TriggeredBy>,
@@ -695,18 +661,12 @@ pub mod deployment_event {
             self.triggered_by = input;
             self
         }
-        /// <p>A description of the deployment event. Descriptions include, but are not limited to, the
-        /// user account or the Amazon CloudWatch alarm ARN that initiated a rollback, the percentage of hosts
-        /// that received the deployment, or in the case of an internal error, a recommendation to
-        /// attempt a new deployment.</p>
+        /// <p>A description of the deployment event. Descriptions include, but are not limited to, the user account or the Amazon CloudWatch alarm ARN that initiated a rollback, the percentage of hosts that received the deployment, or in the case of an internal error, a recommendation to attempt a new deployment.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>A description of the deployment event. Descriptions include, but are not limited to, the
-        /// user account or the Amazon CloudWatch alarm ARN that initiated a rollback, the percentage of hosts
-        /// that received the deployment, or in the case of an internal error, a recommendation to
-        /// attempt a new deployment.</p>
+        /// <p>A description of the deployment event. Descriptions include, but are not limited to, the user account or the Amazon CloudWatch alarm ARN that initiated a rollback, the percentage of hosts that received the deployment, or in the case of an internal error, a recommendation to attempt a new deployment.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -973,8 +933,7 @@ pub struct HostedConfigurationVersionSummary {
     pub version_number: i32,
     /// <p>A description of the configuration.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>A standard MIME type describing the format of the configuration content. For more
-    /// information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
+    /// <p>A standard MIME type describing the format of the configuration content. For more information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
     pub content_type: std::option::Option<std::string::String>,
 }
 impl HostedConfigurationVersionSummary {
@@ -994,8 +953,7 @@ impl HostedConfigurationVersionSummary {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>A standard MIME type describing the format of the configuration content. For more
-    /// information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
+    /// <p>A standard MIME type describing the format of the configuration content. For more information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
     pub fn content_type(&self) -> std::option::Option<&str> {
         self.content_type.as_deref()
     }
@@ -1070,14 +1028,12 @@ pub mod hosted_configuration_version_summary {
             self.description = input;
             self
         }
-        /// <p>A standard MIME type describing the format of the configuration content. For more
-        /// information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
+        /// <p>A standard MIME type describing the format of the configuration content. For more information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
         pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.content_type = Some(input.into());
             self
         }
-        /// <p>A standard MIME type describing the format of the configuration content. For more
-        /// information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
+        /// <p>A standard MIME type describing the format of the configuration content. For more information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_type = input;
             self
@@ -1113,10 +1069,7 @@ pub struct Environment {
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the environment.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The state of the environment. An environment can be in one of the following states:
-    /// <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or
-    /// <code>ROLLED_BACK</code>
-    /// </p>
+    /// <p>The state of the environment. An environment can be in one of the following states: <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or <code>ROLLED_BACK</code> </p>
     pub state: std::option::Option<crate::model::EnvironmentState>,
     /// <p>Amazon CloudWatch alarms monitored during the deployment.</p>
     pub monitors: std::option::Option<std::vec::Vec<crate::model::Monitor>>,
@@ -1138,10 +1091,7 @@ impl Environment {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The state of the environment. An environment can be in one of the following states:
-    /// <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or
-    /// <code>ROLLED_BACK</code>
-    /// </p>
+    /// <p>The state of the environment. An environment can be in one of the following states: <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or <code>ROLLED_BACK</code> </p>
     pub fn state(&self) -> std::option::Option<&crate::model::EnvironmentState> {
         self.state.as_ref()
     }
@@ -1219,18 +1169,12 @@ pub mod environment {
             self.description = input;
             self
         }
-        /// <p>The state of the environment. An environment can be in one of the following states:
-        /// <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or
-        /// <code>ROLLED_BACK</code>
-        /// </p>
+        /// <p>The state of the environment. An environment can be in one of the following states: <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or <code>ROLLED_BACK</code> </p>
         pub fn state(mut self, input: crate::model::EnvironmentState) -> Self {
             self.state = Some(input);
             self
         }
-        /// <p>The state of the environment. An environment can be in one of the following states:
-        /// <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or
-        /// <code>ROLLED_BACK</code>
-        /// </p>
+        /// <p>The state of the environment. An environment can be in one of the following states: <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or <code>ROLLED_BACK</code> </p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::EnvironmentState>,
@@ -1291,11 +1235,9 @@ pub struct DeploymentStrategy {
     pub deployment_duration_in_minutes: i32,
     /// <p>The algorithm used to define how percentage grew over time.</p>
     pub growth_type: std::option::Option<crate::model::GrowthType>,
-    /// <p>The percentage of targets that received a deployed configuration during each
-    /// interval.</p>
+    /// <p>The percentage of targets that received a deployed configuration during each interval.</p>
     pub growth_factor: f32,
-    /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment
-    /// to be complete and no longer eligible for automatic rollback.</p>
+    /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
     pub final_bake_time_in_minutes: i32,
     /// <p>Save the deployment strategy to a Systems Manager (SSM) document.</p>
     pub replicate_to: std::option::Option<crate::model::ReplicateTo>,
@@ -1321,13 +1263,11 @@ impl DeploymentStrategy {
     pub fn growth_type(&self) -> std::option::Option<&crate::model::GrowthType> {
         self.growth_type.as_ref()
     }
-    /// <p>The percentage of targets that received a deployed configuration during each
-    /// interval.</p>
+    /// <p>The percentage of targets that received a deployed configuration during each interval.</p>
     pub fn growth_factor(&self) -> f32 {
         self.growth_factor
     }
-    /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment
-    /// to be complete and no longer eligible for automatic rollback.</p>
+    /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
     pub fn final_bake_time_in_minutes(&self) -> i32 {
         self.final_bake_time_in_minutes
     }
@@ -1428,26 +1368,22 @@ pub mod deployment_strategy {
             self.growth_type = input;
             self
         }
-        /// <p>The percentage of targets that received a deployed configuration during each
-        /// interval.</p>
+        /// <p>The percentage of targets that received a deployed configuration during each interval.</p>
         pub fn growth_factor(mut self, input: f32) -> Self {
             self.growth_factor = Some(input);
             self
         }
-        /// <p>The percentage of targets that received a deployed configuration during each
-        /// interval.</p>
+        /// <p>The percentage of targets that received a deployed configuration during each interval.</p>
         pub fn set_growth_factor(mut self, input: std::option::Option<f32>) -> Self {
             self.growth_factor = input;
             self
         }
-        /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment
-        /// to be complete and no longer eligible for automatic rollback.</p>
+        /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
         pub fn final_bake_time_in_minutes(mut self, input: i32) -> Self {
             self.final_bake_time_in_minutes = Some(input);
             self
         }
-        /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment
-        /// to be complete and no longer eligible for automatic rollback.</p>
+        /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
         pub fn set_final_bake_time_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.final_bake_time_in_minutes = input;
             self
@@ -1503,11 +1439,9 @@ pub struct DeploymentSummary {
     pub deployment_duration_in_minutes: i32,
     /// <p>The algorithm used to define how percentage grows over time.</p>
     pub growth_type: std::option::Option<crate::model::GrowthType>,
-    /// <p>The percentage of targets to receive a deployed configuration during each
-    /// interval.</p>
+    /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
     pub growth_factor: f32,
-    /// <p>The amount of time that AppConfig monitors for alarms before considering the deployment
-    /// to be complete and no longer eligible for automatic rollback.</p>
+    /// <p>The amount of time that AppConfig monitors for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
     pub final_bake_time_in_minutes: i32,
     /// <p>The state of the deployment.</p>
     pub state: std::option::Option<crate::model::DeploymentState>,
@@ -1539,13 +1473,11 @@ impl DeploymentSummary {
     pub fn growth_type(&self) -> std::option::Option<&crate::model::GrowthType> {
         self.growth_type.as_ref()
     }
-    /// <p>The percentage of targets to receive a deployed configuration during each
-    /// interval.</p>
+    /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
     pub fn growth_factor(&self) -> f32 {
         self.growth_factor
     }
-    /// <p>The amount of time that AppConfig monitors for alarms before considering the deployment
-    /// to be complete and no longer eligible for automatic rollback.</p>
+    /// <p>The amount of time that AppConfig monitors for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
     pub fn final_bake_time_in_minutes(&self) -> i32 {
         self.final_bake_time_in_minutes
     }
@@ -1670,26 +1602,22 @@ pub mod deployment_summary {
             self.growth_type = input;
             self
         }
-        /// <p>The percentage of targets to receive a deployed configuration during each
-        /// interval.</p>
+        /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
         pub fn growth_factor(mut self, input: f32) -> Self {
             self.growth_factor = Some(input);
             self
         }
-        /// <p>The percentage of targets to receive a deployed configuration during each
-        /// interval.</p>
+        /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
         pub fn set_growth_factor(mut self, input: std::option::Option<f32>) -> Self {
             self.growth_factor = input;
             self
         }
-        /// <p>The amount of time that AppConfig monitors for alarms before considering the deployment
-        /// to be complete and no longer eligible for automatic rollback.</p>
+        /// <p>The amount of time that AppConfig monitors for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
         pub fn final_bake_time_in_minutes(mut self, input: i32) -> Self {
             self.final_bake_time_in_minutes = Some(input);
             self
         }
-        /// <p>The amount of time that AppConfig monitors for alarms before considering the deployment
-        /// to be complete and no longer eligible for automatic rollback.</p>
+        /// <p>The amount of time that AppConfig monitors for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
         pub fn set_final_bake_time_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.final_bake_time_in_minutes = input;
             self
@@ -1784,9 +1712,7 @@ pub struct ConfigurationProfileSummary {
     pub location_uri: std::option::Option<std::string::String>,
     /// <p>The types of validators in the configuration profile.</p>
     pub validator_types: std::option::Option<std::vec::Vec<crate::model::ValidatorType>>,
-    /// <p>The type of configurations that the configuration profile contains. A configuration can
-    /// be a feature flag used for enabling or disabling new features or a free-form configuration
-    /// used to introduce changes to your application.</p>
+    /// <p>The type of configurations that the configuration profile contains. A configuration can be a feature flag used for enabling or disabling new features or a free-form configuration used to introduce changes to your application.</p>
     pub r#type: std::option::Option<std::string::String>,
 }
 impl ConfigurationProfileSummary {
@@ -1810,9 +1736,7 @@ impl ConfigurationProfileSummary {
     pub fn validator_types(&self) -> std::option::Option<&[crate::model::ValidatorType]> {
         self.validator_types.as_deref()
     }
-    /// <p>The type of configurations that the configuration profile contains. A configuration can
-    /// be a feature flag used for enabling or disabling new features or a free-form configuration
-    /// used to introduce changes to your application.</p>
+    /// <p>The type of configurations that the configuration profile contains. A configuration can be a feature flag used for enabling or disabling new features or a free-form configuration used to introduce changes to your application.</p>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
@@ -1905,16 +1829,12 @@ pub mod configuration_profile_summary {
             self.validator_types = input;
             self
         }
-        /// <p>The type of configurations that the configuration profile contains. A configuration can
-        /// be a feature flag used for enabling or disabling new features or a free-form configuration
-        /// used to introduce changes to your application.</p>
+        /// <p>The type of configurations that the configuration profile contains. A configuration can be a feature flag used for enabling or disabling new features or a free-form configuration used to introduce changes to your application.</p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.r#type = Some(input.into());
             self
         }
-        /// <p>The type of configurations that the configuration profile contains. A configuration can
-        /// be a feature flag used for enabling or disabling new features or a free-form configuration
-        /// used to introduce changes to your application.</p>
+        /// <p>The type of configurations that the configuration profile contains. A configuration can be a feature flag used for enabling or disabling new features or a free-form configuration used to introduce changes to your application.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self

@@ -110,16 +110,9 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `GetLatestConfiguration`.
     ///
-    /// <p>Retrieves the latest deployed configuration. This API may return empty Configuration data if the client already has the latest version. See StartConfigurationSession to obtain an InitialConfigurationToken to call this API.</p>
-    /// <important>
-    /// <p>Each call to GetLatestConfiguration returns a new ConfigurationToken (NextPollConfigurationToken
-    /// in the response). This new token MUST be provided to the next call to GetLatestConfiguration when
-    /// polling for configuration updates.</p>
-    /// <p>To avoid excess charges, we recommend that you include the
-    /// <code>ClientConfigurationVersion</code> value with every call to
-    /// <code>GetConfiguration</code>. This value must be saved on your client. Subsequent
-    /// calls to <code>GetConfiguration</code> must pass this value by using the
-    /// <code>ClientConfigurationVersion</code> parameter. </p>
+    /// <p>Retrieves the latest deployed configuration. This API may return empty Configuration data if the client already has the latest version. See StartConfigurationSession to obtain an InitialConfigurationToken to call this API.</p> <important>
+    /// <p>Each call to GetLatestConfiguration returns a new ConfigurationToken (NextPollConfigurationToken in the response). This new token MUST be provided to the next call to GetLatestConfiguration when polling for configuration updates.</p>
+    /// <p>To avoid excess charges, we recommend that you include the <code>ClientConfigurationVersion</code> value with every call to <code>GetConfiguration</code>. This value must be saved on your client. Subsequent calls to <code>GetConfiguration</code> must pass this value by using the <code>ClientConfigurationVersion</code> parameter. </p>
     /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLatestConfiguration<
@@ -292,16 +285,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_configuration_profile_identifier(input);
             self
         }
-        /// <p>The interval at which your client will poll for configuration. If provided, the service
-        /// will throw a BadRequestException if the client polls before the specified poll interval. By default,
-        /// client poll intervals are not enforced.</p>
+        /// <p>The interval at which your client will poll for configuration. If provided, the service will throw a BadRequestException if the client polls before the specified poll interval. By default, client poll intervals are not enforced.</p>
         pub fn required_minimum_poll_interval_in_seconds(mut self, input: i32) -> Self {
             self.inner = self.inner.required_minimum_poll_interval_in_seconds(input);
             self
         }
-        /// <p>The interval at which your client will poll for configuration. If provided, the service
-        /// will throw a BadRequestException if the client polls before the specified poll interval. By default,
-        /// client poll intervals are not enforced.</p>
+        /// <p>The interval at which your client will poll for configuration. If provided, the service will throw a BadRequestException if the client polls before the specified poll interval. By default, client poll intervals are not enforced.</p>
         pub fn set_required_minimum_poll_interval_in_seconds(
             mut self,
             input: std::option::Option<i32>,

@@ -185,8 +185,7 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `ClaimDevicesByClaimCode`.
     ///
-    /// <p>Adds device(s) to your account (i.e., claim one or more devices) if and only if you
-    /// received a claim code with the device(s).</p>
+    /// <p>Adds device(s) to your account (i.e., claim one or more devices) if and only if you received a claim code with the device(s).</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ClaimDevicesByClaimCode<
         C = aws_smithy_client::erase::DynConnector,
@@ -256,8 +255,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeDevice`.
     ///
-    /// <p>Given a device ID, returns a DescribeDeviceResponse object describing the
-    /// details of the device.</p>
+    /// <p>Given a device ID, returns a DescribeDeviceResponse object describing the details of the device.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDevice<
         C = aws_smithy_client::erase::DynConnector,
@@ -328,9 +326,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `FinalizeDeviceClaim`.
     ///
     /// <p>Given a device ID, finalizes the claim request for the associated device.</p><note>
-    /// <p>Claiming a device consists of initiating a claim, then publishing a device event,
-    /// and finalizing the claim. For a device of type button, a device event can
-    /// be published by simply clicking the device.</p>
+    /// <p>Claiming a device consists of initiating a claim, then publishing a device event, and finalizing the claim. For a device of type button, a device event can be published by simply clicking the device.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct FinalizeDeviceClaim<
@@ -402,11 +398,8 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A collection of key/value pairs defining the resource tags. For example, {
-        /// "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
-        /// Tagging Strategies</a>.</p><p>
-        ///
-        /// </p>
+        /// <p>A collection of key/value pairs defining the resource tags. For example, { "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.</p>
+        /// <p> </p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -415,11 +408,8 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>A collection of key/value pairs defining the resource tags. For example, {
-        /// "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
-        /// Tagging Strategies</a>.</p><p>
-        ///
-        /// </p>
+        /// <p>A collection of key/value pairs defining the resource tags. For example, { "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.</p>
+        /// <p> </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -503,9 +493,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `InitiateDeviceClaim`.
     ///
     /// <p>Given a device ID, initiates a claim request for the associated device.</p><note>
-    /// <p>Claiming a device consists of initiating a claim, then publishing a device event,
-    /// and finalizing the claim. For a device of type button, a device event can
-    /// be published by simply clicking the device.</p>
+    /// <p>Claiming a device consists of initiating a claim, then publishing a device event, and finalizing the claim. For a device of type button, a device event can be published by simply clicking the device.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct InitiateDeviceClaim<
@@ -576,8 +564,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `InvokeDeviceMethod`.
     ///
-    /// <p>Given a device ID, issues a request to invoke a named device method (with possible
-    /// parameters). See the "Example POST" code snippet below.</p>
+    /// <p>Given a device ID, issues a request to invoke a named device method (with possible parameters). See the "Example POST" code snippet below.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct InvokeDeviceMethod<
         C = aws_smithy_client::erase::DynConnector,
@@ -673,8 +660,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDeviceEvents`.
     ///
-    /// <p>Using a device ID, returns a DeviceEventsResponse object containing an
-    /// array of events for the device.</p>
+    /// <p>Using a device ID, returns a DeviceEventsResponse object containing an array of events for the device.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDeviceEvents<
         C = aws_smithy_client::erase::DynConnector,
@@ -741,16 +727,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_device_id(input);
             self
         }
-        /// <p>The start date for the device event query, in ISO8061 format. For example,
-        /// 2018-03-28T15:45:12.880Z
-        /// </p>
+        /// <p>The start date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z </p>
         pub fn from_time_stamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.from_time_stamp(input);
             self
         }
-        /// <p>The start date for the device event query, in ISO8061 format. For example,
-        /// 2018-03-28T15:45:12.880Z
-        /// </p>
+        /// <p>The start date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z </p>
         pub fn set_from_time_stamp(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -758,14 +740,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_from_time_stamp(input);
             self
         }
-        /// <p>The maximum number of results to return per request. If not set, a default value of
-        /// 100 is used.</p>
+        /// <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return per request. If not set, a default value of
-        /// 100 is used.</p>
+        /// <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -780,16 +760,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The end date for the device event query, in ISO8061 format. For example,
-        /// 2018-03-28T15:45:12.880Z
-        /// </p>
+        /// <p>The end date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z </p>
         pub fn to_time_stamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.to_time_stamp(input);
             self
         }
-        /// <p>The end date for the device event query, in ISO8061 format. For example,
-        /// 2018-03-28T15:45:12.880Z
-        /// </p>
+        /// <p>The end date for the device event query, in ISO8061 format. For example, 2018-03-28T15:45:12.880Z </p>
         pub fn set_to_time_stamp(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -867,14 +843,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_device_type(input);
             self
         }
-        /// <p>The maximum number of results to return per request. If not set, a default value of
-        /// 100 is used.</p>
+        /// <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return per request. If not set, a default value of
-        /// 100 is used.</p>
+        /// <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -962,8 +936,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Adds or updates the tags associated with the resource ARN. See <a href="https://docs.aws.amazon.com/iot-1-click/latest/developerguide/1click-appendix.html#1click-limits">AWS IoT 1-Click Service Limits</a> for the maximum number of tags allowed per
-    /// resource.</p>
+    /// <p>Adds or updates the tags associated with the resource ARN. See <a href="https://docs.aws.amazon.com/iot-1-click/latest/developerguide/1click-appendix.html#1click-limits">AWS IoT 1-Click Service Limits</a> for the maximum number of tags allowed per resource.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -1034,11 +1007,8 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A collection of key/value pairs defining the resource tags. For example, {
-        /// "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
-        /// Tagging Strategies</a>.</p><p>
-        ///
-        /// </p>
+        /// <p>A collection of key/value pairs defining the resource tags. For example, { "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.</p>
+        /// <p> </p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1047,11 +1017,8 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>A collection of key/value pairs defining the resource tags. For example, {
-        /// "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
-        /// Tagging Strategies</a>.</p><p>
-        ///
-        /// </p>
+        /// <p>A collection of key/value pairs defining the resource tags. For example, { "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.</p>
+        /// <p> </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1134,8 +1101,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UntagResource`.
     ///
-    /// <p>Using tag keys, deletes the tags (key/value pairs) associated with the specified
-    /// resource ARN.</p>
+    /// <p>Using tag keys, deletes the tags (key/value pairs) associated with the specified resource ARN.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -1222,8 +1188,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateDeviceState`.
     ///
-    /// <p>Using a Boolean value (true or false), this operation
-    /// enables or disables the device given a device ID.</p>
+    /// <p>Using a Boolean value (true or false), this operation enables or disables the device given a device ID.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDeviceState<
         C = aws_smithy_client::erase::DynConnector,
@@ -1290,14 +1255,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_device_id(input);
             self
         }
-        /// <p>If true, the device is enabled. If false, the device is
-        /// disabled.</p>
+        /// <p>If true, the device is enabled. If false, the device is disabled.</p>
         pub fn enabled(mut self, input: bool) -> Self {
             self.inner = self.inner.enabled(input);
             self
         }
-        /// <p>If true, the device is enabled. If false, the device is
-        /// disabled.</p>
+        /// <p>If true, the device is enabled. If false, the device is disabled.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_enabled(input);
             self

@@ -3,15 +3,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRecommendationsOutput {
-    /// <p>A list of recommendations sorted in descending order by prediction score. There can be a
-    /// maximum of 500 items in the list.</p>
+    /// <p>A list of recommendations sorted in descending order by prediction score. There can be a maximum of 500 items in the list.</p>
     pub item_list: std::option::Option<std::vec::Vec<crate::model::PredictedItem>>,
     /// <p>The ID of the recommendation.</p>
     pub recommendation_id: std::option::Option<std::string::String>,
 }
 impl GetRecommendationsOutput {
-    /// <p>A list of recommendations sorted in descending order by prediction score. There can be a
-    /// maximum of 500 items in the list.</p>
+    /// <p>A list of recommendations sorted in descending order by prediction score. There can be a maximum of 500 items in the list.</p>
     pub fn item_list(&self) -> std::option::Option<&[crate::model::PredictedItem]> {
         self.item_list.as_deref()
     }
@@ -42,16 +40,14 @@ pub mod get_recommendations_output {
         ///
         /// To override the contents of this collection use [`set_item_list`](Self::set_item_list).
         ///
-        /// <p>A list of recommendations sorted in descending order by prediction score. There can be a
-        /// maximum of 500 items in the list.</p>
+        /// <p>A list of recommendations sorted in descending order by prediction score. There can be a maximum of 500 items in the list.</p>
         pub fn item_list(mut self, input: crate::model::PredictedItem) -> Self {
             let mut v = self.item_list.unwrap_or_default();
             v.push(input);
             self.item_list = Some(v);
             self
         }
-        /// <p>A list of recommendations sorted in descending order by prediction score. There can be a
-        /// maximum of 500 items in the list.</p>
+        /// <p>A list of recommendations sorted in descending order by prediction score. There can be a maximum of 500 items in the list.</p>
         pub fn set_item_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PredictedItem>>,

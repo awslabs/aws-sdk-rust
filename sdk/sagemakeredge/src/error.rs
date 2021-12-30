@@ -12,8 +12,7 @@ pub struct GetDeviceRegistrationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDeviceRegistrationErrorKind {
-    /// <p>An internal failure occurred. Try your request again. If the problem
-    /// persists, contact AWS customer support.</p>
+    /// <p>An internal failure occurred. Try your request again. If the problem persists, contact AWS customer support.</p>
     InternalServiceException(crate::error::InternalServiceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -106,8 +105,7 @@ pub struct SendHeartbeatError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SendHeartbeatErrorKind {
-    /// <p>An internal failure occurred. Try your request again. If the problem
-    /// persists, contact AWS customer support.</p>
+    /// <p>An internal failure occurred. Try your request again. If the problem persists, contact AWS customer support.</p>
     InternalServiceException(crate::error::InternalServiceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -187,8 +185,7 @@ impl std::error::Error for SendHeartbeatError {
     }
 }
 
-/// <p>An internal failure occurred. Try your request again. If the problem
-/// persists, contact AWS customer support.</p>
+/// <p>An internal failure occurred. Try your request again. If the problem persists, contact AWS customer support.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServiceException {

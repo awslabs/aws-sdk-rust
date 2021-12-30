@@ -499,9 +499,7 @@ pub mod fluent_builders {
         }
         /// <p>The day and time of the week to start weekly maintenance updates of your environment in the following format: <code>DAY:HH:MM</code>. For example: <code>TUE:03:30</code>. You can specify a start time in 30 minute increments only. Supported input includes the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>MON|TUE|WED|THU|FRI|SAT|SUN:([01]\\d|2[0-3]):(00|30)</p>
-        /// </li>
+        /// <li> <p>MON|TUE|WED|THU|FRI|SAT|SUN:([01]\\d|2[0-3]):(00|30)</p> </li>
         /// </ul>
         pub fn weekly_maintenance_window_start(
             mut self,
@@ -512,9 +510,7 @@ pub mod fluent_builders {
         }
         /// <p>The day and time of the week to start weekly maintenance updates of your environment in the following format: <code>DAY:HH:MM</code>. For example: <code>TUE:03:30</code>. You can specify a start time in 30 minute increments only. Supported input includes the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>MON|TUE|WED|THU|FRI|SAT|SUN:([01]\\d|2[0-3]):(00|30)</p>
-        /// </li>
+        /// <li> <p>MON|TUE|WED|THU|FRI|SAT|SUN:([01]\\d|2[0-3]):(00|30)</p> </li>
         /// </ul>
         pub fn set_weekly_maintenance_window_start(
             mut self,
@@ -1463,9 +1459,7 @@ pub mod fluent_builders {
         }
         /// <p>The day and time of the week to start weekly maintenance updates of your environment in the following format: <code>DAY:HH:MM</code>. For example: <code>TUE:03:30</code>. You can specify a start time in 30 minute increments only. Supported input includes the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>MON|TUE|WED|THU|FRI|SAT|SUN:([01]\\d|2[0-3]):(00|30)</p>
-        /// </li>
+        /// <li> <p>MON|TUE|WED|THU|FRI|SAT|SUN:([01]\\d|2[0-3]):(00|30)</p> </li>
         /// </ul>
         pub fn weekly_maintenance_window_start(
             mut self,
@@ -1476,9 +1470,7 @@ pub mod fluent_builders {
         }
         /// <p>The day and time of the week to start weekly maintenance updates of your environment in the following format: <code>DAY:HH:MM</code>. For example: <code>TUE:03:30</code>. You can specify a start time in 30 minute increments only. Supported input includes the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>MON|TUE|WED|THU|FRI|SAT|SUN:([01]\\d|2[0-3]):(00|30)</p>
-        /// </li>
+        /// <li> <p>MON|TUE|WED|THU|FRI|SAT|SUN:([01]\\d|2[0-3]):(00|30)</p> </li>
         /// </ul>
         pub fn set_weekly_maintenance_window_start(
             mut self,

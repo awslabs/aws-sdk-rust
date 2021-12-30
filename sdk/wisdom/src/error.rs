@@ -14,13 +14,9 @@ pub struct CreateAssistantError {
 pub enum CreateAssistantErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request could not be processed because of conflict in the current state of the
-    /// resource. For example, if you're using a <code>Create</code> API (such as
-    /// <code>CreateAssistant</code>) that accepts name, a conflicting resource (usually with the
-    /// same name) is being created or mutated.</p>
+    /// <p>The request could not be processed because of conflict in the current state of the resource. For example, if you're using a <code>Create</code> API (such as <code>CreateAssistant</code>) that accepts name, a conflicting resource (usually with the same name) is being created or mutated.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>You've exceeded your service quota. To perform the requested action, remove some of the
-    /// relevant resources, or use service quotas to request a service quota increase.</p>
+    /// <p>You've exceeded your service quota. To perform the requested action, remove some of the relevant resources, or use service quotas to request a service quota increase.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
     ValidationException(crate::error::ValidationException),
@@ -138,15 +134,11 @@ pub struct CreateAssistantAssociationError {
 pub enum CreateAssistantAssociationErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request could not be processed because of conflict in the current state of the
-    /// resource. For example, if you're using a <code>Create</code> API (such as
-    /// <code>CreateAssistant</code>) that accepts name, a conflicting resource (usually with the
-    /// same name) is being created or mutated.</p>
+    /// <p>The request could not be processed because of conflict in the current state of the resource. For example, if you're using a <code>Create</code> API (such as <code>CreateAssistant</code>) that accepts name, a conflicting resource (usually with the same name) is being created or mutated.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>You've exceeded your service quota. To perform the requested action, remove some of the
-    /// relevant resources, or use service quotas to request a service quota increase.</p>
+    /// <p>You've exceeded your service quota. To perform the requested action, remove some of the relevant resources, or use service quotas to request a service quota increase.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
     ValidationException(crate::error::ValidationException),
@@ -283,15 +275,11 @@ pub struct CreateContentError {
 pub enum CreateContentErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request could not be processed because of conflict in the current state of the
-    /// resource. For example, if you're using a <code>Create</code> API (such as
-    /// <code>CreateAssistant</code>) that accepts name, a conflicting resource (usually with the
-    /// same name) is being created or mutated.</p>
+    /// <p>The request could not be processed because of conflict in the current state of the resource. For example, if you're using a <code>Create</code> API (such as <code>CreateAssistant</code>) that accepts name, a conflicting resource (usually with the same name) is being created or mutated.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>You've exceeded your service quota. To perform the requested action, remove some of the
-    /// relevant resources, or use service quotas to request a service quota increase.</p>
+    /// <p>You've exceeded your service quota. To perform the requested action, remove some of the relevant resources, or use service quotas to request a service quota increase.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
     ValidationException(crate::error::ValidationException),
@@ -415,13 +403,9 @@ pub struct CreateKnowledgeBaseError {
 pub enum CreateKnowledgeBaseErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request could not be processed because of conflict in the current state of the
-    /// resource. For example, if you're using a <code>Create</code> API (such as
-    /// <code>CreateAssistant</code>) that accepts name, a conflicting resource (usually with the
-    /// same name) is being created or mutated.</p>
+    /// <p>The request could not be processed because of conflict in the current state of the resource. For example, if you're using a <code>Create</code> API (such as <code>CreateAssistant</code>) that accepts name, a conflicting resource (usually with the same name) is being created or mutated.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>You've exceeded your service quota. To perform the requested action, remove some of the
-    /// relevant resources, or use service quotas to request a service quota increase.</p>
+    /// <p>You've exceeded your service quota. To perform the requested action, remove some of the relevant resources, or use service quotas to request a service quota increase.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
     ValidationException(crate::error::ValidationException),
@@ -543,10 +527,7 @@ pub struct CreateSessionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateSessionErrorKind {
-    /// <p>The request could not be processed because of conflict in the current state of the
-    /// resource. For example, if you're using a <code>Create</code> API (such as
-    /// <code>CreateAssistant</code>) that accepts name, a conflicting resource (usually with the
-    /// same name) is being created or mutated.</p>
+    /// <p>The request could not be processed because of conflict in the current state of the resource. For example, if you're using a <code>Create</code> API (such as <code>CreateAssistant</code>) that accepts name, a conflicting resource (usually with the same name) is being created or mutated.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -993,10 +974,7 @@ pub struct DeleteKnowledgeBaseError {
 pub enum DeleteKnowledgeBaseErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request could not be processed because of conflict in the current state of the
-    /// resource. For example, if you're using a <code>Create</code> API (such as
-    /// <code>CreateAssistant</code>) that accepts name, a conflicting resource (usually with the
-    /// same name) is being created or mutated.</p>
+    /// <p>The request could not be processed because of conflict in the current state of the resource. For example, if you're using a <code>Create</code> API (such as <code>CreateAssistant</code>) that accepts name, a conflicting resource (usually with the same name) is being created or mutated.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3306,8 +3284,7 @@ pub struct UpdateContentError {
 pub enum UpdateContentErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The provided <code>revisionId</code> does not match, indicating the content has been
-    /// modified since it was last read.</p>
+    /// <p>The provided <code>revisionId</code> does not match, indicating the content has been modified since it was last read.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3750,8 +3727,7 @@ impl AccessDeniedException {
     }
 }
 
-/// <p>You've exceeded your service quota. To perform the requested action, remove some of the
-/// relevant resources, or use service quotas to request a service quota increase.</p>
+/// <p>You've exceeded your service quota. To perform the requested action, remove some of the relevant resources, or use service quotas to request a service quota increase.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceQuotaExceededException {
@@ -3815,10 +3791,7 @@ impl ServiceQuotaExceededException {
     }
 }
 
-/// <p>The request could not be processed because of conflict in the current state of the
-/// resource. For example, if you're using a <code>Create</code> API (such as
-/// <code>CreateAssistant</code>) that accepts name, a conflicting resource (usually with the
-/// same name) is being created or mutated.</p>
+/// <p>The request could not be processed because of conflict in the current state of the resource. For example, if you're using a <code>Create</code> API (such as <code>CreateAssistant</code>) that accepts name, a conflicting resource (usually with the same name) is being created or mutated.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {
@@ -3882,8 +3855,7 @@ impl ConflictException {
     }
 }
 
-/// <p>The provided <code>revisionId</code> does not match, indicating the content has been
-/// modified since it was last read.</p>
+/// <p>The provided <code>revisionId</code> does not match, indicating the content has been modified since it was last read.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PreconditionFailedException {

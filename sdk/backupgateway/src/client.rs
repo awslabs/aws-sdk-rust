@@ -214,8 +214,7 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `AssociateGatewayToServer`.
     ///
-    /// <p>Associates a backup gateway with your server. After you complete the association process,
-    /// you can back up and restore your VMs through the gateway.</p>
+    /// <p>Associates a backup gateway with your server. After you complete the association process, you can back up and restore your VMs through the gateway.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateGatewayToServer<
         C = aws_smithy_client::erase::DynConnector,
@@ -272,14 +271,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation
-        /// to return a list of gateways for your account and Amazon Web Services Region.</p>
+        /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.gateway_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation
-        /// to return a list of gateways for your account and Amazon Web Services Region.</p>
+        /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
         pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_gateway_arn(input);
             self
@@ -297,8 +294,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateGateway`.
     ///
-    /// <p>Creates a backup gateway. After you create a gateway, you can associate it with a server
-    /// using the <code>AssociateGatewayToServer</code> operation.</p>
+    /// <p>Creates a backup gateway. After you create a gateway, you can associate it with a server using the <code>AssociateGatewayToServer</code> operation.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateGateway<
         C = aws_smithy_client::erase::DynConnector,
@@ -557,8 +553,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisassociateGatewayFromServer`.
     ///
-    /// <p>Disassociates a backup gateway from the specified server. After the disassociation process
-    /// finishes, the gateway can no longer access the virtual machines on the server.</p>
+    /// <p>Disassociates a backup gateway from the specified server. After the disassociation process finishes, the gateway can no longer access the virtual machines on the server.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateGatewayFromServer<
         C = aws_smithy_client::erase::DynConnector,
@@ -695,14 +690,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified
-        /// domain name (FQDN).</p>
+        /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
         pub fn host(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.host(input.into());
             self
         }
-        /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified
-        /// domain name (FQDN).</p>
+        /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
         pub fn set_host(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_host(input);
             self
@@ -824,18 +817,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The next item following a partial list of returned resources. For example, if a request is
-        /// made to return <code>MaxResults</code> number of resources, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
+        /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>MaxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The next item following a partial list of returned resources. For example, if a request is
-        /// made to return <code>MaxResults</code> number of resources, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
+        /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>MaxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -910,18 +897,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The next item following a partial list of returned resources. For example, if a request is
-        /// made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
+        /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The next item following a partial list of returned resources. For example, if a request is
-        /// made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
+        /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -929,8 +910,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
-    /// <p>Lists the tags applied to the resource identified by its Amazon Resource Name
-    /// (ARN).</p>
+    /// <p>Lists the tags applied to the resource identified by its Amazon Resource Name (ARN).</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -1067,18 +1047,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The next item following a partial list of returned resources. For example, if a request is
-        /// made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
+        /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The next item following a partial list of returned resources. For example, if a request is
-        /// made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
+        /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1143,14 +1117,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) for the gateway, used to specify its maintenance start
-        /// time.</p>
+        /// <p>The Amazon Resource Name (ARN) for the gateway, used to specify its maintenance start time.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.gateway_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the gateway, used to specify its maintenance start
-        /// time.</p>
+        /// <p>The Amazon Resource Name (ARN) for the gateway, used to specify its maintenance start time.</p>
         pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_gateway_arn(input);
             self
@@ -1287,8 +1259,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TestHypervisorConfiguration`.
     ///
-    /// <p>Tests your hypervisor configuration to validate that backup gateway can connect with the
-    /// hypervisor and its resources.</p>
+    /// <p>Tests your hypervisor configuration to validate that backup gateway can connect with the hypervisor and its resources.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TestHypervisorConfiguration<
         C = aws_smithy_client::erase::DynConnector,
@@ -1355,14 +1326,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_gateway_arn(input);
             self
         }
-        /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified
-        /// domain name (FQDN).</p>
+        /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
         pub fn host(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.host(input.into());
             self
         }
-        /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified
-        /// domain name (FQDN).</p>
+        /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
         pub fn set_host(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_host(input);
             self
@@ -1477,8 +1446,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateGatewayInformation`.
     ///
-    /// <p>Updates a gateway's name. Specify which gateway to update using the Amazon Resource Name
-    /// (ARN) of the gateway in your request.</p>
+    /// <p>Updates a gateway's name. Specify which gateway to update using the Amazon Resource Name (ARN) of the gateway in your request.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateGatewayInformation<
         C = aws_smithy_client::erase::DynConnector,
@@ -1561,9 +1529,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateHypervisor`.
     ///
-    /// <p>Updates a hypervisor metadata, including its host, username, and password. Specify which
-    /// hypervisor to update using the Amazon Resource Name (ARN) of the hypervisor in your
-    /// request.</p>
+    /// <p>Updates a hypervisor metadata, including its host, username, and password. Specify which hypervisor to update using the Amazon Resource Name (ARN) of the hypervisor in your request.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateHypervisor<
         C = aws_smithy_client::erase::DynConnector,
@@ -1633,14 +1599,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_hypervisor_arn(input);
             self
         }
-        /// <p>The updated host of the hypervisor. This can be either an IP address or a fully-qualified
-        /// domain name (FQDN).</p>
+        /// <p>The updated host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
         pub fn host(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.host(input.into());
             self
         }
-        /// <p>The updated host of the hypervisor. This can be either an IP address or a fully-qualified
-        /// domain name (FQDN).</p>
+        /// <p>The updated host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
         pub fn set_host(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_host(input);
             self

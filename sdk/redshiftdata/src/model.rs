@@ -5,8 +5,7 @@
 pub struct TableMember {
     /// <p>The name of the table. </p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The type of the table. Possible values include TABLE, VIEW, SYSTEM TABLE, GLOBAL
-    /// TEMPORARY, LOCAL TEMPORARY, ALIAS, and SYNONYM. </p>
+    /// <p>The type of the table. Possible values include TABLE, VIEW, SYSTEM TABLE, GLOBAL TEMPORARY, LOCAL TEMPORARY, ALIAS, and SYNONYM. </p>
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The schema containing the table. </p>
     pub schema: std::option::Option<std::string::String>,
@@ -16,8 +15,7 @@ impl TableMember {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The type of the table. Possible values include TABLE, VIEW, SYSTEM TABLE, GLOBAL
-    /// TEMPORARY, LOCAL TEMPORARY, ALIAS, and SYNONYM. </p>
+    /// <p>The type of the table. Possible values include TABLE, VIEW, SYSTEM TABLE, GLOBAL TEMPORARY, LOCAL TEMPORARY, ALIAS, and SYNONYM. </p>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
@@ -56,14 +54,12 @@ pub mod table_member {
             self.name = input;
             self
         }
-        /// <p>The type of the table. Possible values include TABLE, VIEW, SYSTEM TABLE, GLOBAL
-        /// TEMPORARY, LOCAL TEMPORARY, ALIAS, and SYNONYM. </p>
+        /// <p>The type of the table. Possible values include TABLE, VIEW, SYSTEM TABLE, GLOBAL TEMPORARY, LOCAL TEMPORARY, ALIAS, and SYNONYM. </p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.r#type = Some(input.into());
             self
         }
-        /// <p>The type of the table. Possible values include TABLE, VIEW, SYSTEM TABLE, GLOBAL
-        /// TEMPORARY, LOCAL TEMPORARY, ALIAS, and SYNONYM. </p>
+        /// <p>The type of the table. Possible values include TABLE, VIEW, SYSTEM TABLE, GLOBAL TEMPORARY, LOCAL TEMPORARY, ALIAS, and SYNONYM. </p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -107,9 +103,7 @@ pub struct StatementData {
     pub query_strings: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name or Amazon Resource Name (ARN) of the secret that enables access to the database. </p>
     pub secret_arn: std::option::Option<std::string::String>,
-    /// <p>The status of the SQL statement. An
-    /// example is the that the SQL statement finished.
-    /// </p>
+    /// <p>The status of the SQL statement. An example is the that the SQL statement finished. </p>
     pub status: std::option::Option<crate::model::StatusString>,
     /// <p>The name of the SQL statement. </p>
     pub statement_name: std::option::Option<std::string::String>,
@@ -139,9 +133,7 @@ impl StatementData {
     pub fn secret_arn(&self) -> std::option::Option<&str> {
         self.secret_arn.as_deref()
     }
-    /// <p>The status of the SQL statement. An
-    /// example is the that the SQL statement finished.
-    /// </p>
+    /// <p>The status of the SQL statement. An example is the that the SQL statement finished. </p>
     pub fn status(&self) -> std::option::Option<&crate::model::StatusString> {
         self.status.as_ref()
     }
@@ -249,16 +241,12 @@ pub mod statement_data {
             self.secret_arn = input;
             self
         }
-        /// <p>The status of the SQL statement. An
-        /// example is the that the SQL statement finished.
-        /// </p>
+        /// <p>The status of the SQL statement. An example is the that the SQL statement finished. </p>
         pub fn status(mut self, input: crate::model::StatusString) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the SQL statement. An
-        /// example is the that the SQL statement finished.
-        /// </p>
+        /// <p>The status of the SQL statement. An example is the that the SQL statement finished. </p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::StatusString>,
@@ -364,10 +352,7 @@ impl StatementData {
 pub struct SqlParameter {
     /// <p>The name of the parameter.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The value of the parameter.
-    /// Amazon Redshift implicitly converts to the proper data type. For more inforation, see
-    /// <a href="https://docs.aws.amazon.com/redshift/latest/dg/c_Supported_data_types.html">Data types</a> in the
-    /// <i>Amazon Redshift Database Developer Guide</i>. </p>
+    /// <p>The value of the parameter. Amazon Redshift implicitly converts to the proper data type. For more inforation, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/c_Supported_data_types.html">Data types</a> in the <i>Amazon Redshift Database Developer Guide</i>. </p>
     pub value: std::option::Option<std::string::String>,
 }
 impl SqlParameter {
@@ -375,10 +360,7 @@ impl SqlParameter {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The value of the parameter.
-    /// Amazon Redshift implicitly converts to the proper data type. For more inforation, see
-    /// <a href="https://docs.aws.amazon.com/redshift/latest/dg/c_Supported_data_types.html">Data types</a> in the
-    /// <i>Amazon Redshift Database Developer Guide</i>. </p>
+    /// <p>The value of the parameter. Amazon Redshift implicitly converts to the proper data type. For more inforation, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/c_Supported_data_types.html">Data types</a> in the <i>Amazon Redshift Database Developer Guide</i>. </p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
@@ -411,18 +393,12 @@ pub mod sql_parameter {
             self.name = input;
             self
         }
-        /// <p>The value of the parameter.
-        /// Amazon Redshift implicitly converts to the proper data type. For more inforation, see
-        /// <a href="https://docs.aws.amazon.com/redshift/latest/dg/c_Supported_data_types.html">Data types</a> in the
-        /// <i>Amazon Redshift Database Developer Guide</i>. </p>
+        /// <p>The value of the parameter. Amazon Redshift implicitly converts to the proper data type. For more inforation, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/c_Supported_data_types.html">Data types</a> in the <i>Amazon Redshift Database Developer Guide</i>. </p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             self.value = Some(input.into());
             self
         }
-        /// <p>The value of the parameter.
-        /// Amazon Redshift implicitly converts to the proper data type. For more inforation, see
-        /// <a href="https://docs.aws.amazon.com/redshift/latest/dg/c_Supported_data_types.html">Data types</a> in the
-        /// <i>Amazon Redshift Database Developer Guide</i>. </p>
+        /// <p>The value of the parameter. Amazon Redshift implicitly converts to the proper data type. For more inforation, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/c_Supported_data_types.html">Data types</a> in the <i>Amazon Redshift Database Developer Guide</i>. </p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -926,17 +902,13 @@ impl Field {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubStatementData {
-    /// <p>The identifier of the SQL statement. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API.
-    /// A suffix indicates the number of the SQL statement.
-    /// For example, <code>d9b6c0c9-0747-4bf4-b142-e8883122f766:2</code> has a suffix of <code>:2</code> that indicates the second SQL statement of a batch query.</p>
+    /// <p>The identifier of the SQL statement. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API. A suffix indicates the number of the SQL statement. For example, <code>d9b6c0c9-0747-4bf4-b142-e8883122f766:2</code> has a suffix of <code>:2</code> that indicates the second SQL statement of a batch query.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The amount of time in nanoseconds that the statement ran.</p>
     pub duration: i64,
     /// <p>The error message from the cluster if the SQL statement encountered an error while running.</p>
     pub error: std::option::Option<std::string::String>,
-    /// <p>The status of the SQL statement. An
-    /// example is the that the SQL statement finished.
-    /// </p>
+    /// <p>The status of the SQL statement. An example is the that the SQL statement finished. </p>
     pub status: std::option::Option<crate::model::StatementStatusString>,
     /// <p>The date and time (UTC) the statement was created. </p>
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -944,9 +916,7 @@ pub struct SubStatementData {
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The SQL statement text.</p>
     pub query_string: std::option::Option<std::string::String>,
-    /// <p>Either the number of rows returned from the SQL statement or the number of rows affected.
-    /// If result size is greater than zero, the result rows can be the number of rows affected by SQL statements such as INSERT, UPDATE, DELETE, COPY, and others.
-    /// A <code>-1</code> indicates the value is null.</p>
+    /// <p>Either the number of rows returned from the SQL statement or the number of rows affected. If result size is greater than zero, the result rows can be the number of rows affected by SQL statements such as INSERT, UPDATE, DELETE, COPY, and others. A <code>-1</code> indicates the value is null.</p>
     pub result_rows: i64,
     /// <p>The size in bytes of the returned results. A <code>-1</code> indicates the value is null.</p>
     pub result_size: i64,
@@ -956,9 +926,7 @@ pub struct SubStatementData {
     pub has_result_set: std::option::Option<bool>,
 }
 impl SubStatementData {
-    /// <p>The identifier of the SQL statement. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API.
-    /// A suffix indicates the number of the SQL statement.
-    /// For example, <code>d9b6c0c9-0747-4bf4-b142-e8883122f766:2</code> has a suffix of <code>:2</code> that indicates the second SQL statement of a batch query.</p>
+    /// <p>The identifier of the SQL statement. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API. A suffix indicates the number of the SQL statement. For example, <code>d9b6c0c9-0747-4bf4-b142-e8883122f766:2</code> has a suffix of <code>:2</code> that indicates the second SQL statement of a batch query.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -970,9 +938,7 @@ impl SubStatementData {
     pub fn error(&self) -> std::option::Option<&str> {
         self.error.as_deref()
     }
-    /// <p>The status of the SQL statement. An
-    /// example is the that the SQL statement finished.
-    /// </p>
+    /// <p>The status of the SQL statement. An example is the that the SQL statement finished. </p>
     pub fn status(&self) -> std::option::Option<&crate::model::StatementStatusString> {
         self.status.as_ref()
     }
@@ -988,9 +954,7 @@ impl SubStatementData {
     pub fn query_string(&self) -> std::option::Option<&str> {
         self.query_string.as_deref()
     }
-    /// <p>Either the number of rows returned from the SQL statement or the number of rows affected.
-    /// If result size is greater than zero, the result rows can be the number of rows affected by SQL statements such as INSERT, UPDATE, DELETE, COPY, and others.
-    /// A <code>-1</code> indicates the value is null.</p>
+    /// <p>Either the number of rows returned from the SQL statement or the number of rows affected. If result size is greater than zero, the result rows can be the number of rows affected by SQL statements such as INSERT, UPDATE, DELETE, COPY, and others. A <code>-1</code> indicates the value is null.</p>
     pub fn result_rows(&self) -> i64 {
         self.result_rows
     }
@@ -1043,16 +1007,12 @@ pub mod sub_statement_data {
         pub(crate) has_result_set: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The identifier of the SQL statement. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API.
-        /// A suffix indicates the number of the SQL statement.
-        /// For example, <code>d9b6c0c9-0747-4bf4-b142-e8883122f766:2</code> has a suffix of <code>:2</code> that indicates the second SQL statement of a batch query.</p>
+        /// <p>The identifier of the SQL statement. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API. A suffix indicates the number of the SQL statement. For example, <code>d9b6c0c9-0747-4bf4-b142-e8883122f766:2</code> has a suffix of <code>:2</code> that indicates the second SQL statement of a batch query.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The identifier of the SQL statement. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API.
-        /// A suffix indicates the number of the SQL statement.
-        /// For example, <code>d9b6c0c9-0747-4bf4-b142-e8883122f766:2</code> has a suffix of <code>:2</code> that indicates the second SQL statement of a batch query.</p>
+        /// <p>The identifier of the SQL statement. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API. A suffix indicates the number of the SQL statement. For example, <code>d9b6c0c9-0747-4bf4-b142-e8883122f766:2</code> has a suffix of <code>:2</code> that indicates the second SQL statement of a batch query.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -1077,16 +1037,12 @@ pub mod sub_statement_data {
             self.error = input;
             self
         }
-        /// <p>The status of the SQL statement. An
-        /// example is the that the SQL statement finished.
-        /// </p>
+        /// <p>The status of the SQL statement. An example is the that the SQL statement finished. </p>
         pub fn status(mut self, input: crate::model::StatementStatusString) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the SQL statement. An
-        /// example is the that the SQL statement finished.
-        /// </p>
+        /// <p>The status of the SQL statement. An example is the that the SQL statement finished. </p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::StatementStatusString>,
@@ -1130,16 +1086,12 @@ pub mod sub_statement_data {
             self.query_string = input;
             self
         }
-        /// <p>Either the number of rows returned from the SQL statement or the number of rows affected.
-        /// If result size is greater than zero, the result rows can be the number of rows affected by SQL statements such as INSERT, UPDATE, DELETE, COPY, and others.
-        /// A <code>-1</code> indicates the value is null.</p>
+        /// <p>Either the number of rows returned from the SQL statement or the number of rows affected. If result size is greater than zero, the result rows can be the number of rows affected by SQL statements such as INSERT, UPDATE, DELETE, COPY, and others. A <code>-1</code> indicates the value is null.</p>
         pub fn result_rows(mut self, input: i64) -> Self {
             self.result_rows = Some(input);
             self
         }
-        /// <p>Either the number of rows returned from the SQL statement or the number of rows affected.
-        /// If result size is greater than zero, the result rows can be the number of rows affected by SQL statements such as INSERT, UPDATE, DELETE, COPY, and others.
-        /// A <code>-1</code> indicates the value is null.</p>
+        /// <p>Either the number of rows returned from the SQL statement or the number of rows affected. If result size is greater than zero, the result rows can be the number of rows affected by SQL statements such as INSERT, UPDATE, DELETE, COPY, and others. A <code>-1</code> indicates the value is null.</p>
         pub fn set_result_rows(mut self, input: std::option::Option<i64>) -> Self {
             self.result_rows = input;
             self

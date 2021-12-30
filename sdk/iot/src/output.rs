@@ -353,16 +353,8 @@ pub struct UpdateSecurityProfileOutput {
     pub alert_targets: std::option::Option<
         std::collections::HashMap<crate::model::AlertTargetType, crate::model::AlertTarget>,
     >,
-    /// <p>
-    /// <i>Please use
-    /// <a>UpdateSecurityProfileResponse$additionalMetricsToRetainV2</a>
-    /// instead.</i>
-    /// </p>
-    /// <p>A list of metrics
-    /// whose data is retained (stored). By default, data is retained for any metric
-    /// used in the security profile's <code>behaviors</code>, but
-    /// it is
-    /// also retained for any metric specified here.</p>
+    /// <p> <i>Please use <code>UpdateSecurityProfileResponse$additionalMetricsToRetainV2</code> instead.</i> </p>
+    /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the security profile's <code>behaviors</code>, but it is also retained for any metric specified here.</p>
     pub additional_metrics_to_retain: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's behaviors, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
     pub additional_metrics_to_retain_v2:
@@ -399,16 +391,8 @@ impl UpdateSecurityProfileOutput {
     > {
         self.alert_targets.as_ref()
     }
-    /// <p>
-    /// <i>Please use
-    /// <a>UpdateSecurityProfileResponse$additionalMetricsToRetainV2</a>
-    /// instead.</i>
-    /// </p>
-    /// <p>A list of metrics
-    /// whose data is retained (stored). By default, data is retained for any metric
-    /// used in the security profile's <code>behaviors</code>, but
-    /// it is
-    /// also retained for any metric specified here.</p>
+    /// <p> <i>Please use <code>UpdateSecurityProfileResponse$additionalMetricsToRetainV2</code> instead.</i> </p>
+    /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the security profile's <code>behaviors</code>, but it is also retained for any metric specified here.</p>
     pub fn additional_metrics_to_retain(&self) -> std::option::Option<&[std::string::String]> {
         self.additional_metrics_to_retain.as_deref()
     }
@@ -568,16 +552,8 @@ pub mod update_security_profile_output {
         ///
         /// To override the contents of this collection use [`set_additional_metrics_to_retain`](Self::set_additional_metrics_to_retain).
         ///
-        /// <p>
-        /// <i>Please use
-        /// <a>UpdateSecurityProfileResponse$additionalMetricsToRetainV2</a>
-        /// instead.</i>
-        /// </p>
-        /// <p>A list of metrics
-        /// whose data is retained (stored). By default, data is retained for any metric
-        /// used in the security profile's <code>behaviors</code>, but
-        /// it is
-        /// also retained for any metric specified here.</p>
+        /// <p> <i>Please use <code>UpdateSecurityProfileResponse$additionalMetricsToRetainV2</code> instead.</i> </p>
+        /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the security profile's <code>behaviors</code>, but it is also retained for any metric specified here.</p>
         pub fn additional_metrics_to_retain(
             mut self,
             input: impl Into<std::string::String>,
@@ -587,16 +563,8 @@ pub mod update_security_profile_output {
             self.additional_metrics_to_retain = Some(v);
             self
         }
-        /// <p>
-        /// <i>Please use
-        /// <a>UpdateSecurityProfileResponse$additionalMetricsToRetainV2</a>
-        /// instead.</i>
-        /// </p>
-        /// <p>A list of metrics
-        /// whose data is retained (stored). By default, data is retained for any metric
-        /// used in the security profile's <code>behaviors</code>, but
-        /// it is
-        /// also retained for any metric specified here.</p>
+        /// <p> <i>Please use <code>UpdateSecurityProfileResponse$additionalMetricsToRetainV2</code> instead.</i> </p>
+        /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the security profile's <code>behaviors</code>, but it is also retained for any metric specified here.</p>
         pub fn set_additional_metrics_to_retain(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1181,9 +1149,7 @@ impl UpdateDomainConfigurationOutput {
 pub struct UpdateDimensionOutput {
     /// <p>A unique identifier for the dimension.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource
-    /// Name (ARN)of
-    /// the created dimension.</p>
+    /// <p>The Amazon Resource Name (ARN)of the created dimension.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The type of the dimension.</p>
     pub r#type: std::option::Option<crate::model::DimensionType>,
@@ -1199,9 +1165,7 @@ impl UpdateDimensionOutput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The Amazon Resource
-    /// Name (ARN)of
-    /// the created dimension.</p>
+    /// <p>The Amazon Resource Name (ARN)of the created dimension.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -1258,16 +1222,12 @@ pub mod update_dimension_output {
             self.name = input;
             self
         }
-        /// <p>The Amazon Resource
-        /// Name (ARN)of
-        /// the created dimension.</p>
+        /// <p>The Amazon Resource Name (ARN)of the created dimension.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource
-        /// Name (ARN)of
-        /// the created dimension.</p>
+        /// <p>The Amazon Resource Name (ARN)of the created dimension.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -1351,65 +1311,41 @@ impl UpdateDimensionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCustomMetricOutput {
-    /// <p>
-    /// The name of the custom metric.
-    /// </p>
+    /// <p> The name of the custom metric. </p>
     pub metric_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// The Amazon Resource Number (ARN) of the custom metric.
-    /// </p>
+    /// <p> The Amazon Resource Number (ARN) of the custom metric. </p>
     pub metric_arn: std::option::Option<std::string::String>,
-    /// <p>
-    /// The type of the custom metric. Types include <code>string-list</code>, <code>ip-address-list</code>, <code>number-list</code>, and <code>number</code>.
-    /// </p>
+    /// <p> The type of the custom metric. Types include <code>string-list</code>, <code>ip-address-list</code>, <code>number-list</code>, and <code>number</code>. </p>
     pub metric_type: std::option::Option<crate::model::CustomMetricType>,
-    /// <p>
-    /// A friendly name in the console for the custom metric
-    /// </p>
+    /// <p> A friendly name in the console for the custom metric </p>
     pub display_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// The creation date of the custom metric in milliseconds since epoch.
-    /// </p>
+    /// <p> The creation date of the custom metric in milliseconds since epoch. </p>
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>
-    /// The time the custom metric was last modified in milliseconds since epoch.
-    /// </p>
+    /// <p> The time the custom metric was last modified in milliseconds since epoch. </p>
     pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UpdateCustomMetricOutput {
-    /// <p>
-    /// The name of the custom metric.
-    /// </p>
+    /// <p> The name of the custom metric. </p>
     pub fn metric_name(&self) -> std::option::Option<&str> {
         self.metric_name.as_deref()
     }
-    /// <p>
-    /// The Amazon Resource Number (ARN) of the custom metric.
-    /// </p>
+    /// <p> The Amazon Resource Number (ARN) of the custom metric. </p>
     pub fn metric_arn(&self) -> std::option::Option<&str> {
         self.metric_arn.as_deref()
     }
-    /// <p>
-    /// The type of the custom metric. Types include <code>string-list</code>, <code>ip-address-list</code>, <code>number-list</code>, and <code>number</code>.
-    /// </p>
+    /// <p> The type of the custom metric. Types include <code>string-list</code>, <code>ip-address-list</code>, <code>number-list</code>, and <code>number</code>. </p>
     pub fn metric_type(&self) -> std::option::Option<&crate::model::CustomMetricType> {
         self.metric_type.as_ref()
     }
-    /// <p>
-    /// A friendly name in the console for the custom metric
-    /// </p>
+    /// <p> A friendly name in the console for the custom metric </p>
     pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
     }
-    /// <p>
-    /// The creation date of the custom metric in milliseconds since epoch.
-    /// </p>
+    /// <p> The creation date of the custom metric in milliseconds since epoch. </p>
     pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
-    /// <p>
-    /// The time the custom metric was last modified in milliseconds since epoch.
-    /// </p>
+    /// <p> The time the custom metric was last modified in milliseconds since epoch. </p>
     pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
@@ -1440,44 +1376,32 @@ pub mod update_custom_metric_output {
         pub(crate) last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>
-        /// The name of the custom metric.
-        /// </p>
+        /// <p> The name of the custom metric. </p>
         pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.metric_name = Some(input.into());
             self
         }
-        /// <p>
-        /// The name of the custom metric.
-        /// </p>
+        /// <p> The name of the custom metric. </p>
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.metric_name = input;
             self
         }
-        /// <p>
-        /// The Amazon Resource Number (ARN) of the custom metric.
-        /// </p>
+        /// <p> The Amazon Resource Number (ARN) of the custom metric. </p>
         pub fn metric_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.metric_arn = Some(input.into());
             self
         }
-        /// <p>
-        /// The Amazon Resource Number (ARN) of the custom metric.
-        /// </p>
+        /// <p> The Amazon Resource Number (ARN) of the custom metric. </p>
         pub fn set_metric_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.metric_arn = input;
             self
         }
-        /// <p>
-        /// The type of the custom metric. Types include <code>string-list</code>, <code>ip-address-list</code>, <code>number-list</code>, and <code>number</code>.
-        /// </p>
+        /// <p> The type of the custom metric. Types include <code>string-list</code>, <code>ip-address-list</code>, <code>number-list</code>, and <code>number</code>. </p>
         pub fn metric_type(mut self, input: crate::model::CustomMetricType) -> Self {
             self.metric_type = Some(input);
             self
         }
-        /// <p>
-        /// The type of the custom metric. Types include <code>string-list</code>, <code>ip-address-list</code>, <code>number-list</code>, and <code>number</code>.
-        /// </p>
+        /// <p> The type of the custom metric. Types include <code>string-list</code>, <code>ip-address-list</code>, <code>number-list</code>, and <code>number</code>. </p>
         pub fn set_metric_type(
             mut self,
             input: std::option::Option<crate::model::CustomMetricType>,
@@ -1485,30 +1409,22 @@ pub mod update_custom_metric_output {
             self.metric_type = input;
             self
         }
-        /// <p>
-        /// A friendly name in the console for the custom metric
-        /// </p>
+        /// <p> A friendly name in the console for the custom metric </p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.display_name = Some(input.into());
             self
         }
-        /// <p>
-        /// A friendly name in the console for the custom metric
-        /// </p>
+        /// <p> A friendly name in the console for the custom metric </p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.display_name = input;
             self
         }
-        /// <p>
-        /// The creation date of the custom metric in milliseconds since epoch.
-        /// </p>
+        /// <p> The creation date of the custom metric in milliseconds since epoch. </p>
         pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
-        /// <p>
-        /// The creation date of the custom metric in milliseconds since epoch.
-        /// </p>
+        /// <p> The creation date of the custom metric in milliseconds since epoch. </p>
         pub fn set_creation_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1516,16 +1432,12 @@ pub mod update_custom_metric_output {
             self.creation_date = input;
             self
         }
-        /// <p>
-        /// The time the custom metric was last modified in milliseconds since epoch.
-        /// </p>
+        /// <p> The time the custom metric was last modified in milliseconds since epoch. </p>
         pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_date = Some(input);
             self
         }
-        /// <p>
-        /// The time the custom metric was last modified in milliseconds since epoch.
-        /// </p>
+        /// <p> The time the custom metric was last modified in milliseconds since epoch. </p>
         pub fn set_last_modified_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2276,15 +2188,11 @@ impl StartOnDemandAuditTaskOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartDetectMitigationActionsTaskOutput {
-    /// <p>
-    /// The unique identifier of the task.
-    /// </p>
+    /// <p> The unique identifier of the task. </p>
     pub task_id: std::option::Option<std::string::String>,
 }
 impl StartDetectMitigationActionsTaskOutput {
-    /// <p>
-    /// The unique identifier of the task.
-    /// </p>
+    /// <p> The unique identifier of the task. </p>
     pub fn task_id(&self) -> std::option::Option<&str> {
         self.task_id.as_deref()
     }
@@ -2305,16 +2213,12 @@ pub mod start_detect_mitigation_actions_task_output {
         pub(crate) task_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The unique identifier of the task.
-        /// </p>
+        /// <p> The unique identifier of the task. </p>
         pub fn task_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.task_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The unique identifier of the task.
-        /// </p>
+        /// <p> The unique identifier of the task. </p>
         pub fn set_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.task_id = input;
             self
@@ -2591,8 +2495,7 @@ impl SetDefaultAuthorizerOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchIndexOutput {
-    /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional
-    /// results.</p>
+    /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The things that match the search query.</p>
     pub things: std::option::Option<std::vec::Vec<crate::model::ThingDocument>>,
@@ -2600,8 +2503,7 @@ pub struct SearchIndexOutput {
     pub thing_groups: std::option::Option<std::vec::Vec<crate::model::ThingGroupDocument>>,
 }
 impl SearchIndexOutput {
-    /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional
-    /// results.</p>
+    /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2635,14 +2537,12 @@ pub mod search_index_output {
             std::option::Option<std::vec::Vec<crate::model::ThingGroupDocument>>,
     }
     impl Builder {
-        /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional
-        /// results.</p>
+        /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional
-        /// results.</p>
+        /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2925,8 +2825,7 @@ impl RegisterThingOutput {
 pub struct RegisterCertificateWithoutCaOutput {
     /// <p>The Amazon Resource Name (ARN) of the registered certificate.</p>
     pub certificate_arn: std::option::Option<std::string::String>,
-    /// <p>The ID of the registered certificate. (The last part of the certificate ARN contains the
-    /// certificate ID.</p>
+    /// <p>The ID of the registered certificate. (The last part of the certificate ARN contains the certificate ID.</p>
     pub certificate_id: std::option::Option<std::string::String>,
 }
 impl RegisterCertificateWithoutCaOutput {
@@ -2934,8 +2833,7 @@ impl RegisterCertificateWithoutCaOutput {
     pub fn certificate_arn(&self) -> std::option::Option<&str> {
         self.certificate_arn.as_deref()
     }
-    /// <p>The ID of the registered certificate. (The last part of the certificate ARN contains the
-    /// certificate ID.</p>
+    /// <p>The ID of the registered certificate. (The last part of the certificate ARN contains the certificate ID.</p>
     pub fn certificate_id(&self) -> std::option::Option<&str> {
         self.certificate_id.as_deref()
     }
@@ -2971,14 +2869,12 @@ pub mod register_certificate_without_ca_output {
             self.certificate_arn = input;
             self
         }
-        /// <p>The ID of the registered certificate. (The last part of the certificate ARN contains the
-        /// certificate ID.</p>
+        /// <p>The ID of the registered certificate. (The last part of the certificate ARN contains the certificate ID.</p>
         pub fn certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_id = Some(input.into());
             self
         }
-        /// <p>The ID of the registered certificate. (The last part of the certificate ARN contains the
-        /// certificate ID.</p>
+        /// <p>The ID of the registered certificate. (The last part of the certificate ARN contains the certificate ID.</p>
         pub fn set_certificate_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3194,21 +3090,17 @@ impl PutVerificationStateOnViolationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListViolationEventsOutput {
-    /// <p>The security profile violation alerts issued for this account during the given time period,
-    /// potentially filtered by security profile, behavior violated, or thing (device) violating.</p>
+    /// <p>The security profile violation alerts issued for this account during the given time period, potentially filtered by security profile, behavior violated, or thing (device) violating.</p>
     pub violation_events: std::option::Option<std::vec::Vec<crate::model::ViolationEvent>>,
-    /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no
-    /// additional results.</p>
+    /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListViolationEventsOutput {
-    /// <p>The security profile violation alerts issued for this account during the given time period,
-    /// potentially filtered by security profile, behavior violated, or thing (device) violating.</p>
+    /// <p>The security profile violation alerts issued for this account during the given time period, potentially filtered by security profile, behavior violated, or thing (device) violating.</p>
     pub fn violation_events(&self) -> std::option::Option<&[crate::model::ViolationEvent]> {
         self.violation_events.as_deref()
     }
-    /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no
-    /// additional results.</p>
+    /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3236,16 +3128,14 @@ pub mod list_violation_events_output {
         ///
         /// To override the contents of this collection use [`set_violation_events`](Self::set_violation_events).
         ///
-        /// <p>The security profile violation alerts issued for this account during the given time period,
-        /// potentially filtered by security profile, behavior violated, or thing (device) violating.</p>
+        /// <p>The security profile violation alerts issued for this account during the given time period, potentially filtered by security profile, behavior violated, or thing (device) violating.</p>
         pub fn violation_events(mut self, input: crate::model::ViolationEvent) -> Self {
             let mut v = self.violation_events.unwrap_or_default();
             v.push(input);
             self.violation_events = Some(v);
             self
         }
-        /// <p>The security profile violation alerts issued for this account during the given time period,
-        /// potentially filtered by security profile, behavior violated, or thing (device) violating.</p>
+        /// <p>The security profile violation alerts issued for this account during the given time period, potentially filtered by security profile, behavior violated, or thing (device) violating.</p>
         pub fn set_violation_events(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ViolationEvent>>,
@@ -3253,14 +3143,12 @@ pub mod list_violation_events_output {
             self.violation_events = input;
             self
         }
-        /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no
-        /// additional results.</p>
+        /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no
-        /// additional results.</p>
+        /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4309,8 +4197,7 @@ pub struct ListTargetsForSecurityProfileOutput {
     /// <p>The thing groups to which the security profile is attached.</p>
     pub security_profile_targets:
         std::option::Option<std::vec::Vec<crate::model::SecurityProfileTarget>>,
-    /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no
-    /// additional results.</p>
+    /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTargetsForSecurityProfileOutput {
@@ -4320,8 +4207,7 @@ impl ListTargetsForSecurityProfileOutput {
     ) -> std::option::Option<&[crate::model::SecurityProfileTarget]> {
         self.security_profile_targets.as_deref()
     }
-    /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no
-    /// additional results.</p>
+    /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -4367,14 +4253,12 @@ pub mod list_targets_for_security_profile_output {
             self.security_profile_targets = input;
             self
         }
-        /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no
-        /// additional results.</p>
+        /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no
-        /// additional results.</p>
+        /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4648,8 +4532,7 @@ pub struct ListSecurityProfilesForTargetOutput {
     /// <p>A list of security profiles and their associated targets.</p>
     pub security_profile_target_mappings:
         std::option::Option<std::vec::Vec<crate::model::SecurityProfileTargetMapping>>,
-    /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no
-    /// additional results.</p>
+    /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSecurityProfilesForTargetOutput {
@@ -4659,8 +4542,7 @@ impl ListSecurityProfilesForTargetOutput {
     ) -> std::option::Option<&[crate::model::SecurityProfileTargetMapping]> {
         self.security_profile_target_mappings.as_deref()
     }
-    /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no
-    /// additional results.</p>
+    /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -4709,14 +4591,12 @@ pub mod list_security_profiles_for_target_output {
             self.security_profile_target_mappings = input;
             self
         }
-        /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no
-        /// additional results.</p>
+        /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no
-        /// additional results.</p>
+        /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4744,8 +4624,7 @@ pub struct ListSecurityProfilesOutput {
     /// <p>A list of security profile identifiers (names and ARNs).</p>
     pub security_profile_identifiers:
         std::option::Option<std::vec::Vec<crate::model::SecurityProfileIdentifier>>,
-    /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no
-    /// additional results.</p>
+    /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSecurityProfilesOutput {
@@ -4755,8 +4634,7 @@ impl ListSecurityProfilesOutput {
     ) -> std::option::Option<&[crate::model::SecurityProfileIdentifier]> {
         self.security_profile_identifiers.as_deref()
     }
-    /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no
-    /// additional results.</p>
+    /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -4805,14 +4683,12 @@ pub mod list_security_profiles_output {
             self.security_profile_identifiers = input;
             self
         }
-        /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no
-        /// additional results.</p>
+        /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no
-        /// additional results.</p>
+        /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4839,8 +4715,7 @@ impl ListSecurityProfilesOutput {
 pub struct ListScheduledAuditsOutput {
     /// <p>The list of scheduled audits.</p>
     pub scheduled_audits: std::option::Option<std::vec::Vec<crate::model::ScheduledAuditMetadata>>,
-    /// <p>A token that can be used to retrieve the next set of results,
-    /// or <code>null</code> if there are no additional results.</p>
+    /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListScheduledAuditsOutput {
@@ -4848,8 +4723,7 @@ impl ListScheduledAuditsOutput {
     pub fn scheduled_audits(&self) -> std::option::Option<&[crate::model::ScheduledAuditMetadata]> {
         self.scheduled_audits.as_deref()
     }
-    /// <p>A token that can be used to retrieve the next set of results,
-    /// or <code>null</code> if there are no additional results.</p>
+    /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -4892,14 +4766,12 @@ pub mod list_scheduled_audits_output {
             self.scheduled_audits = input;
             self
         }
-        /// <p>A token that can be used to retrieve the next set of results,
-        /// or <code>null</code> if there are no additional results.</p>
+        /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token that can be used to retrieve the next set of results,
-        /// or <code>null</code> if there are no additional results.</p>
+        /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5261,8 +5133,7 @@ impl ListPrincipalThingsOutput {
 pub struct ListPrincipalPoliciesOutput {
     /// <p>The policies.</p>
     pub policies: std::option::Option<std::vec::Vec<crate::model::Policy>>,
-    /// <p>The marker for the next set of results, or null if there are no additional
-    /// results.</p>
+    /// <p>The marker for the next set of results, or null if there are no additional results.</p>
     pub next_marker: std::option::Option<std::string::String>,
 }
 impl ListPrincipalPoliciesOutput {
@@ -5270,8 +5141,7 @@ impl ListPrincipalPoliciesOutput {
     pub fn policies(&self) -> std::option::Option<&[crate::model::Policy]> {
         self.policies.as_deref()
     }
-    /// <p>The marker for the next set of results, or null if there are no additional
-    /// results.</p>
+    /// <p>The marker for the next set of results, or null if there are no additional results.</p>
     pub fn next_marker(&self) -> std::option::Option<&str> {
         self.next_marker.as_deref()
     }
@@ -5313,14 +5183,12 @@ pub mod list_principal_policies_output {
             self.policies = input;
             self
         }
-        /// <p>The marker for the next set of results, or null if there are no additional
-        /// results.</p>
+        /// <p>The marker for the next set of results, or null if there are no additional results.</p>
         pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_marker = Some(input.into());
             self
         }
-        /// <p>The marker for the next set of results, or null if there are no additional
-        /// results.</p>
+        /// <p>The marker for the next set of results, or null if there are no additional results.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
@@ -5410,8 +5278,7 @@ impl ListPolicyVersionsOutput {
 pub struct ListPolicyPrincipalsOutput {
     /// <p>The descriptions of the principals.</p>
     pub principals: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The marker for the next set of results, or null if there are no additional
-    /// results.</p>
+    /// <p>The marker for the next set of results, or null if there are no additional results.</p>
     pub next_marker: std::option::Option<std::string::String>,
 }
 impl ListPolicyPrincipalsOutput {
@@ -5419,8 +5286,7 @@ impl ListPolicyPrincipalsOutput {
     pub fn principals(&self) -> std::option::Option<&[std::string::String]> {
         self.principals.as_deref()
     }
-    /// <p>The marker for the next set of results, or null if there are no additional
-    /// results.</p>
+    /// <p>The marker for the next set of results, or null if there are no additional results.</p>
     pub fn next_marker(&self) -> std::option::Option<&str> {
         self.next_marker.as_deref()
     }
@@ -5462,14 +5328,12 @@ pub mod list_policy_principals_output {
             self.principals = input;
             self
         }
-        /// <p>The marker for the next set of results, or null if there are no additional
-        /// results.</p>
+        /// <p>The marker for the next set of results, or null if there are no additional results.</p>
         pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_marker = Some(input.into());
             self
         }
-        /// <p>The marker for the next set of results, or null if there are no additional
-        /// results.</p>
+        /// <p>The marker for the next set of results, or null if there are no additional results.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
@@ -5496,8 +5360,7 @@ impl ListPolicyPrincipalsOutput {
 pub struct ListPoliciesOutput {
     /// <p>The descriptions of the policies.</p>
     pub policies: std::option::Option<std::vec::Vec<crate::model::Policy>>,
-    /// <p>The marker for the next set of results, or null if there are no additional
-    /// results.</p>
+    /// <p>The marker for the next set of results, or null if there are no additional results.</p>
     pub next_marker: std::option::Option<std::string::String>,
 }
 impl ListPoliciesOutput {
@@ -5505,8 +5368,7 @@ impl ListPoliciesOutput {
     pub fn policies(&self) -> std::option::Option<&[crate::model::Policy]> {
         self.policies.as_deref()
     }
-    /// <p>The marker for the next set of results, or null if there are no additional
-    /// results.</p>
+    /// <p>The marker for the next set of results, or null if there are no additional results.</p>
     pub fn next_marker(&self) -> std::option::Option<&str> {
         self.next_marker.as_deref()
     }
@@ -5548,14 +5410,12 @@ pub mod list_policies_output {
             self.policies = input;
             self
         }
-        /// <p>The marker for the next set of results, or null if there are no additional
-        /// results.</p>
+        /// <p>The marker for the next set of results, or null if there are no additional results.</p>
         pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_marker = Some(input.into());
             self
         }
-        /// <p>The marker for the next set of results, or null if there are no additional
-        /// results.</p>
+        /// <p>The marker for the next set of results, or null if there are no additional results.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
@@ -5928,8 +5788,7 @@ impl ListManagedJobTemplatesOutput {
 pub struct ListJobTemplatesOutput {
     /// <p>A list of objects that contain information about the job templates.</p>
     pub job_templates: std::option::Option<std::vec::Vec<crate::model::JobTemplateSummary>>,
-    /// <p>The token for the next set of results, or <b>null</b> if there are no
-    /// additional results.</p>
+    /// <p>The token for the next set of results, or <b>null</b> if there are no additional results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListJobTemplatesOutput {
@@ -5937,8 +5796,7 @@ impl ListJobTemplatesOutput {
     pub fn job_templates(&self) -> std::option::Option<&[crate::model::JobTemplateSummary]> {
         self.job_templates.as_deref()
     }
-    /// <p>The token for the next set of results, or <b>null</b> if there are no
-    /// additional results.</p>
+    /// <p>The token for the next set of results, or <b>null</b> if there are no additional results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5981,14 +5839,12 @@ pub mod list_job_templates_output {
             self.job_templates = input;
             self
         }
-        /// <p>The token for the next set of results, or <b>null</b> if there are no
-        /// additional results.</p>
+        /// <p>The token for the next set of results, or <b>null</b> if there are no additional results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of results, or <b>null</b> if there are no
-        /// additional results.</p>
+        /// <p>The token for the next set of results, or <b>null</b> if there are no additional results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6015,8 +5871,7 @@ impl ListJobTemplatesOutput {
 pub struct ListJobsOutput {
     /// <p>A list of jobs.</p>
     pub jobs: std::option::Option<std::vec::Vec<crate::model::JobSummary>>,
-    /// <p>The token for the next set of results, or <b>null</b> if there are no
-    /// additional results.</p>
+    /// <p>The token for the next set of results, or <b>null</b> if there are no additional results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListJobsOutput {
@@ -6024,8 +5879,7 @@ impl ListJobsOutput {
     pub fn jobs(&self) -> std::option::Option<&[crate::model::JobSummary]> {
         self.jobs.as_deref()
     }
-    /// <p>The token for the next set of results, or <b>null</b> if there are no
-    /// additional results.</p>
+    /// <p>The token for the next set of results, or <b>null</b> if there are no additional results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -6067,14 +5921,12 @@ pub mod list_jobs_output {
             self.jobs = input;
             self
         }
-        /// <p>The token for the next set of results, or <b>null</b> if there are no
-        /// additional results.</p>
+        /// <p>The token for the next set of results, or <b>null</b> if there are no additional results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of results, or <b>null</b> if there are no
-        /// additional results.</p>
+        /// <p>The token for the next set of results, or <b>null</b> if there are no additional results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6102,8 +5954,7 @@ pub struct ListJobExecutionsForThingOutput {
     /// <p>A list of job execution summaries.</p>
     pub execution_summaries:
         std::option::Option<std::vec::Vec<crate::model::JobExecutionSummaryForThing>>,
-    /// <p>The token for the next set of results, or <b>null</b> if there are no
-    /// additional results.</p>
+    /// <p>The token for the next set of results, or <b>null</b> if there are no additional results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListJobExecutionsForThingOutput {
@@ -6113,8 +5964,7 @@ impl ListJobExecutionsForThingOutput {
     ) -> std::option::Option<&[crate::model::JobExecutionSummaryForThing]> {
         self.execution_summaries.as_deref()
     }
-    /// <p>The token for the next set of results, or <b>null</b> if there are no
-    /// additional results.</p>
+    /// <p>The token for the next set of results, or <b>null</b> if there are no additional results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -6160,14 +6010,12 @@ pub mod list_job_executions_for_thing_output {
             self.execution_summaries = input;
             self
         }
-        /// <p>The token for the next set of results, or <b>null</b> if there are no
-        /// additional results.</p>
+        /// <p>The token for the next set of results, or <b>null</b> if there are no additional results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of results, or <b>null</b> if there are no
-        /// additional results.</p>
+        /// <p>The token for the next set of results, or <b>null</b> if there are no additional results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6195,8 +6043,7 @@ pub struct ListJobExecutionsForJobOutput {
     /// <p>A list of job execution summaries.</p>
     pub execution_summaries:
         std::option::Option<std::vec::Vec<crate::model::JobExecutionSummaryForJob>>,
-    /// <p>The token for the next set of results, or <b>null</b> if there are no
-    /// additional results.</p>
+    /// <p>The token for the next set of results, or <b>null</b> if there are no additional results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListJobExecutionsForJobOutput {
@@ -6206,8 +6053,7 @@ impl ListJobExecutionsForJobOutput {
     ) -> std::option::Option<&[crate::model::JobExecutionSummaryForJob]> {
         self.execution_summaries.as_deref()
     }
-    /// <p>The token for the next set of results, or <b>null</b> if there are no
-    /// additional results.</p>
+    /// <p>The token for the next set of results, or <b>null</b> if there are no additional results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -6253,14 +6099,12 @@ pub mod list_job_executions_for_job_output {
             self.execution_summaries = input;
             self
         }
-        /// <p>The token for the next set of results, or <b>null</b> if there are no
-        /// additional results.</p>
+        /// <p>The token for the next set of results, or <b>null</b> if there are no additional results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of results, or <b>null</b> if there are no
-        /// additional results.</p>
+        /// <p>The token for the next set of results, or <b>null</b> if there are no additional results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6287,8 +6131,7 @@ impl ListJobExecutionsForJobOutput {
 pub struct ListIndicesOutput {
     /// <p>The index names.</p>
     pub index_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional
-    /// results.</p>
+    /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListIndicesOutput {
@@ -6296,8 +6139,7 @@ impl ListIndicesOutput {
     pub fn index_names(&self) -> std::option::Option<&[std::string::String]> {
         self.index_names.as_deref()
     }
-    /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional
-    /// results.</p>
+    /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -6339,14 +6181,12 @@ pub mod list_indices_output {
             self.index_names = input;
             self
         }
-        /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional
-        /// results.</p>
+        /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional
-        /// results.</p>
+        /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6373,8 +6213,7 @@ impl ListIndicesOutput {
 pub struct ListFleetMetricsOutput {
     /// <p>The list of fleet metrics objects.</p>
     pub fleet_metrics: std::option::Option<std::vec::Vec<crate::model::FleetMetricNameAndArn>>,
-    /// <p>The token for the next set of results. Will not be returned if the operation has returned
-    /// all results.</p>
+    /// <p>The token for the next set of results. Will not be returned if the operation has returned all results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFleetMetricsOutput {
@@ -6382,8 +6221,7 @@ impl ListFleetMetricsOutput {
     pub fn fleet_metrics(&self) -> std::option::Option<&[crate::model::FleetMetricNameAndArn]> {
         self.fleet_metrics.as_deref()
     }
-    /// <p>The token for the next set of results. Will not be returned if the operation has returned
-    /// all results.</p>
+    /// <p>The token for the next set of results. Will not be returned if the operation has returned all results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -6426,14 +6264,12 @@ pub mod list_fleet_metrics_output {
             self.fleet_metrics = input;
             self
         }
-        /// <p>The token for the next set of results. Will not be returned if the operation has returned
-        /// all results.</p>
+        /// <p>The token for the next set of results. Will not be returned if the operation has returned all results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of results. Will not be returned if the operation has returned
-        /// all results.</p>
+        /// <p>The token for the next set of results. Will not be returned if the operation has returned all results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6629,27 +6465,19 @@ impl ListDimensionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDetectMitigationActionsTasksOutput {
-    /// <p>
-    /// The collection of ML Detect mitigation tasks that matched the filter criteria.
-    /// </p>
+    /// <p> The collection of ML Detect mitigation tasks that matched the filter criteria. </p>
     pub tasks: std::option::Option<std::vec::Vec<crate::model::DetectMitigationActionsTaskSummary>>,
-    /// <p>
-    /// A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.
-    /// </p>
+    /// <p> A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDetectMitigationActionsTasksOutput {
-    /// <p>
-    /// The collection of ML Detect mitigation tasks that matched the filter criteria.
-    /// </p>
+    /// <p> The collection of ML Detect mitigation tasks that matched the filter criteria. </p>
     pub fn tasks(
         &self,
     ) -> std::option::Option<&[crate::model::DetectMitigationActionsTaskSummary]> {
         self.tasks.as_deref()
     }
-    /// <p>
-    /// A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.
-    /// </p>
+    /// <p> A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -6677,18 +6505,14 @@ pub mod list_detect_mitigation_actions_tasks_output {
         ///
         /// To override the contents of this collection use [`set_tasks`](Self::set_tasks).
         ///
-        /// <p>
-        /// The collection of ML Detect mitigation tasks that matched the filter criteria.
-        /// </p>
+        /// <p> The collection of ML Detect mitigation tasks that matched the filter criteria. </p>
         pub fn tasks(mut self, input: crate::model::DetectMitigationActionsTaskSummary) -> Self {
             let mut v = self.tasks.unwrap_or_default();
             v.push(input);
             self.tasks = Some(v);
             self
         }
-        /// <p>
-        /// The collection of ML Detect mitigation tasks that matched the filter criteria.
-        /// </p>
+        /// <p> The collection of ML Detect mitigation tasks that matched the filter criteria. </p>
         pub fn set_tasks(
             mut self,
             input: std::option::Option<
@@ -6698,16 +6522,12 @@ pub mod list_detect_mitigation_actions_tasks_output {
             self.tasks = input;
             self
         }
-        /// <p>
-        /// A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.
-        /// </p>
+        /// <p> A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>
-        /// A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.
-        /// </p>
+        /// <p> A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6732,28 +6552,20 @@ impl ListDetectMitigationActionsTasksOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDetectMitigationActionsExecutionsOutput {
-    /// <p>
-    /// List of actions executions.
-    /// </p>
+    /// <p> List of actions executions. </p>
     pub actions_executions:
         std::option::Option<std::vec::Vec<crate::model::DetectMitigationActionExecution>>,
-    /// <p>
-    /// A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.
-    /// </p>
+    /// <p> A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDetectMitigationActionsExecutionsOutput {
-    /// <p>
-    /// List of actions executions.
-    /// </p>
+    /// <p> List of actions executions. </p>
     pub fn actions_executions(
         &self,
     ) -> std::option::Option<&[crate::model::DetectMitigationActionExecution]> {
         self.actions_executions.as_deref()
     }
-    /// <p>
-    /// A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.
-    /// </p>
+    /// <p> A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -6781,9 +6593,7 @@ pub mod list_detect_mitigation_actions_executions_output {
         ///
         /// To override the contents of this collection use [`set_actions_executions`](Self::set_actions_executions).
         ///
-        /// <p>
-        /// List of actions executions.
-        /// </p>
+        /// <p> List of actions executions. </p>
         pub fn actions_executions(
             mut self,
             input: crate::model::DetectMitigationActionExecution,
@@ -6793,9 +6603,7 @@ pub mod list_detect_mitigation_actions_executions_output {
             self.actions_executions = Some(v);
             self
         }
-        /// <p>
-        /// List of actions executions.
-        /// </p>
+        /// <p> List of actions executions. </p>
         pub fn set_actions_executions(
             mut self,
             input: std::option::Option<
@@ -6805,16 +6613,12 @@ pub mod list_detect_mitigation_actions_executions_output {
             self.actions_executions = input;
             self
         }
-        /// <p>
-        /// A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.
-        /// </p>
+        /// <p> A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>
-        /// A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.
-        /// </p>
+        /// <p> A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6839,27 +6643,17 @@ impl ListDetectMitigationActionsExecutionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCustomMetricsOutput {
-    /// <p>
-    /// The name of the custom metric.
-    /// </p>
+    /// <p> The name of the custom metric. </p>
     pub metric_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>
-    /// A token that can be used to retrieve the next set of results,
-    /// or <code>null</code> if there are no additional results.
-    /// </p>
+    /// <p> A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCustomMetricsOutput {
-    /// <p>
-    /// The name of the custom metric.
-    /// </p>
+    /// <p> The name of the custom metric. </p>
     pub fn metric_names(&self) -> std::option::Option<&[std::string::String]> {
         self.metric_names.as_deref()
     }
-    /// <p>
-    /// A token that can be used to retrieve the next set of results,
-    /// or <code>null</code> if there are no additional results.
-    /// </p>
+    /// <p> A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -6886,18 +6680,14 @@ pub mod list_custom_metrics_output {
         ///
         /// To override the contents of this collection use [`set_metric_names`](Self::set_metric_names).
         ///
-        /// <p>
-        /// The name of the custom metric.
-        /// </p>
+        /// <p> The name of the custom metric. </p>
         pub fn metric_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.metric_names.unwrap_or_default();
             v.push(input.into());
             self.metric_names = Some(v);
             self
         }
-        /// <p>
-        /// The name of the custom metric.
-        /// </p>
+        /// <p> The name of the custom metric. </p>
         pub fn set_metric_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6905,18 +6695,12 @@ pub mod list_custom_metrics_output {
             self.metric_names = input;
             self
         }
-        /// <p>
-        /// A token that can be used to retrieve the next set of results,
-        /// or <code>null</code> if there are no additional results.
-        /// </p>
+        /// <p> A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>
-        /// A token that can be used to retrieve the next set of results,
-        /// or <code>null</code> if there are no additional results.
-        /// </p>
+        /// <p> A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6943,8 +6727,7 @@ impl ListCustomMetricsOutput {
 pub struct ListCertificatesByCaOutput {
     /// <p>The device certificates signed by the specified CA certificate.</p>
     pub certificates: std::option::Option<std::vec::Vec<crate::model::Certificate>>,
-    /// <p>The marker for the next set of results, or null if there are no additional
-    /// results.</p>
+    /// <p>The marker for the next set of results, or null if there are no additional results.</p>
     pub next_marker: std::option::Option<std::string::String>,
 }
 impl ListCertificatesByCaOutput {
@@ -6952,8 +6735,7 @@ impl ListCertificatesByCaOutput {
     pub fn certificates(&self) -> std::option::Option<&[crate::model::Certificate]> {
         self.certificates.as_deref()
     }
-    /// <p>The marker for the next set of results, or null if there are no additional
-    /// results.</p>
+    /// <p>The marker for the next set of results, or null if there are no additional results.</p>
     pub fn next_marker(&self) -> std::option::Option<&str> {
         self.next_marker.as_deref()
     }
@@ -6995,14 +6777,12 @@ pub mod list_certificates_by_ca_output {
             self.certificates = input;
             self
         }
-        /// <p>The marker for the next set of results, or null if there are no additional
-        /// results.</p>
+        /// <p>The marker for the next set of results, or null if there are no additional results.</p>
         pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_marker = Some(input.into());
             self
         }
-        /// <p>The marker for the next set of results, or null if there are no additional
-        /// results.</p>
+        /// <p>The marker for the next set of results, or null if there are no additional results.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
@@ -7029,8 +6809,7 @@ impl ListCertificatesByCaOutput {
 pub struct ListCertificatesOutput {
     /// <p>The descriptions of the certificates.</p>
     pub certificates: std::option::Option<std::vec::Vec<crate::model::Certificate>>,
-    /// <p>The marker for the next set of results, or null if there are no additional
-    /// results.</p>
+    /// <p>The marker for the next set of results, or null if there are no additional results.</p>
     pub next_marker: std::option::Option<std::string::String>,
 }
 impl ListCertificatesOutput {
@@ -7038,8 +6817,7 @@ impl ListCertificatesOutput {
     pub fn certificates(&self) -> std::option::Option<&[crate::model::Certificate]> {
         self.certificates.as_deref()
     }
-    /// <p>The marker for the next set of results, or null if there are no additional
-    /// results.</p>
+    /// <p>The marker for the next set of results, or null if there are no additional results.</p>
     pub fn next_marker(&self) -> std::option::Option<&str> {
         self.next_marker.as_deref()
     }
@@ -7081,14 +6859,12 @@ pub mod list_certificates_output {
             self.certificates = input;
             self
         }
-        /// <p>The marker for the next set of results, or null if there are no additional
-        /// results.</p>
+        /// <p>The marker for the next set of results, or null if there are no additional results.</p>
         pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_marker = Some(input.into());
             self
         }
-        /// <p>The marker for the next set of results, or null if there are no additional
-        /// results.</p>
+        /// <p>The marker for the next set of results, or null if there are no additional results.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
@@ -7362,8 +7138,7 @@ impl ListAuthorizersOutput {
 pub struct ListAuditTasksOutput {
     /// <p>The audits that were performed during the specified time period.</p>
     pub tasks: std::option::Option<std::vec::Vec<crate::model::AuditTaskMetadata>>,
-    /// <p>A token that can be used to retrieve the next set of results, or <code>null</code>
-    /// if there are no additional results.</p>
+    /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAuditTasksOutput {
@@ -7371,8 +7146,7 @@ impl ListAuditTasksOutput {
     pub fn tasks(&self) -> std::option::Option<&[crate::model::AuditTaskMetadata]> {
         self.tasks.as_deref()
     }
-    /// <p>A token that can be used to retrieve the next set of results, or <code>null</code>
-    /// if there are no additional results.</p>
+    /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -7414,14 +7188,12 @@ pub mod list_audit_tasks_output {
             self.tasks = input;
             self
         }
-        /// <p>A token that can be used to retrieve the next set of results, or <code>null</code>
-        /// if there are no additional results.</p>
+        /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token that can be used to retrieve the next set of results, or <code>null</code>
-        /// if there are no additional results.</p>
+        /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7446,25 +7218,17 @@ impl ListAuditTasksOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAuditSuppressionsOutput {
-    /// <p>
-    /// List of audit suppressions.
-    /// </p>
+    /// <p> List of audit suppressions. </p>
     pub suppressions: std::option::Option<std::vec::Vec<crate::model::AuditSuppression>>,
-    /// <p>
-    /// A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.
-    /// </p>
+    /// <p> A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAuditSuppressionsOutput {
-    /// <p>
-    /// List of audit suppressions.
-    /// </p>
+    /// <p> List of audit suppressions. </p>
     pub fn suppressions(&self) -> std::option::Option<&[crate::model::AuditSuppression]> {
         self.suppressions.as_deref()
     }
-    /// <p>
-    /// A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.
-    /// </p>
+    /// <p> A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -7491,18 +7255,14 @@ pub mod list_audit_suppressions_output {
         ///
         /// To override the contents of this collection use [`set_suppressions`](Self::set_suppressions).
         ///
-        /// <p>
-        /// List of audit suppressions.
-        /// </p>
+        /// <p> List of audit suppressions. </p>
         pub fn suppressions(mut self, input: crate::model::AuditSuppression) -> Self {
             let mut v = self.suppressions.unwrap_or_default();
             v.push(input);
             self.suppressions = Some(v);
             self
         }
-        /// <p>
-        /// List of audit suppressions.
-        /// </p>
+        /// <p> List of audit suppressions. </p>
         pub fn set_suppressions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AuditSuppression>>,
@@ -7510,16 +7270,12 @@ pub mod list_audit_suppressions_output {
             self.suppressions = input;
             self
         }
-        /// <p>
-        /// A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.
-        /// </p>
+        /// <p> A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>
-        /// A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.
-        /// </p>
+        /// <p> A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7725,8 +7481,7 @@ impl ListAuditMitigationActionsExecutionsOutput {
 pub struct ListAuditFindingsOutput {
     /// <p>The findings (results) of the audit.</p>
     pub findings: std::option::Option<std::vec::Vec<crate::model::AuditFinding>>,
-    /// <p>A token that can be used to retrieve the next set of results, or <code>null</code>
-    /// if there are no additional results.</p>
+    /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAuditFindingsOutput {
@@ -7734,8 +7489,7 @@ impl ListAuditFindingsOutput {
     pub fn findings(&self) -> std::option::Option<&[crate::model::AuditFinding]> {
         self.findings.as_deref()
     }
-    /// <p>A token that can be used to retrieve the next set of results, or <code>null</code>
-    /// if there are no additional results.</p>
+    /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -7777,14 +7531,12 @@ pub mod list_audit_findings_output {
             self.findings = input;
             self
         }
-        /// <p>A token that can be used to retrieve the next set of results, or <code>null</code>
-        /// if there are no additional results.</p>
+        /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token that can be used to retrieve the next set of results, or <code>null</code>
-        /// if there are no additional results.</p>
+        /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7811,8 +7563,7 @@ impl ListAuditFindingsOutput {
 pub struct ListAttachedPoliciesOutput {
     /// <p>The policies.</p>
     pub policies: std::option::Option<std::vec::Vec<crate::model::Policy>>,
-    /// <p>The token to retrieve the next set of results, or ``null`` if there are no more
-    /// results.</p>
+    /// <p>The token to retrieve the next set of results, or ``null`` if there are no more results.</p>
     pub next_marker: std::option::Option<std::string::String>,
 }
 impl ListAttachedPoliciesOutput {
@@ -7820,8 +7571,7 @@ impl ListAttachedPoliciesOutput {
     pub fn policies(&self) -> std::option::Option<&[crate::model::Policy]> {
         self.policies.as_deref()
     }
-    /// <p>The token to retrieve the next set of results, or ``null`` if there are no more
-    /// results.</p>
+    /// <p>The token to retrieve the next set of results, or ``null`` if there are no more results.</p>
     pub fn next_marker(&self) -> std::option::Option<&str> {
         self.next_marker.as_deref()
     }
@@ -7863,14 +7613,12 @@ pub mod list_attached_policies_output {
             self.policies = input;
             self
         }
-        /// <p>The token to retrieve the next set of results, or ``null`` if there are no more
-        /// results.</p>
+        /// <p>The token to retrieve the next set of results, or ``null`` if there are no more results.</p>
         pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_marker = Some(input.into());
             self
         }
-        /// <p>The token to retrieve the next set of results, or ``null`` if there are no more
-        /// results.</p>
+        /// <p>The token to retrieve the next set of results, or ``null`` if there are no more results.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
@@ -7897,8 +7645,7 @@ impl ListAttachedPoliciesOutput {
 pub struct ListActiveViolationsOutput {
     /// <p>The list of active violations.</p>
     pub active_violations: std::option::Option<std::vec::Vec<crate::model::ActiveViolation>>,
-    /// <p>A token that can be used to retrieve the next set of results,
-    /// or <code>null</code> if there are no additional results.</p>
+    /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListActiveViolationsOutput {
@@ -7906,8 +7653,7 @@ impl ListActiveViolationsOutput {
     pub fn active_violations(&self) -> std::option::Option<&[crate::model::ActiveViolation]> {
         self.active_violations.as_deref()
     }
-    /// <p>A token that can be used to retrieve the next set of results,
-    /// or <code>null</code> if there are no additional results.</p>
+    /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -7950,14 +7696,12 @@ pub mod list_active_violations_output {
             self.active_violations = input;
             self
         }
-        /// <p>A token that can be used to retrieve the next set of results,
-        /// or <code>null</code> if there are no additional results.</p>
+        /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token that can be used to retrieve the next set of results,
-        /// or <code>null</code> if there are no additional results.</p>
+        /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8209,13 +7953,11 @@ impl GetTopicRuleOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetStatisticsOutput {
-    /// <p>The statistics returned by the Fleet Indexing service based on the query and aggregation
-    /// field.</p>
+    /// <p>The statistics returned by the Fleet Indexing service based on the query and aggregation field.</p>
     pub statistics: std::option::Option<crate::model::Statistics>,
 }
 impl GetStatisticsOutput {
-    /// <p>The statistics returned by the Fleet Indexing service based on the query and aggregation
-    /// field.</p>
+    /// <p>The statistics returned by the Fleet Indexing service based on the query and aggregation field.</p>
     pub fn statistics(&self) -> std::option::Option<&crate::model::Statistics> {
         self.statistics.as_ref()
     }
@@ -8236,14 +7978,12 @@ pub mod get_statistics_output {
         pub(crate) statistics: std::option::Option<crate::model::Statistics>,
     }
     impl Builder {
-        /// <p>The statistics returned by the Fleet Indexing service based on the query and aggregation
-        /// field.</p>
+        /// <p>The statistics returned by the Fleet Indexing service based on the query and aggregation field.</p>
         pub fn statistics(mut self, input: crate::model::Statistics) -> Self {
             self.statistics = Some(input);
             self
         }
-        /// <p>The statistics returned by the Fleet Indexing service based on the query and aggregation
-        /// field.</p>
+        /// <p>The statistics returned by the Fleet Indexing service based on the query and aggregation field.</p>
         pub fn set_statistics(
             mut self,
             input: std::option::Option<crate::model::Statistics>,
@@ -9178,10 +8918,8 @@ pub struct GetBucketsAggregationOutput {
     /// <p>The total number of things that fit the query string criteria.</p>
     pub total_count: i32,
     /// <p>The main part of the response with a list of buckets. Each bucket contains a <code>keyValue</code> and a <code>count</code>.</p>
-    /// <p>
-    /// <code>keyValue</code>: The aggregation field value counted for the particular bucket.</p>
-    /// <p>
-    /// <code>count</code>: The number of documents that have that value.</p>
+    /// <p> <code>keyValue</code>: The aggregation field value counted for the particular bucket.</p>
+    /// <p> <code>count</code>: The number of documents that have that value.</p>
     pub buckets: std::option::Option<std::vec::Vec<crate::model::Bucket>>,
 }
 impl GetBucketsAggregationOutput {
@@ -9190,10 +8928,8 @@ impl GetBucketsAggregationOutput {
         self.total_count
     }
     /// <p>The main part of the response with a list of buckets. Each bucket contains a <code>keyValue</code> and a <code>count</code>.</p>
-    /// <p>
-    /// <code>keyValue</code>: The aggregation field value counted for the particular bucket.</p>
-    /// <p>
-    /// <code>count</code>: The number of documents that have that value.</p>
+    /// <p> <code>keyValue</code>: The aggregation field value counted for the particular bucket.</p>
+    /// <p> <code>count</code>: The number of documents that have that value.</p>
     pub fn buckets(&self) -> std::option::Option<&[crate::model::Bucket]> {
         self.buckets.as_deref()
     }
@@ -9231,10 +8967,8 @@ pub mod get_buckets_aggregation_output {
         /// To override the contents of this collection use [`set_buckets`](Self::set_buckets).
         ///
         /// <p>The main part of the response with a list of buckets. Each bucket contains a <code>keyValue</code> and a <code>count</code>.</p>
-        /// <p>
-        /// <code>keyValue</code>: The aggregation field value counted for the particular bucket.</p>
-        /// <p>
-        /// <code>count</code>: The number of documents that have that value.</p>
+        /// <p> <code>keyValue</code>: The aggregation field value counted for the particular bucket.</p>
+        /// <p> <code>count</code>: The number of documents that have that value.</p>
         pub fn buckets(mut self, input: crate::model::Bucket) -> Self {
             let mut v = self.buckets.unwrap_or_default();
             v.push(input);
@@ -9242,10 +8976,8 @@ pub mod get_buckets_aggregation_output {
             self
         }
         /// <p>The main part of the response with a list of buckets. Each bucket contains a <code>keyValue</code> and a <code>count</code>.</p>
-        /// <p>
-        /// <code>keyValue</code>: The aggregation field value counted for the particular bucket.</p>
-        /// <p>
-        /// <code>count</code>: The number of documents that have that value.</p>
+        /// <p> <code>keyValue</code>: The aggregation field value counted for the particular bucket.</p>
+        /// <p> <code>count</code>: The number of documents that have that value.</p>
         pub fn set_buckets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Bucket>>,
@@ -9273,25 +9005,17 @@ impl GetBucketsAggregationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBehaviorModelTrainingSummariesOutput {
-    /// <p>
-    /// A list of all ML Detect behaviors and their model status for a given Security Profile.
-    /// </p>
+    /// <p> A list of all ML Detect behaviors and their model status for a given Security Profile. </p>
     pub summaries: std::option::Option<std::vec::Vec<crate::model::BehaviorModelTrainingSummary>>,
-    /// <p>
-    /// A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.
-    /// </p>
+    /// <p> A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetBehaviorModelTrainingSummariesOutput {
-    /// <p>
-    /// A list of all ML Detect behaviors and their model status for a given Security Profile.
-    /// </p>
+    /// <p> A list of all ML Detect behaviors and their model status for a given Security Profile. </p>
     pub fn summaries(&self) -> std::option::Option<&[crate::model::BehaviorModelTrainingSummary]> {
         self.summaries.as_deref()
     }
-    /// <p>
-    /// A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.
-    /// </p>
+    /// <p> A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -9319,18 +9043,14 @@ pub mod get_behavior_model_training_summaries_output {
         ///
         /// To override the contents of this collection use [`set_summaries`](Self::set_summaries).
         ///
-        /// <p>
-        /// A list of all ML Detect behaviors and their model status for a given Security Profile.
-        /// </p>
+        /// <p> A list of all ML Detect behaviors and their model status for a given Security Profile. </p>
         pub fn summaries(mut self, input: crate::model::BehaviorModelTrainingSummary) -> Self {
             let mut v = self.summaries.unwrap_or_default();
             v.push(input);
             self.summaries = Some(v);
             self
         }
-        /// <p>
-        /// A list of all ML Detect behaviors and their model status for a given Security Profile.
-        /// </p>
+        /// <p> A list of all ML Detect behaviors and their model status for a given Security Profile. </p>
         pub fn set_summaries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BehaviorModelTrainingSummary>>,
@@ -9338,16 +9058,12 @@ pub mod get_behavior_model_training_summaries_output {
             self.summaries = input;
             self
         }
-        /// <p>
-        /// A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.
-        /// </p>
+        /// <p> A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>
-        /// A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.
-        /// </p>
+        /// <p> A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -9558,12 +9274,9 @@ pub struct DescribeThingTypeOutput {
     pub thing_type_id: std::option::Option<std::string::String>,
     /// <p>The thing type ARN.</p>
     pub thing_type_arn: std::option::Option<std::string::String>,
-    /// <p>The ThingTypeProperties contains information about the thing type including
-    /// description, and a list of searchable thing attribute names.</p>
+    /// <p>The ThingTypeProperties contains information about the thing type including description, and a list of searchable thing attribute names.</p>
     pub thing_type_properties: std::option::Option<crate::model::ThingTypeProperties>,
-    /// <p>The ThingTypeMetadata contains additional information about the thing type
-    /// including: creation date and time, a value indicating whether the thing type is
-    /// deprecated, and a date and time when it was deprecated.</p>
+    /// <p>The ThingTypeMetadata contains additional information about the thing type including: creation date and time, a value indicating whether the thing type is deprecated, and a date and time when it was deprecated.</p>
     pub thing_type_metadata: std::option::Option<crate::model::ThingTypeMetadata>,
 }
 impl DescribeThingTypeOutput {
@@ -9579,14 +9292,11 @@ impl DescribeThingTypeOutput {
     pub fn thing_type_arn(&self) -> std::option::Option<&str> {
         self.thing_type_arn.as_deref()
     }
-    /// <p>The ThingTypeProperties contains information about the thing type including
-    /// description, and a list of searchable thing attribute names.</p>
+    /// <p>The ThingTypeProperties contains information about the thing type including description, and a list of searchable thing attribute names.</p>
     pub fn thing_type_properties(&self) -> std::option::Option<&crate::model::ThingTypeProperties> {
         self.thing_type_properties.as_ref()
     }
-    /// <p>The ThingTypeMetadata contains additional information about the thing type
-    /// including: creation date and time, a value indicating whether the thing type is
-    /// deprecated, and a date and time when it was deprecated.</p>
+    /// <p>The ThingTypeMetadata contains additional information about the thing type including: creation date and time, a value indicating whether the thing type is deprecated, and a date and time when it was deprecated.</p>
     pub fn thing_type_metadata(&self) -> std::option::Option<&crate::model::ThingTypeMetadata> {
         self.thing_type_metadata.as_ref()
     }
@@ -9654,14 +9364,12 @@ pub mod describe_thing_type_output {
             self.thing_type_arn = input;
             self
         }
-        /// <p>The ThingTypeProperties contains information about the thing type including
-        /// description, and a list of searchable thing attribute names.</p>
+        /// <p>The ThingTypeProperties contains information about the thing type including description, and a list of searchable thing attribute names.</p>
         pub fn thing_type_properties(mut self, input: crate::model::ThingTypeProperties) -> Self {
             self.thing_type_properties = Some(input);
             self
         }
-        /// <p>The ThingTypeProperties contains information about the thing type including
-        /// description, and a list of searchable thing attribute names.</p>
+        /// <p>The ThingTypeProperties contains information about the thing type including description, and a list of searchable thing attribute names.</p>
         pub fn set_thing_type_properties(
             mut self,
             input: std::option::Option<crate::model::ThingTypeProperties>,
@@ -9669,16 +9377,12 @@ pub mod describe_thing_type_output {
             self.thing_type_properties = input;
             self
         }
-        /// <p>The ThingTypeMetadata contains additional information about the thing type
-        /// including: creation date and time, a value indicating whether the thing type is
-        /// deprecated, and a date and time when it was deprecated.</p>
+        /// <p>The ThingTypeMetadata contains additional information about the thing type including: creation date and time, a value indicating whether the thing type is deprecated, and a date and time when it was deprecated.</p>
         pub fn thing_type_metadata(mut self, input: crate::model::ThingTypeMetadata) -> Self {
             self.thing_type_metadata = Some(input);
             self
         }
-        /// <p>The ThingTypeMetadata contains additional information about the thing type
-        /// including: creation date and time, a value indicating whether the thing type is
-        /// deprecated, and a date and time when it was deprecated.</p>
+        /// <p>The ThingTypeMetadata contains additional information about the thing type including: creation date and time, a value indicating whether the thing type is deprecated, and a date and time when it was deprecated.</p>
         pub fn set_thing_type_metadata(
             mut self,
             input: std::option::Option<crate::model::ThingTypeMetadata>,
@@ -10235,9 +9939,7 @@ impl DescribeThingGroupOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeThingOutput {
-    /// <p>The default MQTT client ID. For a typical device, the thing name is also used as the default MQTT client ID.  
-    /// Although we don’t require a mapping between a thing's registry name and its use of MQTT client IDs, certificates, or
-    /// shadow state, we recommend that you choose a thing name and use it as the MQTT client ID for the registry and the Device Shadow service.</p>
+    /// <p>The default MQTT client ID. For a typical device, the thing name is also used as the default MQTT client ID. Although we don’t require a mapping between a thing's registry name and its use of MQTT client IDs, certificates, or shadow state, we recommend that you choose a thing name and use it as the MQTT client ID for the registry and the Device Shadow service.</p>
     /// <p>This lets you better organize your IoT fleet without removing the flexibility of the underlying device certificate model or shadows.</p>
     pub default_client_id: std::option::Option<std::string::String>,
     /// <p>The name of the thing.</p>
@@ -10251,20 +9953,15 @@ pub struct DescribeThingOutput {
     /// <p>The thing attributes.</p>
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The current version of the thing record in the registry.</p>
-    /// <note>
-    /// <p>To avoid unintentional changes to the information in the registry, you can pass
-    /// the version information in the <code>expectedVersion</code> parameter of the
-    /// <code>UpdateThing</code> and <code>DeleteThing</code> calls.</p>
+    /// <p>The current version of the thing record in the registry.</p> <note>
+    /// <p>To avoid unintentional changes to the information in the registry, you can pass the version information in the <code>expectedVersion</code> parameter of the <code>UpdateThing</code> and <code>DeleteThing</code> calls.</p>
     /// </note>
     pub version: i64,
     /// <p>The name of the billing group the thing belongs to.</p>
     pub billing_group_name: std::option::Option<std::string::String>,
 }
 impl DescribeThingOutput {
-    /// <p>The default MQTT client ID. For a typical device, the thing name is also used as the default MQTT client ID.  
-    /// Although we don’t require a mapping between a thing's registry name and its use of MQTT client IDs, certificates, or
-    /// shadow state, we recommend that you choose a thing name and use it as the MQTT client ID for the registry and the Device Shadow service.</p>
+    /// <p>The default MQTT client ID. For a typical device, the thing name is also used as the default MQTT client ID. Although we don’t require a mapping between a thing's registry name and its use of MQTT client IDs, certificates, or shadow state, we recommend that you choose a thing name and use it as the MQTT client ID for the registry and the Device Shadow service.</p>
     /// <p>This lets you better organize your IoT fleet without removing the flexibility of the underlying device certificate model or shadows.</p>
     pub fn default_client_id(&self) -> std::option::Option<&str> {
         self.default_client_id.as_deref()
@@ -10292,11 +9989,8 @@ impl DescribeThingOutput {
     {
         self.attributes.as_ref()
     }
-    /// <p>The current version of the thing record in the registry.</p>
-    /// <note>
-    /// <p>To avoid unintentional changes to the information in the registry, you can pass
-    /// the version information in the <code>expectedVersion</code> parameter of the
-    /// <code>UpdateThing</code> and <code>DeleteThing</code> calls.</p>
+    /// <p>The current version of the thing record in the registry.</p> <note>
+    /// <p>To avoid unintentional changes to the information in the registry, you can pass the version information in the <code>expectedVersion</code> parameter of the <code>UpdateThing</code> and <code>DeleteThing</code> calls.</p>
     /// </note>
     pub fn version(&self) -> i64 {
         self.version
@@ -10338,17 +10032,13 @@ pub mod describe_thing_output {
         pub(crate) billing_group_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The default MQTT client ID. For a typical device, the thing name is also used as the default MQTT client ID.  
-        /// Although we don’t require a mapping between a thing's registry name and its use of MQTT client IDs, certificates, or
-        /// shadow state, we recommend that you choose a thing name and use it as the MQTT client ID for the registry and the Device Shadow service.</p>
+        /// <p>The default MQTT client ID. For a typical device, the thing name is also used as the default MQTT client ID. Although we don’t require a mapping between a thing's registry name and its use of MQTT client IDs, certificates, or shadow state, we recommend that you choose a thing name and use it as the MQTT client ID for the registry and the Device Shadow service.</p>
         /// <p>This lets you better organize your IoT fleet without removing the flexibility of the underlying device certificate model or shadows.</p>
         pub fn default_client_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_client_id = Some(input.into());
             self
         }
-        /// <p>The default MQTT client ID. For a typical device, the thing name is also used as the default MQTT client ID.  
-        /// Although we don’t require a mapping between a thing's registry name and its use of MQTT client IDs, certificates, or
-        /// shadow state, we recommend that you choose a thing name and use it as the MQTT client ID for the registry and the Device Shadow service.</p>
+        /// <p>The default MQTT client ID. For a typical device, the thing name is also used as the default MQTT client ID. Although we don’t require a mapping between a thing's registry name and its use of MQTT client IDs, certificates, or shadow state, we recommend that you choose a thing name and use it as the MQTT client ID for the registry and the Device Shadow service.</p>
         /// <p>This lets you better organize your IoT fleet without removing the flexibility of the underlying device certificate model or shadows.</p>
         pub fn set_default_client_id(
             mut self,
@@ -10425,21 +10115,15 @@ pub mod describe_thing_output {
             self.attributes = input;
             self
         }
-        /// <p>The current version of the thing record in the registry.</p>
-        /// <note>
-        /// <p>To avoid unintentional changes to the information in the registry, you can pass
-        /// the version information in the <code>expectedVersion</code> parameter of the
-        /// <code>UpdateThing</code> and <code>DeleteThing</code> calls.</p>
+        /// <p>The current version of the thing record in the registry.</p> <note>
+        /// <p>To avoid unintentional changes to the information in the registry, you can pass the version information in the <code>expectedVersion</code> parameter of the <code>UpdateThing</code> and <code>DeleteThing</code> calls.</p>
         /// </note>
         pub fn version(mut self, input: i64) -> Self {
             self.version = Some(input);
             self
         }
-        /// <p>The current version of the thing record in the registry.</p>
-        /// <note>
-        /// <p>To avoid unintentional changes to the information in the registry, you can pass
-        /// the version information in the <code>expectedVersion</code> parameter of the
-        /// <code>UpdateThing</code> and <code>DeleteThing</code> calls.</p>
+        /// <p>The current version of the thing record in the registry.</p> <note>
+        /// <p>To avoid unintentional changes to the information in the registry, you can pass the version information in the <code>expectedVersion</code> parameter of the <code>UpdateThing</code> and <code>DeleteThing</code> calls.</p>
         /// </note>
         pub fn set_version(mut self, input: std::option::Option<i64>) -> Self {
             self.version = input;
@@ -10545,8 +10229,7 @@ pub struct DescribeSecurityProfileOutput {
     pub security_profile_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the security profile.</p>
     pub security_profile_arn: std::option::Option<std::string::String>,
-    /// <p>A description of the security profile (associated with the security profile
-    /// when it was created or updated).</p>
+    /// <p>A description of the security profile (associated with the security profile when it was created or updated).</p>
     pub security_profile_description: std::option::Option<std::string::String>,
     /// <p>Specifies the behaviors that, when violated by a device (thing), cause an alert.</p>
     pub behaviors: std::option::Option<std::vec::Vec<crate::model::Behavior>>,
@@ -10554,25 +10237,13 @@ pub struct DescribeSecurityProfileOutput {
     pub alert_targets: std::option::Option<
         std::collections::HashMap<crate::model::AlertTargetType, crate::model::AlertTarget>,
     >,
-    /// <p>
-    /// <i>Please use
-    /// <a>DescribeSecurityProfileResponse$additionalMetricsToRetainV2</a>
-    /// instead.</i>
-    /// </p>
-    /// <p>A list of metrics
-    /// whose data is retained (stored). By default, data is retained for any metric
-    /// used in the profile's <code>behaviors</code>, but
-    /// it is
-    /// also retained for any metric specified here.</p>
+    /// <p> <i>Please use <code>DescribeSecurityProfileResponse$additionalMetricsToRetainV2</code> instead.</i> </p>
+    /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here.</p>
     pub additional_metrics_to_retain: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any
-    /// metric used in the profile's behaviors, but
-    /// it is
-    /// also retained for any metric specified here.</p>
+    /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's behaviors, but it is also retained for any metric specified here.</p>
     pub additional_metrics_to_retain_v2:
         std::option::Option<std::vec::Vec<crate::model::MetricToRetain>>,
-    /// <p>The version of the security profile. A new version is generated whenever the
-    /// security profile is updated.</p>
+    /// <p>The version of the security profile. A new version is generated whenever the security profile is updated.</p>
     pub version: i64,
     /// <p>The time the security profile was created.</p>
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -10588,8 +10259,7 @@ impl DescribeSecurityProfileOutput {
     pub fn security_profile_arn(&self) -> std::option::Option<&str> {
         self.security_profile_arn.as_deref()
     }
-    /// <p>A description of the security profile (associated with the security profile
-    /// when it was created or updated).</p>
+    /// <p>A description of the security profile (associated with the security profile when it was created or updated).</p>
     pub fn security_profile_description(&self) -> std::option::Option<&str> {
         self.security_profile_description.as_deref()
     }
@@ -10605,30 +10275,18 @@ impl DescribeSecurityProfileOutput {
     > {
         self.alert_targets.as_ref()
     }
-    /// <p>
-    /// <i>Please use
-    /// <a>DescribeSecurityProfileResponse$additionalMetricsToRetainV2</a>
-    /// instead.</i>
-    /// </p>
-    /// <p>A list of metrics
-    /// whose data is retained (stored). By default, data is retained for any metric
-    /// used in the profile's <code>behaviors</code>, but
-    /// it is
-    /// also retained for any metric specified here.</p>
+    /// <p> <i>Please use <code>DescribeSecurityProfileResponse$additionalMetricsToRetainV2</code> instead.</i> </p>
+    /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here.</p>
     pub fn additional_metrics_to_retain(&self) -> std::option::Option<&[std::string::String]> {
         self.additional_metrics_to_retain.as_deref()
     }
-    /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any
-    /// metric used in the profile's behaviors, but
-    /// it is
-    /// also retained for any metric specified here.</p>
+    /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's behaviors, but it is also retained for any metric specified here.</p>
     pub fn additional_metrics_to_retain_v2(
         &self,
     ) -> std::option::Option<&[crate::model::MetricToRetain]> {
         self.additional_metrics_to_retain_v2.as_deref()
     }
-    /// <p>The version of the security profile. A new version is generated whenever the
-    /// security profile is updated.</p>
+    /// <p>The version of the security profile. A new version is generated whenever the security profile is updated.</p>
     pub fn version(&self) -> i64 {
         self.version
     }
@@ -10714,8 +10372,7 @@ pub mod describe_security_profile_output {
             self.security_profile_arn = input;
             self
         }
-        /// <p>A description of the security profile (associated with the security profile
-        /// when it was created or updated).</p>
+        /// <p>A description of the security profile (associated with the security profile when it was created or updated).</p>
         pub fn security_profile_description(
             mut self,
             input: impl Into<std::string::String>,
@@ -10723,8 +10380,7 @@ pub mod describe_security_profile_output {
             self.security_profile_description = Some(input.into());
             self
         }
-        /// <p>A description of the security profile (associated with the security profile
-        /// when it was created or updated).</p>
+        /// <p>A description of the security profile (associated with the security profile when it was created or updated).</p>
         pub fn set_security_profile_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10780,16 +10436,8 @@ pub mod describe_security_profile_output {
         ///
         /// To override the contents of this collection use [`set_additional_metrics_to_retain`](Self::set_additional_metrics_to_retain).
         ///
-        /// <p>
-        /// <i>Please use
-        /// <a>DescribeSecurityProfileResponse$additionalMetricsToRetainV2</a>
-        /// instead.</i>
-        /// </p>
-        /// <p>A list of metrics
-        /// whose data is retained (stored). By default, data is retained for any metric
-        /// used in the profile's <code>behaviors</code>, but
-        /// it is
-        /// also retained for any metric specified here.</p>
+        /// <p> <i>Please use <code>DescribeSecurityProfileResponse$additionalMetricsToRetainV2</code> instead.</i> </p>
+        /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here.</p>
         pub fn additional_metrics_to_retain(
             mut self,
             input: impl Into<std::string::String>,
@@ -10799,16 +10447,8 @@ pub mod describe_security_profile_output {
             self.additional_metrics_to_retain = Some(v);
             self
         }
-        /// <p>
-        /// <i>Please use
-        /// <a>DescribeSecurityProfileResponse$additionalMetricsToRetainV2</a>
-        /// instead.</i>
-        /// </p>
-        /// <p>A list of metrics
-        /// whose data is retained (stored). By default, data is retained for any metric
-        /// used in the profile's <code>behaviors</code>, but
-        /// it is
-        /// also retained for any metric specified here.</p>
+        /// <p> <i>Please use <code>DescribeSecurityProfileResponse$additionalMetricsToRetainV2</code> instead.</i> </p>
+        /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here.</p>
         pub fn set_additional_metrics_to_retain(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -10820,10 +10460,7 @@ pub mod describe_security_profile_output {
         ///
         /// To override the contents of this collection use [`set_additional_metrics_to_retain_v2`](Self::set_additional_metrics_to_retain_v2).
         ///
-        /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any
-        /// metric used in the profile's behaviors, but
-        /// it is
-        /// also retained for any metric specified here.</p>
+        /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's behaviors, but it is also retained for any metric specified here.</p>
         pub fn additional_metrics_to_retain_v2(
             mut self,
             input: crate::model::MetricToRetain,
@@ -10833,10 +10470,7 @@ pub mod describe_security_profile_output {
             self.additional_metrics_to_retain_v2 = Some(v);
             self
         }
-        /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any
-        /// metric used in the profile's behaviors, but
-        /// it is
-        /// also retained for any metric specified here.</p>
+        /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's behaviors, but it is also retained for any metric specified here.</p>
         pub fn set_additional_metrics_to_retain_v2(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MetricToRetain>>,
@@ -10844,14 +10478,12 @@ pub mod describe_security_profile_output {
             self.additional_metrics_to_retain_v2 = input;
             self
         }
-        /// <p>The version of the security profile. A new version is generated whenever the
-        /// security profile is updated.</p>
+        /// <p>The version of the security profile. A new version is generated whenever the security profile is updated.</p>
         pub fn version(mut self, input: i64) -> Self {
             self.version = Some(input);
             self
         }
-        /// <p>The version of the security profile. A new version is generated whenever the
-        /// security profile is updated.</p>
+        /// <p>The version of the security profile. A new version is generated whenever the security profile is updated.</p>
         pub fn set_version(mut self, input: std::option::Option<i64>) -> Self {
             self.version = input;
             self
@@ -10910,29 +10542,13 @@ impl DescribeSecurityProfileOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeScheduledAuditOutput {
-    /// <p>How often the scheduled audit takes
-    /// place, either
-    /// one of <code>DAILY</code>,
-    /// <code>WEEKLY</code>, <code>BIWEEKLY</code>, or <code>MONTHLY</code>. The start time of each audit is determined by the
-    /// system.</p>
+    /// <p>How often the scheduled audit takes place, either one of <code>DAILY</code>, <code>WEEKLY</code>, <code>BIWEEKLY</code>, or <code>MONTHLY</code>. The start time of each audit is determined by the system.</p>
     pub frequency: std::option::Option<crate::model::AuditFrequency>,
-    /// <p>The day of the month on which the scheduled audit takes place.
-    /// This is
-    /// will be <code>1</code>
-    /// through <code>31</code> or <code>LAST</code>. If days
-    /// <code>29</code>-<code>31</code>
-    /// are specified, and the month does not have that many days, the audit takes place on the <code>LAST</code>
-    /// day of the month.</p>
+    /// <p>The day of the month on which the scheduled audit takes place. This is will be <code>1</code> through <code>31</code> or <code>LAST</code>. If days <code>29</code>-<code>31</code> are specified, and the month does not have that many days, the audit takes place on the <code>LAST</code> day of the month.</p>
     pub day_of_month: std::option::Option<std::string::String>,
-    /// <p>The day of the week on which the scheduled audit takes
-    /// place,
-    /// either one of
-    /// <code>SUN</code>, <code>MON</code>, <code>TUE</code>, <code>WED</code>, <code>THU</code>, <code>FRI</code>, or <code>SAT</code>.</p>
+    /// <p>The day of the week on which the scheduled audit takes place, either one of <code>SUN</code>, <code>MON</code>, <code>TUE</code>, <code>WED</code>, <code>THU</code>, <code>FRI</code>, or <code>SAT</code>.</p>
     pub day_of_week: std::option::Option<crate::model::DayOfWeek>,
-    /// <p>Which checks are performed during the scheduled audit. Checks must be
-    /// enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-    /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-    /// to select which checks are enabled.)</p>
+    /// <p>Which checks are performed during the scheduled audit. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
     pub target_check_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of the scheduled audit.</p>
     pub scheduled_audit_name: std::option::Option<std::string::String>,
@@ -10940,35 +10556,19 @@ pub struct DescribeScheduledAuditOutput {
     pub scheduled_audit_arn: std::option::Option<std::string::String>,
 }
 impl DescribeScheduledAuditOutput {
-    /// <p>How often the scheduled audit takes
-    /// place, either
-    /// one of <code>DAILY</code>,
-    /// <code>WEEKLY</code>, <code>BIWEEKLY</code>, or <code>MONTHLY</code>. The start time of each audit is determined by the
-    /// system.</p>
+    /// <p>How often the scheduled audit takes place, either one of <code>DAILY</code>, <code>WEEKLY</code>, <code>BIWEEKLY</code>, or <code>MONTHLY</code>. The start time of each audit is determined by the system.</p>
     pub fn frequency(&self) -> std::option::Option<&crate::model::AuditFrequency> {
         self.frequency.as_ref()
     }
-    /// <p>The day of the month on which the scheduled audit takes place.
-    /// This is
-    /// will be <code>1</code>
-    /// through <code>31</code> or <code>LAST</code>. If days
-    /// <code>29</code>-<code>31</code>
-    /// are specified, and the month does not have that many days, the audit takes place on the <code>LAST</code>
-    /// day of the month.</p>
+    /// <p>The day of the month on which the scheduled audit takes place. This is will be <code>1</code> through <code>31</code> or <code>LAST</code>. If days <code>29</code>-<code>31</code> are specified, and the month does not have that many days, the audit takes place on the <code>LAST</code> day of the month.</p>
     pub fn day_of_month(&self) -> std::option::Option<&str> {
         self.day_of_month.as_deref()
     }
-    /// <p>The day of the week on which the scheduled audit takes
-    /// place,
-    /// either one of
-    /// <code>SUN</code>, <code>MON</code>, <code>TUE</code>, <code>WED</code>, <code>THU</code>, <code>FRI</code>, or <code>SAT</code>.</p>
+    /// <p>The day of the week on which the scheduled audit takes place, either one of <code>SUN</code>, <code>MON</code>, <code>TUE</code>, <code>WED</code>, <code>THU</code>, <code>FRI</code>, or <code>SAT</code>.</p>
     pub fn day_of_week(&self) -> std::option::Option<&crate::model::DayOfWeek> {
         self.day_of_week.as_ref()
     }
-    /// <p>Which checks are performed during the scheduled audit. Checks must be
-    /// enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-    /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-    /// to select which checks are enabled.)</p>
+    /// <p>Which checks are performed during the scheduled audit. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
     pub fn target_check_names(&self) -> std::option::Option<&[std::string::String]> {
         self.target_check_names.as_deref()
     }
@@ -11007,20 +10607,12 @@ pub mod describe_scheduled_audit_output {
         pub(crate) scheduled_audit_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>How often the scheduled audit takes
-        /// place, either
-        /// one of <code>DAILY</code>,
-        /// <code>WEEKLY</code>, <code>BIWEEKLY</code>, or <code>MONTHLY</code>. The start time of each audit is determined by the
-        /// system.</p>
+        /// <p>How often the scheduled audit takes place, either one of <code>DAILY</code>, <code>WEEKLY</code>, <code>BIWEEKLY</code>, or <code>MONTHLY</code>. The start time of each audit is determined by the system.</p>
         pub fn frequency(mut self, input: crate::model::AuditFrequency) -> Self {
             self.frequency = Some(input);
             self
         }
-        /// <p>How often the scheduled audit takes
-        /// place, either
-        /// one of <code>DAILY</code>,
-        /// <code>WEEKLY</code>, <code>BIWEEKLY</code>, or <code>MONTHLY</code>. The start time of each audit is determined by the
-        /// system.</p>
+        /// <p>How often the scheduled audit takes place, either one of <code>DAILY</code>, <code>WEEKLY</code>, <code>BIWEEKLY</code>, or <code>MONTHLY</code>. The start time of each audit is determined by the system.</p>
         pub fn set_frequency(
             mut self,
             input: std::option::Option<crate::model::AuditFrequency>,
@@ -11028,40 +10620,22 @@ pub mod describe_scheduled_audit_output {
             self.frequency = input;
             self
         }
-        /// <p>The day of the month on which the scheduled audit takes place.
-        /// This is
-        /// will be <code>1</code>
-        /// through <code>31</code> or <code>LAST</code>. If days
-        /// <code>29</code>-<code>31</code>
-        /// are specified, and the month does not have that many days, the audit takes place on the <code>LAST</code>
-        /// day of the month.</p>
+        /// <p>The day of the month on which the scheduled audit takes place. This is will be <code>1</code> through <code>31</code> or <code>LAST</code>. If days <code>29</code>-<code>31</code> are specified, and the month does not have that many days, the audit takes place on the <code>LAST</code> day of the month.</p>
         pub fn day_of_month(mut self, input: impl Into<std::string::String>) -> Self {
             self.day_of_month = Some(input.into());
             self
         }
-        /// <p>The day of the month on which the scheduled audit takes place.
-        /// This is
-        /// will be <code>1</code>
-        /// through <code>31</code> or <code>LAST</code>. If days
-        /// <code>29</code>-<code>31</code>
-        /// are specified, and the month does not have that many days, the audit takes place on the <code>LAST</code>
-        /// day of the month.</p>
+        /// <p>The day of the month on which the scheduled audit takes place. This is will be <code>1</code> through <code>31</code> or <code>LAST</code>. If days <code>29</code>-<code>31</code> are specified, and the month does not have that many days, the audit takes place on the <code>LAST</code> day of the month.</p>
         pub fn set_day_of_month(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.day_of_month = input;
             self
         }
-        /// <p>The day of the week on which the scheduled audit takes
-        /// place,
-        /// either one of
-        /// <code>SUN</code>, <code>MON</code>, <code>TUE</code>, <code>WED</code>, <code>THU</code>, <code>FRI</code>, or <code>SAT</code>.</p>
+        /// <p>The day of the week on which the scheduled audit takes place, either one of <code>SUN</code>, <code>MON</code>, <code>TUE</code>, <code>WED</code>, <code>THU</code>, <code>FRI</code>, or <code>SAT</code>.</p>
         pub fn day_of_week(mut self, input: crate::model::DayOfWeek) -> Self {
             self.day_of_week = Some(input);
             self
         }
-        /// <p>The day of the week on which the scheduled audit takes
-        /// place,
-        /// either one of
-        /// <code>SUN</code>, <code>MON</code>, <code>TUE</code>, <code>WED</code>, <code>THU</code>, <code>FRI</code>, or <code>SAT</code>.</p>
+        /// <p>The day of the week on which the scheduled audit takes place, either one of <code>SUN</code>, <code>MON</code>, <code>TUE</code>, <code>WED</code>, <code>THU</code>, <code>FRI</code>, or <code>SAT</code>.</p>
         pub fn set_day_of_week(
             mut self,
             input: std::option::Option<crate::model::DayOfWeek>,
@@ -11073,20 +10647,14 @@ pub mod describe_scheduled_audit_output {
         ///
         /// To override the contents of this collection use [`set_target_check_names`](Self::set_target_check_names).
         ///
-        /// <p>Which checks are performed during the scheduled audit. Checks must be
-        /// enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-        /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-        /// to select which checks are enabled.)</p>
+        /// <p>Which checks are performed during the scheduled audit. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
         pub fn target_check_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.target_check_names.unwrap_or_default();
             v.push(input.into());
             self.target_check_names = Some(v);
             self
         }
-        /// <p>Which checks are performed during the scheduled audit. Checks must be
-        /// enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-        /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-        /// to select which checks are enabled.)</p>
+        /// <p>Which checks are performed during the scheduled audit. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
         pub fn set_target_check_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -11336,8 +10904,7 @@ pub struct DescribeProvisioningTemplateOutput {
     pub template_body: std::option::Option<std::string::String>,
     /// <p>True if the fleet provisioning template is enabled, otherwise false.</p>
     pub enabled: bool,
-    /// <p>The ARN of the role associated with the provisioning template. This IoT role grants
-    /// permission to provision a device.</p>
+    /// <p>The ARN of the role associated with the provisioning template. This IoT role grants permission to provision a device.</p>
     pub provisioning_role_arn: std::option::Option<std::string::String>,
     /// <p>Gets information about a pre-provisioned hook.</p>
     pub pre_provisioning_hook: std::option::Option<crate::model::ProvisioningHook>,
@@ -11375,8 +10942,7 @@ impl DescribeProvisioningTemplateOutput {
     pub fn enabled(&self) -> bool {
         self.enabled
     }
-    /// <p>The ARN of the role associated with the provisioning template. This IoT role grants
-    /// permission to provision a device.</p>
+    /// <p>The ARN of the role associated with the provisioning template. This IoT role grants permission to provision a device.</p>
     pub fn provisioning_role_arn(&self) -> std::option::Option<&str> {
         self.provisioning_role_arn.as_deref()
     }
@@ -11511,14 +11077,12 @@ pub mod describe_provisioning_template_output {
             self.enabled = input;
             self
         }
-        /// <p>The ARN of the role associated with the provisioning template. This IoT role grants
-        /// permission to provision a device.</p>
+        /// <p>The ARN of the role associated with the provisioning template. This IoT role grants permission to provision a device.</p>
         pub fn provisioning_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.provisioning_role_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the role associated with the provisioning template. This IoT role grants
-        /// permission to provision a device.</p>
+        /// <p>The ARN of the role associated with the provisioning template. This IoT role grants permission to provision a device.</p>
         pub fn set_provisioning_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11776,8 +11340,7 @@ pub struct DescribeManagedJobTemplateOutput {
     pub template_version: std::option::Option<std::string::String>,
     /// <p>A list of environments that are supported with the managed job template.</p>
     pub environments: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A map of key-value pairs that you can use as guidance to specify the inputs for creating
-    /// a job from a managed template.</p>
+    /// <p>A map of key-value pairs that you can use as guidance to specify the inputs for creating a job from a managed template.</p>
     pub document_parameters: std::option::Option<std::vec::Vec<crate::model::DocumentParameter>>,
     /// <p>The document schema for a managed job template.</p>
     pub document: std::option::Option<std::string::String>,
@@ -11803,8 +11366,7 @@ impl DescribeManagedJobTemplateOutput {
     pub fn environments(&self) -> std::option::Option<&[std::string::String]> {
         self.environments.as_deref()
     }
-    /// <p>A map of key-value pairs that you can use as guidance to specify the inputs for creating
-    /// a job from a managed template.</p>
+    /// <p>A map of key-value pairs that you can use as guidance to specify the inputs for creating a job from a managed template.</p>
     pub fn document_parameters(&self) -> std::option::Option<&[crate::model::DocumentParameter]> {
         self.document_parameters.as_deref()
     }
@@ -11911,16 +11473,14 @@ pub mod describe_managed_job_template_output {
         ///
         /// To override the contents of this collection use [`set_document_parameters`](Self::set_document_parameters).
         ///
-        /// <p>A map of key-value pairs that you can use as guidance to specify the inputs for creating
-        /// a job from a managed template.</p>
+        /// <p>A map of key-value pairs that you can use as guidance to specify the inputs for creating a job from a managed template.</p>
         pub fn document_parameters(mut self, input: crate::model::DocumentParameter) -> Self {
             let mut v = self.document_parameters.unwrap_or_default();
             v.push(input);
             self.document_parameters = Some(v);
             self
         }
-        /// <p>A map of key-value pairs that you can use as guidance to specify the inputs for creating
-        /// a job from a managed template.</p>
+        /// <p>A map of key-value pairs that you can use as guidance to specify the inputs for creating a job from a managed template.</p>
         pub fn set_document_parameters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DocumentParameter>>,
@@ -11982,10 +11542,7 @@ pub struct DescribeJobTemplateOutput {
         std::option::Option<crate::model::JobExecutionsRolloutConfig>,
     /// <p>The criteria that determine when and how a job abort takes place.</p>
     pub abort_config: std::option::Option<crate::model::AbortConfig>,
-    /// <p>Specifies the amount of time each device has to finish its execution of the job.  A timer
-    /// is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job
-    /// execution status is not set to another terminal state before the timer expires, it will
-    /// be automatically set to <code>TIMED_OUT</code>.</p>
+    /// <p>Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
     pub timeout_config: std::option::Option<crate::model::TimeoutConfig>,
 }
 impl DescribeJobTemplateOutput {
@@ -12027,10 +11584,7 @@ impl DescribeJobTemplateOutput {
     pub fn abort_config(&self) -> std::option::Option<&crate::model::AbortConfig> {
         self.abort_config.as_ref()
     }
-    /// <p>Specifies the amount of time each device has to finish its execution of the job.  A timer
-    /// is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job
-    /// execution status is not set to another terminal state before the timer expires, it will
-    /// be automatically set to <code>TIMED_OUT</code>.</p>
+    /// <p>Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
     pub fn timeout_config(&self) -> std::option::Option<&crate::model::TimeoutConfig> {
         self.timeout_config.as_ref()
     }
@@ -12187,18 +11741,12 @@ pub mod describe_job_template_output {
             self.abort_config = input;
             self
         }
-        /// <p>Specifies the amount of time each device has to finish its execution of the job.  A timer
-        /// is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job
-        /// execution status is not set to another terminal state before the timer expires, it will
-        /// be automatically set to <code>TIMED_OUT</code>.</p>
+        /// <p>Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
         pub fn timeout_config(mut self, input: crate::model::TimeoutConfig) -> Self {
             self.timeout_config = Some(input);
             self
         }
-        /// <p>Specifies the amount of time each device has to finish its execution of the job.  A timer
-        /// is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job
-        /// execution status is not set to another terminal state before the timer expires, it will
-        /// be automatically set to <code>TIMED_OUT</code>.</p>
+        /// <p>Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
         pub fn set_timeout_config(
             mut self,
             input: std::option::Option<crate::model::TimeoutConfig>,
@@ -12371,27 +11919,13 @@ pub struct DescribeIndexOutput {
     pub index_name: std::option::Option<std::string::String>,
     /// <p>The index status.</p>
     pub index_status: std::option::Option<crate::model::IndexStatus>,
-    /// <p>Contains a value that specifies the type of indexing performed. Valid values
-    /// are:</p>
+    /// <p>Contains a value that specifies the type of indexing performed. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>REGISTRY – Your thing index contains only registry data.</p>
-    /// </li>
-    /// <li>
-    /// <p>REGISTRY_AND_SHADOW - Your thing index contains registry data and shadow data.</p>
-    /// </li>
-    /// <li>
-    /// <p>REGISTRY_AND_CONNECTIVITY_STATUS - Your thing index contains registry data and
-    /// thing connectivity status data.</p>
-    /// </li>
-    /// <li>
-    /// <p>REGISTRY_AND_SHADOW_AND_CONNECTIVITY_STATUS - Your thing index contains registry
-    /// data, shadow data, and thing connectivity status data.</p>
-    /// </li>
-    /// <li>
-    /// <p>MULTI_INDEXING_MODE - Your thing index contains multiple data sources. For more information, see
-    /// <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_GetIndexingConfiguration.html">GetIndexingConfiguration</a>.</p>
-    /// </li>
+    /// <li> <p>REGISTRY – Your thing index contains only registry data.</p> </li>
+    /// <li> <p>REGISTRY_AND_SHADOW - Your thing index contains registry data and shadow data.</p> </li>
+    /// <li> <p>REGISTRY_AND_CONNECTIVITY_STATUS - Your thing index contains registry data and thing connectivity status data.</p> </li>
+    /// <li> <p>REGISTRY_AND_SHADOW_AND_CONNECTIVITY_STATUS - Your thing index contains registry data, shadow data, and thing connectivity status data.</p> </li>
+    /// <li> <p>MULTI_INDEXING_MODE - Your thing index contains multiple data sources. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_GetIndexingConfiguration.html">GetIndexingConfiguration</a>.</p> </li>
     /// </ul>
     pub schema: std::option::Option<std::string::String>,
 }
@@ -12404,27 +11938,13 @@ impl DescribeIndexOutput {
     pub fn index_status(&self) -> std::option::Option<&crate::model::IndexStatus> {
         self.index_status.as_ref()
     }
-    /// <p>Contains a value that specifies the type of indexing performed. Valid values
-    /// are:</p>
+    /// <p>Contains a value that specifies the type of indexing performed. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>REGISTRY – Your thing index contains only registry data.</p>
-    /// </li>
-    /// <li>
-    /// <p>REGISTRY_AND_SHADOW - Your thing index contains registry data and shadow data.</p>
-    /// </li>
-    /// <li>
-    /// <p>REGISTRY_AND_CONNECTIVITY_STATUS - Your thing index contains registry data and
-    /// thing connectivity status data.</p>
-    /// </li>
-    /// <li>
-    /// <p>REGISTRY_AND_SHADOW_AND_CONNECTIVITY_STATUS - Your thing index contains registry
-    /// data, shadow data, and thing connectivity status data.</p>
-    /// </li>
-    /// <li>
-    /// <p>MULTI_INDEXING_MODE - Your thing index contains multiple data sources. For more information, see
-    /// <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_GetIndexingConfiguration.html">GetIndexingConfiguration</a>.</p>
-    /// </li>
+    /// <li> <p>REGISTRY – Your thing index contains only registry data.</p> </li>
+    /// <li> <p>REGISTRY_AND_SHADOW - Your thing index contains registry data and shadow data.</p> </li>
+    /// <li> <p>REGISTRY_AND_CONNECTIVITY_STATUS - Your thing index contains registry data and thing connectivity status data.</p> </li>
+    /// <li> <p>REGISTRY_AND_SHADOW_AND_CONNECTIVITY_STATUS - Your thing index contains registry data, shadow data, and thing connectivity status data.</p> </li>
+    /// <li> <p>MULTI_INDEXING_MODE - Your thing index contains multiple data sources. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_GetIndexingConfiguration.html">GetIndexingConfiguration</a>.</p> </li>
     /// </ul>
     pub fn schema(&self) -> std::option::Option<&str> {
         self.schema.as_deref()
@@ -12473,53 +11993,25 @@ pub mod describe_index_output {
             self.index_status = input;
             self
         }
-        /// <p>Contains a value that specifies the type of indexing performed. Valid values
-        /// are:</p>
+        /// <p>Contains a value that specifies the type of indexing performed. Valid values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>REGISTRY – Your thing index contains only registry data.</p>
-        /// </li>
-        /// <li>
-        /// <p>REGISTRY_AND_SHADOW - Your thing index contains registry data and shadow data.</p>
-        /// </li>
-        /// <li>
-        /// <p>REGISTRY_AND_CONNECTIVITY_STATUS - Your thing index contains registry data and
-        /// thing connectivity status data.</p>
-        /// </li>
-        /// <li>
-        /// <p>REGISTRY_AND_SHADOW_AND_CONNECTIVITY_STATUS - Your thing index contains registry
-        /// data, shadow data, and thing connectivity status data.</p>
-        /// </li>
-        /// <li>
-        /// <p>MULTI_INDEXING_MODE - Your thing index contains multiple data sources. For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_GetIndexingConfiguration.html">GetIndexingConfiguration</a>.</p>
-        /// </li>
+        /// <li> <p>REGISTRY – Your thing index contains only registry data.</p> </li>
+        /// <li> <p>REGISTRY_AND_SHADOW - Your thing index contains registry data and shadow data.</p> </li>
+        /// <li> <p>REGISTRY_AND_CONNECTIVITY_STATUS - Your thing index contains registry data and thing connectivity status data.</p> </li>
+        /// <li> <p>REGISTRY_AND_SHADOW_AND_CONNECTIVITY_STATUS - Your thing index contains registry data, shadow data, and thing connectivity status data.</p> </li>
+        /// <li> <p>MULTI_INDEXING_MODE - Your thing index contains multiple data sources. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_GetIndexingConfiguration.html">GetIndexingConfiguration</a>.</p> </li>
         /// </ul>
         pub fn schema(mut self, input: impl Into<std::string::String>) -> Self {
             self.schema = Some(input.into());
             self
         }
-        /// <p>Contains a value that specifies the type of indexing performed. Valid values
-        /// are:</p>
+        /// <p>Contains a value that specifies the type of indexing performed. Valid values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>REGISTRY – Your thing index contains only registry data.</p>
-        /// </li>
-        /// <li>
-        /// <p>REGISTRY_AND_SHADOW - Your thing index contains registry data and shadow data.</p>
-        /// </li>
-        /// <li>
-        /// <p>REGISTRY_AND_CONNECTIVITY_STATUS - Your thing index contains registry data and
-        /// thing connectivity status data.</p>
-        /// </li>
-        /// <li>
-        /// <p>REGISTRY_AND_SHADOW_AND_CONNECTIVITY_STATUS - Your thing index contains registry
-        /// data, shadow data, and thing connectivity status data.</p>
-        /// </li>
-        /// <li>
-        /// <p>MULTI_INDEXING_MODE - Your thing index contains multiple data sources. For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_GetIndexingConfiguration.html">GetIndexingConfiguration</a>.</p>
-        /// </li>
+        /// <li> <p>REGISTRY – Your thing index contains only registry data.</p> </li>
+        /// <li> <p>REGISTRY_AND_SHADOW - Your thing index contains registry data and shadow data.</p> </li>
+        /// <li> <p>REGISTRY_AND_CONNECTIVITY_STATUS - Your thing index contains registry data and thing connectivity status data.</p> </li>
+        /// <li> <p>REGISTRY_AND_SHADOW_AND_CONNECTIVITY_STATUS - Your thing index contains registry data, shadow data, and thing connectivity status data.</p> </li>
+        /// <li> <p>MULTI_INDEXING_MODE - Your thing index contains multiple data sources. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_GetIndexingConfiguration.html">GetIndexingConfiguration</a>.</p> </li>
         /// </ul>
         pub fn set_schema(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.schema = input;
@@ -12566,8 +12058,7 @@ pub struct DescribeFleetMetricOutput {
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date when the fleet metric is last modified.</p>
     pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be
-    /// supported by <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>.</p>
+    /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be supported by <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>.</p>
     pub unit: std::option::Option<crate::model::FleetMetricUnit>,
     /// <p>The version of the fleet metric.</p>
     pub version: i64,
@@ -12615,8 +12106,7 @@ impl DescribeFleetMetricOutput {
     pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
-    /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be
-    /// supported by <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>.</p>
+    /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be supported by <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>.</p>
     pub fn unit(&self) -> std::option::Option<&crate::model::FleetMetricUnit> {
         self.unit.as_ref()
     }
@@ -12784,14 +12274,12 @@ pub mod describe_fleet_metric_output {
             self.last_modified_date = input;
             self
         }
-        /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be
-        /// supported by <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>.</p>
+        /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be supported by <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>.</p>
         pub fn unit(mut self, input: crate::model::FleetMetricUnit) -> Self {
             self.unit = Some(input);
             self
         }
-        /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be
-        /// supported by <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>.</p>
+        /// <p>Used to support unit transformation such as milliseconds to seconds. The unit must be supported by <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>.</p>
         pub fn set_unit(
             mut self,
             input: std::option::Option<crate::model::FleetMetricUnit>,
@@ -12971,13 +12459,11 @@ impl DescribeEventConfigurationsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEndpointOutput {
-    /// <p>The endpoint. The format of the endpoint is as follows:
-    /// <i>identifier</i>.iot.<i>region</i>.amazonaws.com.</p>
+    /// <p>The endpoint. The format of the endpoint is as follows: <i>identifier</i>.iot.<i>region</i>.amazonaws.com.</p>
     pub endpoint_address: std::option::Option<std::string::String>,
 }
 impl DescribeEndpointOutput {
-    /// <p>The endpoint. The format of the endpoint is as follows:
-    /// <i>identifier</i>.iot.<i>region</i>.amazonaws.com.</p>
+    /// <p>The endpoint. The format of the endpoint is as follows: <i>identifier</i>.iot.<i>region</i>.amazonaws.com.</p>
     pub fn endpoint_address(&self) -> std::option::Option<&str> {
         self.endpoint_address.as_deref()
     }
@@ -12998,14 +12484,12 @@ pub mod describe_endpoint_output {
         pub(crate) endpoint_address: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The endpoint. The format of the endpoint is as follows:
-        /// <i>identifier</i>.iot.<i>region</i>.amazonaws.com.</p>
+        /// <p>The endpoint. The format of the endpoint is as follows: <i>identifier</i>.iot.<i>region</i>.amazonaws.com.</p>
         pub fn endpoint_address(mut self, input: impl Into<std::string::String>) -> Self {
             self.endpoint_address = Some(input.into());
             self
         }
-        /// <p>The endpoint. The format of the endpoint is as follows:
-        /// <i>identifier</i>.iot.<i>region</i>.amazonaws.com.</p>
+        /// <p>The endpoint. The format of the endpoint is as follows: <i>identifier</i>.iot.<i>region</i>.amazonaws.com.</p>
         pub fn set_endpoint_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13286,10 +12770,7 @@ impl DescribeDomainConfigurationOutput {
 pub struct DescribeDimensionOutput {
     /// <p>The unique identifier for the dimension.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name
-    /// (ARN)
-    /// for
-    /// the dimension.</p>
+    /// <p>The Amazon Resource Name (ARN) for the dimension.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The type of the dimension.</p>
     pub r#type: std::option::Option<crate::model::DimensionType>,
@@ -13305,10 +12786,7 @@ impl DescribeDimensionOutput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The Amazon Resource Name
-    /// (ARN)
-    /// for
-    /// the dimension.</p>
+    /// <p>The Amazon Resource Name (ARN) for the dimension.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -13365,18 +12843,12 @@ pub mod describe_dimension_output {
             self.name = input;
             self
         }
-        /// <p>The Amazon Resource Name
-        /// (ARN)
-        /// for
-        /// the dimension.</p>
+        /// <p>The Amazon Resource Name (ARN) for the dimension.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name
-        /// (ARN)
-        /// for
-        /// the dimension.</p>
+        /// <p>The Amazon Resource Name (ARN) for the dimension.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -13460,15 +12932,11 @@ impl DescribeDimensionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDetectMitigationActionsTaskOutput {
-    /// <p>
-    /// The description of a task.
-    /// </p>
+    /// <p> The description of a task. </p>
     pub task_summary: std::option::Option<crate::model::DetectMitigationActionsTaskSummary>,
 }
 impl DescribeDetectMitigationActionsTaskOutput {
-    /// <p>
-    /// The description of a task.
-    /// </p>
+    /// <p> The description of a task. </p>
     pub fn task_summary(
         &self,
     ) -> std::option::Option<&crate::model::DetectMitigationActionsTaskSummary> {
@@ -13492,9 +12960,7 @@ pub mod describe_detect_mitigation_actions_task_output {
             std::option::Option<crate::model::DetectMitigationActionsTaskSummary>,
     }
     impl Builder {
-        /// <p>
-        /// The description of a task.
-        /// </p>
+        /// <p> The description of a task. </p>
         pub fn task_summary(
             mut self,
             input: crate::model::DetectMitigationActionsTaskSummary,
@@ -13502,9 +12968,7 @@ pub mod describe_detect_mitigation_actions_task_output {
             self.task_summary = Some(input);
             self
         }
-        /// <p>
-        /// The description of a task.
-        /// </p>
+        /// <p> The description of a task. </p>
         pub fn set_task_summary(
             mut self,
             input: std::option::Option<crate::model::DetectMitigationActionsTaskSummary>,
@@ -13593,65 +13057,41 @@ impl DescribeDefaultAuthorizerOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCustomMetricOutput {
-    /// <p>
-    /// The name of the custom metric.
-    /// </p>
+    /// <p> The name of the custom metric. </p>
     pub metric_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// The Amazon Resource Number (ARN) of the custom metric.
-    /// </p>
+    /// <p> The Amazon Resource Number (ARN) of the custom metric. </p>
     pub metric_arn: std::option::Option<std::string::String>,
-    /// <p>
-    /// The type of the custom metric. Types include <code>string-list</code>, <code>ip-address-list</code>, <code>number-list</code>, and <code>number</code>.
-    /// </p>
+    /// <p> The type of the custom metric. Types include <code>string-list</code>, <code>ip-address-list</code>, <code>number-list</code>, and <code>number</code>. </p>
     pub metric_type: std::option::Option<crate::model::CustomMetricType>,
-    /// <p>
-    /// Field represents a friendly name in the console for the custom metric; doesn't have to be unique. Don't use this name as the metric identifier in the device metric report. Can be updated.
-    /// </p>
+    /// <p> Field represents a friendly name in the console for the custom metric; doesn't have to be unique. Don't use this name as the metric identifier in the device metric report. Can be updated. </p>
     pub display_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// The creation date of the custom metric in milliseconds since epoch.
-    /// </p>
+    /// <p> The creation date of the custom metric in milliseconds since epoch. </p>
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>
-    /// The time the custom metric was last modified in milliseconds since epoch.
-    /// </p>
+    /// <p> The time the custom metric was last modified in milliseconds since epoch. </p>
     pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeCustomMetricOutput {
-    /// <p>
-    /// The name of the custom metric.
-    /// </p>
+    /// <p> The name of the custom metric. </p>
     pub fn metric_name(&self) -> std::option::Option<&str> {
         self.metric_name.as_deref()
     }
-    /// <p>
-    /// The Amazon Resource Number (ARN) of the custom metric.
-    /// </p>
+    /// <p> The Amazon Resource Number (ARN) of the custom metric. </p>
     pub fn metric_arn(&self) -> std::option::Option<&str> {
         self.metric_arn.as_deref()
     }
-    /// <p>
-    /// The type of the custom metric. Types include <code>string-list</code>, <code>ip-address-list</code>, <code>number-list</code>, and <code>number</code>.
-    /// </p>
+    /// <p> The type of the custom metric. Types include <code>string-list</code>, <code>ip-address-list</code>, <code>number-list</code>, and <code>number</code>. </p>
     pub fn metric_type(&self) -> std::option::Option<&crate::model::CustomMetricType> {
         self.metric_type.as_ref()
     }
-    /// <p>
-    /// Field represents a friendly name in the console for the custom metric; doesn't have to be unique. Don't use this name as the metric identifier in the device metric report. Can be updated.
-    /// </p>
+    /// <p> Field represents a friendly name in the console for the custom metric; doesn't have to be unique. Don't use this name as the metric identifier in the device metric report. Can be updated. </p>
     pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
     }
-    /// <p>
-    /// The creation date of the custom metric in milliseconds since epoch.
-    /// </p>
+    /// <p> The creation date of the custom metric in milliseconds since epoch. </p>
     pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
-    /// <p>
-    /// The time the custom metric was last modified in milliseconds since epoch.
-    /// </p>
+    /// <p> The time the custom metric was last modified in milliseconds since epoch. </p>
     pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
@@ -13682,44 +13122,32 @@ pub mod describe_custom_metric_output {
         pub(crate) last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>
-        /// The name of the custom metric.
-        /// </p>
+        /// <p> The name of the custom metric. </p>
         pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.metric_name = Some(input.into());
             self
         }
-        /// <p>
-        /// The name of the custom metric.
-        /// </p>
+        /// <p> The name of the custom metric. </p>
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.metric_name = input;
             self
         }
-        /// <p>
-        /// The Amazon Resource Number (ARN) of the custom metric.
-        /// </p>
+        /// <p> The Amazon Resource Number (ARN) of the custom metric. </p>
         pub fn metric_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.metric_arn = Some(input.into());
             self
         }
-        /// <p>
-        /// The Amazon Resource Number (ARN) of the custom metric.
-        /// </p>
+        /// <p> The Amazon Resource Number (ARN) of the custom metric. </p>
         pub fn set_metric_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.metric_arn = input;
             self
         }
-        /// <p>
-        /// The type of the custom metric. Types include <code>string-list</code>, <code>ip-address-list</code>, <code>number-list</code>, and <code>number</code>.
-        /// </p>
+        /// <p> The type of the custom metric. Types include <code>string-list</code>, <code>ip-address-list</code>, <code>number-list</code>, and <code>number</code>. </p>
         pub fn metric_type(mut self, input: crate::model::CustomMetricType) -> Self {
             self.metric_type = Some(input);
             self
         }
-        /// <p>
-        /// The type of the custom metric. Types include <code>string-list</code>, <code>ip-address-list</code>, <code>number-list</code>, and <code>number</code>.
-        /// </p>
+        /// <p> The type of the custom metric. Types include <code>string-list</code>, <code>ip-address-list</code>, <code>number-list</code>, and <code>number</code>. </p>
         pub fn set_metric_type(
             mut self,
             input: std::option::Option<crate::model::CustomMetricType>,
@@ -13727,30 +13155,22 @@ pub mod describe_custom_metric_output {
             self.metric_type = input;
             self
         }
-        /// <p>
-        /// Field represents a friendly name in the console for the custom metric; doesn't have to be unique. Don't use this name as the metric identifier in the device metric report. Can be updated.
-        /// </p>
+        /// <p> Field represents a friendly name in the console for the custom metric; doesn't have to be unique. Don't use this name as the metric identifier in the device metric report. Can be updated. </p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.display_name = Some(input.into());
             self
         }
-        /// <p>
-        /// Field represents a friendly name in the console for the custom metric; doesn't have to be unique. Don't use this name as the metric identifier in the device metric report. Can be updated.
-        /// </p>
+        /// <p> Field represents a friendly name in the console for the custom metric; doesn't have to be unique. Don't use this name as the metric identifier in the device metric report. Can be updated. </p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.display_name = input;
             self
         }
-        /// <p>
-        /// The creation date of the custom metric in milliseconds since epoch.
-        /// </p>
+        /// <p> The creation date of the custom metric in milliseconds since epoch. </p>
         pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
-        /// <p>
-        /// The creation date of the custom metric in milliseconds since epoch.
-        /// </p>
+        /// <p> The creation date of the custom metric in milliseconds since epoch. </p>
         pub fn set_creation_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -13758,16 +13178,12 @@ pub mod describe_custom_metric_output {
             self.creation_date = input;
             self
         }
-        /// <p>
-        /// The time the custom metric was last modified in milliseconds since epoch.
-        /// </p>
+        /// <p> The time the custom metric was last modified in milliseconds since epoch. </p>
         pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_date = Some(input);
             self
         }
-        /// <p>
-        /// The time the custom metric was last modified in milliseconds since epoch.
-        /// </p>
+        /// <p> The time the custom metric was last modified in milliseconds since epoch. </p>
         pub fn set_last_modified_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -14181,8 +13597,7 @@ impl DescribeAuthorizerOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAuditTaskOutput {
-    /// <p>The status of the audit: one of "IN_PROGRESS", "COMPLETED",
-    /// "FAILED", or "CANCELED".</p>
+    /// <p>The status of the audit: one of "IN_PROGRESS", "COMPLETED", "FAILED", or "CANCELED".</p>
     pub task_status: std::option::Option<crate::model::AuditTaskStatus>,
     /// <p>The type of audit: "ON_DEMAND_AUDIT_TASK" or "SCHEDULED_AUDIT_TASK".</p>
     pub task_type: std::option::Option<crate::model::AuditTaskType>,
@@ -14198,8 +13613,7 @@ pub struct DescribeAuditTaskOutput {
     >,
 }
 impl DescribeAuditTaskOutput {
-    /// <p>The status of the audit: one of "IN_PROGRESS", "COMPLETED",
-    /// "FAILED", or "CANCELED".</p>
+    /// <p>The status of the audit: one of "IN_PROGRESS", "COMPLETED", "FAILED", or "CANCELED".</p>
     pub fn task_status(&self) -> std::option::Option<&crate::model::AuditTaskStatus> {
         self.task_status.as_ref()
     }
@@ -14256,14 +13670,12 @@ pub mod describe_audit_task_output {
         >,
     }
     impl Builder {
-        /// <p>The status of the audit: one of "IN_PROGRESS", "COMPLETED",
-        /// "FAILED", or "CANCELED".</p>
+        /// <p>The status of the audit: one of "IN_PROGRESS", "COMPLETED", "FAILED", or "CANCELED".</p>
         pub fn task_status(mut self, input: crate::model::AuditTaskStatus) -> Self {
             self.task_status = Some(input);
             self
         }
-        /// <p>The status of the audit: one of "IN_PROGRESS", "COMPLETED",
-        /// "FAILED", or "CANCELED".</p>
+        /// <p>The status of the audit: one of "IN_PROGRESS", "COMPLETED", "FAILED", or "CANCELED".</p>
         pub fn set_task_status(
             mut self,
             input: std::option::Option<crate::model::AuditTaskStatus>,
@@ -14372,31 +13784,19 @@ impl DescribeAuditTaskOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAuditSuppressionOutput {
-    /// <p>An audit check name. Checks must be enabled
-    /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-    /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-    /// to select which checks are enabled.)</p>
+    /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
     pub check_name: std::option::Option<std::string::String>,
     /// <p>Information that identifies the noncompliant resource.</p>
     pub resource_identifier: std::option::Option<crate::model::ResourceIdentifier>,
-    /// <p>
-    /// The epoch timestamp in seconds at which this suppression expires.
-    /// </p>
+    /// <p> The epoch timestamp in seconds at which this suppression expires. </p>
     pub expiration_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>
-    /// Indicates whether a suppression should exist indefinitely or not.
-    /// </p>
+    /// <p> Indicates whether a suppression should exist indefinitely or not. </p>
     pub suppress_indefinitely: std::option::Option<bool>,
-    /// <p>
-    /// The description of the audit suppression.
-    /// </p>
+    /// <p> The description of the audit suppression. </p>
     pub description: std::option::Option<std::string::String>,
 }
 impl DescribeAuditSuppressionOutput {
-    /// <p>An audit check name. Checks must be enabled
-    /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-    /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-    /// to select which checks are enabled.)</p>
+    /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
     pub fn check_name(&self) -> std::option::Option<&str> {
         self.check_name.as_deref()
     }
@@ -14404,21 +13804,15 @@ impl DescribeAuditSuppressionOutput {
     pub fn resource_identifier(&self) -> std::option::Option<&crate::model::ResourceIdentifier> {
         self.resource_identifier.as_ref()
     }
-    /// <p>
-    /// The epoch timestamp in seconds at which this suppression expires.
-    /// </p>
+    /// <p> The epoch timestamp in seconds at which this suppression expires. </p>
     pub fn expiration_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expiration_date.as_ref()
     }
-    /// <p>
-    /// Indicates whether a suppression should exist indefinitely or not.
-    /// </p>
+    /// <p> Indicates whether a suppression should exist indefinitely or not. </p>
     pub fn suppress_indefinitely(&self) -> std::option::Option<bool> {
         self.suppress_indefinitely
     }
-    /// <p>
-    /// The description of the audit suppression.
-    /// </p>
+    /// <p> The description of the audit suppression. </p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -14447,18 +13841,12 @@ pub mod describe_audit_suppression_output {
         pub(crate) description: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>An audit check name. Checks must be enabled
-        /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-        /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-        /// to select which checks are enabled.)</p>
+        /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
         pub fn check_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.check_name = Some(input.into());
             self
         }
-        /// <p>An audit check name. Checks must be enabled
-        /// for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list
-        /// of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code>
-        /// to select which checks are enabled.)</p>
+        /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
         pub fn set_check_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.check_name = input;
             self
@@ -14476,16 +13864,12 @@ pub mod describe_audit_suppression_output {
             self.resource_identifier = input;
             self
         }
-        /// <p>
-        /// The epoch timestamp in seconds at which this suppression expires.
-        /// </p>
+        /// <p> The epoch timestamp in seconds at which this suppression expires. </p>
         pub fn expiration_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.expiration_date = Some(input);
             self
         }
-        /// <p>
-        /// The epoch timestamp in seconds at which this suppression expires.
-        /// </p>
+        /// <p> The epoch timestamp in seconds at which this suppression expires. </p>
         pub fn set_expiration_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -14493,30 +13877,22 @@ pub mod describe_audit_suppression_output {
             self.expiration_date = input;
             self
         }
-        /// <p>
-        /// Indicates whether a suppression should exist indefinitely or not.
-        /// </p>
+        /// <p> Indicates whether a suppression should exist indefinitely or not. </p>
         pub fn suppress_indefinitely(mut self, input: bool) -> Self {
             self.suppress_indefinitely = Some(input);
             self
         }
-        /// <p>
-        /// Indicates whether a suppression should exist indefinitely or not.
-        /// </p>
+        /// <p> Indicates whether a suppression should exist indefinitely or not. </p>
         pub fn set_suppress_indefinitely(mut self, input: std::option::Option<bool>) -> Self {
             self.suppress_indefinitely = input;
             self
         }
-        /// <p>
-        /// The description of the audit suppression.
-        /// </p>
+        /// <p> The description of the audit suppression. </p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>
-        /// The description of the audit suppression.
-        /// </p>
+        /// <p> The description of the audit suppression. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -14851,14 +14227,10 @@ impl DescribeAuditFindingOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccountAuditConfigurationOutput {
-    /// <p>The ARN of the role that grants permission to IoT to access information
-    /// about your devices, policies, certificates, and other items as required when
-    /// performing an audit.</p>
-    /// <p>On the first call to <code>UpdateAccountAuditConfiguration</code>,
-    /// this parameter is required.</p>
+    /// <p>The ARN of the role that grants permission to IoT to access information about your devices, policies, certificates, and other items as required when performing an audit.</p>
+    /// <p>On the first call to <code>UpdateAccountAuditConfiguration</code>, this parameter is required.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>Information about the targets to which audit notifications are sent for
-    /// this account.</p>
+    /// <p>Information about the targets to which audit notifications are sent for this account.</p>
     pub audit_notification_target_configurations: std::option::Option<
         std::collections::HashMap<
             crate::model::AuditNotificationType,
@@ -14871,16 +14243,12 @@ pub struct DescribeAccountAuditConfigurationOutput {
     >,
 }
 impl DescribeAccountAuditConfigurationOutput {
-    /// <p>The ARN of the role that grants permission to IoT to access information
-    /// about your devices, policies, certificates, and other items as required when
-    /// performing an audit.</p>
-    /// <p>On the first call to <code>UpdateAccountAuditConfiguration</code>,
-    /// this parameter is required.</p>
+    /// <p>The ARN of the role that grants permission to IoT to access information about your devices, policies, certificates, and other items as required when performing an audit.</p>
+    /// <p>On the first call to <code>UpdateAccountAuditConfiguration</code>, this parameter is required.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>Information about the targets to which audit notifications are sent for
-    /// this account.</p>
+    /// <p>Information about the targets to which audit notifications are sent for this account.</p>
     pub fn audit_notification_target_configurations(
         &self,
     ) -> std::option::Option<
@@ -14933,20 +14301,14 @@ pub mod describe_account_audit_configuration_output {
         >,
     }
     impl Builder {
-        /// <p>The ARN of the role that grants permission to IoT to access information
-        /// about your devices, policies, certificates, and other items as required when
-        /// performing an audit.</p>
-        /// <p>On the first call to <code>UpdateAccountAuditConfiguration</code>,
-        /// this parameter is required.</p>
+        /// <p>The ARN of the role that grants permission to IoT to access information about your devices, policies, certificates, and other items as required when performing an audit.</p>
+        /// <p>On the first call to <code>UpdateAccountAuditConfiguration</code>, this parameter is required.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the role that grants permission to IoT to access information
-        /// about your devices, policies, certificates, and other items as required when
-        /// performing an audit.</p>
-        /// <p>On the first call to <code>UpdateAccountAuditConfiguration</code>,
-        /// this parameter is required.</p>
+        /// <p>The ARN of the role that grants permission to IoT to access information about your devices, policies, certificates, and other items as required when performing an audit.</p>
+        /// <p>On the first call to <code>UpdateAccountAuditConfiguration</code>, this parameter is required.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -14955,8 +14317,7 @@ pub mod describe_account_audit_configuration_output {
         ///
         /// To override the contents of this collection use [`set_audit_notification_target_configurations`](Self::set_audit_notification_target_configurations).
         ///
-        /// <p>Information about the targets to which audit notifications are sent for
-        /// this account.</p>
+        /// <p>Information about the targets to which audit notifications are sent for this account.</p>
         pub fn audit_notification_target_configurations(
             mut self,
             k: crate::model::AuditNotificationType,
@@ -14969,8 +14330,7 @@ pub mod describe_account_audit_configuration_output {
             self.audit_notification_target_configurations = Some(hash_map);
             self
         }
-        /// <p>Information about the targets to which audit notifications are sent for
-        /// this account.</p>
+        /// <p>Information about the targets to which audit notifications are sent for this account.</p>
         pub fn set_audit_notification_target_configurations(
             mut self,
             input: std::option::Option<
@@ -16705,8 +16065,7 @@ pub struct CreateProvisioningTemplateVersionOutput {
     pub template_name: std::option::Option<std::string::String>,
     /// <p>The version of the fleet provisioning template.</p>
     pub version_id: std::option::Option<i32>,
-    /// <p>True if the fleet provisioning template version is the default version, otherwise
-    /// false.</p>
+    /// <p>True if the fleet provisioning template version is the default version, otherwise false.</p>
     pub is_default_version: bool,
 }
 impl CreateProvisioningTemplateVersionOutput {
@@ -16722,8 +16081,7 @@ impl CreateProvisioningTemplateVersionOutput {
     pub fn version_id(&self) -> std::option::Option<i32> {
         self.version_id
     }
-    /// <p>True if the fleet provisioning template version is the default version, otherwise
-    /// false.</p>
+    /// <p>True if the fleet provisioning template version is the default version, otherwise false.</p>
     pub fn is_default_version(&self) -> bool {
         self.is_default_version
     }
@@ -16783,14 +16141,12 @@ pub mod create_provisioning_template_version_output {
             self.version_id = input;
             self
         }
-        /// <p>True if the fleet provisioning template version is the default version, otherwise
-        /// false.</p>
+        /// <p>True if the fleet provisioning template version is the default version, otherwise false.</p>
         pub fn is_default_version(mut self, input: bool) -> Self {
             self.is_default_version = Some(input);
             self
         }
-        /// <p>True if the fleet provisioning template version is the default version, otherwise
-        /// false.</p>
+        /// <p>True if the fleet provisioning template version is the default version, otherwise false.</p>
         pub fn set_is_default_version(mut self, input: std::option::Option<bool>) -> Self {
             self.is_default_version = input;
             self
@@ -17486,8 +16842,7 @@ impl CreateMitigationActionOutput {
 pub struct CreateKeysAndCertificateOutput {
     /// <p>The ARN of the certificate.</p>
     pub certificate_arn: std::option::Option<std::string::String>,
-    /// <p>The ID of the certificate. IoT issues a default subject name for the certificate
-    /// (for example, IoT Certificate).</p>
+    /// <p>The ID of the certificate. IoT issues a default subject name for the certificate (for example, IoT Certificate).</p>
     pub certificate_id: std::option::Option<std::string::String>,
     /// <p>The certificate data, in PEM format.</p>
     pub certificate_pem: std::option::Option<std::string::String>,
@@ -17499,8 +16854,7 @@ impl CreateKeysAndCertificateOutput {
     pub fn certificate_arn(&self) -> std::option::Option<&str> {
         self.certificate_arn.as_deref()
     }
-    /// <p>The ID of the certificate. IoT issues a default subject name for the certificate
-    /// (for example, IoT Certificate).</p>
+    /// <p>The ID of the certificate. IoT issues a default subject name for the certificate (for example, IoT Certificate).</p>
     pub fn certificate_id(&self) -> std::option::Option<&str> {
         self.certificate_id.as_deref()
     }
@@ -17548,14 +16902,12 @@ pub mod create_keys_and_certificate_output {
             self.certificate_arn = input;
             self
         }
-        /// <p>The ID of the certificate. IoT issues a default subject name for the certificate
-        /// (for example, IoT Certificate).</p>
+        /// <p>The ID of the certificate. IoT issues a default subject name for the certificate (for example, IoT Certificate).</p>
         pub fn certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_id = Some(input.into());
             self
         }
-        /// <p>The ID of the certificate. IoT issues a default subject name for the certificate
-        /// (for example, IoT Certificate).</p>
+        /// <p>The ID of the certificate. IoT issues a default subject name for the certificate (for example, IoT Certificate).</p>
         pub fn set_certificate_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -18094,10 +17446,7 @@ impl CreateDomainConfigurationOutput {
 pub struct CreateDimensionOutput {
     /// <p>A unique identifier for the dimension.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name
-    /// (ARN)
-    /// of
-    /// the created dimension.</p>
+    /// <p>The Amazon Resource Name (ARN) of the created dimension.</p>
     pub arn: std::option::Option<std::string::String>,
 }
 impl CreateDimensionOutput {
@@ -18105,10 +17454,7 @@ impl CreateDimensionOutput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The Amazon Resource Name
-    /// (ARN)
-    /// of
-    /// the created dimension.</p>
+    /// <p>The Amazon Resource Name (ARN) of the created dimension.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -18141,18 +17487,12 @@ pub mod create_dimension_output {
             self.name = input;
             self
         }
-        /// <p>The Amazon Resource Name
-        /// (ARN)
-        /// of
-        /// the created dimension.</p>
+        /// <p>The Amazon Resource Name (ARN) of the created dimension.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name
-        /// (ARN)
-        /// of
-        /// the created dimension.</p>
+        /// <p>The Amazon Resource Name (ARN) of the created dimension.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -18177,27 +17517,17 @@ impl CreateDimensionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCustomMetricOutput {
-    /// <p>
-    /// The name of the custom metric to be used in the metric report.
-    /// </p>
+    /// <p> The name of the custom metric to be used in the metric report. </p>
     pub metric_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// The Amazon Resource Number (ARN) of the custom metric, e.g. <code>arn:<i>aws-partition</i>:iot:<i>region</i>:<i>accountId</i>:custommetric/<i>metricName</i>
-    /// </code>
-    /// </p>
+    /// <p> The Amazon Resource Number (ARN) of the custom metric, e.g. <code>arn:<i>aws-partition</i>:iot:<i>region</i>:<i>accountId</i>:custommetric/<i>metricName</i> </code> </p>
     pub metric_arn: std::option::Option<std::string::String>,
 }
 impl CreateCustomMetricOutput {
-    /// <p>
-    /// The name of the custom metric to be used in the metric report.
-    /// </p>
+    /// <p> The name of the custom metric to be used in the metric report. </p>
     pub fn metric_name(&self) -> std::option::Option<&str> {
         self.metric_name.as_deref()
     }
-    /// <p>
-    /// The Amazon Resource Number (ARN) of the custom metric, e.g. <code>arn:<i>aws-partition</i>:iot:<i>region</i>:<i>accountId</i>:custommetric/<i>metricName</i>
-    /// </code>
-    /// </p>
+    /// <p> The Amazon Resource Number (ARN) of the custom metric, e.g. <code>arn:<i>aws-partition</i>:iot:<i>region</i>:<i>accountId</i>:custommetric/<i>metricName</i> </code> </p>
     pub fn metric_arn(&self) -> std::option::Option<&str> {
         self.metric_arn.as_deref()
     }
@@ -18220,32 +17550,22 @@ pub mod create_custom_metric_output {
         pub(crate) metric_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The name of the custom metric to be used in the metric report.
-        /// </p>
+        /// <p> The name of the custom metric to be used in the metric report. </p>
         pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.metric_name = Some(input.into());
             self
         }
-        /// <p>
-        /// The name of the custom metric to be used in the metric report.
-        /// </p>
+        /// <p> The name of the custom metric to be used in the metric report. </p>
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.metric_name = input;
             self
         }
-        /// <p>
-        /// The Amazon Resource Number (ARN) of the custom metric, e.g. <code>arn:<i>aws-partition</i>:iot:<i>region</i>:<i>accountId</i>:custommetric/<i>metricName</i>
-        /// </code>
-        /// </p>
+        /// <p> The Amazon Resource Number (ARN) of the custom metric, e.g. <code>arn:<i>aws-partition</i>:iot:<i>region</i>:<i>accountId</i>:custommetric/<i>metricName</i> </code> </p>
         pub fn metric_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.metric_arn = Some(input.into());
             self
         }
-        /// <p>
-        /// The Amazon Resource Number (ARN) of the custom metric, e.g. <code>arn:<i>aws-partition</i>:iot:<i>region</i>:<i>accountId</i>:custommetric/<i>metricName</i>
-        /// </code>
-        /// </p>
+        /// <p> The Amazon Resource Number (ARN) of the custom metric, e.g. <code>arn:<i>aws-partition</i>:iot:<i>region</i>:<i>accountId</i>:custommetric/<i>metricName</i> </code> </p>
         pub fn set_metric_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.metric_arn = input;
             self
@@ -18270,23 +17590,19 @@ impl CreateCustomMetricOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCertificateFromCsrOutput {
-    /// <p>The Amazon Resource Name (ARN) of the certificate. You can use the ARN as a principal
-    /// for policy operations.</p>
+    /// <p>The Amazon Resource Name (ARN) of the certificate. You can use the ARN as a principal for policy operations.</p>
     pub certificate_arn: std::option::Option<std::string::String>,
-    /// <p>The ID of the certificate. Certificate management operations only take a
-    /// certificateId.</p>
+    /// <p>The ID of the certificate. Certificate management operations only take a certificateId.</p>
     pub certificate_id: std::option::Option<std::string::String>,
     /// <p>The certificate data, in PEM format.</p>
     pub certificate_pem: std::option::Option<std::string::String>,
 }
 impl CreateCertificateFromCsrOutput {
-    /// <p>The Amazon Resource Name (ARN) of the certificate. You can use the ARN as a principal
-    /// for policy operations.</p>
+    /// <p>The Amazon Resource Name (ARN) of the certificate. You can use the ARN as a principal for policy operations.</p>
     pub fn certificate_arn(&self) -> std::option::Option<&str> {
         self.certificate_arn.as_deref()
     }
-    /// <p>The ID of the certificate. Certificate management operations only take a
-    /// certificateId.</p>
+    /// <p>The ID of the certificate. Certificate management operations only take a certificateId.</p>
     pub fn certificate_id(&self) -> std::option::Option<&str> {
         self.certificate_id.as_deref()
     }
@@ -18315,14 +17631,12 @@ pub mod create_certificate_from_csr_output {
         pub(crate) certificate_pem: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the certificate. You can use the ARN as a principal
-        /// for policy operations.</p>
+        /// <p>The Amazon Resource Name (ARN) of the certificate. You can use the ARN as a principal for policy operations.</p>
         pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the certificate. You can use the ARN as a principal
-        /// for policy operations.</p>
+        /// <p>The Amazon Resource Name (ARN) of the certificate. You can use the ARN as a principal for policy operations.</p>
         pub fn set_certificate_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -18330,14 +17644,12 @@ pub mod create_certificate_from_csr_output {
             self.certificate_arn = input;
             self
         }
-        /// <p>The ID of the certificate. Certificate management operations only take a
-        /// certificateId.</p>
+        /// <p>The ID of the certificate. Certificate management operations only take a certificateId.</p>
         pub fn certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_id = Some(input.into());
             self
         }
-        /// <p>The ID of the certificate. Certificate management operations only take a
-        /// certificateId.</p>
+        /// <p>The ID of the certificate. Certificate management operations only take a certificateId.</p>
         pub fn set_certificate_id(
             mut self,
             input: std::option::Option<std::string::String>,

@@ -113,8 +113,7 @@ impl UpdateProjectOutput {
 pub struct PutProjectEventsOutput {
     /// <p>The number of events in the operation that could not be used by Evidently.</p>
     pub failed_event_count: std::option::Option<i32>,
-    /// <p>A structure that contains Evidently's response to the sent events, including an event ID and
-    /// error codes, if any.</p>
+    /// <p>A structure that contains Evidently's response to the sent events, including an event ID and error codes, if any.</p>
     pub event_results:
         std::option::Option<std::vec::Vec<crate::model::PutProjectEventsResultEntry>>,
 }
@@ -123,8 +122,7 @@ impl PutProjectEventsOutput {
     pub fn failed_event_count(&self) -> std::option::Option<i32> {
         self.failed_event_count
     }
-    /// <p>A structure that contains Evidently's response to the sent events, including an event ID and
-    /// error codes, if any.</p>
+    /// <p>A structure that contains Evidently's response to the sent events, including an event ID and error codes, if any.</p>
     pub fn event_results(
         &self,
     ) -> std::option::Option<&[crate::model::PutProjectEventsResultEntry]> {
@@ -164,16 +162,14 @@ pub mod put_project_events_output {
         ///
         /// To override the contents of this collection use [`set_event_results`](Self::set_event_results).
         ///
-        /// <p>A structure that contains Evidently's response to the sent events, including an event ID and
-        /// error codes, if any.</p>
+        /// <p>A structure that contains Evidently's response to the sent events, including an event ID and error codes, if any.</p>
         pub fn event_results(mut self, input: crate::model::PutProjectEventsResultEntry) -> Self {
             let mut v = self.event_results.unwrap_or_default();
             v.push(input);
             self.event_results = Some(v);
             self
         }
-        /// <p>A structure that contains Evidently's response to the sent events, including an event ID and
-        /// error codes, if any.</p>
+        /// <p>A structure that contains Evidently's response to the sent events, including an event ID and error codes, if any.</p>
         pub fn set_event_results(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PutProjectEventsResultEntry>>,
@@ -205,12 +201,7 @@ pub struct EvaluateFeatureOutput {
     pub variation: std::option::Option<std::string::String>,
     /// <p>The value assigned to this variation to differentiate it from the other variations of this feature.</p>
     pub value: std::option::Option<crate::model::VariableValue>,
-    /// <p>Specifies the reason that the user session was assigned this variation. Possible values
-    /// include <code>DEFAULT</code>, meaning the user was served the default variation;
-    /// <code>LAUNCH_RULE_MATCH</code>, if the user session was enrolled in a launch;
-    /// <code>EXPERIMENT_RULE_MATCH</code>, if the user session was enrolled in an experiment; or
-    /// <code>ENTITY_OVERRIDES_MATCH</code>, if the user's <code>entityId</code> matches an override
-    /// rule.</p>
+    /// <p>Specifies the reason that the user session was assigned this variation. Possible values include <code>DEFAULT</code>, meaning the user was served the default variation; <code>LAUNCH_RULE_MATCH</code>, if the user session was enrolled in a launch; <code>EXPERIMENT_RULE_MATCH</code>, if the user session was enrolled in an experiment; or <code>ENTITY_OVERRIDES_MATCH</code>, if the user's <code>entityId</code> matches an override rule.</p>
     pub reason: std::option::Option<std::string::String>,
     /// <p>If this user was assigned to a launch or experiment, this field lists the launch or experiment name.</p>
     pub details: std::option::Option<std::string::String>,
@@ -224,12 +215,7 @@ impl EvaluateFeatureOutput {
     pub fn value(&self) -> std::option::Option<&crate::model::VariableValue> {
         self.value.as_ref()
     }
-    /// <p>Specifies the reason that the user session was assigned this variation. Possible values
-    /// include <code>DEFAULT</code>, meaning the user was served the default variation;
-    /// <code>LAUNCH_RULE_MATCH</code>, if the user session was enrolled in a launch;
-    /// <code>EXPERIMENT_RULE_MATCH</code>, if the user session was enrolled in an experiment; or
-    /// <code>ENTITY_OVERRIDES_MATCH</code>, if the user's <code>entityId</code> matches an override
-    /// rule.</p>
+    /// <p>Specifies the reason that the user session was assigned this variation. Possible values include <code>DEFAULT</code>, meaning the user was served the default variation; <code>LAUNCH_RULE_MATCH</code>, if the user session was enrolled in a launch; <code>EXPERIMENT_RULE_MATCH</code>, if the user session was enrolled in an experiment; or <code>ENTITY_OVERRIDES_MATCH</code>, if the user's <code>entityId</code> matches an override rule.</p>
     pub fn reason(&self) -> std::option::Option<&str> {
         self.reason.as_deref()
     }
@@ -283,22 +269,12 @@ pub mod evaluate_feature_output {
             self.value = input;
             self
         }
-        /// <p>Specifies the reason that the user session was assigned this variation. Possible values
-        /// include <code>DEFAULT</code>, meaning the user was served the default variation;
-        /// <code>LAUNCH_RULE_MATCH</code>, if the user session was enrolled in a launch;
-        /// <code>EXPERIMENT_RULE_MATCH</code>, if the user session was enrolled in an experiment; or
-        /// <code>ENTITY_OVERRIDES_MATCH</code>, if the user's <code>entityId</code> matches an override
-        /// rule.</p>
+        /// <p>Specifies the reason that the user session was assigned this variation. Possible values include <code>DEFAULT</code>, meaning the user was served the default variation; <code>LAUNCH_RULE_MATCH</code>, if the user session was enrolled in a launch; <code>EXPERIMENT_RULE_MATCH</code>, if the user session was enrolled in an experiment; or <code>ENTITY_OVERRIDES_MATCH</code>, if the user's <code>entityId</code> matches an override rule.</p>
         pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
             self.reason = Some(input.into());
             self
         }
-        /// <p>Specifies the reason that the user session was assigned this variation. Possible values
-        /// include <code>DEFAULT</code>, meaning the user was served the default variation;
-        /// <code>LAUNCH_RULE_MATCH</code>, if the user session was enrolled in a launch;
-        /// <code>EXPERIMENT_RULE_MATCH</code>, if the user session was enrolled in an experiment; or
-        /// <code>ENTITY_OVERRIDES_MATCH</code>, if the user's <code>entityId</code> matches an override
-        /// rule.</p>
+        /// <p>Specifies the reason that the user session was assigned this variation. Possible values include <code>DEFAULT</code>, meaning the user was served the default variation; <code>LAUNCH_RULE_MATCH</code>, if the user session was enrolled in a launch; <code>EXPERIMENT_RULE_MATCH</code>, if the user session was enrolled in an experiment; or <code>ENTITY_OVERRIDES_MATCH</code>, if the user's <code>entityId</code> matches an override rule.</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.reason = input;
             self
@@ -335,13 +311,11 @@ impl EvaluateFeatureOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchEvaluateFeatureOutput {
-    /// <p>An array of structures, where each structure displays the results of one feature evaluation
-    /// assignment to one user session.</p>
+    /// <p>An array of structures, where each structure displays the results of one feature evaluation assignment to one user session.</p>
     pub results: std::option::Option<std::vec::Vec<crate::model::EvaluationResult>>,
 }
 impl BatchEvaluateFeatureOutput {
-    /// <p>An array of structures, where each structure displays the results of one feature evaluation
-    /// assignment to one user session.</p>
+    /// <p>An array of structures, where each structure displays the results of one feature evaluation assignment to one user session.</p>
     pub fn results(&self) -> std::option::Option<&[crate::model::EvaluationResult]> {
         self.results.as_deref()
     }
@@ -366,16 +340,14 @@ pub mod batch_evaluate_feature_output {
         ///
         /// To override the contents of this collection use [`set_results`](Self::set_results).
         ///
-        /// <p>An array of structures, where each structure displays the results of one feature evaluation
-        /// assignment to one user session.</p>
+        /// <p>An array of structures, where each structure displays the results of one feature evaluation assignment to one user session.</p>
         pub fn results(mut self, input: crate::model::EvaluationResult) -> Self {
             let mut v = self.results.unwrap_or_default();
             v.push(input);
             self.results = Some(v);
             self
         }
-        /// <p>An array of structures, where each structure displays the results of one feature evaluation
-        /// assignment to one user session.</p>
+        /// <p>An array of structures, where each structure displays the results of one feature evaluation assignment to one user session.</p>
         pub fn set_results(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EvaluationResult>>,
@@ -404,8 +376,7 @@ impl BatchEvaluateFeatureOutput {
 pub struct ListProjectsOutput {
     /// <p>An array of structures that contain the configuration details of the projects in the Region.</p>
     pub projects: std::option::Option<std::vec::Vec<crate::model::ProjectSummary>>,
-    /// <p>The token to use in a subsequent <code>ListProjects</code> operation to return
-    /// the next set of results.</p>
+    /// <p>The token to use in a subsequent <code>ListProjects</code> operation to return the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListProjectsOutput {
@@ -413,8 +384,7 @@ impl ListProjectsOutput {
     pub fn projects(&self) -> std::option::Option<&[crate::model::ProjectSummary]> {
         self.projects.as_deref()
     }
-    /// <p>The token to use in a subsequent <code>ListProjects</code> operation to return
-    /// the next set of results.</p>
+    /// <p>The token to use in a subsequent <code>ListProjects</code> operation to return the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -456,14 +426,12 @@ pub mod list_projects_output {
             self.projects = input;
             self
         }
-        /// <p>The token to use in a subsequent <code>ListProjects</code> operation to return
-        /// the next set of results.</p>
+        /// <p>The token to use in a subsequent <code>ListProjects</code> operation to return the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use in a subsequent <code>ListProjects</code> operation to return
-        /// the next set of results.</p>
+        /// <p>The token to use in a subsequent <code>ListProjects</code> operation to return the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -737,21 +705,17 @@ impl StartLaunchOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLaunchesOutput {
-    /// <p>An array of structures that contain the configuration details of the launches in the
-    /// specified project.</p>
+    /// <p>An array of structures that contain the configuration details of the launches in the specified project.</p>
     pub launches: std::option::Option<std::vec::Vec<crate::model::Launch>>,
-    /// <p>The token to use in a subsequent <code>ListLaunches</code> operation to return
-    /// the next set of results.</p>
+    /// <p>The token to use in a subsequent <code>ListLaunches</code> operation to return the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListLaunchesOutput {
-    /// <p>An array of structures that contain the configuration details of the launches in the
-    /// specified project.</p>
+    /// <p>An array of structures that contain the configuration details of the launches in the specified project.</p>
     pub fn launches(&self) -> std::option::Option<&[crate::model::Launch]> {
         self.launches.as_deref()
     }
-    /// <p>The token to use in a subsequent <code>ListLaunches</code> operation to return
-    /// the next set of results.</p>
+    /// <p>The token to use in a subsequent <code>ListLaunches</code> operation to return the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -778,16 +742,14 @@ pub mod list_launches_output {
         ///
         /// To override the contents of this collection use [`set_launches`](Self::set_launches).
         ///
-        /// <p>An array of structures that contain the configuration details of the launches in the
-        /// specified project.</p>
+        /// <p>An array of structures that contain the configuration details of the launches in the specified project.</p>
         pub fn launches(mut self, input: crate::model::Launch) -> Self {
             let mut v = self.launches.unwrap_or_default();
             v.push(input);
             self.launches = Some(v);
             self
         }
-        /// <p>An array of structures that contain the configuration details of the launches in the
-        /// specified project.</p>
+        /// <p>An array of structures that contain the configuration details of the launches in the specified project.</p>
         pub fn set_launches(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Launch>>,
@@ -795,14 +757,12 @@ pub mod list_launches_output {
             self.launches = input;
             self
         }
-        /// <p>The token to use in a subsequent <code>ListLaunches</code> operation to return
-        /// the next set of results.</p>
+        /// <p>The token to use in a subsequent <code>ListLaunches</code> operation to return the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use in a subsequent <code>ListLaunches</code> operation to return
-        /// the next set of results.</p>
+        /// <p>The token to use in a subsequent <code>ListLaunches</code> operation to return the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1019,21 +979,17 @@ impl GetLaunchOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFeaturesOutput {
-    /// <p>An array of structures that contain the configuration details of the features in the
-    /// specified project.</p>
+    /// <p>An array of structures that contain the configuration details of the features in the specified project.</p>
     pub features: std::option::Option<std::vec::Vec<crate::model::FeatureSummary>>,
-    /// <p>The token to use in a subsequent <code>ListFeatures</code> operation to return
-    /// the next set of results.</p>
+    /// <p>The token to use in a subsequent <code>ListFeatures</code> operation to return the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFeaturesOutput {
-    /// <p>An array of structures that contain the configuration details of the features in the
-    /// specified project.</p>
+    /// <p>An array of structures that contain the configuration details of the features in the specified project.</p>
     pub fn features(&self) -> std::option::Option<&[crate::model::FeatureSummary]> {
         self.features.as_deref()
     }
-    /// <p>The token to use in a subsequent <code>ListFeatures</code> operation to return
-    /// the next set of results.</p>
+    /// <p>The token to use in a subsequent <code>ListFeatures</code> operation to return the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1060,16 +1016,14 @@ pub mod list_features_output {
         ///
         /// To override the contents of this collection use [`set_features`](Self::set_features).
         ///
-        /// <p>An array of structures that contain the configuration details of the features in the
-        /// specified project.</p>
+        /// <p>An array of structures that contain the configuration details of the features in the specified project.</p>
         pub fn features(mut self, input: crate::model::FeatureSummary) -> Self {
             let mut v = self.features.unwrap_or_default();
             v.push(input);
             self.features = Some(v);
             self
         }
-        /// <p>An array of structures that contain the configuration details of the features in the
-        /// specified project.</p>
+        /// <p>An array of structures that contain the configuration details of the features in the specified project.</p>
         pub fn set_features(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FeatureSummary>>,
@@ -1077,14 +1031,12 @@ pub mod list_features_output {
             self.features = input;
             self
         }
-        /// <p>The token to use in a subsequent <code>ListFeatures</code> operation to return
-        /// the next set of results.</p>
+        /// <p>The token to use in a subsequent <code>ListFeatures</code> operation to return the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use in a subsequent <code>ListFeatures</code> operation to return
-        /// the next set of results.</p>
+        /// <p>The token to use in a subsequent <code>ListFeatures</code> operation to return the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1535,21 +1487,17 @@ impl GetExperimentResultsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListExperimentsOutput {
-    /// <p>An array of structures that contain the configuration details of the experiments in the
-    /// specified project.</p>
+    /// <p>An array of structures that contain the configuration details of the experiments in the specified project.</p>
     pub experiments: std::option::Option<std::vec::Vec<crate::model::Experiment>>,
-    /// <p>The token to use in a subsequent <code>ListExperiments</code> operation to return
-    /// the next set of results.</p>
+    /// <p>The token to use in a subsequent <code>ListExperiments</code> operation to return the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListExperimentsOutput {
-    /// <p>An array of structures that contain the configuration details of the experiments in the
-    /// specified project.</p>
+    /// <p>An array of structures that contain the configuration details of the experiments in the specified project.</p>
     pub fn experiments(&self) -> std::option::Option<&[crate::model::Experiment]> {
         self.experiments.as_deref()
     }
-    /// <p>The token to use in a subsequent <code>ListExperiments</code> operation to return
-    /// the next set of results.</p>
+    /// <p>The token to use in a subsequent <code>ListExperiments</code> operation to return the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1576,16 +1524,14 @@ pub mod list_experiments_output {
         ///
         /// To override the contents of this collection use [`set_experiments`](Self::set_experiments).
         ///
-        /// <p>An array of structures that contain the configuration details of the experiments in the
-        /// specified project.</p>
+        /// <p>An array of structures that contain the configuration details of the experiments in the specified project.</p>
         pub fn experiments(mut self, input: crate::model::Experiment) -> Self {
             let mut v = self.experiments.unwrap_or_default();
             v.push(input);
             self.experiments = Some(v);
             self
         }
-        /// <p>An array of structures that contain the configuration details of the experiments in the
-        /// specified project.</p>
+        /// <p>An array of structures that contain the configuration details of the experiments in the specified project.</p>
         pub fn set_experiments(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Experiment>>,
@@ -1593,14 +1539,12 @@ pub mod list_experiments_output {
             self.experiments = input;
             self
         }
-        /// <p>The token to use in a subsequent <code>ListExperiments</code> operation to return
-        /// the next set of results.</p>
+        /// <p>The token to use in a subsequent <code>ListExperiments</code> operation to return the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use in a subsequent <code>ListExperiments</code> operation to return
-        /// the next set of results.</p>
+        /// <p>The token to use in a subsequent <code>ListExperiments</code> operation to return the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1625,13 +1569,11 @@ impl ListExperimentsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateExperimentOutput {
-    /// <p>A structure containing the configuration details of the experiment
-    /// that you created.</p>
+    /// <p>A structure containing the configuration details of the experiment that you created.</p>
     pub experiment: std::option::Option<crate::model::Experiment>,
 }
 impl CreateExperimentOutput {
-    /// <p>A structure containing the configuration details of the experiment
-    /// that you created.</p>
+    /// <p>A structure containing the configuration details of the experiment that you created.</p>
     pub fn experiment(&self) -> std::option::Option<&crate::model::Experiment> {
         self.experiment.as_ref()
     }
@@ -1652,14 +1594,12 @@ pub mod create_experiment_output {
         pub(crate) experiment: std::option::Option<crate::model::Experiment>,
     }
     impl Builder {
-        /// <p>A structure containing the configuration details of the experiment
-        /// that you created.</p>
+        /// <p>A structure containing the configuration details of the experiment that you created.</p>
         pub fn experiment(mut self, input: crate::model::Experiment) -> Self {
             self.experiment = Some(input);
             self
         }
-        /// <p>A structure containing the configuration details of the experiment
-        /// that you created.</p>
+        /// <p>A structure containing the configuration details of the experiment that you created.</p>
         pub fn set_experiment(
             mut self,
             input: std::option::Option<crate::model::Experiment>,
@@ -1716,13 +1656,11 @@ impl DeleteExperimentOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateExperimentOutput {
-    /// <p>A structure containing the configuration details of the experiment
-    /// that was updated.</p>
+    /// <p>A structure containing the configuration details of the experiment that was updated.</p>
     pub experiment: std::option::Option<crate::model::Experiment>,
 }
 impl UpdateExperimentOutput {
-    /// <p>A structure containing the configuration details of the experiment
-    /// that was updated.</p>
+    /// <p>A structure containing the configuration details of the experiment that was updated.</p>
     pub fn experiment(&self) -> std::option::Option<&crate::model::Experiment> {
         self.experiment.as_ref()
     }
@@ -1743,14 +1681,12 @@ pub mod update_experiment_output {
         pub(crate) experiment: std::option::Option<crate::model::Experiment>,
     }
     impl Builder {
-        /// <p>A structure containing the configuration details of the experiment
-        /// that was updated.</p>
+        /// <p>A structure containing the configuration details of the experiment that was updated.</p>
         pub fn experiment(mut self, input: crate::model::Experiment) -> Self {
             self.experiment = Some(input);
             self
         }
-        /// <p>A structure containing the configuration details of the experiment
-        /// that was updated.</p>
+        /// <p>A structure containing the configuration details of the experiment that was updated.</p>
         pub fn set_experiment(
             mut self,
             input: std::option::Option<crate::model::Experiment>,

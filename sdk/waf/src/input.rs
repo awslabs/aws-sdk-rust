@@ -10,24 +10,22 @@ pub mod create_byte_match_set_input {
         pub(crate) change_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A friendly name or description of the <a>ByteMatchSet</a>. You can't change <code>Name</code> after you create a
-        /// <code>ByteMatchSet</code>.</p>
+        /// <p>A friendly name or description of the <code>ByteMatchSet</code>. You can't change <code>Name</code> after you create a <code>ByteMatchSet</code>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>A friendly name or description of the <a>ByteMatchSet</a>. You can't change <code>Name</code> after you create a
-        /// <code>ByteMatchSet</code>.</p>
+        /// <p>A friendly name or description of the <code>ByteMatchSet</code>. You can't change <code>Name</code> after you create a <code>ByteMatchSet</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.change_token = Some(input.into());
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -178,22 +176,22 @@ pub mod create_geo_match_set_input {
         pub(crate) change_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A friendly name or description of the <a>GeoMatchSet</a>. You can't change <code>Name</code> after you create the <code>GeoMatchSet</code>.</p>
+        /// <p>A friendly name or description of the <code>GeoMatchSet</code>. You can't change <code>Name</code> after you create the <code>GeoMatchSet</code>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>A friendly name or description of the <a>GeoMatchSet</a>. You can't change <code>Name</code> after you create the <code>GeoMatchSet</code>.</p>
+        /// <p>A friendly name or description of the <code>GeoMatchSet</code>. You can't change <code>Name</code> after you create the <code>GeoMatchSet</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.change_token = Some(input.into());
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -344,22 +342,22 @@ pub mod create_ip_set_input {
         pub(crate) change_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A friendly name or description of the <a>IPSet</a>. You can't change <code>Name</code> after you create the <code>IPSet</code>.</p>
+        /// <p>A friendly name or description of the <code>IPSet</code>. You can't change <code>Name</code> after you create the <code>IPSet</code>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>A friendly name or description of the <a>IPSet</a>. You can't change <code>Name</code> after you create the <code>IPSet</code>.</p>
+        /// <p>A friendly name or description of the <code>IPSet</code>. You can't change <code>Name</code> after you create the <code>IPSet</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.change_token = Some(input.into());
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -513,78 +511,52 @@ pub mod create_rate_based_rule_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>A friendly name or description of the <a>RateBasedRule</a>. You can't
-        /// change the name of a <code>RateBasedRule</code> after you create it.</p>
+        /// <p>A friendly name or description of the <code>RateBasedRule</code>. You can't change the name of a <code>RateBasedRule</code> after you create it.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>A friendly name or description of the <a>RateBasedRule</a>. You can't
-        /// change the name of a <code>RateBasedRule</code> after you create it.</p>
+        /// <p>A friendly name or description of the <code>RateBasedRule</code>. You can't change the name of a <code>RateBasedRule</code> after you create it.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>A friendly name or description for the metrics for this <code>RateBasedRule</code>.
-        /// The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain
-        /// whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after you create the
-        /// <code>RateBasedRule</code>.</p>
+        /// <p>A friendly name or description for the metrics for this <code>RateBasedRule</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after you create the <code>RateBasedRule</code>.</p>
         pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.metric_name = Some(input.into());
             self
         }
-        /// <p>A friendly name or description for the metrics for this <code>RateBasedRule</code>.
-        /// The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain
-        /// whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after you create the
-        /// <code>RateBasedRule</code>.</p>
+        /// <p>A friendly name or description for the metrics for this <code>RateBasedRule</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after you create the <code>RateBasedRule</code>.</p>
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.metric_name = input;
             self
         }
-        /// <p>The field that AWS WAF uses to determine if requests are likely arriving from a single
-        /// source and thus subject to rate monitoring. The only valid value for <code>RateKey</code>
-        /// is <code>IP</code>. <code>IP</code> indicates that requests that arrive from the same IP
-        /// address are subject to the <code>RateLimit</code> that is specified in
-        /// the <code>RateBasedRule</code>.</p>
+        /// <p>The field that AWS WAF uses to determine if requests are likely arriving from a single source and thus subject to rate monitoring. The only valid value for <code>RateKey</code> is <code>IP</code>. <code>IP</code> indicates that requests that arrive from the same IP address are subject to the <code>RateLimit</code> that is specified in the <code>RateBasedRule</code>.</p>
         pub fn rate_key(mut self, input: crate::model::RateKey) -> Self {
             self.rate_key = Some(input);
             self
         }
-        /// <p>The field that AWS WAF uses to determine if requests are likely arriving from a single
-        /// source and thus subject to rate monitoring. The only valid value for <code>RateKey</code>
-        /// is <code>IP</code>. <code>IP</code> indicates that requests that arrive from the same IP
-        /// address are subject to the <code>RateLimit</code> that is specified in
-        /// the <code>RateBasedRule</code>.</p>
+        /// <p>The field that AWS WAF uses to determine if requests are likely arriving from a single source and thus subject to rate monitoring. The only valid value for <code>RateKey</code> is <code>IP</code>. <code>IP</code> indicates that requests that arrive from the same IP address are subject to the <code>RateLimit</code> that is specified in the <code>RateBasedRule</code>.</p>
         pub fn set_rate_key(mut self, input: std::option::Option<crate::model::RateKey>) -> Self {
             self.rate_key = input;
             self
         }
-        /// <p>The maximum number of requests, which have an identical value in the field that is
-        /// specified by <code>RateKey</code>, allowed in a five-minute period. If the number of
-        /// requests exceeds the <code>RateLimit</code> and the other predicates specified in the rule
-        /// are also met, AWS WAF triggers the action that is specified for this rule.</p>
+        /// <p>The maximum number of requests, which have an identical value in the field that is specified by <code>RateKey</code>, allowed in a five-minute period. If the number of requests exceeds the <code>RateLimit</code> and the other predicates specified in the rule are also met, AWS WAF triggers the action that is specified for this rule.</p>
         pub fn rate_limit(mut self, input: i64) -> Self {
             self.rate_limit = Some(input);
             self
         }
-        /// <p>The maximum number of requests, which have an identical value in the field that is
-        /// specified by <code>RateKey</code>, allowed in a five-minute period. If the number of
-        /// requests exceeds the <code>RateLimit</code> and the other predicates specified in the rule
-        /// are also met, AWS WAF triggers the action that is specified for this rule.</p>
+        /// <p>The maximum number of requests, which have an identical value in the field that is specified by <code>RateKey</code>, allowed in a five-minute period. If the number of requests exceeds the <code>RateLimit</code> and the other predicates specified in the rule are also met, AWS WAF triggers the action that is specified for this rule.</p>
         pub fn set_rate_limit(mut self, input: std::option::Option<i64>) -> Self {
             self.rate_limit = input;
             self
         }
-        /// <p>The <code>ChangeToken</code> that you used to submit the
-        /// <code>CreateRateBasedRule</code> request. You can also use this value to query the
-        /// status of the request. For more information, see <a>GetChangeTokenStatus</a>.</p>
+        /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRateBasedRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
         pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.change_token = Some(input.into());
             self
         }
-        /// <p>The <code>ChangeToken</code> that you used to submit the
-        /// <code>CreateRateBasedRule</code> request. You can also use this value to query the
-        /// status of the request. For more information, see <a>GetChangeTokenStatus</a>.</p>
+        /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRateBasedRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -760,24 +732,22 @@ pub mod create_regex_match_set_input {
         pub(crate) change_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A friendly name or description of the <a>RegexMatchSet</a>. You can't change <code>Name</code> after you create a
-        /// <code>RegexMatchSet</code>.</p>
+        /// <p>A friendly name or description of the <code>RegexMatchSet</code>. You can't change <code>Name</code> after you create a <code>RegexMatchSet</code>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>A friendly name or description of the <a>RegexMatchSet</a>. You can't change <code>Name</code> after you create a
-        /// <code>RegexMatchSet</code>.</p>
+        /// <p>A friendly name or description of the <code>RegexMatchSet</code>. You can't change <code>Name</code> after you create a <code>RegexMatchSet</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.change_token = Some(input.into());
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -930,24 +900,22 @@ pub mod create_regex_pattern_set_input {
         pub(crate) change_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A friendly name or description of the <a>RegexPatternSet</a>. You can't change <code>Name</code> after you create a
-        /// <code>RegexPatternSet</code>.</p>
+        /// <p>A friendly name or description of the <code>RegexPatternSet</code>. You can't change <code>Name</code> after you create a <code>RegexPatternSet</code>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>A friendly name or description of the <a>RegexPatternSet</a>. You can't change <code>Name</code> after you create a
-        /// <code>RegexPatternSet</code>.</p>
+        /// <p>A friendly name or description of the <code>RegexPatternSet</code>. You can't change <code>Name</code> after you create a <code>RegexPatternSet</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.change_token = Some(input.into());
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -1102,36 +1070,32 @@ pub mod create_rule_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>A friendly name or description of the <a>Rule</a>. You can't change the name of a <code>Rule</code> after you create it.</p>
+        /// <p>A friendly name or description of the <code>Rule</code>. You can't change the name of a <code>Rule</code> after you create it.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>A friendly name or description of the <a>Rule</a>. You can't change the name of a <code>Rule</code> after you create it.</p>
+        /// <p>A friendly name or description of the <code>Rule</code>. You can't change the name of a <code>Rule</code> after you create it.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>A friendly name or description for the metrics for this <code>Rule</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain
-        /// whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after you create the
-        /// <code>Rule</code>.</p>
+        /// <p>A friendly name or description for the metrics for this <code>Rule</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after you create the <code>Rule</code>.</p>
         pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.metric_name = Some(input.into());
             self
         }
-        /// <p>A friendly name or description for the metrics for this <code>Rule</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain
-        /// whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after you create the
-        /// <code>Rule</code>.</p>
+        /// <p>A friendly name or description for the metrics for this <code>Rule</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after you create the <code>Rule</code>.</p>
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.metric_name = input;
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.change_token = Some(input.into());
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -1304,36 +1268,32 @@ pub mod create_rule_group_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>A friendly name or description of the <a>RuleGroup</a>. You can't change <code>Name</code> after you create a
-        /// <code>RuleGroup</code>.</p>
+        /// <p>A friendly name or description of the <code>RuleGroup</code>. You can't change <code>Name</code> after you create a <code>RuleGroup</code>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>A friendly name or description of the <a>RuleGroup</a>. You can't change <code>Name</code> after you create a
-        /// <code>RuleGroup</code>.</p>
+        /// <p>A friendly name or description of the <code>RuleGroup</code>. You can't change <code>Name</code> after you create a <code>RuleGroup</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>A friendly name or description for the metrics for this <code>RuleGroup</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain
-        /// whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after you create the <code>RuleGroup</code>.</p>
+        /// <p>A friendly name or description for the metrics for this <code>RuleGroup</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after you create the <code>RuleGroup</code>.</p>
         pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.metric_name = Some(input.into());
             self
         }
-        /// <p>A friendly name or description for the metrics for this <code>RuleGroup</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain
-        /// whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after you create the <code>RuleGroup</code>.</p>
+        /// <p>A friendly name or description for the metrics for this <code>RuleGroup</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after you create the <code>RuleGroup</code>.</p>
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.metric_name = input;
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.change_token = Some(input.into());
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -1505,24 +1465,22 @@ pub mod create_size_constraint_set_input {
         pub(crate) change_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A friendly name or description of the <a>SizeConstraintSet</a>. You can't change <code>Name</code> after you create a
-        /// <code>SizeConstraintSet</code>.</p>
+        /// <p>A friendly name or description of the <code>SizeConstraintSet</code>. You can't change <code>Name</code> after you create a <code>SizeConstraintSet</code>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>A friendly name or description of the <a>SizeConstraintSet</a>. You can't change <code>Name</code> after you create a
-        /// <code>SizeConstraintSet</code>.</p>
+        /// <p>A friendly name or description of the <code>SizeConstraintSet</code>. You can't change <code>Name</code> after you create a <code>SizeConstraintSet</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.change_token = Some(input.into());
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -1676,24 +1634,22 @@ pub mod create_sql_injection_match_set_input {
         pub(crate) change_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A friendly name or description for the <a>SqlInjectionMatchSet</a> that you're creating. You can't change <code>Name</code>
-        /// after you create the <code>SqlInjectionMatchSet</code>.</p>
+        /// <p>A friendly name or description for the <code>SqlInjectionMatchSet</code> that you're creating. You can't change <code>Name</code> after you create the <code>SqlInjectionMatchSet</code>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>A friendly name or description for the <a>SqlInjectionMatchSet</a> that you're creating. You can't change <code>Name</code>
-        /// after you create the <code>SqlInjectionMatchSet</code>.</p>
+        /// <p>A friendly name or description for the <code>SqlInjectionMatchSet</code> that you're creating. You can't change <code>Name</code> after you create the <code>SqlInjectionMatchSet</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.change_token = Some(input.into());
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -1849,38 +1805,32 @@ pub mod create_web_acl_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>A friendly name or description of the <a>WebACL</a>. You can't change <code>Name</code> after you create the <code>WebACL</code>.</p>
+        /// <p>A friendly name or description of the <code>WebACL</code>. You can't change <code>Name</code> after you create the <code>WebACL</code>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>A friendly name or description of the <a>WebACL</a>. You can't change <code>Name</code> after you create the <code>WebACL</code>.</p>
+        /// <p>A friendly name or description of the <code>WebACL</code>. You can't change <code>Name</code> after you create the <code>WebACL</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>A friendly name or description for the metrics for this <code>WebACL</code>.The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain
-        /// whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change <code>MetricName</code> after you create the
-        /// <code>WebACL</code>.</p>
+        /// <p>A friendly name or description for the metrics for this <code>WebACL</code>.The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change <code>MetricName</code> after you create the <code>WebACL</code>.</p>
         pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.metric_name = Some(input.into());
             self
         }
-        /// <p>A friendly name or description for the metrics for this <code>WebACL</code>.The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain
-        /// whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change <code>MetricName</code> after you create the
-        /// <code>WebACL</code>.</p>
+        /// <p>A friendly name or description for the metrics for this <code>WebACL</code>.The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change <code>MetricName</code> after you create the <code>WebACL</code>.</p>
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.metric_name = input;
             self
         }
-        /// <p>The action that you want  AWS WAF to take when a request doesn't match the criteria specified in any of the <code>Rule</code>
-        /// objects that are associated with the <code>WebACL</code>.</p>
+        /// <p>The action that you want AWS WAF to take when a request doesn't match the criteria specified in any of the <code>Rule</code> objects that are associated with the <code>WebACL</code>.</p>
         pub fn default_action(mut self, input: crate::model::WafAction) -> Self {
             self.default_action = Some(input);
             self
         }
-        /// <p>The action that you want  AWS WAF to take when a request doesn't match the criteria specified in any of the <code>Rule</code>
-        /// objects that are associated with the <code>WebACL</code>.</p>
+        /// <p>The action that you want AWS WAF to take when a request doesn't match the criteria specified in any of the <code>Rule</code> objects that are associated with the <code>WebACL</code>.</p>
         pub fn set_default_action(
             mut self,
             input: std::option::Option<crate::model::WafAction>,
@@ -1888,12 +1838,12 @@ pub mod create_web_acl_input {
             self.default_action = input;
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.change_token = Some(input.into());
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -2076,37 +2026,21 @@ pub mod create_web_acl_migration_stack_input {
             self.web_acl_id = input;
             self
         }
-        /// <p>The name of the Amazon S3 bucket to store the CloudFormation template in. The S3 bucket must be
-        /// configured as follows for the migration:  </p>
+        /// <p>The name of the Amazon S3 bucket to store the CloudFormation template in. The S3 bucket must be configured as follows for the migration: </p>
         /// <ul>
-        /// <li>
-        /// <p>The bucket name must start with <code>aws-waf-migration-</code>. For example, <code>aws-waf-migration-my-web-acl</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>The bucket must be in the Region where you are deploying the template. For example, for a web ACL in us-west-2, you must use an Amazon S3 bucket in us-west-2 and you must deploy the template stack to us-west-2. </p>
-        /// </li>
-        /// <li>
-        /// <p>The bucket policies must permit the migration process to write data. For listings of the
-        /// bucket policies, see the Examples section. </p>
-        /// </li>
+        /// <li> <p>The bucket name must start with <code>aws-waf-migration-</code>. For example, <code>aws-waf-migration-my-web-acl</code>.</p> </li>
+        /// <li> <p>The bucket must be in the Region where you are deploying the template. For example, for a web ACL in us-west-2, you must use an Amazon S3 bucket in us-west-2 and you must deploy the template stack to us-west-2. </p> </li>
+        /// <li> <p>The bucket policies must permit the migration process to write data. For listings of the bucket policies, see the Examples section. </p> </li>
         /// </ul>
         pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_bucket_name = Some(input.into());
             self
         }
-        /// <p>The name of the Amazon S3 bucket to store the CloudFormation template in. The S3 bucket must be
-        /// configured as follows for the migration:  </p>
+        /// <p>The name of the Amazon S3 bucket to store the CloudFormation template in. The S3 bucket must be configured as follows for the migration: </p>
         /// <ul>
-        /// <li>
-        /// <p>The bucket name must start with <code>aws-waf-migration-</code>. For example, <code>aws-waf-migration-my-web-acl</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>The bucket must be in the Region where you are deploying the template. For example, for a web ACL in us-west-2, you must use an Amazon S3 bucket in us-west-2 and you must deploy the template stack to us-west-2. </p>
-        /// </li>
-        /// <li>
-        /// <p>The bucket policies must permit the migration process to write data. For listings of the
-        /// bucket policies, see the Examples section. </p>
-        /// </li>
+        /// <li> <p>The bucket name must start with <code>aws-waf-migration-</code>. For example, <code>aws-waf-migration-my-web-acl</code>.</p> </li>
+        /// <li> <p>The bucket must be in the Region where you are deploying the template. For example, for a web ACL in us-west-2, you must use an Amazon S3 bucket in us-west-2 and you must deploy the template stack to us-west-2. </p> </li>
+        /// <li> <p>The bucket policies must permit the migration process to write data. For listings of the bucket policies, see the Examples section. </p> </li>
         /// </ul>
         pub fn set_s3_bucket_name(
             mut self,
@@ -2115,16 +2049,12 @@ pub mod create_web_acl_migration_stack_input {
             self.s3_bucket_name = input;
             self
         }
-        /// <p>Indicates whether to exclude entities that can't be migrated or to stop the migration.
-        /// Set this to true to ignore unsupported entities in the web ACL during the migration. Otherwise, if AWS WAF encounters unsupported
-        /// entities, it stops the process and throws an exception. </p>
+        /// <p>Indicates whether to exclude entities that can't be migrated or to stop the migration. Set this to true to ignore unsupported entities in the web ACL during the migration. Otherwise, if AWS WAF encounters unsupported entities, it stops the process and throws an exception. </p>
         pub fn ignore_unsupported_type(mut self, input: bool) -> Self {
             self.ignore_unsupported_type = Some(input);
             self
         }
-        /// <p>Indicates whether to exclude entities that can't be migrated or to stop the migration.
-        /// Set this to true to ignore unsupported entities in the web ACL during the migration. Otherwise, if AWS WAF encounters unsupported
-        /// entities, it stops the process and throws an exception. </p>
+        /// <p>Indicates whether to exclude entities that can't be migrated or to stop the migration. Set this to true to ignore unsupported entities in the web ACL during the migration. Otherwise, if AWS WAF encounters unsupported entities, it stops the process and throws an exception. </p>
         pub fn set_ignore_unsupported_type(mut self, input: std::option::Option<bool>) -> Self {
             self.ignore_unsupported_type = input;
             self
@@ -2278,24 +2208,22 @@ pub mod create_xss_match_set_input {
         pub(crate) change_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A friendly name or description for the <a>XssMatchSet</a> that you're creating. You can't change <code>Name</code>
-        /// after you create the <code>XssMatchSet</code>.</p>
+        /// <p>A friendly name or description for the <code>XssMatchSet</code> that you're creating. You can't change <code>Name</code> after you create the <code>XssMatchSet</code>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>A friendly name or description for the <a>XssMatchSet</a> that you're creating. You can't change <code>Name</code>
-        /// after you create the <code>XssMatchSet</code>.</p>
+        /// <p>A friendly name or description for the <code>XssMatchSet</code> that you're creating. You can't change <code>Name</code> after you create the <code>XssMatchSet</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.change_token = Some(input.into());
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -2446,14 +2374,12 @@ pub mod delete_byte_match_set_input {
         pub(crate) change_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <code>ByteMatchSetId</code> of the <a>ByteMatchSet</a> that you want to delete. <code>ByteMatchSetId</code> is returned by <a>CreateByteMatchSet</a> and by
-        /// <a>ListByteMatchSets</a>.</p>
+        /// <p>The <code>ByteMatchSetId</code> of the <code>ByteMatchSet</code> that you want to delete. <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
         pub fn byte_match_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.byte_match_set_id = Some(input.into());
             self
         }
-        /// <p>The <code>ByteMatchSetId</code> of the <a>ByteMatchSet</a> that you want to delete. <code>ByteMatchSetId</code> is returned by <a>CreateByteMatchSet</a> and by
-        /// <a>ListByteMatchSets</a>.</p>
+        /// <p>The <code>ByteMatchSetId</code> of the <code>ByteMatchSet</code> that you want to delete. <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
         pub fn set_byte_match_set_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2461,12 +2387,12 @@ pub mod delete_byte_match_set_input {
             self.byte_match_set_id = input;
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.change_token = Some(input.into());
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -2617,14 +2543,12 @@ pub mod delete_geo_match_set_input {
         pub(crate) change_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <code>GeoMatchSetID</code> of the <a>GeoMatchSet</a> that you want to delete. <code>GeoMatchSetId</code> is returned by <a>CreateGeoMatchSet</a> and by
-        /// <a>ListGeoMatchSets</a>.</p>
+        /// <p>The <code>GeoMatchSetID</code> of the <code>GeoMatchSet</code> that you want to delete. <code>GeoMatchSetId</code> is returned by <code>CreateGeoMatchSet</code> and by <code>ListGeoMatchSets</code>.</p>
         pub fn geo_match_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.geo_match_set_id = Some(input.into());
             self
         }
-        /// <p>The <code>GeoMatchSetID</code> of the <a>GeoMatchSet</a> that you want to delete. <code>GeoMatchSetId</code> is returned by <a>CreateGeoMatchSet</a> and by
-        /// <a>ListGeoMatchSets</a>.</p>
+        /// <p>The <code>GeoMatchSetID</code> of the <code>GeoMatchSet</code> that you want to delete. <code>GeoMatchSetId</code> is returned by <code>CreateGeoMatchSet</code> and by <code>ListGeoMatchSets</code>.</p>
         pub fn set_geo_match_set_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2632,12 +2556,12 @@ pub mod delete_geo_match_set_input {
             self.geo_match_set_id = input;
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.change_token = Some(input.into());
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -2788,24 +2712,22 @@ pub mod delete_ip_set_input {
         pub(crate) change_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <code>IPSetId</code> of the <a>IPSet</a> that you want to delete. <code>IPSetId</code> is returned by <a>CreateIPSet</a> and by
-        /// <a>ListIPSets</a>.</p>
+        /// <p>The <code>IPSetId</code> of the <code>IPSet</code> that you want to delete. <code>IPSetId</code> is returned by <code>CreateIPSet</code> and by <code>ListIPSets</code>.</p>
         pub fn ip_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.ip_set_id = Some(input.into());
             self
         }
-        /// <p>The <code>IPSetId</code> of the <a>IPSet</a> that you want to delete. <code>IPSetId</code> is returned by <a>CreateIPSet</a> and by
-        /// <a>ListIPSets</a>.</p>
+        /// <p>The <code>IPSetId</code> of the <code>IPSet</code> that you want to delete. <code>IPSetId</code> is returned by <code>CreateIPSet</code> and by <code>ListIPSets</code>.</p>
         pub fn set_ip_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ip_set_id = input;
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.change_token = Some(input.into());
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -2954,12 +2876,12 @@ pub mod delete_logging_configuration_input {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the web ACL from which you want to delete the <a>LoggingConfiguration</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the web ACL from which you want to delete the <code>LoggingConfiguration</code>.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the web ACL from which you want to delete the <a>LoggingConfiguration</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the web ACL from which you want to delete the <code>LoggingConfiguration</code>.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -3270,26 +3192,22 @@ pub mod delete_rate_based_rule_input {
         pub(crate) change_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <code>RuleId</code> of the <a>RateBasedRule</a> that you want to
-        /// delete. <code>RuleId</code> is returned by <a>CreateRateBasedRule</a> and by
-        /// <a>ListRateBasedRules</a>.</p>
+        /// <p>The <code>RuleId</code> of the <code>RateBasedRule</code> that you want to delete. <code>RuleId</code> is returned by <code>CreateRateBasedRule</code> and by <code>ListRateBasedRules</code>.</p>
         pub fn rule_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rule_id = Some(input.into());
             self
         }
-        /// <p>The <code>RuleId</code> of the <a>RateBasedRule</a> that you want to
-        /// delete. <code>RuleId</code> is returned by <a>CreateRateBasedRule</a> and by
-        /// <a>ListRateBasedRules</a>.</p>
+        /// <p>The <code>RuleId</code> of the <code>RateBasedRule</code> that you want to delete. <code>RuleId</code> is returned by <code>CreateRateBasedRule</code> and by <code>ListRateBasedRules</code>.</p>
         pub fn set_rule_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rule_id = input;
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.change_token = Some(input.into());
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -3442,14 +3360,12 @@ pub mod delete_regex_match_set_input {
         pub(crate) change_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <code>RegexMatchSetId</code> of the <a>RegexMatchSet</a> that you want to delete. <code>RegexMatchSetId</code> is returned by <a>CreateRegexMatchSet</a> and by
-        /// <a>ListRegexMatchSets</a>.</p>
+        /// <p>The <code>RegexMatchSetId</code> of the <code>RegexMatchSet</code> that you want to delete. <code>RegexMatchSetId</code> is returned by <code>CreateRegexMatchSet</code> and by <code>ListRegexMatchSets</code>.</p>
         pub fn regex_match_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.regex_match_set_id = Some(input.into());
             self
         }
-        /// <p>The <code>RegexMatchSetId</code> of the <a>RegexMatchSet</a> that you want to delete. <code>RegexMatchSetId</code> is returned by <a>CreateRegexMatchSet</a> and by
-        /// <a>ListRegexMatchSets</a>.</p>
+        /// <p>The <code>RegexMatchSetId</code> of the <code>RegexMatchSet</code> that you want to delete. <code>RegexMatchSetId</code> is returned by <code>CreateRegexMatchSet</code> and by <code>ListRegexMatchSets</code>.</p>
         pub fn set_regex_match_set_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3457,12 +3373,12 @@ pub mod delete_regex_match_set_input {
             self.regex_match_set_id = input;
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.change_token = Some(input.into());
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -3615,14 +3531,12 @@ pub mod delete_regex_pattern_set_input {
         pub(crate) change_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <code>RegexPatternSetId</code> of the <a>RegexPatternSet</a> that you want to delete. <code>RegexPatternSetId</code> is returned by <a>CreateRegexPatternSet</a> and by
-        /// <a>ListRegexPatternSets</a>.</p>
+        /// <p>The <code>RegexPatternSetId</code> of the <code>RegexPatternSet</code> that you want to delete. <code>RegexPatternSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
         pub fn regex_pattern_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.regex_pattern_set_id = Some(input.into());
             self
         }
-        /// <p>The <code>RegexPatternSetId</code> of the <a>RegexPatternSet</a> that you want to delete. <code>RegexPatternSetId</code> is returned by <a>CreateRegexPatternSet</a> and by
-        /// <a>ListRegexPatternSets</a>.</p>
+        /// <p>The <code>RegexPatternSetId</code> of the <code>RegexPatternSet</code> that you want to delete. <code>RegexPatternSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
         pub fn set_regex_pattern_set_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3630,12 +3544,12 @@ pub mod delete_regex_pattern_set_input {
             self.regex_pattern_set_id = input;
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.change_token = Some(input.into());
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -3788,24 +3702,22 @@ pub mod delete_rule_input {
         pub(crate) change_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <code>RuleId</code> of the <a>Rule</a> that you want to delete. <code>RuleId</code> is returned by <a>CreateRule</a> and by
-        /// <a>ListRules</a>.</p>
+        /// <p>The <code>RuleId</code> of the <code>Rule</code> that you want to delete. <code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
         pub fn rule_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rule_id = Some(input.into());
             self
         }
-        /// <p>The <code>RuleId</code> of the <a>Rule</a> that you want to delete. <code>RuleId</code> is returned by <a>CreateRule</a> and by
-        /// <a>ListRules</a>.</p>
+        /// <p>The <code>RuleId</code> of the <code>Rule</code> that you want to delete. <code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
         pub fn set_rule_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rule_id = input;
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.change_token = Some(input.into());
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -3955,14 +3867,12 @@ pub mod delete_rule_group_input {
         pub(crate) change_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <code>RuleGroupId</code> of the <a>RuleGroup</a> that you want to delete. <code>RuleGroupId</code> is returned by <a>CreateRuleGroup</a> and by
-        /// <a>ListRuleGroups</a>.</p>
+        /// <p>The <code>RuleGroupId</code> of the <code>RuleGroup</code> that you want to delete. <code>RuleGroupId</code> is returned by <code>CreateRuleGroup</code> and by <code>ListRuleGroups</code>.</p>
         pub fn rule_group_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rule_group_id = Some(input.into());
             self
         }
-        /// <p>The <code>RuleGroupId</code> of the <a>RuleGroup</a> that you want to delete. <code>RuleGroupId</code> is returned by <a>CreateRuleGroup</a> and by
-        /// <a>ListRuleGroups</a>.</p>
+        /// <p>The <code>RuleGroupId</code> of the <code>RuleGroup</code> that you want to delete. <code>RuleGroupId</code> is returned by <code>CreateRuleGroup</code> and by <code>ListRuleGroups</code>.</p>
         pub fn set_rule_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3970,12 +3880,12 @@ pub mod delete_rule_group_input {
             self.rule_group_id = input;
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.change_token = Some(input.into());
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -4126,14 +4036,12 @@ pub mod delete_size_constraint_set_input {
         pub(crate) change_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <code>SizeConstraintSetId</code> of the <a>SizeConstraintSet</a> that you want to delete. <code>SizeConstraintSetId</code>
-        /// is returned by <a>CreateSizeConstraintSet</a> and by <a>ListSizeConstraintSets</a>.</p>
+        /// <p>The <code>SizeConstraintSetId</code> of the <code>SizeConstraintSet</code> that you want to delete. <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
         pub fn size_constraint_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.size_constraint_set_id = Some(input.into());
             self
         }
-        /// <p>The <code>SizeConstraintSetId</code> of the <a>SizeConstraintSet</a> that you want to delete. <code>SizeConstraintSetId</code>
-        /// is returned by <a>CreateSizeConstraintSet</a> and by <a>ListSizeConstraintSets</a>.</p>
+        /// <p>The <code>SizeConstraintSetId</code> of the <code>SizeConstraintSet</code> that you want to delete. <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
         pub fn set_size_constraint_set_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4141,12 +4049,12 @@ pub mod delete_size_constraint_set_input {
             self.size_constraint_set_id = input;
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.change_token = Some(input.into());
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -4300,14 +4208,12 @@ pub mod delete_sql_injection_match_set_input {
         pub(crate) change_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <code>SqlInjectionMatchSetId</code> of the <a>SqlInjectionMatchSet</a> that you want to delete.
-        /// <code>SqlInjectionMatchSetId</code> is returned by <a>CreateSqlInjectionMatchSet</a> and by <a>ListSqlInjectionMatchSets</a>.</p>
+        /// <p>The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to delete. <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
         pub fn sql_injection_match_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.sql_injection_match_set_id = Some(input.into());
             self
         }
-        /// <p>The <code>SqlInjectionMatchSetId</code> of the <a>SqlInjectionMatchSet</a> that you want to delete.
-        /// <code>SqlInjectionMatchSetId</code> is returned by <a>CreateSqlInjectionMatchSet</a> and by <a>ListSqlInjectionMatchSets</a>.</p>
+        /// <p>The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to delete. <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
         pub fn set_sql_injection_match_set_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4315,12 +4221,12 @@ pub mod delete_sql_injection_match_set_input {
             self.sql_injection_match_set_id = input;
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.change_token = Some(input.into());
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -4473,24 +4379,22 @@ pub mod delete_web_acl_input {
         pub(crate) change_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <code>WebACLId</code> of the <a>WebACL</a> that you want to delete. <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by
-        /// <a>ListWebACLs</a>.</p>
+        /// <p>The <code>WebACLId</code> of the <code>WebACL</code> that you want to delete. <code>WebACLId</code> is returned by <code>CreateWebACL</code> and by <code>ListWebACLs</code>.</p>
         pub fn web_acl_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.web_acl_id = Some(input.into());
             self
         }
-        /// <p>The <code>WebACLId</code> of the <a>WebACL</a> that you want to delete. <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by
-        /// <a>ListWebACLs</a>.</p>
+        /// <p>The <code>WebACLId</code> of the <code>WebACL</code> that you want to delete. <code>WebACLId</code> is returned by <code>CreateWebACL</code> and by <code>ListWebACLs</code>.</p>
         pub fn set_web_acl_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.web_acl_id = input;
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.change_token = Some(input.into());
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -4640,14 +4544,12 @@ pub mod delete_xss_match_set_input {
         pub(crate) change_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <code>XssMatchSetId</code> of the <a>XssMatchSet</a> that you want to delete.
-        /// <code>XssMatchSetId</code> is returned by <a>CreateXssMatchSet</a> and by <a>ListXssMatchSets</a>.</p>
+        /// <p>The <code>XssMatchSetId</code> of the <code>XssMatchSet</code> that you want to delete. <code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
         pub fn xss_match_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.xss_match_set_id = Some(input.into());
             self
         }
-        /// <p>The <code>XssMatchSetId</code> of the <a>XssMatchSet</a> that you want to delete.
-        /// <code>XssMatchSetId</code> is returned by <a>CreateXssMatchSet</a> and by <a>ListXssMatchSets</a>.</p>
+        /// <p>The <code>XssMatchSetId</code> of the <code>XssMatchSet</code> that you want to delete. <code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
         pub fn set_xss_match_set_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4655,12 +4557,12 @@ pub mod delete_xss_match_set_input {
             self.xss_match_set_id = input;
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.change_token = Some(input.into());
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -4810,14 +4712,12 @@ pub mod get_byte_match_set_input {
         pub(crate) byte_match_set_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <code>ByteMatchSetId</code> of the <a>ByteMatchSet</a> that you want to get. <code>ByteMatchSetId</code> is returned by
-        /// <a>CreateByteMatchSet</a> and by <a>ListByteMatchSets</a>.</p>
+        /// <p>The <code>ByteMatchSetId</code> of the <code>ByteMatchSet</code> that you want to get. <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
         pub fn byte_match_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.byte_match_set_id = Some(input.into());
             self
         }
-        /// <p>The <code>ByteMatchSetId</code> of the <a>ByteMatchSet</a> that you want to get. <code>ByteMatchSetId</code> is returned by
-        /// <a>CreateByteMatchSet</a> and by <a>ListByteMatchSets</a>.</p>
+        /// <p>The <code>ByteMatchSetId</code> of the <code>ByteMatchSet</code> that you want to get. <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
         pub fn set_byte_match_set_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5257,14 +5157,12 @@ pub mod get_geo_match_set_input {
         pub(crate) geo_match_set_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <code>GeoMatchSetId</code> of the <a>GeoMatchSet</a> that you want to get. <code>GeoMatchSetId</code> is returned by <a>CreateGeoMatchSet</a> and by
-        /// <a>ListGeoMatchSets</a>.</p>
+        /// <p>The <code>GeoMatchSetId</code> of the <code>GeoMatchSet</code> that you want to get. <code>GeoMatchSetId</code> is returned by <code>CreateGeoMatchSet</code> and by <code>ListGeoMatchSets</code>.</p>
         pub fn geo_match_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.geo_match_set_id = Some(input.into());
             self
         }
-        /// <p>The <code>GeoMatchSetId</code> of the <a>GeoMatchSet</a> that you want to get. <code>GeoMatchSetId</code> is returned by <a>CreateGeoMatchSet</a> and by
-        /// <a>ListGeoMatchSets</a>.</p>
+        /// <p>The <code>GeoMatchSetId</code> of the <code>GeoMatchSet</code> that you want to get. <code>GeoMatchSetId</code> is returned by <code>CreateGeoMatchSet</code> and by <code>ListGeoMatchSets</code>.</p>
         pub fn set_geo_match_set_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5416,14 +5314,12 @@ pub mod get_ip_set_input {
         pub(crate) ip_set_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <code>IPSetId</code> of the <a>IPSet</a> that you want to get. <code>IPSetId</code> is returned by <a>CreateIPSet</a> and by
-        /// <a>ListIPSets</a>.</p>
+        /// <p>The <code>IPSetId</code> of the <code>IPSet</code> that you want to get. <code>IPSetId</code> is returned by <code>CreateIPSet</code> and by <code>ListIPSets</code>.</p>
         pub fn ip_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.ip_set_id = Some(input.into());
             self
         }
-        /// <p>The <code>IPSetId</code> of the <a>IPSet</a> that you want to get. <code>IPSetId</code> is returned by <a>CreateIPSet</a> and by
-        /// <a>ListIPSets</a>.</p>
+        /// <p>The <code>IPSetId</code> of the <code>IPSet</code> that you want to get. <code>IPSetId</code> is returned by <code>CreateIPSet</code> and by <code>ListIPSets</code>.</p>
         pub fn set_ip_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ip_set_id = input;
             self
@@ -5564,12 +5460,12 @@ pub mod get_logging_configuration_input {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the web ACL for which you want to get the <a>LoggingConfiguration</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the web ACL for which you want to get the <code>LoggingConfiguration</code>.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the web ACL for which you want to get the <a>LoggingConfiguration</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the web ACL for which you want to get the <code>LoggingConfiguration</code>.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -5875,14 +5771,12 @@ pub mod get_rate_based_rule_input {
         pub(crate) rule_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <code>RuleId</code> of the <a>RateBasedRule</a> that you want to get.
-        /// <code>RuleId</code> is returned by <a>CreateRateBasedRule</a> and by <a>ListRateBasedRules</a>.</p>
+        /// <p>The <code>RuleId</code> of the <code>RateBasedRule</code> that you want to get. <code>RuleId</code> is returned by <code>CreateRateBasedRule</code> and by <code>ListRateBasedRules</code>.</p>
         pub fn rule_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rule_id = Some(input.into());
             self
         }
-        /// <p>The <code>RuleId</code> of the <a>RateBasedRule</a> that you want to get.
-        /// <code>RuleId</code> is returned by <a>CreateRateBasedRule</a> and by <a>ListRateBasedRules</a>.</p>
+        /// <p>The <code>RuleId</code> of the <code>RateBasedRule</code> that you want to get. <code>RuleId</code> is returned by <code>CreateRateBasedRule</code> and by <code>ListRateBasedRules</code>.</p>
         pub fn set_rule_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rule_id = input;
             self
@@ -6032,14 +5926,12 @@ pub mod get_rate_based_rule_managed_keys_input {
         pub(crate) next_marker: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <code>RuleId</code> of the <a>RateBasedRule</a> for which you want to
-        /// get a list of <code>ManagedKeys</code>. <code>RuleId</code> is returned by <a>CreateRateBasedRule</a> and by <a>ListRateBasedRules</a>.</p>
+        /// <p>The <code>RuleId</code> of the <code>RateBasedRule</code> for which you want to get a list of <code>ManagedKeys</code>. <code>RuleId</code> is returned by <code>CreateRateBasedRule</code> and by <code>ListRateBasedRules</code>.</p>
         pub fn rule_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rule_id = Some(input.into());
             self
         }
-        /// <p>The <code>RuleId</code> of the <a>RateBasedRule</a> for which you want to
-        /// get a list of <code>ManagedKeys</code>. <code>RuleId</code> is returned by <a>CreateRateBasedRule</a> and by <a>ListRateBasedRules</a>.</p>
+        /// <p>The <code>RuleId</code> of the <code>RateBasedRule</code> for which you want to get a list of <code>ManagedKeys</code>. <code>RuleId</code> is returned by <code>CreateRateBasedRule</code> and by <code>ListRateBasedRules</code>.</p>
         pub fn set_rule_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rule_id = input;
             self
@@ -6201,14 +6093,12 @@ pub mod get_regex_match_set_input {
         pub(crate) regex_match_set_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <code>RegexMatchSetId</code> of the <a>RegexMatchSet</a> that you want to get. <code>RegexMatchSetId</code> is returned by
-        /// <a>CreateRegexMatchSet</a> and by <a>ListRegexMatchSets</a>.</p>
+        /// <p>The <code>RegexMatchSetId</code> of the <code>RegexMatchSet</code> that you want to get. <code>RegexMatchSetId</code> is returned by <code>CreateRegexMatchSet</code> and by <code>ListRegexMatchSets</code>.</p>
         pub fn regex_match_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.regex_match_set_id = Some(input.into());
             self
         }
-        /// <p>The <code>RegexMatchSetId</code> of the <a>RegexMatchSet</a> that you want to get. <code>RegexMatchSetId</code> is returned by
-        /// <a>CreateRegexMatchSet</a> and by <a>ListRegexMatchSets</a>.</p>
+        /// <p>The <code>RegexMatchSetId</code> of the <code>RegexMatchSet</code> that you want to get. <code>RegexMatchSetId</code> is returned by <code>CreateRegexMatchSet</code> and by <code>ListRegexMatchSets</code>.</p>
         pub fn set_regex_match_set_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6360,14 +6250,12 @@ pub mod get_regex_pattern_set_input {
         pub(crate) regex_pattern_set_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <code>RegexPatternSetId</code> of the <a>RegexPatternSet</a> that you want to get. <code>RegexPatternSetId</code> is returned by
-        /// <a>CreateRegexPatternSet</a> and by <a>ListRegexPatternSets</a>.</p>
+        /// <p>The <code>RegexPatternSetId</code> of the <code>RegexPatternSet</code> that you want to get. <code>RegexPatternSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
         pub fn regex_pattern_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.regex_pattern_set_id = Some(input.into());
             self
         }
-        /// <p>The <code>RegexPatternSetId</code> of the <a>RegexPatternSet</a> that you want to get. <code>RegexPatternSetId</code> is returned by
-        /// <a>CreateRegexPatternSet</a> and by <a>ListRegexPatternSets</a>.</p>
+        /// <p>The <code>RegexPatternSetId</code> of the <code>RegexPatternSet</code> that you want to get. <code>RegexPatternSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
         pub fn set_regex_pattern_set_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6519,14 +6407,12 @@ pub mod get_rule_input {
         pub(crate) rule_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <code>RuleId</code> of the <a>Rule</a> that you want to get. <code>RuleId</code> is returned by <a>CreateRule</a> and by
-        /// <a>ListRules</a>.</p>
+        /// <p>The <code>RuleId</code> of the <code>Rule</code> that you want to get. <code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
         pub fn rule_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rule_id = Some(input.into());
             self
         }
-        /// <p>The <code>RuleId</code> of the <a>Rule</a> that you want to get. <code>RuleId</code> is returned by <a>CreateRule</a> and by
-        /// <a>ListRules</a>.</p>
+        /// <p>The <code>RuleId</code> of the <code>Rule</code> that you want to get. <code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
         pub fn set_rule_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rule_id = input;
             self
@@ -6667,14 +6553,12 @@ pub mod get_rule_group_input {
         pub(crate) rule_group_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <code>RuleGroupId</code> of the <a>RuleGroup</a> that you want to get. <code>RuleGroupId</code> is returned by <a>CreateRuleGroup</a> and by
-        /// <a>ListRuleGroups</a>.</p>
+        /// <p>The <code>RuleGroupId</code> of the <code>RuleGroup</code> that you want to get. <code>RuleGroupId</code> is returned by <code>CreateRuleGroup</code> and by <code>ListRuleGroups</code>.</p>
         pub fn rule_group_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rule_group_id = Some(input.into());
             self
         }
-        /// <p>The <code>RuleGroupId</code> of the <a>RuleGroup</a> that you want to get. <code>RuleGroupId</code> is returned by <a>CreateRuleGroup</a> and by
-        /// <a>ListRuleGroups</a>.</p>
+        /// <p>The <code>RuleGroupId</code> of the <code>RuleGroup</code> that you want to get. <code>RuleGroupId</code> is returned by <code>CreateRuleGroup</code> and by <code>ListRuleGroups</code>.</p>
         pub fn set_rule_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6838,48 +6722,30 @@ pub mod get_sampled_requests_input {
             self.web_acl_id = input;
             self
         }
-        /// <p>
-        /// <code>RuleId</code> is one of three values:</p>
+        /// <p> <code>RuleId</code> is one of three values:</p>
         /// <ul>
-        /// <li>
-        /// <p>The <code>RuleId</code> of the <code>Rule</code> or the <code>RuleGroupId</code> of the <code>RuleGroup</code> for which you want <code>GetSampledRequests</code> to return a sample of requests.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Default_Action</code>, which causes <code>GetSampledRequests</code> to return a sample of the requests that
-        /// didn't match any of the rules in the specified <code>WebACL</code>.</p>
-        /// </li>
+        /// <li> <p>The <code>RuleId</code> of the <code>Rule</code> or the <code>RuleGroupId</code> of the <code>RuleGroup</code> for which you want <code>GetSampledRequests</code> to return a sample of requests.</p> </li>
+        /// <li> <p> <code>Default_Action</code>, which causes <code>GetSampledRequests</code> to return a sample of the requests that didn't match any of the rules in the specified <code>WebACL</code>.</p> </li>
         /// </ul>
         pub fn rule_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rule_id = Some(input.into());
             self
         }
-        /// <p>
-        /// <code>RuleId</code> is one of three values:</p>
+        /// <p> <code>RuleId</code> is one of three values:</p>
         /// <ul>
-        /// <li>
-        /// <p>The <code>RuleId</code> of the <code>Rule</code> or the <code>RuleGroupId</code> of the <code>RuleGroup</code> for which you want <code>GetSampledRequests</code> to return a sample of requests.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Default_Action</code>, which causes <code>GetSampledRequests</code> to return a sample of the requests that
-        /// didn't match any of the rules in the specified <code>WebACL</code>.</p>
-        /// </li>
+        /// <li> <p>The <code>RuleId</code> of the <code>Rule</code> or the <code>RuleGroupId</code> of the <code>RuleGroup</code> for which you want <code>GetSampledRequests</code> to return a sample of requests.</p> </li>
+        /// <li> <p> <code>Default_Action</code>, which causes <code>GetSampledRequests</code> to return a sample of the requests that didn't match any of the rules in the specified <code>WebACL</code>.</p> </li>
         /// </ul>
         pub fn set_rule_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rule_id = input;
             self
         }
-        /// <p>The start date and time and the end date and time of the range for which you want <code>GetSampledRequests</code> to return a
-        /// sample of requests. You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special  
-        /// designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.</p>
+        /// <p>The start date and time and the end date and time of the range for which you want <code>GetSampledRequests</code> to return a sample of requests. You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.</p>
         pub fn time_window(mut self, input: crate::model::TimeWindow) -> Self {
             self.time_window = Some(input);
             self
         }
-        /// <p>The start date and time and the end date and time of the range for which you want <code>GetSampledRequests</code> to return a
-        /// sample of requests. You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special  
-        /// designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.</p>
+        /// <p>The start date and time and the end date and time of the range for which you want <code>GetSampledRequests</code> to return a sample of requests. You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.</p>
         pub fn set_time_window(
             mut self,
             input: std::option::Option<crate::model::TimeWindow>,
@@ -6887,16 +6753,12 @@ pub mod get_sampled_requests_input {
             self.time_window = input;
             self
         }
-        /// <p>The number of requests that you want AWS WAF to return from among the first 5,000 requests that your AWS resource received
-        /// during the time range. If your resource received fewer requests than the value of <code>MaxItems</code>, <code>GetSampledRequests</code>
-        /// returns information about all of them. </p>
+        /// <p>The number of requests that you want AWS WAF to return from among the first 5,000 requests that your AWS resource received during the time range. If your resource received fewer requests than the value of <code>MaxItems</code>, <code>GetSampledRequests</code> returns information about all of them. </p>
         pub fn max_items(mut self, input: i64) -> Self {
             self.max_items = Some(input);
             self
         }
-        /// <p>The number of requests that you want AWS WAF to return from among the first 5,000 requests that your AWS resource received
-        /// during the time range. If your resource received fewer requests than the value of <code>MaxItems</code>, <code>GetSampledRequests</code>
-        /// returns information about all of them. </p>
+        /// <p>The number of requests that you want AWS WAF to return from among the first 5,000 requests that your AWS resource received during the time range. If your resource received fewer requests than the value of <code>MaxItems</code>, <code>GetSampledRequests</code> returns information about all of them. </p>
         pub fn set_max_items(mut self, input: std::option::Option<i64>) -> Self {
             self.max_items = input;
             self
@@ -7048,14 +6910,12 @@ pub mod get_size_constraint_set_input {
         pub(crate) size_constraint_set_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <code>SizeConstraintSetId</code> of the <a>SizeConstraintSet</a> that you want to get. <code>SizeConstraintSetId</code> is returned by
-        /// <a>CreateSizeConstraintSet</a> and by <a>ListSizeConstraintSets</a>.</p>
+        /// <p>The <code>SizeConstraintSetId</code> of the <code>SizeConstraintSet</code> that you want to get. <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
         pub fn size_constraint_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.size_constraint_set_id = Some(input.into());
             self
         }
-        /// <p>The <code>SizeConstraintSetId</code> of the <a>SizeConstraintSet</a> that you want to get. <code>SizeConstraintSetId</code> is returned by
-        /// <a>CreateSizeConstraintSet</a> and by <a>ListSizeConstraintSets</a>.</p>
+        /// <p>The <code>SizeConstraintSetId</code> of the <code>SizeConstraintSet</code> that you want to get. <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
         pub fn set_size_constraint_set_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7209,14 +7069,12 @@ pub mod get_sql_injection_match_set_input {
         pub(crate) sql_injection_match_set_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <code>SqlInjectionMatchSetId</code> of the <a>SqlInjectionMatchSet</a> that you want to get. <code>SqlInjectionMatchSetId</code>
-        /// is returned by <a>CreateSqlInjectionMatchSet</a> and by <a>ListSqlInjectionMatchSets</a>.</p>
+        /// <p>The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to get. <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
         pub fn sql_injection_match_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.sql_injection_match_set_id = Some(input.into());
             self
         }
-        /// <p>The <code>SqlInjectionMatchSetId</code> of the <a>SqlInjectionMatchSet</a> that you want to get. <code>SqlInjectionMatchSetId</code>
-        /// is returned by <a>CreateSqlInjectionMatchSet</a> and by <a>ListSqlInjectionMatchSets</a>.</p>
+        /// <p>The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to get. <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
         pub fn set_sql_injection_match_set_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7371,14 +7229,12 @@ pub mod get_web_acl_input {
         pub(crate) web_acl_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <code>WebACLId</code> of the <a>WebACL</a> that you want to get. <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by
-        /// <a>ListWebACLs</a>.</p>
+        /// <p>The <code>WebACLId</code> of the <code>WebACL</code> that you want to get. <code>WebACLId</code> is returned by <code>CreateWebACL</code> and by <code>ListWebACLs</code>.</p>
         pub fn web_acl_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.web_acl_id = Some(input.into());
             self
         }
-        /// <p>The <code>WebACLId</code> of the <a>WebACL</a> that you want to get. <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by
-        /// <a>ListWebACLs</a>.</p>
+        /// <p>The <code>WebACLId</code> of the <code>WebACL</code> that you want to get. <code>WebACLId</code> is returned by <code>CreateWebACL</code> and by <code>ListWebACLs</code>.</p>
         pub fn set_web_acl_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.web_acl_id = input;
             self
@@ -7522,14 +7378,12 @@ pub mod get_xss_match_set_input {
         pub(crate) xss_match_set_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <code>XssMatchSetId</code> of the <a>XssMatchSet</a> that you want to get. <code>XssMatchSetId</code>
-        /// is returned by <a>CreateXssMatchSet</a> and by <a>ListXssMatchSets</a>.</p>
+        /// <p>The <code>XssMatchSetId</code> of the <code>XssMatchSet</code> that you want to get. <code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
         pub fn xss_match_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.xss_match_set_id = Some(input.into());
             self
         }
-        /// <p>The <code>XssMatchSetId</code> of the <a>XssMatchSet</a> that you want to get. <code>XssMatchSetId</code>
-        /// is returned by <a>CreateXssMatchSet</a> and by <a>ListXssMatchSets</a>.</p>
+        /// <p>The <code>XssMatchSetId</code> of the <code>XssMatchSet</code> that you want to get. <code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
         pub fn set_xss_match_set_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7683,12 +7537,12 @@ pub mod list_activated_rules_in_rule_group_input {
         pub(crate) limit: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The <code>RuleGroupId</code> of the <a>RuleGroup</a> for which you want to get a list of <a>ActivatedRule</a> objects.</p>
+        /// <p>The <code>RuleGroupId</code> of the <code>RuleGroup</code> for which you want to get a list of <code>ActivatedRule</code> objects.</p>
         pub fn rule_group_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rule_group_id = Some(input.into());
             self
         }
-        /// <p>The <code>RuleGroupId</code> of the <a>RuleGroup</a> for which you want to get a list of <a>ActivatedRule</a> objects.</p>
+        /// <p>The <code>RuleGroupId</code> of the <code>RuleGroup</code> for which you want to get a list of <code>ActivatedRule</code> objects.</p>
         pub fn set_rule_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7696,30 +7550,22 @@ pub mod list_activated_rules_in_rule_group_input {
             self.rule_group_id = input;
             self
         }
-        /// <p>If you specify a value for <code>Limit</code> and you have more <code>ActivatedRules</code> than the value of <code>Limit</code>,
-        /// AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>ActivatedRules</code>.
-        /// For the second and subsequent <code>ListActivatedRulesInRuleGroup</code> requests, specify the value of <code>NextMarker</code>
-        /// from the previous response to get information about another batch of <code>ActivatedRules</code>.</p>
+        /// <p>If you specify a value for <code>Limit</code> and you have more <code>ActivatedRules</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>ActivatedRules</code>. For the second and subsequent <code>ListActivatedRulesInRuleGroup</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>ActivatedRules</code>.</p>
         pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_marker = Some(input.into());
             self
         }
-        /// <p>If you specify a value for <code>Limit</code> and you have more <code>ActivatedRules</code> than the value of <code>Limit</code>,
-        /// AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>ActivatedRules</code>.
-        /// For the second and subsequent <code>ListActivatedRulesInRuleGroup</code> requests, specify the value of <code>NextMarker</code>
-        /// from the previous response to get information about another batch of <code>ActivatedRules</code>.</p>
+        /// <p>If you specify a value for <code>Limit</code> and you have more <code>ActivatedRules</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>ActivatedRules</code>. For the second and subsequent <code>ListActivatedRulesInRuleGroup</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>ActivatedRules</code>.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
         }
-        /// <p>Specifies the number of <code>ActivatedRules</code> that you want AWS WAF to return for this request. If you have more <code>ActivatedRules</code> than the number that you specify for <code>Limit</code>, the response includes a
-        /// <code>NextMarker</code> value that you can use to get another batch of <code>ActivatedRules</code>.</p>
+        /// <p>Specifies the number of <code>ActivatedRules</code> that you want AWS WAF to return for this request. If you have more <code>ActivatedRules</code> than the number that you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>ActivatedRules</code>.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>Specifies the number of <code>ActivatedRules</code> that you want AWS WAF to return for this request. If you have more <code>ActivatedRules</code> than the number that you specify for <code>Limit</code>, the response includes a
-        /// <code>NextMarker</code> value that you can use to get another batch of <code>ActivatedRules</code>.</p>
+        /// <p>Specifies the number of <code>ActivatedRules</code> that you want AWS WAF to return for this request. If you have more <code>ActivatedRules</code> than the number that you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>ActivatedRules</code>.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -7874,32 +7720,22 @@ pub mod list_byte_match_sets_input {
         pub(crate) limit: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>If you specify a value for <code>Limit</code> and you have more <code>ByteMatchSets</code> than the value of <code>Limit</code>,
-        /// AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>ByteMatchSets</code>.
-        /// For the second and subsequent <code>ListByteMatchSets</code> requests, specify the value of <code>NextMarker</code>
-        /// from the previous response to get information about another batch of <code>ByteMatchSets</code>.</p>
+        /// <p>If you specify a value for <code>Limit</code> and you have more <code>ByteMatchSets</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>ByteMatchSets</code>. For the second and subsequent <code>ListByteMatchSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>ByteMatchSets</code>.</p>
         pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_marker = Some(input.into());
             self
         }
-        /// <p>If you specify a value for <code>Limit</code> and you have more <code>ByteMatchSets</code> than the value of <code>Limit</code>,
-        /// AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>ByteMatchSets</code>.
-        /// For the second and subsequent <code>ListByteMatchSets</code> requests, specify the value of <code>NextMarker</code>
-        /// from the previous response to get information about another batch of <code>ByteMatchSets</code>.</p>
+        /// <p>If you specify a value for <code>Limit</code> and you have more <code>ByteMatchSets</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>ByteMatchSets</code>. For the second and subsequent <code>ListByteMatchSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>ByteMatchSets</code>.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
         }
-        /// <p>Specifies the number of <code>ByteMatchSet</code> objects that you want AWS WAF to return for this request. If you have more
-        /// <code>ByteMatchSets</code> objects than the number you specify for <code>Limit</code>, the response includes a
-        /// <code>NextMarker</code> value that you can use to get another batch of <code>ByteMatchSet</code> objects.</p>
+        /// <p>Specifies the number of <code>ByteMatchSet</code> objects that you want AWS WAF to return for this request. If you have more <code>ByteMatchSets</code> objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>ByteMatchSet</code> objects.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>Specifies the number of <code>ByteMatchSet</code> objects that you want AWS WAF to return for this request. If you have more
-        /// <code>ByteMatchSets</code> objects than the number you specify for <code>Limit</code>, the response includes a
-        /// <code>NextMarker</code> value that you can use to get another batch of <code>ByteMatchSet</code> objects.</p>
+        /// <p>Specifies the number of <code>ByteMatchSet</code> objects that you want AWS WAF to return for this request. If you have more <code>ByteMatchSets</code> objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>ByteMatchSet</code> objects.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -8050,32 +7886,22 @@ pub mod list_geo_match_sets_input {
         pub(crate) limit: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>If you specify a value for <code>Limit</code> and you have more <code>GeoMatchSet</code>s than the value of <code>Limit</code>,
-        /// AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>GeoMatchSet</code> objects.
-        /// For the second and subsequent <code>ListGeoMatchSets</code> requests, specify the value of <code>NextMarker</code>
-        /// from the previous response to get information about another batch of <code>GeoMatchSet</code> objects.</p>
+        /// <p>If you specify a value for <code>Limit</code> and you have more <code>GeoMatchSet</code>s than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>GeoMatchSet</code> objects. For the second and subsequent <code>ListGeoMatchSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>GeoMatchSet</code> objects.</p>
         pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_marker = Some(input.into());
             self
         }
-        /// <p>If you specify a value for <code>Limit</code> and you have more <code>GeoMatchSet</code>s than the value of <code>Limit</code>,
-        /// AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>GeoMatchSet</code> objects.
-        /// For the second and subsequent <code>ListGeoMatchSets</code> requests, specify the value of <code>NextMarker</code>
-        /// from the previous response to get information about another batch of <code>GeoMatchSet</code> objects.</p>
+        /// <p>If you specify a value for <code>Limit</code> and you have more <code>GeoMatchSet</code>s than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>GeoMatchSet</code> objects. For the second and subsequent <code>ListGeoMatchSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>GeoMatchSet</code> objects.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
         }
-        /// <p>Specifies the number of <code>GeoMatchSet</code> objects that you want AWS WAF to return for this request. If you have more
-        /// <code>GeoMatchSet</code> objects than the number you specify for <code>Limit</code>, the response includes a
-        /// <code>NextMarker</code> value that you can use to get another batch of <code>GeoMatchSet</code> objects.</p>
+        /// <p>Specifies the number of <code>GeoMatchSet</code> objects that you want AWS WAF to return for this request. If you have more <code>GeoMatchSet</code> objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>GeoMatchSet</code> objects.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>Specifies the number of <code>GeoMatchSet</code> objects that you want AWS WAF to return for this request. If you have more
-        /// <code>GeoMatchSet</code> objects than the number you specify for <code>Limit</code>, the response includes a
-        /// <code>NextMarker</code> value that you can use to get another batch of <code>GeoMatchSet</code> objects.</p>
+        /// <p>Specifies the number of <code>GeoMatchSet</code> objects that you want AWS WAF to return for this request. If you have more <code>GeoMatchSet</code> objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>GeoMatchSet</code> objects.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -8226,32 +8052,22 @@ pub mod list_ip_sets_input {
         pub(crate) limit: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>AWS WAF returns a <code>NextMarker</code> value in the response that allows you to
-        /// list another group of <code>IPSets</code>. For the second and subsequent
-        /// <code>ListIPSets</code> requests, specify the value of <code>NextMarker</code> from the
-        /// previous response to get information about another batch of <code>IPSets</code>.</p>
+        /// <p>AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>IPSets</code>. For the second and subsequent <code>ListIPSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>IPSets</code>.</p>
         pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_marker = Some(input.into());
             self
         }
-        /// <p>AWS WAF returns a <code>NextMarker</code> value in the response that allows you to
-        /// list another group of <code>IPSets</code>. For the second and subsequent
-        /// <code>ListIPSets</code> requests, specify the value of <code>NextMarker</code> from the
-        /// previous response to get information about another batch of <code>IPSets</code>.</p>
+        /// <p>AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>IPSets</code>. For the second and subsequent <code>ListIPSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>IPSets</code>.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
         }
-        /// <p>Specifies the number of <code>IPSet</code> objects that you want AWS WAF to return for this request. If you have more
-        /// <code>IPSet</code> objects than the number you specify for <code>Limit</code>, the response includes a
-        /// <code>NextMarker</code> value that you can use to get another batch of <code>IPSet</code> objects.</p>
+        /// <p>Specifies the number of <code>IPSet</code> objects that you want AWS WAF to return for this request. If you have more <code>IPSet</code> objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>IPSet</code> objects.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>Specifies the number of <code>IPSet</code> objects that you want AWS WAF to return for this request. If you have more
-        /// <code>IPSet</code> objects than the number you specify for <code>Limit</code>, the response includes a
-        /// <code>NextMarker</code> value that you can use to get another batch of <code>IPSet</code> objects.</p>
+        /// <p>Specifies the number of <code>IPSet</code> objects that you want AWS WAF to return for this request. If you have more <code>IPSet</code> objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>IPSet</code> objects.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -8401,18 +8217,12 @@ pub mod list_logging_configurations_input {
         pub(crate) limit: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>If you specify a value for <code>Limit</code> and you have more <code>LoggingConfigurations</code> than the value of <code>Limit</code>,
-        /// AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>LoggingConfigurations</code>.
-        /// For the second and subsequent <code>ListLoggingConfigurations</code> requests, specify the value of <code>NextMarker</code>
-        /// from the previous response to get information about another batch of <code>ListLoggingConfigurations</code>.</p>
+        /// <p>If you specify a value for <code>Limit</code> and you have more <code>LoggingConfigurations</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>LoggingConfigurations</code>. For the second and subsequent <code>ListLoggingConfigurations</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>ListLoggingConfigurations</code>.</p>
         pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_marker = Some(input.into());
             self
         }
-        /// <p>If you specify a value for <code>Limit</code> and you have more <code>LoggingConfigurations</code> than the value of <code>Limit</code>,
-        /// AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>LoggingConfigurations</code>.
-        /// For the second and subsequent <code>ListLoggingConfigurations</code> requests, specify the value of <code>NextMarker</code>
-        /// from the previous response to get information about another batch of <code>ListLoggingConfigurations</code>.</p>
+        /// <p>If you specify a value for <code>Limit</code> and you have more <code>LoggingConfigurations</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>LoggingConfigurations</code>. For the second and subsequent <code>ListLoggingConfigurations</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>ListLoggingConfigurations</code>.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
@@ -8576,38 +8386,22 @@ pub mod list_rate_based_rules_input {
         pub(crate) limit: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>If you specify a value for <code>Limit</code> and you have more <code>Rules</code>
-        /// than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the
-        /// response that allows you to list another group of <code>Rules</code>. For the second and
-        /// subsequent <code>ListRateBasedRules</code> requests, specify the value of
-        /// <code>NextMarker</code> from the previous response to get information about another
-        /// batch of <code>Rules</code>.</p>
+        /// <p>If you specify a value for <code>Limit</code> and you have more <code>Rules</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>Rules</code>. For the second and subsequent <code>ListRateBasedRules</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>Rules</code>.</p>
         pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_marker = Some(input.into());
             self
         }
-        /// <p>If you specify a value for <code>Limit</code> and you have more <code>Rules</code>
-        /// than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the
-        /// response that allows you to list another group of <code>Rules</code>. For the second and
-        /// subsequent <code>ListRateBasedRules</code> requests, specify the value of
-        /// <code>NextMarker</code> from the previous response to get information about another
-        /// batch of <code>Rules</code>.</p>
+        /// <p>If you specify a value for <code>Limit</code> and you have more <code>Rules</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>Rules</code>. For the second and subsequent <code>ListRateBasedRules</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>Rules</code>.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
         }
-        /// <p>Specifies the number of <code>Rules</code> that you want AWS WAF to return for this
-        /// request. If you have more <code>Rules</code> than the number that you specify for
-        /// <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can
-        /// use to get another batch of <code>Rules</code>.</p>
+        /// <p>Specifies the number of <code>Rules</code> that you want AWS WAF to return for this request. If you have more <code>Rules</code> than the number that you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>Rules</code>.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>Specifies the number of <code>Rules</code> that you want AWS WAF to return for this
-        /// request. If you have more <code>Rules</code> than the number that you specify for
-        /// <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can
-        /// use to get another batch of <code>Rules</code>.</p>
+        /// <p>Specifies the number of <code>Rules</code> that you want AWS WAF to return for this request. If you have more <code>Rules</code> than the number that you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>Rules</code>.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -8758,32 +8552,22 @@ pub mod list_regex_match_sets_input {
         pub(crate) limit: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>If you specify a value for <code>Limit</code> and you have more <code>RegexMatchSet</code> objects than the value of <code>Limit</code>,
-        /// AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>ByteMatchSets</code>.
-        /// For the second and subsequent <code>ListRegexMatchSets</code> requests, specify the value of <code>NextMarker</code>
-        /// from the previous response to get information about another batch of <code>RegexMatchSet</code> objects.</p>
+        /// <p>If you specify a value for <code>Limit</code> and you have more <code>RegexMatchSet</code> objects than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>ByteMatchSets</code>. For the second and subsequent <code>ListRegexMatchSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>RegexMatchSet</code> objects.</p>
         pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_marker = Some(input.into());
             self
         }
-        /// <p>If you specify a value for <code>Limit</code> and you have more <code>RegexMatchSet</code> objects than the value of <code>Limit</code>,
-        /// AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>ByteMatchSets</code>.
-        /// For the second and subsequent <code>ListRegexMatchSets</code> requests, specify the value of <code>NextMarker</code>
-        /// from the previous response to get information about another batch of <code>RegexMatchSet</code> objects.</p>
+        /// <p>If you specify a value for <code>Limit</code> and you have more <code>RegexMatchSet</code> objects than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>ByteMatchSets</code>. For the second and subsequent <code>ListRegexMatchSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>RegexMatchSet</code> objects.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
         }
-        /// <p>Specifies the number of <code>RegexMatchSet</code> objects that you want AWS WAF to return for this request. If you have more
-        /// <code>RegexMatchSet</code> objects than the number you specify for <code>Limit</code>, the response includes a
-        /// <code>NextMarker</code> value that you can use to get another batch of <code>RegexMatchSet</code> objects.</p>
+        /// <p>Specifies the number of <code>RegexMatchSet</code> objects that you want AWS WAF to return for this request. If you have more <code>RegexMatchSet</code> objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>RegexMatchSet</code> objects.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>Specifies the number of <code>RegexMatchSet</code> objects that you want AWS WAF to return for this request. If you have more
-        /// <code>RegexMatchSet</code> objects than the number you specify for <code>Limit</code>, the response includes a
-        /// <code>NextMarker</code> value that you can use to get another batch of <code>RegexMatchSet</code> objects.</p>
+        /// <p>Specifies the number of <code>RegexMatchSet</code> objects that you want AWS WAF to return for this request. If you have more <code>RegexMatchSet</code> objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>RegexMatchSet</code> objects.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -8934,32 +8718,22 @@ pub mod list_regex_pattern_sets_input {
         pub(crate) limit: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>If you specify a value for <code>Limit</code> and you have more <code>RegexPatternSet</code> objects than the value of <code>Limit</code>,
-        /// AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>RegexPatternSet</code> objects.
-        /// For the second and subsequent <code>ListRegexPatternSets</code> requests, specify the value of <code>NextMarker</code>
-        /// from the previous response to get information about another batch of <code>RegexPatternSet</code> objects.</p>
+        /// <p>If you specify a value for <code>Limit</code> and you have more <code>RegexPatternSet</code> objects than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>RegexPatternSet</code> objects. For the second and subsequent <code>ListRegexPatternSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>RegexPatternSet</code> objects.</p>
         pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_marker = Some(input.into());
             self
         }
-        /// <p>If you specify a value for <code>Limit</code> and you have more <code>RegexPatternSet</code> objects than the value of <code>Limit</code>,
-        /// AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>RegexPatternSet</code> objects.
-        /// For the second and subsequent <code>ListRegexPatternSets</code> requests, specify the value of <code>NextMarker</code>
-        /// from the previous response to get information about another batch of <code>RegexPatternSet</code> objects.</p>
+        /// <p>If you specify a value for <code>Limit</code> and you have more <code>RegexPatternSet</code> objects than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>RegexPatternSet</code> objects. For the second and subsequent <code>ListRegexPatternSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>RegexPatternSet</code> objects.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
         }
-        /// <p>Specifies the number of <code>RegexPatternSet</code> objects that you want AWS WAF to return for this request. If you have more
-        /// <code>RegexPatternSet</code> objects than the number you specify for <code>Limit</code>, the response includes a
-        /// <code>NextMarker</code> value that you can use to get another batch of <code>RegexPatternSet</code> objects.</p>
+        /// <p>Specifies the number of <code>RegexPatternSet</code> objects that you want AWS WAF to return for this request. If you have more <code>RegexPatternSet</code> objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>RegexPatternSet</code> objects.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>Specifies the number of <code>RegexPatternSet</code> objects that you want AWS WAF to return for this request. If you have more
-        /// <code>RegexPatternSet</code> objects than the number you specify for <code>Limit</code>, the response includes a
-        /// <code>NextMarker</code> value that you can use to get another batch of <code>RegexPatternSet</code> objects.</p>
+        /// <p>Specifies the number of <code>RegexPatternSet</code> objects that you want AWS WAF to return for this request. If you have more <code>RegexPatternSet</code> objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>RegexPatternSet</code> objects.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -9112,18 +8886,12 @@ pub mod list_rule_groups_input {
         pub(crate) limit: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>If you specify a value for <code>Limit</code> and you have more <code>RuleGroups</code> than the value of <code>Limit</code>,
-        /// AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>RuleGroups</code>.
-        /// For the second and subsequent <code>ListRuleGroups</code> requests, specify the value of <code>NextMarker</code>
-        /// from the previous response to get information about another batch of <code>RuleGroups</code>.</p>
+        /// <p>If you specify a value for <code>Limit</code> and you have more <code>RuleGroups</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>RuleGroups</code>. For the second and subsequent <code>ListRuleGroups</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>RuleGroups</code>.</p>
         pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_marker = Some(input.into());
             self
         }
-        /// <p>If you specify a value for <code>Limit</code> and you have more <code>RuleGroups</code> than the value of <code>Limit</code>,
-        /// AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>RuleGroups</code>.
-        /// For the second and subsequent <code>ListRuleGroups</code> requests, specify the value of <code>NextMarker</code>
-        /// from the previous response to get information about another batch of <code>RuleGroups</code>.</p>
+        /// <p>If you specify a value for <code>Limit</code> and you have more <code>RuleGroups</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>RuleGroups</code>. For the second and subsequent <code>ListRuleGroups</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>RuleGroups</code>.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
@@ -9284,30 +9052,22 @@ pub mod list_rules_input {
         pub(crate) limit: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>If you specify a value for <code>Limit</code> and you have more <code>Rules</code> than the value of <code>Limit</code>,
-        /// AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>Rules</code>.
-        /// For the second and subsequent <code>ListRules</code> requests, specify the value of <code>NextMarker</code>
-        /// from the previous response to get information about another batch of <code>Rules</code>.</p>
+        /// <p>If you specify a value for <code>Limit</code> and you have more <code>Rules</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>Rules</code>. For the second and subsequent <code>ListRules</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>Rules</code>.</p>
         pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_marker = Some(input.into());
             self
         }
-        /// <p>If you specify a value for <code>Limit</code> and you have more <code>Rules</code> than the value of <code>Limit</code>,
-        /// AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>Rules</code>.
-        /// For the second and subsequent <code>ListRules</code> requests, specify the value of <code>NextMarker</code>
-        /// from the previous response to get information about another batch of <code>Rules</code>.</p>
+        /// <p>If you specify a value for <code>Limit</code> and you have more <code>Rules</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>Rules</code>. For the second and subsequent <code>ListRules</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>Rules</code>.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
         }
-        /// <p>Specifies the number of <code>Rules</code> that you want AWS WAF to return for this request. If you have more       <code>Rules</code> than the number that you specify for <code>Limit</code>, the response includes a
-        /// <code>NextMarker</code> value that you can use to get another batch of <code>Rules</code>.</p>
+        /// <p>Specifies the number of <code>Rules</code> that you want AWS WAF to return for this request. If you have more <code>Rules</code> than the number that you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>Rules</code>.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>Specifies the number of <code>Rules</code> that you want AWS WAF to return for this request. If you have more       <code>Rules</code> than the number that you specify for <code>Limit</code>, the response includes a
-        /// <code>NextMarker</code> value that you can use to get another batch of <code>Rules</code>.</p>
+        /// <p>Specifies the number of <code>Rules</code> that you want AWS WAF to return for this request. If you have more <code>Rules</code> than the number that you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>Rules</code>.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -9453,30 +9213,22 @@ pub mod list_size_constraint_sets_input {
         pub(crate) limit: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>If you specify a value for <code>Limit</code> and you have more <code>SizeConstraintSets</code> than the value of <code>Limit</code>,
-        /// AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>SizeConstraintSets</code>.
-        /// For the second and subsequent <code>ListSizeConstraintSets</code> requests, specify the value of <code>NextMarker</code>       from the previous response to get information about another batch of <code>SizeConstraintSets</code>.</p>
+        /// <p>If you specify a value for <code>Limit</code> and you have more <code>SizeConstraintSets</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>SizeConstraintSets</code>. For the second and subsequent <code>ListSizeConstraintSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>SizeConstraintSets</code>.</p>
         pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_marker = Some(input.into());
             self
         }
-        /// <p>If you specify a value for <code>Limit</code> and you have more <code>SizeConstraintSets</code> than the value of <code>Limit</code>,
-        /// AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>SizeConstraintSets</code>.
-        /// For the second and subsequent <code>ListSizeConstraintSets</code> requests, specify the value of <code>NextMarker</code>       from the previous response to get information about another batch of <code>SizeConstraintSets</code>.</p>
+        /// <p>If you specify a value for <code>Limit</code> and you have more <code>SizeConstraintSets</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>SizeConstraintSets</code>. For the second and subsequent <code>ListSizeConstraintSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>SizeConstraintSets</code>.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
         }
-        /// <p>Specifies the number of <code>SizeConstraintSet</code> objects that you want AWS WAF to return for this request. If you have more
-        /// <code>SizeConstraintSets</code> objects than the number you specify for <code>Limit</code>, the response includes a
-        /// <code>NextMarker</code> value that you can use to get another batch of <code>SizeConstraintSet</code> objects.</p>
+        /// <p>Specifies the number of <code>SizeConstraintSet</code> objects that you want AWS WAF to return for this request. If you have more <code>SizeConstraintSets</code> objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>SizeConstraintSet</code> objects.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>Specifies the number of <code>SizeConstraintSet</code> objects that you want AWS WAF to return for this request. If you have more
-        /// <code>SizeConstraintSets</code> objects than the number you specify for <code>Limit</code>, the response includes a
-        /// <code>NextMarker</code> value that you can use to get another batch of <code>SizeConstraintSet</code> objects.</p>
+        /// <p>Specifies the number of <code>SizeConstraintSet</code> objects that you want AWS WAF to return for this request. If you have more <code>SizeConstraintSets</code> objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>SizeConstraintSet</code> objects.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -9629,32 +9381,22 @@ pub mod list_sql_injection_match_sets_input {
         pub(crate) limit: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>If you specify a value for <code>Limit</code> and you have more <a>SqlInjectionMatchSet</a> objects than the value of
-        /// <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of
-        /// <code>SqlInjectionMatchSets</code>. For the second and subsequent <code>ListSqlInjectionMatchSets</code> requests, specify the
-        /// value of <code>NextMarker</code> from the previous response to get information about another batch of <code>SqlInjectionMatchSets</code>.</p>
+        /// <p>If you specify a value for <code>Limit</code> and you have more <code>SqlInjectionMatchSet</code> objects than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>SqlInjectionMatchSets</code>. For the second and subsequent <code>ListSqlInjectionMatchSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>SqlInjectionMatchSets</code>.</p>
         pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_marker = Some(input.into());
             self
         }
-        /// <p>If you specify a value for <code>Limit</code> and you have more <a>SqlInjectionMatchSet</a> objects than the value of
-        /// <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of
-        /// <code>SqlInjectionMatchSets</code>. For the second and subsequent <code>ListSqlInjectionMatchSets</code> requests, specify the
-        /// value of <code>NextMarker</code> from the previous response to get information about another batch of <code>SqlInjectionMatchSets</code>.</p>
+        /// <p>If you specify a value for <code>Limit</code> and you have more <code>SqlInjectionMatchSet</code> objects than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>SqlInjectionMatchSets</code>. For the second and subsequent <code>ListSqlInjectionMatchSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>SqlInjectionMatchSets</code>.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
         }
-        /// <p>Specifies the number of <a>SqlInjectionMatchSet</a> objects that you want AWS WAF to return for this request. If you have more
-        /// <code>SqlInjectionMatchSet</code> objects than the number you specify for <code>Limit</code>, the response includes a
-        /// <code>NextMarker</code> value that you can use to get another batch of <code>Rules</code>.</p>
+        /// <p>Specifies the number of <code>SqlInjectionMatchSet</code> objects that you want AWS WAF to return for this request. If you have more <code>SqlInjectionMatchSet</code> objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>Rules</code>.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>Specifies the number of <a>SqlInjectionMatchSet</a> objects that you want AWS WAF to return for this request. If you have more
-        /// <code>SqlInjectionMatchSet</code> objects than the number you specify for <code>Limit</code>, the response includes a
-        /// <code>NextMarker</code> value that you can use to get another batch of <code>Rules</code>.</p>
+        /// <p>Specifies the number of <code>SqlInjectionMatchSet</code> objects that you want AWS WAF to return for this request. If you have more <code>SqlInjectionMatchSet</code> objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>Rules</code>.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -9807,32 +9549,22 @@ pub mod list_subscribed_rule_groups_input {
         pub(crate) limit: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>If you specify a value for <code>Limit</code> and you have more <code>ByteMatchSets</code>subscribed rule groups than the value of <code>Limit</code>,
-        /// AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of subscribed rule groups.
-        /// For the second and subsequent <code>ListSubscribedRuleGroupsRequest</code> requests, specify the value of <code>NextMarker</code>
-        /// from the previous response to get information about another batch of subscribed rule groups.</p>
+        /// <p>If you specify a value for <code>Limit</code> and you have more <code>ByteMatchSets</code>subscribed rule groups than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of subscribed rule groups. For the second and subsequent <code>ListSubscribedRuleGroupsRequest</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of subscribed rule groups.</p>
         pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_marker = Some(input.into());
             self
         }
-        /// <p>If you specify a value for <code>Limit</code> and you have more <code>ByteMatchSets</code>subscribed rule groups than the value of <code>Limit</code>,
-        /// AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of subscribed rule groups.
-        /// For the second and subsequent <code>ListSubscribedRuleGroupsRequest</code> requests, specify the value of <code>NextMarker</code>
-        /// from the previous response to get information about another batch of subscribed rule groups.</p>
+        /// <p>If you specify a value for <code>Limit</code> and you have more <code>ByteMatchSets</code>subscribed rule groups than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of subscribed rule groups. For the second and subsequent <code>ListSubscribedRuleGroupsRequest</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of subscribed rule groups.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
         }
-        /// <p>Specifies the number of subscribed rule groups that you want AWS WAF to return for this request. If you have more
-        /// objects than the number you specify for <code>Limit</code>, the response includes a
-        /// <code>NextMarker</code> value that you can use to get another batch of objects.</p>
+        /// <p>Specifies the number of subscribed rule groups that you want AWS WAF to return for this request. If you have more objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of objects.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>Specifies the number of subscribed rule groups that you want AWS WAF to return for this request. If you have more
-        /// objects than the number you specify for <code>Limit</code>, the response includes a
-        /// <code>NextMarker</code> value that you can use to get another batch of objects.</p>
+        /// <p>Specifies the number of subscribed rule groups that you want AWS WAF to return for this request. If you have more objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of objects.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -10166,32 +9898,22 @@ pub mod list_web_ac_ls_input {
         pub(crate) limit: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>If you specify a value for <code>Limit</code> and you have more <code>WebACL</code> objects than the number that you specify
-        /// for <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of
-        /// <code>WebACL</code> objects. For the second and subsequent <code>ListWebACLs</code> requests, specify the value of <code>NextMarker</code>
-        /// from the previous response to get information about another batch of <code>WebACL</code> objects.</p>
+        /// <p>If you specify a value for <code>Limit</code> and you have more <code>WebACL</code> objects than the number that you specify for <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>WebACL</code> objects. For the second and subsequent <code>ListWebACLs</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>WebACL</code> objects.</p>
         pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_marker = Some(input.into());
             self
         }
-        /// <p>If you specify a value for <code>Limit</code> and you have more <code>WebACL</code> objects than the number that you specify
-        /// for <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of
-        /// <code>WebACL</code> objects. For the second and subsequent <code>ListWebACLs</code> requests, specify the value of <code>NextMarker</code>
-        /// from the previous response to get information about another batch of <code>WebACL</code> objects.</p>
+        /// <p>If you specify a value for <code>Limit</code> and you have more <code>WebACL</code> objects than the number that you specify for <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>WebACL</code> objects. For the second and subsequent <code>ListWebACLs</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>WebACL</code> objects.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
         }
-        /// <p>Specifies the number of <code>WebACL</code> objects that you want AWS WAF to return for this request. If you have more
-        /// <code>WebACL</code> objects than the number that you specify for <code>Limit</code>, the response includes a
-        /// <code>NextMarker</code> value that you can use to get another batch of <code>WebACL</code> objects.</p>
+        /// <p>Specifies the number of <code>WebACL</code> objects that you want AWS WAF to return for this request. If you have more <code>WebACL</code> objects than the number that you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>WebACL</code> objects.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>Specifies the number of <code>WebACL</code> objects that you want AWS WAF to return for this request. If you have more
-        /// <code>WebACL</code> objects than the number that you specify for <code>Limit</code>, the response includes a
-        /// <code>NextMarker</code> value that you can use to get another batch of <code>WebACL</code> objects.</p>
+        /// <p>Specifies the number of <code>WebACL</code> objects that you want AWS WAF to return for this request. If you have more <code>WebACL</code> objects than the number that you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>WebACL</code> objects.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -10341,32 +10063,22 @@ pub mod list_xss_match_sets_input {
         pub(crate) limit: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>If you specify a value for <code>Limit</code> and you have more <a>XssMatchSet</a> objects than the value of
-        /// <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of
-        /// <code>XssMatchSets</code>. For the second and subsequent <code>ListXssMatchSets</code> requests, specify the
-        /// value of <code>NextMarker</code> from the previous response to get information about another batch of <code>XssMatchSets</code>.</p>
+        /// <p>If you specify a value for <code>Limit</code> and you have more <code>XssMatchSet</code> objects than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>XssMatchSets</code>. For the second and subsequent <code>ListXssMatchSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>XssMatchSets</code>.</p>
         pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_marker = Some(input.into());
             self
         }
-        /// <p>If you specify a value for <code>Limit</code> and you have more <a>XssMatchSet</a> objects than the value of
-        /// <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of
-        /// <code>XssMatchSets</code>. For the second and subsequent <code>ListXssMatchSets</code> requests, specify the
-        /// value of <code>NextMarker</code> from the previous response to get information about another batch of <code>XssMatchSets</code>.</p>
+        /// <p>If you specify a value for <code>Limit</code> and you have more <code>XssMatchSet</code> objects than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>XssMatchSets</code>. For the second and subsequent <code>ListXssMatchSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>XssMatchSets</code>.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
         }
-        /// <p>Specifies the number of <a>XssMatchSet</a> objects that you want AWS WAF to return for this request. If you have more
-        /// <code>XssMatchSet</code> objects than the number you specify for <code>Limit</code>, the response includes a
-        /// <code>NextMarker</code> value that you can use to get another batch of <code>Rules</code>.</p>
+        /// <p>Specifies the number of <code>XssMatchSet</code> objects that you want AWS WAF to return for this request. If you have more <code>XssMatchSet</code> objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>Rules</code>.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>Specifies the number of <a>XssMatchSet</a> objects that you want AWS WAF to return for this request. If you have more
-        /// <code>XssMatchSet</code> objects than the number you specify for <code>Limit</code>, the response includes a
-        /// <code>NextMarker</code> value that you can use to get another batch of <code>Rules</code>.</p>
+        /// <p>Specifies the number of <code>XssMatchSet</code> objects that you want AWS WAF to return for this request. If you have more <code>XssMatchSet</code> objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>Rules</code>.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -10516,25 +10228,15 @@ pub mod put_logging_configuration_input {
         pub(crate) logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
     }
     impl Builder {
-        /// <p>The Amazon Kinesis Data Firehose that contains the inspected traffic
-        /// information, the redacted fields details, and the Amazon Resource Name (ARN) of the web ACL
-        /// to monitor.</p>
-        /// <note>
-        /// <p>When specifying <code>Type</code> in <code>RedactedFields</code>, you must use one of
-        /// the following values: <code>URI</code>, <code>QUERY_STRING</code>, <code>HEADER</code>,
-        /// or <code>METHOD</code>.</p>
+        /// <p>The Amazon Kinesis Data Firehose that contains the inspected traffic information, the redacted fields details, and the Amazon Resource Name (ARN) of the web ACL to monitor.</p> <note>
+        /// <p>When specifying <code>Type</code> in <code>RedactedFields</code>, you must use one of the following values: <code>URI</code>, <code>QUERY_STRING</code>, <code>HEADER</code>, or <code>METHOD</code>.</p>
         /// </note>
         pub fn logging_configuration(mut self, input: crate::model::LoggingConfiguration) -> Self {
             self.logging_configuration = Some(input);
             self
         }
-        /// <p>The Amazon Kinesis Data Firehose that contains the inspected traffic
-        /// information, the redacted fields details, and the Amazon Resource Name (ARN) of the web ACL
-        /// to monitor.</p>
-        /// <note>
-        /// <p>When specifying <code>Type</code> in <code>RedactedFields</code>, you must use one of
-        /// the following values: <code>URI</code>, <code>QUERY_STRING</code>, <code>HEADER</code>,
-        /// or <code>METHOD</code>.</p>
+        /// <p>The Amazon Kinesis Data Firehose that contains the inspected traffic information, the redacted fields details, and the Amazon Resource Name (ARN) of the web ACL to monitor.</p> <note>
+        /// <p>When specifying <code>Type</code> in <code>RedactedFields</code>, you must use one of the following values: <code>URI</code>, <code>QUERY_STRING</code>, <code>HEADER</code>, or <code>METHOD</code>.</p>
         /// </note>
         pub fn set_logging_configuration(
             mut self,
@@ -11206,14 +10908,12 @@ pub mod update_byte_match_set_input {
         pub(crate) updates: std::option::Option<std::vec::Vec<crate::model::ByteMatchSetUpdate>>,
     }
     impl Builder {
-        /// <p>The <code>ByteMatchSetId</code> of the <a>ByteMatchSet</a> that you want to update. <code>ByteMatchSetId</code> is returned by <a>CreateByteMatchSet</a> and by
-        /// <a>ListByteMatchSets</a>.</p>
+        /// <p>The <code>ByteMatchSetId</code> of the <code>ByteMatchSet</code> that you want to update. <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
         pub fn byte_match_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.byte_match_set_id = Some(input.into());
             self
         }
-        /// <p>The <code>ByteMatchSetId</code> of the <a>ByteMatchSet</a> that you want to update. <code>ByteMatchSetId</code> is returned by <a>CreateByteMatchSet</a> and by
-        /// <a>ListByteMatchSets</a>.</p>
+        /// <p>The <code>ByteMatchSetId</code> of the <code>ByteMatchSet</code> that you want to update. <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
         pub fn set_byte_match_set_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11221,12 +10921,12 @@ pub mod update_byte_match_set_input {
             self.byte_match_set_id = input;
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.change_token = Some(input.into());
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -11235,25 +10935,11 @@ pub mod update_byte_match_set_input {
         ///
         /// To override the contents of this collection use [`set_updates`](Self::set_updates).
         ///
-        /// <p>An array of <code>ByteMatchSetUpdate</code> objects that you want to insert into or delete from a <a>ByteMatchSet</a>.
-        /// For more information, see the applicable data types:</p>
+        /// <p>An array of <code>ByteMatchSetUpdate</code> objects that you want to insert into or delete from a <code>ByteMatchSet</code>. For more information, see the applicable data types:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <a>ByteMatchSetUpdate</a>: Contains <code>Action</code> and <code>ByteMatchTuple</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a>ByteMatchTuple</a>: Contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>, <code>TargetString</code>,
-        /// and <code>TextTransformation</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>ByteMatchSetUpdate</code>: Contains <code>Action</code> and <code>ByteMatchTuple</code> </p> </li>
+        /// <li> <p> <code>ByteMatchTuple</code>: Contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>, <code>TargetString</code>, and <code>TextTransformation</code> </p> </li>
+        /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
         /// </ul>
         pub fn updates(mut self, input: crate::model::ByteMatchSetUpdate) -> Self {
             let mut v = self.updates.unwrap_or_default();
@@ -11261,25 +10947,11 @@ pub mod update_byte_match_set_input {
             self.updates = Some(v);
             self
         }
-        /// <p>An array of <code>ByteMatchSetUpdate</code> objects that you want to insert into or delete from a <a>ByteMatchSet</a>.
-        /// For more information, see the applicable data types:</p>
+        /// <p>An array of <code>ByteMatchSetUpdate</code> objects that you want to insert into or delete from a <code>ByteMatchSet</code>. For more information, see the applicable data types:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <a>ByteMatchSetUpdate</a>: Contains <code>Action</code> and <code>ByteMatchTuple</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a>ByteMatchTuple</a>: Contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>, <code>TargetString</code>,
-        /// and <code>TextTransformation</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>ByteMatchSetUpdate</code>: Contains <code>Action</code> and <code>ByteMatchTuple</code> </p> </li>
+        /// <li> <p> <code>ByteMatchTuple</code>: Contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>, <code>TargetString</code>, and <code>TextTransformation</code> </p> </li>
+        /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
         /// </ul>
         pub fn set_updates(
             mut self,
@@ -11436,14 +11108,12 @@ pub mod update_geo_match_set_input {
         pub(crate) updates: std::option::Option<std::vec::Vec<crate::model::GeoMatchSetUpdate>>,
     }
     impl Builder {
-        /// <p>The <code>GeoMatchSetId</code> of the <a>GeoMatchSet</a> that you want to update. <code>GeoMatchSetId</code> is returned by <a>CreateGeoMatchSet</a> and by
-        /// <a>ListGeoMatchSets</a>.</p>
+        /// <p>The <code>GeoMatchSetId</code> of the <code>GeoMatchSet</code> that you want to update. <code>GeoMatchSetId</code> is returned by <code>CreateGeoMatchSet</code> and by <code>ListGeoMatchSets</code>.</p>
         pub fn geo_match_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.geo_match_set_id = Some(input.into());
             self
         }
-        /// <p>The <code>GeoMatchSetId</code> of the <a>GeoMatchSet</a> that you want to update. <code>GeoMatchSetId</code> is returned by <a>CreateGeoMatchSet</a> and by
-        /// <a>ListGeoMatchSets</a>.</p>
+        /// <p>The <code>GeoMatchSetId</code> of the <code>GeoMatchSet</code> that you want to update. <code>GeoMatchSetId</code> is returned by <code>CreateGeoMatchSet</code> and by <code>ListGeoMatchSets</code>.</p>
         pub fn set_geo_match_set_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11451,12 +11121,12 @@ pub mod update_geo_match_set_input {
             self.geo_match_set_id = input;
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.change_token = Some(input.into());
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -11465,20 +11135,10 @@ pub mod update_geo_match_set_input {
         ///
         /// To override the contents of this collection use [`set_updates`](Self::set_updates).
         ///
-        /// <p>An array of <code>GeoMatchSetUpdate</code> objects that you want to insert into or delete from an <a>GeoMatchSet</a>.
-        /// For more information, see the applicable data types:</p>
+        /// <p>An array of <code>GeoMatchSetUpdate</code> objects that you want to insert into or delete from an <code>GeoMatchSet</code>. For more information, see the applicable data types:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <a>GeoMatchSetUpdate</a>: Contains <code>Action</code> and <code>GeoMatchConstraint</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a>GeoMatchConstraint</a>: Contains <code>Type</code> and <code>Value</code>
-        /// </p>
-        /// <p>You can have only one <code>Type</code> and <code>Value</code> per <code>GeoMatchConstraint</code>. To add multiple countries, include multiple <code>GeoMatchSetUpdate</code> objects in your request.</p>      
-        /// </li>
+        /// <li> <p> <code>GeoMatchSetUpdate</code>: Contains <code>Action</code> and <code>GeoMatchConstraint</code> </p> </li>
+        /// <li> <p> <code>GeoMatchConstraint</code>: Contains <code>Type</code> and <code>Value</code> </p> <p>You can have only one <code>Type</code> and <code>Value</code> per <code>GeoMatchConstraint</code>. To add multiple countries, include multiple <code>GeoMatchSetUpdate</code> objects in your request.</p> </li>
         /// </ul>
         pub fn updates(mut self, input: crate::model::GeoMatchSetUpdate) -> Self {
             let mut v = self.updates.unwrap_or_default();
@@ -11486,20 +11146,10 @@ pub mod update_geo_match_set_input {
             self.updates = Some(v);
             self
         }
-        /// <p>An array of <code>GeoMatchSetUpdate</code> objects that you want to insert into or delete from an <a>GeoMatchSet</a>.
-        /// For more information, see the applicable data types:</p>
+        /// <p>An array of <code>GeoMatchSetUpdate</code> objects that you want to insert into or delete from an <code>GeoMatchSet</code>. For more information, see the applicable data types:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <a>GeoMatchSetUpdate</a>: Contains <code>Action</code> and <code>GeoMatchConstraint</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a>GeoMatchConstraint</a>: Contains <code>Type</code> and <code>Value</code>
-        /// </p>
-        /// <p>You can have only one <code>Type</code> and <code>Value</code> per <code>GeoMatchConstraint</code>. To add multiple countries, include multiple <code>GeoMatchSetUpdate</code> objects in your request.</p>      
-        /// </li>
+        /// <li> <p> <code>GeoMatchSetUpdate</code>: Contains <code>Action</code> and <code>GeoMatchConstraint</code> </p> </li>
+        /// <li> <p> <code>GeoMatchConstraint</code>: Contains <code>Type</code> and <code>Value</code> </p> <p>You can have only one <code>Type</code> and <code>Value</code> per <code>GeoMatchConstraint</code>. To add multiple countries, include multiple <code>GeoMatchSetUpdate</code> objects in your request.</p> </li>
         /// </ul>
         pub fn set_updates(
             mut self,
@@ -11656,24 +11306,22 @@ pub mod update_ip_set_input {
         pub(crate) updates: std::option::Option<std::vec::Vec<crate::model::IpSetUpdate>>,
     }
     impl Builder {
-        /// <p>The <code>IPSetId</code> of the <a>IPSet</a> that you want to update. <code>IPSetId</code> is returned by <a>CreateIPSet</a> and by
-        /// <a>ListIPSets</a>.</p>
+        /// <p>The <code>IPSetId</code> of the <code>IPSet</code> that you want to update. <code>IPSetId</code> is returned by <code>CreateIPSet</code> and by <code>ListIPSets</code>.</p>
         pub fn ip_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.ip_set_id = Some(input.into());
             self
         }
-        /// <p>The <code>IPSetId</code> of the <a>IPSet</a> that you want to update. <code>IPSetId</code> is returned by <a>CreateIPSet</a> and by
-        /// <a>ListIPSets</a>.</p>
+        /// <p>The <code>IPSetId</code> of the <code>IPSet</code> that you want to update. <code>IPSetId</code> is returned by <code>CreateIPSet</code> and by <code>ListIPSets</code>.</p>
         pub fn set_ip_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ip_set_id = input;
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.change_token = Some(input.into());
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -11682,19 +11330,10 @@ pub mod update_ip_set_input {
         ///
         /// To override the contents of this collection use [`set_updates`](Self::set_updates).
         ///
-        /// <p>An array of <code>IPSetUpdate</code> objects that you want to insert into or delete from an <a>IPSet</a>.
-        /// For more information, see the applicable data types:</p>
+        /// <p>An array of <code>IPSetUpdate</code> objects that you want to insert into or delete from an <code>IPSet</code>. For more information, see the applicable data types:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <a>IPSetUpdate</a>: Contains <code>Action</code> and <code>IPSetDescriptor</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a>IPSetDescriptor</a>: Contains <code>Type</code> and <code>Value</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>IPSetUpdate</code>: Contains <code>Action</code> and <code>IPSetDescriptor</code> </p> </li>
+        /// <li> <p> <code>IPSetDescriptor</code>: Contains <code>Type</code> and <code>Value</code> </p> </li>
         /// </ul>
         /// <p>You can insert a maximum of 1000 addresses in a single request.</p>
         pub fn updates(mut self, input: crate::model::IpSetUpdate) -> Self {
@@ -11703,19 +11342,10 @@ pub mod update_ip_set_input {
             self.updates = Some(v);
             self
         }
-        /// <p>An array of <code>IPSetUpdate</code> objects that you want to insert into or delete from an <a>IPSet</a>.
-        /// For more information, see the applicable data types:</p>
+        /// <p>An array of <code>IPSetUpdate</code> objects that you want to insert into or delete from an <code>IPSet</code>. For more information, see the applicable data types:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <a>IPSetUpdate</a>: Contains <code>Action</code> and <code>IPSetDescriptor</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a>IPSetDescriptor</a>: Contains <code>Type</code> and <code>Value</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>IPSetUpdate</code>: Contains <code>Action</code> and <code>IPSetDescriptor</code> </p> </li>
+        /// <li> <p> <code>IPSetDescriptor</code>: Contains <code>Type</code> and <code>Value</code> </p> </li>
         /// </ul>
         /// <p>You can insert a maximum of 1000 addresses in a single request.</p>
         pub fn set_updates(
@@ -11873,24 +11503,22 @@ pub mod update_rate_based_rule_input {
         pub(crate) rate_limit: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>The <code>RuleId</code> of the <code>RateBasedRule</code> that you want to update.
-        /// <code>RuleId</code> is returned by <code>CreateRateBasedRule</code> and by <a>ListRateBasedRules</a>.</p>
+        /// <p>The <code>RuleId</code> of the <code>RateBasedRule</code> that you want to update. <code>RuleId</code> is returned by <code>CreateRateBasedRule</code> and by <code>ListRateBasedRules</code>.</p>
         pub fn rule_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rule_id = Some(input.into());
             self
         }
-        /// <p>The <code>RuleId</code> of the <code>RateBasedRule</code> that you want to update.
-        /// <code>RuleId</code> is returned by <code>CreateRateBasedRule</code> and by <a>ListRateBasedRules</a>.</p>
+        /// <p>The <code>RuleId</code> of the <code>RateBasedRule</code> that you want to update. <code>RuleId</code> is returned by <code>CreateRateBasedRule</code> and by <code>ListRateBasedRules</code>.</p>
         pub fn set_rule_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rule_id = input;
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.change_token = Some(input.into());
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -11899,16 +11527,14 @@ pub mod update_rate_based_rule_input {
         ///
         /// To override the contents of this collection use [`set_updates`](Self::set_updates).
         ///
-        /// <p>An array of <code>RuleUpdate</code> objects that you want to insert into or delete
-        /// from a <a>RateBasedRule</a>. </p>
+        /// <p>An array of <code>RuleUpdate</code> objects that you want to insert into or delete from a <code>RateBasedRule</code>. </p>
         pub fn updates(mut self, input: crate::model::RuleUpdate) -> Self {
             let mut v = self.updates.unwrap_or_default();
             v.push(input);
             self.updates = Some(v);
             self
         }
-        /// <p>An array of <code>RuleUpdate</code> objects that you want to insert into or delete
-        /// from a <a>RateBasedRule</a>. </p>
+        /// <p>An array of <code>RuleUpdate</code> objects that you want to insert into or delete from a <code>RateBasedRule</code>. </p>
         pub fn set_updates(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RuleUpdate>>,
@@ -11916,18 +11542,12 @@ pub mod update_rate_based_rule_input {
             self.updates = input;
             self
         }
-        /// <p>The maximum number of requests, which have an identical value in the field specified by the <code>RateKey</code>, allowed in a
-        /// five-minute period. If the number of requests exceeds the <code>RateLimit</code> and the other
-        /// predicates specified in the rule are also met,
-        /// AWS WAF triggers the action that is specified for this rule.</p>
+        /// <p>The maximum number of requests, which have an identical value in the field specified by the <code>RateKey</code>, allowed in a five-minute period. If the number of requests exceeds the <code>RateLimit</code> and the other predicates specified in the rule are also met, AWS WAF triggers the action that is specified for this rule.</p>
         pub fn rate_limit(mut self, input: i64) -> Self {
             self.rate_limit = Some(input);
             self
         }
-        /// <p>The maximum number of requests, which have an identical value in the field specified by the <code>RateKey</code>, allowed in a
-        /// five-minute period. If the number of requests exceeds the <code>RateLimit</code> and the other
-        /// predicates specified in the rule are also met,
-        /// AWS WAF triggers the action that is specified for this rule.</p>
+        /// <p>The maximum number of requests, which have an identical value in the field specified by the <code>RateKey</code>, allowed in a five-minute period. If the number of requests exceeds the <code>RateLimit</code> and the other predicates specified in the rule are also met, AWS WAF triggers the action that is specified for this rule.</p>
         pub fn set_rate_limit(mut self, input: std::option::Option<i64>) -> Self {
             self.rate_limit = input;
             self
@@ -12083,14 +11703,12 @@ pub mod update_regex_match_set_input {
         pub(crate) change_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <code>RegexMatchSetId</code> of the <a>RegexMatchSet</a> that you want to update. <code>RegexMatchSetId</code> is returned by <a>CreateRegexMatchSet</a> and by
-        /// <a>ListRegexMatchSets</a>.</p>
+        /// <p>The <code>RegexMatchSetId</code> of the <code>RegexMatchSet</code> that you want to update. <code>RegexMatchSetId</code> is returned by <code>CreateRegexMatchSet</code> and by <code>ListRegexMatchSets</code>.</p>
         pub fn regex_match_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.regex_match_set_id = Some(input.into());
             self
         }
-        /// <p>The <code>RegexMatchSetId</code> of the <a>RegexMatchSet</a> that you want to update. <code>RegexMatchSetId</code> is returned by <a>CreateRegexMatchSet</a> and by
-        /// <a>ListRegexMatchSets</a>.</p>
+        /// <p>The <code>RegexMatchSetId</code> of the <code>RegexMatchSet</code> that you want to update. <code>RegexMatchSetId</code> is returned by <code>CreateRegexMatchSet</code> and by <code>ListRegexMatchSets</code>.</p>
         pub fn set_regex_match_set_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12102,16 +11720,14 @@ pub mod update_regex_match_set_input {
         ///
         /// To override the contents of this collection use [`set_updates`](Self::set_updates).
         ///
-        /// <p>An array of <code>RegexMatchSetUpdate</code> objects that you want to insert into or delete from a <a>RegexMatchSet</a>.
-        /// For more information, see <a>RegexMatchTuple</a>.</p>
+        /// <p>An array of <code>RegexMatchSetUpdate</code> objects that you want to insert into or delete from a <code>RegexMatchSet</code>. For more information, see <code>RegexMatchTuple</code>.</p>
         pub fn updates(mut self, input: crate::model::RegexMatchSetUpdate) -> Self {
             let mut v = self.updates.unwrap_or_default();
             v.push(input);
             self.updates = Some(v);
             self
         }
-        /// <p>An array of <code>RegexMatchSetUpdate</code> objects that you want to insert into or delete from a <a>RegexMatchSet</a>.
-        /// For more information, see <a>RegexMatchTuple</a>.</p>
+        /// <p>An array of <code>RegexMatchSetUpdate</code> objects that you want to insert into or delete from a <code>RegexMatchSet</code>. For more information, see <code>RegexMatchTuple</code>.</p>
         pub fn set_updates(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RegexMatchSetUpdate>>,
@@ -12119,12 +11735,12 @@ pub mod update_regex_match_set_input {
             self.updates = input;
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.change_token = Some(input.into());
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -12279,14 +11895,12 @@ pub mod update_regex_pattern_set_input {
         pub(crate) change_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <code>RegexPatternSetId</code> of the <a>RegexPatternSet</a> that you want to update. <code>RegexPatternSetId</code> is returned by <a>CreateRegexPatternSet</a> and by
-        /// <a>ListRegexPatternSets</a>.</p>
+        /// <p>The <code>RegexPatternSetId</code> of the <code>RegexPatternSet</code> that you want to update. <code>RegexPatternSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
         pub fn regex_pattern_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.regex_pattern_set_id = Some(input.into());
             self
         }
-        /// <p>The <code>RegexPatternSetId</code> of the <a>RegexPatternSet</a> that you want to update. <code>RegexPatternSetId</code> is returned by <a>CreateRegexPatternSet</a> and by
-        /// <a>ListRegexPatternSets</a>.</p>
+        /// <p>The <code>RegexPatternSetId</code> of the <code>RegexPatternSet</code> that you want to update. <code>RegexPatternSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
         pub fn set_regex_pattern_set_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12298,14 +11912,14 @@ pub mod update_regex_pattern_set_input {
         ///
         /// To override the contents of this collection use [`set_updates`](Self::set_updates).
         ///
-        /// <p>An array of <code>RegexPatternSetUpdate</code> objects that you want to insert into or delete from a <a>RegexPatternSet</a>.</p>
+        /// <p>An array of <code>RegexPatternSetUpdate</code> objects that you want to insert into or delete from a <code>RegexPatternSet</code>.</p>
         pub fn updates(mut self, input: crate::model::RegexPatternSetUpdate) -> Self {
             let mut v = self.updates.unwrap_or_default();
             v.push(input);
             self.updates = Some(v);
             self
         }
-        /// <p>An array of <code>RegexPatternSetUpdate</code> objects that you want to insert into or delete from a <a>RegexPatternSet</a>.</p>
+        /// <p>An array of <code>RegexPatternSetUpdate</code> objects that you want to insert into or delete from a <code>RegexPatternSet</code>.</p>
         pub fn set_updates(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RegexPatternSetUpdate>>,
@@ -12313,12 +11927,12 @@ pub mod update_regex_pattern_set_input {
             self.updates = input;
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.change_token = Some(input.into());
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -12473,24 +12087,22 @@ pub mod update_rule_input {
         pub(crate) updates: std::option::Option<std::vec::Vec<crate::model::RuleUpdate>>,
     }
     impl Builder {
-        /// <p>The <code>RuleId</code> of the <code>Rule</code> that you want to update. <code>RuleId</code> is returned by
-        /// <code>CreateRule</code> and by <a>ListRules</a>.</p>
+        /// <p>The <code>RuleId</code> of the <code>Rule</code> that you want to update. <code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
         pub fn rule_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rule_id = Some(input.into());
             self
         }
-        /// <p>The <code>RuleId</code> of the <code>Rule</code> that you want to update. <code>RuleId</code> is returned by
-        /// <code>CreateRule</code> and by <a>ListRules</a>.</p>
+        /// <p>The <code>RuleId</code> of the <code>Rule</code> that you want to update. <code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
         pub fn set_rule_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rule_id = input;
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.change_token = Some(input.into());
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -12499,24 +12111,11 @@ pub mod update_rule_input {
         ///
         /// To override the contents of this collection use [`set_updates`](Self::set_updates).
         ///
-        /// <p>An array of <code>RuleUpdate</code> objects that you want to insert into or delete from a
-        /// <a>Rule</a>. For more information, see the applicable data types:</p>
+        /// <p>An array of <code>RuleUpdate</code> objects that you want to insert into or delete from a <code>Rule</code>. For more information, see the applicable data types:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <a>RuleUpdate</a>: Contains <code>Action</code> and <code>Predicate</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a>Predicate</a>: Contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>RuleUpdate</code>: Contains <code>Action</code> and <code>Predicate</code> </p> </li>
+        /// <li> <p> <code>Predicate</code>: Contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code> </p> </li>
+        /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
         /// </ul>
         pub fn updates(mut self, input: crate::model::RuleUpdate) -> Self {
             let mut v = self.updates.unwrap_or_default();
@@ -12524,24 +12123,11 @@ pub mod update_rule_input {
             self.updates = Some(v);
             self
         }
-        /// <p>An array of <code>RuleUpdate</code> objects that you want to insert into or delete from a
-        /// <a>Rule</a>. For more information, see the applicable data types:</p>
+        /// <p>An array of <code>RuleUpdate</code> objects that you want to insert into or delete from a <code>Rule</code>. For more information, see the applicable data types:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <a>RuleUpdate</a>: Contains <code>Action</code> and <code>Predicate</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a>Predicate</a>: Contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>RuleUpdate</code>: Contains <code>Action</code> and <code>Predicate</code> </p> </li>
+        /// <li> <p> <code>Predicate</code>: Contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code> </p> </li>
+        /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
         /// </ul>
         pub fn set_updates(
             mut self,
@@ -12697,14 +12283,12 @@ pub mod update_rule_group_input {
         pub(crate) change_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <code>RuleGroupId</code> of the <a>RuleGroup</a> that you want to update. <code>RuleGroupId</code> is returned by <a>CreateRuleGroup</a> and by
-        /// <a>ListRuleGroups</a>.</p>
+        /// <p>The <code>RuleGroupId</code> of the <code>RuleGroup</code> that you want to update. <code>RuleGroupId</code> is returned by <code>CreateRuleGroup</code> and by <code>ListRuleGroups</code>.</p>
         pub fn rule_group_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rule_group_id = Some(input.into());
             self
         }
-        /// <p>The <code>RuleGroupId</code> of the <a>RuleGroup</a> that you want to update. <code>RuleGroupId</code> is returned by <a>CreateRuleGroup</a> and by
-        /// <a>ListRuleGroups</a>.</p>
+        /// <p>The <code>RuleGroupId</code> of the <code>RuleGroup</code> that you want to update. <code>RuleGroupId</code> is returned by <code>CreateRuleGroup</code> and by <code>ListRuleGroups</code>.</p>
         pub fn set_rule_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12716,22 +12300,18 @@ pub mod update_rule_group_input {
         ///
         /// To override the contents of this collection use [`set_updates`](Self::set_updates).
         ///
-        /// <p>An array of <code>RuleGroupUpdate</code> objects that you want to insert into or delete from a
-        /// <a>RuleGroup</a>.</p>
+        /// <p>An array of <code>RuleGroupUpdate</code> objects that you want to insert into or delete from a <code>RuleGroup</code>.</p>
         /// <p>You can only insert <code>REGULAR</code> rules into a rule group.</p>
-        /// <p>
-        /// <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>.  For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.</p>
+        /// <p> <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.</p>
         pub fn updates(mut self, input: crate::model::RuleGroupUpdate) -> Self {
             let mut v = self.updates.unwrap_or_default();
             v.push(input);
             self.updates = Some(v);
             self
         }
-        /// <p>An array of <code>RuleGroupUpdate</code> objects that you want to insert into or delete from a
-        /// <a>RuleGroup</a>.</p>
+        /// <p>An array of <code>RuleGroupUpdate</code> objects that you want to insert into or delete from a <code>RuleGroup</code>.</p>
         /// <p>You can only insert <code>REGULAR</code> rules into a rule group.</p>
-        /// <p>
-        /// <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>.  For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.</p>
+        /// <p> <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.</p>
         pub fn set_updates(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RuleGroupUpdate>>,
@@ -12739,12 +12319,12 @@ pub mod update_rule_group_input {
             self.updates = input;
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.change_token = Some(input.into());
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -12898,14 +12478,12 @@ pub mod update_size_constraint_set_input {
             std::option::Option<std::vec::Vec<crate::model::SizeConstraintSetUpdate>>,
     }
     impl Builder {
-        /// <p>The <code>SizeConstraintSetId</code> of the <a>SizeConstraintSet</a> that you want to update. <code>SizeConstraintSetId</code>
-        /// is returned by <a>CreateSizeConstraintSet</a> and by <a>ListSizeConstraintSets</a>.</p>
+        /// <p>The <code>SizeConstraintSetId</code> of the <code>SizeConstraintSet</code> that you want to update. <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
         pub fn size_constraint_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.size_constraint_set_id = Some(input.into());
             self
         }
-        /// <p>The <code>SizeConstraintSetId</code> of the <a>SizeConstraintSet</a> that you want to update. <code>SizeConstraintSetId</code>
-        /// is returned by <a>CreateSizeConstraintSet</a> and by <a>ListSizeConstraintSets</a>.</p>
+        /// <p>The <code>SizeConstraintSetId</code> of the <code>SizeConstraintSet</code> that you want to update. <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
         pub fn set_size_constraint_set_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12913,12 +12491,12 @@ pub mod update_size_constraint_set_input {
             self.size_constraint_set_id = input;
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.change_token = Some(input.into());
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -12927,25 +12505,11 @@ pub mod update_size_constraint_set_input {
         ///
         /// To override the contents of this collection use [`set_updates`](Self::set_updates).
         ///
-        /// <p>An array of <code>SizeConstraintSetUpdate</code> objects that you want to insert into or delete from a <a>SizeConstraintSet</a>.
-        /// For more information, see the applicable data types:</p>
+        /// <p>An array of <code>SizeConstraintSetUpdate</code> objects that you want to insert into or delete from a <code>SizeConstraintSet</code>. For more information, see the applicable data types:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <a>SizeConstraintSetUpdate</a>: Contains <code>Action</code> and <code>SizeConstraint</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a>SizeConstraint</a>: Contains <code>FieldToMatch</code>, <code>TextTransformation</code>, <code>ComparisonOperator</code>,
-        /// and <code>Size</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>SizeConstraintSetUpdate</code>: Contains <code>Action</code> and <code>SizeConstraint</code> </p> </li>
+        /// <li> <p> <code>SizeConstraint</code>: Contains <code>FieldToMatch</code>, <code>TextTransformation</code>, <code>ComparisonOperator</code>, and <code>Size</code> </p> </li>
+        /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
         /// </ul>
         pub fn updates(mut self, input: crate::model::SizeConstraintSetUpdate) -> Self {
             let mut v = self.updates.unwrap_or_default();
@@ -12953,25 +12517,11 @@ pub mod update_size_constraint_set_input {
             self.updates = Some(v);
             self
         }
-        /// <p>An array of <code>SizeConstraintSetUpdate</code> objects that you want to insert into or delete from a <a>SizeConstraintSet</a>.
-        /// For more information, see the applicable data types:</p>
+        /// <p>An array of <code>SizeConstraintSetUpdate</code> objects that you want to insert into or delete from a <code>SizeConstraintSet</code>. For more information, see the applicable data types:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <a>SizeConstraintSetUpdate</a>: Contains <code>Action</code> and <code>SizeConstraint</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a>SizeConstraint</a>: Contains <code>FieldToMatch</code>, <code>TextTransformation</code>, <code>ComparisonOperator</code>,
-        /// and <code>Size</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>SizeConstraintSetUpdate</code>: Contains <code>Action</code> and <code>SizeConstraint</code> </p> </li>
+        /// <li> <p> <code>SizeConstraint</code>: Contains <code>FieldToMatch</code>, <code>TextTransformation</code>, <code>ComparisonOperator</code>, and <code>Size</code> </p> </li>
+        /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
         /// </ul>
         pub fn set_updates(
             mut self,
@@ -13132,14 +12682,12 @@ pub mod update_sql_injection_match_set_input {
             std::option::Option<std::vec::Vec<crate::model::SqlInjectionMatchSetUpdate>>,
     }
     impl Builder {
-        /// <p>The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to update.
-        /// <code>SqlInjectionMatchSetId</code> is returned by <a>CreateSqlInjectionMatchSet</a> and by <a>ListSqlInjectionMatchSets</a>.</p>
+        /// <p>The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to update. <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
         pub fn sql_injection_match_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.sql_injection_match_set_id = Some(input.into());
             self
         }
-        /// <p>The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to update.
-        /// <code>SqlInjectionMatchSetId</code> is returned by <a>CreateSqlInjectionMatchSet</a> and by <a>ListSqlInjectionMatchSets</a>.</p>
+        /// <p>The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to update. <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
         pub fn set_sql_injection_match_set_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13147,12 +12695,12 @@ pub mod update_sql_injection_match_set_input {
             self.sql_injection_match_set_id = input;
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.change_token = Some(input.into());
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -13161,24 +12709,11 @@ pub mod update_sql_injection_match_set_input {
         ///
         /// To override the contents of this collection use [`set_updates`](Self::set_updates).
         ///
-        /// <p>An array of <code>SqlInjectionMatchSetUpdate</code> objects that you want to insert into or delete from a
-        /// <a>SqlInjectionMatchSet</a>. For more information, see the applicable data types:</p>
+        /// <p>An array of <code>SqlInjectionMatchSetUpdate</code> objects that you want to insert into or delete from a <code>SqlInjectionMatchSet</code>. For more information, see the applicable data types:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <a>SqlInjectionMatchSetUpdate</a>: Contains <code>Action</code> and <code>SqlInjectionMatchTuple</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a>SqlInjectionMatchTuple</a>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>SqlInjectionMatchSetUpdate</code>: Contains <code>Action</code> and <code>SqlInjectionMatchTuple</code> </p> </li>
+        /// <li> <p> <code>SqlInjectionMatchTuple</code>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p> </li>
+        /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
         /// </ul>
         pub fn updates(mut self, input: crate::model::SqlInjectionMatchSetUpdate) -> Self {
             let mut v = self.updates.unwrap_or_default();
@@ -13186,24 +12721,11 @@ pub mod update_sql_injection_match_set_input {
             self.updates = Some(v);
             self
         }
-        /// <p>An array of <code>SqlInjectionMatchSetUpdate</code> objects that you want to insert into or delete from a
-        /// <a>SqlInjectionMatchSet</a>. For more information, see the applicable data types:</p>
+        /// <p>An array of <code>SqlInjectionMatchSetUpdate</code> objects that you want to insert into or delete from a <code>SqlInjectionMatchSet</code>. For more information, see the applicable data types:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <a>SqlInjectionMatchSetUpdate</a>: Contains <code>Action</code> and <code>SqlInjectionMatchTuple</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a>SqlInjectionMatchTuple</a>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>SqlInjectionMatchSetUpdate</code>: Contains <code>Action</code> and <code>SqlInjectionMatchTuple</code> </p> </li>
+        /// <li> <p> <code>SqlInjectionMatchTuple</code>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p> </li>
+        /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
         /// </ul>
         pub fn set_updates(
             mut self,
@@ -13363,24 +12885,22 @@ pub mod update_web_acl_input {
         pub(crate) default_action: std::option::Option<crate::model::WafAction>,
     }
     impl Builder {
-        /// <p>The <code>WebACLId</code> of the <a>WebACL</a> that you want to update. <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by
-        /// <a>ListWebACLs</a>.</p>
+        /// <p>The <code>WebACLId</code> of the <code>WebACL</code> that you want to update. <code>WebACLId</code> is returned by <code>CreateWebACL</code> and by <code>ListWebACLs</code>.</p>
         pub fn web_acl_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.web_acl_id = Some(input.into());
             self
         }
-        /// <p>The <code>WebACLId</code> of the <a>WebACL</a> that you want to update. <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by
-        /// <a>ListWebACLs</a>.</p>
+        /// <p>The <code>WebACLId</code> of the <code>WebACL</code> that you want to update. <code>WebACLId</code> is returned by <code>CreateWebACL</code> and by <code>ListWebACLs</code>.</p>
         pub fn set_web_acl_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.web_acl_id = input;
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.change_token = Some(input.into());
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -13389,31 +12909,12 @@ pub mod update_web_acl_input {
         ///
         /// To override the contents of this collection use [`set_updates`](Self::set_updates).
         ///
-        /// <p>An array of updates to make to the <a>WebACL</a>.</p>    
-        /// <p>An array of <code>WebACLUpdate</code> objects that you want to insert into or delete from a
-        /// <a>WebACL</a>. For more information, see the applicable data types:</p>
+        /// <p>An array of updates to make to the <code>WebACL</code>.</p>
+        /// <p>An array of <code>WebACLUpdate</code> objects that you want to insert into or delete from a <code>WebACL</code>. For more information, see the applicable data types:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <a>WebACLUpdate</a>: Contains <code>Action</code> and <code>ActivatedRule</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a>ActivatedRule</a>: Contains <code>Action</code>,
-        /// <code>OverrideAction</code>, <code>Priority</code>, <code>RuleId</code>, and
-        /// <code>Type</code>. <code>ActivatedRule|OverrideAction</code> applies only when
-        /// updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this
-        /// case,
-        /// you do not use <code>ActivatedRule|Action</code>. For all other update requests,
-        /// <code>ActivatedRule|Action</code> is used instead of
-        /// <code>ActivatedRule|OverrideAction</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a>WafAction</a>: Contains <code>Type</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>WebACLUpdate</code>: Contains <code>Action</code> and <code>ActivatedRule</code> </p> </li>
+        /// <li> <p> <code>ActivatedRule</code>: Contains <code>Action</code>, <code>OverrideAction</code>, <code>Priority</code>, <code>RuleId</code>, and <code>Type</code>. <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case, you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>. </p> </li>
+        /// <li> <p> <code>WafAction</code>: Contains <code>Type</code> </p> </li>
         /// </ul>
         pub fn updates(mut self, input: crate::model::WebAclUpdate) -> Self {
             let mut v = self.updates.unwrap_or_default();
@@ -13421,31 +12922,12 @@ pub mod update_web_acl_input {
             self.updates = Some(v);
             self
         }
-        /// <p>An array of updates to make to the <a>WebACL</a>.</p>    
-        /// <p>An array of <code>WebACLUpdate</code> objects that you want to insert into or delete from a
-        /// <a>WebACL</a>. For more information, see the applicable data types:</p>
+        /// <p>An array of updates to make to the <code>WebACL</code>.</p>
+        /// <p>An array of <code>WebACLUpdate</code> objects that you want to insert into or delete from a <code>WebACL</code>. For more information, see the applicable data types:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <a>WebACLUpdate</a>: Contains <code>Action</code> and <code>ActivatedRule</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a>ActivatedRule</a>: Contains <code>Action</code>,
-        /// <code>OverrideAction</code>, <code>Priority</code>, <code>RuleId</code>, and
-        /// <code>Type</code>. <code>ActivatedRule|OverrideAction</code> applies only when
-        /// updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this
-        /// case,
-        /// you do not use <code>ActivatedRule|Action</code>. For all other update requests,
-        /// <code>ActivatedRule|Action</code> is used instead of
-        /// <code>ActivatedRule|OverrideAction</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a>WafAction</a>: Contains <code>Type</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>WebACLUpdate</code>: Contains <code>Action</code> and <code>ActivatedRule</code> </p> </li>
+        /// <li> <p> <code>ActivatedRule</code>: Contains <code>Action</code>, <code>OverrideAction</code>, <code>Priority</code>, <code>RuleId</code>, and <code>Type</code>. <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case, you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>. </p> </li>
+        /// <li> <p> <code>WafAction</code>: Contains <code>Type</code> </p> </li>
         /// </ul>
         pub fn set_updates(
             mut self,
@@ -13454,14 +12936,12 @@ pub mod update_web_acl_input {
             self.updates = input;
             self
         }
-        /// <p>A default action for the web ACL, either ALLOW or BLOCK. AWS WAF performs the default
-        /// action if a request doesn't match the criteria in any of the rules in a web ACL.</p>
+        /// <p>A default action for the web ACL, either ALLOW or BLOCK. AWS WAF performs the default action if a request doesn't match the criteria in any of the rules in a web ACL.</p>
         pub fn default_action(mut self, input: crate::model::WafAction) -> Self {
             self.default_action = Some(input);
             self
         }
-        /// <p>A default action for the web ACL, either ALLOW or BLOCK. AWS WAF performs the default
-        /// action if a request doesn't match the criteria in any of the rules in a web ACL.</p>
+        /// <p>A default action for the web ACL, either ALLOW or BLOCK. AWS WAF performs the default action if a request doesn't match the criteria in any of the rules in a web ACL.</p>
         pub fn set_default_action(
             mut self,
             input: std::option::Option<crate::model::WafAction>,
@@ -13617,14 +13097,12 @@ pub mod update_xss_match_set_input {
         pub(crate) updates: std::option::Option<std::vec::Vec<crate::model::XssMatchSetUpdate>>,
     }
     impl Builder {
-        /// <p>The <code>XssMatchSetId</code> of the <code>XssMatchSet</code> that you want to update.
-        /// <code>XssMatchSetId</code> is returned by <a>CreateXssMatchSet</a> and by <a>ListXssMatchSets</a>.</p>
+        /// <p>The <code>XssMatchSetId</code> of the <code>XssMatchSet</code> that you want to update. <code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
         pub fn xss_match_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.xss_match_set_id = Some(input.into());
             self
         }
-        /// <p>The <code>XssMatchSetId</code> of the <code>XssMatchSet</code> that you want to update.
-        /// <code>XssMatchSetId</code> is returned by <a>CreateXssMatchSet</a> and by <a>ListXssMatchSets</a>.</p>
+        /// <p>The <code>XssMatchSetId</code> of the <code>XssMatchSet</code> that you want to update. <code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
         pub fn set_xss_match_set_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13632,12 +13110,12 @@ pub mod update_xss_match_set_input {
             self.xss_match_set_id = input;
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.change_token = Some(input.into());
             self
         }
-        /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+        /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
         pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.change_token = input;
             self
@@ -13646,26 +13124,11 @@ pub mod update_xss_match_set_input {
         ///
         /// To override the contents of this collection use [`set_updates`](Self::set_updates).
         ///
-        /// <p>An array of <code>XssMatchSetUpdate</code> objects that you want to insert into or
-        /// delete from an
-        /// <a>XssMatchSet</a>. For more information, see the applicable data
-        /// types:</p>
+        /// <p>An array of <code>XssMatchSetUpdate</code> objects that you want to insert into or delete from an <code>XssMatchSet</code>. For more information, see the applicable data types:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <a>XssMatchSetUpdate</a>: Contains <code>Action</code> and <code>XssMatchTuple</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a>XssMatchTuple</a>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>XssMatchSetUpdate</code>: Contains <code>Action</code> and <code>XssMatchTuple</code> </p> </li>
+        /// <li> <p> <code>XssMatchTuple</code>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p> </li>
+        /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
         /// </ul>
         pub fn updates(mut self, input: crate::model::XssMatchSetUpdate) -> Self {
             let mut v = self.updates.unwrap_or_default();
@@ -13673,26 +13136,11 @@ pub mod update_xss_match_set_input {
             self.updates = Some(v);
             self
         }
-        /// <p>An array of <code>XssMatchSetUpdate</code> objects that you want to insert into or
-        /// delete from an
-        /// <a>XssMatchSet</a>. For more information, see the applicable data
-        /// types:</p>
+        /// <p>An array of <code>XssMatchSetUpdate</code> objects that you want to insert into or delete from an <code>XssMatchSet</code>. For more information, see the applicable data types:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <a>XssMatchSetUpdate</a>: Contains <code>Action</code> and <code>XssMatchTuple</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a>XssMatchTuple</a>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>XssMatchSetUpdate</code>: Contains <code>Action</code> and <code>XssMatchTuple</code> </p> </li>
+        /// <li> <p> <code>XssMatchTuple</code>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p> </li>
+        /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
         /// </ul>
         pub fn set_updates(
             mut self,
@@ -13838,68 +13286,36 @@ impl UpdateXssMatchSetInput {
     }
 }
 
-/// <p>A request to update an <a>XssMatchSet</a>.</p>
+/// <p>A request to update an <code>XssMatchSet</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateXssMatchSetInput {
-    /// <p>The <code>XssMatchSetId</code> of the <code>XssMatchSet</code> that you want to update.
-    /// <code>XssMatchSetId</code> is returned by <a>CreateXssMatchSet</a> and by <a>ListXssMatchSets</a>.</p>
+    /// <p>The <code>XssMatchSetId</code> of the <code>XssMatchSet</code> that you want to update. <code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
     pub xss_match_set_id: std::option::Option<std::string::String>,
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub change_token: std::option::Option<std::string::String>,
-    /// <p>An array of <code>XssMatchSetUpdate</code> objects that you want to insert into or
-    /// delete from an
-    /// <a>XssMatchSet</a>. For more information, see the applicable data
-    /// types:</p>
+    /// <p>An array of <code>XssMatchSetUpdate</code> objects that you want to insert into or delete from an <code>XssMatchSet</code>. For more information, see the applicable data types:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <a>XssMatchSetUpdate</a>: Contains <code>Action</code> and <code>XssMatchTuple</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a>XssMatchTuple</a>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>XssMatchSetUpdate</code>: Contains <code>Action</code> and <code>XssMatchTuple</code> </p> </li>
+    /// <li> <p> <code>XssMatchTuple</code>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p> </li>
+    /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
     /// </ul>
     pub updates: std::option::Option<std::vec::Vec<crate::model::XssMatchSetUpdate>>,
 }
 impl UpdateXssMatchSetInput {
-    /// <p>The <code>XssMatchSetId</code> of the <code>XssMatchSet</code> that you want to update.
-    /// <code>XssMatchSetId</code> is returned by <a>CreateXssMatchSet</a> and by <a>ListXssMatchSets</a>.</p>
+    /// <p>The <code>XssMatchSetId</code> of the <code>XssMatchSet</code> that you want to update. <code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
     pub fn xss_match_set_id(&self) -> std::option::Option<&str> {
         self.xss_match_set_id.as_deref()
     }
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(&self) -> std::option::Option<&str> {
         self.change_token.as_deref()
     }
-    /// <p>An array of <code>XssMatchSetUpdate</code> objects that you want to insert into or
-    /// delete from an
-    /// <a>XssMatchSet</a>. For more information, see the applicable data
-    /// types:</p>
+    /// <p>An array of <code>XssMatchSetUpdate</code> objects that you want to insert into or delete from an <code>XssMatchSet</code>. For more information, see the applicable data types:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <a>XssMatchSetUpdate</a>: Contains <code>Action</code> and <code>XssMatchTuple</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a>XssMatchTuple</a>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>XssMatchSetUpdate</code>: Contains <code>Action</code> and <code>XssMatchTuple</code> </p> </li>
+    /// <li> <p> <code>XssMatchTuple</code>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p> </li>
+    /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
     /// </ul>
     pub fn updates(&self) -> std::option::Option<&[crate::model::XssMatchSetUpdate]> {
         self.updates.as_deref()
@@ -13919,83 +13335,41 @@ impl std::fmt::Debug for UpdateXssMatchSetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateWebAclInput {
-    /// <p>The <code>WebACLId</code> of the <a>WebACL</a> that you want to update. <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by
-    /// <a>ListWebACLs</a>.</p>
+    /// <p>The <code>WebACLId</code> of the <code>WebACL</code> that you want to update. <code>WebACLId</code> is returned by <code>CreateWebACL</code> and by <code>ListWebACLs</code>.</p>
     pub web_acl_id: std::option::Option<std::string::String>,
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub change_token: std::option::Option<std::string::String>,
-    /// <p>An array of updates to make to the <a>WebACL</a>.</p>    
-    /// <p>An array of <code>WebACLUpdate</code> objects that you want to insert into or delete from a
-    /// <a>WebACL</a>. For more information, see the applicable data types:</p>
+    /// <p>An array of updates to make to the <code>WebACL</code>.</p>
+    /// <p>An array of <code>WebACLUpdate</code> objects that you want to insert into or delete from a <code>WebACL</code>. For more information, see the applicable data types:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <a>WebACLUpdate</a>: Contains <code>Action</code> and <code>ActivatedRule</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a>ActivatedRule</a>: Contains <code>Action</code>,
-    /// <code>OverrideAction</code>, <code>Priority</code>, <code>RuleId</code>, and
-    /// <code>Type</code>. <code>ActivatedRule|OverrideAction</code> applies only when
-    /// updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this
-    /// case,
-    /// you do not use <code>ActivatedRule|Action</code>. For all other update requests,
-    /// <code>ActivatedRule|Action</code> is used instead of
-    /// <code>ActivatedRule|OverrideAction</code>. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a>WafAction</a>: Contains <code>Type</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>WebACLUpdate</code>: Contains <code>Action</code> and <code>ActivatedRule</code> </p> </li>
+    /// <li> <p> <code>ActivatedRule</code>: Contains <code>Action</code>, <code>OverrideAction</code>, <code>Priority</code>, <code>RuleId</code>, and <code>Type</code>. <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case, you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>. </p> </li>
+    /// <li> <p> <code>WafAction</code>: Contains <code>Type</code> </p> </li>
     /// </ul>
     pub updates: std::option::Option<std::vec::Vec<crate::model::WebAclUpdate>>,
-    /// <p>A default action for the web ACL, either ALLOW or BLOCK. AWS WAF performs the default
-    /// action if a request doesn't match the criteria in any of the rules in a web ACL.</p>
+    /// <p>A default action for the web ACL, either ALLOW or BLOCK. AWS WAF performs the default action if a request doesn't match the criteria in any of the rules in a web ACL.</p>
     pub default_action: std::option::Option<crate::model::WafAction>,
 }
 impl UpdateWebAclInput {
-    /// <p>The <code>WebACLId</code> of the <a>WebACL</a> that you want to update. <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by
-    /// <a>ListWebACLs</a>.</p>
+    /// <p>The <code>WebACLId</code> of the <code>WebACL</code> that you want to update. <code>WebACLId</code> is returned by <code>CreateWebACL</code> and by <code>ListWebACLs</code>.</p>
     pub fn web_acl_id(&self) -> std::option::Option<&str> {
         self.web_acl_id.as_deref()
     }
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(&self) -> std::option::Option<&str> {
         self.change_token.as_deref()
     }
-    /// <p>An array of updates to make to the <a>WebACL</a>.</p>    
-    /// <p>An array of <code>WebACLUpdate</code> objects that you want to insert into or delete from a
-    /// <a>WebACL</a>. For more information, see the applicable data types:</p>
+    /// <p>An array of updates to make to the <code>WebACL</code>.</p>
+    /// <p>An array of <code>WebACLUpdate</code> objects that you want to insert into or delete from a <code>WebACL</code>. For more information, see the applicable data types:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <a>WebACLUpdate</a>: Contains <code>Action</code> and <code>ActivatedRule</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a>ActivatedRule</a>: Contains <code>Action</code>,
-    /// <code>OverrideAction</code>, <code>Priority</code>, <code>RuleId</code>, and
-    /// <code>Type</code>. <code>ActivatedRule|OverrideAction</code> applies only when
-    /// updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this
-    /// case,
-    /// you do not use <code>ActivatedRule|Action</code>. For all other update requests,
-    /// <code>ActivatedRule|Action</code> is used instead of
-    /// <code>ActivatedRule|OverrideAction</code>. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a>WafAction</a>: Contains <code>Type</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>WebACLUpdate</code>: Contains <code>Action</code> and <code>ActivatedRule</code> </p> </li>
+    /// <li> <p> <code>ActivatedRule</code>: Contains <code>Action</code>, <code>OverrideAction</code>, <code>Priority</code>, <code>RuleId</code>, and <code>Type</code>. <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case, you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>. </p> </li>
+    /// <li> <p> <code>WafAction</code>: Contains <code>Type</code> </p> </li>
     /// </ul>
     pub fn updates(&self) -> std::option::Option<&[crate::model::WebAclUpdate]> {
         self.updates.as_deref()
     }
-    /// <p>A default action for the web ACL, either ALLOW or BLOCK. AWS WAF performs the default
-    /// action if a request doesn't match the criteria in any of the rules in a web ACL.</p>
+    /// <p>A default action for the web ACL, either ALLOW or BLOCK. AWS WAF performs the default action if a request doesn't match the criteria in any of the rules in a web ACL.</p>
     pub fn default_action(&self) -> std::option::Option<&crate::model::WafAction> {
         self.default_action.as_ref()
     }
@@ -14011,64 +13385,36 @@ impl std::fmt::Debug for UpdateWebAclInput {
     }
 }
 
-/// <p>A request to update a <a>SqlInjectionMatchSet</a>.</p>
+/// <p>A request to update a <code>SqlInjectionMatchSet</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSqlInjectionMatchSetInput {
-    /// <p>The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to update.
-    /// <code>SqlInjectionMatchSetId</code> is returned by <a>CreateSqlInjectionMatchSet</a> and by <a>ListSqlInjectionMatchSets</a>.</p>
+    /// <p>The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to update. <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
     pub sql_injection_match_set_id: std::option::Option<std::string::String>,
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub change_token: std::option::Option<std::string::String>,
-    /// <p>An array of <code>SqlInjectionMatchSetUpdate</code> objects that you want to insert into or delete from a
-    /// <a>SqlInjectionMatchSet</a>. For more information, see the applicable data types:</p>
+    /// <p>An array of <code>SqlInjectionMatchSetUpdate</code> objects that you want to insert into or delete from a <code>SqlInjectionMatchSet</code>. For more information, see the applicable data types:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <a>SqlInjectionMatchSetUpdate</a>: Contains <code>Action</code> and <code>SqlInjectionMatchTuple</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a>SqlInjectionMatchTuple</a>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>SqlInjectionMatchSetUpdate</code>: Contains <code>Action</code> and <code>SqlInjectionMatchTuple</code> </p> </li>
+    /// <li> <p> <code>SqlInjectionMatchTuple</code>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p> </li>
+    /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
     /// </ul>
     pub updates: std::option::Option<std::vec::Vec<crate::model::SqlInjectionMatchSetUpdate>>,
 }
 impl UpdateSqlInjectionMatchSetInput {
-    /// <p>The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to update.
-    /// <code>SqlInjectionMatchSetId</code> is returned by <a>CreateSqlInjectionMatchSet</a> and by <a>ListSqlInjectionMatchSets</a>.</p>
+    /// <p>The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to update. <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
     pub fn sql_injection_match_set_id(&self) -> std::option::Option<&str> {
         self.sql_injection_match_set_id.as_deref()
     }
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(&self) -> std::option::Option<&str> {
         self.change_token.as_deref()
     }
-    /// <p>An array of <code>SqlInjectionMatchSetUpdate</code> objects that you want to insert into or delete from a
-    /// <a>SqlInjectionMatchSet</a>. For more information, see the applicable data types:</p>
+    /// <p>An array of <code>SqlInjectionMatchSetUpdate</code> objects that you want to insert into or delete from a <code>SqlInjectionMatchSet</code>. For more information, see the applicable data types:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <a>SqlInjectionMatchSetUpdate</a>: Contains <code>Action</code> and <code>SqlInjectionMatchTuple</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a>SqlInjectionMatchTuple</a>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>SqlInjectionMatchSetUpdate</code>: Contains <code>Action</code> and <code>SqlInjectionMatchTuple</code> </p> </li>
+    /// <li> <p> <code>SqlInjectionMatchTuple</code>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p> </li>
+    /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
     /// </ul>
     pub fn updates(&self) -> std::option::Option<&[crate::model::SqlInjectionMatchSetUpdate]> {
         self.updates.as_deref()
@@ -14091,62 +13437,32 @@ impl std::fmt::Debug for UpdateSqlInjectionMatchSetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSizeConstraintSetInput {
-    /// <p>The <code>SizeConstraintSetId</code> of the <a>SizeConstraintSet</a> that you want to update. <code>SizeConstraintSetId</code>
-    /// is returned by <a>CreateSizeConstraintSet</a> and by <a>ListSizeConstraintSets</a>.</p>
+    /// <p>The <code>SizeConstraintSetId</code> of the <code>SizeConstraintSet</code> that you want to update. <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
     pub size_constraint_set_id: std::option::Option<std::string::String>,
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub change_token: std::option::Option<std::string::String>,
-    /// <p>An array of <code>SizeConstraintSetUpdate</code> objects that you want to insert into or delete from a <a>SizeConstraintSet</a>.
-    /// For more information, see the applicable data types:</p>
+    /// <p>An array of <code>SizeConstraintSetUpdate</code> objects that you want to insert into or delete from a <code>SizeConstraintSet</code>. For more information, see the applicable data types:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <a>SizeConstraintSetUpdate</a>: Contains <code>Action</code> and <code>SizeConstraint</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a>SizeConstraint</a>: Contains <code>FieldToMatch</code>, <code>TextTransformation</code>, <code>ComparisonOperator</code>,
-    /// and <code>Size</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>SizeConstraintSetUpdate</code>: Contains <code>Action</code> and <code>SizeConstraint</code> </p> </li>
+    /// <li> <p> <code>SizeConstraint</code>: Contains <code>FieldToMatch</code>, <code>TextTransformation</code>, <code>ComparisonOperator</code>, and <code>Size</code> </p> </li>
+    /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
     /// </ul>
     pub updates: std::option::Option<std::vec::Vec<crate::model::SizeConstraintSetUpdate>>,
 }
 impl UpdateSizeConstraintSetInput {
-    /// <p>The <code>SizeConstraintSetId</code> of the <a>SizeConstraintSet</a> that you want to update. <code>SizeConstraintSetId</code>
-    /// is returned by <a>CreateSizeConstraintSet</a> and by <a>ListSizeConstraintSets</a>.</p>
+    /// <p>The <code>SizeConstraintSetId</code> of the <code>SizeConstraintSet</code> that you want to update. <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
     pub fn size_constraint_set_id(&self) -> std::option::Option<&str> {
         self.size_constraint_set_id.as_deref()
     }
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(&self) -> std::option::Option<&str> {
         self.change_token.as_deref()
     }
-    /// <p>An array of <code>SizeConstraintSetUpdate</code> objects that you want to insert into or delete from a <a>SizeConstraintSet</a>.
-    /// For more information, see the applicable data types:</p>
+    /// <p>An array of <code>SizeConstraintSetUpdate</code> objects that you want to insert into or delete from a <code>SizeConstraintSet</code>. For more information, see the applicable data types:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <a>SizeConstraintSetUpdate</a>: Contains <code>Action</code> and <code>SizeConstraint</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a>SizeConstraint</a>: Contains <code>FieldToMatch</code>, <code>TextTransformation</code>, <code>ComparisonOperator</code>,
-    /// and <code>Size</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>SizeConstraintSetUpdate</code>: Contains <code>Action</code> and <code>SizeConstraint</code> </p> </li>
+    /// <li> <p> <code>SizeConstraint</code>: Contains <code>FieldToMatch</code>, <code>TextTransformation</code>, <code>ComparisonOperator</code>, and <code>Size</code> </p> </li>
+    /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
     /// </ul>
     pub fn updates(&self) -> std::option::Option<&[crate::model::SizeConstraintSetUpdate]> {
         self.updates.as_deref()
@@ -14166,33 +13482,27 @@ impl std::fmt::Debug for UpdateSizeConstraintSetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRuleGroupInput {
-    /// <p>The <code>RuleGroupId</code> of the <a>RuleGroup</a> that you want to update. <code>RuleGroupId</code> is returned by <a>CreateRuleGroup</a> and by
-    /// <a>ListRuleGroups</a>.</p>
+    /// <p>The <code>RuleGroupId</code> of the <code>RuleGroup</code> that you want to update. <code>RuleGroupId</code> is returned by <code>CreateRuleGroup</code> and by <code>ListRuleGroups</code>.</p>
     pub rule_group_id: std::option::Option<std::string::String>,
-    /// <p>An array of <code>RuleGroupUpdate</code> objects that you want to insert into or delete from a
-    /// <a>RuleGroup</a>.</p>
+    /// <p>An array of <code>RuleGroupUpdate</code> objects that you want to insert into or delete from a <code>RuleGroup</code>.</p>
     /// <p>You can only insert <code>REGULAR</code> rules into a rule group.</p>
-    /// <p>
-    /// <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>.  For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.</p>
+    /// <p> <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.</p>
     pub updates: std::option::Option<std::vec::Vec<crate::model::RuleGroupUpdate>>,
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub change_token: std::option::Option<std::string::String>,
 }
 impl UpdateRuleGroupInput {
-    /// <p>The <code>RuleGroupId</code> of the <a>RuleGroup</a> that you want to update. <code>RuleGroupId</code> is returned by <a>CreateRuleGroup</a> and by
-    /// <a>ListRuleGroups</a>.</p>
+    /// <p>The <code>RuleGroupId</code> of the <code>RuleGroup</code> that you want to update. <code>RuleGroupId</code> is returned by <code>CreateRuleGroup</code> and by <code>ListRuleGroups</code>.</p>
     pub fn rule_group_id(&self) -> std::option::Option<&str> {
         self.rule_group_id.as_deref()
     }
-    /// <p>An array of <code>RuleGroupUpdate</code> objects that you want to insert into or delete from a
-    /// <a>RuleGroup</a>.</p>
+    /// <p>An array of <code>RuleGroupUpdate</code> objects that you want to insert into or delete from a <code>RuleGroup</code>.</p>
     /// <p>You can only insert <code>REGULAR</code> rules into a rule group.</p>
-    /// <p>
-    /// <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>.  For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.</p>
+    /// <p> <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.</p>
     pub fn updates(&self) -> std::option::Option<&[crate::model::RuleGroupUpdate]> {
         self.updates.as_deref()
     }
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(&self) -> std::option::Option<&str> {
         self.change_token.as_deref()
     }
@@ -14211,60 +13521,32 @@ impl std::fmt::Debug for UpdateRuleGroupInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRuleInput {
-    /// <p>The <code>RuleId</code> of the <code>Rule</code> that you want to update. <code>RuleId</code> is returned by
-    /// <code>CreateRule</code> and by <a>ListRules</a>.</p>
+    /// <p>The <code>RuleId</code> of the <code>Rule</code> that you want to update. <code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
     pub rule_id: std::option::Option<std::string::String>,
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub change_token: std::option::Option<std::string::String>,
-    /// <p>An array of <code>RuleUpdate</code> objects that you want to insert into or delete from a
-    /// <a>Rule</a>. For more information, see the applicable data types:</p>
+    /// <p>An array of <code>RuleUpdate</code> objects that you want to insert into or delete from a <code>Rule</code>. For more information, see the applicable data types:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <a>RuleUpdate</a>: Contains <code>Action</code> and <code>Predicate</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a>Predicate</a>: Contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>RuleUpdate</code>: Contains <code>Action</code> and <code>Predicate</code> </p> </li>
+    /// <li> <p> <code>Predicate</code>: Contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code> </p> </li>
+    /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
     /// </ul>
     pub updates: std::option::Option<std::vec::Vec<crate::model::RuleUpdate>>,
 }
 impl UpdateRuleInput {
-    /// <p>The <code>RuleId</code> of the <code>Rule</code> that you want to update. <code>RuleId</code> is returned by
-    /// <code>CreateRule</code> and by <a>ListRules</a>.</p>
+    /// <p>The <code>RuleId</code> of the <code>Rule</code> that you want to update. <code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
     pub fn rule_id(&self) -> std::option::Option<&str> {
         self.rule_id.as_deref()
     }
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(&self) -> std::option::Option<&str> {
         self.change_token.as_deref()
     }
-    /// <p>An array of <code>RuleUpdate</code> objects that you want to insert into or delete from a
-    /// <a>Rule</a>. For more information, see the applicable data types:</p>
+    /// <p>An array of <code>RuleUpdate</code> objects that you want to insert into or delete from a <code>Rule</code>. For more information, see the applicable data types:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <a>RuleUpdate</a>: Contains <code>Action</code> and <code>Predicate</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a>Predicate</a>: Contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>RuleUpdate</code>: Contains <code>Action</code> and <code>Predicate</code> </p> </li>
+    /// <li> <p> <code>Predicate</code>: Contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code> </p> </li>
+    /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
     /// </ul>
     pub fn updates(&self) -> std::option::Option<&[crate::model::RuleUpdate]> {
         self.updates.as_deref()
@@ -14284,25 +13566,23 @@ impl std::fmt::Debug for UpdateRuleInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRegexPatternSetInput {
-    /// <p>The <code>RegexPatternSetId</code> of the <a>RegexPatternSet</a> that you want to update. <code>RegexPatternSetId</code> is returned by <a>CreateRegexPatternSet</a> and by
-    /// <a>ListRegexPatternSets</a>.</p>
+    /// <p>The <code>RegexPatternSetId</code> of the <code>RegexPatternSet</code> that you want to update. <code>RegexPatternSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
     pub regex_pattern_set_id: std::option::Option<std::string::String>,
-    /// <p>An array of <code>RegexPatternSetUpdate</code> objects that you want to insert into or delete from a <a>RegexPatternSet</a>.</p>
+    /// <p>An array of <code>RegexPatternSetUpdate</code> objects that you want to insert into or delete from a <code>RegexPatternSet</code>.</p>
     pub updates: std::option::Option<std::vec::Vec<crate::model::RegexPatternSetUpdate>>,
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub change_token: std::option::Option<std::string::String>,
 }
 impl UpdateRegexPatternSetInput {
-    /// <p>The <code>RegexPatternSetId</code> of the <a>RegexPatternSet</a> that you want to update. <code>RegexPatternSetId</code> is returned by <a>CreateRegexPatternSet</a> and by
-    /// <a>ListRegexPatternSets</a>.</p>
+    /// <p>The <code>RegexPatternSetId</code> of the <code>RegexPatternSet</code> that you want to update. <code>RegexPatternSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
     pub fn regex_pattern_set_id(&self) -> std::option::Option<&str> {
         self.regex_pattern_set_id.as_deref()
     }
-    /// <p>An array of <code>RegexPatternSetUpdate</code> objects that you want to insert into or delete from a <a>RegexPatternSet</a>.</p>
+    /// <p>An array of <code>RegexPatternSetUpdate</code> objects that you want to insert into or delete from a <code>RegexPatternSet</code>.</p>
     pub fn updates(&self) -> std::option::Option<&[crate::model::RegexPatternSetUpdate]> {
         self.updates.as_deref()
     }
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(&self) -> std::option::Option<&str> {
         self.change_token.as_deref()
     }
@@ -14321,27 +13601,23 @@ impl std::fmt::Debug for UpdateRegexPatternSetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRegexMatchSetInput {
-    /// <p>The <code>RegexMatchSetId</code> of the <a>RegexMatchSet</a> that you want to update. <code>RegexMatchSetId</code> is returned by <a>CreateRegexMatchSet</a> and by
-    /// <a>ListRegexMatchSets</a>.</p>
+    /// <p>The <code>RegexMatchSetId</code> of the <code>RegexMatchSet</code> that you want to update. <code>RegexMatchSetId</code> is returned by <code>CreateRegexMatchSet</code> and by <code>ListRegexMatchSets</code>.</p>
     pub regex_match_set_id: std::option::Option<std::string::String>,
-    /// <p>An array of <code>RegexMatchSetUpdate</code> objects that you want to insert into or delete from a <a>RegexMatchSet</a>.
-    /// For more information, see <a>RegexMatchTuple</a>.</p>
+    /// <p>An array of <code>RegexMatchSetUpdate</code> objects that you want to insert into or delete from a <code>RegexMatchSet</code>. For more information, see <code>RegexMatchTuple</code>.</p>
     pub updates: std::option::Option<std::vec::Vec<crate::model::RegexMatchSetUpdate>>,
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub change_token: std::option::Option<std::string::String>,
 }
 impl UpdateRegexMatchSetInput {
-    /// <p>The <code>RegexMatchSetId</code> of the <a>RegexMatchSet</a> that you want to update. <code>RegexMatchSetId</code> is returned by <a>CreateRegexMatchSet</a> and by
-    /// <a>ListRegexMatchSets</a>.</p>
+    /// <p>The <code>RegexMatchSetId</code> of the <code>RegexMatchSet</code> that you want to update. <code>RegexMatchSetId</code> is returned by <code>CreateRegexMatchSet</code> and by <code>ListRegexMatchSets</code>.</p>
     pub fn regex_match_set_id(&self) -> std::option::Option<&str> {
         self.regex_match_set_id.as_deref()
     }
-    /// <p>An array of <code>RegexMatchSetUpdate</code> objects that you want to insert into or delete from a <a>RegexMatchSet</a>.
-    /// For more information, see <a>RegexMatchTuple</a>.</p>
+    /// <p>An array of <code>RegexMatchSetUpdate</code> objects that you want to insert into or delete from a <code>RegexMatchSet</code>. For more information, see <code>RegexMatchTuple</code>.</p>
     pub fn updates(&self) -> std::option::Option<&[crate::model::RegexMatchSetUpdate]> {
         self.updates.as_deref()
     }
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(&self) -> std::option::Option<&str> {
         self.change_token.as_deref()
     }
@@ -14360,39 +13636,29 @@ impl std::fmt::Debug for UpdateRegexMatchSetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRateBasedRuleInput {
-    /// <p>The <code>RuleId</code> of the <code>RateBasedRule</code> that you want to update.
-    /// <code>RuleId</code> is returned by <code>CreateRateBasedRule</code> and by <a>ListRateBasedRules</a>.</p>
+    /// <p>The <code>RuleId</code> of the <code>RateBasedRule</code> that you want to update. <code>RuleId</code> is returned by <code>CreateRateBasedRule</code> and by <code>ListRateBasedRules</code>.</p>
     pub rule_id: std::option::Option<std::string::String>,
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub change_token: std::option::Option<std::string::String>,
-    /// <p>An array of <code>RuleUpdate</code> objects that you want to insert into or delete
-    /// from a <a>RateBasedRule</a>. </p>
+    /// <p>An array of <code>RuleUpdate</code> objects that you want to insert into or delete from a <code>RateBasedRule</code>. </p>
     pub updates: std::option::Option<std::vec::Vec<crate::model::RuleUpdate>>,
-    /// <p>The maximum number of requests, which have an identical value in the field specified by the <code>RateKey</code>, allowed in a
-    /// five-minute period. If the number of requests exceeds the <code>RateLimit</code> and the other
-    /// predicates specified in the rule are also met,
-    /// AWS WAF triggers the action that is specified for this rule.</p>
+    /// <p>The maximum number of requests, which have an identical value in the field specified by the <code>RateKey</code>, allowed in a five-minute period. If the number of requests exceeds the <code>RateLimit</code> and the other predicates specified in the rule are also met, AWS WAF triggers the action that is specified for this rule.</p>
     pub rate_limit: i64,
 }
 impl UpdateRateBasedRuleInput {
-    /// <p>The <code>RuleId</code> of the <code>RateBasedRule</code> that you want to update.
-    /// <code>RuleId</code> is returned by <code>CreateRateBasedRule</code> and by <a>ListRateBasedRules</a>.</p>
+    /// <p>The <code>RuleId</code> of the <code>RateBasedRule</code> that you want to update. <code>RuleId</code> is returned by <code>CreateRateBasedRule</code> and by <code>ListRateBasedRules</code>.</p>
     pub fn rule_id(&self) -> std::option::Option<&str> {
         self.rule_id.as_deref()
     }
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(&self) -> std::option::Option<&str> {
         self.change_token.as_deref()
     }
-    /// <p>An array of <code>RuleUpdate</code> objects that you want to insert into or delete
-    /// from a <a>RateBasedRule</a>. </p>
+    /// <p>An array of <code>RuleUpdate</code> objects that you want to insert into or delete from a <code>RateBasedRule</code>. </p>
     pub fn updates(&self) -> std::option::Option<&[crate::model::RuleUpdate]> {
         self.updates.as_deref()
     }
-    /// <p>The maximum number of requests, which have an identical value in the field specified by the <code>RateKey</code>, allowed in a
-    /// five-minute period. If the number of requests exceeds the <code>RateLimit</code> and the other
-    /// predicates specified in the rule are also met,
-    /// AWS WAF triggers the action that is specified for this rule.</p>
+    /// <p>The maximum number of requests, which have an identical value in the field specified by the <code>RateKey</code>, allowed in a five-minute period. If the number of requests exceeds the <code>RateLimit</code> and the other predicates specified in the rule are also met, AWS WAF triggers the action that is specified for this rule.</p>
     pub fn rate_limit(&self) -> i64 {
         self.rate_limit
     }
@@ -14412,51 +13678,31 @@ impl std::fmt::Debug for UpdateRateBasedRuleInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateIpSetInput {
-    /// <p>The <code>IPSetId</code> of the <a>IPSet</a> that you want to update. <code>IPSetId</code> is returned by <a>CreateIPSet</a> and by
-    /// <a>ListIPSets</a>.</p>
+    /// <p>The <code>IPSetId</code> of the <code>IPSet</code> that you want to update. <code>IPSetId</code> is returned by <code>CreateIPSet</code> and by <code>ListIPSets</code>.</p>
     pub ip_set_id: std::option::Option<std::string::String>,
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub change_token: std::option::Option<std::string::String>,
-    /// <p>An array of <code>IPSetUpdate</code> objects that you want to insert into or delete from an <a>IPSet</a>.
-    /// For more information, see the applicable data types:</p>
+    /// <p>An array of <code>IPSetUpdate</code> objects that you want to insert into or delete from an <code>IPSet</code>. For more information, see the applicable data types:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <a>IPSetUpdate</a>: Contains <code>Action</code> and <code>IPSetDescriptor</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a>IPSetDescriptor</a>: Contains <code>Type</code> and <code>Value</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>IPSetUpdate</code>: Contains <code>Action</code> and <code>IPSetDescriptor</code> </p> </li>
+    /// <li> <p> <code>IPSetDescriptor</code>: Contains <code>Type</code> and <code>Value</code> </p> </li>
     /// </ul>
     /// <p>You can insert a maximum of 1000 addresses in a single request.</p>
     pub updates: std::option::Option<std::vec::Vec<crate::model::IpSetUpdate>>,
 }
 impl UpdateIpSetInput {
-    /// <p>The <code>IPSetId</code> of the <a>IPSet</a> that you want to update. <code>IPSetId</code> is returned by <a>CreateIPSet</a> and by
-    /// <a>ListIPSets</a>.</p>
+    /// <p>The <code>IPSetId</code> of the <code>IPSet</code> that you want to update. <code>IPSetId</code> is returned by <code>CreateIPSet</code> and by <code>ListIPSets</code>.</p>
     pub fn ip_set_id(&self) -> std::option::Option<&str> {
         self.ip_set_id.as_deref()
     }
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(&self) -> std::option::Option<&str> {
         self.change_token.as_deref()
     }
-    /// <p>An array of <code>IPSetUpdate</code> objects that you want to insert into or delete from an <a>IPSet</a>.
-    /// For more information, see the applicable data types:</p>
+    /// <p>An array of <code>IPSetUpdate</code> objects that you want to insert into or delete from an <code>IPSet</code>. For more information, see the applicable data types:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <a>IPSetUpdate</a>: Contains <code>Action</code> and <code>IPSetDescriptor</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a>IPSetDescriptor</a>: Contains <code>Type</code> and <code>Value</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>IPSetUpdate</code>: Contains <code>Action</code> and <code>IPSetDescriptor</code> </p> </li>
+    /// <li> <p> <code>IPSetDescriptor</code>: Contains <code>Type</code> and <code>Value</code> </p> </li>
     /// </ul>
     /// <p>You can insert a maximum of 1000 addresses in a single request.</p>
     pub fn updates(&self) -> std::option::Option<&[crate::model::IpSetUpdate]> {
@@ -14477,52 +13723,30 @@ impl std::fmt::Debug for UpdateIpSetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGeoMatchSetInput {
-    /// <p>The <code>GeoMatchSetId</code> of the <a>GeoMatchSet</a> that you want to update. <code>GeoMatchSetId</code> is returned by <a>CreateGeoMatchSet</a> and by
-    /// <a>ListGeoMatchSets</a>.</p>
+    /// <p>The <code>GeoMatchSetId</code> of the <code>GeoMatchSet</code> that you want to update. <code>GeoMatchSetId</code> is returned by <code>CreateGeoMatchSet</code> and by <code>ListGeoMatchSets</code>.</p>
     pub geo_match_set_id: std::option::Option<std::string::String>,
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub change_token: std::option::Option<std::string::String>,
-    /// <p>An array of <code>GeoMatchSetUpdate</code> objects that you want to insert into or delete from an <a>GeoMatchSet</a>.
-    /// For more information, see the applicable data types:</p>
+    /// <p>An array of <code>GeoMatchSetUpdate</code> objects that you want to insert into or delete from an <code>GeoMatchSet</code>. For more information, see the applicable data types:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <a>GeoMatchSetUpdate</a>: Contains <code>Action</code> and <code>GeoMatchConstraint</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a>GeoMatchConstraint</a>: Contains <code>Type</code> and <code>Value</code>
-    /// </p>
-    /// <p>You can have only one <code>Type</code> and <code>Value</code> per <code>GeoMatchConstraint</code>. To add multiple countries, include multiple <code>GeoMatchSetUpdate</code> objects in your request.</p>      
-    /// </li>
+    /// <li> <p> <code>GeoMatchSetUpdate</code>: Contains <code>Action</code> and <code>GeoMatchConstraint</code> </p> </li>
+    /// <li> <p> <code>GeoMatchConstraint</code>: Contains <code>Type</code> and <code>Value</code> </p> <p>You can have only one <code>Type</code> and <code>Value</code> per <code>GeoMatchConstraint</code>. To add multiple countries, include multiple <code>GeoMatchSetUpdate</code> objects in your request.</p> </li>
     /// </ul>
     pub updates: std::option::Option<std::vec::Vec<crate::model::GeoMatchSetUpdate>>,
 }
 impl UpdateGeoMatchSetInput {
-    /// <p>The <code>GeoMatchSetId</code> of the <a>GeoMatchSet</a> that you want to update. <code>GeoMatchSetId</code> is returned by <a>CreateGeoMatchSet</a> and by
-    /// <a>ListGeoMatchSets</a>.</p>
+    /// <p>The <code>GeoMatchSetId</code> of the <code>GeoMatchSet</code> that you want to update. <code>GeoMatchSetId</code> is returned by <code>CreateGeoMatchSet</code> and by <code>ListGeoMatchSets</code>.</p>
     pub fn geo_match_set_id(&self) -> std::option::Option<&str> {
         self.geo_match_set_id.as_deref()
     }
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(&self) -> std::option::Option<&str> {
         self.change_token.as_deref()
     }
-    /// <p>An array of <code>GeoMatchSetUpdate</code> objects that you want to insert into or delete from an <a>GeoMatchSet</a>.
-    /// For more information, see the applicable data types:</p>
+    /// <p>An array of <code>GeoMatchSetUpdate</code> objects that you want to insert into or delete from an <code>GeoMatchSet</code>. For more information, see the applicable data types:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <a>GeoMatchSetUpdate</a>: Contains <code>Action</code> and <code>GeoMatchConstraint</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a>GeoMatchConstraint</a>: Contains <code>Type</code> and <code>Value</code>
-    /// </p>
-    /// <p>You can have only one <code>Type</code> and <code>Value</code> per <code>GeoMatchConstraint</code>. To add multiple countries, include multiple <code>GeoMatchSetUpdate</code> objects in your request.</p>      
-    /// </li>
+    /// <li> <p> <code>GeoMatchSetUpdate</code>: Contains <code>Action</code> and <code>GeoMatchConstraint</code> </p> </li>
+    /// <li> <p> <code>GeoMatchConstraint</code>: Contains <code>Type</code> and <code>Value</code> </p> <p>You can have only one <code>Type</code> and <code>Value</code> per <code>GeoMatchConstraint</code>. To add multiple countries, include multiple <code>GeoMatchSetUpdate</code> objects in your request.</p> </li>
     /// </ul>
     pub fn updates(&self) -> std::option::Option<&[crate::model::GeoMatchSetUpdate]> {
         self.updates.as_deref()
@@ -14542,62 +13766,32 @@ impl std::fmt::Debug for UpdateGeoMatchSetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateByteMatchSetInput {
-    /// <p>The <code>ByteMatchSetId</code> of the <a>ByteMatchSet</a> that you want to update. <code>ByteMatchSetId</code> is returned by <a>CreateByteMatchSet</a> and by
-    /// <a>ListByteMatchSets</a>.</p>
+    /// <p>The <code>ByteMatchSetId</code> of the <code>ByteMatchSet</code> that you want to update. <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
     pub byte_match_set_id: std::option::Option<std::string::String>,
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub change_token: std::option::Option<std::string::String>,
-    /// <p>An array of <code>ByteMatchSetUpdate</code> objects that you want to insert into or delete from a <a>ByteMatchSet</a>.
-    /// For more information, see the applicable data types:</p>
+    /// <p>An array of <code>ByteMatchSetUpdate</code> objects that you want to insert into or delete from a <code>ByteMatchSet</code>. For more information, see the applicable data types:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <a>ByteMatchSetUpdate</a>: Contains <code>Action</code> and <code>ByteMatchTuple</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a>ByteMatchTuple</a>: Contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>, <code>TargetString</code>,
-    /// and <code>TextTransformation</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>ByteMatchSetUpdate</code>: Contains <code>Action</code> and <code>ByteMatchTuple</code> </p> </li>
+    /// <li> <p> <code>ByteMatchTuple</code>: Contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>, <code>TargetString</code>, and <code>TextTransformation</code> </p> </li>
+    /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
     /// </ul>
     pub updates: std::option::Option<std::vec::Vec<crate::model::ByteMatchSetUpdate>>,
 }
 impl UpdateByteMatchSetInput {
-    /// <p>The <code>ByteMatchSetId</code> of the <a>ByteMatchSet</a> that you want to update. <code>ByteMatchSetId</code> is returned by <a>CreateByteMatchSet</a> and by
-    /// <a>ListByteMatchSets</a>.</p>
+    /// <p>The <code>ByteMatchSetId</code> of the <code>ByteMatchSet</code> that you want to update. <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
     pub fn byte_match_set_id(&self) -> std::option::Option<&str> {
         self.byte_match_set_id.as_deref()
     }
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(&self) -> std::option::Option<&str> {
         self.change_token.as_deref()
     }
-    /// <p>An array of <code>ByteMatchSetUpdate</code> objects that you want to insert into or delete from a <a>ByteMatchSet</a>.
-    /// For more information, see the applicable data types:</p>
+    /// <p>An array of <code>ByteMatchSetUpdate</code> objects that you want to insert into or delete from a <code>ByteMatchSet</code>. For more information, see the applicable data types:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <a>ByteMatchSetUpdate</a>: Contains <code>Action</code> and <code>ByteMatchTuple</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a>ByteMatchTuple</a>: Contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>, <code>TargetString</code>,
-    /// and <code>TextTransformation</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>ByteMatchSetUpdate</code>: Contains <code>Action</code> and <code>ByteMatchTuple</code> </p> </li>
+    /// <li> <p> <code>ByteMatchTuple</code>: Contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>, <code>TargetString</code>, and <code>TextTransformation</code> </p> </li>
+    /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
     /// </ul>
     pub fn updates(&self) -> std::option::Option<&[crate::model::ByteMatchSetUpdate]> {
         self.updates.as_deref()
@@ -14701,24 +13895,14 @@ impl std::fmt::Debug for PutPermissionPolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutLoggingConfigurationInput {
-    /// <p>The Amazon Kinesis Data Firehose that contains the inspected traffic
-    /// information, the redacted fields details, and the Amazon Resource Name (ARN) of the web ACL
-    /// to monitor.</p>
-    /// <note>
-    /// <p>When specifying <code>Type</code> in <code>RedactedFields</code>, you must use one of
-    /// the following values: <code>URI</code>, <code>QUERY_STRING</code>, <code>HEADER</code>,
-    /// or <code>METHOD</code>.</p>
+    /// <p>The Amazon Kinesis Data Firehose that contains the inspected traffic information, the redacted fields details, and the Amazon Resource Name (ARN) of the web ACL to monitor.</p> <note>
+    /// <p>When specifying <code>Type</code> in <code>RedactedFields</code>, you must use one of the following values: <code>URI</code>, <code>QUERY_STRING</code>, <code>HEADER</code>, or <code>METHOD</code>.</p>
     /// </note>
     pub logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
 }
 impl PutLoggingConfigurationInput {
-    /// <p>The Amazon Kinesis Data Firehose that contains the inspected traffic
-    /// information, the redacted fields details, and the Amazon Resource Name (ARN) of the web ACL
-    /// to monitor.</p>
-    /// <note>
-    /// <p>When specifying <code>Type</code> in <code>RedactedFields</code>, you must use one of
-    /// the following values: <code>URI</code>, <code>QUERY_STRING</code>, <code>HEADER</code>,
-    /// or <code>METHOD</code>.</p>
+    /// <p>The Amazon Kinesis Data Firehose that contains the inspected traffic information, the redacted fields details, and the Amazon Resource Name (ARN) of the web ACL to monitor.</p> <note>
+    /// <p>When specifying <code>Type</code> in <code>RedactedFields</code>, you must use one of the following values: <code>URI</code>, <code>QUERY_STRING</code>, <code>HEADER</code>, or <code>METHOD</code>.</p>
     /// </note>
     pub fn logging_configuration(
         &self,
@@ -14734,31 +13918,21 @@ impl std::fmt::Debug for PutLoggingConfigurationInput {
     }
 }
 
-/// <p>A request to list the <a>XssMatchSet</a> objects created by the current AWS account.</p>
+/// <p>A request to list the <code>XssMatchSet</code> objects created by the current AWS account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListXssMatchSetsInput {
-    /// <p>If you specify a value for <code>Limit</code> and you have more <a>XssMatchSet</a> objects than the value of
-    /// <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of
-    /// <code>XssMatchSets</code>. For the second and subsequent <code>ListXssMatchSets</code> requests, specify the
-    /// value of <code>NextMarker</code> from the previous response to get information about another batch of <code>XssMatchSets</code>.</p>
+    /// <p>If you specify a value for <code>Limit</code> and you have more <code>XssMatchSet</code> objects than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>XssMatchSets</code>. For the second and subsequent <code>ListXssMatchSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>XssMatchSets</code>.</p>
     pub next_marker: std::option::Option<std::string::String>,
-    /// <p>Specifies the number of <a>XssMatchSet</a> objects that you want AWS WAF to return for this request. If you have more
-    /// <code>XssMatchSet</code> objects than the number you specify for <code>Limit</code>, the response includes a
-    /// <code>NextMarker</code> value that you can use to get another batch of <code>Rules</code>.</p>
+    /// <p>Specifies the number of <code>XssMatchSet</code> objects that you want AWS WAF to return for this request. If you have more <code>XssMatchSet</code> objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>Rules</code>.</p>
     pub limit: i32,
 }
 impl ListXssMatchSetsInput {
-    /// <p>If you specify a value for <code>Limit</code> and you have more <a>XssMatchSet</a> objects than the value of
-    /// <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of
-    /// <code>XssMatchSets</code>. For the second and subsequent <code>ListXssMatchSets</code> requests, specify the
-    /// value of <code>NextMarker</code> from the previous response to get information about another batch of <code>XssMatchSets</code>.</p>
+    /// <p>If you specify a value for <code>Limit</code> and you have more <code>XssMatchSet</code> objects than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>XssMatchSets</code>. For the second and subsequent <code>ListXssMatchSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>XssMatchSets</code>.</p>
     pub fn next_marker(&self) -> std::option::Option<&str> {
         self.next_marker.as_deref()
     }
-    /// <p>Specifies the number of <a>XssMatchSet</a> objects that you want AWS WAF to return for this request. If you have more
-    /// <code>XssMatchSet</code> objects than the number you specify for <code>Limit</code>, the response includes a
-    /// <code>NextMarker</code> value that you can use to get another batch of <code>Rules</code>.</p>
+    /// <p>Specifies the number of <code>XssMatchSet</code> objects that you want AWS WAF to return for this request. If you have more <code>XssMatchSet</code> objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>Rules</code>.</p>
     pub fn limit(&self) -> i32 {
         self.limit
     }
@@ -14776,27 +13950,17 @@ impl std::fmt::Debug for ListXssMatchSetsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWebAcLsInput {
-    /// <p>If you specify a value for <code>Limit</code> and you have more <code>WebACL</code> objects than the number that you specify
-    /// for <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of
-    /// <code>WebACL</code> objects. For the second and subsequent <code>ListWebACLs</code> requests, specify the value of <code>NextMarker</code>
-    /// from the previous response to get information about another batch of <code>WebACL</code> objects.</p>
+    /// <p>If you specify a value for <code>Limit</code> and you have more <code>WebACL</code> objects than the number that you specify for <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>WebACL</code> objects. For the second and subsequent <code>ListWebACLs</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>WebACL</code> objects.</p>
     pub next_marker: std::option::Option<std::string::String>,
-    /// <p>Specifies the number of <code>WebACL</code> objects that you want AWS WAF to return for this request. If you have more
-    /// <code>WebACL</code> objects than the number that you specify for <code>Limit</code>, the response includes a
-    /// <code>NextMarker</code> value that you can use to get another batch of <code>WebACL</code> objects.</p>
+    /// <p>Specifies the number of <code>WebACL</code> objects that you want AWS WAF to return for this request. If you have more <code>WebACL</code> objects than the number that you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>WebACL</code> objects.</p>
     pub limit: i32,
 }
 impl ListWebAcLsInput {
-    /// <p>If you specify a value for <code>Limit</code> and you have more <code>WebACL</code> objects than the number that you specify
-    /// for <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of
-    /// <code>WebACL</code> objects. For the second and subsequent <code>ListWebACLs</code> requests, specify the value of <code>NextMarker</code>
-    /// from the previous response to get information about another batch of <code>WebACL</code> objects.</p>
+    /// <p>If you specify a value for <code>Limit</code> and you have more <code>WebACL</code> objects than the number that you specify for <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>WebACL</code> objects. For the second and subsequent <code>ListWebACLs</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>WebACL</code> objects.</p>
     pub fn next_marker(&self) -> std::option::Option<&str> {
         self.next_marker.as_deref()
     }
-    /// <p>Specifies the number of <code>WebACL</code> objects that you want AWS WAF to return for this request. If you have more
-    /// <code>WebACL</code> objects than the number that you specify for <code>Limit</code>, the response includes a
-    /// <code>NextMarker</code> value that you can use to get another batch of <code>WebACL</code> objects.</p>
+    /// <p>Specifies the number of <code>WebACL</code> objects that you want AWS WAF to return for this request. If you have more <code>WebACL</code> objects than the number that you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>WebACL</code> objects.</p>
     pub fn limit(&self) -> i32 {
         self.limit
     }
@@ -14849,27 +14013,17 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSubscribedRuleGroupsInput {
-    /// <p>If you specify a value for <code>Limit</code> and you have more <code>ByteMatchSets</code>subscribed rule groups than the value of <code>Limit</code>,
-    /// AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of subscribed rule groups.
-    /// For the second and subsequent <code>ListSubscribedRuleGroupsRequest</code> requests, specify the value of <code>NextMarker</code>
-    /// from the previous response to get information about another batch of subscribed rule groups.</p>
+    /// <p>If you specify a value for <code>Limit</code> and you have more <code>ByteMatchSets</code>subscribed rule groups than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of subscribed rule groups. For the second and subsequent <code>ListSubscribedRuleGroupsRequest</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of subscribed rule groups.</p>
     pub next_marker: std::option::Option<std::string::String>,
-    /// <p>Specifies the number of subscribed rule groups that you want AWS WAF to return for this request. If you have more
-    /// objects than the number you specify for <code>Limit</code>, the response includes a
-    /// <code>NextMarker</code> value that you can use to get another batch of objects.</p>
+    /// <p>Specifies the number of subscribed rule groups that you want AWS WAF to return for this request. If you have more objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of objects.</p>
     pub limit: i32,
 }
 impl ListSubscribedRuleGroupsInput {
-    /// <p>If you specify a value for <code>Limit</code> and you have more <code>ByteMatchSets</code>subscribed rule groups than the value of <code>Limit</code>,
-    /// AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of subscribed rule groups.
-    /// For the second and subsequent <code>ListSubscribedRuleGroupsRequest</code> requests, specify the value of <code>NextMarker</code>
-    /// from the previous response to get information about another batch of subscribed rule groups.</p>
+    /// <p>If you specify a value for <code>Limit</code> and you have more <code>ByteMatchSets</code>subscribed rule groups than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of subscribed rule groups. For the second and subsequent <code>ListSubscribedRuleGroupsRequest</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of subscribed rule groups.</p>
     pub fn next_marker(&self) -> std::option::Option<&str> {
         self.next_marker.as_deref()
     }
-    /// <p>Specifies the number of subscribed rule groups that you want AWS WAF to return for this request. If you have more
-    /// objects than the number you specify for <code>Limit</code>, the response includes a
-    /// <code>NextMarker</code> value that you can use to get another batch of objects.</p>
+    /// <p>Specifies the number of subscribed rule groups that you want AWS WAF to return for this request. If you have more objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of objects.</p>
     pub fn limit(&self) -> i32 {
         self.limit
     }
@@ -14883,31 +14037,21 @@ impl std::fmt::Debug for ListSubscribedRuleGroupsInput {
     }
 }
 
-/// <p>A request to list the <a>SqlInjectionMatchSet</a> objects created by the current AWS account.</p>
+/// <p>A request to list the <code>SqlInjectionMatchSet</code> objects created by the current AWS account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSqlInjectionMatchSetsInput {
-    /// <p>If you specify a value for <code>Limit</code> and you have more <a>SqlInjectionMatchSet</a> objects than the value of
-    /// <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of
-    /// <code>SqlInjectionMatchSets</code>. For the second and subsequent <code>ListSqlInjectionMatchSets</code> requests, specify the
-    /// value of <code>NextMarker</code> from the previous response to get information about another batch of <code>SqlInjectionMatchSets</code>.</p>
+    /// <p>If you specify a value for <code>Limit</code> and you have more <code>SqlInjectionMatchSet</code> objects than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>SqlInjectionMatchSets</code>. For the second and subsequent <code>ListSqlInjectionMatchSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>SqlInjectionMatchSets</code>.</p>
     pub next_marker: std::option::Option<std::string::String>,
-    /// <p>Specifies the number of <a>SqlInjectionMatchSet</a> objects that you want AWS WAF to return for this request. If you have more
-    /// <code>SqlInjectionMatchSet</code> objects than the number you specify for <code>Limit</code>, the response includes a
-    /// <code>NextMarker</code> value that you can use to get another batch of <code>Rules</code>.</p>
+    /// <p>Specifies the number of <code>SqlInjectionMatchSet</code> objects that you want AWS WAF to return for this request. If you have more <code>SqlInjectionMatchSet</code> objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>Rules</code>.</p>
     pub limit: i32,
 }
 impl ListSqlInjectionMatchSetsInput {
-    /// <p>If you specify a value for <code>Limit</code> and you have more <a>SqlInjectionMatchSet</a> objects than the value of
-    /// <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of
-    /// <code>SqlInjectionMatchSets</code>. For the second and subsequent <code>ListSqlInjectionMatchSets</code> requests, specify the
-    /// value of <code>NextMarker</code> from the previous response to get information about another batch of <code>SqlInjectionMatchSets</code>.</p>
+    /// <p>If you specify a value for <code>Limit</code> and you have more <code>SqlInjectionMatchSet</code> objects than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>SqlInjectionMatchSets</code>. For the second and subsequent <code>ListSqlInjectionMatchSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>SqlInjectionMatchSets</code>.</p>
     pub fn next_marker(&self) -> std::option::Option<&str> {
         self.next_marker.as_deref()
     }
-    /// <p>Specifies the number of <a>SqlInjectionMatchSet</a> objects that you want AWS WAF to return for this request. If you have more
-    /// <code>SqlInjectionMatchSet</code> objects than the number you specify for <code>Limit</code>, the response includes a
-    /// <code>NextMarker</code> value that you can use to get another batch of <code>Rules</code>.</p>
+    /// <p>Specifies the number of <code>SqlInjectionMatchSet</code> objects that you want AWS WAF to return for this request. If you have more <code>SqlInjectionMatchSet</code> objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>Rules</code>.</p>
     pub fn limit(&self) -> i32 {
         self.limit
     }
@@ -14925,25 +14069,17 @@ impl std::fmt::Debug for ListSqlInjectionMatchSetsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSizeConstraintSetsInput {
-    /// <p>If you specify a value for <code>Limit</code> and you have more <code>SizeConstraintSets</code> than the value of <code>Limit</code>,
-    /// AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>SizeConstraintSets</code>.
-    /// For the second and subsequent <code>ListSizeConstraintSets</code> requests, specify the value of <code>NextMarker</code>       from the previous response to get information about another batch of <code>SizeConstraintSets</code>.</p>
+    /// <p>If you specify a value for <code>Limit</code> and you have more <code>SizeConstraintSets</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>SizeConstraintSets</code>. For the second and subsequent <code>ListSizeConstraintSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>SizeConstraintSets</code>.</p>
     pub next_marker: std::option::Option<std::string::String>,
-    /// <p>Specifies the number of <code>SizeConstraintSet</code> objects that you want AWS WAF to return for this request. If you have more
-    /// <code>SizeConstraintSets</code> objects than the number you specify for <code>Limit</code>, the response includes a
-    /// <code>NextMarker</code> value that you can use to get another batch of <code>SizeConstraintSet</code> objects.</p>
+    /// <p>Specifies the number of <code>SizeConstraintSet</code> objects that you want AWS WAF to return for this request. If you have more <code>SizeConstraintSets</code> objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>SizeConstraintSet</code> objects.</p>
     pub limit: i32,
 }
 impl ListSizeConstraintSetsInput {
-    /// <p>If you specify a value for <code>Limit</code> and you have more <code>SizeConstraintSets</code> than the value of <code>Limit</code>,
-    /// AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>SizeConstraintSets</code>.
-    /// For the second and subsequent <code>ListSizeConstraintSets</code> requests, specify the value of <code>NextMarker</code>       from the previous response to get information about another batch of <code>SizeConstraintSets</code>.</p>
+    /// <p>If you specify a value for <code>Limit</code> and you have more <code>SizeConstraintSets</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>SizeConstraintSets</code>. For the second and subsequent <code>ListSizeConstraintSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>SizeConstraintSets</code>.</p>
     pub fn next_marker(&self) -> std::option::Option<&str> {
         self.next_marker.as_deref()
     }
-    /// <p>Specifies the number of <code>SizeConstraintSet</code> objects that you want AWS WAF to return for this request. If you have more
-    /// <code>SizeConstraintSets</code> objects than the number you specify for <code>Limit</code>, the response includes a
-    /// <code>NextMarker</code> value that you can use to get another batch of <code>SizeConstraintSet</code> objects.</p>
+    /// <p>Specifies the number of <code>SizeConstraintSet</code> objects that you want AWS WAF to return for this request. If you have more <code>SizeConstraintSets</code> objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>SizeConstraintSet</code> objects.</p>
     pub fn limit(&self) -> i32 {
         self.limit
     }
@@ -14961,25 +14097,17 @@ impl std::fmt::Debug for ListSizeConstraintSetsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRulesInput {
-    /// <p>If you specify a value for <code>Limit</code> and you have more <code>Rules</code> than the value of <code>Limit</code>,
-    /// AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>Rules</code>.
-    /// For the second and subsequent <code>ListRules</code> requests, specify the value of <code>NextMarker</code>
-    /// from the previous response to get information about another batch of <code>Rules</code>.</p>
+    /// <p>If you specify a value for <code>Limit</code> and you have more <code>Rules</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>Rules</code>. For the second and subsequent <code>ListRules</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>Rules</code>.</p>
     pub next_marker: std::option::Option<std::string::String>,
-    /// <p>Specifies the number of <code>Rules</code> that you want AWS WAF to return for this request. If you have more       <code>Rules</code> than the number that you specify for <code>Limit</code>, the response includes a
-    /// <code>NextMarker</code> value that you can use to get another batch of <code>Rules</code>.</p>
+    /// <p>Specifies the number of <code>Rules</code> that you want AWS WAF to return for this request. If you have more <code>Rules</code> than the number that you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>Rules</code>.</p>
     pub limit: i32,
 }
 impl ListRulesInput {
-    /// <p>If you specify a value for <code>Limit</code> and you have more <code>Rules</code> than the value of <code>Limit</code>,
-    /// AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>Rules</code>.
-    /// For the second and subsequent <code>ListRules</code> requests, specify the value of <code>NextMarker</code>
-    /// from the previous response to get information about another batch of <code>Rules</code>.</p>
+    /// <p>If you specify a value for <code>Limit</code> and you have more <code>Rules</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>Rules</code>. For the second and subsequent <code>ListRules</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>Rules</code>.</p>
     pub fn next_marker(&self) -> std::option::Option<&str> {
         self.next_marker.as_deref()
     }
-    /// <p>Specifies the number of <code>Rules</code> that you want AWS WAF to return for this request. If you have more       <code>Rules</code> than the number that you specify for <code>Limit</code>, the response includes a
-    /// <code>NextMarker</code> value that you can use to get another batch of <code>Rules</code>.</p>
+    /// <p>Specifies the number of <code>Rules</code> that you want AWS WAF to return for this request. If you have more <code>Rules</code> than the number that you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>Rules</code>.</p>
     pub fn limit(&self) -> i32 {
         self.limit
     }
@@ -14997,19 +14125,13 @@ impl std::fmt::Debug for ListRulesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRuleGroupsInput {
-    /// <p>If you specify a value for <code>Limit</code> and you have more <code>RuleGroups</code> than the value of <code>Limit</code>,
-    /// AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>RuleGroups</code>.
-    /// For the second and subsequent <code>ListRuleGroups</code> requests, specify the value of <code>NextMarker</code>
-    /// from the previous response to get information about another batch of <code>RuleGroups</code>.</p>
+    /// <p>If you specify a value for <code>Limit</code> and you have more <code>RuleGroups</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>RuleGroups</code>. For the second and subsequent <code>ListRuleGroups</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>RuleGroups</code>.</p>
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>Specifies the number of <code>RuleGroups</code> that you want AWS WAF to return for this request. If you have more <code>RuleGroups</code> than the number that you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>RuleGroups</code>.</p>
     pub limit: i32,
 }
 impl ListRuleGroupsInput {
-    /// <p>If you specify a value for <code>Limit</code> and you have more <code>RuleGroups</code> than the value of <code>Limit</code>,
-    /// AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>RuleGroups</code>.
-    /// For the second and subsequent <code>ListRuleGroups</code> requests, specify the value of <code>NextMarker</code>
-    /// from the previous response to get information about another batch of <code>RuleGroups</code>.</p>
+    /// <p>If you specify a value for <code>Limit</code> and you have more <code>RuleGroups</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>RuleGroups</code>. For the second and subsequent <code>ListRuleGroups</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>RuleGroups</code>.</p>
     pub fn next_marker(&self) -> std::option::Option<&str> {
         self.next_marker.as_deref()
     }
@@ -15031,27 +14153,17 @@ impl std::fmt::Debug for ListRuleGroupsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRegexPatternSetsInput {
-    /// <p>If you specify a value for <code>Limit</code> and you have more <code>RegexPatternSet</code> objects than the value of <code>Limit</code>,
-    /// AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>RegexPatternSet</code> objects.
-    /// For the second and subsequent <code>ListRegexPatternSets</code> requests, specify the value of <code>NextMarker</code>
-    /// from the previous response to get information about another batch of <code>RegexPatternSet</code> objects.</p>
+    /// <p>If you specify a value for <code>Limit</code> and you have more <code>RegexPatternSet</code> objects than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>RegexPatternSet</code> objects. For the second and subsequent <code>ListRegexPatternSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>RegexPatternSet</code> objects.</p>
     pub next_marker: std::option::Option<std::string::String>,
-    /// <p>Specifies the number of <code>RegexPatternSet</code> objects that you want AWS WAF to return for this request. If you have more
-    /// <code>RegexPatternSet</code> objects than the number you specify for <code>Limit</code>, the response includes a
-    /// <code>NextMarker</code> value that you can use to get another batch of <code>RegexPatternSet</code> objects.</p>
+    /// <p>Specifies the number of <code>RegexPatternSet</code> objects that you want AWS WAF to return for this request. If you have more <code>RegexPatternSet</code> objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>RegexPatternSet</code> objects.</p>
     pub limit: i32,
 }
 impl ListRegexPatternSetsInput {
-    /// <p>If you specify a value for <code>Limit</code> and you have more <code>RegexPatternSet</code> objects than the value of <code>Limit</code>,
-    /// AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>RegexPatternSet</code> objects.
-    /// For the second and subsequent <code>ListRegexPatternSets</code> requests, specify the value of <code>NextMarker</code>
-    /// from the previous response to get information about another batch of <code>RegexPatternSet</code> objects.</p>
+    /// <p>If you specify a value for <code>Limit</code> and you have more <code>RegexPatternSet</code> objects than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>RegexPatternSet</code> objects. For the second and subsequent <code>ListRegexPatternSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>RegexPatternSet</code> objects.</p>
     pub fn next_marker(&self) -> std::option::Option<&str> {
         self.next_marker.as_deref()
     }
-    /// <p>Specifies the number of <code>RegexPatternSet</code> objects that you want AWS WAF to return for this request. If you have more
-    /// <code>RegexPatternSet</code> objects than the number you specify for <code>Limit</code>, the response includes a
-    /// <code>NextMarker</code> value that you can use to get another batch of <code>RegexPatternSet</code> objects.</p>
+    /// <p>Specifies the number of <code>RegexPatternSet</code> objects that you want AWS WAF to return for this request. If you have more <code>RegexPatternSet</code> objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>RegexPatternSet</code> objects.</p>
     pub fn limit(&self) -> i32 {
         self.limit
     }
@@ -15069,27 +14181,17 @@ impl std::fmt::Debug for ListRegexPatternSetsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRegexMatchSetsInput {
-    /// <p>If you specify a value for <code>Limit</code> and you have more <code>RegexMatchSet</code> objects than the value of <code>Limit</code>,
-    /// AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>ByteMatchSets</code>.
-    /// For the second and subsequent <code>ListRegexMatchSets</code> requests, specify the value of <code>NextMarker</code>
-    /// from the previous response to get information about another batch of <code>RegexMatchSet</code> objects.</p>
+    /// <p>If you specify a value for <code>Limit</code> and you have more <code>RegexMatchSet</code> objects than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>ByteMatchSets</code>. For the second and subsequent <code>ListRegexMatchSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>RegexMatchSet</code> objects.</p>
     pub next_marker: std::option::Option<std::string::String>,
-    /// <p>Specifies the number of <code>RegexMatchSet</code> objects that you want AWS WAF to return for this request. If you have more
-    /// <code>RegexMatchSet</code> objects than the number you specify for <code>Limit</code>, the response includes a
-    /// <code>NextMarker</code> value that you can use to get another batch of <code>RegexMatchSet</code> objects.</p>
+    /// <p>Specifies the number of <code>RegexMatchSet</code> objects that you want AWS WAF to return for this request. If you have more <code>RegexMatchSet</code> objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>RegexMatchSet</code> objects.</p>
     pub limit: i32,
 }
 impl ListRegexMatchSetsInput {
-    /// <p>If you specify a value for <code>Limit</code> and you have more <code>RegexMatchSet</code> objects than the value of <code>Limit</code>,
-    /// AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>ByteMatchSets</code>.
-    /// For the second and subsequent <code>ListRegexMatchSets</code> requests, specify the value of <code>NextMarker</code>
-    /// from the previous response to get information about another batch of <code>RegexMatchSet</code> objects.</p>
+    /// <p>If you specify a value for <code>Limit</code> and you have more <code>RegexMatchSet</code> objects than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>ByteMatchSets</code>. For the second and subsequent <code>ListRegexMatchSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>RegexMatchSet</code> objects.</p>
     pub fn next_marker(&self) -> std::option::Option<&str> {
         self.next_marker.as_deref()
     }
-    /// <p>Specifies the number of <code>RegexMatchSet</code> objects that you want AWS WAF to return for this request. If you have more
-    /// <code>RegexMatchSet</code> objects than the number you specify for <code>Limit</code>, the response includes a
-    /// <code>NextMarker</code> value that you can use to get another batch of <code>RegexMatchSet</code> objects.</p>
+    /// <p>Specifies the number of <code>RegexMatchSet</code> objects that you want AWS WAF to return for this request. If you have more <code>RegexMatchSet</code> objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>RegexMatchSet</code> objects.</p>
     pub fn limit(&self) -> i32 {
         self.limit
     }
@@ -15107,33 +14209,17 @@ impl std::fmt::Debug for ListRegexMatchSetsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRateBasedRulesInput {
-    /// <p>If you specify a value for <code>Limit</code> and you have more <code>Rules</code>
-    /// than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the
-    /// response that allows you to list another group of <code>Rules</code>. For the second and
-    /// subsequent <code>ListRateBasedRules</code> requests, specify the value of
-    /// <code>NextMarker</code> from the previous response to get information about another
-    /// batch of <code>Rules</code>.</p>
+    /// <p>If you specify a value for <code>Limit</code> and you have more <code>Rules</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>Rules</code>. For the second and subsequent <code>ListRateBasedRules</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>Rules</code>.</p>
     pub next_marker: std::option::Option<std::string::String>,
-    /// <p>Specifies the number of <code>Rules</code> that you want AWS WAF to return for this
-    /// request. If you have more <code>Rules</code> than the number that you specify for
-    /// <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can
-    /// use to get another batch of <code>Rules</code>.</p>
+    /// <p>Specifies the number of <code>Rules</code> that you want AWS WAF to return for this request. If you have more <code>Rules</code> than the number that you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>Rules</code>.</p>
     pub limit: i32,
 }
 impl ListRateBasedRulesInput {
-    /// <p>If you specify a value for <code>Limit</code> and you have more <code>Rules</code>
-    /// than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the
-    /// response that allows you to list another group of <code>Rules</code>. For the second and
-    /// subsequent <code>ListRateBasedRules</code> requests, specify the value of
-    /// <code>NextMarker</code> from the previous response to get information about another
-    /// batch of <code>Rules</code>.</p>
+    /// <p>If you specify a value for <code>Limit</code> and you have more <code>Rules</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>Rules</code>. For the second and subsequent <code>ListRateBasedRules</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>Rules</code>.</p>
     pub fn next_marker(&self) -> std::option::Option<&str> {
         self.next_marker.as_deref()
     }
-    /// <p>Specifies the number of <code>Rules</code> that you want AWS WAF to return for this
-    /// request. If you have more <code>Rules</code> than the number that you specify for
-    /// <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can
-    /// use to get another batch of <code>Rules</code>.</p>
+    /// <p>Specifies the number of <code>Rules</code> that you want AWS WAF to return for this request. If you have more <code>Rules</code> than the number that you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>Rules</code>.</p>
     pub fn limit(&self) -> i32 {
         self.limit
     }
@@ -15151,19 +14237,13 @@ impl std::fmt::Debug for ListRateBasedRulesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLoggingConfigurationsInput {
-    /// <p>If you specify a value for <code>Limit</code> and you have more <code>LoggingConfigurations</code> than the value of <code>Limit</code>,
-    /// AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>LoggingConfigurations</code>.
-    /// For the second and subsequent <code>ListLoggingConfigurations</code> requests, specify the value of <code>NextMarker</code>
-    /// from the previous response to get information about another batch of <code>ListLoggingConfigurations</code>.</p>
+    /// <p>If you specify a value for <code>Limit</code> and you have more <code>LoggingConfigurations</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>LoggingConfigurations</code>. For the second and subsequent <code>ListLoggingConfigurations</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>ListLoggingConfigurations</code>.</p>
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>Specifies the number of <code>LoggingConfigurations</code> that you want AWS WAF to return for this request. If you have more <code>LoggingConfigurations</code> than the number that you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>LoggingConfigurations</code>.</p>
     pub limit: i32,
 }
 impl ListLoggingConfigurationsInput {
-    /// <p>If you specify a value for <code>Limit</code> and you have more <code>LoggingConfigurations</code> than the value of <code>Limit</code>,
-    /// AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>LoggingConfigurations</code>.
-    /// For the second and subsequent <code>ListLoggingConfigurations</code> requests, specify the value of <code>NextMarker</code>
-    /// from the previous response to get information about another batch of <code>ListLoggingConfigurations</code>.</p>
+    /// <p>If you specify a value for <code>Limit</code> and you have more <code>LoggingConfigurations</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>LoggingConfigurations</code>. For the second and subsequent <code>ListLoggingConfigurations</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>ListLoggingConfigurations</code>.</p>
     pub fn next_marker(&self) -> std::option::Option<&str> {
         self.next_marker.as_deref()
     }
@@ -15185,27 +14265,17 @@ impl std::fmt::Debug for ListLoggingConfigurationsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIpSetsInput {
-    /// <p>AWS WAF returns a <code>NextMarker</code> value in the response that allows you to
-    /// list another group of <code>IPSets</code>. For the second and subsequent
-    /// <code>ListIPSets</code> requests, specify the value of <code>NextMarker</code> from the
-    /// previous response to get information about another batch of <code>IPSets</code>.</p>
+    /// <p>AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>IPSets</code>. For the second and subsequent <code>ListIPSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>IPSets</code>.</p>
     pub next_marker: std::option::Option<std::string::String>,
-    /// <p>Specifies the number of <code>IPSet</code> objects that you want AWS WAF to return for this request. If you have more
-    /// <code>IPSet</code> objects than the number you specify for <code>Limit</code>, the response includes a
-    /// <code>NextMarker</code> value that you can use to get another batch of <code>IPSet</code> objects.</p>
+    /// <p>Specifies the number of <code>IPSet</code> objects that you want AWS WAF to return for this request. If you have more <code>IPSet</code> objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>IPSet</code> objects.</p>
     pub limit: i32,
 }
 impl ListIpSetsInput {
-    /// <p>AWS WAF returns a <code>NextMarker</code> value in the response that allows you to
-    /// list another group of <code>IPSets</code>. For the second and subsequent
-    /// <code>ListIPSets</code> requests, specify the value of <code>NextMarker</code> from the
-    /// previous response to get information about another batch of <code>IPSets</code>.</p>
+    /// <p>AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>IPSets</code>. For the second and subsequent <code>ListIPSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>IPSets</code>.</p>
     pub fn next_marker(&self) -> std::option::Option<&str> {
         self.next_marker.as_deref()
     }
-    /// <p>Specifies the number of <code>IPSet</code> objects that you want AWS WAF to return for this request. If you have more
-    /// <code>IPSet</code> objects than the number you specify for <code>Limit</code>, the response includes a
-    /// <code>NextMarker</code> value that you can use to get another batch of <code>IPSet</code> objects.</p>
+    /// <p>Specifies the number of <code>IPSet</code> objects that you want AWS WAF to return for this request. If you have more <code>IPSet</code> objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>IPSet</code> objects.</p>
     pub fn limit(&self) -> i32 {
         self.limit
     }
@@ -15223,27 +14293,17 @@ impl std::fmt::Debug for ListIpSetsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGeoMatchSetsInput {
-    /// <p>If you specify a value for <code>Limit</code> and you have more <code>GeoMatchSet</code>s than the value of <code>Limit</code>,
-    /// AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>GeoMatchSet</code> objects.
-    /// For the second and subsequent <code>ListGeoMatchSets</code> requests, specify the value of <code>NextMarker</code>
-    /// from the previous response to get information about another batch of <code>GeoMatchSet</code> objects.</p>
+    /// <p>If you specify a value for <code>Limit</code> and you have more <code>GeoMatchSet</code>s than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>GeoMatchSet</code> objects. For the second and subsequent <code>ListGeoMatchSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>GeoMatchSet</code> objects.</p>
     pub next_marker: std::option::Option<std::string::String>,
-    /// <p>Specifies the number of <code>GeoMatchSet</code> objects that you want AWS WAF to return for this request. If you have more
-    /// <code>GeoMatchSet</code> objects than the number you specify for <code>Limit</code>, the response includes a
-    /// <code>NextMarker</code> value that you can use to get another batch of <code>GeoMatchSet</code> objects.</p>
+    /// <p>Specifies the number of <code>GeoMatchSet</code> objects that you want AWS WAF to return for this request. If you have more <code>GeoMatchSet</code> objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>GeoMatchSet</code> objects.</p>
     pub limit: i32,
 }
 impl ListGeoMatchSetsInput {
-    /// <p>If you specify a value for <code>Limit</code> and you have more <code>GeoMatchSet</code>s than the value of <code>Limit</code>,
-    /// AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>GeoMatchSet</code> objects.
-    /// For the second and subsequent <code>ListGeoMatchSets</code> requests, specify the value of <code>NextMarker</code>
-    /// from the previous response to get information about another batch of <code>GeoMatchSet</code> objects.</p>
+    /// <p>If you specify a value for <code>Limit</code> and you have more <code>GeoMatchSet</code>s than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>GeoMatchSet</code> objects. For the second and subsequent <code>ListGeoMatchSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>GeoMatchSet</code> objects.</p>
     pub fn next_marker(&self) -> std::option::Option<&str> {
         self.next_marker.as_deref()
     }
-    /// <p>Specifies the number of <code>GeoMatchSet</code> objects that you want AWS WAF to return for this request. If you have more
-    /// <code>GeoMatchSet</code> objects than the number you specify for <code>Limit</code>, the response includes a
-    /// <code>NextMarker</code> value that you can use to get another batch of <code>GeoMatchSet</code> objects.</p>
+    /// <p>Specifies the number of <code>GeoMatchSet</code> objects that you want AWS WAF to return for this request. If you have more <code>GeoMatchSet</code> objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>GeoMatchSet</code> objects.</p>
     pub fn limit(&self) -> i32 {
         self.limit
     }
@@ -15261,27 +14321,17 @@ impl std::fmt::Debug for ListGeoMatchSetsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListByteMatchSetsInput {
-    /// <p>If you specify a value for <code>Limit</code> and you have more <code>ByteMatchSets</code> than the value of <code>Limit</code>,
-    /// AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>ByteMatchSets</code>.
-    /// For the second and subsequent <code>ListByteMatchSets</code> requests, specify the value of <code>NextMarker</code>
-    /// from the previous response to get information about another batch of <code>ByteMatchSets</code>.</p>
+    /// <p>If you specify a value for <code>Limit</code> and you have more <code>ByteMatchSets</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>ByteMatchSets</code>. For the second and subsequent <code>ListByteMatchSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>ByteMatchSets</code>.</p>
     pub next_marker: std::option::Option<std::string::String>,
-    /// <p>Specifies the number of <code>ByteMatchSet</code> objects that you want AWS WAF to return for this request. If you have more
-    /// <code>ByteMatchSets</code> objects than the number you specify for <code>Limit</code>, the response includes a
-    /// <code>NextMarker</code> value that you can use to get another batch of <code>ByteMatchSet</code> objects.</p>
+    /// <p>Specifies the number of <code>ByteMatchSet</code> objects that you want AWS WAF to return for this request. If you have more <code>ByteMatchSets</code> objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>ByteMatchSet</code> objects.</p>
     pub limit: i32,
 }
 impl ListByteMatchSetsInput {
-    /// <p>If you specify a value for <code>Limit</code> and you have more <code>ByteMatchSets</code> than the value of <code>Limit</code>,
-    /// AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>ByteMatchSets</code>.
-    /// For the second and subsequent <code>ListByteMatchSets</code> requests, specify the value of <code>NextMarker</code>
-    /// from the previous response to get information about another batch of <code>ByteMatchSets</code>.</p>
+    /// <p>If you specify a value for <code>Limit</code> and you have more <code>ByteMatchSets</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>ByteMatchSets</code>. For the second and subsequent <code>ListByteMatchSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>ByteMatchSets</code>.</p>
     pub fn next_marker(&self) -> std::option::Option<&str> {
         self.next_marker.as_deref()
     }
-    /// <p>Specifies the number of <code>ByteMatchSet</code> objects that you want AWS WAF to return for this request. If you have more
-    /// <code>ByteMatchSets</code> objects than the number you specify for <code>Limit</code>, the response includes a
-    /// <code>NextMarker</code> value that you can use to get another batch of <code>ByteMatchSet</code> objects.</p>
+    /// <p>Specifies the number of <code>ByteMatchSet</code> objects that you want AWS WAF to return for this request. If you have more <code>ByteMatchSets</code> objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>ByteMatchSet</code> objects.</p>
     pub fn limit(&self) -> i32 {
         self.limit
     }
@@ -15299,31 +14349,23 @@ impl std::fmt::Debug for ListByteMatchSetsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListActivatedRulesInRuleGroupInput {
-    /// <p>The <code>RuleGroupId</code> of the <a>RuleGroup</a> for which you want to get a list of <a>ActivatedRule</a> objects.</p>
+    /// <p>The <code>RuleGroupId</code> of the <code>RuleGroup</code> for which you want to get a list of <code>ActivatedRule</code> objects.</p>
     pub rule_group_id: std::option::Option<std::string::String>,
-    /// <p>If you specify a value for <code>Limit</code> and you have more <code>ActivatedRules</code> than the value of <code>Limit</code>,
-    /// AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>ActivatedRules</code>.
-    /// For the second and subsequent <code>ListActivatedRulesInRuleGroup</code> requests, specify the value of <code>NextMarker</code>
-    /// from the previous response to get information about another batch of <code>ActivatedRules</code>.</p>
+    /// <p>If you specify a value for <code>Limit</code> and you have more <code>ActivatedRules</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>ActivatedRules</code>. For the second and subsequent <code>ListActivatedRulesInRuleGroup</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>ActivatedRules</code>.</p>
     pub next_marker: std::option::Option<std::string::String>,
-    /// <p>Specifies the number of <code>ActivatedRules</code> that you want AWS WAF to return for this request. If you have more <code>ActivatedRules</code> than the number that you specify for <code>Limit</code>, the response includes a
-    /// <code>NextMarker</code> value that you can use to get another batch of <code>ActivatedRules</code>.</p>
+    /// <p>Specifies the number of <code>ActivatedRules</code> that you want AWS WAF to return for this request. If you have more <code>ActivatedRules</code> than the number that you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>ActivatedRules</code>.</p>
     pub limit: i32,
 }
 impl ListActivatedRulesInRuleGroupInput {
-    /// <p>The <code>RuleGroupId</code> of the <a>RuleGroup</a> for which you want to get a list of <a>ActivatedRule</a> objects.</p>
+    /// <p>The <code>RuleGroupId</code> of the <code>RuleGroup</code> for which you want to get a list of <code>ActivatedRule</code> objects.</p>
     pub fn rule_group_id(&self) -> std::option::Option<&str> {
         self.rule_group_id.as_deref()
     }
-    /// <p>If you specify a value for <code>Limit</code> and you have more <code>ActivatedRules</code> than the value of <code>Limit</code>,
-    /// AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>ActivatedRules</code>.
-    /// For the second and subsequent <code>ListActivatedRulesInRuleGroup</code> requests, specify the value of <code>NextMarker</code>
-    /// from the previous response to get information about another batch of <code>ActivatedRules</code>.</p>
+    /// <p>If you specify a value for <code>Limit</code> and you have more <code>ActivatedRules</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>ActivatedRules</code>. For the second and subsequent <code>ListActivatedRulesInRuleGroup</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>ActivatedRules</code>.</p>
     pub fn next_marker(&self) -> std::option::Option<&str> {
         self.next_marker.as_deref()
     }
-    /// <p>Specifies the number of <code>ActivatedRules</code> that you want AWS WAF to return for this request. If you have more <code>ActivatedRules</code> than the number that you specify for <code>Limit</code>, the response includes a
-    /// <code>NextMarker</code> value that you can use to get another batch of <code>ActivatedRules</code>.</p>
+    /// <p>Specifies the number of <code>ActivatedRules</code> that you want AWS WAF to return for this request. If you have more <code>ActivatedRules</code> than the number that you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>ActivatedRules</code>.</p>
     pub fn limit(&self) -> i32 {
         self.limit
     }
@@ -15338,17 +14380,15 @@ impl std::fmt::Debug for ListActivatedRulesInRuleGroupInput {
     }
 }
 
-/// <p>A request to get an <a>XssMatchSet</a>.</p>
+/// <p>A request to get an <code>XssMatchSet</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetXssMatchSetInput {
-    /// <p>The <code>XssMatchSetId</code> of the <a>XssMatchSet</a> that you want to get. <code>XssMatchSetId</code>
-    /// is returned by <a>CreateXssMatchSet</a> and by <a>ListXssMatchSets</a>.</p>
+    /// <p>The <code>XssMatchSetId</code> of the <code>XssMatchSet</code> that you want to get. <code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
     pub xss_match_set_id: std::option::Option<std::string::String>,
 }
 impl GetXssMatchSetInput {
-    /// <p>The <code>XssMatchSetId</code> of the <a>XssMatchSet</a> that you want to get. <code>XssMatchSetId</code>
-    /// is returned by <a>CreateXssMatchSet</a> and by <a>ListXssMatchSets</a>.</p>
+    /// <p>The <code>XssMatchSetId</code> of the <code>XssMatchSet</code> that you want to get. <code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
     pub fn xss_match_set_id(&self) -> std::option::Option<&str> {
         self.xss_match_set_id.as_deref()
     }
@@ -15365,13 +14405,11 @@ impl std::fmt::Debug for GetXssMatchSetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetWebAclInput {
-    /// <p>The <code>WebACLId</code> of the <a>WebACL</a> that you want to get. <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by
-    /// <a>ListWebACLs</a>.</p>
+    /// <p>The <code>WebACLId</code> of the <code>WebACL</code> that you want to get. <code>WebACLId</code> is returned by <code>CreateWebACL</code> and by <code>ListWebACLs</code>.</p>
     pub web_acl_id: std::option::Option<std::string::String>,
 }
 impl GetWebAclInput {
-    /// <p>The <code>WebACLId</code> of the <a>WebACL</a> that you want to get. <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by
-    /// <a>ListWebACLs</a>.</p>
+    /// <p>The <code>WebACLId</code> of the <code>WebACL</code> that you want to get. <code>WebACLId</code> is returned by <code>CreateWebACL</code> and by <code>ListWebACLs</code>.</p>
     pub fn web_acl_id(&self) -> std::option::Option<&str> {
         self.web_acl_id.as_deref()
     }
@@ -15384,17 +14422,15 @@ impl std::fmt::Debug for GetWebAclInput {
     }
 }
 
-/// <p>A request to get a <a>SqlInjectionMatchSet</a>.</p>
+/// <p>A request to get a <code>SqlInjectionMatchSet</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSqlInjectionMatchSetInput {
-    /// <p>The <code>SqlInjectionMatchSetId</code> of the <a>SqlInjectionMatchSet</a> that you want to get. <code>SqlInjectionMatchSetId</code>
-    /// is returned by <a>CreateSqlInjectionMatchSet</a> and by <a>ListSqlInjectionMatchSets</a>.</p>
+    /// <p>The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to get. <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
     pub sql_injection_match_set_id: std::option::Option<std::string::String>,
 }
 impl GetSqlInjectionMatchSetInput {
-    /// <p>The <code>SqlInjectionMatchSetId</code> of the <a>SqlInjectionMatchSet</a> that you want to get. <code>SqlInjectionMatchSetId</code>
-    /// is returned by <a>CreateSqlInjectionMatchSet</a> and by <a>ListSqlInjectionMatchSets</a>.</p>
+    /// <p>The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to get. <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
     pub fn sql_injection_match_set_id(&self) -> std::option::Option<&str> {
         self.sql_injection_match_set_id.as_deref()
     }
@@ -15414,13 +14450,11 @@ impl std::fmt::Debug for GetSqlInjectionMatchSetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSizeConstraintSetInput {
-    /// <p>The <code>SizeConstraintSetId</code> of the <a>SizeConstraintSet</a> that you want to get. <code>SizeConstraintSetId</code> is returned by
-    /// <a>CreateSizeConstraintSet</a> and by <a>ListSizeConstraintSets</a>.</p>
+    /// <p>The <code>SizeConstraintSetId</code> of the <code>SizeConstraintSet</code> that you want to get. <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
     pub size_constraint_set_id: std::option::Option<std::string::String>,
 }
 impl GetSizeConstraintSetInput {
-    /// <p>The <code>SizeConstraintSetId</code> of the <a>SizeConstraintSet</a> that you want to get. <code>SizeConstraintSetId</code> is returned by
-    /// <a>CreateSizeConstraintSet</a> and by <a>ListSizeConstraintSets</a>.</p>
+    /// <p>The <code>SizeConstraintSetId</code> of the <code>SizeConstraintSet</code> that you want to get. <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
     pub fn size_constraint_set_id(&self) -> std::option::Option<&str> {
         self.size_constraint_set_id.as_deref()
     }
@@ -15439,26 +14473,15 @@ impl std::fmt::Debug for GetSizeConstraintSetInput {
 pub struct GetSampledRequestsInput {
     /// <p>The <code>WebACLId</code> of the <code>WebACL</code> for which you want <code>GetSampledRequests</code> to return a sample of requests.</p>
     pub web_acl_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// <code>RuleId</code> is one of three values:</p>
+    /// <p> <code>RuleId</code> is one of three values:</p>
     /// <ul>
-    /// <li>
-    /// <p>The <code>RuleId</code> of the <code>Rule</code> or the <code>RuleGroupId</code> of the <code>RuleGroup</code> for which you want <code>GetSampledRequests</code> to return a sample of requests.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Default_Action</code>, which causes <code>GetSampledRequests</code> to return a sample of the requests that
-    /// didn't match any of the rules in the specified <code>WebACL</code>.</p>
-    /// </li>
+    /// <li> <p>The <code>RuleId</code> of the <code>Rule</code> or the <code>RuleGroupId</code> of the <code>RuleGroup</code> for which you want <code>GetSampledRequests</code> to return a sample of requests.</p> </li>
+    /// <li> <p> <code>Default_Action</code>, which causes <code>GetSampledRequests</code> to return a sample of the requests that didn't match any of the rules in the specified <code>WebACL</code>.</p> </li>
     /// </ul>
     pub rule_id: std::option::Option<std::string::String>,
-    /// <p>The start date and time and the end date and time of the range for which you want <code>GetSampledRequests</code> to return a
-    /// sample of requests. You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special  
-    /// designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.</p>
+    /// <p>The start date and time and the end date and time of the range for which you want <code>GetSampledRequests</code> to return a sample of requests. You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.</p>
     pub time_window: std::option::Option<crate::model::TimeWindow>,
-    /// <p>The number of requests that you want AWS WAF to return from among the first 5,000 requests that your AWS resource received
-    /// during the time range. If your resource received fewer requests than the value of <code>MaxItems</code>, <code>GetSampledRequests</code>
-    /// returns information about all of them. </p>
+    /// <p>The number of requests that you want AWS WAF to return from among the first 5,000 requests that your AWS resource received during the time range. If your resource received fewer requests than the value of <code>MaxItems</code>, <code>GetSampledRequests</code> returns information about all of them. </p>
     pub max_items: i64,
 }
 impl GetSampledRequestsInput {
@@ -15466,30 +14489,19 @@ impl GetSampledRequestsInput {
     pub fn web_acl_id(&self) -> std::option::Option<&str> {
         self.web_acl_id.as_deref()
     }
-    /// <p>
-    /// <code>RuleId</code> is one of three values:</p>
+    /// <p> <code>RuleId</code> is one of three values:</p>
     /// <ul>
-    /// <li>
-    /// <p>The <code>RuleId</code> of the <code>Rule</code> or the <code>RuleGroupId</code> of the <code>RuleGroup</code> for which you want <code>GetSampledRequests</code> to return a sample of requests.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Default_Action</code>, which causes <code>GetSampledRequests</code> to return a sample of the requests that
-    /// didn't match any of the rules in the specified <code>WebACL</code>.</p>
-    /// </li>
+    /// <li> <p>The <code>RuleId</code> of the <code>Rule</code> or the <code>RuleGroupId</code> of the <code>RuleGroup</code> for which you want <code>GetSampledRequests</code> to return a sample of requests.</p> </li>
+    /// <li> <p> <code>Default_Action</code>, which causes <code>GetSampledRequests</code> to return a sample of the requests that didn't match any of the rules in the specified <code>WebACL</code>.</p> </li>
     /// </ul>
     pub fn rule_id(&self) -> std::option::Option<&str> {
         self.rule_id.as_deref()
     }
-    /// <p>The start date and time and the end date and time of the range for which you want <code>GetSampledRequests</code> to return a
-    /// sample of requests. You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special  
-    /// designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.</p>
+    /// <p>The start date and time and the end date and time of the range for which you want <code>GetSampledRequests</code> to return a sample of requests. You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.</p>
     pub fn time_window(&self) -> std::option::Option<&crate::model::TimeWindow> {
         self.time_window.as_ref()
     }
-    /// <p>The number of requests that you want AWS WAF to return from among the first 5,000 requests that your AWS resource received
-    /// during the time range. If your resource received fewer requests than the value of <code>MaxItems</code>, <code>GetSampledRequests</code>
-    /// returns information about all of them. </p>
+    /// <p>The number of requests that you want AWS WAF to return from among the first 5,000 requests that your AWS resource received during the time range. If your resource received fewer requests than the value of <code>MaxItems</code>, <code>GetSampledRequests</code> returns information about all of them. </p>
     pub fn max_items(&self) -> i64 {
         self.max_items
     }
@@ -15509,13 +14521,11 @@ impl std::fmt::Debug for GetSampledRequestsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRuleGroupInput {
-    /// <p>The <code>RuleGroupId</code> of the <a>RuleGroup</a> that you want to get. <code>RuleGroupId</code> is returned by <a>CreateRuleGroup</a> and by
-    /// <a>ListRuleGroups</a>.</p>
+    /// <p>The <code>RuleGroupId</code> of the <code>RuleGroup</code> that you want to get. <code>RuleGroupId</code> is returned by <code>CreateRuleGroup</code> and by <code>ListRuleGroups</code>.</p>
     pub rule_group_id: std::option::Option<std::string::String>,
 }
 impl GetRuleGroupInput {
-    /// <p>The <code>RuleGroupId</code> of the <a>RuleGroup</a> that you want to get. <code>RuleGroupId</code> is returned by <a>CreateRuleGroup</a> and by
-    /// <a>ListRuleGroups</a>.</p>
+    /// <p>The <code>RuleGroupId</code> of the <code>RuleGroup</code> that you want to get. <code>RuleGroupId</code> is returned by <code>CreateRuleGroup</code> and by <code>ListRuleGroups</code>.</p>
     pub fn rule_group_id(&self) -> std::option::Option<&str> {
         self.rule_group_id.as_deref()
     }
@@ -15532,13 +14542,11 @@ impl std::fmt::Debug for GetRuleGroupInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRuleInput {
-    /// <p>The <code>RuleId</code> of the <a>Rule</a> that you want to get. <code>RuleId</code> is returned by <a>CreateRule</a> and by
-    /// <a>ListRules</a>.</p>
+    /// <p>The <code>RuleId</code> of the <code>Rule</code> that you want to get. <code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
     pub rule_id: std::option::Option<std::string::String>,
 }
 impl GetRuleInput {
-    /// <p>The <code>RuleId</code> of the <a>Rule</a> that you want to get. <code>RuleId</code> is returned by <a>CreateRule</a> and by
-    /// <a>ListRules</a>.</p>
+    /// <p>The <code>RuleId</code> of the <code>Rule</code> that you want to get. <code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
     pub fn rule_id(&self) -> std::option::Option<&str> {
         self.rule_id.as_deref()
     }
@@ -15555,13 +14563,11 @@ impl std::fmt::Debug for GetRuleInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRegexPatternSetInput {
-    /// <p>The <code>RegexPatternSetId</code> of the <a>RegexPatternSet</a> that you want to get. <code>RegexPatternSetId</code> is returned by
-    /// <a>CreateRegexPatternSet</a> and by <a>ListRegexPatternSets</a>.</p>
+    /// <p>The <code>RegexPatternSetId</code> of the <code>RegexPatternSet</code> that you want to get. <code>RegexPatternSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
     pub regex_pattern_set_id: std::option::Option<std::string::String>,
 }
 impl GetRegexPatternSetInput {
-    /// <p>The <code>RegexPatternSetId</code> of the <a>RegexPatternSet</a> that you want to get. <code>RegexPatternSetId</code> is returned by
-    /// <a>CreateRegexPatternSet</a> and by <a>ListRegexPatternSets</a>.</p>
+    /// <p>The <code>RegexPatternSetId</code> of the <code>RegexPatternSet</code> that you want to get. <code>RegexPatternSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
     pub fn regex_pattern_set_id(&self) -> std::option::Option<&str> {
         self.regex_pattern_set_id.as_deref()
     }
@@ -15578,13 +14584,11 @@ impl std::fmt::Debug for GetRegexPatternSetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRegexMatchSetInput {
-    /// <p>The <code>RegexMatchSetId</code> of the <a>RegexMatchSet</a> that you want to get. <code>RegexMatchSetId</code> is returned by
-    /// <a>CreateRegexMatchSet</a> and by <a>ListRegexMatchSets</a>.</p>
+    /// <p>The <code>RegexMatchSetId</code> of the <code>RegexMatchSet</code> that you want to get. <code>RegexMatchSetId</code> is returned by <code>CreateRegexMatchSet</code> and by <code>ListRegexMatchSets</code>.</p>
     pub regex_match_set_id: std::option::Option<std::string::String>,
 }
 impl GetRegexMatchSetInput {
-    /// <p>The <code>RegexMatchSetId</code> of the <a>RegexMatchSet</a> that you want to get. <code>RegexMatchSetId</code> is returned by
-    /// <a>CreateRegexMatchSet</a> and by <a>ListRegexMatchSets</a>.</p>
+    /// <p>The <code>RegexMatchSetId</code> of the <code>RegexMatchSet</code> that you want to get. <code>RegexMatchSetId</code> is returned by <code>CreateRegexMatchSet</code> and by <code>ListRegexMatchSets</code>.</p>
     pub fn regex_match_set_id(&self) -> std::option::Option<&str> {
         self.regex_match_set_id.as_deref()
     }
@@ -15601,15 +14605,13 @@ impl std::fmt::Debug for GetRegexMatchSetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRateBasedRuleManagedKeysInput {
-    /// <p>The <code>RuleId</code> of the <a>RateBasedRule</a> for which you want to
-    /// get a list of <code>ManagedKeys</code>. <code>RuleId</code> is returned by <a>CreateRateBasedRule</a> and by <a>ListRateBasedRules</a>.</p>
+    /// <p>The <code>RuleId</code> of the <code>RateBasedRule</code> for which you want to get a list of <code>ManagedKeys</code>. <code>RuleId</code> is returned by <code>CreateRateBasedRule</code> and by <code>ListRateBasedRules</code>.</p>
     pub rule_id: std::option::Option<std::string::String>,
     /// <p>A null value and not currently used. Do not include this in your request.</p>
     pub next_marker: std::option::Option<std::string::String>,
 }
 impl GetRateBasedRuleManagedKeysInput {
-    /// <p>The <code>RuleId</code> of the <a>RateBasedRule</a> for which you want to
-    /// get a list of <code>ManagedKeys</code>. <code>RuleId</code> is returned by <a>CreateRateBasedRule</a> and by <a>ListRateBasedRules</a>.</p>
+    /// <p>The <code>RuleId</code> of the <code>RateBasedRule</code> for which you want to get a list of <code>ManagedKeys</code>. <code>RuleId</code> is returned by <code>CreateRateBasedRule</code> and by <code>ListRateBasedRules</code>.</p>
     pub fn rule_id(&self) -> std::option::Option<&str> {
         self.rule_id.as_deref()
     }
@@ -15631,13 +14633,11 @@ impl std::fmt::Debug for GetRateBasedRuleManagedKeysInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRateBasedRuleInput {
-    /// <p>The <code>RuleId</code> of the <a>RateBasedRule</a> that you want to get.
-    /// <code>RuleId</code> is returned by <a>CreateRateBasedRule</a> and by <a>ListRateBasedRules</a>.</p>
+    /// <p>The <code>RuleId</code> of the <code>RateBasedRule</code> that you want to get. <code>RuleId</code> is returned by <code>CreateRateBasedRule</code> and by <code>ListRateBasedRules</code>.</p>
     pub rule_id: std::option::Option<std::string::String>,
 }
 impl GetRateBasedRuleInput {
-    /// <p>The <code>RuleId</code> of the <a>RateBasedRule</a> that you want to get.
-    /// <code>RuleId</code> is returned by <a>CreateRateBasedRule</a> and by <a>ListRateBasedRules</a>.</p>
+    /// <p>The <code>RuleId</code> of the <code>RateBasedRule</code> that you want to get. <code>RuleId</code> is returned by <code>CreateRateBasedRule</code> and by <code>ListRateBasedRules</code>.</p>
     pub fn rule_id(&self) -> std::option::Option<&str> {
         self.rule_id.as_deref()
     }
@@ -15675,11 +14675,11 @@ impl std::fmt::Debug for GetPermissionPolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLoggingConfigurationInput {
-    /// <p>The Amazon Resource Name (ARN) of the web ACL for which you want to get the <a>LoggingConfiguration</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the web ACL for which you want to get the <code>LoggingConfiguration</code>.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl GetLoggingConfigurationInput {
-    /// <p>The Amazon Resource Name (ARN) of the web ACL for which you want to get the <a>LoggingConfiguration</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the web ACL for which you want to get the <code>LoggingConfiguration</code>.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -15696,13 +14696,11 @@ impl std::fmt::Debug for GetLoggingConfigurationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIpSetInput {
-    /// <p>The <code>IPSetId</code> of the <a>IPSet</a> that you want to get. <code>IPSetId</code> is returned by <a>CreateIPSet</a> and by
-    /// <a>ListIPSets</a>.</p>
+    /// <p>The <code>IPSetId</code> of the <code>IPSet</code> that you want to get. <code>IPSetId</code> is returned by <code>CreateIPSet</code> and by <code>ListIPSets</code>.</p>
     pub ip_set_id: std::option::Option<std::string::String>,
 }
 impl GetIpSetInput {
-    /// <p>The <code>IPSetId</code> of the <a>IPSet</a> that you want to get. <code>IPSetId</code> is returned by <a>CreateIPSet</a> and by
-    /// <a>ListIPSets</a>.</p>
+    /// <p>The <code>IPSetId</code> of the <code>IPSet</code> that you want to get. <code>IPSetId</code> is returned by <code>CreateIPSet</code> and by <code>ListIPSets</code>.</p>
     pub fn ip_set_id(&self) -> std::option::Option<&str> {
         self.ip_set_id.as_deref()
     }
@@ -15719,13 +14717,11 @@ impl std::fmt::Debug for GetIpSetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGeoMatchSetInput {
-    /// <p>The <code>GeoMatchSetId</code> of the <a>GeoMatchSet</a> that you want to get. <code>GeoMatchSetId</code> is returned by <a>CreateGeoMatchSet</a> and by
-    /// <a>ListGeoMatchSets</a>.</p>
+    /// <p>The <code>GeoMatchSetId</code> of the <code>GeoMatchSet</code> that you want to get. <code>GeoMatchSetId</code> is returned by <code>CreateGeoMatchSet</code> and by <code>ListGeoMatchSets</code>.</p>
     pub geo_match_set_id: std::option::Option<std::string::String>,
 }
 impl GetGeoMatchSetInput {
-    /// <p>The <code>GeoMatchSetId</code> of the <a>GeoMatchSet</a> that you want to get. <code>GeoMatchSetId</code> is returned by <a>CreateGeoMatchSet</a> and by
-    /// <a>ListGeoMatchSets</a>.</p>
+    /// <p>The <code>GeoMatchSetId</code> of the <code>GeoMatchSet</code> that you want to get. <code>GeoMatchSetId</code> is returned by <code>CreateGeoMatchSet</code> and by <code>ListGeoMatchSets</code>.</p>
     pub fn geo_match_set_id(&self) -> std::option::Option<&str> {
         self.geo_match_set_id.as_deref()
     }
@@ -15774,13 +14770,11 @@ impl std::fmt::Debug for GetChangeTokenInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetByteMatchSetInput {
-    /// <p>The <code>ByteMatchSetId</code> of the <a>ByteMatchSet</a> that you want to get. <code>ByteMatchSetId</code> is returned by
-    /// <a>CreateByteMatchSet</a> and by <a>ListByteMatchSets</a>.</p>
+    /// <p>The <code>ByteMatchSetId</code> of the <code>ByteMatchSet</code> that you want to get. <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
     pub byte_match_set_id: std::option::Option<std::string::String>,
 }
 impl GetByteMatchSetInput {
-    /// <p>The <code>ByteMatchSetId</code> of the <a>ByteMatchSet</a> that you want to get. <code>ByteMatchSetId</code> is returned by
-    /// <a>CreateByteMatchSet</a> and by <a>ListByteMatchSets</a>.</p>
+    /// <p>The <code>ByteMatchSetId</code> of the <code>ByteMatchSet</code> that you want to get. <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
     pub fn byte_match_set_id(&self) -> std::option::Option<&str> {
         self.byte_match_set_id.as_deref()
     }
@@ -15793,23 +14787,21 @@ impl std::fmt::Debug for GetByteMatchSetInput {
     }
 }
 
-/// <p>A request to delete an <a>XssMatchSet</a> from AWS WAF.</p>
+/// <p>A request to delete an <code>XssMatchSet</code> from AWS WAF.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteXssMatchSetInput {
-    /// <p>The <code>XssMatchSetId</code> of the <a>XssMatchSet</a> that you want to delete.
-    /// <code>XssMatchSetId</code> is returned by <a>CreateXssMatchSet</a> and by <a>ListXssMatchSets</a>.</p>
+    /// <p>The <code>XssMatchSetId</code> of the <code>XssMatchSet</code> that you want to delete. <code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
     pub xss_match_set_id: std::option::Option<std::string::String>,
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub change_token: std::option::Option<std::string::String>,
 }
 impl DeleteXssMatchSetInput {
-    /// <p>The <code>XssMatchSetId</code> of the <a>XssMatchSet</a> that you want to delete.
-    /// <code>XssMatchSetId</code> is returned by <a>CreateXssMatchSet</a> and by <a>ListXssMatchSets</a>.</p>
+    /// <p>The <code>XssMatchSetId</code> of the <code>XssMatchSet</code> that you want to delete. <code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
     pub fn xss_match_set_id(&self) -> std::option::Option<&str> {
         self.xss_match_set_id.as_deref()
     }
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(&self) -> std::option::Option<&str> {
         self.change_token.as_deref()
     }
@@ -15827,19 +14819,17 @@ impl std::fmt::Debug for DeleteXssMatchSetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteWebAclInput {
-    /// <p>The <code>WebACLId</code> of the <a>WebACL</a> that you want to delete. <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by
-    /// <a>ListWebACLs</a>.</p>
+    /// <p>The <code>WebACLId</code> of the <code>WebACL</code> that you want to delete. <code>WebACLId</code> is returned by <code>CreateWebACL</code> and by <code>ListWebACLs</code>.</p>
     pub web_acl_id: std::option::Option<std::string::String>,
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub change_token: std::option::Option<std::string::String>,
 }
 impl DeleteWebAclInput {
-    /// <p>The <code>WebACLId</code> of the <a>WebACL</a> that you want to delete. <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by
-    /// <a>ListWebACLs</a>.</p>
+    /// <p>The <code>WebACLId</code> of the <code>WebACL</code> that you want to delete. <code>WebACLId</code> is returned by <code>CreateWebACL</code> and by <code>ListWebACLs</code>.</p>
     pub fn web_acl_id(&self) -> std::option::Option<&str> {
         self.web_acl_id.as_deref()
     }
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(&self) -> std::option::Option<&str> {
         self.change_token.as_deref()
     }
@@ -15853,23 +14843,21 @@ impl std::fmt::Debug for DeleteWebAclInput {
     }
 }
 
-/// <p>A request to delete a <a>SqlInjectionMatchSet</a> from AWS WAF.</p>
+/// <p>A request to delete a <code>SqlInjectionMatchSet</code> from AWS WAF.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSqlInjectionMatchSetInput {
-    /// <p>The <code>SqlInjectionMatchSetId</code> of the <a>SqlInjectionMatchSet</a> that you want to delete.
-    /// <code>SqlInjectionMatchSetId</code> is returned by <a>CreateSqlInjectionMatchSet</a> and by <a>ListSqlInjectionMatchSets</a>.</p>
+    /// <p>The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to delete. <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
     pub sql_injection_match_set_id: std::option::Option<std::string::String>,
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub change_token: std::option::Option<std::string::String>,
 }
 impl DeleteSqlInjectionMatchSetInput {
-    /// <p>The <code>SqlInjectionMatchSetId</code> of the <a>SqlInjectionMatchSet</a> that you want to delete.
-    /// <code>SqlInjectionMatchSetId</code> is returned by <a>CreateSqlInjectionMatchSet</a> and by <a>ListSqlInjectionMatchSets</a>.</p>
+    /// <p>The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to delete. <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
     pub fn sql_injection_match_set_id(&self) -> std::option::Option<&str> {
         self.sql_injection_match_set_id.as_deref()
     }
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(&self) -> std::option::Option<&str> {
         self.change_token.as_deref()
     }
@@ -15890,19 +14878,17 @@ impl std::fmt::Debug for DeleteSqlInjectionMatchSetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSizeConstraintSetInput {
-    /// <p>The <code>SizeConstraintSetId</code> of the <a>SizeConstraintSet</a> that you want to delete. <code>SizeConstraintSetId</code>
-    /// is returned by <a>CreateSizeConstraintSet</a> and by <a>ListSizeConstraintSets</a>.</p>
+    /// <p>The <code>SizeConstraintSetId</code> of the <code>SizeConstraintSet</code> that you want to delete. <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
     pub size_constraint_set_id: std::option::Option<std::string::String>,
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub change_token: std::option::Option<std::string::String>,
 }
 impl DeleteSizeConstraintSetInput {
-    /// <p>The <code>SizeConstraintSetId</code> of the <a>SizeConstraintSet</a> that you want to delete. <code>SizeConstraintSetId</code>
-    /// is returned by <a>CreateSizeConstraintSet</a> and by <a>ListSizeConstraintSets</a>.</p>
+    /// <p>The <code>SizeConstraintSetId</code> of the <code>SizeConstraintSet</code> that you want to delete. <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
     pub fn size_constraint_set_id(&self) -> std::option::Option<&str> {
         self.size_constraint_set_id.as_deref()
     }
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(&self) -> std::option::Option<&str> {
         self.change_token.as_deref()
     }
@@ -15920,19 +14906,17 @@ impl std::fmt::Debug for DeleteSizeConstraintSetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRuleGroupInput {
-    /// <p>The <code>RuleGroupId</code> of the <a>RuleGroup</a> that you want to delete. <code>RuleGroupId</code> is returned by <a>CreateRuleGroup</a> and by
-    /// <a>ListRuleGroups</a>.</p>
+    /// <p>The <code>RuleGroupId</code> of the <code>RuleGroup</code> that you want to delete. <code>RuleGroupId</code> is returned by <code>CreateRuleGroup</code> and by <code>ListRuleGroups</code>.</p>
     pub rule_group_id: std::option::Option<std::string::String>,
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub change_token: std::option::Option<std::string::String>,
 }
 impl DeleteRuleGroupInput {
-    /// <p>The <code>RuleGroupId</code> of the <a>RuleGroup</a> that you want to delete. <code>RuleGroupId</code> is returned by <a>CreateRuleGroup</a> and by
-    /// <a>ListRuleGroups</a>.</p>
+    /// <p>The <code>RuleGroupId</code> of the <code>RuleGroup</code> that you want to delete. <code>RuleGroupId</code> is returned by <code>CreateRuleGroup</code> and by <code>ListRuleGroups</code>.</p>
     pub fn rule_group_id(&self) -> std::option::Option<&str> {
         self.rule_group_id.as_deref()
     }
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(&self) -> std::option::Option<&str> {
         self.change_token.as_deref()
     }
@@ -15950,19 +14934,17 @@ impl std::fmt::Debug for DeleteRuleGroupInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRuleInput {
-    /// <p>The <code>RuleId</code> of the <a>Rule</a> that you want to delete. <code>RuleId</code> is returned by <a>CreateRule</a> and by
-    /// <a>ListRules</a>.</p>
+    /// <p>The <code>RuleId</code> of the <code>Rule</code> that you want to delete. <code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
     pub rule_id: std::option::Option<std::string::String>,
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub change_token: std::option::Option<std::string::String>,
 }
 impl DeleteRuleInput {
-    /// <p>The <code>RuleId</code> of the <a>Rule</a> that you want to delete. <code>RuleId</code> is returned by <a>CreateRule</a> and by
-    /// <a>ListRules</a>.</p>
+    /// <p>The <code>RuleId</code> of the <code>Rule</code> that you want to delete. <code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
     pub fn rule_id(&self) -> std::option::Option<&str> {
         self.rule_id.as_deref()
     }
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(&self) -> std::option::Option<&str> {
         self.change_token.as_deref()
     }
@@ -15980,19 +14962,17 @@ impl std::fmt::Debug for DeleteRuleInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRegexPatternSetInput {
-    /// <p>The <code>RegexPatternSetId</code> of the <a>RegexPatternSet</a> that you want to delete. <code>RegexPatternSetId</code> is returned by <a>CreateRegexPatternSet</a> and by
-    /// <a>ListRegexPatternSets</a>.</p>
+    /// <p>The <code>RegexPatternSetId</code> of the <code>RegexPatternSet</code> that you want to delete. <code>RegexPatternSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
     pub regex_pattern_set_id: std::option::Option<std::string::String>,
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub change_token: std::option::Option<std::string::String>,
 }
 impl DeleteRegexPatternSetInput {
-    /// <p>The <code>RegexPatternSetId</code> of the <a>RegexPatternSet</a> that you want to delete. <code>RegexPatternSetId</code> is returned by <a>CreateRegexPatternSet</a> and by
-    /// <a>ListRegexPatternSets</a>.</p>
+    /// <p>The <code>RegexPatternSetId</code> of the <code>RegexPatternSet</code> that you want to delete. <code>RegexPatternSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
     pub fn regex_pattern_set_id(&self) -> std::option::Option<&str> {
         self.regex_pattern_set_id.as_deref()
     }
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(&self) -> std::option::Option<&str> {
         self.change_token.as_deref()
     }
@@ -16010,19 +14990,17 @@ impl std::fmt::Debug for DeleteRegexPatternSetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRegexMatchSetInput {
-    /// <p>The <code>RegexMatchSetId</code> of the <a>RegexMatchSet</a> that you want to delete. <code>RegexMatchSetId</code> is returned by <a>CreateRegexMatchSet</a> and by
-    /// <a>ListRegexMatchSets</a>.</p>
+    /// <p>The <code>RegexMatchSetId</code> of the <code>RegexMatchSet</code> that you want to delete. <code>RegexMatchSetId</code> is returned by <code>CreateRegexMatchSet</code> and by <code>ListRegexMatchSets</code>.</p>
     pub regex_match_set_id: std::option::Option<std::string::String>,
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub change_token: std::option::Option<std::string::String>,
 }
 impl DeleteRegexMatchSetInput {
-    /// <p>The <code>RegexMatchSetId</code> of the <a>RegexMatchSet</a> that you want to delete. <code>RegexMatchSetId</code> is returned by <a>CreateRegexMatchSet</a> and by
-    /// <a>ListRegexMatchSets</a>.</p>
+    /// <p>The <code>RegexMatchSetId</code> of the <code>RegexMatchSet</code> that you want to delete. <code>RegexMatchSetId</code> is returned by <code>CreateRegexMatchSet</code> and by <code>ListRegexMatchSets</code>.</p>
     pub fn regex_match_set_id(&self) -> std::option::Option<&str> {
         self.regex_match_set_id.as_deref()
     }
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(&self) -> std::option::Option<&str> {
         self.change_token.as_deref()
     }
@@ -16040,21 +15018,17 @@ impl std::fmt::Debug for DeleteRegexMatchSetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRateBasedRuleInput {
-    /// <p>The <code>RuleId</code> of the <a>RateBasedRule</a> that you want to
-    /// delete. <code>RuleId</code> is returned by <a>CreateRateBasedRule</a> and by
-    /// <a>ListRateBasedRules</a>.</p>
+    /// <p>The <code>RuleId</code> of the <code>RateBasedRule</code> that you want to delete. <code>RuleId</code> is returned by <code>CreateRateBasedRule</code> and by <code>ListRateBasedRules</code>.</p>
     pub rule_id: std::option::Option<std::string::String>,
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub change_token: std::option::Option<std::string::String>,
 }
 impl DeleteRateBasedRuleInput {
-    /// <p>The <code>RuleId</code> of the <a>RateBasedRule</a> that you want to
-    /// delete. <code>RuleId</code> is returned by <a>CreateRateBasedRule</a> and by
-    /// <a>ListRateBasedRules</a>.</p>
+    /// <p>The <code>RuleId</code> of the <code>RateBasedRule</code> that you want to delete. <code>RuleId</code> is returned by <code>CreateRateBasedRule</code> and by <code>ListRateBasedRules</code>.</p>
     pub fn rule_id(&self) -> std::option::Option<&str> {
         self.rule_id.as_deref()
     }
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(&self) -> std::option::Option<&str> {
         self.change_token.as_deref()
     }
@@ -16095,11 +15069,11 @@ impl std::fmt::Debug for DeletePermissionPolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLoggingConfigurationInput {
-    /// <p>The Amazon Resource Name (ARN) of the web ACL from which you want to delete the <a>LoggingConfiguration</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the web ACL from which you want to delete the <code>LoggingConfiguration</code>.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl DeleteLoggingConfigurationInput {
-    /// <p>The Amazon Resource Name (ARN) of the web ACL from which you want to delete the <a>LoggingConfiguration</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the web ACL from which you want to delete the <code>LoggingConfiguration</code>.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -16116,19 +15090,17 @@ impl std::fmt::Debug for DeleteLoggingConfigurationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteIpSetInput {
-    /// <p>The <code>IPSetId</code> of the <a>IPSet</a> that you want to delete. <code>IPSetId</code> is returned by <a>CreateIPSet</a> and by
-    /// <a>ListIPSets</a>.</p>
+    /// <p>The <code>IPSetId</code> of the <code>IPSet</code> that you want to delete. <code>IPSetId</code> is returned by <code>CreateIPSet</code> and by <code>ListIPSets</code>.</p>
     pub ip_set_id: std::option::Option<std::string::String>,
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub change_token: std::option::Option<std::string::String>,
 }
 impl DeleteIpSetInput {
-    /// <p>The <code>IPSetId</code> of the <a>IPSet</a> that you want to delete. <code>IPSetId</code> is returned by <a>CreateIPSet</a> and by
-    /// <a>ListIPSets</a>.</p>
+    /// <p>The <code>IPSetId</code> of the <code>IPSet</code> that you want to delete. <code>IPSetId</code> is returned by <code>CreateIPSet</code> and by <code>ListIPSets</code>.</p>
     pub fn ip_set_id(&self) -> std::option::Option<&str> {
         self.ip_set_id.as_deref()
     }
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(&self) -> std::option::Option<&str> {
         self.change_token.as_deref()
     }
@@ -16146,19 +15118,17 @@ impl std::fmt::Debug for DeleteIpSetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteGeoMatchSetInput {
-    /// <p>The <code>GeoMatchSetID</code> of the <a>GeoMatchSet</a> that you want to delete. <code>GeoMatchSetId</code> is returned by <a>CreateGeoMatchSet</a> and by
-    /// <a>ListGeoMatchSets</a>.</p>
+    /// <p>The <code>GeoMatchSetID</code> of the <code>GeoMatchSet</code> that you want to delete. <code>GeoMatchSetId</code> is returned by <code>CreateGeoMatchSet</code> and by <code>ListGeoMatchSets</code>.</p>
     pub geo_match_set_id: std::option::Option<std::string::String>,
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub change_token: std::option::Option<std::string::String>,
 }
 impl DeleteGeoMatchSetInput {
-    /// <p>The <code>GeoMatchSetID</code> of the <a>GeoMatchSet</a> that you want to delete. <code>GeoMatchSetId</code> is returned by <a>CreateGeoMatchSet</a> and by
-    /// <a>ListGeoMatchSets</a>.</p>
+    /// <p>The <code>GeoMatchSetID</code> of the <code>GeoMatchSet</code> that you want to delete. <code>GeoMatchSetId</code> is returned by <code>CreateGeoMatchSet</code> and by <code>ListGeoMatchSets</code>.</p>
     pub fn geo_match_set_id(&self) -> std::option::Option<&str> {
         self.geo_match_set_id.as_deref()
     }
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(&self) -> std::option::Option<&str> {
         self.change_token.as_deref()
     }
@@ -16176,19 +15146,17 @@ impl std::fmt::Debug for DeleteGeoMatchSetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteByteMatchSetInput {
-    /// <p>The <code>ByteMatchSetId</code> of the <a>ByteMatchSet</a> that you want to delete. <code>ByteMatchSetId</code> is returned by <a>CreateByteMatchSet</a> and by
-    /// <a>ListByteMatchSets</a>.</p>
+    /// <p>The <code>ByteMatchSetId</code> of the <code>ByteMatchSet</code> that you want to delete. <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
     pub byte_match_set_id: std::option::Option<std::string::String>,
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub change_token: std::option::Option<std::string::String>,
 }
 impl DeleteByteMatchSetInput {
-    /// <p>The <code>ByteMatchSetId</code> of the <a>ByteMatchSet</a> that you want to delete. <code>ByteMatchSetId</code> is returned by <a>CreateByteMatchSet</a> and by
-    /// <a>ListByteMatchSets</a>.</p>
+    /// <p>The <code>ByteMatchSetId</code> of the <code>ByteMatchSet</code> that you want to delete. <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
     pub fn byte_match_set_id(&self) -> std::option::Option<&str> {
         self.byte_match_set_id.as_deref()
     }
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(&self) -> std::option::Option<&str> {
         self.change_token.as_deref()
     }
@@ -16202,23 +15170,21 @@ impl std::fmt::Debug for DeleteByteMatchSetInput {
     }
 }
 
-/// <p>A request to create an <a>XssMatchSet</a>.</p>
+/// <p>A request to create an <code>XssMatchSet</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateXssMatchSetInput {
-    /// <p>A friendly name or description for the <a>XssMatchSet</a> that you're creating. You can't change <code>Name</code>
-    /// after you create the <code>XssMatchSet</code>.</p>
+    /// <p>A friendly name or description for the <code>XssMatchSet</code> that you're creating. You can't change <code>Name</code> after you create the <code>XssMatchSet</code>.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub change_token: std::option::Option<std::string::String>,
 }
 impl CreateXssMatchSetInput {
-    /// <p>A friendly name or description for the <a>XssMatchSet</a> that you're creating. You can't change <code>Name</code>
-    /// after you create the <code>XssMatchSet</code>.</p>
+    /// <p>A friendly name or description for the <code>XssMatchSet</code> that you're creating. You can't change <code>Name</code> after you create the <code>XssMatchSet</code>.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(&self) -> std::option::Option<&str> {
         self.change_token.as_deref()
     }
@@ -16238,24 +15204,14 @@ impl std::fmt::Debug for CreateXssMatchSetInput {
 pub struct CreateWebAclMigrationStackInput {
     /// <p>The UUID of the WAF Classic web ACL that you want to migrate to WAF v2.</p>
     pub web_acl_id: std::option::Option<std::string::String>,
-    /// <p>The name of the Amazon S3 bucket to store the CloudFormation template in. The S3 bucket must be
-    /// configured as follows for the migration:  </p>
+    /// <p>The name of the Amazon S3 bucket to store the CloudFormation template in. The S3 bucket must be configured as follows for the migration: </p>
     /// <ul>
-    /// <li>
-    /// <p>The bucket name must start with <code>aws-waf-migration-</code>. For example, <code>aws-waf-migration-my-web-acl</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>The bucket must be in the Region where you are deploying the template. For example, for a web ACL in us-west-2, you must use an Amazon S3 bucket in us-west-2 and you must deploy the template stack to us-west-2. </p>
-    /// </li>
-    /// <li>
-    /// <p>The bucket policies must permit the migration process to write data. For listings of the
-    /// bucket policies, see the Examples section. </p>
-    /// </li>
+    /// <li> <p>The bucket name must start with <code>aws-waf-migration-</code>. For example, <code>aws-waf-migration-my-web-acl</code>.</p> </li>
+    /// <li> <p>The bucket must be in the Region where you are deploying the template. For example, for a web ACL in us-west-2, you must use an Amazon S3 bucket in us-west-2 and you must deploy the template stack to us-west-2. </p> </li>
+    /// <li> <p>The bucket policies must permit the migration process to write data. For listings of the bucket policies, see the Examples section. </p> </li>
     /// </ul>
     pub s3_bucket_name: std::option::Option<std::string::String>,
-    /// <p>Indicates whether to exclude entities that can't be migrated or to stop the migration.
-    /// Set this to true to ignore unsupported entities in the web ACL during the migration. Otherwise, if AWS WAF encounters unsupported
-    /// entities, it stops the process and throws an exception. </p>
+    /// <p>Indicates whether to exclude entities that can't be migrated or to stop the migration. Set this to true to ignore unsupported entities in the web ACL during the migration. Otherwise, if AWS WAF encounters unsupported entities, it stops the process and throws an exception. </p>
     pub ignore_unsupported_type: std::option::Option<bool>,
 }
 impl CreateWebAclMigrationStackInput {
@@ -16263,26 +15219,16 @@ impl CreateWebAclMigrationStackInput {
     pub fn web_acl_id(&self) -> std::option::Option<&str> {
         self.web_acl_id.as_deref()
     }
-    /// <p>The name of the Amazon S3 bucket to store the CloudFormation template in. The S3 bucket must be
-    /// configured as follows for the migration:  </p>
+    /// <p>The name of the Amazon S3 bucket to store the CloudFormation template in. The S3 bucket must be configured as follows for the migration: </p>
     /// <ul>
-    /// <li>
-    /// <p>The bucket name must start with <code>aws-waf-migration-</code>. For example, <code>aws-waf-migration-my-web-acl</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>The bucket must be in the Region where you are deploying the template. For example, for a web ACL in us-west-2, you must use an Amazon S3 bucket in us-west-2 and you must deploy the template stack to us-west-2. </p>
-    /// </li>
-    /// <li>
-    /// <p>The bucket policies must permit the migration process to write data. For listings of the
-    /// bucket policies, see the Examples section. </p>
-    /// </li>
+    /// <li> <p>The bucket name must start with <code>aws-waf-migration-</code>. For example, <code>aws-waf-migration-my-web-acl</code>.</p> </li>
+    /// <li> <p>The bucket must be in the Region where you are deploying the template. For example, for a web ACL in us-west-2, you must use an Amazon S3 bucket in us-west-2 and you must deploy the template stack to us-west-2. </p> </li>
+    /// <li> <p>The bucket policies must permit the migration process to write data. For listings of the bucket policies, see the Examples section. </p> </li>
     /// </ul>
     pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
         self.s3_bucket_name.as_deref()
     }
-    /// <p>Indicates whether to exclude entities that can't be migrated or to stop the migration.
-    /// Set this to true to ignore unsupported entities in the web ACL during the migration. Otherwise, if AWS WAF encounters unsupported
-    /// entities, it stops the process and throws an exception. </p>
+    /// <p>Indicates whether to exclude entities that can't be migrated or to stop the migration. Set this to true to ignore unsupported entities in the web ACL during the migration. Otherwise, if AWS WAF encounters unsupported entities, it stops the process and throws an exception. </p>
     pub fn ignore_unsupported_type(&self) -> std::option::Option<bool> {
         self.ignore_unsupported_type
     }
@@ -16301,37 +15247,31 @@ impl std::fmt::Debug for CreateWebAclMigrationStackInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWebAclInput {
-    /// <p>A friendly name or description of the <a>WebACL</a>. You can't change <code>Name</code> after you create the <code>WebACL</code>.</p>
+    /// <p>A friendly name or description of the <code>WebACL</code>. You can't change <code>Name</code> after you create the <code>WebACL</code>.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>A friendly name or description for the metrics for this <code>WebACL</code>.The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain
-    /// whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change <code>MetricName</code> after you create the
-    /// <code>WebACL</code>.</p>
+    /// <p>A friendly name or description for the metrics for this <code>WebACL</code>.The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change <code>MetricName</code> after you create the <code>WebACL</code>.</p>
     pub metric_name: std::option::Option<std::string::String>,
-    /// <p>The action that you want  AWS WAF to take when a request doesn't match the criteria specified in any of the <code>Rule</code>
-    /// objects that are associated with the <code>WebACL</code>.</p>
+    /// <p>The action that you want AWS WAF to take when a request doesn't match the criteria specified in any of the <code>Rule</code> objects that are associated with the <code>WebACL</code>.</p>
     pub default_action: std::option::Option<crate::model::WafAction>,
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub change_token: std::option::Option<std::string::String>,
     /// <p></p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateWebAclInput {
-    /// <p>A friendly name or description of the <a>WebACL</a>. You can't change <code>Name</code> after you create the <code>WebACL</code>.</p>
+    /// <p>A friendly name or description of the <code>WebACL</code>. You can't change <code>Name</code> after you create the <code>WebACL</code>.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>A friendly name or description for the metrics for this <code>WebACL</code>.The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain
-    /// whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change <code>MetricName</code> after you create the
-    /// <code>WebACL</code>.</p>
+    /// <p>A friendly name or description for the metrics for this <code>WebACL</code>.The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change <code>MetricName</code> after you create the <code>WebACL</code>.</p>
     pub fn metric_name(&self) -> std::option::Option<&str> {
         self.metric_name.as_deref()
     }
-    /// <p>The action that you want  AWS WAF to take when a request doesn't match the criteria specified in any of the <code>Rule</code>
-    /// objects that are associated with the <code>WebACL</code>.</p>
+    /// <p>The action that you want AWS WAF to take when a request doesn't match the criteria specified in any of the <code>Rule</code> objects that are associated with the <code>WebACL</code>.</p>
     pub fn default_action(&self) -> std::option::Option<&crate::model::WafAction> {
         self.default_action.as_ref()
     }
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(&self) -> std::option::Option<&str> {
         self.change_token.as_deref()
     }
@@ -16352,23 +15292,21 @@ impl std::fmt::Debug for CreateWebAclInput {
     }
 }
 
-/// <p>A request to create a <a>SqlInjectionMatchSet</a>.</p>
+/// <p>A request to create a <code>SqlInjectionMatchSet</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSqlInjectionMatchSetInput {
-    /// <p>A friendly name or description for the <a>SqlInjectionMatchSet</a> that you're creating. You can't change <code>Name</code>
-    /// after you create the <code>SqlInjectionMatchSet</code>.</p>
+    /// <p>A friendly name or description for the <code>SqlInjectionMatchSet</code> that you're creating. You can't change <code>Name</code> after you create the <code>SqlInjectionMatchSet</code>.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub change_token: std::option::Option<std::string::String>,
 }
 impl CreateSqlInjectionMatchSetInput {
-    /// <p>A friendly name or description for the <a>SqlInjectionMatchSet</a> that you're creating. You can't change <code>Name</code>
-    /// after you create the <code>SqlInjectionMatchSet</code>.</p>
+    /// <p>A friendly name or description for the <code>SqlInjectionMatchSet</code> that you're creating. You can't change <code>Name</code> after you create the <code>SqlInjectionMatchSet</code>.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(&self) -> std::option::Option<&str> {
         self.change_token.as_deref()
     }
@@ -16386,19 +15324,17 @@ impl std::fmt::Debug for CreateSqlInjectionMatchSetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSizeConstraintSetInput {
-    /// <p>A friendly name or description of the <a>SizeConstraintSet</a>. You can't change <code>Name</code> after you create a
-    /// <code>SizeConstraintSet</code>.</p>
+    /// <p>A friendly name or description of the <code>SizeConstraintSet</code>. You can't change <code>Name</code> after you create a <code>SizeConstraintSet</code>.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub change_token: std::option::Option<std::string::String>,
 }
 impl CreateSizeConstraintSetInput {
-    /// <p>A friendly name or description of the <a>SizeConstraintSet</a>. You can't change <code>Name</code> after you create a
-    /// <code>SizeConstraintSet</code>.</p>
+    /// <p>A friendly name or description of the <code>SizeConstraintSet</code>. You can't change <code>Name</code> after you create a <code>SizeConstraintSet</code>.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(&self) -> std::option::Option<&str> {
         self.change_token.as_deref()
     }
@@ -16416,29 +15352,25 @@ impl std::fmt::Debug for CreateSizeConstraintSetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRuleGroupInput {
-    /// <p>A friendly name or description of the <a>RuleGroup</a>. You can't change <code>Name</code> after you create a
-    /// <code>RuleGroup</code>.</p>
+    /// <p>A friendly name or description of the <code>RuleGroup</code>. You can't change <code>Name</code> after you create a <code>RuleGroup</code>.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>A friendly name or description for the metrics for this <code>RuleGroup</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain
-    /// whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after you create the <code>RuleGroup</code>.</p>
+    /// <p>A friendly name or description for the metrics for this <code>RuleGroup</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after you create the <code>RuleGroup</code>.</p>
     pub metric_name: std::option::Option<std::string::String>,
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub change_token: std::option::Option<std::string::String>,
     /// <p></p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateRuleGroupInput {
-    /// <p>A friendly name or description of the <a>RuleGroup</a>. You can't change <code>Name</code> after you create a
-    /// <code>RuleGroup</code>.</p>
+    /// <p>A friendly name or description of the <code>RuleGroup</code>. You can't change <code>Name</code> after you create a <code>RuleGroup</code>.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>A friendly name or description for the metrics for this <code>RuleGroup</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain
-    /// whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after you create the <code>RuleGroup</code>.</p>
+    /// <p>A friendly name or description for the metrics for this <code>RuleGroup</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after you create the <code>RuleGroup</code>.</p>
     pub fn metric_name(&self) -> std::option::Option<&str> {
         self.metric_name.as_deref()
     }
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(&self) -> std::option::Option<&str> {
         self.change_token.as_deref()
     }
@@ -16462,29 +15394,25 @@ impl std::fmt::Debug for CreateRuleGroupInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRuleInput {
-    /// <p>A friendly name or description of the <a>Rule</a>. You can't change the name of a <code>Rule</code> after you create it.</p>
+    /// <p>A friendly name or description of the <code>Rule</code>. You can't change the name of a <code>Rule</code> after you create it.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>A friendly name or description for the metrics for this <code>Rule</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain
-    /// whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after you create the
-    /// <code>Rule</code>.</p>
+    /// <p>A friendly name or description for the metrics for this <code>Rule</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after you create the <code>Rule</code>.</p>
     pub metric_name: std::option::Option<std::string::String>,
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub change_token: std::option::Option<std::string::String>,
     /// <p></p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateRuleInput {
-    /// <p>A friendly name or description of the <a>Rule</a>. You can't change the name of a <code>Rule</code> after you create it.</p>
+    /// <p>A friendly name or description of the <code>Rule</code>. You can't change the name of a <code>Rule</code> after you create it.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>A friendly name or description for the metrics for this <code>Rule</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain
-    /// whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after you create the
-    /// <code>Rule</code>.</p>
+    /// <p>A friendly name or description for the metrics for this <code>Rule</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after you create the <code>Rule</code>.</p>
     pub fn metric_name(&self) -> std::option::Option<&str> {
         self.metric_name.as_deref()
     }
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(&self) -> std::option::Option<&str> {
         self.change_token.as_deref()
     }
@@ -16508,19 +15436,17 @@ impl std::fmt::Debug for CreateRuleInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRegexPatternSetInput {
-    /// <p>A friendly name or description of the <a>RegexPatternSet</a>. You can't change <code>Name</code> after you create a
-    /// <code>RegexPatternSet</code>.</p>
+    /// <p>A friendly name or description of the <code>RegexPatternSet</code>. You can't change <code>Name</code> after you create a <code>RegexPatternSet</code>.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub change_token: std::option::Option<std::string::String>,
 }
 impl CreateRegexPatternSetInput {
-    /// <p>A friendly name or description of the <a>RegexPatternSet</a>. You can't change <code>Name</code> after you create a
-    /// <code>RegexPatternSet</code>.</p>
+    /// <p>A friendly name or description of the <code>RegexPatternSet</code>. You can't change <code>Name</code> after you create a <code>RegexPatternSet</code>.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(&self) -> std::option::Option<&str> {
         self.change_token.as_deref()
     }
@@ -16538,19 +15464,17 @@ impl std::fmt::Debug for CreateRegexPatternSetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRegexMatchSetInput {
-    /// <p>A friendly name or description of the <a>RegexMatchSet</a>. You can't change <code>Name</code> after you create a
-    /// <code>RegexMatchSet</code>.</p>
+    /// <p>A friendly name or description of the <code>RegexMatchSet</code>. You can't change <code>Name</code> after you create a <code>RegexMatchSet</code>.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub change_token: std::option::Option<std::string::String>,
 }
 impl CreateRegexMatchSetInput {
-    /// <p>A friendly name or description of the <a>RegexMatchSet</a>. You can't change <code>Name</code> after you create a
-    /// <code>RegexMatchSet</code>.</p>
+    /// <p>A friendly name or description of the <code>RegexMatchSet</code>. You can't change <code>Name</code> after you create a <code>RegexMatchSet</code>.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(&self) -> std::option::Option<&str> {
         self.change_token.as_deref()
     }
@@ -16568,63 +15492,37 @@ impl std::fmt::Debug for CreateRegexMatchSetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRateBasedRuleInput {
-    /// <p>A friendly name or description of the <a>RateBasedRule</a>. You can't
-    /// change the name of a <code>RateBasedRule</code> after you create it.</p>
+    /// <p>A friendly name or description of the <code>RateBasedRule</code>. You can't change the name of a <code>RateBasedRule</code> after you create it.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>A friendly name or description for the metrics for this <code>RateBasedRule</code>.
-    /// The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain
-    /// whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after you create the
-    /// <code>RateBasedRule</code>.</p>
+    /// <p>A friendly name or description for the metrics for this <code>RateBasedRule</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after you create the <code>RateBasedRule</code>.</p>
     pub metric_name: std::option::Option<std::string::String>,
-    /// <p>The field that AWS WAF uses to determine if requests are likely arriving from a single
-    /// source and thus subject to rate monitoring. The only valid value for <code>RateKey</code>
-    /// is <code>IP</code>. <code>IP</code> indicates that requests that arrive from the same IP
-    /// address are subject to the <code>RateLimit</code> that is specified in
-    /// the <code>RateBasedRule</code>.</p>
+    /// <p>The field that AWS WAF uses to determine if requests are likely arriving from a single source and thus subject to rate monitoring. The only valid value for <code>RateKey</code> is <code>IP</code>. <code>IP</code> indicates that requests that arrive from the same IP address are subject to the <code>RateLimit</code> that is specified in the <code>RateBasedRule</code>.</p>
     pub rate_key: std::option::Option<crate::model::RateKey>,
-    /// <p>The maximum number of requests, which have an identical value in the field that is
-    /// specified by <code>RateKey</code>, allowed in a five-minute period. If the number of
-    /// requests exceeds the <code>RateLimit</code> and the other predicates specified in the rule
-    /// are also met, AWS WAF triggers the action that is specified for this rule.</p>
+    /// <p>The maximum number of requests, which have an identical value in the field that is specified by <code>RateKey</code>, allowed in a five-minute period. If the number of requests exceeds the <code>RateLimit</code> and the other predicates specified in the rule are also met, AWS WAF triggers the action that is specified for this rule.</p>
     pub rate_limit: i64,
-    /// <p>The <code>ChangeToken</code> that you used to submit the
-    /// <code>CreateRateBasedRule</code> request. You can also use this value to query the
-    /// status of the request. For more information, see <a>GetChangeTokenStatus</a>.</p>
+    /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRateBasedRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     pub change_token: std::option::Option<std::string::String>,
     /// <p></p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateRateBasedRuleInput {
-    /// <p>A friendly name or description of the <a>RateBasedRule</a>. You can't
-    /// change the name of a <code>RateBasedRule</code> after you create it.</p>
+    /// <p>A friendly name or description of the <code>RateBasedRule</code>. You can't change the name of a <code>RateBasedRule</code> after you create it.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>A friendly name or description for the metrics for this <code>RateBasedRule</code>.
-    /// The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain
-    /// whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after you create the
-    /// <code>RateBasedRule</code>.</p>
+    /// <p>A friendly name or description for the metrics for this <code>RateBasedRule</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after you create the <code>RateBasedRule</code>.</p>
     pub fn metric_name(&self) -> std::option::Option<&str> {
         self.metric_name.as_deref()
     }
-    /// <p>The field that AWS WAF uses to determine if requests are likely arriving from a single
-    /// source and thus subject to rate monitoring. The only valid value for <code>RateKey</code>
-    /// is <code>IP</code>. <code>IP</code> indicates that requests that arrive from the same IP
-    /// address are subject to the <code>RateLimit</code> that is specified in
-    /// the <code>RateBasedRule</code>.</p>
+    /// <p>The field that AWS WAF uses to determine if requests are likely arriving from a single source and thus subject to rate monitoring. The only valid value for <code>RateKey</code> is <code>IP</code>. <code>IP</code> indicates that requests that arrive from the same IP address are subject to the <code>RateLimit</code> that is specified in the <code>RateBasedRule</code>.</p>
     pub fn rate_key(&self) -> std::option::Option<&crate::model::RateKey> {
         self.rate_key.as_ref()
     }
-    /// <p>The maximum number of requests, which have an identical value in the field that is
-    /// specified by <code>RateKey</code>, allowed in a five-minute period. If the number of
-    /// requests exceeds the <code>RateLimit</code> and the other predicates specified in the rule
-    /// are also met, AWS WAF triggers the action that is specified for this rule.</p>
+    /// <p>The maximum number of requests, which have an identical value in the field that is specified by <code>RateKey</code>, allowed in a five-minute period. If the number of requests exceeds the <code>RateLimit</code> and the other predicates specified in the rule are also met, AWS WAF triggers the action that is specified for this rule.</p>
     pub fn rate_limit(&self) -> i64 {
         self.rate_limit
     }
-    /// <p>The <code>ChangeToken</code> that you used to submit the
-    /// <code>CreateRateBasedRule</code> request. You can also use this value to query the
-    /// status of the request. For more information, see <a>GetChangeTokenStatus</a>.</p>
+    /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRateBasedRule</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     pub fn change_token(&self) -> std::option::Option<&str> {
         self.change_token.as_deref()
     }
@@ -16650,17 +15548,17 @@ impl std::fmt::Debug for CreateRateBasedRuleInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateIpSetInput {
-    /// <p>A friendly name or description of the <a>IPSet</a>. You can't change <code>Name</code> after you create the <code>IPSet</code>.</p>
+    /// <p>A friendly name or description of the <code>IPSet</code>. You can't change <code>Name</code> after you create the <code>IPSet</code>.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub change_token: std::option::Option<std::string::String>,
 }
 impl CreateIpSetInput {
-    /// <p>A friendly name or description of the <a>IPSet</a>. You can't change <code>Name</code> after you create the <code>IPSet</code>.</p>
+    /// <p>A friendly name or description of the <code>IPSet</code>. You can't change <code>Name</code> after you create the <code>IPSet</code>.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(&self) -> std::option::Option<&str> {
         self.change_token.as_deref()
     }
@@ -16678,17 +15576,17 @@ impl std::fmt::Debug for CreateIpSetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGeoMatchSetInput {
-    /// <p>A friendly name or description of the <a>GeoMatchSet</a>. You can't change <code>Name</code> after you create the <code>GeoMatchSet</code>.</p>
+    /// <p>A friendly name or description of the <code>GeoMatchSet</code>. You can't change <code>Name</code> after you create the <code>GeoMatchSet</code>.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub change_token: std::option::Option<std::string::String>,
 }
 impl CreateGeoMatchSetInput {
-    /// <p>A friendly name or description of the <a>GeoMatchSet</a>. You can't change <code>Name</code> after you create the <code>GeoMatchSet</code>.</p>
+    /// <p>A friendly name or description of the <code>GeoMatchSet</code>. You can't change <code>Name</code> after you create the <code>GeoMatchSet</code>.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(&self) -> std::option::Option<&str> {
         self.change_token.as_deref()
     }
@@ -16706,19 +15604,17 @@ impl std::fmt::Debug for CreateGeoMatchSetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateByteMatchSetInput {
-    /// <p>A friendly name or description of the <a>ByteMatchSet</a>. You can't change <code>Name</code> after you create a
-    /// <code>ByteMatchSet</code>.</p>
+    /// <p>A friendly name or description of the <code>ByteMatchSet</code>. You can't change <code>Name</code> after you create a <code>ByteMatchSet</code>.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub change_token: std::option::Option<std::string::String>,
 }
 impl CreateByteMatchSetInput {
-    /// <p>A friendly name or description of the <a>ByteMatchSet</a>. You can't change <code>Name</code> after you create a
-    /// <code>ByteMatchSet</code>.</p>
+    /// <p>A friendly name or description of the <code>ByteMatchSet</code>. You can't change <code>Name</code> after you create a <code>ByteMatchSet</code>.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+    /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(&self) -> std::option::Option<&str> {
         self.change_token.as_deref()
     }

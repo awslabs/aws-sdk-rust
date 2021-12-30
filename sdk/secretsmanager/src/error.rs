@@ -16,17 +16,11 @@ pub enum CancelRotateSecretErrorKind {
     InternalServiceError(crate::error::InternalServiceError),
     /// <p>You provided an invalid value for a parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>You provided a parameter value that is not valid for the current state of the
-    /// resource.</p>
+    /// <p>You provided a parameter value that is not valid for the current state of the resource.</p>
     /// <p>Possible causes:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to perform the operation on a secret that's currently marked deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to enable rotation on a secret that doesn't already have a Lambda function
-    /// ARN configured and you didn't include such an ARN as a parameter in this call. </p>
-    /// </li>
+    /// <li> <p>You tried to perform the operation on a secret that's currently marked deleted.</p> </li>
+    /// <li> <p>You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't include such an ARN as a parameter in this call. </p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>We can't find the resource that you asked for.</p>
@@ -149,26 +143,17 @@ pub struct CreateSecretError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateSecretErrorKind {
-    /// <p>Secrets Manager can't encrypt the protected secret text using the provided KMS key. Check that the
-    /// customer master key (CMK) is available, enabled, and not in an invalid state. For more
-    /// information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects Use of a
-    /// Customer Master Key</a>.</p>
+    /// <p>Secrets Manager can't encrypt the protected secret text using the provided KMS key. Check that the customer master key (CMK) is available, enabled, and not in an invalid state. For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects Use of a Customer Master Key</a>.</p>
     EncryptionFailure(crate::error::EncryptionFailure),
     /// <p>An error occurred on the server side.</p>
     InternalServiceError(crate::error::InternalServiceError),
     /// <p>You provided an invalid value for a parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>You provided a parameter value that is not valid for the current state of the
-    /// resource.</p>
+    /// <p>You provided a parameter value that is not valid for the current state of the resource.</p>
     /// <p>Possible causes:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to perform the operation on a secret that's currently marked deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to enable rotation on a secret that doesn't already have a Lambda function
-    /// ARN configured and you didn't include such an ARN as a parameter in this call. </p>
-    /// </li>
+    /// <li> <p>You tried to perform the operation on a secret that's currently marked deleted.</p> </li>
+    /// <li> <p>You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't include such an ARN as a parameter in this call. </p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The request failed because it would exceed one of the Secrets Manager internal limits.</p>
@@ -339,17 +324,11 @@ pub enum DeleteResourcePolicyErrorKind {
     InternalServiceError(crate::error::InternalServiceError),
     /// <p>You provided an invalid value for a parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>You provided a parameter value that is not valid for the current state of the
-    /// resource.</p>
+    /// <p>You provided a parameter value that is not valid for the current state of the resource.</p>
     /// <p>Possible causes:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to perform the operation on a secret that's currently marked deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to enable rotation on a secret that doesn't already have a Lambda function
-    /// ARN configured and you didn't include such an ARN as a parameter in this call. </p>
-    /// </li>
+    /// <li> <p>You tried to perform the operation on a secret that's currently marked deleted.</p> </li>
+    /// <li> <p>You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't include such an ARN as a parameter in this call. </p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>We can't find the resource that you asked for.</p>
@@ -476,17 +455,11 @@ pub enum DeleteSecretErrorKind {
     InternalServiceError(crate::error::InternalServiceError),
     /// <p>You provided an invalid value for a parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>You provided a parameter value that is not valid for the current state of the
-    /// resource.</p>
+    /// <p>You provided a parameter value that is not valid for the current state of the resource.</p>
     /// <p>Possible causes:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to perform the operation on a secret that's currently marked deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to enable rotation on a secret that doesn't already have a Lambda function
-    /// ARN configured and you didn't include such an ARN as a parameter in this call. </p>
-    /// </li>
+    /// <li> <p>You tried to perform the operation on a secret that's currently marked deleted.</p> </li>
+    /// <li> <p>You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't include such an ARN as a parameter in this call. </p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>We can't find the resource that you asked for.</p>
@@ -722,17 +695,11 @@ pub enum GetRandomPasswordErrorKind {
     InternalServiceError(crate::error::InternalServiceError),
     /// <p>You provided an invalid value for a parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>You provided a parameter value that is not valid for the current state of the
-    /// resource.</p>
+    /// <p>You provided a parameter value that is not valid for the current state of the resource.</p>
     /// <p>Possible causes:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to perform the operation on a secret that's currently marked deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to enable rotation on a secret that doesn't already have a Lambda function
-    /// ARN configured and you didn't include such an ARN as a parameter in this call. </p>
-    /// </li>
+    /// <li> <p>You tried to perform the operation on a secret that's currently marked deleted.</p> </li>
+    /// <li> <p>You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't include such an ARN as a parameter in this call. </p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -848,17 +815,11 @@ pub enum GetResourcePolicyErrorKind {
     InternalServiceError(crate::error::InternalServiceError),
     /// <p>You provided an invalid value for a parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>You provided a parameter value that is not valid for the current state of the
-    /// resource.</p>
+    /// <p>You provided a parameter value that is not valid for the current state of the resource.</p>
     /// <p>Possible causes:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to perform the operation on a secret that's currently marked deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to enable rotation on a secret that doesn't already have a Lambda function
-    /// ARN configured and you didn't include such an ARN as a parameter in this call. </p>
-    /// </li>
+    /// <li> <p>You tried to perform the operation on a secret that's currently marked deleted.</p> </li>
+    /// <li> <p>You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't include such an ARN as a parameter in this call. </p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>We can't find the resource that you asked for.</p>
@@ -987,17 +948,11 @@ pub enum GetSecretValueErrorKind {
     InternalServiceError(crate::error::InternalServiceError),
     /// <p>You provided an invalid value for a parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>You provided a parameter value that is not valid for the current state of the
-    /// resource.</p>
+    /// <p>You provided a parameter value that is not valid for the current state of the resource.</p>
     /// <p>Possible causes:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to perform the operation on a secret that's currently marked deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to enable rotation on a secret that doesn't already have a Lambda function
-    /// ARN configured and you didn't include such an ARN as a parameter in this call. </p>
-    /// </li>
+    /// <li> <p>You tried to perform the operation on a secret that's currently marked deleted.</p> </li>
+    /// <li> <p>You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't include such an ARN as a parameter in this call. </p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>We can't find the resource that you asked for.</p>
@@ -1365,17 +1320,11 @@ pub enum PutResourcePolicyErrorKind {
     InternalServiceError(crate::error::InternalServiceError),
     /// <p>You provided an invalid value for a parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>You provided a parameter value that is not valid for the current state of the
-    /// resource.</p>
+    /// <p>You provided a parameter value that is not valid for the current state of the resource.</p>
     /// <p>Possible causes:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to perform the operation on a secret that's currently marked deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to enable rotation on a secret that doesn't already have a Lambda function
-    /// ARN configured and you didn't include such an ARN as a parameter in this call. </p>
-    /// </li>
+    /// <li> <p>You tried to perform the operation on a secret that's currently marked deleted.</p> </li>
+    /// <li> <p>You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't include such an ARN as a parameter in this call. </p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>You provided a resource-based policy with syntax errors.</p>
@@ -1520,26 +1469,17 @@ pub struct PutSecretValueError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutSecretValueErrorKind {
-    /// <p>Secrets Manager can't encrypt the protected secret text using the provided KMS key. Check that the
-    /// customer master key (CMK) is available, enabled, and not in an invalid state. For more
-    /// information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects Use of a
-    /// Customer Master Key</a>.</p>
+    /// <p>Secrets Manager can't encrypt the protected secret text using the provided KMS key. Check that the customer master key (CMK) is available, enabled, and not in an invalid state. For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects Use of a Customer Master Key</a>.</p>
     EncryptionFailure(crate::error::EncryptionFailure),
     /// <p>An error occurred on the server side.</p>
     InternalServiceError(crate::error::InternalServiceError),
     /// <p>You provided an invalid value for a parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>You provided a parameter value that is not valid for the current state of the
-    /// resource.</p>
+    /// <p>You provided a parameter value that is not valid for the current state of the resource.</p>
     /// <p>Possible causes:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to perform the operation on a secret that's currently marked deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to enable rotation on a secret that doesn't already have a Lambda function
-    /// ARN configured and you didn't include such an ARN as a parameter in this call. </p>
-    /// </li>
+    /// <li> <p>You tried to perform the operation on a secret that's currently marked deleted.</p> </li>
+    /// <li> <p>You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't include such an ARN as a parameter in this call. </p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The request failed because it would exceed one of the Secrets Manager internal limits.</p>
@@ -1691,17 +1631,11 @@ pub enum RemoveRegionsFromReplicationErrorKind {
     InternalServiceError(crate::error::InternalServiceError),
     /// <p>You provided an invalid value for a parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>You provided a parameter value that is not valid for the current state of the
-    /// resource.</p>
+    /// <p>You provided a parameter value that is not valid for the current state of the resource.</p>
     /// <p>Possible causes:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to perform the operation on a secret that's currently marked deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to enable rotation on a secret that doesn't already have a Lambda function
-    /// ARN configured and you didn't include such an ARN as a parameter in this call. </p>
-    /// </li>
+    /// <li> <p>You tried to perform the operation on a secret that's currently marked deleted.</p> </li>
+    /// <li> <p>You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't include such an ARN as a parameter in this call. </p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>We can't find the resource that you asked for.</p>
@@ -1836,17 +1770,11 @@ pub enum ReplicateSecretToRegionsErrorKind {
     InternalServiceError(crate::error::InternalServiceError),
     /// <p>You provided an invalid value for a parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>You provided a parameter value that is not valid for the current state of the
-    /// resource.</p>
+    /// <p>You provided a parameter value that is not valid for the current state of the resource.</p>
     /// <p>Possible causes:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to perform the operation on a secret that's currently marked deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to enable rotation on a secret that doesn't already have a Lambda function
-    /// ARN configured and you didn't include such an ARN as a parameter in this call. </p>
-    /// </li>
+    /// <li> <p>You tried to perform the operation on a secret that's currently marked deleted.</p> </li>
+    /// <li> <p>You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't include such an ARN as a parameter in this call. </p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>We can't find the resource that you asked for.</p>
@@ -1973,17 +1901,11 @@ pub enum RestoreSecretErrorKind {
     InternalServiceError(crate::error::InternalServiceError),
     /// <p>You provided an invalid value for a parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>You provided a parameter value that is not valid for the current state of the
-    /// resource.</p>
+    /// <p>You provided a parameter value that is not valid for the current state of the resource.</p>
     /// <p>Possible causes:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to perform the operation on a secret that's currently marked deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to enable rotation on a secret that doesn't already have a Lambda function
-    /// ARN configured and you didn't include such an ARN as a parameter in this call. </p>
-    /// </li>
+    /// <li> <p>You tried to perform the operation on a secret that's currently marked deleted.</p> </li>
+    /// <li> <p>You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't include such an ARN as a parameter in this call. </p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>We can't find the resource that you asked for.</p>
@@ -2107,17 +2029,11 @@ pub enum RotateSecretErrorKind {
     InternalServiceError(crate::error::InternalServiceError),
     /// <p>You provided an invalid value for a parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>You provided a parameter value that is not valid for the current state of the
-    /// resource.</p>
+    /// <p>You provided a parameter value that is not valid for the current state of the resource.</p>
     /// <p>Possible causes:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to perform the operation on a secret that's currently marked deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to enable rotation on a secret that doesn't already have a Lambda function
-    /// ARN configured and you didn't include such an ARN as a parameter in this call. </p>
-    /// </li>
+    /// <li> <p>You tried to perform the operation on a secret that's currently marked deleted.</p> </li>
+    /// <li> <p>You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't include such an ARN as a parameter in this call. </p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>We can't find the resource that you asked for.</p>
@@ -2241,17 +2157,11 @@ pub enum StopReplicationToReplicaErrorKind {
     InternalServiceError(crate::error::InternalServiceError),
     /// <p>You provided an invalid value for a parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>You provided a parameter value that is not valid for the current state of the
-    /// resource.</p>
+    /// <p>You provided a parameter value that is not valid for the current state of the resource.</p>
     /// <p>Possible causes:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to perform the operation on a secret that's currently marked deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to enable rotation on a secret that doesn't already have a Lambda function
-    /// ARN configured and you didn't include such an ARN as a parameter in this call. </p>
-    /// </li>
+    /// <li> <p>You tried to perform the operation on a secret that's currently marked deleted.</p> </li>
+    /// <li> <p>You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't include such an ARN as a parameter in this call. </p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>We can't find the resource that you asked for.</p>
@@ -2378,17 +2288,11 @@ pub enum TagResourceErrorKind {
     InternalServiceError(crate::error::InternalServiceError),
     /// <p>You provided an invalid value for a parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>You provided a parameter value that is not valid for the current state of the
-    /// resource.</p>
+    /// <p>You provided a parameter value that is not valid for the current state of the resource.</p>
     /// <p>Possible causes:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to perform the operation on a secret that's currently marked deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to enable rotation on a secret that doesn't already have a Lambda function
-    /// ARN configured and you didn't include such an ARN as a parameter in this call. </p>
-    /// </li>
+    /// <li> <p>You tried to perform the operation on a secret that's currently marked deleted.</p> </li>
+    /// <li> <p>You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't include such an ARN as a parameter in this call. </p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>We can't find the resource that you asked for.</p>
@@ -2509,17 +2413,11 @@ pub enum UntagResourceErrorKind {
     InternalServiceError(crate::error::InternalServiceError),
     /// <p>You provided an invalid value for a parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>You provided a parameter value that is not valid for the current state of the
-    /// resource.</p>
+    /// <p>You provided a parameter value that is not valid for the current state of the resource.</p>
     /// <p>Possible causes:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to perform the operation on a secret that's currently marked deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to enable rotation on a secret that doesn't already have a Lambda function
-    /// ARN configured and you didn't include such an ARN as a parameter in this call. </p>
-    /// </li>
+    /// <li> <p>You tried to perform the operation on a secret that's currently marked deleted.</p> </li>
+    /// <li> <p>You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't include such an ARN as a parameter in this call. </p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>We can't find the resource that you asked for.</p>
@@ -2639,26 +2537,17 @@ pub struct UpdateSecretError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateSecretErrorKind {
-    /// <p>Secrets Manager can't encrypt the protected secret text using the provided KMS key. Check that the
-    /// customer master key (CMK) is available, enabled, and not in an invalid state. For more
-    /// information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects Use of a
-    /// Customer Master Key</a>.</p>
+    /// <p>Secrets Manager can't encrypt the protected secret text using the provided KMS key. Check that the customer master key (CMK) is available, enabled, and not in an invalid state. For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects Use of a Customer Master Key</a>.</p>
     EncryptionFailure(crate::error::EncryptionFailure),
     /// <p>An error occurred on the server side.</p>
     InternalServiceError(crate::error::InternalServiceError),
     /// <p>You provided an invalid value for a parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>You provided a parameter value that is not valid for the current state of the
-    /// resource.</p>
+    /// <p>You provided a parameter value that is not valid for the current state of the resource.</p>
     /// <p>Possible causes:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to perform the operation on a secret that's currently marked deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to enable rotation on a secret that doesn't already have a Lambda function
-    /// ARN configured and you didn't include such an ARN as a parameter in this call. </p>
-    /// </li>
+    /// <li> <p>You tried to perform the operation on a secret that's currently marked deleted.</p> </li>
+    /// <li> <p>You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't include such an ARN as a parameter in this call. </p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The request failed because it would exceed one of the Secrets Manager internal limits.</p>
@@ -2829,17 +2718,11 @@ pub enum UpdateSecretVersionStageErrorKind {
     InternalServiceError(crate::error::InternalServiceError),
     /// <p>You provided an invalid value for a parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>You provided a parameter value that is not valid for the current state of the
-    /// resource.</p>
+    /// <p>You provided a parameter value that is not valid for the current state of the resource.</p>
     /// <p>Possible causes:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to perform the operation on a secret that's currently marked deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to enable rotation on a secret that doesn't already have a Lambda function
-    /// ARN configured and you didn't include such an ARN as a parameter in this call. </p>
-    /// </li>
+    /// <li> <p>You tried to perform the operation on a secret that's currently marked deleted.</p> </li>
+    /// <li> <p>You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't include such an ARN as a parameter in this call. </p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The request failed because it would exceed one of the Secrets Manager internal limits.</p>
@@ -2977,17 +2860,11 @@ pub enum ValidateResourcePolicyErrorKind {
     InternalServiceError(crate::error::InternalServiceError),
     /// <p>You provided an invalid value for a parameter.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>You provided a parameter value that is not valid for the current state of the
-    /// resource.</p>
+    /// <p>You provided a parameter value that is not valid for the current state of the resource.</p>
     /// <p>Possible causes:</p>
     /// <ul>
-    /// <li>
-    /// <p>You tried to perform the operation on a secret that's currently marked deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to enable rotation on a secret that doesn't already have a Lambda function
-    /// ARN configured and you didn't include such an ARN as a parameter in this call. </p>
-    /// </li>
+    /// <li> <p>You tried to perform the operation on a secret that's currently marked deleted.</p> </li>
+    /// <li> <p>You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't include such an ARN as a parameter in this call. </p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>You provided a resource-based policy with syntax errors.</p>
@@ -3240,17 +3117,11 @@ impl MalformedPolicyDocumentException {
     }
 }
 
-/// <p>You provided a parameter value that is not valid for the current state of the
-/// resource.</p>
+/// <p>You provided a parameter value that is not valid for the current state of the resource.</p>
 /// <p>Possible causes:</p>
 /// <ul>
-/// <li>
-/// <p>You tried to perform the operation on a secret that's currently marked deleted.</p>
-/// </li>
-/// <li>
-/// <p>You tried to enable rotation on a secret that doesn't already have a Lambda function
-/// ARN configured and you didn't include such an ARN as a parameter in this call. </p>
-/// </li>
+/// <li> <p>You tried to perform the operation on a secret that's currently marked deleted.</p> </li>
+/// <li> <p>You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't include such an ARN as a parameter in this call. </p> </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -3635,10 +3506,7 @@ impl PreconditionNotMetException {
     }
 }
 
-/// <p>Secrets Manager can't encrypt the protected secret text using the provided KMS key. Check that the
-/// customer master key (CMK) is available, enabled, and not in an invalid state. For more
-/// information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects Use of a
-/// Customer Master Key</a>.</p>
+/// <p>Secrets Manager can't encrypt the protected secret text using the provided KMS key. Check that the customer master key (CMK) is available, enabled, and not in an invalid state. For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects Use of a Customer Master Key</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EncryptionFailure {

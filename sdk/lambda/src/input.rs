@@ -55,30 +55,22 @@ pub mod add_layer_version_permission_input {
             self.action = input;
             self
         }
-        /// <p>An account ID, or <code>*</code> to grant layer usage permission to all
-        /// accounts in an organization, or all Amazon Web Services accounts (if <code>organizationId</code> is not specified).
-        /// For the last case, make sure that you really do want all Amazon Web Services accounts to have usage permission to this layer.
-        /// </p>
+        /// <p>An account ID, or <code>*</code> to grant layer usage permission to all accounts in an organization, or all Amazon Web Services accounts (if <code>organizationId</code> is not specified). For the last case, make sure that you really do want all Amazon Web Services accounts to have usage permission to this layer. </p>
         pub fn principal(mut self, input: impl Into<std::string::String>) -> Self {
             self.principal = Some(input.into());
             self
         }
-        /// <p>An account ID, or <code>*</code> to grant layer usage permission to all
-        /// accounts in an organization, or all Amazon Web Services accounts (if <code>organizationId</code> is not specified).
-        /// For the last case, make sure that you really do want all Amazon Web Services accounts to have usage permission to this layer.
-        /// </p>
+        /// <p>An account ID, or <code>*</code> to grant layer usage permission to all accounts in an organization, or all Amazon Web Services accounts (if <code>organizationId</code> is not specified). For the last case, make sure that you really do want all Amazon Web Services accounts to have usage permission to this layer. </p>
         pub fn set_principal(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.principal = input;
             self
         }
-        /// <p>With the principal set to <code>*</code>, grant permission to all accounts in the specified
-        /// organization.</p>
+        /// <p>With the principal set to <code>*</code>, grant permission to all accounts in the specified organization.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.organization_id = Some(input.into());
             self
         }
-        /// <p>With the principal set to <code>*</code>, grant permission to all accounts in the specified
-        /// organization.</p>
+        /// <p>With the principal set to <code>*</code>, grant permission to all accounts in the specified organization.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -86,14 +78,12 @@ pub mod add_layer_version_permission_input {
             self.organization_id = input;
             self
         }
-        /// <p>Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a
-        /// policy that has changed since you last read it.</p>
+        /// <p>Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a policy that has changed since you last read it.</p>
         pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.revision_id = Some(input.into());
             self
         }
-        /// <p>Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a
-        /// policy that has changed since you last read it.</p>
+        /// <p>Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a policy that has changed since you last read it.</p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.revision_id = input;
             self
@@ -296,49 +286,25 @@ pub mod add_permission_input {
     }
     impl Builder {
         /// <p>The name of the Lambda function, version, or alias.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
         /// </ul>
-        /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
-        /// If you specify only the function name, it is limited to 64 characters in length.</p>
+        /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.function_name = Some(input.into());
             self
         }
         /// <p>The name of the Lambda function, version, or alias.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
         /// </ul>
-        /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
-        /// If you specify only the function name, it is limited to 64 characters in length.</p>
+        /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn set_function_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -356,54 +322,44 @@ pub mod add_permission_input {
             self.statement_id = input;
             self
         }
-        /// <p>The action that the principal can use on the function. For example, <code>lambda:InvokeFunction</code> or
-        /// <code>lambda:GetFunction</code>.</p>
+        /// <p>The action that the principal can use on the function. For example, <code>lambda:InvokeFunction</code> or <code>lambda:GetFunction</code>.</p>
         pub fn action(mut self, input: impl Into<std::string::String>) -> Self {
             self.action = Some(input.into());
             self
         }
-        /// <p>The action that the principal can use on the function. For example, <code>lambda:InvokeFunction</code> or
-        /// <code>lambda:GetFunction</code>.</p>
+        /// <p>The action that the principal can use on the function. For example, <code>lambda:InvokeFunction</code> or <code>lambda:GetFunction</code>.</p>
         pub fn set_action(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.action = input;
             self
         }
-        /// <p>The Amazon Web Services service or account that invokes the function. If you specify a service, use <code>SourceArn</code> or
-        /// <code>SourceAccount</code> to limit who can invoke the function through that service.</p>
+        /// <p>The Amazon Web Services service or account that invokes the function. If you specify a service, use <code>SourceArn</code> or <code>SourceAccount</code> to limit who can invoke the function through that service.</p>
         pub fn principal(mut self, input: impl Into<std::string::String>) -> Self {
             self.principal = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services service or account that invokes the function. If you specify a service, use <code>SourceArn</code> or
-        /// <code>SourceAccount</code> to limit who can invoke the function through that service.</p>
+        /// <p>The Amazon Web Services service or account that invokes the function. If you specify a service, use <code>SourceArn</code> or <code>SourceAccount</code> to limit who can invoke the function through that service.</p>
         pub fn set_principal(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.principal = input;
             self
         }
-        /// <p>For Amazon Web Services services, the ARN of the Amazon Web Services resource that invokes the function. For example, an Amazon S3 bucket or
-        /// Amazon SNS topic.</p>
+        /// <p>For Amazon Web Services services, the ARN of the Amazon Web Services resource that invokes the function. For example, an Amazon S3 bucket or Amazon SNS topic.</p>
         /// <p>Note that Lambda configures the comparison using the <code>StringLike</code> operator.</p>
         pub fn source_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_arn = Some(input.into());
             self
         }
-        /// <p>For Amazon Web Services services, the ARN of the Amazon Web Services resource that invokes the function. For example, an Amazon S3 bucket or
-        /// Amazon SNS topic.</p>
+        /// <p>For Amazon Web Services services, the ARN of the Amazon Web Services resource that invokes the function. For example, an Amazon S3 bucket or Amazon SNS topic.</p>
         /// <p>Note that Lambda configures the comparison using the <code>StringLike</code> operator.</p>
         pub fn set_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source_arn = input;
             self
         }
-        /// <p>For Amazon S3, the ID of the account that owns the resource. Use this together with <code>SourceArn</code> to
-        /// ensure that the resource is owned by the specified account. It is possible for an Amazon S3 bucket to be deleted
-        /// by its owner and recreated by another account.</p>
+        /// <p>For Amazon S3, the ID of the account that owns the resource. Use this together with <code>SourceArn</code> to ensure that the resource is owned by the specified account. It is possible for an Amazon S3 bucket to be deleted by its owner and recreated by another account.</p>
         pub fn source_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_account = Some(input.into());
             self
         }
-        /// <p>For Amazon S3, the ID of the account that owns the resource. Use this together with <code>SourceArn</code> to
-        /// ensure that the resource is owned by the specified account. It is possible for an Amazon S3 bucket to be deleted
-        /// by its owner and recreated by another account.</p>
+        /// <p>For Amazon S3, the ID of the account that owns the resource. Use this together with <code>SourceArn</code> to ensure that the resource is owned by the specified account. It is possible for an Amazon S3 bucket to be deleted by its owner and recreated by another account.</p>
         pub fn set_source_account(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -434,14 +390,12 @@ pub mod add_permission_input {
             self.qualifier = input;
             self
         }
-        /// <p>Only update the policy if the revision ID matches the ID that's specified. Use this option to avoid modifying a
-        /// policy that has changed since you last read it.</p>
+        /// <p>Only update the policy if the revision ID matches the ID that's specified. Use this option to avoid modifying a policy that has changed since you last read it.</p>
         pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.revision_id = Some(input.into());
             self
         }
-        /// <p>Only update the policy if the revision ID matches the ID that's specified. Use this option to avoid modifying a
-        /// policy that has changed since you last read it.</p>
+        /// <p>Only update the policy if the revision ID matches the ID that's specified. Use this option to avoid modifying a policy that has changed since you last read it.</p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.revision_id = input;
             self
@@ -628,49 +582,25 @@ pub mod create_alias_input {
     }
     impl Builder {
         /// <p>The name of the Lambda function.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>MyFunction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
         /// </ul>
-        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-        /// characters in length.</p>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.function_name = Some(input.into());
             self
         }
         /// <p>The name of the Lambda function.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>MyFunction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
         /// </ul>
-        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-        /// characters in length.</p>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn set_function_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -711,14 +641,12 @@ pub mod create_alias_input {
             self.description = input;
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html#configuring-alias-routing">routing
-        /// configuration</a> of the alias.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html#configuring-alias-routing">routing configuration</a> of the alias.</p>
         pub fn routing_config(mut self, input: crate::model::AliasRoutingConfiguration) -> Self {
             self.routing_config = Some(input);
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html#configuring-alias-routing">routing
-        /// configuration</a> of the alias.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html#configuring-alias-routing">routing configuration</a> of the alias.</p>
         pub fn set_routing_config(
             mut self,
             input: std::option::Option<crate::model::AliasRoutingConfiguration>,
@@ -1093,22 +1021,10 @@ pub mod create_event_source_mapping_input {
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the event source.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.</p>
-        /// </li>
+        /// <li> <p> <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.</p> </li>
+        /// <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li>
+        /// <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li>
+        /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.</p> </li>
         /// </ul>
         pub fn event_source_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.event_source_arn = Some(input.into());
@@ -1116,22 +1032,10 @@ pub mod create_event_source_mapping_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the event source.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.</p>
-        /// </li>
+        /// <li> <p> <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.</p> </li>
+        /// <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li>
+        /// <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li>
+        /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.</p> </li>
         /// </ul>
         pub fn set_event_source_arn(
             mut self,
@@ -1141,57 +1045,27 @@ pub mod create_event_source_mapping_input {
             self
         }
         /// <p>The name of the Lambda function.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>MyFunction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
         /// </ul>
-        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64
-        /// characters in length.</p>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.</p>
         pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.function_name = Some(input.into());
             self
         }
         /// <p>The name of the Lambda function.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>MyFunction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
         /// </ul>
-        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64
-        /// characters in length.</p>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.</p>
         pub fn set_function_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1211,78 +1085,38 @@ pub mod create_event_source_mapping_input {
             self.enabled = input;
             self
         }
-        /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation
-        /// (6 MB).</p>
+        /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> - Default 100. Max 10,000.</p>
-        /// </li>
+        /// <li> <p> <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p> </li>
+        /// <li> <p> <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.</p> </li>
+        /// <li> <p> <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p> </li>
+        /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
+        /// <li> <p> <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
+        /// <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> - Default 100. Max 10,000.</p> </li>
         /// </ul>
         pub fn batch_size(mut self, input: i32) -> Self {
             self.batch_size = Some(input);
             self
         }
-        /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation
-        /// (6 MB).</p>
+        /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> - Default 100. Max 10,000.</p>
-        /// </li>
+        /// <li> <p> <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p> </li>
+        /// <li> <p> <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.</p> </li>
+        /// <li> <p> <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p> </li>
+        /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
+        /// <li> <p> <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
+        /// <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> - Default 100. Max 10,000.</p> </li>
         /// </ul>
         pub fn set_batch_size(mut self, input: std::option::Option<i32>) -> Self {
             self.batch_size = input;
             self
         }
-        /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that
-        /// determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+        /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
         pub fn filter_criteria(mut self, input: crate::model::FilterCriteria) -> Self {
             self.filter_criteria = Some(input);
             self
         }
-        /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that
-        /// determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+        /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
         pub fn set_filter_criteria(
             mut self,
             input: std::option::Option<crate::model::FilterCriteria>,
@@ -1317,14 +1151,12 @@ pub mod create_event_source_mapping_input {
             self.parallelization_factor = input;
             self
         }
-        /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon
-        /// MSK Streams sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.</p>
+        /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK Streams sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.</p>
         pub fn starting_position(mut self, input: crate::model::EventSourcePosition) -> Self {
             self.starting_position = Some(input);
             self
         }
-        /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon
-        /// MSK Streams sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.</p>
+        /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK Streams sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.</p>
         pub fn set_starting_position(
             mut self,
             input: std::option::Option<crate::model::EventSourcePosition>,
@@ -1332,14 +1164,12 @@ pub mod create_event_source_mapping_input {
             self.starting_position = input;
             self
         }
-        /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start
-        /// reading.</p>
+        /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.</p>
         pub fn starting_position_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.starting_position_timestamp = Some(input);
             self
         }
-        /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start
-        /// reading.</p>
+        /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.</p>
         pub fn set_starting_position_timestamp(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1688,49 +1518,25 @@ pub mod create_function_input {
     }
     impl Builder {
         /// <p>The name of the Lambda function.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
         /// </ul>
-        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-        /// characters in length.</p>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.function_name = Some(input.into());
             self
         }
         /// <p>The name of the Lambda function.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
         /// </ul>
-        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-        /// characters in length.</p>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn set_function_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1738,14 +1544,12 @@ pub mod create_function_input {
             self.function_name = input;
             self
         }
-        /// <p>The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required if the deployment package is a .zip file archive.
-        /// </p>
+        /// <p>The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required if the deployment package is a .zip file archive. </p>
         pub fn runtime(mut self, input: crate::model::Runtime) -> Self {
             self.runtime = Some(input);
             self
         }
-        /// <p>The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required if the deployment package is a .zip file archive.
-        /// </p>
+        /// <p>The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required if the deployment package is a .zip file archive. </p>
         pub fn set_runtime(mut self, input: std::option::Option<crate::model::Runtime>) -> Self {
             self.runtime = input;
             self
@@ -1760,18 +1564,12 @@ pub mod create_function_input {
             self.role = input;
             self
         }
-        /// <p>The name of the method within your code that Lambda calls to execute your function.
-        /// Handler is required if the deployment package is a .zip file archive. The format includes the
-        /// file name. It can also include namespaces and other qualifiers, depending on the runtime. For more information,
-        /// see <a href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming Model</a>.</p>
+        /// <p>The name of the method within your code that Lambda calls to execute your function. Handler is required if the deployment package is a .zip file archive. The format includes the file name. It can also include namespaces and other qualifiers, depending on the runtime. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming Model</a>.</p>
         pub fn handler(mut self, input: impl Into<std::string::String>) -> Self {
             self.handler = Some(input.into());
             self
         }
-        /// <p>The name of the method within your code that Lambda calls to execute your function.
-        /// Handler is required if the deployment package is a .zip file archive. The format includes the
-        /// file name. It can also include namespaces and other qualifiers, depending on the runtime. For more information,
-        /// see <a href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming Model</a>.</p>
+        /// <p>The name of the method within your code that Lambda calls to execute your function. Handler is required if the deployment package is a .zip file archive. The format includes the file name. It can also include namespaces and other qualifiers, depending on the runtime. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming Model</a>.</p>
         pub fn set_handler(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.handler = input;
             self
@@ -1796,26 +1594,22 @@ pub mod create_function_input {
             self.description = input;
             self
         }
-        /// <p>The amount of time (in seconds) that Lambda allows a function to run before stopping it. The default is 3 seconds. The
-        /// maximum allowed value is 900 seconds. For additional information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda execution environment</a>.</p>
+        /// <p>The amount of time (in seconds) that Lambda allows a function to run before stopping it. The default is 3 seconds. The maximum allowed value is 900 seconds. For additional information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda execution environment</a>.</p>
         pub fn timeout(mut self, input: i32) -> Self {
             self.timeout = Some(input);
             self
         }
-        /// <p>The amount of time (in seconds) that Lambda allows a function to run before stopping it. The default is 3 seconds. The
-        /// maximum allowed value is 900 seconds. For additional information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda execution environment</a>.</p>
+        /// <p>The amount of time (in seconds) that Lambda allows a function to run before stopping it. The default is 3 seconds. The maximum allowed value is 900 seconds. For additional information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda execution environment</a>.</p>
         pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
             self.timeout = input;
             self
         }
-        /// <p>The amount of  <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-memory.html">memory available to the function</a> at runtime.
-        /// Increasing the function memory also increases its CPU allocation. The default value is 128 MB. The value can be any multiple of 1 MB.</p>
+        /// <p>The amount of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-memory.html">memory available to the function</a> at runtime. Increasing the function memory also increases its CPU allocation. The default value is 128 MB. The value can be any multiple of 1 MB.</p>
         pub fn memory_size(mut self, input: i32) -> Self {
             self.memory_size = Some(input);
             self
         }
-        /// <p>The amount of  <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-memory.html">memory available to the function</a> at runtime.
-        /// Increasing the function memory also increases its CPU allocation. The default value is 128 MB. The value can be any multiple of 1 MB.</p>
+        /// <p>The amount of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-memory.html">memory available to the function</a> at runtime. Increasing the function memory also increases its CPU allocation. The default value is 128 MB. The value can be any multiple of 1 MB.</p>
         pub fn set_memory_size(mut self, input: std::option::Option<i32>) -> Self {
             self.memory_size = input;
             self
@@ -1830,16 +1624,12 @@ pub mod create_function_input {
             self.publish = input;
             self
         }
-        /// <p>For network connectivity to Amazon Web Services resources in a VPC, specify a list of security groups and subnets in the VPC.
-        /// When you connect a function to a VPC, it can only access resources and the internet through that VPC. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC Settings</a>.</p>
+        /// <p>For network connectivity to Amazon Web Services resources in a VPC, specify a list of security groups and subnets in the VPC. When you connect a function to a VPC, it can only access resources and the internet through that VPC. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC Settings</a>.</p>
         pub fn vpc_config(mut self, input: crate::model::VpcConfig) -> Self {
             self.vpc_config = Some(input);
             self
         }
-        /// <p>For network connectivity to Amazon Web Services resources in a VPC, specify a list of security groups and subnets in the VPC.
-        /// When you connect a function to a VPC, it can only access resources and the internet through that VPC. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC Settings</a>.</p>
+        /// <p>For network connectivity to Amazon Web Services resources in a VPC, specify a list of security groups and subnets in the VPC. When you connect a function to a VPC, it can only access resources and the internet through that VPC. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC Settings</a>.</p>
         pub fn set_vpc_config(
             mut self,
             input: std::option::Option<crate::model::VpcConfig>,
@@ -1860,14 +1650,12 @@ pub mod create_function_input {
             self.package_type = input;
             self
         }
-        /// <p>A dead letter queue configuration that specifies the queue or topic where Lambda sends asynchronous events
-        /// when they fail processing. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">Dead Letter Queues</a>.</p>
+        /// <p>A dead letter queue configuration that specifies the queue or topic where Lambda sends asynchronous events when they fail processing. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">Dead Letter Queues</a>.</p>
         pub fn dead_letter_config(mut self, input: crate::model::DeadLetterConfig) -> Self {
             self.dead_letter_config = Some(input);
             self
         }
-        /// <p>A dead letter queue configuration that specifies the queue or topic where Lambda sends asynchronous events
-        /// when they fail processing. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">Dead Letter Queues</a>.</p>
+        /// <p>A dead letter queue configuration that specifies the queue or topic where Lambda sends asynchronous events when they fail processing. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">Dead Letter Queues</a>.</p>
         pub fn set_dead_letter_config(
             mut self,
             input: std::option::Option<crate::model::DeadLetterConfig>,
@@ -1888,26 +1676,22 @@ pub mod create_function_input {
             self.environment = input;
             self
         }
-        /// <p>The ARN of the Amazon Web Services Key Management Service (KMS) key that's used to encrypt your function's environment
-        /// variables. If it's not provided, Lambda uses a default service key.</p>
+        /// <p>The ARN of the Amazon Web Services Key Management Service (KMS) key that's used to encrypt your function's environment variables. If it's not provided, Lambda uses a default service key.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the Amazon Web Services Key Management Service (KMS) key that's used to encrypt your function's environment
-        /// variables. If it's not provided, Lambda uses a default service key.</p>
+        /// <p>The ARN of the Amazon Web Services Key Management Service (KMS) key that's used to encrypt your function's environment variables. If it's not provided, Lambda uses a default service key.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_arn = input;
             self
         }
-        /// <p>Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of incoming requests with
-        /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/services-xray.html">X-Ray</a>.</p>
+        /// <p>Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of incoming requests with <a href="https://docs.aws.amazon.com/lambda/latest/dg/services-xray.html">X-Ray</a>.</p>
         pub fn tracing_config(mut self, input: crate::model::TracingConfig) -> Self {
             self.tracing_config = Some(input);
             self
         }
-        /// <p>Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of incoming requests with
-        /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/services-xray.html">X-Ray</a>.</p>
+        /// <p>Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of incoming requests with <a href="https://docs.aws.amazon.com/lambda/latest/dg/services-xray.html">X-Ray</a>.</p>
         pub fn set_tracing_config(
             mut self,
             input: std::option::Option<crate::model::TracingConfig>,
@@ -1919,8 +1703,7 @@ pub mod create_function_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a> to apply to the
-        /// function.</p>
+        /// <p>A list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a> to apply to the function.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1931,8 +1714,7 @@ pub mod create_function_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a> to apply to the
-        /// function.</p>
+        /// <p>A list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a> to apply to the function.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1946,16 +1728,14 @@ pub mod create_function_input {
         ///
         /// To override the contents of this collection use [`set_layers`](Self::set_layers).
         ///
-        /// <p>A list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function layers</a>
-        /// to add to the function's execution environment. Specify each layer by its ARN, including the version.</p>
+        /// <p>A list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function layers</a> to add to the function's execution environment. Specify each layer by its ARN, including the version.</p>
         pub fn layers(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.layers.unwrap_or_default();
             v.push(input.into());
             self.layers = Some(v);
             self
         }
-        /// <p>A list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function layers</a>
-        /// to add to the function's execution environment. Specify each layer by its ARN, including the version.</p>
+        /// <p>A list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function layers</a> to add to the function's execution environment. Specify each layer by its ARN, including the version.</p>
         pub fn set_layers(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1982,14 +1762,12 @@ pub mod create_function_input {
             self.file_system_configs = input;
             self
         }
-        /// <p>Container image <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-images.html#configuration-images-settings">configuration
-        /// values</a> that override the values in the container image Dockerfile.</p>
+        /// <p>Container image <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-images.html#configuration-images-settings">configuration values</a> that override the values in the container image Dockerfile.</p>
         pub fn image_config(mut self, input: crate::model::ImageConfig) -> Self {
             self.image_config = Some(input);
             self
         }
-        /// <p>Container image <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-images.html#configuration-images-settings">configuration
-        /// values</a> that override the values in the container image Dockerfile.</p>
+        /// <p>Container image <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-images.html#configuration-images-settings">configuration values</a> that override the values in the container image Dockerfile.</p>
         pub fn set_image_config(
             mut self,
             input: std::option::Option<crate::model::ImageConfig>,
@@ -1997,14 +1775,12 @@ pub mod create_function_input {
             self.image_config = input;
             self
         }
-        /// <p>To enable code signing for this function, specify the ARN of a code-signing configuration. A code-signing configuration
-        /// includes a set of signing profiles, which define the trusted publishers for this function.</p>
+        /// <p>To enable code signing for this function, specify the ARN of a code-signing configuration. A code-signing configuration includes a set of signing profiles, which define the trusted publishers for this function.</p>
         pub fn code_signing_config_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.code_signing_config_arn = Some(input.into());
             self
         }
-        /// <p>To enable code signing for this function, specify the ARN of a code-signing configuration. A code-signing configuration
-        /// includes a set of signing profiles, which define the trusted publishers for this function.</p>
+        /// <p>To enable code signing for this function, specify the ARN of a code-signing configuration. A code-signing configuration includes a set of signing profiles, which define the trusted publishers for this function.</p>
         pub fn set_code_signing_config_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2016,16 +1792,14 @@ pub mod create_function_input {
         ///
         /// To override the contents of this collection use [`set_architectures`](Self::set_architectures).
         ///
-        /// <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values (arm64 or x86_64).
-        /// The default value is <code>x86_64</code>.</p>
+        /// <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values (arm64 or x86_64). The default value is <code>x86_64</code>.</p>
         pub fn architectures(mut self, input: crate::model::Architecture) -> Self {
             let mut v = self.architectures.unwrap_or_default();
             v.push(input);
             self.architectures = Some(v);
             self
         }
-        /// <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values (arm64 or x86_64).
-        /// The default value is <code>x86_64</code>.</p>
+        /// <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values (arm64 or x86_64). The default value is <code>x86_64</code>.</p>
         pub fn set_architectures(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
@@ -2194,49 +1968,25 @@ pub mod delete_alias_input {
     }
     impl Builder {
         /// <p>The name of the Lambda function.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>MyFunction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
         /// </ul>
-        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-        /// characters in length.</p>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.function_name = Some(input.into());
             self
         }
         /// <p>The name of the Lambda function.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>MyFunction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
         /// </ul>
-        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-        /// characters in length.</p>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn set_function_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2731,49 +2481,25 @@ pub mod delete_function_input {
     }
     impl Builder {
         /// <p>The name of the Lambda function or version.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:1</code> (with version).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:1</code> (with version).</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
         /// </ul>
-        /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
-        /// If you specify only the function name, it is limited to 64 characters in length.</p>
+        /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.function_name = Some(input.into());
             self
         }
         /// <p>The name of the Lambda function or version.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:1</code> (with version).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:1</code> (with version).</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
         /// </ul>
-        /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
-        /// If you specify only the function name, it is limited to 64 characters in length.</p>
+        /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn set_function_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2949,49 +2675,25 @@ pub mod delete_function_code_signing_config_input {
     }
     impl Builder {
         /// <p>The name of the Lambda function.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>MyFunction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
         /// </ul>
-        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-        /// characters in length.</p>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.function_name = Some(input.into());
             self
         }
         /// <p>The name of the Lambda function.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>MyFunction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
         /// </ul>
-        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-        /// characters in length.</p>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn set_function_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3147,49 +2849,25 @@ pub mod delete_function_concurrency_input {
     }
     impl Builder {
         /// <p>The name of the Lambda function.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
         /// </ul>
-        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-        /// characters in length.</p>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.function_name = Some(input.into());
             self
         }
         /// <p>The name of the Lambda function.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
         /// </ul>
-        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-        /// characters in length.</p>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn set_function_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3345,49 +3023,25 @@ pub mod delete_function_event_invoke_config_input {
     }
     impl Builder {
         /// <p>The name of the Lambda function, version, or alias.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
         /// </ul>
-        /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
-        /// If you specify only the function name, it is limited to 64 characters in length.</p>
+        /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.function_name = Some(input.into());
             self
         }
         /// <p>The name of the Lambda function, version, or alias.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
         /// </ul>
-        /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
-        /// If you specify only the function name, it is limited to 64 characters in length.</p>
+        /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn set_function_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3743,49 +3397,25 @@ pub mod delete_provisioned_concurrency_config_input {
     }
     impl Builder {
         /// <p>The name of the Lambda function.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
         /// </ul>
-        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-        /// characters in length.</p>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.function_name = Some(input.into());
             self
         }
         /// <p>The name of the Lambda function.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
         /// </ul>
-        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-        /// characters in length.</p>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn set_function_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4085,49 +3715,25 @@ pub mod get_alias_input {
     }
     impl Builder {
         /// <p>The name of the Lambda function.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>MyFunction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
         /// </ul>
-        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-        /// characters in length.</p>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.function_name = Some(input.into());
             self
         }
         /// <p>The name of the Lambda function.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>MyFunction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
         /// </ul>
-        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-        /// characters in length.</p>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn set_function_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4615,49 +4221,25 @@ pub mod get_function_input {
     }
     impl Builder {
         /// <p>The name of the Lambda function, version, or alias.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
         /// </ul>
-        /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
-        /// If you specify only the function name, it is limited to 64 characters in length.</p>
+        /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.function_name = Some(input.into());
             self
         }
         /// <p>The name of the Lambda function, version, or alias.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
         /// </ul>
-        /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
-        /// If you specify only the function name, it is limited to 64 characters in length.</p>
+        /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn set_function_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4833,49 +4415,25 @@ pub mod get_function_code_signing_config_input {
     }
     impl Builder {
         /// <p>The name of the Lambda function.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>MyFunction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
         /// </ul>
-        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-        /// characters in length.</p>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.function_name = Some(input.into());
             self
         }
         /// <p>The name of the Lambda function.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>MyFunction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
         /// </ul>
-        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-        /// characters in length.</p>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn set_function_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5031,49 +4589,25 @@ pub mod get_function_concurrency_input {
     }
     impl Builder {
         /// <p>The name of the Lambda function.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
         /// </ul>
-        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-        /// characters in length.</p>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.function_name = Some(input.into());
             self
         }
         /// <p>The name of the Lambda function.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
         /// </ul>
-        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-        /// characters in length.</p>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn set_function_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5228,49 +4762,25 @@ pub mod get_function_configuration_input {
     }
     impl Builder {
         /// <p>The name of the Lambda function, version, or alias.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
         /// </ul>
-        /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
-        /// If you specify only the function name, it is limited to 64 characters in length.</p>
+        /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.function_name = Some(input.into());
             self
         }
         /// <p>The name of the Lambda function, version, or alias.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
         /// </ul>
-        /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
-        /// If you specify only the function name, it is limited to 64 characters in length.</p>
+        /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn set_function_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5448,49 +4958,25 @@ pub mod get_function_event_invoke_config_input {
     }
     impl Builder {
         /// <p>The name of the Lambda function, version, or alias.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
         /// </ul>
-        /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
-        /// If you specify only the function name, it is limited to 64 characters in length.</p>
+        /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.function_name = Some(input.into());
             self
         }
         /// <p>The name of the Lambda function, version, or alias.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
         /// </ul>
-        /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
-        /// If you specify only the function name, it is limited to 64 characters in length.</p>
+        /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn set_function_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6168,49 +5654,25 @@ pub mod get_policy_input {
     }
     impl Builder {
         /// <p>The name of the Lambda function, version, or alias.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
         /// </ul>
-        /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
-        /// If you specify only the function name, it is limited to 64 characters in length.</p>
+        /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.function_name = Some(input.into());
             self
         }
         /// <p>The name of the Lambda function, version, or alias.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
         /// </ul>
-        /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
-        /// If you specify only the function name, it is limited to 64 characters in length.</p>
+        /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn set_function_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6383,49 +5845,25 @@ pub mod get_provisioned_concurrency_config_input {
     }
     impl Builder {
         /// <p>The name of the Lambda function.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
         /// </ul>
-        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-        /// characters in length.</p>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.function_name = Some(input.into());
             self
         }
         /// <p>The name of the Lambda function.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
         /// </ul>
-        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-        /// characters in length.</p>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn set_function_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6608,49 +6046,25 @@ pub mod invoke_input {
     }
     impl Builder {
         /// <p>The name of the Lambda function, version, or alias.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
         /// </ul>
-        /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
-        /// If you specify only the function name, it is limited to 64 characters in length.</p>
+        /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.function_name = Some(input.into());
             self
         }
         /// <p>The name of the Lambda function, version, or alias.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
         /// </ul>
-        /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
-        /// If you specify only the function name, it is limited to 64 characters in length.</p>
+        /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn set_function_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6660,22 +6074,9 @@ pub mod invoke_input {
         }
         /// <p>Choose from the following options.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>RequestResponse</code> (default) - Invoke the function synchronously. Keep the connection open until
-        /// the function returns a response or times out. The API response includes the function response and additional
-        /// data.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Event</code> - Invoke the function asynchronously. Send events that fail multiple times to the
-        /// function's dead-letter queue (if it's configured). The API response only includes a status code.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DryRun</code> - Validate parameter values and verify that the user or role has permission to invoke
-        /// the function.</p>
-        /// </li>
+        /// <li> <p> <code>RequestResponse</code> (default) - Invoke the function synchronously. Keep the connection open until the function returns a response or times out. The API response includes the function response and additional data.</p> </li>
+        /// <li> <p> <code>Event</code> - Invoke the function asynchronously. Send events that fail multiple times to the function's dead-letter queue (if it's configured). The API response only includes a status code.</p> </li>
+        /// <li> <p> <code>DryRun</code> - Validate parameter values and verify that the user or role has permission to invoke the function.</p> </li>
         /// </ul>
         pub fn invocation_type(mut self, input: crate::model::InvocationType) -> Self {
             self.invocation_type = Some(input);
@@ -6683,22 +6084,9 @@ pub mod invoke_input {
         }
         /// <p>Choose from the following options.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>RequestResponse</code> (default) - Invoke the function synchronously. Keep the connection open until
-        /// the function returns a response or times out. The API response includes the function response and additional
-        /// data.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Event</code> - Invoke the function asynchronously. Send events that fail multiple times to the
-        /// function's dead-letter queue (if it's configured). The API response only includes a status code.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DryRun</code> - Validate parameter values and verify that the user or role has permission to invoke
-        /// the function.</p>
-        /// </li>
+        /// <li> <p> <code>RequestResponse</code> (default) - Invoke the function synchronously. Keep the connection open until the function returns a response or times out. The API response includes the function response and additional data.</p> </li>
+        /// <li> <p> <code>Event</code> - Invoke the function asynchronously. Send events that fail multiple times to the function's dead-letter queue (if it's configured). The API response only includes a status code.</p> </li>
+        /// <li> <p> <code>DryRun</code> - Validate parameter values and verify that the user or role has permission to invoke the function.</p> </li>
         /// </ul>
         pub fn set_invocation_type(
             mut self,
@@ -6717,14 +6105,12 @@ pub mod invoke_input {
             self.log_type = input;
             self
         }
-        /// <p>Up to 3583 bytes of base64-encoded data about the invoking client to pass to the function in the context
-        /// object.</p>
+        /// <p>Up to 3583 bytes of base64-encoded data about the invoking client to pass to the function in the context object.</p>
         pub fn client_context(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_context = Some(input.into());
             self
         }
-        /// <p>Up to 3583 bytes of base64-encoded data about the invoking client to pass to the function in the context
-        /// object.</p>
+        /// <p>Up to 3583 bytes of base64-encoded data about the invoking client to pass to the function in the context object.</p>
         pub fn set_client_context(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6733,17 +6119,13 @@ pub mod invoke_input {
             self
         }
         /// <p>The JSON that you want to provide to your Lambda function as input.</p>
-        /// <p>You can enter the JSON directly. For example, <code>--payload '{ "key": "value" }'</code>.
-        /// You can also specify a file path. For example, <code>--payload file://payload.json</code>.
-        /// </p>
+        /// <p>You can enter the JSON directly. For example, <code>--payload '{ "key": "value" }'</code>. You can also specify a file path. For example, <code>--payload file://payload.json</code>. </p>
         pub fn payload(mut self, input: aws_smithy_types::Blob) -> Self {
             self.payload = Some(input);
             self
         }
         /// <p>The JSON that you want to provide to your Lambda function as input.</p>
-        /// <p>You can enter the JSON directly. For example, <code>--payload '{ "key": "value" }'</code>.
-        /// You can also specify a file path. For example, <code>--payload file://payload.json</code>.
-        /// </p>
+        /// <p>You can enter the JSON directly. For example, <code>--payload '{ "key": "value" }'</code>. You can also specify a file path. For example, <code>--payload file://payload.json</code>. </p>
         pub fn set_payload(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.payload = input;
             self
@@ -6985,49 +6367,25 @@ pub mod invoke_async_input {
     }
     impl Builder {
         /// <p>The name of the Lambda function.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
         /// </ul>
-        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-        /// characters in length.</p>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.function_name = Some(input.into());
             self
         }
         /// <p>The name of the Lambda function.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
         /// </ul>
-        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-        /// characters in length.</p>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn set_function_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7211,49 +6569,25 @@ pub mod list_aliases_input {
     }
     impl Builder {
         /// <p>The name of the Lambda function.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>MyFunction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
         /// </ul>
-        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-        /// characters in length.</p>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.function_name = Some(input.into());
             self
         }
         /// <p>The name of the Lambda function.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>MyFunction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
         /// </ul>
-        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-        /// characters in length.</p>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn set_function_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7634,22 +6968,10 @@ pub mod list_event_source_mappings_input {
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the event source.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.</p>
-        /// </li>
+        /// <li> <p> <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.</p> </li>
+        /// <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li>
+        /// <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li>
+        /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.</p> </li>
         /// </ul>
         pub fn event_source_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.event_source_arn = Some(input.into());
@@ -7657,22 +6979,10 @@ pub mod list_event_source_mappings_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the event source.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.</p>
-        /// </li>
+        /// <li> <p> <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.</p> </li>
+        /// <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li>
+        /// <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li>
+        /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.</p> </li>
         /// </ul>
         pub fn set_event_source_arn(
             mut self,
@@ -7682,57 +6992,27 @@ pub mod list_event_source_mappings_input {
             self
         }
         /// <p>The name of the Lambda function.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>MyFunction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
         /// </ul>
-        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64
-        /// characters in length.</p>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.</p>
         pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.function_name = Some(input.into());
             self
         }
         /// <p>The name of the Lambda function.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>MyFunction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
         /// </ul>
-        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64
-        /// characters in length.</p>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.</p>
         pub fn set_function_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7750,14 +7030,12 @@ pub mod list_event_source_mappings_input {
             self.marker = input;
             self
         }
-        /// <p>The maximum number of event source mappings to return. Note that ListEventSourceMappings returns a maximum of
-        /// 100 items in each response, even if you set the number higher.</p>
+        /// <p>The maximum number of event source mappings to return. Note that ListEventSourceMappings returns a maximum of 100 items in each response, even if you set the number higher.</p>
         pub fn max_items(mut self, input: i32) -> Self {
             self.max_items = Some(input);
             self
         }
-        /// <p>The maximum number of event source mappings to return. Note that ListEventSourceMappings returns a maximum of
-        /// 100 items in each response, even if you set the number higher.</p>
+        /// <p>The maximum number of event source mappings to return. Note that ListEventSourceMappings returns a maximum of 100 items in each response, even if you set the number higher.</p>
         pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
             self.max_items = input;
             self
@@ -7923,49 +7201,25 @@ pub mod list_function_event_invoke_configs_input {
     }
     impl Builder {
         /// <p>The name of the Lambda function.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
         /// </ul>
-        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-        /// characters in length.</p>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.function_name = Some(input.into());
             self
         }
         /// <p>The name of the Lambda function.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
         /// </ul>
-        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-        /// characters in length.</p>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn set_function_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8162,16 +7416,12 @@ pub mod list_functions_input {
         pub(crate) max_items: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>For Lambda@Edge functions, the Amazon Web Services Region of the master function. For example, <code>us-east-1</code> filters
-        /// the list of functions to only include Lambda@Edge functions replicated from a master function in US East (N.
-        /// Virginia). If specified, you must set <code>FunctionVersion</code> to <code>ALL</code>.</p>
+        /// <p>For Lambda@Edge functions, the Amazon Web Services Region of the master function. For example, <code>us-east-1</code> filters the list of functions to only include Lambda@Edge functions replicated from a master function in US East (N. Virginia). If specified, you must set <code>FunctionVersion</code> to <code>ALL</code>.</p>
         pub fn master_region(mut self, input: impl Into<std::string::String>) -> Self {
             self.master_region = Some(input.into());
             self
         }
-        /// <p>For Lambda@Edge functions, the Amazon Web Services Region of the master function. For example, <code>us-east-1</code> filters
-        /// the list of functions to only include Lambda@Edge functions replicated from a master function in US East (N.
-        /// Virginia). If specified, you must set <code>FunctionVersion</code> to <code>ALL</code>.</p>
+        /// <p>For Lambda@Edge functions, the Amazon Web Services Region of the master function. For example, <code>us-east-1</code> filters the list of functions to only include Lambda@Edge functions replicated from a master function in US East (N. Virginia). If specified, you must set <code>FunctionVersion</code> to <code>ALL</code>.</p>
         pub fn set_master_region(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8202,14 +7452,12 @@ pub mod list_functions_input {
             self.marker = input;
             self
         }
-        /// <p>The maximum number of functions to return in the response. Note that <code>ListFunctions</code> returns a maximum of 50 items in each response,
-        /// even if you set the number higher.</p>
+        /// <p>The maximum number of functions to return in the response. Note that <code>ListFunctions</code> returns a maximum of 50 items in each response, even if you set the number higher.</p>
         pub fn max_items(mut self, input: i32) -> Self {
             self.max_items = Some(input);
             self
         }
-        /// <p>The maximum number of functions to return in the response. Note that <code>ListFunctions</code> returns a maximum of 50 items in each response,
-        /// even if you set the number higher.</p>
+        /// <p>The maximum number of functions to return in the response. Note that <code>ListFunctions</code> returns a maximum of 50 items in each response, even if you set the number higher.</p>
         pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
             self.max_items = input;
             self
@@ -8608,14 +7856,12 @@ pub mod list_layers_input {
             self.max_items = input;
             self
         }
-        /// <p>The compatible
-        /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architecture</a>.</p>
+        /// <p>The compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architecture</a>.</p>
         pub fn compatible_architecture(mut self, input: crate::model::Architecture) -> Self {
             self.compatible_architecture = Some(input);
             self
         }
-        /// <p>The compatible
-        /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architecture</a>.</p>
+        /// <p>The compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architecture</a>.</p>
         pub fn set_compatible_architecture(
             mut self,
             input: std::option::Option<crate::model::Architecture>,
@@ -8827,14 +8073,12 @@ pub mod list_layer_versions_input {
             self.max_items = input;
             self
         }
-        /// <p>The compatible
-        /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architecture</a>.</p>
+        /// <p>The compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architecture</a>.</p>
         pub fn compatible_architecture(mut self, input: crate::model::Architecture) -> Self {
             self.compatible_architecture = Some(input);
             self
         }
-        /// <p>The compatible
-        /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architecture</a>.</p>
+        /// <p>The compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architecture</a>.</p>
         pub fn set_compatible_architecture(
             mut self,
             input: std::option::Option<crate::model::Architecture>,
@@ -9023,49 +8267,25 @@ pub mod list_provisioned_concurrency_configs_input {
     }
     impl Builder {
         /// <p>The name of the Lambda function.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
         /// </ul>
-        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-        /// characters in length.</p>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.function_name = Some(input.into());
             self
         }
         /// <p>The name of the Lambda function.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
         /// </ul>
-        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-        /// characters in length.</p>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn set_function_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9260,14 +8480,12 @@ pub mod list_tags_input {
         pub(crate) resource: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The function's Amazon Resource Name (ARN).
-        /// Note: Lambda does not support adding tags to aliases or versions.</p>
+        /// <p>The function's Amazon Resource Name (ARN). Note: Lambda does not support adding tags to aliases or versions.</p>
         pub fn resource(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource = Some(input.into());
             self
         }
-        /// <p>The function's Amazon Resource Name (ARN).
-        /// Note: Lambda does not support adding tags to aliases or versions.</p>
+        /// <p>The function's Amazon Resource Name (ARN). Note: Lambda does not support adding tags to aliases or versions.</p>
         pub fn set_resource(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource = input;
             self
@@ -9411,49 +8629,25 @@ pub mod list_versions_by_function_input {
     }
     impl Builder {
         /// <p>The name of the Lambda function.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>MyFunction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
         /// </ul>
-        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-        /// characters in length.</p>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.function_name = Some(input.into());
             self
         }
         /// <p>The name of the Lambda function.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>MyFunction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
         /// </ul>
-        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-        /// characters in length.</p>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn set_function_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9471,14 +8665,12 @@ pub mod list_versions_by_function_input {
             self.marker = input;
             self
         }
-        /// <p>The maximum number of versions to return. Note that <code>ListVersionsByFunction</code> returns a maximum of 50 items in each response,
-        /// even if you set the number higher.</p>
+        /// <p>The maximum number of versions to return. Note that <code>ListVersionsByFunction</code> returns a maximum of 50 items in each response, even if you set the number higher.</p>
         pub fn max_items(mut self, input: i32) -> Self {
             self.max_items = Some(input);
             self
         }
-        /// <p>The maximum number of versions to return. Note that <code>ListVersionsByFunction</code> returns a maximum of 50 items in each response,
-        /// even if you set the number higher.</p>
+        /// <p>The maximum number of versions to return. Note that <code>ListVersionsByFunction</code> returns a maximum of 50 items in each response, even if you set the number higher.</p>
         pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
             self.max_items = input;
             self
@@ -9690,16 +8882,14 @@ pub mod publish_layer_version_input {
         ///
         /// To override the contents of this collection use [`set_compatible_runtimes`](Self::set_compatible_runtimes).
         ///
-        /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
-        /// runtimes</a>. Used for filtering with <a>ListLayers</a> and <a>ListLayerVersions</a>.</p>
+        /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function runtimes</a>. Used for filtering with <code>ListLayers</code> and <code>ListLayerVersions</code>.</p>
         pub fn compatible_runtimes(mut self, input: crate::model::Runtime) -> Self {
             let mut v = self.compatible_runtimes.unwrap_or_default();
             v.push(input);
             self.compatible_runtimes = Some(v);
             self
         }
-        /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
-        /// runtimes</a>. Used for filtering with <a>ListLayers</a> and <a>ListLayerVersions</a>.</p>
+        /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function runtimes</a>. Used for filtering with <code>ListLayers</code> and <code>ListLayerVersions</code>.</p>
         pub fn set_compatible_runtimes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Runtime>>,
@@ -9709,17 +8899,9 @@ pub mod publish_layer_version_input {
         }
         /// <p>The layer's software license. It can be any of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>An <a href="https://spdx.org/licenses/">SPDX license identifier</a>. For example,
-        /// <code>MIT</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>The URL of a license hosted on the internet. For example,
-        /// <code>https://opensource.org/licenses/MIT</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>The full text of the license.</p>
-        /// </li>
+        /// <li> <p>An <a href="https://spdx.org/licenses/">SPDX license identifier</a>. For example, <code>MIT</code>.</p> </li>
+        /// <li> <p>The URL of a license hosted on the internet. For example, <code>https://opensource.org/licenses/MIT</code>.</p> </li>
+        /// <li> <p>The full text of the license.</p> </li>
         /// </ul>
         pub fn license_info(mut self, input: impl Into<std::string::String>) -> Self {
             self.license_info = Some(input.into());
@@ -9727,17 +8909,9 @@ pub mod publish_layer_version_input {
         }
         /// <p>The layer's software license. It can be any of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>An <a href="https://spdx.org/licenses/">SPDX license identifier</a>. For example,
-        /// <code>MIT</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>The URL of a license hosted on the internet. For example,
-        /// <code>https://opensource.org/licenses/MIT</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>The full text of the license.</p>
-        /// </li>
+        /// <li> <p>An <a href="https://spdx.org/licenses/">SPDX license identifier</a>. For example, <code>MIT</code>.</p> </li>
+        /// <li> <p>The URL of a license hosted on the internet. For example, <code>https://opensource.org/licenses/MIT</code>.</p> </li>
+        /// <li> <p>The full text of the license.</p> </li>
         /// </ul>
         pub fn set_license_info(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.license_info = input;
@@ -9747,16 +8921,14 @@ pub mod publish_layer_version_input {
         ///
         /// To override the contents of this collection use [`set_compatible_architectures`](Self::set_compatible_architectures).
         ///
-        /// <p>A list of compatible  
-        /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
+        /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
         pub fn compatible_architectures(mut self, input: crate::model::Architecture) -> Self {
             let mut v = self.compatible_architectures.unwrap_or_default();
             v.push(input);
             self.compatible_architectures = Some(v);
             self
         }
-        /// <p>A list of compatible  
-        /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
+        /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
         pub fn set_compatible_architectures(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
@@ -9932,49 +9104,25 @@ pub mod publish_version_input {
     }
     impl Builder {
         /// <p>The name of the Lambda function.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>MyFunction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
         /// </ul>
-        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-        /// characters in length.</p>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.function_name = Some(input.into());
             self
         }
         /// <p>The name of the Lambda function.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>MyFunction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
         /// </ul>
-        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-        /// characters in length.</p>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn set_function_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9982,16 +9130,12 @@ pub mod publish_version_input {
             self.function_name = input;
             self
         }
-        /// <p>Only publish a version if the hash value matches the value that's specified. Use this option to avoid
-        /// publishing a version if the function code has changed since you last updated it. You can get the hash for the
-        /// version that you uploaded from the output of <a>UpdateFunctionCode</a>.</p>
+        /// <p>Only publish a version if the hash value matches the value that's specified. Use this option to avoid publishing a version if the function code has changed since you last updated it. You can get the hash for the version that you uploaded from the output of <code>UpdateFunctionCode</code>.</p>
         pub fn code_sha256(mut self, input: impl Into<std::string::String>) -> Self {
             self.code_sha256 = Some(input.into());
             self
         }
-        /// <p>Only publish a version if the hash value matches the value that's specified. Use this option to avoid
-        /// publishing a version if the function code has changed since you last updated it. You can get the hash for the
-        /// version that you uploaded from the output of <a>UpdateFunctionCode</a>.</p>
+        /// <p>Only publish a version if the hash value matches the value that's specified. Use this option to avoid publishing a version if the function code has changed since you last updated it. You can get the hash for the version that you uploaded from the output of <code>UpdateFunctionCode</code>.</p>
         pub fn set_code_sha256(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.code_sha256 = input;
             self
@@ -10006,14 +9150,12 @@ pub mod publish_version_input {
             self.description = input;
             self
         }
-        /// <p>Only update the function if the revision ID matches the ID that's specified. Use this option to avoid
-        /// publishing a version if the function configuration has changed since you last updated it.</p>
+        /// <p>Only update the function if the revision ID matches the ID that's specified. Use this option to avoid publishing a version if the function configuration has changed since you last updated it.</p>
         pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.revision_id = Some(input.into());
             self
         }
-        /// <p>Only update the function if the revision ID matches the ID that's specified. Use this option to avoid
-        /// publishing a version if the function configuration has changed since you last updated it.</p>
+        /// <p>Only update the function if the revision ID matches the ID that's specified. Use this option to avoid publishing a version if the function configuration has changed since you last updated it.</p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.revision_id = input;
             self
@@ -10195,49 +9337,25 @@ pub mod put_function_code_signing_config_input {
             self
         }
         /// <p>The name of the Lambda function.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>MyFunction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
         /// </ul>
-        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-        /// characters in length.</p>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.function_name = Some(input.into());
             self
         }
         /// <p>The name of the Lambda function.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>MyFunction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
         /// </ul>
-        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-        /// characters in length.</p>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn set_function_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10410,49 +9528,25 @@ pub mod put_function_concurrency_input {
     }
     impl Builder {
         /// <p>The name of the Lambda function.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
         /// </ul>
-        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-        /// characters in length.</p>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.function_name = Some(input.into());
             self
         }
         /// <p>The name of the Lambda function.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
         /// </ul>
-        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-        /// characters in length.</p>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn set_function_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10640,49 +9734,25 @@ pub mod put_function_event_invoke_config_input {
     }
     impl Builder {
         /// <p>The name of the Lambda function, version, or alias.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
         /// </ul>
-        /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
-        /// If you specify only the function name, it is limited to 64 characters in length.</p>
+        /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.function_name = Some(input.into());
             self
         }
         /// <p>The name of the Lambda function, version, or alias.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
         /// </ul>
-        /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
-        /// If you specify only the function name, it is limited to 64 characters in length.</p>
+        /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn set_function_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10721,52 +9791,24 @@ pub mod put_function_event_invoke_config_input {
             self
         }
         /// <p>A destination for events after they have been sent to a function for processing.</p>
-        /// <p class="title">
-        /// <b>Destinations</b>
-        /// </p>
+        /// <p class="title"> <b>Destinations</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Queue</b> - The ARN of an SQS queue.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Topic</b> - The ARN of an SNS topic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p>
-        /// </li>
+        /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>
+        /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li>
+        /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li>
+        /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>
         /// </ul>
         pub fn destination_config(mut self, input: crate::model::DestinationConfig) -> Self {
             self.destination_config = Some(input);
             self
         }
         /// <p>A destination for events after they have been sent to a function for processing.</p>
-        /// <p class="title">
-        /// <b>Destinations</b>
-        /// </p>
+        /// <p class="title"> <b>Destinations</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Queue</b> - The ARN of an SQS queue.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Topic</b> - The ARN of an SNS topic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p>
-        /// </li>
+        /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>
+        /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li>
+        /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li>
+        /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>
         /// </ul>
         pub fn set_destination_config(
             mut self,
@@ -10955,49 +9997,25 @@ pub mod put_provisioned_concurrency_config_input {
     }
     impl Builder {
         /// <p>The name of the Lambda function.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
         /// </ul>
-        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-        /// characters in length.</p>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.function_name = Some(input.into());
             self
         }
         /// <p>The name of the Lambda function.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
         /// </ul>
-        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-        /// characters in length.</p>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn set_function_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11236,14 +10254,12 @@ pub mod remove_layer_version_permission_input {
             self.statement_id = input;
             self
         }
-        /// <p>Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a
-        /// policy that has changed since you last read it.</p>
+        /// <p>Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a policy that has changed since you last read it.</p>
         pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.revision_id = Some(input.into());
             self
         }
-        /// <p>Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a
-        /// policy that has changed since you last read it.</p>
+        /// <p>Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a policy that has changed since you last read it.</p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.revision_id = input;
             self
@@ -11439,49 +10455,25 @@ pub mod remove_permission_input {
     }
     impl Builder {
         /// <p>The name of the Lambda function, version, or alias.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
         /// </ul>
-        /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
-        /// If you specify only the function name, it is limited to 64 characters in length.</p>
+        /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.function_name = Some(input.into());
             self
         }
         /// <p>The name of the Lambda function, version, or alias.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
         /// </ul>
-        /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
-        /// If you specify only the function name, it is limited to 64 characters in length.</p>
+        /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn set_function_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11509,14 +10501,12 @@ pub mod remove_permission_input {
             self.qualifier = input;
             self
         }
-        /// <p>Only update the policy if the revision ID matches the ID that's specified. Use this option to avoid modifying a
-        /// policy that has changed since you last read it.</p>
+        /// <p>Only update the policy if the revision ID matches the ID that's specified. Use this option to avoid modifying a policy that has changed since you last read it.</p>
         pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.revision_id = Some(input.into());
             self
         }
-        /// <p>Only update the policy if the revision ID matches the ID that's specified. Use this option to avoid modifying a
-        /// policy that has changed since you last read it.</p>
+        /// <p>Only update the policy if the revision ID matches the ID that's specified. Use this option to avoid modifying a policy that has changed since you last read it.</p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.revision_id = input;
             self
@@ -12086,49 +11076,25 @@ pub mod update_alias_input {
     }
     impl Builder {
         /// <p>The name of the Lambda function.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>MyFunction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
         /// </ul>
-        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-        /// characters in length.</p>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.function_name = Some(input.into());
             self
         }
         /// <p>The name of the Lambda function.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>MyFunction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
         /// </ul>
-        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-        /// characters in length.</p>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn set_function_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12169,14 +11135,12 @@ pub mod update_alias_input {
             self.description = input;
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html#configuring-alias-routing">routing
-        /// configuration</a> of the alias.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html#configuring-alias-routing">routing configuration</a> of the alias.</p>
         pub fn routing_config(mut self, input: crate::model::AliasRoutingConfiguration) -> Self {
             self.routing_config = Some(input);
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html#configuring-alias-routing">routing
-        /// configuration</a> of the alias.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html#configuring-alias-routing">routing configuration</a> of the alias.</p>
         pub fn set_routing_config(
             mut self,
             input: std::option::Option<crate::model::AliasRoutingConfiguration>,
@@ -12184,14 +11148,12 @@ pub mod update_alias_input {
             self.routing_config = input;
             self
         }
-        /// <p>Only update the alias if the revision ID matches the ID that's specified. Use this option to avoid modifying
-        /// an alias that has changed since you last read it.</p>
+        /// <p>Only update the alias if the revision ID matches the ID that's specified. Use this option to avoid modifying an alias that has changed since you last read it.</p>
         pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.revision_id = Some(input.into());
             self
         }
-        /// <p>Only update the alias if the revision ID matches the ID that's specified. Use this option to avoid modifying
-        /// an alias that has changed since you last read it.</p>
+        /// <p>Only update the alias if the revision ID matches the ID that's specified. Use this option to avoid modifying an alias that has changed since you last read it.</p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.revision_id = input;
             self
@@ -12618,57 +11580,27 @@ pub mod update_event_source_mapping_input {
             self
         }
         /// <p>The name of the Lambda function.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>MyFunction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
         /// </ul>
-        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64
-        /// characters in length.</p>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.</p>
         pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.function_name = Some(input.into());
             self
         }
         /// <p>The name of the Lambda function.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>MyFunction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+        /// <li> <p> <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
         /// </ul>
-        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64
-        /// characters in length.</p>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.</p>
         pub fn set_function_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12688,78 +11620,38 @@ pub mod update_event_source_mapping_input {
             self.enabled = input;
             self
         }
-        /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation
-        /// (6 MB).</p>
+        /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> - Default 100. Max 10,000.</p>
-        /// </li>
+        /// <li> <p> <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p> </li>
+        /// <li> <p> <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.</p> </li>
+        /// <li> <p> <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p> </li>
+        /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
+        /// <li> <p> <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
+        /// <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> - Default 100. Max 10,000.</p> </li>
         /// </ul>
         pub fn batch_size(mut self, input: i32) -> Self {
             self.batch_size = Some(input);
             self
         }
-        /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation
-        /// (6 MB).</p>
+        /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> - Default 100. Max 10,000.</p>
-        /// </li>
+        /// <li> <p> <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p> </li>
+        /// <li> <p> <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.</p> </li>
+        /// <li> <p> <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p> </li>
+        /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
+        /// <li> <p> <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
+        /// <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> - Default 100. Max 10,000.</p> </li>
         /// </ul>
         pub fn set_batch_size(mut self, input: std::option::Option<i32>) -> Self {
             self.batch_size = input;
             self
         }
-        /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that
-        /// determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+        /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
         pub fn filter_criteria(mut self, input: crate::model::FilterCriteria) -> Self {
             self.filter_criteria = Some(input);
             self
         }
-        /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that
-        /// determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+        /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
         pub fn set_filter_criteria(
             mut self,
             input: std::option::Option<crate::model::FilterCriteria>,
@@ -13082,49 +11974,25 @@ pub mod update_function_code_input {
     }
     impl Builder {
         /// <p>The name of the Lambda function.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
         /// </ul>
-        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-        /// characters in length.</p>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.function_name = Some(input.into());
             self
         }
         /// <p>The name of the Lambda function.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
         /// </ul>
-        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-        /// characters in length.</p>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn set_function_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13132,14 +12000,12 @@ pub mod update_function_code_input {
             self.function_name = input;
             self
         }
-        /// <p>The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for
-        /// you.</p>
+        /// <p>The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for you.</p>
         pub fn zip_file(mut self, input: aws_smithy_types::Blob) -> Self {
             self.zip_file = Some(input);
             self
         }
-        /// <p>The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for
-        /// you.</p>
+        /// <p>The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for you.</p>
         pub fn set_zip_file(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.zip_file = input;
             self
@@ -13187,38 +12053,32 @@ pub mod update_function_code_input {
             self.image_uri = input;
             self
         }
-        /// <p>Set to true to publish a new version of the function after updating the code. This has the same effect as
-        /// calling <a>PublishVersion</a> separately.</p>
+        /// <p>Set to true to publish a new version of the function after updating the code. This has the same effect as calling <code>PublishVersion</code> separately.</p>
         pub fn publish(mut self, input: bool) -> Self {
             self.publish = Some(input);
             self
         }
-        /// <p>Set to true to publish a new version of the function after updating the code. This has the same effect as
-        /// calling <a>PublishVersion</a> separately.</p>
+        /// <p>Set to true to publish a new version of the function after updating the code. This has the same effect as calling <code>PublishVersion</code> separately.</p>
         pub fn set_publish(mut self, input: std::option::Option<bool>) -> Self {
             self.publish = input;
             self
         }
-        /// <p>Set to true to validate the request parameters and access permissions without modifying the function
-        /// code.</p>
+        /// <p>Set to true to validate the request parameters and access permissions without modifying the function code.</p>
         pub fn dry_run(mut self, input: bool) -> Self {
             self.dry_run = Some(input);
             self
         }
-        /// <p>Set to true to validate the request parameters and access permissions without modifying the function
-        /// code.</p>
+        /// <p>Set to true to validate the request parameters and access permissions without modifying the function code.</p>
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
             self.dry_run = input;
             self
         }
-        /// <p>Only update the function if the revision ID matches the ID that's specified. Use this option to avoid modifying a
-        /// function that has changed since you last read it.</p>
+        /// <p>Only update the function if the revision ID matches the ID that's specified. Use this option to avoid modifying a function that has changed since you last read it.</p>
         pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.revision_id = Some(input.into());
             self
         }
-        /// <p>Only update the function if the revision ID matches the ID that's specified. Use this option to avoid modifying a
-        /// function that has changed since you last read it.</p>
+        /// <p>Only update the function if the revision ID matches the ID that's specified. Use this option to avoid modifying a function that has changed since you last read it.</p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.revision_id = input;
             self
@@ -13227,16 +12087,14 @@ pub mod update_function_code_input {
         ///
         /// To override the contents of this collection use [`set_architectures`](Self::set_architectures).
         ///
-        /// <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values (arm64 or x86_64).
-        /// The default value is <code>x86_64</code>.</p>
+        /// <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values (arm64 or x86_64). The default value is <code>x86_64</code>.</p>
         pub fn architectures(mut self, input: crate::model::Architecture) -> Self {
             let mut v = self.architectures.unwrap_or_default();
             v.push(input);
             self.architectures = Some(v);
             self
         }
-        /// <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values (arm64 or x86_64).
-        /// The default value is <code>x86_64</code>.</p>
+        /// <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values (arm64 or x86_64). The default value is <code>x86_64</code>.</p>
         pub fn set_architectures(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
@@ -13429,49 +12287,25 @@ pub mod update_function_configuration_input {
     }
     impl Builder {
         /// <p>The name of the Lambda function.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
         /// </ul>
-        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-        /// characters in length.</p>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.function_name = Some(input.into());
             self
         }
         /// <p>The name of the Lambda function.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
         /// </ul>
-        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-        /// characters in length.</p>
+        /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn set_function_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13489,18 +12323,12 @@ pub mod update_function_configuration_input {
             self.role = input;
             self
         }
-        /// <p>The name of the method within your code that Lambda calls to execute your function.
-        /// Handler is required if the deployment package is a .zip file archive. The format includes the
-        /// file name. It can also include namespaces and other qualifiers, depending on the runtime. For more information,
-        /// see <a href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming Model</a>.</p>
+        /// <p>The name of the method within your code that Lambda calls to execute your function. Handler is required if the deployment package is a .zip file archive. The format includes the file name. It can also include namespaces and other qualifiers, depending on the runtime. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming Model</a>.</p>
         pub fn handler(mut self, input: impl Into<std::string::String>) -> Self {
             self.handler = Some(input.into());
             self
         }
-        /// <p>The name of the method within your code that Lambda calls to execute your function.
-        /// Handler is required if the deployment package is a .zip file archive. The format includes the
-        /// file name. It can also include namespaces and other qualifiers, depending on the runtime. For more information,
-        /// see <a href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming Model</a>.</p>
+        /// <p>The name of the method within your code that Lambda calls to execute your function. Handler is required if the deployment package is a .zip file archive. The format includes the file name. It can also include namespaces and other qualifiers, depending on the runtime. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming Model</a>.</p>
         pub fn set_handler(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.handler = input;
             self
@@ -13515,40 +12343,32 @@ pub mod update_function_configuration_input {
             self.description = input;
             self
         }
-        /// <p>The amount of time (in seconds) that Lambda allows a function to run before stopping it. The default is 3 seconds. The
-        /// maximum allowed value is 900 seconds. For additional information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda execution environment</a>.</p>
+        /// <p>The amount of time (in seconds) that Lambda allows a function to run before stopping it. The default is 3 seconds. The maximum allowed value is 900 seconds. For additional information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda execution environment</a>.</p>
         pub fn timeout(mut self, input: i32) -> Self {
             self.timeout = Some(input);
             self
         }
-        /// <p>The amount of time (in seconds) that Lambda allows a function to run before stopping it. The default is 3 seconds. The
-        /// maximum allowed value is 900 seconds. For additional information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda execution environment</a>.</p>
+        /// <p>The amount of time (in seconds) that Lambda allows a function to run before stopping it. The default is 3 seconds. The maximum allowed value is 900 seconds. For additional information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda execution environment</a>.</p>
         pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
             self.timeout = input;
             self
         }
-        /// <p>The amount of  <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-memory.html">memory available to the function</a> at runtime.
-        /// Increasing the function memory also increases its CPU allocation. The default value is 128 MB. The value can be any multiple of 1 MB.</p>
+        /// <p>The amount of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-memory.html">memory available to the function</a> at runtime. Increasing the function memory also increases its CPU allocation. The default value is 128 MB. The value can be any multiple of 1 MB.</p>
         pub fn memory_size(mut self, input: i32) -> Self {
             self.memory_size = Some(input);
             self
         }
-        /// <p>The amount of  <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-memory.html">memory available to the function</a> at runtime.
-        /// Increasing the function memory also increases its CPU allocation. The default value is 128 MB. The value can be any multiple of 1 MB.</p>
+        /// <p>The amount of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-memory.html">memory available to the function</a> at runtime. Increasing the function memory also increases its CPU allocation. The default value is 128 MB. The value can be any multiple of 1 MB.</p>
         pub fn set_memory_size(mut self, input: std::option::Option<i32>) -> Self {
             self.memory_size = input;
             self
         }
-        /// <p>For network connectivity to Amazon Web Services resources in a VPC, specify a list of security groups and subnets in the VPC.
-        /// When you connect a function to a VPC, it can only access resources and the internet through that VPC. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC Settings</a>.</p>
+        /// <p>For network connectivity to Amazon Web Services resources in a VPC, specify a list of security groups and subnets in the VPC. When you connect a function to a VPC, it can only access resources and the internet through that VPC. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC Settings</a>.</p>
         pub fn vpc_config(mut self, input: crate::model::VpcConfig) -> Self {
             self.vpc_config = Some(input);
             self
         }
-        /// <p>For network connectivity to Amazon Web Services resources in a VPC, specify a list of security groups and subnets in the VPC.
-        /// When you connect a function to a VPC, it can only access resources and the internet through that VPC. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC Settings</a>.</p>
+        /// <p>For network connectivity to Amazon Web Services resources in a VPC, specify a list of security groups and subnets in the VPC. When you connect a function to a VPC, it can only access resources and the internet through that VPC. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC Settings</a>.</p>
         pub fn set_vpc_config(
             mut self,
             input: std::option::Option<crate::model::VpcConfig>,
@@ -13569,26 +12389,22 @@ pub mod update_function_configuration_input {
             self.environment = input;
             self
         }
-        /// <p>The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required if the deployment package is a .zip file archive.
-        /// </p>
+        /// <p>The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required if the deployment package is a .zip file archive. </p>
         pub fn runtime(mut self, input: crate::model::Runtime) -> Self {
             self.runtime = Some(input);
             self
         }
-        /// <p>The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required if the deployment package is a .zip file archive.
-        /// </p>
+        /// <p>The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required if the deployment package is a .zip file archive. </p>
         pub fn set_runtime(mut self, input: std::option::Option<crate::model::Runtime>) -> Self {
             self.runtime = input;
             self
         }
-        /// <p>A dead letter queue configuration that specifies the queue or topic where Lambda sends asynchronous events
-        /// when they fail processing. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">Dead Letter Queues</a>.</p>
+        /// <p>A dead letter queue configuration that specifies the queue or topic where Lambda sends asynchronous events when they fail processing. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">Dead Letter Queues</a>.</p>
         pub fn dead_letter_config(mut self, input: crate::model::DeadLetterConfig) -> Self {
             self.dead_letter_config = Some(input);
             self
         }
-        /// <p>A dead letter queue configuration that specifies the queue or topic where Lambda sends asynchronous events
-        /// when they fail processing. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">Dead Letter Queues</a>.</p>
+        /// <p>A dead letter queue configuration that specifies the queue or topic where Lambda sends asynchronous events when they fail processing. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">Dead Letter Queues</a>.</p>
         pub fn set_dead_letter_config(
             mut self,
             input: std::option::Option<crate::model::DeadLetterConfig>,
@@ -13596,26 +12412,22 @@ pub mod update_function_configuration_input {
             self.dead_letter_config = input;
             self
         }
-        /// <p>The ARN of the Amazon Web Services Key Management Service (KMS) key that's used to encrypt your function's environment
-        /// variables. If it's not provided, Lambda uses a default service key.</p>
+        /// <p>The ARN of the Amazon Web Services Key Management Service (KMS) key that's used to encrypt your function's environment variables. If it's not provided, Lambda uses a default service key.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the Amazon Web Services Key Management Service (KMS) key that's used to encrypt your function's environment
-        /// variables. If it's not provided, Lambda uses a default service key.</p>
+        /// <p>The ARN of the Amazon Web Services Key Management Service (KMS) key that's used to encrypt your function's environment variables. If it's not provided, Lambda uses a default service key.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_arn = input;
             self
         }
-        /// <p>Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of incoming requests with
-        /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/services-xray.html">X-Ray</a>.</p>
+        /// <p>Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of incoming requests with <a href="https://docs.aws.amazon.com/lambda/latest/dg/services-xray.html">X-Ray</a>.</p>
         pub fn tracing_config(mut self, input: crate::model::TracingConfig) -> Self {
             self.tracing_config = Some(input);
             self
         }
-        /// <p>Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of incoming requests with
-        /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/services-xray.html">X-Ray</a>.</p>
+        /// <p>Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of incoming requests with <a href="https://docs.aws.amazon.com/lambda/latest/dg/services-xray.html">X-Ray</a>.</p>
         pub fn set_tracing_config(
             mut self,
             input: std::option::Option<crate::model::TracingConfig>,
@@ -13623,14 +12435,12 @@ pub mod update_function_configuration_input {
             self.tracing_config = input;
             self
         }
-        /// <p>Only update the function if the revision ID matches the ID that's specified. Use this option to avoid modifying a
-        /// function that has changed since you last read it.</p>
+        /// <p>Only update the function if the revision ID matches the ID that's specified. Use this option to avoid modifying a function that has changed since you last read it.</p>
         pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.revision_id = Some(input.into());
             self
         }
-        /// <p>Only update the function if the revision ID matches the ID that's specified. Use this option to avoid modifying a
-        /// function that has changed since you last read it.</p>
+        /// <p>Only update the function if the revision ID matches the ID that's specified. Use this option to avoid modifying a function that has changed since you last read it.</p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.revision_id = input;
             self
@@ -13639,16 +12449,14 @@ pub mod update_function_configuration_input {
         ///
         /// To override the contents of this collection use [`set_layers`](Self::set_layers).
         ///
-        /// <p>A list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function layers</a>
-        /// to add to the function's execution environment. Specify each layer by its ARN, including the version.</p>
+        /// <p>A list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function layers</a> to add to the function's execution environment. Specify each layer by its ARN, including the version.</p>
         pub fn layers(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.layers.unwrap_or_default();
             v.push(input.into());
             self.layers = Some(v);
             self
         }
-        /// <p>A list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function layers</a>
-        /// to add to the function's execution environment. Specify each layer by its ARN, including the version.</p>
+        /// <p>A list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function layers</a> to add to the function's execution environment. Specify each layer by its ARN, including the version.</p>
         pub fn set_layers(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13675,16 +12483,12 @@ pub mod update_function_configuration_input {
             self.file_system_configs = input;
             self
         }
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container image configuration
-        /// values</a> that override the values in the container image Docker file.</p>
+        /// <p> <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container image configuration values</a> that override the values in the container image Docker file.</p>
         pub fn image_config(mut self, input: crate::model::ImageConfig) -> Self {
             self.image_config = Some(input);
             self
         }
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container image configuration
-        /// values</a> that override the values in the container image Docker file.</p>
+        /// <p> <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container image configuration values</a> that override the values in the container image Docker file.</p>
         pub fn set_image_config(
             mut self,
             input: std::option::Option<crate::model::ImageConfig>,
@@ -13873,49 +12677,25 @@ pub mod update_function_event_invoke_config_input {
     }
     impl Builder {
         /// <p>The name of the Lambda function, version, or alias.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
         /// </ul>
-        /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
-        /// If you specify only the function name, it is limited to 64 characters in length.</p>
+        /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.function_name = Some(input.into());
             self
         }
         /// <p>The name of the Lambda function, version, or alias.</p>
-        /// <p class="title">
-        /// <b>Name formats</b>
-        /// </p>
+        /// <p class="title"> <b>Name formats</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-        /// </li>
+        /// <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li>
+        /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+        /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
         /// </ul>
-        /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
-        /// If you specify only the function name, it is limited to 64 characters in length.</p>
+        /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
         pub fn set_function_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13954,52 +12734,24 @@ pub mod update_function_event_invoke_config_input {
             self
         }
         /// <p>A destination for events after they have been sent to a function for processing.</p>
-        /// <p class="title">
-        /// <b>Destinations</b>
-        /// </p>
+        /// <p class="title"> <b>Destinations</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Queue</b> - The ARN of an SQS queue.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Topic</b> - The ARN of an SNS topic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p>
-        /// </li>
+        /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>
+        /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li>
+        /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li>
+        /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>
         /// </ul>
         pub fn destination_config(mut self, input: crate::model::DestinationConfig) -> Self {
             self.destination_config = Some(input);
             self
         }
         /// <p>A destination for events after they have been sent to a function for processing.</p>
-        /// <p class="title">
-        /// <b>Destinations</b>
-        /// </p>
+        /// <p class="title"> <b>Destinations</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Queue</b> - The ARN of an SQS queue.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Topic</b> - The ARN of an SNS topic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p>
-        /// </li>
+        /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>
+        /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li>
+        /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li>
+        /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>
         /// </ul>
         pub fn set_destination_config(
             mut self,
@@ -14181,25 +12933,13 @@ impl UpdateFunctionEventInvokeConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFunctionEventInvokeConfigInput {
     /// <p>The name of the Lambda function, version, or alias.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
-    /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
-    /// If you specify only the function name, it is limited to 64 characters in length.</p>
+    /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub function_name: std::option::Option<std::string::String>,
     /// <p>A version number or alias name.</p>
     pub qualifier: std::option::Option<std::string::String>,
@@ -14208,50 +12948,24 @@ pub struct UpdateFunctionEventInvokeConfigInput {
     /// <p>The maximum age of a request that Lambda sends to a function for processing.</p>
     pub maximum_event_age_in_seconds: std::option::Option<i32>,
     /// <p>A destination for events after they have been sent to a function for processing.</p>
-    /// <p class="title">
-    /// <b>Destinations</b>
-    /// </p>
+    /// <p class="title"> <b>Destinations</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Queue</b> - The ARN of an SQS queue.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Topic</b> - The ARN of an SNS topic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p>
-    /// </li>
+    /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>
+    /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li>
+    /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li>
+    /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>
     /// </ul>
     pub destination_config: std::option::Option<crate::model::DestinationConfig>,
 }
 impl UpdateFunctionEventInvokeConfigInput {
     /// <p>The name of the Lambda function, version, or alias.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
-    /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
-    /// If you specify only the function name, it is limited to 64 characters in length.</p>
+    /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn function_name(&self) -> std::option::Option<&str> {
         self.function_name.as_deref()
     }
@@ -14268,26 +12982,12 @@ impl UpdateFunctionEventInvokeConfigInput {
         self.maximum_event_age_in_seconds
     }
     /// <p>A destination for events after they have been sent to a function for processing.</p>
-    /// <p class="title">
-    /// <b>Destinations</b>
-    /// </p>
+    /// <p class="title"> <b>Destinations</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Queue</b> - The ARN of an SQS queue.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Topic</b> - The ARN of an SNS topic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p>
-    /// </li>
+    /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>
+    /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li>
+    /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li>
+    /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>
     /// </ul>
     pub fn destination_config(&self) -> std::option::Option<&crate::model::DestinationConfig> {
         self.destination_config.as_ref()
@@ -14313,93 +13013,54 @@ impl std::fmt::Debug for UpdateFunctionEventInvokeConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFunctionConfigurationInput {
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
-    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-    /// characters in length.</p>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub function_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the function's execution role.</p>
     pub role: std::option::Option<std::string::String>,
-    /// <p>The name of the method within your code that Lambda calls to execute your function.
-    /// Handler is required if the deployment package is a .zip file archive. The format includes the
-    /// file name. It can also include namespaces and other qualifiers, depending on the runtime. For more information,
-    /// see <a href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming Model</a>.</p>
+    /// <p>The name of the method within your code that Lambda calls to execute your function. Handler is required if the deployment package is a .zip file archive. The format includes the file name. It can also include namespaces and other qualifiers, depending on the runtime. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming Model</a>.</p>
     pub handler: std::option::Option<std::string::String>,
     /// <p>A description of the function.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The amount of time (in seconds) that Lambda allows a function to run before stopping it. The default is 3 seconds. The
-    /// maximum allowed value is 900 seconds. For additional information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda execution environment</a>.</p>
+    /// <p>The amount of time (in seconds) that Lambda allows a function to run before stopping it. The default is 3 seconds. The maximum allowed value is 900 seconds. For additional information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda execution environment</a>.</p>
     pub timeout: std::option::Option<i32>,
-    /// <p>The amount of  <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-memory.html">memory available to the function</a> at runtime.
-    /// Increasing the function memory also increases its CPU allocation. The default value is 128 MB. The value can be any multiple of 1 MB.</p>
+    /// <p>The amount of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-memory.html">memory available to the function</a> at runtime. Increasing the function memory also increases its CPU allocation. The default value is 128 MB. The value can be any multiple of 1 MB.</p>
     pub memory_size: std::option::Option<i32>,
-    /// <p>For network connectivity to Amazon Web Services resources in a VPC, specify a list of security groups and subnets in the VPC.
-    /// When you connect a function to a VPC, it can only access resources and the internet through that VPC. For more
-    /// information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC Settings</a>.</p>
+    /// <p>For network connectivity to Amazon Web Services resources in a VPC, specify a list of security groups and subnets in the VPC. When you connect a function to a VPC, it can only access resources and the internet through that VPC. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC Settings</a>.</p>
     pub vpc_config: std::option::Option<crate::model::VpcConfig>,
     /// <p>Environment variables that are accessible from function code during execution.</p>
     pub environment: std::option::Option<crate::model::Environment>,
-    /// <p>The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required if the deployment package is a .zip file archive.
-    /// </p>
+    /// <p>The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required if the deployment package is a .zip file archive. </p>
     pub runtime: std::option::Option<crate::model::Runtime>,
-    /// <p>A dead letter queue configuration that specifies the queue or topic where Lambda sends asynchronous events
-    /// when they fail processing. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">Dead Letter Queues</a>.</p>
+    /// <p>A dead letter queue configuration that specifies the queue or topic where Lambda sends asynchronous events when they fail processing. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">Dead Letter Queues</a>.</p>
     pub dead_letter_config: std::option::Option<crate::model::DeadLetterConfig>,
-    /// <p>The ARN of the Amazon Web Services Key Management Service (KMS) key that's used to encrypt your function's environment
-    /// variables. If it's not provided, Lambda uses a default service key.</p>
+    /// <p>The ARN of the Amazon Web Services Key Management Service (KMS) key that's used to encrypt your function's environment variables. If it's not provided, Lambda uses a default service key.</p>
     pub kms_key_arn: std::option::Option<std::string::String>,
-    /// <p>Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of incoming requests with
-    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/services-xray.html">X-Ray</a>.</p>
+    /// <p>Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of incoming requests with <a href="https://docs.aws.amazon.com/lambda/latest/dg/services-xray.html">X-Ray</a>.</p>
     pub tracing_config: std::option::Option<crate::model::TracingConfig>,
-    /// <p>Only update the function if the revision ID matches the ID that's specified. Use this option to avoid modifying a
-    /// function that has changed since you last read it.</p>
+    /// <p>Only update the function if the revision ID matches the ID that's specified. Use this option to avoid modifying a function that has changed since you last read it.</p>
     pub revision_id: std::option::Option<std::string::String>,
-    /// <p>A list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function layers</a>
-    /// to add to the function's execution environment. Specify each layer by its ARN, including the version.</p>
+    /// <p>A list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function layers</a> to add to the function's execution environment. Specify each layer by its ARN, including the version.</p>
     pub layers: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Connection settings for an Amazon EFS file system.</p>
     pub file_system_configs: std::option::Option<std::vec::Vec<crate::model::FileSystemConfig>>,
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container image configuration
-    /// values</a> that override the values in the container image Docker file.</p>
+    /// <p> <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container image configuration values</a> that override the values in the container image Docker file.</p>
     pub image_config: std::option::Option<crate::model::ImageConfig>,
 }
 impl UpdateFunctionConfigurationInput {
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
-    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-    /// characters in length.</p>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn function_name(&self) -> std::option::Option<&str> {
         self.function_name.as_deref()
     }
@@ -14407,10 +13068,7 @@ impl UpdateFunctionConfigurationInput {
     pub fn role(&self) -> std::option::Option<&str> {
         self.role.as_deref()
     }
-    /// <p>The name of the method within your code that Lambda calls to execute your function.
-    /// Handler is required if the deployment package is a .zip file archive. The format includes the
-    /// file name. It can also include namespaces and other qualifiers, depending on the runtime. For more information,
-    /// see <a href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming Model</a>.</p>
+    /// <p>The name of the method within your code that Lambda calls to execute your function. Handler is required if the deployment package is a .zip file archive. The format includes the file name. It can also include namespaces and other qualifiers, depending on the runtime. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming Model</a>.</p>
     pub fn handler(&self) -> std::option::Option<&str> {
         self.handler.as_deref()
     }
@@ -14418,19 +13076,15 @@ impl UpdateFunctionConfigurationInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The amount of time (in seconds) that Lambda allows a function to run before stopping it. The default is 3 seconds. The
-    /// maximum allowed value is 900 seconds. For additional information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda execution environment</a>.</p>
+    /// <p>The amount of time (in seconds) that Lambda allows a function to run before stopping it. The default is 3 seconds. The maximum allowed value is 900 seconds. For additional information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda execution environment</a>.</p>
     pub fn timeout(&self) -> std::option::Option<i32> {
         self.timeout
     }
-    /// <p>The amount of  <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-memory.html">memory available to the function</a> at runtime.
-    /// Increasing the function memory also increases its CPU allocation. The default value is 128 MB. The value can be any multiple of 1 MB.</p>
+    /// <p>The amount of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-memory.html">memory available to the function</a> at runtime. Increasing the function memory also increases its CPU allocation. The default value is 128 MB. The value can be any multiple of 1 MB.</p>
     pub fn memory_size(&self) -> std::option::Option<i32> {
         self.memory_size
     }
-    /// <p>For network connectivity to Amazon Web Services resources in a VPC, specify a list of security groups and subnets in the VPC.
-    /// When you connect a function to a VPC, it can only access resources and the internet through that VPC. For more
-    /// information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC Settings</a>.</p>
+    /// <p>For network connectivity to Amazon Web Services resources in a VPC, specify a list of security groups and subnets in the VPC. When you connect a function to a VPC, it can only access resources and the internet through that VPC. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC Settings</a>.</p>
     pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
         self.vpc_config.as_ref()
     }
@@ -14438,33 +13092,27 @@ impl UpdateFunctionConfigurationInput {
     pub fn environment(&self) -> std::option::Option<&crate::model::Environment> {
         self.environment.as_ref()
     }
-    /// <p>The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required if the deployment package is a .zip file archive.
-    /// </p>
+    /// <p>The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required if the deployment package is a .zip file archive. </p>
     pub fn runtime(&self) -> std::option::Option<&crate::model::Runtime> {
         self.runtime.as_ref()
     }
-    /// <p>A dead letter queue configuration that specifies the queue or topic where Lambda sends asynchronous events
-    /// when they fail processing. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">Dead Letter Queues</a>.</p>
+    /// <p>A dead letter queue configuration that specifies the queue or topic where Lambda sends asynchronous events when they fail processing. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">Dead Letter Queues</a>.</p>
     pub fn dead_letter_config(&self) -> std::option::Option<&crate::model::DeadLetterConfig> {
         self.dead_letter_config.as_ref()
     }
-    /// <p>The ARN of the Amazon Web Services Key Management Service (KMS) key that's used to encrypt your function's environment
-    /// variables. If it's not provided, Lambda uses a default service key.</p>
+    /// <p>The ARN of the Amazon Web Services Key Management Service (KMS) key that's used to encrypt your function's environment variables. If it's not provided, Lambda uses a default service key.</p>
     pub fn kms_key_arn(&self) -> std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
-    /// <p>Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of incoming requests with
-    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/services-xray.html">X-Ray</a>.</p>
+    /// <p>Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of incoming requests with <a href="https://docs.aws.amazon.com/lambda/latest/dg/services-xray.html">X-Ray</a>.</p>
     pub fn tracing_config(&self) -> std::option::Option<&crate::model::TracingConfig> {
         self.tracing_config.as_ref()
     }
-    /// <p>Only update the function if the revision ID matches the ID that's specified. Use this option to avoid modifying a
-    /// function that has changed since you last read it.</p>
+    /// <p>Only update the function if the revision ID matches the ID that's specified. Use this option to avoid modifying a function that has changed since you last read it.</p>
     pub fn revision_id(&self) -> std::option::Option<&str> {
         self.revision_id.as_deref()
     }
-    /// <p>A list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function layers</a>
-    /// to add to the function's execution environment. Specify each layer by its ARN, including the version.</p>
+    /// <p>A list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function layers</a> to add to the function's execution environment. Specify each layer by its ARN, including the version.</p>
     pub fn layers(&self) -> std::option::Option<&[std::string::String]> {
         self.layers.as_deref()
     }
@@ -14472,9 +13120,7 @@ impl UpdateFunctionConfigurationInput {
     pub fn file_system_configs(&self) -> std::option::Option<&[crate::model::FileSystemConfig]> {
         self.file_system_configs.as_deref()
     }
-    /// <p>
-    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container image configuration
-    /// values</a> that override the values in the container image Docker file.</p>
+    /// <p> <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container image configuration values</a> that override the values in the container image Docker file.</p>
     pub fn image_config(&self) -> std::option::Option<&crate::model::ImageConfig> {
         self.image_config.as_ref()
     }
@@ -14507,28 +13153,15 @@ impl std::fmt::Debug for UpdateFunctionConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFunctionCodeInput {
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
-    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-    /// characters in length.</p>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub function_name: std::option::Option<std::string::String>,
-    /// <p>The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for
-    /// you.</p>
+    /// <p>The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for you.</p>
     pub zip_file: std::option::Option<aws_smithy_types::Blob>,
     /// <p>An Amazon S3 bucket in the same Amazon Web Services Region as your function. The bucket can be in a different Amazon Web Services account.</p>
     pub s3_bucket: std::option::Option<std::string::String>,
@@ -14538,45 +13171,28 @@ pub struct UpdateFunctionCodeInput {
     pub s3_object_version: std::option::Option<std::string::String>,
     /// <p>URI of a container image in the Amazon ECR registry.</p>
     pub image_uri: std::option::Option<std::string::String>,
-    /// <p>Set to true to publish a new version of the function after updating the code. This has the same effect as
-    /// calling <a>PublishVersion</a> separately.</p>
+    /// <p>Set to true to publish a new version of the function after updating the code. This has the same effect as calling <code>PublishVersion</code> separately.</p>
     pub publish: bool,
-    /// <p>Set to true to validate the request parameters and access permissions without modifying the function
-    /// code.</p>
+    /// <p>Set to true to validate the request parameters and access permissions without modifying the function code.</p>
     pub dry_run: bool,
-    /// <p>Only update the function if the revision ID matches the ID that's specified. Use this option to avoid modifying a
-    /// function that has changed since you last read it.</p>
+    /// <p>Only update the function if the revision ID matches the ID that's specified. Use this option to avoid modifying a function that has changed since you last read it.</p>
     pub revision_id: std::option::Option<std::string::String>,
-    /// <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values (arm64 or x86_64).
-    /// The default value is <code>x86_64</code>.</p>
+    /// <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values (arm64 or x86_64). The default value is <code>x86_64</code>.</p>
     pub architectures: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
 }
 impl UpdateFunctionCodeInput {
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
-    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-    /// characters in length.</p>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn function_name(&self) -> std::option::Option<&str> {
         self.function_name.as_deref()
     }
-    /// <p>The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for
-    /// you.</p>
+    /// <p>The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for you.</p>
     pub fn zip_file(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.zip_file.as_ref()
     }
@@ -14596,23 +13212,19 @@ impl UpdateFunctionCodeInput {
     pub fn image_uri(&self) -> std::option::Option<&str> {
         self.image_uri.as_deref()
     }
-    /// <p>Set to true to publish a new version of the function after updating the code. This has the same effect as
-    /// calling <a>PublishVersion</a> separately.</p>
+    /// <p>Set to true to publish a new version of the function after updating the code. This has the same effect as calling <code>PublishVersion</code> separately.</p>
     pub fn publish(&self) -> bool {
         self.publish
     }
-    /// <p>Set to true to validate the request parameters and access permissions without modifying the function
-    /// code.</p>
+    /// <p>Set to true to validate the request parameters and access permissions without modifying the function code.</p>
     pub fn dry_run(&self) -> bool {
         self.dry_run
     }
-    /// <p>Only update the function if the revision ID matches the ID that's specified. Use this option to avoid modifying a
-    /// function that has changed since you last read it.</p>
+    /// <p>Only update the function if the revision ID matches the ID that's specified. Use this option to avoid modifying a function that has changed since you last read it.</p>
     pub fn revision_id(&self) -> std::option::Option<&str> {
         self.revision_id.as_deref()
     }
-    /// <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values (arm64 or x86_64).
-    /// The default value is <code>x86_64</code>.</p>
+    /// <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values (arm64 or x86_64). The default value is <code>x86_64</code>.</p>
     pub fn architectures(&self) -> std::option::Option<&[crate::model::Architecture]> {
         self.architectures.as_deref()
     }
@@ -14641,64 +13253,29 @@ pub struct UpdateEventSourceMappingInput {
     /// <p>The identifier of the event source mapping.</p>
     pub uuid: std::option::Option<std::string::String>,
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>MyFunction</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
-    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64
-    /// characters in length.</p>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.</p>
     pub function_name: std::option::Option<std::string::String>,
     /// <p>When true, the event source mapping is active. When false, Lambda pauses polling and invocation.</p>
     /// <p>Default: True</p>
     pub enabled: std::option::Option<bool>,
-    /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation
-    /// (6 MB).</p>
+    /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> - Default 100. Max 10,000.</p>
-    /// </li>
+    /// <li> <p> <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p> </li>
+    /// <li> <p> <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.</p> </li>
+    /// <li> <p> <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p> </li>
+    /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
+    /// <li> <p> <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
+    /// <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> - Default 100. Max 10,000.</p> </li>
     /// </ul>
     pub batch_size: std::option::Option<i32>,
-    /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that
-    /// determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+    /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
     pub filter_criteria: std::option::Option<crate::model::FilterCriteria>,
     /// <p>(Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function.</p>
     /// <p>Default: 0</p>
@@ -14729,29 +13306,14 @@ impl UpdateEventSourceMappingInput {
         self.uuid.as_deref()
     }
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>MyFunction</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
-    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64
-    /// characters in length.</p>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.</p>
     pub fn function_name(&self) -> std::option::Option<&str> {
         self.function_name.as_deref()
     }
@@ -14760,39 +13322,19 @@ impl UpdateEventSourceMappingInput {
     pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
     }
-    /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation
-    /// (6 MB).</p>
+    /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> - Default 100. Max 10,000.</p>
-    /// </li>
+    /// <li> <p> <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p> </li>
+    /// <li> <p> <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.</p> </li>
+    /// <li> <p> <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p> </li>
+    /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
+    /// <li> <p> <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
+    /// <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> - Default 100. Max 10,000.</p> </li>
     /// </ul>
     pub fn batch_size(&self) -> std::option::Option<i32> {
         self.batch_size
     }
-    /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that
-    /// determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+    /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
     pub fn filter_criteria(&self) -> std::option::Option<&crate::model::FilterCriteria> {
         self.filter_criteria.as_ref()
     }
@@ -14922,25 +13464,13 @@ impl std::fmt::Debug for UpdateCodeSigningConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAliasInput {
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>MyFunction</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
-    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-    /// characters in length.</p>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub function_name: std::option::Option<std::string::String>,
     /// <p>The name of the alias.</p>
     pub name: std::option::Option<std::string::String>,
@@ -14948,34 +13478,20 @@ pub struct UpdateAliasInput {
     pub function_version: std::option::Option<std::string::String>,
     /// <p>A description of the alias.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html#configuring-alias-routing">routing
-    /// configuration</a> of the alias.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html#configuring-alias-routing">routing configuration</a> of the alias.</p>
     pub routing_config: std::option::Option<crate::model::AliasRoutingConfiguration>,
-    /// <p>Only update the alias if the revision ID matches the ID that's specified. Use this option to avoid modifying
-    /// an alias that has changed since you last read it.</p>
+    /// <p>Only update the alias if the revision ID matches the ID that's specified. Use this option to avoid modifying an alias that has changed since you last read it.</p>
     pub revision_id: std::option::Option<std::string::String>,
 }
 impl UpdateAliasInput {
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>MyFunction</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
-    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-    /// characters in length.</p>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn function_name(&self) -> std::option::Option<&str> {
         self.function_name.as_deref()
     }
@@ -14991,13 +13507,11 @@ impl UpdateAliasInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html#configuring-alias-routing">routing
-    /// configuration</a> of the alias.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html#configuring-alias-routing">routing configuration</a> of the alias.</p>
     pub fn routing_config(&self) -> std::option::Option<&crate::model::AliasRoutingConfiguration> {
         self.routing_config.as_ref()
     }
-    /// <p>Only update the alias if the revision ID matches the ID that's specified. Use this option to avoid modifying
-    /// an alias that has changed since you last read it.</p>
+    /// <p>Only update the alias if the revision ID matches the ID that's specified. Use this option to avoid modifying an alias that has changed since you last read it.</p>
     pub fn revision_id(&self) -> std::option::Option<&str> {
         self.revision_id.as_deref()
     }
@@ -15080,55 +13594,30 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemovePermissionInput {
     /// <p>The name of the Lambda function, version, or alias.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
-    /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
-    /// If you specify only the function name, it is limited to 64 characters in length.</p>
+    /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub function_name: std::option::Option<std::string::String>,
     /// <p>Statement ID of the permission to remove.</p>
     pub statement_id: std::option::Option<std::string::String>,
     /// <p>Specify a version or alias to remove permissions from a published version of the function.</p>
     pub qualifier: std::option::Option<std::string::String>,
-    /// <p>Only update the policy if the revision ID matches the ID that's specified. Use this option to avoid modifying a
-    /// policy that has changed since you last read it.</p>
+    /// <p>Only update the policy if the revision ID matches the ID that's specified. Use this option to avoid modifying a policy that has changed since you last read it.</p>
     pub revision_id: std::option::Option<std::string::String>,
 }
 impl RemovePermissionInput {
     /// <p>The name of the Lambda function, version, or alias.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
-    /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
-    /// If you specify only the function name, it is limited to 64 characters in length.</p>
+    /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn function_name(&self) -> std::option::Option<&str> {
         self.function_name.as_deref()
     }
@@ -15140,8 +13629,7 @@ impl RemovePermissionInput {
     pub fn qualifier(&self) -> std::option::Option<&str> {
         self.qualifier.as_deref()
     }
-    /// <p>Only update the policy if the revision ID matches the ID that's specified. Use this option to avoid modifying a
-    /// policy that has changed since you last read it.</p>
+    /// <p>Only update the policy if the revision ID matches the ID that's specified. Use this option to avoid modifying a policy that has changed since you last read it.</p>
     pub fn revision_id(&self) -> std::option::Option<&str> {
         self.revision_id.as_deref()
     }
@@ -15167,8 +13655,7 @@ pub struct RemoveLayerVersionPermissionInput {
     pub version_number: i64,
     /// <p>The identifier that was specified when the statement was added.</p>
     pub statement_id: std::option::Option<std::string::String>,
-    /// <p>Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a
-    /// policy that has changed since you last read it.</p>
+    /// <p>Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a policy that has changed since you last read it.</p>
     pub revision_id: std::option::Option<std::string::String>,
 }
 impl RemoveLayerVersionPermissionInput {
@@ -15184,8 +13671,7 @@ impl RemoveLayerVersionPermissionInput {
     pub fn statement_id(&self) -> std::option::Option<&str> {
         self.statement_id.as_deref()
     }
-    /// <p>Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a
-    /// policy that has changed since you last read it.</p>
+    /// <p>Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a policy that has changed since you last read it.</p>
     pub fn revision_id(&self) -> std::option::Option<&str> {
         self.revision_id.as_deref()
     }
@@ -15206,25 +13692,13 @@ impl std::fmt::Debug for RemoveLayerVersionPermissionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutProvisionedConcurrencyConfigInput {
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
-    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-    /// characters in length.</p>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub function_name: std::option::Option<std::string::String>,
     /// <p>The version number or alias name.</p>
     pub qualifier: std::option::Option<std::string::String>,
@@ -15233,25 +13707,13 @@ pub struct PutProvisionedConcurrencyConfigInput {
 }
 impl PutProvisionedConcurrencyConfigInput {
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
-    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-    /// characters in length.</p>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn function_name(&self) -> std::option::Option<&str> {
         self.function_name.as_deref()
     }
@@ -15282,25 +13744,13 @@ impl std::fmt::Debug for PutProvisionedConcurrencyConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutFunctionEventInvokeConfigInput {
     /// <p>The name of the Lambda function, version, or alias.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
-    /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
-    /// If you specify only the function name, it is limited to 64 characters in length.</p>
+    /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub function_name: std::option::Option<std::string::String>,
     /// <p>A version number or alias name.</p>
     pub qualifier: std::option::Option<std::string::String>,
@@ -15309,50 +13759,24 @@ pub struct PutFunctionEventInvokeConfigInput {
     /// <p>The maximum age of a request that Lambda sends to a function for processing.</p>
     pub maximum_event_age_in_seconds: std::option::Option<i32>,
     /// <p>A destination for events after they have been sent to a function for processing.</p>
-    /// <p class="title">
-    /// <b>Destinations</b>
-    /// </p>
+    /// <p class="title"> <b>Destinations</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Queue</b> - The ARN of an SQS queue.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Topic</b> - The ARN of an SNS topic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p>
-    /// </li>
+    /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>
+    /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li>
+    /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li>
+    /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>
     /// </ul>
     pub destination_config: std::option::Option<crate::model::DestinationConfig>,
 }
 impl PutFunctionEventInvokeConfigInput {
     /// <p>The name of the Lambda function, version, or alias.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
-    /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
-    /// If you specify only the function name, it is limited to 64 characters in length.</p>
+    /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn function_name(&self) -> std::option::Option<&str> {
         self.function_name.as_deref()
     }
@@ -15369,26 +13793,12 @@ impl PutFunctionEventInvokeConfigInput {
         self.maximum_event_age_in_seconds
     }
     /// <p>A destination for events after they have been sent to a function for processing.</p>
-    /// <p class="title">
-    /// <b>Destinations</b>
-    /// </p>
+    /// <p class="title"> <b>Destinations</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Queue</b> - The ARN of an SQS queue.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Topic</b> - The ARN of an SNS topic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p>
-    /// </li>
+    /// <li> <p> <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>
+    /// <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li>
+    /// <li> <p> <b>Topic</b> - The ARN of an SNS topic.</p> </li>
+    /// <li> <p> <b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li>
     /// </ul>
     pub fn destination_config(&self) -> std::option::Option<&crate::model::DestinationConfig> {
         self.destination_config.as_ref()
@@ -15414,50 +13824,26 @@ impl std::fmt::Debug for PutFunctionEventInvokeConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutFunctionConcurrencyInput {
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
-    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-    /// characters in length.</p>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub function_name: std::option::Option<std::string::String>,
     /// <p>The number of simultaneous executions to reserve for the function.</p>
     pub reserved_concurrent_executions: std::option::Option<i32>,
 }
 impl PutFunctionConcurrencyInput {
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
-    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-    /// characters in length.</p>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn function_name(&self) -> std::option::Option<&str> {
         self.function_name.as_deref()
     }
@@ -15485,25 +13871,13 @@ pub struct PutFunctionCodeSigningConfigInput {
     /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
     pub code_signing_config_arn: std::option::Option<std::string::String>,
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>MyFunction</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
-    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-    /// characters in length.</p>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub function_name: std::option::Option<std::string::String>,
 }
 impl PutFunctionCodeSigningConfigInput {
@@ -15512,25 +13886,13 @@ impl PutFunctionCodeSigningConfigInput {
         self.code_signing_config_arn.as_deref()
     }
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>MyFunction</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
-    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-    /// characters in length.</p>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn function_name(&self) -> std::option::Option<&str> {
         self.function_name.as_deref()
     }
@@ -15549,63 +13911,34 @@ impl std::fmt::Debug for PutFunctionCodeSigningConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PublishVersionInput {
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>MyFunction</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
-    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-    /// characters in length.</p>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub function_name: std::option::Option<std::string::String>,
-    /// <p>Only publish a version if the hash value matches the value that's specified. Use this option to avoid
-    /// publishing a version if the function code has changed since you last updated it. You can get the hash for the
-    /// version that you uploaded from the output of <a>UpdateFunctionCode</a>.</p>
+    /// <p>Only publish a version if the hash value matches the value that's specified. Use this option to avoid publishing a version if the function code has changed since you last updated it. You can get the hash for the version that you uploaded from the output of <code>UpdateFunctionCode</code>.</p>
     pub code_sha256: std::option::Option<std::string::String>,
     /// <p>A description for the version to override the description in the function configuration.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>Only update the function if the revision ID matches the ID that's specified. Use this option to avoid
-    /// publishing a version if the function configuration has changed since you last updated it.</p>
+    /// <p>Only update the function if the revision ID matches the ID that's specified. Use this option to avoid publishing a version if the function configuration has changed since you last updated it.</p>
     pub revision_id: std::option::Option<std::string::String>,
 }
 impl PublishVersionInput {
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>MyFunction</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
-    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-    /// characters in length.</p>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn function_name(&self) -> std::option::Option<&str> {
         self.function_name.as_deref()
     }
-    /// <p>Only publish a version if the hash value matches the value that's specified. Use this option to avoid
-    /// publishing a version if the function code has changed since you last updated it. You can get the hash for the
-    /// version that you uploaded from the output of <a>UpdateFunctionCode</a>.</p>
+    /// <p>Only publish a version if the hash value matches the value that's specified. Use this option to avoid publishing a version if the function code has changed since you last updated it. You can get the hash for the version that you uploaded from the output of <code>UpdateFunctionCode</code>.</p>
     pub fn code_sha256(&self) -> std::option::Option<&str> {
         self.code_sha256.as_deref()
     }
@@ -15613,8 +13946,7 @@ impl PublishVersionInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Only update the function if the revision ID matches the ID that's specified. Use this option to avoid
-    /// publishing a version if the function configuration has changed since you last updated it.</p>
+    /// <p>Only update the function if the revision ID matches the ID that's specified. Use this option to avoid publishing a version if the function configuration has changed since you last updated it.</p>
     pub fn revision_id(&self) -> std::option::Option<&str> {
         self.revision_id.as_deref()
     }
@@ -15640,26 +13972,16 @@ pub struct PublishLayerVersionInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The function layer archive.</p>
     pub content: std::option::Option<crate::model::LayerVersionContentInput>,
-    /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
-    /// runtimes</a>. Used for filtering with <a>ListLayers</a> and <a>ListLayerVersions</a>.</p>
+    /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function runtimes</a>. Used for filtering with <code>ListLayers</code> and <code>ListLayerVersions</code>.</p>
     pub compatible_runtimes: std::option::Option<std::vec::Vec<crate::model::Runtime>>,
     /// <p>The layer's software license. It can be any of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>An <a href="https://spdx.org/licenses/">SPDX license identifier</a>. For example,
-    /// <code>MIT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>The URL of a license hosted on the internet. For example,
-    /// <code>https://opensource.org/licenses/MIT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>The full text of the license.</p>
-    /// </li>
+    /// <li> <p>An <a href="https://spdx.org/licenses/">SPDX license identifier</a>. For example, <code>MIT</code>.</p> </li>
+    /// <li> <p>The URL of a license hosted on the internet. For example, <code>https://opensource.org/licenses/MIT</code>.</p> </li>
+    /// <li> <p>The full text of the license.</p> </li>
     /// </ul>
     pub license_info: std::option::Option<std::string::String>,
-    /// <p>A list of compatible  
-    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
+    /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
     pub compatible_architectures: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
 }
 impl PublishLayerVersionInput {
@@ -15675,30 +13997,20 @@ impl PublishLayerVersionInput {
     pub fn content(&self) -> std::option::Option<&crate::model::LayerVersionContentInput> {
         self.content.as_ref()
     }
-    /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
-    /// runtimes</a>. Used for filtering with <a>ListLayers</a> and <a>ListLayerVersions</a>.</p>
+    /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function runtimes</a>. Used for filtering with <code>ListLayers</code> and <code>ListLayerVersions</code>.</p>
     pub fn compatible_runtimes(&self) -> std::option::Option<&[crate::model::Runtime]> {
         self.compatible_runtimes.as_deref()
     }
     /// <p>The layer's software license. It can be any of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>An <a href="https://spdx.org/licenses/">SPDX license identifier</a>. For example,
-    /// <code>MIT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>The URL of a license hosted on the internet. For example,
-    /// <code>https://opensource.org/licenses/MIT</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>The full text of the license.</p>
-    /// </li>
+    /// <li> <p>An <a href="https://spdx.org/licenses/">SPDX license identifier</a>. For example, <code>MIT</code>.</p> </li>
+    /// <li> <p>The URL of a license hosted on the internet. For example, <code>https://opensource.org/licenses/MIT</code>.</p> </li>
+    /// <li> <p>The full text of the license.</p> </li>
     /// </ul>
     pub fn license_info(&self) -> std::option::Option<&str> {
         self.license_info.as_deref()
     }
-    /// <p>A list of compatible  
-    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
+    /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
     pub fn compatible_architectures(&self) -> std::option::Option<&[crate::model::Architecture]> {
         self.compatible_architectures.as_deref()
     }
@@ -15721,53 +14033,28 @@ impl std::fmt::Debug for PublishLayerVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListVersionsByFunctionInput {
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>MyFunction</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
-    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-    /// characters in length.</p>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub function_name: std::option::Option<std::string::String>,
     /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
     pub marker: std::option::Option<std::string::String>,
-    /// <p>The maximum number of versions to return. Note that <code>ListVersionsByFunction</code> returns a maximum of 50 items in each response,
-    /// even if you set the number higher.</p>
+    /// <p>The maximum number of versions to return. Note that <code>ListVersionsByFunction</code> returns a maximum of 50 items in each response, even if you set the number higher.</p>
     pub max_items: std::option::Option<i32>,
 }
 impl ListVersionsByFunctionInput {
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>MyFunction</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
-    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-    /// characters in length.</p>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn function_name(&self) -> std::option::Option<&str> {
         self.function_name.as_deref()
     }
@@ -15775,8 +14062,7 @@ impl ListVersionsByFunctionInput {
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
-    /// <p>The maximum number of versions to return. Note that <code>ListVersionsByFunction</code> returns a maximum of 50 items in each response,
-    /// even if you set the number higher.</p>
+    /// <p>The maximum number of versions to return. Note that <code>ListVersionsByFunction</code> returns a maximum of 50 items in each response, even if you set the number higher.</p>
     pub fn max_items(&self) -> std::option::Option<i32> {
         self.max_items
     }
@@ -15795,13 +14081,11 @@ impl std::fmt::Debug for ListVersionsByFunctionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsInput {
-    /// <p>The function's Amazon Resource Name (ARN).
-    /// Note: Lambda does not support adding tags to aliases or versions.</p>
+    /// <p>The function's Amazon Resource Name (ARN). Note: Lambda does not support adding tags to aliases or versions.</p>
     pub resource: std::option::Option<std::string::String>,
 }
 impl ListTagsInput {
-    /// <p>The function's Amazon Resource Name (ARN).
-    /// Note: Lambda does not support adding tags to aliases or versions.</p>
+    /// <p>The function's Amazon Resource Name (ARN). Note: Lambda does not support adding tags to aliases or versions.</p>
     pub fn resource(&self) -> std::option::Option<&str> {
         self.resource.as_deref()
     }
@@ -15819,25 +14103,13 @@ impl std::fmt::Debug for ListTagsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProvisionedConcurrencyConfigsInput {
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
-    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-    /// characters in length.</p>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub function_name: std::option::Option<std::string::String>,
     /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
     pub marker: std::option::Option<std::string::String>,
@@ -15846,25 +14118,13 @@ pub struct ListProvisionedConcurrencyConfigsInput {
 }
 impl ListProvisionedConcurrencyConfigsInput {
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
-    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-    /// characters in length.</p>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn function_name(&self) -> std::option::Option<&str> {
         self.function_name.as_deref()
     }
@@ -15899,8 +14159,7 @@ pub struct ListLayerVersionsInput {
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of versions to return.</p>
     pub max_items: std::option::Option<i32>,
-    /// <p>The compatible
-    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architecture</a>.</p>
+    /// <p>The compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architecture</a>.</p>
     pub compatible_architecture: std::option::Option<crate::model::Architecture>,
 }
 impl ListLayerVersionsInput {
@@ -15920,8 +14179,7 @@ impl ListLayerVersionsInput {
     pub fn max_items(&self) -> std::option::Option<i32> {
         self.max_items
     }
-    /// <p>The compatible
-    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architecture</a>.</p>
+    /// <p>The compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architecture</a>.</p>
     pub fn compatible_architecture(&self) -> std::option::Option<&crate::model::Architecture> {
         self.compatible_architecture.as_ref()
     }
@@ -15948,8 +14206,7 @@ pub struct ListLayersInput {
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of layers to return.</p>
     pub max_items: std::option::Option<i32>,
-    /// <p>The compatible
-    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architecture</a>.</p>
+    /// <p>The compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architecture</a>.</p>
     pub compatible_architecture: std::option::Option<crate::model::Architecture>,
 }
 impl ListLayersInput {
@@ -15965,8 +14222,7 @@ impl ListLayersInput {
     pub fn max_items(&self) -> std::option::Option<i32> {
         self.max_items
     }
-    /// <p>The compatible
-    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architecture</a>.</p>
+    /// <p>The compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architecture</a>.</p>
     pub fn compatible_architecture(&self) -> std::option::Option<&crate::model::Architecture> {
         self.compatible_architecture.as_ref()
     }
@@ -16021,22 +14277,17 @@ impl std::fmt::Debug for ListFunctionsByCodeSigningConfigInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFunctionsInput {
-    /// <p>For Lambda@Edge functions, the Amazon Web Services Region of the master function. For example, <code>us-east-1</code> filters
-    /// the list of functions to only include Lambda@Edge functions replicated from a master function in US East (N.
-    /// Virginia). If specified, you must set <code>FunctionVersion</code> to <code>ALL</code>.</p>
+    /// <p>For Lambda@Edge functions, the Amazon Web Services Region of the master function. For example, <code>us-east-1</code> filters the list of functions to only include Lambda@Edge functions replicated from a master function in US East (N. Virginia). If specified, you must set <code>FunctionVersion</code> to <code>ALL</code>.</p>
     pub master_region: std::option::Option<std::string::String>,
     /// <p>Set to <code>ALL</code> to include entries for all published versions of each function.</p>
     pub function_version: std::option::Option<crate::model::FunctionVersion>,
     /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
     pub marker: std::option::Option<std::string::String>,
-    /// <p>The maximum number of functions to return in the response. Note that <code>ListFunctions</code> returns a maximum of 50 items in each response,
-    /// even if you set the number higher.</p>
+    /// <p>The maximum number of functions to return in the response. Note that <code>ListFunctions</code> returns a maximum of 50 items in each response, even if you set the number higher.</p>
     pub max_items: std::option::Option<i32>,
 }
 impl ListFunctionsInput {
-    /// <p>For Lambda@Edge functions, the Amazon Web Services Region of the master function. For example, <code>us-east-1</code> filters
-    /// the list of functions to only include Lambda@Edge functions replicated from a master function in US East (N.
-    /// Virginia). If specified, you must set <code>FunctionVersion</code> to <code>ALL</code>.</p>
+    /// <p>For Lambda@Edge functions, the Amazon Web Services Region of the master function. For example, <code>us-east-1</code> filters the list of functions to only include Lambda@Edge functions replicated from a master function in US East (N. Virginia). If specified, you must set <code>FunctionVersion</code> to <code>ALL</code>.</p>
     pub fn master_region(&self) -> std::option::Option<&str> {
         self.master_region.as_deref()
     }
@@ -16048,8 +14299,7 @@ impl ListFunctionsInput {
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
-    /// <p>The maximum number of functions to return in the response. Note that <code>ListFunctions</code> returns a maximum of 50 items in each response,
-    /// even if you set the number higher.</p>
+    /// <p>The maximum number of functions to return in the response. Note that <code>ListFunctions</code> returns a maximum of 50 items in each response, even if you set the number higher.</p>
     pub fn max_items(&self) -> std::option::Option<i32> {
         self.max_items
     }
@@ -16070,25 +14320,13 @@ impl std::fmt::Debug for ListFunctionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFunctionEventInvokeConfigsInput {
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
-    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-    /// characters in length.</p>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub function_name: std::option::Option<std::string::String>,
     /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
     pub marker: std::option::Option<std::string::String>,
@@ -16097,25 +14335,13 @@ pub struct ListFunctionEventInvokeConfigsInput {
 }
 impl ListFunctionEventInvokeConfigsInput {
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
-    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-    /// characters in length.</p>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn function_name(&self) -> std::option::Option<&str> {
         self.function_name.as_deref()
     }
@@ -16144,102 +14370,47 @@ impl std::fmt::Debug for ListFunctionEventInvokeConfigsInput {
 pub struct ListEventSourceMappingsInput {
     /// <p>The Amazon Resource Name (ARN) of the event source.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.</p>
-    /// </li>
+    /// <li> <p> <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.</p> </li>
+    /// <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li>
+    /// <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li>
+    /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.</p> </li>
     /// </ul>
     pub event_source_arn: std::option::Option<std::string::String>,
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>MyFunction</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
-    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64
-    /// characters in length.</p>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.</p>
     pub function_name: std::option::Option<std::string::String>,
     /// <p>A pagination token returned by a previous call.</p>
     pub marker: std::option::Option<std::string::String>,
-    /// <p>The maximum number of event source mappings to return. Note that ListEventSourceMappings returns a maximum of
-    /// 100 items in each response, even if you set the number higher.</p>
+    /// <p>The maximum number of event source mappings to return. Note that ListEventSourceMappings returns a maximum of 100 items in each response, even if you set the number higher.</p>
     pub max_items: std::option::Option<i32>,
 }
 impl ListEventSourceMappingsInput {
     /// <p>The Amazon Resource Name (ARN) of the event source.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.</p>
-    /// </li>
+    /// <li> <p> <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.</p> </li>
+    /// <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li>
+    /// <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li>
+    /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.</p> </li>
     /// </ul>
     pub fn event_source_arn(&self) -> std::option::Option<&str> {
         self.event_source_arn.as_deref()
     }
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>MyFunction</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
-    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64
-    /// characters in length.</p>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.</p>
     pub fn function_name(&self) -> std::option::Option<&str> {
         self.function_name.as_deref()
     }
@@ -16247,8 +14418,7 @@ impl ListEventSourceMappingsInput {
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
-    /// <p>The maximum number of event source mappings to return. Note that ListEventSourceMappings returns a maximum of
-    /// 100 items in each response, even if you set the number higher.</p>
+    /// <p>The maximum number of event source mappings to return. Note that ListEventSourceMappings returns a maximum of 100 items in each response, even if you set the number higher.</p>
     pub fn max_items(&self) -> std::option::Option<i32> {
         self.max_items
     }
@@ -16297,25 +14467,13 @@ impl std::fmt::Debug for ListCodeSigningConfigsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAliasesInput {
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>MyFunction</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
-    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-    /// characters in length.</p>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub function_name: std::option::Option<std::string::String>,
     /// <p>Specify a function version to only list aliases that invoke that version.</p>
     pub function_version: std::option::Option<std::string::String>,
@@ -16326,25 +14484,13 @@ pub struct ListAliasesInput {
 }
 impl ListAliasesInput {
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>MyFunction</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
-    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-    /// characters in length.</p>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn function_name(&self) -> std::option::Option<&str> {
         self.function_name.as_deref()
     }
@@ -16376,50 +14522,26 @@ impl std::fmt::Debug for ListAliasesInput {
 #[non_exhaustive]
 pub struct InvokeAsyncInput {
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
-    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-    /// characters in length.</p>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub function_name: std::option::Option<std::string::String>,
     /// <p>The JSON that you want to provide to your Lambda function as input.</p>
     pub invoke_args: aws_smithy_http::byte_stream::ByteStream,
 }
 impl InvokeAsyncInput {
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
-    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-    /// characters in length.</p>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn function_name(&self) -> std::option::Option<&str> {
         self.function_name.as_deref()
     }
@@ -16442,101 +14564,48 @@ impl std::fmt::Debug for InvokeAsyncInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvokeInput {
     /// <p>The name of the Lambda function, version, or alias.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
-    /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
-    /// If you specify only the function name, it is limited to 64 characters in length.</p>
+    /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub function_name: std::option::Option<std::string::String>,
     /// <p>Choose from the following options.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>RequestResponse</code> (default) - Invoke the function synchronously. Keep the connection open until
-    /// the function returns a response or times out. The API response includes the function response and additional
-    /// data.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Event</code> - Invoke the function asynchronously. Send events that fail multiple times to the
-    /// function's dead-letter queue (if it's configured). The API response only includes a status code.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DryRun</code> - Validate parameter values and verify that the user or role has permission to invoke
-    /// the function.</p>
-    /// </li>
+    /// <li> <p> <code>RequestResponse</code> (default) - Invoke the function synchronously. Keep the connection open until the function returns a response or times out. The API response includes the function response and additional data.</p> </li>
+    /// <li> <p> <code>Event</code> - Invoke the function asynchronously. Send events that fail multiple times to the function's dead-letter queue (if it's configured). The API response only includes a status code.</p> </li>
+    /// <li> <p> <code>DryRun</code> - Validate parameter values and verify that the user or role has permission to invoke the function.</p> </li>
     /// </ul>
     pub invocation_type: std::option::Option<crate::model::InvocationType>,
     /// <p>Set to <code>Tail</code> to include the execution log in the response. Applies to synchronously invoked functions only.</p>
     pub log_type: std::option::Option<crate::model::LogType>,
-    /// <p>Up to 3583 bytes of base64-encoded data about the invoking client to pass to the function in the context
-    /// object.</p>
+    /// <p>Up to 3583 bytes of base64-encoded data about the invoking client to pass to the function in the context object.</p>
     pub client_context: std::option::Option<std::string::String>,
     /// <p>The JSON that you want to provide to your Lambda function as input.</p>
-    /// <p>You can enter the JSON directly. For example, <code>--payload '{ "key": "value" }'</code>.
-    /// You can also specify a file path. For example, <code>--payload file://payload.json</code>.
-    /// </p>
+    /// <p>You can enter the JSON directly. For example, <code>--payload '{ "key": "value" }'</code>. You can also specify a file path. For example, <code>--payload file://payload.json</code>. </p>
     pub payload: std::option::Option<aws_smithy_types::Blob>,
     /// <p>Specify a version or alias to invoke a published version of the function.</p>
     pub qualifier: std::option::Option<std::string::String>,
 }
 impl InvokeInput {
     /// <p>The name of the Lambda function, version, or alias.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
-    /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
-    /// If you specify only the function name, it is limited to 64 characters in length.</p>
+    /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn function_name(&self) -> std::option::Option<&str> {
         self.function_name.as_deref()
     }
     /// <p>Choose from the following options.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>RequestResponse</code> (default) - Invoke the function synchronously. Keep the connection open until
-    /// the function returns a response or times out. The API response includes the function response and additional
-    /// data.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Event</code> - Invoke the function asynchronously. Send events that fail multiple times to the
-    /// function's dead-letter queue (if it's configured). The API response only includes a status code.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DryRun</code> - Validate parameter values and verify that the user or role has permission to invoke
-    /// the function.</p>
-    /// </li>
+    /// <li> <p> <code>RequestResponse</code> (default) - Invoke the function synchronously. Keep the connection open until the function returns a response or times out. The API response includes the function response and additional data.</p> </li>
+    /// <li> <p> <code>Event</code> - Invoke the function asynchronously. Send events that fail multiple times to the function's dead-letter queue (if it's configured). The API response only includes a status code.</p> </li>
+    /// <li> <p> <code>DryRun</code> - Validate parameter values and verify that the user or role has permission to invoke the function.</p> </li>
     /// </ul>
     pub fn invocation_type(&self) -> std::option::Option<&crate::model::InvocationType> {
         self.invocation_type.as_ref()
@@ -16545,15 +14614,12 @@ impl InvokeInput {
     pub fn log_type(&self) -> std::option::Option<&crate::model::LogType> {
         self.log_type.as_ref()
     }
-    /// <p>Up to 3583 bytes of base64-encoded data about the invoking client to pass to the function in the context
-    /// object.</p>
+    /// <p>Up to 3583 bytes of base64-encoded data about the invoking client to pass to the function in the context object.</p>
     pub fn client_context(&self) -> std::option::Option<&str> {
         self.client_context.as_deref()
     }
     /// <p>The JSON that you want to provide to your Lambda function as input.</p>
-    /// <p>You can enter the JSON directly. For example, <code>--payload '{ "key": "value" }'</code>.
-    /// You can also specify a file path. For example, <code>--payload file://payload.json</code>.
-    /// </p>
+    /// <p>You can enter the JSON directly. For example, <code>--payload '{ "key": "value" }'</code>. You can also specify a file path. For example, <code>--payload file://payload.json</code>. </p>
     pub fn payload(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.payload.as_ref()
     }
@@ -16580,50 +14646,26 @@ impl std::fmt::Debug for InvokeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetProvisionedConcurrencyConfigInput {
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
-    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-    /// characters in length.</p>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub function_name: std::option::Option<std::string::String>,
     /// <p>The version number or alias name.</p>
     pub qualifier: std::option::Option<std::string::String>,
 }
 impl GetProvisionedConcurrencyConfigInput {
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
-    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-    /// characters in length.</p>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn function_name(&self) -> std::option::Option<&str> {
         self.function_name.as_deref()
     }
@@ -16646,50 +14688,26 @@ impl std::fmt::Debug for GetProvisionedConcurrencyConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPolicyInput {
     /// <p>The name of the Lambda function, version, or alias.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
-    /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
-    /// If you specify only the function name, it is limited to 64 characters in length.</p>
+    /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub function_name: std::option::Option<std::string::String>,
     /// <p>Specify a version or alias to get the policy for that resource.</p>
     pub qualifier: std::option::Option<std::string::String>,
 }
 impl GetPolicyInput {
     /// <p>The name of the Lambda function, version, or alias.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
-    /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
-    /// If you specify only the function name, it is limited to 64 characters in length.</p>
+    /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn function_name(&self) -> std::option::Option<&str> {
         self.function_name.as_deref()
     }
@@ -16789,50 +14807,26 @@ impl std::fmt::Debug for GetLayerVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFunctionEventInvokeConfigInput {
     /// <p>The name of the Lambda function, version, or alias.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
-    /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
-    /// If you specify only the function name, it is limited to 64 characters in length.</p>
+    /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub function_name: std::option::Option<std::string::String>,
     /// <p>A version number or alias name.</p>
     pub qualifier: std::option::Option<std::string::String>,
 }
 impl GetFunctionEventInvokeConfigInput {
     /// <p>The name of the Lambda function, version, or alias.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
-    /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
-    /// If you specify only the function name, it is limited to 64 characters in length.</p>
+    /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn function_name(&self) -> std::option::Option<&str> {
         self.function_name.as_deref()
     }
@@ -16855,50 +14849,26 @@ impl std::fmt::Debug for GetFunctionEventInvokeConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFunctionConfigurationInput {
     /// <p>The name of the Lambda function, version, or alias.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
-    /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
-    /// If you specify only the function name, it is limited to 64 characters in length.</p>
+    /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub function_name: std::option::Option<std::string::String>,
     /// <p>Specify a version or alias to get details about a published version of the function.</p>
     pub qualifier: std::option::Option<std::string::String>,
 }
 impl GetFunctionConfigurationInput {
     /// <p>The name of the Lambda function, version, or alias.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
-    /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
-    /// If you specify only the function name, it is limited to 64 characters in length.</p>
+    /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn function_name(&self) -> std::option::Option<&str> {
         self.function_name.as_deref()
     }
@@ -16921,48 +14891,24 @@ impl std::fmt::Debug for GetFunctionConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFunctionConcurrencyInput {
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
-    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-    /// characters in length.</p>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub function_name: std::option::Option<std::string::String>,
 }
 impl GetFunctionConcurrencyInput {
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
-    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-    /// characters in length.</p>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn function_name(&self) -> std::option::Option<&str> {
         self.function_name.as_deref()
     }
@@ -16980,48 +14926,24 @@ impl std::fmt::Debug for GetFunctionConcurrencyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFunctionCodeSigningConfigInput {
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>MyFunction</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
-    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-    /// characters in length.</p>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub function_name: std::option::Option<std::string::String>,
 }
 impl GetFunctionCodeSigningConfigInput {
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>MyFunction</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
-    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-    /// characters in length.</p>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn function_name(&self) -> std::option::Option<&str> {
         self.function_name.as_deref()
     }
@@ -17039,50 +14961,26 @@ impl std::fmt::Debug for GetFunctionCodeSigningConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFunctionInput {
     /// <p>The name of the Lambda function, version, or alias.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
-    /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
-    /// If you specify only the function name, it is limited to 64 characters in length.</p>
+    /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub function_name: std::option::Option<std::string::String>,
     /// <p>Specify a version or alias to get details about a published version of the function.</p>
     pub qualifier: std::option::Option<std::string::String>,
 }
 impl GetFunctionInput {
     /// <p>The name of the Lambda function, version, or alias.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
-    /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
-    /// If you specify only the function name, it is limited to 64 characters in length.</p>
+    /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn function_name(&self) -> std::option::Option<&str> {
         self.function_name.as_deref()
     }
@@ -17147,50 +15045,26 @@ impl std::fmt::Debug for GetCodeSigningConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAliasInput {
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>MyFunction</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
-    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-    /// characters in length.</p>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub function_name: std::option::Option<std::string::String>,
     /// <p>The name of the alias.</p>
     pub name: std::option::Option<std::string::String>,
 }
 impl GetAliasInput {
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>MyFunction</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
-    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-    /// characters in length.</p>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn function_name(&self) -> std::option::Option<&str> {
         self.function_name.as_deref()
     }
@@ -17224,50 +15098,26 @@ impl std::fmt::Debug for GetAccountSettingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteProvisionedConcurrencyConfigInput {
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
-    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-    /// characters in length.</p>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub function_name: std::option::Option<std::string::String>,
     /// <p>The version number or alias name.</p>
     pub qualifier: std::option::Option<std::string::String>,
 }
 impl DeleteProvisionedConcurrencyConfigInput {
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
-    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-    /// characters in length.</p>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn function_name(&self) -> std::option::Option<&str> {
         self.function_name.as_deref()
     }
@@ -17318,50 +15168,26 @@ impl std::fmt::Debug for DeleteLayerVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFunctionEventInvokeConfigInput {
     /// <p>The name of the Lambda function, version, or alias.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
-    /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
-    /// If you specify only the function name, it is limited to 64 characters in length.</p>
+    /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub function_name: std::option::Option<std::string::String>,
     /// <p>A version number or alias name.</p>
     pub qualifier: std::option::Option<std::string::String>,
 }
 impl DeleteFunctionEventInvokeConfigInput {
     /// <p>The name of the Lambda function, version, or alias.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
-    /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
-    /// If you specify only the function name, it is limited to 64 characters in length.</p>
+    /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn function_name(&self) -> std::option::Option<&str> {
         self.function_name.as_deref()
     }
@@ -17384,48 +15210,24 @@ impl std::fmt::Debug for DeleteFunctionEventInvokeConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFunctionConcurrencyInput {
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
-    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-    /// characters in length.</p>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub function_name: std::option::Option<std::string::String>,
 }
 impl DeleteFunctionConcurrencyInput {
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
-    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-    /// characters in length.</p>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn function_name(&self) -> std::option::Option<&str> {
         self.function_name.as_deref()
     }
@@ -17443,48 +15245,24 @@ impl std::fmt::Debug for DeleteFunctionConcurrencyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFunctionCodeSigningConfigInput {
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>MyFunction</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
-    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-    /// characters in length.</p>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub function_name: std::option::Option<std::string::String>,
 }
 impl DeleteFunctionCodeSigningConfigInput {
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>MyFunction</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
-    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-    /// characters in length.</p>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn function_name(&self) -> std::option::Option<&str> {
         self.function_name.as_deref()
     }
@@ -17502,50 +15280,26 @@ impl std::fmt::Debug for DeleteFunctionCodeSigningConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFunctionInput {
     /// <p>The name of the Lambda function or version.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:1</code> (with version).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:1</code> (with version).</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
-    /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
-    /// If you specify only the function name, it is limited to 64 characters in length.</p>
+    /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub function_name: std::option::Option<std::string::String>,
     /// <p>Specify a version to delete. You can't delete a version that's referenced by an alias.</p>
     pub qualifier: std::option::Option<std::string::String>,
 }
 impl DeleteFunctionInput {
     /// <p>The name of the Lambda function or version.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:1</code> (with version).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:1</code> (with version).</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
-    /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
-    /// If you specify only the function name, it is limited to 64 characters in length.</p>
+    /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn function_name(&self) -> std::option::Option<&str> {
         self.function_name.as_deref()
     }
@@ -17610,50 +15364,26 @@ impl std::fmt::Debug for DeleteCodeSigningConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAliasInput {
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>MyFunction</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
-    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-    /// characters in length.</p>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub function_name: std::option::Option<std::string::String>,
     /// <p>The name of the alias.</p>
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteAliasInput {
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>MyFunction</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
-    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-    /// characters in length.</p>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn function_name(&self) -> std::option::Option<&str> {
         self.function_name.as_deref()
     }
@@ -17676,110 +15406,69 @@ impl std::fmt::Debug for DeleteAliasInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFunctionInput {
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
-    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-    /// characters in length.</p>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub function_name: std::option::Option<std::string::String>,
-    /// <p>The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required if the deployment package is a .zip file archive.
-    /// </p>
+    /// <p>The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required if the deployment package is a .zip file archive. </p>
     pub runtime: std::option::Option<crate::model::Runtime>,
     /// <p>The Amazon Resource Name (ARN) of the function's execution role.</p>
     pub role: std::option::Option<std::string::String>,
-    /// <p>The name of the method within your code that Lambda calls to execute your function.
-    /// Handler is required if the deployment package is a .zip file archive. The format includes the
-    /// file name. It can also include namespaces and other qualifiers, depending on the runtime. For more information,
-    /// see <a href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming Model</a>.</p>
+    /// <p>The name of the method within your code that Lambda calls to execute your function. Handler is required if the deployment package is a .zip file archive. The format includes the file name. It can also include namespaces and other qualifiers, depending on the runtime. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming Model</a>.</p>
     pub handler: std::option::Option<std::string::String>,
     /// <p>The code for the function.</p>
     pub code: std::option::Option<crate::model::FunctionCode>,
     /// <p>A description of the function.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The amount of time (in seconds) that Lambda allows a function to run before stopping it. The default is 3 seconds. The
-    /// maximum allowed value is 900 seconds. For additional information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda execution environment</a>.</p>
+    /// <p>The amount of time (in seconds) that Lambda allows a function to run before stopping it. The default is 3 seconds. The maximum allowed value is 900 seconds. For additional information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda execution environment</a>.</p>
     pub timeout: std::option::Option<i32>,
-    /// <p>The amount of  <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-memory.html">memory available to the function</a> at runtime.
-    /// Increasing the function memory also increases its CPU allocation. The default value is 128 MB. The value can be any multiple of 1 MB.</p>
+    /// <p>The amount of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-memory.html">memory available to the function</a> at runtime. Increasing the function memory also increases its CPU allocation. The default value is 128 MB. The value can be any multiple of 1 MB.</p>
     pub memory_size: std::option::Option<i32>,
     /// <p>Set to true to publish the first version of the function during creation.</p>
     pub publish: bool,
-    /// <p>For network connectivity to Amazon Web Services resources in a VPC, specify a list of security groups and subnets in the VPC.
-    /// When you connect a function to a VPC, it can only access resources and the internet through that VPC. For more
-    /// information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC Settings</a>.</p>
+    /// <p>For network connectivity to Amazon Web Services resources in a VPC, specify a list of security groups and subnets in the VPC. When you connect a function to a VPC, it can only access resources and the internet through that VPC. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC Settings</a>.</p>
     pub vpc_config: std::option::Option<crate::model::VpcConfig>,
     /// <p>The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for ZIP archive.</p>
     pub package_type: std::option::Option<crate::model::PackageType>,
-    /// <p>A dead letter queue configuration that specifies the queue or topic where Lambda sends asynchronous events
-    /// when they fail processing. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">Dead Letter Queues</a>.</p>
+    /// <p>A dead letter queue configuration that specifies the queue or topic where Lambda sends asynchronous events when they fail processing. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">Dead Letter Queues</a>.</p>
     pub dead_letter_config: std::option::Option<crate::model::DeadLetterConfig>,
     /// <p>Environment variables that are accessible from function code during execution.</p>
     pub environment: std::option::Option<crate::model::Environment>,
-    /// <p>The ARN of the Amazon Web Services Key Management Service (KMS) key that's used to encrypt your function's environment
-    /// variables. If it's not provided, Lambda uses a default service key.</p>
+    /// <p>The ARN of the Amazon Web Services Key Management Service (KMS) key that's used to encrypt your function's environment variables. If it's not provided, Lambda uses a default service key.</p>
     pub kms_key_arn: std::option::Option<std::string::String>,
-    /// <p>Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of incoming requests with
-    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/services-xray.html">X-Ray</a>.</p>
+    /// <p>Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of incoming requests with <a href="https://docs.aws.amazon.com/lambda/latest/dg/services-xray.html">X-Ray</a>.</p>
     pub tracing_config: std::option::Option<crate::model::TracingConfig>,
-    /// <p>A list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a> to apply to the
-    /// function.</p>
+    /// <p>A list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a> to apply to the function.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>A list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function layers</a>
-    /// to add to the function's execution environment. Specify each layer by its ARN, including the version.</p>
+    /// <p>A list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function layers</a> to add to the function's execution environment. Specify each layer by its ARN, including the version.</p>
     pub layers: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Connection settings for an Amazon EFS file system.</p>
     pub file_system_configs: std::option::Option<std::vec::Vec<crate::model::FileSystemConfig>>,
-    /// <p>Container image <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-images.html#configuration-images-settings">configuration
-    /// values</a> that override the values in the container image Dockerfile.</p>
+    /// <p>Container image <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-images.html#configuration-images-settings">configuration values</a> that override the values in the container image Dockerfile.</p>
     pub image_config: std::option::Option<crate::model::ImageConfig>,
-    /// <p>To enable code signing for this function, specify the ARN of a code-signing configuration. A code-signing configuration
-    /// includes a set of signing profiles, which define the trusted publishers for this function.</p>
+    /// <p>To enable code signing for this function, specify the ARN of a code-signing configuration. A code-signing configuration includes a set of signing profiles, which define the trusted publishers for this function.</p>
     pub code_signing_config_arn: std::option::Option<std::string::String>,
-    /// <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values (arm64 or x86_64).
-    /// The default value is <code>x86_64</code>.</p>
+    /// <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values (arm64 or x86_64). The default value is <code>x86_64</code>.</p>
     pub architectures: std::option::Option<std::vec::Vec<crate::model::Architecture>>,
 }
 impl CreateFunctionInput {
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
-    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-    /// characters in length.</p>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn function_name(&self) -> std::option::Option<&str> {
         self.function_name.as_deref()
     }
-    /// <p>The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required if the deployment package is a .zip file archive.
-    /// </p>
+    /// <p>The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required if the deployment package is a .zip file archive. </p>
     pub fn runtime(&self) -> std::option::Option<&crate::model::Runtime> {
         self.runtime.as_ref()
     }
@@ -17787,10 +15476,7 @@ impl CreateFunctionInput {
     pub fn role(&self) -> std::option::Option<&str> {
         self.role.as_deref()
     }
-    /// <p>The name of the method within your code that Lambda calls to execute your function.
-    /// Handler is required if the deployment package is a .zip file archive. The format includes the
-    /// file name. It can also include namespaces and other qualifiers, depending on the runtime. For more information,
-    /// see <a href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming Model</a>.</p>
+    /// <p>The name of the method within your code that Lambda calls to execute your function. Handler is required if the deployment package is a .zip file archive. The format includes the file name. It can also include namespaces and other qualifiers, depending on the runtime. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming Model</a>.</p>
     pub fn handler(&self) -> std::option::Option<&str> {
         self.handler.as_deref()
     }
@@ -17802,13 +15488,11 @@ impl CreateFunctionInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The amount of time (in seconds) that Lambda allows a function to run before stopping it. The default is 3 seconds. The
-    /// maximum allowed value is 900 seconds. For additional information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda execution environment</a>.</p>
+    /// <p>The amount of time (in seconds) that Lambda allows a function to run before stopping it. The default is 3 seconds. The maximum allowed value is 900 seconds. For additional information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda execution environment</a>.</p>
     pub fn timeout(&self) -> std::option::Option<i32> {
         self.timeout
     }
-    /// <p>The amount of  <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-memory.html">memory available to the function</a> at runtime.
-    /// Increasing the function memory also increases its CPU allocation. The default value is 128 MB. The value can be any multiple of 1 MB.</p>
+    /// <p>The amount of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-memory.html">memory available to the function</a> at runtime. Increasing the function memory also increases its CPU allocation. The default value is 128 MB. The value can be any multiple of 1 MB.</p>
     pub fn memory_size(&self) -> std::option::Option<i32> {
         self.memory_size
     }
@@ -17816,9 +15500,7 @@ impl CreateFunctionInput {
     pub fn publish(&self) -> bool {
         self.publish
     }
-    /// <p>For network connectivity to Amazon Web Services resources in a VPC, specify a list of security groups and subnets in the VPC.
-    /// When you connect a function to a VPC, it can only access resources and the internet through that VPC. For more
-    /// information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC Settings</a>.</p>
+    /// <p>For network connectivity to Amazon Web Services resources in a VPC, specify a list of security groups and subnets in the VPC. When you connect a function to a VPC, it can only access resources and the internet through that VPC. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC Settings</a>.</p>
     pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
         self.vpc_config.as_ref()
     }
@@ -17826,8 +15508,7 @@ impl CreateFunctionInput {
     pub fn package_type(&self) -> std::option::Option<&crate::model::PackageType> {
         self.package_type.as_ref()
     }
-    /// <p>A dead letter queue configuration that specifies the queue or topic where Lambda sends asynchronous events
-    /// when they fail processing. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">Dead Letter Queues</a>.</p>
+    /// <p>A dead letter queue configuration that specifies the queue or topic where Lambda sends asynchronous events when they fail processing. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">Dead Letter Queues</a>.</p>
     pub fn dead_letter_config(&self) -> std::option::Option<&crate::model::DeadLetterConfig> {
         self.dead_letter_config.as_ref()
     }
@@ -17835,26 +15516,22 @@ impl CreateFunctionInput {
     pub fn environment(&self) -> std::option::Option<&crate::model::Environment> {
         self.environment.as_ref()
     }
-    /// <p>The ARN of the Amazon Web Services Key Management Service (KMS) key that's used to encrypt your function's environment
-    /// variables. If it's not provided, Lambda uses a default service key.</p>
+    /// <p>The ARN of the Amazon Web Services Key Management Service (KMS) key that's used to encrypt your function's environment variables. If it's not provided, Lambda uses a default service key.</p>
     pub fn kms_key_arn(&self) -> std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
-    /// <p>Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of incoming requests with
-    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/services-xray.html">X-Ray</a>.</p>
+    /// <p>Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of incoming requests with <a href="https://docs.aws.amazon.com/lambda/latest/dg/services-xray.html">X-Ray</a>.</p>
     pub fn tracing_config(&self) -> std::option::Option<&crate::model::TracingConfig> {
         self.tracing_config.as_ref()
     }
-    /// <p>A list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a> to apply to the
-    /// function.</p>
+    /// <p>A list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a> to apply to the function.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
     }
-    /// <p>A list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function layers</a>
-    /// to add to the function's execution environment. Specify each layer by its ARN, including the version.</p>
+    /// <p>A list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function layers</a> to add to the function's execution environment. Specify each layer by its ARN, including the version.</p>
     pub fn layers(&self) -> std::option::Option<&[std::string::String]> {
         self.layers.as_deref()
     }
@@ -17862,18 +15539,15 @@ impl CreateFunctionInput {
     pub fn file_system_configs(&self) -> std::option::Option<&[crate::model::FileSystemConfig]> {
         self.file_system_configs.as_deref()
     }
-    /// <p>Container image <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-images.html#configuration-images-settings">configuration
-    /// values</a> that override the values in the container image Dockerfile.</p>
+    /// <p>Container image <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-images.html#configuration-images-settings">configuration values</a> that override the values in the container image Dockerfile.</p>
     pub fn image_config(&self) -> std::option::Option<&crate::model::ImageConfig> {
         self.image_config.as_ref()
     }
-    /// <p>To enable code signing for this function, specify the ARN of a code-signing configuration. A code-signing configuration
-    /// includes a set of signing profiles, which define the trusted publishers for this function.</p>
+    /// <p>To enable code signing for this function, specify the ARN of a code-signing configuration. A code-signing configuration includes a set of signing profiles, which define the trusted publishers for this function.</p>
     pub fn code_signing_config_arn(&self) -> std::option::Option<&str> {
         self.code_signing_config_arn.as_deref()
     }
-    /// <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values (arm64 or x86_64).
-    /// The default value is <code>x86_64</code>.</p>
+    /// <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values (arm64 or x86_64). The default value is <code>x86_64</code>.</p>
     pub fn architectures(&self) -> std::option::Option<&[crate::model::Architecture]> {
         self.architectures.as_deref()
     }
@@ -17912,83 +15586,36 @@ impl std::fmt::Debug for CreateFunctionInput {
 pub struct CreateEventSourceMappingInput {
     /// <p>The Amazon Resource Name (ARN) of the event source.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.</p>
-    /// </li>
+    /// <li> <p> <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.</p> </li>
+    /// <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li>
+    /// <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li>
+    /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.</p> </li>
     /// </ul>
     pub event_source_arn: std::option::Option<std::string::String>,
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>MyFunction</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
-    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64
-    /// characters in length.</p>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.</p>
     pub function_name: std::option::Option<std::string::String>,
     /// <p>When true, the event source mapping is active. When false, Lambda pauses polling and invocation.</p>
     /// <p>Default: True</p>
     pub enabled: std::option::Option<bool>,
-    /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation
-    /// (6 MB).</p>
+    /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> - Default 100. Max 10,000.</p>
-    /// </li>
+    /// <li> <p> <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p> </li>
+    /// <li> <p> <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.</p> </li>
+    /// <li> <p> <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p> </li>
+    /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
+    /// <li> <p> <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
+    /// <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> - Default 100. Max 10,000.</p> </li>
     /// </ul>
     pub batch_size: std::option::Option<i32>,
-    /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that
-    /// determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+    /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
     pub filter_criteria: std::option::Option<crate::model::FilterCriteria>,
     /// <p>(Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function.</p>
     /// <p>Default: 0</p>
@@ -17996,11 +15623,9 @@ pub struct CreateEventSourceMappingInput {
     pub maximum_batching_window_in_seconds: std::option::Option<i32>,
     /// <p>(Streams only) The number of batches to process from each shard concurrently.</p>
     pub parallelization_factor: std::option::Option<i32>,
-    /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon
-    /// MSK Streams sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.</p>
+    /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK Streams sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.</p>
     pub starting_position: std::option::Option<crate::model::EventSourcePosition>,
-    /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start
-    /// reading.</p>
+    /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.</p>
     pub starting_position_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
     pub destination_config: std::option::Option<crate::model::DestinationConfig>,
@@ -18028,50 +15653,23 @@ pub struct CreateEventSourceMappingInput {
 impl CreateEventSourceMappingInput {
     /// <p>The Amazon Resource Name (ARN) of the event source.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.</p>
-    /// </li>
+    /// <li> <p> <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.</p> </li>
+    /// <li> <p> <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p> </li>
+    /// <li> <p> <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p> </li>
+    /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.</p> </li>
     /// </ul>
     pub fn event_source_arn(&self) -> std::option::Option<&str> {
         self.event_source_arn.as_deref()
     }
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>MyFunction</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
-    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64
-    /// characters in length.</p>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.</p>
     pub fn function_name(&self) -> std::option::Option<&str> {
         self.function_name.as_deref()
     }
@@ -18080,39 +15678,19 @@ impl CreateEventSourceMappingInput {
     pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
     }
-    /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation
-    /// (6 MB).</p>
+    /// <p>The maximum number of records in each batch that Lambda pulls from your stream or queue and sends to your function. Lambda passes all of the records in the batch to the function in a single call, up to the payload limit for synchronous invocation (6 MB).</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> - Default 100. Max 10,000.</p>
-    /// </li>
+    /// <li> <p> <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p> </li>
+    /// <li> <p> <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.</p> </li>
+    /// <li> <p> <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000. For FIFO queues the max is 10.</p> </li>
+    /// <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
+    /// <li> <p> <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.</p> </li>
+    /// <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> - Default 100. Max 10,000.</p> </li>
     /// </ul>
     pub fn batch_size(&self) -> std::option::Option<i32> {
         self.batch_size
     }
-    /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that
-    /// determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
+    /// <p>(Streams and Amazon SQS) An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
     pub fn filter_criteria(&self) -> std::option::Option<&crate::model::FilterCriteria> {
         self.filter_criteria.as_ref()
     }
@@ -18126,13 +15704,11 @@ impl CreateEventSourceMappingInput {
     pub fn parallelization_factor(&self) -> std::option::Option<i32> {
         self.parallelization_factor
     }
-    /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon
-    /// MSK Streams sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.</p>
+    /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK Streams sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.</p>
     pub fn starting_position(&self) -> std::option::Option<&crate::model::EventSourcePosition> {
         self.starting_position.as_ref()
     }
-    /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start
-    /// reading.</p>
+    /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.</p>
     pub fn starting_position_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.starting_position_timestamp.as_ref()
     }
@@ -18267,25 +15843,13 @@ impl std::fmt::Debug for CreateCodeSigningConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAliasInput {
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>MyFunction</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
-    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-    /// characters in length.</p>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub function_name: std::option::Option<std::string::String>,
     /// <p>The name of the alias.</p>
     pub name: std::option::Option<std::string::String>,
@@ -18293,31 +15857,18 @@ pub struct CreateAliasInput {
     pub function_version: std::option::Option<std::string::String>,
     /// <p>A description of the alias.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html#configuring-alias-routing">routing
-    /// configuration</a> of the alias.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html#configuring-alias-routing">routing configuration</a> of the alias.</p>
     pub routing_config: std::option::Option<crate::model::AliasRoutingConfiguration>,
 }
 impl CreateAliasInput {
     /// <p>The name of the Lambda function.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>MyFunction</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
-    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-    /// characters in length.</p>
+    /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn function_name(&self) -> std::option::Option<&str> {
         self.function_name.as_deref()
     }
@@ -18333,8 +15884,7 @@ impl CreateAliasInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html#configuring-alias-routing">routing
-    /// configuration</a> of the alias.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html#configuring-alias-routing">routing configuration</a> of the alias.</p>
     pub fn routing_config(&self) -> std::option::Option<&crate::model::AliasRoutingConfiguration> {
         self.routing_config.as_ref()
     }
@@ -18356,71 +15906,41 @@ impl std::fmt::Debug for CreateAliasInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddPermissionInput {
     /// <p>The name of the Lambda function, version, or alias.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
-    /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
-    /// If you specify only the function name, it is limited to 64 characters in length.</p>
+    /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub function_name: std::option::Option<std::string::String>,
     /// <p>A statement identifier that differentiates the statement from others in the same policy.</p>
     pub statement_id: std::option::Option<std::string::String>,
-    /// <p>The action that the principal can use on the function. For example, <code>lambda:InvokeFunction</code> or
-    /// <code>lambda:GetFunction</code>.</p>
+    /// <p>The action that the principal can use on the function. For example, <code>lambda:InvokeFunction</code> or <code>lambda:GetFunction</code>.</p>
     pub action: std::option::Option<std::string::String>,
-    /// <p>The Amazon Web Services service or account that invokes the function. If you specify a service, use <code>SourceArn</code> or
-    /// <code>SourceAccount</code> to limit who can invoke the function through that service.</p>
+    /// <p>The Amazon Web Services service or account that invokes the function. If you specify a service, use <code>SourceArn</code> or <code>SourceAccount</code> to limit who can invoke the function through that service.</p>
     pub principal: std::option::Option<std::string::String>,
-    /// <p>For Amazon Web Services services, the ARN of the Amazon Web Services resource that invokes the function. For example, an Amazon S3 bucket or
-    /// Amazon SNS topic.</p>
+    /// <p>For Amazon Web Services services, the ARN of the Amazon Web Services resource that invokes the function. For example, an Amazon S3 bucket or Amazon SNS topic.</p>
     /// <p>Note that Lambda configures the comparison using the <code>StringLike</code> operator.</p>
     pub source_arn: std::option::Option<std::string::String>,
-    /// <p>For Amazon S3, the ID of the account that owns the resource. Use this together with <code>SourceArn</code> to
-    /// ensure that the resource is owned by the specified account. It is possible for an Amazon S3 bucket to be deleted
-    /// by its owner and recreated by another account.</p>
+    /// <p>For Amazon S3, the ID of the account that owns the resource. Use this together with <code>SourceArn</code> to ensure that the resource is owned by the specified account. It is possible for an Amazon S3 bucket to be deleted by its owner and recreated by another account.</p>
     pub source_account: std::option::Option<std::string::String>,
     /// <p>For Alexa Smart Home functions, a token that must be supplied by the invoker.</p>
     pub event_source_token: std::option::Option<std::string::String>,
     /// <p>Specify a version or alias to add permissions to a published version of the function.</p>
     pub qualifier: std::option::Option<std::string::String>,
-    /// <p>Only update the policy if the revision ID matches the ID that's specified. Use this option to avoid modifying a
-    /// policy that has changed since you last read it.</p>
+    /// <p>Only update the policy if the revision ID matches the ID that's specified. Use this option to avoid modifying a policy that has changed since you last read it.</p>
     pub revision_id: std::option::Option<std::string::String>,
 }
 impl AddPermissionInput {
     /// <p>The name of the Lambda function, version, or alias.</p>
-    /// <p class="title">
-    /// <b>Name formats</b>
-    /// </p>
+    /// <p class="title"> <b>Name formats</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p>
-    /// </li>
+    /// <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li>
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
-    /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN.
-    /// If you specify only the function name, it is limited to 64 characters in length.</p>
+    /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn function_name(&self) -> std::option::Option<&str> {
         self.function_name.as_deref()
     }
@@ -18428,25 +15948,20 @@ impl AddPermissionInput {
     pub fn statement_id(&self) -> std::option::Option<&str> {
         self.statement_id.as_deref()
     }
-    /// <p>The action that the principal can use on the function. For example, <code>lambda:InvokeFunction</code> or
-    /// <code>lambda:GetFunction</code>.</p>
+    /// <p>The action that the principal can use on the function. For example, <code>lambda:InvokeFunction</code> or <code>lambda:GetFunction</code>.</p>
     pub fn action(&self) -> std::option::Option<&str> {
         self.action.as_deref()
     }
-    /// <p>The Amazon Web Services service or account that invokes the function. If you specify a service, use <code>SourceArn</code> or
-    /// <code>SourceAccount</code> to limit who can invoke the function through that service.</p>
+    /// <p>The Amazon Web Services service or account that invokes the function. If you specify a service, use <code>SourceArn</code> or <code>SourceAccount</code> to limit who can invoke the function through that service.</p>
     pub fn principal(&self) -> std::option::Option<&str> {
         self.principal.as_deref()
     }
-    /// <p>For Amazon Web Services services, the ARN of the Amazon Web Services resource that invokes the function. For example, an Amazon S3 bucket or
-    /// Amazon SNS topic.</p>
+    /// <p>For Amazon Web Services services, the ARN of the Amazon Web Services resource that invokes the function. For example, an Amazon S3 bucket or Amazon SNS topic.</p>
     /// <p>Note that Lambda configures the comparison using the <code>StringLike</code> operator.</p>
     pub fn source_arn(&self) -> std::option::Option<&str> {
         self.source_arn.as_deref()
     }
-    /// <p>For Amazon S3, the ID of the account that owns the resource. Use this together with <code>SourceArn</code> to
-    /// ensure that the resource is owned by the specified account. It is possible for an Amazon S3 bucket to be deleted
-    /// by its owner and recreated by another account.</p>
+    /// <p>For Amazon S3, the ID of the account that owns the resource. Use this together with <code>SourceArn</code> to ensure that the resource is owned by the specified account. It is possible for an Amazon S3 bucket to be deleted by its owner and recreated by another account.</p>
     pub fn source_account(&self) -> std::option::Option<&str> {
         self.source_account.as_deref()
     }
@@ -18458,8 +15973,7 @@ impl AddPermissionInput {
     pub fn qualifier(&self) -> std::option::Option<&str> {
         self.qualifier.as_deref()
     }
-    /// <p>Only update the policy if the revision ID matches the ID that's specified. Use this option to avoid modifying a
-    /// policy that has changed since you last read it.</p>
+    /// <p>Only update the policy if the revision ID matches the ID that's specified. Use this option to avoid modifying a policy that has changed since you last read it.</p>
     pub fn revision_id(&self) -> std::option::Option<&str> {
         self.revision_id.as_deref()
     }
@@ -18492,16 +16006,11 @@ pub struct AddLayerVersionPermissionInput {
     pub statement_id: std::option::Option<std::string::String>,
     /// <p>The API action that grants access to the layer. For example, <code>lambda:GetLayerVersion</code>.</p>
     pub action: std::option::Option<std::string::String>,
-    /// <p>An account ID, or <code>*</code> to grant layer usage permission to all
-    /// accounts in an organization, or all Amazon Web Services accounts (if <code>organizationId</code> is not specified).
-    /// For the last case, make sure that you really do want all Amazon Web Services accounts to have usage permission to this layer.
-    /// </p>
+    /// <p>An account ID, or <code>*</code> to grant layer usage permission to all accounts in an organization, or all Amazon Web Services accounts (if <code>organizationId</code> is not specified). For the last case, make sure that you really do want all Amazon Web Services accounts to have usage permission to this layer. </p>
     pub principal: std::option::Option<std::string::String>,
-    /// <p>With the principal set to <code>*</code>, grant permission to all accounts in the specified
-    /// organization.</p>
+    /// <p>With the principal set to <code>*</code>, grant permission to all accounts in the specified organization.</p>
     pub organization_id: std::option::Option<std::string::String>,
-    /// <p>Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a
-    /// policy that has changed since you last read it.</p>
+    /// <p>Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a policy that has changed since you last read it.</p>
     pub revision_id: std::option::Option<std::string::String>,
 }
 impl AddLayerVersionPermissionInput {
@@ -18521,20 +16030,15 @@ impl AddLayerVersionPermissionInput {
     pub fn action(&self) -> std::option::Option<&str> {
         self.action.as_deref()
     }
-    /// <p>An account ID, or <code>*</code> to grant layer usage permission to all
-    /// accounts in an organization, or all Amazon Web Services accounts (if <code>organizationId</code> is not specified).
-    /// For the last case, make sure that you really do want all Amazon Web Services accounts to have usage permission to this layer.
-    /// </p>
+    /// <p>An account ID, or <code>*</code> to grant layer usage permission to all accounts in an organization, or all Amazon Web Services accounts (if <code>organizationId</code> is not specified). For the last case, make sure that you really do want all Amazon Web Services accounts to have usage permission to this layer. </p>
     pub fn principal(&self) -> std::option::Option<&str> {
         self.principal.as_deref()
     }
-    /// <p>With the principal set to <code>*</code>, grant permission to all accounts in the specified
-    /// organization.</p>
+    /// <p>With the principal set to <code>*</code>, grant permission to all accounts in the specified organization.</p>
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
-    /// <p>Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a
-    /// policy that has changed since you last read it.</p>
+    /// <p>Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a policy that has changed since you last read it.</p>
     pub fn revision_id(&self) -> std::option::Option<&str> {
         self.revision_id.as_deref()
     }

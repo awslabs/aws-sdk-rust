@@ -16,8 +16,7 @@ pub enum InvokeEndpointErrorKind {
     InternalDependencyException(crate::error::InternalDependencyException),
     /// <p> An internal failure occurred. </p>
     InternalFailure(crate::error::InternalFailure),
-    /// <p> Model (owned by the customer in the container) returned 4xx or 5xx error code.
-    /// </p>
+    /// <p> Model (owned by the customer in the container) returned 4xx or 5xx error code. </p>
     ModelError(crate::error::ModelError),
     /// <p>Either a serverless endpoint variant's resources are still being provisioned, or a multi-model endpoint is still downloading or loading the target model. Wait and try your request again.</p>
     ModelNotReadyException(crate::error::ModelNotReadyException),
@@ -501,8 +500,7 @@ impl ModelNotReadyException {
     }
 }
 
-/// <p> Model (owned by the customer in the container) returned 4xx or 5xx error code.
-/// </p>
+/// <p> Model (owned by the customer in the container) returned 4xx or 5xx error code. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModelError {

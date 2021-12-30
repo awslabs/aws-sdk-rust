@@ -179,20 +179,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The globally unique identifier for the identity store, such as
-        /// <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and
-        /// <code>1234567890</code> is a randomly generated string that contains number and lower
-        /// case letters. This value is generated at the time that a new identity store is
-        /// created.</p>
+        /// <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains number and lower case letters. This value is generated at the time that a new identity store is created.</p>
         pub fn identity_store_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.identity_store_id(input.into());
             self
         }
-        /// <p>The globally unique identifier for the identity store, such as
-        /// <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and
-        /// <code>1234567890</code> is a randomly generated string that contains number and lower
-        /// case letters. This value is generated at the time that a new identity store is
-        /// created.</p>
+        /// <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains number and lower case letters. This value is generated at the time that a new identity store is created.</p>
         pub fn set_identity_store_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -270,20 +262,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The globally unique identifier for the identity store, such as
-        /// <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and
-        /// <code>1234567890</code> is a randomly generated string that contains number and lower
-        /// case letters. This value is generated at the time that a new identity store is
-        /// created.</p>
+        /// <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains number and lower case letters. This value is generated at the time that a new identity store is created.</p>
         pub fn identity_store_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.identity_store_id(input.into());
             self
         }
-        /// <p>The globally unique identifier for the identity store, such as
-        /// <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and
-        /// <code>1234567890</code> is a randomly generated string that contains number and lower
-        /// case letters. This value is generated at the time that a new identity store is
-        /// created.</p>
+        /// <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains number and lower case letters. This value is generated at the time that a new identity store is created.</p>
         pub fn set_identity_store_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -304,9 +288,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListGroups`.
     ///
-    /// <p>Lists the attribute name and value of the group that you specified in the search. We only support <code>DisplayName</code> as a valid filter
-    /// attribute path currently, and filter is required. This API returns minimum attributes, including <code>GroupId</code> and group
-    /// <code>DisplayName</code> in the response.</p>
+    /// <p>Lists the attribute name and value of the group that you specified in the search. We only support <code>DisplayName</code> as a valid filter attribute path currently, and filter is required. This API returns minimum attributes, including <code>GroupId</code> and group <code>DisplayName</code> in the response.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListGroups<
         C = aws_smithy_client::erase::DynConnector,
@@ -363,20 +345,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The globally unique identifier for the identity store, such as
-        /// <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and
-        /// <code>1234567890</code> is a randomly generated string that contains number and lower
-        /// case letters. This value is generated at the time that a new identity store is
-        /// created.</p>
+        /// <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains number and lower case letters. This value is generated at the time that a new identity store is created.</p>
         pub fn identity_store_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.identity_store_id(input.into());
             self
         }
-        /// <p>The globally unique identifier for the identity store, such as
-        /// <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and
-        /// <code>1234567890</code> is a randomly generated string that contains number and lower
-        /// case letters. This value is generated at the time that a new identity store is
-        /// created.</p>
+        /// <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains number and lower case letters. This value is generated at the time that a new identity store is created.</p>
         pub fn set_identity_store_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -384,32 +358,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_identity_store_id(input);
             self
         }
-        /// <p>The maximum number of results to be returned per request. This parameter is used in the
-        /// <code>ListUsers</code> and <code>ListGroups</code> request to specify how many results
-        /// to return in one page. The length limit is 50 characters.</p>
+        /// <p>The maximum number of results to be returned per request. This parameter is used in the <code>ListUsers</code> and <code>ListGroups</code> request to specify how many results to return in one page. The length limit is 50 characters.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to be returned per request. This parameter is used in the
-        /// <code>ListUsers</code> and <code>ListGroups</code> request to specify how many results
-        /// to return in one page. The length limit is 50 characters.</p>
+        /// <p>The maximum number of results to be returned per request. This parameter is used in the <code>ListUsers</code> and <code>ListGroups</code> request to specify how many results to return in one page. The length limit is 50 characters.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The pagination token used for the <code>ListUsers</code> and <code>ListGroups</code> API
-        /// operations. This value is generated by the identity store service. It is returned in the
-        /// API response if the total results are more than the size of one page. This token is also
-        /// returned when it is used in the API request to search for the next page.</p>
+        /// <p>The pagination token used for the <code>ListUsers</code> and <code>ListGroups</code> API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it is used in the API request to search for the next page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The pagination token used for the <code>ListUsers</code> and <code>ListGroups</code> API
-        /// operations. This value is generated by the identity store service. It is returned in the
-        /// API response if the total results are more than the size of one page. This token is also
-        /// returned when it is used in the API request to search for the next page.</p>
+        /// <p>The pagination token used for the <code>ListUsers</code> and <code>ListGroups</code> API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it is used in the API request to search for the next page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -434,9 +398,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListUsers`.
     ///
-    /// <p>Lists the attribute name and value of the user that you specified in the search. We only support <code>UserName</code> as a valid filter attribute
-    /// path currently, and filter is required. This API returns minimum attributes, including <code>UserId</code> and <code>UserName</code> in the
-    /// response.</p>
+    /// <p>Lists the attribute name and value of the user that you specified in the search. We only support <code>UserName</code> as a valid filter attribute path currently, and filter is required. This API returns minimum attributes, including <code>UserId</code> and <code>UserName</code> in the response.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListUsers<
         C = aws_smithy_client::erase::DynConnector,
@@ -493,20 +455,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The globally unique identifier for the identity store, such as
-        /// <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and
-        /// <code>1234567890</code> is a randomly generated string that contains number and lower
-        /// case letters. This value is generated at the time that a new identity store is
-        /// created.</p>
+        /// <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains number and lower case letters. This value is generated at the time that a new identity store is created.</p>
         pub fn identity_store_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.identity_store_id(input.into());
             self
         }
-        /// <p>The globally unique identifier for the identity store, such as
-        /// <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and
-        /// <code>1234567890</code> is a randomly generated string that contains number and lower
-        /// case letters. This value is generated at the time that a new identity store is
-        /// created.</p>
+        /// <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains number and lower case letters. This value is generated at the time that a new identity store is created.</p>
         pub fn set_identity_store_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -514,32 +468,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_identity_store_id(input);
             self
         }
-        /// <p>The maximum number of results to be returned per request. This parameter is used in the
-        /// <code>ListUsers</code> and <code>ListGroups</code> request to specify how many results
-        /// to return in one page. The length limit is 50 characters.</p>
+        /// <p>The maximum number of results to be returned per request. This parameter is used in the <code>ListUsers</code> and <code>ListGroups</code> request to specify how many results to return in one page. The length limit is 50 characters.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to be returned per request. This parameter is used in the
-        /// <code>ListUsers</code> and <code>ListGroups</code> request to specify how many results
-        /// to return in one page. The length limit is 50 characters.</p>
+        /// <p>The maximum number of results to be returned per request. This parameter is used in the <code>ListUsers</code> and <code>ListGroups</code> request to specify how many results to return in one page. The length limit is 50 characters.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The pagination token used for the <code>ListUsers</code> and <code>ListGroups</code> API
-        /// operations. This value is generated by the identity store service. It is returned in the
-        /// API response if the total results are more than the size of one page. This token is also
-        /// returned when it is used in the API request to search for the next page.</p>
+        /// <p>The pagination token used for the <code>ListUsers</code> and <code>ListGroups</code> API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it is used in the API request to search for the next page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The pagination token used for the <code>ListUsers</code> and <code>ListGroups</code> API
-        /// operations. This value is generated by the identity store service. It is returned in the
-        /// API response if the total results are more than the size of one page. This token is also
-        /// returned when it is used in the API request to search for the next page.</p>
+        /// <p>The pagination token used for the <code>ListUsers</code> and <code>ListGroups</code> API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it is used in the API request to search for the next page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self

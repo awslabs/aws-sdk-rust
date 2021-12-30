@@ -3,25 +3,17 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCostCategoryDefinitionOutput {
-    /// <p>
-    /// The unique identifier for your Cost Category.
-    /// </p>
+    /// <p> The unique identifier for your Cost Category. </p>
     pub cost_category_arn: std::option::Option<std::string::String>,
-    /// <p>
-    /// The Cost Category's effective start date.
-    /// </p>
+    /// <p> The Cost Category's effective start date. </p>
     pub effective_start: std::option::Option<std::string::String>,
 }
 impl UpdateCostCategoryDefinitionOutput {
-    /// <p>
-    /// The unique identifier for your Cost Category.
-    /// </p>
+    /// <p> The unique identifier for your Cost Category. </p>
     pub fn cost_category_arn(&self) -> std::option::Option<&str> {
         self.cost_category_arn.as_deref()
     }
-    /// <p>
-    /// The Cost Category's effective start date.
-    /// </p>
+    /// <p> The Cost Category's effective start date. </p>
     pub fn effective_start(&self) -> std::option::Option<&str> {
         self.effective_start.as_deref()
     }
@@ -44,16 +36,12 @@ pub mod update_cost_category_definition_output {
         pub(crate) effective_start: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The unique identifier for your Cost Category.
-        /// </p>
+        /// <p> The unique identifier for your Cost Category. </p>
         pub fn cost_category_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.cost_category_arn = Some(input.into());
             self
         }
-        /// <p>
-        /// The unique identifier for your Cost Category.
-        /// </p>
+        /// <p> The unique identifier for your Cost Category. </p>
         pub fn set_cost_category_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -61,16 +49,12 @@ pub mod update_cost_category_definition_output {
             self.cost_category_arn = input;
             self
         }
-        /// <p>
-        /// The Cost Category's effective start date.
-        /// </p>
+        /// <p> The Cost Category's effective start date. </p>
         pub fn effective_start(mut self, input: impl Into<std::string::String>) -> Self {
             self.effective_start = Some(input.into());
             self
         }
-        /// <p>
-        /// The Cost Category's effective start date.
-        /// </p>
+        /// <p> The Cost Category's effective start date. </p>
         pub fn set_effective_start(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -263,28 +247,20 @@ impl ProvideAnomalyFeedbackOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCostCategoryDefinitionsOutput {
-    /// <p>
-    /// A reference to a Cost Category containing enough information to identify the Cost Category.
-    /// </p>
+    /// <p> A reference to a Cost Category containing enough information to identify the Cost Category. </p>
     pub cost_category_references:
         std::option::Option<std::vec::Vec<crate::model::CostCategoryReference>>,
-    /// <p>
-    /// The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.
-    /// </p>
+    /// <p> The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCostCategoryDefinitionsOutput {
-    /// <p>
-    /// A reference to a Cost Category containing enough information to identify the Cost Category.
-    /// </p>
+    /// <p> A reference to a Cost Category containing enough information to identify the Cost Category. </p>
     pub fn cost_category_references(
         &self,
     ) -> std::option::Option<&[crate::model::CostCategoryReference]> {
         self.cost_category_references.as_deref()
     }
-    /// <p>
-    /// The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.
-    /// </p>
+    /// <p> The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -312,9 +288,7 @@ pub mod list_cost_category_definitions_output {
         ///
         /// To override the contents of this collection use [`set_cost_category_references`](Self::set_cost_category_references).
         ///
-        /// <p>
-        /// A reference to a Cost Category containing enough information to identify the Cost Category.
-        /// </p>
+        /// <p> A reference to a Cost Category containing enough information to identify the Cost Category. </p>
         pub fn cost_category_references(
             mut self,
             input: crate::model::CostCategoryReference,
@@ -324,9 +298,7 @@ pub mod list_cost_category_definitions_output {
             self.cost_category_references = Some(v);
             self
         }
-        /// <p>
-        /// A reference to a Cost Category containing enough information to identify the Cost Category.
-        /// </p>
+        /// <p> A reference to a Cost Category containing enough information to identify the Cost Category. </p>
         pub fn set_cost_category_references(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CostCategoryReference>>,
@@ -334,16 +306,12 @@ pub mod list_cost_category_definitions_output {
             self.cost_category_references = input;
             self
         }
-        /// <p>
-        /// The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.
-        /// </p>
+        /// <p> The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>
-        /// The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.
-        /// </p>
+        /// <p> The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -370,8 +338,7 @@ impl ListCostCategoryDefinitionsOutput {
 pub struct GetUsageForecastOutput {
     /// <p>How much you're forecasted to use over the forecast period.</p>
     pub total: std::option::Option<crate::model::MetricValue>,
-    /// <p>The forecasts for your query, in order. For <code>DAILY</code> forecasts, this is a list of days. For <code>MONTHLY</code> forecasts,
-    /// this is a list of months.</p>
+    /// <p>The forecasts for your query, in order. For <code>DAILY</code> forecasts, this is a list of days. For <code>MONTHLY</code> forecasts, this is a list of months.</p>
     pub forecast_results_by_time: std::option::Option<std::vec::Vec<crate::model::ForecastResult>>,
 }
 impl GetUsageForecastOutput {
@@ -379,8 +346,7 @@ impl GetUsageForecastOutput {
     pub fn total(&self) -> std::option::Option<&crate::model::MetricValue> {
         self.total.as_ref()
     }
-    /// <p>The forecasts for your query, in order. For <code>DAILY</code> forecasts, this is a list of days. For <code>MONTHLY</code> forecasts,
-    /// this is a list of months.</p>
+    /// <p>The forecasts for your query, in order. For <code>DAILY</code> forecasts, this is a list of days. For <code>MONTHLY</code> forecasts, this is a list of months.</p>
     pub fn forecast_results_by_time(&self) -> std::option::Option<&[crate::model::ForecastResult]> {
         self.forecast_results_by_time.as_deref()
     }
@@ -418,16 +384,14 @@ pub mod get_usage_forecast_output {
         ///
         /// To override the contents of this collection use [`set_forecast_results_by_time`](Self::set_forecast_results_by_time).
         ///
-        /// <p>The forecasts for your query, in order. For <code>DAILY</code> forecasts, this is a list of days. For <code>MONTHLY</code> forecasts,
-        /// this is a list of months.</p>
+        /// <p>The forecasts for your query, in order. For <code>DAILY</code> forecasts, this is a list of days. For <code>MONTHLY</code> forecasts, this is a list of months.</p>
         pub fn forecast_results_by_time(mut self, input: crate::model::ForecastResult) -> Self {
             let mut v = self.forecast_results_by_time.unwrap_or_default();
             v.push(input);
             self.forecast_results_by_time = Some(v);
             self
         }
-        /// <p>The forecasts for your query, in order. For <code>DAILY</code> forecasts, this is a list of days. For <code>MONTHLY</code> forecasts,
-        /// this is a list of months.</p>
+        /// <p>The forecasts for your query, in order. For <code>DAILY</code> forecasts, this is a list of days. For <code>MONTHLY</code> forecasts, this is a list of months.</p>
         pub fn set_forecast_results_by_time(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ForecastResult>>,
@@ -1024,11 +988,7 @@ pub struct GetRightsizingRecommendationOutput {
         std::option::Option<std::vec::Vec<crate::model::RightsizingRecommendation>>,
     /// <p>The token to retrieve the next set of results.</p>
     pub next_page_token: std::option::Option<std::string::String>,
-    /// <p> Enables you to customize recommendations across two attributes. You can choose to view
-    /// recommendations for instances within the same instance families or across different instance
-    /// families. You can also choose to view your estimated savings associated with recommendations
-    /// with consideration of existing Savings Plans or RI benefits, or
-    /// neither. </p>
+    /// <p> Enables you to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings associated with recommendations with consideration of existing Savings Plans or RI benefits, or neither. </p>
     pub configuration: std::option::Option<crate::model::RightsizingRecommendationConfiguration>,
 }
 impl GetRightsizingRecommendationOutput {
@@ -1052,11 +1012,7 @@ impl GetRightsizingRecommendationOutput {
     pub fn next_page_token(&self) -> std::option::Option<&str> {
         self.next_page_token.as_deref()
     }
-    /// <p> Enables you to customize recommendations across two attributes. You can choose to view
-    /// recommendations for instances within the same instance families or across different instance
-    /// families. You can also choose to view your estimated savings associated with recommendations
-    /// with consideration of existing Savings Plans or RI benefits, or
-    /// neither. </p>
+    /// <p> Enables you to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings associated with recommendations with consideration of existing Savings Plans or RI benefits, or neither. </p>
     pub fn configuration(
         &self,
     ) -> std::option::Option<&crate::model::RightsizingRecommendationConfiguration> {
@@ -1153,11 +1109,7 @@ pub mod get_rightsizing_recommendation_output {
             self.next_page_token = input;
             self
         }
-        /// <p> Enables you to customize recommendations across two attributes. You can choose to view
-        /// recommendations for instances within the same instance families or across different instance
-        /// families. You can also choose to view your estimated savings associated with recommendations
-        /// with consideration of existing Savings Plans or RI benefits, or
-        /// neither. </p>
+        /// <p> Enables you to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings associated with recommendations with consideration of existing Savings Plans or RI benefits, or neither. </p>
         pub fn configuration(
             mut self,
             input: crate::model::RightsizingRecommendationConfiguration,
@@ -1165,11 +1117,7 @@ pub mod get_rightsizing_recommendation_output {
             self.configuration = Some(input);
             self
         }
-        /// <p> Enables you to customize recommendations across two attributes. You can choose to view
-        /// recommendations for instances within the same instance families or across different instance
-        /// families. You can also choose to view your estimated savings associated with recommendations
-        /// with consideration of existing Savings Plans or RI benefits, or
-        /// neither. </p>
+        /// <p> Enables you to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings associated with recommendations with consideration of existing Savings Plans or RI benefits, or neither. </p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<crate::model::RightsizingRecommendationConfiguration>,
@@ -1536,112 +1484,44 @@ impl GetReservationCoverageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDimensionValuesOutput {
     /// <p>The filters that you used to filter your request. Some dimensions are available only for a specific context.</p>
-    /// <p>If you set the context to <code>COST_AND_USAGE</code>, you can use the following
-    /// dimensions for searching:</p>
+    /// <p>If you set the context to <code>COST_AND_USAGE</code>, you can use the following dimensions for searching:</p>
     /// <ul>
-    /// <li>
-    /// <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>DATABASE_ENGINE - The Amazon Relational Database Service database. Examples are Aurora or MySQL.</p>
-    /// </li>
-    /// <li>
-    /// <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>LEGAL_ENTITY_NAME - The name of the organization that sells you Amazon Web Services services, such as Amazon Web Services.</p>
-    /// </li>
-    /// <li>
-    /// <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value
-    /// field contains the Amazon Web Services ID of the member account.</p>
-    /// </li>
-    /// <li>
-    /// <p>OPERATING_SYSTEM - The operating system. Examples are Windows or Linux.</p>
-    /// </li>
-    /// <li>
-    /// <p>OPERATION - The action performed. Examples include <code>RunInstance</code> and <code>CreateBucket</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p>
-    /// </li>
-    /// <li>
-    /// <p>PURCHASE_TYPE - The reservation type of the purchase to which this usage is related. Examples include On-Demand
-    /// Instances and Standard Reserved Instances.</p>
-    /// </li>
-    /// <li>
-    /// <p>SERVICE - The Amazon Web Services service such as Amazon DynamoDB.</p>
-    /// </li>
-    /// <li>
-    /// <p>USAGE_TYPE - The type of usage. An example is DataTransfer-In-Bytes. The response for the <code>GetDimensionValues</code> operation
-    /// includes a unit attribute. Examples include GB and Hrs.</p>
-    /// </li>
-    /// <li>
-    /// <p>USAGE_TYPE_GROUP - The grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms. The response for this
-    /// operation includes a unit attribute.</p>
-    /// </li>
-    /// <li>
-    /// <p>RECORD_TYPE - The different types of charges such as RI fees, usage costs, tax refunds, and credits.</p>
-    /// </li>
-    /// <li>
-    /// <p>RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in feature only available for last 14 days for EC2-Compute Service.</p>
-    /// </li>
+    /// <li> <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p> </li>
+    /// <li> <p>DATABASE_ENGINE - The Amazon Relational Database Service database. Examples are Aurora or MySQL.</p> </li>
+    /// <li> <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p> </li>
+    /// <li> <p>LEGAL_ENTITY_NAME - The name of the organization that sells you Amazon Web Services services, such as Amazon Web Services.</p> </li>
+    /// <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p> </li>
+    /// <li> <p>OPERATING_SYSTEM - The operating system. Examples are Windows or Linux.</p> </li>
+    /// <li> <p>OPERATION - The action performed. Examples include <code>RunInstance</code> and <code>CreateBucket</code>.</p> </li>
+    /// <li> <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p> </li>
+    /// <li> <p>PURCHASE_TYPE - The reservation type of the purchase to which this usage is related. Examples include On-Demand Instances and Standard Reserved Instances.</p> </li>
+    /// <li> <p>SERVICE - The Amazon Web Services service such as Amazon DynamoDB.</p> </li>
+    /// <li> <p>USAGE_TYPE - The type of usage. An example is DataTransfer-In-Bytes. The response for the <code>GetDimensionValues</code> operation includes a unit attribute. Examples include GB and Hrs.</p> </li>
+    /// <li> <p>USAGE_TYPE_GROUP - The grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms. The response for this operation includes a unit attribute.</p> </li>
+    /// <li> <p>RECORD_TYPE - The different types of charges such as RI fees, usage costs, tax refunds, and credits.</p> </li>
+    /// <li> <p>RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in feature only available for last 14 days for EC2-Compute Service.</p> </li>
     /// </ul>
-    /// <p>If you set the context to <code>RESERVATIONS</code>, you can use the following
-    /// dimensions for searching:</p>
+    /// <p>If you set the context to <code>RESERVATIONS</code>, you can use the following dimensions for searching:</p>
     /// <ul>
-    /// <li>
-    /// <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows or Linux.</p>
-    /// </li>
-    /// <li>
-    /// <p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service deployments. Valid values are <code>SingleAZ</code> and <code>MultiAZ</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value
-    /// field contains the Amazon Web Services ID of the member account.</p>
-    /// </li>
-    /// <li>
-    /// <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p>
-    /// </li>
-    /// <li>
-    /// <p>REGION - The Amazon Web Services Region.</p>
-    /// </li>
-    /// <li>
-    /// <p>SCOPE (Utilization only) - The scope of a Reserved Instance (RI). Values are regional or a single Availability Zone.</p>
-    /// </li>
-    /// <li>
-    /// <p>TAG (Coverage only) - The tags that are associated with a Reserved Instance (RI).</p>
-    /// </li>
-    /// <li>
-    /// <p>TENANCY - The tenancy of a resource. Examples are shared or dedicated.</p>
-    /// </li>
+    /// <li> <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p> </li>
+    /// <li> <p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows or Linux.</p> </li>
+    /// <li> <p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service deployments. Valid values are <code>SingleAZ</code> and <code>MultiAZ</code>.</p> </li>
+    /// <li> <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p> </li>
+    /// <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p> </li>
+    /// <li> <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p> </li>
+    /// <li> <p>REGION - The Amazon Web Services Region.</p> </li>
+    /// <li> <p>SCOPE (Utilization only) - The scope of a Reserved Instance (RI). Values are regional or a single Availability Zone.</p> </li>
+    /// <li> <p>TAG (Coverage only) - The tags that are associated with a Reserved Instance (RI).</p> </li>
+    /// <li> <p>TENANCY - The tenancy of a resource. Examples are shared or dedicated.</p> </li>
     /// </ul>
     /// <p>If you set the context to <code>SAVINGS_PLANS</code>, you can use the following dimensions for searching:</p>
     /// <ul>
-    /// <li>
-    /// <p>SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2 Instance or Compute)</p>
-    /// </li>
-    /// <li>
-    /// <p>PAYMENT_OPTION - Payment option for the given Savings Plans (for example, All Upfront)</p>
-    /// </li>
-    /// <li>
-    /// <p>REGION - The Amazon Web Services Region.</p>
-    /// </li>
-    /// <li>
-    /// <p>INSTANCE_TYPE_FAMILY - The family of instances (For example, <code>m5</code>)</p>
-    /// </li>
-    /// <li>
-    /// <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value
-    /// field contains the Amazon Web Services ID of the member account.</p>
-    /// </li>
-    /// <li>
-    /// <p>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plan</p>
-    /// </li>
+    /// <li> <p>SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2 Instance or Compute)</p> </li>
+    /// <li> <p>PAYMENT_OPTION - Payment option for the given Savings Plans (for example, All Upfront)</p> </li>
+    /// <li> <p>REGION - The Amazon Web Services Region.</p> </li>
+    /// <li> <p>INSTANCE_TYPE_FAMILY - The family of instances (For example, <code>m5</code>)</p> </li>
+    /// <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p> </li>
+    /// <li> <p>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plan</p> </li>
     /// </ul>
     pub dimension_values:
         std::option::Option<std::vec::Vec<crate::model::DimensionValuesWithAttributes>>,
@@ -1654,112 +1534,44 @@ pub struct GetDimensionValuesOutput {
 }
 impl GetDimensionValuesOutput {
     /// <p>The filters that you used to filter your request. Some dimensions are available only for a specific context.</p>
-    /// <p>If you set the context to <code>COST_AND_USAGE</code>, you can use the following
-    /// dimensions for searching:</p>
+    /// <p>If you set the context to <code>COST_AND_USAGE</code>, you can use the following dimensions for searching:</p>
     /// <ul>
-    /// <li>
-    /// <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>DATABASE_ENGINE - The Amazon Relational Database Service database. Examples are Aurora or MySQL.</p>
-    /// </li>
-    /// <li>
-    /// <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>LEGAL_ENTITY_NAME - The name of the organization that sells you Amazon Web Services services, such as Amazon Web Services.</p>
-    /// </li>
-    /// <li>
-    /// <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value
-    /// field contains the Amazon Web Services ID of the member account.</p>
-    /// </li>
-    /// <li>
-    /// <p>OPERATING_SYSTEM - The operating system. Examples are Windows or Linux.</p>
-    /// </li>
-    /// <li>
-    /// <p>OPERATION - The action performed. Examples include <code>RunInstance</code> and <code>CreateBucket</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p>
-    /// </li>
-    /// <li>
-    /// <p>PURCHASE_TYPE - The reservation type of the purchase to which this usage is related. Examples include On-Demand
-    /// Instances and Standard Reserved Instances.</p>
-    /// </li>
-    /// <li>
-    /// <p>SERVICE - The Amazon Web Services service such as Amazon DynamoDB.</p>
-    /// </li>
-    /// <li>
-    /// <p>USAGE_TYPE - The type of usage. An example is DataTransfer-In-Bytes. The response for the <code>GetDimensionValues</code> operation
-    /// includes a unit attribute. Examples include GB and Hrs.</p>
-    /// </li>
-    /// <li>
-    /// <p>USAGE_TYPE_GROUP - The grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms. The response for this
-    /// operation includes a unit attribute.</p>
-    /// </li>
-    /// <li>
-    /// <p>RECORD_TYPE - The different types of charges such as RI fees, usage costs, tax refunds, and credits.</p>
-    /// </li>
-    /// <li>
-    /// <p>RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in feature only available for last 14 days for EC2-Compute Service.</p>
-    /// </li>
+    /// <li> <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p> </li>
+    /// <li> <p>DATABASE_ENGINE - The Amazon Relational Database Service database. Examples are Aurora or MySQL.</p> </li>
+    /// <li> <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p> </li>
+    /// <li> <p>LEGAL_ENTITY_NAME - The name of the organization that sells you Amazon Web Services services, such as Amazon Web Services.</p> </li>
+    /// <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p> </li>
+    /// <li> <p>OPERATING_SYSTEM - The operating system. Examples are Windows or Linux.</p> </li>
+    /// <li> <p>OPERATION - The action performed. Examples include <code>RunInstance</code> and <code>CreateBucket</code>.</p> </li>
+    /// <li> <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p> </li>
+    /// <li> <p>PURCHASE_TYPE - The reservation type of the purchase to which this usage is related. Examples include On-Demand Instances and Standard Reserved Instances.</p> </li>
+    /// <li> <p>SERVICE - The Amazon Web Services service such as Amazon DynamoDB.</p> </li>
+    /// <li> <p>USAGE_TYPE - The type of usage. An example is DataTransfer-In-Bytes. The response for the <code>GetDimensionValues</code> operation includes a unit attribute. Examples include GB and Hrs.</p> </li>
+    /// <li> <p>USAGE_TYPE_GROUP - The grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms. The response for this operation includes a unit attribute.</p> </li>
+    /// <li> <p>RECORD_TYPE - The different types of charges such as RI fees, usage costs, tax refunds, and credits.</p> </li>
+    /// <li> <p>RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in feature only available for last 14 days for EC2-Compute Service.</p> </li>
     /// </ul>
-    /// <p>If you set the context to <code>RESERVATIONS</code>, you can use the following
-    /// dimensions for searching:</p>
+    /// <p>If you set the context to <code>RESERVATIONS</code>, you can use the following dimensions for searching:</p>
     /// <ul>
-    /// <li>
-    /// <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows or Linux.</p>
-    /// </li>
-    /// <li>
-    /// <p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service deployments. Valid values are <code>SingleAZ</code> and <code>MultiAZ</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value
-    /// field contains the Amazon Web Services ID of the member account.</p>
-    /// </li>
-    /// <li>
-    /// <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p>
-    /// </li>
-    /// <li>
-    /// <p>REGION - The Amazon Web Services Region.</p>
-    /// </li>
-    /// <li>
-    /// <p>SCOPE (Utilization only) - The scope of a Reserved Instance (RI). Values are regional or a single Availability Zone.</p>
-    /// </li>
-    /// <li>
-    /// <p>TAG (Coverage only) - The tags that are associated with a Reserved Instance (RI).</p>
-    /// </li>
-    /// <li>
-    /// <p>TENANCY - The tenancy of a resource. Examples are shared or dedicated.</p>
-    /// </li>
+    /// <li> <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p> </li>
+    /// <li> <p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows or Linux.</p> </li>
+    /// <li> <p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service deployments. Valid values are <code>SingleAZ</code> and <code>MultiAZ</code>.</p> </li>
+    /// <li> <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p> </li>
+    /// <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p> </li>
+    /// <li> <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p> </li>
+    /// <li> <p>REGION - The Amazon Web Services Region.</p> </li>
+    /// <li> <p>SCOPE (Utilization only) - The scope of a Reserved Instance (RI). Values are regional or a single Availability Zone.</p> </li>
+    /// <li> <p>TAG (Coverage only) - The tags that are associated with a Reserved Instance (RI).</p> </li>
+    /// <li> <p>TENANCY - The tenancy of a resource. Examples are shared or dedicated.</p> </li>
     /// </ul>
     /// <p>If you set the context to <code>SAVINGS_PLANS</code>, you can use the following dimensions for searching:</p>
     /// <ul>
-    /// <li>
-    /// <p>SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2 Instance or Compute)</p>
-    /// </li>
-    /// <li>
-    /// <p>PAYMENT_OPTION - Payment option for the given Savings Plans (for example, All Upfront)</p>
-    /// </li>
-    /// <li>
-    /// <p>REGION - The Amazon Web Services Region.</p>
-    /// </li>
-    /// <li>
-    /// <p>INSTANCE_TYPE_FAMILY - The family of instances (For example, <code>m5</code>)</p>
-    /// </li>
-    /// <li>
-    /// <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value
-    /// field contains the Amazon Web Services ID of the member account.</p>
-    /// </li>
-    /// <li>
-    /// <p>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plan</p>
-    /// </li>
+    /// <li> <p>SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2 Instance or Compute)</p> </li>
+    /// <li> <p>PAYMENT_OPTION - Payment option for the given Savings Plans (for example, All Upfront)</p> </li>
+    /// <li> <p>REGION - The Amazon Web Services Region.</p> </li>
+    /// <li> <p>INSTANCE_TYPE_FAMILY - The family of instances (For example, <code>m5</code>)</p> </li>
+    /// <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p> </li>
+    /// <li> <p>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plan</p> </li>
     /// </ul>
     pub fn dimension_values(
         &self,
@@ -1807,112 +1619,44 @@ pub mod get_dimension_values_output {
         /// To override the contents of this collection use [`set_dimension_values`](Self::set_dimension_values).
         ///
         /// <p>The filters that you used to filter your request. Some dimensions are available only for a specific context.</p>
-        /// <p>If you set the context to <code>COST_AND_USAGE</code>, you can use the following
-        /// dimensions for searching:</p>
+        /// <p>If you set the context to <code>COST_AND_USAGE</code>, you can use the following dimensions for searching:</p>
         /// <ul>
-        /// <li>
-        /// <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>DATABASE_ENGINE - The Amazon Relational Database Service database. Examples are Aurora or MySQL.</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>LEGAL_ENTITY_NAME - The name of the organization that sells you Amazon Web Services services, such as Amazon Web Services.</p>
-        /// </li>
-        /// <li>
-        /// <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value
-        /// field contains the Amazon Web Services ID of the member account.</p>
-        /// </li>
-        /// <li>
-        /// <p>OPERATING_SYSTEM - The operating system. Examples are Windows or Linux.</p>
-        /// </li>
-        /// <li>
-        /// <p>OPERATION - The action performed. Examples include <code>RunInstance</code> and <code>CreateBucket</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p>
-        /// </li>
-        /// <li>
-        /// <p>PURCHASE_TYPE - The reservation type of the purchase to which this usage is related. Examples include On-Demand
-        /// Instances and Standard Reserved Instances.</p>
-        /// </li>
-        /// <li>
-        /// <p>SERVICE - The Amazon Web Services service such as Amazon DynamoDB.</p>
-        /// </li>
-        /// <li>
-        /// <p>USAGE_TYPE - The type of usage. An example is DataTransfer-In-Bytes. The response for the <code>GetDimensionValues</code> operation
-        /// includes a unit attribute. Examples include GB and Hrs.</p>
-        /// </li>
-        /// <li>
-        /// <p>USAGE_TYPE_GROUP - The grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms. The response for this
-        /// operation includes a unit attribute.</p>
-        /// </li>
-        /// <li>
-        /// <p>RECORD_TYPE - The different types of charges such as RI fees, usage costs, tax refunds, and credits.</p>
-        /// </li>
-        /// <li>
-        /// <p>RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in feature only available for last 14 days for EC2-Compute Service.</p>
-        /// </li>
+        /// <li> <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p> </li>
+        /// <li> <p>DATABASE_ENGINE - The Amazon Relational Database Service database. Examples are Aurora or MySQL.</p> </li>
+        /// <li> <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p> </li>
+        /// <li> <p>LEGAL_ENTITY_NAME - The name of the organization that sells you Amazon Web Services services, such as Amazon Web Services.</p> </li>
+        /// <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p> </li>
+        /// <li> <p>OPERATING_SYSTEM - The operating system. Examples are Windows or Linux.</p> </li>
+        /// <li> <p>OPERATION - The action performed. Examples include <code>RunInstance</code> and <code>CreateBucket</code>.</p> </li>
+        /// <li> <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p> </li>
+        /// <li> <p>PURCHASE_TYPE - The reservation type of the purchase to which this usage is related. Examples include On-Demand Instances and Standard Reserved Instances.</p> </li>
+        /// <li> <p>SERVICE - The Amazon Web Services service such as Amazon DynamoDB.</p> </li>
+        /// <li> <p>USAGE_TYPE - The type of usage. An example is DataTransfer-In-Bytes. The response for the <code>GetDimensionValues</code> operation includes a unit attribute. Examples include GB and Hrs.</p> </li>
+        /// <li> <p>USAGE_TYPE_GROUP - The grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms. The response for this operation includes a unit attribute.</p> </li>
+        /// <li> <p>RECORD_TYPE - The different types of charges such as RI fees, usage costs, tax refunds, and credits.</p> </li>
+        /// <li> <p>RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in feature only available for last 14 days for EC2-Compute Service.</p> </li>
         /// </ul>
-        /// <p>If you set the context to <code>RESERVATIONS</code>, you can use the following
-        /// dimensions for searching:</p>
+        /// <p>If you set the context to <code>RESERVATIONS</code>, you can use the following dimensions for searching:</p>
         /// <ul>
-        /// <li>
-        /// <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows or Linux.</p>
-        /// </li>
-        /// <li>
-        /// <p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service deployments. Valid values are <code>SingleAZ</code> and <code>MultiAZ</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value
-        /// field contains the Amazon Web Services ID of the member account.</p>
-        /// </li>
-        /// <li>
-        /// <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p>
-        /// </li>
-        /// <li>
-        /// <p>REGION - The Amazon Web Services Region.</p>
-        /// </li>
-        /// <li>
-        /// <p>SCOPE (Utilization only) - The scope of a Reserved Instance (RI). Values are regional or a single Availability Zone.</p>
-        /// </li>
-        /// <li>
-        /// <p>TAG (Coverage only) - The tags that are associated with a Reserved Instance (RI).</p>
-        /// </li>
-        /// <li>
-        /// <p>TENANCY - The tenancy of a resource. Examples are shared or dedicated.</p>
-        /// </li>
+        /// <li> <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p> </li>
+        /// <li> <p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows or Linux.</p> </li>
+        /// <li> <p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service deployments. Valid values are <code>SingleAZ</code> and <code>MultiAZ</code>.</p> </li>
+        /// <li> <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p> </li>
+        /// <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p> </li>
+        /// <li> <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p> </li>
+        /// <li> <p>REGION - The Amazon Web Services Region.</p> </li>
+        /// <li> <p>SCOPE (Utilization only) - The scope of a Reserved Instance (RI). Values are regional or a single Availability Zone.</p> </li>
+        /// <li> <p>TAG (Coverage only) - The tags that are associated with a Reserved Instance (RI).</p> </li>
+        /// <li> <p>TENANCY - The tenancy of a resource. Examples are shared or dedicated.</p> </li>
         /// </ul>
         /// <p>If you set the context to <code>SAVINGS_PLANS</code>, you can use the following dimensions for searching:</p>
         /// <ul>
-        /// <li>
-        /// <p>SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2 Instance or Compute)</p>
-        /// </li>
-        /// <li>
-        /// <p>PAYMENT_OPTION - Payment option for the given Savings Plans (for example, All Upfront)</p>
-        /// </li>
-        /// <li>
-        /// <p>REGION - The Amazon Web Services Region.</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTANCE_TYPE_FAMILY - The family of instances (For example, <code>m5</code>)</p>
-        /// </li>
-        /// <li>
-        /// <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value
-        /// field contains the Amazon Web Services ID of the member account.</p>
-        /// </li>
-        /// <li>
-        /// <p>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plan</p>
-        /// </li>
+        /// <li> <p>SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2 Instance or Compute)</p> </li>
+        /// <li> <p>PAYMENT_OPTION - Payment option for the given Savings Plans (for example, All Upfront)</p> </li>
+        /// <li> <p>REGION - The Amazon Web Services Region.</p> </li>
+        /// <li> <p>INSTANCE_TYPE_FAMILY - The family of instances (For example, <code>m5</code>)</p> </li>
+        /// <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p> </li>
+        /// <li> <p>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plan</p> </li>
         /// </ul>
         pub fn dimension_values(
             mut self,
@@ -1924,112 +1668,44 @@ pub mod get_dimension_values_output {
             self
         }
         /// <p>The filters that you used to filter your request. Some dimensions are available only for a specific context.</p>
-        /// <p>If you set the context to <code>COST_AND_USAGE</code>, you can use the following
-        /// dimensions for searching:</p>
+        /// <p>If you set the context to <code>COST_AND_USAGE</code>, you can use the following dimensions for searching:</p>
         /// <ul>
-        /// <li>
-        /// <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>DATABASE_ENGINE - The Amazon Relational Database Service database. Examples are Aurora or MySQL.</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>LEGAL_ENTITY_NAME - The name of the organization that sells you Amazon Web Services services, such as Amazon Web Services.</p>
-        /// </li>
-        /// <li>
-        /// <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value
-        /// field contains the Amazon Web Services ID of the member account.</p>
-        /// </li>
-        /// <li>
-        /// <p>OPERATING_SYSTEM - The operating system. Examples are Windows or Linux.</p>
-        /// </li>
-        /// <li>
-        /// <p>OPERATION - The action performed. Examples include <code>RunInstance</code> and <code>CreateBucket</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p>
-        /// </li>
-        /// <li>
-        /// <p>PURCHASE_TYPE - The reservation type of the purchase to which this usage is related. Examples include On-Demand
-        /// Instances and Standard Reserved Instances.</p>
-        /// </li>
-        /// <li>
-        /// <p>SERVICE - The Amazon Web Services service such as Amazon DynamoDB.</p>
-        /// </li>
-        /// <li>
-        /// <p>USAGE_TYPE - The type of usage. An example is DataTransfer-In-Bytes. The response for the <code>GetDimensionValues</code> operation
-        /// includes a unit attribute. Examples include GB and Hrs.</p>
-        /// </li>
-        /// <li>
-        /// <p>USAGE_TYPE_GROUP - The grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms. The response for this
-        /// operation includes a unit attribute.</p>
-        /// </li>
-        /// <li>
-        /// <p>RECORD_TYPE - The different types of charges such as RI fees, usage costs, tax refunds, and credits.</p>
-        /// </li>
-        /// <li>
-        /// <p>RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in feature only available for last 14 days for EC2-Compute Service.</p>
-        /// </li>
+        /// <li> <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p> </li>
+        /// <li> <p>DATABASE_ENGINE - The Amazon Relational Database Service database. Examples are Aurora or MySQL.</p> </li>
+        /// <li> <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p> </li>
+        /// <li> <p>LEGAL_ENTITY_NAME - The name of the organization that sells you Amazon Web Services services, such as Amazon Web Services.</p> </li>
+        /// <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p> </li>
+        /// <li> <p>OPERATING_SYSTEM - The operating system. Examples are Windows or Linux.</p> </li>
+        /// <li> <p>OPERATION - The action performed. Examples include <code>RunInstance</code> and <code>CreateBucket</code>.</p> </li>
+        /// <li> <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p> </li>
+        /// <li> <p>PURCHASE_TYPE - The reservation type of the purchase to which this usage is related. Examples include On-Demand Instances and Standard Reserved Instances.</p> </li>
+        /// <li> <p>SERVICE - The Amazon Web Services service such as Amazon DynamoDB.</p> </li>
+        /// <li> <p>USAGE_TYPE - The type of usage. An example is DataTransfer-In-Bytes. The response for the <code>GetDimensionValues</code> operation includes a unit attribute. Examples include GB and Hrs.</p> </li>
+        /// <li> <p>USAGE_TYPE_GROUP - The grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms. The response for this operation includes a unit attribute.</p> </li>
+        /// <li> <p>RECORD_TYPE - The different types of charges such as RI fees, usage costs, tax refunds, and credits.</p> </li>
+        /// <li> <p>RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in feature only available for last 14 days for EC2-Compute Service.</p> </li>
         /// </ul>
-        /// <p>If you set the context to <code>RESERVATIONS</code>, you can use the following
-        /// dimensions for searching:</p>
+        /// <p>If you set the context to <code>RESERVATIONS</code>, you can use the following dimensions for searching:</p>
         /// <ul>
-        /// <li>
-        /// <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows or Linux.</p>
-        /// </li>
-        /// <li>
-        /// <p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service deployments. Valid values are <code>SingleAZ</code> and <code>MultiAZ</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value
-        /// field contains the Amazon Web Services ID of the member account.</p>
-        /// </li>
-        /// <li>
-        /// <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p>
-        /// </li>
-        /// <li>
-        /// <p>REGION - The Amazon Web Services Region.</p>
-        /// </li>
-        /// <li>
-        /// <p>SCOPE (Utilization only) - The scope of a Reserved Instance (RI). Values are regional or a single Availability Zone.</p>
-        /// </li>
-        /// <li>
-        /// <p>TAG (Coverage only) - The tags that are associated with a Reserved Instance (RI).</p>
-        /// </li>
-        /// <li>
-        /// <p>TENANCY - The tenancy of a resource. Examples are shared or dedicated.</p>
-        /// </li>
+        /// <li> <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p> </li>
+        /// <li> <p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows or Linux.</p> </li>
+        /// <li> <p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service deployments. Valid values are <code>SingleAZ</code> and <code>MultiAZ</code>.</p> </li>
+        /// <li> <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p> </li>
+        /// <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p> </li>
+        /// <li> <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p> </li>
+        /// <li> <p>REGION - The Amazon Web Services Region.</p> </li>
+        /// <li> <p>SCOPE (Utilization only) - The scope of a Reserved Instance (RI). Values are regional or a single Availability Zone.</p> </li>
+        /// <li> <p>TAG (Coverage only) - The tags that are associated with a Reserved Instance (RI).</p> </li>
+        /// <li> <p>TENANCY - The tenancy of a resource. Examples are shared or dedicated.</p> </li>
         /// </ul>
         /// <p>If you set the context to <code>SAVINGS_PLANS</code>, you can use the following dimensions for searching:</p>
         /// <ul>
-        /// <li>
-        /// <p>SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2 Instance or Compute)</p>
-        /// </li>
-        /// <li>
-        /// <p>PAYMENT_OPTION - Payment option for the given Savings Plans (for example, All Upfront)</p>
-        /// </li>
-        /// <li>
-        /// <p>REGION - The Amazon Web Services Region.</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTANCE_TYPE_FAMILY - The family of instances (For example, <code>m5</code>)</p>
-        /// </li>
-        /// <li>
-        /// <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value
-        /// field contains the Amazon Web Services ID of the member account.</p>
-        /// </li>
-        /// <li>
-        /// <p>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plan</p>
-        /// </li>
+        /// <li> <p>SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2 Instance or Compute)</p> </li>
+        /// <li> <p>PAYMENT_OPTION - Payment option for the given Savings Plans (for example, All Upfront)</p> </li>
+        /// <li> <p>REGION - The Amazon Web Services Region.</p> </li>
+        /// <li> <p>INSTANCE_TYPE_FAMILY - The family of instances (For example, <code>m5</code>)</p> </li>
+        /// <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p> </li>
+        /// <li> <p>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plan</p> </li>
         /// </ul>
         pub fn set_dimension_values(
             mut self,
@@ -2095,8 +1771,7 @@ impl GetDimensionValuesOutput {
 pub struct GetCostForecastOutput {
     /// <p>How much you are forecasted to spend over the forecast period, in <code>USD</code>.</p>
     pub total: std::option::Option<crate::model::MetricValue>,
-    /// <p>The forecasts for your query, in order. For <code>DAILY</code> forecasts, this is a list of days. For <code>MONTHLY</code> forecasts,
-    /// this is a list of months.</p>
+    /// <p>The forecasts for your query, in order. For <code>DAILY</code> forecasts, this is a list of days. For <code>MONTHLY</code> forecasts, this is a list of months.</p>
     pub forecast_results_by_time: std::option::Option<std::vec::Vec<crate::model::ForecastResult>>,
 }
 impl GetCostForecastOutput {
@@ -2104,8 +1779,7 @@ impl GetCostForecastOutput {
     pub fn total(&self) -> std::option::Option<&crate::model::MetricValue> {
         self.total.as_ref()
     }
-    /// <p>The forecasts for your query, in order. For <code>DAILY</code> forecasts, this is a list of days. For <code>MONTHLY</code> forecasts,
-    /// this is a list of months.</p>
+    /// <p>The forecasts for your query, in order. For <code>DAILY</code> forecasts, this is a list of days. For <code>MONTHLY</code> forecasts, this is a list of months.</p>
     pub fn forecast_results_by_time(&self) -> std::option::Option<&[crate::model::ForecastResult]> {
         self.forecast_results_by_time.as_deref()
     }
@@ -2143,16 +1817,14 @@ pub mod get_cost_forecast_output {
         ///
         /// To override the contents of this collection use [`set_forecast_results_by_time`](Self::set_forecast_results_by_time).
         ///
-        /// <p>The forecasts for your query, in order. For <code>DAILY</code> forecasts, this is a list of days. For <code>MONTHLY</code> forecasts,
-        /// this is a list of months.</p>
+        /// <p>The forecasts for your query, in order. For <code>DAILY</code> forecasts, this is a list of days. For <code>MONTHLY</code> forecasts, this is a list of months.</p>
         pub fn forecast_results_by_time(mut self, input: crate::model::ForecastResult) -> Self {
             let mut v = self.forecast_results_by_time.unwrap_or_default();
             v.push(input);
             self.forecast_results_by_time = Some(v);
             self
         }
-        /// <p>The forecasts for your query, in order. For <code>DAILY</code> forecasts, this is a list of days. For <code>MONTHLY</code> forecasts,
-        /// this is a list of months.</p>
+        /// <p>The forecasts for your query, in order. For <code>DAILY</code> forecasts, this is a list of days. For <code>MONTHLY</code> forecasts, this is a list of months.</p>
         pub fn set_forecast_results_by_time(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ForecastResult>>,
@@ -2185,8 +1857,7 @@ pub struct GetCostCategoriesOutput {
     /// <p>The names of the Cost Categories.</p>
     pub cost_category_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Cost Category values.</p>
-    /// <p>
-    /// <code>CostCategoryValues</code> are not returned if <code>CostCategoryName</code> is not specified in the request. </p>
+    /// <p> <code>CostCategoryValues</code> are not returned if <code>CostCategoryName</code> is not specified in the request. </p>
     pub cost_category_values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The number of objects returned.</p>
     pub return_size: std::option::Option<i32>,
@@ -2203,8 +1874,7 @@ impl GetCostCategoriesOutput {
         self.cost_category_names.as_deref()
     }
     /// <p>The Cost Category values.</p>
-    /// <p>
-    /// <code>CostCategoryValues</code> are not returned if <code>CostCategoryName</code> is not specified in the request. </p>
+    /// <p> <code>CostCategoryValues</code> are not returned if <code>CostCategoryName</code> is not specified in the request. </p>
     pub fn cost_category_values(&self) -> std::option::Option<&[std::string::String]> {
         self.cost_category_values.as_deref()
     }
@@ -2278,8 +1948,7 @@ pub mod get_cost_categories_output {
         /// To override the contents of this collection use [`set_cost_category_values`](Self::set_cost_category_values).
         ///
         /// <p>The Cost Category values.</p>
-        /// <p>
-        /// <code>CostCategoryValues</code> are not returned if <code>CostCategoryName</code> is not specified in the request. </p>
+        /// <p> <code>CostCategoryValues</code> are not returned if <code>CostCategoryName</code> is not specified in the request. </p>
         pub fn cost_category_values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.cost_category_values.unwrap_or_default();
             v.push(input.into());
@@ -2287,8 +1956,7 @@ pub mod get_cost_categories_output {
             self
         }
         /// <p>The Cost Category values.</p>
-        /// <p>
-        /// <code>CostCategoryValues</code> are not returned if <code>CostCategoryName</code> is not specified in the request. </p>
+        /// <p> <code>CostCategoryValues</code> are not returned if <code>CostCategoryName</code> is not specified in the request. </p>
         pub fn set_cost_category_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2341,8 +2009,7 @@ impl GetCostCategoriesOutput {
 pub struct GetCostAndUsageWithResourcesOutput {
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub next_page_token: std::option::Option<std::string::String>,
-    /// <p>The groups that are specified by the <code>Filter</code> or <code>GroupBy</code>
-    /// parameters in the request.</p>
+    /// <p>The groups that are specified by the <code>Filter</code> or <code>GroupBy</code> parameters in the request.</p>
     pub group_definitions: std::option::Option<std::vec::Vec<crate::model::GroupDefinition>>,
     /// <p>The time period that is covered by the results in the response.</p>
     pub results_by_time: std::option::Option<std::vec::Vec<crate::model::ResultByTime>>,
@@ -2355,8 +2022,7 @@ impl GetCostAndUsageWithResourcesOutput {
     pub fn next_page_token(&self) -> std::option::Option<&str> {
         self.next_page_token.as_deref()
     }
-    /// <p>The groups that are specified by the <code>Filter</code> or <code>GroupBy</code>
-    /// parameters in the request.</p>
+    /// <p>The groups that are specified by the <code>Filter</code> or <code>GroupBy</code> parameters in the request.</p>
     pub fn group_definitions(&self) -> std::option::Option<&[crate::model::GroupDefinition]> {
         self.group_definitions.as_deref()
     }
@@ -2415,16 +2081,14 @@ pub mod get_cost_and_usage_with_resources_output {
         ///
         /// To override the contents of this collection use [`set_group_definitions`](Self::set_group_definitions).
         ///
-        /// <p>The groups that are specified by the <code>Filter</code> or <code>GroupBy</code>
-        /// parameters in the request.</p>
+        /// <p>The groups that are specified by the <code>Filter</code> or <code>GroupBy</code> parameters in the request.</p>
         pub fn group_definitions(mut self, input: crate::model::GroupDefinition) -> Self {
             let mut v = self.group_definitions.unwrap_or_default();
             v.push(input);
             self.group_definitions = Some(v);
             self
         }
-        /// <p>The groups that are specified by the <code>Filter</code> or <code>GroupBy</code>
-        /// parameters in the request.</p>
+        /// <p>The groups that are specified by the <code>Filter</code> or <code>GroupBy</code> parameters in the request.</p>
         pub fn set_group_definitions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GroupDefinition>>,
@@ -2650,8 +2314,7 @@ pub struct GetAnomalySubscriptionsOutput {
     /// <p>A list of cost anomaly subscriptions that includes the detailed metadata for each one. </p>
     pub anomaly_subscriptions:
         std::option::Option<std::vec::Vec<crate::model::AnomalySubscription>>,
-    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when
-    /// the response from a previous call has more results than the maximum page size. </p>
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetAnomalySubscriptionsOutput {
@@ -2661,8 +2324,7 @@ impl GetAnomalySubscriptionsOutput {
     ) -> std::option::Option<&[crate::model::AnomalySubscription]> {
         self.anomaly_subscriptions.as_deref()
     }
-    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when
-    /// the response from a previous call has more results than the maximum page size. </p>
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     pub fn next_page_token(&self) -> std::option::Option<&str> {
         self.next_page_token.as_deref()
     }
@@ -2705,14 +2367,12 @@ pub mod get_anomaly_subscriptions_output {
             self.anomaly_subscriptions = input;
             self
         }
-        /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when
-        /// the response from a previous call has more results than the maximum page size. </p>
+        /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
-        /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when
-        /// the response from a previous call has more results than the maximum page size. </p>
+        /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2742,8 +2402,7 @@ impl GetAnomalySubscriptionsOutput {
 pub struct GetAnomalyMonitorsOutput {
     /// <p>A list of cost anomaly monitors that includes the detailed metadata for each monitor. </p>
     pub anomaly_monitors: std::option::Option<std::vec::Vec<crate::model::AnomalyMonitor>>,
-    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when
-    /// the response from a previous call has more results than the maximum page size. </p>
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetAnomalyMonitorsOutput {
@@ -2751,8 +2410,7 @@ impl GetAnomalyMonitorsOutput {
     pub fn anomaly_monitors(&self) -> std::option::Option<&[crate::model::AnomalyMonitor]> {
         self.anomaly_monitors.as_deref()
     }
-    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when
-    /// the response from a previous call has more results than the maximum page size. </p>
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     pub fn next_page_token(&self) -> std::option::Option<&str> {
         self.next_page_token.as_deref()
     }
@@ -2795,14 +2453,12 @@ pub mod get_anomaly_monitors_output {
             self.anomaly_monitors = input;
             self
         }
-        /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when
-        /// the response from a previous call has more results than the maximum page size. </p>
+        /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
-        /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when
-        /// the response from a previous call has more results than the maximum page size. </p>
+        /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2832,8 +2488,7 @@ impl GetAnomalyMonitorsOutput {
 pub struct GetAnomaliesOutput {
     /// <p>A list of cost anomalies. </p>
     pub anomalies: std::option::Option<std::vec::Vec<crate::model::Anomaly>>,
-    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when
-    /// the response from a previous call has more results than the maximum page size. </p>
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl GetAnomaliesOutput {
@@ -2841,8 +2496,7 @@ impl GetAnomaliesOutput {
     pub fn anomalies(&self) -> std::option::Option<&[crate::model::Anomaly]> {
         self.anomalies.as_deref()
     }
-    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when
-    /// the response from a previous call has more results than the maximum page size. </p>
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     pub fn next_page_token(&self) -> std::option::Option<&str> {
         self.next_page_token.as_deref()
     }
@@ -2884,14 +2538,12 @@ pub mod get_anomalies_output {
             self.anomalies = input;
             self
         }
-        /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when
-        /// the response from a previous call has more results than the maximum page size. </p>
+        /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
         }
-        /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when
-        /// the response from a previous call has more results than the maximum page size. </p>
+        /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2919,13 +2571,11 @@ impl GetAnomaliesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCostCategoryDefinitionOutput {
-    /// <p>The structure of Cost Categories. This includes detailed metadata and the set of rules
-    /// for the <code>CostCategory</code> object.</p>
+    /// <p>The structure of Cost Categories. This includes detailed metadata and the set of rules for the <code>CostCategory</code> object.</p>
     pub cost_category: std::option::Option<crate::model::CostCategory>,
 }
 impl DescribeCostCategoryDefinitionOutput {
-    /// <p>The structure of Cost Categories. This includes detailed metadata and the set of rules
-    /// for the <code>CostCategory</code> object.</p>
+    /// <p>The structure of Cost Categories. This includes detailed metadata and the set of rules for the <code>CostCategory</code> object.</p>
     pub fn cost_category(&self) -> std::option::Option<&crate::model::CostCategory> {
         self.cost_category.as_ref()
     }
@@ -2946,14 +2596,12 @@ pub mod describe_cost_category_definition_output {
         pub(crate) cost_category: std::option::Option<crate::model::CostCategory>,
     }
     impl Builder {
-        /// <p>The structure of Cost Categories. This includes detailed metadata and the set of rules
-        /// for the <code>CostCategory</code> object.</p>
+        /// <p>The structure of Cost Categories. This includes detailed metadata and the set of rules for the <code>CostCategory</code> object.</p>
         pub fn cost_category(mut self, input: crate::model::CostCategory) -> Self {
             self.cost_category = Some(input);
             self
         }
-        /// <p>The structure of Cost Categories. This includes detailed metadata and the set of rules
-        /// for the <code>CostCategory</code> object.</p>
+        /// <p>The structure of Cost Categories. This includes detailed metadata and the set of rules for the <code>CostCategory</code> object.</p>
         pub fn set_cost_category(
             mut self,
             input: std::option::Option<crate::model::CostCategory>,
@@ -2980,25 +2628,17 @@ impl DescribeCostCategoryDefinitionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCostCategoryDefinitionOutput {
-    /// <p>
-    /// The unique identifier for your Cost Category.
-    /// </p>
+    /// <p> The unique identifier for your Cost Category. </p>
     pub cost_category_arn: std::option::Option<std::string::String>,
-    /// <p>
-    /// The effective end date of the Cost Category as a result of deleting it. No costs after this date will be categorized by the deleted Cost Category.
-    /// </p>
+    /// <p> The effective end date of the Cost Category as a result of deleting it. No costs after this date will be categorized by the deleted Cost Category. </p>
     pub effective_end: std::option::Option<std::string::String>,
 }
 impl DeleteCostCategoryDefinitionOutput {
-    /// <p>
-    /// The unique identifier for your Cost Category.
-    /// </p>
+    /// <p> The unique identifier for your Cost Category. </p>
     pub fn cost_category_arn(&self) -> std::option::Option<&str> {
         self.cost_category_arn.as_deref()
     }
-    /// <p>
-    /// The effective end date of the Cost Category as a result of deleting it. No costs after this date will be categorized by the deleted Cost Category.
-    /// </p>
+    /// <p> The effective end date of the Cost Category as a result of deleting it. No costs after this date will be categorized by the deleted Cost Category. </p>
     pub fn effective_end(&self) -> std::option::Option<&str> {
         self.effective_end.as_deref()
     }
@@ -3021,16 +2661,12 @@ pub mod delete_cost_category_definition_output {
         pub(crate) effective_end: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The unique identifier for your Cost Category.
-        /// </p>
+        /// <p> The unique identifier for your Cost Category. </p>
         pub fn cost_category_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.cost_category_arn = Some(input.into());
             self
         }
-        /// <p>
-        /// The unique identifier for your Cost Category.
-        /// </p>
+        /// <p> The unique identifier for your Cost Category. </p>
         pub fn set_cost_category_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3038,16 +2674,12 @@ pub mod delete_cost_category_definition_output {
             self.cost_category_arn = input;
             self
         }
-        /// <p>
-        /// The effective end date of the Cost Category as a result of deleting it. No costs after this date will be categorized by the deleted Cost Category.
-        /// </p>
+        /// <p> The effective end date of the Cost Category as a result of deleting it. No costs after this date will be categorized by the deleted Cost Category. </p>
         pub fn effective_end(mut self, input: impl Into<std::string::String>) -> Self {
             self.effective_end = Some(input.into());
             self
         }
-        /// <p>
-        /// The effective end date of the Cost Category as a result of deleting it. No costs after this date will be categorized by the deleted Cost Category.
-        /// </p>
+        /// <p> The effective end date of the Cost Category as a result of deleting it. No costs after this date will be categorized by the deleted Cost Category. </p>
         pub fn set_effective_end(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3135,25 +2767,17 @@ impl DeleteAnomalyMonitorOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCostCategoryDefinitionOutput {
-    /// <p>
-    /// The unique identifier for your newly created Cost Category.
-    /// </p>
+    /// <p> The unique identifier for your newly created Cost Category. </p>
     pub cost_category_arn: std::option::Option<std::string::String>,
-    /// <p>
-    /// The Cost Category's effective start date.
-    /// </p>
+    /// <p> The Cost Category's effective start date. </p>
     pub effective_start: std::option::Option<std::string::String>,
 }
 impl CreateCostCategoryDefinitionOutput {
-    /// <p>
-    /// The unique identifier for your newly created Cost Category.
-    /// </p>
+    /// <p> The unique identifier for your newly created Cost Category. </p>
     pub fn cost_category_arn(&self) -> std::option::Option<&str> {
         self.cost_category_arn.as_deref()
     }
-    /// <p>
-    /// The Cost Category's effective start date.
-    /// </p>
+    /// <p> The Cost Category's effective start date. </p>
     pub fn effective_start(&self) -> std::option::Option<&str> {
         self.effective_start.as_deref()
     }
@@ -3176,16 +2800,12 @@ pub mod create_cost_category_definition_output {
         pub(crate) effective_start: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The unique identifier for your newly created Cost Category.
-        /// </p>
+        /// <p> The unique identifier for your newly created Cost Category. </p>
         pub fn cost_category_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.cost_category_arn = Some(input.into());
             self
         }
-        /// <p>
-        /// The unique identifier for your newly created Cost Category.
-        /// </p>
+        /// <p> The unique identifier for your newly created Cost Category. </p>
         pub fn set_cost_category_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3193,16 +2813,12 @@ pub mod create_cost_category_definition_output {
             self.cost_category_arn = input;
             self
         }
-        /// <p>
-        /// The Cost Category's effective start date.
-        /// </p>
+        /// <p> The Cost Category's effective start date. </p>
         pub fn effective_start(mut self, input: impl Into<std::string::String>) -> Self {
             self.effective_start = Some(input.into());
             self
         }
-        /// <p>
-        /// The Cost Category's effective start date.
-        /// </p>
+        /// <p> The Cost Category's effective start date. </p>
         pub fn set_effective_start(
             mut self,
             input: std::option::Option<std::string::String>,

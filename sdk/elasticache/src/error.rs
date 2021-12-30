@@ -875,8 +875,7 @@ pub enum CreateCacheClusterErrorKind {
     CacheSubnetGroupNotFoundFault(crate::error::CacheSubnetGroupNotFoundFault),
     /// <p>The request cannot be processed because it would exceed the allowed number of clusters per customer.</p>
     ClusterQuotaForCustomerExceededFault(crate::error::ClusterQuotaForCustomerExceededFault),
-    /// <p>The requested cache node type is not available in the specified Availability Zone.
-    /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a> in the ElastiCache User Guide.</p>
+    /// <p>The requested cache node type is not available in the specified Availability Zone. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a> in the ElastiCache User Guide.</p>
     InsufficientCacheClusterCapacityFault(crate::error::InsufficientCacheClusterCapacityFault),
     /// <p>Two or more incompatible parameters were specified.</p>
     InvalidParameterCombinationException(crate::error::InvalidParameterCombinationException),
@@ -1445,8 +1444,7 @@ pub enum CreateCacheSubnetGroupErrorKind {
     CacheSubnetQuotaExceededFault(crate::error::CacheSubnetQuotaExceededFault),
     /// <p>An invalid subnet identifier was specified.</p>
     InvalidSubnet(crate::error::InvalidSubnet),
-    /// <p>At least one subnet ID does not match the other subnet IDs. This mismatch typically occurs when a
-    /// user sets one subnet ID to a regional Availability Zone and a different one to an outpost. Or when a user sets the subnet ID to an Outpost when not subscribed on this service.</p>
+    /// <p>At least one subnet ID does not match the other subnet IDs. This mismatch typically occurs when a user sets one subnet ID to a regional Availability Zone and a different one to an outpost. Or when a user sets the subnet ID to an Outpost when not subscribed on this service.</p>
     SubnetNotAllowedFault(crate::error::SubnetNotAllowedFault),
     /// <p>The request cannot be processed because it would cause the resource to have more than the allowed number of tags. The maximum number of tags permitted on a resource is 50.</p>
     TagQuotaPerResourceExceeded(crate::error::TagQuotaPerResourceExceeded),
@@ -1765,8 +1763,7 @@ pub enum CreateReplicationGroupErrorKind {
     ClusterQuotaForCustomerExceededFault(crate::error::ClusterQuotaForCustomerExceededFault),
     /// <p>The Global datastore does not exist</p>
     GlobalReplicationGroupNotFoundFault(crate::error::GlobalReplicationGroupNotFoundFault),
-    /// <p>The requested cache node type is not available in the specified Availability Zone.
-    /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a> in the ElastiCache User Guide.</p>
+    /// <p>The requested cache node type is not available in the specified Availability Zone. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a> in the ElastiCache User Guide.</p>
     InsufficientCacheClusterCapacityFault(crate::error::InsufficientCacheClusterCapacityFault),
     /// <p>The requested cluster is not in the <code>available</code> state.</p>
     InvalidCacheClusterStateFault(crate::error::InvalidCacheClusterStateFault),
@@ -1780,8 +1777,7 @@ pub enum CreateReplicationGroupErrorKind {
     InvalidUserGroupStateFault(crate::error::InvalidUserGroupStateFault),
     /// <p>The VPC network is in an invalid state.</p>
     InvalidVpcNetworkStateFault(crate::error::InvalidVpcNetworkStateFault),
-    /// <p>The request cannot be processed because it would exceed the maximum allowed number
-    /// of node groups (shards) in a single replication group. The default maximum is 90</p>
+    /// <p>The request cannot be processed because it would exceed the maximum allowed number of node groups (shards) in a single replication group. The default maximum is 90</p>
     NodeGroupsPerReplicationGroupQuotaExceededFault(
         crate::error::NodeGroupsPerReplicationGroupQuotaExceededFault,
     ),
@@ -2110,13 +2106,8 @@ pub enum CreateSnapshotErrorKind {
     SnapshotAlreadyExistsFault(crate::error::SnapshotAlreadyExistsFault),
     /// <p>You attempted one of the following operations:</p>
     /// <ul>
-    /// <li>
-    /// <p>Creating a snapshot of a Redis cluster running on a <code>cache.t1.micro</code> cache
-    /// node.</p>
-    /// </li>
-    /// <li>
-    /// <p>Creating a snapshot of a cluster that is running Memcached rather than Redis.</p>
-    /// </li>
+    /// <li> <p>Creating a snapshot of a Redis cluster running on a <code>cache.t1.micro</code> cache node.</p> </li>
+    /// <li> <p>Creating a snapshot of a cluster that is running Memcached rather than Redis.</p> </li>
     /// </ul>
     /// <p>Neither of these are supported by ElastiCache.</p>
     SnapshotFeatureNotSupportedFault(crate::error::SnapshotFeatureNotSupportedFault),
@@ -2752,8 +2743,7 @@ pub struct DecreaseReplicaCountError {
 pub enum DecreaseReplicaCountErrorKind {
     /// <p>The request cannot be processed because it would exceed the allowed number of clusters per customer.</p>
     ClusterQuotaForCustomerExceededFault(crate::error::ClusterQuotaForCustomerExceededFault),
-    /// <p>The requested cache node type is not available in the specified Availability Zone.
-    /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a> in the ElastiCache User Guide.</p>
+    /// <p>The requested cache node type is not available in the specified Availability Zone. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a> in the ElastiCache User Guide.</p>
     InsufficientCacheClusterCapacityFault(crate::error::InsufficientCacheClusterCapacityFault),
     /// <p>The requested cluster is not in the <code>available</code> state.</p>
     InvalidCacheClusterStateFault(crate::error::InvalidCacheClusterStateFault),
@@ -2765,8 +2755,7 @@ pub enum DecreaseReplicaCountErrorKind {
     InvalidReplicationGroupStateFault(crate::error::InvalidReplicationGroupStateFault),
     /// <p>The VPC network is in an invalid state.</p>
     InvalidVpcNetworkStateFault(crate::error::InvalidVpcNetworkStateFault),
-    /// <p>The request cannot be processed because it would exceed the maximum allowed number
-    /// of node groups (shards) in a single replication group. The default maximum is 90</p>
+    /// <p>The request cannot be processed because it would exceed the maximum allowed number of node groups (shards) in a single replication group. The default maximum is 90</p>
     NodeGroupsPerReplicationGroupQuotaExceededFault(
         crate::error::NodeGroupsPerReplicationGroupQuotaExceededFault,
     ),
@@ -3004,13 +2993,8 @@ pub enum DeleteCacheClusterErrorKind {
     SnapshotAlreadyExistsFault(crate::error::SnapshotAlreadyExistsFault),
     /// <p>You attempted one of the following operations:</p>
     /// <ul>
-    /// <li>
-    /// <p>Creating a snapshot of a Redis cluster running on a <code>cache.t1.micro</code> cache
-    /// node.</p>
-    /// </li>
-    /// <li>
-    /// <p>Creating a snapshot of a cluster that is running Memcached rather than Redis.</p>
-    /// </li>
+    /// <li> <p>Creating a snapshot of a Redis cluster running on a <code>cache.t1.micro</code> cache node.</p> </li>
+    /// <li> <p>Creating a snapshot of a cluster that is running Memcached rather than Redis.</p> </li>
     /// </ul>
     /// <p>Neither of these are supported by ElastiCache.</p>
     SnapshotFeatureNotSupportedFault(crate::error::SnapshotFeatureNotSupportedFault),
@@ -3692,13 +3676,8 @@ pub enum DeleteReplicationGroupErrorKind {
     SnapshotAlreadyExistsFault(crate::error::SnapshotAlreadyExistsFault),
     /// <p>You attempted one of the following operations:</p>
     /// <ul>
-    /// <li>
-    /// <p>Creating a snapshot of a Redis cluster running on a <code>cache.t1.micro</code> cache
-    /// node.</p>
-    /// </li>
-    /// <li>
-    /// <p>Creating a snapshot of a cluster that is running Memcached rather than Redis.</p>
-    /// </li>
+    /// <li> <p>Creating a snapshot of a Redis cluster running on a <code>cache.t1.micro</code> cache node.</p> </li>
+    /// <li> <p>Creating a snapshot of a cluster that is running Memcached rather than Redis.</p> </li>
     /// </ul>
     /// <p>Neither of these are supported by ElastiCache.</p>
     SnapshotFeatureNotSupportedFault(crate::error::SnapshotFeatureNotSupportedFault),
@@ -6678,8 +6657,7 @@ pub struct IncreaseReplicaCountError {
 pub enum IncreaseReplicaCountErrorKind {
     /// <p>The request cannot be processed because it would exceed the allowed number of clusters per customer.</p>
     ClusterQuotaForCustomerExceededFault(crate::error::ClusterQuotaForCustomerExceededFault),
-    /// <p>The requested cache node type is not available in the specified Availability Zone.
-    /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a> in the ElastiCache User Guide.</p>
+    /// <p>The requested cache node type is not available in the specified Availability Zone. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a> in the ElastiCache User Guide.</p>
     InsufficientCacheClusterCapacityFault(crate::error::InsufficientCacheClusterCapacityFault),
     /// <p>The requested cluster is not in the <code>available</code> state.</p>
     InvalidCacheClusterStateFault(crate::error::InvalidCacheClusterStateFault),
@@ -6693,8 +6671,7 @@ pub enum IncreaseReplicaCountErrorKind {
     InvalidReplicationGroupStateFault(crate::error::InvalidReplicationGroupStateFault),
     /// <p>The VPC network is in an invalid state.</p>
     InvalidVpcNetworkStateFault(crate::error::InvalidVpcNetworkStateFault),
-    /// <p>The request cannot be processed because it would exceed the maximum allowed number
-    /// of node groups (shards) in a single replication group. The default maximum is 90</p>
+    /// <p>The request cannot be processed because it would exceed the maximum allowed number of node groups (shards) in a single replication group. The default maximum is 90</p>
     NodeGroupsPerReplicationGroupQuotaExceededFault(
         crate::error::NodeGroupsPerReplicationGroupQuotaExceededFault,
     ),
@@ -7271,8 +7248,7 @@ pub enum ModifyCacheClusterErrorKind {
     CacheParameterGroupNotFoundFault(crate::error::CacheParameterGroupNotFoundFault),
     /// <p>The requested cache security group name does not refer to an existing cache security group.</p>
     CacheSecurityGroupNotFoundFault(crate::error::CacheSecurityGroupNotFoundFault),
-    /// <p>The requested cache node type is not available in the specified Availability Zone.
-    /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a> in the ElastiCache User Guide.</p>
+    /// <p>The requested cache node type is not available in the specified Availability Zone. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a> in the ElastiCache User Guide.</p>
     InsufficientCacheClusterCapacityFault(crate::error::InsufficientCacheClusterCapacityFault),
     /// <p>The requested cluster is not in the <code>available</code> state.</p>
     InvalidCacheClusterStateFault(crate::error::InvalidCacheClusterStateFault),
@@ -7646,8 +7622,7 @@ pub enum ModifyCacheSubnetGroupErrorKind {
     InvalidSubnet(crate::error::InvalidSubnet),
     /// <p>The requested subnet is being used by another cache subnet group.</p>
     SubnetInUse(crate::error::SubnetInUse),
-    /// <p>At least one subnet ID does not match the other subnet IDs. This mismatch typically occurs when a
-    /// user sets one subnet ID to a regional Availability Zone and a different one to an outpost. Or when a user sets the subnet ID to an Outpost when not subscribed on this service.</p>
+    /// <p>At least one subnet ID does not match the other subnet IDs. This mismatch typically occurs when a user sets one subnet ID to a regional Availability Zone and a different one to an outpost. Or when a user sets the subnet ID to an Outpost when not subscribed on this service.</p>
     SubnetNotAllowedFault(crate::error::SubnetNotAllowedFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7906,8 +7881,7 @@ pub enum ModifyReplicationGroupErrorKind {
     CacheParameterGroupNotFoundFault(crate::error::CacheParameterGroupNotFoundFault),
     /// <p>The requested cache security group name does not refer to an existing cache security group.</p>
     CacheSecurityGroupNotFoundFault(crate::error::CacheSecurityGroupNotFoundFault),
-    /// <p>The requested cache node type is not available in the specified Availability Zone.
-    /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a> in the ElastiCache User Guide.</p>
+    /// <p>The requested cache node type is not available in the specified Availability Zone. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a> in the ElastiCache User Guide.</p>
     InsufficientCacheClusterCapacityFault(crate::error::InsufficientCacheClusterCapacityFault),
     /// <p>The requested cluster is not in the <code>available</code> state.</p>
     InvalidCacheClusterStateFault(crate::error::InvalidCacheClusterStateFault),
@@ -8193,8 +8167,7 @@ pub struct ModifyReplicationGroupShardConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyReplicationGroupShardConfigurationErrorKind {
-    /// <p>The requested cache node type is not available in the specified Availability Zone.
-    /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a> in the ElastiCache User Guide.</p>
+    /// <p>The requested cache node type is not available in the specified Availability Zone. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a> in the ElastiCache User Guide.</p>
     InsufficientCacheClusterCapacityFault(crate::error::InsufficientCacheClusterCapacityFault),
     /// <p>The requested cluster is not in the <code>available</code> state.</p>
     InvalidCacheClusterStateFault(crate::error::InvalidCacheClusterStateFault),
@@ -8208,8 +8181,7 @@ pub enum ModifyReplicationGroupShardConfigurationErrorKind {
     InvalidReplicationGroupStateFault(crate::error::InvalidReplicationGroupStateFault),
     /// <p>The VPC network is in an invalid state.</p>
     InvalidVpcNetworkStateFault(crate::error::InvalidVpcNetworkStateFault),
-    /// <p>The request cannot be processed because it would exceed the maximum allowed number
-    /// of node groups (shards) in a single replication group. The default maximum is 90</p>
+    /// <p>The request cannot be processed because it would exceed the maximum allowed number of node groups (shards) in a single replication group. The default maximum is 90</p>
     NodeGroupsPerReplicationGroupQuotaExceededFault(
         crate::error::NodeGroupsPerReplicationGroupQuotaExceededFault,
     ),
@@ -9830,8 +9802,7 @@ pub enum TestFailoverErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The requested replication group is not in the <code>available</code> state.</p>
     InvalidReplicationGroupStateFault(crate::error::InvalidReplicationGroupStateFault),
-    /// <p>The node group specified by the <code>NodeGroupId</code> parameter could not be found.
-    /// Please verify that the node group exists and that you spelled the <code>NodeGroupId</code> value correctly.</p>
+    /// <p>The node group specified by the <code>NodeGroupId</code> parameter could not be found. Please verify that the node group exists and that you spelled the <code>NodeGroupId</code> value correctly.</p>
     NodeGroupNotFoundFault(crate::error::NodeGroupNotFoundFault),
     /// <p>The specified replication group does not exist.</p>
     ReplicationGroupNotFoundFault(crate::error::ReplicationGroupNotFoundFault),
@@ -10109,8 +10080,7 @@ impl ReplicationGroupNotFoundFault {
     }
 }
 
-/// <p>The node group specified by the <code>NodeGroupId</code> parameter could not be found.
-/// Please verify that the node group exists and that you spelled the <code>NodeGroupId</code> value correctly.</p>
+/// <p>The node group specified by the <code>NodeGroupId</code> parameter could not be found. Please verify that the node group exists and that you spelled the <code>NodeGroupId</code> value correctly.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NodeGroupNotFoundFault {
@@ -12225,8 +12195,7 @@ impl NodeQuotaForCustomerExceededFault {
     }
 }
 
-/// <p>The request cannot be processed because it would exceed the maximum allowed number
-/// of node groups (shards) in a single replication group. The default maximum is 90</p>
+/// <p>The request cannot be processed because it would exceed the maximum allowed number of node groups (shards) in a single replication group. The default maximum is 90</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NodeGroupsPerReplicationGroupQuotaExceededFault {
@@ -12358,8 +12327,7 @@ impl InvalidVpcNetworkStateFault {
     }
 }
 
-/// <p>The requested cache node type is not available in the specified Availability Zone.
-/// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a> in the ElastiCache User Guide.</p>
+/// <p>The requested cache node type is not available in the specified Availability Zone. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a> in the ElastiCache User Guide.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InsufficientCacheClusterCapacityFault {
@@ -12487,8 +12455,7 @@ impl NodeQuotaForClusterExceededFault {
     }
 }
 
-/// <p>At least one subnet ID does not match the other subnet IDs. This mismatch typically occurs when a
-/// user sets one subnet ID to a regional Availability Zone and a different one to an outpost. Or when a user sets the subnet ID to an Outpost when not subscribed on this service.</p>
+/// <p>At least one subnet ID does not match the other subnet IDs. This mismatch typically occurs when a user sets one subnet ID to a regional Availability Zone and a different one to an outpost. Or when a user sets the subnet ID to an Outpost when not subscribed on this service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubnetNotAllowedFault {
@@ -13130,13 +13097,8 @@ impl SnapshotQuotaExceededFault {
 
 /// <p>You attempted one of the following operations:</p>
 /// <ul>
-/// <li>
-/// <p>Creating a snapshot of a Redis cluster running on a <code>cache.t1.micro</code> cache
-/// node.</p>
-/// </li>
-/// <li>
-/// <p>Creating a snapshot of a cluster that is running Memcached rather than Redis.</p>
-/// </li>
+/// <li> <p>Creating a snapshot of a Redis cluster running on a <code>cache.t1.micro</code> cache node.</p> </li>
+/// <li> <p>Creating a snapshot of a cluster that is running Memcached rather than Redis.</p> </li>
 /// </ul>
 /// <p>Neither of these are supported by ElastiCache.</p>
 #[non_exhaustive]

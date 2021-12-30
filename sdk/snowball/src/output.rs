@@ -123,24 +123,20 @@ impl UpdateClusterOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLongTermPricingOutput {
-    /// <p>Each <code>LongTermPricingEntry</code> object contains a status, ID, and other information
-    /// about the <code>LongTermPricing</code> type. </p>
+    /// <p>Each <code>LongTermPricingEntry</code> object contains a status, ID, and other information about the <code>LongTermPricing</code> type. </p>
     pub long_term_pricing_entries:
         std::option::Option<std::vec::Vec<crate::model::LongTermPricingListEntry>>,
-    /// <p>Because HTTP requests are stateless, this is the starting point for your next list of
-    /// returned <code>ListLongTermPricing</code> list.</p>
+    /// <p>Because HTTP requests are stateless, this is the starting point for your next list of returned <code>ListLongTermPricing</code> list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListLongTermPricingOutput {
-    /// <p>Each <code>LongTermPricingEntry</code> object contains a status, ID, and other information
-    /// about the <code>LongTermPricing</code> type. </p>
+    /// <p>Each <code>LongTermPricingEntry</code> object contains a status, ID, and other information about the <code>LongTermPricing</code> type. </p>
     pub fn long_term_pricing_entries(
         &self,
     ) -> std::option::Option<&[crate::model::LongTermPricingListEntry]> {
         self.long_term_pricing_entries.as_deref()
     }
-    /// <p>Because HTTP requests are stateless, this is the starting point for your next list of
-    /// returned <code>ListLongTermPricing</code> list.</p>
+    /// <p>Because HTTP requests are stateless, this is the starting point for your next list of returned <code>ListLongTermPricing</code> list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -168,8 +164,7 @@ pub mod list_long_term_pricing_output {
         ///
         /// To override the contents of this collection use [`set_long_term_pricing_entries`](Self::set_long_term_pricing_entries).
         ///
-        /// <p>Each <code>LongTermPricingEntry</code> object contains a status, ID, and other information
-        /// about the <code>LongTermPricing</code> type. </p>
+        /// <p>Each <code>LongTermPricingEntry</code> object contains a status, ID, and other information about the <code>LongTermPricing</code> type. </p>
         pub fn long_term_pricing_entries(
             mut self,
             input: crate::model::LongTermPricingListEntry,
@@ -179,8 +174,7 @@ pub mod list_long_term_pricing_output {
             self.long_term_pricing_entries = Some(v);
             self
         }
-        /// <p>Each <code>LongTermPricingEntry</code> object contains a status, ID, and other information
-        /// about the <code>LongTermPricing</code> type. </p>
+        /// <p>Each <code>LongTermPricingEntry</code> object contains a status, ID, and other information about the <code>LongTermPricing</code> type. </p>
         pub fn set_long_term_pricing_entries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LongTermPricingListEntry>>,
@@ -188,14 +182,12 @@ pub mod list_long_term_pricing_output {
             self.long_term_pricing_entries = input;
             self
         }
-        /// <p>Because HTTP requests are stateless, this is the starting point for your next list of
-        /// returned <code>ListLongTermPricing</code> list.</p>
+        /// <p>Because HTTP requests are stateless, this is the starting point for your next list of returned <code>ListLongTermPricing</code> list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>Because HTTP requests are stateless, this is the starting point for your next list of
-        /// returned <code>ListLongTermPricing</code> list.</p>
+        /// <p>Because HTTP requests are stateless, this is the starting point for your next list of returned <code>ListLongTermPricing</code> list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -220,23 +212,17 @@ impl ListLongTermPricingOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListJobsOutput {
-    /// <p>Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value
-    /// that indicates whether the job is a job part, in the case of export jobs. </p>
+    /// <p>Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that indicates whether the job is a job part, in the case of export jobs. </p>
     pub job_list_entries: std::option::Option<std::vec::Vec<crate::model::JobListEntry>>,
-    /// <p>HTTP requests are stateless. If you use this automatically generated
-    /// <code>NextToken</code> value in your next <code>ListJobs</code> call, your returned
-    /// <code>JobListEntry</code> objects will start from this point in the array.</p>
+    /// <p>HTTP requests are stateless. If you use this automatically generated <code>NextToken</code> value in your next <code>ListJobs</code> call, your returned <code>JobListEntry</code> objects will start from this point in the array.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListJobsOutput {
-    /// <p>Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value
-    /// that indicates whether the job is a job part, in the case of export jobs. </p>
+    /// <p>Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that indicates whether the job is a job part, in the case of export jobs. </p>
     pub fn job_list_entries(&self) -> std::option::Option<&[crate::model::JobListEntry]> {
         self.job_list_entries.as_deref()
     }
-    /// <p>HTTP requests are stateless. If you use this automatically generated
-    /// <code>NextToken</code> value in your next <code>ListJobs</code> call, your returned
-    /// <code>JobListEntry</code> objects will start from this point in the array.</p>
+    /// <p>HTTP requests are stateless. If you use this automatically generated <code>NextToken</code> value in your next <code>ListJobs</code> call, your returned <code>JobListEntry</code> objects will start from this point in the array.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -263,16 +249,14 @@ pub mod list_jobs_output {
         ///
         /// To override the contents of this collection use [`set_job_list_entries`](Self::set_job_list_entries).
         ///
-        /// <p>Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value
-        /// that indicates whether the job is a job part, in the case of export jobs. </p>
+        /// <p>Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that indicates whether the job is a job part, in the case of export jobs. </p>
         pub fn job_list_entries(mut self, input: crate::model::JobListEntry) -> Self {
             let mut v = self.job_list_entries.unwrap_or_default();
             v.push(input);
             self.job_list_entries = Some(v);
             self
         }
-        /// <p>Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value
-        /// that indicates whether the job is a job part, in the case of export jobs. </p>
+        /// <p>Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that indicates whether the job is a job part, in the case of export jobs. </p>
         pub fn set_job_list_entries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::JobListEntry>>,
@@ -280,16 +264,12 @@ pub mod list_jobs_output {
             self.job_list_entries = input;
             self
         }
-        /// <p>HTTP requests are stateless. If you use this automatically generated
-        /// <code>NextToken</code> value in your next <code>ListJobs</code> call, your returned
-        /// <code>JobListEntry</code> objects will start from this point in the array.</p>
+        /// <p>HTTP requests are stateless. If you use this automatically generated <code>NextToken</code> value in your next <code>ListJobs</code> call, your returned <code>JobListEntry</code> objects will start from this point in the array.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>HTTP requests are stateless. If you use this automatically generated
-        /// <code>NextToken</code> value in your next <code>ListJobs</code> call, your returned
-        /// <code>JobListEntry</code> objects will start from this point in the array.</p>
+        /// <p>HTTP requests are stateless. If you use this automatically generated <code>NextToken</code> value in your next <code>ListJobs</code> call, your returned <code>JobListEntry</code> objects will start from this point in the array.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -314,21 +294,17 @@ impl ListJobsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCompatibleImagesOutput {
-    /// <p>A JSON-formatted object that describes a compatible AMI, including the ID and name for
-    /// a Snow device AMI.</p>
+    /// <p>A JSON-formatted object that describes a compatible AMI, including the ID and name for a Snow device AMI.</p>
     pub compatible_images: std::option::Option<std::vec::Vec<crate::model::CompatibleImage>>,
-    /// <p>Because HTTP requests are stateless, this is the starting point for your next list of
-    /// returned images.</p>
+    /// <p>Because HTTP requests are stateless, this is the starting point for your next list of returned images.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCompatibleImagesOutput {
-    /// <p>A JSON-formatted object that describes a compatible AMI, including the ID and name for
-    /// a Snow device AMI.</p>
+    /// <p>A JSON-formatted object that describes a compatible AMI, including the ID and name for a Snow device AMI.</p>
     pub fn compatible_images(&self) -> std::option::Option<&[crate::model::CompatibleImage]> {
         self.compatible_images.as_deref()
     }
-    /// <p>Because HTTP requests are stateless, this is the starting point for your next list of
-    /// returned images.</p>
+    /// <p>Because HTTP requests are stateless, this is the starting point for your next list of returned images.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -356,16 +332,14 @@ pub mod list_compatible_images_output {
         ///
         /// To override the contents of this collection use [`set_compatible_images`](Self::set_compatible_images).
         ///
-        /// <p>A JSON-formatted object that describes a compatible AMI, including the ID and name for
-        /// a Snow device AMI.</p>
+        /// <p>A JSON-formatted object that describes a compatible AMI, including the ID and name for a Snow device AMI.</p>
         pub fn compatible_images(mut self, input: crate::model::CompatibleImage) -> Self {
             let mut v = self.compatible_images.unwrap_or_default();
             v.push(input);
             self.compatible_images = Some(v);
             self
         }
-        /// <p>A JSON-formatted object that describes a compatible AMI, including the ID and name for
-        /// a Snow device AMI.</p>
+        /// <p>A JSON-formatted object that describes a compatible AMI, including the ID and name for a Snow device AMI.</p>
         pub fn set_compatible_images(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CompatibleImage>>,
@@ -373,14 +347,12 @@ pub mod list_compatible_images_output {
             self.compatible_images = input;
             self
         }
-        /// <p>Because HTTP requests are stateless, this is the starting point for your next list of
-        /// returned images.</p>
+        /// <p>Because HTTP requests are stateless, this is the starting point for your next list of returned images.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>Because HTTP requests are stateless, this is the starting point for your next list of
-        /// returned images.</p>
+        /// <p>Because HTTP requests are stateless, this is the starting point for your next list of returned images.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -405,23 +377,17 @@ impl ListCompatibleImagesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListClustersOutput {
-    /// <p>Each <code>ClusterListEntry</code> object contains a cluster's state, a cluster's ID,
-    /// and other important status information.</p>
+    /// <p>Each <code>ClusterListEntry</code> object contains a cluster's state, a cluster's ID, and other important status information.</p>
     pub cluster_list_entries: std::option::Option<std::vec::Vec<crate::model::ClusterListEntry>>,
-    /// <p>HTTP requests are stateless. If you use the automatically generated
-    /// <code>NextToken</code> value in your next <code>ClusterListEntry</code> call, your list of
-    /// returned clusters will start from this point in the array.</p>
+    /// <p>HTTP requests are stateless. If you use the automatically generated <code>NextToken</code> value in your next <code>ClusterListEntry</code> call, your list of returned clusters will start from this point in the array.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListClustersOutput {
-    /// <p>Each <code>ClusterListEntry</code> object contains a cluster's state, a cluster's ID,
-    /// and other important status information.</p>
+    /// <p>Each <code>ClusterListEntry</code> object contains a cluster's state, a cluster's ID, and other important status information.</p>
     pub fn cluster_list_entries(&self) -> std::option::Option<&[crate::model::ClusterListEntry]> {
         self.cluster_list_entries.as_deref()
     }
-    /// <p>HTTP requests are stateless. If you use the automatically generated
-    /// <code>NextToken</code> value in your next <code>ClusterListEntry</code> call, your list of
-    /// returned clusters will start from this point in the array.</p>
+    /// <p>HTTP requests are stateless. If you use the automatically generated <code>NextToken</code> value in your next <code>ClusterListEntry</code> call, your list of returned clusters will start from this point in the array.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -449,16 +415,14 @@ pub mod list_clusters_output {
         ///
         /// To override the contents of this collection use [`set_cluster_list_entries`](Self::set_cluster_list_entries).
         ///
-        /// <p>Each <code>ClusterListEntry</code> object contains a cluster's state, a cluster's ID,
-        /// and other important status information.</p>
+        /// <p>Each <code>ClusterListEntry</code> object contains a cluster's state, a cluster's ID, and other important status information.</p>
         pub fn cluster_list_entries(mut self, input: crate::model::ClusterListEntry) -> Self {
             let mut v = self.cluster_list_entries.unwrap_or_default();
             v.push(input);
             self.cluster_list_entries = Some(v);
             self
         }
-        /// <p>Each <code>ClusterListEntry</code> object contains a cluster's state, a cluster's ID,
-        /// and other important status information.</p>
+        /// <p>Each <code>ClusterListEntry</code> object contains a cluster's state, a cluster's ID, and other important status information.</p>
         pub fn set_cluster_list_entries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ClusterListEntry>>,
@@ -466,16 +430,12 @@ pub mod list_clusters_output {
             self.cluster_list_entries = input;
             self
         }
-        /// <p>HTTP requests are stateless. If you use the automatically generated
-        /// <code>NextToken</code> value in your next <code>ClusterListEntry</code> call, your list of
-        /// returned clusters will start from this point in the array.</p>
+        /// <p>HTTP requests are stateless. If you use the automatically generated <code>NextToken</code> value in your next <code>ClusterListEntry</code> call, your list of returned clusters will start from this point in the array.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>HTTP requests are stateless. If you use the automatically generated
-        /// <code>NextToken</code> value in your next <code>ClusterListEntry</code> call, your list of
-        /// returned clusters will start from this point in the array.</p>
+        /// <p>HTTP requests are stateless. If you use the automatically generated <code>NextToken</code> value in your next <code>ClusterListEntry</code> call, your list of returned clusters will start from this point in the array.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -500,23 +460,17 @@ impl ListClustersOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListClusterJobsOutput {
-    /// <p>Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value
-    /// that indicates whether the job is a job part, in the case of export jobs. </p>
+    /// <p>Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that indicates whether the job is a job part, in the case of export jobs. </p>
     pub job_list_entries: std::option::Option<std::vec::Vec<crate::model::JobListEntry>>,
-    /// <p>HTTP requests are stateless. If you use the automatically generated
-    /// <code>NextToken</code> value in your next <code>ListClusterJobsResult</code> call, your list
-    /// of returned jobs will start from this point in the array.</p>
+    /// <p>HTTP requests are stateless. If you use the automatically generated <code>NextToken</code> value in your next <code>ListClusterJobsResult</code> call, your list of returned jobs will start from this point in the array.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListClusterJobsOutput {
-    /// <p>Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value
-    /// that indicates whether the job is a job part, in the case of export jobs. </p>
+    /// <p>Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that indicates whether the job is a job part, in the case of export jobs. </p>
     pub fn job_list_entries(&self) -> std::option::Option<&[crate::model::JobListEntry]> {
         self.job_list_entries.as_deref()
     }
-    /// <p>HTTP requests are stateless. If you use the automatically generated
-    /// <code>NextToken</code> value in your next <code>ListClusterJobsResult</code> call, your list
-    /// of returned jobs will start from this point in the array.</p>
+    /// <p>HTTP requests are stateless. If you use the automatically generated <code>NextToken</code> value in your next <code>ListClusterJobsResult</code> call, your list of returned jobs will start from this point in the array.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -543,16 +497,14 @@ pub mod list_cluster_jobs_output {
         ///
         /// To override the contents of this collection use [`set_job_list_entries`](Self::set_job_list_entries).
         ///
-        /// <p>Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value
-        /// that indicates whether the job is a job part, in the case of export jobs. </p>
+        /// <p>Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that indicates whether the job is a job part, in the case of export jobs. </p>
         pub fn job_list_entries(mut self, input: crate::model::JobListEntry) -> Self {
             let mut v = self.job_list_entries.unwrap_or_default();
             v.push(input);
             self.job_list_entries = Some(v);
             self
         }
-        /// <p>Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value
-        /// that indicates whether the job is a job part, in the case of export jobs. </p>
+        /// <p>Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that indicates whether the job is a job part, in the case of export jobs. </p>
         pub fn set_job_list_entries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::JobListEntry>>,
@@ -560,16 +512,12 @@ pub mod list_cluster_jobs_output {
             self.job_list_entries = input;
             self
         }
-        /// <p>HTTP requests are stateless. If you use the automatically generated
-        /// <code>NextToken</code> value in your next <code>ListClusterJobsResult</code> call, your list
-        /// of returned jobs will start from this point in the array.</p>
+        /// <p>HTTP requests are stateless. If you use the automatically generated <code>NextToken</code> value in your next <code>ListClusterJobsResult</code> call, your list of returned jobs will start from this point in the array.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>HTTP requests are stateless. If you use the automatically generated
-        /// <code>NextToken</code> value in your next <code>ListClusterJobsResult</code> call, your list
-        /// of returned jobs will start from this point in the array.</p>
+        /// <p>HTTP requests are stateless. If you use the automatically generated <code>NextToken</code> value in your next <code>ListClusterJobsResult</code> call, your list of returned jobs will start from this point in the array.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -594,17 +542,11 @@ impl ListClusterJobsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSoftwareUpdatesOutput {
-    /// <p>The Amazon S3 presigned URL for the update file associated with the specified
-    /// <code>JobId</code> value. The software update will be available for 2 days after this
-    /// request is made. To access an update after the 2 days have passed, you'll have to make another
-    /// call to <code>GetSoftwareUpdates</code>.</p>
+    /// <p>The Amazon S3 presigned URL for the update file associated with the specified <code>JobId</code> value. The software update will be available for 2 days after this request is made. To access an update after the 2 days have passed, you'll have to make another call to <code>GetSoftwareUpdates</code>.</p>
     pub updates_uri: std::option::Option<std::string::String>,
 }
 impl GetSoftwareUpdatesOutput {
-    /// <p>The Amazon S3 presigned URL for the update file associated with the specified
-    /// <code>JobId</code> value. The software update will be available for 2 days after this
-    /// request is made. To access an update after the 2 days have passed, you'll have to make another
-    /// call to <code>GetSoftwareUpdates</code>.</p>
+    /// <p>The Amazon S3 presigned URL for the update file associated with the specified <code>JobId</code> value. The software update will be available for 2 days after this request is made. To access an update after the 2 days have passed, you'll have to make another call to <code>GetSoftwareUpdates</code>.</p>
     pub fn updates_uri(&self) -> std::option::Option<&str> {
         self.updates_uri.as_deref()
     }
@@ -625,18 +567,12 @@ pub mod get_software_updates_output {
         pub(crate) updates_uri: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon S3 presigned URL for the update file associated with the specified
-        /// <code>JobId</code> value. The software update will be available for 2 days after this
-        /// request is made. To access an update after the 2 days have passed, you'll have to make another
-        /// call to <code>GetSoftwareUpdates</code>.</p>
+        /// <p>The Amazon S3 presigned URL for the update file associated with the specified <code>JobId</code> value. The software update will be available for 2 days after this request is made. To access an update after the 2 days have passed, you'll have to make another call to <code>GetSoftwareUpdates</code>.</p>
         pub fn updates_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.updates_uri = Some(input.into());
             self
         }
-        /// <p>The Amazon S3 presigned URL for the update file associated with the specified
-        /// <code>JobId</code> value. The software update will be available for 2 days after this
-        /// request is made. To access an update after the 2 days have passed, you'll have to make another
-        /// call to <code>GetSoftwareUpdates</code>.</p>
+        /// <p>The Amazon S3 presigned URL for the update file associated with the specified <code>JobId</code> value. The software update will be available for 2 days after this request is made. To access an update after the 2 days have passed, you'll have to make another call to <code>GetSoftwareUpdates</code>.</p>
         pub fn set_updates_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.updates_uri = input;
             self
@@ -660,15 +596,13 @@ impl GetSoftwareUpdatesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSnowballUsageOutput {
-    /// <p>The service limit for number of Snow devices this account can have at once. The default
-    /// service limit is 1 (one).</p>
+    /// <p>The service limit for number of Snow devices this account can have at once. The default service limit is 1 (one).</p>
     pub snowball_limit: std::option::Option<i32>,
     /// <p>The number of Snow devices that this account is currently using.</p>
     pub snowballs_in_use: std::option::Option<i32>,
 }
 impl GetSnowballUsageOutput {
-    /// <p>The service limit for number of Snow devices this account can have at once. The default
-    /// service limit is 1 (one).</p>
+    /// <p>The service limit for number of Snow devices this account can have at once. The default service limit is 1 (one).</p>
     pub fn snowball_limit(&self) -> std::option::Option<i32> {
         self.snowball_limit
     }
@@ -695,14 +629,12 @@ pub mod get_snowball_usage_output {
         pub(crate) snowballs_in_use: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The service limit for number of Snow devices this account can have at once. The default
-        /// service limit is 1 (one).</p>
+        /// <p>The service limit for number of Snow devices this account can have at once. The default service limit is 1 (one).</p>
         pub fn snowball_limit(mut self, input: i32) -> Self {
             self.snowball_limit = Some(input);
             self
         }
-        /// <p>The service limit for number of Snow devices this account can have at once. The default
-        /// service limit is 1 (one).</p>
+        /// <p>The service limit for number of Snow devices this account can have at once. The default service limit is 1 (one).</p>
         pub fn set_snowball_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.snowball_limit = input;
             self
@@ -737,13 +669,11 @@ impl GetSnowballUsageOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetJobUnlockCodeOutput {
-    /// <p>The <code>UnlockCode</code> value for the specified job. The <code>UnlockCode</code>
-    /// value can be accessed for up to 360 days after the job has been created.</p>
+    /// <p>The <code>UnlockCode</code> value for the specified job. The <code>UnlockCode</code> value can be accessed for up to 360 days after the job has been created.</p>
     pub unlock_code: std::option::Option<std::string::String>,
 }
 impl GetJobUnlockCodeOutput {
-    /// <p>The <code>UnlockCode</code> value for the specified job. The <code>UnlockCode</code>
-    /// value can be accessed for up to 360 days after the job has been created.</p>
+    /// <p>The <code>UnlockCode</code> value for the specified job. The <code>UnlockCode</code> value can be accessed for up to 360 days after the job has been created.</p>
     pub fn unlock_code(&self) -> std::option::Option<&str> {
         self.unlock_code.as_deref()
     }
@@ -764,14 +694,12 @@ pub mod get_job_unlock_code_output {
         pub(crate) unlock_code: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <code>UnlockCode</code> value for the specified job. The <code>UnlockCode</code>
-        /// value can be accessed for up to 360 days after the job has been created.</p>
+        /// <p>The <code>UnlockCode</code> value for the specified job. The <code>UnlockCode</code> value can be accessed for up to 360 days after the job has been created.</p>
         pub fn unlock_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.unlock_code = Some(input.into());
             self
         }
-        /// <p>The <code>UnlockCode</code> value for the specified job. The <code>UnlockCode</code>
-        /// value can be accessed for up to 360 days after the job has been created.</p>
+        /// <p>The <code>UnlockCode</code> value for the specified job. The <code>UnlockCode</code> value can be accessed for up to 360 days after the job has been created.</p>
         pub fn set_unlock_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.unlock_code = input;
             self
@@ -795,13 +723,11 @@ impl GetJobUnlockCodeOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetJobManifestOutput {
-    /// <p>The Amazon S3 presigned URL for the manifest file associated with the specified
-    /// <code>JobId</code> value.</p>
+    /// <p>The Amazon S3 presigned URL for the manifest file associated with the specified <code>JobId</code> value.</p>
     pub manifest_uri: std::option::Option<std::string::String>,
 }
 impl GetJobManifestOutput {
-    /// <p>The Amazon S3 presigned URL for the manifest file associated with the specified
-    /// <code>JobId</code> value.</p>
+    /// <p>The Amazon S3 presigned URL for the manifest file associated with the specified <code>JobId</code> value.</p>
     pub fn manifest_uri(&self) -> std::option::Option<&str> {
         self.manifest_uri.as_deref()
     }
@@ -822,14 +748,12 @@ pub mod get_job_manifest_output {
         pub(crate) manifest_uri: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon S3 presigned URL for the manifest file associated with the specified
-        /// <code>JobId</code> value.</p>
+        /// <p>The Amazon S3 presigned URL for the manifest file associated with the specified <code>JobId</code> value.</p>
         pub fn manifest_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.manifest_uri = Some(input.into());
             self
         }
-        /// <p>The Amazon S3 presigned URL for the manifest file associated with the specified
-        /// <code>JobId</code> value.</p>
+        /// <p>The Amazon S3 presigned URL for the manifest file associated with the specified <code>JobId</code> value.</p>
         pub fn set_manifest_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.manifest_uri = input;
             self
@@ -954,21 +878,17 @@ impl DescribeReturnShippingLabelOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeJobOutput {
-    /// <p>Information about a specific job, including shipping information, job status, and other
-    /// important metadata.</p>
+    /// <p>Information about a specific job, including shipping information, job status, and other important metadata.</p>
     pub job_metadata: std::option::Option<crate::model::JobMetadata>,
-    /// <p>Information about a specific job part (in the case of an export job), including
-    /// shipping information, job status, and other important metadata.</p>
+    /// <p>Information about a specific job part (in the case of an export job), including shipping information, job status, and other important metadata.</p>
     pub sub_job_metadata: std::option::Option<std::vec::Vec<crate::model::JobMetadata>>,
 }
 impl DescribeJobOutput {
-    /// <p>Information about a specific job, including shipping information, job status, and other
-    /// important metadata.</p>
+    /// <p>Information about a specific job, including shipping information, job status, and other important metadata.</p>
     pub fn job_metadata(&self) -> std::option::Option<&crate::model::JobMetadata> {
         self.job_metadata.as_ref()
     }
-    /// <p>Information about a specific job part (in the case of an export job), including
-    /// shipping information, job status, and other important metadata.</p>
+    /// <p>Information about a specific job part (in the case of an export job), including shipping information, job status, and other important metadata.</p>
     pub fn sub_job_metadata(&self) -> std::option::Option<&[crate::model::JobMetadata]> {
         self.sub_job_metadata.as_deref()
     }
@@ -991,14 +911,12 @@ pub mod describe_job_output {
         pub(crate) sub_job_metadata: std::option::Option<std::vec::Vec<crate::model::JobMetadata>>,
     }
     impl Builder {
-        /// <p>Information about a specific job, including shipping information, job status, and other
-        /// important metadata.</p>
+        /// <p>Information about a specific job, including shipping information, job status, and other important metadata.</p>
         pub fn job_metadata(mut self, input: crate::model::JobMetadata) -> Self {
             self.job_metadata = Some(input);
             self
         }
-        /// <p>Information about a specific job, including shipping information, job status, and other
-        /// important metadata.</p>
+        /// <p>Information about a specific job, including shipping information, job status, and other important metadata.</p>
         pub fn set_job_metadata(
             mut self,
             input: std::option::Option<crate::model::JobMetadata>,
@@ -1010,16 +928,14 @@ pub mod describe_job_output {
         ///
         /// To override the contents of this collection use [`set_sub_job_metadata`](Self::set_sub_job_metadata).
         ///
-        /// <p>Information about a specific job part (in the case of an export job), including
-        /// shipping information, job status, and other important metadata.</p>
+        /// <p>Information about a specific job part (in the case of an export job), including shipping information, job status, and other important metadata.</p>
         pub fn sub_job_metadata(mut self, input: crate::model::JobMetadata) -> Self {
             let mut v = self.sub_job_metadata.unwrap_or_default();
             v.push(input);
             self.sub_job_metadata = Some(v);
             self
         }
-        /// <p>Information about a specific job part (in the case of an export job), including
-        /// shipping information, job status, and other important metadata.</p>
+        /// <p>Information about a specific job part (in the case of an export job), including shipping information, job status, and other important metadata.</p>
         pub fn set_sub_job_metadata(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::JobMetadata>>,
@@ -1047,13 +963,11 @@ impl DescribeJobOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeClusterOutput {
-    /// <p>Information about a specific cluster, including shipping information, cluster status,
-    /// and other important metadata.</p>
+    /// <p>Information about a specific cluster, including shipping information, cluster status, and other important metadata.</p>
     pub cluster_metadata: std::option::Option<crate::model::ClusterMetadata>,
 }
 impl DescribeClusterOutput {
-    /// <p>Information about a specific cluster, including shipping information, cluster status,
-    /// and other important metadata.</p>
+    /// <p>Information about a specific cluster, including shipping information, cluster status, and other important metadata.</p>
     pub fn cluster_metadata(&self) -> std::option::Option<&crate::model::ClusterMetadata> {
         self.cluster_metadata.as_ref()
     }
@@ -1074,14 +988,12 @@ pub mod describe_cluster_output {
         pub(crate) cluster_metadata: std::option::Option<crate::model::ClusterMetadata>,
     }
     impl Builder {
-        /// <p>Information about a specific cluster, including shipping information, cluster status,
-        /// and other important metadata.</p>
+        /// <p>Information about a specific cluster, including shipping information, cluster status, and other important metadata.</p>
         pub fn cluster_metadata(mut self, input: crate::model::ClusterMetadata) -> Self {
             self.cluster_metadata = Some(input);
             self
         }
-        /// <p>Information about a specific cluster, including shipping information, cluster status,
-        /// and other important metadata.</p>
+        /// <p>Information about a specific cluster, including shipping information, cluster status, and other important metadata.</p>
         pub fn set_cluster_metadata(
             mut self,
             input: std::option::Option<crate::model::ClusterMetadata>,
@@ -1110,9 +1022,7 @@ impl DescribeClusterOutput {
 pub struct DescribeAddressesOutput {
     /// <p>The Snow device shipping addresses that were created for this account.</p>
     pub addresses: std::option::Option<std::vec::Vec<crate::model::Address>>,
-    /// <p>HTTP requests are stateless. If you use the automatically generated
-    /// <code>NextToken</code> value in your next <code>DescribeAddresses</code> call, your list of
-    /// returned addresses will start from this point in the array.</p>
+    /// <p>HTTP requests are stateless. If you use the automatically generated <code>NextToken</code> value in your next <code>DescribeAddresses</code> call, your list of returned addresses will start from this point in the array.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAddressesOutput {
@@ -1120,9 +1030,7 @@ impl DescribeAddressesOutput {
     pub fn addresses(&self) -> std::option::Option<&[crate::model::Address]> {
         self.addresses.as_deref()
     }
-    /// <p>HTTP requests are stateless. If you use the automatically generated
-    /// <code>NextToken</code> value in your next <code>DescribeAddresses</code> call, your list of
-    /// returned addresses will start from this point in the array.</p>
+    /// <p>HTTP requests are stateless. If you use the automatically generated <code>NextToken</code> value in your next <code>DescribeAddresses</code> call, your list of returned addresses will start from this point in the array.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1164,16 +1072,12 @@ pub mod describe_addresses_output {
             self.addresses = input;
             self
         }
-        /// <p>HTTP requests are stateless. If you use the automatically generated
-        /// <code>NextToken</code> value in your next <code>DescribeAddresses</code> call, your list of
-        /// returned addresses will start from this point in the array.</p>
+        /// <p>HTTP requests are stateless. If you use the automatically generated <code>NextToken</code> value in your next <code>DescribeAddresses</code> call, your list of returned addresses will start from this point in the array.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>HTTP requests are stateless. If you use the automatically generated
-        /// <code>NextToken</code> value in your next <code>DescribeAddresses</code> call, your list of
-        /// returned addresses will start from this point in the array.</p>
+        /// <p>HTTP requests are stateless. If you use the automatically generated <code>NextToken</code> value in your next <code>DescribeAddresses</code> call, your list of returned addresses will start from this point in the array.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1198,13 +1102,11 @@ impl DescribeAddressesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAddressOutput {
-    /// <p>The address that you want the Snow device(s) associated with a specific job to be
-    /// shipped to.</p>
+    /// <p>The address that you want the Snow device(s) associated with a specific job to be shipped to.</p>
     pub address: std::option::Option<crate::model::Address>,
 }
 impl DescribeAddressOutput {
-    /// <p>The address that you want the Snow device(s) associated with a specific job to be
-    /// shipped to.</p>
+    /// <p>The address that you want the Snow device(s) associated with a specific job to be shipped to.</p>
     pub fn address(&self) -> std::option::Option<&crate::model::Address> {
         self.address.as_ref()
     }
@@ -1225,14 +1127,12 @@ pub mod describe_address_output {
         pub(crate) address: std::option::Option<crate::model::Address>,
     }
     impl Builder {
-        /// <p>The address that you want the Snow device(s) associated with a specific job to be
-        /// shipped to.</p>
+        /// <p>The address that you want the Snow device(s) associated with a specific job to be shipped to.</p>
         pub fn address(mut self, input: crate::model::Address) -> Self {
             self.address = Some(input);
             self
         }
-        /// <p>The address that you want the Snow device(s) associated with a specific job to be
-        /// shipped to.</p>
+        /// <p>The address that you want the Snow device(s) associated with a specific job to be shipped to.</p>
         pub fn set_address(mut self, input: std::option::Option<crate::model::Address>) -> Self {
             self.address = input;
             self
@@ -1370,13 +1270,11 @@ impl CreateLongTermPricingOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateJobOutput {
-    /// <p>The automatically generated ID for a job, for example
-    /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    /// <p>The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
 impl CreateJobOutput {
-    /// <p>The automatically generated ID for a job, for example
-    /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+    /// <p>The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
@@ -1397,14 +1295,12 @@ pub mod create_job_output {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The automatically generated ID for a job, for example
-        /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+        /// <p>The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
         }
-        /// <p>The automatically generated ID for a job, for example
-        /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+        /// <p>The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -1482,15 +1378,11 @@ impl CreateClusterOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAddressOutput {
-    /// <p>The automatically generated ID for a specific address. You'll use this ID when you
-    /// create a job to specify which address you want the Snow device for that job shipped
-    /// to.</p>
+    /// <p>The automatically generated ID for a specific address. You'll use this ID when you create a job to specify which address you want the Snow device for that job shipped to.</p>
     pub address_id: std::option::Option<std::string::String>,
 }
 impl CreateAddressOutput {
-    /// <p>The automatically generated ID for a specific address. You'll use this ID when you
-    /// create a job to specify which address you want the Snow device for that job shipped
-    /// to.</p>
+    /// <p>The automatically generated ID for a specific address. You'll use this ID when you create a job to specify which address you want the Snow device for that job shipped to.</p>
     pub fn address_id(&self) -> std::option::Option<&str> {
         self.address_id.as_deref()
     }
@@ -1511,16 +1403,12 @@ pub mod create_address_output {
         pub(crate) address_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The automatically generated ID for a specific address. You'll use this ID when you
-        /// create a job to specify which address you want the Snow device for that job shipped
-        /// to.</p>
+        /// <p>The automatically generated ID for a specific address. You'll use this ID when you create a job to specify which address you want the Snow device for that job shipped to.</p>
         pub fn address_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.address_id = Some(input.into());
             self
         }
-        /// <p>The automatically generated ID for a specific address. You'll use this ID when you
-        /// create a job to specify which address you want the Snow device for that job shipped
-        /// to.</p>
+        /// <p>The automatically generated ID for a specific address. You'll use this ID when you create a job to specify which address you want the Snow device for that job shipped to.</p>
         pub fn set_address_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.address_id = input;
             self

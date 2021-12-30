@@ -347,14 +347,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_entries`](Self::set_entries).
         ///
-        /// <p>An object that maps strings to the property value entries to set. Each string
-        /// in the mapping must be unique to this object.</p>
+        /// <p>An object that maps strings to the property value entries to set. Each string in the mapping must be unique to this object.</p>
         pub fn entries(mut self, input: crate::model::PropertyValueEntry) -> Self {
             self.inner = self.inner.entries(input);
             self
         }
-        /// <p>An object that maps strings to the property value entries to set. Each string
-        /// in the mapping must be unique to this object.</p>
+        /// <p>An object that maps strings to the property value entries to set. Each string in the mapping must be unique to this object.</p>
         pub fn set_entries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PropertyValueEntry>>,
@@ -365,11 +363,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateComponentType`.
     ///
-    /// <p>Creates a component type.</p>
-    /// <important>
-    /// <p>
-    /// TwinMaker is in public preview and is subject to change.
-    /// </p>
+    /// <p>Creates a component type.</p> <important>
+    /// <p> TwinMaker is in public preview and is subject to change. </p>
     /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateComponentType<
@@ -437,14 +432,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_workspace_id(input);
             self
         }
-        /// <p>A Boolean value that specifies whether an entity can have more than one component of
-        /// this type.</p>
+        /// <p>A Boolean value that specifies whether an entity can have more than one component of this type.</p>
         pub fn is_singleton(mut self, input: bool) -> Self {
             self.inner = self.inner.is_singleton(input);
             self
         }
-        /// <p>A Boolean value that specifies whether an entity can have more than one component of
-        /// this type.</p>
+        /// <p>A Boolean value that specifies whether an entity can have more than one component of this type.</p>
         pub fn set_is_singleton(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_is_singleton(input);
             self
@@ -476,8 +469,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_property_definitions`](Self::set_property_definitions).
         ///
-        /// <p>An object that maps strings to the property definitions in the component type. Each string
-        /// in the mapping must be unique to this object.</p>
+        /// <p>An object that maps strings to the property definitions in the component type. Each string in the mapping must be unique to this object.</p>
         pub fn property_definitions(
             mut self,
             k: impl Into<std::string::String>,
@@ -486,8 +478,7 @@ pub mod fluent_builders {
             self.inner = self.inner.property_definitions(k.into(), v);
             self
         }
-        /// <p>An object that maps strings to the property definitions in the component type. Each string
-        /// in the mapping must be unique to this object.</p>
+        /// <p>An object that maps strings to the property definitions in the component type. Each string in the mapping must be unique to this object.</p>
         pub fn set_property_definitions(
             mut self,
             input: std::option::Option<
@@ -521,8 +512,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_functions`](Self::set_functions).
         ///
-        /// <p>An object that maps strings to the functions in the component type. Each string in the
-        /// mapping must be unique to this object.</p>
+        /// <p>An object that maps strings to the functions in the component type. Each string in the mapping must be unique to this object.</p>
         pub fn functions(
             mut self,
             k: impl Into<std::string::String>,
@@ -531,8 +521,7 @@ pub mod fluent_builders {
             self.inner = self.inner.functions(k.into(), v);
             self
         }
-        /// <p>An object that maps strings to the functions in the component type. Each string in the
-        /// mapping must be unique to this object.</p>
+        /// <p>An object that maps strings to the functions in the component type. Each string in the mapping must be unique to this object.</p>
         pub fn set_functions(
             mut self,
             input: std::option::Option<
@@ -669,8 +658,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_components`](Self::set_components).
         ///
-        /// <p>An object that maps strings to the components in the entity. Each string
-        /// in the mapping must be unique to this object.</p>
+        /// <p>An object that maps strings to the components in the entity. Each string in the mapping must be unique to this object.</p>
         pub fn components(
             mut self,
             k: impl Into<std::string::String>,
@@ -679,8 +667,7 @@ pub mod fluent_builders {
             self.inner = self.inner.components(k.into(), v);
             self
         }
-        /// <p>An object that maps strings to the components in the entity. Each string
-        /// in the mapping must be unique to this object.</p>
+        /// <p>An object that maps strings to the components in the entity. Each string in the mapping must be unique to this object.</p>
         pub fn set_components(
             mut self,
             input: std::option::Option<
@@ -1606,8 +1593,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetPropertyValueHistory`.
     ///
     /// <p>Retrieves information about the history of a time series property value for a component, component type, entity, or workspace.</p>
-    /// <p>You must specify a value for <code>workspaceId</code>. For entity-specific queries, specify values for <code>componentName</code> and
-    /// <code>entityId</code>. For cross-entity quries, specify a value for <code>componentTypeId</code>.</p>
+    /// <p>You must specify a value for <code>workspaceId</code>. For entity-specific queries, specify values for <code>componentName</code> and <code>entityId</code>. For cross-entity quries, specify a value for <code>componentTypeId</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPropertyValueHistory<
         C = aws_smithy_client::erase::DynConnector,
@@ -2690,14 +2676,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_workspace_id(input);
             self
         }
-        /// <p>A Boolean value that specifies whether an entity can have more than one component of this
-        /// type.</p>
+        /// <p>A Boolean value that specifies whether an entity can have more than one component of this type.</p>
         pub fn is_singleton(mut self, input: bool) -> Self {
             self.inner = self.inner.is_singleton(input);
             self
         }
-        /// <p>A Boolean value that specifies whether an entity can have more than one component of this
-        /// type.</p>
+        /// <p>A Boolean value that specifies whether an entity can have more than one component of this type.</p>
         pub fn set_is_singleton(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_is_singleton(input);
             self
@@ -2729,8 +2713,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_property_definitions`](Self::set_property_definitions).
         ///
-        /// <p>An object that maps strings to the property definitions in the component type. Each string
-        /// in the mapping must be unique to this object.</p>
+        /// <p>An object that maps strings to the property definitions in the component type. Each string in the mapping must be unique to this object.</p>
         pub fn property_definitions(
             mut self,
             k: impl Into<std::string::String>,
@@ -2739,8 +2722,7 @@ pub mod fluent_builders {
             self.inner = self.inner.property_definitions(k.into(), v);
             self
         }
-        /// <p>An object that maps strings to the property definitions in the component type. Each string
-        /// in the mapping must be unique to this object.</p>
+        /// <p>An object that maps strings to the property definitions in the component type. Each string in the mapping must be unique to this object.</p>
         pub fn set_property_definitions(
             mut self,
             input: std::option::Option<
@@ -2774,8 +2756,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_functions`](Self::set_functions).
         ///
-        /// <p>An object that maps strings to the functions in the component type. Each string
-        /// in the mapping must be unique to this object.</p>
+        /// <p>An object that maps strings to the functions in the component type. Each string in the mapping must be unique to this object.</p>
         pub fn functions(
             mut self,
             k: impl Into<std::string::String>,
@@ -2784,8 +2765,7 @@ pub mod fluent_builders {
             self.inner = self.inner.functions(k.into(), v);
             self
         }
-        /// <p>An object that maps strings to the functions in the component type. Each string
-        /// in the mapping must be unique to this object.</p>
+        /// <p>An object that maps strings to the functions in the component type. Each string in the mapping must be unique to this object.</p>
         pub fn set_functions(
             mut self,
             input: std::option::Option<
@@ -2899,8 +2879,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_component_updates`](Self::set_component_updates).
         ///
-        /// <p>An object that maps strings to the component updates in the request. Each string
-        /// in the mapping must be unique to this object.</p>
+        /// <p>An object that maps strings to the component updates in the request. Each string in the mapping must be unique to this object.</p>
         pub fn component_updates(
             mut self,
             k: impl Into<std::string::String>,
@@ -2909,8 +2888,7 @@ pub mod fluent_builders {
             self.inner = self.inner.component_updates(k.into(), v);
             self
         }
-        /// <p>An object that maps strings to the component updates in the request. Each string
-        /// in the mapping must be unique to this object.</p>
+        /// <p>An object that maps strings to the component updates in the request. Each string in the mapping must be unique to this object.</p>
         pub fn set_component_updates(
             mut self,
             input: std::option::Option<

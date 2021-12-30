@@ -5,8 +5,7 @@
 pub struct ListTrackerConsumersOutput {
     /// <p>Contains the list of geofence collection ARNs associated to the tracker resource.</p>
     pub consumer_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A pagination token indicating there are additional pages available. You can use the
-    /// token in a following request to fetch the next set of results. </p>
+    /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTrackerConsumersOutput {
@@ -14,8 +13,7 @@ impl ListTrackerConsumersOutput {
     pub fn consumer_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.consumer_arns.as_deref()
     }
-    /// <p>A pagination token indicating there are additional pages available. You can use the
-    /// token in a following request to fetch the next set of results. </p>
+    /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -57,14 +55,12 @@ pub mod list_tracker_consumers_output {
             self.consumer_arns = input;
             self
         }
-        /// <p>A pagination token indicating there are additional pages available. You can use the
-        /// token in a following request to fetch the next set of results. </p>
+        /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A pagination token indicating there are additional pages available. You can use the
-        /// token in a following request to fetch the next set of results. </p>
+        /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -89,23 +85,19 @@ impl ListTrackerConsumersOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDevicePositionsOutput {
-    /// <p>Contains details about each device's last known position. These details includes the device ID,
-    /// the time when the position was sampled on the device, the time that the service received the update, and the most recent coordinates.</p>
+    /// <p>Contains details about each device's last known position. These details includes the device ID, the time when the position was sampled on the device, the time that the service received the update, and the most recent coordinates.</p>
     pub entries: std::option::Option<std::vec::Vec<crate::model::ListDevicePositionsResponseEntry>>,
-    /// <p>A pagination token indicating there are additional pages available. You can use the
-    /// token in a following request to fetch the next set of results.</p>
+    /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDevicePositionsOutput {
-    /// <p>Contains details about each device's last known position. These details includes the device ID,
-    /// the time when the position was sampled on the device, the time that the service received the update, and the most recent coordinates.</p>
+    /// <p>Contains details about each device's last known position. These details includes the device ID, the time when the position was sampled on the device, the time that the service received the update, and the most recent coordinates.</p>
     pub fn entries(
         &self,
     ) -> std::option::Option<&[crate::model::ListDevicePositionsResponseEntry]> {
         self.entries.as_deref()
     }
-    /// <p>A pagination token indicating there are additional pages available. You can use the
-    /// token in a following request to fetch the next set of results.</p>
+    /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -133,16 +125,14 @@ pub mod list_device_positions_output {
         ///
         /// To override the contents of this collection use [`set_entries`](Self::set_entries).
         ///
-        /// <p>Contains details about each device's last known position. These details includes the device ID,
-        /// the time when the position was sampled on the device, the time that the service received the update, and the most recent coordinates.</p>
+        /// <p>Contains details about each device's last known position. These details includes the device ID, the time when the position was sampled on the device, the time that the service received the update, and the most recent coordinates.</p>
         pub fn entries(mut self, input: crate::model::ListDevicePositionsResponseEntry) -> Self {
             let mut v = self.entries.unwrap_or_default();
             v.push(input);
             self.entries = Some(v);
             self
         }
-        /// <p>Contains details about each device's last known position. These details includes the device ID,
-        /// the time when the position was sampled on the device, the time that the service received the update, and the most recent coordinates.</p>
+        /// <p>Contains details about each device's last known position. These details includes the device ID, the time when the position was sampled on the device, the time that the service received the update, and the most recent coordinates.</p>
         pub fn set_entries(
             mut self,
             input: std::option::Option<
@@ -152,14 +142,12 @@ pub mod list_device_positions_output {
             self.entries = input;
             self
         }
-        /// <p>A pagination token indicating there are additional pages available. You can use the
-        /// token in a following request to fetch the next set of results.</p>
+        /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A pagination token indicating there are additional pages available. You can use the
-        /// token in a following request to fetch the next set of results.</p>
+        /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -186,8 +174,7 @@ impl ListDevicePositionsOutput {
 pub struct GetDevicePositionHistoryOutput {
     /// <p>Contains the position history details for the requested device.</p>
     pub device_positions: std::option::Option<std::vec::Vec<crate::model::DevicePosition>>,
-    /// <p>A pagination token indicating there are additional pages available. You can use the
-    /// token in a following request to fetch the next set of results.</p>
+    /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetDevicePositionHistoryOutput {
@@ -195,8 +182,7 @@ impl GetDevicePositionHistoryOutput {
     pub fn device_positions(&self) -> std::option::Option<&[crate::model::DevicePosition]> {
         self.device_positions.as_deref()
     }
-    /// <p>A pagination token indicating there are additional pages available. You can use the
-    /// token in a following request to fetch the next set of results.</p>
+    /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -239,14 +225,12 @@ pub mod get_device_position_history_output {
             self.device_positions = input;
             self
         }
-        /// <p>A pagination token indicating there are additional pages available. You can use the
-        /// token in a following request to fetch the next set of results.</p>
+        /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A pagination token indicating there are additional pages available. You can use the
-        /// token in a following request to fetch the next set of results.</p>
+        /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -273,11 +257,9 @@ impl GetDevicePositionHistoryOutput {
 pub struct GetDevicePositionOutput {
     /// <p>The device whose position you retrieved.</p>
     pub device_id: std::option::Option<std::string::String>,
-    /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a>
-    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub sample_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The timestamp for when the tracker resource received the device position in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a>
-    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    /// <p>The timestamp for when the tracker resource received the device position in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub received_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last known device position.</p>
     pub position: std::option::Option<std::vec::Vec<f64>>,
@@ -287,13 +269,11 @@ impl GetDevicePositionOutput {
     pub fn device_id(&self) -> std::option::Option<&str> {
         self.device_id.as_deref()
     }
-    /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a>
-    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub fn sample_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.sample_time.as_ref()
     }
-    /// <p>The timestamp for when the tracker resource received the device position in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a>
-    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    /// <p>The timestamp for when the tracker resource received the device position in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub fn received_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.received_time.as_ref()
     }
@@ -334,14 +314,12 @@ pub mod get_device_position_output {
             self.device_id = input;
             self
         }
-        /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a>
-        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+        /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn sample_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.sample_time = Some(input);
             self
         }
-        /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a>
-        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+        /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn set_sample_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -349,14 +327,12 @@ pub mod get_device_position_output {
             self.sample_time = input;
             self
         }
-        /// <p>The timestamp for when the tracker resource received the device position in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a>
-        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+        /// <p>The timestamp for when the tracker resource received the device position in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn received_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.received_time = Some(input);
             self
         }
-        /// <p>The timestamp for when the tracker resource received the device position in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a>
-        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+        /// <p>The timestamp for when the tracker resource received the device position in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn set_received_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -432,11 +408,11 @@ impl DisassociateTrackerConsumerOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchUpdateDevicePositionOutput {
-    /// <p>Contains  error details for each device that failed to update its position.</p>
+    /// <p>Contains error details for each device that failed to update its position.</p>
     pub errors: std::option::Option<std::vec::Vec<crate::model::BatchUpdateDevicePositionError>>,
 }
 impl BatchUpdateDevicePositionOutput {
-    /// <p>Contains  error details for each device that failed to update its position.</p>
+    /// <p>Contains error details for each device that failed to update its position.</p>
     pub fn errors(&self) -> std::option::Option<&[crate::model::BatchUpdateDevicePositionError]> {
         self.errors.as_deref()
     }
@@ -462,14 +438,14 @@ pub mod batch_update_device_position_output {
         ///
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
-        /// <p>Contains  error details for each device that failed to update its position.</p>
+        /// <p>Contains error details for each device that failed to update its position.</p>
         pub fn errors(mut self, input: crate::model::BatchUpdateDevicePositionError) -> Self {
             let mut v = self.errors.unwrap_or_default();
             v.push(input);
             self.errors = Some(v);
             self
         }
-        /// <p>Contains  error details for each device that failed to update its position.</p>
+        /// <p>Contains error details for each device that failed to update its position.</p>
         pub fn set_errors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BatchUpdateDevicePositionError>>,
@@ -496,21 +472,17 @@ impl BatchUpdateDevicePositionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetDevicePositionOutput {
-    /// <p>Contains  error details for each device that failed to send its position to the tracker
-    /// resource.</p>
+    /// <p>Contains error details for each device that failed to send its position to the tracker resource.</p>
     pub errors: std::option::Option<std::vec::Vec<crate::model::BatchGetDevicePositionError>>,
-    /// <p>Contains device position details such as the device ID, position, and timestamps for
-    /// when the position was received and sampled.</p>
+    /// <p>Contains device position details such as the device ID, position, and timestamps for when the position was received and sampled.</p>
     pub device_positions: std::option::Option<std::vec::Vec<crate::model::DevicePosition>>,
 }
 impl BatchGetDevicePositionOutput {
-    /// <p>Contains  error details for each device that failed to send its position to the tracker
-    /// resource.</p>
+    /// <p>Contains error details for each device that failed to send its position to the tracker resource.</p>
     pub fn errors(&self) -> std::option::Option<&[crate::model::BatchGetDevicePositionError]> {
         self.errors.as_deref()
     }
-    /// <p>Contains device position details such as the device ID, position, and timestamps for
-    /// when the position was received and sampled.</p>
+    /// <p>Contains device position details such as the device ID, position, and timestamps for when the position was received and sampled.</p>
     pub fn device_positions(&self) -> std::option::Option<&[crate::model::DevicePosition]> {
         self.device_positions.as_deref()
     }
@@ -539,16 +511,14 @@ pub mod batch_get_device_position_output {
         ///
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
-        /// <p>Contains  error details for each device that failed to send its position to the tracker
-        /// resource.</p>
+        /// <p>Contains error details for each device that failed to send its position to the tracker resource.</p>
         pub fn errors(mut self, input: crate::model::BatchGetDevicePositionError) -> Self {
             let mut v = self.errors.unwrap_or_default();
             v.push(input);
             self.errors = Some(v);
             self
         }
-        /// <p>Contains  error details for each device that failed to send its position to the tracker
-        /// resource.</p>
+        /// <p>Contains error details for each device that failed to send its position to the tracker resource.</p>
         pub fn set_errors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BatchGetDevicePositionError>>,
@@ -560,16 +530,14 @@ pub mod batch_get_device_position_output {
         ///
         /// To override the contents of this collection use [`set_device_positions`](Self::set_device_positions).
         ///
-        /// <p>Contains device position details such as the device ID, position, and timestamps for
-        /// when the position was received and sampled.</p>
+        /// <p>Contains device position details such as the device ID, position, and timestamps for when the position was received and sampled.</p>
         pub fn device_positions(mut self, input: crate::model::DevicePosition) -> Self {
             let mut v = self.device_positions.unwrap_or_default();
             v.push(input);
             self.device_positions = Some(v);
             self
         }
-        /// <p>Contains device position details such as the device ID, position, and timestamps for
-        /// when the position was received and sampled.</p>
+        /// <p>Contains device position details such as the device ID, position, and timestamps for when the position was received and sampled.</p>
         pub fn set_device_positions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DevicePosition>>,
@@ -699,21 +667,17 @@ impl AssociateTrackerConsumerOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTrackersOutput {
-    /// <p>Contains tracker resources in your AWS account. Details include tracker name,
-    /// description and timestamps for when the tracker was created and last updated.</p>
+    /// <p>Contains tracker resources in your AWS account. Details include tracker name, description and timestamps for when the tracker was created and last updated.</p>
     pub entries: std::option::Option<std::vec::Vec<crate::model::ListTrackersResponseEntry>>,
-    /// <p>A pagination token indicating there are additional pages available. You can use the
-    /// token in a following request to fetch the next set of results.  </p>
+    /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTrackersOutput {
-    /// <p>Contains tracker resources in your AWS account. Details include tracker name,
-    /// description and timestamps for when the tracker was created and last updated.</p>
+    /// <p>Contains tracker resources in your AWS account. Details include tracker name, description and timestamps for when the tracker was created and last updated.</p>
     pub fn entries(&self) -> std::option::Option<&[crate::model::ListTrackersResponseEntry]> {
         self.entries.as_deref()
     }
-    /// <p>A pagination token indicating there are additional pages available. You can use the
-    /// token in a following request to fetch the next set of results.  </p>
+    /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -741,16 +705,14 @@ pub mod list_trackers_output {
         ///
         /// To override the contents of this collection use [`set_entries`](Self::set_entries).
         ///
-        /// <p>Contains tracker resources in your AWS account. Details include tracker name,
-        /// description and timestamps for when the tracker was created and last updated.</p>
+        /// <p>Contains tracker resources in your AWS account. Details include tracker name, description and timestamps for when the tracker was created and last updated.</p>
         pub fn entries(mut self, input: crate::model::ListTrackersResponseEntry) -> Self {
             let mut v = self.entries.unwrap_or_default();
             v.push(input);
             self.entries = Some(v);
             self
         }
-        /// <p>Contains tracker resources in your AWS account. Details include tracker name,
-        /// description and timestamps for when the tracker was created and last updated.</p>
+        /// <p>Contains tracker resources in your AWS account. Details include tracker name, description and timestamps for when the tracker was created and last updated.</p>
         pub fn set_entries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ListTrackersResponseEntry>>,
@@ -758,14 +720,12 @@ pub mod list_trackers_output {
             self.entries = input;
             self
         }
-        /// <p>A pagination token indicating there are additional pages available. You can use the
-        /// token in a following request to fetch the next set of results.  </p>
+        /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A pagination token indicating there are additional pages available. You can use the
-        /// token in a following request to fetch the next set of results.  </p>
+        /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -792,18 +752,12 @@ impl ListTrackersOutput {
 pub struct CreateTrackerOutput {
     /// <p>The name of the tracker resource.</p>
     pub tracker_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify
-    /// a resource across all AWS.</p>
+    /// <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all AWS.</p>
     /// <ul>
-    /// <li>
-    /// <p>Format example:
-    /// <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
     /// </ul>
     pub tracker_arn: std::option::Option<std::string::String>,
-    /// <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    /// <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateTrackerOutput {
@@ -811,20 +765,14 @@ impl CreateTrackerOutput {
     pub fn tracker_name(&self) -> std::option::Option<&str> {
         self.tracker_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify
-    /// a resource across all AWS.</p>
+    /// <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all AWS.</p>
     /// <ul>
-    /// <li>
-    /// <p>Format example:
-    /// <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
     /// </ul>
     pub fn tracker_arn(&self) -> std::option::Option<&str> {
         self.tracker_arn.as_deref()
     }
-    /// <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    /// <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
@@ -859,40 +807,28 @@ pub mod create_tracker_output {
             self.tracker_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify
-        /// a resource across all AWS.</p>
+        /// <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all AWS.</p>
         /// <ul>
-        /// <li>
-        /// <p>Format example:
-        /// <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
         /// </ul>
         pub fn tracker_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.tracker_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify
-        /// a resource across all AWS.</p>
+        /// <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all AWS.</p>
         /// <ul>
-        /// <li>
-        /// <p>Format example:
-        /// <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
         /// </ul>
         pub fn set_tracker_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.tracker_arn = input;
             self
         }
-        /// <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+        /// <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_time = Some(input);
             self
         }
-        /// <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+        /// <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn set_create_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -953,17 +889,12 @@ impl DeleteTrackerOutput {
 pub struct UpdateTrackerOutput {
     /// <p>The name of the updated tracker resource.</p>
     pub tracker_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the updated tracker resource. Used to specify a resource across
-    /// AWS.</p>
+    /// <p>The Amazon Resource Name (ARN) of the updated tracker resource. Used to specify a resource across AWS.</p>
     /// <ul>
-    /// <li>
-    /// <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
     /// </ul>
     pub tracker_arn: std::option::Option<std::string::String>,
-    /// <p>The timestamp for when the tracker resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    /// <p>The timestamp for when the tracker resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UpdateTrackerOutput {
@@ -971,19 +902,14 @@ impl UpdateTrackerOutput {
     pub fn tracker_name(&self) -> std::option::Option<&str> {
         self.tracker_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the updated tracker resource. Used to specify a resource across
-    /// AWS.</p>
+    /// <p>The Amazon Resource Name (ARN) of the updated tracker resource. Used to specify a resource across AWS.</p>
     /// <ul>
-    /// <li>
-    /// <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
     /// </ul>
     pub fn tracker_arn(&self) -> std::option::Option<&str> {
         self.tracker_arn.as_deref()
     }
-    /// <p>The timestamp for when the tracker resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    /// <p>The timestamp for when the tracker resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
@@ -1018,38 +944,28 @@ pub mod update_tracker_output {
             self.tracker_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the updated tracker resource. Used to specify a resource across
-        /// AWS.</p>
+        /// <p>The Amazon Resource Name (ARN) of the updated tracker resource. Used to specify a resource across AWS.</p>
         /// <ul>
-        /// <li>
-        /// <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
         /// </ul>
         pub fn tracker_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.tracker_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the updated tracker resource. Used to specify a resource across
-        /// AWS.</p>
+        /// <p>The Amazon Resource Name (ARN) of the updated tracker resource. Used to specify a resource across AWS.</p>
         /// <ul>
-        /// <li>
-        /// <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
         /// </ul>
         pub fn set_tracker_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.tracker_arn = input;
             self
         }
-        /// <p>The timestamp for when the tracker resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+        /// <p>The timestamp for when the tracker resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.update_time = Some(input);
             self
         }
-        /// <p>The timestamp for when the tracker resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+        /// <p>The timestamp for when the tracker resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn set_update_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1080,14 +996,9 @@ impl UpdateTrackerOutput {
 pub struct DescribeTrackerOutput {
     /// <p>The name of the tracker resource.</p>
     pub tracker_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify
-    /// a resource across all AWS.</p>
+    /// <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all AWS.</p>
     /// <ul>
-    /// <li>
-    /// <p>Format example:
-    /// <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
     /// </ul>
     pub tracker_arn: std::option::Option<std::string::String>,
     /// <p>The optional description for the tracker resource.</p>
@@ -1100,11 +1011,9 @@ pub struct DescribeTrackerOutput {
     /// <p>The tags associated with the tracker resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    /// <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The timestamp for when the tracker resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    /// <p>The timestamp for when the tracker resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS customer managed key</a> assigned to the Amazon Location resource.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
@@ -1116,14 +1025,9 @@ impl DescribeTrackerOutput {
     pub fn tracker_name(&self) -> std::option::Option<&str> {
         self.tracker_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify
-    /// a resource across all AWS.</p>
+    /// <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all AWS.</p>
     /// <ul>
-    /// <li>
-    /// <p>Format example:
-    /// <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
     /// </ul>
     pub fn tracker_arn(&self) -> std::option::Option<&str> {
         self.tracker_arn.as_deref()
@@ -1148,13 +1052,11 @@ impl DescribeTrackerOutput {
     {
         self.tags.as_ref()
     }
-    /// <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    /// <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
-    /// <p>The timestamp for when the tracker resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    /// <p>The timestamp for when the tracker resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
@@ -1213,27 +1115,17 @@ pub mod describe_tracker_output {
             self.tracker_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify
-        /// a resource across all AWS.</p>
+        /// <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all AWS.</p>
         /// <ul>
-        /// <li>
-        /// <p>Format example:
-        /// <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
         /// </ul>
         pub fn tracker_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.tracker_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify
-        /// a resource across all AWS.</p>
+        /// <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all AWS.</p>
         /// <ul>
-        /// <li>
-        /// <p>Format example:
-        /// <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
         /// </ul>
         pub fn set_tracker_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.tracker_arn = input;
@@ -1302,14 +1194,12 @@ pub mod describe_tracker_output {
             self.tags = input;
             self
         }
-        /// <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+        /// <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_time = Some(input);
             self
         }
-        /// <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+        /// <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn set_create_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1317,14 +1207,12 @@ pub mod describe_tracker_output {
             self.create_time = input;
             self
         }
-        /// <p>The timestamp for when the tracker resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+        /// <p>The timestamp for when the tracker resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.update_time = Some(input);
             self
         }
-        /// <p>The timestamp for when the tracker resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+        /// <p>The timestamp for when the tracker resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn set_update_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1379,78 +1267,41 @@ impl DescribeTrackerOutput {
     }
 }
 
-/// <p>Returns the result of the route calculation. Metadata includes legs and route
-/// summary.</p>
+/// <p>Returns the result of the route calculation. Metadata includes legs and route summary.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CalculateRouteOutput {
-    /// <p>Contains details about each path between a pair of positions included along a route
-    /// such as: <code>StartPosition</code>, <code>EndPosition</code>, <code>Distance</code>,
-    /// <code>DurationSeconds</code>, <code>Geometry</code>, and <code>Steps</code>. The
-    /// number of legs returned corresponds to one fewer than the total number of positions in
-    /// the request. </p>
-    /// <p>For example, a route with a departure position and destination position returns one
-    /// leg with the positions <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">snapped to a nearby road</a>:</p>
+    /// <p>Contains details about each path between a pair of positions included along a route such as: <code>StartPosition</code>, <code>EndPosition</code>, <code>Distance</code>, <code>DurationSeconds</code>, <code>Geometry</code>, and <code>Steps</code>. The number of legs returned corresponds to one fewer than the total number of positions in the request. </p>
+    /// <p>For example, a route with a departure position and destination position returns one leg with the positions <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">snapped to a nearby road</a>:</p>
     /// <ul>
-    /// <li>
-    /// <p>The <code>StartPosition</code> is the departure position.</p>
-    /// </li>
-    /// <li>
-    /// <p>The <code>EndPosition</code> is the destination position.</p>
-    /// </li>
+    /// <li> <p>The <code>StartPosition</code> is the departure position.</p> </li>
+    /// <li> <p>The <code>EndPosition</code> is the destination position.</p> </li>
     /// </ul>
-    /// <p>A route with a waypoint between the departure and destination position returns two
-    /// legs with the positions snapped to a nearby road:</p>
+    /// <p>A route with a waypoint between the departure and destination position returns two legs with the positions snapped to a nearby road:</p>
     /// <ul>
-    /// <li>
-    /// <p>Leg 1: The <code>StartPosition</code> is the departure position . The
-    /// <code>EndPosition</code> is the waypoint positon.</p>
-    /// </li>
-    /// <li>
-    /// <p>Leg 2: The <code>StartPosition</code> is the waypoint position. The
-    /// <code>EndPosition</code> is the destination position.</p>
-    /// </li>
+    /// <li> <p>Leg 1: The <code>StartPosition</code> is the departure position . The <code>EndPosition</code> is the waypoint positon.</p> </li>
+    /// <li> <p>Leg 2: The <code>StartPosition</code> is the waypoint position. The <code>EndPosition</code> is the destination position.</p> </li>
     /// </ul>
     pub legs: std::option::Option<std::vec::Vec<crate::model::Leg>>,
-    /// <p>Contains information about the whole route, such as: <code>RouteBBox</code>,
-    /// <code>DataSource</code>, <code>Distance</code>, <code>DistanceUnit</code>, and
-    /// <code>DurationSeconds</code>.</p>
+    /// <p>Contains information about the whole route, such as: <code>RouteBBox</code>, <code>DataSource</code>, <code>Distance</code>, <code>DistanceUnit</code>, and <code>DurationSeconds</code>.</p>
     pub summary: std::option::Option<crate::model::CalculateRouteSummary>,
 }
 impl CalculateRouteOutput {
-    /// <p>Contains details about each path between a pair of positions included along a route
-    /// such as: <code>StartPosition</code>, <code>EndPosition</code>, <code>Distance</code>,
-    /// <code>DurationSeconds</code>, <code>Geometry</code>, and <code>Steps</code>. The
-    /// number of legs returned corresponds to one fewer than the total number of positions in
-    /// the request. </p>
-    /// <p>For example, a route with a departure position and destination position returns one
-    /// leg with the positions <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">snapped to a nearby road</a>:</p>
+    /// <p>Contains details about each path between a pair of positions included along a route such as: <code>StartPosition</code>, <code>EndPosition</code>, <code>Distance</code>, <code>DurationSeconds</code>, <code>Geometry</code>, and <code>Steps</code>. The number of legs returned corresponds to one fewer than the total number of positions in the request. </p>
+    /// <p>For example, a route with a departure position and destination position returns one leg with the positions <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">snapped to a nearby road</a>:</p>
     /// <ul>
-    /// <li>
-    /// <p>The <code>StartPosition</code> is the departure position.</p>
-    /// </li>
-    /// <li>
-    /// <p>The <code>EndPosition</code> is the destination position.</p>
-    /// </li>
+    /// <li> <p>The <code>StartPosition</code> is the departure position.</p> </li>
+    /// <li> <p>The <code>EndPosition</code> is the destination position.</p> </li>
     /// </ul>
-    /// <p>A route with a waypoint between the departure and destination position returns two
-    /// legs with the positions snapped to a nearby road:</p>
+    /// <p>A route with a waypoint between the departure and destination position returns two legs with the positions snapped to a nearby road:</p>
     /// <ul>
-    /// <li>
-    /// <p>Leg 1: The <code>StartPosition</code> is the departure position . The
-    /// <code>EndPosition</code> is the waypoint positon.</p>
-    /// </li>
-    /// <li>
-    /// <p>Leg 2: The <code>StartPosition</code> is the waypoint position. The
-    /// <code>EndPosition</code> is the destination position.</p>
-    /// </li>
+    /// <li> <p>Leg 1: The <code>StartPosition</code> is the departure position . The <code>EndPosition</code> is the waypoint positon.</p> </li>
+    /// <li> <p>Leg 2: The <code>StartPosition</code> is the waypoint position. The <code>EndPosition</code> is the destination position.</p> </li>
     /// </ul>
     pub fn legs(&self) -> std::option::Option<&[crate::model::Leg]> {
         self.legs.as_deref()
     }
-    /// <p>Contains information about the whole route, such as: <code>RouteBBox</code>,
-    /// <code>DataSource</code>, <code>Distance</code>, <code>DistanceUnit</code>, and
-    /// <code>DurationSeconds</code>.</p>
+    /// <p>Contains information about the whole route, such as: <code>RouteBBox</code>, <code>DataSource</code>, <code>Distance</code>, <code>DistanceUnit</code>, and <code>DurationSeconds</code>.</p>
     pub fn summary(&self) -> std::option::Option<&crate::model::CalculateRouteSummary> {
         self.summary.as_ref()
     }
@@ -1477,32 +1328,16 @@ pub mod calculate_route_output {
         ///
         /// To override the contents of this collection use [`set_legs`](Self::set_legs).
         ///
-        /// <p>Contains details about each path between a pair of positions included along a route
-        /// such as: <code>StartPosition</code>, <code>EndPosition</code>, <code>Distance</code>,
-        /// <code>DurationSeconds</code>, <code>Geometry</code>, and <code>Steps</code>. The
-        /// number of legs returned corresponds to one fewer than the total number of positions in
-        /// the request. </p>
-        /// <p>For example, a route with a departure position and destination position returns one
-        /// leg with the positions <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">snapped to a nearby road</a>:</p>
+        /// <p>Contains details about each path between a pair of positions included along a route such as: <code>StartPosition</code>, <code>EndPosition</code>, <code>Distance</code>, <code>DurationSeconds</code>, <code>Geometry</code>, and <code>Steps</code>. The number of legs returned corresponds to one fewer than the total number of positions in the request. </p>
+        /// <p>For example, a route with a departure position and destination position returns one leg with the positions <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">snapped to a nearby road</a>:</p>
         /// <ul>
-        /// <li>
-        /// <p>The <code>StartPosition</code> is the departure position.</p>
-        /// </li>
-        /// <li>
-        /// <p>The <code>EndPosition</code> is the destination position.</p>
-        /// </li>
+        /// <li> <p>The <code>StartPosition</code> is the departure position.</p> </li>
+        /// <li> <p>The <code>EndPosition</code> is the destination position.</p> </li>
         /// </ul>
-        /// <p>A route with a waypoint between the departure and destination position returns two
-        /// legs with the positions snapped to a nearby road:</p>
+        /// <p>A route with a waypoint between the departure and destination position returns two legs with the positions snapped to a nearby road:</p>
         /// <ul>
-        /// <li>
-        /// <p>Leg 1: The <code>StartPosition</code> is the departure position . The
-        /// <code>EndPosition</code> is the waypoint positon.</p>
-        /// </li>
-        /// <li>
-        /// <p>Leg 2: The <code>StartPosition</code> is the waypoint position. The
-        /// <code>EndPosition</code> is the destination position.</p>
-        /// </li>
+        /// <li> <p>Leg 1: The <code>StartPosition</code> is the departure position . The <code>EndPosition</code> is the waypoint positon.</p> </li>
+        /// <li> <p>Leg 2: The <code>StartPosition</code> is the waypoint position. The <code>EndPosition</code> is the destination position.</p> </li>
         /// </ul>
         pub fn legs(mut self, input: crate::model::Leg) -> Self {
             let mut v = self.legs.unwrap_or_default();
@@ -1510,32 +1345,16 @@ pub mod calculate_route_output {
             self.legs = Some(v);
             self
         }
-        /// <p>Contains details about each path between a pair of positions included along a route
-        /// such as: <code>StartPosition</code>, <code>EndPosition</code>, <code>Distance</code>,
-        /// <code>DurationSeconds</code>, <code>Geometry</code>, and <code>Steps</code>. The
-        /// number of legs returned corresponds to one fewer than the total number of positions in
-        /// the request. </p>
-        /// <p>For example, a route with a departure position and destination position returns one
-        /// leg with the positions <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">snapped to a nearby road</a>:</p>
+        /// <p>Contains details about each path between a pair of positions included along a route such as: <code>StartPosition</code>, <code>EndPosition</code>, <code>Distance</code>, <code>DurationSeconds</code>, <code>Geometry</code>, and <code>Steps</code>. The number of legs returned corresponds to one fewer than the total number of positions in the request. </p>
+        /// <p>For example, a route with a departure position and destination position returns one leg with the positions <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">snapped to a nearby road</a>:</p>
         /// <ul>
-        /// <li>
-        /// <p>The <code>StartPosition</code> is the departure position.</p>
-        /// </li>
-        /// <li>
-        /// <p>The <code>EndPosition</code> is the destination position.</p>
-        /// </li>
+        /// <li> <p>The <code>StartPosition</code> is the departure position.</p> </li>
+        /// <li> <p>The <code>EndPosition</code> is the destination position.</p> </li>
         /// </ul>
-        /// <p>A route with a waypoint between the departure and destination position returns two
-        /// legs with the positions snapped to a nearby road:</p>
+        /// <p>A route with a waypoint between the departure and destination position returns two legs with the positions snapped to a nearby road:</p>
         /// <ul>
-        /// <li>
-        /// <p>Leg 1: The <code>StartPosition</code> is the departure position . The
-        /// <code>EndPosition</code> is the waypoint positon.</p>
-        /// </li>
-        /// <li>
-        /// <p>Leg 2: The <code>StartPosition</code> is the waypoint position. The
-        /// <code>EndPosition</code> is the destination position.</p>
-        /// </li>
+        /// <li> <p>Leg 1: The <code>StartPosition</code> is the departure position . The <code>EndPosition</code> is the waypoint positon.</p> </li>
+        /// <li> <p>Leg 2: The <code>StartPosition</code> is the waypoint position. The <code>EndPosition</code> is the destination position.</p> </li>
         /// </ul>
         pub fn set_legs(
             mut self,
@@ -1544,16 +1363,12 @@ pub mod calculate_route_output {
             self.legs = input;
             self
         }
-        /// <p>Contains information about the whole route, such as: <code>RouteBBox</code>,
-        /// <code>DataSource</code>, <code>Distance</code>, <code>DistanceUnit</code>, and
-        /// <code>DurationSeconds</code>.</p>
+        /// <p>Contains information about the whole route, such as: <code>RouteBBox</code>, <code>DataSource</code>, <code>Distance</code>, <code>DistanceUnit</code>, and <code>DurationSeconds</code>.</p>
         pub fn summary(mut self, input: crate::model::CalculateRouteSummary) -> Self {
             self.summary = Some(input);
             self
         }
-        /// <p>Contains information about the whole route, such as: <code>RouteBBox</code>,
-        /// <code>DataSource</code>, <code>Distance</code>, <code>DistanceUnit</code>, and
-        /// <code>DurationSeconds</code>.</p>
+        /// <p>Contains information about the whole route, such as: <code>RouteBBox</code>, <code>DataSource</code>, <code>Distance</code>, <code>DistanceUnit</code>, and <code>DurationSeconds</code>.</p>
         pub fn set_summary(
             mut self,
             input: std::option::Option<crate::model::CalculateRouteSummary>,
@@ -1584,8 +1399,7 @@ pub struct ListRouteCalculatorsOutput {
     /// <p>Lists the route calculator resources that exist in your AWS account</p>
     pub entries:
         std::option::Option<std::vec::Vec<crate::model::ListRouteCalculatorsResponseEntry>>,
-    /// <p>A pagination token indicating there are additional pages available. You can use the
-    /// token in a subsequent request to fetch the next set of results.</p>
+    /// <p>A pagination token indicating there are additional pages available. You can use the token in a subsequent request to fetch the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRouteCalculatorsOutput {
@@ -1595,8 +1409,7 @@ impl ListRouteCalculatorsOutput {
     ) -> std::option::Option<&[crate::model::ListRouteCalculatorsResponseEntry]> {
         self.entries.as_deref()
     }
-    /// <p>A pagination token indicating there are additional pages available. You can use the
-    /// token in a subsequent request to fetch the next set of results.</p>
+    /// <p>A pagination token indicating there are additional pages available. You can use the token in a subsequent request to fetch the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1641,14 +1454,12 @@ pub mod list_route_calculators_output {
             self.entries = input;
             self
         }
-        /// <p>A pagination token indicating there are additional pages available. You can use the
-        /// token in a subsequent request to fetch the next set of results.</p>
+        /// <p>A pagination token indicating there are additional pages available. You can use the token in a subsequent request to fetch the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A pagination token indicating there are additional pages available. You can use the
-        /// token in a subsequent request to fetch the next set of results.</p>
+        /// <p>A pagination token indicating there are additional pages available. You can use the token in a subsequent request to fetch the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1675,60 +1486,38 @@ impl ListRouteCalculatorsOutput {
 pub struct CreateRouteCalculatorOutput {
     /// <p>The name of the route calculator resource. </p>
     /// <ul>
-    /// <li>
-    /// <p>For example, <code>ExampleRouteCalculator</code>.</p>
-    /// </li>
+    /// <li> <p>For example, <code>ExampleRouteCalculator</code>.</p> </li>
     /// </ul>
     pub calculator_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) for the route calculator resource. Use the ARN when you
-    /// specify a resource across all AWS.</p>
+    /// <p>The Amazon Resource Name (ARN) for the route calculator resource. Use the ARN when you specify a resource across all AWS.</p>
     /// <ul>
-    /// <li>
-    /// <p>Format example:
-    /// <code>arn:aws:geo:region:account-id:route-calculator/ExampleCalculator</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:route-calculator/ExampleCalculator</code> </p> </li>
     /// </ul>
     pub calculator_arn: std::option::Option<std::string::String>,
-    /// <p>The timestamp when the route calculator resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    /// <p>The timestamp when the route calculator resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     /// <ul>
-    /// <li>
-    /// <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>
     /// </ul>
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateRouteCalculatorOutput {
     /// <p>The name of the route calculator resource. </p>
     /// <ul>
-    /// <li>
-    /// <p>For example, <code>ExampleRouteCalculator</code>.</p>
-    /// </li>
+    /// <li> <p>For example, <code>ExampleRouteCalculator</code>.</p> </li>
     /// </ul>
     pub fn calculator_name(&self) -> std::option::Option<&str> {
         self.calculator_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) for the route calculator resource. Use the ARN when you
-    /// specify a resource across all AWS.</p>
+    /// <p>The Amazon Resource Name (ARN) for the route calculator resource. Use the ARN when you specify a resource across all AWS.</p>
     /// <ul>
-    /// <li>
-    /// <p>Format example:
-    /// <code>arn:aws:geo:region:account-id:route-calculator/ExampleCalculator</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:route-calculator/ExampleCalculator</code> </p> </li>
     /// </ul>
     pub fn calculator_arn(&self) -> std::option::Option<&str> {
         self.calculator_arn.as_deref()
     }
-    /// <p>The timestamp when the route calculator resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    /// <p>The timestamp when the route calculator resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     /// <ul>
-    /// <li>
-    /// <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>
     /// </ul>
     pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
@@ -1756,9 +1545,7 @@ pub mod create_route_calculator_output {
     impl Builder {
         /// <p>The name of the route calculator resource. </p>
         /// <ul>
-        /// <li>
-        /// <p>For example, <code>ExampleRouteCalculator</code>.</p>
-        /// </li>
+        /// <li> <p>For example, <code>ExampleRouteCalculator</code>.</p> </li>
         /// </ul>
         pub fn calculator_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.calculator_name = Some(input.into());
@@ -1766,9 +1553,7 @@ pub mod create_route_calculator_output {
         }
         /// <p>The name of the route calculator resource. </p>
         /// <ul>
-        /// <li>
-        /// <p>For example, <code>ExampleRouteCalculator</code>.</p>
-        /// </li>
+        /// <li> <p>For example, <code>ExampleRouteCalculator</code>.</p> </li>
         /// </ul>
         pub fn set_calculator_name(
             mut self,
@@ -1777,27 +1562,17 @@ pub mod create_route_calculator_output {
             self.calculator_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the route calculator resource. Use the ARN when you
-        /// specify a resource across all AWS.</p>
+        /// <p>The Amazon Resource Name (ARN) for the route calculator resource. Use the ARN when you specify a resource across all AWS.</p>
         /// <ul>
-        /// <li>
-        /// <p>Format example:
-        /// <code>arn:aws:geo:region:account-id:route-calculator/ExampleCalculator</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:route-calculator/ExampleCalculator</code> </p> </li>
         /// </ul>
         pub fn calculator_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.calculator_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the route calculator resource. Use the ARN when you
-        /// specify a resource across all AWS.</p>
+        /// <p>The Amazon Resource Name (ARN) for the route calculator resource. Use the ARN when you specify a resource across all AWS.</p>
         /// <ul>
-        /// <li>
-        /// <p>Format example:
-        /// <code>arn:aws:geo:region:account-id:route-calculator/ExampleCalculator</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:route-calculator/ExampleCalculator</code> </p> </li>
         /// </ul>
         pub fn set_calculator_arn(
             mut self,
@@ -1806,25 +1581,17 @@ pub mod create_route_calculator_output {
             self.calculator_arn = input;
             self
         }
-        /// <p>The timestamp when the route calculator resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+        /// <p>The timestamp when the route calculator resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         /// <ul>
-        /// <li>
-        /// <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>
         /// </ul>
         pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_time = Some(input);
             self
         }
-        /// <p>The timestamp when the route calculator resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+        /// <p>The timestamp when the route calculator resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         /// <ul>
-        /// <li>
-        /// <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>
         /// </ul>
         pub fn set_create_time(
             mut self,
@@ -1886,18 +1653,12 @@ impl DeleteRouteCalculatorOutput {
 pub struct UpdateRouteCalculatorOutput {
     /// <p>The name of the updated route calculator resource.</p>
     pub calculator_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the updated route calculator resource. Used to specify a resource
-    /// across AWS.</p>
+    /// <p>The Amazon Resource Name (ARN) of the updated route calculator resource. Used to specify a resource across AWS.</p>
     /// <ul>
-    /// <li>
-    /// <p>Format example: <code>arn:aws:geo:region:account-id:route-
-    /// calculator/ExampleCalculator</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:route- calculator/ExampleCalculator</code> </p> </li>
     /// </ul>
     pub calculator_arn: std::option::Option<std::string::String>,
-    /// <p>The timestamp for when the route calculator was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    /// <p>The timestamp for when the route calculator was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UpdateRouteCalculatorOutput {
@@ -1905,20 +1666,14 @@ impl UpdateRouteCalculatorOutput {
     pub fn calculator_name(&self) -> std::option::Option<&str> {
         self.calculator_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the updated route calculator resource. Used to specify a resource
-    /// across AWS.</p>
+    /// <p>The Amazon Resource Name (ARN) of the updated route calculator resource. Used to specify a resource across AWS.</p>
     /// <ul>
-    /// <li>
-    /// <p>Format example: <code>arn:aws:geo:region:account-id:route-
-    /// calculator/ExampleCalculator</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:route- calculator/ExampleCalculator</code> </p> </li>
     /// </ul>
     pub fn calculator_arn(&self) -> std::option::Option<&str> {
         self.calculator_arn.as_deref()
     }
-    /// <p>The timestamp for when the route calculator was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    /// <p>The timestamp for when the route calculator was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
@@ -1956,27 +1711,17 @@ pub mod update_route_calculator_output {
             self.calculator_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the updated route calculator resource. Used to specify a resource
-        /// across AWS.</p>
+        /// <p>The Amazon Resource Name (ARN) of the updated route calculator resource. Used to specify a resource across AWS.</p>
         /// <ul>
-        /// <li>
-        /// <p>Format example: <code>arn:aws:geo:region:account-id:route-
-        /// calculator/ExampleCalculator</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:route- calculator/ExampleCalculator</code> </p> </li>
         /// </ul>
         pub fn calculator_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.calculator_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the updated route calculator resource. Used to specify a resource
-        /// across AWS.</p>
+        /// <p>The Amazon Resource Name (ARN) of the updated route calculator resource. Used to specify a resource across AWS.</p>
         /// <ul>
-        /// <li>
-        /// <p>Format example: <code>arn:aws:geo:region:account-id:route-
-        /// calculator/ExampleCalculator</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:route- calculator/ExampleCalculator</code> </p> </li>
         /// </ul>
         pub fn set_calculator_arn(
             mut self,
@@ -1985,14 +1730,12 @@ pub mod update_route_calculator_output {
             self.calculator_arn = input;
             self
         }
-        /// <p>The timestamp for when the route calculator was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+        /// <p>The timestamp for when the route calculator was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.update_time = Some(input);
             self
         }
-        /// <p>The timestamp for when the route calculator was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+        /// <p>The timestamp for when the route calculator was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn set_update_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2023,14 +1766,9 @@ impl UpdateRouteCalculatorOutput {
 pub struct DescribeRouteCalculatorOutput {
     /// <p>The name of the route calculator resource being described.</p>
     pub calculator_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) for the Route calculator resource. Use the ARN when you
-    /// specify a resource across AWS.</p>
+    /// <p>The Amazon Resource Name (ARN) for the Route calculator resource. Use the ARN when you specify a resource across AWS.</p>
     /// <ul>
-    /// <li>
-    /// <p>Format example:
-    /// <code>arn:aws:geo:region:account-id:route-calculator/ExampleCalculator</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:route-calculator/ExampleCalculator</code> </p> </li>
     /// </ul>
     pub calculator_arn: std::option::Option<std::string::String>,
     /// <p>The pricing plan selected for the specified route calculator resource.</p>
@@ -2038,37 +1776,20 @@ pub struct DescribeRouteCalculatorOutput {
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>The optional description of the route calculator resource.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The timestamp when the route calculator resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    /// <p>The timestamp when the route calculator resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     /// <ul>
-    /// <li>
-    /// <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>
     /// </ul>
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The timestamp when the route calculator resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    /// <p>The timestamp when the route calculator resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     /// <ul>
-    /// <li>
-    /// <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>
     /// </ul>
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The data provider of traffic and road network data. Indicates one of the available
-    /// providers:</p>
+    /// <p>The data provider of traffic and road network data. Indicates one of the available providers:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Esri</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Here</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>Esri</code> </p> </li>
+    /// <li> <p> <code>Here</code> </p> </li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub data_source: std::option::Option<std::string::String>,
@@ -2081,14 +1802,9 @@ impl DescribeRouteCalculatorOutput {
     pub fn calculator_name(&self) -> std::option::Option<&str> {
         self.calculator_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) for the Route calculator resource. Use the ARN when you
-    /// specify a resource across AWS.</p>
+    /// <p>The Amazon Resource Name (ARN) for the Route calculator resource. Use the ARN when you specify a resource across AWS.</p>
     /// <ul>
-    /// <li>
-    /// <p>Format example:
-    /// <code>arn:aws:geo:region:account-id:route-calculator/ExampleCalculator</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:route-calculator/ExampleCalculator</code> </p> </li>
     /// </ul>
     pub fn calculator_arn(&self) -> std::option::Option<&str> {
         self.calculator_arn.as_deref()
@@ -2102,41 +1818,24 @@ impl DescribeRouteCalculatorOutput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The timestamp when the route calculator resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    /// <p>The timestamp when the route calculator resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     /// <ul>
-    /// <li>
-    /// <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>
     /// </ul>
     pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
-    /// <p>The timestamp when the route calculator resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    /// <p>The timestamp when the route calculator resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     /// <ul>
-    /// <li>
-    /// <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>
     /// </ul>
     pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
-    /// <p>The data provider of traffic and road network data. Indicates one of the available
-    /// providers:</p>
+    /// <p>The data provider of traffic and road network data. Indicates one of the available providers:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Esri</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Here</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>Esri</code> </p> </li>
+    /// <li> <p> <code>Here</code> </p> </li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub fn data_source(&self) -> std::option::Option<&str> {
@@ -2195,27 +1894,17 @@ pub mod describe_route_calculator_output {
             self.calculator_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the Route calculator resource. Use the ARN when you
-        /// specify a resource across AWS.</p>
+        /// <p>The Amazon Resource Name (ARN) for the Route calculator resource. Use the ARN when you specify a resource across AWS.</p>
         /// <ul>
-        /// <li>
-        /// <p>Format example:
-        /// <code>arn:aws:geo:region:account-id:route-calculator/ExampleCalculator</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:route-calculator/ExampleCalculator</code> </p> </li>
         /// </ul>
         pub fn calculator_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.calculator_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the Route calculator resource. Use the ARN when you
-        /// specify a resource across AWS.</p>
+        /// <p>The Amazon Resource Name (ARN) for the Route calculator resource. Use the ARN when you specify a resource across AWS.</p>
         /// <ul>
-        /// <li>
-        /// <p>Format example:
-        /// <code>arn:aws:geo:region:account-id:route-calculator/ExampleCalculator</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:route-calculator/ExampleCalculator</code> </p> </li>
         /// </ul>
         pub fn set_calculator_arn(
             mut self,
@@ -2249,25 +1938,17 @@ pub mod describe_route_calculator_output {
             self.description = input;
             self
         }
-        /// <p>The timestamp when the route calculator resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+        /// <p>The timestamp when the route calculator resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         /// <ul>
-        /// <li>
-        /// <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>
         /// </ul>
         pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_time = Some(input);
             self
         }
-        /// <p>The timestamp when the route calculator resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+        /// <p>The timestamp when the route calculator resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         /// <ul>
-        /// <li>
-        /// <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>
         /// </ul>
         pub fn set_create_time(
             mut self,
@@ -2276,25 +1957,17 @@ pub mod describe_route_calculator_output {
             self.create_time = input;
             self
         }
-        /// <p>The timestamp when the route calculator resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+        /// <p>The timestamp when the route calculator resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         /// <ul>
-        /// <li>
-        /// <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>
         /// </ul>
         pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.update_time = Some(input);
             self
         }
-        /// <p>The timestamp when the route calculator resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+        /// <p>The timestamp when the route calculator resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         /// <ul>
-        /// <li>
-        /// <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>
         /// </ul>
         pub fn set_update_time(
             mut self,
@@ -2303,38 +1976,20 @@ pub mod describe_route_calculator_output {
             self.update_time = input;
             self
         }
-        /// <p>The data provider of traffic and road network data. Indicates one of the available
-        /// providers:</p>
+        /// <p>The data provider of traffic and road network data. Indicates one of the available providers:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Esri</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Here</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Esri</code> </p> </li>
+        /// <li> <p> <code>Here</code> </p> </li>
         /// </ul>
         /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
         pub fn data_source(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_source = Some(input.into());
             self
         }
-        /// <p>The data provider of traffic and road network data. Indicates one of the available
-        /// providers:</p>
+        /// <p>The data provider of traffic and road network data. Indicates one of the available providers:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Esri</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Here</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Esri</code> </p> </li>
+        /// <li> <p> <code>Here</code> </p> </li>
         /// </ul>
         /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
         pub fn set_data_source(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -2392,27 +2047,17 @@ impl DescribeRouteCalculatorOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchPlaceIndexForTextOutput {
-    /// <p>Contains a summary of the request. Echoes the input values for <code>BiasPosition</code>,
-    /// <code>FilterBBox</code>, <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>,
-    /// and <code>Text</code>. Also includes the <code>DataSource</code> of the place index and
-    /// the bounding box, <code>ResultBBox</code>, which surrounds the search results.
-    /// </p>
+    /// <p>Contains a summary of the request. Echoes the input values for <code>BiasPosition</code>, <code>FilterBBox</code>, <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>, and <code>Text</code>. Also includes the <code>DataSource</code> of the place index and the bounding box, <code>ResultBBox</code>, which surrounds the search results. </p>
     pub summary: std::option::Option<crate::model::SearchPlaceIndexForTextSummary>,
-    /// <p>A list of Places matching the input text. Each result contains additional
-    /// information about the specific point of interest. </p>
+    /// <p>A list of Places matching the input text. Each result contains additional information about the specific point of interest. </p>
     pub results: std::option::Option<std::vec::Vec<crate::model::SearchForTextResult>>,
 }
 impl SearchPlaceIndexForTextOutput {
-    /// <p>Contains a summary of the request. Echoes the input values for <code>BiasPosition</code>,
-    /// <code>FilterBBox</code>, <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>,
-    /// and <code>Text</code>. Also includes the <code>DataSource</code> of the place index and
-    /// the bounding box, <code>ResultBBox</code>, which surrounds the search results.
-    /// </p>
+    /// <p>Contains a summary of the request. Echoes the input values for <code>BiasPosition</code>, <code>FilterBBox</code>, <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>, and <code>Text</code>. Also includes the <code>DataSource</code> of the place index and the bounding box, <code>ResultBBox</code>, which surrounds the search results. </p>
     pub fn summary(&self) -> std::option::Option<&crate::model::SearchPlaceIndexForTextSummary> {
         self.summary.as_ref()
     }
-    /// <p>A list of Places matching the input text. Each result contains additional
-    /// information about the specific point of interest. </p>
+    /// <p>A list of Places matching the input text. Each result contains additional information about the specific point of interest. </p>
     pub fn results(&self) -> std::option::Option<&[crate::model::SearchForTextResult]> {
         self.results.as_deref()
     }
@@ -2435,20 +2080,12 @@ pub mod search_place_index_for_text_output {
         pub(crate) results: std::option::Option<std::vec::Vec<crate::model::SearchForTextResult>>,
     }
     impl Builder {
-        /// <p>Contains a summary of the request. Echoes the input values for <code>BiasPosition</code>,
-        /// <code>FilterBBox</code>, <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>,
-        /// and <code>Text</code>. Also includes the <code>DataSource</code> of the place index and
-        /// the bounding box, <code>ResultBBox</code>, which surrounds the search results.
-        /// </p>
+        /// <p>Contains a summary of the request. Echoes the input values for <code>BiasPosition</code>, <code>FilterBBox</code>, <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>, and <code>Text</code>. Also includes the <code>DataSource</code> of the place index and the bounding box, <code>ResultBBox</code>, which surrounds the search results. </p>
         pub fn summary(mut self, input: crate::model::SearchPlaceIndexForTextSummary) -> Self {
             self.summary = Some(input);
             self
         }
-        /// <p>Contains a summary of the request. Echoes the input values for <code>BiasPosition</code>,
-        /// <code>FilterBBox</code>, <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>,
-        /// and <code>Text</code>. Also includes the <code>DataSource</code> of the place index and
-        /// the bounding box, <code>ResultBBox</code>, which surrounds the search results.
-        /// </p>
+        /// <p>Contains a summary of the request. Echoes the input values for <code>BiasPosition</code>, <code>FilterBBox</code>, <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>, and <code>Text</code>. Also includes the <code>DataSource</code> of the place index and the bounding box, <code>ResultBBox</code>, which surrounds the search results. </p>
         pub fn set_summary(
             mut self,
             input: std::option::Option<crate::model::SearchPlaceIndexForTextSummary>,
@@ -2460,16 +2097,14 @@ pub mod search_place_index_for_text_output {
         ///
         /// To override the contents of this collection use [`set_results`](Self::set_results).
         ///
-        /// <p>A list of Places matching the input text. Each result contains additional
-        /// information about the specific point of interest. </p>
+        /// <p>A list of Places matching the input text. Each result contains additional information about the specific point of interest. </p>
         pub fn results(mut self, input: crate::model::SearchForTextResult) -> Self {
             let mut v = self.results.unwrap_or_default();
             v.push(input);
             self.results = Some(v);
             self
         }
-        /// <p>A list of Places matching the input text. Each result contains additional
-        /// information about the specific point of interest. </p>
+        /// <p>A list of Places matching the input text. Each result contains additional information about the specific point of interest. </p>
         pub fn set_results(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SearchForTextResult>>,
@@ -2497,25 +2132,19 @@ impl SearchPlaceIndexForTextOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchPlaceIndexForPositionOutput {
-    /// <p>Contains a summary of the request. Echoes the input values for <code>Position</code>,
-    /// <code>Language</code>, <code>MaxResults</code>, and the <code>DataSource</code> of the place index.
-    /// </p>
+    /// <p>Contains a summary of the request. Echoes the input values for <code>Position</code>, <code>Language</code>, <code>MaxResults</code>, and the <code>DataSource</code> of the place index. </p>
     pub summary: std::option::Option<crate::model::SearchPlaceIndexForPositionSummary>,
-    /// <p>Returns a list of Places closest to the specified position. Each result contains
-    /// additional information about the Places returned.</p>
+    /// <p>Returns a list of Places closest to the specified position. Each result contains additional information about the Places returned.</p>
     pub results: std::option::Option<std::vec::Vec<crate::model::SearchForPositionResult>>,
 }
 impl SearchPlaceIndexForPositionOutput {
-    /// <p>Contains a summary of the request. Echoes the input values for <code>Position</code>,
-    /// <code>Language</code>, <code>MaxResults</code>, and the <code>DataSource</code> of the place index.
-    /// </p>
+    /// <p>Contains a summary of the request. Echoes the input values for <code>Position</code>, <code>Language</code>, <code>MaxResults</code>, and the <code>DataSource</code> of the place index. </p>
     pub fn summary(
         &self,
     ) -> std::option::Option<&crate::model::SearchPlaceIndexForPositionSummary> {
         self.summary.as_ref()
     }
-    /// <p>Returns a list of Places closest to the specified position. Each result contains
-    /// additional information about the Places returned.</p>
+    /// <p>Returns a list of Places closest to the specified position. Each result contains additional information about the Places returned.</p>
     pub fn results(&self) -> std::option::Option<&[crate::model::SearchForPositionResult]> {
         self.results.as_deref()
     }
@@ -2539,16 +2168,12 @@ pub mod search_place_index_for_position_output {
             std::option::Option<std::vec::Vec<crate::model::SearchForPositionResult>>,
     }
     impl Builder {
-        /// <p>Contains a summary of the request. Echoes the input values for <code>Position</code>,
-        /// <code>Language</code>, <code>MaxResults</code>, and the <code>DataSource</code> of the place index.
-        /// </p>
+        /// <p>Contains a summary of the request. Echoes the input values for <code>Position</code>, <code>Language</code>, <code>MaxResults</code>, and the <code>DataSource</code> of the place index. </p>
         pub fn summary(mut self, input: crate::model::SearchPlaceIndexForPositionSummary) -> Self {
             self.summary = Some(input);
             self
         }
-        /// <p>Contains a summary of the request. Echoes the input values for <code>Position</code>,
-        /// <code>Language</code>, <code>MaxResults</code>, and the <code>DataSource</code> of the place index.
-        /// </p>
+        /// <p>Contains a summary of the request. Echoes the input values for <code>Position</code>, <code>Language</code>, <code>MaxResults</code>, and the <code>DataSource</code> of the place index. </p>
         pub fn set_summary(
             mut self,
             input: std::option::Option<crate::model::SearchPlaceIndexForPositionSummary>,
@@ -2560,16 +2185,14 @@ pub mod search_place_index_for_position_output {
         ///
         /// To override the contents of this collection use [`set_results`](Self::set_results).
         ///
-        /// <p>Returns a list of Places closest to the specified position. Each result contains
-        /// additional information about the Places returned.</p>
+        /// <p>Returns a list of Places closest to the specified position. Each result contains additional information about the Places returned.</p>
         pub fn results(mut self, input: crate::model::SearchForPositionResult) -> Self {
             let mut v = self.results.unwrap_or_default();
             v.push(input);
             self.results = Some(v);
             self
         }
-        /// <p>Returns a list of Places closest to the specified position. Each result contains
-        /// additional information about the Places returned.</p>
+        /// <p>Returns a list of Places closest to the specified position. Each result contains additional information about the Places returned.</p>
         pub fn set_results(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SearchForPositionResult>>,
@@ -2599,8 +2222,7 @@ impl SearchPlaceIndexForPositionOutput {
 pub struct ListPlaceIndexesOutput {
     /// <p>Lists the place index resources that exist in your AWS account</p>
     pub entries: std::option::Option<std::vec::Vec<crate::model::ListPlaceIndexesResponseEntry>>,
-    /// <p>A pagination token indicating that there are additional pages available. You can use the
-    /// token in a new request to fetch the next page of results.</p>
+    /// <p>A pagination token indicating that there are additional pages available. You can use the token in a new request to fetch the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPlaceIndexesOutput {
@@ -2608,8 +2230,7 @@ impl ListPlaceIndexesOutput {
     pub fn entries(&self) -> std::option::Option<&[crate::model::ListPlaceIndexesResponseEntry]> {
         self.entries.as_deref()
     }
-    /// <p>A pagination token indicating that there are additional pages available. You can use the
-    /// token in a new request to fetch the next page of results.</p>
+    /// <p>A pagination token indicating that there are additional pages available. You can use the token in a new request to fetch the next page of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2652,14 +2273,12 @@ pub mod list_place_indexes_output {
             self.entries = input;
             self
         }
-        /// <p>A pagination token indicating that there are additional pages available. You can use the
-        /// token in a new request to fetch the next page of results.</p>
+        /// <p>A pagination token indicating that there are additional pages available. You can use the token in a new request to fetch the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A pagination token indicating that there are additional pages available. You can use the
-        /// token in a new request to fetch the next page of results.</p>
+        /// <p>A pagination token indicating that there are additional pages available. You can use the token in a new request to fetch the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2686,18 +2305,12 @@ impl ListPlaceIndexesOutput {
 pub struct CreatePlaceIndexOutput {
     /// <p>The name for the place index resource.</p>
     pub index_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource
-    /// across AWS. </p>
+    /// <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across AWS. </p>
     /// <ul>
-    /// <li>
-    /// <p>Format example:
-    /// <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code> </p> </li>
     /// </ul>
     pub index_arn: std::option::Option<std::string::String>,
-    /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
-    /// <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreatePlaceIndexOutput {
@@ -2705,20 +2318,14 @@ impl CreatePlaceIndexOutput {
     pub fn index_name(&self) -> std::option::Option<&str> {
         self.index_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource
-    /// across AWS. </p>
+    /// <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across AWS. </p>
     /// <ul>
-    /// <li>
-    /// <p>Format example:
-    /// <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code> </p> </li>
     /// </ul>
     pub fn index_arn(&self) -> std::option::Option<&str> {
         self.index_arn.as_deref()
     }
-    /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
-    /// <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
@@ -2753,40 +2360,28 @@ pub mod create_place_index_output {
             self.index_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource
-        /// across AWS. </p>
+        /// <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across AWS. </p>
         /// <ul>
-        /// <li>
-        /// <p>Format example:
-        /// <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code> </p> </li>
         /// </ul>
         pub fn index_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource
-        /// across AWS. </p>
+        /// <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across AWS. </p>
         /// <ul>
-        /// <li>
-        /// <p>Format example:
-        /// <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code> </p> </li>
         /// </ul>
         pub fn set_index_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_arn = input;
             self
         }
-        /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
-        /// <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+        /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_time = Some(input);
             self
         }
-        /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
-        /// <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+        /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn set_create_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2847,18 +2442,12 @@ impl DeletePlaceIndexOutput {
 pub struct UpdatePlaceIndexOutput {
     /// <p>The name of the updated place index resource.</p>
     pub index_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the upated place index resource. Used to specify a
-    /// resource across AWS.</p>
+    /// <p>The Amazon Resource Name (ARN) of the upated place index resource. Used to specify a resource across AWS.</p>
     /// <ul>
-    /// <li>
-    /// <p>Format example: <code>arn:aws:geo:region:account-id:place-
-    /// index/ExamplePlaceIndex</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:place- index/ExamplePlaceIndex</code> </p> </li>
     /// </ul>
     pub index_arn: std::option::Option<std::string::String>,
-    /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format:
-    /// <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UpdatePlaceIndexOutput {
@@ -2866,20 +2455,14 @@ impl UpdatePlaceIndexOutput {
     pub fn index_name(&self) -> std::option::Option<&str> {
         self.index_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the upated place index resource. Used to specify a
-    /// resource across AWS.</p>
+    /// <p>The Amazon Resource Name (ARN) of the upated place index resource. Used to specify a resource across AWS.</p>
     /// <ul>
-    /// <li>
-    /// <p>Format example: <code>arn:aws:geo:region:account-id:place-
-    /// index/ExamplePlaceIndex</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:place- index/ExamplePlaceIndex</code> </p> </li>
     /// </ul>
     pub fn index_arn(&self) -> std::option::Option<&str> {
         self.index_arn.as_deref()
     }
-    /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format:
-    /// <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
@@ -2914,40 +2497,28 @@ pub mod update_place_index_output {
             self.index_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the upated place index resource. Used to specify a
-        /// resource across AWS.</p>
+        /// <p>The Amazon Resource Name (ARN) of the upated place index resource. Used to specify a resource across AWS.</p>
         /// <ul>
-        /// <li>
-        /// <p>Format example: <code>arn:aws:geo:region:account-id:place-
-        /// index/ExamplePlaceIndex</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:place- index/ExamplePlaceIndex</code> </p> </li>
         /// </ul>
         pub fn index_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the upated place index resource. Used to specify a
-        /// resource across AWS.</p>
+        /// <p>The Amazon Resource Name (ARN) of the upated place index resource. Used to specify a resource across AWS.</p>
         /// <ul>
-        /// <li>
-        /// <p>Format example: <code>arn:aws:geo:region:account-id:place-
-        /// index/ExamplePlaceIndex</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:place- index/ExamplePlaceIndex</code> </p> </li>
         /// </ul>
         pub fn set_index_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_arn = input;
             self
         }
-        /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format:
-        /// <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+        /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.update_time = Some(input);
             self
         }
-        /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format:
-        /// <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+        /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn set_update_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2978,14 +2549,9 @@ impl UpdatePlaceIndexOutput {
 pub struct DescribePlaceIndexOutput {
     /// <p>The name of the place index resource being described.</p>
     pub index_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource
-    /// across AWS. </p>
+    /// <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across AWS. </p>
     /// <ul>
-    /// <li>
-    /// <p>Format example:
-    /// <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code> </p> </li>
     /// </ul>
     pub index_arn: std::option::Option<std::string::String>,
     /// <p>The pricing plan selected for the specified place index resource.</p>
@@ -2993,24 +2559,14 @@ pub struct DescribePlaceIndexOutput {
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>The optional description for the place index resource.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
-    /// <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
-    /// <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The data provider of geospatial data. Values can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Esri</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Here</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>Esri</code> </p> </li>
+    /// <li> <p> <code>Here</code> </p> </li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub data_source: std::option::Option<std::string::String>,
@@ -3025,14 +2581,9 @@ impl DescribePlaceIndexOutput {
     pub fn index_name(&self) -> std::option::Option<&str> {
         self.index_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource
-    /// across AWS. </p>
+    /// <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across AWS. </p>
     /// <ul>
-    /// <li>
-    /// <p>Format example:
-    /// <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code> </p> </li>
     /// </ul>
     pub fn index_arn(&self) -> std::option::Option<&str> {
         self.index_arn.as_deref()
@@ -3046,28 +2597,18 @@ impl DescribePlaceIndexOutput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
-    /// <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
-    /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
-    /// <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
     /// <p>The data provider of geospatial data. Values can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Esri</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Here</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>Esri</code> </p> </li>
+    /// <li> <p> <code>Here</code> </p> </li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub fn data_source(&self) -> std::option::Option<&str> {
@@ -3132,27 +2673,17 @@ pub mod describe_place_index_output {
             self.index_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource
-        /// across AWS. </p>
+        /// <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across AWS. </p>
         /// <ul>
-        /// <li>
-        /// <p>Format example:
-        /// <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code> </p> </li>
         /// </ul>
         pub fn index_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource
-        /// across AWS. </p>
+        /// <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across AWS. </p>
         /// <ul>
-        /// <li>
-        /// <p>Format example:
-        /// <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code> </p> </li>
         /// </ul>
         pub fn set_index_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_arn = input;
@@ -3183,14 +2714,12 @@ pub mod describe_place_index_output {
             self.description = input;
             self
         }
-        /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
-        /// <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+        /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_time = Some(input);
             self
         }
-        /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
-        /// <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+        /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn set_create_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -3198,14 +2727,12 @@ pub mod describe_place_index_output {
             self.create_time = input;
             self
         }
-        /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
-        /// <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+        /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.update_time = Some(input);
             self
         }
-        /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
-        /// <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+        /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn set_update_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -3215,16 +2742,8 @@ pub mod describe_place_index_output {
         }
         /// <p>The data provider of geospatial data. Values can be one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Esri</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Here</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Esri</code> </p> </li>
+        /// <li> <p> <code>Here</code> </p> </li>
         /// </ul>
         /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
         pub fn data_source(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3233,16 +2752,8 @@ pub mod describe_place_index_output {
         }
         /// <p>The data provider of geospatial data. Values can be one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Esri</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Here</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Esri</code> </p> </li>
+        /// <li> <p> <code>Here</code> </p> </li>
         /// </ul>
         /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
         pub fn set_data_source(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -3319,8 +2830,7 @@ impl DescribePlaceIndexOutput {
 pub struct GetMapTileOutput {
     /// <p>Contains Mapbox Vector Tile (MVT) data.</p>
     pub blob: std::option::Option<aws_smithy_types::Blob>,
-    /// <p>The map tile's content type. For example,
-    /// <code>application/vnd.mapbox-vector-tile</code>.</p>
+    /// <p>The map tile's content type. For example, <code>application/vnd.mapbox-vector-tile</code>.</p>
     pub content_type: std::option::Option<std::string::String>,
 }
 impl GetMapTileOutput {
@@ -3328,8 +2838,7 @@ impl GetMapTileOutput {
     pub fn blob(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.blob.as_ref()
     }
-    /// <p>The map tile's content type. For example,
-    /// <code>application/vnd.mapbox-vector-tile</code>.</p>
+    /// <p>The map tile's content type. For example, <code>application/vnd.mapbox-vector-tile</code>.</p>
     pub fn content_type(&self) -> std::option::Option<&str> {
         self.content_type.as_deref()
     }
@@ -3362,14 +2871,12 @@ pub mod get_map_tile_output {
             self.blob = input;
             self
         }
-        /// <p>The map tile's content type. For example,
-        /// <code>application/vnd.mapbox-vector-tile</code>.</p>
+        /// <p>The map tile's content type. For example, <code>application/vnd.mapbox-vector-tile</code>.</p>
         pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.content_type = Some(input.into());
             self
         }
-        /// <p>The map tile's content type. For example,
-        /// <code>application/vnd.mapbox-vector-tile</code>.</p>
+        /// <p>The map tile's content type. For example, <code>application/vnd.mapbox-vector-tile</code>.</p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_type = input;
             self
@@ -3396,8 +2903,7 @@ impl GetMapTileOutput {
 pub struct GetMapStyleDescriptorOutput {
     /// <p>Contains the body of the style descriptor.</p>
     pub blob: std::option::Option<aws_smithy_types::Blob>,
-    /// <p>The style descriptor's content type. For example,
-    /// <code>application/json</code>.</p>
+    /// <p>The style descriptor's content type. For example, <code>application/json</code>.</p>
     pub content_type: std::option::Option<std::string::String>,
 }
 impl GetMapStyleDescriptorOutput {
@@ -3405,8 +2911,7 @@ impl GetMapStyleDescriptorOutput {
     pub fn blob(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.blob.as_ref()
     }
-    /// <p>The style descriptor's content type. For example,
-    /// <code>application/json</code>.</p>
+    /// <p>The style descriptor's content type. For example, <code>application/json</code>.</p>
     pub fn content_type(&self) -> std::option::Option<&str> {
         self.content_type.as_deref()
     }
@@ -3439,14 +2944,12 @@ pub mod get_map_style_descriptor_output {
             self.blob = input;
             self
         }
-        /// <p>The style descriptor's content type. For example,
-        /// <code>application/json</code>.</p>
+        /// <p>The style descriptor's content type. For example, <code>application/json</code>.</p>
         pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.content_type = Some(input.into());
             self
         }
-        /// <p>The style descriptor's content type. For example,
-        /// <code>application/json</code>.</p>
+        /// <p>The style descriptor's content type. For example, <code>application/json</code>.</p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_type = input;
             self
@@ -3473,9 +2976,7 @@ impl GetMapStyleDescriptorOutput {
 pub struct GetMapSpritesOutput {
     /// <p>Contains the body of the sprite sheet or JSON offset ﬁle.</p>
     pub blob: std::option::Option<aws_smithy_types::Blob>,
-    /// <p>The content type of the sprite sheet and offsets. For example, the sprite sheet
-    /// content type is <code>image/png</code>, and the sprite offset JSON document is
-    /// <code>application/json</code>. </p>
+    /// <p>The content type of the sprite sheet and offsets. For example, the sprite sheet content type is <code>image/png</code>, and the sprite offset JSON document is <code>application/json</code>. </p>
     pub content_type: std::option::Option<std::string::String>,
 }
 impl GetMapSpritesOutput {
@@ -3483,9 +2984,7 @@ impl GetMapSpritesOutput {
     pub fn blob(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.blob.as_ref()
     }
-    /// <p>The content type of the sprite sheet and offsets. For example, the sprite sheet
-    /// content type is <code>image/png</code>, and the sprite offset JSON document is
-    /// <code>application/json</code>. </p>
+    /// <p>The content type of the sprite sheet and offsets. For example, the sprite sheet content type is <code>image/png</code>, and the sprite offset JSON document is <code>application/json</code>. </p>
     pub fn content_type(&self) -> std::option::Option<&str> {
         self.content_type.as_deref()
     }
@@ -3518,16 +3017,12 @@ pub mod get_map_sprites_output {
             self.blob = input;
             self
         }
-        /// <p>The content type of the sprite sheet and offsets. For example, the sprite sheet
-        /// content type is <code>image/png</code>, and the sprite offset JSON document is
-        /// <code>application/json</code>. </p>
+        /// <p>The content type of the sprite sheet and offsets. For example, the sprite sheet content type is <code>image/png</code>, and the sprite offset JSON document is <code>application/json</code>. </p>
         pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.content_type = Some(input.into());
             self
         }
-        /// <p>The content type of the sprite sheet and offsets. For example, the sprite sheet
-        /// content type is <code>image/png</code>, and the sprite offset JSON document is
-        /// <code>application/json</code>. </p>
+        /// <p>The content type of the sprite sheet and offsets. For example, the sprite sheet content type is <code>image/png</code>, and the sprite offset JSON document is <code>application/json</code>. </p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_type = input;
             self
@@ -3709,18 +3204,12 @@ impl ListMapsOutput {
 pub struct CreateMapOutput {
     /// <p>The name of the map resource.</p>
     pub map_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across
-    /// all AWS.</p>
+    /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all AWS.</p>
     /// <ul>
-    /// <li>
-    /// <p>Format example:
-    /// <code>arn:aws:geo:region:account-id:maps/ExampleMap</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:maps/ExampleMap</code> </p> </li>
     /// </ul>
     pub map_arn: std::option::Option<std::string::String>,
-    /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
+    /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateMapOutput {
@@ -3728,20 +3217,14 @@ impl CreateMapOutput {
     pub fn map_name(&self) -> std::option::Option<&str> {
         self.map_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across
-    /// all AWS.</p>
+    /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all AWS.</p>
     /// <ul>
-    /// <li>
-    /// <p>Format example:
-    /// <code>arn:aws:geo:region:account-id:maps/ExampleMap</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:maps/ExampleMap</code> </p> </li>
     /// </ul>
     pub fn map_arn(&self) -> std::option::Option<&str> {
         self.map_arn.as_deref()
     }
-    /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
+    /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
@@ -3776,40 +3259,28 @@ pub mod create_map_output {
             self.map_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across
-        /// all AWS.</p>
+        /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all AWS.</p>
         /// <ul>
-        /// <li>
-        /// <p>Format example:
-        /// <code>arn:aws:geo:region:account-id:maps/ExampleMap</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:maps/ExampleMap</code> </p> </li>
         /// </ul>
         pub fn map_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.map_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across
-        /// all AWS.</p>
+        /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all AWS.</p>
         /// <ul>
-        /// <li>
-        /// <p>Format example:
-        /// <code>arn:aws:geo:region:account-id:maps/ExampleMap</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:maps/ExampleMap</code> </p> </li>
         /// </ul>
         pub fn set_map_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.map_arn = input;
             self
         }
-        /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
+        /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
         pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_time = Some(input);
             self
         }
-        /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
+        /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
         pub fn set_create_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -3870,17 +3341,12 @@ impl DeleteMapOutput {
 pub struct UpdateMapOutput {
     /// <p>The name of the updated map resource.</p>
     pub map_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the updated map resource. Used to specify a resource
-    /// across AWS.</p>
+    /// <p>The Amazon Resource Name (ARN) of the updated map resource. Used to specify a resource across AWS.</p>
     /// <ul>
-    /// <li>
-    /// <p>Format example: <code>arn:aws:geo:region:account-id:maps/ExampleMap</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:maps/ExampleMap</code> </p> </li>
     /// </ul>
     pub map_arn: std::option::Option<std::string::String>,
-    /// <p>The timestamp for when the map resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    /// <p>The timestamp for when the map resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UpdateMapOutput {
@@ -3888,19 +3354,14 @@ impl UpdateMapOutput {
     pub fn map_name(&self) -> std::option::Option<&str> {
         self.map_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the updated map resource. Used to specify a resource
-    /// across AWS.</p>
+    /// <p>The Amazon Resource Name (ARN) of the updated map resource. Used to specify a resource across AWS.</p>
     /// <ul>
-    /// <li>
-    /// <p>Format example: <code>arn:aws:geo:region:account-id:maps/ExampleMap</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:maps/ExampleMap</code> </p> </li>
     /// </ul>
     pub fn map_arn(&self) -> std::option::Option<&str> {
         self.map_arn.as_deref()
     }
-    /// <p>The timestamp for when the map resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+    /// <p>The timestamp for when the map resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
@@ -3935,38 +3396,28 @@ pub mod update_map_output {
             self.map_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the updated map resource. Used to specify a resource
-        /// across AWS.</p>
+        /// <p>The Amazon Resource Name (ARN) of the updated map resource. Used to specify a resource across AWS.</p>
         /// <ul>
-        /// <li>
-        /// <p>Format example: <code>arn:aws:geo:region:account-id:maps/ExampleMap</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:maps/ExampleMap</code> </p> </li>
         /// </ul>
         pub fn map_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.map_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the updated map resource. Used to specify a resource
-        /// across AWS.</p>
+        /// <p>The Amazon Resource Name (ARN) of the updated map resource. Used to specify a resource across AWS.</p>
         /// <ul>
-        /// <li>
-        /// <p>Format example: <code>arn:aws:geo:region:account-id:maps/ExampleMap</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:maps/ExampleMap</code> </p> </li>
         /// </ul>
         pub fn set_map_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.map_arn = input;
             self
         }
-        /// <p>The timestamp for when the map resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+        /// <p>The timestamp for when the map resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.update_time = Some(input);
             self
         }
-        /// <p>The timestamp for when the map resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+        /// <p>The timestamp for when the map resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn set_update_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -3997,18 +3448,12 @@ impl UpdateMapOutput {
 pub struct DescribeMapOutput {
     /// <p>The map style selected from an available provider.</p>
     pub map_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across
-    /// all AWS.</p>
+    /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all AWS.</p>
     /// <ul>
-    /// <li>
-    /// <p>Format example:
-    /// <code>arn:aws:geo:region:account-id:maps/ExampleMap</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:maps/ExampleMap</code> </p> </li>
     /// </ul>
     pub map_arn: std::option::Option<std::string::String>,
     /// <p>The pricing plan selected for the specified map resource.</p>
-    ///
     /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>Specifies the data provider for the associated map tiles.</p>
@@ -4020,11 +3465,9 @@ pub struct DescribeMapOutput {
     /// <p>Tags associated with the map resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
+    /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The timestamp for when the map resource was last update in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
+    /// <p>The timestamp for when the map resource was last update in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeMapOutput {
@@ -4032,20 +3475,14 @@ impl DescribeMapOutput {
     pub fn map_name(&self) -> std::option::Option<&str> {
         self.map_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across
-    /// all AWS.</p>
+    /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all AWS.</p>
     /// <ul>
-    /// <li>
-    /// <p>Format example:
-    /// <code>arn:aws:geo:region:account-id:maps/ExampleMap</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:maps/ExampleMap</code> </p> </li>
     /// </ul>
     pub fn map_arn(&self) -> std::option::Option<&str> {
         self.map_arn.as_deref()
     }
     /// <p>The pricing plan selected for the specified map resource.</p>
-    ///
     /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
     pub fn pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
         self.pricing_plan.as_ref()
@@ -4069,13 +3506,11 @@ impl DescribeMapOutput {
     {
         self.tags.as_ref()
     }
-    /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
+    /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
-    /// <p>The timestamp for when the map resource was last update in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
+    /// <p>The timestamp for when the map resource was last update in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
@@ -4124,41 +3559,29 @@ pub mod describe_map_output {
             self.map_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across
-        /// all AWS.</p>
+        /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all AWS.</p>
         /// <ul>
-        /// <li>
-        /// <p>Format example:
-        /// <code>arn:aws:geo:region:account-id:maps/ExampleMap</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:maps/ExampleMap</code> </p> </li>
         /// </ul>
         pub fn map_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.map_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across
-        /// all AWS.</p>
+        /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all AWS.</p>
         /// <ul>
-        /// <li>
-        /// <p>Format example:
-        /// <code>arn:aws:geo:region:account-id:maps/ExampleMap</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:maps/ExampleMap</code> </p> </li>
         /// </ul>
         pub fn set_map_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.map_arn = input;
             self
         }
         /// <p>The pricing plan selected for the specified map resource.</p>
-        ///
         /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.pricing_plan = Some(input);
             self
         }
         /// <p>The pricing plan selected for the specified map resource.</p>
-        ///
         /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
         pub fn set_pricing_plan(
             mut self,
@@ -4225,14 +3648,12 @@ pub mod describe_map_output {
             self.tags = input;
             self
         }
-        /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
+        /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
         pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_time = Some(input);
             self
         }
-        /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
+        /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
         pub fn set_create_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -4240,14 +3661,12 @@ pub mod describe_map_output {
             self.create_time = input;
             self
         }
-        /// <p>The timestamp for when the map resource was last update in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
+        /// <p>The timestamp for when the map resource was last update in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
         pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.update_time = Some(input);
             self
         }
-        /// <p>The timestamp for when the map resource was last update in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
+        /// <p>The timestamp for when the map resource was last update in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
         pub fn set_update_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -4284,13 +3703,9 @@ impl DescribeMapOutput {
 pub struct PutGeofenceOutput {
     /// <p>The geofence identifier entered in the request.</p>
     pub geofence_id: std::option::Option<std::string::String>,
-    /// <p>The timestamp for when the geofence was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
-    /// </p>
+    /// <p>The timestamp for when the geofence was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The timestamp for when the geofence was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
-    /// </p>
+    /// <p>The timestamp for when the geofence was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl PutGeofenceOutput {
@@ -4298,15 +3713,11 @@ impl PutGeofenceOutput {
     pub fn geofence_id(&self) -> std::option::Option<&str> {
         self.geofence_id.as_deref()
     }
-    /// <p>The timestamp for when the geofence was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
-    /// </p>
+    /// <p>The timestamp for when the geofence was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
     pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
-    /// <p>The timestamp for when the geofence was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
-    /// </p>
+    /// <p>The timestamp for when the geofence was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
     pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
@@ -4341,16 +3752,12 @@ pub mod put_geofence_output {
             self.geofence_id = input;
             self
         }
-        /// <p>The timestamp for when the geofence was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
-        /// </p>
+        /// <p>The timestamp for when the geofence was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
         pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_time = Some(input);
             self
         }
-        /// <p>The timestamp for when the geofence was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
-        /// </p>
+        /// <p>The timestamp for when the geofence was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
         pub fn set_create_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -4358,16 +3765,12 @@ pub mod put_geofence_output {
             self.create_time = input;
             self
         }
-        /// <p>The timestamp for when the geofence was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
-        /// </p>
+        /// <p>The timestamp for when the geofence was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
         pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.update_time = Some(input);
             self
         }
-        /// <p>The timestamp for when the geofence was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
-        /// </p>
+        /// <p>The timestamp for when the geofence was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
         pub fn set_update_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -4398,8 +3801,7 @@ impl PutGeofenceOutput {
 pub struct ListGeofencesOutput {
     /// <p>Contains a list of geofences stored in the geofence collection.</p>
     pub entries: std::option::Option<std::vec::Vec<crate::model::ListGeofenceResponseEntry>>,
-    /// <p>A pagination token indicating there are additional pages available. You can use the
-    /// token in a following request to fetch the next set of results. </p>
+    /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListGeofencesOutput {
@@ -4407,8 +3809,7 @@ impl ListGeofencesOutput {
     pub fn entries(&self) -> std::option::Option<&[crate::model::ListGeofenceResponseEntry]> {
         self.entries.as_deref()
     }
-    /// <p>A pagination token indicating there are additional pages available. You can use the
-    /// token in a following request to fetch the next set of results. </p>
+    /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -4451,14 +3852,12 @@ pub mod list_geofences_output {
             self.entries = input;
             self
         }
-        /// <p>A pagination token indicating there are additional pages available. You can use the
-        /// token in a following request to fetch the next set of results. </p>
+        /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A pagination token indicating there are additional pages available. You can use the
-        /// token in a following request to fetch the next set of results. </p>
+        /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4487,40 +3886,18 @@ pub struct GetGeofenceOutput {
     pub geofence_id: std::option::Option<std::string::String>,
     /// <p>Contains the geofence geometry details describing a polygon.</p>
     pub geometry: std::option::Option<crate::model::GeofenceGeometry>,
-    /// <p>Identifies the state of the geofence. A geofence will hold one of the following
-    /// states:</p>
+    /// <p>Identifies the state of the geofence. A geofence will hold one of the following states:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code> — The geofence has been indexed by the system. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PENDING</code> — The geofence is being processed by the system.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FAILED</code> — The geofence failed to be indexed by the system.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DELETED</code> — The geofence has been deleted from the system
-    /// index.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DELETING</code> — The geofence is being deleted from the system
-    /// index.</p>
-    /// </li>
+    /// <li> <p> <code>ACTIVE</code> — The geofence has been indexed by the system. </p> </li>
+    /// <li> <p> <code>PENDING</code> — The geofence is being processed by the system.</p> </li>
+    /// <li> <p> <code>FAILED</code> — The geofence failed to be indexed by the system.</p> </li>
+    /// <li> <p> <code>DELETED</code> — The geofence has been deleted from the system index.</p> </li>
+    /// <li> <p> <code>DELETING</code> — The geofence is being deleted from the system index.</p> </li>
     /// </ul>
     pub status: std::option::Option<std::string::String>,
-    /// <p>The timestamp for when the geofence collection was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
-    /// </p>
+    /// <p>The timestamp for when the geofence collection was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The timestamp for when the geofence collection was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
-    /// </p>
+    /// <p>The timestamp for when the geofence collection was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetGeofenceOutput {
@@ -4532,44 +3909,22 @@ impl GetGeofenceOutput {
     pub fn geometry(&self) -> std::option::Option<&crate::model::GeofenceGeometry> {
         self.geometry.as_ref()
     }
-    /// <p>Identifies the state of the geofence. A geofence will hold one of the following
-    /// states:</p>
+    /// <p>Identifies the state of the geofence. A geofence will hold one of the following states:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code> — The geofence has been indexed by the system. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PENDING</code> — The geofence is being processed by the system.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FAILED</code> — The geofence failed to be indexed by the system.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DELETED</code> — The geofence has been deleted from the system
-    /// index.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DELETING</code> — The geofence is being deleted from the system
-    /// index.</p>
-    /// </li>
+    /// <li> <p> <code>ACTIVE</code> — The geofence has been indexed by the system. </p> </li>
+    /// <li> <p> <code>PENDING</code> — The geofence is being processed by the system.</p> </li>
+    /// <li> <p> <code>FAILED</code> — The geofence failed to be indexed by the system.</p> </li>
+    /// <li> <p> <code>DELETED</code> — The geofence has been deleted from the system index.</p> </li>
+    /// <li> <p> <code>DELETING</code> — The geofence is being deleted from the system index.</p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
     }
-    /// <p>The timestamp for when the geofence collection was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
-    /// </p>
+    /// <p>The timestamp for when the geofence collection was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
     pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
-    /// <p>The timestamp for when the geofence collection was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
-    /// </p>
+    /// <p>The timestamp for when the geofence collection was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
     pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
@@ -4621,76 +3976,36 @@ pub mod get_geofence_output {
             self.geometry = input;
             self
         }
-        /// <p>Identifies the state of the geofence. A geofence will hold one of the following
-        /// states:</p>
+        /// <p>Identifies the state of the geofence. A geofence will hold one of the following states:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code> — The geofence has been indexed by the system. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PENDING</code> — The geofence is being processed by the system.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FAILED</code> — The geofence failed to be indexed by the system.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DELETED</code> — The geofence has been deleted from the system
-        /// index.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DELETING</code> — The geofence is being deleted from the system
-        /// index.</p>
-        /// </li>
+        /// <li> <p> <code>ACTIVE</code> — The geofence has been indexed by the system. </p> </li>
+        /// <li> <p> <code>PENDING</code> — The geofence is being processed by the system.</p> </li>
+        /// <li> <p> <code>FAILED</code> — The geofence failed to be indexed by the system.</p> </li>
+        /// <li> <p> <code>DELETED</code> — The geofence has been deleted from the system index.</p> </li>
+        /// <li> <p> <code>DELETING</code> — The geofence is being deleted from the system index.</p> </li>
         /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
             self
         }
-        /// <p>Identifies the state of the geofence. A geofence will hold one of the following
-        /// states:</p>
+        /// <p>Identifies the state of the geofence. A geofence will hold one of the following states:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code> — The geofence has been indexed by the system. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PENDING</code> — The geofence is being processed by the system.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FAILED</code> — The geofence failed to be indexed by the system.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DELETED</code> — The geofence has been deleted from the system
-        /// index.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DELETING</code> — The geofence is being deleted from the system
-        /// index.</p>
-        /// </li>
+        /// <li> <p> <code>ACTIVE</code> — The geofence has been indexed by the system. </p> </li>
+        /// <li> <p> <code>PENDING</code> — The geofence is being processed by the system.</p> </li>
+        /// <li> <p> <code>FAILED</code> — The geofence failed to be indexed by the system.</p> </li>
+        /// <li> <p> <code>DELETED</code> — The geofence has been deleted from the system index.</p> </li>
+        /// <li> <p> <code>DELETING</code> — The geofence is being deleted from the system index.</p> </li>
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
         }
-        /// <p>The timestamp for when the geofence collection was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
-        /// </p>
+        /// <p>The timestamp for when the geofence collection was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
         pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_time = Some(input);
             self
         }
-        /// <p>The timestamp for when the geofence collection was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
-        /// </p>
+        /// <p>The timestamp for when the geofence collection was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
         pub fn set_create_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -4698,16 +4013,12 @@ pub mod get_geofence_output {
             self.create_time = input;
             self
         }
-        /// <p>The timestamp for when the geofence collection was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
-        /// </p>
+        /// <p>The timestamp for when the geofence collection was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
         pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.update_time = Some(input);
             self
         }
-        /// <p>The timestamp for when the geofence collection was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
-        /// </p>
+        /// <p>The timestamp for when the geofence collection was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
         pub fn set_update_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -4740,8 +4051,7 @@ impl GetGeofenceOutput {
 pub struct BatchPutGeofenceOutput {
     /// <p>Contains each geofence that was successfully stored in a geofence collection.</p>
     pub successes: std::option::Option<std::vec::Vec<crate::model::BatchPutGeofenceSuccess>>,
-    /// <p>Contains additional error details for each geofence that failed to be stored in a
-    /// geofence collection.</p>
+    /// <p>Contains additional error details for each geofence that failed to be stored in a geofence collection.</p>
     pub errors: std::option::Option<std::vec::Vec<crate::model::BatchPutGeofenceError>>,
 }
 impl BatchPutGeofenceOutput {
@@ -4749,8 +4059,7 @@ impl BatchPutGeofenceOutput {
     pub fn successes(&self) -> std::option::Option<&[crate::model::BatchPutGeofenceSuccess]> {
         self.successes.as_deref()
     }
-    /// <p>Contains additional error details for each geofence that failed to be stored in a
-    /// geofence collection.</p>
+    /// <p>Contains additional error details for each geofence that failed to be stored in a geofence collection.</p>
     pub fn errors(&self) -> std::option::Option<&[crate::model::BatchPutGeofenceError]> {
         self.errors.as_deref()
     }
@@ -4797,16 +4106,14 @@ pub mod batch_put_geofence_output {
         ///
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
-        /// <p>Contains additional error details for each geofence that failed to be stored in a
-        /// geofence collection.</p>
+        /// <p>Contains additional error details for each geofence that failed to be stored in a geofence collection.</p>
         pub fn errors(mut self, input: crate::model::BatchPutGeofenceError) -> Self {
             let mut v = self.errors.unwrap_or_default();
             v.push(input);
             self.errors = Some(v);
             self
         }
-        /// <p>Contains additional error details for each geofence that failed to be stored in a
-        /// geofence collection.</p>
+        /// <p>Contains additional error details for each geofence that failed to be stored in a geofence collection.</p>
         pub fn set_errors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BatchPutGeofenceError>>,
@@ -4834,13 +4141,11 @@ impl BatchPutGeofenceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchEvaluateGeofencesOutput {
-    /// <p>Contains error details for each device that failed to evaluate its position against
-    /// the given geofence collection.</p>
+    /// <p>Contains error details for each device that failed to evaluate its position against the given geofence collection.</p>
     pub errors: std::option::Option<std::vec::Vec<crate::model::BatchEvaluateGeofencesError>>,
 }
 impl BatchEvaluateGeofencesOutput {
-    /// <p>Contains error details for each device that failed to evaluate its position against
-    /// the given geofence collection.</p>
+    /// <p>Contains error details for each device that failed to evaluate its position against the given geofence collection.</p>
     pub fn errors(&self) -> std::option::Option<&[crate::model::BatchEvaluateGeofencesError]> {
         self.errors.as_deref()
     }
@@ -4866,16 +4171,14 @@ pub mod batch_evaluate_geofences_output {
         ///
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
-        /// <p>Contains error details for each device that failed to evaluate its position against
-        /// the given geofence collection.</p>
+        /// <p>Contains error details for each device that failed to evaluate its position against the given geofence collection.</p>
         pub fn errors(mut self, input: crate::model::BatchEvaluateGeofencesError) -> Self {
             let mut v = self.errors.unwrap_or_default();
             v.push(input);
             self.errors = Some(v);
             self
         }
-        /// <p>Contains error details for each device that failed to evaluate its position against
-        /// the given geofence collection.</p>
+        /// <p>Contains error details for each device that failed to evaluate its position against the given geofence collection.</p>
         pub fn set_errors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BatchEvaluateGeofencesError>>,
@@ -4969,8 +4272,7 @@ pub struct ListGeofenceCollectionsOutput {
     /// <p>Lists the geofence collections that exist in your AWS account.</p>
     pub entries:
         std::option::Option<std::vec::Vec<crate::model::ListGeofenceCollectionsResponseEntry>>,
-    /// <p>A pagination token indicating there are additional pages available. You can use the
-    /// token in a following request to fetch the next set of results. </p>
+    /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListGeofenceCollectionsOutput {
@@ -4980,8 +4282,7 @@ impl ListGeofenceCollectionsOutput {
     ) -> std::option::Option<&[crate::model::ListGeofenceCollectionsResponseEntry]> {
         self.entries.as_deref()
     }
-    /// <p>A pagination token indicating there are additional pages available. You can use the
-    /// token in a following request to fetch the next set of results. </p>
+    /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5029,14 +4330,12 @@ pub mod list_geofence_collections_output {
             self.entries = input;
             self
         }
-        /// <p>A pagination token indicating there are additional pages available. You can use the
-        /// token in a following request to fetch the next set of results. </p>
+        /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A pagination token indicating there are additional pages available. You can use the
-        /// token in a following request to fetch the next set of results. </p>
+        /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5063,19 +4362,12 @@ impl ListGeofenceCollectionsOutput {
 pub struct CreateGeofenceCollectionOutput {
     /// <p>The name for the geofence collection.</p>
     pub collection_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used when you
-    /// need to specify a resource across all AWS. </p>
+    /// <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a resource across all AWS. </p>
     /// <ul>
-    /// <li>
-    /// <p>Format example:
-    /// <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code> </p> </li>
     /// </ul>
     pub collection_arn: std::option::Option<std::string::String>,
-    /// <p>The timestamp for when the geofence collection was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
-    /// </p>
+    /// <p>The timestamp for when the geofence collection was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateGeofenceCollectionOutput {
@@ -5083,21 +4375,14 @@ impl CreateGeofenceCollectionOutput {
     pub fn collection_name(&self) -> std::option::Option<&str> {
         self.collection_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used when you
-    /// need to specify a resource across all AWS. </p>
+    /// <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a resource across all AWS. </p>
     /// <ul>
-    /// <li>
-    /// <p>Format example:
-    /// <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code> </p> </li>
     /// </ul>
     pub fn collection_arn(&self) -> std::option::Option<&str> {
         self.collection_arn.as_deref()
     }
-    /// <p>The timestamp for when the geofence collection was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
-    /// </p>
+    /// <p>The timestamp for when the geofence collection was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
     pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
@@ -5135,27 +4420,17 @@ pub mod create_geofence_collection_output {
             self.collection_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used when you
-        /// need to specify a resource across all AWS. </p>
+        /// <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a resource across all AWS. </p>
         /// <ul>
-        /// <li>
-        /// <p>Format example:
-        /// <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code> </p> </li>
         /// </ul>
         pub fn collection_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.collection_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used when you
-        /// need to specify a resource across all AWS. </p>
+        /// <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a resource across all AWS. </p>
         /// <ul>
-        /// <li>
-        /// <p>Format example:
-        /// <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code> </p> </li>
         /// </ul>
         pub fn set_collection_arn(
             mut self,
@@ -5164,16 +4439,12 @@ pub mod create_geofence_collection_output {
             self.collection_arn = input;
             self
         }
-        /// <p>The timestamp for when the geofence collection was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
-        /// </p>
+        /// <p>The timestamp for when the geofence collection was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
         pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_time = Some(input);
             self
         }
-        /// <p>The timestamp for when the geofence collection was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
-        /// </p>
+        /// <p>The timestamp for when the geofence collection was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
         pub fn set_create_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -5234,19 +4505,12 @@ impl DeleteGeofenceCollectionOutput {
 pub struct UpdateGeofenceCollectionOutput {
     /// <p>The name of the updated geofence collection.</p>
     pub collection_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the updated geofence collection. Used to specify a
-    /// resource across AWS.</p>
+    /// <p>The Amazon Resource Name (ARN) of the updated geofence collection. Used to specify a resource across AWS.</p>
     /// <ul>
-    /// <li>
-    /// <p>Format example:
-    /// <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code> </p> </li>
     /// </ul>
     pub collection_arn: std::option::Option<std::string::String>,
-    /// <p>The time when the geofence collection was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
-    /// </p>
+    /// <p>The time when the geofence collection was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl UpdateGeofenceCollectionOutput {
@@ -5254,21 +4518,14 @@ impl UpdateGeofenceCollectionOutput {
     pub fn collection_name(&self) -> std::option::Option<&str> {
         self.collection_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the updated geofence collection. Used to specify a
-    /// resource across AWS.</p>
+    /// <p>The Amazon Resource Name (ARN) of the updated geofence collection. Used to specify a resource across AWS.</p>
     /// <ul>
-    /// <li>
-    /// <p>Format example:
-    /// <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code> </p> </li>
     /// </ul>
     pub fn collection_arn(&self) -> std::option::Option<&str> {
         self.collection_arn.as_deref()
     }
-    /// <p>The time when the geofence collection was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
-    /// </p>
+    /// <p>The time when the geofence collection was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
     pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
@@ -5306,27 +4563,17 @@ pub mod update_geofence_collection_output {
             self.collection_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the updated geofence collection. Used to specify a
-        /// resource across AWS.</p>
+        /// <p>The Amazon Resource Name (ARN) of the updated geofence collection. Used to specify a resource across AWS.</p>
         /// <ul>
-        /// <li>
-        /// <p>Format example:
-        /// <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code> </p> </li>
         /// </ul>
         pub fn collection_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.collection_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the updated geofence collection. Used to specify a
-        /// resource across AWS.</p>
+        /// <p>The Amazon Resource Name (ARN) of the updated geofence collection. Used to specify a resource across AWS.</p>
         /// <ul>
-        /// <li>
-        /// <p>Format example:
-        /// <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code> </p> </li>
         /// </ul>
         pub fn set_collection_arn(
             mut self,
@@ -5335,16 +4582,12 @@ pub mod update_geofence_collection_output {
             self.collection_arn = input;
             self
         }
-        /// <p>The time when the geofence collection was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
-        /// </p>
+        /// <p>The time when the geofence collection was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
         pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.update_time = Some(input);
             self
         }
-        /// <p>The time when the geofence collection was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
-        /// </p>
+        /// <p>The time when the geofence collection was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
         pub fn set_update_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -5375,21 +4618,15 @@ impl UpdateGeofenceCollectionOutput {
 pub struct DescribeGeofenceCollectionOutput {
     /// <p>The name of the geofence collection.</p>
     pub collection_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used when you
-    /// need to specify a resource across all AWS. </p>
+    /// <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a resource across all AWS. </p>
     /// <ul>
-    /// <li>
-    /// <p>Format example:
-    /// <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code> </p> </li>
     /// </ul>
     pub collection_arn: std::option::Option<std::string::String>,
     /// <p>The optional description for the geofence collection.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The pricing plan selected for the specified geofence collection.</p>
-    /// <p>For additional details and restrictions on each pricing plan option, see the <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
-    /// page</a>.</p>
+    /// <p>For additional details and restrictions on each pricing plan option, see the <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.</p>
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>The specified data provider for the geofence collection.</p>
     pub pricing_plan_data_source: std::option::Option<std::string::String>,
@@ -5398,13 +4635,9 @@ pub struct DescribeGeofenceCollectionOutput {
     /// <p>Displays the key, value pairs of tags associated with this resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The timestamp for when the geofence resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
-    /// </p>
+    /// <p>The timestamp for when the geofence resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The timestamp for when the geofence collection was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
-    /// </p>
+    /// <p>The timestamp for when the geofence collection was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeGeofenceCollectionOutput {
@@ -5412,14 +4645,9 @@ impl DescribeGeofenceCollectionOutput {
     pub fn collection_name(&self) -> std::option::Option<&str> {
         self.collection_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used when you
-    /// need to specify a resource across all AWS. </p>
+    /// <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a resource across all AWS. </p>
     /// <ul>
-    /// <li>
-    /// <p>Format example:
-    /// <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code> </p> </li>
     /// </ul>
     pub fn collection_arn(&self) -> std::option::Option<&str> {
         self.collection_arn.as_deref()
@@ -5429,8 +4657,7 @@ impl DescribeGeofenceCollectionOutput {
         self.description.as_deref()
     }
     /// <p>The pricing plan selected for the specified geofence collection.</p>
-    /// <p>For additional details and restrictions on each pricing plan option, see the <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
-    /// page</a>.</p>
+    /// <p>For additional details and restrictions on each pricing plan option, see the <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.</p>
     pub fn pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
         self.pricing_plan.as_ref()
     }
@@ -5449,15 +4676,11 @@ impl DescribeGeofenceCollectionOutput {
     {
         self.tags.as_ref()
     }
-    /// <p>The timestamp for when the geofence resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
-    /// </p>
+    /// <p>The timestamp for when the geofence resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
     pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
-    /// <p>The timestamp for when the geofence collection was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
-    /// </p>
+    /// <p>The timestamp for when the geofence collection was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
     pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
@@ -5509,27 +4732,17 @@ pub mod describe_geofence_collection_output {
             self.collection_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used when you
-        /// need to specify a resource across all AWS. </p>
+        /// <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a resource across all AWS. </p>
         /// <ul>
-        /// <li>
-        /// <p>Format example:
-        /// <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code> </p> </li>
         /// </ul>
         pub fn collection_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.collection_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used when you
-        /// need to specify a resource across all AWS. </p>
+        /// <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a resource across all AWS. </p>
         /// <ul>
-        /// <li>
-        /// <p>Format example:
-        /// <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code> </p> </li>
         /// </ul>
         pub fn set_collection_arn(
             mut self,
@@ -5549,15 +4762,13 @@ pub mod describe_geofence_collection_output {
             self
         }
         /// <p>The pricing plan selected for the specified geofence collection.</p>
-        /// <p>For additional details and restrictions on each pricing plan option, see the <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
-        /// page</a>.</p>
+        /// <p>For additional details and restrictions on each pricing plan option, see the <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.</p>
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.pricing_plan = Some(input);
             self
         }
         /// <p>The pricing plan selected for the specified geofence collection.</p>
-        /// <p>For additional details and restrictions on each pricing plan option, see the <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
-        /// page</a>.</p>
+        /// <p>For additional details and restrictions on each pricing plan option, see the <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.</p>
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -5613,16 +4824,12 @@ pub mod describe_geofence_collection_output {
             self.tags = input;
             self
         }
-        /// <p>The timestamp for when the geofence resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
-        /// </p>
+        /// <p>The timestamp for when the geofence resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
         pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_time = Some(input);
             self
         }
-        /// <p>The timestamp for when the geofence resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
-        /// </p>
+        /// <p>The timestamp for when the geofence resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
         pub fn set_create_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -5630,16 +4837,12 @@ pub mod describe_geofence_collection_output {
             self.create_time = input;
             self
         }
-        /// <p>The timestamp for when the geofence collection was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
-        /// </p>
+        /// <p>The timestamp for when the geofence collection was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
         pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.update_time = Some(input);
             self
         }
-        /// <p>The timestamp for when the geofence collection was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
-        /// </p>
+        /// <p>The timestamp for when the geofence collection was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
         pub fn set_update_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -5736,10 +4939,7 @@ impl TagResourceOutput {
 pub struct ListTagsForResourceOutput {
     /// <p>Tags that have been applied to the specified resource. Tags are mapped from the tag key to the tag value: <code>"TagKey" : "TagValue"</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p>Format example: <code>{"tag1" : "value1", "tag2" : "value2"} </code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Format example: <code>{"tag1" : "value1", "tag2" : "value2"} </code> </p> </li>
     /// </ul>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -5747,10 +4947,7 @@ pub struct ListTagsForResourceOutput {
 impl ListTagsForResourceOutput {
     /// <p>Tags that have been applied to the specified resource. Tags are mapped from the tag key to the tag value: <code>"TagKey" : "TagValue"</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p>Format example: <code>{"tag1" : "value1", "tag2" : "value2"} </code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Format example: <code>{"tag1" : "value1", "tag2" : "value2"} </code> </p> </li>
     /// </ul>
     pub fn tags(
         &self,
@@ -5783,10 +4980,7 @@ pub mod list_tags_for_resource_output {
         ///
         /// <p>Tags that have been applied to the specified resource. Tags are mapped from the tag key to the tag value: <code>"TagKey" : "TagValue"</code>.</p>
         /// <ul>
-        /// <li>
-        /// <p>Format example: <code>{"tag1" : "value1", "tag2" : "value2"} </code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Format example: <code>{"tag1" : "value1", "tag2" : "value2"} </code> </p> </li>
         /// </ul>
         pub fn tags(
             mut self,
@@ -5800,10 +4994,7 @@ pub mod list_tags_for_resource_output {
         }
         /// <p>Tags that have been applied to the specified resource. Tags are mapped from the tag key to the tag value: <code>"TagKey" : "TagValue"</code>.</p>
         /// <ul>
-        /// <li>
-        /// <p>Format example: <code>{"tag1" : "value1", "tag2" : "value2"} </code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Format example: <code>{"tag1" : "value1", "tag2" : "value2"} </code> </p> </li>
         /// </ul>
         pub fn set_tags(
             mut self,

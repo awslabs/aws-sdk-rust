@@ -37,9 +37,7 @@ pub mod create_application_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Metadata to assign to the application. Tags help organize and categorize your AppConfig
-        /// resources. Each tag consists of a key and an optional value, both of which you
-        /// define.</p>
+        /// <p>Metadata to assign to the application. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -50,9 +48,7 @@ pub mod create_application_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>Metadata to assign to the application. Tags help organize and categorize your AppConfig
-        /// resources. Each tag consists of a key and an optional value, both of which you
-        /// define.</p>
+        /// <p>Metadata to assign to the application. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -245,53 +241,39 @@ pub mod create_configuration_profile_input {
             self.description = input;
             self
         }
-        /// <p>A URI to locate the configuration. You can specify the AppConfig hosted configuration
-        /// store, Systems Manager (SSM) document, an SSM Parameter Store parameter, or an Amazon S3 object. For the
-        /// hosted configuration store and for feature flags, specify <code>hosted</code>. For an SSM
-        /// document, specify either the document name in the format
-        /// <code>ssm-document://<Document_name></code> or the Amazon Resource Name (ARN). For
-        /// a parameter, specify either the parameter name in the format
-        /// <code>ssm-parameter://<Parameter_name></code> or the ARN. For an Amazon S3 object,
-        /// specify the URI in the following format: <code>s3://<bucket>/<objectKey>
-        /// </code>. Here is an example:
-        /// <code>s3://my-bucket/my-app/us-east-1/my-config.json</code>
-        /// </p>
+        /// <p>A URI to locate the configuration. You can specify the AppConfig hosted configuration store, Systems Manager (SSM) document, an SSM Parameter Store parameter, or an Amazon S3 object. For the hosted configuration store and for feature flags, specify <code>hosted</code>. For an SSM document, specify either the document name in the format <code>ssm-document://
+        /// <document_name></document_name></code> or the Amazon Resource Name (ARN). For a parameter, specify either the parameter name in the format <code>ssm-parameter://
+        /// <parameter_name></parameter_name></code> or the ARN. For an Amazon S3 object, specify the URI in the following format: <code>s3://
+        /// <bucket>
+        /// /
+        /// <objectkey>
+        /// </objectkey>
+        /// </bucket></code>. Here is an example: <code>s3://my-bucket/my-app/us-east-1/my-config.json</code> </p>
         pub fn location_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.location_uri = Some(input.into());
             self
         }
-        /// <p>A URI to locate the configuration. You can specify the AppConfig hosted configuration
-        /// store, Systems Manager (SSM) document, an SSM Parameter Store parameter, or an Amazon S3 object. For the
-        /// hosted configuration store and for feature flags, specify <code>hosted</code>. For an SSM
-        /// document, specify either the document name in the format
-        /// <code>ssm-document://<Document_name></code> or the Amazon Resource Name (ARN). For
-        /// a parameter, specify either the parameter name in the format
-        /// <code>ssm-parameter://<Parameter_name></code> or the ARN. For an Amazon S3 object,
-        /// specify the URI in the following format: <code>s3://<bucket>/<objectKey>
-        /// </code>. Here is an example:
-        /// <code>s3://my-bucket/my-app/us-east-1/my-config.json</code>
-        /// </p>
+        /// <p>A URI to locate the configuration. You can specify the AppConfig hosted configuration store, Systems Manager (SSM) document, an SSM Parameter Store parameter, or an Amazon S3 object. For the hosted configuration store and for feature flags, specify <code>hosted</code>. For an SSM document, specify either the document name in the format <code>ssm-document://
+        /// <document_name></document_name></code> or the Amazon Resource Name (ARN). For a parameter, specify either the parameter name in the format <code>ssm-parameter://
+        /// <parameter_name></parameter_name></code> or the ARN. For an Amazon S3 object, specify the URI in the following format: <code>s3://
+        /// <bucket>
+        /// /
+        /// <objectkey>
+        /// </objectkey>
+        /// </bucket></code>. Here is an example: <code>s3://my-bucket/my-app/us-east-1/my-config.json</code> </p>
         pub fn set_location_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location_uri = input;
             self
         }
-        /// <p>The ARN of an IAM role with permission to access the configuration at the specified
-        /// <code>LocationUri</code>.</p>
-        /// <important>
-        /// <p>A retrieval role ARN is not required for configurations stored in the AppConfig
-        /// hosted configuration store. It is required for all other sources that store your
-        /// configuration. </p>
+        /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p> <important>
+        /// <p>A retrieval role ARN is not required for configurations stored in the AppConfig hosted configuration store. It is required for all other sources that store your configuration. </p>
         /// </important>
         pub fn retrieval_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.retrieval_role_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of an IAM role with permission to access the configuration at the specified
-        /// <code>LocationUri</code>.</p>
-        /// <important>
-        /// <p>A retrieval role ARN is not required for configurations stored in the AppConfig
-        /// hosted configuration store. It is required for all other sources that store your
-        /// configuration. </p>
+        /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p> <important>
+        /// <p>A retrieval role ARN is not required for configurations stored in the AppConfig hosted configuration store. It is required for all other sources that store your configuration. </p>
         /// </important>
         pub fn set_retrieval_role_arn(
             mut self,
@@ -323,9 +305,7 @@ pub mod create_configuration_profile_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Metadata to assign to the configuration profile. Tags help organize and categorize your
-        /// AppConfig resources. Each tag consists of a key and an optional value, both of which you
-        /// define.</p>
+        /// <p>Metadata to assign to the configuration profile. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -336,9 +316,7 @@ pub mod create_configuration_profile_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>Metadata to assign to the configuration profile. Tags help organize and categorize your
-        /// AppConfig resources. Each tag consists of a key and an optional value, both of which you
-        /// define.</p>
+        /// <p>Metadata to assign to the configuration profile. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -348,16 +326,12 @@ pub mod create_configuration_profile_input {
             self.tags = input;
             self
         }
-        /// <p>The type of configurations that the configuration profile contains. A configuration can
-        /// be a feature flag used for enabling or disabling new features or a free-form configuration
-        /// used for distributing configurations to your application.</p>
+        /// <p>The type of configurations that the configuration profile contains. A configuration can be a feature flag used for enabling or disabling new features or a free-form configuration used for distributing configurations to your application.</p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.r#type = Some(input.into());
             self
         }
-        /// <p>The type of configurations that the configuration profile contains. A configuration can
-        /// be a feature flag used for enabling or disabling new features or a free-form configuration
-        /// used for distributing configurations to your application.</p>
+        /// <p>The type of configurations that the configuration profile contains. A configuration can be a feature flag used for enabling or disabling new features or a free-form configuration used for distributing configurations to your application.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -573,94 +547,44 @@ pub mod create_deployment_strategy_input {
             self.deployment_duration_in_minutes = input;
             self
         }
-        /// <p>The amount of time AppConfig monitors for alarms before considering the deployment to be
-        /// complete and no longer eligible for automatic roll back.</p>
+        /// <p>The amount of time AppConfig monitors for alarms before considering the deployment to be complete and no longer eligible for automatic roll back.</p>
         pub fn final_bake_time_in_minutes(mut self, input: i32) -> Self {
             self.final_bake_time_in_minutes = Some(input);
             self
         }
-        /// <p>The amount of time AppConfig monitors for alarms before considering the deployment to be
-        /// complete and no longer eligible for automatic roll back.</p>
+        /// <p>The amount of time AppConfig monitors for alarms before considering the deployment to be complete and no longer eligible for automatic roll back.</p>
         pub fn set_final_bake_time_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.final_bake_time_in_minutes = input;
             self
         }
-        /// <p>The percentage of targets to receive a deployed configuration during each
-        /// interval.</p>
+        /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
         pub fn growth_factor(mut self, input: f32) -> Self {
             self.growth_factor = Some(input);
             self
         }
-        /// <p>The percentage of targets to receive a deployed configuration during each
-        /// interval.</p>
+        /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
         pub fn set_growth_factor(mut self, input: std::option::Option<f32>) -> Self {
             self.growth_factor = input;
             self
         }
-        /// <p>The algorithm used to define how percentage grows over time. AppConfig supports the
-        /// following growth types:</p>
-        /// <p>
-        /// <b>Linear</b>: For this type, AppConfig processes the
-        /// deployment by dividing the total number of targets by the value specified for <code>Step
-        /// percentage</code>. For example, a linear deployment that uses a <code>Step
-        /// percentage</code> of 10 deploys the configuration to 10 percent of the hosts. After
-        /// those deployments are complete, the system deploys the configuration to the next 10
-        /// percent. This continues until 100% of the targets have successfully received the
-        /// configuration.</p>
-        ///
-        /// <p>
-        /// <b>Exponential</b>: For this type, AppConfig processes the
-        /// deployment exponentially using the following formula: <code>G*(2^N)</code>. In this
-        /// formula, <code>G</code> is the growth factor specified by the user and <code>N</code> is
-        /// the number of steps until the configuration is deployed to all targets. For example, if you
-        /// specify a growth factor of 2, then the system rolls out the configuration as
-        /// follows:</p>
-        /// <p>
-        /// <code>2*(2^0)</code>
-        /// </p>
-        /// <p>
-        /// <code>2*(2^1)</code>
-        /// </p>
-        /// <p>
-        /// <code>2*(2^2)</code>
-        /// </p>
-        /// <p>Expressed numerically, the deployment rolls out as follows: 2% of the targets, 4% of the
-        /// targets, 8% of the targets, and continues until the configuration has been deployed to all
-        /// targets.</p>
+        /// <p>The algorithm used to define how percentage grows over time. AppConfig supports the following growth types:</p>
+        /// <p> <b>Linear</b>: For this type, AppConfig processes the deployment by dividing the total number of targets by the value specified for <code>Step percentage</code>. For example, a linear deployment that uses a <code>Step percentage</code> of 10 deploys the configuration to 10 percent of the hosts. After those deployments are complete, the system deploys the configuration to the next 10 percent. This continues until 100% of the targets have successfully received the configuration.</p>
+        /// <p> <b>Exponential</b>: For this type, AppConfig processes the deployment exponentially using the following formula: <code>G*(2^N)</code>. In this formula, <code>G</code> is the growth factor specified by the user and <code>N</code> is the number of steps until the configuration is deployed to all targets. For example, if you specify a growth factor of 2, then the system rolls out the configuration as follows:</p>
+        /// <p> <code>2*(2^0)</code> </p>
+        /// <p> <code>2*(2^1)</code> </p>
+        /// <p> <code>2*(2^2)</code> </p>
+        /// <p>Expressed numerically, the deployment rolls out as follows: 2% of the targets, 4% of the targets, 8% of the targets, and continues until the configuration has been deployed to all targets.</p>
         pub fn growth_type(mut self, input: crate::model::GrowthType) -> Self {
             self.growth_type = Some(input);
             self
         }
-        /// <p>The algorithm used to define how percentage grows over time. AppConfig supports the
-        /// following growth types:</p>
-        /// <p>
-        /// <b>Linear</b>: For this type, AppConfig processes the
-        /// deployment by dividing the total number of targets by the value specified for <code>Step
-        /// percentage</code>. For example, a linear deployment that uses a <code>Step
-        /// percentage</code> of 10 deploys the configuration to 10 percent of the hosts. After
-        /// those deployments are complete, the system deploys the configuration to the next 10
-        /// percent. This continues until 100% of the targets have successfully received the
-        /// configuration.</p>
-        ///
-        /// <p>
-        /// <b>Exponential</b>: For this type, AppConfig processes the
-        /// deployment exponentially using the following formula: <code>G*(2^N)</code>. In this
-        /// formula, <code>G</code> is the growth factor specified by the user and <code>N</code> is
-        /// the number of steps until the configuration is deployed to all targets. For example, if you
-        /// specify a growth factor of 2, then the system rolls out the configuration as
-        /// follows:</p>
-        /// <p>
-        /// <code>2*(2^0)</code>
-        /// </p>
-        /// <p>
-        /// <code>2*(2^1)</code>
-        /// </p>
-        /// <p>
-        /// <code>2*(2^2)</code>
-        /// </p>
-        /// <p>Expressed numerically, the deployment rolls out as follows: 2% of the targets, 4% of the
-        /// targets, 8% of the targets, and continues until the configuration has been deployed to all
-        /// targets.</p>
+        /// <p>The algorithm used to define how percentage grows over time. AppConfig supports the following growth types:</p>
+        /// <p> <b>Linear</b>: For this type, AppConfig processes the deployment by dividing the total number of targets by the value specified for <code>Step percentage</code>. For example, a linear deployment that uses a <code>Step percentage</code> of 10 deploys the configuration to 10 percent of the hosts. After those deployments are complete, the system deploys the configuration to the next 10 percent. This continues until 100% of the targets have successfully received the configuration.</p>
+        /// <p> <b>Exponential</b>: For this type, AppConfig processes the deployment exponentially using the following formula: <code>G*(2^N)</code>. In this formula, <code>G</code> is the growth factor specified by the user and <code>N</code> is the number of steps until the configuration is deployed to all targets. For example, if you specify a growth factor of 2, then the system rolls out the configuration as follows:</p>
+        /// <p> <code>2*(2^0)</code> </p>
+        /// <p> <code>2*(2^1)</code> </p>
+        /// <p> <code>2*(2^2)</code> </p>
+        /// <p>Expressed numerically, the deployment rolls out as follows: 2% of the targets, 4% of the targets, 8% of the targets, and continues until the configuration has been deployed to all targets.</p>
         pub fn set_growth_type(
             mut self,
             input: std::option::Option<crate::model::GrowthType>,
@@ -685,9 +609,7 @@ pub mod create_deployment_strategy_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Metadata to assign to the deployment strategy. Tags help organize and categorize your
-        /// AppConfig resources. Each tag consists of a key and an optional value, both of which you
-        /// define.</p>
+        /// <p>Metadata to assign to the deployment strategy. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -698,9 +620,7 @@ pub mod create_deployment_strategy_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>Metadata to assign to the deployment strategy. Tags help organize and categorize your
-        /// AppConfig resources. Each tag consists of a key and an optional value, both of which you
-        /// define.</p>
+        /// <p>Metadata to assign to the deployment strategy. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -921,9 +841,7 @@ pub mod create_environment_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Metadata to assign to the environment. Tags help organize and categorize your AppConfig
-        /// resources. Each tag consists of a key and an optional value, both of which you
-        /// define.</p>
+        /// <p>Metadata to assign to the environment. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -934,9 +852,7 @@ pub mod create_environment_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>Metadata to assign to the environment. Tags help organize and categorize your AppConfig
-        /// resources. Each tag consists of a key and an optional value, both of which you
-        /// define.</p>
+        /// <p>Metadata to assign to the environment. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1160,30 +1076,22 @@ pub mod create_hosted_configuration_version_input {
             self.content = input;
             self
         }
-        /// <p>A standard MIME type describing the format of the configuration content. For more
-        /// information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
+        /// <p>A standard MIME type describing the format of the configuration content. For more information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
         pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.content_type = Some(input.into());
             self
         }
-        /// <p>A standard MIME type describing the format of the configuration content. For more
-        /// information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
+        /// <p>A standard MIME type describing the format of the configuration content. For more information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_type = input;
             self
         }
-        /// <p>An optional locking token used to prevent race conditions from overwriting configuration
-        /// updates when creating a new version. To ensure your data is not overwritten when creating
-        /// multiple hosted configuration versions in rapid succession, specify the version number of
-        /// the latest hosted configuration version.</p>
+        /// <p>An optional locking token used to prevent race conditions from overwriting configuration updates when creating a new version. To ensure your data is not overwritten when creating multiple hosted configuration versions in rapid succession, specify the version number of the latest hosted configuration version.</p>
         pub fn latest_version_number(mut self, input: i32) -> Self {
             self.latest_version_number = Some(input);
             self
         }
-        /// <p>An optional locking token used to prevent race conditions from overwriting configuration
-        /// updates when creating a new version. To ensure your data is not overwritten when creating
-        /// multiple hosted configuration versions in rapid succession, specify the version number of
-        /// the latest hosted configuration version.</p>
+        /// <p>An optional locking token used to prevent race conditions from overwriting configuration updates when creating a new version. To ensure your data is not overwritten when creating multiple hosted configuration versions in rapid succession, specify the version number of the latest hosted configuration version.</p>
         pub fn set_latest_version_number(mut self, input: std::option::Option<i32>) -> Self {
             self.latest_version_number = input;
             self
@@ -2486,38 +2394,32 @@ pub mod get_configuration_input {
         pub(crate) client_configuration_version: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The application to get. Specify either the application name or the application
-        /// ID.</p>
+        /// <p>The application to get. Specify either the application name or the application ID.</p>
         pub fn application(mut self, input: impl Into<std::string::String>) -> Self {
             self.application = Some(input.into());
             self
         }
-        /// <p>The application to get. Specify either the application name or the application
-        /// ID.</p>
+        /// <p>The application to get. Specify either the application name or the application ID.</p>
         pub fn set_application(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.application = input;
             self
         }
-        /// <p>The environment to get. Specify either the environment name or the environment
-        /// ID.</p>
+        /// <p>The environment to get. Specify either the environment name or the environment ID.</p>
         pub fn environment(mut self, input: impl Into<std::string::String>) -> Self {
             self.environment = Some(input.into());
             self
         }
-        /// <p>The environment to get. Specify either the environment name or the environment
-        /// ID.</p>
+        /// <p>The environment to get. Specify either the environment name or the environment ID.</p>
         pub fn set_environment(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.environment = input;
             self
         }
-        /// <p>The configuration to get. Specify either the configuration name or the configuration
-        /// ID.</p>
+        /// <p>The configuration to get. Specify either the configuration name or the configuration ID.</p>
         pub fn configuration(mut self, input: impl Into<std::string::String>) -> Self {
             self.configuration = Some(input.into());
             self
         }
-        /// <p>The configuration to get. Specify either the configuration name or the configuration
-        /// ID.</p>
+        /// <p>The configuration to get. Specify either the configuration name or the configuration ID.</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2525,36 +2427,21 @@ pub mod get_configuration_input {
             self.configuration = input;
             self
         }
-        /// <p>The clientId parameter in the following command is a unique, user-specified ID to
-        /// identify the client for the configuration. This ID enables AppConfig to deploy the
-        /// configuration in intervals, as defined in the deployment strategy. </p>
+        /// <p>The clientId parameter in the following command is a unique, user-specified ID to identify the client for the configuration. This ID enables AppConfig to deploy the configuration in intervals, as defined in the deployment strategy. </p>
         pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_id = Some(input.into());
             self
         }
-        /// <p>The clientId parameter in the following command is a unique, user-specified ID to
-        /// identify the client for the configuration. This ID enables AppConfig to deploy the
-        /// configuration in intervals, as defined in the deployment strategy. </p>
+        /// <p>The clientId parameter in the following command is a unique, user-specified ID to identify the client for the configuration. This ID enables AppConfig to deploy the configuration in intervals, as defined in the deployment strategy. </p>
         pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_id = input;
             self
         }
-        /// <p>The configuration version returned in the most recent <code>GetConfiguration</code>
-        /// response.</p>
-        /// <important>
-        /// <p>AppConfig uses the value of the <code>ClientConfigurationVersion</code> parameter to
-        /// identify the configuration version on your clients. If you don’t send
-        /// <code>ClientConfigurationVersion</code> with each call to
-        /// <code>GetConfiguration</code>, your clients receive the current configuration. You
-        /// are charged each time your clients receive a configuration.</p>
-        /// <p>To avoid excess charges, we recommend that you include the
-        /// <code>ClientConfigurationVersion</code> value with every call to
-        /// <code>GetConfiguration</code>. This value must be saved on your client. Subsequent
-        /// calls to <code>GetConfiguration</code> must pass this value by using the
-        /// <code>ClientConfigurationVersion</code> parameter. </p>
+        /// <p>The configuration version returned in the most recent <code>GetConfiguration</code> response.</p> <important>
+        /// <p>AppConfig uses the value of the <code>ClientConfigurationVersion</code> parameter to identify the configuration version on your clients. If you don’t send <code>ClientConfigurationVersion</code> with each call to <code>GetConfiguration</code>, your clients receive the current configuration. You are charged each time your clients receive a configuration.</p>
+        /// <p>To avoid excess charges, we recommend that you include the <code>ClientConfigurationVersion</code> value with every call to <code>GetConfiguration</code>. This value must be saved on your client. Subsequent calls to <code>GetConfiguration</code> must pass this value by using the <code>ClientConfigurationVersion</code> parameter. </p>
         /// </important>
-        /// <p>For more information about working with configurations, see <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration.html">Retrieving the
-        /// Configuration</a> in the <i>AppConfig User Guide</i>.</p>
+        /// <p>For more information about working with configurations, see <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration.html">Retrieving the Configuration</a> in the <i>AppConfig User Guide</i>.</p>
         pub fn client_configuration_version(
             mut self,
             input: impl Into<std::string::String>,
@@ -2562,22 +2449,11 @@ pub mod get_configuration_input {
             self.client_configuration_version = Some(input.into());
             self
         }
-        /// <p>The configuration version returned in the most recent <code>GetConfiguration</code>
-        /// response.</p>
-        /// <important>
-        /// <p>AppConfig uses the value of the <code>ClientConfigurationVersion</code> parameter to
-        /// identify the configuration version on your clients. If you don’t send
-        /// <code>ClientConfigurationVersion</code> with each call to
-        /// <code>GetConfiguration</code>, your clients receive the current configuration. You
-        /// are charged each time your clients receive a configuration.</p>
-        /// <p>To avoid excess charges, we recommend that you include the
-        /// <code>ClientConfigurationVersion</code> value with every call to
-        /// <code>GetConfiguration</code>. This value must be saved on your client. Subsequent
-        /// calls to <code>GetConfiguration</code> must pass this value by using the
-        /// <code>ClientConfigurationVersion</code> parameter. </p>
+        /// <p>The configuration version returned in the most recent <code>GetConfiguration</code> response.</p> <important>
+        /// <p>AppConfig uses the value of the <code>ClientConfigurationVersion</code> parameter to identify the configuration version on your clients. If you don’t send <code>ClientConfigurationVersion</code> with each call to <code>GetConfiguration</code>, your clients receive the current configuration. You are charged each time your clients receive a configuration.</p>
+        /// <p>To avoid excess charges, we recommend that you include the <code>ClientConfigurationVersion</code> value with every call to <code>GetConfiguration</code>. This value must be saved on your client. Subsequent calls to <code>GetConfiguration</code> must pass this value by using the <code>ClientConfigurationVersion</code> parameter. </p>
         /// </important>
-        /// <p>For more information about working with configurations, see <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration.html">Retrieving the
-        /// Configuration</a> in the <i>AppConfig User Guide</i>.</p>
+        /// <p>For more information about working with configurations, see <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration.html">Retrieving the Configuration</a> in the <i>AppConfig User Guide</i>.</p>
         pub fn set_client_configuration_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2777,14 +2653,12 @@ pub mod get_configuration_profile_input {
         pub(crate) configuration_profile_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the application that includes the configuration profile you want to
-        /// get.</p>
+        /// <p>The ID of the application that includes the configuration profile you want to get.</p>
         pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.application_id = Some(input.into());
             self
         }
-        /// <p>The ID of the application that includes the configuration profile you want to
-        /// get.</p>
+        /// <p>The ID of the application that includes the configuration profile you want to get.</p>
         pub fn set_application_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3734,32 +3608,22 @@ pub mod list_applications_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The maximum number of items to return for this call. The call also returns a token that
-        /// you can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that
-        /// you can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>A token to start the list. Next token is a pagination token generated by AppConfig to
-        /// describe what page the previous List call ended on. For the first List request, the
-        /// nextToken should not be set. On subsequent calls, the nextToken parameter should be set to
-        /// the previous responses nextToken value. Use this token to get the next set of results.
-        /// </p>
+        /// <p>A token to start the list. Next token is a pagination token generated by AppConfig to describe what page the previous List call ended on. For the first List request, the nextToken should not be set. On subsequent calls, the nextToken parameter should be set to the previous responses nextToken value. Use this token to get the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to start the list. Next token is a pagination token generated by AppConfig to
-        /// describe what page the previous List call ended on. For the first List request, the
-        /// nextToken should not be set. On subsequent calls, the nextToken parameter should be set to
-        /// the previous responses nextToken value. Use this token to get the next set of results.
-        /// </p>
+        /// <p>A token to start the list. Next token is a pagination token generated by AppConfig to describe what page the previous List call ended on. For the first List request, the nextToken should not be set. On subsequent calls, the nextToken parameter should be set to the previous responses nextToken value. Use this token to get the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3923,14 +3787,12 @@ pub mod list_configuration_profiles_input {
             self.application_id = input;
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that
-        /// you can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that
-        /// you can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3945,14 +3807,12 @@ pub mod list_configuration_profiles_input {
             self.next_token = input;
             self
         }
-        /// <p>A filter based on the type of configurations that the configuration profile contains. A
-        /// configuration can be a feature flag or a free-form configuration.</p>
+        /// <p>A filter based on the type of configurations that the configuration profile contains. A configuration can be a feature flag or a free-form configuration.</p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.r#type = Some(input.into());
             self
         }
-        /// <p>A filter based on the type of configurations that the configuration profile contains. A
-        /// configuration can be a feature flag or a free-form configuration.</p>
+        /// <p>A filter based on the type of configurations that the configuration profile contains. A configuration can be a feature flag or a free-form configuration.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -4155,14 +4015,12 @@ pub mod list_deployments_input {
             self.environment_id = input;
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that
-        /// you can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that
-        /// you can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -4359,14 +4217,12 @@ pub mod list_deployment_strategies_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The maximum number of items to return for this call. The call also returns a token that
-        /// you can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that
-        /// you can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -4540,14 +4396,12 @@ pub mod list_environments_input {
             self.application_id = input;
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that
-        /// you can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that
-        /// you can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -4755,14 +4609,12 @@ pub mod list_hosted_configuration_versions_input {
             self.configuration_profile_id = input;
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that
-        /// you can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that
-        /// you can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -5192,9 +5044,7 @@ pub mod start_deployment_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Metadata to assign to the deployment. Tags help organize and categorize your AppConfig
-        /// resources. Each tag consists of a key and an optional value, both of which you
-        /// define.</p>
+        /// <p>Metadata to assign to the deployment. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -5205,9 +5055,7 @@ pub mod start_deployment_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>Metadata to assign to the deployment. Tags help organize and categorize your AppConfig
-        /// resources. Each tag consists of a key and an optional value, both of which you
-        /// define.</p>
+        /// <p>Metadata to assign to the deployment. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -5627,9 +5475,7 @@ pub mod tag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The key-value string map. The valid character set is [a-zA-Z+-=._:/]. The tag key can be
-        /// up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to
-        /// 256 characters.</p>
+        /// <p>The key-value string map. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -5640,9 +5486,7 @@ pub mod tag_resource_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The key-value string map. The valid character set is [a-zA-Z+-=._:/]. The tag key can be
-        /// up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to
-        /// 256 characters.</p>
+        /// <p>The key-value string map. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -6239,14 +6083,12 @@ pub mod update_configuration_profile_input {
             self.description = input;
             self
         }
-        /// <p>The ARN of an IAM role with permission to access the configuration at the specified
-        /// <code>LocationUri</code>.</p>
+        /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p>
         pub fn retrieval_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.retrieval_role_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of an IAM role with permission to access the configuration at the specified
-        /// <code>LocationUri</code>.</p>
+        /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p>
         pub fn set_retrieval_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6497,92 +6339,44 @@ pub mod update_deployment_strategy_input {
             self.deployment_duration_in_minutes = input;
             self
         }
-        /// <p>The amount of time that AppConfig monitors for alarms before considering the deployment
-        /// to be complete and no longer eligible for automatic rollback.</p>
+        /// <p>The amount of time that AppConfig monitors for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
         pub fn final_bake_time_in_minutes(mut self, input: i32) -> Self {
             self.final_bake_time_in_minutes = Some(input);
             self
         }
-        /// <p>The amount of time that AppConfig monitors for alarms before considering the deployment
-        /// to be complete and no longer eligible for automatic rollback.</p>
+        /// <p>The amount of time that AppConfig monitors for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
         pub fn set_final_bake_time_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.final_bake_time_in_minutes = input;
             self
         }
-        /// <p>The percentage of targets to receive a deployed configuration during each
-        /// interval.</p>
+        /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
         pub fn growth_factor(mut self, input: f32) -> Self {
             self.growth_factor = Some(input);
             self
         }
-        /// <p>The percentage of targets to receive a deployed configuration during each
-        /// interval.</p>
+        /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
         pub fn set_growth_factor(mut self, input: std::option::Option<f32>) -> Self {
             self.growth_factor = input;
             self
         }
-        /// <p>The algorithm used to define how percentage grows over time. AppConfig supports the
-        /// following growth types:</p>
-        /// <p>
-        /// <b>Linear</b>: For this type, AppConfig processes the
-        /// deployment by increments of the growth factor evenly distributed over the deployment time.
-        /// For example, a linear deployment that uses a growth factor of 20 initially makes the
-        /// configuration available to 20 percent of the targets. After 1/5th of the deployment time
-        /// has passed, the system updates the percentage to 40 percent. This continues until 100% of
-        /// the targets are set to receive the deployed configuration.</p>
-        ///
-        /// <p>
-        /// <b>Exponential</b>: For this type, AppConfig processes the
-        /// deployment exponentially using the following formula: <code>G*(2^N)</code>. In this
-        /// formula, <code>G</code> is the growth factor specified by the user and <code>N</code> is
-        /// the number of steps until the configuration is deployed to all targets. For example, if you
-        /// specify a growth factor of 2, then the system rolls out the configuration as
-        /// follows:</p>
-        /// <p>
-        /// <code>2*(2^0)</code>
-        /// </p>
-        /// <p>
-        /// <code>2*(2^1)</code>
-        /// </p>
-        /// <p>
-        /// <code>2*(2^2)</code>
-        /// </p>
-        /// <p>Expressed numerically, the deployment rolls out as follows: 2% of the targets, 4% of the
-        /// targets, 8% of the targets, and continues until the configuration has been deployed to all
-        /// targets.</p>
+        /// <p>The algorithm used to define how percentage grows over time. AppConfig supports the following growth types:</p>
+        /// <p> <b>Linear</b>: For this type, AppConfig processes the deployment by increments of the growth factor evenly distributed over the deployment time. For example, a linear deployment that uses a growth factor of 20 initially makes the configuration available to 20 percent of the targets. After 1/5th of the deployment time has passed, the system updates the percentage to 40 percent. This continues until 100% of the targets are set to receive the deployed configuration.</p>
+        /// <p> <b>Exponential</b>: For this type, AppConfig processes the deployment exponentially using the following formula: <code>G*(2^N)</code>. In this formula, <code>G</code> is the growth factor specified by the user and <code>N</code> is the number of steps until the configuration is deployed to all targets. For example, if you specify a growth factor of 2, then the system rolls out the configuration as follows:</p>
+        /// <p> <code>2*(2^0)</code> </p>
+        /// <p> <code>2*(2^1)</code> </p>
+        /// <p> <code>2*(2^2)</code> </p>
+        /// <p>Expressed numerically, the deployment rolls out as follows: 2% of the targets, 4% of the targets, 8% of the targets, and continues until the configuration has been deployed to all targets.</p>
         pub fn growth_type(mut self, input: crate::model::GrowthType) -> Self {
             self.growth_type = Some(input);
             self
         }
-        /// <p>The algorithm used to define how percentage grows over time. AppConfig supports the
-        /// following growth types:</p>
-        /// <p>
-        /// <b>Linear</b>: For this type, AppConfig processes the
-        /// deployment by increments of the growth factor evenly distributed over the deployment time.
-        /// For example, a linear deployment that uses a growth factor of 20 initially makes the
-        /// configuration available to 20 percent of the targets. After 1/5th of the deployment time
-        /// has passed, the system updates the percentage to 40 percent. This continues until 100% of
-        /// the targets are set to receive the deployed configuration.</p>
-        ///
-        /// <p>
-        /// <b>Exponential</b>: For this type, AppConfig processes the
-        /// deployment exponentially using the following formula: <code>G*(2^N)</code>. In this
-        /// formula, <code>G</code> is the growth factor specified by the user and <code>N</code> is
-        /// the number of steps until the configuration is deployed to all targets. For example, if you
-        /// specify a growth factor of 2, then the system rolls out the configuration as
-        /// follows:</p>
-        /// <p>
-        /// <code>2*(2^0)</code>
-        /// </p>
-        /// <p>
-        /// <code>2*(2^1)</code>
-        /// </p>
-        /// <p>
-        /// <code>2*(2^2)</code>
-        /// </p>
-        /// <p>Expressed numerically, the deployment rolls out as follows: 2% of the targets, 4% of the
-        /// targets, 8% of the targets, and continues until the configuration has been deployed to all
-        /// targets.</p>
+        /// <p>The algorithm used to define how percentage grows over time. AppConfig supports the following growth types:</p>
+        /// <p> <b>Linear</b>: For this type, AppConfig processes the deployment by increments of the growth factor evenly distributed over the deployment time. For example, a linear deployment that uses a growth factor of 20 initially makes the configuration available to 20 percent of the targets. After 1/5th of the deployment time has passed, the system updates the percentage to 40 percent. This continues until 100% of the targets are set to receive the deployed configuration.</p>
+        /// <p> <b>Exponential</b>: For this type, AppConfig processes the deployment exponentially using the following formula: <code>G*(2^N)</code>. In this formula, <code>G</code> is the growth factor specified by the user and <code>N</code> is the number of steps until the configuration is deployed to all targets. For example, if you specify a growth factor of 2, then the system rolls out the configuration as follows:</p>
+        /// <p> <code>2*(2^0)</code> </p>
+        /// <p> <code>2*(2^1)</code> </p>
+        /// <p> <code>2*(2^2)</code> </p>
+        /// <p>Expressed numerically, the deployment rolls out as follows: 2% of the targets, 4% of the targets, 8% of the targets, and continues until the configuration has been deployed to all targets.</p>
         pub fn set_growth_type(
             mut self,
             input: std::option::Option<crate::model::GrowthType>,
@@ -7302,41 +7096,17 @@ pub struct UpdateDeploymentStrategyInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>Total amount of time for a deployment to last.</p>
     pub deployment_duration_in_minutes: std::option::Option<i32>,
-    /// <p>The amount of time that AppConfig monitors for alarms before considering the deployment
-    /// to be complete and no longer eligible for automatic rollback.</p>
+    /// <p>The amount of time that AppConfig monitors for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
     pub final_bake_time_in_minutes: std::option::Option<i32>,
-    /// <p>The percentage of targets to receive a deployed configuration during each
-    /// interval.</p>
+    /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
     pub growth_factor: std::option::Option<f32>,
-    /// <p>The algorithm used to define how percentage grows over time. AppConfig supports the
-    /// following growth types:</p>
-    /// <p>
-    /// <b>Linear</b>: For this type, AppConfig processes the
-    /// deployment by increments of the growth factor evenly distributed over the deployment time.
-    /// For example, a linear deployment that uses a growth factor of 20 initially makes the
-    /// configuration available to 20 percent of the targets. After 1/5th of the deployment time
-    /// has passed, the system updates the percentage to 40 percent. This continues until 100% of
-    /// the targets are set to receive the deployed configuration.</p>
-    ///
-    /// <p>
-    /// <b>Exponential</b>: For this type, AppConfig processes the
-    /// deployment exponentially using the following formula: <code>G*(2^N)</code>. In this
-    /// formula, <code>G</code> is the growth factor specified by the user and <code>N</code> is
-    /// the number of steps until the configuration is deployed to all targets. For example, if you
-    /// specify a growth factor of 2, then the system rolls out the configuration as
-    /// follows:</p>
-    /// <p>
-    /// <code>2*(2^0)</code>
-    /// </p>
-    /// <p>
-    /// <code>2*(2^1)</code>
-    /// </p>
-    /// <p>
-    /// <code>2*(2^2)</code>
-    /// </p>
-    /// <p>Expressed numerically, the deployment rolls out as follows: 2% of the targets, 4% of the
-    /// targets, 8% of the targets, and continues until the configuration has been deployed to all
-    /// targets.</p>
+    /// <p>The algorithm used to define how percentage grows over time. AppConfig supports the following growth types:</p>
+    /// <p> <b>Linear</b>: For this type, AppConfig processes the deployment by increments of the growth factor evenly distributed over the deployment time. For example, a linear deployment that uses a growth factor of 20 initially makes the configuration available to 20 percent of the targets. After 1/5th of the deployment time has passed, the system updates the percentage to 40 percent. This continues until 100% of the targets are set to receive the deployed configuration.</p>
+    /// <p> <b>Exponential</b>: For this type, AppConfig processes the deployment exponentially using the following formula: <code>G*(2^N)</code>. In this formula, <code>G</code> is the growth factor specified by the user and <code>N</code> is the number of steps until the configuration is deployed to all targets. For example, if you specify a growth factor of 2, then the system rolls out the configuration as follows:</p>
+    /// <p> <code>2*(2^0)</code> </p>
+    /// <p> <code>2*(2^1)</code> </p>
+    /// <p> <code>2*(2^2)</code> </p>
+    /// <p>Expressed numerically, the deployment rolls out as follows: 2% of the targets, 4% of the targets, 8% of the targets, and continues until the configuration has been deployed to all targets.</p>
     pub growth_type: std::option::Option<crate::model::GrowthType>,
 }
 impl UpdateDeploymentStrategyInput {
@@ -7352,45 +7122,21 @@ impl UpdateDeploymentStrategyInput {
     pub fn deployment_duration_in_minutes(&self) -> std::option::Option<i32> {
         self.deployment_duration_in_minutes
     }
-    /// <p>The amount of time that AppConfig monitors for alarms before considering the deployment
-    /// to be complete and no longer eligible for automatic rollback.</p>
+    /// <p>The amount of time that AppConfig monitors for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
     pub fn final_bake_time_in_minutes(&self) -> std::option::Option<i32> {
         self.final_bake_time_in_minutes
     }
-    /// <p>The percentage of targets to receive a deployed configuration during each
-    /// interval.</p>
+    /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
     pub fn growth_factor(&self) -> std::option::Option<f32> {
         self.growth_factor
     }
-    /// <p>The algorithm used to define how percentage grows over time. AppConfig supports the
-    /// following growth types:</p>
-    /// <p>
-    /// <b>Linear</b>: For this type, AppConfig processes the
-    /// deployment by increments of the growth factor evenly distributed over the deployment time.
-    /// For example, a linear deployment that uses a growth factor of 20 initially makes the
-    /// configuration available to 20 percent of the targets. After 1/5th of the deployment time
-    /// has passed, the system updates the percentage to 40 percent. This continues until 100% of
-    /// the targets are set to receive the deployed configuration.</p>
-    ///
-    /// <p>
-    /// <b>Exponential</b>: For this type, AppConfig processes the
-    /// deployment exponentially using the following formula: <code>G*(2^N)</code>. In this
-    /// formula, <code>G</code> is the growth factor specified by the user and <code>N</code> is
-    /// the number of steps until the configuration is deployed to all targets. For example, if you
-    /// specify a growth factor of 2, then the system rolls out the configuration as
-    /// follows:</p>
-    /// <p>
-    /// <code>2*(2^0)</code>
-    /// </p>
-    /// <p>
-    /// <code>2*(2^1)</code>
-    /// </p>
-    /// <p>
-    /// <code>2*(2^2)</code>
-    /// </p>
-    /// <p>Expressed numerically, the deployment rolls out as follows: 2% of the targets, 4% of the
-    /// targets, 8% of the targets, and continues until the configuration has been deployed to all
-    /// targets.</p>
+    /// <p>The algorithm used to define how percentage grows over time. AppConfig supports the following growth types:</p>
+    /// <p> <b>Linear</b>: For this type, AppConfig processes the deployment by increments of the growth factor evenly distributed over the deployment time. For example, a linear deployment that uses a growth factor of 20 initially makes the configuration available to 20 percent of the targets. After 1/5th of the deployment time has passed, the system updates the percentage to 40 percent. This continues until 100% of the targets are set to receive the deployed configuration.</p>
+    /// <p> <b>Exponential</b>: For this type, AppConfig processes the deployment exponentially using the following formula: <code>G*(2^N)</code>. In this formula, <code>G</code> is the growth factor specified by the user and <code>N</code> is the number of steps until the configuration is deployed to all targets. For example, if you specify a growth factor of 2, then the system rolls out the configuration as follows:</p>
+    /// <p> <code>2*(2^0)</code> </p>
+    /// <p> <code>2*(2^1)</code> </p>
+    /// <p> <code>2*(2^2)</code> </p>
+    /// <p>Expressed numerically, the deployment rolls out as follows: 2% of the targets, 4% of the targets, 8% of the targets, and continues until the configuration has been deployed to all targets.</p>
     pub fn growth_type(&self) -> std::option::Option<&crate::model::GrowthType> {
         self.growth_type.as_ref()
     }
@@ -7426,8 +7172,7 @@ pub struct UpdateConfigurationProfileInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the configuration profile.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The ARN of an IAM role with permission to access the configuration at the specified
-    /// <code>LocationUri</code>.</p>
+    /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p>
     pub retrieval_role_arn: std::option::Option<std::string::String>,
     /// <p>A list of methods for validating the configuration.</p>
     pub validators: std::option::Option<std::vec::Vec<crate::model::Validator>>,
@@ -7449,8 +7194,7 @@ impl UpdateConfigurationProfileInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The ARN of an IAM role with permission to access the configuration at the specified
-    /// <code>LocationUri</code>.</p>
+    /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p>
     pub fn retrieval_role_arn(&self) -> std::option::Option<&str> {
         self.retrieval_role_arn.as_deref()
     }
@@ -7541,9 +7285,7 @@ impl std::fmt::Debug for UntagResourceInput {
 pub struct TagResourceInput {
     /// <p>The ARN of the resource for which to retrieve tags.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The key-value string map. The valid character set is [a-zA-Z+-=._:/]. The tag key can be
-    /// up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to
-    /// 256 characters.</p>
+    /// <p>The key-value string map. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -7552,9 +7294,7 @@ impl TagResourceInput {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The key-value string map. The valid character set is [a-zA-Z+-=._:/]. The tag key can be
-    /// up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to
-    /// 256 characters.</p>
+    /// <p>The key-value string map. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -7622,9 +7362,7 @@ pub struct StartDeploymentInput {
     pub configuration_version: std::option::Option<std::string::String>,
     /// <p>A description of the deployment.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>Metadata to assign to the deployment. Tags help organize and categorize your AppConfig
-    /// resources. Each tag consists of a key and an optional value, both of which you
-    /// define.</p>
+    /// <p>Metadata to assign to the deployment. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -7653,9 +7391,7 @@ impl StartDeploymentInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Metadata to assign to the deployment. Tags help organize and categorize your AppConfig
-    /// resources. Each tag consists of a key and an optional value, both of which you
-    /// define.</p>
+    /// <p>Metadata to assign to the deployment. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -7706,8 +7442,7 @@ pub struct ListHostedConfigurationVersionsInput {
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The configuration profile ID.</p>
     pub configuration_profile_id: std::option::Option<std::string::String>,
-    /// <p>The maximum number of items to return for this call. The call also returns a token that
-    /// you can specify in a subsequent call to get the next set of results.</p>
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub max_results: std::option::Option<i32>,
     /// <p>A token to start the list. Use this token to get the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
@@ -7721,8 +7456,7 @@ impl ListHostedConfigurationVersionsInput {
     pub fn configuration_profile_id(&self) -> std::option::Option<&str> {
         self.configuration_profile_id.as_deref()
     }
-    /// <p>The maximum number of items to return for this call. The call also returns a token that
-    /// you can specify in a subsequent call to get the next set of results.</p>
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -7748,8 +7482,7 @@ impl std::fmt::Debug for ListHostedConfigurationVersionsInput {
 pub struct ListEnvironmentsInput {
     /// <p>The application ID.</p>
     pub application_id: std::option::Option<std::string::String>,
-    /// <p>The maximum number of items to return for this call. The call also returns a token that
-    /// you can specify in a subsequent call to get the next set of results.</p>
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub max_results: std::option::Option<i32>,
     /// <p>A token to start the list. Use this token to get the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -7759,8 +7492,7 @@ impl ListEnvironmentsInput {
     pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
     }
-    /// <p>The maximum number of items to return for this call. The call also returns a token that
-    /// you can specify in a subsequent call to get the next set of results.</p>
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -7783,15 +7515,13 @@ impl std::fmt::Debug for ListEnvironmentsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDeploymentStrategiesInput {
-    /// <p>The maximum number of items to return for this call. The call also returns a token that
-    /// you can specify in a subsequent call to get the next set of results.</p>
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub max_results: std::option::Option<i32>,
     /// <p>A token to start the list. Use this token to get the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDeploymentStrategiesInput {
-    /// <p>The maximum number of items to return for this call. The call also returns a token that
-    /// you can specify in a subsequent call to get the next set of results.</p>
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -7817,8 +7547,7 @@ pub struct ListDeploymentsInput {
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The environment ID.</p>
     pub environment_id: std::option::Option<std::string::String>,
-    /// <p>The maximum number of items to return for this call. The call also returns a token that
-    /// you can specify in a subsequent call to get the next set of results.</p>
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub max_results: std::option::Option<i32>,
     /// <p>A token to start the list. Use this token to get the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -7832,8 +7561,7 @@ impl ListDeploymentsInput {
     pub fn environment_id(&self) -> std::option::Option<&str> {
         self.environment_id.as_deref()
     }
-    /// <p>The maximum number of items to return for this call. The call also returns a token that
-    /// you can specify in a subsequent call to get the next set of results.</p>
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -7859,13 +7587,11 @@ impl std::fmt::Debug for ListDeploymentsInput {
 pub struct ListConfigurationProfilesInput {
     /// <p>The application ID.</p>
     pub application_id: std::option::Option<std::string::String>,
-    /// <p>The maximum number of items to return for this call. The call also returns a token that
-    /// you can specify in a subsequent call to get the next set of results.</p>
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub max_results: std::option::Option<i32>,
     /// <p>A token to start the list. Use this token to get the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>A filter based on the type of configurations that the configuration profile contains. A
-    /// configuration can be a feature flag or a free-form configuration.</p>
+    /// <p>A filter based on the type of configurations that the configuration profile contains. A configuration can be a feature flag or a free-form configuration.</p>
     pub r#type: std::option::Option<std::string::String>,
 }
 impl ListConfigurationProfilesInput {
@@ -7873,8 +7599,7 @@ impl ListConfigurationProfilesInput {
     pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
     }
-    /// <p>The maximum number of items to return for this call. The call also returns a token that
-    /// you can specify in a subsequent call to get the next set of results.</p>
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -7882,8 +7607,7 @@ impl ListConfigurationProfilesInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>A filter based on the type of configurations that the configuration profile contains. A
-    /// configuration can be a feature flag or a free-form configuration.</p>
+    /// <p>A filter based on the type of configurations that the configuration profile contains. A configuration can be a feature flag or a free-form configuration.</p>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
@@ -7903,27 +7627,17 @@ impl std::fmt::Debug for ListConfigurationProfilesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListApplicationsInput {
-    /// <p>The maximum number of items to return for this call. The call also returns a token that
-    /// you can specify in a subsequent call to get the next set of results.</p>
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>A token to start the list. Next token is a pagination token generated by AppConfig to
-    /// describe what page the previous List call ended on. For the first List request, the
-    /// nextToken should not be set. On subsequent calls, the nextToken parameter should be set to
-    /// the previous responses nextToken value. Use this token to get the next set of results.
-    /// </p>
+    /// <p>A token to start the list. Next token is a pagination token generated by AppConfig to describe what page the previous List call ended on. For the first List request, the nextToken should not be set. On subsequent calls, the nextToken parameter should be set to the previous responses nextToken value. Use this token to get the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListApplicationsInput {
-    /// <p>The maximum number of items to return for this call. The call also returns a token that
-    /// you can specify in a subsequent call to get the next set of results.</p>
+    /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>A token to start the list. Next token is a pagination token generated by AppConfig to
-    /// describe what page the previous List call ended on. For the first List request, the
-    /// nextToken should not be set. On subsequent calls, the nextToken parameter should be set to
-    /// the previous responses nextToken value. Use this token to get the next set of results.
-    /// </p>
+    /// <p>A token to start the list. Next token is a pagination token generated by AppConfig to describe what page the previous List call ended on. For the first List request, the nextToken should not be set. On subsequent calls, the nextToken parameter should be set to the previous responses nextToken value. Use this token to get the next set of results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -8060,15 +7774,13 @@ impl std::fmt::Debug for GetDeploymentInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConfigurationProfileInput {
-    /// <p>The ID of the application that includes the configuration profile you want to
-    /// get.</p>
+    /// <p>The ID of the application that includes the configuration profile you want to get.</p>
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The ID of the configuration profile that you want to get.</p>
     pub configuration_profile_id: std::option::Option<std::string::String>,
 }
 impl GetConfigurationProfileInput {
-    /// <p>The ID of the application that includes the configuration profile you want to
-    /// get.</p>
+    /// <p>The ID of the application that includes the configuration profile you want to get.</p>
     pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
     }
@@ -8090,75 +7802,43 @@ impl std::fmt::Debug for GetConfigurationProfileInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConfigurationInput {
-    /// <p>The application to get. Specify either the application name or the application
-    /// ID.</p>
+    /// <p>The application to get. Specify either the application name or the application ID.</p>
     pub application: std::option::Option<std::string::String>,
-    /// <p>The environment to get. Specify either the environment name or the environment
-    /// ID.</p>
+    /// <p>The environment to get. Specify either the environment name or the environment ID.</p>
     pub environment: std::option::Option<std::string::String>,
-    /// <p>The configuration to get. Specify either the configuration name or the configuration
-    /// ID.</p>
+    /// <p>The configuration to get. Specify either the configuration name or the configuration ID.</p>
     pub configuration: std::option::Option<std::string::String>,
-    /// <p>The clientId parameter in the following command is a unique, user-specified ID to
-    /// identify the client for the configuration. This ID enables AppConfig to deploy the
-    /// configuration in intervals, as defined in the deployment strategy. </p>
+    /// <p>The clientId parameter in the following command is a unique, user-specified ID to identify the client for the configuration. This ID enables AppConfig to deploy the configuration in intervals, as defined in the deployment strategy. </p>
     pub client_id: std::option::Option<std::string::String>,
-    /// <p>The configuration version returned in the most recent <code>GetConfiguration</code>
-    /// response.</p>
-    /// <important>
-    /// <p>AppConfig uses the value of the <code>ClientConfigurationVersion</code> parameter to
-    /// identify the configuration version on your clients. If you don’t send
-    /// <code>ClientConfigurationVersion</code> with each call to
-    /// <code>GetConfiguration</code>, your clients receive the current configuration. You
-    /// are charged each time your clients receive a configuration.</p>
-    /// <p>To avoid excess charges, we recommend that you include the
-    /// <code>ClientConfigurationVersion</code> value with every call to
-    /// <code>GetConfiguration</code>. This value must be saved on your client. Subsequent
-    /// calls to <code>GetConfiguration</code> must pass this value by using the
-    /// <code>ClientConfigurationVersion</code> parameter. </p>
+    /// <p>The configuration version returned in the most recent <code>GetConfiguration</code> response.</p> <important>
+    /// <p>AppConfig uses the value of the <code>ClientConfigurationVersion</code> parameter to identify the configuration version on your clients. If you don’t send <code>ClientConfigurationVersion</code> with each call to <code>GetConfiguration</code>, your clients receive the current configuration. You are charged each time your clients receive a configuration.</p>
+    /// <p>To avoid excess charges, we recommend that you include the <code>ClientConfigurationVersion</code> value with every call to <code>GetConfiguration</code>. This value must be saved on your client. Subsequent calls to <code>GetConfiguration</code> must pass this value by using the <code>ClientConfigurationVersion</code> parameter. </p>
     /// </important>
-    /// <p>For more information about working with configurations, see <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration.html">Retrieving the
-    /// Configuration</a> in the <i>AppConfig User Guide</i>.</p>
+    /// <p>For more information about working with configurations, see <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration.html">Retrieving the Configuration</a> in the <i>AppConfig User Guide</i>.</p>
     pub client_configuration_version: std::option::Option<std::string::String>,
 }
 impl GetConfigurationInput {
-    /// <p>The application to get. Specify either the application name or the application
-    /// ID.</p>
+    /// <p>The application to get. Specify either the application name or the application ID.</p>
     pub fn application(&self) -> std::option::Option<&str> {
         self.application.as_deref()
     }
-    /// <p>The environment to get. Specify either the environment name or the environment
-    /// ID.</p>
+    /// <p>The environment to get. Specify either the environment name or the environment ID.</p>
     pub fn environment(&self) -> std::option::Option<&str> {
         self.environment.as_deref()
     }
-    /// <p>The configuration to get. Specify either the configuration name or the configuration
-    /// ID.</p>
+    /// <p>The configuration to get. Specify either the configuration name or the configuration ID.</p>
     pub fn configuration(&self) -> std::option::Option<&str> {
         self.configuration.as_deref()
     }
-    /// <p>The clientId parameter in the following command is a unique, user-specified ID to
-    /// identify the client for the configuration. This ID enables AppConfig to deploy the
-    /// configuration in intervals, as defined in the deployment strategy. </p>
+    /// <p>The clientId parameter in the following command is a unique, user-specified ID to identify the client for the configuration. This ID enables AppConfig to deploy the configuration in intervals, as defined in the deployment strategy. </p>
     pub fn client_id(&self) -> std::option::Option<&str> {
         self.client_id.as_deref()
     }
-    /// <p>The configuration version returned in the most recent <code>GetConfiguration</code>
-    /// response.</p>
-    /// <important>
-    /// <p>AppConfig uses the value of the <code>ClientConfigurationVersion</code> parameter to
-    /// identify the configuration version on your clients. If you don’t send
-    /// <code>ClientConfigurationVersion</code> with each call to
-    /// <code>GetConfiguration</code>, your clients receive the current configuration. You
-    /// are charged each time your clients receive a configuration.</p>
-    /// <p>To avoid excess charges, we recommend that you include the
-    /// <code>ClientConfigurationVersion</code> value with every call to
-    /// <code>GetConfiguration</code>. This value must be saved on your client. Subsequent
-    /// calls to <code>GetConfiguration</code> must pass this value by using the
-    /// <code>ClientConfigurationVersion</code> parameter. </p>
+    /// <p>The configuration version returned in the most recent <code>GetConfiguration</code> response.</p> <important>
+    /// <p>AppConfig uses the value of the <code>ClientConfigurationVersion</code> parameter to identify the configuration version on your clients. If you don’t send <code>ClientConfigurationVersion</code> with each call to <code>GetConfiguration</code>, your clients receive the current configuration. You are charged each time your clients receive a configuration.</p>
+    /// <p>To avoid excess charges, we recommend that you include the <code>ClientConfigurationVersion</code> value with every call to <code>GetConfiguration</code>. This value must be saved on your client. Subsequent calls to <code>GetConfiguration</code> must pass this value by using the <code>ClientConfigurationVersion</code> parameter. </p>
     /// </important>
-    /// <p>For more information about working with configurations, see <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration.html">Retrieving the
-    /// Configuration</a> in the <i>AppConfig User Guide</i>.</p>
+    /// <p>For more information about working with configurations, see <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration.html">Retrieving the Configuration</a> in the <i>AppConfig User Guide</i>.</p>
     pub fn client_configuration_version(&self) -> std::option::Option<&str> {
         self.client_configuration_version.as_deref()
     }
@@ -8344,13 +8024,9 @@ pub struct CreateHostedConfigurationVersionInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The content of the configuration or the configuration data.</p>
     pub content: std::option::Option<aws_smithy_types::Blob>,
-    /// <p>A standard MIME type describing the format of the configuration content. For more
-    /// information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
+    /// <p>A standard MIME type describing the format of the configuration content. For more information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
     pub content_type: std::option::Option<std::string::String>,
-    /// <p>An optional locking token used to prevent race conditions from overwriting configuration
-    /// updates when creating a new version. To ensure your data is not overwritten when creating
-    /// multiple hosted configuration versions in rapid succession, specify the version number of
-    /// the latest hosted configuration version.</p>
+    /// <p>An optional locking token used to prevent race conditions from overwriting configuration updates when creating a new version. To ensure your data is not overwritten when creating multiple hosted configuration versions in rapid succession, specify the version number of the latest hosted configuration version.</p>
     pub latest_version_number: std::option::Option<i32>,
 }
 impl CreateHostedConfigurationVersionInput {
@@ -8370,15 +8046,11 @@ impl CreateHostedConfigurationVersionInput {
     pub fn content(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.content.as_ref()
     }
-    /// <p>A standard MIME type describing the format of the configuration content. For more
-    /// information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
+    /// <p>A standard MIME type describing the format of the configuration content. For more information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
     pub fn content_type(&self) -> std::option::Option<&str> {
         self.content_type.as_deref()
     }
-    /// <p>An optional locking token used to prevent race conditions from overwriting configuration
-    /// updates when creating a new version. To ensure your data is not overwritten when creating
-    /// multiple hosted configuration versions in rapid succession, specify the version number of
-    /// the latest hosted configuration version.</p>
+    /// <p>An optional locking token used to prevent race conditions from overwriting configuration updates when creating a new version. To ensure your data is not overwritten when creating multiple hosted configuration versions in rapid succession, specify the version number of the latest hosted configuration version.</p>
     pub fn latest_version_number(&self) -> std::option::Option<i32> {
         self.latest_version_number
     }
@@ -8408,9 +8080,7 @@ pub struct CreateEnvironmentInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>Amazon CloudWatch alarms to monitor during the deployment process.</p>
     pub monitors: std::option::Option<std::vec::Vec<crate::model::Monitor>>,
-    /// <p>Metadata to assign to the environment. Tags help organize and categorize your AppConfig
-    /// resources. Each tag consists of a key and an optional value, both of which you
-    /// define.</p>
+    /// <p>Metadata to assign to the environment. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -8431,9 +8101,7 @@ impl CreateEnvironmentInput {
     pub fn monitors(&self) -> std::option::Option<&[crate::model::Monitor]> {
         self.monitors.as_deref()
     }
-    /// <p>Metadata to assign to the environment. Tags help organize and categorize your AppConfig
-    /// resources. Each tag consists of a key and an optional value, both of which you
-    /// define.</p>
+    /// <p>Metadata to assign to the environment. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -8463,48 +8131,21 @@ pub struct CreateDeploymentStrategyInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>Total amount of time for a deployment to last.</p>
     pub deployment_duration_in_minutes: std::option::Option<i32>,
-    /// <p>The amount of time AppConfig monitors for alarms before considering the deployment to be
-    /// complete and no longer eligible for automatic roll back.</p>
+    /// <p>The amount of time AppConfig monitors for alarms before considering the deployment to be complete and no longer eligible for automatic roll back.</p>
     pub final_bake_time_in_minutes: i32,
-    /// <p>The percentage of targets to receive a deployed configuration during each
-    /// interval.</p>
+    /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
     pub growth_factor: std::option::Option<f32>,
-    /// <p>The algorithm used to define how percentage grows over time. AppConfig supports the
-    /// following growth types:</p>
-    /// <p>
-    /// <b>Linear</b>: For this type, AppConfig processes the
-    /// deployment by dividing the total number of targets by the value specified for <code>Step
-    /// percentage</code>. For example, a linear deployment that uses a <code>Step
-    /// percentage</code> of 10 deploys the configuration to 10 percent of the hosts. After
-    /// those deployments are complete, the system deploys the configuration to the next 10
-    /// percent. This continues until 100% of the targets have successfully received the
-    /// configuration.</p>
-    ///
-    /// <p>
-    /// <b>Exponential</b>: For this type, AppConfig processes the
-    /// deployment exponentially using the following formula: <code>G*(2^N)</code>. In this
-    /// formula, <code>G</code> is the growth factor specified by the user and <code>N</code> is
-    /// the number of steps until the configuration is deployed to all targets. For example, if you
-    /// specify a growth factor of 2, then the system rolls out the configuration as
-    /// follows:</p>
-    /// <p>
-    /// <code>2*(2^0)</code>
-    /// </p>
-    /// <p>
-    /// <code>2*(2^1)</code>
-    /// </p>
-    /// <p>
-    /// <code>2*(2^2)</code>
-    /// </p>
-    /// <p>Expressed numerically, the deployment rolls out as follows: 2% of the targets, 4% of the
-    /// targets, 8% of the targets, and continues until the configuration has been deployed to all
-    /// targets.</p>
+    /// <p>The algorithm used to define how percentage grows over time. AppConfig supports the following growth types:</p>
+    /// <p> <b>Linear</b>: For this type, AppConfig processes the deployment by dividing the total number of targets by the value specified for <code>Step percentage</code>. For example, a linear deployment that uses a <code>Step percentage</code> of 10 deploys the configuration to 10 percent of the hosts. After those deployments are complete, the system deploys the configuration to the next 10 percent. This continues until 100% of the targets have successfully received the configuration.</p>
+    /// <p> <b>Exponential</b>: For this type, AppConfig processes the deployment exponentially using the following formula: <code>G*(2^N)</code>. In this formula, <code>G</code> is the growth factor specified by the user and <code>N</code> is the number of steps until the configuration is deployed to all targets. For example, if you specify a growth factor of 2, then the system rolls out the configuration as follows:</p>
+    /// <p> <code>2*(2^0)</code> </p>
+    /// <p> <code>2*(2^1)</code> </p>
+    /// <p> <code>2*(2^2)</code> </p>
+    /// <p>Expressed numerically, the deployment rolls out as follows: 2% of the targets, 4% of the targets, 8% of the targets, and continues until the configuration has been deployed to all targets.</p>
     pub growth_type: std::option::Option<crate::model::GrowthType>,
     /// <p>Save the deployment strategy to a Systems Manager (SSM) document.</p>
     pub replicate_to: std::option::Option<crate::model::ReplicateTo>,
-    /// <p>Metadata to assign to the deployment strategy. Tags help organize and categorize your
-    /// AppConfig resources. Each tag consists of a key and an optional value, both of which you
-    /// define.</p>
+    /// <p>Metadata to assign to the deployment strategy. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -8521,46 +8162,21 @@ impl CreateDeploymentStrategyInput {
     pub fn deployment_duration_in_minutes(&self) -> std::option::Option<i32> {
         self.deployment_duration_in_minutes
     }
-    /// <p>The amount of time AppConfig monitors for alarms before considering the deployment to be
-    /// complete and no longer eligible for automatic roll back.</p>
+    /// <p>The amount of time AppConfig monitors for alarms before considering the deployment to be complete and no longer eligible for automatic roll back.</p>
     pub fn final_bake_time_in_minutes(&self) -> i32 {
         self.final_bake_time_in_minutes
     }
-    /// <p>The percentage of targets to receive a deployed configuration during each
-    /// interval.</p>
+    /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
     pub fn growth_factor(&self) -> std::option::Option<f32> {
         self.growth_factor
     }
-    /// <p>The algorithm used to define how percentage grows over time. AppConfig supports the
-    /// following growth types:</p>
-    /// <p>
-    /// <b>Linear</b>: For this type, AppConfig processes the
-    /// deployment by dividing the total number of targets by the value specified for <code>Step
-    /// percentage</code>. For example, a linear deployment that uses a <code>Step
-    /// percentage</code> of 10 deploys the configuration to 10 percent of the hosts. After
-    /// those deployments are complete, the system deploys the configuration to the next 10
-    /// percent. This continues until 100% of the targets have successfully received the
-    /// configuration.</p>
-    ///
-    /// <p>
-    /// <b>Exponential</b>: For this type, AppConfig processes the
-    /// deployment exponentially using the following formula: <code>G*(2^N)</code>. In this
-    /// formula, <code>G</code> is the growth factor specified by the user and <code>N</code> is
-    /// the number of steps until the configuration is deployed to all targets. For example, if you
-    /// specify a growth factor of 2, then the system rolls out the configuration as
-    /// follows:</p>
-    /// <p>
-    /// <code>2*(2^0)</code>
-    /// </p>
-    /// <p>
-    /// <code>2*(2^1)</code>
-    /// </p>
-    /// <p>
-    /// <code>2*(2^2)</code>
-    /// </p>
-    /// <p>Expressed numerically, the deployment rolls out as follows: 2% of the targets, 4% of the
-    /// targets, 8% of the targets, and continues until the configuration has been deployed to all
-    /// targets.</p>
+    /// <p>The algorithm used to define how percentage grows over time. AppConfig supports the following growth types:</p>
+    /// <p> <b>Linear</b>: For this type, AppConfig processes the deployment by dividing the total number of targets by the value specified for <code>Step percentage</code>. For example, a linear deployment that uses a <code>Step percentage</code> of 10 deploys the configuration to 10 percent of the hosts. After those deployments are complete, the system deploys the configuration to the next 10 percent. This continues until 100% of the targets have successfully received the configuration.</p>
+    /// <p> <b>Exponential</b>: For this type, AppConfig processes the deployment exponentially using the following formula: <code>G*(2^N)</code>. In this formula, <code>G</code> is the growth factor specified by the user and <code>N</code> is the number of steps until the configuration is deployed to all targets. For example, if you specify a growth factor of 2, then the system rolls out the configuration as follows:</p>
+    /// <p> <code>2*(2^0)</code> </p>
+    /// <p> <code>2*(2^1)</code> </p>
+    /// <p> <code>2*(2^2)</code> </p>
+    /// <p>Expressed numerically, the deployment rolls out as follows: 2% of the targets, 4% of the targets, 8% of the targets, and continues until the configuration has been deployed to all targets.</p>
     pub fn growth_type(&self) -> std::option::Option<&crate::model::GrowthType> {
         self.growth_type.as_ref()
     }
@@ -8568,9 +8184,7 @@ impl CreateDeploymentStrategyInput {
     pub fn replicate_to(&self) -> std::option::Option<&crate::model::ReplicateTo> {
         self.replicate_to.as_ref()
     }
-    /// <p>Metadata to assign to the deployment strategy. Tags help organize and categorize your
-    /// AppConfig resources. Each tag consists of a key and an optional value, both of which you
-    /// define.</p>
+    /// <p>Metadata to assign to the deployment strategy. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -8609,36 +8223,25 @@ pub struct CreateConfigurationProfileInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the configuration profile.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>A URI to locate the configuration. You can specify the AppConfig hosted configuration
-    /// store, Systems Manager (SSM) document, an SSM Parameter Store parameter, or an Amazon S3 object. For the
-    /// hosted configuration store and for feature flags, specify <code>hosted</code>. For an SSM
-    /// document, specify either the document name in the format
-    /// <code>ssm-document://<Document_name></code> or the Amazon Resource Name (ARN). For
-    /// a parameter, specify either the parameter name in the format
-    /// <code>ssm-parameter://<Parameter_name></code> or the ARN. For an Amazon S3 object,
-    /// specify the URI in the following format: <code>s3://<bucket>/<objectKey>
-    /// </code>. Here is an example:
-    /// <code>s3://my-bucket/my-app/us-east-1/my-config.json</code>
-    /// </p>
+    /// <p>A URI to locate the configuration. You can specify the AppConfig hosted configuration store, Systems Manager (SSM) document, an SSM Parameter Store parameter, or an Amazon S3 object. For the hosted configuration store and for feature flags, specify <code>hosted</code>. For an SSM document, specify either the document name in the format <code>ssm-document://
+    /// <document_name></document_name></code> or the Amazon Resource Name (ARN). For a parameter, specify either the parameter name in the format <code>ssm-parameter://
+    /// <parameter_name></parameter_name></code> or the ARN. For an Amazon S3 object, specify the URI in the following format: <code>s3://
+    /// <bucket>
+    /// /
+    /// <objectkey>
+    /// </objectkey>
+    /// </bucket></code>. Here is an example: <code>s3://my-bucket/my-app/us-east-1/my-config.json</code> </p>
     pub location_uri: std::option::Option<std::string::String>,
-    /// <p>The ARN of an IAM role with permission to access the configuration at the specified
-    /// <code>LocationUri</code>.</p>
-    /// <important>
-    /// <p>A retrieval role ARN is not required for configurations stored in the AppConfig
-    /// hosted configuration store. It is required for all other sources that store your
-    /// configuration. </p>
+    /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p> <important>
+    /// <p>A retrieval role ARN is not required for configurations stored in the AppConfig hosted configuration store. It is required for all other sources that store your configuration. </p>
     /// </important>
     pub retrieval_role_arn: std::option::Option<std::string::String>,
     /// <p>A list of methods for validating the configuration.</p>
     pub validators: std::option::Option<std::vec::Vec<crate::model::Validator>>,
-    /// <p>Metadata to assign to the configuration profile. Tags help organize and categorize your
-    /// AppConfig resources. Each tag consists of a key and an optional value, both of which you
-    /// define.</p>
+    /// <p>Metadata to assign to the configuration profile. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The type of configurations that the configuration profile contains. A configuration can
-    /// be a feature flag used for enabling or disabling new features or a free-form configuration
-    /// used for distributing configurations to your application.</p>
+    /// <p>The type of configurations that the configuration profile contains. A configuration can be a feature flag used for enabling or disabling new features or a free-form configuration used for distributing configurations to your application.</p>
     pub r#type: std::option::Option<std::string::String>,
 }
 impl CreateConfigurationProfileInput {
@@ -8654,26 +8257,19 @@ impl CreateConfigurationProfileInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>A URI to locate the configuration. You can specify the AppConfig hosted configuration
-    /// store, Systems Manager (SSM) document, an SSM Parameter Store parameter, or an Amazon S3 object. For the
-    /// hosted configuration store and for feature flags, specify <code>hosted</code>. For an SSM
-    /// document, specify either the document name in the format
-    /// <code>ssm-document://<Document_name></code> or the Amazon Resource Name (ARN). For
-    /// a parameter, specify either the parameter name in the format
-    /// <code>ssm-parameter://<Parameter_name></code> or the ARN. For an Amazon S3 object,
-    /// specify the URI in the following format: <code>s3://<bucket>/<objectKey>
-    /// </code>. Here is an example:
-    /// <code>s3://my-bucket/my-app/us-east-1/my-config.json</code>
-    /// </p>
+    /// <p>A URI to locate the configuration. You can specify the AppConfig hosted configuration store, Systems Manager (SSM) document, an SSM Parameter Store parameter, or an Amazon S3 object. For the hosted configuration store and for feature flags, specify <code>hosted</code>. For an SSM document, specify either the document name in the format <code>ssm-document://
+    /// <document_name></document_name></code> or the Amazon Resource Name (ARN). For a parameter, specify either the parameter name in the format <code>ssm-parameter://
+    /// <parameter_name></parameter_name></code> or the ARN. For an Amazon S3 object, specify the URI in the following format: <code>s3://
+    /// <bucket>
+    /// /
+    /// <objectkey>
+    /// </objectkey>
+    /// </bucket></code>. Here is an example: <code>s3://my-bucket/my-app/us-east-1/my-config.json</code> </p>
     pub fn location_uri(&self) -> std::option::Option<&str> {
         self.location_uri.as_deref()
     }
-    /// <p>The ARN of an IAM role with permission to access the configuration at the specified
-    /// <code>LocationUri</code>.</p>
-    /// <important>
-    /// <p>A retrieval role ARN is not required for configurations stored in the AppConfig
-    /// hosted configuration store. It is required for all other sources that store your
-    /// configuration. </p>
+    /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p> <important>
+    /// <p>A retrieval role ARN is not required for configurations stored in the AppConfig hosted configuration store. It is required for all other sources that store your configuration. </p>
     /// </important>
     pub fn retrieval_role_arn(&self) -> std::option::Option<&str> {
         self.retrieval_role_arn.as_deref()
@@ -8682,18 +8278,14 @@ impl CreateConfigurationProfileInput {
     pub fn validators(&self) -> std::option::Option<&[crate::model::Validator]> {
         self.validators.as_deref()
     }
-    /// <p>Metadata to assign to the configuration profile. Tags help organize and categorize your
-    /// AppConfig resources. Each tag consists of a key and an optional value, both of which you
-    /// define.</p>
+    /// <p>Metadata to assign to the configuration profile. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
     }
-    /// <p>The type of configurations that the configuration profile contains. A configuration can
-    /// be a feature flag used for enabling or disabling new features or a free-form configuration
-    /// used for distributing configurations to your application.</p>
+    /// <p>The type of configurations that the configuration profile contains. A configuration can be a feature flag used for enabling or disabling new features or a free-form configuration used for distributing configurations to your application.</p>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
@@ -8721,9 +8313,7 @@ pub struct CreateApplicationInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the application.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>Metadata to assign to the application. Tags help organize and categorize your AppConfig
-    /// resources. Each tag consists of a key and an optional value, both of which you
-    /// define.</p>
+    /// <p>Metadata to assign to the application. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -8736,9 +8326,7 @@ impl CreateApplicationInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Metadata to assign to the application. Tags help organize and categorize your AppConfig
-    /// resources. Each tag consists of a key and an optional value, both of which you
-    /// define.</p>
+    /// <p>Metadata to assign to the application. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>

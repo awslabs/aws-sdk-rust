@@ -138,8 +138,7 @@ impl ListTagsForResourceOutput {
 pub struct DescribeSavingsPlansOfferingsOutput {
     /// <p>Information about the Savings Plans offerings.</p>
     pub search_results: std::option::Option<std::vec::Vec<crate::model::SavingsPlanOffering>>,
-    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more
-    /// results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeSavingsPlansOfferingsOutput {
@@ -147,8 +146,7 @@ impl DescribeSavingsPlansOfferingsOutput {
     pub fn search_results(&self) -> std::option::Option<&[crate::model::SavingsPlanOffering]> {
         self.search_results.as_deref()
     }
-    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more
-    /// results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -191,14 +189,12 @@ pub mod describe_savings_plans_offerings_output {
             self.search_results = input;
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is null when there are no more
-        /// results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is null when there are no more
-        /// results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -225,8 +221,7 @@ impl DescribeSavingsPlansOfferingsOutput {
 pub struct DescribeSavingsPlansOfferingRatesOutput {
     /// <p>Information about the Savings Plans offering rates.</p>
     pub search_results: std::option::Option<std::vec::Vec<crate::model::SavingsPlanOfferingRate>>,
-    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more
-    /// results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeSavingsPlansOfferingRatesOutput {
@@ -234,8 +229,7 @@ impl DescribeSavingsPlansOfferingRatesOutput {
     pub fn search_results(&self) -> std::option::Option<&[crate::model::SavingsPlanOfferingRate]> {
         self.search_results.as_deref()
     }
-    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more
-    /// results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -278,14 +272,12 @@ pub mod describe_savings_plans_offering_rates_output {
             self.search_results = input;
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is null when there are no more
-        /// results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is null when there are no more
-        /// results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -312,8 +304,7 @@ impl DescribeSavingsPlansOfferingRatesOutput {
 pub struct DescribeSavingsPlansOutput {
     /// <p>Information about the Savings Plans.</p>
     pub savings_plans: std::option::Option<std::vec::Vec<crate::model::SavingsPlan>>,
-    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more
-    /// results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeSavingsPlansOutput {
@@ -321,8 +312,7 @@ impl DescribeSavingsPlansOutput {
     pub fn savings_plans(&self) -> std::option::Option<&[crate::model::SavingsPlan]> {
         self.savings_plans.as_deref()
     }
-    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more
-    /// results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -364,14 +354,12 @@ pub mod describe_savings_plans_output {
             self.savings_plans = input;
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is null when there are no more
-        /// results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is null when there are no more
-        /// results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -400,8 +388,7 @@ pub struct DescribeSavingsPlanRatesOutput {
     pub savings_plan_id: std::option::Option<std::string::String>,
     /// <p>Information about the Savings Plans rates.</p>
     pub search_results: std::option::Option<std::vec::Vec<crate::model::SavingsPlanRate>>,
-    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more
-    /// results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeSavingsPlanRatesOutput {
@@ -413,8 +400,7 @@ impl DescribeSavingsPlanRatesOutput {
     pub fn search_results(&self) -> std::option::Option<&[crate::model::SavingsPlanRate]> {
         self.search_results.as_deref()
     }
-    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more
-    /// results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -472,14 +458,12 @@ pub mod describe_savings_plan_rates_output {
             self.search_results = input;
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is null when there are no more
-        /// results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is null when there are no more
-        /// results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self

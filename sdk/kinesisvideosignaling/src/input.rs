@@ -12,14 +12,12 @@ pub mod get_ice_server_config_input {
         pub(crate) username: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ARN of the signaling channel to be used for the peer-to-peer connection between
-        /// configured peers. </p>
+        /// <p>The ARN of the signaling channel to be used for the peer-to-peer connection between configured peers. </p>
         pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.channel_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the signaling channel to be used for the peer-to-peer connection between
-        /// configured peers. </p>
+        /// <p>The ARN of the signaling channel to be used for the peer-to-peer connection between configured peers. </p>
         pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.channel_arn = input;
             self
@@ -34,14 +32,12 @@ pub mod get_ice_server_config_input {
             self.client_id = input;
             self
         }
-        /// <p>Specifies the desired service. Currently, <code>TURN</code> is the only valid
-        /// value.</p>
+        /// <p>Specifies the desired service. Currently, <code>TURN</code> is the only valid value.</p>
         pub fn service(mut self, input: crate::model::Service) -> Self {
             self.service = Some(input);
             self
         }
-        /// <p>Specifies the desired service. Currently, <code>TURN</code> is the only valid
-        /// value.</p>
+        /// <p>Specifies the desired service. Currently, <code>TURN</code> is the only valid value.</p>
         pub fn set_service(mut self, input: std::option::Option<crate::model::Service>) -> Self {
             self.service = input;
             self
@@ -200,14 +196,12 @@ pub mod send_alexa_offer_to_master_input {
         pub(crate) message_payload: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ARN of the signaling channel by which Alexa and the master peer
-        /// communicate.</p>
+        /// <p>The ARN of the signaling channel by which Alexa and the master peer communicate.</p>
         pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.channel_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the signaling channel by which Alexa and the master peer
-        /// communicate.</p>
+        /// <p>The ARN of the signaling channel by which Alexa and the master peer communicate.</p>
         pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.channel_arn = input;
             self
@@ -376,8 +370,7 @@ impl SendAlexaOfferToMasterInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendAlexaOfferToMasterInput {
-    /// <p>The ARN of the signaling channel by which Alexa and the master peer
-    /// communicate.</p>
+    /// <p>The ARN of the signaling channel by which Alexa and the master peer communicate.</p>
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the sender client.</p>
     pub sender_client_id: std::option::Option<std::string::String>,
@@ -385,8 +378,7 @@ pub struct SendAlexaOfferToMasterInput {
     pub message_payload: std::option::Option<std::string::String>,
 }
 impl SendAlexaOfferToMasterInput {
-    /// <p>The ARN of the signaling channel by which Alexa and the master peer
-    /// communicate.</p>
+    /// <p>The ARN of the signaling channel by which Alexa and the master peer communicate.</p>
     pub fn channel_arn(&self) -> std::option::Option<&str> {
         self.channel_arn.as_deref()
     }
@@ -413,20 +405,17 @@ impl std::fmt::Debug for SendAlexaOfferToMasterInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIceServerConfigInput {
-    /// <p>The ARN of the signaling channel to be used for the peer-to-peer connection between
-    /// configured peers. </p>
+    /// <p>The ARN of the signaling channel to be used for the peer-to-peer connection between configured peers. </p>
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>Unique identifier for the viewer. Must be unique within the signaling channel.</p>
     pub client_id: std::option::Option<std::string::String>,
-    /// <p>Specifies the desired service. Currently, <code>TURN</code> is the only valid
-    /// value.</p>
+    /// <p>Specifies the desired service. Currently, <code>TURN</code> is the only valid value.</p>
     pub service: std::option::Option<crate::model::Service>,
     /// <p>An optional user ID to be associated with the credentials.</p>
     pub username: std::option::Option<std::string::String>,
 }
 impl GetIceServerConfigInput {
-    /// <p>The ARN of the signaling channel to be used for the peer-to-peer connection between
-    /// configured peers. </p>
+    /// <p>The ARN of the signaling channel to be used for the peer-to-peer connection between configured peers. </p>
     pub fn channel_arn(&self) -> std::option::Option<&str> {
         self.channel_arn.as_deref()
     }
@@ -434,8 +423,7 @@ impl GetIceServerConfigInput {
     pub fn client_id(&self) -> std::option::Option<&str> {
         self.client_id.as_deref()
     }
-    /// <p>Specifies the desired service. Currently, <code>TURN</code> is the only valid
-    /// value.</p>
+    /// <p>Specifies the desired service. Currently, <code>TURN</code> is the only valid value.</p>
     pub fn service(&self) -> std::option::Option<&crate::model::Service> {
         self.service.as_ref()
     }

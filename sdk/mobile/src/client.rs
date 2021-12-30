@@ -157,9 +157,7 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CreateProject`.
     ///
-    /// <p>
-    /// Creates an AWS Mobile Hub project.
-    /// </p>
+    /// <p> Creates an AWS Mobile Hub project. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateProject<
         C = aws_smithy_client::erase::DynConnector,
@@ -216,64 +214,42 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// Name of the project.
-        /// </p>
+        /// <p> Name of the project. </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>
-        /// Name of the project.
-        /// </p>
+        /// <p> Name of the project. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>
-        /// Default region where project resources should be created.
-        /// </p>
+        /// <p> Default region where project resources should be created. </p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.region(input.into());
             self
         }
-        /// <p>
-        /// Default region where project resources should be created.
-        /// </p>
+        /// <p> Default region where project resources should be created. </p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_region(input);
             self
         }
-        /// <p>
-        /// ZIP or YAML file which contains configuration settings to be used when creating
-        /// the project. This may be the contents of the file downloaded from the URL provided
-        /// in an export project operation.
-        /// </p>
+        /// <p> ZIP or YAML file which contains configuration settings to be used when creating the project. This may be the contents of the file downloaded from the URL provided in an export project operation. </p>
         pub fn contents(mut self, input: aws_smithy_types::Blob) -> Self {
             self.inner = self.inner.contents(input);
             self
         }
-        /// <p>
-        /// ZIP or YAML file which contains configuration settings to be used when creating
-        /// the project. This may be the contents of the file downloaded from the URL provided
-        /// in an export project operation.
-        /// </p>
+        /// <p> ZIP or YAML file which contains configuration settings to be used when creating the project. This may be the contents of the file downloaded from the URL provided in an export project operation. </p>
         pub fn set_contents(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.inner = self.inner.set_contents(input);
             self
         }
-        /// <p>
-        /// Unique identifier for an exported snapshot of project configuration. This
-        /// snapshot identifier is included in the share URL when a project is exported.
-        /// </p>
+        /// <p> Unique identifier for an exported snapshot of project configuration. This snapshot identifier is included in the share URL when a project is exported. </p>
         pub fn snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.snapshot_id(input.into());
             self
         }
-        /// <p>
-        /// Unique identifier for an exported snapshot of project configuration. This
-        /// snapshot identifier is included in the share URL when a project is exported.
-        /// </p>
+        /// <p> Unique identifier for an exported snapshot of project configuration. This snapshot identifier is included in the share URL when a project is exported. </p>
         pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_snapshot_id(input);
             self
@@ -281,9 +257,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteProject`.
     ///
-    /// <p>
-    /// Delets a project in AWS Mobile Hub.
-    /// </p>
+    /// <p> Delets a project in AWS Mobile Hub. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteProject<
         C = aws_smithy_client::erase::DynConnector,
@@ -340,16 +314,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// Unique project identifier.
-        /// </p>
+        /// <p> Unique project identifier. </p>
         pub fn project_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.project_id(input.into());
             self
         }
-        /// <p>
-        /// Unique project identifier.
-        /// </p>
+        /// <p> Unique project identifier. </p>
         pub fn set_project_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_project_id(input);
             self
@@ -357,9 +327,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeBundle`.
     ///
-    /// <p>
-    /// Get the bundle details for the requested bundle id.
-    /// </p>
+    /// <p> Get the bundle details for the requested bundle id. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeBundle<
         C = aws_smithy_client::erase::DynConnector,
@@ -416,16 +384,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// Unique bundle identifier.
-        /// </p>
+        /// <p> Unique bundle identifier. </p>
         pub fn bundle_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.bundle_id(input.into());
             self
         }
-        /// <p>
-        /// Unique bundle identifier.
-        /// </p>
+        /// <p> Unique bundle identifier. </p>
         pub fn set_bundle_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_bundle_id(input);
             self
@@ -433,9 +397,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeProject`.
     ///
-    /// <p>
-    /// Gets details about a project in AWS Mobile Hub.
-    /// </p>
+    /// <p> Gets details about a project in AWS Mobile Hub. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeProject<
         C = aws_smithy_client::erase::DynConnector,
@@ -492,30 +454,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// Unique project identifier.
-        /// </p>
+        /// <p> Unique project identifier. </p>
         pub fn project_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.project_id(input.into());
             self
         }
-        /// <p>
-        /// Unique project identifier.
-        /// </p>
+        /// <p> Unique project identifier. </p>
         pub fn set_project_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_project_id(input);
             self
         }
-        /// <p>
-        /// If set to true, causes AWS Mobile Hub to synchronize information from other services, e.g., update state of AWS CloudFormation stacks in the AWS Mobile Hub project.
-        /// </p>
+        /// <p> If set to true, causes AWS Mobile Hub to synchronize information from other services, e.g., update state of AWS CloudFormation stacks in the AWS Mobile Hub project. </p>
         pub fn sync_from_resources(mut self, input: bool) -> Self {
             self.inner = self.inner.sync_from_resources(input);
             self
         }
-        /// <p>
-        /// If set to true, causes AWS Mobile Hub to synchronize information from other services, e.g., update state of AWS CloudFormation stacks in the AWS Mobile Hub project.
-        /// </p>
+        /// <p> If set to true, causes AWS Mobile Hub to synchronize information from other services, e.g., update state of AWS CloudFormation stacks in the AWS Mobile Hub project. </p>
         pub fn set_sync_from_resources(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_sync_from_resources(input);
             self
@@ -523,10 +477,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ExportBundle`.
     ///
-    /// <p>
-    /// Generates customized software development kit (SDK) and or tool packages
-    /// used to integrate mobile web or mobile app clients with backend AWS resources.
-    /// </p>
+    /// <p> Generates customized software development kit (SDK) and or tool packages used to integrate mobile web or mobile app clients with backend AWS resources. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ExportBundle<
         C = aws_smithy_client::erase::DynConnector,
@@ -583,44 +534,32 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// Unique bundle identifier.
-        /// </p>
+        /// <p> Unique bundle identifier. </p>
         pub fn bundle_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.bundle_id(input.into());
             self
         }
-        /// <p>
-        /// Unique bundle identifier.
-        /// </p>
+        /// <p> Unique bundle identifier. </p>
         pub fn set_bundle_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_bundle_id(input);
             self
         }
-        /// <p>
-        /// Unique project identifier.
-        /// </p>
+        /// <p> Unique project identifier. </p>
         pub fn project_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.project_id(input.into());
             self
         }
-        /// <p>
-        /// Unique project identifier.
-        /// </p>
+        /// <p> Unique project identifier. </p>
         pub fn set_project_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_project_id(input);
             self
         }
-        /// <p>
-        /// Developer desktop or target application platform.
-        /// </p>
+        /// <p> Developer desktop or target application platform. </p>
         pub fn platform(mut self, input: crate::model::Platform) -> Self {
             self.inner = self.inner.platform(input);
             self
         }
-        /// <p>
-        /// Developer desktop or target application platform.
-        /// </p>
+        /// <p> Developer desktop or target application platform. </p>
         pub fn set_platform(mut self, input: std::option::Option<crate::model::Platform>) -> Self {
             self.inner = self.inner.set_platform(input);
             self
@@ -628,11 +567,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ExportProject`.
     ///
-    /// <p>
-    /// Exports project configuration to a snapshot which can be downloaded and shared.
-    /// Note that mobile app push credentials are encrypted in exported projects, so they
-    /// can only be shared successfully within the same AWS account.
-    /// </p>
+    /// <p> Exports project configuration to a snapshot which can be downloaded and shared. Note that mobile app push credentials are encrypted in exported projects, so they can only be shared successfully within the same AWS account. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ExportProject<
         C = aws_smithy_client::erase::DynConnector,
@@ -689,16 +624,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// Unique project identifier.
-        /// </p>
+        /// <p> Unique project identifier. </p>
         pub fn project_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.project_id(input.into());
             self
         }
-        /// <p>
-        /// Unique project identifier.
-        /// </p>
+        /// <p> Unique project identifier. </p>
         pub fn set_project_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_project_id(input);
             self
@@ -706,9 +637,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListBundles`.
     ///
-    /// <p>
-    /// List all available bundles.
-    /// </p>
+    /// <p> List all available bundles. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListBundles<
         C = aws_smithy_client::erase::DynConnector,
@@ -765,34 +694,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// Maximum number of records to list in a single response.
-        /// </p>
+        /// <p> Maximum number of records to list in a single response. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>
-        /// Maximum number of records to list in a single response.
-        /// </p>
+        /// <p> Maximum number of records to list in a single response. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>
-        /// Pagination token. Set to null to start listing bundles from start.
-        /// If non-null pagination token is returned in a result, then pass its
-        /// value in here in another request to list more bundles.
-        /// </p>
+        /// <p> Pagination token. Set to null to start listing bundles from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more bundles. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>
-        /// Pagination token. Set to null to start listing bundles from start.
-        /// If non-null pagination token is returned in a result, then pass its
-        /// value in here in another request to list more bundles.
-        /// </p>
+        /// <p> Pagination token. Set to null to start listing bundles from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more bundles. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -800,9 +717,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListProjects`.
     ///
-    /// <p>
-    /// Lists projects in AWS Mobile Hub.
-    /// </p>
+    /// <p> Lists projects in AWS Mobile Hub. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListProjects<
         C = aws_smithy_client::erase::DynConnector,
@@ -859,34 +774,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// Maximum number of records to list in a single response.
-        /// </p>
+        /// <p> Maximum number of records to list in a single response. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>
-        /// Maximum number of records to list in a single response.
-        /// </p>
+        /// <p> Maximum number of records to list in a single response. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>
-        /// Pagination token. Set to null to start listing projects from start.
-        /// If non-null pagination token is returned in a result, then pass its
-        /// value in here in another request to list more projects.
-        /// </p>
+        /// <p> Pagination token. Set to null to start listing projects from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more projects. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>
-        /// Pagination token. Set to null to start listing projects from start.
-        /// If non-null pagination token is returned in a result, then pass its
-        /// value in here in another request to list more projects.
-        /// </p>
+        /// <p> Pagination token. Set to null to start listing projects from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more projects. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -894,9 +797,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateProject`.
     ///
-    /// <p>
-    /// Update an existing project.
-    /// </p>
+    /// <p> Update an existing project. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateProject<
         C = aws_smithy_client::erase::DynConnector,
@@ -953,34 +854,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// ZIP or YAML file which contains project configuration to be updated. This should
-        /// be the contents of the file downloaded from the URL provided in an export project
-        /// operation.
-        /// </p>
+        /// <p> ZIP or YAML file which contains project configuration to be updated. This should be the contents of the file downloaded from the URL provided in an export project operation. </p>
         pub fn contents(mut self, input: aws_smithy_types::Blob) -> Self {
             self.inner = self.inner.contents(input);
             self
         }
-        /// <p>
-        /// ZIP or YAML file which contains project configuration to be updated. This should
-        /// be the contents of the file downloaded from the URL provided in an export project
-        /// operation.
-        /// </p>
+        /// <p> ZIP or YAML file which contains project configuration to be updated. This should be the contents of the file downloaded from the URL provided in an export project operation. </p>
         pub fn set_contents(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.inner = self.inner.set_contents(input);
             self
         }
-        /// <p>
-        /// Unique project identifier.
-        /// </p>
+        /// <p> Unique project identifier. </p>
         pub fn project_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.project_id(input.into());
             self
         }
-        /// <p>
-        /// Unique project identifier.
-        /// </p>
+        /// <p> Unique project identifier. </p>
         pub fn set_project_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_project_id(input);
             self

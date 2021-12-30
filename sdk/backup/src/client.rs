@@ -590,11 +590,8 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CreateBackupPlan`.
     ///
-    /// <p>Creates a backup plan using a backup plan name and backup rules. A backup plan is a
-    /// document that contains information that Backup uses to schedule tasks that
-    /// create recovery points for resources.</p>
-    /// <p>If you call <code>CreateBackupPlan</code> with a plan that already exists, you receive
-    /// an <code>AlreadyExistsException</code> exception.</p>
+    /// <p>Creates a backup plan using a backup plan name and backup rules. A backup plan is a document that contains information that Backup uses to schedule tasks that create recovery points for resources.</p>
+    /// <p>If you call <code>CreateBackupPlan</code> with a plan that already exists, you receive an <code>AlreadyExistsException</code> exception.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateBackupPlan<
         C = aws_smithy_client::erase::DynConnector,
@@ -651,14 +648,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or
-        /// more sets of <code>Rules</code>.</p>
+        /// <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
         pub fn backup_plan(mut self, input: crate::model::BackupPlanInput) -> Self {
             self.inner = self.inner.backup_plan(input);
             self
         }
-        /// <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or
-        /// more sets of <code>Rules</code>.</p>
+        /// <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
         pub fn set_backup_plan(
             mut self,
             input: std::option::Option<crate::model::BackupPlanInput>,
@@ -670,9 +665,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_backup_plan_tags`](Self::set_backup_plan_tags).
         ///
-        /// <p>To help organize your resources, you can assign your own metadata to the resources that
-        /// you create. Each tag is a key-value pair. The specified tags are assigned to all backups
-        /// created with this plan.</p>
+        /// <p>To help organize your resources, you can assign your own metadata to the resources that you create. Each tag is a key-value pair. The specified tags are assigned to all backups created with this plan.</p>
         pub fn backup_plan_tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -681,9 +674,7 @@ pub mod fluent_builders {
             self.inner = self.inner.backup_plan_tags(k.into(), v.into());
             self
         }
-        /// <p>To help organize your resources, you can assign your own metadata to the resources that
-        /// you create. Each tag is a key-value pair. The specified tags are assigned to all backups
-        /// created with this plan.</p>
+        /// <p>To help organize your resources, you can assign your own metadata to the resources that you create. Each tag is a key-value pair. The specified tags are assigned to all backups created with this plan.</p>
         pub fn set_backup_plan_tags(
             mut self,
             input: std::option::Option<
@@ -693,17 +684,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_backup_plan_tags(input);
             self
         }
-        /// <p>Identifies the request and allows failed requests to be retried without the risk of
-        /// running the operation twice. If the request includes a <code>CreatorRequestId</code> that
-        /// matches an existing backup plan, that plan is returned. This parameter is optional.</p>
+        /// <p>Identifies the request and allows failed requests to be retried without the risk of running the operation twice. If the request includes a <code>CreatorRequestId</code> that matches an existing backup plan, that plan is returned. This parameter is optional.</p>
         /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
         pub fn creator_request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.creator_request_id(input.into());
             self
         }
-        /// <p>Identifies the request and allows failed requests to be retried without the risk of
-        /// running the operation twice. If the request includes a <code>CreatorRequestId</code> that
-        /// matches an existing backup plan, that plan is returned. This parameter is optional.</p>
+        /// <p>Identifies the request and allows failed requests to be retried without the risk of running the operation twice. If the request includes a <code>CreatorRequestId</code> that matches an existing backup plan, that plan is returned. This parameter is optional.</p>
         /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
         pub fn set_creator_request_id(
             mut self,
@@ -715,9 +702,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateBackupSelection`.
     ///
-    /// <p>Creates a JSON document that specifies a set of resources to assign to a backup plan.
-    /// For examples, see <a href="https://docs.aws.amazon.com/assigning-resources.html#assigning-resources-json">Assigning resources
-    /// programmatically</a>. </p>
+    /// <p>Creates a JSON document that specifies a set of resources to assign to a backup plan. For examples, see <a href="https://docs.aws.amazon.com/assigning-resources.html#assigning-resources-json">Assigning resources programmatically</a>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateBackupSelection<
         C = aws_smithy_client::erase::DynConnector,
@@ -774,14 +759,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Uniquely identifies the backup plan to be associated with the selection of
-        /// resources.</p>
+        /// <p>Uniquely identifies the backup plan to be associated with the selection of resources.</p>
         pub fn backup_plan_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.backup_plan_id(input.into());
             self
         }
-        /// <p>Uniquely identifies the backup plan to be associated with the selection of
-        /// resources.</p>
+        /// <p>Uniquely identifies the backup plan to be associated with the selection of resources.</p>
         pub fn set_backup_plan_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -802,15 +785,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_backup_selection(input);
             self
         }
-        /// <p>A unique string that identifies the request and allows failed requests to be retried
-        /// without the risk of running the operation twice. This parameter is optional.</p>
+        /// <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice. This parameter is optional.</p>
         /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
         pub fn creator_request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.creator_request_id(input.into());
             self
         }
-        /// <p>A unique string that identifies the request and allows failed requests to be retried
-        /// without the risk of running the operation twice. This parameter is optional.</p>
+        /// <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice. This parameter is optional.</p>
         /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
         pub fn set_creator_request_id(
             mut self,
@@ -822,12 +803,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateBackupVault`.
     ///
-    /// <p>Creates a logical container where backups are stored. A <code>CreateBackupVault</code>
-    /// request includes a name, optionally one or more resource tags, an encryption key, and a
-    /// request ID.</p>
-    /// <note>
-    /// <p>Do not include sensitive data, such as passport numbers, in the name of a backup
-    /// vault.</p>
+    /// <p>Creates a logical container where backups are stored. A <code>CreateBackupVault</code> request includes a name, optionally one or more resource tags, an encryption key, and a request ID.</p> <note>
+    /// <p>Do not include sensitive data, such as passport numbers, in the name of a backup vault.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateBackupVault<
@@ -885,16 +862,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the Amazon Web Services
-        /// Region where they are created. They consist of letters, numbers, and hyphens.</p>
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of letters, numbers, and hyphens.</p>
         pub fn backup_vault_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.backup_vault_name(input.into());
             self
         }
-        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the Amazon Web Services
-        /// Region where they are created. They consist of letters, numbers, and hyphens.</p>
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of letters, numbers, and hyphens.</p>
         pub fn set_backup_vault_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -906,8 +879,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_backup_vault_tags`](Self::set_backup_vault_tags).
         ///
-        /// <p>Metadata that you can assign to help organize the resources that you create. Each tag is
-        /// a key-value pair.</p>
+        /// <p>Metadata that you can assign to help organize the resources that you create. Each tag is a key-value pair.</p>
         pub fn backup_vault_tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -916,8 +888,7 @@ pub mod fluent_builders {
             self.inner = self.inner.backup_vault_tags(k.into(), v.into());
             self
         }
-        /// <p>Metadata that you can assign to help organize the resources that you create. Each tag is
-        /// a key-value pair.</p>
+        /// <p>Metadata that you can assign to help organize the resources that you create. Each tag is a key-value pair.</p>
         pub fn set_backup_vault_tags(
             mut self,
             input: std::option::Option<
@@ -927,14 +898,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_backup_vault_tags(input);
             self
         }
-        /// <p>The server-side encryption key that is used to protect your backups; for example,
-        /// <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
+        /// <p>The server-side encryption key that is used to protect your backups; for example, <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
         pub fn encryption_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.encryption_key_arn(input.into());
             self
         }
-        /// <p>The server-side encryption key that is used to protect your backups; for example,
-        /// <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
+        /// <p>The server-side encryption key that is used to protect your backups; for example, <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
         pub fn set_encryption_key_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -942,15 +911,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_encryption_key_arn(input);
             self
         }
-        /// <p>A unique string that identifies the request and allows failed requests to be retried
-        /// without the risk of running the operation twice. This parameter is optional.</p>
+        /// <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice. This parameter is optional.</p>
         /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
         pub fn creator_request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.creator_request_id(input.into());
             self
         }
-        /// <p>A unique string that identifies the request and allows failed requests to be retried
-        /// without the risk of running the operation twice. This parameter is optional.</p>
+        /// <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice. This parameter is optional.</p>
         /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
         pub fn set_creator_request_id(
             mut self,
@@ -962,10 +929,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateFramework`.
     ///
-    /// <p>Creates a framework with one or more controls. A framework is a collection of controls
-    /// that you can use to evaluate your backup practices. By using pre-built customizable
-    /// controls to define your policies, you can evaluate whether your backup practices comply
-    /// with your policies and which resources are not yet in compliance.</p>
+    /// <p>Creates a framework with one or more controls. A framework is a collection of controls that you can use to evaluate your backup practices. By using pre-built customizable controls to define your policies, you can evaluate whether your backup practices comply with your policies and which resources are not yet in compliance.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFramework<
         C = aws_smithy_client::erase::DynConnector,
@@ -1022,16 +986,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique name of the framework. The name must be between 1 and 256 characters,
-        /// starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and
-        /// underscores (_).</p>
+        /// <p>The unique name of the framework. The name must be between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
         pub fn framework_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.framework_name(input.into());
             self
         }
-        /// <p>The unique name of the framework. The name must be between 1 and 256 characters,
-        /// starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and
-        /// underscores (_).</p>
+        /// <p>The unique name of the framework. The name must be between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
         pub fn set_framework_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1056,14 +1016,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_framework_controls`](Self::set_framework_controls).
         ///
-        /// <p>A list of the controls that make up the framework. Each control in the list has a name,
-        /// input parameters, and scope.</p>
+        /// <p>A list of the controls that make up the framework. Each control in the list has a name, input parameters, and scope.</p>
         pub fn framework_controls(mut self, input: crate::model::FrameworkControl) -> Self {
             self.inner = self.inner.framework_controls(input);
             self
         }
-        /// <p>A list of the controls that make up the framework. Each control in the list has a name,
-        /// input parameters, and scope.</p>
+        /// <p>A list of the controls that make up the framework. Each control in the list has a name, input parameters, and scope.</p>
         pub fn set_framework_controls(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FrameworkControl>>,
@@ -1071,16 +1029,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_framework_controls(input);
             self
         }
-        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
-        /// calls to <code>CreateFrameworkInput</code>. Retrying a successful request with the same
-        /// idempotency token results in a success message with no action taken.</p>
+        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>CreateFrameworkInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.idempotency_token(input.into());
             self
         }
-        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
-        /// calls to <code>CreateFrameworkInput</code>. Retrying a successful request with the same
-        /// idempotency token results in a success message with no action taken.</p>
+        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>CreateFrameworkInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1092,8 +1046,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_framework_tags`](Self::set_framework_tags).
         ///
-        /// <p>Metadata that you can assign to help organize the frameworks that you create. Each tag
-        /// is a key-value pair.</p>
+        /// <p>Metadata that you can assign to help organize the frameworks that you create. Each tag is a key-value pair.</p>
         pub fn framework_tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1102,8 +1055,7 @@ pub mod fluent_builders {
             self.inner = self.inner.framework_tags(k.into(), v.into());
             self
         }
-        /// <p>Metadata that you can assign to help organize the frameworks that you create. Each tag
-        /// is a key-value pair.</p>
+        /// <p>Metadata that you can assign to help organize the frameworks that you create. Each tag is a key-value pair.</p>
         pub fn set_framework_tags(
             mut self,
             input: std::option::Option<
@@ -1116,10 +1068,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateReportPlan`.
     ///
-    /// <p>Creates a report plan. A report plan is a document that contains information about the
-    /// contents of the report and where Backup will deliver it.</p>
-    /// <p>If you call <code>CreateReportPlan</code> with a plan that already exists, you receive
-    /// an <code>AlreadyExistsException</code> exception.</p>
+    /// <p>Creates a report plan. A report plan is a document that contains information about the contents of the report and where Backup will deliver it.</p>
+    /// <p>If you call <code>CreateReportPlan</code> with a plan that already exists, you receive an <code>AlreadyExistsException</code> exception.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateReportPlan<
         C = aws_smithy_client::erase::DynConnector,
@@ -1176,16 +1126,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique name of the report plan. The name must be between 1 and 256 characters,
-        /// starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and
-        /// underscores (_).</p>
+        /// <p>The unique name of the report plan. The name must be between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
         pub fn report_plan_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.report_plan_name(input.into());
             self
         }
-        /// <p>The unique name of the report plan. The name must be between 1 and 256 characters,
-        /// starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and
-        /// underscores (_).</p>
+        /// <p>The unique name of the report plan. The name must be between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
         pub fn set_report_plan_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1206,9 +1152,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_report_plan_description(input);
             self
         }
-        /// <p>A structure that contains information about where and how to deliver your reports,
-        /// specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your
-        /// reports.</p>
+        /// <p>A structure that contains information about where and how to deliver your reports, specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your reports.</p>
         pub fn report_delivery_channel(
             mut self,
             input: crate::model::ReportDeliveryChannel,
@@ -1216,9 +1160,7 @@ pub mod fluent_builders {
             self.inner = self.inner.report_delivery_channel(input);
             self
         }
-        /// <p>A structure that contains information about where and how to deliver your reports,
-        /// specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your
-        /// reports.</p>
+        /// <p>A structure that contains information about where and how to deliver your reports, specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your reports.</p>
         pub fn set_report_delivery_channel(
             mut self,
             input: std::option::Option<crate::model::ReportDeliveryChannel>,
@@ -1226,28 +1168,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_report_delivery_channel(input);
             self
         }
-        /// <p>Identifies the report template for the report. Reports are built using a report
-        /// template. The report templates are:</p>
-        /// <p>
-        /// <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT |
-        /// COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
-        /// </p>
-        /// <p>If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or
-        /// <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the report
-        /// coverage by Amazon Web Services Regions and frameworks.</p>
+        /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p>
+        /// <p> <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
+        /// <p>If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the report coverage by Amazon Web Services Regions and frameworks.</p>
         pub fn report_setting(mut self, input: crate::model::ReportSetting) -> Self {
             self.inner = self.inner.report_setting(input);
             self
         }
-        /// <p>Identifies the report template for the report. Reports are built using a report
-        /// template. The report templates are:</p>
-        /// <p>
-        /// <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT |
-        /// COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
-        /// </p>
-        /// <p>If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or
-        /// <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the report
-        /// coverage by Amazon Web Services Regions and frameworks.</p>
+        /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p>
+        /// <p> <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
+        /// <p>If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the report coverage by Amazon Web Services Regions and frameworks.</p>
         pub fn set_report_setting(
             mut self,
             input: std::option::Option<crate::model::ReportSetting>,
@@ -1259,8 +1189,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_report_plan_tags`](Self::set_report_plan_tags).
         ///
-        /// <p>Metadata that you can assign to help organize the report plans that you create. Each tag
-        /// is a key-value pair.</p>
+        /// <p>Metadata that you can assign to help organize the report plans that you create. Each tag is a key-value pair.</p>
         pub fn report_plan_tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1269,8 +1198,7 @@ pub mod fluent_builders {
             self.inner = self.inner.report_plan_tags(k.into(), v.into());
             self
         }
-        /// <p>Metadata that you can assign to help organize the report plans that you create. Each tag
-        /// is a key-value pair.</p>
+        /// <p>Metadata that you can assign to help organize the report plans that you create. Each tag is a key-value pair.</p>
         pub fn set_report_plan_tags(
             mut self,
             input: std::option::Option<
@@ -1280,16 +1208,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_report_plan_tags(input);
             self
         }
-        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
-        /// calls to <code>CreateReportPlanInput</code>. Retrying a successful request with the same
-        /// idempotency token results in a success message with no action taken.</p>
+        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>CreateReportPlanInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.idempotency_token(input.into());
             self
         }
-        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
-        /// calls to <code>CreateReportPlanInput</code>. Retrying a successful request with the same
-        /// idempotency token results in a success message with no action taken.</p>
+        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>CreateReportPlanInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1300,9 +1224,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteBackupPlan`.
     ///
-    /// <p>Deletes a backup plan. A backup plan can only be deleted after all associated selections
-    /// of resources have been deleted. Deleting a backup plan deletes the current version of a
-    /// backup plan. Previous versions, if any, will still exist.</p>
+    /// <p>Deletes a backup plan. A backup plan can only be deleted after all associated selections of resources have been deleted. Deleting a backup plan deletes the current version of a backup plan. Previous versions, if any, will still exist.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBackupPlan<
         C = aws_smithy_client::erase::DynConnector,
@@ -1375,8 +1297,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteBackupSelection`.
     ///
-    /// <p>Deletes the resource selection associated with a backup plan that is specified by the
-    /// <code>SelectionId</code>.</p>
+    /// <p>Deletes the resource selection associated with a backup plan that is specified by the <code>SelectionId</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBackupSelection<
         C = aws_smithy_client::erase::DynConnector,
@@ -1446,14 +1367,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_backup_plan_id(input);
             self
         }
-        /// <p>Uniquely identifies the body of a request to assign a set of resources to a backup
-        /// plan.</p>
+        /// <p>Uniquely identifies the body of a request to assign a set of resources to a backup plan.</p>
         pub fn selection_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.selection_id(input.into());
             self
         }
-        /// <p>Uniquely identifies the body of a request to assign a set of resources to a backup
-        /// plan.</p>
+        /// <p>Uniquely identifies the body of a request to assign a set of resources to a backup plan.</p>
         pub fn set_selection_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_selection_id(input);
             self
@@ -1461,8 +1380,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteBackupVault`.
     ///
-    /// <p>Deletes the backup vault identified by its name. A vault can be deleted only if it is
-    /// empty.</p>
+    /// <p>Deletes the backup vault identified by its name. A vault can be deleted only if it is empty.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBackupVault<
         C = aws_smithy_client::erase::DynConnector,
@@ -1519,18 +1437,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the Amazon Web Services
-        /// Region where they are created. They consist of lowercase letters, numbers, and
-        /// hyphens.</p>
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
         pub fn backup_vault_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.backup_vault_name(input.into());
             self
         }
-        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the Amazon Web Services
-        /// Region where they are created. They consist of lowercase letters, numbers, and
-        /// hyphens.</p>
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
         pub fn set_backup_vault_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1598,18 +1510,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the Amazon Web Services
-        /// Region where they are created. They consist of lowercase letters, numbers, and
-        /// hyphens.</p>
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
         pub fn backup_vault_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.backup_vault_name(input.into());
             self
         }
-        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the Amazon Web Services
-        /// Region where they are created. They consist of lowercase letters, numbers, and
-        /// hyphens.</p>
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
         pub fn set_backup_vault_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1620,12 +1526,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteBackupVaultLockConfiguration`.
     ///
-    /// <p>Deletes Backup Vault Lock from a backup vault specified by a backup vault
-    /// name.</p>
-    /// <p>If the Vault Lock configuration is immutable, then you cannot delete Vault Lock using
-    /// API operations, and you will receive an <code>InvalidRequestException</code> if you attempt
-    /// to do so. For more information, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/vault-lock.html">Vault Lock</a> in the
-    /// <i>Backup Developer Guide</i>.</p>
+    /// <p>Deletes Backup Vault Lock from a backup vault specified by a backup vault name.</p>
+    /// <p>If the Vault Lock configuration is immutable, then you cannot delete Vault Lock using API operations, and you will receive an <code>InvalidRequestException</code> if you attempt to do so. For more information, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/vault-lock.html">Vault Lock</a> in the <i>Backup Developer Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBackupVaultLockConfiguration<
         C = aws_smithy_client::erase::DynConnector,
@@ -1757,16 +1659,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the Region where they are
-        /// created. They consist of lowercase letters, numbers, and hyphens.</p>
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
         pub fn backup_vault_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.backup_vault_name(input.into());
             self
         }
-        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the Region where they are
-        /// created. They consist of lowercase letters, numbers, and hyphens.</p>
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
         pub fn set_backup_vault_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1851,8 +1749,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteRecoveryPoint`.
     ///
     /// <p>Deletes the recovery point specified by a recovery point ID.</p>
-    /// <p>If the recovery point ID belongs to a continuous backup, calling this endpoint deletes
-    /// the existing continuous backup and stops future continuous backup.</p>
+    /// <p>If the recovery point ID belongs to a continuous backup, calling this endpoint deletes the existing continuous backup and stops future continuous backup.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRecoveryPoint<
         C = aws_smithy_client::erase::DynConnector,
@@ -1909,18 +1806,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the Amazon Web Services
-        /// Region where they are created. They consist of lowercase letters, numbers, and
-        /// hyphens.</p>
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
         pub fn backup_vault_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.backup_vault_name(input.into());
             self
         }
-        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the Amazon Web Services
-        /// Region where they are created. They consist of lowercase letters, numbers, and
-        /// hyphens.</p>
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
         pub fn set_backup_vault_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1928,14 +1819,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_backup_vault_name(input);
             self
         }
-        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example,
-        /// <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
         pub fn recovery_point_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.recovery_point_arn(input.into());
             self
         }
-        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example,
-        /// <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
         pub fn set_recovery_point_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2149,18 +2038,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the Amazon Web Services
-        /// Region where they are created. They consist of lowercase letters, numbers, and
-        /// hyphens.</p>
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
         pub fn backup_vault_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.backup_vault_name(input.into());
             self
         }
-        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the Amazon Web Services
-        /// Region where they are created. They consist of lowercase letters, numbers, and
-        /// hyphens.</p>
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
         pub fn set_backup_vault_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2314,10 +2197,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeGlobalSettings`.
     ///
-    /// <p>Describes whether the Amazon Web Services account is opted in to cross-account backup.
-    /// Returns an error if the account is not a member of an Organizations organization.
-    /// Example: <code>describe-global-settings --region us-west-2</code>
-    /// </p>
+    /// <p>Describes whether the Amazon Web Services account is opted in to cross-account backup. Returns an error if the account is not a member of an Organizations organization. Example: <code>describe-global-settings --region us-west-2</code> </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeGlobalSettings<
         C = aws_smithy_client::erase::DynConnector,
@@ -2377,9 +2257,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeProtectedResource`.
     ///
-    /// <p>Returns information about a saved resource, including the last time it was backed up,
-    /// its Amazon Resource Name (ARN), and the Amazon Web Services service type of the saved
-    /// resource.</p>
+    /// <p>Returns information about a saved resource, including the last time it was backed up, its Amazon Resource Name (ARN), and the Amazon Web Services service type of the saved resource.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeProtectedResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -2436,14 +2314,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN
-        /// depends on the resource type.</p>
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN
-        /// depends on the resource type.</p>
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -2451,8 +2327,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeRecoveryPoint`.
     ///
-    /// <p>Returns metadata associated with a recovery point, including ID, status, encryption, and
-    /// lifecycle.</p>
+    /// <p>Returns metadata associated with a recovery point, including ID, status, encryption, and lifecycle.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRecoveryPoint<
         C = aws_smithy_client::erase::DynConnector,
@@ -2509,18 +2384,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the Amazon Web Services
-        /// Region where they are created. They consist of lowercase letters, numbers, and
-        /// hyphens.</p>
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
         pub fn backup_vault_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.backup_vault_name(input.into());
             self
         }
-        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the Amazon Web Services
-        /// Region where they are created. They consist of lowercase letters, numbers, and
-        /// hyphens.</p>
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
         pub fn set_backup_vault_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2528,14 +2397,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_backup_vault_name(input);
             self
         }
-        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example,
-        /// <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
         pub fn recovery_point_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.recovery_point_arn(input.into());
             self
         }
-        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example,
-        /// <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
         pub fn set_recovery_point_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2546,11 +2413,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeRegionSettings`.
     ///
-    /// <p>Returns the current service opt-in settings for the Region. If service opt-in is enabled
-    /// for a service, Backup tries to protect that service's resources in this Region,
-    /// when the resource is included in an on-demand backup or scheduled backup plan. Otherwise,
-    /// Backup does not try to protect that service's resources in this
-    /// Region.</p>
+    /// <p>Returns the current service opt-in settings for the Region. If service opt-in is enabled for a service, Backup tries to protect that service's resources in this Region, when the resource is included in an on-demand backup or scheduled backup plan. Otherwise, Backup does not try to protect that service's resources in this Region.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRegionSettings<
         C = aws_smithy_client::erase::DynConnector,
@@ -2610,8 +2473,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeReportJob`.
     ///
-    /// <p>Returns the details associated with creating a report as specified by its
-    /// <code>ReportJobId</code>.</p>
+    /// <p>Returns the details associated with creating a report as specified by its <code>ReportJobId</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeReportJob<
         C = aws_smithy_client::erase::DynConnector,
@@ -2668,14 +2530,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier of the report job. A unique, randomly generated, Unicode, UTF-8 encoded
-        /// string that is at most 1,024 bytes long. The report job ID cannot be edited.</p>
+        /// <p>The identifier of the report job. A unique, randomly generated, Unicode, UTF-8 encoded string that is at most 1,024 bytes long. The report job ID cannot be edited.</p>
         pub fn report_job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.report_job_id(input.into());
             self
         }
-        /// <p>The identifier of the report job. A unique, randomly generated, Unicode, UTF-8 encoded
-        /// string that is at most 1,024 bytes long. The report job ID cannot be edited.</p>
+        /// <p>The identifier of the report job. A unique, randomly generated, Unicode, UTF-8 encoded string that is at most 1,024 bytes long. The report job ID cannot be edited.</p>
         pub fn set_report_job_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2832,9 +2692,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisassociateRecoveryPoint`.
     ///
-    /// <p>Deletes the specified continuous backup recovery point from Backup and
-    /// releases control of that continuous backup to the source service, such as Amazon RDS. The source service will continue to create and retain continuous backups using the
-    /// lifecycle that you specified in your original backup plan.</p>
+    /// <p>Deletes the specified continuous backup recovery point from Backup and releases control of that continuous backup to the source service, such as Amazon RDS. The source service will continue to create and retain continuous backups using the lifecycle that you specified in your original backup plan.</p>
     /// <p>Does not support snapshot backup recovery points.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateRecoveryPoint<
@@ -2905,14 +2763,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_backup_vault_name(input);
             self
         }
-        /// <p>An Amazon Resource Name (ARN) that uniquely identifies an Backup recovery
-        /// point.</p>
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies an Backup recovery point.</p>
         pub fn recovery_point_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.recovery_point_arn(input.into());
             self
         }
-        /// <p>An Amazon Resource Name (ARN) that uniquely identifies an Backup recovery
-        /// point.</p>
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies an Backup recovery point.</p>
         pub fn set_recovery_point_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2996,8 +2852,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetBackupPlan`.
     ///
-    /// <p>Returns <code>BackupPlan</code> details for the specified <code>BackupPlanId</code>. The
-    /// details are the body of a backup plan in JSON format, in addition to plan metadata.</p>
+    /// <p>Returns <code>BackupPlan</code> details for the specified <code>BackupPlanId</code>. The details are the body of a backup plan in JSON format, in addition to plan metadata.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBackupPlan<
         C = aws_smithy_client::erase::DynConnector,
@@ -3067,14 +2922,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_backup_plan_id(input);
             self
         }
-        /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes
-        /// long. Version IDs cannot be edited.</p>
+        /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version IDs cannot be edited.</p>
         pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.version_id(input.into());
             self
         }
-        /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes
-        /// long. Version IDs cannot be edited.</p>
+        /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version IDs cannot be edited.</p>
         pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_version_id(input);
             self
@@ -3228,8 +3081,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetBackupSelection`.
     ///
-    /// <p>Returns selection metadata and a document in JSON format that specifies a list of
-    /// resources that are associated with a backup plan.</p>
+    /// <p>Returns selection metadata and a document in JSON format that specifies a list of resources that are associated with a backup plan.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBackupSelection<
         C = aws_smithy_client::erase::DynConnector,
@@ -3299,14 +3151,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_backup_plan_id(input);
             self
         }
-        /// <p>Uniquely identifies the body of a request to assign a set of resources to a backup
-        /// plan.</p>
+        /// <p>Uniquely identifies the body of a request to assign a set of resources to a backup plan.</p>
         pub fn selection_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.selection_id(input.into());
             self
         }
-        /// <p>Uniquely identifies the body of a request to assign a set of resources to a backup
-        /// plan.</p>
+        /// <p>Uniquely identifies the body of a request to assign a set of resources to a backup plan.</p>
         pub fn set_selection_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_selection_id(input);
             self
@@ -3314,8 +3164,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetBackupVaultAccessPolicy`.
     ///
-    /// <p>Returns the access policy document that is associated with the named backup
-    /// vault.</p>
+    /// <p>Returns the access policy document that is associated with the named backup vault.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBackupVaultAccessPolicy<
         C = aws_smithy_client::erase::DynConnector,
@@ -3372,18 +3221,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the Amazon Web Services
-        /// Region where they are created. They consist of lowercase letters, numbers, and
-        /// hyphens.</p>
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
         pub fn backup_vault_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.backup_vault_name(input.into());
             self
         }
-        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the Amazon Web Services
-        /// Region where they are created. They consist of lowercase letters, numbers, and
-        /// hyphens.</p>
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
         pub fn set_backup_vault_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3451,18 +3294,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the Amazon Web Services
-        /// Region where they are created. They consist of lowercase letters, numbers, and
-        /// hyphens.</p>
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
         pub fn backup_vault_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.backup_vault_name(input.into());
             self
         }
-        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the Amazon Web Services
-        /// Region where they are created. They consist of lowercase letters, numbers, and
-        /// hyphens.</p>
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
         pub fn set_backup_vault_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3530,18 +3367,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the Amazon Web Services
-        /// Region where they are created. They consist of lowercase letters, numbers, and
-        /// hyphens.</p>
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
         pub fn backup_vault_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.backup_vault_name(input.into());
             self
         }
-        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the Amazon Web Services
-        /// Region where they are created. They consist of lowercase letters, numbers, and
-        /// hyphens.</p>
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
         pub fn set_backup_vault_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3549,14 +3380,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_backup_vault_name(input);
             self
         }
-        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example,
-        /// <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
         pub fn recovery_point_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.recovery_point_arn(input.into());
             self
         }
-        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example,
-        /// <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
         pub fn set_recovery_point_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3627,8 +3456,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListBackupJobs`.
     ///
-    /// <p>Returns a list of existing backup jobs for an authenticated account for the last 30
-    /// days. For a longer period of time, consider using these <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">monitoring tools</a>.</p>
+    /// <p>Returns a list of existing backup jobs for an authenticated account for the last 30 days. For a longer period of time, consider using these <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">monitoring tools</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListBackupJobs<
         C = aws_smithy_client::erase::DynConnector,
@@ -3685,18 +3513,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The next item following a partial list of returned items. For example, if a request is
-        /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
+        /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The next item following a partial list of returned items. For example, if a request is
-        /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
+        /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3711,14 +3533,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>Returns only backup jobs that match the specified resource Amazon Resource Name
-        /// (ARN).</p>
+        /// <p>Returns only backup jobs that match the specified resource Amazon Resource Name (ARN).</p>
         pub fn by_resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.by_resource_arn(input.into());
             self
         }
-        /// <p>Returns only backup jobs that match the specified resource Amazon Resource Name
-        /// (ARN).</p>
+        /// <p>Returns only backup jobs that match the specified resource Amazon Resource Name (ARN).</p>
         pub fn set_by_resource_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3739,18 +3559,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_by_state(input);
             self
         }
-        /// <p>Returns only backup jobs that will be stored in the specified backup vault. Backup
-        /// vaults are identified by names that are unique to the account used to create them and the
-        /// Amazon Web Services Region where they are created. They consist of lowercase letters,
-        /// numbers, and hyphens.</p>
+        /// <p>Returns only backup jobs that will be stored in the specified backup vault. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
         pub fn by_backup_vault_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.by_backup_vault_name(input.into());
             self
         }
-        /// <p>Returns only backup jobs that will be stored in the specified backup vault. Backup
-        /// vaults are identified by names that are unique to the account used to create them and the
-        /// Amazon Web Services Region where they are created. They consist of lowercase letters,
-        /// numbers, and hyphens.</p>
+        /// <p>Returns only backup jobs that will be stored in the specified backup vault. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
         pub fn set_by_backup_vault_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3786,34 +3600,13 @@ pub mod fluent_builders {
         }
         /// <p>Returns only backup jobs for the specified resources:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DynamoDB</code> for Amazon DynamoDB</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EBS</code> for Amazon Elastic Block Store</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EC2</code> for Amazon Elastic Compute Cloud</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EFS</code> for Amazon Elastic File System</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RDS</code> for Amazon Relational Database Service</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Aurora</code> for Amazon Aurora</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Storage Gateway</code> for Storage Gateway</p>
-        /// </li>
+        /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
+        /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
+        /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
+        /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
+        /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+        /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
+        /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
         /// </ul>
         pub fn by_resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.by_resource_type(input.into());
@@ -3821,34 +3614,13 @@ pub mod fluent_builders {
         }
         /// <p>Returns only backup jobs for the specified resources:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DynamoDB</code> for Amazon DynamoDB</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EBS</code> for Amazon Elastic Block Store</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EC2</code> for Amazon Elastic Compute Cloud</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EFS</code> for Amazon Elastic File System</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RDS</code> for Amazon Relational Database Service</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Aurora</code> for Amazon Aurora</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Storage Gateway</code> for Storage Gateway</p>
-        /// </li>
+        /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
+        /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
+        /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
+        /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
+        /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+        /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
+        /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
         /// </ul>
         pub fn set_by_resource_type(
             mut self,
@@ -3857,18 +3629,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_by_resource_type(input);
             self
         }
-        /// <p>The account ID to list the jobs from. Returns only backup jobs associated with the
-        /// specified account ID.</p>
-        /// <p>If used from an Organizations management account, passing <code>*</code> returns
-        /// all jobs across the organization.</p>
+        /// <p>The account ID to list the jobs from. Returns only backup jobs associated with the specified account ID.</p>
+        /// <p>If used from an Organizations management account, passing <code>*</code> returns all jobs across the organization.</p>
         pub fn by_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.by_account_id(input.into());
             self
         }
-        /// <p>The account ID to list the jobs from. Returns only backup jobs associated with the
-        /// specified account ID.</p>
-        /// <p>If used from an Organizations management account, passing <code>*</code> returns
-        /// all jobs across the organization.</p>
+        /// <p>The account ID to list the jobs from. Returns only backup jobs associated with the specified account ID.</p>
+        /// <p>If used from an Organizations management account, passing <code>*</code> returns all jobs across the organization.</p>
         pub fn set_by_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3879,9 +3647,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListBackupPlans`.
     ///
-    /// <p>Returns a list of all active backup plans for an authenticated account. The list
-    /// contains information such as Amazon Resource Names (ARNs), plan IDs, creation and deletion
-    /// dates, version IDs, plan names, and creator request IDs.</p>
+    /// <p>Returns a list of all active backup plans for an authenticated account. The list contains information such as Amazon Resource Names (ARNs), plan IDs, creation and deletion dates, version IDs, plan names, and creator request IDs.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListBackupPlans<
         C = aws_smithy_client::erase::DynConnector,
@@ -3938,18 +3704,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The next item following a partial list of returned items. For example, if a request is
-        /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
+        /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The next item following a partial list of returned items. For example, if a request is
-        /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
+        /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3964,14 +3724,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A Boolean value with a default value of <code>FALSE</code> that returns deleted backup
-        /// plans when set to <code>TRUE</code>.</p>
+        /// <p>A Boolean value with a default value of <code>FALSE</code> that returns deleted backup plans when set to <code>TRUE</code>.</p>
         pub fn include_deleted(mut self, input: bool) -> Self {
             self.inner = self.inner.include_deleted(input);
             self
         }
-        /// <p>A Boolean value with a default value of <code>FALSE</code> that returns deleted backup
-        /// plans when set to <code>TRUE</code>.</p>
+        /// <p>A Boolean value with a default value of <code>FALSE</code> that returns deleted backup plans when set to <code>TRUE</code>.</p>
         pub fn set_include_deleted(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_include_deleted(input);
             self
@@ -3979,8 +3737,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListBackupPlanTemplates`.
     ///
-    /// <p>Returns metadata of your saved backup plan templates, including the template ID, name,
-    /// and the creation and deletion dates.</p>
+    /// <p>Returns metadata of your saved backup plan templates, including the template ID, name, and the creation and deletion dates.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListBackupPlanTemplates<
         C = aws_smithy_client::erase::DynConnector,
@@ -4037,18 +3794,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The next item following a partial list of returned items. For example, if a request is
-        /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
+        /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The next item following a partial list of returned items. For example, if a request is
-        /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
+        /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4066,8 +3817,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListBackupPlanVersions`.
     ///
-    /// <p>Returns version metadata of your backup plans, including Amazon Resource Names (ARNs),
-    /// backup plan IDs, creation and deletion dates, plan names, and version IDs.</p>
+    /// <p>Returns version metadata of your backup plans, including Amazon Resource Names (ARNs), backup plan IDs, creation and deletion dates, plan names, and version IDs.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListBackupPlanVersions<
         C = aws_smithy_client::erase::DynConnector,
@@ -4137,18 +3887,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_backup_plan_id(input);
             self
         }
-        /// <p>The next item following a partial list of returned items. For example, if a request is
-        /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
+        /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The next item following a partial list of returned items. For example, if a request is
-        /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
+        /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4166,8 +3910,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListBackupSelections`.
     ///
-    /// <p>Returns an array containing metadata of the resources associated with the target backup
-    /// plan.</p>
+    /// <p>Returns an array containing metadata of the resources associated with the target backup plan.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListBackupSelections<
         C = aws_smithy_client::erase::DynConnector,
@@ -4237,18 +3980,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_backup_plan_id(input);
             self
         }
-        /// <p>The next item following a partial list of returned items. For example, if a request is
-        /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
+        /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The next item following a partial list of returned items. For example, if a request is
-        /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
+        /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4266,8 +4003,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListBackupVaults`.
     ///
-    /// <p>Returns a list of recovery point storage containers along with information about
-    /// them.</p>
+    /// <p>Returns a list of recovery point storage containers along with information about them.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListBackupVaults<
         C = aws_smithy_client::erase::DynConnector,
@@ -4324,18 +4060,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The next item following a partial list of returned items. For example, if a request is
-        /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
+        /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The next item following a partial list of returned items. For example, if a request is
-        /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
+        /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4410,16 +4140,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The next item following a partial list of returned items. For example, if a request is
-        /// made to return maxResults number of items, NextToken allows you to return more items in
-        /// your list starting at the location pointed to by the next token. </p>
+        /// <p>The next item following a partial list of returned items. For example, if a request is made to return maxResults number of items, NextToken allows you to return more items in your list starting at the location pointed to by the next token. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The next item following a partial list of returned items. For example, if a request is
-        /// made to return maxResults number of items, NextToken allows you to return more items in
-        /// your list starting at the location pointed to by the next token. </p>
+        /// <p>The next item following a partial list of returned items. For example, if a request is made to return maxResults number of items, NextToken allows you to return more items in your list starting at the location pointed to by the next token. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4434,14 +4160,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>Returns only copy jobs that match the specified resource Amazon Resource Name (ARN).
-        /// </p>
+        /// <p>Returns only copy jobs that match the specified resource Amazon Resource Name (ARN). </p>
         pub fn by_resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.by_resource_arn(input.into());
             self
         }
-        /// <p>Returns only copy jobs that match the specified resource Amazon Resource Name (ARN).
-        /// </p>
+        /// <p>Returns only copy jobs that match the specified resource Amazon Resource Name (ARN). </p>
         pub fn set_by_resource_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4490,34 +4214,13 @@ pub mod fluent_builders {
         }
         /// <p>Returns only backup jobs for the specified resources:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DynamoDB</code> for Amazon DynamoDB</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EBS</code> for Amazon Elastic Block Store</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EC2</code> for Amazon Elastic Compute Cloud</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EFS</code> for Amazon Elastic File System</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RDS</code> for Amazon Relational Database Service</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Aurora</code> for Amazon Aurora</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Storage Gateway</code> for Storage Gateway</p>
-        /// </li>
+        /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
+        /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
+        /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
+        /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
+        /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+        /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
+        /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
         /// </ul>
         pub fn by_resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.by_resource_type(input.into());
@@ -4525,34 +4228,13 @@ pub mod fluent_builders {
         }
         /// <p>Returns only backup jobs for the specified resources:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DynamoDB</code> for Amazon DynamoDB</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EBS</code> for Amazon Elastic Block Store</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EC2</code> for Amazon Elastic Compute Cloud</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EFS</code> for Amazon Elastic File System</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RDS</code> for Amazon Relational Database Service</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Aurora</code> for Amazon Aurora</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Storage Gateway</code> for Storage Gateway</p>
-        /// </li>
+        /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
+        /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
+        /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
+        /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
+        /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+        /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
+        /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
         /// </ul>
         pub fn set_by_resource_type(
             mut self,
@@ -4561,16 +4243,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_by_resource_type(input);
             self
         }
-        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a source backup vault to copy
-        /// from; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.
-        /// </p>
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a source backup vault to copy from; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>. </p>
         pub fn by_destination_vault_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.by_destination_vault_arn(input.into());
             self
         }
-        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a source backup vault to copy
-        /// from; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.
-        /// </p>
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a source backup vault to copy from; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>. </p>
         pub fn set_by_destination_vault_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4578,14 +4256,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_by_destination_vault_arn(input);
             self
         }
-        /// <p>The account ID to list the jobs from. Returns only copy jobs associated with the
-        /// specified account ID.</p>
+        /// <p>The account ID to list the jobs from. Returns only copy jobs associated with the specified account ID.</p>
         pub fn by_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.by_account_id(input.into());
             self
         }
-        /// <p>The account ID to list the jobs from. Returns only copy jobs associated with the
-        /// specified account ID.</p>
+        /// <p>The account ID to list the jobs from. Returns only copy jobs associated with the specified account ID.</p>
         pub fn set_by_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4653,26 +4329,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The number of desired results from 1 to 1000. Optional. If unspecified, the query will
-        /// return 1 MB of data.</p>
+        /// <p>The number of desired results from 1 to 1000. Optional. If unspecified, the query will return 1 MB of data.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The number of desired results from 1 to 1000. Optional. If unspecified, the query will
-        /// return 1 MB of data.</p>
+        /// <p>The number of desired results from 1 to 1000. Optional. If unspecified, the query will return 1 MB of data.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4680,9 +4352,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListProtectedResources`.
     ///
-    /// <p>Returns an array of resources successfully backed up by Backup, including
-    /// the time the resource was saved, an Amazon Resource Name (ARN) of the resource, and a
-    /// resource type.</p>
+    /// <p>Returns an array of resources successfully backed up by Backup, including the time the resource was saved, an Amazon Resource Name (ARN) of the resource, and a resource type.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListProtectedResources<
         C = aws_smithy_client::erase::DynConnector,
@@ -4739,18 +4409,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The next item following a partial list of returned items. For example, if a request is
-        /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
+        /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The next item following a partial list of returned items. For example, if a request is
-        /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
+        /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4825,25 +4489,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the Amazon Web Services
-        /// Region where they are created. They consist of lowercase letters, numbers, and
-        /// hyphens.</p>
-        /// <note>
-        /// <p>Backup vault name might not be available when a supported service creates the
-        /// backup.</p>
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p> <note>
+        /// <p>Backup vault name might not be available when a supported service creates the backup.</p>
         /// </note>
         pub fn backup_vault_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.backup_vault_name(input.into());
             self
         }
-        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the Amazon Web Services
-        /// Region where they are created. They consist of lowercase letters, numbers, and
-        /// hyphens.</p>
-        /// <note>
-        /// <p>Backup vault name might not be available when a supported service creates the
-        /// backup.</p>
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p> <note>
+        /// <p>Backup vault name might not be available when a supported service creates the backup.</p>
         /// </note>
         pub fn set_backup_vault_name(
             mut self,
@@ -4852,18 +4506,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_backup_vault_name(input);
             self
         }
-        /// <p>The next item following a partial list of returned items. For example, if a request is
-        /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
+        /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The next item following a partial list of returned items. For example, if a request is
-        /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
+        /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4878,14 +4526,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>Returns only recovery points that match the specified resource Amazon Resource Name
-        /// (ARN).</p>
+        /// <p>Returns only recovery points that match the specified resource Amazon Resource Name (ARN).</p>
         pub fn by_resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.by_resource_arn(input.into());
             self
         }
-        /// <p>Returns only recovery points that match the specified resource Amazon Resource Name
-        /// (ARN).</p>
+        /// <p>Returns only recovery points that match the specified resource Amazon Resource Name (ARN).</p>
         pub fn set_by_resource_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4948,11 +4594,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListRecoveryPointsByResource`.
     ///
-    /// <p>Returns detailed information about all the recovery points of the type specified by a
-    /// resource Amazon Resource Name (ARN).</p>
-    /// <note>
-    /// <p>For Amazon EFS and Amazon EC2, this action only lists recovery points
-    /// created by Backup.</p>
+    /// <p>Returns detailed information about all the recovery points of the type specified by a resource Amazon Resource Name (ARN).</p> <note>
+    /// <p>For Amazon EFS and Amazon EC2, this action only lists recovery points created by Backup.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRecoveryPointsByResource<
@@ -5010,44 +4653,34 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the
-        /// resource type.</p>
+        /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the
-        /// resource type.</p>
+        /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
         }
-        /// <p>The next item following a partial list of returned items. For example, if a request is
-        /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
+        /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The next item following a partial list of returned items. For example, if a request is
-        /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
+        /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of items to be returned.</p>
-        /// <note>
+        /// <p>The maximum number of items to be returned.</p> <note>
         /// <p>Amazon RDS requires a value of at least 20.</p>
         /// </note>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of items to be returned.</p>
-        /// <note>
+        /// <p>The maximum number of items to be returned.</p> <note>
         /// <p>Amazon RDS requires a value of at least 20.</p>
         /// </note>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
@@ -5127,16 +4760,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_by_report_plan_name(input);
             self
         }
-        /// <p>Returns only report jobs that were created before the date and time specified in Unix
-        /// format and Coordinated Universal Time (UTC). For example, the value 1516925490 represents
-        /// Friday, January 26, 2018 12:11:30 AM.</p>
+        /// <p>Returns only report jobs that were created before the date and time specified in Unix format and Coordinated Universal Time (UTC). For example, the value 1516925490 represents Friday, January 26, 2018 12:11:30 AM.</p>
         pub fn by_creation_before(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.by_creation_before(input);
             self
         }
-        /// <p>Returns only report jobs that were created before the date and time specified in Unix
-        /// format and Coordinated Universal Time (UTC). For example, the value 1516925490 represents
-        /// Friday, January 26, 2018 12:11:30 AM.</p>
+        /// <p>Returns only report jobs that were created before the date and time specified in Unix format and Coordinated Universal Time (UTC). For example, the value 1516925490 represents Friday, January 26, 2018 12:11:30 AM.</p>
         pub fn set_by_creation_before(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -5144,16 +4773,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_by_creation_before(input);
             self
         }
-        /// <p>Returns only report jobs that were created after the date and time specified in Unix
-        /// format and Coordinated Universal Time (UTC). For example, the value 1516925490 represents
-        /// Friday, January 26, 2018 12:11:30 AM.</p>
+        /// <p>Returns only report jobs that were created after the date and time specified in Unix format and Coordinated Universal Time (UTC). For example, the value 1516925490 represents Friday, January 26, 2018 12:11:30 AM.</p>
         pub fn by_creation_after(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.by_creation_after(input);
             self
         }
-        /// <p>Returns only report jobs that were created after the date and time specified in Unix
-        /// format and Coordinated Universal Time (UTC). For example, the value 1516925490 represents
-        /// Friday, January 26, 2018 12:11:30 AM.</p>
+        /// <p>Returns only report jobs that were created after the date and time specified in Unix format and Coordinated Universal Time (UTC). For example, the value 1516925490 represents Friday, January 26, 2018 12:11:30 AM.</p>
         pub fn set_by_creation_after(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -5162,41 +4787,33 @@ pub mod fluent_builders {
             self
         }
         /// <p>Returns only report jobs that are in the specified status. The statuses are:</p>
-        /// <p>
-        /// <code>CREATED | RUNNING | COMPLETED | FAILED</code>
-        /// </p>
+        /// <p> <code>CREATED | RUNNING | COMPLETED | FAILED</code> </p>
         pub fn by_status(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.by_status(input.into());
             self
         }
         /// <p>Returns only report jobs that are in the specified status. The statuses are:</p>
-        /// <p>
-        /// <code>CREATED | RUNNING | COMPLETED | FAILED</code>
-        /// </p>
+        /// <p> <code>CREATED | RUNNING | COMPLETED | FAILED</code> </p>
         pub fn set_by_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_by_status(input);
             self
         }
-        /// <p>The number of desired results from 1 to 1000. Optional. If unspecified, the query will
-        /// return 1 MB of data.</p>
+        /// <p>The number of desired results from 1 to 1000. Optional. If unspecified, the query will return 1 MB of data.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The number of desired results from 1 to 1000. Optional. If unspecified, the query will
-        /// return 1 MB of data.</p>
+        /// <p>The number of desired results from 1 to 1000. Optional. If unspecified, the query will return 1 MB of data.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5204,8 +4821,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListReportPlans`.
     ///
-    /// <p>Returns a list of your report plans. For detailed information about a single report
-    /// plan, use <code>DescribeReportPlan</code>.</p>
+    /// <p>Returns a list of your report plans. For detailed information about a single report plan, use <code>DescribeReportPlan</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListReportPlans<
         C = aws_smithy_client::erase::DynConnector,
@@ -5262,26 +4878,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The number of desired results from 1 to 1000. Optional. If unspecified, the query will
-        /// return 1 MB of data.</p>
+        /// <p>The number of desired results from 1 to 1000. Optional. If unspecified, the query will return 1 MB of data.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The number of desired results from 1 to 1000. Optional. If unspecified, the query will
-        /// return 1 MB of data.</p>
+        /// <p>The number of desired results from 1 to 1000. Optional. If unspecified, the query will return 1 MB of data.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5289,8 +4901,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListRestoreJobs`.
     ///
-    /// <p>Returns a list of jobs that Backup initiated to restore a saved resource,
-    /// including details about the recovery process.</p>
+    /// <p>Returns a list of jobs that Backup initiated to restore a saved resource, including details about the recovery process.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRestoreJobs<
         C = aws_smithy_client::erase::DynConnector,
@@ -5347,18 +4958,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The next item following a partial list of returned items. For example, if a request is
-        /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
+        /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The next item following a partial list of returned items. For example, if a request is
-        /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
+        /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5373,14 +4978,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The account ID to list the jobs from. Returns only restore jobs associated with the
-        /// specified account ID.</p>
+        /// <p>The account ID to list the jobs from. Returns only restore jobs associated with the specified account ID.</p>
         pub fn by_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.by_account_id(input.into());
             self
         }
-        /// <p>The account ID to list the jobs from. Returns only restore jobs associated with the
-        /// specified account ID.</p>
+        /// <p>The account ID to list the jobs from. Returns only restore jobs associated with the specified account ID.</p>
         pub fn set_by_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5430,12 +5033,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTags`.
     ///
-    /// <p>Returns a list of key-value pairs assigned to a target recovery point, backup plan, or
-    /// backup vault.</p>
-    /// <note>
-    /// <p>
-    /// <code>ListTags</code> are currently only supported with Amazon EFS
-    /// backups.</p>
+    /// <p>Returns a list of key-value pairs assigned to a target recovery point, backup plan, or backup vault.</p> <note>
+    /// <p> <code>ListTags</code> are currently only supported with Amazon EFS backups.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTags<
@@ -5493,32 +5092,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN
-        /// depends on the type of resource. Valid targets for <code>ListTags</code> are recovery
-        /// points, backup plans, and backup vaults.</p>
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the type of resource. Valid targets for <code>ListTags</code> are recovery points, backup plans, and backup vaults.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN
-        /// depends on the type of resource. Valid targets for <code>ListTags</code> are recovery
-        /// points, backup plans, and backup vaults.</p>
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the type of resource. Valid targets for <code>ListTags</code> are recovery points, backup plans, and backup vaults.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
         }
-        /// <p>The next item following a partial list of returned items. For example, if a request is
-        /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
+        /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The next item following a partial list of returned items. For example, if a request is
-        /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
+        /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5536,9 +5125,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutBackupVaultAccessPolicy`.
     ///
-    /// <p>Sets a resource-based policy that is used to manage access permissions on the target
-    /// backup vault. Requires a backup vault name and an access policy document in JSON
-    /// format.</p>
+    /// <p>Sets a resource-based policy that is used to manage access permissions on the target backup vault. Requires a backup vault name and an access policy document in JSON format.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutBackupVaultAccessPolicy<
         C = aws_smithy_client::erase::DynConnector,
@@ -5595,18 +5182,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the Amazon Web Services
-        /// Region where they are created. They consist of lowercase letters, numbers, and
-        /// hyphens.</p>
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
         pub fn backup_vault_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.backup_vault_name(input.into());
             self
         }
-        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the Amazon Web Services
-        /// Region where they are created. They consist of lowercase letters, numbers, and
-        /// hyphens.</p>
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
         pub fn set_backup_vault_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5627,14 +5208,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutBackupVaultLockConfiguration`.
     ///
-    /// <p>Applies Backup Vault Lock to a backup vault, preventing attempts to delete
-    /// any recovery point stored in or created in a backup vault. Vault Lock also prevents
-    /// attempts to update the lifecycle policy that controls the retention period of any recovery
-    /// point currently stored in a backup vault. If specified, Vault Lock enforces a minimum and
-    /// maximum retention period for future backup and copy jobs that target a backup vault.</p>
-    /// <note>
-    /// <p>Backup Vault Lock has yet to receive a third-party assessment for SEC
-    /// 17a-4(f) and CFTC.</p>
+    /// <p>Applies Backup Vault Lock to a backup vault, preventing attempts to delete any recovery point stored in or created in a backup vault. Vault Lock also prevents attempts to update the lifecycle policy that controls the retention period of any recovery point currently stored in a backup vault. If specified, Vault Lock enforces a minimum and maximum retention period for future backup and copy jobs that target a backup vault.</p> <note>
+    /// <p>Backup Vault Lock has yet to receive a third-party assessment for SEC 17a-4(f) and CFTC.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutBackupVaultLockConfiguration<
@@ -5692,14 +5267,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Backup Vault Lock configuration that specifies the name of the backup
-        /// vault it protects.</p>
+        /// <p>The Backup Vault Lock configuration that specifies the name of the backup vault it protects.</p>
         pub fn backup_vault_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.backup_vault_name(input.into());
             self
         }
-        /// <p>The Backup Vault Lock configuration that specifies the name of the backup
-        /// vault it protects.</p>
+        /// <p>The Backup Vault Lock configuration that specifies the name of the backup vault it protects.</p>
         pub fn set_backup_vault_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5707,102 +5280,46 @@ pub mod fluent_builders {
             self.inner = self.inner.set_backup_vault_name(input);
             self
         }
-        /// <p>The Backup Vault Lock configuration that specifies the minimum retention
-        /// period that the vault retains its recovery points. This setting can be useful if, for
-        /// example, your organization's policies require you to retain certain data for at least seven
-        /// years (2555 days).</p>
-        /// <p>If this parameter is not specified, Vault Lock will not enforce a minimum retention
-        /// period.</p>
-        /// <p>If this parameter is specified, any backup or copy job to the vault must have a
-        /// lifecycle policy with a retention period equal to or longer than the minimum retention
-        /// period. If the job's retention period is shorter than that minimum retention period, then
-        /// the vault fails that backup or copy job, and you should either modify your lifecycle
-        /// settings or use a different vault. Recovery points already saved in the vault prior to
-        /// Vault Lock are not affected.</p>
+        /// <p>The Backup Vault Lock configuration that specifies the minimum retention period that the vault retains its recovery points. This setting can be useful if, for example, your organization's policies require you to retain certain data for at least seven years (2555 days).</p>
+        /// <p>If this parameter is not specified, Vault Lock will not enforce a minimum retention period.</p>
+        /// <p>If this parameter is specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or longer than the minimum retention period. If the job's retention period is shorter than that minimum retention period, then the vault fails that backup or copy job, and you should either modify your lifecycle settings or use a different vault. Recovery points already saved in the vault prior to Vault Lock are not affected.</p>
         pub fn min_retention_days(mut self, input: i64) -> Self {
             self.inner = self.inner.min_retention_days(input);
             self
         }
-        /// <p>The Backup Vault Lock configuration that specifies the minimum retention
-        /// period that the vault retains its recovery points. This setting can be useful if, for
-        /// example, your organization's policies require you to retain certain data for at least seven
-        /// years (2555 days).</p>
-        /// <p>If this parameter is not specified, Vault Lock will not enforce a minimum retention
-        /// period.</p>
-        /// <p>If this parameter is specified, any backup or copy job to the vault must have a
-        /// lifecycle policy with a retention period equal to or longer than the minimum retention
-        /// period. If the job's retention period is shorter than that minimum retention period, then
-        /// the vault fails that backup or copy job, and you should either modify your lifecycle
-        /// settings or use a different vault. Recovery points already saved in the vault prior to
-        /// Vault Lock are not affected.</p>
+        /// <p>The Backup Vault Lock configuration that specifies the minimum retention period that the vault retains its recovery points. This setting can be useful if, for example, your organization's policies require you to retain certain data for at least seven years (2555 days).</p>
+        /// <p>If this parameter is not specified, Vault Lock will not enforce a minimum retention period.</p>
+        /// <p>If this parameter is specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or longer than the minimum retention period. If the job's retention period is shorter than that minimum retention period, then the vault fails that backup or copy job, and you should either modify your lifecycle settings or use a different vault. Recovery points already saved in the vault prior to Vault Lock are not affected.</p>
         pub fn set_min_retention_days(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_min_retention_days(input);
             self
         }
-        /// <p>The Backup Vault Lock configuration that specifies the maximum retention
-        /// period that the vault retains its recovery points. This setting can be useful if, for
-        /// example, your organization's policies require you to destroy certain data after retaining
-        /// it for four years (1460 days).</p>
-        /// <p>If this parameter is not included, Vault Lock does not enforce a maximum retention
-        /// period on the recovery points in the vault. If this parameter is included without a value,
-        /// Vault Lock will not enforce a maximum retention period.</p>
-        /// <p>If this parameter is specified, any backup or copy job to the vault must have a
-        /// lifecycle policy with a retention period equal to or shorter than the maximum retention
-        /// period. If the job's retention period is longer than that maximum retention period, then
-        /// the vault fails the backup or copy job, and you should either modify your lifecycle
-        /// settings or use a different vault. Recovery points already saved in the vault prior to
-        /// Vault Lock are not affected.</p>
+        /// <p>The Backup Vault Lock configuration that specifies the maximum retention period that the vault retains its recovery points. This setting can be useful if, for example, your organization's policies require you to destroy certain data after retaining it for four years (1460 days).</p>
+        /// <p>If this parameter is not included, Vault Lock does not enforce a maximum retention period on the recovery points in the vault. If this parameter is included without a value, Vault Lock will not enforce a maximum retention period.</p>
+        /// <p>If this parameter is specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or shorter than the maximum retention period. If the job's retention period is longer than that maximum retention period, then the vault fails the backup or copy job, and you should either modify your lifecycle settings or use a different vault. Recovery points already saved in the vault prior to Vault Lock are not affected.</p>
         pub fn max_retention_days(mut self, input: i64) -> Self {
             self.inner = self.inner.max_retention_days(input);
             self
         }
-        /// <p>The Backup Vault Lock configuration that specifies the maximum retention
-        /// period that the vault retains its recovery points. This setting can be useful if, for
-        /// example, your organization's policies require you to destroy certain data after retaining
-        /// it for four years (1460 days).</p>
-        /// <p>If this parameter is not included, Vault Lock does not enforce a maximum retention
-        /// period on the recovery points in the vault. If this parameter is included without a value,
-        /// Vault Lock will not enforce a maximum retention period.</p>
-        /// <p>If this parameter is specified, any backup or copy job to the vault must have a
-        /// lifecycle policy with a retention period equal to or shorter than the maximum retention
-        /// period. If the job's retention period is longer than that maximum retention period, then
-        /// the vault fails the backup or copy job, and you should either modify your lifecycle
-        /// settings or use a different vault. Recovery points already saved in the vault prior to
-        /// Vault Lock are not affected.</p>
+        /// <p>The Backup Vault Lock configuration that specifies the maximum retention period that the vault retains its recovery points. This setting can be useful if, for example, your organization's policies require you to destroy certain data after retaining it for four years (1460 days).</p>
+        /// <p>If this parameter is not included, Vault Lock does not enforce a maximum retention period on the recovery points in the vault. If this parameter is included without a value, Vault Lock will not enforce a maximum retention period.</p>
+        /// <p>If this parameter is specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or shorter than the maximum retention period. If the job's retention period is longer than that maximum retention period, then the vault fails the backup or copy job, and you should either modify your lifecycle settings or use a different vault. Recovery points already saved in the vault prior to Vault Lock are not affected.</p>
         pub fn set_max_retention_days(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_max_retention_days(input);
             self
         }
-        /// <p>The Backup Vault Lock configuration that specifies the number of days before
-        /// the lock date. For example, setting <code>ChangeableForDays</code> to 30 on Jan. 1, 2022 at
-        /// 8pm UTC will set the lock date to Jan. 31, 2022 at 8pm UTC.</p>
-        /// <p>Backup enforces a 72-hour cooling-off period before Vault Lock takes effect
-        /// and becomes immutable. Therefore, you must set <code>ChangeableForDays</code> to 3 or
-        /// greater.</p>
-        /// <p>Before the lock date, you can delete Vault Lock from the vault using
-        /// <code>DeleteBackupVaultLockConfiguration</code> or change the Vault Lock configuration
-        /// using <code>PutBackupVaultLockConfiguration</code>. On and after the lock date, the Vault
-        /// Lock becomes immutable and cannot be changed or deleted.</p>
-        /// <p>If this parameter is not specified, you can delete Vault Lock from the vault using
-        /// <code>DeleteBackupVaultLockConfiguration</code> or change the Vault Lock configuration
-        /// using <code>PutBackupVaultLockConfiguration</code> at any time.</p>
+        /// <p>The Backup Vault Lock configuration that specifies the number of days before the lock date. For example, setting <code>ChangeableForDays</code> to 30 on Jan. 1, 2022 at 8pm UTC will set the lock date to Jan. 31, 2022 at 8pm UTC.</p>
+        /// <p>Backup enforces a 72-hour cooling-off period before Vault Lock takes effect and becomes immutable. Therefore, you must set <code>ChangeableForDays</code> to 3 or greater.</p>
+        /// <p>Before the lock date, you can delete Vault Lock from the vault using <code>DeleteBackupVaultLockConfiguration</code> or change the Vault Lock configuration using <code>PutBackupVaultLockConfiguration</code>. On and after the lock date, the Vault Lock becomes immutable and cannot be changed or deleted.</p>
+        /// <p>If this parameter is not specified, you can delete Vault Lock from the vault using <code>DeleteBackupVaultLockConfiguration</code> or change the Vault Lock configuration using <code>PutBackupVaultLockConfiguration</code> at any time.</p>
         pub fn changeable_for_days(mut self, input: i64) -> Self {
             self.inner = self.inner.changeable_for_days(input);
             self
         }
-        /// <p>The Backup Vault Lock configuration that specifies the number of days before
-        /// the lock date. For example, setting <code>ChangeableForDays</code> to 30 on Jan. 1, 2022 at
-        /// 8pm UTC will set the lock date to Jan. 31, 2022 at 8pm UTC.</p>
-        /// <p>Backup enforces a 72-hour cooling-off period before Vault Lock takes effect
-        /// and becomes immutable. Therefore, you must set <code>ChangeableForDays</code> to 3 or
-        /// greater.</p>
-        /// <p>Before the lock date, you can delete Vault Lock from the vault using
-        /// <code>DeleteBackupVaultLockConfiguration</code> or change the Vault Lock configuration
-        /// using <code>PutBackupVaultLockConfiguration</code>. On and after the lock date, the Vault
-        /// Lock becomes immutable and cannot be changed or deleted.</p>
-        /// <p>If this parameter is not specified, you can delete Vault Lock from the vault using
-        /// <code>DeleteBackupVaultLockConfiguration</code> or change the Vault Lock configuration
-        /// using <code>PutBackupVaultLockConfiguration</code> at any time.</p>
+        /// <p>The Backup Vault Lock configuration that specifies the number of days before the lock date. For example, setting <code>ChangeableForDays</code> to 30 on Jan. 1, 2022 at 8pm UTC will set the lock date to Jan. 31, 2022 at 8pm UTC.</p>
+        /// <p>Backup enforces a 72-hour cooling-off period before Vault Lock takes effect and becomes immutable. Therefore, you must set <code>ChangeableForDays</code> to 3 or greater.</p>
+        /// <p>Before the lock date, you can delete Vault Lock from the vault using <code>DeleteBackupVaultLockConfiguration</code> or change the Vault Lock configuration using <code>PutBackupVaultLockConfiguration</code>. On and after the lock date, the Vault Lock becomes immutable and cannot be changed or deleted.</p>
+        /// <p>If this parameter is not specified, you can delete Vault Lock from the vault using <code>DeleteBackupVaultLockConfiguration</code> or change the Vault Lock configuration using <code>PutBackupVaultLockConfiguration</code> at any time.</p>
         pub fn set_changeable_for_days(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_changeable_for_days(input);
             self
@@ -5867,18 +5384,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the Amazon Web Services
-        /// Region where they are created. They consist of lowercase letters, numbers, and
-        /// hyphens.</p>
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
         pub fn backup_vault_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.backup_vault_name(input.into());
             self
         }
-        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the Amazon Web Services
-        /// Region where they are created. They consist of lowercase letters, numbers, and
-        /// hyphens.</p>
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
         pub fn set_backup_vault_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5886,14 +5397,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_backup_vault_name(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that specifies the topic for a backup vault’s events; for
-        /// example, <code>arn:aws:sns:us-west-2:111122223333:MyVaultTopic</code>.</p>
+        /// <p>The Amazon Resource Name (ARN) that specifies the topic for a backup vault’s events; for example, <code>arn:aws:sns:us-west-2:111122223333:MyVaultTopic</code>.</p>
         pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.sns_topic_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that specifies the topic for a backup vault’s events; for
-        /// example, <code>arn:aws:sns:us-west-2:111122223333:MyVaultTopic</code>.</p>
+        /// <p>The Amazon Resource Name (ARN) that specifies the topic for a backup vault’s events; for example, <code>arn:aws:sns:us-west-2:111122223333:MyVaultTopic</code>.</p>
         pub fn set_sns_topic_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5905,65 +5414,29 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_backup_vault_events`](Self::set_backup_vault_events).
         ///
-        /// <p>An array of events that indicate the status of jobs to back up resources to the backup
-        /// vault.</p>
-        /// <p>For common use cases and code samples, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/sns-notifications.html">Using Amazon SNS to
-        /// track Backup events</a>.</p>
+        /// <p>An array of events that indicate the status of jobs to back up resources to the backup vault.</p>
+        /// <p>For common use cases and code samples, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/sns-notifications.html">Using Amazon SNS to track Backup events</a>.</p>
         /// <p>The following events are supported:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>BACKUP_JOB_STARTED</code> | <code>BACKUP_JOB_COMPLETED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>COPY_JOB_STARTED</code> | <code>COPY_JOB_SUCCESSFUL</code> |
-        /// <code>COPY_JOB_FAILED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> |
-        /// <code>RECOVERY_POINT_MODIFIED</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>Ignore the list below because it includes deprecated events. Refer to the list
-        /// above.</p>
+        /// <li> <p> <code>BACKUP_JOB_STARTED</code> | <code>BACKUP_JOB_COMPLETED</code> </p> </li>
+        /// <li> <p> <code>COPY_JOB_STARTED</code> | <code>COPY_JOB_SUCCESSFUL</code> | <code>COPY_JOB_FAILED</code> </p> </li>
+        /// <li> <p> <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> | <code>RECOVERY_POINT_MODIFIED</code> </p> </li>
+        /// </ul> <note>
+        /// <p>Ignore the list below because it includes deprecated events. Refer to the list above.</p>
         /// </note>
         pub fn backup_vault_events(mut self, input: crate::model::BackupVaultEvent) -> Self {
             self.inner = self.inner.backup_vault_events(input);
             self
         }
-        /// <p>An array of events that indicate the status of jobs to back up resources to the backup
-        /// vault.</p>
-        /// <p>For common use cases and code samples, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/sns-notifications.html">Using Amazon SNS to
-        /// track Backup events</a>.</p>
+        /// <p>An array of events that indicate the status of jobs to back up resources to the backup vault.</p>
+        /// <p>For common use cases and code samples, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/sns-notifications.html">Using Amazon SNS to track Backup events</a>.</p>
         /// <p>The following events are supported:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>BACKUP_JOB_STARTED</code> | <code>BACKUP_JOB_COMPLETED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>COPY_JOB_STARTED</code> | <code>COPY_JOB_SUCCESSFUL</code> |
-        /// <code>COPY_JOB_FAILED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> |
-        /// <code>RECOVERY_POINT_MODIFIED</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>Ignore the list below because it includes deprecated events. Refer to the list
-        /// above.</p>
+        /// <li> <p> <code>BACKUP_JOB_STARTED</code> | <code>BACKUP_JOB_COMPLETED</code> </p> </li>
+        /// <li> <p> <code>COPY_JOB_STARTED</code> | <code>COPY_JOB_SUCCESSFUL</code> | <code>COPY_JOB_FAILED</code> </p> </li>
+        /// <li> <p> <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> | <code>RECOVERY_POINT_MODIFIED</code> </p> </li>
+        /// </ul> <note>
+        /// <p>Ignore the list below because it includes deprecated events. Refer to the list above.</p>
         /// </note>
         pub fn set_backup_vault_events(
             mut self,
@@ -6032,18 +5505,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the Amazon Web Services
-        /// Region where they are created. They consist of lowercase letters, numbers, and
-        /// hyphens.</p>
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
         pub fn backup_vault_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.backup_vault_name(input.into());
             self
         }
-        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the Amazon Web Services
-        /// Region where they are created. They consist of lowercase letters, numbers, and
-        /// hyphens.</p>
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
         pub fn set_backup_vault_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6051,40 +5518,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_backup_vault_name(input);
             self
         }
-        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN
-        /// depends on the resource type.</p>
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN
-        /// depends on the resource type.</p>
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
         }
-        /// <p>Specifies the IAM role ARN used to create the target recovery point; for example,
-        /// <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+        /// <p>Specifies the IAM role ARN used to create the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
         pub fn iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.iam_role_arn(input.into());
             self
         }
-        /// <p>Specifies the IAM role ARN used to create the target recovery point; for example,
-        /// <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+        /// <p>Specifies the IAM role ARN used to create the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
         pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_iam_role_arn(input);
             self
         }
-        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
-        /// calls to <code>StartBackupJob</code>. Retrying a successful request with the same
-        /// idempotency token results in a success message with no action taken.</p>
+        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>StartBackupJob</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.idempotency_token(input.into());
             self
         }
-        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
-        /// calls to <code>StartBackupJob</code>. Retrying a successful request with the same
-        /// idempotency token results in a success message with no action taken.</p>
+        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>StartBackupJob</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6092,53 +5551,35 @@ pub mod fluent_builders {
             self.inner = self.inner.set_idempotency_token(input);
             self
         }
-        /// <p>A value in minutes after a backup is scheduled before a job will be canceled if it
-        /// doesn't start successfully. This value is optional, and the default is 8 hours.</p>
+        /// <p>A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start successfully. This value is optional, and the default is 8 hours.</p>
         pub fn start_window_minutes(mut self, input: i64) -> Self {
             self.inner = self.inner.start_window_minutes(input);
             self
         }
-        /// <p>A value in minutes after a backup is scheduled before a job will be canceled if it
-        /// doesn't start successfully. This value is optional, and the default is 8 hours.</p>
+        /// <p>A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start successfully. This value is optional, and the default is 8 hours.</p>
         pub fn set_start_window_minutes(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_start_window_minutes(input);
             self
         }
-        /// <p>A value in minutes during which a successfully started backup must complete, or else AWS
-        /// Backup will cancel the job. This value is optional. This value begins counting down from
-        /// when the backup was scheduled. It does not add additional time for
-        /// <code>StartWindowMinutes</code>, or if the backup started later than scheduled.</p>
+        /// <p>A value in minutes during which a successfully started backup must complete, or else AWS Backup will cancel the job. This value is optional. This value begins counting down from when the backup was scheduled. It does not add additional time for <code>StartWindowMinutes</code>, or if the backup started later than scheduled.</p>
         pub fn complete_window_minutes(mut self, input: i64) -> Self {
             self.inner = self.inner.complete_window_minutes(input);
             self
         }
-        /// <p>A value in minutes during which a successfully started backup must complete, or else AWS
-        /// Backup will cancel the job. This value is optional. This value begins counting down from
-        /// when the backup was scheduled. It does not add additional time for
-        /// <code>StartWindowMinutes</code>, or if the backup started later than scheduled.</p>
+        /// <p>A value in minutes during which a successfully started backup must complete, or else AWS Backup will cancel the job. This value is optional. This value begins counting down from when the backup was scheduled. It does not add additional time for <code>StartWindowMinutes</code>, or if the backup started later than scheduled.</p>
         pub fn set_complete_window_minutes(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_complete_window_minutes(input);
             self
         }
-        /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when
-        /// it expires. Backup will transition and expire backups automatically according
-        /// to the lifecycle that you define. </p>
-        /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90
-        /// days. Therefore, the “expire after days” setting must be 90 days greater than the
-        /// “transition to cold after days” setting. The “transition to cold after days” setting cannot
-        /// be changed after a backup has been transitioned to cold. </p>
+        /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup will transition and expire backups automatically according to the lifecycle that you define. </p>
+        /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold. </p>
         /// <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
         pub fn lifecycle(mut self, input: crate::model::Lifecycle) -> Self {
             self.inner = self.inner.lifecycle(input);
             self
         }
-        /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when
-        /// it expires. Backup will transition and expire backups automatically according
-        /// to the lifecycle that you define. </p>
-        /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90
-        /// days. Therefore, the “expire after days” setting must be 90 days greater than the
-        /// “transition to cold after days” setting. The “transition to cold after days” setting cannot
-        /// be changed after a backup has been transitioned to cold. </p>
+        /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup will transition and expire backups automatically according to the lifecycle that you define. </p>
+        /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold. </p>
         /// <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
         pub fn set_lifecycle(
             mut self,
@@ -6151,8 +5592,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_recovery_point_tags`](Self::set_recovery_point_tags).
         ///
-        /// <p>To help organize your resources, you can assign your own metadata to the resources that
-        /// you create. Each tag is a key-value pair.</p>
+        /// <p>To help organize your resources, you can assign your own metadata to the resources that you create. Each tag is a key-value pair.</p>
         pub fn recovery_point_tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -6161,8 +5601,7 @@ pub mod fluent_builders {
             self.inner = self.inner.recovery_point_tags(k.into(), v.into());
             self
         }
-        /// <p>To help organize your resources, you can assign your own metadata to the resources that
-        /// you create. Each tag is a key-value pair.</p>
+        /// <p>To help organize your resources, you can assign your own metadata to the resources that you create. Each tag is a key-value pair.</p>
         pub fn set_recovery_point_tags(
             mut self,
             input: std::option::Option<
@@ -6176,12 +5615,8 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_backup_options`](Self::set_backup_options).
         ///
-        /// <p>Specifies the backup option for a selected resource. This option is only available for
-        /// Windows Volume Shadow Copy Service (VSS) backup jobs.</p>
-        /// <p>Valid values: Set to <code>"WindowsVSS":"enabled"</code> to enable the
-        /// <code>WindowsVSS</code> backup option and create a Windows VSS backup. Set to
-        /// <code>"WindowsVSS""disabled"</code> to create a regular backup. The
-        /// <code>WindowsVSS</code> option is not enabled by default.</p>
+        /// <p>Specifies the backup option for a selected resource. This option is only available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p>
+        /// <p>Valid values: Set to <code>"WindowsVSS":"enabled"</code> to enable the <code>WindowsVSS</code> backup option and create a Windows VSS backup. Set to <code>"WindowsVSS""disabled"</code> to create a regular backup. The <code>WindowsVSS</code> option is not enabled by default.</p>
         pub fn backup_options(
             mut self,
             k: impl Into<std::string::String>,
@@ -6190,12 +5625,8 @@ pub mod fluent_builders {
             self.inner = self.inner.backup_options(k.into(), v.into());
             self
         }
-        /// <p>Specifies the backup option for a selected resource. This option is only available for
-        /// Windows Volume Shadow Copy Service (VSS) backup jobs.</p>
-        /// <p>Valid values: Set to <code>"WindowsVSS":"enabled"</code> to enable the
-        /// <code>WindowsVSS</code> backup option and create a Windows VSS backup. Set to
-        /// <code>"WindowsVSS""disabled"</code> to create a regular backup. The
-        /// <code>WindowsVSS</code> option is not enabled by default.</p>
+        /// <p>Specifies the backup option for a selected resource. This option is only available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p>
+        /// <p>Valid values: Set to <code>"WindowsVSS":"enabled"</code> to enable the <code>WindowsVSS</code> backup option and create a Windows VSS backup. Set to <code>"WindowsVSS""disabled"</code> to create a regular backup. The <code>WindowsVSS</code> option is not enabled by default.</p>
         pub fn set_backup_options(
             mut self,
             input: std::option::Option<
@@ -6266,16 +5697,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>An ARN that uniquely identifies a recovery point to use for the copy job; for example,
-        /// arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45.
-        /// </p>
+        /// <p>An ARN that uniquely identifies a recovery point to use for the copy job; for example, arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45. </p>
         pub fn recovery_point_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.recovery_point_arn(input.into());
             self
         }
-        /// <p>An ARN that uniquely identifies a recovery point to use for the copy job; for example,
-        /// arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45.
-        /// </p>
+        /// <p>An ARN that uniquely identifies a recovery point to use for the copy job; for example, arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45. </p>
         pub fn set_recovery_point_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6283,16 +5710,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_recovery_point_arn(input);
             self
         }
-        /// <p>The name of a logical source container where backups are stored. Backup vaults are
-        /// identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers,
-        /// and hyphens.</p>
+        /// <p>The name of a logical source container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
         pub fn source_backup_vault_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.source_backup_vault_name(input.into());
             self
         }
-        /// <p>The name of a logical source container where backups are stored. Backup vaults are
-        /// identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers,
-        /// and hyphens.</p>
+        /// <p>The name of a logical source container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
         pub fn set_source_backup_vault_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6300,9 +5723,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_source_backup_vault_name(input);
             self
         }
-        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a destination backup vault to
-        /// copy to; for example,
-        /// <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a destination backup vault to copy to; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
         pub fn destination_backup_vault_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -6310,9 +5731,7 @@ pub mod fluent_builders {
             self.inner = self.inner.destination_backup_vault_arn(input.into());
             self
         }
-        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a destination backup vault to
-        /// copy to; for example,
-        /// <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a destination backup vault to copy to; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
         pub fn set_destination_backup_vault_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6320,28 +5739,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_destination_backup_vault_arn(input);
             self
         }
-        /// <p>Specifies the IAM role ARN used to copy the target recovery point; for example,
-        /// <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+        /// <p>Specifies the IAM role ARN used to copy the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
         pub fn iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.iam_role_arn(input.into());
             self
         }
-        /// <p>Specifies the IAM role ARN used to copy the target recovery point; for example,
-        /// <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+        /// <p>Specifies the IAM role ARN used to copy the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
         pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_iam_role_arn(input);
             self
         }
-        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
-        /// calls to <code>StartCopyJob</code>. Retrying a successful request with the same idempotency
-        /// token results in a success message with no action taken.</p>
+        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>StartCopyJob</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.idempotency_token(input.into());
             self
         }
-        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
-        /// calls to <code>StartCopyJob</code>. Retrying a successful request with the same idempotency
-        /// token results in a success message with no action taken.</p>
+        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>StartCopyJob</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6349,23 +5762,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_idempotency_token(input);
             self
         }
-        /// <p>Contains an array of <code>Transition</code> objects specifying how long in days before
-        /// a recovery point transitions to cold storage or is deleted.</p>
-        /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90
-        /// days. Therefore, on the console, the “expire after days” setting must be 90 days greater
-        /// than the “transition to cold after days” setting. The “transition to cold after days”
-        /// setting cannot be changed after a backup has been transitioned to cold.</p>
+        /// <p>Contains an array of <code>Transition</code> objects specifying how long in days before a recovery point transitions to cold storage or is deleted.</p>
+        /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p>
         /// <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
         pub fn lifecycle(mut self, input: crate::model::Lifecycle) -> Self {
             self.inner = self.inner.lifecycle(input);
             self
         }
-        /// <p>Contains an array of <code>Transition</code> objects specifying how long in days before
-        /// a recovery point transitions to cold storage or is deleted.</p>
-        /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90
-        /// days. Therefore, on the console, the “expire after days” setting must be 90 days greater
-        /// than the “transition to cold after days” setting. The “transition to cold after days”
-        /// setting cannot be changed after a backup has been transitioned to cold.</p>
+        /// <p>Contains an array of <code>Transition</code> objects specifying how long in days before a recovery point transitions to cold storage or is deleted.</p>
+        /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p>
         /// <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
         pub fn set_lifecycle(
             mut self,
@@ -6447,16 +5852,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_report_plan_name(input);
             self
         }
-        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
-        /// calls to <code>StartReportJobInput</code>. Retrying a successful request with the same
-        /// idempotency token results in a success message with no action taken.</p>
+        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>StartReportJobInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.idempotency_token(input.into());
             self
         }
-        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
-        /// calls to <code>StartReportJobInput</code>. Retrying a successful request with the same
-        /// idempotency token results in a success message with no action taken.</p>
+        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>StartReportJobInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6524,14 +5925,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>An ARN that uniquely identifies a recovery point; for example,
-        /// <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+        /// <p>An ARN that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
         pub fn recovery_point_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.recovery_point_arn(input.into());
             self
         }
-        /// <p>An ARN that uniquely identifies a recovery point; for example,
-        /// <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+        /// <p>An ARN that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
         pub fn set_recovery_point_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6543,54 +5942,17 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
         ///
-        /// <p>A set of metadata key-value pairs. Contains information, such as a resource name,
-        /// required to restore a recovery point.</p>
-        /// <p> You can get configuration metadata about a resource at the time it was backed up by
-        /// calling <code>GetRecoveryPointRestoreMetadata</code>. However, values in addition to those
-        /// provided by <code>GetRecoveryPointRestoreMetadata</code> might be required to restore a
-        /// resource. For example, you might need to provide a new resource name if the original
-        /// already exists.</p>
+        /// <p>A set of metadata key-value pairs. Contains information, such as a resource name, required to restore a recovery point.</p>
+        /// <p> You can get configuration metadata about a resource at the time it was backed up by calling <code>GetRecoveryPointRestoreMetadata</code>. However, values in addition to those provided by <code>GetRecoveryPointRestoreMetadata</code> might be required to restore a resource. For example, you might need to provide a new resource name if the original already exists.</p>
         /// <p>You need to specify specific metadata to restore an Amazon Elastic File System (Amazon EFS) instance:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>file-system-id</code>: The ID of the Amazon EFS file system that is
-        /// backed up by Backup. Returned in
-        /// <code>GetRecoveryPointRestoreMetadata</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Encrypted</code>: A Boolean value that, if true, specifies that the file
-        /// system is encrypted. If <code>KmsKeyId</code> is specified, <code>Encrypted</code>
-        /// must be set to <code>true</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>KmsKeyId</code>: Specifies the Amazon Web Services KMS key that is used to
-        /// encrypt the restored file system. You can specify a key from another Amazon Web Services account provided that key it is properly shared with your account via Amazon Web Services KMS.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PerformanceMode</code>: Specifies the throughput mode of the file
-        /// system.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CreationToken</code>: A user-supplied value that ensures the uniqueness
-        /// (idempotency) of the request.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>newFileSystem</code>: A Boolean value that, if true, specifies that the
-        /// recovery point is restored to a new Amazon EFS file system.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ItemsToRestore</code>: An array of one to five strings where each string is
-        /// a file path. Use <code>ItemsToRestore</code> to restore specific files or directories
-        /// rather than the entire file system. This parameter is optional. For example,
-        /// <code>"itemsToRestore":"[\"/my.test\"]"</code>.</p>
-        /// </li>
+        /// <li> <p> <code>file-system-id</code>: The ID of the Amazon EFS file system that is backed up by Backup. Returned in <code>GetRecoveryPointRestoreMetadata</code>.</p> </li>
+        /// <li> <p> <code>Encrypted</code>: A Boolean value that, if true, specifies that the file system is encrypted. If <code>KmsKeyId</code> is specified, <code>Encrypted</code> must be set to <code>true</code>.</p> </li>
+        /// <li> <p> <code>KmsKeyId</code>: Specifies the Amazon Web Services KMS key that is used to encrypt the restored file system. You can specify a key from another Amazon Web Services account provided that key it is properly shared with your account via Amazon Web Services KMS.</p> </li>
+        /// <li> <p> <code>PerformanceMode</code>: Specifies the throughput mode of the file system.</p> </li>
+        /// <li> <p> <code>CreationToken</code>: A user-supplied value that ensures the uniqueness (idempotency) of the request.</p> </li>
+        /// <li> <p> <code>newFileSystem</code>: A Boolean value that, if true, specifies that the recovery point is restored to a new Amazon EFS file system.</p> </li>
+        /// <li> <p> <code>ItemsToRestore</code>: An array of one to five strings where each string is a file path. Use <code>ItemsToRestore</code> to restore specific files or directories rather than the entire file system. This parameter is optional. For example, <code>"itemsToRestore":"[\"/my.test\"]"</code>.</p> </li>
         /// </ul>
         pub fn metadata(
             mut self,
@@ -6600,54 +5962,17 @@ pub mod fluent_builders {
             self.inner = self.inner.metadata(k.into(), v.into());
             self
         }
-        /// <p>A set of metadata key-value pairs. Contains information, such as a resource name,
-        /// required to restore a recovery point.</p>
-        /// <p> You can get configuration metadata about a resource at the time it was backed up by
-        /// calling <code>GetRecoveryPointRestoreMetadata</code>. However, values in addition to those
-        /// provided by <code>GetRecoveryPointRestoreMetadata</code> might be required to restore a
-        /// resource. For example, you might need to provide a new resource name if the original
-        /// already exists.</p>
+        /// <p>A set of metadata key-value pairs. Contains information, such as a resource name, required to restore a recovery point.</p>
+        /// <p> You can get configuration metadata about a resource at the time it was backed up by calling <code>GetRecoveryPointRestoreMetadata</code>. However, values in addition to those provided by <code>GetRecoveryPointRestoreMetadata</code> might be required to restore a resource. For example, you might need to provide a new resource name if the original already exists.</p>
         /// <p>You need to specify specific metadata to restore an Amazon Elastic File System (Amazon EFS) instance:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>file-system-id</code>: The ID of the Amazon EFS file system that is
-        /// backed up by Backup. Returned in
-        /// <code>GetRecoveryPointRestoreMetadata</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Encrypted</code>: A Boolean value that, if true, specifies that the file
-        /// system is encrypted. If <code>KmsKeyId</code> is specified, <code>Encrypted</code>
-        /// must be set to <code>true</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>KmsKeyId</code>: Specifies the Amazon Web Services KMS key that is used to
-        /// encrypt the restored file system. You can specify a key from another Amazon Web Services account provided that key it is properly shared with your account via Amazon Web Services KMS.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PerformanceMode</code>: Specifies the throughput mode of the file
-        /// system.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CreationToken</code>: A user-supplied value that ensures the uniqueness
-        /// (idempotency) of the request.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>newFileSystem</code>: A Boolean value that, if true, specifies that the
-        /// recovery point is restored to a new Amazon EFS file system.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ItemsToRestore</code>: An array of one to five strings where each string is
-        /// a file path. Use <code>ItemsToRestore</code> to restore specific files or directories
-        /// rather than the entire file system. This parameter is optional. For example,
-        /// <code>"itemsToRestore":"[\"/my.test\"]"</code>.</p>
-        /// </li>
+        /// <li> <p> <code>file-system-id</code>: The ID of the Amazon EFS file system that is backed up by Backup. Returned in <code>GetRecoveryPointRestoreMetadata</code>.</p> </li>
+        /// <li> <p> <code>Encrypted</code>: A Boolean value that, if true, specifies that the file system is encrypted. If <code>KmsKeyId</code> is specified, <code>Encrypted</code> must be set to <code>true</code>.</p> </li>
+        /// <li> <p> <code>KmsKeyId</code>: Specifies the Amazon Web Services KMS key that is used to encrypt the restored file system. You can specify a key from another Amazon Web Services account provided that key it is properly shared with your account via Amazon Web Services KMS.</p> </li>
+        /// <li> <p> <code>PerformanceMode</code>: Specifies the throughput mode of the file system.</p> </li>
+        /// <li> <p> <code>CreationToken</code>: A user-supplied value that ensures the uniqueness (idempotency) of the request.</p> </li>
+        /// <li> <p> <code>newFileSystem</code>: A Boolean value that, if true, specifies that the recovery point is restored to a new Amazon EFS file system.</p> </li>
+        /// <li> <p> <code>ItemsToRestore</code>: An array of one to five strings where each string is a file path. Use <code>ItemsToRestore</code> to restore specific files or directories rather than the entire file system. This parameter is optional. For example, <code>"itemsToRestore":"[\"/my.test\"]"</code>.</p> </li>
         /// </ul>
         pub fn set_metadata(
             mut self,
@@ -6658,30 +5983,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_metadata(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role that Backup uses to create
-        /// the target recovery point; for example,
-        /// <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
         pub fn iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.iam_role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role that Backup uses to create
-        /// the target recovery point; for example,
-        /// <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
         pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_iam_role_arn(input);
             self
         }
-        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
-        /// calls to <code>StartRestoreJob</code>. Retrying a successful request with the same
-        /// idempotency token results in a success message with no action taken.</p>
+        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>StartRestoreJob</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.idempotency_token(input.into());
             self
         }
-        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
-        /// calls to <code>StartRestoreJob</code>. Retrying a successful request with the same
-        /// idempotency token results in a success message with no action taken.</p>
+        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>StartRestoreJob</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6691,34 +6008,13 @@ pub mod fluent_builders {
         }
         /// <p>Starts a job to restore a recovery point for one of the following resources:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DynamoDB</code> for Amazon DynamoDB</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EBS</code> for Amazon Elastic Block Store</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EC2</code> for Amazon Elastic Compute Cloud</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EFS</code> for Amazon Elastic File System</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RDS</code> for Amazon Relational Database Service</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Aurora</code> for Amazon Aurora</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Storage Gateway</code> for Storage Gateway</p>
-        /// </li>
+        /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
+        /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
+        /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
+        /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
+        /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+        /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
+        /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
         /// </ul>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_type(input.into());
@@ -6726,34 +6022,13 @@ pub mod fluent_builders {
         }
         /// <p>Starts a job to restore a recovery point for one of the following resources:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DynamoDB</code> for Amazon DynamoDB</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EBS</code> for Amazon Elastic Block Store</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EC2</code> for Amazon Elastic Compute Cloud</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EFS</code> for Amazon Elastic File System</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RDS</code> for Amazon Relational Database Service</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Aurora</code> for Amazon Aurora</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Storage Gateway</code> for Storage Gateway</p>
-        /// </li>
+        /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
+        /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
+        /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
+        /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
+        /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+        /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
+        /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
         /// </ul>
         pub fn set_resource_type(
             mut self,
@@ -6838,8 +6113,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Assigns a set of key-value pairs to a recovery point, backup plan, or backup vault
-    /// identified by an Amazon Resource Name (ARN).</p>
+    /// <p>Assigns a set of key-value pairs to a recovery point, backup plan, or backup vault identified by an Amazon Resource Name (ARN).</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -6896,14 +6170,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the type of
-        /// the tagged resource.</p>
+        /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the type of the tagged resource.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the type of
-        /// the tagged resource.</p>
+        /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the type of the tagged resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -6912,9 +6184,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Key-value pairs that are used to help organize your resources. You can assign your own
-        /// metadata to the resources you create. For clarity, this is the structure to assign tags:
-        /// <code>[{"Key":"string","Value":"string"}]</code>.</p>
+        /// <p>Key-value pairs that are used to help organize your resources. You can assign your own metadata to the resources you create. For clarity, this is the structure to assign tags: <code>[{"Key":"string","Value":"string"}]</code>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -6923,9 +6193,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>Key-value pairs that are used to help organize your resources. You can assign your own
-        /// metadata to the resources you create. For clarity, this is the structure to assign tags:
-        /// <code>[{"Key":"string","Value":"string"}]</code>.</p>
+        /// <p>Key-value pairs that are used to help organize your resources. You can assign your own metadata to the resources you create. For clarity, this is the structure to assign tags: <code>[{"Key":"string","Value":"string"}]</code>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -6938,8 +6206,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UntagResource`.
     ///
-    /// <p>Removes a set of key-value pairs from a recovery point, backup plan, or backup vault
-    /// identified by an Amazon Resource Name (ARN)</p>
+    /// <p>Removes a set of key-value pairs from a recovery point, backup plan, or backup vault identified by an Amazon Resource Name (ARN)</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -6996,14 +6263,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the type of
-        /// the tagged resource.</p>
+        /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the type of the tagged resource.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the type of
-        /// the tagged resource.</p>
+        /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the type of the tagged resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -7028,9 +6293,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateBackupPlan`.
     ///
-    /// <p>Updates an existing backup plan identified by its <code>backupPlanId</code> with the
-    /// input document in JSON format. The new version is uniquely identified by a
-    /// <code>VersionId</code>.</p>
+    /// <p>Updates an existing backup plan identified by its <code>backupPlanId</code> with the input document in JSON format. The new version is uniquely identified by a <code>VersionId</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateBackupPlan<
         C = aws_smithy_client::erase::DynConnector,
@@ -7100,14 +6363,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_backup_plan_id(input);
             self
         }
-        /// <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or
-        /// more sets of <code>Rules</code>.</p>
+        /// <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
         pub fn backup_plan(mut self, input: crate::model::BackupPlanInput) -> Self {
             self.inner = self.inner.backup_plan(input);
             self
         }
-        /// <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or
-        /// more sets of <code>Rules</code>.</p>
+        /// <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
         pub fn set_backup_plan(
             mut self,
             input: std::option::Option<crate::model::BackupPlanInput>,
@@ -7118,8 +6379,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateFramework`.
     ///
-    /// <p>Updates an existing framework identified by its <code>FrameworkName</code> with the
-    /// input document in JSON format.</p>
+    /// <p>Updates an existing framework identified by its <code>FrameworkName</code> with the input document in JSON format.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFramework<
         C = aws_smithy_client::erase::DynConnector,
@@ -7176,14 +6436,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique name of a framework. This name is between 1 and 256 characters, starting with
-        /// a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
+        /// <p>The unique name of a framework. This name is between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
         pub fn framework_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.framework_name(input.into());
             self
         }
-        /// <p>The unique name of a framework. This name is between 1 and 256 characters, starting with
-        /// a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
+        /// <p>The unique name of a framework. This name is between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
         pub fn set_framework_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7208,14 +6466,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_framework_controls`](Self::set_framework_controls).
         ///
-        /// <p>A list of the controls that make up the framework. Each control in the list has a name,
-        /// input parameters, and scope.</p>
+        /// <p>A list of the controls that make up the framework. Each control in the list has a name, input parameters, and scope.</p>
         pub fn framework_controls(mut self, input: crate::model::FrameworkControl) -> Self {
             self.inner = self.inner.framework_controls(input);
             self
         }
-        /// <p>A list of the controls that make up the framework. Each control in the list has a name,
-        /// input parameters, and scope.</p>
+        /// <p>A list of the controls that make up the framework. Each control in the list has a name, input parameters, and scope.</p>
         pub fn set_framework_controls(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FrameworkControl>>,
@@ -7223,16 +6479,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_framework_controls(input);
             self
         }
-        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
-        /// calls to <code>UpdateFrameworkInput</code>. Retrying a successful request with the same
-        /// idempotency token results in a success message with no action taken.</p>
+        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>UpdateFrameworkInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.idempotency_token(input.into());
             self
         }
-        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
-        /// calls to <code>UpdateFrameworkInput</code>. Retrying a successful request with the same
-        /// idempotency token results in a success message with no action taken.</p>
+        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>UpdateFrameworkInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7243,9 +6495,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateGlobalSettings`.
     ///
-    /// <p>Updates whether the Amazon Web Services account is opted in to cross-account backup.
-    /// Returns an error if the account is not an Organizations management account. Use the
-    /// <code>DescribeGlobalSettings</code> API to determine the current settings.</p>
+    /// <p>Updates whether the Amazon Web Services account is opted in to cross-account backup. Returns an error if the account is not an Organizations management account. Use the <code>DescribeGlobalSettings</code> API to determine the current settings.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateGlobalSettings<
         C = aws_smithy_client::erase::DynConnector,
@@ -7306,9 +6556,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_global_settings`](Self::set_global_settings).
         ///
-        /// <p>A value for <code>isCrossAccountBackupEnabled</code> and a Region. Example:
-        /// <code>update-global-settings --global-settings isCrossAccountBackupEnabled=false
-        /// --region us-west-2</code>.</p>
+        /// <p>A value for <code>isCrossAccountBackupEnabled</code> and a Region. Example: <code>update-global-settings --global-settings isCrossAccountBackupEnabled=false --region us-west-2</code>.</p>
         pub fn global_settings(
             mut self,
             k: impl Into<std::string::String>,
@@ -7317,9 +6565,7 @@ pub mod fluent_builders {
             self.inner = self.inner.global_settings(k.into(), v.into());
             self
         }
-        /// <p>A value for <code>isCrossAccountBackupEnabled</code> and a Region. Example:
-        /// <code>update-global-settings --global-settings isCrossAccountBackupEnabled=false
-        /// --region us-west-2</code>.</p>
+        /// <p>A value for <code>isCrossAccountBackupEnabled</code> and a Region. Example: <code>update-global-settings --global-settings isCrossAccountBackupEnabled=false --region us-west-2</code>.</p>
         pub fn set_global_settings(
             mut self,
             input: std::option::Option<
@@ -7333,13 +6579,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateRecoveryPointLifecycle`.
     ///
     /// <p>Sets the transition lifecycle of a recovery point.</p>
-    /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when
-    /// it expires. Backup transitions and expires backups automatically according to
-    /// the lifecycle that you define.</p>
-    /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90
-    /// days. Therefore, the “expire after days” setting must be 90 days greater than the
-    /// “transition to cold after days” setting. The “transition to cold after days” setting cannot
-    /// be changed after a backup has been transitioned to cold.</p>
+    /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define.</p>
+    /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p>
     /// <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
     /// <p>Does not support continuous backups.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -7398,18 +6639,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the Amazon Web Services
-        /// Region where they are created. They consist of lowercase letters, numbers, and
-        /// hyphens.</p>
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
         pub fn backup_vault_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.backup_vault_name(input.into());
             self
         }
-        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the Amazon Web Services
-        /// Region where they are created. They consist of lowercase letters, numbers, and
-        /// hyphens.</p>
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
         pub fn set_backup_vault_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7417,14 +6652,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_backup_vault_name(input);
             self
         }
-        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example,
-        /// <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
         pub fn recovery_point_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.recovery_point_arn(input.into());
             self
         }
-        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example,
-        /// <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
         pub fn set_recovery_point_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7432,24 +6665,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_recovery_point_arn(input);
             self
         }
-        /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when
-        /// it expires. Backup transitions and expires backups automatically according to
-        /// the lifecycle that you define. </p>
-        /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90
-        /// days. Therefore, the “expire after days” setting must be 90 days greater than the
-        /// “transition to cold after days” setting. The “transition to cold after days” setting cannot
-        /// be changed after a backup has been transitioned to cold. </p>
+        /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define. </p>
+        /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold. </p>
         pub fn lifecycle(mut self, input: crate::model::Lifecycle) -> Self {
             self.inner = self.inner.lifecycle(input);
             self
         }
-        /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when
-        /// it expires. Backup transitions and expires backups automatically according to
-        /// the lifecycle that you define. </p>
-        /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90
-        /// days. Therefore, the “expire after days” setting must be 90 days greater than the
-        /// “transition to cold after days” setting. The “transition to cold after days” setting cannot
-        /// be changed after a backup has been transitioned to cold. </p>
+        /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define. </p>
+        /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold. </p>
         pub fn set_lifecycle(
             mut self,
             input: std::option::Option<crate::model::Lifecycle>,
@@ -7460,12 +6683,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateRegionSettings`.
     ///
-    /// <p>Updates the current service opt-in settings for the Region. If service-opt-in is enabled
-    /// for a service, Backup tries to protect that service's resources in this Region,
-    /// when the resource is included in an on-demand backup or scheduled backup plan. Otherwise,
-    /// Backup does not try to protect that service's resources in this Region. Use
-    /// the <code>DescribeRegionSettings</code> API to determine the resource types that are
-    /// supported.</p>
+    /// <p>Updates the current service opt-in settings for the Region. If service-opt-in is enabled for a service, Backup tries to protect that service's resources in this Region, when the resource is included in an on-demand backup or scheduled backup plan. Otherwise, Backup does not try to protect that service's resources in this Region. Use the <code>DescribeRegionSettings</code> API to determine the resource types that are supported.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRegionSettings<
         C = aws_smithy_client::erase::DynConnector,
@@ -7547,10 +6765,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_resource_type_management_preference`](Self::set_resource_type_management_preference).
         ///
-        /// <p>Enables or disables
-        /// <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html">
-        /// Backup's advanced DynamoDB backup features</a> for the
-        /// Region.</p>
+        /// <p>Enables or disables <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html"> Backup's advanced DynamoDB backup features</a> for the Region.</p>
         pub fn resource_type_management_preference(
             mut self,
             k: impl Into<std::string::String>,
@@ -7559,10 +6774,7 @@ pub mod fluent_builders {
             self.inner = self.inner.resource_type_management_preference(k.into(), v);
             self
         }
-        /// <p>Enables or disables
-        /// <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html">
-        /// Backup's advanced DynamoDB backup features</a> for the
-        /// Region.</p>
+        /// <p>Enables or disables <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html"> Backup's advanced DynamoDB backup features</a> for the Region.</p>
         pub fn set_resource_type_management_preference(
             mut self,
             input: std::option::Option<std::collections::HashMap<std::string::String, bool>>,
@@ -7573,8 +6785,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateReportPlan`.
     ///
-    /// <p>Updates an existing report plan identified by its <code>ReportPlanName</code> with the
-    /// input document in JSON format.</p>
+    /// <p>Updates an existing report plan identified by its <code>ReportPlanName</code> with the input document in JSON format.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateReportPlan<
         C = aws_smithy_client::erase::DynConnector,
@@ -7631,16 +6842,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique name of the report plan. This name is between 1 and 256 characters, starting
-        /// with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores
-        /// (_).</p>
+        /// <p>The unique name of the report plan. This name is between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
         pub fn report_plan_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.report_plan_name(input.into());
             self
         }
-        /// <p>The unique name of the report plan. This name is between 1 and 256 characters, starting
-        /// with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores
-        /// (_).</p>
+        /// <p>The unique name of the report plan. This name is between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
         pub fn set_report_plan_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7661,8 +6868,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_report_plan_description(input);
             self
         }
-        /// <p>A structure that contains information about where to deliver your reports, specifically
-        /// your Amazon S3 bucket name, S3 key prefix, and the formats of your reports.</p>
+        /// <p>A structure that contains information about where to deliver your reports, specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your reports.</p>
         pub fn report_delivery_channel(
             mut self,
             input: crate::model::ReportDeliveryChannel,
@@ -7670,8 +6876,7 @@ pub mod fluent_builders {
             self.inner = self.inner.report_delivery_channel(input);
             self
         }
-        /// <p>A structure that contains information about where to deliver your reports, specifically
-        /// your Amazon S3 bucket name, S3 key prefix, and the formats of your reports.</p>
+        /// <p>A structure that contains information about where to deliver your reports, specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your reports.</p>
         pub fn set_report_delivery_channel(
             mut self,
             input: std::option::Option<crate::model::ReportDeliveryChannel>,
@@ -7679,28 +6884,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_report_delivery_channel(input);
             self
         }
-        /// <p>Identifies the report template for the report. Reports are built using a report
-        /// template. The report templates are:</p>
-        /// <p>
-        /// <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT |
-        /// COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
-        /// </p>
-        /// <p>If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or
-        /// <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the report
-        /// coverage by Amazon Web Services Regions and frameworks.</p>
+        /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p>
+        /// <p> <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
+        /// <p>If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the report coverage by Amazon Web Services Regions and frameworks.</p>
         pub fn report_setting(mut self, input: crate::model::ReportSetting) -> Self {
             self.inner = self.inner.report_setting(input);
             self
         }
-        /// <p>Identifies the report template for the report. Reports are built using a report
-        /// template. The report templates are:</p>
-        /// <p>
-        /// <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT |
-        /// COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
-        /// </p>
-        /// <p>If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or
-        /// <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the report
-        /// coverage by Amazon Web Services Regions and frameworks.</p>
+        /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p>
+        /// <p> <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
+        /// <p>If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the report coverage by Amazon Web Services Regions and frameworks.</p>
         pub fn set_report_setting(
             mut self,
             input: std::option::Option<crate::model::ReportSetting>,
@@ -7708,16 +6901,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_report_setting(input);
             self
         }
-        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
-        /// calls to <code>UpdateReportPlanInput</code>. Retrying a successful request with the same
-        /// idempotency token results in a success message with no action taken.</p>
+        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>UpdateReportPlanInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.idempotency_token(input.into());
             self
         }
-        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
-        /// calls to <code>UpdateReportPlanInput</code>. Retrying a successful request with the same
-        /// idempotency token results in a success message with no action taken.</p>
+        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>UpdateReportPlanInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,

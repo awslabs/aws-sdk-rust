@@ -3,8 +3,7 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>A client token input parameter was reused with an operation, but at least one of the
-    /// other input parameters is different from the previous call to the operation.</p>
+    /// <p>A client token input parameter was reused with an operation, but at least one of the other input parameters is different from the previous call to the operation.</p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
     /// <p>A client token is not valid.</p>
     InvalidClientTokenException(crate::error::InvalidClientTokenException),

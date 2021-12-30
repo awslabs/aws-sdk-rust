@@ -14,8 +14,7 @@ pub struct AssociateCustomerGatewayError {
 pub enum AssociateCustomerGatewayErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>There was a conflict processing the request. Updating or deleting the resource can
-    /// cause an inconsistent state.</p>
+    /// <p>There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent state.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The request has failed due to an internal error.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -178,8 +177,7 @@ pub struct AssociateLinkError {
 pub enum AssociateLinkErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>There was a conflict processing the request. Updating or deleting the resource can
-    /// cause an inconsistent state.</p>
+    /// <p>There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent state.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The request has failed due to an internal error.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -326,8 +324,7 @@ pub struct AssociateTransitGatewayConnectPeerError {
 pub enum AssociateTransitGatewayConnectPeerErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>There was a conflict processing the request. Updating or deleting the resource can
-    /// cause an inconsistent state.</p>
+    /// <p>There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent state.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The request has failed due to an internal error.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -513,8 +510,7 @@ pub struct CreateConnectionError {
 pub enum CreateConnectionErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>There was a conflict processing the request. Updating or deleting the resource can
-    /// cause an inconsistent state.</p>
+    /// <p>There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent state.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The request has failed due to an internal error.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -659,8 +655,7 @@ pub struct CreateDeviceError {
 pub enum CreateDeviceErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>There was a conflict processing the request. Updating or deleting the resource can
-    /// cause an inconsistent state.</p>
+    /// <p>There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent state.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The request has failed due to an internal error.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -807,8 +802,7 @@ pub struct CreateGlobalNetworkError {
 pub enum CreateGlobalNetworkErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>There was a conflict processing the request. Updating or deleting the resource can
-    /// cause an inconsistent state.</p>
+    /// <p>There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent state.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The request has failed due to an internal error.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -956,8 +950,7 @@ pub struct CreateLinkError {
 pub enum CreateLinkErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>There was a conflict processing the request. Updating or deleting the resource can
-    /// cause an inconsistent state.</p>
+    /// <p>There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent state.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The request has failed due to an internal error.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -1101,8 +1094,7 @@ pub struct CreateSiteError {
 pub enum CreateSiteErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>There was a conflict processing the request. Updating or deleting the resource can
-    /// cause an inconsistent state.</p>
+    /// <p>There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent state.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The request has failed due to an internal error.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -1246,8 +1238,7 @@ pub struct DeleteConnectionError {
 pub enum DeleteConnectionErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>There was a conflict processing the request. Updating or deleting the resource can
-    /// cause an inconsistent state.</p>
+    /// <p>There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent state.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The request has failed due to an internal error.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -1392,8 +1383,7 @@ pub struct DeleteDeviceError {
 pub enum DeleteDeviceErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>There was a conflict processing the request. Updating or deleting the resource can
-    /// cause an inconsistent state.</p>
+    /// <p>There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent state.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The request has failed due to an internal error.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -1529,8 +1519,7 @@ pub struct DeleteGlobalNetworkError {
 pub enum DeleteGlobalNetworkErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>There was a conflict processing the request. Updating or deleting the resource can
-    /// cause an inconsistent state.</p>
+    /// <p>There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent state.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The request has failed due to an internal error.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -1678,8 +1667,7 @@ pub struct DeleteLinkError {
 pub enum DeleteLinkErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>There was a conflict processing the request. Updating or deleting the resource can
-    /// cause an inconsistent state.</p>
+    /// <p>There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent state.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The request has failed due to an internal error.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -1812,8 +1800,7 @@ pub struct DeleteSiteError {
 pub enum DeleteSiteErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>There was a conflict processing the request. Updating or deleting the resource can
-    /// cause an inconsistent state.</p>
+    /// <p>There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent state.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The request has failed due to an internal error.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -1946,8 +1933,7 @@ pub struct DeregisterTransitGatewayError {
 pub enum DeregisterTransitGatewayErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>There was a conflict processing the request. Updating or deleting the resource can
-    /// cause an inconsistent state.</p>
+    /// <p>There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent state.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The request has failed due to an internal error.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -2232,8 +2218,7 @@ pub struct DisassociateCustomerGatewayError {
 pub enum DisassociateCustomerGatewayErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>There was a conflict processing the request. Updating or deleting the resource can
-    /// cause an inconsistent state.</p>
+    /// <p>There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent state.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The request has failed due to an internal error.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -2383,8 +2368,7 @@ pub struct DisassociateLinkError {
 pub enum DisassociateLinkErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>There was a conflict processing the request. Updating or deleting the resource can
-    /// cause an inconsistent state.</p>
+    /// <p>There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent state.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The request has failed due to an internal error.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -2529,8 +2513,7 @@ pub struct DisassociateTransitGatewayConnectPeerError {
 pub enum DisassociateTransitGatewayConnectPeerErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>There was a conflict processing the request. Updating or deleting the resource can
-    /// cause an inconsistent state.</p>
+    /// <p>There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent state.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The request has failed due to an internal error.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -2838,8 +2821,7 @@ pub struct GetCustomerGatewayAssociationsError {
 pub enum GetCustomerGatewayAssociationsErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>There was a conflict processing the request. Updating or deleting the resource can
-    /// cause an inconsistent state.</p>
+    /// <p>There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent state.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The request has failed due to an internal error.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -4328,8 +4310,7 @@ pub struct GetTransitGatewayConnectPeerAssociationsError {
 pub enum GetTransitGatewayConnectPeerAssociationsErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>There was a conflict processing the request. Updating or deleting the resource can
-    /// cause an inconsistent state.</p>
+    /// <p>There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent state.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The request has failed due to an internal error.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -4791,8 +4772,7 @@ pub struct RegisterTransitGatewayError {
 pub enum RegisterTransitGatewayErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>There was a conflict processing the request. Updating or deleting the resource can
-    /// cause an inconsistent state.</p>
+    /// <p>There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent state.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The request has failed due to an internal error.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -4940,8 +4920,7 @@ pub struct StartRouteAnalysisError {
 pub enum StartRouteAnalysisErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>There was a conflict processing the request. Updating or deleting the resource can
-    /// cause an inconsistent state.</p>
+    /// <p>There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent state.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The request has failed due to an internal error.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -5089,8 +5068,7 @@ pub struct TagResourceError {
 pub enum TagResourceErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>There was a conflict processing the request. Updating or deleting the resource can
-    /// cause an inconsistent state.</p>
+    /// <p>There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent state.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The request has failed due to an internal error.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -5234,8 +5212,7 @@ pub struct UntagResourceError {
 pub enum UntagResourceErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>There was a conflict processing the request. Updating or deleting the resource can
-    /// cause an inconsistent state.</p>
+    /// <p>There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent state.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The request has failed due to an internal error.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -5371,8 +5348,7 @@ pub struct UpdateConnectionError {
 pub enum UpdateConnectionErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>There was a conflict processing the request. Updating or deleting the resource can
-    /// cause an inconsistent state.</p>
+    /// <p>There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent state.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The request has failed due to an internal error.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -5517,8 +5493,7 @@ pub struct UpdateDeviceError {
 pub enum UpdateDeviceErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>There was a conflict processing the request. Updating or deleting the resource can
-    /// cause an inconsistent state.</p>
+    /// <p>There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent state.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The request has failed due to an internal error.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -5654,8 +5629,7 @@ pub struct UpdateGlobalNetworkError {
 pub enum UpdateGlobalNetworkErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>There was a conflict processing the request. Updating or deleting the resource can
-    /// cause an inconsistent state.</p>
+    /// <p>There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent state.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The request has failed due to an internal error.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -5803,8 +5777,7 @@ pub struct UpdateLinkError {
 pub enum UpdateLinkErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>There was a conflict processing the request. Updating or deleting the resource can
-    /// cause an inconsistent state.</p>
+    /// <p>There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent state.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The request has failed due to an internal error.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -5948,8 +5921,7 @@ pub struct UpdateNetworkResourceMetadataError {
 pub enum UpdateNetworkResourceMetadataErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>There was a conflict processing the request. Updating or deleting the resource can
-    /// cause an inconsistent state.</p>
+    /// <p>There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent state.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The request has failed due to an internal error.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -6106,8 +6078,7 @@ pub struct UpdateSiteError {
 pub enum UpdateSiteErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>There was a conflict processing the request. Updating or deleting the resource can
-    /// cause an inconsistent state.</p>
+    /// <p>There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent state.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>The request has failed due to an internal error.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -6658,8 +6629,7 @@ impl InternalServerException {
     }
 }
 
-/// <p>There was a conflict processing the request. Updating or deleting the resource can
-/// cause an inconsistent state.</p>
+/// <p>There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent state.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {

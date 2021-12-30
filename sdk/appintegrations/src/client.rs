@@ -203,11 +203,8 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CreateDataIntegration`.
     ///
-    /// <p>Creates and persists a DataIntegration resource.</p>
-    /// <note>
-    /// <p>You cannot create a DataIntegration association for a DataIntegration that has been previously associated.  
-    /// Use a different DataIntegration, or recreate the DataIntegration using the
-    /// <code>CreateDataIntegration</code> API.</p>
+    /// <p>Creates and persists a DataIntegration resource.</p> <note>
+    /// <p>You cannot create a DataIntegration association for a DataIntegration that has been previously associated. Use a different DataIntegration, or recreate the DataIntegration using the <code>CreateDataIntegration</code> API.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDataIntegration<
@@ -341,14 +338,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -356,10 +351,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateEventIntegration`.
     ///
-    /// <p>Creates an EventIntegration, given a specified name, description, and a reference to an
-    /// Amazon EventBridge bus in your account and a partner event source that pushes events to that bus. No
-    /// objects are created in the your account, only metadata that is persisted on the
-    /// EventIntegration control plane.</p>
+    /// <p>Creates an EventIntegration, given a specified name, description, and a reference to an Amazon EventBridge bus in your account and a partner event source that pushes events to that bus. No objects are created in the your account, only metadata that is persisted on the EventIntegration control plane.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEventIntegration<
         C = aws_smithy_client::erase::DynConnector,
@@ -462,14 +454,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_event_bridge_bus(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -500,13 +490,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteDataIntegration`.
     ///
-    /// <p>Deletes the DataIntegration. Only DataIntegrations that don't have any
-    /// DataIntegrationAssociations can be deleted. Deleting a DataIntegration also deletes the
-    /// underlying Amazon AppFlow flow and service linked role. </p>
-    /// <note>
-    /// <p>You cannot create a DataIntegration association for a DataIntegration that has been previously associated.  
-    /// Use a different DataIntegration, or recreate the DataIntegration using the
-    /// <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html">CreateDataIntegration</a> API.</p>
+    /// <p>Deletes the DataIntegration. Only DataIntegrations that don't have any DataIntegrationAssociations can be deleted. Deleting a DataIntegration also deletes the underlying Amazon AppFlow flow and service linked role. </p> <note>
+    /// <p>You cannot create a DataIntegration association for a DataIntegration that has been previously associated. Use a different DataIntegration, or recreate the DataIntegration using the <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html">CreateDataIntegration</a> API.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDataIntegration<
@@ -583,8 +568,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteEventIntegration`.
     ///
-    /// <p>Deletes the specified existing event integration. If the event integration is associated
-    /// with clients, the request is rejected.</p>
+    /// <p>Deletes the specified existing event integration. If the event integration is associated with clients, the request is rejected.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEventIntegration<
         C = aws_smithy_client::erase::DynConnector,
@@ -654,11 +638,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetDataIntegration`.
     ///
-    /// <p>Returns information about the DataIntegration.</p>
-    /// <note>
-    /// <p>You cannot create a DataIntegration association for a DataIntegration that has been previously associated.  
-    /// Use a different DataIntegration, or recreate the DataIntegration using the
-    /// <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html">CreateDataIntegration</a> API.</p>
+    /// <p>Returns information about the DataIntegration.</p> <note>
+    /// <p>You cannot create a DataIntegration association for a DataIntegration that has been previously associated. Use a different DataIntegration, or recreate the DataIntegration using the <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html">CreateDataIntegration</a> API.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDataIntegration<
@@ -799,11 +780,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDataIntegrationAssociations`.
     ///
-    /// <p>Returns a paginated list of DataIntegration associations in the account.</p>
-    /// <note>
-    /// <p>You cannot create a DataIntegration association for a DataIntegration that has been previously associated.  
-    /// Use a different DataIntegration, or recreate the DataIntegration using the
-    /// <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html">CreateDataIntegration</a> API.</p>
+    /// <p>Returns a paginated list of DataIntegration associations in the account.</p> <note>
+    /// <p>You cannot create a DataIntegration association for a DataIntegration that has been previously associated. Use a different DataIntegration, or recreate the DataIntegration using the <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html">CreateDataIntegration</a> API.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDataIntegrationAssociations<
@@ -877,14 +855,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_data_integration_identifier(input);
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -902,11 +878,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDataIntegrations`.
     ///
-    /// <p>Returns a paginated list of DataIntegrations in the account.</p>
-    /// <note>
-    /// <p>You cannot create a DataIntegration association for a DataIntegration that has been previously associated.  
-    /// Use a different DataIntegration, or recreate the DataIntegration using the
-    /// <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html">CreateDataIntegration</a> API.</p>
+    /// <p>Returns a paginated list of DataIntegrations in the account.</p> <note>
+    /// <p>You cannot create a DataIntegration association for a DataIntegration that has been previously associated. Use a different DataIntegration, or recreate the DataIntegration using the <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html">CreateDataIntegration</a> API.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDataIntegrations<
@@ -964,14 +937,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1059,14 +1030,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_event_integration_name(input);
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1141,14 +1110,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1416,11 +1383,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateDataIntegration`.
     ///
-    /// <p>Updates the description of a DataIntegration.</p>
-    /// <note>
-    /// <p>You cannot create a DataIntegration association for a DataIntegration that has been previously associated.  
-    /// Use a different DataIntegration, or recreate the DataIntegration using the
-    /// <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html">CreateDataIntegration</a> API.</p>
+    /// <p>Updates the description of a DataIntegration.</p> <note>
+    /// <p>You cannot create a DataIntegration association for a DataIntegration that has been previously associated. Use a different DataIntegration, or recreate the DataIntegration using the <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html">CreateDataIntegration</a> API.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDataIntegration<

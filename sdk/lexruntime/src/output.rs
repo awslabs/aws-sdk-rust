@@ -2,102 +2,40 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 pub struct PutSessionOutput {
-    /// <p>Content type as specified in the <code>Accept</code> HTTP header in
-    /// the request.</p>
+    /// <p>Content type as specified in the <code>Accept</code> HTTP header in the request.</p>
     pub content_type: std::option::Option<std::string::String>,
     /// <p>The name of the current intent.</p>
     pub intent_name: std::option::Option<std::string::String>,
-    /// <p>Map of zero or more intent slots Amazon Lex detected from the user input
-    /// during the conversation.</p>
-    /// <p>Amazon Lex creates a resolution list containing likely values for a slot.
-    /// The value that it returns is determined by the
-    /// <code>valueSelectionStrategy</code> selected when the slot type was
-    /// created or updated. If <code>valueSelectionStrategy</code> is set to
-    /// <code>ORIGINAL_VALUE</code>, the value provided by the user is returned,
-    /// if the user value is similar to the slot values. If
-    /// <code>valueSelectionStrategy</code> is set to
-    /// <code>TOP_RESOLUTION</code> Amazon Lex returns the first value in the
-    /// resolution list or, if there is no resolution list, null. If you don't
-    /// specify a <code>valueSelectionStrategy</code> the default is
-    /// <code>ORIGINAL_VALUE</code>. </p>
+    /// <p>Map of zero or more intent slots Amazon Lex detected from the user input during the conversation.</p>
+    /// <p>Amazon Lex creates a resolution list containing likely values for a slot. The value that it returns is determined by the <code>valueSelectionStrategy</code> selected when the slot type was created or updated. If <code>valueSelectionStrategy</code> is set to <code>ORIGINAL_VALUE</code>, the value provided by the user is returned, if the user value is similar to the slot values. If <code>valueSelectionStrategy</code> is set to <code>TOP_RESOLUTION</code> Amazon Lex returns the first value in the resolution list or, if there is no resolution list, null. If you don't specify a <code>valueSelectionStrategy</code> the default is <code>ORIGINAL_VALUE</code>. </p>
     pub slots: std::option::Option<std::string::String>,
-    /// <p>Map of key/value pairs representing session-specific context
-    /// information.</p>
+    /// <p>Map of key/value pairs representing session-specific context information.</p>
     pub session_attributes: std::option::Option<std::string::String>,
     /// <p>The next message that should be presented to the user.</p>
-    /// <p>You can only use this field in the de-DE, en-AU, en-GB, en-US, es-419,
-    /// es-ES, es-US, fr-CA, fr-FR, and it-IT locales. In all other locales, the
-    /// <code>message</code> field is null. You should use the
-    /// <code>encodedMessage</code> field instead.</p>
+    /// <p>You can only use this field in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR, and it-IT locales. In all other locales, the <code>message</code> field is null. You should use the <code>encodedMessage</code> field instead.</p>
     pub message: std::option::Option<std::string::String>,
     /// <p>The next message that should be presented to the user.</p>
-    /// <p>The <code>encodedMessage</code> field is base-64 encoded. You must
-    /// decode the field before you can use the value.</p>
+    /// <p>The <code>encodedMessage</code> field is base-64 encoded. You must decode the field before you can use the value.</p>
     pub encoded_message: std::option::Option<std::string::String>,
-    /// <p>The format of the response message. One of the following
-    /// values:</p>
+    /// <p>The format of the response message. One of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>PlainText</code> - The message contains plain UTF-8
-    /// text.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CustomPayload</code> - The message is a custom format for
-    /// the client.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SSML</code> - The message contains text formatted for voice
-    /// output.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Composite</code> - The message contains an escaped JSON
-    /// object containing one or more messages from the groups that messages
-    /// were assigned to when the intent was created.</p>
-    /// </li>
+    /// <li> <p> <code>PlainText</code> - The message contains plain UTF-8 text.</p> </li>
+    /// <li> <p> <code>CustomPayload</code> - The message is a custom format for the client.</p> </li>
+    /// <li> <p> <code>SSML</code> - The message contains text formatted for voice output.</p> </li>
+    /// <li> <p> <code>Composite</code> - The message contains an escaped JSON object containing one or more messages from the groups that messages were assigned to when the intent was created.</p> </li>
     /// </ul>
     pub message_format: std::option::Option<crate::model::MessageFormatType>,
     /// <p></p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ConfirmIntent</code> - Amazon Lex is expecting a "yes" or "no"
-    /// response to confirm the intent before fulfilling an intent.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ElicitIntent</code> - Amazon Lex wants to elicit the user's
-    /// intent.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ElicitSlot</code> - Amazon Lex is expecting the value of a slot
-    /// for the current intent.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Failed</code> - Conveys that the conversation with the user
-    /// has failed. This can happen for various reasons, including the user
-    /// does not provide an appropriate response to prompts from the service,
-    /// or if the Lambda function fails to fulfill the intent.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Fulfilled</code> - Conveys that the Lambda function has
-    /// sucessfully fulfilled the intent.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ReadyForFulfillment</code> - Conveys that the client has to
-    /// fulfill the intent.</p>
-    /// </li>
+    /// <li> <p> <code>ConfirmIntent</code> - Amazon Lex is expecting a "yes" or "no" response to confirm the intent before fulfilling an intent.</p> </li>
+    /// <li> <p> <code>ElicitIntent</code> - Amazon Lex wants to elicit the user's intent.</p> </li>
+    /// <li> <p> <code>ElicitSlot</code> - Amazon Lex is expecting the value of a slot for the current intent.</p> </li>
+    /// <li> <p> <code>Failed</code> - Conveys that the conversation with the user has failed. This can happen for various reasons, including the user does not provide an appropriate response to prompts from the service, or if the Lambda function fails to fulfill the intent.</p> </li>
+    /// <li> <p> <code>Fulfilled</code> - Conveys that the Lambda function has sucessfully fulfilled the intent.</p> </li>
+    /// <li> <p> <code>ReadyForFulfillment</code> - Conveys that the client has to fulfill the intent.</p> </li>
     /// </ul>
     pub dialog_state: std::option::Option<crate::model::DialogState>,
-    /// <p>If the <code>dialogState</code> is <code>ElicitSlot</code>, returns
-    /// the name of the slot for which Amazon Lex is eliciting a value.</p>
+    /// <p>If the <code>dialogState</code> is <code>ElicitSlot</code>, returns the name of the slot for which Amazon Lex is eliciting a value.</p>
     pub slot_to_elicit: std::option::Option<std::string::String>,
     /// <p>The audio version of the message to convey to the user.</p>
     pub audio_stream: aws_smithy_http::byte_stream::ByteStream,
@@ -107,8 +45,7 @@ pub struct PutSessionOutput {
     pub active_contexts: std::option::Option<std::string::String>,
 }
 impl PutSessionOutput {
-    /// <p>Content type as specified in the <code>Accept</code> HTTP header in
-    /// the request.</p>
+    /// <p>Content type as specified in the <code>Accept</code> HTTP header in the request.</p>
     pub fn content_type(&self) -> std::option::Option<&str> {
         self.content_type.as_deref()
     }
@@ -116,109 +53,48 @@ impl PutSessionOutput {
     pub fn intent_name(&self) -> std::option::Option<&str> {
         self.intent_name.as_deref()
     }
-    /// <p>Map of zero or more intent slots Amazon Lex detected from the user input
-    /// during the conversation.</p>
-    /// <p>Amazon Lex creates a resolution list containing likely values for a slot.
-    /// The value that it returns is determined by the
-    /// <code>valueSelectionStrategy</code> selected when the slot type was
-    /// created or updated. If <code>valueSelectionStrategy</code> is set to
-    /// <code>ORIGINAL_VALUE</code>, the value provided by the user is returned,
-    /// if the user value is similar to the slot values. If
-    /// <code>valueSelectionStrategy</code> is set to
-    /// <code>TOP_RESOLUTION</code> Amazon Lex returns the first value in the
-    /// resolution list or, if there is no resolution list, null. If you don't
-    /// specify a <code>valueSelectionStrategy</code> the default is
-    /// <code>ORIGINAL_VALUE</code>. </p>
+    /// <p>Map of zero or more intent slots Amazon Lex detected from the user input during the conversation.</p>
+    /// <p>Amazon Lex creates a resolution list containing likely values for a slot. The value that it returns is determined by the <code>valueSelectionStrategy</code> selected when the slot type was created or updated. If <code>valueSelectionStrategy</code> is set to <code>ORIGINAL_VALUE</code>, the value provided by the user is returned, if the user value is similar to the slot values. If <code>valueSelectionStrategy</code> is set to <code>TOP_RESOLUTION</code> Amazon Lex returns the first value in the resolution list or, if there is no resolution list, null. If you don't specify a <code>valueSelectionStrategy</code> the default is <code>ORIGINAL_VALUE</code>. </p>
     pub fn slots(&self) -> std::option::Option<&str> {
         self.slots.as_deref()
     }
-    /// <p>Map of key/value pairs representing session-specific context
-    /// information.</p>
+    /// <p>Map of key/value pairs representing session-specific context information.</p>
     pub fn session_attributes(&self) -> std::option::Option<&str> {
         self.session_attributes.as_deref()
     }
     /// <p>The next message that should be presented to the user.</p>
-    /// <p>You can only use this field in the de-DE, en-AU, en-GB, en-US, es-419,
-    /// es-ES, es-US, fr-CA, fr-FR, and it-IT locales. In all other locales, the
-    /// <code>message</code> field is null. You should use the
-    /// <code>encodedMessage</code> field instead.</p>
+    /// <p>You can only use this field in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR, and it-IT locales. In all other locales, the <code>message</code> field is null. You should use the <code>encodedMessage</code> field instead.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
     /// <p>The next message that should be presented to the user.</p>
-    /// <p>The <code>encodedMessage</code> field is base-64 encoded. You must
-    /// decode the field before you can use the value.</p>
+    /// <p>The <code>encodedMessage</code> field is base-64 encoded. You must decode the field before you can use the value.</p>
     pub fn encoded_message(&self) -> std::option::Option<&str> {
         self.encoded_message.as_deref()
     }
-    /// <p>The format of the response message. One of the following
-    /// values:</p>
+    /// <p>The format of the response message. One of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>PlainText</code> - The message contains plain UTF-8
-    /// text.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CustomPayload</code> - The message is a custom format for
-    /// the client.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SSML</code> - The message contains text formatted for voice
-    /// output.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Composite</code> - The message contains an escaped JSON
-    /// object containing one or more messages from the groups that messages
-    /// were assigned to when the intent was created.</p>
-    /// </li>
+    /// <li> <p> <code>PlainText</code> - The message contains plain UTF-8 text.</p> </li>
+    /// <li> <p> <code>CustomPayload</code> - The message is a custom format for the client.</p> </li>
+    /// <li> <p> <code>SSML</code> - The message contains text formatted for voice output.</p> </li>
+    /// <li> <p> <code>Composite</code> - The message contains an escaped JSON object containing one or more messages from the groups that messages were assigned to when the intent was created.</p> </li>
     /// </ul>
     pub fn message_format(&self) -> std::option::Option<&crate::model::MessageFormatType> {
         self.message_format.as_ref()
     }
     /// <p></p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ConfirmIntent</code> - Amazon Lex is expecting a "yes" or "no"
-    /// response to confirm the intent before fulfilling an intent.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ElicitIntent</code> - Amazon Lex wants to elicit the user's
-    /// intent.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ElicitSlot</code> - Amazon Lex is expecting the value of a slot
-    /// for the current intent.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Failed</code> - Conveys that the conversation with the user
-    /// has failed. This can happen for various reasons, including the user
-    /// does not provide an appropriate response to prompts from the service,
-    /// or if the Lambda function fails to fulfill the intent.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Fulfilled</code> - Conveys that the Lambda function has
-    /// sucessfully fulfilled the intent.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ReadyForFulfillment</code> - Conveys that the client has to
-    /// fulfill the intent.</p>
-    /// </li>
+    /// <li> <p> <code>ConfirmIntent</code> - Amazon Lex is expecting a "yes" or "no" response to confirm the intent before fulfilling an intent.</p> </li>
+    /// <li> <p> <code>ElicitIntent</code> - Amazon Lex wants to elicit the user's intent.</p> </li>
+    /// <li> <p> <code>ElicitSlot</code> - Amazon Lex is expecting the value of a slot for the current intent.</p> </li>
+    /// <li> <p> <code>Failed</code> - Conveys that the conversation with the user has failed. This can happen for various reasons, including the user does not provide an appropriate response to prompts from the service, or if the Lambda function fails to fulfill the intent.</p> </li>
+    /// <li> <p> <code>Fulfilled</code> - Conveys that the Lambda function has sucessfully fulfilled the intent.</p> </li>
+    /// <li> <p> <code>ReadyForFulfillment</code> - Conveys that the client has to fulfill the intent.</p> </li>
     /// </ul>
     pub fn dialog_state(&self) -> std::option::Option<&crate::model::DialogState> {
         self.dialog_state.as_ref()
     }
-    /// <p>If the <code>dialogState</code> is <code>ElicitSlot</code>, returns
-    /// the name of the slot for which Amazon Lex is eliciting a value.</p>
+    /// <p>If the <code>dialogState</code> is <code>ElicitSlot</code>, returns the name of the slot for which Amazon Lex is eliciting a value.</p>
     pub fn slot_to_elicit(&self) -> std::option::Option<&str> {
         self.slot_to_elicit.as_deref()
     }
@@ -273,14 +149,12 @@ pub mod put_session_output {
         pub(crate) active_contexts: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Content type as specified in the <code>Accept</code> HTTP header in
-        /// the request.</p>
+        /// <p>Content type as specified in the <code>Accept</code> HTTP header in the request.</p>
         pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.content_type = Some(input.into());
             self
         }
-        /// <p>Content type as specified in the <code>Accept</code> HTTP header in
-        /// the request.</p>
+        /// <p>Content type as specified in the <code>Accept</code> HTTP header in the request.</p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_type = input;
             self
@@ -295,48 +169,24 @@ pub mod put_session_output {
             self.intent_name = input;
             self
         }
-        /// <p>Map of zero or more intent slots Amazon Lex detected from the user input
-        /// during the conversation.</p>
-        /// <p>Amazon Lex creates a resolution list containing likely values for a slot.
-        /// The value that it returns is determined by the
-        /// <code>valueSelectionStrategy</code> selected when the slot type was
-        /// created or updated. If <code>valueSelectionStrategy</code> is set to
-        /// <code>ORIGINAL_VALUE</code>, the value provided by the user is returned,
-        /// if the user value is similar to the slot values. If
-        /// <code>valueSelectionStrategy</code> is set to
-        /// <code>TOP_RESOLUTION</code> Amazon Lex returns the first value in the
-        /// resolution list or, if there is no resolution list, null. If you don't
-        /// specify a <code>valueSelectionStrategy</code> the default is
-        /// <code>ORIGINAL_VALUE</code>. </p>
+        /// <p>Map of zero or more intent slots Amazon Lex detected from the user input during the conversation.</p>
+        /// <p>Amazon Lex creates a resolution list containing likely values for a slot. The value that it returns is determined by the <code>valueSelectionStrategy</code> selected when the slot type was created or updated. If <code>valueSelectionStrategy</code> is set to <code>ORIGINAL_VALUE</code>, the value provided by the user is returned, if the user value is similar to the slot values. If <code>valueSelectionStrategy</code> is set to <code>TOP_RESOLUTION</code> Amazon Lex returns the first value in the resolution list or, if there is no resolution list, null. If you don't specify a <code>valueSelectionStrategy</code> the default is <code>ORIGINAL_VALUE</code>. </p>
         pub fn slots(mut self, input: impl Into<std::string::String>) -> Self {
             self.slots = Some(input.into());
             self
         }
-        /// <p>Map of zero or more intent slots Amazon Lex detected from the user input
-        /// during the conversation.</p>
-        /// <p>Amazon Lex creates a resolution list containing likely values for a slot.
-        /// The value that it returns is determined by the
-        /// <code>valueSelectionStrategy</code> selected when the slot type was
-        /// created or updated. If <code>valueSelectionStrategy</code> is set to
-        /// <code>ORIGINAL_VALUE</code>, the value provided by the user is returned,
-        /// if the user value is similar to the slot values. If
-        /// <code>valueSelectionStrategy</code> is set to
-        /// <code>TOP_RESOLUTION</code> Amazon Lex returns the first value in the
-        /// resolution list or, if there is no resolution list, null. If you don't
-        /// specify a <code>valueSelectionStrategy</code> the default is
-        /// <code>ORIGINAL_VALUE</code>. </p>
+        /// <p>Map of zero or more intent slots Amazon Lex detected from the user input during the conversation.</p>
+        /// <p>Amazon Lex creates a resolution list containing likely values for a slot. The value that it returns is determined by the <code>valueSelectionStrategy</code> selected when the slot type was created or updated. If <code>valueSelectionStrategy</code> is set to <code>ORIGINAL_VALUE</code>, the value provided by the user is returned, if the user value is similar to the slot values. If <code>valueSelectionStrategy</code> is set to <code>TOP_RESOLUTION</code> Amazon Lex returns the first value in the resolution list or, if there is no resolution list, null. If you don't specify a <code>valueSelectionStrategy</code> the default is <code>ORIGINAL_VALUE</code>. </p>
         pub fn set_slots(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.slots = input;
             self
         }
-        /// <p>Map of key/value pairs representing session-specific context
-        /// information.</p>
+        /// <p>Map of key/value pairs representing session-specific context information.</p>
         pub fn session_attributes(mut self, input: impl Into<std::string::String>) -> Self {
             self.session_attributes = Some(input.into());
             self
         }
-        /// <p>Map of key/value pairs representing session-specific context
-        /// information.</p>
+        /// <p>Map of key/value pairs representing session-specific context information.</p>
         pub fn set_session_attributes(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -345,33 +195,25 @@ pub mod put_session_output {
             self
         }
         /// <p>The next message that should be presented to the user.</p>
-        /// <p>You can only use this field in the de-DE, en-AU, en-GB, en-US, es-419,
-        /// es-ES, es-US, fr-CA, fr-FR, and it-IT locales. In all other locales, the
-        /// <code>message</code> field is null. You should use the
-        /// <code>encodedMessage</code> field instead.</p>
+        /// <p>You can only use this field in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR, and it-IT locales. In all other locales, the <code>message</code> field is null. You should use the <code>encodedMessage</code> field instead.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
         /// <p>The next message that should be presented to the user.</p>
-        /// <p>You can only use this field in the de-DE, en-AU, en-GB, en-US, es-419,
-        /// es-ES, es-US, fr-CA, fr-FR, and it-IT locales. In all other locales, the
-        /// <code>message</code> field is null. You should use the
-        /// <code>encodedMessage</code> field instead.</p>
+        /// <p>You can only use this field in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR, and it-IT locales. In all other locales, the <code>message</code> field is null. You should use the <code>encodedMessage</code> field instead.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
         }
         /// <p>The next message that should be presented to the user.</p>
-        /// <p>The <code>encodedMessage</code> field is base-64 encoded. You must
-        /// decode the field before you can use the value.</p>
+        /// <p>The <code>encodedMessage</code> field is base-64 encoded. You must decode the field before you can use the value.</p>
         pub fn encoded_message(mut self, input: impl Into<std::string::String>) -> Self {
             self.encoded_message = Some(input.into());
             self
         }
         /// <p>The next message that should be presented to the user.</p>
-        /// <p>The <code>encodedMessage</code> field is base-64 encoded. You must
-        /// decode the field before you can use the value.</p>
+        /// <p>The <code>encodedMessage</code> field is base-64 encoded. You must decode the field before you can use the value.</p>
         pub fn set_encoded_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -379,59 +221,23 @@ pub mod put_session_output {
             self.encoded_message = input;
             self
         }
-        /// <p>The format of the response message. One of the following
-        /// values:</p>
+        /// <p>The format of the response message. One of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PlainText</code> - The message contains plain UTF-8
-        /// text.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CustomPayload</code> - The message is a custom format for
-        /// the client.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SSML</code> - The message contains text formatted for voice
-        /// output.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Composite</code> - The message contains an escaped JSON
-        /// object containing one or more messages from the groups that messages
-        /// were assigned to when the intent was created.</p>
-        /// </li>
+        /// <li> <p> <code>PlainText</code> - The message contains plain UTF-8 text.</p> </li>
+        /// <li> <p> <code>CustomPayload</code> - The message is a custom format for the client.</p> </li>
+        /// <li> <p> <code>SSML</code> - The message contains text formatted for voice output.</p> </li>
+        /// <li> <p> <code>Composite</code> - The message contains an escaped JSON object containing one or more messages from the groups that messages were assigned to when the intent was created.</p> </li>
         /// </ul>
         pub fn message_format(mut self, input: crate::model::MessageFormatType) -> Self {
             self.message_format = Some(input);
             self
         }
-        /// <p>The format of the response message. One of the following
-        /// values:</p>
+        /// <p>The format of the response message. One of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PlainText</code> - The message contains plain UTF-8
-        /// text.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CustomPayload</code> - The message is a custom format for
-        /// the client.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SSML</code> - The message contains text formatted for voice
-        /// output.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Composite</code> - The message contains an escaped JSON
-        /// object containing one or more messages from the groups that messages
-        /// were assigned to when the intent was created.</p>
-        /// </li>
+        /// <li> <p> <code>PlainText</code> - The message contains plain UTF-8 text.</p> </li>
+        /// <li> <p> <code>CustomPayload</code> - The message is a custom format for the client.</p> </li>
+        /// <li> <p> <code>SSML</code> - The message contains text formatted for voice output.</p> </li>
+        /// <li> <p> <code>Composite</code> - The message contains an escaped JSON object containing one or more messages from the groups that messages were assigned to when the intent was created.</p> </li>
         /// </ul>
         pub fn set_message_format(
             mut self,
@@ -442,38 +248,12 @@ pub mod put_session_output {
         }
         /// <p></p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ConfirmIntent</code> - Amazon Lex is expecting a "yes" or "no"
-        /// response to confirm the intent before fulfilling an intent.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ElicitIntent</code> - Amazon Lex wants to elicit the user's
-        /// intent.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ElicitSlot</code> - Amazon Lex is expecting the value of a slot
-        /// for the current intent.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Failed</code> - Conveys that the conversation with the user
-        /// has failed. This can happen for various reasons, including the user
-        /// does not provide an appropriate response to prompts from the service,
-        /// or if the Lambda function fails to fulfill the intent.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Fulfilled</code> - Conveys that the Lambda function has
-        /// sucessfully fulfilled the intent.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ReadyForFulfillment</code> - Conveys that the client has to
-        /// fulfill the intent.</p>
-        /// </li>
+        /// <li> <p> <code>ConfirmIntent</code> - Amazon Lex is expecting a "yes" or "no" response to confirm the intent before fulfilling an intent.</p> </li>
+        /// <li> <p> <code>ElicitIntent</code> - Amazon Lex wants to elicit the user's intent.</p> </li>
+        /// <li> <p> <code>ElicitSlot</code> - Amazon Lex is expecting the value of a slot for the current intent.</p> </li>
+        /// <li> <p> <code>Failed</code> - Conveys that the conversation with the user has failed. This can happen for various reasons, including the user does not provide an appropriate response to prompts from the service, or if the Lambda function fails to fulfill the intent.</p> </li>
+        /// <li> <p> <code>Fulfilled</code> - Conveys that the Lambda function has sucessfully fulfilled the intent.</p> </li>
+        /// <li> <p> <code>ReadyForFulfillment</code> - Conveys that the client has to fulfill the intent.</p> </li>
         /// </ul>
         pub fn dialog_state(mut self, input: crate::model::DialogState) -> Self {
             self.dialog_state = Some(input);
@@ -481,38 +261,12 @@ pub mod put_session_output {
         }
         /// <p></p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ConfirmIntent</code> - Amazon Lex is expecting a "yes" or "no"
-        /// response to confirm the intent before fulfilling an intent.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ElicitIntent</code> - Amazon Lex wants to elicit the user's
-        /// intent.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ElicitSlot</code> - Amazon Lex is expecting the value of a slot
-        /// for the current intent.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Failed</code> - Conveys that the conversation with the user
-        /// has failed. This can happen for various reasons, including the user
-        /// does not provide an appropriate response to prompts from the service,
-        /// or if the Lambda function fails to fulfill the intent.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Fulfilled</code> - Conveys that the Lambda function has
-        /// sucessfully fulfilled the intent.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ReadyForFulfillment</code> - Conveys that the client has to
-        /// fulfill the intent.</p>
-        /// </li>
+        /// <li> <p> <code>ConfirmIntent</code> - Amazon Lex is expecting a "yes" or "no" response to confirm the intent before fulfilling an intent.</p> </li>
+        /// <li> <p> <code>ElicitIntent</code> - Amazon Lex wants to elicit the user's intent.</p> </li>
+        /// <li> <p> <code>ElicitSlot</code> - Amazon Lex is expecting the value of a slot for the current intent.</p> </li>
+        /// <li> <p> <code>Failed</code> - Conveys that the conversation with the user has failed. This can happen for various reasons, including the user does not provide an appropriate response to prompts from the service, or if the Lambda function fails to fulfill the intent.</p> </li>
+        /// <li> <p> <code>Fulfilled</code> - Conveys that the Lambda function has sucessfully fulfilled the intent.</p> </li>
+        /// <li> <p> <code>ReadyForFulfillment</code> - Conveys that the client has to fulfill the intent.</p> </li>
         /// </ul>
         pub fn set_dialog_state(
             mut self,
@@ -521,14 +275,12 @@ pub mod put_session_output {
             self.dialog_state = input;
             self
         }
-        /// <p>If the <code>dialogState</code> is <code>ElicitSlot</code>, returns
-        /// the name of the slot for which Amazon Lex is eliciting a value.</p>
+        /// <p>If the <code>dialogState</code> is <code>ElicitSlot</code>, returns the name of the slot for which Amazon Lex is eliciting a value.</p>
         pub fn slot_to_elicit(mut self, input: impl Into<std::string::String>) -> Self {
             self.slot_to_elicit = Some(input.into());
             self
         }
-        /// <p>If the <code>dialogState</code> is <code>ElicitSlot</code>, returns
-        /// the name of the slot for which Amazon Lex is eliciting a value.</p>
+        /// <p>If the <code>dialogState</code> is <code>ElicitSlot</code>, returns the name of the slot for which Amazon Lex is eliciting a value.</p>
         pub fn set_slot_to_elicit(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -604,160 +356,55 @@ impl PutSessionOutput {
 pub struct PostTextOutput {
     /// <p>The current user intent that Amazon Lex is aware of.</p>
     pub intent_name: std::option::Option<std::string::String>,
-    /// <p>Provides a score that indicates how confident Amazon Lex is that the
-    /// returned intent is the one that matches the user's intent. The score is
-    /// between 0.0 and 1.0. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/confidence-scores.html">Confidence Scores</a>.</p>
-    /// <p>The score is a relative score, not an absolute score. The score may
-    /// change based on improvements to Amazon Lex.</p>
+    /// <p>Provides a score that indicates how confident Amazon Lex is that the returned intent is the one that matches the user's intent. The score is between 0.0 and 1.0. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/confidence-scores.html">Confidence Scores</a>.</p>
+    /// <p>The score is a relative score, not an absolute score. The score may change based on improvements to Amazon Lex.</p>
     pub nlu_intent_confidence: std::option::Option<crate::model::IntentConfidence>,
-    /// <p>One to four alternative intents that may be applicable to the user's
-    /// intent.</p>
-    /// <p>Each alternative includes a score that indicates how confident Amazon Lex
-    /// is that the intent matches the user's intent. The intents are sorted by
-    /// the confidence score.</p>
+    /// <p>One to four alternative intents that may be applicable to the user's intent.</p>
+    /// <p>Each alternative includes a score that indicates how confident Amazon Lex is that the intent matches the user's intent. The intents are sorted by the confidence score.</p>
     pub alternative_intents: std::option::Option<std::vec::Vec<crate::model::PredictedIntent>>,
-    /// <p> The intent slots that Amazon Lex detected from the user input in the
-    /// conversation. </p>
-    /// <p>Amazon Lex creates a resolution list containing likely values for a slot.
-    /// The value that it returns is determined by the
-    /// <code>valueSelectionStrategy</code> selected when the slot type was
-    /// created or updated. If <code>valueSelectionStrategy</code> is set to
-    /// <code>ORIGINAL_VALUE</code>, the value provided by the user is returned,
-    /// if the user value is similar to the slot values. If
-    /// <code>valueSelectionStrategy</code> is set to
-    /// <code>TOP_RESOLUTION</code> Amazon Lex returns the first value in the
-    /// resolution list or, if there is no resolution list, null. If you don't
-    /// specify a <code>valueSelectionStrategy</code>, the default is
-    /// <code>ORIGINAL_VALUE</code>.</p>
+    /// <p> The intent slots that Amazon Lex detected from the user input in the conversation. </p>
+    /// <p>Amazon Lex creates a resolution list containing likely values for a slot. The value that it returns is determined by the <code>valueSelectionStrategy</code> selected when the slot type was created or updated. If <code>valueSelectionStrategy</code> is set to <code>ORIGINAL_VALUE</code>, the value provided by the user is returned, if the user value is similar to the slot values. If <code>valueSelectionStrategy</code> is set to <code>TOP_RESOLUTION</code> Amazon Lex returns the first value in the resolution list or, if there is no resolution list, null. If you don't specify a <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.</p>
     pub slots:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>A map of key-value pairs representing the session-specific context
-    /// information.</p>
+    /// <p>A map of key-value pairs representing the session-specific context information.</p>
     pub session_attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The message to convey to the user. The message can come from the bot's
-    /// configuration or from a Lambda function.</p>
-    /// <p>If the intent is not configured with a Lambda function, or if the Lambda
-    /// function returned <code>Delegate</code> as the
-    /// <code>dialogAction.type</code> its response, Amazon Lex decides on the next
-    /// course of action and selects an appropriate message from the bot's
-    /// configuration based on the current interaction context. For example, if
-    /// Amazon Lex isn't able to understand user input, it uses a clarification prompt
-    /// message.</p>
-    /// <p>When you create an intent you can assign messages to groups. When
-    /// messages are assigned to groups Amazon Lex returns one message from each group
-    /// in the response. The message field is an escaped JSON string containing
-    /// the messages. For more information about the structure of the JSON string
-    /// returned, see <a>msg-prompts-formats</a>.</p>
-    /// <p>If the Lambda function returns a message, Amazon Lex passes it to the client
-    /// in its response.</p>
+    /// <p>The message to convey to the user. The message can come from the bot's configuration or from a Lambda function.</p>
+    /// <p>If the intent is not configured with a Lambda function, or if the Lambda function returned <code>Delegate</code> as the <code>dialogAction.type</code> its response, Amazon Lex decides on the next course of action and selects an appropriate message from the bot's configuration based on the current interaction context. For example, if Amazon Lex isn't able to understand user input, it uses a clarification prompt message.</p>
+    /// <p>When you create an intent you can assign messages to groups. When messages are assigned to groups Amazon Lex returns one message from each group in the response. The message field is an escaped JSON string containing the messages. For more information about the structure of the JSON string returned, see <code>msg-prompts-formats</code>.</p>
+    /// <p>If the Lambda function returns a message, Amazon Lex passes it to the client in its response.</p>
     pub message: std::option::Option<std::string::String>,
     /// <p>The sentiment expressed in and utterance.</p>
-    /// <p>When the bot is configured to send utterances to Amazon Comprehend for
-    /// sentiment analysis, this field contains the result of the analysis.</p>
+    /// <p>When the bot is configured to send utterances to Amazon Comprehend for sentiment analysis, this field contains the result of the analysis.</p>
     pub sentiment_response: std::option::Option<crate::model::SentimentResponse>,
-    /// <p>The format of the response message. One of the following
-    /// values:</p>
+    /// <p>The format of the response message. One of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>PlainText</code> - The message contains plain UTF-8
-    /// text.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CustomPayload</code> - The message is a custom format
-    /// defined by the Lambda function.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SSML</code> - The message contains text formatted for voice
-    /// output.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Composite</code> - The message contains an escaped JSON
-    /// object containing one or more messages from the groups that messages
-    /// were assigned to when the intent was created.</p>
-    /// </li>
+    /// <li> <p> <code>PlainText</code> - The message contains plain UTF-8 text.</p> </li>
+    /// <li> <p> <code>CustomPayload</code> - The message is a custom format defined by the Lambda function.</p> </li>
+    /// <li> <p> <code>SSML</code> - The message contains text formatted for voice output.</p> </li>
+    /// <li> <p> <code>Composite</code> - The message contains an escaped JSON object containing one or more messages from the groups that messages were assigned to when the intent was created.</p> </li>
     /// </ul>
     pub message_format: std::option::Option<crate::model::MessageFormatType>,
-    /// <p> Identifies the current state of the user interaction. Amazon Lex returns
-    /// one of the following values as <code>dialogState</code>. The client can
-    /// optionally use this information to customize the user interface. </p>
+    /// <p> Identifies the current state of the user interaction. Amazon Lex returns one of the following values as <code>dialogState</code>. The client can optionally use this information to customize the user interface. </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ElicitIntent</code> - Amazon Lex wants to elicit user intent. </p>
-    /// <p>For example, a user might utter an intent ("I want to order a
-    /// pizza"). If Amazon Lex cannot infer the user intent from this utterance, it
-    /// will return this dialogState.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ConfirmIntent</code> - Amazon Lex is expecting a "yes" or "no"
-    /// response. </p>
-    /// <p> For example, Amazon Lex wants user confirmation before fulfilling an
-    /// intent. </p>
-    /// <p>Instead of a simple "yes" or "no," a user might respond with
-    /// additional information. For example, "yes, but make it thick crust
-    /// pizza" or "no, I want to order a drink". Amazon Lex can process such
-    /// additional information (in these examples, update the crust type slot
-    /// value, or change intent from OrderPizza to OrderDrink).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ElicitSlot</code> - Amazon Lex is expecting a slot value for the
-    /// current intent. </p>
-    /// <p>For example, suppose that in the response Amazon Lex sends this
-    /// message: "What size pizza would you like?". A user might reply with
-    /// the slot value (e.g., "medium"). The user might also provide
-    /// additional information in the response (e.g., "medium thick crust
-    /// pizza"). Amazon Lex can process such additional information appropriately.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Fulfilled</code> - Conveys that the Lambda function configured
-    /// for the intent has successfully fulfilled the intent. </p>
-    ///
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ReadyForFulfillment</code> - Conveys that the client has to
-    /// fulfill the intent. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Failed</code> - Conveys that the conversation with the user
-    /// failed. </p>
-    /// <p> This can happen for various reasons including that the user did
-    /// not provide an appropriate response to prompts from the service (you
-    /// can configure how many times Amazon Lex can prompt a user for specific
-    /// information), or the Lambda function failed to fulfill the intent.
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>ElicitIntent</code> - Amazon Lex wants to elicit user intent. </p> <p>For example, a user might utter an intent ("I want to order a pizza"). If Amazon Lex cannot infer the user intent from this utterance, it will return this dialogState.</p> </li>
+    /// <li> <p> <code>ConfirmIntent</code> - Amazon Lex is expecting a "yes" or "no" response. </p> <p> For example, Amazon Lex wants user confirmation before fulfilling an intent. </p> <p>Instead of a simple "yes" or "no," a user might respond with additional information. For example, "yes, but make it thick crust pizza" or "no, I want to order a drink". Amazon Lex can process such additional information (in these examples, update the crust type slot value, or change intent from OrderPizza to OrderDrink).</p> </li>
+    /// <li> <p> <code>ElicitSlot</code> - Amazon Lex is expecting a slot value for the current intent. </p> <p>For example, suppose that in the response Amazon Lex sends this message: "What size pizza would you like?". A user might reply with the slot value (e.g., "medium"). The user might also provide additional information in the response (e.g., "medium thick crust pizza"). Amazon Lex can process such additional information appropriately. </p> </li>
+    /// <li> <p> <code>Fulfilled</code> - Conveys that the Lambda function configured for the intent has successfully fulfilled the intent. </p> </li>
+    /// <li> <p> <code>ReadyForFulfillment</code> - Conveys that the client has to fulfill the intent. </p> </li>
+    /// <li> <p> <code>Failed</code> - Conveys that the conversation with the user failed. </p> <p> This can happen for various reasons including that the user did not provide an appropriate response to prompts from the service (you can configure how many times Amazon Lex can prompt a user for specific information), or the Lambda function failed to fulfill the intent. </p> </li>
     /// </ul>
     pub dialog_state: std::option::Option<crate::model::DialogState>,
-    /// <p>If the <code>dialogState</code> value is <code>ElicitSlot</code>,
-    /// returns the name of the slot for which Amazon Lex is eliciting a value. </p>
+    /// <p>If the <code>dialogState</code> value is <code>ElicitSlot</code>, returns the name of the slot for which Amazon Lex is eliciting a value. </p>
     pub slot_to_elicit: std::option::Option<std::string::String>,
-    /// <p>Represents the options that the user has to respond to the current
-    /// prompt. Response Card can come from the bot configuration (in the
-    /// Amazon Lex console, choose the settings button next to a slot) or from a
-    /// code hook (Lambda function). </p>
+    /// <p>Represents the options that the user has to respond to the current prompt. Response Card can come from the bot configuration (in the Amazon Lex console, choose the settings button next to a slot) or from a code hook (Lambda function). </p>
     pub response_card: std::option::Option<crate::model::ResponseCard>,
     /// <p>A unique identifier for the session.</p>
     pub session_id: std::option::Option<std::string::String>,
-    /// <p>The version of the bot that responded to the conversation. You can use
-    /// this information to help determine if one version of a bot is performing
-    /// better than another version.</p>
+    /// <p>The version of the bot that responded to the conversation. You can use this information to help determine if one version of a bot is performing better than another version.</p>
     pub bot_version: std::option::Option<std::string::String>,
-    /// <p>A list of active contexts for the session. A context can be set when
-    /// an intent is fulfilled or by calling the <code>PostContent</code>,
-    /// <code>PostText</code>, or <code>PutSession</code> operation.</p>
-    /// <p>You can use a context to control the intents that can follow up an
-    /// intent, or to modify the operation of your application.</p>
+    /// <p>A list of active contexts for the session. A context can be set when an intent is fulfilled or by calling the <code>PostContent</code>, <code>PostText</code>, or <code>PutSession</code> operation.</p>
+    /// <p>You can use a context to control the intents that can follow up an intent, or to modify the operation of your application.</p>
     pub active_contexts: std::option::Option<std::vec::Vec<crate::model::ActiveContext>>,
 }
 impl PostTextOutput {
@@ -765,170 +412,70 @@ impl PostTextOutput {
     pub fn intent_name(&self) -> std::option::Option<&str> {
         self.intent_name.as_deref()
     }
-    /// <p>Provides a score that indicates how confident Amazon Lex is that the
-    /// returned intent is the one that matches the user's intent. The score is
-    /// between 0.0 and 1.0. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/confidence-scores.html">Confidence Scores</a>.</p>
-    /// <p>The score is a relative score, not an absolute score. The score may
-    /// change based on improvements to Amazon Lex.</p>
+    /// <p>Provides a score that indicates how confident Amazon Lex is that the returned intent is the one that matches the user's intent. The score is between 0.0 and 1.0. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/confidence-scores.html">Confidence Scores</a>.</p>
+    /// <p>The score is a relative score, not an absolute score. The score may change based on improvements to Amazon Lex.</p>
     pub fn nlu_intent_confidence(&self) -> std::option::Option<&crate::model::IntentConfidence> {
         self.nlu_intent_confidence.as_ref()
     }
-    /// <p>One to four alternative intents that may be applicable to the user's
-    /// intent.</p>
-    /// <p>Each alternative includes a score that indicates how confident Amazon Lex
-    /// is that the intent matches the user's intent. The intents are sorted by
-    /// the confidence score.</p>
+    /// <p>One to four alternative intents that may be applicable to the user's intent.</p>
+    /// <p>Each alternative includes a score that indicates how confident Amazon Lex is that the intent matches the user's intent. The intents are sorted by the confidence score.</p>
     pub fn alternative_intents(&self) -> std::option::Option<&[crate::model::PredictedIntent]> {
         self.alternative_intents.as_deref()
     }
-    /// <p> The intent slots that Amazon Lex detected from the user input in the
-    /// conversation. </p>
-    /// <p>Amazon Lex creates a resolution list containing likely values for a slot.
-    /// The value that it returns is determined by the
-    /// <code>valueSelectionStrategy</code> selected when the slot type was
-    /// created or updated. If <code>valueSelectionStrategy</code> is set to
-    /// <code>ORIGINAL_VALUE</code>, the value provided by the user is returned,
-    /// if the user value is similar to the slot values. If
-    /// <code>valueSelectionStrategy</code> is set to
-    /// <code>TOP_RESOLUTION</code> Amazon Lex returns the first value in the
-    /// resolution list or, if there is no resolution list, null. If you don't
-    /// specify a <code>valueSelectionStrategy</code>, the default is
-    /// <code>ORIGINAL_VALUE</code>.</p>
+    /// <p> The intent slots that Amazon Lex detected from the user input in the conversation. </p>
+    /// <p>Amazon Lex creates a resolution list containing likely values for a slot. The value that it returns is determined by the <code>valueSelectionStrategy</code> selected when the slot type was created or updated. If <code>valueSelectionStrategy</code> is set to <code>ORIGINAL_VALUE</code>, the value provided by the user is returned, if the user value is similar to the slot values. If <code>valueSelectionStrategy</code> is set to <code>TOP_RESOLUTION</code> Amazon Lex returns the first value in the resolution list or, if there is no resolution list, null. If you don't specify a <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.</p>
     pub fn slots(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.slots.as_ref()
     }
-    /// <p>A map of key-value pairs representing the session-specific context
-    /// information.</p>
+    /// <p>A map of key-value pairs representing the session-specific context information.</p>
     pub fn session_attributes(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.session_attributes.as_ref()
     }
-    /// <p>The message to convey to the user. The message can come from the bot's
-    /// configuration or from a Lambda function.</p>
-    /// <p>If the intent is not configured with a Lambda function, or if the Lambda
-    /// function returned <code>Delegate</code> as the
-    /// <code>dialogAction.type</code> its response, Amazon Lex decides on the next
-    /// course of action and selects an appropriate message from the bot's
-    /// configuration based on the current interaction context. For example, if
-    /// Amazon Lex isn't able to understand user input, it uses a clarification prompt
-    /// message.</p>
-    /// <p>When you create an intent you can assign messages to groups. When
-    /// messages are assigned to groups Amazon Lex returns one message from each group
-    /// in the response. The message field is an escaped JSON string containing
-    /// the messages. For more information about the structure of the JSON string
-    /// returned, see <a>msg-prompts-formats</a>.</p>
-    /// <p>If the Lambda function returns a message, Amazon Lex passes it to the client
-    /// in its response.</p>
+    /// <p>The message to convey to the user. The message can come from the bot's configuration or from a Lambda function.</p>
+    /// <p>If the intent is not configured with a Lambda function, or if the Lambda function returned <code>Delegate</code> as the <code>dialogAction.type</code> its response, Amazon Lex decides on the next course of action and selects an appropriate message from the bot's configuration based on the current interaction context. For example, if Amazon Lex isn't able to understand user input, it uses a clarification prompt message.</p>
+    /// <p>When you create an intent you can assign messages to groups. When messages are assigned to groups Amazon Lex returns one message from each group in the response. The message field is an escaped JSON string containing the messages. For more information about the structure of the JSON string returned, see <code>msg-prompts-formats</code>.</p>
+    /// <p>If the Lambda function returns a message, Amazon Lex passes it to the client in its response.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
     /// <p>The sentiment expressed in and utterance.</p>
-    /// <p>When the bot is configured to send utterances to Amazon Comprehend for
-    /// sentiment analysis, this field contains the result of the analysis.</p>
+    /// <p>When the bot is configured to send utterances to Amazon Comprehend for sentiment analysis, this field contains the result of the analysis.</p>
     pub fn sentiment_response(&self) -> std::option::Option<&crate::model::SentimentResponse> {
         self.sentiment_response.as_ref()
     }
-    /// <p>The format of the response message. One of the following
-    /// values:</p>
+    /// <p>The format of the response message. One of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>PlainText</code> - The message contains plain UTF-8
-    /// text.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CustomPayload</code> - The message is a custom format
-    /// defined by the Lambda function.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SSML</code> - The message contains text formatted for voice
-    /// output.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Composite</code> - The message contains an escaped JSON
-    /// object containing one or more messages from the groups that messages
-    /// were assigned to when the intent was created.</p>
-    /// </li>
+    /// <li> <p> <code>PlainText</code> - The message contains plain UTF-8 text.</p> </li>
+    /// <li> <p> <code>CustomPayload</code> - The message is a custom format defined by the Lambda function.</p> </li>
+    /// <li> <p> <code>SSML</code> - The message contains text formatted for voice output.</p> </li>
+    /// <li> <p> <code>Composite</code> - The message contains an escaped JSON object containing one or more messages from the groups that messages were assigned to when the intent was created.</p> </li>
     /// </ul>
     pub fn message_format(&self) -> std::option::Option<&crate::model::MessageFormatType> {
         self.message_format.as_ref()
     }
-    /// <p> Identifies the current state of the user interaction. Amazon Lex returns
-    /// one of the following values as <code>dialogState</code>. The client can
-    /// optionally use this information to customize the user interface. </p>
+    /// <p> Identifies the current state of the user interaction. Amazon Lex returns one of the following values as <code>dialogState</code>. The client can optionally use this information to customize the user interface. </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ElicitIntent</code> - Amazon Lex wants to elicit user intent. </p>
-    /// <p>For example, a user might utter an intent ("I want to order a
-    /// pizza"). If Amazon Lex cannot infer the user intent from this utterance, it
-    /// will return this dialogState.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ConfirmIntent</code> - Amazon Lex is expecting a "yes" or "no"
-    /// response. </p>
-    /// <p> For example, Amazon Lex wants user confirmation before fulfilling an
-    /// intent. </p>
-    /// <p>Instead of a simple "yes" or "no," a user might respond with
-    /// additional information. For example, "yes, but make it thick crust
-    /// pizza" or "no, I want to order a drink". Amazon Lex can process such
-    /// additional information (in these examples, update the crust type slot
-    /// value, or change intent from OrderPizza to OrderDrink).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ElicitSlot</code> - Amazon Lex is expecting a slot value for the
-    /// current intent. </p>
-    /// <p>For example, suppose that in the response Amazon Lex sends this
-    /// message: "What size pizza would you like?". A user might reply with
-    /// the slot value (e.g., "medium"). The user might also provide
-    /// additional information in the response (e.g., "medium thick crust
-    /// pizza"). Amazon Lex can process such additional information appropriately.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Fulfilled</code> - Conveys that the Lambda function configured
-    /// for the intent has successfully fulfilled the intent. </p>
-    ///
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ReadyForFulfillment</code> - Conveys that the client has to
-    /// fulfill the intent. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Failed</code> - Conveys that the conversation with the user
-    /// failed. </p>
-    /// <p> This can happen for various reasons including that the user did
-    /// not provide an appropriate response to prompts from the service (you
-    /// can configure how many times Amazon Lex can prompt a user for specific
-    /// information), or the Lambda function failed to fulfill the intent.
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>ElicitIntent</code> - Amazon Lex wants to elicit user intent. </p> <p>For example, a user might utter an intent ("I want to order a pizza"). If Amazon Lex cannot infer the user intent from this utterance, it will return this dialogState.</p> </li>
+    /// <li> <p> <code>ConfirmIntent</code> - Amazon Lex is expecting a "yes" or "no" response. </p> <p> For example, Amazon Lex wants user confirmation before fulfilling an intent. </p> <p>Instead of a simple "yes" or "no," a user might respond with additional information. For example, "yes, but make it thick crust pizza" or "no, I want to order a drink". Amazon Lex can process such additional information (in these examples, update the crust type slot value, or change intent from OrderPizza to OrderDrink).</p> </li>
+    /// <li> <p> <code>ElicitSlot</code> - Amazon Lex is expecting a slot value for the current intent. </p> <p>For example, suppose that in the response Amazon Lex sends this message: "What size pizza would you like?". A user might reply with the slot value (e.g., "medium"). The user might also provide additional information in the response (e.g., "medium thick crust pizza"). Amazon Lex can process such additional information appropriately. </p> </li>
+    /// <li> <p> <code>Fulfilled</code> - Conveys that the Lambda function configured for the intent has successfully fulfilled the intent. </p> </li>
+    /// <li> <p> <code>ReadyForFulfillment</code> - Conveys that the client has to fulfill the intent. </p> </li>
+    /// <li> <p> <code>Failed</code> - Conveys that the conversation with the user failed. </p> <p> This can happen for various reasons including that the user did not provide an appropriate response to prompts from the service (you can configure how many times Amazon Lex can prompt a user for specific information), or the Lambda function failed to fulfill the intent. </p> </li>
     /// </ul>
     pub fn dialog_state(&self) -> std::option::Option<&crate::model::DialogState> {
         self.dialog_state.as_ref()
     }
-    /// <p>If the <code>dialogState</code> value is <code>ElicitSlot</code>,
-    /// returns the name of the slot for which Amazon Lex is eliciting a value. </p>
+    /// <p>If the <code>dialogState</code> value is <code>ElicitSlot</code>, returns the name of the slot for which Amazon Lex is eliciting a value. </p>
     pub fn slot_to_elicit(&self) -> std::option::Option<&str> {
         self.slot_to_elicit.as_deref()
     }
-    /// <p>Represents the options that the user has to respond to the current
-    /// prompt. Response Card can come from the bot configuration (in the
-    /// Amazon Lex console, choose the settings button next to a slot) or from a
-    /// code hook (Lambda function). </p>
+    /// <p>Represents the options that the user has to respond to the current prompt. Response Card can come from the bot configuration (in the Amazon Lex console, choose the settings button next to a slot) or from a code hook (Lambda function). </p>
     pub fn response_card(&self) -> std::option::Option<&crate::model::ResponseCard> {
         self.response_card.as_ref()
     }
@@ -936,17 +483,12 @@ impl PostTextOutput {
     pub fn session_id(&self) -> std::option::Option<&str> {
         self.session_id.as_deref()
     }
-    /// <p>The version of the bot that responded to the conversation. You can use
-    /// this information to help determine if one version of a bot is performing
-    /// better than another version.</p>
+    /// <p>The version of the bot that responded to the conversation. You can use this information to help determine if one version of a bot is performing better than another version.</p>
     pub fn bot_version(&self) -> std::option::Option<&str> {
         self.bot_version.as_deref()
     }
-    /// <p>A list of active contexts for the session. A context can be set when
-    /// an intent is fulfilled or by calling the <code>PostContent</code>,
-    /// <code>PostText</code>, or <code>PutSession</code> operation.</p>
-    /// <p>You can use a context to control the intents that can follow up an
-    /// intent, or to modify the operation of your application.</p>
+    /// <p>A list of active contexts for the session. A context can be set when an intent is fulfilled or by calling the <code>PostContent</code>, <code>PostText</code>, or <code>PutSession</code> operation.</p>
+    /// <p>You can use a context to control the intents that can follow up an intent, or to modify the operation of your application.</p>
     pub fn active_contexts(&self) -> std::option::Option<&[crate::model::ActiveContext]> {
         self.active_contexts.as_deref()
     }
@@ -1008,20 +550,14 @@ pub mod post_text_output {
             self.intent_name = input;
             self
         }
-        /// <p>Provides a score that indicates how confident Amazon Lex is that the
-        /// returned intent is the one that matches the user's intent. The score is
-        /// between 0.0 and 1.0. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/confidence-scores.html">Confidence Scores</a>.</p>
-        /// <p>The score is a relative score, not an absolute score. The score may
-        /// change based on improvements to Amazon Lex.</p>
+        /// <p>Provides a score that indicates how confident Amazon Lex is that the returned intent is the one that matches the user's intent. The score is between 0.0 and 1.0. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/confidence-scores.html">Confidence Scores</a>.</p>
+        /// <p>The score is a relative score, not an absolute score. The score may change based on improvements to Amazon Lex.</p>
         pub fn nlu_intent_confidence(mut self, input: crate::model::IntentConfidence) -> Self {
             self.nlu_intent_confidence = Some(input);
             self
         }
-        /// <p>Provides a score that indicates how confident Amazon Lex is that the
-        /// returned intent is the one that matches the user's intent. The score is
-        /// between 0.0 and 1.0. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/confidence-scores.html">Confidence Scores</a>.</p>
-        /// <p>The score is a relative score, not an absolute score. The score may
-        /// change based on improvements to Amazon Lex.</p>
+        /// <p>Provides a score that indicates how confident Amazon Lex is that the returned intent is the one that matches the user's intent. The score is between 0.0 and 1.0. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/confidence-scores.html">Confidence Scores</a>.</p>
+        /// <p>The score is a relative score, not an absolute score. The score may change based on improvements to Amazon Lex.</p>
         pub fn set_nlu_intent_confidence(
             mut self,
             input: std::option::Option<crate::model::IntentConfidence>,
@@ -1033,22 +569,16 @@ pub mod post_text_output {
         ///
         /// To override the contents of this collection use [`set_alternative_intents`](Self::set_alternative_intents).
         ///
-        /// <p>One to four alternative intents that may be applicable to the user's
-        /// intent.</p>
-        /// <p>Each alternative includes a score that indicates how confident Amazon Lex
-        /// is that the intent matches the user's intent. The intents are sorted by
-        /// the confidence score.</p>
+        /// <p>One to four alternative intents that may be applicable to the user's intent.</p>
+        /// <p>Each alternative includes a score that indicates how confident Amazon Lex is that the intent matches the user's intent. The intents are sorted by the confidence score.</p>
         pub fn alternative_intents(mut self, input: crate::model::PredictedIntent) -> Self {
             let mut v = self.alternative_intents.unwrap_or_default();
             v.push(input);
             self.alternative_intents = Some(v);
             self
         }
-        /// <p>One to four alternative intents that may be applicable to the user's
-        /// intent.</p>
-        /// <p>Each alternative includes a score that indicates how confident Amazon Lex
-        /// is that the intent matches the user's intent. The intents are sorted by
-        /// the confidence score.</p>
+        /// <p>One to four alternative intents that may be applicable to the user's intent.</p>
+        /// <p>Each alternative includes a score that indicates how confident Amazon Lex is that the intent matches the user's intent. The intents are sorted by the confidence score.</p>
         pub fn set_alternative_intents(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PredictedIntent>>,
@@ -1060,19 +590,8 @@ pub mod post_text_output {
         ///
         /// To override the contents of this collection use [`set_slots`](Self::set_slots).
         ///
-        /// <p> The intent slots that Amazon Lex detected from the user input in the
-        /// conversation. </p>
-        /// <p>Amazon Lex creates a resolution list containing likely values for a slot.
-        /// The value that it returns is determined by the
-        /// <code>valueSelectionStrategy</code> selected when the slot type was
-        /// created or updated. If <code>valueSelectionStrategy</code> is set to
-        /// <code>ORIGINAL_VALUE</code>, the value provided by the user is returned,
-        /// if the user value is similar to the slot values. If
-        /// <code>valueSelectionStrategy</code> is set to
-        /// <code>TOP_RESOLUTION</code> Amazon Lex returns the first value in the
-        /// resolution list or, if there is no resolution list, null. If you don't
-        /// specify a <code>valueSelectionStrategy</code>, the default is
-        /// <code>ORIGINAL_VALUE</code>.</p>
+        /// <p> The intent slots that Amazon Lex detected from the user input in the conversation. </p>
+        /// <p>Amazon Lex creates a resolution list containing likely values for a slot. The value that it returns is determined by the <code>valueSelectionStrategy</code> selected when the slot type was created or updated. If <code>valueSelectionStrategy</code> is set to <code>ORIGINAL_VALUE</code>, the value provided by the user is returned, if the user value is similar to the slot values. If <code>valueSelectionStrategy</code> is set to <code>TOP_RESOLUTION</code> Amazon Lex returns the first value in the resolution list or, if there is no resolution list, null. If you don't specify a <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.</p>
         pub fn slots(
             mut self,
             k: impl Into<std::string::String>,
@@ -1083,19 +602,8 @@ pub mod post_text_output {
             self.slots = Some(hash_map);
             self
         }
-        /// <p> The intent slots that Amazon Lex detected from the user input in the
-        /// conversation. </p>
-        /// <p>Amazon Lex creates a resolution list containing likely values for a slot.
-        /// The value that it returns is determined by the
-        /// <code>valueSelectionStrategy</code> selected when the slot type was
-        /// created or updated. If <code>valueSelectionStrategy</code> is set to
-        /// <code>ORIGINAL_VALUE</code>, the value provided by the user is returned,
-        /// if the user value is similar to the slot values. If
-        /// <code>valueSelectionStrategy</code> is set to
-        /// <code>TOP_RESOLUTION</code> Amazon Lex returns the first value in the
-        /// resolution list or, if there is no resolution list, null. If you don't
-        /// specify a <code>valueSelectionStrategy</code>, the default is
-        /// <code>ORIGINAL_VALUE</code>.</p>
+        /// <p> The intent slots that Amazon Lex detected from the user input in the conversation. </p>
+        /// <p>Amazon Lex creates a resolution list containing likely values for a slot. The value that it returns is determined by the <code>valueSelectionStrategy</code> selected when the slot type was created or updated. If <code>valueSelectionStrategy</code> is set to <code>ORIGINAL_VALUE</code>, the value provided by the user is returned, if the user value is similar to the slot values. If <code>valueSelectionStrategy</code> is set to <code>TOP_RESOLUTION</code> Amazon Lex returns the first value in the resolution list or, if there is no resolution list, null. If you don't specify a <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.</p>
         pub fn set_slots(
             mut self,
             input: std::option::Option<
@@ -1109,8 +617,7 @@ pub mod post_text_output {
         ///
         /// To override the contents of this collection use [`set_session_attributes`](Self::set_session_attributes).
         ///
-        /// <p>A map of key-value pairs representing the session-specific context
-        /// information.</p>
+        /// <p>A map of key-value pairs representing the session-specific context information.</p>
         pub fn session_attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -1121,8 +628,7 @@ pub mod post_text_output {
             self.session_attributes = Some(hash_map);
             self
         }
-        /// <p>A map of key-value pairs representing the session-specific context
-        /// information.</p>
+        /// <p>A map of key-value pairs representing the session-specific context information.</p>
         pub fn set_session_attributes(
             mut self,
             input: std::option::Option<
@@ -1132,56 +638,30 @@ pub mod post_text_output {
             self.session_attributes = input;
             self
         }
-        /// <p>The message to convey to the user. The message can come from the bot's
-        /// configuration or from a Lambda function.</p>
-        /// <p>If the intent is not configured with a Lambda function, or if the Lambda
-        /// function returned <code>Delegate</code> as the
-        /// <code>dialogAction.type</code> its response, Amazon Lex decides on the next
-        /// course of action and selects an appropriate message from the bot's
-        /// configuration based on the current interaction context. For example, if
-        /// Amazon Lex isn't able to understand user input, it uses a clarification prompt
-        /// message.</p>
-        /// <p>When you create an intent you can assign messages to groups. When
-        /// messages are assigned to groups Amazon Lex returns one message from each group
-        /// in the response. The message field is an escaped JSON string containing
-        /// the messages. For more information about the structure of the JSON string
-        /// returned, see <a>msg-prompts-formats</a>.</p>
-        /// <p>If the Lambda function returns a message, Amazon Lex passes it to the client
-        /// in its response.</p>
+        /// <p>The message to convey to the user. The message can come from the bot's configuration or from a Lambda function.</p>
+        /// <p>If the intent is not configured with a Lambda function, or if the Lambda function returned <code>Delegate</code> as the <code>dialogAction.type</code> its response, Amazon Lex decides on the next course of action and selects an appropriate message from the bot's configuration based on the current interaction context. For example, if Amazon Lex isn't able to understand user input, it uses a clarification prompt message.</p>
+        /// <p>When you create an intent you can assign messages to groups. When messages are assigned to groups Amazon Lex returns one message from each group in the response. The message field is an escaped JSON string containing the messages. For more information about the structure of the JSON string returned, see <code>msg-prompts-formats</code>.</p>
+        /// <p>If the Lambda function returns a message, Amazon Lex passes it to the client in its response.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message to convey to the user. The message can come from the bot's
-        /// configuration or from a Lambda function.</p>
-        /// <p>If the intent is not configured with a Lambda function, or if the Lambda
-        /// function returned <code>Delegate</code> as the
-        /// <code>dialogAction.type</code> its response, Amazon Lex decides on the next
-        /// course of action and selects an appropriate message from the bot's
-        /// configuration based on the current interaction context. For example, if
-        /// Amazon Lex isn't able to understand user input, it uses a clarification prompt
-        /// message.</p>
-        /// <p>When you create an intent you can assign messages to groups. When
-        /// messages are assigned to groups Amazon Lex returns one message from each group
-        /// in the response. The message field is an escaped JSON string containing
-        /// the messages. For more information about the structure of the JSON string
-        /// returned, see <a>msg-prompts-formats</a>.</p>
-        /// <p>If the Lambda function returns a message, Amazon Lex passes it to the client
-        /// in its response.</p>
+        /// <p>The message to convey to the user. The message can come from the bot's configuration or from a Lambda function.</p>
+        /// <p>If the intent is not configured with a Lambda function, or if the Lambda function returned <code>Delegate</code> as the <code>dialogAction.type</code> its response, Amazon Lex decides on the next course of action and selects an appropriate message from the bot's configuration based on the current interaction context. For example, if Amazon Lex isn't able to understand user input, it uses a clarification prompt message.</p>
+        /// <p>When you create an intent you can assign messages to groups. When messages are assigned to groups Amazon Lex returns one message from each group in the response. The message field is an escaped JSON string containing the messages. For more information about the structure of the JSON string returned, see <code>msg-prompts-formats</code>.</p>
+        /// <p>If the Lambda function returns a message, Amazon Lex passes it to the client in its response.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
         }
         /// <p>The sentiment expressed in and utterance.</p>
-        /// <p>When the bot is configured to send utterances to Amazon Comprehend for
-        /// sentiment analysis, this field contains the result of the analysis.</p>
+        /// <p>When the bot is configured to send utterances to Amazon Comprehend for sentiment analysis, this field contains the result of the analysis.</p>
         pub fn sentiment_response(mut self, input: crate::model::SentimentResponse) -> Self {
             self.sentiment_response = Some(input);
             self
         }
         /// <p>The sentiment expressed in and utterance.</p>
-        /// <p>When the bot is configured to send utterances to Amazon Comprehend for
-        /// sentiment analysis, this field contains the result of the analysis.</p>
+        /// <p>When the bot is configured to send utterances to Amazon Comprehend for sentiment analysis, this field contains the result of the analysis.</p>
         pub fn set_sentiment_response(
             mut self,
             input: std::option::Option<crate::model::SentimentResponse>,
@@ -1189,59 +669,23 @@ pub mod post_text_output {
             self.sentiment_response = input;
             self
         }
-        /// <p>The format of the response message. One of the following
-        /// values:</p>
+        /// <p>The format of the response message. One of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PlainText</code> - The message contains plain UTF-8
-        /// text.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CustomPayload</code> - The message is a custom format
-        /// defined by the Lambda function.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SSML</code> - The message contains text formatted for voice
-        /// output.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Composite</code> - The message contains an escaped JSON
-        /// object containing one or more messages from the groups that messages
-        /// were assigned to when the intent was created.</p>
-        /// </li>
+        /// <li> <p> <code>PlainText</code> - The message contains plain UTF-8 text.</p> </li>
+        /// <li> <p> <code>CustomPayload</code> - The message is a custom format defined by the Lambda function.</p> </li>
+        /// <li> <p> <code>SSML</code> - The message contains text formatted for voice output.</p> </li>
+        /// <li> <p> <code>Composite</code> - The message contains an escaped JSON object containing one or more messages from the groups that messages were assigned to when the intent was created.</p> </li>
         /// </ul>
         pub fn message_format(mut self, input: crate::model::MessageFormatType) -> Self {
             self.message_format = Some(input);
             self
         }
-        /// <p>The format of the response message. One of the following
-        /// values:</p>
+        /// <p>The format of the response message. One of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PlainText</code> - The message contains plain UTF-8
-        /// text.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CustomPayload</code> - The message is a custom format
-        /// defined by the Lambda function.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SSML</code> - The message contains text formatted for voice
-        /// output.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Composite</code> - The message contains an escaped JSON
-        /// object containing one or more messages from the groups that messages
-        /// were assigned to when the intent was created.</p>
-        /// </li>
+        /// <li> <p> <code>PlainText</code> - The message contains plain UTF-8 text.</p> </li>
+        /// <li> <p> <code>CustomPayload</code> - The message is a custom format defined by the Lambda function.</p> </li>
+        /// <li> <p> <code>SSML</code> - The message contains text formatted for voice output.</p> </li>
+        /// <li> <p> <code>Composite</code> - The message contains an escaped JSON object containing one or more messages from the groups that messages were assigned to when the intent was created.</p> </li>
         /// </ul>
         pub fn set_message_format(
             mut self,
@@ -1250,121 +694,27 @@ pub mod post_text_output {
             self.message_format = input;
             self
         }
-        /// <p> Identifies the current state of the user interaction. Amazon Lex returns
-        /// one of the following values as <code>dialogState</code>. The client can
-        /// optionally use this information to customize the user interface. </p>
+        /// <p> Identifies the current state of the user interaction. Amazon Lex returns one of the following values as <code>dialogState</code>. The client can optionally use this information to customize the user interface. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ElicitIntent</code> - Amazon Lex wants to elicit user intent. </p>
-        /// <p>For example, a user might utter an intent ("I want to order a
-        /// pizza"). If Amazon Lex cannot infer the user intent from this utterance, it
-        /// will return this dialogState.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ConfirmIntent</code> - Amazon Lex is expecting a "yes" or "no"
-        /// response. </p>
-        /// <p> For example, Amazon Lex wants user confirmation before fulfilling an
-        /// intent. </p>
-        /// <p>Instead of a simple "yes" or "no," a user might respond with
-        /// additional information. For example, "yes, but make it thick crust
-        /// pizza" or "no, I want to order a drink". Amazon Lex can process such
-        /// additional information (in these examples, update the crust type slot
-        /// value, or change intent from OrderPizza to OrderDrink).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ElicitSlot</code> - Amazon Lex is expecting a slot value for the
-        /// current intent. </p>
-        /// <p>For example, suppose that in the response Amazon Lex sends this
-        /// message: "What size pizza would you like?". A user might reply with
-        /// the slot value (e.g., "medium"). The user might also provide
-        /// additional information in the response (e.g., "medium thick crust
-        /// pizza"). Amazon Lex can process such additional information appropriately.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Fulfilled</code> - Conveys that the Lambda function configured
-        /// for the intent has successfully fulfilled the intent. </p>
-        ///
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ReadyForFulfillment</code> - Conveys that the client has to
-        /// fulfill the intent. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Failed</code> - Conveys that the conversation with the user
-        /// failed. </p>
-        /// <p> This can happen for various reasons including that the user did
-        /// not provide an appropriate response to prompts from the service (you
-        /// can configure how many times Amazon Lex can prompt a user for specific
-        /// information), or the Lambda function failed to fulfill the intent.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>ElicitIntent</code> - Amazon Lex wants to elicit user intent. </p> <p>For example, a user might utter an intent ("I want to order a pizza"). If Amazon Lex cannot infer the user intent from this utterance, it will return this dialogState.</p> </li>
+        /// <li> <p> <code>ConfirmIntent</code> - Amazon Lex is expecting a "yes" or "no" response. </p> <p> For example, Amazon Lex wants user confirmation before fulfilling an intent. </p> <p>Instead of a simple "yes" or "no," a user might respond with additional information. For example, "yes, but make it thick crust pizza" or "no, I want to order a drink". Amazon Lex can process such additional information (in these examples, update the crust type slot value, or change intent from OrderPizza to OrderDrink).</p> </li>
+        /// <li> <p> <code>ElicitSlot</code> - Amazon Lex is expecting a slot value for the current intent. </p> <p>For example, suppose that in the response Amazon Lex sends this message: "What size pizza would you like?". A user might reply with the slot value (e.g., "medium"). The user might also provide additional information in the response (e.g., "medium thick crust pizza"). Amazon Lex can process such additional information appropriately. </p> </li>
+        /// <li> <p> <code>Fulfilled</code> - Conveys that the Lambda function configured for the intent has successfully fulfilled the intent. </p> </li>
+        /// <li> <p> <code>ReadyForFulfillment</code> - Conveys that the client has to fulfill the intent. </p> </li>
+        /// <li> <p> <code>Failed</code> - Conveys that the conversation with the user failed. </p> <p> This can happen for various reasons including that the user did not provide an appropriate response to prompts from the service (you can configure how many times Amazon Lex can prompt a user for specific information), or the Lambda function failed to fulfill the intent. </p> </li>
         /// </ul>
         pub fn dialog_state(mut self, input: crate::model::DialogState) -> Self {
             self.dialog_state = Some(input);
             self
         }
-        /// <p> Identifies the current state of the user interaction. Amazon Lex returns
-        /// one of the following values as <code>dialogState</code>. The client can
-        /// optionally use this information to customize the user interface. </p>
+        /// <p> Identifies the current state of the user interaction. Amazon Lex returns one of the following values as <code>dialogState</code>. The client can optionally use this information to customize the user interface. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ElicitIntent</code> - Amazon Lex wants to elicit user intent. </p>
-        /// <p>For example, a user might utter an intent ("I want to order a
-        /// pizza"). If Amazon Lex cannot infer the user intent from this utterance, it
-        /// will return this dialogState.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ConfirmIntent</code> - Amazon Lex is expecting a "yes" or "no"
-        /// response. </p>
-        /// <p> For example, Amazon Lex wants user confirmation before fulfilling an
-        /// intent. </p>
-        /// <p>Instead of a simple "yes" or "no," a user might respond with
-        /// additional information. For example, "yes, but make it thick crust
-        /// pizza" or "no, I want to order a drink". Amazon Lex can process such
-        /// additional information (in these examples, update the crust type slot
-        /// value, or change intent from OrderPizza to OrderDrink).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ElicitSlot</code> - Amazon Lex is expecting a slot value for the
-        /// current intent. </p>
-        /// <p>For example, suppose that in the response Amazon Lex sends this
-        /// message: "What size pizza would you like?". A user might reply with
-        /// the slot value (e.g., "medium"). The user might also provide
-        /// additional information in the response (e.g., "medium thick crust
-        /// pizza"). Amazon Lex can process such additional information appropriately.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Fulfilled</code> - Conveys that the Lambda function configured
-        /// for the intent has successfully fulfilled the intent. </p>
-        ///
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ReadyForFulfillment</code> - Conveys that the client has to
-        /// fulfill the intent. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Failed</code> - Conveys that the conversation with the user
-        /// failed. </p>
-        /// <p> This can happen for various reasons including that the user did
-        /// not provide an appropriate response to prompts from the service (you
-        /// can configure how many times Amazon Lex can prompt a user for specific
-        /// information), or the Lambda function failed to fulfill the intent.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>ElicitIntent</code> - Amazon Lex wants to elicit user intent. </p> <p>For example, a user might utter an intent ("I want to order a pizza"). If Amazon Lex cannot infer the user intent from this utterance, it will return this dialogState.</p> </li>
+        /// <li> <p> <code>ConfirmIntent</code> - Amazon Lex is expecting a "yes" or "no" response. </p> <p> For example, Amazon Lex wants user confirmation before fulfilling an intent. </p> <p>Instead of a simple "yes" or "no," a user might respond with additional information. For example, "yes, but make it thick crust pizza" or "no, I want to order a drink". Amazon Lex can process such additional information (in these examples, update the crust type slot value, or change intent from OrderPizza to OrderDrink).</p> </li>
+        /// <li> <p> <code>ElicitSlot</code> - Amazon Lex is expecting a slot value for the current intent. </p> <p>For example, suppose that in the response Amazon Lex sends this message: "What size pizza would you like?". A user might reply with the slot value (e.g., "medium"). The user might also provide additional information in the response (e.g., "medium thick crust pizza"). Amazon Lex can process such additional information appropriately. </p> </li>
+        /// <li> <p> <code>Fulfilled</code> - Conveys that the Lambda function configured for the intent has successfully fulfilled the intent. </p> </li>
+        /// <li> <p> <code>ReadyForFulfillment</code> - Conveys that the client has to fulfill the intent. </p> </li>
+        /// <li> <p> <code>Failed</code> - Conveys that the conversation with the user failed. </p> <p> This can happen for various reasons including that the user did not provide an appropriate response to prompts from the service (you can configure how many times Amazon Lex can prompt a user for specific information), or the Lambda function failed to fulfill the intent. </p> </li>
         /// </ul>
         pub fn set_dialog_state(
             mut self,
@@ -1373,14 +723,12 @@ pub mod post_text_output {
             self.dialog_state = input;
             self
         }
-        /// <p>If the <code>dialogState</code> value is <code>ElicitSlot</code>,
-        /// returns the name of the slot for which Amazon Lex is eliciting a value. </p>
+        /// <p>If the <code>dialogState</code> value is <code>ElicitSlot</code>, returns the name of the slot for which Amazon Lex is eliciting a value. </p>
         pub fn slot_to_elicit(mut self, input: impl Into<std::string::String>) -> Self {
             self.slot_to_elicit = Some(input.into());
             self
         }
-        /// <p>If the <code>dialogState</code> value is <code>ElicitSlot</code>,
-        /// returns the name of the slot for which Amazon Lex is eliciting a value. </p>
+        /// <p>If the <code>dialogState</code> value is <code>ElicitSlot</code>, returns the name of the slot for which Amazon Lex is eliciting a value. </p>
         pub fn set_slot_to_elicit(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1388,18 +736,12 @@ pub mod post_text_output {
             self.slot_to_elicit = input;
             self
         }
-        /// <p>Represents the options that the user has to respond to the current
-        /// prompt. Response Card can come from the bot configuration (in the
-        /// Amazon Lex console, choose the settings button next to a slot) or from a
-        /// code hook (Lambda function). </p>
+        /// <p>Represents the options that the user has to respond to the current prompt. Response Card can come from the bot configuration (in the Amazon Lex console, choose the settings button next to a slot) or from a code hook (Lambda function). </p>
         pub fn response_card(mut self, input: crate::model::ResponseCard) -> Self {
             self.response_card = Some(input);
             self
         }
-        /// <p>Represents the options that the user has to respond to the current
-        /// prompt. Response Card can come from the bot configuration (in the
-        /// Amazon Lex console, choose the settings button next to a slot) or from a
-        /// code hook (Lambda function). </p>
+        /// <p>Represents the options that the user has to respond to the current prompt. Response Card can come from the bot configuration (in the Amazon Lex console, choose the settings button next to a slot) or from a code hook (Lambda function). </p>
         pub fn set_response_card(
             mut self,
             input: std::option::Option<crate::model::ResponseCard>,
@@ -1417,16 +759,12 @@ pub mod post_text_output {
             self.session_id = input;
             self
         }
-        /// <p>The version of the bot that responded to the conversation. You can use
-        /// this information to help determine if one version of a bot is performing
-        /// better than another version.</p>
+        /// <p>The version of the bot that responded to the conversation. You can use this information to help determine if one version of a bot is performing better than another version.</p>
         pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.bot_version = Some(input.into());
             self
         }
-        /// <p>The version of the bot that responded to the conversation. You can use
-        /// this information to help determine if one version of a bot is performing
-        /// better than another version.</p>
+        /// <p>The version of the bot that responded to the conversation. You can use this information to help determine if one version of a bot is performing better than another version.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_version = input;
             self
@@ -1435,22 +773,16 @@ pub mod post_text_output {
         ///
         /// To override the contents of this collection use [`set_active_contexts`](Self::set_active_contexts).
         ///
-        /// <p>A list of active contexts for the session. A context can be set when
-        /// an intent is fulfilled or by calling the <code>PostContent</code>,
-        /// <code>PostText</code>, or <code>PutSession</code> operation.</p>
-        /// <p>You can use a context to control the intents that can follow up an
-        /// intent, or to modify the operation of your application.</p>
+        /// <p>A list of active contexts for the session. A context can be set when an intent is fulfilled or by calling the <code>PostContent</code>, <code>PostText</code>, or <code>PutSession</code> operation.</p>
+        /// <p>You can use a context to control the intents that can follow up an intent, or to modify the operation of your application.</p>
         pub fn active_contexts(mut self, input: crate::model::ActiveContext) -> Self {
             let mut v = self.active_contexts.unwrap_or_default();
             v.push(input);
             self.active_contexts = Some(v);
             self
         }
-        /// <p>A list of active contexts for the session. A context can be set when
-        /// an intent is fulfilled or by calling the <code>PostContent</code>,
-        /// <code>PostText</code>, or <code>PutSession</code> operation.</p>
-        /// <p>You can use a context to control the intents that can follow up an
-        /// intent, or to modify the operation of your application.</p>
+        /// <p>A list of active contexts for the session. A context can be set when an intent is fulfilled or by calling the <code>PostContent</code>, <code>PostText</code>, or <code>PutSession</code> operation.</p>
+        /// <p>You can use a context to control the intents that can follow up an intent, or to modify the operation of your application.</p>
         pub fn set_active_contexts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ActiveContext>>,
@@ -1489,215 +821,76 @@ impl PostTextOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 pub struct PostContentOutput {
-    /// <p>Content type as specified in the <code>Accept</code> HTTP header in
-    /// the request.</p>
+    /// <p>Content type as specified in the <code>Accept</code> HTTP header in the request.</p>
     pub content_type: std::option::Option<std::string::String>,
     /// <p>Current user intent that Amazon Lex is aware of.</p>
     pub intent_name: std::option::Option<std::string::String>,
-    /// <p>Provides a score that indicates how confident Amazon Lex is that the
-    /// returned intent is the one that matches the user's intent. The score is
-    /// between 0.0 and 1.0.</p>
-    /// <p>The score is a relative score, not an absolute score. The score may
-    /// change based on improvements to Amazon Lex. </p>
+    /// <p>Provides a score that indicates how confident Amazon Lex is that the returned intent is the one that matches the user's intent. The score is between 0.0 and 1.0.</p>
+    /// <p>The score is a relative score, not an absolute score. The score may change based on improvements to Amazon Lex. </p>
     pub nlu_intent_confidence: std::option::Option<std::string::String>,
-    /// <p>One to four alternative intents that may be applicable to the user's
-    /// intent.</p>
-    /// <p>Each alternative includes a score that indicates how confident Amazon Lex
-    /// is that the intent matches the user's intent. The intents are sorted by
-    /// the confidence score.</p>
+    /// <p>One to four alternative intents that may be applicable to the user's intent.</p>
+    /// <p>Each alternative includes a score that indicates how confident Amazon Lex is that the intent matches the user's intent. The intents are sorted by the confidence score.</p>
     pub alternative_intents: std::option::Option<std::string::String>,
-    /// <p>Map of zero or more intent slots (name/value pairs) Amazon Lex detected
-    /// from the user input during the conversation. The field is base-64
-    /// encoded.</p>
-    /// <p>Amazon Lex creates a resolution list containing likely values for a slot.
-    /// The value that it returns is determined by the
-    /// <code>valueSelectionStrategy</code> selected when the slot type was
-    /// created or updated. If <code>valueSelectionStrategy</code> is set to
-    /// <code>ORIGINAL_VALUE</code>, the value provided by the user is returned,
-    /// if the user value is similar to the slot values. If
-    /// <code>valueSelectionStrategy</code> is set to
-    /// <code>TOP_RESOLUTION</code> Amazon Lex returns the first value in the
-    /// resolution list or, if there is no resolution list, null. If you don't
-    /// specify a <code>valueSelectionStrategy</code>, the default is
-    /// <code>ORIGINAL_VALUE</code>.</p>
+    /// <p>Map of zero or more intent slots (name/value pairs) Amazon Lex detected from the user input during the conversation. The field is base-64 encoded.</p>
+    /// <p>Amazon Lex creates a resolution list containing likely values for a slot. The value that it returns is determined by the <code>valueSelectionStrategy</code> selected when the slot type was created or updated. If <code>valueSelectionStrategy</code> is set to <code>ORIGINAL_VALUE</code>, the value provided by the user is returned, if the user value is similar to the slot values. If <code>valueSelectionStrategy</code> is set to <code>TOP_RESOLUTION</code> Amazon Lex returns the first value in the resolution list or, if there is no resolution list, null. If you don't specify a <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.</p>
     pub slots: std::option::Option<std::string::String>,
-    /// <p> Map of key/value pairs representing the session-specific context
-    /// information. </p>
+    /// <p> Map of key/value pairs representing the session-specific context information. </p>
     pub session_attributes: std::option::Option<std::string::String>,
     /// <p>The sentiment expressed in an utterance.</p>
-    /// <p>When the bot is configured to send utterances to Amazon Comprehend for
-    /// sentiment analysis, this field contains the result of the analysis.</p>
+    /// <p>When the bot is configured to send utterances to Amazon Comprehend for sentiment analysis, this field contains the result of the analysis.</p>
     pub sentiment_response: std::option::Option<std::string::String>,
-    /// <p>You can only use this field in the de-DE, en-AU, en-GB, en-US, es-419,
-    /// es-ES, es-US, fr-CA, fr-FR, and it-IT locales. In all other locales, the
-    /// <code>message</code> field is null. You should use the
-    /// <code>encodedMessage</code> field instead.</p>
-    /// <p>The message to convey to the user. The message can come from the bot's
-    /// configuration or from a Lambda function.</p>
-    /// <p>If the intent is not configured with a Lambda function, or if the Lambda
-    /// function returned <code>Delegate</code> as the
-    /// <code>dialogAction.type</code> in its response, Amazon Lex decides on the
-    /// next course of action and selects an appropriate message from the bot's
-    /// configuration based on the current interaction context. For example, if
-    /// Amazon Lex isn't able to understand user input, it uses a clarification prompt
-    /// message.</p>
-    /// <p>When you create an intent you can assign messages to groups. When
-    /// messages are assigned to groups Amazon Lex returns one message from each group
-    /// in the response. The message field is an escaped JSON string containing
-    /// the messages. For more information about the structure of the JSON string
-    /// returned, see <a>msg-prompts-formats</a>.</p>
-    /// <p>If the Lambda function returns a message, Amazon Lex passes it to the client
-    /// in its response.</p>
+    /// <p>You can only use this field in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR, and it-IT locales. In all other locales, the <code>message</code> field is null. You should use the <code>encodedMessage</code> field instead.</p>
+    /// <p>The message to convey to the user. The message can come from the bot's configuration or from a Lambda function.</p>
+    /// <p>If the intent is not configured with a Lambda function, or if the Lambda function returned <code>Delegate</code> as the <code>dialogAction.type</code> in its response, Amazon Lex decides on the next course of action and selects an appropriate message from the bot's configuration based on the current interaction context. For example, if Amazon Lex isn't able to understand user input, it uses a clarification prompt message.</p>
+    /// <p>When you create an intent you can assign messages to groups. When messages are assigned to groups Amazon Lex returns one message from each group in the response. The message field is an escaped JSON string containing the messages. For more information about the structure of the JSON string returned, see <code>msg-prompts-formats</code>.</p>
+    /// <p>If the Lambda function returns a message, Amazon Lex passes it to the client in its response.</p>
     pub message: std::option::Option<std::string::String>,
-    /// <p>The message to convey to the user. The message can come from the bot's
-    /// configuration or from a Lambda function.</p>
-    /// <p>If the intent is not configured with a Lambda function, or if the Lambda
-    /// function returned <code>Delegate</code> as the
-    /// <code>dialogAction.type</code> in its response, Amazon Lex decides on the
-    /// next course of action and selects an appropriate message from the bot's
-    /// configuration based on the current interaction context. For example, if
-    /// Amazon Lex isn't able to understand user input, it uses a clarification prompt
-    /// message.</p>
-    /// <p>When you create an intent you can assign messages to groups. When
-    /// messages are assigned to groups Amazon Lex returns one message from each group
-    /// in the response. The message field is an escaped JSON string containing
-    /// the messages. For more information about the structure of the JSON string
-    /// returned, see <a>msg-prompts-formats</a>.</p>
-    /// <p>If the Lambda function returns a message, Amazon Lex passes it to the client
-    /// in its response.</p>
-    /// <p>The <code>encodedMessage</code> field is base-64 encoded. You must
-    /// decode the field before you can use the value.</p>
+    /// <p>The message to convey to the user. The message can come from the bot's configuration or from a Lambda function.</p>
+    /// <p>If the intent is not configured with a Lambda function, or if the Lambda function returned <code>Delegate</code> as the <code>dialogAction.type</code> in its response, Amazon Lex decides on the next course of action and selects an appropriate message from the bot's configuration based on the current interaction context. For example, if Amazon Lex isn't able to understand user input, it uses a clarification prompt message.</p>
+    /// <p>When you create an intent you can assign messages to groups. When messages are assigned to groups Amazon Lex returns one message from each group in the response. The message field is an escaped JSON string containing the messages. For more information about the structure of the JSON string returned, see <code>msg-prompts-formats</code>.</p>
+    /// <p>If the Lambda function returns a message, Amazon Lex passes it to the client in its response.</p>
+    /// <p>The <code>encodedMessage</code> field is base-64 encoded. You must decode the field before you can use the value.</p>
     pub encoded_message: std::option::Option<std::string::String>,
-    /// <p>The format of the response message. One of the following
-    /// values:</p>
+    /// <p>The format of the response message. One of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>PlainText</code> - The message contains plain UTF-8
-    /// text.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CustomPayload</code> - The message is a custom format for
-    /// the client.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SSML</code> - The message contains text formatted for voice
-    /// output.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Composite</code> - The message contains an escaped JSON
-    /// object containing one or more messages from the groups that messages
-    /// were assigned to when the intent was created.</p>
-    /// </li>
+    /// <li> <p> <code>PlainText</code> - The message contains plain UTF-8 text.</p> </li>
+    /// <li> <p> <code>CustomPayload</code> - The message is a custom format for the client.</p> </li>
+    /// <li> <p> <code>SSML</code> - The message contains text formatted for voice output.</p> </li>
+    /// <li> <p> <code>Composite</code> - The message contains an escaped JSON object containing one or more messages from the groups that messages were assigned to when the intent was created.</p> </li>
     /// </ul>
     pub message_format: std::option::Option<crate::model::MessageFormatType>,
-    /// <p>Identifies the current state of the user interaction. Amazon Lex returns
-    /// one of the following values as <code>dialogState</code>. The client can
-    /// optionally use this information to customize the user interface. </p>
+    /// <p>Identifies the current state of the user interaction. Amazon Lex returns one of the following values as <code>dialogState</code>. The client can optionally use this information to customize the user interface. </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ElicitIntent</code> - Amazon Lex wants to elicit the user's intent.
-    /// Consider the following examples: </p>
-    /// <p> For example, a user might utter an intent ("I want to order a
-    /// pizza"). If Amazon Lex cannot infer the user intent from this utterance, it
-    /// will return this dialog state. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ConfirmIntent</code> - Amazon Lex is expecting a "yes" or "no"
-    /// response. </p>
-    /// <p>For example, Amazon Lex wants user confirmation before fulfilling an
-    /// intent. Instead of a simple "yes" or "no" response, a user might
-    /// respond with additional information. For example, "yes, but make it a
-    /// thick crust pizza" or "no, I want to order a drink." Amazon Lex can process
-    /// such additional information (in these examples, update the crust type
-    /// slot or change the intent from OrderPizza to OrderDrink). </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ElicitSlot</code> - Amazon Lex is expecting the value of a slot for
-    /// the current intent. </p>
-    /// <p> For example, suppose that in the response Amazon Lex sends this
-    /// message: "What size pizza would you like?". A user might reply with
-    /// the slot value (e.g., "medium"). The user might also provide
-    /// additional information in the response (e.g., "medium thick crust
-    /// pizza"). Amazon Lex can process such additional information appropriately.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Fulfilled</code> - Conveys that the Lambda function has
-    /// successfully fulfilled the intent. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ReadyForFulfillment</code> - Conveys that the client has to
-    /// fulfill the request. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Failed</code> - Conveys that the conversation with the user
-    /// failed. </p>
-    /// <p> This can happen for various reasons, including that the user does
-    /// not provide an appropriate response to prompts from the service (you
-    /// can configure how many times Amazon Lex can prompt a user for specific
-    /// information), or if the Lambda function fails to fulfill the intent.
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>ElicitIntent</code> - Amazon Lex wants to elicit the user's intent. Consider the following examples: </p> <p> For example, a user might utter an intent ("I want to order a pizza"). If Amazon Lex cannot infer the user intent from this utterance, it will return this dialog state. </p> </li>
+    /// <li> <p> <code>ConfirmIntent</code> - Amazon Lex is expecting a "yes" or "no" response. </p> <p>For example, Amazon Lex wants user confirmation before fulfilling an intent. Instead of a simple "yes" or "no" response, a user might respond with additional information. For example, "yes, but make it a thick crust pizza" or "no, I want to order a drink." Amazon Lex can process such additional information (in these examples, update the crust type slot or change the intent from OrderPizza to OrderDrink). </p> </li>
+    /// <li> <p> <code>ElicitSlot</code> - Amazon Lex is expecting the value of a slot for the current intent. </p> <p> For example, suppose that in the response Amazon Lex sends this message: "What size pizza would you like?". A user might reply with the slot value (e.g., "medium"). The user might also provide additional information in the response (e.g., "medium thick crust pizza"). Amazon Lex can process such additional information appropriately. </p> </li>
+    /// <li> <p> <code>Fulfilled</code> - Conveys that the Lambda function has successfully fulfilled the intent. </p> </li>
+    /// <li> <p> <code>ReadyForFulfillment</code> - Conveys that the client has to fulfill the request. </p> </li>
+    /// <li> <p> <code>Failed</code> - Conveys that the conversation with the user failed. </p> <p> This can happen for various reasons, including that the user does not provide an appropriate response to prompts from the service (you can configure how many times Amazon Lex can prompt a user for specific information), or if the Lambda function fails to fulfill the intent. </p> </li>
     /// </ul>
     pub dialog_state: std::option::Option<crate::model::DialogState>,
-    /// <p> If the <code>dialogState</code> value is <code>ElicitSlot</code>,
-    /// returns the name of the slot for which Amazon Lex is eliciting a value. </p>
+    /// <p> If the <code>dialogState</code> value is <code>ElicitSlot</code>, returns the name of the slot for which Amazon Lex is eliciting a value. </p>
     pub slot_to_elicit: std::option::Option<std::string::String>,
     /// <p>The text used to process the request.</p>
-    /// <p>You can use this field only in the de-DE, en-AU, en-GB, en-US, es-419,
-    /// es-ES, es-US, fr-CA, fr-FR, and it-IT locales. In all other locales, the
-    /// <code>inputTranscript</code> field is null. You should use the
-    /// <code>encodedInputTranscript</code> field instead.</p>
-    /// <p>If the input was an audio stream, the <code>inputTranscript</code>
-    /// field contains the text extracted from the audio stream. This is the text
-    /// that is actually processed to recognize intents and slot values. You can
-    /// use this information to determine if Amazon Lex is correctly processing the
-    /// audio that you send.</p>
+    /// <p>You can use this field only in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR, and it-IT locales. In all other locales, the <code>inputTranscript</code> field is null. You should use the <code>encodedInputTranscript</code> field instead.</p>
+    /// <p>If the input was an audio stream, the <code>inputTranscript</code> field contains the text extracted from the audio stream. This is the text that is actually processed to recognize intents and slot values. You can use this information to determine if Amazon Lex is correctly processing the audio that you send.</p>
     pub input_transcript: std::option::Option<std::string::String>,
     /// <p>The text used to process the request.</p>
-    /// <p>If the input was an audio stream, the
-    /// <code>encodedInputTranscript</code> field contains the text extracted
-    /// from the audio stream. This is the text that is actually processed to
-    /// recognize intents and slot values. You can use this information to
-    /// determine if Amazon Lex is correctly processing the audio that you send.</p>
-    /// <p>The <code>encodedInputTranscript</code> field is base-64 encoded. You must
-    /// decode the field before you can use the value.</p>
+    /// <p>If the input was an audio stream, the <code>encodedInputTranscript</code> field contains the text extracted from the audio stream. This is the text that is actually processed to recognize intents and slot values. You can use this information to determine if Amazon Lex is correctly processing the audio that you send.</p>
+    /// <p>The <code>encodedInputTranscript</code> field is base-64 encoded. You must decode the field before you can use the value.</p>
     pub encoded_input_transcript: std::option::Option<std::string::String>,
-    /// <p>The prompt (or statement) to convey to the user. This is based on the
-    /// bot configuration and context. For example, if Amazon Lex did not understand
-    /// the user intent, it sends the <code>clarificationPrompt</code> configured
-    /// for the bot. If the intent requires confirmation before taking the
-    /// fulfillment action, it sends the <code>confirmationPrompt</code>. Another
-    /// example: Suppose that the Lambda function successfully fulfilled the
-    /// intent, and sent a message to convey to the user. Then Amazon Lex sends that
-    /// message in the response. </p>
+    /// <p>The prompt (or statement) to convey to the user. This is based on the bot configuration and context. For example, if Amazon Lex did not understand the user intent, it sends the <code>clarificationPrompt</code> configured for the bot. If the intent requires confirmation before taking the fulfillment action, it sends the <code>confirmationPrompt</code>. Another example: Suppose that the Lambda function successfully fulfilled the intent, and sent a message to convey to the user. Then Amazon Lex sends that message in the response. </p>
     pub audio_stream: aws_smithy_http::byte_stream::ByteStream,
-    /// <p>The version of the bot that responded to the conversation. You can use
-    /// this information to help determine if one version of a bot is performing
-    /// better than another version.</p>
+    /// <p>The version of the bot that responded to the conversation. You can use this information to help determine if one version of a bot is performing better than another version.</p>
     pub bot_version: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the session.</p>
     pub session_id: std::option::Option<std::string::String>,
-    /// <p>A list of active contexts for the session. A context can be set when
-    /// an intent is fulfilled or by calling the <code>PostContent</code>,
-    /// <code>PostText</code>, or <code>PutSession</code> operation.</p>
-    /// <p>You can use a context to control the intents that can follow up an
-    /// intent, or to modify the operation of your application.</p>
+    /// <p>A list of active contexts for the session. A context can be set when an intent is fulfilled or by calling the <code>PostContent</code>, <code>PostText</code>, or <code>PutSession</code> operation.</p>
+    /// <p>You can use a context to control the intents that can follow up an intent, or to modify the operation of your application.</p>
     pub active_contexts: std::option::Option<std::string::String>,
 }
 impl PostContentOutput {
-    /// <p>Content type as specified in the <code>Accept</code> HTTP header in
-    /// the request.</p>
+    /// <p>Content type as specified in the <code>Accept</code> HTTP header in the request.</p>
     pub fn content_type(&self) -> std::option::Option<&str> {
         self.content_type.as_deref()
     }
@@ -1705,223 +898,89 @@ impl PostContentOutput {
     pub fn intent_name(&self) -> std::option::Option<&str> {
         self.intent_name.as_deref()
     }
-    /// <p>Provides a score that indicates how confident Amazon Lex is that the
-    /// returned intent is the one that matches the user's intent. The score is
-    /// between 0.0 and 1.0.</p>
-    /// <p>The score is a relative score, not an absolute score. The score may
-    /// change based on improvements to Amazon Lex. </p>
+    /// <p>Provides a score that indicates how confident Amazon Lex is that the returned intent is the one that matches the user's intent. The score is between 0.0 and 1.0.</p>
+    /// <p>The score is a relative score, not an absolute score. The score may change based on improvements to Amazon Lex. </p>
     pub fn nlu_intent_confidence(&self) -> std::option::Option<&str> {
         self.nlu_intent_confidence.as_deref()
     }
-    /// <p>One to four alternative intents that may be applicable to the user's
-    /// intent.</p>
-    /// <p>Each alternative includes a score that indicates how confident Amazon Lex
-    /// is that the intent matches the user's intent. The intents are sorted by
-    /// the confidence score.</p>
+    /// <p>One to four alternative intents that may be applicable to the user's intent.</p>
+    /// <p>Each alternative includes a score that indicates how confident Amazon Lex is that the intent matches the user's intent. The intents are sorted by the confidence score.</p>
     pub fn alternative_intents(&self) -> std::option::Option<&str> {
         self.alternative_intents.as_deref()
     }
-    /// <p>Map of zero or more intent slots (name/value pairs) Amazon Lex detected
-    /// from the user input during the conversation. The field is base-64
-    /// encoded.</p>
-    /// <p>Amazon Lex creates a resolution list containing likely values for a slot.
-    /// The value that it returns is determined by the
-    /// <code>valueSelectionStrategy</code> selected when the slot type was
-    /// created or updated. If <code>valueSelectionStrategy</code> is set to
-    /// <code>ORIGINAL_VALUE</code>, the value provided by the user is returned,
-    /// if the user value is similar to the slot values. If
-    /// <code>valueSelectionStrategy</code> is set to
-    /// <code>TOP_RESOLUTION</code> Amazon Lex returns the first value in the
-    /// resolution list or, if there is no resolution list, null. If you don't
-    /// specify a <code>valueSelectionStrategy</code>, the default is
-    /// <code>ORIGINAL_VALUE</code>.</p>
+    /// <p>Map of zero or more intent slots (name/value pairs) Amazon Lex detected from the user input during the conversation. The field is base-64 encoded.</p>
+    /// <p>Amazon Lex creates a resolution list containing likely values for a slot. The value that it returns is determined by the <code>valueSelectionStrategy</code> selected when the slot type was created or updated. If <code>valueSelectionStrategy</code> is set to <code>ORIGINAL_VALUE</code>, the value provided by the user is returned, if the user value is similar to the slot values. If <code>valueSelectionStrategy</code> is set to <code>TOP_RESOLUTION</code> Amazon Lex returns the first value in the resolution list or, if there is no resolution list, null. If you don't specify a <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.</p>
     pub fn slots(&self) -> std::option::Option<&str> {
         self.slots.as_deref()
     }
-    /// <p> Map of key/value pairs representing the session-specific context
-    /// information. </p>
+    /// <p> Map of key/value pairs representing the session-specific context information. </p>
     pub fn session_attributes(&self) -> std::option::Option<&str> {
         self.session_attributes.as_deref()
     }
     /// <p>The sentiment expressed in an utterance.</p>
-    /// <p>When the bot is configured to send utterances to Amazon Comprehend for
-    /// sentiment analysis, this field contains the result of the analysis.</p>
+    /// <p>When the bot is configured to send utterances to Amazon Comprehend for sentiment analysis, this field contains the result of the analysis.</p>
     pub fn sentiment_response(&self) -> std::option::Option<&str> {
         self.sentiment_response.as_deref()
     }
-    /// <p>You can only use this field in the de-DE, en-AU, en-GB, en-US, es-419,
-    /// es-ES, es-US, fr-CA, fr-FR, and it-IT locales. In all other locales, the
-    /// <code>message</code> field is null. You should use the
-    /// <code>encodedMessage</code> field instead.</p>
-    /// <p>The message to convey to the user. The message can come from the bot's
-    /// configuration or from a Lambda function.</p>
-    /// <p>If the intent is not configured with a Lambda function, or if the Lambda
-    /// function returned <code>Delegate</code> as the
-    /// <code>dialogAction.type</code> in its response, Amazon Lex decides on the
-    /// next course of action and selects an appropriate message from the bot's
-    /// configuration based on the current interaction context. For example, if
-    /// Amazon Lex isn't able to understand user input, it uses a clarification prompt
-    /// message.</p>
-    /// <p>When you create an intent you can assign messages to groups. When
-    /// messages are assigned to groups Amazon Lex returns one message from each group
-    /// in the response. The message field is an escaped JSON string containing
-    /// the messages. For more information about the structure of the JSON string
-    /// returned, see <a>msg-prompts-formats</a>.</p>
-    /// <p>If the Lambda function returns a message, Amazon Lex passes it to the client
-    /// in its response.</p>
+    /// <p>You can only use this field in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR, and it-IT locales. In all other locales, the <code>message</code> field is null. You should use the <code>encodedMessage</code> field instead.</p>
+    /// <p>The message to convey to the user. The message can come from the bot's configuration or from a Lambda function.</p>
+    /// <p>If the intent is not configured with a Lambda function, or if the Lambda function returned <code>Delegate</code> as the <code>dialogAction.type</code> in its response, Amazon Lex decides on the next course of action and selects an appropriate message from the bot's configuration based on the current interaction context. For example, if Amazon Lex isn't able to understand user input, it uses a clarification prompt message.</p>
+    /// <p>When you create an intent you can assign messages to groups. When messages are assigned to groups Amazon Lex returns one message from each group in the response. The message field is an escaped JSON string containing the messages. For more information about the structure of the JSON string returned, see <code>msg-prompts-formats</code>.</p>
+    /// <p>If the Lambda function returns a message, Amazon Lex passes it to the client in its response.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
-    /// <p>The message to convey to the user. The message can come from the bot's
-    /// configuration or from a Lambda function.</p>
-    /// <p>If the intent is not configured with a Lambda function, or if the Lambda
-    /// function returned <code>Delegate</code> as the
-    /// <code>dialogAction.type</code> in its response, Amazon Lex decides on the
-    /// next course of action and selects an appropriate message from the bot's
-    /// configuration based on the current interaction context. For example, if
-    /// Amazon Lex isn't able to understand user input, it uses a clarification prompt
-    /// message.</p>
-    /// <p>When you create an intent you can assign messages to groups. When
-    /// messages are assigned to groups Amazon Lex returns one message from each group
-    /// in the response. The message field is an escaped JSON string containing
-    /// the messages. For more information about the structure of the JSON string
-    /// returned, see <a>msg-prompts-formats</a>.</p>
-    /// <p>If the Lambda function returns a message, Amazon Lex passes it to the client
-    /// in its response.</p>
-    /// <p>The <code>encodedMessage</code> field is base-64 encoded. You must
-    /// decode the field before you can use the value.</p>
+    /// <p>The message to convey to the user. The message can come from the bot's configuration or from a Lambda function.</p>
+    /// <p>If the intent is not configured with a Lambda function, or if the Lambda function returned <code>Delegate</code> as the <code>dialogAction.type</code> in its response, Amazon Lex decides on the next course of action and selects an appropriate message from the bot's configuration based on the current interaction context. For example, if Amazon Lex isn't able to understand user input, it uses a clarification prompt message.</p>
+    /// <p>When you create an intent you can assign messages to groups. When messages are assigned to groups Amazon Lex returns one message from each group in the response. The message field is an escaped JSON string containing the messages. For more information about the structure of the JSON string returned, see <code>msg-prompts-formats</code>.</p>
+    /// <p>If the Lambda function returns a message, Amazon Lex passes it to the client in its response.</p>
+    /// <p>The <code>encodedMessage</code> field is base-64 encoded. You must decode the field before you can use the value.</p>
     pub fn encoded_message(&self) -> std::option::Option<&str> {
         self.encoded_message.as_deref()
     }
-    /// <p>The format of the response message. One of the following
-    /// values:</p>
+    /// <p>The format of the response message. One of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>PlainText</code> - The message contains plain UTF-8
-    /// text.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CustomPayload</code> - The message is a custom format for
-    /// the client.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SSML</code> - The message contains text formatted for voice
-    /// output.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Composite</code> - The message contains an escaped JSON
-    /// object containing one or more messages from the groups that messages
-    /// were assigned to when the intent was created.</p>
-    /// </li>
+    /// <li> <p> <code>PlainText</code> - The message contains plain UTF-8 text.</p> </li>
+    /// <li> <p> <code>CustomPayload</code> - The message is a custom format for the client.</p> </li>
+    /// <li> <p> <code>SSML</code> - The message contains text formatted for voice output.</p> </li>
+    /// <li> <p> <code>Composite</code> - The message contains an escaped JSON object containing one or more messages from the groups that messages were assigned to when the intent was created.</p> </li>
     /// </ul>
     pub fn message_format(&self) -> std::option::Option<&crate::model::MessageFormatType> {
         self.message_format.as_ref()
     }
-    /// <p>Identifies the current state of the user interaction. Amazon Lex returns
-    /// one of the following values as <code>dialogState</code>. The client can
-    /// optionally use this information to customize the user interface. </p>
+    /// <p>Identifies the current state of the user interaction. Amazon Lex returns one of the following values as <code>dialogState</code>. The client can optionally use this information to customize the user interface. </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ElicitIntent</code> - Amazon Lex wants to elicit the user's intent.
-    /// Consider the following examples: </p>
-    /// <p> For example, a user might utter an intent ("I want to order a
-    /// pizza"). If Amazon Lex cannot infer the user intent from this utterance, it
-    /// will return this dialog state. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ConfirmIntent</code> - Amazon Lex is expecting a "yes" or "no"
-    /// response. </p>
-    /// <p>For example, Amazon Lex wants user confirmation before fulfilling an
-    /// intent. Instead of a simple "yes" or "no" response, a user might
-    /// respond with additional information. For example, "yes, but make it a
-    /// thick crust pizza" or "no, I want to order a drink." Amazon Lex can process
-    /// such additional information (in these examples, update the crust type
-    /// slot or change the intent from OrderPizza to OrderDrink). </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ElicitSlot</code> - Amazon Lex is expecting the value of a slot for
-    /// the current intent. </p>
-    /// <p> For example, suppose that in the response Amazon Lex sends this
-    /// message: "What size pizza would you like?". A user might reply with
-    /// the slot value (e.g., "medium"). The user might also provide
-    /// additional information in the response (e.g., "medium thick crust
-    /// pizza"). Amazon Lex can process such additional information appropriately.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Fulfilled</code> - Conveys that the Lambda function has
-    /// successfully fulfilled the intent. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ReadyForFulfillment</code> - Conveys that the client has to
-    /// fulfill the request. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Failed</code> - Conveys that the conversation with the user
-    /// failed. </p>
-    /// <p> This can happen for various reasons, including that the user does
-    /// not provide an appropriate response to prompts from the service (you
-    /// can configure how many times Amazon Lex can prompt a user for specific
-    /// information), or if the Lambda function fails to fulfill the intent.
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>ElicitIntent</code> - Amazon Lex wants to elicit the user's intent. Consider the following examples: </p> <p> For example, a user might utter an intent ("I want to order a pizza"). If Amazon Lex cannot infer the user intent from this utterance, it will return this dialog state. </p> </li>
+    /// <li> <p> <code>ConfirmIntent</code> - Amazon Lex is expecting a "yes" or "no" response. </p> <p>For example, Amazon Lex wants user confirmation before fulfilling an intent. Instead of a simple "yes" or "no" response, a user might respond with additional information. For example, "yes, but make it a thick crust pizza" or "no, I want to order a drink." Amazon Lex can process such additional information (in these examples, update the crust type slot or change the intent from OrderPizza to OrderDrink). </p> </li>
+    /// <li> <p> <code>ElicitSlot</code> - Amazon Lex is expecting the value of a slot for the current intent. </p> <p> For example, suppose that in the response Amazon Lex sends this message: "What size pizza would you like?". A user might reply with the slot value (e.g., "medium"). The user might also provide additional information in the response (e.g., "medium thick crust pizza"). Amazon Lex can process such additional information appropriately. </p> </li>
+    /// <li> <p> <code>Fulfilled</code> - Conveys that the Lambda function has successfully fulfilled the intent. </p> </li>
+    /// <li> <p> <code>ReadyForFulfillment</code> - Conveys that the client has to fulfill the request. </p> </li>
+    /// <li> <p> <code>Failed</code> - Conveys that the conversation with the user failed. </p> <p> This can happen for various reasons, including that the user does not provide an appropriate response to prompts from the service (you can configure how many times Amazon Lex can prompt a user for specific information), or if the Lambda function fails to fulfill the intent. </p> </li>
     /// </ul>
     pub fn dialog_state(&self) -> std::option::Option<&crate::model::DialogState> {
         self.dialog_state.as_ref()
     }
-    /// <p> If the <code>dialogState</code> value is <code>ElicitSlot</code>,
-    /// returns the name of the slot for which Amazon Lex is eliciting a value. </p>
+    /// <p> If the <code>dialogState</code> value is <code>ElicitSlot</code>, returns the name of the slot for which Amazon Lex is eliciting a value. </p>
     pub fn slot_to_elicit(&self) -> std::option::Option<&str> {
         self.slot_to_elicit.as_deref()
     }
     /// <p>The text used to process the request.</p>
-    /// <p>You can use this field only in the de-DE, en-AU, en-GB, en-US, es-419,
-    /// es-ES, es-US, fr-CA, fr-FR, and it-IT locales. In all other locales, the
-    /// <code>inputTranscript</code> field is null. You should use the
-    /// <code>encodedInputTranscript</code> field instead.</p>
-    /// <p>If the input was an audio stream, the <code>inputTranscript</code>
-    /// field contains the text extracted from the audio stream. This is the text
-    /// that is actually processed to recognize intents and slot values. You can
-    /// use this information to determine if Amazon Lex is correctly processing the
-    /// audio that you send.</p>
+    /// <p>You can use this field only in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR, and it-IT locales. In all other locales, the <code>inputTranscript</code> field is null. You should use the <code>encodedInputTranscript</code> field instead.</p>
+    /// <p>If the input was an audio stream, the <code>inputTranscript</code> field contains the text extracted from the audio stream. This is the text that is actually processed to recognize intents and slot values. You can use this information to determine if Amazon Lex is correctly processing the audio that you send.</p>
     pub fn input_transcript(&self) -> std::option::Option<&str> {
         self.input_transcript.as_deref()
     }
     /// <p>The text used to process the request.</p>
-    /// <p>If the input was an audio stream, the
-    /// <code>encodedInputTranscript</code> field contains the text extracted
-    /// from the audio stream. This is the text that is actually processed to
-    /// recognize intents and slot values. You can use this information to
-    /// determine if Amazon Lex is correctly processing the audio that you send.</p>
-    /// <p>The <code>encodedInputTranscript</code> field is base-64 encoded. You must
-    /// decode the field before you can use the value.</p>
+    /// <p>If the input was an audio stream, the <code>encodedInputTranscript</code> field contains the text extracted from the audio stream. This is the text that is actually processed to recognize intents and slot values. You can use this information to determine if Amazon Lex is correctly processing the audio that you send.</p>
+    /// <p>The <code>encodedInputTranscript</code> field is base-64 encoded. You must decode the field before you can use the value.</p>
     pub fn encoded_input_transcript(&self) -> std::option::Option<&str> {
         self.encoded_input_transcript.as_deref()
     }
-    /// <p>The prompt (or statement) to convey to the user. This is based on the
-    /// bot configuration and context. For example, if Amazon Lex did not understand
-    /// the user intent, it sends the <code>clarificationPrompt</code> configured
-    /// for the bot. If the intent requires confirmation before taking the
-    /// fulfillment action, it sends the <code>confirmationPrompt</code>. Another
-    /// example: Suppose that the Lambda function successfully fulfilled the
-    /// intent, and sent a message to convey to the user. Then Amazon Lex sends that
-    /// message in the response. </p>
+    /// <p>The prompt (or statement) to convey to the user. This is based on the bot configuration and context. For example, if Amazon Lex did not understand the user intent, it sends the <code>clarificationPrompt</code> configured for the bot. If the intent requires confirmation before taking the fulfillment action, it sends the <code>confirmationPrompt</code>. Another example: Suppose that the Lambda function successfully fulfilled the intent, and sent a message to convey to the user. Then Amazon Lex sends that message in the response. </p>
     pub fn audio_stream(&self) -> &aws_smithy_http::byte_stream::ByteStream {
         &self.audio_stream
     }
-    /// <p>The version of the bot that responded to the conversation. You can use
-    /// this information to help determine if one version of a bot is performing
-    /// better than another version.</p>
+    /// <p>The version of the bot that responded to the conversation. You can use this information to help determine if one version of a bot is performing better than another version.</p>
     pub fn bot_version(&self) -> std::option::Option<&str> {
         self.bot_version.as_deref()
     }
@@ -1929,11 +988,8 @@ impl PostContentOutput {
     pub fn session_id(&self) -> std::option::Option<&str> {
         self.session_id.as_deref()
     }
-    /// <p>A list of active contexts for the session. A context can be set when
-    /// an intent is fulfilled or by calling the <code>PostContent</code>,
-    /// <code>PostText</code>, or <code>PutSession</code> operation.</p>
-    /// <p>You can use a context to control the intents that can follow up an
-    /// intent, or to modify the operation of your application.</p>
+    /// <p>A list of active contexts for the session. A context can be set when an intent is fulfilled or by calling the <code>PostContent</code>, <code>PostText</code>, or <code>PutSession</code> operation.</p>
+    /// <p>You can use a context to control the intents that can follow up an intent, or to modify the operation of your application.</p>
     pub fn active_contexts(&self) -> std::option::Option<&str> {
         self.active_contexts.as_deref()
     }
@@ -1991,14 +1047,12 @@ pub mod post_content_output {
         pub(crate) active_contexts: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Content type as specified in the <code>Accept</code> HTTP header in
-        /// the request.</p>
+        /// <p>Content type as specified in the <code>Accept</code> HTTP header in the request.</p>
         pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.content_type = Some(input.into());
             self
         }
-        /// <p>Content type as specified in the <code>Accept</code> HTTP header in
-        /// the request.</p>
+        /// <p>Content type as specified in the <code>Accept</code> HTTP header in the request.</p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_type = input;
             self
@@ -2013,20 +1067,14 @@ pub mod post_content_output {
             self.intent_name = input;
             self
         }
-        /// <p>Provides a score that indicates how confident Amazon Lex is that the
-        /// returned intent is the one that matches the user's intent. The score is
-        /// between 0.0 and 1.0.</p>
-        /// <p>The score is a relative score, not an absolute score. The score may
-        /// change based on improvements to Amazon Lex. </p>
+        /// <p>Provides a score that indicates how confident Amazon Lex is that the returned intent is the one that matches the user's intent. The score is between 0.0 and 1.0.</p>
+        /// <p>The score is a relative score, not an absolute score. The score may change based on improvements to Amazon Lex. </p>
         pub fn nlu_intent_confidence(mut self, input: impl Into<std::string::String>) -> Self {
             self.nlu_intent_confidence = Some(input.into());
             self
         }
-        /// <p>Provides a score that indicates how confident Amazon Lex is that the
-        /// returned intent is the one that matches the user's intent. The score is
-        /// between 0.0 and 1.0.</p>
-        /// <p>The score is a relative score, not an absolute score. The score may
-        /// change based on improvements to Amazon Lex. </p>
+        /// <p>Provides a score that indicates how confident Amazon Lex is that the returned intent is the one that matches the user's intent. The score is between 0.0 and 1.0.</p>
+        /// <p>The score is a relative score, not an absolute score. The score may change based on improvements to Amazon Lex. </p>
         pub fn set_nlu_intent_confidence(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2034,20 +1082,14 @@ pub mod post_content_output {
             self.nlu_intent_confidence = input;
             self
         }
-        /// <p>One to four alternative intents that may be applicable to the user's
-        /// intent.</p>
-        /// <p>Each alternative includes a score that indicates how confident Amazon Lex
-        /// is that the intent matches the user's intent. The intents are sorted by
-        /// the confidence score.</p>
+        /// <p>One to four alternative intents that may be applicable to the user's intent.</p>
+        /// <p>Each alternative includes a score that indicates how confident Amazon Lex is that the intent matches the user's intent. The intents are sorted by the confidence score.</p>
         pub fn alternative_intents(mut self, input: impl Into<std::string::String>) -> Self {
             self.alternative_intents = Some(input.into());
             self
         }
-        /// <p>One to four alternative intents that may be applicable to the user's
-        /// intent.</p>
-        /// <p>Each alternative includes a score that indicates how confident Amazon Lex
-        /// is that the intent matches the user's intent. The intents are sorted by
-        /// the confidence score.</p>
+        /// <p>One to four alternative intents that may be applicable to the user's intent.</p>
+        /// <p>Each alternative includes a score that indicates how confident Amazon Lex is that the intent matches the user's intent. The intents are sorted by the confidence score.</p>
         pub fn set_alternative_intents(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2055,50 +1097,24 @@ pub mod post_content_output {
             self.alternative_intents = input;
             self
         }
-        /// <p>Map of zero or more intent slots (name/value pairs) Amazon Lex detected
-        /// from the user input during the conversation. The field is base-64
-        /// encoded.</p>
-        /// <p>Amazon Lex creates a resolution list containing likely values for a slot.
-        /// The value that it returns is determined by the
-        /// <code>valueSelectionStrategy</code> selected when the slot type was
-        /// created or updated. If <code>valueSelectionStrategy</code> is set to
-        /// <code>ORIGINAL_VALUE</code>, the value provided by the user is returned,
-        /// if the user value is similar to the slot values. If
-        /// <code>valueSelectionStrategy</code> is set to
-        /// <code>TOP_RESOLUTION</code> Amazon Lex returns the first value in the
-        /// resolution list or, if there is no resolution list, null. If you don't
-        /// specify a <code>valueSelectionStrategy</code>, the default is
-        /// <code>ORIGINAL_VALUE</code>.</p>
+        /// <p>Map of zero or more intent slots (name/value pairs) Amazon Lex detected from the user input during the conversation. The field is base-64 encoded.</p>
+        /// <p>Amazon Lex creates a resolution list containing likely values for a slot. The value that it returns is determined by the <code>valueSelectionStrategy</code> selected when the slot type was created or updated. If <code>valueSelectionStrategy</code> is set to <code>ORIGINAL_VALUE</code>, the value provided by the user is returned, if the user value is similar to the slot values. If <code>valueSelectionStrategy</code> is set to <code>TOP_RESOLUTION</code> Amazon Lex returns the first value in the resolution list or, if there is no resolution list, null. If you don't specify a <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.</p>
         pub fn slots(mut self, input: impl Into<std::string::String>) -> Self {
             self.slots = Some(input.into());
             self
         }
-        /// <p>Map of zero or more intent slots (name/value pairs) Amazon Lex detected
-        /// from the user input during the conversation. The field is base-64
-        /// encoded.</p>
-        /// <p>Amazon Lex creates a resolution list containing likely values for a slot.
-        /// The value that it returns is determined by the
-        /// <code>valueSelectionStrategy</code> selected when the slot type was
-        /// created or updated. If <code>valueSelectionStrategy</code> is set to
-        /// <code>ORIGINAL_VALUE</code>, the value provided by the user is returned,
-        /// if the user value is similar to the slot values. If
-        /// <code>valueSelectionStrategy</code> is set to
-        /// <code>TOP_RESOLUTION</code> Amazon Lex returns the first value in the
-        /// resolution list or, if there is no resolution list, null. If you don't
-        /// specify a <code>valueSelectionStrategy</code>, the default is
-        /// <code>ORIGINAL_VALUE</code>.</p>
+        /// <p>Map of zero or more intent slots (name/value pairs) Amazon Lex detected from the user input during the conversation. The field is base-64 encoded.</p>
+        /// <p>Amazon Lex creates a resolution list containing likely values for a slot. The value that it returns is determined by the <code>valueSelectionStrategy</code> selected when the slot type was created or updated. If <code>valueSelectionStrategy</code> is set to <code>ORIGINAL_VALUE</code>, the value provided by the user is returned, if the user value is similar to the slot values. If <code>valueSelectionStrategy</code> is set to <code>TOP_RESOLUTION</code> Amazon Lex returns the first value in the resolution list or, if there is no resolution list, null. If you don't specify a <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.</p>
         pub fn set_slots(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.slots = input;
             self
         }
-        /// <p> Map of key/value pairs representing the session-specific context
-        /// information. </p>
+        /// <p> Map of key/value pairs representing the session-specific context information. </p>
         pub fn session_attributes(mut self, input: impl Into<std::string::String>) -> Self {
             self.session_attributes = Some(input.into());
             self
         }
-        /// <p> Map of key/value pairs representing the session-specific context
-        /// information. </p>
+        /// <p> Map of key/value pairs representing the session-specific context information. </p>
         pub fn set_session_attributes(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2107,15 +1123,13 @@ pub mod post_content_output {
             self
         }
         /// <p>The sentiment expressed in an utterance.</p>
-        /// <p>When the bot is configured to send utterances to Amazon Comprehend for
-        /// sentiment analysis, this field contains the result of the analysis.</p>
+        /// <p>When the bot is configured to send utterances to Amazon Comprehend for sentiment analysis, this field contains the result of the analysis.</p>
         pub fn sentiment_response(mut self, input: impl Into<std::string::String>) -> Self {
             self.sentiment_response = Some(input.into());
             self
         }
         /// <p>The sentiment expressed in an utterance.</p>
-        /// <p>When the bot is configured to send utterances to Amazon Comprehend for
-        /// sentiment analysis, this field contains the result of the analysis.</p>
+        /// <p>When the bot is configured to send utterances to Amazon Comprehend for sentiment analysis, this field contains the result of the analysis.</p>
         pub fn set_sentiment_response(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2123,94 +1137,38 @@ pub mod post_content_output {
             self.sentiment_response = input;
             self
         }
-        /// <p>You can only use this field in the de-DE, en-AU, en-GB, en-US, es-419,
-        /// es-ES, es-US, fr-CA, fr-FR, and it-IT locales. In all other locales, the
-        /// <code>message</code> field is null. You should use the
-        /// <code>encodedMessage</code> field instead.</p>
-        /// <p>The message to convey to the user. The message can come from the bot's
-        /// configuration or from a Lambda function.</p>
-        /// <p>If the intent is not configured with a Lambda function, or if the Lambda
-        /// function returned <code>Delegate</code> as the
-        /// <code>dialogAction.type</code> in its response, Amazon Lex decides on the
-        /// next course of action and selects an appropriate message from the bot's
-        /// configuration based on the current interaction context. For example, if
-        /// Amazon Lex isn't able to understand user input, it uses a clarification prompt
-        /// message.</p>
-        /// <p>When you create an intent you can assign messages to groups. When
-        /// messages are assigned to groups Amazon Lex returns one message from each group
-        /// in the response. The message field is an escaped JSON string containing
-        /// the messages. For more information about the structure of the JSON string
-        /// returned, see <a>msg-prompts-formats</a>.</p>
-        /// <p>If the Lambda function returns a message, Amazon Lex passes it to the client
-        /// in its response.</p>
+        /// <p>You can only use this field in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR, and it-IT locales. In all other locales, the <code>message</code> field is null. You should use the <code>encodedMessage</code> field instead.</p>
+        /// <p>The message to convey to the user. The message can come from the bot's configuration or from a Lambda function.</p>
+        /// <p>If the intent is not configured with a Lambda function, or if the Lambda function returned <code>Delegate</code> as the <code>dialogAction.type</code> in its response, Amazon Lex decides on the next course of action and selects an appropriate message from the bot's configuration based on the current interaction context. For example, if Amazon Lex isn't able to understand user input, it uses a clarification prompt message.</p>
+        /// <p>When you create an intent you can assign messages to groups. When messages are assigned to groups Amazon Lex returns one message from each group in the response. The message field is an escaped JSON string containing the messages. For more information about the structure of the JSON string returned, see <code>msg-prompts-formats</code>.</p>
+        /// <p>If the Lambda function returns a message, Amazon Lex passes it to the client in its response.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>You can only use this field in the de-DE, en-AU, en-GB, en-US, es-419,
-        /// es-ES, es-US, fr-CA, fr-FR, and it-IT locales. In all other locales, the
-        /// <code>message</code> field is null. You should use the
-        /// <code>encodedMessage</code> field instead.</p>
-        /// <p>The message to convey to the user. The message can come from the bot's
-        /// configuration or from a Lambda function.</p>
-        /// <p>If the intent is not configured with a Lambda function, or if the Lambda
-        /// function returned <code>Delegate</code> as the
-        /// <code>dialogAction.type</code> in its response, Amazon Lex decides on the
-        /// next course of action and selects an appropriate message from the bot's
-        /// configuration based on the current interaction context. For example, if
-        /// Amazon Lex isn't able to understand user input, it uses a clarification prompt
-        /// message.</p>
-        /// <p>When you create an intent you can assign messages to groups. When
-        /// messages are assigned to groups Amazon Lex returns one message from each group
-        /// in the response. The message field is an escaped JSON string containing
-        /// the messages. For more information about the structure of the JSON string
-        /// returned, see <a>msg-prompts-formats</a>.</p>
-        /// <p>If the Lambda function returns a message, Amazon Lex passes it to the client
-        /// in its response.</p>
+        /// <p>You can only use this field in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR, and it-IT locales. In all other locales, the <code>message</code> field is null. You should use the <code>encodedMessage</code> field instead.</p>
+        /// <p>The message to convey to the user. The message can come from the bot's configuration or from a Lambda function.</p>
+        /// <p>If the intent is not configured with a Lambda function, or if the Lambda function returned <code>Delegate</code> as the <code>dialogAction.type</code> in its response, Amazon Lex decides on the next course of action and selects an appropriate message from the bot's configuration based on the current interaction context. For example, if Amazon Lex isn't able to understand user input, it uses a clarification prompt message.</p>
+        /// <p>When you create an intent you can assign messages to groups. When messages are assigned to groups Amazon Lex returns one message from each group in the response. The message field is an escaped JSON string containing the messages. For more information about the structure of the JSON string returned, see <code>msg-prompts-formats</code>.</p>
+        /// <p>If the Lambda function returns a message, Amazon Lex passes it to the client in its response.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
         }
-        /// <p>The message to convey to the user. The message can come from the bot's
-        /// configuration or from a Lambda function.</p>
-        /// <p>If the intent is not configured with a Lambda function, or if the Lambda
-        /// function returned <code>Delegate</code> as the
-        /// <code>dialogAction.type</code> in its response, Amazon Lex decides on the
-        /// next course of action and selects an appropriate message from the bot's
-        /// configuration based on the current interaction context. For example, if
-        /// Amazon Lex isn't able to understand user input, it uses a clarification prompt
-        /// message.</p>
-        /// <p>When you create an intent you can assign messages to groups. When
-        /// messages are assigned to groups Amazon Lex returns one message from each group
-        /// in the response. The message field is an escaped JSON string containing
-        /// the messages. For more information about the structure of the JSON string
-        /// returned, see <a>msg-prompts-formats</a>.</p>
-        /// <p>If the Lambda function returns a message, Amazon Lex passes it to the client
-        /// in its response.</p>
-        /// <p>The <code>encodedMessage</code> field is base-64 encoded. You must
-        /// decode the field before you can use the value.</p>
+        /// <p>The message to convey to the user. The message can come from the bot's configuration or from a Lambda function.</p>
+        /// <p>If the intent is not configured with a Lambda function, or if the Lambda function returned <code>Delegate</code> as the <code>dialogAction.type</code> in its response, Amazon Lex decides on the next course of action and selects an appropriate message from the bot's configuration based on the current interaction context. For example, if Amazon Lex isn't able to understand user input, it uses a clarification prompt message.</p>
+        /// <p>When you create an intent you can assign messages to groups. When messages are assigned to groups Amazon Lex returns one message from each group in the response. The message field is an escaped JSON string containing the messages. For more information about the structure of the JSON string returned, see <code>msg-prompts-formats</code>.</p>
+        /// <p>If the Lambda function returns a message, Amazon Lex passes it to the client in its response.</p>
+        /// <p>The <code>encodedMessage</code> field is base-64 encoded. You must decode the field before you can use the value.</p>
         pub fn encoded_message(mut self, input: impl Into<std::string::String>) -> Self {
             self.encoded_message = Some(input.into());
             self
         }
-        /// <p>The message to convey to the user. The message can come from the bot's
-        /// configuration or from a Lambda function.</p>
-        /// <p>If the intent is not configured with a Lambda function, or if the Lambda
-        /// function returned <code>Delegate</code> as the
-        /// <code>dialogAction.type</code> in its response, Amazon Lex decides on the
-        /// next course of action and selects an appropriate message from the bot's
-        /// configuration based on the current interaction context. For example, if
-        /// Amazon Lex isn't able to understand user input, it uses a clarification prompt
-        /// message.</p>
-        /// <p>When you create an intent you can assign messages to groups. When
-        /// messages are assigned to groups Amazon Lex returns one message from each group
-        /// in the response. The message field is an escaped JSON string containing
-        /// the messages. For more information about the structure of the JSON string
-        /// returned, see <a>msg-prompts-formats</a>.</p>
-        /// <p>If the Lambda function returns a message, Amazon Lex passes it to the client
-        /// in its response.</p>
-        /// <p>The <code>encodedMessage</code> field is base-64 encoded. You must
-        /// decode the field before you can use the value.</p>
+        /// <p>The message to convey to the user. The message can come from the bot's configuration or from a Lambda function.</p>
+        /// <p>If the intent is not configured with a Lambda function, or if the Lambda function returned <code>Delegate</code> as the <code>dialogAction.type</code> in its response, Amazon Lex decides on the next course of action and selects an appropriate message from the bot's configuration based on the current interaction context. For example, if Amazon Lex isn't able to understand user input, it uses a clarification prompt message.</p>
+        /// <p>When you create an intent you can assign messages to groups. When messages are assigned to groups Amazon Lex returns one message from each group in the response. The message field is an escaped JSON string containing the messages. For more information about the structure of the JSON string returned, see <code>msg-prompts-formats</code>.</p>
+        /// <p>If the Lambda function returns a message, Amazon Lex passes it to the client in its response.</p>
+        /// <p>The <code>encodedMessage</code> field is base-64 encoded. You must decode the field before you can use the value.</p>
         pub fn set_encoded_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2218,59 +1176,23 @@ pub mod post_content_output {
             self.encoded_message = input;
             self
         }
-        /// <p>The format of the response message. One of the following
-        /// values:</p>
+        /// <p>The format of the response message. One of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PlainText</code> - The message contains plain UTF-8
-        /// text.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CustomPayload</code> - The message is a custom format for
-        /// the client.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SSML</code> - The message contains text formatted for voice
-        /// output.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Composite</code> - The message contains an escaped JSON
-        /// object containing one or more messages from the groups that messages
-        /// were assigned to when the intent was created.</p>
-        /// </li>
+        /// <li> <p> <code>PlainText</code> - The message contains plain UTF-8 text.</p> </li>
+        /// <li> <p> <code>CustomPayload</code> - The message is a custom format for the client.</p> </li>
+        /// <li> <p> <code>SSML</code> - The message contains text formatted for voice output.</p> </li>
+        /// <li> <p> <code>Composite</code> - The message contains an escaped JSON object containing one or more messages from the groups that messages were assigned to when the intent was created.</p> </li>
         /// </ul>
         pub fn message_format(mut self, input: crate::model::MessageFormatType) -> Self {
             self.message_format = Some(input);
             self
         }
-        /// <p>The format of the response message. One of the following
-        /// values:</p>
+        /// <p>The format of the response message. One of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PlainText</code> - The message contains plain UTF-8
-        /// text.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CustomPayload</code> - The message is a custom format for
-        /// the client.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SSML</code> - The message contains text formatted for voice
-        /// output.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Composite</code> - The message contains an escaped JSON
-        /// object containing one or more messages from the groups that messages
-        /// were assigned to when the intent was created.</p>
-        /// </li>
+        /// <li> <p> <code>PlainText</code> - The message contains plain UTF-8 text.</p> </li>
+        /// <li> <p> <code>CustomPayload</code> - The message is a custom format for the client.</p> </li>
+        /// <li> <p> <code>SSML</code> - The message contains text formatted for voice output.</p> </li>
+        /// <li> <p> <code>Composite</code> - The message contains an escaped JSON object containing one or more messages from the groups that messages were assigned to when the intent was created.</p> </li>
         /// </ul>
         pub fn set_message_format(
             mut self,
@@ -2279,119 +1201,27 @@ pub mod post_content_output {
             self.message_format = input;
             self
         }
-        /// <p>Identifies the current state of the user interaction. Amazon Lex returns
-        /// one of the following values as <code>dialogState</code>. The client can
-        /// optionally use this information to customize the user interface. </p>
+        /// <p>Identifies the current state of the user interaction. Amazon Lex returns one of the following values as <code>dialogState</code>. The client can optionally use this information to customize the user interface. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ElicitIntent</code> - Amazon Lex wants to elicit the user's intent.
-        /// Consider the following examples: </p>
-        /// <p> For example, a user might utter an intent ("I want to order a
-        /// pizza"). If Amazon Lex cannot infer the user intent from this utterance, it
-        /// will return this dialog state. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ConfirmIntent</code> - Amazon Lex is expecting a "yes" or "no"
-        /// response. </p>
-        /// <p>For example, Amazon Lex wants user confirmation before fulfilling an
-        /// intent. Instead of a simple "yes" or "no" response, a user might
-        /// respond with additional information. For example, "yes, but make it a
-        /// thick crust pizza" or "no, I want to order a drink." Amazon Lex can process
-        /// such additional information (in these examples, update the crust type
-        /// slot or change the intent from OrderPizza to OrderDrink). </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ElicitSlot</code> - Amazon Lex is expecting the value of a slot for
-        /// the current intent. </p>
-        /// <p> For example, suppose that in the response Amazon Lex sends this
-        /// message: "What size pizza would you like?". A user might reply with
-        /// the slot value (e.g., "medium"). The user might also provide
-        /// additional information in the response (e.g., "medium thick crust
-        /// pizza"). Amazon Lex can process such additional information appropriately.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Fulfilled</code> - Conveys that the Lambda function has
-        /// successfully fulfilled the intent. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ReadyForFulfillment</code> - Conveys that the client has to
-        /// fulfill the request. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Failed</code> - Conveys that the conversation with the user
-        /// failed. </p>
-        /// <p> This can happen for various reasons, including that the user does
-        /// not provide an appropriate response to prompts from the service (you
-        /// can configure how many times Amazon Lex can prompt a user for specific
-        /// information), or if the Lambda function fails to fulfill the intent.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>ElicitIntent</code> - Amazon Lex wants to elicit the user's intent. Consider the following examples: </p> <p> For example, a user might utter an intent ("I want to order a pizza"). If Amazon Lex cannot infer the user intent from this utterance, it will return this dialog state. </p> </li>
+        /// <li> <p> <code>ConfirmIntent</code> - Amazon Lex is expecting a "yes" or "no" response. </p> <p>For example, Amazon Lex wants user confirmation before fulfilling an intent. Instead of a simple "yes" or "no" response, a user might respond with additional information. For example, "yes, but make it a thick crust pizza" or "no, I want to order a drink." Amazon Lex can process such additional information (in these examples, update the crust type slot or change the intent from OrderPizza to OrderDrink). </p> </li>
+        /// <li> <p> <code>ElicitSlot</code> - Amazon Lex is expecting the value of a slot for the current intent. </p> <p> For example, suppose that in the response Amazon Lex sends this message: "What size pizza would you like?". A user might reply with the slot value (e.g., "medium"). The user might also provide additional information in the response (e.g., "medium thick crust pizza"). Amazon Lex can process such additional information appropriately. </p> </li>
+        /// <li> <p> <code>Fulfilled</code> - Conveys that the Lambda function has successfully fulfilled the intent. </p> </li>
+        /// <li> <p> <code>ReadyForFulfillment</code> - Conveys that the client has to fulfill the request. </p> </li>
+        /// <li> <p> <code>Failed</code> - Conveys that the conversation with the user failed. </p> <p> This can happen for various reasons, including that the user does not provide an appropriate response to prompts from the service (you can configure how many times Amazon Lex can prompt a user for specific information), or if the Lambda function fails to fulfill the intent. </p> </li>
         /// </ul>
         pub fn dialog_state(mut self, input: crate::model::DialogState) -> Self {
             self.dialog_state = Some(input);
             self
         }
-        /// <p>Identifies the current state of the user interaction. Amazon Lex returns
-        /// one of the following values as <code>dialogState</code>. The client can
-        /// optionally use this information to customize the user interface. </p>
+        /// <p>Identifies the current state of the user interaction. Amazon Lex returns one of the following values as <code>dialogState</code>. The client can optionally use this information to customize the user interface. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ElicitIntent</code> - Amazon Lex wants to elicit the user's intent.
-        /// Consider the following examples: </p>
-        /// <p> For example, a user might utter an intent ("I want to order a
-        /// pizza"). If Amazon Lex cannot infer the user intent from this utterance, it
-        /// will return this dialog state. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ConfirmIntent</code> - Amazon Lex is expecting a "yes" or "no"
-        /// response. </p>
-        /// <p>For example, Amazon Lex wants user confirmation before fulfilling an
-        /// intent. Instead of a simple "yes" or "no" response, a user might
-        /// respond with additional information. For example, "yes, but make it a
-        /// thick crust pizza" or "no, I want to order a drink." Amazon Lex can process
-        /// such additional information (in these examples, update the crust type
-        /// slot or change the intent from OrderPizza to OrderDrink). </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ElicitSlot</code> - Amazon Lex is expecting the value of a slot for
-        /// the current intent. </p>
-        /// <p> For example, suppose that in the response Amazon Lex sends this
-        /// message: "What size pizza would you like?". A user might reply with
-        /// the slot value (e.g., "medium"). The user might also provide
-        /// additional information in the response (e.g., "medium thick crust
-        /// pizza"). Amazon Lex can process such additional information appropriately.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Fulfilled</code> - Conveys that the Lambda function has
-        /// successfully fulfilled the intent. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ReadyForFulfillment</code> - Conveys that the client has to
-        /// fulfill the request. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Failed</code> - Conveys that the conversation with the user
-        /// failed. </p>
-        /// <p> This can happen for various reasons, including that the user does
-        /// not provide an appropriate response to prompts from the service (you
-        /// can configure how many times Amazon Lex can prompt a user for specific
-        /// information), or if the Lambda function fails to fulfill the intent.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>ElicitIntent</code> - Amazon Lex wants to elicit the user's intent. Consider the following examples: </p> <p> For example, a user might utter an intent ("I want to order a pizza"). If Amazon Lex cannot infer the user intent from this utterance, it will return this dialog state. </p> </li>
+        /// <li> <p> <code>ConfirmIntent</code> - Amazon Lex is expecting a "yes" or "no" response. </p> <p>For example, Amazon Lex wants user confirmation before fulfilling an intent. Instead of a simple "yes" or "no" response, a user might respond with additional information. For example, "yes, but make it a thick crust pizza" or "no, I want to order a drink." Amazon Lex can process such additional information (in these examples, update the crust type slot or change the intent from OrderPizza to OrderDrink). </p> </li>
+        /// <li> <p> <code>ElicitSlot</code> - Amazon Lex is expecting the value of a slot for the current intent. </p> <p> For example, suppose that in the response Amazon Lex sends this message: "What size pizza would you like?". A user might reply with the slot value (e.g., "medium"). The user might also provide additional information in the response (e.g., "medium thick crust pizza"). Amazon Lex can process such additional information appropriately. </p> </li>
+        /// <li> <p> <code>Fulfilled</code> - Conveys that the Lambda function has successfully fulfilled the intent. </p> </li>
+        /// <li> <p> <code>ReadyForFulfillment</code> - Conveys that the client has to fulfill the request. </p> </li>
+        /// <li> <p> <code>Failed</code> - Conveys that the conversation with the user failed. </p> <p> This can happen for various reasons, including that the user does not provide an appropriate response to prompts from the service (you can configure how many times Amazon Lex can prompt a user for specific information), or if the Lambda function fails to fulfill the intent. </p> </li>
         /// </ul>
         pub fn set_dialog_state(
             mut self,
@@ -2400,14 +1230,12 @@ pub mod post_content_output {
             self.dialog_state = input;
             self
         }
-        /// <p> If the <code>dialogState</code> value is <code>ElicitSlot</code>,
-        /// returns the name of the slot for which Amazon Lex is eliciting a value. </p>
+        /// <p> If the <code>dialogState</code> value is <code>ElicitSlot</code>, returns the name of the slot for which Amazon Lex is eliciting a value. </p>
         pub fn slot_to_elicit(mut self, input: impl Into<std::string::String>) -> Self {
             self.slot_to_elicit = Some(input.into());
             self
         }
-        /// <p> If the <code>dialogState</code> value is <code>ElicitSlot</code>,
-        /// returns the name of the slot for which Amazon Lex is eliciting a value. </p>
+        /// <p> If the <code>dialogState</code> value is <code>ElicitSlot</code>, returns the name of the slot for which Amazon Lex is eliciting a value. </p>
         pub fn set_slot_to_elicit(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2416,29 +1244,15 @@ pub mod post_content_output {
             self
         }
         /// <p>The text used to process the request.</p>
-        /// <p>You can use this field only in the de-DE, en-AU, en-GB, en-US, es-419,
-        /// es-ES, es-US, fr-CA, fr-FR, and it-IT locales. In all other locales, the
-        /// <code>inputTranscript</code> field is null. You should use the
-        /// <code>encodedInputTranscript</code> field instead.</p>
-        /// <p>If the input was an audio stream, the <code>inputTranscript</code>
-        /// field contains the text extracted from the audio stream. This is the text
-        /// that is actually processed to recognize intents and slot values. You can
-        /// use this information to determine if Amazon Lex is correctly processing the
-        /// audio that you send.</p>
+        /// <p>You can use this field only in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR, and it-IT locales. In all other locales, the <code>inputTranscript</code> field is null. You should use the <code>encodedInputTranscript</code> field instead.</p>
+        /// <p>If the input was an audio stream, the <code>inputTranscript</code> field contains the text extracted from the audio stream. This is the text that is actually processed to recognize intents and slot values. You can use this information to determine if Amazon Lex is correctly processing the audio that you send.</p>
         pub fn input_transcript(mut self, input: impl Into<std::string::String>) -> Self {
             self.input_transcript = Some(input.into());
             self
         }
         /// <p>The text used to process the request.</p>
-        /// <p>You can use this field only in the de-DE, en-AU, en-GB, en-US, es-419,
-        /// es-ES, es-US, fr-CA, fr-FR, and it-IT locales. In all other locales, the
-        /// <code>inputTranscript</code> field is null. You should use the
-        /// <code>encodedInputTranscript</code> field instead.</p>
-        /// <p>If the input was an audio stream, the <code>inputTranscript</code>
-        /// field contains the text extracted from the audio stream. This is the text
-        /// that is actually processed to recognize intents and slot values. You can
-        /// use this information to determine if Amazon Lex is correctly processing the
-        /// audio that you send.</p>
+        /// <p>You can use this field only in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR, and it-IT locales. In all other locales, the <code>inputTranscript</code> field is null. You should use the <code>encodedInputTranscript</code> field instead.</p>
+        /// <p>If the input was an audio stream, the <code>inputTranscript</code> field contains the text extracted from the audio stream. This is the text that is actually processed to recognize intents and slot values. You can use this information to determine if Amazon Lex is correctly processing the audio that you send.</p>
         pub fn set_input_transcript(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2447,25 +1261,15 @@ pub mod post_content_output {
             self
         }
         /// <p>The text used to process the request.</p>
-        /// <p>If the input was an audio stream, the
-        /// <code>encodedInputTranscript</code> field contains the text extracted
-        /// from the audio stream. This is the text that is actually processed to
-        /// recognize intents and slot values. You can use this information to
-        /// determine if Amazon Lex is correctly processing the audio that you send.</p>
-        /// <p>The <code>encodedInputTranscript</code> field is base-64 encoded. You must
-        /// decode the field before you can use the value.</p>
+        /// <p>If the input was an audio stream, the <code>encodedInputTranscript</code> field contains the text extracted from the audio stream. This is the text that is actually processed to recognize intents and slot values. You can use this information to determine if Amazon Lex is correctly processing the audio that you send.</p>
+        /// <p>The <code>encodedInputTranscript</code> field is base-64 encoded. You must decode the field before you can use the value.</p>
         pub fn encoded_input_transcript(mut self, input: impl Into<std::string::String>) -> Self {
             self.encoded_input_transcript = Some(input.into());
             self
         }
         /// <p>The text used to process the request.</p>
-        /// <p>If the input was an audio stream, the
-        /// <code>encodedInputTranscript</code> field contains the text extracted
-        /// from the audio stream. This is the text that is actually processed to
-        /// recognize intents and slot values. You can use this information to
-        /// determine if Amazon Lex is correctly processing the audio that you send.</p>
-        /// <p>The <code>encodedInputTranscript</code> field is base-64 encoded. You must
-        /// decode the field before you can use the value.</p>
+        /// <p>If the input was an audio stream, the <code>encodedInputTranscript</code> field contains the text extracted from the audio stream. This is the text that is actually processed to recognize intents and slot values. You can use this information to determine if Amazon Lex is correctly processing the audio that you send.</p>
+        /// <p>The <code>encodedInputTranscript</code> field is base-64 encoded. You must decode the field before you can use the value.</p>
         pub fn set_encoded_input_transcript(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2473,26 +1277,12 @@ pub mod post_content_output {
             self.encoded_input_transcript = input;
             self
         }
-        /// <p>The prompt (or statement) to convey to the user. This is based on the
-        /// bot configuration and context. For example, if Amazon Lex did not understand
-        /// the user intent, it sends the <code>clarificationPrompt</code> configured
-        /// for the bot. If the intent requires confirmation before taking the
-        /// fulfillment action, it sends the <code>confirmationPrompt</code>. Another
-        /// example: Suppose that the Lambda function successfully fulfilled the
-        /// intent, and sent a message to convey to the user. Then Amazon Lex sends that
-        /// message in the response. </p>
+        /// <p>The prompt (or statement) to convey to the user. This is based on the bot configuration and context. For example, if Amazon Lex did not understand the user intent, it sends the <code>clarificationPrompt</code> configured for the bot. If the intent requires confirmation before taking the fulfillment action, it sends the <code>confirmationPrompt</code>. Another example: Suppose that the Lambda function successfully fulfilled the intent, and sent a message to convey to the user. Then Amazon Lex sends that message in the response. </p>
         pub fn audio_stream(mut self, input: aws_smithy_http::byte_stream::ByteStream) -> Self {
             self.audio_stream = Some(input);
             self
         }
-        /// <p>The prompt (or statement) to convey to the user. This is based on the
-        /// bot configuration and context. For example, if Amazon Lex did not understand
-        /// the user intent, it sends the <code>clarificationPrompt</code> configured
-        /// for the bot. If the intent requires confirmation before taking the
-        /// fulfillment action, it sends the <code>confirmationPrompt</code>. Another
-        /// example: Suppose that the Lambda function successfully fulfilled the
-        /// intent, and sent a message to convey to the user. Then Amazon Lex sends that
-        /// message in the response. </p>
+        /// <p>The prompt (or statement) to convey to the user. This is based on the bot configuration and context. For example, if Amazon Lex did not understand the user intent, it sends the <code>clarificationPrompt</code> configured for the bot. If the intent requires confirmation before taking the fulfillment action, it sends the <code>confirmationPrompt</code>. Another example: Suppose that the Lambda function successfully fulfilled the intent, and sent a message to convey to the user. Then Amazon Lex sends that message in the response. </p>
         pub fn set_audio_stream(
             mut self,
             input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
@@ -2500,16 +1290,12 @@ pub mod post_content_output {
             self.audio_stream = input;
             self
         }
-        /// <p>The version of the bot that responded to the conversation. You can use
-        /// this information to help determine if one version of a bot is performing
-        /// better than another version.</p>
+        /// <p>The version of the bot that responded to the conversation. You can use this information to help determine if one version of a bot is performing better than another version.</p>
         pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.bot_version = Some(input.into());
             self
         }
-        /// <p>The version of the bot that responded to the conversation. You can use
-        /// this information to help determine if one version of a bot is performing
-        /// better than another version.</p>
+        /// <p>The version of the bot that responded to the conversation. You can use this information to help determine if one version of a bot is performing better than another version.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_version = input;
             self
@@ -2524,20 +1310,14 @@ pub mod post_content_output {
             self.session_id = input;
             self
         }
-        /// <p>A list of active contexts for the session. A context can be set when
-        /// an intent is fulfilled or by calling the <code>PostContent</code>,
-        /// <code>PostText</code>, or <code>PutSession</code> operation.</p>
-        /// <p>You can use a context to control the intents that can follow up an
-        /// intent, or to modify the operation of your application.</p>
+        /// <p>A list of active contexts for the session. A context can be set when an intent is fulfilled or by calling the <code>PostContent</code>, <code>PostText</code>, or <code>PutSession</code> operation.</p>
+        /// <p>You can use a context to control the intents that can follow up an intent, or to modify the operation of your application.</p>
         pub fn active_contexts(mut self, input: impl Into<std::string::String>) -> Self {
             self.active_contexts = Some(input.into());
             self
         }
-        /// <p>A list of active contexts for the session. A context can be set when
-        /// an intent is fulfilled or by calling the <code>PostContent</code>,
-        /// <code>PostText</code>, or <code>PutSession</code> operation.</p>
-        /// <p>You can use a context to control the intents that can follow up an
-        /// intent, or to modify the operation of your application.</p>
+        /// <p>A list of active contexts for the session. A context can be set when an intent is fulfilled or by calling the <code>PostContent</code>, <code>PostText</code>, or <code>PutSession</code> operation.</p>
+        /// <p>You can use a context to control the intents that can follow up an intent, or to modify the operation of your application.</p>
         pub fn set_active_contexts(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2581,46 +1361,29 @@ impl PostContentOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSessionOutput {
-    /// <p>An array of information about the intents used in the session. The
-    /// array can contain a maximum of three summaries. If more than three intents
-    /// are used in the session, the <code>recentIntentSummaryView</code>
-    /// operation contains information about the last three intents used.</p>
-    /// <p>If you set the <code>checkpointLabelFilter</code> parameter in the
-    /// request, the array contains only the intents with the specified
-    /// label.</p>
+    /// <p>An array of information about the intents used in the session. The array can contain a maximum of three summaries. If more than three intents are used in the session, the <code>recentIntentSummaryView</code> operation contains information about the last three intents used.</p>
+    /// <p>If you set the <code>checkpointLabelFilter</code> parameter in the request, the array contains only the intents with the specified label.</p>
     pub recent_intent_summary_view: std::option::Option<std::vec::Vec<crate::model::IntentSummary>>,
-    /// <p>Map of key/value pairs representing the session-specific context
-    /// information. It contains application information passed between Amazon Lex and
-    /// a client application.</p>
+    /// <p>Map of key/value pairs representing the session-specific context information. It contains application information passed between Amazon Lex and a client application.</p>
     pub session_attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A unique identifier for the session.</p>
     pub session_id: std::option::Option<std::string::String>,
     /// <p>Describes the current state of the bot.</p>
     pub dialog_action: std::option::Option<crate::model::DialogAction>,
-    /// <p>A list of active contexts for the session. A context can be set when
-    /// an intent is fulfilled or by calling the <code>PostContent</code>,
-    /// <code>PostText</code>, or <code>PutSession</code> operation.</p>
-    /// <p>You can use a context to control the intents that can follow up an
-    /// intent, or to modify the operation of your application.</p>
+    /// <p>A list of active contexts for the session. A context can be set when an intent is fulfilled or by calling the <code>PostContent</code>, <code>PostText</code>, or <code>PutSession</code> operation.</p>
+    /// <p>You can use a context to control the intents that can follow up an intent, or to modify the operation of your application.</p>
     pub active_contexts: std::option::Option<std::vec::Vec<crate::model::ActiveContext>>,
 }
 impl GetSessionOutput {
-    /// <p>An array of information about the intents used in the session. The
-    /// array can contain a maximum of three summaries. If more than three intents
-    /// are used in the session, the <code>recentIntentSummaryView</code>
-    /// operation contains information about the last three intents used.</p>
-    /// <p>If you set the <code>checkpointLabelFilter</code> parameter in the
-    /// request, the array contains only the intents with the specified
-    /// label.</p>
+    /// <p>An array of information about the intents used in the session. The array can contain a maximum of three summaries. If more than three intents are used in the session, the <code>recentIntentSummaryView</code> operation contains information about the last three intents used.</p>
+    /// <p>If you set the <code>checkpointLabelFilter</code> parameter in the request, the array contains only the intents with the specified label.</p>
     pub fn recent_intent_summary_view(
         &self,
     ) -> std::option::Option<&[crate::model::IntentSummary]> {
         self.recent_intent_summary_view.as_deref()
     }
-    /// <p>Map of key/value pairs representing the session-specific context
-    /// information. It contains application information passed between Amazon Lex and
-    /// a client application.</p>
+    /// <p>Map of key/value pairs representing the session-specific context information. It contains application information passed between Amazon Lex and a client application.</p>
     pub fn session_attributes(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -2635,11 +1398,8 @@ impl GetSessionOutput {
     pub fn dialog_action(&self) -> std::option::Option<&crate::model::DialogAction> {
         self.dialog_action.as_ref()
     }
-    /// <p>A list of active contexts for the session. A context can be set when
-    /// an intent is fulfilled or by calling the <code>PostContent</code>,
-    /// <code>PostText</code>, or <code>PutSession</code> operation.</p>
-    /// <p>You can use a context to control the intents that can follow up an
-    /// intent, or to modify the operation of your application.</p>
+    /// <p>A list of active contexts for the session. A context can be set when an intent is fulfilled or by calling the <code>PostContent</code>, <code>PostText</code>, or <code>PutSession</code> operation.</p>
+    /// <p>You can use a context to control the intents that can follow up an intent, or to modify the operation of your application.</p>
     pub fn active_contexts(&self) -> std::option::Option<&[crate::model::ActiveContext]> {
         self.active_contexts.as_deref()
     }
@@ -2678,26 +1438,16 @@ pub mod get_session_output {
         ///
         /// To override the contents of this collection use [`set_recent_intent_summary_view`](Self::set_recent_intent_summary_view).
         ///
-        /// <p>An array of information about the intents used in the session. The
-        /// array can contain a maximum of three summaries. If more than three intents
-        /// are used in the session, the <code>recentIntentSummaryView</code>
-        /// operation contains information about the last three intents used.</p>
-        /// <p>If you set the <code>checkpointLabelFilter</code> parameter in the
-        /// request, the array contains only the intents with the specified
-        /// label.</p>
+        /// <p>An array of information about the intents used in the session. The array can contain a maximum of three summaries. If more than three intents are used in the session, the <code>recentIntentSummaryView</code> operation contains information about the last three intents used.</p>
+        /// <p>If you set the <code>checkpointLabelFilter</code> parameter in the request, the array contains only the intents with the specified label.</p>
         pub fn recent_intent_summary_view(mut self, input: crate::model::IntentSummary) -> Self {
             let mut v = self.recent_intent_summary_view.unwrap_or_default();
             v.push(input);
             self.recent_intent_summary_view = Some(v);
             self
         }
-        /// <p>An array of information about the intents used in the session. The
-        /// array can contain a maximum of three summaries. If more than three intents
-        /// are used in the session, the <code>recentIntentSummaryView</code>
-        /// operation contains information about the last three intents used.</p>
-        /// <p>If you set the <code>checkpointLabelFilter</code> parameter in the
-        /// request, the array contains only the intents with the specified
-        /// label.</p>
+        /// <p>An array of information about the intents used in the session. The array can contain a maximum of three summaries. If more than three intents are used in the session, the <code>recentIntentSummaryView</code> operation contains information about the last three intents used.</p>
+        /// <p>If you set the <code>checkpointLabelFilter</code> parameter in the request, the array contains only the intents with the specified label.</p>
         pub fn set_recent_intent_summary_view(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::IntentSummary>>,
@@ -2709,9 +1459,7 @@ pub mod get_session_output {
         ///
         /// To override the contents of this collection use [`set_session_attributes`](Self::set_session_attributes).
         ///
-        /// <p>Map of key/value pairs representing the session-specific context
-        /// information. It contains application information passed between Amazon Lex and
-        /// a client application.</p>
+        /// <p>Map of key/value pairs representing the session-specific context information. It contains application information passed between Amazon Lex and a client application.</p>
         pub fn session_attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -2722,9 +1470,7 @@ pub mod get_session_output {
             self.session_attributes = Some(hash_map);
             self
         }
-        /// <p>Map of key/value pairs representing the session-specific context
-        /// information. It contains application information passed between Amazon Lex and
-        /// a client application.</p>
+        /// <p>Map of key/value pairs representing the session-specific context information. It contains application information passed between Amazon Lex and a client application.</p>
         pub fn set_session_attributes(
             mut self,
             input: std::option::Option<
@@ -2761,22 +1507,16 @@ pub mod get_session_output {
         ///
         /// To override the contents of this collection use [`set_active_contexts`](Self::set_active_contexts).
         ///
-        /// <p>A list of active contexts for the session. A context can be set when
-        /// an intent is fulfilled or by calling the <code>PostContent</code>,
-        /// <code>PostText</code>, or <code>PutSession</code> operation.</p>
-        /// <p>You can use a context to control the intents that can follow up an
-        /// intent, or to modify the operation of your application.</p>
+        /// <p>A list of active contexts for the session. A context can be set when an intent is fulfilled or by calling the <code>PostContent</code>, <code>PostText</code>, or <code>PutSession</code> operation.</p>
+        /// <p>You can use a context to control the intents that can follow up an intent, or to modify the operation of your application.</p>
         pub fn active_contexts(mut self, input: crate::model::ActiveContext) -> Self {
             let mut v = self.active_contexts.unwrap_or_default();
             v.push(input);
             self.active_contexts = Some(v);
             self
         }
-        /// <p>A list of active contexts for the session. A context can be set when
-        /// an intent is fulfilled or by calling the <code>PostContent</code>,
-        /// <code>PostText</code>, or <code>PutSession</code> operation.</p>
-        /// <p>You can use a context to control the intents that can follow up an
-        /// intent, or to modify the operation of your application.</p>
+        /// <p>A list of active contexts for the session. A context can be set when an intent is fulfilled or by calling the <code>PostContent</code>, <code>PostText</code>, or <code>PutSession</code> operation.</p>
+        /// <p>You can use a context to control the intents that can follow up an intent, or to modify the operation of your application.</p>
         pub fn set_active_contexts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ActiveContext>>,

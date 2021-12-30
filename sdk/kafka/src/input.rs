@@ -954,14 +954,20 @@ pub mod create_configuration_input {
             self.name = input;
             self
         }
-        /// <p>Contents of the <filename>server.properties</filename> file. When using the API, you must ensure that the contents of the file are base64 encoded.
-        /// When using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>server.properties</filename> can be in plaintext.</p>
+        /// <p>Contents of the <filename>
+        /// server.properties
+        /// </filename> file. When using the API, you must ensure that the contents of the file are base64 encoded. When using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>
+        /// server.properties
+        /// </filename> can be in plaintext.</p>
         pub fn server_properties(mut self, input: aws_smithy_types::Blob) -> Self {
             self.server_properties = Some(input);
             self
         }
-        /// <p>Contents of the <filename>server.properties</filename> file. When using the API, you must ensure that the contents of the file are base64 encoded.
-        /// When using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>server.properties</filename> can be in plaintext.</p>
+        /// <p>Contents of the <filename>
+        /// server.properties
+        /// </filename> file. When using the API, you must ensure that the contents of the file are base64 encoded. When using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>
+        /// server.properties
+        /// </filename> can be in plaintext.</p>
         pub fn set_server_properties(
             mut self,
             input: std::option::Option<aws_smithy_types::Blob>,
@@ -2565,14 +2571,12 @@ pub mod list_cluster_operations_input {
             self.max_results = input;
             self
         }
-        /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response.
-        /// To get the next batch, provide this token in your next request.</p>
+        /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response.
-        /// To get the next batch, provide this token in your next request.</p>
+        /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2766,14 +2770,12 @@ pub mod list_clusters_input {
             self.max_results = input;
             self
         }
-        /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response.
-        /// To get the next batch, provide this token in your next request.</p>
+        /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response.
-        /// To get the next batch, provide this token in your next request.</p>
+        /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2967,14 +2969,12 @@ pub mod list_clusters_v2_input {
             self.max_results = input;
             self
         }
-        /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response.
-        /// To get the next batch, provide this token in your next request.</p>
+        /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response.
-        /// To get the next batch, provide this token in your next request.</p>
+        /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3158,14 +3158,12 @@ pub mod list_configuration_revisions_input {
             self.max_results = input;
             self
         }
-        /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response.
-        /// To get the next batch, provide this token in your next request.</p>
+        /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response.
-        /// To get the next batch, provide this token in your next request.</p>
+        /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3342,14 +3340,12 @@ pub mod list_configurations_input {
             self.max_results = input;
             self
         }
-        /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response.
-        /// To get the next batch, provide this token in your next request.</p>
+        /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response.
-        /// To get the next batch, provide this token in your next request.</p>
+        /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3683,14 +3679,12 @@ pub mod list_nodes_input {
             self.max_results = input;
             self
         }
-        /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response.
-        /// To get the next batch, provide this token in your next request.</p>
+        /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response.
-        /// To get the next batch, provide this token in your next request.</p>
+        /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4601,23 +4595,10 @@ pub mod untag_resource_input {
         ///
         /// <p>Tag keys must be unique for a given cluster. In addition, the following restrictions apply:</p>
         /// <ul>
-        /// <li>
-        /// <p>Each tag key must be unique. If you add a tag with a key that's already in
-        /// use, your new tag overwrites the existing key-value pair. </p>
-        /// </li>
-        /// <li>
-        /// <p>You can't start a tag key with aws: because this prefix is reserved for use
-        /// by  AWS.  AWS creates tags that begin with this prefix on your behalf, but
-        /// you can't edit or delete them.</p>
-        /// </li>
-        /// <li>
-        /// <p>Tag keys must be between 1 and 128 Unicode characters in length.</p>
-        /// </li>
-        /// <li>
-        /// <p>Tag keys must consist of the following characters: Unicode letters, digits,
-        /// white space, and the following special characters: _ . / = + -
-        /// @.</p>
-        /// </li>
+        /// <li> <p>Each tag key must be unique. If you add a tag with a key that's already in use, your new tag overwrites the existing key-value pair. </p> </li>
+        /// <li> <p>You can't start a tag key with aws: because this prefix is reserved for use by AWS. AWS creates tags that begin with this prefix on your behalf, but you can't edit or delete them.</p> </li>
+        /// <li> <p>Tag keys must be between 1 and 128 Unicode characters in length.</p> </li>
+        /// <li> <p>Tag keys must consist of the following characters: Unicode letters, digits, white space, and the following special characters: _ . / = + - @.</p> </li>
         /// </ul>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
@@ -4627,23 +4608,10 @@ pub mod untag_resource_input {
         }
         /// <p>Tag keys must be unique for a given cluster. In addition, the following restrictions apply:</p>
         /// <ul>
-        /// <li>
-        /// <p>Each tag key must be unique. If you add a tag with a key that's already in
-        /// use, your new tag overwrites the existing key-value pair. </p>
-        /// </li>
-        /// <li>
-        /// <p>You can't start a tag key with aws: because this prefix is reserved for use
-        /// by  AWS.  AWS creates tags that begin with this prefix on your behalf, but
-        /// you can't edit or delete them.</p>
-        /// </li>
-        /// <li>
-        /// <p>Tag keys must be between 1 and 128 Unicode characters in length.</p>
-        /// </li>
-        /// <li>
-        /// <p>Tag keys must consist of the following characters: Unicode letters, digits,
-        /// white space, and the following special characters: _ . / = + -
-        /// @.</p>
-        /// </li>
+        /// <li> <p>Each tag key must be unique. If you add a tag with a key that's already in use, your new tag overwrites the existing key-value pair. </p> </li>
+        /// <li> <p>You can't start a tag key with aws: because this prefix is reserved for use by AWS. AWS creates tags that begin with this prefix on your behalf, but you can't edit or delete them.</p> </li>
+        /// <li> <p>Tag keys must be between 1 and 128 Unicode characters in length.</p> </li>
+        /// <li> <p>Tag keys must consist of the following characters: Unicode letters, digits, white space, and the following special characters: _ . / = + - @.</p> </li>
         /// </ul>
         pub fn set_tag_keys(
             mut self,
@@ -5857,14 +5825,20 @@ pub mod update_configuration_input {
             self.description = input;
             self
         }
-        /// <p>Contents of the <filename>server.properties</filename> file. When using the API, you must ensure that the contents of the file are base64 encoded.
-        /// When using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>server.properties</filename> can be in plaintext.</p>
+        /// <p>Contents of the <filename>
+        /// server.properties
+        /// </filename> file. When using the API, you must ensure that the contents of the file are base64 encoded. When using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>
+        /// server.properties
+        /// </filename> can be in plaintext.</p>
         pub fn server_properties(mut self, input: aws_smithy_types::Blob) -> Self {
             self.server_properties = Some(input);
             self
         }
-        /// <p>Contents of the <filename>server.properties</filename> file. When using the API, you must ensure that the contents of the file are base64 encoded.
-        /// When using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>server.properties</filename> can be in plaintext.</p>
+        /// <p>Contents of the <filename>
+        /// server.properties
+        /// </filename> file. When using the API, you must ensure that the contents of the file are base64 encoded. When using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>
+        /// server.properties
+        /// </filename> can be in plaintext.</p>
         pub fn set_server_properties(
             mut self,
             input: std::option::Option<aws_smithy_types::Blob>,
@@ -6798,8 +6772,11 @@ pub struct UpdateConfigurationInput {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The description of the configuration revision.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>Contents of the <filename>server.properties</filename> file. When using the API, you must ensure that the contents of the file are base64 encoded.
-    /// When using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>server.properties</filename> can be in plaintext.</p>
+    /// <p>Contents of the <filename>
+    /// server.properties
+    /// </filename> file. When using the API, you must ensure that the contents of the file are base64 encoded. When using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>
+    /// server.properties
+    /// </filename> can be in plaintext.</p>
     pub server_properties: std::option::Option<aws_smithy_types::Blob>,
 }
 impl UpdateConfigurationInput {
@@ -6811,8 +6788,11 @@ impl UpdateConfigurationInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Contents of the <filename>server.properties</filename> file. When using the API, you must ensure that the contents of the file are base64 encoded.
-    /// When using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>server.properties</filename> can be in plaintext.</p>
+    /// <p>Contents of the <filename>
+    /// server.properties
+    /// </filename> file. When using the API, you must ensure that the contents of the file are base64 encoded. When using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>
+    /// server.properties
+    /// </filename> can be in plaintext.</p>
     pub fn server_properties(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.server_properties.as_ref()
     }
@@ -7026,23 +7006,10 @@ pub struct UntagResourceInput {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Tag keys must be unique for a given cluster. In addition, the following restrictions apply:</p>
     /// <ul>
-    /// <li>
-    /// <p>Each tag key must be unique. If you add a tag with a key that's already in
-    /// use, your new tag overwrites the existing key-value pair. </p>
-    /// </li>
-    /// <li>
-    /// <p>You can't start a tag key with aws: because this prefix is reserved for use
-    /// by  AWS.  AWS creates tags that begin with this prefix on your behalf, but
-    /// you can't edit or delete them.</p>
-    /// </li>
-    /// <li>
-    /// <p>Tag keys must be between 1 and 128 Unicode characters in length.</p>
-    /// </li>
-    /// <li>
-    /// <p>Tag keys must consist of the following characters: Unicode letters, digits,
-    /// white space, and the following special characters: _ . / = + -
-    /// @.</p>
-    /// </li>
+    /// <li> <p>Each tag key must be unique. If you add a tag with a key that's already in use, your new tag overwrites the existing key-value pair. </p> </li>
+    /// <li> <p>You can't start a tag key with aws: because this prefix is reserved for use by AWS. AWS creates tags that begin with this prefix on your behalf, but you can't edit or delete them.</p> </li>
+    /// <li> <p>Tag keys must be between 1 and 128 Unicode characters in length.</p> </li>
+    /// <li> <p>Tag keys must consist of the following characters: Unicode letters, digits, white space, and the following special characters: _ . / = + - @.</p> </li>
     /// </ul>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
@@ -7053,23 +7020,10 @@ impl UntagResourceInput {
     }
     /// <p>Tag keys must be unique for a given cluster. In addition, the following restrictions apply:</p>
     /// <ul>
-    /// <li>
-    /// <p>Each tag key must be unique. If you add a tag with a key that's already in
-    /// use, your new tag overwrites the existing key-value pair. </p>
-    /// </li>
-    /// <li>
-    /// <p>You can't start a tag key with aws: because this prefix is reserved for use
-    /// by  AWS.  AWS creates tags that begin with this prefix on your behalf, but
-    /// you can't edit or delete them.</p>
-    /// </li>
-    /// <li>
-    /// <p>Tag keys must be between 1 and 128 Unicode characters in length.</p>
-    /// </li>
-    /// <li>
-    /// <p>Tag keys must consist of the following characters: Unicode letters, digits,
-    /// white space, and the following special characters: _ . / = + -
-    /// @.</p>
-    /// </li>
+    /// <li> <p>Each tag key must be unique. If you add a tag with a key that's already in use, your new tag overwrites the existing key-value pair. </p> </li>
+    /// <li> <p>You can't start a tag key with aws: because this prefix is reserved for use by AWS. AWS creates tags that begin with this prefix on your behalf, but you can't edit or delete them.</p> </li>
+    /// <li> <p>Tag keys must be between 1 and 128 Unicode characters in length.</p> </li>
+    /// <li> <p>Tag keys must consist of the following characters: Unicode letters, digits, white space, and the following special characters: _ . / = + - @.</p> </li>
     /// </ul>
     pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_keys.as_deref()
@@ -7208,8 +7162,7 @@ pub struct ListNodesInput {
     pub cluster_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
     pub max_results: i32,
-    /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response.
-    /// To get the next batch, provide this token in your next request.</p>
+    /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListNodesInput {
@@ -7221,8 +7174,7 @@ impl ListNodesInput {
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response.
-    /// To get the next batch, provide this token in your next request.</p>
+    /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -7271,8 +7223,7 @@ impl std::fmt::Debug for ListKafkaVersionsInput {
 pub struct ListConfigurationsInput {
     /// <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
     pub max_results: i32,
-    /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response.
-    /// To get the next batch, provide this token in your next request.</p>
+    /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListConfigurationsInput {
@@ -7280,8 +7231,7 @@ impl ListConfigurationsInput {
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response.
-    /// To get the next batch, provide this token in your next request.</p>
+    /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -7303,8 +7253,7 @@ pub struct ListConfigurationRevisionsInput {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
     pub max_results: i32,
-    /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response.
-    /// To get the next batch, provide this token in your next request.</p>
+    /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListConfigurationRevisionsInput {
@@ -7316,8 +7265,7 @@ impl ListConfigurationRevisionsInput {
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response.
-    /// To get the next batch, provide this token in your next request.</p>
+    /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -7342,8 +7290,7 @@ pub struct ListClustersV2Input {
     pub cluster_type_filter: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
     pub max_results: i32,
-    /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response.
-    /// To get the next batch, provide this token in your next request.</p>
+    /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListClustersV2Input {
@@ -7359,8 +7306,7 @@ impl ListClustersV2Input {
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response.
-    /// To get the next batch, provide this token in your next request.</p>
+    /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -7384,8 +7330,7 @@ pub struct ListClustersInput {
     pub cluster_name_filter: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
     pub max_results: i32,
-    /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response.
-    /// To get the next batch, provide this token in your next request.</p>
+    /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListClustersInput {
@@ -7397,8 +7342,7 @@ impl ListClustersInput {
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response.
-    /// To get the next batch, provide this token in your next request.</p>
+    /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -7421,8 +7365,7 @@ pub struct ListClusterOperationsInput {
     pub cluster_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
     pub max_results: i32,
-    /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response.
-    /// To get the next batch, provide this token in your next request.</p>
+    /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListClusterOperationsInput {
@@ -7434,8 +7377,7 @@ impl ListClusterOperationsInput {
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response.
-    /// To get the next batch, provide this token in your next request.</p>
+    /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -7663,8 +7605,11 @@ pub struct CreateConfigurationInput {
     pub kafka_versions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of the configuration.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>Contents of the <filename>server.properties</filename> file. When using the API, you must ensure that the contents of the file are base64 encoded.
-    /// When using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>server.properties</filename> can be in plaintext.</p>
+    /// <p>Contents of the <filename>
+    /// server.properties
+    /// </filename> file. When using the API, you must ensure that the contents of the file are base64 encoded. When using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>
+    /// server.properties
+    /// </filename> can be in plaintext.</p>
     pub server_properties: std::option::Option<aws_smithy_types::Blob>,
 }
 impl CreateConfigurationInput {
@@ -7680,8 +7625,11 @@ impl CreateConfigurationInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Contents of the <filename>server.properties</filename> file. When using the API, you must ensure that the contents of the file are base64 encoded.
-    /// When using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>server.properties</filename> can be in plaintext.</p>
+    /// <p>Contents of the <filename>
+    /// server.properties
+    /// </filename> file. When using the API, you must ensure that the contents of the file are base64 encoded. When using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>
+    /// server.properties
+    /// </filename> can be in plaintext.</p>
     pub fn server_properties(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.server_properties.as_ref()
     }

@@ -14,8 +14,7 @@ pub struct AssociateServiceQuotaTemplateError {
 pub enum AssociateServiceQuotaTemplateErrorKind {
     /// <p>You do not have sufficient permission to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The action you attempted is not allowed unless Service Access with Service Quotas is
-    /// enabled in your organization.</p>
+    /// <p>The action you attempted is not allowed unless Service Access with Service Quotas is enabled in your organization.</p>
     AwsServiceAccessNotEnabledException(crate::error::AwsServiceAccessNotEnabledException),
     /// <p>You can't perform this action because a dependency does not have access.</p>
     DependencyAccessDeniedException(crate::error::DependencyAccessDeniedException),
@@ -29,8 +28,7 @@ pub enum AssociateServiceQuotaTemplateErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The Service Quotas template is not available in this AWS Region.</p>
     TemplatesNotAvailableInRegionException(crate::error::TemplatesNotAvailableInRegionException),
-    /// <p>Due to throttling, the request was denied. Slow down the rate of request calls, or request
-    /// an increase for this quota.</p>
+    /// <p>Due to throttling, the request was denied. Slow down the rate of request calls, or request an increase for this quota.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -215,8 +213,7 @@ pub struct DeleteServiceQuotaIncreaseRequestFromTemplateError {
 pub enum DeleteServiceQuotaIncreaseRequestFromTemplateErrorKind {
     /// <p>You do not have sufficient permission to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The action you attempted is not allowed unless Service Access with Service Quotas is
-    /// enabled in your organization.</p>
+    /// <p>The action you attempted is not allowed unless Service Access with Service Quotas is enabled in your organization.</p>
     AwsServiceAccessNotEnabledException(crate::error::AwsServiceAccessNotEnabledException),
     /// <p>You can't perform this action because a dependency does not have access.</p>
     DependencyAccessDeniedException(crate::error::DependencyAccessDeniedException),
@@ -230,8 +227,7 @@ pub enum DeleteServiceQuotaIncreaseRequestFromTemplateErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The Service Quotas template is not available in this AWS Region.</p>
     TemplatesNotAvailableInRegionException(crate::error::TemplatesNotAvailableInRegionException),
-    /// <p>Due to throttling, the request was denied. Slow down the rate of request calls, or request
-    /// an increase for this quota.</p>
+    /// <p>Due to throttling, the request was denied. Slow down the rate of request calls, or request an increase for this quota.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -436,8 +432,7 @@ pub struct DisassociateServiceQuotaTemplateError {
 pub enum DisassociateServiceQuotaTemplateErrorKind {
     /// <p>You do not have sufficient permission to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The action you attempted is not allowed unless Service Access with Service Quotas is
-    /// enabled in your organization.</p>
+    /// <p>The action you attempted is not allowed unless Service Access with Service Quotas is enabled in your organization.</p>
     AwsServiceAccessNotEnabledException(crate::error::AwsServiceAccessNotEnabledException),
     /// <p>You can't perform this action because a dependency does not have access.</p>
     DependencyAccessDeniedException(crate::error::DependencyAccessDeniedException),
@@ -449,8 +444,7 @@ pub enum DisassociateServiceQuotaTemplateErrorKind {
     ServiceQuotaTemplateNotInUseException(crate::error::ServiceQuotaTemplateNotInUseException),
     /// <p>The Service Quotas template is not available in this AWS Region.</p>
     TemplatesNotAvailableInRegionException(crate::error::TemplatesNotAvailableInRegionException),
-    /// <p>Due to throttling, the request was denied. Slow down the rate of request calls, or request
-    /// an increase for this quota.</p>
+    /// <p>Due to throttling, the request was denied. Slow down the rate of request calls, or request an increase for this quota.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -639,8 +633,7 @@ pub struct GetAssociationForServiceQuotaTemplateError {
 pub enum GetAssociationForServiceQuotaTemplateErrorKind {
     /// <p>You do not have sufficient permission to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The action you attempted is not allowed unless Service Access with Service Quotas is
-    /// enabled in your organization.</p>
+    /// <p>The action you attempted is not allowed unless Service Access with Service Quotas is enabled in your organization.</p>
     AwsServiceAccessNotEnabledException(crate::error::AwsServiceAccessNotEnabledException),
     /// <p>You can't perform this action because a dependency does not have access.</p>
     DependencyAccessDeniedException(crate::error::DependencyAccessDeniedException),
@@ -652,8 +645,7 @@ pub enum GetAssociationForServiceQuotaTemplateErrorKind {
     ServiceQuotaTemplateNotInUseException(crate::error::ServiceQuotaTemplateNotInUseException),
     /// <p>The Service Quotas template is not available in this AWS Region.</p>
     TemplatesNotAvailableInRegionException(crate::error::TemplatesNotAvailableInRegionException),
-    /// <p>Due to throttling, the request was denied. Slow down the rate of request calls, or request
-    /// an increase for this quota.</p>
+    /// <p>Due to throttling, the request was denied. Slow down the rate of request calls, or request an increase for this quota.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -860,8 +852,7 @@ pub enum GetAWSDefaultServiceQuotaErrorKind {
     NoSuchResourceException(crate::error::NoSuchResourceException),
     /// <p>Something went wrong.</p>
     ServiceException(crate::error::ServiceException),
-    /// <p>Due to throttling, the request was denied. Slow down the rate of request calls, or request
-    /// an increase for this quota.</p>
+    /// <p>Due to throttling, the request was denied. Slow down the rate of request calls, or request an increase for this quota.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -998,8 +989,7 @@ pub enum GetRequestedServiceQuotaChangeErrorKind {
     NoSuchResourceException(crate::error::NoSuchResourceException),
     /// <p>Something went wrong.</p>
     ServiceException(crate::error::ServiceException),
-    /// <p>Due to throttling, the request was denied. Slow down the rate of request calls, or request
-    /// an increase for this quota.</p>
+    /// <p>Due to throttling, the request was denied. Slow down the rate of request calls, or request an increase for this quota.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1151,8 +1141,7 @@ pub enum GetServiceQuotaErrorKind {
     NoSuchResourceException(crate::error::NoSuchResourceException),
     /// <p>Something went wrong.</p>
     ServiceException(crate::error::ServiceException),
-    /// <p>Due to throttling, the request was denied. Slow down the rate of request calls, or request
-    /// an increase for this quota.</p>
+    /// <p>Due to throttling, the request was denied. Slow down the rate of request calls, or request an increase for this quota.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1280,8 +1269,7 @@ pub struct GetServiceQuotaIncreaseRequestFromTemplateError {
 pub enum GetServiceQuotaIncreaseRequestFromTemplateErrorKind {
     /// <p>You do not have sufficient permission to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The action you attempted is not allowed unless Service Access with Service Quotas is
-    /// enabled in your organization.</p>
+    /// <p>The action you attempted is not allowed unless Service Access with Service Quotas is enabled in your organization.</p>
     AwsServiceAccessNotEnabledException(crate::error::AwsServiceAccessNotEnabledException),
     /// <p>You can't perform this action because a dependency does not have access.</p>
     DependencyAccessDeniedException(crate::error::DependencyAccessDeniedException),
@@ -1295,8 +1283,7 @@ pub enum GetServiceQuotaIncreaseRequestFromTemplateErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The Service Quotas template is not available in this AWS Region.</p>
     TemplatesNotAvailableInRegionException(crate::error::TemplatesNotAvailableInRegionException),
-    /// <p>Due to throttling, the request was denied. Slow down the rate of request calls, or request
-    /// an increase for this quota.</p>
+    /// <p>Due to throttling, the request was denied. Slow down the rate of request calls, or request an increase for this quota.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1510,8 +1497,7 @@ pub enum ListAWSDefaultServiceQuotasErrorKind {
     NoSuchResourceException(crate::error::NoSuchResourceException),
     /// <p>Something went wrong.</p>
     ServiceException(crate::error::ServiceException),
-    /// <p>Due to throttling, the request was denied. Slow down the rate of request calls, or request
-    /// an increase for this quota.</p>
+    /// <p>Due to throttling, the request was denied. Slow down the rate of request calls, or request an increase for this quota.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1663,8 +1649,7 @@ pub enum ListRequestedServiceQuotaChangeHistoryErrorKind {
     NoSuchResourceException(crate::error::NoSuchResourceException),
     /// <p>Something went wrong.</p>
     ServiceException(crate::error::ServiceException),
-    /// <p>Due to throttling, the request was denied. Slow down the rate of request calls, or request
-    /// an increase for this quota.</p>
+    /// <p>Due to throttling, the request was denied. Slow down the rate of request calls, or request an increase for this quota.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1841,8 +1826,7 @@ pub enum ListRequestedServiceQuotaChangeHistoryByQuotaErrorKind {
     NoSuchResourceException(crate::error::NoSuchResourceException),
     /// <p>Something went wrong.</p>
     ServiceException(crate::error::ServiceException),
-    /// <p>Due to throttling, the request was denied. Slow down the rate of request calls, or request
-    /// an increase for this quota.</p>
+    /// <p>Due to throttling, the request was denied. Slow down the rate of request calls, or request an increase for this quota.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2017,8 +2001,7 @@ pub struct ListServiceQuotaIncreaseRequestsInTemplateError {
 pub enum ListServiceQuotaIncreaseRequestsInTemplateErrorKind {
     /// <p>You do not have sufficient permission to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The action you attempted is not allowed unless Service Access with Service Quotas is
-    /// enabled in your organization.</p>
+    /// <p>The action you attempted is not allowed unless Service Access with Service Quotas is enabled in your organization.</p>
     AwsServiceAccessNotEnabledException(crate::error::AwsServiceAccessNotEnabledException),
     /// <p>You can't perform this action because a dependency does not have access.</p>
     DependencyAccessDeniedException(crate::error::DependencyAccessDeniedException),
@@ -2030,8 +2013,7 @@ pub enum ListServiceQuotaIncreaseRequestsInTemplateErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The Service Quotas template is not available in this AWS Region.</p>
     TemplatesNotAvailableInRegionException(crate::error::TemplatesNotAvailableInRegionException),
-    /// <p>Due to throttling, the request was denied. Slow down the rate of request calls, or request
-    /// an increase for this quota.</p>
+    /// <p>Due to throttling, the request was denied. Slow down the rate of request calls, or request an increase for this quota.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2232,8 +2214,7 @@ pub enum ListServiceQuotasErrorKind {
     NoSuchResourceException(crate::error::NoSuchResourceException),
     /// <p>Something went wrong.</p>
     ServiceException(crate::error::ServiceException),
-    /// <p>Due to throttling, the request was denied. Slow down the rate of request calls, or request
-    /// an increase for this quota.</p>
+    /// <p>Due to throttling, the request was denied. Slow down the rate of request calls, or request an increase for this quota.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2376,8 +2357,7 @@ pub enum ListServicesErrorKind {
     InvalidPaginationTokenException(crate::error::InvalidPaginationTokenException),
     /// <p>Something went wrong.</p>
     ServiceException(crate::error::ServiceException),
-    /// <p>Due to throttling, the request was denied. Slow down the rate of request calls, or request
-    /// an increase for this quota.</p>
+    /// <p>Due to throttling, the request was denied. Slow down the rate of request calls, or request an increase for this quota.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2508,8 +2488,7 @@ pub enum ListTagsForResourceErrorKind {
     NoSuchResourceException(crate::error::NoSuchResourceException),
     /// <p>Something went wrong.</p>
     ServiceException(crate::error::ServiceException),
-    /// <p>Due to throttling, the request was denied. Slow down the rate of request calls, or request
-    /// an increase for this quota.</p>
+    /// <p>Due to throttling, the request was denied. Slow down the rate of request calls, or request an increase for this quota.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2640,8 +2619,7 @@ pub struct PutServiceQuotaIncreaseRequestIntoTemplateError {
 pub enum PutServiceQuotaIncreaseRequestIntoTemplateErrorKind {
     /// <p>You do not have sufficient permission to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The action you attempted is not allowed unless Service Access with Service Quotas is
-    /// enabled in your organization.</p>
+    /// <p>The action you attempted is not allowed unless Service Access with Service Quotas is enabled in your organization.</p>
     AwsServiceAccessNotEnabledException(crate::error::AwsServiceAccessNotEnabledException),
     /// <p>You can't perform this action because a dependency does not have access.</p>
     DependencyAccessDeniedException(crate::error::DependencyAccessDeniedException),
@@ -2651,15 +2629,13 @@ pub enum PutServiceQuotaIncreaseRequestIntoTemplateErrorKind {
     NoAvailableOrganizationException(crate::error::NoAvailableOrganizationException),
     /// <p>The specified resource does not exist.</p>
     NoSuchResourceException(crate::error::NoSuchResourceException),
-    /// <p>You have exceeded your service quota. To perform the requested action, remove some of the
-    /// relevant resources, or use Service Quotas to request a service quota increase.</p>
+    /// <p>You have exceeded your service quota. To perform the requested action, remove some of the relevant resources, or use Service Quotas to request a service quota increase.</p>
     QuotaExceededException(crate::error::QuotaExceededException),
     /// <p>Something went wrong.</p>
     ServiceException(crate::error::ServiceException),
     /// <p>The Service Quotas template is not available in this AWS Region.</p>
     TemplatesNotAvailableInRegionException(crate::error::TemplatesNotAvailableInRegionException),
-    /// <p>Due to throttling, the request was denied. Slow down the rate of request calls, or request
-    /// an increase for this quota.</p>
+    /// <p>Due to throttling, the request was denied. Slow down the rate of request calls, or request an increase for this quota.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2886,15 +2862,13 @@ pub enum RequestServiceQuotaIncreaseErrorKind {
     InvalidResourceStateException(crate::error::InvalidResourceStateException),
     /// <p>The specified resource does not exist.</p>
     NoSuchResourceException(crate::error::NoSuchResourceException),
-    /// <p>You have exceeded your service quota. To perform the requested action, remove some of the
-    /// relevant resources, or use Service Quotas to request a service quota increase.</p>
+    /// <p>You have exceeded your service quota. To perform the requested action, remove some of the relevant resources, or use Service Quotas to request a service quota increase.</p>
     QuotaExceededException(crate::error::QuotaExceededException),
     /// <p>The specified resource already exists.</p>
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
     /// <p>Something went wrong.</p>
     ServiceException(crate::error::ServiceException),
-    /// <p>Due to throttling, the request was denied. Slow down the rate of request calls, or request
-    /// an increase for this quota.</p>
+    /// <p>Due to throttling, the request was denied. Slow down the rate of request calls, or request an increase for this quota.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3081,12 +3055,9 @@ pub enum TagResourceErrorKind {
     ServiceException(crate::error::ServiceException),
     /// <p>The specified tag is a reserved word and cannot be used.</p>
     TagPolicyViolationException(crate::error::TagPolicyViolationException),
-    /// <p>Due to throttling, the request was denied. Slow down the rate of request calls, or request
-    /// an increase for this quota.</p>
+    /// <p>Due to throttling, the request was denied. Slow down the rate of request calls, or request an increase for this quota.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>You've exceeded the number of tags allowed for a resource. For more information, see
-    /// <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/sq-tagging.html#sq-tagging-restrictions">Tag
-    /// restrictions</a> in the <i>Service Quotas User Guide</i>.</p>
+    /// <p>You've exceeded the number of tags allowed for a resource. For more information, see <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/sq-tagging.html#sq-tagging-restrictions">Tag restrictions</a> in the <i>Service Quotas User Guide</i>.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3229,8 +3200,7 @@ pub enum UntagResourceErrorKind {
     NoSuchResourceException(crate::error::NoSuchResourceException),
     /// <p>Something went wrong.</p>
     ServiceException(crate::error::ServiceException),
-    /// <p>Due to throttling, the request was denied. Slow down the rate of request calls, or request
-    /// an increase for this quota.</p>
+    /// <p>Due to throttling, the request was denied. Slow down the rate of request calls, or request an increase for this quota.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3340,8 +3310,7 @@ impl std::error::Error for UntagResourceError {
     }
 }
 
-/// <p>Due to throttling, the request was denied. Slow down the rate of request calls, or request
-/// an increase for this quota.</p>
+/// <p>Due to throttling, the request was denied. Slow down the rate of request calls, or request an increase for this quota.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyRequestsException {
@@ -3661,9 +3630,7 @@ impl AccessDeniedException {
     }
 }
 
-/// <p>You've exceeded the number of tags allowed for a resource. For more information, see
-/// <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/sq-tagging.html#sq-tagging-restrictions">Tag
-/// restrictions</a> in the <i>Service Quotas User Guide</i>.</p>
+/// <p>You've exceeded the number of tags allowed for a resource. For more information, see <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/sq-tagging.html#sq-tagging-restrictions">Tag restrictions</a> in the <i>Service Quotas User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyTagsException {
@@ -3855,8 +3822,7 @@ impl ResourceAlreadyExistsException {
     }
 }
 
-/// <p>You have exceeded your service quota. To perform the requested action, remove some of the
-/// relevant resources, or use Service Quotas to request a service quota increase.</p>
+/// <p>You have exceeded your service quota. To perform the requested action, remove some of the relevant resources, or use Service Quotas to request a service quota increase.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QuotaExceededException {
@@ -4176,8 +4142,7 @@ impl NoAvailableOrganizationException {
     }
 }
 
-/// <p>The action you attempted is not allowed unless Service Access with Service Quotas is
-/// enabled in your organization.</p>
+/// <p>The action you attempted is not allowed unless Service Access with Service Quotas is enabled in your organization.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsServiceAccessNotEnabledException {

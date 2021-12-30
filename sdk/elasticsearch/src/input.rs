@@ -713,14 +713,12 @@ pub mod create_elasticsearch_domain_input {
             self.domain_name = input;
             self
         }
-        /// <p>String of format X.Y to specify version for the Elasticsearch domain eg. "1.5" or "2.3". For more information,
-        /// see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomains" target="_blank">Creating Elasticsearch Domains</a> in the <i>Amazon Elasticsearch Service Developer Guide</i>.</p>
+        /// <p>String of format X.Y to specify version for the Elasticsearch domain eg. "1.5" or "2.3". For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomains" target="_blank">Creating Elasticsearch Domains</a> in the <i>Amazon Elasticsearch Service Developer Guide</i>.</p>
         pub fn elasticsearch_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.elasticsearch_version = Some(input.into());
             self
         }
-        /// <p>String of format X.Y to specify version for the Elasticsearch domain eg. "1.5" or "2.3". For more information,
-        /// see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomains" target="_blank">Creating Elasticsearch Domains</a> in the <i>Amazon Elasticsearch Service Developer Guide</i>.</p>
+        /// <p>String of format X.Y to specify version for the Elasticsearch domain eg. "1.5" or "2.3". For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomains" target="_blank">Creating Elasticsearch Domains</a> in the <i>Amazon Elasticsearch Service Developer Guide</i>.</p>
         pub fn set_elasticsearch_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -845,8 +843,7 @@ pub mod create_elasticsearch_domain_input {
         ///
         /// To override the contents of this collection use [`set_advanced_options`](Self::set_advanced_options).
         ///
-        /// <p> Option to allow references to indices in an HTTP request body.  Must be <code>false</code> when configuring access to individual sub-resources.  By default, the value is <code>true</code>.
-        /// See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</p>
+        /// <p> Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</p>
         pub fn advanced_options(
             mut self,
             k: impl Into<std::string::String>,
@@ -857,8 +854,7 @@ pub mod create_elasticsearch_domain_input {
             self.advanced_options = Some(hash_map);
             self
         }
-        /// <p> Option to allow references to indices in an HTTP request body.  Must be <code>false</code> when configuring access to individual sub-resources.  By default, the value is <code>true</code>.
-        /// See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</p>
+        /// <p> Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</p>
         pub fn set_advanced_options(
             mut self,
             input: std::option::Option<
@@ -1116,12 +1112,12 @@ pub mod create_outbound_cross_cluster_search_connection_input {
         pub(crate) connection_alias: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies the <code><a>DomainInformation</a></code> for the source Elasticsearch domain.</p>
+        /// <p>Specifies the <code><code>DomainInformation</code></code> for the source Elasticsearch domain.</p>
         pub fn source_domain_info(mut self, input: crate::model::DomainInformation) -> Self {
             self.source_domain_info = Some(input);
             self
         }
-        /// <p>Specifies the <code><a>DomainInformation</a></code> for the source Elasticsearch domain.</p>
+        /// <p>Specifies the <code><code>DomainInformation</code></code> for the source Elasticsearch domain.</p>
         pub fn set_source_domain_info(
             mut self,
             input: std::option::Option<crate::model::DomainInformation>,
@@ -1129,12 +1125,12 @@ pub mod create_outbound_cross_cluster_search_connection_input {
             self.source_domain_info = input;
             self
         }
-        /// <p>Specifies the <code><a>DomainInformation</a></code> for the destination Elasticsearch domain.</p>
+        /// <p>Specifies the <code><code>DomainInformation</code></code> for the destination Elasticsearch domain.</p>
         pub fn destination_domain_info(mut self, input: crate::model::DomainInformation) -> Self {
             self.destination_domain_info = Some(input);
             self
         }
-        /// <p>Specifies the <code><a>DomainInformation</a></code> for the destination Elasticsearch domain.</p>
+        /// <p>Specifies the <code><code>DomainInformation</code></code> for the destination Elasticsearch domain.</p>
         pub fn set_destination_domain_info(
             mut self,
             input: std::option::Option<crate::model::DomainInformation>,
@@ -2936,50 +2932,22 @@ pub mod describe_elasticsearch_instance_type_limits_input {
         pub(crate) elasticsearch_version: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// DomainName represents the name of the Domain that we are trying to
-        /// modify. This should be present only if we are
-        /// querying for Elasticsearch
-        /// <code>
-        /// <a>Limits</a>
-        /// </code>
-        /// for existing domain.
-        /// </p>
+        /// <p> DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are querying for Elasticsearch <code> <code>Limits</code> </code> for existing domain. </p>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_name = Some(input.into());
             self
         }
-        /// <p>
-        /// DomainName represents the name of the Domain that we are trying to
-        /// modify. This should be present only if we are
-        /// querying for Elasticsearch
-        /// <code>
-        /// <a>Limits</a>
-        /// </code>
-        /// for existing domain.
-        /// </p>
+        /// <p> DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are querying for Elasticsearch <code> <code>Limits</code> </code> for existing domain. </p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
         }
-        /// <p>
-        /// The instance type for an Elasticsearch cluster for which Elasticsearch
-        /// <code>
-        /// <a>Limits</a>
-        /// </code>
-        /// are needed.
-        /// </p>
+        /// <p> The instance type for an Elasticsearch cluster for which Elasticsearch <code> <code>Limits</code> </code> are needed. </p>
         pub fn instance_type(mut self, input: crate::model::EsPartitionInstanceType) -> Self {
             self.instance_type = Some(input);
             self
         }
-        /// <p>
-        /// The instance type for an Elasticsearch cluster for which Elasticsearch
-        /// <code>
-        /// <a>Limits</a>
-        /// </code>
-        /// are needed.
-        /// </p>
+        /// <p> The instance type for an Elasticsearch cluster for which Elasticsearch <code> <code>Limits</code> </code> are needed. </p>
         pub fn set_instance_type(
             mut self,
             input: std::option::Option<crate::model::EsPartitionInstanceType>,
@@ -2987,24 +2955,12 @@ pub mod describe_elasticsearch_instance_type_limits_input {
             self.instance_type = input;
             self
         }
-        /// <p>
-        /// Version of Elasticsearch for which
-        /// <code>
-        /// <a>Limits</a>
-        /// </code>
-        /// are needed.
-        /// </p>
+        /// <p> Version of Elasticsearch for which <code> <code>Limits</code> </code> are needed. </p>
         pub fn elasticsearch_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.elasticsearch_version = Some(input.into());
             self
         }
-        /// <p>
-        /// Version of Elasticsearch for which
-        /// <code>
-        /// <a>Limits</a>
-        /// </code>
-        /// are needed.
-        /// </p>
+        /// <p> Version of Elasticsearch for which <code> <code>Limits</code> </code> are needed. </p>
         pub fn set_elasticsearch_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3194,9 +3150,7 @@ pub mod describe_inbound_cross_cluster_search_connections_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>
-        /// A list of filters used to match properties for inbound cross-cluster search connection.
-        /// Available <code><a>Filter</a></code> names for this operation are:
+        /// <p> A list of filters used to match properties for inbound cross-cluster search connection. Available <code><code>Filter</code></code> names for this operation are: </p>
         /// <ul>
         /// <li>cross-cluster-search-connection-id</li>
         /// <li>source-domain-info.domain-name</li>
@@ -3204,16 +3158,14 @@ pub mod describe_inbound_cross_cluster_search_connections_input {
         /// <li>source-domain-info.region</li>
         /// <li>destination-domain-info.domain-name</li>
         /// </ul>
-        /// </p>
+        /// <p></p>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input);
             self.filters = Some(v);
             self
         }
-        /// <p>
-        /// A list of filters used to match properties for inbound cross-cluster search connection.
-        /// Available <code><a>Filter</a></code> names for this operation are:
+        /// <p> A list of filters used to match properties for inbound cross-cluster search connection. Available <code><code>Filter</code></code> names for this operation are: </p>
         /// <ul>
         /// <li>cross-cluster-search-connection-id</li>
         /// <li>source-domain-info.domain-name</li>
@@ -3221,7 +3173,7 @@ pub mod describe_inbound_cross_cluster_search_connections_input {
         /// <li>source-domain-info.region</li>
         /// <li>destination-domain-info.domain-name</li>
         /// </ul>
-        /// </p>
+        /// <p></p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -3403,9 +3355,7 @@ pub mod describe_outbound_cross_cluster_search_connections_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>
-        /// A list of filters used to match properties for outbound cross-cluster search connection.
-        /// Available <code><a>Filter</a></code> names for this operation are:
+        /// <p> A list of filters used to match properties for outbound cross-cluster search connection. Available <code><code>Filter</code></code> names for this operation are: </p>
         /// <ul>
         /// <li>cross-cluster-search-connection-id</li>
         /// <li>destination-domain-info.domain-name</li>
@@ -3413,16 +3363,14 @@ pub mod describe_outbound_cross_cluster_search_connections_input {
         /// <li>destination-domain-info.region</li>
         /// <li>source-domain-info.domain-name</li>
         /// </ul>
-        /// </p>
+        /// <p></p>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input);
             self.filters = Some(v);
             self
         }
-        /// <p>
-        /// A list of filters used to match properties for outbound cross-cluster search connection.
-        /// Available <code><a>Filter</a></code> names for this operation are:
+        /// <p> A list of filters used to match properties for outbound cross-cluster search connection. Available <code><code>Filter</code></code> names for this operation are: </p>
         /// <ul>
         /// <li>cross-cluster-search-connection-id</li>
         /// <li>destination-domain-info.domain-name</li>
@@ -3430,7 +3378,7 @@ pub mod describe_outbound_cross_cluster_search_connections_input {
         /// <li>destination-domain-info.region</li>
         /// <li>source-domain-info.domain-name</li>
         /// </ul>
-        /// </p>
+        /// <p></p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -3818,14 +3766,12 @@ pub mod describe_reserved_elasticsearch_instance_offerings_input {
             self.max_results = input;
             self
         }
-        /// <p>NextToken should be sent in case if earlier API call produced result
-        /// containing NextToken. It is used for pagination.</p>
+        /// <p>NextToken should be sent in case if earlier API call produced result containing NextToken. It is used for pagination.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>NextToken should be sent in case if earlier API call produced result
-        /// containing NextToken. It is used for pagination.</p>
+        /// <p>NextToken should be sent in case if earlier API call produced result containing NextToken. It is used for pagination.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4012,14 +3958,12 @@ pub mod describe_reserved_elasticsearch_instances_input {
             self.max_results = input;
             self
         }
-        /// <p>NextToken should be sent in case if earlier API call produced result
-        /// containing NextToken. It is used for pagination.</p>
+        /// <p>NextToken should be sent in case if earlier API call produced result containing NextToken. It is used for pagination.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>NextToken should be sent in case if earlier API call produced result
-        /// containing NextToken. It is used for pagination.</p>
+        /// <p>NextToken should be sent in case if earlier API call produced result containing NextToken. It is used for pagination.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4716,32 +4660,22 @@ pub mod get_upgrade_history_input {
             self.domain_name = input;
             self
         }
-        /// <p>
-        /// Set this value to limit the number of results returned.
-        /// </p>
+        /// <p> Set this value to limit the number of results returned. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>
-        /// Set this value to limit the number of results returned.
-        /// </p>
+        /// <p> Set this value to limit the number of results returned. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>
-        /// Paginated APIs accepts NextToken input to returns next page results and provides
-        /// a NextToken output in the response which can be used by the client to retrieve more results.
-        /// </p>
+        /// <p> Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>
-        /// Paginated APIs accepts NextToken input to returns next page results and provides
-        /// a NextToken output in the response which can be used by the client to retrieve more results.
-        /// </p>
+        /// <p> Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5413,16 +5347,12 @@ pub mod list_elasticsearch_instance_types_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Version of Elasticsearch for which list of supported elasticsearch
-        /// instance types are needed.
-        /// </p>
+        /// <p>Version of Elasticsearch for which list of supported elasticsearch instance types are needed. </p>
         pub fn elasticsearch_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.elasticsearch_version = Some(input.into());
             self
         }
-        /// <p>Version of Elasticsearch for which list of supported elasticsearch
-        /// instance types are needed.
-        /// </p>
+        /// <p>Version of Elasticsearch for which list of supported elasticsearch instance types are needed. </p>
         pub fn set_elasticsearch_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5430,46 +5360,32 @@ pub mod list_elasticsearch_instance_types_input {
             self.elasticsearch_version = input;
             self
         }
-        /// <p>DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are
-        /// querying for list of available Elasticsearch instance types when modifying existing domain.
-        /// </p>
+        /// <p>DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are querying for list of available Elasticsearch instance types when modifying existing domain. </p>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_name = Some(input.into());
             self
         }
-        /// <p>DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are
-        /// querying for list of available Elasticsearch instance types when modifying existing domain.
-        /// </p>
+        /// <p>DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are querying for list of available Elasticsearch instance types when modifying existing domain. </p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
         }
-        /// <p>
-        /// Set this value to limit the number of results returned.
-        /// Value provided must be greater than 30 else it wont be honored.
-        /// </p>
+        /// <p> Set this value to limit the number of results returned. Value provided must be greater than 30 else it wont be honored. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>
-        /// Set this value to limit the number of results returned.
-        /// Value provided must be greater than 30 else it wont be honored.
-        /// </p>
+        /// <p> Set this value to limit the number of results returned. Value provided must be greater than 30 else it wont be honored. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>NextToken should be sent in case if earlier API call produced result
-        /// containing NextToken. It is used for pagination.
-        /// </p>
+        /// <p>NextToken should be sent in case if earlier API call produced result containing NextToken. It is used for pagination. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>NextToken should be sent in case if earlier API call produced result
-        /// containing NextToken. It is used for pagination.
-        /// </p>
+        /// <p>NextToken should be sent in case if earlier API call produced result containing NextToken. It is used for pagination. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5645,34 +5561,22 @@ pub mod list_elasticsearch_versions_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// Set this value to limit the number of results returned.
-        /// Value provided must be greater than 10 else it wont be honored.
-        /// </p>
+        /// <p> Set this value to limit the number of results returned. Value provided must be greater than 10 else it wont be honored. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>
-        /// Set this value to limit the number of results returned.
-        /// Value provided must be greater than 10 else it wont be honored.
-        /// </p>
+        /// <p> Set this value to limit the number of results returned. Value provided must be greater than 10 else it wont be honored. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>
-        /// Paginated APIs accepts NextToken input to returns next page results and provides
-        /// a NextToken output in the response which can be used by the client to retrieve more results.
-        /// </p>
+        /// <p> Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>
-        /// Paginated APIs accepts NextToken input to returns next page results and provides
-        /// a NextToken output in the response which can be used by the client to retrieve more results.
-        /// </p>
+        /// <p> Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6942,8 +6846,7 @@ pub mod update_elasticsearch_domain_config_input {
         ///
         /// To override the contents of this collection use [`set_advanced_options`](Self::set_advanced_options).
         ///
-        /// <p>Modifies the advanced option to allow references to indices in an HTTP request body.  Must be <code>false</code> when configuring access to individual sub-resources.  By default, the value is <code>true</code>.
-        /// See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</p>
+        /// <p>Modifies the advanced option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</p>
         pub fn advanced_options(
             mut self,
             k: impl Into<std::string::String>,
@@ -6954,8 +6857,7 @@ pub mod update_elasticsearch_domain_config_input {
             self.advanced_options = Some(hash_map);
             self
         }
-        /// <p>Modifies the advanced option to allow references to indices in an HTTP request body.  Must be <code>false</code> when configuring access to individual sub-resources.  By default, the value is <code>true</code>.
-        /// See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</p>
+        /// <p>Modifies the advanced option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</p>
         pub fn set_advanced_options(
             mut self,
             input: std::option::Option<
@@ -7080,20 +6982,12 @@ pub mod update_elasticsearch_domain_config_input {
             self.auto_tune_options = input;
             self
         }
-        /// <p>
-        /// This flag, when set to True, specifies whether the <code>UpdateElasticsearchDomain</code> request should return the results of validation checks without actually applying the change.
-        /// This flag, when set to True, specifies the deployment mechanism through which the update shall be applied on the domain.
-        /// This will not actually perform the Update.
-        /// </p>
+        /// <p> This flag, when set to True, specifies whether the <code>UpdateElasticsearchDomain</code> request should return the results of validation checks without actually applying the change. This flag, when set to True, specifies the deployment mechanism through which the update shall be applied on the domain. This will not actually perform the Update. </p>
         pub fn dry_run(mut self, input: bool) -> Self {
             self.dry_run = Some(input);
             self
         }
-        /// <p>
-        /// This flag, when set to True, specifies whether the <code>UpdateElasticsearchDomain</code> request should return the results of validation checks without actually applying the change.
-        /// This flag, when set to True, specifies the deployment mechanism through which the update shall be applied on the domain.
-        /// This will not actually perform the Update.
-        /// </p>
+        /// <p> This flag, when set to True, specifies whether the <code>UpdateElasticsearchDomain</code> request should return the results of validation checks without actually applying the change. This flag, when set to True, specifies the deployment mechanism through which the update shall be applied on the domain. This will not actually perform the Update. </p>
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
             self.dry_run = input;
             self
@@ -7492,18 +7386,12 @@ pub mod upgrade_elasticsearch_domain_input {
             self.target_version = input;
             self
         }
-        /// <p>
-        /// This flag, when set to True, indicates that an Upgrade Eligibility Check needs to be performed.
-        /// This will not actually perform the Upgrade.
-        /// </p>
+        /// <p> This flag, when set to True, indicates that an Upgrade Eligibility Check needs to be performed. This will not actually perform the Upgrade. </p>
         pub fn perform_check_only(mut self, input: bool) -> Self {
             self.perform_check_only = Some(input);
             self
         }
-        /// <p>
-        /// This flag, when set to True, indicates that an Upgrade Eligibility Check needs to be performed.
-        /// This will not actually perform the Upgrade.
-        /// </p>
+        /// <p> This flag, when set to True, indicates that an Upgrade Eligibility Check needs to be performed. This will not actually perform the Upgrade. </p>
         pub fn set_perform_check_only(mut self, input: std::option::Option<bool>) -> Self {
             self.perform_check_only = input;
             self
@@ -7643,13 +7531,7 @@ impl UpgradeElasticsearchDomainInput {
     }
 }
 
-/// <p>
-/// Container for request parameters to
-/// <code>
-/// <a>UpgradeElasticsearchDomain</a>
-/// </code>
-/// operation.
-/// </p>
+/// <p> Container for request parameters to <code> <code>UpgradeElasticsearchDomain</code> </code> operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpgradeElasticsearchDomainInput {
@@ -7657,10 +7539,7 @@ pub struct UpgradeElasticsearchDomainInput {
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The version of Elasticsearch that you intend to upgrade the domain to.</p>
     pub target_version: std::option::Option<std::string::String>,
-    /// <p>
-    /// This flag, when set to True, indicates that an Upgrade Eligibility Check needs to be performed.
-    /// This will not actually perform the Upgrade.
-    /// </p>
+    /// <p> This flag, when set to True, indicates that an Upgrade Eligibility Check needs to be performed. This will not actually perform the Upgrade. </p>
     pub perform_check_only: std::option::Option<bool>,
 }
 impl UpgradeElasticsearchDomainInput {
@@ -7672,10 +7551,7 @@ impl UpgradeElasticsearchDomainInput {
     pub fn target_version(&self) -> std::option::Option<&str> {
         self.target_version.as_deref()
     }
-    /// <p>
-    /// This flag, when set to True, indicates that an Upgrade Eligibility Check needs to be performed.
-    /// This will not actually perform the Upgrade.
-    /// </p>
+    /// <p> This flag, when set to True, indicates that an Upgrade Eligibility Check needs to be performed. This will not actually perform the Upgrade. </p>
     pub fn perform_check_only(&self) -> std::option::Option<bool> {
         self.perform_check_only
     }
@@ -7690,13 +7566,7 @@ impl std::fmt::Debug for UpgradeElasticsearchDomainInput {
     }
 }
 
-/// <p>
-/// Container for request parameters to
-/// <code>
-/// <a>UpdatePackage</a>
-/// </code>
-/// operation.
-/// </p>
+/// <p> Container for request parameters to <code> <code>UpdatePackage</code> </code> operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePackageInput {
@@ -7738,7 +7608,7 @@ impl std::fmt::Debug for UpdatePackageInput {
     }
 }
 
-/// <p>Container for the parameters to the <code><a>UpdateElasticsearchDomain</a></code> operation. Specifies the type and number of instances in the domain cluster.</p>
+/// <p>Container for the parameters to the <code><code>UpdateElasticsearchDomain</code></code> operation. Specifies the type and number of instances in the domain cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateElasticsearchDomainConfigInput {
@@ -7754,8 +7624,7 @@ pub struct UpdateElasticsearchDomainConfigInput {
     pub vpc_options: std::option::Option<crate::model::VpcOptions>,
     /// <p>Options to specify the Cognito user and identity pools for Kibana authentication. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html" target="_blank">Amazon Cognito Authentication for Kibana</a>.</p>
     pub cognito_options: std::option::Option<crate::model::CognitoOptions>,
-    /// <p>Modifies the advanced option to allow references to indices in an HTTP request body.  Must be <code>false</code> when configuring access to individual sub-resources.  By default, the value is <code>true</code>.
-    /// See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</p>
+    /// <p>Modifies the advanced option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</p>
     pub advanced_options:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>IAM access policy as a JSON-formatted string.</p>
@@ -7775,11 +7644,7 @@ pub struct UpdateElasticsearchDomainConfigInput {
     pub encryption_at_rest_options: std::option::Option<crate::model::EncryptionAtRestOptions>,
     /// <p>Specifies Auto-Tune options.</p>
     pub auto_tune_options: std::option::Option<crate::model::AutoTuneOptions>,
-    /// <p>
-    /// This flag, when set to True, specifies whether the <code>UpdateElasticsearchDomain</code> request should return the results of validation checks without actually applying the change.
-    /// This flag, when set to True, specifies the deployment mechanism through which the update shall be applied on the domain.
-    /// This will not actually perform the Update.
-    /// </p>
+    /// <p> This flag, when set to True, specifies whether the <code>UpdateElasticsearchDomain</code> request should return the results of validation checks without actually applying the change. This flag, when set to True, specifies the deployment mechanism through which the update shall be applied on the domain. This will not actually perform the Update. </p>
     pub dry_run: std::option::Option<bool>,
 }
 impl UpdateElasticsearchDomainConfigInput {
@@ -7809,8 +7674,7 @@ impl UpdateElasticsearchDomainConfigInput {
     pub fn cognito_options(&self) -> std::option::Option<&crate::model::CognitoOptions> {
         self.cognito_options.as_ref()
     }
-    /// <p>Modifies the advanced option to allow references to indices in an HTTP request body.  Must be <code>false</code> when configuring access to individual sub-resources.  By default, the value is <code>true</code>.
-    /// See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</p>
+    /// <p>Modifies the advanced option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</p>
     pub fn advanced_options(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -7857,11 +7721,7 @@ impl UpdateElasticsearchDomainConfigInput {
     pub fn auto_tune_options(&self) -> std::option::Option<&crate::model::AutoTuneOptions> {
         self.auto_tune_options.as_ref()
     }
-    /// <p>
-    /// This flag, when set to True, specifies whether the <code>UpdateElasticsearchDomain</code> request should return the results of validation checks without actually applying the change.
-    /// This flag, when set to True, specifies the deployment mechanism through which the update shall be applied on the domain.
-    /// This will not actually perform the Update.
-    /// </p>
+    /// <p> This flag, when set to True, specifies whether the <code>UpdateElasticsearchDomain</code> request should return the results of validation checks without actually applying the change. This flag, when set to True, specifies the deployment mechanism through which the update shall be applied on the domain. This will not actually perform the Update. </p>
     pub fn dry_run(&self) -> std::option::Option<bool> {
         self.dry_run
     }
@@ -7897,7 +7757,7 @@ impl std::fmt::Debug for UpdateElasticsearchDomainConfigInput {
     }
 }
 
-/// <p>Container for the parameters to the <code><a>StartElasticsearchServiceSoftwareUpdate</a></code> operation. Specifies the name of the Elasticsearch domain that you wish to schedule a service software update on.</p>
+/// <p>Container for the parameters to the <code><code>StartElasticsearchServiceSoftwareUpdate</code></code> operation. Specifies the name of the Elasticsearch domain that you wish to schedule a service software update on.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartElasticsearchServiceSoftwareUpdateInput {
@@ -7918,7 +7778,7 @@ impl std::fmt::Debug for StartElasticsearchServiceSoftwareUpdateInput {
     }
 }
 
-/// <p>Container for the parameters to the <code><a>RemoveTags</a></code> operation. Specify the <code>ARN</code> for the Elasticsearch domain from which you want to remove the specified <code>TagKey</code>.</p>
+/// <p>Container for the parameters to the <code><code>RemoveTags</code></code> operation. Specify the <code>ARN</code> for the Elasticsearch domain from which you want to remove the specified <code>TagKey</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveTagsInput {
@@ -7946,7 +7806,7 @@ impl std::fmt::Debug for RemoveTagsInput {
     }
 }
 
-/// <p>Container for the parameters to the <code><a>RejectInboundCrossClusterSearchConnection</a></code> operation.</p>
+/// <p>Container for the parameters to the <code><code>RejectInboundCrossClusterSearchConnection</code></code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RejectInboundCrossClusterSearchConnectionInput {
@@ -8008,7 +7868,7 @@ impl std::fmt::Debug for PurchaseReservedElasticsearchInstanceOfferingInput {
     }
 }
 
-/// <p>Container for the parameters to the <code><a>ListTags</a></code> operation. Specify the <code>ARN</code> for the Elasticsearch domain to which the tags are attached that you want to view are attached.</p>
+/// <p>Container for the parameters to the <code><code>ListTags</code></code> operation. Specify the <code>ARN</code> for the Elasticsearch domain to which the tags are attached that you want to view are attached.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsInput {
@@ -8029,13 +7889,7 @@ impl std::fmt::Debug for ListTagsInput {
     }
 }
 
-/// <p>
-/// Container for request parameters to
-/// <code>
-/// <a>ListPackagesForDomain</a>
-/// </code>
-/// operation.
-/// </p>
+/// <p> Container for request parameters to <code> <code>ListPackagesForDomain</code> </code> operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPackagesForDomainInput {
@@ -8070,55 +7924,24 @@ impl std::fmt::Debug for ListPackagesForDomainInput {
     }
 }
 
-/// <p>
-/// Container for the parameters to the
-/// <code>
-/// <a>ListElasticsearchVersions</a>
-/// </code>
-/// operation.
-/// <p>
-/// Use
-/// <code>
-/// <a>MaxResults</a>
-/// </code>
-/// to control the maximum number of results to retrieve in a single
-/// call.
-/// </p>
-/// <p>
-/// Use
-/// <code>
-/// <a>NextToken</a>
-/// </code>
-/// in response to retrieve more results. If the received response does
-/// not contain a NextToken, then there are no more results to retrieve.
-/// </p>
-/// </p>
+/// <p> Container for the parameters to the <code> <code>ListElasticsearchVersions</code> </code> operation. </p>
+/// <p> Use <code> <code>MaxResults</code> </code> to control the maximum number of results to retrieve in a single call. </p>
+/// <p> Use <code> <code>NextToken</code> </code> in response to retrieve more results. If the received response does not contain a NextToken, then there are no more results to retrieve. </p>
+/// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListElasticsearchVersionsInput {
-    /// <p>
-    /// Set this value to limit the number of results returned.
-    /// Value provided must be greater than 10 else it wont be honored.
-    /// </p>
+    /// <p> Set this value to limit the number of results returned. Value provided must be greater than 10 else it wont be honored. </p>
     pub max_results: i32,
-    /// <p>
-    /// Paginated APIs accepts NextToken input to returns next page results and provides
-    /// a NextToken output in the response which can be used by the client to retrieve more results.
-    /// </p>
+    /// <p> Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListElasticsearchVersionsInput {
-    /// <p>
-    /// Set this value to limit the number of results returned.
-    /// Value provided must be greater than 10 else it wont be honored.
-    /// </p>
+    /// <p> Set this value to limit the number of results returned. Value provided must be greater than 10 else it wont be honored. </p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// <p>
-    /// Paginated APIs accepts NextToken input to returns next page results and provides
-    /// a NextToken output in the response which can be used by the client to retrieve more results.
-    /// </p>
+    /// <p> Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -8132,57 +7955,33 @@ impl std::fmt::Debug for ListElasticsearchVersionsInput {
     }
 }
 
-/// <p>
-/// Container for the parameters to the
-/// <code>
-/// <a>ListElasticsearchInstanceTypes</a>
-/// </code>
-/// operation.
-/// </p>
+/// <p> Container for the parameters to the <code> <code>ListElasticsearchInstanceTypes</code> </code> operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListElasticsearchInstanceTypesInput {
-    /// <p>Version of Elasticsearch for which list of supported elasticsearch
-    /// instance types are needed.
-    /// </p>
+    /// <p>Version of Elasticsearch for which list of supported elasticsearch instance types are needed. </p>
     pub elasticsearch_version: std::option::Option<std::string::String>,
-    /// <p>DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are
-    /// querying for list of available Elasticsearch instance types when modifying existing domain.
-    /// </p>
+    /// <p>DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are querying for list of available Elasticsearch instance types when modifying existing domain. </p>
     pub domain_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// Set this value to limit the number of results returned.
-    /// Value provided must be greater than 30 else it wont be honored.
-    /// </p>
+    /// <p> Set this value to limit the number of results returned. Value provided must be greater than 30 else it wont be honored. </p>
     pub max_results: i32,
-    /// <p>NextToken should be sent in case if earlier API call produced result
-    /// containing NextToken. It is used for pagination.
-    /// </p>
+    /// <p>NextToken should be sent in case if earlier API call produced result containing NextToken. It is used for pagination. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListElasticsearchInstanceTypesInput {
-    /// <p>Version of Elasticsearch for which list of supported elasticsearch
-    /// instance types are needed.
-    /// </p>
+    /// <p>Version of Elasticsearch for which list of supported elasticsearch instance types are needed. </p>
     pub fn elasticsearch_version(&self) -> std::option::Option<&str> {
         self.elasticsearch_version.as_deref()
     }
-    /// <p>DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are
-    /// querying for list of available Elasticsearch instance types when modifying existing domain.
-    /// </p>
+    /// <p>DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are querying for list of available Elasticsearch instance types when modifying existing domain. </p>
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
-    /// <p>
-    /// Set this value to limit the number of results returned.
-    /// Value provided must be greater than 30 else it wont be honored.
-    /// </p>
+    /// <p> Set this value to limit the number of results returned. Value provided must be greater than 30 else it wont be honored. </p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// <p>NextToken should be sent in case if earlier API call produced result
-    /// containing NextToken. It is used for pagination.
-    /// </p>
+    /// <p>NextToken should be sent in case if earlier API call produced result containing NextToken. It is used for pagination. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -8198,13 +7997,7 @@ impl std::fmt::Debug for ListElasticsearchInstanceTypesInput {
     }
 }
 
-/// <p>
-/// Container for request parameters to
-/// <code>
-/// <a>ListDomainsForPackage</a>
-/// </code>
-/// operation.
-/// </p>
+/// <p> Container for request parameters to <code> <code>ListDomainsForPackage</code> </code> operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDomainsForPackageInput {
@@ -8239,7 +8032,7 @@ impl std::fmt::Debug for ListDomainsForPackageInput {
     }
 }
 
-/// <p> Container for the parameters to the <code><a>ListDomainNames</a></code> operation.</p>
+/// <p> Container for the parameters to the <code><code>ListDomainNames</code></code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDomainNamesInput {
@@ -8260,13 +8053,7 @@ impl std::fmt::Debug for ListDomainNamesInput {
     }
 }
 
-/// <p>
-/// Container for request parameters to
-/// <code>
-/// <a>GetUpgradeStatus</a>
-/// </code>
-/// operation.
-/// </p>
+/// <p> Container for request parameters to <code> <code>GetUpgradeStatus</code> </code> operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUpgradeStatusInput {
@@ -8287,26 +8074,15 @@ impl std::fmt::Debug for GetUpgradeStatusInput {
     }
 }
 
-/// <p>
-/// Container for request parameters to
-/// <code>
-/// <a>GetUpgradeHistory</a>
-/// </code>
-/// operation.
-/// </p>
+/// <p> Container for request parameters to <code> <code>GetUpgradeHistory</code> </code> operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUpgradeHistoryInput {
     /// <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     pub domain_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// Set this value to limit the number of results returned.
-    /// </p>
+    /// <p> Set this value to limit the number of results returned. </p>
     pub max_results: i32,
-    /// <p>
-    /// Paginated APIs accepts NextToken input to returns next page results and provides
-    /// a NextToken output in the response which can be used by the client to retrieve more results.
-    /// </p>
+    /// <p> Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetUpgradeHistoryInput {
@@ -8314,16 +8090,11 @@ impl GetUpgradeHistoryInput {
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
-    /// <p>
-    /// Set this value to limit the number of results returned.
-    /// </p>
+    /// <p> Set this value to limit the number of results returned. </p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// <p>
-    /// Paginated APIs accepts NextToken input to returns next page results and provides
-    /// a NextToken output in the response which can be used by the client to retrieve more results.
-    /// </p>
+    /// <p> Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -8338,13 +8109,7 @@ impl std::fmt::Debug for GetUpgradeHistoryInput {
     }
 }
 
-/// <p>
-/// Container for request parameters to
-/// <code>
-/// <a>GetPackageVersionHistory</a>
-/// </code>
-/// operation.
-/// </p>
+/// <p> Container for request parameters to <code> <code>GetPackageVersionHistory</code> </code> operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPackageVersionHistoryInput {
@@ -8379,13 +8144,7 @@ impl std::fmt::Debug for GetPackageVersionHistoryInput {
     }
 }
 
-/// <p>
-/// Container for request parameters to
-/// <code>
-/// <a>GetCompatibleElasticsearchVersions</a>
-/// </code>
-/// operation.
-/// </p>
+/// <p> Container for request parameters to <code> <code>GetCompatibleElasticsearchVersions</code> </code> operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCompatibleElasticsearchVersionsInput {
@@ -8406,13 +8165,7 @@ impl std::fmt::Debug for GetCompatibleElasticsearchVersionsInput {
     }
 }
 
-/// <p>
-/// Container for request parameters to
-/// <code>
-/// <a>DissociatePackage</a>
-/// </code>
-/// operation.
-/// </p>
+/// <p> Container for request parameters to <code> <code>DissociatePackage</code> </code> operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DissociatePackageInput {
@@ -8448,8 +8201,7 @@ pub struct DescribeReservedElasticsearchInstancesInput {
     pub reserved_elasticsearch_instance_id: std::option::Option<std::string::String>,
     /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
     pub max_results: i32,
-    /// <p>NextToken should be sent in case if earlier API call produced result
-    /// containing NextToken. It is used for pagination.</p>
+    /// <p>NextToken should be sent in case if earlier API call produced result containing NextToken. It is used for pagination.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeReservedElasticsearchInstancesInput {
@@ -8461,8 +8213,7 @@ impl DescribeReservedElasticsearchInstancesInput {
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// <p>NextToken should be sent in case if earlier API call produced result
-    /// containing NextToken. It is used for pagination.</p>
+    /// <p>NextToken should be sent in case if earlier API call produced result containing NextToken. It is used for pagination.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -8488,8 +8239,7 @@ pub struct DescribeReservedElasticsearchInstanceOfferingsInput {
     pub reserved_elasticsearch_instance_offering_id: std::option::Option<std::string::String>,
     /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
     pub max_results: i32,
-    /// <p>NextToken should be sent in case if earlier API call produced result
-    /// containing NextToken. It is used for pagination.</p>
+    /// <p>NextToken should be sent in case if earlier API call produced result containing NextToken. It is used for pagination.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeReservedElasticsearchInstanceOfferingsInput {
@@ -8501,8 +8251,7 @@ impl DescribeReservedElasticsearchInstanceOfferingsInput {
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// <p>NextToken should be sent in case if earlier API call produced result
-    /// containing NextToken. It is used for pagination.</p>
+    /// <p>NextToken should be sent in case if earlier API call produced result containing NextToken. It is used for pagination.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -8520,13 +8269,7 @@ impl std::fmt::Debug for DescribeReservedElasticsearchInstanceOfferingsInput {
     }
 }
 
-/// <p>
-/// Container for request parameters to
-/// <code>
-/// <a>DescribePackage</a>
-/// </code>
-/// operation.
-/// </p>
+/// <p> Container for request parameters to <code> <code>DescribePackage</code> </code> operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePackagesInput {
@@ -8561,13 +8304,11 @@ impl std::fmt::Debug for DescribePackagesInput {
     }
 }
 
-/// <p>Container for the parameters to the <code><a>DescribeOutboundCrossClusterSearchConnections</a></code> operation.</p>
+/// <p>Container for the parameters to the <code><code>DescribeOutboundCrossClusterSearchConnections</code></code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeOutboundCrossClusterSearchConnectionsInput {
-    /// <p>
-    /// A list of filters used to match properties for outbound cross-cluster search connection.
-    /// Available <code><a>Filter</a></code> names for this operation are:
+    /// <p> A list of filters used to match properties for outbound cross-cluster search connection. Available <code><code>Filter</code></code> names for this operation are: </p>
     /// <ul>
     /// <li>cross-cluster-search-connection-id</li>
     /// <li>destination-domain-info.domain-name</li>
@@ -8575,7 +8316,7 @@ pub struct DescribeOutboundCrossClusterSearchConnectionsInput {
     /// <li>destination-domain-info.region</li>
     /// <li>source-domain-info.domain-name</li>
     /// </ul>
-    /// </p>
+    /// <p></p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
     pub max_results: i32,
@@ -8583,9 +8324,7 @@ pub struct DescribeOutboundCrossClusterSearchConnectionsInput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeOutboundCrossClusterSearchConnectionsInput {
-    /// <p>
-    /// A list of filters used to match properties for outbound cross-cluster search connection.
-    /// Available <code><a>Filter</a></code> names for this operation are:
+    /// <p> A list of filters used to match properties for outbound cross-cluster search connection. Available <code><code>Filter</code></code> names for this operation are: </p>
     /// <ul>
     /// <li>cross-cluster-search-connection-id</li>
     /// <li>destination-domain-info.domain-name</li>
@@ -8593,7 +8332,7 @@ impl DescribeOutboundCrossClusterSearchConnectionsInput {
     /// <li>destination-domain-info.region</li>
     /// <li>source-domain-info.domain-name</li>
     /// </ul>
-    /// </p>
+    /// <p></p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
@@ -8616,13 +8355,11 @@ impl std::fmt::Debug for DescribeOutboundCrossClusterSearchConnectionsInput {
     }
 }
 
-/// <p>Container for the parameters to the <code><a>DescribeInboundCrossClusterSearchConnections</a></code> operation.</p>
+/// <p>Container for the parameters to the <code><code>DescribeInboundCrossClusterSearchConnections</code></code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInboundCrossClusterSearchConnectionsInput {
-    /// <p>
-    /// A list of filters used to match properties for inbound cross-cluster search connection.
-    /// Available <code><a>Filter</a></code> names for this operation are:
+    /// <p> A list of filters used to match properties for inbound cross-cluster search connection. Available <code><code>Filter</code></code> names for this operation are: </p>
     /// <ul>
     /// <li>cross-cluster-search-connection-id</li>
     /// <li>source-domain-info.domain-name</li>
@@ -8630,7 +8367,7 @@ pub struct DescribeInboundCrossClusterSearchConnectionsInput {
     /// <li>source-domain-info.region</li>
     /// <li>destination-domain-info.domain-name</li>
     /// </ul>
-    /// </p>
+    /// <p></p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
     pub max_results: i32,
@@ -8638,9 +8375,7 @@ pub struct DescribeInboundCrossClusterSearchConnectionsInput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeInboundCrossClusterSearchConnectionsInput {
-    /// <p>
-    /// A list of filters used to match properties for inbound cross-cluster search connection.
-    /// Available <code><a>Filter</a></code> names for this operation are:
+    /// <p> A list of filters used to match properties for inbound cross-cluster search connection. Available <code><code>Filter</code></code> names for this operation are: </p>
     /// <ul>
     /// <li>cross-cluster-search-connection-id</li>
     /// <li>source-domain-info.domain-name</li>
@@ -8648,7 +8383,7 @@ impl DescribeInboundCrossClusterSearchConnectionsInput {
     /// <li>source-domain-info.region</li>
     /// <li>destination-domain-info.domain-name</li>
     /// </ul>
-    /// </p>
+    /// <p></p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
     }
@@ -8671,73 +8406,27 @@ impl std::fmt::Debug for DescribeInboundCrossClusterSearchConnectionsInput {
     }
 }
 
-/// <p>
-/// Container for the parameters to
-/// <code>
-/// <a>DescribeElasticsearchInstanceTypeLimits</a>
-/// </code>
-/// operation.
-/// </p>
+/// <p> Container for the parameters to <code> <code>DescribeElasticsearchInstanceTypeLimits</code> </code> operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeElasticsearchInstanceTypeLimitsInput {
-    /// <p>
-    /// DomainName represents the name of the Domain that we are trying to
-    /// modify. This should be present only if we are
-    /// querying for Elasticsearch
-    /// <code>
-    /// <a>Limits</a>
-    /// </code>
-    /// for existing domain.
-    /// </p>
+    /// <p> DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are querying for Elasticsearch <code> <code>Limits</code> </code> for existing domain. </p>
     pub domain_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// The instance type for an Elasticsearch cluster for which Elasticsearch
-    /// <code>
-    /// <a>Limits</a>
-    /// </code>
-    /// are needed.
-    /// </p>
+    /// <p> The instance type for an Elasticsearch cluster for which Elasticsearch <code> <code>Limits</code> </code> are needed. </p>
     pub instance_type: std::option::Option<crate::model::EsPartitionInstanceType>,
-    /// <p>
-    /// Version of Elasticsearch for which
-    /// <code>
-    /// <a>Limits</a>
-    /// </code>
-    /// are needed.
-    /// </p>
+    /// <p> Version of Elasticsearch for which <code> <code>Limits</code> </code> are needed. </p>
     pub elasticsearch_version: std::option::Option<std::string::String>,
 }
 impl DescribeElasticsearchInstanceTypeLimitsInput {
-    /// <p>
-    /// DomainName represents the name of the Domain that we are trying to
-    /// modify. This should be present only if we are
-    /// querying for Elasticsearch
-    /// <code>
-    /// <a>Limits</a>
-    /// </code>
-    /// for existing domain.
-    /// </p>
+    /// <p> DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are querying for Elasticsearch <code> <code>Limits</code> </code> for existing domain. </p>
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
-    /// <p>
-    /// The instance type for an Elasticsearch cluster for which Elasticsearch
-    /// <code>
-    /// <a>Limits</a>
-    /// </code>
-    /// are needed.
-    /// </p>
+    /// <p> The instance type for an Elasticsearch cluster for which Elasticsearch <code> <code>Limits</code> </code> are needed. </p>
     pub fn instance_type(&self) -> std::option::Option<&crate::model::EsPartitionInstanceType> {
         self.instance_type.as_ref()
     }
-    /// <p>
-    /// Version of Elasticsearch for which
-    /// <code>
-    /// <a>Limits</a>
-    /// </code>
-    /// are needed.
-    /// </p>
+    /// <p> Version of Elasticsearch for which <code> <code>Limits</code> </code> are needed. </p>
     pub fn elasticsearch_version(&self) -> std::option::Option<&str> {
         self.elasticsearch_version.as_deref()
     }
@@ -8752,7 +8441,7 @@ impl std::fmt::Debug for DescribeElasticsearchInstanceTypeLimitsInput {
     }
 }
 
-/// <p>Container for the parameters to the <code><a>DescribeElasticsearchDomains</a></code> operation. By default, the API returns the status of all Elasticsearch domains.</p>
+/// <p>Container for the parameters to the <code><code>DescribeElasticsearchDomains</code></code> operation. By default, the API returns the status of all Elasticsearch domains.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeElasticsearchDomainsInput {
@@ -8794,7 +8483,7 @@ impl std::fmt::Debug for DescribeElasticsearchDomainConfigInput {
     }
 }
 
-/// <p>Container for the parameters to the <code><a>DescribeElasticsearchDomain</a></code> operation.</p>
+/// <p>Container for the parameters to the <code><code>DescribeElasticsearchDomain</code></code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeElasticsearchDomainInput {
@@ -8850,13 +8539,7 @@ impl std::fmt::Debug for DescribeDomainAutoTunesInput {
     }
 }
 
-/// <p>
-/// Container for request parameters to
-/// <code>
-/// <a>DeletePackage</a>
-/// </code>
-/// operation.
-/// </p>
+/// <p> Container for request parameters to <code> <code>DeletePackage</code> </code> operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePackageInput {
@@ -8877,7 +8560,7 @@ impl std::fmt::Debug for DeletePackageInput {
     }
 }
 
-/// <p>Container for the parameters to the <code><a>DeleteOutboundCrossClusterSearchConnection</a></code> operation.</p>
+/// <p>Container for the parameters to the <code><code>DeleteOutboundCrossClusterSearchConnection</code></code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteOutboundCrossClusterSearchConnectionInput {
@@ -8901,7 +8584,7 @@ impl std::fmt::Debug for DeleteOutboundCrossClusterSearchConnectionInput {
     }
 }
 
-/// <p>Container for the parameters to the <code><a>DeleteInboundCrossClusterSearchConnection</a></code> operation.</p>
+/// <p>Container for the parameters to the <code><code>DeleteInboundCrossClusterSearchConnection</code></code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteInboundCrossClusterSearchConnectionInput {
@@ -8936,7 +8619,7 @@ impl std::fmt::Debug for DeleteElasticsearchServiceRoleInput {
     }
 }
 
-/// <p>Container for the parameters to the <code><a>DeleteElasticsearchDomain</a></code> operation. Specifies the name of the Elasticsearch domain that you want to delete.</p>
+/// <p>Container for the parameters to the <code><code>DeleteElasticsearchDomain</code></code> operation. Specifies the name of the Elasticsearch domain that you want to delete.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteElasticsearchDomainInput {
@@ -8957,13 +8640,7 @@ impl std::fmt::Debug for DeleteElasticsearchDomainInput {
     }
 }
 
-/// <p>
-/// Container for request parameters to
-/// <code>
-/// <a>CreatePackage</a>
-/// </code>
-/// operation.
-/// </p>
+/// <p> Container for request parameters to <code> <code>CreatePackage</code> </code> operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePackageInput {
@@ -9005,23 +8682,23 @@ impl std::fmt::Debug for CreatePackageInput {
     }
 }
 
-/// <p>Container for the parameters to the <code><a>CreateOutboundCrossClusterSearchConnection</a></code> operation.</p>
+/// <p>Container for the parameters to the <code><code>CreateOutboundCrossClusterSearchConnection</code></code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateOutboundCrossClusterSearchConnectionInput {
-    /// <p>Specifies the <code><a>DomainInformation</a></code> for the source Elasticsearch domain.</p>
+    /// <p>Specifies the <code><code>DomainInformation</code></code> for the source Elasticsearch domain.</p>
     pub source_domain_info: std::option::Option<crate::model::DomainInformation>,
-    /// <p>Specifies the <code><a>DomainInformation</a></code> for the destination Elasticsearch domain.</p>
+    /// <p>Specifies the <code><code>DomainInformation</code></code> for the destination Elasticsearch domain.</p>
     pub destination_domain_info: std::option::Option<crate::model::DomainInformation>,
     /// <p>Specifies the connection alias that will be used by the customer for this connection.</p>
     pub connection_alias: std::option::Option<std::string::String>,
 }
 impl CreateOutboundCrossClusterSearchConnectionInput {
-    /// <p>Specifies the <code><a>DomainInformation</a></code> for the source Elasticsearch domain.</p>
+    /// <p>Specifies the <code><code>DomainInformation</code></code> for the source Elasticsearch domain.</p>
     pub fn source_domain_info(&self) -> std::option::Option<&crate::model::DomainInformation> {
         self.source_domain_info.as_ref()
     }
-    /// <p>Specifies the <code><a>DomainInformation</a></code> for the destination Elasticsearch domain.</p>
+    /// <p>Specifies the <code><code>DomainInformation</code></code> for the destination Elasticsearch domain.</p>
     pub fn destination_domain_info(&self) -> std::option::Option<&crate::model::DomainInformation> {
         self.destination_domain_info.as_ref()
     }
@@ -9046,8 +8723,7 @@ impl std::fmt::Debug for CreateOutboundCrossClusterSearchConnectionInput {
 pub struct CreateElasticsearchDomainInput {
     /// <p>The name of the Elasticsearch domain that you are creating. Domain names are unique across the domains owned by an account within an AWS region. Domain names must start with a lowercase letter and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     pub domain_name: std::option::Option<std::string::String>,
-    /// <p>String of format X.Y to specify version for the Elasticsearch domain eg. "1.5" or "2.3". For more information,
-    /// see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomains" target="_blank">Creating Elasticsearch Domains</a> in the <i>Amazon Elasticsearch Service Developer Guide</i>.</p>
+    /// <p>String of format X.Y to specify version for the Elasticsearch domain eg. "1.5" or "2.3". For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomains" target="_blank">Creating Elasticsearch Domains</a> in the <i>Amazon Elasticsearch Service Developer Guide</i>.</p>
     pub elasticsearch_version: std::option::Option<std::string::String>,
     /// <p>Configuration options for an Elasticsearch domain. Specifies the instance type and number of instances in the domain cluster. </p>
     pub elasticsearch_cluster_config: std::option::Option<crate::model::ElasticsearchClusterConfig>,
@@ -9066,8 +8742,7 @@ pub struct CreateElasticsearchDomainInput {
     /// <p>Specifies the NodeToNodeEncryptionOptions.</p>
     pub node_to_node_encryption_options:
         std::option::Option<crate::model::NodeToNodeEncryptionOptions>,
-    /// <p> Option to allow references to indices in an HTTP request body.  Must be <code>false</code> when configuring access to individual sub-resources.  By default, the value is <code>true</code>.
-    /// See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</p>
+    /// <p> Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</p>
     pub advanced_options:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Map of <code>LogType</code> and <code>LogPublishingOption</code>, each containing options to publish a given type of Elasticsearch log.</p>
@@ -9088,8 +8763,7 @@ impl CreateElasticsearchDomainInput {
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
-    /// <p>String of format X.Y to specify version for the Elasticsearch domain eg. "1.5" or "2.3". For more information,
-    /// see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomains" target="_blank">Creating Elasticsearch Domains</a> in the <i>Amazon Elasticsearch Service Developer Guide</i>.</p>
+    /// <p>String of format X.Y to specify version for the Elasticsearch domain eg. "1.5" or "2.3". For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomains" target="_blank">Creating Elasticsearch Domains</a> in the <i>Amazon Elasticsearch Service Developer Guide</i>.</p>
     pub fn elasticsearch_version(&self) -> std::option::Option<&str> {
         self.elasticsearch_version.as_deref()
     }
@@ -9131,8 +8805,7 @@ impl CreateElasticsearchDomainInput {
     ) -> std::option::Option<&crate::model::NodeToNodeEncryptionOptions> {
         self.node_to_node_encryption_options.as_ref()
     }
-    /// <p> Option to allow references to indices in an HTTP request body.  Must be <code>false</code> when configuring access to individual sub-resources.  By default, the value is <code>true</code>.
-    /// See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</p>
+    /// <p> Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</p>
     pub fn advanced_options(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -9200,7 +8873,7 @@ impl std::fmt::Debug for CreateElasticsearchDomainInput {
     }
 }
 
-/// <p>Container for the parameters to the <code><a>CancelElasticsearchServiceSoftwareUpdate</a></code> operation. Specifies the name of the Elasticsearch domain that you wish to cancel a service software update on.</p>
+/// <p>Container for the parameters to the <code><code>CancelElasticsearchServiceSoftwareUpdate</code></code> operation. Specifies the name of the Elasticsearch domain that you wish to cancel a service software update on.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelElasticsearchServiceSoftwareUpdateInput {
@@ -9221,13 +8894,7 @@ impl std::fmt::Debug for CancelElasticsearchServiceSoftwareUpdateInput {
     }
 }
 
-/// <p>
-/// Container for request parameters to
-/// <code>
-/// <a>AssociatePackage</a>
-/// </code>
-/// operation.
-/// </p>
+/// <p> Container for request parameters to <code> <code>AssociatePackage</code> </code> operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociatePackageInput {
@@ -9255,7 +8922,7 @@ impl std::fmt::Debug for AssociatePackageInput {
     }
 }
 
-/// <p>Container for the parameters to the <code><a>AddTags</a></code> operation. Specify the tags that you want to attach to the Elasticsearch domain.</p>
+/// <p>Container for the parameters to the <code><code>AddTags</code></code> operation. Specify the tags that you want to attach to the Elasticsearch domain.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddTagsInput {
@@ -9283,7 +8950,7 @@ impl std::fmt::Debug for AddTagsInput {
     }
 }
 
-/// <p>Container for the parameters to the <code><a>AcceptInboundCrossClusterSearchConnection</a></code> operation.</p>
+/// <p>Container for the parameters to the <code><code>AcceptInboundCrossClusterSearchConnection</code></code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcceptInboundCrossClusterSearchConnectionInput {

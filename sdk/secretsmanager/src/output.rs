@@ -159,29 +159,18 @@ impl UpdateSecretVersionStageOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSecretOutput {
-    /// <p>The ARN of the secret that was updated.</p>
-    /// <note>
-    /// <p>Secrets Manager automatically adds several random characters to the name at the end of the ARN when
-    /// you initially create a secret. This affects only the ARN and not the actual friendly name.
-    /// This ensures that if you create a new secret with the same name as an old secret that you
-    /// previously deleted, then users with access to the old secret <i>don't</i>
-    /// automatically get access to the new secret because the ARNs are different.</p>
+    /// <p>The ARN of the secret that was updated.</p> <note>
+    /// <p>Secrets Manager automatically adds several random characters to the name at the end of the ARN when you initially create a secret. This affects only the ARN and not the actual friendly name. This ensures that if you create a new secret with the same name as an old secret that you previously deleted, then users with access to the old secret <i>don't</i> automatically get access to the new secret because the ARNs are different.</p>
     /// </note>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The friendly name of the secret that was updated.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>If a new version of the secret was created by this operation, then <code>VersionId</code>
-    /// contains the unique identifier of the new version.</p>
+    /// <p>If a new version of the secret was created by this operation, then <code>VersionId</code> contains the unique identifier of the new version.</p>
     pub version_id: std::option::Option<std::string::String>,
 }
 impl UpdateSecretOutput {
-    /// <p>The ARN of the secret that was updated.</p>
-    /// <note>
-    /// <p>Secrets Manager automatically adds several random characters to the name at the end of the ARN when
-    /// you initially create a secret. This affects only the ARN and not the actual friendly name.
-    /// This ensures that if you create a new secret with the same name as an old secret that you
-    /// previously deleted, then users with access to the old secret <i>don't</i>
-    /// automatically get access to the new secret because the ARNs are different.</p>
+    /// <p>The ARN of the secret that was updated.</p> <note>
+    /// <p>Secrets Manager automatically adds several random characters to the name at the end of the ARN when you initially create a secret. This affects only the ARN and not the actual friendly name. This ensures that if you create a new secret with the same name as an old secret that you previously deleted, then users with access to the old secret <i>don't</i> automatically get access to the new secret because the ARNs are different.</p>
     /// </note>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
@@ -190,8 +179,7 @@ impl UpdateSecretOutput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>If a new version of the secret was created by this operation, then <code>VersionId</code>
-    /// contains the unique identifier of the new version.</p>
+    /// <p>If a new version of the secret was created by this operation, then <code>VersionId</code> contains the unique identifier of the new version.</p>
     pub fn version_id(&self) -> std::option::Option<&str> {
         self.version_id.as_deref()
     }
@@ -216,25 +204,15 @@ pub mod update_secret_output {
         pub(crate) version_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ARN of the secret that was updated.</p>
-        /// <note>
-        /// <p>Secrets Manager automatically adds several random characters to the name at the end of the ARN when
-        /// you initially create a secret. This affects only the ARN and not the actual friendly name.
-        /// This ensures that if you create a new secret with the same name as an old secret that you
-        /// previously deleted, then users with access to the old secret <i>don't</i>
-        /// automatically get access to the new secret because the ARNs are different.</p>
+        /// <p>The ARN of the secret that was updated.</p> <note>
+        /// <p>Secrets Manager automatically adds several random characters to the name at the end of the ARN when you initially create a secret. This affects only the ARN and not the actual friendly name. This ensures that if you create a new secret with the same name as an old secret that you previously deleted, then users with access to the old secret <i>don't</i> automatically get access to the new secret because the ARNs are different.</p>
         /// </note>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the secret that was updated.</p>
-        /// <note>
-        /// <p>Secrets Manager automatically adds several random characters to the name at the end of the ARN when
-        /// you initially create a secret. This affects only the ARN and not the actual friendly name.
-        /// This ensures that if you create a new secret with the same name as an old secret that you
-        /// previously deleted, then users with access to the old secret <i>don't</i>
-        /// automatically get access to the new secret because the ARNs are different.</p>
+        /// <p>The ARN of the secret that was updated.</p> <note>
+        /// <p>Secrets Manager automatically adds several random characters to the name at the end of the ARN when you initially create a secret. This affects only the ARN and not the actual friendly name. This ensures that if you create a new secret with the same name as an old secret that you previously deleted, then users with access to the old secret <i>don't</i> automatically get access to the new secret because the ARNs are different.</p>
         /// </note>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
@@ -250,14 +228,12 @@ pub mod update_secret_output {
             self.name = input;
             self
         }
-        /// <p>If a new version of the secret was created by this operation, then <code>VersionId</code>
-        /// contains the unique identifier of the new version.</p>
+        /// <p>If a new version of the secret was created by this operation, then <code>VersionId</code> contains the unique identifier of the new version.</p>
         pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.version_id = Some(input.into());
             self
         }
-        /// <p>If a new version of the secret was created by this operation, then <code>VersionId</code>
-        /// contains the unique identifier of the new version.</p>
+        /// <p>If a new version of the secret was created by this operation, then <code>VersionId</code> contains the unique identifier of the new version.</p>
         pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version_id = input;
             self
@@ -399,8 +375,7 @@ pub struct RotateSecretOutput {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The friendly name of the secret.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The ID of the new version of the secret created by the rotation started by this
-    /// request.</p>
+    /// <p>The ID of the new version of the secret created by the rotation started by this request.</p>
     pub version_id: std::option::Option<std::string::String>,
 }
 impl RotateSecretOutput {
@@ -412,8 +387,7 @@ impl RotateSecretOutput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The ID of the new version of the secret created by the rotation started by this
-    /// request.</p>
+    /// <p>The ID of the new version of the secret created by the rotation started by this request.</p>
     pub fn version_id(&self) -> std::option::Option<&str> {
         self.version_id.as_deref()
     }
@@ -458,14 +432,12 @@ pub mod rotate_secret_output {
             self.name = input;
             self
         }
-        /// <p>The ID of the new version of the secret created by the rotation started by this
-        /// request.</p>
+        /// <p>The ID of the new version of the secret created by the rotation started by this request.</p>
         pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.version_id = Some(input.into());
             self
         }
-        /// <p>The ID of the new version of the secret created by the rotation started by this
-        /// request.</p>
+        /// <p>The ID of the new version of the secret created by the rotation started by this request.</p>
         pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version_id = input;
             self
@@ -564,15 +536,13 @@ impl RestoreSecretOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicateSecretToRegionsOutput {
-    /// <p>Replicate a secret based on the <code>ReplicaRegionType</code>> consisting of a
-    /// Region(required) and a KMSKeyId (optional) which can be the ARN, KeyID, or Alias. </p>
+    /// <p>Replicate a secret based on the <code>ReplicaRegionType</code>&gt; consisting of a Region(required) and a KMSKeyId (optional) which can be the ARN, KeyID, or Alias. </p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>Describes the secret replication status as <code>PENDING</code>, <code>SUCCESS</code> or <code>FAIL</code>.</p>
     pub replication_status: std::option::Option<std::vec::Vec<crate::model::ReplicationStatusType>>,
 }
 impl ReplicateSecretToRegionsOutput {
-    /// <p>Replicate a secret based on the <code>ReplicaRegionType</code>> consisting of a
-    /// Region(required) and a KMSKeyId (optional) which can be the ARN, KeyID, or Alias. </p>
+    /// <p>Replicate a secret based on the <code>ReplicaRegionType</code>&gt; consisting of a Region(required) and a KMSKeyId (optional) which can be the ARN, KeyID, or Alias. </p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -602,14 +572,12 @@ pub mod replicate_secret_to_regions_output {
             std::option::Option<std::vec::Vec<crate::model::ReplicationStatusType>>,
     }
     impl Builder {
-        /// <p>Replicate a secret based on the <code>ReplicaRegionType</code>> consisting of a
-        /// Region(required) and a KMSKeyId (optional) which can be the ARN, KeyID, or Alias. </p>
+        /// <p>Replicate a secret based on the <code>ReplicaRegionType</code>&gt; consisting of a Region(required) and a KMSKeyId (optional) which can be the ARN, KeyID, or Alias. </p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>Replicate a secret based on the <code>ReplicaRegionType</code>> consisting of a
-        /// Region(required) and a KMSKeyId (optional) which can be the ARN, KeyID, or Alias. </p>
+        /// <p>Replicate a secret based on the <code>ReplicaRegionType</code>&gt; consisting of a Region(required) and a KMSKeyId (optional) which can be the ARN, KeyID, or Alias. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -744,9 +712,7 @@ pub struct PutSecretValueOutput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the version of the secret you just created or updated.</p>
     pub version_id: std::option::Option<std::string::String>,
-    /// <p>The list of staging labels that are currently attached to this version of the secret.
-    /// Staging labels are used to track a version as it progresses through the secret rotation
-    /// process.</p>
+    /// <p>The list of staging labels that are currently attached to this version of the secret. Staging labels are used to track a version as it progresses through the secret rotation process.</p>
     pub version_stages: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl PutSecretValueOutput {
@@ -762,9 +728,7 @@ impl PutSecretValueOutput {
     pub fn version_id(&self) -> std::option::Option<&str> {
         self.version_id.as_deref()
     }
-    /// <p>The list of staging labels that are currently attached to this version of the secret.
-    /// Staging labels are used to track a version as it progresses through the secret rotation
-    /// process.</p>
+    /// <p>The list of staging labels that are currently attached to this version of the secret. Staging labels are used to track a version as it progresses through the secret rotation process.</p>
     pub fn version_stages(&self) -> std::option::Option<&[std::string::String]> {
         self.version_stages.as_deref()
     }
@@ -825,18 +789,14 @@ pub mod put_secret_value_output {
         ///
         /// To override the contents of this collection use [`set_version_stages`](Self::set_version_stages).
         ///
-        /// <p>The list of staging labels that are currently attached to this version of the secret.
-        /// Staging labels are used to track a version as it progresses through the secret rotation
-        /// process.</p>
+        /// <p>The list of staging labels that are currently attached to this version of the secret. Staging labels are used to track a version as it progresses through the secret rotation process.</p>
         pub fn version_stages(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.version_stages.unwrap_or_default();
             v.push(input.into());
             self.version_stages = Some(v);
             self
         }
-        /// <p>The list of staging labels that are currently attached to this version of the secret.
-        /// Staging labels are used to track a version as it progresses through the secret rotation
-        /// process.</p>
+        /// <p>The list of staging labels that are currently attached to this version of the secret. Staging labels are used to track a version as it progresses through the secret rotation process.</p>
         pub fn set_version_stages(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -941,21 +901,10 @@ impl PutResourcePolicyOutput {
 pub struct ListSecretVersionIdsOutput {
     /// <p>The list of the currently available versions of the specified secret.</p>
     pub versions: std::option::Option<std::vec::Vec<crate::model::SecretVersionsListEntry>>,
-    /// <p>If present in the response, this value indicates that
-    /// there's more output available than included in the current response. This can
-    /// occur even when the response includes no values at all, such as when you ask for a filtered view
-    /// of a very long list. Use this value in the <code>NextToken</code> request parameter in a
-    /// subsequent call to the operation to continue processing and get the next part of the output. You
-    /// should repeat this until the <code>NextToken</code> response element comes back empty (as
-    /// <code>null</code>).</p>
+    /// <p>If present in the response, this value indicates that there's more output available than included in the current response. This can occur even when the response includes no values at all, such as when you ask for a filtered view of a very long list. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to continue processing and get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back empty (as <code>null</code>).</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) for the secret.</p>
-    /// <note>
-    /// <p>Secrets Manager automatically adds several random characters to the name at the end of the ARN when
-    /// you initially create a secret. This affects only the ARN and not the actual friendly name.
-    /// This ensures that if you create a new secret with the same name as an old secret that you
-    /// previously deleted, then users with access to the old secret <i>don't</i>
-    /// automatically get access to the new secret because the ARNs are different.</p>
+    /// <p>The Amazon Resource Name (ARN) for the secret.</p> <note>
+    /// <p>Secrets Manager automatically adds several random characters to the name at the end of the ARN when you initially create a secret. This affects only the ARN and not the actual friendly name. This ensures that if you create a new secret with the same name as an old secret that you previously deleted, then users with access to the old secret <i>don't</i> automatically get access to the new secret because the ARNs are different.</p>
     /// </note>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The friendly name of the secret.</p>
@@ -966,23 +915,12 @@ impl ListSecretVersionIdsOutput {
     pub fn versions(&self) -> std::option::Option<&[crate::model::SecretVersionsListEntry]> {
         self.versions.as_deref()
     }
-    /// <p>If present in the response, this value indicates that
-    /// there's more output available than included in the current response. This can
-    /// occur even when the response includes no values at all, such as when you ask for a filtered view
-    /// of a very long list. Use this value in the <code>NextToken</code> request parameter in a
-    /// subsequent call to the operation to continue processing and get the next part of the output. You
-    /// should repeat this until the <code>NextToken</code> response element comes back empty (as
-    /// <code>null</code>).</p>
+    /// <p>If present in the response, this value indicates that there's more output available than included in the current response. This can occur even when the response includes no values at all, such as when you ask for a filtered view of a very long list. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to continue processing and get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back empty (as <code>null</code>).</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) for the secret.</p>
-    /// <note>
-    /// <p>Secrets Manager automatically adds several random characters to the name at the end of the ARN when
-    /// you initially create a secret. This affects only the ARN and not the actual friendly name.
-    /// This ensures that if you create a new secret with the same name as an old secret that you
-    /// previously deleted, then users with access to the old secret <i>don't</i>
-    /// automatically get access to the new secret because the ARNs are different.</p>
+    /// <p>The Amazon Resource Name (ARN) for the secret.</p> <note>
+    /// <p>Secrets Manager automatically adds several random characters to the name at the end of the ARN when you initially create a secret. This affects only the ARN and not the actual friendly name. This ensures that if you create a new secret with the same name as an old secret that you previously deleted, then users with access to the old secret <i>don't</i> automatically get access to the new secret because the ARNs are different.</p>
     /// </note>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
@@ -1034,47 +972,25 @@ pub mod list_secret_version_ids_output {
             self.versions = input;
             self
         }
-        /// <p>If present in the response, this value indicates that
-        /// there's more output available than included in the current response. This can
-        /// occur even when the response includes no values at all, such as when you ask for a filtered view
-        /// of a very long list. Use this value in the <code>NextToken</code> request parameter in a
-        /// subsequent call to the operation to continue processing and get the next part of the output. You
-        /// should repeat this until the <code>NextToken</code> response element comes back empty (as
-        /// <code>null</code>).</p>
+        /// <p>If present in the response, this value indicates that there's more output available than included in the current response. This can occur even when the response includes no values at all, such as when you ask for a filtered view of a very long list. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to continue processing and get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back empty (as <code>null</code>).</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If present in the response, this value indicates that
-        /// there's more output available than included in the current response. This can
-        /// occur even when the response includes no values at all, such as when you ask for a filtered view
-        /// of a very long list. Use this value in the <code>NextToken</code> request parameter in a
-        /// subsequent call to the operation to continue processing and get the next part of the output. You
-        /// should repeat this until the <code>NextToken</code> response element comes back empty (as
-        /// <code>null</code>).</p>
+        /// <p>If present in the response, this value indicates that there's more output available than included in the current response. This can occur even when the response includes no values at all, such as when you ask for a filtered view of a very long list. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to continue processing and get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back empty (as <code>null</code>).</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the secret.</p>
-        /// <note>
-        /// <p>Secrets Manager automatically adds several random characters to the name at the end of the ARN when
-        /// you initially create a secret. This affects only the ARN and not the actual friendly name.
-        /// This ensures that if you create a new secret with the same name as an old secret that you
-        /// previously deleted, then users with access to the old secret <i>don't</i>
-        /// automatically get access to the new secret because the ARNs are different.</p>
+        /// <p>The Amazon Resource Name (ARN) for the secret.</p> <note>
+        /// <p>Secrets Manager automatically adds several random characters to the name at the end of the ARN when you initially create a secret. This affects only the ARN and not the actual friendly name. This ensures that if you create a new secret with the same name as an old secret that you previously deleted, then users with access to the old secret <i>don't</i> automatically get access to the new secret because the ARNs are different.</p>
         /// </note>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the secret.</p>
-        /// <note>
-        /// <p>Secrets Manager automatically adds several random characters to the name at the end of the ARN when
-        /// you initially create a secret. This affects only the ARN and not the actual friendly name.
-        /// This ensures that if you create a new secret with the same name as an old secret that you
-        /// previously deleted, then users with access to the old secret <i>don't</i>
-        /// automatically get access to the new secret because the ARNs are different.</p>
+        /// <p>The Amazon Resource Name (ARN) for the secret.</p> <note>
+        /// <p>Secrets Manager automatically adds several random characters to the name at the end of the ARN when you initially create a secret. This affects only the ARN and not the actual friendly name. This ensures that if you create a new secret with the same name as an old secret that you previously deleted, then users with access to the old secret <i>don't</i> automatically get access to the new secret because the ARNs are different.</p>
         /// </note>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
@@ -1114,13 +1030,7 @@ impl ListSecretVersionIdsOutput {
 pub struct ListSecretsOutput {
     /// <p>A list of the secrets in the account.</p>
     pub secret_list: std::option::Option<std::vec::Vec<crate::model::SecretListEntry>>,
-    /// <p>If present in the response, this value indicates that
-    /// there's more output available than included in the current response. This can
-    /// occur even when the response includes no values at all, such as when you ask for a filtered view
-    /// of a very long list. Use this value in the <code>NextToken</code> request parameter in a
-    /// subsequent call to the operation to continue processing and get the next part of the output. You
-    /// should repeat this until the <code>NextToken</code> response element comes back empty (as
-    /// <code>null</code>).</p>
+    /// <p>If present in the response, this value indicates that there's more output available than included in the current response. This can occur even when the response includes no values at all, such as when you ask for a filtered view of a very long list. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to continue processing and get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back empty (as <code>null</code>).</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSecretsOutput {
@@ -1128,13 +1038,7 @@ impl ListSecretsOutput {
     pub fn secret_list(&self) -> std::option::Option<&[crate::model::SecretListEntry]> {
         self.secret_list.as_deref()
     }
-    /// <p>If present in the response, this value indicates that
-    /// there's more output available than included in the current response. This can
-    /// occur even when the response includes no values at all, such as when you ask for a filtered view
-    /// of a very long list. Use this value in the <code>NextToken</code> request parameter in a
-    /// subsequent call to the operation to continue processing and get the next part of the output. You
-    /// should repeat this until the <code>NextToken</code> response element comes back empty (as
-    /// <code>null</code>).</p>
+    /// <p>If present in the response, this value indicates that there's more output available than included in the current response. This can occur even when the response includes no values at all, such as when you ask for a filtered view of a very long list. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to continue processing and get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back empty (as <code>null</code>).</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1176,24 +1080,12 @@ pub mod list_secrets_output {
             self.secret_list = input;
             self
         }
-        /// <p>If present in the response, this value indicates that
-        /// there's more output available than included in the current response. This can
-        /// occur even when the response includes no values at all, such as when you ask for a filtered view
-        /// of a very long list. Use this value in the <code>NextToken</code> request parameter in a
-        /// subsequent call to the operation to continue processing and get the next part of the output. You
-        /// should repeat this until the <code>NextToken</code> response element comes back empty (as
-        /// <code>null</code>).</p>
+        /// <p>If present in the response, this value indicates that there's more output available than included in the current response. This can occur even when the response includes no values at all, such as when you ask for a filtered view of a very long list. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to continue processing and get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back empty (as <code>null</code>).</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If present in the response, this value indicates that
-        /// there's more output available than included in the current response. This can
-        /// occur even when the response includes no values at all, such as when you ask for a filtered view
-        /// of a very long list. Use this value in the <code>NextToken</code> request parameter in a
-        /// subsequent call to the operation to continue processing and get the next part of the output. You
-        /// should repeat this until the <code>NextToken</code> response element comes back empty (as
-        /// <code>null</code>).</p>
+        /// <p>If present in the response, this value indicates that there's more output available than included in the current response. This can occur even when the response includes no values at all, such as when you ask for a filtered view of a very long list. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to continue processing and get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back empty (as <code>null</code>).</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1224,28 +1116,15 @@ pub struct GetSecretValueOutput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The unique identifier of this version of the secret.</p>
     pub version_id: std::option::Option<std::string::String>,
-    /// <p>The decrypted part of the protected secret information that was originally provided as
-    /// binary data in the form of a byte array. The response parameter represents the binary data as
-    /// a <a href="https://tools.ietf.org/html/rfc4648#section-4">base64-encoded</a>
-    /// string.</p>
+    /// <p>The decrypted part of the protected secret information that was originally provided as binary data in the form of a byte array. The response parameter represents the binary data as a <a href="https://tools.ietf.org/html/rfc4648#section-4">base64-encoded</a> string.</p>
     /// <p>This parameter is not used if the secret is created by the Secrets Manager console.</p>
-    /// <p>If you store custom information in this field of the secret, then you must code your
-    /// Lambda rotation function to parse and interpret whatever you store in the
-    /// <code>SecretString</code> or <code>SecretBinary</code> fields.</p>
+    /// <p>If you store custom information in this field of the secret, then you must code your Lambda rotation function to parse and interpret whatever you store in the <code>SecretString</code> or <code>SecretBinary</code> fields.</p>
     pub secret_binary: std::option::Option<aws_smithy_types::Blob>,
-    /// <p>The decrypted part of the protected secret information that was originally provided as a
-    /// string.</p>
-    /// <p>If you create this secret by using the Secrets Manager console then only the
-    /// <code>SecretString</code> parameter contains data. Secrets Manager stores the information as a
-    /// JSON structure of key/value pairs that the Lambda rotation function knows how to parse.</p>
-    /// <p>If you store custom information in the secret by using the <a>CreateSecret</a>,
-    /// <a>UpdateSecret</a>, or <a>PutSecretValue</a> API operations instead
-    /// of the Secrets Manager console, or by using the <b>Other secret type</b> in
-    /// the console, then you must code your Lambda rotation function to parse and interpret those
-    /// values.</p>
+    /// <p>The decrypted part of the protected secret information that was originally provided as a string.</p>
+    /// <p>If you create this secret by using the Secrets Manager console then only the <code>SecretString</code> parameter contains data. Secrets Manager stores the information as a JSON structure of key/value pairs that the Lambda rotation function knows how to parse.</p>
+    /// <p>If you store custom information in the secret by using the <code>CreateSecret</code>, <code>UpdateSecret</code>, or <code>PutSecretValue</code> API operations instead of the Secrets Manager console, or by using the <b>Other secret type</b> in the console, then you must code your Lambda rotation function to parse and interpret those values.</p>
     pub secret_string: std::option::Option<std::string::String>,
-    /// <p>A list of all of the staging labels currently attached to this version of the
-    /// secret.</p>
+    /// <p>A list of all of the staging labels currently attached to this version of the secret.</p>
     pub version_stages: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The date and time that this version of the secret was created.</p>
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -1263,32 +1142,19 @@ impl GetSecretValueOutput {
     pub fn version_id(&self) -> std::option::Option<&str> {
         self.version_id.as_deref()
     }
-    /// <p>The decrypted part of the protected secret information that was originally provided as
-    /// binary data in the form of a byte array. The response parameter represents the binary data as
-    /// a <a href="https://tools.ietf.org/html/rfc4648#section-4">base64-encoded</a>
-    /// string.</p>
+    /// <p>The decrypted part of the protected secret information that was originally provided as binary data in the form of a byte array. The response parameter represents the binary data as a <a href="https://tools.ietf.org/html/rfc4648#section-4">base64-encoded</a> string.</p>
     /// <p>This parameter is not used if the secret is created by the Secrets Manager console.</p>
-    /// <p>If you store custom information in this field of the secret, then you must code your
-    /// Lambda rotation function to parse and interpret whatever you store in the
-    /// <code>SecretString</code> or <code>SecretBinary</code> fields.</p>
+    /// <p>If you store custom information in this field of the secret, then you must code your Lambda rotation function to parse and interpret whatever you store in the <code>SecretString</code> or <code>SecretBinary</code> fields.</p>
     pub fn secret_binary(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.secret_binary.as_ref()
     }
-    /// <p>The decrypted part of the protected secret information that was originally provided as a
-    /// string.</p>
-    /// <p>If you create this secret by using the Secrets Manager console then only the
-    /// <code>SecretString</code> parameter contains data. Secrets Manager stores the information as a
-    /// JSON structure of key/value pairs that the Lambda rotation function knows how to parse.</p>
-    /// <p>If you store custom information in the secret by using the <a>CreateSecret</a>,
-    /// <a>UpdateSecret</a>, or <a>PutSecretValue</a> API operations instead
-    /// of the Secrets Manager console, or by using the <b>Other secret type</b> in
-    /// the console, then you must code your Lambda rotation function to parse and interpret those
-    /// values.</p>
+    /// <p>The decrypted part of the protected secret information that was originally provided as a string.</p>
+    /// <p>If you create this secret by using the Secrets Manager console then only the <code>SecretString</code> parameter contains data. Secrets Manager stores the information as a JSON structure of key/value pairs that the Lambda rotation function knows how to parse.</p>
+    /// <p>If you store custom information in the secret by using the <code>CreateSecret</code>, <code>UpdateSecret</code>, or <code>PutSecretValue</code> API operations instead of the Secrets Manager console, or by using the <b>Other secret type</b> in the console, then you must code your Lambda rotation function to parse and interpret those values.</p>
     pub fn secret_string(&self) -> std::option::Option<&str> {
         self.secret_string.as_deref()
     }
-    /// <p>A list of all of the staging labels currently attached to this version of the
-    /// secret.</p>
+    /// <p>A list of all of the staging labels currently attached to this version of the secret.</p>
     pub fn version_stages(&self) -> std::option::Option<&[std::string::String]> {
         self.version_stages.as_deref()
     }
@@ -1355,26 +1221,16 @@ pub mod get_secret_value_output {
             self.version_id = input;
             self
         }
-        /// <p>The decrypted part of the protected secret information that was originally provided as
-        /// binary data in the form of a byte array. The response parameter represents the binary data as
-        /// a <a href="https://tools.ietf.org/html/rfc4648#section-4">base64-encoded</a>
-        /// string.</p>
+        /// <p>The decrypted part of the protected secret information that was originally provided as binary data in the form of a byte array. The response parameter represents the binary data as a <a href="https://tools.ietf.org/html/rfc4648#section-4">base64-encoded</a> string.</p>
         /// <p>This parameter is not used if the secret is created by the Secrets Manager console.</p>
-        /// <p>If you store custom information in this field of the secret, then you must code your
-        /// Lambda rotation function to parse and interpret whatever you store in the
-        /// <code>SecretString</code> or <code>SecretBinary</code> fields.</p>
+        /// <p>If you store custom information in this field of the secret, then you must code your Lambda rotation function to parse and interpret whatever you store in the <code>SecretString</code> or <code>SecretBinary</code> fields.</p>
         pub fn secret_binary(mut self, input: aws_smithy_types::Blob) -> Self {
             self.secret_binary = Some(input);
             self
         }
-        /// <p>The decrypted part of the protected secret information that was originally provided as
-        /// binary data in the form of a byte array. The response parameter represents the binary data as
-        /// a <a href="https://tools.ietf.org/html/rfc4648#section-4">base64-encoded</a>
-        /// string.</p>
+        /// <p>The decrypted part of the protected secret information that was originally provided as binary data in the form of a byte array. The response parameter represents the binary data as a <a href="https://tools.ietf.org/html/rfc4648#section-4">base64-encoded</a> string.</p>
         /// <p>This parameter is not used if the secret is created by the Secrets Manager console.</p>
-        /// <p>If you store custom information in this field of the secret, then you must code your
-        /// Lambda rotation function to parse and interpret whatever you store in the
-        /// <code>SecretString</code> or <code>SecretBinary</code> fields.</p>
+        /// <p>If you store custom information in this field of the secret, then you must code your Lambda rotation function to parse and interpret whatever you store in the <code>SecretString</code> or <code>SecretBinary</code> fields.</p>
         pub fn set_secret_binary(
             mut self,
             input: std::option::Option<aws_smithy_types::Blob>,
@@ -1382,30 +1238,16 @@ pub mod get_secret_value_output {
             self.secret_binary = input;
             self
         }
-        /// <p>The decrypted part of the protected secret information that was originally provided as a
-        /// string.</p>
-        /// <p>If you create this secret by using the Secrets Manager console then only the
-        /// <code>SecretString</code> parameter contains data. Secrets Manager stores the information as a
-        /// JSON structure of key/value pairs that the Lambda rotation function knows how to parse.</p>
-        /// <p>If you store custom information in the secret by using the <a>CreateSecret</a>,
-        /// <a>UpdateSecret</a>, or <a>PutSecretValue</a> API operations instead
-        /// of the Secrets Manager console, or by using the <b>Other secret type</b> in
-        /// the console, then you must code your Lambda rotation function to parse and interpret those
-        /// values.</p>
+        /// <p>The decrypted part of the protected secret information that was originally provided as a string.</p>
+        /// <p>If you create this secret by using the Secrets Manager console then only the <code>SecretString</code> parameter contains data. Secrets Manager stores the information as a JSON structure of key/value pairs that the Lambda rotation function knows how to parse.</p>
+        /// <p>If you store custom information in the secret by using the <code>CreateSecret</code>, <code>UpdateSecret</code>, or <code>PutSecretValue</code> API operations instead of the Secrets Manager console, or by using the <b>Other secret type</b> in the console, then you must code your Lambda rotation function to parse and interpret those values.</p>
         pub fn secret_string(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_string = Some(input.into());
             self
         }
-        /// <p>The decrypted part of the protected secret information that was originally provided as a
-        /// string.</p>
-        /// <p>If you create this secret by using the Secrets Manager console then only the
-        /// <code>SecretString</code> parameter contains data. Secrets Manager stores the information as a
-        /// JSON structure of key/value pairs that the Lambda rotation function knows how to parse.</p>
-        /// <p>If you store custom information in the secret by using the <a>CreateSecret</a>,
-        /// <a>UpdateSecret</a>, or <a>PutSecretValue</a> API operations instead
-        /// of the Secrets Manager console, or by using the <b>Other secret type</b> in
-        /// the console, then you must code your Lambda rotation function to parse and interpret those
-        /// values.</p>
+        /// <p>The decrypted part of the protected secret information that was originally provided as a string.</p>
+        /// <p>If you create this secret by using the Secrets Manager console then only the <code>SecretString</code> parameter contains data. Secrets Manager stores the information as a JSON structure of key/value pairs that the Lambda rotation function knows how to parse.</p>
+        /// <p>If you store custom information in the secret by using the <code>CreateSecret</code>, <code>UpdateSecret</code>, or <code>PutSecretValue</code> API operations instead of the Secrets Manager console, or by using the <b>Other secret type</b> in the console, then you must code your Lambda rotation function to parse and interpret those values.</p>
         pub fn set_secret_string(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1417,16 +1259,14 @@ pub mod get_secret_value_output {
         ///
         /// To override the contents of this collection use [`set_version_stages`](Self::set_version_stages).
         ///
-        /// <p>A list of all of the staging labels currently attached to this version of the
-        /// secret.</p>
+        /// <p>A list of all of the staging labels currently attached to this version of the secret.</p>
         pub fn version_stages(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.version_stages.unwrap_or_default();
             v.push(input.into());
             self.version_stages = Some(v);
             self
         }
-        /// <p>A list of all of the staging labels currently attached to this version of the
-        /// secret.</p>
+        /// <p>A list of all of the staging labels currently attached to this version of the secret.</p>
         pub fn set_version_stages(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1476,11 +1316,7 @@ pub struct GetResourcePolicyOutput {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The friendly name of the secret that the resource-based policy was retrieved for.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>A JSON-formatted string that describes the permissions that are associated with the
-    /// attached secret. These permissions are combined with any permissions that are associated with
-    /// the user or role that attempts to access this secret. The combined permissions specify who can
-    /// access the secret and what actions they can perform. For more information, see <a href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and Access Control for
-    /// Amazon Web Services Secrets Manager</a> in the <i>Amazon Web Services Secrets Manager User Guide</i>.</p>
+    /// <p>A JSON-formatted string that describes the permissions that are associated with the attached secret. These permissions are combined with any permissions that are associated with the user or role that attempts to access this secret. The combined permissions specify who can access the secret and what actions they can perform. For more information, see <a href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and Access Control for Amazon Web Services Secrets Manager</a> in the <i>Amazon Web Services Secrets Manager User Guide</i>.</p>
     pub resource_policy: std::option::Option<std::string::String>,
 }
 impl GetResourcePolicyOutput {
@@ -1492,11 +1328,7 @@ impl GetResourcePolicyOutput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>A JSON-formatted string that describes the permissions that are associated with the
-    /// attached secret. These permissions are combined with any permissions that are associated with
-    /// the user or role that attempts to access this secret. The combined permissions specify who can
-    /// access the secret and what actions they can perform. For more information, see <a href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and Access Control for
-    /// Amazon Web Services Secrets Manager</a> in the <i>Amazon Web Services Secrets Manager User Guide</i>.</p>
+    /// <p>A JSON-formatted string that describes the permissions that are associated with the attached secret. These permissions are combined with any permissions that are associated with the user or role that attempts to access this secret. The combined permissions specify who can access the secret and what actions they can perform. For more information, see <a href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and Access Control for Amazon Web Services Secrets Manager</a> in the <i>Amazon Web Services Secrets Manager User Guide</i>.</p>
     pub fn resource_policy(&self) -> std::option::Option<&str> {
         self.resource_policy.as_deref()
     }
@@ -1541,20 +1373,12 @@ pub mod get_resource_policy_output {
             self.name = input;
             self
         }
-        /// <p>A JSON-formatted string that describes the permissions that are associated with the
-        /// attached secret. These permissions are combined with any permissions that are associated with
-        /// the user or role that attempts to access this secret. The combined permissions specify who can
-        /// access the secret and what actions they can perform. For more information, see <a href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and Access Control for
-        /// Amazon Web Services Secrets Manager</a> in the <i>Amazon Web Services Secrets Manager User Guide</i>.</p>
+        /// <p>A JSON-formatted string that describes the permissions that are associated with the attached secret. These permissions are combined with any permissions that are associated with the user or role that attempts to access this secret. The combined permissions specify who can access the secret and what actions they can perform. For more information, see <a href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and Access Control for Amazon Web Services Secrets Manager</a> in the <i>Amazon Web Services Secrets Manager User Guide</i>.</p>
         pub fn resource_policy(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_policy = Some(input.into());
             self
         }
-        /// <p>A JSON-formatted string that describes the permissions that are associated with the
-        /// attached secret. These permissions are combined with any permissions that are associated with
-        /// the user or role that attempts to access this secret. The combined permissions specify who can
-        /// access the secret and what actions they can perform. For more information, see <a href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and Access Control for
-        /// Amazon Web Services Secrets Manager</a> in the <i>Amazon Web Services Secrets Manager User Guide</i>.</p>
+        /// <p>A JSON-formatted string that describes the permissions that are associated with the attached secret. These permissions are combined with any permissions that are associated with the user or role that attempts to access this secret. The combined permissions specify who can access the secret and what actions they can perform. For more information, see <a href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and Access Control for Amazon Web Services Secrets Manager</a> in the <i>Amazon Web Services Secrets Manager User Guide</i>.</p>
         pub fn set_resource_policy(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1646,46 +1470,29 @@ pub struct DescribeSecretOutput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The user-provided description of the secret.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The ARN or alias of the Amazon Web Services KMS customer master key (CMK) that's used to encrypt the
-    /// <code>SecretString</code> or <code>SecretBinary</code> fields in each version of the secret.
-    /// If you don't provide a key, then Secrets Manager defaults to encrypting the secret fields with the
-    /// default Amazon Web Services KMS CMK (the one named <code>awssecretsmanager</code>) for this account.</p>
+    /// <p>The ARN or alias of the Amazon Web Services KMS customer master key (CMK) that's used to encrypt the <code>SecretString</code> or <code>SecretBinary</code> fields in each version of the secret. If you don't provide a key, then Secrets Manager defaults to encrypting the secret fields with the default Amazon Web Services KMS CMK (the one named <code>awssecretsmanager</code>) for this account.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>Specifies whether automatic rotation is enabled for this secret.</p>
-    /// <p>To enable rotation, use <a>RotateSecret</a> with
-    /// <code>AutomaticallyRotateAfterDays</code> set to a value greater than 0. To disable
-    /// rotation, use <a>CancelRotateSecret</a>.</p>
+    /// <p>To enable rotation, use <code>RotateSecret</code> with <code>AutomaticallyRotateAfterDays</code> set to a value greater than 0. To disable rotation, use <code>CancelRotateSecret</code>.</p>
     pub rotation_enabled: std::option::Option<bool>,
-    /// <p>The ARN of a Lambda function that's invoked by Secrets Manager to rotate the
-    /// secret either automatically per the schedule or manually by a call to
-    /// <code>RotateSecret</code>.</p>
+    /// <p>The ARN of a Lambda function that's invoked by Secrets Manager to rotate the secret either automatically per the schedule or manually by a call to <code>RotateSecret</code>.</p>
     pub rotation_lambda_arn: std::option::Option<std::string::String>,
-    /// <p>A structure with the rotation configuration for this secret. This field is only populated
-    /// if rotation is configured.</p>
+    /// <p>A structure with the rotation configuration for this secret. This field is only populated if rotation is configured.</p>
     pub rotation_rules: std::option::Option<crate::model::RotationRulesType>,
     /// <p>The last date and time that the rotation process for this secret was invoked.</p>
-    /// <p>The most recent date and time that the Secrets Manager rotation process successfully
-    /// completed. If the secret doesn't rotate, Secrets Manager returns a null value.</p>
+    /// <p>The most recent date and time that the Secrets Manager rotation process successfully completed. If the secret doesn't rotate, Secrets Manager returns a null value.</p>
     pub last_rotated_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last date and time that this secret was modified in any way.</p>
     pub last_changed_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The last date that this secret was accessed. This value is truncated to midnight of the
-    /// date and therefore shows only the date, not the time.</p>
+    /// <p>The last date that this secret was accessed. This value is truncated to midnight of the date and therefore shows only the date, not the time.</p>
     pub last_accessed_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>This value exists if the secret is scheduled for deletion. Some time after the specified
-    /// date and time, Secrets Manager deletes the secret and all of its versions.</p>
-    /// <p>If a secret is scheduled for deletion, then its details, including the encrypted secret
-    /// information, is not accessible. To cancel a scheduled deletion and restore access, use <a>RestoreSecret</a>.</p>
+    /// <p>This value exists if the secret is scheduled for deletion. Some time after the specified date and time, Secrets Manager deletes the secret and all of its versions.</p>
+    /// <p>If a secret is scheduled for deletion, then its details, including the encrypted secret information, is not accessible. To cancel a scheduled deletion and restore access, use <code>RestoreSecret</code>.</p>
     pub deleted_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The list of user-defined tags that are associated with the secret. To add tags to a
-    /// secret, use <a>TagResource</a>. To remove tags, use <a>UntagResource</a>.</p>
+    /// <p>The list of user-defined tags that are associated with the secret. To add tags to a secret, use <code>TagResource</code>. To remove tags, use <code>UntagResource</code>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>A list of all of the currently assigned <code>VersionStage</code> staging labels and the
-    /// <code>VersionId</code> that each is attached to. Staging labels are used to keep track of
-    /// the different versions during the rotation process.</p>
-    /// <note>
-    /// <p>A version that does not have any staging labels attached is considered deprecated and
-    /// subject to deletion. Such versions are not included in this list.</p>
+    /// <p>A list of all of the currently assigned <code>VersionStage</code> staging labels and the <code>VersionId</code> that each is attached to. Staging labels are used to keep track of the different versions during the rotation process.</p> <note>
+    /// <p>A version that does not have any staging labels attached is considered deprecated and subject to deletion. Such versions are not included in this list.</p>
     /// </note>
     pub version_ids_to_stages: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
@@ -1696,8 +1503,7 @@ pub struct DescribeSecretOutput {
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Specifies the primary region for secret replication. </p>
     pub primary_region: std::option::Option<std::string::String>,
-    /// <p>Describes a list of replication status objects as <code>InProgress</code>, <code>Failed</code> or <code>InSync</code>.<code>P</code>
-    /// </p>
+    /// <p>Describes a list of replication status objects as <code>InProgress</code>, <code>Failed</code> or <code>InSync</code>.<code>P</code> </p>
     pub replication_status: std::option::Option<std::vec::Vec<crate::model::ReplicationStatusType>>,
 }
 impl DescribeSecretOutput {
@@ -1713,34 +1519,25 @@ impl DescribeSecretOutput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The ARN or alias of the Amazon Web Services KMS customer master key (CMK) that's used to encrypt the
-    /// <code>SecretString</code> or <code>SecretBinary</code> fields in each version of the secret.
-    /// If you don't provide a key, then Secrets Manager defaults to encrypting the secret fields with the
-    /// default Amazon Web Services KMS CMK (the one named <code>awssecretsmanager</code>) for this account.</p>
+    /// <p>The ARN or alias of the Amazon Web Services KMS customer master key (CMK) that's used to encrypt the <code>SecretString</code> or <code>SecretBinary</code> fields in each version of the secret. If you don't provide a key, then Secrets Manager defaults to encrypting the secret fields with the default Amazon Web Services KMS CMK (the one named <code>awssecretsmanager</code>) for this account.</p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
     /// <p>Specifies whether automatic rotation is enabled for this secret.</p>
-    /// <p>To enable rotation, use <a>RotateSecret</a> with
-    /// <code>AutomaticallyRotateAfterDays</code> set to a value greater than 0. To disable
-    /// rotation, use <a>CancelRotateSecret</a>.</p>
+    /// <p>To enable rotation, use <code>RotateSecret</code> with <code>AutomaticallyRotateAfterDays</code> set to a value greater than 0. To disable rotation, use <code>CancelRotateSecret</code>.</p>
     pub fn rotation_enabled(&self) -> std::option::Option<bool> {
         self.rotation_enabled
     }
-    /// <p>The ARN of a Lambda function that's invoked by Secrets Manager to rotate the
-    /// secret either automatically per the schedule or manually by a call to
-    /// <code>RotateSecret</code>.</p>
+    /// <p>The ARN of a Lambda function that's invoked by Secrets Manager to rotate the secret either automatically per the schedule or manually by a call to <code>RotateSecret</code>.</p>
     pub fn rotation_lambda_arn(&self) -> std::option::Option<&str> {
         self.rotation_lambda_arn.as_deref()
     }
-    /// <p>A structure with the rotation configuration for this secret. This field is only populated
-    /// if rotation is configured.</p>
+    /// <p>A structure with the rotation configuration for this secret. This field is only populated if rotation is configured.</p>
     pub fn rotation_rules(&self) -> std::option::Option<&crate::model::RotationRulesType> {
         self.rotation_rules.as_ref()
     }
     /// <p>The last date and time that the rotation process for this secret was invoked.</p>
-    /// <p>The most recent date and time that the Secrets Manager rotation process successfully
-    /// completed. If the secret doesn't rotate, Secrets Manager returns a null value.</p>
+    /// <p>The most recent date and time that the Secrets Manager rotation process successfully completed. If the secret doesn't rotate, Secrets Manager returns a null value.</p>
     pub fn last_rotated_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_rotated_date.as_ref()
     }
@@ -1748,29 +1545,21 @@ impl DescribeSecretOutput {
     pub fn last_changed_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_changed_date.as_ref()
     }
-    /// <p>The last date that this secret was accessed. This value is truncated to midnight of the
-    /// date and therefore shows only the date, not the time.</p>
+    /// <p>The last date that this secret was accessed. This value is truncated to midnight of the date and therefore shows only the date, not the time.</p>
     pub fn last_accessed_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_accessed_date.as_ref()
     }
-    /// <p>This value exists if the secret is scheduled for deletion. Some time after the specified
-    /// date and time, Secrets Manager deletes the secret and all of its versions.</p>
-    /// <p>If a secret is scheduled for deletion, then its details, including the encrypted secret
-    /// information, is not accessible. To cancel a scheduled deletion and restore access, use <a>RestoreSecret</a>.</p>
+    /// <p>This value exists if the secret is scheduled for deletion. Some time after the specified date and time, Secrets Manager deletes the secret and all of its versions.</p>
+    /// <p>If a secret is scheduled for deletion, then its details, including the encrypted secret information, is not accessible. To cancel a scheduled deletion and restore access, use <code>RestoreSecret</code>.</p>
     pub fn deleted_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.deleted_date.as_ref()
     }
-    /// <p>The list of user-defined tags that are associated with the secret. To add tags to a
-    /// secret, use <a>TagResource</a>. To remove tags, use <a>UntagResource</a>.</p>
+    /// <p>The list of user-defined tags that are associated with the secret. To add tags to a secret, use <code>TagResource</code>. To remove tags, use <code>UntagResource</code>.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>A list of all of the currently assigned <code>VersionStage</code> staging labels and the
-    /// <code>VersionId</code> that each is attached to. Staging labels are used to keep track of
-    /// the different versions during the rotation process.</p>
-    /// <note>
-    /// <p>A version that does not have any staging labels attached is considered deprecated and
-    /// subject to deletion. Such versions are not included in this list.</p>
+    /// <p>A list of all of the currently assigned <code>VersionStage</code> staging labels and the <code>VersionId</code> that each is attached to. Staging labels are used to keep track of the different versions during the rotation process.</p> <note>
+    /// <p>A version that does not have any staging labels attached is considered deprecated and subject to deletion. Such versions are not included in this list.</p>
     /// </note>
     pub fn version_ids_to_stages(
         &self,
@@ -1791,8 +1580,7 @@ impl DescribeSecretOutput {
     pub fn primary_region(&self) -> std::option::Option<&str> {
         self.primary_region.as_deref()
     }
-    /// <p>Describes a list of replication status objects as <code>InProgress</code>, <code>Failed</code> or <code>InSync</code>.<code>P</code>
-    /// </p>
+    /// <p>Describes a list of replication status objects as <code>InProgress</code>, <code>Failed</code> or <code>InSync</code>.<code>P</code> </p>
     pub fn replication_status(
         &self,
     ) -> std::option::Option<&[crate::model::ReplicationStatusType]> {
@@ -1880,48 +1668,34 @@ pub mod describe_secret_output {
             self.description = input;
             self
         }
-        /// <p>The ARN or alias of the Amazon Web Services KMS customer master key (CMK) that's used to encrypt the
-        /// <code>SecretString</code> or <code>SecretBinary</code> fields in each version of the secret.
-        /// If you don't provide a key, then Secrets Manager defaults to encrypting the secret fields with the
-        /// default Amazon Web Services KMS CMK (the one named <code>awssecretsmanager</code>) for this account.</p>
+        /// <p>The ARN or alias of the Amazon Web Services KMS customer master key (CMK) that's used to encrypt the <code>SecretString</code> or <code>SecretBinary</code> fields in each version of the secret. If you don't provide a key, then Secrets Manager defaults to encrypting the secret fields with the default Amazon Web Services KMS CMK (the one named <code>awssecretsmanager</code>) for this account.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>The ARN or alias of the Amazon Web Services KMS customer master key (CMK) that's used to encrypt the
-        /// <code>SecretString</code> or <code>SecretBinary</code> fields in each version of the secret.
-        /// If you don't provide a key, then Secrets Manager defaults to encrypting the secret fields with the
-        /// default Amazon Web Services KMS CMK (the one named <code>awssecretsmanager</code>) for this account.</p>
+        /// <p>The ARN or alias of the Amazon Web Services KMS customer master key (CMK) that's used to encrypt the <code>SecretString</code> or <code>SecretBinary</code> fields in each version of the secret. If you don't provide a key, then Secrets Manager defaults to encrypting the secret fields with the default Amazon Web Services KMS CMK (the one named <code>awssecretsmanager</code>) for this account.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
         }
         /// <p>Specifies whether automatic rotation is enabled for this secret.</p>
-        /// <p>To enable rotation, use <a>RotateSecret</a> with
-        /// <code>AutomaticallyRotateAfterDays</code> set to a value greater than 0. To disable
-        /// rotation, use <a>CancelRotateSecret</a>.</p>
+        /// <p>To enable rotation, use <code>RotateSecret</code> with <code>AutomaticallyRotateAfterDays</code> set to a value greater than 0. To disable rotation, use <code>CancelRotateSecret</code>.</p>
         pub fn rotation_enabled(mut self, input: bool) -> Self {
             self.rotation_enabled = Some(input);
             self
         }
         /// <p>Specifies whether automatic rotation is enabled for this secret.</p>
-        /// <p>To enable rotation, use <a>RotateSecret</a> with
-        /// <code>AutomaticallyRotateAfterDays</code> set to a value greater than 0. To disable
-        /// rotation, use <a>CancelRotateSecret</a>.</p>
+        /// <p>To enable rotation, use <code>RotateSecret</code> with <code>AutomaticallyRotateAfterDays</code> set to a value greater than 0. To disable rotation, use <code>CancelRotateSecret</code>.</p>
         pub fn set_rotation_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.rotation_enabled = input;
             self
         }
-        /// <p>The ARN of a Lambda function that's invoked by Secrets Manager to rotate the
-        /// secret either automatically per the schedule or manually by a call to
-        /// <code>RotateSecret</code>.</p>
+        /// <p>The ARN of a Lambda function that's invoked by Secrets Manager to rotate the secret either automatically per the schedule or manually by a call to <code>RotateSecret</code>.</p>
         pub fn rotation_lambda_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.rotation_lambda_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of a Lambda function that's invoked by Secrets Manager to rotate the
-        /// secret either automatically per the schedule or manually by a call to
-        /// <code>RotateSecret</code>.</p>
+        /// <p>The ARN of a Lambda function that's invoked by Secrets Manager to rotate the secret either automatically per the schedule or manually by a call to <code>RotateSecret</code>.</p>
         pub fn set_rotation_lambda_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1929,14 +1703,12 @@ pub mod describe_secret_output {
             self.rotation_lambda_arn = input;
             self
         }
-        /// <p>A structure with the rotation configuration for this secret. This field is only populated
-        /// if rotation is configured.</p>
+        /// <p>A structure with the rotation configuration for this secret. This field is only populated if rotation is configured.</p>
         pub fn rotation_rules(mut self, input: crate::model::RotationRulesType) -> Self {
             self.rotation_rules = Some(input);
             self
         }
-        /// <p>A structure with the rotation configuration for this secret. This field is only populated
-        /// if rotation is configured.</p>
+        /// <p>A structure with the rotation configuration for this secret. This field is only populated if rotation is configured.</p>
         pub fn set_rotation_rules(
             mut self,
             input: std::option::Option<crate::model::RotationRulesType>,
@@ -1945,15 +1717,13 @@ pub mod describe_secret_output {
             self
         }
         /// <p>The last date and time that the rotation process for this secret was invoked.</p>
-        /// <p>The most recent date and time that the Secrets Manager rotation process successfully
-        /// completed. If the secret doesn't rotate, Secrets Manager returns a null value.</p>
+        /// <p>The most recent date and time that the Secrets Manager rotation process successfully completed. If the secret doesn't rotate, Secrets Manager returns a null value.</p>
         pub fn last_rotated_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_rotated_date = Some(input);
             self
         }
         /// <p>The last date and time that the rotation process for this secret was invoked.</p>
-        /// <p>The most recent date and time that the Secrets Manager rotation process successfully
-        /// completed. If the secret doesn't rotate, Secrets Manager returns a null value.</p>
+        /// <p>The most recent date and time that the Secrets Manager rotation process successfully completed. If the secret doesn't rotate, Secrets Manager returns a null value.</p>
         pub fn set_last_rotated_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1974,14 +1744,12 @@ pub mod describe_secret_output {
             self.last_changed_date = input;
             self
         }
-        /// <p>The last date that this secret was accessed. This value is truncated to midnight of the
-        /// date and therefore shows only the date, not the time.</p>
+        /// <p>The last date that this secret was accessed. This value is truncated to midnight of the date and therefore shows only the date, not the time.</p>
         pub fn last_accessed_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_accessed_date = Some(input);
             self
         }
-        /// <p>The last date that this secret was accessed. This value is truncated to midnight of the
-        /// date and therefore shows only the date, not the time.</p>
+        /// <p>The last date that this secret was accessed. This value is truncated to midnight of the date and therefore shows only the date, not the time.</p>
         pub fn set_last_accessed_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1989,18 +1757,14 @@ pub mod describe_secret_output {
             self.last_accessed_date = input;
             self
         }
-        /// <p>This value exists if the secret is scheduled for deletion. Some time after the specified
-        /// date and time, Secrets Manager deletes the secret and all of its versions.</p>
-        /// <p>If a secret is scheduled for deletion, then its details, including the encrypted secret
-        /// information, is not accessible. To cancel a scheduled deletion and restore access, use <a>RestoreSecret</a>.</p>
+        /// <p>This value exists if the secret is scheduled for deletion. Some time after the specified date and time, Secrets Manager deletes the secret and all of its versions.</p>
+        /// <p>If a secret is scheduled for deletion, then its details, including the encrypted secret information, is not accessible. To cancel a scheduled deletion and restore access, use <code>RestoreSecret</code>.</p>
         pub fn deleted_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.deleted_date = Some(input);
             self
         }
-        /// <p>This value exists if the secret is scheduled for deletion. Some time after the specified
-        /// date and time, Secrets Manager deletes the secret and all of its versions.</p>
-        /// <p>If a secret is scheduled for deletion, then its details, including the encrypted secret
-        /// information, is not accessible. To cancel a scheduled deletion and restore access, use <a>RestoreSecret</a>.</p>
+        /// <p>This value exists if the secret is scheduled for deletion. Some time after the specified date and time, Secrets Manager deletes the secret and all of its versions.</p>
+        /// <p>If a secret is scheduled for deletion, then its details, including the encrypted secret information, is not accessible. To cancel a scheduled deletion and restore access, use <code>RestoreSecret</code>.</p>
         pub fn set_deleted_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2012,16 +1776,14 @@ pub mod describe_secret_output {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The list of user-defined tags that are associated with the secret. To add tags to a
-        /// secret, use <a>TagResource</a>. To remove tags, use <a>UntagResource</a>.</p>
+        /// <p>The list of user-defined tags that are associated with the secret. To add tags to a secret, use <code>TagResource</code>. To remove tags, use <code>UntagResource</code>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>The list of user-defined tags that are associated with the secret. To add tags to a
-        /// secret, use <a>TagResource</a>. To remove tags, use <a>UntagResource</a>.</p>
+        /// <p>The list of user-defined tags that are associated with the secret. To add tags to a secret, use <code>TagResource</code>. To remove tags, use <code>UntagResource</code>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2033,12 +1795,8 @@ pub mod describe_secret_output {
         ///
         /// To override the contents of this collection use [`set_version_ids_to_stages`](Self::set_version_ids_to_stages).
         ///
-        /// <p>A list of all of the currently assigned <code>VersionStage</code> staging labels and the
-        /// <code>VersionId</code> that each is attached to. Staging labels are used to keep track of
-        /// the different versions during the rotation process.</p>
-        /// <note>
-        /// <p>A version that does not have any staging labels attached is considered deprecated and
-        /// subject to deletion. Such versions are not included in this list.</p>
+        /// <p>A list of all of the currently assigned <code>VersionStage</code> staging labels and the <code>VersionId</code> that each is attached to. Staging labels are used to keep track of the different versions during the rotation process.</p> <note>
+        /// <p>A version that does not have any staging labels attached is considered deprecated and subject to deletion. Such versions are not included in this list.</p>
         /// </note>
         pub fn version_ids_to_stages(
             mut self,
@@ -2050,12 +1808,8 @@ pub mod describe_secret_output {
             self.version_ids_to_stages = Some(hash_map);
             self
         }
-        /// <p>A list of all of the currently assigned <code>VersionStage</code> staging labels and the
-        /// <code>VersionId</code> that each is attached to. Staging labels are used to keep track of
-        /// the different versions during the rotation process.</p>
-        /// <note>
-        /// <p>A version that does not have any staging labels attached is considered deprecated and
-        /// subject to deletion. Such versions are not included in this list.</p>
+        /// <p>A list of all of the currently assigned <code>VersionStage</code> staging labels and the <code>VersionId</code> that each is attached to. Staging labels are used to keep track of the different versions during the rotation process.</p> <note>
+        /// <p>A version that does not have any staging labels attached is considered deprecated and subject to deletion. Such versions are not included in this list.</p>
         /// </note>
         pub fn set_version_ids_to_stages(
             mut self,
@@ -2109,16 +1863,14 @@ pub mod describe_secret_output {
         ///
         /// To override the contents of this collection use [`set_replication_status`](Self::set_replication_status).
         ///
-        /// <p>Describes a list of replication status objects as <code>InProgress</code>, <code>Failed</code> or <code>InSync</code>.<code>P</code>
-        /// </p>
+        /// <p>Describes a list of replication status objects as <code>InProgress</code>, <code>Failed</code> or <code>InSync</code>.<code>P</code> </p>
         pub fn replication_status(mut self, input: crate::model::ReplicationStatusType) -> Self {
             let mut v = self.replication_status.unwrap_or_default();
             v.push(input);
             self.replication_status = Some(v);
             self
         }
-        /// <p>Describes a list of replication status objects as <code>InProgress</code>, <code>Failed</code> or <code>InSync</code>.<code>P</code>
-        /// </p>
+        /// <p>Describes a list of replication status objects as <code>InProgress</code>, <code>Failed</code> or <code>InSync</code>.<code>P</code> </p>
         pub fn set_replication_status(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ReplicationStatusType>>,
@@ -2165,9 +1917,7 @@ pub struct DeleteSecretOutput {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The friendly name of the secret currently scheduled for deletion.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The date and time after which this secret can be deleted by Secrets Manager and can no longer be
-    /// restored. This value is the date and time of the delete request plus the number of days
-    /// specified in <code>RecoveryWindowInDays</code>.</p>
+    /// <p>The date and time after which this secret can be deleted by Secrets Manager and can no longer be restored. This value is the date and time of the delete request plus the number of days specified in <code>RecoveryWindowInDays</code>.</p>
     pub deletion_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DeleteSecretOutput {
@@ -2179,9 +1929,7 @@ impl DeleteSecretOutput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The date and time after which this secret can be deleted by Secrets Manager and can no longer be
-    /// restored. This value is the date and time of the delete request plus the number of days
-    /// specified in <code>RecoveryWindowInDays</code>.</p>
+    /// <p>The date and time after which this secret can be deleted by Secrets Manager and can no longer be restored. This value is the date and time of the delete request plus the number of days specified in <code>RecoveryWindowInDays</code>.</p>
     pub fn deletion_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.deletion_date.as_ref()
     }
@@ -2226,16 +1974,12 @@ pub mod delete_secret_output {
             self.name = input;
             self
         }
-        /// <p>The date and time after which this secret can be deleted by Secrets Manager and can no longer be
-        /// restored. This value is the date and time of the delete request plus the number of days
-        /// specified in <code>RecoveryWindowInDays</code>.</p>
+        /// <p>The date and time after which this secret can be deleted by Secrets Manager and can no longer be restored. This value is the date and time of the delete request plus the number of days specified in <code>RecoveryWindowInDays</code>.</p>
         pub fn deletion_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.deletion_date = Some(input);
             self
         }
-        /// <p>The date and time after which this secret can be deleted by Secrets Manager and can no longer be
-        /// restored. This value is the date and time of the delete request plus the number of days
-        /// specified in <code>RecoveryWindowInDays</code>.</p>
+        /// <p>The date and time after which this secret can be deleted by Secrets Manager and can no longer be restored. This value is the date and time of the delete request plus the number of days specified in <code>RecoveryWindowInDays</code>.</p>
         pub fn set_deletion_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2337,13 +2081,8 @@ impl DeleteResourcePolicyOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSecretOutput {
-    /// <p>The Amazon Resource Name (ARN) of the secret that you just created.</p>
-    /// <note>
-    /// <p>Secrets Manager automatically adds several random characters to the name at the end of the ARN when
-    /// you initially create a secret. This affects only the ARN and not the actual friendly name.
-    /// This ensures that if you create a new secret with the same name as an old secret that you
-    /// previously deleted, then users with access to the old secret <i>don't</i>
-    /// automatically get access to the new secret because the ARNs are different.</p>
+    /// <p>The Amazon Resource Name (ARN) of the secret that you just created.</p> <note>
+    /// <p>Secrets Manager automatically adds several random characters to the name at the end of the ARN when you initially create a secret. This affects only the ARN and not the actual friendly name. This ensures that if you create a new secret with the same name as an old secret that you previously deleted, then users with access to the old secret <i>don't</i> automatically get access to the new secret because the ARNs are different.</p>
     /// </note>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The friendly name of the secret that you just created.</p>
@@ -2354,13 +2093,8 @@ pub struct CreateSecretOutput {
     pub replication_status: std::option::Option<std::vec::Vec<crate::model::ReplicationStatusType>>,
 }
 impl CreateSecretOutput {
-    /// <p>The Amazon Resource Name (ARN) of the secret that you just created.</p>
-    /// <note>
-    /// <p>Secrets Manager automatically adds several random characters to the name at the end of the ARN when
-    /// you initially create a secret. This affects only the ARN and not the actual friendly name.
-    /// This ensures that if you create a new secret with the same name as an old secret that you
-    /// previously deleted, then users with access to the old secret <i>don't</i>
-    /// automatically get access to the new secret because the ARNs are different.</p>
+    /// <p>The Amazon Resource Name (ARN) of the secret that you just created.</p> <note>
+    /// <p>Secrets Manager automatically adds several random characters to the name at the end of the ARN when you initially create a secret. This affects only the ARN and not the actual friendly name. This ensures that if you create a new secret with the same name as an old secret that you previously deleted, then users with access to the old secret <i>don't</i> automatically get access to the new secret because the ARNs are different.</p>
     /// </note>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
@@ -2403,25 +2137,15 @@ pub mod create_secret_output {
             std::option::Option<std::vec::Vec<crate::model::ReplicationStatusType>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the secret that you just created.</p>
-        /// <note>
-        /// <p>Secrets Manager automatically adds several random characters to the name at the end of the ARN when
-        /// you initially create a secret. This affects only the ARN and not the actual friendly name.
-        /// This ensures that if you create a new secret with the same name as an old secret that you
-        /// previously deleted, then users with access to the old secret <i>don't</i>
-        /// automatically get access to the new secret because the ARNs are different.</p>
+        /// <p>The Amazon Resource Name (ARN) of the secret that you just created.</p> <note>
+        /// <p>Secrets Manager automatically adds several random characters to the name at the end of the ARN when you initially create a secret. This affects only the ARN and not the actual friendly name. This ensures that if you create a new secret with the same name as an old secret that you previously deleted, then users with access to the old secret <i>don't</i> automatically get access to the new secret because the ARNs are different.</p>
         /// </note>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the secret that you just created.</p>
-        /// <note>
-        /// <p>Secrets Manager automatically adds several random characters to the name at the end of the ARN when
-        /// you initially create a secret. This affects only the ARN and not the actual friendly name.
-        /// This ensures that if you create a new secret with the same name as an old secret that you
-        /// previously deleted, then users with access to the old secret <i>don't</i>
-        /// automatically get access to the new secret because the ARNs are different.</p>
+        /// <p>The Amazon Resource Name (ARN) of the secret that you just created.</p> <note>
+        /// <p>Secrets Manager automatically adds several random characters to the name at the end of the ARN when you initially create a secret. This affects only the ARN and not the actual friendly name. This ensures that if you create a new secret with the same name as an old secret that you previously deleted, then users with access to the old secret <i>don't</i> automatically get access to the new secret because the ARNs are different.</p>
         /// </note>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
@@ -2492,11 +2216,7 @@ pub struct CancelRotateSecretOutput {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The friendly name of the secret for which rotation was canceled.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The unique identifier of the version of the secret created during the rotation. This
-    /// version might not be complete, and should be evaluated for possible deletion. At the very
-    /// least, you should remove the <code>VersionStage</code> value <code>AWSPENDING</code> to enable this
-    /// version to be deleted. Failing to clean up a cancelled rotation can block you from
-    /// successfully starting future rotations.</p>
+    /// <p>The unique identifier of the version of the secret created during the rotation. This version might not be complete, and should be evaluated for possible deletion. At the very least, you should remove the <code>VersionStage</code> value <code>AWSPENDING</code> to enable this version to be deleted. Failing to clean up a cancelled rotation can block you from successfully starting future rotations.</p>
     pub version_id: std::option::Option<std::string::String>,
 }
 impl CancelRotateSecretOutput {
@@ -2508,11 +2228,7 @@ impl CancelRotateSecretOutput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The unique identifier of the version of the secret created during the rotation. This
-    /// version might not be complete, and should be evaluated for possible deletion. At the very
-    /// least, you should remove the <code>VersionStage</code> value <code>AWSPENDING</code> to enable this
-    /// version to be deleted. Failing to clean up a cancelled rotation can block you from
-    /// successfully starting future rotations.</p>
+    /// <p>The unique identifier of the version of the secret created during the rotation. This version might not be complete, and should be evaluated for possible deletion. At the very least, you should remove the <code>VersionStage</code> value <code>AWSPENDING</code> to enable this version to be deleted. Failing to clean up a cancelled rotation can block you from successfully starting future rotations.</p>
     pub fn version_id(&self) -> std::option::Option<&str> {
         self.version_id.as_deref()
     }
@@ -2557,20 +2273,12 @@ pub mod cancel_rotate_secret_output {
             self.name = input;
             self
         }
-        /// <p>The unique identifier of the version of the secret created during the rotation. This
-        /// version might not be complete, and should be evaluated for possible deletion. At the very
-        /// least, you should remove the <code>VersionStage</code> value <code>AWSPENDING</code> to enable this
-        /// version to be deleted. Failing to clean up a cancelled rotation can block you from
-        /// successfully starting future rotations.</p>
+        /// <p>The unique identifier of the version of the secret created during the rotation. This version might not be complete, and should be evaluated for possible deletion. At the very least, you should remove the <code>VersionStage</code> value <code>AWSPENDING</code> to enable this version to be deleted. Failing to clean up a cancelled rotation can block you from successfully starting future rotations.</p>
         pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.version_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier of the version of the secret created during the rotation. This
-        /// version might not be complete, and should be evaluated for possible deletion. At the very
-        /// least, you should remove the <code>VersionStage</code> value <code>AWSPENDING</code> to enable this
-        /// version to be deleted. Failing to clean up a cancelled rotation can block you from
-        /// successfully starting future rotations.</p>
+        /// <p>The unique identifier of the version of the secret created during the rotation. This version might not be complete, and should be evaluated for possible deletion. At the very least, you should remove the <code>VersionStage</code> value <code>AWSPENDING</code> to enable this version to be deleted. Failing to clean up a cancelled rotation can block you from successfully starting future rotations.</p>
         pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version_id = input;
             self

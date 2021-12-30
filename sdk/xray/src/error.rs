@@ -1968,8 +1968,7 @@ pub struct ListTagsForResourceError {
 pub enum ListTagsForResourceErrorKind {
     /// <p>The request is missing required parameters or has invalid parameters.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The resource was not found. Verify that the name or Amazon Resource Name (ARN) of the resource is
-    /// correct.</p>
+    /// <p>The resource was not found. Verify that the name or Amazon Resource Name (ARN) of the resource is correct.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request exceeds the maximum number of requests per second.</p>
     ThrottledException(crate::error::ThrottledException),
@@ -2393,8 +2392,7 @@ pub struct TagResourceError {
 pub enum TagResourceErrorKind {
     /// <p>The request is missing required parameters or has invalid parameters.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The resource was not found. Verify that the name or Amazon Resource Name (ARN) of the resource is
-    /// correct.</p>
+    /// <p>The resource was not found. Verify that the name or Amazon Resource Name (ARN) of the resource is correct.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request exceeds the maximum number of requests per second.</p>
     ThrottledException(crate::error::ThrottledException),
@@ -2511,8 +2509,7 @@ pub struct UntagResourceError {
 pub enum UntagResourceErrorKind {
     /// <p>The request is missing required parameters or has invalid parameters.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The resource was not found. Verify that the name or Amazon Resource Name (ARN) of the resource is
-    /// correct.</p>
+    /// <p>The resource was not found. Verify that the name or Amazon Resource Name (ARN) of the resource is correct.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request exceeds the maximum number of requests per second.</p>
     ThrottledException(crate::error::ThrottledException),
@@ -2939,8 +2936,7 @@ impl InvalidRequestException {
     }
 }
 
-/// <p>The resource was not found. Verify that the name or Amazon Resource Name (ARN) of the resource is
-/// correct.</p>
+/// <p>The resource was not found. Verify that the name or Amazon Resource Name (ARN) of the resource is correct.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {

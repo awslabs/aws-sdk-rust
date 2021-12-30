@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidateConfigurationSettingsOutput {
-    /// <p> A list of <a>ValidationMessage</a>. </p>
+    /// <p> A list of <code>ValidationMessage</code>. </p>
     pub messages: std::option::Option<std::vec::Vec<crate::model::ValidationMessage>>,
 }
 impl ValidateConfigurationSettingsOutput {
-    /// <p> A list of <a>ValidationMessage</a>. </p>
+    /// <p> A list of <code>ValidationMessage</code>. </p>
     pub fn messages(&self) -> std::option::Option<&[crate::model::ValidationMessage]> {
         self.messages.as_deref()
     }
@@ -32,14 +32,14 @@ pub mod validate_configuration_settings_output {
         ///
         /// To override the contents of this collection use [`set_messages`](Self::set_messages).
         ///
-        /// <p> A list of <a>ValidationMessage</a>. </p>
+        /// <p> A list of <code>ValidationMessage</code>. </p>
         pub fn messages(mut self, input: crate::model::ValidationMessage) -> Self {
             let mut v = self.messages.unwrap_or_default();
             v.push(input);
             self.messages = Some(v);
             self
         }
-        /// <p> A list of <a>ValidationMessage</a>. </p>
+        /// <p> A list of <code>ValidationMessage</code>. </p>
         pub fn set_messages(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ValidationMessage>>,
@@ -108,13 +108,11 @@ pub struct UpdateEnvironmentOutput {
     pub solution_stack_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the platform version.</p>
     pub platform_arn: std::option::Option<std::string::String>,
-    /// <p>The name of the configuration template used to originally launch this
-    /// environment.</p>
+    /// <p>The name of the configuration template used to originally launch this environment.</p>
     pub template_name: std::option::Option<std::string::String>,
     /// <p>Describes this environment.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>For load-balanced, autoscaling environments, the URL to the LoadBalancer. For
-    /// single-instance environments, the IP address of the instance.</p>
+    /// <p>For load-balanced, autoscaling environments, the URL to the LoadBalancer. For single-instance environments, the IP address of the instance.</p>
     pub endpoint_url: std::option::Option<std::string::String>,
     /// <p>The URL to the CNAME for this environment.</p>
     pub cname: std::option::Option<std::string::String>,
@@ -123,69 +121,28 @@ pub struct UpdateEnvironmentOutput {
     /// <p>The last modified date for this environment.</p>
     pub date_updated: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current operational status of the environment:</p>
-    ///
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Launching</code>: Environment is in the process of initial deployment.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Updating</code>: Environment is in the process of updating its configuration
-    /// settings or application version.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Ready</code>: Environment is available to have an action performed on it, such as
-    /// update or terminate.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Terminating</code>: Environment is in the shut-down process.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Terminated</code>: Environment is not running.</p>
-    /// </li>
+    /// <li> <p> <code>Launching</code>: Environment is in the process of initial deployment.</p> </li>
+    /// <li> <p> <code>Updating</code>: Environment is in the process of updating its configuration settings or application version.</p> </li>
+    /// <li> <p> <code>Ready</code>: Environment is available to have an action performed on it, such as update or terminate.</p> </li>
+    /// <li> <p> <code>Terminating</code>: Environment is in the shut-down process.</p> </li>
+    /// <li> <p> <code>Terminated</code>: Environment is not running.</p> </li>
     /// </ul>
     pub status: std::option::Option<crate::model::EnvironmentStatus>,
-    /// <p>Indicates if there is an in-progress environment configuration update or application
-    /// version deployment that you can cancel.</p>
-    /// <p>
-    /// <code>true:</code> There is an update in progress. </p>
-    /// <p>
-    /// <code>false:</code> There are no updates currently in progress. </p>
+    /// <p>Indicates if there is an in-progress environment configuration update or application version deployment that you can cancel.</p>
+    /// <p> <code>true:</code> There is an update in progress. </p>
+    /// <p> <code>false:</code> There are no updates currently in progress. </p>
     pub abortable_operation_in_progress: std::option::Option<bool>,
-    /// <p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the
-    /// failure levels for a running environment:</p>
+    /// <p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the failure levels for a running environment:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more
-    /// consecutive failures occur for an environment.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive
-    /// failures occur for an environment.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Green</code>: Indicates the environment is healthy and fully functional.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Grey</code>: Default health for a new environment. The environment is not fully
-    /// launched and health checks have not started or health checks are suspended during an
-    /// <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.</p>
-    /// </li>
+    /// <li> <p> <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive failures occur for an environment.</p> </li>
+    /// <li> <p> <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive failures occur for an environment.</p> </li>
+    /// <li> <p> <code>Green</code>: Indicates the environment is healthy and fully functional.</p> </li>
+    /// <li> <p> <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.</p> </li>
     /// </ul>
-    /// <p> Default: <code>Grey</code>
-    /// </p>
+    /// <p> Default: <code>Grey</code> </p>
     pub health: std::option::Option<crate::model::EnvironmentHealth>,
-    /// <p>Returns the health status of the application running in your environment. For more
-    /// information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
-    /// Statuses</a>.</p>
+    /// <p>Returns the health status of the application running in your environment. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
     pub health_status: std::option::Option<crate::model::EnvironmentHealthStatus>,
     /// <p>The description of the AWS resources used by this environment.</p>
     pub resources: std::option::Option<crate::model::EnvironmentResourcesDescription>,
@@ -195,8 +152,7 @@ pub struct UpdateEnvironmentOutput {
     pub environment_links: std::option::Option<std::vec::Vec<crate::model::EnvironmentLink>>,
     /// <p>The environment's Amazon Resource Name (ARN), which can be used in other API requests that require an ARN.</p>
     pub environment_arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the environment's operations role. For more information,
-    /// see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the environment's operations role. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
     pub operations_role: std::option::Option<std::string::String>,
 }
 impl UpdateEnvironmentOutput {
@@ -224,8 +180,7 @@ impl UpdateEnvironmentOutput {
     pub fn platform_arn(&self) -> std::option::Option<&str> {
         self.platform_arn.as_deref()
     }
-    /// <p>The name of the configuration template used to originally launch this
-    /// environment.</p>
+    /// <p>The name of the configuration template used to originally launch this environment.</p>
     pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
     }
@@ -233,8 +188,7 @@ impl UpdateEnvironmentOutput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>For load-balanced, autoscaling environments, the URL to the LoadBalancer. For
-    /// single-instance environments, the IP address of the instance.</p>
+    /// <p>For load-balanced, autoscaling environments, the URL to the LoadBalancer. For single-instance environments, the IP address of the instance.</p>
     pub fn endpoint_url(&self) -> std::option::Option<&str> {
         self.endpoint_url.as_deref()
     }
@@ -251,75 +205,34 @@ impl UpdateEnvironmentOutput {
         self.date_updated.as_ref()
     }
     /// <p>The current operational status of the environment:</p>
-    ///
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Launching</code>: Environment is in the process of initial deployment.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Updating</code>: Environment is in the process of updating its configuration
-    /// settings or application version.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Ready</code>: Environment is available to have an action performed on it, such as
-    /// update or terminate.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Terminating</code>: Environment is in the shut-down process.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Terminated</code>: Environment is not running.</p>
-    /// </li>
+    /// <li> <p> <code>Launching</code>: Environment is in the process of initial deployment.</p> </li>
+    /// <li> <p> <code>Updating</code>: Environment is in the process of updating its configuration settings or application version.</p> </li>
+    /// <li> <p> <code>Ready</code>: Environment is available to have an action performed on it, such as update or terminate.</p> </li>
+    /// <li> <p> <code>Terminating</code>: Environment is in the shut-down process.</p> </li>
+    /// <li> <p> <code>Terminated</code>: Environment is not running.</p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::EnvironmentStatus> {
         self.status.as_ref()
     }
-    /// <p>Indicates if there is an in-progress environment configuration update or application
-    /// version deployment that you can cancel.</p>
-    /// <p>
-    /// <code>true:</code> There is an update in progress. </p>
-    /// <p>
-    /// <code>false:</code> There are no updates currently in progress. </p>
+    /// <p>Indicates if there is an in-progress environment configuration update or application version deployment that you can cancel.</p>
+    /// <p> <code>true:</code> There is an update in progress. </p>
+    /// <p> <code>false:</code> There are no updates currently in progress. </p>
     pub fn abortable_operation_in_progress(&self) -> std::option::Option<bool> {
         self.abortable_operation_in_progress
     }
-    /// <p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the
-    /// failure levels for a running environment:</p>
+    /// <p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the failure levels for a running environment:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more
-    /// consecutive failures occur for an environment.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive
-    /// failures occur for an environment.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Green</code>: Indicates the environment is healthy and fully functional.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Grey</code>: Default health for a new environment. The environment is not fully
-    /// launched and health checks have not started or health checks are suspended during an
-    /// <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.</p>
-    /// </li>
+    /// <li> <p> <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive failures occur for an environment.</p> </li>
+    /// <li> <p> <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive failures occur for an environment.</p> </li>
+    /// <li> <p> <code>Green</code>: Indicates the environment is healthy and fully functional.</p> </li>
+    /// <li> <p> <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.</p> </li>
     /// </ul>
-    /// <p> Default: <code>Grey</code>
-    /// </p>
+    /// <p> Default: <code>Grey</code> </p>
     pub fn health(&self) -> std::option::Option<&crate::model::EnvironmentHealth> {
         self.health.as_ref()
     }
-    /// <p>Returns the health status of the application running in your environment. For more
-    /// information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
-    /// Statuses</a>.</p>
+    /// <p>Returns the health status of the application running in your environment. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
     pub fn health_status(&self) -> std::option::Option<&crate::model::EnvironmentHealthStatus> {
         self.health_status.as_ref()
     }
@@ -339,8 +252,7 @@ impl UpdateEnvironmentOutput {
     pub fn environment_arn(&self) -> std::option::Option<&str> {
         self.environment_arn.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the environment's operations role. For more information,
-    /// see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the environment's operations role. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
     pub fn operations_role(&self) -> std::option::Option<&str> {
         self.operations_role.as_deref()
     }
@@ -480,14 +392,12 @@ pub mod update_environment_output {
             self.platform_arn = input;
             self
         }
-        /// <p>The name of the configuration template used to originally launch this
-        /// environment.</p>
+        /// <p>The name of the configuration template used to originally launch this environment.</p>
         pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_name = Some(input.into());
             self
         }
-        /// <p>The name of the configuration template used to originally launch this
-        /// environment.</p>
+        /// <p>The name of the configuration template used to originally launch this environment.</p>
         pub fn set_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -505,14 +415,12 @@ pub mod update_environment_output {
             self.description = input;
             self
         }
-        /// <p>For load-balanced, autoscaling environments, the URL to the LoadBalancer. For
-        /// single-instance environments, the IP address of the instance.</p>
+        /// <p>For load-balanced, autoscaling environments, the URL to the LoadBalancer. For single-instance environments, the IP address of the instance.</p>
         pub fn endpoint_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.endpoint_url = Some(input.into());
             self
         }
-        /// <p>For load-balanced, autoscaling environments, the URL to the LoadBalancer. For
-        /// single-instance environments, the IP address of the instance.</p>
+        /// <p>For load-balanced, autoscaling environments, the URL to the LoadBalancer. For single-instance environments, the IP address of the instance.</p>
         pub fn set_endpoint_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.endpoint_url = input;
             self
@@ -554,60 +462,24 @@ pub mod update_environment_output {
             self
         }
         /// <p>The current operational status of the environment:</p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Launching</code>: Environment is in the process of initial deployment.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Updating</code>: Environment is in the process of updating its configuration
-        /// settings or application version.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Ready</code>: Environment is available to have an action performed on it, such as
-        /// update or terminate.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Terminating</code>: Environment is in the shut-down process.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Terminated</code>: Environment is not running.</p>
-        /// </li>
+        /// <li> <p> <code>Launching</code>: Environment is in the process of initial deployment.</p> </li>
+        /// <li> <p> <code>Updating</code>: Environment is in the process of updating its configuration settings or application version.</p> </li>
+        /// <li> <p> <code>Ready</code>: Environment is available to have an action performed on it, such as update or terminate.</p> </li>
+        /// <li> <p> <code>Terminating</code>: Environment is in the shut-down process.</p> </li>
+        /// <li> <p> <code>Terminated</code>: Environment is not running.</p> </li>
         /// </ul>
         pub fn status(mut self, input: crate::model::EnvironmentStatus) -> Self {
             self.status = Some(input);
             self
         }
         /// <p>The current operational status of the environment:</p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Launching</code>: Environment is in the process of initial deployment.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Updating</code>: Environment is in the process of updating its configuration
-        /// settings or application version.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Ready</code>: Environment is available to have an action performed on it, such as
-        /// update or terminate.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Terminating</code>: Environment is in the shut-down process.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Terminated</code>: Environment is not running.</p>
-        /// </li>
+        /// <li> <p> <code>Launching</code>: Environment is in the process of initial deployment.</p> </li>
+        /// <li> <p> <code>Updating</code>: Environment is in the process of updating its configuration settings or application version.</p> </li>
+        /// <li> <p> <code>Ready</code>: Environment is available to have an action performed on it, such as update or terminate.</p> </li>
+        /// <li> <p> <code>Terminating</code>: Environment is in the shut-down process.</p> </li>
+        /// <li> <p> <code>Terminated</code>: Environment is not running.</p> </li>
         /// </ul>
         pub fn set_status(
             mut self,
@@ -616,22 +488,16 @@ pub mod update_environment_output {
             self.status = input;
             self
         }
-        /// <p>Indicates if there is an in-progress environment configuration update or application
-        /// version deployment that you can cancel.</p>
-        /// <p>
-        /// <code>true:</code> There is an update in progress. </p>
-        /// <p>
-        /// <code>false:</code> There are no updates currently in progress. </p>
+        /// <p>Indicates if there is an in-progress environment configuration update or application version deployment that you can cancel.</p>
+        /// <p> <code>true:</code> There is an update in progress. </p>
+        /// <p> <code>false:</code> There are no updates currently in progress. </p>
         pub fn abortable_operation_in_progress(mut self, input: bool) -> Self {
             self.abortable_operation_in_progress = Some(input);
             self
         }
-        /// <p>Indicates if there is an in-progress environment configuration update or application
-        /// version deployment that you can cancel.</p>
-        /// <p>
-        /// <code>true:</code> There is an update in progress. </p>
-        /// <p>
-        /// <code>false:</code> There are no updates currently in progress. </p>
+        /// <p>Indicates if there is an in-progress environment configuration update or application version deployment that you can cancel.</p>
+        /// <p> <code>true:</code> There is an update in progress. </p>
+        /// <p> <code>false:</code> There are no updates currently in progress. </p>
         pub fn set_abortable_operation_in_progress(
             mut self,
             input: std::option::Option<bool>,
@@ -639,62 +505,26 @@ pub mod update_environment_output {
             self.abortable_operation_in_progress = input;
             self
         }
-        /// <p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the
-        /// failure levels for a running environment:</p>
+        /// <p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the failure levels for a running environment:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more
-        /// consecutive failures occur for an environment.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive
-        /// failures occur for an environment.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Green</code>: Indicates the environment is healthy and fully functional.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Grey</code>: Default health for a new environment. The environment is not fully
-        /// launched and health checks have not started or health checks are suspended during an
-        /// <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.</p>
-        /// </li>
+        /// <li> <p> <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive failures occur for an environment.</p> </li>
+        /// <li> <p> <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive failures occur for an environment.</p> </li>
+        /// <li> <p> <code>Green</code>: Indicates the environment is healthy and fully functional.</p> </li>
+        /// <li> <p> <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.</p> </li>
         /// </ul>
-        /// <p> Default: <code>Grey</code>
-        /// </p>
+        /// <p> Default: <code>Grey</code> </p>
         pub fn health(mut self, input: crate::model::EnvironmentHealth) -> Self {
             self.health = Some(input);
             self
         }
-        /// <p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the
-        /// failure levels for a running environment:</p>
+        /// <p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the failure levels for a running environment:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more
-        /// consecutive failures occur for an environment.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive
-        /// failures occur for an environment.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Green</code>: Indicates the environment is healthy and fully functional.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Grey</code>: Default health for a new environment. The environment is not fully
-        /// launched and health checks have not started or health checks are suspended during an
-        /// <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.</p>
-        /// </li>
+        /// <li> <p> <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive failures occur for an environment.</p> </li>
+        /// <li> <p> <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive failures occur for an environment.</p> </li>
+        /// <li> <p> <code>Green</code>: Indicates the environment is healthy and fully functional.</p> </li>
+        /// <li> <p> <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.</p> </li>
         /// </ul>
-        /// <p> Default: <code>Grey</code>
-        /// </p>
+        /// <p> Default: <code>Grey</code> </p>
         pub fn set_health(
             mut self,
             input: std::option::Option<crate::model::EnvironmentHealth>,
@@ -702,16 +532,12 @@ pub mod update_environment_output {
             self.health = input;
             self
         }
-        /// <p>Returns the health status of the application running in your environment. For more
-        /// information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
-        /// Statuses</a>.</p>
+        /// <p>Returns the health status of the application running in your environment. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
         pub fn health_status(mut self, input: crate::model::EnvironmentHealthStatus) -> Self {
             self.health_status = Some(input);
             self
         }
-        /// <p>Returns the health status of the application running in your environment. For more
-        /// information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
-        /// Statuses</a>.</p>
+        /// <p>Returns the health status of the application running in your environment. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
         pub fn set_health_status(
             mut self,
             input: std::option::Option<crate::model::EnvironmentHealthStatus>,
@@ -777,14 +603,12 @@ pub mod update_environment_output {
             self.environment_arn = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the environment's operations role. For more information,
-        /// see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the environment's operations role. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
         pub fn operations_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.operations_role = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the environment's operations role. For more information,
-        /// see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the environment's operations role. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
         pub fn set_operations_role(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -837,46 +661,25 @@ pub struct UpdateConfigurationTemplateOutput {
     pub platform_arn: std::option::Option<std::string::String>,
     /// <p>The name of the application associated with this configuration set.</p>
     pub application_name: std::option::Option<std::string::String>,
-    /// <p> If not <code>null</code>, the name of the configuration template for this
-    /// configuration set. </p>
+    /// <p> If not <code>null</code>, the name of the configuration template for this configuration set. </p>
     pub template_name: std::option::Option<std::string::String>,
     /// <p>Describes this configuration set.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p> If not <code>null</code>, the name of the environment for this configuration set.
-    /// </p>
+    /// <p> If not <code>null</code>, the name of the environment for this configuration set. </p>
     pub environment_name: std::option::Option<std::string::String>,
-    /// <p> If this configuration set is associated with an environment, the
-    /// <code>DeploymentStatus</code> parameter indicates the deployment status of this
-    /// configuration set: </p>
+    /// <p> If this configuration set is associated with an environment, the <code>DeploymentStatus</code> parameter indicates the deployment status of this configuration set: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>null</code>: This configuration is not associated with a running
-    /// environment.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: This is a draft configuration that is not deployed to the associated
-    /// environment but is in the process of deploying.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deployed</code>: This is the configuration that is currently deployed to the
-    /// associated running environment.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>failed</code>: This is a draft configuration that failed to successfully
-    /// deploy.</p>
-    /// </li>
+    /// <li> <p> <code>null</code>: This configuration is not associated with a running environment.</p> </li>
+    /// <li> <p> <code>pending</code>: This is a draft configuration that is not deployed to the associated environment but is in the process of deploying.</p> </li>
+    /// <li> <p> <code>deployed</code>: This is the configuration that is currently deployed to the associated running environment.</p> </li>
+    /// <li> <p> <code>failed</code>: This is a draft configuration that failed to successfully deploy.</p> </li>
     /// </ul>
     pub deployment_status: std::option::Option<crate::model::ConfigurationDeploymentStatus>,
     /// <p>The date (in UTC time) when this configuration set was created.</p>
     pub date_created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date (in UTC time) when this configuration set was last modified.</p>
     pub date_updated: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>A list of the configuration options and their values in this configuration
-    /// set.</p>
+    /// <p>A list of the configuration options and their values in this configuration set.</p>
     pub option_settings:
         std::option::Option<std::vec::Vec<crate::model::ConfigurationOptionSetting>>,
 }
@@ -893,8 +696,7 @@ impl UpdateConfigurationTemplateOutput {
     pub fn application_name(&self) -> std::option::Option<&str> {
         self.application_name.as_deref()
     }
-    /// <p> If not <code>null</code>, the name of the configuration template for this
-    /// configuration set. </p>
+    /// <p> If not <code>null</code>, the name of the configuration template for this configuration set. </p>
     pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
     }
@@ -902,35 +704,16 @@ impl UpdateConfigurationTemplateOutput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p> If not <code>null</code>, the name of the environment for this configuration set.
-    /// </p>
+    /// <p> If not <code>null</code>, the name of the environment for this configuration set. </p>
     pub fn environment_name(&self) -> std::option::Option<&str> {
         self.environment_name.as_deref()
     }
-    /// <p> If this configuration set is associated with an environment, the
-    /// <code>DeploymentStatus</code> parameter indicates the deployment status of this
-    /// configuration set: </p>
+    /// <p> If this configuration set is associated with an environment, the <code>DeploymentStatus</code> parameter indicates the deployment status of this configuration set: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>null</code>: This configuration is not associated with a running
-    /// environment.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: This is a draft configuration that is not deployed to the associated
-    /// environment but is in the process of deploying.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deployed</code>: This is the configuration that is currently deployed to the
-    /// associated running environment.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>failed</code>: This is a draft configuration that failed to successfully
-    /// deploy.</p>
-    /// </li>
+    /// <li> <p> <code>null</code>: This configuration is not associated with a running environment.</p> </li>
+    /// <li> <p> <code>pending</code>: This is a draft configuration that is not deployed to the associated environment but is in the process of deploying.</p> </li>
+    /// <li> <p> <code>deployed</code>: This is the configuration that is currently deployed to the associated running environment.</p> </li>
+    /// <li> <p> <code>failed</code>: This is a draft configuration that failed to successfully deploy.</p> </li>
     /// </ul>
     pub fn deployment_status(
         &self,
@@ -945,8 +728,7 @@ impl UpdateConfigurationTemplateOutput {
     pub fn date_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.date_updated.as_ref()
     }
-    /// <p>A list of the configuration options and their values in this configuration
-    /// set.</p>
+    /// <p>A list of the configuration options and their values in this configuration set.</p>
     pub fn option_settings(
         &self,
     ) -> std::option::Option<&[crate::model::ConfigurationOptionSetting]> {
@@ -1025,14 +807,12 @@ pub mod update_configuration_template_output {
             self.application_name = input;
             self
         }
-        /// <p> If not <code>null</code>, the name of the configuration template for this
-        /// configuration set. </p>
+        /// <p> If not <code>null</code>, the name of the configuration template for this configuration set. </p>
         pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_name = Some(input.into());
             self
         }
-        /// <p> If not <code>null</code>, the name of the configuration template for this
-        /// configuration set. </p>
+        /// <p> If not <code>null</code>, the name of the configuration template for this configuration set. </p>
         pub fn set_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1050,14 +830,12 @@ pub mod update_configuration_template_output {
             self.description = input;
             self
         }
-        /// <p> If not <code>null</code>, the name of the environment for this configuration set.
-        /// </p>
+        /// <p> If not <code>null</code>, the name of the environment for this configuration set. </p>
         pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.environment_name = Some(input.into());
             self
         }
-        /// <p> If not <code>null</code>, the name of the environment for this configuration set.
-        /// </p>
+        /// <p> If not <code>null</code>, the name of the environment for this configuration set. </p>
         pub fn set_environment_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1065,30 +843,12 @@ pub mod update_configuration_template_output {
             self.environment_name = input;
             self
         }
-        /// <p> If this configuration set is associated with an environment, the
-        /// <code>DeploymentStatus</code> parameter indicates the deployment status of this
-        /// configuration set: </p>
+        /// <p> If this configuration set is associated with an environment, the <code>DeploymentStatus</code> parameter indicates the deployment status of this configuration set: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>null</code>: This configuration is not associated with a running
-        /// environment.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: This is a draft configuration that is not deployed to the associated
-        /// environment but is in the process of deploying.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deployed</code>: This is the configuration that is currently deployed to the
-        /// associated running environment.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>failed</code>: This is a draft configuration that failed to successfully
-        /// deploy.</p>
-        /// </li>
+        /// <li> <p> <code>null</code>: This configuration is not associated with a running environment.</p> </li>
+        /// <li> <p> <code>pending</code>: This is a draft configuration that is not deployed to the associated environment but is in the process of deploying.</p> </li>
+        /// <li> <p> <code>deployed</code>: This is the configuration that is currently deployed to the associated running environment.</p> </li>
+        /// <li> <p> <code>failed</code>: This is a draft configuration that failed to successfully deploy.</p> </li>
         /// </ul>
         pub fn deployment_status(
             mut self,
@@ -1097,30 +857,12 @@ pub mod update_configuration_template_output {
             self.deployment_status = Some(input);
             self
         }
-        /// <p> If this configuration set is associated with an environment, the
-        /// <code>DeploymentStatus</code> parameter indicates the deployment status of this
-        /// configuration set: </p>
+        /// <p> If this configuration set is associated with an environment, the <code>DeploymentStatus</code> parameter indicates the deployment status of this configuration set: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>null</code>: This configuration is not associated with a running
-        /// environment.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: This is a draft configuration that is not deployed to the associated
-        /// environment but is in the process of deploying.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deployed</code>: This is the configuration that is currently deployed to the
-        /// associated running environment.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>failed</code>: This is a draft configuration that failed to successfully
-        /// deploy.</p>
-        /// </li>
+        /// <li> <p> <code>null</code>: This configuration is not associated with a running environment.</p> </li>
+        /// <li> <p> <code>pending</code>: This is a draft configuration that is not deployed to the associated environment but is in the process of deploying.</p> </li>
+        /// <li> <p> <code>deployed</code>: This is the configuration that is currently deployed to the associated running environment.</p> </li>
+        /// <li> <p> <code>failed</code>: This is a draft configuration that failed to successfully deploy.</p> </li>
         /// </ul>
         pub fn set_deployment_status(
             mut self,
@@ -1159,16 +901,14 @@ pub mod update_configuration_template_output {
         ///
         /// To override the contents of this collection use [`set_option_settings`](Self::set_option_settings).
         ///
-        /// <p>A list of the configuration options and their values in this configuration
-        /// set.</p>
+        /// <p>A list of the configuration options and their values in this configuration set.</p>
         pub fn option_settings(mut self, input: crate::model::ConfigurationOptionSetting) -> Self {
             let mut v = self.option_settings.unwrap_or_default();
             v.push(input);
             self.option_settings = Some(v);
             self
         }
-        /// <p>A list of the configuration options and their values in this configuration
-        /// set.</p>
+        /// <p>A list of the configuration options and their values in this configuration set.</p>
         pub fn set_option_settings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ConfigurationOptionSetting>>,
@@ -1204,13 +944,11 @@ impl UpdateConfigurationTemplateOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateApplicationVersionOutput {
-    /// <p> The <a>ApplicationVersionDescription</a> of the application version.
-    /// </p>
+    /// <p> The <code>ApplicationVersionDescription</code> of the application version. </p>
     pub application_version: std::option::Option<crate::model::ApplicationVersionDescription>,
 }
 impl UpdateApplicationVersionOutput {
-    /// <p> The <a>ApplicationVersionDescription</a> of the application version.
-    /// </p>
+    /// <p> The <code>ApplicationVersionDescription</code> of the application version. </p>
     pub fn application_version(
         &self,
     ) -> std::option::Option<&crate::model::ApplicationVersionDescription> {
@@ -1234,8 +972,7 @@ pub mod update_application_version_output {
             std::option::Option<crate::model::ApplicationVersionDescription>,
     }
     impl Builder {
-        /// <p> The <a>ApplicationVersionDescription</a> of the application version.
-        /// </p>
+        /// <p> The <code>ApplicationVersionDescription</code> of the application version. </p>
         pub fn application_version(
             mut self,
             input: crate::model::ApplicationVersionDescription,
@@ -1243,8 +980,7 @@ pub mod update_application_version_output {
             self.application_version = Some(input);
             self
         }
-        /// <p> The <a>ApplicationVersionDescription</a> of the application version.
-        /// </p>
+        /// <p> The <code>ApplicationVersionDescription</code> of the application version. </p>
         pub fn set_application_version(
             mut self,
             input: std::option::Option<crate::model::ApplicationVersionDescription>,
@@ -1357,11 +1093,11 @@ impl UpdateApplicationResourceLifecycleOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateApplicationOutput {
-    /// <p> The <a>ApplicationDescription</a> of the application. </p>
+    /// <p> The <code>ApplicationDescription</code> of the application. </p>
     pub application: std::option::Option<crate::model::ApplicationDescription>,
 }
 impl UpdateApplicationOutput {
-    /// <p> The <a>ApplicationDescription</a> of the application. </p>
+    /// <p> The <code>ApplicationDescription</code> of the application. </p>
     pub fn application(&self) -> std::option::Option<&crate::model::ApplicationDescription> {
         self.application.as_ref()
     }
@@ -1382,12 +1118,12 @@ pub mod update_application_output {
         pub(crate) application: std::option::Option<crate::model::ApplicationDescription>,
     }
     impl Builder {
-        /// <p> The <a>ApplicationDescription</a> of the application. </p>
+        /// <p> The <code>ApplicationDescription</code> of the application. </p>
         pub fn application(mut self, input: crate::model::ApplicationDescription) -> Self {
             self.application = Some(input);
             self
         }
-        /// <p> The <a>ApplicationDescription</a> of the application. </p>
+        /// <p> The <code>ApplicationDescription</code> of the application. </p>
         pub fn set_application(
             mut self,
             input: std::option::Option<crate::model::ApplicationDescription>,
@@ -1426,13 +1162,11 @@ pub struct TerminateEnvironmentOutput {
     pub solution_stack_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the platform version.</p>
     pub platform_arn: std::option::Option<std::string::String>,
-    /// <p>The name of the configuration template used to originally launch this
-    /// environment.</p>
+    /// <p>The name of the configuration template used to originally launch this environment.</p>
     pub template_name: std::option::Option<std::string::String>,
     /// <p>Describes this environment.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>For load-balanced, autoscaling environments, the URL to the LoadBalancer. For
-    /// single-instance environments, the IP address of the instance.</p>
+    /// <p>For load-balanced, autoscaling environments, the URL to the LoadBalancer. For single-instance environments, the IP address of the instance.</p>
     pub endpoint_url: std::option::Option<std::string::String>,
     /// <p>The URL to the CNAME for this environment.</p>
     pub cname: std::option::Option<std::string::String>,
@@ -1441,69 +1175,28 @@ pub struct TerminateEnvironmentOutput {
     /// <p>The last modified date for this environment.</p>
     pub date_updated: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current operational status of the environment:</p>
-    ///
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Launching</code>: Environment is in the process of initial deployment.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Updating</code>: Environment is in the process of updating its configuration
-    /// settings or application version.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Ready</code>: Environment is available to have an action performed on it, such as
-    /// update or terminate.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Terminating</code>: Environment is in the shut-down process.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Terminated</code>: Environment is not running.</p>
-    /// </li>
+    /// <li> <p> <code>Launching</code>: Environment is in the process of initial deployment.</p> </li>
+    /// <li> <p> <code>Updating</code>: Environment is in the process of updating its configuration settings or application version.</p> </li>
+    /// <li> <p> <code>Ready</code>: Environment is available to have an action performed on it, such as update or terminate.</p> </li>
+    /// <li> <p> <code>Terminating</code>: Environment is in the shut-down process.</p> </li>
+    /// <li> <p> <code>Terminated</code>: Environment is not running.</p> </li>
     /// </ul>
     pub status: std::option::Option<crate::model::EnvironmentStatus>,
-    /// <p>Indicates if there is an in-progress environment configuration update or application
-    /// version deployment that you can cancel.</p>
-    /// <p>
-    /// <code>true:</code> There is an update in progress. </p>
-    /// <p>
-    /// <code>false:</code> There are no updates currently in progress. </p>
+    /// <p>Indicates if there is an in-progress environment configuration update or application version deployment that you can cancel.</p>
+    /// <p> <code>true:</code> There is an update in progress. </p>
+    /// <p> <code>false:</code> There are no updates currently in progress. </p>
     pub abortable_operation_in_progress: std::option::Option<bool>,
-    /// <p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the
-    /// failure levels for a running environment:</p>
+    /// <p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the failure levels for a running environment:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more
-    /// consecutive failures occur for an environment.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive
-    /// failures occur for an environment.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Green</code>: Indicates the environment is healthy and fully functional.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Grey</code>: Default health for a new environment. The environment is not fully
-    /// launched and health checks have not started or health checks are suspended during an
-    /// <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.</p>
-    /// </li>
+    /// <li> <p> <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive failures occur for an environment.</p> </li>
+    /// <li> <p> <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive failures occur for an environment.</p> </li>
+    /// <li> <p> <code>Green</code>: Indicates the environment is healthy and fully functional.</p> </li>
+    /// <li> <p> <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.</p> </li>
     /// </ul>
-    /// <p> Default: <code>Grey</code>
-    /// </p>
+    /// <p> Default: <code>Grey</code> </p>
     pub health: std::option::Option<crate::model::EnvironmentHealth>,
-    /// <p>Returns the health status of the application running in your environment. For more
-    /// information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
-    /// Statuses</a>.</p>
+    /// <p>Returns the health status of the application running in your environment. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
     pub health_status: std::option::Option<crate::model::EnvironmentHealthStatus>,
     /// <p>The description of the AWS resources used by this environment.</p>
     pub resources: std::option::Option<crate::model::EnvironmentResourcesDescription>,
@@ -1513,8 +1206,7 @@ pub struct TerminateEnvironmentOutput {
     pub environment_links: std::option::Option<std::vec::Vec<crate::model::EnvironmentLink>>,
     /// <p>The environment's Amazon Resource Name (ARN), which can be used in other API requests that require an ARN.</p>
     pub environment_arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the environment's operations role. For more information,
-    /// see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the environment's operations role. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
     pub operations_role: std::option::Option<std::string::String>,
 }
 impl TerminateEnvironmentOutput {
@@ -1542,8 +1234,7 @@ impl TerminateEnvironmentOutput {
     pub fn platform_arn(&self) -> std::option::Option<&str> {
         self.platform_arn.as_deref()
     }
-    /// <p>The name of the configuration template used to originally launch this
-    /// environment.</p>
+    /// <p>The name of the configuration template used to originally launch this environment.</p>
     pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
     }
@@ -1551,8 +1242,7 @@ impl TerminateEnvironmentOutput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>For load-balanced, autoscaling environments, the URL to the LoadBalancer. For
-    /// single-instance environments, the IP address of the instance.</p>
+    /// <p>For load-balanced, autoscaling environments, the URL to the LoadBalancer. For single-instance environments, the IP address of the instance.</p>
     pub fn endpoint_url(&self) -> std::option::Option<&str> {
         self.endpoint_url.as_deref()
     }
@@ -1569,75 +1259,34 @@ impl TerminateEnvironmentOutput {
         self.date_updated.as_ref()
     }
     /// <p>The current operational status of the environment:</p>
-    ///
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Launching</code>: Environment is in the process of initial deployment.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Updating</code>: Environment is in the process of updating its configuration
-    /// settings or application version.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Ready</code>: Environment is available to have an action performed on it, such as
-    /// update or terminate.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Terminating</code>: Environment is in the shut-down process.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Terminated</code>: Environment is not running.</p>
-    /// </li>
+    /// <li> <p> <code>Launching</code>: Environment is in the process of initial deployment.</p> </li>
+    /// <li> <p> <code>Updating</code>: Environment is in the process of updating its configuration settings or application version.</p> </li>
+    /// <li> <p> <code>Ready</code>: Environment is available to have an action performed on it, such as update or terminate.</p> </li>
+    /// <li> <p> <code>Terminating</code>: Environment is in the shut-down process.</p> </li>
+    /// <li> <p> <code>Terminated</code>: Environment is not running.</p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::EnvironmentStatus> {
         self.status.as_ref()
     }
-    /// <p>Indicates if there is an in-progress environment configuration update or application
-    /// version deployment that you can cancel.</p>
-    /// <p>
-    /// <code>true:</code> There is an update in progress. </p>
-    /// <p>
-    /// <code>false:</code> There are no updates currently in progress. </p>
+    /// <p>Indicates if there is an in-progress environment configuration update or application version deployment that you can cancel.</p>
+    /// <p> <code>true:</code> There is an update in progress. </p>
+    /// <p> <code>false:</code> There are no updates currently in progress. </p>
     pub fn abortable_operation_in_progress(&self) -> std::option::Option<bool> {
         self.abortable_operation_in_progress
     }
-    /// <p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the
-    /// failure levels for a running environment:</p>
+    /// <p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the failure levels for a running environment:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more
-    /// consecutive failures occur for an environment.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive
-    /// failures occur for an environment.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Green</code>: Indicates the environment is healthy and fully functional.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Grey</code>: Default health for a new environment. The environment is not fully
-    /// launched and health checks have not started or health checks are suspended during an
-    /// <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.</p>
-    /// </li>
+    /// <li> <p> <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive failures occur for an environment.</p> </li>
+    /// <li> <p> <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive failures occur for an environment.</p> </li>
+    /// <li> <p> <code>Green</code>: Indicates the environment is healthy and fully functional.</p> </li>
+    /// <li> <p> <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.</p> </li>
     /// </ul>
-    /// <p> Default: <code>Grey</code>
-    /// </p>
+    /// <p> Default: <code>Grey</code> </p>
     pub fn health(&self) -> std::option::Option<&crate::model::EnvironmentHealth> {
         self.health.as_ref()
     }
-    /// <p>Returns the health status of the application running in your environment. For more
-    /// information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
-    /// Statuses</a>.</p>
+    /// <p>Returns the health status of the application running in your environment. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
     pub fn health_status(&self) -> std::option::Option<&crate::model::EnvironmentHealthStatus> {
         self.health_status.as_ref()
     }
@@ -1657,8 +1306,7 @@ impl TerminateEnvironmentOutput {
     pub fn environment_arn(&self) -> std::option::Option<&str> {
         self.environment_arn.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the environment's operations role. For more information,
-    /// see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the environment's operations role. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
     pub fn operations_role(&self) -> std::option::Option<&str> {
         self.operations_role.as_deref()
     }
@@ -1798,14 +1446,12 @@ pub mod terminate_environment_output {
             self.platform_arn = input;
             self
         }
-        /// <p>The name of the configuration template used to originally launch this
-        /// environment.</p>
+        /// <p>The name of the configuration template used to originally launch this environment.</p>
         pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_name = Some(input.into());
             self
         }
-        /// <p>The name of the configuration template used to originally launch this
-        /// environment.</p>
+        /// <p>The name of the configuration template used to originally launch this environment.</p>
         pub fn set_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1823,14 +1469,12 @@ pub mod terminate_environment_output {
             self.description = input;
             self
         }
-        /// <p>For load-balanced, autoscaling environments, the URL to the LoadBalancer. For
-        /// single-instance environments, the IP address of the instance.</p>
+        /// <p>For load-balanced, autoscaling environments, the URL to the LoadBalancer. For single-instance environments, the IP address of the instance.</p>
         pub fn endpoint_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.endpoint_url = Some(input.into());
             self
         }
-        /// <p>For load-balanced, autoscaling environments, the URL to the LoadBalancer. For
-        /// single-instance environments, the IP address of the instance.</p>
+        /// <p>For load-balanced, autoscaling environments, the URL to the LoadBalancer. For single-instance environments, the IP address of the instance.</p>
         pub fn set_endpoint_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.endpoint_url = input;
             self
@@ -1872,60 +1516,24 @@ pub mod terminate_environment_output {
             self
         }
         /// <p>The current operational status of the environment:</p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Launching</code>: Environment is in the process of initial deployment.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Updating</code>: Environment is in the process of updating its configuration
-        /// settings or application version.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Ready</code>: Environment is available to have an action performed on it, such as
-        /// update or terminate.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Terminating</code>: Environment is in the shut-down process.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Terminated</code>: Environment is not running.</p>
-        /// </li>
+        /// <li> <p> <code>Launching</code>: Environment is in the process of initial deployment.</p> </li>
+        /// <li> <p> <code>Updating</code>: Environment is in the process of updating its configuration settings or application version.</p> </li>
+        /// <li> <p> <code>Ready</code>: Environment is available to have an action performed on it, such as update or terminate.</p> </li>
+        /// <li> <p> <code>Terminating</code>: Environment is in the shut-down process.</p> </li>
+        /// <li> <p> <code>Terminated</code>: Environment is not running.</p> </li>
         /// </ul>
         pub fn status(mut self, input: crate::model::EnvironmentStatus) -> Self {
             self.status = Some(input);
             self
         }
         /// <p>The current operational status of the environment:</p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Launching</code>: Environment is in the process of initial deployment.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Updating</code>: Environment is in the process of updating its configuration
-        /// settings or application version.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Ready</code>: Environment is available to have an action performed on it, such as
-        /// update or terminate.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Terminating</code>: Environment is in the shut-down process.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Terminated</code>: Environment is not running.</p>
-        /// </li>
+        /// <li> <p> <code>Launching</code>: Environment is in the process of initial deployment.</p> </li>
+        /// <li> <p> <code>Updating</code>: Environment is in the process of updating its configuration settings or application version.</p> </li>
+        /// <li> <p> <code>Ready</code>: Environment is available to have an action performed on it, such as update or terminate.</p> </li>
+        /// <li> <p> <code>Terminating</code>: Environment is in the shut-down process.</p> </li>
+        /// <li> <p> <code>Terminated</code>: Environment is not running.</p> </li>
         /// </ul>
         pub fn set_status(
             mut self,
@@ -1934,22 +1542,16 @@ pub mod terminate_environment_output {
             self.status = input;
             self
         }
-        /// <p>Indicates if there is an in-progress environment configuration update or application
-        /// version deployment that you can cancel.</p>
-        /// <p>
-        /// <code>true:</code> There is an update in progress. </p>
-        /// <p>
-        /// <code>false:</code> There are no updates currently in progress. </p>
+        /// <p>Indicates if there is an in-progress environment configuration update or application version deployment that you can cancel.</p>
+        /// <p> <code>true:</code> There is an update in progress. </p>
+        /// <p> <code>false:</code> There are no updates currently in progress. </p>
         pub fn abortable_operation_in_progress(mut self, input: bool) -> Self {
             self.abortable_operation_in_progress = Some(input);
             self
         }
-        /// <p>Indicates if there is an in-progress environment configuration update or application
-        /// version deployment that you can cancel.</p>
-        /// <p>
-        /// <code>true:</code> There is an update in progress. </p>
-        /// <p>
-        /// <code>false:</code> There are no updates currently in progress. </p>
+        /// <p>Indicates if there is an in-progress environment configuration update or application version deployment that you can cancel.</p>
+        /// <p> <code>true:</code> There is an update in progress. </p>
+        /// <p> <code>false:</code> There are no updates currently in progress. </p>
         pub fn set_abortable_operation_in_progress(
             mut self,
             input: std::option::Option<bool>,
@@ -1957,62 +1559,26 @@ pub mod terminate_environment_output {
             self.abortable_operation_in_progress = input;
             self
         }
-        /// <p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the
-        /// failure levels for a running environment:</p>
+        /// <p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the failure levels for a running environment:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more
-        /// consecutive failures occur for an environment.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive
-        /// failures occur for an environment.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Green</code>: Indicates the environment is healthy and fully functional.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Grey</code>: Default health for a new environment. The environment is not fully
-        /// launched and health checks have not started or health checks are suspended during an
-        /// <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.</p>
-        /// </li>
+        /// <li> <p> <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive failures occur for an environment.</p> </li>
+        /// <li> <p> <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive failures occur for an environment.</p> </li>
+        /// <li> <p> <code>Green</code>: Indicates the environment is healthy and fully functional.</p> </li>
+        /// <li> <p> <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.</p> </li>
         /// </ul>
-        /// <p> Default: <code>Grey</code>
-        /// </p>
+        /// <p> Default: <code>Grey</code> </p>
         pub fn health(mut self, input: crate::model::EnvironmentHealth) -> Self {
             self.health = Some(input);
             self
         }
-        /// <p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the
-        /// failure levels for a running environment:</p>
+        /// <p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the failure levels for a running environment:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more
-        /// consecutive failures occur for an environment.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive
-        /// failures occur for an environment.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Green</code>: Indicates the environment is healthy and fully functional.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Grey</code>: Default health for a new environment. The environment is not fully
-        /// launched and health checks have not started or health checks are suspended during an
-        /// <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.</p>
-        /// </li>
+        /// <li> <p> <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive failures occur for an environment.</p> </li>
+        /// <li> <p> <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive failures occur for an environment.</p> </li>
+        /// <li> <p> <code>Green</code>: Indicates the environment is healthy and fully functional.</p> </li>
+        /// <li> <p> <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.</p> </li>
         /// </ul>
-        /// <p> Default: <code>Grey</code>
-        /// </p>
+        /// <p> Default: <code>Grey</code> </p>
         pub fn set_health(
             mut self,
             input: std::option::Option<crate::model::EnvironmentHealth>,
@@ -2020,16 +1586,12 @@ pub mod terminate_environment_output {
             self.health = input;
             self
         }
-        /// <p>Returns the health status of the application running in your environment. For more
-        /// information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
-        /// Statuses</a>.</p>
+        /// <p>Returns the health status of the application running in your environment. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
         pub fn health_status(mut self, input: crate::model::EnvironmentHealthStatus) -> Self {
             self.health_status = Some(input);
             self
         }
-        /// <p>Returns the health status of the application running in your environment. For more
-        /// information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
-        /// Statuses</a>.</p>
+        /// <p>Returns the health status of the application running in your environment. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
         pub fn set_health_status(
             mut self,
             input: std::option::Option<crate::model::EnvironmentHealthStatus>,
@@ -2095,14 +1657,12 @@ pub mod terminate_environment_output {
             self.environment_arn = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the environment's operations role. For more information,
-        /// see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the environment's operations role. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
         pub fn operations_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.operations_role = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the environment's operations role. For more information,
-        /// see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the environment's operations role. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
         pub fn set_operations_role(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2179,12 +1739,12 @@ impl SwapEnvironmentCnamEsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RetrieveEnvironmentInfoOutput {
-    /// <p> The <a>EnvironmentInfoDescription</a> of the environment. </p>
+    /// <p> The <code>EnvironmentInfoDescription</code> of the environment. </p>
     pub environment_info:
         std::option::Option<std::vec::Vec<crate::model::EnvironmentInfoDescription>>,
 }
 impl RetrieveEnvironmentInfoOutput {
-    /// <p> The <a>EnvironmentInfoDescription</a> of the environment. </p>
+    /// <p> The <code>EnvironmentInfoDescription</code> of the environment. </p>
     pub fn environment_info(
         &self,
     ) -> std::option::Option<&[crate::model::EnvironmentInfoDescription]> {
@@ -2212,14 +1772,14 @@ pub mod retrieve_environment_info_output {
         ///
         /// To override the contents of this collection use [`set_environment_info`](Self::set_environment_info).
         ///
-        /// <p> The <a>EnvironmentInfoDescription</a> of the environment. </p>
+        /// <p> The <code>EnvironmentInfoDescription</code> of the environment. </p>
         pub fn environment_info(mut self, input: crate::model::EnvironmentInfoDescription) -> Self {
             let mut v = self.environment_info.unwrap_or_default();
             v.push(input);
             self.environment_info = Some(v);
             self
         }
-        /// <p> The <a>EnvironmentInfoDescription</a> of the environment. </p>
+        /// <p> The <code>EnvironmentInfoDescription</code> of the environment. </p>
         pub fn set_environment_info(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EnvironmentInfoDescription>>,
@@ -2420,8 +1980,7 @@ impl ListTagsForResourceOutput {
 pub struct ListPlatformVersionsOutput {
     /// <p>Summary information about the platform versions.</p>
     pub platform_summary_list: std::option::Option<std::vec::Vec<crate::model::PlatformSummary>>,
-    /// <p>In a paginated request, if this value isn't <code>null</code>, it's the token that you can
-    /// pass in a subsequent request to get the next response page.</p>
+    /// <p>In a paginated request, if this value isn't <code>null</code>, it's the token that you can pass in a subsequent request to get the next response page.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPlatformVersionsOutput {
@@ -2429,8 +1988,7 @@ impl ListPlatformVersionsOutput {
     pub fn platform_summary_list(&self) -> std::option::Option<&[crate::model::PlatformSummary]> {
         self.platform_summary_list.as_deref()
     }
-    /// <p>In a paginated request, if this value isn't <code>null</code>, it's the token that you can
-    /// pass in a subsequent request to get the next response page.</p>
+    /// <p>In a paginated request, if this value isn't <code>null</code>, it's the token that you can pass in a subsequent request to get the next response page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2473,14 +2031,12 @@ pub mod list_platform_versions_output {
             self.platform_summary_list = input;
             self
         }
-        /// <p>In a paginated request, if this value isn't <code>null</code>, it's the token that you can
-        /// pass in a subsequent request to get the next response page.</p>
+        /// <p>In a paginated request, if this value isn't <code>null</code>, it's the token that you can pass in a subsequent request to get the next response page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>In a paginated request, if this value isn't <code>null</code>, it's the token that you can
-        /// pass in a subsequent request to get the next response page.</p>
+        /// <p>In a paginated request, if this value isn't <code>null</code>, it's the token that you can pass in a subsequent request to get the next response page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2508,8 +2064,7 @@ pub struct ListPlatformBranchesOutput {
     /// <p>Summary information about the platform branches.</p>
     pub platform_branch_summary_list:
         std::option::Option<std::vec::Vec<crate::model::PlatformBranchSummary>>,
-    /// <p>In a paginated request, if this value isn't <code>null</code>, it's the token that you can
-    /// pass in a subsequent request to get the next response page.</p>
+    /// <p>In a paginated request, if this value isn't <code>null</code>, it's the token that you can pass in a subsequent request to get the next response page.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPlatformBranchesOutput {
@@ -2519,8 +2074,7 @@ impl ListPlatformBranchesOutput {
     ) -> std::option::Option<&[crate::model::PlatformBranchSummary]> {
         self.platform_branch_summary_list.as_deref()
     }
-    /// <p>In a paginated request, if this value isn't <code>null</code>, it's the token that you can
-    /// pass in a subsequent request to get the next response page.</p>
+    /// <p>In a paginated request, if this value isn't <code>null</code>, it's the token that you can pass in a subsequent request to get the next response page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2569,14 +2123,12 @@ pub mod list_platform_branches_output {
             self.platform_branch_summary_list = input;
             self
         }
-        /// <p>In a paginated request, if this value isn't <code>null</code>, it's the token that you can
-        /// pass in a subsequent request to get the next response page.</p>
+        /// <p>In a paginated request, if this value isn't <code>null</code>, it's the token that you can pass in a subsequent request to get the next response page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>In a paginated request, if this value isn't <code>null</code>, it's the token that you can
-        /// pass in a subsequent request to get the next response page.</p>
+        /// <p>In a paginated request, if this value isn't <code>null</code>, it's the token that you can pass in a subsequent request to get the next response page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2603,7 +2155,7 @@ impl ListPlatformBranchesOutput {
 pub struct ListAvailableSolutionStacksOutput {
     /// <p>A list of available solution stacks.</p>
     pub solution_stacks: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p> A list of available solution stacks and their <a>SolutionStackDescription</a>. </p>
+    /// <p> A list of available solution stacks and their <code>SolutionStackDescription</code>. </p>
     pub solution_stack_details:
         std::option::Option<std::vec::Vec<crate::model::SolutionStackDescription>>,
 }
@@ -2612,7 +2164,7 @@ impl ListAvailableSolutionStacksOutput {
     pub fn solution_stacks(&self) -> std::option::Option<&[std::string::String]> {
         self.solution_stacks.as_deref()
     }
-    /// <p> A list of available solution stacks and their <a>SolutionStackDescription</a>. </p>
+    /// <p> A list of available solution stacks and their <code>SolutionStackDescription</code>. </p>
     pub fn solution_stack_details(
         &self,
     ) -> std::option::Option<&[crate::model::SolutionStackDescription]> {
@@ -2661,7 +2213,7 @@ pub mod list_available_solution_stacks_output {
         ///
         /// To override the contents of this collection use [`set_solution_stack_details`](Self::set_solution_stack_details).
         ///
-        /// <p> A list of available solution stacks and their <a>SolutionStackDescription</a>. </p>
+        /// <p> A list of available solution stacks and their <code>SolutionStackDescription</code>. </p>
         pub fn solution_stack_details(
             mut self,
             input: crate::model::SolutionStackDescription,
@@ -2671,7 +2223,7 @@ pub mod list_available_solution_stacks_output {
             self.solution_stack_details = Some(v);
             self
         }
-        /// <p> A list of available solution stacks and their <a>SolutionStackDescription</a>. </p>
+        /// <p> A list of available solution stacks and their <code>SolutionStackDescription</code>. </p>
         pub fn set_solution_stack_details(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SolutionStackDescription>>,
@@ -2782,14 +2334,13 @@ impl DescribePlatformVersionOutput {
     }
 }
 
-/// <p>Detailed health information about the Amazon EC2 instances in an AWS Elastic Beanstalk
-/// environment.</p>
+/// <p>Detailed health information about the Amazon EC2 instances in an AWS Elastic Beanstalk environment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInstancesHealthOutput {
     /// <p>Detailed health information about each instance.</p>
-    /// <p>The output differs slightly between Linux and Windows environments. There is a difference
-    /// in the members that are supported under the <code><CPUUtilization></code> type.</p>
+    /// <p>The output differs slightly between Linux and Windows environments. There is a difference in the members that are supported under the <code>
+    /// <cpuutilization></cpuutilization></code> type.</p>
     pub instance_health_list:
         std::option::Option<std::vec::Vec<crate::model::SingleInstanceHealth>>,
     /// <p>The date and time that the health information was retrieved.</p>
@@ -2799,8 +2350,8 @@ pub struct DescribeInstancesHealthOutput {
 }
 impl DescribeInstancesHealthOutput {
     /// <p>Detailed health information about each instance.</p>
-    /// <p>The output differs slightly between Linux and Windows environments. There is a difference
-    /// in the members that are supported under the <code><CPUUtilization></code> type.</p>
+    /// <p>The output differs slightly between Linux and Windows environments. There is a difference in the members that are supported under the <code>
+    /// <cpuutilization></cpuutilization></code> type.</p>
     pub fn instance_health_list(
         &self,
     ) -> std::option::Option<&[crate::model::SingleInstanceHealth]> {
@@ -2841,8 +2392,8 @@ pub mod describe_instances_health_output {
         /// To override the contents of this collection use [`set_instance_health_list`](Self::set_instance_health_list).
         ///
         /// <p>Detailed health information about each instance.</p>
-        /// <p>The output differs slightly between Linux and Windows environments. There is a difference
-        /// in the members that are supported under the <code><CPUUtilization></code> type.</p>
+        /// <p>The output differs slightly between Linux and Windows environments. There is a difference in the members that are supported under the <code>
+        /// <cpuutilization></cpuutilization></code> type.</p>
         pub fn instance_health_list(mut self, input: crate::model::SingleInstanceHealth) -> Self {
             let mut v = self.instance_health_list.unwrap_or_default();
             v.push(input);
@@ -2850,8 +2401,8 @@ pub mod describe_instances_health_output {
             self
         }
         /// <p>Detailed health information about each instance.</p>
-        /// <p>The output differs slightly between Linux and Windows environments. There is a difference
-        /// in the members that are supported under the <code><CPUUtilization></code> type.</p>
+        /// <p>The output differs slightly between Linux and Windows environments. There is a difference in the members that are supported under the <code>
+        /// <cpuutilization></cpuutilization></code> type.</p>
         pub fn set_instance_health_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SingleInstanceHealth>>,
@@ -2903,19 +2454,17 @@ impl DescribeInstancesHealthOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventsOutput {
-    /// <p> A list of <a>EventDescription</a>. </p>
+    /// <p> A list of <code>EventDescription</code>. </p>
     pub events: std::option::Option<std::vec::Vec<crate::model::EventDescription>>,
-    /// <p> If returned, this indicates that there are more results to obtain. Use this token in
-    /// the next <a>DescribeEvents</a> call to get the next batch of events. </p>
+    /// <p> If returned, this indicates that there are more results to obtain. Use this token in the next <code>DescribeEvents</code> call to get the next batch of events. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeEventsOutput {
-    /// <p> A list of <a>EventDescription</a>. </p>
+    /// <p> A list of <code>EventDescription</code>. </p>
     pub fn events(&self) -> std::option::Option<&[crate::model::EventDescription]> {
         self.events.as_deref()
     }
-    /// <p> If returned, this indicates that there are more results to obtain. Use this token in
-    /// the next <a>DescribeEvents</a> call to get the next batch of events. </p>
+    /// <p> If returned, this indicates that there are more results to obtain. Use this token in the next <code>DescribeEvents</code> call to get the next batch of events. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2942,14 +2491,14 @@ pub mod describe_events_output {
         ///
         /// To override the contents of this collection use [`set_events`](Self::set_events).
         ///
-        /// <p> A list of <a>EventDescription</a>. </p>
+        /// <p> A list of <code>EventDescription</code>. </p>
         pub fn events(mut self, input: crate::model::EventDescription) -> Self {
             let mut v = self.events.unwrap_or_default();
             v.push(input);
             self.events = Some(v);
             self
         }
-        /// <p> A list of <a>EventDescription</a>. </p>
+        /// <p> A list of <code>EventDescription</code>. </p>
         pub fn set_events(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EventDescription>>,
@@ -2957,14 +2506,12 @@ pub mod describe_events_output {
             self.events = input;
             self
         }
-        /// <p> If returned, this indicates that there are more results to obtain. Use this token in
-        /// the next <a>DescribeEvents</a> call to get the next batch of events. </p>
+        /// <p> If returned, this indicates that there are more results to obtain. Use this token in the next <code>DescribeEvents</code> call to get the next batch of events. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p> If returned, this indicates that there are more results to obtain. Use this token in
-        /// the next <a>DescribeEvents</a> call to get the next batch of events. </p>
+        /// <p> If returned, this indicates that there are more results to obtain. Use this token in the next <code>DescribeEvents</code> call to get the next batch of events. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2989,19 +2536,17 @@ impl DescribeEventsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEnvironmentsOutput {
-    /// <p> Returns an <a>EnvironmentDescription</a> list. </p>
+    /// <p> Returns an <code>EnvironmentDescription</code> list. </p>
     pub environments: std::option::Option<std::vec::Vec<crate::model::EnvironmentDescription>>,
-    /// <p>In a paginated request, the token that you can pass in a subsequent request to get the
-    /// next response page.</p>
+    /// <p>In a paginated request, the token that you can pass in a subsequent request to get the next response page.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeEnvironmentsOutput {
-    /// <p> Returns an <a>EnvironmentDescription</a> list. </p>
+    /// <p> Returns an <code>EnvironmentDescription</code> list. </p>
     pub fn environments(&self) -> std::option::Option<&[crate::model::EnvironmentDescription]> {
         self.environments.as_deref()
     }
-    /// <p>In a paginated request, the token that you can pass in a subsequent request to get the
-    /// next response page.</p>
+    /// <p>In a paginated request, the token that you can pass in a subsequent request to get the next response page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3029,14 +2574,14 @@ pub mod describe_environments_output {
         ///
         /// To override the contents of this collection use [`set_environments`](Self::set_environments).
         ///
-        /// <p> Returns an <a>EnvironmentDescription</a> list. </p>
+        /// <p> Returns an <code>EnvironmentDescription</code> list. </p>
         pub fn environments(mut self, input: crate::model::EnvironmentDescription) -> Self {
             let mut v = self.environments.unwrap_or_default();
             v.push(input);
             self.environments = Some(v);
             self
         }
-        /// <p> Returns an <a>EnvironmentDescription</a> list. </p>
+        /// <p> Returns an <code>EnvironmentDescription</code> list. </p>
         pub fn set_environments(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EnvironmentDescription>>,
@@ -3044,14 +2589,12 @@ pub mod describe_environments_output {
             self.environments = input;
             self
         }
-        /// <p>In a paginated request, the token that you can pass in a subsequent request to get the
-        /// next response page.</p>
+        /// <p>In a paginated request, the token that you can pass in a subsequent request to get the next response page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>In a paginated request, the token that you can pass in a subsequent request to get the
-        /// next response page.</p>
+        /// <p>In a paginated request, the token that you can pass in a subsequent request to get the next response page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3076,11 +2619,11 @@ impl DescribeEnvironmentsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEnvironmentResourcesOutput {
-    /// <p> A list of <a>EnvironmentResourceDescription</a>. </p>
+    /// <p> A list of <code>EnvironmentResourceDescription</code>. </p>
     pub environment_resources: std::option::Option<crate::model::EnvironmentResourceDescription>,
 }
 impl DescribeEnvironmentResourcesOutput {
-    /// <p> A list of <a>EnvironmentResourceDescription</a>. </p>
+    /// <p> A list of <code>EnvironmentResourceDescription</code>. </p>
     pub fn environment_resources(
         &self,
     ) -> std::option::Option<&crate::model::EnvironmentResourceDescription> {
@@ -3104,7 +2647,7 @@ pub mod describe_environment_resources_output {
             std::option::Option<crate::model::EnvironmentResourceDescription>,
     }
     impl Builder {
-        /// <p> A list of <a>EnvironmentResourceDescription</a>. </p>
+        /// <p> A list of <code>EnvironmentResourceDescription</code>. </p>
         pub fn environment_resources(
             mut self,
             input: crate::model::EnvironmentResourceDescription,
@@ -3112,7 +2655,7 @@ pub mod describe_environment_resources_output {
             self.environment_resources = Some(input);
             self
         }
-        /// <p> A list of <a>EnvironmentResourceDescription</a>. </p>
+        /// <p> A list of <code>EnvironmentResourceDescription</code>. </p>
         pub fn set_environment_resources(
             mut self,
             input: std::option::Option<crate::model::EnvironmentResourceDescription>,
@@ -3205,8 +2748,7 @@ pub struct DescribeEnvironmentManagedActionHistoryOutput {
     /// <p>A list of completed and failed managed actions.</p>
     pub managed_action_history_items:
         std::option::Option<std::vec::Vec<crate::model::ManagedActionHistoryItem>>,
-    /// <p>A pagination token that you pass to <a>DescribeEnvironmentManagedActionHistory</a> to get the next page of
-    /// results.</p>
+    /// <p>A pagination token that you pass to <code>DescribeEnvironmentManagedActionHistory</code> to get the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeEnvironmentManagedActionHistoryOutput {
@@ -3216,8 +2758,7 @@ impl DescribeEnvironmentManagedActionHistoryOutput {
     ) -> std::option::Option<&[crate::model::ManagedActionHistoryItem]> {
         self.managed_action_history_items.as_deref()
     }
-    /// <p>A pagination token that you pass to <a>DescribeEnvironmentManagedActionHistory</a> to get the next page of
-    /// results.</p>
+    /// <p>A pagination token that you pass to <code>DescribeEnvironmentManagedActionHistory</code> to get the next page of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3266,14 +2807,12 @@ pub mod describe_environment_managed_action_history_output {
             self.managed_action_history_items = input;
             self
         }
-        /// <p>A pagination token that you pass to <a>DescribeEnvironmentManagedActionHistory</a> to get the next page of
-        /// results.</p>
+        /// <p>A pagination token that you pass to <code>DescribeEnvironmentManagedActionHistory</code> to get the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A pagination token that you pass to <a>DescribeEnvironmentManagedActionHistory</a> to get the next page of
-        /// results.</p>
+        /// <p>A pagination token that you pass to <code>DescribeEnvironmentManagedActionHistory</code> to get the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3300,17 +2839,13 @@ impl DescribeEnvironmentManagedActionHistoryOutput {
 pub struct DescribeEnvironmentHealthOutput {
     /// <p>The environment's name.</p>
     pub environment_name: std::option::Option<std::string::String>,
-    /// <p>The <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health status</a> of the
-    /// environment. For example, <code>Ok</code>.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health status</a> of the environment. For example, <code>Ok</code>.</p>
     pub health_status: std::option::Option<std::string::String>,
-    /// <p>The environment's operational status. <code>Ready</code>, <code>Launching</code>,
-    /// <code>Updating</code>, <code>Terminating</code>, or <code>Terminated</code>.</p>
+    /// <p>The environment's operational status. <code>Ready</code>, <code>Launching</code>, <code>Updating</code>, <code>Terminating</code>, or <code>Terminated</code>.</p>
     pub status: std::option::Option<crate::model::EnvironmentHealth>,
-    /// <p>The <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health color</a> of the
-    /// environment.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health color</a> of the environment.</p>
     pub color: std::option::Option<std::string::String>,
-    /// <p>Descriptions of the data that contributed to the environment's current health
-    /// status.</p>
+    /// <p>Descriptions of the data that contributed to the environment's current health status.</p>
     pub causes: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Application request metrics for the environment.</p>
     pub application_metrics: std::option::Option<crate::model::ApplicationMetrics>,
@@ -3324,23 +2859,19 @@ impl DescribeEnvironmentHealthOutput {
     pub fn environment_name(&self) -> std::option::Option<&str> {
         self.environment_name.as_deref()
     }
-    /// <p>The <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health status</a> of the
-    /// environment. For example, <code>Ok</code>.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health status</a> of the environment. For example, <code>Ok</code>.</p>
     pub fn health_status(&self) -> std::option::Option<&str> {
         self.health_status.as_deref()
     }
-    /// <p>The environment's operational status. <code>Ready</code>, <code>Launching</code>,
-    /// <code>Updating</code>, <code>Terminating</code>, or <code>Terminated</code>.</p>
+    /// <p>The environment's operational status. <code>Ready</code>, <code>Launching</code>, <code>Updating</code>, <code>Terminating</code>, or <code>Terminated</code>.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::EnvironmentHealth> {
         self.status.as_ref()
     }
-    /// <p>The <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health color</a> of the
-    /// environment.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health color</a> of the environment.</p>
     pub fn color(&self) -> std::option::Option<&str> {
         self.color.as_deref()
     }
-    /// <p>Descriptions of the data that contributed to the environment's current health
-    /// status.</p>
+    /// <p>Descriptions of the data that contributed to the environment's current health status.</p>
     pub fn causes(&self) -> std::option::Option<&[std::string::String]> {
         self.causes.as_deref()
     }
@@ -3400,14 +2931,12 @@ pub mod describe_environment_health_output {
             self.environment_name = input;
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health status</a> of the
-        /// environment. For example, <code>Ok</code>.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health status</a> of the environment. For example, <code>Ok</code>.</p>
         pub fn health_status(mut self, input: impl Into<std::string::String>) -> Self {
             self.health_status = Some(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health status</a> of the
-        /// environment. For example, <code>Ok</code>.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health status</a> of the environment. For example, <code>Ok</code>.</p>
         pub fn set_health_status(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3415,14 +2944,12 @@ pub mod describe_environment_health_output {
             self.health_status = input;
             self
         }
-        /// <p>The environment's operational status. <code>Ready</code>, <code>Launching</code>,
-        /// <code>Updating</code>, <code>Terminating</code>, or <code>Terminated</code>.</p>
+        /// <p>The environment's operational status. <code>Ready</code>, <code>Launching</code>, <code>Updating</code>, <code>Terminating</code>, or <code>Terminated</code>.</p>
         pub fn status(mut self, input: crate::model::EnvironmentHealth) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The environment's operational status. <code>Ready</code>, <code>Launching</code>,
-        /// <code>Updating</code>, <code>Terminating</code>, or <code>Terminated</code>.</p>
+        /// <p>The environment's operational status. <code>Ready</code>, <code>Launching</code>, <code>Updating</code>, <code>Terminating</code>, or <code>Terminated</code>.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::EnvironmentHealth>,
@@ -3430,14 +2957,12 @@ pub mod describe_environment_health_output {
             self.status = input;
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health color</a> of the
-        /// environment.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health color</a> of the environment.</p>
         pub fn color(mut self, input: impl Into<std::string::String>) -> Self {
             self.color = Some(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health color</a> of the
-        /// environment.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health color</a> of the environment.</p>
         pub fn set_color(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.color = input;
             self
@@ -3446,16 +2971,14 @@ pub mod describe_environment_health_output {
         ///
         /// To override the contents of this collection use [`set_causes`](Self::set_causes).
         ///
-        /// <p>Descriptions of the data that contributed to the environment's current health
-        /// status.</p>
+        /// <p>Descriptions of the data that contributed to the environment's current health status.</p>
         pub fn causes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.causes.unwrap_or_default();
             v.push(input.into());
             self.causes = Some(v);
             self
         }
-        /// <p>Descriptions of the data that contributed to the environment's current health
-        /// status.</p>
+        /// <p>Descriptions of the data that contributed to the environment's current health status.</p>
         pub fn set_causes(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3524,17 +3047,16 @@ impl DescribeEnvironmentHealthOutput {
     }
 }
 
-/// <p>The results from a request to change the configuration settings of an
-/// environment.</p>
+/// <p>The results from a request to change the configuration settings of an environment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConfigurationSettingsOutput {
-    /// <p> A list of <a>ConfigurationSettingsDescription</a>. </p>
+    /// <p> A list of <code>ConfigurationSettingsDescription</code>. </p>
     pub configuration_settings:
         std::option::Option<std::vec::Vec<crate::model::ConfigurationSettingsDescription>>,
 }
 impl DescribeConfigurationSettingsOutput {
-    /// <p> A list of <a>ConfigurationSettingsDescription</a>. </p>
+    /// <p> A list of <code>ConfigurationSettingsDescription</code>. </p>
     pub fn configuration_settings(
         &self,
     ) -> std::option::Option<&[crate::model::ConfigurationSettingsDescription]> {
@@ -3562,7 +3084,7 @@ pub mod describe_configuration_settings_output {
         ///
         /// To override the contents of this collection use [`set_configuration_settings`](Self::set_configuration_settings).
         ///
-        /// <p> A list of <a>ConfigurationSettingsDescription</a>. </p>
+        /// <p> A list of <code>ConfigurationSettingsDescription</code>. </p>
         pub fn configuration_settings(
             mut self,
             input: crate::model::ConfigurationSettingsDescription,
@@ -3572,7 +3094,7 @@ pub mod describe_configuration_settings_output {
             self.configuration_settings = Some(v);
             self
         }
-        /// <p> A list of <a>ConfigurationSettingsDescription</a>. </p>
+        /// <p> A list of <code>ConfigurationSettingsDescription</code>. </p>
         pub fn set_configuration_settings(
             mut self,
             input: std::option::Option<
@@ -3605,7 +3127,7 @@ pub struct DescribeConfigurationOptionsOutput {
     pub solution_stack_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the platform version.</p>
     pub platform_arn: std::option::Option<std::string::String>,
-    /// <p> A list of <a>ConfigurationOptionDescription</a>. </p>
+    /// <p> A list of <code>ConfigurationOptionDescription</code>. </p>
     pub options: std::option::Option<std::vec::Vec<crate::model::ConfigurationOptionDescription>>,
 }
 impl DescribeConfigurationOptionsOutput {
@@ -3617,7 +3139,7 @@ impl DescribeConfigurationOptionsOutput {
     pub fn platform_arn(&self) -> std::option::Option<&str> {
         self.platform_arn.as_deref()
     }
-    /// <p> A list of <a>ConfigurationOptionDescription</a>. </p>
+    /// <p> A list of <code>ConfigurationOptionDescription</code>. </p>
     pub fn options(&self) -> std::option::Option<&[crate::model::ConfigurationOptionDescription]> {
         self.options.as_deref()
     }
@@ -3670,14 +3192,14 @@ pub mod describe_configuration_options_output {
         ///
         /// To override the contents of this collection use [`set_options`](Self::set_options).
         ///
-        /// <p> A list of <a>ConfigurationOptionDescription</a>. </p>
+        /// <p> A list of <code>ConfigurationOptionDescription</code>. </p>
         pub fn options(mut self, input: crate::model::ConfigurationOptionDescription) -> Self {
             let mut v = self.options.unwrap_or_default();
             v.push(input);
             self.options = Some(v);
             self
         }
-        /// <p> A list of <a>ConfigurationOptionDescription</a>. </p>
+        /// <p> A list of <code>ConfigurationOptionDescription</code>. </p>
         pub fn set_options(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ConfigurationOptionDescription>>,
@@ -3706,24 +3228,20 @@ impl DescribeConfigurationOptionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeApplicationVersionsOutput {
-    /// <p>List of <code>ApplicationVersionDescription</code> objects sorted in order of
-    /// creation.</p>
+    /// <p>List of <code>ApplicationVersionDescription</code> objects sorted in order of creation.</p>
     pub application_versions:
         std::option::Option<std::vec::Vec<crate::model::ApplicationVersionDescription>>,
-    /// <p>In a paginated request, the token that you can pass in a subsequent request to get the
-    /// next response page.</p>
+    /// <p>In a paginated request, the token that you can pass in a subsequent request to get the next response page.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeApplicationVersionsOutput {
-    /// <p>List of <code>ApplicationVersionDescription</code> objects sorted in order of
-    /// creation.</p>
+    /// <p>List of <code>ApplicationVersionDescription</code> objects sorted in order of creation.</p>
     pub fn application_versions(
         &self,
     ) -> std::option::Option<&[crate::model::ApplicationVersionDescription]> {
         self.application_versions.as_deref()
     }
-    /// <p>In a paginated request, the token that you can pass in a subsequent request to get the
-    /// next response page.</p>
+    /// <p>In a paginated request, the token that you can pass in a subsequent request to get the next response page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3751,8 +3269,7 @@ pub mod describe_application_versions_output {
         ///
         /// To override the contents of this collection use [`set_application_versions`](Self::set_application_versions).
         ///
-        /// <p>List of <code>ApplicationVersionDescription</code> objects sorted in order of
-        /// creation.</p>
+        /// <p>List of <code>ApplicationVersionDescription</code> objects sorted in order of creation.</p>
         pub fn application_versions(
             mut self,
             input: crate::model::ApplicationVersionDescription,
@@ -3762,8 +3279,7 @@ pub mod describe_application_versions_output {
             self.application_versions = Some(v);
             self
         }
-        /// <p>List of <code>ApplicationVersionDescription</code> objects sorted in order of
-        /// creation.</p>
+        /// <p>List of <code>ApplicationVersionDescription</code> objects sorted in order of creation.</p>
         pub fn set_application_versions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ApplicationVersionDescription>>,
@@ -3771,14 +3287,12 @@ pub mod describe_application_versions_output {
             self.application_versions = input;
             self
         }
-        /// <p>In a paginated request, the token that you can pass in a subsequent request to get the
-        /// next response page.</p>
+        /// <p>In a paginated request, the token that you can pass in a subsequent request to get the next response page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>In a paginated request, the token that you can pass in a subsequent request to get the
-        /// next response page.</p>
+        /// <p>In a paginated request, the token that you can pass in a subsequent request to get the next response page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3803,11 +3317,11 @@ impl DescribeApplicationVersionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeApplicationsOutput {
-    /// <p>This parameter contains a list of <a>ApplicationDescription</a>.</p>
+    /// <p>This parameter contains a list of <code>ApplicationDescription</code>.</p>
     pub applications: std::option::Option<std::vec::Vec<crate::model::ApplicationDescription>>,
 }
 impl DescribeApplicationsOutput {
-    /// <p>This parameter contains a list of <a>ApplicationDescription</a>.</p>
+    /// <p>This parameter contains a list of <code>ApplicationDescription</code>.</p>
     pub fn applications(&self) -> std::option::Option<&[crate::model::ApplicationDescription]> {
         self.applications.as_deref()
     }
@@ -3833,14 +3347,14 @@ pub mod describe_applications_output {
         ///
         /// To override the contents of this collection use [`set_applications`](Self::set_applications).
         ///
-        /// <p>This parameter contains a list of <a>ApplicationDescription</a>.</p>
+        /// <p>This parameter contains a list of <code>ApplicationDescription</code>.</p>
         pub fn applications(mut self, input: crate::model::ApplicationDescription) -> Self {
             let mut v = self.applications.unwrap_or_default();
             v.push(input);
             self.applications = Some(v);
             self
         }
-        /// <p>This parameter contains a list of <a>ApplicationDescription</a>.</p>
+        /// <p>This parameter contains a list of <code>ApplicationDescription</code>.</p>
         pub fn set_applications(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ApplicationDescription>>,
@@ -4097,7 +3611,7 @@ impl DeleteApplicationOutput {
     }
 }
 
-/// <p>Results of a <a>CreateStorageLocationResult</a> call.</p>
+/// <p>Results of a <code>CreateStorageLocationResult</code> call.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStorageLocationOutput {
@@ -4247,13 +3761,11 @@ pub struct CreateEnvironmentOutput {
     pub solution_stack_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the platform version.</p>
     pub platform_arn: std::option::Option<std::string::String>,
-    /// <p>The name of the configuration template used to originally launch this
-    /// environment.</p>
+    /// <p>The name of the configuration template used to originally launch this environment.</p>
     pub template_name: std::option::Option<std::string::String>,
     /// <p>Describes this environment.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>For load-balanced, autoscaling environments, the URL to the LoadBalancer. For
-    /// single-instance environments, the IP address of the instance.</p>
+    /// <p>For load-balanced, autoscaling environments, the URL to the LoadBalancer. For single-instance environments, the IP address of the instance.</p>
     pub endpoint_url: std::option::Option<std::string::String>,
     /// <p>The URL to the CNAME for this environment.</p>
     pub cname: std::option::Option<std::string::String>,
@@ -4262,69 +3774,28 @@ pub struct CreateEnvironmentOutput {
     /// <p>The last modified date for this environment.</p>
     pub date_updated: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current operational status of the environment:</p>
-    ///
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Launching</code>: Environment is in the process of initial deployment.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Updating</code>: Environment is in the process of updating its configuration
-    /// settings or application version.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Ready</code>: Environment is available to have an action performed on it, such as
-    /// update or terminate.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Terminating</code>: Environment is in the shut-down process.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Terminated</code>: Environment is not running.</p>
-    /// </li>
+    /// <li> <p> <code>Launching</code>: Environment is in the process of initial deployment.</p> </li>
+    /// <li> <p> <code>Updating</code>: Environment is in the process of updating its configuration settings or application version.</p> </li>
+    /// <li> <p> <code>Ready</code>: Environment is available to have an action performed on it, such as update or terminate.</p> </li>
+    /// <li> <p> <code>Terminating</code>: Environment is in the shut-down process.</p> </li>
+    /// <li> <p> <code>Terminated</code>: Environment is not running.</p> </li>
     /// </ul>
     pub status: std::option::Option<crate::model::EnvironmentStatus>,
-    /// <p>Indicates if there is an in-progress environment configuration update or application
-    /// version deployment that you can cancel.</p>
-    /// <p>
-    /// <code>true:</code> There is an update in progress. </p>
-    /// <p>
-    /// <code>false:</code> There are no updates currently in progress. </p>
+    /// <p>Indicates if there is an in-progress environment configuration update or application version deployment that you can cancel.</p>
+    /// <p> <code>true:</code> There is an update in progress. </p>
+    /// <p> <code>false:</code> There are no updates currently in progress. </p>
     pub abortable_operation_in_progress: std::option::Option<bool>,
-    /// <p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the
-    /// failure levels for a running environment:</p>
+    /// <p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the failure levels for a running environment:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more
-    /// consecutive failures occur for an environment.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive
-    /// failures occur for an environment.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Green</code>: Indicates the environment is healthy and fully functional.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Grey</code>: Default health for a new environment. The environment is not fully
-    /// launched and health checks have not started or health checks are suspended during an
-    /// <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.</p>
-    /// </li>
+    /// <li> <p> <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive failures occur for an environment.</p> </li>
+    /// <li> <p> <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive failures occur for an environment.</p> </li>
+    /// <li> <p> <code>Green</code>: Indicates the environment is healthy and fully functional.</p> </li>
+    /// <li> <p> <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.</p> </li>
     /// </ul>
-    /// <p> Default: <code>Grey</code>
-    /// </p>
+    /// <p> Default: <code>Grey</code> </p>
     pub health: std::option::Option<crate::model::EnvironmentHealth>,
-    /// <p>Returns the health status of the application running in your environment. For more
-    /// information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
-    /// Statuses</a>.</p>
+    /// <p>Returns the health status of the application running in your environment. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
     pub health_status: std::option::Option<crate::model::EnvironmentHealthStatus>,
     /// <p>The description of the AWS resources used by this environment.</p>
     pub resources: std::option::Option<crate::model::EnvironmentResourcesDescription>,
@@ -4334,8 +3805,7 @@ pub struct CreateEnvironmentOutput {
     pub environment_links: std::option::Option<std::vec::Vec<crate::model::EnvironmentLink>>,
     /// <p>The environment's Amazon Resource Name (ARN), which can be used in other API requests that require an ARN.</p>
     pub environment_arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the environment's operations role. For more information,
-    /// see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the environment's operations role. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
     pub operations_role: std::option::Option<std::string::String>,
 }
 impl CreateEnvironmentOutput {
@@ -4363,8 +3833,7 @@ impl CreateEnvironmentOutput {
     pub fn platform_arn(&self) -> std::option::Option<&str> {
         self.platform_arn.as_deref()
     }
-    /// <p>The name of the configuration template used to originally launch this
-    /// environment.</p>
+    /// <p>The name of the configuration template used to originally launch this environment.</p>
     pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
     }
@@ -4372,8 +3841,7 @@ impl CreateEnvironmentOutput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>For load-balanced, autoscaling environments, the URL to the LoadBalancer. For
-    /// single-instance environments, the IP address of the instance.</p>
+    /// <p>For load-balanced, autoscaling environments, the URL to the LoadBalancer. For single-instance environments, the IP address of the instance.</p>
     pub fn endpoint_url(&self) -> std::option::Option<&str> {
         self.endpoint_url.as_deref()
     }
@@ -4390,75 +3858,34 @@ impl CreateEnvironmentOutput {
         self.date_updated.as_ref()
     }
     /// <p>The current operational status of the environment:</p>
-    ///
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Launching</code>: Environment is in the process of initial deployment.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Updating</code>: Environment is in the process of updating its configuration
-    /// settings or application version.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Ready</code>: Environment is available to have an action performed on it, such as
-    /// update or terminate.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Terminating</code>: Environment is in the shut-down process.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Terminated</code>: Environment is not running.</p>
-    /// </li>
+    /// <li> <p> <code>Launching</code>: Environment is in the process of initial deployment.</p> </li>
+    /// <li> <p> <code>Updating</code>: Environment is in the process of updating its configuration settings or application version.</p> </li>
+    /// <li> <p> <code>Ready</code>: Environment is available to have an action performed on it, such as update or terminate.</p> </li>
+    /// <li> <p> <code>Terminating</code>: Environment is in the shut-down process.</p> </li>
+    /// <li> <p> <code>Terminated</code>: Environment is not running.</p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::EnvironmentStatus> {
         self.status.as_ref()
     }
-    /// <p>Indicates if there is an in-progress environment configuration update or application
-    /// version deployment that you can cancel.</p>
-    /// <p>
-    /// <code>true:</code> There is an update in progress. </p>
-    /// <p>
-    /// <code>false:</code> There are no updates currently in progress. </p>
+    /// <p>Indicates if there is an in-progress environment configuration update or application version deployment that you can cancel.</p>
+    /// <p> <code>true:</code> There is an update in progress. </p>
+    /// <p> <code>false:</code> There are no updates currently in progress. </p>
     pub fn abortable_operation_in_progress(&self) -> std::option::Option<bool> {
         self.abortable_operation_in_progress
     }
-    /// <p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the
-    /// failure levels for a running environment:</p>
+    /// <p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the failure levels for a running environment:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more
-    /// consecutive failures occur for an environment.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive
-    /// failures occur for an environment.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Green</code>: Indicates the environment is healthy and fully functional.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Grey</code>: Default health for a new environment. The environment is not fully
-    /// launched and health checks have not started or health checks are suspended during an
-    /// <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.</p>
-    /// </li>
+    /// <li> <p> <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive failures occur for an environment.</p> </li>
+    /// <li> <p> <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive failures occur for an environment.</p> </li>
+    /// <li> <p> <code>Green</code>: Indicates the environment is healthy and fully functional.</p> </li>
+    /// <li> <p> <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.</p> </li>
     /// </ul>
-    /// <p> Default: <code>Grey</code>
-    /// </p>
+    /// <p> Default: <code>Grey</code> </p>
     pub fn health(&self) -> std::option::Option<&crate::model::EnvironmentHealth> {
         self.health.as_ref()
     }
-    /// <p>Returns the health status of the application running in your environment. For more
-    /// information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
-    /// Statuses</a>.</p>
+    /// <p>Returns the health status of the application running in your environment. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
     pub fn health_status(&self) -> std::option::Option<&crate::model::EnvironmentHealthStatus> {
         self.health_status.as_ref()
     }
@@ -4478,8 +3905,7 @@ impl CreateEnvironmentOutput {
     pub fn environment_arn(&self) -> std::option::Option<&str> {
         self.environment_arn.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the environment's operations role. For more information,
-    /// see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the environment's operations role. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
     pub fn operations_role(&self) -> std::option::Option<&str> {
         self.operations_role.as_deref()
     }
@@ -4619,14 +4045,12 @@ pub mod create_environment_output {
             self.platform_arn = input;
             self
         }
-        /// <p>The name of the configuration template used to originally launch this
-        /// environment.</p>
+        /// <p>The name of the configuration template used to originally launch this environment.</p>
         pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_name = Some(input.into());
             self
         }
-        /// <p>The name of the configuration template used to originally launch this
-        /// environment.</p>
+        /// <p>The name of the configuration template used to originally launch this environment.</p>
         pub fn set_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4644,14 +4068,12 @@ pub mod create_environment_output {
             self.description = input;
             self
         }
-        /// <p>For load-balanced, autoscaling environments, the URL to the LoadBalancer. For
-        /// single-instance environments, the IP address of the instance.</p>
+        /// <p>For load-balanced, autoscaling environments, the URL to the LoadBalancer. For single-instance environments, the IP address of the instance.</p>
         pub fn endpoint_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.endpoint_url = Some(input.into());
             self
         }
-        /// <p>For load-balanced, autoscaling environments, the URL to the LoadBalancer. For
-        /// single-instance environments, the IP address of the instance.</p>
+        /// <p>For load-balanced, autoscaling environments, the URL to the LoadBalancer. For single-instance environments, the IP address of the instance.</p>
         pub fn set_endpoint_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.endpoint_url = input;
             self
@@ -4693,60 +4115,24 @@ pub mod create_environment_output {
             self
         }
         /// <p>The current operational status of the environment:</p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Launching</code>: Environment is in the process of initial deployment.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Updating</code>: Environment is in the process of updating its configuration
-        /// settings or application version.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Ready</code>: Environment is available to have an action performed on it, such as
-        /// update or terminate.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Terminating</code>: Environment is in the shut-down process.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Terminated</code>: Environment is not running.</p>
-        /// </li>
+        /// <li> <p> <code>Launching</code>: Environment is in the process of initial deployment.</p> </li>
+        /// <li> <p> <code>Updating</code>: Environment is in the process of updating its configuration settings or application version.</p> </li>
+        /// <li> <p> <code>Ready</code>: Environment is available to have an action performed on it, such as update or terminate.</p> </li>
+        /// <li> <p> <code>Terminating</code>: Environment is in the shut-down process.</p> </li>
+        /// <li> <p> <code>Terminated</code>: Environment is not running.</p> </li>
         /// </ul>
         pub fn status(mut self, input: crate::model::EnvironmentStatus) -> Self {
             self.status = Some(input);
             self
         }
         /// <p>The current operational status of the environment:</p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Launching</code>: Environment is in the process of initial deployment.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Updating</code>: Environment is in the process of updating its configuration
-        /// settings or application version.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Ready</code>: Environment is available to have an action performed on it, such as
-        /// update or terminate.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Terminating</code>: Environment is in the shut-down process.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Terminated</code>: Environment is not running.</p>
-        /// </li>
+        /// <li> <p> <code>Launching</code>: Environment is in the process of initial deployment.</p> </li>
+        /// <li> <p> <code>Updating</code>: Environment is in the process of updating its configuration settings or application version.</p> </li>
+        /// <li> <p> <code>Ready</code>: Environment is available to have an action performed on it, such as update or terminate.</p> </li>
+        /// <li> <p> <code>Terminating</code>: Environment is in the shut-down process.</p> </li>
+        /// <li> <p> <code>Terminated</code>: Environment is not running.</p> </li>
         /// </ul>
         pub fn set_status(
             mut self,
@@ -4755,22 +4141,16 @@ pub mod create_environment_output {
             self.status = input;
             self
         }
-        /// <p>Indicates if there is an in-progress environment configuration update or application
-        /// version deployment that you can cancel.</p>
-        /// <p>
-        /// <code>true:</code> There is an update in progress. </p>
-        /// <p>
-        /// <code>false:</code> There are no updates currently in progress. </p>
+        /// <p>Indicates if there is an in-progress environment configuration update or application version deployment that you can cancel.</p>
+        /// <p> <code>true:</code> There is an update in progress. </p>
+        /// <p> <code>false:</code> There are no updates currently in progress. </p>
         pub fn abortable_operation_in_progress(mut self, input: bool) -> Self {
             self.abortable_operation_in_progress = Some(input);
             self
         }
-        /// <p>Indicates if there is an in-progress environment configuration update or application
-        /// version deployment that you can cancel.</p>
-        /// <p>
-        /// <code>true:</code> There is an update in progress. </p>
-        /// <p>
-        /// <code>false:</code> There are no updates currently in progress. </p>
+        /// <p>Indicates if there is an in-progress environment configuration update or application version deployment that you can cancel.</p>
+        /// <p> <code>true:</code> There is an update in progress. </p>
+        /// <p> <code>false:</code> There are no updates currently in progress. </p>
         pub fn set_abortable_operation_in_progress(
             mut self,
             input: std::option::Option<bool>,
@@ -4778,62 +4158,26 @@ pub mod create_environment_output {
             self.abortable_operation_in_progress = input;
             self
         }
-        /// <p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the
-        /// failure levels for a running environment:</p>
+        /// <p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the failure levels for a running environment:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more
-        /// consecutive failures occur for an environment.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive
-        /// failures occur for an environment.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Green</code>: Indicates the environment is healthy and fully functional.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Grey</code>: Default health for a new environment. The environment is not fully
-        /// launched and health checks have not started or health checks are suspended during an
-        /// <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.</p>
-        /// </li>
+        /// <li> <p> <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive failures occur for an environment.</p> </li>
+        /// <li> <p> <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive failures occur for an environment.</p> </li>
+        /// <li> <p> <code>Green</code>: Indicates the environment is healthy and fully functional.</p> </li>
+        /// <li> <p> <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.</p> </li>
         /// </ul>
-        /// <p> Default: <code>Grey</code>
-        /// </p>
+        /// <p> Default: <code>Grey</code> </p>
         pub fn health(mut self, input: crate::model::EnvironmentHealth) -> Self {
             self.health = Some(input);
             self
         }
-        /// <p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the
-        /// failure levels for a running environment:</p>
+        /// <p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the failure levels for a running environment:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more
-        /// consecutive failures occur for an environment.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive
-        /// failures occur for an environment.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Green</code>: Indicates the environment is healthy and fully functional.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Grey</code>: Default health for a new environment. The environment is not fully
-        /// launched and health checks have not started or health checks are suspended during an
-        /// <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.</p>
-        /// </li>
+        /// <li> <p> <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive failures occur for an environment.</p> </li>
+        /// <li> <p> <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive failures occur for an environment.</p> </li>
+        /// <li> <p> <code>Green</code>: Indicates the environment is healthy and fully functional.</p> </li>
+        /// <li> <p> <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.</p> </li>
         /// </ul>
-        /// <p> Default: <code>Grey</code>
-        /// </p>
+        /// <p> Default: <code>Grey</code> </p>
         pub fn set_health(
             mut self,
             input: std::option::Option<crate::model::EnvironmentHealth>,
@@ -4841,16 +4185,12 @@ pub mod create_environment_output {
             self.health = input;
             self
         }
-        /// <p>Returns the health status of the application running in your environment. For more
-        /// information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
-        /// Statuses</a>.</p>
+        /// <p>Returns the health status of the application running in your environment. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
         pub fn health_status(mut self, input: crate::model::EnvironmentHealthStatus) -> Self {
             self.health_status = Some(input);
             self
         }
-        /// <p>Returns the health status of the application running in your environment. For more
-        /// information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
-        /// Statuses</a>.</p>
+        /// <p>Returns the health status of the application running in your environment. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
         pub fn set_health_status(
             mut self,
             input: std::option::Option<crate::model::EnvironmentHealthStatus>,
@@ -4916,14 +4256,12 @@ pub mod create_environment_output {
             self.environment_arn = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the environment's operations role. For more information,
-        /// see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the environment's operations role. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
         pub fn operations_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.operations_role = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the environment's operations role. For more information,
-        /// see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the environment's operations role. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
         pub fn set_operations_role(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4976,46 +4314,25 @@ pub struct CreateConfigurationTemplateOutput {
     pub platform_arn: std::option::Option<std::string::String>,
     /// <p>The name of the application associated with this configuration set.</p>
     pub application_name: std::option::Option<std::string::String>,
-    /// <p> If not <code>null</code>, the name of the configuration template for this
-    /// configuration set. </p>
+    /// <p> If not <code>null</code>, the name of the configuration template for this configuration set. </p>
     pub template_name: std::option::Option<std::string::String>,
     /// <p>Describes this configuration set.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p> If not <code>null</code>, the name of the environment for this configuration set.
-    /// </p>
+    /// <p> If not <code>null</code>, the name of the environment for this configuration set. </p>
     pub environment_name: std::option::Option<std::string::String>,
-    /// <p> If this configuration set is associated with an environment, the
-    /// <code>DeploymentStatus</code> parameter indicates the deployment status of this
-    /// configuration set: </p>
+    /// <p> If this configuration set is associated with an environment, the <code>DeploymentStatus</code> parameter indicates the deployment status of this configuration set: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>null</code>: This configuration is not associated with a running
-    /// environment.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: This is a draft configuration that is not deployed to the associated
-    /// environment but is in the process of deploying.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deployed</code>: This is the configuration that is currently deployed to the
-    /// associated running environment.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>failed</code>: This is a draft configuration that failed to successfully
-    /// deploy.</p>
-    /// </li>
+    /// <li> <p> <code>null</code>: This configuration is not associated with a running environment.</p> </li>
+    /// <li> <p> <code>pending</code>: This is a draft configuration that is not deployed to the associated environment but is in the process of deploying.</p> </li>
+    /// <li> <p> <code>deployed</code>: This is the configuration that is currently deployed to the associated running environment.</p> </li>
+    /// <li> <p> <code>failed</code>: This is a draft configuration that failed to successfully deploy.</p> </li>
     /// </ul>
     pub deployment_status: std::option::Option<crate::model::ConfigurationDeploymentStatus>,
     /// <p>The date (in UTC time) when this configuration set was created.</p>
     pub date_created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date (in UTC time) when this configuration set was last modified.</p>
     pub date_updated: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>A list of the configuration options and their values in this configuration
-    /// set.</p>
+    /// <p>A list of the configuration options and their values in this configuration set.</p>
     pub option_settings:
         std::option::Option<std::vec::Vec<crate::model::ConfigurationOptionSetting>>,
 }
@@ -5032,8 +4349,7 @@ impl CreateConfigurationTemplateOutput {
     pub fn application_name(&self) -> std::option::Option<&str> {
         self.application_name.as_deref()
     }
-    /// <p> If not <code>null</code>, the name of the configuration template for this
-    /// configuration set. </p>
+    /// <p> If not <code>null</code>, the name of the configuration template for this configuration set. </p>
     pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
     }
@@ -5041,35 +4357,16 @@ impl CreateConfigurationTemplateOutput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p> If not <code>null</code>, the name of the environment for this configuration set.
-    /// </p>
+    /// <p> If not <code>null</code>, the name of the environment for this configuration set. </p>
     pub fn environment_name(&self) -> std::option::Option<&str> {
         self.environment_name.as_deref()
     }
-    /// <p> If this configuration set is associated with an environment, the
-    /// <code>DeploymentStatus</code> parameter indicates the deployment status of this
-    /// configuration set: </p>
+    /// <p> If this configuration set is associated with an environment, the <code>DeploymentStatus</code> parameter indicates the deployment status of this configuration set: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>null</code>: This configuration is not associated with a running
-    /// environment.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: This is a draft configuration that is not deployed to the associated
-    /// environment but is in the process of deploying.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deployed</code>: This is the configuration that is currently deployed to the
-    /// associated running environment.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>failed</code>: This is a draft configuration that failed to successfully
-    /// deploy.</p>
-    /// </li>
+    /// <li> <p> <code>null</code>: This configuration is not associated with a running environment.</p> </li>
+    /// <li> <p> <code>pending</code>: This is a draft configuration that is not deployed to the associated environment but is in the process of deploying.</p> </li>
+    /// <li> <p> <code>deployed</code>: This is the configuration that is currently deployed to the associated running environment.</p> </li>
+    /// <li> <p> <code>failed</code>: This is a draft configuration that failed to successfully deploy.</p> </li>
     /// </ul>
     pub fn deployment_status(
         &self,
@@ -5084,8 +4381,7 @@ impl CreateConfigurationTemplateOutput {
     pub fn date_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.date_updated.as_ref()
     }
-    /// <p>A list of the configuration options and their values in this configuration
-    /// set.</p>
+    /// <p>A list of the configuration options and their values in this configuration set.</p>
     pub fn option_settings(
         &self,
     ) -> std::option::Option<&[crate::model::ConfigurationOptionSetting]> {
@@ -5164,14 +4460,12 @@ pub mod create_configuration_template_output {
             self.application_name = input;
             self
         }
-        /// <p> If not <code>null</code>, the name of the configuration template for this
-        /// configuration set. </p>
+        /// <p> If not <code>null</code>, the name of the configuration template for this configuration set. </p>
         pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_name = Some(input.into());
             self
         }
-        /// <p> If not <code>null</code>, the name of the configuration template for this
-        /// configuration set. </p>
+        /// <p> If not <code>null</code>, the name of the configuration template for this configuration set. </p>
         pub fn set_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5189,14 +4483,12 @@ pub mod create_configuration_template_output {
             self.description = input;
             self
         }
-        /// <p> If not <code>null</code>, the name of the environment for this configuration set.
-        /// </p>
+        /// <p> If not <code>null</code>, the name of the environment for this configuration set. </p>
         pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.environment_name = Some(input.into());
             self
         }
-        /// <p> If not <code>null</code>, the name of the environment for this configuration set.
-        /// </p>
+        /// <p> If not <code>null</code>, the name of the environment for this configuration set. </p>
         pub fn set_environment_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5204,30 +4496,12 @@ pub mod create_configuration_template_output {
             self.environment_name = input;
             self
         }
-        /// <p> If this configuration set is associated with an environment, the
-        /// <code>DeploymentStatus</code> parameter indicates the deployment status of this
-        /// configuration set: </p>
+        /// <p> If this configuration set is associated with an environment, the <code>DeploymentStatus</code> parameter indicates the deployment status of this configuration set: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>null</code>: This configuration is not associated with a running
-        /// environment.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: This is a draft configuration that is not deployed to the associated
-        /// environment but is in the process of deploying.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deployed</code>: This is the configuration that is currently deployed to the
-        /// associated running environment.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>failed</code>: This is a draft configuration that failed to successfully
-        /// deploy.</p>
-        /// </li>
+        /// <li> <p> <code>null</code>: This configuration is not associated with a running environment.</p> </li>
+        /// <li> <p> <code>pending</code>: This is a draft configuration that is not deployed to the associated environment but is in the process of deploying.</p> </li>
+        /// <li> <p> <code>deployed</code>: This is the configuration that is currently deployed to the associated running environment.</p> </li>
+        /// <li> <p> <code>failed</code>: This is a draft configuration that failed to successfully deploy.</p> </li>
         /// </ul>
         pub fn deployment_status(
             mut self,
@@ -5236,30 +4510,12 @@ pub mod create_configuration_template_output {
             self.deployment_status = Some(input);
             self
         }
-        /// <p> If this configuration set is associated with an environment, the
-        /// <code>DeploymentStatus</code> parameter indicates the deployment status of this
-        /// configuration set: </p>
+        /// <p> If this configuration set is associated with an environment, the <code>DeploymentStatus</code> parameter indicates the deployment status of this configuration set: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>null</code>: This configuration is not associated with a running
-        /// environment.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: This is a draft configuration that is not deployed to the associated
-        /// environment but is in the process of deploying.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deployed</code>: This is the configuration that is currently deployed to the
-        /// associated running environment.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>failed</code>: This is a draft configuration that failed to successfully
-        /// deploy.</p>
-        /// </li>
+        /// <li> <p> <code>null</code>: This configuration is not associated with a running environment.</p> </li>
+        /// <li> <p> <code>pending</code>: This is a draft configuration that is not deployed to the associated environment but is in the process of deploying.</p> </li>
+        /// <li> <p> <code>deployed</code>: This is the configuration that is currently deployed to the associated running environment.</p> </li>
+        /// <li> <p> <code>failed</code>: This is a draft configuration that failed to successfully deploy.</p> </li>
         /// </ul>
         pub fn set_deployment_status(
             mut self,
@@ -5298,16 +4554,14 @@ pub mod create_configuration_template_output {
         ///
         /// To override the contents of this collection use [`set_option_settings`](Self::set_option_settings).
         ///
-        /// <p>A list of the configuration options and their values in this configuration
-        /// set.</p>
+        /// <p>A list of the configuration options and their values in this configuration set.</p>
         pub fn option_settings(mut self, input: crate::model::ConfigurationOptionSetting) -> Self {
             let mut v = self.option_settings.unwrap_or_default();
             v.push(input);
             self.option_settings = Some(v);
             self
         }
-        /// <p>A list of the configuration options and their values in this configuration
-        /// set.</p>
+        /// <p>A list of the configuration options and their values in this configuration set.</p>
         pub fn set_option_settings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ConfigurationOptionSetting>>,
@@ -5343,13 +4597,11 @@ impl CreateConfigurationTemplateOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateApplicationVersionOutput {
-    /// <p> The <a>ApplicationVersionDescription</a> of the application version.
-    /// </p>
+    /// <p> The <code>ApplicationVersionDescription</code> of the application version. </p>
     pub application_version: std::option::Option<crate::model::ApplicationVersionDescription>,
 }
 impl CreateApplicationVersionOutput {
-    /// <p> The <a>ApplicationVersionDescription</a> of the application version.
-    /// </p>
+    /// <p> The <code>ApplicationVersionDescription</code> of the application version. </p>
     pub fn application_version(
         &self,
     ) -> std::option::Option<&crate::model::ApplicationVersionDescription> {
@@ -5373,8 +4625,7 @@ pub mod create_application_version_output {
             std::option::Option<crate::model::ApplicationVersionDescription>,
     }
     impl Builder {
-        /// <p> The <a>ApplicationVersionDescription</a> of the application version.
-        /// </p>
+        /// <p> The <code>ApplicationVersionDescription</code> of the application version. </p>
         pub fn application_version(
             mut self,
             input: crate::model::ApplicationVersionDescription,
@@ -5382,8 +4633,7 @@ pub mod create_application_version_output {
             self.application_version = Some(input);
             self
         }
-        /// <p> The <a>ApplicationVersionDescription</a> of the application version.
-        /// </p>
+        /// <p> The <code>ApplicationVersionDescription</code> of the application version. </p>
         pub fn set_application_version(
             mut self,
             input: std::option::Option<crate::model::ApplicationVersionDescription>,
@@ -5410,11 +4660,11 @@ impl CreateApplicationVersionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateApplicationOutput {
-    /// <p> The <a>ApplicationDescription</a> of the application. </p>
+    /// <p> The <code>ApplicationDescription</code> of the application. </p>
     pub application: std::option::Option<crate::model::ApplicationDescription>,
 }
 impl CreateApplicationOutput {
-    /// <p> The <a>ApplicationDescription</a> of the application. </p>
+    /// <p> The <code>ApplicationDescription</code> of the application. </p>
     pub fn application(&self) -> std::option::Option<&crate::model::ApplicationDescription> {
         self.application.as_ref()
     }
@@ -5435,12 +4685,12 @@ pub mod create_application_output {
         pub(crate) application: std::option::Option<crate::model::ApplicationDescription>,
     }
     impl Builder {
-        /// <p> The <a>ApplicationDescription</a> of the application. </p>
+        /// <p> The <code>ApplicationDescription</code> of the application. </p>
         pub fn application(mut self, input: crate::model::ApplicationDescription) -> Self {
             self.application = Some(input);
             self
         }
-        /// <p> The <a>ApplicationDescription</a> of the application. </p>
+        /// <p> The <code>ApplicationDescription</code> of the application. </p>
         pub fn set_application(
             mut self,
             input: std::option::Option<crate::model::ApplicationDescription>,
@@ -5467,19 +4717,17 @@ impl CreateApplicationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ComposeEnvironmentsOutput {
-    /// <p> Returns an <a>EnvironmentDescription</a> list. </p>
+    /// <p> Returns an <code>EnvironmentDescription</code> list. </p>
     pub environments: std::option::Option<std::vec::Vec<crate::model::EnvironmentDescription>>,
-    /// <p>In a paginated request, the token that you can pass in a subsequent request to get the
-    /// next response page.</p>
+    /// <p>In a paginated request, the token that you can pass in a subsequent request to get the next response page.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ComposeEnvironmentsOutput {
-    /// <p> Returns an <a>EnvironmentDescription</a> list. </p>
+    /// <p> Returns an <code>EnvironmentDescription</code> list. </p>
     pub fn environments(&self) -> std::option::Option<&[crate::model::EnvironmentDescription]> {
         self.environments.as_deref()
     }
-    /// <p>In a paginated request, the token that you can pass in a subsequent request to get the
-    /// next response page.</p>
+    /// <p>In a paginated request, the token that you can pass in a subsequent request to get the next response page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5507,14 +4755,14 @@ pub mod compose_environments_output {
         ///
         /// To override the contents of this collection use [`set_environments`](Self::set_environments).
         ///
-        /// <p> Returns an <a>EnvironmentDescription</a> list. </p>
+        /// <p> Returns an <code>EnvironmentDescription</code> list. </p>
         pub fn environments(mut self, input: crate::model::EnvironmentDescription) -> Self {
             let mut v = self.environments.unwrap_or_default();
             v.push(input);
             self.environments = Some(v);
             self
         }
-        /// <p> Returns an <a>EnvironmentDescription</a> list. </p>
+        /// <p> Returns an <code>EnvironmentDescription</code> list. </p>
         pub fn set_environments(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EnvironmentDescription>>,
@@ -5522,14 +4770,12 @@ pub mod compose_environments_output {
             self.environments = input;
             self
         }
-        /// <p>In a paginated request, the token that you can pass in a subsequent request to get the
-        /// next response page.</p>
+        /// <p>In a paginated request, the token that you can pass in a subsequent request to get the next response page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>In a paginated request, the token that you can pass in a subsequent request to get the
-        /// next response page.</p>
+        /// <p>In a paginated request, the token that you can pass in a subsequent request to get the next response page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5556,37 +4802,23 @@ impl ComposeEnvironmentsOutput {
 pub struct CheckDnsAvailabilityOutput {
     /// <p>Indicates if the specified CNAME is available:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>true</code> : The CNAME is available.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>false</code> : The CNAME is not available.</p>
-    /// </li>
+    /// <li> <p> <code>true</code> : The CNAME is available.</p> </li>
+    /// <li> <p> <code>false</code> : The CNAME is not available.</p> </li>
     /// </ul>
     pub available: std::option::Option<bool>,
-    /// <p>The fully qualified CNAME to reserve when <a>CreateEnvironment</a> is called
-    /// with the provided prefix.</p>
+    /// <p>The fully qualified CNAME to reserve when <code>CreateEnvironment</code> is called with the provided prefix.</p>
     pub fully_qualified_cname: std::option::Option<std::string::String>,
 }
 impl CheckDnsAvailabilityOutput {
     /// <p>Indicates if the specified CNAME is available:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>true</code> : The CNAME is available.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>false</code> : The CNAME is not available.</p>
-    /// </li>
+    /// <li> <p> <code>true</code> : The CNAME is available.</p> </li>
+    /// <li> <p> <code>false</code> : The CNAME is not available.</p> </li>
     /// </ul>
     pub fn available(&self) -> std::option::Option<bool> {
         self.available
     }
-    /// <p>The fully qualified CNAME to reserve when <a>CreateEnvironment</a> is called
-    /// with the provided prefix.</p>
+    /// <p>The fully qualified CNAME to reserve when <code>CreateEnvironment</code> is called with the provided prefix.</p>
     pub fn fully_qualified_cname(&self) -> std::option::Option<&str> {
         self.fully_qualified_cname.as_deref()
     }
@@ -5611,14 +4843,8 @@ pub mod check_dns_availability_output {
     impl Builder {
         /// <p>Indicates if the specified CNAME is available:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>true</code> : The CNAME is available.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>false</code> : The CNAME is not available.</p>
-        /// </li>
+        /// <li> <p> <code>true</code> : The CNAME is available.</p> </li>
+        /// <li> <p> <code>false</code> : The CNAME is not available.</p> </li>
         /// </ul>
         pub fn available(mut self, input: bool) -> Self {
             self.available = Some(input);
@@ -5626,27 +4852,19 @@ pub mod check_dns_availability_output {
         }
         /// <p>Indicates if the specified CNAME is available:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>true</code> : The CNAME is available.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>false</code> : The CNAME is not available.</p>
-        /// </li>
+        /// <li> <p> <code>true</code> : The CNAME is available.</p> </li>
+        /// <li> <p> <code>false</code> : The CNAME is not available.</p> </li>
         /// </ul>
         pub fn set_available(mut self, input: std::option::Option<bool>) -> Self {
             self.available = input;
             self
         }
-        /// <p>The fully qualified CNAME to reserve when <a>CreateEnvironment</a> is called
-        /// with the provided prefix.</p>
+        /// <p>The fully qualified CNAME to reserve when <code>CreateEnvironment</code> is called with the provided prefix.</p>
         pub fn fully_qualified_cname(mut self, input: impl Into<std::string::String>) -> Self {
             self.fully_qualified_cname = Some(input.into());
             self
         }
-        /// <p>The fully qualified CNAME to reserve when <a>CreateEnvironment</a> is called
-        /// with the provided prefix.</p>
+        /// <p>The fully qualified CNAME to reserve when <code>CreateEnvironment</code> is called with the provided prefix.</p>
         pub fn set_fully_qualified_cname(
             mut self,
             input: std::option::Option<std::string::String>,

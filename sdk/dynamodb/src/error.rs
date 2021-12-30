@@ -14,9 +14,7 @@ pub struct BatchExecuteStatementError {
 pub enum BatchExecuteStatementErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Throughput exceeds the current throughput quota for your account. Please contact
-    /// <a href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a
-    /// quota increase.</p>
+    /// <p>Throughput exceeds the current throughput quota for your account. Please contact <a href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a quota increase.</p>
     RequestLimitExceeded(crate::error::RequestLimitExceeded),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -122,17 +120,11 @@ pub enum BatchGetItemErrorKind {
     InternalServerError(crate::error::InternalServerError),
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
-    /// <p>Your request rate is too high. The Amazon Web Services SDKs for DynamoDB
-    /// automatically retry requests that receive this exception. Your request is eventually
-    /// successful, unless your retry queue is too large to finish. Reduce the frequency of
-    /// requests and use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    /// <p>Your request rate is too high. The Amazon Web Services SDKs for DynamoDB automatically retry requests that receive this exception. Your request is eventually successful, unless your retry queue is too large to finish. Reduce the frequency of requests and use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
-    /// <p>Throughput exceeds the current throughput quota for your account. Please contact
-    /// <a href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a
-    /// quota increase.</p>
+    /// <p>Throughput exceeds the current throughput quota for your account. Please contact <a href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a quota increase.</p>
     RequestLimitExceeded(crate::error::RequestLimitExceeded),
-    /// <p>The operation tried to access a nonexistent table or index. The resource might not
-    /// be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
+    /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -259,22 +251,15 @@ pub enum BatchWriteItemErrorKind {
     InternalServerError(crate::error::InternalServerError),
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
-    /// <p>An item collection is too large. This exception is only returned for tables that
-    /// have one or more local secondary indexes.</p>
+    /// <p>An item collection is too large. This exception is only returned for tables that have one or more local secondary indexes.</p>
     ItemCollectionSizeLimitExceededException(
         crate::error::ItemCollectionSizeLimitExceededException,
     ),
-    /// <p>Your request rate is too high. The Amazon Web Services SDKs for DynamoDB
-    /// automatically retry requests that receive this exception. Your request is eventually
-    /// successful, unless your retry queue is too large to finish. Reduce the frequency of
-    /// requests and use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    /// <p>Your request rate is too high. The Amazon Web Services SDKs for DynamoDB automatically retry requests that receive this exception. Your request is eventually successful, unless your retry queue is too large to finish. Reduce the frequency of requests and use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
-    /// <p>Throughput exceeds the current throughput quota for your account. Please contact
-    /// <a href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a
-    /// quota increase.</p>
+    /// <p>Throughput exceeds the current throughput quota for your account. Please contact <a href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a quota increase.</p>
     RequestLimitExceeded(crate::error::RequestLimitExceeded),
-    /// <p>The operation tried to access a nonexistent table or index. The resource might not
-    /// be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
+    /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -412,8 +397,7 @@ pub struct CreateBackupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateBackupErrorKind {
-    /// <p>There is another ongoing conflicting backup control plane operation on the table.
-    /// The backup is either being created, deleted or restored to a table.</p>
+    /// <p>There is another ongoing conflicting backup control plane operation on the table. The backup is either being created, deleted or restored to a table.</p>
     BackupInUseException(crate::error::BackupInUseException),
     /// <p>Backups have not yet been enabled for this table.</p>
     ContinuousBackupsUnavailableException(crate::error::ContinuousBackupsUnavailableException),
@@ -422,21 +406,13 @@ pub enum CreateBackupErrorKind {
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
     /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p>
-    /// <p>Up to 50 simultaneous table operations are allowed per account. These operations
-    /// include <code>CreateTable</code>, <code>UpdateTable</code>,
-    /// <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-    /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
-    /// <p>The only exception is when you are creating a table with one or more secondary
-    /// indexes. You can have up to 25 such requests running at a time; however, if the table or
-    /// index specifications are complex, DynamoDB might temporarily reduce the number
-    /// of concurrent operations.</p>
+    /// <p>Up to 50 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
+    /// <p>The only exception is when you are creating a table with one or more secondary indexes. You can have up to 25 such requests running at a time; however, if the table or index specifications are complex, DynamoDB might temporarily reduce the number of concurrent operations.</p>
     /// <p>There is a soft account quota of 256 tables.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>A target table with the specified name is either being created or deleted.
-    /// </p>
+    /// <p>A target table with the specified name is either being created or deleted. </p>
     TableInUseException(crate::error::TableInUseException),
-    /// <p>A source table with the name <code>TableName</code> does not currently exist within
-    /// the subscriber's account.</p>
+    /// <p>A source table with the name <code>TableName</code> does not currently exist within the subscriber's account.</p>
     TableNotFoundException(crate::error::TableNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -575,18 +551,11 @@ pub enum CreateGlobalTableErrorKind {
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
     /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p>
-    /// <p>Up to 50 simultaneous table operations are allowed per account. These operations
-    /// include <code>CreateTable</code>, <code>UpdateTable</code>,
-    /// <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-    /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
-    /// <p>The only exception is when you are creating a table with one or more secondary
-    /// indexes. You can have up to 25 such requests running at a time; however, if the table or
-    /// index specifications are complex, DynamoDB might temporarily reduce the number
-    /// of concurrent operations.</p>
+    /// <p>Up to 50 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
+    /// <p>The only exception is when you are creating a table with one or more secondary indexes. You can have up to 25 such requests running at a time; however, if the table or index specifications are complex, DynamoDB might temporarily reduce the number of concurrent operations.</p>
     /// <p>There is a soft account quota of 256 tables.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>A source table with the name <code>TableName</code> does not currently exist within
-    /// the subscriber's account.</p>
+    /// <p>A source table with the name <code>TableName</code> does not currently exist within the subscriber's account.</p>
     TableNotFoundException(crate::error::TableNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -720,19 +689,11 @@ pub enum CreateTableErrorKind {
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
     /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p>
-    /// <p>Up to 50 simultaneous table operations are allowed per account. These operations
-    /// include <code>CreateTable</code>, <code>UpdateTable</code>,
-    /// <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-    /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
-    /// <p>The only exception is when you are creating a table with one or more secondary
-    /// indexes. You can have up to 25 such requests running at a time; however, if the table or
-    /// index specifications are complex, DynamoDB might temporarily reduce the number
-    /// of concurrent operations.</p>
+    /// <p>Up to 50 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
+    /// <p>The only exception is when you are creating a table with one or more secondary indexes. You can have up to 25 such requests running at a time; however, if the table or index specifications are complex, DynamoDB might temporarily reduce the number of concurrent operations.</p>
     /// <p>There is a soft account quota of 256 tables.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The operation conflicts with the resource's availability. For example, you
-    /// attempted to recreate an existing table, or tried to delete a table currently in the
-    /// <code>CREATING</code> state.</p>
+    /// <p>The operation conflicts with the resource's availability. For example, you attempted to recreate an existing table, or tried to delete a table currently in the <code>CREATING</code> state.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -843,8 +804,7 @@ pub struct DeleteBackupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteBackupErrorKind {
-    /// <p>There is another ongoing conflicting backup control plane operation on the table.
-    /// The backup is either being created, deleted or restored to a table.</p>
+    /// <p>There is another ongoing conflicting backup control plane operation on the table. The backup is either being created, deleted or restored to a table.</p>
     BackupInUseException(crate::error::BackupInUseException),
     /// <p>Backup not found for the given BackupARN. </p>
     BackupNotFoundException(crate::error::BackupNotFoundException),
@@ -853,14 +813,8 @@ pub enum DeleteBackupErrorKind {
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
     /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p>
-    /// <p>Up to 50 simultaneous table operations are allowed per account. These operations
-    /// include <code>CreateTable</code>, <code>UpdateTable</code>,
-    /// <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-    /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
-    /// <p>The only exception is when you are creating a table with one or more secondary
-    /// indexes. You can have up to 25 such requests running at a time; however, if the table or
-    /// index specifications are complex, DynamoDB might temporarily reduce the number
-    /// of concurrent operations.</p>
+    /// <p>Up to 50 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
+    /// <p>The only exception is when you are creating a table with one or more secondary indexes. You can have up to 25 such requests running at a time; however, if the table or index specifications are complex, DynamoDB might temporarily reduce the number of concurrent operations.</p>
     /// <p>There is a soft account quota of 256 tables.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -987,25 +941,17 @@ pub enum DeleteItemErrorKind {
     InternalServerError(crate::error::InternalServerError),
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
-    /// <p>An item collection is too large. This exception is only returned for tables that
-    /// have one or more local secondary indexes.</p>
+    /// <p>An item collection is too large. This exception is only returned for tables that have one or more local secondary indexes.</p>
     ItemCollectionSizeLimitExceededException(
         crate::error::ItemCollectionSizeLimitExceededException,
     ),
-    /// <p>Your request rate is too high. The Amazon Web Services SDKs for DynamoDB
-    /// automatically retry requests that receive this exception. Your request is eventually
-    /// successful, unless your retry queue is too large to finish. Reduce the frequency of
-    /// requests and use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    /// <p>Your request rate is too high. The Amazon Web Services SDKs for DynamoDB automatically retry requests that receive this exception. Your request is eventually successful, unless your retry queue is too large to finish. Reduce the frequency of requests and use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
-    /// <p>Throughput exceeds the current throughput quota for your account. Please contact
-    /// <a href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a
-    /// quota increase.</p>
+    /// <p>Throughput exceeds the current throughput quota for your account. Please contact <a href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a quota increase.</p>
     RequestLimitExceeded(crate::error::RequestLimitExceeded),
-    /// <p>The operation tried to access a nonexistent table or index. The resource might not
-    /// be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
+    /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Operation was rejected because there is an ongoing transaction for the
-    /// item.</p>
+    /// <p>Operation was rejected because there is an ongoing transaction for the item.</p>
     TransactionConflictException(crate::error::TransactionConflictException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1157,22 +1103,13 @@ pub enum DeleteTableErrorKind {
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
     /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p>
-    /// <p>Up to 50 simultaneous table operations are allowed per account. These operations
-    /// include <code>CreateTable</code>, <code>UpdateTable</code>,
-    /// <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-    /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
-    /// <p>The only exception is when you are creating a table with one or more secondary
-    /// indexes. You can have up to 25 such requests running at a time; however, if the table or
-    /// index specifications are complex, DynamoDB might temporarily reduce the number
-    /// of concurrent operations.</p>
+    /// <p>Up to 50 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
+    /// <p>The only exception is when you are creating a table with one or more secondary indexes. You can have up to 25 such requests running at a time; however, if the table or index specifications are complex, DynamoDB might temporarily reduce the number of concurrent operations.</p>
     /// <p>There is a soft account quota of 256 tables.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The operation conflicts with the resource's availability. For example, you
-    /// attempted to recreate an existing table, or tried to delete a table currently in the
-    /// <code>CREATING</code> state.</p>
+    /// <p>The operation conflicts with the resource's availability. For example, you attempted to recreate an existing table, or tried to delete a table currently in the <code>CREATING</code> state.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>The operation tried to access a nonexistent table or index. The resource might not
-    /// be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
+    /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1408,8 +1345,7 @@ pub enum DescribeContinuousBackupsErrorKind {
     InternalServerError(crate::error::InternalServerError),
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
-    /// <p>A source table with the name <code>TableName</code> does not currently exist within
-    /// the subscriber's account.</p>
+    /// <p>A source table with the name <code>TableName</code> does not currently exist within the subscriber's account.</p>
     TableNotFoundException(crate::error::TableNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1522,8 +1458,7 @@ pub struct DescribeContributorInsightsError {
 pub enum DescribeContributorInsightsErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>The operation tried to access a nonexistent table or index. The resource might not
-    /// be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
+    /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1714,14 +1649,8 @@ pub enum DescribeExportErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p>
-    /// <p>Up to 50 simultaneous table operations are allowed per account. These operations
-    /// include <code>CreateTable</code>, <code>UpdateTable</code>,
-    /// <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-    /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
-    /// <p>The only exception is when you are creating a table with one or more secondary
-    /// indexes. You can have up to 25 such requests running at a time; however, if the table or
-    /// index specifications are complex, DynamoDB might temporarily reduce the number
-    /// of concurrent operations.</p>
+    /// <p>Up to 50 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
+    /// <p>The only exception is when you are creating a table with one or more secondary indexes. You can have up to 25 such requests running at a time; however, if the table or index specifications are complex, DynamoDB might temporarily reduce the number of concurrent operations.</p>
     /// <p>There is a soft account quota of 256 tables.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -2068,8 +1997,7 @@ pub enum DescribeKinesisStreamingDestinationErrorKind {
     InternalServerError(crate::error::InternalServerError),
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
-    /// <p>The operation tried to access a nonexistent table or index. The resource might not
-    /// be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
+    /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2302,8 +2230,7 @@ pub enum DescribeTableErrorKind {
     InternalServerError(crate::error::InternalServerError),
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
-    /// <p>The operation tried to access a nonexistent table or index. The resource might not
-    /// be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
+    /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2413,8 +2340,7 @@ pub struct DescribeTableReplicaAutoScalingError {
 pub enum DescribeTableReplicaAutoScalingErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>The operation tried to access a nonexistent table or index. The resource might not
-    /// be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
+    /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2527,8 +2453,7 @@ pub enum DescribeTimeToLiveErrorKind {
     InternalServerError(crate::error::InternalServerError),
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
-    /// <p>The operation tried to access a nonexistent table or index. The resource might not
-    /// be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
+    /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2644,22 +2569,13 @@ pub enum DisableKinesisStreamingDestinationErrorKind {
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
     /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p>
-    /// <p>Up to 50 simultaneous table operations are allowed per account. These operations
-    /// include <code>CreateTable</code>, <code>UpdateTable</code>,
-    /// <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-    /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
-    /// <p>The only exception is when you are creating a table with one or more secondary
-    /// indexes. You can have up to 25 such requests running at a time; however, if the table or
-    /// index specifications are complex, DynamoDB might temporarily reduce the number
-    /// of concurrent operations.</p>
+    /// <p>Up to 50 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
+    /// <p>The only exception is when you are creating a table with one or more secondary indexes. You can have up to 25 such requests running at a time; however, if the table or index specifications are complex, DynamoDB might temporarily reduce the number of concurrent operations.</p>
     /// <p>There is a soft account quota of 256 tables.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The operation conflicts with the resource's availability. For example, you
-    /// attempted to recreate an existing table, or tried to delete a table currently in the
-    /// <code>CREATING</code> state.</p>
+    /// <p>The operation conflicts with the resource's availability. For example, you attempted to recreate an existing table, or tried to delete a table currently in the <code>CREATING</code> state.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>The operation tried to access a nonexistent table or index. The resource might not
-    /// be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
+    /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2816,22 +2732,13 @@ pub enum EnableKinesisStreamingDestinationErrorKind {
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
     /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p>
-    /// <p>Up to 50 simultaneous table operations are allowed per account. These operations
-    /// include <code>CreateTable</code>, <code>UpdateTable</code>,
-    /// <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-    /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
-    /// <p>The only exception is when you are creating a table with one or more secondary
-    /// indexes. You can have up to 25 such requests running at a time; however, if the table or
-    /// index specifications are complex, DynamoDB might temporarily reduce the number
-    /// of concurrent operations.</p>
+    /// <p>Up to 50 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
+    /// <p>The only exception is when you are creating a table with one or more secondary indexes. You can have up to 25 such requests running at a time; however, if the table or index specifications are complex, DynamoDB might temporarily reduce the number of concurrent operations.</p>
     /// <p>There is a soft account quota of 256 tables.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The operation conflicts with the resource's availability. For example, you
-    /// attempted to recreate an existing table, or tried to delete a table currently in the
-    /// <code>CREATING</code> state.</p>
+    /// <p>The operation conflicts with the resource's availability. For example, you attempted to recreate an existing table, or tried to delete a table currently in the <code>CREATING</code> state.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>The operation tried to access a nonexistent table or index. The resource might not
-    /// be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
+    /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2983,30 +2890,21 @@ pub struct ExecuteStatementError {
 pub enum ExecuteStatementErrorKind {
     /// <p>A condition specified in the operation could not be evaluated.</p>
     ConditionalCheckFailedException(crate::error::ConditionalCheckFailedException),
-    /// <p> There was an attempt to insert an item with the same primary key as an item that
-    /// already exists in the DynamoDB table.</p>
+    /// <p> There was an attempt to insert an item with the same primary key as an item that already exists in the DynamoDB table.</p>
     DuplicateItemException(crate::error::DuplicateItemException),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An item collection is too large. This exception is only returned for tables that
-    /// have one or more local secondary indexes.</p>
+    /// <p>An item collection is too large. This exception is only returned for tables that have one or more local secondary indexes.</p>
     ItemCollectionSizeLimitExceededException(
         crate::error::ItemCollectionSizeLimitExceededException,
     ),
-    /// <p>Your request rate is too high. The Amazon Web Services SDKs for DynamoDB
-    /// automatically retry requests that receive this exception. Your request is eventually
-    /// successful, unless your retry queue is too large to finish. Reduce the frequency of
-    /// requests and use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    /// <p>Your request rate is too high. The Amazon Web Services SDKs for DynamoDB automatically retry requests that receive this exception. Your request is eventually successful, unless your retry queue is too large to finish. Reduce the frequency of requests and use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
-    /// <p>Throughput exceeds the current throughput quota for your account. Please contact
-    /// <a href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a
-    /// quota increase.</p>
+    /// <p>Throughput exceeds the current throughput quota for your account. Please contact <a href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a quota increase.</p>
     RequestLimitExceeded(crate::error::RequestLimitExceeded),
-    /// <p>The operation tried to access a nonexistent table or index. The resource might not
-    /// be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
+    /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Operation was rejected because there is an ongoing transaction for the
-    /// item.</p>
+    /// <p>Operation was rejected because there is an ongoing transaction for the item.</p>
     TransactionConflictException(crate::error::TransactionConflictException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3170,258 +3068,100 @@ pub struct ExecuteTransactionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ExecuteTransactionErrorKind {
-    /// <p>DynamoDB rejected the request because you retried a request with a
-    /// different payload but with an idempotent token that was already used.</p>
+    /// <p>DynamoDB rejected the request because you retried a request with a different payload but with an idempotent token that was already used.</p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>Your request rate is too high. The Amazon Web Services SDKs for DynamoDB
-    /// automatically retry requests that receive this exception. Your request is eventually
-    /// successful, unless your retry queue is too large to finish. Reduce the frequency of
-    /// requests and use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    /// <p>Your request rate is too high. The Amazon Web Services SDKs for DynamoDB automatically retry requests that receive this exception. Your request is eventually successful, unless your retry queue is too large to finish. Reduce the frequency of requests and use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
-    /// <p>Throughput exceeds the current throughput quota for your account. Please contact
-    /// <a href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a
-    /// quota increase.</p>
+    /// <p>Throughput exceeds the current throughput quota for your account. Please contact <a href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a quota increase.</p>
     RequestLimitExceeded(crate::error::RequestLimitExceeded),
-    /// <p>The operation tried to access a nonexistent table or index. The resource might not
-    /// be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
+    /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The entire transaction request was canceled.</p>
-    /// <p>DynamoDB cancels a <code>TransactWriteItems</code> request under the following
-    /// circumstances:</p>
+    /// <p>DynamoDB cancels a <code>TransactWriteItems</code> request under the following circumstances:</p>
     /// <ul>
-    /// <li>
-    /// <p>A condition in one of the condition expressions is not met.</p>
-    /// </li>
-    /// <li>
-    /// <p>A table in the <code>TransactWriteItems</code> request is in a different
-    /// account or region.</p>
-    /// </li>
-    /// <li>
-    /// <p>More than one action in the <code>TransactWriteItems</code> operation
-    /// targets the same item.</p>
-    /// </li>
-    /// <li>
-    /// <p>There is insufficient provisioned capacity for the transaction to be
-    /// completed.</p>
-    /// </li>
-    /// <li>
-    /// <p>An item size becomes too large (larger than 400 KB), or a local secondary
-    /// index (LSI) becomes too large, or a similar validation error occurs because of
-    /// changes made by the transaction.</p>
-    /// </li>
-    /// <li>
-    /// <p>There is a user error, such as an invalid data format.</p>
-    /// </li>
+    /// <li> <p>A condition in one of the condition expressions is not met.</p> </li>
+    /// <li> <p>A table in the <code>TransactWriteItems</code> request is in a different account or region.</p> </li>
+    /// <li> <p>More than one action in the <code>TransactWriteItems</code> operation targets the same item.</p> </li>
+    /// <li> <p>There is insufficient provisioned capacity for the transaction to be completed.</p> </li>
+    /// <li> <p>An item size becomes too large (larger than 400 KB), or a local secondary index (LSI) becomes too large, or a similar validation error occurs because of changes made by the transaction.</p> </li>
+    /// <li> <p>There is a user error, such as an invalid data format.</p> </li>
     /// </ul>
-    ///
-    /// <p>DynamoDB cancels a <code>TransactGetItems</code> request under the
-    /// following circumstances:</p>
+    /// <p>DynamoDB cancels a <code>TransactGetItems</code> request under the following circumstances:</p>
     /// <ul>
-    /// <li>
-    /// <p>There is an ongoing <code>TransactGetItems</code> operation that conflicts
-    /// with a concurrent <code>PutItem</code>, <code>UpdateItem</code>,
-    /// <code>DeleteItem</code> or <code>TransactWriteItems</code> request. In this
-    /// case the <code>TransactGetItems</code> operation fails with a
-    /// <code>TransactionCanceledException</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>A table in the <code>TransactGetItems</code> request is in a different
-    /// account or region.</p>
-    /// </li>
-    /// <li>
-    /// <p>There is insufficient provisioned capacity for the transaction to be
-    /// completed.</p>
-    /// </li>
-    /// <li>
-    /// <p>There is a user error, such as an invalid data format.</p>
-    /// </li>
-    /// </ul>
-    ///
-    /// <note>
-    /// <p>If using Java, DynamoDB lists the cancellation reasons on the
-    /// <code>CancellationReasons</code> property. This property is not set for other
-    /// languages. Transaction cancellation reasons are ordered in the order of requested
-    /// items, if an item has no error it will have <code>NONE</code> code and
-    /// <code>Null</code> message.</p>
+    /// <li> <p>There is an ongoing <code>TransactGetItems</code> operation that conflicts with a concurrent <code>PutItem</code>, <code>UpdateItem</code>, <code>DeleteItem</code> or <code>TransactWriteItems</code> request. In this case the <code>TransactGetItems</code> operation fails with a <code>TransactionCanceledException</code>.</p> </li>
+    /// <li> <p>A table in the <code>TransactGetItems</code> request is in a different account or region.</p> </li>
+    /// <li> <p>There is insufficient provisioned capacity for the transaction to be completed.</p> </li>
+    /// <li> <p>There is a user error, such as an invalid data format.</p> </li>
+    /// </ul> <note>
+    /// <p>If using Java, DynamoDB lists the cancellation reasons on the <code>CancellationReasons</code> property. This property is not set for other languages. Transaction cancellation reasons are ordered in the order of requested items, if an item has no error it will have <code>NONE</code> code and <code>Null</code> message.</p>
     /// </note>
     /// <p>Cancellation reason codes and possible error messages:</p>
     /// <ul>
-    /// <li>
-    /// <p>No Errors:</p>
+    /// <li> <p>No Errors:</p>
     /// <ul>
-    /// <li>
-    /// <p>Code: <code>NONE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Message: <code>null</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>Conditional Check Failed:</p>
+    /// <li> <p>Code: <code>NONE</code> </p> </li>
+    /// <li> <p>Message: <code>null</code> </p> </li>
+    /// </ul> </li>
+    /// <li> <p>Conditional Check Failed:</p>
     /// <ul>
-    /// <li>
-    /// <p>Code: <code>ConditionalCheckFailed</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Message: The conditional request failed. </p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>Item Collection Size Limit Exceeded:</p>
+    /// <li> <p>Code: <code>ConditionalCheckFailed</code> </p> </li>
+    /// <li> <p>Message: The conditional request failed. </p> </li>
+    /// </ul> </li>
+    /// <li> <p>Item Collection Size Limit Exceeded:</p>
     /// <ul>
-    /// <li>
-    /// <p>Code: <code>ItemCollectionSizeLimitExceeded</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Message: Collection size exceeded.</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>Transaction Conflict:</p>
+    /// <li> <p>Code: <code>ItemCollectionSizeLimitExceeded</code> </p> </li>
+    /// <li> <p>Message: Collection size exceeded.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>Transaction Conflict:</p>
     /// <ul>
-    /// <li>
-    /// <p>Code: <code>TransactionConflict</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Message: Transaction is ongoing for the item.</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>Provisioned Throughput Exceeded:</p>
+    /// <li> <p>Code: <code>TransactionConflict</code> </p> </li>
+    /// <li> <p>Message: Transaction is ongoing for the item.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>Provisioned Throughput Exceeded:</p>
     /// <ul>
-    /// <li>
-    /// <p>Code: <code>ProvisionedThroughputExceeded</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Messages:</p>
+    /// <li> <p>Code: <code>ProvisionedThroughputExceeded</code> </p> </li>
+    /// <li> <p>Messages:</p>
     /// <ul>
-    /// <li>
-    /// <p>The level of configured provisioned throughput for the
-    /// table was exceeded. Consider increasing your provisioning level
-    /// with the UpdateTable API.</p>
-    /// <note>
-    /// <p>This Message is received when provisioned throughput is
-    /// exceeded is on a provisioned DynamoDB
-    /// table.</p>
-    /// </note>
-    /// </li>
-    /// <li>
-    /// <p>The level of configured provisioned throughput for one or
-    /// more global secondary indexes of the table was exceeded.
-    /// Consider increasing your provisioning level for the
-    /// under-provisioned global secondary indexes with the UpdateTable
-    /// API.</p>
-    /// <note>
-    /// <p>This message is returned when provisioned throughput is
-    /// exceeded is on a provisioned GSI.</p>
-    /// </note>
-    /// </li>
-    /// </ul>
-    ///
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>Throttling Error:</p>
+    /// <li> <p>The level of configured provisioned throughput for the table was exceeded. Consider increasing your provisioning level with the UpdateTable API.</p> <note>
+    /// <p>This Message is received when provisioned throughput is exceeded is on a provisioned DynamoDB table.</p>
+    /// </note> </li>
+    /// <li> <p>The level of configured provisioned throughput for one or more global secondary indexes of the table was exceeded. Consider increasing your provisioning level for the under-provisioned global secondary indexes with the UpdateTable API.</p> <note>
+    /// <p>This message is returned when provisioned throughput is exceeded is on a provisioned GSI.</p>
+    /// </note> </li>
+    /// </ul> </li>
+    /// </ul> </li>
+    /// <li> <p>Throttling Error:</p>
     /// <ul>
-    /// <li>
-    /// <p>Code: <code>ThrottlingError</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Messages: </p>
+    /// <li> <p>Code: <code>ThrottlingError</code> </p> </li>
+    /// <li> <p>Messages: </p>
     /// <ul>
-    /// <li>
-    /// <p>Throughput exceeds the current capacity of your table or
-    /// index. DynamoDB is automatically scaling your table or
-    /// index so please try again shortly. If exceptions persist, check
-    /// if you have a hot key:
-    /// https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-partition-key-design.html.</p>
-    /// <note>
-    /// <p>This message is returned when writes get throttled on an
-    /// On-Demand table as DynamoDB is automatically
-    /// scaling the table.</p>
-    /// </note>
-    /// </li>
-    /// <li>
-    /// <p>Throughput exceeds the current capacity for one or more
-    /// global secondary indexes. DynamoDB is automatically
-    /// scaling your index so please try again shortly.</p>
-    /// <note>
-    /// <p>This message is returned when when writes get throttled on
-    /// an On-Demand GSI as DynamoDB is automatically
-    /// scaling the GSI.</p>
-    /// </note>
-    /// </li>
-    /// </ul>
-    ///
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>Validation Error:</p>
+    /// <li> <p>Throughput exceeds the current capacity of your table or index. DynamoDB is automatically scaling your table or index so please try again shortly. If exceptions persist, check if you have a hot key: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-partition-key-design.html.</p> <note>
+    /// <p>This message is returned when writes get throttled on an On-Demand table as DynamoDB is automatically scaling the table.</p>
+    /// </note> </li>
+    /// <li> <p>Throughput exceeds the current capacity for one or more global secondary indexes. DynamoDB is automatically scaling your index so please try again shortly.</p> <note>
+    /// <p>This message is returned when when writes get throttled on an On-Demand GSI as DynamoDB is automatically scaling the GSI.</p>
+    /// </note> </li>
+    /// </ul> </li>
+    /// </ul> </li>
+    /// <li> <p>Validation Error:</p>
     /// <ul>
-    /// <li>
-    /// <p>Code: <code>ValidationError</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Messages: </p>
+    /// <li> <p>Code: <code>ValidationError</code> </p> </li>
+    /// <li> <p>Messages: </p>
     /// <ul>
-    /// <li>
-    /// <p>One or more parameter values were invalid.</p>
-    /// </li>
-    /// <li>
-    /// <p>The update expression attempted to update the secondary
-    /// index key beyond allowed size limits.</p>
-    /// </li>
-    /// <li>
-    /// <p>The update expression attempted to update the secondary
-    /// index key to unsupported type.</p>
-    /// </li>
-    /// <li>
-    /// <p>An operand in the update expression has an incorrect data
-    /// type.</p>
-    /// </li>
-    /// <li>
-    /// <p>Item size to update has exceeded the maximum allowed
-    /// size.</p>
-    /// </li>
-    /// <li>
-    /// <p>Number overflow. Attempting to store a number with
-    /// magnitude larger than supported range.</p>
-    /// </li>
-    /// <li>
-    /// <p>Type mismatch for attribute to update.</p>
-    /// </li>
-    /// <li>
-    /// <p>Nesting Levels have exceeded supported limits.</p>
-    /// </li>
-    /// <li>
-    /// <p>The document path provided in the update expression is
-    /// invalid for update.</p>
-    /// </li>
-    /// <li>
-    /// <p>The provided expression refers to an attribute that does
-    /// not exist in the item.</p>
-    /// </li>
-    /// </ul>
-    ///
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p>One or more parameter values were invalid.</p> </li>
+    /// <li> <p>The update expression attempted to update the secondary index key beyond allowed size limits.</p> </li>
+    /// <li> <p>The update expression attempted to update the secondary index key to unsupported type.</p> </li>
+    /// <li> <p>An operand in the update expression has an incorrect data type.</p> </li>
+    /// <li> <p>Item size to update has exceeded the maximum allowed size.</p> </li>
+    /// <li> <p>Number overflow. Attempting to store a number with magnitude larger than supported range.</p> </li>
+    /// <li> <p>Type mismatch for attribute to update.</p> </li>
+    /// <li> <p>Nesting Levels have exceeded supported limits.</p> </li>
+    /// <li> <p>The document path provided in the update expression is invalid for update.</p> </li>
+    /// <li> <p>The provided expression refers to an attribute that does not exist in the item.</p> </li>
+    /// </ul> </li>
+    /// </ul> </li>
     /// </ul>
     TransactionCanceledException(crate::error::TransactionCanceledException),
     /// <p>The transaction with the given request token is already in progress.</p>
@@ -3583,24 +3323,16 @@ pub enum ExportTableToPointInTimeErrorKind {
     ExportConflictException(crate::error::ExportConflictException),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>The specified <code>ExportTime</code> is outside of the point in time recovery
-    /// window.</p>
+    /// <p>The specified <code>ExportTime</code> is outside of the point in time recovery window.</p>
     InvalidExportTimeException(crate::error::InvalidExportTimeException),
     /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p>
-    /// <p>Up to 50 simultaneous table operations are allowed per account. These operations
-    /// include <code>CreateTable</code>, <code>UpdateTable</code>,
-    /// <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-    /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
-    /// <p>The only exception is when you are creating a table with one or more secondary
-    /// indexes. You can have up to 25 such requests running at a time; however, if the table or
-    /// index specifications are complex, DynamoDB might temporarily reduce the number
-    /// of concurrent operations.</p>
+    /// <p>Up to 50 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
+    /// <p>The only exception is when you are creating a table with one or more secondary indexes. You can have up to 25 such requests running at a time; however, if the table or index specifications are complex, DynamoDB might temporarily reduce the number of concurrent operations.</p>
     /// <p>There is a soft account quota of 256 tables.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>Point in time recovery has not yet been enabled for this source table.</p>
     PointInTimeRecoveryUnavailableException(crate::error::PointInTimeRecoveryUnavailableException),
-    /// <p>A source table with the name <code>TableName</code> does not currently exist within
-    /// the subscriber's account.</p>
+    /// <p>A source table with the name <code>TableName</code> does not currently exist within the subscriber's account.</p>
     TableNotFoundException(crate::error::TableNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3746,17 +3478,11 @@ pub enum GetItemErrorKind {
     InternalServerError(crate::error::InternalServerError),
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
-    /// <p>Your request rate is too high. The Amazon Web Services SDKs for DynamoDB
-    /// automatically retry requests that receive this exception. Your request is eventually
-    /// successful, unless your retry queue is too large to finish. Reduce the frequency of
-    /// requests and use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    /// <p>Your request rate is too high. The Amazon Web Services SDKs for DynamoDB automatically retry requests that receive this exception. Your request is eventually successful, unless your retry queue is too large to finish. Reduce the frequency of requests and use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
-    /// <p>Throughput exceeds the current throughput quota for your account. Please contact
-    /// <a href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a
-    /// quota increase.</p>
+    /// <p>Throughput exceeds the current throughput quota for your account. Please contact <a href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a quota increase.</p>
     RequestLimitExceeded(crate::error::RequestLimitExceeded),
-    /// <p>The operation tried to access a nonexistent table or index. The resource might not
-    /// be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
+    /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3976,8 +3702,7 @@ pub struct ListContributorInsightsError {
 pub enum ListContributorInsightsErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>The operation tried to access a nonexistent table or index. The resource might not
-    /// be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
+    /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4082,14 +3807,8 @@ pub enum ListExportsErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p>
-    /// <p>Up to 50 simultaneous table operations are allowed per account. These operations
-    /// include <code>CreateTable</code>, <code>UpdateTable</code>,
-    /// <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-    /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
-    /// <p>The only exception is when you are creating a table with one or more secondary
-    /// indexes. You can have up to 25 such requests running at a time; however, if the table or
-    /// index specifications are complex, DynamoDB might temporarily reduce the number
-    /// of concurrent operations.</p>
+    /// <p>Up to 50 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
+    /// <p>The only exception is when you are creating a table with one or more secondary indexes. You can have up to 25 such requests running at a time; however, if the table or index specifications are complex, DynamoDB might temporarily reduce the number of concurrent operations.</p>
     /// <p>There is a soft account quota of 256 tables.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -4392,8 +4111,7 @@ pub enum ListTagsOfResourceErrorKind {
     InternalServerError(crate::error::InternalServerError),
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
-    /// <p>The operation tried to access a nonexistent table or index. The resource might not
-    /// be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
+    /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4510,25 +4228,17 @@ pub enum PutItemErrorKind {
     InternalServerError(crate::error::InternalServerError),
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
-    /// <p>An item collection is too large. This exception is only returned for tables that
-    /// have one or more local secondary indexes.</p>
+    /// <p>An item collection is too large. This exception is only returned for tables that have one or more local secondary indexes.</p>
     ItemCollectionSizeLimitExceededException(
         crate::error::ItemCollectionSizeLimitExceededException,
     ),
-    /// <p>Your request rate is too high. The Amazon Web Services SDKs for DynamoDB
-    /// automatically retry requests that receive this exception. Your request is eventually
-    /// successful, unless your retry queue is too large to finish. Reduce the frequency of
-    /// requests and use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    /// <p>Your request rate is too high. The Amazon Web Services SDKs for DynamoDB automatically retry requests that receive this exception. Your request is eventually successful, unless your retry queue is too large to finish. Reduce the frequency of requests and use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
-    /// <p>Throughput exceeds the current throughput quota for your account. Please contact
-    /// <a href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a
-    /// quota increase.</p>
+    /// <p>Throughput exceeds the current throughput quota for your account. Please contact <a href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a quota increase.</p>
     RequestLimitExceeded(crate::error::RequestLimitExceeded),
-    /// <p>The operation tried to access a nonexistent table or index. The resource might not
-    /// be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
+    /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Operation was rejected because there is an ongoing transaction for the
-    /// item.</p>
+    /// <p>Operation was rejected because there is an ongoing transaction for the item.</p>
     TransactionConflictException(crate::error::TransactionConflictException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4676,17 +4386,11 @@ pub enum QueryErrorKind {
     InternalServerError(crate::error::InternalServerError),
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
-    /// <p>Your request rate is too high. The Amazon Web Services SDKs for DynamoDB
-    /// automatically retry requests that receive this exception. Your request is eventually
-    /// successful, unless your retry queue is too large to finish. Reduce the frequency of
-    /// requests and use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    /// <p>Your request rate is too high. The Amazon Web Services SDKs for DynamoDB automatically retry requests that receive this exception. Your request is eventually successful, unless your retry queue is too large to finish. Reduce the frequency of requests and use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
-    /// <p>Throughput exceeds the current throughput quota for your account. Please contact
-    /// <a href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a
-    /// quota increase.</p>
+    /// <p>Throughput exceeds the current throughput quota for your account. Please contact <a href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a quota increase.</p>
     RequestLimitExceeded(crate::error::RequestLimitExceeded),
-    /// <p>The operation tried to access a nonexistent table or index. The resource might not
-    /// be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
+    /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4803,8 +4507,7 @@ pub struct RestoreTableFromBackupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RestoreTableFromBackupErrorKind {
-    /// <p>There is another ongoing conflicting backup control plane operation on the table.
-    /// The backup is either being created, deleted or restored to a table.</p>
+    /// <p>There is another ongoing conflicting backup control plane operation on the table. The backup is either being created, deleted or restored to a table.</p>
     BackupInUseException(crate::error::BackupInUseException),
     /// <p>Backup not found for the given BackupARN. </p>
     BackupNotFoundException(crate::error::BackupNotFoundException),
@@ -4813,20 +4516,13 @@ pub enum RestoreTableFromBackupErrorKind {
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
     /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p>
-    /// <p>Up to 50 simultaneous table operations are allowed per account. These operations
-    /// include <code>CreateTable</code>, <code>UpdateTable</code>,
-    /// <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-    /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
-    /// <p>The only exception is when you are creating a table with one or more secondary
-    /// indexes. You can have up to 25 such requests running at a time; however, if the table or
-    /// index specifications are complex, DynamoDB might temporarily reduce the number
-    /// of concurrent operations.</p>
+    /// <p>Up to 50 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
+    /// <p>The only exception is when you are creating a table with one or more secondary indexes. You can have up to 25 such requests running at a time; however, if the table or index specifications are complex, DynamoDB might temporarily reduce the number of concurrent operations.</p>
     /// <p>There is a soft account quota of 256 tables.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>A target table with the specified name already exists. </p>
     TableAlreadyExistsException(crate::error::TableAlreadyExistsException),
-    /// <p>A target table with the specified name is either being created or deleted.
-    /// </p>
+    /// <p>A target table with the specified name is either being created or deleted. </p>
     TableInUseException(crate::error::TableInUseException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4977,29 +4673,20 @@ pub enum RestoreTableToPointInTimeErrorKind {
     InternalServerError(crate::error::InternalServerError),
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
-    /// <p>An invalid restore time was specified. RestoreDateTime must be between
-    /// EarliestRestorableDateTime and LatestRestorableDateTime.</p>
+    /// <p>An invalid restore time was specified. RestoreDateTime must be between EarliestRestorableDateTime and LatestRestorableDateTime.</p>
     InvalidRestoreTimeException(crate::error::InvalidRestoreTimeException),
     /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p>
-    /// <p>Up to 50 simultaneous table operations are allowed per account. These operations
-    /// include <code>CreateTable</code>, <code>UpdateTable</code>,
-    /// <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-    /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
-    /// <p>The only exception is when you are creating a table with one or more secondary
-    /// indexes. You can have up to 25 such requests running at a time; however, if the table or
-    /// index specifications are complex, DynamoDB might temporarily reduce the number
-    /// of concurrent operations.</p>
+    /// <p>Up to 50 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
+    /// <p>The only exception is when you are creating a table with one or more secondary indexes. You can have up to 25 such requests running at a time; however, if the table or index specifications are complex, DynamoDB might temporarily reduce the number of concurrent operations.</p>
     /// <p>There is a soft account quota of 256 tables.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>Point in time recovery has not yet been enabled for this source table.</p>
     PointInTimeRecoveryUnavailableException(crate::error::PointInTimeRecoveryUnavailableException),
     /// <p>A target table with the specified name already exists. </p>
     TableAlreadyExistsException(crate::error::TableAlreadyExistsException),
-    /// <p>A target table with the specified name is either being created or deleted.
-    /// </p>
+    /// <p>A target table with the specified name is either being created or deleted. </p>
     TableInUseException(crate::error::TableInUseException),
-    /// <p>A source table with the name <code>TableName</code> does not currently exist within
-    /// the subscriber's account.</p>
+    /// <p>A source table with the name <code>TableName</code> does not currently exist within the subscriber's account.</p>
     TableNotFoundException(crate::error::TableNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5167,17 +4854,11 @@ pub enum ScanErrorKind {
     InternalServerError(crate::error::InternalServerError),
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
-    /// <p>Your request rate is too high. The Amazon Web Services SDKs for DynamoDB
-    /// automatically retry requests that receive this exception. Your request is eventually
-    /// successful, unless your retry queue is too large to finish. Reduce the frequency of
-    /// requests and use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    /// <p>Your request rate is too high. The Amazon Web Services SDKs for DynamoDB automatically retry requests that receive this exception. Your request is eventually successful, unless your retry queue is too large to finish. Reduce the frequency of requests and use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
-    /// <p>Throughput exceeds the current throughput quota for your account. Please contact
-    /// <a href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a
-    /// quota increase.</p>
+    /// <p>Throughput exceeds the current throughput quota for your account. Please contact <a href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a quota increase.</p>
     RequestLimitExceeded(crate::error::RequestLimitExceeded),
-    /// <p>The operation tried to access a nonexistent table or index. The resource might not
-    /// be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
+    /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5299,22 +4980,13 @@ pub enum TagResourceErrorKind {
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
     /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p>
-    /// <p>Up to 50 simultaneous table operations are allowed per account. These operations
-    /// include <code>CreateTable</code>, <code>UpdateTable</code>,
-    /// <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-    /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
-    /// <p>The only exception is when you are creating a table with one or more secondary
-    /// indexes. You can have up to 25 such requests running at a time; however, if the table or
-    /// index specifications are complex, DynamoDB might temporarily reduce the number
-    /// of concurrent operations.</p>
+    /// <p>Up to 50 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
+    /// <p>The only exception is when you are creating a table with one or more secondary indexes. You can have up to 25 such requests running at a time; however, if the table or index specifications are complex, DynamoDB might temporarily reduce the number of concurrent operations.</p>
     /// <p>There is a soft account quota of 256 tables.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The operation conflicts with the resource's availability. For example, you
-    /// attempted to recreate an existing table, or tried to delete a table currently in the
-    /// <code>CREATING</code> state.</p>
+    /// <p>The operation conflicts with the resource's availability. For example, you attempted to recreate an existing table, or tried to delete a table currently in the <code>CREATING</code> state.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>The operation tried to access a nonexistent table or index. The resource might not
-    /// be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
+    /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5438,253 +5110,96 @@ pub enum TransactGetItemsErrorKind {
     InternalServerError(crate::error::InternalServerError),
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
-    /// <p>Your request rate is too high. The Amazon Web Services SDKs for DynamoDB
-    /// automatically retry requests that receive this exception. Your request is eventually
-    /// successful, unless your retry queue is too large to finish. Reduce the frequency of
-    /// requests and use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    /// <p>Your request rate is too high. The Amazon Web Services SDKs for DynamoDB automatically retry requests that receive this exception. Your request is eventually successful, unless your retry queue is too large to finish. Reduce the frequency of requests and use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
-    /// <p>Throughput exceeds the current throughput quota for your account. Please contact
-    /// <a href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a
-    /// quota increase.</p>
+    /// <p>Throughput exceeds the current throughput quota for your account. Please contact <a href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a quota increase.</p>
     RequestLimitExceeded(crate::error::RequestLimitExceeded),
-    /// <p>The operation tried to access a nonexistent table or index. The resource might not
-    /// be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
+    /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The entire transaction request was canceled.</p>
-    /// <p>DynamoDB cancels a <code>TransactWriteItems</code> request under the following
-    /// circumstances:</p>
+    /// <p>DynamoDB cancels a <code>TransactWriteItems</code> request under the following circumstances:</p>
     /// <ul>
-    /// <li>
-    /// <p>A condition in one of the condition expressions is not met.</p>
-    /// </li>
-    /// <li>
-    /// <p>A table in the <code>TransactWriteItems</code> request is in a different
-    /// account or region.</p>
-    /// </li>
-    /// <li>
-    /// <p>More than one action in the <code>TransactWriteItems</code> operation
-    /// targets the same item.</p>
-    /// </li>
-    /// <li>
-    /// <p>There is insufficient provisioned capacity for the transaction to be
-    /// completed.</p>
-    /// </li>
-    /// <li>
-    /// <p>An item size becomes too large (larger than 400 KB), or a local secondary
-    /// index (LSI) becomes too large, or a similar validation error occurs because of
-    /// changes made by the transaction.</p>
-    /// </li>
-    /// <li>
-    /// <p>There is a user error, such as an invalid data format.</p>
-    /// </li>
+    /// <li> <p>A condition in one of the condition expressions is not met.</p> </li>
+    /// <li> <p>A table in the <code>TransactWriteItems</code> request is in a different account or region.</p> </li>
+    /// <li> <p>More than one action in the <code>TransactWriteItems</code> operation targets the same item.</p> </li>
+    /// <li> <p>There is insufficient provisioned capacity for the transaction to be completed.</p> </li>
+    /// <li> <p>An item size becomes too large (larger than 400 KB), or a local secondary index (LSI) becomes too large, or a similar validation error occurs because of changes made by the transaction.</p> </li>
+    /// <li> <p>There is a user error, such as an invalid data format.</p> </li>
     /// </ul>
-    ///
-    /// <p>DynamoDB cancels a <code>TransactGetItems</code> request under the
-    /// following circumstances:</p>
+    /// <p>DynamoDB cancels a <code>TransactGetItems</code> request under the following circumstances:</p>
     /// <ul>
-    /// <li>
-    /// <p>There is an ongoing <code>TransactGetItems</code> operation that conflicts
-    /// with a concurrent <code>PutItem</code>, <code>UpdateItem</code>,
-    /// <code>DeleteItem</code> or <code>TransactWriteItems</code> request. In this
-    /// case the <code>TransactGetItems</code> operation fails with a
-    /// <code>TransactionCanceledException</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>A table in the <code>TransactGetItems</code> request is in a different
-    /// account or region.</p>
-    /// </li>
-    /// <li>
-    /// <p>There is insufficient provisioned capacity for the transaction to be
-    /// completed.</p>
-    /// </li>
-    /// <li>
-    /// <p>There is a user error, such as an invalid data format.</p>
-    /// </li>
-    /// </ul>
-    ///
-    /// <note>
-    /// <p>If using Java, DynamoDB lists the cancellation reasons on the
-    /// <code>CancellationReasons</code> property. This property is not set for other
-    /// languages. Transaction cancellation reasons are ordered in the order of requested
-    /// items, if an item has no error it will have <code>NONE</code> code and
-    /// <code>Null</code> message.</p>
+    /// <li> <p>There is an ongoing <code>TransactGetItems</code> operation that conflicts with a concurrent <code>PutItem</code>, <code>UpdateItem</code>, <code>DeleteItem</code> or <code>TransactWriteItems</code> request. In this case the <code>TransactGetItems</code> operation fails with a <code>TransactionCanceledException</code>.</p> </li>
+    /// <li> <p>A table in the <code>TransactGetItems</code> request is in a different account or region.</p> </li>
+    /// <li> <p>There is insufficient provisioned capacity for the transaction to be completed.</p> </li>
+    /// <li> <p>There is a user error, such as an invalid data format.</p> </li>
+    /// </ul> <note>
+    /// <p>If using Java, DynamoDB lists the cancellation reasons on the <code>CancellationReasons</code> property. This property is not set for other languages. Transaction cancellation reasons are ordered in the order of requested items, if an item has no error it will have <code>NONE</code> code and <code>Null</code> message.</p>
     /// </note>
     /// <p>Cancellation reason codes and possible error messages:</p>
     /// <ul>
-    /// <li>
-    /// <p>No Errors:</p>
+    /// <li> <p>No Errors:</p>
     /// <ul>
-    /// <li>
-    /// <p>Code: <code>NONE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Message: <code>null</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>Conditional Check Failed:</p>
+    /// <li> <p>Code: <code>NONE</code> </p> </li>
+    /// <li> <p>Message: <code>null</code> </p> </li>
+    /// </ul> </li>
+    /// <li> <p>Conditional Check Failed:</p>
     /// <ul>
-    /// <li>
-    /// <p>Code: <code>ConditionalCheckFailed</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Message: The conditional request failed. </p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>Item Collection Size Limit Exceeded:</p>
+    /// <li> <p>Code: <code>ConditionalCheckFailed</code> </p> </li>
+    /// <li> <p>Message: The conditional request failed. </p> </li>
+    /// </ul> </li>
+    /// <li> <p>Item Collection Size Limit Exceeded:</p>
     /// <ul>
-    /// <li>
-    /// <p>Code: <code>ItemCollectionSizeLimitExceeded</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Message: Collection size exceeded.</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>Transaction Conflict:</p>
+    /// <li> <p>Code: <code>ItemCollectionSizeLimitExceeded</code> </p> </li>
+    /// <li> <p>Message: Collection size exceeded.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>Transaction Conflict:</p>
     /// <ul>
-    /// <li>
-    /// <p>Code: <code>TransactionConflict</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Message: Transaction is ongoing for the item.</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>Provisioned Throughput Exceeded:</p>
+    /// <li> <p>Code: <code>TransactionConflict</code> </p> </li>
+    /// <li> <p>Message: Transaction is ongoing for the item.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>Provisioned Throughput Exceeded:</p>
     /// <ul>
-    /// <li>
-    /// <p>Code: <code>ProvisionedThroughputExceeded</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Messages:</p>
+    /// <li> <p>Code: <code>ProvisionedThroughputExceeded</code> </p> </li>
+    /// <li> <p>Messages:</p>
     /// <ul>
-    /// <li>
-    /// <p>The level of configured provisioned throughput for the
-    /// table was exceeded. Consider increasing your provisioning level
-    /// with the UpdateTable API.</p>
-    /// <note>
-    /// <p>This Message is received when provisioned throughput is
-    /// exceeded is on a provisioned DynamoDB
-    /// table.</p>
-    /// </note>
-    /// </li>
-    /// <li>
-    /// <p>The level of configured provisioned throughput for one or
-    /// more global secondary indexes of the table was exceeded.
-    /// Consider increasing your provisioning level for the
-    /// under-provisioned global secondary indexes with the UpdateTable
-    /// API.</p>
-    /// <note>
-    /// <p>This message is returned when provisioned throughput is
-    /// exceeded is on a provisioned GSI.</p>
-    /// </note>
-    /// </li>
-    /// </ul>
-    ///
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>Throttling Error:</p>
+    /// <li> <p>The level of configured provisioned throughput for the table was exceeded. Consider increasing your provisioning level with the UpdateTable API.</p> <note>
+    /// <p>This Message is received when provisioned throughput is exceeded is on a provisioned DynamoDB table.</p>
+    /// </note> </li>
+    /// <li> <p>The level of configured provisioned throughput for one or more global secondary indexes of the table was exceeded. Consider increasing your provisioning level for the under-provisioned global secondary indexes with the UpdateTable API.</p> <note>
+    /// <p>This message is returned when provisioned throughput is exceeded is on a provisioned GSI.</p>
+    /// </note> </li>
+    /// </ul> </li>
+    /// </ul> </li>
+    /// <li> <p>Throttling Error:</p>
     /// <ul>
-    /// <li>
-    /// <p>Code: <code>ThrottlingError</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Messages: </p>
+    /// <li> <p>Code: <code>ThrottlingError</code> </p> </li>
+    /// <li> <p>Messages: </p>
     /// <ul>
-    /// <li>
-    /// <p>Throughput exceeds the current capacity of your table or
-    /// index. DynamoDB is automatically scaling your table or
-    /// index so please try again shortly. If exceptions persist, check
-    /// if you have a hot key:
-    /// https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-partition-key-design.html.</p>
-    /// <note>
-    /// <p>This message is returned when writes get throttled on an
-    /// On-Demand table as DynamoDB is automatically
-    /// scaling the table.</p>
-    /// </note>
-    /// </li>
-    /// <li>
-    /// <p>Throughput exceeds the current capacity for one or more
-    /// global secondary indexes. DynamoDB is automatically
-    /// scaling your index so please try again shortly.</p>
-    /// <note>
-    /// <p>This message is returned when when writes get throttled on
-    /// an On-Demand GSI as DynamoDB is automatically
-    /// scaling the GSI.</p>
-    /// </note>
-    /// </li>
-    /// </ul>
-    ///
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>Validation Error:</p>
+    /// <li> <p>Throughput exceeds the current capacity of your table or index. DynamoDB is automatically scaling your table or index so please try again shortly. If exceptions persist, check if you have a hot key: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-partition-key-design.html.</p> <note>
+    /// <p>This message is returned when writes get throttled on an On-Demand table as DynamoDB is automatically scaling the table.</p>
+    /// </note> </li>
+    /// <li> <p>Throughput exceeds the current capacity for one or more global secondary indexes. DynamoDB is automatically scaling your index so please try again shortly.</p> <note>
+    /// <p>This message is returned when when writes get throttled on an On-Demand GSI as DynamoDB is automatically scaling the GSI.</p>
+    /// </note> </li>
+    /// </ul> </li>
+    /// </ul> </li>
+    /// <li> <p>Validation Error:</p>
     /// <ul>
-    /// <li>
-    /// <p>Code: <code>ValidationError</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Messages: </p>
+    /// <li> <p>Code: <code>ValidationError</code> </p> </li>
+    /// <li> <p>Messages: </p>
     /// <ul>
-    /// <li>
-    /// <p>One or more parameter values were invalid.</p>
-    /// </li>
-    /// <li>
-    /// <p>The update expression attempted to update the secondary
-    /// index key beyond allowed size limits.</p>
-    /// </li>
-    /// <li>
-    /// <p>The update expression attempted to update the secondary
-    /// index key to unsupported type.</p>
-    /// </li>
-    /// <li>
-    /// <p>An operand in the update expression has an incorrect data
-    /// type.</p>
-    /// </li>
-    /// <li>
-    /// <p>Item size to update has exceeded the maximum allowed
-    /// size.</p>
-    /// </li>
-    /// <li>
-    /// <p>Number overflow. Attempting to store a number with
-    /// magnitude larger than supported range.</p>
-    /// </li>
-    /// <li>
-    /// <p>Type mismatch for attribute to update.</p>
-    /// </li>
-    /// <li>
-    /// <p>Nesting Levels have exceeded supported limits.</p>
-    /// </li>
-    /// <li>
-    /// <p>The document path provided in the update expression is
-    /// invalid for update.</p>
-    /// </li>
-    /// <li>
-    /// <p>The provided expression refers to an attribute that does
-    /// not exist in the item.</p>
-    /// </li>
-    /// </ul>
-    ///
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p>One or more parameter values were invalid.</p> </li>
+    /// <li> <p>The update expression attempted to update the secondary index key beyond allowed size limits.</p> </li>
+    /// <li> <p>The update expression attempted to update the secondary index key to unsupported type.</p> </li>
+    /// <li> <p>An operand in the update expression has an incorrect data type.</p> </li>
+    /// <li> <p>Item size to update has exceeded the maximum allowed size.</p> </li>
+    /// <li> <p>Number overflow. Attempting to store a number with magnitude larger than supported range.</p> </li>
+    /// <li> <p>Type mismatch for attribute to update.</p> </li>
+    /// <li> <p>Nesting Levels have exceeded supported limits.</p> </li>
+    /// <li> <p>The document path provided in the update expression is invalid for update.</p> </li>
+    /// <li> <p>The provided expression refers to an attribute that does not exist in the item.</p> </li>
+    /// </ul> </li>
+    /// </ul> </li>
     /// </ul>
     TransactionCanceledException(crate::error::TransactionCanceledException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
@@ -5827,260 +5342,102 @@ pub struct TransactWriteItemsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TransactWriteItemsErrorKind {
-    /// <p>DynamoDB rejected the request because you retried a request with a
-    /// different payload but with an idempotent token that was already used.</p>
+    /// <p>DynamoDB rejected the request because you retried a request with a different payload but with an idempotent token that was already used.</p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
-    /// <p>Your request rate is too high. The Amazon Web Services SDKs for DynamoDB
-    /// automatically retry requests that receive this exception. Your request is eventually
-    /// successful, unless your retry queue is too large to finish. Reduce the frequency of
-    /// requests and use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    /// <p>Your request rate is too high. The Amazon Web Services SDKs for DynamoDB automatically retry requests that receive this exception. Your request is eventually successful, unless your retry queue is too large to finish. Reduce the frequency of requests and use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
-    /// <p>Throughput exceeds the current throughput quota for your account. Please contact
-    /// <a href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a
-    /// quota increase.</p>
+    /// <p>Throughput exceeds the current throughput quota for your account. Please contact <a href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a quota increase.</p>
     RequestLimitExceeded(crate::error::RequestLimitExceeded),
-    /// <p>The operation tried to access a nonexistent table or index. The resource might not
-    /// be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
+    /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The entire transaction request was canceled.</p>
-    /// <p>DynamoDB cancels a <code>TransactWriteItems</code> request under the following
-    /// circumstances:</p>
+    /// <p>DynamoDB cancels a <code>TransactWriteItems</code> request under the following circumstances:</p>
     /// <ul>
-    /// <li>
-    /// <p>A condition in one of the condition expressions is not met.</p>
-    /// </li>
-    /// <li>
-    /// <p>A table in the <code>TransactWriteItems</code> request is in a different
-    /// account or region.</p>
-    /// </li>
-    /// <li>
-    /// <p>More than one action in the <code>TransactWriteItems</code> operation
-    /// targets the same item.</p>
-    /// </li>
-    /// <li>
-    /// <p>There is insufficient provisioned capacity for the transaction to be
-    /// completed.</p>
-    /// </li>
-    /// <li>
-    /// <p>An item size becomes too large (larger than 400 KB), or a local secondary
-    /// index (LSI) becomes too large, or a similar validation error occurs because of
-    /// changes made by the transaction.</p>
-    /// </li>
-    /// <li>
-    /// <p>There is a user error, such as an invalid data format.</p>
-    /// </li>
+    /// <li> <p>A condition in one of the condition expressions is not met.</p> </li>
+    /// <li> <p>A table in the <code>TransactWriteItems</code> request is in a different account or region.</p> </li>
+    /// <li> <p>More than one action in the <code>TransactWriteItems</code> operation targets the same item.</p> </li>
+    /// <li> <p>There is insufficient provisioned capacity for the transaction to be completed.</p> </li>
+    /// <li> <p>An item size becomes too large (larger than 400 KB), or a local secondary index (LSI) becomes too large, or a similar validation error occurs because of changes made by the transaction.</p> </li>
+    /// <li> <p>There is a user error, such as an invalid data format.</p> </li>
     /// </ul>
-    ///
-    /// <p>DynamoDB cancels a <code>TransactGetItems</code> request under the
-    /// following circumstances:</p>
+    /// <p>DynamoDB cancels a <code>TransactGetItems</code> request under the following circumstances:</p>
     /// <ul>
-    /// <li>
-    /// <p>There is an ongoing <code>TransactGetItems</code> operation that conflicts
-    /// with a concurrent <code>PutItem</code>, <code>UpdateItem</code>,
-    /// <code>DeleteItem</code> or <code>TransactWriteItems</code> request. In this
-    /// case the <code>TransactGetItems</code> operation fails with a
-    /// <code>TransactionCanceledException</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>A table in the <code>TransactGetItems</code> request is in a different
-    /// account or region.</p>
-    /// </li>
-    /// <li>
-    /// <p>There is insufficient provisioned capacity for the transaction to be
-    /// completed.</p>
-    /// </li>
-    /// <li>
-    /// <p>There is a user error, such as an invalid data format.</p>
-    /// </li>
-    /// </ul>
-    ///
-    /// <note>
-    /// <p>If using Java, DynamoDB lists the cancellation reasons on the
-    /// <code>CancellationReasons</code> property. This property is not set for other
-    /// languages. Transaction cancellation reasons are ordered in the order of requested
-    /// items, if an item has no error it will have <code>NONE</code> code and
-    /// <code>Null</code> message.</p>
+    /// <li> <p>There is an ongoing <code>TransactGetItems</code> operation that conflicts with a concurrent <code>PutItem</code>, <code>UpdateItem</code>, <code>DeleteItem</code> or <code>TransactWriteItems</code> request. In this case the <code>TransactGetItems</code> operation fails with a <code>TransactionCanceledException</code>.</p> </li>
+    /// <li> <p>A table in the <code>TransactGetItems</code> request is in a different account or region.</p> </li>
+    /// <li> <p>There is insufficient provisioned capacity for the transaction to be completed.</p> </li>
+    /// <li> <p>There is a user error, such as an invalid data format.</p> </li>
+    /// </ul> <note>
+    /// <p>If using Java, DynamoDB lists the cancellation reasons on the <code>CancellationReasons</code> property. This property is not set for other languages. Transaction cancellation reasons are ordered in the order of requested items, if an item has no error it will have <code>NONE</code> code and <code>Null</code> message.</p>
     /// </note>
     /// <p>Cancellation reason codes and possible error messages:</p>
     /// <ul>
-    /// <li>
-    /// <p>No Errors:</p>
+    /// <li> <p>No Errors:</p>
     /// <ul>
-    /// <li>
-    /// <p>Code: <code>NONE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Message: <code>null</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>Conditional Check Failed:</p>
+    /// <li> <p>Code: <code>NONE</code> </p> </li>
+    /// <li> <p>Message: <code>null</code> </p> </li>
+    /// </ul> </li>
+    /// <li> <p>Conditional Check Failed:</p>
     /// <ul>
-    /// <li>
-    /// <p>Code: <code>ConditionalCheckFailed</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Message: The conditional request failed. </p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>Item Collection Size Limit Exceeded:</p>
+    /// <li> <p>Code: <code>ConditionalCheckFailed</code> </p> </li>
+    /// <li> <p>Message: The conditional request failed. </p> </li>
+    /// </ul> </li>
+    /// <li> <p>Item Collection Size Limit Exceeded:</p>
     /// <ul>
-    /// <li>
-    /// <p>Code: <code>ItemCollectionSizeLimitExceeded</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Message: Collection size exceeded.</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>Transaction Conflict:</p>
+    /// <li> <p>Code: <code>ItemCollectionSizeLimitExceeded</code> </p> </li>
+    /// <li> <p>Message: Collection size exceeded.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>Transaction Conflict:</p>
     /// <ul>
-    /// <li>
-    /// <p>Code: <code>TransactionConflict</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Message: Transaction is ongoing for the item.</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>Provisioned Throughput Exceeded:</p>
+    /// <li> <p>Code: <code>TransactionConflict</code> </p> </li>
+    /// <li> <p>Message: Transaction is ongoing for the item.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>Provisioned Throughput Exceeded:</p>
     /// <ul>
-    /// <li>
-    /// <p>Code: <code>ProvisionedThroughputExceeded</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Messages:</p>
+    /// <li> <p>Code: <code>ProvisionedThroughputExceeded</code> </p> </li>
+    /// <li> <p>Messages:</p>
     /// <ul>
-    /// <li>
-    /// <p>The level of configured provisioned throughput for the
-    /// table was exceeded. Consider increasing your provisioning level
-    /// with the UpdateTable API.</p>
-    /// <note>
-    /// <p>This Message is received when provisioned throughput is
-    /// exceeded is on a provisioned DynamoDB
-    /// table.</p>
-    /// </note>
-    /// </li>
-    /// <li>
-    /// <p>The level of configured provisioned throughput for one or
-    /// more global secondary indexes of the table was exceeded.
-    /// Consider increasing your provisioning level for the
-    /// under-provisioned global secondary indexes with the UpdateTable
-    /// API.</p>
-    /// <note>
-    /// <p>This message is returned when provisioned throughput is
-    /// exceeded is on a provisioned GSI.</p>
-    /// </note>
-    /// </li>
-    /// </ul>
-    ///
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>Throttling Error:</p>
+    /// <li> <p>The level of configured provisioned throughput for the table was exceeded. Consider increasing your provisioning level with the UpdateTable API.</p> <note>
+    /// <p>This Message is received when provisioned throughput is exceeded is on a provisioned DynamoDB table.</p>
+    /// </note> </li>
+    /// <li> <p>The level of configured provisioned throughput for one or more global secondary indexes of the table was exceeded. Consider increasing your provisioning level for the under-provisioned global secondary indexes with the UpdateTable API.</p> <note>
+    /// <p>This message is returned when provisioned throughput is exceeded is on a provisioned GSI.</p>
+    /// </note> </li>
+    /// </ul> </li>
+    /// </ul> </li>
+    /// <li> <p>Throttling Error:</p>
     /// <ul>
-    /// <li>
-    /// <p>Code: <code>ThrottlingError</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Messages: </p>
+    /// <li> <p>Code: <code>ThrottlingError</code> </p> </li>
+    /// <li> <p>Messages: </p>
     /// <ul>
-    /// <li>
-    /// <p>Throughput exceeds the current capacity of your table or
-    /// index. DynamoDB is automatically scaling your table or
-    /// index so please try again shortly. If exceptions persist, check
-    /// if you have a hot key:
-    /// https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-partition-key-design.html.</p>
-    /// <note>
-    /// <p>This message is returned when writes get throttled on an
-    /// On-Demand table as DynamoDB is automatically
-    /// scaling the table.</p>
-    /// </note>
-    /// </li>
-    /// <li>
-    /// <p>Throughput exceeds the current capacity for one or more
-    /// global secondary indexes. DynamoDB is automatically
-    /// scaling your index so please try again shortly.</p>
-    /// <note>
-    /// <p>This message is returned when when writes get throttled on
-    /// an On-Demand GSI as DynamoDB is automatically
-    /// scaling the GSI.</p>
-    /// </note>
-    /// </li>
-    /// </ul>
-    ///
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>Validation Error:</p>
+    /// <li> <p>Throughput exceeds the current capacity of your table or index. DynamoDB is automatically scaling your table or index so please try again shortly. If exceptions persist, check if you have a hot key: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-partition-key-design.html.</p> <note>
+    /// <p>This message is returned when writes get throttled on an On-Demand table as DynamoDB is automatically scaling the table.</p>
+    /// </note> </li>
+    /// <li> <p>Throughput exceeds the current capacity for one or more global secondary indexes. DynamoDB is automatically scaling your index so please try again shortly.</p> <note>
+    /// <p>This message is returned when when writes get throttled on an On-Demand GSI as DynamoDB is automatically scaling the GSI.</p>
+    /// </note> </li>
+    /// </ul> </li>
+    /// </ul> </li>
+    /// <li> <p>Validation Error:</p>
     /// <ul>
-    /// <li>
-    /// <p>Code: <code>ValidationError</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Messages: </p>
+    /// <li> <p>Code: <code>ValidationError</code> </p> </li>
+    /// <li> <p>Messages: </p>
     /// <ul>
-    /// <li>
-    /// <p>One or more parameter values were invalid.</p>
-    /// </li>
-    /// <li>
-    /// <p>The update expression attempted to update the secondary
-    /// index key beyond allowed size limits.</p>
-    /// </li>
-    /// <li>
-    /// <p>The update expression attempted to update the secondary
-    /// index key to unsupported type.</p>
-    /// </li>
-    /// <li>
-    /// <p>An operand in the update expression has an incorrect data
-    /// type.</p>
-    /// </li>
-    /// <li>
-    /// <p>Item size to update has exceeded the maximum allowed
-    /// size.</p>
-    /// </li>
-    /// <li>
-    /// <p>Number overflow. Attempting to store a number with
-    /// magnitude larger than supported range.</p>
-    /// </li>
-    /// <li>
-    /// <p>Type mismatch for attribute to update.</p>
-    /// </li>
-    /// <li>
-    /// <p>Nesting Levels have exceeded supported limits.</p>
-    /// </li>
-    /// <li>
-    /// <p>The document path provided in the update expression is
-    /// invalid for update.</p>
-    /// </li>
-    /// <li>
-    /// <p>The provided expression refers to an attribute that does
-    /// not exist in the item.</p>
-    /// </li>
-    /// </ul>
-    ///
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p>One or more parameter values were invalid.</p> </li>
+    /// <li> <p>The update expression attempted to update the secondary index key beyond allowed size limits.</p> </li>
+    /// <li> <p>The update expression attempted to update the secondary index key to unsupported type.</p> </li>
+    /// <li> <p>An operand in the update expression has an incorrect data type.</p> </li>
+    /// <li> <p>Item size to update has exceeded the maximum allowed size.</p> </li>
+    /// <li> <p>Number overflow. Attempting to store a number with magnitude larger than supported range.</p> </li>
+    /// <li> <p>Type mismatch for attribute to update.</p> </li>
+    /// <li> <p>Nesting Levels have exceeded supported limits.</p> </li>
+    /// <li> <p>The document path provided in the update expression is invalid for update.</p> </li>
+    /// <li> <p>The provided expression refers to an attribute that does not exist in the item.</p> </li>
+    /// </ul> </li>
+    /// </ul> </li>
     /// </ul>
     TransactionCanceledException(crate::error::TransactionCanceledException),
     /// <p>The transaction with the given request token is already in progress.</p>
@@ -6252,22 +5609,13 @@ pub enum UntagResourceErrorKind {
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
     /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p>
-    /// <p>Up to 50 simultaneous table operations are allowed per account. These operations
-    /// include <code>CreateTable</code>, <code>UpdateTable</code>,
-    /// <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-    /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
-    /// <p>The only exception is when you are creating a table with one or more secondary
-    /// indexes. You can have up to 25 such requests running at a time; however, if the table or
-    /// index specifications are complex, DynamoDB might temporarily reduce the number
-    /// of concurrent operations.</p>
+    /// <p>Up to 50 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
+    /// <p>The only exception is when you are creating a table with one or more secondary indexes. You can have up to 25 such requests running at a time; however, if the table or index specifications are complex, DynamoDB might temporarily reduce the number of concurrent operations.</p>
     /// <p>There is a soft account quota of 256 tables.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The operation conflicts with the resource's availability. For example, you
-    /// attempted to recreate an existing table, or tried to delete a table currently in the
-    /// <code>CREATING</code> state.</p>
+    /// <p>The operation conflicts with the resource's availability. For example, you attempted to recreate an existing table, or tried to delete a table currently in the <code>CREATING</code> state.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>The operation tried to access a nonexistent table or index. The resource might not
-    /// be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
+    /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6399,8 +5747,7 @@ pub enum UpdateContinuousBackupsErrorKind {
     InternalServerError(crate::error::InternalServerError),
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
-    /// <p>A source table with the name <code>TableName</code> does not currently exist within
-    /// the subscriber's account.</p>
+    /// <p>A source table with the name <code>TableName</code> does not currently exist within the subscriber's account.</p>
     TableNotFoundException(crate::error::TableNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6526,8 +5873,7 @@ pub struct UpdateContributorInsightsError {
 pub enum UpdateContributorInsightsErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>The operation tried to access a nonexistent table or index. The resource might not
-    /// be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
+    /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6639,8 +5985,7 @@ pub enum UpdateGlobalTableErrorKind {
     ReplicaAlreadyExistsException(crate::error::ReplicaAlreadyExistsException),
     /// <p>The specified replica is no longer part of the global table.</p>
     ReplicaNotFoundException(crate::error::ReplicaNotFoundException),
-    /// <p>A source table with the name <code>TableName</code> does not currently exist within
-    /// the subscriber's account.</p>
+    /// <p>A source table with the name <code>TableName</code> does not currently exist within the subscriber's account.</p>
     TableNotFoundException(crate::error::TableNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6787,21 +6132,13 @@ pub enum UpdateGlobalTableSettingsErrorKind {
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
     /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p>
-    /// <p>Up to 50 simultaneous table operations are allowed per account. These operations
-    /// include <code>CreateTable</code>, <code>UpdateTable</code>,
-    /// <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-    /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
-    /// <p>The only exception is when you are creating a table with one or more secondary
-    /// indexes. You can have up to 25 such requests running at a time; however, if the table or
-    /// index specifications are complex, DynamoDB might temporarily reduce the number
-    /// of concurrent operations.</p>
+    /// <p>Up to 50 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
+    /// <p>The only exception is when you are creating a table with one or more secondary indexes. You can have up to 25 such requests running at a time; however, if the table or index specifications are complex, DynamoDB might temporarily reduce the number of concurrent operations.</p>
     /// <p>There is a soft account quota of 256 tables.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified replica is no longer part of the global table.</p>
     ReplicaNotFoundException(crate::error::ReplicaNotFoundException),
-    /// <p>The operation conflicts with the resource's availability. For example, you
-    /// attempted to recreate an existing table, or tried to delete a table currently in the
-    /// <code>CREATING</code> state.</p>
+    /// <p>The operation conflicts with the resource's availability. For example, you attempted to recreate an existing table, or tried to delete a table currently in the <code>CREATING</code> state.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6958,25 +6295,17 @@ pub enum UpdateItemErrorKind {
     InternalServerError(crate::error::InternalServerError),
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
-    /// <p>An item collection is too large. This exception is only returned for tables that
-    /// have one or more local secondary indexes.</p>
+    /// <p>An item collection is too large. This exception is only returned for tables that have one or more local secondary indexes.</p>
     ItemCollectionSizeLimitExceededException(
         crate::error::ItemCollectionSizeLimitExceededException,
     ),
-    /// <p>Your request rate is too high. The Amazon Web Services SDKs for DynamoDB
-    /// automatically retry requests that receive this exception. Your request is eventually
-    /// successful, unless your retry queue is too large to finish. Reduce the frequency of
-    /// requests and use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+    /// <p>Your request rate is too high. The Amazon Web Services SDKs for DynamoDB automatically retry requests that receive this exception. Your request is eventually successful, unless your retry queue is too large to finish. Reduce the frequency of requests and use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     ProvisionedThroughputExceededException(crate::error::ProvisionedThroughputExceededException),
-    /// <p>Throughput exceeds the current throughput quota for your account. Please contact
-    /// <a href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a
-    /// quota increase.</p>
+    /// <p>Throughput exceeds the current throughput quota for your account. Please contact <a href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a quota increase.</p>
     RequestLimitExceeded(crate::error::RequestLimitExceeded),
-    /// <p>The operation tried to access a nonexistent table or index. The resource might not
-    /// be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
+    /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Operation was rejected because there is an ongoing transaction for the
-    /// item.</p>
+    /// <p>Operation was rejected because there is an ongoing transaction for the item.</p>
     TransactionConflictException(crate::error::TransactionConflictException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7128,22 +6457,13 @@ pub enum UpdateTableErrorKind {
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
     /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p>
-    /// <p>Up to 50 simultaneous table operations are allowed per account. These operations
-    /// include <code>CreateTable</code>, <code>UpdateTable</code>,
-    /// <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-    /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
-    /// <p>The only exception is when you are creating a table with one or more secondary
-    /// indexes. You can have up to 25 such requests running at a time; however, if the table or
-    /// index specifications are complex, DynamoDB might temporarily reduce the number
-    /// of concurrent operations.</p>
+    /// <p>Up to 50 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
+    /// <p>The only exception is when you are creating a table with one or more secondary indexes. You can have up to 25 such requests running at a time; however, if the table or index specifications are complex, DynamoDB might temporarily reduce the number of concurrent operations.</p>
     /// <p>There is a soft account quota of 256 tables.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The operation conflicts with the resource's availability. For example, you
-    /// attempted to recreate an existing table, or tried to delete a table currently in the
-    /// <code>CREATING</code> state.</p>
+    /// <p>The operation conflicts with the resource's availability. For example, you attempted to recreate an existing table, or tried to delete a table currently in the <code>CREATING</code> state.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>The operation tried to access a nonexistent table or index. The resource might not
-    /// be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
+    /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7266,22 +6586,13 @@ pub enum UpdateTableReplicaAutoScalingErrorKind {
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p>
-    /// <p>Up to 50 simultaneous table operations are allowed per account. These operations
-    /// include <code>CreateTable</code>, <code>UpdateTable</code>,
-    /// <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-    /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
-    /// <p>The only exception is when you are creating a table with one or more secondary
-    /// indexes. You can have up to 25 such requests running at a time; however, if the table or
-    /// index specifications are complex, DynamoDB might temporarily reduce the number
-    /// of concurrent operations.</p>
+    /// <p>Up to 50 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
+    /// <p>The only exception is when you are creating a table with one or more secondary indexes. You can have up to 25 such requests running at a time; however, if the table or index specifications are complex, DynamoDB might temporarily reduce the number of concurrent operations.</p>
     /// <p>There is a soft account quota of 256 tables.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The operation conflicts with the resource's availability. For example, you
-    /// attempted to recreate an existing table, or tried to delete a table currently in the
-    /// <code>CREATING</code> state.</p>
+    /// <p>The operation conflicts with the resource's availability. For example, you attempted to recreate an existing table, or tried to delete a table currently in the <code>CREATING</code> state.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>The operation tried to access a nonexistent table or index. The resource might not
-    /// be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
+    /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7413,22 +6724,13 @@ pub enum UpdateTimeToLiveErrorKind {
     #[allow(missing_docs)] // documentation missing in model
     InvalidEndpointException(crate::error::InvalidEndpointException),
     /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p>
-    /// <p>Up to 50 simultaneous table operations are allowed per account. These operations
-    /// include <code>CreateTable</code>, <code>UpdateTable</code>,
-    /// <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-    /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
-    /// <p>The only exception is when you are creating a table with one or more secondary
-    /// indexes. You can have up to 25 such requests running at a time; however, if the table or
-    /// index specifications are complex, DynamoDB might temporarily reduce the number
-    /// of concurrent operations.</p>
+    /// <p>Up to 50 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
+    /// <p>The only exception is when you are creating a table with one or more secondary indexes. You can have up to 25 such requests running at a time; however, if the table or index specifications are complex, DynamoDB might temporarily reduce the number of concurrent operations.</p>
     /// <p>There is a soft account quota of 256 tables.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The operation conflicts with the resource's availability. For example, you
-    /// attempted to recreate an existing table, or tried to delete a table currently in the
-    /// <code>CREATING</code> state.</p>
+    /// <p>The operation conflicts with the resource's availability. For example, you attempted to recreate an existing table, or tried to delete a table currently in the <code>CREATING</code> state.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>The operation tried to access a nonexistent table or index. The resource might not
-    /// be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
+    /// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7544,8 +6846,7 @@ impl std::error::Error for UpdateTimeToLiveError {
     }
 }
 
-/// <p>The operation tried to access a nonexistent table or index. The resource might not
-/// be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
+/// <p>The operation tried to access a nonexistent table or index. The resource might not be specified correctly, or its status might not be <code>ACTIVE</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
@@ -7609,9 +6910,7 @@ impl ResourceNotFoundException {
     }
 }
 
-/// <p>The operation conflicts with the resource's availability. For example, you
-/// attempted to recreate an existing table, or tried to delete a table currently in the
-/// <code>CREATING</code> state.</p>
+/// <p>The operation conflicts with the resource's availability. For example, you attempted to recreate an existing table, or tried to delete a table currently in the <code>CREATING</code> state.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceInUseException {
@@ -7676,14 +6975,8 @@ impl ResourceInUseException {
 }
 
 /// <p>There is no limit to the number of daily on-demand backups that can be taken. </p>
-/// <p>Up to 50 simultaneous table operations are allowed per account. These operations
-/// include <code>CreateTable</code>, <code>UpdateTable</code>,
-/// <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-/// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
-/// <p>The only exception is when you are creating a table with one or more secondary
-/// indexes. You can have up to 25 such requests running at a time; however, if the table or
-/// index specifications are complex, DynamoDB might temporarily reduce the number
-/// of concurrent operations.</p>
+/// <p>Up to 50 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. </p>
+/// <p>The only exception is when you are creating a table with one or more secondary indexes. You can have up to 25 such requests running at a time; however, if the table or index specifications are complex, DynamoDB might temporarily reduce the number of concurrent operations.</p>
 /// <p>There is a soft account quota of 256 tables.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -7876,8 +7169,7 @@ impl InternalServerError {
     }
 }
 
-/// <p>Operation was rejected because there is an ongoing transaction for the
-/// item.</p>
+/// <p>Operation was rejected because there is an ongoing transaction for the item.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TransactionConflictException {
@@ -7941,9 +7233,7 @@ impl TransactionConflictException {
     }
 }
 
-/// <p>Throughput exceeds the current throughput quota for your account. Please contact
-/// <a href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a
-/// quota increase.</p>
+/// <p>Throughput exceeds the current throughput quota for your account. Please contact <a href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a quota increase.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RequestLimitExceeded {
@@ -8007,10 +7297,7 @@ impl RequestLimitExceeded {
     }
 }
 
-/// <p>Your request rate is too high. The Amazon Web Services SDKs for DynamoDB
-/// automatically retry requests that receive this exception. Your request is eventually
-/// successful, unless your retry queue is too large to finish. Reduce the frequency of
-/// requests and use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+/// <p>Your request rate is too high. The Amazon Web Services SDKs for DynamoDB automatically retry requests that receive this exception. Your request is eventually successful, unless your retry queue is too large to finish. Reduce the frequency of requests and use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProvisionedThroughputExceededException {
@@ -8074,13 +7361,11 @@ impl ProvisionedThroughputExceededException {
     }
 }
 
-/// <p>An item collection is too large. This exception is only returned for tables that
-/// have one or more local secondary indexes.</p>
+/// <p>An item collection is too large. This exception is only returned for tables that have one or more local secondary indexes.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ItemCollectionSizeLimitExceededException {
-    /// <p>The total size of an item collection has exceeded the maximum limit of 10
-    /// gigabytes.</p>
+    /// <p>The total size of an item collection has exceeded the maximum limit of 10 gigabytes.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ItemCollectionSizeLimitExceededException {
@@ -8115,14 +7400,12 @@ pub mod item_collection_size_limit_exceeded_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The total size of an item collection has exceeded the maximum limit of 10
-        /// gigabytes.</p>
+        /// <p>The total size of an item collection has exceeded the maximum limit of 10 gigabytes.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The total size of an item collection has exceeded the maximum limit of 10
-        /// gigabytes.</p>
+        /// <p>The total size of an item collection has exceeded the maximum limit of 10 gigabytes.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -8398,8 +7681,7 @@ impl GlobalTableNotFoundException {
     }
 }
 
-/// <p>A source table with the name <code>TableName</code> does not currently exist within
-/// the subscriber's account.</p>
+/// <p>A source table with the name <code>TableName</code> does not currently exist within the subscriber's account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TableNotFoundException {
@@ -8656,240 +7938,89 @@ impl TransactionInProgressException {
 }
 
 /// <p>The entire transaction request was canceled.</p>
-/// <p>DynamoDB cancels a <code>TransactWriteItems</code> request under the following
-/// circumstances:</p>
+/// <p>DynamoDB cancels a <code>TransactWriteItems</code> request under the following circumstances:</p>
 /// <ul>
-/// <li>
-/// <p>A condition in one of the condition expressions is not met.</p>
-/// </li>
-/// <li>
-/// <p>A table in the <code>TransactWriteItems</code> request is in a different
-/// account or region.</p>
-/// </li>
-/// <li>
-/// <p>More than one action in the <code>TransactWriteItems</code> operation
-/// targets the same item.</p>
-/// </li>
-/// <li>
-/// <p>There is insufficient provisioned capacity for the transaction to be
-/// completed.</p>
-/// </li>
-/// <li>
-/// <p>An item size becomes too large (larger than 400 KB), or a local secondary
-/// index (LSI) becomes too large, or a similar validation error occurs because of
-/// changes made by the transaction.</p>
-/// </li>
-/// <li>
-/// <p>There is a user error, such as an invalid data format.</p>
-/// </li>
+/// <li> <p>A condition in one of the condition expressions is not met.</p> </li>
+/// <li> <p>A table in the <code>TransactWriteItems</code> request is in a different account or region.</p> </li>
+/// <li> <p>More than one action in the <code>TransactWriteItems</code> operation targets the same item.</p> </li>
+/// <li> <p>There is insufficient provisioned capacity for the transaction to be completed.</p> </li>
+/// <li> <p>An item size becomes too large (larger than 400 KB), or a local secondary index (LSI) becomes too large, or a similar validation error occurs because of changes made by the transaction.</p> </li>
+/// <li> <p>There is a user error, such as an invalid data format.</p> </li>
 /// </ul>
-///
-/// <p>DynamoDB cancels a <code>TransactGetItems</code> request under the
-/// following circumstances:</p>
+/// <p>DynamoDB cancels a <code>TransactGetItems</code> request under the following circumstances:</p>
 /// <ul>
-/// <li>
-/// <p>There is an ongoing <code>TransactGetItems</code> operation that conflicts
-/// with a concurrent <code>PutItem</code>, <code>UpdateItem</code>,
-/// <code>DeleteItem</code> or <code>TransactWriteItems</code> request. In this
-/// case the <code>TransactGetItems</code> operation fails with a
-/// <code>TransactionCanceledException</code>.</p>
-/// </li>
-/// <li>
-/// <p>A table in the <code>TransactGetItems</code> request is in a different
-/// account or region.</p>
-/// </li>
-/// <li>
-/// <p>There is insufficient provisioned capacity for the transaction to be
-/// completed.</p>
-/// </li>
-/// <li>
-/// <p>There is a user error, such as an invalid data format.</p>
-/// </li>
-/// </ul>
-///
-/// <note>
-/// <p>If using Java, DynamoDB lists the cancellation reasons on the
-/// <code>CancellationReasons</code> property. This property is not set for other
-/// languages. Transaction cancellation reasons are ordered in the order of requested
-/// items, if an item has no error it will have <code>NONE</code> code and
-/// <code>Null</code> message.</p>
+/// <li> <p>There is an ongoing <code>TransactGetItems</code> operation that conflicts with a concurrent <code>PutItem</code>, <code>UpdateItem</code>, <code>DeleteItem</code> or <code>TransactWriteItems</code> request. In this case the <code>TransactGetItems</code> operation fails with a <code>TransactionCanceledException</code>.</p> </li>
+/// <li> <p>A table in the <code>TransactGetItems</code> request is in a different account or region.</p> </li>
+/// <li> <p>There is insufficient provisioned capacity for the transaction to be completed.</p> </li>
+/// <li> <p>There is a user error, such as an invalid data format.</p> </li>
+/// </ul> <note>
+/// <p>If using Java, DynamoDB lists the cancellation reasons on the <code>CancellationReasons</code> property. This property is not set for other languages. Transaction cancellation reasons are ordered in the order of requested items, if an item has no error it will have <code>NONE</code> code and <code>Null</code> message.</p>
 /// </note>
 /// <p>Cancellation reason codes and possible error messages:</p>
 /// <ul>
-/// <li>
-/// <p>No Errors:</p>
+/// <li> <p>No Errors:</p>
 /// <ul>
-/// <li>
-/// <p>Code: <code>NONE</code>
-/// </p>
-/// </li>
-/// <li>
-/// <p>Message: <code>null</code>
-/// </p>
-/// </li>
-/// </ul>
-/// </li>
-/// <li>
-/// <p>Conditional Check Failed:</p>
+/// <li> <p>Code: <code>NONE</code> </p> </li>
+/// <li> <p>Message: <code>null</code> </p> </li>
+/// </ul> </li>
+/// <li> <p>Conditional Check Failed:</p>
 /// <ul>
-/// <li>
-/// <p>Code: <code>ConditionalCheckFailed</code>
-/// </p>
-/// </li>
-/// <li>
-/// <p>Message: The conditional request failed. </p>
-/// </li>
-/// </ul>
-/// </li>
-/// <li>
-/// <p>Item Collection Size Limit Exceeded:</p>
+/// <li> <p>Code: <code>ConditionalCheckFailed</code> </p> </li>
+/// <li> <p>Message: The conditional request failed. </p> </li>
+/// </ul> </li>
+/// <li> <p>Item Collection Size Limit Exceeded:</p>
 /// <ul>
-/// <li>
-/// <p>Code: <code>ItemCollectionSizeLimitExceeded</code>
-/// </p>
-/// </li>
-/// <li>
-/// <p>Message: Collection size exceeded.</p>
-/// </li>
-/// </ul>
-/// </li>
-/// <li>
-/// <p>Transaction Conflict:</p>
+/// <li> <p>Code: <code>ItemCollectionSizeLimitExceeded</code> </p> </li>
+/// <li> <p>Message: Collection size exceeded.</p> </li>
+/// </ul> </li>
+/// <li> <p>Transaction Conflict:</p>
 /// <ul>
-/// <li>
-/// <p>Code: <code>TransactionConflict</code>
-/// </p>
-/// </li>
-/// <li>
-/// <p>Message: Transaction is ongoing for the item.</p>
-/// </li>
-/// </ul>
-/// </li>
-/// <li>
-/// <p>Provisioned Throughput Exceeded:</p>
+/// <li> <p>Code: <code>TransactionConflict</code> </p> </li>
+/// <li> <p>Message: Transaction is ongoing for the item.</p> </li>
+/// </ul> </li>
+/// <li> <p>Provisioned Throughput Exceeded:</p>
 /// <ul>
-/// <li>
-/// <p>Code: <code>ProvisionedThroughputExceeded</code>
-/// </p>
-/// </li>
-/// <li>
-/// <p>Messages:</p>
+/// <li> <p>Code: <code>ProvisionedThroughputExceeded</code> </p> </li>
+/// <li> <p>Messages:</p>
 /// <ul>
-/// <li>
-/// <p>The level of configured provisioned throughput for the
-/// table was exceeded. Consider increasing your provisioning level
-/// with the UpdateTable API.</p>
-/// <note>
-/// <p>This Message is received when provisioned throughput is
-/// exceeded is on a provisioned DynamoDB
-/// table.</p>
-/// </note>
-/// </li>
-/// <li>
-/// <p>The level of configured provisioned throughput for one or
-/// more global secondary indexes of the table was exceeded.
-/// Consider increasing your provisioning level for the
-/// under-provisioned global secondary indexes with the UpdateTable
-/// API.</p>
-/// <note>
-/// <p>This message is returned when provisioned throughput is
-/// exceeded is on a provisioned GSI.</p>
-/// </note>
-/// </li>
-/// </ul>
-///
-/// </li>
-/// </ul>
-/// </li>
-/// <li>
-/// <p>Throttling Error:</p>
+/// <li> <p>The level of configured provisioned throughput for the table was exceeded. Consider increasing your provisioning level with the UpdateTable API.</p> <note>
+/// <p>This Message is received when provisioned throughput is exceeded is on a provisioned DynamoDB table.</p>
+/// </note> </li>
+/// <li> <p>The level of configured provisioned throughput for one or more global secondary indexes of the table was exceeded. Consider increasing your provisioning level for the under-provisioned global secondary indexes with the UpdateTable API.</p> <note>
+/// <p>This message is returned when provisioned throughput is exceeded is on a provisioned GSI.</p>
+/// </note> </li>
+/// </ul> </li>
+/// </ul> </li>
+/// <li> <p>Throttling Error:</p>
 /// <ul>
-/// <li>
-/// <p>Code: <code>ThrottlingError</code>
-/// </p>
-/// </li>
-/// <li>
-/// <p>Messages: </p>
+/// <li> <p>Code: <code>ThrottlingError</code> </p> </li>
+/// <li> <p>Messages: </p>
 /// <ul>
-/// <li>
-/// <p>Throughput exceeds the current capacity of your table or
-/// index. DynamoDB is automatically scaling your table or
-/// index so please try again shortly. If exceptions persist, check
-/// if you have a hot key:
-/// https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-partition-key-design.html.</p>
-/// <note>
-/// <p>This message is returned when writes get throttled on an
-/// On-Demand table as DynamoDB is automatically
-/// scaling the table.</p>
-/// </note>
-/// </li>
-/// <li>
-/// <p>Throughput exceeds the current capacity for one or more
-/// global secondary indexes. DynamoDB is automatically
-/// scaling your index so please try again shortly.</p>
-/// <note>
-/// <p>This message is returned when when writes get throttled on
-/// an On-Demand GSI as DynamoDB is automatically
-/// scaling the GSI.</p>
-/// </note>
-/// </li>
-/// </ul>
-///
-/// </li>
-/// </ul>
-/// </li>
-/// <li>
-/// <p>Validation Error:</p>
+/// <li> <p>Throughput exceeds the current capacity of your table or index. DynamoDB is automatically scaling your table or index so please try again shortly. If exceptions persist, check if you have a hot key: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-partition-key-design.html.</p> <note>
+/// <p>This message is returned when writes get throttled on an On-Demand table as DynamoDB is automatically scaling the table.</p>
+/// </note> </li>
+/// <li> <p>Throughput exceeds the current capacity for one or more global secondary indexes. DynamoDB is automatically scaling your index so please try again shortly.</p> <note>
+/// <p>This message is returned when when writes get throttled on an On-Demand GSI as DynamoDB is automatically scaling the GSI.</p>
+/// </note> </li>
+/// </ul> </li>
+/// </ul> </li>
+/// <li> <p>Validation Error:</p>
 /// <ul>
-/// <li>
-/// <p>Code: <code>ValidationError</code>
-/// </p>
-/// </li>
-/// <li>
-/// <p>Messages: </p>
+/// <li> <p>Code: <code>ValidationError</code> </p> </li>
+/// <li> <p>Messages: </p>
 /// <ul>
-/// <li>
-/// <p>One or more parameter values were invalid.</p>
-/// </li>
-/// <li>
-/// <p>The update expression attempted to update the secondary
-/// index key beyond allowed size limits.</p>
-/// </li>
-/// <li>
-/// <p>The update expression attempted to update the secondary
-/// index key to unsupported type.</p>
-/// </li>
-/// <li>
-/// <p>An operand in the update expression has an incorrect data
-/// type.</p>
-/// </li>
-/// <li>
-/// <p>Item size to update has exceeded the maximum allowed
-/// size.</p>
-/// </li>
-/// <li>
-/// <p>Number overflow. Attempting to store a number with
-/// magnitude larger than supported range.</p>
-/// </li>
-/// <li>
-/// <p>Type mismatch for attribute to update.</p>
-/// </li>
-/// <li>
-/// <p>Nesting Levels have exceeded supported limits.</p>
-/// </li>
-/// <li>
-/// <p>The document path provided in the update expression is
-/// invalid for update.</p>
-/// </li>
-/// <li>
-/// <p>The provided expression refers to an attribute that does
-/// not exist in the item.</p>
-/// </li>
-/// </ul>
-///
-/// </li>
-/// </ul>
-/// </li>
+/// <li> <p>One or more parameter values were invalid.</p> </li>
+/// <li> <p>The update expression attempted to update the secondary index key beyond allowed size limits.</p> </li>
+/// <li> <p>The update expression attempted to update the secondary index key to unsupported type.</p> </li>
+/// <li> <p>An operand in the update expression has an incorrect data type.</p> </li>
+/// <li> <p>Item size to update has exceeded the maximum allowed size.</p> </li>
+/// <li> <p>Number overflow. Attempting to store a number with magnitude larger than supported range.</p> </li>
+/// <li> <p>Type mismatch for attribute to update.</p> </li>
+/// <li> <p>Nesting Levels have exceeded supported limits.</p> </li>
+/// <li> <p>The document path provided in the update expression is invalid for update.</p> </li>
+/// <li> <p>The provided expression refers to an attribute that does not exist in the item.</p> </li>
+/// </ul> </li>
+/// </ul> </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -8985,8 +8116,7 @@ impl TransactionCanceledException {
     }
 }
 
-/// <p>DynamoDB rejected the request because you retried a request with a
-/// different payload but with an idempotent token that was already used.</p>
+/// <p>DynamoDB rejected the request because you retried a request with a different payload but with an idempotent token that was already used.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IdempotentParameterMismatchException {
@@ -9050,8 +8180,7 @@ impl IdempotentParameterMismatchException {
     }
 }
 
-/// <p>A target table with the specified name is either being created or deleted.
-/// </p>
+/// <p>A target table with the specified name is either being created or deleted. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TableInUseException {
@@ -9243,8 +8372,7 @@ impl PointInTimeRecoveryUnavailableException {
     }
 }
 
-/// <p>An invalid restore time was specified. RestoreDateTime must be between
-/// EarliestRestorableDateTime and LatestRestorableDateTime.</p>
+/// <p>An invalid restore time was specified. RestoreDateTime must be between EarliestRestorableDateTime and LatestRestorableDateTime.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRestoreTimeException {
@@ -9372,8 +8500,7 @@ impl BackupNotFoundException {
     }
 }
 
-/// <p>There is another ongoing conflicting backup control plane operation on the table.
-/// The backup is either being created, deleted or restored to a table.</p>
+/// <p>There is another ongoing conflicting backup control plane operation on the table. The backup is either being created, deleted or restored to a table.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BackupInUseException {
@@ -9437,8 +8564,7 @@ impl BackupInUseException {
     }
 }
 
-/// <p>The specified <code>ExportTime</code> is outside of the point in time recovery
-/// window.</p>
+/// <p>The specified <code>ExportTime</code> is outside of the point in time recovery window.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidExportTimeException {
@@ -9566,8 +8692,7 @@ impl ExportConflictException {
     }
 }
 
-/// <p> There was an attempt to insert an item with the same primary key as an item that
-/// already exists in the DynamoDB table.</p>
+/// <p> There was an attempt to insert an item with the same primary key as an item that already exists in the DynamoDB table.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DuplicateItemException {

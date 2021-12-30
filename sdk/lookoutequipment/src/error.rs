@@ -12,21 +12,17 @@ pub struct CreateDatasetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateDatasetErrorKind {
-    /// <p>The request could not be completed because you do not have access to the resource.
-    /// </p>
+    /// <p>The request could not be completed because you do not have access to the resource. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> The request could not be completed due to a conflict with the current state of the
-    /// target resource. </p>
+    /// <p> The request could not be completed due to a conflict with the current state of the target resource. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p> Processing of the request has failed because of an unknown error, exception or failure.
-    /// </p>
+    /// <p> Processing of the request has failed because of an unknown error, exception or failure. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p> Resource limitations have been exceeded. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS
-    /// service that's being utilized. </p>
+    /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service that's being utilized. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -152,24 +148,19 @@ pub struct CreateInferenceSchedulerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateInferenceSchedulerErrorKind {
-    /// <p>The request could not be completed because you do not have access to the resource.
-    /// </p>
+    /// <p>The request could not be completed because you do not have access to the resource. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> The request could not be completed due to a conflict with the current state of the
-    /// target resource. </p>
+    /// <p> The request could not be completed due to a conflict with the current state of the target resource. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p> Processing of the request has failed because of an unknown error, exception or failure.
-    /// </p>
+    /// <p> Processing of the request has failed because of an unknown error, exception or failure. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The resource requested could not be found. Verify the resource ID and retry your
-    /// request. </p>
+    /// <p> The resource requested could not be found. Verify the resource ID and retry your request. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p> Resource limitations have been exceeded. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS
-    /// service that's being utilized. </p>
+    /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service that's being utilized. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -320,24 +311,19 @@ pub struct CreateModelError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateModelErrorKind {
-    /// <p>The request could not be completed because you do not have access to the resource.
-    /// </p>
+    /// <p>The request could not be completed because you do not have access to the resource. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> The request could not be completed due to a conflict with the current state of the
-    /// target resource. </p>
+    /// <p> The request could not be completed due to a conflict with the current state of the target resource. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p> Processing of the request has failed because of an unknown error, exception or failure.
-    /// </p>
+    /// <p> Processing of the request has failed because of an unknown error, exception or failure. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The resource requested could not be found. Verify the resource ID and retry your
-    /// request. </p>
+    /// <p> The resource requested could not be found. Verify the resource ID and retry your request. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p> Resource limitations have been exceeded. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS
-    /// service that's being utilized. </p>
+    /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service that's being utilized. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -469,17 +455,13 @@ pub struct DeleteDatasetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteDatasetErrorKind {
-    /// <p>The request could not be completed because you do not have access to the resource.
-    /// </p>
+    /// <p>The request could not be completed because you do not have access to the resource. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> The request could not be completed due to a conflict with the current state of the
-    /// target resource. </p>
+    /// <p> The request could not be completed due to a conflict with the current state of the target resource. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p> Processing of the request has failed because of an unknown error, exception or failure.
-    /// </p>
+    /// <p> Processing of the request has failed because of an unknown error, exception or failure. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The resource requested could not be found. Verify the resource ID and retry your
-    /// request. </p>
+    /// <p> The resource requested could not be found. Verify the resource ID and retry your request. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -601,22 +583,17 @@ pub struct DeleteInferenceSchedulerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteInferenceSchedulerErrorKind {
-    /// <p>The request could not be completed because you do not have access to the resource.
-    /// </p>
+    /// <p>The request could not be completed because you do not have access to the resource. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> The request could not be completed due to a conflict with the current state of the
-    /// target resource. </p>
+    /// <p> The request could not be completed due to a conflict with the current state of the target resource. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p> Processing of the request has failed because of an unknown error, exception or failure.
-    /// </p>
+    /// <p> Processing of the request has failed because of an unknown error, exception or failure. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The resource requested could not be found. Verify the resource ID and retry your
-    /// request. </p>
+    /// <p> The resource requested could not be found. Verify the resource ID and retry your request. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS
-    /// service that's being utilized. </p>
+    /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service that's being utilized. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -754,17 +731,13 @@ pub struct DeleteModelError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteModelErrorKind {
-    /// <p>The request could not be completed because you do not have access to the resource.
-    /// </p>
+    /// <p>The request could not be completed because you do not have access to the resource. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> The request could not be completed due to a conflict with the current state of the
-    /// target resource. </p>
+    /// <p> The request could not be completed due to a conflict with the current state of the target resource. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p> Processing of the request has failed because of an unknown error, exception or failure.
-    /// </p>
+    /// <p> Processing of the request has failed because of an unknown error, exception or failure. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The resource requested could not be found. Verify the resource ID and retry your
-    /// request. </p>
+    /// <p> The resource requested could not be found. Verify the resource ID and retry your request. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -883,19 +856,15 @@ pub struct DescribeDataIngestionJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDataIngestionJobErrorKind {
-    /// <p>The request could not be completed because you do not have access to the resource.
-    /// </p>
+    /// <p>The request could not be completed because you do not have access to the resource. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> Processing of the request has failed because of an unknown error, exception or failure.
-    /// </p>
+    /// <p> Processing of the request has failed because of an unknown error, exception or failure. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The resource requested could not be found. Verify the resource ID and retry your
-    /// request. </p>
+    /// <p> The resource requested could not be found. Verify the resource ID and retry your request. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS
-    /// service that's being utilized. </p>
+    /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service that's being utilized. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1024,19 +993,15 @@ pub struct DescribeDatasetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDatasetErrorKind {
-    /// <p>The request could not be completed because you do not have access to the resource.
-    /// </p>
+    /// <p>The request could not be completed because you do not have access to the resource. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> Processing of the request has failed because of an unknown error, exception or failure.
-    /// </p>
+    /// <p> Processing of the request has failed because of an unknown error, exception or failure. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The resource requested could not be found. Verify the resource ID and retry your
-    /// request. </p>
+    /// <p> The resource requested could not be found. Verify the resource ID and retry your request. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS
-    /// service that's being utilized. </p>
+    /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service that's being utilized. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1159,19 +1124,15 @@ pub struct DescribeInferenceSchedulerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeInferenceSchedulerErrorKind {
-    /// <p>The request could not be completed because you do not have access to the resource.
-    /// </p>
+    /// <p>The request could not be completed because you do not have access to the resource. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> Processing of the request has failed because of an unknown error, exception or failure.
-    /// </p>
+    /// <p> Processing of the request has failed because of an unknown error, exception or failure. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The resource requested could not be found. Verify the resource ID and retry your
-    /// request. </p>
+    /// <p> The resource requested could not be found. Verify the resource ID and retry your request. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS
-    /// service that's being utilized. </p>
+    /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service that's being utilized. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1300,19 +1261,15 @@ pub struct DescribeModelError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeModelErrorKind {
-    /// <p>The request could not be completed because you do not have access to the resource.
-    /// </p>
+    /// <p>The request could not be completed because you do not have access to the resource. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> Processing of the request has failed because of an unknown error, exception or failure.
-    /// </p>
+    /// <p> Processing of the request has failed because of an unknown error, exception or failure. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The resource requested could not be found. Verify the resource ID and retry your
-    /// request. </p>
+    /// <p> The resource requested could not be found. Verify the resource ID and retry your request. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS
-    /// service that's being utilized. </p>
+    /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service that's being utilized. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1432,16 +1389,13 @@ pub struct ListDataIngestionJobsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListDataIngestionJobsErrorKind {
-    /// <p>The request could not be completed because you do not have access to the resource.
-    /// </p>
+    /// <p>The request could not be completed because you do not have access to the resource. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> Processing of the request has failed because of an unknown error, exception or failure.
-    /// </p>
+    /// <p> Processing of the request has failed because of an unknown error, exception or failure. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS
-    /// service that's being utilized. </p>
+    /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service that's being utilized. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1561,16 +1515,13 @@ pub struct ListDatasetsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListDatasetsErrorKind {
-    /// <p>The request could not be completed because you do not have access to the resource.
-    /// </p>
+    /// <p>The request could not be completed because you do not have access to the resource. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> Processing of the request has failed because of an unknown error, exception or failure.
-    /// </p>
+    /// <p> Processing of the request has failed because of an unknown error, exception or failure. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS
-    /// service that's being utilized. </p>
+    /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service that's being utilized. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1681,19 +1632,15 @@ pub struct ListInferenceExecutionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListInferenceExecutionsErrorKind {
-    /// <p>The request could not be completed because you do not have access to the resource.
-    /// </p>
+    /// <p>The request could not be completed because you do not have access to the resource. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> Processing of the request has failed because of an unknown error, exception or failure.
-    /// </p>
+    /// <p> Processing of the request has failed because of an unknown error, exception or failure. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The resource requested could not be found. Verify the resource ID and retry your
-    /// request. </p>
+    /// <p> The resource requested could not be found. Verify the resource ID and retry your request. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS
-    /// service that's being utilized. </p>
+    /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service that's being utilized. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1822,16 +1769,13 @@ pub struct ListInferenceSchedulersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListInferenceSchedulersErrorKind {
-    /// <p>The request could not be completed because you do not have access to the resource.
-    /// </p>
+    /// <p>The request could not be completed because you do not have access to the resource. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> Processing of the request has failed because of an unknown error, exception or failure.
-    /// </p>
+    /// <p> Processing of the request has failed because of an unknown error, exception or failure. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS
-    /// service that's being utilized. </p>
+    /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service that's being utilized. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1951,16 +1895,13 @@ pub struct ListModelsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListModelsErrorKind {
-    /// <p>The request could not be completed because you do not have access to the resource.
-    /// </p>
+    /// <p>The request could not be completed because you do not have access to the resource. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> Processing of the request has failed because of an unknown error, exception or failure.
-    /// </p>
+    /// <p> Processing of the request has failed because of an unknown error, exception or failure. </p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS
-    /// service that's being utilized. </p>
+    /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service that's being utilized. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2068,19 +2009,15 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    /// <p>The request could not be completed because you do not have access to the resource.
-    /// </p>
+    /// <p>The request could not be completed because you do not have access to the resource. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> Processing of the request has failed because of an unknown error, exception or failure.
-    /// </p>
+    /// <p> Processing of the request has failed because of an unknown error, exception or failure. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The resource requested could not be found. Verify the resource ID and retry your
-    /// request. </p>
+    /// <p> The resource requested could not be found. Verify the resource ID and retry your request. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS
-    /// service that's being utilized. </p>
+    /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service that's being utilized. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2209,24 +2146,19 @@ pub struct StartDataIngestionJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartDataIngestionJobErrorKind {
-    /// <p>The request could not be completed because you do not have access to the resource.
-    /// </p>
+    /// <p>The request could not be completed because you do not have access to the resource. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> The request could not be completed due to a conflict with the current state of the
-    /// target resource. </p>
+    /// <p> The request could not be completed due to a conflict with the current state of the target resource. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p> Processing of the request has failed because of an unknown error, exception or failure.
-    /// </p>
+    /// <p> Processing of the request has failed because of an unknown error, exception or failure. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The resource requested could not be found. Verify the resource ID and retry your
-    /// request. </p>
+    /// <p> The resource requested could not be found. Verify the resource ID and retry your request. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p> Resource limitations have been exceeded. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS
-    /// service that's being utilized. </p>
+    /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service that's being utilized. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2373,22 +2305,17 @@ pub struct StartInferenceSchedulerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartInferenceSchedulerErrorKind {
-    /// <p>The request could not be completed because you do not have access to the resource.
-    /// </p>
+    /// <p>The request could not be completed because you do not have access to the resource. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> The request could not be completed due to a conflict with the current state of the
-    /// target resource. </p>
+    /// <p> The request could not be completed due to a conflict with the current state of the target resource. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p> Processing of the request has failed because of an unknown error, exception or failure.
-    /// </p>
+    /// <p> Processing of the request has failed because of an unknown error, exception or failure. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The resource requested could not be found. Verify the resource ID and retry your
-    /// request. </p>
+    /// <p> The resource requested could not be found. Verify the resource ID and retry your request. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS
-    /// service that's being utilized. </p>
+    /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service that's being utilized. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2526,22 +2453,17 @@ pub struct StopInferenceSchedulerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StopInferenceSchedulerErrorKind {
-    /// <p>The request could not be completed because you do not have access to the resource.
-    /// </p>
+    /// <p>The request could not be completed because you do not have access to the resource. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> The request could not be completed due to a conflict with the current state of the
-    /// target resource. </p>
+    /// <p> The request could not be completed due to a conflict with the current state of the target resource. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p> Processing of the request has failed because of an unknown error, exception or failure.
-    /// </p>
+    /// <p> Processing of the request has failed because of an unknown error, exception or failure. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The resource requested could not be found. Verify the resource ID and retry your
-    /// request. </p>
+    /// <p> The resource requested could not be found. Verify the resource ID and retry your request. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS
-    /// service that's being utilized. </p>
+    /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service that's being utilized. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2679,21 +2601,17 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    /// <p>The request could not be completed because you do not have access to the resource.
-    /// </p>
+    /// <p>The request could not be completed because you do not have access to the resource. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> Processing of the request has failed because of an unknown error, exception or failure.
-    /// </p>
+    /// <p> Processing of the request has failed because of an unknown error, exception or failure. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The resource requested could not be found. Verify the resource ID and retry your
-    /// request. </p>
+    /// <p> The resource requested could not be found. Verify the resource ID and retry your request. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p> Resource limitations have been exceeded. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS
-    /// service that's being utilized. </p>
+    /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service that's being utilized. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2819,19 +2737,15 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    /// <p>The request could not be completed because you do not have access to the resource.
-    /// </p>
+    /// <p>The request could not be completed because you do not have access to the resource. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> Processing of the request has failed because of an unknown error, exception or failure.
-    /// </p>
+    /// <p> Processing of the request has failed because of an unknown error, exception or failure. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The resource requested could not be found. Verify the resource ID and retry your
-    /// request. </p>
+    /// <p> The resource requested could not be found. Verify the resource ID and retry your request. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS
-    /// service that's being utilized. </p>
+    /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service that's being utilized. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2951,22 +2865,17 @@ pub struct UpdateInferenceSchedulerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateInferenceSchedulerErrorKind {
-    /// <p>The request could not be completed because you do not have access to the resource.
-    /// </p>
+    /// <p>The request could not be completed because you do not have access to the resource. </p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p> The request could not be completed due to a conflict with the current state of the
-    /// target resource. </p>
+    /// <p> The request could not be completed due to a conflict with the current state of the target resource. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p> Processing of the request has failed because of an unknown error, exception or failure.
-    /// </p>
+    /// <p> Processing of the request has failed because of an unknown error, exception or failure. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The resource requested could not be found. Verify the resource ID and retry your
-    /// request. </p>
+    /// <p> The resource requested could not be found. Verify the resource ID and retry your request. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS
-    /// service that's being utilized. </p>
+    /// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service that's being utilized. </p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3091,8 +3000,7 @@ impl std::error::Error for UpdateInferenceSchedulerError {
     }
 }
 
-/// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS
-/// service that's being utilized. </p>
+/// <p> The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service that's being utilized. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationException {
@@ -3220,8 +3128,7 @@ impl ThrottlingException {
     }
 }
 
-/// <p> The resource requested could not be found. Verify the resource ID and retry your
-/// request. </p>
+/// <p> The resource requested could not be found. Verify the resource ID and retry your request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
@@ -3285,8 +3192,7 @@ impl ResourceNotFoundException {
     }
 }
 
-/// <p> Processing of the request has failed because of an unknown error, exception or failure.
-/// </p>
+/// <p> Processing of the request has failed because of an unknown error, exception or failure. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerException {
@@ -3350,8 +3256,7 @@ impl InternalServerException {
     }
 }
 
-/// <p> The request could not be completed due to a conflict with the current state of the
-/// target resource. </p>
+/// <p> The request could not be completed due to a conflict with the current state of the target resource. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {
@@ -3415,8 +3320,7 @@ impl ConflictException {
     }
 }
 
-/// <p>The request could not be completed because you do not have access to the resource.
-/// </p>
+/// <p>The request could not be completed because you do not have access to the resource. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedException {

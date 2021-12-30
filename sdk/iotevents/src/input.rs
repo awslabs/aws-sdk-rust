@@ -18,14 +18,12 @@ pub mod create_alarm_model_input {
         pub(crate) alarm_capabilities: std::option::Option<crate::model::AlarmCapabilities>,
     }
     impl Builder {
-        /// <p>A unique name that helps you identify the alarm model. You can't change this name after
-        /// you create the alarm model.</p>
+        /// <p>A unique name that helps you identify the alarm model. You can't change this name after you create the alarm model.</p>
         pub fn alarm_model_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.alarm_model_name = Some(input.into());
             self
         }
-        /// <p>A unique name that helps you identify the alarm model. You can't change this name after
-        /// you create the alarm model.</p>
+        /// <p>A unique name that helps you identify the alarm model. You can't change this name after you create the alarm model.</p>
         pub fn set_alarm_model_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -60,9 +58,7 @@ pub mod create_alarm_model_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of key-value pairs that contain metadata for the alarm model. The tags help you
-        /// manage the alarm model. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/tagging-iotevents.html">Tagging your AWS IoT Events
-        /// resources</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
+        /// <p>A list of key-value pairs that contain metadata for the alarm model. The tags help you manage the alarm model. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/tagging-iotevents.html">Tagging your AWS IoT Events resources</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
         /// <p>You can create up to 50 tags for one alarm model.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
@@ -70,9 +66,7 @@ pub mod create_alarm_model_input {
             self.tags = Some(v);
             self
         }
-        /// <p>A list of key-value pairs that contain metadata for the alarm model. The tags help you
-        /// manage the alarm model. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/tagging-iotevents.html">Tagging your AWS IoT Events
-        /// resources</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
+        /// <p>A list of key-value pairs that contain metadata for the alarm model. The tags help you manage the alarm model. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/tagging-iotevents.html">Tagging your AWS IoT Events resources</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
         /// <p>You can create up to 50 tags for one alarm model.</p>
         pub fn set_tags(
             mut self,
@@ -81,16 +75,12 @@ pub mod create_alarm_model_input {
             self.tags = input;
             self
         }
-        /// <p>An input attribute used as a key to create an alarm.
-        /// AWS IoT Events routes <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Input.html">inputs</a>
-        /// associated with this key to the alarm.</p>
+        /// <p>An input attribute used as a key to create an alarm. AWS IoT Events routes <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Input.html">inputs</a> associated with this key to the alarm.</p>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
             self
         }
-        /// <p>An input attribute used as a key to create an alarm.
-        /// AWS IoT Events routes <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Input.html">inputs</a>
-        /// associated with this key to the alarm.</p>
+        /// <p>An input attribute used as a key to create an alarm. AWS IoT Events routes <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Input.html">inputs</a> associated with this key to the alarm.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -354,20 +344,12 @@ pub mod create_detector_model_input {
             self.detector_model_description = input;
             self
         }
-        /// <p>The input attribute key used to identify a device or system to create a detector (an
-        /// instance of the detector model) and then to route each input received to the appropriate
-        /// detector (instance). This parameter uses a JSON-path expression in the message payload of each
-        /// input to specify the attribute-value pair that is used to identify the device associated with
-        /// the input.</p>
+        /// <p>The input attribute key used to identify a device or system to create a detector (an instance of the detector model) and then to route each input received to the appropriate detector (instance). This parameter uses a JSON-path expression in the message payload of each input to specify the attribute-value pair that is used to identify the device associated with the input.</p>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
             self
         }
-        /// <p>The input attribute key used to identify a device or system to create a detector (an
-        /// instance of the detector model) and then to route each input received to the appropriate
-        /// detector (instance). This parameter uses a JSON-path expression in the message payload of each
-        /// input to specify the attribute-value pair that is used to identify the device associated with
-        /// the input.</p>
+        /// <p>The input attribute key used to identify a device or system to create a detector (an instance of the detector model) and then to route each input received to the appropriate detector (instance). This parameter uses a JSON-path expression in the message payload of each input to specify the attribute-value pair that is used to identify the device associated with the input.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -401,14 +383,12 @@ pub mod create_detector_model_input {
             self.tags = input;
             self
         }
-        /// <p>Information about the order in which events are evaluated and how actions are executed.
-        /// </p>
+        /// <p>Information about the order in which events are evaluated and how actions are executed. </p>
         pub fn evaluation_method(mut self, input: crate::model::EvaluationMethod) -> Self {
             self.evaluation_method = Some(input);
             self
         }
-        /// <p>Information about the order in which events are evaluated and how actions are executed.
-        /// </p>
+        /// <p>Information about the order in which events are evaluated and how actions are executed. </p>
         pub fn set_evaluation_method(
             mut self,
             input: std::option::Option<crate::model::EvaluationMethod>,
@@ -2951,16 +2931,12 @@ pub mod list_input_routings_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The identifer of the routed input.
-        /// </p>
+        /// <p> The identifer of the routed input. </p>
         pub fn input_identifier(mut self, input: crate::model::InputIdentifier) -> Self {
             self.input_identifier = Some(input);
             self
         }
-        /// <p>
-        /// The identifer of the routed input.
-        /// </p>
+        /// <p> The identifer of the routed input. </p>
         pub fn set_input_identifier(
             mut self,
             input: std::option::Option<crate::model::InputIdentifier>,
@@ -2968,30 +2944,22 @@ pub mod list_input_routings_input {
             self.input_identifier = input;
             self
         }
-        /// <p>
-        /// The maximum number of results to be returned per request.
-        /// </p>
+        /// <p> The maximum number of results to be returned per request. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>
-        /// The maximum number of results to be returned per request.
-        /// </p>
+        /// <p> The maximum number of results to be returned per request. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>
-        /// The token that you can use to return the next set of results.
-        /// </p>
+        /// <p> The token that you can use to return the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>
-        /// The token that you can use to return the next set of results.
-        /// </p>
+        /// <p> The token that you can use to return the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4446,14 +4414,12 @@ pub mod update_detector_model_input {
             self.role_arn = input;
             self
         }
-        /// <p>Information about the order in which events are evaluated and how actions are executed.
-        /// </p>
+        /// <p>Information about the order in which events are evaluated and how actions are executed. </p>
         pub fn evaluation_method(mut self, input: crate::model::EvaluationMethod) -> Self {
             self.evaluation_method = Some(input);
             self
         }
-        /// <p>Information about the order in which events are evaluated and how actions are executed.
-        /// </p>
+        /// <p>Information about the order in which events are evaluated and how actions are executed. </p>
         pub fn set_evaluation_method(
             mut self,
             input: std::option::Option<crate::model::EvaluationMethod>,
@@ -4856,8 +4822,7 @@ pub struct UpdateDetectorModelInput {
     pub detector_model_description: std::option::Option<std::string::String>,
     /// <p>The ARN of the role that grants permission to AWS IoT Events to perform its operations.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>Information about the order in which events are evaluated and how actions are executed.
-    /// </p>
+    /// <p>Information about the order in which events are evaluated and how actions are executed. </p>
     pub evaluation_method: std::option::Option<crate::model::EvaluationMethod>,
 }
 impl UpdateDetectorModelInput {
@@ -4879,8 +4844,7 @@ impl UpdateDetectorModelInput {
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>Information about the order in which events are evaluated and how actions are executed.
-    /// </p>
+    /// <p>Information about the order in which events are evaluated and how actions are executed. </p>
     pub fn evaluation_method(&self) -> std::option::Option<&crate::model::EvaluationMethod> {
         self.evaluation_method.as_ref()
     }
@@ -5123,35 +5087,23 @@ impl std::fmt::Debug for ListInputsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInputRoutingsInput {
-    /// <p>
-    /// The identifer of the routed input.
-    /// </p>
+    /// <p> The identifer of the routed input. </p>
     pub input_identifier: std::option::Option<crate::model::InputIdentifier>,
-    /// <p>
-    /// The maximum number of results to be returned per request.
-    /// </p>
+    /// <p> The maximum number of results to be returned per request. </p>
     pub max_results: std::option::Option<i32>,
-    /// <p>
-    /// The token that you can use to return the next set of results.
-    /// </p>
+    /// <p> The token that you can use to return the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListInputRoutingsInput {
-    /// <p>
-    /// The identifer of the routed input.
-    /// </p>
+    /// <p> The identifer of the routed input. </p>
     pub fn input_identifier(&self) -> std::option::Option<&crate::model::InputIdentifier> {
         self.input_identifier.as_ref()
     }
-    /// <p>
-    /// The maximum number of results to be returned per request.
-    /// </p>
+    /// <p> The maximum number of results to be returned per request. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>
-    /// The token that you can use to return the next set of results.
-    /// </p>
+    /// <p> The token that you can use to return the next set of results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5551,18 +5503,13 @@ pub struct CreateDetectorModelInput {
     pub detector_model_definition: std::option::Option<crate::model::DetectorModelDefinition>,
     /// <p>A brief description of the detector model.</p>
     pub detector_model_description: std::option::Option<std::string::String>,
-    /// <p>The input attribute key used to identify a device or system to create a detector (an
-    /// instance of the detector model) and then to route each input received to the appropriate
-    /// detector (instance). This parameter uses a JSON-path expression in the message payload of each
-    /// input to specify the attribute-value pair that is used to identify the device associated with
-    /// the input.</p>
+    /// <p>The input attribute key used to identify a device or system to create a detector (an instance of the detector model) and then to route each input received to the appropriate detector (instance). This parameter uses a JSON-path expression in the message payload of each input to specify the attribute-value pair that is used to identify the device associated with the input.</p>
     pub key: std::option::Option<std::string::String>,
     /// <p>The ARN of the role that grants permission to AWS IoT Events to perform its operations.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>Metadata that can be used to manage the detector model.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>Information about the order in which events are evaluated and how actions are executed.
-    /// </p>
+    /// <p>Information about the order in which events are evaluated and how actions are executed. </p>
     pub evaluation_method: std::option::Option<crate::model::EvaluationMethod>,
 }
 impl CreateDetectorModelInput {
@@ -5580,11 +5527,7 @@ impl CreateDetectorModelInput {
     pub fn detector_model_description(&self) -> std::option::Option<&str> {
         self.detector_model_description.as_deref()
     }
-    /// <p>The input attribute key used to identify a device or system to create a detector (an
-    /// instance of the detector model) and then to route each input received to the appropriate
-    /// detector (instance). This parameter uses a JSON-path expression in the message payload of each
-    /// input to specify the attribute-value pair that is used to identify the device associated with
-    /// the input.</p>
+    /// <p>The input attribute key used to identify a device or system to create a detector (an instance of the detector model) and then to route each input received to the appropriate detector (instance). This parameter uses a JSON-path expression in the message payload of each input to specify the attribute-value pair that is used to identify the device associated with the input.</p>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
@@ -5596,8 +5539,7 @@ impl CreateDetectorModelInput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>Information about the order in which events are evaluated and how actions are executed.
-    /// </p>
+    /// <p>Information about the order in which events are evaluated and how actions are executed. </p>
     pub fn evaluation_method(&self) -> std::option::Option<&crate::model::EvaluationMethod> {
         self.evaluation_method.as_ref()
     }
@@ -5623,21 +5565,16 @@ impl std::fmt::Debug for CreateDetectorModelInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAlarmModelInput {
-    /// <p>A unique name that helps you identify the alarm model. You can't change this name after
-    /// you create the alarm model.</p>
+    /// <p>A unique name that helps you identify the alarm model. You can't change this name after you create the alarm model.</p>
     pub alarm_model_name: std::option::Option<std::string::String>,
     /// <p>A description that tells you what the alarm model detects.</p>
     pub alarm_model_description: std::option::Option<std::string::String>,
     /// <p>The ARN of the IAM role that allows the alarm to perform actions and access AWS resources. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>A list of key-value pairs that contain metadata for the alarm model. The tags help you
-    /// manage the alarm model. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/tagging-iotevents.html">Tagging your AWS IoT Events
-    /// resources</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
+    /// <p>A list of key-value pairs that contain metadata for the alarm model. The tags help you manage the alarm model. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/tagging-iotevents.html">Tagging your AWS IoT Events resources</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
     /// <p>You can create up to 50 tags for one alarm model.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>An input attribute used as a key to create an alarm.
-    /// AWS IoT Events routes <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Input.html">inputs</a>
-    /// associated with this key to the alarm.</p>
+    /// <p>An input attribute used as a key to create an alarm. AWS IoT Events routes <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Input.html">inputs</a> associated with this key to the alarm.</p>
     pub key: std::option::Option<std::string::String>,
     /// <p>A non-negative integer that reflects the severity level of the alarm.</p>
     pub severity: std::option::Option<i32>,
@@ -5651,8 +5588,7 @@ pub struct CreateAlarmModelInput {
     pub alarm_capabilities: std::option::Option<crate::model::AlarmCapabilities>,
 }
 impl CreateAlarmModelInput {
-    /// <p>A unique name that helps you identify the alarm model. You can't change this name after
-    /// you create the alarm model.</p>
+    /// <p>A unique name that helps you identify the alarm model. You can't change this name after you create the alarm model.</p>
     pub fn alarm_model_name(&self) -> std::option::Option<&str> {
         self.alarm_model_name.as_deref()
     }
@@ -5664,16 +5600,12 @@ impl CreateAlarmModelInput {
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>A list of key-value pairs that contain metadata for the alarm model. The tags help you
-    /// manage the alarm model. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/tagging-iotevents.html">Tagging your AWS IoT Events
-    /// resources</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
+    /// <p>A list of key-value pairs that contain metadata for the alarm model. The tags help you manage the alarm model. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/tagging-iotevents.html">Tagging your AWS IoT Events resources</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
     /// <p>You can create up to 50 tags for one alarm model.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>An input attribute used as a key to create an alarm.
-    /// AWS IoT Events routes <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Input.html">inputs</a>
-    /// associated with this key to the alarm.</p>
+    /// <p>An input attribute used as a key to create an alarm. AWS IoT Events routes <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Input.html">inputs</a> associated with this key to the alarm.</p>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }

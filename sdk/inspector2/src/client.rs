@@ -699,16 +699,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filter_criteria(input);
             self
         }
-        /// <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters
-        /// include alphanumeric characters, dot (.), underscore (_), and dash (-). Spaces are not
-        /// allowed.</p>
+        /// <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters include alphanumeric characters, dot (.), underscore (_), and dash (-). Spaces are not allowed.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters
-        /// include alphanumeric characters, dot (.), underscore (_), and dash (-). Spaces are not
-        /// allowed.</p>
+        /// <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters include alphanumeric characters, dot (.), underscore (_), and dash (-). Spaces are not allowed.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -968,8 +964,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `Disable`.
     ///
-    /// <p>Disables Amazon Inspector scans for one or more Amazon Web Services accounts. Disabling all scan types in an account
-    /// disables the Amazon Inspector service.</p>
+    /// <p>Disables Amazon Inspector scans for one or more Amazon Web Services accounts. Disabling all scan types in an account disables the Amazon Inspector service.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct Disable<
         C = aws_smithy_client::erase::DynConnector,
@@ -1385,8 +1380,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetDelegatedAdminAccount`.
     ///
-    /// <p>Retrieves information about the Amazon Inspector delegated administrator for your
-    /// organization.</p>
+    /// <p>Retrieves information about the Amazon Inspector delegated administrator for your organization.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDelegatedAdminAccount<
         C = aws_smithy_client::erase::DynConnector,
@@ -1663,18 +1657,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1749,30 +1737,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>An object that contains details on the filters to apply to the coverage data for your
-        /// environment.</p>
+        /// <p>An object that contains details on the filters to apply to the coverage data for your environment.</p>
         pub fn filter_criteria(mut self, input: crate::model::CoverageFilterCriteria) -> Self {
             self.inner = self.inner.filter_criteria(input);
             self
         }
-        /// <p>An object that contains details on the filters to apply to the coverage data for your
-        /// environment.</p>
+        /// <p>An object that contains details on the filters to apply to the coverage data for your environment.</p>
         pub fn set_filter_criteria(
             mut self,
             input: std::option::Option<crate::model::CoverageFilterCriteria>,
@@ -1840,14 +1820,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>An object that contains details on the filters to apply to the coverage data for your
-        /// environment.</p>
+        /// <p>An object that contains details on the filters to apply to the coverage data for your environment.</p>
         pub fn filter_criteria(mut self, input: crate::model::CoverageFilterCriteria) -> Self {
             self.inner = self.inner.filter_criteria(input);
             self
         }
-        /// <p>An object that contains details on the filters to apply to the coverage data for your
-        /// environment.</p>
+        /// <p>An object that contains details on the filters to apply to the coverage data for your environment.</p>
         pub fn set_filter_criteria(
             mut self,
             input: std::option::Option<crate::model::CoverageFilterCriteria>,
@@ -1865,18 +1843,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_group_by(input);
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1884,8 +1856,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDelegatedAdminAccounts`.
     ///
-    /// <p>Lists information about the Amazon Inspector delegated administrator of your
-    /// organization.</p>
+    /// <p>Lists information about the Amazon Inspector delegated administrator of your organization.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDelegatedAdminAccounts<
         C = aws_smithy_client::erase::DynConnector,
@@ -1952,18 +1923,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2058,18 +2023,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_action(input);
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2157,18 +2116,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_aggregation_type(input);
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2283,18 +2236,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2328,8 +2275,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListMembers`.
     ///
-    /// <p>List members associated with the Amazon Inspector delegated administrator for your
-    /// organization.</p>
+    /// <p>List members associated with the Amazon Inspector delegated administrator for your organization.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListMembers<
         C = aws_smithy_client::erase::DynConnector,
@@ -2386,14 +2332,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifies whether to list only currently associated members if <code>True</code> or to
-        /// list all members within the organization if <code>False</code>.</p>
+        /// <p>Specifies whether to list only currently associated members if <code>True</code> or to list all members within the organization if <code>False</code>.</p>
         pub fn only_associated(mut self, input: bool) -> Self {
             self.inner = self.inner.only_associated(input);
             self
         }
-        /// <p>Specifies whether to list only currently associated members if <code>True</code> or to
-        /// list all members within the organization if <code>False</code>.</p>
+        /// <p>Specifies whether to list only currently associated members if <code>True</code> or to list all members within the organization if <code>False</code>.</p>
         pub fn set_only_associated(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_only_associated(input);
             self
@@ -2408,18 +2352,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2564,18 +2502,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token to use for paginating results that are returned in the response. Set the value
-        /// of this parameter to null for the first request to a list action. For subsequent calls, use
-        /// the <code>NextToken</code> value returned from the previous request to continue listing
-        /// results after the first page.</p>
+        /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self

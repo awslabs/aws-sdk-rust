@@ -11,21 +11,15 @@ pub enum Error {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>You made too many calls in a short period of time. Try again later.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>Your request parameters changed between pages. Try again with the old parameters or
-    /// without a pagination token.</p>
+    /// <p>Your request parameters changed between pages. Try again with the old parameters or without a pagination token.</p>
     RequestChangedException(crate::error::RequestChangedException),
-    /// <p>
-    /// The specified ARN in the request doesn't exist.
-    /// </p>
+    /// <p> The specified ARN in the request doesn't exist. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p> You've reached the limit on the number of resources you can create, or exceeded the
-    /// size of an individual resource. </p>
+    /// <p> You've reached the limit on the number of resources you can create, or exceeded the size of an individual resource. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>The cost anomaly monitor does not exist for the account.
-    /// </p>
+    /// <p>The cost anomaly monitor does not exist for the account. </p>
     UnknownMonitorException(crate::error::UnknownMonitorException),
-    /// <p>The cost anomaly subscription does not exist for the account.
-    /// </p>
+    /// <p>The cost anomaly subscription does not exist for the account. </p>
     UnknownSubscriptionException(crate::error::UnknownSubscriptionException),
     /// <p>Cost Explorer was unable to identify the usage unit. Provide <code>UsageType/UsageTypeGroup</code> filter selections that contain matching units, for example: <code>hours</code>.</p>
     UnresolvableUsageUnitException(crate::error::UnresolvableUsageUnitException),

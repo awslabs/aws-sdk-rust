@@ -145,8 +145,7 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `AssociateMemberAccount`.
     ///
-    /// <p>Associates a specified AWS account with Amazon Macie Classic as a member
-    /// account.</p>
+    /// <p>Associates a specified AWS account with Amazon Macie Classic as a member account.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateMemberAccount<
         C = aws_smithy_client::erase::DynConnector,
@@ -203,14 +202,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the AWS account that you want to associate with Amazon Macie Classic as a
-        /// member account.</p>
+        /// <p>The ID of the AWS account that you want to associate with Amazon Macie Classic as a member account.</p>
         pub fn member_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.member_account_id(input.into());
             self
         }
-        /// <p>The ID of the AWS account that you want to associate with Amazon Macie Classic as a
-        /// member account.</p>
+        /// <p>The ID of the AWS account that you want to associate with Amazon Macie Classic as a member account.</p>
         pub fn set_member_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -221,11 +218,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `AssociateS3Resources`.
     ///
-    /// <p>Associates specified S3 resources with Amazon Macie Classic for monitoring and data
-    /// classification. If memberAccountId isn't specified, the action associates specified S3
-    /// resources with Macie Classic for the current Macie Classic administrator account. If memberAccountId is specified,
-    /// the action associates specified S3 resources with Macie Classic for the specified member
-    /// account. </p>
+    /// <p>Associates specified S3 resources with Amazon Macie Classic for monitoring and data classification. If memberAccountId isn't specified, the action associates specified S3 resources with Macie Classic for the current Macie Classic administrator account. If memberAccountId is specified, the action associates specified S3 resources with Macie Classic for the specified member account. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateS3Resources<
         C = aws_smithy_client::erase::DynConnector,
@@ -282,14 +275,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Amazon Macie Classic member account whose resources you want to associate
-        /// with Macie Classic. </p>
+        /// <p>The ID of the Amazon Macie Classic member account whose resources you want to associate with Macie Classic. </p>
         pub fn member_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.member_account_id(input.into());
             self
         }
-        /// <p>The ID of the Amazon Macie Classic member account whose resources you want to associate
-        /// with Macie Classic. </p>
+        /// <p>The ID of the Amazon Macie Classic member account whose resources you want to associate with Macie Classic. </p>
         pub fn set_member_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -301,14 +292,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_s3_resources`](Self::set_s3_resources).
         ///
-        /// <p>The S3 resources that you want to associate with Amazon Macie Classic for monitoring
-        /// and data classification. </p>
+        /// <p>The S3 resources that you want to associate with Amazon Macie Classic for monitoring and data classification. </p>
         pub fn s3_resources(mut self, input: crate::model::S3ResourceClassification) -> Self {
             self.inner = self.inner.s3_resources(input);
             self
         }
-        /// <p>The S3 resources that you want to associate with Amazon Macie Classic for monitoring
-        /// and data classification. </p>
+        /// <p>The S3 resources that you want to associate with Amazon Macie Classic for monitoring and data classification. </p>
         pub fn set_s3_resources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::S3ResourceClassification>>,
@@ -376,14 +365,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the member account that you want to remove from Amazon Macie
-        /// Classic.</p>
+        /// <p>The ID of the member account that you want to remove from Amazon Macie Classic.</p>
         pub fn member_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.member_account_id(input.into());
             self
         }
-        /// <p>The ID of the member account that you want to remove from Amazon Macie
-        /// Classic.</p>
+        /// <p>The ID of the member account that you want to remove from Amazon Macie Classic.</p>
         pub fn set_member_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -394,10 +381,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisassociateS3Resources`.
     ///
-    /// <p>Removes specified S3 resources from being monitored by Amazon Macie Classic. If
-    /// memberAccountId isn't specified, the action removes specified S3 resources from Macie Classic
-    /// for the current Macie Classic administrator account. If memberAccountId is specified, the action removes specified
-    /// S3 resources from Macie Classic for the specified member account.</p>
+    /// <p>Removes specified S3 resources from being monitored by Amazon Macie Classic. If memberAccountId isn't specified, the action removes specified S3 resources from Macie Classic for the current Macie Classic administrator account. If memberAccountId is specified, the action removes specified S3 resources from Macie Classic for the specified member account.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateS3Resources<
         C = aws_smithy_client::erase::DynConnector,
@@ -454,14 +438,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Amazon Macie Classic member account whose resources you want to remove
-        /// from being monitored by Macie Classic. </p>
+        /// <p>The ID of the Amazon Macie Classic member account whose resources you want to remove from being monitored by Macie Classic. </p>
         pub fn member_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.member_account_id(input.into());
             self
         }
-        /// <p>The ID of the Amazon Macie Classic member account whose resources you want to remove
-        /// from being monitored by Macie Classic. </p>
+        /// <p>The ID of the Amazon Macie Classic member account whose resources you want to remove from being monitored by Macie Classic. </p>
         pub fn set_member_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -473,14 +455,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_associated_s3_resources`](Self::set_associated_s3_resources).
         ///
-        /// <p>The S3 resources (buckets or prefixes) that you want to remove from being monitored and
-        /// classified by Amazon Macie Classic. </p>
+        /// <p>The S3 resources (buckets or prefixes) that you want to remove from being monitored and classified by Amazon Macie Classic. </p>
         pub fn associated_s3_resources(mut self, input: crate::model::S3Resource) -> Self {
             self.inner = self.inner.associated_s3_resources(input);
             self
         }
-        /// <p>The S3 resources (buckets or prefixes) that you want to remove from being monitored and
-        /// classified by Amazon Macie Classic. </p>
+        /// <p>The S3 resources (buckets or prefixes) that you want to remove from being monitored and classified by Amazon Macie Classic. </p>
         pub fn set_associated_s3_resources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::S3Resource>>,
@@ -548,30 +528,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Use this parameter when paginating results. Set the value of this parameter to null on
-        /// your first call to the ListMemberAccounts action. Subsequent calls to the action fill
-        /// nextToken in the request with the value of nextToken from the previous response to continue
-        /// listing data. </p>
+        /// <p>Use this parameter when paginating results. Set the value of this parameter to null on your first call to the ListMemberAccounts action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>Use this parameter when paginating results. Set the value of this parameter to null on
-        /// your first call to the ListMemberAccounts action. Subsequent calls to the action fill
-        /// nextToken in the request with the value of nextToken from the previous response to continue
-        /// listing data. </p>
+        /// <p>Use this parameter when paginating results. Set the value of this parameter to null on your first call to the ListMemberAccounts action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>Use this parameter to indicate the maximum number of items that you want in the
-        /// response. The default value is 250. </p>
+        /// <p>Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>Use this parameter to indicate the maximum number of items that you want in the
-        /// response. The default value is 250. </p>
+        /// <p>Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -579,10 +551,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListS3Resources`.
     ///
-    /// <p>Lists all the S3 resources associated with Amazon Macie Classic. If memberAccountId
-    /// isn't specified, the action lists the S3 resources associated with Macie Classic for
-    /// the current Macie Classic administrator account. If memberAccountId is specified, the action lists the S3 resources
-    /// associated with Macie Classic for the specified member account. </p>
+    /// <p>Lists all the S3 resources associated with Amazon Macie Classic. If memberAccountId isn't specified, the action lists the S3 resources associated with Macie Classic for the current Macie Classic administrator account. If memberAccountId is specified, the action lists the S3 resources associated with Macie Classic for the specified member account. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListS3Resources<
         C = aws_smithy_client::erase::DynConnector,
@@ -639,14 +608,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Macie Classic member account ID whose associated S3 resources you want to
-        /// list. </p>
+        /// <p>The Amazon Macie Classic member account ID whose associated S3 resources you want to list. </p>
         pub fn member_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.member_account_id(input.into());
             self
         }
-        /// <p>The Amazon Macie Classic member account ID whose associated S3 resources you want to
-        /// list. </p>
+        /// <p>The Amazon Macie Classic member account ID whose associated S3 resources you want to list. </p>
         pub fn set_member_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -654,28 +621,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_member_account_id(input);
             self
         }
-        /// <p>Use this parameter when paginating results. Set its value to null on your first call to
-        /// the ListS3Resources action. Subsequent calls to the action fill nextToken in the request with
-        /// the value of nextToken from the previous response to continue listing data. </p>
+        /// <p>Use this parameter when paginating results. Set its value to null on your first call to the ListS3Resources action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>Use this parameter when paginating results. Set its value to null on your first call to
-        /// the ListS3Resources action. Subsequent calls to the action fill nextToken in the request with
-        /// the value of nextToken from the previous response to continue listing data. </p>
+        /// <p>Use this parameter when paginating results. Set its value to null on your first call to the ListS3Resources action. Subsequent calls to the action fill nextToken in the request with the value of nextToken from the previous response to continue listing data. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>Use this parameter to indicate the maximum number of items that you want in the
-        /// response. The default value is 250. </p>
+        /// <p>Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>Use this parameter to indicate the maximum number of items that you want in the
-        /// response. The default value is 250. </p>
+        /// <p>Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -683,11 +644,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateS3Resources`.
     ///
-    /// <p>Updates the classification types for the specified S3 resources. If memberAccountId
-    /// isn't specified, the action updates the classification types of the S3 resources associated
-    /// with Amazon Macie Classic for the current Macie Classic administrator account. If memberAccountId is specified, the
-    /// action updates the classification types of the S3 resources associated with Macie
-    /// Classic for the specified member account. </p>
+    /// <p>Updates the classification types for the specified S3 resources. If memberAccountId isn't specified, the action updates the classification types of the S3 resources associated with Amazon Macie Classic for the current Macie Classic administrator account. If memberAccountId is specified, the action updates the classification types of the S3 resources associated with Macie Classic for the specified member account. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateS3Resources<
         C = aws_smithy_client::erase::DynConnector,
@@ -744,14 +701,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS ID of the Amazon Macie Classic member account whose S3 resources'
-        /// classification types you want to update. </p>
+        /// <p>The AWS ID of the Amazon Macie Classic member account whose S3 resources' classification types you want to update. </p>
         pub fn member_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.member_account_id(input.into());
             self
         }
-        /// <p>The AWS ID of the Amazon Macie Classic member account whose S3 resources'
-        /// classification types you want to update. </p>
+        /// <p>The AWS ID of the Amazon Macie Classic member account whose S3 resources' classification types you want to update. </p>
         pub fn set_member_account_id(
             mut self,
             input: std::option::Option<std::string::String>,

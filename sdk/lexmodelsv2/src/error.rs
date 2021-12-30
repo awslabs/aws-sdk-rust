@@ -12,24 +12,17 @@ pub struct BuildBotLocaleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BuildBotLocaleErrorKind {
-    /// <p>The action that you tried to perform couldn't be completed because
-    /// the resource is in a conflicting state. For example, deleting a bot
-    /// that is in the CREATING state. Try your request again. </p>
+    /// <p>The action that you tried to perform couldn't be completed because the resource is in a conflicting state. For example, deleting a bot that is in the CREATING state. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request couldn't be completed because one or more request
-    /// fields aren't valid. Check the fields in your request and try
-    /// again.</p>
+    /// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -158,24 +151,17 @@ pub struct CreateBotError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateBotErrorKind {
-    /// <p>The action that you tried to perform couldn't be completed because
-    /// the resource is in a conflicting state. For example, deleting a bot
-    /// that is in the CREATING state. Try your request again. </p>
+    /// <p>The action that you tried to perform couldn't be completed because the resource is in a conflicting state. For example, deleting a bot that is in the CREATING state. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request couldn't be completed because one or more request
-    /// fields aren't valid. Check the fields in your request and try
-    /// again.</p>
+    /// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -301,24 +287,17 @@ pub struct CreateBotAliasError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateBotAliasErrorKind {
-    /// <p>The action that you tried to perform couldn't be completed because
-    /// the resource is in a conflicting state. For example, deleting a bot
-    /// that is in the CREATING state. Try your request again. </p>
+    /// <p>The action that you tried to perform couldn't be completed because the resource is in a conflicting state. For example, deleting a bot that is in the CREATING state. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request couldn't be completed because one or more request
-    /// fields aren't valid. Check the fields in your request and try
-    /// again.</p>
+    /// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -447,24 +426,17 @@ pub struct CreateBotLocaleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateBotLocaleErrorKind {
-    /// <p>The action that you tried to perform couldn't be completed because
-    /// the resource is in a conflicting state. For example, deleting a bot
-    /// that is in the CREATING state. Try your request again. </p>
+    /// <p>The action that you tried to perform couldn't be completed because the resource is in a conflicting state. For example, deleting a bot that is in the CREATING state. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request couldn't be completed because one or more request
-    /// fields aren't valid. Check the fields in your request and try
-    /// again.</p>
+    /// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -593,24 +565,17 @@ pub struct CreateBotVersionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateBotVersionErrorKind {
-    /// <p>The action that you tried to perform couldn't be completed because
-    /// the resource is in a conflicting state. For example, deleting a bot
-    /// that is in the CREATING state. Try your request again. </p>
+    /// <p>The action that you tried to perform couldn't be completed because the resource is in a conflicting state. For example, deleting a bot that is in the CREATING state. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request couldn't be completed because one or more request
-    /// fields aren't valid. Check the fields in your request and try
-    /// again.</p>
+    /// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -745,23 +710,17 @@ pub struct CreateExportError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateExportErrorKind {
-    /// <p>The action that you tried to perform couldn't be completed because
-    /// the resource is in a conflicting state. For example, deleting a bot
-    /// that is in the CREATING state. Try your request again. </p>
+    /// <p>The action that you tried to perform couldn't be completed because the resource is in a conflicting state. For example, deleting a bot that is in the CREATING state. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>You asked to describe a resource that doesn't exist. Check the
-    /// resource that you are requesting and try again.</p>
+    /// <p>You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -890,24 +849,17 @@ pub struct CreateIntentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateIntentErrorKind {
-    /// <p>The action that you tried to perform couldn't be completed because
-    /// the resource is in a conflicting state. For example, deleting a bot
-    /// that is in the CREATING state. Try your request again. </p>
+    /// <p>The action that you tried to perform couldn't be completed because the resource is in a conflicting state. For example, deleting a bot that is in the CREATING state. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request couldn't be completed because one or more request
-    /// fields aren't valid. Check the fields in your request and try
-    /// again.</p>
+    /// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1036,23 +988,17 @@ pub struct CreateResourcePolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateResourcePolicyErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request couldn't be completed because one or more request
-    /// fields aren't valid. Check the fields in your request and try
-    /// again.</p>
+    /// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
-    /// <p>You asked to describe a resource that doesn't exist. Check the
-    /// resource that you are requesting and try again.</p>
+    /// <p>You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1190,27 +1136,19 @@ pub struct CreateResourcePolicyStatementError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateResourcePolicyStatementErrorKind {
-    /// <p>The action that you tried to perform couldn't be completed because
-    /// the resource is in a conflicting state. For example, deleting a bot
-    /// that is in the CREATING state. Try your request again. </p>
+    /// <p>The action that you tried to perform couldn't be completed because the resource is in a conflicting state. For example, deleting a bot that is in the CREATING state. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request couldn't be completed because one or more request
-    /// fields aren't valid. Check the fields in your request and try
-    /// again.</p>
+    /// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
-    /// <p>You asked to describe a resource that doesn't exist. Check the
-    /// resource that you are requesting and try again.</p>
+    /// <p>You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1374,24 +1312,17 @@ pub struct CreateSlotError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateSlotErrorKind {
-    /// <p>The action that you tried to perform couldn't be completed because
-    /// the resource is in a conflicting state. For example, deleting a bot
-    /// that is in the CREATING state. Try your request again. </p>
+    /// <p>The action that you tried to perform couldn't be completed because the resource is in a conflicting state. For example, deleting a bot that is in the CREATING state. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request couldn't be completed because one or more request
-    /// fields aren't valid. Check the fields in your request and try
-    /// again.</p>
+    /// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1517,24 +1448,17 @@ pub struct CreateSlotTypeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateSlotTypeErrorKind {
-    /// <p>The action that you tried to perform couldn't be completed because
-    /// the resource is in a conflicting state. For example, deleting a bot
-    /// that is in the CREATING state. Try your request again. </p>
+    /// <p>The action that you tried to perform couldn't be completed because the resource is in a conflicting state. For example, deleting a bot that is in the CREATING state. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request couldn't be completed because one or more request
-    /// fields aren't valid. Check the fields in your request and try
-    /// again.</p>
+    /// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1663,21 +1587,15 @@ pub struct CreateUploadUrlError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateUploadUrlErrorKind {
-    /// <p>The action that you tried to perform couldn't be completed because
-    /// the resource is in a conflicting state. For example, deleting a bot
-    /// that is in the CREATING state. Try your request again. </p>
+    /// <p>The action that you tried to perform couldn't be completed because the resource is in a conflicting state. For example, deleting a bot that is in the CREATING state. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>You asked to describe a resource that doesn't exist. Check the
-    /// resource that you are requesting and try again.</p>
+    /// <p>You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1797,24 +1715,17 @@ pub struct DeleteBotError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteBotErrorKind {
-    /// <p>The action that you tried to perform couldn't be completed because
-    /// the resource is in a conflicting state. For example, deleting a bot
-    /// that is in the CREATING state. Try your request again. </p>
+    /// <p>The action that you tried to perform couldn't be completed because the resource is in a conflicting state. For example, deleting a bot that is in the CREATING state. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request couldn't be completed because one or more request
-    /// fields aren't valid. Check the fields in your request and try
-    /// again.</p>
+    /// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1940,24 +1851,17 @@ pub struct DeleteBotAliasError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteBotAliasErrorKind {
-    /// <p>The action that you tried to perform couldn't be completed because
-    /// the resource is in a conflicting state. For example, deleting a bot
-    /// that is in the CREATING state. Try your request again. </p>
+    /// <p>The action that you tried to perform couldn't be completed because the resource is in a conflicting state. For example, deleting a bot that is in the CREATING state. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request couldn't be completed because one or more request
-    /// fields aren't valid. Check the fields in your request and try
-    /// again.</p>
+    /// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2086,24 +1990,17 @@ pub struct DeleteBotLocaleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteBotLocaleErrorKind {
-    /// <p>The action that you tried to perform couldn't be completed because
-    /// the resource is in a conflicting state. For example, deleting a bot
-    /// that is in the CREATING state. Try your request again. </p>
+    /// <p>The action that you tried to perform couldn't be completed because the resource is in a conflicting state. For example, deleting a bot that is in the CREATING state. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request couldn't be completed because one or more request
-    /// fields aren't valid. Check the fields in your request and try
-    /// again.</p>
+    /// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2232,24 +2129,17 @@ pub struct DeleteBotVersionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteBotVersionErrorKind {
-    /// <p>The action that you tried to perform couldn't be completed because
-    /// the resource is in a conflicting state. For example, deleting a bot
-    /// that is in the CREATING state. Try your request again. </p>
+    /// <p>The action that you tried to perform couldn't be completed because the resource is in a conflicting state. For example, deleting a bot that is in the CREATING state. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request couldn't be completed because one or more request
-    /// fields aren't valid. Check the fields in your request and try
-    /// again.</p>
+    /// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2384,20 +2274,15 @@ pub struct DeleteExportError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteExportErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request couldn't be completed because one or more request
-    /// fields aren't valid. Check the fields in your request and try
-    /// again.</p>
+    /// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2520,20 +2405,15 @@ pub struct DeleteImportError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteImportErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request couldn't be completed because one or more request
-    /// fields aren't valid. Check the fields in your request and try
-    /// again.</p>
+    /// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2656,24 +2536,17 @@ pub struct DeleteIntentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteIntentErrorKind {
-    /// <p>The action that you tried to perform couldn't be completed because
-    /// the resource is in a conflicting state. For example, deleting a bot
-    /// that is in the CREATING state. Try your request again. </p>
+    /// <p>The action that you tried to perform couldn't be completed because the resource is in a conflicting state. For example, deleting a bot that is in the CREATING state. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request couldn't be completed because one or more request
-    /// fields aren't valid. Check the fields in your request and try
-    /// again.</p>
+    /// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2802,18 +2675,13 @@ pub struct DeleteResourcePolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteResourcePolicyErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request couldn't be completed because one or more request
-    /// fields aren't valid. Check the fields in your request and try
-    /// again.</p>
+    /// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
-    /// <p>You asked to describe a resource that doesn't exist. Check the
-    /// resource that you are requesting and try again.</p>
+    /// <p>You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2933,18 +2801,13 @@ pub struct DeleteResourcePolicyStatementError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteResourcePolicyStatementErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request couldn't be completed because one or more request
-    /// fields aren't valid. Check the fields in your request and try
-    /// again.</p>
+    /// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
-    /// <p>You asked to describe a resource that doesn't exist. Check the
-    /// resource that you are requesting and try again.</p>
+    /// <p>You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3077,24 +2940,17 @@ pub struct DeleteSlotError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteSlotErrorKind {
-    /// <p>The action that you tried to perform couldn't be completed because
-    /// the resource is in a conflicting state. For example, deleting a bot
-    /// that is in the CREATING state. Try your request again. </p>
+    /// <p>The action that you tried to perform couldn't be completed because the resource is in a conflicting state. For example, deleting a bot that is in the CREATING state. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request couldn't be completed because one or more request
-    /// fields aren't valid. Check the fields in your request and try
-    /// again.</p>
+    /// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3220,24 +3076,17 @@ pub struct DeleteSlotTypeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteSlotTypeErrorKind {
-    /// <p>The action that you tried to perform couldn't be completed because
-    /// the resource is in a conflicting state. For example, deleting a bot
-    /// that is in the CREATING state. Try your request again. </p>
+    /// <p>The action that you tried to perform couldn't be completed because the resource is in a conflicting state. For example, deleting a bot that is in the CREATING state. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request couldn't be completed because one or more request
-    /// fields aren't valid. Check the fields in your request and try
-    /// again.</p>
+    /// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3366,14 +3215,11 @@ pub struct DeleteUtterancesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteUtterancesErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3484,19 +3330,15 @@ pub struct DescribeBotError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeBotErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>You asked to describe a resource that doesn't exist. Check the
-    /// resource that you are requesting and try again.</p>
+    /// <p>You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3616,19 +3458,15 @@ pub struct DescribeBotAliasError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeBotAliasErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>You asked to describe a resource that doesn't exist. Check the
-    /// resource that you are requesting and try again.</p>
+    /// <p>You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3757,19 +3595,15 @@ pub struct DescribeBotLocaleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeBotLocaleErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>You asked to describe a resource that doesn't exist. Check the
-    /// resource that you are requesting and try again.</p>
+    /// <p>You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3898,17 +3732,13 @@ pub struct DescribeBotRecommendationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeBotRecommendationErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>You asked to describe a resource that doesn't exist. Check the
-    /// resource that you are requesting and try again.</p>
+    /// <p>You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4028,19 +3858,15 @@ pub struct DescribeBotVersionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeBotVersionErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>You asked to describe a resource that doesn't exist. Check the
-    /// resource that you are requesting and try again.</p>
+    /// <p>You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4169,17 +3995,13 @@ pub struct DescribeExportError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeExportErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>You asked to describe a resource that doesn't exist. Check the
-    /// resource that you are requesting and try again.</p>
+    /// <p>You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4293,17 +4115,13 @@ pub struct DescribeImportError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeImportErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>You asked to describe a resource that doesn't exist. Check the
-    /// resource that you are requesting and try again.</p>
+    /// <p>You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4417,19 +4235,15 @@ pub struct DescribeIntentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeIntentErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>You asked to describe a resource that doesn't exist. Check the
-    /// resource that you are requesting and try again.</p>
+    /// <p>You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4552,14 +4366,11 @@ pub struct DescribeResourcePolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeResourcePolicyErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>You asked to describe a resource that doesn't exist. Check the
-    /// resource that you are requesting and try again.</p>
+    /// <p>You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4670,19 +4481,15 @@ pub struct DescribeSlotError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeSlotErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>You asked to describe a resource that doesn't exist. Check the
-    /// resource that you are requesting and try again.</p>
+    /// <p>You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4805,19 +4612,15 @@ pub struct DescribeSlotTypeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeSlotTypeErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>You asked to describe a resource that doesn't exist. Check the
-    /// resource that you are requesting and try again.</p>
+    /// <p>You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4946,18 +4749,13 @@ pub struct ListAggregatedUtterancesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAggregatedUtterancesErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request couldn't be completed because one or more request
-    /// fields aren't valid. Check the fields in your request and try
-    /// again.</p>
+    /// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5077,16 +4875,13 @@ pub struct ListBotAliasesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListBotAliasesErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5200,16 +4995,13 @@ pub struct ListBotLocalesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListBotLocalesErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5323,17 +5115,13 @@ pub struct ListBotRecommendationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListBotRecommendationsErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>You asked to describe a resource that doesn't exist. Check the
-    /// resource that you are requesting and try again.</p>
+    /// <p>You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5453,16 +5241,13 @@ pub struct ListBotsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListBotsErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5573,16 +5358,13 @@ pub struct ListBotVersionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListBotVersionsErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5696,16 +5478,13 @@ pub struct ListBuiltInIntentsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListBuiltInIntentsErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5825,16 +5604,13 @@ pub struct ListBuiltInSlotTypesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListBuiltInSlotTypesErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5954,14 +5730,11 @@ pub struct ListExportsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListExportsErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6063,14 +5836,11 @@ pub struct ListImportsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListImportsErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6172,16 +5942,13 @@ pub struct ListIntentsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListIntentsErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6292,19 +6059,15 @@ pub struct ListRecommendedIntentsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListRecommendedIntentsErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>You asked to describe a resource that doesn't exist. Check the
-    /// resource that you are requesting and try again.</p>
+    /// <p>You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6433,16 +6196,13 @@ pub struct ListSlotsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListSlotsErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6553,16 +6313,13 @@ pub struct ListSlotTypesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListSlotTypesErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6676,17 +6433,13 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>You asked to describe a resource that doesn't exist. Check the
-    /// resource that you are requesting and try again.</p>
+    /// <p>You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6806,19 +6559,15 @@ pub struct SearchAssociatedTranscriptsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SearchAssociatedTranscriptsErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>You asked to describe a resource that doesn't exist. Check the
-    /// resource that you are requesting and try again.</p>
+    /// <p>You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6953,27 +6702,19 @@ pub struct StartBotRecommendationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartBotRecommendationErrorKind {
-    /// <p>The action that you tried to perform couldn't be completed because
-    /// the resource is in a conflicting state. For example, deleting a bot
-    /// that is in the CREATING state. Try your request again. </p>
+    /// <p>The action that you tried to perform couldn't be completed because the resource is in a conflicting state. For example, deleting a bot that is in the CREATING state. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request couldn't be completed because one or more request
-    /// fields aren't valid. Check the fields in your request and try
-    /// again.</p>
+    /// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
-    /// <p>You asked to describe a resource that doesn't exist. Check the
-    /// resource that you are requesting and try again.</p>
+    /// <p>You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7120,23 +6861,17 @@ pub struct StartImportError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartImportErrorKind {
-    /// <p>The action that you tried to perform couldn't be completed because
-    /// the resource is in a conflicting state. For example, deleting a bot
-    /// that is in the CREATING state. Try your request again. </p>
+    /// <p>The action that you tried to perform couldn't be completed because the resource is in a conflicting state. For example, deleting a bot that is in the CREATING state. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>You asked to describe a resource that doesn't exist. Check the
-    /// resource that you are requesting and try again.</p>
+    /// <p>You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7262,17 +6997,13 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>You asked to describe a resource that doesn't exist. Check the
-    /// resource that you are requesting and try again.</p>
+    /// <p>You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7383,17 +7114,13 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>You asked to describe a resource that doesn't exist. Check the
-    /// resource that you are requesting and try again.</p>
+    /// <p>You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7507,24 +7234,17 @@ pub struct UpdateBotError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateBotErrorKind {
-    /// <p>The action that you tried to perform couldn't be completed because
-    /// the resource is in a conflicting state. For example, deleting a bot
-    /// that is in the CREATING state. Try your request again. </p>
+    /// <p>The action that you tried to perform couldn't be completed because the resource is in a conflicting state. For example, deleting a bot that is in the CREATING state. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request couldn't be completed because one or more request
-    /// fields aren't valid. Check the fields in your request and try
-    /// again.</p>
+    /// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7650,24 +7370,17 @@ pub struct UpdateBotAliasError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateBotAliasErrorKind {
-    /// <p>The action that you tried to perform couldn't be completed because
-    /// the resource is in a conflicting state. For example, deleting a bot
-    /// that is in the CREATING state. Try your request again. </p>
+    /// <p>The action that you tried to perform couldn't be completed because the resource is in a conflicting state. For example, deleting a bot that is in the CREATING state. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request couldn't be completed because one or more request
-    /// fields aren't valid. Check the fields in your request and try
-    /// again.</p>
+    /// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7796,24 +7509,17 @@ pub struct UpdateBotLocaleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateBotLocaleErrorKind {
-    /// <p>The action that you tried to perform couldn't be completed because
-    /// the resource is in a conflicting state. For example, deleting a bot
-    /// that is in the CREATING state. Try your request again. </p>
+    /// <p>The action that you tried to perform couldn't be completed because the resource is in a conflicting state. For example, deleting a bot that is in the CREATING state. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request couldn't be completed because one or more request
-    /// fields aren't valid. Check the fields in your request and try
-    /// again.</p>
+    /// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7942,27 +7648,19 @@ pub struct UpdateBotRecommendationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateBotRecommendationErrorKind {
-    /// <p>The action that you tried to perform couldn't be completed because
-    /// the resource is in a conflicting state. For example, deleting a bot
-    /// that is in the CREATING state. Try your request again. </p>
+    /// <p>The action that you tried to perform couldn't be completed because the resource is in a conflicting state. For example, deleting a bot that is in the CREATING state. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request couldn't be completed because one or more request
-    /// fields aren't valid. Check the fields in your request and try
-    /// again.</p>
+    /// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
-    /// <p>You asked to describe a resource that doesn't exist. Check the
-    /// resource that you are requesting and try again.</p>
+    /// <p>You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8111,23 +7809,17 @@ pub struct UpdateExportError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateExportErrorKind {
-    /// <p>The action that you tried to perform couldn't be completed because
-    /// the resource is in a conflicting state. For example, deleting a bot
-    /// that is in the CREATING state. Try your request again. </p>
+    /// <p>The action that you tried to perform couldn't be completed because the resource is in a conflicting state. For example, deleting a bot that is in the CREATING state. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>You asked to describe a resource that doesn't exist. Check the
-    /// resource that you are requesting and try again.</p>
+    /// <p>You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8256,24 +7948,17 @@ pub struct UpdateIntentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateIntentErrorKind {
-    /// <p>The action that you tried to perform couldn't be completed because
-    /// the resource is in a conflicting state. For example, deleting a bot
-    /// that is in the CREATING state. Try your request again. </p>
+    /// <p>The action that you tried to perform couldn't be completed because the resource is in a conflicting state. For example, deleting a bot that is in the CREATING state. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request couldn't be completed because one or more request
-    /// fields aren't valid. Check the fields in your request and try
-    /// again.</p>
+    /// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8402,23 +8087,17 @@ pub struct UpdateResourcePolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateResourcePolicyErrorKind {
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request couldn't be completed because one or more request
-    /// fields aren't valid. Check the fields in your request and try
-    /// again.</p>
+    /// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
-    /// <p>You asked to describe a resource that doesn't exist. Check the
-    /// resource that you are requesting and try again.</p>
+    /// <p>You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8556,24 +8235,17 @@ pub struct UpdateSlotError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateSlotErrorKind {
-    /// <p>The action that you tried to perform couldn't be completed because
-    /// the resource is in a conflicting state. For example, deleting a bot
-    /// that is in the CREATING state. Try your request again. </p>
+    /// <p>The action that you tried to perform couldn't be completed because the resource is in a conflicting state. For example, deleting a bot that is in the CREATING state. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request couldn't be completed because one or more request
-    /// fields aren't valid. Check the fields in your request and try
-    /// again.</p>
+    /// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8699,24 +8371,17 @@ pub struct UpdateSlotTypeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateSlotTypeErrorKind {
-    /// <p>The action that you tried to perform couldn't be completed because
-    /// the resource is in a conflicting state. For example, deleting a bot
-    /// that is in the CREATING state. Try your request again. </p>
+    /// <p>The action that you tried to perform couldn't be completed because the resource is in a conflicting state. For example, deleting a bot that is in the CREATING state. Try your request again. </p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unexpected condition. Try your request
-    /// again.</p>
+    /// <p>The service encountered an unexpected condition. Try your request again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Your request couldn't be completed because one or more request
-    /// fields aren't valid. Check the fields in your request and try
-    /// again.</p>
+    /// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// <p>You have reached a quota for your bot. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>Your request rate is too high. Reduce the frequency of
-    /// requests.</p>
+    /// <p>Your request rate is too high. Reduce the frequency of requests.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>One of the input parameters in your request isn't valid. Check the
-    /// parameters and try your request again.</p>
+    /// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8832,8 +8497,7 @@ impl std::error::Error for UpdateSlotTypeError {
     }
 }
 
-/// <p>One of the input parameters in your request isn't valid. Check the
-/// parameters and try your request again.</p>
+/// <p>One of the input parameters in your request isn't valid. Check the parameters and try your request again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationException {
@@ -8897,8 +8561,7 @@ impl ValidationException {
     }
 }
 
-/// <p>Your request rate is too high. Reduce the frequency of
-/// requests.</p>
+/// <p>Your request rate is too high. Reduce the frequency of requests.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThrottlingException {
@@ -9047,9 +8710,7 @@ impl ServiceQuotaExceededException {
     }
 }
 
-/// <p>Your request couldn't be completed because one or more request
-/// fields aren't valid. Check the fields in your request and try
-/// again.</p>
+/// <p>Your request couldn't be completed because one or more request fields aren't valid. Check the fields in your request and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PreconditionFailedException {
@@ -9113,8 +8774,7 @@ impl PreconditionFailedException {
     }
 }
 
-/// <p>The service encountered an unexpected condition. Try your request
-/// again.</p>
+/// <p>The service encountered an unexpected condition. Try your request again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerException {
@@ -9178,9 +8838,7 @@ impl InternalServerException {
     }
 }
 
-/// <p>The action that you tried to perform couldn't be completed because
-/// the resource is in a conflicting state. For example, deleting a bot
-/// that is in the CREATING state. Try your request again. </p>
+/// <p>The action that you tried to perform couldn't be completed because the resource is in a conflicting state. For example, deleting a bot that is in the CREATING state. Try your request again. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {
@@ -9244,8 +8902,7 @@ impl ConflictException {
     }
 }
 
-/// <p>You asked to describe a resource that doesn't exist. Check the
-/// resource that you are requesting and try again.</p>
+/// <p>You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {

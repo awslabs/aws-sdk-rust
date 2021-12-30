@@ -54,94 +54,39 @@ impl AsRef<str> for PermissionsMode {
     }
 }
 
-/// <p>Information about the encryption of data at rest in an Amazon QLDB ledger. This includes
-/// the current status, the key in Key Management Service (KMS), and when the key became inaccessible (in
-/// the case of an error).</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/encryption-at-rest.html">Encryption at rest</a> in
-/// the <i>Amazon QLDB Developer Guide</i>.</p>
+/// <p>Information about the encryption of data at rest in an Amazon QLDB ledger. This includes the current status, the key in Key Management Service (KMS), and when the key became inaccessible (in the case of an error).</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/encryption-at-rest.html">Encryption at rest</a> in the <i>Amazon QLDB Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LedgerEncryptionDescription {
-    /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key that the ledger uses for
-    /// encryption at rest. If this parameter is undefined, the ledger uses an Amazon Web Services owned KMS key
-    /// for encryption.</p>
+    /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key that the ledger uses for encryption at rest. If this parameter is undefined, the ledger uses an Amazon Web Services owned KMS key for encryption.</p>
     pub kms_key_arn: std::option::Option<std::string::String>,
-    /// <p>The current state of encryption at rest for the ledger. This can be one of the following
-    /// values:</p>
+    /// <p>The current state of encryption at rest for the ledger. This can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ENABLED</code>: Encryption is fully enabled using the specified key.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>UPDATING</code>: The ledger is actively processing the specified key
-    /// change.</p>
-    /// <p>Key changes in QLDB are asynchronous. The ledger is fully accessible without any
-    /// performance impact while the key change is being processed. The amount of time it
-    /// takes to update a key varies depending on the ledger size.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>KMS_KEY_INACCESSIBLE</code>: The specified customer managed KMS key is not
-    /// accessible, and the ledger is impaired. Either the key was disabled or deleted, or
-    /// the grants on the key were revoked. When a ledger is impaired, it is not accessible
-    /// and does not accept any read or write requests.</p>
-    /// <p>An impaired ledger automatically returns to an active state after you restore the
-    /// grants on the key, or re-enable the key that was disabled. However, deleting a
-    /// customer managed KMS key is irreversible. After a key is deleted, you can no longer
-    /// access the ledgers that are protected with that key, and the data becomes
-    /// unrecoverable permanently.</p>
-    /// </li>
+    /// <li> <p> <code>ENABLED</code>: Encryption is fully enabled using the specified key.</p> </li>
+    /// <li> <p> <code>UPDATING</code>: The ledger is actively processing the specified key change.</p> <p>Key changes in QLDB are asynchronous. The ledger is fully accessible without any performance impact while the key change is being processed. The amount of time it takes to update a key varies depending on the ledger size.</p> </li>
+    /// <li> <p> <code>KMS_KEY_INACCESSIBLE</code>: The specified customer managed KMS key is not accessible, and the ledger is impaired. Either the key was disabled or deleted, or the grants on the key were revoked. When a ledger is impaired, it is not accessible and does not accept any read or write requests.</p> <p>An impaired ledger automatically returns to an active state after you restore the grants on the key, or re-enable the key that was disabled. However, deleting a customer managed KMS key is irreversible. After a key is deleted, you can no longer access the ledgers that are protected with that key, and the data becomes unrecoverable permanently.</p> </li>
     /// </ul>
     pub encryption_status: std::option::Option<crate::model::EncryptionStatus>,
-    /// <p>The date and time, in epoch time format, when the KMS key first became inaccessible,
-    /// in the case of an error. (Epoch time format is the number of seconds that have elapsed
-    /// since 12:00:00 AM January 1, 1970 UTC.)</p>
+    /// <p>The date and time, in epoch time format, when the KMS key first became inaccessible, in the case of an error. (Epoch time format is the number of seconds that have elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
     /// <p>This parameter is undefined if the KMS key is accessible.</p>
     pub inaccessible_kms_key_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl LedgerEncryptionDescription {
-    /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key that the ledger uses for
-    /// encryption at rest. If this parameter is undefined, the ledger uses an Amazon Web Services owned KMS key
-    /// for encryption.</p>
+    /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key that the ledger uses for encryption at rest. If this parameter is undefined, the ledger uses an Amazon Web Services owned KMS key for encryption.</p>
     pub fn kms_key_arn(&self) -> std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
-    /// <p>The current state of encryption at rest for the ledger. This can be one of the following
-    /// values:</p>
+    /// <p>The current state of encryption at rest for the ledger. This can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ENABLED</code>: Encryption is fully enabled using the specified key.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>UPDATING</code>: The ledger is actively processing the specified key
-    /// change.</p>
-    /// <p>Key changes in QLDB are asynchronous. The ledger is fully accessible without any
-    /// performance impact while the key change is being processed. The amount of time it
-    /// takes to update a key varies depending on the ledger size.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>KMS_KEY_INACCESSIBLE</code>: The specified customer managed KMS key is not
-    /// accessible, and the ledger is impaired. Either the key was disabled or deleted, or
-    /// the grants on the key were revoked. When a ledger is impaired, it is not accessible
-    /// and does not accept any read or write requests.</p>
-    /// <p>An impaired ledger automatically returns to an active state after you restore the
-    /// grants on the key, or re-enable the key that was disabled. However, deleting a
-    /// customer managed KMS key is irreversible. After a key is deleted, you can no longer
-    /// access the ledgers that are protected with that key, and the data becomes
-    /// unrecoverable permanently.</p>
-    /// </li>
+    /// <li> <p> <code>ENABLED</code>: Encryption is fully enabled using the specified key.</p> </li>
+    /// <li> <p> <code>UPDATING</code>: The ledger is actively processing the specified key change.</p> <p>Key changes in QLDB are asynchronous. The ledger is fully accessible without any performance impact while the key change is being processed. The amount of time it takes to update a key varies depending on the ledger size.</p> </li>
+    /// <li> <p> <code>KMS_KEY_INACCESSIBLE</code>: The specified customer managed KMS key is not accessible, and the ledger is impaired. Either the key was disabled or deleted, or the grants on the key were revoked. When a ledger is impaired, it is not accessible and does not accept any read or write requests.</p> <p>An impaired ledger automatically returns to an active state after you restore the grants on the key, or re-enable the key that was disabled. However, deleting a customer managed KMS key is irreversible. After a key is deleted, you can no longer access the ledgers that are protected with that key, and the data becomes unrecoverable permanently.</p> </li>
     /// </ul>
     pub fn encryption_status(&self) -> std::option::Option<&crate::model::EncryptionStatus> {
         self.encryption_status.as_ref()
     }
-    /// <p>The date and time, in epoch time format, when the KMS key first became inaccessible,
-    /// in the case of an error. (Epoch time format is the number of seconds that have elapsed
-    /// since 12:00:00 AM January 1, 1970 UTC.)</p>
+    /// <p>The date and time, in epoch time format, when the KMS key first became inaccessible, in the case of an error. (Epoch time format is the number of seconds that have elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
     /// <p>This parameter is undefined if the KMS key is accessible.</p>
     pub fn inaccessible_kms_key_date_time(
         &self,
@@ -172,79 +117,31 @@ pub mod ledger_encryption_description {
         pub(crate) inaccessible_kms_key_date_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key that the ledger uses for
-        /// encryption at rest. If this parameter is undefined, the ledger uses an Amazon Web Services owned KMS key
-        /// for encryption.</p>
+        /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key that the ledger uses for encryption at rest. If this parameter is undefined, the ledger uses an Amazon Web Services owned KMS key for encryption.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key that the ledger uses for
-        /// encryption at rest. If this parameter is undefined, the ledger uses an Amazon Web Services owned KMS key
-        /// for encryption.</p>
+        /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key that the ledger uses for encryption at rest. If this parameter is undefined, the ledger uses an Amazon Web Services owned KMS key for encryption.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_arn = input;
             self
         }
-        /// <p>The current state of encryption at rest for the ledger. This can be one of the following
-        /// values:</p>
+        /// <p>The current state of encryption at rest for the ledger. This can be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ENABLED</code>: Encryption is fully enabled using the specified key.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UPDATING</code>: The ledger is actively processing the specified key
-        /// change.</p>
-        /// <p>Key changes in QLDB are asynchronous. The ledger is fully accessible without any
-        /// performance impact while the key change is being processed. The amount of time it
-        /// takes to update a key varies depending on the ledger size.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>KMS_KEY_INACCESSIBLE</code>: The specified customer managed KMS key is not
-        /// accessible, and the ledger is impaired. Either the key was disabled or deleted, or
-        /// the grants on the key were revoked. When a ledger is impaired, it is not accessible
-        /// and does not accept any read or write requests.</p>
-        /// <p>An impaired ledger automatically returns to an active state after you restore the
-        /// grants on the key, or re-enable the key that was disabled. However, deleting a
-        /// customer managed KMS key is irreversible. After a key is deleted, you can no longer
-        /// access the ledgers that are protected with that key, and the data becomes
-        /// unrecoverable permanently.</p>
-        /// </li>
+        /// <li> <p> <code>ENABLED</code>: Encryption is fully enabled using the specified key.</p> </li>
+        /// <li> <p> <code>UPDATING</code>: The ledger is actively processing the specified key change.</p> <p>Key changes in QLDB are asynchronous. The ledger is fully accessible without any performance impact while the key change is being processed. The amount of time it takes to update a key varies depending on the ledger size.</p> </li>
+        /// <li> <p> <code>KMS_KEY_INACCESSIBLE</code>: The specified customer managed KMS key is not accessible, and the ledger is impaired. Either the key was disabled or deleted, or the grants on the key were revoked. When a ledger is impaired, it is not accessible and does not accept any read or write requests.</p> <p>An impaired ledger automatically returns to an active state after you restore the grants on the key, or re-enable the key that was disabled. However, deleting a customer managed KMS key is irreversible. After a key is deleted, you can no longer access the ledgers that are protected with that key, and the data becomes unrecoverable permanently.</p> </li>
         /// </ul>
         pub fn encryption_status(mut self, input: crate::model::EncryptionStatus) -> Self {
             self.encryption_status = Some(input);
             self
         }
-        /// <p>The current state of encryption at rest for the ledger. This can be one of the following
-        /// values:</p>
+        /// <p>The current state of encryption at rest for the ledger. This can be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ENABLED</code>: Encryption is fully enabled using the specified key.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UPDATING</code>: The ledger is actively processing the specified key
-        /// change.</p>
-        /// <p>Key changes in QLDB are asynchronous. The ledger is fully accessible without any
-        /// performance impact while the key change is being processed. The amount of time it
-        /// takes to update a key varies depending on the ledger size.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>KMS_KEY_INACCESSIBLE</code>: The specified customer managed KMS key is not
-        /// accessible, and the ledger is impaired. Either the key was disabled or deleted, or
-        /// the grants on the key were revoked. When a ledger is impaired, it is not accessible
-        /// and does not accept any read or write requests.</p>
-        /// <p>An impaired ledger automatically returns to an active state after you restore the
-        /// grants on the key, or re-enable the key that was disabled. However, deleting a
-        /// customer managed KMS key is irreversible. After a key is deleted, you can no longer
-        /// access the ledgers that are protected with that key, and the data becomes
-        /// unrecoverable permanently.</p>
-        /// </li>
+        /// <li> <p> <code>ENABLED</code>: Encryption is fully enabled using the specified key.</p> </li>
+        /// <li> <p> <code>UPDATING</code>: The ledger is actively processing the specified key change.</p> <p>Key changes in QLDB are asynchronous. The ledger is fully accessible without any performance impact while the key change is being processed. The amount of time it takes to update a key varies depending on the ledger size.</p> </li>
+        /// <li> <p> <code>KMS_KEY_INACCESSIBLE</code>: The specified customer managed KMS key is not accessible, and the ledger is impaired. Either the key was disabled or deleted, or the grants on the key were revoked. When a ledger is impaired, it is not accessible and does not accept any read or write requests.</p> <p>An impaired ledger automatically returns to an active state after you restore the grants on the key, or re-enable the key that was disabled. However, deleting a customer managed KMS key is irreversible. After a key is deleted, you can no longer access the ledgers that are protected with that key, and the data becomes unrecoverable permanently.</p> </li>
         /// </ul>
         pub fn set_encryption_status(
             mut self,
@@ -253,17 +150,13 @@ pub mod ledger_encryption_description {
             self.encryption_status = input;
             self
         }
-        /// <p>The date and time, in epoch time format, when the KMS key first became inaccessible,
-        /// in the case of an error. (Epoch time format is the number of seconds that have elapsed
-        /// since 12:00:00 AM January 1, 1970 UTC.)</p>
+        /// <p>The date and time, in epoch time format, when the KMS key first became inaccessible, in the case of an error. (Epoch time format is the number of seconds that have elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
         /// <p>This parameter is undefined if the KMS key is accessible.</p>
         pub fn inaccessible_kms_key_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inaccessible_kms_key_date_time = Some(input);
             self
         }
-        /// <p>The date and time, in epoch time format, when the KMS key first became inaccessible,
-        /// in the case of an error. (Epoch time format is the number of seconds that have elapsed
-        /// since 12:00:00 AM January 1, 1970 UTC.)</p>
+        /// <p>The date and time, in epoch time format, when the KMS key first became inaccessible, in the case of an error. (Epoch time format is the number of seconds that have elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
         /// <p>This parameter is undefined if the KMS key is accessible.</p>
         pub fn set_inaccessible_kms_key_date_time(
             mut self,
@@ -411,20 +304,14 @@ impl AsRef<str> for LedgerState {
     }
 }
 
-/// <p>The configuration settings of the Amazon Kinesis Data Streams destination for an Amazon QLDB journal
-/// stream.</p>
+/// <p>The configuration settings of the Amazon Kinesis Data Streams destination for an Amazon QLDB journal stream.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KinesisConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the Kinesis Data Streams resource.</p>
     pub stream_arn: std::option::Option<std::string::String>,
-    /// <p>Enables QLDB to publish multiple data records in a single Kinesis Data Streams record, increasing the
-    /// number of records sent per API call.</p>
-    /// <p>
-    /// <i>This option is enabled by default.</i> Record aggregation has important
-    /// implications for processing records and requires de-aggregation in your stream consumer. To
-    /// learn more, see <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-concepts.html">KPL Key Concepts</a> and <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-consumer-deaggregation.html">Consumer De-aggregation</a> in the <i>Amazon Kinesis Data Streams Developer
-    /// Guide</i>.</p>
+    /// <p>Enables QLDB to publish multiple data records in a single Kinesis Data Streams record, increasing the number of records sent per API call.</p>
+    /// <p> <i>This option is enabled by default.</i> Record aggregation has important implications for processing records and requires de-aggregation in your stream consumer. To learn more, see <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-concepts.html">KPL Key Concepts</a> and <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-consumer-deaggregation.html">Consumer De-aggregation</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
     pub aggregation_enabled: std::option::Option<bool>,
 }
 impl KinesisConfiguration {
@@ -432,13 +319,8 @@ impl KinesisConfiguration {
     pub fn stream_arn(&self) -> std::option::Option<&str> {
         self.stream_arn.as_deref()
     }
-    /// <p>Enables QLDB to publish multiple data records in a single Kinesis Data Streams record, increasing the
-    /// number of records sent per API call.</p>
-    /// <p>
-    /// <i>This option is enabled by default.</i> Record aggregation has important
-    /// implications for processing records and requires de-aggregation in your stream consumer. To
-    /// learn more, see <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-concepts.html">KPL Key Concepts</a> and <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-consumer-deaggregation.html">Consumer De-aggregation</a> in the <i>Amazon Kinesis Data Streams Developer
-    /// Guide</i>.</p>
+    /// <p>Enables QLDB to publish multiple data records in a single Kinesis Data Streams record, increasing the number of records sent per API call.</p>
+    /// <p> <i>This option is enabled by default.</i> Record aggregation has important implications for processing records and requires de-aggregation in your stream consumer. To learn more, see <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-concepts.html">KPL Key Concepts</a> and <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-consumer-deaggregation.html">Consumer De-aggregation</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
     pub fn aggregation_enabled(&self) -> std::option::Option<bool> {
         self.aggregation_enabled
     }
@@ -471,24 +353,14 @@ pub mod kinesis_configuration {
             self.stream_arn = input;
             self
         }
-        /// <p>Enables QLDB to publish multiple data records in a single Kinesis Data Streams record, increasing the
-        /// number of records sent per API call.</p>
-        /// <p>
-        /// <i>This option is enabled by default.</i> Record aggregation has important
-        /// implications for processing records and requires de-aggregation in your stream consumer. To
-        /// learn more, see <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-concepts.html">KPL Key Concepts</a> and <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-consumer-deaggregation.html">Consumer De-aggregation</a> in the <i>Amazon Kinesis Data Streams Developer
-        /// Guide</i>.</p>
+        /// <p>Enables QLDB to publish multiple data records in a single Kinesis Data Streams record, increasing the number of records sent per API call.</p>
+        /// <p> <i>This option is enabled by default.</i> Record aggregation has important implications for processing records and requires de-aggregation in your stream consumer. To learn more, see <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-concepts.html">KPL Key Concepts</a> and <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-consumer-deaggregation.html">Consumer De-aggregation</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
         pub fn aggregation_enabled(mut self, input: bool) -> Self {
             self.aggregation_enabled = Some(input);
             self
         }
-        /// <p>Enables QLDB to publish multiple data records in a single Kinesis Data Streams record, increasing the
-        /// number of records sent per API call.</p>
-        /// <p>
-        /// <i>This option is enabled by default.</i> Record aggregation has important
-        /// implications for processing records and requires de-aggregation in your stream consumer. To
-        /// learn more, see <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-concepts.html">KPL Key Concepts</a> and <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-consumer-deaggregation.html">Consumer De-aggregation</a> in the <i>Amazon Kinesis Data Streams Developer
-        /// Guide</i>.</p>
+        /// <p>Enables QLDB to publish multiple data records in a single Kinesis Data Streams record, increasing the number of records sent per API call.</p>
+        /// <p> <i>This option is enabled by default.</i> Record aggregation has important implications for processing records and requires de-aggregation in your stream consumer. To learn more, see <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-concepts.html">KPL Key Concepts</a> and <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-consumer-deaggregation.html">Consumer De-aggregation</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
         pub fn set_aggregation_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.aggregation_enabled = input;
             self
@@ -517,8 +389,7 @@ pub struct LedgerSummary {
     pub name: std::option::Option<std::string::String>,
     /// <p>The current status of the ledger.</p>
     pub state: std::option::Option<crate::model::LedgerState>,
-    /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format
-    /// is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
+    /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl LedgerSummary {
@@ -530,8 +401,7 @@ impl LedgerSummary {
     pub fn state(&self) -> std::option::Option<&crate::model::LedgerState> {
         self.state.as_ref()
     }
-    /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format
-    /// is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
+    /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
     pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
@@ -576,14 +446,12 @@ pub mod ledger_summary {
             self.state = input;
             self
         }
-        /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format
-        /// is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
+        /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date_time = Some(input);
             self
         }
-        /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format
-        /// is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
+        /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
         pub fn set_creation_date_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -608,8 +476,7 @@ impl LedgerSummary {
     }
 }
 
-/// <p>Information about a journal export job, including the ledger name, export ID, creation
-/// time, current status, and the parameters of the original export creation request.</p>
+/// <p>Information about a journal export job, including the ledger name, export ID, creation time, current status, and the parameters of the original export creation request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JournalS3ExportDescription {
@@ -617,30 +484,20 @@ pub struct JournalS3ExportDescription {
     pub ledger_name: std::option::Option<std::string::String>,
     /// <p>The UUID (represented in Base62-encoded text) of the journal export job.</p>
     pub export_id: std::option::Option<std::string::String>,
-    /// <p>The date and time, in epoch time format, when the export job was created. (Epoch time
-    /// format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
+    /// <p>The date and time, in epoch time format, when the export job was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
     pub export_creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current state of the journal export job.</p>
     pub status: std::option::Option<crate::model::ExportStatus>,
-    /// <p>The inclusive start date and time for the range of journal contents that are specified
-    /// in the original export request.</p>
+    /// <p>The inclusive start date and time for the range of journal contents that are specified in the original export request.</p>
     pub inclusive_start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The exclusive end date and time for the range of journal contents that are specified in
-    /// the original export request.</p>
+    /// <p>The exclusive end date and time for the range of journal contents that are specified in the original export request.</p>
     pub exclusive_end_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The Amazon Simple Storage Service (Amazon S3) bucket location in which a journal export job writes the journal
-    /// contents.</p>
+    /// <p>The Amazon Simple Storage Service (Amazon S3) bucket location in which a journal export job writes the journal contents.</p>
     pub s3_export_configuration: std::option::Option<crate::model::S3ExportConfiguration>,
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a
-    /// journal export job to do the following:</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal export job to do the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.</p>
-    /// </li>
-    /// <li>
-    /// <p>(Optional) Use your customer master key (CMK) in Key Management Service (KMS) for server-side
-    /// encryption of your exported data.</p>
-    /// </li>
+    /// <li> <p>Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.</p> </li>
+    /// <li> <p>(Optional) Use your customer master key (CMK) in Key Management Service (KMS) for server-side encryption of your exported data.</p> </li>
     /// </ul>
     pub role_arn: std::option::Option<std::string::String>,
 }
@@ -653,8 +510,7 @@ impl JournalS3ExportDescription {
     pub fn export_id(&self) -> std::option::Option<&str> {
         self.export_id.as_deref()
     }
-    /// <p>The date and time, in epoch time format, when the export job was created. (Epoch time
-    /// format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
+    /// <p>The date and time, in epoch time format, when the export job was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
     pub fn export_creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.export_creation_time.as_ref()
     }
@@ -662,33 +518,24 @@ impl JournalS3ExportDescription {
     pub fn status(&self) -> std::option::Option<&crate::model::ExportStatus> {
         self.status.as_ref()
     }
-    /// <p>The inclusive start date and time for the range of journal contents that are specified
-    /// in the original export request.</p>
+    /// <p>The inclusive start date and time for the range of journal contents that are specified in the original export request.</p>
     pub fn inclusive_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.inclusive_start_time.as_ref()
     }
-    /// <p>The exclusive end date and time for the range of journal contents that are specified in
-    /// the original export request.</p>
+    /// <p>The exclusive end date and time for the range of journal contents that are specified in the original export request.</p>
     pub fn exclusive_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.exclusive_end_time.as_ref()
     }
-    /// <p>The Amazon Simple Storage Service (Amazon S3) bucket location in which a journal export job writes the journal
-    /// contents.</p>
+    /// <p>The Amazon Simple Storage Service (Amazon S3) bucket location in which a journal export job writes the journal contents.</p>
     pub fn s3_export_configuration(
         &self,
     ) -> std::option::Option<&crate::model::S3ExportConfiguration> {
         self.s3_export_configuration.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a
-    /// journal export job to do the following:</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal export job to do the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.</p>
-    /// </li>
-    /// <li>
-    /// <p>(Optional) Use your customer master key (CMK) in Key Management Service (KMS) for server-side
-    /// encryption of your exported data.</p>
-    /// </li>
+    /// <li> <p>Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.</p> </li>
+    /// <li> <p>(Optional) Use your customer master key (CMK) in Key Management Service (KMS) for server-side encryption of your exported data.</p> </li>
     /// </ul>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
@@ -745,14 +592,12 @@ pub mod journal_s3_export_description {
             self.export_id = input;
             self
         }
-        /// <p>The date and time, in epoch time format, when the export job was created. (Epoch time
-        /// format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
+        /// <p>The date and time, in epoch time format, when the export job was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
         pub fn export_creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.export_creation_time = Some(input);
             self
         }
-        /// <p>The date and time, in epoch time format, when the export job was created. (Epoch time
-        /// format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
+        /// <p>The date and time, in epoch time format, when the export job was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
         pub fn set_export_creation_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -773,14 +618,12 @@ pub mod journal_s3_export_description {
             self.status = input;
             self
         }
-        /// <p>The inclusive start date and time for the range of journal contents that are specified
-        /// in the original export request.</p>
+        /// <p>The inclusive start date and time for the range of journal contents that are specified in the original export request.</p>
         pub fn inclusive_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inclusive_start_time = Some(input);
             self
         }
-        /// <p>The inclusive start date and time for the range of journal contents that are specified
-        /// in the original export request.</p>
+        /// <p>The inclusive start date and time for the range of journal contents that are specified in the original export request.</p>
         pub fn set_inclusive_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -788,14 +631,12 @@ pub mod journal_s3_export_description {
             self.inclusive_start_time = input;
             self
         }
-        /// <p>The exclusive end date and time for the range of journal contents that are specified in
-        /// the original export request.</p>
+        /// <p>The exclusive end date and time for the range of journal contents that are specified in the original export request.</p>
         pub fn exclusive_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.exclusive_end_time = Some(input);
             self
         }
-        /// <p>The exclusive end date and time for the range of journal contents that are specified in
-        /// the original export request.</p>
+        /// <p>The exclusive end date and time for the range of journal contents that are specified in the original export request.</p>
         pub fn set_exclusive_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -803,8 +644,7 @@ pub mod journal_s3_export_description {
             self.exclusive_end_time = input;
             self
         }
-        /// <p>The Amazon Simple Storage Service (Amazon S3) bucket location in which a journal export job writes the journal
-        /// contents.</p>
+        /// <p>The Amazon Simple Storage Service (Amazon S3) bucket location in which a journal export job writes the journal contents.</p>
         pub fn s3_export_configuration(
             mut self,
             input: crate::model::S3ExportConfiguration,
@@ -812,8 +652,7 @@ pub mod journal_s3_export_description {
             self.s3_export_configuration = Some(input);
             self
         }
-        /// <p>The Amazon Simple Storage Service (Amazon S3) bucket location in which a journal export job writes the journal
-        /// contents.</p>
+        /// <p>The Amazon Simple Storage Service (Amazon S3) bucket location in which a journal export job writes the journal contents.</p>
         pub fn set_s3_export_configuration(
             mut self,
             input: std::option::Option<crate::model::S3ExportConfiguration>,
@@ -821,31 +660,19 @@ pub mod journal_s3_export_description {
             self.s3_export_configuration = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a
-        /// journal export job to do the following:</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal export job to do the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.</p>
-        /// </li>
-        /// <li>
-        /// <p>(Optional) Use your customer master key (CMK) in Key Management Service (KMS) for server-side
-        /// encryption of your exported data.</p>
-        /// </li>
+        /// <li> <p>Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.</p> </li>
+        /// <li> <p>(Optional) Use your customer master key (CMK) in Key Management Service (KMS) for server-side encryption of your exported data.</p> </li>
         /// </ul>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a
-        /// journal export job to do the following:</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal export job to do the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.</p>
-        /// </li>
-        /// <li>
-        /// <p>(Optional) Use your customer master key (CMK) in Key Management Service (KMS) for server-side
-        /// encryption of your exported data.</p>
-        /// </li>
+        /// <li> <p>Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.</p> </li>
+        /// <li> <p>(Optional) Use your customer master key (CMK) in Key Management Service (KMS) for server-side encryption of your exported data.</p> </li>
         /// </ul>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
@@ -873,80 +700,43 @@ impl JournalS3ExportDescription {
     }
 }
 
-/// <p>The Amazon Simple Storage Service (Amazon S3) bucket location in which a journal export job writes the journal
-/// contents.</p>
+/// <p>The Amazon Simple Storage Service (Amazon S3) bucket location in which a journal export job writes the journal contents.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3ExportConfiguration {
     /// <p>The Amazon S3 bucket name in which a journal export job writes the journal contents.</p>
-    /// <p>The bucket name must comply with the Amazon S3 bucket naming conventions. For more
-    /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket Restrictions and
-    /// Limitations</a> in the <i>Amazon S3 Developer Guide</i>.</p>
+    /// <p>The bucket name must comply with the Amazon S3 bucket naming conventions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket Restrictions and Limitations</a> in the <i>Amazon S3 Developer Guide</i>.</p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>The prefix for the Amazon S3 bucket in which a journal export job writes the journal
-    /// contents.</p>
-    /// <p>The prefix must comply with Amazon S3 key naming rules and restrictions. For more
-    /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html">Object Key and Metadata</a> in the <i>Amazon S3 Developer
-    /// Guide</i>.</p>
+    /// <p>The prefix for the Amazon S3 bucket in which a journal export job writes the journal contents.</p>
+    /// <p>The prefix must comply with Amazon S3 key naming rules and restrictions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html">Object Key and Metadata</a> in the <i>Amazon S3 Developer Guide</i>.</p>
     /// <p>The following are examples of valid <code>Prefix</code> values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>JournalExports-ForMyLedger/Testing/</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>JournalExports</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>My:Tests/</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>JournalExports-ForMyLedger/Testing/</code> </p> </li>
+    /// <li> <p> <code>JournalExports</code> </p> </li>
+    /// <li> <p> <code>My:Tests/</code> </p> </li>
     /// </ul>
     pub prefix: std::option::Option<std::string::String>,
-    /// <p>The encryption settings that are used by a journal export job to write data in an Amazon S3
-    /// bucket.</p>
+    /// <p>The encryption settings that are used by a journal export job to write data in an Amazon S3 bucket.</p>
     pub encryption_configuration: std::option::Option<crate::model::S3EncryptionConfiguration>,
 }
 impl S3ExportConfiguration {
     /// <p>The Amazon S3 bucket name in which a journal export job writes the journal contents.</p>
-    /// <p>The bucket name must comply with the Amazon S3 bucket naming conventions. For more
-    /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket Restrictions and
-    /// Limitations</a> in the <i>Amazon S3 Developer Guide</i>.</p>
+    /// <p>The bucket name must comply with the Amazon S3 bucket naming conventions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket Restrictions and Limitations</a> in the <i>Amazon S3 Developer Guide</i>.</p>
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>The prefix for the Amazon S3 bucket in which a journal export job writes the journal
-    /// contents.</p>
-    /// <p>The prefix must comply with Amazon S3 key naming rules and restrictions. For more
-    /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html">Object Key and Metadata</a> in the <i>Amazon S3 Developer
-    /// Guide</i>.</p>
+    /// <p>The prefix for the Amazon S3 bucket in which a journal export job writes the journal contents.</p>
+    /// <p>The prefix must comply with Amazon S3 key naming rules and restrictions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html">Object Key and Metadata</a> in the <i>Amazon S3 Developer Guide</i>.</p>
     /// <p>The following are examples of valid <code>Prefix</code> values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>JournalExports-ForMyLedger/Testing/</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>JournalExports</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>My:Tests/</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>JournalExports-ForMyLedger/Testing/</code> </p> </li>
+    /// <li> <p> <code>JournalExports</code> </p> </li>
+    /// <li> <p> <code>My:Tests/</code> </p> </li>
     /// </ul>
     pub fn prefix(&self) -> std::option::Option<&str> {
         self.prefix.as_deref()
     }
-    /// <p>The encryption settings that are used by a journal export job to write data in an Amazon S3
-    /// bucket.</p>
+    /// <p>The encryption settings that are used by a journal export job to write data in an Amazon S3 bucket.</p>
     pub fn encryption_configuration(
         &self,
     ) -> std::option::Option<&crate::model::S3EncryptionConfiguration> {
@@ -975,77 +765,42 @@ pub mod s3_export_configuration {
     }
     impl Builder {
         /// <p>The Amazon S3 bucket name in which a journal export job writes the journal contents.</p>
-        /// <p>The bucket name must comply with the Amazon S3 bucket naming conventions. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket Restrictions and
-        /// Limitations</a> in the <i>Amazon S3 Developer Guide</i>.</p>
+        /// <p>The bucket name must comply with the Amazon S3 bucket naming conventions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket Restrictions and Limitations</a> in the <i>Amazon S3 Developer Guide</i>.</p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket = Some(input.into());
             self
         }
         /// <p>The Amazon S3 bucket name in which a journal export job writes the journal contents.</p>
-        /// <p>The bucket name must comply with the Amazon S3 bucket naming conventions. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket Restrictions and
-        /// Limitations</a> in the <i>Amazon S3 Developer Guide</i>.</p>
+        /// <p>The bucket name must comply with the Amazon S3 bucket naming conventions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket Restrictions and Limitations</a> in the <i>Amazon S3 Developer Guide</i>.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
         }
-        /// <p>The prefix for the Amazon S3 bucket in which a journal export job writes the journal
-        /// contents.</p>
-        /// <p>The prefix must comply with Amazon S3 key naming rules and restrictions. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html">Object Key and Metadata</a> in the <i>Amazon S3 Developer
-        /// Guide</i>.</p>
+        /// <p>The prefix for the Amazon S3 bucket in which a journal export job writes the journal contents.</p>
+        /// <p>The prefix must comply with Amazon S3 key naming rules and restrictions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html">Object Key and Metadata</a> in the <i>Amazon S3 Developer Guide</i>.</p>
         /// <p>The following are examples of valid <code>Prefix</code> values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>JournalExports-ForMyLedger/Testing/</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>JournalExports</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>My:Tests/</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>JournalExports-ForMyLedger/Testing/</code> </p> </li>
+        /// <li> <p> <code>JournalExports</code> </p> </li>
+        /// <li> <p> <code>My:Tests/</code> </p> </li>
         /// </ul>
         pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.prefix = Some(input.into());
             self
         }
-        /// <p>The prefix for the Amazon S3 bucket in which a journal export job writes the journal
-        /// contents.</p>
-        /// <p>The prefix must comply with Amazon S3 key naming rules and restrictions. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html">Object Key and Metadata</a> in the <i>Amazon S3 Developer
-        /// Guide</i>.</p>
+        /// <p>The prefix for the Amazon S3 bucket in which a journal export job writes the journal contents.</p>
+        /// <p>The prefix must comply with Amazon S3 key naming rules and restrictions. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html">Object Key and Metadata</a> in the <i>Amazon S3 Developer Guide</i>.</p>
         /// <p>The following are examples of valid <code>Prefix</code> values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>JournalExports-ForMyLedger/Testing/</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>JournalExports</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>My:Tests/</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>JournalExports-ForMyLedger/Testing/</code> </p> </li>
+        /// <li> <p> <code>JournalExports</code> </p> </li>
+        /// <li> <p> <code>My:Tests/</code> </p> </li>
         /// </ul>
         pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.prefix = input;
             self
         }
-        /// <p>The encryption settings that are used by a journal export job to write data in an Amazon S3
-        /// bucket.</p>
+        /// <p>The encryption settings that are used by a journal export job to write data in an Amazon S3 bucket.</p>
         pub fn encryption_configuration(
             mut self,
             input: crate::model::S3EncryptionConfiguration,
@@ -1053,8 +808,7 @@ pub mod s3_export_configuration {
             self.encryption_configuration = Some(input);
             self
         }
-        /// <p>The encryption settings that are used by a journal export job to write data in an Amazon S3
-        /// bucket.</p>
+        /// <p>The encryption settings that are used by a journal export job to write data in an Amazon S3 bucket.</p>
         pub fn set_encryption_configuration(
             mut self,
             input: std::option::Option<crate::model::S3EncryptionConfiguration>,
@@ -1079,42 +833,29 @@ impl S3ExportConfiguration {
     }
 }
 
-/// <p>The encryption settings that are used by a journal export job to write data in an
-/// Amazon Simple Storage Service (Amazon S3) bucket.</p>
+/// <p>The encryption settings that are used by a journal export job to write data in an Amazon Simple Storage Service (Amazon S3) bucket.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3EncryptionConfiguration {
     /// <p>The Amazon S3 object encryption type.</p>
-    /// <p>To learn more about server-side encryption options in Amazon S3, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting Data
-    /// Using Server-Side Encryption</a> in the <i>Amazon S3 Developer
-    /// Guide</i>.</p>
+    /// <p>To learn more about server-side encryption options in Amazon S3, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting Data Using Server-Side Encryption</a> in the <i>Amazon S3 Developer Guide</i>.</p>
     pub object_encryption_type: std::option::Option<crate::model::S3ObjectEncryptionType>,
-    /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) in Key Management Service
-    /// (KMS). Amazon S3 does not support asymmetric CMKs.</p>
-    /// <p>You must provide a <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code> as the
-    /// <code>ObjectEncryptionType</code>.</p>
-    /// <p>
-    /// <code>KmsKeyArn</code> is not required if you specify <code>SSE_S3</code> as the
-    /// <code>ObjectEncryptionType</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) in Key Management Service (KMS). Amazon S3 does not support asymmetric CMKs.</p>
+    /// <p>You must provide a <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code> as the <code>ObjectEncryptionType</code>.</p>
+    /// <p> <code>KmsKeyArn</code> is not required if you specify <code>SSE_S3</code> as the <code>ObjectEncryptionType</code>.</p>
     pub kms_key_arn: std::option::Option<std::string::String>,
 }
 impl S3EncryptionConfiguration {
     /// <p>The Amazon S3 object encryption type.</p>
-    /// <p>To learn more about server-side encryption options in Amazon S3, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting Data
-    /// Using Server-Side Encryption</a> in the <i>Amazon S3 Developer
-    /// Guide</i>.</p>
+    /// <p>To learn more about server-side encryption options in Amazon S3, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting Data Using Server-Side Encryption</a> in the <i>Amazon S3 Developer Guide</i>.</p>
     pub fn object_encryption_type(
         &self,
     ) -> std::option::Option<&crate::model::S3ObjectEncryptionType> {
         self.object_encryption_type.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) in Key Management Service
-    /// (KMS). Amazon S3 does not support asymmetric CMKs.</p>
-    /// <p>You must provide a <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code> as the
-    /// <code>ObjectEncryptionType</code>.</p>
-    /// <p>
-    /// <code>KmsKeyArn</code> is not required if you specify <code>SSE_S3</code> as the
-    /// <code>ObjectEncryptionType</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) in Key Management Service (KMS). Amazon S3 does not support asymmetric CMKs.</p>
+    /// <p>You must provide a <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code> as the <code>ObjectEncryptionType</code>.</p>
+    /// <p> <code>KmsKeyArn</code> is not required if you specify <code>SSE_S3</code> as the <code>ObjectEncryptionType</code>.</p>
     pub fn kms_key_arn(&self) -> std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
@@ -1139,9 +880,7 @@ pub mod s3_encryption_configuration {
     }
     impl Builder {
         /// <p>The Amazon S3 object encryption type.</p>
-        /// <p>To learn more about server-side encryption options in Amazon S3, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting Data
-        /// Using Server-Side Encryption</a> in the <i>Amazon S3 Developer
-        /// Guide</i>.</p>
+        /// <p>To learn more about server-side encryption options in Amazon S3, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting Data Using Server-Side Encryption</a> in the <i>Amazon S3 Developer Guide</i>.</p>
         pub fn object_encryption_type(
             mut self,
             input: crate::model::S3ObjectEncryptionType,
@@ -1150,9 +889,7 @@ pub mod s3_encryption_configuration {
             self
         }
         /// <p>The Amazon S3 object encryption type.</p>
-        /// <p>To learn more about server-side encryption options in Amazon S3, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting Data
-        /// Using Server-Side Encryption</a> in the <i>Amazon S3 Developer
-        /// Guide</i>.</p>
+        /// <p>To learn more about server-side encryption options in Amazon S3, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting Data Using Server-Side Encryption</a> in the <i>Amazon S3 Developer Guide</i>.</p>
         pub fn set_object_encryption_type(
             mut self,
             input: std::option::Option<crate::model::S3ObjectEncryptionType>,
@@ -1160,24 +897,16 @@ pub mod s3_encryption_configuration {
             self.object_encryption_type = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) in Key Management Service
-        /// (KMS). Amazon S3 does not support asymmetric CMKs.</p>
-        /// <p>You must provide a <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code> as the
-        /// <code>ObjectEncryptionType</code>.</p>
-        /// <p>
-        /// <code>KmsKeyArn</code> is not required if you specify <code>SSE_S3</code> as the
-        /// <code>ObjectEncryptionType</code>.</p>
+        /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) in Key Management Service (KMS). Amazon S3 does not support asymmetric CMKs.</p>
+        /// <p>You must provide a <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code> as the <code>ObjectEncryptionType</code>.</p>
+        /// <p> <code>KmsKeyArn</code> is not required if you specify <code>SSE_S3</code> as the <code>ObjectEncryptionType</code>.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) in Key Management Service
-        /// (KMS). Amazon S3 does not support asymmetric CMKs.</p>
-        /// <p>You must provide a <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code> as the
-        /// <code>ObjectEncryptionType</code>.</p>
-        /// <p>
-        /// <code>KmsKeyArn</code> is not required if you specify <code>SSE_S3</code> as the
-        /// <code>ObjectEncryptionType</code>.</p>
+        /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) in Key Management Service (KMS). Amazon S3 does not support asymmetric CMKs.</p>
+        /// <p>You must provide a <code>KmsKeyArn</code> if you specify <code>SSE_KMS</code> as the <code>ObjectEncryptionType</code>.</p>
+        /// <p> <code>KmsKeyArn</code> is not required if you specify <code>SSE_S3</code> as the <code>ObjectEncryptionType</code>.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_arn = input;
             self
@@ -1316,25 +1045,19 @@ impl AsRef<str> for ExportStatus {
     }
 }
 
-/// <p>Information about an Amazon QLDB journal stream, including the Amazon Resource Name
-/// (ARN), stream name, creation time, current status, and the parameters of the original
-/// stream creation request.</p>
+/// <p>Information about an Amazon QLDB journal stream, including the Amazon Resource Name (ARN), stream name, creation time, current status, and the parameters of the original stream creation request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JournalKinesisStreamDescription {
     /// <p>The name of the ledger.</p>
     pub ledger_name: std::option::Option<std::string::String>,
-    /// <p>The date and time, in epoch time format, when the QLDB journal stream was created.
-    /// (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970
-    /// UTC.)</p>
+    /// <p>The date and time, in epoch time format, when the QLDB journal stream was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The inclusive start date and time from which to start streaming journal data.</p>
     pub inclusive_start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The exclusive date and time that specifies when the stream ends. If this parameter is
-    /// undefined, the stream runs indefinitely until you cancel it.</p>
+    /// <p>The exclusive date and time that specifies when the stream ends. If this parameter is undefined, the stream runs indefinitely until you cancel it.</p>
     pub exclusive_end_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a
-    /// journal stream to write data records to a Kinesis Data Streams resource.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal stream to write data records to a Kinesis Data Streams resource.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream.</p>
     pub stream_id: std::option::Option<std::string::String>,
@@ -1342,12 +1065,9 @@ pub struct JournalKinesisStreamDescription {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The current state of the QLDB journal stream.</p>
     pub status: std::option::Option<crate::model::StreamStatus>,
-    /// <p>The configuration settings of the Amazon Kinesis Data Streams destination for a QLDB journal
-    /// stream.</p>
+    /// <p>The configuration settings of the Amazon Kinesis Data Streams destination for a QLDB journal stream.</p>
     pub kinesis_configuration: std::option::Option<crate::model::KinesisConfiguration>,
-    /// <p>The error message that describes the reason that a stream has a status of
-    /// <code>IMPAIRED</code> or <code>FAILED</code>. This is not applicable to streams that
-    /// have other status values.</p>
+    /// <p>The error message that describes the reason that a stream has a status of <code>IMPAIRED</code> or <code>FAILED</code>. This is not applicable to streams that have other status values.</p>
     pub error_cause: std::option::Option<crate::model::ErrorCause>,
     /// <p>The user-defined name of the QLDB journal stream.</p>
     pub stream_name: std::option::Option<std::string::String>,
@@ -1357,9 +1077,7 @@ impl JournalKinesisStreamDescription {
     pub fn ledger_name(&self) -> std::option::Option<&str> {
         self.ledger_name.as_deref()
     }
-    /// <p>The date and time, in epoch time format, when the QLDB journal stream was created.
-    /// (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970
-    /// UTC.)</p>
+    /// <p>The date and time, in epoch time format, when the QLDB journal stream was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
@@ -1367,13 +1085,11 @@ impl JournalKinesisStreamDescription {
     pub fn inclusive_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.inclusive_start_time.as_ref()
     }
-    /// <p>The exclusive date and time that specifies when the stream ends. If this parameter is
-    /// undefined, the stream runs indefinitely until you cancel it.</p>
+    /// <p>The exclusive date and time that specifies when the stream ends. If this parameter is undefined, the stream runs indefinitely until you cancel it.</p>
     pub fn exclusive_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.exclusive_end_time.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a
-    /// journal stream to write data records to a Kinesis Data Streams resource.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal stream to write data records to a Kinesis Data Streams resource.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -1389,16 +1105,13 @@ impl JournalKinesisStreamDescription {
     pub fn status(&self) -> std::option::Option<&crate::model::StreamStatus> {
         self.status.as_ref()
     }
-    /// <p>The configuration settings of the Amazon Kinesis Data Streams destination for a QLDB journal
-    /// stream.</p>
+    /// <p>The configuration settings of the Amazon Kinesis Data Streams destination for a QLDB journal stream.</p>
     pub fn kinesis_configuration(
         &self,
     ) -> std::option::Option<&crate::model::KinesisConfiguration> {
         self.kinesis_configuration.as_ref()
     }
-    /// <p>The error message that describes the reason that a stream has a status of
-    /// <code>IMPAIRED</code> or <code>FAILED</code>. This is not applicable to streams that
-    /// have other status values.</p>
+    /// <p>The error message that describes the reason that a stream has a status of <code>IMPAIRED</code> or <code>FAILED</code>. This is not applicable to streams that have other status values.</p>
     pub fn error_cause(&self) -> std::option::Option<&crate::model::ErrorCause> {
         self.error_cause.as_ref()
     }
@@ -1453,16 +1166,12 @@ pub mod journal_kinesis_stream_description {
             self.ledger_name = input;
             self
         }
-        /// <p>The date and time, in epoch time format, when the QLDB journal stream was created.
-        /// (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970
-        /// UTC.)</p>
+        /// <p>The date and time, in epoch time format, when the QLDB journal stream was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time = Some(input);
             self
         }
-        /// <p>The date and time, in epoch time format, when the QLDB journal stream was created.
-        /// (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970
-        /// UTC.)</p>
+        /// <p>The date and time, in epoch time format, when the QLDB journal stream was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
         pub fn set_creation_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1483,14 +1192,12 @@ pub mod journal_kinesis_stream_description {
             self.inclusive_start_time = input;
             self
         }
-        /// <p>The exclusive date and time that specifies when the stream ends. If this parameter is
-        /// undefined, the stream runs indefinitely until you cancel it.</p>
+        /// <p>The exclusive date and time that specifies when the stream ends. If this parameter is undefined, the stream runs indefinitely until you cancel it.</p>
         pub fn exclusive_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.exclusive_end_time = Some(input);
             self
         }
-        /// <p>The exclusive date and time that specifies when the stream ends. If this parameter is
-        /// undefined, the stream runs indefinitely until you cancel it.</p>
+        /// <p>The exclusive date and time that specifies when the stream ends. If this parameter is undefined, the stream runs indefinitely until you cancel it.</p>
         pub fn set_exclusive_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1498,14 +1205,12 @@ pub mod journal_kinesis_stream_description {
             self.exclusive_end_time = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a
-        /// journal stream to write data records to a Kinesis Data Streams resource.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal stream to write data records to a Kinesis Data Streams resource.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a
-        /// journal stream to write data records to a Kinesis Data Streams resource.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal stream to write data records to a Kinesis Data Streams resource.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -1543,14 +1248,12 @@ pub mod journal_kinesis_stream_description {
             self.status = input;
             self
         }
-        /// <p>The configuration settings of the Amazon Kinesis Data Streams destination for a QLDB journal
-        /// stream.</p>
+        /// <p>The configuration settings of the Amazon Kinesis Data Streams destination for a QLDB journal stream.</p>
         pub fn kinesis_configuration(mut self, input: crate::model::KinesisConfiguration) -> Self {
             self.kinesis_configuration = Some(input);
             self
         }
-        /// <p>The configuration settings of the Amazon Kinesis Data Streams destination for a QLDB journal
-        /// stream.</p>
+        /// <p>The configuration settings of the Amazon Kinesis Data Streams destination for a QLDB journal stream.</p>
         pub fn set_kinesis_configuration(
             mut self,
             input: std::option::Option<crate::model::KinesisConfiguration>,
@@ -1558,16 +1261,12 @@ pub mod journal_kinesis_stream_description {
             self.kinesis_configuration = input;
             self
         }
-        /// <p>The error message that describes the reason that a stream has a status of
-        /// <code>IMPAIRED</code> or <code>FAILED</code>. This is not applicable to streams that
-        /// have other status values.</p>
+        /// <p>The error message that describes the reason that a stream has a status of <code>IMPAIRED</code> or <code>FAILED</code>. This is not applicable to streams that have other status values.</p>
         pub fn error_cause(mut self, input: crate::model::ErrorCause) -> Self {
             self.error_cause = Some(input);
             self
         }
-        /// <p>The error message that describes the reason that a stream has a status of
-        /// <code>IMPAIRED</code> or <code>FAILED</code>. This is not applicable to streams that
-        /// have other status values.</p>
+        /// <p>The error message that describes the reason that a stream has a status of <code>IMPAIRED</code> or <code>FAILED</code>. This is not applicable to streams that have other status values.</p>
         pub fn set_error_cause(
             mut self,
             input: std::option::Option<crate::model::ErrorCause>,

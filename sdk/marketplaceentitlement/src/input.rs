@@ -17,14 +17,12 @@ pub mod get_entitlements_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code
-        /// will be provided by AWS Marketplace when the product listing is created.</p>
+        /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code will be provided by AWS Marketplace when the product listing is created.</p>
         pub fn product_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.product_code = Some(input.into());
             self
         }
-        /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code
-        /// will be provided by AWS Marketplace when the product listing is created.</p>
+        /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code will be provided by AWS Marketplace when the product listing is created.</p>
         pub fn set_product_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.product_code = input;
             self
@@ -33,10 +31,7 @@ pub mod get_entitlements_input {
         ///
         /// To override the contents of this collection use [`set_filter`](Self::set_filter).
         ///
-        /// <p>Filter is used to return entitlements for a specific customer or for a specific
-        /// dimension. Filters are described as keys mapped to a lists of values. Filtered requests are
-        /// <i>unioned</i> for each value in the value list, and then
-        /// <i>intersected</i> for each filter key.</p>
+        /// <p>Filter is used to return entitlements for a specific customer or for a specific dimension. Filters are described as keys mapped to a lists of values. Filtered requests are <i>unioned</i> for each value in the value list, and then <i>intersected</i> for each filter key.</p>
         pub fn filter(
             mut self,
             k: crate::model::GetEntitlementFilterName,
@@ -47,10 +42,7 @@ pub mod get_entitlements_input {
             self.filter = Some(hash_map);
             self
         }
-        /// <p>Filter is used to return entitlements for a specific customer or for a specific
-        /// dimension. Filters are described as keys mapped to a lists of values. Filtered requests are
-        /// <i>unioned</i> for each value in the value list, and then
-        /// <i>intersected</i> for each filter key.</p>
+        /// <p>Filter is used to return entitlements for a specific customer or for a specific dimension. Filters are described as keys mapped to a lists of values. Filtered requests are <i>unioned</i> for each value in the value list, and then <i>intersected</i> for each filter key.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<
@@ -63,26 +55,22 @@ pub mod get_entitlements_input {
             self.filter = input;
             self
         }
-        /// <p>For paginated calls to GetEntitlements, pass the NextToken from the previous
-        /// GetEntitlementsResult.</p>
+        /// <p>For paginated calls to GetEntitlements, pass the NextToken from the previous GetEntitlementsResult.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>For paginated calls to GetEntitlements, pass the NextToken from the previous
-        /// GetEntitlementsResult.</p>
+        /// <p>For paginated calls to GetEntitlements, pass the NextToken from the previous GetEntitlementsResult.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of items to retrieve from the GetEntitlements operation. For
-        /// pagination, use the NextToken field in subsequent calls to GetEntitlements.</p>
+        /// <p>The maximum number of items to retrieve from the GetEntitlements operation. For pagination, use the NextToken field in subsequent calls to GetEntitlements.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of items to retrieve from the GetEntitlements operation. For
-        /// pagination, use the NextToken field in subsequent calls to GetEntitlements.</p>
+        /// <p>The maximum number of items to retrieve from the GetEntitlements operation. For pagination, use the NextToken field in subsequent calls to GetEntitlements.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -225,41 +213,30 @@ impl GetEntitlementsInput {
     }
 }
 
-/// <p>The GetEntitlementsRequest contains parameters for the GetEntitlements
-/// operation.</p>
+/// <p>The GetEntitlementsRequest contains parameters for the GetEntitlements operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEntitlementsInput {
-    /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code
-    /// will be provided by AWS Marketplace when the product listing is created.</p>
+    /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code will be provided by AWS Marketplace when the product listing is created.</p>
     pub product_code: std::option::Option<std::string::String>,
-    /// <p>Filter is used to return entitlements for a specific customer or for a specific
-    /// dimension. Filters are described as keys mapped to a lists of values. Filtered requests are
-    /// <i>unioned</i> for each value in the value list, and then
-    /// <i>intersected</i> for each filter key.</p>
+    /// <p>Filter is used to return entitlements for a specific customer or for a specific dimension. Filters are described as keys mapped to a lists of values. Filtered requests are <i>unioned</i> for each value in the value list, and then <i>intersected</i> for each filter key.</p>
     pub filter: std::option::Option<
         std::collections::HashMap<
             crate::model::GetEntitlementFilterName,
             std::vec::Vec<std::string::String>,
         >,
     >,
-    /// <p>For paginated calls to GetEntitlements, pass the NextToken from the previous
-    /// GetEntitlementsResult.</p>
+    /// <p>For paginated calls to GetEntitlements, pass the NextToken from the previous GetEntitlementsResult.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of items to retrieve from the GetEntitlements operation. For
-    /// pagination, use the NextToken field in subsequent calls to GetEntitlements.</p>
+    /// <p>The maximum number of items to retrieve from the GetEntitlements operation. For pagination, use the NextToken field in subsequent calls to GetEntitlements.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl GetEntitlementsInput {
-    /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code
-    /// will be provided by AWS Marketplace when the product listing is created.</p>
+    /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code will be provided by AWS Marketplace when the product listing is created.</p>
     pub fn product_code(&self) -> std::option::Option<&str> {
         self.product_code.as_deref()
     }
-    /// <p>Filter is used to return entitlements for a specific customer or for a specific
-    /// dimension. Filters are described as keys mapped to a lists of values. Filtered requests are
-    /// <i>unioned</i> for each value in the value list, and then
-    /// <i>intersected</i> for each filter key.</p>
+    /// <p>Filter is used to return entitlements for a specific customer or for a specific dimension. Filters are described as keys mapped to a lists of values. Filtered requests are <i>unioned</i> for each value in the value list, and then <i>intersected</i> for each filter key.</p>
     pub fn filter(
         &self,
     ) -> std::option::Option<
@@ -270,13 +247,11 @@ impl GetEntitlementsInput {
     > {
         self.filter.as_ref()
     }
-    /// <p>For paginated calls to GetEntitlements, pass the NextToken from the previous
-    /// GetEntitlementsResult.</p>
+    /// <p>For paginated calls to GetEntitlements, pass the NextToken from the previous GetEntitlementsResult.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of items to retrieve from the GetEntitlements operation. For
-    /// pagination, use the NextToken field in subsequent calls to GetEntitlements.</p>
+    /// <p>The maximum number of items to retrieve from the GetEntitlements operation. For pagination, use the NextToken field in subsequent calls to GetEntitlements.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }

@@ -300,18 +300,12 @@ impl RejectAssignmentOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotifyWorkersOutput {
-    /// <p> When MTurk sends notifications to the list of Workers, it
-    /// returns back any failures it encounters in this list of
-    /// NotifyWorkersFailureStatus objects.
-    /// </p>
+    /// <p> When MTurk sends notifications to the list of Workers, it returns back any failures it encounters in this list of NotifyWorkersFailureStatus objects. </p>
     pub notify_workers_failure_statuses:
         std::option::Option<std::vec::Vec<crate::model::NotifyWorkersFailureStatus>>,
 }
 impl NotifyWorkersOutput {
-    /// <p> When MTurk sends notifications to the list of Workers, it
-    /// returns back any failures it encounters in this list of
-    /// NotifyWorkersFailureStatus objects.
-    /// </p>
+    /// <p> When MTurk sends notifications to the list of Workers, it returns back any failures it encounters in this list of NotifyWorkersFailureStatus objects. </p>
     pub fn notify_workers_failure_statuses(
         &self,
     ) -> std::option::Option<&[crate::model::NotifyWorkersFailureStatus]> {
@@ -342,10 +336,7 @@ pub mod notify_workers_output {
         ///
         /// To override the contents of this collection use [`set_notify_workers_failure_statuses`](Self::set_notify_workers_failure_statuses).
         ///
-        /// <p> When MTurk sends notifications to the list of Workers, it
-        /// returns back any failures it encounters in this list of
-        /// NotifyWorkersFailureStatus objects.
-        /// </p>
+        /// <p> When MTurk sends notifications to the list of Workers, it returns back any failures it encounters in this list of NotifyWorkersFailureStatus objects. </p>
         pub fn notify_workers_failure_statuses(
             mut self,
             input: crate::model::NotifyWorkersFailureStatus,
@@ -355,10 +346,7 @@ pub mod notify_workers_output {
             self.notify_workers_failure_statuses = Some(v);
             self
         }
-        /// <p> When MTurk sends notifications to the list of Workers, it
-        /// returns back any failures it encounters in this list of
-        /// NotifyWorkersFailureStatus objects.
-        /// </p>
+        /// <p> When MTurk sends notifications to the list of Workers, it returns back any failures it encounters in this list of NotifyWorkersFailureStatus objects. </p>
         pub fn set_notify_workers_failure_statuses(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::NotifyWorkersFailureStatus>>,
@@ -385,35 +373,23 @@ impl NotifyWorkersOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWorkersWithQualificationTypeOutput {
-    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk
-    /// returns a pagination token in the response. You can use this pagination token
-    /// to retrieve the next set of results.
-    /// </p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p> The number of Qualifications on this page in the filtered
-    /// results list, equivalent to the number of Qualifications being
-    /// returned by this call.</p>
+    /// <p> The number of Qualifications on this page in the filtered results list, equivalent to the number of Qualifications being returned by this call.</p>
     pub num_results: std::option::Option<i32>,
-    /// <p> The list of Qualification elements returned by this call.
-    /// </p>
+    /// <p> The list of Qualification elements returned by this call. </p>
     pub qualifications: std::option::Option<std::vec::Vec<crate::model::Qualification>>,
 }
 impl ListWorkersWithQualificationTypeOutput {
-    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk
-    /// returns a pagination token in the response. You can use this pagination token
-    /// to retrieve the next set of results.
-    /// </p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p> The number of Qualifications on this page in the filtered
-    /// results list, equivalent to the number of Qualifications being
-    /// returned by this call.</p>
+    /// <p> The number of Qualifications on this page in the filtered results list, equivalent to the number of Qualifications being returned by this call.</p>
     pub fn num_results(&self) -> std::option::Option<i32> {
         self.num_results
     }
-    /// <p> The list of Qualification elements returned by this call.
-    /// </p>
+    /// <p> The list of Qualification elements returned by this call. </p>
     pub fn qualifications(&self) -> std::option::Option<&[crate::model::Qualification]> {
         self.qualifications.as_deref()
     }
@@ -438,32 +414,22 @@ pub mod list_workers_with_qualification_type_output {
         pub(crate) qualifications: std::option::Option<std::vec::Vec<crate::model::Qualification>>,
     }
     impl Builder {
-        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk
-        /// returns a pagination token in the response. You can use this pagination token
-        /// to retrieve the next set of results.
-        /// </p>
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk
-        /// returns a pagination token in the response. You can use this pagination token
-        /// to retrieve the next set of results.
-        /// </p>
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p> The number of Qualifications on this page in the filtered
-        /// results list, equivalent to the number of Qualifications being
-        /// returned by this call.</p>
+        /// <p> The number of Qualifications on this page in the filtered results list, equivalent to the number of Qualifications being returned by this call.</p>
         pub fn num_results(mut self, input: i32) -> Self {
             self.num_results = Some(input);
             self
         }
-        /// <p> The number of Qualifications on this page in the filtered
-        /// results list, equivalent to the number of Qualifications being
-        /// returned by this call.</p>
+        /// <p> The number of Qualifications on this page in the filtered results list, equivalent to the number of Qualifications being returned by this call.</p>
         pub fn set_num_results(mut self, input: std::option::Option<i32>) -> Self {
             self.num_results = input;
             self
@@ -472,16 +438,14 @@ pub mod list_workers_with_qualification_type_output {
         ///
         /// To override the contents of this collection use [`set_qualifications`](Self::set_qualifications).
         ///
-        /// <p> The list of Qualification elements returned by this call.
-        /// </p>
+        /// <p> The list of Qualification elements returned by this call. </p>
         pub fn qualifications(mut self, input: crate::model::Qualification) -> Self {
             let mut v = self.qualifications.unwrap_or_default();
             v.push(input);
             self.qualifications = Some(v);
             self
         }
-        /// <p> The list of Qualification elements returned by this call.
-        /// </p>
+        /// <p> The list of Qualification elements returned by this call. </p>
         pub fn set_qualifications(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Qualification>>,
@@ -510,35 +474,23 @@ impl ListWorkersWithQualificationTypeOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWorkerBlocksOutput {
-    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk
-    /// returns a pagination token in the response. You can use this pagination token
-    /// to retrieve the next set of results.
-    /// </p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p> The number of assignments on the page in the filtered
-    /// results list, equivalent to the number of assignments returned by
-    /// this call.</p>
+    /// <p> The number of assignments on the page in the filtered results list, equivalent to the number of assignments returned by this call.</p>
     pub num_results: std::option::Option<i32>,
-    /// <p> The list of WorkerBlocks, containing the collection of
-    /// Worker IDs and reasons for blocking.</p>
+    /// <p> The list of WorkerBlocks, containing the collection of Worker IDs and reasons for blocking.</p>
     pub worker_blocks: std::option::Option<std::vec::Vec<crate::model::WorkerBlock>>,
 }
 impl ListWorkerBlocksOutput {
-    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk
-    /// returns a pagination token in the response. You can use this pagination token
-    /// to retrieve the next set of results.
-    /// </p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p> The number of assignments on the page in the filtered
-    /// results list, equivalent to the number of assignments returned by
-    /// this call.</p>
+    /// <p> The number of assignments on the page in the filtered results list, equivalent to the number of assignments returned by this call.</p>
     pub fn num_results(&self) -> std::option::Option<i32> {
         self.num_results
     }
-    /// <p> The list of WorkerBlocks, containing the collection of
-    /// Worker IDs and reasons for blocking.</p>
+    /// <p> The list of WorkerBlocks, containing the collection of Worker IDs and reasons for blocking.</p>
     pub fn worker_blocks(&self) -> std::option::Option<&[crate::model::WorkerBlock]> {
         self.worker_blocks.as_deref()
     }
@@ -563,32 +515,22 @@ pub mod list_worker_blocks_output {
         pub(crate) worker_blocks: std::option::Option<std::vec::Vec<crate::model::WorkerBlock>>,
     }
     impl Builder {
-        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk
-        /// returns a pagination token in the response. You can use this pagination token
-        /// to retrieve the next set of results.
-        /// </p>
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk
-        /// returns a pagination token in the response. You can use this pagination token
-        /// to retrieve the next set of results.
-        /// </p>
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p> The number of assignments on the page in the filtered
-        /// results list, equivalent to the number of assignments returned by
-        /// this call.</p>
+        /// <p> The number of assignments on the page in the filtered results list, equivalent to the number of assignments returned by this call.</p>
         pub fn num_results(mut self, input: i32) -> Self {
             self.num_results = Some(input);
             self
         }
-        /// <p> The number of assignments on the page in the filtered
-        /// results list, equivalent to the number of assignments returned by
-        /// this call.</p>
+        /// <p> The number of assignments on the page in the filtered results list, equivalent to the number of assignments returned by this call.</p>
         pub fn set_num_results(mut self, input: std::option::Option<i32>) -> Self {
             self.num_results = input;
             self
@@ -597,16 +539,14 @@ pub mod list_worker_blocks_output {
         ///
         /// To override the contents of this collection use [`set_worker_blocks`](Self::set_worker_blocks).
         ///
-        /// <p> The list of WorkerBlocks, containing the collection of
-        /// Worker IDs and reasons for blocking.</p>
+        /// <p> The list of WorkerBlocks, containing the collection of Worker IDs and reasons for blocking.</p>
         pub fn worker_blocks(mut self, input: crate::model::WorkerBlock) -> Self {
             let mut v = self.worker_blocks.unwrap_or_default();
             v.push(input);
             self.worker_blocks = Some(v);
             self
         }
-        /// <p> The list of WorkerBlocks, containing the collection of
-        /// Worker IDs and reasons for blocking.</p>
+        /// <p> The list of WorkerBlocks, containing the collection of Worker IDs and reasons for blocking.</p>
         pub fn set_worker_blocks(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::WorkerBlock>>,
@@ -637,24 +577,15 @@ impl ListWorkerBlocksOutput {
 pub struct ListReviewPolicyResultsForHitOutput {
     /// <p>The HITId of the HIT for which results have been returned.</p>
     pub hit_id: std::option::Option<std::string::String>,
-    /// <p> The name of the Assignment-level Review Policy. This
-    /// contains only the PolicyName element.
-    /// </p>
+    /// <p> The name of the Assignment-level Review Policy. This contains only the PolicyName element. </p>
     pub assignment_review_policy: std::option::Option<crate::model::ReviewPolicy>,
-    /// <p>The name of the HIT-level Review Policy. This contains only
-    /// the PolicyName element.</p>
+    /// <p>The name of the HIT-level Review Policy. This contains only the PolicyName element.</p>
     pub hit_review_policy: std::option::Option<crate::model::ReviewPolicy>,
-    /// <p> Contains both ReviewResult and ReviewAction elements for an
-    /// Assignment.
-    /// </p>
+    /// <p> Contains both ReviewResult and ReviewAction elements for an Assignment. </p>
     pub assignment_review_report: std::option::Option<crate::model::ReviewReport>,
-    /// <p>Contains both ReviewResult and ReviewAction elements for a particular HIT.
-    /// </p>
+    /// <p>Contains both ReviewResult and ReviewAction elements for a particular HIT. </p>
     pub hit_review_report: std::option::Option<crate::model::ReviewReport>,
-    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk
-    /// returns a pagination token in the response. You can use this pagination token
-    /// to retrieve the next set of results.
-    /// </p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListReviewPolicyResultsForHitOutput {
@@ -662,32 +593,23 @@ impl ListReviewPolicyResultsForHitOutput {
     pub fn hit_id(&self) -> std::option::Option<&str> {
         self.hit_id.as_deref()
     }
-    /// <p> The name of the Assignment-level Review Policy. This
-    /// contains only the PolicyName element.
-    /// </p>
+    /// <p> The name of the Assignment-level Review Policy. This contains only the PolicyName element. </p>
     pub fn assignment_review_policy(&self) -> std::option::Option<&crate::model::ReviewPolicy> {
         self.assignment_review_policy.as_ref()
     }
-    /// <p>The name of the HIT-level Review Policy. This contains only
-    /// the PolicyName element.</p>
+    /// <p>The name of the HIT-level Review Policy. This contains only the PolicyName element.</p>
     pub fn hit_review_policy(&self) -> std::option::Option<&crate::model::ReviewPolicy> {
         self.hit_review_policy.as_ref()
     }
-    /// <p> Contains both ReviewResult and ReviewAction elements for an
-    /// Assignment.
-    /// </p>
+    /// <p> Contains both ReviewResult and ReviewAction elements for an Assignment. </p>
     pub fn assignment_review_report(&self) -> std::option::Option<&crate::model::ReviewReport> {
         self.assignment_review_report.as_ref()
     }
-    /// <p>Contains both ReviewResult and ReviewAction elements for a particular HIT.
-    /// </p>
+    /// <p>Contains both ReviewResult and ReviewAction elements for a particular HIT. </p>
     pub fn hit_review_report(&self) -> std::option::Option<&crate::model::ReviewReport> {
         self.hit_review_report.as_ref()
     }
-    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk
-    /// returns a pagination token in the response. You can use this pagination token
-    /// to retrieve the next set of results.
-    /// </p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -728,16 +650,12 @@ pub mod list_review_policy_results_for_hit_output {
             self.hit_id = input;
             self
         }
-        /// <p> The name of the Assignment-level Review Policy. This
-        /// contains only the PolicyName element.
-        /// </p>
+        /// <p> The name of the Assignment-level Review Policy. This contains only the PolicyName element. </p>
         pub fn assignment_review_policy(mut self, input: crate::model::ReviewPolicy) -> Self {
             self.assignment_review_policy = Some(input);
             self
         }
-        /// <p> The name of the Assignment-level Review Policy. This
-        /// contains only the PolicyName element.
-        /// </p>
+        /// <p> The name of the Assignment-level Review Policy. This contains only the PolicyName element. </p>
         pub fn set_assignment_review_policy(
             mut self,
             input: std::option::Option<crate::model::ReviewPolicy>,
@@ -745,14 +663,12 @@ pub mod list_review_policy_results_for_hit_output {
             self.assignment_review_policy = input;
             self
         }
-        /// <p>The name of the HIT-level Review Policy. This contains only
-        /// the PolicyName element.</p>
+        /// <p>The name of the HIT-level Review Policy. This contains only the PolicyName element.</p>
         pub fn hit_review_policy(mut self, input: crate::model::ReviewPolicy) -> Self {
             self.hit_review_policy = Some(input);
             self
         }
-        /// <p>The name of the HIT-level Review Policy. This contains only
-        /// the PolicyName element.</p>
+        /// <p>The name of the HIT-level Review Policy. This contains only the PolicyName element.</p>
         pub fn set_hit_review_policy(
             mut self,
             input: std::option::Option<crate::model::ReviewPolicy>,
@@ -760,16 +676,12 @@ pub mod list_review_policy_results_for_hit_output {
             self.hit_review_policy = input;
             self
         }
-        /// <p> Contains both ReviewResult and ReviewAction elements for an
-        /// Assignment.
-        /// </p>
+        /// <p> Contains both ReviewResult and ReviewAction elements for an Assignment. </p>
         pub fn assignment_review_report(mut self, input: crate::model::ReviewReport) -> Self {
             self.assignment_review_report = Some(input);
             self
         }
-        /// <p> Contains both ReviewResult and ReviewAction elements for an
-        /// Assignment.
-        /// </p>
+        /// <p> Contains both ReviewResult and ReviewAction elements for an Assignment. </p>
         pub fn set_assignment_review_report(
             mut self,
             input: std::option::Option<crate::model::ReviewReport>,
@@ -777,14 +689,12 @@ pub mod list_review_policy_results_for_hit_output {
             self.assignment_review_report = input;
             self
         }
-        /// <p>Contains both ReviewResult and ReviewAction elements for a particular HIT.
-        /// </p>
+        /// <p>Contains both ReviewResult and ReviewAction elements for a particular HIT. </p>
         pub fn hit_review_report(mut self, input: crate::model::ReviewReport) -> Self {
             self.hit_review_report = Some(input);
             self
         }
-        /// <p>Contains both ReviewResult and ReviewAction elements for a particular HIT.
-        /// </p>
+        /// <p>Contains both ReviewResult and ReviewAction elements for a particular HIT. </p>
         pub fn set_hit_review_report(
             mut self,
             input: std::option::Option<crate::model::ReviewReport>,
@@ -792,18 +702,12 @@ pub mod list_review_policy_results_for_hit_output {
             self.hit_review_report = input;
             self
         }
-        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk
-        /// returns a pagination token in the response. You can use this pagination token
-        /// to retrieve the next set of results.
-        /// </p>
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk
-        /// returns a pagination token in the response. You can use this pagination token
-        /// to retrieve the next set of results.
-        /// </p>
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -832,29 +736,19 @@ impl ListReviewPolicyResultsForHitOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListReviewableHiTsOutput {
-    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk
-    /// returns a pagination token in the response. You can use this pagination token
-    /// to retrieve the next set of results.
-    /// </p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p> The number of HITs on this page in the filtered results
-    /// list, equivalent to the number of HITs being returned by this call.
-    /// </p>
+    /// <p> The number of HITs on this page in the filtered results list, equivalent to the number of HITs being returned by this call. </p>
     pub num_results: std::option::Option<i32>,
     /// <p> The list of HIT elements returned by the query.</p>
     pub hi_ts: std::option::Option<std::vec::Vec<crate::model::Hit>>,
 }
 impl ListReviewableHiTsOutput {
-    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk
-    /// returns a pagination token in the response. You can use this pagination token
-    /// to retrieve the next set of results.
-    /// </p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p> The number of HITs on this page in the filtered results
-    /// list, equivalent to the number of HITs being returned by this call.
-    /// </p>
+    /// <p> The number of HITs on this page in the filtered results list, equivalent to the number of HITs being returned by this call. </p>
     pub fn num_results(&self) -> std::option::Option<i32> {
         self.num_results
     }
@@ -883,32 +777,22 @@ pub mod list_reviewable_hi_ts_output {
         pub(crate) hi_ts: std::option::Option<std::vec::Vec<crate::model::Hit>>,
     }
     impl Builder {
-        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk
-        /// returns a pagination token in the response. You can use this pagination token
-        /// to retrieve the next set of results.
-        /// </p>
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk
-        /// returns a pagination token in the response. You can use this pagination token
-        /// to retrieve the next set of results.
-        /// </p>
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p> The number of HITs on this page in the filtered results
-        /// list, equivalent to the number of HITs being returned by this call.
-        /// </p>
+        /// <p> The number of HITs on this page in the filtered results list, equivalent to the number of HITs being returned by this call. </p>
         pub fn num_results(mut self, input: i32) -> Self {
             self.num_results = Some(input);
             self
         }
-        /// <p> The number of HITs on this page in the filtered results
-        /// list, equivalent to the number of HITs being returned by this call.
-        /// </p>
+        /// <p> The number of HITs on this page in the filtered results list, equivalent to the number of HITs being returned by this call. </p>
         pub fn set_num_results(mut self, input: std::option::Option<i32>) -> Self {
             self.num_results = input;
             self
@@ -953,39 +837,23 @@ impl ListReviewableHiTsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListQualificationTypesOutput {
-    /// <p> The number of Qualification types on this page in the
-    /// filtered results list, equivalent to the number of types this
-    /// operation returns.
-    /// </p>
+    /// <p> The number of Qualification types on this page in the filtered results list, equivalent to the number of types this operation returns. </p>
     pub num_results: std::option::Option<i32>,
-    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk
-    /// returns a pagination token in the response. You can use this pagination token
-    /// to retrieve the next set of results.
-    /// </p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p> The list of QualificationType elements returned by the
-    /// query.
-    /// </p>
+    /// <p> The list of QualificationType elements returned by the query. </p>
     pub qualification_types: std::option::Option<std::vec::Vec<crate::model::QualificationType>>,
 }
 impl ListQualificationTypesOutput {
-    /// <p> The number of Qualification types on this page in the
-    /// filtered results list, equivalent to the number of types this
-    /// operation returns.
-    /// </p>
+    /// <p> The number of Qualification types on this page in the filtered results list, equivalent to the number of types this operation returns. </p>
     pub fn num_results(&self) -> std::option::Option<i32> {
         self.num_results
     }
-    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk
-    /// returns a pagination token in the response. You can use this pagination token
-    /// to retrieve the next set of results.
-    /// </p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p> The list of QualificationType elements returned by the
-    /// query.
-    /// </p>
+    /// <p> The list of QualificationType elements returned by the query. </p>
     pub fn qualification_types(&self) -> std::option::Option<&[crate::model::QualificationType]> {
         self.qualification_types.as_deref()
     }
@@ -1011,34 +879,22 @@ pub mod list_qualification_types_output {
             std::option::Option<std::vec::Vec<crate::model::QualificationType>>,
     }
     impl Builder {
-        /// <p> The number of Qualification types on this page in the
-        /// filtered results list, equivalent to the number of types this
-        /// operation returns.
-        /// </p>
+        /// <p> The number of Qualification types on this page in the filtered results list, equivalent to the number of types this operation returns. </p>
         pub fn num_results(mut self, input: i32) -> Self {
             self.num_results = Some(input);
             self
         }
-        /// <p> The number of Qualification types on this page in the
-        /// filtered results list, equivalent to the number of types this
-        /// operation returns.
-        /// </p>
+        /// <p> The number of Qualification types on this page in the filtered results list, equivalent to the number of types this operation returns. </p>
         pub fn set_num_results(mut self, input: std::option::Option<i32>) -> Self {
             self.num_results = input;
             self
         }
-        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk
-        /// returns a pagination token in the response. You can use this pagination token
-        /// to retrieve the next set of results.
-        /// </p>
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk
-        /// returns a pagination token in the response. You can use this pagination token
-        /// to retrieve the next set of results.
-        /// </p>
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1047,18 +903,14 @@ pub mod list_qualification_types_output {
         ///
         /// To override the contents of this collection use [`set_qualification_types`](Self::set_qualification_types).
         ///
-        /// <p> The list of QualificationType elements returned by the
-        /// query.
-        /// </p>
+        /// <p> The list of QualificationType elements returned by the query. </p>
         pub fn qualification_types(mut self, input: crate::model::QualificationType) -> Self {
             let mut v = self.qualification_types.unwrap_or_default();
             v.push(input);
             self.qualification_types = Some(v);
             self
         }
-        /// <p> The list of QualificationType elements returned by the
-        /// query.
-        /// </p>
+        /// <p> The list of QualificationType elements returned by the query. </p>
         pub fn set_qualification_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::QualificationType>>,
@@ -1087,38 +939,24 @@ impl ListQualificationTypesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListQualificationRequestsOutput {
-    /// <p>The number of Qualification requests on this page in the filtered results list,
-    /// equivalent to the number of Qualification requests being returned by this call.</p>
+    /// <p>The number of Qualification requests on this page in the filtered results list, equivalent to the number of Qualification requests being returned by this call.</p>
     pub num_results: std::option::Option<i32>,
-    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk
-    /// returns a pagination token in the response. You can use this pagination token
-    /// to retrieve the next set of results.
-    /// </p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The Qualification request. The response includes one
-    /// QualificationRequest element
-    /// for each Qualification request returned
-    /// by the query.</p>
+    /// <p>The Qualification request. The response includes one QualificationRequest element for each Qualification request returned by the query.</p>
     pub qualification_requests:
         std::option::Option<std::vec::Vec<crate::model::QualificationRequest>>,
 }
 impl ListQualificationRequestsOutput {
-    /// <p>The number of Qualification requests on this page in the filtered results list,
-    /// equivalent to the number of Qualification requests being returned by this call.</p>
+    /// <p>The number of Qualification requests on this page in the filtered results list, equivalent to the number of Qualification requests being returned by this call.</p>
     pub fn num_results(&self) -> std::option::Option<i32> {
         self.num_results
     }
-    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk
-    /// returns a pagination token in the response. You can use this pagination token
-    /// to retrieve the next set of results.
-    /// </p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The Qualification request. The response includes one
-    /// QualificationRequest element
-    /// for each Qualification request returned
-    /// by the query.</p>
+    /// <p>The Qualification request. The response includes one QualificationRequest element for each Qualification request returned by the query.</p>
     pub fn qualification_requests(
         &self,
     ) -> std::option::Option<&[crate::model::QualificationRequest]> {
@@ -1146,30 +984,22 @@ pub mod list_qualification_requests_output {
             std::option::Option<std::vec::Vec<crate::model::QualificationRequest>>,
     }
     impl Builder {
-        /// <p>The number of Qualification requests on this page in the filtered results list,
-        /// equivalent to the number of Qualification requests being returned by this call.</p>
+        /// <p>The number of Qualification requests on this page in the filtered results list, equivalent to the number of Qualification requests being returned by this call.</p>
         pub fn num_results(mut self, input: i32) -> Self {
             self.num_results = Some(input);
             self
         }
-        /// <p>The number of Qualification requests on this page in the filtered results list,
-        /// equivalent to the number of Qualification requests being returned by this call.</p>
+        /// <p>The number of Qualification requests on this page in the filtered results list, equivalent to the number of Qualification requests being returned by this call.</p>
         pub fn set_num_results(mut self, input: std::option::Option<i32>) -> Self {
             self.num_results = input;
             self
         }
-        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk
-        /// returns a pagination token in the response. You can use this pagination token
-        /// to retrieve the next set of results.
-        /// </p>
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk
-        /// returns a pagination token in the response. You can use this pagination token
-        /// to retrieve the next set of results.
-        /// </p>
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1178,20 +1008,14 @@ pub mod list_qualification_requests_output {
         ///
         /// To override the contents of this collection use [`set_qualification_requests`](Self::set_qualification_requests).
         ///
-        /// <p>The Qualification request. The response includes one
-        /// QualificationRequest element
-        /// for each Qualification request returned
-        /// by the query.</p>
+        /// <p>The Qualification request. The response includes one QualificationRequest element for each Qualification request returned by the query.</p>
         pub fn qualification_requests(mut self, input: crate::model::QualificationRequest) -> Self {
             let mut v = self.qualification_requests.unwrap_or_default();
             v.push(input);
             self.qualification_requests = Some(v);
             self
         }
-        /// <p>The Qualification request. The response includes one
-        /// QualificationRequest element
-        /// for each Qualification request returned
-        /// by the query.</p>
+        /// <p>The Qualification request. The response includes one QualificationRequest element for each Qualification request returned by the query.</p>
         pub fn set_qualification_requests(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::QualificationRequest>>,
@@ -1220,27 +1044,19 @@ impl ListQualificationRequestsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListHiTsForQualificationTypeOutput {
-    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk
-    /// returns a pagination token in the response. You can use this pagination token
-    /// to retrieve the next set of results.
-    /// </p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p> The number of HITs on this page in the filtered results
-    /// list, equivalent to the number of HITs being returned by this call.  </p>
+    /// <p> The number of HITs on this page in the filtered results list, equivalent to the number of HITs being returned by this call. </p>
     pub num_results: std::option::Option<i32>,
     /// <p> The list of HIT elements returned by the query.</p>
     pub hi_ts: std::option::Option<std::vec::Vec<crate::model::Hit>>,
 }
 impl ListHiTsForQualificationTypeOutput {
-    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk
-    /// returns a pagination token in the response. You can use this pagination token
-    /// to retrieve the next set of results.
-    /// </p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p> The number of HITs on this page in the filtered results
-    /// list, equivalent to the number of HITs being returned by this call.  </p>
+    /// <p> The number of HITs on this page in the filtered results list, equivalent to the number of HITs being returned by this call. </p>
     pub fn num_results(&self) -> std::option::Option<i32> {
         self.num_results
     }
@@ -1269,30 +1085,22 @@ pub mod list_hi_ts_for_qualification_type_output {
         pub(crate) hi_ts: std::option::Option<std::vec::Vec<crate::model::Hit>>,
     }
     impl Builder {
-        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk
-        /// returns a pagination token in the response. You can use this pagination token
-        /// to retrieve the next set of results.
-        /// </p>
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk
-        /// returns a pagination token in the response. You can use this pagination token
-        /// to retrieve the next set of results.
-        /// </p>
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p> The number of HITs on this page in the filtered results
-        /// list, equivalent to the number of HITs being returned by this call.  </p>
+        /// <p> The number of HITs on this page in the filtered results list, equivalent to the number of HITs being returned by this call. </p>
         pub fn num_results(mut self, input: i32) -> Self {
             self.num_results = Some(input);
             self
         }
-        /// <p> The number of HITs on this page in the filtered results
-        /// list, equivalent to the number of HITs being returned by this call.  </p>
+        /// <p> The number of HITs on this page in the filtered results list, equivalent to the number of HITs being returned by this call. </p>
         pub fn set_num_results(mut self, input: std::option::Option<i32>) -> Self {
             self.num_results = input;
             self
@@ -1337,27 +1145,19 @@ impl ListHiTsForQualificationTypeOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListHiTsOutput {
-    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk
-    /// returns a pagination token in the response. You can use this pagination token
-    /// to retrieve the next set of results.
-    /// </p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The number of HITs on this page in the filtered results list,
-    /// equivalent to the number of HITs being returned by this call.</p>
+    /// <p>The number of HITs on this page in the filtered results list, equivalent to the number of HITs being returned by this call.</p>
     pub num_results: std::option::Option<i32>,
     /// <p> The list of HIT elements returned by the query.</p>
     pub hi_ts: std::option::Option<std::vec::Vec<crate::model::Hit>>,
 }
 impl ListHiTsOutput {
-    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk
-    /// returns a pagination token in the response. You can use this pagination token
-    /// to retrieve the next set of results.
-    /// </p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The number of HITs on this page in the filtered results list,
-    /// equivalent to the number of HITs being returned by this call.</p>
+    /// <p>The number of HITs on this page in the filtered results list, equivalent to the number of HITs being returned by this call.</p>
     pub fn num_results(&self) -> std::option::Option<i32> {
         self.num_results
     }
@@ -1386,30 +1186,22 @@ pub mod list_hi_ts_output {
         pub(crate) hi_ts: std::option::Option<std::vec::Vec<crate::model::Hit>>,
     }
     impl Builder {
-        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk
-        /// returns a pagination token in the response. You can use this pagination token
-        /// to retrieve the next set of results.
-        /// </p>
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk
-        /// returns a pagination token in the response. You can use this pagination token
-        /// to retrieve the next set of results.
-        /// </p>
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The number of HITs on this page in the filtered results list,
-        /// equivalent to the number of HITs being returned by this call.</p>
+        /// <p>The number of HITs on this page in the filtered results list, equivalent to the number of HITs being returned by this call.</p>
         pub fn num_results(mut self, input: i32) -> Self {
             self.num_results = Some(input);
             self
         }
-        /// <p>The number of HITs on this page in the filtered results list,
-        /// equivalent to the number of HITs being returned by this call.</p>
+        /// <p>The number of HITs on this page in the filtered results list, equivalent to the number of HITs being returned by this call.</p>
         pub fn set_num_results(mut self, input: std::option::Option<i32>) -> Self {
             self.num_results = input;
             self
@@ -1454,39 +1246,23 @@ impl ListHiTsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBonusPaymentsOutput {
-    /// <p>The number of bonus payments on this page in the filtered
-    /// results list, equivalent to the number of bonus payments being
-    /// returned by this call.
-    /// </p>
+    /// <p>The number of bonus payments on this page in the filtered results list, equivalent to the number of bonus payments being returned by this call. </p>
     pub num_results: std::option::Option<i32>,
-    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk
-    /// returns a pagination token in the response. You can use this pagination token
-    /// to retrieve the next set of results.
-    /// </p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>A successful request to the ListBonusPayments operation
-    /// returns a list of BonusPayment objects.
-    /// </p>
+    /// <p>A successful request to the ListBonusPayments operation returns a list of BonusPayment objects. </p>
     pub bonus_payments: std::option::Option<std::vec::Vec<crate::model::BonusPayment>>,
 }
 impl ListBonusPaymentsOutput {
-    /// <p>The number of bonus payments on this page in the filtered
-    /// results list, equivalent to the number of bonus payments being
-    /// returned by this call.
-    /// </p>
+    /// <p>The number of bonus payments on this page in the filtered results list, equivalent to the number of bonus payments being returned by this call. </p>
     pub fn num_results(&self) -> std::option::Option<i32> {
         self.num_results
     }
-    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk
-    /// returns a pagination token in the response. You can use this pagination token
-    /// to retrieve the next set of results.
-    /// </p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>A successful request to the ListBonusPayments operation
-    /// returns a list of BonusPayment objects.
-    /// </p>
+    /// <p>A successful request to the ListBonusPayments operation returns a list of BonusPayment objects. </p>
     pub fn bonus_payments(&self) -> std::option::Option<&[crate::model::BonusPayment]> {
         self.bonus_payments.as_deref()
     }
@@ -1511,34 +1287,22 @@ pub mod list_bonus_payments_output {
         pub(crate) bonus_payments: std::option::Option<std::vec::Vec<crate::model::BonusPayment>>,
     }
     impl Builder {
-        /// <p>The number of bonus payments on this page in the filtered
-        /// results list, equivalent to the number of bonus payments being
-        /// returned by this call.
-        /// </p>
+        /// <p>The number of bonus payments on this page in the filtered results list, equivalent to the number of bonus payments being returned by this call. </p>
         pub fn num_results(mut self, input: i32) -> Self {
             self.num_results = Some(input);
             self
         }
-        /// <p>The number of bonus payments on this page in the filtered
-        /// results list, equivalent to the number of bonus payments being
-        /// returned by this call.
-        /// </p>
+        /// <p>The number of bonus payments on this page in the filtered results list, equivalent to the number of bonus payments being returned by this call. </p>
         pub fn set_num_results(mut self, input: std::option::Option<i32>) -> Self {
             self.num_results = input;
             self
         }
-        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk
-        /// returns a pagination token in the response. You can use this pagination token
-        /// to retrieve the next set of results.
-        /// </p>
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk
-        /// returns a pagination token in the response. You can use this pagination token
-        /// to retrieve the next set of results.
-        /// </p>
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1547,18 +1311,14 @@ pub mod list_bonus_payments_output {
         ///
         /// To override the contents of this collection use [`set_bonus_payments`](Self::set_bonus_payments).
         ///
-        /// <p>A successful request to the ListBonusPayments operation
-        /// returns a list of BonusPayment objects.
-        /// </p>
+        /// <p>A successful request to the ListBonusPayments operation returns a list of BonusPayment objects. </p>
         pub fn bonus_payments(mut self, input: crate::model::BonusPayment) -> Self {
             let mut v = self.bonus_payments.unwrap_or_default();
             v.push(input);
             self.bonus_payments = Some(v);
             self
         }
-        /// <p>A successful request to the ListBonusPayments operation
-        /// returns a list of BonusPayment objects.
-        /// </p>
+        /// <p>A successful request to the ListBonusPayments operation returns a list of BonusPayment objects. </p>
         pub fn set_bonus_payments(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BonusPayment>>,
@@ -1587,35 +1347,23 @@ impl ListBonusPaymentsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssignmentsForHitOutput {
-    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk
-    /// returns a pagination token in the response. You can use this pagination token
-    /// to retrieve the next set of results.
-    /// </p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p> The number of assignments on the page in the filtered
-    /// results list, equivalent to the number of assignments returned by
-    /// this call.</p>
+    /// <p> The number of assignments on the page in the filtered results list, equivalent to the number of assignments returned by this call.</p>
     pub num_results: std::option::Option<i32>,
-    /// <p> The collection of Assignment data structures returned by
-    /// this call.</p>
+    /// <p> The collection of Assignment data structures returned by this call.</p>
     pub assignments: std::option::Option<std::vec::Vec<crate::model::Assignment>>,
 }
 impl ListAssignmentsForHitOutput {
-    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk
-    /// returns a pagination token in the response. You can use this pagination token
-    /// to retrieve the next set of results.
-    /// </p>
+    /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p> The number of assignments on the page in the filtered
-    /// results list, equivalent to the number of assignments returned by
-    /// this call.</p>
+    /// <p> The number of assignments on the page in the filtered results list, equivalent to the number of assignments returned by this call.</p>
     pub fn num_results(&self) -> std::option::Option<i32> {
         self.num_results
     }
-    /// <p> The collection of Assignment data structures returned by
-    /// this call.</p>
+    /// <p> The collection of Assignment data structures returned by this call.</p>
     pub fn assignments(&self) -> std::option::Option<&[crate::model::Assignment]> {
         self.assignments.as_deref()
     }
@@ -1640,32 +1388,22 @@ pub mod list_assignments_for_hit_output {
         pub(crate) assignments: std::option::Option<std::vec::Vec<crate::model::Assignment>>,
     }
     impl Builder {
-        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk
-        /// returns a pagination token in the response. You can use this pagination token
-        /// to retrieve the next set of results.
-        /// </p>
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk
-        /// returns a pagination token in the response. You can use this pagination token
-        /// to retrieve the next set of results.
-        /// </p>
+        /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p> The number of assignments on the page in the filtered
-        /// results list, equivalent to the number of assignments returned by
-        /// this call.</p>
+        /// <p> The number of assignments on the page in the filtered results list, equivalent to the number of assignments returned by this call.</p>
         pub fn num_results(mut self, input: i32) -> Self {
             self.num_results = Some(input);
             self
         }
-        /// <p> The number of assignments on the page in the filtered
-        /// results list, equivalent to the number of assignments returned by
-        /// this call.</p>
+        /// <p> The number of assignments on the page in the filtered results list, equivalent to the number of assignments returned by this call.</p>
         pub fn set_num_results(mut self, input: std::option::Option<i32>) -> Self {
             self.num_results = input;
             self
@@ -1674,16 +1412,14 @@ pub mod list_assignments_for_hit_output {
         ///
         /// To override the contents of this collection use [`set_assignments`](Self::set_assignments).
         ///
-        /// <p> The collection of Assignment data structures returned by
-        /// this call.</p>
+        /// <p> The collection of Assignment data structures returned by this call.</p>
         pub fn assignments(mut self, input: crate::model::Assignment) -> Self {
             let mut v = self.assignments.unwrap_or_default();
             v.push(input);
             self.assignments = Some(v);
             self
         }
-        /// <p> The collection of Assignment data structures returned by
-        /// this call.</p>
+        /// <p> The collection of Assignment data structures returned by this call.</p>
         pub fn set_assignments(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Assignment>>,
@@ -1769,17 +1505,11 @@ impl GetQualificationTypeOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetQualificationScoreOutput {
-    /// <p> The Qualification data structure of the Qualification
-    /// assigned to a user, including the Qualification type and the value
-    /// (score).
-    /// </p>
+    /// <p> The Qualification data structure of the Qualification assigned to a user, including the Qualification type and the value (score). </p>
     pub qualification: std::option::Option<crate::model::Qualification>,
 }
 impl GetQualificationScoreOutput {
-    /// <p> The Qualification data structure of the Qualification
-    /// assigned to a user, including the Qualification type and the value
-    /// (score).
-    /// </p>
+    /// <p> The Qualification data structure of the Qualification assigned to a user, including the Qualification type and the value (score). </p>
     pub fn qualification(&self) -> std::option::Option<&crate::model::Qualification> {
         self.qualification.as_ref()
     }
@@ -1800,18 +1530,12 @@ pub mod get_qualification_score_output {
         pub(crate) qualification: std::option::Option<crate::model::Qualification>,
     }
     impl Builder {
-        /// <p> The Qualification data structure of the Qualification
-        /// assigned to a user, including the Qualification type and the value
-        /// (score).
-        /// </p>
+        /// <p> The Qualification data structure of the Qualification assigned to a user, including the Qualification type and the value (score). </p>
         pub fn qualification(mut self, input: crate::model::Qualification) -> Self {
             self.qualification = Some(input);
             self
         }
-        /// <p> The Qualification data structure of the Qualification
-        /// assigned to a user, including the Qualification type and the value
-        /// (score).
-        /// </p>
+        /// <p> The Qualification data structure of the Qualification assigned to a user, including the Qualification type and the value (score). </p>
         pub fn set_qualification(
             mut self,
             input: std::option::Option<crate::model::Qualification>,
@@ -1890,15 +1614,11 @@ impl GetHitOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFileUploadUrlOutput {
-    /// <p> A temporary URL for the file that the Worker uploaded for
-    /// the answer.
-    /// </p>
+    /// <p> A temporary URL for the file that the Worker uploaded for the answer. </p>
     pub file_upload_url: std::option::Option<std::string::String>,
 }
 impl GetFileUploadUrlOutput {
-    /// <p> A temporary URL for the file that the Worker uploaded for
-    /// the answer.
-    /// </p>
+    /// <p> A temporary URL for the file that the Worker uploaded for the answer. </p>
     pub fn file_upload_url(&self) -> std::option::Option<&str> {
         self.file_upload_url.as_deref()
     }
@@ -1919,16 +1639,12 @@ pub mod get_file_upload_url_output {
         pub(crate) file_upload_url: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> A temporary URL for the file that the Worker uploaded for
-        /// the answer.
-        /// </p>
+        /// <p> A temporary URL for the file that the Worker uploaded for the answer. </p>
         pub fn file_upload_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.file_upload_url = Some(input.into());
             self
         }
-        /// <p> A temporary URL for the file that the Worker uploaded for
-        /// the answer.
-        /// </p>
+        /// <p> A temporary URL for the file that the Worker uploaded for the answer. </p>
         pub fn set_file_upload_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1955,23 +1671,17 @@ impl GetFileUploadUrlOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAssignmentOutput {
-    /// <p> The assignment. The response includes one Assignment
-    /// element.
-    /// </p>
+    /// <p> The assignment. The response includes one Assignment element. </p>
     pub assignment: std::option::Option<crate::model::Assignment>,
-    /// <p> The HIT associated with this assignment. The response
-    /// includes one HIT element.</p>
+    /// <p> The HIT associated with this assignment. The response includes one HIT element.</p>
     pub hit: std::option::Option<crate::model::Hit>,
 }
 impl GetAssignmentOutput {
-    /// <p> The assignment. The response includes one Assignment
-    /// element.
-    /// </p>
+    /// <p> The assignment. The response includes one Assignment element. </p>
     pub fn assignment(&self) -> std::option::Option<&crate::model::Assignment> {
         self.assignment.as_ref()
     }
-    /// <p> The HIT associated with this assignment. The response
-    /// includes one HIT element.</p>
+    /// <p> The HIT associated with this assignment. The response includes one HIT element.</p>
     pub fn hit(&self) -> std::option::Option<&crate::model::Hit> {
         self.hit.as_ref()
     }
@@ -1994,16 +1704,12 @@ pub mod get_assignment_output {
         pub(crate) hit: std::option::Option<crate::model::Hit>,
     }
     impl Builder {
-        /// <p> The assignment. The response includes one Assignment
-        /// element.
-        /// </p>
+        /// <p> The assignment. The response includes one Assignment element. </p>
         pub fn assignment(mut self, input: crate::model::Assignment) -> Self {
             self.assignment = Some(input);
             self
         }
-        /// <p> The assignment. The response includes one Assignment
-        /// element.
-        /// </p>
+        /// <p> The assignment. The response includes one Assignment element. </p>
         pub fn set_assignment(
             mut self,
             input: std::option::Option<crate::model::Assignment>,
@@ -2011,14 +1717,12 @@ pub mod get_assignment_output {
             self.assignment = input;
             self
         }
-        /// <p> The HIT associated with this assignment. The response
-        /// includes one HIT element.</p>
+        /// <p> The HIT associated with this assignment. The response includes one HIT element.</p>
         pub fn hit(mut self, input: crate::model::Hit) -> Self {
             self.hit = Some(input);
             self
         }
-        /// <p> The HIT associated with this assignment. The response
-        /// includes one HIT element.</p>
+        /// <p> The HIT associated with this assignment. The response includes one HIT element.</p>
         pub fn set_hit(mut self, input: std::option::Option<crate::model::Hit>) -> Self {
             self.hit = input;
             self
@@ -2272,13 +1976,11 @@ impl CreateWorkerBlockOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateQualificationTypeOutput {
-    /// <p>The created Qualification type, returned as a
-    /// QualificationType data structure.</p>
+    /// <p>The created Qualification type, returned as a QualificationType data structure.</p>
     pub qualification_type: std::option::Option<crate::model::QualificationType>,
 }
 impl CreateQualificationTypeOutput {
-    /// <p>The created Qualification type, returned as a
-    /// QualificationType data structure.</p>
+    /// <p>The created Qualification type, returned as a QualificationType data structure.</p>
     pub fn qualification_type(&self) -> std::option::Option<&crate::model::QualificationType> {
         self.qualification_type.as_ref()
     }
@@ -2299,14 +2001,12 @@ pub mod create_qualification_type_output {
         pub(crate) qualification_type: std::option::Option<crate::model::QualificationType>,
     }
     impl Builder {
-        /// <p>The created Qualification type, returned as a
-        /// QualificationType data structure.</p>
+        /// <p>The created Qualification type, returned as a QualificationType data structure.</p>
         pub fn qualification_type(mut self, input: crate::model::QualificationType) -> Self {
             self.qualification_type = Some(input);
             self
         }
-        /// <p>The created Qualification type, returned as a
-        /// QualificationType data structure.</p>
+        /// <p>The created Qualification type, returned as a QualificationType data structure.</p>
         pub fn set_qualification_type(
             mut self,
             input: std::option::Option<crate::model::QualificationType>,
@@ -2333,17 +2033,11 @@ impl CreateQualificationTypeOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateHitWithHitTypeOutput {
-    /// <p> Contains the newly created HIT data. For a description of
-    /// the HIT data structure as it appears in responses, see the HIT Data
-    /// Structure documentation.
-    /// </p>
+    /// <p> Contains the newly created HIT data. For a description of the HIT data structure as it appears in responses, see the HIT Data Structure documentation. </p>
     pub hit: std::option::Option<crate::model::Hit>,
 }
 impl CreateHitWithHitTypeOutput {
-    /// <p> Contains the newly created HIT data. For a description of
-    /// the HIT data structure as it appears in responses, see the HIT Data
-    /// Structure documentation.
-    /// </p>
+    /// <p> Contains the newly created HIT data. For a description of the HIT data structure as it appears in responses, see the HIT Data Structure documentation. </p>
     pub fn hit(&self) -> std::option::Option<&crate::model::Hit> {
         self.hit.as_ref()
     }
@@ -2364,18 +2058,12 @@ pub mod create_hit_with_hit_type_output {
         pub(crate) hit: std::option::Option<crate::model::Hit>,
     }
     impl Builder {
-        /// <p> Contains the newly created HIT data. For a description of
-        /// the HIT data structure as it appears in responses, see the HIT Data
-        /// Structure documentation.
-        /// </p>
+        /// <p> Contains the newly created HIT data. For a description of the HIT data structure as it appears in responses, see the HIT Data Structure documentation. </p>
         pub fn hit(mut self, input: crate::model::Hit) -> Self {
             self.hit = Some(input);
             self
         }
-        /// <p> Contains the newly created HIT data. For a description of
-        /// the HIT data structure as it appears in responses, see the HIT Data
-        /// Structure documentation.
-        /// </p>
+        /// <p> Contains the newly created HIT data. For a description of the HIT data structure as it appears in responses, see the HIT Data Structure documentation. </p>
         pub fn set_hit(mut self, input: std::option::Option<crate::model::Hit>) -> Self {
             self.hit = input;
             self
@@ -2451,17 +2139,11 @@ impl CreateHitTypeOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateHitOutput {
-    /// <p> Contains the newly created HIT data. For a description of
-    /// the HIT data structure as it appears in responses, see the HIT Data
-    /// Structure documentation.
-    /// </p>
+    /// <p> Contains the newly created HIT data. For a description of the HIT data structure as it appears in responses, see the HIT Data Structure documentation. </p>
     pub hit: std::option::Option<crate::model::Hit>,
 }
 impl CreateHitOutput {
-    /// <p> Contains the newly created HIT data. For a description of
-    /// the HIT data structure as it appears in responses, see the HIT Data
-    /// Structure documentation.
-    /// </p>
+    /// <p> Contains the newly created HIT data. For a description of the HIT data structure as it appears in responses, see the HIT Data Structure documentation. </p>
     pub fn hit(&self) -> std::option::Option<&crate::model::Hit> {
         self.hit.as_ref()
     }
@@ -2482,18 +2164,12 @@ pub mod create_hit_output {
         pub(crate) hit: std::option::Option<crate::model::Hit>,
     }
     impl Builder {
-        /// <p> Contains the newly created HIT data. For a description of
-        /// the HIT data structure as it appears in responses, see the HIT Data
-        /// Structure documentation.
-        /// </p>
+        /// <p> Contains the newly created HIT data. For a description of the HIT data structure as it appears in responses, see the HIT Data Structure documentation. </p>
         pub fn hit(mut self, input: crate::model::Hit) -> Self {
             self.hit = Some(input);
             self
         }
-        /// <p> Contains the newly created HIT data. For a description of
-        /// the HIT data structure as it appears in responses, see the HIT Data
-        /// Structure documentation.
-        /// </p>
+        /// <p> Contains the newly created HIT data. For a description of the HIT data structure as it appears in responses, see the HIT Data Structure documentation. </p>
         pub fn set_hit(mut self, input: std::option::Option<crate::model::Hit>) -> Self {
             self.hit = input;
             self

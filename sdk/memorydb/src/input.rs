@@ -217,24 +217,12 @@ pub mod copy_snapshot_input {
             self.target_snapshot_name = input;
             self
         }
-        /// <p>The Amazon S3 bucket to which the snapshot is exported. This parameter is used only when exporting a snapshot for external access.
-        ///
-        /// When using this parameter to export a snapshot, be sure MemoryDB has the needed permissions to this S3 bucket. For more information, see
-        ///
-        /// <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/snapshots-exporting.html">Step 2: Grant MemoryDB Access to Your Amazon S3 Bucket</a>.
-        ///
-        /// </p>
+        /// <p>The Amazon S3 bucket to which the snapshot is exported. This parameter is used only when exporting a snapshot for external access. When using this parameter to export a snapshot, be sure MemoryDB has the needed permissions to this S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/snapshots-exporting.html">Step 2: Grant MemoryDB Access to Your Amazon S3 Bucket</a>. </p>
         pub fn target_bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.target_bucket = Some(input.into());
             self
         }
-        /// <p>The Amazon S3 bucket to which the snapshot is exported. This parameter is used only when exporting a snapshot for external access.
-        ///
-        /// When using this parameter to export a snapshot, be sure MemoryDB has the needed permissions to this S3 bucket. For more information, see
-        ///
-        /// <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/snapshots-exporting.html">Step 2: Grant MemoryDB Access to Your Amazon S3 Bucket</a>.
-        ///
-        /// </p>
+        /// <p>The Amazon S3 bucket to which the snapshot is exported. This parameter is used only when exporting a snapshot for external access. When using this parameter to export a snapshot, be sure MemoryDB has the needed permissions to this S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/snapshots-exporting.html">Step 2: Grant MemoryDB Access to Your Amazon S3 Bucket</a>. </p>
         pub fn set_target_bucket(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -842,19 +830,15 @@ pub mod create_cluster_input {
             self
         }
         /// <p>The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your shard.</p>
-        ///
-        /// <p>    Example: 05:00-09:00</p>
-        ///
-        /// <p>    If you do not specify this parameter, MemoryDB automatically chooses an appropriate time range.</p>
+        /// <p> Example: 05:00-09:00</p>
+        /// <p> If you do not specify this parameter, MemoryDB automatically chooses an appropriate time range.</p>
         pub fn snapshot_window(mut self, input: impl Into<std::string::String>) -> Self {
             self.snapshot_window = Some(input.into());
             self
         }
         /// <p>The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your shard.</p>
-        ///
-        /// <p>    Example: 05:00-09:00</p>
-        ///
-        /// <p>    If you do not specify this parameter, MemoryDB automatically chooses an appropriate time range.</p>
+        /// <p> Example: 05:00-09:00</p>
+        /// <p> If you do not specify this parameter, MemoryDB automatically chooses an appropriate time range.</p>
         pub fn set_snapshot_window(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3428,16 +3412,12 @@ pub mod describe_events_input {
             self.source_type = input;
             self
         }
-        /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format.
-        ///
-        /// Example: 2017-03-30T07:03:49.555Z</p>
+        /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format. Example: 2017-03-30T07:03:49.555Z</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format.
-        ///
-        /// Example: 2017-03-30T07:03:49.555Z</p>
+        /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format. Example: 2017-03-30T07:03:49.555Z</p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -3445,16 +3425,12 @@ pub mod describe_events_input {
             self.start_time = input;
             self
         }
-        /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format.
-        ///
-        /// Example: 2017-03-30T07:03:49.555Z</p>
+        /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format. Example: 2017-03-30T07:03:49.555Z</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
-        /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format.
-        ///
-        /// Example: 2017-03-30T07:03:49.555Z</p>
+        /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format. Example: 2017-03-30T07:03:49.555Z</p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -3644,12 +3620,12 @@ pub mod describe_parameter_groups_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of a specific  parameter group to return details for.</p>
+        /// <p>The name of a specific parameter group to return details for.</p>
         pub fn parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.parameter_group_name = Some(input.into());
             self
         }
-        /// <p>The name of a specific  parameter group to return details for.</p>
+        /// <p>The name of a specific parameter group to return details for.</p>
         pub fn set_parameter_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3828,12 +3804,12 @@ pub mod describe_parameters_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>he name of a specific  parameter group to return details for.</p>
+        /// <p>he name of a specific parameter group to return details for.</p>
         pub fn parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.parameter_group_name = Some(input.into());
             self
         }
-        /// <p>he name of a specific  parameter group to return details for.</p>
+        /// <p>he name of a specific parameter group to return details for.</p>
         pub fn set_parameter_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4995,14 +4971,12 @@ pub mod list_allowed_node_type_updates_input {
         pub(crate) cluster_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the cluster you want to scale. MemoryDB uses the cluster name to identify the current node type being used by this cluster, and from that to create a list of node types
-        /// you can scale up to.</p>
+        /// <p>The name of the cluster you want to scale. MemoryDB uses the cluster name to identify the current node type being used by this cluster, and from that to create a list of node types you can scale up to.</p>
         pub fn cluster_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.cluster_name = Some(input.into());
             self
         }
-        /// <p>The name of the cluster you want to scale. MemoryDB uses the cluster name to identify the current node type being used by this cluster, and from that to create a list of node types
-        /// you can scale up to.</p>
+        /// <p>The name of the cluster you want to scale. MemoryDB uses the cluster name to identify the current node type being used by this cluster, and from that to create a list of node types you can scale up to.</p>
         pub fn set_cluster_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_name = input;
             self
@@ -7292,13 +7266,11 @@ impl std::fmt::Debug for ListTagsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAllowedNodeTypeUpdatesInput {
-    /// <p>The name of the cluster you want to scale. MemoryDB uses the cluster name to identify the current node type being used by this cluster, and from that to create a list of node types
-    /// you can scale up to.</p>
+    /// <p>The name of the cluster you want to scale. MemoryDB uses the cluster name to identify the current node type being used by this cluster, and from that to create a list of node types you can scale up to.</p>
     pub cluster_name: std::option::Option<std::string::String>,
 }
 impl ListAllowedNodeTypeUpdatesInput {
-    /// <p>The name of the cluster you want to scale. MemoryDB uses the cluster name to identify the current node type being used by this cluster, and from that to create a list of node types
-    /// you can scale up to.</p>
+    /// <p>The name of the cluster you want to scale. MemoryDB uses the cluster name to identify the current node type being used by this cluster, and from that to create a list of node types you can scale up to.</p>
     pub fn cluster_name(&self) -> std::option::Option<&str> {
         self.cluster_name.as_deref()
     }
@@ -7525,7 +7497,7 @@ impl std::fmt::Debug for DescribeServiceUpdatesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeParametersInput {
-    /// <p>he name of a specific  parameter group to return details for.</p>
+    /// <p>he name of a specific parameter group to return details for.</p>
     pub parameter_group_name: std::option::Option<std::string::String>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub max_results: std::option::Option<i32>,
@@ -7533,7 +7505,7 @@ pub struct DescribeParametersInput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeParametersInput {
-    /// <p>he name of a specific  parameter group to return details for.</p>
+    /// <p>he name of a specific parameter group to return details for.</p>
     pub fn parameter_group_name(&self) -> std::option::Option<&str> {
         self.parameter_group_name.as_deref()
     }
@@ -7560,7 +7532,7 @@ impl std::fmt::Debug for DescribeParametersInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeParameterGroupsInput {
-    /// <p>The name of a specific  parameter group to return details for.</p>
+    /// <p>The name of a specific parameter group to return details for.</p>
     pub parameter_group_name: std::option::Option<std::string::String>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub max_results: std::option::Option<i32>,
@@ -7568,7 +7540,7 @@ pub struct DescribeParameterGroupsInput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeParameterGroupsInput {
-    /// <p>The name of a specific  parameter group to return details for.</p>
+    /// <p>The name of a specific parameter group to return details for.</p>
     pub fn parameter_group_name(&self) -> std::option::Option<&str> {
         self.parameter_group_name.as_deref()
     }
@@ -7599,13 +7571,9 @@ pub struct DescribeEventsInput {
     pub source_name: std::option::Option<std::string::String>,
     /// <p>The event source to retrieve events for. If no value is specified, all events are returned.</p>
     pub source_type: std::option::Option<crate::model::SourceType>,
-    /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format.
-    ///
-    /// Example: 2017-03-30T07:03:49.555Z</p>
+    /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format. Example: 2017-03-30T07:03:49.555Z</p>
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format.
-    ///
-    /// Example: 2017-03-30T07:03:49.555Z</p>
+    /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format. Example: 2017-03-30T07:03:49.555Z</p>
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The number of minutes worth of events to retrieve.</p>
     pub duration: std::option::Option<i32>,
@@ -7623,15 +7591,11 @@ impl DescribeEventsInput {
     pub fn source_type(&self) -> std::option::Option<&crate::model::SourceType> {
         self.source_type.as_ref()
     }
-    /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format.
-    ///
-    /// Example: 2017-03-30T07:03:49.555Z</p>
+    /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format. Example: 2017-03-30T07:03:49.555Z</p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format.
-    ///
-    /// Example: 2017-03-30T07:03:49.555Z</p>
+    /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format. Example: 2017-03-30T07:03:49.555Z</p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
@@ -8128,10 +8092,8 @@ pub struct CreateClusterInput {
     /// <p>A list of tags to be added to this resource. Tags are comma-separated key,value pairs (e.g. Key=myKey, Value=myKeyValue. You can include multiple tags as shown following: Key=myKey, Value=myKeyValue Key=mySecondKey, Value=mySecondKeyValue.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your shard.</p>
-    ///
-    /// <p>    Example: 05:00-09:00</p>
-    ///
-    /// <p>    If you do not specify this parameter, MemoryDB automatically chooses an appropriate time range.</p>
+    /// <p> Example: 05:00-09:00</p>
+    /// <p> If you do not specify this parameter, MemoryDB automatically chooses an appropriate time range.</p>
     pub snapshot_window: std::option::Option<std::string::String>,
     /// <p>The name of the Access Control List to associate with the cluster.</p>
     pub acl_name: std::option::Option<std::string::String>,
@@ -8210,10 +8172,8 @@ impl CreateClusterInput {
         self.tags.as_deref()
     }
     /// <p>The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your shard.</p>
-    ///
-    /// <p>    Example: 05:00-09:00</p>
-    ///
-    /// <p>    If you do not specify this parameter, MemoryDB automatically chooses an appropriate time range.</p>
+    /// <p> Example: 05:00-09:00</p>
+    /// <p> If you do not specify this parameter, MemoryDB automatically chooses an appropriate time range.</p>
     pub fn snapshot_window(&self) -> std::option::Option<&str> {
         self.snapshot_window.as_deref()
     }
@@ -8304,13 +8264,7 @@ pub struct CopySnapshotInput {
     pub source_snapshot_name: std::option::Option<std::string::String>,
     /// <p>A name for the snapshot copy. MemoryDB does not permit overwriting a snapshot, therefore this name must be unique within its context - MemoryDB or an Amazon S3 bucket if exporting.</p>
     pub target_snapshot_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon S3 bucket to which the snapshot is exported. This parameter is used only when exporting a snapshot for external access.
-    ///
-    /// When using this parameter to export a snapshot, be sure MemoryDB has the needed permissions to this S3 bucket. For more information, see
-    ///
-    /// <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/snapshots-exporting.html">Step 2: Grant MemoryDB Access to Your Amazon S3 Bucket</a>.
-    ///
-    /// </p>
+    /// <p>The Amazon S3 bucket to which the snapshot is exported. This parameter is used only when exporting a snapshot for external access. When using this parameter to export a snapshot, be sure MemoryDB has the needed permissions to this S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/snapshots-exporting.html">Step 2: Grant MemoryDB Access to Your Amazon S3 Bucket</a>. </p>
     pub target_bucket: std::option::Option<std::string::String>,
     /// <p>The ID of the KMS key used to encrypt the target snapshot.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
@@ -8326,13 +8280,7 @@ impl CopySnapshotInput {
     pub fn target_snapshot_name(&self) -> std::option::Option<&str> {
         self.target_snapshot_name.as_deref()
     }
-    /// <p>The Amazon S3 bucket to which the snapshot is exported. This parameter is used only when exporting a snapshot for external access.
-    ///
-    /// When using this parameter to export a snapshot, be sure MemoryDB has the needed permissions to this S3 bucket. For more information, see
-    ///
-    /// <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/snapshots-exporting.html">Step 2: Grant MemoryDB Access to Your Amazon S3 Bucket</a>.
-    ///
-    /// </p>
+    /// <p>The Amazon S3 bucket to which the snapshot is exported. This parameter is used only when exporting a snapshot for external access. When using this parameter to export a snapshot, be sure MemoryDB has the needed permissions to this S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/snapshots-exporting.html">Step 2: Grant MemoryDB Access to Your Amazon S3 Bucket</a>. </p>
     pub fn target_bucket(&self) -> std::option::Option<&str> {
         self.target_bucket.as_deref()
     }

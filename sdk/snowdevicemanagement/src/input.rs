@@ -9,14 +9,12 @@ pub mod cancel_task_input {
         pub(crate) task_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the task that you are attempting to cancel. You can retrieve a task ID by using
-        /// the <code>ListTasks</code> operation.</p>
+        /// <p>The ID of the task that you are attempting to cancel. You can retrieve a task ID by using the <code>ListTasks</code> operation.</p>
         pub fn task_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.task_id = Some(input.into());
             self
         }
-        /// <p>The ID of the task that you are attempting to cancel. You can retrieve a task ID by using
-        /// the <code>ListTasks</code> operation.</p>
+        /// <p>The ID of the task that you are attempting to cancel. You can retrieve a task ID by using the <code>ListTasks</code> operation.</p>
         pub fn set_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.task_id = input;
             self
@@ -211,8 +209,7 @@ pub mod create_task_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
-        /// in different ways, such as by purpose, owner, or environment. </p>
+        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment. </p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -223,8 +220,7 @@ pub mod create_task_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
-        /// in different ways, such as by purpose, owner, or environment. </p>
+        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2011,8 +2007,7 @@ pub mod tag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
-        /// in different ways, such as by purpose, owner, or environment.</p>
+        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2023,8 +2018,7 @@ pub mod tag_resource_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
-        /// in different ways, such as by purpose, owner, or environment.</p>
+        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2204,16 +2198,14 @@ pub mod untag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
-        /// in different ways, such as by purpose, owner, or environment.</p>
+        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
-        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
-        /// in different ways, such as by purpose, owner, or environment.</p>
+        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2371,13 +2363,11 @@ impl UntagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelTaskInput {
-    /// <p>The ID of the task that you are attempting to cancel. You can retrieve a task ID by using
-    /// the <code>ListTasks</code> operation.</p>
+    /// <p>The ID of the task that you are attempting to cancel. You can retrieve a task ID by using the <code>ListTasks</code> operation.</p>
     pub task_id: std::option::Option<std::string::String>,
 }
 impl CancelTaskInput {
-    /// <p>The ID of the task that you are attempting to cancel. You can retrieve a task ID by using
-    /// the <code>ListTasks</code> operation.</p>
+    /// <p>The ID of the task that you are attempting to cancel. You can retrieve a task ID by using the <code>ListTasks</code> operation.</p>
     pub fn task_id(&self) -> std::option::Option<&str> {
         self.task_id.as_deref()
     }
@@ -2435,8 +2425,7 @@ pub struct CreateTaskInput {
     pub command: std::option::Option<crate::model::Command>,
     /// <p>A description of the task and its targets.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
-    /// in different ways, such as by purpose, owner, or environment. </p>
+    /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment. </p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A token ensuring that the action is called only once with the specified details.</p>
@@ -2455,8 +2444,7 @@ impl CreateTaskInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
-    /// in different ways, such as by purpose, owner, or environment. </p>
+    /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment. </p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -2703,8 +2691,7 @@ impl std::fmt::Debug for DescribeDeviceInput {
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the device or task.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
-    /// in different ways, such as by purpose, owner, or environment.</p>
+    /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -2712,8 +2699,7 @@ impl UntagResourceInput {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
-    /// in different ways, such as by purpose, owner, or environment.</p>
+    /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
     pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_keys.as_deref()
     }
@@ -2733,8 +2719,7 @@ impl std::fmt::Debug for UntagResourceInput {
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the device or task.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
-    /// in different ways, such as by purpose, owner, or environment.</p>
+    /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2743,8 +2728,7 @@ impl TagResourceInput {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
-    /// in different ways, such as by purpose, owner, or environment.</p>
+    /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>

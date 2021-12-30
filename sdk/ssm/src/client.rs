@@ -1127,51 +1127,18 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `AddTagsToResource`.
     ///
-    /// <p>Adds or overwrites one or more tags for the specified resource. Tags are metadata that you
-    /// can assign to your documents, managed nodes, maintenance windows, Parameter Store parameters, and
-    /// patch baselines. Tags enable you to categorize your resources in different ways, for example, by
-    /// purpose, owner, or environment. Each tag consists of a key and an optional value, both of which
-    /// you define. For example, you could define a set of tags for your account's managed nodes that
-    /// helps you track each node's owner and stack level. For example:</p>
+    /// <p>Adds or overwrites one or more tags for the specified resource. Tags are metadata that you can assign to your documents, managed nodes, maintenance windows, Parameter Store parameters, and patch baselines. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value, both of which you define. For example, you could define a set of tags for your account's managed nodes that helps you track each node's owner and stack level. For example:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Key=Owner,Value=DbAdmin</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Key=Owner,Value=SysAdmin</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Key=Owner,Value=Dev</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Key=Stack,Value=Production</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Key=Stack,Value=Pre-Production</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Key=Stack,Value=Test</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>Key=Owner,Value=DbAdmin</code> </p> </li>
+    /// <li> <p> <code>Key=Owner,Value=SysAdmin</code> </p> </li>
+    /// <li> <p> <code>Key=Owner,Value=Dev</code> </p> </li>
+    /// <li> <p> <code>Key=Stack,Value=Production</code> </p> </li>
+    /// <li> <p> <code>Key=Stack,Value=Pre-Production</code> </p> </li>
+    /// <li> <p> <code>Key=Stack,Value=Test</code> </p> </li>
     /// </ul>
     /// <p>Each resource can have a maximum of 50 tags.</p>
-    /// <p>We recommend that you devise a set of tag keys that meets your needs for each resource type.
-    /// Using a consistent set of tag keys makes it easier for you to manage your resources. You can
-    /// search and filter the resources based on the tags you add. Tags don't have any semantic meaning
-    /// to and are interpreted strictly as a string of characters. </p>
-    /// <p>For more information about using tags with Amazon Elastic Compute Cloud (Amazon EC2) instances, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging your Amazon EC2
-    /// resources</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>We recommend that you devise a set of tag keys that meets your needs for each resource type. Using a consistent set of tag keys makes it easier for you to manage your resources. You can search and filter the resources based on the tags you add. Tags don't have any semantic meaning to and are interpreted strictly as a string of characters. </p>
+    /// <p>For more information about using tags with Amazon Elastic Compute Cloud (Amazon EC2) instances, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging your Amazon EC2 resources</a> in the <i>Amazon EC2 User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddTagsToResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -1228,25 +1195,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifies the type of resource you are tagging.</p>
-        /// <note>
-        /// <p>The <code>ManagedInstance</code> type for this API operation is for on-premises managed
-        /// nodes. You must specify the name of the managed node in the following format:
-        /// <code>mi-<i>ID_number</i>
-        /// </code>. For example,
-        /// <code>mi-1a2b3c4d5e6f</code>.</p>
+        /// <p>Specifies the type of resource you are tagging.</p> <note>
+        /// <p>The <code>ManagedInstance</code> type for this API operation is for on-premises managed nodes. You must specify the name of the managed node in the following format: <code>mi-<i>ID_number</i> </code>. For example, <code>mi-1a2b3c4d5e6f</code>.</p>
         /// </note>
         pub fn resource_type(mut self, input: crate::model::ResourceTypeForTagging) -> Self {
             self.inner = self.inner.resource_type(input);
             self
         }
-        /// <p>Specifies the type of resource you are tagging.</p>
-        /// <note>
-        /// <p>The <code>ManagedInstance</code> type for this API operation is for on-premises managed
-        /// nodes. You must specify the name of the managed node in the following format:
-        /// <code>mi-<i>ID_number</i>
-        /// </code>. For example,
-        /// <code>mi-1a2b3c4d5e6f</code>.</p>
+        /// <p>Specifies the type of resource you are tagging.</p> <note>
+        /// <p>The <code>ManagedInstance</code> type for this API operation is for on-premises managed nodes. You must specify the name of the managed node in the following format: <code>mi-<i>ID_number</i> </code>. For example, <code>mi-1a2b3c4d5e6f</code>.</p>
         /// </note>
         pub fn set_resource_type(
             mut self,
@@ -1257,31 +1214,12 @@ pub mod fluent_builders {
         }
         /// <p>The resource ID you want to tag.</p>
         /// <p>Use the ID of the resource. Here are some examples:</p>
-        /// <p>
-        /// <code>MaintenanceWindow</code>: <code>mw-012345abcde</code>
-        /// </p>
-        /// <p>
-        /// <code>PatchBaseline</code>: <code>pb-012345abcde</code>
-        /// </p>
-        /// <p>
-        /// <code>OpsMetadata</code> object: <code>ResourceID</code> for tagging is created from the
-        /// Amazon Resource Name (ARN) for the object. Specifically, <code>ResourceID</code> is created from
-        /// the strings that come after the word <code>opsmetadata</code> in the ARN. For example, an
-        /// OpsMetadata object with an ARN of
-        /// <code>arn:aws:ssm:us-east-2:1234567890:opsmetadata/aws/ssm/MyGroup/appmanager</code> has a
-        /// <code>ResourceID</code> of either <code>aws/ssm/MyGroup/appmanager</code> or
-        /// <code>/aws/ssm/MyGroup/appmanager</code>.</p>
-        /// <p>For the <code>Document</code> and <code>Parameter</code> values, use the name of the
-        /// resource.</p>
-        /// <p>
-        /// <code>ManagedInstance</code>: <code>mi-012345abcde</code>
-        /// </p>
-        /// <note>
-        /// <p>The <code>ManagedInstance</code> type for this API operation is only for on-premises
-        /// managed nodes. You must specify the name of the managed node in the following format:
-        /// <code>mi-<i>ID_number</i>
-        /// </code>. For example,
-        /// <code>mi-1a2b3c4d5e6f</code>.</p>
+        /// <p> <code>MaintenanceWindow</code>: <code>mw-012345abcde</code> </p>
+        /// <p> <code>PatchBaseline</code>: <code>pb-012345abcde</code> </p>
+        /// <p> <code>OpsMetadata</code> object: <code>ResourceID</code> for tagging is created from the Amazon Resource Name (ARN) for the object. Specifically, <code>ResourceID</code> is created from the strings that come after the word <code>opsmetadata</code> in the ARN. For example, an OpsMetadata object with an ARN of <code>arn:aws:ssm:us-east-2:1234567890:opsmetadata/aws/ssm/MyGroup/appmanager</code> has a <code>ResourceID</code> of either <code>aws/ssm/MyGroup/appmanager</code> or <code>/aws/ssm/MyGroup/appmanager</code>.</p>
+        /// <p>For the <code>Document</code> and <code>Parameter</code> values, use the name of the resource.</p>
+        /// <p> <code>ManagedInstance</code>: <code>mi-012345abcde</code> </p> <note>
+        /// <p>The <code>ManagedInstance</code> type for this API operation is only for on-premises managed nodes. You must specify the name of the managed node in the following format: <code>mi-<i>ID_number</i> </code>. For example, <code>mi-1a2b3c4d5e6f</code>.</p>
         /// </note>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_id(input.into());
@@ -1289,31 +1227,12 @@ pub mod fluent_builders {
         }
         /// <p>The resource ID you want to tag.</p>
         /// <p>Use the ID of the resource. Here are some examples:</p>
-        /// <p>
-        /// <code>MaintenanceWindow</code>: <code>mw-012345abcde</code>
-        /// </p>
-        /// <p>
-        /// <code>PatchBaseline</code>: <code>pb-012345abcde</code>
-        /// </p>
-        /// <p>
-        /// <code>OpsMetadata</code> object: <code>ResourceID</code> for tagging is created from the
-        /// Amazon Resource Name (ARN) for the object. Specifically, <code>ResourceID</code> is created from
-        /// the strings that come after the word <code>opsmetadata</code> in the ARN. For example, an
-        /// OpsMetadata object with an ARN of
-        /// <code>arn:aws:ssm:us-east-2:1234567890:opsmetadata/aws/ssm/MyGroup/appmanager</code> has a
-        /// <code>ResourceID</code> of either <code>aws/ssm/MyGroup/appmanager</code> or
-        /// <code>/aws/ssm/MyGroup/appmanager</code>.</p>
-        /// <p>For the <code>Document</code> and <code>Parameter</code> values, use the name of the
-        /// resource.</p>
-        /// <p>
-        /// <code>ManagedInstance</code>: <code>mi-012345abcde</code>
-        /// </p>
-        /// <note>
-        /// <p>The <code>ManagedInstance</code> type for this API operation is only for on-premises
-        /// managed nodes. You must specify the name of the managed node in the following format:
-        /// <code>mi-<i>ID_number</i>
-        /// </code>. For example,
-        /// <code>mi-1a2b3c4d5e6f</code>.</p>
+        /// <p> <code>MaintenanceWindow</code>: <code>mw-012345abcde</code> </p>
+        /// <p> <code>PatchBaseline</code>: <code>pb-012345abcde</code> </p>
+        /// <p> <code>OpsMetadata</code> object: <code>ResourceID</code> for tagging is created from the Amazon Resource Name (ARN) for the object. Specifically, <code>ResourceID</code> is created from the strings that come after the word <code>opsmetadata</code> in the ARN. For example, an OpsMetadata object with an ARN of <code>arn:aws:ssm:us-east-2:1234567890:opsmetadata/aws/ssm/MyGroup/appmanager</code> has a <code>ResourceID</code> of either <code>aws/ssm/MyGroup/appmanager</code> or <code>/aws/ssm/MyGroup/appmanager</code>.</p>
+        /// <p>For the <code>Document</code> and <code>Parameter</code> values, use the name of the resource.</p>
+        /// <p> <code>ManagedInstance</code>: <code>mi-012345abcde</code> </p> <note>
+        /// <p>The <code>ManagedInstance</code> type for this API operation is only for on-premises managed nodes. You must specify the name of the managed node in the following format: <code>mi-<i>ID_number</i> </code>. For example, <code>mi-1a2b3c4d5e6f</code>.</p>
         /// </note>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_id(input);
@@ -1323,16 +1242,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>One or more tags. The value parameter is required.</p>
-        /// <important>
+        /// <p>One or more tags. The value parameter is required.</p> <important>
         /// <p>Don't enter personally identifiable information in this field.</p>
         /// </important>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>One or more tags. The value parameter is required.</p>
-        /// <important>
+        /// <p>One or more tags. The value parameter is required.</p> <important>
         /// <p>Don't enter personally identifiable information in this field.</p>
         /// </important>
         pub fn set_tags(
@@ -1345,9 +1262,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `AssociateOpsItemRelatedItem`.
     ///
-    /// <p>Associates a related item to a Systems Manager OpsCenter OpsItem. For example, you can associate an
-    /// Incident Manager incident or analysis with an OpsItem. Incident Manager and OpsCenter are capabilities of
-    /// Amazon Web Services Systems Manager.</p>
+    /// <p>Associates a related item to a Systems Manager OpsCenter OpsItem. For example, you can associate an Incident Manager incident or analysis with an OpsItem. Incident Manager and OpsCenter are capabilities of Amazon Web Services Systems Manager.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateOpsItemRelatedItem<
         C = aws_smithy_client::erase::DynConnector,
@@ -1414,14 +1329,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ops_item_id(input);
             self
         }
-        /// <p>The type of association that you want to create between an OpsItem and a resource. OpsCenter
-        /// supports <code>IsParentOf</code> and <code>RelatesTo</code> association types.</p>
+        /// <p>The type of association that you want to create between an OpsItem and a resource. OpsCenter supports <code>IsParentOf</code> and <code>RelatesTo</code> association types.</p>
         pub fn association_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.association_type(input.into());
             self
         }
-        /// <p>The type of association that you want to create between an OpsItem and a resource. OpsCenter
-        /// supports <code>IsParentOf</code> and <code>RelatesTo</code> association types.</p>
+        /// <p>The type of association that you want to create between an OpsItem and a resource. OpsCenter supports <code>IsParentOf</code> and <code>RelatesTo</code> association types.</p>
         pub fn set_association_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1429,22 +1342,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_association_type(input);
             self
         }
-        /// <p>The type of resource that you want to associate with an OpsItem. OpsCenter supports the
-        /// following types:</p>
-        /// <p>
-        /// <code>AWS::SSMIncidents::IncidentRecord</code>: an Incident Manager incident. </p>
-        /// <p>
-        /// <code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.</p>
+        /// <p>The type of resource that you want to associate with an OpsItem. OpsCenter supports the following types:</p>
+        /// <p> <code>AWS::SSMIncidents::IncidentRecord</code>: an Incident Manager incident. </p>
+        /// <p> <code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.</p>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_type(input.into());
             self
         }
-        /// <p>The type of resource that you want to associate with an OpsItem. OpsCenter supports the
-        /// following types:</p>
-        /// <p>
-        /// <code>AWS::SSMIncidents::IncidentRecord</code>: an Incident Manager incident. </p>
-        /// <p>
-        /// <code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.</p>
+        /// <p>The type of resource that you want to associate with an OpsItem. OpsCenter supports the following types:</p>
+        /// <p> <code>AWS::SSMIncidents::IncidentRecord</code>: an Incident Manager incident. </p>
+        /// <p> <code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1452,14 +1359,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_type(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services resource that you want to associate with the
-        /// OpsItem.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services resource that you want to associate with the OpsItem.</p>
         pub fn resource_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_uri(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services resource that you want to associate with the
-        /// OpsItem.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services resource that you want to associate with the OpsItem.</p>
         pub fn set_resource_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_uri(input);
             self
@@ -1467,8 +1372,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CancelCommand`.
     ///
-    /// <p>Attempts to cancel the command specified by the Command ID. There is no guarantee that the
-    /// command will be terminated and the underlying process stopped.</p>
+    /// <p>Attempts to cancel the command specified by the Command ID. There is no guarantee that the command will be terminated and the underlying process stopped.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelCommand<
         C = aws_smithy_client::erase::DynConnector,
@@ -1539,14 +1443,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_instance_ids`](Self::set_instance_ids).
         ///
-        /// <p>(Optional) A list of managed node IDs on which you want to cancel the command. If not provided,
-        /// the command is canceled on every node on which it was requested.</p>
+        /// <p>(Optional) A list of managed node IDs on which you want to cancel the command. If not provided, the command is canceled on every node on which it was requested.</p>
         pub fn instance_ids(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_ids(input.into());
             self
         }
-        /// <p>(Optional) A list of managed node IDs on which you want to cancel the command. If not provided,
-        /// the command is canceled on every node on which it was requested.</p>
+        /// <p>(Optional) A list of managed node IDs on which you want to cancel the command. If not provided, the command is canceled on every node on which it was requested.</p>
         pub fn set_instance_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1557,9 +1459,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CancelMaintenanceWindowExecution`.
     ///
-    /// <p>Stops a maintenance window execution that is already in progress and cancels any tasks in
-    /// the window that haven't already starting running. Tasks already in progress will continue to
-    /// completion.</p>
+    /// <p>Stops a maintenance window execution that is already in progress and cancels any tasks in the window that haven't already starting running. Tasks already in progress will continue to completion.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelMaintenanceWindowExecution<
         C = aws_smithy_client::erase::DynConnector,
@@ -1632,15 +1532,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateActivation`.
     ///
-    /// <p>Generates an activation code and activation ID you can use to register your on-premises
-    /// servers, edge devices, or virtual machine (VM) with Amazon Web Services Systems Manager. Registering these machines with
-    /// Systems Manager makes it possible to manage them using Systems Manager capabilities. You use the activation code and
-    /// ID when installing SSM Agent on machines in your hybrid environment. For more information about
-    /// requirements for managing on-premises machines using Systems Manager, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html">Setting up
-    /// Amazon Web Services Systems Manager for hybrid environments</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
-    /// <note>
-    /// <p>Amazon Elastic Compute Cloud (Amazon EC2) instances, edge devices, and on-premises servers and VMs that are configured for Systems Manager are all called <i>managed
-    /// nodes</i>.</p>
+    /// <p>Generates an activation code and activation ID you can use to register your on-premises servers, edge devices, or virtual machine (VM) with Amazon Web Services Systems Manager. Registering these machines with Systems Manager makes it possible to manage them using Systems Manager capabilities. You use the activation code and ID when installing SSM Agent on machines in your hybrid environment. For more information about requirements for managing on-premises machines using Systems Manager, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html">Setting up Amazon Web Services Systems Manager for hybrid environments</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p> <note>
+    /// <p>Amazon Elastic Compute Cloud (Amazon EC2) instances, edge devices, and on-premises servers and VMs that are configured for Systems Manager are all called <i>managed nodes</i>.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateActivation<
@@ -1698,34 +1591,28 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A user-defined description of the resource that you want to register with Systems Manager. </p>
-        /// <important>
+        /// <p>A user-defined description of the resource that you want to register with Systems Manager. </p> <important>
         /// <p>Don't enter personally identifiable information in this field.</p>
         /// </important>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>A user-defined description of the resource that you want to register with Systems Manager. </p>
-        /// <important>
+        /// <p>A user-defined description of the resource that you want to register with Systems Manager. </p> <important>
         /// <p>Don't enter personally identifiable information in this field.</p>
         /// </important>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The name of the registered, managed node as it will appear in the Amazon Web Services Systems Manager console or when
-        /// you use the Amazon Web Services command line tools to list Systems Manager resources.</p>
-        /// <important>
+        /// <p>The name of the registered, managed node as it will appear in the Amazon Web Services Systems Manager console or when you use the Amazon Web Services command line tools to list Systems Manager resources.</p> <important>
         /// <p>Don't enter personally identifiable information in this field.</p>
         /// </important>
         pub fn default_instance_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.default_instance_name(input.into());
             self
         }
-        /// <p>The name of the registered, managed node as it will appear in the Amazon Web Services Systems Manager console or when
-        /// you use the Amazon Web Services command line tools to list Systems Manager resources.</p>
-        /// <important>
+        /// <p>The name of the registered, managed node as it will appear in the Amazon Web Services Systems Manager console or when you use the Amazon Web Services command line tools to list Systems Manager resources.</p> <important>
         /// <p>Don't enter personally identifiable information in this field.</p>
         /// </important>
         pub fn set_default_instance_name(
@@ -1735,46 +1622,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_default_instance_name(input);
             self
         }
-        /// <p>The name of the Identity and Access Management (IAM) role that you want to assign to
-        /// the managed node. This IAM role must provide AssumeRole permissions for the
-        /// Amazon Web Services Systems Manager service principal <code>ssm.amazonaws.com</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an
-        /// IAM service role for a hybrid environment</a> in the
-        /// <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+        /// <p>The name of the Identity and Access Management (IAM) role that you want to assign to the managed node. This IAM role must provide AssumeRole permissions for the Amazon Web Services Systems Manager service principal <code>ssm.amazonaws.com</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an IAM service role for a hybrid environment</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn iam_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.iam_role(input.into());
             self
         }
-        /// <p>The name of the Identity and Access Management (IAM) role that you want to assign to
-        /// the managed node. This IAM role must provide AssumeRole permissions for the
-        /// Amazon Web Services Systems Manager service principal <code>ssm.amazonaws.com</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an
-        /// IAM service role for a hybrid environment</a> in the
-        /// <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+        /// <p>The name of the Identity and Access Management (IAM) role that you want to assign to the managed node. This IAM role must provide AssumeRole permissions for the Amazon Web Services Systems Manager service principal <code>ssm.amazonaws.com</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an IAM service role for a hybrid environment</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn set_iam_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_iam_role(input);
             self
         }
-        /// <p>Specify the maximum number of managed nodes you want to register. The default value is
-        /// <code>1</code>.</p>
+        /// <p>Specify the maximum number of managed nodes you want to register. The default value is <code>1</code>.</p>
         pub fn registration_limit(mut self, input: i32) -> Self {
             self.inner = self.inner.registration_limit(input);
             self
         }
-        /// <p>Specify the maximum number of managed nodes you want to register. The default value is
-        /// <code>1</code>.</p>
+        /// <p>Specify the maximum number of managed nodes you want to register. The default value is <code>1</code>.</p>
         pub fn set_registration_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_registration_limit(input);
             self
         }
-        /// <p>The date by which this activation request should expire, in timestamp format, such as
-        /// "2021-07-07T00:00:00". You can specify a date up to 30 days in advance. If you don't provide an
-        /// expiration date, the activation code expires in 24 hours.</p>
+        /// <p>The date by which this activation request should expire, in timestamp format, such as "2021-07-07T00:00:00". You can specify a date up to 30 days in advance. If you don't provide an expiration date, the activation code expires in 24 hours.</p>
         pub fn expiration_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.expiration_date(input);
             self
         }
-        /// <p>The date by which this activation request should expire, in timestamp format, such as
-        /// "2021-07-07T00:00:00". You can specify a date up to 30 days in advance. If you don't provide an
-        /// expiration date, the activation code expires in 24 hours.</p>
+        /// <p>The date by which this activation request should expire, in timestamp format, such as "2021-07-07T00:00:00". You can specify a date up to 30 days in advance. If you don't provide an expiration date, the activation code expires in 24 hours.</p>
         pub fn set_expiration_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1786,62 +1659,26 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in
-        /// different ways, such as by purpose, owner, or environment. For example, you might want to tag an
-        /// activation to identify which servers or virtual machines (VMs) in your on-premises environment
-        /// you intend to activate. In this case, you could specify the following key-value pairs:</p>
+        /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an activation to identify which servers or virtual machines (VMs) in your on-premises environment you intend to activate. In this case, you could specify the following key-value pairs:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Key=OS,Value=Windows</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Key=Environment,Value=Production</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <important>
-        /// <p>When you install SSM Agent on your on-premises servers and VMs, you specify an activation ID
-        /// and code. When you specify the activation ID and code, tags assigned to the activation are
-        /// automatically applied to the on-premises servers or VMs.</p>
+        /// <li> <p> <code>Key=OS,Value=Windows</code> </p> </li>
+        /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
+        /// </ul> <important>
+        /// <p>When you install SSM Agent on your on-premises servers and VMs, you specify an activation ID and code. When you specify the activation ID and code, tags assigned to the activation are automatically applied to the on-premises servers or VMs.</p>
         /// </important>
-        /// <p>You can't add tags to or delete tags from an existing activation. You can tag your
-        /// on-premises servers, edge devices, and VMs after they connect to Systems Manager for the first time and are assigned a
-        /// managed node ID. This means they are listed in the Amazon Web Services Systems Manager console with an ID that is
-        /// prefixed with "mi-". For information about how to add tags to your managed nodes, see <a>AddTagsToResource</a>. For information about how to remove tags from your managed nodes,
-        /// see <a>RemoveTagsFromResource</a>.</p>
+        /// <p>You can't add tags to or delete tags from an existing activation. You can tag your on-premises servers, edge devices, and VMs after they connect to Systems Manager for the first time and are assigned a managed node ID. This means they are listed in the Amazon Web Services Systems Manager console with an ID that is prefixed with "mi-". For information about how to add tags to your managed nodes, see <code>AddTagsToResource</code>. For information about how to remove tags from your managed nodes, see <code>RemoveTagsFromResource</code>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in
-        /// different ways, such as by purpose, owner, or environment. For example, you might want to tag an
-        /// activation to identify which servers or virtual machines (VMs) in your on-premises environment
-        /// you intend to activate. In this case, you could specify the following key-value pairs:</p>
+        /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an activation to identify which servers or virtual machines (VMs) in your on-premises environment you intend to activate. In this case, you could specify the following key-value pairs:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Key=OS,Value=Windows</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Key=Environment,Value=Production</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <important>
-        /// <p>When you install SSM Agent on your on-premises servers and VMs, you specify an activation ID
-        /// and code. When you specify the activation ID and code, tags assigned to the activation are
-        /// automatically applied to the on-premises servers or VMs.</p>
+        /// <li> <p> <code>Key=OS,Value=Windows</code> </p> </li>
+        /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
+        /// </ul> <important>
+        /// <p>When you install SSM Agent on your on-premises servers and VMs, you specify an activation ID and code. When you specify the activation ID and code, tags assigned to the activation are automatically applied to the on-premises servers or VMs.</p>
         /// </important>
-        /// <p>You can't add tags to or delete tags from an existing activation. You can tag your
-        /// on-premises servers, edge devices, and VMs after they connect to Systems Manager for the first time and are assigned a
-        /// managed node ID. This means they are listed in the Amazon Web Services Systems Manager console with an ID that is
-        /// prefixed with "mi-". For information about how to add tags to your managed nodes, see <a>AddTagsToResource</a>. For information about how to remove tags from your managed nodes,
-        /// see <a>RemoveTagsFromResource</a>.</p>
+        /// <p>You can't add tags to or delete tags from an existing activation. You can tag your on-premises servers, edge devices, and VMs after they connect to Systems Manager for the first time and are assigned a managed node ID. This means they are listed in the Amazon Web Services Systems Manager console with an ID that is prefixed with "mi-". For information about how to add tags to your managed nodes, see <code>AddTagsToResource</code>. For information about how to remove tags from your managed nodes, see <code>RemoveTagsFromResource</code>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1872,16 +1709,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateAssociation`.
     ///
-    /// <p>A State Manager association defines the state that you want to maintain on your managed
-    /// nodes. For example, an association can specify that anti-virus software must be installed and
-    /// running on your managed nodes, or that certain ports must be closed. For static targets, the
-    /// association specifies a schedule for when the configuration is reapplied. For dynamic targets,
-    /// such as an Amazon Web Services resource group or an Amazon Web Services autoscaling group, State Manager, a capability of
-    /// Amazon Web Services Systems Manager applies the configuration when new managed nodes are added to the group. The
-    /// association also specifies actions to take when applying the configuration. For example, an
-    /// association for anti-virus software might run once a day. If the software isn't installed, then
-    /// State Manager installs it. If the software is installed, but the service isn't running, then the
-    /// association might instruct State Manager to start the service. </p>
+    /// <p>A State Manager association defines the state that you want to maintain on your managed nodes. For example, an association can specify that anti-virus software must be installed and running on your managed nodes, or that certain ports must be closed. For static targets, the association specifies a schedule for when the configuration is reapplied. For dynamic targets, such as an Amazon Web Services resource group or an Amazon Web Services autoscaling group, State Manager, a capability of Amazon Web Services Systems Manager applies the configuration when new managed nodes are added to the group. The association also specifies actions to take when applying the configuration. For example, an association for anti-virus software might run once a day. If the software isn't installed, then State Manager installs it. If the software is installed, but the service isn't running, then the association might instruct State Manager to start the service. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAssociation<
         C = aws_smithy_client::erase::DynConnector,
@@ -1938,56 +1766,34 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the SSM Command document or Automation runbook that contains the configuration
-        /// information for the managed node.</p>
-        /// <p>You can specify Amazon Web Services-predefined documents, documents you created, or a document that is
-        /// shared with you from another account.</p>
-        /// <p>For Systems Manager documents (SSM documents) that are shared with you from other Amazon Web Services accounts, you
-        /// must specify the complete SSM document ARN, in the following format:</p>
-        /// <p>
-        /// <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i>
-        /// </code>
-        /// </p>
+        /// <p>The name of the SSM Command document or Automation runbook that contains the configuration information for the managed node.</p>
+        /// <p>You can specify Amazon Web Services-predefined documents, documents you created, or a document that is shared with you from another account.</p>
+        /// <p>For Systems Manager documents (SSM documents) that are shared with you from other Amazon Web Services accounts, you must specify the complete SSM document ARN, in the following format:</p>
+        /// <p> <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i> </code> </p>
         /// <p>For example:</p>
-        /// <p>
-        /// <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code>
-        /// </p>
-        /// <p>For Amazon Web Services-predefined documents and SSM documents you created in your account, you only need
-        /// to specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or
-        /// <code>My-Document</code>.</p>
+        /// <p> <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code> </p>
+        /// <p>For Amazon Web Services-predefined documents and SSM documents you created in your account, you only need to specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the SSM Command document or Automation runbook that contains the configuration
-        /// information for the managed node.</p>
-        /// <p>You can specify Amazon Web Services-predefined documents, documents you created, or a document that is
-        /// shared with you from another account.</p>
-        /// <p>For Systems Manager documents (SSM documents) that are shared with you from other Amazon Web Services accounts, you
-        /// must specify the complete SSM document ARN, in the following format:</p>
-        /// <p>
-        /// <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i>
-        /// </code>
-        /// </p>
+        /// <p>The name of the SSM Command document or Automation runbook that contains the configuration information for the managed node.</p>
+        /// <p>You can specify Amazon Web Services-predefined documents, documents you created, or a document that is shared with you from another account.</p>
+        /// <p>For Systems Manager documents (SSM documents) that are shared with you from other Amazon Web Services accounts, you must specify the complete SSM document ARN, in the following format:</p>
+        /// <p> <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i> </code> </p>
         /// <p>For example:</p>
-        /// <p>
-        /// <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code>
-        /// </p>
-        /// <p>For Amazon Web Services-predefined documents and SSM documents you created in your account, you only need
-        /// to specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or
-        /// <code>My-Document</code>.</p>
+        /// <p> <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code> </p>
+        /// <p>For Amazon Web Services-predefined documents and SSM documents you created in your account, you only need to specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The document version you want to associate with the target(s). Can be a specific version or
-        /// the default version.</p>
+        /// <p>The document version you want to associate with the target(s). Can be a specific version or the default version.</p>
         pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.document_version(input.into());
             self
         }
-        /// <p>The document version you want to associate with the target(s). Can be a specific version or
-        /// the default version.</p>
+        /// <p>The document version you want to associate with the target(s). Can be a specific version or the default version.</p>
         pub fn set_document_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1995,33 +1801,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_document_version(input);
             self
         }
-        /// <p>The managed node ID.</p>
-        /// <note>
-        /// <p>
-        /// <code>InstanceId</code> has been deprecated. To specify a managed node ID for an association,
-        /// use the <code>Targets</code> parameter. Requests that include the
-        /// parameter <code>InstanceID</code> with Systems Manager documents (SSM documents) that use schema version
-        /// 2.0 or later will fail. In addition, if you use the parameter
-        /// <code>InstanceId</code>, you can't use the parameters <code>AssociationName</code>,
-        /// <code>DocumentVersion</code>, <code>MaxErrors</code>, <code>MaxConcurrency</code>,
-        /// <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these parameters, you
-        /// must use the <code>Targets</code> parameter.</p>
+        /// <p>The managed node ID.</p> <note>
+        /// <p> <code>InstanceId</code> has been deprecated. To specify a managed node ID for an association, use the <code>Targets</code> parameter. Requests that include the parameter <code>InstanceID</code> with Systems Manager documents (SSM documents) that use schema version 2.0 or later will fail. In addition, if you use the parameter <code>InstanceId</code>, you can't use the parameters <code>AssociationName</code>, <code>DocumentVersion</code>, <code>MaxErrors</code>, <code>MaxConcurrency</code>, <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these parameters, you must use the <code>Targets</code> parameter.</p>
         /// </note>
         pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_id(input.into());
             self
         }
-        /// <p>The managed node ID.</p>
-        /// <note>
-        /// <p>
-        /// <code>InstanceId</code> has been deprecated. To specify a managed node ID for an association,
-        /// use the <code>Targets</code> parameter. Requests that include the
-        /// parameter <code>InstanceID</code> with Systems Manager documents (SSM documents) that use schema version
-        /// 2.0 or later will fail. In addition, if you use the parameter
-        /// <code>InstanceId</code>, you can't use the parameters <code>AssociationName</code>,
-        /// <code>DocumentVersion</code>, <code>MaxErrors</code>, <code>MaxConcurrency</code>,
-        /// <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these parameters, you
-        /// must use the <code>Targets</code> parameter.</p>
+        /// <p>The managed node ID.</p> <note>
+        /// <p> <code>InstanceId</code> has been deprecated. To specify a managed node ID for an association, use the <code>Targets</code> parameter. Requests that include the parameter <code>InstanceID</code> with Systems Manager documents (SSM documents) that use schema version 2.0 or later will fail. In addition, if you use the parameter <code>InstanceId</code>, you can't use the parameters <code>AssociationName</code>, <code>DocumentVersion</code>, <code>MaxErrors</code>, <code>MaxConcurrency</code>, <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these parameters, you must use the <code>Targets</code> parameter.</p>
         /// </note>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_id(input);
@@ -2054,20 +1842,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_targets`](Self::set_targets).
         ///
-        /// <p>The targets for the association. You can target managed nodes by using tags, Amazon Web Services resource
-        /// groups, all managed nodes in an Amazon Web Services account, or individual managed node IDs. You can target all
-        /// managed nodes in an Amazon Web Services account by specifying the <code>InstanceIds</code> key with a value of
-        /// <code>*</code>. For more information about choosing targets for an association, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">Using targets and rate controls with State Manager associations</a> in the
-        /// <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+        /// <p>The targets for the association. You can target managed nodes by using tags, Amazon Web Services resource groups, all managed nodes in an Amazon Web Services account, or individual managed node IDs. You can target all managed nodes in an Amazon Web Services account by specifying the <code>InstanceIds</code> key with a value of <code>*</code>. For more information about choosing targets for an association, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">Using targets and rate controls with State Manager associations</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn targets(mut self, input: crate::model::Target) -> Self {
             self.inner = self.inner.targets(input);
             self
         }
-        /// <p>The targets for the association. You can target managed nodes by using tags, Amazon Web Services resource
-        /// groups, all managed nodes in an Amazon Web Services account, or individual managed node IDs. You can target all
-        /// managed nodes in an Amazon Web Services account by specifying the <code>InstanceIds</code> key with a value of
-        /// <code>*</code>. For more information about choosing targets for an association, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">Using targets and rate controls with State Manager associations</a> in the
-        /// <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+        /// <p>The targets for the association. You can target managed nodes by using tags, Amazon Web Services resource groups, all managed nodes in an Amazon Web Services account, or individual managed node IDs. You can target all managed nodes in an Amazon Web Services account by specifying the <code>InstanceIds</code> key with a value of <code>*</code>. For more information about choosing targets for an association, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">Using targets and rate controls with State Manager associations</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn set_targets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Target>>,
@@ -2088,8 +1868,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_schedule_expression(input);
             self
         }
-        /// <p>An Amazon Simple Storage Service (Amazon S3) bucket where you want to store the output
-        /// details of the request.</p>
+        /// <p>An Amazon Simple Storage Service (Amazon S3) bucket where you want to store the output details of the request.</p>
         pub fn output_location(
             mut self,
             input: crate::model::InstanceAssociationOutputLocation,
@@ -2097,8 +1876,7 @@ pub mod fluent_builders {
             self.inner = self.inner.output_location(input);
             self
         }
-        /// <p>An Amazon Simple Storage Service (Amazon S3) bucket where you want to store the output
-        /// details of the request.</p>
+        /// <p>An Amazon Simple Storage Service (Amazon S3) bucket where you want to store the output details of the request.</p>
         pub fn set_output_location(
             mut self,
             input: std::option::Option<crate::model::InstanceAssociationOutputLocation>,
@@ -2119,9 +1897,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_association_name(input);
             self
         }
-        /// <p>Choose the parameter that will define how your automation will branch out. This target is
-        /// required for associations that use an Automation runbook and target resources by using rate
-        /// controls. Automation is a capability of Amazon Web Services Systems Manager.</p>
+        /// <p>Choose the parameter that will define how your automation will branch out. This target is required for associations that use an Automation runbook and target resources by using rate controls. Automation is a capability of Amazon Web Services Systems Manager.</p>
         pub fn automation_target_parameter_name(
             mut self,
             input: impl Into<std::string::String>,
@@ -2129,9 +1905,7 @@ pub mod fluent_builders {
             self.inner = self.inner.automation_target_parameter_name(input.into());
             self
         }
-        /// <p>Choose the parameter that will define how your automation will branch out. This target is
-        /// required for associations that use an Automation runbook and target resources by using rate
-        /// controls. Automation is a capability of Amazon Web Services Systems Manager.</p>
+        /// <p>Choose the parameter that will define how your automation will branch out. This target is required for associations that use an Automation runbook and target resources by using rate controls. Automation is a capability of Amazon Web Services Systems Manager.</p>
         pub fn set_automation_target_parameter_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2139,54 +1913,26 @@ pub mod fluent_builders {
             self.inner = self.inner.set_automation_target_parameter_name(input);
             self
         }
-        /// <p>The number of errors that are allowed before the system stops sending requests to run the
-        /// association on additional targets. You can specify either an absolute number of errors, for
-        /// example 10, or a percentage of the target set, for example 10%. If you specify 3, for example,
-        /// the system stops sending requests when the fourth error is received. If you specify 0, then the
-        /// system stops sending requests after the first error is returned. If you run an association on 50
-        /// managed nodes and set <code>MaxError</code> to 10%, then the system stops sending the request
-        /// when the sixth error is received.</p>
-        /// <p>Executions that are already running an association when <code>MaxErrors</code> is reached
-        /// are allowed to complete, but some of these executions may fail as well. If you need to ensure
-        /// that there won't be more than max-errors failed executions, set <code>MaxConcurrency</code> to 1
-        /// so that executions proceed one at a time.</p>
+        /// <p>The number of errors that are allowed before the system stops sending requests to run the association on additional targets. You can specify either an absolute number of errors, for example 10, or a percentage of the target set, for example 10%. If you specify 3, for example, the system stops sending requests when the fourth error is received. If you specify 0, then the system stops sending requests after the first error is returned. If you run an association on 50 managed nodes and set <code>MaxError</code> to 10%, then the system stops sending the request when the sixth error is received.</p>
+        /// <p>Executions that are already running an association when <code>MaxErrors</code> is reached are allowed to complete, but some of these executions may fail as well. If you need to ensure that there won't be more than max-errors failed executions, set <code>MaxConcurrency</code> to 1 so that executions proceed one at a time.</p>
         pub fn max_errors(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.max_errors(input.into());
             self
         }
-        /// <p>The number of errors that are allowed before the system stops sending requests to run the
-        /// association on additional targets. You can specify either an absolute number of errors, for
-        /// example 10, or a percentage of the target set, for example 10%. If you specify 3, for example,
-        /// the system stops sending requests when the fourth error is received. If you specify 0, then the
-        /// system stops sending requests after the first error is returned. If you run an association on 50
-        /// managed nodes and set <code>MaxError</code> to 10%, then the system stops sending the request
-        /// when the sixth error is received.</p>
-        /// <p>Executions that are already running an association when <code>MaxErrors</code> is reached
-        /// are allowed to complete, but some of these executions may fail as well. If you need to ensure
-        /// that there won't be more than max-errors failed executions, set <code>MaxConcurrency</code> to 1
-        /// so that executions proceed one at a time.</p>
+        /// <p>The number of errors that are allowed before the system stops sending requests to run the association on additional targets. You can specify either an absolute number of errors, for example 10, or a percentage of the target set, for example 10%. If you specify 3, for example, the system stops sending requests when the fourth error is received. If you specify 0, then the system stops sending requests after the first error is returned. If you run an association on 50 managed nodes and set <code>MaxError</code> to 10%, then the system stops sending the request when the sixth error is received.</p>
+        /// <p>Executions that are already running an association when <code>MaxErrors</code> is reached are allowed to complete, but some of these executions may fail as well. If you need to ensure that there won't be more than max-errors failed executions, set <code>MaxConcurrency</code> to 1 so that executions proceed one at a time.</p>
         pub fn set_max_errors(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_max_errors(input);
             self
         }
-        /// <p>The maximum number of targets allowed to run the association at the same time. You can
-        /// specify a number, for example 10, or a percentage of the target set, for example 10%. The default
-        /// value is 100%, which means all targets run the association at the same time.</p>
-        /// <p>If a new managed node starts and attempts to run an association while Systems Manager is running
-        /// <code>MaxConcurrency</code> associations, the association is allowed to run. During the next
-        /// association interval, the new managed node will process its association within the limit specified
-        /// for <code>MaxConcurrency</code>.</p>
+        /// <p>The maximum number of targets allowed to run the association at the same time. You can specify a number, for example 10, or a percentage of the target set, for example 10%. The default value is 100%, which means all targets run the association at the same time.</p>
+        /// <p>If a new managed node starts and attempts to run an association while Systems Manager is running <code>MaxConcurrency</code> associations, the association is allowed to run. During the next association interval, the new managed node will process its association within the limit specified for <code>MaxConcurrency</code>.</p>
         pub fn max_concurrency(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.max_concurrency(input.into());
             self
         }
-        /// <p>The maximum number of targets allowed to run the association at the same time. You can
-        /// specify a number, for example 10, or a percentage of the target set, for example 10%. The default
-        /// value is 100%, which means all targets run the association at the same time.</p>
-        /// <p>If a new managed node starts and attempts to run an association while Systems Manager is running
-        /// <code>MaxConcurrency</code> associations, the association is allowed to run. During the next
-        /// association interval, the new managed node will process its association within the limit specified
-        /// for <code>MaxConcurrency</code>.</p>
+        /// <p>The maximum number of targets allowed to run the association at the same time. You can specify a number, for example 10, or a percentage of the target set, for example 10%. The default value is 100%, which means all targets run the association at the same time.</p>
+        /// <p>If a new managed node starts and attempts to run an association while Systems Manager is running <code>MaxConcurrency</code> associations, the association is allowed to run. During the next association interval, the new managed node will process its association within the limit specified for <code>MaxConcurrency</code>.</p>
         pub fn set_max_concurrency(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2210,27 +1956,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_compliance_severity(input);
             self
         }
-        /// <p>The mode for generating association compliance. You can specify <code>AUTO</code> or
-        /// <code>MANUAL</code>. In <code>AUTO</code> mode, the system uses the status of the association
-        /// execution to determine the compliance status. If the association execution runs successfully,
-        /// then the association is <code>COMPLIANT</code>. If the association execution doesn't run
-        /// successfully, the association is <code>NON-COMPLIANT</code>.</p>
-        /// <p>In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter
-        /// for the <a>PutComplianceItems</a> API operation. In this case, compliance data isn't
-        /// managed by State Manager. It is managed by your direct call to the <a>PutComplianceItems</a> API operation.</p>
+        /// <p>The mode for generating association compliance. You can specify <code>AUTO</code> or <code>MANUAL</code>. In <code>AUTO</code> mode, the system uses the status of the association execution to determine the compliance status. If the association execution runs successfully, then the association is <code>COMPLIANT</code>. If the association execution doesn't run successfully, the association is <code>NON-COMPLIANT</code>.</p>
+        /// <p>In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the <code>PutComplianceItems</code> API operation. In this case, compliance data isn't managed by State Manager. It is managed by your direct call to the <code>PutComplianceItems</code> API operation.</p>
         /// <p>By default, all associations use <code>AUTO</code> mode.</p>
         pub fn sync_compliance(mut self, input: crate::model::AssociationSyncCompliance) -> Self {
             self.inner = self.inner.sync_compliance(input);
             self
         }
-        /// <p>The mode for generating association compliance. You can specify <code>AUTO</code> or
-        /// <code>MANUAL</code>. In <code>AUTO</code> mode, the system uses the status of the association
-        /// execution to determine the compliance status. If the association execution runs successfully,
-        /// then the association is <code>COMPLIANT</code>. If the association execution doesn't run
-        /// successfully, the association is <code>NON-COMPLIANT</code>.</p>
-        /// <p>In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter
-        /// for the <a>PutComplianceItems</a> API operation. In this case, compliance data isn't
-        /// managed by State Manager. It is managed by your direct call to the <a>PutComplianceItems</a> API operation.</p>
+        /// <p>The mode for generating association compliance. You can specify <code>AUTO</code> or <code>MANUAL</code>. In <code>AUTO</code> mode, the system uses the status of the association execution to determine the compliance status. If the association execution runs successfully, then the association is <code>COMPLIANT</code>. If the association execution doesn't run successfully, the association is <code>NON-COMPLIANT</code>.</p>
+        /// <p>In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the <code>PutComplianceItems</code> API operation. In this case, compliance data isn't managed by State Manager. It is managed by your direct call to the <code>PutComplianceItems</code> API operation.</p>
         /// <p>By default, all associations use <code>AUTO</code> mode.</p>
         pub fn set_sync_compliance(
             mut self,
@@ -2239,18 +1973,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sync_compliance(input);
             self
         }
-        /// <p>By default, when you create a new association, the system runs it immediately after it is
-        /// created and then according to the schedule you specified. Specify this option if you don't want
-        /// an association to run immediately after you create it. This parameter isn't supported for rate
-        /// expressions.</p>
+        /// <p>By default, when you create a new association, the system runs it immediately after it is created and then according to the schedule you specified. Specify this option if you don't want an association to run immediately after you create it. This parameter isn't supported for rate expressions.</p>
         pub fn apply_only_at_cron_interval(mut self, input: bool) -> Self {
             self.inner = self.inner.apply_only_at_cron_interval(input);
             self
         }
-        /// <p>By default, when you create a new association, the system runs it immediately after it is
-        /// created and then according to the schedule you specified. Specify this option if you don't want
-        /// an association to run immediately after you create it. This parameter isn't supported for rate
-        /// expressions.</p>
+        /// <p>By default, when you create a new association, the system runs it immediately after it is created and then according to the schedule you specified. Specify this option if you don't want an association to run immediately after you create it. This parameter isn't supported for rate expressions.</p>
         pub fn set_apply_only_at_cron_interval(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_apply_only_at_cron_interval(input);
             self
@@ -2259,18 +1987,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_calendar_names`](Self::set_calendar_names).
         ///
-        /// <p>The names or Amazon Resource Names (ARNs) of the Change Calendar type documents you want to
-        /// gate your associations under. The associations only run when that change calendar is open. For
-        /// more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web Services Systems Manager Change
-        /// Calendar</a>.</p>
+        /// <p>The names or Amazon Resource Names (ARNs) of the Change Calendar type documents you want to gate your associations under. The associations only run when that change calendar is open. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web Services Systems Manager Change Calendar</a>.</p>
         pub fn calendar_names(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.calendar_names(input.into());
             self
         }
-        /// <p>The names or Amazon Resource Names (ARNs) of the Change Calendar type documents you want to
-        /// gate your associations under. The associations only run when that change calendar is open. For
-        /// more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web Services Systems Manager Change
-        /// Calendar</a>.</p>
+        /// <p>The names or Amazon Resource Names (ARNs) of the Change Calendar type documents you want to gate your associations under. The associations only run when that change calendar is open. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web Services Systems Manager Change Calendar</a>.</p>
         pub fn set_calendar_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2282,16 +2004,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_target_locations`](Self::set_target_locations).
         ///
-        /// <p>A location is a combination of Amazon Web Services Regions and Amazon Web Services accounts where you want to run the
-        /// association. Use this action to create an association in multiple Regions and multiple
-        /// accounts.</p>
+        /// <p>A location is a combination of Amazon Web Services Regions and Amazon Web Services accounts where you want to run the association. Use this action to create an association in multiple Regions and multiple accounts.</p>
         pub fn target_locations(mut self, input: crate::model::TargetLocation) -> Self {
             self.inner = self.inner.target_locations(input);
             self
         }
-        /// <p>A location is a combination of Amazon Web Services Regions and Amazon Web Services accounts where you want to run the
-        /// association. Use this action to create an association in multiple Regions and multiple
-        /// accounts.</p>
+        /// <p>A location is a combination of Amazon Web Services Regions and Amazon Web Services accounts where you want to run the association. Use this action to create an association in multiple Regions and multiple accounts.</p>
         pub fn set_target_locations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TargetLocation>>,
@@ -2302,13 +2020,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateAssociationBatch`.
     ///
-    /// <p>Associates the specified Amazon Web Services Systems Manager document (SSM document) with the specified managed nodes
-    /// or targets.</p>
-    /// <p>When you associate a document with one or more managed nodes using IDs or tags,
-    /// Amazon Web Services Systems Manager Agent (SSM Agent) running on the managed node processes the document and configures the
-    /// node as specified.</p>
-    /// <p>If you associate a document with a managed node that already has an associated document, the
-    /// system returns the AssociationAlreadyExists exception.</p>
+    /// <p>Associates the specified Amazon Web Services Systems Manager document (SSM document) with the specified managed nodes or targets.</p>
+    /// <p>When you associate a document with one or more managed nodes using IDs or tags, Amazon Web Services Systems Manager Agent (SSM Agent) running on the managed node processes the document and configures the node as specified.</p>
+    /// <p>If you associate a document with a managed node that already has an associated document, the system returns the AssociationAlreadyExists exception.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAssociationBatch<
         C = aws_smithy_client::erase::DynConnector,
@@ -2387,10 +2101,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateDocument`.
     ///
-    /// <p>Creates a Amazon Web Services Systems Manager (SSM document). An SSM document defines the actions that Systems Manager performs
-    /// on your managed nodes. For more information about SSM documents, including information about
-    /// supported schemas, features, and syntax, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-ssm-docs.html">Amazon Web Services Systems Manager Documents</a> in the
-    /// <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>Creates a Amazon Web Services Systems Manager (SSM document). An SSM document defines the actions that Systems Manager performs on your managed nodes. For more information about SSM documents, including information about supported schemas, features, and syntax, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-ssm-docs.html">Amazon Web Services Systems Manager Documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDocument<
         C = aws_smithy_client::erase::DynConnector,
@@ -2447,51 +2158,23 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The content for the new SSM document in JSON or YAML format. We recommend storing the
-        /// contents for your new document in an external JSON or YAML file and referencing the file in a
-        /// command.</p>
+        /// <p>The content for the new SSM document in JSON or YAML format. We recommend storing the contents for your new document in an external JSON or YAML file and referencing the file in a command.</p>
         /// <p>For examples, see the following topics in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (Amazon Web Services API)</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document (Amazon Web Services CLI)</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (API)</a>
-        /// </p>
-        /// </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (Amazon Web Services API)</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document (Amazon Web Services CLI)</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (API)</a> </p> </li>
         /// </ul>
         pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.content(input.into());
             self
         }
-        /// <p>The content for the new SSM document in JSON or YAML format. We recommend storing the
-        /// contents for your new document in an external JSON or YAML file and referencing the file in a
-        /// command.</p>
+        /// <p>The content for the new SSM document in JSON or YAML format. We recommend storing the contents for your new document in an external JSON or YAML file and referencing the file in a command.</p>
         /// <p>For examples, see the following topics in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (Amazon Web Services API)</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document (Amazon Web Services CLI)</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (API)</a>
-        /// </p>
-        /// </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (Amazon Web Services API)</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document (Amazon Web Services CLI)</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (API)</a> </p> </li>
         /// </ul>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_content(input);
@@ -2501,24 +2184,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_requires`](Self::set_requires).
         ///
-        /// <p>A list of SSM documents required by a document. This parameter is used exclusively by
-        /// AppConfig. When a user creates an AppConfig configuration in an SSM document, the user must also
-        /// specify a required document for validation purposes. In this case, an
-        /// <code>ApplicationConfiguration</code> document requires an
-        /// <code>ApplicationConfigurationSchema</code> document for validation purposes. For more
-        /// information, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/what-is-appconfig.html">What is AppConfig?</a> in the
-        /// <i>AppConfig User Guide</i>.</p>
+        /// <p>A list of SSM documents required by a document. This parameter is used exclusively by AppConfig. When a user creates an AppConfig configuration in an SSM document, the user must also specify a required document for validation purposes. In this case, an <code>ApplicationConfiguration</code> document requires an <code>ApplicationConfigurationSchema</code> document for validation purposes. For more information, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/what-is-appconfig.html">What is AppConfig?</a> in the <i>AppConfig User Guide</i>.</p>
         pub fn requires(mut self, input: crate::model::DocumentRequires) -> Self {
             self.inner = self.inner.requires(input);
             self
         }
-        /// <p>A list of SSM documents required by a document. This parameter is used exclusively by
-        /// AppConfig. When a user creates an AppConfig configuration in an SSM document, the user must also
-        /// specify a required document for validation purposes. In this case, an
-        /// <code>ApplicationConfiguration</code> document requires an
-        /// <code>ApplicationConfigurationSchema</code> document for validation purposes. For more
-        /// information, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/what-is-appconfig.html">What is AppConfig?</a> in the
-        /// <i>AppConfig User Guide</i>.</p>
+        /// <p>A list of SSM documents required by a document. This parameter is used exclusively by AppConfig. When a user creates an AppConfig configuration in an SSM document, the user must also specify a required document for validation purposes. In this case, an <code>ApplicationConfiguration</code> document requires an <code>ApplicationConfigurationSchema</code> document for validation purposes. For more information, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/what-is-appconfig.html">What is AppConfig?</a> in the <i>AppConfig User Guide</i>.</p>
         pub fn set_requires(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DocumentRequires>>,
@@ -2543,82 +2214,46 @@ pub mod fluent_builders {
             self.inner = self.inner.set_attachments(input);
             self
         }
-        /// <p>A name for the SSM document.</p>
-        /// <important>
-        /// <p>You can't use the following strings as document name prefixes. These are reserved by Amazon Web Services
-        /// for use as document name prefixes:</p>
+        /// <p>A name for the SSM document.</p> <important>
+        /// <p>You can't use the following strings as document name prefixes. These are reserved by Amazon Web Services for use as document name prefixes:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>aws-</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>amazon</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>amzn</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>aws-</code> </p> </li>
+        /// <li> <p> <code>amazon</code> </p> </li>
+        /// <li> <p> <code>amzn</code> </p> </li>
         /// </ul>
         /// </important>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>A name for the SSM document.</p>
-        /// <important>
-        /// <p>You can't use the following strings as document name prefixes. These are reserved by Amazon Web Services
-        /// for use as document name prefixes:</p>
+        /// <p>A name for the SSM document.</p> <important>
+        /// <p>You can't use the following strings as document name prefixes. These are reserved by Amazon Web Services for use as document name prefixes:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>aws-</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>amazon</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>amzn</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>aws-</code> </p> </li>
+        /// <li> <p> <code>amazon</code> </p> </li>
+        /// <li> <p> <code>amzn</code> </p> </li>
         /// </ul>
         /// </important>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>An optional field where you can specify a friendly name for the SSM document. This value can
-        /// differ for each version of the document. You can update this value at a later time using the
-        /// <a>UpdateDocument</a> operation.</p>
+        /// <p>An optional field where you can specify a friendly name for the SSM document. This value can differ for each version of the document. You can update this value at a later time using the <code>UpdateDocument</code> operation.</p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.display_name(input.into());
             self
         }
-        /// <p>An optional field where you can specify a friendly name for the SSM document. This value can
-        /// differ for each version of the document. You can update this value at a later time using the
-        /// <a>UpdateDocument</a> operation.</p>
+        /// <p>An optional field where you can specify a friendly name for the SSM document. This value can differ for each version of the document. You can update this value at a later time using the <code>UpdateDocument</code> operation.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_display_name(input);
             self
         }
-        /// <p>An optional field specifying the version of the artifact you are creating with the document.
-        /// For example, "Release 12, Update 6". This value is unique across all versions of a document, and
-        /// can't be changed.</p>
+        /// <p>An optional field specifying the version of the artifact you are creating with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.</p>
         pub fn version_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.version_name(input.into());
             self
         }
-        /// <p>An optional field specifying the version of the artifact you are creating with the document.
-        /// For example, "Release 12, Update 6". This value is unique across all versions of a document, and
-        /// can't be changed.</p>
+        /// <p>An optional field specifying the version of the artifact you are creating with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.</p>
         pub fn set_version_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_version_name(input);
             self
@@ -2636,14 +2271,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_document_type(input);
             self
         }
-        /// <p>Specify the document format for the request. The document format can be JSON, YAML, or TEXT.
-        /// JSON is the default format.</p>
+        /// <p>Specify the document format for the request. The document format can be JSON, YAML, or TEXT. JSON is the default format.</p>
         pub fn document_format(mut self, input: crate::model::DocumentFormat) -> Self {
             self.inner = self.inner.document_format(input);
             self
         }
-        /// <p>Specify the document format for the request. The document format can be JSON, YAML, or TEXT.
-        /// JSON is the default format.</p>
+        /// <p>Specify the document format for the request. The document format can be JSON, YAML, or TEXT. JSON is the default format.</p>
         pub fn set_document_format(
             mut self,
             input: std::option::Option<crate::model::DocumentFormat>,
@@ -2651,22 +2284,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_document_format(input);
             self
         }
-        /// <p>Specify a target type to define the kinds of resources the document can run on. For example,
-        /// to run a document on EC2 instances, specify the following value:
-        /// <code>/AWS::EC2::Instance</code>. If you specify a value of '/' the document can run on all types
-        /// of resources. If you don't specify a value, the document can't run on any resources. For a list
-        /// of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and
-        /// property types reference</a> in the <i>CloudFormation User Guide</i>. </p>
+        /// <p>Specify a target type to define the kinds of resources the document can run on. For example, to run a document on EC2 instances, specify the following value: <code>/AWS::EC2::Instance</code>. If you specify a value of '/' the document can run on all types of resources. If you don't specify a value, the document can't run on any resources. For a list of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and property types reference</a> in the <i>CloudFormation User Guide</i>. </p>
         pub fn target_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.target_type(input.into());
             self
         }
-        /// <p>Specify a target type to define the kinds of resources the document can run on. For example,
-        /// to run a document on EC2 instances, specify the following value:
-        /// <code>/AWS::EC2::Instance</code>. If you specify a value of '/' the document can run on all types
-        /// of resources. If you don't specify a value, the document can't run on any resources. For a list
-        /// of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and
-        /// property types reference</a> in the <i>CloudFormation User Guide</i>. </p>
+        /// <p>Specify a target type to define the kinds of resources the document can run on. For example, to run a document on EC2 instances, specify the following value: <code>/AWS::EC2::Instance</code>. If you specify a value of '/' the document can run on all types of resources. If you don't specify a value, the document can't run on any resources. For a list of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and property types reference</a> in the <i>CloudFormation User Guide</i>. </p>
         pub fn set_target_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_target_type(input);
             self
@@ -2675,49 +2298,23 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in
-        /// different ways, such as by purpose, owner, or environment. For example, you might want to tag an
-        /// SSM document to identify the types of targets or the environment where it will run. In this case,
-        /// you could specify the following key-value pairs:</p>
+        /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an SSM document to identify the types of targets or the environment where it will run. In this case, you could specify the following key-value pairs:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Key=OS,Value=Windows</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Key=Environment,Value=Production</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>To add tags to an existing SSM document, use the <a>AddTagsToResource</a>
-        /// operation.</p>
+        /// <li> <p> <code>Key=OS,Value=Windows</code> </p> </li>
+        /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
+        /// </ul> <note>
+        /// <p>To add tags to an existing SSM document, use the <code>AddTagsToResource</code> operation.</p>
         /// </note>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in
-        /// different ways, such as by purpose, owner, or environment. For example, you might want to tag an
-        /// SSM document to identify the types of targets or the environment where it will run. In this case,
-        /// you could specify the following key-value pairs:</p>
+        /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an SSM document to identify the types of targets or the environment where it will run. In this case, you could specify the following key-value pairs:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Key=OS,Value=Windows</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Key=Environment,Value=Production</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>To add tags to an existing SSM document, use the <a>AddTagsToResource</a>
-        /// operation.</p>
+        /// <li> <p> <code>Key=OS,Value=Windows</code> </p> </li>
+        /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
+        /// </ul> <note>
+        /// <p>To add tags to an existing SSM document, use the <code>AddTagsToResource</code> operation.</p>
         /// </note>
         pub fn set_tags(
             mut self,
@@ -2729,14 +2326,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateMaintenanceWindow`.
     ///
-    /// <p>Creates a new maintenance window.</p>
-    /// <note>
-    /// <p>The value you specify for <code>Duration</code> determines the specific end time for the
-    /// maintenance window based on the time it begins. No maintenance window tasks are permitted to
-    /// start after the resulting endtime minus the number of hours you specify for <code>Cutoff</code>.
-    /// For example, if the maintenance window starts at 3 PM, the duration is three hours, and the
-    /// value you specify for <code>Cutoff</code> is one hour, no maintenance window tasks can start
-    /// after 5 PM.</p>
+    /// <p>Creates a new maintenance window.</p> <note>
+    /// <p>The value you specify for <code>Duration</code> determines the specific end time for the maintenance window based on the time it begins. No maintenance window tasks are permitted to start after the resulting endtime minus the number of hours you specify for <code>Cutoff</code>. For example, if the maintenance window starts at 3 PM, the duration is three hours, and the value you specify for <code>Cutoff</code> is one hour, no maintenance window tasks can start after 5 PM.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateMaintenanceWindow<
@@ -2804,42 +2395,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>An optional description for the maintenance window. We recommend specifying a description to
-        /// help you organize your maintenance windows. </p>
+        /// <p>An optional description for the maintenance window. We recommend specifying a description to help you organize your maintenance windows. </p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>An optional description for the maintenance window. We recommend specifying a description to
-        /// help you organize your maintenance windows. </p>
+        /// <p>An optional description for the maintenance window. We recommend specifying a description to help you organize your maintenance windows. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The date and time, in ISO-8601 Extended format, for when you want the maintenance window to
-        /// become active. <code>StartDate</code> allows you to delay activation of the maintenance window
-        /// until the specified future date.</p>
+        /// <p>The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become active. <code>StartDate</code> allows you to delay activation of the maintenance window until the specified future date.</p>
         pub fn start_date(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.start_date(input.into());
             self
         }
-        /// <p>The date and time, in ISO-8601 Extended format, for when you want the maintenance window to
-        /// become active. <code>StartDate</code> allows you to delay activation of the maintenance window
-        /// until the specified future date.</p>
+        /// <p>The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become active. <code>StartDate</code> allows you to delay activation of the maintenance window until the specified future date.</p>
         pub fn set_start_date(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_start_date(input);
             self
         }
-        /// <p>The date and time, in ISO-8601 Extended format, for when you want the maintenance window to
-        /// become inactive. <code>EndDate</code> allows you to set a date and time in the future when the
-        /// maintenance window will no longer run.</p>
+        /// <p>The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become inactive. <code>EndDate</code> allows you to set a date and time in the future when the maintenance window will no longer run.</p>
         pub fn end_date(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.end_date(input.into());
             self
         }
-        /// <p>The date and time, in ISO-8601 Extended format, for when you want the maintenance window to
-        /// become inactive. <code>EndDate</code> allows you to set a date and time in the future when the
-        /// maintenance window will no longer run.</p>
+        /// <p>The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become inactive. <code>EndDate</code> allows you to set a date and time in the future when the maintenance window will no longer run.</p>
         pub fn set_end_date(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_end_date(input);
             self
@@ -2854,18 +2435,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_schedule(input);
             self
         }
-        /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet
-        /// Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or
-        /// "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time
-        /// Zone Database</a> on the IANA website.</p>
+        /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p>
         pub fn schedule_timezone(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.schedule_timezone(input.into());
             self
         }
-        /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet
-        /// Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or
-        /// "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time
-        /// Zone Database</a> on the IANA website.</p>
+        /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p>
         pub fn set_schedule_timezone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2873,28 +2448,18 @@ pub mod fluent_builders {
             self.inner = self.inner.set_schedule_timezone(input);
             self
         }
-        /// <p>The number of days to wait after the date and time specified by a cron expression before
-        /// running the maintenance window.</p>
-        /// <p>For example, the following cron expression schedules a maintenance window to run on the
-        /// third Tuesday of every month at 11:30 PM.</p>
-        /// <p>
-        /// <code>cron(30 23 ? * TUE#3 *)</code>
-        /// </p>
-        /// <p>If the schedule offset is <code>2</code>, the maintenance window won't run until two days
-        /// later.</p>
+        /// <p>The number of days to wait after the date and time specified by a cron expression before running the maintenance window.</p>
+        /// <p>For example, the following cron expression schedules a maintenance window to run on the third Tuesday of every month at 11:30 PM.</p>
+        /// <p> <code>cron(30 23 ? * TUE#3 *)</code> </p>
+        /// <p>If the schedule offset is <code>2</code>, the maintenance window won't run until two days later.</p>
         pub fn schedule_offset(mut self, input: i32) -> Self {
             self.inner = self.inner.schedule_offset(input);
             self
         }
-        /// <p>The number of days to wait after the date and time specified by a cron expression before
-        /// running the maintenance window.</p>
-        /// <p>For example, the following cron expression schedules a maintenance window to run on the
-        /// third Tuesday of every month at 11:30 PM.</p>
-        /// <p>
-        /// <code>cron(30 23 ? * TUE#3 *)</code>
-        /// </p>
-        /// <p>If the schedule offset is <code>2</code>, the maintenance window won't run until two days
-        /// later.</p>
+        /// <p>The number of days to wait after the date and time specified by a cron expression before running the maintenance window.</p>
+        /// <p>For example, the following cron expression schedules a maintenance window to run on the third Tuesday of every month at 11:30 PM.</p>
+        /// <p> <code>cron(30 23 ? * TUE#3 *)</code> </p>
+        /// <p>If the schedule offset is <code>2</code>, the maintenance window won't run until two days later.</p>
         pub fn set_schedule_offset(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_schedule_offset(input);
             self
@@ -2909,32 +2474,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_duration(input);
             self
         }
-        /// <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling
-        /// new tasks for execution.</p>
+        /// <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling new tasks for execution.</p>
         pub fn cutoff(mut self, input: i32) -> Self {
             self.inner = self.inner.cutoff(input);
             self
         }
-        /// <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling
-        /// new tasks for execution.</p>
+        /// <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling new tasks for execution.</p>
         pub fn set_cutoff(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_cutoff(input);
             self
         }
-        /// <p>Enables a maintenance window task to run on managed nodes, even if you haven't registered
-        /// those nodes as targets. If enabled, then you must specify the unregistered managed nodes (by
-        /// node ID) when you register a task with the maintenance window.</p>
-        /// <p>If you don't enable this option, then you must specify previously-registered targets when
-        /// you register a task with the maintenance window.</p>
+        /// <p>Enables a maintenance window task to run on managed nodes, even if you haven't registered those nodes as targets. If enabled, then you must specify the unregistered managed nodes (by node ID) when you register a task with the maintenance window.</p>
+        /// <p>If you don't enable this option, then you must specify previously-registered targets when you register a task with the maintenance window.</p>
         pub fn allow_unassociated_targets(mut self, input: bool) -> Self {
             self.inner = self.inner.allow_unassociated_targets(input);
             self
         }
-        /// <p>Enables a maintenance window task to run on managed nodes, even if you haven't registered
-        /// those nodes as targets. If enabled, then you must specify the unregistered managed nodes (by
-        /// node ID) when you register a task with the maintenance window.</p>
-        /// <p>If you don't enable this option, then you must specify previously-registered targets when
-        /// you register a task with the maintenance window.</p>
+        /// <p>Enables a maintenance window task to run on managed nodes, even if you haven't registered those nodes as targets. If enabled, then you must specify the unregistered managed nodes (by node ID) when you register a task with the maintenance window.</p>
+        /// <p>If you don't enable this option, then you must specify previously-registered targets when you register a task with the maintenance window.</p>
         pub fn set_allow_unassociated_targets(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_allow_unassociated_targets(input);
             self
@@ -2953,59 +2510,25 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in
-        /// different ways, such as by purpose, owner, or environment. For example, you might want to tag a
-        /// maintenance window to identify the type of tasks it will run, the types of targets, and the
-        /// environment it will run in. In this case, you could specify the following key-value pairs:</p>
+        /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a maintenance window to identify the type of tasks it will run, the types of targets, and the environment it will run in. In this case, you could specify the following key-value pairs:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Key=TaskType,Value=AgentUpdate</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Key=OS,Value=Windows</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Key=Environment,Value=Production</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>To add tags to an existing maintenance window, use the <a>AddTagsToResource</a>
-        /// operation.</p>
+        /// <li> <p> <code>Key=TaskType,Value=AgentUpdate</code> </p> </li>
+        /// <li> <p> <code>Key=OS,Value=Windows</code> </p> </li>
+        /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
+        /// </ul> <note>
+        /// <p>To add tags to an existing maintenance window, use the <code>AddTagsToResource</code> operation.</p>
         /// </note>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in
-        /// different ways, such as by purpose, owner, or environment. For example, you might want to tag a
-        /// maintenance window to identify the type of tasks it will run, the types of targets, and the
-        /// environment it will run in. In this case, you could specify the following key-value pairs:</p>
+        /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a maintenance window to identify the type of tasks it will run, the types of targets, and the environment it will run in. In this case, you could specify the following key-value pairs:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Key=TaskType,Value=AgentUpdate</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Key=OS,Value=Windows</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Key=Environment,Value=Production</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>To add tags to an existing maintenance window, use the <a>AddTagsToResource</a>
-        /// operation.</p>
+        /// <li> <p> <code>Key=TaskType,Value=AgentUpdate</code> </p> </li>
+        /// <li> <p> <code>Key=OS,Value=Windows</code> </p> </li>
+        /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
+        /// </ul> <note>
+        /// <p>To add tags to an existing maintenance window, use the <code>AddTagsToResource</code> operation.</p>
         /// </note>
         pub fn set_tags(
             mut self,
@@ -3017,12 +2540,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateOpsItem`.
     ///
-    /// <p>Creates a new OpsItem. You must have permission in Identity and Access Management (IAM) to create a new OpsItem. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting started with
-    /// OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    /// <p>Operations engineers and IT professionals use Amazon Web Services Systems Manager OpsCenter to view, investigate, and
-    /// remediate operational issues impacting the performance and health of their Amazon Web Services resources. For
-    /// more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">Amazon Web Services Systems Manager OpsCenter</a> in the
-    /// <i>Amazon Web Services Systems Manager User Guide</i>. </p>
+    /// <p>Creates a new OpsItem. You must have permission in Identity and Access Management (IAM) to create a new OpsItem. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>Operations engineers and IT professionals use Amazon Web Services Systems Manager OpsCenter to view, investigate, and remediate operational issues impacting the performance and health of their Amazon Web Services resources. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">Amazon Web Services Systems Manager OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateOpsItem<
         C = aws_smithy_client::erase::DynConnector,
@@ -3089,14 +2608,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The type of OpsItem to create. Currently, the only valid values are
-        /// <code>/aws/changerequest</code> and <code>/aws/issue</code>.</p>
+        /// <p>The type of OpsItem to create. Currently, the only valid values are <code>/aws/changerequest</code> and <code>/aws/issue</code>.</p>
         pub fn ops_item_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.ops_item_type(input.into());
             self
         }
-        /// <p>The type of OpsItem to create. Currently, the only valid values are
-        /// <code>/aws/changerequest</code> and <code>/aws/issue</code>.</p>
+        /// <p>The type of OpsItem to create. Currently, the only valid values are <code>/aws/changerequest</code> and <code>/aws/issue</code>.</p>
         pub fn set_ops_item_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3108,24 +2625,11 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_operational_data`](Self::set_operational_data).
         ///
-        /// <p>Operational data is custom data that provides useful reference details about the OpsItem.
-        /// For example, you can specify log files, error strings, license keys, troubleshooting tips, or
-        /// other relevant data. You enter operational data as key-value pairs. The key has a maximum length
-        /// of 128 characters. The value has a maximum size of 20 KB.</p>
-        /// <important>
-        /// <p>Operational data keys <i>can't</i> begin with the following:
-        /// <code>amazon</code>, <code>aws</code>, <code>amzn</code>, <code>ssm</code>,
-        /// <code>/amazon</code>, <code>/aws</code>, <code>/amzn</code>, <code>/ssm</code>.</p>
+        /// <p>Operational data is custom data that provides useful reference details about the OpsItem. For example, you can specify log files, error strings, license keys, troubleshooting tips, or other relevant data. You enter operational data as key-value pairs. The key has a maximum length of 128 characters. The value has a maximum size of 20 KB.</p> <important>
+        /// <p>Operational data keys <i>can't</i> begin with the following: <code>amazon</code>, <code>aws</code>, <code>amzn</code>, <code>ssm</code>, <code>/amazon</code>, <code>/aws</code>, <code>/amzn</code>, <code>/ssm</code>.</p>
         /// </important>
-        /// <p>You can choose to make the data searchable by other users in the account or you can restrict
-        /// search access. Searchable data means that all users with access to the OpsItem Overview page (as
-        /// provided by the <a>DescribeOpsItems</a> API operation) can view and search on the
-        /// specified data. Operational data that isn't searchable is only viewable by users who have access
-        /// to the OpsItem (as provided by the <a>GetOpsItem</a> API operation).</p>
-        /// <p>Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in
-        /// the request. Use the <code>/aws/automations</code> key in OperationalData to associate an
-        /// Automation runbook with the OpsItem. To view Amazon Web Services CLI example commands that use these keys, see
-        /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+        /// <p>You can choose to make the data searchable by other users in the account or you can restrict search access. Searchable data means that all users with access to the OpsItem Overview page (as provided by the <code>DescribeOpsItems</code> API operation) can view and search on the specified data. Operational data that isn't searchable is only viewable by users who have access to the OpsItem (as provided by the <code>GetOpsItem</code> API operation).</p>
+        /// <p>Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request. Use the <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the OpsItem. To view Amazon Web Services CLI example commands that use these keys, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn operational_data(
             mut self,
             k: impl Into<std::string::String>,
@@ -3134,24 +2638,11 @@ pub mod fluent_builders {
             self.inner = self.inner.operational_data(k.into(), v);
             self
         }
-        /// <p>Operational data is custom data that provides useful reference details about the OpsItem.
-        /// For example, you can specify log files, error strings, license keys, troubleshooting tips, or
-        /// other relevant data. You enter operational data as key-value pairs. The key has a maximum length
-        /// of 128 characters. The value has a maximum size of 20 KB.</p>
-        /// <important>
-        /// <p>Operational data keys <i>can't</i> begin with the following:
-        /// <code>amazon</code>, <code>aws</code>, <code>amzn</code>, <code>ssm</code>,
-        /// <code>/amazon</code>, <code>/aws</code>, <code>/amzn</code>, <code>/ssm</code>.</p>
+        /// <p>Operational data is custom data that provides useful reference details about the OpsItem. For example, you can specify log files, error strings, license keys, troubleshooting tips, or other relevant data. You enter operational data as key-value pairs. The key has a maximum length of 128 characters. The value has a maximum size of 20 KB.</p> <important>
+        /// <p>Operational data keys <i>can't</i> begin with the following: <code>amazon</code>, <code>aws</code>, <code>amzn</code>, <code>ssm</code>, <code>/amazon</code>, <code>/aws</code>, <code>/amzn</code>, <code>/ssm</code>.</p>
         /// </important>
-        /// <p>You can choose to make the data searchable by other users in the account or you can restrict
-        /// search access. Searchable data means that all users with access to the OpsItem Overview page (as
-        /// provided by the <a>DescribeOpsItems</a> API operation) can view and search on the
-        /// specified data. Operational data that isn't searchable is only viewable by users who have access
-        /// to the OpsItem (as provided by the <a>GetOpsItem</a> API operation).</p>
-        /// <p>Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in
-        /// the request. Use the <code>/aws/automations</code> key in OperationalData to associate an
-        /// Automation runbook with the OpsItem. To view Amazon Web Services CLI example commands that use these keys, see
-        /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+        /// <p>You can choose to make the data searchable by other users in the account or you can restrict search access. Searchable data means that all users with access to the OpsItem Overview page (as provided by the <code>DescribeOpsItems</code> API operation) can view and search on the specified data. Operational data that isn't searchable is only viewable by users who have access to the OpsItem (as provided by the <code>GetOpsItem</code> API operation).</p>
+        /// <p>Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request. Use the <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the OpsItem. To view Amazon Web Services CLI example commands that use these keys, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn set_operational_data(
             mut self,
             input: std::option::Option<
@@ -3165,14 +2656,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_notifications`](Self::set_notifications).
         ///
-        /// <p>The Amazon Resource Name (ARN) of an SNS topic where notifications are sent when this
-        /// OpsItem is edited or changed.</p>
+        /// <p>The Amazon Resource Name (ARN) of an SNS topic where notifications are sent when this OpsItem is edited or changed.</p>
         pub fn notifications(mut self, input: crate::model::OpsItemNotification) -> Self {
             self.inner = self.inner.notifications(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an SNS topic where notifications are sent when this
-        /// OpsItem is edited or changed.</p>
+        /// <p>The Amazon Resource Name (ARN) of an SNS topic where notifications are sent when this OpsItem is edited or changed.</p>
         pub fn set_notifications(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::OpsItemNotification>>,
@@ -3194,16 +2683,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_related_ops_items`](Self::set_related_ops_items).
         ///
-        /// <p>One or more OpsItems that share something in common with the current OpsItems. For example,
-        /// related OpsItems can include OpsItems with similar error messages, impacted resources, or
-        /// statuses for the impacted resource.</p>
+        /// <p>One or more OpsItems that share something in common with the current OpsItems. For example, related OpsItems can include OpsItems with similar error messages, impacted resources, or statuses for the impacted resource.</p>
         pub fn related_ops_items(mut self, input: crate::model::RelatedOpsItem) -> Self {
             self.inner = self.inner.related_ops_items(input);
             self
         }
-        /// <p>One or more OpsItems that share something in common with the current OpsItems. For example,
-        /// related OpsItems can include OpsItems with similar error messages, impacted resources, or
-        /// statuses for the impacted resource.</p>
+        /// <p>One or more OpsItems that share something in common with the current OpsItems. For example, related OpsItems can include OpsItems with similar error messages, impacted resources, or statuses for the impacted resource.</p>
         pub fn set_related_ops_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RelatedOpsItem>>,
@@ -3211,19 +2696,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_related_ops_items(input);
             self
         }
-        /// <p>The origin of the OpsItem, such as Amazon EC2 or Systems Manager.</p>
-        /// <note>
-        /// <p>The source name can't contain the following strings: <code>aws</code>, <code>amazon</code>,
-        /// and <code>amzn</code>. </p>
+        /// <p>The origin of the OpsItem, such as Amazon EC2 or Systems Manager.</p> <note>
+        /// <p>The source name can't contain the following strings: <code>aws</code>, <code>amazon</code>, and <code>amzn</code>. </p>
         /// </note>
         pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.source(input.into());
             self
         }
-        /// <p>The origin of the OpsItem, such as Amazon EC2 or Systems Manager.</p>
-        /// <note>
-        /// <p>The source name can't contain the following strings: <code>aws</code>, <code>amazon</code>,
-        /// and <code>amzn</code>. </p>
+        /// <p>The origin of the OpsItem, such as Amazon EC2 or Systems Manager.</p> <note>
+        /// <p>The source name can't contain the following strings: <code>aws</code>, <code>amazon</code>, and <code>amzn</code>. </p>
         /// </note>
         pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_source(input);
@@ -3243,33 +2724,19 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Optional metadata that you assign to a resource. You can restrict access to OpsItems by
-        /// using an inline IAM policy that specifies tags. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html#OpsCenter-getting-started-user-permissions">Getting started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+        /// <p>Optional metadata that you assign to a resource. You can restrict access to OpsItems by using an inline IAM policy that specifies tags. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html#OpsCenter-getting-started-user-permissions">Getting started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         /// <p>Tags use a key-value pair. For example:</p>
-        /// <p>
-        /// <code>Key=Department,Value=Finance</code>
-        /// </p>
-        /// <important>
-        /// <p>To add tags to a new OpsItem, a user must have IAM permissions for both the
-        /// <code>ssm:CreateOpsItems</code> operation and the <code>ssm:AddTagsToResource</code> operation.
-        /// To add tags to an existing OpsItem, use the <a>AddTagsToResource</a>
-        /// operation.</p>
+        /// <p> <code>Key=Department,Value=Finance</code> </p> <important>
+        /// <p>To add tags to a new OpsItem, a user must have IAM permissions for both the <code>ssm:CreateOpsItems</code> operation and the <code>ssm:AddTagsToResource</code> operation. To add tags to an existing OpsItem, use the <code>AddTagsToResource</code> operation.</p>
         /// </important>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>Optional metadata that you assign to a resource. You can restrict access to OpsItems by
-        /// using an inline IAM policy that specifies tags. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html#OpsCenter-getting-started-user-permissions">Getting started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+        /// <p>Optional metadata that you assign to a resource. You can restrict access to OpsItems by using an inline IAM policy that specifies tags. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html#OpsCenter-getting-started-user-permissions">Getting started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         /// <p>Tags use a key-value pair. For example:</p>
-        /// <p>
-        /// <code>Key=Department,Value=Finance</code>
-        /// </p>
-        /// <important>
-        /// <p>To add tags to a new OpsItem, a user must have IAM permissions for both the
-        /// <code>ssm:CreateOpsItems</code> operation and the <code>ssm:AddTagsToResource</code> operation.
-        /// To add tags to an existing OpsItem, use the <a>AddTagsToResource</a>
-        /// operation.</p>
+        /// <p> <code>Key=Department,Value=Finance</code> </p> <important>
+        /// <p>To add tags to a new OpsItem, a user must have IAM permissions for both the <code>ssm:CreateOpsItems</code> operation and the <code>ssm:AddTagsToResource</code> operation. To add tags to an existing OpsItem, use the <code>AddTagsToResource</code> operation.</p>
         /// </important>
         pub fn set_tags(
             mut self,
@@ -3298,14 +2765,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_severity(input);
             self
         }
-        /// <p>The time a runbook workflow started. Currently reported only for the OpsItem type
-        /// <code>/aws/changerequest</code>.</p>
+        /// <p>The time a runbook workflow started. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.</p>
         pub fn actual_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.actual_start_time(input);
             self
         }
-        /// <p>The time a runbook workflow started. Currently reported only for the OpsItem type
-        /// <code>/aws/changerequest</code>.</p>
+        /// <p>The time a runbook workflow started. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.</p>
         pub fn set_actual_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -3313,14 +2778,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_actual_start_time(input);
             self
         }
-        /// <p>The time a runbook workflow ended. Currently reported only for the OpsItem type
-        /// <code>/aws/changerequest</code>.</p>
+        /// <p>The time a runbook workflow ended. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.</p>
         pub fn actual_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.actual_end_time(input);
             self
         }
-        /// <p>The time a runbook workflow ended. Currently reported only for the OpsItem type
-        /// <code>/aws/changerequest</code>.</p>
+        /// <p>The time a runbook workflow ended. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.</p>
         pub fn set_actual_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -3328,14 +2791,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_actual_end_time(input);
             self
         }
-        /// <p>The time specified in a change request for a runbook workflow to start. Currently supported
-        /// only for the OpsItem type <code>/aws/changerequest</code>.</p>
+        /// <p>The time specified in a change request for a runbook workflow to start. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>
         pub fn planned_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.planned_start_time(input);
             self
         }
-        /// <p>The time specified in a change request for a runbook workflow to start. Currently supported
-        /// only for the OpsItem type <code>/aws/changerequest</code>.</p>
+        /// <p>The time specified in a change request for a runbook workflow to start. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>
         pub fn set_planned_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -3343,14 +2804,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_planned_start_time(input);
             self
         }
-        /// <p>The time specified in a change request for a runbook workflow to end. Currently supported
-        /// only for the OpsItem type <code>/aws/changerequest</code>.</p>
+        /// <p>The time specified in a change request for a runbook workflow to end. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>
         pub fn planned_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.planned_end_time(input);
             self
         }
-        /// <p>The time specified in a change request for a runbook workflow to end. Currently supported
-        /// only for the OpsItem type <code>/aws/changerequest</code>.</p>
+        /// <p>The time specified in a change request for a runbook workflow to end. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>
         pub fn set_planned_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -3361,8 +2820,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateOpsMetadata`.
     ///
-    /// <p>If you create a new application in Application Manager, Amazon Web Services Systems Manager calls this API operation to specify
-    /// information about the new application, including the application type.</p>
+    /// <p>If you create a new application in Application Manager, Amazon Web Services Systems Manager calls this API operation to specify information about the new application, including the application type.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateOpsMetadata<
         C = aws_smithy_client::erase::DynConnector,
@@ -3456,43 +2914,19 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Optional metadata that you assign to a resource. You can specify a maximum of five tags for
-        /// an OpsMetadata object. Tags enable you to categorize a resource in different ways, such as by
-        /// purpose, owner, or environment. For example, you might want to tag an OpsMetadata object to
-        /// identify an environment or target Amazon Web Services Region. In this case, you could specify the following
-        /// key-value pairs:</p>
+        /// <p>Optional metadata that you assign to a resource. You can specify a maximum of five tags for an OpsMetadata object. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an OpsMetadata object to identify an environment or target Amazon Web Services Region. In this case, you could specify the following key-value pairs:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Key=Environment,Value=Production</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Key=Region,Value=us-east-2</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
+        /// <li> <p> <code>Key=Region,Value=us-east-2</code> </p> </li>
         /// </ul>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>Optional metadata that you assign to a resource. You can specify a maximum of five tags for
-        /// an OpsMetadata object. Tags enable you to categorize a resource in different ways, such as by
-        /// purpose, owner, or environment. For example, you might want to tag an OpsMetadata object to
-        /// identify an environment or target Amazon Web Services Region. In this case, you could specify the following
-        /// key-value pairs:</p>
+        /// <p>Optional metadata that you assign to a resource. You can specify a maximum of five tags for an OpsMetadata object. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an OpsMetadata object to identify an environment or target Amazon Web Services Region. In this case, you could specify the following key-value pairs:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Key=Environment,Value=Production</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Key=Region,Value=us-east-2</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
+        /// <li> <p> <code>Key=Region,Value=us-east-2</code> </p> </li>
         /// </ul>
         pub fn set_tags(
             mut self,
@@ -3504,10 +2938,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreatePatchBaseline`.
     ///
-    /// <p>Creates a patch baseline.</p>
-    /// <note>
-    /// <p>For information about valid key-value pairs in <code>PatchFilters</code> for each supported
-    /// operating system type, see <a>PatchFilter</a>.</p>
+    /// <p>Creates a patch baseline.</p> <note>
+    /// <p>For information about valid key-value pairs in <code>PatchFilters</code> for each supported operating system type, see <code>PatchFilter</code>.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePatchBaseline<
@@ -3565,14 +2997,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Defines the operating system the patch baseline applies to. The default value is
-        /// <code>WINDOWS</code>.</p>
+        /// <p>Defines the operating system the patch baseline applies to. The default value is <code>WINDOWS</code>.</p>
         pub fn operating_system(mut self, input: crate::model::OperatingSystem) -> Self {
             self.inner = self.inner.operating_system(input);
             self
         }
-        /// <p>Defines the operating system the patch baseline applies to. The default value is
-        /// <code>WINDOWS</code>.</p>
+        /// <p>Defines the operating system the patch baseline applies to. The default value is <code>WINDOWS</code>.</p>
         pub fn set_operating_system(
             mut self,
             input: std::option::Option<crate::model::OperatingSystem>,
@@ -3621,17 +3051,13 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_approved_patches`](Self::set_approved_patches).
         ///
         /// <p>A list of explicitly approved patches for the baseline.</p>
-        /// <p>For information about accepted formats for lists of approved patches and rejected patches,
-        /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About
-        /// package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+        /// <p>For information about accepted formats for lists of approved patches and rejected patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn approved_patches(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.approved_patches(input.into());
             self
         }
         /// <p>A list of explicitly approved patches for the baseline.</p>
-        /// <p>For information about accepted formats for lists of approved patches and rejected patches,
-        /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About
-        /// package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+        /// <p>For information about accepted formats for lists of approved patches and rejected patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn set_approved_patches(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3639,9 +3065,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_approved_patches(input);
             self
         }
-        /// <p>Defines the compliance level for approved patches. When an approved patch is reported as
-        /// missing, this value describes the severity of the compliance violation. The default value is
-        /// <code>UNSPECIFIED</code>.</p>
+        /// <p>Defines the compliance level for approved patches. When an approved patch is reported as missing, this value describes the severity of the compliance violation. The default value is <code>UNSPECIFIED</code>.</p>
         pub fn approved_patches_compliance_level(
             mut self,
             input: crate::model::PatchComplianceLevel,
@@ -3649,9 +3073,7 @@ pub mod fluent_builders {
             self.inner = self.inner.approved_patches_compliance_level(input);
             self
         }
-        /// <p>Defines the compliance level for approved patches. When an approved patch is reported as
-        /// missing, this value describes the severity of the compliance violation. The default value is
-        /// <code>UNSPECIFIED</code>.</p>
+        /// <p>Defines the compliance level for approved patches. When an approved patch is reported as missing, this value describes the severity of the compliance violation. The default value is <code>UNSPECIFIED</code>.</p>
         pub fn set_approved_patches_compliance_level(
             mut self,
             input: std::option::Option<crate::model::PatchComplianceLevel>,
@@ -3659,16 +3081,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_approved_patches_compliance_level(input);
             self
         }
-        /// <p>Indicates whether the list of approved patches includes non-security updates that should be
-        /// applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed
-        /// nodes only.</p>
+        /// <p>Indicates whether the list of approved patches includes non-security updates that should be applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed nodes only.</p>
         pub fn approved_patches_enable_non_security(mut self, input: bool) -> Self {
             self.inner = self.inner.approved_patches_enable_non_security(input);
             self
         }
-        /// <p>Indicates whether the list of approved patches includes non-security updates that should be
-        /// applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed
-        /// nodes only.</p>
+        /// <p>Indicates whether the list of approved patches includes non-security updates that should be applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed nodes only.</p>
         pub fn set_approved_patches_enable_non_security(
             mut self,
             input: std::option::Option<bool>,
@@ -3681,17 +3099,13 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_rejected_patches`](Self::set_rejected_patches).
         ///
         /// <p>A list of explicitly rejected patches for the baseline.</p>
-        /// <p>For information about accepted formats for lists of approved patches and rejected patches,
-        /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About
-        /// package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+        /// <p>For information about accepted formats for lists of approved patches and rejected patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn rejected_patches(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.rejected_patches(input.into());
             self
         }
         /// <p>A list of explicitly rejected patches for the baseline.</p>
-        /// <p>For information about accepted formats for lists of approved patches and rejected patches,
-        /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About
-        /// package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+        /// <p>For information about accepted formats for lists of approved patches and rejected patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn set_rejected_patches(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3699,55 +3113,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_rejected_patches(input);
             self
         }
-        /// <p>The action for Patch Manager to take on patches included in the
-        /// <code>RejectedPackages</code> list.</p>
+        /// <p>The action for Patch Manager to take on patches included in the <code>RejectedPackages</code> list.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>ALLOW_AS_DEPENDENCY</code>
-        /// </b>: A package in the
-        /// <code>Rejected</code> patches list is installed only if it is a dependency of another package.
-        /// It is considered compliant with the patch baseline, and its status is reported as
-        /// <code>InstalledOther</code>. This is the default action if no option is specified.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>BLOCK</code>
-        /// </b>: Packages in the
-        /// <code>RejectedPatches</code> list, and packages that include them as dependencies, aren't
-        /// installed under any circumstances. If a package was installed before it was added to the
-        /// Rejected patches list, it is considered non-compliant with the patch baseline, and its status
-        /// is reported as <code>InstalledRejected</code>.</p>
-        /// </li>
+        /// <li> <p> <b> <code>ALLOW_AS_DEPENDENCY</code> </b>: A package in the <code>Rejected</code> patches list is installed only if it is a dependency of another package. It is considered compliant with the patch baseline, and its status is reported as <code>InstalledOther</code>. This is the default action if no option is specified.</p> </li>
+        /// <li> <p> <b> <code>BLOCK</code> </b>: Packages in the <code>RejectedPatches</code> list, and packages that include them as dependencies, aren't installed under any circumstances. If a package was installed before it was added to the Rejected patches list, it is considered non-compliant with the patch baseline, and its status is reported as <code>InstalledRejected</code>.</p> </li>
         /// </ul>
         pub fn rejected_patches_action(mut self, input: crate::model::PatchAction) -> Self {
             self.inner = self.inner.rejected_patches_action(input);
             self
         }
-        /// <p>The action for Patch Manager to take on patches included in the
-        /// <code>RejectedPackages</code> list.</p>
+        /// <p>The action for Patch Manager to take on patches included in the <code>RejectedPackages</code> list.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>ALLOW_AS_DEPENDENCY</code>
-        /// </b>: A package in the
-        /// <code>Rejected</code> patches list is installed only if it is a dependency of another package.
-        /// It is considered compliant with the patch baseline, and its status is reported as
-        /// <code>InstalledOther</code>. This is the default action if no option is specified.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>BLOCK</code>
-        /// </b>: Packages in the
-        /// <code>RejectedPatches</code> list, and packages that include them as dependencies, aren't
-        /// installed under any circumstances. If a package was installed before it was added to the
-        /// Rejected patches list, it is considered non-compliant with the patch baseline, and its status
-        /// is reported as <code>InstalledRejected</code>.</p>
-        /// </li>
+        /// <li> <p> <b> <code>ALLOW_AS_DEPENDENCY</code> </b>: A package in the <code>Rejected</code> patches list is installed only if it is a dependency of another package. It is considered compliant with the patch baseline, and its status is reported as <code>InstalledOther</code>. This is the default action if no option is specified.</p> </li>
+        /// <li> <p> <b> <code>BLOCK</code> </b>: Packages in the <code>RejectedPatches</code> list, and packages that include them as dependencies, aren't installed under any circumstances. If a package was installed before it was added to the Rejected patches list, it is considered non-compliant with the patch baseline, and its status is reported as <code>InstalledRejected</code>.</p> </li>
         /// </ul>
         pub fn set_rejected_patches_action(
             mut self,
@@ -3770,14 +3148,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_sources`](Self::set_sources).
         ///
-        /// <p>Information about the patches to use to update the managed nodes, including target operating
-        /// systems and source repositories. Applies to Linux managed nodes only.</p>
+        /// <p>Information about the patches to use to update the managed nodes, including target operating systems and source repositories. Applies to Linux managed nodes only.</p>
         pub fn sources(mut self, input: crate::model::PatchSource) -> Self {
             self.inner = self.inner.sources(input);
             self
         }
-        /// <p>Information about the patches to use to update the managed nodes, including target operating
-        /// systems and source repositories. Applies to Linux managed nodes only.</p>
+        /// <p>Information about the patches to use to update the managed nodes, including target operating systems and source repositories. Applies to Linux managed nodes only.</p>
         pub fn set_sources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PatchSource>>,
@@ -3799,49 +3175,23 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in
-        /// different ways, such as by purpose, owner, or environment. For example, you might want to tag a
-        /// patch baseline to identify the severity level of patches it specifies and the operating system
-        /// family it applies to. In this case, you could specify the following key-value pairs:</p>
+        /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a patch baseline to identify the severity level of patches it specifies and the operating system family it applies to. In this case, you could specify the following key-value pairs:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Key=PatchSeverity,Value=Critical</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Key=OS,Value=Windows</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>To add tags to an existing patch baseline, use the <a>AddTagsToResource</a>
-        /// operation.</p>
+        /// <li> <p> <code>Key=PatchSeverity,Value=Critical</code> </p> </li>
+        /// <li> <p> <code>Key=OS,Value=Windows</code> </p> </li>
+        /// </ul> <note>
+        /// <p>To add tags to an existing patch baseline, use the <code>AddTagsToResource</code> operation.</p>
         /// </note>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in
-        /// different ways, such as by purpose, owner, or environment. For example, you might want to tag a
-        /// patch baseline to identify the severity level of patches it specifies and the operating system
-        /// family it applies to. In this case, you could specify the following key-value pairs:</p>
+        /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a patch baseline to identify the severity level of patches it specifies and the operating system family it applies to. In this case, you could specify the following key-value pairs:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Key=PatchSeverity,Value=Critical</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Key=OS,Value=Windows</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>To add tags to an existing patch baseline, use the <a>AddTagsToResource</a>
-        /// operation.</p>
+        /// <li> <p> <code>Key=PatchSeverity,Value=Critical</code> </p> </li>
+        /// <li> <p> <code>Key=OS,Value=Windows</code> </p> </li>
+        /// </ul> <note>
+        /// <p>To add tags to an existing patch baseline, use the <code>AddTagsToResource</code> operation.</p>
         /// </note>
         pub fn set_tags(
             mut self,
@@ -3853,26 +3203,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateResourceDataSync`.
     ///
-    /// <p>A resource data sync helps you view data from multiple sources in a single location.
-    /// Amazon Web Services Systems Manager offers two types of resource data sync: <code>SyncToDestination</code> and
-    /// <code>SyncFromSource</code>.</p>
-    /// <p>You can configure Systems Manager Inventory to use the <code>SyncToDestination</code> type to
-    /// synchronize Inventory data from multiple Amazon Web Services Regions to a single Amazon Simple Storage Service (Amazon S3) bucket. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync.html">Configuring resource data
-    /// sync for Inventory</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    /// <p>You can configure Systems Manager Explorer to use the <code>SyncFromSource</code> type to synchronize
-    /// operational work items (OpsItems) and operational data (OpsData) from multiple Amazon Web Services Regions to a
-    /// single Amazon S3 bucket. This type can synchronize OpsItems and OpsData from multiple
-    /// Amazon Web Services accounts and Amazon Web Services Regions or <code>EntireOrganization</code> by using Organizations. For more
-    /// information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resource-data-sync.html">Setting up Systems Manager
-    /// Explorer to display data from multiple accounts and Regions</a> in the
-    /// <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    /// <p>A resource data sync is an asynchronous operation that returns immediately. After a
-    /// successful initial sync is completed, the system continuously syncs data. To check the status of
-    /// a sync, use the <a>ListResourceDataSync</a>.</p>
-    /// <note>
-    /// <p>By default, data isn't encrypted in Amazon S3. We strongly recommend that you
-    /// enable encryption in Amazon S3 to ensure secure data storage. We also recommend that you
-    /// secure access to the Amazon S3 bucket by creating a restrictive bucket policy. </p>
+    /// <p>A resource data sync helps you view data from multiple sources in a single location. Amazon Web Services Systems Manager offers two types of resource data sync: <code>SyncToDestination</code> and <code>SyncFromSource</code>.</p>
+    /// <p>You can configure Systems Manager Inventory to use the <code>SyncToDestination</code> type to synchronize Inventory data from multiple Amazon Web Services Regions to a single Amazon Simple Storage Service (Amazon S3) bucket. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync.html">Configuring resource data sync for Inventory</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>You can configure Systems Manager Explorer to use the <code>SyncFromSource</code> type to synchronize operational work items (OpsItems) and operational data (OpsData) from multiple Amazon Web Services Regions to a single Amazon S3 bucket. This type can synchronize OpsItems and OpsData from multiple Amazon Web Services accounts and Amazon Web Services Regions or <code>EntireOrganization</code> by using Organizations. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resource-data-sync.html">Setting up Systems Manager Explorer to display data from multiple accounts and Regions</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>A resource data sync is an asynchronous operation that returns immediately. After a successful initial sync is completed, the system continuously syncs data. To check the status of a sync, use the <code>ListResourceDataSync</code>.</p> <note>
+    /// <p>By default, data isn't encrypted in Amazon S3. We strongly recommend that you enable encryption in Amazon S3 to ensure secure data storage. We also recommend that you secure access to the Amazon S3 bucket by creating a restrictive bucket policy. </p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateResourceDataSync<
@@ -3940,8 +3275,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sync_name(input);
             self
         }
-        /// <p>Amazon S3 configuration details for the sync. This parameter is required if the
-        /// <code>SyncType</code> value is SyncToDestination.</p>
+        /// <p>Amazon S3 configuration details for the sync. This parameter is required if the <code>SyncType</code> value is SyncToDestination.</p>
         pub fn s3_destination(
             mut self,
             input: crate::model::ResourceDataSyncS3Destination,
@@ -3949,8 +3283,7 @@ pub mod fluent_builders {
             self.inner = self.inner.s3_destination(input);
             self
         }
-        /// <p>Amazon S3 configuration details for the sync. This parameter is required if the
-        /// <code>SyncType</code> value is SyncToDestination.</p>
+        /// <p>Amazon S3 configuration details for the sync. This parameter is required if the <code>SyncType</code> value is SyncToDestination.</p>
         pub fn set_s3_destination(
             mut self,
             input: std::option::Option<crate::model::ResourceDataSyncS3Destination>,
@@ -3958,34 +3291,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_s3_destination(input);
             self
         }
-        /// <p>Specify <code>SyncToDestination</code> to create a resource data sync that synchronizes data
-        /// to an S3 bucket for Inventory. If you specify <code>SyncToDestination</code>, you must provide a
-        /// value for <code>S3Destination</code>. Specify <code>SyncFromSource</code> to synchronize data
-        /// from a single account and multiple Regions, or multiple Amazon Web Services accounts and Amazon Web Services Regions, as
-        /// listed in Organizations for Explorer. If you specify <code>SyncFromSource</code>, you must provide a
-        /// value for <code>SyncSource</code>. The default value is <code>SyncToDestination</code>.</p>
+        /// <p>Specify <code>SyncToDestination</code> to create a resource data sync that synchronizes data to an S3 bucket for Inventory. If you specify <code>SyncToDestination</code>, you must provide a value for <code>S3Destination</code>. Specify <code>SyncFromSource</code> to synchronize data from a single account and multiple Regions, or multiple Amazon Web Services accounts and Amazon Web Services Regions, as listed in Organizations for Explorer. If you specify <code>SyncFromSource</code>, you must provide a value for <code>SyncSource</code>. The default value is <code>SyncToDestination</code>.</p>
         pub fn sync_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.sync_type(input.into());
             self
         }
-        /// <p>Specify <code>SyncToDestination</code> to create a resource data sync that synchronizes data
-        /// to an S3 bucket for Inventory. If you specify <code>SyncToDestination</code>, you must provide a
-        /// value for <code>S3Destination</code>. Specify <code>SyncFromSource</code> to synchronize data
-        /// from a single account and multiple Regions, or multiple Amazon Web Services accounts and Amazon Web Services Regions, as
-        /// listed in Organizations for Explorer. If you specify <code>SyncFromSource</code>, you must provide a
-        /// value for <code>SyncSource</code>. The default value is <code>SyncToDestination</code>.</p>
+        /// <p>Specify <code>SyncToDestination</code> to create a resource data sync that synchronizes data to an S3 bucket for Inventory. If you specify <code>SyncToDestination</code>, you must provide a value for <code>S3Destination</code>. Specify <code>SyncFromSource</code> to synchronize data from a single account and multiple Regions, or multiple Amazon Web Services accounts and Amazon Web Services Regions, as listed in Organizations for Explorer. If you specify <code>SyncFromSource</code>, you must provide a value for <code>SyncSource</code>. The default value is <code>SyncToDestination</code>.</p>
         pub fn set_sync_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_sync_type(input);
             self
         }
-        /// <p>Specify information about the data sources to synchronize. This parameter is required if the
-        /// <code>SyncType</code> value is SyncFromSource.</p>
+        /// <p>Specify information about the data sources to synchronize. This parameter is required if the <code>SyncType</code> value is SyncFromSource.</p>
         pub fn sync_source(mut self, input: crate::model::ResourceDataSyncSource) -> Self {
             self.inner = self.inner.sync_source(input);
             self
         }
-        /// <p>Specify information about the data sources to synchronize. This parameter is required if the
-        /// <code>SyncType</code> value is SyncFromSource.</p>
+        /// <p>Specify information about the data sources to synchronize. This parameter is required if the <code>SyncType</code> value is SyncFromSource.</p>
         pub fn set_sync_source(
             mut self,
             input: std::option::Option<crate::model::ResourceDataSyncSource>,
@@ -3996,9 +3317,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteActivation`.
     ///
-    /// <p>Deletes an activation. You aren't required to delete an activation. If you delete an
-    /// activation, you can no longer use it to register additional managed nodes. Deleting an activation
-    /// doesn't de-register managed nodes. You must manually de-register managed nodes.</p>
+    /// <p>Deletes an activation. You aren't required to delete an activation. If you delete an activation, you can no longer use it to register additional managed nodes. Deleting an activation doesn't de-register managed nodes. You must manually de-register managed nodes.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteActivation<
         C = aws_smithy_client::erase::DynConnector,
@@ -4071,13 +3390,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteAssociation`.
     ///
-    /// <p>Disassociates the specified Amazon Web Services Systems Manager document (SSM document) from the specified managed node.
-    /// If you created the association by using the <code>Targets</code> parameter, then you must delete
-    /// the association by using the association ID.</p>
-    /// <p>When you disassociate a document from a managed node, it doesn't change the configuration of
-    /// the node. To change the configuration state of a managed node after you disassociate a document,
-    /// you must create a new document with the desired configuration and associate it with the
-    /// node.</p>
+    /// <p>Disassociates the specified Amazon Web Services Systems Manager document (SSM document) from the specified managed node. If you created the association by using the <code>Targets</code> parameter, then you must delete the association by using the association ID.</p>
+    /// <p>When you disassociate a document from a managed node, it doesn't change the configuration of the node. To change the configuration state of a managed node after you disassociate a document, you must create a new document with the desired configuration and associate it with the node.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAssociation<
         C = aws_smithy_client::erase::DynConnector,
@@ -4144,33 +3458,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The managed node ID.</p>
-        /// <note>
-        /// <p>
-        /// <code>InstanceId</code> has been deprecated. To specify a managed node ID for an association,
-        /// use the <code>Targets</code> parameter. Requests that include the
-        /// parameter <code>InstanceID</code> with Systems Manager documents (SSM documents) that use schema version
-        /// 2.0 or later will fail. In addition, if you use the parameter
-        /// <code>InstanceId</code>, you can't use the parameters <code>AssociationName</code>,
-        /// <code>DocumentVersion</code>, <code>MaxErrors</code>, <code>MaxConcurrency</code>,
-        /// <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these parameters, you
-        /// must use the <code>Targets</code> parameter.</p>
+        /// <p>The managed node ID.</p> <note>
+        /// <p> <code>InstanceId</code> has been deprecated. To specify a managed node ID for an association, use the <code>Targets</code> parameter. Requests that include the parameter <code>InstanceID</code> with Systems Manager documents (SSM documents) that use schema version 2.0 or later will fail. In addition, if you use the parameter <code>InstanceId</code>, you can't use the parameters <code>AssociationName</code>, <code>DocumentVersion</code>, <code>MaxErrors</code>, <code>MaxConcurrency</code>, <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these parameters, you must use the <code>Targets</code> parameter.</p>
         /// </note>
         pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_id(input.into());
             self
         }
-        /// <p>The managed node ID.</p>
-        /// <note>
-        /// <p>
-        /// <code>InstanceId</code> has been deprecated. To specify a managed node ID for an association,
-        /// use the <code>Targets</code> parameter. Requests that include the
-        /// parameter <code>InstanceID</code> with Systems Manager documents (SSM documents) that use schema version
-        /// 2.0 or later will fail. In addition, if you use the parameter
-        /// <code>InstanceId</code>, you can't use the parameters <code>AssociationName</code>,
-        /// <code>DocumentVersion</code>, <code>MaxErrors</code>, <code>MaxConcurrency</code>,
-        /// <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these parameters, you
-        /// must use the <code>Targets</code> parameter.</p>
+        /// <p>The managed node ID.</p> <note>
+        /// <p> <code>InstanceId</code> has been deprecated. To specify a managed node ID for an association, use the <code>Targets</code> parameter. Requests that include the parameter <code>InstanceID</code> with Systems Manager documents (SSM documents) that use schema version 2.0 or later will fail. In addition, if you use the parameter <code>InstanceId</code>, you can't use the parameters <code>AssociationName</code>, <code>DocumentVersion</code>, <code>MaxErrors</code>, <code>MaxConcurrency</code>, <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these parameters, you must use the <code>Targets</code> parameter.</p>
         /// </note>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_id(input);
@@ -4192,9 +3488,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteDocument`.
     ///
-    /// <p>Deletes the Amazon Web Services Systems Manager document (SSM document) and all managed node associations to the
-    /// document.</p>
-    /// <p>Before you delete the document, we recommend that you use <a>DeleteAssociation</a> to disassociate all managed nodes that are associated with the document.</p>
+    /// <p>Deletes the Amazon Web Services Systems Manager document (SSM document) and all managed node associations to the document.</p>
+    /// <p>Before you delete the document, we recommend that you use <code>DeleteAssociation</code> to disassociate all managed nodes that are associated with the document.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDocument<
         C = aws_smithy_client::erase::DynConnector,
@@ -4261,14 +3556,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The version of the document that you want to delete. If not provided, all versions of the
-        /// document are deleted.</p>
+        /// <p>The version of the document that you want to delete. If not provided, all versions of the document are deleted.</p>
         pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.document_version(input.into());
             self
         }
-        /// <p>The version of the document that you want to delete. If not provided, all versions of the
-        /// document are deleted.</p>
+        /// <p>The version of the document that you want to delete. If not provided, all versions of the document are deleted.</p>
         pub fn set_document_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4276,30 +3569,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_document_version(input);
             self
         }
-        /// <p>The version name of the document that you want to delete. If not provided, all versions of
-        /// the document are deleted.</p>
+        /// <p>The version name of the document that you want to delete. If not provided, all versions of the document are deleted.</p>
         pub fn version_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.version_name(input.into());
             self
         }
-        /// <p>The version name of the document that you want to delete. If not provided, all versions of
-        /// the document are deleted.</p>
+        /// <p>The version name of the document that you want to delete. If not provided, all versions of the document are deleted.</p>
         pub fn set_version_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_version_name(input);
             self
         }
-        /// <p>Some SSM document types require that you specify a <code>Force</code> flag before you can
-        /// delete the document. For example, you must specify a <code>Force</code> flag to delete a document
-        /// of type <code>ApplicationConfigurationSchema</code>. You can restrict access to the
-        /// <code>Force</code> flag in an Identity and Access Management (IAM) policy.</p>
+        /// <p>Some SSM document types require that you specify a <code>Force</code> flag before you can delete the document. For example, you must specify a <code>Force</code> flag to delete a document of type <code>ApplicationConfigurationSchema</code>. You can restrict access to the <code>Force</code> flag in an Identity and Access Management (IAM) policy.</p>
         pub fn force(mut self, input: bool) -> Self {
             self.inner = self.inner.force(input);
             self
         }
-        /// <p>Some SSM document types require that you specify a <code>Force</code> flag before you can
-        /// delete the document. For example, you must specify a <code>Force</code> flag to delete a document
-        /// of type <code>ApplicationConfigurationSchema</code>. You can restrict access to the
-        /// <code>Force</code> flag in an Identity and Access Management (IAM) policy.</p>
+        /// <p>Some SSM document types require that you specify a <code>Force</code> flag before you can delete the document. For example, you must specify a <code>Force</code> flag to delete a document of type <code>ApplicationConfigurationSchema</code>. You can restrict access to the <code>Force</code> flag in an Identity and Access Management (IAM) policy.</p>
         pub fn set_force(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_force(input);
             self
@@ -4307,8 +3592,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteInventory`.
     ///
-    /// <p>Delete a custom inventory type or the data associated with a custom Inventory type. Deleting
-    /// a custom inventory type is also referred to as deleting a custom inventory schema.</p>
+    /// <p>Delete a custom inventory type or the data associated with a custom Inventory type. Deleting a custom inventory type is also referred to as deleting a custom inventory schema.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteInventory<
         C = aws_smithy_client::erase::DynConnector,
@@ -4365,26 +3649,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the custom inventory type for which you want to delete either all previously
-        /// collected data or the inventory type itself. </p>
+        /// <p>The name of the custom inventory type for which you want to delete either all previously collected data or the inventory type itself. </p>
         pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.type_name(input.into());
             self
         }
-        /// <p>The name of the custom inventory type for which you want to delete either all previously
-        /// collected data or the inventory type itself. </p>
+        /// <p>The name of the custom inventory type for which you want to delete either all previously collected data or the inventory type itself. </p>
         pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_type_name(input);
             self
         }
-        /// <p>Use the <code>SchemaDeleteOption</code> to delete a custom inventory type (schema). If you
-        /// don't choose this option, the system only deletes existing inventory data associated with the
-        /// custom inventory type. Choose one of the following options:</p>
-        /// <p>DisableSchema: If you choose this option, the system ignores all inventory data for the
-        /// specified version, and any earlier versions. To enable this schema again, you must call the
-        /// <code>PutInventory</code> operation for a version greater than the disabled version.</p>
-        /// <p>DeleteSchema: This option deletes the specified custom type from the Inventory service. You
-        /// can recreate the schema later, if you want.</p>
+        /// <p>Use the <code>SchemaDeleteOption</code> to delete a custom inventory type (schema). If you don't choose this option, the system only deletes existing inventory data associated with the custom inventory type. Choose one of the following options:</p>
+        /// <p>DisableSchema: If you choose this option, the system ignores all inventory data for the specified version, and any earlier versions. To enable this schema again, you must call the <code>PutInventory</code> operation for a version greater than the disabled version.</p>
+        /// <p>DeleteSchema: This option deletes the specified custom type from the Inventory service. You can recreate the schema later, if you want.</p>
         pub fn schema_delete_option(
             mut self,
             input: crate::model::InventorySchemaDeleteOption,
@@ -4392,14 +3669,9 @@ pub mod fluent_builders {
             self.inner = self.inner.schema_delete_option(input);
             self
         }
-        /// <p>Use the <code>SchemaDeleteOption</code> to delete a custom inventory type (schema). If you
-        /// don't choose this option, the system only deletes existing inventory data associated with the
-        /// custom inventory type. Choose one of the following options:</p>
-        /// <p>DisableSchema: If you choose this option, the system ignores all inventory data for the
-        /// specified version, and any earlier versions. To enable this schema again, you must call the
-        /// <code>PutInventory</code> operation for a version greater than the disabled version.</p>
-        /// <p>DeleteSchema: This option deletes the specified custom type from the Inventory service. You
-        /// can recreate the schema later, if you want.</p>
+        /// <p>Use the <code>SchemaDeleteOption</code> to delete a custom inventory type (schema). If you don't choose this option, the system only deletes existing inventory data associated with the custom inventory type. Choose one of the following options:</p>
+        /// <p>DisableSchema: If you choose this option, the system ignores all inventory data for the specified version, and any earlier versions. To enable this schema again, you must call the <code>PutInventory</code> operation for a version greater than the disabled version.</p>
+        /// <p>DeleteSchema: This option deletes the specified custom type from the Inventory service. You can recreate the schema later, if you want.</p>
         pub fn set_schema_delete_option(
             mut self,
             input: std::option::Option<crate::model::InventorySchemaDeleteOption>,
@@ -4407,18 +3679,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_schema_delete_option(input);
             self
         }
-        /// <p>Use this option to view a summary of the deletion request without deleting any data or the
-        /// data type. This option is useful when you only want to understand what will be deleted. Once you
-        /// validate that the data to be deleted is what you intend to delete, you can run the same command
-        /// without specifying the <code>DryRun</code> option.</p>
+        /// <p>Use this option to view a summary of the deletion request without deleting any data or the data type. This option is useful when you only want to understand what will be deleted. Once you validate that the data to be deleted is what you intend to delete, you can run the same command without specifying the <code>DryRun</code> option.</p>
         pub fn dry_run(mut self, input: bool) -> Self {
             self.inner = self.inner.dry_run(input);
             self
         }
-        /// <p>Use this option to view a summary of the deletion request without deleting any data or the
-        /// data type. This option is useful when you only want to understand what will be deleted. Once you
-        /// validate that the data to be deleted is what you intend to delete, you can run the same command
-        /// without specifying the <code>DryRun</code> option.</p>
+        /// <p>Use this option to view a summary of the deletion request without deleting any data or the data type. This option is useful when you only want to understand what will be deleted. Once you validate that the data to be deleted is what you intend to delete, you can run the same command without specifying the <code>DryRun</code> option.</p>
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_dry_run(input);
             self
@@ -4579,8 +3845,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteParameter`.
     ///
-    /// <p>Delete a parameter from the system. After deleting a parameter, wait for at least 30 seconds
-    /// to create a parameter with the same name.</p>
+    /// <p>Delete a parameter from the system. After deleting a parameter, wait for at least 30 seconds to create a parameter with the same name.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteParameter<
         C = aws_smithy_client::erase::DynConnector,
@@ -4650,8 +3915,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteParameters`.
     ///
-    /// <p>Delete a list of parameters. After deleting a parameter, wait for at least 30 seconds to
-    /// create a parameter with the same name.</p>
+    /// <p>Delete a list of parameters. After deleting a parameter, wait for at least 30 seconds to create a parameter with the same name.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteParameters<
         C = aws_smithy_client::erase::DynConnector,
@@ -4712,14 +3976,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_names`](Self::set_names).
         ///
-        /// <p>The names of the parameters to delete. After deleting a parameter, wait for at least 30
-        /// seconds to create a parameter with the same name.</p>
+        /// <p>The names of the parameters to delete. After deleting a parameter, wait for at least 30 seconds to create a parameter with the same name.</p>
         pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.names(input.into());
             self
         }
-        /// <p>The names of the parameters to delete. After deleting a parameter, wait for at least 30
-        /// seconds to create a parameter with the same name.</p>
+        /// <p>The names of the parameters to delete. After deleting a parameter, wait for at least 30 seconds to create a parameter with the same name.</p>
         pub fn set_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4800,9 +4062,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteResourceDataSync`.
     ///
-    /// <p>Deletes a resource data sync configuration. After the configuration is deleted, changes to
-    /// data on managed nodes are no longer synced to or from the target. Deleting a sync configuration
-    /// doesn't delete data.</p>
+    /// <p>Deletes a resource data sync configuration. After the configuration is deleted, changes to data on managed nodes are no longer synced to or from the target. Deleting a sync configuration doesn't delete data.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteResourceDataSync<
         C = aws_smithy_client::erase::DynConnector,
@@ -4882,9 +4142,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeregisterManagedInstance`.
     ///
-    /// <p>Removes the server or virtual machine from the list of registered servers. You can
-    /// reregister the node again at any time. If you don't plan to use Run Command on the server, we
-    /// suggest uninstalling SSM Agent first.</p>
+    /// <p>Removes the server or virtual machine from the list of registered servers. You can reregister the node again at any time. If you don't plan to use Run Command on the server, we suggest uninstalling SSM Agent first.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterManagedInstance<
         C = aws_smithy_client::erase::DynConnector,
@@ -4941,14 +4199,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID assigned to the managed node when you registered it using the activation process.
-        /// </p>
+        /// <p>The ID assigned to the managed node when you registered it using the activation process. </p>
         pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_id(input.into());
             self
         }
-        /// <p>The ID assigned to the managed node when you registered it using the activation process.
-        /// </p>
+        /// <p>The ID assigned to the managed node when you registered it using the activation process. </p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_id(input);
             self
@@ -5120,16 +4376,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_window_target_id(input);
             self
         }
-        /// <p>The system checks if the target is being referenced by a task. If the target is being
-        /// referenced, the system returns an error and doesn't deregister the target from the maintenance
-        /// window.</p>
+        /// <p>The system checks if the target is being referenced by a task. If the target is being referenced, the system returns an error and doesn't deregister the target from the maintenance window.</p>
         pub fn safe(mut self, input: bool) -> Self {
             self.inner = self.inner.safe(input);
             self
         }
-        /// <p>The system checks if the target is being referenced by a task. If the target is being
-        /// referenced, the system returns an error and doesn't deregister the target from the maintenance
-        /// window.</p>
+        /// <p>The system checks if the target is being referenced by a task. If the target is being referenced, the system returns an error and doesn't deregister the target from the maintenance window.</p>
         pub fn set_safe(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_safe(input);
             self
@@ -5222,10 +4474,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeActivations`.
     ///
-    /// <p>Describes details about the activation, such as the date and time the activation was
-    /// created, its expiration date, the Identity and Access Management (IAM) role assigned to
-    /// the managed nodes in the activation, and the number of nodes registered by using this
-    /// activation.</p>
+    /// <p>Describes details about the activation, such as the date and time the activation was created, its expiration date, the Identity and Access Management (IAM) role assigned to the managed nodes in the activation, and the number of nodes registered by using this activation.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeActivations<
         C = aws_smithy_client::erase::DynConnector,
@@ -5299,14 +4548,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -5324,9 +4571,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeAssociation`.
     ///
-    /// <p>Describes the association for the specified target or managed node. If you created the
-    /// association by using the <code>Targets</code> parameter, then you must retrieve the association
-    /// by using the association ID.</p>
+    /// <p>Describes the association for the specified target or managed node. If you created the association by using the <code>Targets</code> parameter, then you must retrieve the association by using the association ID.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAssociation<
         C = aws_smithy_client::erase::DynConnector,
@@ -5416,18 +4661,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_association_id(input);
             self
         }
-        /// <p>Specify the association version to retrieve. To view the latest version, either specify
-        /// <code>$LATEST</code> for this parameter, or omit this parameter. To view a list of all
-        /// associations for a managed node, use <a>ListAssociations</a>. To get a list of versions
-        /// for a specific association, use <a>ListAssociationVersions</a>. </p>
+        /// <p>Specify the association version to retrieve. To view the latest version, either specify <code>$LATEST</code> for this parameter, or omit this parameter. To view a list of all associations for a managed node, use <code>ListAssociations</code>. To get a list of versions for a specific association, use <code>ListAssociationVersions</code>. </p>
         pub fn association_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.association_version(input.into());
             self
         }
-        /// <p>Specify the association version to retrieve. To view the latest version, either specify
-        /// <code>$LATEST</code> for this parameter, or omit this parameter. To view a list of all
-        /// associations for a managed node, use <a>ListAssociations</a>. To get a list of versions
-        /// for a specific association, use <a>ListAssociationVersions</a>. </p>
+        /// <p>Specify the association version to retrieve. To view the latest version, either specify <code>$LATEST</code> for this parameter, or omit this parameter. To view a list of all associations for a managed node, use <code>ListAssociations</code>. To get a list of versions for a specific association, use <code>ListAssociationVersions</code>. </p>
         pub fn set_association_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5531,14 +4770,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -5663,14 +4900,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -5762,26 +4997,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5789,8 +5020,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeAutomationStepExecutions`.
     ///
-    /// <p>Information about all active and terminated step executions in an Automation
-    /// workflow.</p>
+    /// <p>Information about all active and terminated step executions in an Automation workflow.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAutomationStepExecutions<
         C = aws_smithy_client::erase::DynConnector,
@@ -5877,38 +5107,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>Indicates whether to list step executions in reverse order by start time. The default value
-        /// is 'false'.</p>
+        /// <p>Indicates whether to list step executions in reverse order by start time. The default value is 'false'.</p>
         pub fn reverse_order(mut self, input: bool) -> Self {
             self.inner = self.inner.reverse_order(input);
             self
         }
-        /// <p>Indicates whether to list step executions in reverse order by start time. The default value
-        /// is 'false'.</p>
+        /// <p>Indicates whether to list step executions in reverse order by start time. The default value is 'false'.</p>
         pub fn set_reverse_order(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_reverse_order(input);
             self
@@ -5978,374 +5202,70 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>Each element in the array is a structure containing a key-value pair.</p>
-        /// <p>
-        /// <b>Windows Server</b>
-        /// </p>
+        /// <p> <b>Windows Server</b> </p>
         /// <p>Supported keys for Windows Server managed node patches include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>PATCH_SET</code>
-        /// </b>
-        /// </p>
-        /// <p>Sample values: <code>OS</code> | <code>APPLICATION</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>PRODUCT</code>
-        /// </b>
-        /// </p>
-        /// <p>Sample values: <code>WindowsServer2012</code> | <code>Office 2010</code> |
-        /// <code>MicrosoftDefenderAntivirus</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>PRODUCT_FAMILY</code>
-        /// </b>
-        /// </p>
-        /// <p>Sample values: <code>Windows</code> | <code>Office</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>MSRC_SEVERITY</code>
-        /// </b>
-        /// </p>
-        /// <p>Sample values: <code>ServicePacks</code> | <code>Important</code> | <code>Moderate</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>CLASSIFICATION</code>
-        /// </b>
-        /// </p>
-        /// <p>Sample values: <code>ServicePacks</code> | <code>SecurityUpdates</code> |
-        /// <code>DefinitionUpdates</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>PATCH_ID</code>
-        /// </b>
-        /// </p>
-        /// <p>Sample values: <code>KB123456</code> | <code>KB4516046</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <b> <code>PATCH_SET</code> </b> </p> <p>Sample values: <code>OS</code> | <code>APPLICATION</code> </p> </li>
+        /// <li> <p> <b> <code>PRODUCT</code> </b> </p> <p>Sample values: <code>WindowsServer2012</code> | <code>Office 2010</code> | <code>MicrosoftDefenderAntivirus</code> </p> </li>
+        /// <li> <p> <b> <code>PRODUCT_FAMILY</code> </b> </p> <p>Sample values: <code>Windows</code> | <code>Office</code> </p> </li>
+        /// <li> <p> <b> <code>MSRC_SEVERITY</code> </b> </p> <p>Sample values: <code>ServicePacks</code> | <code>Important</code> | <code>Moderate</code> </p> </li>
+        /// <li> <p> <b> <code>CLASSIFICATION</code> </b> </p> <p>Sample values: <code>ServicePacks</code> | <code>SecurityUpdates</code> | <code>DefinitionUpdates</code> </p> </li>
+        /// <li> <p> <b> <code>PATCH_ID</code> </b> </p> <p>Sample values: <code>KB123456</code> | <code>KB4516046</code> </p> </li>
         /// </ul>
-        ///
-        /// <p>
-        /// <b>Linux</b>
-        /// </p>
-        /// <important>
-        /// <p>When specifying filters for Linux patches, you must specify a key-pair for
-        /// <code>PRODUCT</code>. For example, using the Command Line Interface (CLI), the
-        /// following command fails:</p>
-        /// <p>
-        /// <code>aws ssm describe-available-patches --filters Key=CVE_ID,Values=CVE-2018-3615</code>
-        /// </p>
+        /// <p> <b>Linux</b> </p> <important>
+        /// <p>When specifying filters for Linux patches, you must specify a key-pair for <code>PRODUCT</code>. For example, using the Command Line Interface (CLI), the following command fails:</p>
+        /// <p> <code>aws ssm describe-available-patches --filters Key=CVE_ID,Values=CVE-2018-3615</code> </p>
         /// <p>However, the following command succeeds:</p>
-        /// <p>
-        /// <code>aws ssm describe-available-patches --filters Key=PRODUCT,Values=AmazonLinux2018.03
-        /// Key=CVE_ID,Values=CVE-2018-3615</code>
-        /// </p>
+        /// <p> <code>aws ssm describe-available-patches --filters Key=PRODUCT,Values=AmazonLinux2018.03 Key=CVE_ID,Values=CVE-2018-3615</code> </p>
         /// </important>
         /// <p>Supported keys for Linux managed node patches include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>PRODUCT</code>
-        /// </b>
-        /// </p>
-        /// <p>Sample values: <code>AmazonLinux2018.03</code> | <code>AmazonLinux2.0</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>NAME</code>
-        /// </b>
-        /// </p>
-        /// <p>Sample values: <code>kernel-headers</code> | <code>samba-python</code> | <code>php</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>SEVERITY</code>
-        /// </b>
-        /// </p>
-        /// <p>Sample values: <code>Critical</code> | <code>Important</code> | <code>Medium</code> |
-        /// <code>Low</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>EPOCH</code>
-        /// </b>
-        /// </p>
-        /// <p>Sample values: <code>0</code> | <code>1</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>VERSION</code>
-        /// </b>
-        /// </p>
-        /// <p>Sample values: <code>78.6.1</code> | <code>4.10.16</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>RELEASE</code>
-        /// </b>
-        /// </p>
-        /// <p>Sample values: <code>9.56.amzn1</code> | <code>1.amzn2</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>ARCH</code>
-        /// </b>
-        /// </p>
-        /// <p>Sample values: <code>i686</code> | <code>x86_64</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>REPOSITORY</code>
-        /// </b>
-        /// </p>
-        /// <p>Sample values: <code>Core</code> | <code>Updates</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>ADVISORY_ID</code>
-        /// </b>
-        /// </p>
-        /// <p>Sample values: <code>ALAS-2018-1058</code> | <code>ALAS2-2021-1594</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>CVE_ID</code>
-        /// </b>
-        /// </p>
-        /// <p>Sample values: <code>CVE-2018-3615</code> | <code>CVE-2020-1472</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>BUGZILLA_ID</code>
-        /// </b>
-        /// </p>
-        /// <p>Sample values: <code>1463241</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <b> <code>PRODUCT</code> </b> </p> <p>Sample values: <code>AmazonLinux2018.03</code> | <code>AmazonLinux2.0</code> </p> </li>
+        /// <li> <p> <b> <code>NAME</code> </b> </p> <p>Sample values: <code>kernel-headers</code> | <code>samba-python</code> | <code>php</code> </p> </li>
+        /// <li> <p> <b> <code>SEVERITY</code> </b> </p> <p>Sample values: <code>Critical</code> | <code>Important</code> | <code>Medium</code> | <code>Low</code> </p> </li>
+        /// <li> <p> <b> <code>EPOCH</code> </b> </p> <p>Sample values: <code>0</code> | <code>1</code> </p> </li>
+        /// <li> <p> <b> <code>VERSION</code> </b> </p> <p>Sample values: <code>78.6.1</code> | <code>4.10.16</code> </p> </li>
+        /// <li> <p> <b> <code>RELEASE</code> </b> </p> <p>Sample values: <code>9.56.amzn1</code> | <code>1.amzn2</code> </p> </li>
+        /// <li> <p> <b> <code>ARCH</code> </b> </p> <p>Sample values: <code>i686</code> | <code>x86_64</code> </p> </li>
+        /// <li> <p> <b> <code>REPOSITORY</code> </b> </p> <p>Sample values: <code>Core</code> | <code>Updates</code> </p> </li>
+        /// <li> <p> <b> <code>ADVISORY_ID</code> </b> </p> <p>Sample values: <code>ALAS-2018-1058</code> | <code>ALAS2-2021-1594</code> </p> </li>
+        /// <li> <p> <b> <code>CVE_ID</code> </b> </p> <p>Sample values: <code>CVE-2018-3615</code> | <code>CVE-2020-1472</code> </p> </li>
+        /// <li> <p> <b> <code>BUGZILLA_ID</code> </b> </p> <p>Sample values: <code>1463241</code> </p> </li>
         /// </ul>
         pub fn filters(mut self, input: crate::model::PatchOrchestratorFilter) -> Self {
             self.inner = self.inner.filters(input);
             self
         }
         /// <p>Each element in the array is a structure containing a key-value pair.</p>
-        /// <p>
-        /// <b>Windows Server</b>
-        /// </p>
+        /// <p> <b>Windows Server</b> </p>
         /// <p>Supported keys for Windows Server managed node patches include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>PATCH_SET</code>
-        /// </b>
-        /// </p>
-        /// <p>Sample values: <code>OS</code> | <code>APPLICATION</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>PRODUCT</code>
-        /// </b>
-        /// </p>
-        /// <p>Sample values: <code>WindowsServer2012</code> | <code>Office 2010</code> |
-        /// <code>MicrosoftDefenderAntivirus</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>PRODUCT_FAMILY</code>
-        /// </b>
-        /// </p>
-        /// <p>Sample values: <code>Windows</code> | <code>Office</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>MSRC_SEVERITY</code>
-        /// </b>
-        /// </p>
-        /// <p>Sample values: <code>ServicePacks</code> | <code>Important</code> | <code>Moderate</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>CLASSIFICATION</code>
-        /// </b>
-        /// </p>
-        /// <p>Sample values: <code>ServicePacks</code> | <code>SecurityUpdates</code> |
-        /// <code>DefinitionUpdates</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>PATCH_ID</code>
-        /// </b>
-        /// </p>
-        /// <p>Sample values: <code>KB123456</code> | <code>KB4516046</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <b> <code>PATCH_SET</code> </b> </p> <p>Sample values: <code>OS</code> | <code>APPLICATION</code> </p> </li>
+        /// <li> <p> <b> <code>PRODUCT</code> </b> </p> <p>Sample values: <code>WindowsServer2012</code> | <code>Office 2010</code> | <code>MicrosoftDefenderAntivirus</code> </p> </li>
+        /// <li> <p> <b> <code>PRODUCT_FAMILY</code> </b> </p> <p>Sample values: <code>Windows</code> | <code>Office</code> </p> </li>
+        /// <li> <p> <b> <code>MSRC_SEVERITY</code> </b> </p> <p>Sample values: <code>ServicePacks</code> | <code>Important</code> | <code>Moderate</code> </p> </li>
+        /// <li> <p> <b> <code>CLASSIFICATION</code> </b> </p> <p>Sample values: <code>ServicePacks</code> | <code>SecurityUpdates</code> | <code>DefinitionUpdates</code> </p> </li>
+        /// <li> <p> <b> <code>PATCH_ID</code> </b> </p> <p>Sample values: <code>KB123456</code> | <code>KB4516046</code> </p> </li>
         /// </ul>
-        ///
-        /// <p>
-        /// <b>Linux</b>
-        /// </p>
-        /// <important>
-        /// <p>When specifying filters for Linux patches, you must specify a key-pair for
-        /// <code>PRODUCT</code>. For example, using the Command Line Interface (CLI), the
-        /// following command fails:</p>
-        /// <p>
-        /// <code>aws ssm describe-available-patches --filters Key=CVE_ID,Values=CVE-2018-3615</code>
-        /// </p>
+        /// <p> <b>Linux</b> </p> <important>
+        /// <p>When specifying filters for Linux patches, you must specify a key-pair for <code>PRODUCT</code>. For example, using the Command Line Interface (CLI), the following command fails:</p>
+        /// <p> <code>aws ssm describe-available-patches --filters Key=CVE_ID,Values=CVE-2018-3615</code> </p>
         /// <p>However, the following command succeeds:</p>
-        /// <p>
-        /// <code>aws ssm describe-available-patches --filters Key=PRODUCT,Values=AmazonLinux2018.03
-        /// Key=CVE_ID,Values=CVE-2018-3615</code>
-        /// </p>
+        /// <p> <code>aws ssm describe-available-patches --filters Key=PRODUCT,Values=AmazonLinux2018.03 Key=CVE_ID,Values=CVE-2018-3615</code> </p>
         /// </important>
         /// <p>Supported keys for Linux managed node patches include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>PRODUCT</code>
-        /// </b>
-        /// </p>
-        /// <p>Sample values: <code>AmazonLinux2018.03</code> | <code>AmazonLinux2.0</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>NAME</code>
-        /// </b>
-        /// </p>
-        /// <p>Sample values: <code>kernel-headers</code> | <code>samba-python</code> | <code>php</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>SEVERITY</code>
-        /// </b>
-        /// </p>
-        /// <p>Sample values: <code>Critical</code> | <code>Important</code> | <code>Medium</code> |
-        /// <code>Low</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>EPOCH</code>
-        /// </b>
-        /// </p>
-        /// <p>Sample values: <code>0</code> | <code>1</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>VERSION</code>
-        /// </b>
-        /// </p>
-        /// <p>Sample values: <code>78.6.1</code> | <code>4.10.16</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>RELEASE</code>
-        /// </b>
-        /// </p>
-        /// <p>Sample values: <code>9.56.amzn1</code> | <code>1.amzn2</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>ARCH</code>
-        /// </b>
-        /// </p>
-        /// <p>Sample values: <code>i686</code> | <code>x86_64</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>REPOSITORY</code>
-        /// </b>
-        /// </p>
-        /// <p>Sample values: <code>Core</code> | <code>Updates</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>ADVISORY_ID</code>
-        /// </b>
-        /// </p>
-        /// <p>Sample values: <code>ALAS-2018-1058</code> | <code>ALAS2-2021-1594</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>CVE_ID</code>
-        /// </b>
-        /// </p>
-        /// <p>Sample values: <code>CVE-2018-3615</code> | <code>CVE-2020-1472</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>BUGZILLA_ID</code>
-        /// </b>
-        /// </p>
-        /// <p>Sample values: <code>1463241</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <b> <code>PRODUCT</code> </b> </p> <p>Sample values: <code>AmazonLinux2018.03</code> | <code>AmazonLinux2.0</code> </p> </li>
+        /// <li> <p> <b> <code>NAME</code> </b> </p> <p>Sample values: <code>kernel-headers</code> | <code>samba-python</code> | <code>php</code> </p> </li>
+        /// <li> <p> <b> <code>SEVERITY</code> </b> </p> <p>Sample values: <code>Critical</code> | <code>Important</code> | <code>Medium</code> | <code>Low</code> </p> </li>
+        /// <li> <p> <b> <code>EPOCH</code> </b> </p> <p>Sample values: <code>0</code> | <code>1</code> </p> </li>
+        /// <li> <p> <b> <code>VERSION</code> </b> </p> <p>Sample values: <code>78.6.1</code> | <code>4.10.16</code> </p> </li>
+        /// <li> <p> <b> <code>RELEASE</code> </b> </p> <p>Sample values: <code>9.56.amzn1</code> | <code>1.amzn2</code> </p> </li>
+        /// <li> <p> <b> <code>ARCH</code> </b> </p> <p>Sample values: <code>i686</code> | <code>x86_64</code> </p> </li>
+        /// <li> <p> <b> <code>REPOSITORY</code> </b> </p> <p>Sample values: <code>Core</code> | <code>Updates</code> </p> </li>
+        /// <li> <p> <b> <code>ADVISORY_ID</code> </b> </p> <p>Sample values: <code>ALAS-2018-1058</code> | <code>ALAS2-2021-1594</code> </p> </li>
+        /// <li> <p> <b> <code>CVE_ID</code> </b> </p> <p>Sample values: <code>CVE-2018-3615</code> | <code>CVE-2020-1472</code> </p> </li>
+        /// <li> <p> <b> <code>BUGZILLA_ID</code> </b> </p> <p>Sample values: <code>1463241</code> </p> </li>
         /// </ul>
         pub fn set_filters(
             mut self,
@@ -6364,14 +5284,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -6446,14 +5364,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The document version for which you want information. Can be a specific version or the
-        /// default version.</p>
+        /// <p>The document version for which you want information. Can be a specific version or the default version.</p>
         pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.document_version(input.into());
             self
         }
-        /// <p>The document version for which you want information. Can be a specific version or the
-        /// default version.</p>
+        /// <p>The document version for which you want information. Can be a specific version or the default version.</p>
         pub fn set_document_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6461,16 +5377,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_document_version(input);
             self
         }
-        /// <p>An optional field specifying the version of the artifact associated with the document. For
-        /// example, "Release 12, Update 6". This value is unique across all versions of a document, and
-        /// can't be changed.</p>
+        /// <p>An optional field specifying the version of the artifact associated with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.</p>
         pub fn version_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.version_name(input.into());
             self
         }
-        /// <p>An optional field specifying the version of the artifact associated with the document. For
-        /// example, "Release 12, Update 6". This value is unique across all versions of a document, and
-        /// can't be changed.</p>
+        /// <p>An optional field specifying the version of the artifact associated with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.</p>
         pub fn set_version_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_version_name(input);
             self
@@ -6478,9 +5390,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeDocumentPermission`.
     ///
-    /// <p>Describes the permissions for a Amazon Web Services Systems Manager document (SSM document). If you created the
-    /// document, you are the owner. If a document is shared, it can either be shared privately (by
-    /// specifying a user's Amazon Web Services account ID) or publicly (<i>All</i>). </p>
+    /// <p>Describes the permissions for a Amazon Web Services Systems Manager document (SSM document). If you created the document, you are the owner. If a document is shared, it can either be shared privately (by specifying a user's Amazon Web Services account ID) or publicly (<i>All</i>). </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDocumentPermission<
         C = aws_smithy_client::erase::DynConnector,
@@ -6547,14 +5457,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The permission type for the document. The permission type can be
-        /// <i>Share</i>.</p>
+        /// <p>The permission type for the document. The permission type can be <i>Share</i>.</p>
         pub fn permission_type(mut self, input: crate::model::DocumentPermissionType) -> Self {
             self.inner = self.inner.permission_type(input);
             self
         }
-        /// <p>The permission type for the document. The permission type can be
-        /// <i>Share</i>.</p>
+        /// <p>The permission type for the document. The permission type can be <i>Share</i>.</p>
         pub fn set_permission_type(
             mut self,
             input: std::option::Option<crate::model::DocumentPermissionType>,
@@ -6562,26 +5470,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_permission_type(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -6658,26 +5562,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_id(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -6685,8 +5585,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeEffectivePatchesForPatchBaseline`.
     ///
-    /// <p>Retrieves the current effective patches (the patch and the approval state) for the specified
-    /// patch baseline. Applies to patch baselines for Windows only.</p>
+    /// <p>Retrieves the current effective patches (the patch and the approval state) for the specified patch baseline. Applies to patch baselines for Windows only.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEffectivePatchesForPatchBaseline<
         C = aws_smithy_client::erase::DynConnector,
@@ -6765,14 +5664,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -6849,26 +5746,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_id(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -6876,16 +5769,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeInstanceInformation`.
     ///
-    /// <p>Describes one or more of your managed nodes, including information about the operating
-    /// system platform, the version of SSM Agent installed on the managed node, node status, and so
-    /// on.</p>
-    /// <p>If you specify one or more managed node IDs, it returns information for those managed nodes. If
-    /// you don't specify node IDs, it returns information for all your managed nodes. If you specify
-    /// a node ID that isn't valid or a node that you don't own, you receive an error.</p>
-    /// <note>
-    /// <p>The <code>IamRole</code> field for this API operation is the Identity and Access Management
-    /// (IAM) role assigned to on-premises managed nodes. This call doesn't return the
-    /// IAM role for EC2 instances.</p>
+    /// <p>Describes one or more of your managed nodes, including information about the operating system platform, the version of SSM Agent installed on the managed node, node status, and so on.</p>
+    /// <p>If you specify one or more managed node IDs, it returns information for those managed nodes. If you don't specify node IDs, it returns information for all your managed nodes. If you specify a node ID that isn't valid or a node that you don't own, you receive an error.</p> <note>
+    /// <p>The <code>IamRole</code> field for this API operation is the Identity and Access Management (IAM) role assigned to on-premises managed nodes. This call doesn't return the IAM role for EC2 instances.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeInstanceInformation<
@@ -6947,12 +5833,8 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_instance_information_filter_list`](Self::set_instance_information_filter_list).
         ///
-        /// <p>This is a legacy method. We recommend that you don't use this method. Instead, use the
-        /// <code>Filters</code> data type. <code>Filters</code> enables you to return node information
-        /// by filtering based on tags applied to managed nodes.</p>
-        /// <note>
-        /// <p>Attempting to use <code>InstanceInformationFilterList</code> and <code>Filters</code> leads
-        /// to an exception error. </p>
+        /// <p>This is a legacy method. We recommend that you don't use this method. Instead, use the <code>Filters</code> data type. <code>Filters</code> enables you to return node information by filtering based on tags applied to managed nodes.</p> <note>
+        /// <p>Attempting to use <code>InstanceInformationFilterList</code> and <code>Filters</code> leads to an exception error. </p>
         /// </note>
         pub fn instance_information_filter_list(
             mut self,
@@ -6961,12 +5843,8 @@ pub mod fluent_builders {
             self.inner = self.inner.instance_information_filter_list(input);
             self
         }
-        /// <p>This is a legacy method. We recommend that you don't use this method. Instead, use the
-        /// <code>Filters</code> data type. <code>Filters</code> enables you to return node information
-        /// by filtering based on tags applied to managed nodes.</p>
-        /// <note>
-        /// <p>Attempting to use <code>InstanceInformationFilterList</code> and <code>Filters</code> leads
-        /// to an exception error. </p>
+        /// <p>This is a legacy method. We recommend that you don't use this method. Instead, use the <code>Filters</code> data type. <code>Filters</code> enables you to return node information by filtering based on tags applied to managed nodes.</p> <note>
+        /// <p>Attempting to use <code>InstanceInformationFilterList</code> and <code>Filters</code> leads to an exception error. </p>
         /// </note>
         pub fn set_instance_information_filter_list(
             mut self,
@@ -6979,16 +5857,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>One or more filters. Use a filter to return a more specific list of managed nodes. You can
-        /// filter based on tags applied to EC2 instances. Use this <code>Filters</code> data type instead of
-        /// <code>InstanceInformationFilterList</code>, which is deprecated.</p>
+        /// <p>One or more filters. Use a filter to return a more specific list of managed nodes. You can filter based on tags applied to EC2 instances. Use this <code>Filters</code> data type instead of <code>InstanceInformationFilterList</code>, which is deprecated.</p>
         pub fn filters(mut self, input: crate::model::InstanceInformationStringFilter) -> Self {
             self.inner = self.inner.filters(input);
             self
         }
-        /// <p>One or more filters. Use a filter to return a more specific list of managed nodes. You can
-        /// filter based on tags applied to EC2 instances. Use this <code>Filters</code> data type instead of
-        /// <code>InstanceInformationFilterList</code>, which is deprecated.</p>
+        /// <p>One or more filters. Use a filter to return a more specific list of managed nodes. You can filter based on tags applied to EC2 instances. Use this <code>Filters</code> data type instead of <code>InstanceInformationFilterList</code>, which is deprecated.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<
@@ -6998,26 +5872,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results. </p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results. </p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -7025,8 +5895,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeInstancePatches`.
     ///
-    /// <p>Retrieves information about the patches on the specified managed node and their state relative
-    /// to the patch baseline being used for the node.</p>
+    /// <p>Retrieves information about the patches on the specified managed node and their state relative to the patch baseline being used for the node.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeInstancePatches<
         C = aws_smithy_client::erase::DynConnector,
@@ -7100,43 +5969,10 @@ pub mod fluent_builders {
         /// <p>Each element in the array is a structure containing a key-value pair.</p>
         /// <p>Supported keys for <code>DescribeInstancePatches</code>include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>Classification</code>
-        /// </b>
-        /// </p>
-        /// <p>Sample values: <code>Security</code> | <code>SecurityUpdates</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>KBId</code>
-        /// </b>
-        /// </p>
-        /// <p>Sample values: <code>KB4480056</code> | <code>java-1.7.0-openjdk.x86_64</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>Severity</code>
-        /// </b>
-        /// </p>
-        /// <p>Sample values: <code>Important</code> | <code>Medium</code> | <code>Low</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>State</code>
-        /// </b>
-        /// </p>
-        /// <p>Sample values: <code>Installed</code> | <code>InstalledOther</code> |
-        /// <code>InstalledPendingReboot</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <b> <code>Classification</code> </b> </p> <p>Sample values: <code>Security</code> | <code>SecurityUpdates</code> </p> </li>
+        /// <li> <p> <b> <code>KBId</code> </b> </p> <p>Sample values: <code>KB4480056</code> | <code>java-1.7.0-openjdk.x86_64</code> </p> </li>
+        /// <li> <p> <b> <code>Severity</code> </b> </p> <p>Sample values: <code>Important</code> | <code>Medium</code> | <code>Low</code> </p> </li>
+        /// <li> <p> <b> <code>State</code> </b> </p> <p>Sample values: <code>Installed</code> | <code>InstalledOther</code> | <code>InstalledPendingReboot</code> </p> </li>
         /// </ul>
         pub fn filters(mut self, input: crate::model::PatchOrchestratorFilter) -> Self {
             self.inner = self.inner.filters(input);
@@ -7145,43 +5981,10 @@ pub mod fluent_builders {
         /// <p>Each element in the array is a structure containing a key-value pair.</p>
         /// <p>Supported keys for <code>DescribeInstancePatches</code>include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>Classification</code>
-        /// </b>
-        /// </p>
-        /// <p>Sample values: <code>Security</code> | <code>SecurityUpdates</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>KBId</code>
-        /// </b>
-        /// </p>
-        /// <p>Sample values: <code>KB4480056</code> | <code>java-1.7.0-openjdk.x86_64</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>Severity</code>
-        /// </b>
-        /// </p>
-        /// <p>Sample values: <code>Important</code> | <code>Medium</code> | <code>Low</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>State</code>
-        /// </b>
-        /// </p>
-        /// <p>Sample values: <code>Installed</code> | <code>InstalledOther</code> |
-        /// <code>InstalledPendingReboot</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <b> <code>Classification</code> </b> </p> <p>Sample values: <code>Security</code> | <code>SecurityUpdates</code> </p> </li>
+        /// <li> <p> <b> <code>KBId</code> </b> </p> <p>Sample values: <code>KB4480056</code> | <code>java-1.7.0-openjdk.x86_64</code> </p> </li>
+        /// <li> <p> <b> <code>Severity</code> </b> </p> <p>Sample values: <code>Important</code> | <code>Medium</code> | <code>Low</code> </p> </li>
+        /// <li> <p> <b> <code>State</code> </b> </p> <p>Sample values: <code>Installed</code> | <code>InstalledOther</code> | <code>InstalledPendingReboot</code> </p> </li>
         /// </ul>
         pub fn set_filters(
             mut self,
@@ -7190,14 +5993,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -7289,14 +6090,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_ids(input);
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -7373,14 +6172,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the patch group for which the patch state information should be
-        /// retrieved.</p>
+        /// <p>The name of the patch group for which the patch state information should be retrieved.</p>
         pub fn patch_group(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.patch_group(input.into());
             self
         }
-        /// <p>The name of the patch group for which the patch state information should be
-        /// retrieved.</p>
+        /// <p>The name of the patch group for which the patch state information should be retrieved.</p>
         pub fn set_patch_group(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_patch_group(input);
             self
@@ -7391,15 +6188,9 @@ pub mod fluent_builders {
         ///
         /// <p>Each entry in the array is a structure containing:</p>
         /// <ul>
-        /// <li>
-        /// <p>Key (string between 1 and 200 characters)</p>
-        /// </li>
-        /// <li>
-        /// <p>Values (array containing a single string)</p>
-        /// </li>
-        /// <li>
-        /// <p>Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")</p>
-        /// </li>
+        /// <li> <p>Key (string between 1 and 200 characters)</p> </li>
+        /// <li> <p>Values (array containing a single string)</p> </li>
+        /// <li> <p>Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")</p> </li>
         /// </ul>
         pub fn filters(mut self, input: crate::model::InstancePatchStateFilter) -> Self {
             self.inner = self.inner.filters(input);
@@ -7407,15 +6198,9 @@ pub mod fluent_builders {
         }
         /// <p>Each entry in the array is a structure containing:</p>
         /// <ul>
-        /// <li>
-        /// <p>Key (string between 1 and 200 characters)</p>
-        /// </li>
-        /// <li>
-        /// <p>Values (array containing a single string)</p>
-        /// </li>
-        /// <li>
-        /// <p>Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")</p>
-        /// </li>
+        /// <li> <p>Key (string between 1 and 200 characters)</p> </li>
+        /// <li> <p>Values (array containing a single string)</p> </li>
+        /// <li> <p>Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")</p> </li>
         /// </ul>
         pub fn set_filters(
             mut self,
@@ -7424,14 +6209,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -7506,14 +6289,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Specify the delete inventory ID for which you want information. This ID was returned by the
-        /// <code>DeleteInventory</code> operation.</p>
+        /// <p>Specify the delete inventory ID for which you want information. This ID was returned by the <code>DeleteInventory</code> operation.</p>
         pub fn deletion_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.deletion_id(input.into());
             self
         }
-        /// <p>Specify the delete inventory ID for which you want information. This ID was returned by the
-        /// <code>DeleteInventory</code> operation.</p>
+        /// <p>Specify the delete inventory ID for which you want information. This ID was returned by the <code>DeleteInventory</code> operation.</p>
         pub fn set_deletion_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_deletion_id(input);
             self
@@ -7528,14 +6309,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -7543,9 +6322,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeMaintenanceWindowExecutions`.
     ///
-    /// <p>Lists the executions of a maintenance window. This includes information about when the
-    /// maintenance window was scheduled to be active, and information about tasks registered and run
-    /// with the maintenance window.</p>
+    /// <p>Lists the executions of a maintenance window. This includes information about when the maintenance window was scheduled to be active, and information about tasks registered and run with the maintenance window.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeMaintenanceWindowExecutions<
         C = aws_smithy_client::erase::DynConnector,
@@ -7620,15 +6397,8 @@ pub mod fluent_builders {
         ///
         /// <p>Each entry in the array is a structure containing:</p>
         /// <ul>
-        /// <li>
-        /// <p>Key. A string between 1 and 128 characters. Supported keys include
-        /// <code>ExecutedBefore</code> and <code>ExecutedAfter</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>Values. An array of strings, each between 1 and 256 characters. Supported values are
-        /// date/time strings in a valid ISO 8601 date/time format, such as
-        /// <code>2021-11-04T05:00:00Z</code>.</p>
-        /// </li>
+        /// <li> <p>Key. A string between 1 and 128 characters. Supported keys include <code>ExecutedBefore</code> and <code>ExecutedAfter</code>.</p> </li>
+        /// <li> <p>Values. An array of strings, each between 1 and 256 characters. Supported values are date/time strings in a valid ISO 8601 date/time format, such as <code>2021-11-04T05:00:00Z</code>.</p> </li>
         /// </ul>
         pub fn filters(mut self, input: crate::model::MaintenanceWindowFilter) -> Self {
             self.inner = self.inner.filters(input);
@@ -7636,15 +6406,8 @@ pub mod fluent_builders {
         }
         /// <p>Each entry in the array is a structure containing:</p>
         /// <ul>
-        /// <li>
-        /// <p>Key. A string between 1 and 128 characters. Supported keys include
-        /// <code>ExecutedBefore</code> and <code>ExecutedAfter</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>Values. An array of strings, each between 1 and 256 characters. Supported values are
-        /// date/time strings in a valid ISO 8601 date/time format, such as
-        /// <code>2021-11-04T05:00:00Z</code>.</p>
-        /// </li>
+        /// <li> <p>Key. A string between 1 and 128 characters. Supported keys include <code>ExecutedBefore</code> and <code>ExecutedAfter</code>.</p> </li>
+        /// <li> <p>Values. An array of strings, each between 1 and 256 characters. Supported values are date/time strings in a valid ISO 8601 date/time format, such as <code>2021-11-04T05:00:00Z</code>.</p> </li>
         /// </ul>
         pub fn set_filters(
             mut self,
@@ -7653,26 +6416,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -7680,8 +6439,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeMaintenanceWindowExecutionTaskInvocations`.
     ///
-    /// <p>Retrieves the individual task executions (one per target) for a particular task run as part
-    /// of a maintenance window execution.</p>
+    /// <p>Retrieves the individual task executions (one per target) for a particular task run as part of a maintenance window execution.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeMaintenanceWindowExecutionTaskInvocations<
         C = aws_smithy_client::erase::DynConnector,
@@ -7758,18 +6516,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Optional filters used to scope down the returned task invocations. The supported filter key
-        /// is <code>STATUS</code> with the corresponding values <code>PENDING</code>,
-        /// <code>IN_PROGRESS</code>, <code>SUCCESS</code>, <code>FAILED</code>, <code>TIMED_OUT</code>,
-        /// <code>CANCELLING</code>, and <code>CANCELLED</code>.</p>
+        /// <p>Optional filters used to scope down the returned task invocations. The supported filter key is <code>STATUS</code> with the corresponding values <code>PENDING</code>, <code>IN_PROGRESS</code>, <code>SUCCESS</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, <code>CANCELLING</code>, and <code>CANCELLED</code>.</p>
         pub fn filters(mut self, input: crate::model::MaintenanceWindowFilter) -> Self {
             self.inner = self.inner.filters(input);
             self
         }
-        /// <p>Optional filters used to scope down the returned task invocations. The supported filter key
-        /// is <code>STATUS</code> with the corresponding values <code>PENDING</code>,
-        /// <code>IN_PROGRESS</code>, <code>SUCCESS</code>, <code>FAILED</code>, <code>TIMED_OUT</code>,
-        /// <code>CANCELLING</code>, and <code>CANCELLED</code>.</p>
+        /// <p>Optional filters used to scope down the returned task invocations. The supported filter key is <code>STATUS</code> with the corresponding values <code>PENDING</code>, <code>IN_PROGRESS</code>, <code>SUCCESS</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, <code>CANCELLING</code>, and <code>CANCELLED</code>.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowFilter>>,
@@ -7777,26 +6529,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -7880,18 +6628,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Optional filters used to scope down the returned tasks. The supported filter key is
-        /// <code>STATUS</code> with the corresponding values <code>PENDING</code>,
-        /// <code>IN_PROGRESS</code>, <code>SUCCESS</code>, <code>FAILED</code>, <code>TIMED_OUT</code>,
-        /// <code>CANCELLING</code>, and <code>CANCELLED</code>.</p>
+        /// <p>Optional filters used to scope down the returned tasks. The supported filter key is <code>STATUS</code> with the corresponding values <code>PENDING</code>, <code>IN_PROGRESS</code>, <code>SUCCESS</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, <code>CANCELLING</code>, and <code>CANCELLED</code>.</p>
         pub fn filters(mut self, input: crate::model::MaintenanceWindowFilter) -> Self {
             self.inner = self.inner.filters(input);
             self
         }
-        /// <p>Optional filters used to scope down the returned tasks. The supported filter key is
-        /// <code>STATUS</code> with the corresponding values <code>PENDING</code>,
-        /// <code>IN_PROGRESS</code>, <code>SUCCESS</code>, <code>FAILED</code>, <code>TIMED_OUT</code>,
-        /// <code>CANCELLING</code>, and <code>CANCELLED</code>.</p>
+        /// <p>Optional filters used to scope down the returned tasks. The supported filter key is <code>STATUS</code> with the corresponding values <code>PENDING</code>, <code>IN_PROGRESS</code>, <code>SUCCESS</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, <code>CANCELLING</code>, and <code>CANCELLED</code>.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowFilter>>,
@@ -7899,26 +6641,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -7987,16 +6725,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Optional filters used to narrow down the scope of the returned maintenance windows.
-        /// Supported filter keys are <code>Name</code> and <code>Enabled</code>. For example,
-        /// <code>Name=MyMaintenanceWindow</code> and <code>Enabled=True</code>.</p>
+        /// <p>Optional filters used to narrow down the scope of the returned maintenance windows. Supported filter keys are <code>Name</code> and <code>Enabled</code>. For example, <code>Name=MyMaintenanceWindow</code> and <code>Enabled=True</code>.</p>
         pub fn filters(mut self, input: crate::model::MaintenanceWindowFilter) -> Self {
             self.inner = self.inner.filters(input);
             self
         }
-        /// <p>Optional filters used to narrow down the scope of the returned maintenance windows.
-        /// Supported filter keys are <code>Name</code> and <code>Enabled</code>. For example,
-        /// <code>Name=MyMaintenanceWindow</code> and <code>Enabled=True</code>.</p>
+        /// <p>Optional filters used to narrow down the scope of the returned maintenance windows. Supported filter keys are <code>Name</code> and <code>Enabled</code>. For example, <code>Name=MyMaintenanceWindow</code> and <code>Enabled=True</code>.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowFilter>>,
@@ -8004,26 +6738,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -8115,14 +6845,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_targets(input);
             self
         }
-        /// <p>The type of resource you want to retrieve information about. For example,
-        /// <code>INSTANCE</code>.</p>
+        /// <p>The type of resource you want to retrieve information about. For example, <code>INSTANCE</code>.</p>
         pub fn resource_type(mut self, input: crate::model::MaintenanceWindowResourceType) -> Self {
             self.inner = self.inner.resource_type(input);
             self
         }
-        /// <p>The type of resource you want to retrieve information about. For example,
-        /// <code>INSTANCE</code>.</p>
+        /// <p>The type of resource you want to retrieve information about. For example, <code>INSTANCE</code>.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::MaintenanceWindowResourceType>,
@@ -8134,14 +6862,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Filters used to limit the range of results. For example, you can limit maintenance window
-        /// executions to only those scheduled before or after a certain date and time.</p>
+        /// <p>Filters used to limit the range of results. For example, you can limit maintenance window executions to only those scheduled before or after a certain date and time.</p>
         pub fn filters(mut self, input: crate::model::PatchOrchestratorFilter) -> Self {
             self.inner = self.inner.filters(input);
             self
         }
-        /// <p>Filters used to limit the range of results. For example, you can limit maintenance window
-        /// executions to only those scheduled before or after a certain date and time.</p>
+        /// <p>Filters used to limit the range of results. For example, you can limit maintenance window executions to only those scheduled before or after a certain date and time.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PatchOrchestratorFilter>>,
@@ -8149,26 +6875,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -8176,8 +6898,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeMaintenanceWindowsForTarget`.
     ///
-    /// <p>Retrieves information about the maintenance window targets or tasks that a managed node is
-    /// associated with.</p>
+    /// <p>Retrieves information about the maintenance window targets or tasks that a managed node is associated with.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeMaintenanceWindowsForTarget<
         C = aws_smithy_client::erase::DynConnector,
@@ -8253,14 +6974,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_targets(input);
             self
         }
-        /// <p>The type of resource you want to retrieve information about. For example,
-        /// <code>INSTANCE</code>.</p>
+        /// <p>The type of resource you want to retrieve information about. For example, <code>INSTANCE</code>.</p>
         pub fn resource_type(mut self, input: crate::model::MaintenanceWindowResourceType) -> Self {
             self.inner = self.inner.resource_type(input);
             self
         }
-        /// <p>The type of resource you want to retrieve information about. For example,
-        /// <code>INSTANCE</code>.</p>
+        /// <p>The type of resource you want to retrieve information about. For example, <code>INSTANCE</code>.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::MaintenanceWindowResourceType>,
@@ -8268,26 +6987,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_type(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -8366,16 +7081,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Optional filters that can be used to narrow down the scope of the returned window targets.
-        /// The supported filter keys are <code>Type</code>, <code>WindowTargetId</code>, and
-        /// <code>OwnerInformation</code>.</p>
+        /// <p>Optional filters that can be used to narrow down the scope of the returned window targets. The supported filter keys are <code>Type</code>, <code>WindowTargetId</code>, and <code>OwnerInformation</code>.</p>
         pub fn filters(mut self, input: crate::model::MaintenanceWindowFilter) -> Self {
             self.inner = self.inner.filters(input);
             self
         }
-        /// <p>Optional filters that can be used to narrow down the scope of the returned window targets.
-        /// The supported filter keys are <code>Type</code>, <code>WindowTargetId</code>, and
-        /// <code>OwnerInformation</code>.</p>
+        /// <p>Optional filters that can be used to narrow down the scope of the returned window targets. The supported filter keys are <code>Type</code>, <code>WindowTargetId</code>, and <code>OwnerInformation</code>.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowFilter>>,
@@ -8383,26 +7094,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -8410,12 +7117,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeMaintenanceWindowTasks`.
     ///
-    /// <p>Lists the tasks in a maintenance window.</p>
-    /// <note>
-    /// <p>For maintenance window tasks without a specified target, you can't supply values for
-    /// <code>--max-errors</code> and <code>--max-concurrency</code>. Instead, the system inserts a
-    /// placeholder value of <code>1</code>, which may be reported in the response to this command.
-    /// These values don't affect the running of your task and can be ignored.</p>
+    /// <p>Lists the tasks in a maintenance window.</p> <note>
+    /// <p>For maintenance window tasks without a specified target, you can't supply values for <code>--max-errors</code> and <code>--max-concurrency</code>. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. These values don't affect the running of your task and can be ignored.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeMaintenanceWindowTasks<
@@ -8487,16 +7190,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Optional filters used to narrow down the scope of the returned tasks. The supported filter
-        /// keys are <code>WindowTaskId</code>, <code>TaskArn</code>, <code>Priority</code>, and
-        /// <code>TaskType</code>.</p>
+        /// <p>Optional filters used to narrow down the scope of the returned tasks. The supported filter keys are <code>WindowTaskId</code>, <code>TaskArn</code>, <code>Priority</code>, and <code>TaskType</code>.</p>
         pub fn filters(mut self, input: crate::model::MaintenanceWindowFilter) -> Self {
             self.inner = self.inner.filters(input);
             self
         }
-        /// <p>Optional filters used to narrow down the scope of the returned tasks. The supported filter
-        /// keys are <code>WindowTaskId</code>, <code>TaskArn</code>, <code>Priority</code>, and
-        /// <code>TaskType</code>.</p>
+        /// <p>Optional filters used to narrow down the scope of the returned tasks. The supported filter keys are <code>WindowTaskId</code>, <code>TaskArn</code>, <code>Priority</code>, and <code>TaskType</code>.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowFilter>>,
@@ -8504,26 +7203,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -8531,12 +7226,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeOpsItems`.
     ///
-    /// <p>Query a set of OpsItems. You must have permission in Identity and Access Management (IAM) to query a list of OpsItems. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting started with
-    /// OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    /// <p>Operations engineers and IT professionals use Amazon Web Services Systems Manager OpsCenter to view, investigate, and
-    /// remediate operational issues impacting the performance and health of their Amazon Web Services resources. For
-    /// more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">OpsCenter</a> in the
-    /// <i>Amazon Web Services Systems Manager User Guide</i>. </p>
+    /// <p>Query a set of OpsItems. You must have permission in Identity and Access Management (IAM) to query a list of OpsItems. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>Operations engineers and IT professionals use Amazon Web Services Systems Manager OpsCenter to view, investigate, and remediate operational issues impacting the performance and health of their Amazon Web Services resources. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeOpsItems<
         C = aws_smithy_client::erase::DynConnector,
@@ -8599,128 +7290,44 @@ pub mod fluent_builders {
         ///
         /// <p>One or more filters to limit the response.</p>
         /// <ul>
-        /// <li>
-        /// <p>Key: CreatedTime</p>
-        /// <p>Operations: GreaterThan, LessThan</p>
-        /// </li>
-        /// <li>
-        /// <p>Key: LastModifiedBy</p>
-        /// <p>Operations: Contains, Equals</p>
-        /// </li>
-        /// <li>
-        /// <p>Key: LastModifiedTime</p>
-        /// <p>Operations: GreaterThan, LessThan</p>
-        /// </li>
-        /// <li>
-        /// <p>Key: Priority</p>
-        /// <p>Operations: Equals</p>
-        /// </li>
-        /// <li>
-        /// <p>Key: Source</p>
-        /// <p>Operations: Contains, Equals</p>
-        /// </li>
-        /// <li>
-        /// <p>Key: Status</p>
-        /// <p>Operations: Equals</p>
-        /// </li>
-        /// <li>
-        /// <p>Key: Title*</p>
-        /// <p>Operations: Equals,Contains</p>
-        /// </li>
-        /// <li>
-        /// <p>Key: OperationalData**</p>
-        /// <p>Operations: Equals</p>
-        /// </li>
-        /// <li>
-        /// <p>Key: OperationalDataKey</p>
-        /// <p>Operations: Equals</p>
-        /// </li>
-        /// <li>
-        /// <p>Key: OperationalDataValue</p>
-        /// <p>Operations: Equals, Contains</p>
-        /// </li>
-        /// <li>
-        /// <p>Key: OpsItemId</p>
-        /// <p>Operations: Equals</p>
-        /// </li>
-        /// <li>
-        /// <p>Key: ResourceId</p>
-        /// <p>Operations: Contains</p>
-        /// </li>
-        /// <li>
-        /// <p>Key: AutomationId</p>
-        /// <p>Operations: Equals</p>
-        /// </li>
+        /// <li> <p>Key: CreatedTime</p> <p>Operations: GreaterThan, LessThan</p> </li>
+        /// <li> <p>Key: LastModifiedBy</p> <p>Operations: Contains, Equals</p> </li>
+        /// <li> <p>Key: LastModifiedTime</p> <p>Operations: GreaterThan, LessThan</p> </li>
+        /// <li> <p>Key: Priority</p> <p>Operations: Equals</p> </li>
+        /// <li> <p>Key: Source</p> <p>Operations: Contains, Equals</p> </li>
+        /// <li> <p>Key: Status</p> <p>Operations: Equals</p> </li>
+        /// <li> <p>Key: Title*</p> <p>Operations: Equals,Contains</p> </li>
+        /// <li> <p>Key: OperationalData**</p> <p>Operations: Equals</p> </li>
+        /// <li> <p>Key: OperationalDataKey</p> <p>Operations: Equals</p> </li>
+        /// <li> <p>Key: OperationalDataValue</p> <p>Operations: Equals, Contains</p> </li>
+        /// <li> <p>Key: OpsItemId</p> <p>Operations: Equals</p> </li>
+        /// <li> <p>Key: ResourceId</p> <p>Operations: Contains</p> </li>
+        /// <li> <p>Key: AutomationId</p> <p>Operations: Equals</p> </li>
         /// </ul>
-        /// <p>*The Equals operator for Title matches the first 100 characters. If you specify more than
-        /// 100 characters, they system returns an error that the filter value exceeds the length
-        /// limit.</p>
-        /// <p>**If you filter the response by using the OperationalData operator, specify a key-value pair
-        /// by using the following JSON format: {"key":"key_name","value":"a_value"}</p>
+        /// <p>*The Equals operator for Title matches the first 100 characters. If you specify more than 100 characters, they system returns an error that the filter value exceeds the length limit.</p>
+        /// <p>**If you filter the response by using the OperationalData operator, specify a key-value pair by using the following JSON format: {"key":"key_name","value":"a_value"}</p>
         pub fn ops_item_filters(mut self, input: crate::model::OpsItemFilter) -> Self {
             self.inner = self.inner.ops_item_filters(input);
             self
         }
         /// <p>One or more filters to limit the response.</p>
         /// <ul>
-        /// <li>
-        /// <p>Key: CreatedTime</p>
-        /// <p>Operations: GreaterThan, LessThan</p>
-        /// </li>
-        /// <li>
-        /// <p>Key: LastModifiedBy</p>
-        /// <p>Operations: Contains, Equals</p>
-        /// </li>
-        /// <li>
-        /// <p>Key: LastModifiedTime</p>
-        /// <p>Operations: GreaterThan, LessThan</p>
-        /// </li>
-        /// <li>
-        /// <p>Key: Priority</p>
-        /// <p>Operations: Equals</p>
-        /// </li>
-        /// <li>
-        /// <p>Key: Source</p>
-        /// <p>Operations: Contains, Equals</p>
-        /// </li>
-        /// <li>
-        /// <p>Key: Status</p>
-        /// <p>Operations: Equals</p>
-        /// </li>
-        /// <li>
-        /// <p>Key: Title*</p>
-        /// <p>Operations: Equals,Contains</p>
-        /// </li>
-        /// <li>
-        /// <p>Key: OperationalData**</p>
-        /// <p>Operations: Equals</p>
-        /// </li>
-        /// <li>
-        /// <p>Key: OperationalDataKey</p>
-        /// <p>Operations: Equals</p>
-        /// </li>
-        /// <li>
-        /// <p>Key: OperationalDataValue</p>
-        /// <p>Operations: Equals, Contains</p>
-        /// </li>
-        /// <li>
-        /// <p>Key: OpsItemId</p>
-        /// <p>Operations: Equals</p>
-        /// </li>
-        /// <li>
-        /// <p>Key: ResourceId</p>
-        /// <p>Operations: Contains</p>
-        /// </li>
-        /// <li>
-        /// <p>Key: AutomationId</p>
-        /// <p>Operations: Equals</p>
-        /// </li>
+        /// <li> <p>Key: CreatedTime</p> <p>Operations: GreaterThan, LessThan</p> </li>
+        /// <li> <p>Key: LastModifiedBy</p> <p>Operations: Contains, Equals</p> </li>
+        /// <li> <p>Key: LastModifiedTime</p> <p>Operations: GreaterThan, LessThan</p> </li>
+        /// <li> <p>Key: Priority</p> <p>Operations: Equals</p> </li>
+        /// <li> <p>Key: Source</p> <p>Operations: Contains, Equals</p> </li>
+        /// <li> <p>Key: Status</p> <p>Operations: Equals</p> </li>
+        /// <li> <p>Key: Title*</p> <p>Operations: Equals,Contains</p> </li>
+        /// <li> <p>Key: OperationalData**</p> <p>Operations: Equals</p> </li>
+        /// <li> <p>Key: OperationalDataKey</p> <p>Operations: Equals</p> </li>
+        /// <li> <p>Key: OperationalDataValue</p> <p>Operations: Equals, Contains</p> </li>
+        /// <li> <p>Key: OpsItemId</p> <p>Operations: Equals</p> </li>
+        /// <li> <p>Key: ResourceId</p> <p>Operations: Contains</p> </li>
+        /// <li> <p>Key: AutomationId</p> <p>Operations: Equals</p> </li>
         /// </ul>
-        /// <p>*The Equals operator for Title matches the first 100 characters. If you specify more than
-        /// 100 characters, they system returns an error that the filter value exceeds the length
-        /// limit.</p>
-        /// <p>**If you filter the response by using the OperationalData operator, specify a key-value pair
-        /// by using the following JSON format: {"key":"key_name","value":"a_value"}</p>
+        /// <p>*The Equals operator for Title matches the first 100 characters. If you specify more than 100 characters, they system returns an error that the filter value exceeds the length limit.</p>
+        /// <p>**If you filter the response by using the OperationalData operator, specify a key-value pair by using the following JSON format: {"key":"key_name","value":"a_value"}</p>
         pub fn set_ops_item_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::OpsItemFilter>>,
@@ -8728,14 +7335,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ops_item_filters(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -8754,17 +7359,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeParameters`.
     ///
     /// <p>Get information about a parameter.</p>
-    /// <p>Request results are returned on a best-effort basis. If you specify <code>MaxResults</code>
-    /// in the request, the response includes information up to the limit specified. The number of items
-    /// returned, however, can be between zero and the value of <code>MaxResults</code>. If the service
-    /// reaches an internal limit while processing the results, it stops the operation and returns the
-    /// matching values up to that point and a <code>NextToken</code>. You can specify the
-    /// <code>NextToken</code> in a subsequent call to get the next set of results.</p>
-    /// <important>
-    /// <p>If you change the KMS key alias for the KMS key used to encrypt a parameter, then you must
-    /// also update the key alias the parameter uses to reference KMS. Otherwise,
-    /// <code>DescribeParameters</code> retrieves whatever the original key alias was
-    /// referencing.</p>
+    /// <p>Request results are returned on a best-effort basis. If you specify <code>MaxResults</code> in the request, the response includes information up to the limit specified. The number of items returned, however, can be between zero and the value of <code>MaxResults</code>. If the service reaches an internal limit while processing the results, it stops the operation and returns the matching values up to that point and a <code>NextToken</code>. You can specify the <code>NextToken</code> in a subsequent call to get the next set of results.</p> <important>
+    /// <p>If you change the KMS key alias for the KMS key used to encrypt a parameter, then you must also update the key alias the parameter uses to reference KMS. Otherwise, <code>DescribeParameters</code> retrieves whatever the original key alias was referencing.</p>
     /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeParameters<
@@ -8856,26 +7452,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_parameter_filters(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -8947,33 +7539,9 @@ pub mod fluent_builders {
         /// <p>Each element in the array is a structure containing a key-value pair.</p>
         /// <p>Supported keys for <code>DescribePatchBaselines</code> include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>NAME_PREFIX</code>
-        /// </b>
-        /// </p>
-        /// <p>Sample values: <code>AWS-</code> | <code>My-</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>OWNER</code>
-        /// </b>
-        /// </p>
-        /// <p>Sample values: <code>AWS</code> | <code>Self</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>OPERATING_SYSTEM</code>
-        /// </b>
-        /// </p>
-        /// <p>Sample values: <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <b> <code>NAME_PREFIX</code> </b> </p> <p>Sample values: <code>AWS-</code> | <code>My-</code> </p> </li>
+        /// <li> <p> <b> <code>OWNER</code> </b> </p> <p>Sample values: <code>AWS</code> | <code>Self</code> </p> </li>
+        /// <li> <p> <b> <code>OPERATING_SYSTEM</code> </b> </p> <p>Sample values: <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code> </p> </li>
         /// </ul>
         pub fn filters(mut self, input: crate::model::PatchOrchestratorFilter) -> Self {
             self.inner = self.inner.filters(input);
@@ -8982,33 +7550,9 @@ pub mod fluent_builders {
         /// <p>Each element in the array is a structure containing a key-value pair.</p>
         /// <p>Supported keys for <code>DescribePatchBaselines</code> include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>NAME_PREFIX</code>
-        /// </b>
-        /// </p>
-        /// <p>Sample values: <code>AWS-</code> | <code>My-</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>OWNER</code>
-        /// </b>
-        /// </p>
-        /// <p>Sample values: <code>AWS</code> | <code>Self</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>OPERATING_SYSTEM</code>
-        /// </b>
-        /// </p>
-        /// <p>Sample values: <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <b> <code>NAME_PREFIX</code> </b> </p> <p>Sample values: <code>AWS-</code> | <code>My-</code> </p> </li>
+        /// <li> <p> <b> <code>OWNER</code> </b> </p> <p>Sample values: <code>AWS</code> | <code>Self</code> </p> </li>
+        /// <li> <p> <b> <code>OPERATING_SYSTEM</code> </b> </p> <p>Sample values: <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code> </p> </li>
         /// </ul>
         pub fn set_filters(
             mut self,
@@ -9027,14 +7571,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -9116,23 +7658,8 @@ pub mod fluent_builders {
         /// <p>Each element in the array is a structure containing a key-value pair.</p>
         /// <p>Supported keys for <code>DescribePatchGroups</code> include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>NAME_PREFIX</code>
-        /// </b>
-        /// </p>
-        /// <p>Sample values: <code>AWS-</code> | <code>My-</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>OPERATING_SYSTEM</code>
-        /// </b>
-        /// </p>
-        /// <p>Sample values: <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <b> <code>NAME_PREFIX</code> </b> </p> <p>Sample values: <code>AWS-</code> | <code>My-</code>.</p> </li>
+        /// <li> <p> <b> <code>OPERATING_SYSTEM</code> </b> </p> <p>Sample values: <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code> </p> </li>
         /// </ul>
         pub fn filters(mut self, input: crate::model::PatchOrchestratorFilter) -> Self {
             self.inner = self.inner.filters(input);
@@ -9141,23 +7668,8 @@ pub mod fluent_builders {
         /// <p>Each element in the array is a structure containing a key-value pair.</p>
         /// <p>Supported keys for <code>DescribePatchGroups</code> include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>NAME_PREFIX</code>
-        /// </b>
-        /// </p>
-        /// <p>Sample values: <code>AWS-</code> | <code>My-</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>OPERATING_SYSTEM</code>
-        /// </b>
-        /// </p>
-        /// <p>Sample values: <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <b> <code>NAME_PREFIX</code> </b> </p> <p>Sample values: <code>AWS-</code> | <code>My-</code>.</p> </li>
+        /// <li> <p> <b> <code>OPERATING_SYSTEM</code> </b> </p> <p>Sample values: <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code> </p> </li>
         /// </ul>
         pub fn set_filters(
             mut self,
@@ -9166,14 +7678,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -9251,68 +7761,68 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribePatchProperties`.
     ///
-    /// <p>Lists the properties of available patches organized by product, product family,
-    /// classification, severity, and other properties of available patches. You can use the reported
-    /// properties in the filters you specify in requests for operations such as <a>CreatePatchBaseline</a>, <a>UpdatePatchBaseline</a>, <a>DescribeAvailablePatches</a>, and <a>DescribePatchBaselines</a>.</p>
-    /// <p>The following section lists the properties that can be used in filters for each major
-    /// operating system type:</p>
+    /// <p>Lists the properties of available patches organized by product, product family, classification, severity, and other properties of available patches. You can use the reported properties in the filters you specify in requests for operations such as <code>CreatePatchBaseline</code>, <code>UpdatePatchBaseline</code>, <code>DescribeAvailablePatches</code>, and <code>DescribePatchBaselines</code>.</p>
+    /// <p>The following section lists the properties that can be used in filters for each major operating system type:</p>
     /// <dl>
-    /// <dt>AMAZON_LINUX</dt>
+    /// <dt>
+    /// AMAZON_LINUX
+    /// </dt>
     /// <dd>
-    /// <p>Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> |
-    /// <code>SEVERITY</code>
-    /// </p>
+    /// <p>Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> | <code>SEVERITY</code> </p>
     /// </dd>
-    /// <dt>AMAZON_LINUX_2</dt>
+    /// <dt>
+    /// AMAZON_LINUX_2
+    /// </dt>
     /// <dd>
-    /// <p>Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> |
-    /// <code>SEVERITY</code>
-    /// </p>
+    /// <p>Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> | <code>SEVERITY</code> </p>
     /// </dd>
-    /// <dt>CENTOS</dt>
+    /// <dt>
+    /// CENTOS
+    /// </dt>
     /// <dd>
-    /// <p>Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> |
-    /// <code>SEVERITY</code>
-    /// </p>
+    /// <p>Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> | <code>SEVERITY</code> </p>
     /// </dd>
-    /// <dt>DEBIAN</dt>
+    /// <dt>
+    /// DEBIAN
+    /// </dt>
     /// <dd>
-    /// <p>Valid properties: <code>PRODUCT</code> | <code>PRIORITY</code>
-    /// </p>
+    /// <p>Valid properties: <code>PRODUCT</code> | <code>PRIORITY</code> </p>
     /// </dd>
-    /// <dt>MACOS</dt>
+    /// <dt>
+    /// MACOS
+    /// </dt>
     /// <dd>
-    /// <p>Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code>
-    /// </p>
+    /// <p>Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> </p>
     /// </dd>
-    /// <dt>ORACLE_LINUX</dt>
+    /// <dt>
+    /// ORACLE_LINUX
+    /// </dt>
     /// <dd>
-    /// <p>Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> |
-    /// <code>SEVERITY</code>
-    /// </p>
+    /// <p>Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> | <code>SEVERITY</code> </p>
     /// </dd>
-    /// <dt>REDHAT_ENTERPRISE_LINUX</dt>
+    /// <dt>
+    /// REDHAT_ENTERPRISE_LINUX
+    /// </dt>
     /// <dd>
-    /// <p>Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> |
-    /// <code>SEVERITY</code>
-    /// </p>
+    /// <p>Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> | <code>SEVERITY</code> </p>
     /// </dd>
-    /// <dt>SUSE</dt>
+    /// <dt>
+    /// SUSE
+    /// </dt>
     /// <dd>
-    /// <p>Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> |
-    /// <code>SEVERITY</code>
-    /// </p>
+    /// <p>Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> | <code>SEVERITY</code> </p>
     /// </dd>
-    /// <dt>UBUNTU</dt>
+    /// <dt>
+    /// UBUNTU
+    /// </dt>
     /// <dd>
-    /// <p>Valid properties: <code>PRODUCT</code> | <code>PRIORITY</code>
-    /// </p>
+    /// <p>Valid properties: <code>PRODUCT</code> | <code>PRIORITY</code> </p>
     /// </dd>
-    /// <dt>WINDOWS</dt>
+    /// <dt>
+    /// WINDOWS
+    /// </dt>
     /// <dd>
-    /// <p>Valid properties: <code>PRODUCT</code> | <code>PRODUCT_FAMILY</code> |
-    /// <code>CLASSIFICATION</code> | <code>MSRC_SEVERITY</code>
-    /// </p>
+    /// <p>Valid properties: <code>PRODUCT</code> | <code>PRODUCT_FAMILY</code> | <code>CLASSIFICATION</code> | <code>MSRC_SEVERITY</code> </p>
     /// </dd>
     /// </dl>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -9397,38 +7907,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_property(input);
             self
         }
-        /// <p>Indicates whether to list patches for the Windows operating system or for applications
-        /// released by Microsoft. Not applicable for the Linux or macOS operating systems.</p>
+        /// <p>Indicates whether to list patches for the Windows operating system or for applications released by Microsoft. Not applicable for the Linux or macOS operating systems.</p>
         pub fn patch_set(mut self, input: crate::model::PatchSet) -> Self {
             self.inner = self.inner.patch_set(input);
             self
         }
-        /// <p>Indicates whether to list patches for the Windows operating system or for applications
-        /// released by Microsoft. Not applicable for the Linux or macOS operating systems.</p>
+        /// <p>Indicates whether to list patches for the Windows operating system or for applications released by Microsoft. Not applicable for the Linux or macOS operating systems.</p>
         pub fn set_patch_set(mut self, input: std::option::Option<crate::model::PatchSet>) -> Self {
             self.inner = self.inner.set_patch_set(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -9436,8 +7940,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeSessions`.
     ///
-    /// <p>Retrieves a list of all active sessions (both connected and disconnected) or terminated
-    /// sessions from the past 30 days.</p>
+    /// <p>Retrieves a list of all active sessions (both connected and disconnected) or terminated sessions from the past 30 days.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSessions<
         C = aws_smithy_client::erase::DynConnector,
@@ -9504,26 +8007,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_state(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -9548,9 +8047,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisassociateOpsItemRelatedItem`.
     ///
-    /// <p>Deletes the association between an OpsItem and a related item. For example, this API
-    /// operation can delete an Incident Manager incident from an OpsItem. Incident Manager is a capability of
-    /// Amazon Web Services Systems Manager.</p>
+    /// <p>Deletes the association between an OpsItem and a related item. For example, this API operation can delete an Incident Manager incident from an OpsItem. Incident Manager is a capability of Amazon Web Services Systems Manager.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateOpsItemRelatedItem<
         C = aws_smithy_client::erase::DynConnector,
@@ -9607,26 +8104,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the OpsItem for which you want to delete an association between the OpsItem and a
-        /// related item.</p>
+        /// <p>The ID of the OpsItem for which you want to delete an association between the OpsItem and a related item.</p>
         pub fn ops_item_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.ops_item_id(input.into());
             self
         }
-        /// <p>The ID of the OpsItem for which you want to delete an association between the OpsItem and a
-        /// related item.</p>
+        /// <p>The ID of the OpsItem for which you want to delete an association between the OpsItem and a related item.</p>
         pub fn set_ops_item_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_ops_item_id(input);
             self
         }
-        /// <p>The ID of the association for which you want to delete an association between the OpsItem
-        /// and a related item.</p>
+        /// <p>The ID of the association for which you want to delete an association between the OpsItem and a related item.</p>
         pub fn association_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.association_id(input.into());
             self
         }
-        /// <p>The ID of the association for which you want to delete an association between the OpsItem
-        /// and a related item.</p>
+        /// <p>The ID of the association for which you want to delete an association between the OpsItem and a related item.</p>
         pub fn set_association_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9694,16 +8187,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique identifier for an existing automation execution to examine. The execution ID is
-        /// returned by StartAutomationExecution when the execution of an Automation runbook is
-        /// initiated.</p>
+        /// <p>The unique identifier for an existing automation execution to examine. The execution ID is returned by StartAutomationExecution when the execution of an Automation runbook is initiated.</p>
         pub fn automation_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.automation_execution_id(input.into());
             self
         }
-        /// <p>The unique identifier for an existing automation execution to examine. The execution ID is
-        /// returned by StartAutomationExecution when the execution of an Automation runbook is
-        /// initiated.</p>
+        /// <p>The unique identifier for an existing automation execution to examine. The execution ID is returned by StartAutomationExecution when the execution of an Automation runbook is initiated.</p>
         pub fn set_automation_execution_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9714,14 +8203,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetCalendarState`.
     ///
-    /// <p>Gets the state of a Amazon Web Services Systems Manager change calendar at the current time or a specified time. If
-    /// you specify a time, <code>GetCalendarState</code> returns the state of the calendar at that
-    /// specific time, and returns the next time that the change calendar state will transition. If you
-    /// don't specify a time, <code>GetCalendarState</code> uses the current time. Change Calendar
-    /// entries have two possible states: <code>OPEN</code> or <code>CLOSED</code>.</p>
-    /// <p>If you specify more than one calendar in a request, the command returns the status of
-    /// <code>OPEN</code> only if all calendars in the request are open. If one or more calendars in the
-    /// request are closed, the status returned is <code>CLOSED</code>.</p>
+    /// <p>Gets the state of a Amazon Web Services Systems Manager change calendar at the current time or a specified time. If you specify a time, <code>GetCalendarState</code> returns the state of the calendar at that specific time, and returns the next time that the change calendar state will transition. If you don't specify a time, <code>GetCalendarState</code> uses the current time. Change Calendar entries have two possible states: <code>OPEN</code> or <code>CLOSED</code>.</p>
+    /// <p>If you specify more than one calendar in a request, the command returns the status of <code>OPEN</code> only if all calendars in the request are open. If one or more calendars in the request are closed, the status returned is <code>CLOSED</code>.</p>
     /// <p>For more information about Change Calendar, a capability of Amazon Web Services Systems Manager, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar.html">Amazon Web Services Systems Manager Change Calendar</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCalendarState<
@@ -9783,14 +8266,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_calendar_names`](Self::set_calendar_names).
         ///
-        /// <p>The names or Amazon Resource Names (ARNs) of the Systems Manager documents (SSM documents) that
-        /// represent the calendar entries for which you want to get the state.</p>
+        /// <p>The names or Amazon Resource Names (ARNs) of the Systems Manager documents (SSM documents) that represent the calendar entries for which you want to get the state.</p>
         pub fn calendar_names(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.calendar_names(input.into());
             self
         }
-        /// <p>The names or Amazon Resource Names (ARNs) of the Systems Manager documents (SSM documents) that
-        /// represent the calendar entries for which you want to get the state.</p>
+        /// <p>The names or Amazon Resource Names (ARNs) of the Systems Manager documents (SSM documents) that represent the calendar entries for which you want to get the state.</p>
         pub fn set_calendar_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9798,14 +8279,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_calendar_names(input);
             self
         }
-        /// <p>(Optional) The specific time for which you want to get calendar state information, in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format. If you don't specify a
-        /// value or <code>AtTime</code>, the current time is used.</p>
+        /// <p>(Optional) The specific time for which you want to get calendar state information, in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format. If you don't specify a value or <code>AtTime</code>, the current time is used.</p>
         pub fn at_time(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.at_time(input.into());
             self
         }
-        /// <p>(Optional) The specific time for which you want to get calendar state information, in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format. If you don't specify a
-        /// value or <code>AtTime</code>, the current time is used.</p>
+        /// <p>(Optional) The specific time for which you want to get calendar state information, in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format. If you don't specify a value or <code>AtTime</code>, the current time is used.</p>
         pub fn set_at_time(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_at_time(input);
             self
@@ -9814,10 +8293,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetCommandInvocation`.
     ///
     /// <p>Returns detailed information about command execution for an invocation or plugin.</p>
-    /// <p>
-    /// <code>GetCommandInvocation</code> only gives the execution status of a plugin in a document.
-    /// To get the command execution status on a specific managed node, use <a>ListCommandInvocations</a>. To get the command execution status across managed nodes,
-    /// use <a>ListCommands</a>.</p>
+    /// <p> <code>GetCommandInvocation</code> only gives the execution status of a plugin in a document. To get the command execution status on a specific managed node, use <code>ListCommandInvocations</code>. To get the command execution status across managed nodes, use <code>ListCommands</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCommandInvocation<
         C = aws_smithy_client::erase::DynConnector,
@@ -9884,42 +8360,26 @@ pub mod fluent_builders {
             self.inner = self.inner.set_command_id(input);
             self
         }
-        /// <p>(Required) The ID of the managed node targeted by the command. A <i>managed node</i> can be an
-        /// Amazon Elastic Compute Cloud (Amazon EC2) instance, edge device, and on-premises server or VM in your hybrid environment that is configured for Amazon Web Services Systems Manager.</p>
+        /// <p>(Required) The ID of the managed node targeted by the command. A <i>managed node</i> can be an Amazon Elastic Compute Cloud (Amazon EC2) instance, edge device, and on-premises server or VM in your hybrid environment that is configured for Amazon Web Services Systems Manager.</p>
         pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_id(input.into());
             self
         }
-        /// <p>(Required) The ID of the managed node targeted by the command. A <i>managed node</i> can be an
-        /// Amazon Elastic Compute Cloud (Amazon EC2) instance, edge device, and on-premises server or VM in your hybrid environment that is configured for Amazon Web Services Systems Manager.</p>
+        /// <p>(Required) The ID of the managed node targeted by the command. A <i>managed node</i> can be an Amazon Elastic Compute Cloud (Amazon EC2) instance, edge device, and on-premises server or VM in your hybrid environment that is configured for Amazon Web Services Systems Manager.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_id(input);
             self
         }
-        /// <p>The name of the plugin for which you want detailed results. If the document contains only
-        /// one plugin, you can omit the name and details for that plugin. If the document contains more than
-        /// one plugin, you must specify the name of the plugin for which you want to view details.</p>
-        /// <p>Plugin names are also referred to as <i>step names</i> in Systems Manager documents (SSM
-        /// documents). For example, <code>aws:RunShellScript</code> is a plugin.</p>
-        /// <p>To find the <code>PluginName</code>, check the document content and find the name of the
-        /// plugin. Alternatively, use <a>ListCommandInvocations</a> with the
-        /// <code>CommandId</code> and <code>Details</code> parameters. The <code>PluginName</code> is the
-        /// <code>Name</code> attribute of the <code>CommandPlugin</code> object in the
-        /// <code>CommandPlugins</code> list.</p>
+        /// <p>The name of the plugin for which you want detailed results. If the document contains only one plugin, you can omit the name and details for that plugin. If the document contains more than one plugin, you must specify the name of the plugin for which you want to view details.</p>
+        /// <p>Plugin names are also referred to as <i>step names</i> in Systems Manager documents (SSM documents). For example, <code>aws:RunShellScript</code> is a plugin.</p>
+        /// <p>To find the <code>PluginName</code>, check the document content and find the name of the plugin. Alternatively, use <code>ListCommandInvocations</code> with the <code>CommandId</code> and <code>Details</code> parameters. The <code>PluginName</code> is the <code>Name</code> attribute of the <code>CommandPlugin</code> object in the <code>CommandPlugins</code> list.</p>
         pub fn plugin_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.plugin_name(input.into());
             self
         }
-        /// <p>The name of the plugin for which you want detailed results. If the document contains only
-        /// one plugin, you can omit the name and details for that plugin. If the document contains more than
-        /// one plugin, you must specify the name of the plugin for which you want to view details.</p>
-        /// <p>Plugin names are also referred to as <i>step names</i> in Systems Manager documents (SSM
-        /// documents). For example, <code>aws:RunShellScript</code> is a plugin.</p>
-        /// <p>To find the <code>PluginName</code>, check the document content and find the name of the
-        /// plugin. Alternatively, use <a>ListCommandInvocations</a> with the
-        /// <code>CommandId</code> and <code>Details</code> parameters. The <code>PluginName</code> is the
-        /// <code>Name</code> attribute of the <code>CommandPlugin</code> object in the
-        /// <code>CommandPlugins</code> list.</p>
+        /// <p>The name of the plugin for which you want detailed results. If the document contains only one plugin, you can omit the name and details for that plugin. If the document contains more than one plugin, you must specify the name of the plugin for which you want to view details.</p>
+        /// <p>Plugin names are also referred to as <i>step names</i> in Systems Manager documents (SSM documents). For example, <code>aws:RunShellScript</code> is a plugin.</p>
+        /// <p>To find the <code>PluginName</code>, check the document content and find the name of the plugin. Alternatively, use <code>ListCommandInvocations</code> with the <code>CommandId</code> and <code>Details</code> parameters. The <code>PluginName</code> is the <code>Name</code> attribute of the <code>CommandPlugin</code> object in the <code>CommandPlugins</code> list.</p>
         pub fn set_plugin_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_plugin_name(input);
             self
@@ -9927,8 +8387,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetConnectionStatus`.
     ///
-    /// <p>Retrieves the Session Manager connection status for a managed node to determine whether it is running and
-    /// ready to receive Session Manager connections.</p>
+    /// <p>Retrieves the Session Manager connection status for a managed node to determine whether it is running and ready to receive Session Manager connections.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetConnectionStatus<
         C = aws_smithy_client::erase::DynConnector,
@@ -9998,10 +8457,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetDefaultPatchBaseline`.
     ///
-    /// <p>Retrieves the default patch baseline. Amazon Web Services Systems Manager supports creating multiple default patch
-    /// baselines. For example, you can create a default patch baseline for each operating system.</p>
-    /// <p>If you don't specify an operating system value, the default patch baseline for Windows is
-    /// returned.</p>
+    /// <p>Retrieves the default patch baseline. Amazon Web Services Systems Manager supports creating multiple default patch baselines. For example, you can create a default patch baseline for each operating system.</p>
+    /// <p>If you don't specify an operating system value, the default patch baseline for Windows is returned.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDefaultPatchBaseline<
         C = aws_smithy_client::erase::DynConnector,
@@ -10074,14 +8531,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetDeployablePatchSnapshotForInstance`.
     ///
-    /// <p>Retrieves the current snapshot for the patch baseline the managed node uses. This API is
-    /// primarily used by the <code>AWS-RunPatchBaseline</code> Systems Manager document (SSM document).</p>
-    /// <note>
-    /// <p>If you run the command locally, such as with the Command Line Interface (CLI), the system attempts to use your local Amazon Web Services credentials and the operation fails. To avoid
-    /// this, you can run the command in the Amazon Web Services Systems Manager console. Use Run Command, a capability of
-    /// Amazon Web Services Systems Manager, with an SSM document that enables you to target a managed node with a script or command.
-    /// For example, run the command using the <code>AWS-RunShellScript</code> document or the
-    /// <code>AWS-RunPowerShellScript</code> document.</p>
+    /// <p>Retrieves the current snapshot for the patch baseline the managed node uses. This API is primarily used by the <code>AWS-RunPatchBaseline</code> Systems Manager document (SSM document).</p> <note>
+    /// <p>If you run the command locally, such as with the Command Line Interface (CLI), the system attempts to use your local Amazon Web Services credentials and the operation fails. To avoid this, you can run the command in the Amazon Web Services Systems Manager console. Use Run Command, a capability of Amazon Web Services Systems Manager, with an SSM document that enables you to target a managed node with a script or command. For example, run the command using the <code>AWS-RunShellScript</code> document or the <code>AWS-RunPowerShellScript</code> document.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDeployablePatchSnapshotForInstance<
@@ -10244,16 +8695,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>An optional field specifying the version of the artifact associated with the document. For
-        /// example, "Release 12, Update 6". This value is unique across all versions of a document and can't
-        /// be changed.</p>
+        /// <p>An optional field specifying the version of the artifact associated with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document and can't be changed.</p>
         pub fn version_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.version_name(input.into());
             self
         }
-        /// <p>An optional field specifying the version of the artifact associated with the document. For
-        /// example, "Release 12, Update 6". This value is unique across all versions of a document and can't
-        /// be changed.</p>
+        /// <p>An optional field specifying the version of the artifact associated with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document and can't be changed.</p>
         pub fn set_version_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_version_name(input);
             self
@@ -10271,14 +8718,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_document_version(input);
             self
         }
-        /// <p>Returns the document in the specified format. The document format can be either JSON or
-        /// YAML. JSON is the default format.</p>
+        /// <p>Returns the document in the specified format. The document format can be either JSON or YAML. JSON is the default format.</p>
         pub fn document_format(mut self, input: crate::model::DocumentFormat) -> Self {
             self.inner = self.inner.document_format(input);
             self
         }
-        /// <p>Returns the document in the specified format. The document format can be either JSON or
-        /// YAML. JSON is the default format.</p>
+        /// <p>Returns the document in the specified format. The document format can be either JSON or YAML. JSON is the default format.</p>
         pub fn set_document_format(
             mut self,
             input: std::option::Option<crate::model::DocumentFormat>,
@@ -10289,8 +8734,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetInventory`.
     ///
-    /// <p>Query inventory information. This includes managed node status, such as <code>Stopped</code> or
-    /// <code>Terminated</code>.</p>
+    /// <p>Query inventory information. This includes managed node status, such as <code>Stopped</code> or <code>Terminated</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInventory<
         C = aws_smithy_client::erase::DynConnector,
@@ -10368,18 +8812,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_aggregators`](Self::set_aggregators).
         ///
-        /// <p>Returns counts of inventory types based on one or more expressions. For example, if you
-        /// aggregate by using an expression that uses the <code>AWS:InstanceInformation.PlatformType</code>
-        /// type, you can see a count of how many Windows and Linux managed nodes exist in your inventoried
-        /// fleet.</p>
+        /// <p>Returns counts of inventory types based on one or more expressions. For example, if you aggregate by using an expression that uses the <code>AWS:InstanceInformation.PlatformType</code> type, you can see a count of how many Windows and Linux managed nodes exist in your inventoried fleet.</p>
         pub fn aggregators(mut self, input: crate::model::InventoryAggregator) -> Self {
             self.inner = self.inner.aggregators(input);
             self
         }
-        /// <p>Returns counts of inventory types based on one or more expressions. For example, if you
-        /// aggregate by using an expression that uses the <code>AWS:InstanceInformation.PlatformType</code>
-        /// type, you can see a count of how many Windows and Linux managed nodes exist in your inventoried
-        /// fleet.</p>
+        /// <p>Returns counts of inventory types based on one or more expressions. For example, if you aggregate by using an expression that uses the <code>AWS:InstanceInformation.PlatformType</code> type, you can see a count of how many Windows and Linux managed nodes exist in your inventoried fleet.</p>
         pub fn set_aggregators(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InventoryAggregator>>,
@@ -10404,26 +8842,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_result_attributes(input);
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -10431,8 +8865,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetInventorySchema`.
     ///
-    /// <p>Return a list of inventory type names for the account, or return a list of attribute names
-    /// for a specific Inventory item type.</p>
+    /// <p>Return a list of inventory type names for the account, or return a list of attribute names for a specific Inventory item type.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInventorySchema<
         C = aws_smithy_client::erase::DynConnector,
@@ -10499,42 +8932,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_type_name(input);
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>Returns inventory schemas that support aggregation. For example, this call returns the
-        /// <code>AWS:InstanceInformation</code> type, because it supports aggregation based on the
-        /// <code>PlatformName</code>, <code>PlatformType</code>, and <code>PlatformVersion</code>
-        /// attributes.</p>
+        /// <p>Returns inventory schemas that support aggregation. For example, this call returns the <code>AWS:InstanceInformation</code> type, because it supports aggregation based on the <code>PlatformName</code>, <code>PlatformType</code>, and <code>PlatformVersion</code> attributes.</p>
         pub fn aggregator(mut self, input: bool) -> Self {
             self.inner = self.inner.aggregator(input);
             self
         }
-        /// <p>Returns inventory schemas that support aggregation. For example, this call returns the
-        /// <code>AWS:InstanceInformation</code> type, because it supports aggregation based on the
-        /// <code>PlatformName</code>, <code>PlatformType</code>, and <code>PlatformVersion</code>
-        /// attributes.</p>
+        /// <p>Returns inventory schemas that support aggregation. For example, this call returns the <code>AWS:InstanceInformation</code> type, because it supports aggregation based on the <code>PlatformName</code>, <code>PlatformType</code>, and <code>PlatformVersion</code> attributes.</p>
         pub fn set_aggregator(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_aggregator(input);
             self
@@ -10695,8 +9118,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetMaintenanceWindowExecutionTask`.
     ///
-    /// <p>Retrieves the details about a specific task run as part of a maintenance window
-    /// execution.</p>
+    /// <p>Retrieves the details about a specific task run as part of a maintenance window execution.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMaintenanceWindowExecutionTask<
         C = aws_smithy_client::erase::DynConnector,
@@ -10766,14 +9188,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_window_execution_id(input);
             self
         }
-        /// <p>The ID of the specific task execution in the maintenance window task that should be
-        /// retrieved.</p>
+        /// <p>The ID of the specific task execution in the maintenance window task that should be retrieved.</p>
         pub fn task_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.task_id(input.into());
             self
         }
-        /// <p>The ID of the specific task execution in the maintenance window task that should be
-        /// retrieved.</p>
+        /// <p>The ID of the specific task execution in the maintenance window task that should be retrieved.</p>
         pub fn set_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_task_id(input);
             self
@@ -10879,12 +9299,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetMaintenanceWindowTask`.
     ///
-    /// <p>Lists the tasks in a maintenance window.</p>
-    /// <note>
-    /// <p>For maintenance window tasks without a specified target, you can't supply values for
-    /// <code>--max-errors</code> and <code>--max-concurrency</code>. Instead, the system inserts a
-    /// placeholder value of <code>1</code>, which may be reported in the response to this command.
-    /// These values don't affect the running of your task and can be ignored.</p>
+    /// <p>Lists the tasks in a maintenance window.</p> <note>
+    /// <p>For maintenance window tasks without a specified target, you can't supply values for <code>--max-errors</code> and <code>--max-concurrency</code>. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. These values don't affect the running of your task and can be ignored.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMaintenanceWindowTask<
@@ -10968,13 +9384,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetOpsItem`.
     ///
-    /// <p>Get information about an OpsItem by using the ID. You must have permission in Identity and Access Management (IAM) to view information about an OpsItem. For more information,
-    /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting started with
-    /// OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    /// <p>Operations engineers and IT professionals use Amazon Web Services Systems Manager OpsCenter to view, investigate, and
-    /// remediate operational issues impacting the performance and health of their Amazon Web Services resources. For
-    /// more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">OpsCenter</a> in the
-    /// <i>Amazon Web Services Systems Manager User Guide</i>. </p>
+    /// <p>Get information about an OpsItem by using the ID. You must have permission in Identity and Access Management (IAM) to view information about an OpsItem. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>Operations engineers and IT professionals use Amazon Web Services Systems Manager OpsCenter to view, investigate, and remediate operational issues impacting the performance and health of their Amazon Web Services resources. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetOpsItem<
         C = aws_smithy_client::erase::DynConnector,
@@ -11114,14 +9525,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ops_metadata_arn(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -11139,10 +9548,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetOpsSummary`.
     ///
-    /// <p>View a summary of operations metadata (OpsData) based on specified filters and aggregators.
-    /// OpsData can include information about Amazon Web Services Systems Manager OpsCenter operational workitems (OpsItems) as
-    /// well as information about any Amazon Web Services resource or service configured to report OpsData to Amazon Web Services Systems Manager
-    /// Explorer. </p>
+    /// <p>View a summary of operations metadata (OpsData) based on specified filters and aggregators. OpsData can include information about Amazon Web Services Systems Manager OpsCenter operational workitems (OpsItems) as well as information about any Amazon Web Services resource or service configured to report OpsData to Amazon Web Services Systems Manager Explorer. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetOpsSummary<
         C = aws_smithy_client::erase::DynConnector,
@@ -11270,14 +9676,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -11285,9 +9689,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetParameter`.
     ///
-    /// <p>Get information about a single parameter by specifying the parameter name.</p>
-    /// <note>
-    /// <p>To get information about more than one parameter at a time, use the <a>GetParameters</a> operation.</p>
+    /// <p>Get information about a single parameter by specifying the parameter name.</p> <note>
+    /// <p>To get information about more than one parameter at a time, use the <code>GetParameters</code> operation.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetParameter<
@@ -11346,27 +9749,23 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the parameter you want to query.</p>
-        /// <p>To query by parameter label, use <code>"Name": "name:label"</code>. To query by parameter
-        /// version, use <code>"Name": "name:version"</code>.</p>
+        /// <p>To query by parameter label, use <code>"Name": "name:label"</code>. To query by parameter version, use <code>"Name": "name:version"</code>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the parameter you want to query.</p>
-        /// <p>To query by parameter label, use <code>"Name": "name:label"</code>. To query by parameter
-        /// version, use <code>"Name": "name:version"</code>.</p>
+        /// <p>To query by parameter label, use <code>"Name": "name:label"</code>. To query by parameter version, use <code>"Name": "name:version"</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Return decrypted values for secure string parameters. This flag is ignored for
-        /// <code>String</code> and <code>StringList</code> parameter types.</p>
+        /// <p>Return decrypted values for secure string parameters. This flag is ignored for <code>String</code> and <code>StringList</code> parameter types.</p>
         pub fn with_decryption(mut self, input: bool) -> Self {
             self.inner = self.inner.with_decryption(input);
             self
         }
-        /// <p>Return decrypted values for secure string parameters. This flag is ignored for
-        /// <code>String</code> and <code>StringList</code> parameter types.</p>
+        /// <p>Return decrypted values for secure string parameters. This flag is ignored for <code>String</code> and <code>StringList</code> parameter types.</p>
         pub fn set_with_decryption(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_with_decryption(input);
             self
@@ -11374,12 +9773,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetParameterHistory`.
     ///
-    /// <p>Retrieves the history of all changes to a parameter.</p>
-    /// <important>
-    /// <p>If you change the KMS key alias for the KMS key used to encrypt a parameter, then you must
-    /// also update the key alias the parameter uses to reference KMS. Otherwise,
-    /// <code>GetParameterHistory</code> retrieves whatever the original key alias was
-    /// referencing.</p>
+    /// <p>Retrieves the history of all changes to a parameter.</p> <important>
+    /// <p>If you change the KMS key alias for the KMS key used to encrypt a parameter, then you must also update the key alias the parameter uses to reference KMS. Otherwise, <code>GetParameterHistory</code> retrieves whatever the original key alias was referencing.</p>
     /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetParameterHistory<
@@ -11447,38 +9842,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Return decrypted values for secure string parameters. This flag is ignored for
-        /// <code>String</code> and <code>StringList</code> parameter types.</p>
+        /// <p>Return decrypted values for secure string parameters. This flag is ignored for <code>String</code> and <code>StringList</code> parameter types.</p>
         pub fn with_decryption(mut self, input: bool) -> Self {
             self.inner = self.inner.with_decryption(input);
             self
         }
-        /// <p>Return decrypted values for secure string parameters. This flag is ignored for
-        /// <code>String</code> and <code>StringList</code> parameter types.</p>
+        /// <p>Return decrypted values for secure string parameters. This flag is ignored for <code>String</code> and <code>StringList</code> parameter types.</p>
         pub fn set_with_decryption(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_with_decryption(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -11486,10 +9875,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetParameters`.
     ///
-    /// <p>Get information about one or more parameters by specifying multiple parameter names.</p>
-    /// <note>
-    /// <p>To get information about a single parameter, you can use the <a>GetParameter</a>
-    /// operation instead.</p>
+    /// <p>Get information about one or more parameters by specifying multiple parameter names.</p> <note>
+    /// <p>To get information about a single parameter, you can use the <code>GetParameter</code> operation instead.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetParameters<
@@ -11552,15 +9939,13 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_names`](Self::set_names).
         ///
         /// <p>Names of the parameters for which you want to query information.</p>
-        /// <p>To query by parameter label, use <code>"Name": "name:label"</code>. To query by parameter
-        /// version, use <code>"Name": "name:version"</code>.</p>
+        /// <p>To query by parameter label, use <code>"Name": "name:label"</code>. To query by parameter version, use <code>"Name": "name:version"</code>.</p>
         pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.names(input.into());
             self
         }
         /// <p>Names of the parameters for which you want to query information.</p>
-        /// <p>To query by parameter label, use <code>"Name": "name:label"</code>. To query by parameter
-        /// version, use <code>"Name": "name:version"</code>.</p>
+        /// <p>To query by parameter label, use <code>"Name": "name:label"</code>. To query by parameter version, use <code>"Name": "name:version"</code>.</p>
         pub fn set_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -11568,14 +9953,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_names(input);
             self
         }
-        /// <p>Return decrypted secure string value. Return decrypted values for secure string parameters.
-        /// This flag is ignored for <code>String</code> and <code>StringList</code> parameter types.</p>
+        /// <p>Return decrypted secure string value. Return decrypted values for secure string parameters. This flag is ignored for <code>String</code> and <code>StringList</code> parameter types.</p>
         pub fn with_decryption(mut self, input: bool) -> Self {
             self.inner = self.inner.with_decryption(input);
             self
         }
-        /// <p>Return decrypted secure string value. Return decrypted values for secure string parameters.
-        /// This flag is ignored for <code>String</code> and <code>StringList</code> parameter types.</p>
+        /// <p>Return decrypted secure string value. Return decrypted values for secure string parameters. This flag is ignored for <code>String</code> and <code>StringList</code> parameter types.</p>
         pub fn set_with_decryption(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_with_decryption(input);
             self
@@ -11584,12 +9967,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetParametersByPath`.
     ///
     /// <p>Retrieve information about one or more parameters in a specific hierarchy. </p>
-    /// <p>Request results are returned on a best-effort basis. If you specify <code>MaxResults</code>
-    /// in the request, the response includes information up to the limit specified. The number of items
-    /// returned, however, can be between zero and the value of <code>MaxResults</code>. If the service
-    /// reaches an internal limit while processing the results, it stops the operation and returns the
-    /// matching values up to that point and a <code>NextToken</code>. You can specify the
-    /// <code>NextToken</code> in a subsequent call to get the next set of results.</p>
+    /// <p>Request results are returned on a best-effort basis. If you specify <code>MaxResults</code> in the request, the response includes information up to the limit specified. The number of items returned, however, can be between zero and the value of <code>MaxResults</code>. If the service reaches an internal limit while processing the results, it stops the operation and returns the matching values up to that point and a <code>NextToken</code>. You can specify the <code>NextToken</code> in a subsequent call to get the next set of results.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetParametersByPath<
         C = aws_smithy_client::erase::DynConnector,
@@ -11646,45 +10024,25 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The hierarchy for the parameter. Hierarchies start with a forward slash (/). The hierachy is
-        /// the parameter name except the last part of the parameter. For the API call to succeeed, the last
-        /// part of the parameter name can't be in the path. A parameter name hierarchy can have a maximum of
-        /// 15 levels. Here is an example of a hierarchy: <code>/Finance/Prod/IAD/WinServ2016/license33
-        /// </code>
-        /// </p>
+        /// <p>The hierarchy for the parameter. Hierarchies start with a forward slash (/). The hierachy is the parameter name except the last part of the parameter. For the API call to succeeed, the last part of the parameter name can't be in the path. A parameter name hierarchy can have a maximum of 15 levels. Here is an example of a hierarchy: <code>/Finance/Prod/IAD/WinServ2016/license33 </code> </p>
         pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.path(input.into());
             self
         }
-        /// <p>The hierarchy for the parameter. Hierarchies start with a forward slash (/). The hierachy is
-        /// the parameter name except the last part of the parameter. For the API call to succeeed, the last
-        /// part of the parameter name can't be in the path. A parameter name hierarchy can have a maximum of
-        /// 15 levels. Here is an example of a hierarchy: <code>/Finance/Prod/IAD/WinServ2016/license33
-        /// </code>
-        /// </p>
+        /// <p>The hierarchy for the parameter. Hierarchies start with a forward slash (/). The hierachy is the parameter name except the last part of the parameter. For the API call to succeeed, the last part of the parameter name can't be in the path. A parameter name hierarchy can have a maximum of 15 levels. Here is an example of a hierarchy: <code>/Finance/Prod/IAD/WinServ2016/license33 </code> </p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_path(input);
             self
         }
-        /// <p>Retrieve all parameters within a hierarchy.</p>
-        /// <important>
-        /// <p>If a user has access to a path, then the user can access all levels of that path. For
-        /// example, if a user has permission to access path <code>/a</code>, then the user can also access
-        /// <code>/a/b</code>. Even if a user has explicitly been denied access in IAM for
-        /// parameter <code>/a/b</code>, they can still call the GetParametersByPath API operation
-        /// recursively for <code>/a</code> and view <code>/a/b</code>.</p>
+        /// <p>Retrieve all parameters within a hierarchy.</p> <important>
+        /// <p>If a user has access to a path, then the user can access all levels of that path. For example, if a user has permission to access path <code>/a</code>, then the user can also access <code>/a/b</code>. Even if a user has explicitly been denied access in IAM for parameter <code>/a/b</code>, they can still call the GetParametersByPath API operation recursively for <code>/a</code> and view <code>/a/b</code>.</p>
         /// </important>
         pub fn recursive(mut self, input: bool) -> Self {
             self.inner = self.inner.recursive(input);
             self
         }
-        /// <p>Retrieve all parameters within a hierarchy.</p>
-        /// <important>
-        /// <p>If a user has access to a path, then the user can access all levels of that path. For
-        /// example, if a user has permission to access path <code>/a</code>, then the user can also access
-        /// <code>/a/b</code>. Even if a user has explicitly been denied access in IAM for
-        /// parameter <code>/a/b</code>, they can still call the GetParametersByPath API operation
-        /// recursively for <code>/a</code> and view <code>/a/b</code>.</p>
+        /// <p>Retrieve all parameters within a hierarchy.</p> <important>
+        /// <p>If a user has access to a path, then the user can access all levels of that path. For example, if a user has permission to access path <code>/a</code>, then the user can also access <code>/a/b</code>. Even if a user has explicitly been denied access in IAM for parameter <code>/a/b</code>, they can still call the GetParametersByPath API operation recursively for <code>/a</code> and view <code>/a/b</code>.</p>
         /// </important>
         pub fn set_recursive(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_recursive(input);
@@ -11694,25 +10052,17 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_parameter_filters`](Self::set_parameter_filters).
         ///
-        /// <p>Filters to limit the request results.</p>
-        /// <note>
-        /// <p>The following <code>Key</code> values are supported for <code>GetParametersByPath</code>:
-        /// <code>Type</code>, <code>KeyId</code>, and <code>Label</code>.</p>
-        /// <p>The following <code>Key</code> values aren't supported for
-        /// <code>GetParametersByPath</code>: <code>tag</code>, <code>DataType</code>, <code>Name</code>,
-        /// <code>Path</code>, and <code>Tier</code>.</p>
+        /// <p>Filters to limit the request results.</p> <note>
+        /// <p>The following <code>Key</code> values are supported for <code>GetParametersByPath</code>: <code>Type</code>, <code>KeyId</code>, and <code>Label</code>.</p>
+        /// <p>The following <code>Key</code> values aren't supported for <code>GetParametersByPath</code>: <code>tag</code>, <code>DataType</code>, <code>Name</code>, <code>Path</code>, and <code>Tier</code>.</p>
         /// </note>
         pub fn parameter_filters(mut self, input: crate::model::ParameterStringFilter) -> Self {
             self.inner = self.inner.parameter_filters(input);
             self
         }
-        /// <p>Filters to limit the request results.</p>
-        /// <note>
-        /// <p>The following <code>Key</code> values are supported for <code>GetParametersByPath</code>:
-        /// <code>Type</code>, <code>KeyId</code>, and <code>Label</code>.</p>
-        /// <p>The following <code>Key</code> values aren't supported for
-        /// <code>GetParametersByPath</code>: <code>tag</code>, <code>DataType</code>, <code>Name</code>,
-        /// <code>Path</code>, and <code>Tier</code>.</p>
+        /// <p>Filters to limit the request results.</p> <note>
+        /// <p>The following <code>Key</code> values are supported for <code>GetParametersByPath</code>: <code>Type</code>, <code>KeyId</code>, and <code>Label</code>.</p>
+        /// <p>The following <code>Key</code> values aren't supported for <code>GetParametersByPath</code>: <code>tag</code>, <code>DataType</code>, <code>Name</code>, <code>Path</code>, and <code>Tier</code>.</p>
         /// </note>
         pub fn set_parameter_filters(
             mut self,
@@ -11731,14 +10081,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_with_decryption(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -11813,25 +10161,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the patch baseline to retrieve.</p>
-        /// <note>
-        /// <p>To retrieve information about an Amazon Web Services managed patch baseline, specify the full Amazon
-        /// Resource Name (ARN) of the baseline. For example, for the baseline
-        /// <code>AWS-AmazonLinuxDefaultPatchBaseline</code>, specify
-        /// <code>arn:aws:ssm:us-east-2:733109147000:patchbaseline/pb-0e392de35e7c563b7</code> instead of
-        /// <code>pb-0e392de35e7c563b7</code>.</p>
+        /// <p>The ID of the patch baseline to retrieve.</p> <note>
+        /// <p>To retrieve information about an Amazon Web Services managed patch baseline, specify the full Amazon Resource Name (ARN) of the baseline. For example, for the baseline <code>AWS-AmazonLinuxDefaultPatchBaseline</code>, specify <code>arn:aws:ssm:us-east-2:733109147000:patchbaseline/pb-0e392de35e7c563b7</code> instead of <code>pb-0e392de35e7c563b7</code>.</p>
         /// </note>
         pub fn baseline_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.baseline_id(input.into());
             self
         }
-        /// <p>The ID of the patch baseline to retrieve.</p>
-        /// <note>
-        /// <p>To retrieve information about an Amazon Web Services managed patch baseline, specify the full Amazon
-        /// Resource Name (ARN) of the baseline. For example, for the baseline
-        /// <code>AWS-AmazonLinuxDefaultPatchBaseline</code>, specify
-        /// <code>arn:aws:ssm:us-east-2:733109147000:patchbaseline/pb-0e392de35e7c563b7</code> instead of
-        /// <code>pb-0e392de35e7c563b7</code>.</p>
+        /// <p>The ID of the patch baseline to retrieve.</p> <note>
+        /// <p>To retrieve information about an Amazon Web Services managed patch baseline, specify the full Amazon Resource Name (ARN) of the baseline. For example, for the baseline <code>AWS-AmazonLinuxDefaultPatchBaseline</code>, specify <code>arn:aws:ssm:us-east-2:733109147000:patchbaseline/pb-0e392de35e7c563b7</code> instead of <code>pb-0e392de35e7c563b7</code>.</p>
         /// </note>
         pub fn set_baseline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_baseline_id(input);
@@ -11923,19 +10261,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetServiceSetting`.
     ///
-    /// <p>
-    /// <code>ServiceSetting</code> is an account-level setting for an Amazon Web Services service. This setting
-    /// defines how a user interacts with or uses a service or a feature of a service. For example, if an
-    /// Amazon Web Services service charges money to the account based on feature or service usage, then the Amazon Web Services
-    /// service team might create a default setting of <code>false</code>. This means the user can't use
-    /// this feature unless they change the setting to <code>true</code> and intentionally opt in for a
-    /// paid feature.</p>
-    /// <p>Services map a <code>SettingId</code> object to a setting value. Amazon Web Services services teams define
-    /// the default value for a <code>SettingId</code>. You can't create a new <code>SettingId</code>,
-    /// but you can overwrite the default value if you have the <code>ssm:UpdateServiceSetting</code>
-    /// permission for the setting. Use the <a>UpdateServiceSetting</a> API operation to
-    /// change the default setting. Or use the <a>ResetServiceSetting</a> to change the value
-    /// back to the original value defined by the Amazon Web Services service team.</p>
+    /// <p> <code>ServiceSetting</code> is an account-level setting for an Amazon Web Services service. This setting defines how a user interacts with or uses a service or a feature of a service. For example, if an Amazon Web Services service charges money to the account based on feature or service usage, then the Amazon Web Services service team might create a default setting of <code>false</code>. This means the user can't use this feature unless they change the setting to <code>true</code> and intentionally opt in for a paid feature.</p>
+    /// <p>Services map a <code>SettingId</code> object to a setting value. Amazon Web Services services teams define the default value for a <code>SettingId</code>. You can't create a new <code>SettingId</code>, but you can overwrite the default value if you have the <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the <code>UpdateServiceSetting</code> API operation to change the default setting. Or use the <code>ResetServiceSetting</code> to change the value back to the original value defined by the Amazon Web Services service team.</p>
     /// <p>Query the current service setting for the Amazon Web Services account. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetServiceSetting<
@@ -11995,36 +10322,12 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the service setting to get. The setting ID can be one of the following.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>/ssm/automation/customer-script-log-destination</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>/ssm/automation/customer-script-log-group-name</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>/ssm/documents/console/public-sharing-permission</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>/ssm/parameter-store/default-parameter-tier</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>/ssm/parameter-store/high-throughput-enabled</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>/ssm/managed-instance/activation-tier</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>/ssm/automation/customer-script-log-destination</code> </p> </li>
+        /// <li> <p> <code>/ssm/automation/customer-script-log-group-name</code> </p> </li>
+        /// <li> <p> <code>/ssm/documents/console/public-sharing-permission</code> </p> </li>
+        /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li>
+        /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li>
+        /// <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li>
         /// </ul>
         pub fn setting_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.setting_id(input.into());
@@ -12032,36 +10335,12 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the service setting to get. The setting ID can be one of the following.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>/ssm/automation/customer-script-log-destination</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>/ssm/automation/customer-script-log-group-name</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>/ssm/documents/console/public-sharing-permission</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>/ssm/parameter-store/default-parameter-tier</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>/ssm/parameter-store/high-throughput-enabled</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>/ssm/managed-instance/activation-tier</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>/ssm/automation/customer-script-log-destination</code> </p> </li>
+        /// <li> <p> <code>/ssm/automation/customer-script-log-group-name</code> </p> </li>
+        /// <li> <p> <code>/ssm/documents/console/public-sharing-permission</code> </p> </li>
+        /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li>
+        /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li>
+        /// <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li>
         /// </ul>
         pub fn set_setting_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_setting_id(input);
@@ -12070,42 +10349,17 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `LabelParameterVersion`.
     ///
-    /// <p>A parameter label is a user-defined alias to help you manage different versions of a
-    /// parameter. When you modify a parameter, Amazon Web Services Systems Manager automatically saves a new version and
-    /// increments the version number by one. A label can help you remember the purpose of a parameter
-    /// when there are multiple versions. </p>
+    /// <p>A parameter label is a user-defined alias to help you manage different versions of a parameter. When you modify a parameter, Amazon Web Services Systems Manager automatically saves a new version and increments the version number by one. A label can help you remember the purpose of a parameter when there are multiple versions. </p>
     /// <p>Parameter labels have the following requirements and restrictions.</p>
     /// <ul>
-    /// <li>
-    /// <p>A version of a parameter can have a maximum of 10 labels.</p>
-    /// </li>
-    /// <li>
-    /// <p>You can't attach the same label to different versions of the same parameter. For example,
-    /// if version 1 has the label Production, then you can't attach Production to version 2.</p>
-    /// </li>
-    /// <li>
-    /// <p>You can move a label from one version of a parameter to another.</p>
-    /// </li>
-    /// <li>
-    /// <p>You can't create a label when you create a new parameter. You must attach a label to a
-    /// specific version of a parameter.</p>
-    /// </li>
-    /// <li>
-    /// <p>If you no longer want to use a parameter label, then you can either delete it or move it
-    /// to a different version of a parameter.</p>
-    /// </li>
-    /// <li>
-    /// <p>A label can have a maximum of 100 characters.</p>
-    /// </li>
-    /// <li>
-    /// <p>Labels can contain letters (case sensitive), numbers, periods (.), hyphens (-), or
-    /// underscores (_).</p>
-    /// </li>
-    /// <li>
-    /// <p>Labels can't begin with a number, "<code>aws</code>" or "<code>ssm</code>" (not case
-    /// sensitive). If a label fails to meet these requirements, then the label isn't associated with a
-    /// parameter and the system displays it in the list of InvalidLabels.</p>
-    /// </li>
+    /// <li> <p>A version of a parameter can have a maximum of 10 labels.</p> </li>
+    /// <li> <p>You can't attach the same label to different versions of the same parameter. For example, if version 1 has the label Production, then you can't attach Production to version 2.</p> </li>
+    /// <li> <p>You can move a label from one version of a parameter to another.</p> </li>
+    /// <li> <p>You can't create a label when you create a new parameter. You must attach a label to a specific version of a parameter.</p> </li>
+    /// <li> <p>If you no longer want to use a parameter label, then you can either delete it or move it to a different version of a parameter.</p> </li>
+    /// <li> <p>A label can have a maximum of 100 characters.</p> </li>
+    /// <li> <p>Labels can contain letters (case sensitive), numbers, periods (.), hyphens (-), or underscores (_).</p> </li>
+    /// <li> <p>Labels can't begin with a number, "<code>aws</code>" or "<code>ssm</code>" (not case sensitive). If a label fails to meet these requirements, then the label isn't associated with a parameter and the system displays it in the list of InvalidLabels.</p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct LabelParameterVersion<
@@ -12173,14 +10427,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The specific version of the parameter on which you want to attach one or more labels. If no
-        /// version is specified, the system attaches the label to the latest version.</p>
+        /// <p>The specific version of the parameter on which you want to attach one or more labels. If no version is specified, the system attaches the label to the latest version.</p>
         pub fn parameter_version(mut self, input: i64) -> Self {
             self.inner = self.inner.parameter_version(input);
             self
         }
-        /// <p>The specific version of the parameter on which you want to attach one or more labels. If no
-        /// version is specified, the system attaches the label to the latest version.</p>
+        /// <p>The specific version of the parameter on which you want to attach one or more labels. If no version is specified, the system attaches the label to the latest version.</p>
         pub fn set_parameter_version(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_parameter_version(input);
             self
@@ -12205,9 +10457,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAssociations`.
     ///
-    /// <p>Returns all State Manager associations in the current Amazon Web Services account and Amazon Web Services Region. You
-    /// can limit the results to a specific State Manager association document or managed node by specifying
-    /// a filter. State Manager is a capability of Amazon Web Services Systems Manager.</p>
+    /// <p>Returns all State Manager associations in the current Amazon Web Services account and Amazon Web Services Region. You can limit the results to a specific State Manager association document or managed node by specifying a filter. State Manager is a capability of Amazon Web Services Systems Manager.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAssociations<
         C = aws_smithy_client::erase::DynConnector,
@@ -12268,23 +10518,15 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_association_filter_list`](Self::set_association_filter_list).
         ///
-        /// <p>One or more filters. Use a filter to return a more specific list of results.</p>
-        /// <note>
-        /// <p>Filtering associations using the <code>InstanceID</code> attribute only returns legacy
-        /// associations created using the <code>InstanceID</code> attribute. Associations targeting the
-        /// managed node that are part of the Target Attributes <code>ResourceGroup</code> or <code>Tags</code>
-        /// aren't returned.</p>
+        /// <p>One or more filters. Use a filter to return a more specific list of results.</p> <note>
+        /// <p>Filtering associations using the <code>InstanceID</code> attribute only returns legacy associations created using the <code>InstanceID</code> attribute. Associations targeting the managed node that are part of the Target Attributes <code>ResourceGroup</code> or <code>Tags</code> aren't returned.</p>
         /// </note>
         pub fn association_filter_list(mut self, input: crate::model::AssociationFilter) -> Self {
             self.inner = self.inner.association_filter_list(input);
             self
         }
-        /// <p>One or more filters. Use a filter to return a more specific list of results.</p>
-        /// <note>
-        /// <p>Filtering associations using the <code>InstanceID</code> attribute only returns legacy
-        /// associations created using the <code>InstanceID</code> attribute. Associations targeting the
-        /// managed node that are part of the Target Attributes <code>ResourceGroup</code> or <code>Tags</code>
-        /// aren't returned.</p>
+        /// <p>One or more filters. Use a filter to return a more specific list of results.</p> <note>
+        /// <p>Filtering associations using the <code>InstanceID</code> attribute only returns legacy associations created using the <code>InstanceID</code> attribute. Associations targeting the managed node that are part of the Target Attributes <code>ResourceGroup</code> or <code>Tags</code> aren't returned.</p>
         /// </note>
         pub fn set_association_filter_list(
             mut self,
@@ -12293,26 +10535,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_association_filter_list(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -12390,14 +10628,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_association_id(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -12415,11 +10651,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListCommandInvocations`.
     ///
-    /// <p>An invocation is copy of a command sent to a specific managed node. A command can apply to one
-    /// or more managed nodes. A command invocation applies to one managed node. For example, if a user runs
-    /// <code>SendCommand</code> against three managed nodes, then a command invocation is created for
-    /// each requested managed node ID. <code>ListCommandInvocations</code> provide status about command
-    /// execution.</p>
+    /// <p>An invocation is copy of a command sent to a specific managed node. A command can apply to one or more managed nodes. A command invocation applies to one managed node. For example, if a user runs <code>SendCommand</code> against three managed nodes, then a command invocation is created for each requested managed node ID. <code>ListCommandInvocations</code> provide status about command execution.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCommandInvocations<
         C = aws_smithy_client::erase::DynConnector,
@@ -12496,26 +10728,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_id(input);
             self
         }
-        /// <p>(Optional) The maximum number of items to return for this call. The call also returns a
-        /// token that you can specify in a subsequent call to get the next set of results.</p>
+        /// <p>(Optional) The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>(Optional) The maximum number of items to return for this call. The call also returns a
-        /// token that you can specify in a subsequent call to get the next set of results.</p>
+        /// <p>(Optional) The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>(Optional) The token for the next set of items to return. (You received this token from a
-        /// previous call.)</p>
+        /// <p>(Optional) The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>(Optional) The token for the next set of items to return. (You received this token from a
-        /// previous call.)</p>
+        /// <p>(Optional) The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -12524,14 +10752,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>(Optional) One or more filters. Use a filter to return a more specific list of
-        /// results.</p>
+        /// <p>(Optional) One or more filters. Use a filter to return a more specific list of results.</p>
         pub fn filters(mut self, input: crate::model::CommandFilter) -> Self {
             self.inner = self.inner.filters(input);
             self
         }
-        /// <p>(Optional) One or more filters. Use a filter to return a more specific list of
-        /// results.</p>
+        /// <p>(Optional) One or more filters. Use a filter to return a more specific list of results.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CommandFilter>>,
@@ -12539,14 +10765,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>(Optional) If set this returns the response of the command executions and any command
-        /// output. The default value is <code>false</code>. </p>
+        /// <p>(Optional) If set this returns the response of the command executions and any command output. The default value is <code>false</code>. </p>
         pub fn details(mut self, input: bool) -> Self {
             self.inner = self.inner.details(input);
             self
         }
-        /// <p>(Optional) If set this returns the response of the command executions and any command
-        /// output. The default value is <code>false</code>. </p>
+        /// <p>(Optional) If set this returns the response of the command executions and any command output. The default value is <code>false</code>. </p>
         pub fn set_details(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_details(input);
             self
@@ -12621,44 +10845,36 @@ pub mod fluent_builders {
             self.inner = self.inner.set_command_id(input);
             self
         }
-        /// <p>(Optional) Lists commands issued against this managed node ID.</p>
-        /// <note>
-        /// <p>You can't specify a managed node ID in the same command that you specify <code>Status</code> =
-        /// <code>Pending</code>. This is because the command hasn't reached the managed node yet.</p>
+        /// <p>(Optional) Lists commands issued against this managed node ID.</p> <note>
+        /// <p>You can't specify a managed node ID in the same command that you specify <code>Status</code> = <code>Pending</code>. This is because the command hasn't reached the managed node yet.</p>
         /// </note>
         pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_id(input.into());
             self
         }
-        /// <p>(Optional) Lists commands issued against this managed node ID.</p>
-        /// <note>
-        /// <p>You can't specify a managed node ID in the same command that you specify <code>Status</code> =
-        /// <code>Pending</code>. This is because the command hasn't reached the managed node yet.</p>
+        /// <p>(Optional) Lists commands issued against this managed node ID.</p> <note>
+        /// <p>You can't specify a managed node ID in the same command that you specify <code>Status</code> = <code>Pending</code>. This is because the command hasn't reached the managed node yet.</p>
         /// </note>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_id(input);
             self
         }
-        /// <p>(Optional) The maximum number of items to return for this call. The call also returns a
-        /// token that you can specify in a subsequent call to get the next set of results.</p>
+        /// <p>(Optional) The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>(Optional) The maximum number of items to return for this call. The call also returns a
-        /// token that you can specify in a subsequent call to get the next set of results.</p>
+        /// <p>(Optional) The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>(Optional) The token for the next set of items to return. (You received this token from a
-        /// previous call.)</p>
+        /// <p>(Optional) The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>(Optional) The token for the next set of items to return. (You received this token from a
-        /// previous call.)</p>
+        /// <p>(Optional) The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -12667,14 +10883,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>(Optional) One or more filters. Use a filter to return a more specific list of results.
-        /// </p>
+        /// <p>(Optional) One or more filters. Use a filter to return a more specific list of results. </p>
         pub fn filters(mut self, input: crate::model::CommandFilter) -> Self {
             self.inner = self.inner.filters(input);
             self
         }
-        /// <p>(Optional) One or more filters. Use a filter to return a more specific list of results.
-        /// </p>
+        /// <p>(Optional) One or more filters. Use a filter to return a more specific list of results. </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CommandFilter>>,
@@ -12685,9 +10899,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListComplianceItems`.
     ///
-    /// <p>For a specified resource ID, this API operation returns a list of compliance statuses for
-    /// different resource types. Currently, you can only specify one resource ID per call. List results
-    /// depend on the criteria specified in the filter.</p>
+    /// <p>For a specified resource ID, this API operation returns a list of compliance statuses for different resource types. Currently, you can only specify one resource ID per call. List results depend on the criteria specified in the filter.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListComplianceItems<
         C = aws_smithy_client::erase::DynConnector,
@@ -12748,14 +10960,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>One or more compliance filters. Use a filter to return a more specific list of
-        /// results.</p>
+        /// <p>One or more compliance filters. Use a filter to return a more specific list of results.</p>
         pub fn filters(mut self, input: crate::model::ComplianceStringFilter) -> Self {
             self.inner = self.inner.filters(input);
             self
         }
-        /// <p>One or more compliance filters. Use a filter to return a more specific list of
-        /// results.</p>
+        /// <p>One or more compliance filters. Use a filter to return a more specific list of results.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ComplianceStringFilter>>,
@@ -12767,14 +10977,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_resource_ids`](Self::set_resource_ids).
         ///
-        /// <p>The ID for the resources from which to get compliance information. Currently, you can only
-        /// specify one resource ID.</p>
+        /// <p>The ID for the resources from which to get compliance information. Currently, you can only specify one resource ID.</p>
         pub fn resource_ids(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_ids(input.into());
             self
         }
-        /// <p>The ID for the resources from which to get compliance information. Currently, you can only
-        /// specify one resource ID.</p>
+        /// <p>The ID for the resources from which to get compliance information. Currently, you can only specify one resource ID.</p>
         pub fn set_resource_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -12786,14 +10994,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_resource_types`](Self::set_resource_types).
         ///
-        /// <p>The type of resource from which to get compliance information. Currently, the only supported
-        /// resource type is <code>ManagedInstance</code>.</p>
+        /// <p>The type of resource from which to get compliance information. Currently, the only supported resource type is <code>ManagedInstance</code>.</p>
         pub fn resource_types(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_types(input.into());
             self
         }
-        /// <p>The type of resource from which to get compliance information. Currently, the only supported
-        /// resource type is <code>ManagedInstance</code>.</p>
+        /// <p>The type of resource from which to get compliance information. Currently, the only supported resource type is <code>ManagedInstance</code>.</p>
         pub fn set_resource_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -12811,14 +11017,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -12826,9 +11030,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListComplianceSummaries`.
     ///
-    /// <p>Returns a summary count of compliant and non-compliant resources for a compliance type. For
-    /// example, this call can return State Manager associations, patches, or custom compliance types
-    /// according to the filter criteria that you specify.</p>
+    /// <p>Returns a summary count of compliant and non-compliant resources for a compliance type. For example, this call can return State Manager associations, patches, or custom compliance types according to the filter criteria that you specify.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListComplianceSummaries<
         C = aws_smithy_client::erase::DynConnector,
@@ -12889,14 +11091,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>One or more compliance or inventory filters. Use a filter to return a more specific list of
-        /// results.</p>
+        /// <p>One or more compliance or inventory filters. Use a filter to return a more specific list of results.</p>
         pub fn filters(mut self, input: crate::model::ComplianceStringFilter) -> Self {
             self.inner = self.inner.filters(input);
             self
         }
-        /// <p>One or more compliance or inventory filters. Use a filter to return a more specific list of
-        /// results.</p>
+        /// <p>One or more compliance or inventory filters. Use a filter to return a more specific list of results.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ComplianceStringFilter>>,
@@ -12914,16 +11114,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. Currently, you can specify null or 50.
-        /// The call also returns a token that you can specify in a subsequent call to get the next set of
-        /// results.</p>
+        /// <p>The maximum number of items to return for this call. Currently, you can specify null or 50. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. Currently, you can specify null or 50.
-        /// The call also returns a token that you can specify in a subsequent call to get the next set of
-        /// results.</p>
+        /// <p>The maximum number of items to return for this call. Currently, you can specify null or 50. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -13011,14 +11207,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_document_version(input);
             self
         }
-        /// <p>The type of data for which details are being requested. Currently, the only supported value
-        /// is <code>DocumentReviews</code>.</p>
+        /// <p>The type of data for which details are being requested. Currently, the only supported value is <code>DocumentReviews</code>.</p>
         pub fn metadata(mut self, input: crate::model::DocumentMetadataEnum) -> Self {
             self.inner = self.inner.metadata(input);
             self
         }
-        /// <p>The type of data for which details are being requested. Currently, the only supported value
-        /// is <code>DocumentReviews</code>.</p>
+        /// <p>The type of data for which details are being requested. Currently, the only supported value is <code>DocumentReviews</code>.</p>
         pub fn set_metadata(
             mut self,
             input: std::option::Option<crate::model::DocumentMetadataEnum>,
@@ -13026,26 +11220,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_metadata(input);
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -13053,8 +11243,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDocuments`.
     ///
-    /// <p>Returns all Systems Manager (SSM) documents in the current Amazon Web Services account and Amazon Web Services Region. You can
-    /// limit the results of this request by using a filter.</p>
+    /// <p>Returns all Systems Manager (SSM) documents in the current Amazon Web Services account and Amazon Web Services Region. You can limit the results of this request by using a filter.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDocuments<
         C = aws_smithy_client::erase::DynConnector,
@@ -13132,31 +11321,15 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>One or more <code>DocumentKeyValuesFilter</code> objects. Use a filter to return a more
-        /// specific list of results. For keys, you can specify one or more key-value pair tags that have
-        /// been applied to a document. Other valid keys include <code>Owner</code>, <code>Name</code>,
-        /// <code>PlatformTypes</code>, <code>DocumentType</code>, and <code>TargetType</code>. For example,
-        /// to return documents you own use <code>Key=Owner,Values=Self</code>. To specify a custom key-value
-        /// pair, use the format <code>Key=tag:tagName,Values=valueName</code>.</p>
-        /// <note>
-        /// <p>This API operation only supports filtering documents by using a single tag key and one or
-        /// more tag values. For example: <code>Key=tag:tagName,Values=valueName1,valueName2</code>
-        /// </p>
+        /// <p>One or more <code>DocumentKeyValuesFilter</code> objects. Use a filter to return a more specific list of results. For keys, you can specify one or more key-value pair tags that have been applied to a document. Other valid keys include <code>Owner</code>, <code>Name</code>, <code>PlatformTypes</code>, <code>DocumentType</code>, and <code>TargetType</code>. For example, to return documents you own use <code>Key=Owner,Values=Self</code>. To specify a custom key-value pair, use the format <code>Key=tag:tagName,Values=valueName</code>.</p> <note>
+        /// <p>This API operation only supports filtering documents by using a single tag key and one or more tag values. For example: <code>Key=tag:tagName,Values=valueName1,valueName2</code> </p>
         /// </note>
         pub fn filters(mut self, input: crate::model::DocumentKeyValuesFilter) -> Self {
             self.inner = self.inner.filters(input);
             self
         }
-        /// <p>One or more <code>DocumentKeyValuesFilter</code> objects. Use a filter to return a more
-        /// specific list of results. For keys, you can specify one or more key-value pair tags that have
-        /// been applied to a document. Other valid keys include <code>Owner</code>, <code>Name</code>,
-        /// <code>PlatformTypes</code>, <code>DocumentType</code>, and <code>TargetType</code>. For example,
-        /// to return documents you own use <code>Key=Owner,Values=Self</code>. To specify a custom key-value
-        /// pair, use the format <code>Key=tag:tagName,Values=valueName</code>.</p>
-        /// <note>
-        /// <p>This API operation only supports filtering documents by using a single tag key and one or
-        /// more tag values. For example: <code>Key=tag:tagName,Values=valueName1,valueName2</code>
-        /// </p>
+        /// <p>One or more <code>DocumentKeyValuesFilter</code> objects. Use a filter to return a more specific list of results. For keys, you can specify one or more key-value pair tags that have been applied to a document. Other valid keys include <code>Owner</code>, <code>Name</code>, <code>PlatformTypes</code>, <code>DocumentType</code>, and <code>TargetType</code>. For example, to return documents you own use <code>Key=Owner,Values=Self</code>. To specify a custom key-value pair, use the format <code>Key=tag:tagName,Values=valueName</code>.</p> <note>
+        /// <p>This API operation only supports filtering documents by using a single tag key and one or more tag values. For example: <code>Key=tag:tagName,Values=valueName1,valueName2</code> </p>
         /// </note>
         pub fn set_filters(
             mut self,
@@ -13165,26 +11338,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -13259,26 +11428,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -13380,26 +11545,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -13407,8 +11568,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListOpsItemEvents`.
     ///
-    /// <p>Returns a list of all OpsItem events in the current Amazon Web Services Region and Amazon Web Services account. You can
-    /// limit the results to events associated with specific OpsItems by specifying a filter.</p>
+    /// <p>Returns a list of all OpsItem events in the current Amazon Web Services Region and Amazon Web Services account. You can limit the results to events associated with specific OpsItems by specifying a filter.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListOpsItemEvents<
         C = aws_smithy_client::erase::DynConnector,
@@ -13482,14 +11642,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results. </p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results. </p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -13507,8 +11665,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListOpsItemRelatedItems`.
     ///
-    /// <p>Lists all related-item resources associated with a Systems Manager OpsCenter OpsItem. OpsCenter is a
-    /// capability of Amazon Web Services Systems Manager.</p>
+    /// <p>Lists all related-item resources associated with a Systems Manager OpsCenter OpsItem. OpsCenter is a capability of Amazon Web Services Systems Manager.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListOpsItemRelatedItems<
         C = aws_smithy_client::erase::DynConnector,
@@ -13592,26 +11749,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a previous
-        /// call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -13619,8 +11772,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListOpsMetadata`.
     ///
-    /// <p>Amazon Web Services Systems Manager calls this API operation when displaying all Application Manager OpsMetadata objects or
-    /// blobs.</p>
+    /// <p>Amazon Web Services Systems Manager calls this API operation when displaying all Application Manager OpsMetadata objects or blobs.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListOpsMetadata<
         C = aws_smithy_client::erase::DynConnector,
@@ -13694,14 +11846,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -13719,9 +11869,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListResourceComplianceSummaries`.
     ///
-    /// <p>Returns a resource-level summary count. The summary includes information about compliant and
-    /// non-compliant statuses and detailed compliance-item severity counts, according to the filter
-    /// criteria you specify.</p>
+    /// <p>Returns a resource-level summary count. The summary includes information about compliant and non-compliant statuses and detailed compliance-item severity counts, according to the filter criteria you specify.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListResourceComplianceSummaries<
         C = aws_smithy_client::erase::DynConnector,
@@ -13805,14 +11953,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -13820,15 +11966,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListResourceDataSync`.
     ///
-    /// <p>Lists your resource data sync configurations. Includes information about the last time a
-    /// sync attempted to start, the last sync status, and the last time a sync successfully
-    /// completed.</p>
-    /// <p>The number of sync configurations might be too large to return using a single call to
-    /// <code>ListResourceDataSync</code>. You can limit the number of sync configurations returned by
-    /// using the <code>MaxResults</code> parameter. To determine whether there are more sync
-    /// configurations to list, check the value of <code>NextToken</code> in the output. If there are
-    /// more sync configurations to list, you can request them by specifying the <code>NextToken</code>
-    /// returned in the call to the parameter of a subsequent call. </p>
+    /// <p>Lists your resource data sync configurations. Includes information about the last time a sync attempted to start, the last sync status, and the last time a sync successfully completed.</p>
+    /// <p>The number of sync configurations might be too large to return using a single call to <code>ListResourceDataSync</code>. You can limit the number of sync configurations returned by using the <code>MaxResults</code> parameter. To determine whether there are more sync configurations to list, check the value of <code>NextToken</code> in the output. If there are more sync configurations to list, you can request them by specifying the <code>NextToken</code> returned in the call to the parameter of a subsequent call. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListResourceDataSync<
         C = aws_smithy_client::erase::DynConnector,
@@ -13885,16 +12024,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>View a list of resource data syncs according to the sync type. Specify
-        /// <code>SyncToDestination</code> to view resource data syncs that synchronize data to an Amazon S3 bucket. Specify <code>SyncFromSource</code> to view resource data syncs from Organizations
-        /// or from multiple Amazon Web Services Regions.</p>
+        /// <p>View a list of resource data syncs according to the sync type. Specify <code>SyncToDestination</code> to view resource data syncs that synchronize data to an Amazon S3 bucket. Specify <code>SyncFromSource</code> to view resource data syncs from Organizations or from multiple Amazon Web Services Regions.</p>
         pub fn sync_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.sync_type(input.into());
             self
         }
-        /// <p>View a list of resource data syncs according to the sync type. Specify
-        /// <code>SyncToDestination</code> to view resource data syncs that synchronize data to an Amazon S3 bucket. Specify <code>SyncFromSource</code> to view resource data syncs from Organizations
-        /// or from multiple Amazon Web Services Regions.</p>
+        /// <p>View a list of resource data syncs according to the sync type. Specify <code>SyncToDestination</code> to view resource data syncs that synchronize data to an Amazon S3 bucket. Specify <code>SyncFromSource</code> to view resource data syncs from Organizations or from multiple Amazon Web Services Regions.</p>
         pub fn set_sync_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_sync_type(input);
             self
@@ -13909,14 +12044,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of items to return for this call. The call also returns a token that you
-        /// can specify in a subsequent call to get the next set of results.</p>
+        /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -13925,7 +12058,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
     /// <p>Returns a list of the tags assigned to the specified resource.</p>
-    /// <p>For information about the ID format for each supported resource type, see <a>AddTagsToResource</a>.</p>
+    /// <p>For information about the ID format for each supported resource type, see <code>AddTagsToResource</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -14008,10 +12141,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ModifyDocumentPermission`.
     ///
-    /// <p>Shares a Amazon Web Services Systems Manager document (SSM document)publicly or privately. If you share a document
-    /// privately, you must specify the Amazon Web Services user account IDs for those people who can use the
-    /// document. If you share a document publicly, you must specify <i>All</i> as the
-    /// account ID.</p>
+    /// <p>Shares a Amazon Web Services Systems Manager document (SSM document)publicly or privately. If you share a document privately, you must specify the Amazon Web Services user account IDs for those people who can use the document. If you share a document publicly, you must specify <i>All</i> as the account ID.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ModifyDocumentPermission<
         C = aws_smithy_client::erase::DynConnector,
@@ -14078,14 +12208,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The permission type for the document. The permission type can be
-        /// <i>Share</i>.</p>
+        /// <p>The permission type for the document. The permission type can be <i>Share</i>.</p>
         pub fn permission_type(mut self, input: crate::model::DocumentPermissionType) -> Self {
             self.inner = self.inner.permission_type(input);
             self
         }
-        /// <p>The permission type for the document. The permission type can be
-        /// <i>Share</i>.</p>
+        /// <p>The permission type for the document. The permission type can be <i>Share</i>.</p>
         pub fn set_permission_type(
             mut self,
             input: std::option::Option<crate::model::DocumentPermissionType>,
@@ -14097,14 +12225,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_account_ids_to_add`](Self::set_account_ids_to_add).
         ///
-        /// <p>The Amazon Web Services user accounts that should have access to the document. The account IDs can
-        /// either be a group of account IDs or <i>All</i>.</p>
+        /// <p>The Amazon Web Services user accounts that should have access to the document. The account IDs can either be a group of account IDs or <i>All</i>.</p>
         pub fn account_ids_to_add(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_ids_to_add(input.into());
             self
         }
-        /// <p>The Amazon Web Services user accounts that should have access to the document. The account IDs can
-        /// either be a group of account IDs or <i>All</i>.</p>
+        /// <p>The Amazon Web Services user accounts that should have access to the document. The account IDs can either be a group of account IDs or <i>All</i>.</p>
         pub fn set_account_ids_to_add(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -14116,18 +12242,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_account_ids_to_remove`](Self::set_account_ids_to_remove).
         ///
-        /// <p>The Amazon Web Services user accounts that should no longer have access to the document. The Amazon Web Services
-        /// user account can either be a group of account IDs or <i>All</i>. This action has a
-        /// higher priority than <i>AccountIdsToAdd</i>. If you specify an account ID to add
-        /// and the same ID to remove, the system removes access to the document.</p>
+        /// <p>The Amazon Web Services user accounts that should no longer have access to the document. The Amazon Web Services user account can either be a group of account IDs or <i>All</i>. This action has a higher priority than <i>AccountIdsToAdd</i>. If you specify an account ID to add and the same ID to remove, the system removes access to the document.</p>
         pub fn account_ids_to_remove(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_ids_to_remove(input.into());
             self
         }
-        /// <p>The Amazon Web Services user accounts that should no longer have access to the document. The Amazon Web Services
-        /// user account can either be a group of account IDs or <i>All</i>. This action has a
-        /// higher priority than <i>AccountIdsToAdd</i>. If you specify an account ID to add
-        /// and the same ID to remove, the system removes access to the document.</p>
+        /// <p>The Amazon Web Services user accounts that should no longer have access to the document. The Amazon Web Services user account can either be a group of account IDs or <i>All</i>. This action has a higher priority than <i>AccountIdsToAdd</i>. If you specify an account ID to add and the same ID to remove, the system removes access to the document.</p>
         pub fn set_account_ids_to_remove(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -14135,14 +12255,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_account_ids_to_remove(input);
             self
         }
-        /// <p>(Optional) The version of the document to share. If it isn't specified, the system choose
-        /// the <code>Default</code> version to share.</p>
+        /// <p>(Optional) The version of the document to share. If it isn't specified, the system choose the <code>Default</code> version to share.</p>
         pub fn shared_document_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.shared_document_version(input.into());
             self
         }
-        /// <p>(Optional) The version of the document to share. If it isn't specified, the system choose
-        /// the <code>Default</code> version to share.</p>
+        /// <p>(Optional) The version of the document to share. If it isn't specified, the system choose the <code>Default</code> version to share.</p>
         pub fn set_shared_document_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14153,61 +12271,24 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutComplianceItems`.
     ///
-    /// <p>Registers a compliance type and other compliance details on a designated resource. This
-    /// operation lets you register custom compliance details with a resource. This call overwrites
-    /// existing compliance information on the resource, so you must provide a full list of compliance
-    /// items each time that you send the request.</p>
+    /// <p>Registers a compliance type and other compliance details on a designated resource. This operation lets you register custom compliance details with a resource. This call overwrites existing compliance information on the resource, so you must provide a full list of compliance items each time that you send the request.</p>
     /// <p>ComplianceType can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>ExecutionId: The execution ID when the patch, association, or custom compliance item was
-    /// applied.</p>
-    /// </li>
-    /// <li>
-    /// <p>ExecutionType: Specify patch, association, or Custom:<code>string</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>ExecutionTime. The time the patch, association, or custom compliance item was applied to
-    /// the managed node.</p>
-    /// </li>
-    /// <li>
-    /// <p>Id: The patch, association, or custom compliance ID.</p>
-    /// </li>
-    /// <li>
-    /// <p>Title: A title.</p>
-    /// </li>
-    /// <li>
-    /// <p>Status: The status of the compliance item. For example, <code>approved</code> for patches,
-    /// or <code>Failed</code> for associations.</p>
-    /// </li>
-    /// <li>
-    /// <p>Severity: A patch severity. For example, <code>critical</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>DocumentName: An SSM document name. For example, <code>AWS-RunPatchBaseline</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>DocumentVersion: An SSM document version number. For example, 4.</p>
-    /// </li>
-    /// <li>
-    /// <p>Classification: A patch classification. For example, <code>security updates</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>PatchBaselineId: A patch baseline ID.</p>
-    /// </li>
-    /// <li>
-    /// <p>PatchSeverity: A patch severity. For example, <code>Critical</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>PatchState: A patch state. For example, <code>InstancesWithFailedPatches</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>PatchGroup: The name of a patch group.</p>
-    /// </li>
-    /// <li>
-    /// <p>InstalledTime: The time the association, patch, or custom compliance item was applied to
-    /// the resource. Specify the time by using the following format: yyyy-MM-dd'T'HH:mm:ss'Z'</p>
-    /// </li>
+    /// <li> <p>ExecutionId: The execution ID when the patch, association, or custom compliance item was applied.</p> </li>
+    /// <li> <p>ExecutionType: Specify patch, association, or Custom:<code>string</code>.</p> </li>
+    /// <li> <p>ExecutionTime. The time the patch, association, or custom compliance item was applied to the managed node.</p> </li>
+    /// <li> <p>Id: The patch, association, or custom compliance ID.</p> </li>
+    /// <li> <p>Title: A title.</p> </li>
+    /// <li> <p>Status: The status of the compliance item. For example, <code>approved</code> for patches, or <code>Failed</code> for associations.</p> </li>
+    /// <li> <p>Severity: A patch severity. For example, <code>critical</code>.</p> </li>
+    /// <li> <p>DocumentName: An SSM document name. For example, <code>AWS-RunPatchBaseline</code>.</p> </li>
+    /// <li> <p>DocumentVersion: An SSM document version number. For example, 4.</p> </li>
+    /// <li> <p>Classification: A patch classification. For example, <code>security updates</code>.</p> </li>
+    /// <li> <p>PatchBaselineId: A patch baseline ID.</p> </li>
+    /// <li> <p>PatchSeverity: A patch severity. For example, <code>Critical</code>.</p> </li>
+    /// <li> <p>PatchState: A patch state. For example, <code>InstancesWithFailedPatches</code>.</p> </li>
+    /// <li> <p>PatchGroup: The name of a patch group.</p> </li>
+    /// <li> <p>InstalledTime: The time the association, patch, or custom compliance item was applied to the resource. Specify the time by using the following format: yyyy-MM-dd'T'HH:mm:ss'Z'</p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutComplianceItems<
@@ -14275,14 +12356,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_id(input);
             self
         }
-        /// <p>Specify the type of resource. <code>ManagedInstance</code> is currently the only supported
-        /// resource type.</p>
+        /// <p>Specify the type of resource. <code>ManagedInstance</code> is currently the only supported resource type.</p>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_type(input.into());
             self
         }
-        /// <p>Specify the type of resource. <code>ManagedInstance</code> is currently the only supported
-        /// resource type.</p>
+        /// <p>Specify the type of resource. <code>ManagedInstance</code> is currently the only supported resource type.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14290,14 +12369,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_type(input);
             self
         }
-        /// <p>Specify the compliance type. For example, specify Association (for a State Manager
-        /// association), Patch, or Custom:<code>string</code>.</p>
+        /// <p>Specify the compliance type. For example, specify Association (for a State Manager association), Patch, or Custom:<code>string</code>.</p>
         pub fn compliance_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.compliance_type(input.into());
             self
         }
-        /// <p>Specify the compliance type. For example, specify Association (for a State Manager
-        /// association), Patch, or Custom:<code>string</code>.</p>
+        /// <p>Specify the compliance type. For example, specify Association (for a State Manager association), Patch, or Custom:<code>string</code>.</p>
         pub fn set_compliance_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14305,9 +12382,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_compliance_type(input);
             self
         }
-        /// <p>A summary of the call execution that includes an execution ID, the type of execution (for
-        /// example, <code>Command</code>), and the date/time of the execution using a datetime object that
-        /// is saved in the following format: yyyy-MM-dd'T'HH:mm:ss'Z'.</p>
+        /// <p>A summary of the call execution that includes an execution ID, the type of execution (for example, <code>Command</code>), and the date/time of the execution using a datetime object that is saved in the following format: yyyy-MM-dd'T'HH:mm:ss'Z'.</p>
         pub fn execution_summary(
             mut self,
             input: crate::model::ComplianceExecutionSummary,
@@ -14315,9 +12390,7 @@ pub mod fluent_builders {
             self.inner = self.inner.execution_summary(input);
             self
         }
-        /// <p>A summary of the call execution that includes an execution ID, the type of execution (for
-        /// example, <code>Command</code>), and the date/time of the execution using a datetime object that
-        /// is saved in the following format: yyyy-MM-dd'T'HH:mm:ss'Z'.</p>
+        /// <p>A summary of the call execution that includes an execution ID, the type of execution (for example, <code>Command</code>), and the date/time of the execution using a datetime object that is saved in the following format: yyyy-MM-dd'T'HH:mm:ss'Z'.</p>
         pub fn set_execution_summary(
             mut self,
             input: std::option::Option<crate::model::ComplianceExecutionSummary>,
@@ -14329,16 +12402,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_items`](Self::set_items).
         ///
-        /// <p>Information about the compliance as defined by the resource type. For example, for a patch
-        /// compliance type, <code>Items</code> includes information about the PatchSeverity, Classification,
-        /// and so on.</p>
+        /// <p>Information about the compliance as defined by the resource type. For example, for a patch compliance type, <code>Items</code> includes information about the PatchSeverity, Classification, and so on.</p>
         pub fn items(mut self, input: crate::model::ComplianceItemEntry) -> Self {
             self.inner = self.inner.items(input);
             self
         }
-        /// <p>Information about the compliance as defined by the resource type. For example, for a patch
-        /// compliance type, <code>Items</code> includes information about the PatchSeverity, Classification,
-        /// and so on.</p>
+        /// <p>Information about the compliance as defined by the resource type. For example, for a patch compliance type, <code>Items</code> includes information about the PatchSeverity, Classification, and so on.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ComplianceItemEntry>>,
@@ -14346,16 +12415,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_items(input);
             self
         }
-        /// <p>MD5 or SHA-256 content hash. The content hash is used to determine if existing information
-        /// should be overwritten or ignored. If the content hashes match, the request to put compliance
-        /// information is ignored.</p>
+        /// <p>MD5 or SHA-256 content hash. The content hash is used to determine if existing information should be overwritten or ignored. If the content hashes match, the request to put compliance information is ignored.</p>
         pub fn item_content_hash(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.item_content_hash(input.into());
             self
         }
-        /// <p>MD5 or SHA-256 content hash. The content hash is used to determine if existing information
-        /// should be overwritten or ignored. If the content hashes match, the request to put compliance
-        /// information is ignored.</p>
+        /// <p>MD5 or SHA-256 content hash. The content hash is used to determine if existing information should be overwritten or ignored. If the content hashes match, the request to put compliance information is ignored.</p>
         pub fn set_item_content_hash(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14363,28 +12428,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_item_content_hash(input);
             self
         }
-        /// <p>The mode for uploading compliance items. You can specify <code>COMPLETE</code> or
-        /// <code>PARTIAL</code>. In <code>COMPLETE</code> mode, the system overwrites all existing
-        /// compliance information for the resource. You must provide a full list of compliance items each
-        /// time you send the request.</p>
-        /// <p>In <code>PARTIAL</code> mode, the system overwrites compliance information for a specific
-        /// association. The association must be configured with <code>SyncCompliance</code> set to
-        /// <code>MANUAL</code>. By default, all requests use <code>COMPLETE</code> mode.</p>
-        /// <note>
+        /// <p>The mode for uploading compliance items. You can specify <code>COMPLETE</code> or <code>PARTIAL</code>. In <code>COMPLETE</code> mode, the system overwrites all existing compliance information for the resource. You must provide a full list of compliance items each time you send the request.</p>
+        /// <p>In <code>PARTIAL</code> mode, the system overwrites compliance information for a specific association. The association must be configured with <code>SyncCompliance</code> set to <code>MANUAL</code>. By default, all requests use <code>COMPLETE</code> mode.</p> <note>
         /// <p>This attribute is only valid for association compliance.</p>
         /// </note>
         pub fn upload_type(mut self, input: crate::model::ComplianceUploadType) -> Self {
             self.inner = self.inner.upload_type(input);
             self
         }
-        /// <p>The mode for uploading compliance items. You can specify <code>COMPLETE</code> or
-        /// <code>PARTIAL</code>. In <code>COMPLETE</code> mode, the system overwrites all existing
-        /// compliance information for the resource. You must provide a full list of compliance items each
-        /// time you send the request.</p>
-        /// <p>In <code>PARTIAL</code> mode, the system overwrites compliance information for a specific
-        /// association. The association must be configured with <code>SyncCompliance</code> set to
-        /// <code>MANUAL</code>. By default, all requests use <code>COMPLETE</code> mode.</p>
-        /// <note>
+        /// <p>The mode for uploading compliance items. You can specify <code>COMPLETE</code> or <code>PARTIAL</code>. In <code>COMPLETE</code> mode, the system overwrites all existing compliance information for the resource. You must provide a full list of compliance items each time you send the request.</p>
+        /// <p>In <code>PARTIAL</code> mode, the system overwrites compliance information for a specific association. The association must be configured with <code>SyncCompliance</code> set to <code>MANUAL</code>. By default, all requests use <code>COMPLETE</code> mode.</p> <note>
         /// <p>This attribute is only valid for association compliance.</p>
         /// </note>
         pub fn set_upload_type(
@@ -14397,8 +12450,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutInventory`.
     ///
-    /// <p>Bulk update custom inventory items on one or more managed nodes. The request adds an inventory item,
-    /// if it doesn't already exist, or updates an inventory item, if it does exist.</p>
+    /// <p>Bulk update custom inventory items on one or more managed nodes. The request adds an inventory item, if it doesn't already exist, or updates an inventory item, if it does exist.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutInventory<
         C = aws_smithy_client::erase::DynConnector,
@@ -14542,205 +12594,105 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The fully qualified name of the parameter that you want to add to the system. The fully
-        /// qualified name includes the complete hierarchy of the parameter path and name. For parameters in
-        /// a hierarchy, you must include a leading forward slash character (/) when you create or reference
-        /// a parameter. For example: <code>/Dev/DBServer/MySQL/db-string13</code>
-        /// </p>
+        /// <p>The fully qualified name of the parameter that you want to add to the system. The fully qualified name includes the complete hierarchy of the parameter path and name. For parameters in a hierarchy, you must include a leading forward slash character (/) when you create or reference a parameter. For example: <code>/Dev/DBServer/MySQL/db-string13</code> </p>
         /// <p>Naming Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Parameter names are case sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>A parameter name must be unique within an Amazon Web Services Region</p>
-        /// </li>
-        /// <li>
-        /// <p>A parameter name can't be prefixed with "<code>aws</code>" or "<code>ssm</code>"
-        /// (case-insensitive).</p>
-        /// </li>
-        /// <li>
-        /// <p>Parameter names can include only the following symbols and letters:
-        /// <code>a-zA-Z0-9_.-</code>
-        /// </p>
-        /// <p>In addition, the slash character ( / ) is used to delineate hierarchies in parameter
-        /// names. For example: <code>/Dev/Production/East/Project-ABC/MyParameter</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>A parameter name can't include spaces.</p>
-        /// </li>
-        /// <li>
-        /// <p>Parameter hierarchies are limited to a maximum depth of fifteen levels.</p>
-        /// </li>
+        /// <li> <p>Parameter names are case sensitive.</p> </li>
+        /// <li> <p>A parameter name must be unique within an Amazon Web Services Region</p> </li>
+        /// <li> <p>A parameter name can't be prefixed with "<code>aws</code>" or "<code>ssm</code>" (case-insensitive).</p> </li>
+        /// <li> <p>Parameter names can include only the following symbols and letters: <code>a-zA-Z0-9_.-</code> </p> <p>In addition, the slash character ( / ) is used to delineate hierarchies in parameter names. For example: <code>/Dev/Production/East/Project-ABC/MyParameter</code> </p> </li>
+        /// <li> <p>A parameter name can't include spaces.</p> </li>
+        /// <li> <p>Parameter hierarchies are limited to a maximum depth of fifteen levels.</p> </li>
         /// </ul>
-        /// <p>For additional information about valid values for parameter names, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html">Creating Systems Manager parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-        /// <note>
-        /// <p>The maximum length constraint listed below includes capacity for additional system
-        /// attributes that aren't part of the name. The maximum length for a parameter name, including the
-        /// full length of the parameter ARN, is 1011 characters. For example, the length of the following
-        /// parameter name is 65 characters, not 20 characters:</p>
-        /// <p>
-        /// <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
-        /// </p>
+        /// <p>For additional information about valid values for parameter names, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html">Creating Systems Manager parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <note>
+        /// <p>The maximum length constraint listed below includes capacity for additional system attributes that aren't part of the name. The maximum length for a parameter name, including the full length of the parameter ARN, is 1011 characters. For example, the length of the following parameter name is 65 characters, not 20 characters:</p>
+        /// <p> <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code> </p>
         /// </note>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The fully qualified name of the parameter that you want to add to the system. The fully
-        /// qualified name includes the complete hierarchy of the parameter path and name. For parameters in
-        /// a hierarchy, you must include a leading forward slash character (/) when you create or reference
-        /// a parameter. For example: <code>/Dev/DBServer/MySQL/db-string13</code>
-        /// </p>
+        /// <p>The fully qualified name of the parameter that you want to add to the system. The fully qualified name includes the complete hierarchy of the parameter path and name. For parameters in a hierarchy, you must include a leading forward slash character (/) when you create or reference a parameter. For example: <code>/Dev/DBServer/MySQL/db-string13</code> </p>
         /// <p>Naming Constraints:</p>
         /// <ul>
-        /// <li>
-        /// <p>Parameter names are case sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>A parameter name must be unique within an Amazon Web Services Region</p>
-        /// </li>
-        /// <li>
-        /// <p>A parameter name can't be prefixed with "<code>aws</code>" or "<code>ssm</code>"
-        /// (case-insensitive).</p>
-        /// </li>
-        /// <li>
-        /// <p>Parameter names can include only the following symbols and letters:
-        /// <code>a-zA-Z0-9_.-</code>
-        /// </p>
-        /// <p>In addition, the slash character ( / ) is used to delineate hierarchies in parameter
-        /// names. For example: <code>/Dev/Production/East/Project-ABC/MyParameter</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>A parameter name can't include spaces.</p>
-        /// </li>
-        /// <li>
-        /// <p>Parameter hierarchies are limited to a maximum depth of fifteen levels.</p>
-        /// </li>
+        /// <li> <p>Parameter names are case sensitive.</p> </li>
+        /// <li> <p>A parameter name must be unique within an Amazon Web Services Region</p> </li>
+        /// <li> <p>A parameter name can't be prefixed with "<code>aws</code>" or "<code>ssm</code>" (case-insensitive).</p> </li>
+        /// <li> <p>Parameter names can include only the following symbols and letters: <code>a-zA-Z0-9_.-</code> </p> <p>In addition, the slash character ( / ) is used to delineate hierarchies in parameter names. For example: <code>/Dev/Production/East/Project-ABC/MyParameter</code> </p> </li>
+        /// <li> <p>A parameter name can't include spaces.</p> </li>
+        /// <li> <p>Parameter hierarchies are limited to a maximum depth of fifteen levels.</p> </li>
         /// </ul>
-        /// <p>For additional information about valid values for parameter names, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html">Creating Systems Manager parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-        /// <note>
-        /// <p>The maximum length constraint listed below includes capacity for additional system
-        /// attributes that aren't part of the name. The maximum length for a parameter name, including the
-        /// full length of the parameter ARN, is 1011 characters. For example, the length of the following
-        /// parameter name is 65 characters, not 20 characters:</p>
-        /// <p>
-        /// <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
-        /// </p>
+        /// <p>For additional information about valid values for parameter names, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html">Creating Systems Manager parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <note>
+        /// <p>The maximum length constraint listed below includes capacity for additional system attributes that aren't part of the name. The maximum length for a parameter name, including the full length of the parameter ARN, is 1011 characters. For example, the length of the following parameter name is 65 characters, not 20 characters:</p>
+        /// <p> <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code> </p>
         /// </note>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Information about the parameter that you want to add to the system. Optional but
-        /// recommended.</p>
-        /// <important>
+        /// <p>Information about the parameter that you want to add to the system. Optional but recommended.</p> <important>
         /// <p>Don't enter personally identifiable information in this field.</p>
         /// </important>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>Information about the parameter that you want to add to the system. Optional but
-        /// recommended.</p>
-        /// <important>
+        /// <p>Information about the parameter that you want to add to the system. Optional but recommended.</p> <important>
         /// <p>Don't enter personally identifiable information in this field.</p>
         /// </important>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The parameter value that you want to add to the system. Standard parameters have a value
-        /// limit of 4 KB. Advanced parameters have a value limit of 8 KB.</p>
-        /// <note>
-        /// <p>Parameters can't be referenced or nested in the values of other parameters. You can't
-        /// include <code>{{}}</code> or <code>{{ssm:<i>parameter-name</i>}}</code> in a
-        /// parameter value.</p>
+        /// <p>The parameter value that you want to add to the system. Standard parameters have a value limit of 4 KB. Advanced parameters have a value limit of 8 KB.</p> <note>
+        /// <p>Parameters can't be referenced or nested in the values of other parameters. You can't include <code>{{}}</code> or <code>{{ssm:<i>parameter-name</i>}}</code> in a parameter value.</p>
         /// </note>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.value(input.into());
             self
         }
-        /// <p>The parameter value that you want to add to the system. Standard parameters have a value
-        /// limit of 4 KB. Advanced parameters have a value limit of 8 KB.</p>
-        /// <note>
-        /// <p>Parameters can't be referenced or nested in the values of other parameters. You can't
-        /// include <code>{{}}</code> or <code>{{ssm:<i>parameter-name</i>}}</code> in a
-        /// parameter value.</p>
+        /// <p>The parameter value that you want to add to the system. Standard parameters have a value limit of 4 KB. Advanced parameters have a value limit of 8 KB.</p> <note>
+        /// <p>Parameters can't be referenced or nested in the values of other parameters. You can't include <code>{{}}</code> or <code>{{ssm:<i>parameter-name</i>}}</code> in a parameter value.</p>
         /// </note>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_value(input);
             self
         }
-        /// <p>The type of parameter that you want to add to the system.</p>
-        /// <note>
-        /// <p>
-        /// <code>SecureString</code> isn't currently supported for CloudFormation templates.</p>
+        /// <p>The type of parameter that you want to add to the system.</p> <note>
+        /// <p> <code>SecureString</code> isn't currently supported for CloudFormation templates.</p>
         /// </note>
-        /// <p>Items in a <code>StringList</code> must be separated by a comma (,). You can't
-        /// use other punctuation or special character to escape items in the list. If you have a parameter
-        /// value that requires a comma, then use the <code>String</code> data type.</p>
-        /// <important>
-        /// <p>Specifying a parameter type isn't required when updating a parameter. You must specify a
-        /// parameter type when creating a parameter.</p>
+        /// <p>Items in a <code>StringList</code> must be separated by a comma (,). You can't use other punctuation or special character to escape items in the list. If you have a parameter value that requires a comma, then use the <code>String</code> data type.</p> <important>
+        /// <p>Specifying a parameter type isn't required when updating a parameter. You must specify a parameter type when creating a parameter.</p>
         /// </important>
         pub fn r#type(mut self, input: crate::model::ParameterType) -> Self {
             self.inner = self.inner.r#type(input);
             self
         }
-        /// <p>The type of parameter that you want to add to the system.</p>
-        /// <note>
-        /// <p>
-        /// <code>SecureString</code> isn't currently supported for CloudFormation templates.</p>
+        /// <p>The type of parameter that you want to add to the system.</p> <note>
+        /// <p> <code>SecureString</code> isn't currently supported for CloudFormation templates.</p>
         /// </note>
-        /// <p>Items in a <code>StringList</code> must be separated by a comma (,). You can't
-        /// use other punctuation or special character to escape items in the list. If you have a parameter
-        /// value that requires a comma, then use the <code>String</code> data type.</p>
-        /// <important>
-        /// <p>Specifying a parameter type isn't required when updating a parameter. You must specify a
-        /// parameter type when creating a parameter.</p>
+        /// <p>Items in a <code>StringList</code> must be separated by a comma (,). You can't use other punctuation or special character to escape items in the list. If you have a parameter value that requires a comma, then use the <code>String</code> data type.</p> <important>
+        /// <p>Specifying a parameter type isn't required when updating a parameter. You must specify a parameter type when creating a parameter.</p>
         /// </important>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ParameterType>) -> Self {
             self.inner = self.inner.set_type(input);
             self
         }
-        /// <p>The Key Management Service (KMS) ID that you want to use to encrypt a
-        /// parameter. Either the default KMS key automatically assigned to your Amazon Web Services account
-        /// or a custom key. Required for parameters that use the <code>SecureString</code>
-        /// data type.</p>
-        /// <p>If you don't specify a key ID, the system uses the default key associated with your
-        /// Amazon Web Services account.</p>
+        /// <p>The Key Management Service (KMS) ID that you want to use to encrypt a parameter. Either the default KMS key automatically assigned to your Amazon Web Services account or a custom key. Required for parameters that use the <code>SecureString</code> data type.</p>
+        /// <p>If you don't specify a key ID, the system uses the default key associated with your Amazon Web Services account.</p>
         /// <ul>
-        /// <li>
-        /// <p>To use your default KMS key, choose the <code>SecureString</code> data type, and do <i>not</i> specify the <code>Key ID</code> when you create the parameter. The system automatically populates
-        /// <code>Key ID</code> with your default KMS key.</p>
-        /// </li>
-        /// <li>
-        /// <p>To use a custom KMS key, choose the <code>SecureString</code>
-        /// data type with the <code>Key ID</code> parameter.</p>
-        /// </li>
+        /// <li> <p>To use your default KMS key, choose the <code>SecureString</code> data type, and do <i>not</i> specify the <code>Key ID</code> when you create the parameter. The system automatically populates <code>Key ID</code> with your default KMS key.</p> </li>
+        /// <li> <p>To use a custom KMS key, choose the <code>SecureString</code> data type with the <code>Key ID</code> parameter.</p> </li>
         /// </ul>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.key_id(input.into());
             self
         }
-        /// <p>The Key Management Service (KMS) ID that you want to use to encrypt a
-        /// parameter. Either the default KMS key automatically assigned to your Amazon Web Services account
-        /// or a custom key. Required for parameters that use the <code>SecureString</code>
-        /// data type.</p>
-        /// <p>If you don't specify a key ID, the system uses the default key associated with your
-        /// Amazon Web Services account.</p>
+        /// <p>The Key Management Service (KMS) ID that you want to use to encrypt a parameter. Either the default KMS key automatically assigned to your Amazon Web Services account or a custom key. Required for parameters that use the <code>SecureString</code> data type.</p>
+        /// <p>If you don't specify a key ID, the system uses the default key associated with your Amazon Web Services account.</p>
         /// <ul>
-        /// <li>
-        /// <p>To use your default KMS key, choose the <code>SecureString</code> data type, and do <i>not</i> specify the <code>Key ID</code> when you create the parameter. The system automatically populates
-        /// <code>Key ID</code> with your default KMS key.</p>
-        /// </li>
-        /// <li>
-        /// <p>To use a custom KMS key, choose the <code>SecureString</code>
-        /// data type with the <code>Key ID</code> parameter.</p>
-        /// </li>
+        /// <li> <p>To use your default KMS key, choose the <code>SecureString</code> data type, and do <i>not</i> specify the <code>Key ID</code> when you create the parameter. The system automatically populates <code>Key ID</code> with your default KMS key.</p> </li>
+        /// <li> <p>To use a custom KMS key, choose the <code>SecureString</code> data type with the <code>Key ID</code> parameter.</p> </li>
         /// </ul>
         pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_key_id(input);
@@ -14756,14 +12708,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_overwrite(input);
             self
         }
-        /// <p>A regular expression used to validate the parameter value. For example, for String types
-        /// with values restricted to numbers, you can specify the following: AllowedPattern=^\d+$ </p>
+        /// <p>A regular expression used to validate the parameter value. For example, for String types with values restricted to numbers, you can specify the following: AllowedPattern=^\d+$ </p>
         pub fn allowed_pattern(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.allowed_pattern(input.into());
             self
         }
-        /// <p>A regular expression used to validate the parameter value. For example, for String types
-        /// with values restricted to numbers, you can specify the following: AllowedPattern=^\d+$ </p>
+        /// <p>A regular expression used to validate the parameter value. For example, for String types with values restricted to numbers, you can specify the following: AllowedPattern=^\d+$ </p>
         pub fn set_allowed_pattern(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14775,61 +12725,25 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in
-        /// different ways, such as by purpose, owner, or environment. For example, you might want to tag a
-        /// Systems Manager parameter to identify the type of resource to which it applies, the environment, or the
-        /// type of configuration data referenced by the parameter. In this case, you could specify the
-        /// following key-value pairs:</p>
+        /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a Systems Manager parameter to identify the type of resource to which it applies, the environment, or the type of configuration data referenced by the parameter. In this case, you could specify the following key-value pairs:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Key=Resource,Value=S3bucket</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Key=OS,Value=Windows</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Key=ParameterType,Value=LicenseKey</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>To add tags to an existing Systems Manager parameter, use the <a>AddTagsToResource</a>
-        /// operation.</p>
+        /// <li> <p> <code>Key=Resource,Value=S3bucket</code> </p> </li>
+        /// <li> <p> <code>Key=OS,Value=Windows</code> </p> </li>
+        /// <li> <p> <code>Key=ParameterType,Value=LicenseKey</code> </p> </li>
+        /// </ul> <note>
+        /// <p>To add tags to an existing Systems Manager parameter, use the <code>AddTagsToResource</code> operation.</p>
         /// </note>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in
-        /// different ways, such as by purpose, owner, or environment. For example, you might want to tag a
-        /// Systems Manager parameter to identify the type of resource to which it applies, the environment, or the
-        /// type of configuration data referenced by the parameter. In this case, you could specify the
-        /// following key-value pairs:</p>
+        /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a Systems Manager parameter to identify the type of resource to which it applies, the environment, or the type of configuration data referenced by the parameter. In this case, you could specify the following key-value pairs:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Key=Resource,Value=S3bucket</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Key=OS,Value=Windows</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Key=ParameterType,Value=LicenseKey</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>To add tags to an existing Systems Manager parameter, use the <a>AddTagsToResource</a>
-        /// operation.</p>
+        /// <li> <p> <code>Key=Resource,Value=S3bucket</code> </p> </li>
+        /// <li> <p> <code>Key=OS,Value=Windows</code> </p> </li>
+        /// <li> <p> <code>Key=ParameterType,Value=LicenseKey</code> </p> </li>
+        /// </ul> <note>
+        /// <p>To add tags to an existing Systems Manager parameter, use the <code>AddTagsToResource</code> operation.</p>
         /// </note>
         pub fn set_tags(
             mut self,
@@ -14839,215 +12753,87 @@ pub mod fluent_builders {
             self
         }
         /// <p>The parameter tier to assign to a parameter.</p>
-        /// <p>Parameter Store offers a standard tier and an advanced tier for parameters. Standard
-        /// parameters have a content size limit of 4 KB and can't be configured to use parameter policies.
-        /// You can create a maximum of 10,000 standard parameters for each Region in an Amazon Web Services account.
-        /// Standard parameters are offered at no additional cost. </p>
-        /// <p>Advanced parameters have a content size limit of 8 KB and can be configured to use parameter
-        /// policies. You can create a maximum of 100,000 advanced parameters for each Region in an
-        /// Amazon Web Services account. Advanced parameters incur a charge. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">Standard and
-        /// advanced parameter tiers</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-        /// <p>You can change a standard parameter to an advanced parameter any time. But you can't revert
-        /// an advanced parameter to a standard parameter. Reverting an advanced parameter to a standard
-        /// parameter would result in data loss because the system would truncate the size of the parameter
-        /// from 8 KB to 4 KB. Reverting would also remove any policies attached to the parameter. Lastly,
-        /// advanced parameters use a different form of encryption than standard parameters. </p>
-        /// <p>If you no longer need an advanced parameter, or if you no longer want to incur charges for
-        /// an advanced parameter, you must delete it and recreate it as a new standard parameter. </p>
-        /// <p>
-        /// <b>Using the Default Tier Configuration</b>
-        /// </p>
-        /// <p>In <code>PutParameter</code> requests, you can specify the tier to create the parameter in.
-        /// Whenever you specify a tier in the request, Parameter Store creates or updates the parameter
-        /// according to that request. However, if you don't specify a tier in a request, Parameter Store
-        /// assigns the tier based on the current Parameter Store default tier configuration.</p>
-        /// <p>The default tier when you begin using Parameter Store is the standard-parameter tier. If you
-        /// use the advanced-parameter tier, you can specify one of the following as the default:</p>
+        /// <p>Parameter Store offers a standard tier and an advanced tier for parameters. Standard parameters have a content size limit of 4 KB and can't be configured to use parameter policies. You can create a maximum of 10,000 standard parameters for each Region in an Amazon Web Services account. Standard parameters are offered at no additional cost. </p>
+        /// <p>Advanced parameters have a content size limit of 8 KB and can be configured to use parameter policies. You can create a maximum of 100,000 advanced parameters for each Region in an Amazon Web Services account. Advanced parameters incur a charge. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">Standard and advanced parameter tiers</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+        /// <p>You can change a standard parameter to an advanced parameter any time. But you can't revert an advanced parameter to a standard parameter. Reverting an advanced parameter to a standard parameter would result in data loss because the system would truncate the size of the parameter from 8 KB to 4 KB. Reverting would also remove any policies attached to the parameter. Lastly, advanced parameters use a different form of encryption than standard parameters. </p>
+        /// <p>If you no longer need an advanced parameter, or if you no longer want to incur charges for an advanced parameter, you must delete it and recreate it as a new standard parameter. </p>
+        /// <p> <b>Using the Default Tier Configuration</b> </p>
+        /// <p>In <code>PutParameter</code> requests, you can specify the tier to create the parameter in. Whenever you specify a tier in the request, Parameter Store creates or updates the parameter according to that request. However, if you don't specify a tier in a request, Parameter Store assigns the tier based on the current Parameter Store default tier configuration.</p>
+        /// <p>The default tier when you begin using Parameter Store is the standard-parameter tier. If you use the advanced-parameter tier, you can specify one of the following as the default:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Advanced</b>: With this option, Parameter Store evaluates all
-        /// requests as advanced parameters. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Intelligent-Tiering</b>: With this option, Parameter Store
-        /// evaluates each request to determine if the parameter is standard or advanced. </p>
-        /// <p>If the request doesn't include any options that require an advanced parameter, the
-        /// parameter is created in the standard-parameter tier. If one or more options requiring an
-        /// advanced parameter are included in the request, Parameter Store create a parameter in the
-        /// advanced-parameter tier.</p>
-        /// <p>This approach helps control your parameter-related costs by always creating standard
-        /// parameters unless an advanced parameter is necessary. </p>
-        /// </li>
+        /// <li> <p> <b>Advanced</b>: With this option, Parameter Store evaluates all requests as advanced parameters. </p> </li>
+        /// <li> <p> <b>Intelligent-Tiering</b>: With this option, Parameter Store evaluates each request to determine if the parameter is standard or advanced. </p> <p>If the request doesn't include any options that require an advanced parameter, the parameter is created in the standard-parameter tier. If one or more options requiring an advanced parameter are included in the request, Parameter Store create a parameter in the advanced-parameter tier.</p> <p>This approach helps control your parameter-related costs by always creating standard parameters unless an advanced parameter is necessary. </p> </li>
         /// </ul>
         /// <p>Options that require an advanced parameter include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>The content size of the parameter is more than 4 KB.</p>
-        /// </li>
-        /// <li>
-        /// <p>The parameter uses a parameter policy.</p>
-        /// </li>
-        /// <li>
-        /// <p>More than 10,000 parameters already exist in your Amazon Web Services account in the current
-        /// Amazon Web Services Region.</p>
-        /// </li>
+        /// <li> <p>The content size of the parameter is more than 4 KB.</p> </li>
+        /// <li> <p>The parameter uses a parameter policy.</p> </li>
+        /// <li> <p>More than 10,000 parameters already exist in your Amazon Web Services account in the current Amazon Web Services Region.</p> </li>
         /// </ul>
-        /// <p>For more information about configuring the default tier option, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying a
-        /// default parameter tier</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+        /// <p>For more information about configuring the default tier option, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying a default parameter tier</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn tier(mut self, input: crate::model::ParameterTier) -> Self {
             self.inner = self.inner.tier(input);
             self
         }
         /// <p>The parameter tier to assign to a parameter.</p>
-        /// <p>Parameter Store offers a standard tier and an advanced tier for parameters. Standard
-        /// parameters have a content size limit of 4 KB and can't be configured to use parameter policies.
-        /// You can create a maximum of 10,000 standard parameters for each Region in an Amazon Web Services account.
-        /// Standard parameters are offered at no additional cost. </p>
-        /// <p>Advanced parameters have a content size limit of 8 KB and can be configured to use parameter
-        /// policies. You can create a maximum of 100,000 advanced parameters for each Region in an
-        /// Amazon Web Services account. Advanced parameters incur a charge. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">Standard and
-        /// advanced parameter tiers</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-        /// <p>You can change a standard parameter to an advanced parameter any time. But you can't revert
-        /// an advanced parameter to a standard parameter. Reverting an advanced parameter to a standard
-        /// parameter would result in data loss because the system would truncate the size of the parameter
-        /// from 8 KB to 4 KB. Reverting would also remove any policies attached to the parameter. Lastly,
-        /// advanced parameters use a different form of encryption than standard parameters. </p>
-        /// <p>If you no longer need an advanced parameter, or if you no longer want to incur charges for
-        /// an advanced parameter, you must delete it and recreate it as a new standard parameter. </p>
-        /// <p>
-        /// <b>Using the Default Tier Configuration</b>
-        /// </p>
-        /// <p>In <code>PutParameter</code> requests, you can specify the tier to create the parameter in.
-        /// Whenever you specify a tier in the request, Parameter Store creates or updates the parameter
-        /// according to that request. However, if you don't specify a tier in a request, Parameter Store
-        /// assigns the tier based on the current Parameter Store default tier configuration.</p>
-        /// <p>The default tier when you begin using Parameter Store is the standard-parameter tier. If you
-        /// use the advanced-parameter tier, you can specify one of the following as the default:</p>
+        /// <p>Parameter Store offers a standard tier and an advanced tier for parameters. Standard parameters have a content size limit of 4 KB and can't be configured to use parameter policies. You can create a maximum of 10,000 standard parameters for each Region in an Amazon Web Services account. Standard parameters are offered at no additional cost. </p>
+        /// <p>Advanced parameters have a content size limit of 8 KB and can be configured to use parameter policies. You can create a maximum of 100,000 advanced parameters for each Region in an Amazon Web Services account. Advanced parameters incur a charge. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">Standard and advanced parameter tiers</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+        /// <p>You can change a standard parameter to an advanced parameter any time. But you can't revert an advanced parameter to a standard parameter. Reverting an advanced parameter to a standard parameter would result in data loss because the system would truncate the size of the parameter from 8 KB to 4 KB. Reverting would also remove any policies attached to the parameter. Lastly, advanced parameters use a different form of encryption than standard parameters. </p>
+        /// <p>If you no longer need an advanced parameter, or if you no longer want to incur charges for an advanced parameter, you must delete it and recreate it as a new standard parameter. </p>
+        /// <p> <b>Using the Default Tier Configuration</b> </p>
+        /// <p>In <code>PutParameter</code> requests, you can specify the tier to create the parameter in. Whenever you specify a tier in the request, Parameter Store creates or updates the parameter according to that request. However, if you don't specify a tier in a request, Parameter Store assigns the tier based on the current Parameter Store default tier configuration.</p>
+        /// <p>The default tier when you begin using Parameter Store is the standard-parameter tier. If you use the advanced-parameter tier, you can specify one of the following as the default:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>Advanced</b>: With this option, Parameter Store evaluates all
-        /// requests as advanced parameters. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Intelligent-Tiering</b>: With this option, Parameter Store
-        /// evaluates each request to determine if the parameter is standard or advanced. </p>
-        /// <p>If the request doesn't include any options that require an advanced parameter, the
-        /// parameter is created in the standard-parameter tier. If one or more options requiring an
-        /// advanced parameter are included in the request, Parameter Store create a parameter in the
-        /// advanced-parameter tier.</p>
-        /// <p>This approach helps control your parameter-related costs by always creating standard
-        /// parameters unless an advanced parameter is necessary. </p>
-        /// </li>
+        /// <li> <p> <b>Advanced</b>: With this option, Parameter Store evaluates all requests as advanced parameters. </p> </li>
+        /// <li> <p> <b>Intelligent-Tiering</b>: With this option, Parameter Store evaluates each request to determine if the parameter is standard or advanced. </p> <p>If the request doesn't include any options that require an advanced parameter, the parameter is created in the standard-parameter tier. If one or more options requiring an advanced parameter are included in the request, Parameter Store create a parameter in the advanced-parameter tier.</p> <p>This approach helps control your parameter-related costs by always creating standard parameters unless an advanced parameter is necessary. </p> </li>
         /// </ul>
         /// <p>Options that require an advanced parameter include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>The content size of the parameter is more than 4 KB.</p>
-        /// </li>
-        /// <li>
-        /// <p>The parameter uses a parameter policy.</p>
-        /// </li>
-        /// <li>
-        /// <p>More than 10,000 parameters already exist in your Amazon Web Services account in the current
-        /// Amazon Web Services Region.</p>
-        /// </li>
+        /// <li> <p>The content size of the parameter is more than 4 KB.</p> </li>
+        /// <li> <p>The parameter uses a parameter policy.</p> </li>
+        /// <li> <p>More than 10,000 parameters already exist in your Amazon Web Services account in the current Amazon Web Services Region.</p> </li>
         /// </ul>
-        /// <p>For more information about configuring the default tier option, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying a
-        /// default parameter tier</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+        /// <p>For more information about configuring the default tier option, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying a default parameter tier</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn set_tier(mut self, input: std::option::Option<crate::model::ParameterTier>) -> Self {
             self.inner = self.inner.set_tier(input);
             self
         }
-        /// <p>One or more policies to apply to a parameter. This operation takes a JSON array. Parameter
-        /// Store, a capability of Amazon Web Services Systems Manager supports the following policy types:</p>
-        /// <p>Expiration: This policy deletes the parameter after it expires. When you create the policy,
-        /// you specify the expiration date. You can update the expiration date and time by updating the
-        /// policy. Updating the <i>parameter</i> doesn't affect the expiration date and time.
-        /// When the expiration time is reached, Parameter Store deletes the parameter.</p>
-        /// <p>ExpirationNotification: This policy initiates an event in Amazon CloudWatch Events that
-        /// notifies you about the expiration. By using this policy, you can receive notification before or
-        /// after the expiration time is reached, in units of days or hours.</p>
-        /// <p>NoChangeNotification: This policy initiates a CloudWatch Events event if a parameter hasn't
-        /// been modified for a specified period of time. This policy type is useful when, for example, a
-        /// secret needs to be changed within a period of time, but it hasn't been changed.</p>
-        /// <p>All existing policies are preserved until you send new policies or an empty policy. For more
-        /// information about parameter policies, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning parameter
-        /// policies</a>. </p>
+        /// <p>One or more policies to apply to a parameter. This operation takes a JSON array. Parameter Store, a capability of Amazon Web Services Systems Manager supports the following policy types:</p>
+        /// <p>Expiration: This policy deletes the parameter after it expires. When you create the policy, you specify the expiration date. You can update the expiration date and time by updating the policy. Updating the <i>parameter</i> doesn't affect the expiration date and time. When the expiration time is reached, Parameter Store deletes the parameter.</p>
+        /// <p>ExpirationNotification: This policy initiates an event in Amazon CloudWatch Events that notifies you about the expiration. By using this policy, you can receive notification before or after the expiration time is reached, in units of days or hours.</p>
+        /// <p>NoChangeNotification: This policy initiates a CloudWatch Events event if a parameter hasn't been modified for a specified period of time. This policy type is useful when, for example, a secret needs to be changed within a period of time, but it hasn't been changed.</p>
+        /// <p>All existing policies are preserved until you send new policies or an empty policy. For more information about parameter policies, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning parameter policies</a>. </p>
         pub fn policies(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.policies(input.into());
             self
         }
-        /// <p>One or more policies to apply to a parameter. This operation takes a JSON array. Parameter
-        /// Store, a capability of Amazon Web Services Systems Manager supports the following policy types:</p>
-        /// <p>Expiration: This policy deletes the parameter after it expires. When you create the policy,
-        /// you specify the expiration date. You can update the expiration date and time by updating the
-        /// policy. Updating the <i>parameter</i> doesn't affect the expiration date and time.
-        /// When the expiration time is reached, Parameter Store deletes the parameter.</p>
-        /// <p>ExpirationNotification: This policy initiates an event in Amazon CloudWatch Events that
-        /// notifies you about the expiration. By using this policy, you can receive notification before or
-        /// after the expiration time is reached, in units of days or hours.</p>
-        /// <p>NoChangeNotification: This policy initiates a CloudWatch Events event if a parameter hasn't
-        /// been modified for a specified period of time. This policy type is useful when, for example, a
-        /// secret needs to be changed within a period of time, but it hasn't been changed.</p>
-        /// <p>All existing policies are preserved until you send new policies or an empty policy. For more
-        /// information about parameter policies, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning parameter
-        /// policies</a>. </p>
+        /// <p>One or more policies to apply to a parameter. This operation takes a JSON array. Parameter Store, a capability of Amazon Web Services Systems Manager supports the following policy types:</p>
+        /// <p>Expiration: This policy deletes the parameter after it expires. When you create the policy, you specify the expiration date. You can update the expiration date and time by updating the policy. Updating the <i>parameter</i> doesn't affect the expiration date and time. When the expiration time is reached, Parameter Store deletes the parameter.</p>
+        /// <p>ExpirationNotification: This policy initiates an event in Amazon CloudWatch Events that notifies you about the expiration. By using this policy, you can receive notification before or after the expiration time is reached, in units of days or hours.</p>
+        /// <p>NoChangeNotification: This policy initiates a CloudWatch Events event if a parameter hasn't been modified for a specified period of time. This policy type is useful when, for example, a secret needs to be changed within a period of time, but it hasn't been changed.</p>
+        /// <p>All existing policies are preserved until you send new policies or an empty policy. For more information about parameter policies, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning parameter policies</a>. </p>
         pub fn set_policies(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_policies(input);
             self
         }
-        /// <p>The data type for a <code>String</code> parameter. Supported data types include plain text
-        /// and Amazon Machine Image (AMI) IDs.</p>
-        /// <p>
-        /// <b>The following data type values are supported.</b>
-        /// </p>
+        /// <p>The data type for a <code>String</code> parameter. Supported data types include plain text and Amazon Machine Image (AMI) IDs.</p>
+        /// <p> <b>The following data type values are supported.</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>text</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>aws:ec2:image</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>text</code> </p> </li>
+        /// <li> <p> <code>aws:ec2:image</code> </p> </li>
         /// </ul>
-        /// <p>When you create a <code>String</code> parameter and specify <code>aws:ec2:image</code>,
-        /// Amazon Web Services Systems Manager validates the parameter value is in the required format, such as
-        /// <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI is available in your
-        /// Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native parameter support
-        /// for Amazon Machine Image (AMI) IDs</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+        /// <p>When you create a <code>String</code> parameter and specify <code>aws:ec2:image</code>, Amazon Web Services Systems Manager validates the parameter value is in the required format, such as <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI is available in your Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native parameter support for Amazon Machine Image (AMI) IDs</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn data_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.data_type(input.into());
             self
         }
-        /// <p>The data type for a <code>String</code> parameter. Supported data types include plain text
-        /// and Amazon Machine Image (AMI) IDs.</p>
-        /// <p>
-        /// <b>The following data type values are supported.</b>
-        /// </p>
+        /// <p>The data type for a <code>String</code> parameter. Supported data types include plain text and Amazon Machine Image (AMI) IDs.</p>
+        /// <p> <b>The following data type values are supported.</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>text</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>aws:ec2:image</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>text</code> </p> </li>
+        /// <li> <p> <code>aws:ec2:image</code> </p> </li>
         /// </ul>
-        /// <p>When you create a <code>String</code> parameter and specify <code>aws:ec2:image</code>,
-        /// Amazon Web Services Systems Manager validates the parameter value is in the required format, such as
-        /// <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI is available in your
-        /// Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native parameter support
-        /// for Amazon Machine Image (AMI) IDs</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+        /// <p>When you create a <code>String</code> parameter and specify <code>aws:ec2:image</code>, Amazon Web Services Systems Manager validates the parameter value is in the required format, such as <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI is available in your Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native parameter support for Amazon Machine Image (AMI) IDs</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn set_data_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_data_type(input);
             self
@@ -15056,10 +12842,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `RegisterDefaultPatchBaseline`.
     ///
     /// <p>Defines the default patch baseline for the relevant operating system.</p>
-    /// <p>To reset the Amazon Web Services-predefined patch baseline as the default, specify the full patch baseline
-    /// Amazon Resource Name (ARN) as the baseline ID value. For example, for CentOS, specify
-    /// <code>arn:aws:ssm:us-east-2:733109147000:patchbaseline/pb-0574b43a65ea646ed</code> instead of
-    /// <code>pb-0574b43a65ea646ed</code>.</p>
+    /// <p>To reset the Amazon Web Services-predefined patch baseline as the default, specify the full patch baseline Amazon Resource Name (ARN) as the baseline ID value. For example, for CentOS, specify <code>arn:aws:ssm:us-east-2:733109147000:patchbaseline/pb-0574b43a65ea646ed</code> instead of <code>pb-0574b43a65ea646ed</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterDefaultPatchBaseline<
         C = aws_smithy_client::erase::DynConnector,
@@ -15297,106 +13080,92 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_targets`](Self::set_targets).
         ///
-        /// <p>The targets to register with the maintenance window. In other words, the managed nodes to
-        /// run commands on when the maintenance window runs.</p>
-        /// <note>
-        /// <p>If a single maintenance window task is registered with multiple targets, its task
-        /// invocations occur sequentially and not in parallel. If your task must run on multiple targets at
-        /// the same time, register a task for each target individually and assign each task the same
-        /// priority level.</p>
+        /// <p>The targets to register with the maintenance window. In other words, the managed nodes to run commands on when the maintenance window runs.</p> <note>
+        /// <p>If a single maintenance window task is registered with multiple targets, its task invocations occur sequentially and not in parallel. If your task must run on multiple targets at the same time, register a task for each target individually and assign each task the same priority level.</p>
         /// </note>
-        /// <p>You can specify targets using managed node IDs, resource group names, or tags that have been
-        /// applied to managed nodes.</p>
-        /// <p>
-        /// <b>Example 1</b>: Specify managed node IDs</p>
-        /// <p>
-        /// <code>Key=InstanceIds,Values=<instance-id-1>,<instance-id-2>,<instance-id-3></code>
-        /// </p>
-        /// <p>
-        /// <b>Example 2</b>: Use tag key-pairs applied to managed
-        /// nodes</p>
-        /// <p>
-        /// <code>Key=tag:<my-tag-key>,Values=<my-tag-value-1>,<my-tag-value-2></code>
-        /// </p>
-        /// <p>
-        /// <b>Example 3</b>: Use tag-keys applied to managed nodes</p>
-        /// <p>
-        /// <code>Key=tag-key,Values=<my-tag-key-1>,<my-tag-key-2></code>
-        /// </p>
-        ///
-        /// <p>
-        /// <b>Example 4</b>: Use resource group names</p>
-        /// <p>
-        /// <code>Key=resource-groups:Name,Values=<resource-group-name></code>
-        /// </p>
-        /// <p>
-        /// <b>Example 5</b>: Use filters for resource group types</p>
-        /// <p>
-        /// <code>Key=resource-groups:ResourceTypeFilters,Values=<resource-type-1>,<resource-type-2></code>
-        /// </p>
-        /// <note>
-        /// <p>For <code>Key=resource-groups:ResourceTypeFilters</code>, specify resource types in the
-        /// following format</p>
-        /// <p>
-        /// <code>Key=resource-groups:ResourceTypeFilters,Values=AWS::EC2::INSTANCE,AWS::EC2::VPC</code>
-        /// </p>
+        /// <p>You can specify targets using managed node IDs, resource group names, or tags that have been applied to managed nodes.</p>
+        /// <p> <b>Example 1</b>: Specify managed node IDs</p>
+        /// <p> <code>Key=InstanceIds,Values=
+        /// <instance-id-1>
+        /// ,
+        /// <instance-id-2>
+        /// ,
+        /// <instance-id-3></instance-id-3>
+        /// </instance-id-2>
+        /// </instance-id-1></code> </p>
+        /// <p> <b>Example 2</b>: Use tag key-pairs applied to managed nodes</p>
+        /// <p> <code>Key=tag:
+        /// <my-tag-key>
+        /// ,Values=
+        /// <my-tag-value-1>
+        /// ,
+        /// <my-tag-value-2></my-tag-value-2>
+        /// </my-tag-value-1>
+        /// </my-tag-key></code> </p>
+        /// <p> <b>Example 3</b>: Use tag-keys applied to managed nodes</p>
+        /// <p> <code>Key=tag-key,Values=
+        /// <my-tag-key-1>
+        /// ,
+        /// <my-tag-key-2></my-tag-key-2>
+        /// </my-tag-key-1></code> </p>
+        /// <p> <b>Example 4</b>: Use resource group names</p>
+        /// <p> <code>Key=resource-groups:Name,Values=
+        /// <resource-group-name></resource-group-name></code> </p>
+        /// <p> <b>Example 5</b>: Use filters for resource group types</p>
+        /// <p> <code>Key=resource-groups:ResourceTypeFilters,Values=
+        /// <resource-type-1>
+        /// ,
+        /// <resource-type-2></resource-type-2>
+        /// </resource-type-1></code> </p> <note>
+        /// <p>For <code>Key=resource-groups:ResourceTypeFilters</code>, specify resource types in the following format</p>
+        /// <p> <code>Key=resource-groups:ResourceTypeFilters,Values=AWS::EC2::INSTANCE,AWS::EC2::VPC</code> </p>
         /// </note>
-        ///
-        /// <p>For more information about these examples formats, including the best use case for each one,
-        /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html">Examples: Register
-        /// targets with a maintenance window</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+        /// <p>For more information about these examples formats, including the best use case for each one, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html">Examples: Register targets with a maintenance window</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn targets(mut self, input: crate::model::Target) -> Self {
             self.inner = self.inner.targets(input);
             self
         }
-        /// <p>The targets to register with the maintenance window. In other words, the managed nodes to
-        /// run commands on when the maintenance window runs.</p>
-        /// <note>
-        /// <p>If a single maintenance window task is registered with multiple targets, its task
-        /// invocations occur sequentially and not in parallel. If your task must run on multiple targets at
-        /// the same time, register a task for each target individually and assign each task the same
-        /// priority level.</p>
+        /// <p>The targets to register with the maintenance window. In other words, the managed nodes to run commands on when the maintenance window runs.</p> <note>
+        /// <p>If a single maintenance window task is registered with multiple targets, its task invocations occur sequentially and not in parallel. If your task must run on multiple targets at the same time, register a task for each target individually and assign each task the same priority level.</p>
         /// </note>
-        /// <p>You can specify targets using managed node IDs, resource group names, or tags that have been
-        /// applied to managed nodes.</p>
-        /// <p>
-        /// <b>Example 1</b>: Specify managed node IDs</p>
-        /// <p>
-        /// <code>Key=InstanceIds,Values=<instance-id-1>,<instance-id-2>,<instance-id-3></code>
-        /// </p>
-        /// <p>
-        /// <b>Example 2</b>: Use tag key-pairs applied to managed
-        /// nodes</p>
-        /// <p>
-        /// <code>Key=tag:<my-tag-key>,Values=<my-tag-value-1>,<my-tag-value-2></code>
-        /// </p>
-        /// <p>
-        /// <b>Example 3</b>: Use tag-keys applied to managed nodes</p>
-        /// <p>
-        /// <code>Key=tag-key,Values=<my-tag-key-1>,<my-tag-key-2></code>
-        /// </p>
-        ///
-        /// <p>
-        /// <b>Example 4</b>: Use resource group names</p>
-        /// <p>
-        /// <code>Key=resource-groups:Name,Values=<resource-group-name></code>
-        /// </p>
-        /// <p>
-        /// <b>Example 5</b>: Use filters for resource group types</p>
-        /// <p>
-        /// <code>Key=resource-groups:ResourceTypeFilters,Values=<resource-type-1>,<resource-type-2></code>
-        /// </p>
-        /// <note>
-        /// <p>For <code>Key=resource-groups:ResourceTypeFilters</code>, specify resource types in the
-        /// following format</p>
-        /// <p>
-        /// <code>Key=resource-groups:ResourceTypeFilters,Values=AWS::EC2::INSTANCE,AWS::EC2::VPC</code>
-        /// </p>
+        /// <p>You can specify targets using managed node IDs, resource group names, or tags that have been applied to managed nodes.</p>
+        /// <p> <b>Example 1</b>: Specify managed node IDs</p>
+        /// <p> <code>Key=InstanceIds,Values=
+        /// <instance-id-1>
+        /// ,
+        /// <instance-id-2>
+        /// ,
+        /// <instance-id-3></instance-id-3>
+        /// </instance-id-2>
+        /// </instance-id-1></code> </p>
+        /// <p> <b>Example 2</b>: Use tag key-pairs applied to managed nodes</p>
+        /// <p> <code>Key=tag:
+        /// <my-tag-key>
+        /// ,Values=
+        /// <my-tag-value-1>
+        /// ,
+        /// <my-tag-value-2></my-tag-value-2>
+        /// </my-tag-value-1>
+        /// </my-tag-key></code> </p>
+        /// <p> <b>Example 3</b>: Use tag-keys applied to managed nodes</p>
+        /// <p> <code>Key=tag-key,Values=
+        /// <my-tag-key-1>
+        /// ,
+        /// <my-tag-key-2></my-tag-key-2>
+        /// </my-tag-key-1></code> </p>
+        /// <p> <b>Example 4</b>: Use resource group names</p>
+        /// <p> <code>Key=resource-groups:Name,Values=
+        /// <resource-group-name></resource-group-name></code> </p>
+        /// <p> <b>Example 5</b>: Use filters for resource group types</p>
+        /// <p> <code>Key=resource-groups:ResourceTypeFilters,Values=
+        /// <resource-type-1>
+        /// ,
+        /// <resource-type-2></resource-type-2>
+        /// </resource-type-1></code> </p> <note>
+        /// <p>For <code>Key=resource-groups:ResourceTypeFilters</code>, specify resource types in the following format</p>
+        /// <p> <code>Key=resource-groups:ResourceTypeFilters,Values=AWS::EC2::INSTANCE,AWS::EC2::VPC</code> </p>
         /// </note>
-        ///
-        /// <p>For more information about these examples formats, including the best use case for each one,
-        /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html">Examples: Register
-        /// targets with a maintenance window</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+        /// <p>For more information about these examples formats, including the best use case for each one, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html">Examples: Register targets with a maintenance window</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn set_targets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Target>>,
@@ -15404,14 +13173,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_targets(input);
             self
         }
-        /// <p>User-provided value that will be included in any Amazon CloudWatch Events events raised while
-        /// running tasks for these targets in this maintenance window.</p>
+        /// <p>User-provided value that will be included in any Amazon CloudWatch Events events raised while running tasks for these targets in this maintenance window.</p>
         pub fn owner_information(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.owner_information(input.into());
             self
         }
-        /// <p>User-provided value that will be included in any Amazon CloudWatch Events events raised while
-        /// running tasks for these targets in this maintenance window.</p>
+        /// <p>User-provided value that will be included in any Amazon CloudWatch Events events raised while running tasks for these targets in this maintenance window.</p>
         pub fn set_owner_information(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15523,44 +13290,40 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_targets`](Self::set_targets).
         ///
-        /// <p>The targets (either managed nodes or maintenance window targets).</p>
-        /// <note>
-        /// <p>One or more targets must be specified for maintenance window Run Command-type tasks.
-        /// Depending on the task, targets are optional for other maintenance window task types (Automation,
-        /// Lambda, and Step Functions). For more information about running tasks
-        /// that don't specify targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering
-        /// maintenance window tasks without targets</a> in the
-        /// <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+        /// <p>The targets (either managed nodes or maintenance window targets).</p> <note>
+        /// <p>One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the task, targets are optional for other maintenance window task types (Automation, Lambda, and Step Functions). For more information about running tasks that don't specify targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering maintenance window tasks without targets</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         /// </note>
         /// <p>Specify managed nodes using the following format: </p>
-        /// <p>
-        /// <code>Key=InstanceIds,Values=<instance-id-1>,<instance-id-2></code>
-        /// </p>
+        /// <p> <code>Key=InstanceIds,Values=
+        /// <instance-id-1>
+        /// ,
+        /// <instance-id-2></instance-id-2>
+        /// </instance-id-1></code> </p>
         /// <p>Specify maintenance window targets using the following format:</p>
-        /// <p>
-        /// <code>Key=WindowTargetIds,Values=<window-target-id-1>,<window-target-id-2></code>
-        /// </p>
+        /// <p> <code>Key=WindowTargetIds,Values=
+        /// <window-target-id-1>
+        /// ,
+        /// <window-target-id-2></window-target-id-2>
+        /// </window-target-id-1></code> </p>
         pub fn targets(mut self, input: crate::model::Target) -> Self {
             self.inner = self.inner.targets(input);
             self
         }
-        /// <p>The targets (either managed nodes or maintenance window targets).</p>
-        /// <note>
-        /// <p>One or more targets must be specified for maintenance window Run Command-type tasks.
-        /// Depending on the task, targets are optional for other maintenance window task types (Automation,
-        /// Lambda, and Step Functions). For more information about running tasks
-        /// that don't specify targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering
-        /// maintenance window tasks without targets</a> in the
-        /// <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+        /// <p>The targets (either managed nodes or maintenance window targets).</p> <note>
+        /// <p>One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the task, targets are optional for other maintenance window task types (Automation, Lambda, and Step Functions). For more information about running tasks that don't specify targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering maintenance window tasks without targets</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         /// </note>
         /// <p>Specify managed nodes using the following format: </p>
-        /// <p>
-        /// <code>Key=InstanceIds,Values=<instance-id-1>,<instance-id-2></code>
-        /// </p>
+        /// <p> <code>Key=InstanceIds,Values=
+        /// <instance-id-1>
+        /// ,
+        /// <instance-id-2></instance-id-2>
+        /// </instance-id-1></code> </p>
         /// <p>Specify maintenance window targets using the following format:</p>
-        /// <p>
-        /// <code>Key=WindowTargetIds,Values=<window-target-id-1>,<window-target-id-2></code>
-        /// </p>
+        /// <p> <code>Key=WindowTargetIds,Values=
+        /// <window-target-id-1>
+        /// ,
+        /// <window-target-id-2></window-target-id-2>
+        /// </window-target-id-1></code> </p>
         pub fn set_targets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Target>>,
@@ -15578,47 +13341,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_task_arn(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM service role for Amazon Web Services Systems Manager to assume when running a
-        /// maintenance window task. If you do not specify a service role ARN, Systems Manager uses your account's
-        /// service-linked role.  If no service-linked role for Systems Manager exists in your account, it is created when you run
-        /// <code>RegisterTaskWithMaintenanceWindow</code>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM service role for Amazon Web Services Systems Manager to assume when running a maintenance window task. If you do not specify a service role ARN, Systems Manager uses your account's service-linked role. If no service-linked role for Systems Manager exists in your account, it is created when you run <code>RegisterTaskWithMaintenanceWindow</code>.</p>
         /// <p>For more information, see the following topics in the in the <i>Amazon Web Services Systems Manager User Guide</i>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Using
-        /// service-linked roles for Systems Manager</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should I use a service-linked role or a custom service role to run maintenance window tasks?
-        /// </a>
-        /// </p>
-        /// </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Using service-linked roles for Systems Manager</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should I use a service-linked role or a custom service role to run maintenance window tasks? </a> </p> </li>
         /// </ul>
         pub fn service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.service_role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM service role for Amazon Web Services Systems Manager to assume when running a
-        /// maintenance window task. If you do not specify a service role ARN, Systems Manager uses your account's
-        /// service-linked role.  If no service-linked role for Systems Manager exists in your account, it is created when you run
-        /// <code>RegisterTaskWithMaintenanceWindow</code>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM service role for Amazon Web Services Systems Manager to assume when running a maintenance window task. If you do not specify a service role ARN, Systems Manager uses your account's service-linked role. If no service-linked role for Systems Manager exists in your account, it is created when you run <code>RegisterTaskWithMaintenanceWindow</code>.</p>
         /// <p>For more information, see the following topics in the in the <i>Amazon Web Services Systems Manager User Guide</i>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Using
-        /// service-linked roles for Systems Manager</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should I use a service-linked role or a custom service role to run maintenance window tasks?
-        /// </a>
-        /// </p>
-        /// </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Using service-linked roles for Systems Manager</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should I use a service-linked role or a custom service role to run maintenance window tasks? </a> </p> </li>
         /// </ul>
         pub fn set_service_role_arn(
             mut self,
@@ -15644,13 +13381,8 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_task_parameters`](Self::set_task_parameters).
         ///
-        /// <p>The parameters that should be passed to the task when it is run.</p>
-        /// <note>
-        /// <p>
-        /// <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs,
-        /// instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information
-        /// about how Systems Manager handles these options for the supported maintenance window task
-        /// types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p>
+        /// <p>The parameters that should be passed to the task when it is run.</p> <note>
+        /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
         /// </note>
         pub fn task_parameters(
             mut self,
@@ -15660,13 +13392,8 @@ pub mod fluent_builders {
             self.inner = self.inner.task_parameters(k.into(), v);
             self
         }
-        /// <p>The parameters that should be passed to the task when it is run.</p>
-        /// <note>
-        /// <p>
-        /// <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs,
-        /// instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information
-        /// about how Systems Manager handles these options for the supported maintenance window task
-        /// types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p>
+        /// <p>The parameters that should be passed to the task when it is run.</p> <note>
+        /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
         /// </note>
         pub fn set_task_parameters(
             mut self,
@@ -15680,8 +13407,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_task_parameters(input);
             self
         }
-        /// <p>The parameters that the task should use during execution. Populate only the fields that
-        /// match the task type. All other fields should be empty. </p>
+        /// <p>The parameters that the task should use during execution. Populate only the fields that match the task type. All other fields should be empty. </p>
         pub fn task_invocation_parameters(
             mut self,
             input: crate::model::MaintenanceWindowTaskInvocationParameters,
@@ -15689,8 +13415,7 @@ pub mod fluent_builders {
             self.inner = self.inner.task_invocation_parameters(input);
             self
         }
-        /// <p>The parameters that the task should use during execution. Populate only the fields that
-        /// match the task type. All other fields should be empty. </p>
+        /// <p>The parameters that the task should use during execution. Populate only the fields that match the task type. All other fields should be empty. </p>
         pub fn set_task_invocation_parameters(
             mut self,
             input: std::option::Option<crate::model::MaintenanceWindowTaskInvocationParameters>,
@@ -15698,35 +13423,25 @@ pub mod fluent_builders {
             self.inner = self.inner.set_task_invocation_parameters(input);
             self
         }
-        /// <p>The priority of the task in the maintenance window, the lower the number the higher the
-        /// priority. Tasks in a maintenance window are scheduled in priority order with tasks that have the
-        /// same priority scheduled in parallel.</p>
+        /// <p>The priority of the task in the maintenance window, the lower the number the higher the priority. Tasks in a maintenance window are scheduled in priority order with tasks that have the same priority scheduled in parallel.</p>
         pub fn priority(mut self, input: i32) -> Self {
             self.inner = self.inner.priority(input);
             self
         }
-        /// <p>The priority of the task in the maintenance window, the lower the number the higher the
-        /// priority. Tasks in a maintenance window are scheduled in priority order with tasks that have the
-        /// same priority scheduled in parallel.</p>
+        /// <p>The priority of the task in the maintenance window, the lower the number the higher the priority. Tasks in a maintenance window are scheduled in priority order with tasks that have the same priority scheduled in parallel.</p>
         pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_priority(input);
             self
         }
-        /// <p>The maximum number of targets this task can be run for in parallel.</p>
-        /// <note>
-        /// <p>For maintenance window tasks without a target specified, you can't supply a value for this
-        /// option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't
-        /// affect the running of your task.</p>
+        /// <p>The maximum number of targets this task can be run for in parallel.</p> <note>
+        /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't affect the running of your task.</p>
         /// </note>
         pub fn max_concurrency(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.max_concurrency(input.into());
             self
         }
-        /// <p>The maximum number of targets this task can be run for in parallel.</p>
-        /// <note>
-        /// <p>For maintenance window tasks without a target specified, you can't supply a value for this
-        /// option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't
-        /// affect the running of your task.</p>
+        /// <p>The maximum number of targets this task can be run for in parallel.</p> <note>
+        /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't affect the running of your task.</p>
         /// </note>
         pub fn set_max_concurrency(
             mut self,
@@ -15735,47 +13450,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_concurrency(input);
             self
         }
-        /// <p>The maximum number of errors allowed before this task stops being scheduled.</p>
-        /// <note>
-        /// <p>For maintenance window tasks without a target specified, you can't supply a value for this
-        /// option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't
-        /// affect the running of your task.</p>
+        /// <p>The maximum number of errors allowed before this task stops being scheduled.</p> <note>
+        /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't affect the running of your task.</p>
         /// </note>
         pub fn max_errors(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.max_errors(input.into());
             self
         }
-        /// <p>The maximum number of errors allowed before this task stops being scheduled.</p>
-        /// <note>
-        /// <p>For maintenance window tasks without a target specified, you can't supply a value for this
-        /// option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't
-        /// affect the running of your task.</p>
+        /// <p>The maximum number of errors allowed before this task stops being scheduled.</p> <note>
+        /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't affect the running of your task.</p>
         /// </note>
         pub fn set_max_errors(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_max_errors(input);
             self
         }
-        /// <p>A structure containing information about an Amazon Simple Storage Service (Amazon S3) bucket
-        /// to write managed node-level logs to. </p>
-        /// <note>
-        /// <p>
-        /// <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the
-        /// <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure.
-        /// For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance
-        /// window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p>
+        /// <p>A structure containing information about an Amazon Simple Storage Service (Amazon S3) bucket to write managed node-level logs to. </p> <note>
+        /// <p> <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
         /// </note>
         pub fn logging_info(mut self, input: crate::model::LoggingInfo) -> Self {
             self.inner = self.inner.logging_info(input);
             self
         }
-        /// <p>A structure containing information about an Amazon Simple Storage Service (Amazon S3) bucket
-        /// to write managed node-level logs to. </p>
-        /// <note>
-        /// <p>
-        /// <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the
-        /// <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure.
-        /// For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance
-        /// window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p>
+        /// <p>A structure containing information about an Amazon Simple Storage Service (Amazon S3) bucket to write managed node-level logs to. </p> <note>
+        /// <p> <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
         /// </note>
         pub fn set_logging_info(
             mut self,
@@ -15814,31 +13511,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>Indicates whether tasks should continue to run after the cutoff time specified in the
-        /// maintenance windows is reached. </p>
+        /// <p>Indicates whether tasks should continue to run after the cutoff time specified in the maintenance windows is reached. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CONTINUE_TASK</code>: When the cutoff time is reached, any tasks that are running
-        /// continue. The default value.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CANCEL_TASK</code>:</p>
+        /// <li> <p> <code>CONTINUE_TASK</code>: When the cutoff time is reached, any tasks that are running continue. The default value.</p> </li>
+        /// <li> <p> <code>CANCEL_TASK</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>For Automation, Lambda, Step Functions tasks: When the cutoff
-        /// time is reached, any task invocations that are already running continue, but no new task
-        /// invocations are started.</p>
-        /// </li>
-        /// <li>
-        /// <p>For Run Command tasks: When the cutoff time is reached, the system sends a <a>CancelCommand</a> operation that attempts to cancel the command associated with the
-        /// task. However, there is no guarantee that the command will be terminated and the underlying
-        /// process stopped.</p>
-        /// </li>
-        /// </ul>
-        /// <p>The status for tasks that are not completed is <code>TIMED_OUT</code>.</p>
-        /// </li>
+        /// <li> <p>For Automation, Lambda, Step Functions tasks: When the cutoff time is reached, any task invocations that are already running continue, but no new task invocations are started.</p> </li>
+        /// <li> <p>For Run Command tasks: When the cutoff time is reached, the system sends a <code>CancelCommand</code> operation that attempts to cancel the command associated with the task. However, there is no guarantee that the command will be terminated and the underlying process stopped.</p> </li>
+        /// </ul> <p>The status for tasks that are not completed is <code>TIMED_OUT</code>.</p> </li>
         /// </ul>
         pub fn cutoff_behavior(
             mut self,
@@ -15847,31 +13527,14 @@ pub mod fluent_builders {
             self.inner = self.inner.cutoff_behavior(input);
             self
         }
-        /// <p>Indicates whether tasks should continue to run after the cutoff time specified in the
-        /// maintenance windows is reached. </p>
+        /// <p>Indicates whether tasks should continue to run after the cutoff time specified in the maintenance windows is reached. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CONTINUE_TASK</code>: When the cutoff time is reached, any tasks that are running
-        /// continue. The default value.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CANCEL_TASK</code>:</p>
+        /// <li> <p> <code>CONTINUE_TASK</code>: When the cutoff time is reached, any tasks that are running continue. The default value.</p> </li>
+        /// <li> <p> <code>CANCEL_TASK</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>For Automation, Lambda, Step Functions tasks: When the cutoff
-        /// time is reached, any task invocations that are already running continue, but no new task
-        /// invocations are started.</p>
-        /// </li>
-        /// <li>
-        /// <p>For Run Command tasks: When the cutoff time is reached, the system sends a <a>CancelCommand</a> operation that attempts to cancel the command associated with the
-        /// task. However, there is no guarantee that the command will be terminated and the underlying
-        /// process stopped.</p>
-        /// </li>
-        /// </ul>
-        /// <p>The status for tasks that are not completed is <code>TIMED_OUT</code>.</p>
-        /// </li>
+        /// <li> <p>For Automation, Lambda, Step Functions tasks: When the cutoff time is reached, any task invocations that are already running continue, but no new task invocations are started.</p> </li>
+        /// <li> <p>For Run Command tasks: When the cutoff time is reached, the system sends a <code>CancelCommand</code> operation that attempts to cancel the command associated with the task. However, there is no guarantee that the command will be terminated and the underlying process stopped.</p> </li>
+        /// </ul> <p>The status for tasks that are not completed is <code>TIMED_OUT</code>.</p> </li>
         /// </ul>
         pub fn set_cutoff_behavior(
             mut self,
@@ -15940,25 +13603,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The type of resource from which you want to remove a tag.</p>
-        /// <note>
-        /// <p>The <code>ManagedInstance</code> type for this API operation is only for on-premises
-        /// managed nodes. Specify the name of the managed node in the following format:
-        /// <code>mi-<i>ID_number</i>
-        /// </code>. For example,
-        /// <code>mi-1a2b3c4d5e6f</code>.</p>
+        /// <p>The type of resource from which you want to remove a tag.</p> <note>
+        /// <p>The <code>ManagedInstance</code> type for this API operation is only for on-premises managed nodes. Specify the name of the managed node in the following format: <code>mi-<i>ID_number</i> </code>. For example, <code>mi-1a2b3c4d5e6f</code>.</p>
         /// </note>
         pub fn resource_type(mut self, input: crate::model::ResourceTypeForTagging) -> Self {
             self.inner = self.inner.resource_type(input);
             self
         }
-        /// <p>The type of resource from which you want to remove a tag.</p>
-        /// <note>
-        /// <p>The <code>ManagedInstance</code> type for this API operation is only for on-premises
-        /// managed nodes. Specify the name of the managed node in the following format:
-        /// <code>mi-<i>ID_number</i>
-        /// </code>. For example,
-        /// <code>mi-1a2b3c4d5e6f</code>.</p>
+        /// <p>The type of resource from which you want to remove a tag.</p> <note>
+        /// <p>The <code>ManagedInstance</code> type for this API operation is only for on-premises managed nodes. Specify the name of the managed node in the following format: <code>mi-<i>ID_number</i> </code>. For example, <code>mi-1a2b3c4d5e6f</code>.</p>
         /// </note>
         pub fn set_resource_type(
             mut self,
@@ -15971,17 +13624,9 @@ pub mod fluent_builders {
         /// <p>ManagedInstance: mi-012345abcde</p>
         /// <p>MaintenanceWindow: mw-012345abcde</p>
         /// <p>PatchBaseline: pb-012345abcde</p>
-        /// <p>OpsMetadata object: <code>ResourceID</code> for tagging is created from the Amazon Resource
-        /// Name (ARN) for the object. Specifically, <code>ResourceID</code> is created from the strings that
-        /// come after the word <code>opsmetadata</code> in the ARN. For example, an OpsMetadata object with
-        /// an ARN of <code>arn:aws:ssm:us-east-2:1234567890:opsmetadata/aws/ssm/MyGroup/appmanager</code>
-        /// has a <code>ResourceID</code> of either <code>aws/ssm/MyGroup/appmanager</code> or
-        /// <code>/aws/ssm/MyGroup/appmanager</code>.</p>
-        /// <p>For the Document and Parameter values, use the name of the resource.</p>
-        /// <note>
-        /// <p>The <code>ManagedInstance</code> type for this API operation is only for on-premises
-        /// managed nodes. Specify the name of the managed node in the following format: mi-ID_number. For
-        /// example, mi-1a2b3c4d5e6f.</p>
+        /// <p>OpsMetadata object: <code>ResourceID</code> for tagging is created from the Amazon Resource Name (ARN) for the object. Specifically, <code>ResourceID</code> is created from the strings that come after the word <code>opsmetadata</code> in the ARN. For example, an OpsMetadata object with an ARN of <code>arn:aws:ssm:us-east-2:1234567890:opsmetadata/aws/ssm/MyGroup/appmanager</code> has a <code>ResourceID</code> of either <code>aws/ssm/MyGroup/appmanager</code> or <code>/aws/ssm/MyGroup/appmanager</code>.</p>
+        /// <p>For the Document and Parameter values, use the name of the resource.</p> <note>
+        /// <p>The <code>ManagedInstance</code> type for this API operation is only for on-premises managed nodes. Specify the name of the managed node in the following format: mi-ID_number. For example, mi-1a2b3c4d5e6f.</p>
         /// </note>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_id(input.into());
@@ -15991,17 +13636,9 @@ pub mod fluent_builders {
         /// <p>ManagedInstance: mi-012345abcde</p>
         /// <p>MaintenanceWindow: mw-012345abcde</p>
         /// <p>PatchBaseline: pb-012345abcde</p>
-        /// <p>OpsMetadata object: <code>ResourceID</code> for tagging is created from the Amazon Resource
-        /// Name (ARN) for the object. Specifically, <code>ResourceID</code> is created from the strings that
-        /// come after the word <code>opsmetadata</code> in the ARN. For example, an OpsMetadata object with
-        /// an ARN of <code>arn:aws:ssm:us-east-2:1234567890:opsmetadata/aws/ssm/MyGroup/appmanager</code>
-        /// has a <code>ResourceID</code> of either <code>aws/ssm/MyGroup/appmanager</code> or
-        /// <code>/aws/ssm/MyGroup/appmanager</code>.</p>
-        /// <p>For the Document and Parameter values, use the name of the resource.</p>
-        /// <note>
-        /// <p>The <code>ManagedInstance</code> type for this API operation is only for on-premises
-        /// managed nodes. Specify the name of the managed node in the following format: mi-ID_number. For
-        /// example, mi-1a2b3c4d5e6f.</p>
+        /// <p>OpsMetadata object: <code>ResourceID</code> for tagging is created from the Amazon Resource Name (ARN) for the object. Specifically, <code>ResourceID</code> is created from the strings that come after the word <code>opsmetadata</code> in the ARN. For example, an OpsMetadata object with an ARN of <code>arn:aws:ssm:us-east-2:1234567890:opsmetadata/aws/ssm/MyGroup/appmanager</code> has a <code>ResourceID</code> of either <code>aws/ssm/MyGroup/appmanager</code> or <code>/aws/ssm/MyGroup/appmanager</code>.</p>
+        /// <p>For the Document and Parameter values, use the name of the resource.</p> <note>
+        /// <p>The <code>ManagedInstance</code> type for this API operation is only for on-premises managed nodes. Specify the name of the managed node in the following format: mi-ID_number. For example, mi-1a2b3c4d5e6f.</p>
         /// </note>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_id(input);
@@ -16027,21 +13664,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ResetServiceSetting`.
     ///
-    /// <p>
-    /// <code>ServiceSetting</code> is an account-level setting for an Amazon Web Services service. This setting
-    /// defines how a user interacts with or uses a service or a feature of a service. For example, if an
-    /// Amazon Web Services service charges money to the account based on feature or service usage, then the Amazon Web Services
-    /// service team might create a default setting of "false". This means the user can't use this
-    /// feature unless they change the setting to "true" and intentionally opt in for a paid
-    /// feature.</p>
-    /// <p>Services map a <code>SettingId</code> object to a setting value. Amazon Web Services services teams define
-    /// the default value for a <code>SettingId</code>. You can't create a new <code>SettingId</code>,
-    /// but you can overwrite the default value if you have the <code>ssm:UpdateServiceSetting</code>
-    /// permission for the setting. Use the <a>GetServiceSetting</a> API operation to view the
-    /// current value. Use the <a>UpdateServiceSetting</a> API operation to change the default
-    /// setting. </p>
-    /// <p>Reset the service setting for the account to the default value as provisioned by the Amazon Web Services
-    /// service team. </p>
+    /// <p> <code>ServiceSetting</code> is an account-level setting for an Amazon Web Services service. This setting defines how a user interacts with or uses a service or a feature of a service. For example, if an Amazon Web Services service charges money to the account based on feature or service usage, then the Amazon Web Services service team might create a default setting of "false". This means the user can't use this feature unless they change the setting to "true" and intentionally opt in for a paid feature.</p>
+    /// <p>Services map a <code>SettingId</code> object to a setting value. Amazon Web Services services teams define the default value for a <code>SettingId</code>. You can't create a new <code>SettingId</code>, but you can overwrite the default value if you have the <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the <code>GetServiceSetting</code> API operation to view the current value. Use the <code>UpdateServiceSetting</code> API operation to change the default setting. </p>
+    /// <p>Reset the service setting for the account to the default value as provisioned by the Amazon Web Services service team. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ResetServiceSetting<
         C = aws_smithy_client::erase::DynConnector,
@@ -16098,77 +13723,27 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the service setting to reset. The setting ID can be one of
-        /// the following.</p>
+        /// <p>The Amazon Resource Name (ARN) of the service setting to reset. The setting ID can be one of the following.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>/ssm/automation/customer-script-log-destination</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>/ssm/automation/customer-script-log-group-name</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>/ssm/documents/console/public-sharing-permission</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>/ssm/parameter-store/default-parameter-tier</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>/ssm/parameter-store/high-throughput-enabled</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>/ssm/managed-instance/activation-tier</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>/ssm/automation/customer-script-log-destination</code> </p> </li>
+        /// <li> <p> <code>/ssm/automation/customer-script-log-group-name</code> </p> </li>
+        /// <li> <p> <code>/ssm/documents/console/public-sharing-permission</code> </p> </li>
+        /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li>
+        /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li>
+        /// <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li>
         /// </ul>
         pub fn setting_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.setting_id(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the service setting to reset. The setting ID can be one of
-        /// the following.</p>
+        /// <p>The Amazon Resource Name (ARN) of the service setting to reset. The setting ID can be one of the following.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>/ssm/automation/customer-script-log-destination</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>/ssm/automation/customer-script-log-group-name</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>/ssm/documents/console/public-sharing-permission</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>/ssm/parameter-store/default-parameter-tier</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>/ssm/parameter-store/high-throughput-enabled</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>/ssm/managed-instance/activation-tier</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>/ssm/automation/customer-script-log-destination</code> </p> </li>
+        /// <li> <p> <code>/ssm/automation/customer-script-log-group-name</code> </p> </li>
+        /// <li> <p> <code>/ssm/documents/console/public-sharing-permission</code> </p> </li>
+        /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li>
+        /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li>
+        /// <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li>
         /// </ul>
         pub fn set_setting_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_setting_id(input);
@@ -16177,11 +13752,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ResumeSession`.
     ///
-    /// <p>Reconnects a session to a managed node after it has been disconnected. Connections can be
-    /// resumed for disconnected sessions, but not terminated sessions.</p>
-    /// <note>
-    /// <p>This command is primarily for use by client machines to automatically reconnect during
-    /// intermittent network issues. It isn't intended for any other use.</p>
+    /// <p>Reconnects a session to a managed node after it has been disconnected. Connections can be resumed for disconnected sessions, but not terminated sessions.</p> <note>
+    /// <p>This command is primarily for use by client machines to automatically reconnect during intermittent network issues. It isn't intended for any other use.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ResumeSession<
@@ -16252,8 +13824,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SendAutomationSignal`.
     ///
-    /// <p>Sends a signal to an Automation execution to change the current behavior or status of the
-    /// execution. </p>
+    /// <p>Sends a signal to an Automation execution to change the current behavior or status of the execution. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendAutomationSignal<
         C = aws_smithy_client::erase::DynConnector,
@@ -16310,14 +13881,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique identifier for an existing Automation execution that you want to send the signal
-        /// to.</p>
+        /// <p>The unique identifier for an existing Automation execution that you want to send the signal to.</p>
         pub fn automation_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.automation_execution_id(input.into());
             self
         }
-        /// <p>The unique identifier for an existing Automation execution that you want to send the signal
-        /// to.</p>
+        /// <p>The unique identifier for an existing Automation execution that you want to send the signal to.</p>
         pub fn set_automation_execution_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16342,23 +13911,13 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_payload`](Self::set_payload).
         ///
-        /// <p>The data sent with the signal. The data schema depends on the type of signal used in the
-        /// request.</p>
-        /// <p>For <code>Approve</code> and <code>Reject</code> signal types, the payload is an optional
-        /// comment that you can send with the signal type. For example:</p>
-        /// <p>
-        /// <code>Comment="Looks good"</code>
-        /// </p>
-        /// <p>For <code>StartStep</code> and <code>Resume</code> signal types, you must send the name of
-        /// the Automation step to start or resume as the payload. For example:</p>
-        /// <p>
-        /// <code>StepName="step1"</code>
-        /// </p>
-        /// <p>For the <code>StopStep</code> signal type, you must send the step execution ID as the
-        /// payload. For example:</p>
-        /// <p>
-        /// <code>StepExecutionId="97fff367-fc5a-4299-aed8-0123456789ab"</code>
-        /// </p>
+        /// <p>The data sent with the signal. The data schema depends on the type of signal used in the request.</p>
+        /// <p>For <code>Approve</code> and <code>Reject</code> signal types, the payload is an optional comment that you can send with the signal type. For example:</p>
+        /// <p> <code>Comment="Looks good"</code> </p>
+        /// <p>For <code>StartStep</code> and <code>Resume</code> signal types, you must send the name of the Automation step to start or resume as the payload. For example:</p>
+        /// <p> <code>StepName="step1"</code> </p>
+        /// <p>For the <code>StopStep</code> signal type, you must send the step execution ID as the payload. For example:</p>
+        /// <p> <code>StepExecutionId="97fff367-fc5a-4299-aed8-0123456789ab"</code> </p>
         pub fn payload(
             mut self,
             k: impl Into<std::string::String>,
@@ -16367,23 +13926,13 @@ pub mod fluent_builders {
             self.inner = self.inner.payload(k.into(), v);
             self
         }
-        /// <p>The data sent with the signal. The data schema depends on the type of signal used in the
-        /// request.</p>
-        /// <p>For <code>Approve</code> and <code>Reject</code> signal types, the payload is an optional
-        /// comment that you can send with the signal type. For example:</p>
-        /// <p>
-        /// <code>Comment="Looks good"</code>
-        /// </p>
-        /// <p>For <code>StartStep</code> and <code>Resume</code> signal types, you must send the name of
-        /// the Automation step to start or resume as the payload. For example:</p>
-        /// <p>
-        /// <code>StepName="step1"</code>
-        /// </p>
-        /// <p>For the <code>StopStep</code> signal type, you must send the step execution ID as the
-        /// payload. For example:</p>
-        /// <p>
-        /// <code>StepExecutionId="97fff367-fc5a-4299-aed8-0123456789ab"</code>
-        /// </p>
+        /// <p>The data sent with the signal. The data schema depends on the type of signal used in the request.</p>
+        /// <p>For <code>Approve</code> and <code>Reject</code> signal types, the payload is an optional comment that you can send with the signal type. For example:</p>
+        /// <p> <code>Comment="Looks good"</code> </p>
+        /// <p>For <code>StartStep</code> and <code>Resume</code> signal types, you must send the name of the Automation step to start or resume as the payload. For example:</p>
+        /// <p> <code>StepName="step1"</code> </p>
+        /// <p>For the <code>StopStep</code> signal type, you must send the step execution ID as the payload. For example:</p>
+        /// <p> <code>StepExecutionId="97fff367-fc5a-4299-aed8-0123456789ab"</code> </p>
         pub fn set_payload(
             mut self,
             input: std::option::Option<
@@ -16457,30 +14006,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_instance_ids`](Self::set_instance_ids).
         ///
-        /// <p>The IDs of the managed nodes where the command should run. Specifying managed node IDs is most
-        /// useful when you are targeting a limited number of managed nodes, though you can specify up to 50
-        /// IDs.</p>
-        /// <p>To target a larger number of managed nodes, or if you prefer not to list individual node
-        /// IDs, we recommend using the <code>Targets</code> option instead. Using <code>Targets</code>,
-        /// which accepts tag key-value pairs to identify the managed nodes to send commands to, you can a
-        /// send command to tens, hundreds, or thousands of nodes at once.</p>
-        /// <p>For more information about how to use targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using targets and rate
-        /// controls to send commands to a fleet</a> in the
-        /// <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+        /// <p>The IDs of the managed nodes where the command should run. Specifying managed node IDs is most useful when you are targeting a limited number of managed nodes, though you can specify up to 50 IDs.</p>
+        /// <p>To target a larger number of managed nodes, or if you prefer not to list individual node IDs, we recommend using the <code>Targets</code> option instead. Using <code>Targets</code>, which accepts tag key-value pairs to identify the managed nodes to send commands to, you can a send command to tens, hundreds, or thousands of nodes at once.</p>
+        /// <p>For more information about how to use targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using targets and rate controls to send commands to a fleet</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn instance_ids(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_ids(input.into());
             self
         }
-        /// <p>The IDs of the managed nodes where the command should run. Specifying managed node IDs is most
-        /// useful when you are targeting a limited number of managed nodes, though you can specify up to 50
-        /// IDs.</p>
-        /// <p>To target a larger number of managed nodes, or if you prefer not to list individual node
-        /// IDs, we recommend using the <code>Targets</code> option instead. Using <code>Targets</code>,
-        /// which accepts tag key-value pairs to identify the managed nodes to send commands to, you can a
-        /// send command to tens, hundreds, or thousands of nodes at once.</p>
-        /// <p>For more information about how to use targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using targets and rate
-        /// controls to send commands to a fleet</a> in the
-        /// <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+        /// <p>The IDs of the managed nodes where the command should run. Specifying managed node IDs is most useful when you are targeting a limited number of managed nodes, though you can specify up to 50 IDs.</p>
+        /// <p>To target a larger number of managed nodes, or if you prefer not to list individual node IDs, we recommend using the <code>Targets</code> option instead. Using <code>Targets</code>, which accepts tag key-value pairs to identify the managed nodes to send commands to, you can a send command to tens, hundreds, or thousands of nodes at once.</p>
+        /// <p>For more information about how to use targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using targets and rate controls to send commands to a fleet</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn set_instance_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -16492,28 +14027,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_targets`](Self::set_targets).
         ///
-        /// <p>An array of search criteria that targets managed nodes using a <code>Key,Value</code>
-        /// combination that you specify. Specifying targets is most useful when you want to send a command
-        /// to a large number of managed nodes at once. Using <code>Targets</code>, which accepts tag
-        /// key-value pairs to identify managed nodes, you can send a command to tens, hundreds, or thousands
-        /// of nodes at once.</p>
-        /// <p>To send a command to a smaller number of managed nodes, you can use the
-        /// <code>InstanceIds</code> option instead.</p>
-        /// <p>For more information about how to use targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending commands to a
-        /// fleet</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+        /// <p>An array of search criteria that targets managed nodes using a <code>Key,Value</code> combination that you specify. Specifying targets is most useful when you want to send a command to a large number of managed nodes at once. Using <code>Targets</code>, which accepts tag key-value pairs to identify managed nodes, you can send a command to tens, hundreds, or thousands of nodes at once.</p>
+        /// <p>To send a command to a smaller number of managed nodes, you can use the <code>InstanceIds</code> option instead.</p>
+        /// <p>For more information about how to use targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending commands to a fleet</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn targets(mut self, input: crate::model::Target) -> Self {
             self.inner = self.inner.targets(input);
             self
         }
-        /// <p>An array of search criteria that targets managed nodes using a <code>Key,Value</code>
-        /// combination that you specify. Specifying targets is most useful when you want to send a command
-        /// to a large number of managed nodes at once. Using <code>Targets</code>, which accepts tag
-        /// key-value pairs to identify managed nodes, you can send a command to tens, hundreds, or thousands
-        /// of nodes at once.</p>
-        /// <p>To send a command to a smaller number of managed nodes, you can use the
-        /// <code>InstanceIds</code> option instead.</p>
-        /// <p>For more information about how to use targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending commands to a
-        /// fleet</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+        /// <p>An array of search criteria that targets managed nodes using a <code>Key,Value</code> combination that you specify. Specifying targets is most useful when you want to send a command to a large number of managed nodes at once. Using <code>Targets</code>, which accepts tag key-value pairs to identify managed nodes, you can send a command to tens, hundreds, or thousands of nodes at once.</p>
+        /// <p>To send a command to a smaller number of managed nodes, you can use the <code>InstanceIds</code> option instead.</p>
+        /// <p>For more information about how to use targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending commands to a fleet</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn set_targets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Target>>,
@@ -16521,25 +14044,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_targets(input);
             self
         }
-        /// <p>The name of the Amazon Web Services Systems Manager document (SSM document) to run. This can be a public document or a
-        /// custom document. To run a shared document belonging to another account, specify the document
-        /// Amazon Resource Name (ARN). For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared
-        /// SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-        /// <note>
-        /// <p>If you specify a document name or ARN that hasn't been shared with your account, you
-        /// receive an <code>InvalidDocument</code> error. </p>
+        /// <p>The name of the Amazon Web Services Systems Manager document (SSM document) to run. This can be a public document or a custom document. To run a shared document belonging to another account, specify the document Amazon Resource Name (ARN). For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <note>
+        /// <p>If you specify a document name or ARN that hasn't been shared with your account, you receive an <code>InvalidDocument</code> error. </p>
         /// </note>
         pub fn document_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.document_name(input.into());
             self
         }
-        /// <p>The name of the Amazon Web Services Systems Manager document (SSM document) to run. This can be a public document or a
-        /// custom document. To run a shared document belonging to another account, specify the document
-        /// Amazon Resource Name (ARN). For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared
-        /// SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-        /// <note>
-        /// <p>If you specify a document name or ARN that hasn't been shared with your account, you
-        /// receive an <code>InvalidDocument</code> error. </p>
+        /// <p>The name of the Amazon Web Services Systems Manager document (SSM document) to run. This can be a public document or a custom document. To run a shared document belonging to another account, specify the document Amazon Resource Name (ARN). For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <note>
+        /// <p>If you specify a document name or ARN that hasn't been shared with your account, you receive an <code>InvalidDocument</code> error. </p>
         /// </note>
         pub fn set_document_name(
             mut self,
@@ -16548,10 +14061,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_document_name(input);
             self
         }
-        /// <p>The SSM document version to use in the request. You can specify $DEFAULT, $LATEST, or a
-        /// specific version number. If you run commands by using the Command Line Interface (Amazon Web Services CLI), then
-        /// you must escape the first two options by using a backslash. If you specify a version number, then
-        /// you don't need to use the backslash. For example:</p>
+        /// <p>The SSM document version to use in the request. You can specify $DEFAULT, $LATEST, or a specific version number. If you run commands by using the Command Line Interface (Amazon Web Services CLI), then you must escape the first two options by using a backslash. If you specify a version number, then you don't need to use the backslash. For example:</p>
         /// <p>--document-version "\$DEFAULT"</p>
         /// <p>--document-version "\$LATEST"</p>
         /// <p>--document-version "3"</p>
@@ -16559,10 +14069,7 @@ pub mod fluent_builders {
             self.inner = self.inner.document_version(input.into());
             self
         }
-        /// <p>The SSM document version to use in the request. You can specify $DEFAULT, $LATEST, or a
-        /// specific version number. If you run commands by using the Command Line Interface (Amazon Web Services CLI), then
-        /// you must escape the first two options by using a backslash. If you specify a version number, then
-        /// you don't need to use the backslash. For example:</p>
+        /// <p>The SSM document version to use in the request. You can specify $DEFAULT, $LATEST, or a specific version number. If you run commands by using the Command Line Interface (Amazon Web Services CLI), then you must escape the first two options by using a backslash. If you specify a version number, then you don't need to use the backslash. For example:</p>
         /// <p>--document-version "\$DEFAULT"</p>
         /// <p>--document-version "\$LATEST"</p>
         /// <p>--document-version "3"</p>
@@ -16573,16 +14080,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_document_version(input);
             self
         }
-        /// <p>The Sha256 or Sha1 hash created by the system when the document was created. </p>
-        /// <note>
+        /// <p>The Sha256 or Sha1 hash created by the system when the document was created. </p> <note>
         /// <p>Sha1 hashes have been deprecated.</p>
         /// </note>
         pub fn document_hash(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.document_hash(input.into());
             self
         }
-        /// <p>The Sha256 or Sha1 hash created by the system when the document was created. </p>
-        /// <note>
+        /// <p>The Sha256 or Sha1 hash created by the system when the document was created. </p> <note>
         /// <p>Sha1 hashes have been deprecated.</p>
         /// </note>
         pub fn set_document_hash(
@@ -16592,16 +14097,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_document_hash(input);
             self
         }
-        /// <p>Sha256 or Sha1.</p>
-        /// <note>
+        /// <p>Sha256 or Sha1.</p> <note>
         /// <p>Sha1 hashes have been deprecated.</p>
         /// </note>
         pub fn document_hash_type(mut self, input: crate::model::DocumentHashType) -> Self {
             self.inner = self.inner.document_hash_type(input);
             self
         }
-        /// <p>Sha256 or Sha1.</p>
-        /// <note>
+        /// <p>Sha256 or Sha1.</p> <note>
         /// <p>Sha1 hashes have been deprecated.</p>
         /// </note>
         pub fn set_document_hash_type(
@@ -16621,14 +14124,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_timeout_seconds(input);
             self
         }
-        /// <p>User-specified information about the command, such as a brief description of what the
-        /// command should do.</p>
+        /// <p>User-specified information about the command, such as a brief description of what the command should do.</p>
         pub fn comment(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.comment(input.into());
             self
         }
-        /// <p>User-specified information about the command, such as a brief description of what the
-        /// command should do.</p>
+        /// <p>User-specified information about the command, such as a brief description of what the command should do.</p>
         pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_comment(input);
             self
@@ -16656,14 +14157,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_parameters(input);
             self
         }
-        /// <p>(Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
-        /// automatically determines the Amazon Web Services Region of the S3 bucket.</p>
+        /// <p>(Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager automatically determines the Amazon Web Services Region of the S3 bucket.</p>
         pub fn output_s3_region(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.output_s3_region(input.into());
             self
         }
-        /// <p>(Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
-        /// automatically determines the Amazon Web Services Region of the S3 bucket.</p>
+        /// <p>(Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager automatically determines the Amazon Web Services Region of the S3 bucket.</p>
         pub fn set_output_s3_region(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16697,18 +14196,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_output_s3_key_prefix(input);
             self
         }
-        /// <p>(Optional) The maximum number of managed nodes that are allowed to run the command at the
-        /// same time. You can specify a number such as 10 or a percentage such as 10%. The default value is
-        /// <code>50</code>. For more information about how to use <code>MaxConcurrency</code>, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-velocity">Using
-        /// concurrency controls</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+        /// <p>(Optional) The maximum number of managed nodes that are allowed to run the command at the same time. You can specify a number such as 10 or a percentage such as 10%. The default value is <code>50</code>. For more information about how to use <code>MaxConcurrency</code>, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-velocity">Using concurrency controls</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn max_concurrency(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.max_concurrency(input.into());
             self
         }
-        /// <p>(Optional) The maximum number of managed nodes that are allowed to run the command at the
-        /// same time. You can specify a number such as 10 or a percentage such as 10%. The default value is
-        /// <code>50</code>. For more information about how to use <code>MaxConcurrency</code>, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-velocity">Using
-        /// concurrency controls</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+        /// <p>(Optional) The maximum number of managed nodes that are allowed to run the command at the same time. You can specify a number such as 10 or a percentage such as 10%. The default value is <code>50</code>. For more information about how to use <code>MaxConcurrency</code>, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-velocity">Using concurrency controls</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn set_max_concurrency(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16716,32 +14209,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_concurrency(input);
             self
         }
-        /// <p>The maximum number of errors allowed without the command failing. When the command fails one
-        /// more time beyond the value of <code>MaxErrors</code>, the systems stops sending the command to
-        /// additional targets. You can specify a number like 10 or a percentage like 10%. The default value
-        /// is <code>0</code>. For more information about how to use <code>MaxErrors</code>, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-maxerrors">Using
-        /// error controls</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+        /// <p>The maximum number of errors allowed without the command failing. When the command fails one more time beyond the value of <code>MaxErrors</code>, the systems stops sending the command to additional targets. You can specify a number like 10 or a percentage like 10%. The default value is <code>0</code>. For more information about how to use <code>MaxErrors</code>, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-maxerrors">Using error controls</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn max_errors(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.max_errors(input.into());
             self
         }
-        /// <p>The maximum number of errors allowed without the command failing. When the command fails one
-        /// more time beyond the value of <code>MaxErrors</code>, the systems stops sending the command to
-        /// additional targets. You can specify a number like 10 or a percentage like 10%. The default value
-        /// is <code>0</code>. For more information about how to use <code>MaxErrors</code>, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-maxerrors">Using
-        /// error controls</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+        /// <p>The maximum number of errors allowed without the command failing. When the command fails one more time beyond the value of <code>MaxErrors</code>, the systems stops sending the command to additional targets. You can specify a number like 10 or a percentage like 10%. The default value is <code>0</code>. For more information about how to use <code>MaxErrors</code>, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-maxerrors">Using error controls</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn set_max_errors(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_max_errors(input);
             self
         }
-        /// <p>The ARN of the Identity and Access Management (IAM) service role to use to publish
-        /// Amazon Simple Notification Service (Amazon SNS) notifications for Run Command commands.</p>
+        /// <p>The ARN of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications for Run Command commands.</p>
         pub fn service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.service_role_arn(input.into());
             self
         }
-        /// <p>The ARN of the Identity and Access Management (IAM) service role to use to publish
-        /// Amazon Simple Notification Service (Amazon SNS) notifications for Run Command commands.</p>
+        /// <p>The ARN of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications for Run Command commands.</p>
         pub fn set_service_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16762,8 +14245,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_notification_config(input);
             self
         }
-        /// <p>Enables Amazon Web Services Systems Manager to send Run Command output to Amazon CloudWatch Logs. Run Command is a
-        /// capability of Amazon Web Services Systems Manager.</p>
+        /// <p>Enables Amazon Web Services Systems Manager to send Run Command output to Amazon CloudWatch Logs. Run Command is a capability of Amazon Web Services Systems Manager.</p>
         pub fn cloud_watch_output_config(
             mut self,
             input: crate::model::CloudWatchOutputConfig,
@@ -16771,8 +14253,7 @@ pub mod fluent_builders {
             self.inner = self.inner.cloud_watch_output_config(input);
             self
         }
-        /// <p>Enables Amazon Web Services Systems Manager to send Run Command output to Amazon CloudWatch Logs. Run Command is a
-        /// capability of Amazon Web Services Systems Manager.</p>
+        /// <p>Enables Amazon Web Services Systems Manager to send Run Command output to Amazon CloudWatch Logs. Run Command is a capability of Amazon Web Services Systems Manager.</p>
         pub fn set_cloud_watch_output_config(
             mut self,
             input: std::option::Option<crate::model::CloudWatchOutputConfig>,
@@ -16783,8 +14264,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartAssociationsOnce`.
     ///
-    /// <p>Runs an association immediately and only one time. This operation can be helpful when
-    /// troubleshooting associations.</p>
+    /// <p>Runs an association immediately and only one time. This operation can be helpful when troubleshooting associations.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartAssociationsOnce<
         C = aws_smithy_client::erase::DynConnector,
@@ -16918,18 +14398,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the SSM document to run. This can be a public document or a custom document. To
-        /// run a shared document belonging to another account, specify the document ARN. For more
-        /// information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM documents</a>
-        /// in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+        /// <p>The name of the SSM document to run. This can be a public document or a custom document. To run a shared document belonging to another account, specify the document ARN. For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn document_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.document_name(input.into());
             self
         }
-        /// <p>The name of the SSM document to run. This can be a public document or a custom document. To
-        /// run a shared document belonging to another account, specify the document ARN. For more
-        /// information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM documents</a>
-        /// in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+        /// <p>The name of the SSM document to run. This can be a public document or a custom document. To run a shared document belonging to another account, specify the document ARN. For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn set_document_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16954,8 +14428,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
-        /// <p>A key-value map of execution parameters, which match the declared parameters in the
-        /// Automation runbook.</p>
+        /// <p>A key-value map of execution parameters, which match the declared parameters in the Automation runbook.</p>
         pub fn parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -16964,8 +14437,7 @@ pub mod fluent_builders {
             self.inner = self.inner.parameters(k.into(), v);
             self
         }
-        /// <p>A key-value map of execution parameters, which match the declared parameters in the
-        /// Automation runbook.</p>
+        /// <p>A key-value map of execution parameters, which match the declared parameters in the Automation runbook.</p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<
@@ -16975,38 +14447,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_parameters(input);
             self
         }
-        /// <p>User-provided idempotency token. The token must be unique, is case insensitive, enforces the
-        /// UUID format, and can't be reused.</p>
+        /// <p>User-provided idempotency token. The token must be unique, is case insensitive, enforces the UUID format, and can't be reused.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>User-provided idempotency token. The token must be unique, is case insensitive, enforces the
-        /// UUID format, and can't be reused.</p>
+        /// <p>User-provided idempotency token. The token must be unique, is case insensitive, enforces the UUID format, and can't be reused.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>The execution mode of the automation. Valid modes include the following: Auto and
-        /// Interactive. The default mode is Auto.</p>
+        /// <p>The execution mode of the automation. Valid modes include the following: Auto and Interactive. The default mode is Auto.</p>
         pub fn mode(mut self, input: crate::model::ExecutionMode) -> Self {
             self.inner = self.inner.mode(input);
             self
         }
-        /// <p>The execution mode of the automation. Valid modes include the following: Auto and
-        /// Interactive. The default mode is Auto.</p>
+        /// <p>The execution mode of the automation. Valid modes include the following: Auto and Interactive. The default mode is Auto.</p>
         pub fn set_mode(mut self, input: std::option::Option<crate::model::ExecutionMode>) -> Self {
             self.inner = self.inner.set_mode(input);
             self
         }
-        /// <p>The name of the parameter used as the target resource for the rate-controlled execution.
-        /// Required if you specify targets.</p>
+        /// <p>The name of the parameter used as the target resource for the rate-controlled execution. Required if you specify targets.</p>
         pub fn target_parameter_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.target_parameter_name(input.into());
             self
         }
-        /// <p>The name of the parameter used as the target resource for the rate-controlled execution.
-        /// Required if you specify targets.</p>
+        /// <p>The name of the parameter used as the target resource for the rate-controlled execution. Required if you specify targets.</p>
         pub fn set_target_parameter_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17035,8 +14501,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_target_maps`](Self::set_target_maps).
         ///
-        /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps
-        /// can't be specified together.</p>
+        /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
         pub fn target_maps(
             mut self,
             input: std::collections::HashMap<
@@ -17047,8 +14512,7 @@ pub mod fluent_builders {
             self.inner = self.inner.target_maps(input);
             self
         }
-        /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps
-        /// can't be specified together.</p>
+        /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
         pub fn set_target_maps(
             mut self,
             input: std::option::Option<
@@ -17063,14 +14527,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_target_maps(input);
             self
         }
-        /// <p>The maximum number of targets allowed to run this task in parallel. You can specify a
-        /// number, such as 10, or a percentage, such as 10%. The default value is <code>10</code>.</p>
+        /// <p>The maximum number of targets allowed to run this task in parallel. You can specify a number, such as 10, or a percentage, such as 10%. The default value is <code>10</code>.</p>
         pub fn max_concurrency(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.max_concurrency(input.into());
             self
         }
-        /// <p>The maximum number of targets allowed to run this task in parallel. You can specify a
-        /// number, such as 10, or a percentage, such as 10%. The default value is <code>10</code>.</p>
+        /// <p>The maximum number of targets allowed to run this task in parallel. You can specify a number, such as 10, or a percentage, such as 10%. The default value is <code>10</code>.</p>
         pub fn set_max_concurrency(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17078,32 +14540,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_concurrency(input);
             self
         }
-        /// <p>The number of errors that are allowed before the system stops running the automation on
-        /// additional targets. You can specify either an absolute number of errors, for example 10, or a
-        /// percentage of the target set, for example 10%. If you specify 3, for example, the system stops
-        /// running the automation when the fourth error is received. If you specify 0, then the system stops
-        /// running the automation on additional targets after the first error result is returned. If you run
-        /// an automation on 50 resources and set max-errors to 10%, then the system stops running the
-        /// automation on additional targets when the sixth error is received.</p>
-        /// <p>Executions that are already running an automation when max-errors is reached are allowed to
-        /// complete, but some of these executions may fail as well. If you need to ensure that there won't
-        /// be more than max-errors failed executions, set max-concurrency to 1 so the executions proceed one
-        /// at a time.</p>
+        /// <p>The number of errors that are allowed before the system stops running the automation on additional targets. You can specify either an absolute number of errors, for example 10, or a percentage of the target set, for example 10%. If you specify 3, for example, the system stops running the automation when the fourth error is received. If you specify 0, then the system stops running the automation on additional targets after the first error result is returned. If you run an automation on 50 resources and set max-errors to 10%, then the system stops running the automation on additional targets when the sixth error is received.</p>
+        /// <p>Executions that are already running an automation when max-errors is reached are allowed to complete, but some of these executions may fail as well. If you need to ensure that there won't be more than max-errors failed executions, set max-concurrency to 1 so the executions proceed one at a time.</p>
         pub fn max_errors(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.max_errors(input.into());
             self
         }
-        /// <p>The number of errors that are allowed before the system stops running the automation on
-        /// additional targets. You can specify either an absolute number of errors, for example 10, or a
-        /// percentage of the target set, for example 10%. If you specify 3, for example, the system stops
-        /// running the automation when the fourth error is received. If you specify 0, then the system stops
-        /// running the automation on additional targets after the first error result is returned. If you run
-        /// an automation on 50 resources and set max-errors to 10%, then the system stops running the
-        /// automation on additional targets when the sixth error is received.</p>
-        /// <p>Executions that are already running an automation when max-errors is reached are allowed to
-        /// complete, but some of these executions may fail as well. If you need to ensure that there won't
-        /// be more than max-errors failed executions, set max-concurrency to 1 so the executions proceed one
-        /// at a time.</p>
+        /// <p>The number of errors that are allowed before the system stops running the automation on additional targets. You can specify either an absolute number of errors, for example 10, or a percentage of the target set, for example 10%. If you specify 3, for example, the system stops running the automation when the fourth error is received. If you specify 0, then the system stops running the automation on additional targets after the first error result is returned. If you run an automation on 50 resources and set max-errors to 10%, then the system stops running the automation on additional targets when the sixth error is received.</p>
+        /// <p>Executions that are already running an automation when max-errors is reached are allowed to complete, but some of these executions may fail as well. If you need to ensure that there won't be more than max-errors failed executions, set max-concurrency to 1 so the executions proceed one at a time.</p>
         pub fn set_max_errors(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_max_errors(input);
             self
@@ -17112,18 +14556,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_target_locations`](Self::set_target_locations).
         ///
-        /// <p>A location is a combination of Amazon Web Services Regions and/or Amazon Web Services accounts where you want to run the
-        /// automation. Use this operation to start an automation in multiple Amazon Web Services Regions and multiple
-        /// Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple Amazon Web Services Regions and Amazon Web Services accounts</a> in the
-        /// <i>Amazon Web Services Systems Manager User Guide</i>. </p>
+        /// <p>A location is a combination of Amazon Web Services Regions and/or Amazon Web Services accounts where you want to run the automation. Use this operation to start an automation in multiple Amazon Web Services Regions and multiple Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple Amazon Web Services Regions and Amazon Web Services accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
         pub fn target_locations(mut self, input: crate::model::TargetLocation) -> Self {
             self.inner = self.inner.target_locations(input);
             self
         }
-        /// <p>A location is a combination of Amazon Web Services Regions and/or Amazon Web Services accounts where you want to run the
-        /// automation. Use this operation to start an automation in multiple Amazon Web Services Regions and multiple
-        /// Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple Amazon Web Services Regions and Amazon Web Services accounts</a> in the
-        /// <i>Amazon Web Services Systems Manager User Guide</i>. </p>
+        /// <p>A location is a combination of Amazon Web Services Regions and/or Amazon Web Services accounts where you want to run the automation. Use this operation to start an automation in multiple Amazon Web Services Regions and multiple Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple Amazon Web Services Regions and Amazon Web Services accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
         pub fn set_target_locations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TargetLocation>>,
@@ -17135,51 +14573,23 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Optional metadata that you assign to a resource. You can specify a maximum of five tags for
-        /// an automation. Tags enable you to categorize a resource in different ways, such as by purpose,
-        /// owner, or environment. For example, you might want to tag an automation to identify an
-        /// environment or operating system. In this case, you could specify the following key-value
-        /// pairs:</p>
+        /// <p>Optional metadata that you assign to a resource. You can specify a maximum of five tags for an automation. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an automation to identify an environment or operating system. In this case, you could specify the following key-value pairs:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Key=environment,Value=test</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Key=OS,Value=Windows</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>To add tags to an existing patch baseline, use the <a>AddTagsToResource</a>
-        /// operation.</p>
+        /// <li> <p> <code>Key=environment,Value=test</code> </p> </li>
+        /// <li> <p> <code>Key=OS,Value=Windows</code> </p> </li>
+        /// </ul> <note>
+        /// <p>To add tags to an existing patch baseline, use the <code>AddTagsToResource</code> operation.</p>
         /// </note>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>Optional metadata that you assign to a resource. You can specify a maximum of five tags for
-        /// an automation. Tags enable you to categorize a resource in different ways, such as by purpose,
-        /// owner, or environment. For example, you might want to tag an automation to identify an
-        /// environment or operating system. In this case, you could specify the following key-value
-        /// pairs:</p>
+        /// <p>Optional metadata that you assign to a resource. You can specify a maximum of five tags for an automation. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an automation to identify an environment or operating system. In this case, you could specify the following key-value pairs:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Key=environment,Value=test</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Key=OS,Value=Windows</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>To add tags to an existing patch baseline, use the <a>AddTagsToResource</a>
-        /// operation.</p>
+        /// <li> <p> <code>Key=environment,Value=test</code> </p> </li>
+        /// <li> <p> <code>Key=OS,Value=Windows</code> </p> </li>
+        /// </ul> <note>
+        /// <p>To add tags to an existing patch baseline, use the <code>AddTagsToResource</code> operation.</p>
         /// </note>
         pub fn set_tags(
             mut self,
@@ -17191,9 +14601,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartChangeRequestExecution`.
     ///
-    /// <p>Creates a change request for Change Manager. The Automation runbooks specified in the
-    /// change request run only after all required approvals for the change request have been
-    /// received.</p>
+    /// <p>Creates a change request for Change Manager. The Automation runbooks specified in the change request run only after all required approvals for the change request have been received.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartChangeRequestExecution<
         C = aws_smithy_client::erase::DynConnector,
@@ -17250,19 +14658,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The date and time specified in the change request to run the Automation runbooks.</p>
-        /// <note>
-        /// <p>The Automation runbooks specified for the runbook workflow can't run until all required
-        /// approvals for the change request have been received.</p>
+        /// <p>The date and time specified in the change request to run the Automation runbooks.</p> <note>
+        /// <p>The Automation runbooks specified for the runbook workflow can't run until all required approvals for the change request have been received.</p>
         /// </note>
         pub fn scheduled_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.scheduled_time(input);
             self
         }
-        /// <p>The date and time specified in the change request to run the Automation runbooks.</p>
-        /// <note>
-        /// <p>The Automation runbooks specified for the runbook workflow can't run until all required
-        /// approvals for the change request have been received.</p>
+        /// <p>The date and time specified in the change request to run the Automation runbooks.</p> <note>
+        /// <p>The Automation runbooks specified for the runbook workflow can't run until all required approvals for the change request have been received.</p>
         /// </note>
         pub fn set_scheduled_time(
             mut self,
@@ -17301,8 +14705,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
-        /// <p>A key-value map of parameters that match the declared parameters in the change template
-        /// document.</p>
+        /// <p>A key-value map of parameters that match the declared parameters in the change template document.</p>
         pub fn parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -17311,8 +14714,7 @@ pub mod fluent_builders {
             self.inner = self.inner.parameters(k.into(), v);
             self
         }
-        /// <p>A key-value map of parameters that match the declared parameters in the change template
-        /// document.</p>
+        /// <p>A key-value map of parameters that match the declared parameters in the change template document.</p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<
@@ -17335,43 +14737,27 @@ pub mod fluent_builders {
             self.inner = self.inner.set_change_request_name(input);
             self
         }
-        /// <p>The user-provided idempotency token. The token must be unique, is case insensitive, enforces
-        /// the UUID format, and can't be reused.</p>
+        /// <p>The user-provided idempotency token. The token must be unique, is case insensitive, enforces the UUID format, and can't be reused.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>The user-provided idempotency token. The token must be unique, is case insensitive, enforces
-        /// the UUID format, and can't be reused.</p>
+        /// <p>The user-provided idempotency token. The token must be unique, is case insensitive, enforces the UUID format, and can't be reused.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>Indicates whether the change request can be approved automatically without the need for
-        /// manual approvals.</p>
-        /// <p>If <code>AutoApprovable</code> is enabled in a change template, then setting
-        /// <code>AutoApprove</code> to <code>true</code> in <code>StartChangeRequestExecution</code>
-        /// creates a change request that bypasses approver review.</p>
-        /// <note>
-        /// <p>Change Calendar restrictions are not bypassed in this scenario. If the state of an
-        /// associated calendar is <code>CLOSED</code>, change freeze approvers must still grant permission
-        /// for this change request to run. If they don't, the change won't be processed until the calendar
-        /// state is again <code>OPEN</code>. </p>
+        /// <p>Indicates whether the change request can be approved automatically without the need for manual approvals.</p>
+        /// <p>If <code>AutoApprovable</code> is enabled in a change template, then setting <code>AutoApprove</code> to <code>true</code> in <code>StartChangeRequestExecution</code> creates a change request that bypasses approver review.</p> <note>
+        /// <p>Change Calendar restrictions are not bypassed in this scenario. If the state of an associated calendar is <code>CLOSED</code>, change freeze approvers must still grant permission for this change request to run. If they don't, the change won't be processed until the calendar state is again <code>OPEN</code>. </p>
         /// </note>
         pub fn auto_approve(mut self, input: bool) -> Self {
             self.inner = self.inner.auto_approve(input);
             self
         }
-        /// <p>Indicates whether the change request can be approved automatically without the need for
-        /// manual approvals.</p>
-        /// <p>If <code>AutoApprovable</code> is enabled in a change template, then setting
-        /// <code>AutoApprove</code> to <code>true</code> in <code>StartChangeRequestExecution</code>
-        /// creates a change request that bypasses approver review.</p>
-        /// <note>
-        /// <p>Change Calendar restrictions are not bypassed in this scenario. If the state of an
-        /// associated calendar is <code>CLOSED</code>, change freeze approvers must still grant permission
-        /// for this change request to run. If they don't, the change won't be processed until the calendar
-        /// state is again <code>OPEN</code>. </p>
+        /// <p>Indicates whether the change request can be approved automatically without the need for manual approvals.</p>
+        /// <p>If <code>AutoApprovable</code> is enabled in a change template, then setting <code>AutoApprove</code> to <code>true</code> in <code>StartChangeRequestExecution</code> creates a change request that bypasses approver review.</p> <note>
+        /// <p>Change Calendar restrictions are not bypassed in this scenario. If the state of an associated calendar is <code>CLOSED</code>, change freeze approvers must still grant permission for this change request to run. If they don't, the change won't be processed until the calendar state is again <code>OPEN</code>. </p>
         /// </note>
         pub fn set_auto_approve(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_auto_approve(input);
@@ -17381,19 +14767,15 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_runbooks`](Self::set_runbooks).
         ///
-        /// <p>Information about the Automation runbooks that are run during the runbook workflow.</p>
-        /// <note>
-        /// <p>The Automation runbooks specified for the runbook workflow can't run until all required
-        /// approvals for the change request have been received.</p>
+        /// <p>Information about the Automation runbooks that are run during the runbook workflow.</p> <note>
+        /// <p>The Automation runbooks specified for the runbook workflow can't run until all required approvals for the change request have been received.</p>
         /// </note>
         pub fn runbooks(mut self, input: crate::model::Runbook) -> Self {
             self.inner = self.inner.runbooks(input);
             self
         }
-        /// <p>Information about the Automation runbooks that are run during the runbook workflow.</p>
-        /// <note>
-        /// <p>The Automation runbooks specified for the runbook workflow can't run until all required
-        /// approvals for the change request have been received.</p>
+        /// <p>Information about the Automation runbooks that are run during the runbook workflow.</p> <note>
+        /// <p>The Automation runbooks specified for the runbook workflow can't run until all required approvals for the change request have been received.</p>
         /// </note>
         pub fn set_runbooks(
             mut self,
@@ -17406,43 +14788,19 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Optional metadata that you assign to a resource. You can specify a maximum of five tags for
-        /// a change request. Tags enable you to categorize a resource in different ways, such as by
-        /// purpose, owner, or environment. For example, you might want to tag a change request to identify
-        /// an environment or target Amazon Web Services Region. In this case, you could specify the following key-value
-        /// pairs:</p>
+        /// <p>Optional metadata that you assign to a resource. You can specify a maximum of five tags for a change request. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a change request to identify an environment or target Amazon Web Services Region. In this case, you could specify the following key-value pairs:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Key=Environment,Value=Production</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Key=Region,Value=us-east-2</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
+        /// <li> <p> <code>Key=Region,Value=us-east-2</code> </p> </li>
         /// </ul>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>Optional metadata that you assign to a resource. You can specify a maximum of five tags for
-        /// a change request. Tags enable you to categorize a resource in different ways, such as by
-        /// purpose, owner, or environment. For example, you might want to tag a change request to identify
-        /// an environment or target Amazon Web Services Region. In this case, you could specify the following key-value
-        /// pairs:</p>
+        /// <p>Optional metadata that you assign to a resource. You can specify a maximum of five tags for a change request. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a change request to identify an environment or target Amazon Web Services Region. In this case, you could specify the following key-value pairs:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Key=Environment,Value=Production</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Key=Region,Value=us-east-2</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
+        /// <li> <p> <code>Key=Region,Value=us-east-2</code> </p> </li>
         /// </ul>
         pub fn set_tags(
             mut self,
@@ -17451,14 +14809,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>The time that the requester expects the runbook workflow related to the change request to
-        /// complete. The time is an estimate only that the requester provides for reviewers.</p>
+        /// <p>The time that the requester expects the runbook workflow related to the change request to complete. The time is an estimate only that the requester provides for reviewers.</p>
         pub fn scheduled_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.scheduled_end_time(input);
             self
         }
-        /// <p>The time that the requester expects the runbook workflow related to the change request to
-        /// complete. The time is an estimate only that the requester provides for reviewers.</p>
+        /// <p>The time that the requester expects the runbook workflow related to the change request to complete. The time is an estimate only that the requester provides for reviewers.</p>
         pub fn set_scheduled_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -17466,16 +14822,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_scheduled_end_time(input);
             self
         }
-        /// <p>User-provided details about the change. If no details are provided, content specified in the
-        /// <b>Template information</b> section of the associated change template
-        /// is added.</p>
+        /// <p>User-provided details about the change. If no details are provided, content specified in the <b>Template information</b> section of the associated change template is added.</p>
         pub fn change_details(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.change_details(input.into());
             self
         }
-        /// <p>User-provided details about the change. If no details are provided, content specified in the
-        /// <b>Template information</b> section of the associated change template
-        /// is added.</p>
+        /// <p>User-provided details about the change. If no details are provided, content specified in the <b>Template information</b> section of the associated change template is added.</p>
         pub fn set_change_details(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17486,15 +14838,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartSession`.
     ///
-    /// <p>Initiates a connection to a target (for example, a managed node) for a Session Manager session. Returns a
-    /// URL and token that can be used to open a WebSocket connection for sending input and receiving
-    /// outputs.</p>
-    /// <note>
-    /// <p>Amazon Web Services CLI usage: <code>start-session</code> is an interactive command that requires the Session Manager
-    /// plugin to be installed on the client machine making the call. For information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html">Install
-    /// the Session Manager plugin for the Amazon Web Services CLI</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    /// <p>Amazon Web Services Tools for PowerShell usage: Start-SSMSession isn't currently supported by Amazon Web Services Tools
-    /// for PowerShell on Windows local machines.</p>
+    /// <p>Initiates a connection to a target (for example, a managed node) for a Session Manager session. Returns a URL and token that can be used to open a WebSocket connection for sending input and receiving outputs.</p> <note>
+    /// <p>Amazon Web Services CLI usage: <code>start-session</code> is an interactive command that requires the Session Manager plugin to be installed on the client machine making the call. For information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html">Install the Session Manager plugin for the Amazon Web Services CLI</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>Amazon Web Services Tools for PowerShell usage: Start-SSMSession isn't currently supported by Amazon Web Services Tools for PowerShell on Windows local machines.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartSession<
@@ -17562,16 +14908,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_target(input);
             self
         }
-        /// <p>The name of the SSM document to define the parameters and plugin settings for the session.
-        /// For example, <code>SSM-SessionManagerRunShell</code>. You can call the <a>GetDocument</a> API to verify the document exists before attempting to start a session.
-        /// If no document name is provided, a shell to the managed node is launched by default.</p>
+        /// <p>The name of the SSM document to define the parameters and plugin settings for the session. For example, <code>SSM-SessionManagerRunShell</code>. You can call the <code>GetDocument</code> API to verify the document exists before attempting to start a session. If no document name is provided, a shell to the managed node is launched by default.</p>
         pub fn document_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.document_name(input.into());
             self
         }
-        /// <p>The name of the SSM document to define the parameters and plugin settings for the session.
-        /// For example, <code>SSM-SessionManagerRunShell</code>. You can call the <a>GetDocument</a> API to verify the document exists before attempting to start a session.
-        /// If no document name is provided, a shell to the managed node is launched by default.</p>
+        /// <p>The name of the SSM document to define the parameters and plugin settings for the session. For example, <code>SSM-SessionManagerRunShell</code>. You can call the <code>GetDocument</code> API to verify the document exists before attempting to start a session. If no document name is provided, a shell to the managed node is launched by default.</p>
         pub fn set_document_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17579,14 +14921,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_document_name(input);
             self
         }
-        /// <p>The reason for connecting to the instance. This value is included in the details for the
-        /// Amazon CloudWatch Events event created when you start the session.</p>
+        /// <p>The reason for connecting to the instance. This value is included in the details for the Amazon CloudWatch Events event created when you start the session.</p>
         pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.reason(input.into());
             self
         }
-        /// <p>The reason for connecting to the instance. This value is included in the details for the
-        /// Amazon CloudWatch Events event created when you start the session.</p>
+        /// <p>The reason for connecting to the instance. This value is included in the details for the Amazon CloudWatch Events event created when you start the session.</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_reason(input);
             self
@@ -17687,14 +15027,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_automation_execution_id(input);
             self
         }
-        /// <p>The stop request type. Valid types include the following: Cancel and Complete. The default
-        /// type is Cancel.</p>
+        /// <p>The stop request type. Valid types include the following: Cancel and Complete. The default type is Cancel.</p>
         pub fn r#type(mut self, input: crate::model::StopType) -> Self {
             self.inner = self.inner.r#type(input);
             self
         }
-        /// <p>The stop request type. Valid types include the following: Cancel and Complete. The default
-        /// type is Cancel.</p>
+        /// <p>The stop request type. Valid types include the following: Cancel and Complete. The default type is Cancel.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::StopType>) -> Self {
             self.inner = self.inner.set_type(input);
             self
@@ -17702,8 +15040,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TerminateSession`.
     ///
-    /// <p>Permanently ends a session and closes the data connection between the Session Manager client and
-    /// SSM Agent on the managed node. A terminated session isn't be resumed.</p>
+    /// <p>Permanently ends a session and closes the data connection between the Session Manager client and SSM Agent on the managed node. A terminated session isn't be resumed.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TerminateSession<
         C = aws_smithy_client::erase::DynConnector,
@@ -17840,14 +15177,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The specific version of the parameter which you want to delete one or more labels from. If
-        /// it isn't present, the call will fail.</p>
+        /// <p>The specific version of the parameter which you want to delete one or more labels from. If it isn't present, the call will fail.</p>
         pub fn parameter_version(mut self, input: i64) -> Self {
             self.inner = self.inner.parameter_version(input);
             self
         }
-        /// <p>The specific version of the parameter which you want to delete one or more labels from. If
-        /// it isn't present, the call will fail.</p>
+        /// <p>The specific version of the parameter which you want to delete one or more labels from. If it isn't present, the call will fail.</p>
         pub fn set_parameter_version(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_parameter_version(input);
             self
@@ -17872,18 +15207,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateAssociation`.
     ///
-    /// <p>Updates an association. You can update the association name and version, the document
-    /// version, schedule, parameters, and Amazon Simple Storage Service (Amazon S3) output. </p>
-    /// <p>In order to call this API operation, your Identity and Access Management (IAM) user
-    /// account, group, or role must be configured with permission to call the <a>DescribeAssociation</a> API operation. If you don't have permission to call
-    /// <code>DescribeAssociation</code>, then you receive the following error: <code>An error occurred
-    /// (AccessDeniedException) when calling the UpdateAssociation operation: User: <user_arn>
+    /// <p>Updates an association. You can update the association name and version, the document version, schedule, parameters, and Amazon Simple Storage Service (Amazon S3) output. </p>
+    /// <p>In order to call this API operation, your Identity and Access Management (IAM) user account, group, or role must be configured with permission to call the <code>DescribeAssociation</code> API operation. If you don't have permission to call <code>DescribeAssociation</code>, then you receive the following error: <code>An error occurred (AccessDeniedException) when calling the UpdateAssociation operation: User:
+    /// <user_arn>
     /// isn't authorized to perform: ssm:DescribeAssociation on resource:
-    /// <resource_arn></code>
-    /// </p>
-    /// <important>
-    /// <p>When you update an association, the association immediately runs against the specified
-    /// targets.</p>
+    /// <resource_arn></resource_arn>
+    /// </user_arn></code> </p> <important>
+    /// <p>When you update an association, the association immediately runs against the specified targets.</p>
     /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAssociation<
@@ -17958,9 +15288,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
-        /// <p>The parameters you want to update for the association. If you create a parameter using
-        /// Parameter Store, a capability of Amazon Web Services Systems Manager, you can reference the parameter using
-        /// <code>{{ssm:parameter-name}}</code>.</p>
+        /// <p>The parameters you want to update for the association. If you create a parameter using Parameter Store, a capability of Amazon Web Services Systems Manager, you can reference the parameter using <code>{{ssm:parameter-name}}</code>.</p>
         pub fn parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -17969,9 +15297,7 @@ pub mod fluent_builders {
             self.inner = self.inner.parameters(k.into(), v);
             self
         }
-        /// <p>The parameters you want to update for the association. If you create a parameter using
-        /// Parameter Store, a capability of Amazon Web Services Systems Manager, you can reference the parameter using
-        /// <code>{{ssm:parameter-name}}</code>.</p>
+        /// <p>The parameters you want to update for the association. If you create a parameter using Parameter Store, a capability of Amazon Web Services Systems Manager, you can reference the parameter using <code>{{ssm:parameter-name}}</code>.</p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<
@@ -18023,44 +15349,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_output_location(input);
             self
         }
-        /// <p>The name of the SSM Command document or Automation runbook that contains the configuration
-        /// information for the managed node.</p>
-        /// <p>You can specify Amazon Web Services-predefined documents, documents you created, or a document that is
-        /// shared with you from another account.</p>
-        /// <p>For Systems Manager document (SSM document) that are shared with you from other Amazon Web Services accounts, you
-        /// must specify the complete SSM document ARN, in the following format:</p>
-        /// <p>
-        /// <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i>
-        /// </code>
-        /// </p>
+        /// <p>The name of the SSM Command document or Automation runbook that contains the configuration information for the managed node.</p>
+        /// <p>You can specify Amazon Web Services-predefined documents, documents you created, or a document that is shared with you from another account.</p>
+        /// <p>For Systems Manager document (SSM document) that are shared with you from other Amazon Web Services accounts, you must specify the complete SSM document ARN, in the following format:</p>
+        /// <p> <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i> </code> </p>
         /// <p>For example:</p>
-        /// <p>
-        /// <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code>
-        /// </p>
-        /// <p>For Amazon Web Services-predefined documents and SSM documents you created in your account, you only need
-        /// to specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or
-        /// <code>My-Document</code>.</p>
+        /// <p> <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code> </p>
+        /// <p>For Amazon Web Services-predefined documents and SSM documents you created in your account, you only need to specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the SSM Command document or Automation runbook that contains the configuration
-        /// information for the managed node.</p>
-        /// <p>You can specify Amazon Web Services-predefined documents, documents you created, or a document that is
-        /// shared with you from another account.</p>
-        /// <p>For Systems Manager document (SSM document) that are shared with you from other Amazon Web Services accounts, you
-        /// must specify the complete SSM document ARN, in the following format:</p>
-        /// <p>
-        /// <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i>
-        /// </code>
-        /// </p>
+        /// <p>The name of the SSM Command document or Automation runbook that contains the configuration information for the managed node.</p>
+        /// <p>You can specify Amazon Web Services-predefined documents, documents you created, or a document that is shared with you from another account.</p>
+        /// <p>For Systems Manager document (SSM document) that are shared with you from other Amazon Web Services accounts, you must specify the complete SSM document ARN, in the following format:</p>
+        /// <p> <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i> </code> </p>
         /// <p>For example:</p>
-        /// <p>
-        /// <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code>
-        /// </p>
-        /// <p>For Amazon Web Services-predefined documents and SSM documents you created in your account, you only need
-        /// to specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or
-        /// <code>My-Document</code>.</p>
+        /// <p> <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code> </p>
+        /// <p>For Amazon Web Services-predefined documents and SSM documents you created in your account, you only need to specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -18095,16 +15401,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_association_name(input);
             self
         }
-        /// <p>This parameter is provided for concurrency control purposes. You must specify the latest
-        /// association version in the service. If you want to ensure that this request succeeds, either
-        /// specify <code>$LATEST</code>, or omit this parameter.</p>
+        /// <p>This parameter is provided for concurrency control purposes. You must specify the latest association version in the service. If you want to ensure that this request succeeds, either specify <code>$LATEST</code>, or omit this parameter.</p>
         pub fn association_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.association_version(input.into());
             self
         }
-        /// <p>This parameter is provided for concurrency control purposes. You must specify the latest
-        /// association version in the service. If you want to ensure that this request succeeds, either
-        /// specify <code>$LATEST</code>, or omit this parameter.</p>
+        /// <p>This parameter is provided for concurrency control purposes. You must specify the latest association version in the service. If you want to ensure that this request succeeds, either specify <code>$LATEST</code>, or omit this parameter.</p>
         pub fn set_association_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -18112,9 +15414,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_association_version(input);
             self
         }
-        /// <p>Choose the parameter that will define how your automation will branch out. This target is
-        /// required for associations that use an Automation runbook and target resources by using rate
-        /// controls. Automation is a capability of Amazon Web Services Systems Manager.</p>
+        /// <p>Choose the parameter that will define how your automation will branch out. This target is required for associations that use an Automation runbook and target resources by using rate controls. Automation is a capability of Amazon Web Services Systems Manager.</p>
         pub fn automation_target_parameter_name(
             mut self,
             input: impl Into<std::string::String>,
@@ -18122,9 +15422,7 @@ pub mod fluent_builders {
             self.inner = self.inner.automation_target_parameter_name(input.into());
             self
         }
-        /// <p>Choose the parameter that will define how your automation will branch out. This target is
-        /// required for associations that use an Automation runbook and target resources by using rate
-        /// controls. Automation is a capability of Amazon Web Services Systems Manager.</p>
+        /// <p>Choose the parameter that will define how your automation will branch out. This target is required for associations that use an Automation runbook and target resources by using rate controls. Automation is a capability of Amazon Web Services Systems Manager.</p>
         pub fn set_automation_target_parameter_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -18132,54 +15430,26 @@ pub mod fluent_builders {
             self.inner = self.inner.set_automation_target_parameter_name(input);
             self
         }
-        /// <p>The number of errors that are allowed before the system stops sending requests to run the
-        /// association on additional targets. You can specify either an absolute number of errors, for
-        /// example 10, or a percentage of the target set, for example 10%. If you specify 3, for example,
-        /// the system stops sending requests when the fourth error is received. If you specify 0, then the
-        /// system stops sending requests after the first error is returned. If you run an association on 50
-        /// managed nodes and set <code>MaxError</code> to 10%, then the system stops sending the request
-        /// when the sixth error is received.</p>
-        /// <p>Executions that are already running an association when <code>MaxErrors</code> is reached
-        /// are allowed to complete, but some of these executions may fail as well. If you need to ensure
-        /// that there won't be more than max-errors failed executions, set <code>MaxConcurrency</code> to 1
-        /// so that executions proceed one at a time.</p>
+        /// <p>The number of errors that are allowed before the system stops sending requests to run the association on additional targets. You can specify either an absolute number of errors, for example 10, or a percentage of the target set, for example 10%. If you specify 3, for example, the system stops sending requests when the fourth error is received. If you specify 0, then the system stops sending requests after the first error is returned. If you run an association on 50 managed nodes and set <code>MaxError</code> to 10%, then the system stops sending the request when the sixth error is received.</p>
+        /// <p>Executions that are already running an association when <code>MaxErrors</code> is reached are allowed to complete, but some of these executions may fail as well. If you need to ensure that there won't be more than max-errors failed executions, set <code>MaxConcurrency</code> to 1 so that executions proceed one at a time.</p>
         pub fn max_errors(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.max_errors(input.into());
             self
         }
-        /// <p>The number of errors that are allowed before the system stops sending requests to run the
-        /// association on additional targets. You can specify either an absolute number of errors, for
-        /// example 10, or a percentage of the target set, for example 10%. If you specify 3, for example,
-        /// the system stops sending requests when the fourth error is received. If you specify 0, then the
-        /// system stops sending requests after the first error is returned. If you run an association on 50
-        /// managed nodes and set <code>MaxError</code> to 10%, then the system stops sending the request
-        /// when the sixth error is received.</p>
-        /// <p>Executions that are already running an association when <code>MaxErrors</code> is reached
-        /// are allowed to complete, but some of these executions may fail as well. If you need to ensure
-        /// that there won't be more than max-errors failed executions, set <code>MaxConcurrency</code> to 1
-        /// so that executions proceed one at a time.</p>
+        /// <p>The number of errors that are allowed before the system stops sending requests to run the association on additional targets. You can specify either an absolute number of errors, for example 10, or a percentage of the target set, for example 10%. If you specify 3, for example, the system stops sending requests when the fourth error is received. If you specify 0, then the system stops sending requests after the first error is returned. If you run an association on 50 managed nodes and set <code>MaxError</code> to 10%, then the system stops sending the request when the sixth error is received.</p>
+        /// <p>Executions that are already running an association when <code>MaxErrors</code> is reached are allowed to complete, but some of these executions may fail as well. If you need to ensure that there won't be more than max-errors failed executions, set <code>MaxConcurrency</code> to 1 so that executions proceed one at a time.</p>
         pub fn set_max_errors(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_max_errors(input);
             self
         }
-        /// <p>The maximum number of targets allowed to run the association at the same time. You can
-        /// specify a number, for example 10, or a percentage of the target set, for example 10%. The default
-        /// value is 100%, which means all targets run the association at the same time.</p>
-        /// <p>If a new managed node starts and attempts to run an association while Systems Manager is running
-        /// <code>MaxConcurrency</code> associations, the association is allowed to run. During the next
-        /// association interval, the new managed node will process its association within the limit specified
-        /// for <code>MaxConcurrency</code>.</p>
+        /// <p>The maximum number of targets allowed to run the association at the same time. You can specify a number, for example 10, or a percentage of the target set, for example 10%. The default value is 100%, which means all targets run the association at the same time.</p>
+        /// <p>If a new managed node starts and attempts to run an association while Systems Manager is running <code>MaxConcurrency</code> associations, the association is allowed to run. During the next association interval, the new managed node will process its association within the limit specified for <code>MaxConcurrency</code>.</p>
         pub fn max_concurrency(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.max_concurrency(input.into());
             self
         }
-        /// <p>The maximum number of targets allowed to run the association at the same time. You can
-        /// specify a number, for example 10, or a percentage of the target set, for example 10%. The default
-        /// value is 100%, which means all targets run the association at the same time.</p>
-        /// <p>If a new managed node starts and attempts to run an association while Systems Manager is running
-        /// <code>MaxConcurrency</code> associations, the association is allowed to run. During the next
-        /// association interval, the new managed node will process its association within the limit specified
-        /// for <code>MaxConcurrency</code>.</p>
+        /// <p>The maximum number of targets allowed to run the association at the same time. You can specify a number, for example 10, or a percentage of the target set, for example 10%. The default value is 100%, which means all targets run the association at the same time.</p>
+        /// <p>If a new managed node starts and attempts to run an association while Systems Manager is running <code>MaxConcurrency</code> associations, the association is allowed to run. During the next association interval, the new managed node will process its association within the limit specified for <code>MaxConcurrency</code>.</p>
         pub fn set_max_concurrency(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -18203,29 +15473,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_compliance_severity(input);
             self
         }
-        /// <p>The mode for generating association compliance. You can specify <code>AUTO</code> or
-        /// <code>MANUAL</code>. In <code>AUTO</code> mode, the system uses the status of the association
-        /// execution to determine the compliance status. If the association execution runs successfully,
-        /// then the association is <code>COMPLIANT</code>. If the association execution doesn't run
-        /// successfully, the association is <code>NON-COMPLIANT</code>.</p>
-        /// <p>In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter
-        /// for the <a>PutComplianceItems</a> API operation. In this case, compliance data isn't
-        /// managed by State Manager, a capability of Amazon Web Services Systems Manager. It is managed by your direct call to the
-        /// <a>PutComplianceItems</a> API operation.</p>
+        /// <p>The mode for generating association compliance. You can specify <code>AUTO</code> or <code>MANUAL</code>. In <code>AUTO</code> mode, the system uses the status of the association execution to determine the compliance status. If the association execution runs successfully, then the association is <code>COMPLIANT</code>. If the association execution doesn't run successfully, the association is <code>NON-COMPLIANT</code>.</p>
+        /// <p>In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the <code>PutComplianceItems</code> API operation. In this case, compliance data isn't managed by State Manager, a capability of Amazon Web Services Systems Manager. It is managed by your direct call to the <code>PutComplianceItems</code> API operation.</p>
         /// <p>By default, all associations use <code>AUTO</code> mode.</p>
         pub fn sync_compliance(mut self, input: crate::model::AssociationSyncCompliance) -> Self {
             self.inner = self.inner.sync_compliance(input);
             self
         }
-        /// <p>The mode for generating association compliance. You can specify <code>AUTO</code> or
-        /// <code>MANUAL</code>. In <code>AUTO</code> mode, the system uses the status of the association
-        /// execution to determine the compliance status. If the association execution runs successfully,
-        /// then the association is <code>COMPLIANT</code>. If the association execution doesn't run
-        /// successfully, the association is <code>NON-COMPLIANT</code>.</p>
-        /// <p>In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter
-        /// for the <a>PutComplianceItems</a> API operation. In this case, compliance data isn't
-        /// managed by State Manager, a capability of Amazon Web Services Systems Manager. It is managed by your direct call to the
-        /// <a>PutComplianceItems</a> API operation.</p>
+        /// <p>The mode for generating association compliance. You can specify <code>AUTO</code> or <code>MANUAL</code>. In <code>AUTO</code> mode, the system uses the status of the association execution to determine the compliance status. If the association execution runs successfully, then the association is <code>COMPLIANT</code>. If the association execution doesn't run successfully, the association is <code>NON-COMPLIANT</code>.</p>
+        /// <p>In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter for the <code>PutComplianceItems</code> API operation. In this case, compliance data isn't managed by State Manager, a capability of Amazon Web Services Systems Manager. It is managed by your direct call to the <code>PutComplianceItems</code> API operation.</p>
         /// <p>By default, all associations use <code>AUTO</code> mode.</p>
         pub fn set_sync_compliance(
             mut self,
@@ -18234,26 +15490,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sync_compliance(input);
             self
         }
-        /// <p>By default, when you update an association, the system runs it immediately after it is
-        /// updated and then according to the schedule you specified. Specify this option if you don't want
-        /// an association to run immediately after you update it. This parameter isn't supported for rate
-        /// expressions.</p>
-        /// <p>Also, if you specified this option when you created the association, you can reset it. To do
-        /// so, specify the <code>no-apply-only-at-cron-interval</code> parameter when you update the
-        /// association from the command line. This parameter forces the association to run immediately after
-        /// updating it and according to the interval specified.</p>
+        /// <p>By default, when you update an association, the system runs it immediately after it is updated and then according to the schedule you specified. Specify this option if you don't want an association to run immediately after you update it. This parameter isn't supported for rate expressions.</p>
+        /// <p>Also, if you specified this option when you created the association, you can reset it. To do so, specify the <code>no-apply-only-at-cron-interval</code> parameter when you update the association from the command line. This parameter forces the association to run immediately after updating it and according to the interval specified.</p>
         pub fn apply_only_at_cron_interval(mut self, input: bool) -> Self {
             self.inner = self.inner.apply_only_at_cron_interval(input);
             self
         }
-        /// <p>By default, when you update an association, the system runs it immediately after it is
-        /// updated and then according to the schedule you specified. Specify this option if you don't want
-        /// an association to run immediately after you update it. This parameter isn't supported for rate
-        /// expressions.</p>
-        /// <p>Also, if you specified this option when you created the association, you can reset it. To do
-        /// so, specify the <code>no-apply-only-at-cron-interval</code> parameter when you update the
-        /// association from the command line. This parameter forces the association to run immediately after
-        /// updating it and according to the interval specified.</p>
+        /// <p>By default, when you update an association, the system runs it immediately after it is updated and then according to the schedule you specified. Specify this option if you don't want an association to run immediately after you update it. This parameter isn't supported for rate expressions.</p>
+        /// <p>Also, if you specified this option when you created the association, you can reset it. To do so, specify the <code>no-apply-only-at-cron-interval</code> parameter when you update the association from the command line. This parameter forces the association to run immediately after updating it and according to the interval specified.</p>
         pub fn set_apply_only_at_cron_interval(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_apply_only_at_cron_interval(input);
             self
@@ -18262,18 +15506,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_calendar_names`](Self::set_calendar_names).
         ///
-        /// <p>The names or Amazon Resource Names (ARNs) of the Change Calendar type documents you want to
-        /// gate your associations under. The associations only run when that change calendar is open. For
-        /// more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web Services Systems Manager Change
-        /// Calendar</a>.</p>
+        /// <p>The names or Amazon Resource Names (ARNs) of the Change Calendar type documents you want to gate your associations under. The associations only run when that change calendar is open. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web Services Systems Manager Change Calendar</a>.</p>
         pub fn calendar_names(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.calendar_names(input.into());
             self
         }
-        /// <p>The names or Amazon Resource Names (ARNs) of the Change Calendar type documents you want to
-        /// gate your associations under. The associations only run when that change calendar is open. For
-        /// more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web Services Systems Manager Change
-        /// Calendar</a>.</p>
+        /// <p>The names or Amazon Resource Names (ARNs) of the Change Calendar type documents you want to gate your associations under. The associations only run when that change calendar is open. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web Services Systems Manager Change Calendar</a>.</p>
         pub fn set_calendar_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -18285,16 +15523,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_target_locations`](Self::set_target_locations).
         ///
-        /// <p>A location is a combination of Amazon Web Services Regions and Amazon Web Services accounts where you want to run the
-        /// association. Use this action to update an association in multiple Regions and multiple
-        /// accounts.</p>
+        /// <p>A location is a combination of Amazon Web Services Regions and Amazon Web Services accounts where you want to run the association. Use this action to update an association in multiple Regions and multiple accounts.</p>
         pub fn target_locations(mut self, input: crate::model::TargetLocation) -> Self {
             self.inner = self.inner.target_locations(input);
             self
         }
-        /// <p>A location is a combination of Amazon Web Services Regions and Amazon Web Services accounts where you want to run the
-        /// association. Use this action to update an association in multiple Regions and multiple
-        /// accounts.</p>
+        /// <p>A location is a combination of Amazon Web Services Regions and Amazon Web Services accounts where you want to run the association. Use this action to update an association in multiple Regions and multiple accounts.</p>
         pub fn set_target_locations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TargetLocation>>,
@@ -18305,12 +15539,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateAssociationStatus`.
     ///
-    /// <p>Updates the status of the Amazon Web Services Systems Manager document (SSM document) associated with the specified
-    /// managed node.</p>
-    /// <p>
-    /// <code>UpdateAssociationStatus</code> is primarily used by the Amazon Web Services Systems Manager Agent (SSM Agent) to
-    /// report status updates about your associations and is only used for associations created with the
-    /// <code>InstanceId</code> legacy parameter.</p>
+    /// <p>Updates the status of the Amazon Web Services Systems Manager document (SSM document) associated with the specified managed node.</p>
+    /// <p> <code>UpdateAssociationStatus</code> is primarily used by the Amazon Web Services Systems Manager Agent (SSM Agent) to report status updates about your associations and is only used for associations created with the <code>InstanceId</code> legacy parameter.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAssociationStatus<
         C = aws_smithy_client::erase::DynConnector,
@@ -18497,44 +15727,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The friendly name of the SSM document that you want to update. This value can differ for
-        /// each version of the document. If you don't specify a value for this parameter in your request,
-        /// the existing value is applied to the new document version.</p>
+        /// <p>The friendly name of the SSM document that you want to update. This value can differ for each version of the document. If you don't specify a value for this parameter in your request, the existing value is applied to the new document version.</p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.display_name(input.into());
             self
         }
-        /// <p>The friendly name of the SSM document that you want to update. This value can differ for
-        /// each version of the document. If you don't specify a value for this parameter in your request,
-        /// the existing value is applied to the new document version.</p>
+        /// <p>The friendly name of the SSM document that you want to update. This value can differ for each version of the document. If you don't specify a value for this parameter in your request, the existing value is applied to the new document version.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_display_name(input);
             self
         }
-        /// <p>An optional field specifying the version of the artifact you are updating with the document.
-        /// For example, "Release 12, Update 6". This value is unique across all versions of a document, and
-        /// can't be changed.</p>
+        /// <p>An optional field specifying the version of the artifact you are updating with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.</p>
         pub fn version_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.version_name(input.into());
             self
         }
-        /// <p>An optional field specifying the version of the artifact you are updating with the document.
-        /// For example, "Release 12, Update 6". This value is unique across all versions of a document, and
-        /// can't be changed.</p>
+        /// <p>An optional field specifying the version of the artifact you are updating with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.</p>
         pub fn set_version_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_version_name(input);
             self
         }
-        /// <p>The version of the document that you want to update. Currently, Systems Manager supports updating only
-        /// the latest version of the document. You can specify the version number of the latest version or
-        /// use the <code>$LATEST</code> variable.</p>
+        /// <p>The version of the document that you want to update. Currently, Systems Manager supports updating only the latest version of the document. You can specify the version number of the latest version or use the <code>$LATEST</code> variable.</p>
         pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.document_version(input.into());
             self
         }
-        /// <p>The version of the document that you want to update. Currently, Systems Manager supports updating only
-        /// the latest version of the document. You can specify the version number of the latest version or
-        /// use the <code>$LATEST</code> variable.</p>
+        /// <p>The version of the document that you want to update. Currently, Systems Manager supports updating only the latest version of the document. You can specify the version number of the latest version or use the <code>$LATEST</code> variable.</p>
         pub fn set_document_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -18542,14 +15760,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_document_version(input);
             self
         }
-        /// <p>Specify the document format for the new document version. Systems Manager supports JSON and YAML
-        /// documents. JSON is the default format.</p>
+        /// <p>Specify the document format for the new document version. Systems Manager supports JSON and YAML documents. JSON is the default format.</p>
         pub fn document_format(mut self, input: crate::model::DocumentFormat) -> Self {
             self.inner = self.inner.document_format(input);
             self
         }
-        /// <p>Specify the document format for the new document version. Systems Manager supports JSON and YAML
-        /// documents. JSON is the default format.</p>
+        /// <p>Specify the document format for the new document version. Systems Manager supports JSON and YAML documents. JSON is the default format.</p>
         pub fn set_document_format(
             mut self,
             input: std::option::Option<crate::model::DocumentFormat>,
@@ -18653,8 +15869,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateDocumentMetadata`.
     ///
-    /// <p>Updates information related to approval reviews for a specific version of a change template
-    /// in Change Manager.</p>
+    /// <p>Updates information related to approval reviews for a specific version of a change template in Change Manager.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDocumentMetadata<
         C = aws_smithy_client::erase::DynConnector,
@@ -18750,14 +15965,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateMaintenanceWindow`.
     ///
-    /// <p>Updates an existing maintenance window. Only specified parameters are modified.</p>
-    /// <note>
-    /// <p>The value you specify for <code>Duration</code> determines the specific end time for the
-    /// maintenance window based on the time it begins. No maintenance window tasks are permitted to
-    /// start after the resulting endtime minus the number of hours you specify for <code>Cutoff</code>.
-    /// For example, if the maintenance window starts at 3 PM, the duration is three hours, and the
-    /// value you specify for <code>Cutoff</code> is one hour, no maintenance window tasks can start
-    /// after 5 PM.</p>
+    /// <p>Updates an existing maintenance window. Only specified parameters are modified.</p> <note>
+    /// <p>The value you specify for <code>Duration</code> determines the specific end time for the maintenance window based on the time it begins. No maintenance window tasks are permitted to start after the resulting endtime minus the number of hours you specify for <code>Cutoff</code>. For example, if the maintenance window starts at 3 PM, the duration is three hours, and the value you specify for <code>Cutoff</code> is one hour, no maintenance window tasks can start after 5 PM.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateMaintenanceWindow<
@@ -18845,32 +16054,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet
-        /// Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or
-        /// "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time
-        /// Zone Database</a> on the IANA website.</p>
+        /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p>
         pub fn start_date(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.start_date(input.into());
             self
         }
-        /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet
-        /// Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or
-        /// "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time
-        /// Zone Database</a> on the IANA website.</p>
+        /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p>
         pub fn set_start_date(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_start_date(input);
             self
         }
-        /// <p>The date and time, in ISO-8601 Extended format, for when you want the maintenance window to
-        /// become inactive. <code>EndDate</code> allows you to set a date and time in the future when the
-        /// maintenance window will no longer run.</p>
+        /// <p>The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become inactive. <code>EndDate</code> allows you to set a date and time in the future when the maintenance window will no longer run.</p>
         pub fn end_date(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.end_date(input.into());
             self
         }
-        /// <p>The date and time, in ISO-8601 Extended format, for when you want the maintenance window to
-        /// become inactive. <code>EndDate</code> allows you to set a date and time in the future when the
-        /// maintenance window will no longer run.</p>
+        /// <p>The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become inactive. <code>EndDate</code> allows you to set a date and time in the future when the maintenance window will no longer run.</p>
         pub fn set_end_date(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_end_date(input);
             self
@@ -18885,18 +16084,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_schedule(input);
             self
         }
-        /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet
-        /// Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or
-        /// "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time
-        /// Zone Database</a> on the IANA website.</p>
+        /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p>
         pub fn schedule_timezone(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.schedule_timezone(input.into());
             self
         }
-        /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet
-        /// Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or
-        /// "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time
-        /// Zone Database</a> on the IANA website.</p>
+        /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p>
         pub fn set_schedule_timezone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -18904,28 +16097,18 @@ pub mod fluent_builders {
             self.inner = self.inner.set_schedule_timezone(input);
             self
         }
-        /// <p>The number of days to wait after the date and time specified by a cron expression before
-        /// running the maintenance window.</p>
-        /// <p>For example, the following cron expression schedules a maintenance window to run the third
-        /// Tuesday of every month at 11:30 PM.</p>
-        /// <p>
-        /// <code>cron(30 23 ? * TUE#3 *)</code>
-        /// </p>
-        /// <p>If the schedule offset is <code>2</code>, the maintenance window won't run until two days
-        /// later.</p>
+        /// <p>The number of days to wait after the date and time specified by a cron expression before running the maintenance window.</p>
+        /// <p>For example, the following cron expression schedules a maintenance window to run the third Tuesday of every month at 11:30 PM.</p>
+        /// <p> <code>cron(30 23 ? * TUE#3 *)</code> </p>
+        /// <p>If the schedule offset is <code>2</code>, the maintenance window won't run until two days later.</p>
         pub fn schedule_offset(mut self, input: i32) -> Self {
             self.inner = self.inner.schedule_offset(input);
             self
         }
-        /// <p>The number of days to wait after the date and time specified by a cron expression before
-        /// running the maintenance window.</p>
-        /// <p>For example, the following cron expression schedules a maintenance window to run the third
-        /// Tuesday of every month at 11:30 PM.</p>
-        /// <p>
-        /// <code>cron(30 23 ? * TUE#3 *)</code>
-        /// </p>
-        /// <p>If the schedule offset is <code>2</code>, the maintenance window won't run until two days
-        /// later.</p>
+        /// <p>The number of days to wait after the date and time specified by a cron expression before running the maintenance window.</p>
+        /// <p>For example, the following cron expression schedules a maintenance window to run the third Tuesday of every month at 11:30 PM.</p>
+        /// <p> <code>cron(30 23 ? * TUE#3 *)</code> </p>
+        /// <p>If the schedule offset is <code>2</code>, the maintenance window won't run until two days later.</p>
         pub fn set_schedule_offset(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_schedule_offset(input);
             self
@@ -18940,26 +16123,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_duration(input);
             self
         }
-        /// <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling
-        /// new tasks for execution.</p>
+        /// <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling new tasks for execution.</p>
         pub fn cutoff(mut self, input: i32) -> Self {
             self.inner = self.inner.cutoff(input);
             self
         }
-        /// <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling
-        /// new tasks for execution.</p>
+        /// <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling new tasks for execution.</p>
         pub fn set_cutoff(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_cutoff(input);
             self
         }
-        /// <p>Whether targets must be registered with the maintenance window before tasks can be defined
-        /// for those targets.</p>
+        /// <p>Whether targets must be registered with the maintenance window before tasks can be defined for those targets.</p>
         pub fn allow_unassociated_targets(mut self, input: bool) -> Self {
             self.inner = self.inner.allow_unassociated_targets(input);
             self
         }
-        /// <p>Whether targets must be registered with the maintenance window before tasks can be defined
-        /// for those targets.</p>
+        /// <p>Whether targets must be registered with the maintenance window before tasks can be defined for those targets.</p>
         pub fn set_allow_unassociated_targets(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_allow_unassociated_targets(input);
             self
@@ -18974,14 +16153,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_enabled(input);
             self
         }
-        /// <p>If <code>True</code>, then all fields that are required by the <a>CreateMaintenanceWindow</a> operation are also required for this API request. Optional
-        /// fields that aren't specified are set to null. </p>
+        /// <p>If <code>True</code>, then all fields that are required by the <code>CreateMaintenanceWindow</code> operation are also required for this API request. Optional fields that aren't specified are set to null. </p>
         pub fn replace(mut self, input: bool) -> Self {
             self.inner = self.inner.replace(input);
             self
         }
-        /// <p>If <code>True</code>, then all fields that are required by the <a>CreateMaintenanceWindow</a> operation are also required for this API request. Optional
-        /// fields that aren't specified are set to null. </p>
+        /// <p>If <code>True</code>, then all fields that are required by the <code>CreateMaintenanceWindow</code> operation are also required for this API request. Optional fields that aren't specified are set to null. </p>
         pub fn set_replace(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_replace(input);
             self
@@ -18989,31 +16166,15 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateMaintenanceWindowTarget`.
     ///
-    /// <p>Modifies the target of an existing maintenance window. You
-    /// can change the following:</p>
-    ///
+    /// <p>Modifies the target of an existing maintenance window. You can change the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>Name</p>
-    /// </li>
-    /// <li>
-    /// <p>Description</p>
-    /// </li>
-    /// <li>
-    /// <p>Owner</p>
-    /// </li>
-    /// <li>
-    /// <p>IDs for an ID target</p>
-    /// </li>
-    /// <li>
-    /// <p>Tags for a Tag target</p>
-    /// </li>
-    /// <li>
-    /// <p>From any supported tag type to another. The three supported tag types are ID target, Tag
-    /// target, and resource group. For more information, see <a>Target</a>.</p>
-    /// </li>
-    /// </ul>
-    /// <note>
+    /// <li> <p>Name</p> </li>
+    /// <li> <p>Description</p> </li>
+    /// <li> <p>Owner</p> </li>
+    /// <li> <p>IDs for an ID target</p> </li>
+    /// <li> <p>Tags for a Tag target</p> </li>
+    /// <li> <p>From any supported tag type to another. The three supported tag types are ID target, Tag target, and resource group. For more information, see <code>Target</code>.</p> </li>
+    /// </ul> <note>
     /// <p>If a parameter is null, then the corresponding field isn't modified.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -19112,14 +16273,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_targets(input);
             self
         }
-        /// <p>User-provided value that will be included in any Amazon CloudWatch Events events raised while
-        /// running tasks for these targets in this maintenance window.</p>
+        /// <p>User-provided value that will be included in any Amazon CloudWatch Events events raised while running tasks for these targets in this maintenance window.</p>
         pub fn owner_information(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.owner_information(input.into());
             self
         }
-        /// <p>User-provided value that will be included in any Amazon CloudWatch Events events raised while
-        /// running tasks for these targets in this maintenance window.</p>
+        /// <p>User-provided value that will be included in any Amazon CloudWatch Events events raised while running tasks for these targets in this maintenance window.</p>
         pub fn set_owner_information(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19147,14 +16306,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>If <code>True</code>, then all fields that are required by the <a>RegisterTargetWithMaintenanceWindow</a> operation are also required for this API
-        /// request. Optional fields that aren't specified are set to null.</p>
+        /// <p>If <code>True</code>, then all fields that are required by the <code>RegisterTargetWithMaintenanceWindow</code> operation are also required for this API request. Optional fields that aren't specified are set to null.</p>
         pub fn replace(mut self, input: bool) -> Self {
             self.inner = self.inner.replace(input);
             self
         }
-        /// <p>If <code>True</code>, then all fields that are required by the <a>RegisterTargetWithMaintenanceWindow</a> operation are also required for this API
-        /// request. Optional fields that aren't specified are set to null.</p>
+        /// <p>If <code>True</code>, then all fields that are required by the <code>RegisterTargetWithMaintenanceWindow</code> operation are also required for this API request. Optional fields that aren't specified are set to null.</p>
         pub fn set_replace(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_replace(input);
             self
@@ -19162,61 +16319,19 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateMaintenanceWindowTask`.
     ///
-    /// <p>Modifies a task assigned to a maintenance window. You can't change the task type, but you
-    /// can change the following values:</p>
+    /// <p>Modifies a task assigned to a maintenance window. You can't change the task type, but you can change the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>TaskARN</code>. For example, you can change a <code>RUN_COMMAND</code> task from
-    /// <code>AWS-RunPowerShellScript</code> to <code>AWS-RunShellScript</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ServiceRoleArn</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TaskInvocationParameters</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Priority</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MaxConcurrency</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MaxErrors</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <note>
-    /// <p>One or more targets must be specified for maintenance window Run Command-type tasks.
-    /// Depending on the task, targets are optional for other maintenance window task types (Automation,
-    /// Lambda, and Step Functions). For more information about running tasks
-    /// that don't specify targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering
-    /// maintenance window tasks without targets</a> in the
-    /// <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <li> <p> <code>TaskARN</code>. For example, you can change a <code>RUN_COMMAND</code> task from <code>AWS-RunPowerShellScript</code> to <code>AWS-RunShellScript</code>.</p> </li>
+    /// <li> <p> <code>ServiceRoleArn</code> </p> </li>
+    /// <li> <p> <code>TaskInvocationParameters</code> </p> </li>
+    /// <li> <p> <code>Priority</code> </p> </li>
+    /// <li> <p> <code>MaxConcurrency</code> </p> </li>
+    /// <li> <p> <code>MaxErrors</code> </p> </li>
+    /// </ul> <note>
+    /// <p>One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the task, targets are optional for other maintenance window task types (Automation, Lambda, and Step Functions). For more information about running tasks that don't specify targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering maintenance window tasks without targets</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     /// </note>
-    /// <p>If the value for a parameter in <code>UpdateMaintenanceWindowTask</code> is null, then the
-    /// corresponding field isn't modified. If you set <code>Replace</code> to true, then all fields
-    /// required by the <a>RegisterTaskWithMaintenanceWindow</a> operation are required for
-    /// this request. Optional fields that aren't specified are set to null.</p>
-    /// <important>
-    /// <p>When you update a maintenance window task that has options specified in
-    /// <code>TaskInvocationParameters</code>, you must provide again all the
-    /// <code>TaskInvocationParameters</code> values that you want to retain. The values you don't
-    /// specify again are removed. For example, suppose that when you registered a Run Command task, you
-    /// specified <code>TaskInvocationParameters</code> values for <code>Comment</code>,
-    /// <code>NotificationConfig</code>, and <code>OutputS3BucketName</code>. If you update the
-    /// maintenance window task and specify only a different <code>OutputS3BucketName</code> value, the
-    /// values for <code>Comment</code> and <code>NotificationConfig</code> are removed.</p>
+    /// <p>If the value for a parameter in <code>UpdateMaintenanceWindowTask</code> is null, then the corresponding field isn't modified. If you set <code>Replace</code> to true, then all fields required by the <code>RegisterTaskWithMaintenanceWindow</code> operation are required for this request. Optional fields that aren't specified are set to null.</p> <important>
+    /// <p>When you update a maintenance window task that has options specified in <code>TaskInvocationParameters</code>, you must provide again all the <code>TaskInvocationParameters</code> values that you want to retain. The values you don't specify again are removed. For example, suppose that when you registered a Run Command task, you specified <code>TaskInvocationParameters</code> values for <code>Comment</code>, <code>NotificationConfig</code>, and <code>OutputS3BucketName</code>. If you update the maintenance window task and specify only a different <code>OutputS3BucketName</code> value, the values for <code>Comment</code> and <code>NotificationConfig</code> are removed.</p>
     /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateMaintenanceWindowTask<
@@ -19301,31 +16416,15 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_targets`](Self::set_targets).
         ///
-        /// <p>The targets (either managed nodes or tags) to modify. Managed nodes are specified using the
-        /// format <code>Key=instanceids,Values=instanceID_1,instanceID_2</code>. Tags are specified using
-        /// the format <code> Key=tag_name,Values=tag_value</code>. </p>
-        /// <note>
-        /// <p>One or more targets must be specified for maintenance window Run Command-type tasks.
-        /// Depending on the task, targets are optional for other maintenance window task types (Automation,
-        /// Lambda, and Step Functions). For more information about running tasks
-        /// that don't specify targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering
-        /// maintenance window tasks without targets</a> in the
-        /// <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+        /// <p>The targets (either managed nodes or tags) to modify. Managed nodes are specified using the format <code>Key=instanceids,Values=instanceID_1,instanceID_2</code>. Tags are specified using the format <code> Key=tag_name,Values=tag_value</code>. </p> <note>
+        /// <p>One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the task, targets are optional for other maintenance window task types (Automation, Lambda, and Step Functions). For more information about running tasks that don't specify targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering maintenance window tasks without targets</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         /// </note>
         pub fn targets(mut self, input: crate::model::Target) -> Self {
             self.inner = self.inner.targets(input);
             self
         }
-        /// <p>The targets (either managed nodes or tags) to modify. Managed nodes are specified using the
-        /// format <code>Key=instanceids,Values=instanceID_1,instanceID_2</code>. Tags are specified using
-        /// the format <code> Key=tag_name,Values=tag_value</code>. </p>
-        /// <note>
-        /// <p>One or more targets must be specified for maintenance window Run Command-type tasks.
-        /// Depending on the task, targets are optional for other maintenance window task types (Automation,
-        /// Lambda, and Step Functions). For more information about running tasks
-        /// that don't specify targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering
-        /// maintenance window tasks without targets</a> in the
-        /// <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+        /// <p>The targets (either managed nodes or tags) to modify. Managed nodes are specified using the format <code>Key=instanceids,Values=instanceID_1,instanceID_2</code>. Tags are specified using the format <code> Key=tag_name,Values=tag_value</code>. </p> <note>
+        /// <p>One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the task, targets are optional for other maintenance window task types (Automation, Lambda, and Step Functions). For more information about running tasks that don't specify targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering maintenance window tasks without targets</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         /// </note>
         pub fn set_targets(
             mut self,
@@ -19344,47 +16443,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_task_arn(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM service role for Amazon Web Services Systems Manager to assume when running a
-        /// maintenance window task. If you do not specify a service role ARN, Systems Manager uses your account's
-        /// service-linked role.  If no service-linked role for Systems Manager exists in your account, it is created when you run
-        /// <code>RegisterTaskWithMaintenanceWindow</code>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM service role for Amazon Web Services Systems Manager to assume when running a maintenance window task. If you do not specify a service role ARN, Systems Manager uses your account's service-linked role. If no service-linked role for Systems Manager exists in your account, it is created when you run <code>RegisterTaskWithMaintenanceWindow</code>.</p>
         /// <p>For more information, see the following topics in the in the <i>Amazon Web Services Systems Manager User Guide</i>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Using
-        /// service-linked roles for Systems Manager</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should I use a service-linked role or a custom service role to run maintenance window tasks?
-        /// </a>
-        /// </p>
-        /// </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Using service-linked roles for Systems Manager</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should I use a service-linked role or a custom service role to run maintenance window tasks? </a> </p> </li>
         /// </ul>
         pub fn service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.service_role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM service role for Amazon Web Services Systems Manager to assume when running a
-        /// maintenance window task. If you do not specify a service role ARN, Systems Manager uses your account's
-        /// service-linked role.  If no service-linked role for Systems Manager exists in your account, it is created when you run
-        /// <code>RegisterTaskWithMaintenanceWindow</code>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM service role for Amazon Web Services Systems Manager to assume when running a maintenance window task. If you do not specify a service role ARN, Systems Manager uses your account's service-linked role. If no service-linked role for Systems Manager exists in your account, it is created when you run <code>RegisterTaskWithMaintenanceWindow</code>.</p>
         /// <p>For more information, see the following topics in the in the <i>Amazon Web Services Systems Manager User Guide</i>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Using
-        /// service-linked roles for Systems Manager</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should I use a service-linked role or a custom service role to run maintenance window tasks?
-        /// </a>
-        /// </p>
-        /// </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Using service-linked roles for Systems Manager</a> </p> </li>
+        /// <li> <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should I use a service-linked role or a custom service role to run maintenance window tasks? </a> </p> </li>
         /// </ul>
         pub fn set_service_role_arn(
             mut self,
@@ -19397,13 +16470,8 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_task_parameters`](Self::set_task_parameters).
         ///
-        /// <p>The parameters to modify.</p>
-        /// <note>
-        /// <p>
-        /// <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs,
-        /// instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information
-        /// about how Systems Manager handles these options for the supported maintenance window task
-        /// types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p>
+        /// <p>The parameters to modify.</p> <note>
+        /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
         /// </note>
         /// <p>The map has the following format:</p>
         /// <p>Key: string, between 1 and 255 characters</p>
@@ -19416,13 +16484,8 @@ pub mod fluent_builders {
             self.inner = self.inner.task_parameters(k.into(), v);
             self
         }
-        /// <p>The parameters to modify.</p>
-        /// <note>
-        /// <p>
-        /// <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs,
-        /// instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information
-        /// about how Systems Manager handles these options for the supported maintenance window task
-        /// types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p>
+        /// <p>The parameters to modify.</p> <note>
+        /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
         /// </note>
         /// <p>The map has the following format:</p>
         /// <p>Key: string, between 1 and 255 characters</p>
@@ -19439,17 +16502,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_task_parameters(input);
             self
         }
-        /// <p>The parameters that the task should use during execution. Populate only the fields that
-        /// match the task type. All other fields should be empty.</p>
-        /// <important>
-        /// <p>When you update a maintenance window task that has options specified in
-        /// <code>TaskInvocationParameters</code>, you must provide again all the
-        /// <code>TaskInvocationParameters</code> values that you want to retain. The values you don't
-        /// specify again are removed. For example, suppose that when you registered a Run Command task, you
-        /// specified <code>TaskInvocationParameters</code> values for <code>Comment</code>,
-        /// <code>NotificationConfig</code>, and <code>OutputS3BucketName</code>. If you update the
-        /// maintenance window task and specify only a different <code>OutputS3BucketName</code> value, the
-        /// values for <code>Comment</code> and <code>NotificationConfig</code> are removed.</p>
+        /// <p>The parameters that the task should use during execution. Populate only the fields that match the task type. All other fields should be empty.</p> <important>
+        /// <p>When you update a maintenance window task that has options specified in <code>TaskInvocationParameters</code>, you must provide again all the <code>TaskInvocationParameters</code> values that you want to retain. The values you don't specify again are removed. For example, suppose that when you registered a Run Command task, you specified <code>TaskInvocationParameters</code> values for <code>Comment</code>, <code>NotificationConfig</code>, and <code>OutputS3BucketName</code>. If you update the maintenance window task and specify only a different <code>OutputS3BucketName</code> value, the values for <code>Comment</code> and <code>NotificationConfig</code> are removed.</p>
         /// </important>
         pub fn task_invocation_parameters(
             mut self,
@@ -19458,17 +16512,8 @@ pub mod fluent_builders {
             self.inner = self.inner.task_invocation_parameters(input);
             self
         }
-        /// <p>The parameters that the task should use during execution. Populate only the fields that
-        /// match the task type. All other fields should be empty.</p>
-        /// <important>
-        /// <p>When you update a maintenance window task that has options specified in
-        /// <code>TaskInvocationParameters</code>, you must provide again all the
-        /// <code>TaskInvocationParameters</code> values that you want to retain. The values you don't
-        /// specify again are removed. For example, suppose that when you registered a Run Command task, you
-        /// specified <code>TaskInvocationParameters</code> values for <code>Comment</code>,
-        /// <code>NotificationConfig</code>, and <code>OutputS3BucketName</code>. If you update the
-        /// maintenance window task and specify only a different <code>OutputS3BucketName</code> value, the
-        /// values for <code>Comment</code> and <code>NotificationConfig</code> are removed.</p>
+        /// <p>The parameters that the task should use during execution. Populate only the fields that match the task type. All other fields should be empty.</p> <important>
+        /// <p>When you update a maintenance window task that has options specified in <code>TaskInvocationParameters</code>, you must provide again all the <code>TaskInvocationParameters</code> values that you want to retain. The values you don't specify again are removed. For example, suppose that when you registered a Run Command task, you specified <code>TaskInvocationParameters</code> values for <code>Comment</code>, <code>NotificationConfig</code>, and <code>OutputS3BucketName</code>. If you update the maintenance window task and specify only a different <code>OutputS3BucketName</code> value, the values for <code>Comment</code> and <code>NotificationConfig</code> are removed.</p>
         /// </important>
         pub fn set_task_invocation_parameters(
             mut self,
@@ -19477,37 +16522,25 @@ pub mod fluent_builders {
             self.inner = self.inner.set_task_invocation_parameters(input);
             self
         }
-        /// <p>The new task priority to specify. The lower the number, the higher the priority. Tasks that
-        /// have the same priority are scheduled in parallel.</p>
+        /// <p>The new task priority to specify. The lower the number, the higher the priority. Tasks that have the same priority are scheduled in parallel.</p>
         pub fn priority(mut self, input: i32) -> Self {
             self.inner = self.inner.priority(input);
             self
         }
-        /// <p>The new task priority to specify. The lower the number, the higher the priority. Tasks that
-        /// have the same priority are scheduled in parallel.</p>
+        /// <p>The new task priority to specify. The lower the number, the higher the priority. Tasks that have the same priority are scheduled in parallel.</p>
         pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_priority(input);
             self
         }
-        /// <p>The new <code>MaxConcurrency</code> value you want to specify. <code>MaxConcurrency</code>
-        /// is the number of targets that are allowed to run this task in parallel.</p>
-        /// <note>
-        /// <p>For maintenance window tasks without a target specified, you can't supply a value for this
-        /// option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported
-        /// in the response to this command. This value doesn't affect the running of your task and can be
-        /// ignored.</p>
+        /// <p>The new <code>MaxConcurrency</code> value you want to specify. <code>MaxConcurrency</code> is the number of targets that are allowed to run this task in parallel.</p> <note>
+        /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This value doesn't affect the running of your task and can be ignored.</p>
         /// </note>
         pub fn max_concurrency(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.max_concurrency(input.into());
             self
         }
-        /// <p>The new <code>MaxConcurrency</code> value you want to specify. <code>MaxConcurrency</code>
-        /// is the number of targets that are allowed to run this task in parallel.</p>
-        /// <note>
-        /// <p>For maintenance window tasks without a target specified, you can't supply a value for this
-        /// option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported
-        /// in the response to this command. This value doesn't affect the running of your task and can be
-        /// ignored.</p>
+        /// <p>The new <code>MaxConcurrency</code> value you want to specify. <code>MaxConcurrency</code> is the number of targets that are allowed to run this task in parallel.</p> <note>
+        /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This value doesn't affect the running of your task and can be ignored.</p>
         /// </note>
         pub fn set_max_concurrency(
             mut self,
@@ -19516,49 +16549,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_concurrency(input);
             self
         }
-        /// <p>The new <code>MaxErrors</code> value to specify. <code>MaxErrors</code> is the maximum
-        /// number of errors that are allowed before the task stops being scheduled.</p>
-        /// <note>
-        /// <p>For maintenance window tasks without a target specified, you can't supply a value for this
-        /// option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported
-        /// in the response to this command. This value doesn't affect the running of your task and can be
-        /// ignored.</p>
+        /// <p>The new <code>MaxErrors</code> value to specify. <code>MaxErrors</code> is the maximum number of errors that are allowed before the task stops being scheduled.</p> <note>
+        /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This value doesn't affect the running of your task and can be ignored.</p>
         /// </note>
         pub fn max_errors(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.max_errors(input.into());
             self
         }
-        /// <p>The new <code>MaxErrors</code> value to specify. <code>MaxErrors</code> is the maximum
-        /// number of errors that are allowed before the task stops being scheduled.</p>
-        /// <note>
-        /// <p>For maintenance window tasks without a target specified, you can't supply a value for this
-        /// option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported
-        /// in the response to this command. This value doesn't affect the running of your task and can be
-        /// ignored.</p>
+        /// <p>The new <code>MaxErrors</code> value to specify. <code>MaxErrors</code> is the maximum number of errors that are allowed before the task stops being scheduled.</p> <note>
+        /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This value doesn't affect the running of your task and can be ignored.</p>
         /// </note>
         pub fn set_max_errors(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_max_errors(input);
             self
         }
-        /// <p>The new logging location in Amazon S3 to specify.</p>
-        /// <note>
-        /// <p>
-        /// <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the
-        /// <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure.
-        /// For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance
-        /// window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p>
+        /// <p>The new logging location in Amazon S3 to specify.</p> <note>
+        /// <p> <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
         /// </note>
         pub fn logging_info(mut self, input: crate::model::LoggingInfo) -> Self {
             self.inner = self.inner.logging_info(input);
             self
         }
-        /// <p>The new logging location in Amazon S3 to specify.</p>
-        /// <note>
-        /// <p>
-        /// <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the
-        /// <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure.
-        /// For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance
-        /// window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p>
+        /// <p>The new logging location in Amazon S3 to specify.</p> <note>
+        /// <p> <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
         /// </note>
         pub fn set_logging_info(
             mut self,
@@ -19587,43 +16600,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>If True, then all fields that are required by the <a>RegisterTaskWithMaintenanceWindow</a> operation are also required for this API request.
-        /// Optional fields that aren't specified are set to null.</p>
+        /// <p>If True, then all fields that are required by the <code>RegisterTaskWithMaintenanceWindow</code> operation are also required for this API request. Optional fields that aren't specified are set to null.</p>
         pub fn replace(mut self, input: bool) -> Self {
             self.inner = self.inner.replace(input);
             self
         }
-        /// <p>If True, then all fields that are required by the <a>RegisterTaskWithMaintenanceWindow</a> operation are also required for this API request.
-        /// Optional fields that aren't specified are set to null.</p>
+        /// <p>If True, then all fields that are required by the <code>RegisterTaskWithMaintenanceWindow</code> operation are also required for this API request. Optional fields that aren't specified are set to null.</p>
         pub fn set_replace(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_replace(input);
             self
         }
-        /// <p>Indicates whether tasks should continue to run after the cutoff time specified in the
-        /// maintenance windows is reached. </p>
+        /// <p>Indicates whether tasks should continue to run after the cutoff time specified in the maintenance windows is reached. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CONTINUE_TASK</code>: When the cutoff time is reached, any tasks that are running
-        /// continue. The default value.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CANCEL_TASK</code>:</p>
+        /// <li> <p> <code>CONTINUE_TASK</code>: When the cutoff time is reached, any tasks that are running continue. The default value.</p> </li>
+        /// <li> <p> <code>CANCEL_TASK</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>For Automation, Lambda, Step Functions tasks: When the cutoff
-        /// time is reached, any task invocations that are already running continue, but no new task
-        /// invocations are started.</p>
-        /// </li>
-        /// <li>
-        /// <p>For Run Command tasks: When the cutoff time is reached, the system sends a <a>CancelCommand</a> operation that attempts to cancel the command associated with the
-        /// task. However, there is no guarantee that the command will be terminated and the underlying
-        /// process stopped.</p>
-        /// </li>
-        /// </ul>
-        /// <p>The status for tasks that are not completed is <code>TIMED_OUT</code>.</p>
-        /// </li>
+        /// <li> <p>For Automation, Lambda, Step Functions tasks: When the cutoff time is reached, any task invocations that are already running continue, but no new task invocations are started.</p> </li>
+        /// <li> <p>For Run Command tasks: When the cutoff time is reached, the system sends a <code>CancelCommand</code> operation that attempts to cancel the command associated with the task. However, there is no guarantee that the command will be terminated and the underlying process stopped.</p> </li>
+        /// </ul> <p>The status for tasks that are not completed is <code>TIMED_OUT</code>.</p> </li>
         /// </ul>
         pub fn cutoff_behavior(
             mut self,
@@ -19632,31 +16626,14 @@ pub mod fluent_builders {
             self.inner = self.inner.cutoff_behavior(input);
             self
         }
-        /// <p>Indicates whether tasks should continue to run after the cutoff time specified in the
-        /// maintenance windows is reached. </p>
+        /// <p>Indicates whether tasks should continue to run after the cutoff time specified in the maintenance windows is reached. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CONTINUE_TASK</code>: When the cutoff time is reached, any tasks that are running
-        /// continue. The default value.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CANCEL_TASK</code>:</p>
+        /// <li> <p> <code>CONTINUE_TASK</code>: When the cutoff time is reached, any tasks that are running continue. The default value.</p> </li>
+        /// <li> <p> <code>CANCEL_TASK</code>:</p>
         /// <ul>
-        /// <li>
-        /// <p>For Automation, Lambda, Step Functions tasks: When the cutoff
-        /// time is reached, any task invocations that are already running continue, but no new task
-        /// invocations are started.</p>
-        /// </li>
-        /// <li>
-        /// <p>For Run Command tasks: When the cutoff time is reached, the system sends a <a>CancelCommand</a> operation that attempts to cancel the command associated with the
-        /// task. However, there is no guarantee that the command will be terminated and the underlying
-        /// process stopped.</p>
-        /// </li>
-        /// </ul>
-        /// <p>The status for tasks that are not completed is <code>TIMED_OUT</code>.</p>
-        /// </li>
+        /// <li> <p>For Automation, Lambda, Step Functions tasks: When the cutoff time is reached, any task invocations that are already running continue, but no new task invocations are started.</p> </li>
+        /// <li> <p>For Run Command tasks: When the cutoff time is reached, the system sends a <code>CancelCommand</code> operation that attempts to cancel the command associated with the task. However, there is no guarantee that the command will be terminated and the underlying process stopped.</p> </li>
+        /// </ul> <p>The status for tasks that are not completed is <code>TIMED_OUT</code>.</p> </li>
         /// </ul>
         pub fn set_cutoff_behavior(
             mut self,
@@ -19668,9 +16645,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateManagedInstanceRole`.
     ///
-    /// <p>Changes the Identity and Access Management (IAM) role that is assigned to the
-    /// on-premises server, edge device, or virtual machines (VM). IAM roles are first
-    /// assigned to these hybrid nodes during the activation process. For more information, see <a>CreateActivation</a>.</p>
+    /// <p>Changes the Identity and Access Management (IAM) role that is assigned to the on-premises server, edge device, or virtual machines (VM). IAM roles are first assigned to these hybrid nodes during the activation process. For more information, see <code>CreateActivation</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateManagedInstanceRole<
         C = aws_smithy_client::erase::DynConnector,
@@ -19750,12 +16725,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateOpsItem`.
     ///
-    /// <p>Edit or change an OpsItem. You must have permission in Identity and Access Management (IAM) to update an OpsItem. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting started with
-    /// OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    /// <p>Operations engineers and IT professionals use Amazon Web Services Systems Manager OpsCenter to view, investigate, and
-    /// remediate operational issues impacting the performance and health of their Amazon Web Services resources. For
-    /// more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">OpsCenter</a> in the
-    /// <i>Amazon Web Services Systems Manager User Guide</i>. </p>
+    /// <p>Edit or change an OpsItem. You must have permission in Identity and Access Management (IAM) to update an OpsItem. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>Operations engineers and IT professionals use Amazon Web Services Systems Manager OpsCenter to view, investigate, and remediate operational issues impacting the performance and health of their Amazon Web Services resources. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateOpsItem<
         C = aws_smithy_client::erase::DynConnector,
@@ -19812,14 +16783,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Update the information about the OpsItem. Provide enough information so that users reading
-        /// this OpsItem for the first time understand the issue. </p>
+        /// <p>Update the information about the OpsItem. Provide enough information so that users reading this OpsItem for the first time understand the issue. </p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>Update the information about the OpsItem. Provide enough information so that users reading
-        /// this OpsItem for the first time understand the issue. </p>
+        /// <p>Update the information about the OpsItem. Provide enough information so that users reading this OpsItem for the first time understand the issue. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
@@ -19828,26 +16797,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_operational_data`](Self::set_operational_data).
         ///
-        /// <p>Add new keys or edit existing key-value pairs of the OperationalData map in the OpsItem
-        /// object.</p>
-        /// <p>Operational data is custom data that provides useful reference details about the OpsItem.
-        /// For example, you can specify log files, error strings, license keys, troubleshooting tips, or
-        /// other relevant data. You enter operational data as key-value pairs. The key has a maximum length
-        /// of 128 characters. The value has a maximum size of 20 KB.</p>
-        /// <important>
-        /// <p>Operational data keys <i>can't</i> begin with the following:
-        /// <code>amazon</code>, <code>aws</code>, <code>amzn</code>, <code>ssm</code>,
-        /// <code>/amazon</code>, <code>/aws</code>, <code>/amzn</code>, <code>/ssm</code>.</p>
+        /// <p>Add new keys or edit existing key-value pairs of the OperationalData map in the OpsItem object.</p>
+        /// <p>Operational data is custom data that provides useful reference details about the OpsItem. For example, you can specify log files, error strings, license keys, troubleshooting tips, or other relevant data. You enter operational data as key-value pairs. The key has a maximum length of 128 characters. The value has a maximum size of 20 KB.</p> <important>
+        /// <p>Operational data keys <i>can't</i> begin with the following: <code>amazon</code>, <code>aws</code>, <code>amzn</code>, <code>ssm</code>, <code>/amazon</code>, <code>/aws</code>, <code>/amzn</code>, <code>/ssm</code>.</p>
         /// </important>
-        /// <p>You can choose to make the data searchable by other users in the account or you can restrict
-        /// search access. Searchable data means that all users with access to the OpsItem Overview page (as
-        /// provided by the <a>DescribeOpsItems</a> API operation) can view and search on the
-        /// specified data. Operational data that isn't searchable is only viewable by users who have access
-        /// to the OpsItem (as provided by the <a>GetOpsItem</a> API operation).</p>
-        /// <p>Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in
-        /// the request. Use the <code>/aws/automations</code> key in OperationalData to associate an
-        /// Automation runbook with the OpsItem. To view Amazon Web Services CLI example commands that use these keys, see
-        /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+        /// <p>You can choose to make the data searchable by other users in the account or you can restrict search access. Searchable data means that all users with access to the OpsItem Overview page (as provided by the <code>DescribeOpsItems</code> API operation) can view and search on the specified data. Operational data that isn't searchable is only viewable by users who have access to the OpsItem (as provided by the <code>GetOpsItem</code> API operation).</p>
+        /// <p>Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request. Use the <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the OpsItem. To view Amazon Web Services CLI example commands that use these keys, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn operational_data(
             mut self,
             k: impl Into<std::string::String>,
@@ -19856,26 +16811,12 @@ pub mod fluent_builders {
             self.inner = self.inner.operational_data(k.into(), v);
             self
         }
-        /// <p>Add new keys or edit existing key-value pairs of the OperationalData map in the OpsItem
-        /// object.</p>
-        /// <p>Operational data is custom data that provides useful reference details about the OpsItem.
-        /// For example, you can specify log files, error strings, license keys, troubleshooting tips, or
-        /// other relevant data. You enter operational data as key-value pairs. The key has a maximum length
-        /// of 128 characters. The value has a maximum size of 20 KB.</p>
-        /// <important>
-        /// <p>Operational data keys <i>can't</i> begin with the following:
-        /// <code>amazon</code>, <code>aws</code>, <code>amzn</code>, <code>ssm</code>,
-        /// <code>/amazon</code>, <code>/aws</code>, <code>/amzn</code>, <code>/ssm</code>.</p>
+        /// <p>Add new keys or edit existing key-value pairs of the OperationalData map in the OpsItem object.</p>
+        /// <p>Operational data is custom data that provides useful reference details about the OpsItem. For example, you can specify log files, error strings, license keys, troubleshooting tips, or other relevant data. You enter operational data as key-value pairs. The key has a maximum length of 128 characters. The value has a maximum size of 20 KB.</p> <important>
+        /// <p>Operational data keys <i>can't</i> begin with the following: <code>amazon</code>, <code>aws</code>, <code>amzn</code>, <code>ssm</code>, <code>/amazon</code>, <code>/aws</code>, <code>/amzn</code>, <code>/ssm</code>.</p>
         /// </important>
-        /// <p>You can choose to make the data searchable by other users in the account or you can restrict
-        /// search access. Searchable data means that all users with access to the OpsItem Overview page (as
-        /// provided by the <a>DescribeOpsItems</a> API operation) can view and search on the
-        /// specified data. Operational data that isn't searchable is only viewable by users who have access
-        /// to the OpsItem (as provided by the <a>GetOpsItem</a> API operation).</p>
-        /// <p>Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in
-        /// the request. Use the <code>/aws/automations</code> key in OperationalData to associate an
-        /// Automation runbook with the OpsItem. To view Amazon Web Services CLI example commands that use these keys, see
-        /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+        /// <p>You can choose to make the data searchable by other users in the account or you can restrict search access. Searchable data means that all users with access to the OpsItem Overview page (as provided by the <code>DescribeOpsItems</code> API operation) can view and search on the specified data. Operational data that isn't searchable is only viewable by users who have access to the OpsItem (as provided by the <code>GetOpsItem</code> API operation).</p>
+        /// <p>Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request. Use the <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the OpsItem. To view Amazon Web Services CLI example commands that use these keys, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn set_operational_data(
             mut self,
             input: std::option::Option<
@@ -19906,14 +16847,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_notifications`](Self::set_notifications).
         ///
-        /// <p>The Amazon Resource Name (ARN) of an SNS topic where notifications are sent when this
-        /// OpsItem is edited or changed.</p>
+        /// <p>The Amazon Resource Name (ARN) of an SNS topic where notifications are sent when this OpsItem is edited or changed.</p>
         pub fn notifications(mut self, input: crate::model::OpsItemNotification) -> Self {
             self.inner = self.inner.notifications(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an SNS topic where notifications are sent when this
-        /// OpsItem is edited or changed.</p>
+        /// <p>The Amazon Resource Name (ARN) of an SNS topic where notifications are sent when this OpsItem is edited or changed.</p>
         pub fn set_notifications(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::OpsItemNotification>>,
@@ -19935,16 +16874,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_related_ops_items`](Self::set_related_ops_items).
         ///
-        /// <p>One or more OpsItems that share something in common with the current OpsItems. For example,
-        /// related OpsItems can include OpsItems with similar error messages, impacted resources, or
-        /// statuses for the impacted resource.</p>
+        /// <p>One or more OpsItems that share something in common with the current OpsItems. For example, related OpsItems can include OpsItems with similar error messages, impacted resources, or statuses for the impacted resource.</p>
         pub fn related_ops_items(mut self, input: crate::model::RelatedOpsItem) -> Self {
             self.inner = self.inner.related_ops_items(input);
             self
         }
-        /// <p>One or more OpsItems that share something in common with the current OpsItems. For example,
-        /// related OpsItems can include OpsItems with similar error messages, impacted resources, or
-        /// statuses for the impacted resource.</p>
+        /// <p>One or more OpsItems that share something in common with the current OpsItems. For example, related OpsItems can include OpsItems with similar error messages, impacted resources, or statuses for the impacted resource.</p>
         pub fn set_related_ops_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RelatedOpsItem>>,
@@ -19952,14 +16887,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_related_ops_items(input);
             self
         }
-        /// <p>The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or
-        /// <code>Resolved</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems.html#OpsCenter-working-with-OpsItems-editing-details">Editing OpsItem details</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+        /// <p>The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems.html#OpsCenter-working-with-OpsItems-editing-details">Editing OpsItem details</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn status(mut self, input: crate::model::OpsItemStatus) -> Self {
             self.inner = self.inner.status(input);
             self
         }
-        /// <p>The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or
-        /// <code>Resolved</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems.html#OpsCenter-working-with-OpsItems-editing-details">Editing OpsItem details</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+        /// <p>The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems.html#OpsCenter-working-with-OpsItems-editing-details">Editing OpsItem details</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::OpsItemStatus>,
@@ -20007,14 +16940,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_severity(input);
             self
         }
-        /// <p>The time a runbook workflow started. Currently reported only for the OpsItem type
-        /// <code>/aws/changerequest</code>.</p>
+        /// <p>The time a runbook workflow started. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.</p>
         pub fn actual_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.actual_start_time(input);
             self
         }
-        /// <p>The time a runbook workflow started. Currently reported only for the OpsItem type
-        /// <code>/aws/changerequest</code>.</p>
+        /// <p>The time a runbook workflow started. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.</p>
         pub fn set_actual_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -20022,14 +16953,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_actual_start_time(input);
             self
         }
-        /// <p>The time a runbook workflow ended. Currently reported only for the OpsItem type
-        /// <code>/aws/changerequest</code>.</p>
+        /// <p>The time a runbook workflow ended. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.</p>
         pub fn actual_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.actual_end_time(input);
             self
         }
-        /// <p>The time a runbook workflow ended. Currently reported only for the OpsItem type
-        /// <code>/aws/changerequest</code>.</p>
+        /// <p>The time a runbook workflow ended. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.</p>
         pub fn set_actual_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -20037,14 +16966,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_actual_end_time(input);
             self
         }
-        /// <p>The time specified in a change request for a runbook workflow to start. Currently supported
-        /// only for the OpsItem type <code>/aws/changerequest</code>.</p>
+        /// <p>The time specified in a change request for a runbook workflow to start. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>
         pub fn planned_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.planned_start_time(input);
             self
         }
-        /// <p>The time specified in a change request for a runbook workflow to start. Currently supported
-        /// only for the OpsItem type <code>/aws/changerequest</code>.</p>
+        /// <p>The time specified in a change request for a runbook workflow to start. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>
         pub fn set_planned_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -20052,14 +16979,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_planned_start_time(input);
             self
         }
-        /// <p>The time specified in a change request for a runbook workflow to end. Currently supported
-        /// only for the OpsItem type <code>/aws/changerequest</code>.</p>
+        /// <p>The time specified in a change request for a runbook workflow to end. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>
         pub fn planned_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.planned_end_time(input);
             self
         }
-        /// <p>The time specified in a change request for a runbook workflow to end. Currently supported
-        /// only for the OpsItem type <code>/aws/changerequest</code>.</p>
+        /// <p>The time specified in a change request for a runbook workflow to end. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>
         pub fn set_planned_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -20183,11 +17108,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdatePatchBaseline`.
     ///
-    /// <p>Modifies an existing patch baseline. Fields not specified in the request are left
-    /// unchanged.</p>
-    /// <note>
-    /// <p>For information about valid key-value pairs in <code>PatchFilters</code> for each supported
-    /// operating system type, see <a>PatchFilter</a>.</p>
+    /// <p>Modifies an existing patch baseline. Fields not specified in the request are left unchanged.</p> <note>
+    /// <p>For information about valid key-value pairs in <code>PatchFilters</code> for each supported operating system type, see <code>PatchFilter</code>.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePatchBaseline<
@@ -20296,17 +17218,13 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_approved_patches`](Self::set_approved_patches).
         ///
         /// <p>A list of explicitly approved patches for the baseline.</p>
-        /// <p>For information about accepted formats for lists of approved patches and rejected patches,
-        /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About
-        /// package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+        /// <p>For information about accepted formats for lists of approved patches and rejected patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn approved_patches(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.approved_patches(input.into());
             self
         }
         /// <p>A list of explicitly approved patches for the baseline.</p>
-        /// <p>For information about accepted formats for lists of approved patches and rejected patches,
-        /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About
-        /// package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+        /// <p>For information about accepted formats for lists of approved patches and rejected patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn set_approved_patches(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -20330,16 +17248,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_approved_patches_compliance_level(input);
             self
         }
-        /// <p>Indicates whether the list of approved patches includes non-security updates that should be
-        /// applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed
-        /// nodes only.</p>
+        /// <p>Indicates whether the list of approved patches includes non-security updates that should be applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed nodes only.</p>
         pub fn approved_patches_enable_non_security(mut self, input: bool) -> Self {
             self.inner = self.inner.approved_patches_enable_non_security(input);
             self
         }
-        /// <p>Indicates whether the list of approved patches includes non-security updates that should be
-        /// applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed
-        /// nodes only.</p>
+        /// <p>Indicates whether the list of approved patches includes non-security updates that should be applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed nodes only.</p>
         pub fn set_approved_patches_enable_non_security(
             mut self,
             input: std::option::Option<bool>,
@@ -20352,17 +17266,13 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_rejected_patches`](Self::set_rejected_patches).
         ///
         /// <p>A list of explicitly rejected patches for the baseline.</p>
-        /// <p>For information about accepted formats for lists of approved patches and rejected patches,
-        /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About
-        /// package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+        /// <p>For information about accepted formats for lists of approved patches and rejected patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn rejected_patches(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.rejected_patches(input.into());
             self
         }
         /// <p>A list of explicitly rejected patches for the baseline.</p>
-        /// <p>For information about accepted formats for lists of approved patches and rejected patches,
-        /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About
-        /// package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+        /// <p>For information about accepted formats for lists of approved patches and rejected patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn set_rejected_patches(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -20370,55 +17280,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_rejected_patches(input);
             self
         }
-        /// <p>The action for Patch Manager to take on patches included in the
-        /// <code>RejectedPackages</code> list.</p>
+        /// <p>The action for Patch Manager to take on patches included in the <code>RejectedPackages</code> list.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>ALLOW_AS_DEPENDENCY</code>
-        /// </b>: A package in the
-        /// <code>Rejected</code> patches list is installed only if it is a dependency of another package.
-        /// It is considered compliant with the patch baseline, and its status is reported as
-        /// <code>InstalledOther</code>. This is the default action if no option is specified.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>BLOCK</code>
-        /// </b>: Packages in the
-        /// <code>RejectedPatches</code> list, and packages that include them as dependencies, aren't
-        /// installed under any circumstances. If a package was installed before it was added to the
-        /// <code>Rejected</code> patches list, it is considered non-compliant with the patch baseline,
-        /// and its status is reported as <code>InstalledRejected</code>.</p>
-        /// </li>
+        /// <li> <p> <b> <code>ALLOW_AS_DEPENDENCY</code> </b>: A package in the <code>Rejected</code> patches list is installed only if it is a dependency of another package. It is considered compliant with the patch baseline, and its status is reported as <code>InstalledOther</code>. This is the default action if no option is specified.</p> </li>
+        /// <li> <p> <b> <code>BLOCK</code> </b>: Packages in the <code>RejectedPatches</code> list, and packages that include them as dependencies, aren't installed under any circumstances. If a package was installed before it was added to the <code>Rejected</code> patches list, it is considered non-compliant with the patch baseline, and its status is reported as <code>InstalledRejected</code>.</p> </li>
         /// </ul>
         pub fn rejected_patches_action(mut self, input: crate::model::PatchAction) -> Self {
             self.inner = self.inner.rejected_patches_action(input);
             self
         }
-        /// <p>The action for Patch Manager to take on patches included in the
-        /// <code>RejectedPackages</code> list.</p>
+        /// <p>The action for Patch Manager to take on patches included in the <code>RejectedPackages</code> list.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>ALLOW_AS_DEPENDENCY</code>
-        /// </b>: A package in the
-        /// <code>Rejected</code> patches list is installed only if it is a dependency of another package.
-        /// It is considered compliant with the patch baseline, and its status is reported as
-        /// <code>InstalledOther</code>. This is the default action if no option is specified.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>BLOCK</code>
-        /// </b>: Packages in the
-        /// <code>RejectedPatches</code> list, and packages that include them as dependencies, aren't
-        /// installed under any circumstances. If a package was installed before it was added to the
-        /// <code>Rejected</code> patches list, it is considered non-compliant with the patch baseline,
-        /// and its status is reported as <code>InstalledRejected</code>.</p>
-        /// </li>
+        /// <li> <p> <b> <code>ALLOW_AS_DEPENDENCY</code> </b>: A package in the <code>Rejected</code> patches list is installed only if it is a dependency of another package. It is considered compliant with the patch baseline, and its status is reported as <code>InstalledOther</code>. This is the default action if no option is specified.</p> </li>
+        /// <li> <p> <b> <code>BLOCK</code> </b>: Packages in the <code>RejectedPatches</code> list, and packages that include them as dependencies, aren't installed under any circumstances. If a package was installed before it was added to the <code>Rejected</code> patches list, it is considered non-compliant with the patch baseline, and its status is reported as <code>InstalledRejected</code>.</p> </li>
         /// </ul>
         pub fn set_rejected_patches_action(
             mut self,
@@ -20441,14 +17315,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_sources`](Self::set_sources).
         ///
-        /// <p>Information about the patches to use to update the managed nodes, including target operating
-        /// systems and source repositories. Applies to Linux managed nodes only.</p>
+        /// <p>Information about the patches to use to update the managed nodes, including target operating systems and source repositories. Applies to Linux managed nodes only.</p>
         pub fn sources(mut self, input: crate::model::PatchSource) -> Self {
             self.inner = self.inner.sources(input);
             self
         }
-        /// <p>Information about the patches to use to update the managed nodes, including target operating
-        /// systems and source repositories. Applies to Linux managed nodes only.</p>
+        /// <p>Information about the patches to use to update the managed nodes, including target operating systems and source repositories. Applies to Linux managed nodes only.</p>
         pub fn set_sources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PatchSource>>,
@@ -20456,16 +17328,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sources(input);
             self
         }
-        /// <p>If True, then all fields that are required by the <a>CreatePatchBaseline</a>
-        /// operation are also required for this API request. Optional fields that aren't specified are set
-        /// to null.</p>
+        /// <p>If True, then all fields that are required by the <code>CreatePatchBaseline</code> operation are also required for this API request. Optional fields that aren't specified are set to null.</p>
         pub fn replace(mut self, input: bool) -> Self {
             self.inner = self.inner.replace(input);
             self
         }
-        /// <p>If True, then all fields that are required by the <a>CreatePatchBaseline</a>
-        /// operation are also required for this API request. Optional fields that aren't specified are set
-        /// to null.</p>
+        /// <p>If True, then all fields that are required by the <code>CreatePatchBaseline</code> operation are also required for this API request. Optional fields that aren't specified are set to null.</p>
         pub fn set_replace(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_replace(input);
             self
@@ -20473,15 +17341,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateResourceDataSync`.
     ///
-    /// <p>Update a resource data sync. After you create a resource data sync for a Region, you can't
-    /// change the account options for that sync. For example, if you create a sync in the us-east-2
-    /// (Ohio) Region and you choose the <code>Include only the current account</code> option, you can't
-    /// edit that sync later and choose the <code>Include all accounts from my Organizations
-    /// configuration</code> option. Instead, you must delete the first resource data sync, and create a
-    /// new one.</p>
-    /// <note>
-    /// <p>This API operation only supports a resource data sync that was created with a
-    /// SyncFromSource <code>SyncType</code>.</p>
+    /// <p>Update a resource data sync. After you create a resource data sync for a Region, you can't change the account options for that sync. For example, if you create a sync in the us-east-2 (Ohio) Region and you choose the <code>Include only the current account</code> option, you can't edit that sync later and choose the <code>Include all accounts from my Organizations configuration</code> option. Instead, you must delete the first resource data sync, and create a new one.</p> <note>
+    /// <p>This API operation only supports a resource data sync that was created with a SyncFromSource <code>SyncType</code>.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateResourceDataSync<
@@ -20549,14 +17410,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sync_name(input);
             self
         }
-        /// <p>The type of resource data sync. The supported <code>SyncType</code> is
-        /// SyncFromSource.</p>
+        /// <p>The type of resource data sync. The supported <code>SyncType</code> is SyncFromSource.</p>
         pub fn sync_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.sync_type(input.into());
             self
         }
-        /// <p>The type of resource data sync. The supported <code>SyncType</code> is
-        /// SyncFromSource.</p>
+        /// <p>The type of resource data sync. The supported <code>SyncType</code> is SyncFromSource.</p>
         pub fn set_sync_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_sync_type(input);
             self
@@ -20577,19 +17436,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateServiceSetting`.
     ///
-    /// <p>
-    /// <code>ServiceSetting</code> is an account-level setting for an Amazon Web Services service. This setting
-    /// defines how a user interacts with or uses a service or a feature of a service. For example, if an
-    /// Amazon Web Services service charges money to the account based on feature or service usage, then the Amazon Web Services
-    /// service team might create a default setting of "false". This means the user can't use this
-    /// feature unless they change the setting to "true" and intentionally opt in for a paid
-    /// feature.</p>
-    /// <p>Services map a <code>SettingId</code> object to a setting value. Amazon Web Services services teams define
-    /// the default value for a <code>SettingId</code>. You can't create a new <code>SettingId</code>,
-    /// but you can overwrite the default value if you have the <code>ssm:UpdateServiceSetting</code>
-    /// permission for the setting. Use the <a>GetServiceSetting</a> API operation to view the
-    /// current value. Or, use the <a>ResetServiceSetting</a> to change the value back to the
-    /// original value defined by the Amazon Web Services service team.</p>
+    /// <p> <code>ServiceSetting</code> is an account-level setting for an Amazon Web Services service. This setting defines how a user interacts with or uses a service or a feature of a service. For example, if an Amazon Web Services service charges money to the account based on feature or service usage, then the Amazon Web Services service team might create a default setting of "false". This means the user can't use this feature unless they change the setting to "true" and intentionally opt in for a paid feature.</p>
+    /// <p>Services map a <code>SettingId</code> object to a setting value. Amazon Web Services services teams define the default value for a <code>SettingId</code>. You can't create a new <code>SettingId</code>, but you can overwrite the default value if you have the <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the <code>GetServiceSetting</code> API operation to view the current value. Or, use the <code>ResetServiceSetting</code> to change the value back to the original value defined by the Amazon Web Services service team.</p>
     /// <p>Update the service setting for the account. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateServiceSetting<
@@ -20647,173 +17495,55 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the service setting to reset. For example,
-        /// <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>.
-        /// The setting ID can be one of the following.</p>
+        /// <p>The Amazon Resource Name (ARN) of the service setting to reset. For example, <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>. The setting ID can be one of the following.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>/ssm/automation/customer-script-log-destination</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>/ssm/automation/customer-script-log-group-name</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>/ssm/documents/console/public-sharing-permission</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>/ssm/parameter-store/default-parameter-tier</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>/ssm/parameter-store/high-throughput-enabled</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>/ssm/managed-instance/activation-tier</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>/ssm/automation/customer-script-log-destination</code> </p> </li>
+        /// <li> <p> <code>/ssm/automation/customer-script-log-group-name</code> </p> </li>
+        /// <li> <p> <code>/ssm/documents/console/public-sharing-permission</code> </p> </li>
+        /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li>
+        /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li>
+        /// <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li>
         /// </ul>
         pub fn setting_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.setting_id(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the service setting to reset. For example,
-        /// <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>.
-        /// The setting ID can be one of the following.</p>
+        /// <p>The Amazon Resource Name (ARN) of the service setting to reset. For example, <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>. The setting ID can be one of the following.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>/ssm/automation/customer-script-log-destination</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>/ssm/automation/customer-script-log-group-name</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>/ssm/documents/console/public-sharing-permission</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>/ssm/parameter-store/default-parameter-tier</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>/ssm/parameter-store/high-throughput-enabled</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>/ssm/managed-instance/activation-tier</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>/ssm/automation/customer-script-log-destination</code> </p> </li>
+        /// <li> <p> <code>/ssm/automation/customer-script-log-group-name</code> </p> </li>
+        /// <li> <p> <code>/ssm/documents/console/public-sharing-permission</code> </p> </li>
+        /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li>
+        /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li>
+        /// <li> <p> <code>/ssm/managed-instance/activation-tier</code> </p> </li>
         /// </ul>
         pub fn set_setting_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_setting_id(input);
             self
         }
-        /// <p>The new value to specify for the service setting. The following list specifies the available
-        /// values for each setting.</p>
+        /// <p>The new value to specify for the service setting. The following list specifies the available values for each setting.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>,
-        /// <code>Advanced</code>, <code>Intelligent-Tiering</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or
-        /// <code>false</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>/ssm/managed-instance/activation-tier</code>: <code>true</code> or
-        /// <code>false</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>/ssm/automation/customer-script-log-destination</code>: <code>CloudWatch</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>/ssm/automation/customer-script-log-group-name</code>: the name of an Amazon CloudWatch Logs log group</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>/ssm/documents/console/public-sharing-permission</code>: <code>Enable</code> or
-        /// <code>Disable</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>/ssm/managed-instance/activation-tier</code>: <code>standard</code> or
-        /// <code>advanced</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>, <code>Advanced</code>, <code>Intelligent-Tiering</code> </p> </li>
+        /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or <code>false</code> </p> </li>
+        /// <li> <p> <code>/ssm/managed-instance/activation-tier</code>: <code>true</code> or <code>false</code> </p> </li>
+        /// <li> <p> <code>/ssm/automation/customer-script-log-destination</code>: <code>CloudWatch</code> </p> </li>
+        /// <li> <p> <code>/ssm/automation/customer-script-log-group-name</code>: the name of an Amazon CloudWatch Logs log group</p> </li>
+        /// <li> <p> <code>/ssm/documents/console/public-sharing-permission</code>: <code>Enable</code> or <code>Disable</code> </p> </li>
+        /// <li> <p> <code>/ssm/managed-instance/activation-tier</code>: <code>standard</code> or <code>advanced</code> </p> </li>
         /// </ul>
         pub fn setting_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.setting_value(input.into());
             self
         }
-        /// <p>The new value to specify for the service setting. The following list specifies the available
-        /// values for each setting.</p>
+        /// <p>The new value to specify for the service setting. The following list specifies the available values for each setting.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>,
-        /// <code>Advanced</code>, <code>Intelligent-Tiering</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or
-        /// <code>false</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>/ssm/managed-instance/activation-tier</code>: <code>true</code> or
-        /// <code>false</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>/ssm/automation/customer-script-log-destination</code>: <code>CloudWatch</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>/ssm/automation/customer-script-log-group-name</code>: the name of an Amazon CloudWatch Logs log group</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>/ssm/documents/console/public-sharing-permission</code>: <code>Enable</code> or
-        /// <code>Disable</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>/ssm/managed-instance/activation-tier</code>: <code>standard</code> or
-        /// <code>advanced</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>, <code>Advanced</code>, <code>Intelligent-Tiering</code> </p> </li>
+        /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or <code>false</code> </p> </li>
+        /// <li> <p> <code>/ssm/managed-instance/activation-tier</code>: <code>true</code> or <code>false</code> </p> </li>
+        /// <li> <p> <code>/ssm/automation/customer-script-log-destination</code>: <code>CloudWatch</code> </p> </li>
+        /// <li> <p> <code>/ssm/automation/customer-script-log-group-name</code>: the name of an Amazon CloudWatch Logs log group</p> </li>
+        /// <li> <p> <code>/ssm/documents/console/public-sharing-permission</code>: <code>Enable</code> or <code>Disable</code> </p> </li>
+        /// <li> <p> <code>/ssm/managed-instance/activation-tier</code>: <code>standard</code> or <code>advanced</code> </p> </li>
         /// </ul>
         pub fn set_setting_value(
             mut self,

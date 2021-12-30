@@ -3831,8 +3831,7 @@ pub struct ListChannelsModeratedByAppInstanceUserOutput {
     /// <p>The moderated channels in the request.</p>
     pub channels:
         std::option::Option<std::vec::Vec<crate::model::ChannelModeratedByAppInstanceUserSummary>>,
-    /// <p>The token returned from previous API requests until the number of channels moderated by
-    /// the user is reached.</p>
+    /// <p>The token returned from previous API requests until the number of channels moderated by the user is reached.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListChannelsModeratedByAppInstanceUserOutput {
@@ -3842,8 +3841,7 @@ impl ListChannelsModeratedByAppInstanceUserOutput {
     ) -> std::option::Option<&[crate::model::ChannelModeratedByAppInstanceUserSummary]> {
         self.channels.as_deref()
     }
-    /// <p>The token returned from previous API requests until the number of channels moderated by
-    /// the user is reached.</p>
+    /// <p>The token returned from previous API requests until the number of channels moderated by the user is reached.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3892,14 +3890,12 @@ pub mod list_channels_moderated_by_app_instance_user_output {
             self.channels = input;
             self
         }
-        /// <p>The token returned from previous API requests until the number of channels moderated by
-        /// the user is reached.</p>
+        /// <p>The token returned from previous API requests until the number of channels moderated by the user is reached.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token returned from previous API requests until the number of channels moderated by
-        /// the user is reached.</p>
+        /// <p>The token returned from previous API requests until the number of channels moderated by the user is reached.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3927,8 +3923,7 @@ impl ListChannelsModeratedByAppInstanceUserOutput {
 pub struct ListChannelsOutput {
     /// <p>The information about each channel.</p>
     pub channels: std::option::Option<std::vec::Vec<crate::model::ChannelSummary>>,
-    /// <p>The token returned from previous API requests until the number of channels is
-    /// reached.</p>
+    /// <p>The token returned from previous API requests until the number of channels is reached.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListChannelsOutput {
@@ -3936,8 +3931,7 @@ impl ListChannelsOutput {
     pub fn channels(&self) -> std::option::Option<&[crate::model::ChannelSummary]> {
         self.channels.as_deref()
     }
-    /// <p>The token returned from previous API requests until the number of channels is
-    /// reached.</p>
+    /// <p>The token returned from previous API requests until the number of channels is reached.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3979,14 +3973,12 @@ pub mod list_channels_output {
             self.channels = input;
             self
         }
-        /// <p>The token returned from previous API requests until the number of channels is
-        /// reached.</p>
+        /// <p>The token returned from previous API requests until the number of channels is reached.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token returned from previous API requests until the number of channels is
-        /// reached.</p>
+        /// <p>The token returned from previous API requests until the number of channels is reached.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4013,8 +4005,7 @@ impl ListChannelsOutput {
 pub struct ListChannelModeratorsOutput {
     /// <p>The ARN of the channel.</p>
     pub channel_arn: std::option::Option<std::string::String>,
-    /// <p>The token passed by previous API calls until all requested moderators are
-    /// returned.</p>
+    /// <p>The token passed by previous API calls until all requested moderators are returned.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The information about and names of each moderator.</p>
     pub channel_moderators:
@@ -4025,8 +4016,7 @@ impl ListChannelModeratorsOutput {
     pub fn channel_arn(&self) -> std::option::Option<&str> {
         self.channel_arn.as_deref()
     }
-    /// <p>The token passed by previous API calls until all requested moderators are
-    /// returned.</p>
+    /// <p>The token passed by previous API calls until all requested moderators are returned.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -4068,14 +4058,12 @@ pub mod list_channel_moderators_output {
             self.channel_arn = input;
             self
         }
-        /// <p>The token passed by previous API calls until all requested moderators are
-        /// returned.</p>
+        /// <p>The token passed by previous API calls until all requested moderators are returned.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token passed by previous API calls until all requested moderators are
-        /// returned.</p>
+        /// <p>The token passed by previous API calls until all requested moderators are returned.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4321,8 +4309,7 @@ pub struct ListChannelMembershipsOutput {
     /// <p>The information for the requested channel memberships.</p>
     pub channel_memberships:
         std::option::Option<std::vec::Vec<crate::model::ChannelMembershipSummary>>,
-    /// <p>The token passed by previous API calls until all requested channel memberships are
-    /// returned.</p>
+    /// <p>The token passed by previous API calls until all requested channel memberships are returned.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListChannelMembershipsOutput {
@@ -4336,8 +4323,7 @@ impl ListChannelMembershipsOutput {
     ) -> std::option::Option<&[crate::model::ChannelMembershipSummary]> {
         self.channel_memberships.as_deref()
     }
-    /// <p>The token passed by previous API calls until all requested channel memberships are
-    /// returned.</p>
+    /// <p>The token passed by previous API calls until all requested channel memberships are returned.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -4395,14 +4381,12 @@ pub mod list_channel_memberships_output {
             self.channel_memberships = input;
             self
         }
-        /// <p>The token passed by previous API calls until all requested channel memberships are
-        /// returned.</p>
+        /// <p>The token passed by previous API calls until all requested channel memberships are returned.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token passed by previous API calls until all requested channel memberships are
-        /// returned.</p>
+        /// <p>The token passed by previous API calls until all requested channel memberships are returned.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7753,13 +7737,11 @@ impl DescribeAppInstanceUserOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAppInstanceAdminOutput {
-    /// <p>The ARN and name of the <code>AppInstanceUser</code>, the ARN of the <code>AppInstance</code>, and the created and
-    /// last-updated timestamps. All timestamps use epoch milliseconds.</p>
+    /// <p>The ARN and name of the <code>AppInstanceUser</code>, the ARN of the <code>AppInstance</code>, and the created and last-updated timestamps. All timestamps use epoch milliseconds.</p>
     pub app_instance_admin: std::option::Option<crate::model::AppInstanceAdmin>,
 }
 impl DescribeAppInstanceAdminOutput {
-    /// <p>The ARN and name of the <code>AppInstanceUser</code>, the ARN of the <code>AppInstance</code>, and the created and
-    /// last-updated timestamps. All timestamps use epoch milliseconds.</p>
+    /// <p>The ARN and name of the <code>AppInstanceUser</code>, the ARN of the <code>AppInstance</code>, and the created and last-updated timestamps. All timestamps use epoch milliseconds.</p>
     pub fn app_instance_admin(&self) -> std::option::Option<&crate::model::AppInstanceAdmin> {
         self.app_instance_admin.as_ref()
     }
@@ -7780,14 +7762,12 @@ pub mod describe_app_instance_admin_output {
         pub(crate) app_instance_admin: std::option::Option<crate::model::AppInstanceAdmin>,
     }
     impl Builder {
-        /// <p>The ARN and name of the <code>AppInstanceUser</code>, the ARN of the <code>AppInstance</code>, and the created and
-        /// last-updated timestamps. All timestamps use epoch milliseconds.</p>
+        /// <p>The ARN and name of the <code>AppInstanceUser</code>, the ARN of the <code>AppInstance</code>, and the created and last-updated timestamps. All timestamps use epoch milliseconds.</p>
         pub fn app_instance_admin(mut self, input: crate::model::AppInstanceAdmin) -> Self {
             self.app_instance_admin = Some(input);
             self
         }
-        /// <p>The ARN and name of the <code>AppInstanceUser</code>, the ARN of the <code>AppInstance</code>, and the created and
-        /// last-updated timestamps. All timestamps use epoch milliseconds.</p>
+        /// <p>The ARN and name of the <code>AppInstanceUser</code>, the ARN of the <code>AppInstance</code>, and the created and last-updated timestamps. All timestamps use epoch milliseconds.</p>
         pub fn set_app_instance_admin(
             mut self,
             input: std::option::Option<crate::model::AppInstanceAdmin>,
@@ -7814,13 +7794,11 @@ impl DescribeAppInstanceAdminOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAppInstanceOutput {
-    /// <p>The ARN, metadata, created and last-updated timestamps, and the name of the <code>AppInstance</code>. All
-    /// timestamps use epoch milliseconds.</p>
+    /// <p>The ARN, metadata, created and last-updated timestamps, and the name of the <code>AppInstance</code>. All timestamps use epoch milliseconds.</p>
     pub app_instance: std::option::Option<crate::model::AppInstance>,
 }
 impl DescribeAppInstanceOutput {
-    /// <p>The ARN, metadata, created and last-updated timestamps, and the name of the <code>AppInstance</code>. All
-    /// timestamps use epoch milliseconds.</p>
+    /// <p>The ARN, metadata, created and last-updated timestamps, and the name of the <code>AppInstance</code>. All timestamps use epoch milliseconds.</p>
     pub fn app_instance(&self) -> std::option::Option<&crate::model::AppInstance> {
         self.app_instance.as_ref()
     }
@@ -7841,14 +7819,12 @@ pub mod describe_app_instance_output {
         pub(crate) app_instance: std::option::Option<crate::model::AppInstance>,
     }
     impl Builder {
-        /// <p>The ARN, metadata, created and last-updated timestamps, and the name of the <code>AppInstance</code>. All
-        /// timestamps use epoch milliseconds.</p>
+        /// <p>The ARN, metadata, created and last-updated timestamps, and the name of the <code>AppInstance</code>. All timestamps use epoch milliseconds.</p>
         pub fn app_instance(mut self, input: crate::model::AppInstance) -> Self {
             self.app_instance = Some(input);
             self
         }
-        /// <p>The ARN, metadata, created and last-updated timestamps, and the name of the <code>AppInstance</code>. All
-        /// timestamps use epoch milliseconds.</p>
+        /// <p>The ARN, metadata, created and last-updated timestamps, and the name of the <code>AppInstance</code>. All timestamps use epoch milliseconds.</p>
         pub fn set_app_instance(
             mut self,
             input: std::option::Option<crate::model::AppInstance>,
@@ -9455,19 +9431,11 @@ impl CreateMeetingDialOutOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMeetingOutput {
-    /// <p>
-    /// The meeting information, including the meeting ID and
-    /// <code>MediaPlacement</code>
-    /// .
-    /// </p>
+    /// <p> The meeting information, including the meeting ID and <code>MediaPlacement</code> . </p>
     pub meeting: std::option::Option<crate::model::Meeting>,
 }
 impl CreateMeetingOutput {
-    /// <p>
-    /// The meeting information, including the meeting ID and
-    /// <code>MediaPlacement</code>
-    /// .
-    /// </p>
+    /// <p> The meeting information, including the meeting ID and <code>MediaPlacement</code> . </p>
     pub fn meeting(&self) -> std::option::Option<&crate::model::Meeting> {
         self.meeting.as_ref()
     }
@@ -9488,20 +9456,12 @@ pub mod create_meeting_output {
         pub(crate) meeting: std::option::Option<crate::model::Meeting>,
     }
     impl Builder {
-        /// <p>
-        /// The meeting information, including the meeting ID and
-        /// <code>MediaPlacement</code>
-        /// .
-        /// </p>
+        /// <p> The meeting information, including the meeting ID and <code>MediaPlacement</code> . </p>
         pub fn meeting(mut self, input: crate::model::Meeting) -> Self {
             self.meeting = Some(input);
             self
         }
-        /// <p>
-        /// The meeting information, including the meeting ID and
-        /// <code>MediaPlacement</code>
-        /// .
-        /// </p>
+        /// <p> The meeting information, including the meeting ID and <code>MediaPlacement</code> . </p>
         pub fn set_meeting(mut self, input: std::option::Option<crate::model::Meeting>) -> Self {
             self.meeting = input;
             self
@@ -9525,11 +9485,11 @@ impl CreateMeetingOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMediaCapturePipelineOutput {
-    /// <p>A media capture pipeline object, the ID, source type, source ARN, sink type, and  sink ARN of a media capture pipeline object.</p>
+    /// <p>A media capture pipeline object, the ID, source type, source ARN, sink type, and sink ARN of a media capture pipeline object.</p>
     pub media_capture_pipeline: std::option::Option<crate::model::MediaCapturePipeline>,
 }
 impl CreateMediaCapturePipelineOutput {
-    /// <p>A media capture pipeline object, the ID, source type, source ARN, sink type, and  sink ARN of a media capture pipeline object.</p>
+    /// <p>A media capture pipeline object, the ID, source type, source ARN, sink type, and sink ARN of a media capture pipeline object.</p>
     pub fn media_capture_pipeline(
         &self,
     ) -> std::option::Option<&crate::model::MediaCapturePipeline> {
@@ -9552,12 +9512,12 @@ pub mod create_media_capture_pipeline_output {
         pub(crate) media_capture_pipeline: std::option::Option<crate::model::MediaCapturePipeline>,
     }
     impl Builder {
-        /// <p>A media capture pipeline object, the ID, source type, source ARN, sink type, and  sink ARN of a media capture pipeline object.</p>
+        /// <p>A media capture pipeline object, the ID, source type, source ARN, sink type, and sink ARN of a media capture pipeline object.</p>
         pub fn media_capture_pipeline(mut self, input: crate::model::MediaCapturePipeline) -> Self {
             self.media_capture_pipeline = Some(input);
             self
         }
-        /// <p>A media capture pipeline object, the ID, source type, source ARN, sink type, and  sink ARN of a media capture pipeline object.</p>
+        /// <p>A media capture pipeline object, the ID, source type, source ARN, sink type, and sink ARN of a media capture pipeline object.</p>
         pub fn set_media_capture_pipeline(
             mut self,
             input: std::option::Option<crate::model::MediaCapturePipeline>,
@@ -9735,8 +9695,7 @@ impl CreateChannelMembershipOutput {
 pub struct CreateChannelBanOutput {
     /// <p>The ARN of the response to the ban request.</p>
     pub channel_arn: std::option::Option<std::string::String>,
-    /// <p>The <code>ChannelArn</code> and <code>BannedIdentity</code> of the member in the ban
-    /// response.</p>
+    /// <p>The <code>ChannelArn</code> and <code>BannedIdentity</code> of the member in the ban response.</p>
     pub member: std::option::Option<crate::model::Identity>,
 }
 impl CreateChannelBanOutput {
@@ -9744,8 +9703,7 @@ impl CreateChannelBanOutput {
     pub fn channel_arn(&self) -> std::option::Option<&str> {
         self.channel_arn.as_deref()
     }
-    /// <p>The <code>ChannelArn</code> and <code>BannedIdentity</code> of the member in the ban
-    /// response.</p>
+    /// <p>The <code>ChannelArn</code> and <code>BannedIdentity</code> of the member in the ban response.</p>
     pub fn member(&self) -> std::option::Option<&crate::model::Identity> {
         self.member.as_ref()
     }
@@ -9778,14 +9736,12 @@ pub mod create_channel_ban_output {
             self.channel_arn = input;
             self
         }
-        /// <p>The <code>ChannelArn</code> and <code>BannedIdentity</code> of the member in the ban
-        /// response.</p>
+        /// <p>The <code>ChannelArn</code> and <code>BannedIdentity</code> of the member in the ban response.</p>
         pub fn member(mut self, input: crate::model::Identity) -> Self {
             self.member = Some(input);
             self
         }
-        /// <p>The <code>ChannelArn</code> and <code>BannedIdentity</code> of the member in the ban
-        /// response.</p>
+        /// <p>The <code>ChannelArn</code> and <code>BannedIdentity</code> of the member in the ban response.</p>
         pub fn set_member(mut self, input: std::option::Option<crate::model::Identity>) -> Self {
             self.member = input;
             self
@@ -10217,13 +10173,11 @@ impl CreateAccountOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchUpdateUserOutput {
-    /// <p>If the <a>BatchUpdateUser</a> action fails for one or more of the user IDs in the
-    /// request, a list of the user IDs is returned, along with error codes and error messages.</p>
+    /// <p>If the <code>BatchUpdateUser</code> action fails for one or more of the user IDs in the request, a list of the user IDs is returned, along with error codes and error messages.</p>
     pub user_errors: std::option::Option<std::vec::Vec<crate::model::UserError>>,
 }
 impl BatchUpdateUserOutput {
-    /// <p>If the <a>BatchUpdateUser</a> action fails for one or more of the user IDs in the
-    /// request, a list of the user IDs is returned, along with error codes and error messages.</p>
+    /// <p>If the <code>BatchUpdateUser</code> action fails for one or more of the user IDs in the request, a list of the user IDs is returned, along with error codes and error messages.</p>
     pub fn user_errors(&self) -> std::option::Option<&[crate::model::UserError]> {
         self.user_errors.as_deref()
     }
@@ -10248,16 +10202,14 @@ pub mod batch_update_user_output {
         ///
         /// To override the contents of this collection use [`set_user_errors`](Self::set_user_errors).
         ///
-        /// <p>If the <a>BatchUpdateUser</a> action fails for one or more of the user IDs in the
-        /// request, a list of the user IDs is returned, along with error codes and error messages.</p>
+        /// <p>If the <code>BatchUpdateUser</code> action fails for one or more of the user IDs in the request, a list of the user IDs is returned, along with error codes and error messages.</p>
         pub fn user_errors(mut self, input: crate::model::UserError) -> Self {
             let mut v = self.user_errors.unwrap_or_default();
             v.push(input);
             self.user_errors = Some(v);
             self
         }
-        /// <p>If the <a>BatchUpdateUser</a> action fails for one or more of the user IDs in the
-        /// request, a list of the user IDs is returned, along with error codes and error messages.</p>
+        /// <p>If the <code>BatchUpdateUser</code> action fails for one or more of the user IDs in the request, a list of the user IDs is returned, along with error codes and error messages.</p>
         pub fn set_user_errors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UserError>>,
@@ -10348,13 +10300,11 @@ impl BatchUpdatePhoneNumberOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchUnsuspendUserOutput {
-    /// <p>If the <a>BatchUnsuspendUser</a> action fails for one or more of the user IDs in the
-    /// request, a list of the user IDs is returned, along with error codes and error messages.</p>
+    /// <p>If the <code>BatchUnsuspendUser</code> action fails for one or more of the user IDs in the request, a list of the user IDs is returned, along with error codes and error messages.</p>
     pub user_errors: std::option::Option<std::vec::Vec<crate::model::UserError>>,
 }
 impl BatchUnsuspendUserOutput {
-    /// <p>If the <a>BatchUnsuspendUser</a> action fails for one or more of the user IDs in the
-    /// request, a list of the user IDs is returned, along with error codes and error messages.</p>
+    /// <p>If the <code>BatchUnsuspendUser</code> action fails for one or more of the user IDs in the request, a list of the user IDs is returned, along with error codes and error messages.</p>
     pub fn user_errors(&self) -> std::option::Option<&[crate::model::UserError]> {
         self.user_errors.as_deref()
     }
@@ -10379,16 +10329,14 @@ pub mod batch_unsuspend_user_output {
         ///
         /// To override the contents of this collection use [`set_user_errors`](Self::set_user_errors).
         ///
-        /// <p>If the <a>BatchUnsuspendUser</a> action fails for one or more of the user IDs in the
-        /// request, a list of the user IDs is returned, along with error codes and error messages.</p>
+        /// <p>If the <code>BatchUnsuspendUser</code> action fails for one or more of the user IDs in the request, a list of the user IDs is returned, along with error codes and error messages.</p>
         pub fn user_errors(mut self, input: crate::model::UserError) -> Self {
             let mut v = self.user_errors.unwrap_or_default();
             v.push(input);
             self.user_errors = Some(v);
             self
         }
-        /// <p>If the <a>BatchUnsuspendUser</a> action fails for one or more of the user IDs in the
-        /// request, a list of the user IDs is returned, along with error codes and error messages.</p>
+        /// <p>If the <code>BatchUnsuspendUser</code> action fails for one or more of the user IDs in the request, a list of the user IDs is returned, along with error codes and error messages.</p>
         pub fn set_user_errors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UserError>>,
@@ -10415,13 +10363,11 @@ impl BatchUnsuspendUserOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchSuspendUserOutput {
-    /// <p>If the <a>BatchSuspendUser</a> action fails for one or more of the user IDs in the
-    /// request, a list of the user IDs is returned, along with error codes and error messages.</p>
+    /// <p>If the <code>BatchSuspendUser</code> action fails for one or more of the user IDs in the request, a list of the user IDs is returned, along with error codes and error messages.</p>
     pub user_errors: std::option::Option<std::vec::Vec<crate::model::UserError>>,
 }
 impl BatchSuspendUserOutput {
-    /// <p>If the <a>BatchSuspendUser</a> action fails for one or more of the user IDs in the
-    /// request, a list of the user IDs is returned, along with error codes and error messages.</p>
+    /// <p>If the <code>BatchSuspendUser</code> action fails for one or more of the user IDs in the request, a list of the user IDs is returned, along with error codes and error messages.</p>
     pub fn user_errors(&self) -> std::option::Option<&[crate::model::UserError]> {
         self.user_errors.as_deref()
     }
@@ -10446,16 +10392,14 @@ pub mod batch_suspend_user_output {
         ///
         /// To override the contents of this collection use [`set_user_errors`](Self::set_user_errors).
         ///
-        /// <p>If the <a>BatchSuspendUser</a> action fails for one or more of the user IDs in the
-        /// request, a list of the user IDs is returned, along with error codes and error messages.</p>
+        /// <p>If the <code>BatchSuspendUser</code> action fails for one or more of the user IDs in the request, a list of the user IDs is returned, along with error codes and error messages.</p>
         pub fn user_errors(mut self, input: crate::model::UserError) -> Self {
             let mut v = self.user_errors.unwrap_or_default();
             v.push(input);
             self.user_errors = Some(v);
             self
         }
-        /// <p>If the <a>BatchSuspendUser</a> action fails for one or more of the user IDs in the
-        /// request, a list of the user IDs is returned, along with error codes and error messages.</p>
+        /// <p>If the <code>BatchSuspendUser</code> action fails for one or more of the user IDs in the request, a list of the user IDs is returned, along with error codes and error messages.</p>
         pub fn set_user_errors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UserError>>,
@@ -10611,8 +10555,7 @@ impl BatchCreateRoomMembershipOutput {
 pub struct BatchCreateChannelMembershipOutput {
     /// <p>The list of channel memberships in the response.</p>
     pub batch_channel_memberships: std::option::Option<crate::model::BatchChannelMemberships>,
-    /// <p>If the action fails for one or more of the memberships in the request, a list of the
-    /// memberships is returned, along with error codes and error messages.</p>
+    /// <p>If the action fails for one or more of the memberships in the request, a list of the memberships is returned, along with error codes and error messages.</p>
     pub errors: std::option::Option<std::vec::Vec<crate::model::BatchCreateChannelMembershipError>>,
 }
 impl BatchCreateChannelMembershipOutput {
@@ -10622,8 +10565,7 @@ impl BatchCreateChannelMembershipOutput {
     ) -> std::option::Option<&crate::model::BatchChannelMemberships> {
         self.batch_channel_memberships.as_ref()
     }
-    /// <p>If the action fails for one or more of the memberships in the request, a list of the
-    /// memberships is returned, along with error codes and error messages.</p>
+    /// <p>If the action fails for one or more of the memberships in the request, a list of the memberships is returned, along with error codes and error messages.</p>
     pub fn errors(
         &self,
     ) -> std::option::Option<&[crate::model::BatchCreateChannelMembershipError]> {
@@ -10670,16 +10612,14 @@ pub mod batch_create_channel_membership_output {
         ///
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
-        /// <p>If the action fails for one or more of the memberships in the request, a list of the
-        /// memberships is returned, along with error codes and error messages.</p>
+        /// <p>If the action fails for one or more of the memberships in the request, a list of the memberships is returned, along with error codes and error messages.</p>
         pub fn errors(mut self, input: crate::model::BatchCreateChannelMembershipError) -> Self {
             let mut v = self.errors.unwrap_or_default();
             v.push(input);
             self.errors = Some(v);
             self
         }
-        /// <p>If the action fails for one or more of the memberships in the request, a list of the
-        /// memberships is returned, along with error codes and error messages.</p>
+        /// <p>If the action fails for one or more of the memberships in the request, a list of the memberships is returned, along with error codes and error messages.</p>
         pub fn set_errors(
             mut self,
             input: std::option::Option<
@@ -10926,13 +10866,11 @@ impl AssociatePhoneNumbersWithVoiceConnectorGroupOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociatePhoneNumbersWithVoiceConnectorOutput {
-    /// <p>If the action fails for one or more of the phone numbers in the request, a list of the phone numbers is returned, along with error codes and
-    /// error messages.</p>
+    /// <p>If the action fails for one or more of the phone numbers in the request, a list of the phone numbers is returned, along with error codes and error messages.</p>
     pub phone_number_errors: std::option::Option<std::vec::Vec<crate::model::PhoneNumberError>>,
 }
 impl AssociatePhoneNumbersWithVoiceConnectorOutput {
-    /// <p>If the action fails for one or more of the phone numbers in the request, a list of the phone numbers is returned, along with error codes and
-    /// error messages.</p>
+    /// <p>If the action fails for one or more of the phone numbers in the request, a list of the phone numbers is returned, along with error codes and error messages.</p>
     pub fn phone_number_errors(&self) -> std::option::Option<&[crate::model::PhoneNumberError]> {
         self.phone_number_errors.as_deref()
     }
@@ -10958,16 +10896,14 @@ pub mod associate_phone_numbers_with_voice_connector_output {
         ///
         /// To override the contents of this collection use [`set_phone_number_errors`](Self::set_phone_number_errors).
         ///
-        /// <p>If the action fails for one or more of the phone numbers in the request, a list of the phone numbers is returned, along with error codes and
-        /// error messages.</p>
+        /// <p>If the action fails for one or more of the phone numbers in the request, a list of the phone numbers is returned, along with error codes and error messages.</p>
         pub fn phone_number_errors(mut self, input: crate::model::PhoneNumberError) -> Self {
             let mut v = self.phone_number_errors.unwrap_or_default();
             v.push(input);
             self.phone_number_errors = Some(v);
             self
         }
-        /// <p>If the action fails for one or more of the phone numbers in the request, a list of the phone numbers is returned, along with error codes and
-        /// error messages.</p>
+        /// <p>If the action fails for one or more of the phone numbers in the request, a list of the phone numbers is returned, along with error codes and error messages.</p>
         pub fn set_phone_number_errors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PhoneNumberError>>,

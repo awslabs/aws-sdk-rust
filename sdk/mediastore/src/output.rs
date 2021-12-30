@@ -306,10 +306,7 @@ impl ListTagsForResourceOutput {
 pub struct ListContainersOutput {
     /// <p>The names of the containers.</p>
     pub containers: std::option::Option<std::vec::Vec<crate::model::Container>>,
-    /// <p>
-    /// <code>NextToken</code> is the token to use in the next call to <code>ListContainers</code>.
-    /// This token is returned only if you included the <code>MaxResults</code> tag in the original
-    /// command, and only if there are still containers to return. </p>
+    /// <p> <code>NextToken</code> is the token to use in the next call to <code>ListContainers</code>. This token is returned only if you included the <code>MaxResults</code> tag in the original command, and only if there are still containers to return. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListContainersOutput {
@@ -317,10 +314,7 @@ impl ListContainersOutput {
     pub fn containers(&self) -> std::option::Option<&[crate::model::Container]> {
         self.containers.as_deref()
     }
-    /// <p>
-    /// <code>NextToken</code> is the token to use in the next call to <code>ListContainers</code>.
-    /// This token is returned only if you included the <code>MaxResults</code> tag in the original
-    /// command, and only if there are still containers to return. </p>
+    /// <p> <code>NextToken</code> is the token to use in the next call to <code>ListContainers</code>. This token is returned only if you included the <code>MaxResults</code> tag in the original command, and only if there are still containers to return. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -362,18 +356,12 @@ pub mod list_containers_output {
             self.containers = input;
             self
         }
-        /// <p>
-        /// <code>NextToken</code> is the token to use in the next call to <code>ListContainers</code>.
-        /// This token is returned only if you included the <code>MaxResults</code> tag in the original
-        /// command, and only if there are still containers to return. </p>
+        /// <p> <code>NextToken</code> is the token to use in the next call to <code>ListContainers</code>. This token is returned only if you included the <code>MaxResults</code> tag in the original command, and only if there are still containers to return. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>
-        /// <code>NextToken</code> is the token to use in the next call to <code>ListContainers</code>.
-        /// This token is returned only if you included the <code>MaxResults</code> tag in the original
-        /// command, and only if there are still containers to return. </p>
+        /// <p> <code>NextToken</code> is the token to use in the next call to <code>ListContainers</code>. This token is returned only if you included the <code>MaxResults</code> tag in the original command, and only if there are still containers to return. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -836,33 +824,35 @@ impl DeleteContainerOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateContainerOutput {
-    /// <p>ContainerARN: The Amazon Resource Name (ARN) of the newly created container. The ARN
-    /// has the following format: arn:aws:<region>:<account that owns this
-    /// container>:container/<name of container>. For example:
-    /// arn:aws:mediastore:us-west-2:111122223333:container/movies </p>
+    /// <p>ContainerARN: The Amazon Resource Name (ARN) of the newly created container. The ARN has the following format: arn:aws:<region>
+    /// :
+    /// <account that owns this container>
+    /// :container/
+    /// <name of container>
+    /// . For example: arn:aws:mediastore:us-west-2:111122223333:container/movies
+    /// </name>
+    /// </account>
+    /// </region></p>
     /// <p>ContainerName: The container name as specified in the request.</p>
     /// <p>CreationTime: Unix time stamp.</p>
-    /// <p>Status: The status of container creation or deletion. The status is one of the
-    /// following: <code>CREATING</code>, <code>ACTIVE</code>, or <code>DELETING</code>. While the
-    /// service is creating the container, the status is <code>CREATING</code>. When an endpoint is
-    /// available, the status changes to <code>ACTIVE</code>.</p>
-    /// <p>The return value does not include the container's endpoint. To make downstream
-    /// requests, you must obtain this value by using <a>DescribeContainer</a> or <a>ListContainers</a>.</p>
+    /// <p>Status: The status of container creation or deletion. The status is one of the following: <code>CREATING</code>, <code>ACTIVE</code>, or <code>DELETING</code>. While the service is creating the container, the status is <code>CREATING</code>. When an endpoint is available, the status changes to <code>ACTIVE</code>.</p>
+    /// <p>The return value does not include the container's endpoint. To make downstream requests, you must obtain this value by using <code>DescribeContainer</code> or <code>ListContainers</code>.</p>
     pub container: std::option::Option<crate::model::Container>,
 }
 impl CreateContainerOutput {
-    /// <p>ContainerARN: The Amazon Resource Name (ARN) of the newly created container. The ARN
-    /// has the following format: arn:aws:<region>:<account that owns this
-    /// container>:container/<name of container>. For example:
-    /// arn:aws:mediastore:us-west-2:111122223333:container/movies </p>
+    /// <p>ContainerARN: The Amazon Resource Name (ARN) of the newly created container. The ARN has the following format: arn:aws:<region>
+    /// :
+    /// <account that owns this container>
+    /// :container/
+    /// <name of container>
+    /// . For example: arn:aws:mediastore:us-west-2:111122223333:container/movies
+    /// </name>
+    /// </account>
+    /// </region></p>
     /// <p>ContainerName: The container name as specified in the request.</p>
     /// <p>CreationTime: Unix time stamp.</p>
-    /// <p>Status: The status of container creation or deletion. The status is one of the
-    /// following: <code>CREATING</code>, <code>ACTIVE</code>, or <code>DELETING</code>. While the
-    /// service is creating the container, the status is <code>CREATING</code>. When an endpoint is
-    /// available, the status changes to <code>ACTIVE</code>.</p>
-    /// <p>The return value does not include the container's endpoint. To make downstream
-    /// requests, you must obtain this value by using <a>DescribeContainer</a> or <a>ListContainers</a>.</p>
+    /// <p>Status: The status of container creation or deletion. The status is one of the following: <code>CREATING</code>, <code>ACTIVE</code>, or <code>DELETING</code>. While the service is creating the container, the status is <code>CREATING</code>. When an endpoint is available, the status changes to <code>ACTIVE</code>.</p>
+    /// <p>The return value does not include the container's endpoint. To make downstream requests, you must obtain this value by using <code>DescribeContainer</code> or <code>ListContainers</code>.</p>
     pub fn container(&self) -> std::option::Option<&crate::model::Container> {
         self.container.as_ref()
     }
@@ -883,34 +873,36 @@ pub mod create_container_output {
         pub(crate) container: std::option::Option<crate::model::Container>,
     }
     impl Builder {
-        /// <p>ContainerARN: The Amazon Resource Name (ARN) of the newly created container. The ARN
-        /// has the following format: arn:aws:<region>:<account that owns this
-        /// container>:container/<name of container>. For example:
-        /// arn:aws:mediastore:us-west-2:111122223333:container/movies </p>
+        /// <p>ContainerARN: The Amazon Resource Name (ARN) of the newly created container. The ARN has the following format: arn:aws:<region>
+        /// :
+        /// <account that owns this container>
+        /// :container/
+        /// <name of container>
+        /// . For example: arn:aws:mediastore:us-west-2:111122223333:container/movies
+        /// </name>
+        /// </account>
+        /// </region></p>
         /// <p>ContainerName: The container name as specified in the request.</p>
         /// <p>CreationTime: Unix time stamp.</p>
-        /// <p>Status: The status of container creation or deletion. The status is one of the
-        /// following: <code>CREATING</code>, <code>ACTIVE</code>, or <code>DELETING</code>. While the
-        /// service is creating the container, the status is <code>CREATING</code>. When an endpoint is
-        /// available, the status changes to <code>ACTIVE</code>.</p>
-        /// <p>The return value does not include the container's endpoint. To make downstream
-        /// requests, you must obtain this value by using <a>DescribeContainer</a> or <a>ListContainers</a>.</p>
+        /// <p>Status: The status of container creation or deletion. The status is one of the following: <code>CREATING</code>, <code>ACTIVE</code>, or <code>DELETING</code>. While the service is creating the container, the status is <code>CREATING</code>. When an endpoint is available, the status changes to <code>ACTIVE</code>.</p>
+        /// <p>The return value does not include the container's endpoint. To make downstream requests, you must obtain this value by using <code>DescribeContainer</code> or <code>ListContainers</code>.</p>
         pub fn container(mut self, input: crate::model::Container) -> Self {
             self.container = Some(input);
             self
         }
-        /// <p>ContainerARN: The Amazon Resource Name (ARN) of the newly created container. The ARN
-        /// has the following format: arn:aws:<region>:<account that owns this
-        /// container>:container/<name of container>. For example:
-        /// arn:aws:mediastore:us-west-2:111122223333:container/movies </p>
+        /// <p>ContainerARN: The Amazon Resource Name (ARN) of the newly created container. The ARN has the following format: arn:aws:<region>
+        /// :
+        /// <account that owns this container>
+        /// :container/
+        /// <name of container>
+        /// . For example: arn:aws:mediastore:us-west-2:111122223333:container/movies
+        /// </name>
+        /// </account>
+        /// </region></p>
         /// <p>ContainerName: The container name as specified in the request.</p>
         /// <p>CreationTime: Unix time stamp.</p>
-        /// <p>Status: The status of container creation or deletion. The status is one of the
-        /// following: <code>CREATING</code>, <code>ACTIVE</code>, or <code>DELETING</code>. While the
-        /// service is creating the container, the status is <code>CREATING</code>. When an endpoint is
-        /// available, the status changes to <code>ACTIVE</code>.</p>
-        /// <p>The return value does not include the container's endpoint. To make downstream
-        /// requests, you must obtain this value by using <a>DescribeContainer</a> or <a>ListContainers</a>.</p>
+        /// <p>Status: The status of container creation or deletion. The status is one of the following: <code>CREATING</code>, <code>ACTIVE</code>, or <code>DELETING</code>. While the service is creating the container, the status is <code>CREATING</code>. When an endpoint is available, the status changes to <code>ACTIVE</code>.</p>
+        /// <p>The return value does not include the container's endpoint. To make downstream requests, you must obtain this value by using <code>DescribeContainer</code> or <code>ListContainers</code>.</p>
         pub fn set_container(
             mut self,
             input: std::option::Option<crate::model::Container>,

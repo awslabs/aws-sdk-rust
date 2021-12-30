@@ -308,8 +308,7 @@ pub mod create_managed_endpoint_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags of the managed endpoint.
-        /// </p>
+        /// <p>The tags of the managed endpoint. </p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -320,8 +319,7 @@ pub mod create_managed_endpoint_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The tags of the managed endpoint.
-        /// </p>
+        /// <p>The tags of the managed endpoint. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -3790,8 +3788,7 @@ pub struct CreateManagedEndpointInput {
     pub configuration_overrides: std::option::Option<crate::model::ConfigurationOverrides>,
     /// <p>The client idempotency token for this create call.</p>
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The tags of the managed endpoint.
-    /// </p>
+    /// <p>The tags of the managed endpoint. </p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3830,8 +3827,7 @@ impl CreateManagedEndpointInput {
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The tags of the managed endpoint.
-    /// </p>
+    /// <p>The tags of the managed endpoint. </p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>

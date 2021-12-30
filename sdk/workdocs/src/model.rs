@@ -1858,8 +1858,7 @@ pub struct FolderMetadata {
     pub modified_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The resource state of the folder.</p>
     pub resource_state: std::option::Option<crate::model::ResourceStateType>,
-    /// <p>The unique identifier created from the subfolders and documents of the
-    /// folder.</p>
+    /// <p>The unique identifier created from the subfolders and documents of the folder.</p>
     pub signature: std::option::Option<std::string::String>,
     /// <p>List of labels on the folder.</p>
     pub labels: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1897,8 +1896,7 @@ impl FolderMetadata {
     pub fn resource_state(&self) -> std::option::Option<&crate::model::ResourceStateType> {
         self.resource_state.as_ref()
     }
-    /// <p>The unique identifier created from the subfolders and documents of the
-    /// folder.</p>
+    /// <p>The unique identifier created from the subfolders and documents of the folder.</p>
     pub fn signature(&self) -> std::option::Option<&str> {
         self.signature.as_deref()
     }
@@ -2033,14 +2031,12 @@ pub mod folder_metadata {
             self.resource_state = input;
             self
         }
-        /// <p>The unique identifier created from the subfolders and documents of the
-        /// folder.</p>
+        /// <p>The unique identifier created from the subfolders and documents of the folder.</p>
         pub fn signature(mut self, input: impl Into<std::string::String>) -> Self {
             self.signature = Some(input.into());
             self
         }
-        /// <p>The unique identifier created from the subfolders and documents of the
-        /// folder.</p>
+        /// <p>The unique identifier created from the subfolders and documents of the folder.</p>
         pub fn set_signature(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.signature = input;
             self
@@ -3129,12 +3125,9 @@ pub struct Comment {
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the comment.</p>
     pub status: std::option::Option<crate::model::CommentStatusType>,
-    /// <p>The visibility of the comment. Options are either PRIVATE, where the comment is
-    /// visible only to the comment author and document owner and co-owners, or PUBLIC, where
-    /// the comment is visible to document owners, co-owners, and contributors.</p>
+    /// <p>The visibility of the comment. Options are either PRIVATE, where the comment is visible only to the comment author and document owner and co-owners, or PUBLIC, where the comment is visible to document owners, co-owners, and contributors.</p>
     pub visibility: std::option::Option<crate::model::CommentVisibilityType>,
-    /// <p>If the comment is a reply to another user's comment, this field contains the user
-    /// ID of the user being replied to.</p>
+    /// <p>If the comment is a reply to another user's comment, this field contains the user ID of the user being replied to.</p>
     pub recipient_id: std::option::Option<std::string::String>,
 }
 impl Comment {
@@ -3166,14 +3159,11 @@ impl Comment {
     pub fn status(&self) -> std::option::Option<&crate::model::CommentStatusType> {
         self.status.as_ref()
     }
-    /// <p>The visibility of the comment. Options are either PRIVATE, where the comment is
-    /// visible only to the comment author and document owner and co-owners, or PUBLIC, where
-    /// the comment is visible to document owners, co-owners, and contributors.</p>
+    /// <p>The visibility of the comment. Options are either PRIVATE, where the comment is visible only to the comment author and document owner and co-owners, or PUBLIC, where the comment is visible to document owners, co-owners, and contributors.</p>
     pub fn visibility(&self) -> std::option::Option<&crate::model::CommentVisibilityType> {
         self.visibility.as_ref()
     }
-    /// <p>If the comment is a reply to another user's comment, this field contains the user
-    /// ID of the user being replied to.</p>
+    /// <p>If the comment is a reply to another user's comment, this field contains the user ID of the user being replied to.</p>
     pub fn recipient_id(&self) -> std::option::Option<&str> {
         self.recipient_id.as_deref()
     }
@@ -3286,16 +3276,12 @@ pub mod comment {
             self.status = input;
             self
         }
-        /// <p>The visibility of the comment. Options are either PRIVATE, where the comment is
-        /// visible only to the comment author and document owner and co-owners, or PUBLIC, where
-        /// the comment is visible to document owners, co-owners, and contributors.</p>
+        /// <p>The visibility of the comment. Options are either PRIVATE, where the comment is visible only to the comment author and document owner and co-owners, or PUBLIC, where the comment is visible to document owners, co-owners, and contributors.</p>
         pub fn visibility(mut self, input: crate::model::CommentVisibilityType) -> Self {
             self.visibility = Some(input);
             self
         }
-        /// <p>The visibility of the comment. Options are either PRIVATE, where the comment is
-        /// visible only to the comment author and document owner and co-owners, or PUBLIC, where
-        /// the comment is visible to document owners, co-owners, and contributors.</p>
+        /// <p>The visibility of the comment. Options are either PRIVATE, where the comment is visible only to the comment author and document owner and co-owners, or PUBLIC, where the comment is visible to document owners, co-owners, and contributors.</p>
         pub fn set_visibility(
             mut self,
             input: std::option::Option<crate::model::CommentVisibilityType>,
@@ -3303,14 +3289,12 @@ pub mod comment {
             self.visibility = input;
             self
         }
-        /// <p>If the comment is a reply to another user's comment, this field contains the user
-        /// ID of the user being replied to.</p>
+        /// <p>If the comment is a reply to another user's comment, this field contains the user ID of the user being replied to.</p>
         pub fn recipient_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.recipient_id = Some(input.into());
             self
         }
-        /// <p>If the comment is a reply to another user's comment, this field contains the user
-        /// ID of the user being replied to.</p>
+        /// <p>If the comment is a reply to another user's comment, this field contains the user ID of the user being replied to.</p>
         pub fn set_recipient_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.recipient_id = input;
             self
@@ -3460,26 +3444,19 @@ pub struct Activity {
     pub r#type: std::option::Option<crate::model::ActivityType>,
     /// <p>The timestamp when the action was performed.</p>
     pub time_stamp: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Indicates whether an activity is indirect or direct. An indirect activity results
-    /// from a direct activity performed on a parent resource. For example, sharing a parent
-    /// folder (the direct activity) shares all of the subfolders and documents within the
-    /// parent folder (the indirect activity).</p>
+    /// <p>Indicates whether an activity is indirect or direct. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).</p>
     pub is_indirect_activity: bool,
     /// <p>The ID of the organization.</p>
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The user who performed the action.</p>
     pub initiator: std::option::Option<crate::model::UserMetadata>,
-    /// <p>The list of users or groups impacted by this action. This is an optional field and
-    /// is filled for the following sharing activities: DOCUMENT_SHARED, DOCUMENT_SHARED,
-    /// DOCUMENT_UNSHARED, FOLDER_SHARED, FOLDER_UNSHARED.</p>
+    /// <p>The list of users or groups impacted by this action. This is an optional field and is filled for the following sharing activities: DOCUMENT_SHARED, DOCUMENT_SHARED, DOCUMENT_UNSHARED, FOLDER_SHARED, FOLDER_UNSHARED.</p>
     pub participants: std::option::Option<crate::model::Participants>,
     /// <p>The metadata of the resource involved in the user action.</p>
     pub resource_metadata: std::option::Option<crate::model::ResourceMetadata>,
-    /// <p>The original parent of the resource. This is an optional field and is filled for
-    /// move activities.</p>
+    /// <p>The original parent of the resource. This is an optional field and is filled for move activities.</p>
     pub original_parent: std::option::Option<crate::model::ResourceMetadata>,
-    /// <p>Metadata of the commenting activity. This is an optional field and is filled for
-    /// commenting activities.</p>
+    /// <p>Metadata of the commenting activity. This is an optional field and is filled for commenting activities.</p>
     pub comment_metadata: std::option::Option<crate::model::CommentMetadata>,
 }
 impl Activity {
@@ -3491,10 +3468,7 @@ impl Activity {
     pub fn time_stamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.time_stamp.as_ref()
     }
-    /// <p>Indicates whether an activity is indirect or direct. An indirect activity results
-    /// from a direct activity performed on a parent resource. For example, sharing a parent
-    /// folder (the direct activity) shares all of the subfolders and documents within the
-    /// parent folder (the indirect activity).</p>
+    /// <p>Indicates whether an activity is indirect or direct. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).</p>
     pub fn is_indirect_activity(&self) -> bool {
         self.is_indirect_activity
     }
@@ -3506,9 +3480,7 @@ impl Activity {
     pub fn initiator(&self) -> std::option::Option<&crate::model::UserMetadata> {
         self.initiator.as_ref()
     }
-    /// <p>The list of users or groups impacted by this action. This is an optional field and
-    /// is filled for the following sharing activities: DOCUMENT_SHARED, DOCUMENT_SHARED,
-    /// DOCUMENT_UNSHARED, FOLDER_SHARED, FOLDER_UNSHARED.</p>
+    /// <p>The list of users or groups impacted by this action. This is an optional field and is filled for the following sharing activities: DOCUMENT_SHARED, DOCUMENT_SHARED, DOCUMENT_UNSHARED, FOLDER_SHARED, FOLDER_UNSHARED.</p>
     pub fn participants(&self) -> std::option::Option<&crate::model::Participants> {
         self.participants.as_ref()
     }
@@ -3516,13 +3488,11 @@ impl Activity {
     pub fn resource_metadata(&self) -> std::option::Option<&crate::model::ResourceMetadata> {
         self.resource_metadata.as_ref()
     }
-    /// <p>The original parent of the resource. This is an optional field and is filled for
-    /// move activities.</p>
+    /// <p>The original parent of the resource. This is an optional field and is filled for move activities.</p>
     pub fn original_parent(&self) -> std::option::Option<&crate::model::ResourceMetadata> {
         self.original_parent.as_ref()
     }
-    /// <p>Metadata of the commenting activity. This is an optional field and is filled for
-    /// commenting activities.</p>
+    /// <p>Metadata of the commenting activity. This is an optional field and is filled for commenting activities.</p>
     pub fn comment_metadata(&self) -> std::option::Option<&crate::model::CommentMetadata> {
         self.comment_metadata.as_ref()
     }
@@ -3582,18 +3552,12 @@ pub mod activity {
             self.time_stamp = input;
             self
         }
-        /// <p>Indicates whether an activity is indirect or direct. An indirect activity results
-        /// from a direct activity performed on a parent resource. For example, sharing a parent
-        /// folder (the direct activity) shares all of the subfolders and documents within the
-        /// parent folder (the indirect activity).</p>
+        /// <p>Indicates whether an activity is indirect or direct. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).</p>
         pub fn is_indirect_activity(mut self, input: bool) -> Self {
             self.is_indirect_activity = Some(input);
             self
         }
-        /// <p>Indicates whether an activity is indirect or direct. An indirect activity results
-        /// from a direct activity performed on a parent resource. For example, sharing a parent
-        /// folder (the direct activity) shares all of the subfolders and documents within the
-        /// parent folder (the indirect activity).</p>
+        /// <p>Indicates whether an activity is indirect or direct. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).</p>
         pub fn set_is_indirect_activity(mut self, input: std::option::Option<bool>) -> Self {
             self.is_indirect_activity = input;
             self
@@ -3624,16 +3588,12 @@ pub mod activity {
             self.initiator = input;
             self
         }
-        /// <p>The list of users or groups impacted by this action. This is an optional field and
-        /// is filled for the following sharing activities: DOCUMENT_SHARED, DOCUMENT_SHARED,
-        /// DOCUMENT_UNSHARED, FOLDER_SHARED, FOLDER_UNSHARED.</p>
+        /// <p>The list of users or groups impacted by this action. This is an optional field and is filled for the following sharing activities: DOCUMENT_SHARED, DOCUMENT_SHARED, DOCUMENT_UNSHARED, FOLDER_SHARED, FOLDER_UNSHARED.</p>
         pub fn participants(mut self, input: crate::model::Participants) -> Self {
             self.participants = Some(input);
             self
         }
-        /// <p>The list of users or groups impacted by this action. This is an optional field and
-        /// is filled for the following sharing activities: DOCUMENT_SHARED, DOCUMENT_SHARED,
-        /// DOCUMENT_UNSHARED, FOLDER_SHARED, FOLDER_UNSHARED.</p>
+        /// <p>The list of users or groups impacted by this action. This is an optional field and is filled for the following sharing activities: DOCUMENT_SHARED, DOCUMENT_SHARED, DOCUMENT_UNSHARED, FOLDER_SHARED, FOLDER_UNSHARED.</p>
         pub fn set_participants(
             mut self,
             input: std::option::Option<crate::model::Participants>,
@@ -3654,14 +3614,12 @@ pub mod activity {
             self.resource_metadata = input;
             self
         }
-        /// <p>The original parent of the resource. This is an optional field and is filled for
-        /// move activities.</p>
+        /// <p>The original parent of the resource. This is an optional field and is filled for move activities.</p>
         pub fn original_parent(mut self, input: crate::model::ResourceMetadata) -> Self {
             self.original_parent = Some(input);
             self
         }
-        /// <p>The original parent of the resource. This is an optional field and is filled for
-        /// move activities.</p>
+        /// <p>The original parent of the resource. This is an optional field and is filled for move activities.</p>
         pub fn set_original_parent(
             mut self,
             input: std::option::Option<crate::model::ResourceMetadata>,
@@ -3669,14 +3627,12 @@ pub mod activity {
             self.original_parent = input;
             self
         }
-        /// <p>Metadata of the commenting activity. This is an optional field and is filled for
-        /// commenting activities.</p>
+        /// <p>Metadata of the commenting activity. This is an optional field and is filled for commenting activities.</p>
         pub fn comment_metadata(mut self, input: crate::model::CommentMetadata) -> Self {
             self.comment_metadata = Some(input);
             self
         }
-        /// <p>Metadata of the commenting activity. This is an optional field and is filled for
-        /// commenting activities.</p>
+        /// <p>Metadata of the commenting activity. This is an optional field and is filled for commenting activities.</p>
         pub fn set_comment_metadata(
             mut self,
             input: std::option::Option<crate::model::CommentMetadata>,
@@ -3855,8 +3811,7 @@ pub struct ResourceMetadata {
     pub original_name: std::option::Option<std::string::String>,
     /// <p>The ID of the resource.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The version ID of the resource. This is an optional field and is filled for action
-    /// on document version.</p>
+    /// <p>The version ID of the resource. This is an optional field and is filled for action on document version.</p>
     pub version_id: std::option::Option<std::string::String>,
     /// <p>The owner of the resource.</p>
     pub owner: std::option::Option<crate::model::UserMetadata>,
@@ -3880,8 +3835,7 @@ impl ResourceMetadata {
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The version ID of the resource. This is an optional field and is filled for action
-    /// on document version.</p>
+    /// <p>The version ID of the resource. This is an optional field and is filled for action on document version.</p>
     pub fn version_id(&self) -> std::option::Option<&str> {
         self.version_id.as_deref()
     }
@@ -3965,14 +3919,12 @@ pub mod resource_metadata {
             self.id = input;
             self
         }
-        /// <p>The version ID of the resource. This is an optional field and is filled for action
-        /// on document version.</p>
+        /// <p>The version ID of the resource. This is an optional field and is filled for action on document version.</p>
         pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.version_id = Some(input.into());
             self
         }
-        /// <p>The version ID of the resource. This is an optional field and is filled for action
-        /// on document version.</p>
+        /// <p>The version ID of the resource. This is an optional field and is filled for action on document version.</p>
         pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version_id = input;
             self
@@ -4786,15 +4738,13 @@ impl AsRef<str> for ShareStatusType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotificationOptions {
-    /// <p>Boolean value to indicate an email notification should be sent to the
-    /// receipients.</p>
+    /// <p>Boolean value to indicate an email notification should be sent to the receipients.</p>
     pub send_email: bool,
     /// <p>Text value to be included in the email body.</p>
     pub email_message: std::option::Option<std::string::String>,
 }
 impl NotificationOptions {
-    /// <p>Boolean value to indicate an email notification should be sent to the
-    /// receipients.</p>
+    /// <p>Boolean value to indicate an email notification should be sent to the receipients.</p>
     pub fn send_email(&self) -> bool {
         self.send_email
     }
@@ -4821,14 +4771,12 @@ pub mod notification_options {
         pub(crate) email_message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Boolean value to indicate an email notification should be sent to the
-        /// receipients.</p>
+        /// <p>Boolean value to indicate an email notification should be sent to the receipients.</p>
         pub fn send_email(mut self, input: bool) -> Self {
             self.send_email = Some(input);
             self
         }
-        /// <p>Boolean value to indicate an email notification should be sent to the
-        /// receipients.</p>
+        /// <p>Boolean value to indicate an email notification should be sent to the receipients.</p>
         pub fn set_send_email(mut self, input: std::option::Option<bool>) -> Self {
             self.send_email = input;
             self

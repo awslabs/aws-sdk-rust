@@ -289,8 +289,7 @@ pub enum CreateListenerErrorKind {
     TooManyCertificatesException(crate::error::TooManyCertificatesException),
     /// <p>You've reached the limit on the number of listeners per load balancer.</p>
     TooManyListenersException(crate::error::TooManyListenersException),
-    /// <p>You've reached the limit on the number of times a target can be registered with a load
-    /// balancer.</p>
+    /// <p>You've reached the limit on the number of times a target can be registered with a load balancer.</p>
     TooManyRegistrationsForTargetIdException(
         crate::error::TooManyRegistrationsForTargetIdException,
     ),
@@ -298,9 +297,7 @@ pub enum CreateListenerErrorKind {
     TooManyTagsException(crate::error::TooManyTagsException),
     /// <p>You've reached the limit on the number of targets.</p>
     TooManyTargetsException(crate::error::TooManyTargetsException),
-    /// <p>You've reached the limit on the number of unique target groups per load balancer across
-    /// all listeners. If a target group is used by multiple actions for a load balancer, it is
-    /// counted as only one use.</p>
+    /// <p>You've reached the limit on the number of unique target groups per load balancer across all listeners. If a target group is used by multiple actions for a load balancer, it is counted as only one use.</p>
     TooManyUniqueTargetGroupsPerLoadBalancerException(
         crate::error::TooManyUniqueTargetGroupsPerLoadBalancerException,
     ),
@@ -577,8 +574,7 @@ pub enum CreateLoadBalancerErrorKind {
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>The specified subnet does not exist.</p>
     SubnetNotFoundException(crate::error::SubnetNotFoundException),
-    /// <p>You've reached the limit on the number of load balancers for your Amazon Web Services
-    /// account.</p>
+    /// <p>You've reached the limit on the number of load balancers for your Amazon Web Services account.</p>
     TooManyLoadBalancersException(crate::error::TooManyLoadBalancersException),
     /// <p>You've reached the limit on the number of tags per load balancer.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
@@ -807,8 +803,7 @@ pub enum CreateRuleErrorKind {
     TargetGroupNotFoundException(crate::error::TargetGroupNotFoundException),
     /// <p>You've reached the limit on the number of actions per rule.</p>
     TooManyActionsException(crate::error::TooManyActionsException),
-    /// <p>You've reached the limit on the number of times a target can be registered with a load
-    /// balancer.</p>
+    /// <p>You've reached the limit on the number of times a target can be registered with a load balancer.</p>
     TooManyRegistrationsForTargetIdException(
         crate::error::TooManyRegistrationsForTargetIdException,
     ),
@@ -816,14 +811,11 @@ pub enum CreateRuleErrorKind {
     TooManyRulesException(crate::error::TooManyRulesException),
     /// <p>You've reached the limit on the number of tags per load balancer.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// <p>You've reached the limit on the number of target groups for your Amazon Web Services
-    /// account.</p>
+    /// <p>You've reached the limit on the number of target groups for your Amazon Web Services account.</p>
     TooManyTargetGroupsException(crate::error::TooManyTargetGroupsException),
     /// <p>You've reached the limit on the number of targets.</p>
     TooManyTargetsException(crate::error::TooManyTargetsException),
-    /// <p>You've reached the limit on the number of unique target groups per load balancer across
-    /// all listeners. If a target group is used by multiple actions for a load balancer, it is
-    /// counted as only one use.</p>
+    /// <p>You've reached the limit on the number of unique target groups per load balancer across all listeners. If a target group is used by multiple actions for a load balancer, it is counted as only one use.</p>
     TooManyUniqueTargetGroupsPerLoadBalancerException(
         crate::error::TooManyUniqueTargetGroupsPerLoadBalancerException,
     ),
@@ -1041,8 +1033,7 @@ pub enum CreateTargetGroupErrorKind {
     InvalidConfigurationRequestException(crate::error::InvalidConfigurationRequestException),
     /// <p>You've reached the limit on the number of tags per load balancer.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// <p>You've reached the limit on the number of target groups for your Amazon Web Services
-    /// account.</p>
+    /// <p>You've reached the limit on the number of target groups for your Amazon Web Services account.</p>
     TooManyTargetGroupsException(crate::error::TooManyTargetGroupsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1579,8 +1570,7 @@ pub struct DeregisterTargetsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeregisterTargetsErrorKind {
-    /// <p>The specified target does not exist, is not in the same VPC as the target group, or has an
-    /// unsupported instance type.</p>
+    /// <p>The specified target does not exist, is not in the same VPC as the target group, or has an unsupported instance type.</p>
     InvalidTargetException(crate::error::InvalidTargetException),
     /// <p>The specified target group does not exist.</p>
     TargetGroupNotFoundException(crate::error::TargetGroupNotFoundException),
@@ -2703,11 +2693,9 @@ pub struct DescribeTargetHealthError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeTargetHealthErrorKind {
-    /// <p>The health of the specified targets could not be retrieved due to an internal
-    /// error.</p>
+    /// <p>The health of the specified targets could not be retrieved due to an internal error.</p>
     HealthUnavailableException(crate::error::HealthUnavailableException),
-    /// <p>The specified target does not exist, is not in the same VPC as the target group, or has an
-    /// unsupported instance type.</p>
+    /// <p>The specified target does not exist, is not in the same VPC as the target group, or has an unsupported instance type.</p>
     InvalidTargetException(crate::error::InvalidTargetException),
     /// <p>The specified target group does not exist.</p>
     TargetGroupNotFoundException(crate::error::TargetGroupNotFoundException),
@@ -2846,16 +2834,13 @@ pub enum ModifyListenerErrorKind {
     TooManyCertificatesException(crate::error::TooManyCertificatesException),
     /// <p>You've reached the limit on the number of listeners per load balancer.</p>
     TooManyListenersException(crate::error::TooManyListenersException),
-    /// <p>You've reached the limit on the number of times a target can be registered with a load
-    /// balancer.</p>
+    /// <p>You've reached the limit on the number of times a target can be registered with a load balancer.</p>
     TooManyRegistrationsForTargetIdException(
         crate::error::TooManyRegistrationsForTargetIdException,
     ),
     /// <p>You've reached the limit on the number of targets.</p>
     TooManyTargetsException(crate::error::TooManyTargetsException),
-    /// <p>You've reached the limit on the number of unique target groups per load balancer across
-    /// all listeners. If a target group is used by multiple actions for a load balancer, it is
-    /// counted as only one use.</p>
+    /// <p>You've reached the limit on the number of unique target groups per load balancer across all listeners. If a target group is used by multiple actions for a load balancer, it is counted as only one use.</p>
     TooManyUniqueTargetGroupsPerLoadBalancerException(
         crate::error::TooManyUniqueTargetGroupsPerLoadBalancerException,
     ),
@@ -3230,16 +3215,13 @@ pub enum ModifyRuleErrorKind {
     TargetGroupNotFoundException(crate::error::TargetGroupNotFoundException),
     /// <p>You've reached the limit on the number of actions per rule.</p>
     TooManyActionsException(crate::error::TooManyActionsException),
-    /// <p>You've reached the limit on the number of times a target can be registered with a load
-    /// balancer.</p>
+    /// <p>You've reached the limit on the number of times a target can be registered with a load balancer.</p>
     TooManyRegistrationsForTargetIdException(
         crate::error::TooManyRegistrationsForTargetIdException,
     ),
     /// <p>You've reached the limit on the number of targets.</p>
     TooManyTargetsException(crate::error::TooManyTargetsException),
-    /// <p>You've reached the limit on the number of unique target groups per load balancer across
-    /// all listeners. If a target group is used by multiple actions for a load balancer, it is
-    /// counted as only one use.</p>
+    /// <p>You've reached the limit on the number of unique target groups per load balancer across all listeners. If a target group is used by multiple actions for a load balancer, it is counted as only one use.</p>
     TooManyUniqueTargetGroupsPerLoadBalancerException(
         crate::error::TooManyUniqueTargetGroupsPerLoadBalancerException,
     ),
@@ -3641,13 +3623,11 @@ pub struct RegisterTargetsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RegisterTargetsErrorKind {
-    /// <p>The specified target does not exist, is not in the same VPC as the target group, or has an
-    /// unsupported instance type.</p>
+    /// <p>The specified target does not exist, is not in the same VPC as the target group, or has an unsupported instance type.</p>
     InvalidTargetException(crate::error::InvalidTargetException),
     /// <p>The specified target group does not exist.</p>
     TargetGroupNotFoundException(crate::error::TargetGroupNotFoundException),
-    /// <p>You've reached the limit on the number of times a target can be registered with a load
-    /// balancer.</p>
+    /// <p>You've reached the limit on the number of times a target can be registered with a load balancer.</p>
     TooManyRegistrationsForTargetIdException(
         crate::error::TooManyRegistrationsForTargetIdException,
     ),
@@ -5390,8 +5370,7 @@ impl TooManyTargetsException {
     }
 }
 
-/// <p>You've reached the limit on the number of times a target can be registered with a load
-/// balancer.</p>
+/// <p>You've reached the limit on the number of times a target can be registered with a load balancer.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyRegistrationsForTargetIdException {
@@ -5455,8 +5434,7 @@ impl TooManyRegistrationsForTargetIdException {
     }
 }
 
-/// <p>The specified target does not exist, is not in the same VPC as the target group, or has an
-/// unsupported instance type.</p>
+/// <p>The specified target does not exist, is not in the same VPC as the target group, or has an unsupported instance type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidTargetException {
@@ -5584,9 +5562,7 @@ impl UnsupportedProtocolException {
     }
 }
 
-/// <p>You've reached the limit on the number of unique target groups per load balancer across
-/// all listeners. If a target group is used by multiple actions for a load balancer, it is
-/// counted as only one use.</p>
+/// <p>You've reached the limit on the number of unique target groups per load balancer across all listeners. If a target group is used by multiple actions for a load balancer, it is counted as only one use.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyUniqueTargetGroupsPerLoadBalancerException {
@@ -6294,8 +6270,7 @@ impl AlpnPolicyNotSupportedException {
     }
 }
 
-/// <p>The health of the specified targets could not be retrieved due to an internal
-/// error.</p>
+/// <p>The health of the specified targets could not be retrieved due to an internal error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HealthUnavailableException {
@@ -6423,8 +6398,7 @@ impl ResourceInUseException {
     }
 }
 
-/// <p>You've reached the limit on the number of target groups for your Amazon Web Services
-/// account.</p>
+/// <p>You've reached the limit on the number of target groups for your Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyTargetGroupsException {
@@ -6616,8 +6590,7 @@ impl TooManyRulesException {
     }
 }
 
-/// <p>You've reached the limit on the number of load balancers for your Amazon Web Services
-/// account.</p>
+/// <p>You've reached the limit on the number of load balancers for your Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyLoadBalancersException {

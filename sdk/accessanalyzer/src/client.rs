@@ -292,8 +292,7 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `ApplyArchiveRule`.
     ///
-    /// <p>Retroactively applies the archive rule to existing findings that meet the archive rule
-    /// criteria.</p>
+    /// <p>Retroactively applies the archive rule to existing findings that meet the archive rule criteria.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ApplyArchiveRule<
         C = aws_smithy_client::erase::DynConnector,
@@ -440,18 +439,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code>
-        /// operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to
-        /// retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel
-        /// the policy generation request.</p>
+        /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.job_id(input.into());
             self
         }
-        /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code>
-        /// operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to
-        /// retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel
-        /// the policy generation request.</p>
+        /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_job_id(input);
             self
@@ -459,8 +452,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateAccessPreview`.
     ///
-    /// <p>Creates an access preview that allows you to preview IAM Access Analyzer findings for your
-    /// resource before deploying resource permissions.</p>
+    /// <p>Creates an access preview that allows you to preview IAM Access Analyzer findings for your resource before deploying resource permissions.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAccessPreview<
         C = aws_smithy_client::erase::DynConnector,
@@ -517,18 +509,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-        /// the account analyzer</a> used to generate the access preview. You can only create an
-        /// access preview for analyzers with an <code>Account</code> type and <code>Active</code>
-        /// status.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the account analyzer</a> used to generate the access preview. You can only create an access preview for analyzers with an <code>Account</code> type and <code>Active</code> status.</p>
         pub fn analyzer_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.analyzer_arn(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-        /// the account analyzer</a> used to generate the access preview. You can only create an
-        /// access preview for analyzers with an <code>Account</code> type and <code>Active</code>
-        /// status.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the account analyzer</a> used to generate the access preview. You can only create an access preview for analyzers with an <code>Account</code> type and <code>Active</code> status.</p>
         pub fn set_analyzer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_analyzer_arn(input);
             self
@@ -537,10 +523,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_configurations`](Self::set_configurations).
         ///
-        /// <p>Access control configuration for your resource that is used to generate the access
-        /// preview. The access preview includes findings for external access allowed to the resource
-        /// with the proposed access control configuration. The configuration must contain exactly one
-        /// element.</p>
+        /// <p>Access control configuration for your resource that is used to generate the access preview. The access preview includes findings for external access allowed to the resource with the proposed access control configuration. The configuration must contain exactly one element.</p>
         pub fn configurations(
             mut self,
             k: impl Into<std::string::String>,
@@ -549,10 +532,7 @@ pub mod fluent_builders {
             self.inner = self.inner.configurations(k.into(), v);
             self
         }
-        /// <p>Access control configuration for your resource that is used to generate the access
-        /// preview. The access preview includes findings for external access allowed to the resource
-        /// with the proposed access control configuration. The configuration must contain exactly one
-        /// element.</p>
+        /// <p>Access control configuration for your resource that is used to generate the access preview. The access preview includes findings for external access allowed to the resource with the proposed access control configuration. The configuration must contain exactly one element.</p>
         pub fn set_configurations(
             mut self,
             input: std::option::Option<
@@ -645,16 +625,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_analyzer_name(input);
             self
         }
-        /// <p>The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported.
-        /// You can create only one analyzer per account per Region. You can create up to 5 analyzers
-        /// per organization per Region.</p>
+        /// <p>The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported. You can create only one analyzer per account per Region. You can create up to 5 analyzers per organization per Region.</p>
         pub fn r#type(mut self, input: crate::model::Type) -> Self {
             self.inner = self.inner.r#type(input);
             self
         }
-        /// <p>The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported.
-        /// You can create only one analyzer per account per Region. You can create up to 5 analyzers
-        /// per organization per Region.</p>
+        /// <p>The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported. You can create only one analyzer per account per Region. You can create up to 5 analyzers per organization per Region.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::Type>) -> Self {
             self.inner = self.inner.set_type(input);
             self
@@ -663,14 +639,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_archive_rules`](Self::set_archive_rules).
         ///
-        /// <p>Specifies the archive rules to add for the analyzer. Archive rules automatically archive
-        /// findings that meet the criteria you define for the rule.</p>
+        /// <p>Specifies the archive rules to add for the analyzer. Archive rules automatically archive findings that meet the criteria you define for the rule.</p>
         pub fn archive_rules(mut self, input: crate::model::InlineArchiveRule) -> Self {
             self.inner = self.inner.archive_rules(input);
             self
         }
-        /// <p>Specifies the archive rules to add for the analyzer. Archive rules automatically archive
-        /// findings that meet the criteria you define for the rule.</p>
+        /// <p>Specifies the archive rules to add for the analyzer. Archive rules automatically archive findings that meet the criteria you define for the rule.</p>
         pub fn set_archive_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InlineArchiveRule>>,
@@ -714,8 +688,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateArchiveRule`.
     ///
-    /// <p>Creates an archive rule for the specified analyzer. Archive rules automatically archive
-    /// new findings that meet the criteria you define when you create the rule.</p>
+    /// <p>Creates an archive rule for the specified analyzer. Archive rules automatically archive new findings that meet the criteria you define when you create the rule.</p>
     /// <p>To learn about filter keys that you can use to create an archive rule, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-reference-filter-keys.html">IAM Access Analyzer filter keys</a> in the <b>IAM User Guide</b>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateArchiveRule<
@@ -832,9 +805,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteAnalyzer`.
     ///
-    /// <p>Deletes the specified analyzer. When you delete an analyzer, IAM Access Analyzer is disabled
-    /// for the account or organization in the current or specific Region. All findings that were
-    /// generated by the analyzer are deleted. You cannot undo this action.</p>
+    /// <p>Deletes the specified analyzer. When you delete an analyzer, IAM Access Analyzer is disabled for the account or organization in the current or specific Region. All findings that were generated by the analyzer are deleted. You cannot undo this action.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAnalyzer<
         C = aws_smithy_client::erase::DynConnector,
@@ -1080,14 +1051,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_access_preview_id(input);
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-        /// the analyzer</a> used to generate the access preview.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> used to generate the access preview.</p>
         pub fn analyzer_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.analyzer_arn(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-        /// the analyzer</a> used to generate the access preview.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> used to generate the access preview.</p>
         pub fn set_analyzer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_analyzer_arn(input);
             self
@@ -1152,14 +1121,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-        /// the analyzer</a> to retrieve information from.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to retrieve information from.</p>
         pub fn analyzer_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.analyzer_arn(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-        /// the analyzer</a> to retrieve information from.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to retrieve information from.</p>
         pub fn set_analyzer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_analyzer_arn(input);
             self
@@ -1391,14 +1358,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-        /// the analyzer</a> that generated the finding.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> that generated the finding.</p>
         pub fn analyzer_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.analyzer_arn(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-        /// the analyzer</a> that generated the finding.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> that generated the finding.</p>
         pub fn set_analyzer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_analyzer_arn(input);
             self
@@ -1416,8 +1381,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetGeneratedPolicy`.
     ///
-    /// <p>Retrieves the policy that was generated using <code>StartPolicyGeneration</code>.
-    /// </p>
+    /// <p>Retrieves the policy that was generated using <code>StartPolicyGeneration</code>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetGeneratedPolicy<
         C = aws_smithy_client::erase::DynConnector,
@@ -1474,36 +1438,24 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code>
-        /// operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to
-        /// retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel
-        /// the policy generation request.</p>
+        /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.job_id(input.into());
             self
         }
-        /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code>
-        /// operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to
-        /// retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel
-        /// the policy generation request.</p>
+        /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_job_id(input);
             self
         }
-        /// <p>The level of detail that you want to generate. You can specify whether to generate
-        /// policies with placeholders for resource ARNs for actions that support resource level
-        /// granularity in policies.</p>
-        /// <p>For example, in the resource section of a policy, you can receive a placeholder such as
-        /// <code>"Resource":"arn:aws:s3:::${BucketName}"</code> instead of <code>"*"</code>.</p>
+        /// <p>The level of detail that you want to generate. You can specify whether to generate policies with placeholders for resource ARNs for actions that support resource level granularity in policies.</p>
+        /// <p>For example, in the resource section of a policy, you can receive a placeholder such as <code>"Resource":"arn:aws:s3:::${BucketName}"</code> instead of <code>"*"</code>.</p>
         pub fn include_resource_placeholders(mut self, input: bool) -> Self {
             self.inner = self.inner.include_resource_placeholders(input);
             self
         }
-        /// <p>The level of detail that you want to generate. You can specify whether to generate
-        /// policies with placeholders for resource ARNs for actions that support resource level
-        /// granularity in policies.</p>
-        /// <p>For example, in the resource section of a policy, you can receive a placeholder such as
-        /// <code>"Resource":"arn:aws:s3:::${BucketName}"</code> instead of <code>"*"</code>.</p>
+        /// <p>The level of detail that you want to generate. You can specify whether to generate policies with placeholders for resource ARNs for actions that support resource level granularity in policies.</p>
+        /// <p>For example, in the resource section of a policy, you can receive a placeholder such as <code>"Resource":"arn:aws:s3:::${BucketName}"</code> instead of <code>"*"</code>.</p>
         pub fn set_include_resource_placeholders(
             mut self,
             input: std::option::Option<bool>,
@@ -1511,18 +1463,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_include_resource_placeholders(input);
             self
         }
-        /// <p>The level of detail that you want to generate. You can specify whether to generate
-        /// service-level policies. </p>
-        /// <p>IAM Access Analyzer uses <code>iam:servicelastaccessed</code> to identify services that have
-        /// been used recently to create this service-level template.</p>
+        /// <p>The level of detail that you want to generate. You can specify whether to generate service-level policies. </p>
+        /// <p>IAM Access Analyzer uses <code>iam:servicelastaccessed</code> to identify services that have been used recently to create this service-level template.</p>
         pub fn include_service_level_template(mut self, input: bool) -> Self {
             self.inner = self.inner.include_service_level_template(input);
             self
         }
-        /// <p>The level of detail that you want to generate. You can specify whether to generate
-        /// service-level policies. </p>
-        /// <p>IAM Access Analyzer uses <code>iam:servicelastaccessed</code> to identify services that have
-        /// been used recently to create this service-level template.</p>
+        /// <p>The level of detail that you want to generate. You can specify whether to generate service-level policies. </p>
+        /// <p>IAM Access Analyzer uses <code>iam:servicelastaccessed</code> to identify services that have been used recently to create this service-level template.</p>
         pub fn set_include_service_level_template(
             mut self,
             input: std::option::Option<bool>,
@@ -1533,8 +1481,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAccessPreviewFindings`.
     ///
-    /// <p>Retrieves a list of access preview findings generated by the specified access
-    /// preview.</p>
+    /// <p>Retrieves a list of access preview findings generated by the specified access preview.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAccessPreviewFindings<
         C = aws_smithy_client::erase::DynConnector,
@@ -1604,14 +1551,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_access_preview_id(input);
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-        /// the analyzer</a> used to generate the access.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> used to generate the access.</p>
         pub fn analyzer_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.analyzer_arn(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-        /// the analyzer</a> used to generate the access.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> used to generate the access.</p>
         pub fn set_analyzer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_analyzer_arn(input);
             self
@@ -1719,14 +1664,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-        /// the analyzer</a> used to generate the access preview.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> used to generate the access preview.</p>
         pub fn analyzer_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.analyzer_arn(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-        /// the analyzer</a> used to generate the access preview.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> used to generate the access preview.</p>
         pub fn set_analyzer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_analyzer_arn(input);
             self
@@ -1754,8 +1697,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAnalyzedResources`.
     ///
-    /// <p>Retrieves a list of resources of the specified type that have been analyzed by the
-    /// specified analyzer..</p>
+    /// <p>Retrieves a list of resources of the specified type that have been analyzed by the specified analyzer..</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAnalyzedResources<
         C = aws_smithy_client::erase::DynConnector,
@@ -1812,14 +1754,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-        /// the analyzer</a> to retrieve a list of analyzed resources from.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to retrieve a list of analyzed resources from.</p>
         pub fn analyzer_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.analyzer_arn(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-        /// the analyzer</a> to retrieve a list of analyzed resources from.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to retrieve a list of analyzed resources from.</p>
         pub fn set_analyzer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_analyzer_arn(input);
             self
@@ -2101,14 +2041,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-        /// the analyzer</a> to retrieve findings from.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to retrieve findings from.</p>
         pub fn analyzer_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.analyzer_arn(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-        /// the analyzer</a> to retrieve findings from.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to retrieve findings from.</p>
         pub fn set_analyzer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_analyzer_arn(input);
             self
@@ -2226,16 +2164,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy. Use
-        /// this with <code>ListGeneratedPolicies</code> to filter the results to only include results
-        /// for a specific principal.</p>
+        /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy. Use this with <code>ListGeneratedPolicies</code> to filter the results to only include results for a specific principal.</p>
         pub fn principal_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.principal_arn(input.into());
             self
         }
-        /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy. Use
-        /// this with <code>ListGeneratedPolicies</code> to filter the results to only include results
-        /// for a specific principal.</p>
+        /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy. Use this with <code>ListGeneratedPolicies</code> to filter the results to only include results for a specific principal.</p>
         pub fn set_principal_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2393,8 +2327,7 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Contains the ARN of the IAM entity (user or role) for which you are generating a
-        /// policy.</p>
+        /// <p>Contains the ARN of the IAM entity (user or role) for which you are generating a policy.</p>
         pub fn policy_generation_details(
             mut self,
             input: crate::model::PolicyGenerationDetails,
@@ -2402,8 +2335,7 @@ pub mod fluent_builders {
             self.inner = self.inner.policy_generation_details(input);
             self
         }
-        /// <p>Contains the ARN of the IAM entity (user or role) for which you are generating a
-        /// policy.</p>
+        /// <p>Contains the ARN of the IAM entity (user or role) for which you are generating a policy.</p>
         pub fn set_policy_generation_details(
             mut self,
             input: std::option::Option<crate::model::PolicyGenerationDetails>,
@@ -2411,14 +2343,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_policy_generation_details(input);
             self
         }
-        /// <p>A <code>CloudTrailDetails</code> object that contains details about a <code>Trail</code>
-        /// that you want to analyze to generate policies.</p>
+        /// <p>A <code>CloudTrailDetails</code> object that contains details about a <code>Trail</code> that you want to analyze to generate policies.</p>
         pub fn cloud_trail_details(mut self, input: crate::model::CloudTrailDetails) -> Self {
             self.inner = self.inner.cloud_trail_details(input);
             self
         }
-        /// <p>A <code>CloudTrailDetails</code> object that contains details about a <code>Trail</code>
-        /// that you want to analyze to generate policies.</p>
+        /// <p>A <code>CloudTrailDetails</code> object that contains details about a <code>Trail</code> that you want to analyze to generate policies.</p>
         pub fn set_cloud_trail_details(
             mut self,
             input: std::option::Option<crate::model::CloudTrailDetails>,
@@ -2426,24 +2356,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_cloud_trail_details(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Idempotency ensures that an API request completes only once. With an idempotent
-        /// request, if the original request completes successfully, the subsequent retries with the
-        /// same client token return the result from the original successful request and they have no
-        /// additional effect.</p>
-        /// <p>If you do not specify a client token, one is automatically generated by the Amazon Web Services
-        /// SDK.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries with the same client token return the result from the original successful request and they have no additional effect.</p>
+        /// <p>If you do not specify a client token, one is automatically generated by the Amazon Web Services SDK.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Idempotency ensures that an API request completes only once. With an idempotent
-        /// request, if the original request completes successfully, the subsequent retries with the
-        /// same client token return the result from the original successful request and they have no
-        /// additional effect.</p>
-        /// <p>If you do not specify a client token, one is automatically generated by the Amazon Web Services
-        /// SDK.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries with the same client token return the result from the original successful request and they have no additional effect.</p>
+        /// <p>If you do not specify a client token, one is automatically generated by the Amazon Web Services SDK.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -2508,16 +2428,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-        /// the analyzer</a> to use to scan the policies applied to the specified
-        /// resource.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to use to scan the policies applied to the specified resource.</p>
         pub fn analyzer_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.analyzer_arn(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-        /// the analyzer</a> to use to scan the policies applied to the specified
-        /// resource.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to use to scan the policies applied to the specified resource.</p>
         pub fn set_analyzer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_analyzer_arn(input);
             self
@@ -2799,8 +2715,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filter`](Self::set_filter).
         ///
-        /// <p>A filter to match for the rules to update. Only rules that match the filter are
-        /// updated.</p>
+        /// <p>A filter to match for the rules to update. Only rules that match the filter are updated.</p>
         pub fn filter(
             mut self,
             k: impl Into<std::string::String>,
@@ -2809,8 +2724,7 @@ pub mod fluent_builders {
             self.inner = self.inner.filter(k.into(), v);
             self
         }
-        /// <p>A filter to match for the rules to update. Only rules that match the filter are
-        /// updated.</p>
+        /// <p>A filter to match for the rules to update. Only rules that match the filter are updated.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<
@@ -2890,28 +2804,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-        /// the analyzer</a> that generated the findings to update.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> that generated the findings to update.</p>
         pub fn analyzer_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.analyzer_arn(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of
-        /// the analyzer</a> that generated the findings to update.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> that generated the findings to update.</p>
         pub fn set_analyzer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_analyzer_arn(input);
             self
         }
-        /// <p>The state represents the action to take to update the finding Status. Use
-        /// <code>ARCHIVE</code> to change an Active finding to an Archived finding. Use
-        /// <code>ACTIVE</code> to change an Archived finding to an Active finding.</p>
+        /// <p>The state represents the action to take to update the finding Status. Use <code>ARCHIVE</code> to change an Active finding to an Archived finding. Use <code>ACTIVE</code> to change an Archived finding to an Active finding.</p>
         pub fn status(mut self, input: crate::model::FindingStatusUpdate) -> Self {
             self.inner = self.inner.status(input);
             self
         }
-        /// <p>The state represents the action to take to update the finding Status. Use
-        /// <code>ARCHIVE</code> to change an Active finding to an Archived finding. Use
-        /// <code>ACTIVE</code> to change an Archived finding to an Active finding.</p>
+        /// <p>The state represents the action to take to update the finding Status. Use <code>ARCHIVE</code> to change an Active finding to an Archived finding. Use <code>ACTIVE</code> to change an Archived finding to an Active finding.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::FindingStatusUpdate>,
@@ -2959,9 +2867,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ValidatePolicy`.
     ///
-    /// <p>Requests the validation of a policy and returns a list of findings. The findings help
-    /// you identify issues and provide actionable recommendations to resolve the issue and enable
-    /// you to author functional policies that meet security best practices. </p>
+    /// <p>Requests the validation of a policy and returns a list of findings. The findings help you identify issues and provide actionable recommendations to resolve the issue and enable you to author functional policies that meet security best practices. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ValidatePolicy<
         C = aws_smithy_client::erase::DynConnector,
@@ -3061,26 +2967,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_policy_document(input);
             self
         }
-        /// <p>The type of policy to validate. Identity policies grant permissions to IAM principals.
-        /// Identity policies include managed and inline policies for IAM roles, users, and groups.
-        /// They also include service-control policies (SCPs) that are attached to an Amazon Web Services
-        /// organization, organizational unit (OU), or an account.</p>
-        /// <p>Resource policies grant permissions on Amazon Web Services resources. Resource policies include trust
-        /// policies for IAM roles and bucket policies for Amazon S3 buckets. You can provide a generic
-        /// input such as identity policy or resource policy or a specific input such as managed policy
-        /// or Amazon S3 bucket policy. </p>
+        /// <p>The type of policy to validate. Identity policies grant permissions to IAM principals. Identity policies include managed and inline policies for IAM roles, users, and groups. They also include service-control policies (SCPs) that are attached to an Amazon Web Services organization, organizational unit (OU), or an account.</p>
+        /// <p>Resource policies grant permissions on Amazon Web Services resources. Resource policies include trust policies for IAM roles and bucket policies for Amazon S3 buckets. You can provide a generic input such as identity policy or resource policy or a specific input such as managed policy or Amazon S3 bucket policy. </p>
         pub fn policy_type(mut self, input: crate::model::PolicyType) -> Self {
             self.inner = self.inner.policy_type(input);
             self
         }
-        /// <p>The type of policy to validate. Identity policies grant permissions to IAM principals.
-        /// Identity policies include managed and inline policies for IAM roles, users, and groups.
-        /// They also include service-control policies (SCPs) that are attached to an Amazon Web Services
-        /// organization, organizational unit (OU), or an account.</p>
-        /// <p>Resource policies grant permissions on Amazon Web Services resources. Resource policies include trust
-        /// policies for IAM roles and bucket policies for Amazon S3 buckets. You can provide a generic
-        /// input such as identity policy or resource policy or a specific input such as managed policy
-        /// or Amazon S3 bucket policy. </p>
+        /// <p>The type of policy to validate. Identity policies grant permissions to IAM principals. Identity policies include managed and inline policies for IAM roles, users, and groups. They also include service-control policies (SCPs) that are attached to an Amazon Web Services organization, organizational unit (OU), or an account.</p>
+        /// <p>Resource policies grant permissions on Amazon Web Services resources. Resource policies include trust policies for IAM roles and bucket policies for Amazon S3 buckets. You can provide a generic input such as identity policy or resource policy or a specific input such as managed policy or Amazon S3 bucket policy. </p>
         pub fn set_policy_type(
             mut self,
             input: std::option::Option<crate::model::PolicyType>,
@@ -3088,14 +2982,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_policy_type(input);
             self
         }
-        /// <p>The type of resource to attach to your resource policy. Specify a value for the policy
-        /// validation resource type only if the policy type is <code>RESOURCE_POLICY</code>. For
-        /// example, to validate a resource policy to attach to an Amazon S3 bucket, you can choose
-        /// <code>AWS::S3::Bucket</code> for the policy validation resource type.</p>
-        /// <p>For resource types not supported as valid values, IAM Access Analyzer runs policy checks that
-        /// apply to all resource policies. For example, to validate a resource policy to attach to a
-        /// KMS key, do not specify a value for the policy validation resource type and IAM Access Analyzer
-        /// will run policy checks that apply to all resource policies.</p>
+        /// <p>The type of resource to attach to your resource policy. Specify a value for the policy validation resource type only if the policy type is <code>RESOURCE_POLICY</code>. For example, to validate a resource policy to attach to an Amazon S3 bucket, you can choose <code>AWS::S3::Bucket</code> for the policy validation resource type.</p>
+        /// <p>For resource types not supported as valid values, IAM Access Analyzer runs policy checks that apply to all resource policies. For example, to validate a resource policy to attach to a KMS key, do not specify a value for the policy validation resource type and IAM Access Analyzer will run policy checks that apply to all resource policies.</p>
         pub fn validate_policy_resource_type(
             mut self,
             input: crate::model::ValidatePolicyResourceType,
@@ -3103,14 +2991,8 @@ pub mod fluent_builders {
             self.inner = self.inner.validate_policy_resource_type(input);
             self
         }
-        /// <p>The type of resource to attach to your resource policy. Specify a value for the policy
-        /// validation resource type only if the policy type is <code>RESOURCE_POLICY</code>. For
-        /// example, to validate a resource policy to attach to an Amazon S3 bucket, you can choose
-        /// <code>AWS::S3::Bucket</code> for the policy validation resource type.</p>
-        /// <p>For resource types not supported as valid values, IAM Access Analyzer runs policy checks that
-        /// apply to all resource policies. For example, to validate a resource policy to attach to a
-        /// KMS key, do not specify a value for the policy validation resource type and IAM Access Analyzer
-        /// will run policy checks that apply to all resource policies.</p>
+        /// <p>The type of resource to attach to your resource policy. Specify a value for the policy validation resource type only if the policy type is <code>RESOURCE_POLICY</code>. For example, to validate a resource policy to attach to an Amazon S3 bucket, you can choose <code>AWS::S3::Bucket</code> for the policy validation resource type.</p>
+        /// <p>For resource types not supported as valid values, IAM Access Analyzer runs policy checks that apply to all resource policies. For example, to validate a resource policy to attach to a KMS key, do not specify a value for the policy validation resource type and IAM Access Analyzer will run policy checks that apply to all resource policies.</p>
         pub fn set_validate_policy_resource_type(
             mut self,
             input: std::option::Option<crate::model::ValidatePolicyResourceType>,

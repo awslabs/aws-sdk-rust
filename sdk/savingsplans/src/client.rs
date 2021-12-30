@@ -233,26 +233,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_savings_plan_offering_id(input);
             self
         }
-        /// <p>The hourly commitment, in USD. This is a value between 0.001 and 1 million. You cannot specify more
-        /// than three digits after the decimal point.</p>
+        /// <p>The hourly commitment, in USD. This is a value between 0.001 and 1 million. You cannot specify more than three digits after the decimal point.</p>
         pub fn commitment(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.commitment(input.into());
             self
         }
-        /// <p>The hourly commitment, in USD. This is a value between 0.001 and 1 million. You cannot specify more
-        /// than three digits after the decimal point.</p>
+        /// <p>The hourly commitment, in USD. This is a value between 0.001 and 1 million. You cannot specify more than three digits after the decimal point.</p>
         pub fn set_commitment(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_commitment(input);
             self
         }
-        /// <p>The up-front payment amount. This is a whole number between 50 and 99 percent of the total value of the Savings Plan.
-        /// This parameter is supported only if the payment option is <code>Partial Upfront</code>.</p>
+        /// <p>The up-front payment amount. This is a whole number between 50 and 99 percent of the total value of the Savings Plan. This parameter is supported only if the payment option is <code>Partial Upfront</code>.</p>
         pub fn upfront_payment_amount(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.upfront_payment_amount(input.into());
             self
         }
-        /// <p>The up-front payment amount. This is a whole number between 50 and 99 percent of the total value of the Savings Plan.
-        /// This parameter is supported only if the payment option is <code>Partial Upfront</code>.</p>
+        /// <p>The up-front payment amount. This is a whole number between 50 and 99 percent of the total value of the Savings Plan. This parameter is supported only if the payment option is <code>Partial Upfront</code>.</p>
         pub fn set_upfront_payment_amount(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -479,14 +475,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another
-        /// call with the returned token value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another
-        /// call with the returned token value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -595,14 +589,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another
-        /// call with the returned token value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another
-        /// call with the returned token value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -855,14 +847,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another
-        /// call with the returned token value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another
-        /// call with the returned token value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -1119,14 +1109,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another
-        /// call with the returned token value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another
-        /// call with the returned token value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self

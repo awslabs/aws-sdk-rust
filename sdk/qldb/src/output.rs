@@ -104,17 +104,12 @@ pub struct UpdateLedgerOutput {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The current status of the ledger.</p>
     pub state: std::option::Option<crate::model::LedgerState>,
-    /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format
-    /// is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
+    /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on
-    /// ledger creation, this feature is enabled (<code>true</code>) by default.</p>
-    /// <p>If deletion protection is enabled, you must first disable it before you can delete the
-    /// ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
+    /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on ledger creation, this feature is enabled (<code>true</code>) by default.</p>
+    /// <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
     pub deletion_protection: std::option::Option<bool>,
-    /// <p>Information about the encryption of data at rest in the ledger. This includes the
-    /// current status, the KMS key, and when the key became inaccessible (in the case of an
-    /// error).</p>
+    /// <p>Information about the encryption of data at rest in the ledger. This includes the current status, the KMS key, and when the key became inaccessible (in the case of an error).</p>
     pub encryption_description: std::option::Option<crate::model::LedgerEncryptionDescription>,
 }
 impl UpdateLedgerOutput {
@@ -130,21 +125,16 @@ impl UpdateLedgerOutput {
     pub fn state(&self) -> std::option::Option<&crate::model::LedgerState> {
         self.state.as_ref()
     }
-    /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format
-    /// is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
+    /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
     pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
-    /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on
-    /// ledger creation, this feature is enabled (<code>true</code>) by default.</p>
-    /// <p>If deletion protection is enabled, you must first disable it before you can delete the
-    /// ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
+    /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on ledger creation, this feature is enabled (<code>true</code>) by default.</p>
+    /// <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
     pub fn deletion_protection(&self) -> std::option::Option<bool> {
         self.deletion_protection
     }
-    /// <p>Information about the encryption of data at rest in the ledger. This includes the
-    /// current status, the KMS key, and when the key became inaccessible (in the case of an
-    /// error).</p>
+    /// <p>Information about the encryption of data at rest in the ledger. This includes the current status, the KMS key, and when the key became inaccessible (in the case of an error).</p>
     pub fn encryption_description(
         &self,
     ) -> std::option::Option<&crate::model::LedgerEncryptionDescription> {
@@ -208,14 +198,12 @@ pub mod update_ledger_output {
             self.state = input;
             self
         }
-        /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format
-        /// is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
+        /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date_time = Some(input);
             self
         }
-        /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format
-        /// is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
+        /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
         pub fn set_creation_date_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -223,25 +211,19 @@ pub mod update_ledger_output {
             self.creation_date_time = input;
             self
         }
-        /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on
-        /// ledger creation, this feature is enabled (<code>true</code>) by default.</p>
-        /// <p>If deletion protection is enabled, you must first disable it before you can delete the
-        /// ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
+        /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on ledger creation, this feature is enabled (<code>true</code>) by default.</p>
+        /// <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
         pub fn deletion_protection(mut self, input: bool) -> Self {
             self.deletion_protection = Some(input);
             self
         }
-        /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on
-        /// ledger creation, this feature is enabled (<code>true</code>) by default.</p>
-        /// <p>If deletion protection is enabled, you must first disable it before you can delete the
-        /// ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
+        /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on ledger creation, this feature is enabled (<code>true</code>) by default.</p>
+        /// <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
         pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
             self.deletion_protection = input;
             self
         }
-        /// <p>Information about the encryption of data at rest in the ledger. This includes the
-        /// current status, the KMS key, and when the key became inaccessible (in the case of an
-        /// error).</p>
+        /// <p>Information about the encryption of data at rest in the ledger. This includes the current status, the KMS key, and when the key became inaccessible (in the case of an error).</p>
         pub fn encryption_description(
             mut self,
             input: crate::model::LedgerEncryptionDescription,
@@ -249,9 +231,7 @@ pub mod update_ledger_output {
             self.encryption_description = Some(input);
             self
         }
-        /// <p>Information about the encryption of data at rest in the ledger. This includes the
-        /// current status, the KMS key, and when the key became inaccessible (in the case of an
-        /// error).</p>
+        /// <p>Information about the encryption of data at rest in the ledger. This includes the current status, the KMS key, and when the key became inaccessible (in the case of an error).</p>
         pub fn set_encryption_description(
             mut self,
             input: std::option::Option<crate::model::LedgerEncryptionDescription>,
@@ -343,13 +323,11 @@ impl TagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StreamJournalToKinesisOutput {
-    /// <p>The UUID (represented in Base62-encoded text) that QLDB assigns to each QLDB journal
-    /// stream.</p>
+    /// <p>The UUID (represented in Base62-encoded text) that QLDB assigns to each QLDB journal stream.</p>
     pub stream_id: std::option::Option<std::string::String>,
 }
 impl StreamJournalToKinesisOutput {
-    /// <p>The UUID (represented in Base62-encoded text) that QLDB assigns to each QLDB journal
-    /// stream.</p>
+    /// <p>The UUID (represented in Base62-encoded text) that QLDB assigns to each QLDB journal stream.</p>
     pub fn stream_id(&self) -> std::option::Option<&str> {
         self.stream_id.as_deref()
     }
@@ -370,14 +348,12 @@ pub mod stream_journal_to_kinesis_output {
         pub(crate) stream_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The UUID (represented in Base62-encoded text) that QLDB assigns to each QLDB journal
-        /// stream.</p>
+        /// <p>The UUID (represented in Base62-encoded text) that QLDB assigns to each QLDB journal stream.</p>
         pub fn stream_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.stream_id = Some(input.into());
             self
         }
-        /// <p>The UUID (represented in Base62-encoded text) that QLDB assigns to each QLDB journal
-        /// stream.</p>
+        /// <p>The UUID (represented in Base62-encoded text) that QLDB assigns to each QLDB journal stream.</p>
         pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_id = input;
             self
@@ -482,40 +458,24 @@ impl ListTagsForResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLedgersOutput {
-    /// <p>The array of ledger summaries that are associated with the current account and
-    /// Region.</p>
+    /// <p>The array of ledger summaries that are associated with the current account and Region.</p>
     pub ledgers: std::option::Option<std::vec::Vec<crate::model::LedgerSummary>>,
     /// <p>A pagination token, indicating whether there are more results available:</p>
     /// <ul>
-    /// <li>
-    /// <p>If <code>NextToken</code> is empty, then the last page of results has been
-    /// processed and there are no more results to be retrieved.</p>
-    /// </li>
-    /// <li>
-    /// <p>If <code>NextToken</code> is <i>not</i> empty, then there are more
-    /// results available. To retrieve the next page of results, use the value of
-    /// <code>NextToken</code> in a subsequent <code>ListLedgers</code> call.</p>
-    /// </li>
+    /// <li> <p>If <code>NextToken</code> is empty, then the last page of results has been processed and there are no more results to be retrieved.</p> </li>
+    /// <li> <p>If <code>NextToken</code> is <i>not</i> empty, then there are more results available. To retrieve the next page of results, use the value of <code>NextToken</code> in a subsequent <code>ListLedgers</code> call.</p> </li>
     /// </ul>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListLedgersOutput {
-    /// <p>The array of ledger summaries that are associated with the current account and
-    /// Region.</p>
+    /// <p>The array of ledger summaries that are associated with the current account and Region.</p>
     pub fn ledgers(&self) -> std::option::Option<&[crate::model::LedgerSummary]> {
         self.ledgers.as_deref()
     }
     /// <p>A pagination token, indicating whether there are more results available:</p>
     /// <ul>
-    /// <li>
-    /// <p>If <code>NextToken</code> is empty, then the last page of results has been
-    /// processed and there are no more results to be retrieved.</p>
-    /// </li>
-    /// <li>
-    /// <p>If <code>NextToken</code> is <i>not</i> empty, then there are more
-    /// results available. To retrieve the next page of results, use the value of
-    /// <code>NextToken</code> in a subsequent <code>ListLedgers</code> call.</p>
-    /// </li>
+    /// <li> <p>If <code>NextToken</code> is empty, then the last page of results has been processed and there are no more results to be retrieved.</p> </li>
+    /// <li> <p>If <code>NextToken</code> is <i>not</i> empty, then there are more results available. To retrieve the next page of results, use the value of <code>NextToken</code> in a subsequent <code>ListLedgers</code> call.</p> </li>
     /// </ul>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
@@ -543,16 +503,14 @@ pub mod list_ledgers_output {
         ///
         /// To override the contents of this collection use [`set_ledgers`](Self::set_ledgers).
         ///
-        /// <p>The array of ledger summaries that are associated with the current account and
-        /// Region.</p>
+        /// <p>The array of ledger summaries that are associated with the current account and Region.</p>
         pub fn ledgers(mut self, input: crate::model::LedgerSummary) -> Self {
             let mut v = self.ledgers.unwrap_or_default();
             v.push(input);
             self.ledgers = Some(v);
             self
         }
-        /// <p>The array of ledger summaries that are associated with the current account and
-        /// Region.</p>
+        /// <p>The array of ledger summaries that are associated with the current account and Region.</p>
         pub fn set_ledgers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LedgerSummary>>,
@@ -562,15 +520,8 @@ pub mod list_ledgers_output {
         }
         /// <p>A pagination token, indicating whether there are more results available:</p>
         /// <ul>
-        /// <li>
-        /// <p>If <code>NextToken</code> is empty, then the last page of results has been
-        /// processed and there are no more results to be retrieved.</p>
-        /// </li>
-        /// <li>
-        /// <p>If <code>NextToken</code> is <i>not</i> empty, then there are more
-        /// results available. To retrieve the next page of results, use the value of
-        /// <code>NextToken</code> in a subsequent <code>ListLedgers</code> call.</p>
-        /// </li>
+        /// <li> <p>If <code>NextToken</code> is empty, then the last page of results has been processed and there are no more results to be retrieved.</p> </li>
+        /// <li> <p>If <code>NextToken</code> is <i>not</i> empty, then there are more results available. To retrieve the next page of results, use the value of <code>NextToken</code> in a subsequent <code>ListLedgers</code> call.</p> </li>
         /// </ul>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
@@ -578,15 +529,8 @@ pub mod list_ledgers_output {
         }
         /// <p>A pagination token, indicating whether there are more results available:</p>
         /// <ul>
-        /// <li>
-        /// <p>If <code>NextToken</code> is empty, then the last page of results has been
-        /// processed and there are no more results to be retrieved.</p>
-        /// </li>
-        /// <li>
-        /// <p>If <code>NextToken</code> is <i>not</i> empty, then there are more
-        /// results available. To retrieve the next page of results, use the value of
-        /// <code>NextToken</code> in a subsequent <code>ListLedgers</code> call.</p>
-        /// </li>
+        /// <li> <p>If <code>NextToken</code> is empty, then the last page of results has been processed and there are no more results to be retrieved.</p> </li>
+        /// <li> <p>If <code>NextToken</code> is <i>not</i> empty, then there are more results available. To retrieve the next page of results, use the value of <code>NextToken</code> in a subsequent <code>ListLedgers</code> call.</p> </li>
         /// </ul>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
@@ -612,43 +556,25 @@ impl ListLedgersOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListJournalS3ExportsForLedgerOutput {
-    /// <p>The array of journal export job descriptions that are associated with the specified
-    /// ledger.</p>
+    /// <p>The array of journal export job descriptions that are associated with the specified ledger.</p>
     pub journal_s3_exports:
         std::option::Option<std::vec::Vec<crate::model::JournalS3ExportDescription>>,
     /// <ul>
-    /// <li>
-    /// <p>If <code>NextToken</code> is empty, then the last page of results has been
-    /// processed and there are no more results to be retrieved.</p>
-    /// </li>
-    /// <li>
-    /// <p>If <code>NextToken</code> is <i>not</i> empty, then there are more
-    /// results available. To retrieve the next page of results, use the value of
-    /// <code>NextToken</code> in a subsequent <code>ListJournalS3ExportsForLedger</code>
-    /// call.</p>
-    /// </li>
+    /// <li> <p>If <code>NextToken</code> is empty, then the last page of results has been processed and there are no more results to be retrieved.</p> </li>
+    /// <li> <p>If <code>NextToken</code> is <i>not</i> empty, then there are more results available. To retrieve the next page of results, use the value of <code>NextToken</code> in a subsequent <code>ListJournalS3ExportsForLedger</code> call.</p> </li>
     /// </ul>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListJournalS3ExportsForLedgerOutput {
-    /// <p>The array of journal export job descriptions that are associated with the specified
-    /// ledger.</p>
+    /// <p>The array of journal export job descriptions that are associated with the specified ledger.</p>
     pub fn journal_s3_exports(
         &self,
     ) -> std::option::Option<&[crate::model::JournalS3ExportDescription]> {
         self.journal_s3_exports.as_deref()
     }
     /// <ul>
-    /// <li>
-    /// <p>If <code>NextToken</code> is empty, then the last page of results has been
-    /// processed and there are no more results to be retrieved.</p>
-    /// </li>
-    /// <li>
-    /// <p>If <code>NextToken</code> is <i>not</i> empty, then there are more
-    /// results available. To retrieve the next page of results, use the value of
-    /// <code>NextToken</code> in a subsequent <code>ListJournalS3ExportsForLedger</code>
-    /// call.</p>
-    /// </li>
+    /// <li> <p>If <code>NextToken</code> is empty, then the last page of results has been processed and there are no more results to be retrieved.</p> </li>
+    /// <li> <p>If <code>NextToken</code> is <i>not</i> empty, then there are more results available. To retrieve the next page of results, use the value of <code>NextToken</code> in a subsequent <code>ListJournalS3ExportsForLedger</code> call.</p> </li>
     /// </ul>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
@@ -677,8 +603,7 @@ pub mod list_journal_s3_exports_for_ledger_output {
         ///
         /// To override the contents of this collection use [`set_journal_s3_exports`](Self::set_journal_s3_exports).
         ///
-        /// <p>The array of journal export job descriptions that are associated with the specified
-        /// ledger.</p>
+        /// <p>The array of journal export job descriptions that are associated with the specified ledger.</p>
         pub fn journal_s3_exports(
             mut self,
             input: crate::model::JournalS3ExportDescription,
@@ -688,8 +613,7 @@ pub mod list_journal_s3_exports_for_ledger_output {
             self.journal_s3_exports = Some(v);
             self
         }
-        /// <p>The array of journal export job descriptions that are associated with the specified
-        /// ledger.</p>
+        /// <p>The array of journal export job descriptions that are associated with the specified ledger.</p>
         pub fn set_journal_s3_exports(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::JournalS3ExportDescription>>,
@@ -698,32 +622,16 @@ pub mod list_journal_s3_exports_for_ledger_output {
             self
         }
         /// <ul>
-        /// <li>
-        /// <p>If <code>NextToken</code> is empty, then the last page of results has been
-        /// processed and there are no more results to be retrieved.</p>
-        /// </li>
-        /// <li>
-        /// <p>If <code>NextToken</code> is <i>not</i> empty, then there are more
-        /// results available. To retrieve the next page of results, use the value of
-        /// <code>NextToken</code> in a subsequent <code>ListJournalS3ExportsForLedger</code>
-        /// call.</p>
-        /// </li>
+        /// <li> <p>If <code>NextToken</code> is empty, then the last page of results has been processed and there are no more results to be retrieved.</p> </li>
+        /// <li> <p>If <code>NextToken</code> is <i>not</i> empty, then there are more results available. To retrieve the next page of results, use the value of <code>NextToken</code> in a subsequent <code>ListJournalS3ExportsForLedger</code> call.</p> </li>
         /// </ul>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
         /// <ul>
-        /// <li>
-        /// <p>If <code>NextToken</code> is empty, then the last page of results has been
-        /// processed and there are no more results to be retrieved.</p>
-        /// </li>
-        /// <li>
-        /// <p>If <code>NextToken</code> is <i>not</i> empty, then there are more
-        /// results available. To retrieve the next page of results, use the value of
-        /// <code>NextToken</code> in a subsequent <code>ListJournalS3ExportsForLedger</code>
-        /// call.</p>
-        /// </li>
+        /// <li> <p>If <code>NextToken</code> is empty, then the last page of results has been processed and there are no more results to be retrieved.</p> </li>
+        /// <li> <p>If <code>NextToken</code> is <i>not</i> empty, then there are more results available. To retrieve the next page of results, use the value of <code>NextToken</code> in a subsequent <code>ListJournalS3ExportsForLedger</code> call.</p> </li>
         /// </ul>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
@@ -749,43 +657,25 @@ impl ListJournalS3ExportsForLedgerOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListJournalS3ExportsOutput {
-    /// <p>The array of journal export job descriptions for all ledgers that are associated with
-    /// the current account and Region.</p>
+    /// <p>The array of journal export job descriptions for all ledgers that are associated with the current account and Region.</p>
     pub journal_s3_exports:
         std::option::Option<std::vec::Vec<crate::model::JournalS3ExportDescription>>,
     /// <ul>
-    /// <li>
-    /// <p>If <code>NextToken</code> is empty, then the last page of results has been
-    /// processed and there are no more results to be retrieved.</p>
-    /// </li>
-    /// <li>
-    /// <p>If <code>NextToken</code> is <i>not</i> empty, then there are more
-    /// results available. To retrieve the next page of results, use the value of
-    /// <code>NextToken</code> in a subsequent <code>ListJournalS3Exports</code>
-    /// call.</p>
-    /// </li>
+    /// <li> <p>If <code>NextToken</code> is empty, then the last page of results has been processed and there are no more results to be retrieved.</p> </li>
+    /// <li> <p>If <code>NextToken</code> is <i>not</i> empty, then there are more results available. To retrieve the next page of results, use the value of <code>NextToken</code> in a subsequent <code>ListJournalS3Exports</code> call.</p> </li>
     /// </ul>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListJournalS3ExportsOutput {
-    /// <p>The array of journal export job descriptions for all ledgers that are associated with
-    /// the current account and Region.</p>
+    /// <p>The array of journal export job descriptions for all ledgers that are associated with the current account and Region.</p>
     pub fn journal_s3_exports(
         &self,
     ) -> std::option::Option<&[crate::model::JournalS3ExportDescription]> {
         self.journal_s3_exports.as_deref()
     }
     /// <ul>
-    /// <li>
-    /// <p>If <code>NextToken</code> is empty, then the last page of results has been
-    /// processed and there are no more results to be retrieved.</p>
-    /// </li>
-    /// <li>
-    /// <p>If <code>NextToken</code> is <i>not</i> empty, then there are more
-    /// results available. To retrieve the next page of results, use the value of
-    /// <code>NextToken</code> in a subsequent <code>ListJournalS3Exports</code>
-    /// call.</p>
-    /// </li>
+    /// <li> <p>If <code>NextToken</code> is empty, then the last page of results has been processed and there are no more results to be retrieved.</p> </li>
+    /// <li> <p>If <code>NextToken</code> is <i>not</i> empty, then there are more results available. To retrieve the next page of results, use the value of <code>NextToken</code> in a subsequent <code>ListJournalS3Exports</code> call.</p> </li>
     /// </ul>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
@@ -814,8 +704,7 @@ pub mod list_journal_s3_exports_output {
         ///
         /// To override the contents of this collection use [`set_journal_s3_exports`](Self::set_journal_s3_exports).
         ///
-        /// <p>The array of journal export job descriptions for all ledgers that are associated with
-        /// the current account and Region.</p>
+        /// <p>The array of journal export job descriptions for all ledgers that are associated with the current account and Region.</p>
         pub fn journal_s3_exports(
             mut self,
             input: crate::model::JournalS3ExportDescription,
@@ -825,8 +714,7 @@ pub mod list_journal_s3_exports_output {
             self.journal_s3_exports = Some(v);
             self
         }
-        /// <p>The array of journal export job descriptions for all ledgers that are associated with
-        /// the current account and Region.</p>
+        /// <p>The array of journal export job descriptions for all ledgers that are associated with the current account and Region.</p>
         pub fn set_journal_s3_exports(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::JournalS3ExportDescription>>,
@@ -835,32 +723,16 @@ pub mod list_journal_s3_exports_output {
             self
         }
         /// <ul>
-        /// <li>
-        /// <p>If <code>NextToken</code> is empty, then the last page of results has been
-        /// processed and there are no more results to be retrieved.</p>
-        /// </li>
-        /// <li>
-        /// <p>If <code>NextToken</code> is <i>not</i> empty, then there are more
-        /// results available. To retrieve the next page of results, use the value of
-        /// <code>NextToken</code> in a subsequent <code>ListJournalS3Exports</code>
-        /// call.</p>
-        /// </li>
+        /// <li> <p>If <code>NextToken</code> is empty, then the last page of results has been processed and there are no more results to be retrieved.</p> </li>
+        /// <li> <p>If <code>NextToken</code> is <i>not</i> empty, then there are more results available. To retrieve the next page of results, use the value of <code>NextToken</code> in a subsequent <code>ListJournalS3Exports</code> call.</p> </li>
         /// </ul>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
         /// <ul>
-        /// <li>
-        /// <p>If <code>NextToken</code> is empty, then the last page of results has been
-        /// processed and there are no more results to be retrieved.</p>
-        /// </li>
-        /// <li>
-        /// <p>If <code>NextToken</code> is <i>not</i> empty, then there are more
-        /// results available. To retrieve the next page of results, use the value of
-        /// <code>NextToken</code> in a subsequent <code>ListJournalS3Exports</code>
-        /// call.</p>
-        /// </li>
+        /// <li> <p>If <code>NextToken</code> is empty, then the last page of results has been processed and there are no more results to be retrieved.</p> </li>
+        /// <li> <p>If <code>NextToken</code> is <i>not</i> empty, then there are more results available. To retrieve the next page of results, use the value of <code>NextToken</code> in a subsequent <code>ListJournalS3Exports</code> call.</p> </li>
         /// </ul>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
@@ -886,40 +758,22 @@ impl ListJournalS3ExportsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListJournalKinesisStreamsForLedgerOutput {
-    /// <p>The array of QLDB journal stream descriptors that are associated with the given
-    /// ledger.</p>
+    /// <p>The array of QLDB journal stream descriptors that are associated with the given ledger.</p>
     pub streams: std::option::Option<std::vec::Vec<crate::model::JournalKinesisStreamDescription>>,
     /// <ul>
-    /// <li>
-    /// <p>If <code>NextToken</code> is empty, the last page of results has been processed
-    /// and there are no more results to be retrieved.</p>
-    /// </li>
-    /// <li>
-    /// <p>If <code>NextToken</code> is <i>not</i> empty, more results are
-    /// available. To retrieve the next page of results, use the value of
-    /// <code>NextToken</code> in a subsequent
-    /// <code>ListJournalKinesisStreamsForLedger</code> call.</p>
-    /// </li>
+    /// <li> <p>If <code>NextToken</code> is empty, the last page of results has been processed and there are no more results to be retrieved.</p> </li>
+    /// <li> <p>If <code>NextToken</code> is <i>not</i> empty, more results are available. To retrieve the next page of results, use the value of <code>NextToken</code> in a subsequent <code>ListJournalKinesisStreamsForLedger</code> call.</p> </li>
     /// </ul>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListJournalKinesisStreamsForLedgerOutput {
-    /// <p>The array of QLDB journal stream descriptors that are associated with the given
-    /// ledger.</p>
+    /// <p>The array of QLDB journal stream descriptors that are associated with the given ledger.</p>
     pub fn streams(&self) -> std::option::Option<&[crate::model::JournalKinesisStreamDescription]> {
         self.streams.as_deref()
     }
     /// <ul>
-    /// <li>
-    /// <p>If <code>NextToken</code> is empty, the last page of results has been processed
-    /// and there are no more results to be retrieved.</p>
-    /// </li>
-    /// <li>
-    /// <p>If <code>NextToken</code> is <i>not</i> empty, more results are
-    /// available. To retrieve the next page of results, use the value of
-    /// <code>NextToken</code> in a subsequent
-    /// <code>ListJournalKinesisStreamsForLedger</code> call.</p>
-    /// </li>
+    /// <li> <p>If <code>NextToken</code> is empty, the last page of results has been processed and there are no more results to be retrieved.</p> </li>
+    /// <li> <p>If <code>NextToken</code> is <i>not</i> empty, more results are available. To retrieve the next page of results, use the value of <code>NextToken</code> in a subsequent <code>ListJournalKinesisStreamsForLedger</code> call.</p> </li>
     /// </ul>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
@@ -948,16 +802,14 @@ pub mod list_journal_kinesis_streams_for_ledger_output {
         ///
         /// To override the contents of this collection use [`set_streams`](Self::set_streams).
         ///
-        /// <p>The array of QLDB journal stream descriptors that are associated with the given
-        /// ledger.</p>
+        /// <p>The array of QLDB journal stream descriptors that are associated with the given ledger.</p>
         pub fn streams(mut self, input: crate::model::JournalKinesisStreamDescription) -> Self {
             let mut v = self.streams.unwrap_or_default();
             v.push(input);
             self.streams = Some(v);
             self
         }
-        /// <p>The array of QLDB journal stream descriptors that are associated with the given
-        /// ledger.</p>
+        /// <p>The array of QLDB journal stream descriptors that are associated with the given ledger.</p>
         pub fn set_streams(
             mut self,
             input: std::option::Option<
@@ -968,32 +820,16 @@ pub mod list_journal_kinesis_streams_for_ledger_output {
             self
         }
         /// <ul>
-        /// <li>
-        /// <p>If <code>NextToken</code> is empty, the last page of results has been processed
-        /// and there are no more results to be retrieved.</p>
-        /// </li>
-        /// <li>
-        /// <p>If <code>NextToken</code> is <i>not</i> empty, more results are
-        /// available. To retrieve the next page of results, use the value of
-        /// <code>NextToken</code> in a subsequent
-        /// <code>ListJournalKinesisStreamsForLedger</code> call.</p>
-        /// </li>
+        /// <li> <p>If <code>NextToken</code> is empty, the last page of results has been processed and there are no more results to be retrieved.</p> </li>
+        /// <li> <p>If <code>NextToken</code> is <i>not</i> empty, more results are available. To retrieve the next page of results, use the value of <code>NextToken</code> in a subsequent <code>ListJournalKinesisStreamsForLedger</code> call.</p> </li>
         /// </ul>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
         /// <ul>
-        /// <li>
-        /// <p>If <code>NextToken</code> is empty, the last page of results has been processed
-        /// and there are no more results to be retrieved.</p>
-        /// </li>
-        /// <li>
-        /// <p>If <code>NextToken</code> is <i>not</i> empty, more results are
-        /// available. To retrieve the next page of results, use the value of
-        /// <code>NextToken</code> in a subsequent
-        /// <code>ListJournalKinesisStreamsForLedger</code> call.</p>
-        /// </li>
+        /// <li> <p>If <code>NextToken</code> is empty, the last page of results has been processed and there are no more results to be retrieved.</p> </li>
+        /// <li> <p>If <code>NextToken</code> is <i>not</i> empty, more results are available. To retrieve the next page of results, use the value of <code>NextToken</code> in a subsequent <code>ListJournalKinesisStreamsForLedger</code> call.</p> </li>
         /// </ul>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
@@ -1019,17 +855,13 @@ impl ListJournalKinesisStreamsForLedgerOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRevisionOutput {
-    /// <p>The proof object in Amazon Ion format returned by a <code>GetRevision</code> request. A
-    /// proof contains the list of hash values that are required to recalculate the specified
-    /// digest using a Merkle tree, starting with the specified document revision.</p>
+    /// <p>The proof object in Amazon Ion format returned by a <code>GetRevision</code> request. A proof contains the list of hash values that are required to recalculate the specified digest using a Merkle tree, starting with the specified document revision.</p>
     pub proof: std::option::Option<crate::model::ValueHolder>,
     /// <p>The document revision data object in Amazon Ion format.</p>
     pub revision: std::option::Option<crate::model::ValueHolder>,
 }
 impl GetRevisionOutput {
-    /// <p>The proof object in Amazon Ion format returned by a <code>GetRevision</code> request. A
-    /// proof contains the list of hash values that are required to recalculate the specified
-    /// digest using a Merkle tree, starting with the specified document revision.</p>
+    /// <p>The proof object in Amazon Ion format returned by a <code>GetRevision</code> request. A proof contains the list of hash values that are required to recalculate the specified digest using a Merkle tree, starting with the specified document revision.</p>
     pub fn proof(&self) -> std::option::Option<&crate::model::ValueHolder> {
         self.proof.as_ref()
     }
@@ -1056,16 +888,12 @@ pub mod get_revision_output {
         pub(crate) revision: std::option::Option<crate::model::ValueHolder>,
     }
     impl Builder {
-        /// <p>The proof object in Amazon Ion format returned by a <code>GetRevision</code> request. A
-        /// proof contains the list of hash values that are required to recalculate the specified
-        /// digest using a Merkle tree, starting with the specified document revision.</p>
+        /// <p>The proof object in Amazon Ion format returned by a <code>GetRevision</code> request. A proof contains the list of hash values that are required to recalculate the specified digest using a Merkle tree, starting with the specified document revision.</p>
         pub fn proof(mut self, input: crate::model::ValueHolder) -> Self {
             self.proof = Some(input);
             self
         }
-        /// <p>The proof object in Amazon Ion format returned by a <code>GetRevision</code> request. A
-        /// proof contains the list of hash values that are required to recalculate the specified
-        /// digest using a Merkle tree, starting with the specified document revision.</p>
+        /// <p>The proof object in Amazon Ion format returned by a <code>GetRevision</code> request. A proof contains the list of hash values that are required to recalculate the specified digest using a Merkle tree, starting with the specified document revision.</p>
         pub fn set_proof(mut self, input: std::option::Option<crate::model::ValueHolder>) -> Self {
             self.proof = input;
             self
@@ -1103,23 +931,17 @@ impl GetRevisionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDigestOutput {
-    /// <p>The 256-bit hash value representing the digest returned by a <code>GetDigest</code>
-    /// request.</p>
+    /// <p>The 256-bit hash value representing the digest returned by a <code>GetDigest</code> request.</p>
     pub digest: std::option::Option<aws_smithy_types::Blob>,
-    /// <p>The latest block location covered by the digest that you requested. An address is an
-    /// Amazon Ion structure that has two fields: <code>strandId</code> and
-    /// <code>sequenceNo</code>.</p>
+    /// <p>The latest block location covered by the digest that you requested. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
     pub digest_tip_address: std::option::Option<crate::model::ValueHolder>,
 }
 impl GetDigestOutput {
-    /// <p>The 256-bit hash value representing the digest returned by a <code>GetDigest</code>
-    /// request.</p>
+    /// <p>The 256-bit hash value representing the digest returned by a <code>GetDigest</code> request.</p>
     pub fn digest(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.digest.as_ref()
     }
-    /// <p>The latest block location covered by the digest that you requested. An address is an
-    /// Amazon Ion structure that has two fields: <code>strandId</code> and
-    /// <code>sequenceNo</code>.</p>
+    /// <p>The latest block location covered by the digest that you requested. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
     pub fn digest_tip_address(&self) -> std::option::Option<&crate::model::ValueHolder> {
         self.digest_tip_address.as_ref()
     }
@@ -1142,28 +964,22 @@ pub mod get_digest_output {
         pub(crate) digest_tip_address: std::option::Option<crate::model::ValueHolder>,
     }
     impl Builder {
-        /// <p>The 256-bit hash value representing the digest returned by a <code>GetDigest</code>
-        /// request.</p>
+        /// <p>The 256-bit hash value representing the digest returned by a <code>GetDigest</code> request.</p>
         pub fn digest(mut self, input: aws_smithy_types::Blob) -> Self {
             self.digest = Some(input);
             self
         }
-        /// <p>The 256-bit hash value representing the digest returned by a <code>GetDigest</code>
-        /// request.</p>
+        /// <p>The 256-bit hash value representing the digest returned by a <code>GetDigest</code> request.</p>
         pub fn set_digest(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.digest = input;
             self
         }
-        /// <p>The latest block location covered by the digest that you requested. An address is an
-        /// Amazon Ion structure that has two fields: <code>strandId</code> and
-        /// <code>sequenceNo</code>.</p>
+        /// <p>The latest block location covered by the digest that you requested. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
         pub fn digest_tip_address(mut self, input: crate::model::ValueHolder) -> Self {
             self.digest_tip_address = Some(input);
             self
         }
-        /// <p>The latest block location covered by the digest that you requested. An address is an
-        /// Amazon Ion structure that has two fields: <code>strandId</code> and
-        /// <code>sequenceNo</code>.</p>
+        /// <p>The latest block location covered by the digest that you requested. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
         pub fn set_digest_tip_address(
             mut self,
             input: std::option::Option<crate::model::ValueHolder>,
@@ -1193,9 +1009,7 @@ impl GetDigestOutput {
 pub struct GetBlockOutput {
     /// <p>The block data object in Amazon Ion format.</p>
     pub block: std::option::Option<crate::model::ValueHolder>,
-    /// <p>The proof object in Amazon Ion format returned by a <code>GetBlock</code> request. A
-    /// proof contains the list of hash values required to recalculate the specified digest using a
-    /// Merkle tree, starting with the specified block.</p>
+    /// <p>The proof object in Amazon Ion format returned by a <code>GetBlock</code> request. A proof contains the list of hash values required to recalculate the specified digest using a Merkle tree, starting with the specified block.</p>
     pub proof: std::option::Option<crate::model::ValueHolder>,
 }
 impl GetBlockOutput {
@@ -1203,9 +1017,7 @@ impl GetBlockOutput {
     pub fn block(&self) -> std::option::Option<&crate::model::ValueHolder> {
         self.block.as_ref()
     }
-    /// <p>The proof object in Amazon Ion format returned by a <code>GetBlock</code> request. A
-    /// proof contains the list of hash values required to recalculate the specified digest using a
-    /// Merkle tree, starting with the specified block.</p>
+    /// <p>The proof object in Amazon Ion format returned by a <code>GetBlock</code> request. A proof contains the list of hash values required to recalculate the specified digest using a Merkle tree, starting with the specified block.</p>
     pub fn proof(&self) -> std::option::Option<&crate::model::ValueHolder> {
         self.proof.as_ref()
     }
@@ -1238,16 +1050,12 @@ pub mod get_block_output {
             self.block = input;
             self
         }
-        /// <p>The proof object in Amazon Ion format returned by a <code>GetBlock</code> request. A
-        /// proof contains the list of hash values required to recalculate the specified digest using a
-        /// Merkle tree, starting with the specified block.</p>
+        /// <p>The proof object in Amazon Ion format returned by a <code>GetBlock</code> request. A proof contains the list of hash values required to recalculate the specified digest using a Merkle tree, starting with the specified block.</p>
         pub fn proof(mut self, input: crate::model::ValueHolder) -> Self {
             self.proof = Some(input);
             self
         }
-        /// <p>The proof object in Amazon Ion format returned by a <code>GetBlock</code> request. A
-        /// proof contains the list of hash values required to recalculate the specified digest using a
-        /// Merkle tree, starting with the specified block.</p>
+        /// <p>The proof object in Amazon Ion format returned by a <code>GetBlock</code> request. A proof contains the list of hash values required to recalculate the specified digest using a Merkle tree, starting with the specified block.</p>
         pub fn set_proof(mut self, input: std::option::Option<crate::model::ValueHolder>) -> Self {
             self.proof = input;
             self
@@ -1272,17 +1080,13 @@ impl GetBlockOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportJournalToS3Output {
-    /// <p>The UUID (represented in Base62-encoded text) that QLDB assigns to each journal export
-    /// job.</p>
-    /// <p>To describe your export request and check the status of the job, you can use
-    /// <code>ExportId</code> to call <code>DescribeJournalS3Export</code>.</p>
+    /// <p>The UUID (represented in Base62-encoded text) that QLDB assigns to each journal export job.</p>
+    /// <p>To describe your export request and check the status of the job, you can use <code>ExportId</code> to call <code>DescribeJournalS3Export</code>.</p>
     pub export_id: std::option::Option<std::string::String>,
 }
 impl ExportJournalToS3Output {
-    /// <p>The UUID (represented in Base62-encoded text) that QLDB assigns to each journal export
-    /// job.</p>
-    /// <p>To describe your export request and check the status of the job, you can use
-    /// <code>ExportId</code> to call <code>DescribeJournalS3Export</code>.</p>
+    /// <p>The UUID (represented in Base62-encoded text) that QLDB assigns to each journal export job.</p>
+    /// <p>To describe your export request and check the status of the job, you can use <code>ExportId</code> to call <code>DescribeJournalS3Export</code>.</p>
     pub fn export_id(&self) -> std::option::Option<&str> {
         self.export_id.as_deref()
     }
@@ -1303,18 +1107,14 @@ pub mod export_journal_to_s3_output {
         pub(crate) export_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The UUID (represented in Base62-encoded text) that QLDB assigns to each journal export
-        /// job.</p>
-        /// <p>To describe your export request and check the status of the job, you can use
-        /// <code>ExportId</code> to call <code>DescribeJournalS3Export</code>.</p>
+        /// <p>The UUID (represented in Base62-encoded text) that QLDB assigns to each journal export job.</p>
+        /// <p>To describe your export request and check the status of the job, you can use <code>ExportId</code> to call <code>DescribeJournalS3Export</code>.</p>
         pub fn export_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.export_id = Some(input.into());
             self
         }
-        /// <p>The UUID (represented in Base62-encoded text) that QLDB assigns to each journal export
-        /// job.</p>
-        /// <p>To describe your export request and check the status of the job, you can use
-        /// <code>ExportId</code> to call <code>DescribeJournalS3Export</code>.</p>
+        /// <p>The UUID (represented in Base62-encoded text) that QLDB assigns to each journal export job.</p>
+        /// <p>To describe your export request and check the status of the job, you can use <code>ExportId</code> to call <code>DescribeJournalS3Export</code>.</p>
         pub fn set_export_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.export_id = input;
             self
@@ -1344,19 +1144,14 @@ pub struct DescribeLedgerOutput {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The current status of the ledger.</p>
     pub state: std::option::Option<crate::model::LedgerState>,
-    /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format
-    /// is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
+    /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The permissions mode of the ledger.</p>
     pub permissions_mode: std::option::Option<crate::model::PermissionsMode>,
-    /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on
-    /// ledger creation, this feature is enabled (<code>true</code>) by default.</p>
-    /// <p>If deletion protection is enabled, you must first disable it before you can delete the
-    /// ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
+    /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on ledger creation, this feature is enabled (<code>true</code>) by default.</p>
+    /// <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
     pub deletion_protection: std::option::Option<bool>,
-    /// <p>Information about the encryption of data at rest in the ledger. This includes the
-    /// current status, the KMS key, and when the key became inaccessible (in the case of an
-    /// error).</p>
+    /// <p>Information about the encryption of data at rest in the ledger. This includes the current status, the KMS key, and when the key became inaccessible (in the case of an error).</p>
     pub encryption_description: std::option::Option<crate::model::LedgerEncryptionDescription>,
 }
 impl DescribeLedgerOutput {
@@ -1372,8 +1167,7 @@ impl DescribeLedgerOutput {
     pub fn state(&self) -> std::option::Option<&crate::model::LedgerState> {
         self.state.as_ref()
     }
-    /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format
-    /// is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
+    /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
     pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
@@ -1381,16 +1175,12 @@ impl DescribeLedgerOutput {
     pub fn permissions_mode(&self) -> std::option::Option<&crate::model::PermissionsMode> {
         self.permissions_mode.as_ref()
     }
-    /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on
-    /// ledger creation, this feature is enabled (<code>true</code>) by default.</p>
-    /// <p>If deletion protection is enabled, you must first disable it before you can delete the
-    /// ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
+    /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on ledger creation, this feature is enabled (<code>true</code>) by default.</p>
+    /// <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
     pub fn deletion_protection(&self) -> std::option::Option<bool> {
         self.deletion_protection
     }
-    /// <p>Information about the encryption of data at rest in the ledger. This includes the
-    /// current status, the KMS key, and when the key became inaccessible (in the case of an
-    /// error).</p>
+    /// <p>Information about the encryption of data at rest in the ledger. This includes the current status, the KMS key, and when the key became inaccessible (in the case of an error).</p>
     pub fn encryption_description(
         &self,
     ) -> std::option::Option<&crate::model::LedgerEncryptionDescription> {
@@ -1456,14 +1246,12 @@ pub mod describe_ledger_output {
             self.state = input;
             self
         }
-        /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format
-        /// is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
+        /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date_time = Some(input);
             self
         }
-        /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format
-        /// is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
+        /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
         pub fn set_creation_date_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1484,25 +1272,19 @@ pub mod describe_ledger_output {
             self.permissions_mode = input;
             self
         }
-        /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on
-        /// ledger creation, this feature is enabled (<code>true</code>) by default.</p>
-        /// <p>If deletion protection is enabled, you must first disable it before you can delete the
-        /// ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
+        /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on ledger creation, this feature is enabled (<code>true</code>) by default.</p>
+        /// <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
         pub fn deletion_protection(mut self, input: bool) -> Self {
             self.deletion_protection = Some(input);
             self
         }
-        /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on
-        /// ledger creation, this feature is enabled (<code>true</code>) by default.</p>
-        /// <p>If deletion protection is enabled, you must first disable it before you can delete the
-        /// ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
+        /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on ledger creation, this feature is enabled (<code>true</code>) by default.</p>
+        /// <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
         pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
             self.deletion_protection = input;
             self
         }
-        /// <p>Information about the encryption of data at rest in the ledger. This includes the
-        /// current status, the KMS key, and when the key became inaccessible (in the case of an
-        /// error).</p>
+        /// <p>Information about the encryption of data at rest in the ledger. This includes the current status, the KMS key, and when the key became inaccessible (in the case of an error).</p>
         pub fn encryption_description(
             mut self,
             input: crate::model::LedgerEncryptionDescription,
@@ -1510,9 +1292,7 @@ pub mod describe_ledger_output {
             self.encryption_description = Some(input);
             self
         }
-        /// <p>Information about the encryption of data at rest in the ledger. This includes the
-        /// current status, the KMS key, and when the key became inaccessible (in the case of an
-        /// error).</p>
+        /// <p>Information about the encryption of data at rest in the ledger. This includes the current status, the KMS key, and when the key became inaccessible (in the case of an error).</p>
         pub fn set_encryption_description(
             mut self,
             input: std::option::Option<crate::model::LedgerEncryptionDescription>,
@@ -1545,13 +1325,11 @@ impl DescribeLedgerOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeJournalS3ExportOutput {
-    /// <p>Information about the journal export job returned by a
-    /// <code>DescribeJournalS3Export</code> request.</p>
+    /// <p>Information about the journal export job returned by a <code>DescribeJournalS3Export</code> request.</p>
     pub export_description: std::option::Option<crate::model::JournalS3ExportDescription>,
 }
 impl DescribeJournalS3ExportOutput {
-    /// <p>Information about the journal export job returned by a
-    /// <code>DescribeJournalS3Export</code> request.</p>
+    /// <p>Information about the journal export job returned by a <code>DescribeJournalS3Export</code> request.</p>
     pub fn export_description(
         &self,
     ) -> std::option::Option<&crate::model::JournalS3ExportDescription> {
@@ -1575,8 +1353,7 @@ pub mod describe_journal_s3_export_output {
             std::option::Option<crate::model::JournalS3ExportDescription>,
     }
     impl Builder {
-        /// <p>Information about the journal export job returned by a
-        /// <code>DescribeJournalS3Export</code> request.</p>
+        /// <p>Information about the journal export job returned by a <code>DescribeJournalS3Export</code> request.</p>
         pub fn export_description(
             mut self,
             input: crate::model::JournalS3ExportDescription,
@@ -1584,8 +1361,7 @@ pub mod describe_journal_s3_export_output {
             self.export_description = Some(input);
             self
         }
-        /// <p>Information about the journal export job returned by a
-        /// <code>DescribeJournalS3Export</code> request.</p>
+        /// <p>Information about the journal export job returned by a <code>DescribeJournalS3Export</code> request.</p>
         pub fn set_export_description(
             mut self,
             input: std::option::Option<crate::model::JournalS3ExportDescription>,
@@ -1612,13 +1388,11 @@ impl DescribeJournalS3ExportOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeJournalKinesisStreamOutput {
-    /// <p>Information about the QLDB journal stream returned by a
-    /// <code>DescribeJournalS3Export</code> request.</p>
+    /// <p>Information about the QLDB journal stream returned by a <code>DescribeJournalS3Export</code> request.</p>
     pub stream: std::option::Option<crate::model::JournalKinesisStreamDescription>,
 }
 impl DescribeJournalKinesisStreamOutput {
-    /// <p>Information about the QLDB journal stream returned by a
-    /// <code>DescribeJournalS3Export</code> request.</p>
+    /// <p>Information about the QLDB journal stream returned by a <code>DescribeJournalS3Export</code> request.</p>
     pub fn stream(&self) -> std::option::Option<&crate::model::JournalKinesisStreamDescription> {
         self.stream.as_ref()
     }
@@ -1639,14 +1413,12 @@ pub mod describe_journal_kinesis_stream_output {
         pub(crate) stream: std::option::Option<crate::model::JournalKinesisStreamDescription>,
     }
     impl Builder {
-        /// <p>Information about the QLDB journal stream returned by a
-        /// <code>DescribeJournalS3Export</code> request.</p>
+        /// <p>Information about the QLDB journal stream returned by a <code>DescribeJournalS3Export</code> request.</p>
         pub fn stream(mut self, input: crate::model::JournalKinesisStreamDescription) -> Self {
             self.stream = Some(input);
             self
         }
-        /// <p>Information about the QLDB journal stream returned by a
-        /// <code>DescribeJournalS3Export</code> request.</p>
+        /// <p>Information about the QLDB journal stream returned by a <code>DescribeJournalS3Export</code> request.</p>
         pub fn set_stream(
             mut self,
             input: std::option::Option<crate::model::JournalKinesisStreamDescription>,
@@ -1709,18 +1481,14 @@ pub struct CreateLedgerOutput {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The current status of the ledger.</p>
     pub state: std::option::Option<crate::model::LedgerState>,
-    /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format
-    /// is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
+    /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The permissions mode of the ledger that you created.</p>
     pub permissions_mode: std::option::Option<crate::model::PermissionsMode>,
-    /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on
-    /// ledger creation, this feature is enabled (<code>true</code>) by default.</p>
-    /// <p>If deletion protection is enabled, you must first disable it before you can delete the
-    /// ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
+    /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on ledger creation, this feature is enabled (<code>true</code>) by default.</p>
+    /// <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
     pub deletion_protection: std::option::Option<bool>,
-    /// <p>The ARN of the customer managed KMS key that the ledger uses for encryption at rest. If
-    /// this parameter is undefined, the ledger uses an Amazon Web Services owned KMS key for encryption.</p>
+    /// <p>The ARN of the customer managed KMS key that the ledger uses for encryption at rest. If this parameter is undefined, the ledger uses an Amazon Web Services owned KMS key for encryption.</p>
     pub kms_key_arn: std::option::Option<std::string::String>,
 }
 impl CreateLedgerOutput {
@@ -1736,8 +1504,7 @@ impl CreateLedgerOutput {
     pub fn state(&self) -> std::option::Option<&crate::model::LedgerState> {
         self.state.as_ref()
     }
-    /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format
-    /// is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
+    /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
     pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
@@ -1745,15 +1512,12 @@ impl CreateLedgerOutput {
     pub fn permissions_mode(&self) -> std::option::Option<&crate::model::PermissionsMode> {
         self.permissions_mode.as_ref()
     }
-    /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on
-    /// ledger creation, this feature is enabled (<code>true</code>) by default.</p>
-    /// <p>If deletion protection is enabled, you must first disable it before you can delete the
-    /// ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
+    /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on ledger creation, this feature is enabled (<code>true</code>) by default.</p>
+    /// <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
     pub fn deletion_protection(&self) -> std::option::Option<bool> {
         self.deletion_protection
     }
-    /// <p>The ARN of the customer managed KMS key that the ledger uses for encryption at rest. If
-    /// this parameter is undefined, the ledger uses an Amazon Web Services owned KMS key for encryption.</p>
+    /// <p>The ARN of the customer managed KMS key that the ledger uses for encryption at rest. If this parameter is undefined, the ledger uses an Amazon Web Services owned KMS key for encryption.</p>
     pub fn kms_key_arn(&self) -> std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
@@ -1816,14 +1580,12 @@ pub mod create_ledger_output {
             self.state = input;
             self
         }
-        /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format
-        /// is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
+        /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date_time = Some(input);
             self
         }
-        /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format
-        /// is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
+        /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
         pub fn set_creation_date_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1844,30 +1606,24 @@ pub mod create_ledger_output {
             self.permissions_mode = input;
             self
         }
-        /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on
-        /// ledger creation, this feature is enabled (<code>true</code>) by default.</p>
-        /// <p>If deletion protection is enabled, you must first disable it before you can delete the
-        /// ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
+        /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on ledger creation, this feature is enabled (<code>true</code>) by default.</p>
+        /// <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
         pub fn deletion_protection(mut self, input: bool) -> Self {
             self.deletion_protection = Some(input);
             self
         }
-        /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on
-        /// ledger creation, this feature is enabled (<code>true</code>) by default.</p>
-        /// <p>If deletion protection is enabled, you must first disable it before you can delete the
-        /// ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
+        /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on ledger creation, this feature is enabled (<code>true</code>) by default.</p>
+        /// <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
         pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
             self.deletion_protection = input;
             self
         }
-        /// <p>The ARN of the customer managed KMS key that the ledger uses for encryption at rest. If
-        /// this parameter is undefined, the ledger uses an Amazon Web Services owned KMS key for encryption.</p>
+        /// <p>The ARN of the customer managed KMS key that the ledger uses for encryption at rest. If this parameter is undefined, the ledger uses an Amazon Web Services owned KMS key for encryption.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the customer managed KMS key that the ledger uses for encryption at rest. If
-        /// this parameter is undefined, the ledger uses an Amazon Web Services owned KMS key for encryption.</p>
+        /// <p>The ARN of the customer managed KMS key that the ledger uses for encryption at rest. If this parameter is undefined, the ledger uses an Amazon Web Services owned KMS key for encryption.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_arn = input;
             self

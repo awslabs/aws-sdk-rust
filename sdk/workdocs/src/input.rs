@@ -742,16 +742,12 @@ pub mod create_comment_input {
             self.text = input;
             self
         }
-        /// <p>The visibility of the comment. Options are either PRIVATE, where the comment is
-        /// visible only to the comment author and document owner and co-owners, or PUBLIC, where
-        /// the comment is visible to document owners, co-owners, and contributors.</p>
+        /// <p>The visibility of the comment. Options are either PRIVATE, where the comment is visible only to the comment author and document owner and co-owners, or PUBLIC, where the comment is visible to document owners, co-owners, and contributors.</p>
         pub fn visibility(mut self, input: crate::model::CommentVisibilityType) -> Self {
             self.visibility = Some(input);
             self
         }
-        /// <p>The visibility of the comment. Options are either PRIVATE, where the comment is
-        /// visible only to the comment author and document owner and co-owners, or PUBLIC, where
-        /// the comment is visible to document owners, co-owners, and contributors.</p>
+        /// <p>The visibility of the comment. Options are either PRIVATE, where the comment is visible only to the comment author and document owner and co-owners, or PUBLIC, where the comment is visible to document owners, co-owners, and contributors.</p>
         pub fn set_visibility(
             mut self,
             input: std::option::Option<crate::model::CommentVisibilityType>,
@@ -759,14 +755,12 @@ pub mod create_comment_input {
             self.visibility = input;
             self
         }
-        /// <p>Set this parameter to TRUE to send an email out to the document collaborators after
-        /// the comment is created.</p>
+        /// <p>Set this parameter to TRUE to send an email out to the document collaborators after the comment is created.</p>
         pub fn notify_collaborators(mut self, input: bool) -> Self {
             self.notify_collaborators = Some(input);
             self
         }
-        /// <p>Set this parameter to TRUE to send an email out to the document collaborators after
-        /// the comment is created.</p>
+        /// <p>Set this parameter to TRUE to send an email out to the document collaborators after the comment is created.</p>
         pub fn set_notify_collaborators(mut self, input: std::option::Option<bool>) -> Self {
             self.notify_collaborators = input;
             self
@@ -1004,14 +998,12 @@ pub mod create_custom_metadata_input {
             self.resource_id = input;
             self
         }
-        /// <p>The ID of the version, if the custom metadata is being added to a document
-        /// version.</p>
+        /// <p>The ID of the version, if the custom metadata is being added to a document version.</p>
         pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.version_id = Some(input.into());
             self
         }
-        /// <p>The ID of the version, if the custom metadata is being added to a document
-        /// version.</p>
+        /// <p>The ID of the version, if the custom metadata is being added to a document version.</p>
         pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version_id = input;
             self
@@ -1686,26 +1678,22 @@ pub mod create_notification_subscription_input {
             self.organization_id = input;
             self
         }
-        /// <p>The endpoint to receive the notifications. If the protocol is HTTPS, the endpoint
-        /// is a URL that begins with <code>https</code>.</p>
+        /// <p>The endpoint to receive the notifications. If the protocol is HTTPS, the endpoint is a URL that begins with <code>https</code>.</p>
         pub fn endpoint(mut self, input: impl Into<std::string::String>) -> Self {
             self.endpoint = Some(input.into());
             self
         }
-        /// <p>The endpoint to receive the notifications. If the protocol is HTTPS, the endpoint
-        /// is a URL that begins with <code>https</code>.</p>
+        /// <p>The endpoint to receive the notifications. If the protocol is HTTPS, the endpoint is a URL that begins with <code>https</code>.</p>
         pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.endpoint = input;
             self
         }
-        /// <p>The protocol to use. The supported value is https, which delivers JSON-encoded
-        /// messages using HTTPS POST.</p>
+        /// <p>The protocol to use. The supported value is https, which delivers JSON-encoded messages using HTTPS POST.</p>
         pub fn protocol(mut self, input: crate::model::SubscriptionProtocolType) -> Self {
             self.protocol = Some(input);
             self
         }
-        /// <p>The protocol to use. The supported value is https, which delivers JSON-encoded
-        /// messages using HTTPS POST.</p>
+        /// <p>The protocol to use. The supported value is https, which delivers JSON-encoded messages using HTTPS POST.</p>
         pub fn set_protocol(
             mut self,
             input: std::option::Option<crate::model::SubscriptionProtocolType>,
@@ -2642,14 +2630,12 @@ pub mod delete_custom_metadata_input {
             self.resource_id = input;
             self
         }
-        /// <p>The ID of the version, if the custom metadata is being deleted from a document
-        /// version.</p>
+        /// <p>The ID of the version, if the custom metadata is being deleted from a document version.</p>
         pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.version_id = Some(input.into());
             self
         }
-        /// <p>The ID of the version, if the custom metadata is being deleted from a document
-        /// version.</p>
+        /// <p>The ID of the version, if the custom metadata is being deleted from a document version.</p>
         pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version_id = input;
             self
@@ -2673,14 +2659,12 @@ pub mod delete_custom_metadata_input {
             self.keys = input;
             self
         }
-        /// <p>Flag to indicate removal of all custom metadata properties from the specified
-        /// resource.</p>
+        /// <p>Flag to indicate removal of all custom metadata properties from the specified resource.</p>
         pub fn delete_all(mut self, input: bool) -> Self {
             self.delete_all = Some(input);
             self
         }
-        /// <p>Flag to indicate removal of all custom metadata properties from the specified
-        /// resource.</p>
+        /// <p>Flag to indicate removal of all custom metadata properties from the specified resource.</p>
         pub fn set_delete_all(mut self, input: std::option::Option<bool>) -> Self {
             self.delete_all = input;
             self
@@ -3896,14 +3880,12 @@ pub mod delete_user_input {
         pub(crate) user_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Amazon WorkDocs authentication token. Do not set this field when using
-        /// administrative API actions, as in accessing the API using AWS credentials.</p>
+        /// <p>Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in accessing the API using AWS credentials.</p>
         pub fn authentication_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.authentication_token = Some(input.into());
             self
         }
-        /// <p>Amazon WorkDocs authentication token. Do not set this field when using
-        /// administrative API actions, as in accessing the API using AWS credentials.</p>
+        /// <p>Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in accessing the API using AWS credentials.</p>
         pub fn set_authentication_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4109,14 +4091,12 @@ pub mod describe_activities_input {
             self.authentication_token = input;
             self
         }
-        /// <p>The timestamp that determines the starting time of the activities. The response
-        /// includes the activities performed after the specified timestamp.</p>
+        /// <p>The timestamp that determines the starting time of the activities. The response includes the activities performed after the specified timestamp.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>The timestamp that determines the starting time of the activities. The response
-        /// includes the activities performed after the specified timestamp.</p>
+        /// <p>The timestamp that determines the starting time of the activities. The response includes the activities performed after the specified timestamp.</p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -4124,14 +4104,12 @@ pub mod describe_activities_input {
             self.start_time = input;
             self
         }
-        /// <p>The timestamp that determines the end time of the activities. The response includes
-        /// the activities performed before the specified timestamp.</p>
+        /// <p>The timestamp that determines the end time of the activities. The response includes the activities performed before the specified timestamp.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
-        /// <p>The timestamp that determines the end time of the activities. The response includes
-        /// the activities performed before the specified timestamp.</p>
+        /// <p>The timestamp that determines the end time of the activities. The response includes the activities performed before the specified timestamp.</p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -4139,14 +4117,12 @@ pub mod describe_activities_input {
             self.end_time = input;
             self
         }
-        /// <p>The ID of the organization. This is a mandatory parameter when using administrative
-        /// API (SigV4) requests.</p>
+        /// <p>The ID of the organization. This is a mandatory parameter when using administrative API (SigV4) requests.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.organization_id = Some(input.into());
             self
         }
-        /// <p>The ID of the organization. This is a mandatory parameter when using administrative
-        /// API (SigV4) requests.</p>
+        /// <p>The ID of the organization. This is a mandatory parameter when using administrative API (SigV4) requests.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4154,14 +4130,12 @@ pub mod describe_activities_input {
             self.organization_id = input;
             self
         }
-        /// <p>Specifies which activity types to include in the response. If this field is left
-        /// empty, all activity types are returned.</p>
+        /// <p>Specifies which activity types to include in the response. If this field is left empty, all activity types are returned.</p>
         pub fn activity_types(mut self, input: impl Into<std::string::String>) -> Self {
             self.activity_types = Some(input.into());
             self
         }
-        /// <p>Specifies which activity types to include in the response. If this field is left
-        /// empty, all activity types are returned.</p>
+        /// <p>Specifies which activity types to include in the response. If this field is left empty, all activity types are returned.</p>
         pub fn set_activity_types(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4179,32 +4153,22 @@ pub mod describe_activities_input {
             self.resource_id = input;
             self
         }
-        /// <p>The ID of the user who performed the action. The response includes activities
-        /// pertaining to this user. This is an optional parameter and is only applicable for
-        /// administrative API (SigV4) requests.</p>
+        /// <p>The ID of the user who performed the action. The response includes activities pertaining to this user. This is an optional parameter and is only applicable for administrative API (SigV4) requests.</p>
         pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_id = Some(input.into());
             self
         }
-        /// <p>The ID of the user who performed the action. The response includes activities
-        /// pertaining to this user. This is an optional parameter and is only applicable for
-        /// administrative API (SigV4) requests.</p>
+        /// <p>The ID of the user who performed the action. The response includes activities pertaining to this user. This is an optional parameter and is only applicable for administrative API (SigV4) requests.</p>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_id = input;
             self
         }
-        /// <p>Includes indirect activities. An indirect activity results from a direct activity
-        /// performed on a parent resource. For example, sharing a parent folder (the direct
-        /// activity) shares all of the subfolders and documents within the parent folder (the
-        /// indirect activity).</p>
+        /// <p>Includes indirect activities. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).</p>
         pub fn include_indirect_activities(mut self, input: bool) -> Self {
             self.include_indirect_activities = Some(input);
             self
         }
-        /// <p>Includes indirect activities. An indirect activity results from a direct activity
-        /// performed on a parent resource. For example, sharing a parent folder (the direct
-        /// activity) shares all of the subfolders and documents within the parent folder (the
-        /// indirect activity).</p>
+        /// <p>Includes indirect activities. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).</p>
         pub fn set_include_indirect_activities(mut self, input: std::option::Option<bool>) -> Self {
             self.include_indirect_activities = input;
             self
@@ -4494,14 +4458,12 @@ pub mod describe_comments_input {
             self.limit = input;
             self
         }
-        /// <p>The marker for the next set of results. This marker was received from a previous
-        /// call.</p>
+        /// <p>The marker for the next set of results. This marker was received from a previous call.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>The marker for the next set of results. This marker was received from a previous
-        /// call.</p>
+        /// <p>The marker for the next set of results. This marker was received from a previous call.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -4740,14 +4702,12 @@ pub mod describe_document_versions_input {
             self.document_id = input;
             self
         }
-        /// <p>The marker for the next set of results. (You received this marker from a previous
-        /// call.)</p>
+        /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>The marker for the next set of results. (You received this marker from a previous
-        /// call.)</p>
+        /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -4762,26 +4722,22 @@ pub mod describe_document_versions_input {
             self.limit = input;
             self
         }
-        /// <p>A comma-separated list of values. Specify "INITIALIZED" to include incomplete
-        /// versions.</p>
+        /// <p>A comma-separated list of values. Specify "INITIALIZED" to include incomplete versions.</p>
         pub fn include(mut self, input: impl Into<std::string::String>) -> Self {
             self.include = Some(input.into());
             self
         }
-        /// <p>A comma-separated list of values. Specify "INITIALIZED" to include incomplete
-        /// versions.</p>
+        /// <p>A comma-separated list of values. Specify "INITIALIZED" to include incomplete versions.</p>
         pub fn set_include(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.include = input;
             self
         }
-        /// <p>Specify "SOURCE" to include initialized versions and a URL for the source
-        /// document.</p>
+        /// <p>Specify "SOURCE" to include initialized versions and a URL for the source document.</p>
         pub fn fields(mut self, input: impl Into<std::string::String>) -> Self {
             self.fields = Some(input.into());
             self
         }
-        /// <p>Specify "SOURCE" to include initialized versions and a URL for the source
-        /// document.</p>
+        /// <p>Specify "SOURCE" to include initialized versions and a URL for the source document.</p>
         pub fn set_fields(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fields = input;
             self
@@ -5047,14 +5003,12 @@ pub mod describe_folder_contents_input {
             self.limit = input;
             self
         }
-        /// <p>The marker for the next set of results. This marker was received from a previous
-        /// call.</p>
+        /// <p>The marker for the next set of results. This marker was received from a previous call.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>The marker for the next set of results. This marker was received from a previous
-        /// call.</p>
+        /// <p>The marker for the next set of results. This marker was received from a previous call.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -5072,14 +5026,12 @@ pub mod describe_folder_contents_input {
             self.r#type = input;
             self
         }
-        /// <p>The contents to include. Specify "INITIALIZED" to include initialized
-        /// documents.</p>
+        /// <p>The contents to include. Specify "INITIALIZED" to include initialized documents.</p>
         pub fn include(mut self, input: impl Into<std::string::String>) -> Self {
             self.include = Some(input.into());
             self
         }
-        /// <p>The contents to include. Specify "INITIALIZED" to include initialized
-        /// documents.</p>
+        /// <p>The contents to include. Specify "INITIALIZED" to include initialized documents.</p>
         pub fn set_include(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.include = input;
             self
@@ -5329,14 +5281,12 @@ pub mod describe_groups_input {
             self.organization_id = input;
             self
         }
-        /// <p>The marker for the next set of results. (You received this marker from a previous
-        /// call.)</p>
+        /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>The marker for the next set of results. (You received this marker from a previous
-        /// call.)</p>
+        /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -5548,14 +5498,12 @@ pub mod describe_notification_subscriptions_input {
             self.organization_id = input;
             self
         }
-        /// <p>The marker for the next set of results. (You received this marker from a previous
-        /// call.)</p>
+        /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>The marker for the next set of results. (You received this marker from a previous
-        /// call.)</p>
+        /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -5783,14 +5731,12 @@ pub mod describe_resource_permissions_input {
             self.limit = input;
             self
         }
-        /// <p>The marker for the next set of results. (You received this marker from a previous
-        /// call)</p>
+        /// <p>The marker for the next set of results. (You received this marker from a previous call)</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>The marker for the next set of results. (You received this marker from a previous
-        /// call)</p>
+        /// <p>The marker for the next set of results. (You received this marker from a previous call)</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -6017,14 +5963,12 @@ pub mod describe_root_folders_input {
             self.limit = input;
             self
         }
-        /// <p>The marker for the next set of results. (You received this marker from a previous
-        /// call.)</p>
+        /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>The marker for the next set of results. (You received this marker from a previous
-        /// call.)</p>
+        /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -6285,14 +6229,12 @@ pub mod describe_users_input {
             self.sort = input;
             self
         }
-        /// <p>The marker for the next set of results. (You received this marker from a previous
-        /// call.)</p>
+        /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>The marker for the next set of results. (You received this marker from a previous
-        /// call.)</p>
+        /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -6307,14 +6249,12 @@ pub mod describe_users_input {
             self.limit = input;
             self
         }
-        /// <p>A comma-separated list of values. Specify "STORAGE_METADATA" to include the user
-        /// storage quota and utilization information.</p>
+        /// <p>A comma-separated list of values. Specify "STORAGE_METADATA" to include the user storage quota and utilization information.</p>
         pub fn fields(mut self, input: impl Into<std::string::String>) -> Self {
             self.fields = Some(input.into());
             self
         }
-        /// <p>A comma-separated list of values. Specify "STORAGE_METADATA" to include the user
-        /// storage quota and utilization information.</p>
+        /// <p>A comma-separated list of values. Specify "STORAGE_METADATA" to include the user storage quota and utilization information.</p>
         pub fn set_fields(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fields = input;
             self
@@ -6938,14 +6878,12 @@ pub mod get_document_path_input {
             self.limit = input;
             self
         }
-        /// <p>A comma-separated list of values. Specify <code>NAME</code> to include the names of
-        /// the parent folders.</p>
+        /// <p>A comma-separated list of values. Specify <code>NAME</code> to include the names of the parent folders.</p>
         pub fn fields(mut self, input: impl Into<std::string::String>) -> Self {
             self.fields = Some(input.into());
             self
         }
-        /// <p>A comma-separated list of values. Specify <code>NAME</code> to include the names of
-        /// the parent folders.</p>
+        /// <p>A comma-separated list of values. Specify <code>NAME</code> to include the names of the parent folders.</p>
         pub fn set_fields(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fields = input;
             self
@@ -7190,14 +7128,12 @@ pub mod get_document_version_input {
             self.version_id = input;
             self
         }
-        /// <p>A comma-separated list of values. Specify "SOURCE" to include a URL for the source
-        /// document.</p>
+        /// <p>A comma-separated list of values. Specify "SOURCE" to include a URL for the source document.</p>
         pub fn fields(mut self, input: impl Into<std::string::String>) -> Self {
             self.fields = Some(input.into());
             self
         }
-        /// <p>A comma-separated list of values. Specify "SOURCE" to include a URL for the source
-        /// document.</p>
+        /// <p>A comma-separated list of values. Specify "SOURCE" to include a URL for the source document.</p>
         pub fn set_fields(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fields = input;
             self
@@ -7669,14 +7605,12 @@ pub mod get_folder_path_input {
             self.limit = input;
             self
         }
-        /// <p>A comma-separated list of values. Specify "NAME" to include the names of the parent
-        /// folders.</p>
+        /// <p>A comma-separated list of values. Specify "NAME" to include the names of the parent folders.</p>
         pub fn fields(mut self, input: impl Into<std::string::String>) -> Self {
             self.fields = Some(input.into());
             self
         }
-        /// <p>A comma-separated list of values. Specify "NAME" to include the names of the parent
-        /// folders.</p>
+        /// <p>A comma-separated list of values. Specify "NAME" to include the names of the parent folders.</p>
         pub fn set_fields(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fields = input;
             self
@@ -7901,14 +7835,12 @@ pub mod get_resources_input {
             self.authentication_token = input;
             self
         }
-        /// <p>The user ID for the resource collection. This is a required field for accessing the
-        /// API operation using IAM credentials.</p>
+        /// <p>The user ID for the resource collection. This is a required field for accessing the API operation using IAM credentials.</p>
         pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_id = Some(input.into());
             self
         }
-        /// <p>The user ID for the resource collection. This is a required field for accessing the
-        /// API operation using IAM credentials.</p>
+        /// <p>The user ID for the resource collection. This is a required field for accessing the API operation using IAM credentials.</p>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_id = input;
             self
@@ -8892,14 +8824,12 @@ pub mod update_document_input {
             self.parent_folder_id = input;
             self
         }
-        /// <p>The resource state of the document. Only ACTIVE and RECYCLED are
-        /// supported.</p>
+        /// <p>The resource state of the document. Only ACTIVE and RECYCLED are supported.</p>
         pub fn resource_state(mut self, input: crate::model::ResourceStateType) -> Self {
             self.resource_state = Some(input);
             self
         }
-        /// <p>The resource state of the document. Only ACTIVE and RECYCLED are
-        /// supported.</p>
+        /// <p>The resource state of the document. Only ACTIVE and RECYCLED are supported.</p>
         pub fn set_resource_state(
             mut self,
             input: std::option::Option<crate::model::ResourceStateType>,
@@ -9397,14 +9327,12 @@ pub mod update_folder_input {
             self.parent_folder_id = input;
             self
         }
-        /// <p>The resource state of the folder. Only ACTIVE and RECYCLED are accepted values from
-        /// the API.</p>
+        /// <p>The resource state of the folder. Only ACTIVE and RECYCLED are accepted values from the API.</p>
         pub fn resource_state(mut self, input: crate::model::ResourceStateType) -> Self {
             self.resource_state = Some(input);
             self
         }
-        /// <p>The resource state of the folder. Only ACTIVE and RECYCLED are accepted values from
-        /// the API.</p>
+        /// <p>The resource state of the folder. Only ACTIVE and RECYCLED are accepted values from the API.</p>
         pub fn set_resource_state(
             mut self,
             input: std::option::Option<crate::model::ResourceStateType>,
@@ -9972,8 +9900,7 @@ pub struct UpdateFolderInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The ID of the parent folder.</p>
     pub parent_folder_id: std::option::Option<std::string::String>,
-    /// <p>The resource state of the folder. Only ACTIVE and RECYCLED are accepted values from
-    /// the API.</p>
+    /// <p>The resource state of the folder. Only ACTIVE and RECYCLED are accepted values from the API.</p>
     pub resource_state: std::option::Option<crate::model::ResourceStateType>,
 }
 impl UpdateFolderInput {
@@ -9993,8 +9920,7 @@ impl UpdateFolderInput {
     pub fn parent_folder_id(&self) -> std::option::Option<&str> {
         self.parent_folder_id.as_deref()
     }
-    /// <p>The resource state of the folder. Only ACTIVE and RECYCLED are accepted values from
-    /// the API.</p>
+    /// <p>The resource state of the folder. Only ACTIVE and RECYCLED are accepted values from the API.</p>
     pub fn resource_state(&self) -> std::option::Option<&crate::model::ResourceStateType> {
         self.resource_state.as_ref()
     }
@@ -10065,8 +9991,7 @@ pub struct UpdateDocumentInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The ID of the parent folder.</p>
     pub parent_folder_id: std::option::Option<std::string::String>,
-    /// <p>The resource state of the document. Only ACTIVE and RECYCLED are
-    /// supported.</p>
+    /// <p>The resource state of the document. Only ACTIVE and RECYCLED are supported.</p>
     pub resource_state: std::option::Option<crate::model::ResourceStateType>,
 }
 impl UpdateDocumentInput {
@@ -10086,8 +10011,7 @@ impl UpdateDocumentInput {
     pub fn parent_folder_id(&self) -> std::option::Option<&str> {
         self.parent_folder_id.as_deref()
     }
-    /// <p>The resource state of the document. Only ACTIVE and RECYCLED are
-    /// supported.</p>
+    /// <p>The resource state of the document. Only ACTIVE and RECYCLED are supported.</p>
     pub fn resource_state(&self) -> std::option::Option<&crate::model::ResourceStateType> {
         self.resource_state.as_ref()
     }
@@ -10253,8 +10177,7 @@ impl std::fmt::Debug for InitiateDocumentVersionUploadInput {
 pub struct GetResourcesInput {
     /// <p>The Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
     pub authentication_token: std::option::Option<std::string::String>,
-    /// <p>The user ID for the resource collection. This is a required field for accessing the
-    /// API operation using IAM credentials.</p>
+    /// <p>The user ID for the resource collection. This is a required field for accessing the API operation using IAM credentials.</p>
     pub user_id: std::option::Option<std::string::String>,
     /// <p>The collection type.</p>
     pub collection_type: std::option::Option<crate::model::ResourceCollectionType>,
@@ -10268,8 +10191,7 @@ impl GetResourcesInput {
     pub fn authentication_token(&self) -> std::option::Option<&str> {
         self.authentication_token.as_deref()
     }
-    /// <p>The user ID for the resource collection. This is a required field for accessing the
-    /// API operation using IAM credentials.</p>
+    /// <p>The user ID for the resource collection. This is a required field for accessing the API operation using IAM credentials.</p>
     pub fn user_id(&self) -> std::option::Option<&str> {
         self.user_id.as_deref()
     }
@@ -10308,8 +10230,7 @@ pub struct GetFolderPathInput {
     pub folder_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of levels in the hierarchy to return.</p>
     pub limit: std::option::Option<i32>,
-    /// <p>A comma-separated list of values. Specify "NAME" to include the names of the parent
-    /// folders.</p>
+    /// <p>A comma-separated list of values. Specify "NAME" to include the names of the parent folders.</p>
     pub fields: std::option::Option<std::string::String>,
     /// <p>This value is not supported.</p>
     pub marker: std::option::Option<std::string::String>,
@@ -10327,8 +10248,7 @@ impl GetFolderPathInput {
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
-    /// <p>A comma-separated list of values. Specify "NAME" to include the names of the parent
-    /// folders.</p>
+    /// <p>A comma-separated list of values. Specify "NAME" to include the names of the parent folders.</p>
     pub fn fields(&self) -> std::option::Option<&str> {
         self.fields.as_deref()
     }
@@ -10394,8 +10314,7 @@ pub struct GetDocumentVersionInput {
     pub document_id: std::option::Option<std::string::String>,
     /// <p>The version ID of the document.</p>
     pub version_id: std::option::Option<std::string::String>,
-    /// <p>A comma-separated list of values. Specify "SOURCE" to include a URL for the source
-    /// document.</p>
+    /// <p>A comma-separated list of values. Specify "SOURCE" to include a URL for the source document.</p>
     pub fields: std::option::Option<std::string::String>,
     /// <p>Set this to TRUE to include custom metadata in the response.</p>
     pub include_custom_metadata: bool,
@@ -10413,8 +10332,7 @@ impl GetDocumentVersionInput {
     pub fn version_id(&self) -> std::option::Option<&str> {
         self.version_id.as_deref()
     }
-    /// <p>A comma-separated list of values. Specify "SOURCE" to include a URL for the source
-    /// document.</p>
+    /// <p>A comma-separated list of values. Specify "SOURCE" to include a URL for the source document.</p>
     pub fn fields(&self) -> std::option::Option<&str> {
         self.fields.as_deref()
     }
@@ -10445,8 +10363,7 @@ pub struct GetDocumentPathInput {
     pub document_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of levels in the hierarchy to return.</p>
     pub limit: std::option::Option<i32>,
-    /// <p>A comma-separated list of values. Specify <code>NAME</code> to include the names of
-    /// the parent folders.</p>
+    /// <p>A comma-separated list of values. Specify <code>NAME</code> to include the names of the parent folders.</p>
     pub fields: std::option::Option<std::string::String>,
     /// <p>This value is not supported.</p>
     pub marker: std::option::Option<std::string::String>,
@@ -10464,8 +10381,7 @@ impl GetDocumentPathInput {
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
-    /// <p>A comma-separated list of values. Specify <code>NAME</code> to include the names of
-    /// the parent folders.</p>
+    /// <p>A comma-separated list of values. Specify <code>NAME</code> to include the names of the parent folders.</p>
     pub fn fields(&self) -> std::option::Option<&str> {
         self.fields.as_deref()
     }
@@ -10560,13 +10476,11 @@ pub struct DescribeUsersInput {
     pub order: std::option::Option<crate::model::OrderType>,
     /// <p>The sorting criteria.</p>
     pub sort: std::option::Option<crate::model::UserSortType>,
-    /// <p>The marker for the next set of results. (You received this marker from a previous
-    /// call.)</p>
+    /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return.</p>
     pub limit: std::option::Option<i32>,
-    /// <p>A comma-separated list of values. Specify "STORAGE_METADATA" to include the user
-    /// storage quota and utilization information.</p>
+    /// <p>A comma-separated list of values. Specify "STORAGE_METADATA" to include the user storage quota and utilization information.</p>
     pub fields: std::option::Option<std::string::String>,
 }
 impl DescribeUsersInput {
@@ -10598,8 +10512,7 @@ impl DescribeUsersInput {
     pub fn sort(&self) -> std::option::Option<&crate::model::UserSortType> {
         self.sort.as_ref()
     }
-    /// <p>The marker for the next set of results. (You received this marker from a previous
-    /// call.)</p>
+    /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -10607,8 +10520,7 @@ impl DescribeUsersInput {
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
-    /// <p>A comma-separated list of values. Specify "STORAGE_METADATA" to include the user
-    /// storage quota and utilization information.</p>
+    /// <p>A comma-separated list of values. Specify "STORAGE_METADATA" to include the user storage quota and utilization information.</p>
     pub fn fields(&self) -> std::option::Option<&str> {
         self.fields.as_deref()
     }
@@ -10638,8 +10550,7 @@ pub struct DescribeRootFoldersInput {
     pub authentication_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return.</p>
     pub limit: std::option::Option<i32>,
-    /// <p>The marker for the next set of results. (You received this marker from a previous
-    /// call.)</p>
+    /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeRootFoldersInput {
@@ -10651,8 +10562,7 @@ impl DescribeRootFoldersInput {
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
-    /// <p>The marker for the next set of results. (You received this marker from a previous
-    /// call.)</p>
+    /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -10679,8 +10589,7 @@ pub struct DescribeResourcePermissionsInput {
     pub principal_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return with this call.</p>
     pub limit: std::option::Option<i32>,
-    /// <p>The marker for the next set of results. (You received this marker from a previous
-    /// call)</p>
+    /// <p>The marker for the next set of results. (You received this marker from a previous call)</p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeResourcePermissionsInput {
@@ -10700,8 +10609,7 @@ impl DescribeResourcePermissionsInput {
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
-    /// <p>The marker for the next set of results. (You received this marker from a previous
-    /// call)</p>
+    /// <p>The marker for the next set of results. (You received this marker from a previous call)</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -10724,8 +10632,7 @@ impl std::fmt::Debug for DescribeResourcePermissionsInput {
 pub struct DescribeNotificationSubscriptionsInput {
     /// <p>The ID of the organization.</p>
     pub organization_id: std::option::Option<std::string::String>,
-    /// <p>The marker for the next set of results. (You received this marker from a previous
-    /// call.)</p>
+    /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return with this call.</p>
     pub limit: std::option::Option<i32>,
@@ -10735,8 +10642,7 @@ impl DescribeNotificationSubscriptionsInput {
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
-    /// <p>The marker for the next set of results. (You received this marker from a previous
-    /// call.)</p>
+    /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -10765,8 +10671,7 @@ pub struct DescribeGroupsInput {
     pub search_query: std::option::Option<std::string::String>,
     /// <p>The ID of the organization.</p>
     pub organization_id: std::option::Option<std::string::String>,
-    /// <p>The marker for the next set of results. (You received this marker from a previous
-    /// call.)</p>
+    /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return with this call.</p>
     pub limit: std::option::Option<i32>,
@@ -10784,8 +10689,7 @@ impl DescribeGroupsInput {
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
-    /// <p>The marker for the next set of results. (You received this marker from a previous
-    /// call.)</p>
+    /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -10820,13 +10724,11 @@ pub struct DescribeFolderContentsInput {
     pub order: std::option::Option<crate::model::OrderType>,
     /// <p>The maximum number of items to return with this call.</p>
     pub limit: std::option::Option<i32>,
-    /// <p>The marker for the next set of results. This marker was received from a previous
-    /// call.</p>
+    /// <p>The marker for the next set of results. This marker was received from a previous call.</p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>The type of items.</p>
     pub r#type: std::option::Option<crate::model::FolderContentType>,
-    /// <p>The contents to include. Specify "INITIALIZED" to include initialized
-    /// documents.</p>
+    /// <p>The contents to include. Specify "INITIALIZED" to include initialized documents.</p>
     pub include: std::option::Option<std::string::String>,
 }
 impl DescribeFolderContentsInput {
@@ -10850,8 +10752,7 @@ impl DescribeFolderContentsInput {
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
-    /// <p>The marker for the next set of results. This marker was received from a previous
-    /// call.</p>
+    /// <p>The marker for the next set of results. This marker was received from a previous call.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -10859,8 +10760,7 @@ impl DescribeFolderContentsInput {
     pub fn r#type(&self) -> std::option::Option<&crate::model::FolderContentType> {
         self.r#type.as_ref()
     }
-    /// <p>The contents to include. Specify "INITIALIZED" to include initialized
-    /// documents.</p>
+    /// <p>The contents to include. Specify "INITIALIZED" to include initialized documents.</p>
     pub fn include(&self) -> std::option::Option<&str> {
         self.include.as_deref()
     }
@@ -10888,16 +10788,13 @@ pub struct DescribeDocumentVersionsInput {
     pub authentication_token: std::option::Option<std::string::String>,
     /// <p>The ID of the document.</p>
     pub document_id: std::option::Option<std::string::String>,
-    /// <p>The marker for the next set of results. (You received this marker from a previous
-    /// call.)</p>
+    /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>The maximum number of versions to return with this call.</p>
     pub limit: std::option::Option<i32>,
-    /// <p>A comma-separated list of values. Specify "INITIALIZED" to include incomplete
-    /// versions.</p>
+    /// <p>A comma-separated list of values. Specify "INITIALIZED" to include incomplete versions.</p>
     pub include: std::option::Option<std::string::String>,
-    /// <p>Specify "SOURCE" to include initialized versions and a URL for the source
-    /// document.</p>
+    /// <p>Specify "SOURCE" to include initialized versions and a URL for the source document.</p>
     pub fields: std::option::Option<std::string::String>,
 }
 impl DescribeDocumentVersionsInput {
@@ -10909,8 +10806,7 @@ impl DescribeDocumentVersionsInput {
     pub fn document_id(&self) -> std::option::Option<&str> {
         self.document_id.as_deref()
     }
-    /// <p>The marker for the next set of results. (You received this marker from a previous
-    /// call.)</p>
+    /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -10918,13 +10814,11 @@ impl DescribeDocumentVersionsInput {
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
-    /// <p>A comma-separated list of values. Specify "INITIALIZED" to include incomplete
-    /// versions.</p>
+    /// <p>A comma-separated list of values. Specify "INITIALIZED" to include incomplete versions.</p>
     pub fn include(&self) -> std::option::Option<&str> {
         self.include.as_deref()
     }
-    /// <p>Specify "SOURCE" to include initialized versions and a URL for the source
-    /// document.</p>
+    /// <p>Specify "SOURCE" to include initialized versions and a URL for the source document.</p>
     pub fn fields(&self) -> std::option::Option<&str> {
         self.fields.as_deref()
     }
@@ -10954,8 +10848,7 @@ pub struct DescribeCommentsInput {
     pub version_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return.</p>
     pub limit: std::option::Option<i32>,
-    /// <p>The marker for the next set of results. This marker was received from a previous
-    /// call.</p>
+    /// <p>The marker for the next set of results. This marker was received from a previous call.</p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeCommentsInput {
@@ -10975,8 +10868,7 @@ impl DescribeCommentsInput {
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
-    /// <p>The marker for the next set of results. This marker was received from a previous
-    /// call.</p>
+    /// <p>The marker for the next set of results. This marker was received from a previous call.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -10999,28 +10891,19 @@ impl std::fmt::Debug for DescribeCommentsInput {
 pub struct DescribeActivitiesInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>
     pub authentication_token: std::option::Option<std::string::String>,
-    /// <p>The timestamp that determines the starting time of the activities. The response
-    /// includes the activities performed after the specified timestamp.</p>
+    /// <p>The timestamp that determines the starting time of the activities. The response includes the activities performed after the specified timestamp.</p>
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The timestamp that determines the end time of the activities. The response includes
-    /// the activities performed before the specified timestamp.</p>
+    /// <p>The timestamp that determines the end time of the activities. The response includes the activities performed before the specified timestamp.</p>
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The ID of the organization. This is a mandatory parameter when using administrative
-    /// API (SigV4) requests.</p>
+    /// <p>The ID of the organization. This is a mandatory parameter when using administrative API (SigV4) requests.</p>
     pub organization_id: std::option::Option<std::string::String>,
-    /// <p>Specifies which activity types to include in the response. If this field is left
-    /// empty, all activity types are returned.</p>
+    /// <p>Specifies which activity types to include in the response. If this field is left empty, all activity types are returned.</p>
     pub activity_types: std::option::Option<std::string::String>,
     /// <p>The document or folder ID for which to describe activity types.</p>
     pub resource_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the user who performed the action. The response includes activities
-    /// pertaining to this user. This is an optional parameter and is only applicable for
-    /// administrative API (SigV4) requests.</p>
+    /// <p>The ID of the user who performed the action. The response includes activities pertaining to this user. This is an optional parameter and is only applicable for administrative API (SigV4) requests.</p>
     pub user_id: std::option::Option<std::string::String>,
-    /// <p>Includes indirect activities. An indirect activity results from a direct activity
-    /// performed on a parent resource. For example, sharing a parent folder (the direct
-    /// activity) shares all of the subfolders and documents within the parent folder (the
-    /// indirect activity).</p>
+    /// <p>Includes indirect activities. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).</p>
     pub include_indirect_activities: bool,
     /// <p>The maximum number of items to return.</p>
     pub limit: std::option::Option<i32>,
@@ -11032,23 +10915,19 @@ impl DescribeActivitiesInput {
     pub fn authentication_token(&self) -> std::option::Option<&str> {
         self.authentication_token.as_deref()
     }
-    /// <p>The timestamp that determines the starting time of the activities. The response
-    /// includes the activities performed after the specified timestamp.</p>
+    /// <p>The timestamp that determines the starting time of the activities. The response includes the activities performed after the specified timestamp.</p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>The timestamp that determines the end time of the activities. The response includes
-    /// the activities performed before the specified timestamp.</p>
+    /// <p>The timestamp that determines the end time of the activities. The response includes the activities performed before the specified timestamp.</p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
-    /// <p>The ID of the organization. This is a mandatory parameter when using administrative
-    /// API (SigV4) requests.</p>
+    /// <p>The ID of the organization. This is a mandatory parameter when using administrative API (SigV4) requests.</p>
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
-    /// <p>Specifies which activity types to include in the response. If this field is left
-    /// empty, all activity types are returned.</p>
+    /// <p>Specifies which activity types to include in the response. If this field is left empty, all activity types are returned.</p>
     pub fn activity_types(&self) -> std::option::Option<&str> {
         self.activity_types.as_deref()
     }
@@ -11056,16 +10935,11 @@ impl DescribeActivitiesInput {
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
-    /// <p>The ID of the user who performed the action. The response includes activities
-    /// pertaining to this user. This is an optional parameter and is only applicable for
-    /// administrative API (SigV4) requests.</p>
+    /// <p>The ID of the user who performed the action. The response includes activities pertaining to this user. This is an optional parameter and is only applicable for administrative API (SigV4) requests.</p>
     pub fn user_id(&self) -> std::option::Option<&str> {
         self.user_id.as_deref()
     }
-    /// <p>Includes indirect activities. An indirect activity results from a direct activity
-    /// performed on a parent resource. For example, sharing a parent folder (the direct
-    /// activity) shares all of the subfolders and documents within the parent folder (the
-    /// indirect activity).</p>
+    /// <p>Includes indirect activities. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).</p>
     pub fn include_indirect_activities(&self) -> bool {
         self.include_indirect_activities
     }
@@ -11102,15 +10976,13 @@ impl std::fmt::Debug for DescribeActivitiesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteUserInput {
-    /// <p>Amazon WorkDocs authentication token. Do not set this field when using
-    /// administrative API actions, as in accessing the API using AWS credentials.</p>
+    /// <p>Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in accessing the API using AWS credentials.</p>
     pub authentication_token: std::option::Option<std::string::String>,
     /// <p>The ID of the user.</p>
     pub user_id: std::option::Option<std::string::String>,
 }
 impl DeleteUserInput {
-    /// <p>Amazon WorkDocs authentication token. Do not set this field when using
-    /// administrative API actions, as in accessing the API using AWS credentials.</p>
+    /// <p>Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in accessing the API using AWS credentials.</p>
     pub fn authentication_token(&self) -> std::option::Option<&str> {
         self.authentication_token.as_deref()
     }
@@ -11290,13 +11162,11 @@ pub struct DeleteCustomMetadataInput {
     pub authentication_token: std::option::Option<std::string::String>,
     /// <p>The ID of the resource, either a document or folder.</p>
     pub resource_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the version, if the custom metadata is being deleted from a document
-    /// version.</p>
+    /// <p>The ID of the version, if the custom metadata is being deleted from a document version.</p>
     pub version_id: std::option::Option<std::string::String>,
     /// <p>List of properties to remove.</p>
     pub keys: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Flag to indicate removal of all custom metadata properties from the specified
-    /// resource.</p>
+    /// <p>Flag to indicate removal of all custom metadata properties from the specified resource.</p>
     pub delete_all: bool,
 }
 impl DeleteCustomMetadataInput {
@@ -11308,8 +11178,7 @@ impl DeleteCustomMetadataInput {
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
-    /// <p>The ID of the version, if the custom metadata is being deleted from a document
-    /// version.</p>
+    /// <p>The ID of the version, if the custom metadata is being deleted from a document version.</p>
     pub fn version_id(&self) -> std::option::Option<&str> {
         self.version_id.as_deref()
     }
@@ -11317,8 +11186,7 @@ impl DeleteCustomMetadataInput {
     pub fn keys(&self) -> std::option::Option<&[std::string::String]> {
         self.keys.as_deref()
     }
-    /// <p>Flag to indicate removal of all custom metadata properties from the specified
-    /// resource.</p>
+    /// <p>Flag to indicate removal of all custom metadata properties from the specified resource.</p>
     pub fn delete_all(&self) -> bool {
         self.delete_all
     }
@@ -11488,11 +11356,9 @@ impl std::fmt::Debug for CreateUserInput {
 pub struct CreateNotificationSubscriptionInput {
     /// <p>The ID of the organization.</p>
     pub organization_id: std::option::Option<std::string::String>,
-    /// <p>The endpoint to receive the notifications. If the protocol is HTTPS, the endpoint
-    /// is a URL that begins with <code>https</code>.</p>
+    /// <p>The endpoint to receive the notifications. If the protocol is HTTPS, the endpoint is a URL that begins with <code>https</code>.</p>
     pub endpoint: std::option::Option<std::string::String>,
-    /// <p>The protocol to use. The supported value is https, which delivers JSON-encoded
-    /// messages using HTTPS POST.</p>
+    /// <p>The protocol to use. The supported value is https, which delivers JSON-encoded messages using HTTPS POST.</p>
     pub protocol: std::option::Option<crate::model::SubscriptionProtocolType>,
     /// <p>The notification type.</p>
     pub subscription_type: std::option::Option<crate::model::SubscriptionType>,
@@ -11502,13 +11368,11 @@ impl CreateNotificationSubscriptionInput {
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
-    /// <p>The endpoint to receive the notifications. If the protocol is HTTPS, the endpoint
-    /// is a URL that begins with <code>https</code>.</p>
+    /// <p>The endpoint to receive the notifications. If the protocol is HTTPS, the endpoint is a URL that begins with <code>https</code>.</p>
     pub fn endpoint(&self) -> std::option::Option<&str> {
         self.endpoint.as_deref()
     }
-    /// <p>The protocol to use. The supported value is https, which delivers JSON-encoded
-    /// messages using HTTPS POST.</p>
+    /// <p>The protocol to use. The supported value is https, which delivers JSON-encoded messages using HTTPS POST.</p>
     pub fn protocol(&self) -> std::option::Option<&crate::model::SubscriptionProtocolType> {
         self.protocol.as_ref()
     }
@@ -11606,8 +11470,7 @@ pub struct CreateCustomMetadataInput {
     pub authentication_token: std::option::Option<std::string::String>,
     /// <p>The ID of the resource.</p>
     pub resource_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the version, if the custom metadata is being added to a document
-    /// version.</p>
+    /// <p>The ID of the version, if the custom metadata is being added to a document version.</p>
     pub version_id: std::option::Option<std::string::String>,
     /// <p>Custom metadata in the form of name-value pairs.</p>
     pub custom_metadata:
@@ -11622,8 +11485,7 @@ impl CreateCustomMetadataInput {
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
-    /// <p>The ID of the version, if the custom metadata is being added to a document
-    /// version.</p>
+    /// <p>The ID of the version, if the custom metadata is being added to a document version.</p>
     pub fn version_id(&self) -> std::option::Option<&str> {
         self.version_id.as_deref()
     }
@@ -11662,12 +11524,9 @@ pub struct CreateCommentInput {
     pub thread_id: std::option::Option<std::string::String>,
     /// <p>The text of the comment.</p>
     pub text: std::option::Option<std::string::String>,
-    /// <p>The visibility of the comment. Options are either PRIVATE, where the comment is
-    /// visible only to the comment author and document owner and co-owners, or PUBLIC, where
-    /// the comment is visible to document owners, co-owners, and contributors.</p>
+    /// <p>The visibility of the comment. Options are either PRIVATE, where the comment is visible only to the comment author and document owner and co-owners, or PUBLIC, where the comment is visible to document owners, co-owners, and contributors.</p>
     pub visibility: std::option::Option<crate::model::CommentVisibilityType>,
-    /// <p>Set this parameter to TRUE to send an email out to the document collaborators after
-    /// the comment is created.</p>
+    /// <p>Set this parameter to TRUE to send an email out to the document collaborators after the comment is created.</p>
     pub notify_collaborators: bool,
 }
 impl CreateCommentInput {
@@ -11695,14 +11554,11 @@ impl CreateCommentInput {
     pub fn text(&self) -> std::option::Option<&str> {
         self.text.as_deref()
     }
-    /// <p>The visibility of the comment. Options are either PRIVATE, where the comment is
-    /// visible only to the comment author and document owner and co-owners, or PUBLIC, where
-    /// the comment is visible to document owners, co-owners, and contributors.</p>
+    /// <p>The visibility of the comment. Options are either PRIVATE, where the comment is visible only to the comment author and document owner and co-owners, or PUBLIC, where the comment is visible to document owners, co-owners, and contributors.</p>
     pub fn visibility(&self) -> std::option::Option<&crate::model::CommentVisibilityType> {
         self.visibility.as_ref()
     }
-    /// <p>Set this parameter to TRUE to send an email out to the document collaborators after
-    /// the comment is created.</p>
+    /// <p>Set this parameter to TRUE to send an email out to the document collaborators after the comment is created.</p>
     pub fn notify_collaborators(&self) -> bool {
         self.notify_collaborators
     }

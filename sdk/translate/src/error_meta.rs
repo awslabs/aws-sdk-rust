@@ -3,44 +3,31 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>Another modification is being made. That modification must complete before you can make
-    /// your change.</p>
+    /// <p>Another modification is being made. That modification must complete before you can make your change.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>There was a conflict processing the request. Try your request again.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The confidence that Amazon Comprehend accurately detected the source language is low. If a
-    /// low confidence level is acceptable for your application, you can use the language in the
-    /// exception to call Amazon Translate again. For more information, see the <a href="https://docs.aws.amazon.com/comprehend/latest/dg/API_DetectDominantLanguage.html">DetectDominantLanguage</a> operation in the <i>Amazon Comprehend Developer
-    /// Guide</i>. </p>
+    /// <p>The confidence that Amazon Comprehend accurately detected the source language is low. If a low confidence level is acceptable for your application, you can use the language in the exception to call Amazon Translate again. For more information, see the <a href="https://docs.aws.amazon.com/comprehend/latest/dg/API_DetectDominantLanguage.html">DetectDominantLanguage</a> operation in the <i>Amazon Comprehend Developer Guide</i>. </p>
     DetectedLanguageLowConfidenceException(crate::error::DetectedLanguageLowConfidenceException),
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The filter specified for the operation is invalid. Specify a different filter.</p>
     InvalidFilterException(crate::error::InvalidFilterException),
-    /// <p>The value of the parameter is invalid. Review the value of the parameter you are using to
-    /// correct it, and then retry your operation.</p>
+    /// <p>The value of the parameter is invalid. Review the value of the parameter you are using to correct it, and then retry your operation.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p> The request that you made is invalid. Check your request to determine why it's invalid
-    /// and then retry the request. </p>
+    /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request. </p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The specified limit has been exceeded. Review your request and retry it with a quantity
-    /// below the stated limit.</p>
+    /// <p>The specified limit has been exceeded. Review your request and retry it with a quantity below the stated limit.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The resource you are looking for has not been found. Review the resource you're looking
-    /// for and see if a different resource will accomplish your needs before retrying the revised
-    /// request.</p>
+    /// <p>The resource you are looking for has not been found. Review the resource you're looking for and see if a different resource will accomplish your needs before retrying the revised request.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The Amazon Translate service is temporarily unavailable. Please wait a bit and then retry your
-    /// request.</p>
+    /// <p>The Amazon Translate service is temporarily unavailable. Please wait a bit and then retry your request.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p> The size of the text you submitted exceeds the size limit. Reduce the size of the text or
-    /// use a smaller document and then retry your request. </p>
+    /// <p> The size of the text you submitted exceeds the size limit. Reduce the size of the text or use a smaller document and then retry your request. </p>
     TextSizeLimitExceededException(crate::error::TextSizeLimitExceededException),
-    /// <p> You have made too many requests within a short period of time. Wait for a short time and
-    /// then try your request again.</p>
+    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>Amazon Translate does not support translation from the language of the source text into the requested
-    /// target language. For more information, see <a>how-to-error-msg</a>. </p>
+    /// <p>Amazon Translate does not support translation from the language of the source text into the requested target language. For more information, see <code>how-to-error-msg</code>. </p>
     UnsupportedLanguagePairException(crate::error::UnsupportedLanguagePairException),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),

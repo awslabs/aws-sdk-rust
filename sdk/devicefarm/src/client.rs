@@ -751,22 +751,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_rules(input);
             self
         }
-        /// <p>The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are
-        /// available and meet the criteria that you assign for the <code>rules</code> parameter. Depending on how many
-        /// devices meet these constraints, your device pool might contain fewer devices than the value for this
-        /// parameter.</p>
-        /// <p>By specifying the maximum number of devices, you can control the costs that you incur
-        /// by running tests.</p>
+        /// <p>The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are available and meet the criteria that you assign for the <code>rules</code> parameter. Depending on how many devices meet these constraints, your device pool might contain fewer devices than the value for this parameter.</p>
+        /// <p>By specifying the maximum number of devices, you can control the costs that you incur by running tests.</p>
         pub fn max_devices(mut self, input: i32) -> Self {
             self.inner = self.inner.max_devices(input);
             self
         }
-        /// <p>The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are
-        /// available and meet the criteria that you assign for the <code>rules</code> parameter. Depending on how many
-        /// devices meet these constraints, your device pool might contain fewer devices than the value for this
-        /// parameter.</p>
-        /// <p>By specifying the maximum number of devices, you can control the costs that you incur
-        /// by running tests.</p>
+        /// <p>The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are available and meet the criteria that you assign for the <code>rules</code> parameter. Depending on how many devices meet these constraints, your device pool might contain fewer devices than the value for this parameter.</p>
+        /// <p>By specifying the maximum number of devices, you can control the costs that you incur by running tests.</p>
         pub fn set_max_devices(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_devices(input);
             self
@@ -774,8 +766,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateInstanceProfile`.
     ///
-    /// <p>Creates a profile that can be applied to one or more private fleet device
-    /// instances.</p>
+    /// <p>Creates a profile that can be applied to one or more private fleet device instances.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateInstanceProfile<
         C = aws_smithy_client::erase::DynConnector,
@@ -852,14 +843,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>When set to <code>true</code>, Device Farm removes app packages after a test run. The default value is
-        /// <code>false</code> for private devices.</p>
+        /// <p>When set to <code>true</code>, Device Farm removes app packages after a test run. The default value is <code>false</code> for private devices.</p>
         pub fn package_cleanup(mut self, input: bool) -> Self {
             self.inner = self.inner.package_cleanup(input);
             self
         }
-        /// <p>When set to <code>true</code>, Device Farm removes app packages after a test run. The default value is
-        /// <code>false</code> for private devices.</p>
+        /// <p>When set to <code>true</code>, Device Farm removes app packages after a test run. The default value is <code>false</code> for private devices.</p>
         pub fn set_package_cleanup(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_package_cleanup(input);
             self
@@ -868,10 +857,8 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_exclude_app_packages_from_cleanup`](Self::set_exclude_app_packages_from_cleanup).
         ///
-        /// <p>An array of strings that specifies the list of app packages that should not be cleaned up from the device
-        /// after a test run.</p>
-        /// <p>The list of packages is considered only if you set <code>packageCleanup</code> to
-        /// <code>true</code>.</p>
+        /// <p>An array of strings that specifies the list of app packages that should not be cleaned up from the device after a test run.</p>
+        /// <p>The list of packages is considered only if you set <code>packageCleanup</code> to <code>true</code>.</p>
         pub fn exclude_app_packages_from_cleanup(
             mut self,
             input: impl Into<std::string::String>,
@@ -879,10 +866,8 @@ pub mod fluent_builders {
             self.inner = self.inner.exclude_app_packages_from_cleanup(input.into());
             self
         }
-        /// <p>An array of strings that specifies the list of app packages that should not be cleaned up from the device
-        /// after a test run.</p>
-        /// <p>The list of packages is considered only if you set <code>packageCleanup</code> to
-        /// <code>true</code>.</p>
+        /// <p>An array of strings that specifies the list of app packages that should not be cleaned up from the device after a test run.</p>
+        /// <p>The list of packages is considered only if you set <code>packageCleanup</code> to <code>true</code>.</p>
         pub fn set_exclude_app_packages_from_cleanup(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -890,14 +875,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_exclude_app_packages_from_cleanup(input);
             self
         }
-        /// <p>When set to <code>true</code>, Device Farm reboots the instance after a test run. The default value is
-        /// <code>true</code>.</p>
+        /// <p>When set to <code>true</code>, Device Farm reboots the instance after a test run. The default value is <code>true</code>.</p>
         pub fn reboot_after_use(mut self, input: bool) -> Self {
             self.inner = self.inner.reboot_after_use(input);
             self
         }
-        /// <p>When set to <code>true</code>, Device Farm reboots the instance after a test run. The default value is
-        /// <code>true</code>.</p>
+        /// <p>When set to <code>true</code>, Device Farm reboots the instance after a test run. The default value is <code>true</code>.</p>
         pub fn set_reboot_after_use(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_reboot_after_use(input);
             self
@@ -962,14 +945,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the project for which you want to create a
-        /// network profile.</p>
+        /// <p>The Amazon Resource Name (ARN) of the project for which you want to create a network profile.</p>
         pub fn project_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.project_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the project for which you want to create a
-        /// network profile.</p>
+        /// <p>The Amazon Resource Name (ARN) of the project for which you want to create a network profile.</p>
         pub fn set_project_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_project_arn(input);
             self
@@ -1007,86 +988,72 @@ pub mod fluent_builders {
             self.inner = self.inner.set_type(input);
             self
         }
-        /// <p>The data throughput rate in bits per second, as an integer from 0 to
-        /// 104857600.</p>
+        /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
         pub fn uplink_bandwidth_bits(mut self, input: i64) -> Self {
             self.inner = self.inner.uplink_bandwidth_bits(input);
             self
         }
-        /// <p>The data throughput rate in bits per second, as an integer from 0 to
-        /// 104857600.</p>
+        /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
         pub fn set_uplink_bandwidth_bits(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_uplink_bandwidth_bits(input);
             self
         }
-        /// <p>The data throughput rate in bits per second, as an integer from 0 to
-        /// 104857600.</p>
+        /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
         pub fn downlink_bandwidth_bits(mut self, input: i64) -> Self {
             self.inner = self.inner.downlink_bandwidth_bits(input);
             self
         }
-        /// <p>The data throughput rate in bits per second, as an integer from 0 to
-        /// 104857600.</p>
+        /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
         pub fn set_downlink_bandwidth_bits(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_downlink_bandwidth_bits(input);
             self
         }
-        /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to
-        /// 2000.</p>
+        /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
         pub fn uplink_delay_ms(mut self, input: i64) -> Self {
             self.inner = self.inner.uplink_delay_ms(input);
             self
         }
-        /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to
-        /// 2000.</p>
+        /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
         pub fn set_uplink_delay_ms(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_uplink_delay_ms(input);
             self
         }
-        /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to
-        /// 2000.</p>
+        /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
         pub fn downlink_delay_ms(mut self, input: i64) -> Self {
             self.inner = self.inner.downlink_delay_ms(input);
             self
         }
-        /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to
-        /// 2000.</p>
+        /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
         pub fn set_downlink_delay_ms(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_downlink_delay_ms(input);
             self
         }
-        /// <p>Time variation in the delay of received packets in milliseconds as an integer from
-        /// 0 to 2000.</p>
+        /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
         pub fn uplink_jitter_ms(mut self, input: i64) -> Self {
             self.inner = self.inner.uplink_jitter_ms(input);
             self
         }
-        /// <p>Time variation in the delay of received packets in milliseconds as an integer from
-        /// 0 to 2000.</p>
+        /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
         pub fn set_uplink_jitter_ms(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_uplink_jitter_ms(input);
             self
         }
-        /// <p>Time variation in the delay of received packets in milliseconds as an integer from
-        /// 0 to 2000.</p>
+        /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
         pub fn downlink_jitter_ms(mut self, input: i64) -> Self {
             self.inner = self.inner.downlink_jitter_ms(input);
             self
         }
-        /// <p>Time variation in the delay of received packets in milliseconds as an integer from
-        /// 0 to 2000.</p>
+        /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
         pub fn set_downlink_jitter_ms(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_downlink_jitter_ms(input);
             self
         }
-        /// <p>Proportion of transmitted packets that fail to arrive from 0 to 100
-        /// percent.</p>
+        /// <p>Proportion of transmitted packets that fail to arrive from 0 to 100 percent.</p>
         pub fn uplink_loss_percent(mut self, input: i32) -> Self {
             self.inner = self.inner.uplink_loss_percent(input);
             self
         }
-        /// <p>Proportion of transmitted packets that fail to arrive from 0 to 100
-        /// percent.</p>
+        /// <p>Proportion of transmitted packets that fail to arrive from 0 to 100 percent.</p>
         pub fn set_uplink_loss_percent(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_uplink_loss_percent(input);
             self
@@ -1171,14 +1138,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Sets the execution timeout value (in minutes) for a project. All test runs in this project use the
-        /// specified execution timeout value unless overridden when scheduling a run.</p>
+        /// <p>Sets the execution timeout value (in minutes) for a project. All test runs in this project use the specified execution timeout value unless overridden when scheduling a run.</p>
         pub fn default_job_timeout_minutes(mut self, input: i32) -> Self {
             self.inner = self.inner.default_job_timeout_minutes(input);
             self
         }
-        /// <p>Sets the execution timeout value (in minutes) for a project. All test runs in this project use the
-        /// specified execution timeout value unless overridden when scheduling a run.</p>
+        /// <p>Sets the execution timeout value (in minutes) for a project. All test runs in this project use the specified execution timeout value unless overridden when scheduling a run.</p>
         pub fn set_default_job_timeout_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_default_job_timeout_minutes(input);
             self
@@ -1243,14 +1208,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the project for which you want to create a remote
-        /// access session.</p>
+        /// <p>The Amazon Resource Name (ARN) of the project for which you want to create a remote access session.</p>
         pub fn project_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.project_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the project for which you want to create a remote
-        /// access session.</p>
+        /// <p>The Amazon Resource Name (ARN) of the project for which you want to create a remote access session.</p>
         pub fn set_project_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_project_arn(input);
             self
@@ -1265,32 +1228,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_device_arn(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the device instance for which you want to create a
-        /// remote access session.</p>
+        /// <p>The Amazon Resource Name (ARN) of the device instance for which you want to create a remote access session.</p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the device instance for which you want to create a
-        /// remote access session.</p>
+        /// <p>The Amazon Resource Name (ARN) of the device instance for which you want to create a remote access session.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_arn(input);
             self
         }
-        /// <p>Ignored. The public key of the <code>ssh</code> key pair you want to use for connecting to remote
-        /// devices in your remote debugging session. This key is required only if <code>remoteDebugEnabled</code> is
-        /// set to <code>true</code>.</p>
-        /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-        /// longer supported</a>.</p>
+        /// <p>Ignored. The public key of the <code>ssh</code> key pair you want to use for connecting to remote devices in your remote debugging session. This key is required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
+        /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
         pub fn ssh_public_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.ssh_public_key(input.into());
             self
         }
-        /// <p>Ignored. The public key of the <code>ssh</code> key pair you want to use for connecting to remote
-        /// devices in your remote debugging session. This key is required only if <code>remoteDebugEnabled</code> is
-        /// set to <code>true</code>.</p>
-        /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-        /// longer supported</a>.</p>
+        /// <p>Ignored. The public key of the <code>ssh</code> key pair you want to use for connecting to remote devices in your remote debugging session. This key is required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
+        /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
         pub fn set_ssh_public_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1298,42 +1253,34 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ssh_public_key(input);
             self
         }
-        /// <p>Set to <code>true</code> if you want to access devices remotely for debugging in
-        /// your remote access session.</p>
-        /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-        /// longer supported</a>.</p>
+        /// <p>Set to <code>true</code> if you want to access devices remotely for debugging in your remote access session.</p>
+        /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
         pub fn remote_debug_enabled(mut self, input: bool) -> Self {
             self.inner = self.inner.remote_debug_enabled(input);
             self
         }
-        /// <p>Set to <code>true</code> if you want to access devices remotely for debugging in
-        /// your remote access session.</p>
-        /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-        /// longer supported</a>.</p>
+        /// <p>Set to <code>true</code> if you want to access devices remotely for debugging in your remote access session.</p>
+        /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
         pub fn set_remote_debug_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_remote_debug_enabled(input);
             self
         }
-        /// <p>Set to <code>true</code> to enable remote recording for the remote access
-        /// session.</p>
+        /// <p>Set to <code>true</code> to enable remote recording for the remote access session.</p>
         pub fn remote_record_enabled(mut self, input: bool) -> Self {
             self.inner = self.inner.remote_record_enabled(input);
             self
         }
-        /// <p>Set to <code>true</code> to enable remote recording for the remote access
-        /// session.</p>
+        /// <p>Set to <code>true</code> to enable remote recording for the remote access session.</p>
         pub fn set_remote_record_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_remote_record_enabled(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the app to be recorded in the remote access
-        /// session.</p>
+        /// <p>The Amazon Resource Name (ARN) for the app to be recorded in the remote access session.</p>
         pub fn remote_record_app_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.remote_record_app_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the app to be recorded in the remote access
-        /// session.</p>
+        /// <p>The Amazon Resource Name (ARN) for the app to be recorded in the remote access session.</p>
         pub fn set_remote_record_app_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1351,20 +1298,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Unique identifier for the client. If you want access to multiple devices on the same client, you should
-        /// pass the same <code>clientId</code> value in each call to <code>CreateRemoteAccessSession</code>. This
-        /// identifier is required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
-        /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-        /// longer supported</a>.</p>
+        /// <p>Unique identifier for the client. If you want access to multiple devices on the same client, you should pass the same <code>clientId</code> value in each call to <code>CreateRemoteAccessSession</code>. This identifier is required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
+        /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
         pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_id(input.into());
             self
         }
-        /// <p>Unique identifier for the client. If you want access to multiple devices on the same client, you should
-        /// pass the same <code>clientId</code> value in each call to <code>CreateRemoteAccessSession</code>. This
-        /// identifier is required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
-        /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-        /// longer supported</a>.</p>
+        /// <p>Unique identifier for the client. If you want access to multiple devices on the same client, you should pass the same <code>clientId</code> value in each call to <code>CreateRemoteAccessSession</code>. This identifier is required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
+        /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
         pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_id(input);
             self
@@ -1387,20 +1328,9 @@ pub mod fluent_builders {
         }
         /// <p>The interaction mode of the remote access session. Valid values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and
-        /// rotating the screen. You cannot run XCUITest framework-based tests in this
-        /// mode.</p>
-        /// </li>
-        /// <li>
-        /// <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This
-        /// mode has the fastest test execution speed. You can run XCUITest framework-based tests in this
-        /// mode.</p>
-        /// </li>
-        /// <li>
-        /// <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest
-        /// framework-based tests and watch the screen in this mode.</p>
-        /// </li>
+        /// <li> <p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You cannot run XCUITest framework-based tests in this mode.</p> </li>
+        /// <li> <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This mode has the fastest test execution speed. You can run XCUITest framework-based tests in this mode.</p> </li>
+        /// <li> <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest framework-based tests and watch the screen in this mode.</p> </li>
         /// </ul>
         pub fn interaction_mode(mut self, input: crate::model::InteractionMode) -> Self {
             self.inner = self.inner.interaction_mode(input);
@@ -1408,20 +1338,9 @@ pub mod fluent_builders {
         }
         /// <p>The interaction mode of the remote access session. Valid values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and
-        /// rotating the screen. You cannot run XCUITest framework-based tests in this
-        /// mode.</p>
-        /// </li>
-        /// <li>
-        /// <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This
-        /// mode has the fastest test execution speed. You can run XCUITest framework-based tests in this
-        /// mode.</p>
-        /// </li>
-        /// <li>
-        /// <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest
-        /// framework-based tests and watch the screen in this mode.</p>
-        /// </li>
+        /// <li> <p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You cannot run XCUITest framework-based tests in this mode.</p> </li>
+        /// <li> <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This mode has the fastest test execution speed. You can run XCUITest framework-based tests in this mode.</p> </li>
+        /// <li> <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest framework-based tests and watch the screen in this mode.</p> </li>
         /// </ul>
         pub fn set_interaction_mode(
             mut self,
@@ -1430,18 +1349,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_interaction_mode(input);
             self
         }
-        /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public
-        /// devices, Device Farm always signs your apps again.</p>
-        /// <p>For more information on how Device Farm modifies your uploads during tests, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a>
-        /// </p>
+        /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
+        /// <p>For more information on how Device Farm modifies your uploads during tests, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> </p>
         pub fn skip_app_resign(mut self, input: bool) -> Self {
             self.inner = self.inner.skip_app_resign(input);
             self
         }
-        /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public
-        /// devices, Device Farm always signs your apps again.</p>
-        /// <p>For more information on how Device Farm modifies your uploads during tests, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a>
-        /// </p>
+        /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
+        /// <p>For more information on how Device Farm modifies your uploads during tests, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> </p>
         pub fn set_skip_app_resign(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_skip_app_resign(input);
             self
@@ -1449,8 +1364,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateTestGridProject`.
     ///
-    /// <p>Creates a Selenium testing project. Projects are used to track <a>TestGridSession</a>
-    /// instances.</p>
+    /// <p>Creates a Selenium testing project. Projects are used to track <code>TestGridSession</code> instances.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTestGridProject<
         C = aws_smithy_client::erase::DynConnector,
@@ -1543,8 +1457,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateTestGridUrl`.
     ///
-    /// <p>Creates a signed, short-term URL that can be passed to a Selenium <code>RemoteWebDriver</code>
-    /// constructor.</p>
+    /// <p>Creates a signed, short-term URL that can be passed to a Selenium <code>RemoteWebDriver</code> constructor.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTestGridUrl<
         C = aws_smithy_client::erase::DynConnector,
@@ -1601,14 +1514,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>ARN (from <a>CreateTestGridProject</a> or <a>ListTestGridProjects</a>) to associate
-        /// with the short-term URL. </p>
+        /// <p>ARN (from <code>CreateTestGridProject</code> or <code>ListTestGridProjects</code>) to associate with the short-term URL. </p>
         pub fn project_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.project_arn(input.into());
             self
         }
-        /// <p>ARN (from <a>CreateTestGridProject</a> or <a>ListTestGridProjects</a>) to associate
-        /// with the short-term URL. </p>
+        /// <p>ARN (from <code>CreateTestGridProject</code> or <code>ListTestGridProjects</code>) to associate with the short-term URL. </p>
         pub fn set_project_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_project_arn(input);
             self
@@ -1693,18 +1604,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_project_arn(input);
             self
         }
-        /// <p>The upload's file name. The name should not contain any forward slashes (<code>/</code>). If you are
-        /// uploading an iOS app, the file name must end with the <code>.ipa</code> extension. If you are uploading an
-        /// Android app, the file name must end with the <code>.apk</code> extension. For all others, the file name must
-        /// end with the <code>.zip</code> file extension.</p>
+        /// <p>The upload's file name. The name should not contain any forward slashes (<code>/</code>). If you are uploading an iOS app, the file name must end with the <code>.ipa</code> extension. If you are uploading an Android app, the file name must end with the <code>.apk</code> extension. For all others, the file name must end with the <code>.zip</code> file extension.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The upload's file name. The name should not contain any forward slashes (<code>/</code>). If you are
-        /// uploading an iOS app, the file name must end with the <code>.ipa</code> extension. If you are uploading an
-        /// Android app, the file name must end with the <code>.apk</code> extension. For all others, the file name must
-        /// end with the <code>.zip</code> file extension.</p>
+        /// <p>The upload's file name. The name should not contain any forward slashes (<code>/</code>). If you are uploading an iOS app, the file name must end with the <code>.ipa</code> extension. If you are uploading an Android app, the file name must end with the <code>.apk</code> extension. For all others, the file name must end with the <code>.zip</code> file extension.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -1712,105 +1617,40 @@ pub mod fluent_builders {
         /// <p>The upload's upload type.</p>
         /// <p>Must be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>ANDROID_APP</p>
-        /// </li>
-        /// <li>
-        /// <p>IOS_APP</p>
-        /// </li>
-        /// <li>
-        /// <p>WEB_APP</p>
-        /// </li>
-        /// <li>
-        /// <p>EXTERNAL_DATA</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_PYTHON_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_NODE_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_RUBY_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_PYTHON_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_NODE_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_RUBY_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>CALABASH_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTRUMENTATION_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>UIAUTOMATION_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>UIAUTOMATOR_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST_UI_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_JUNIT_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_TESTNG_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_PYTHON_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_NODE_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_RUBY_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_PYTHON_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_NODE_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_RUBY_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTRUMENTATION_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST_UI_TEST_SPEC</p>
-        /// </li>
+        /// <li> <p>ANDROID_APP</p> </li>
+        /// <li> <p>IOS_APP</p> </li>
+        /// <li> <p>WEB_APP</p> </li>
+        /// <li> <p>EXTERNAL_DATA</p> </li>
+        /// <li> <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_PYTHON_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_NODE_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_RUBY_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_PYTHON_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_NODE_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_RUBY_TEST_PACKAGE</p> </li>
+        /// <li> <p>CALABASH_TEST_PACKAGE</p> </li>
+        /// <li> <p>INSTRUMENTATION_TEST_PACKAGE</p> </li>
+        /// <li> <p>UIAUTOMATION_TEST_PACKAGE</p> </li>
+        /// <li> <p>UIAUTOMATOR_TEST_PACKAGE</p> </li>
+        /// <li> <p>XCTEST_TEST_PACKAGE</p> </li>
+        /// <li> <p>XCTEST_UI_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_JAVA_JUNIT_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_JAVA_TESTNG_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_PYTHON_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_NODE_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_RUBY_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_PYTHON_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_NODE_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_RUBY_TEST_SPEC</p> </li>
+        /// <li> <p>INSTRUMENTATION_TEST_SPEC</p> </li>
+        /// <li> <p>XCTEST_UI_TEST_SPEC</p> </li>
         /// </ul>
-        /// <p> If you call <code>CreateUpload</code> with <code>WEB_APP</code> specified, AWS
-        /// Device Farm throws an <code>ArgumentException</code> error.</p>
+        /// <p> If you call <code>CreateUpload</code> with <code>WEB_APP</code> specified, AWS Device Farm throws an <code>ArgumentException</code> error.</p>
         pub fn r#type(mut self, input: crate::model::UploadType) -> Self {
             self.inner = self.inner.r#type(input);
             self
@@ -1818,105 +1658,40 @@ pub mod fluent_builders {
         /// <p>The upload's upload type.</p>
         /// <p>Must be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>ANDROID_APP</p>
-        /// </li>
-        /// <li>
-        /// <p>IOS_APP</p>
-        /// </li>
-        /// <li>
-        /// <p>WEB_APP</p>
-        /// </li>
-        /// <li>
-        /// <p>EXTERNAL_DATA</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_PYTHON_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_NODE_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_RUBY_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_PYTHON_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_NODE_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_RUBY_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>CALABASH_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTRUMENTATION_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>UIAUTOMATION_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>UIAUTOMATOR_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST_UI_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_JUNIT_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_TESTNG_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_PYTHON_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_NODE_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_RUBY_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_PYTHON_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_NODE_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_RUBY_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTRUMENTATION_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST_UI_TEST_SPEC</p>
-        /// </li>
+        /// <li> <p>ANDROID_APP</p> </li>
+        /// <li> <p>IOS_APP</p> </li>
+        /// <li> <p>WEB_APP</p> </li>
+        /// <li> <p>EXTERNAL_DATA</p> </li>
+        /// <li> <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_PYTHON_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_NODE_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_RUBY_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_PYTHON_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_NODE_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_RUBY_TEST_PACKAGE</p> </li>
+        /// <li> <p>CALABASH_TEST_PACKAGE</p> </li>
+        /// <li> <p>INSTRUMENTATION_TEST_PACKAGE</p> </li>
+        /// <li> <p>UIAUTOMATION_TEST_PACKAGE</p> </li>
+        /// <li> <p>UIAUTOMATOR_TEST_PACKAGE</p> </li>
+        /// <li> <p>XCTEST_TEST_PACKAGE</p> </li>
+        /// <li> <p>XCTEST_UI_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_JAVA_JUNIT_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_JAVA_TESTNG_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_PYTHON_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_NODE_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_RUBY_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_PYTHON_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_NODE_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_RUBY_TEST_SPEC</p> </li>
+        /// <li> <p>INSTRUMENTATION_TEST_SPEC</p> </li>
+        /// <li> <p>XCTEST_UI_TEST_SPEC</p> </li>
         /// </ul>
-        /// <p> If you call <code>CreateUpload</code> with <code>WEB_APP</code> specified, AWS
-        /// Device Farm throws an <code>ArgumentException</code> error.</p>
+        /// <p> If you call <code>CreateUpload</code> with <code>WEB_APP</code> specified, AWS Device Farm throws an <code>ArgumentException</code> error.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::UploadType>) -> Self {
             self.inner = self.inner.set_type(input);
             self
@@ -1934,8 +1709,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateVPCEConfiguration`.
     ///
-    /// <p>Creates a configuration record in Device Farm for your Amazon Virtual Private Cloud
-    /// (VPC) endpoint.</p>
+    /// <p>Creates a configuration record in Device Farm for your Amazon Virtual Private Cloud (VPC) endpoint.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateVPCEConfiguration<
         C = aws_smithy_client::erase::DynConnector,
@@ -1992,14 +1766,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The friendly name you give to your VPC endpoint configuration, to manage your
-        /// configurations more easily.</p>
+        /// <p>The friendly name you give to your VPC endpoint configuration, to manage your configurations more easily.</p>
         pub fn vpce_configuration_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.vpce_configuration_name(input.into());
             self
         }
-        /// <p>The friendly name you give to your VPC endpoint configuration, to manage your
-        /// configurations more easily.</p>
+        /// <p>The friendly name you give to your VPC endpoint configuration, to manage your configurations more easily.</p>
         pub fn set_vpce_configuration_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2020,14 +1792,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_vpce_service_name(input);
             self
         }
-        /// <p>The DNS name of the service running in your VPC that you want Device Farm to
-        /// test.</p>
+        /// <p>The DNS name of the service running in your VPC that you want Device Farm to test.</p>
         pub fn service_dns_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.service_dns_name(input.into());
             self
         }
-        /// <p>The DNS name of the service running in your VPC that you want Device Farm to
-        /// test.</p>
+        /// <p>The DNS name of the service running in your VPC that you want Device Farm to test.</p>
         pub fn set_service_dns_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2054,8 +1824,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteDevicePool`.
     ///
-    /// <p>Deletes a device pool given the pool ARN. Does not allow deletion of curated pools
-    /// owned by the system.</p>
+    /// <p>Deletes a device pool given the pool ARN. Does not allow deletion of curated pools owned by the system.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDevicePool<
         C = aws_smithy_client::erase::DynConnector,
@@ -2182,14 +1951,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the instance profile you are requesting to
-        /// delete.</p>
+        /// <p>The Amazon Resource Name (ARN) of the instance profile you are requesting to delete.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the instance profile you are requesting to
-        /// delete.</p>
+        /// <p>The Amazon Resource Name (ARN) of the instance profile you are requesting to delete.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_arn(input);
             self
@@ -2395,14 +2162,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the session for which you want to delete remote
-        /// access.</p>
+        /// <p>The Amazon Resource Name (ARN) of the session for which you want to delete remote access.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the session for which you want to delete remote
-        /// access.</p>
+        /// <p>The Amazon Resource Name (ARN) of the session for which you want to delete remote access.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_arn(input);
             self
@@ -2481,11 +2246,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteTestGridProject`.
     ///
-    /// <p> Deletes a Selenium testing project and all content generated under it. </p>
-    /// <important>
+    /// <p> Deletes a Selenium testing project and all content generated under it. </p> <important>
     /// <p>You cannot undo this operation.</p>
-    /// </important>
-    /// <note>
+    /// </important> <note>
     /// <p>You cannot delete a project if it has active sessions.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -2544,12 +2307,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the project to delete, from <a>CreateTestGridProject</a> or <a>ListTestGridProjects</a>.</p>
+        /// <p>The ARN of the project to delete, from <code>CreateTestGridProject</code> or <code>ListTestGridProjects</code>.</p>
         pub fn project_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.project_arn(input.into());
             self
         }
-        /// <p>The ARN of the project to delete, from <a>CreateTestGridProject</a> or <a>ListTestGridProjects</a>.</p>
+        /// <p>The ARN of the project to delete, from <code>CreateTestGridProject</code> or <code>ListTestGridProjects</code>.</p>
         pub fn set_project_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_project_arn(input);
             self
@@ -2684,14 +2447,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to
-        /// delete.</p>
+        /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to delete.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to
-        /// delete.</p>
+        /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to delete.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_arn(input);
             self
@@ -2699,8 +2460,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetAccountSettings`.
     ///
-    /// <p>Returns the number of unmetered iOS or unmetered Android devices that have been purchased by the
-    /// account.</p>
+    /// <p>Returns the number of unmetered iOS or unmetered Android devices that have been purchased by the account.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAccountSettings<
         C = aws_smithy_client::erase::DynConnector,
@@ -2887,14 +2647,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the instance you're requesting information
-        /// about.</p>
+        /// <p>The Amazon Resource Name (ARN) of the instance you're requesting information about.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the instance you're requesting information
-        /// about.</p>
+        /// <p>The Amazon Resource Name (ARN) of the instance you're requesting information about.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_arn(input);
             self
@@ -3055,61 +2813,24 @@ pub mod fluent_builders {
         /// <p>The test type for the specified device pool.</p>
         /// <p>Allowed values include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>BUILTIN_FUZZ.</p>
-        /// </li>
-        /// <li>
-        /// <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with
-        /// it and capturing screenshots at the same time.</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_JUNIT.</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_TESTNG.</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_PYTHON.</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_NODE.</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_RUBY.</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_JUNIT.</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_TESTNG.</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_PYTHON.</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_NODE.</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_RUBY.</p>
-        /// </li>
-        /// <li>
-        /// <p>CALABASH.</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTRUMENTATION.</p>
-        /// </li>
-        /// <li>
-        /// <p>UIAUTOMATION.</p>
-        /// </li>
-        /// <li>
-        /// <p>UIAUTOMATOR.</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST.</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST_UI.</p>
-        /// </li>
+        /// <li> <p>BUILTIN_FUZZ.</p> </li>
+        /// <li> <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p> </li>
+        /// <li> <p>APPIUM_JAVA_JUNIT.</p> </li>
+        /// <li> <p>APPIUM_JAVA_TESTNG.</p> </li>
+        /// <li> <p>APPIUM_PYTHON.</p> </li>
+        /// <li> <p>APPIUM_NODE.</p> </li>
+        /// <li> <p>APPIUM_RUBY.</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_JUNIT.</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_TESTNG.</p> </li>
+        /// <li> <p>APPIUM_WEB_PYTHON.</p> </li>
+        /// <li> <p>APPIUM_WEB_NODE.</p> </li>
+        /// <li> <p>APPIUM_WEB_RUBY.</p> </li>
+        /// <li> <p>CALABASH.</p> </li>
+        /// <li> <p>INSTRUMENTATION.</p> </li>
+        /// <li> <p>UIAUTOMATION.</p> </li>
+        /// <li> <p>UIAUTOMATOR.</p> </li>
+        /// <li> <p>XCTEST.</p> </li>
+        /// <li> <p>XCTEST_UI.</p> </li>
         /// </ul>
         pub fn test_type(mut self, input: crate::model::TestType) -> Self {
             self.inner = self.inner.test_type(input);
@@ -3118,61 +2839,24 @@ pub mod fluent_builders {
         /// <p>The test type for the specified device pool.</p>
         /// <p>Allowed values include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>BUILTIN_FUZZ.</p>
-        /// </li>
-        /// <li>
-        /// <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with
-        /// it and capturing screenshots at the same time.</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_JUNIT.</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_TESTNG.</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_PYTHON.</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_NODE.</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_RUBY.</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_JUNIT.</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_TESTNG.</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_PYTHON.</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_NODE.</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_RUBY.</p>
-        /// </li>
-        /// <li>
-        /// <p>CALABASH.</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTRUMENTATION.</p>
-        /// </li>
-        /// <li>
-        /// <p>UIAUTOMATION.</p>
-        /// </li>
-        /// <li>
-        /// <p>UIAUTOMATOR.</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST.</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST_UI.</p>
-        /// </li>
+        /// <li> <p>BUILTIN_FUZZ.</p> </li>
+        /// <li> <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p> </li>
+        /// <li> <p>APPIUM_JAVA_JUNIT.</p> </li>
+        /// <li> <p>APPIUM_JAVA_TESTNG.</p> </li>
+        /// <li> <p>APPIUM_PYTHON.</p> </li>
+        /// <li> <p>APPIUM_NODE.</p> </li>
+        /// <li> <p>APPIUM_RUBY.</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_JUNIT.</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_TESTNG.</p> </li>
+        /// <li> <p>APPIUM_WEB_PYTHON.</p> </li>
+        /// <li> <p>APPIUM_WEB_NODE.</p> </li>
+        /// <li> <p>APPIUM_WEB_RUBY.</p> </li>
+        /// <li> <p>CALABASH.</p> </li>
+        /// <li> <p>INSTRUMENTATION.</p> </li>
+        /// <li> <p>UIAUTOMATION.</p> </li>
+        /// <li> <p>UIAUTOMATOR.</p> </li>
+        /// <li> <p>XCTEST.</p> </li>
+        /// <li> <p>XCTEST_UI.</p> </li>
         /// </ul>
         pub fn set_test_type(mut self, input: std::option::Option<crate::model::TestType>) -> Self {
             self.inner = self.inner.set_test_type(input);
@@ -3417,10 +3101,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetOfferingStatus`.
     ///
-    /// <p>Gets the current status and future status of all offerings purchased by an AWS account. The response
-    /// indicates how many offerings are currently available and the offerings that will be available in the next
-    /// period. The API returns a <code>NotEligible</code> error if the user is not permitted to invoke the
-    /// operation. If you must be able to invoke this operation, contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.</p>
+    /// <p>Gets the current status and future status of all offerings purchased by an AWS account. The response indicates how many offerings are currently available and the offerings that will be available in the next period. The API returns a <code>NotEligible</code> error if the user is not permitted to invoke the operation. If you must be able to invoke this operation, contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetOfferingStatus<
         C = aws_smithy_client::erase::DynConnector,
@@ -3477,14 +3158,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3619,14 +3298,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the remote access session about which you want to
-        /// get session information.</p>
+        /// <p>The Amazon Resource Name (ARN) of the remote access session about which you want to get session information.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the remote access session about which you want to
-        /// get session information.</p>
+        /// <p>The Amazon Resource Name (ARN) of the remote access session about which you want to get session information.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_arn(input);
             self
@@ -3901,12 +3578,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the Selenium testing project, from either <a>CreateTestGridProject</a> or <a>ListTestGridProjects</a>.</p>
+        /// <p>The ARN of the Selenium testing project, from either <code>CreateTestGridProject</code> or <code>ListTestGridProjects</code>.</p>
         pub fn project_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.project_arn(input.into());
             self
         }
-        /// <p>The ARN of the Selenium testing project, from either <a>CreateTestGridProject</a> or <a>ListTestGridProjects</a>.</p>
+        /// <p>The ARN of the Selenium testing project, from either <code>CreateTestGridProject</code> or <code>ListTestGridProjects</code>.</p>
         pub fn set_project_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_project_arn(input);
             self
@@ -3914,14 +3591,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetTestGridSession`.
     ///
-    /// <p>A session is an instance of a browser created through a <code>RemoteWebDriver</code> with the URL from <a>CreateTestGridUrlResult$url</a>. You can use the following to look up sessions:</p>
+    /// <p>A session is an instance of a browser created through a <code>RemoteWebDriver</code> with the URL from <code>CreateTestGridUrlResult$url</code>. You can use the following to look up sessions:</p>
     /// <ul>
-    /// <li>
-    /// <p>The session ARN (<a>GetTestGridSessionRequest$sessionArn</a>).</p>
-    /// </li>
-    /// <li>
-    /// <p>The project ARN and a session ID (<a>GetTestGridSessionRequest$projectArn</a> and <a>GetTestGridSessionRequest$sessionId</a>).</p>
-    /// </li>
+    /// <li> <p>The session ARN (<code>GetTestGridSessionRequest$sessionArn</code>).</p> </li>
+    /// <li> <p>The project ARN and a session ID (<code>GetTestGridSessionRequest$projectArn</code> and <code>GetTestGridSessionRequest$sessionId</code>).</p> </li>
     /// </ul>
     /// <p></p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -3980,12 +3653,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN for the project that this session belongs to. See <a>CreateTestGridProject</a> and <a>ListTestGridProjects</a>.</p>
+        /// <p>The ARN for the project that this session belongs to. See <code>CreateTestGridProject</code> and <code>ListTestGridProjects</code>.</p>
         pub fn project_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.project_arn(input.into());
             self
         }
-        /// <p>The ARN for the project that this session belongs to. See <a>CreateTestGridProject</a> and <a>ListTestGridProjects</a>.</p>
+        /// <p>The ARN for the project that this session belongs to. See <code>CreateTestGridProject</code> and <code>ListTestGridProjects</code>.</p>
         pub fn set_project_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_project_arn(input);
             self
@@ -4000,12 +3673,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_session_id(input);
             self
         }
-        /// <p>An ARN that uniquely identifies a <a>TestGridSession</a>.</p>
+        /// <p>An ARN that uniquely identifies a <code>TestGridSession</code>.</p>
         pub fn session_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.session_arn(input.into());
             self
         }
-        /// <p>An ARN that uniquely identifies a <a>TestGridSession</a>.</p>
+        /// <p>An ARN that uniquely identifies a <code>TestGridSession</code>.</p>
         pub fn set_session_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_session_arn(input);
             self
@@ -4083,8 +3756,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetVPCEConfiguration`.
     ///
-    /// <p>Returns information about the configuration settings for your Amazon Virtual Private
-    /// Cloud (VPC) endpoint.</p>
+    /// <p>Returns information about the configuration settings for your Amazon Virtual Private Cloud (VPC) endpoint.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetVPCEConfiguration<
         C = aws_smithy_client::erase::DynConnector,
@@ -4141,14 +3813,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to
-        /// describe.</p>
+        /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to describe.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to
-        /// describe.</p>
+        /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to describe.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_arn(input);
             self
@@ -4156,9 +3826,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `InstallToRemoteAccessSession`.
     ///
-    /// <p>Installs an application to the device in a remote access session. For Android
-    /// applications, the file must be in .apk format. For iOS applications, the file must be in
-    /// .ipa format.</p>
+    /// <p>Installs an application to the device in a remote access session. For Android applications, the file must be in .apk format. For iOS applications, the file must be in .ipa format.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct InstallToRemoteAccessSession<
         C = aws_smithy_client::erase::DynConnector,
@@ -4215,14 +3883,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the remote access session about which you are
-        /// requesting information.</p>
+        /// <p>The Amazon Resource Name (ARN) of the remote access session about which you are requesting information.</p>
         pub fn remote_access_session_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.remote_access_session_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the remote access session about which you are
-        /// requesting information.</p>
+        /// <p>The Amazon Resource Name (ARN) of the remote access session about which you are requesting information.</p>
         pub fn set_remote_access_session_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4313,15 +3979,9 @@ pub mod fluent_builders {
         /// <p>The artifacts' type.</p>
         /// <p>Allowed values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>FILE</p>
-        /// </li>
-        /// <li>
-        /// <p>LOG</p>
-        /// </li>
-        /// <li>
-        /// <p>SCREENSHOT</p>
-        /// </li>
+        /// <li> <p>FILE</p> </li>
+        /// <li> <p>LOG</p> </li>
+        /// <li> <p>SCREENSHOT</p> </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::ArtifactCategory) -> Self {
             self.inner = self.inner.r#type(input);
@@ -4330,15 +3990,9 @@ pub mod fluent_builders {
         /// <p>The artifacts' type.</p>
         /// <p>Allowed values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>FILE</p>
-        /// </li>
-        /// <li>
-        /// <p>LOG</p>
-        /// </li>
-        /// <li>
-        /// <p>SCREENSHOT</p>
-        /// </li>
+        /// <li> <p>FILE</p> </li>
+        /// <li> <p>LOG</p> </li>
+        /// <li> <p>SCREENSHOT</p> </li>
         /// </ul>
         pub fn set_type(
             mut self,
@@ -4347,14 +4001,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_type(input);
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4362,8 +4014,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDeviceInstances`.
     ///
-    /// <p>Returns information about the private device instances associated with one or more AWS
-    /// accounts.</p>
+    /// <p>Returns information about the private device instances associated with one or more AWS accounts.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDeviceInstances<
         C = aws_smithy_client::erase::DynConnector,
@@ -4430,14 +4081,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4515,14 +4164,8 @@ pub mod fluent_builders {
         /// <p>The device pools' type.</p>
         /// <p>Allowed values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>CURATED: A device pool that is created and managed by AWS Device
-        /// Farm.</p>
-        /// </li>
-        /// <li>
-        /// <p>PRIVATE: A device pool that is created and managed by the device pool
-        /// developer.</p>
-        /// </li>
+        /// <li> <p>CURATED: A device pool that is created and managed by AWS Device Farm.</p> </li>
+        /// <li> <p>PRIVATE: A device pool that is created and managed by the device pool developer.</p> </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::DevicePoolType) -> Self {
             self.inner = self.inner.r#type(input);
@@ -4531,14 +4174,8 @@ pub mod fluent_builders {
         /// <p>The device pools' type.</p>
         /// <p>Allowed values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>CURATED: A device pool that is created and managed by AWS Device
-        /// Farm.</p>
-        /// </li>
-        /// <li>
-        /// <p>PRIVATE: A device pool that is created and managed by the device pool
-        /// developer.</p>
-        /// </li>
+        /// <li> <p>CURATED: A device pool that is created and managed by AWS Device Farm.</p> </li>
+        /// <li> <p>PRIVATE: A device pool that is created and managed by the device pool developer.</p> </li>
         /// </ul>
         pub fn set_type(
             mut self,
@@ -4547,14 +4184,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_type(input);
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4629,14 +4264,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_arn(input);
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4645,191 +4278,71 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Used to select a set of devices. A filter is made up of an attribute, an operator, and
-        /// one or more values.</p>
+        /// <p>Used to select a set of devices. A filter is made up of an attribute, an operator, and one or more values.</p>
         /// <ul>
-        /// <li>
-        /// <p>Attribute: The aspect of a device such as platform or model used as the
-        /// selection criteria in a device filter.</p>
-        /// <p>Allowed values include:</p>
+        /// <li> <p>Attribute: The aspect of a device such as platform or model used as the selection criteria in a device filter.</p> <p>Allowed values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>ARN: The Amazon Resource Name (ARN) of the device (for example,
-        /// <code>arn:aws:devicefarm:us-west-2::device:12345Example</code>).</p>
-        /// </li>
-        /// <li>
-        /// <p>PLATFORM: The device platform. Valid values are ANDROID or IOS.</p>
-        /// </li>
-        /// <li>
-        /// <p>OS_VERSION: The operating system version (for example, 10.3.2).</p>
-        /// </li>
-        /// <li>
-        /// <p>MODEL: The device model (for example, iPad 5th Gen).</p>
-        /// </li>
-        /// <li>
-        /// <p>AVAILABILITY: The current availability of the device. Valid values are AVAILABLE,
-        /// HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p>
-        /// </li>
-        /// <li>
-        /// <p>FORM_FACTOR: The device form factor. Valid values are PHONE or TABLET.</p>
-        /// </li>
-        /// <li>
-        /// <p>MANUFACTURER: The device manufacturer (for example, Apple).</p>
-        /// </li>
-        /// <li>
-        /// <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access. Valid values
-        /// are TRUE or FALSE.</p>
-        /// </li>
-        /// <li>
-        /// <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values
-        /// are TRUE or FALSE. Because remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-        /// longer supported</a>, this attribute is ignored.</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device
-        /// instance.</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTANCE_LABELS: The label of the device instance.</p>
-        /// </li>
-        /// <li>
-        /// <p>FLEET_TYPE: The fleet type. Valid values are PUBLIC or PRIVATE.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>Operator: The filter operator.</p>
+        /// <li> <p>ARN: The Amazon Resource Name (ARN) of the device (for example, <code>arn:aws:devicefarm:us-west-2::device:12345Example</code>).</p> </li>
+        /// <li> <p>PLATFORM: The device platform. Valid values are ANDROID or IOS.</p> </li>
+        /// <li> <p>OS_VERSION: The operating system version (for example, 10.3.2).</p> </li>
+        /// <li> <p>MODEL: The device model (for example, iPad 5th Gen).</p> </li>
+        /// <li> <p>AVAILABILITY: The current availability of the device. Valid values are AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p> </li>
+        /// <li> <p>FORM_FACTOR: The device form factor. Valid values are PHONE or TABLET.</p> </li>
+        /// <li> <p>MANUFACTURER: The device manufacturer (for example, Apple).</p> </li>
+        /// <li> <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access. Valid values are TRUE or FALSE.</p> </li>
+        /// <li> <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values are TRUE or FALSE. Because remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>, this attribute is ignored.</p> </li>
+        /// <li> <p>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance.</p> </li>
+        /// <li> <p>INSTANCE_LABELS: The label of the device instance.</p> </li>
+        /// <li> <p>FLEET_TYPE: The fleet type. Valid values are PUBLIC or PRIVATE.</p> </li>
+        /// </ul> </li>
+        /// <li> <p>Operator: The filter operator.</p>
         /// <ul>
-        /// <li>
-        /// <p>The EQUALS operator is available for every attribute except
-        /// INSTANCE_LABELS.</p>
-        /// </li>
-        /// <li>
-        /// <p>The CONTAINS operator is available for the INSTANCE_LABELS and MODEL
-        /// attributes.</p>
-        /// </li>
-        /// <li>
-        /// <p>The IN and NOT_IN operators are available for the ARN, OS_VERSION,
-        /// MODEL, MANUFACTURER, and INSTANCE_ARN attributes.</p>
-        /// </li>
-        /// <li>
-        /// <p>The LESS_THAN, GREATER_THAN, LESS_THAN_OR_EQUALS, and
-        /// GREATER_THAN_OR_EQUALS operators are also available for the OS_VERSION
-        /// attribute.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>Values: An array of one or more filter values.</p>
+        /// <li> <p>The EQUALS operator is available for every attribute except INSTANCE_LABELS.</p> </li>
+        /// <li> <p>The CONTAINS operator is available for the INSTANCE_LABELS and MODEL attributes.</p> </li>
+        /// <li> <p>The IN and NOT_IN operators are available for the ARN, OS_VERSION, MODEL, MANUFACTURER, and INSTANCE_ARN attributes.</p> </li>
+        /// <li> <p>The LESS_THAN, GREATER_THAN, LESS_THAN_OR_EQUALS, and GREATER_THAN_OR_EQUALS operators are also available for the OS_VERSION attribute.</p> </li>
+        /// </ul> </li>
+        /// <li> <p>Values: An array of one or more filter values.</p>
         /// <ul>
-        /// <li>
-        /// <p>The IN and NOT_IN operators take a values array that has one or more
-        /// elements.</p>
-        /// </li>
-        /// <li>
-        /// <p>The other operators require an array with a single element.</p>
-        /// </li>
-        /// <li>
-        /// <p>In a request, the AVAILABILITY attribute takes the following values: AVAILABLE,
-        /// HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p>The IN and NOT_IN operators take a values array that has one or more elements.</p> </li>
+        /// <li> <p>The other operators require an array with a single element.</p> </li>
+        /// <li> <p>In a request, the AVAILABILITY attribute takes the following values: AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn filters(mut self, input: crate::model::DeviceFilter) -> Self {
             self.inner = self.inner.filters(input);
             self
         }
-        /// <p>Used to select a set of devices. A filter is made up of an attribute, an operator, and
-        /// one or more values.</p>
+        /// <p>Used to select a set of devices. A filter is made up of an attribute, an operator, and one or more values.</p>
         /// <ul>
-        /// <li>
-        /// <p>Attribute: The aspect of a device such as platform or model used as the
-        /// selection criteria in a device filter.</p>
-        /// <p>Allowed values include:</p>
+        /// <li> <p>Attribute: The aspect of a device such as platform or model used as the selection criteria in a device filter.</p> <p>Allowed values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>ARN: The Amazon Resource Name (ARN) of the device (for example,
-        /// <code>arn:aws:devicefarm:us-west-2::device:12345Example</code>).</p>
-        /// </li>
-        /// <li>
-        /// <p>PLATFORM: The device platform. Valid values are ANDROID or IOS.</p>
-        /// </li>
-        /// <li>
-        /// <p>OS_VERSION: The operating system version (for example, 10.3.2).</p>
-        /// </li>
-        /// <li>
-        /// <p>MODEL: The device model (for example, iPad 5th Gen).</p>
-        /// </li>
-        /// <li>
-        /// <p>AVAILABILITY: The current availability of the device. Valid values are AVAILABLE,
-        /// HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p>
-        /// </li>
-        /// <li>
-        /// <p>FORM_FACTOR: The device form factor. Valid values are PHONE or TABLET.</p>
-        /// </li>
-        /// <li>
-        /// <p>MANUFACTURER: The device manufacturer (for example, Apple).</p>
-        /// </li>
-        /// <li>
-        /// <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access. Valid values
-        /// are TRUE or FALSE.</p>
-        /// </li>
-        /// <li>
-        /// <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values
-        /// are TRUE or FALSE. Because remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-        /// longer supported</a>, this attribute is ignored.</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device
-        /// instance.</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTANCE_LABELS: The label of the device instance.</p>
-        /// </li>
-        /// <li>
-        /// <p>FLEET_TYPE: The fleet type. Valid values are PUBLIC or PRIVATE.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>Operator: The filter operator.</p>
+        /// <li> <p>ARN: The Amazon Resource Name (ARN) of the device (for example, <code>arn:aws:devicefarm:us-west-2::device:12345Example</code>).</p> </li>
+        /// <li> <p>PLATFORM: The device platform. Valid values are ANDROID or IOS.</p> </li>
+        /// <li> <p>OS_VERSION: The operating system version (for example, 10.3.2).</p> </li>
+        /// <li> <p>MODEL: The device model (for example, iPad 5th Gen).</p> </li>
+        /// <li> <p>AVAILABILITY: The current availability of the device. Valid values are AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p> </li>
+        /// <li> <p>FORM_FACTOR: The device form factor. Valid values are PHONE or TABLET.</p> </li>
+        /// <li> <p>MANUFACTURER: The device manufacturer (for example, Apple).</p> </li>
+        /// <li> <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access. Valid values are TRUE or FALSE.</p> </li>
+        /// <li> <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values are TRUE or FALSE. Because remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>, this attribute is ignored.</p> </li>
+        /// <li> <p>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance.</p> </li>
+        /// <li> <p>INSTANCE_LABELS: The label of the device instance.</p> </li>
+        /// <li> <p>FLEET_TYPE: The fleet type. Valid values are PUBLIC or PRIVATE.</p> </li>
+        /// </ul> </li>
+        /// <li> <p>Operator: The filter operator.</p>
         /// <ul>
-        /// <li>
-        /// <p>The EQUALS operator is available for every attribute except
-        /// INSTANCE_LABELS.</p>
-        /// </li>
-        /// <li>
-        /// <p>The CONTAINS operator is available for the INSTANCE_LABELS and MODEL
-        /// attributes.</p>
-        /// </li>
-        /// <li>
-        /// <p>The IN and NOT_IN operators are available for the ARN, OS_VERSION,
-        /// MODEL, MANUFACTURER, and INSTANCE_ARN attributes.</p>
-        /// </li>
-        /// <li>
-        /// <p>The LESS_THAN, GREATER_THAN, LESS_THAN_OR_EQUALS, and
-        /// GREATER_THAN_OR_EQUALS operators are also available for the OS_VERSION
-        /// attribute.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>Values: An array of one or more filter values.</p>
+        /// <li> <p>The EQUALS operator is available for every attribute except INSTANCE_LABELS.</p> </li>
+        /// <li> <p>The CONTAINS operator is available for the INSTANCE_LABELS and MODEL attributes.</p> </li>
+        /// <li> <p>The IN and NOT_IN operators are available for the ARN, OS_VERSION, MODEL, MANUFACTURER, and INSTANCE_ARN attributes.</p> </li>
+        /// <li> <p>The LESS_THAN, GREATER_THAN, LESS_THAN_OR_EQUALS, and GREATER_THAN_OR_EQUALS operators are also available for the OS_VERSION attribute.</p> </li>
+        /// </ul> </li>
+        /// <li> <p>Values: An array of one or more filter values.</p>
         /// <ul>
-        /// <li>
-        /// <p>The IN and NOT_IN operators take a values array that has one or more
-        /// elements.</p>
-        /// </li>
-        /// <li>
-        /// <p>The other operators require an array with a single element.</p>
-        /// </li>
-        /// <li>
-        /// <p>In a request, the AVAILABILITY attribute takes the following values: AVAILABLE,
-        /// HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p>The IN and NOT_IN operators take a values array that has one or more elements.</p> </li>
+        /// <li> <p>The other operators require an array with a single element.</p> </li>
+        /// <li> <p>In a request, the AVAILABILITY attribute takes the following values: AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn set_filters(
             mut self,
@@ -4908,14 +4421,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4990,14 +4501,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_arn(input);
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5062,14 +4571,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the project for which you want to list network
-        /// profiles.</p>
+        /// <p>The Amazon Resource Name (ARN) of the project for which you want to list network profiles.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the project for which you want to list network
-        /// profiles.</p>
+        /// <p>The Amazon Resource Name (ARN) of the project for which you want to list network profiles.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_arn(input);
             self
@@ -5087,14 +4594,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_type(input);
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5102,9 +4607,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListOfferingPromotions`.
     ///
-    /// <p>Returns a list of offering promotions. Each offering promotion record contains the ID and description
-    /// of the promotion. The API returns a <code>NotEligible</code> error if the caller is not permitted to invoke
-    /// the operation. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you must be able to invoke this operation.</p>
+    /// <p>Returns a list of offering promotions. Each offering promotion record contains the ID and description of the promotion. The API returns a <code>NotEligible</code> error if the caller is not permitted to invoke the operation. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you must be able to invoke this operation.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListOfferingPromotions<
         C = aws_smithy_client::erase::DynConnector,
@@ -5161,14 +4664,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5176,10 +4677,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListOfferings`.
     ///
-    /// <p>Returns a list of products or offerings that the user can manage through the API. Each offering record
-    /// indicates the recurring price per unit and the frequency for that offering. The API returns a
-    /// <code>NotEligible</code> error if the user is not permitted to invoke the operation.  If you must be
-    /// able to invoke this operation, contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.</p>
+    /// <p>Returns a list of products or offerings that the user can manage through the API. Each offering record indicates the recurring price per unit and the frequency for that offering. The API returns a <code>NotEligible</code> error if the user is not permitted to invoke the operation. If you must be able to invoke this operation, contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListOfferings<
         C = aws_smithy_client::erase::DynConnector,
@@ -5236,14 +4734,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5251,10 +4747,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListOfferingTransactions`.
     ///
-    /// <p>Returns a list of all historical purchases, renewals, and system renewal transactions for an AWS
-    /// account. The list is paginated and ordered by a descending timestamp (most recent transactions are first).
-    /// The API returns a <code>NotEligible</code> error if the user is not permitted to invoke the operation. If
-    /// you must be able to invoke this operation, contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.</p>
+    /// <p>Returns a list of all historical purchases, renewals, and system renewal transactions for an AWS account. The list is paginated and ordered by a descending timestamp (most recent transactions are first). The API returns a <code>NotEligible</code> error if the user is not permitted to invoke the operation. If you must be able to invoke this operation, contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListOfferingTransactions<
         C = aws_smithy_client::erase::DynConnector,
@@ -5311,14 +4804,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5383,28 +4874,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Optional. If no Amazon Resource Name (ARN) is specified, then AWS Device Farm
-        /// returns a list of all projects for the AWS account. You can also specify a project
-        /// ARN.</p>
+        /// <p>Optional. If no Amazon Resource Name (ARN) is specified, then AWS Device Farm returns a list of all projects for the AWS account. You can also specify a project ARN.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.arn(input.into());
             self
         }
-        /// <p>Optional. If no Amazon Resource Name (ARN) is specified, then AWS Device Farm
-        /// returns a list of all projects for the AWS account. You can also specify a project
-        /// ARN.</p>
+        /// <p>Optional. If no Amazon Resource Name (ARN) is specified, then AWS Device Farm returns a list of all projects for the AWS account. You can also specify a project ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_arn(input);
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5469,26 +4954,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the project about which you are requesting
-        /// information.</p>
+        /// <p>The Amazon Resource Name (ARN) of the project about which you are requesting information.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the project about which you are requesting
-        /// information.</p>
+        /// <p>The Amazon Resource Name (ARN) of the project about which you are requesting information.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_arn(input);
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5553,26 +5034,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the project for which you want to list
-        /// runs.</p>
+        /// <p>The Amazon Resource Name (ARN) of the project for which you want to list runs.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the project for which you want to list
-        /// runs.</p>
+        /// <p>The Amazon Resource Name (ARN) of the project for which you want to list runs.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_arn(input);
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5647,14 +5124,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_arn(input);
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5729,14 +5204,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_arn(input);
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5801,20 +5274,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource or resources for which to list tags. You can associate tags
-        /// with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>,
-        /// <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>,
-        /// <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and
-        /// <code>VPCE_CONFIGURATION</code>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource or resources for which to list tags. You can associate tags with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>, <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>, <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and <code>VPCE_CONFIGURATION</code>.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource or resources for which to list tags. You can associate tags
-        /// with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>,
-        /// <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>,
-        /// <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and
-        /// <code>VPCE_CONFIGURATION</code>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource or resources for which to list tags. You can associate tags with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>, <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>, <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and <code>VPCE_CONFIGURATION</code>.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -5902,7 +5367,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTestGridSessionActions`.
     ///
-    /// <p>Returns a list of the actions taken in a <a>TestGridSession</a>.</p>
+    /// <p>Returns a list of the actions taken in a <code>TestGridSession</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTestGridSessionActions<
         C = aws_smithy_client::erase::DynConnector,
@@ -6049,12 +5514,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of a <a>TestGridSession</a>. </p>
+        /// <p>The ARN of a <code>TestGridSession</code>. </p>
         pub fn session_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.session_arn(input.into());
             self
         }
-        /// <p>The ARN of a <a>TestGridSession</a>. </p>
+        /// <p>The ARN of a <code>TestGridSession</code>. </p>
         pub fn set_session_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_session_arn(input);
             self
@@ -6095,7 +5560,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTestGridSessions`.
     ///
-    /// <p>Retrieves a list of sessions for a <a>TestGridProject</a>.</p>
+    /// <p>Retrieves a list of sessions for a <code>TestGridProject</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTestGridSessions<
         C = aws_smithy_client::erase::DynConnector,
@@ -6152,12 +5617,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>ARN of a <a>TestGridProject</a>.</p>
+        /// <p>ARN of a <code>TestGridProject</code>.</p>
         pub fn project_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.project_arn(input.into());
             self
         }
-        /// <p>ARN of a <a>TestGridProject</a>.</p>
+        /// <p>ARN of a <code>TestGridProject</code>.</p>
         pub fn set_project_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_project_arn(input);
             self
@@ -6188,12 +5653,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_creation_time_after(input);
             self
         }
-        /// <p>Return only  sessions created before this time.</p>
+        /// <p>Return only sessions created before this time.</p>
         pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_before(input);
             self
         }
-        /// <p>Return only  sessions created before this time.</p>
+        /// <p>Return only sessions created before this time.</p>
         pub fn set_creation_time_before(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -6317,14 +5782,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_arn(input);
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -6333,10 +5796,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListUniqueProblems`.
     ///
     /// <p>Gets information about unique problems, such as exceptions or crashes.</p>
-    /// <p>Unique problems are defined as a single instance of an error across a run, job, or suite. For example,
-    /// if a call in your application consistently raises an exception (<code>OutOfBoundsException in
-    /// MyActivity.java:386</code>), <code>ListUniqueProblems</code> returns a single entry instead of many
-    /// individual entries for that exception.</p>
+    /// <p>Unique problems are defined as a single instance of an error across a run, job, or suite. For example, if a call in your application consistently raises an exception (<code>OutOfBoundsException in MyActivity.java:386</code>), <code>ListUniqueProblems</code> returns a single entry instead of many individual entries for that exception.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListUniqueProblems<
         C = aws_smithy_client::erase::DynConnector,
@@ -6403,14 +5863,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_arn(input);
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -6475,14 +5933,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the project for which you want to list
-        /// uploads.</p>
+        /// <p>The Amazon Resource Name (ARN) of the project for which you want to list uploads.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the project for which you want to list
-        /// uploads.</p>
+        /// <p>The Amazon Resource Name (ARN) of the project for which you want to list uploads.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_arn(input);
             self
@@ -6490,102 +5946,38 @@ pub mod fluent_builders {
         /// <p>The type of upload.</p>
         /// <p>Must be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>ANDROID_APP</p>
-        /// </li>
-        /// <li>
-        /// <p>IOS_APP</p>
-        /// </li>
-        /// <li>
-        /// <p>WEB_APP</p>
-        /// </li>
-        /// <li>
-        /// <p>EXTERNAL_DATA</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_PYTHON_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_NODE_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_RUBY_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_PYTHON_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_NODE_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_RUBY_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>CALABASH_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTRUMENTATION_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>UIAUTOMATION_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>UIAUTOMATOR_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST_UI_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_JUNIT_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_TESTNG_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_PYTHON_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_NODE_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p> APPIUM_RUBY_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_PYTHON_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_NODE_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_RUBY_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTRUMENTATION_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST_UI_TEST_SPEC</p>
-        /// </li>
+        /// <li> <p>ANDROID_APP</p> </li>
+        /// <li> <p>IOS_APP</p> </li>
+        /// <li> <p>WEB_APP</p> </li>
+        /// <li> <p>EXTERNAL_DATA</p> </li>
+        /// <li> <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_PYTHON_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_NODE_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_RUBY_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_PYTHON_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_NODE_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_RUBY_TEST_PACKAGE</p> </li>
+        /// <li> <p>CALABASH_TEST_PACKAGE</p> </li>
+        /// <li> <p>INSTRUMENTATION_TEST_PACKAGE</p> </li>
+        /// <li> <p>UIAUTOMATION_TEST_PACKAGE</p> </li>
+        /// <li> <p>UIAUTOMATOR_TEST_PACKAGE</p> </li>
+        /// <li> <p>XCTEST_TEST_PACKAGE</p> </li>
+        /// <li> <p>XCTEST_UI_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_JAVA_JUNIT_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_JAVA_TESTNG_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_PYTHON_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_NODE_TEST_SPEC</p> </li>
+        /// <li> <p> APPIUM_RUBY_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_PYTHON_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_NODE_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_RUBY_TEST_SPEC</p> </li>
+        /// <li> <p>INSTRUMENTATION_TEST_SPEC</p> </li>
+        /// <li> <p>XCTEST_UI_TEST_SPEC</p> </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::UploadType) -> Self {
             self.inner = self.inner.r#type(input);
@@ -6594,115 +5986,49 @@ pub mod fluent_builders {
         /// <p>The type of upload.</p>
         /// <p>Must be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>ANDROID_APP</p>
-        /// </li>
-        /// <li>
-        /// <p>IOS_APP</p>
-        /// </li>
-        /// <li>
-        /// <p>WEB_APP</p>
-        /// </li>
-        /// <li>
-        /// <p>EXTERNAL_DATA</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_PYTHON_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_NODE_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_RUBY_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_PYTHON_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_NODE_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_RUBY_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>CALABASH_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTRUMENTATION_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>UIAUTOMATION_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>UIAUTOMATOR_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST_UI_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_JUNIT_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_TESTNG_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_PYTHON_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_NODE_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p> APPIUM_RUBY_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_PYTHON_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_NODE_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_RUBY_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTRUMENTATION_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST_UI_TEST_SPEC</p>
-        /// </li>
+        /// <li> <p>ANDROID_APP</p> </li>
+        /// <li> <p>IOS_APP</p> </li>
+        /// <li> <p>WEB_APP</p> </li>
+        /// <li> <p>EXTERNAL_DATA</p> </li>
+        /// <li> <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_PYTHON_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_NODE_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_RUBY_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_PYTHON_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_NODE_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_RUBY_TEST_PACKAGE</p> </li>
+        /// <li> <p>CALABASH_TEST_PACKAGE</p> </li>
+        /// <li> <p>INSTRUMENTATION_TEST_PACKAGE</p> </li>
+        /// <li> <p>UIAUTOMATION_TEST_PACKAGE</p> </li>
+        /// <li> <p>UIAUTOMATOR_TEST_PACKAGE</p> </li>
+        /// <li> <p>XCTEST_TEST_PACKAGE</p> </li>
+        /// <li> <p>XCTEST_UI_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_JAVA_JUNIT_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_JAVA_TESTNG_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_PYTHON_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_NODE_TEST_SPEC</p> </li>
+        /// <li> <p> APPIUM_RUBY_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_PYTHON_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_NODE_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_RUBY_TEST_SPEC</p> </li>
+        /// <li> <p>INSTRUMENTATION_TEST_SPEC</p> </li>
+        /// <li> <p>XCTEST_UI_TEST_SPEC</p> </li>
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<crate::model::UploadType>) -> Self {
             self.inner = self.inner.set_type(input);
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -6710,8 +6036,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListVPCEConfigurations`.
     ///
-    /// <p>Returns information about all Amazon Virtual Private Cloud (VPC) endpoint
-    /// configurations in the AWS account.</p>
+    /// <p>Returns information about all Amazon Virtual Private Cloud (VPC) endpoint configurations in the AWS account.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListVPCEConfigurations<
         C = aws_smithy_client::erase::DynConnector,
@@ -6778,14 +6103,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -6793,10 +6116,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PurchaseOffering`.
     ///
-    /// <p>Immediately purchases offerings for an AWS account. Offerings renew with the latest total purchased
-    /// quantity for an offering, unless the renewal was overridden. The API returns a <code>NotEligible</code>
-    /// error if the user is not permitted to invoke the operation. If you must be able to invoke this operation,
-    /// contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.</p>
+    /// <p>Immediately purchases offerings for an AWS account. Offerings renew with the latest total purchased quantity for an offering, unless the renewal was overridden. The API returns a <code>NotEligible</code> error if the user is not permitted to invoke the operation. If you must be able to invoke this operation, contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PurchaseOffering<
         C = aws_smithy_client::erase::DynConnector,
@@ -6889,9 +6209,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RenewOffering`.
     ///
-    /// <p>Explicitly sets the quantity of devices to renew for an offering, starting from the
-    /// <code>effectiveDate</code> of the next period. The API returns a <code>NotEligible</code> error if the
-    /// user is not permitted to invoke the operation. If you must be able to invoke this operation, contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.</p>
+    /// <p>Explicitly sets the quantity of devices to renew for an offering, starting from the <code>effectiveDate</code> of the next period. The API returns a <code>NotEligible</code> error if the user is not permitted to invoke the operation. If you must be able to invoke this operation, contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RenewOffering<
         C = aws_smithy_client::erase::DynConnector,
@@ -7038,14 +6356,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_project_arn(input);
             self
         }
-        /// <p>The ARN of an application package to run tests against, created with <a>CreateUpload</a>.
-        /// See <a>ListUploads</a>.</p>
+        /// <p>The ARN of an application package to run tests against, created with <code>CreateUpload</code>. See <code>ListUploads</code>.</p>
         pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.app_arn(input.into());
             self
         }
-        /// <p>The ARN of an application package to run tests against, created with <a>CreateUpload</a>.
-        /// See <a>ListUploads</a>.</p>
+        /// <p>The ARN of an application package to run tests against, created with <code>CreateUpload</code>. See <code>ListUploads</code>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_app_arn(input);
             self
@@ -7063,14 +6379,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_device_pool_arn(input);
             self
         }
-        /// <p>The filter criteria used to dynamically select a set of devices for a test run and the maximum number of
-        /// devices to be included in the run.</p>
-        /// <p>Either <b>
-        /// <code>devicePoolArn</code>
-        /// </b> or <b>
-        /// <code>deviceSelectionConfiguration</code>
-        /// </b> is required in a
-        /// request.</p>
+        /// <p>The filter criteria used to dynamically select a set of devices for a test run and the maximum number of devices to be included in the run.</p>
+        /// <p>Either <b> <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code> </b> is required in a request.</p>
         pub fn device_selection_configuration(
             mut self,
             input: crate::model::DeviceSelectionConfiguration,
@@ -7078,14 +6388,8 @@ pub mod fluent_builders {
             self.inner = self.inner.device_selection_configuration(input);
             self
         }
-        /// <p>The filter criteria used to dynamically select a set of devices for a test run and the maximum number of
-        /// devices to be included in the run.</p>
-        /// <p>Either <b>
-        /// <code>devicePoolArn</code>
-        /// </b> or <b>
-        /// <code>deviceSelectionConfiguration</code>
-        /// </b> is required in a
-        /// request.</p>
+        /// <p>The filter criteria used to dynamically select a set of devices for a test run and the maximum number of devices to be included in the run.</p>
+        /// <p>Either <b> <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code> </b> is required in a request.</p>
         pub fn set_device_selection_configuration(
             mut self,
             input: std::option::Option<crate::model::DeviceSelectionConfiguration>,
@@ -7129,8 +6433,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_configuration(input);
             self
         }
-        /// <p>Specifies configuration information about a test run, such as the execution timeout
-        /// (in minutes).</p>
+        /// <p>Specifies configuration information about a test run, such as the execution timeout (in minutes).</p>
         pub fn execution_configuration(
             mut self,
             input: crate::model::ExecutionConfiguration,
@@ -7138,8 +6441,7 @@ pub mod fluent_builders {
             self.inner = self.inner.execution_configuration(input);
             self
         }
-        /// <p>Specifies configuration information about a test run, such as the execution timeout
-        /// (in minutes).</p>
+        /// <p>Specifies configuration information about a test run, such as the execution timeout (in minutes).</p>
         pub fn set_execution_configuration(
             mut self,
             input: std::option::Option<crate::model::ExecutionConfiguration>,
@@ -7150,10 +6452,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StopJob`.
     ///
-    /// <p>Initiates a stop request for the current job. AWS Device Farm immediately stops the job on the device
-    /// where tests have not started. You are not billed for this device. On the device where tests have started,
-    /// setup suite and teardown suite tests run to completion on the device. You are billed for setup, teardown,
-    /// and any tests that were in progress or already completed.</p>
+    /// <p>Initiates a stop request for the current job. AWS Device Farm immediately stops the job on the device where tests have not started. You are not billed for this device. On the device where tests have started, setup suite and teardown suite tests run to completion on the device. You are billed for setup, teardown, and any tests that were in progress or already completed.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopJob<
         C = aws_smithy_client::erase::DynConnector,
@@ -7293,10 +6592,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StopRun`.
     ///
-    /// <p>Initiates a stop request for the current test run. AWS Device Farm immediately stops the run on devices
-    /// where tests have not started. You are not billed for these devices. On devices where tests have started
-    /// executing, setup suite and teardown suite tests run to completion on those devices. You are billed for
-    /// setup, teardown, and any tests that were in progress or already completed.</p>
+    /// <p>Initiates a stop request for the current test run. AWS Device Farm immediately stops the run on devices where tests have not started. You are not billed for these devices. On devices where tests have started executing, setup suite and teardown suite tests run to completion on those devices. You are billed for setup, teardown, and any tests that were in progress or already completed.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopRun<
         C = aws_smithy_client::erase::DynConnector,
@@ -7366,9 +6662,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Associates the specified tags to a resource with the specified <code>resourceArn</code>. If existing tags
-    /// on a resource are not specified in the request parameters, they are not changed. When a resource is deleted,
-    /// the tags associated with that resource are also deleted.</p>
+    /// <p>Associates the specified tags to a resource with the specified <code>resourceArn</code>. If existing tags on a resource are not specified in the request parameters, they are not changed. When a resource is deleted, the tags associated with that resource are also deleted.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -7425,20 +6719,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource or resources to which to add tags. You can associate tags
-        /// with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>,
-        /// <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>,
-        /// <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and
-        /// <code>VPCE_CONFIGURATION</code>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource or resources to which to add tags. You can associate tags with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>, <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>, <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and <code>VPCE_CONFIGURATION</code>.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource or resources to which to add tags. You can associate tags
-        /// with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>,
-        /// <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>,
-        /// <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and
-        /// <code>VPCE_CONFIGURATION</code>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource or resources to which to add tags. You can associate tags with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>, <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>, <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and <code>VPCE_CONFIGURATION</code>.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -7447,14 +6733,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum
-        /// character length of 128 characters. Tag values can have a maximum length of 256 characters.</p>
+        /// <p>The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum character length of 128 characters. Tag values can have a maximum length of 256 characters.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum
-        /// character length of 128 characters. Tag values can have a maximum length of 256 characters.</p>
+        /// <p>The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum character length of 128 characters. Tag values can have a maximum length of 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -7522,20 +6806,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource or resources from which to delete tags. You can associate
-        /// tags with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>,
-        /// <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>,
-        /// <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and
-        /// <code>VPCE_CONFIGURATION</code>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource or resources from which to delete tags. You can associate tags with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>, <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>, <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and <code>VPCE_CONFIGURATION</code>.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource or resources from which to delete tags. You can associate
-        /// tags with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>,
-        /// <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>,
-        /// <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and
-        /// <code>VPCE_CONFIGURATION</code>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource or resources from which to delete tags. You can associate tags with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>, <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>, <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and <code>VPCE_CONFIGURATION</code>.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -7657,9 +6933,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateDevicePool`.
     ///
-    /// <p>Modifies the name, description, and rules in a device pool given the attributes and
-    /// the pool ARN. Rule updates are all-or-nothing, meaning they can only be updated as a
-    /// whole (or not at all).</p>
+    /// <p>Modifies the name, description, and rules in a device pool given the attributes and the pool ARN. Rule updates are all-or-nothing, meaning they can only be updated as a whole (or not at all).</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDevicePool<
         C = aws_smithy_client::erase::DynConnector,
@@ -7750,14 +7024,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
-        /// <p>Represents the rules to modify for the device pool. Updating rules is optional. If you update rules for
-        /// your request, the update replaces the existing rules.</p>
+        /// <p>Represents the rules to modify for the device pool. Updating rules is optional. If you update rules for your request, the update replaces the existing rules.</p>
         pub fn rules(mut self, input: crate::model::Rule) -> Self {
             self.inner = self.inner.rules(input);
             self
         }
-        /// <p>Represents the rules to modify for the device pool. Updating rules is optional. If you update rules for
-        /// your request, the update replaces the existing rules.</p>
+        /// <p>Represents the rules to modify for the device pool. Updating rules is optional. If you update rules for your request, the update replaces the existing rules.</p>
         pub fn set_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Rule>>,
@@ -7765,46 +7037,28 @@ pub mod fluent_builders {
             self.inner = self.inner.set_rules(input);
             self
         }
-        /// <p>The number of devices that Device Farm can add to your device pool. Device Farm adds
-        /// devices that are available and that meet the criteria that you assign for the
-        /// <code>rules</code> parameter. Depending on how many devices meet these constraints,
-        /// your device pool might contain fewer devices than the value for this parameter.</p>
-        /// <p>By specifying the maximum number of devices, you can control the costs that you incur
-        /// by running tests.</p>
-        /// <p>If you use this parameter in your request, you cannot use the
-        /// <code>clearMaxDevices</code> parameter in the same request.</p>
+        /// <p>The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are available and that meet the criteria that you assign for the <code>rules</code> parameter. Depending on how many devices meet these constraints, your device pool might contain fewer devices than the value for this parameter.</p>
+        /// <p>By specifying the maximum number of devices, you can control the costs that you incur by running tests.</p>
+        /// <p>If you use this parameter in your request, you cannot use the <code>clearMaxDevices</code> parameter in the same request.</p>
         pub fn max_devices(mut self, input: i32) -> Self {
             self.inner = self.inner.max_devices(input);
             self
         }
-        /// <p>The number of devices that Device Farm can add to your device pool. Device Farm adds
-        /// devices that are available and that meet the criteria that you assign for the
-        /// <code>rules</code> parameter. Depending on how many devices meet these constraints,
-        /// your device pool might contain fewer devices than the value for this parameter.</p>
-        /// <p>By specifying the maximum number of devices, you can control the costs that you incur
-        /// by running tests.</p>
-        /// <p>If you use this parameter in your request, you cannot use the
-        /// <code>clearMaxDevices</code> parameter in the same request.</p>
+        /// <p>The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are available and that meet the criteria that you assign for the <code>rules</code> parameter. Depending on how many devices meet these constraints, your device pool might contain fewer devices than the value for this parameter.</p>
+        /// <p>By specifying the maximum number of devices, you can control the costs that you incur by running tests.</p>
+        /// <p>If you use this parameter in your request, you cannot use the <code>clearMaxDevices</code> parameter in the same request.</p>
         pub fn set_max_devices(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_devices(input);
             self
         }
-        /// <p>Sets whether the <code>maxDevices</code> parameter applies to your device pool. If you set this parameter
-        /// to <code>true</code>, the <code>maxDevices</code> parameter does not apply, and Device Farm does not limit
-        /// the number of devices that it adds to your device pool. In this case, Device Farm adds all available devices
-        /// that meet the criteria specified in the <code>rules</code> parameter.</p>
-        /// <p>If you use this parameter in your request, you cannot use the <code>maxDevices</code>
-        /// parameter in the same request.</p>
+        /// <p>Sets whether the <code>maxDevices</code> parameter applies to your device pool. If you set this parameter to <code>true</code>, the <code>maxDevices</code> parameter does not apply, and Device Farm does not limit the number of devices that it adds to your device pool. In this case, Device Farm adds all available devices that meet the criteria specified in the <code>rules</code> parameter.</p>
+        /// <p>If you use this parameter in your request, you cannot use the <code>maxDevices</code> parameter in the same request.</p>
         pub fn clear_max_devices(mut self, input: bool) -> Self {
             self.inner = self.inner.clear_max_devices(input);
             self
         }
-        /// <p>Sets whether the <code>maxDevices</code> parameter applies to your device pool. If you set this parameter
-        /// to <code>true</code>, the <code>maxDevices</code> parameter does not apply, and Device Farm does not limit
-        /// the number of devices that it adds to your device pool. In this case, Device Farm adds all available devices
-        /// that meet the criteria specified in the <code>rules</code> parameter.</p>
-        /// <p>If you use this parameter in your request, you cannot use the <code>maxDevices</code>
-        /// parameter in the same request.</p>
+        /// <p>Sets whether the <code>maxDevices</code> parameter applies to your device pool. If you set this parameter to <code>true</code>, the <code>maxDevices</code> parameter does not apply, and Device Farm does not limit the number of devices that it adds to your device pool. In this case, Device Farm adds all available devices that meet the criteria specified in the <code>rules</code> parameter.</p>
+        /// <p>If you use this parameter in your request, you cannot use the <code>maxDevices</code> parameter in the same request.</p>
         pub fn set_clear_max_devices(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_clear_max_devices(input);
             self
@@ -7899,14 +7153,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The updated choice for whether you want to specify package cleanup. The default value
-        /// is <code>false</code> for private devices.</p>
+        /// <p>The updated choice for whether you want to specify package cleanup. The default value is <code>false</code> for private devices.</p>
         pub fn package_cleanup(mut self, input: bool) -> Self {
             self.inner = self.inner.package_cleanup(input);
             self
         }
-        /// <p>The updated choice for whether you want to specify package cleanup. The default value
-        /// is <code>false</code> for private devices.</p>
+        /// <p>The updated choice for whether you want to specify package cleanup. The default value is <code>false</code> for private devices.</p>
         pub fn set_package_cleanup(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_package_cleanup(input);
             self
@@ -7915,10 +7167,8 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_exclude_app_packages_from_cleanup`](Self::set_exclude_app_packages_from_cleanup).
         ///
-        /// <p>An array of strings that specifies the list of app packages that should not be cleaned up from the device
-        /// after a test run is over.</p>
-        /// <p>The list of packages is only considered if you set <code>packageCleanup</code> to
-        /// <code>true</code>.</p>
+        /// <p>An array of strings that specifies the list of app packages that should not be cleaned up from the device after a test run is over.</p>
+        /// <p>The list of packages is only considered if you set <code>packageCleanup</code> to <code>true</code>.</p>
         pub fn exclude_app_packages_from_cleanup(
             mut self,
             input: impl Into<std::string::String>,
@@ -7926,10 +7176,8 @@ pub mod fluent_builders {
             self.inner = self.inner.exclude_app_packages_from_cleanup(input.into());
             self
         }
-        /// <p>An array of strings that specifies the list of app packages that should not be cleaned up from the device
-        /// after a test run is over.</p>
-        /// <p>The list of packages is only considered if you set <code>packageCleanup</code> to
-        /// <code>true</code>.</p>
+        /// <p>An array of strings that specifies the list of app packages that should not be cleaned up from the device after a test run is over.</p>
+        /// <p>The list of packages is only considered if you set <code>packageCleanup</code> to <code>true</code>.</p>
         pub fn set_exclude_app_packages_from_cleanup(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7937,14 +7185,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_exclude_app_packages_from_cleanup(input);
             self
         }
-        /// <p>The updated choice for whether you want to reboot the device after use. The default
-        /// value is <code>true</code>.</p>
+        /// <p>The updated choice for whether you want to reboot the device after use. The default value is <code>true</code>.</p>
         pub fn reboot_after_use(mut self, input: bool) -> Self {
             self.inner = self.inner.reboot_after_use(input);
             self
         }
-        /// <p>The updated choice for whether you want to reboot the device after use. The default
-        /// value is <code>true</code>.</p>
+        /// <p>The updated choice for whether you want to reboot the device after use. The default value is <code>true</code>.</p>
         pub fn set_reboot_after_use(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_reboot_after_use(input);
             self
@@ -8009,38 +7255,32 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the project for which you want to update network
-        /// profile settings.</p>
+        /// <p>The Amazon Resource Name (ARN) of the project for which you want to update network profile settings.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the project for which you want to update network
-        /// profile settings.</p>
+        /// <p>The Amazon Resource Name (ARN) of the project for which you want to update network profile settings.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_arn(input);
             self
         }
-        /// <p>The name of the network profile about which you are returning
-        /// information.</p>
+        /// <p>The name of the network profile about which you are returning information.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the network profile about which you are returning
-        /// information.</p>
+        /// <p>The name of the network profile about which you are returning information.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The description of the network profile about which you are returning
-        /// information.</p>
+        /// <p>The description of the network profile about which you are returning information.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>The description of the network profile about which you are returning
-        /// information.</p>
+        /// <p>The description of the network profile about which you are returning information.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
@@ -8058,86 +7298,72 @@ pub mod fluent_builders {
             self.inner = self.inner.set_type(input);
             self
         }
-        /// <p>The data throughput rate in bits per second, as an integer from 0 to
-        /// 104857600.</p>
+        /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
         pub fn uplink_bandwidth_bits(mut self, input: i64) -> Self {
             self.inner = self.inner.uplink_bandwidth_bits(input);
             self
         }
-        /// <p>The data throughput rate in bits per second, as an integer from 0 to
-        /// 104857600.</p>
+        /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
         pub fn set_uplink_bandwidth_bits(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_uplink_bandwidth_bits(input);
             self
         }
-        /// <p>The data throughput rate in bits per second, as an integer from 0 to
-        /// 104857600.</p>
+        /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
         pub fn downlink_bandwidth_bits(mut self, input: i64) -> Self {
             self.inner = self.inner.downlink_bandwidth_bits(input);
             self
         }
-        /// <p>The data throughput rate in bits per second, as an integer from 0 to
-        /// 104857600.</p>
+        /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
         pub fn set_downlink_bandwidth_bits(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_downlink_bandwidth_bits(input);
             self
         }
-        /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to
-        /// 2000.</p>
+        /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
         pub fn uplink_delay_ms(mut self, input: i64) -> Self {
             self.inner = self.inner.uplink_delay_ms(input);
             self
         }
-        /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to
-        /// 2000.</p>
+        /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
         pub fn set_uplink_delay_ms(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_uplink_delay_ms(input);
             self
         }
-        /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to
-        /// 2000.</p>
+        /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
         pub fn downlink_delay_ms(mut self, input: i64) -> Self {
             self.inner = self.inner.downlink_delay_ms(input);
             self
         }
-        /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to
-        /// 2000.</p>
+        /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
         pub fn set_downlink_delay_ms(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_downlink_delay_ms(input);
             self
         }
-        /// <p>Time variation in the delay of received packets in milliseconds as an integer from
-        /// 0 to 2000.</p>
+        /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
         pub fn uplink_jitter_ms(mut self, input: i64) -> Self {
             self.inner = self.inner.uplink_jitter_ms(input);
             self
         }
-        /// <p>Time variation in the delay of received packets in milliseconds as an integer from
-        /// 0 to 2000.</p>
+        /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
         pub fn set_uplink_jitter_ms(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_uplink_jitter_ms(input);
             self
         }
-        /// <p>Time variation in the delay of received packets in milliseconds as an integer from
-        /// 0 to 2000.</p>
+        /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
         pub fn downlink_jitter_ms(mut self, input: i64) -> Self {
             self.inner = self.inner.downlink_jitter_ms(input);
             self
         }
-        /// <p>Time variation in the delay of received packets in milliseconds as an integer from
-        /// 0 to 2000.</p>
+        /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
         pub fn set_downlink_jitter_ms(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_downlink_jitter_ms(input);
             self
         }
-        /// <p>Proportion of transmitted packets that fail to arrive from 0 to 100
-        /// percent.</p>
+        /// <p>Proportion of transmitted packets that fail to arrive from 0 to 100 percent.</p>
         pub fn uplink_loss_percent(mut self, input: i32) -> Self {
             self.inner = self.inner.uplink_loss_percent(input);
             self
         }
-        /// <p>Proportion of transmitted packets that fail to arrive from 0 to 100
-        /// percent.</p>
+        /// <p>Proportion of transmitted packets that fail to arrive from 0 to 100 percent.</p>
         pub fn set_uplink_loss_percent(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_uplink_loss_percent(input);
             self
@@ -8155,8 +7381,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateProject`.
     ///
-    /// <p>Modifies the specified project name, given the project ARN and a new
-    /// name.</p>
+    /// <p>Modifies the specified project name, given the project ARN and a new name.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateProject<
         C = aws_smithy_client::erase::DynConnector,
@@ -8416,14 +7641,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_arn(input);
             self
         }
-        /// <p>The upload's test spec file name. The name must not contain any forward slashes (/). The test spec file
-        /// name must end with the <code>.yaml</code> or <code>.yml</code> file extension.</p>
+        /// <p>The upload's test spec file name. The name must not contain any forward slashes (/). The test spec file name must end with the <code>.yaml</code> or <code>.yml</code> file extension.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The upload's test spec file name. The name must not contain any forward slashes (/). The test spec file
-        /// name must end with the <code>.yaml</code> or <code>.yml</code> file extension.</p>
+        /// <p>The upload's test spec file name. The name must not contain any forward slashes (/). The test spec file name must end with the <code>.yaml</code> or <code>.yml</code> file extension.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -8508,26 +7731,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to
-        /// update.</p>
+        /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to update.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to
-        /// update.</p>
+        /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to update.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_arn(input);
             self
         }
-        /// <p>The friendly name you give to your VPC endpoint configuration to manage your configurations more
-        /// easily.</p>
+        /// <p>The friendly name you give to your VPC endpoint configuration to manage your configurations more easily.</p>
         pub fn vpce_configuration_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.vpce_configuration_name(input.into());
             self
         }
-        /// <p>The friendly name you give to your VPC endpoint configuration to manage your configurations more
-        /// easily.</p>
+        /// <p>The friendly name you give to your VPC endpoint configuration to manage your configurations more easily.</p>
         pub fn set_vpce_configuration_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8548,14 +7767,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_vpce_service_name(input);
             self
         }
-        /// <p>The DNS (domain) name used to connect to your private service in your VPC. The DNS name must not already
-        /// be in use on the internet.</p>
+        /// <p>The DNS (domain) name used to connect to your private service in your VPC. The DNS name must not already be in use on the internet.</p>
         pub fn service_dns_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.service_dns_name(input.into());
             self
         }
-        /// <p>The DNS (domain) name used to connect to your private service in your VPC. The DNS name must not already
-        /// be in use on the internet.</p>
+        /// <p>The DNS (domain) name used to connect to your private service in your VPC. The DNS name must not already be in use on the internet.</p>
         pub fn set_service_dns_name(
             mut self,
             input: std::option::Option<std::string::String>,

@@ -3,25 +3,17 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEntitlementsOutput {
-    /// <p>The set of entitlements found through the GetEntitlements operation. If the result
-    /// contains an empty set of entitlements, NextToken might still be present and should be
-    /// used.</p>
+    /// <p>The set of entitlements found through the GetEntitlements operation. If the result contains an empty set of entitlements, NextToken might still be present and should be used.</p>
     pub entitlements: std::option::Option<std::vec::Vec<crate::model::Entitlement>>,
-    /// <p>For paginated results, use NextToken in subsequent calls to GetEntitlements. If the
-    /// result contains an empty set of entitlements, NextToken might still be present and should be
-    /// used.</p>
+    /// <p>For paginated results, use NextToken in subsequent calls to GetEntitlements. If the result contains an empty set of entitlements, NextToken might still be present and should be used.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetEntitlementsOutput {
-    /// <p>The set of entitlements found through the GetEntitlements operation. If the result
-    /// contains an empty set of entitlements, NextToken might still be present and should be
-    /// used.</p>
+    /// <p>The set of entitlements found through the GetEntitlements operation. If the result contains an empty set of entitlements, NextToken might still be present and should be used.</p>
     pub fn entitlements(&self) -> std::option::Option<&[crate::model::Entitlement]> {
         self.entitlements.as_deref()
     }
-    /// <p>For paginated results, use NextToken in subsequent calls to GetEntitlements. If the
-    /// result contains an empty set of entitlements, NextToken might still be present and should be
-    /// used.</p>
+    /// <p>For paginated results, use NextToken in subsequent calls to GetEntitlements. If the result contains an empty set of entitlements, NextToken might still be present and should be used.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -48,18 +40,14 @@ pub mod get_entitlements_output {
         ///
         /// To override the contents of this collection use [`set_entitlements`](Self::set_entitlements).
         ///
-        /// <p>The set of entitlements found through the GetEntitlements operation. If the result
-        /// contains an empty set of entitlements, NextToken might still be present and should be
-        /// used.</p>
+        /// <p>The set of entitlements found through the GetEntitlements operation. If the result contains an empty set of entitlements, NextToken might still be present and should be used.</p>
         pub fn entitlements(mut self, input: crate::model::Entitlement) -> Self {
             let mut v = self.entitlements.unwrap_or_default();
             v.push(input);
             self.entitlements = Some(v);
             self
         }
-        /// <p>The set of entitlements found through the GetEntitlements operation. If the result
-        /// contains an empty set of entitlements, NextToken might still be present and should be
-        /// used.</p>
+        /// <p>The set of entitlements found through the GetEntitlements operation. If the result contains an empty set of entitlements, NextToken might still be present and should be used.</p>
         pub fn set_entitlements(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Entitlement>>,
@@ -67,16 +55,12 @@ pub mod get_entitlements_output {
             self.entitlements = input;
             self
         }
-        /// <p>For paginated results, use NextToken in subsequent calls to GetEntitlements. If the
-        /// result contains an empty set of entitlements, NextToken might still be present and should be
-        /// used.</p>
+        /// <p>For paginated results, use NextToken in subsequent calls to GetEntitlements. If the result contains an empty set of entitlements, NextToken might still be present and should be used.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>For paginated results, use NextToken in subsequent calls to GetEntitlements. If the
-        /// result contains an empty set of entitlements, NextToken might still be present and should be
-        /// used.</p>
+        /// <p>For paginated results, use NextToken in subsequent calls to GetEntitlements. If the result contains an empty set of entitlements, NextToken might still be present and should be used.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self

@@ -1313,14 +1313,12 @@ pub mod create_assessment_input {
             self.assessment_reports_destination = input;
             self
         }
-        /// <p> The wrapper that contains the Amazon Web Services accounts and services that are in
-        /// scope for the assessment. </p>
+        /// <p> The wrapper that contains the Amazon Web Services accounts and services that are in scope for the assessment. </p>
         pub fn scope(mut self, input: crate::model::Scope) -> Self {
             self.scope = Some(input);
             self
         }
-        /// <p> The wrapper that contains the Amazon Web Services accounts and services that are in
-        /// scope for the assessment. </p>
+        /// <p> The wrapper that contains the Amazon Web Services accounts and services that are in scope for the assessment. </p>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.scope = input;
             self
@@ -1551,14 +1549,12 @@ pub mod create_assessment_framework_input {
             self.description = input;
             self
         }
-        /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA.
-        /// </p>
+        /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
         pub fn compliance_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.compliance_type = Some(input.into());
             self
         }
-        /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA.
-        /// </p>
+        /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
         pub fn set_compliance_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9657,8 +9653,7 @@ pub mod update_assessment_input {
             self.scope = input;
             self
         }
-        /// <p> The assessment report storage destination for the assessment that's being updated.
-        /// </p>
+        /// <p> The assessment report storage destination for the assessment that's being updated. </p>
         pub fn assessment_reports_destination(
             mut self,
             input: crate::model::AssessmentReportsDestination,
@@ -9666,8 +9661,7 @@ pub mod update_assessment_input {
             self.assessment_reports_destination = Some(input);
             self
         }
-        /// <p> The assessment report storage destination for the assessment that's being updated.
-        /// </p>
+        /// <p> The assessment report storage destination for the assessment that's being updated. </p>
         pub fn set_assessment_reports_destination(
             mut self,
             input: std::option::Option<crate::model::AssessmentReportsDestination>,
@@ -10387,14 +10381,12 @@ pub mod update_assessment_framework_input {
             self.description = input;
             self
         }
-        /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA.
-        /// </p>
+        /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
         pub fn compliance_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.compliance_type = Some(input.into());
             self
         }
-        /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA.
-        /// </p>
+        /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
         pub fn set_compliance_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11245,14 +11237,12 @@ pub mod update_settings_input {
         pub(crate) kms_key: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> The Amazon Simple Notification Service (Amazon SNS) topic that Audit Manager sends
-        /// notifications to. </p>
+        /// <p> The Amazon Simple Notification Service (Amazon SNS) topic that Audit Manager sends notifications to. </p>
         pub fn sns_topic(mut self, input: impl Into<std::string::String>) -> Self {
             self.sns_topic = Some(input.into());
             self
         }
-        /// <p> The Amazon Simple Notification Service (Amazon SNS) topic that Audit Manager sends
-        /// notifications to. </p>
+        /// <p> The Amazon Simple Notification Service (Amazon SNS) topic that Audit Manager sends notifications to. </p>
         pub fn set_sns_topic(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.sns_topic = input;
             self
@@ -11444,14 +11434,12 @@ pub mod validate_assessment_report_integrity_input {
         pub(crate) s3_relative_path: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> The relative path of the Amazon S3 bucket that the assessment report is stored
-        /// in. </p>
+        /// <p> The relative path of the Amazon S3 bucket that the assessment report is stored in. </p>
         pub fn s3_relative_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_relative_path = Some(input.into());
             self
         }
-        /// <p> The relative path of the Amazon S3 bucket that the assessment report is stored
-        /// in. </p>
+        /// <p> The relative path of the Amazon S3 bucket that the assessment report is stored in. </p>
         pub fn set_s3_relative_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11596,13 +11584,11 @@ impl ValidateAssessmentReportIntegrityInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidateAssessmentReportIntegrityInput {
-    /// <p> The relative path of the Amazon S3 bucket that the assessment report is stored
-    /// in. </p>
+    /// <p> The relative path of the Amazon S3 bucket that the assessment report is stored in. </p>
     pub s3_relative_path: std::option::Option<std::string::String>,
 }
 impl ValidateAssessmentReportIntegrityInput {
-    /// <p> The relative path of the Amazon S3 bucket that the assessment report is stored
-    /// in. </p>
+    /// <p> The relative path of the Amazon S3 bucket that the assessment report is stored in. </p>
     pub fn s3_relative_path(&self) -> std::option::Option<&str> {
         self.s3_relative_path.as_deref()
     }
@@ -11619,8 +11605,7 @@ impl std::fmt::Debug for ValidateAssessmentReportIntegrityInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSettingsInput {
-    /// <p> The Amazon Simple Notification Service (Amazon SNS) topic that Audit Manager sends
-    /// notifications to. </p>
+    /// <p> The Amazon Simple Notification Service (Amazon SNS) topic that Audit Manager sends notifications to. </p>
     pub sns_topic: std::option::Option<std::string::String>,
     /// <p> The default storage destination for assessment reports. </p>
     pub default_assessment_reports_destination:
@@ -11631,8 +11616,7 @@ pub struct UpdateSettingsInput {
     pub kms_key: std::option::Option<std::string::String>,
 }
 impl UpdateSettingsInput {
-    /// <p> The Amazon Simple Notification Service (Amazon SNS) topic that Audit Manager sends
-    /// notifications to. </p>
+    /// <p> The Amazon Simple Notification Service (Amazon SNS) topic that Audit Manager sends notifications to. </p>
     pub fn sns_topic(&self) -> std::option::Option<&str> {
         self.sns_topic.as_deref()
     }
@@ -11804,8 +11788,7 @@ pub struct UpdateAssessmentFrameworkInput {
     pub name: std::option::Option<std::string::String>,
     /// <p> The description of the updated framework. </p>
     pub description: std::option::Option<std::string::String>,
-    /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA.
-    /// </p>
+    /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
     pub compliance_type: std::option::Option<std::string::String>,
     /// <p> The control sets that are associated with the framework. </p>
     pub control_sets:
@@ -11824,8 +11807,7 @@ impl UpdateAssessmentFrameworkInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA.
-    /// </p>
+    /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
     pub fn compliance_type(&self) -> std::option::Option<&str> {
         self.compliance_type.as_deref()
     }
@@ -11951,8 +11933,7 @@ pub struct UpdateAssessmentInput {
     pub assessment_description: std::option::Option<std::string::String>,
     /// <p> The scope of the assessment. </p>
     pub scope: std::option::Option<crate::model::Scope>,
-    /// <p> The assessment report storage destination for the assessment that's being updated.
-    /// </p>
+    /// <p> The assessment report storage destination for the assessment that's being updated. </p>
     pub assessment_reports_destination:
         std::option::Option<crate::model::AssessmentReportsDestination>,
     /// <p> The list of roles for the assessment. </p>
@@ -11975,8 +11956,7 @@ impl UpdateAssessmentInput {
     pub fn scope(&self) -> std::option::Option<&crate::model::Scope> {
         self.scope.as_ref()
     }
-    /// <p> The assessment report storage destination for the assessment that's being updated.
-    /// </p>
+    /// <p> The assessment report storage destination for the assessment that's being updated. </p>
     pub fn assessment_reports_destination(
         &self,
     ) -> std::option::Option<&crate::model::AssessmentReportsDestination> {
@@ -13302,8 +13282,7 @@ pub struct CreateAssessmentFrameworkInput {
     pub name: std::option::Option<std::string::String>,
     /// <p> An optional description for the new custom framework. </p>
     pub description: std::option::Option<std::string::String>,
-    /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA.
-    /// </p>
+    /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
     pub compliance_type: std::option::Option<std::string::String>,
     /// <p> The control sets that are associated with the framework. </p>
     pub control_sets:
@@ -13321,8 +13300,7 @@ impl CreateAssessmentFrameworkInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA.
-    /// </p>
+    /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
     pub fn compliance_type(&self) -> std::option::Option<&str> {
         self.compliance_type.as_deref()
     }
@@ -13363,8 +13341,7 @@ pub struct CreateAssessmentInput {
     /// <p> The assessment report storage destination for the assessment that's being created. </p>
     pub assessment_reports_destination:
         std::option::Option<crate::model::AssessmentReportsDestination>,
-    /// <p> The wrapper that contains the Amazon Web Services accounts and services that are in
-    /// scope for the assessment. </p>
+    /// <p> The wrapper that contains the Amazon Web Services accounts and services that are in scope for the assessment. </p>
     pub scope: std::option::Option<crate::model::Scope>,
     /// <p> The list of roles for the assessment. </p>
     pub roles: std::option::Option<std::vec::Vec<crate::model::Role>>,
@@ -13389,8 +13366,7 @@ impl CreateAssessmentInput {
     ) -> std::option::Option<&crate::model::AssessmentReportsDestination> {
         self.assessment_reports_destination.as_ref()
     }
-    /// <p> The wrapper that contains the Amazon Web Services accounts and services that are in
-    /// scope for the assessment. </p>
+    /// <p> The wrapper that contains the Amazon Web Services accounts and services that are in scope for the assessment. </p>
     pub fn scope(&self) -> std::option::Option<&crate::model::Scope> {
         self.scope.as_ref()
     }

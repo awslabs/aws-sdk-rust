@@ -575,8 +575,7 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `AssociateAssessmentReportEvidenceFolder`.
     ///
-    /// <p> Associates an evidence folder to an assessment report in a Audit Manager
-    /// assessment. </p>
+    /// <p> Associates an evidence folder to an assessment report in a Audit Manager assessment. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateAssessmentReportEvidenceFolder<
         C = aws_smithy_client::erase::DynConnector,
@@ -664,8 +663,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BatchAssociateAssessmentReportEvidence`.
     ///
-    /// <p> Associates a list of evidence to an assessment report in an Audit Manager
-    /// assessment. </p>
+    /// <p> Associates a list of evidence to an assessment report in an Audit Manager assessment. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchAssociateAssessmentReportEvidence<
         C = aws_smithy_client::erase::DynConnector,
@@ -953,8 +951,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BatchDisassociateAssessmentReportEvidence`.
     ///
-    /// <p> Disassociates a list of evidence from an assessment report in Audit Manager.
-    /// </p>
+    /// <p> Disassociates a list of evidence from an assessment report in Audit Manager. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchDisassociateAssessmentReportEvidence<
         C = aws_smithy_client::erase::DynConnector,
@@ -1059,8 +1056,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BatchImportEvidenceToAssessmentControl`.
     ///
-    /// <p> Uploads one or more pieces of evidence to a control in an Audit Manager
-    /// assessment. </p>
+    /// <p> Uploads one or more pieces of evidence to a control in an Audit Manager assessment. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchImportEvidenceToAssessmentControl<
         C = aws_smithy_client::erase::DynConnector,
@@ -1268,14 +1264,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_assessment_reports_destination(input);
             self
         }
-        /// <p> The wrapper that contains the Amazon Web Services accounts and services that are in
-        /// scope for the assessment. </p>
+        /// <p> The wrapper that contains the Amazon Web Services accounts and services that are in scope for the assessment. </p>
         pub fn scope(mut self, input: crate::model::Scope) -> Self {
             self.inner = self.inner.scope(input);
             self
         }
-        /// <p> The wrapper that contains the Amazon Web Services accounts and services that are in
-        /// scope for the assessment. </p>
+        /// <p> The wrapper that contains the Amazon Web Services accounts and services that are in scope for the assessment. </p>
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.inner = self.inner.set_scope(input);
             self
@@ -1410,14 +1404,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA.
-        /// </p>
+        /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
         pub fn compliance_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.compliance_type(input.into());
             self
         }
-        /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA.
-        /// </p>
+        /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
         pub fn set_compliance_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1871,9 +1863,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteAssessmentFrameworkShare`.
     ///
-    /// <p>
-    /// Deletes a share request for a custom framework in Audit Manager.
-    /// </p>
+    /// <p> Deletes a share request for a custom framework in Audit Manager. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAssessmentFrameworkShare<
         C = aws_smithy_client::erase::DynConnector,
@@ -2172,14 +2162,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeregisterOrganizationAdminAccount`.
     ///
-    /// <p>Removes the specified member Amazon Web Services account as a delegated administrator for
-    /// Audit Manager. </p>
-    /// <important>
-    /// <p>When you remove a delegated administrator from your Audit Manager settings, you
-    /// continue to have access to the evidence that you previously collected under that
-    /// account. This is also the case when you deregister a delegated administrator from
-    /// Audit Manager. However, Audit Manager will stop collecting and attaching
-    /// evidence to that delegated administrator account moving forward.</p>
+    /// <p>Removes the specified member Amazon Web Services account as a delegated administrator for Audit Manager. </p> <important>
+    /// <p>When you remove a delegated administrator from your Audit Manager settings, you continue to have access to the evidence that you previously collected under that account. This is also the case when you deregister a delegated administrator from Audit Manager. However, Audit Manager will stop collecting and attaching evidence to that delegated administrator account moving forward.</p>
     /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterOrganizationAdminAccount<
@@ -3126,8 +3110,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetEvidenceFolder`.
     ///
-    /// <p> Returns an evidence folder from the specified assessment in Audit Manager.
-    /// </p>
+    /// <p> Returns an evidence folder from the specified assessment in Audit Manager. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEvidenceFolder<
         C = aws_smithy_client::erase::DynConnector,
@@ -3226,8 +3209,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetEvidenceFoldersByAssessment`.
     ///
-    /// <p> Returns the evidence folders from a specified assessment in Audit Manager.
-    /// </p>
+    /// <p> Returns the evidence folders from a specified assessment in Audit Manager. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEvidenceFoldersByAssessment<
         C = aws_smithy_client::erase::DynConnector,
@@ -3320,8 +3302,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetEvidenceFoldersByAssessmentControl`.
     ///
-    /// <p> Returns a list of evidence folders that are associated with a specified control of an
-    /// assessment in Audit Manager. </p>
+    /// <p> Returns a list of evidence folders that are associated with a specified control of an assessment in Audit Manager. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEvidenceFoldersByAssessmentControl<
         C = aws_smithy_client::erase::DynConnector,
@@ -3572,8 +3553,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetOrganizationAdminAccount`.
     ///
-    /// <p> Returns the name of the delegated Amazon Web Services administrator account for the
-    /// organization. </p>
+    /// <p> Returns the name of the delegated Amazon Web Services administrator account for the organization. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetOrganizationAdminAccount<
         C = aws_smithy_client::erase::DynConnector,
@@ -3633,8 +3613,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetServicesInScope`.
     ///
-    /// <p> Returns a list of the in-scope Amazon Web Services services for the specified
-    /// assessment. </p>
+    /// <p> Returns a list of the in-scope Amazon Web Services services for the specified assessment. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetServicesInScope<
         C = aws_smithy_client::erase::DynConnector,
@@ -3767,13 +3746,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAssessmentControlInsightsByControlDomain`.
     ///
-    /// <p>Lists the latest analytics data for controls within a specific control domain and a
-    /// specific active assessment.</p>
-    /// <note>
-    /// <p>Control insights are listed only if the control belongs to the control domain and assessment
-    /// that was specified. Moreover, the control must have collected evidence on the
-    /// <code>lastUpdated</code> date of <code>controlInsightsByAssessment</code>. If neither
-    /// of these conditions are met, no data is listed for that control. </p>
+    /// <p>Lists the latest analytics data for controls within a specific control domain and a specific active assessment.</p> <note>
+    /// <p>Control insights are listed only if the control belongs to the control domain and assessment that was specified. Moreover, the control must have collected evidence on the <code>lastUpdated</code> date of <code>controlInsightsByAssessment</code>. If neither of these conditions are met, no data is listed for that control. </p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAssessmentControlInsightsByControlDomain<
@@ -3882,8 +3856,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAssessmentFrameworks`.
     ///
-    /// <p> Returns a list of the frameworks that are available in the Audit Manager
-    /// framework library. </p>
+    /// <p> Returns a list of the frameworks that are available in the Audit Manager framework library. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAssessmentFrameworks<
         C = aws_smithy_client::erase::DynConnector,
@@ -4244,12 +4217,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListControlDomainInsights`.
     ///
-    /// <p>Lists the latest analytics data for control domains across all of your active
-    /// assessments. </p>
-    /// <note>
-    /// <p>A control domain is listed only if at least one of the controls within that domain collected
-    /// evidence on the <code>lastUpdated</code> date of <code>controlDomainInsights</code>. If
-    /// this condition isn’t met, no data is listed for that control domain.</p>
+    /// <p>Lists the latest analytics data for control domains across all of your active assessments. </p> <note>
+    /// <p>A control domain is listed only if at least one of the controls within that domain collected evidence on the <code>lastUpdated</code> date of <code>controlDomainInsights</code>. If this condition isn’t met, no data is listed for that control domain.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListControlDomainInsights<
@@ -4330,11 +4299,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListControlDomainInsightsByAssessment`.
     ///
-    /// <p>Lists analytics data for control domains within a specified active assessment.</p>
-    /// <note>
-    /// <p>A control domain is listed only if at least one of the controls within that domain collected
-    /// evidence on the <code>lastUpdated</code> date of <code>controlDomainInsights</code>. If
-    /// this condition isn’t met, no data is listed for that domain.</p>
+    /// <p>Lists analytics data for control domains within a specified active assessment.</p> <note>
+    /// <p>A control domain is listed only if at least one of the controls within that domain collected evidence on the <code>lastUpdated</code> date of <code>controlDomainInsights</code>. If this condition isn’t met, no data is listed for that domain.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListControlDomainInsightsByAssessment<
@@ -4430,13 +4396,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListControlInsightsByControlDomain`.
     ///
-    /// <p>Lists the latest analytics data for controls within a specific control domain across all
-    /// active assessments.</p>
-    /// <note>
-    /// <p>Control insights are listed only if the control belongs to the control domain that was
-    /// specified and the control collected evidence on the <code>lastUpdated</code> date of
-    /// <code>controlInsightsMetadata</code>. If neither of these conditions are met, no data
-    /// is listed for that control. </p>
+    /// <p>Lists the latest analytics data for controls within a specific control domain across all active assessments.</p> <note>
+    /// <p>Control insights are listed only if the control belongs to the control domain that was specified and the control collected evidence on the <code>lastUpdated</code> date of <code>controlInsightsMetadata</code>. If neither of these conditions are met, no data is listed for that control. </p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListControlInsightsByControlDomain<
@@ -4948,8 +4909,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RegisterOrganizationAdminAccount`.
     ///
-    /// <p> Enables an Amazon Web Services account within the organization as the delegated
-    /// administrator for Audit Manager. </p>
+    /// <p> Enables an Amazon Web Services account within the organization as the delegated administrator for Audit Manager. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterOrganizationAdminAccount<
         C = aws_smithy_client::erase::DynConnector,
@@ -5023,15 +4983,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartAssessmentFrameworkShare`.
     ///
     /// <p> Creates a share request for a custom framework in Audit Manager. </p>
-    /// <p>The share request specifies a recipient and notifies them that a custom framework is available. Recipients have 120 days to accept or decline the request. If no action is taken, the share request expires.</p>
-    /// <important>
-    /// <p>When you invoke the <code>StartAssessmentFrameworkShare</code> API, you are about to
-    /// share a custom framework with another Amazon Web Services account. You may not share a
-    /// custom framework that is derived from a standard framework if the standard framework is
-    /// designated as not eligible for sharing by Amazon Web Services, unless you have obtained
-    /// permission to do so from the owner of the standard framework. To learn more about which
-    /// standard frameworks are eligible for sharing, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/share-custom-framework-concepts-and-terminology.html#eligibility">Framework sharing eligibility</a> in the <i>Audit Manager User
-    /// Guide</i>.</p>
+    /// <p>The share request specifies a recipient and notifies them that a custom framework is available. Recipients have 120 days to accept or decline the request. If no action is taken, the share request expires.</p> <important>
+    /// <p>When you invoke the <code>StartAssessmentFrameworkShare</code> API, you are about to share a custom framework with another Amazon Web Services account. You may not share a custom framework that is derived from a standard framework if the standard framework is designated as not eligible for sharing by Amazon Web Services, unless you have obtained permission to do so from the owner of the standard framework. To learn more about which standard frameworks are eligible for sharing, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/share-custom-framework-concepts-and-terminology.html#eligibility">Framework sharing eligibility</a> in the <i>Audit Manager User Guide</i>.</p>
     /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartAssessmentFrameworkShare<
@@ -5424,8 +5377,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_scope(input);
             self
         }
-        /// <p> The assessment report storage destination for the assessment that's being updated.
-        /// </p>
+        /// <p> The assessment report storage destination for the assessment that's being updated. </p>
         pub fn assessment_reports_destination(
             mut self,
             input: crate::model::AssessmentReportsDestination,
@@ -5433,8 +5385,7 @@ pub mod fluent_builders {
             self.inner = self.inner.assessment_reports_destination(input);
             self
         }
-        /// <p> The assessment report storage destination for the assessment that's being updated.
-        /// </p>
+        /// <p> The assessment report storage destination for the assessment that's being updated. </p>
         pub fn set_assessment_reports_destination(
             mut self,
             input: std::option::Option<crate::model::AssessmentReportsDestination>,
@@ -5777,14 +5728,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA.
-        /// </p>
+        /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
         pub fn compliance_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.compliance_type(input.into());
             self
         }
-        /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA.
-        /// </p>
+        /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
         pub fn set_compliance_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6205,14 +6154,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> The Amazon Simple Notification Service (Amazon SNS) topic that Audit Manager sends
-        /// notifications to. </p>
+        /// <p> The Amazon Simple Notification Service (Amazon SNS) topic that Audit Manager sends notifications to. </p>
         pub fn sns_topic(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.sns_topic(input.into());
             self
         }
-        /// <p> The Amazon Simple Notification Service (Amazon SNS) topic that Audit Manager sends
-        /// notifications to. </p>
+        /// <p> The Amazon Simple Notification Service (Amazon SNS) topic that Audit Manager sends notifications to. </p>
         pub fn set_sns_topic(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_sns_topic(input);
             self
@@ -6320,14 +6267,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> The relative path of the Amazon S3 bucket that the assessment report is stored
-        /// in. </p>
+        /// <p> The relative path of the Amazon S3 bucket that the assessment report is stored in. </p>
         pub fn s3_relative_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.s3_relative_path(input.into());
             self
         }
-        /// <p> The relative path of the Amazon S3 bucket that the assessment report is stored
-        /// in. </p>
+        /// <p> The relative path of the Amazon S3 bucket that the assessment report is stored in. </p>
         pub fn set_s3_relative_path(
             mut self,
             input: std::option::Option<std::string::String>,

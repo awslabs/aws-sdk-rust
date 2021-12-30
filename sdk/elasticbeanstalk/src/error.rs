@@ -12,8 +12,7 @@ pub struct AbortEnvironmentUpdateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AbortEnvironmentUpdateErrorKind {
-    /// <p>The specified account does not have sufficient privileges for one or more AWS
-    /// services.</p>
+    /// <p>The specified account does not have sufficient privileges for one or more AWS services.</p>
     InsufficientPrivilegesException(crate::error::InsufficientPrivilegesException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -225,8 +224,7 @@ pub struct AssociateEnvironmentOperationsRoleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AssociateEnvironmentOperationsRoleErrorKind {
-    /// <p>The specified account does not have sufficient privileges for one or more AWS
-    /// services.</p>
+    /// <p>The specified account does not have sufficient privileges for one or more AWS services.</p>
     InsufficientPrivilegesException(crate::error::InsufficientPrivilegesException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -408,8 +406,7 @@ pub struct ComposeEnvironmentsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ComposeEnvironmentsErrorKind {
-    /// <p>The specified account does not have sufficient privileges for one or more AWS
-    /// services.</p>
+    /// <p>The specified account does not have sufficient privileges for one or more AWS services.</p>
     InsufficientPrivilegesException(crate::error::InsufficientPrivilegesException),
     /// <p>The specified account has reached its limit of environments.</p>
     TooManyEnvironmentsException(crate::error::TooManyEnvironmentsException),
@@ -608,21 +605,13 @@ pub struct CreateApplicationVersionError {
 pub enum CreateApplicationVersionErrorKind {
     /// <p>AWS CodeBuild is not available in the specified region.</p>
     CodeBuildNotInServiceRegionException(crate::error::CodeBuildNotInServiceRegionException),
-    /// <p>The specified account does not have sufficient privileges for one or more AWS
-    /// services.</p>
+    /// <p>The specified account does not have sufficient privileges for one or more AWS services.</p>
     InsufficientPrivilegesException(crate::error::InsufficientPrivilegesException),
-    /// <p>The specified S3 bucket does not belong to the S3 region in which the service is
-    /// running. The following regions are supported:</p>
+    /// <p>The specified S3 bucket does not belong to the S3 region in which the service is running. The following regions are supported:</p>
     /// <ul>
-    /// <li>
-    /// <p>IAD/us-east-1</p>
-    /// </li>
-    /// <li>
-    /// <p>PDX/us-west-2</p>
-    /// </li>
-    /// <li>
-    /// <p>DUB/eu-west-1</p>
-    /// </li>
+    /// <li> <p>IAD/us-east-1</p> </li>
+    /// <li> <p>PDX/us-west-2</p> </li>
+    /// <li> <p>DUB/eu-west-1</p> </li>
     /// </ul>
     S3LocationNotInServiceRegionException(crate::error::S3LocationNotInServiceRegionException),
     /// <p>The specified account has reached its limit of applications.</p>
@@ -774,8 +763,7 @@ pub struct CreateConfigurationTemplateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateConfigurationTemplateErrorKind {
-    /// <p>The specified account does not have sufficient privileges for one or more AWS
-    /// services.</p>
+    /// <p>The specified account does not have sufficient privileges for one or more AWS services.</p>
     InsufficientPrivilegesException(crate::error::InsufficientPrivilegesException),
     /// <p>The specified account has reached its limit of Amazon S3 buckets.</p>
     TooManyBucketsException(crate::error::TooManyBucketsException),
@@ -898,8 +886,7 @@ pub struct CreateEnvironmentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateEnvironmentErrorKind {
-    /// <p>The specified account does not have sufficient privileges for one or more AWS
-    /// services.</p>
+    /// <p>The specified account does not have sufficient privileges for one or more AWS services.</p>
     InsufficientPrivilegesException(crate::error::InsufficientPrivilegesException),
     /// <p>The specified account has reached its limit of environments.</p>
     TooManyEnvironmentsException(crate::error::TooManyEnvironmentsException),
@@ -1005,8 +992,7 @@ pub struct CreatePlatformVersionError {
 pub enum CreatePlatformVersionErrorKind {
     /// <p>A generic service exception has occurred.</p>
     ElasticBeanstalkServiceException(crate::error::ElasticBeanstalkServiceException),
-    /// <p>The specified account does not have sufficient privileges for one or more AWS
-    /// services.</p>
+    /// <p>The specified account does not have sufficient privileges for one or more AWS services.</p>
     InsufficientPrivilegesException(crate::error::InsufficientPrivilegesException),
     /// <p>You have exceeded the maximum number of allowed platforms associated with the account.</p>
     TooManyPlatformsException(crate::error::TooManyPlatformsException),
@@ -1125,8 +1111,7 @@ pub struct CreateStorageLocationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateStorageLocationErrorKind {
-    /// <p>The specified account does not have sufficient privileges for one or more AWS
-    /// services.</p>
+    /// <p>The specified account does not have sufficient privileges for one or more AWS services.</p>
     InsufficientPrivilegesException(crate::error::InsufficientPrivilegesException),
     /// <p>The specified account does not have a subscription to Amazon S3.</p>
     S3SubscriptionRequiredException(crate::error::S3SubscriptionRequiredException),
@@ -1245,8 +1230,7 @@ pub struct DeleteApplicationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteApplicationErrorKind {
-    /// <p>Unable to perform the specified operation because another operation that effects an
-    /// element in this activity is already in progress.</p>
+    /// <p>Unable to perform the specified operation because another operation that effects an element in this activity is already in progress.</p>
     OperationInProgressException(crate::error::OperationInProgressException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1339,28 +1323,18 @@ pub struct DeleteApplicationVersionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteApplicationVersionErrorKind {
-    /// <p>The specified account does not have sufficient privileges for one or more AWS
-    /// services.</p>
+    /// <p>The specified account does not have sufficient privileges for one or more AWS services.</p>
     InsufficientPrivilegesException(crate::error::InsufficientPrivilegesException),
-    /// <p>Unable to perform the specified operation because another operation that effects an
-    /// element in this activity is already in progress.</p>
+    /// <p>Unable to perform the specified operation because another operation that effects an element in this activity is already in progress.</p>
     OperationInProgressException(crate::error::OperationInProgressException),
-    /// <p>The specified S3 bucket does not belong to the S3 region in which the service is
-    /// running. The following regions are supported:</p>
+    /// <p>The specified S3 bucket does not belong to the S3 region in which the service is running. The following regions are supported:</p>
     /// <ul>
-    /// <li>
-    /// <p>IAD/us-east-1</p>
-    /// </li>
-    /// <li>
-    /// <p>PDX/us-west-2</p>
-    /// </li>
-    /// <li>
-    /// <p>DUB/eu-west-1</p>
-    /// </li>
+    /// <li> <p>IAD/us-east-1</p> </li>
+    /// <li> <p>PDX/us-west-2</p> </li>
+    /// <li> <p>DUB/eu-west-1</p> </li>
     /// </ul>
     S3LocationNotInServiceRegionException(crate::error::S3LocationNotInServiceRegionException),
-    /// <p>Unable to delete the Amazon S3 source bundle associated with the application version.
-    /// The application version was deleted successfully.</p>
+    /// <p>Unable to delete the Amazon S3 source bundle associated with the application version. The application version was deleted successfully.</p>
     SourceBundleDeletionException(crate::error::SourceBundleDeletionException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1494,8 +1468,7 @@ pub struct DeleteConfigurationTemplateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteConfigurationTemplateErrorKind {
-    /// <p>Unable to perform the specified operation because another operation that effects an
-    /// element in this activity is already in progress.</p>
+    /// <p>Unable to perform the specified operation because another operation that effects an element in this activity is already in progress.</p>
     OperationInProgressException(crate::error::OperationInProgressException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1679,11 +1652,9 @@ pub struct DeletePlatformVersionError {
 pub enum DeletePlatformVersionErrorKind {
     /// <p>A generic service exception has occurred.</p>
     ElasticBeanstalkServiceException(crate::error::ElasticBeanstalkServiceException),
-    /// <p>The specified account does not have sufficient privileges for one or more AWS
-    /// services.</p>
+    /// <p>The specified account does not have sufficient privileges for one or more AWS services.</p>
     InsufficientPrivilegesException(crate::error::InsufficientPrivilegesException),
-    /// <p>Unable to perform the specified operation because another operation that effects an
-    /// element in this activity is already in progress.</p>
+    /// <p>Unable to perform the specified operation because another operation that effects an element in this activity is already in progress.</p>
     OperationInProgressException(crate::error::OperationInProgressException),
     /// <p>You cannot delete the platform version because there are still environments running on it.</p>
     PlatformVersionStillReferencedException(crate::error::PlatformVersionStillReferencedException),
@@ -1815,8 +1786,7 @@ pub struct DescribeAccountAttributesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeAccountAttributesErrorKind {
-    /// <p>The specified account does not have sufficient privileges for one or more AWS
-    /// services.</p>
+    /// <p>The specified account does not have sufficient privileges for one or more AWS services.</p>
     InsufficientPrivilegesException(crate::error::InsufficientPrivilegesException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2270,8 +2240,7 @@ pub struct DescribeEnvironmentHealthError {
 pub enum DescribeEnvironmentHealthErrorKind {
     /// <p>A generic service exception has occurred.</p>
     ElasticBeanstalkServiceException(crate::error::ElasticBeanstalkServiceException),
-    /// <p>One or more input parameters is not valid. Please correct the input parameters and try
-    /// the operation again.</p>
+    /// <p>One or more input parameters is not valid. Please correct the input parameters and try the operation again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2579,8 +2548,7 @@ pub struct DescribeEnvironmentResourcesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeEnvironmentResourcesErrorKind {
-    /// <p>The specified account does not have sufficient privileges for one or more AWS
-    /// services.</p>
+    /// <p>The specified account does not have sufficient privileges for one or more AWS services.</p>
     InsufficientPrivilegesException(crate::error::InsufficientPrivilegesException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2843,8 +2811,7 @@ pub struct DescribeInstancesHealthError {
 pub enum DescribeInstancesHealthErrorKind {
     /// <p>A generic service exception has occurred.</p>
     ElasticBeanstalkServiceException(crate::error::ElasticBeanstalkServiceException),
-    /// <p>One or more input parameters is not valid. Please correct the input parameters and try
-    /// the operation again.</p>
+    /// <p>One or more input parameters is not valid. Please correct the input parameters and try the operation again.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2952,8 +2919,7 @@ pub struct DescribePlatformVersionError {
 pub enum DescribePlatformVersionErrorKind {
     /// <p>A generic service exception has occurred.</p>
     ElasticBeanstalkServiceException(crate::error::ElasticBeanstalkServiceException),
-    /// <p>The specified account does not have sufficient privileges for one or more AWS
-    /// services.</p>
+    /// <p>The specified account does not have sufficient privileges for one or more AWS services.</p>
     InsufficientPrivilegesException(crate::error::InsufficientPrivilegesException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3063,8 +3029,7 @@ pub struct DisassociateEnvironmentOperationsRoleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisassociateEnvironmentOperationsRoleErrorKind {
-    /// <p>The specified account does not have sufficient privileges for one or more AWS
-    /// services.</p>
+    /// <p>The specified account does not have sufficient privileges for one or more AWS services.</p>
     InsufficientPrivilegesException(crate::error::InsufficientPrivilegesException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3332,8 +3297,7 @@ pub struct ListPlatformVersionsError {
 pub enum ListPlatformVersionsErrorKind {
     /// <p>A generic service exception has occurred.</p>
     ElasticBeanstalkServiceException(crate::error::ElasticBeanstalkServiceException),
-    /// <p>The specified account does not have sufficient privileges for one or more AWS
-    /// services.</p>
+    /// <p>The specified account does not have sufficient privileges for one or more AWS services.</p>
     InsufficientPrivilegesException(crate::error::InsufficientPrivilegesException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3437,8 +3401,7 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    /// <p>The specified account does not have sufficient privileges for one or more AWS
-    /// services.</p>
+    /// <p>The specified account does not have sufficient privileges for one or more AWS services.</p>
     InsufficientPrivilegesException(crate::error::InsufficientPrivilegesException),
     /// <p>A resource doesn't exist for the specified Amazon Resource Name (ARN).</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3555,8 +3518,7 @@ pub struct RebuildEnvironmentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RebuildEnvironmentErrorKind {
-    /// <p>The specified account does not have sufficient privileges for one or more AWS
-    /// services.</p>
+    /// <p>The specified account does not have sufficient privileges for one or more AWS services.</p>
     InsufficientPrivilegesException(crate::error::InsufficientPrivilegesException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3977,8 +3939,7 @@ pub struct TerminateEnvironmentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TerminateEnvironmentErrorKind {
-    /// <p>The specified account does not have sufficient privileges for one or more AWS
-    /// services.</p>
+    /// <p>The specified account does not have sufficient privileges for one or more AWS services.</p>
     InsufficientPrivilegesException(crate::error::InsufficientPrivilegesException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4153,8 +4114,7 @@ pub struct UpdateApplicationResourceLifecycleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateApplicationResourceLifecycleErrorKind {
-    /// <p>The specified account does not have sufficient privileges for one or more AWS
-    /// services.</p>
+    /// <p>The specified account does not have sufficient privileges for one or more AWS services.</p>
     InsufficientPrivilegesException(crate::error::InsufficientPrivilegesException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4336,8 +4296,7 @@ pub struct UpdateConfigurationTemplateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateConfigurationTemplateErrorKind {
-    /// <p>The specified account does not have sufficient privileges for one or more AWS
-    /// services.</p>
+    /// <p>The specified account does not have sufficient privileges for one or more AWS services.</p>
     InsufficientPrivilegesException(crate::error::InsufficientPrivilegesException),
     /// <p>The specified account has reached its limit of Amazon S3 buckets.</p>
     TooManyBucketsException(crate::error::TooManyBucketsException),
@@ -4445,8 +4404,7 @@ pub struct UpdateEnvironmentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateEnvironmentErrorKind {
-    /// <p>The specified account does not have sufficient privileges for one or more AWS
-    /// services.</p>
+    /// <p>The specified account does not have sufficient privileges for one or more AWS services.</p>
     InsufficientPrivilegesException(crate::error::InsufficientPrivilegesException),
     /// <p>The specified account has reached its limit of Amazon S3 buckets.</p>
     TooManyBucketsException(crate::error::TooManyBucketsException),
@@ -4550,20 +4508,16 @@ pub struct UpdateTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateTagsForResourceErrorKind {
-    /// <p>The specified account does not have sufficient privileges for one or more AWS
-    /// services.</p>
+    /// <p>The specified account does not have sufficient privileges for one or more AWS services.</p>
     InsufficientPrivilegesException(crate::error::InsufficientPrivilegesException),
-    /// <p>Unable to perform the specified operation because another operation that effects an
-    /// element in this activity is already in progress.</p>
+    /// <p>Unable to perform the specified operation because another operation that effects an element in this activity is already in progress.</p>
     OperationInProgressException(crate::error::OperationInProgressException),
     /// <p>A resource doesn't exist for the specified Amazon Resource Name (ARN).</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The type of the specified Amazon Resource Name (ARN) isn't supported for this operation.</p>
     ResourceTypeNotSupportedException(crate::error::ResourceTypeNotSupportedException),
-    /// <p>The number of tags in the resource would exceed the number of tags that each resource
-    /// can have.</p>
-    /// <p>To calculate this, the operation considers both the number of tags the resource already has
-    /// and the tags this operation would add if it succeeded.</p>
+    /// <p>The number of tags in the resource would exceed the number of tags that each resource can have.</p>
+    /// <p>To calculate this, the operation considers both the number of tags the resource already has and the tags this operation would add if it succeeded.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4698,8 +4652,7 @@ pub struct ValidateConfigurationSettingsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ValidateConfigurationSettingsErrorKind {
-    /// <p>The specified account does not have sufficient privileges for one or more AWS
-    /// services.</p>
+    /// <p>The specified account does not have sufficient privileges for one or more AWS services.</p>
     InsufficientPrivilegesException(crate::error::InsufficientPrivilegesException),
     /// <p>The specified account has reached its limit of Amazon S3 buckets.</p>
     TooManyBucketsException(crate::error::TooManyBucketsException),
@@ -4863,8 +4816,7 @@ impl TooManyBucketsException {
     }
 }
 
-/// <p>The specified account does not have sufficient privileges for one or more AWS
-/// services.</p>
+/// <p>The specified account does not have sufficient privileges for one or more AWS services.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InsufficientPrivilegesException {
@@ -4928,10 +4880,8 @@ impl InsufficientPrivilegesException {
     }
 }
 
-/// <p>The number of tags in the resource would exceed the number of tags that each resource
-/// can have.</p>
-/// <p>To calculate this, the operation considers both the number of tags the resource already has
-/// and the tags this operation would add if it succeeded.</p>
+/// <p>The number of tags in the resource would exceed the number of tags that each resource can have.</p>
+/// <p>To calculate this, the operation considers both the number of tags the resource already has and the tags this operation would add if it succeeded.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyTagsException {
@@ -5123,8 +5073,7 @@ impl ResourceNotFoundException {
     }
 }
 
-/// <p>Unable to perform the specified operation because another operation that effects an
-/// element in this activity is already in progress.</p>
+/// <p>Unable to perform the specified operation because another operation that effects an element in this activity is already in progress.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OperationInProgressException {
@@ -5252,8 +5201,7 @@ impl ElasticBeanstalkServiceException {
     }
 }
 
-/// <p>One or more input parameters is not valid. Please correct the input parameters and try
-/// the operation again.</p>
+/// <p>One or more input parameters is not valid. Please correct the input parameters and try the operation again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRequestException {
@@ -5381,8 +5329,7 @@ impl PlatformVersionStillReferencedException {
     }
 }
 
-/// <p>Unable to delete the Amazon S3 source bundle associated with the application version.
-/// The application version was deleted successfully.</p>
+/// <p>Unable to delete the Amazon S3 source bundle associated with the application version. The application version was deleted successfully.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SourceBundleDeletionException {
@@ -5446,18 +5393,11 @@ impl SourceBundleDeletionException {
     }
 }
 
-/// <p>The specified S3 bucket does not belong to the S3 region in which the service is
-/// running. The following regions are supported:</p>
+/// <p>The specified S3 bucket does not belong to the S3 region in which the service is running. The following regions are supported:</p>
 /// <ul>
-/// <li>
-/// <p>IAD/us-east-1</p>
-/// </li>
-/// <li>
-/// <p>PDX/us-west-2</p>
-/// </li>
-/// <li>
-/// <p>DUB/eu-west-1</p>
-/// </li>
+/// <li> <p>IAD/us-east-1</p> </li>
+/// <li> <p>PDX/us-west-2</p> </li>
+/// <li> <p>DUB/eu-west-1</p> </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]

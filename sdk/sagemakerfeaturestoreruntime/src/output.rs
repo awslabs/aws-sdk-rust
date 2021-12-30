@@ -130,8 +130,7 @@ pub struct BatchGetRecordOutput {
     pub records: std::option::Option<std::vec::Vec<crate::model::BatchGetRecordResultDetail>>,
     /// <p>A list of errors that have occured when retrieving a batch of Records.</p>
     pub errors: std::option::Option<std::vec::Vec<crate::model::BatchGetRecordError>>,
-    /// <p>A unprocessed list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value,
-    /// and Feature name.</p>
+    /// <p>A unprocessed list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value, and Feature name.</p>
     pub unprocessed_identifiers:
         std::option::Option<std::vec::Vec<crate::model::BatchGetRecordIdentifier>>,
 }
@@ -144,8 +143,7 @@ impl BatchGetRecordOutput {
     pub fn errors(&self) -> std::option::Option<&[crate::model::BatchGetRecordError]> {
         self.errors.as_deref()
     }
-    /// <p>A unprocessed list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value,
-    /// and Feature name.</p>
+    /// <p>A unprocessed list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value, and Feature name.</p>
     pub fn unprocessed_identifiers(
         &self,
     ) -> std::option::Option<&[crate::model::BatchGetRecordIdentifier]> {
@@ -216,8 +214,7 @@ pub mod batch_get_record_output {
         ///
         /// To override the contents of this collection use [`set_unprocessed_identifiers`](Self::set_unprocessed_identifiers).
         ///
-        /// <p>A unprocessed list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value,
-        /// and Feature name.</p>
+        /// <p>A unprocessed list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value, and Feature name.</p>
         pub fn unprocessed_identifiers(
             mut self,
             input: crate::model::BatchGetRecordIdentifier,
@@ -227,8 +224,7 @@ pub mod batch_get_record_output {
             self.unprocessed_identifiers = Some(v);
             self
         }
-        /// <p>A unprocessed list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value,
-        /// and Feature name.</p>
+        /// <p>A unprocessed list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value, and Feature name.</p>
         pub fn set_unprocessed_identifiers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BatchGetRecordIdentifier>>,

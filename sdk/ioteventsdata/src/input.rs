@@ -501,18 +501,14 @@ pub mod batch_put_message_input {
         ///
         /// To override the contents of this collection use [`set_messages`](Self::set_messages).
         ///
-        /// <p>The list of messages to send. Each message has the following format: <code>'{ "messageId":
-        /// "string", "inputName": "string", "payload": "string"}'</code>
-        /// </p>
+        /// <p>The list of messages to send. Each message has the following format: <code>'{ "messageId": "string", "inputName": "string", "payload": "string"}'</code> </p>
         pub fn messages(mut self, input: crate::model::Message) -> Self {
             let mut v = self.messages.unwrap_or_default();
             v.push(input);
             self.messages = Some(v);
             self
         }
-        /// <p>The list of messages to send. Each message has the following format: <code>'{ "messageId":
-        /// "string", "inputName": "string", "payload": "string"}'</code>
-        /// </p>
+        /// <p>The list of messages to send. Each message has the following format: <code>'{ "messageId": "string", "inputName": "string", "payload": "string"}'</code> </p>
         pub fn set_messages(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Message>>,
@@ -1156,14 +1152,12 @@ pub mod describe_alarm_input {
             self.alarm_model_name = input;
             self
         }
-        /// <p>The value of the key used as a filter to select only the alarms associated with the
-        /// <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
+        /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
         pub fn key_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_value = Some(input.into());
             self
         }
-        /// <p>The value of the key used as a filter to select only the alarms associated with the
-        /// <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
+        /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
         pub fn set_key_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_value = input;
             self
@@ -1326,14 +1320,12 @@ pub mod describe_detector_input {
         pub(crate) key_value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the detector model whose detectors (instances) you want information
-        /// about.</p>
+        /// <p>The name of the detector model whose detectors (instances) you want information about.</p>
         pub fn detector_model_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.detector_model_name = Some(input.into());
             self
         }
-        /// <p>The name of the detector model whose detectors (instances) you want information
-        /// about.</p>
+        /// <p>The name of the detector model whose detectors (instances) you want information about.</p>
         pub fn set_detector_model_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1341,14 +1333,12 @@ pub mod describe_detector_input {
             self.detector_model_name = input;
             self
         }
-        /// <p>A filter used to limit results to detectors (instances) created because of the given key
-        /// ID.</p>
+        /// <p>A filter used to limit results to detectors (instances) created because of the given key ID.</p>
         pub fn key_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_value = Some(input.into());
             self
         }
-        /// <p>A filter used to limit results to detectors (instances) created because of the given key
-        /// ID.</p>
+        /// <p>A filter used to limit results to detectors (instances) created because of the given key ID.</p>
         pub fn set_key_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_value = input;
             self
@@ -1995,21 +1985,17 @@ impl std::fmt::Debug for ListAlarmsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDetectorInput {
-    /// <p>The name of the detector model whose detectors (instances) you want information
-    /// about.</p>
+    /// <p>The name of the detector model whose detectors (instances) you want information about.</p>
     pub detector_model_name: std::option::Option<std::string::String>,
-    /// <p>A filter used to limit results to detectors (instances) created because of the given key
-    /// ID.</p>
+    /// <p>A filter used to limit results to detectors (instances) created because of the given key ID.</p>
     pub key_value: std::option::Option<std::string::String>,
 }
 impl DescribeDetectorInput {
-    /// <p>The name of the detector model whose detectors (instances) you want information
-    /// about.</p>
+    /// <p>The name of the detector model whose detectors (instances) you want information about.</p>
     pub fn detector_model_name(&self) -> std::option::Option<&str> {
         self.detector_model_name.as_deref()
     }
-    /// <p>A filter used to limit results to detectors (instances) created because of the given key
-    /// ID.</p>
+    /// <p>A filter used to limit results to detectors (instances) created because of the given key ID.</p>
     pub fn key_value(&self) -> std::option::Option<&str> {
         self.key_value.as_deref()
     }
@@ -2029,8 +2015,7 @@ impl std::fmt::Debug for DescribeDetectorInput {
 pub struct DescribeAlarmInput {
     /// <p>The name of the alarm model.</p>
     pub alarm_model_name: std::option::Option<std::string::String>,
-    /// <p>The value of the key used as a filter to select only the alarms associated with the
-    /// <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
+    /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
     pub key_value: std::option::Option<std::string::String>,
 }
 impl DescribeAlarmInput {
@@ -2038,8 +2023,7 @@ impl DescribeAlarmInput {
     pub fn alarm_model_name(&self) -> std::option::Option<&str> {
         self.alarm_model_name.as_deref()
     }
-    /// <p>The value of the key used as a filter to select only the alarms associated with the
-    /// <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
+    /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
     pub fn key_value(&self) -> std::option::Option<&str> {
         self.key_value.as_deref()
     }
@@ -2126,15 +2110,11 @@ impl std::fmt::Debug for BatchResetAlarmInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchPutMessageInput {
-    /// <p>The list of messages to send. Each message has the following format: <code>'{ "messageId":
-    /// "string", "inputName": "string", "payload": "string"}'</code>
-    /// </p>
+    /// <p>The list of messages to send. Each message has the following format: <code>'{ "messageId": "string", "inputName": "string", "payload": "string"}'</code> </p>
     pub messages: std::option::Option<std::vec::Vec<crate::model::Message>>,
 }
 impl BatchPutMessageInput {
-    /// <p>The list of messages to send. Each message has the following format: <code>'{ "messageId":
-    /// "string", "inputName": "string", "payload": "string"}'</code>
-    /// </p>
+    /// <p>The list of messages to send. Each message has the following format: <code>'{ "messageId": "string", "inputName": "string", "payload": "string"}'</code> </p>
     pub fn messages(&self) -> std::option::Option<&[crate::model::Message]> {
         self.messages.as_deref()
     }

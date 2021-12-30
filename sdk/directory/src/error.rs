@@ -161,8 +161,7 @@ pub enum AddIpRoutesErrorKind {
     EntityDoesNotExistException(crate::error::EntityDoesNotExistException),
     /// <p>One or more parameters are not valid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The maximum allowed number of IP addresses was exceeded. The default limit is 100 IP
-    /// address blocks.</p>
+    /// <p>The maximum allowed number of IP addresses was exceeded. The default limit is 100 IP address blocks.</p>
     IpRouteLimitExceededException(crate::error::IpRouteLimitExceededException),
     /// <p>An exception has occurred in Directory Service.</p>
     ServiceException(crate::error::ServiceException),
@@ -309,8 +308,7 @@ pub enum AddRegionErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>A client exception has occurred.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The Region you specified is the same Region where the Managed Microsoft AD directory
-    /// was created. Specify a different Region and try again.</p>
+    /// <p>The Region you specified is the same Region where the Managed Microsoft AD directory was created. Specify a different Region and try again.</p>
     DirectoryAlreadyInRegionException(crate::error::DirectoryAlreadyInRegionException),
     /// <p>The specified directory does not exist in the system.</p>
     DirectoryDoesNotExistException(crate::error::DirectoryDoesNotExistException),
@@ -320,8 +318,7 @@ pub enum AddRegionErrorKind {
     EntityDoesNotExistException(crate::error::EntityDoesNotExistException),
     /// <p>One or more parameters are not valid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>You have reached the limit for maximum number of simultaneous Region replications per
-    /// directory.</p>
+    /// <p>You have reached the limit for maximum number of simultaneous Region replications per directory.</p>
     RegionLimitExceededException(crate::error::RegionLimitExceededException),
     /// <p>An exception has occurred in Directory Service.</p>
     ServiceException(crate::error::ServiceException),
@@ -735,9 +732,7 @@ pub struct ConnectDirectoryError {
 pub enum ConnectDirectoryErrorKind {
     /// <p>A client exception has occurred.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The maximum number of directories in the region has been reached. You can use the
-    /// <a>GetDirectoryLimits</a> operation to determine your directory limits in
-    /// the region.</p>
+    /// <p>The maximum number of directories in the region has been reached. You can use the <code>GetDirectoryLimits</code> operation to determine your directory limits in the region.</p>
     DirectoryLimitExceededException(crate::error::DirectoryLimitExceededException),
     /// <p>One or more parameters are not valid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
@@ -1327,9 +1322,7 @@ pub struct CreateDirectoryError {
 pub enum CreateDirectoryErrorKind {
     /// <p>A client exception has occurred.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The maximum number of directories in the region has been reached. You can use the
-    /// <a>GetDirectoryLimits</a> operation to determine your directory limits in
-    /// the region.</p>
+    /// <p>The maximum number of directories in the region has been reached. You can use the <code>GetDirectoryLimits</code> operation to determine your directory limits in the region.</p>
     DirectoryLimitExceededException(crate::error::DirectoryLimitExceededException),
     /// <p>One or more parameters are not valid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
@@ -1601,9 +1594,7 @@ pub struct CreateMicrosoftADError {
 pub enum CreateMicrosoftADErrorKind {
     /// <p>A client exception has occurred.</p>
     ClientException(crate::error::ClientException),
-    /// <p>The maximum number of directories in the region has been reached. You can use the
-    /// <a>GetDirectoryLimits</a> operation to determine your directory limits in
-    /// the region.</p>
+    /// <p>The maximum number of directories in the region has been reached. You can use the <code>GetDirectoryLimits</code> operation to determine your directory limits in the region.</p>
     DirectoryLimitExceededException(crate::error::DirectoryLimitExceededException),
     /// <p>One or more parameters are not valid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
@@ -1740,9 +1731,7 @@ pub enum CreateSnapshotErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>An exception has occurred in Directory Service.</p>
     ServiceException(crate::error::ServiceException),
-    /// <p>The maximum number of manual snapshots for the directory has been reached. You can
-    /// use the <a>GetSnapshotLimits</a> operation to determine the snapshot limits
-    /// for a directory.</p>
+    /// <p>The maximum number of manual snapshots for the directory has been reached. You can use the <code>GetSnapshotLimits</code> operation to determine the snapshot limits for a directory.</p>
     SnapshotLimitExceededException(crate::error::SnapshotLimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2655,8 +2644,7 @@ pub struct DeregisterCertificateError {
 pub enum DeregisterCertificateErrorKind {
     /// <p>The certificate is not present in the system for describe or deregister activities.</p>
     CertificateDoesNotExistException(crate::error::CertificateDoesNotExistException),
-    /// <p>The certificate is being used for the LDAP security connection and cannot be removed
-    /// without disabling LDAP security.</p>
+    /// <p>The certificate is being used for the LDAP security connection and cannot be removed without disabling LDAP security.</p>
     CertificateInUseException(crate::error::CertificateInUseException),
     /// <p>A client exception has occurred.</p>
     ClientException(crate::error::ClientException),
@@ -4742,8 +4730,7 @@ pub enum DisableLDAPSErrorKind {
     DirectoryDoesNotExistException(crate::error::DirectoryDoesNotExistException),
     /// <p>The specified directory is unavailable or could not be found.</p>
     DirectoryUnavailableException(crate::error::DirectoryUnavailableException),
-    /// <p>The LDAP activities could not be performed because they are limited by the LDAPS
-    /// status.</p>
+    /// <p>The LDAP activities could not be performed because they are limited by the LDAPS status.</p>
     InvalidLdapsStatusException(crate::error::InvalidLdapsStatusException),
     /// <p>One or more parameters are not valid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
@@ -5138,8 +5125,7 @@ pub enum EnableClientAuthenticationErrorKind {
     DirectoryDoesNotExistException(crate::error::DirectoryDoesNotExistException),
     /// <p>Client authentication is already enabled.</p>
     InvalidClientAuthStatusException(crate::error::InvalidClientAuthStatusException),
-    /// <p>Client authentication setup could not be completed because at least one valid certificate must be
-    /// registered in the system.</p>
+    /// <p>Client authentication setup could not be completed because at least one valid certificate must be registered in the system.</p>
     NoAvailableCertificateException(crate::error::NoAvailableCertificateException),
     /// <p>An exception has occurred in Directory Service.</p>
     ServiceException(crate::error::ServiceException),
@@ -5312,13 +5298,11 @@ pub enum EnableLDAPSErrorKind {
     DirectoryDoesNotExistException(crate::error::DirectoryDoesNotExistException),
     /// <p>The specified directory is unavailable or could not be found.</p>
     DirectoryUnavailableException(crate::error::DirectoryUnavailableException),
-    /// <p>The LDAP activities could not be performed because they are limited by the LDAPS
-    /// status.</p>
+    /// <p>The LDAP activities could not be performed because they are limited by the LDAPS status.</p>
     InvalidLdapsStatusException(crate::error::InvalidLdapsStatusException),
     /// <p>One or more parameters are not valid.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>Client authentication setup could not be completed because at least one valid certificate must be
-    /// registered in the system.</p>
+    /// <p>Client authentication setup could not be completed because at least one valid certificate must be registered in the system.</p>
     NoAvailableCertificateException(crate::error::NoAvailableCertificateException),
     /// <p>An exception has occurred in Directory Service.</p>
     ServiceException(crate::error::ServiceException),
@@ -7454,8 +7438,7 @@ pub enum ResetUserPasswordErrorKind {
     DirectoryUnavailableException(crate::error::DirectoryUnavailableException),
     /// <p>The specified entity could not be found.</p>
     EntityDoesNotExistException(crate::error::EntityDoesNotExistException),
-    /// <p>The new password provided by the user does not meet the password complexity
-    /// requirements defined in your directory.</p>
+    /// <p>The new password provided by the user does not meet the password complexity requirements defined in your directory.</p>
     InvalidPasswordException(crate::error::InvalidPasswordException),
     /// <p>An exception has occurred in Directory Service.</p>
     ServiceException(crate::error::ServiceException),
@@ -7741,8 +7724,7 @@ pub enum ShareDirectoryErrorKind {
     OrganizationsException(crate::error::OrganizationsException),
     /// <p>An exception has occurred in Directory Service.</p>
     ServiceException(crate::error::ServiceException),
-    /// <p>The maximum number of Amazon Web Services accounts that you can share with this directory has been
-    /// reached.</p>
+    /// <p>The maximum number of Amazon Web Services accounts that you can share with this directory has been reached.</p>
     ShareLimitExceededException(crate::error::ShareLimitExceededException),
     /// <p>The operation is not supported.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
@@ -7922,9 +7904,7 @@ pub enum StartSchemaExtensionErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>An exception has occurred in Directory Service.</p>
     ServiceException(crate::error::ServiceException),
-    /// <p>The maximum number of manual snapshots for the directory has been reached. You can
-    /// use the <a>GetSnapshotLimits</a> operation to determine the snapshot limits
-    /// for a directory.</p>
+    /// <p>The maximum number of manual snapshots for the directory has been reached. You can use the <code>GetSnapshotLimits</code> operation to determine the snapshot limits for a directory.</p>
     SnapshotLimitExceededException(crate::error::SnapshotLimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8357,8 +8337,7 @@ pub enum UpdateNumberOfDomainControllersErrorKind {
     ClientException(crate::error::ClientException),
     /// <p>The specified directory is unavailable or could not be found.</p>
     DirectoryUnavailableException(crate::error::DirectoryUnavailableException),
-    /// <p>The maximum allowed number of domain controllers per directory was exceeded. The
-    /// default limit per directory is 20 domain controllers.</p>
+    /// <p>The maximum allowed number of domain controllers per directory was exceeded. The default limit per directory is 20 domain controllers.</p>
     DomainControllerLimitExceededException(crate::error::DomainControllerLimitExceededException),
     /// <p>The specified entity could not be found.</p>
     EntityDoesNotExistException(crate::error::EntityDoesNotExistException),
@@ -9319,8 +9298,7 @@ impl ClientException {
     }
 }
 
-/// <p>The maximum allowed number of domain controllers per directory was exceeded. The
-/// default limit per directory is 20 domain controllers.</p>
+/// <p>The maximum allowed number of domain controllers per directory was exceeded. The default limit per directory is 20 domain controllers.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DomainControllerLimitExceededException {
@@ -9660,9 +9638,7 @@ impl DirectoryNotSharedException {
     }
 }
 
-/// <p>The maximum number of manual snapshots for the directory has been reached. You can
-/// use the <a>GetSnapshotLimits</a> operation to determine the snapshot limits
-/// for a directory.</p>
+/// <p>The maximum number of manual snapshots for the directory has been reached. You can use the <code>GetSnapshotLimits</code> operation to determine the snapshot limits for a directory.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SnapshotLimitExceededException {
@@ -9747,8 +9723,7 @@ impl SnapshotLimitExceededException {
     }
 }
 
-/// <p>The maximum number of Amazon Web Services accounts that you can share with this directory has been
-/// reached.</p>
+/// <p>The maximum number of Amazon Web Services accounts that you can share with this directory has been reached.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ShareLimitExceededException {
@@ -10173,8 +10148,7 @@ impl UserDoesNotExistException {
     }
 }
 
-/// <p>The new password provided by the user does not meet the password complexity
-/// requirements defined in your directory.</p>
+/// <p>The new password provided by the user does not meet the password complexity requirements defined in your directory.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidPasswordException {
@@ -10939,8 +10913,7 @@ impl EntityAlreadyExistsException {
     }
 }
 
-/// <p>Client authentication setup could not be completed because at least one valid certificate must be
-/// registered in the system.</p>
+/// <p>Client authentication setup could not be completed because at least one valid certificate must be registered in the system.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoAvailableCertificateException {
@@ -11025,8 +10998,7 @@ impl NoAvailableCertificateException {
     }
 }
 
-/// <p>The LDAP activities could not be performed because they are limited by the LDAPS
-/// status.</p>
+/// <p>The LDAP activities could not be performed because they are limited by the LDAPS status.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidLdapsStatusException {
@@ -11284,8 +11256,7 @@ impl CertificateDoesNotExistException {
     }
 }
 
-/// <p>The certificate is being used for the LDAP security connection and cannot be removed
-/// without disabling LDAP security.</p>
+/// <p>The certificate is being used for the LDAP security connection and cannot be removed without disabling LDAP security.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CertificateInUseException {
@@ -11370,9 +11341,7 @@ impl CertificateInUseException {
     }
 }
 
-/// <p>The maximum number of directories in the region has been reached. You can use the
-/// <a>GetDirectoryLimits</a> operation to determine your directory limits in
-/// the region.</p>
+/// <p>The maximum number of directories in the region has been reached. You can use the <code>GetDirectoryLimits</code> operation to determine your directory limits in the region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DirectoryLimitExceededException {
@@ -11542,8 +11511,7 @@ impl TagLimitExceededException {
     }
 }
 
-/// <p>You have reached the limit for maximum number of simultaneous Region replications per
-/// directory.</p>
+/// <p>You have reached the limit for maximum number of simultaneous Region replications per directory.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegionLimitExceededException {
@@ -11628,8 +11596,7 @@ impl RegionLimitExceededException {
     }
 }
 
-/// <p>The Region you specified is the same Region where the Managed Microsoft AD directory
-/// was created. Specify a different Region and try again.</p>
+/// <p>The Region you specified is the same Region where the Managed Microsoft AD directory was created. Specify a different Region and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DirectoryAlreadyInRegionException {
@@ -11714,8 +11681,7 @@ impl DirectoryAlreadyInRegionException {
     }
 }
 
-/// <p>The maximum allowed number of IP addresses was exceeded. The default limit is 100 IP
-/// address blocks.</p>
+/// <p>The maximum allowed number of IP addresses was exceeded. The default limit is 100 IP address blocks.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IpRouteLimitExceededException {

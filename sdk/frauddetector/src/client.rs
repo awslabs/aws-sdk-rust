@@ -799,13 +799,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The ID of an in-progress batch import job to cancel. </p>
-        /// <p>Amazon Fraud Detector will throw an error if the batch import job is in <code>FAILED</code>, <code>CANCELED</code>, or  <code>COMPLETED</code> state.</p>
+        /// <p>Amazon Fraud Detector will throw an error if the batch import job is in <code>FAILED</code>, <code>CANCELED</code>, or <code>COMPLETED</code> state.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p> The ID of an in-progress batch import job to cancel. </p>
-        /// <p>Amazon Fraud Detector will throw an error if the batch import job is in <code>FAILED</code>, <code>CANCELED</code>, or  <code>COMPLETED</code> state.</p>
+        /// <p>Amazon Fraud Detector will throw an error if the batch import job is in <code>FAILED</code>, <code>CANCELED</code>, or <code>COMPLETED</code> state.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_job_id(input);
             self
@@ -983,14 +983,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_event_type_name(input);
             self
         }
-        /// <p>The ARN of the IAM role created for Amazon S3 bucket that holds your data file.
-        /// The IAM role must have read and write permissions to both input and output S3 buckets.</p>
+        /// <p>The ARN of the IAM role created for Amazon S3 bucket that holds your data file. The IAM role must have read and write permissions to both input and output S3 buckets.</p>
         pub fn iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.iam_role_arn(input.into());
             self
         }
-        /// <p>The ARN of the IAM role created for Amazon S3 bucket that holds your data file.
-        /// The IAM role must have read and write permissions to both input and output S3 buckets.</p>
+        /// <p>The ARN of the IAM role created for Amazon S3 bucket that holds your data file. The IAM role must have read and write permissions to both input and output S3 buckets.</p>
         pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_iam_role_arn(input);
             self
@@ -999,12 +997,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A collection of key-value pairs associated with this request.  </p>
+        /// <p>A collection of key-value pairs associated with this request. </p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>A collection of key-value pairs associated with this request.  </p>
+        /// <p>A collection of key-value pairs associated with this request. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1463,8 +1461,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateModelVersion`.
     ///
-    /// <p>Creates a version of the model using the specified model type and model id.
-    /// </p>
+    /// <p>Creates a version of the model using the specified model type and model id. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateModelVersion<
         C = aws_smithy_client::erase::DynConnector,
@@ -1873,18 +1870,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The variable type. For more information see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>.
-        /// </p>
-        /// <p>Valid Values: <code>AUTH_CODE | AVS | BILLING_ADDRESS_L1 | BILLING_ADDRESS_L2 | BILLING_CITY | BILLING_COUNTRY | BILLING_NAME | BILLING_PHONE | BILLING_STATE | BILLING_ZIP | CARD_BIN | CATEGORICAL | CURRENCY_CODE | EMAIL_ADDRESS | FINGERPRINT | FRAUD_LABEL | FREE_FORM_TEXT | IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER | PRICE | PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 | SHIPPING_CITY | SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE | SHIPPING_STATE | SHIPPING_ZIP | USERAGENT</code>
-        /// </p>
+        /// <p>The variable type. For more information see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>. </p>
+        /// <p>Valid Values: <code>AUTH_CODE | AVS | BILLING_ADDRESS_L1 | BILLING_ADDRESS_L2 | BILLING_CITY | BILLING_COUNTRY | BILLING_NAME | BILLING_PHONE | BILLING_STATE | BILLING_ZIP | CARD_BIN | CATEGORICAL | CURRENCY_CODE | EMAIL_ADDRESS | FINGERPRINT | FRAUD_LABEL | FREE_FORM_TEXT | IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER | PRICE | PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 | SHIPPING_CITY | SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE | SHIPPING_STATE | SHIPPING_ZIP | USERAGENT</code> </p>
         pub fn variable_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.variable_type(input.into());
             self
         }
-        /// <p>The variable type. For more information see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>.
-        /// </p>
-        /// <p>Valid Values: <code>AUTH_CODE | AVS | BILLING_ADDRESS_L1 | BILLING_ADDRESS_L2 | BILLING_CITY | BILLING_COUNTRY | BILLING_NAME | BILLING_PHONE | BILLING_STATE | BILLING_ZIP | CARD_BIN | CATEGORICAL | CURRENCY_CODE | EMAIL_ADDRESS | FINGERPRINT | FRAUD_LABEL | FREE_FORM_TEXT | IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER | PRICE | PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 | SHIPPING_CITY | SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE | SHIPPING_STATE | SHIPPING_ZIP | USERAGENT</code>
-        /// </p>
+        /// <p>The variable type. For more information see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>. </p>
+        /// <p>Valid Values: <code>AUTH_CODE | AVS | BILLING_ADDRESS_L1 | BILLING_ADDRESS_L2 | BILLING_CITY | BILLING_COUNTRY | BILLING_NAME | BILLING_PHONE | BILLING_STATE | BILLING_ZIP | CARD_BIN | CATEGORICAL | CURRENCY_CODE | EMAIL_ADDRESS | FINGERPRINT | FRAUD_LABEL | FREE_FORM_TEXT | IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER | PRICE | PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 | SHIPPING_CITY | SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE | SHIPPING_STATE | SHIPPING_ZIP | USERAGENT</code> </p>
         pub fn set_variable_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2595,7 +2588,6 @@ pub mod fluent_builders {
     /// <p>Deletes a label.</p>
     /// <p>You cannot delete labels that are included in an event type in Amazon Fraud Detector.</p>
     /// <p>You cannot delete a label assigned to an event ID. You must first delete the relevant event ID.</p>
-    ///
     /// <p>When you delete a label, Amazon Fraud Detector permanently deletes that label and the data is no longer stored in Amazon Fraud Detector.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteLabel<
@@ -3271,10 +3263,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetBatchImportJobs`.
     ///
-    /// <p>Gets all batch import jobs or a specific job of the specified ID. This is a paginated API. If you provide a null <code>maxResults</code>,
-    /// this action retrieves a maximum of 50 records per page. If you provide a <code>maxResults</code>, the value must be between 1 and 50.
-    /// To get the next page results, provide the pagination token from the <code>GetBatchImportJobsResponse</code> as part of your request.
-    /// A null pagination token fetches the records from the beginning.</p>
+    /// <p>Gets all batch import jobs or a specific job of the specified ID. This is a paginated API. If you provide a null <code>maxResults</code>, this action retrieves a maximum of 50 records per page. If you provide a <code>maxResults</code>, the value must be between 1 and 50. To get the next page results, provide the pagination token from the <code>GetBatchImportJobsResponse</code> as part of your request. A null pagination token fetches the records from the beginning.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBatchImportJobs<
         C = aws_smithy_client::erase::DynConnector,
@@ -3527,12 +3516,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetDetectors`.
     ///
-    /// <p>Gets all detectors or a single detector if a <code>detectorId</code> is specified. This is a paginated API. If you
-    /// provide a null <code>maxResults</code>, this action retrieves a maximum of 10 records
-    /// per page. If you provide a <code>maxResults</code>, the value must be between 5 and 10.
-    /// To get the next page results, provide the pagination token from the
-    /// <code>GetDetectorsResponse</code> as part of your request. A null pagination token
-    /// fetches the records from the beginning. </p>
+    /// <p>Gets all detectors or a single detector if a <code>detectorId</code> is specified. This is a paginated API. If you provide a null <code>maxResults</code>, this action retrieves a maximum of 10 records per page. If you provide a <code>maxResults</code>, the value must be between 5 and 10. To get the next page results, provide the pagination token from the <code>GetDetectorsResponse</code> as part of your request. A null pagination token fetches the records from the beginning. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDetectors<
         C = aws_smithy_client::erase::DynConnector,
@@ -3705,12 +3689,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetEntityTypes`.
     ///
-    /// <p>Gets all entity types or a specific entity type if a name is specified. This is a paginated API. If you
-    /// provide a null <code>maxResults</code>, this action retrieves a maximum of 10 records
-    /// per page. If you provide a <code>maxResults</code>, the value must be between 5 and 10.
-    /// To get the next page results, provide the pagination token from the
-    /// <code>GetEntityTypesResponse</code> as part of your request. A null pagination token
-    /// fetches the records from the beginning. </p>
+    /// <p>Gets all entity types or a specific entity type if a name is specified. This is a paginated API. If you provide a null <code>maxResults</code>, this action retrieves a maximum of 10 records per page. If you provide a <code>maxResults</code>, the value must be between 5 and 10. To get the next page results, provide the pagination token from the <code>GetEntityTypesResponse</code> as part of your request. A null pagination token fetches the records from the beginning. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEntityTypes<
         C = aws_smithy_client::erase::DynConnector,
@@ -4020,25 +3999,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_event_variables`](Self::set_event_variables).
         ///
-        /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and
-        /// their corresponding values for the event you are sending for evaluation.</p>
-        /// <important>         
-        /// <p>You must provide at least one eventVariable</p>        
+        /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and their corresponding values for the event you are sending for evaluation.</p> <important>
+        /// <p>You must provide at least one eventVariable</p>
         /// </important>
-        ///
         /// <p>To ensure most accurate fraud prediction and to simplify your data preparation, Amazon Fraud Detector will replace all missing variables or values as follows:</p>
-        ///
-        /// <p>
-        /// <b>For Amazon Fraud Detector trained models:</b>
-        /// </p>
-        /// <p>If a null value is provided explicitly for a variable or if a variable is missing, model will replace the null value or the missing variable (no variable name in the eventVariables map)
-        /// with calculated default mean/medians for numeric variables and with special values for categorical variables.</p>
-        ///
-        /// <p>
-        /// <b>For imported SageMaker models:</b>
-        /// </p>
-        /// <p>If a null value is provided explicitly for a variable, the model and rules will use “null” as the value. If a variable is not provided (no variable name in the eventVariables map), model and rules
-        /// will use the default value that is provided for the variable. </p>
+        /// <p> <b>For Amazon Fraud Detector trained models:</b> </p>
+        /// <p>If a null value is provided explicitly for a variable or if a variable is missing, model will replace the null value or the missing variable (no variable name in the eventVariables map) with calculated default mean/medians for numeric variables and with special values for categorical variables.</p>
+        /// <p> <b>For imported SageMaker models:</b> </p>
+        /// <p>If a null value is provided explicitly for a variable, the model and rules will use “null” as the value. If a variable is not provided (no variable name in the eventVariables map), model and rules will use the default value that is provided for the variable. </p>
         pub fn event_variables(
             mut self,
             k: impl Into<std::string::String>,
@@ -4047,25 +4015,14 @@ pub mod fluent_builders {
             self.inner = self.inner.event_variables(k.into(), v.into());
             self
         }
-        /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and
-        /// their corresponding values for the event you are sending for evaluation.</p>
-        /// <important>         
-        /// <p>You must provide at least one eventVariable</p>        
+        /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and their corresponding values for the event you are sending for evaluation.</p> <important>
+        /// <p>You must provide at least one eventVariable</p>
         /// </important>
-        ///
         /// <p>To ensure most accurate fraud prediction and to simplify your data preparation, Amazon Fraud Detector will replace all missing variables or values as follows:</p>
-        ///
-        /// <p>
-        /// <b>For Amazon Fraud Detector trained models:</b>
-        /// </p>
-        /// <p>If a null value is provided explicitly for a variable or if a variable is missing, model will replace the null value or the missing variable (no variable name in the eventVariables map)
-        /// with calculated default mean/medians for numeric variables and with special values for categorical variables.</p>
-        ///
-        /// <p>
-        /// <b>For imported SageMaker models:</b>
-        /// </p>
-        /// <p>If a null value is provided explicitly for a variable, the model and rules will use “null” as the value. If a variable is not provided (no variable name in the eventVariables map), model and rules
-        /// will use the default value that is provided for the variable. </p>
+        /// <p> <b>For Amazon Fraud Detector trained models:</b> </p>
+        /// <p>If a null value is provided explicitly for a variable or if a variable is missing, model will replace the null value or the missing variable (no variable name in the eventVariables map) with calculated default mean/medians for numeric variables and with special values for categorical variables.</p>
+        /// <p> <b>For imported SageMaker models:</b> </p>
+        /// <p>If a null value is provided explicitly for a variable, the model and rules will use “null” as the value. If a variable is not provided (no variable name in the eventVariables map), model and rules will use the default value that is provided for the variable. </p>
         pub fn set_event_variables(
             mut self,
             input: std::option::Option<
@@ -4101,12 +4058,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetEventTypes`.
     ///
-    /// <p>Gets all event types or a specific event type if name is provided. This is a paginated API. If you
-    /// provide a null <code>maxResults</code>, this action retrieves a maximum of 10 records
-    /// per page. If you provide a <code>maxResults</code>, the value must be between 5 and 10.
-    /// To get the next page results, provide the pagination token from the
-    /// <code>GetEventTypesResponse</code> as part of your request. A null pagination token
-    /// fetches the records from the beginning. </p>
+    /// <p>Gets all event types or a specific event type if name is provided. This is a paginated API. If you provide a null <code>maxResults</code>, this action retrieves a maximum of 10 records per page. If you provide a <code>maxResults</code>, the value must be between 5 and 10. To get the next page results, provide the pagination token from the <code>GetEventTypesResponse</code> as part of your request. A null pagination token fetches the records from the beginning. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetEventTypes<
         C = aws_smithy_client::erase::DynConnector,
@@ -4196,12 +4148,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetExternalModels`.
     ///
-    /// <p>Gets the details for one or more Amazon SageMaker models that have been imported into the
-    /// service. This is a paginated API. If you provide a null <code>maxResults</code>, this
-    /// actions retrieves a maximum of 10 records per page. If you provide a
-    /// <code>maxResults</code>, the value must be between 5 and 10. To get the next page
-    /// results, provide the pagination token from the <code>GetExternalModelsResult</code> as part
-    /// of your request. A null pagination token fetches the records from the beginning. </p>
+    /// <p>Gets the details for one or more Amazon SageMaker models that have been imported into the service. This is a paginated API. If you provide a null <code>maxResults</code>, this actions retrieves a maximum of 10 records per page. If you provide a <code>maxResults</code>, the value must be between 5 and 10. To get the next page results, provide the pagination token from the <code>GetExternalModelsResult</code> as part of your request. A null pagination token fetches the records from the beginning. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetExternalModels<
         C = aws_smithy_client::erase::DynConnector,
@@ -4354,12 +4301,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetLabels`.
     ///
-    /// <p>Gets all labels or a specific label if name is provided. This is a paginated API. If you
-    /// provide a null <code>maxResults</code>, this action retrieves a maximum of 50 records
-    /// per page. If you provide a <code>maxResults</code>, the value must be between 10 and 50.
-    /// To get the next page results, provide the pagination token from the
-    /// <code>GetGetLabelsResponse</code> as part of your request. A null pagination token
-    /// fetches the records from the beginning. </p>
+    /// <p>Gets all labels or a specific label if name is provided. This is a paginated API. If you provide a null <code>maxResults</code>, this action retrieves a maximum of 50 records per page. If you provide a <code>maxResults</code>, the value must be between 10 and 50. To get the next page results, provide the pagination token from the <code>GetGetLabelsResponse</code> as part of your request. A null pagination token fetches the records from the beginning. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLabels<
         C = aws_smithy_client::erase::DynConnector,
@@ -4450,12 +4392,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetModels`.
     ///
     /// <p>Gets one or more models. Gets all models for the Amazon Web Services account if no model type and no model id provided. Gets all models for the Amazon Web Services account and model type, if the model type is specified but model id is not provided. Gets a specific model if (model type, model id) tuple is specified. </p>
-    /// <p>This is a paginated API. If you
-    /// provide a null <code>maxResults</code>, this action retrieves a maximum of 10 records
-    /// per page. If you provide a <code>maxResults</code>, the value must be between 1 and 10.
-    /// To get the next page results, provide the pagination token from the
-    /// response as part of your request. A null pagination token
-    /// fetches the records from the beginning.</p>
+    /// <p>This is a paginated API. If you provide a null <code>maxResults</code>, this action retrieves a maximum of 10 records per page. If you provide a <code>maxResults</code>, the value must be between 1 and 10. To get the next page results, provide the pagination token from the response as part of your request. A null pagination token fetches the records from the beginning.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetModels<
         C = aws_smithy_client::erase::DynConnector,
@@ -4654,12 +4591,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetOutcomes`.
     ///
-    /// <p>Gets one or more outcomes. This is a paginated
-    /// API. If you provide a null <code>maxResults</code>, this actions retrieves a maximum of
-    /// 100 records per page. If you provide a <code>maxResults</code>, the value must be
-    /// between 50 and 100. To get the next page results, provide the pagination token from the
-    /// <code>GetOutcomesResult</code> as part of your request. A null pagination token
-    /// fetches the records from the beginning. </p>
+    /// <p>Gets one or more outcomes. This is a paginated API. If you provide a null <code>maxResults</code>, this actions retrieves a maximum of 100 records per page. If you provide a <code>maxResults</code>, the value must be between 50 and 100. To get the next page results, provide the pagination token from the <code>GetOutcomesResult</code> as part of your request. A null pagination token fetches the records from the beginning. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetOutcomes<
         C = aws_smithy_client::erase::DynConnector,
@@ -4860,12 +4792,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetVariables`.
     ///
-    /// <p>Gets all of the variables or the specific variable. This is a
-    /// paginated API. Providing null <code>maxSizePerPage</code> results in retrieving maximum of
-    /// 100 records per page. If you provide <code>maxSizePerPage</code> the value must be between
-    /// 50 and 100. To get the next page result, a provide a pagination token from
-    /// <code>GetVariablesResult</code> as part of your request. Null pagination token
-    /// fetches the records from the beginning. </p>
+    /// <p>Gets all of the variables or the specific variable. This is a paginated API. Providing null <code>maxSizePerPage</code> results in retrieving maximum of 100 records per page. If you provide <code>maxSizePerPage</code> the value must be between 50 and 100. To get the next page result, a provide a pagination token from <code>GetVariablesResult</code> as part of your request. Null pagination token fetches the records from the beginning. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetVariables<
         C = aws_smithy_client::erase::DynConnector,
@@ -4955,9 +4882,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
-    /// <p>Lists all tags associated with the resource. This is a paginated API. To get the next page results, provide the pagination token from the
-    /// response as part of your request. A null pagination token
-    /// fetches the records from the beginning. </p>
+    /// <p>Lists all tags associated with the resource. This is a paginated API. To get the next page results, provide the pagination token from the response as part of your request. A null pagination token fetches the records from the beginning. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -5415,7 +5340,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutExternalModel`.
     ///
-    /// <p>Creates or updates an Amazon SageMaker model endpoint. You can also use this action to update the configuration of the model endpoint, including the IAM role and/or the mapped variables.  </p>
+    /// <p>Creates or updates an Amazon SageMaker model endpoint. You can also use this action to update the configuration of the model endpoint, including the IAM role and/or the mapped variables. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutExternalModel<
         C = aws_smithy_client::erase::DynConnector,
@@ -6342,8 +6267,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateDetectorVersionMetadata`.
     ///
-    /// <p>Updates the detector version's description. You can update the metadata for any detector version (<code>DRAFT, ACTIVE,</code> or
-    /// <code>INACTIVE</code>). </p>
+    /// <p>Updates the detector version's description. You can update the metadata for any detector version (<code>DRAFT, ACTIVE,</code> or <code>INACTIVE</code>). </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDetectorVersionMetadata<
         C = aws_smithy_client::erase::DynConnector,
@@ -6436,8 +6360,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateDetectorVersionStatus`.
     ///
-    /// <p>Updates the detector version’s status. You can perform the following promotions or
-    /// demotions using <code>UpdateDetectorVersionStatus</code>: <code>DRAFT</code> to <code>ACTIVE</code>, <code>ACTIVE</code> to <code>INACTIVE</code>, and <code>INACTIVE</code> to <code>ACTIVE</code>.</p>
+    /// <p>Updates the detector version’s status. You can perform the following promotions or demotions using <code>UpdateDetectorVersionStatus</code>: <code>DRAFT</code> to <code>ACTIVE</code>, <code>ACTIVE</code> to <code>INACTIVE</code>, and <code>INACTIVE</code> to <code>ACTIVE</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDetectorVersionStatus<
         C = aws_smithy_client::erase::DynConnector,
@@ -6877,12 +6800,8 @@ pub mod fluent_builders {
     /// <p>Updates the status of a model version.</p>
     /// <p>You can perform the following status updates:</p>
     /// <ol>
-    /// <li>
-    /// <p>Change the <code>TRAINING_COMPLETE</code> status to <code>ACTIVE</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Change <code>ACTIVE</code> to <code>INACTIVE</code>.</p>
-    /// </li>
+    /// <li> <p>Change the <code>TRAINING_COMPLETE</code> status to <code>ACTIVE</code>.</p> </li>
+    /// <li> <p>Change <code>ACTIVE</code> to <code>INACTIVE</code>.</p> </li>
     /// </ol>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateModelVersionStatus<

@@ -297,8 +297,7 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CreateReplicationSet`.
     ///
-    /// <p>A replication set replicates and encrypts your data to the provided Regions with the
-    /// provided KMS key. </p>
+    /// <p>A replication set replicates and encrypts your data to the provided Regions with the provided KMS key. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateReplicationSet<
         C = aws_smithy_client::erase::DynConnector,
@@ -359,8 +358,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_regions`](Self::set_regions).
         ///
-        /// <p>The Regions that Incident Manager replicates your data to. You can have up to three Regions
-        /// in your replication set.</p>
+        /// <p>The Regions that Incident Manager replicates your data to. You can have up to three Regions in your replication set.</p>
         pub fn regions(
             mut self,
             k: impl Into<std::string::String>,
@@ -369,8 +367,7 @@ pub mod fluent_builders {
             self.inner = self.inner.regions(k.into(), v);
             self
         }
-        /// <p>The Regions that Incident Manager replicates your data to. You can have up to three Regions
-        /// in your replication set.</p>
+        /// <p>The Regions that Incident Manager replicates your data to. You can have up to three Regions in your replication set.</p>
         pub fn set_regions(
             mut self,
             input: std::option::Option<
@@ -380,14 +377,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_regions(input);
             self
         }
-        /// <p>A token ensuring that the operation is called only once with the specified
-        /// details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A token ensuring that the operation is called only once with the specified
-        /// details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -395,9 +390,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateResponsePlan`.
     ///
-    /// <p>Creates a response plan that automates the initial response to incidents. A response
-    /// plan engages contacts, starts chat channel collaboration, and initiates runbooks at the
-    /// beginning of an incident.</p>
+    /// <p>Creates a response plan that automates the initial response to incidents. A response plan engages contacts, starts chat channel collaboration, and initiates runbooks at the beginning of an incident.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateResponsePlan<
         C = aws_smithy_client::erase::DynConnector,
@@ -454,14 +447,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A token ensuring that the operation is called only once with the specified
-        /// details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A token ensuring that the operation is called only once with the specified
-        /// details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -499,14 +490,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_incident_template(input);
             self
         }
-        /// <p>The Chatbot chat channel used for collaboration during an
-        /// incident.</p>
+        /// <p>The Chatbot chat channel used for collaboration during an incident.</p>
         pub fn chat_channel(mut self, input: crate::model::ChatChannel) -> Self {
             self.inner = self.inner.chat_channel(input);
             self
         }
-        /// <p>The Chatbot chat channel used for collaboration during an
-        /// incident.</p>
+        /// <p>The Chatbot chat channel used for collaboration during an incident.</p>
         pub fn set_chat_channel(
             mut self,
             input: std::option::Option<crate::model::ChatChannel>,
@@ -514,14 +503,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_chat_channel(input);
             self
         }
-        /// <p>The contacts and escalation plans that the response plan engages during an
-        /// incident.</p>
+        /// <p>The contacts and escalation plans that the response plan engages during an incident.</p>
         pub fn engagements(mut self, input: std::vec::Vec<std::string::String>) -> Self {
             self.inner = self.inner.engagements(input);
             self
         }
-        /// <p>The contacts and escalation plans that the response plan engages during an
-        /// incident.</p>
+        /// <p>The contacts and escalation plans that the response plan engages during an incident.</p>
         pub fn set_engagements(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -572,10 +559,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateTimelineEvent`.
     ///
-    /// <p>Creates a custom timeline event on the incident details page of an incident record.
-    /// Timeline events are automatically created by Incident Manager, marking key moment during an
-    /// incident. You can create custom timeline events to mark important events that are
-    /// automatically detected by Incident Manager.</p>
+    /// <p>Creates a custom timeline event on the incident details page of an incident record. Timeline events are automatically created by Incident Manager, marking key moment during an incident. You can create custom timeline events to mark important events that are automatically detected by Incident Manager.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTimelineEvent<
         C = aws_smithy_client::erase::DynConnector,
@@ -632,26 +616,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A token ensuring that the action is called only once with the specified
-        /// details.</p>
+        /// <p>A token ensuring that the action is called only once with the specified details.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A token ensuring that the action is called only once with the specified
-        /// details.</p>
+        /// <p>A token ensuring that the action is called only once with the specified details.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the incident record to which the event will be
-        /// added.</p>
+        /// <p>The Amazon Resource Name (ARN) of the incident record to which the event will be added.</p>
         pub fn incident_record_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.incident_record_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the incident record to which the event will be
-        /// added.</p>
+        /// <p>The Amazon Resource Name (ARN) of the incident record to which the event will be added.</p>
         pub fn set_incident_record_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -672,26 +652,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_event_time(input);
             self
         }
-        /// <p>The type of the event. You can create timeline events of type <code>Custom
-        /// Event</code>.</p>
+        /// <p>The type of the event. You can create timeline events of type <code>Custom Event</code>.</p>
         pub fn event_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.event_type(input.into());
             self
         }
-        /// <p>The type of the event. You can create timeline events of type <code>Custom
-        /// Event</code>.</p>
+        /// <p>The type of the event. You can create timeline events of type <code>Custom Event</code>.</p>
         pub fn set_event_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_event_type(input);
             self
         }
-        /// <p>A short description of the event as a valid JSON string. There is no other schema
-        /// imposed.</p>
+        /// <p>A short description of the event as a valid JSON string. There is no other schema imposed.</p>
         pub fn event_data(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.event_data(input.into());
             self
         }
-        /// <p>A short description of the event as a valid JSON string. There is no other schema
-        /// imposed.</p>
+        /// <p>A short description of the event as a valid JSON string. There is no other schema imposed.</p>
         pub fn set_event_data(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_event_data(input);
             self
@@ -769,8 +745,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteReplicationSet`.
     ///
-    /// <p>Deletes all Regions in your replication set. Deleting the replication set deletes all
-    /// Incident Manager data.</p>
+    /// <p>Deletes all Regions in your replication set. Deleting the replication set deletes all Incident Manager data.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteReplicationSet<
         C = aws_smithy_client::erase::DynConnector,
@@ -840,8 +815,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteResourcePolicy`.
     ///
-    /// <p>Deletes the resource policy that Resource Access Manager uses to share your Incident Manager
-    /// resource.</p>
+    /// <p>Deletes the resource policy that Resource Access Manager uses to share your Incident Manager resource.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteResourcePolicy<
         C = aws_smithy_client::erase::DynConnector,
@@ -921,8 +895,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteResponsePlan`.
     ///
-    /// <p>Deletes the specified response plan. Deleting a response plan stops all linked CloudWatch alarms and EventBridge events from creating an incident with this
-    /// response plan.</p>
+    /// <p>Deletes the specified response plan. Deleting a response plan stops all linked CloudWatch alarms and EventBridge events from creating an incident with this response plan.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteResponsePlan<
         C = aws_smithy_client::erase::DynConnector,
@@ -1049,14 +1022,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline
-        /// event.</p>
+        /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
         pub fn incident_record_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.incident_record_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline
-        /// event.</p>
+        /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
         pub fn set_incident_record_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1064,14 +1035,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_incident_record_arn(input);
             self
         }
-        /// <p>The ID of the event you are updating. You can find this by using
-        /// <code>ListTimelineEvents</code>.</p>
+        /// <p>The ID of the event you are updating. You can find this by using <code>ListTimelineEvents</code>.</p>
         pub fn event_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.event_id(input.into());
             self
         }
-        /// <p>The ID of the event you are updating. You can find this by using
-        /// <code>ListTimelineEvents</code>.</p>
+        /// <p>The ID of the event you are updating. You can find this by using <code>ListTimelineEvents</code>.</p>
         pub fn set_event_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_event_id(input);
             self
@@ -1436,14 +1405,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline
-        /// event.</p>
+        /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
         pub fn incident_record_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.incident_record_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline
-        /// event.</p>
+        /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
         pub fn set_incident_record_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1451,14 +1418,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_incident_record_arn(input);
             self
         }
-        /// <p>The ID of the event. You can get an event's ID when you create it, or by using
-        /// <code>ListTimelineEvents</code>.</p>
+        /// <p>The ID of the event. You can get an event's ID when you create it, or by using <code>ListTimelineEvents</code>.</p>
         pub fn event_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.event_id(input.into());
             self
         }
-        /// <p>The ID of the event. You can get an event's ID when you create it, or by using
-        /// <code>ListTimelineEvents</code>.</p>
+        /// <p>The ID of the event. You can get an event's ID when you create it, or by using <code>ListTimelineEvents</code>.</p>
         pub fn set_event_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_event_id(input);
             self
@@ -1466,8 +1431,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListIncidentRecords`.
     ///
-    /// <p>Lists all incident records in your account. Use this command to retrieve the Amazon
-    /// Resource Name (ARN) of the incident record you want to update. </p>
+    /// <p>Lists all incident records in your account. Use this command to retrieve the Amazon Resource Name (ARN) of the incident record you want to update. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListIncidentRecords<
         C = aws_smithy_client::erase::DynConnector,
@@ -1528,87 +1492,35 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Filters the list of incident records through which you are searching. You can filter
-        /// on the following keys:</p>
+        /// <p>Filters the list of incident records through which you are searching. You can filter on the following keys:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>creationTime</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>impact</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>status</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>createdBy</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>creationTime</code> </p> </li>
+        /// <li> <p> <code>impact</code> </p> </li>
+        /// <li> <p> <code>status</code> </p> </li>
+        /// <li> <p> <code>createdBy</code> </p> </li>
         /// </ul>
         /// <p>Note the following when deciding how to use Filters:</p>
         /// <ul>
-        /// <li>
-        /// <p>If you don't specify a Filter, the response includes all incident
-        /// records.</p>
-        /// </li>
-        /// <li>
-        /// <p>If you specify more than one filter in a single request, the response returns
-        /// incident records that match all filters.</p>
-        /// </li>
-        /// <li>
-        /// <p>If you specify a filter with more than one value, the response returns
-        /// incident records that match any of the values provided.</p>
-        /// </li>
+        /// <li> <p>If you don't specify a Filter, the response includes all incident records.</p> </li>
+        /// <li> <p>If you specify more than one filter in a single request, the response returns incident records that match all filters.</p> </li>
+        /// <li> <p>If you specify a filter with more than one value, the response returns incident records that match any of the values provided.</p> </li>
         /// </ul>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             self.inner = self.inner.filters(input);
             self
         }
-        /// <p>Filters the list of incident records through which you are searching. You can filter
-        /// on the following keys:</p>
+        /// <p>Filters the list of incident records through which you are searching. You can filter on the following keys:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>creationTime</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>impact</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>status</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>createdBy</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>creationTime</code> </p> </li>
+        /// <li> <p> <code>impact</code> </p> </li>
+        /// <li> <p> <code>status</code> </p> </li>
+        /// <li> <p> <code>createdBy</code> </p> </li>
         /// </ul>
         /// <p>Note the following when deciding how to use Filters:</p>
         /// <ul>
-        /// <li>
-        /// <p>If you don't specify a Filter, the response includes all incident
-        /// records.</p>
-        /// </li>
-        /// <li>
-        /// <p>If you specify more than one filter in a single request, the response returns
-        /// incident records that match all filters.</p>
-        /// </li>
-        /// <li>
-        /// <p>If you specify a filter with more than one value, the response returns
-        /// incident records that match any of the values provided.</p>
-        /// </li>
+        /// <li> <p>If you don't specify a Filter, the response includes all incident records.</p> </li>
+        /// <li> <p>If you specify more than one filter in a single request, the response returns incident records that match all filters.</p> </li>
+        /// <li> <p>If you specify a filter with more than one value, the response returns incident records that match any of the values provided.</p> </li>
         /// </ul>
         pub fn set_filters(
             mut self,
@@ -1697,14 +1609,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the incident record containing the listed related
-        /// items.</p>
+        /// <p>The Amazon Resource Name (ARN) of the incident record containing the listed related items.</p>
         pub fn incident_record_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.incident_record_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the incident record containing the listed related
-        /// items.</p>
+        /// <p>The Amazon Resource Name (ARN) of the incident record containing the listed related items.</p>
         pub fn set_incident_record_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2022,14 +1932,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline
-        /// event.</p>
+        /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
         pub fn incident_record_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.incident_record_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline
-        /// event.</p>
+        /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
         pub fn set_incident_record_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2041,67 +1949,31 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Filters the timeline events based on the provided conditional values. You can filter
-        /// timeline events using the following keys:</p>
+        /// <p>Filters the timeline events based on the provided conditional values. You can filter timeline events using the following keys:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>eventTime</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>eventType</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>eventTime</code> </p> </li>
+        /// <li> <p> <code>eventType</code> </p> </li>
         /// </ul>
         /// <p>Note the following when deciding how to use Filters:</p>
         /// <ul>
-        /// <li>
-        /// <p>If you don't specify a Filter, the response includes all timeline
-        /// events.</p>
-        /// </li>
-        /// <li>
-        /// <p>If you specify more than one filter in a single request, the response returns
-        /// timeline events that match all filters.</p>
-        /// </li>
-        /// <li>
-        /// <p>If you specify a filter with more than one value, the response returns
-        /// timeline events that match any of the values provided.</p>
-        /// </li>
+        /// <li> <p>If you don't specify a Filter, the response includes all timeline events.</p> </li>
+        /// <li> <p>If you specify more than one filter in a single request, the response returns timeline events that match all filters.</p> </li>
+        /// <li> <p>If you specify a filter with more than one value, the response returns timeline events that match any of the values provided.</p> </li>
         /// </ul>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             self.inner = self.inner.filters(input);
             self
         }
-        /// <p>Filters the timeline events based on the provided conditional values. You can filter
-        /// timeline events using the following keys:</p>
+        /// <p>Filters the timeline events based on the provided conditional values. You can filter timeline events using the following keys:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>eventTime</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>eventType</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>eventTime</code> </p> </li>
+        /// <li> <p> <code>eventType</code> </p> </li>
         /// </ul>
         /// <p>Note the following when deciding how to use Filters:</p>
         /// <ul>
-        /// <li>
-        /// <p>If you don't specify a Filter, the response includes all timeline
-        /// events.</p>
-        /// </li>
-        /// <li>
-        /// <p>If you specify more than one filter in a single request, the response returns
-        /// timeline events that match all filters.</p>
-        /// </li>
-        /// <li>
-        /// <p>If you specify a filter with more than one value, the response returns
-        /// timeline events that match any of the values provided.</p>
-        /// </li>
+        /// <li> <p>If you don't specify a Filter, the response includes all timeline events.</p> </li>
+        /// <li> <p>If you specify more than one filter in a single request, the response returns timeline events that match all filters.</p> </li>
+        /// <li> <p>If you specify a filter with more than one value, the response returns timeline events that match any of the values provided.</p> </li>
         /// </ul>
         pub fn set_filters(
             mut self,
@@ -2123,14 +1995,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sort_by(input);
             self
         }
-        /// <p>Sorts the order of timeline events by the value specified in the <code>sortBy</code>
-        /// field.</p>
+        /// <p>Sorts the order of timeline events by the value specified in the <code>sortBy</code> field.</p>
         pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
             self.inner = self.inner.sort_order(input);
             self
         }
-        /// <p>Sorts the order of timeline events by the value specified in the <code>sortBy</code>
-        /// field.</p>
+        /// <p>Sorts the order of timeline events by the value specified in the <code>sortBy</code> field.</p>
         pub fn set_sort_order(
             mut self,
             input: std::option::Option<crate::model::SortOrder>,
@@ -2218,14 +2088,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the response plan you're adding the resource policy
-        /// to.</p>
+        /// <p>The Amazon Resource Name (ARN) of the response plan you're adding the resource policy to.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the response plan you're adding the resource policy
-        /// to.</p>
+        /// <p>The Amazon Resource Name (ARN) of the response plan you're adding the resource policy to.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -2243,8 +2111,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartIncident`.
     ///
-    /// <p>Used to start an incident from CloudWatch alarms, EventBridge events, or
-    /// manually. </p>
+    /// <p>Used to start an incident from CloudWatch alarms, EventBridge events, or manually. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartIncident<
         C = aws_smithy_client::erase::DynConnector,
@@ -2301,26 +2168,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A token ensuring that the operation is called only once with the specified
-        /// details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A token ensuring that the operation is called only once with the specified
-        /// details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the response plan that pre-defines summary, chat
-        /// channels, Amazon SNS topics, runbooks, title, and impact of the incident. </p>
+        /// <p>The Amazon Resource Name (ARN) of the response plan that pre-defines summary, chat channels, Amazon SNS topics, runbooks, title, and impact of the incident. </p>
         pub fn response_plan_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.response_plan_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the response plan that pre-defines summary, chat
-        /// channels, Amazon SNS topics, runbooks, title, and impact of the incident. </p>
+        /// <p>The Amazon Resource Name (ARN) of the response plan that pre-defines summary, chat channels, Amazon SNS topics, runbooks, title, and impact of the incident. </p>
         pub fn set_response_plan_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2328,85 +2191,37 @@ pub mod fluent_builders {
             self.inner = self.inner.set_response_plan_arn(input);
             self
         }
-        /// <p>Provide a title for the incident. Providing a title overwrites the title provided by
-        /// the response plan. </p>
+        /// <p>Provide a title for the incident. Providing a title overwrites the title provided by the response plan. </p>
         pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.title(input.into());
             self
         }
-        /// <p>Provide a title for the incident. Providing a title overwrites the title provided by
-        /// the response plan. </p>
+        /// <p>Provide a title for the incident. Providing a title overwrites the title provided by the response plan. </p>
         pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_title(input);
             self
         }
-        /// <p>Defines the impact to the customers. Providing an impact overwrites the impact
-        /// provided by a response plan.</p>
-        /// <p class="title">
-        /// <b>Possible impacts:</b>
-        /// </p>
+        /// <p>Defines the impact to the customers. Providing an impact overwrites the impact provided by a response plan.</p>
+        /// <p class="title"> <b>Possible impacts:</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>1</code> - Critical impact, this typically relates to full application
-        /// failure that impacts many to all customers. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>2</code> - High impact, partial application failure with impact to many
-        /// customers.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>3</code> -  Medium impact, the application is providing reduced service
-        /// to customers.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>4</code> -  Low impact, customer might aren't impacted by the problem
-        /// yet.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>5</code> - No impact, customers aren't currently impacted but urgent
-        /// action is needed to avoid impact.</p>
-        /// </li>
+        /// <li> <p> <code>1</code> - Critical impact, this typically relates to full application failure that impacts many to all customers. </p> </li>
+        /// <li> <p> <code>2</code> - High impact, partial application failure with impact to many customers.</p> </li>
+        /// <li> <p> <code>3</code> - Medium impact, the application is providing reduced service to customers.</p> </li>
+        /// <li> <p> <code>4</code> - Low impact, customer might aren't impacted by the problem yet.</p> </li>
+        /// <li> <p> <code>5</code> - No impact, customers aren't currently impacted but urgent action is needed to avoid impact.</p> </li>
         /// </ul>
         pub fn impact(mut self, input: i32) -> Self {
             self.inner = self.inner.impact(input);
             self
         }
-        /// <p>Defines the impact to the customers. Providing an impact overwrites the impact
-        /// provided by a response plan.</p>
-        /// <p class="title">
-        /// <b>Possible impacts:</b>
-        /// </p>
+        /// <p>Defines the impact to the customers. Providing an impact overwrites the impact provided by a response plan.</p>
+        /// <p class="title"> <b>Possible impacts:</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>1</code> - Critical impact, this typically relates to full application
-        /// failure that impacts many to all customers. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>2</code> - High impact, partial application failure with impact to many
-        /// customers.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>3</code> -  Medium impact, the application is providing reduced service
-        /// to customers.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>4</code> -  Low impact, customer might aren't impacted by the problem
-        /// yet.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>5</code> - No impact, customers aren't currently impacted but urgent
-        /// action is needed to avoid impact.</p>
-        /// </li>
+        /// <li> <p> <code>1</code> - Critical impact, this typically relates to full application failure that impacts many to all customers. </p> </li>
+        /// <li> <p> <code>2</code> - High impact, partial application failure with impact to many customers.</p> </li>
+        /// <li> <p> <code>3</code> - Medium impact, the application is providing reduced service to customers.</p> </li>
+        /// <li> <p> <code>4</code> - Low impact, customer might aren't impacted by the problem yet.</p> </li>
+        /// <li> <p> <code>5</code> - No impact, customers aren't currently impacted but urgent action is needed to avoid impact.</p> </li>
         /// </ul>
         pub fn set_impact(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_impact(input);
@@ -2429,14 +2244,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_related_items`](Self::set_related_items).
         ///
-        /// <p>Add related items to the incident for other responders to use. Related items are AWS
-        /// resources, external links, or files uploaded to an Amazon S3 bucket. </p>
+        /// <p>Add related items to the incident for other responders to use. Related items are AWS resources, external links, or files uploaded to an Amazon S3 bucket. </p>
         pub fn related_items(mut self, input: crate::model::RelatedItem) -> Self {
             self.inner = self.inner.related_items(input);
             self
         }
-        /// <p>Add related items to the incident for other responders to use. Related items are AWS
-        /// resources, external links, or files uploaded to an Amazon S3 bucket. </p>
+        /// <p>Add related items to the incident for other responders to use. Related items are AWS resources, external links, or files uploaded to an Amazon S3 bucket. </p>
         pub fn set_related_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RelatedItem>>,
@@ -2627,8 +2440,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateDeletionProtection`.
     ///
-    /// <p>Update deletion protection to either allow or deny deletion of the final Region in a
-    /// replication set.</p>
+    /// <p>Update deletion protection to either allow or deny deletion of the final Region in a replication set.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDeletionProtection<
         C = aws_smithy_client::erase::DynConnector,
@@ -2705,14 +2517,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_deletion_protected(input);
             self
         }
-        /// <p>A token ensuring that the operation is called only once with the specified
-        /// details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A token ensuring that the operation is called only once with the specified
-        /// details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -2720,9 +2530,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateIncidentRecord`.
     ///
-    /// <p>Update the details of an incident record. You can use this operation to update an
-    /// incident record from the defined chat channel. For more information about using actions
-    /// in chat channels, see <a href="https://docs.aws.amazon.com/incident-manager/latest/userguide/chat.html#chat-interact">Interacting through chat</a>.</p>
+    /// <p>Update the details of an incident record. You can use this operation to update an incident record from the defined chat channel. For more information about using actions in chat channels, see <a href="https://docs.aws.amazon.com/incident-manager/latest/userguide/chat.html#chat-interact">Interacting through chat</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateIncidentRecord<
         C = aws_smithy_client::erase::DynConnector,
@@ -2779,14 +2587,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A token that ensures that the operation is called only once with the specified
-        /// details.</p>
+        /// <p>A token that ensures that the operation is called only once with the specified details.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A token that ensures that the operation is called only once with the specified
-        /// details.</p>
+        /// <p>A token that ensures that the operation is called only once with the specified details.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -2821,86 +2627,38 @@ pub mod fluent_builders {
             self.inner = self.inner.set_summary(input);
             self
         }
-        /// <p>Defines the impact of the incident to customers and applications. Providing an impact
-        /// overwrites the impact provided by the response plan.</p>
-        /// <p class="title">
-        /// <b>Possible impacts:</b>
-        /// </p>
+        /// <p>Defines the impact of the incident to customers and applications. Providing an impact overwrites the impact provided by the response plan.</p>
+        /// <p class="title"> <b>Possible impacts:</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>1</code> - Critical impact, full application failure that impacts many
-        /// to all customers. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>2</code> - High impact, partial application failure with impact to many
-        /// customers.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>3</code> - Medium impact, the application is providing reduced service
-        /// to customers.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>4</code> - Low impact, customer aren't impacted by the problem
-        /// yet.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>5</code> - No impact, customers aren't currently impacted but urgent
-        /// action is needed to avoid impact.</p>
-        /// </li>
+        /// <li> <p> <code>1</code> - Critical impact, full application failure that impacts many to all customers. </p> </li>
+        /// <li> <p> <code>2</code> - High impact, partial application failure with impact to many customers.</p> </li>
+        /// <li> <p> <code>3</code> - Medium impact, the application is providing reduced service to customers.</p> </li>
+        /// <li> <p> <code>4</code> - Low impact, customer aren't impacted by the problem yet.</p> </li>
+        /// <li> <p> <code>5</code> - No impact, customers aren't currently impacted but urgent action is needed to avoid impact.</p> </li>
         /// </ul>
         pub fn impact(mut self, input: i32) -> Self {
             self.inner = self.inner.impact(input);
             self
         }
-        /// <p>Defines the impact of the incident to customers and applications. Providing an impact
-        /// overwrites the impact provided by the response plan.</p>
-        /// <p class="title">
-        /// <b>Possible impacts:</b>
-        /// </p>
+        /// <p>Defines the impact of the incident to customers and applications. Providing an impact overwrites the impact provided by the response plan.</p>
+        /// <p class="title"> <b>Possible impacts:</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>1</code> - Critical impact, full application failure that impacts many
-        /// to all customers. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>2</code> - High impact, partial application failure with impact to many
-        /// customers.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>3</code> - Medium impact, the application is providing reduced service
-        /// to customers.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>4</code> - Low impact, customer aren't impacted by the problem
-        /// yet.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>5</code> - No impact, customers aren't currently impacted but urgent
-        /// action is needed to avoid impact.</p>
-        /// </li>
+        /// <li> <p> <code>1</code> - Critical impact, full application failure that impacts many to all customers. </p> </li>
+        /// <li> <p> <code>2</code> - High impact, partial application failure with impact to many customers.</p> </li>
+        /// <li> <p> <code>3</code> - Medium impact, the application is providing reduced service to customers.</p> </li>
+        /// <li> <p> <code>4</code> - Low impact, customer aren't impacted by the problem yet.</p> </li>
+        /// <li> <p> <code>5</code> - No impact, customers aren't currently impacted but urgent action is needed to avoid impact.</p> </li>
         /// </ul>
         pub fn set_impact(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_impact(input);
             self
         }
-        /// <p>The status of the incident. An incident can be <code>Open</code> or
-        /// <code>Resolved</code>.</p>
+        /// <p>The status of the incident. An incident can be <code>Open</code> or <code>Resolved</code>.</p>
         pub fn status(mut self, input: crate::model::IncidentRecordStatus) -> Self {
             self.inner = self.inner.status(input);
             self
         }
-        /// <p>The status of the incident. An incident can be <code>Open</code> or
-        /// <code>Resolved</code>.</p>
+        /// <p>The status of the incident. An incident can be <code>Open</code> or <code>Resolved</code>.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::IncidentRecordStatus>,
@@ -2925,18 +2683,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_notification_targets`](Self::set_notification_targets).
         ///
-        /// <p>The Amazon SNS targets that are notified when updates are made to an
-        /// incident.</p>
-        /// <p>Using multiple SNS topics creates redundancy in the event that a Region is down during
-        /// the incident.</p>
+        /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
+        /// <p>Using multiple SNS topics creates redundancy in the event that a Region is down during the incident.</p>
         pub fn notification_targets(mut self, input: crate::model::NotificationTargetItem) -> Self {
             self.inner = self.inner.notification_targets(input);
             self
         }
-        /// <p>The Amazon SNS targets that are notified when updates are made to an
-        /// incident.</p>
-        /// <p>Using multiple SNS topics creates redundancy in the event that a Region is down during
-        /// the incident.</p>
+        /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
+        /// <p>Using multiple SNS topics creates redundancy in the event that a Region is down during the incident.</p>
         pub fn set_notification_targets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::NotificationTargetItem>>,
@@ -3004,26 +2758,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A token ensuring that the operation is called only once with the specified
-        /// details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A token ensuring that the operation is called only once with the specified
-        /// details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the incident record containing the related items you
-        /// are updating.</p>
+        /// <p>The Amazon Resource Name (ARN) of the incident record containing the related items you are updating.</p>
         pub fn incident_record_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.incident_record_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the incident record containing the related items you
-        /// are updating.</p>
+        /// <p>The Amazon Resource Name (ARN) of the incident record containing the related items you are updating.</p>
         pub fn set_incident_record_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3131,14 +2881,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_actions(input);
             self
         }
-        /// <p>A token ensuring that the operation is called only once with the specified
-        /// details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A token ensuring that the operation is called only once with the specified
-        /// details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -3203,14 +2951,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A token ensuring that the operation is called only once with the specified
-        /// details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A token ensuring that the operation is called only once with the specified
-        /// details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -3225,14 +2971,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_arn(input);
             self
         }
-        /// <p>The long format name of the response plan. The display name can't contain
-        /// spaces.</p>
+        /// <p>The long format name of the response plan. The display name can't contain spaces.</p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.display_name(input.into());
             self
         }
-        /// <p>The long format name of the response plan. The display name can't contain
-        /// spaces.</p>
+        /// <p>The long format name of the response plan. The display name can't contain spaces.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_display_name(input);
             self
@@ -3250,76 +2994,38 @@ pub mod fluent_builders {
             self.inner = self.inner.set_incident_template_title(input);
             self
         }
-        /// <p>Defines the impact to the customers. Providing an impact overwrites the impact
-        /// provided by a response plan.</p>
-        /// <p class="title">
-        /// <b>Possible impacts:</b>
-        /// </p>
+        /// <p>Defines the impact to the customers. Providing an impact overwrites the impact provided by a response plan.</p>
+        /// <p class="title"> <b>Possible impacts:</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>5</code> - Severe impact</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>4</code> - High impact</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>3</code> - Medium impact</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>2</code> - Low impact</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>1</code> - No impact</p>
-        /// </li>
+        /// <li> <p> <code>5</code> - Severe impact</p> </li>
+        /// <li> <p> <code>4</code> - High impact</p> </li>
+        /// <li> <p> <code>3</code> - Medium impact</p> </li>
+        /// <li> <p> <code>2</code> - Low impact</p> </li>
+        /// <li> <p> <code>1</code> - No impact</p> </li>
         /// </ul>
         pub fn incident_template_impact(mut self, input: i32) -> Self {
             self.inner = self.inner.incident_template_impact(input);
             self
         }
-        /// <p>Defines the impact to the customers. Providing an impact overwrites the impact
-        /// provided by a response plan.</p>
-        /// <p class="title">
-        /// <b>Possible impacts:</b>
-        /// </p>
+        /// <p>Defines the impact to the customers. Providing an impact overwrites the impact provided by a response plan.</p>
+        /// <p class="title"> <b>Possible impacts:</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>5</code> - Severe impact</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>4</code> - High impact</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>3</code> - Medium impact</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>2</code> - Low impact</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>1</code> - No impact</p>
-        /// </li>
+        /// <li> <p> <code>5</code> - Severe impact</p> </li>
+        /// <li> <p> <code>4</code> - High impact</p> </li>
+        /// <li> <p> <code>3</code> - Medium impact</p> </li>
+        /// <li> <p> <code>2</code> - Low impact</p> </li>
+        /// <li> <p> <code>1</code> - No impact</p> </li>
         /// </ul>
         pub fn set_incident_template_impact(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_incident_template_impact(input);
             self
         }
-        /// <p>A brief summary of the incident. This typically contains what has happened, what's
-        /// currently happening, and next steps.</p>
+        /// <p>A brief summary of the incident. This typically contains what has happened, what's currently happening, and next steps.</p>
         pub fn incident_template_summary(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.incident_template_summary(input.into());
             self
         }
-        /// <p>A brief summary of the incident. This typically contains what has happened, what's
-        /// currently happening, and next steps.</p>
+        /// <p>A brief summary of the incident. This typically contains what has happened, what's currently happening, and next steps.</p>
         pub fn set_incident_template_summary(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3327,8 +3033,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_incident_template_summary(input);
             self
         }
-        /// <p>The string Incident Manager uses to prevent duplicate incidents from being created by the
-        /// same incident in the same account.</p>
+        /// <p>The string Incident Manager uses to prevent duplicate incidents from being created by the same incident in the same account.</p>
         pub fn incident_template_dedupe_string(
             mut self,
             input: impl Into<std::string::String>,
@@ -3336,8 +3041,7 @@ pub mod fluent_builders {
             self.inner = self.inner.incident_template_dedupe_string(input.into());
             self
         }
-        /// <p>The string Incident Manager uses to prevent duplicate incidents from being created by the
-        /// same incident in the same account.</p>
+        /// <p>The string Incident Manager uses to prevent duplicate incidents from being created by the same incident in the same account.</p>
         pub fn set_incident_template_dedupe_string(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3349,8 +3053,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_incident_template_notification_targets`](Self::set_incident_template_notification_targets).
         ///
-        /// <p>The Amazon SNS targets that are notified when updates are made to an
-        /// incident.</p>
+        /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
         pub fn incident_template_notification_targets(
             mut self,
             input: crate::model::NotificationTargetItem,
@@ -3358,8 +3061,7 @@ pub mod fluent_builders {
             self.inner = self.inner.incident_template_notification_targets(input);
             self
         }
-        /// <p>The Amazon SNS targets that are notified when updates are made to an
-        /// incident.</p>
+        /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
         pub fn set_incident_template_notification_targets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::NotificationTargetItem>>,
@@ -3367,15 +3069,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_incident_template_notification_targets(input);
             self
         }
-        /// <p>The Chatbot chat channel used for collaboration during an
-        /// incident.</p>
+        /// <p>The Chatbot chat channel used for collaboration during an incident.</p>
         /// <p>Use the empty structure to remove the chat channel from the response plan.</p>
         pub fn chat_channel(mut self, input: crate::model::ChatChannel) -> Self {
             self.inner = self.inner.chat_channel(input);
             self
         }
-        /// <p>The Chatbot chat channel used for collaboration during an
-        /// incident.</p>
+        /// <p>The Chatbot chat channel used for collaboration during an incident.</p>
         /// <p>Use the empty structure to remove the chat channel from the response plan.</p>
         pub fn set_chat_channel(
             mut self,
@@ -3417,8 +3117,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateTimelineEvent`.
     ///
-    /// <p>Updates a timeline event. You can update events of type <code>Custom
-    /// Event</code>.</p>
+    /// <p>Updates a timeline event. You can update events of type <code>Custom Event</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateTimelineEvent<
         C = aws_smithy_client::erase::DynConnector,
@@ -3475,26 +3174,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A token ensuring that the operation is called only once with the specified
-        /// details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A token ensuring that the operation is called only once with the specified
-        /// details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline
-        /// event.</p>
+        /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
         pub fn incident_record_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.incident_record_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline
-        /// event.</p>
+        /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
         pub fn set_incident_record_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3502,14 +3197,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_incident_record_arn(input);
             self
         }
-        /// <p>The ID of the event you are updating. You can find this by using
-        /// <code>ListTimelineEvents</code>.</p>
+        /// <p>The ID of the event you are updating. You can find this by using <code>ListTimelineEvents</code>.</p>
         pub fn event_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.event_id(input.into());
             self
         }
-        /// <p>The ID of the event you are updating. You can find this by using
-        /// <code>ListTimelineEvents</code>.</p>
+        /// <p>The ID of the event you are updating. You can find this by using <code>ListTimelineEvents</code>.</p>
         pub fn set_event_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_event_id(input);
             self

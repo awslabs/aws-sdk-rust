@@ -1308,11 +1308,9 @@ impl StartContactRecordingOutput {
 pub struct StartChatContactOutput {
     /// <p>The identifier of this contact within the Amazon Connect instance. </p>
     pub contact_id: std::option::Option<std::string::String>,
-    /// <p>The identifier for a chat participant. The participantId for a chat participant is the same
-    /// throughout the chat lifecycle.</p>
+    /// <p>The identifier for a chat participant. The participantId for a chat participant is the same throughout the chat lifecycle.</p>
     pub participant_id: std::option::Option<std::string::String>,
-    /// <p>The token used by the chat participant to call <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>. The participant token is valid for the lifetime of a chat
-    /// participant.</p>
+    /// <p>The token used by the chat participant to call <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>. The participant token is valid for the lifetime of a chat participant.</p>
     pub participant_token: std::option::Option<std::string::String>,
 }
 impl StartChatContactOutput {
@@ -1320,13 +1318,11 @@ impl StartChatContactOutput {
     pub fn contact_id(&self) -> std::option::Option<&str> {
         self.contact_id.as_deref()
     }
-    /// <p>The identifier for a chat participant. The participantId for a chat participant is the same
-    /// throughout the chat lifecycle.</p>
+    /// <p>The identifier for a chat participant. The participantId for a chat participant is the same throughout the chat lifecycle.</p>
     pub fn participant_id(&self) -> std::option::Option<&str> {
         self.participant_id.as_deref()
     }
-    /// <p>The token used by the chat participant to call <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>. The participant token is valid for the lifetime of a chat
-    /// participant.</p>
+    /// <p>The token used by the chat participant to call <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>. The participant token is valid for the lifetime of a chat participant.</p>
     pub fn participant_token(&self) -> std::option::Option<&str> {
         self.participant_token.as_deref()
     }
@@ -1361,14 +1357,12 @@ pub mod start_chat_contact_output {
             self.contact_id = input;
             self
         }
-        /// <p>The identifier for a chat participant. The participantId for a chat participant is the same
-        /// throughout the chat lifecycle.</p>
+        /// <p>The identifier for a chat participant. The participantId for a chat participant is the same throughout the chat lifecycle.</p>
         pub fn participant_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.participant_id = Some(input.into());
             self
         }
-        /// <p>The identifier for a chat participant. The participantId for a chat participant is the same
-        /// throughout the chat lifecycle.</p>
+        /// <p>The identifier for a chat participant. The participantId for a chat participant is the same throughout the chat lifecycle.</p>
         pub fn set_participant_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1376,14 +1370,12 @@ pub mod start_chat_contact_output {
             self.participant_id = input;
             self
         }
-        /// <p>The token used by the chat participant to call <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>. The participant token is valid for the lifetime of a chat
-        /// participant.</p>
+        /// <p>The token used by the chat participant to call <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>. The participant token is valid for the lifetime of a chat participant.</p>
         pub fn participant_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.participant_token = Some(input.into());
             self
         }
-        /// <p>The token used by the chat participant to call <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>. The participant token is valid for the lifetime of a chat
-        /// participant.</p>
+        /// <p>The token used by the chat participant to call <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>. The participant token is valid for the lifetime of a chat participant.</p>
         pub fn set_participant_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3255,8 +3247,7 @@ impl ListHoursOfOperationsOutput {
 pub struct ListContactReferencesOutput {
     /// <p>Information about the contact flows.</p>
     pub reference_summary_list: std::option::Option<std::vec::Vec<crate::model::ReferenceSummary>>,
-    /// <p>If there are additional results, this is the token for the next set of results.</p>
-    /// <important>
+    /// <p>If there are additional results, this is the token for the next set of results.</p> <important>
     /// <p>This is always returned as null in the response.</p>
     /// </important>
     pub next_token: std::option::Option<std::string::String>,
@@ -3266,8 +3257,7 @@ impl ListContactReferencesOutput {
     pub fn reference_summary_list(&self) -> std::option::Option<&[crate::model::ReferenceSummary]> {
         self.reference_summary_list.as_deref()
     }
-    /// <p>If there are additional results, this is the token for the next set of results.</p>
-    /// <important>
+    /// <p>If there are additional results, this is the token for the next set of results.</p> <important>
     /// <p>This is always returned as null in the response.</p>
     /// </important>
     pub fn next_token(&self) -> std::option::Option<&str> {
@@ -3312,16 +3302,14 @@ pub mod list_contact_references_output {
             self.reference_summary_list = input;
             self
         }
-        /// <p>If there are additional results, this is the token for the next set of results.</p>
-        /// <important>
+        /// <p>If there are additional results, this is the token for the next set of results.</p> <important>
         /// <p>This is always returned as null in the response.</p>
         /// </important>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If there are additional results, this is the token for the next set of results.</p>
-        /// <important>
+        /// <p>If there are additional results, this is the token for the next set of results.</p> <important>
         /// <p>This is always returned as null in the response.</p>
         /// </important>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -3529,15 +3517,13 @@ impl ListContactFlowModulesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBotsOutput {
-    /// <p>The names and Regions of the Amazon Lex or Amazon Lex V2 bots associated with the specified
-    /// instance.</p>
+    /// <p>The names and Regions of the Amazon Lex or Amazon Lex V2 bots associated with the specified instance.</p>
     pub lex_bots: std::option::Option<std::vec::Vec<crate::model::LexBotConfig>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListBotsOutput {
-    /// <p>The names and Regions of the Amazon Lex or Amazon Lex V2 bots associated with the specified
-    /// instance.</p>
+    /// <p>The names and Regions of the Amazon Lex or Amazon Lex V2 bots associated with the specified instance.</p>
     pub fn lex_bots(&self) -> std::option::Option<&[crate::model::LexBotConfig]> {
         self.lex_bots.as_deref()
     }
@@ -3568,16 +3554,14 @@ pub mod list_bots_output {
         ///
         /// To override the contents of this collection use [`set_lex_bots`](Self::set_lex_bots).
         ///
-        /// <p>The names and Regions of the Amazon Lex or Amazon Lex V2 bots associated with the specified
-        /// instance.</p>
+        /// <p>The names and Regions of the Amazon Lex or Amazon Lex V2 bots associated with the specified instance.</p>
         pub fn lex_bots(mut self, input: crate::model::LexBotConfig) -> Self {
             let mut v = self.lex_bots.unwrap_or_default();
             v.push(input);
             self.lex_bots = Some(v);
             self
         }
-        /// <p>The names and Regions of the Amazon Lex or Amazon Lex V2 bots associated with the specified
-        /// instance.</p>
+        /// <p>The names and Regions of the Amazon Lex or Amazon Lex V2 bots associated with the specified instance.</p>
         pub fn set_lex_bots(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LexBotConfig>>,
@@ -3787,8 +3771,7 @@ impl ListAgentStatusesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMetricDataOutput {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
-    /// <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use
-    /// the token must use the same request parameters as the request that generated the token.</p>
+    /// <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use the token must use the same request parameters as the request that generated the token.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Information about the historical metrics.</p>
     /// <p>If no grouping is specified, a summary of metric data is returned.</p>
@@ -3796,8 +3779,7 @@ pub struct GetMetricDataOutput {
 }
 impl GetMetricDataOutput {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
-    /// <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use
-    /// the token must use the same request parameters as the request that generated the token.</p>
+    /// <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use the token must use the same request parameters as the request that generated the token.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3827,15 +3809,13 @@ pub mod get_metric_data_output {
     }
     impl Builder {
         /// <p>If there are additional results, this is the token for the next set of results.</p>
-        /// <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use
-        /// the token must use the same request parameters as the request that generated the token.</p>
+        /// <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use the token must use the same request parameters as the request that generated the token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
         /// <p>If there are additional results, this is the token for the next set of results.</p>
-        /// <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use
-        /// the token must use the same request parameters as the request that generated the token.</p>
+        /// <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use the token must use the same request parameters as the request that generated the token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3939,8 +3919,7 @@ impl GetFederationTokenOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCurrentMetricDataOutput {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
-    /// <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use
-    /// the token must use the same request parameters as the request that generated the token.</p>
+    /// <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use the token must use the same request parameters as the request that generated the token.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Information about the real-time metrics.</p>
     pub metric_results: std::option::Option<std::vec::Vec<crate::model::CurrentMetricResult>>,
@@ -3949,8 +3928,7 @@ pub struct GetCurrentMetricDataOutput {
 }
 impl GetCurrentMetricDataOutput {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
-    /// <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use
-    /// the token must use the same request parameters as the request that generated the token.</p>
+    /// <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use the token must use the same request parameters as the request that generated the token.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3985,15 +3963,13 @@ pub mod get_current_metric_data_output {
     }
     impl Builder {
         /// <p>If there are additional results, this is the token for the next set of results.</p>
-        /// <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use
-        /// the token must use the same request parameters as the request that generated the token.</p>
+        /// <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use the token must use the same request parameters as the request that generated the token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
         /// <p>If there are additional results, this is the token for the next set of results.</p>
-        /// <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use
-        /// the token must use the same request parameters as the request that generated the token.</p>
+        /// <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use the token must use the same request parameters as the request that generated the token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4812,15 +4788,11 @@ impl DescribeInstanceStorageConfigOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInstanceAttributeOutput {
-    /// <p>The
-    /// type
-    /// of attribute.</p>
+    /// <p>The type of attribute.</p>
     pub attribute: std::option::Option<crate::model::Attribute>,
 }
 impl DescribeInstanceAttributeOutput {
-    /// <p>The
-    /// type
-    /// of attribute.</p>
+    /// <p>The type of attribute.</p>
     pub fn attribute(&self) -> std::option::Option<&crate::model::Attribute> {
         self.attribute.as_ref()
     }
@@ -4841,16 +4813,12 @@ pub mod describe_instance_attribute_output {
         pub(crate) attribute: std::option::Option<crate::model::Attribute>,
     }
     impl Builder {
-        /// <p>The
-        /// type
-        /// of attribute.</p>
+        /// <p>The type of attribute.</p>
         pub fn attribute(mut self, input: crate::model::Attribute) -> Self {
             self.attribute = Some(input);
             self
         }
-        /// <p>The
-        /// type
-        /// of attribute.</p>
+        /// <p>The type of attribute.</p>
         pub fn set_attribute(
             mut self,
             input: std::option::Option<crate::model::Attribute>,
@@ -5898,8 +5866,7 @@ impl CreateRoutingProfileOutput {
 pub struct CreateQuickConnectOutput {
     /// <p>The Amazon Resource Name (ARN) for the quick connect. </p>
     pub quick_connect_arn: std::option::Option<std::string::String>,
-    /// <p>The identifier for the quick connect.
-    /// </p>
+    /// <p>The identifier for the quick connect. </p>
     pub quick_connect_id: std::option::Option<std::string::String>,
 }
 impl CreateQuickConnectOutput {
@@ -5907,8 +5874,7 @@ impl CreateQuickConnectOutput {
     pub fn quick_connect_arn(&self) -> std::option::Option<&str> {
         self.quick_connect_arn.as_deref()
     }
-    /// <p>The identifier for the quick connect.
-    /// </p>
+    /// <p>The identifier for the quick connect. </p>
     pub fn quick_connect_id(&self) -> std::option::Option<&str> {
         self.quick_connect_id.as_deref()
     }
@@ -5944,14 +5910,12 @@ pub mod create_quick_connect_output {
             self.quick_connect_arn = input;
             self
         }
-        /// <p>The identifier for the quick connect.
-        /// </p>
+        /// <p>The identifier for the quick connect. </p>
         pub fn quick_connect_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.quick_connect_id = Some(input.into());
             self
         }
-        /// <p>The identifier for the quick connect.
-        /// </p>
+        /// <p>The identifier for the quick connect. </p>
         pub fn set_quick_connect_id(
             mut self,
             input: std::option::Option<std::string::String>,

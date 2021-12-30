@@ -408,12 +408,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchCheckLayerAvailability`.
     ///
     /// <p>Checks the availability of one or more image layers in a repository.</p>
-    /// <p>When an image is pushed to a repository, each image layer is checked to verify if it
-    /// has been uploaded before. If it has been uploaded, then the image layer is
-    /// skipped.</p>
-    /// <note>
-    /// <p>This operation is used by the Amazon ECR proxy and is not generally used by
-    /// customers for pulling and pushing images. In most cases, you should use the <code>docker</code> CLI to pull, tag, and push images.</p>
+    /// <p>When an image is pushed to a repository, each image layer is checked to verify if it has been uploaded before. If it has been uploaded, then the image layer is skipped.</p> <note>
+    /// <p>This operation is used by the Amazon ECR proxy and is not generally used by customers for pulling and pushing images. In most cases, you should use the <code>docker</code> CLI to pull, tag, and push images.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchCheckLayerAvailability<
@@ -471,14 +467,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the image layers to
-        /// check. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the image layers to check. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.registry_id(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the image layers to
-        /// check. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the image layers to check. If you do not specify a registry, the default registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_registry_id(input);
             self
@@ -516,12 +510,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BatchDeleteImage`.
     ///
-    /// <p>Deletes a list of specified images within a repository. Images are specified with
-    /// either an <code>imageTag</code> or <code>imageDigest</code>.</p>
-    /// <p>You can remove a tag from an image by specifying the image's tag in your request. When
-    /// you remove the last tag from an image, the image is deleted from your repository.</p>
-    /// <p>You can completely delete an image (and all of its tags) by specifying the image's
-    /// digest in your request.</p>
+    /// <p>Deletes a list of specified images within a repository. Images are specified with either an <code>imageTag</code> or <code>imageDigest</code>.</p>
+    /// <p>You can remove a tag from an image by specifying the image's tag in your request. When you remove the last tag from an image, the image is deleted from your repository.</p>
+    /// <p>You can completely delete an image (and all of its tags) by specifying the image's digest in your request.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchDeleteImage<
         C = aws_smithy_client::erase::DynConnector,
@@ -578,14 +569,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the image to delete.
-        /// If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the image to delete. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.registry_id(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the image to delete.
-        /// If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the image to delete. If you do not specify a registry, the default registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_registry_id(input);
             self
@@ -607,16 +596,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_image_ids`](Self::set_image_ids).
         ///
-        /// <p>A list of image ID references that correspond to images to delete. The format of the
-        /// <code>imageIds</code> reference is <code>imageTag=tag</code> or
-        /// <code>imageDigest=digest</code>.</p>
+        /// <p>A list of image ID references that correspond to images to delete. The format of the <code>imageIds</code> reference is <code>imageTag=tag</code> or <code>imageDigest=digest</code>.</p>
         pub fn image_ids(mut self, input: crate::model::ImageIdentifier) -> Self {
             self.inner = self.inner.image_ids(input);
             self
         }
-        /// <p>A list of image ID references that correspond to images to delete. The format of the
-        /// <code>imageIds</code> reference is <code>imageTag=tag</code> or
-        /// <code>imageDigest=digest</code>.</p>
+        /// <p>A list of image ID references that correspond to images to delete. The format of the <code>imageIds</code> reference is <code>imageTag=tag</code> or <code>imageDigest=digest</code>.</p>
         pub fn set_image_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ImageIdentifier>>,
@@ -627,10 +612,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BatchGetImage`.
     ///
-    /// <p>Gets detailed information for an image. Images are specified with either an
-    /// <code>imageTag</code> or <code>imageDigest</code>.</p>
-    /// <p>When an image is pulled, the BatchGetImage API is called once to retrieve the image
-    /// manifest.</p>
+    /// <p>Gets detailed information for an image. Images are specified with either an <code>imageTag</code> or <code>imageDigest</code>.</p>
+    /// <p>When an image is pulled, the BatchGetImage API is called once to retrieve the image manifest.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetImage<
         C = aws_smithy_client::erase::DynConnector,
@@ -687,14 +670,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the images to
-        /// describe. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the images to describe. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.registry_id(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the images to
-        /// describe. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the images to describe. If you do not specify a registry, the default registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_registry_id(input);
             self
@@ -716,16 +697,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_image_ids`](Self::set_image_ids).
         ///
-        /// <p>A list of image ID references that correspond to images to describe. The format of the
-        /// <code>imageIds</code> reference is <code>imageTag=tag</code> or
-        /// <code>imageDigest=digest</code>.</p>
+        /// <p>A list of image ID references that correspond to images to describe. The format of the <code>imageIds</code> reference is <code>imageTag=tag</code> or <code>imageDigest=digest</code>.</p>
         pub fn image_ids(mut self, input: crate::model::ImageIdentifier) -> Self {
             self.inner = self.inner.image_ids(input);
             self
         }
-        /// <p>A list of image ID references that correspond to images to describe. The format of the
-        /// <code>imageIds</code> reference is <code>imageTag=tag</code> or
-        /// <code>imageDigest=digest</code>.</p>
+        /// <p>A list of image ID references that correspond to images to describe. The format of the <code>imageIds</code> reference is <code>imageTag=tag</code> or <code>imageDigest=digest</code>.</p>
         pub fn set_image_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ImageIdentifier>>,
@@ -738,19 +715,13 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_accepted_media_types`](Self::set_accepted_media_types).
         ///
         /// <p>The accepted media types for the request.</p>
-        /// <p>Valid values: <code>application/vnd.docker.distribution.manifest.v1+json</code> |
-        /// <code>application/vnd.docker.distribution.manifest.v2+json</code> |
-        /// <code>application/vnd.oci.image.manifest.v1+json</code>
-        /// </p>
+        /// <p>Valid values: <code>application/vnd.docker.distribution.manifest.v1+json</code> | <code>application/vnd.docker.distribution.manifest.v2+json</code> | <code>application/vnd.oci.image.manifest.v1+json</code> </p>
         pub fn accepted_media_types(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accepted_media_types(input.into());
             self
         }
         /// <p>The accepted media types for the request.</p>
-        /// <p>Valid values: <code>application/vnd.docker.distribution.manifest.v1+json</code> |
-        /// <code>application/vnd.docker.distribution.manifest.v2+json</code> |
-        /// <code>application/vnd.oci.image.manifest.v1+json</code>
-        /// </p>
+        /// <p>Valid values: <code>application/vnd.docker.distribution.manifest.v1+json</code> | <code>application/vnd.docker.distribution.manifest.v2+json</code> | <code>application/vnd.oci.image.manifest.v1+json</code> </p>
         pub fn set_accepted_media_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -840,14 +811,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CompleteLayerUpload`.
     ///
-    /// <p>Informs Amazon ECR that the image layer upload has completed for a specified registry,
-    /// repository name, and upload ID. You can optionally provide a <code>sha256</code> digest
-    /// of the image layer for data validation purposes.</p>
-    /// <p>When an image is pushed, the CompleteLayerUpload API is called once per each new image
-    /// layer to verify that the upload has completed.</p>
-    /// <note>
-    /// <p>This operation is used by the Amazon ECR proxy and is not generally used by
-    /// customers for pulling and pushing images. In most cases, you should use the <code>docker</code> CLI to pull, tag, and push images.</p>
+    /// <p>Informs Amazon ECR that the image layer upload has completed for a specified registry, repository name, and upload ID. You can optionally provide a <code>sha256</code> digest of the image layer for data validation purposes.</p>
+    /// <p>When an image is pushed, the CompleteLayerUpload API is called once per each new image layer to verify that the upload has completed.</p> <note>
+    /// <p>This operation is used by the Amazon ECR proxy and is not generally used by customers for pulling and pushing images. In most cases, you should use the <code>docker</code> CLI to pull, tag, and push images.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CompleteLayerUpload<
@@ -905,14 +871,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Web Services account ID associated with the registry to which to upload layers.
-        /// If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry to which to upload layers. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.registry_id(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID associated with the registry to which to upload layers.
-        /// If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry to which to upload layers. If you do not specify a registry, the default registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_registry_id(input);
             self
@@ -930,14 +894,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_repository_name(input);
             self
         }
-        /// <p>The upload ID from a previous <a>InitiateLayerUpload</a> operation to
-        /// associate with the image layer.</p>
+        /// <p>The upload ID from a previous <code>InitiateLayerUpload</code> operation to associate with the image layer.</p>
         pub fn upload_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.upload_id(input.into());
             self
         }
-        /// <p>The upload ID from a previous <a>InitiateLayerUpload</a> operation to
-        /// associate with the image layer.</p>
+        /// <p>The upload ID from a previous <code>InitiateLayerUpload</code> operation to associate with the image layer.</p>
         pub fn set_upload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_upload_id(input);
             self
@@ -962,8 +924,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreatePullThroughCacheRule`.
     ///
-    /// <p>Creates a pull through cache rule. A pull through cache rule provides a way to cache
-    /// images from an external public registry in your Amazon ECR private registry.</p>
+    /// <p>Creates a pull through cache rule. A pull through cache rule provides a way to cache images from an external public registry in your Amazon ECR private registry.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePullThroughCacheRule<
         C = aws_smithy_client::erase::DynConnector,
@@ -1033,14 +994,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ecr_repository_prefix(input);
             self
         }
-        /// <p>The registry URL of the upstream public registry to use as the source for the pull
-        /// through cache rule.</p>
+        /// <p>The registry URL of the upstream public registry to use as the source for the pull through cache rule.</p>
         pub fn upstream_registry_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.upstream_registry_url(input.into());
             self
         }
-        /// <p>The registry URL of the upstream public registry to use as the source for the pull
-        /// through cache rule.</p>
+        /// <p>The registry URL of the upstream public registry to use as the source for the pull through cache rule.</p>
         pub fn set_upstream_registry_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1048,14 +1007,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_upstream_registry_url(input);
             self
         }
-        /// <p>The Amazon Web Services account ID associated with the registry to create the pull through cache
-        /// rule for. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry to create the pull through cache rule for. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.registry_id(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID associated with the registry to create the pull through cache
-        /// rule for. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry to create the pull through cache rule for. If you do not specify a registry, the default registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_registry_id(input);
             self
@@ -1063,8 +1020,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateRepository`.
     ///
-    /// <p>Creates a repository. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/Repositories.html">Amazon ECR repositories</a> in the
-    /// <i>Amazon Elastic Container Registry User Guide</i>.</p>
+    /// <p>Creates a repository. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/Repositories.html">Amazon ECR repositories</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRepository<
         C = aws_smithy_client::erase::DynConnector,
@@ -1121,28 +1077,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Web Services account ID associated with the registry to create the repository.
-        /// If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry to create the repository. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.registry_id(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID associated with the registry to create the repository.
-        /// If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry to create the repository. If you do not specify a registry, the default registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_registry_id(input);
             self
         }
-        /// <p>The name to use for the repository. The repository name may be specified on its own
-        /// (such as <code>nginx-web-app</code>) or it can be prepended with a namespace to group
-        /// the repository into a category (such as <code>project-a/nginx-web-app</code>).</p>
+        /// <p>The name to use for the repository. The repository name may be specified on its own (such as <code>nginx-web-app</code>) or it can be prepended with a namespace to group the repository into a category (such as <code>project-a/nginx-web-app</code>).</p>
         pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.repository_name(input.into());
             self
         }
-        /// <p>The name to use for the repository. The repository name may be specified on its own
-        /// (such as <code>nginx-web-app</code>) or it can be prepended with a namespace to group
-        /// the repository into a category (such as <code>project-a/nginx-web-app</code>).</p>
+        /// <p>The name to use for the repository. The repository name may be specified on its own (such as <code>nginx-web-app</code>) or it can be prepended with a namespace to group the repository into a category (such as <code>project-a/nginx-web-app</code>).</p>
         pub fn set_repository_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1154,18 +1104,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The metadata that you apply to the repository to help you categorize and organize
-        /// them. Each tag consists of a key and an optional value, both of which you define.
-        /// Tag keys can have a maximum character length of 128 characters, and tag values can have
-        /// a maximum length of 256 characters.</p>
+        /// <p>The metadata that you apply to the repository to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>The metadata that you apply to the repository to help you categorize and organize
-        /// them. Each tag consists of a key and an optional value, both of which you define.
-        /// Tag keys can have a maximum character length of 128 characters, and tag values can have
-        /// a maximum length of 256 characters.</p>
+        /// <p>The metadata that you apply to the repository to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1173,18 +1117,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>The tag mutability setting for the repository. If this parameter is omitted, the
-        /// default setting of <code>MUTABLE</code> will be used which will allow image tags to be
-        /// overwritten. If <code>IMMUTABLE</code> is specified, all image tags within the
-        /// repository will be immutable which will prevent them from being overwritten.</p>
+        /// <p>The tag mutability setting for the repository. If this parameter is omitted, the default setting of <code>MUTABLE</code> will be used which will allow image tags to be overwritten. If <code>IMMUTABLE</code> is specified, all image tags within the repository will be immutable which will prevent them from being overwritten.</p>
         pub fn image_tag_mutability(mut self, input: crate::model::ImageTagMutability) -> Self {
             self.inner = self.inner.image_tag_mutability(input);
             self
         }
-        /// <p>The tag mutability setting for the repository. If this parameter is omitted, the
-        /// default setting of <code>MUTABLE</code> will be used which will allow image tags to be
-        /// overwritten. If <code>IMMUTABLE</code> is specified, all image tags within the
-        /// repository will be immutable which will prevent them from being overwritten.</p>
+        /// <p>The tag mutability setting for the repository. If this parameter is omitted, the default setting of <code>MUTABLE</code> will be used which will allow image tags to be overwritten. If <code>IMMUTABLE</code> is specified, all image tags within the repository will be immutable which will prevent them from being overwritten.</p>
         pub fn set_image_tag_mutability(
             mut self,
             input: std::option::Option<crate::model::ImageTagMutability>,
@@ -1192,8 +1130,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_image_tag_mutability(input);
             self
         }
-        /// <p>The image scanning configuration for the repository. This determines whether images
-        /// are scanned for known vulnerabilities after being pushed to the repository.</p>
+        /// <p>The image scanning configuration for the repository. This determines whether images are scanned for known vulnerabilities after being pushed to the repository.</p>
         pub fn image_scanning_configuration(
             mut self,
             input: crate::model::ImageScanningConfiguration,
@@ -1201,8 +1138,7 @@ pub mod fluent_builders {
             self.inner = self.inner.image_scanning_configuration(input);
             self
         }
-        /// <p>The image scanning configuration for the repository. This determines whether images
-        /// are scanned for known vulnerabilities after being pushed to the repository.</p>
+        /// <p>The image scanning configuration for the repository. This determines whether images are scanned for known vulnerabilities after being pushed to the repository.</p>
         pub fn set_image_scanning_configuration(
             mut self,
             input: std::option::Option<crate::model::ImageScanningConfiguration>,
@@ -1210,8 +1146,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_image_scanning_configuration(input);
             self
         }
-        /// <p>The encryption configuration for the repository. This determines how the contents of
-        /// your repository are encrypted at rest.</p>
+        /// <p>The encryption configuration for the repository. This determines how the contents of your repository are encrypted at rest.</p>
         pub fn encryption_configuration(
             mut self,
             input: crate::model::EncryptionConfiguration,
@@ -1219,8 +1154,7 @@ pub mod fluent_builders {
             self.inner = self.inner.encryption_configuration(input);
             self
         }
-        /// <p>The encryption configuration for the repository. This determines how the contents of
-        /// your repository are encrypted at rest.</p>
+        /// <p>The encryption configuration for the repository. This determines how the contents of your repository are encrypted at rest.</p>
         pub fn set_encryption_configuration(
             mut self,
             input: std::option::Option<crate::model::EncryptionConfiguration>,
@@ -1288,14 +1222,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
-        /// If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.registry_id(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
-        /// If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_registry_id(input);
             self
@@ -1373,14 +1305,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon ECR repository prefix associated with the pull through cache rule to
-        /// delete.</p>
+        /// <p>The Amazon ECR repository prefix associated with the pull through cache rule to delete.</p>
         pub fn ecr_repository_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.ecr_repository_prefix(input.into());
             self
         }
-        /// <p>The Amazon ECR repository prefix associated with the pull through cache rule to
-        /// delete.</p>
+        /// <p>The Amazon ECR repository prefix associated with the pull through cache rule to delete.</p>
         pub fn set_ecr_repository_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1388,14 +1318,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ecr_repository_prefix(input);
             self
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the pull through cache
-        /// rule. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the pull through cache rule. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.registry_id(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the pull through cache
-        /// rule. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the pull through cache rule. If you do not specify a registry, the default registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_registry_id(input);
             self
@@ -1463,9 +1391,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteRepository`.
     ///
-    /// <p>Deletes a repository. If the repository contains images, you must either delete all
-    /// images in the repository or use the <code>force</code> option to delete the
-    /// repository.</p>
+    /// <p>Deletes a repository. If the repository contains images, you must either delete all images in the repository or use the <code>force</code> option to delete the repository.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteRepository<
         C = aws_smithy_client::erase::DynConnector,
@@ -1522,14 +1448,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository to
-        /// delete. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository to delete. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.registry_id(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository to
-        /// delete. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository to delete. If you do not specify a registry, the default registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_registry_id(input);
             self
@@ -1617,26 +1541,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository policy
-        /// to delete. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository policy to delete. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.registry_id(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository policy
-        /// to delete. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository policy to delete. If you do not specify a registry, the default registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_registry_id(input);
             self
         }
-        /// <p>The name of the repository that is associated with the repository policy to
-        /// delete.</p>
+        /// <p>The name of the repository that is associated with the repository policy to delete.</p>
         pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.repository_name(input.into());
             self
         }
-        /// <p>The name of the repository that is associated with the repository policy to
-        /// delete.</p>
+        /// <p>The name of the repository that is associated with the repository policy to delete.</p>
         pub fn set_repository_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1743,12 +1663,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeImages`.
     ///
-    /// <p>Returns metadata about the images in a repository.</p>
-    /// <note>
-    /// <p>Beginning with Docker version 1.9, the Docker client compresses image layers
-    /// before pushing them to a V2 Docker registry. The output of the <code>docker
-    /// images</code> command shows the uncompressed image size, so it may return a
-    /// larger image size than the image sizes returned by <a>DescribeImages</a>.</p>
+    /// <p>Returns metadata about the images in a repository.</p> <note>
+    /// <p>Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it may return a larger image size than the image sizes returned by <code>DescribeImages</code>.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeImages<
@@ -1806,14 +1722,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
-        /// which to describe images. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to describe images. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.registry_id(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
-        /// which to describe images. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to describe images. If you do not specify a registry, the default registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_registry_id(input);
             self
@@ -1848,60 +1762,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_image_ids(input);
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>DescribeImages</code> request where <code>maxResults</code> was used and the
-        /// results exceeded the value of that parameter. Pagination continues from the end of the
-        /// previous results that returned the <code>nextToken</code> value. This value is
-        /// <code>null</code> when there are no more results to return. This option cannot be
-        /// used when you specify images with <code>imageIds</code>.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeImages</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return. This option cannot be used when you specify images with <code>imageIds</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>DescribeImages</code> request where <code>maxResults</code> was used and the
-        /// results exceeded the value of that parameter. Pagination continues from the end of the
-        /// previous results that returned the <code>nextToken</code> value. This value is
-        /// <code>null</code> when there are no more results to return. This option cannot be
-        /// used when you specify images with <code>imageIds</code>.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeImages</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return. This option cannot be used when you specify images with <code>imageIds</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of repository results returned by <code>DescribeImages</code> in
-        /// paginated output. When this parameter is used, <code>DescribeImages</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>DescribeImages</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 1000. If this
-        /// parameter is not used, then <code>DescribeImages</code> returns up to
-        /// 100 results and a <code>nextToken</code> value, if applicable. This
-        /// option cannot be used when you specify images with <code>imageIds</code>.</p>
+        /// <p>The maximum number of repository results returned by <code>DescribeImages</code> in paginated output. When this parameter is used, <code>DescribeImages</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeImages</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>DescribeImages</code> returns up to 100 results and a <code>nextToken</code> value, if applicable. This option cannot be used when you specify images with <code>imageIds</code>.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of repository results returned by <code>DescribeImages</code> in
-        /// paginated output. When this parameter is used, <code>DescribeImages</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>DescribeImages</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 1000. If this
-        /// parameter is not used, then <code>DescribeImages</code> returns up to
-        /// 100 results and a <code>nextToken</code> value, if applicable. This
-        /// option cannot be used when you specify images with <code>imageIds</code>.</p>
+        /// <p>The maximum number of repository results returned by <code>DescribeImages</code> in paginated output. When this parameter is used, <code>DescribeImages</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeImages</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>DescribeImages</code> returns up to 100 results and a <code>nextToken</code> value, if applicable. This option cannot be used when you specify images with <code>imageIds</code>.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The filter key and value with which to filter your <code>DescribeImages</code>
-        /// results.</p>
+        /// <p>The filter key and value with which to filter your <code>DescribeImages</code> results.</p>
         pub fn filter(mut self, input: crate::model::DescribeImagesFilter) -> Self {
             self.inner = self.inner.filter(input);
             self
         }
-        /// <p>The filter key and value with which to filter your <code>DescribeImages</code>
-        /// results.</p>
+        /// <p>The filter key and value with which to filter your <code>DescribeImages</code> results.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::DescribeImagesFilter>,
@@ -1969,14 +1855,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
-        /// which to describe the image scan findings for. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to describe the image scan findings for. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.registry_id(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
-        /// which to describe the image scan findings for. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to describe the image scan findings for. If you do not specify a registry, the default registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_registry_id(input);
             self
@@ -2007,46 +1891,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_image_id(input);
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>DescribeImageScanFindings</code> request where <code>maxResults</code> was
-        /// used and the results exceeded the value of that parameter. Pagination continues from the
-        /// end of the previous results that returned the <code>nextToken</code> value. This value
-        /// is null when there are no more results to return.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeImageScanFindings</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is null when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>DescribeImageScanFindings</code> request where <code>maxResults</code> was
-        /// used and the results exceeded the value of that parameter. Pagination continues from the
-        /// end of the previous results that returned the <code>nextToken</code> value. This value
-        /// is null when there are no more results to return.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeImageScanFindings</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is null when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of image scan results returned by
-        /// <code>DescribeImageScanFindings</code> in paginated output. When this parameter is
-        /// used, <code>DescribeImageScanFindings</code> only returns <code>maxResults</code>
-        /// results in a single page along with a <code>nextToken</code> response element. The
-        /// remaining results of the initial request can be seen by sending another
-        /// <code>DescribeImageScanFindings</code> request with the returned
-        /// <code>nextToken</code> value. This value can be between 1 and 1000. If this
-        /// parameter is not used, then <code>DescribeImageScanFindings</code> returns up to 100
-        /// results and a <code>nextToken</code> value, if applicable.</p>
+        /// <p>The maximum number of image scan results returned by <code>DescribeImageScanFindings</code> in paginated output. When this parameter is used, <code>DescribeImageScanFindings</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeImageScanFindings</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>DescribeImageScanFindings</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of image scan results returned by
-        /// <code>DescribeImageScanFindings</code> in paginated output. When this parameter is
-        /// used, <code>DescribeImageScanFindings</code> only returns <code>maxResults</code>
-        /// results in a single page along with a <code>nextToken</code> response element. The
-        /// remaining results of the initial request can be seen by sending another
-        /// <code>DescribeImageScanFindings</code> request with the returned
-        /// <code>nextToken</code> value. This value can be between 1 and 1000. If this
-        /// parameter is not used, then <code>DescribeImageScanFindings</code> returns up to 100
-        /// results and a <code>nextToken</code> value, if applicable.</p>
+        /// <p>The maximum number of image scan results returned by <code>DescribeImageScanFindings</code> in paginated output. When this parameter is used, <code>DescribeImageScanFindings</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeImageScanFindings</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>DescribeImageScanFindings</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2111,14 +1971,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Web Services account ID associated with the registry to return the pull through cache
-        /// rules for. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry to return the pull through cache rules for. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.registry_id(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID associated with the registry to return the pull through cache
-        /// rules for. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry to return the pull through cache rules for. If you do not specify a registry, the default registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_registry_id(input);
             self
@@ -2127,16 +1985,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_ecr_repository_prefixes`](Self::set_ecr_repository_prefixes).
         ///
-        /// <p>The Amazon ECR repository prefixes associated with the pull through cache rules to return.
-        /// If no repository prefix value is specified, all pull through cache rules are
-        /// returned.</p>
+        /// <p>The Amazon ECR repository prefixes associated with the pull through cache rules to return. If no repository prefix value is specified, all pull through cache rules are returned.</p>
         pub fn ecr_repository_prefixes(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.ecr_repository_prefixes(input.into());
             self
         }
-        /// <p>The Amazon ECR repository prefixes associated with the pull through cache rules to return.
-        /// If no repository prefix value is specified, all pull through cache rules are
-        /// returned.</p>
+        /// <p>The Amazon ECR repository prefixes associated with the pull through cache rules to return. If no repository prefix value is specified, all pull through cache rules are returned.</p>
         pub fn set_ecr_repository_prefixes(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2144,48 +1998,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ecr_repository_prefixes(input);
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>DescribePullThroughCacheRulesRequest</code> request where
-        /// <code>maxResults</code> was used and the results exceeded the value of that
-        /// parameter. Pagination continues from the end of the previous results that returned the
-        /// <code>nextToken</code> value. This value is null when there are no more results to
-        /// return.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribePullThroughCacheRulesRequest</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is null when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>DescribePullThroughCacheRulesRequest</code> request where
-        /// <code>maxResults</code> was used and the results exceeded the value of that
-        /// parameter. Pagination continues from the end of the previous results that returned the
-        /// <code>nextToken</code> value. This value is null when there are no more results to
-        /// return.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribePullThroughCacheRulesRequest</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is null when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of pull through cache rules returned by
-        /// <code>DescribePullThroughCacheRulesRequest</code> in paginated output. When this
-        /// parameter is used, <code>DescribePullThroughCacheRulesRequest</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>DescribePullThroughCacheRulesRequest</code> request with the returned
-        /// <code>nextToken</code> value. This value can be between 1 and 1000. If this
-        /// parameter is not used, then <code>DescribePullThroughCacheRulesRequest</code> returns up
-        /// to 100 results and a <code>nextToken</code> value, if applicable.</p>
+        /// <p>The maximum number of pull through cache rules returned by <code>DescribePullThroughCacheRulesRequest</code> in paginated output. When this parameter is used, <code>DescribePullThroughCacheRulesRequest</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribePullThroughCacheRulesRequest</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>DescribePullThroughCacheRulesRequest</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of pull through cache rules returned by
-        /// <code>DescribePullThroughCacheRulesRequest</code> in paginated output. When this
-        /// parameter is used, <code>DescribePullThroughCacheRulesRequest</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>DescribePullThroughCacheRulesRequest</code> request with the returned
-        /// <code>nextToken</code> value. This value can be between 1 and 1000. If this
-        /// parameter is not used, then <code>DescribePullThroughCacheRulesRequest</code> returns up
-        /// to 100 results and a <code>nextToken</code> value, if applicable.</p>
+        /// <p>The maximum number of pull through cache rules returned by <code>DescribePullThroughCacheRulesRequest</code> in paginated output. When this parameter is used, <code>DescribePullThroughCacheRulesRequest</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribePullThroughCacheRulesRequest</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>DescribePullThroughCacheRulesRequest</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2193,9 +2021,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeRegistry`.
     ///
-    /// <p>Describes the settings for a registry. The replication configuration for a repository
-    /// can be created or updated with the <a>PutReplicationConfiguration</a> API
-    /// action.</p>
+    /// <p>Describes the settings for a registry. The replication configuration for a repository can be created or updated with the <code>PutReplicationConfiguration</code> API action.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRegistry<
         C = aws_smithy_client::erase::DynConnector,
@@ -2312,14 +2138,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repositories to be
-        /// described. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repositories to be described. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.registry_id(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repositories to be
-        /// described. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repositories to be described. If you do not specify a registry, the default registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_registry_id(input);
             self
@@ -2328,14 +2152,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_repository_names`](Self::set_repository_names).
         ///
-        /// <p>A list of repositories to describe. If this parameter is omitted, then all
-        /// repositories in a registry are described.</p>
+        /// <p>A list of repositories to describe. If this parameter is omitted, then all repositories in a registry are described.</p>
         pub fn repository_names(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.repository_names(input.into());
             self
         }
-        /// <p>A list of repositories to describe. If this parameter is omitted, then all
-        /// repositories in a registry are described.</p>
+        /// <p>A list of repositories to describe. If this parameter is omitted, then all repositories in a registry are described.</p>
         pub fn set_repository_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2343,58 +2165,26 @@ pub mod fluent_builders {
             self.inner = self.inner.set_repository_names(input);
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>DescribeRepositories</code> request where <code>maxResults</code> was used and
-        /// the results exceeded the value of that parameter. Pagination continues from the end of
-        /// the previous results that returned the <code>nextToken</code> value. This value is
-        /// <code>null</code> when there are no more results to return. This option cannot be
-        /// used when you specify repositories with <code>repositoryNames</code>.</p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that is only used to
-        /// retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeRepositories</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return. This option cannot be used when you specify repositories with <code>repositoryNames</code>.</p> <note>
+        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>DescribeRepositories</code> request where <code>maxResults</code> was used and
-        /// the results exceeded the value of that parameter. Pagination continues from the end of
-        /// the previous results that returned the <code>nextToken</code> value. This value is
-        /// <code>null</code> when there are no more results to return. This option cannot be
-        /// used when you specify repositories with <code>repositoryNames</code>.</p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that is only used to
-        /// retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeRepositories</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return. This option cannot be used when you specify repositories with <code>repositoryNames</code>.</p> <note>
+        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of repository results returned by <code>DescribeRepositories</code>
-        /// in paginated output. When this parameter is used, <code>DescribeRepositories</code> only
-        /// returns <code>maxResults</code> results in a single page along with a
-        /// <code>nextToken</code> response element. The remaining results of the initial
-        /// request can be seen by sending another <code>DescribeRepositories</code> request with
-        /// the returned <code>nextToken</code> value. This value can be between 1
-        /// and 1000. If this parameter is not used, then
-        /// <code>DescribeRepositories</code> returns up to 100 results and a
-        /// <code>nextToken</code> value, if applicable. This option cannot be used when you
-        /// specify repositories with <code>repositoryNames</code>.</p>
+        /// <p>The maximum number of repository results returned by <code>DescribeRepositories</code> in paginated output. When this parameter is used, <code>DescribeRepositories</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeRepositories</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>DescribeRepositories</code> returns up to 100 results and a <code>nextToken</code> value, if applicable. This option cannot be used when you specify repositories with <code>repositoryNames</code>.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of repository results returned by <code>DescribeRepositories</code>
-        /// in paginated output. When this parameter is used, <code>DescribeRepositories</code> only
-        /// returns <code>maxResults</code> results in a single page along with a
-        /// <code>nextToken</code> response element. The remaining results of the initial
-        /// request can be seen by sending another <code>DescribeRepositories</code> request with
-        /// the returned <code>nextToken</code> value. This value can be between 1
-        /// and 1000. If this parameter is not used, then
-        /// <code>DescribeRepositories</code> returns up to 100 results and a
-        /// <code>nextToken</code> value, if applicable. This option cannot be used when you
-        /// specify repositories with <code>repositoryNames</code>.</p>
+        /// <p>The maximum number of repository results returned by <code>DescribeRepositories</code> in paginated output. When this parameter is used, <code>DescribeRepositories</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeRepositories</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>DescribeRepositories</code> returns up to 100 results and a <code>nextToken</code> value, if applicable. This option cannot be used when you specify repositories with <code>repositoryNames</code>.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2402,14 +2192,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetAuthorizationToken`.
     ///
-    /// <p>Retrieves an authorization token. An authorization token represents your IAM
-    /// authentication credentials and can be used to access any Amazon ECR registry that your IAM
-    /// principal has access to. The authorization token is valid for 12 hours.</p>
-    /// <p>The <code>authorizationToken</code> returned is a base64 encoded string that can be
-    /// decoded and used in a <code>docker login</code> command to authenticate to a registry.
-    /// The CLI offers an <code>get-login-password</code> command that simplifies the login
-    /// process. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/Registries.html#registry_auth">Registry
-    /// authentication</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
+    /// <p>Retrieves an authorization token. An authorization token represents your IAM authentication credentials and can be used to access any Amazon ECR registry that your IAM principal has access to. The authorization token is valid for 12 hours.</p>
+    /// <p>The <code>authorizationToken</code> returned is a base64 encoded string that can be decoded and used in a <code>docker login</code> command to authenticate to a registry. The CLI offers an <code>get-login-password</code> command that simplifies the login process. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/Registries.html#registry_auth">Registry authentication</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAuthorizationToken<
         C = aws_smithy_client::erase::DynConnector,
@@ -2470,14 +2254,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_registry_ids`](Self::set_registry_ids).
         ///
-        /// <p>A list of Amazon Web Services account IDs that are associated with the registries for which to get
-        /// AuthorizationData objects. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>A list of Amazon Web Services account IDs that are associated with the registries for which to get AuthorizationData objects. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_ids(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.registry_ids(input.into());
             self
         }
-        /// <p>A list of Amazon Web Services account IDs that are associated with the registries for which to get
-        /// AuthorizationData objects. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>A list of Amazon Web Services account IDs that are associated with the registries for which to get AuthorizationData objects. If you do not specify a registry, the default registry is assumed.</p>
         pub fn set_registry_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2488,13 +2270,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetDownloadUrlForLayer`.
     ///
-    /// <p>Retrieves the pre-signed Amazon S3 download URL corresponding to an image layer. You can
-    /// only get URLs for image layers that are referenced in an image.</p>
-    /// <p>When an image is pulled, the GetDownloadUrlForLayer API is called once per image layer
-    /// that is not already cached.</p>
-    /// <note>
-    /// <p>This operation is used by the Amazon ECR proxy and is not generally used by
-    /// customers for pulling and pushing images. In most cases, you should use the <code>docker</code> CLI to pull, tag, and push images.</p>
+    /// <p>Retrieves the pre-signed Amazon S3 download URL corresponding to an image layer. You can only get URLs for image layers that are referenced in an image.</p>
+    /// <p>When an image is pulled, the GetDownloadUrlForLayer API is called once per image layer that is not already cached.</p> <note>
+    /// <p>This operation is used by the Amazon ECR proxy and is not generally used by customers for pulling and pushing images. In most cases, you should use the <code>docker</code> CLI to pull, tag, and push images.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDownloadUrlForLayer<
@@ -2552,14 +2330,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the image layer to
-        /// download. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the image layer to download. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.registry_id(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the image layer to
-        /// download. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the image layer to download. If you do not specify a registry, the default registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_registry_id(input);
             self
@@ -2647,14 +2423,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
-        /// If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.registry_id(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
-        /// If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_registry_id(input);
             self
@@ -2675,8 +2449,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetLifecyclePolicyPreview`.
     ///
-    /// <p>Retrieves the results of the lifecycle policy preview request for the specified
-    /// repository.</p>
+    /// <p>Retrieves the results of the lifecycle policy preview request for the specified repository.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLifecyclePolicyPreview<
         C = aws_smithy_client::erase::DynConnector,
@@ -2733,14 +2506,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
-        /// If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.registry_id(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
-        /// If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_registry_id(input);
             self
@@ -2775,64 +2546,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_image_ids(input);
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>GetLifecyclePolicyPreviewRequest</code> request where <code>maxResults</code>
-        /// was used and the  results exceeded the value of that parameter. Pagination continues
-        /// from the end of the  previous results that returned the <code>nextToken</code> value.
-        /// This value is  <code>null</code> when there are no more results to return. This option
-        /// cannot be used when you specify images with <code>imageIds</code>.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated  <code>GetLifecyclePolicyPreviewRequest</code> request where <code>maxResults</code> was used and the  results exceeded the value of that parameter. Pagination continues from the end of the  previous results that returned the <code>nextToken</code> value. This value is  <code>null</code> when there are no more results to return. This option cannot be used when you specify images with <code>imageIds</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>GetLifecyclePolicyPreviewRequest</code> request where <code>maxResults</code>
-        /// was used and the  results exceeded the value of that parameter. Pagination continues
-        /// from the end of the  previous results that returned the <code>nextToken</code> value.
-        /// This value is  <code>null</code> when there are no more results to return. This option
-        /// cannot be used when you specify images with <code>imageIds</code>.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated  <code>GetLifecyclePolicyPreviewRequest</code> request where <code>maxResults</code> was used and the  results exceeded the value of that parameter. Pagination continues from the end of the  previous results that returned the <code>nextToken</code> value. This value is  <code>null</code> when there are no more results to return. This option cannot be used when you specify images with <code>imageIds</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of repository results returned by
-        /// <code>GetLifecyclePolicyPreviewRequest</code> in  paginated output. When this
-        /// parameter is used, <code>GetLifecyclePolicyPreviewRequest</code> only returns
-        /// <code>maxResults</code> results in a single page along with a
-        /// <code>nextToken</code>  response element. The remaining results of the initial request
-        /// can be seen by sending  another <code>GetLifecyclePolicyPreviewRequest</code> request
-        /// with the returned <code>nextToken</code>  value. This value can be between
-        /// 1 and 1000. If this  parameter is not used, then
-        /// <code>GetLifecyclePolicyPreviewRequest</code> returns up to  100
-        /// results and a <code>nextToken</code> value, if  applicable. This option cannot be used
-        /// when you specify images with <code>imageIds</code>.</p>
+        /// <p>The maximum number of repository results returned by <code>GetLifecyclePolicyPreviewRequest</code> in  paginated output. When this parameter is used, <code>GetLifecyclePolicyPreviewRequest</code> only returns  <code>maxResults</code> results in a single page along with a <code>nextToken</code>  response element. The remaining results of the initial request can be seen by sending  another <code>GetLifecyclePolicyPreviewRequest</code> request with the returned <code>nextToken</code>  value. This value can be between 1 and 1000. If this  parameter is not used, then <code>GetLifecyclePolicyPreviewRequest</code> returns up to  100 results and a <code>nextToken</code> value, if  applicable. This option cannot be used when you specify images with <code>imageIds</code>.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of repository results returned by
-        /// <code>GetLifecyclePolicyPreviewRequest</code> in  paginated output. When this
-        /// parameter is used, <code>GetLifecyclePolicyPreviewRequest</code> only returns
-        /// <code>maxResults</code> results in a single page along with a
-        /// <code>nextToken</code>  response element. The remaining results of the initial request
-        /// can be seen by sending  another <code>GetLifecyclePolicyPreviewRequest</code> request
-        /// with the returned <code>nextToken</code>  value. This value can be between
-        /// 1 and 1000. If this  parameter is not used, then
-        /// <code>GetLifecyclePolicyPreviewRequest</code> returns up to  100
-        /// results and a <code>nextToken</code> value, if  applicable. This option cannot be used
-        /// when you specify images with <code>imageIds</code>.</p>
+        /// <p>The maximum number of repository results returned by <code>GetLifecyclePolicyPreviewRequest</code> in  paginated output. When this parameter is used, <code>GetLifecyclePolicyPreviewRequest</code> only returns  <code>maxResults</code> results in a single page along with a <code>nextToken</code>  response element. The remaining results of the initial request can be seen by sending  another <code>GetLifecyclePolicyPreviewRequest</code> request with the returned <code>nextToken</code>  value. This value can be between 1 and 1000. If this  parameter is not used, then <code>GetLifecyclePolicyPreviewRequest</code> returns up to  100 results and a <code>nextToken</code> value, if  applicable. This option cannot be used when you specify images with <code>imageIds</code>.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>An optional parameter that filters results based on image tag status and all tags, if
-        /// tagged.</p>
+        /// <p>An optional parameter that filters results based on image tag status and all tags, if tagged.</p>
         pub fn filter(mut self, input: crate::model::LifecyclePolicyPreviewFilter) -> Self {
             self.inner = self.inner.filter(input);
             self
         }
-        /// <p>An optional parameter that filters results based on image tag status and all tags, if
-        /// tagged.</p>
+        /// <p>An optional parameter that filters results based on image tag status and all tags, if tagged.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::LifecyclePolicyPreviewFilter>,
@@ -3020,14 +2759,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
-        /// If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.registry_id(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
-        /// If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_registry_id(input);
             self
@@ -3049,12 +2786,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `InitiateLayerUpload`.
     ///
     /// <p>Notifies Amazon ECR that you intend to upload an image layer.</p>
-    /// <p>When an image is pushed, the InitiateLayerUpload API is called once per image layer
-    /// that has not already been uploaded. Whether or not an image layer has been uploaded is
-    /// determined by the BatchCheckLayerAvailability API action.</p>
-    /// <note>
-    /// <p>This operation is used by the Amazon ECR proxy and is not generally used by
-    /// customers for pulling and pushing images. In most cases, you should use the <code>docker</code> CLI to pull, tag, and push images.</p>
+    /// <p>When an image is pushed, the InitiateLayerUpload API is called once per image layer that has not already been uploaded. Whether or not an image layer has been uploaded is determined by the BatchCheckLayerAvailability API action.</p> <note>
+    /// <p>This operation is used by the Amazon ECR proxy and is not generally used by customers for pulling and pushing images. In most cases, you should use the <code>docker</code> CLI to pull, tag, and push images.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct InitiateLayerUpload<
@@ -3112,14 +2845,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Web Services account ID associated with the registry to which you intend to upload
-        /// layers. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry to which you intend to upload layers. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.registry_id(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID associated with the registry to which you intend to upload
-        /// layers. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry to which you intend to upload layers. If you do not specify a registry, the default registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_registry_id(input);
             self
@@ -3141,12 +2872,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListImages`.
     ///
     /// <p>Lists all the image IDs for the specified repository.</p>
-    /// <p>You can filter images based on whether or not they are tagged by using the
-    /// <code>tagStatus</code> filter and specifying either <code>TAGGED</code>,
-    /// <code>UNTAGGED</code> or <code>ANY</code>. For example, you can filter your results
-    /// to return only <code>UNTAGGED</code> images and then pipe that result to a <a>BatchDeleteImage</a> operation to delete them. Or, you can filter your
-    /// results to return only <code>TAGGED</code> images to list all of the tags in your
-    /// repository.</p>
+    /// <p>You can filter images based on whether or not they are tagged by using the <code>tagStatus</code> filter and specifying either <code>TAGGED</code>, <code>UNTAGGED</code> or <code>ANY</code>. For example, you can filter your results to return only <code>UNTAGGED</code> images and then pipe that result to a <code>BatchDeleteImage</code> operation to delete them. Or, you can filter your results to return only <code>TAGGED</code> images to list all of the tags in your repository.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListImages<
         C = aws_smithy_client::erase::DynConnector,
@@ -3203,14 +2929,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
-        /// which to list images. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to list images. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.registry_id(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
-        /// which to list images. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to list images. If you do not specify a registry, the default registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_registry_id(input);
             self
@@ -3228,64 +2952,36 @@ pub mod fluent_builders {
             self.inner = self.inner.set_repository_name(input);
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>ListImages</code> request where <code>maxResults</code> was used and the
-        /// results exceeded the value of that parameter. Pagination continues from the end of the
-        /// previous results that returned the <code>nextToken</code> value. This value is
-        /// <code>null</code> when there are no more results to return.</p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that is only used to
-        /// retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListImages</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.</p> <note>
+        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>ListImages</code> request where <code>maxResults</code> was used and the
-        /// results exceeded the value of that parameter. Pagination continues from the end of the
-        /// previous results that returned the <code>nextToken</code> value. This value is
-        /// <code>null</code> when there are no more results to return.</p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that is only used to
-        /// retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListImages</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.</p> <note>
+        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of image results returned by <code>ListImages</code> in paginated
-        /// output. When this parameter is used, <code>ListImages</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListImages</code> request with the returned <code>nextToken</code> value.
-        /// This value can be between 1 and 1000. If this parameter is
-        /// not used, then <code>ListImages</code> returns up to 100 results and a
-        /// <code>nextToken</code> value, if applicable.</p>
+        /// <p>The maximum number of image results returned by <code>ListImages</code> in paginated output. When this parameter is used, <code>ListImages</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListImages</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>ListImages</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of image results returned by <code>ListImages</code> in paginated
-        /// output. When this parameter is used, <code>ListImages</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListImages</code> request with the returned <code>nextToken</code> value.
-        /// This value can be between 1 and 1000. If this parameter is
-        /// not used, then <code>ListImages</code> returns up to 100 results and a
-        /// <code>nextToken</code> value, if applicable.</p>
+        /// <p>The maximum number of image results returned by <code>ListImages</code> in paginated output. When this parameter is used, <code>ListImages</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListImages</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>ListImages</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The filter key and value with which to filter your <code>ListImages</code>
-        /// results.</p>
+        /// <p>The filter key and value with which to filter your <code>ListImages</code> results.</p>
         pub fn filter(mut self, input: crate::model::ListImagesFilter) -> Self {
             self.inner = self.inner.filter(input);
             self
         }
-        /// <p>The filter key and value with which to filter your <code>ListImages</code>
-        /// results.</p>
+        /// <p>The filter key and value with which to filter your <code>ListImages</code> results.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::ListImagesFilter>,
@@ -3353,14 +3049,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the
-        /// only supported resource is an Amazon ECR repository.</p>
+        /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the only supported resource is an Amazon ECR repository.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the
-        /// only supported resource is an Amazon ECR repository.</p>
+        /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the only supported resource is an Amazon ECR repository.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -3369,13 +3063,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutImage`.
     ///
     /// <p>Creates or updates the image manifest and tags associated with an image.</p>
-    /// <p>When an image is pushed and all new image layers have been uploaded, the PutImage API
-    /// is called once to create or update the image manifest and the tags associated with the
-    /// image.</p>
-    ///
-    /// <note>
-    /// <p>This operation is used by the Amazon ECR proxy and is not generally used by
-    /// customers for pulling and pushing images. In most cases, you should use the <code>docker</code> CLI to pull, tag, and push images.</p>
+    /// <p>When an image is pushed and all new image layers have been uploaded, the PutImage API is called once to create or update the image manifest and the tags associated with the image.</p> <note>
+    /// <p>This operation is used by the Amazon ECR proxy and is not generally used by customers for pulling and pushing images. In most cases, you should use the <code>docker</code> CLI to pull, tag, and push images.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutImage<
@@ -3433,14 +3122,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
-        /// which to put the image. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to put the image. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.registry_id(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
-        /// which to put the image. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to put the image. If you do not specify a registry, the default registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_registry_id(input);
             self
@@ -3471,16 +3158,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_image_manifest(input);
             self
         }
-        /// <p>The media type of the image manifest. If you push an image manifest that does not
-        /// contain the <code>mediaType</code> field, you must specify the
-        /// <code>imageManifestMediaType</code> in the request.</p>
+        /// <p>The media type of the image manifest. If you push an image manifest that does not contain the <code>mediaType</code> field, you must specify the <code>imageManifestMediaType</code> in the request.</p>
         pub fn image_manifest_media_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.image_manifest_media_type(input.into());
             self
         }
-        /// <p>The media type of the image manifest. If you push an image manifest that does not
-        /// contain the <code>mediaType</code> field, you must specify the
-        /// <code>imageManifestMediaType</code> in the request.</p>
+        /// <p>The media type of the image manifest. If you push an image manifest that does not contain the <code>mediaType</code> field, you must specify the <code>imageManifestMediaType</code> in the request.</p>
         pub fn set_image_manifest_media_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3488,14 +3171,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_image_manifest_media_type(input);
             self
         }
-        /// <p>The tag to associate with the image. This parameter is required for images that use
-        /// the Docker Image Manifest V2 Schema 2 or Open Container Initiative (OCI) formats.</p>
+        /// <p>The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2 Schema 2 or Open Container Initiative (OCI) formats.</p>
         pub fn image_tag(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.image_tag(input.into());
             self
         }
-        /// <p>The tag to associate with the image. This parameter is required for images that use
-        /// the Docker Image Manifest V2 Schema 2 or Open Container Initiative (OCI) formats.</p>
+        /// <p>The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2 Schema 2 or Open Container Initiative (OCI) formats.</p>
         pub fn set_image_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_image_tag(input);
             self
@@ -3570,28 +3251,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
-        /// which to update the image scanning configuration setting.
-        /// If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to update the image scanning configuration setting. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.registry_id(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
-        /// which to update the image scanning configuration setting.
-        /// If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to update the image scanning configuration setting. If you do not specify a registry, the default registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_registry_id(input);
             self
         }
-        /// <p>The name of the repository in which to update the image scanning configuration
-        /// setting.</p>
+        /// <p>The name of the repository in which to update the image scanning configuration setting.</p>
         pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.repository_name(input.into());
             self
         }
-        /// <p>The name of the repository in which to update the image scanning configuration
-        /// setting.</p>
+        /// <p>The name of the repository in which to update the image scanning configuration setting.</p>
         pub fn set_repository_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3599,9 +3274,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_repository_name(input);
             self
         }
-        /// <p>The image scanning configuration for the repository. This setting determines whether
-        /// images are scanned for known vulnerabilities after being pushed to the
-        /// repository.</p>
+        /// <p>The image scanning configuration for the repository. This setting determines whether images are scanned for known vulnerabilities after being pushed to the repository.</p>
         pub fn image_scanning_configuration(
             mut self,
             input: crate::model::ImageScanningConfiguration,
@@ -3609,9 +3282,7 @@ pub mod fluent_builders {
             self.inner = self.inner.image_scanning_configuration(input);
             self
         }
-        /// <p>The image scanning configuration for the repository. This setting determines whether
-        /// images are scanned for known vulnerabilities after being pushed to the
-        /// repository.</p>
+        /// <p>The image scanning configuration for the repository. This setting determines whether images are scanned for known vulnerabilities after being pushed to the repository.</p>
         pub fn set_image_scanning_configuration(
             mut self,
             input: std::option::Option<crate::model::ImageScanningConfiguration>,
@@ -3622,9 +3293,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutImageTagMutability`.
     ///
-    /// <p>Updates the image tag mutability settings for the specified repository. For more
-    /// information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-tag-mutability.html">Image tag
-    /// mutability</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
+    /// <p>Updates the image tag mutability settings for the specified repository. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-tag-mutability.html">Image tag mutability</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutImageTagMutability<
         C = aws_smithy_client::erase::DynConnector,
@@ -3681,26 +3350,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
-        /// which to update the image tag mutability settings. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to update the image tag mutability settings. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.registry_id(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
-        /// which to update the image tag mutability settings. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to update the image tag mutability settings. If you do not specify a registry, the default registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_registry_id(input);
             self
         }
-        /// <p>The name of the repository in which to update the image tag mutability
-        /// settings.</p>
+        /// <p>The name of the repository in which to update the image tag mutability settings.</p>
         pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.repository_name(input.into());
             self
         }
-        /// <p>The name of the repository in which to update the image tag mutability
-        /// settings.</p>
+        /// <p>The name of the repository in which to update the image tag mutability settings.</p>
         pub fn set_repository_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3708,18 +3373,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_repository_name(input);
             self
         }
-        /// <p>The tag mutability setting for the repository. If <code>MUTABLE</code> is specified,
-        /// image tags can be overwritten. If <code>IMMUTABLE</code> is specified, all image tags
-        /// within the repository will be immutable which will prevent them from being
-        /// overwritten.</p>
+        /// <p>The tag mutability setting for the repository. If <code>MUTABLE</code> is specified, image tags can be overwritten. If <code>IMMUTABLE</code> is specified, all image tags within the repository will be immutable which will prevent them from being overwritten.</p>
         pub fn image_tag_mutability(mut self, input: crate::model::ImageTagMutability) -> Self {
             self.inner = self.inner.image_tag_mutability(input);
             self
         }
-        /// <p>The tag mutability setting for the repository. If <code>MUTABLE</code> is specified,
-        /// image tags can be overwritten. If <code>IMMUTABLE</code> is specified, all image tags
-        /// within the repository will be immutable which will prevent them from being
-        /// overwritten.</p>
+        /// <p>The tag mutability setting for the repository. If <code>MUTABLE</code> is specified, image tags can be overwritten. If <code>IMMUTABLE</code> is specified, all image tags within the repository will be immutable which will prevent them from being overwritten.</p>
         pub fn set_image_tag_mutability(
             mut self,
             input: std::option::Option<crate::model::ImageTagMutability>,
@@ -3730,9 +3389,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutLifecyclePolicy`.
     ///
-    /// <p>Creates or updates the lifecycle policy for the specified repository. For more
-    /// information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html">Lifecycle policy
-    /// template</a>.</p>
+    /// <p>Creates or updates the lifecycle policy for the specified repository. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html">Lifecycle policy template</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutLifecyclePolicy<
         C = aws_smithy_client::erase::DynConnector,
@@ -3789,14 +3446,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you
-        /// do  not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do  not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.registry_id(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you
-        /// do  not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do  not specify a registry, the default registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_registry_id(input);
             self
@@ -3831,8 +3486,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutRegistryPolicy`.
     ///
     /// <p>Creates or updates the permissions policy for your registry.</p>
-    /// <p>A registry policy is used to specify permissions for another Amazon Web Services account and is used
-    /// when configuring cross-account replication. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry-permissions.html">Registry permissions</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
+    /// <p>A registry policy is used to specify permissions for another Amazon Web Services account and is used when configuring cross-account replication. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry-permissions.html">Registry permissions</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutRegistryPolicy<
         C = aws_smithy_client::erase::DynConnector,
@@ -3889,16 +3543,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The JSON policy text to apply to your registry. The policy text follows the same
-        /// format as IAM policy text. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry-permissions.html">Registry
-        /// permissions</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
+        /// <p>The JSON policy text to apply to your registry. The policy text follows the same format as IAM policy text. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry-permissions.html">Registry permissions</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
         pub fn policy_text(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.policy_text(input.into());
             self
         }
-        /// <p>The JSON policy text to apply to your registry. The policy text follows the same
-        /// format as IAM policy text. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry-permissions.html">Registry
-        /// permissions</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
+        /// <p>The JSON policy text to apply to your registry. The policy text follows the same format as IAM policy text. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry-permissions.html">Registry permissions</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
         pub fn set_policy_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_policy_text(input);
             self
@@ -3964,23 +3614,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The scanning type to set for the registry.</p>
-        /// <p>By default, the <code>BASIC</code> scan type is used. When basic scanning is set, you
-        /// may specify filters to determine which individual repositories, or all repositories, are
-        /// scanned when new images are pushed. Alternatively, you can do manual scans of images
-        /// with basic scanning.</p>
-        /// <p>When the <code>ENHANCED</code> scan type is set, Amazon Inspector provides automated, continuous
-        /// scanning of all repositories in your registry.</p>
+        /// <p>By default, the <code>BASIC</code> scan type is used. When basic scanning is set, you may specify filters to determine which individual repositories, or all repositories, are scanned when new images are pushed. Alternatively, you can do manual scans of images with basic scanning.</p>
+        /// <p>When the <code>ENHANCED</code> scan type is set, Amazon Inspector provides automated, continuous scanning of all repositories in your registry.</p>
         pub fn scan_type(mut self, input: crate::model::ScanType) -> Self {
             self.inner = self.inner.scan_type(input);
             self
         }
         /// <p>The scanning type to set for the registry.</p>
-        /// <p>By default, the <code>BASIC</code> scan type is used. When basic scanning is set, you
-        /// may specify filters to determine which individual repositories, or all repositories, are
-        /// scanned when new images are pushed. Alternatively, you can do manual scans of images
-        /// with basic scanning.</p>
-        /// <p>When the <code>ENHANCED</code> scan type is set, Amazon Inspector provides automated, continuous
-        /// scanning of all repositories in your registry.</p>
+        /// <p>By default, the <code>BASIC</code> scan type is used. When basic scanning is set, you may specify filters to determine which individual repositories, or all repositories, are scanned when new images are pushed. Alternatively, you can do manual scans of images with basic scanning.</p>
+        /// <p>When the <code>ENHANCED</code> scan type is set, Amazon Inspector provides automated, continuous scanning of all repositories in your registry.</p>
         pub fn set_scan_type(mut self, input: std::option::Option<crate::model::ScanType>) -> Self {
             self.inner = self.inner.set_scan_type(input);
             self
@@ -3989,14 +3631,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
-        /// <p>The scanning rules to use for the registry. A scanning rule is used to determine which
-        /// repository filters are used and at what frequency scanning will occur.</p>
+        /// <p>The scanning rules to use for the registry. A scanning rule is used to determine which repository filters are used and at what frequency scanning will occur.</p>
         pub fn rules(mut self, input: crate::model::RegistryScanningRule) -> Self {
             self.inner = self.inner.rules(input);
             self
         }
-        /// <p>The scanning rules to use for the registry. A scanning rule is used to determine which
-        /// repository filters are used and at what frequency scanning will occur.</p>
+        /// <p>The scanning rules to use for the registry. A scanning rule is used to determine which repository filters are used and at what frequency scanning will occur.</p>
         pub fn set_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RegistryScanningRule>>,
@@ -4007,16 +3647,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutReplicationConfiguration`.
     ///
-    /// <p>Creates or updates the replication configuration for a registry. The existing
-    /// replication configuration for a repository can be retrieved with the <a>DescribeRegistry</a> API action. The first time the
-    /// PutReplicationConfiguration API is called, a service-linked IAM role is created in
-    /// your account for the replication process. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/using-service-linked-roles.html">Using
-    /// service-linked roles for Amazon ECR</a> in the
-    /// <i>Amazon Elastic Container Registry User Guide</i>.</p>
-    /// <note>
-    /// <p>When configuring cross-account replication, the destination account must grant the
-    /// source account permission to replicate. This permission is controlled using a
-    /// registry permissions policy. For more information, see <a>PutRegistryPolicy</a>.</p>
+    /// <p>Creates or updates the replication configuration for a registry. The existing replication configuration for a repository can be retrieved with the <code>DescribeRegistry</code> API action. The first time the PutReplicationConfiguration API is called, a service-linked IAM role is created in your account for the replication process. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/using-service-linked-roles.html">Using service-linked roles for Amazon ECR</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p> <note>
+    /// <p>When configuring cross-account replication, the destination account must grant the source account permission to replicate. This permission is controlled using a registry permissions policy. For more information, see <code>PutRegistryPolicy</code>.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutReplicationConfiguration<
@@ -4093,9 +3725,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SetRepositoryPolicy`.
     ///
-    /// <p>Applies a repository policy to the specified repository to control access permissions.
-    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policies.html">Amazon ECR Repository
-    /// policies</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
+    /// <p>Applies a repository policy to the specified repository to control access permissions. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policies.html">Amazon ECR Repository policies</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetRepositoryPolicy<
         C = aws_smithy_client::erase::DynConnector,
@@ -4152,14 +3782,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
-        /// If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.registry_id(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
-        /// If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_registry_id(input);
             self
@@ -4177,30 +3805,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_repository_name(input);
             self
         }
-        /// <p>The JSON repository policy text to apply to the repository. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Amazon ECR repository
-        /// policies</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
+        /// <p>The JSON repository policy text to apply to the repository. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Amazon ECR repository policies</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
         pub fn policy_text(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.policy_text(input.into());
             self
         }
-        /// <p>The JSON repository policy text to apply to the repository. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Amazon ECR repository
-        /// policies</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
+        /// <p>The JSON repository policy text to apply to the repository. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Amazon ECR repository policies</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
         pub fn set_policy_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_policy_text(input);
             self
         }
-        /// <p>If the policy you are attempting to set on a repository policy would prevent you from
-        /// setting another policy in the future, you must force the <a>SetRepositoryPolicy</a> operation. This is intended to prevent accidental
-        /// repository lock outs.</p>
+        /// <p>If the policy you are attempting to set on a repository policy would prevent you from setting another policy in the future, you must force the <code>SetRepositoryPolicy</code> operation. This is intended to prevent accidental repository lock outs.</p>
         pub fn force(mut self, input: bool) -> Self {
             self.inner = self.inner.force(input);
             self
         }
-        /// <p>If the policy you are attempting to set on a repository policy would prevent you from
-        /// setting another policy in the future, you must force the <a>SetRepositoryPolicy</a> operation. This is intended to prevent accidental
-        /// repository lock outs.</p>
+        /// <p>If the policy you are attempting to set on a repository policy would prevent you from setting another policy in the future, you must force the <code>SetRepositoryPolicy</code> operation. This is intended to prevent accidental repository lock outs.</p>
         pub fn set_force(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_force(input);
             self
@@ -4208,10 +3828,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartImageScan`.
     ///
-    /// <p>Starts an image vulnerability scan. An image scan can only be started once per 24
-    /// hours on an individual image. This limit includes if an image was scanned on initial
-    /// push. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-scanning.html">Image scanning</a> in the
-    /// <i>Amazon Elastic Container Registry User Guide</i>.</p>
+    /// <p>Starts an image vulnerability scan. An image scan can only be started once per 24 hours on an individual image. This limit includes if an image was scanned on initial push. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-scanning.html">Image scanning</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartImageScan<
         C = aws_smithy_client::erase::DynConnector,
@@ -4268,14 +3885,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
-        /// which to start an image scan request. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to start an image scan request. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.registry_id(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
-        /// which to start an image scan request. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to start an image scan request. If you do not specify a registry, the default registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_registry_id(input);
             self
@@ -4309,8 +3924,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartLifecyclePolicyPreview`.
     ///
-    /// <p>Starts a preview of a lifecycle policy for the specified repository. This allows you
-    /// to see the results before associating the lifecycle policy with the repository.</p>
+    /// <p>Starts a preview of a lifecycle policy for the specified repository. This allows you to see the results before associating the lifecycle policy with the repository.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartLifecyclePolicyPreview<
         C = aws_smithy_client::erase::DynConnector,
@@ -4367,14 +3981,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
-        /// If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.registry_id(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
-        /// If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_registry_id(input);
             self
@@ -4392,14 +4004,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_repository_name(input);
             self
         }
-        /// <p>The policy to be evaluated against. If you do not specify a policy, the current policy
-        /// for the repository is used.</p>
+        /// <p>The policy to be evaluated against. If you do not specify a policy, the current policy for the repository is used.</p>
         pub fn lifecycle_policy_text(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.lifecycle_policy_text(input.into());
             self
         }
-        /// <p>The policy to be evaluated against. If you do not specify a policy, the current policy
-        /// for the repository is used.</p>
+        /// <p>The policy to be evaluated against. If you do not specify a policy, the current policy for the repository is used.</p>
         pub fn set_lifecycle_policy_text(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4410,8 +4020,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Adds specified tags to a resource with the specified ARN. Existing tags on a resource
-    /// are not changed if they are not specified in the request parameters.</p>
+    /// <p>Adds specified tags to a resource with the specified ARN. Existing tags on a resource are not changed if they are not specified in the request parameters.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -4468,14 +4077,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the the resource to which to add tags. Currently, the only supported
-        /// resource is an Amazon ECR repository.</p>
+        /// <p>The Amazon Resource Name (ARN) of the the resource to which to add tags. Currently, the only supported resource is an Amazon ECR repository.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the the resource to which to add tags. Currently, the only supported
-        /// resource is an Amazon ECR repository.</p>
+        /// <p>The Amazon Resource Name (ARN) of the the resource to which to add tags. Currently, the only supported resource is an Amazon ECR repository.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -4484,16 +4091,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags to add to the resource. A tag is an array of key-value pairs.
-        /// Tag keys can have a maximum character length of 128 characters, and tag values can have
-        /// a maximum length of 256 characters.</p>
+        /// <p>The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>The tags to add to the resource. A tag is an array of key-value pairs.
-        /// Tag keys can have a maximum character length of 128 characters, and tag values can have
-        /// a maximum length of 256 characters.</p>
+        /// <p>The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -4561,14 +4164,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource from which to remove tags. Currently, the only supported
-        /// resource is an Amazon ECR repository.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource from which to remove tags. Currently, the only supported resource is an Amazon ECR repository.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource from which to remove tags. Currently, the only supported
-        /// resource is an Amazon ECR repository.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource from which to remove tags. Currently, the only supported resource is an Amazon ECR repository.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -4594,12 +4195,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UploadLayerPart`.
     ///
     /// <p>Uploads an image layer part to Amazon ECR.</p>
-    /// <p>When an image is pushed, each new image layer is uploaded in parts. The maximum size
-    /// of each image layer part can be 20971520 bytes (or about 20MB). The UploadLayerPart API
-    /// is called once per each new image layer part.</p>
-    /// <note>
-    /// <p>This operation is used by the Amazon ECR proxy and is not generally used by
-    /// customers for pulling and pushing images. In most cases, you should use the <code>docker</code> CLI to pull, tag, and push images.</p>
+    /// <p>When an image is pushed, each new image layer is uploaded in parts. The maximum size of each image layer part can be 20971520 bytes (or about 20MB). The UploadLayerPart API is called once per each new image layer part.</p> <note>
+    /// <p>This operation is used by the Amazon ECR proxy and is not generally used by customers for pulling and pushing images. In most cases, you should use the <code>docker</code> CLI to pull, tag, and push images.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UploadLayerPart<
@@ -4657,14 +4254,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Web Services account ID associated with the registry to which you are uploading layer
-        /// parts. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry to which you are uploading layer parts. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.registry_id(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID associated with the registry to which you are uploading layer
-        /// parts. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry to which you are uploading layer parts. If you do not specify a registry, the default registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_registry_id(input);
             self
@@ -4682,14 +4277,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_repository_name(input);
             self
         }
-        /// <p>The upload ID from a previous <a>InitiateLayerUpload</a> operation to
-        /// associate with the layer part upload.</p>
+        /// <p>The upload ID from a previous <code>InitiateLayerUpload</code> operation to associate with the layer part upload.</p>
         pub fn upload_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.upload_id(input.into());
             self
         }
-        /// <p>The upload ID from a previous <a>InitiateLayerUpload</a> operation to
-        /// associate with the layer part upload.</p>
+        /// <p>The upload ID from a previous <code>InitiateLayerUpload</code> operation to associate with the layer part upload.</p>
         pub fn set_upload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_upload_id(input);
             self

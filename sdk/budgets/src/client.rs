@@ -260,8 +260,7 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CreateBudget`.
     ///
-    /// <p>Creates a budget and, if included, notifications and subscribers. </p>
-    /// <important>
+    /// <p>Creates a budget and, if included, notifications and subscribers. </p> <important>
     /// <p>Only one of <code>BudgetLimit</code> or <code>PlannedBudgetLimits</code> can be present in the syntax at one time. Use the syntax that matches your case. The Request Syntax section shows the <code>BudgetLimit</code> syntax. For <code>PlannedBudgetLimits</code>, see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_CreateBudget.html#API_CreateBudget_Examples">Examples</a> section. </p>
     /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -363,9 +362,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateBudgetAction`.
     ///
-    /// <p>
-    /// Creates a budget action.
-    /// </p>
+    /// <p> Creates a budget action. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateBudgetAction<
         C = aws_smithy_client::erase::DynConnector,
@@ -455,16 +452,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_notification_type(input);
             self
         }
-        /// <p>
-        /// The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition.
-        /// </p>
+        /// <p> The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition. </p>
         pub fn action_type(mut self, input: crate::model::ActionType) -> Self {
             self.inner = self.inner.action_type(input);
             self
         }
-        /// <p>
-        /// The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition.
-        /// </p>
+        /// <p> The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition. </p>
         pub fn set_action_type(
             mut self,
             input: std::option::Option<crate::model::ActionType>,
@@ -472,16 +465,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_action_type(input);
             self
         }
-        /// <p>
-        /// The trigger threshold of the action.
-        /// </p>
+        /// <p> The trigger threshold of the action. </p>
         pub fn action_threshold(mut self, input: crate::model::ActionThreshold) -> Self {
             self.inner = self.inner.action_threshold(input);
             self
         }
-        /// <p>
-        /// The trigger threshold of the action.
-        /// </p>
+        /// <p> The trigger threshold of the action. </p>
         pub fn set_action_threshold(
             mut self,
             input: std::option::Option<crate::model::ActionThreshold>,
@@ -489,16 +478,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_action_threshold(input);
             self
         }
-        /// <p>
-        /// Specifies all of the type-specific parameters.
-        /// </p>
+        /// <p> Specifies all of the type-specific parameters. </p>
         pub fn definition(mut self, input: crate::model::Definition) -> Self {
             self.inner = self.inner.definition(input);
             self
         }
-        /// <p>
-        /// Specifies all of the type-specific parameters.
-        /// </p>
+        /// <p> Specifies all of the type-specific parameters. </p>
         pub fn set_definition(
             mut self,
             input: std::option::Option<crate::model::Definition>,
@@ -506,16 +491,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_definition(input);
             self
         }
-        /// <p>
-        /// The role passed for action execution and reversion. Roles and actions must be in the same account.
-        /// </p>
+        /// <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
         pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.execution_role_arn(input.into());
             self
         }
-        /// <p>
-        /// The role passed for action execution and reversion. Roles and actions must be in the same account.
-        /// </p>
+        /// <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
         pub fn set_execution_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -523,16 +504,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_execution_role_arn(input);
             self
         }
-        /// <p>
-        /// This specifies if the action needs manual or automatic approval.
-        /// </p>
+        /// <p> This specifies if the action needs manual or automatic approval. </p>
         pub fn approval_model(mut self, input: crate::model::ApprovalModel) -> Self {
             self.inner = self.inner.approval_model(input);
             self
         }
-        /// <p>
-        /// This specifies if the action needs manual or automatic approval.
-        /// </p>
+        /// <p> This specifies if the action needs manual or automatic approval. </p>
         pub fn set_approval_model(
             mut self,
             input: std::option::Option<crate::model::ApprovalModel>,
@@ -776,8 +753,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteBudget`.
     ///
-    /// <p>Deletes a budget. You can delete your budget at any time.</p>
-    /// <important>
+    /// <p>Deletes a budget. You can delete your budget at any time.</p> <important>
     /// <p>Deleting a budget also deletes the notifications and subscribers that are associated with that budget.</p>
     /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -859,9 +835,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteBudgetAction`.
     ///
-    /// <p>
-    /// Deletes a budget action.
-    /// </p>
+    /// <p> Deletes a budget action. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBudgetAction<
         C = aws_smithy_client::erase::DynConnector,
@@ -938,16 +912,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_budget_name(input);
             self
         }
-        /// <p>
-        /// A system-generated universally unique identifier (UUID) for the action.
-        /// </p>
+        /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
         pub fn action_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.action_id(input.into());
             self
         }
-        /// <p>
-        /// A system-generated universally unique identifier (UUID) for the action.
-        /// </p>
+        /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
         pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_action_id(input);
             self
@@ -955,8 +925,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteNotification`.
     ///
-    /// <p>Deletes a notification.</p>
-    /// <important>
+    /// <p>Deletes a notification.</p> <important>
     /// <p>Deleting a notification also deletes the subscribers that are associated with the notification.</p>
     /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -1051,8 +1020,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteSubscriber`.
     ///
-    /// <p>Deletes a subscriber.</p>
-    /// <important>
+    /// <p>Deletes a subscriber.</p> <important>
     /// <p>Deleting the last subscriber to a notification also deletes the notification.</p>
     /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -1160,8 +1128,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeBudget`.
     ///
-    /// <p>Describes a budget.</p>
-    /// <important>
+    /// <p>Describes a budget.</p> <important>
     /// <p>The Request Syntax section shows the <code>BudgetLimit</code> syntax. For <code>PlannedBudgetLimits</code>, see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_DescribeBudget.html#API_DescribeBudget_Examples">Examples</a> section. </p>
     /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -1243,9 +1210,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeBudgetAction`.
     ///
-    /// <p>
-    /// Describes a budget action detail.
-    /// </p>
+    /// <p> Describes a budget action detail. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeBudgetAction<
         C = aws_smithy_client::erase::DynConnector,
@@ -1322,16 +1287,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_budget_name(input);
             self
         }
-        /// <p>
-        /// A system-generated universally unique identifier (UUID) for the action.
-        /// </p>
+        /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
         pub fn action_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.action_id(input.into());
             self
         }
-        /// <p>
-        /// A system-generated universally unique identifier (UUID) for the action.
-        /// </p>
+        /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
         pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_action_id(input);
             self
@@ -1339,9 +1300,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeBudgetActionHistories`.
     ///
-    /// <p>
-    /// Describes a budget action history detail.
-    /// </p>
+    /// <p> Describes a budget action history detail. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeBudgetActionHistories<
         C = aws_smithy_client::erase::DynConnector,
@@ -1418,16 +1377,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_budget_name(input);
             self
         }
-        /// <p>
-        /// A system-generated universally unique identifier (UUID) for the action.
-        /// </p>
+        /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
         pub fn action_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.action_id(input.into());
             self
         }
-        /// <p>
-        /// A system-generated universally unique identifier (UUID) for the action.
-        /// </p>
+        /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
         pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_action_id(input);
             self
@@ -1468,9 +1423,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeBudgetActionsForAccount`.
     ///
-    /// <p>
-    /// Describes all of the budget actions for an account.
-    /// </p>
+    /// <p> Describes all of the budget actions for an account. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeBudgetActionsForAccount<
         C = aws_smithy_client::erase::DynConnector,
@@ -1560,9 +1513,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeBudgetActionsForBudget`.
     ///
-    /// <p>
-    /// Describes all of the budget actions for a budget.
-    /// </p>
+    /// <p> Describes all of the budget actions for a budget. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeBudgetActionsForBudget<
         C = aws_smithy_client::erase::DynConnector,
@@ -1775,8 +1726,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeBudgets`.
     ///
-    /// <p>Lists the budgets that are associated with an account.</p>
-    /// <important>
+    /// <p>Lists the budgets that are associated with an account.</p> <important>
     /// <p>The Request Syntax section shows the <code>BudgetLimit</code> syntax. For <code>PlannedBudgetLimits</code>, see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_DescribeBudgets.html#API_DescribeBudgets_Examples">Examples</a> section. </p>
     /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -2083,9 +2033,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ExecuteBudgetAction`.
     ///
-    /// <p>
-    /// Executes a budget action.
-    /// </p>
+    /// <p> Executes a budget action. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ExecuteBudgetAction<
         C = aws_smithy_client::erase::DynConnector,
@@ -2162,30 +2110,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_budget_name(input);
             self
         }
-        /// <p>
-        /// A system-generated universally unique identifier (UUID) for the action.
-        /// </p>
+        /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
         pub fn action_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.action_id(input.into());
             self
         }
-        /// <p>
-        /// A system-generated universally unique identifier (UUID) for the action.
-        /// </p>
+        /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
         pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_action_id(input);
             self
         }
-        /// <p>
-        /// The type of execution.
-        /// </p>
+        /// <p> The type of execution. </p>
         pub fn execution_type(mut self, input: crate::model::ExecutionType) -> Self {
             self.inner = self.inner.execution_type(input);
             self
         }
-        /// <p>
-        /// The type of execution.
-        /// </p>
+        /// <p> The type of execution. </p>
         pub fn set_execution_type(
             mut self,
             input: std::option::Option<crate::model::ExecutionType>,
@@ -2196,8 +2136,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateBudget`.
     ///
-    /// <p>Updates a budget. You can change every part of a budget except for the <code>budgetName</code> and the <code>calculatedSpend</code>. When you modify a budget, the <code>calculatedSpend</code> drops to zero until AWS has new usage data to use for forecasting.</p>
-    /// <important>
+    /// <p>Updates a budget. You can change every part of a budget except for the <code>budgetName</code> and the <code>calculatedSpend</code>. When you modify a budget, the <code>calculatedSpend</code> drops to zero until AWS has new usage data to use for forecasting.</p> <important>
     /// <p>Only one of <code>BudgetLimit</code> or <code>PlannedBudgetLimits</code> can be present in the syntax at one time. Use the syntax that matches your case. The Request Syntax section shows the <code>BudgetLimit</code> syntax. For <code>PlannedBudgetLimits</code>, see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_UpdateBudget.html#API_UpdateBudget_Examples">Examples</a> section. </p>
     /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -2279,9 +2218,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateBudgetAction`.
     ///
-    /// <p>
-    /// Updates a budget action.
-    /// </p>
+    /// <p> Updates a budget action. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateBudgetAction<
         C = aws_smithy_client::erase::DynConnector,
@@ -2358,16 +2295,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_budget_name(input);
             self
         }
-        /// <p>
-        /// A system-generated universally unique identifier (UUID) for the action.
-        /// </p>
+        /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
         pub fn action_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.action_id(input.into());
             self
         }
-        /// <p>
-        /// A system-generated universally unique identifier (UUID) for the action.
-        /// </p>
+        /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
         pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_action_id(input);
             self
@@ -2385,16 +2318,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_notification_type(input);
             self
         }
-        /// <p>
-        /// The trigger threshold of the action.
-        /// </p>
+        /// <p> The trigger threshold of the action. </p>
         pub fn action_threshold(mut self, input: crate::model::ActionThreshold) -> Self {
             self.inner = self.inner.action_threshold(input);
             self
         }
-        /// <p>
-        /// The trigger threshold of the action.
-        /// </p>
+        /// <p> The trigger threshold of the action. </p>
         pub fn set_action_threshold(
             mut self,
             input: std::option::Option<crate::model::ActionThreshold>,
@@ -2402,16 +2331,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_action_threshold(input);
             self
         }
-        /// <p>
-        /// Specifies all of the type-specific parameters.
-        /// </p>
+        /// <p> Specifies all of the type-specific parameters. </p>
         pub fn definition(mut self, input: crate::model::Definition) -> Self {
             self.inner = self.inner.definition(input);
             self
         }
-        /// <p>
-        /// Specifies all of the type-specific parameters.
-        /// </p>
+        /// <p> Specifies all of the type-specific parameters. </p>
         pub fn set_definition(
             mut self,
             input: std::option::Option<crate::model::Definition>,
@@ -2419,16 +2344,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_definition(input);
             self
         }
-        /// <p>
-        /// The role passed for action execution and reversion. Roles and actions must be in the same account.
-        /// </p>
+        /// <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
         pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.execution_role_arn(input.into());
             self
         }
-        /// <p>
-        /// The role passed for action execution and reversion. Roles and actions must be in the same account.
-        /// </p>
+        /// <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
         pub fn set_execution_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2436,16 +2357,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_execution_role_arn(input);
             self
         }
-        /// <p>
-        /// This specifies if the action needs manual or automatic approval.
-        /// </p>
+        /// <p> This specifies if the action needs manual or automatic approval. </p>
         pub fn approval_model(mut self, input: crate::model::ApprovalModel) -> Self {
             self.inner = self.inner.approval_model(input);
             self
         }
-        /// <p>
-        /// This specifies if the action needs manual or automatic approval.
-        /// </p>
+        /// <p> This specifies if the action needs manual or automatic approval. </p>
         pub fn set_approval_model(
             mut self,
             input: std::option::Option<crate::model::ApprovalModel>,

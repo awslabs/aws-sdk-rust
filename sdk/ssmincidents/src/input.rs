@@ -16,8 +16,7 @@ pub mod create_replication_set_input {
         ///
         /// To override the contents of this collection use [`set_regions`](Self::set_regions).
         ///
-        /// <p>The Regions that Incident Manager replicates your data to. You can have up to three Regions
-        /// in your replication set.</p>
+        /// <p>The Regions that Incident Manager replicates your data to. You can have up to three Regions in your replication set.</p>
         pub fn regions(
             mut self,
             k: impl Into<std::string::String>,
@@ -28,8 +27,7 @@ pub mod create_replication_set_input {
             self.regions = Some(hash_map);
             self
         }
-        /// <p>The Regions that Incident Manager replicates your data to. You can have up to three Regions
-        /// in your replication set.</p>
+        /// <p>The Regions that Incident Manager replicates your data to. You can have up to three Regions in your replication set.</p>
         pub fn set_regions(
             mut self,
             input: std::option::Option<
@@ -39,14 +37,12 @@ pub mod create_replication_set_input {
             self.regions = input;
             self
         }
-        /// <p>A token ensuring that the operation is called only once with the specified
-        /// details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A token ensuring that the operation is called only once with the specified
-        /// details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -205,14 +201,12 @@ pub mod create_response_plan_input {
         >,
     }
     impl Builder {
-        /// <p>A token ensuring that the operation is called only once with the specified
-        /// details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A token ensuring that the operation is called only once with the specified
-        /// details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -250,14 +244,12 @@ pub mod create_response_plan_input {
             self.incident_template = input;
             self
         }
-        /// <p>The Chatbot chat channel used for collaboration during an
-        /// incident.</p>
+        /// <p>The Chatbot chat channel used for collaboration during an incident.</p>
         pub fn chat_channel(mut self, input: crate::model::ChatChannel) -> Self {
             self.chat_channel = Some(input);
             self
         }
-        /// <p>The Chatbot chat channel used for collaboration during an
-        /// incident.</p>
+        /// <p>The Chatbot chat channel used for collaboration during an incident.</p>
         pub fn set_chat_channel(
             mut self,
             input: std::option::Option<crate::model::ChatChannel>,
@@ -265,14 +257,12 @@ pub mod create_response_plan_input {
             self.chat_channel = input;
             self
         }
-        /// <p>The contacts and escalation plans that the response plan engages during an
-        /// incident.</p>
+        /// <p>The contacts and escalation plans that the response plan engages during an incident.</p>
         pub fn engagements(mut self, input: std::vec::Vec<std::string::String>) -> Self {
             self.engagements = Some(input);
             self
         }
-        /// <p>The contacts and escalation plans that the response plan engages during an
-        /// incident.</p>
+        /// <p>The contacts and escalation plans that the response plan engages during an incident.</p>
         pub fn set_engagements(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -477,26 +467,22 @@ pub mod create_timeline_event_input {
         pub(crate) event_data: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A token ensuring that the action is called only once with the specified
-        /// details.</p>
+        /// <p>A token ensuring that the action is called only once with the specified details.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A token ensuring that the action is called only once with the specified
-        /// details.</p>
+        /// <p>A token ensuring that the action is called only once with the specified details.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the incident record to which the event will be
-        /// added.</p>
+        /// <p>The Amazon Resource Name (ARN) of the incident record to which the event will be added.</p>
         pub fn incident_record_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.incident_record_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the incident record to which the event will be
-        /// added.</p>
+        /// <p>The Amazon Resource Name (ARN) of the incident record to which the event will be added.</p>
         pub fn set_incident_record_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -517,26 +503,22 @@ pub mod create_timeline_event_input {
             self.event_time = input;
             self
         }
-        /// <p>The type of the event. You can create timeline events of type <code>Custom
-        /// Event</code>.</p>
+        /// <p>The type of the event. You can create timeline events of type <code>Custom Event</code>.</p>
         pub fn event_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.event_type = Some(input.into());
             self
         }
-        /// <p>The type of the event. You can create timeline events of type <code>Custom
-        /// Event</code>.</p>
+        /// <p>The type of the event. You can create timeline events of type <code>Custom Event</code>.</p>
         pub fn set_event_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.event_type = input;
             self
         }
-        /// <p>A short description of the event as a valid JSON string. There is no other schema
-        /// imposed.</p>
+        /// <p>A short description of the event as a valid JSON string. There is no other schema imposed.</p>
         pub fn event_data(mut self, input: impl Into<std::string::String>) -> Self {
             self.event_data = Some(input.into());
             self
         }
-        /// <p>A short description of the event as a valid JSON string. There is no other schema
-        /// imposed.</p>
+        /// <p>A short description of the event as a valid JSON string. There is no other schema imposed.</p>
         pub fn set_event_data(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.event_data = input;
             self
@@ -1291,14 +1273,12 @@ pub mod delete_timeline_event_input {
         pub(crate) event_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline
-        /// event.</p>
+        /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
         pub fn incident_record_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.incident_record_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline
-        /// event.</p>
+        /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
         pub fn set_incident_record_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1306,14 +1286,12 @@ pub mod delete_timeline_event_input {
             self.incident_record_arn = input;
             self
         }
-        /// <p>The ID of the event you are updating. You can find this by using
-        /// <code>ListTimelineEvents</code>.</p>
+        /// <p>The ID of the event you are updating. You can find this by using <code>ListTimelineEvents</code>.</p>
         pub fn event_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.event_id = Some(input.into());
             self
         }
-        /// <p>The ID of the event you are updating. You can find this by using
-        /// <code>ListTimelineEvents</code>.</p>
+        /// <p>The ID of the event you are updating. You can find this by using <code>ListTimelineEvents</code>.</p>
         pub fn set_event_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.event_id = input;
             self
@@ -2075,14 +2053,12 @@ pub mod get_timeline_event_input {
         pub(crate) event_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline
-        /// event.</p>
+        /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
         pub fn incident_record_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.incident_record_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline
-        /// event.</p>
+        /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
         pub fn set_incident_record_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2090,14 +2066,12 @@ pub mod get_timeline_event_input {
             self.incident_record_arn = input;
             self
         }
-        /// <p>The ID of the event. You can get an event's ID when you create it, or by using
-        /// <code>ListTimelineEvents</code>.</p>
+        /// <p>The ID of the event. You can get an event's ID when you create it, or by using <code>ListTimelineEvents</code>.</p>
         pub fn event_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.event_id = Some(input.into());
             self
         }
-        /// <p>The ID of the event. You can get an event's ID when you create it, or by using
-        /// <code>ListTimelineEvents</code>.</p>
+        /// <p>The ID of the event. You can get an event's ID when you create it, or by using <code>ListTimelineEvents</code>.</p>
         pub fn set_event_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.event_id = input;
             self
@@ -2251,44 +2225,18 @@ pub mod list_incident_records_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Filters the list of incident records through which you are searching. You can filter
-        /// on the following keys:</p>
+        /// <p>Filters the list of incident records through which you are searching. You can filter on the following keys:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>creationTime</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>impact</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>status</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>createdBy</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>creationTime</code> </p> </li>
+        /// <li> <p> <code>impact</code> </p> </li>
+        /// <li> <p> <code>status</code> </p> </li>
+        /// <li> <p> <code>createdBy</code> </p> </li>
         /// </ul>
         /// <p>Note the following when deciding how to use Filters:</p>
         /// <ul>
-        /// <li>
-        /// <p>If you don't specify a Filter, the response includes all incident
-        /// records.</p>
-        /// </li>
-        /// <li>
-        /// <p>If you specify more than one filter in a single request, the response returns
-        /// incident records that match all filters.</p>
-        /// </li>
-        /// <li>
-        /// <p>If you specify a filter with more than one value, the response returns
-        /// incident records that match any of the values provided.</p>
-        /// </li>
+        /// <li> <p>If you don't specify a Filter, the response includes all incident records.</p> </li>
+        /// <li> <p>If you specify more than one filter in a single request, the response returns incident records that match all filters.</p> </li>
+        /// <li> <p>If you specify a filter with more than one value, the response returns incident records that match any of the values provided.</p> </li>
         /// </ul>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
@@ -2296,44 +2244,18 @@ pub mod list_incident_records_input {
             self.filters = Some(v);
             self
         }
-        /// <p>Filters the list of incident records through which you are searching. You can filter
-        /// on the following keys:</p>
+        /// <p>Filters the list of incident records through which you are searching. You can filter on the following keys:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>creationTime</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>impact</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>status</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>createdBy</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>creationTime</code> </p> </li>
+        /// <li> <p> <code>impact</code> </p> </li>
+        /// <li> <p> <code>status</code> </p> </li>
+        /// <li> <p> <code>createdBy</code> </p> </li>
         /// </ul>
         /// <p>Note the following when deciding how to use Filters:</p>
         /// <ul>
-        /// <li>
-        /// <p>If you don't specify a Filter, the response includes all incident
-        /// records.</p>
-        /// </li>
-        /// <li>
-        /// <p>If you specify more than one filter in a single request, the response returns
-        /// incident records that match all filters.</p>
-        /// </li>
-        /// <li>
-        /// <p>If you specify a filter with more than one value, the response returns
-        /// incident records that match any of the values provided.</p>
-        /// </li>
+        /// <li> <p>If you don't specify a Filter, the response includes all incident records.</p> </li>
+        /// <li> <p>If you specify more than one filter in a single request, the response returns incident records that match all filters.</p> </li>
+        /// <li> <p>If you specify a filter with more than one value, the response returns incident records that match any of the values provided.</p> </li>
         /// </ul>
         pub fn set_filters(
             mut self,
@@ -2505,14 +2427,12 @@ pub mod list_related_items_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the incident record containing the listed related
-        /// items.</p>
+        /// <p>The Amazon Resource Name (ARN) of the incident record containing the listed related items.</p>
         pub fn incident_record_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.incident_record_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the incident record containing the listed related
-        /// items.</p>
+        /// <p>The Amazon Resource Name (ARN) of the incident record containing the listed related items.</p>
         pub fn set_incident_record_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3159,14 +3079,12 @@ pub mod list_timeline_events_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline
-        /// event.</p>
+        /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
         pub fn incident_record_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.incident_record_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline
-        /// event.</p>
+        /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
         pub fn set_incident_record_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3178,34 +3096,16 @@ pub mod list_timeline_events_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Filters the timeline events based on the provided conditional values. You can filter
-        /// timeline events using the following keys:</p>
+        /// <p>Filters the timeline events based on the provided conditional values. You can filter timeline events using the following keys:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>eventTime</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>eventType</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>eventTime</code> </p> </li>
+        /// <li> <p> <code>eventType</code> </p> </li>
         /// </ul>
         /// <p>Note the following when deciding how to use Filters:</p>
         /// <ul>
-        /// <li>
-        /// <p>If you don't specify a Filter, the response includes all timeline
-        /// events.</p>
-        /// </li>
-        /// <li>
-        /// <p>If you specify more than one filter in a single request, the response returns
-        /// timeline events that match all filters.</p>
-        /// </li>
-        /// <li>
-        /// <p>If you specify a filter with more than one value, the response returns
-        /// timeline events that match any of the values provided.</p>
-        /// </li>
+        /// <li> <p>If you don't specify a Filter, the response includes all timeline events.</p> </li>
+        /// <li> <p>If you specify more than one filter in a single request, the response returns timeline events that match all filters.</p> </li>
+        /// <li> <p>If you specify a filter with more than one value, the response returns timeline events that match any of the values provided.</p> </li>
         /// </ul>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
@@ -3213,34 +3113,16 @@ pub mod list_timeline_events_input {
             self.filters = Some(v);
             self
         }
-        /// <p>Filters the timeline events based on the provided conditional values. You can filter
-        /// timeline events using the following keys:</p>
+        /// <p>Filters the timeline events based on the provided conditional values. You can filter timeline events using the following keys:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>eventTime</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>eventType</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>eventTime</code> </p> </li>
+        /// <li> <p> <code>eventType</code> </p> </li>
         /// </ul>
         /// <p>Note the following when deciding how to use Filters:</p>
         /// <ul>
-        /// <li>
-        /// <p>If you don't specify a Filter, the response includes all timeline
-        /// events.</p>
-        /// </li>
-        /// <li>
-        /// <p>If you specify more than one filter in a single request, the response returns
-        /// timeline events that match all filters.</p>
-        /// </li>
-        /// <li>
-        /// <p>If you specify a filter with more than one value, the response returns
-        /// timeline events that match any of the values provided.</p>
-        /// </li>
+        /// <li> <p>If you don't specify a Filter, the response includes all timeline events.</p> </li>
+        /// <li> <p>If you specify more than one filter in a single request, the response returns timeline events that match all filters.</p> </li>
+        /// <li> <p>If you specify a filter with more than one value, the response returns timeline events that match any of the values provided.</p> </li>
         /// </ul>
         pub fn set_filters(
             mut self,
@@ -3262,14 +3144,12 @@ pub mod list_timeline_events_input {
             self.sort_by = input;
             self
         }
-        /// <p>Sorts the order of timeline events by the value specified in the <code>sortBy</code>
-        /// field.</p>
+        /// <p>Sorts the order of timeline events by the value specified in the <code>sortBy</code> field.</p>
         pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
             self.sort_order = Some(input);
             self
         }
-        /// <p>Sorts the order of timeline events by the value specified in the <code>sortBy</code>
-        /// field.</p>
+        /// <p>Sorts the order of timeline events by the value specified in the <code>sortBy</code> field.</p>
         pub fn set_sort_order(
             mut self,
             input: std::option::Option<crate::model::SortOrder>,
@@ -3442,14 +3322,12 @@ pub mod put_resource_policy_input {
         pub(crate) policy: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the response plan you're adding the resource policy
-        /// to.</p>
+        /// <p>The Amazon Resource Name (ARN) of the response plan you're adding the resource policy to.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the response plan you're adding the resource policy
-        /// to.</p>
+        /// <p>The Amazon Resource Name (ARN) of the response plan you're adding the resource policy to.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -3609,26 +3487,22 @@ pub mod start_incident_input {
         pub(crate) related_items: std::option::Option<std::vec::Vec<crate::model::RelatedItem>>,
     }
     impl Builder {
-        /// <p>A token ensuring that the operation is called only once with the specified
-        /// details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A token ensuring that the operation is called only once with the specified
-        /// details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the response plan that pre-defines summary, chat
-        /// channels, Amazon SNS topics, runbooks, title, and impact of the incident. </p>
+        /// <p>The Amazon Resource Name (ARN) of the response plan that pre-defines summary, chat channels, Amazon SNS topics, runbooks, title, and impact of the incident. </p>
         pub fn response_plan_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.response_plan_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the response plan that pre-defines summary, chat
-        /// channels, Amazon SNS topics, runbooks, title, and impact of the incident. </p>
+        /// <p>The Amazon Resource Name (ARN) of the response plan that pre-defines summary, chat channels, Amazon SNS topics, runbooks, title, and impact of the incident. </p>
         pub fn set_response_plan_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3636,85 +3510,37 @@ pub mod start_incident_input {
             self.response_plan_arn = input;
             self
         }
-        /// <p>Provide a title for the incident. Providing a title overwrites the title provided by
-        /// the response plan. </p>
+        /// <p>Provide a title for the incident. Providing a title overwrites the title provided by the response plan. </p>
         pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
             self.title = Some(input.into());
             self
         }
-        /// <p>Provide a title for the incident. Providing a title overwrites the title provided by
-        /// the response plan. </p>
+        /// <p>Provide a title for the incident. Providing a title overwrites the title provided by the response plan. </p>
         pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.title = input;
             self
         }
-        /// <p>Defines the impact to the customers. Providing an impact overwrites the impact
-        /// provided by a response plan.</p>
-        /// <p class="title">
-        /// <b>Possible impacts:</b>
-        /// </p>
+        /// <p>Defines the impact to the customers. Providing an impact overwrites the impact provided by a response plan.</p>
+        /// <p class="title"> <b>Possible impacts:</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>1</code> - Critical impact, this typically relates to full application
-        /// failure that impacts many to all customers. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>2</code> - High impact, partial application failure with impact to many
-        /// customers.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>3</code> -  Medium impact, the application is providing reduced service
-        /// to customers.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>4</code> -  Low impact, customer might aren't impacted by the problem
-        /// yet.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>5</code> - No impact, customers aren't currently impacted but urgent
-        /// action is needed to avoid impact.</p>
-        /// </li>
+        /// <li> <p> <code>1</code> - Critical impact, this typically relates to full application failure that impacts many to all customers. </p> </li>
+        /// <li> <p> <code>2</code> - High impact, partial application failure with impact to many customers.</p> </li>
+        /// <li> <p> <code>3</code> - Medium impact, the application is providing reduced service to customers.</p> </li>
+        /// <li> <p> <code>4</code> - Low impact, customer might aren't impacted by the problem yet.</p> </li>
+        /// <li> <p> <code>5</code> - No impact, customers aren't currently impacted but urgent action is needed to avoid impact.</p> </li>
         /// </ul>
         pub fn impact(mut self, input: i32) -> Self {
             self.impact = Some(input);
             self
         }
-        /// <p>Defines the impact to the customers. Providing an impact overwrites the impact
-        /// provided by a response plan.</p>
-        /// <p class="title">
-        /// <b>Possible impacts:</b>
-        /// </p>
+        /// <p>Defines the impact to the customers. Providing an impact overwrites the impact provided by a response plan.</p>
+        /// <p class="title"> <b>Possible impacts:</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>1</code> - Critical impact, this typically relates to full application
-        /// failure that impacts many to all customers. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>2</code> - High impact, partial application failure with impact to many
-        /// customers.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>3</code> -  Medium impact, the application is providing reduced service
-        /// to customers.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>4</code> -  Low impact, customer might aren't impacted by the problem
-        /// yet.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>5</code> - No impact, customers aren't currently impacted but urgent
-        /// action is needed to avoid impact.</p>
-        /// </li>
+        /// <li> <p> <code>1</code> - Critical impact, this typically relates to full application failure that impacts many to all customers. </p> </li>
+        /// <li> <p> <code>2</code> - High impact, partial application failure with impact to many customers.</p> </li>
+        /// <li> <p> <code>3</code> - Medium impact, the application is providing reduced service to customers.</p> </li>
+        /// <li> <p> <code>4</code> - Low impact, customer might aren't impacted by the problem yet.</p> </li>
+        /// <li> <p> <code>5</code> - No impact, customers aren't currently impacted but urgent action is needed to avoid impact.</p> </li>
         /// </ul>
         pub fn set_impact(mut self, input: std::option::Option<i32>) -> Self {
             self.impact = input;
@@ -3737,16 +3563,14 @@ pub mod start_incident_input {
         ///
         /// To override the contents of this collection use [`set_related_items`](Self::set_related_items).
         ///
-        /// <p>Add related items to the incident for other responders to use. Related items are AWS
-        /// resources, external links, or files uploaded to an Amazon S3 bucket. </p>
+        /// <p>Add related items to the incident for other responders to use. Related items are AWS resources, external links, or files uploaded to an Amazon S3 bucket. </p>
         pub fn related_items(mut self, input: crate::model::RelatedItem) -> Self {
             let mut v = self.related_items.unwrap_or_default();
             v.push(input);
             self.related_items = Some(v);
             self
         }
-        /// <p>Add related items to the incident for other responders to use. Related items are AWS
-        /// resources, external links, or files uploaded to an Amazon S3 bucket. </p>
+        /// <p>Add related items to the incident for other responders to use. Related items are AWS resources, external links, or files uploaded to an Amazon S3 bucket. </p>
         pub fn set_related_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RelatedItem>>,
@@ -4300,14 +4124,12 @@ pub mod update_deletion_protection_input {
             self.deletion_protected = input;
             self
         }
-        /// <p>A token ensuring that the operation is called only once with the specified
-        /// details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A token ensuring that the operation is called only once with the specified
-        /// details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -4467,14 +4289,12 @@ pub mod update_incident_record_input {
             std::option::Option<std::vec::Vec<crate::model::NotificationTargetItem>>,
     }
     impl Builder {
-        /// <p>A token that ensures that the operation is called only once with the specified
-        /// details.</p>
+        /// <p>A token that ensures that the operation is called only once with the specified details.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A token that ensures that the operation is called only once with the specified
-        /// details.</p>
+        /// <p>A token that ensures that the operation is called only once with the specified details.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -4509,86 +4329,38 @@ pub mod update_incident_record_input {
             self.summary = input;
             self
         }
-        /// <p>Defines the impact of the incident to customers and applications. Providing an impact
-        /// overwrites the impact provided by the response plan.</p>
-        /// <p class="title">
-        /// <b>Possible impacts:</b>
-        /// </p>
+        /// <p>Defines the impact of the incident to customers and applications. Providing an impact overwrites the impact provided by the response plan.</p>
+        /// <p class="title"> <b>Possible impacts:</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>1</code> - Critical impact, full application failure that impacts many
-        /// to all customers. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>2</code> - High impact, partial application failure with impact to many
-        /// customers.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>3</code> - Medium impact, the application is providing reduced service
-        /// to customers.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>4</code> - Low impact, customer aren't impacted by the problem
-        /// yet.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>5</code> - No impact, customers aren't currently impacted but urgent
-        /// action is needed to avoid impact.</p>
-        /// </li>
+        /// <li> <p> <code>1</code> - Critical impact, full application failure that impacts many to all customers. </p> </li>
+        /// <li> <p> <code>2</code> - High impact, partial application failure with impact to many customers.</p> </li>
+        /// <li> <p> <code>3</code> - Medium impact, the application is providing reduced service to customers.</p> </li>
+        /// <li> <p> <code>4</code> - Low impact, customer aren't impacted by the problem yet.</p> </li>
+        /// <li> <p> <code>5</code> - No impact, customers aren't currently impacted but urgent action is needed to avoid impact.</p> </li>
         /// </ul>
         pub fn impact(mut self, input: i32) -> Self {
             self.impact = Some(input);
             self
         }
-        /// <p>Defines the impact of the incident to customers and applications. Providing an impact
-        /// overwrites the impact provided by the response plan.</p>
-        /// <p class="title">
-        /// <b>Possible impacts:</b>
-        /// </p>
+        /// <p>Defines the impact of the incident to customers and applications. Providing an impact overwrites the impact provided by the response plan.</p>
+        /// <p class="title"> <b>Possible impacts:</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>1</code> - Critical impact, full application failure that impacts many
-        /// to all customers. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>2</code> - High impact, partial application failure with impact to many
-        /// customers.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>3</code> - Medium impact, the application is providing reduced service
-        /// to customers.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>4</code> - Low impact, customer aren't impacted by the problem
-        /// yet.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>5</code> - No impact, customers aren't currently impacted but urgent
-        /// action is needed to avoid impact.</p>
-        /// </li>
+        /// <li> <p> <code>1</code> - Critical impact, full application failure that impacts many to all customers. </p> </li>
+        /// <li> <p> <code>2</code> - High impact, partial application failure with impact to many customers.</p> </li>
+        /// <li> <p> <code>3</code> - Medium impact, the application is providing reduced service to customers.</p> </li>
+        /// <li> <p> <code>4</code> - Low impact, customer aren't impacted by the problem yet.</p> </li>
+        /// <li> <p> <code>5</code> - No impact, customers aren't currently impacted but urgent action is needed to avoid impact.</p> </li>
         /// </ul>
         pub fn set_impact(mut self, input: std::option::Option<i32>) -> Self {
             self.impact = input;
             self
         }
-        /// <p>The status of the incident. An incident can be <code>Open</code> or
-        /// <code>Resolved</code>.</p>
+        /// <p>The status of the incident. An incident can be <code>Open</code> or <code>Resolved</code>.</p>
         pub fn status(mut self, input: crate::model::IncidentRecordStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the incident. An incident can be <code>Open</code> or
-        /// <code>Resolved</code>.</p>
+        /// <p>The status of the incident. An incident can be <code>Open</code> or <code>Resolved</code>.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::IncidentRecordStatus>,
@@ -4613,20 +4385,16 @@ pub mod update_incident_record_input {
         ///
         /// To override the contents of this collection use [`set_notification_targets`](Self::set_notification_targets).
         ///
-        /// <p>The Amazon SNS targets that are notified when updates are made to an
-        /// incident.</p>
-        /// <p>Using multiple SNS topics creates redundancy in the event that a Region is down during
-        /// the incident.</p>
+        /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
+        /// <p>Using multiple SNS topics creates redundancy in the event that a Region is down during the incident.</p>
         pub fn notification_targets(mut self, input: crate::model::NotificationTargetItem) -> Self {
             let mut v = self.notification_targets.unwrap_or_default();
             v.push(input);
             self.notification_targets = Some(v);
             self
         }
-        /// <p>The Amazon SNS targets that are notified when updates are made to an
-        /// incident.</p>
-        /// <p>Using multiple SNS topics creates redundancy in the event that a Region is down during
-        /// the incident.</p>
+        /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
+        /// <p>Using multiple SNS topics creates redundancy in the event that a Region is down during the incident.</p>
         pub fn set_notification_targets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::NotificationTargetItem>>,
@@ -4787,26 +4555,22 @@ pub mod update_related_items_input {
         pub(crate) related_items_update: std::option::Option<crate::model::RelatedItemsUpdate>,
     }
     impl Builder {
-        /// <p>A token ensuring that the operation is called only once with the specified
-        /// details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A token ensuring that the operation is called only once with the specified
-        /// details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the incident record containing the related items you
-        /// are updating.</p>
+        /// <p>The Amazon Resource Name (ARN) of the incident record containing the related items you are updating.</p>
         pub fn incident_record_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.incident_record_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the incident record containing the related items you
-        /// are updating.</p>
+        /// <p>The Amazon Resource Name (ARN) of the incident record containing the related items you are updating.</p>
         pub fn set_incident_record_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5003,14 +4767,12 @@ pub mod update_replication_set_input {
             self.actions = input;
             self
         }
-        /// <p>A token ensuring that the operation is called only once with the specified
-        /// details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A token ensuring that the operation is called only once with the specified
-        /// details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -5172,14 +4934,12 @@ pub mod update_response_plan_input {
         pub(crate) actions: std::option::Option<std::vec::Vec<crate::model::Action>>,
     }
     impl Builder {
-        /// <p>A token ensuring that the operation is called only once with the specified
-        /// details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A token ensuring that the operation is called only once with the specified
-        /// details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -5194,14 +4954,12 @@ pub mod update_response_plan_input {
             self.arn = input;
             self
         }
-        /// <p>The long format name of the response plan. The display name can't contain
-        /// spaces.</p>
+        /// <p>The long format name of the response plan. The display name can't contain spaces.</p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.display_name = Some(input.into());
             self
         }
-        /// <p>The long format name of the response plan. The display name can't contain
-        /// spaces.</p>
+        /// <p>The long format name of the response plan. The display name can't contain spaces.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.display_name = input;
             self
@@ -5219,76 +4977,38 @@ pub mod update_response_plan_input {
             self.incident_template_title = input;
             self
         }
-        /// <p>Defines the impact to the customers. Providing an impact overwrites the impact
-        /// provided by a response plan.</p>
-        /// <p class="title">
-        /// <b>Possible impacts:</b>
-        /// </p>
+        /// <p>Defines the impact to the customers. Providing an impact overwrites the impact provided by a response plan.</p>
+        /// <p class="title"> <b>Possible impacts:</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>5</code> - Severe impact</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>4</code> - High impact</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>3</code> - Medium impact</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>2</code> - Low impact</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>1</code> - No impact</p>
-        /// </li>
+        /// <li> <p> <code>5</code> - Severe impact</p> </li>
+        /// <li> <p> <code>4</code> - High impact</p> </li>
+        /// <li> <p> <code>3</code> - Medium impact</p> </li>
+        /// <li> <p> <code>2</code> - Low impact</p> </li>
+        /// <li> <p> <code>1</code> - No impact</p> </li>
         /// </ul>
         pub fn incident_template_impact(mut self, input: i32) -> Self {
             self.incident_template_impact = Some(input);
             self
         }
-        /// <p>Defines the impact to the customers. Providing an impact overwrites the impact
-        /// provided by a response plan.</p>
-        /// <p class="title">
-        /// <b>Possible impacts:</b>
-        /// </p>
+        /// <p>Defines the impact to the customers. Providing an impact overwrites the impact provided by a response plan.</p>
+        /// <p class="title"> <b>Possible impacts:</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>5</code> - Severe impact</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>4</code> - High impact</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>3</code> - Medium impact</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>2</code> - Low impact</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>1</code> - No impact</p>
-        /// </li>
+        /// <li> <p> <code>5</code> - Severe impact</p> </li>
+        /// <li> <p> <code>4</code> - High impact</p> </li>
+        /// <li> <p> <code>3</code> - Medium impact</p> </li>
+        /// <li> <p> <code>2</code> - Low impact</p> </li>
+        /// <li> <p> <code>1</code> - No impact</p> </li>
         /// </ul>
         pub fn set_incident_template_impact(mut self, input: std::option::Option<i32>) -> Self {
             self.incident_template_impact = input;
             self
         }
-        /// <p>A brief summary of the incident. This typically contains what has happened, what's
-        /// currently happening, and next steps.</p>
+        /// <p>A brief summary of the incident. This typically contains what has happened, what's currently happening, and next steps.</p>
         pub fn incident_template_summary(mut self, input: impl Into<std::string::String>) -> Self {
             self.incident_template_summary = Some(input.into());
             self
         }
-        /// <p>A brief summary of the incident. This typically contains what has happened, what's
-        /// currently happening, and next steps.</p>
+        /// <p>A brief summary of the incident. This typically contains what has happened, what's currently happening, and next steps.</p>
         pub fn set_incident_template_summary(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5296,8 +5016,7 @@ pub mod update_response_plan_input {
             self.incident_template_summary = input;
             self
         }
-        /// <p>The string Incident Manager uses to prevent duplicate incidents from being created by the
-        /// same incident in the same account.</p>
+        /// <p>The string Incident Manager uses to prevent duplicate incidents from being created by the same incident in the same account.</p>
         pub fn incident_template_dedupe_string(
             mut self,
             input: impl Into<std::string::String>,
@@ -5305,8 +5024,7 @@ pub mod update_response_plan_input {
             self.incident_template_dedupe_string = Some(input.into());
             self
         }
-        /// <p>The string Incident Manager uses to prevent duplicate incidents from being created by the
-        /// same incident in the same account.</p>
+        /// <p>The string Incident Manager uses to prevent duplicate incidents from being created by the same incident in the same account.</p>
         pub fn set_incident_template_dedupe_string(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5318,8 +5036,7 @@ pub mod update_response_plan_input {
         ///
         /// To override the contents of this collection use [`set_incident_template_notification_targets`](Self::set_incident_template_notification_targets).
         ///
-        /// <p>The Amazon SNS targets that are notified when updates are made to an
-        /// incident.</p>
+        /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
         pub fn incident_template_notification_targets(
             mut self,
             input: crate::model::NotificationTargetItem,
@@ -5331,8 +5048,7 @@ pub mod update_response_plan_input {
             self.incident_template_notification_targets = Some(v);
             self
         }
-        /// <p>The Amazon SNS targets that are notified when updates are made to an
-        /// incident.</p>
+        /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
         pub fn set_incident_template_notification_targets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::NotificationTargetItem>>,
@@ -5340,15 +5056,13 @@ pub mod update_response_plan_input {
             self.incident_template_notification_targets = input;
             self
         }
-        /// <p>The Chatbot chat channel used for collaboration during an
-        /// incident.</p>
+        /// <p>The Chatbot chat channel used for collaboration during an incident.</p>
         /// <p>Use the empty structure to remove the chat channel from the response plan.</p>
         pub fn chat_channel(mut self, input: crate::model::ChatChannel) -> Self {
             self.chat_channel = Some(input);
             self
         }
-        /// <p>The Chatbot chat channel used for collaboration during an
-        /// incident.</p>
+        /// <p>The Chatbot chat channel used for collaboration during an incident.</p>
         /// <p>Use the empty structure to remove the chat channel from the response plan.</p>
         pub fn set_chat_channel(
             mut self,
@@ -5546,26 +5260,22 @@ pub mod update_timeline_event_input {
         pub(crate) event_data: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A token ensuring that the operation is called only once with the specified
-        /// details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A token ensuring that the operation is called only once with the specified
-        /// details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline
-        /// event.</p>
+        /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
         pub fn incident_record_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.incident_record_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline
-        /// event.</p>
+        /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
         pub fn set_incident_record_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5573,14 +5283,12 @@ pub mod update_timeline_event_input {
             self.incident_record_arn = input;
             self
         }
-        /// <p>The ID of the event you are updating. You can find this by using
-        /// <code>ListTimelineEvents</code>.</p>
+        /// <p>The ID of the event you are updating. You can find this by using <code>ListTimelineEvents</code>.</p>
         pub fn event_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.event_id = Some(input.into());
             self
         }
-        /// <p>The ID of the event you are updating. You can find this by using
-        /// <code>ListTimelineEvents</code>.</p>
+        /// <p>The ID of the event you are updating. You can find this by using <code>ListTimelineEvents</code>.</p>
         pub fn set_event_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.event_id = input;
             self
@@ -5760,14 +5468,11 @@ impl UpdateTimelineEventInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTimelineEventInput {
-    /// <p>A token ensuring that the operation is called only once with the specified
-    /// details.</p>
+    /// <p>A token ensuring that the operation is called only once with the specified details.</p>
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline
-    /// event.</p>
+    /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
     pub incident_record_arn: std::option::Option<std::string::String>,
-    /// <p>The ID of the event you are updating. You can find this by using
-    /// <code>ListTimelineEvents</code>.</p>
+    /// <p>The ID of the event you are updating. You can find this by using <code>ListTimelineEvents</code>.</p>
     pub event_id: std::option::Option<std::string::String>,
     /// <p>The time that the event occurred.</p>
     pub event_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -5777,18 +5482,15 @@ pub struct UpdateTimelineEventInput {
     pub event_data: std::option::Option<std::string::String>,
 }
 impl UpdateTimelineEventInput {
-    /// <p>A token ensuring that the operation is called only once with the specified
-    /// details.</p>
+    /// <p>A token ensuring that the operation is called only once with the specified details.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline
-    /// event.</p>
+    /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
     pub fn incident_record_arn(&self) -> std::option::Option<&str> {
         self.incident_record_arn.as_deref()
     }
-    /// <p>The ID of the event you are updating. You can find this by using
-    /// <code>ListTimelineEvents</code>.</p>
+    /// <p>The ID of the event you are updating. You can find this by using <code>ListTimelineEvents</code>.</p>
     pub fn event_id(&self) -> std::option::Option<&str> {
         self.event_id.as_deref()
     }
@@ -5822,56 +5524,32 @@ impl std::fmt::Debug for UpdateTimelineEventInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateResponsePlanInput {
-    /// <p>A token ensuring that the operation is called only once with the specified
-    /// details.</p>
+    /// <p>A token ensuring that the operation is called only once with the specified details.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the response plan.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The long format name of the response plan. The display name can't contain
-    /// spaces.</p>
+    /// <p>The long format name of the response plan. The display name can't contain spaces.</p>
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The short format name of the incident. The title can't contain spaces.</p>
     pub incident_template_title: std::option::Option<std::string::String>,
-    /// <p>Defines the impact to the customers. Providing an impact overwrites the impact
-    /// provided by a response plan.</p>
-    /// <p class="title">
-    /// <b>Possible impacts:</b>
-    /// </p>
+    /// <p>Defines the impact to the customers. Providing an impact overwrites the impact provided by a response plan.</p>
+    /// <p class="title"> <b>Possible impacts:</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>5</code> - Severe impact</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>4</code> - High impact</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>3</code> - Medium impact</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>2</code> - Low impact</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>1</code> - No impact</p>
-    /// </li>
+    /// <li> <p> <code>5</code> - Severe impact</p> </li>
+    /// <li> <p> <code>4</code> - High impact</p> </li>
+    /// <li> <p> <code>3</code> - Medium impact</p> </li>
+    /// <li> <p> <code>2</code> - Low impact</p> </li>
+    /// <li> <p> <code>1</code> - No impact</p> </li>
     /// </ul>
     pub incident_template_impact: std::option::Option<i32>,
-    /// <p>A brief summary of the incident. This typically contains what has happened, what's
-    /// currently happening, and next steps.</p>
+    /// <p>A brief summary of the incident. This typically contains what has happened, what's currently happening, and next steps.</p>
     pub incident_template_summary: std::option::Option<std::string::String>,
-    /// <p>The string Incident Manager uses to prevent duplicate incidents from being created by the
-    /// same incident in the same account.</p>
+    /// <p>The string Incident Manager uses to prevent duplicate incidents from being created by the same incident in the same account.</p>
     pub incident_template_dedupe_string: std::option::Option<std::string::String>,
-    /// <p>The Amazon SNS targets that are notified when updates are made to an
-    /// incident.</p>
+    /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
     pub incident_template_notification_targets:
         std::option::Option<std::vec::Vec<crate::model::NotificationTargetItem>>,
-    /// <p>The Chatbot chat channel used for collaboration during an
-    /// incident.</p>
+    /// <p>The Chatbot chat channel used for collaboration during an incident.</p>
     /// <p>Use the empty structure to remove the chat channel from the response plan.</p>
     pub chat_channel: std::option::Option<crate::model::ChatChannel>,
     /// <p>The contacts and escalation plans that Incident Manager engages at the start of the incident.</p>
@@ -5880,8 +5558,7 @@ pub struct UpdateResponsePlanInput {
     pub actions: std::option::Option<std::vec::Vec<crate::model::Action>>,
 }
 impl UpdateResponsePlanInput {
-    /// <p>A token ensuring that the operation is called only once with the specified
-    /// details.</p>
+    /// <p>A token ensuring that the operation is called only once with the specified details.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -5889,8 +5566,7 @@ impl UpdateResponsePlanInput {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The long format name of the response plan. The display name can't contain
-    /// spaces.</p>
+    /// <p>The long format name of the response plan. The display name can't contain spaces.</p>
     pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
     }
@@ -5898,55 +5574,33 @@ impl UpdateResponsePlanInput {
     pub fn incident_template_title(&self) -> std::option::Option<&str> {
         self.incident_template_title.as_deref()
     }
-    /// <p>Defines the impact to the customers. Providing an impact overwrites the impact
-    /// provided by a response plan.</p>
-    /// <p class="title">
-    /// <b>Possible impacts:</b>
-    /// </p>
+    /// <p>Defines the impact to the customers. Providing an impact overwrites the impact provided by a response plan.</p>
+    /// <p class="title"> <b>Possible impacts:</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>5</code> - Severe impact</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>4</code> - High impact</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>3</code> - Medium impact</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>2</code> - Low impact</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>1</code> - No impact</p>
-    /// </li>
+    /// <li> <p> <code>5</code> - Severe impact</p> </li>
+    /// <li> <p> <code>4</code> - High impact</p> </li>
+    /// <li> <p> <code>3</code> - Medium impact</p> </li>
+    /// <li> <p> <code>2</code> - Low impact</p> </li>
+    /// <li> <p> <code>1</code> - No impact</p> </li>
     /// </ul>
     pub fn incident_template_impact(&self) -> std::option::Option<i32> {
         self.incident_template_impact
     }
-    /// <p>A brief summary of the incident. This typically contains what has happened, what's
-    /// currently happening, and next steps.</p>
+    /// <p>A brief summary of the incident. This typically contains what has happened, what's currently happening, and next steps.</p>
     pub fn incident_template_summary(&self) -> std::option::Option<&str> {
         self.incident_template_summary.as_deref()
     }
-    /// <p>The string Incident Manager uses to prevent duplicate incidents from being created by the
-    /// same incident in the same account.</p>
+    /// <p>The string Incident Manager uses to prevent duplicate incidents from being created by the same incident in the same account.</p>
     pub fn incident_template_dedupe_string(&self) -> std::option::Option<&str> {
         self.incident_template_dedupe_string.as_deref()
     }
-    /// <p>The Amazon SNS targets that are notified when updates are made to an
-    /// incident.</p>
+    /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
     pub fn incident_template_notification_targets(
         &self,
     ) -> std::option::Option<&[crate::model::NotificationTargetItem]> {
         self.incident_template_notification_targets.as_deref()
     }
-    /// <p>The Chatbot chat channel used for collaboration during an
-    /// incident.</p>
+    /// <p>The Chatbot chat channel used for collaboration during an incident.</p>
     /// <p>Use the empty structure to remove the chat channel from the response plan.</p>
     pub fn chat_channel(&self) -> std::option::Option<&crate::model::ChatChannel> {
         self.chat_channel.as_ref()
@@ -5992,8 +5646,7 @@ pub struct UpdateReplicationSetInput {
     pub arn: std::option::Option<std::string::String>,
     /// <p>An action to add or delete a Region.</p>
     pub actions: std::option::Option<std::vec::Vec<crate::model::UpdateReplicationSetAction>>,
-    /// <p>A token ensuring that the operation is called only once with the specified
-    /// details.</p>
+    /// <p>A token ensuring that the operation is called only once with the specified details.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl UpdateReplicationSetInput {
@@ -6005,8 +5658,7 @@ impl UpdateReplicationSetInput {
     pub fn actions(&self) -> std::option::Option<&[crate::model::UpdateReplicationSetAction]> {
         self.actions.as_deref()
     }
-    /// <p>A token ensuring that the operation is called only once with the specified
-    /// details.</p>
+    /// <p>A token ensuring that the operation is called only once with the specified details.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -6025,23 +5677,19 @@ impl std::fmt::Debug for UpdateReplicationSetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRelatedItemsInput {
-    /// <p>A token ensuring that the operation is called only once with the specified
-    /// details.</p>
+    /// <p>A token ensuring that the operation is called only once with the specified details.</p>
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the incident record containing the related items you
-    /// are updating.</p>
+    /// <p>The Amazon Resource Name (ARN) of the incident record containing the related items you are updating.</p>
     pub incident_record_arn: std::option::Option<std::string::String>,
     /// <p>Details about the item you are adding or deleting.</p>
     pub related_items_update: std::option::Option<crate::model::RelatedItemsUpdate>,
 }
 impl UpdateRelatedItemsInput {
-    /// <p>A token ensuring that the operation is called only once with the specified
-    /// details.</p>
+    /// <p>A token ensuring that the operation is called only once with the specified details.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the incident record containing the related items you
-    /// are updating.</p>
+    /// <p>The Amazon Resource Name (ARN) of the incident record containing the related items you are updating.</p>
     pub fn incident_record_arn(&self) -> std::option::Option<&str> {
         self.incident_record_arn.as_deref()
     }
@@ -6064,8 +5712,7 @@ impl std::fmt::Debug for UpdateRelatedItemsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateIncidentRecordInput {
-    /// <p>A token that ensures that the operation is called only once with the specified
-    /// details.</p>
+    /// <p>A token that ensures that the operation is called only once with the specified details.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the incident record you are updating.</p>
     pub arn: std::option::Option<std::string::String>,
@@ -6073,54 +5720,27 @@ pub struct UpdateIncidentRecordInput {
     pub title: std::option::Option<std::string::String>,
     /// <p>A longer description of what occurred during the incident.</p>
     pub summary: std::option::Option<std::string::String>,
-    /// <p>Defines the impact of the incident to customers and applications. Providing an impact
-    /// overwrites the impact provided by the response plan.</p>
-    /// <p class="title">
-    /// <b>Possible impacts:</b>
-    /// </p>
+    /// <p>Defines the impact of the incident to customers and applications. Providing an impact overwrites the impact provided by the response plan.</p>
+    /// <p class="title"> <b>Possible impacts:</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>1</code> - Critical impact, full application failure that impacts many
-    /// to all customers. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>2</code> - High impact, partial application failure with impact to many
-    /// customers.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>3</code> - Medium impact, the application is providing reduced service
-    /// to customers.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>4</code> - Low impact, customer aren't impacted by the problem
-    /// yet.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>5</code> - No impact, customers aren't currently impacted but urgent
-    /// action is needed to avoid impact.</p>
-    /// </li>
+    /// <li> <p> <code>1</code> - Critical impact, full application failure that impacts many to all customers. </p> </li>
+    /// <li> <p> <code>2</code> - High impact, partial application failure with impact to many customers.</p> </li>
+    /// <li> <p> <code>3</code> - Medium impact, the application is providing reduced service to customers.</p> </li>
+    /// <li> <p> <code>4</code> - Low impact, customer aren't impacted by the problem yet.</p> </li>
+    /// <li> <p> <code>5</code> - No impact, customers aren't currently impacted but urgent action is needed to avoid impact.</p> </li>
     /// </ul>
     pub impact: std::option::Option<i32>,
-    /// <p>The status of the incident. An incident can be <code>Open</code> or
-    /// <code>Resolved</code>.</p>
+    /// <p>The status of the incident. An incident can be <code>Open</code> or <code>Resolved</code>.</p>
     pub status: std::option::Option<crate::model::IncidentRecordStatus>,
     /// <p>The Chatbot chat channel where responders can collaborate.</p>
     pub chat_channel: std::option::Option<crate::model::ChatChannel>,
-    /// <p>The Amazon SNS targets that are notified when updates are made to an
-    /// incident.</p>
-    /// <p>Using multiple SNS topics creates redundancy in the event that a Region is down during
-    /// the incident.</p>
+    /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
+    /// <p>Using multiple SNS topics creates redundancy in the event that a Region is down during the incident.</p>
     pub notification_targets:
         std::option::Option<std::vec::Vec<crate::model::NotificationTargetItem>>,
 }
 impl UpdateIncidentRecordInput {
-    /// <p>A token that ensures that the operation is called only once with the specified
-    /// details.</p>
+    /// <p>A token that ensures that the operation is called only once with the specified details.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -6136,43 +5756,19 @@ impl UpdateIncidentRecordInput {
     pub fn summary(&self) -> std::option::Option<&str> {
         self.summary.as_deref()
     }
-    /// <p>Defines the impact of the incident to customers and applications. Providing an impact
-    /// overwrites the impact provided by the response plan.</p>
-    /// <p class="title">
-    /// <b>Possible impacts:</b>
-    /// </p>
+    /// <p>Defines the impact of the incident to customers and applications. Providing an impact overwrites the impact provided by the response plan.</p>
+    /// <p class="title"> <b>Possible impacts:</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>1</code> - Critical impact, full application failure that impacts many
-    /// to all customers. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>2</code> - High impact, partial application failure with impact to many
-    /// customers.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>3</code> - Medium impact, the application is providing reduced service
-    /// to customers.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>4</code> - Low impact, customer aren't impacted by the problem
-    /// yet.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>5</code> - No impact, customers aren't currently impacted but urgent
-    /// action is needed to avoid impact.</p>
-    /// </li>
+    /// <li> <p> <code>1</code> - Critical impact, full application failure that impacts many to all customers. </p> </li>
+    /// <li> <p> <code>2</code> - High impact, partial application failure with impact to many customers.</p> </li>
+    /// <li> <p> <code>3</code> - Medium impact, the application is providing reduced service to customers.</p> </li>
+    /// <li> <p> <code>4</code> - Low impact, customer aren't impacted by the problem yet.</p> </li>
+    /// <li> <p> <code>5</code> - No impact, customers aren't currently impacted but urgent action is needed to avoid impact.</p> </li>
     /// </ul>
     pub fn impact(&self) -> std::option::Option<i32> {
         self.impact
     }
-    /// <p>The status of the incident. An incident can be <code>Open</code> or
-    /// <code>Resolved</code>.</p>
+    /// <p>The status of the incident. An incident can be <code>Open</code> or <code>Resolved</code>.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::IncidentRecordStatus> {
         self.status.as_ref()
     }
@@ -6180,10 +5776,8 @@ impl UpdateIncidentRecordInput {
     pub fn chat_channel(&self) -> std::option::Option<&crate::model::ChatChannel> {
         self.chat_channel.as_ref()
     }
-    /// <p>The Amazon SNS targets that are notified when updates are made to an
-    /// incident.</p>
-    /// <p>Using multiple SNS topics creates redundancy in the event that a Region is down during
-    /// the incident.</p>
+    /// <p>The Amazon SNS targets that are notified when updates are made to an incident.</p>
+    /// <p>Using multiple SNS topics creates redundancy in the event that a Region is down during the incident.</p>
     pub fn notification_targets(
         &self,
     ) -> std::option::Option<&[crate::model::NotificationTargetItem]> {
@@ -6213,8 +5807,7 @@ pub struct UpdateDeletionProtectionInput {
     pub arn: std::option::Option<std::string::String>,
     /// <p>Details if deletion protection is enabled or disabled in your account.</p>
     pub deletion_protected: std::option::Option<bool>,
-    /// <p>A token ensuring that the operation is called only once with the specified
-    /// details.</p>
+    /// <p>A token ensuring that the operation is called only once with the specified details.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl UpdateDeletionProtectionInput {
@@ -6226,8 +5819,7 @@ impl UpdateDeletionProtectionInput {
     pub fn deletion_protected(&self) -> std::option::Option<bool> {
         self.deletion_protected
     }
-    /// <p>A token ensuring that the operation is called only once with the specified
-    /// details.</p>
+    /// <p>A token ensuring that the operation is called only once with the specified details.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -6306,101 +5898,48 @@ impl std::fmt::Debug for TagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartIncidentInput {
-    /// <p>A token ensuring that the operation is called only once with the specified
-    /// details.</p>
+    /// <p>A token ensuring that the operation is called only once with the specified details.</p>
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the response plan that pre-defines summary, chat
-    /// channels, Amazon SNS topics, runbooks, title, and impact of the incident. </p>
+    /// <p>The Amazon Resource Name (ARN) of the response plan that pre-defines summary, chat channels, Amazon SNS topics, runbooks, title, and impact of the incident. </p>
     pub response_plan_arn: std::option::Option<std::string::String>,
-    /// <p>Provide a title for the incident. Providing a title overwrites the title provided by
-    /// the response plan. </p>
+    /// <p>Provide a title for the incident. Providing a title overwrites the title provided by the response plan. </p>
     pub title: std::option::Option<std::string::String>,
-    /// <p>Defines the impact to the customers. Providing an impact overwrites the impact
-    /// provided by a response plan.</p>
-    /// <p class="title">
-    /// <b>Possible impacts:</b>
-    /// </p>
+    /// <p>Defines the impact to the customers. Providing an impact overwrites the impact provided by a response plan.</p>
+    /// <p class="title"> <b>Possible impacts:</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>1</code> - Critical impact, this typically relates to full application
-    /// failure that impacts many to all customers. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>2</code> - High impact, partial application failure with impact to many
-    /// customers.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>3</code> -  Medium impact, the application is providing reduced service
-    /// to customers.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>4</code> -  Low impact, customer might aren't impacted by the problem
-    /// yet.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>5</code> - No impact, customers aren't currently impacted but urgent
-    /// action is needed to avoid impact.</p>
-    /// </li>
+    /// <li> <p> <code>1</code> - Critical impact, this typically relates to full application failure that impacts many to all customers. </p> </li>
+    /// <li> <p> <code>2</code> - High impact, partial application failure with impact to many customers.</p> </li>
+    /// <li> <p> <code>3</code> - Medium impact, the application is providing reduced service to customers.</p> </li>
+    /// <li> <p> <code>4</code> - Low impact, customer might aren't impacted by the problem yet.</p> </li>
+    /// <li> <p> <code>5</code> - No impact, customers aren't currently impacted but urgent action is needed to avoid impact.</p> </li>
     /// </ul>
     pub impact: std::option::Option<i32>,
     /// <p>Details of what created the incident record in Incident Manager.</p>
     pub trigger_details: std::option::Option<crate::model::TriggerDetails>,
-    /// <p>Add related items to the incident for other responders to use. Related items are AWS
-    /// resources, external links, or files uploaded to an Amazon S3 bucket. </p>
+    /// <p>Add related items to the incident for other responders to use. Related items are AWS resources, external links, or files uploaded to an Amazon S3 bucket. </p>
     pub related_items: std::option::Option<std::vec::Vec<crate::model::RelatedItem>>,
 }
 impl StartIncidentInput {
-    /// <p>A token ensuring that the operation is called only once with the specified
-    /// details.</p>
+    /// <p>A token ensuring that the operation is called only once with the specified details.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the response plan that pre-defines summary, chat
-    /// channels, Amazon SNS topics, runbooks, title, and impact of the incident. </p>
+    /// <p>The Amazon Resource Name (ARN) of the response plan that pre-defines summary, chat channels, Amazon SNS topics, runbooks, title, and impact of the incident. </p>
     pub fn response_plan_arn(&self) -> std::option::Option<&str> {
         self.response_plan_arn.as_deref()
     }
-    /// <p>Provide a title for the incident. Providing a title overwrites the title provided by
-    /// the response plan. </p>
+    /// <p>Provide a title for the incident. Providing a title overwrites the title provided by the response plan. </p>
     pub fn title(&self) -> std::option::Option<&str> {
         self.title.as_deref()
     }
-    /// <p>Defines the impact to the customers. Providing an impact overwrites the impact
-    /// provided by a response plan.</p>
-    /// <p class="title">
-    /// <b>Possible impacts:</b>
-    /// </p>
+    /// <p>Defines the impact to the customers. Providing an impact overwrites the impact provided by a response plan.</p>
+    /// <p class="title"> <b>Possible impacts:</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>1</code> - Critical impact, this typically relates to full application
-    /// failure that impacts many to all customers. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>2</code> - High impact, partial application failure with impact to many
-    /// customers.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>3</code> -  Medium impact, the application is providing reduced service
-    /// to customers.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>4</code> -  Low impact, customer might aren't impacted by the problem
-    /// yet.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>5</code> - No impact, customers aren't currently impacted but urgent
-    /// action is needed to avoid impact.</p>
-    /// </li>
+    /// <li> <p> <code>1</code> - Critical impact, this typically relates to full application failure that impacts many to all customers. </p> </li>
+    /// <li> <p> <code>2</code> - High impact, partial application failure with impact to many customers.</p> </li>
+    /// <li> <p> <code>3</code> - Medium impact, the application is providing reduced service to customers.</p> </li>
+    /// <li> <p> <code>4</code> - Low impact, customer might aren't impacted by the problem yet.</p> </li>
+    /// <li> <p> <code>5</code> - No impact, customers aren't currently impacted but urgent action is needed to avoid impact.</p> </li>
     /// </ul>
     pub fn impact(&self) -> std::option::Option<i32> {
         self.impact
@@ -6409,8 +5948,7 @@ impl StartIncidentInput {
     pub fn trigger_details(&self) -> std::option::Option<&crate::model::TriggerDetails> {
         self.trigger_details.as_ref()
     }
-    /// <p>Add related items to the incident for other responders to use. Related items are AWS
-    /// resources, external links, or files uploaded to an Amazon S3 bucket. </p>
+    /// <p>Add related items to the incident for other responders to use. Related items are AWS resources, external links, or files uploaded to an Amazon S3 bucket. </p>
     pub fn related_items(&self) -> std::option::Option<&[crate::model::RelatedItem]> {
         self.related_items.as_deref()
     }
@@ -6432,15 +5970,13 @@ impl std::fmt::Debug for StartIncidentInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutResourcePolicyInput {
-    /// <p>The Amazon Resource Name (ARN) of the response plan you're adding the resource policy
-    /// to.</p>
+    /// <p>The Amazon Resource Name (ARN) of the response plan you're adding the resource policy to.</p>
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Details of the resource policy.</p>
     pub policy: std::option::Option<std::string::String>,
 }
 impl PutResourcePolicyInput {
-    /// <p>The Amazon Resource Name (ARN) of the response plan you're adding the resource policy
-    /// to.</p>
+    /// <p>The Amazon Resource Name (ARN) of the response plan you're adding the resource policy to.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -6462,43 +5998,23 @@ impl std::fmt::Debug for PutResourcePolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTimelineEventsInput {
-    /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline
-    /// event.</p>
+    /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
     pub incident_record_arn: std::option::Option<std::string::String>,
-    /// <p>Filters the timeline events based on the provided conditional values. You can filter
-    /// timeline events using the following keys:</p>
+    /// <p>Filters the timeline events based on the provided conditional values. You can filter timeline events using the following keys:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>eventTime</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>eventType</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>eventTime</code> </p> </li>
+    /// <li> <p> <code>eventType</code> </p> </li>
     /// </ul>
     /// <p>Note the following when deciding how to use Filters:</p>
     /// <ul>
-    /// <li>
-    /// <p>If you don't specify a Filter, the response includes all timeline
-    /// events.</p>
-    /// </li>
-    /// <li>
-    /// <p>If you specify more than one filter in a single request, the response returns
-    /// timeline events that match all filters.</p>
-    /// </li>
-    /// <li>
-    /// <p>If you specify a filter with more than one value, the response returns
-    /// timeline events that match any of the values provided.</p>
-    /// </li>
+    /// <li> <p>If you don't specify a Filter, the response includes all timeline events.</p> </li>
+    /// <li> <p>If you specify more than one filter in a single request, the response returns timeline events that match all filters.</p> </li>
+    /// <li> <p>If you specify a filter with more than one value, the response returns timeline events that match any of the values provided.</p> </li>
     /// </ul>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>Sort by the specified key value pair.</p>
     pub sort_by: std::option::Option<crate::model::TimelineEventSort>,
-    /// <p>Sorts the order of timeline events by the value specified in the <code>sortBy</code>
-    /// field.</p>
+    /// <p>Sorts the order of timeline events by the value specified in the <code>sortBy</code> field.</p>
     pub sort_order: std::option::Option<crate::model::SortOrder>,
     /// <p>The maximum number of results per page.</p>
     pub max_results: std::option::Option<i32>,
@@ -6506,39 +6022,20 @@ pub struct ListTimelineEventsInput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTimelineEventsInput {
-    /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline
-    /// event.</p>
+    /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
     pub fn incident_record_arn(&self) -> std::option::Option<&str> {
         self.incident_record_arn.as_deref()
     }
-    /// <p>Filters the timeline events based on the provided conditional values. You can filter
-    /// timeline events using the following keys:</p>
+    /// <p>Filters the timeline events based on the provided conditional values. You can filter timeline events using the following keys:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>eventTime</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>eventType</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>eventTime</code> </p> </li>
+    /// <li> <p> <code>eventType</code> </p> </li>
     /// </ul>
     /// <p>Note the following when deciding how to use Filters:</p>
     /// <ul>
-    /// <li>
-    /// <p>If you don't specify a Filter, the response includes all timeline
-    /// events.</p>
-    /// </li>
-    /// <li>
-    /// <p>If you specify more than one filter in a single request, the response returns
-    /// timeline events that match all filters.</p>
-    /// </li>
-    /// <li>
-    /// <p>If you specify a filter with more than one value, the response returns
-    /// timeline events that match any of the values provided.</p>
-    /// </li>
+    /// <li> <p>If you don't specify a Filter, the response includes all timeline events.</p> </li>
+    /// <li> <p>If you specify more than one filter in a single request, the response returns timeline events that match all filters.</p> </li>
+    /// <li> <p>If you specify a filter with more than one value, the response returns timeline events that match any of the values provided.</p> </li>
     /// </ul>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
@@ -6547,8 +6044,7 @@ impl ListTimelineEventsInput {
     pub fn sort_by(&self) -> std::option::Option<&crate::model::TimelineEventSort> {
         self.sort_by.as_ref()
     }
-    /// <p>Sorts the order of timeline events by the value specified in the <code>sortBy</code>
-    /// field.</p>
+    /// <p>Sorts the order of timeline events by the value specified in the <code>sortBy</code> field.</p>
     pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
         self.sort_order.as_ref()
     }
@@ -6655,8 +6151,7 @@ impl std::fmt::Debug for ListReplicationSetsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRelatedItemsInput {
-    /// <p>The Amazon Resource Name (ARN) of the incident record containing the listed related
-    /// items.</p>
+    /// <p>The Amazon Resource Name (ARN) of the incident record containing the listed related items.</p>
     pub incident_record_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of related items per page.</p>
     pub max_results: std::option::Option<i32>,
@@ -6664,8 +6159,7 @@ pub struct ListRelatedItemsInput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRelatedItemsInput {
-    /// <p>The Amazon Resource Name (ARN) of the incident record containing the listed related
-    /// items.</p>
+    /// <p>The Amazon Resource Name (ARN) of the incident record containing the listed related items.</p>
     pub fn incident_record_arn(&self) -> std::option::Option<&str> {
         self.incident_record_arn.as_deref()
     }
@@ -6692,44 +6186,18 @@ impl std::fmt::Debug for ListRelatedItemsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIncidentRecordsInput {
-    /// <p>Filters the list of incident records through which you are searching. You can filter
-    /// on the following keys:</p>
+    /// <p>Filters the list of incident records through which you are searching. You can filter on the following keys:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>creationTime</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>impact</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>status</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>createdBy</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>creationTime</code> </p> </li>
+    /// <li> <p> <code>impact</code> </p> </li>
+    /// <li> <p> <code>status</code> </p> </li>
+    /// <li> <p> <code>createdBy</code> </p> </li>
     /// </ul>
     /// <p>Note the following when deciding how to use Filters:</p>
     /// <ul>
-    /// <li>
-    /// <p>If you don't specify a Filter, the response includes all incident
-    /// records.</p>
-    /// </li>
-    /// <li>
-    /// <p>If you specify more than one filter in a single request, the response returns
-    /// incident records that match all filters.</p>
-    /// </li>
-    /// <li>
-    /// <p>If you specify a filter with more than one value, the response returns
-    /// incident records that match any of the values provided.</p>
-    /// </li>
+    /// <li> <p>If you don't specify a Filter, the response includes all incident records.</p> </li>
+    /// <li> <p>If you specify more than one filter in a single request, the response returns incident records that match all filters.</p> </li>
+    /// <li> <p>If you specify a filter with more than one value, the response returns incident records that match any of the values provided.</p> </li>
     /// </ul>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>The maximum number of results per page.</p>
@@ -6738,44 +6206,18 @@ pub struct ListIncidentRecordsInput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListIncidentRecordsInput {
-    /// <p>Filters the list of incident records through which you are searching. You can filter
-    /// on the following keys:</p>
+    /// <p>Filters the list of incident records through which you are searching. You can filter on the following keys:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>creationTime</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>impact</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>status</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>createdBy</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>creationTime</code> </p> </li>
+    /// <li> <p> <code>impact</code> </p> </li>
+    /// <li> <p> <code>status</code> </p> </li>
+    /// <li> <p> <code>createdBy</code> </p> </li>
     /// </ul>
     /// <p>Note the following when deciding how to use Filters:</p>
     /// <ul>
-    /// <li>
-    /// <p>If you don't specify a Filter, the response includes all incident
-    /// records.</p>
-    /// </li>
-    /// <li>
-    /// <p>If you specify more than one filter in a single request, the response returns
-    /// incident records that match all filters.</p>
-    /// </li>
-    /// <li>
-    /// <p>If you specify a filter with more than one value, the response returns
-    /// incident records that match any of the values provided.</p>
-    /// </li>
+    /// <li> <p>If you don't specify a Filter, the response includes all incident records.</p> </li>
+    /// <li> <p>If you specify more than one filter in a single request, the response returns incident records that match all filters.</p> </li>
+    /// <li> <p>If you specify a filter with more than one value, the response returns incident records that match any of the values provided.</p> </li>
     /// </ul>
     pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
         self.filters.as_deref()
@@ -6803,21 +6245,17 @@ impl std::fmt::Debug for ListIncidentRecordsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTimelineEventInput {
-    /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline
-    /// event.</p>
+    /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
     pub incident_record_arn: std::option::Option<std::string::String>,
-    /// <p>The ID of the event. You can get an event's ID when you create it, or by using
-    /// <code>ListTimelineEvents</code>.</p>
+    /// <p>The ID of the event. You can get an event's ID when you create it, or by using <code>ListTimelineEvents</code>.</p>
     pub event_id: std::option::Option<std::string::String>,
 }
 impl GetTimelineEventInput {
-    /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline
-    /// event.</p>
+    /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
     pub fn incident_record_arn(&self) -> std::option::Option<&str> {
         self.incident_record_arn.as_deref()
     }
-    /// <p>The ID of the event. You can get an event's ID when you create it, or by using
-    /// <code>ListTimelineEvents</code>.</p>
+    /// <p>The ID of the event. You can get an event's ID when you create it, or by using <code>ListTimelineEvents</code>.</p>
     pub fn event_id(&self) -> std::option::Option<&str> {
         self.event_id.as_deref()
     }
@@ -6933,21 +6371,17 @@ impl std::fmt::Debug for GetIncidentRecordInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTimelineEventInput {
-    /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline
-    /// event.</p>
+    /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
     pub incident_record_arn: std::option::Option<std::string::String>,
-    /// <p>The ID of the event you are updating. You can find this by using
-    /// <code>ListTimelineEvents</code>.</p>
+    /// <p>The ID of the event you are updating. You can find this by using <code>ListTimelineEvents</code>.</p>
     pub event_id: std::option::Option<std::string::String>,
 }
 impl DeleteTimelineEventInput {
-    /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline
-    /// event.</p>
+    /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
     pub fn incident_record_arn(&self) -> std::option::Option<&str> {
         self.incident_record_arn.as_deref()
     }
-    /// <p>The ID of the event you are updating. You can find this by using
-    /// <code>ListTimelineEvents</code>.</p>
+    /// <p>The ID of the event you are updating. You can find this by using <code>ListTimelineEvents</code>.</p>
     pub fn event_id(&self) -> std::option::Option<&str> {
         self.event_id.as_deref()
     }
@@ -7056,29 +6490,23 @@ impl std::fmt::Debug for DeleteIncidentRecordInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTimelineEventInput {
-    /// <p>A token ensuring that the action is called only once with the specified
-    /// details.</p>
+    /// <p>A token ensuring that the action is called only once with the specified details.</p>
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the incident record to which the event will be
-    /// added.</p>
+    /// <p>The Amazon Resource Name (ARN) of the incident record to which the event will be added.</p>
     pub incident_record_arn: std::option::Option<std::string::String>,
     /// <p>The time that the event occurred.</p>
     pub event_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The type of the event. You can create timeline events of type <code>Custom
-    /// Event</code>.</p>
+    /// <p>The type of the event. You can create timeline events of type <code>Custom Event</code>.</p>
     pub event_type: std::option::Option<std::string::String>,
-    /// <p>A short description of the event as a valid JSON string. There is no other schema
-    /// imposed.</p>
+    /// <p>A short description of the event as a valid JSON string. There is no other schema imposed.</p>
     pub event_data: std::option::Option<std::string::String>,
 }
 impl CreateTimelineEventInput {
-    /// <p>A token ensuring that the action is called only once with the specified
-    /// details.</p>
+    /// <p>A token ensuring that the action is called only once with the specified details.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the incident record to which the event will be
-    /// added.</p>
+    /// <p>The Amazon Resource Name (ARN) of the incident record to which the event will be added.</p>
     pub fn incident_record_arn(&self) -> std::option::Option<&str> {
         self.incident_record_arn.as_deref()
     }
@@ -7086,13 +6514,11 @@ impl CreateTimelineEventInput {
     pub fn event_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.event_time.as_ref()
     }
-    /// <p>The type of the event. You can create timeline events of type <code>Custom
-    /// Event</code>.</p>
+    /// <p>The type of the event. You can create timeline events of type <code>Custom Event</code>.</p>
     pub fn event_type(&self) -> std::option::Option<&str> {
         self.event_type.as_deref()
     }
-    /// <p>A short description of the event as a valid JSON string. There is no other schema
-    /// imposed.</p>
+    /// <p>A short description of the event as a valid JSON string. There is no other schema imposed.</p>
     pub fn event_data(&self) -> std::option::Option<&str> {
         self.event_data.as_deref()
     }
@@ -7113,8 +6539,7 @@ impl std::fmt::Debug for CreateTimelineEventInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateResponsePlanInput {
-    /// <p>A token ensuring that the operation is called only once with the specified
-    /// details.</p>
+    /// <p>A token ensuring that the operation is called only once with the specified details.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The short format name of the response plan. Can't include spaces.</p>
     pub name: std::option::Option<std::string::String>,
@@ -7122,11 +6547,9 @@ pub struct CreateResponsePlanInput {
     pub display_name: std::option::Option<std::string::String>,
     /// <p>Details used to create an incident when using this response plan.</p>
     pub incident_template: std::option::Option<crate::model::IncidentTemplate>,
-    /// <p>The Chatbot chat channel used for collaboration during an
-    /// incident.</p>
+    /// <p>The Chatbot chat channel used for collaboration during an incident.</p>
     pub chat_channel: std::option::Option<crate::model::ChatChannel>,
-    /// <p>The contacts and escalation plans that the response plan engages during an
-    /// incident.</p>
+    /// <p>The contacts and escalation plans that the response plan engages during an incident.</p>
     pub engagements: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The actions that the response plan starts at the beginning of an incident.</p>
     pub actions: std::option::Option<std::vec::Vec<crate::model::Action>>,
@@ -7135,8 +6558,7 @@ pub struct CreateResponsePlanInput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateResponsePlanInput {
-    /// <p>A token ensuring that the operation is called only once with the specified
-    /// details.</p>
+    /// <p>A token ensuring that the operation is called only once with the specified details.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -7152,13 +6574,11 @@ impl CreateResponsePlanInput {
     pub fn incident_template(&self) -> std::option::Option<&crate::model::IncidentTemplate> {
         self.incident_template.as_ref()
     }
-    /// <p>The Chatbot chat channel used for collaboration during an
-    /// incident.</p>
+    /// <p>The Chatbot chat channel used for collaboration during an incident.</p>
     pub fn chat_channel(&self) -> std::option::Option<&crate::model::ChatChannel> {
         self.chat_channel.as_ref()
     }
-    /// <p>The contacts and escalation plans that the response plan engages during an
-    /// incident.</p>
+    /// <p>The contacts and escalation plans that the response plan engages during an incident.</p>
     pub fn engagements(&self) -> std::option::Option<&std::vec::Vec<std::string::String>> {
         self.engagements.as_ref()
     }
@@ -7193,18 +6613,15 @@ impl std::fmt::Debug for CreateResponsePlanInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateReplicationSetInput {
-    /// <p>The Regions that Incident Manager replicates your data to. You can have up to three Regions
-    /// in your replication set.</p>
+    /// <p>The Regions that Incident Manager replicates your data to. You can have up to three Regions in your replication set.</p>
     pub regions: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::RegionMapInputValue>,
     >,
-    /// <p>A token ensuring that the operation is called only once with the specified
-    /// details.</p>
+    /// <p>A token ensuring that the operation is called only once with the specified details.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateReplicationSetInput {
-    /// <p>The Regions that Incident Manager replicates your data to. You can have up to three Regions
-    /// in your replication set.</p>
+    /// <p>The Regions that Incident Manager replicates your data to. You can have up to three Regions in your replication set.</p>
     pub fn regions(
         &self,
     ) -> std::option::Option<
@@ -7212,8 +6629,7 @@ impl CreateReplicationSetInput {
     > {
         self.regions.as_ref()
     }
-    /// <p>A token ensuring that the operation is called only once with the specified
-    /// details.</p>
+    /// <p>A token ensuring that the operation is called only once with the specified details.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }

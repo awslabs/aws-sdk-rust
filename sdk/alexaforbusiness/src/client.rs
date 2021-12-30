@@ -785,8 +785,7 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `ApproveSkill`.
     ///
-    /// <p>Associates a skill with the organization under the customer's AWS account. If a skill
-    /// is private, the user implicitly accepts access to this skill during enablement.</p>
+    /// <p>Associates a skill with the organization under the customer's AWS account. If a skill is private, the user implicitly accepts access to this skill during enablement.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ApproveSkill<
         C = aws_smithy_client::erase::DynConnector,
@@ -1022,9 +1021,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `AssociateDeviceWithRoom`.
     ///
-    /// <p>Associates a device with a given room. This applies all the settings from the room
-    /// profile to the device, and all the skills in any skill groups added to that room. This
-    /// operation requires the device to be online, or else a manual sync is required. </p>
+    /// <p>Associates a device with a given room. This applies all the settings from the room profile to the device, and all the skills in any skill groups added to that room. This operation requires the device to be online, or else a manual sync is required. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateDeviceWithRoom<
         C = aws_smithy_client::erase::DynConnector,
@@ -1104,8 +1101,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `AssociateSkillGroupWithRoom`.
     ///
-    /// <p>Associates a skill group with a given room. This enables all skills in the associated
-    /// skill group on all devices in the room.</p>
+    /// <p>Associates a skill group with a given room. This enables all skills in the associated skill group on all devices in the room.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateSkillGroupWithRoom<
         C = aws_smithy_client::erase::DynConnector,
@@ -1418,14 +1414,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>A unique, user-specified identifier for the request that ensures
-        /// idempotency.</p>
+        /// <p>A unique, user-specified identifier for the request that ensures idempotency.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A unique, user-specified identifier for the request that ensures
-        /// idempotency.</p>
+        /// <p>A unique, user-specified identifier for the request that ensures idempotency.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1453,8 +1447,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateBusinessReportSchedule`.
     ///
-    /// <p>Creates a recurring schedule for usage reports to deliver to the specified S3
-    /// location with a specified daily or weekly interval.</p>
+    /// <p>Creates a recurring schedule for usage reports to deliver to the specified S3 location with a specified daily or weekly interval.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateBusinessReportSchedule<
         C = aws_smithy_client::erase::DynConnector,
@@ -1524,14 +1517,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_schedule_name(input);
             self
         }
-        /// <p>The S3 bucket name of the output reports. If this isn't specified, the report can be
-        /// retrieved from a download link by calling ListBusinessReportSchedule. </p>
+        /// <p>The S3 bucket name of the output reports. If this isn't specified, the report can be retrieved from a download link by calling ListBusinessReportSchedule. </p>
         pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.s3_bucket_name(input.into());
             self
         }
-        /// <p>The S3 bucket name of the output reports. If this isn't specified, the report can be
-        /// retrieved from a download link by calling ListBusinessReportSchedule. </p>
+        /// <p>The S3 bucket name of the output reports. If this isn't specified, the report can be retrieved from a download link by calling ListBusinessReportSchedule. </p>
         pub fn set_s3_bucket_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1552,14 +1543,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_s3_key_prefix(input);
             self
         }
-        /// <p>The format of the generated report (individual CSV files or zipped files of
-        /// individual files).</p>
+        /// <p>The format of the generated report (individual CSV files or zipped files of individual files).</p>
         pub fn format(mut self, input: crate::model::BusinessReportFormat) -> Self {
             self.inner = self.inner.format(input);
             self
         }
-        /// <p>The format of the generated report (individual CSV files or zipped files of
-        /// individual files).</p>
+        /// <p>The format of the generated report (individual CSV files or zipped files of individual files).</p>
         pub fn set_format(
             mut self,
             input: std::option::Option<crate::model::BusinessReportFormat>,
@@ -1580,14 +1569,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_content_range(input);
             self
         }
-        /// <p>The recurrence of the reports. If this isn't specified, the report will only be
-        /// delivered one time when the API is called. </p>
+        /// <p>The recurrence of the reports. If this isn't specified, the report will only be delivered one time when the API is called. </p>
         pub fn recurrence(mut self, input: crate::model::BusinessReportRecurrence) -> Self {
             self.inner = self.inner.recurrence(input);
             self
         }
-        /// <p>The recurrence of the reports. If this isn't specified, the report will only be
-        /// delivered one time when the API is called. </p>
+        /// <p>The recurrence of the reports. If this isn't specified, the report will only be delivered one time when the API is called. </p>
         pub fn set_recurrence(
             mut self,
             input: std::option::Option<crate::model::BusinessReportRecurrence>,
@@ -1853,40 +1840,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_display_name(input);
             self
         }
-        /// <p>The first name of the contact that is used to call the contact on the
-        /// device.</p>
+        /// <p>The first name of the contact that is used to call the contact on the device.</p>
         pub fn first_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.first_name(input.into());
             self
         }
-        /// <p>The first name of the contact that is used to call the contact on the
-        /// device.</p>
+        /// <p>The first name of the contact that is used to call the contact on the device.</p>
         pub fn set_first_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_first_name(input);
             self
         }
-        /// <p>The last name of the contact that is used to call the contact on the
-        /// device.</p>
+        /// <p>The last name of the contact that is used to call the contact on the device.</p>
         pub fn last_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.last_name(input.into());
             self
         }
-        /// <p>The last name of the contact that is used to call the contact on the
-        /// device.</p>
+        /// <p>The last name of the contact that is used to call the contact on the device.</p>
         pub fn set_last_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_last_name(input);
             self
         }
-        /// <p>The phone number of the contact in E.164 format. The phone number type defaults to
-        /// WORK. You can specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers,
-        /// which lets you specify the phone number type and multiple numbers.</p>
+        /// <p>The phone number of the contact in E.164 format. The phone number type defaults to WORK. You can specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which lets you specify the phone number type and multiple numbers.</p>
         pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.phone_number(input.into());
             self
         }
-        /// <p>The phone number of the contact in E.164 format. The phone number type defaults to
-        /// WORK. You can specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers,
-        /// which lets you specify the phone number type and multiple numbers.</p>
+        /// <p>The phone number of the contact in E.164 format. The phone number type defaults to WORK. You can specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which lets you specify the phone number type and multiple numbers.</p>
         pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_phone_number(input);
             self
@@ -1925,14 +1904,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sip_addresses(input);
             self
         }
-        /// <p>A unique, user-specified identifier for this request that ensures
-        /// idempotency.</p>
+        /// <p>A unique, user-specified identifier for this request that ensures idempotency.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A unique, user-specified identifier for this request that ensures
-        /// idempotency.</p>
+        /// <p>A unique, user-specified identifier for this request that ensures idempotency.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2160,14 +2137,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ssid(input);
             self
         }
-        /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK,
-        /// WEP, or OPEN.</p>
+        /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK, WEP, or OPEN.</p>
         pub fn security_type(mut self, input: crate::model::NetworkSecurityType) -> Self {
             self.inner = self.inner.security_type(input);
             self
         }
-        /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK,
-        /// WEP, or OPEN.</p>
+        /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK, WEP, or OPEN.</p>
         pub fn set_security_type(
             mut self,
             input: std::option::Option<crate::model::NetworkSecurityType>,
@@ -2175,14 +2150,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_security_type(input);
             self
         }
-        /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is
-        /// supported.</p>
+        /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is supported.</p>
         pub fn eap_method(mut self, input: crate::model::NetworkEapMethod) -> Self {
             self.inner = self.inner.eap_method(input);
             self
         }
-        /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is
-        /// supported.</p>
+        /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is supported.</p>
         pub fn set_eap_method(
             mut self,
             input: std::option::Option<crate::model::NetworkEapMethod>,
@@ -2203,16 +2176,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_current_password(input);
             self
         }
-        /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously
-        /// transmitted to the device and is used when the password of the network changes to
-        /// NextPassword. </p>
+        /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword. </p>
         pub fn next_password(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_password(input.into());
             self
         }
-        /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously
-        /// transmitted to the device and is used when the password of the network changes to
-        /// NextPassword. </p>
+        /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword. </p>
         pub fn set_next_password(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2220,14 +2189,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_password(input);
             self
         }
-        /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager
-        /// (ACM). This is used to issue certificates to the devices. </p>
+        /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices. </p>
         pub fn certificate_authority_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.certificate_authority_arn(input.into());
             self
         }
-        /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager
-        /// (ACM). This is used to issue certificates to the devices. </p>
+        /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices. </p>
         pub fn set_certificate_authority_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2239,14 +2206,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_trust_anchors`](Self::set_trust_anchors).
         ///
-        /// <p>The root certificates of your authentication server that is installed on your devices
-        /// and used to trust your authentication server during EAP negotiation. </p>
+        /// <p>The root certificates of your authentication server that is installed on your devices and used to trust your authentication server during EAP negotiation. </p>
         pub fn trust_anchors(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.trust_anchors(input.into());
             self
         }
-        /// <p>The root certificates of your authentication server that is installed on your devices
-        /// and used to trust your authentication server during EAP negotiation. </p>
+        /// <p>The root certificates of your authentication server that is installed on your devices and used to trust your authentication server during EAP negotiation. </p>
         pub fn set_trust_anchors(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2609,14 +2574,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_provider_calendar_id(input);
             self
         }
-        /// <p>A unique, user-specified identifier for this request that ensures idempotency.
-        /// </p>
+        /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A unique, user-specified identifier for this request that ensures idempotency.
-        /// </p>
+        /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2724,14 +2687,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>A unique, user-specified identifier for this request that ensures idempotency.
-        /// </p>
+        /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A unique, user-specified identifier for this request that ensures idempotency.
-        /// </p>
+        /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2856,14 +2817,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_email(input);
             self
         }
-        /// <p>A unique, user-specified identifier for this request that ensures idempotency.
-        /// </p>
+        /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A unique, user-specified identifier for this request that ensures idempotency.
-        /// </p>
+        /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2964,8 +2923,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteBusinessReportSchedule`.
     ///
-    /// <p>Deletes the recurring report delivery schedule with the specified schedule
-    /// ARN.</p>
+    /// <p>Deletes the recurring report delivery schedule with the specified schedule ARN.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBusinessReportSchedule<
         C = aws_smithy_client::erase::DynConnector,
@@ -3248,9 +3206,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteDeviceUsageData`.
     ///
-    /// <p>When this action is called for a specified shared device, it allows authorized users to
-    /// delete the device's entire previous history of voice input data and associated response
-    /// data. This action can be called once every 24 hours for a specific shared device.</p>
+    /// <p>When this action is called for a specified shared device, it allows authorized users to delete the device's entire previous history of voice input data and associated response data. This action can be called once every 24 hours for a specific shared device.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDeviceUsageData<
         C = aws_smithy_client::erase::DynConnector,
@@ -4033,9 +3989,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisassociateDeviceFromRoom`.
     ///
-    /// <p>Disassociates a device from its current room. The device continues to be connected to
-    /// the Wi-Fi network and is still registered to the account. The device settings and skills
-    /// are removed from the room.</p>
+    /// <p>Disassociates a device from its current room. The device continues to be connected to the Wi-Fi network and is still registered to the account. The device settings and skills are removed from the room.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateDeviceFromRoom<
         C = aws_smithy_client::erase::DynConnector,
@@ -4188,8 +4142,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisassociateSkillFromUsers`.
     ///
-    /// <p>Makes a private skill unavailable for enrolled users and prevents them from enabling it
-    /// on their devices.</p>
+    /// <p>Makes a private skill unavailable for enrolled users and prevents them from enabling it on their devices.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateSkillFromUsers<
         C = aws_smithy_client::erase::DynConnector,
@@ -4259,8 +4212,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisassociateSkillGroupFromRoom`.
     ///
-    /// <p>Disassociates a skill group from a specified room. This disables all skills in the
-    /// skill group on all devices in the room.</p>
+    /// <p>Disassociates a skill group from a specified room. This disables all skills in the skill group on all devices in the room.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateSkillGroupFromRoom<
         C = aws_smithy_client::erase::DynConnector,
@@ -4330,14 +4282,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_skill_group_arn(input);
             self
         }
-        /// <p>The ARN of the room from which the skill group is to be disassociated.
-        /// Required.</p>
+        /// <p>The ARN of the room from which the skill group is to be disassociated. Required.</p>
         pub fn room_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.room_arn(input.into());
             self
         }
-        /// <p>The ARN of the room from which the skill group is to be disassociated.
-        /// Required.</p>
+        /// <p>The ARN of the room from which the skill group is to be disassociated. Required.</p>
         pub fn set_room_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_room_arn(input);
             self
@@ -4904,8 +4854,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetInvitationConfiguration`.
     ///
-    /// <p>Retrieves the configured values for the user enrollment invitation email
-    /// template.</p>
+    /// <p>Retrieves the configured values for the user enrollment invitation email template.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInvitationConfiguration<
         C = aws_smithy_client::erase::DynConnector,
@@ -5245,14 +5194,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_room_arn(input);
             self
         }
-        /// <p>The ARN of the skill from which to get the room skill parameter details.
-        /// Required.</p>
+        /// <p>The ARN of the skill from which to get the room skill parameter details. Required.</p>
         pub fn skill_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.skill_id(input.into());
             self
         }
-        /// <p>The ARN of the skill from which to get the room skill parameter details.
-        /// Required.</p>
+        /// <p>The ARN of the skill from which to get the room skill parameter details. Required.</p>
         pub fn set_skill_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_skill_id(input);
             self
@@ -5493,14 +5440,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of conference providers to be returned, per paginated
-        /// calls.</p>
+        /// <p>The maximum number of conference providers to be returned, per paginated calls.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of conference providers to be returned, per paginated
-        /// calls.</p>
+        /// <p>The maximum number of conference providers to be returned, per paginated calls.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -5508,8 +5453,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDeviceEvents`.
     ///
-    /// <p>Lists the device event history, including device connection status, for up to 30
-    /// days.</p>
+    /// <p>Lists the device event history, including device connection status, for up to 30 days.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDeviceEvents<
         C = aws_smithy_client::erase::DynConnector,
@@ -5576,18 +5520,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_device_arn(input);
             self
         }
-        /// <p>The event type to filter device events. If EventType isn't specified, this returns a
-        /// list of all device events in reverse chronological order. If EventType is specified, this
-        /// returns a list of device events for that EventType in reverse chronological order.
-        /// </p>
+        /// <p>The event type to filter device events. If EventType isn't specified, this returns a list of all device events in reverse chronological order. If EventType is specified, this returns a list of device events for that EventType in reverse chronological order. </p>
         pub fn event_type(mut self, input: crate::model::DeviceEventType) -> Self {
             self.inner = self.inner.event_type(input);
             self
         }
-        /// <p>The event type to filter device events. If EventType isn't specified, this returns a
-        /// list of all device events in reverse chronological order. If EventType is specified, this
-        /// returns a list of device events for that EventType in reverse chronological order.
-        /// </p>
+        /// <p>The event type to filter device events. If EventType isn't specified, this returns a list of all device events in reverse chronological order. If EventType is specified, this returns a list of device events for that EventType in reverse chronological order. </p>
         pub fn set_event_type(
             mut self,
             input: std::option::Option<crate::model::DeviceEventType>,
@@ -5595,32 +5533,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_event_type(input);
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response only includes
-        /// results beyond the token, up to the value specified by MaxResults. When the end of results
-        /// is reached, the response has a value of null.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response only includes results beyond the token, up to the value specified by MaxResults. When the end of results is reached, the response has a value of null.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response only includes
-        /// results beyond the token, up to the value specified by MaxResults. When the end of results
-        /// is reached, the response has a value of null.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response only includes results beyond the token, up to the value specified by MaxResults. When the end of results is reached, the response has a value of null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. The default value is 50. If
-        /// more results exist than the specified MaxResults value, a token is included in the response
-        /// so that the remaining results can be retrieved. </p>
+        /// <p>The maximum number of results to include in the response. The default value is 50. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. The default value is 50. If
-        /// more results exist than the specified MaxResults value, a token is included in the response
-        /// so that the remaining results can be retrieved. </p>
+        /// <p>The maximum number of results to include in the response. The default value is 50. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -5628,8 +5556,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListGatewayGroups`.
     ///
-    /// <p>Retrieves a list of gateway group summaries. Use GetGatewayGroup to retrieve details of
-    /// a specific gateway group.</p>
+    /// <p>Retrieves a list of gateway group summaries. Use GetGatewayGroup to retrieve details of a specific gateway group.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListGatewayGroups<
         C = aws_smithy_client::erase::DynConnector,
@@ -5709,9 +5636,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListGateways`.
     ///
-    /// <p>Retrieves a list of gateway summaries. Use GetGateway to retrieve details of a specific
-    /// gateway. An optional gateway group ARN can be provided to only retrieve gateway summaries
-    /// of gateways that are associated with that gateway group ARN.</p>
+    /// <p>Retrieves a list of gateway summaries. Use GetGateway to retrieve details of a specific gateway. An optional gateway group ARN can be provided to only retrieve gateway summaries of gateways that are associated with that gateway group ARN.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListGateways<
         C = aws_smithy_client::erase::DynConnector,
@@ -5900,30 +5825,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_skill_type(input);
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than
-        /// the specified <code>MaxResults</code> value, a token is included in the response so that
-        /// the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than
-        /// the specified <code>MaxResults</code> value, a token is included in the response so that
-        /// the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -6068,14 +5985,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The category ID for which the skills are being retrieved from the skill
-        /// store.</p>
+        /// <p>The category ID for which the skills are being retrieved from the skill store.</p>
         pub fn category_id(mut self, input: i64) -> Self {
             self.inner = self.inner.category_id(input);
             self
         }
-        /// <p>The category ID for which the skills are being retrieved from the skill
-        /// store.</p>
+        /// <p>The category ID for which the skills are being retrieved from the skill store.</p>
         pub fn set_category_id(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_category_id(input);
             self
@@ -6260,30 +6175,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_arn(input);
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by <code>MaxResults</code>. </p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by <code>MaxResults</code>. </p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than
-        /// the specified <code>MaxResults</code> value, a token is included in the response so that
-        /// the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than
-        /// the specified <code>MaxResults</code> value, a token is included in the response so that
-        /// the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -6291,8 +6198,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutConferencePreference`.
     ///
-    /// <p>Sets the conference preferences on a specific conference provider at the account
-    /// level.</p>
+    /// <p>Sets the conference preferences on a specific conference provider at the account level.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutConferencePreference<
         C = aws_smithy_client::erase::DynConnector,
@@ -6365,8 +6271,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutInvitationConfiguration`.
     ///
-    /// <p>Configures the email template for the user enrollment invitation with the specified
-    /// attributes.</p>
+    /// <p>Configures the email template for the user enrollment invitation with the specified attributes.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutInvitationConfiguration<
         C = aws_smithy_client::erase::DynConnector,
@@ -6436,14 +6341,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_organization_name(input);
             self
         }
-        /// <p>The email ID of the organization or individual contact that the enrolled user can use.
-        /// </p>
+        /// <p>The email ID of the organization or individual contact that the enrolled user can use. </p>
         pub fn contact_email(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.contact_email(input.into());
             self
         }
-        /// <p>The email ID of the organization or individual contact that the enrolled user can use.
-        /// </p>
+        /// <p>The email ID of the organization or individual contact that the enrolled user can use. </p>
         pub fn set_contact_email(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6455,14 +6358,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_private_skill_ids`](Self::set_private_skill_ids).
         ///
-        /// <p>The list of private skill IDs that you want to recommend to the user to enable in the
-        /// invitation.</p>
+        /// <p>The list of private skill IDs that you want to recommend to the user to enable in the invitation.</p>
         pub fn private_skill_ids(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.private_skill_ids(input.into());
             self
         }
-        /// <p>The list of private skill IDs that you want to recommend to the user to enable in the
-        /// invitation.</p>
+        /// <p>The list of private skill IDs that you want to recommend to the user to enable in the invitation.</p>
         pub fn set_private_skill_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6473,8 +6374,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutRoomSkillParameter`.
     ///
-    /// <p>Updates room skill parameter details by room, skill, and parameter key ID. Not all
-    /// skills have a room skill parameter.</p>
+    /// <p>Updates room skill parameter details by room, skill, and parameter key ID. Not all skills have a room skill parameter.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutRoomSkillParameter<
         C = aws_smithy_client::erase::DynConnector,
@@ -6567,9 +6467,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutSkillAuthorization`.
     ///
-    /// <p>Links a user's account to a third-party skill provider. If this API operation is
-    /// called by an assumed IAM role, the skill being linked must be a private skill. Also, the
-    /// skill must be owned by the AWS account that assumed the IAM role.</p>
+    /// <p>Links a user's account to a third-party skill provider. If this API operation is called by an assumed IAM role, the skill being linked must be a private skill. Also, the skill must be owned by the AWS account that assumed the IAM role.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutSkillAuthorization<
         C = aws_smithy_client::erase::DynConnector,
@@ -6630,8 +6528,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_authorization_result`](Self::set_authorization_result).
         ///
-        /// <p>The authorization result specific to OAUTH code grant output. "Code” must be
-        /// populated in the AuthorizationResult map to establish the authorization.</p>
+        /// <p>The authorization result specific to OAUTH code grant output. "Code” must be populated in the AuthorizationResult map to establish the authorization.</p>
         pub fn authorization_result(
             mut self,
             k: impl Into<std::string::String>,
@@ -6640,8 +6537,7 @@ pub mod fluent_builders {
             self.inner = self.inner.authorization_result(k.into(), v.into());
             self
         }
-        /// <p>The authorization result specific to OAUTH code grant output. "Code” must be
-        /// populated in the AuthorizationResult map to establish the authorization.</p>
+        /// <p>The authorization result specific to OAUTH code grant output. "Code” must be populated in the AuthorizationResult map to establish the authorization.</p>
         pub fn set_authorization_result(
             mut self,
             input: std::option::Option<
@@ -6674,8 +6570,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RegisterAVSDevice`.
     ///
-    /// <p>Registers an Alexa-enabled device built by an Original Equipment Manufacturer (OEM)
-    /// using Alexa Voice Service (AVS).</p>
+    /// <p>Registers an Alexa-enabled device built by an Original Equipment Manufacturer (OEM) using Alexa Voice Service (AVS).</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterAVSDevice<
         C = aws_smithy_client::erase::DynConnector,
@@ -6732,28 +6627,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The client ID of the OEM used for code-based linking authorization on an AVS
-        /// device.</p>
+        /// <p>The client ID of the OEM used for code-based linking authorization on an AVS device.</p>
         pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_id(input.into());
             self
         }
-        /// <p>The client ID of the OEM used for code-based linking authorization on an AVS
-        /// device.</p>
+        /// <p>The client ID of the OEM used for code-based linking authorization on an AVS device.</p>
         pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_id(input);
             self
         }
-        /// <p>The code that is obtained after your AVS device has made a POST request to LWA as a
-        /// part of the Device Authorization Request component of the OAuth code-based linking
-        /// specification.</p>
+        /// <p>The code that is obtained after your AVS device has made a POST request to LWA as a part of the Device Authorization Request component of the OAuth code-based linking specification.</p>
         pub fn user_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.user_code(input.into());
             self
         }
-        /// <p>The code that is obtained after your AVS device has made a POST request to LWA as a
-        /// part of the Device Authorization Request component of the OAuth code-based linking
-        /// specification.</p>
+        /// <p>The code that is obtained after your AVS device has made a POST request to LWA as a part of the Device Authorization Request component of the OAuth code-based linking specification.</p>
         pub fn set_user_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_user_code(input);
             self
@@ -6768,14 +6657,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_product_id(input);
             self
         }
-        /// <p>The key generated by the OEM that uniquely identifies a specified instance of your
-        /// AVS device.</p>
+        /// <p>The key generated by the OEM that uniquely identifies a specified instance of your AVS device.</p>
         pub fn device_serial_number(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.device_serial_number(input.into());
             self
         }
-        /// <p>The key generated by the OEM that uniquely identifies a specified instance of your
-        /// AVS device.</p>
+        /// <p>The key generated by the OEM that uniquely identifies a specified instance of your AVS device.</p>
         pub fn set_device_serial_number(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6783,14 +6670,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_device_serial_number(input);
             self
         }
-        /// <p>The device type ID for your AVS device generated by Amazon when the OEM creates a new
-        /// product on Amazon's Developer Console.</p>
+        /// <p>The device type ID for your AVS device generated by Amazon when the OEM creates a new product on Amazon's Developer Console.</p>
         pub fn amazon_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.amazon_id(input.into());
             self
         }
-        /// <p>The device type ID for your AVS device generated by Amazon when the OEM creates a new
-        /// product on Amazon's Developer Console.</p>
+        /// <p>The device type ID for your AVS device generated by Amazon when the OEM creates a new product on Amazon's Developer Console.</p>
         pub fn set_amazon_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_amazon_id(input);
             self
@@ -6825,9 +6710,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RejectSkill`.
     ///
-    /// <p>Disassociates a skill from the organization under a user's AWS account. If the skill
-    /// is a private skill, it moves to an AcceptStatus of PENDING. Any private or public skill
-    /// that is rejected can be added later by calling the ApproveSkill API. </p>
+    /// <p>Disassociates a skill from the organization under a user's AWS account. If the skill is a private skill, it moves to an AcceptStatus of PENDING. Any private or public skill that is rejected can be added later by calling the ApproveSkill API. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RejectSkill<
         C = aws_smithy_client::erase::DynConnector,
@@ -6897,13 +6780,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ResolveRoom`.
     ///
-    /// <p>Determines the details for the room from which a skill request was invoked. This
-    /// operation is used by skill developers.</p>
-    /// <p>To query ResolveRoom from an Alexa skill, the skill ID needs to be authorized. When
-    /// the skill is using an AWS Lambda function, the skill is automatically authorized when you
-    /// publish your skill as a private skill to your AWS account. Skills that are hosted using a
-    /// custom web service must be manually authorized. To get your skill authorized, contact AWS
-    /// Support with your AWS account ID that queries the ResolveRoom API and skill ID. </p>
+    /// <p>Determines the details for the room from which a skill request was invoked. This operation is used by skill developers.</p>
+    /// <p>To query ResolveRoom from an Alexa skill, the skill ID needs to be authorized. When the skill is using an AWS Lambda function, the skill is automatically authorized when you publish your skill as a private skill to your AWS account. Skills that are hosted using a custom web service must be manually authorized. To get your skill authorized, contact AWS Support with your AWS account ID that queries the ResolveRoom API and skill ID. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ResolveRoom<
         C = aws_smithy_client::erase::DynConnector,
@@ -7066,8 +6944,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SearchAddressBooks`.
     ///
-    /// <p>Searches address books and lists the ones that meet a set of filter and sort
-    /// criteria.</p>
+    /// <p>Searches address books and lists the ones that meet a set of filter and sort criteria.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchAddressBooks<
         C = aws_smithy_client::erase::DynConnector,
@@ -7128,14 +7005,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>The filters to use to list a specified set of address books. The supported filter key
-        /// is AddressBookName.</p>
+        /// <p>The filters to use to list a specified set of address books. The supported filter key is AddressBookName.</p>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             self.inner = self.inner.filters(input);
             self
         }
-        /// <p>The filters to use to list a specified set of address books. The supported filter key
-        /// is AddressBookName.</p>
+        /// <p>The filters to use to list a specified set of address books. The supported filter key is AddressBookName.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -7147,14 +7022,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_sort_criteria`](Self::set_sort_criteria).
         ///
-        /// <p>The sort order to use in listing the specified set of address books. The supported
-        /// sort key is AddressBookName.</p>
+        /// <p>The sort order to use in listing the specified set of address books. The supported sort key is AddressBookName.</p>
         pub fn sort_criteria(mut self, input: crate::model::Sort) -> Self {
             self.inner = self.inner.sort_criteria(input);
             self
         }
-        /// <p>The sort order to use in listing the specified set of address books. The supported
-        /// sort key is AddressBookName.</p>
+        /// <p>The sort order to use in listing the specified set of address books. The supported sort key is AddressBookName.</p>
         pub fn set_sort_criteria(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Sort>>,
@@ -7162,30 +7035,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sort_criteria(input);
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response only includes
-        /// results beyond the token, up to the value specified by MaxResults.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response only includes results beyond the token, up to the value specified by MaxResults.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response only includes
-        /// results beyond the token, up to the value specified by MaxResults.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response only includes results beyond the token, up to the value specified by MaxResults.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than
-        /// the specified MaxResults value, a token is included in the response so that the remaining
-        /// results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than
-        /// the specified MaxResults value, a token is included in the response so that the remaining
-        /// results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -7193,8 +7058,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SearchContacts`.
     ///
-    /// <p>Searches contacts and lists the ones that meet a set of filter and sort
-    /// criteria.</p>
+    /// <p>Searches contacts and lists the ones that meet a set of filter and sort criteria.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchContacts<
         C = aws_smithy_client::erase::DynConnector,
@@ -7255,14 +7119,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>The filters to use to list a specified set of address books. The supported filter
-        /// keys are DisplayName, FirstName, LastName, and AddressBookArns.</p>
+        /// <p>The filters to use to list a specified set of address books. The supported filter keys are DisplayName, FirstName, LastName, and AddressBookArns.</p>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             self.inner = self.inner.filters(input);
             self
         }
-        /// <p>The filters to use to list a specified set of address books. The supported filter
-        /// keys are DisplayName, FirstName, LastName, and AddressBookArns.</p>
+        /// <p>The filters to use to list a specified set of address books. The supported filter keys are DisplayName, FirstName, LastName, and AddressBookArns.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -7274,14 +7136,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_sort_criteria`](Self::set_sort_criteria).
         ///
-        /// <p>The sort order to use in listing the specified set of contacts. The supported sort
-        /// keys are DisplayName, FirstName, and LastName.</p>
+        /// <p>The sort order to use in listing the specified set of contacts. The supported sort keys are DisplayName, FirstName, and LastName.</p>
         pub fn sort_criteria(mut self, input: crate::model::Sort) -> Self {
             self.inner = self.inner.sort_criteria(input);
             self
         }
-        /// <p>The sort order to use in listing the specified set of contacts. The supported sort
-        /// keys are DisplayName, FirstName, and LastName.</p>
+        /// <p>The sort order to use in listing the specified set of contacts. The supported sort keys are DisplayName, FirstName, and LastName.</p>
         pub fn set_sort_criteria(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Sort>>,
@@ -7289,30 +7149,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sort_criteria(input);
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response only includes
-        /// results beyond the token, up to the value specified by MaxResults.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response only includes results beyond the token, up to the value specified by MaxResults.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response only includes
-        /// results beyond the token, up to the value specified by MaxResults.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response only includes results beyond the token, up to the value specified by MaxResults.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than
-        /// the specified MaxResults value, a token is included in the response so that the remaining
-        /// results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than
-        /// the specified MaxResults value, a token is included in the response so that the remaining
-        /// results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -7377,30 +7229,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than
-        /// the specified <code>MaxResults</code> value, a token is included in the response so that
-        /// the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than
-        /// the specified <code>MaxResults</code> value, a token is included in the response so that
-        /// the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -7409,18 +7253,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>The filters to use to list a specified set of devices. Supported filter keys are
-        /// DeviceName, DeviceStatus, DeviceStatusDetailCode, RoomName, DeviceType, DeviceSerialNumber,
-        /// UnassociatedOnly, ConnectionStatus (ONLINE and OFFLINE), NetworkProfileName,
-        /// NetworkProfileArn, Feature, and FailureCode.</p>
+        /// <p>The filters to use to list a specified set of devices. Supported filter keys are DeviceName, DeviceStatus, DeviceStatusDetailCode, RoomName, DeviceType, DeviceSerialNumber, UnassociatedOnly, ConnectionStatus (ONLINE and OFFLINE), NetworkProfileName, NetworkProfileArn, Feature, and FailureCode.</p>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             self.inner = self.inner.filters(input);
             self
         }
-        /// <p>The filters to use to list a specified set of devices. Supported filter keys are
-        /// DeviceName, DeviceStatus, DeviceStatusDetailCode, RoomName, DeviceType, DeviceSerialNumber,
-        /// UnassociatedOnly, ConnectionStatus (ONLINE and OFFLINE), NetworkProfileName,
-        /// NetworkProfileArn, Feature, and FailureCode.</p>
+        /// <p>The filters to use to list a specified set of devices. Supported filter keys are DeviceName, DeviceStatus, DeviceStatusDetailCode, RoomName, DeviceType, DeviceSerialNumber, UnassociatedOnly, ConnectionStatus (ONLINE and OFFLINE), NetworkProfileName, NetworkProfileArn, Feature, and FailureCode.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -7432,16 +7270,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_sort_criteria`](Self::set_sort_criteria).
         ///
-        /// <p>The sort order to use in listing the specified set of devices. Supported sort keys
-        /// are DeviceName, DeviceStatus, RoomName, DeviceType, DeviceSerialNumber, ConnectionStatus,
-        /// NetworkProfileName, NetworkProfileArn, Feature, and FailureCode.</p>
+        /// <p>The sort order to use in listing the specified set of devices. Supported sort keys are DeviceName, DeviceStatus, RoomName, DeviceType, DeviceSerialNumber, ConnectionStatus, NetworkProfileName, NetworkProfileArn, Feature, and FailureCode.</p>
         pub fn sort_criteria(mut self, input: crate::model::Sort) -> Self {
             self.inner = self.inner.sort_criteria(input);
             self
         }
-        /// <p>The sort order to use in listing the specified set of devices. Supported sort keys
-        /// are DeviceName, DeviceStatus, RoomName, DeviceType, DeviceSerialNumber, ConnectionStatus,
-        /// NetworkProfileName, NetworkProfileArn, Feature, and FailureCode.</p>
+        /// <p>The sort order to use in listing the specified set of devices. Supported sort keys are DeviceName, DeviceStatus, RoomName, DeviceType, DeviceSerialNumber, ConnectionStatus, NetworkProfileName, NetworkProfileArn, Feature, and FailureCode.</p>
         pub fn set_sort_criteria(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Sort>>,
@@ -7452,8 +7286,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SearchNetworkProfiles`.
     ///
-    /// <p>Searches network profiles and lists the ones that meet a set of filter and sort
-    /// criteria.</p>
+    /// <p>Searches network profiles and lists the ones that meet a set of filter and sort criteria.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchNetworkProfiles<
         C = aws_smithy_client::erase::DynConnector,
@@ -7510,30 +7343,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by MaxResults. </p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by MaxResults. </p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than the
-        /// specified MaxResults value, a token is included in the response so that the remaining
-        /// results can be retrieved. </p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than the
-        /// specified MaxResults value, a token is included in the response so that the remaining
-        /// results can be retrieved. </p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -7542,14 +7367,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>The filters to use to list a specified set of network profiles. Valid filters are
-        /// NetworkProfileName, Ssid, and SecurityType.</p>
+        /// <p>The filters to use to list a specified set of network profiles. Valid filters are NetworkProfileName, Ssid, and SecurityType.</p>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             self.inner = self.inner.filters(input);
             self
         }
-        /// <p>The filters to use to list a specified set of network profiles. Valid filters are
-        /// NetworkProfileName, Ssid, and SecurityType.</p>
+        /// <p>The filters to use to list a specified set of network profiles. Valid filters are NetworkProfileName, Ssid, and SecurityType.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -7561,14 +7384,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_sort_criteria`](Self::set_sort_criteria).
         ///
-        /// <p>The sort order to use to list the specified set of network profiles. Valid sort criteria
-        /// includes NetworkProfileName, Ssid, and SecurityType.</p>
+        /// <p>The sort order to use to list the specified set of network profiles. Valid sort criteria includes NetworkProfileName, Ssid, and SecurityType.</p>
         pub fn sort_criteria(mut self, input: crate::model::Sort) -> Self {
             self.inner = self.inner.sort_criteria(input);
             self
         }
-        /// <p>The sort order to use to list the specified set of network profiles. Valid sort criteria
-        /// includes NetworkProfileName, Ssid, and SecurityType.</p>
+        /// <p>The sort order to use to list the specified set of network profiles. Valid sort criteria includes NetworkProfileName, Ssid, and SecurityType.</p>
         pub fn set_sort_criteria(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Sort>>,
@@ -7579,8 +7400,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SearchProfiles`.
     ///
-    /// <p>Searches room profiles and lists the ones that meet a set of filter
-    /// criteria.</p>
+    /// <p>Searches room profiles and lists the ones that meet a set of filter criteria.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchProfiles<
         C = aws_smithy_client::erase::DynConnector,
@@ -7637,30 +7457,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than
-        /// the specified <code>MaxResults</code> value, a token is included in the response so that
-        /// the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than
-        /// the specified <code>MaxResults</code> value, a token is included in the response so that
-        /// the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -7669,14 +7481,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>The filters to use to list a specified set of room profiles. Supported filter keys
-        /// are ProfileName and Address. Required. </p>
+        /// <p>The filters to use to list a specified set of room profiles. Supported filter keys are ProfileName and Address. Required. </p>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             self.inner = self.inner.filters(input);
             self
         }
-        /// <p>The filters to use to list a specified set of room profiles. Supported filter keys
-        /// are ProfileName and Address. Required. </p>
+        /// <p>The filters to use to list a specified set of room profiles. Supported filter keys are ProfileName and Address. Required. </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -7688,14 +7498,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_sort_criteria`](Self::set_sort_criteria).
         ///
-        /// <p>The sort order to use in listing the specified set of room profiles. Supported sort
-        /// keys are ProfileName and Address.</p>
+        /// <p>The sort order to use in listing the specified set of room profiles. Supported sort keys are ProfileName and Address.</p>
         pub fn sort_criteria(mut self, input: crate::model::Sort) -> Self {
             self.inner = self.inner.sort_criteria(input);
             self
         }
-        /// <p>The sort order to use in listing the specified set of room profiles. Supported sort
-        /// keys are ProfileName and Address.</p>
+        /// <p>The sort order to use in listing the specified set of room profiles. Supported sort keys are ProfileName and Address.</p>
         pub fn set_sort_criteria(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Sort>>,
@@ -7706,8 +7514,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SearchRooms`.
     ///
-    /// <p>Searches rooms and lists the ones that meet a set of filter and sort
-    /// criteria.</p>
+    /// <p>Searches rooms and lists the ones that meet a set of filter and sort criteria.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchRooms<
         C = aws_smithy_client::erase::DynConnector,
@@ -7764,30 +7571,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than
-        /// the specified <code>MaxResults</code> value, a token is included in the response so that
-        /// the remaining results can be retrieved. </p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than
-        /// the specified <code>MaxResults</code> value, a token is included in the response so that
-        /// the remaining results can be retrieved. </p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -7796,14 +7595,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>The filters to use to list a specified set of rooms. The supported filter keys are
-        /// RoomName and ProfileName.</p>
+        /// <p>The filters to use to list a specified set of rooms. The supported filter keys are RoomName and ProfileName.</p>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             self.inner = self.inner.filters(input);
             self
         }
-        /// <p>The filters to use to list a specified set of rooms. The supported filter keys are
-        /// RoomName and ProfileName.</p>
+        /// <p>The filters to use to list a specified set of rooms. The supported filter keys are RoomName and ProfileName.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -7815,14 +7612,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_sort_criteria`](Self::set_sort_criteria).
         ///
-        /// <p>The sort order to use in listing the specified set of rooms. The supported sort keys
-        /// are RoomName and ProfileName.</p>
+        /// <p>The sort order to use in listing the specified set of rooms. The supported sort keys are RoomName and ProfileName.</p>
         pub fn sort_criteria(mut self, input: crate::model::Sort) -> Self {
             self.inner = self.inner.sort_criteria(input);
             self
         }
-        /// <p>The sort order to use in listing the specified set of rooms. The supported sort keys
-        /// are RoomName and ProfileName.</p>
+        /// <p>The sort order to use in listing the specified set of rooms. The supported sort keys are RoomName and ProfileName.</p>
         pub fn set_sort_criteria(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Sort>>,
@@ -7833,8 +7628,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SearchSkillGroups`.
     ///
-    /// <p>Searches skill groups and lists the ones that meet a set of filter and sort
-    /// criteria.</p>
+    /// <p>Searches skill groups and lists the ones that meet a set of filter and sort criteria.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchSkillGroups<
         C = aws_smithy_client::erase::DynConnector,
@@ -7891,32 +7685,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by <code>MaxResults</code>.
-        /// Required.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>. Required.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by <code>MaxResults</code>.
-        /// Required.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>. Required.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than
-        /// the specified <code>MaxResults</code> value, a token is included in the response so that
-        /// the remaining results can be retrieved. </p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than
-        /// the specified <code>MaxResults</code> value, a token is included in the response so that
-        /// the remaining results can be retrieved. </p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -7925,14 +7709,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>The filters to use to list a specified set of skill groups. The supported filter key
-        /// is SkillGroupName. </p>
+        /// <p>The filters to use to list a specified set of skill groups. The supported filter key is SkillGroupName. </p>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             self.inner = self.inner.filters(input);
             self
         }
-        /// <p>The filters to use to list a specified set of skill groups. The supported filter key
-        /// is SkillGroupName. </p>
+        /// <p>The filters to use to list a specified set of skill groups. The supported filter key is SkillGroupName. </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -7944,14 +7726,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_sort_criteria`](Self::set_sort_criteria).
         ///
-        /// <p>The sort order to use in listing the specified set of skill groups. The supported
-        /// sort key is SkillGroupName. </p>
+        /// <p>The sort order to use in listing the specified set of skill groups. The supported sort key is SkillGroupName. </p>
         pub fn sort_criteria(mut self, input: crate::model::Sort) -> Self {
             self.inner = self.inner.sort_criteria(input);
             self
         }
-        /// <p>The sort order to use in listing the specified set of skill groups. The supported
-        /// sort key is SkillGroupName. </p>
+        /// <p>The sort order to use in listing the specified set of skill groups. The supported sort key is SkillGroupName. </p>
         pub fn set_sort_criteria(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Sort>>,
@@ -7962,8 +7742,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SearchUsers`.
     ///
-    /// <p>Searches users and lists the ones that meet a set of filter and sort
-    /// criteria.</p>
+    /// <p>Searches users and lists the ones that meet a set of filter and sort criteria.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchUsers<
         C = aws_smithy_client::erase::DynConnector,
@@ -8020,32 +7799,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by <code>MaxResults</code>.
-        /// Required.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>. Required.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by <code>MaxResults</code>.
-        /// Required.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>. Required.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than
-        /// the specified <code>MaxResults</code> value, a token is included in the response so that
-        /// the remaining results can be retrieved. Required.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved. Required.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist than
-        /// the specified <code>MaxResults</code> value, a token is included in the response so that
-        /// the remaining results can be retrieved. Required.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved. Required.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -8054,14 +7823,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>The filters to use for listing a specific set of users. Required. Supported filter
-        /// keys are UserId, FirstName, LastName, Email, and EnrollmentStatus.</p>
+        /// <p>The filters to use for listing a specific set of users. Required. Supported filter keys are UserId, FirstName, LastName, Email, and EnrollmentStatus.</p>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             self.inner = self.inner.filters(input);
             self
         }
-        /// <p>The filters to use for listing a specific set of users. Required. Supported filter
-        /// keys are UserId, FirstName, LastName, Email, and EnrollmentStatus.</p>
+        /// <p>The filters to use for listing a specific set of users. Required. Supported filter keys are UserId, FirstName, LastName, Email, and EnrollmentStatus.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -8073,14 +7840,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_sort_criteria`](Self::set_sort_criteria).
         ///
-        /// <p>The sort order to use in listing the filtered set of users. Required. Supported sort
-        /// keys are UserId, FirstName, LastName, Email, and EnrollmentStatus.</p>
+        /// <p>The sort order to use in listing the filtered set of users. Required. Supported sort keys are UserId, FirstName, LastName, Email, and EnrollmentStatus.</p>
         pub fn sort_criteria(mut self, input: crate::model::Sort) -> Self {
             self.inner = self.inner.sort_criteria(input);
             self
         }
-        /// <p>The sort order to use in listing the filtered set of users. Required. Supported sort
-        /// keys are UserId, FirstName, LastName, Email, and EnrollmentStatus.</p>
+        /// <p>The sort order to use in listing the filtered set of users. Required. Supported sort keys are UserId, FirstName, LastName, Email, and EnrollmentStatus.</p>
         pub fn set_sort_criteria(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Sort>>,
@@ -8091,8 +7856,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SendAnnouncement`.
     ///
-    /// <p>Triggers an asynchronous flow to send text, SSML, or audio announcements to rooms that
-    /// are identified by a search or filter. </p>
+    /// <p>Triggers an asynchronous flow to send text, SSML, or audio announcements to rooms that are identified by a search or filter. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendAnnouncement<
         C = aws_smithy_client::erase::DynConnector,
@@ -8176,14 +7940,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_content(input);
             self
         }
-        /// <p>The time to live for an announcement. Default is 300. If delivery doesn't occur within this time, the
-        /// announcement is not delivered.</p>
+        /// <p>The time to live for an announcement. Default is 300. If delivery doesn't occur within this time, the announcement is not delivered.</p>
         pub fn time_to_live_in_seconds(mut self, input: i32) -> Self {
             self.inner = self.inner.time_to_live_in_seconds(input);
             self
         }
-        /// <p>The time to live for an announcement. Default is 300. If delivery doesn't occur within this time, the
-        /// announcement is not delivered.</p>
+        /// <p>The time to live for an announcement. Default is 300. If delivery doesn't occur within this time, the announcement is not delivered.</p>
         pub fn set_time_to_live_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_time_to_live_in_seconds(input);
             self
@@ -8204,8 +7966,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SendInvitation`.
     ///
-    /// <p>Sends an enrollment invitation email with a URL to a user. The URL is valid for 30
-    /// days or until you call this operation again, whichever comes first. </p>
+    /// <p>Sends an enrollment invitation email with a URL to a user. The URL is valid for 30 days or until you call this operation again, whichever comes first. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendInvitation<
         C = aws_smithy_client::erase::DynConnector,
@@ -8275,27 +8036,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartDeviceSync`.
     ///
-    /// <p>Resets a device and its account to the known default settings. This clears all
-    /// information and settings set by previous users in the following ways:</p>
+    /// <p>Resets a device and its account to the known default settings. This clears all information and settings set by previous users in the following ways:</p>
     /// <ul>
-    /// <li>
-    /// <p>Bluetooth - This unpairs all bluetooth devices paired with your echo
-    /// device.</p>
-    /// </li>
-    /// <li>
-    /// <p>Volume - This resets the echo device's volume to the default value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Notifications - This clears all notifications from your echo device.</p>
-    /// </li>
-    /// <li>
-    /// <p>Lists - This clears all to-do items from your echo device.</p>
-    /// </li>
-    /// <li>
-    /// <p>Settings - This internally syncs the room's profile (if the device is assigned to
-    /// a room), contacts, address books, delegation access for account linking, and
-    /// communications (if enabled on the room profile).</p>
-    /// </li>
+    /// <li> <p>Bluetooth - This unpairs all bluetooth devices paired with your echo device.</p> </li>
+    /// <li> <p>Volume - This resets the echo device's volume to the default value.</p> </li>
+    /// <li> <p>Notifications - This clears all notifications from your echo device.</p> </li>
+    /// <li> <p>Lists - This clears all to-do items from your echo device.</p> </li>
+    /// <li> <p>Settings - This internally syncs the room's profile (if the device is assigned to a room), contacts, address books, delegation access for account linking, and communications (if enabled on the room profile).</p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartDeviceSync<
@@ -8393,8 +8140,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartSmartHomeApplianceDiscovery`.
     ///
-    /// <p>Initiates the discovery of any smart home appliances associated with the
-    /// room.</p>
+    /// <p>Initiates the discovery of any smart home appliances associated with the room.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartSmartHomeApplianceDiscovery<
         C = aws_smithy_client::erase::DynConnector,
@@ -8535,14 +8281,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags to be added to the specified resource. Do not provide system tags. Required.
-        /// </p>
+        /// <p>The tags to be added to the specified resource. Do not provide system tags. Required. </p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>The tags to be added to the specified resource. Do not provide system tags. Required.
-        /// </p>
+        /// <p>The tags to be added to the specified resource. Do not provide system tags. Required. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -8624,14 +8368,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>The tags to be removed from the specified resource. Do not provide system tags.
-        /// Required. </p>
+        /// <p>The tags to be removed from the specified resource. Do not provide system tags. Required. </p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.tag_keys(input.into());
             self
         }
-        /// <p>The tags to be removed from the specified resource. Do not provide system tags.
-        /// Required. </p>
+        /// <p>The tags to be removed from the specified resource. Do not provide system tags. Required. </p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8735,8 +8477,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateBusinessReportSchedule`.
     ///
-    /// <p>Updates the configuration of the report delivery schedule with the specified schedule
-    /// ARN.</p>
+    /// <p>Updates the configuration of the report delivery schedule with the specified schedule ARN.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateBusinessReportSchedule<
         C = aws_smithy_client::erase::DynConnector,
@@ -8829,14 +8570,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_s3_key_prefix(input);
             self
         }
-        /// <p>The format of the generated report (individual CSV files or zipped files of
-        /// individual files).</p>
+        /// <p>The format of the generated report (individual CSV files or zipped files of individual files).</p>
         pub fn format(mut self, input: crate::model::BusinessReportFormat) -> Self {
             self.inner = self.inner.format(input);
             self
         }
-        /// <p>The format of the generated report (individual CSV files or zipped files of
-        /// individual files).</p>
+        /// <p>The format of the generated report (individual CSV files or zipped files of individual files).</p>
         pub fn set_format(
             mut self,
             input: std::option::Option<crate::model::BusinessReportFormat>,
@@ -9098,16 +8837,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_last_name(input);
             self
         }
-        /// <p>The updated phone number of the contact. The phone number type defaults to WORK. You
-        /// can either specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers,
-        /// which lets you specify the phone number type and multiple numbers.</p>
+        /// <p>The updated phone number of the contact. The phone number type defaults to WORK. You can either specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which lets you specify the phone number type and multiple numbers.</p>
         pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.phone_number(input.into());
             self
         }
-        /// <p>The updated phone number of the contact. The phone number type defaults to WORK. You
-        /// can either specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers,
-        /// which lets you specify the phone number type and multiple numbers.</p>
+        /// <p>The updated phone number of the contact. The phone number type defaults to WORK. You can either specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which lets you specify the phone number type and multiple numbers.</p>
         pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_phone_number(input);
             self
@@ -9229,8 +8964,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateGateway`.
     ///
-    /// <p>Updates the details of a gateway. If any optional field is not provided, the existing
-    /// corresponding value is left unmodified.</p>
+    /// <p>Updates the details of a gateway. If any optional field is not provided, the existing corresponding value is left unmodified.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateGateway<
         C = aws_smithy_client::erase::DynConnector,
@@ -9317,14 +9051,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The updated software version of the gateway. The gateway automatically updates its
-        /// software version during normal operation.</p>
+        /// <p>The updated software version of the gateway. The gateway automatically updates its software version during normal operation.</p>
         pub fn software_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.software_version(input.into());
             self
         }
-        /// <p>The updated software version of the gateway. The gateway automatically updates its
-        /// software version during normal operation.</p>
+        /// <p>The updated software version of the gateway. The gateway automatically updates its software version during normal operation.</p>
         pub fn set_software_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9335,8 +9067,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateGatewayGroup`.
     ///
-    /// <p>Updates the details of a gateway group. If any optional field is not provided, the
-    /// existing corresponding value is left unmodified.</p>
+    /// <p>Updates the details of a gateway group. If any optional field is not provided, the existing corresponding value is left unmodified.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateGatewayGroup<
         C = aws_smithy_client::erase::DynConnector,
@@ -9535,16 +9266,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_current_password(input);
             self
         }
-        /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously
-        /// transmitted to the device and is used when the password of the network changes to
-        /// NextPassword. </p>
+        /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword. </p>
         pub fn next_password(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_password(input.into());
             self
         }
-        /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously
-        /// transmitted to the device and is used when the password of the network changes to
-        /// NextPassword. </p>
+        /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword. </p>
         pub fn set_next_password(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9552,14 +9279,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_password(input);
             self
         }
-        /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager
-        /// (ACM). This is used to issue certificates to the devices. </p>
+        /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices. </p>
         pub fn certificate_authority_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.certificate_authority_arn(input.into());
             self
         }
-        /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager
-        /// (ACM). This is used to issue certificates to the devices. </p>
+        /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices. </p>
         pub fn set_certificate_authority_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9571,14 +9296,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_trust_anchors`](Self::set_trust_anchors).
         ///
-        /// <p>The root certificate(s) of your authentication server that will be installed on your
-        /// devices and used to trust your authentication server during EAP negotiation. </p>
+        /// <p>The root certificate(s) of your authentication server that will be installed on your devices and used to trust your authentication server during EAP negotiation. </p>
         pub fn trust_anchors(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.trust_anchors(input.into());
             self
         }
-        /// <p>The root certificate(s) of your authentication server that will be installed on your
-        /// devices and used to trust your authentication server during EAP negotiation. </p>
+        /// <p>The root certificate(s) of your authentication server that will be installed on your devices and used to trust your authentication server during EAP negotiation. </p>
         pub fn set_trust_anchors(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9666,14 +9389,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_profile_name(input);
             self
         }
-        /// <p>Sets the profile as default if selected. If this is missing, no update is done to the
-        /// default status.</p>
+        /// <p>Sets the profile as default if selected. If this is missing, no update is done to the default status.</p>
         pub fn is_default(mut self, input: bool) -> Self {
             self.inner = self.inner.is_default(input);
             self
         }
-        /// <p>Sets the profile as default if selected. If this is missing, no update is done to the
-        /// default status.</p>
+        /// <p>Sets the profile as default if selected. If this is missing, no update is done to the default status.</p>
         pub fn set_is_default(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_is_default(input);
             self

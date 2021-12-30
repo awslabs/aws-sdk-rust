@@ -252,10 +252,7 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CreateDataset`.
     ///
-    /// <p>Creates a container for a collection of data being ingested for analysis. The dataset
-    /// contains the metadata describing where the data is and what the data actually looks like.
-    /// In other words, it contains the location of the data source, the data schema, and other
-    /// information. A dataset also contains any tags associated with the ingested data. </p>
+    /// <p>Creates a container for a collection of data being ingested for analysis. The dataset contains the metadata describing where the data is and what the data actually looks like. In other words, it contains the location of the data source, the data schema, and other information. A dataset also contains any tags associated with the ingested data. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDataset<
         C = aws_smithy_client::erase::DynConnector,
@@ -322,14 +319,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dataset_name(input);
             self
         }
-        /// <p>A JSON description of the data that is in each time series dataset, including names,
-        /// column names, and data types. </p>
+        /// <p>A JSON description of the data that is in each time series dataset, including names, column names, and data types. </p>
         pub fn dataset_schema(mut self, input: crate::model::DatasetSchema) -> Self {
             self.inner = self.inner.dataset_schema(input);
             self
         }
-        /// <p>A JSON description of the data that is in each time series dataset, including names,
-        /// column names, and data types. </p>
+        /// <p>A JSON description of the data that is in each time series dataset, including names, column names, and data types. </p>
         pub fn set_dataset_schema(
             mut self,
             input: std::option::Option<crate::model::DatasetSchema>,
@@ -350,14 +345,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_server_side_kms_key_id(input);
             self
         }
-        /// <p> A unique identifier for the request. If you do not set the client request token, Amazon
-        /// Lookout for Equipment generates one. </p>
+        /// <p> A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p> A unique identifier for the request. If you do not set the client request token, Amazon
-        /// Lookout for Equipment generates one. </p>
+        /// <p> A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -382,11 +375,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateInferenceScheduler`.
     ///
-    /// <p> Creates a scheduled inference. Scheduling an inference is setting up a continuous
-    /// real-time inference plan to analyze new measurement data. When setting up the schedule, you
-    /// provide an S3 bucket location for the input data, assign it a delimiter between separate
-    /// entries in the data, set an offset delay if desired, and set the frequency of inferencing.
-    /// You must also provide an S3 bucket location for the output data. </p>
+    /// <p> Creates a scheduled inference. Scheduling an inference is setting up a continuous real-time inference plan to analyze new measurement data. When setting up the schedule, you provide an S3 bucket location for the input data, assign it a delimiter between separate entries in the data, set an offset delay if desired, and set the frequency of inferencing. You must also provide an S3 bucket location for the output data. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateInferenceScheduler<
         C = aws_smithy_client::erase::DynConnector,
@@ -443,14 +432,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the previously trained ML model being used to create the inference
-        /// scheduler. </p>
+        /// <p>The name of the previously trained ML model being used to create the inference scheduler. </p>
         pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.model_name(input.into());
             self
         }
-        /// <p>The name of the previously trained ML model being used to create the inference
-        /// scheduler. </p>
+        /// <p>The name of the previously trained ML model being used to create the inference scheduler. </p>
         pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_model_name(input);
             self
@@ -468,40 +455,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_inference_scheduler_name(input);
             self
         }
-        /// <p>A period of time (in minutes) by which inference on the data is delayed after the data
-        /// starts. For instance, if you select an offset delay time of five minutes, inference will
-        /// not begin on the data until the first data measurement after the five minute mark. For example, if
-        /// five minutes is selected, the inference scheduler will wake up at the configured frequency with the
-        /// additional five minute delay time to check the customer S3 bucket. The customer can upload data at
-        /// the same frequency and they don't need to stop and restart the scheduler when uploading new data. </p>
+        /// <p>A period of time (in minutes) by which inference on the data is delayed after the data starts. For instance, if you select an offset delay time of five minutes, inference will not begin on the data until the first data measurement after the five minute mark. For example, if five minutes is selected, the inference scheduler will wake up at the configured frequency with the additional five minute delay time to check the customer S3 bucket. The customer can upload data at the same frequency and they don't need to stop and restart the scheduler when uploading new data. </p>
         pub fn data_delay_offset_in_minutes(mut self, input: i64) -> Self {
             self.inner = self.inner.data_delay_offset_in_minutes(input);
             self
         }
-        /// <p>A period of time (in minutes) by which inference on the data is delayed after the data
-        /// starts. For instance, if you select an offset delay time of five minutes, inference will
-        /// not begin on the data until the first data measurement after the five minute mark. For example, if
-        /// five minutes is selected, the inference scheduler will wake up at the configured frequency with the
-        /// additional five minute delay time to check the customer S3 bucket. The customer can upload data at
-        /// the same frequency and they don't need to stop and restart the scheduler when uploading new data. </p>
+        /// <p>A period of time (in minutes) by which inference on the data is delayed after the data starts. For instance, if you select an offset delay time of five minutes, inference will not begin on the data until the first data measurement after the five minute mark. For example, if five minutes is selected, the inference scheduler will wake up at the configured frequency with the additional five minute delay time to check the customer S3 bucket. The customer can upload data at the same frequency and they don't need to stop and restart the scheduler when uploading new data. </p>
         pub fn set_data_delay_offset_in_minutes(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_data_delay_offset_in_minutes(input);
             self
         }
-        /// <p> How often data is uploaded to the source S3 bucket for the input data. The value chosen
-        /// is the length of time between data uploads. For instance, if you select 5 minutes, Amazon
-        /// Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency
-        /// also determines how often Amazon Lookout for Equipment starts a scheduled inference on your data. In this
-        /// example, it starts once every 5 minutes. </p>
+        /// <p> How often data is uploaded to the source S3 bucket for the input data. The value chosen is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment starts a scheduled inference on your data. In this example, it starts once every 5 minutes. </p>
         pub fn data_upload_frequency(mut self, input: crate::model::DataUploadFrequency) -> Self {
             self.inner = self.inner.data_upload_frequency(input);
             self
         }
-        /// <p> How often data is uploaded to the source S3 bucket for the input data. The value chosen
-        /// is the length of time between data uploads. For instance, if you select 5 minutes, Amazon
-        /// Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency
-        /// also determines how often Amazon Lookout for Equipment starts a scheduled inference on your data. In this
-        /// example, it starts once every 5 minutes. </p>
+        /// <p> How often data is uploaded to the source S3 bucket for the input data. The value chosen is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment starts a scheduled inference on your data. In this example, it starts once every 5 minutes. </p>
         pub fn set_data_upload_frequency(
             mut self,
             input: std::option::Option<crate::model::DataUploadFrequency>,
@@ -509,8 +478,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_data_upload_frequency(input);
             self
         }
-        /// <p>Specifies configuration information for the input data for the inference scheduler,
-        /// including delimiter, format, and dataset location. </p>
+        /// <p>Specifies configuration information for the input data for the inference scheduler, including delimiter, format, and dataset location. </p>
         pub fn data_input_configuration(
             mut self,
             input: crate::model::InferenceInputConfiguration,
@@ -518,8 +486,7 @@ pub mod fluent_builders {
             self.inner = self.inner.data_input_configuration(input);
             self
         }
-        /// <p>Specifies configuration information for the input data for the inference scheduler,
-        /// including delimiter, format, and dataset location. </p>
+        /// <p>Specifies configuration information for the input data for the inference scheduler, including delimiter, format, and dataset location. </p>
         pub fn set_data_input_configuration(
             mut self,
             input: std::option::Option<crate::model::InferenceInputConfiguration>,
@@ -527,8 +494,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_data_input_configuration(input);
             self
         }
-        /// <p>Specifies configuration information for the output results for the inference scheduler,
-        /// including the S3 location for the output. </p>
+        /// <p>Specifies configuration information for the output results for the inference scheduler, including the S3 location for the output. </p>
         pub fn data_output_configuration(
             mut self,
             input: crate::model::InferenceOutputConfiguration,
@@ -536,8 +502,7 @@ pub mod fluent_builders {
             self.inner = self.inner.data_output_configuration(input);
             self
         }
-        /// <p>Specifies configuration information for the output results for the inference scheduler,
-        /// including the S3 location for the output. </p>
+        /// <p>Specifies configuration information for the output results for the inference scheduler, including the S3 location for the output. </p>
         pub fn set_data_output_configuration(
             mut self,
             input: std::option::Option<crate::model::InferenceOutputConfiguration>,
@@ -545,14 +510,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_data_output_configuration(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source being
-        /// used for the inference. </p>
+        /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source being used for the inference. </p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source being
-        /// used for the inference. </p>
+        /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source being used for the inference. </p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
@@ -570,14 +533,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_server_side_kms_key_id(input);
             self
         }
-        /// <p> A unique identifier for the request. If you do not set the client request token, Amazon
-        /// Lookout for Equipment generates one. </p>
+        /// <p> A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p> A unique identifier for the request. If you do not set the client request token, Amazon
-        /// Lookout for Equipment generates one. </p>
+        /// <p> A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -603,14 +564,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateModel`.
     ///
     /// <p>Creates an ML model for data inference. </p>
-    /// <p>A machine-learning (ML) model is a mathematical model that finds patterns in your data.
-    /// In Amazon Lookout for Equipment, the model learns the patterns of normal behavior and detects abnormal
-    /// behavior that could be potential equipment failure (or maintenance events). The models are
-    /// made by analyzing normal data and abnormalities in machine behavior that have already
-    /// occurred.</p>
-    /// <p>Your model is trained using a portion of the data from your dataset and uses that data
-    /// to learn patterns of normal behavior and abnormal patterns that lead to equipment failure.
-    /// Another portion of the data is used to evaluate the model's accuracy. </p>
+    /// <p>A machine-learning (ML) model is a mathematical model that finds patterns in your data. In Amazon Lookout for Equipment, the model learns the patterns of normal behavior and detects abnormal behavior that could be potential equipment failure (or maintenance events). The models are made by analyzing normal data and abnormalities in machine behavior that have already occurred.</p>
+    /// <p>Your model is trained using a portion of the data from your dataset and uses that data to learn patterns of normal behavior and abnormal patterns that lead to equipment failure. Another portion of the data is used to evaluate the model's accuracy. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateModel<
         C = aws_smithy_client::erase::DynConnector,
@@ -700,8 +655,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dataset_schema(input);
             self
         }
-        /// <p>The input configuration for the labels being used for the ML model that's being created.
-        /// </p>
+        /// <p>The input configuration for the labels being used for the ML model that's being created. </p>
         pub fn labels_input_configuration(
             mut self,
             input: crate::model::LabelsInputConfiguration,
@@ -709,8 +663,7 @@ pub mod fluent_builders {
             self.inner = self.inner.labels_input_configuration(input);
             self
         }
-        /// <p>The input configuration for the labels being used for the ML model that's being created.
-        /// </p>
+        /// <p>The input configuration for the labels being used for the ML model that's being created. </p>
         pub fn set_labels_input_configuration(
             mut self,
             input: std::option::Option<crate::model::LabelsInputConfiguration>,
@@ -718,26 +671,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_labels_input_configuration(input);
             self
         }
-        /// <p>A unique identifier for the request. If you do not set the client request token, Amazon
-        /// Lookout for Equipment generates one. </p>
+        /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique identifier for the request. If you do not set the client request token, Amazon
-        /// Lookout for Equipment generates one. </p>
+        /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>Indicates the time reference in the dataset that should be used to begin the subset of
-        /// training data for the ML model. </p>
+        /// <p>Indicates the time reference in the dataset that should be used to begin the subset of training data for the ML model. </p>
         pub fn training_data_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.training_data_start_time(input);
             self
         }
-        /// <p>Indicates the time reference in the dataset that should be used to begin the subset of
-        /// training data for the ML model. </p>
+        /// <p>Indicates the time reference in the dataset that should be used to begin the subset of training data for the ML model. </p>
         pub fn set_training_data_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -745,14 +694,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_training_data_start_time(input);
             self
         }
-        /// <p>Indicates the time reference in the dataset that should be used to end the subset of
-        /// training data for the ML model. </p>
+        /// <p>Indicates the time reference in the dataset that should be used to end the subset of training data for the ML model. </p>
         pub fn training_data_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.training_data_end_time(input);
             self
         }
-        /// <p>Indicates the time reference in the dataset that should be used to end the subset of
-        /// training data for the ML model. </p>
+        /// <p>Indicates the time reference in the dataset that should be used to end the subset of training data for the ML model. </p>
         pub fn set_training_data_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -760,14 +707,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_training_data_end_time(input);
             self
         }
-        /// <p>Indicates the time reference in the dataset that should be used to begin the subset of
-        /// evaluation data for the ML model. </p>
+        /// <p>Indicates the time reference in the dataset that should be used to begin the subset of evaluation data for the ML model. </p>
         pub fn evaluation_data_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.evaluation_data_start_time(input);
             self
         }
-        /// <p>Indicates the time reference in the dataset that should be used to begin the subset of
-        /// evaluation data for the ML model. </p>
+        /// <p>Indicates the time reference in the dataset that should be used to begin the subset of evaluation data for the ML model. </p>
         pub fn set_evaluation_data_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -775,14 +720,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_evaluation_data_start_time(input);
             self
         }
-        /// <p> Indicates the time reference in the dataset that should be used to end the subset of
-        /// evaluation data for the ML model. </p>
+        /// <p> Indicates the time reference in the dataset that should be used to end the subset of evaluation data for the ML model. </p>
         pub fn evaluation_data_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.evaluation_data_end_time(input);
             self
         }
-        /// <p> Indicates the time reference in the dataset that should be used to end the subset of
-        /// evaluation data for the ML model. </p>
+        /// <p> Indicates the time reference in the dataset that should be used to end the subset of evaluation data for the ML model. </p>
         pub fn set_evaluation_data_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -790,29 +733,18 @@ pub mod fluent_builders {
             self.inner = self.inner.set_evaluation_data_end_time(input);
             self
         }
-        /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source
-        /// being used to create the ML model. </p>
+        /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source being used to create the ML model. </p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source
-        /// being used to create the ML model. </p>
+        /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source being used to create the ML model. </p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
         }
-        /// <p>The configuration is the <code>TargetSamplingRate</code>, which is the sampling rate of
-        /// the data after post processing by
-        /// Amazon Lookout for Equipment. For example, if you provide data that
-        /// has been collected at a 1 second level and you want the system to resample
-        /// the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p>
-        /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must
-        /// attach the prefix "PT" to the rate you want.  The value for a 1 second rate
-        /// is therefore <i>PT1S</i>, the value for a 15 minute rate
-        /// is <i>PT15M</i>, and the value for a 1 hour rate
-        /// is <i>PT1H</i>
-        /// </p>
+        /// <p>The configuration is the <code>TargetSamplingRate</code>, which is the sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p>
+        /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must attach the prefix "PT" to the rate you want. The value for a 1 second rate is therefore <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a 1 hour rate is <i>PT1H</i> </p>
         pub fn data_pre_processing_configuration(
             mut self,
             input: crate::model::DataPreProcessingConfiguration,
@@ -820,17 +752,8 @@ pub mod fluent_builders {
             self.inner = self.inner.data_pre_processing_configuration(input);
             self
         }
-        /// <p>The configuration is the <code>TargetSamplingRate</code>, which is the sampling rate of
-        /// the data after post processing by
-        /// Amazon Lookout for Equipment. For example, if you provide data that
-        /// has been collected at a 1 second level and you want the system to resample
-        /// the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p>
-        /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must
-        /// attach the prefix "PT" to the rate you want.  The value for a 1 second rate
-        /// is therefore <i>PT1S</i>, the value for a 15 minute rate
-        /// is <i>PT15M</i>, and the value for a 1 hour rate
-        /// is <i>PT1H</i>
-        /// </p>
+        /// <p>The configuration is the <code>TargetSamplingRate</code>, which is the sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p>
+        /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must attach the prefix "PT" to the rate you want. The value for a 1 second rate is therefore <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a 1 hour rate is <i>PT1H</i> </p>
         pub fn set_data_pre_processing_configuration(
             mut self,
             input: std::option::Option<crate::model::DataPreProcessingConfiguration>,
@@ -884,11 +807,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteDataset`.
     ///
-    /// <p> Deletes a dataset and associated artifacts. The operation will check to see if any
-    /// inference scheduler or data ingestion job is currently using the dataset, and if there
-    /// isn't, the dataset, its metadata, and any associated data stored in S3 will be deleted.
-    /// This does not affect any models that used this dataset for training and evaluation, but
-    /// does prevent it from being used in the future. </p>
+    /// <p> Deletes a dataset and associated artifacts. The operation will check to see if any inference scheduler or data ingestion job is currently using the dataset, and if there isn't, the dataset, its metadata, and any associated data stored in S3 will be deleted. This does not affect any models that used this dataset for training and evaluation, but does prevent it from being used in the future. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDataset<
         C = aws_smithy_client::erase::DynConnector,
@@ -958,8 +877,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteInferenceScheduler`.
     ///
-    /// <p>Deletes an inference scheduler that has been set up. Already processed output results
-    /// are not affected. </p>
+    /// <p>Deletes an inference scheduler that has been set up. Already processed output results are not affected. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteInferenceScheduler<
         C = aws_smithy_client::erase::DynConnector,
@@ -1032,8 +950,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteModel`.
     ///
-    /// <p>Deletes an ML model currently available for Amazon Lookout for Equipment. This will prevent it from
-    /// being used with an inference scheduler, even one that is already set up. </p>
+    /// <p>Deletes an ML model currently available for Amazon Lookout for Equipment. This will prevent it from being used with an inference scheduler, even one that is already set up. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteModel<
         C = aws_smithy_client::erase::DynConnector,
@@ -1103,8 +1020,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeDataIngestionJob`.
     ///
-    /// <p>Provides information on a specific data ingestion job such as creation time, dataset
-    /// ARN, status, and so on. </p>
+    /// <p>Provides information on a specific data ingestion job such as creation time, dataset ARN, status, and so on. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDataIngestionJob<
         C = aws_smithy_client::erase::DynConnector,
@@ -1244,8 +1160,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeInferenceScheduler`.
     ///
-    /// <p> Specifies information about the inference scheduler being used, including name, model,
-    /// status, and associated metadata </p>
+    /// <p> Specifies information about the inference scheduler being used, including name, model, status, and associated metadata </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeInferenceScheduler<
         C = aws_smithy_client::erase::DynConnector,
@@ -1318,8 +1233,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeModel`.
     ///
-    /// <p>Provides a JSON containing the overall information about a specific ML model, including model name and ARN,
-    /// dataset, training and evaluation information, status, and so on. </p>
+    /// <p>Provides a JSON containing the overall information about a specific ML model, including model name and ARN, dataset, training and evaluation information, status, and so on. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeModel<
         C = aws_smithy_client::erase::DynConnector,
@@ -1389,8 +1303,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDataIngestionJobs`.
     ///
-    /// <p>Provides a list of all data ingestion jobs, including dataset name and ARN, S3 location
-    /// of the input data, status, and so on. </p>
+    /// <p>Provides a list of all data ingestion jobs, including dataset name and ARN, S3 location of the input data, status, and so on. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDataIngestionJobs<
         C = aws_smithy_client::erase::DynConnector,
@@ -1457,14 +1370,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dataset_name(input);
             self
         }
-        /// <p> An opaque pagination token indicating where to continue the listing of data ingestion
-        /// jobs. </p>
+        /// <p> An opaque pagination token indicating where to continue the listing of data ingestion jobs. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p> An opaque pagination token indicating where to continue the listing of data ingestion
-        /// jobs. </p>
+        /// <p> An opaque pagination token indicating where to continue the listing of data ingestion jobs. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1495,8 +1406,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDatasets`.
     ///
-    /// <p>Lists all datasets currently available in your account, filtering on the dataset name.
-    /// </p>
+    /// <p>Lists all datasets currently available in your account, filtering on the dataset name. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDatasets<
         C = aws_smithy_client::erase::DynConnector,
@@ -1553,14 +1463,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> An opaque pagination token indicating where to continue the listing of datasets.
-        /// </p>
+        /// <p> An opaque pagination token indicating where to continue the listing of datasets. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p> An opaque pagination token indicating where to continue the listing of datasets.
-        /// </p>
+        /// <p> An opaque pagination token indicating where to continue the listing of datasets. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1591,8 +1499,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListInferenceExecutions`.
     ///
-    /// <p> Lists all inference executions that have been performed by the specified inference
-    /// scheduler. </p>
+    /// <p> Lists all inference executions that have been performed by the specified inference scheduler. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListInferenceExecutions<
         C = aws_smithy_client::erase::DynConnector,
@@ -1649,14 +1556,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>An opaque pagination token indicating where to continue the listing of inference
-        /// executions.</p>
+        /// <p>An opaque pagination token indicating where to continue the listing of inference executions.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An opaque pagination token indicating where to continue the listing of inference
-        /// executions.</p>
+        /// <p>An opaque pagination token indicating where to continue the listing of inference executions.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1684,14 +1589,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_inference_scheduler_name(input);
             self
         }
-        /// <p>The time reference in the inferenced dataset after which Amazon Lookout for Equipment started the
-        /// inference execution. </p>
+        /// <p>The time reference in the inferenced dataset after which Amazon Lookout for Equipment started the inference execution. </p>
         pub fn data_start_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.data_start_time_after(input);
             self
         }
-        /// <p>The time reference in the inferenced dataset after which Amazon Lookout for Equipment started the
-        /// inference execution. </p>
+        /// <p>The time reference in the inferenced dataset after which Amazon Lookout for Equipment started the inference execution. </p>
         pub fn set_data_start_time_after(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1699,14 +1602,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_data_start_time_after(input);
             self
         }
-        /// <p>The time reference in the inferenced dataset before which Amazon Lookout for Equipment stopped the
-        /// inference execution. </p>
+        /// <p>The time reference in the inferenced dataset before which Amazon Lookout for Equipment stopped the inference execution. </p>
         pub fn data_end_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.data_end_time_before(input);
             self
         }
-        /// <p>The time reference in the inferenced dataset before which Amazon Lookout for Equipment stopped the
-        /// inference execution. </p>
+        /// <p>The time reference in the inferenced dataset before which Amazon Lookout for Equipment stopped the inference execution. </p>
         pub fn set_data_end_time_before(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1730,8 +1631,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListInferenceSchedulers`.
     ///
-    /// <p>Retrieves a list of all inference schedulers currently available for your account.
-    /// </p>
+    /// <p>Retrieves a list of all inference schedulers currently available for your account. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListInferenceSchedulers<
         C = aws_smithy_client::erase::DynConnector,
@@ -1788,14 +1688,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> An opaque pagination token indicating where to continue the listing of inference
-        /// schedulers. </p>
+        /// <p> An opaque pagination token indicating where to continue the listing of inference schedulers. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p> An opaque pagination token indicating where to continue the listing of inference
-        /// schedulers. </p>
+        /// <p> An opaque pagination token indicating where to continue the listing of inference schedulers. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1841,8 +1739,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListModels`.
     ///
-    /// <p>Generates a list of all models in the account, including model name and ARN, dataset,
-    /// and status. </p>
+    /// <p>Generates a list of all models in the account, including model name and ARN, dataset, and status. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListModels<
         C = aws_smithy_client::erase::DynConnector,
@@ -1899,14 +1796,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> An opaque pagination token indicating where to continue the listing of ML models.
-        /// </p>
+        /// <p> An opaque pagination token indicating where to continue the listing of ML models. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p> An opaque pagination token indicating where to continue the listing of ML models.
-        /// </p>
+        /// <p> An opaque pagination token indicating where to continue the listing of ML models. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2017,14 +1912,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource (such as the dataset or model) that is
-        /// the focus of the <code>ListTagsForResource</code> operation. </p>
+        /// <p>The Amazon Resource Name (ARN) of the resource (such as the dataset or model) that is the focus of the <code>ListTagsForResource</code> operation. </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource (such as the dataset or model) that is
-        /// the focus of the <code>ListTagsForResource</code> operation. </p>
+        /// <p>The Amazon Resource Name (ARN) of the resource (such as the dataset or model) that is the focus of the <code>ListTagsForResource</code> operation. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -2099,8 +1992,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dataset_name(input);
             self
         }
-        /// <p> Specifies information for the input data for the data ingestion job, including dataset
-        /// S3 location. </p>
+        /// <p> Specifies information for the input data for the data ingestion job, including dataset S3 location. </p>
         pub fn ingestion_input_configuration(
             mut self,
             input: crate::model::IngestionInputConfiguration,
@@ -2108,8 +2000,7 @@ pub mod fluent_builders {
             self.inner = self.inner.ingestion_input_configuration(input);
             self
         }
-        /// <p> Specifies information for the input data for the data ingestion job, including dataset
-        /// S3 location. </p>
+        /// <p> Specifies information for the input data for the data ingestion job, including dataset S3 location. </p>
         pub fn set_ingestion_input_configuration(
             mut self,
             input: std::option::Option<crate::model::IngestionInputConfiguration>,
@@ -2117,26 +2008,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ingestion_input_configuration(input);
             self
         }
-        /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source for
-        /// the data ingestion job. </p>
+        /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source for the data ingestion job. </p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source for
-        /// the data ingestion job. </p>
+        /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source for the data ingestion job. </p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
         }
-        /// <p> A unique identifier for the request. If you do not set the client request token, Amazon
-        /// Lookout for Equipment generates one. </p>
+        /// <p> A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p> A unique identifier for the request. If you do not set the client request token, Amazon
-        /// Lookout for Equipment generates one. </p>
+        /// <p> A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one. </p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -2290,11 +2177,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Associates a given tag to a resource in your account. A tag is a key-value pair which
-    /// can be added to an Amazon Lookout for Equipment resource as metadata. Tags can be used for organizing your
-    /// resources as well as helping you to search and filter by tag. Multiple tags can be added to
-    /// a resource, either when you create it, or later. Up to 50 tags can be associated with each
-    /// resource. </p>
+    /// <p>Associates a given tag to a resource in your account. A tag is a key-value pair which can be added to an Amazon Lookout for Equipment resource as metadata. Tags can be used for organizing your resources as well as helping you to search and filter by tag. Multiple tags can be added to a resource, either when you create it, or later. Up to 50 tags can be associated with each resource. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -2351,14 +2234,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the specific resource to which the tag should be
-        /// associated. </p>
+        /// <p>The Amazon Resource Name (ARN) of the specific resource to which the tag should be associated. </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the specific resource to which the tag should be
-        /// associated. </p>
+        /// <p>The Amazon Resource Name (ARN) of the specific resource to which the tag should be associated. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -2367,14 +2248,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tag or tags to be associated with a specific resource. Both the tag key and value
-        /// are specified. </p>
+        /// <p>The tag or tags to be associated with a specific resource. Both the tag key and value are specified. </p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>The tag or tags to be associated with a specific resource. Both the tag key and value
-        /// are specified. </p>
+        /// <p>The tag or tags to be associated with a specific resource. Both the tag key and value are specified. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2442,14 +2321,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource to which the tag is currently associated.
-        /// </p>
+        /// <p>The Amazon Resource Name (ARN) of the resource to which the tag is currently associated. </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource to which the tag is currently associated.
-        /// </p>
+        /// <p>The Amazon Resource Name (ARN) of the resource to which the tag is currently associated. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -2544,40 +2421,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_inference_scheduler_name(input);
             self
         }
-        /// <p> A period of time (in minutes) by which inference on the data is delayed after the data
-        /// starts. For instance, if you select an offset delay time of five minutes, inference will
-        /// not begin on the data until the first data measurement after the five minute mark. For example, if
-        /// five minutes is selected, the inference scheduler will wake up at the configured frequency with the
-        /// additional five minute delay time to check the customer S3 bucket. The customer can upload data at
-        /// the same frequency and they don't need to stop and restart the scheduler when uploading new data.</p>
+        /// <p> A period of time (in minutes) by which inference on the data is delayed after the data starts. For instance, if you select an offset delay time of five minutes, inference will not begin on the data until the first data measurement after the five minute mark. For example, if five minutes is selected, the inference scheduler will wake up at the configured frequency with the additional five minute delay time to check the customer S3 bucket. The customer can upload data at the same frequency and they don't need to stop and restart the scheduler when uploading new data.</p>
         pub fn data_delay_offset_in_minutes(mut self, input: i64) -> Self {
             self.inner = self.inner.data_delay_offset_in_minutes(input);
             self
         }
-        /// <p> A period of time (in minutes) by which inference on the data is delayed after the data
-        /// starts. For instance, if you select an offset delay time of five minutes, inference will
-        /// not begin on the data until the first data measurement after the five minute mark. For example, if
-        /// five minutes is selected, the inference scheduler will wake up at the configured frequency with the
-        /// additional five minute delay time to check the customer S3 bucket. The customer can upload data at
-        /// the same frequency and they don't need to stop and restart the scheduler when uploading new data.</p>
+        /// <p> A period of time (in minutes) by which inference on the data is delayed after the data starts. For instance, if you select an offset delay time of five minutes, inference will not begin on the data until the first data measurement after the five minute mark. For example, if five minutes is selected, the inference scheduler will wake up at the configured frequency with the additional five minute delay time to check the customer S3 bucket. The customer can upload data at the same frequency and they don't need to stop and restart the scheduler when uploading new data.</p>
         pub fn set_data_delay_offset_in_minutes(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_data_delay_offset_in_minutes(input);
             self
         }
-        /// <p>How often data is uploaded to the source S3 bucket for the input data. The value chosen
-        /// is the length of time between data uploads. For instance, if you select 5 minutes, Amazon
-        /// Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency
-        /// also determines how often Amazon Lookout for Equipment starts a scheduled inference on your data. In this
-        /// example, it starts once every 5 minutes. </p>
+        /// <p>How often data is uploaded to the source S3 bucket for the input data. The value chosen is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment starts a scheduled inference on your data. In this example, it starts once every 5 minutes. </p>
         pub fn data_upload_frequency(mut self, input: crate::model::DataUploadFrequency) -> Self {
             self.inner = self.inner.data_upload_frequency(input);
             self
         }
-        /// <p>How often data is uploaded to the source S3 bucket for the input data. The value chosen
-        /// is the length of time between data uploads. For instance, if you select 5 minutes, Amazon
-        /// Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency
-        /// also determines how often Amazon Lookout for Equipment starts a scheduled inference on your data. In this
-        /// example, it starts once every 5 minutes. </p>
+        /// <p>How often data is uploaded to the source S3 bucket for the input data. The value chosen is the length of time between data uploads. For instance, if you select 5 minutes, Amazon Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency also determines how often Amazon Lookout for Equipment starts a scheduled inference on your data. In this example, it starts once every 5 minutes. </p>
         pub fn set_data_upload_frequency(
             mut self,
             input: std::option::Option<crate::model::DataUploadFrequency>,
@@ -2585,8 +2444,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_data_upload_frequency(input);
             self
         }
-        /// <p> Specifies information for the input data for the inference scheduler, including
-        /// delimiter, format, and dataset location. </p>
+        /// <p> Specifies information for the input data for the inference scheduler, including delimiter, format, and dataset location. </p>
         pub fn data_input_configuration(
             mut self,
             input: crate::model::InferenceInputConfiguration,
@@ -2594,8 +2452,7 @@ pub mod fluent_builders {
             self.inner = self.inner.data_input_configuration(input);
             self
         }
-        /// <p> Specifies information for the input data for the inference scheduler, including
-        /// delimiter, format, and dataset location. </p>
+        /// <p> Specifies information for the input data for the inference scheduler, including delimiter, format, and dataset location. </p>
         pub fn set_data_input_configuration(
             mut self,
             input: std::option::Option<crate::model::InferenceInputConfiguration>,
@@ -2619,14 +2476,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_data_output_configuration(input);
             self
         }
-        /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source for
-        /// the inference scheduler. </p>
+        /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source for the inference scheduler. </p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source for
-        /// the inference scheduler. </p>
+        /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source for the inference scheduler. </p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self

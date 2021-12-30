@@ -452,8 +452,7 @@ pub struct CreateHostedConfigurationVersionError {
 pub enum CreateHostedConfigurationVersionErrorKind {
     /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>The request could not be processed because of conflict in the current state of the
-    /// resource.</p>
+    /// <p>The request could not be processed because of conflict in the current state of the resource.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>There was an internal failure in the AppConfig service.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -461,8 +460,7 @@ pub enum CreateHostedConfigurationVersionErrorKind {
     PayloadTooLargeException(crate::error::PayloadTooLargeException),
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The number of hosted configuration versions exceeds the limit for the AppConfig hosted
-    /// configuration store. Delete one or more versions and try again.</p>
+    /// <p>The number of hosted configuration versions exceeds the limit for the AppConfig hosted configuration store. Delete one or more versions and try again.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -736,8 +734,7 @@ pub struct DeleteConfigurationProfileError {
 pub enum DeleteConfigurationProfileErrorKind {
     /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>The request could not be processed because of conflict in the current state of the
-    /// resource.</p>
+    /// <p>The request could not be processed because of conflict in the current state of the resource.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>There was an internal failure in the AppConfig service.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -978,8 +975,7 @@ pub struct DeleteEnvironmentError {
 pub enum DeleteEnvironmentErrorKind {
     /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>The request could not be processed because of conflict in the current state of the
-    /// resource.</p>
+    /// <p>The request could not be processed because of conflict in the current state of the resource.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>There was an internal failure in the AppConfig service.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -2824,8 +2820,7 @@ pub struct StartDeploymentError {
 pub enum StartDeploymentErrorKind {
     /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>The request could not be processed because of conflict in the current state of the
-    /// resource.</p>
+    /// <p>The request could not be processed because of conflict in the current state of the resource.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>There was an internal failure in the AppConfig service.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -4100,8 +4095,7 @@ impl BadRequestException {
     }
 }
 
-/// <p>The request could not be processed because of conflict in the current state of the
-/// resource.</p>
+/// <p>The request could not be processed because of conflict in the current state of the resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {
@@ -4165,8 +4159,7 @@ impl ConflictException {
     }
 }
 
-/// <p>The number of hosted configuration versions exceeds the limit for the AppConfig hosted
-/// configuration store. Delete one or more versions and try again.</p>
+/// <p>The number of hosted configuration versions exceeds the limit for the AppConfig hosted configuration store. Delete one or more versions and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceQuotaExceededException {

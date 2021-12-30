@@ -3707,9 +3707,7 @@ pub enum PutLogEventsErrorKind {
     DataAlreadyAcceptedException(crate::error::DataAlreadyAcceptedException),
     /// <p>A parameter is specified incorrectly.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The sequence token is not valid. You can get the correct sequence token in
-    /// the <code>expectedSequenceToken</code> field in the <code>InvalidSequenceTokenException</code>
-    /// message. </p>
+    /// <p>The sequence token is not valid. You can get the correct sequence token in the <code>expectedSequenceToken</code> field in the <code>InvalidSequenceTokenException</code> message. </p>
     InvalidSequenceTokenException(crate::error::InvalidSequenceTokenException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -4487,11 +4485,8 @@ pub enum StartQueryErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>You have reached the maximum number of resources that can be created.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The query string is not valid. Details about this error are displayed in a
-    /// <code>QueryCompileError</code> object. For more information, see
-    /// <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_QueryCompileError.html">QueryCompileError</a>.</p>
-    /// <p>For more information about valid query syntax, see
-    /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights Query Syntax</a>.</p>
+    /// <p>The query string is not valid. Details about this error are displayed in a <code>QueryCompileError</code> object. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_QueryCompileError.html">QueryCompileError</a>.</p>
+    /// <p>For more information about valid query syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights Query Syntax</a>.</p>
     MalformedQueryException(crate::error::MalformedQueryException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -5207,11 +5202,8 @@ impl InvalidParameterException {
     }
 }
 
-/// <p>The query string is not valid. Details about this error are displayed in a
-/// <code>QueryCompileError</code> object. For more information, see
-/// <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_QueryCompileError.html">QueryCompileError</a>.</p>
-/// <p>For more information about valid query syntax, see
-/// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights Query Syntax</a>.</p>
+/// <p>The query string is not valid. Details about this error are displayed in a <code>QueryCompileError</code> object. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_QueryCompileError.html">QueryCompileError</a>.</p>
+/// <p>For more information about valid query syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights Query Syntax</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MalformedQueryException {
@@ -5491,9 +5483,7 @@ impl UnrecognizedClientException {
     }
 }
 
-/// <p>The sequence token is not valid. You can get the correct sequence token in
-/// the <code>expectedSequenceToken</code> field in the <code>InvalidSequenceTokenException</code>
-/// message. </p>
+/// <p>The sequence token is not valid. You can get the correct sequence token in the <code>expectedSequenceToken</code> field in the <code>InvalidSequenceTokenException</code> message. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidSequenceTokenException {

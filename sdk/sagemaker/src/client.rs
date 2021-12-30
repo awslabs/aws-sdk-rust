@@ -1965,11 +1965,7 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `AddAssociation`.
     ///
-    /// <p>Creates an <i>association</i> between the source and the destination. A
-    /// source can be associated with multiple destinations, and a destination can be associated
-    /// with multiple sources. An association is a lineage tracking entity. For more information, see
-    /// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html">Amazon SageMaker
-    /// ML Lineage Tracking</a>.</p>
+    /// <p>Creates an <i>association</i> between the source and the destination. A source can be associated with multiple destinations, and a destination can be associated with multiple sources. An association is a lineage tracking entity. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html">Amazon SageMaker ML Lineage Tracking</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddAssociation<
         C = aws_smithy_client::erase::DynConnector,
@@ -2049,51 +2045,23 @@ pub mod fluent_builders {
             self.inner = self.inner.set_destination_arn(input);
             self
         }
-        /// <p>The type of association. The following are suggested uses for each type. Amazon SageMaker
-        /// places no restrictions on their use.</p>
+        /// <p>The type of association. The following are suggested uses for each type. Amazon SageMaker places no restrictions on their use.</p>
         /// <ul>
-        /// <li>
-        /// <p>ContributedTo - The source contributed to the destination or had a part in
-        /// enabling the destination. For example, the training data contributed to the training
-        /// job.</p>
-        /// </li>
-        /// <li>
-        /// <p>AssociatedWith - The source is connected to the destination. For example, an
-        /// approval workflow is associated with a model deployment.</p>
-        /// </li>
-        /// <li>
-        /// <p>DerivedFrom - The destination is a modification of the source. For example, a digest
-        /// output of a channel input for a processing job is derived from the original inputs.</p>
-        /// </li>
-        /// <li>
-        /// <p>Produced - The source generated the destination. For example, a training job
-        /// produced a model artifact.</p>
-        /// </li>
+        /// <li> <p>ContributedTo - The source contributed to the destination or had a part in enabling the destination. For example, the training data contributed to the training job.</p> </li>
+        /// <li> <p>AssociatedWith - The source is connected to the destination. For example, an approval workflow is associated with a model deployment.</p> </li>
+        /// <li> <p>DerivedFrom - The destination is a modification of the source. For example, a digest output of a channel input for a processing job is derived from the original inputs.</p> </li>
+        /// <li> <p>Produced - The source generated the destination. For example, a training job produced a model artifact.</p> </li>
         /// </ul>
         pub fn association_type(mut self, input: crate::model::AssociationEdgeType) -> Self {
             self.inner = self.inner.association_type(input);
             self
         }
-        /// <p>The type of association. The following are suggested uses for each type. Amazon SageMaker
-        /// places no restrictions on their use.</p>
+        /// <p>The type of association. The following are suggested uses for each type. Amazon SageMaker places no restrictions on their use.</p>
         /// <ul>
-        /// <li>
-        /// <p>ContributedTo - The source contributed to the destination or had a part in
-        /// enabling the destination. For example, the training data contributed to the training
-        /// job.</p>
-        /// </li>
-        /// <li>
-        /// <p>AssociatedWith - The source is connected to the destination. For example, an
-        /// approval workflow is associated with a model deployment.</p>
-        /// </li>
-        /// <li>
-        /// <p>DerivedFrom - The destination is a modification of the source. For example, a digest
-        /// output of a channel input for a processing job is derived from the original inputs.</p>
-        /// </li>
-        /// <li>
-        /// <p>Produced - The source generated the destination. For example, a training job
-        /// produced a model artifact.</p>
-        /// </li>
+        /// <li> <p>ContributedTo - The source contributed to the destination or had a part in enabling the destination. For example, the training data contributed to the training job.</p> </li>
+        /// <li> <p>AssociatedWith - The source is connected to the destination. For example, an approval workflow is associated with a model deployment.</p> </li>
+        /// <li> <p>DerivedFrom - The destination is a modification of the source. For example, a digest output of a channel input for a processing job is derived from the original inputs.</p> </li>
+        /// <li> <p>Produced - The source generated the destination. For example, a training job produced a model artifact.</p> </li>
         /// </ul>
         pub fn set_association_type(
             mut self,
@@ -2105,31 +2073,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `AddTags`.
     ///
-    /// <p>Adds or overwrites one or more tags for the specified Amazon SageMaker resource. You can add
-    /// tags to notebook instances, training jobs, hyperparameter tuning jobs, batch transform
-    /// jobs, models, labeling jobs, work teams, endpoint configurations, and
-    /// endpoints.</p>
-    /// <p>Each tag consists of a key and an optional value. Tag keys must be unique per
-    /// resource. For more information about tags, see For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">Amazon Web Services
-    /// Tagging Strategies</a>.</p>
-    /// <note>
-    /// <p>Tags that you add to a hyperparameter tuning job by calling this API are also
-    /// added to any training jobs that the hyperparameter tuning job launches after you
-    /// call this API, but not to training jobs that the hyperparameter tuning job launched
-    /// before you called this API. To make sure that the tags associated with a
-    /// hyperparameter tuning job are also added to all training jobs that the
-    /// hyperparameter tuning job launches, add the tags when you first create the tuning
-    /// job by specifying them in the <code>Tags</code> parameter of <a>CreateHyperParameterTuningJob</a>
-    /// </p>
-    /// </note>
-    /// <note>
-    /// <p>Tags that you add to a SageMaker Studio Domain or User Profile by calling this API
-    /// are also added to any Apps that the Domain or User Profile launches after you call
-    /// this API, but not to Apps that the Domain or User Profile launched before you called
-    /// this API. To make sure that the tags associated with a Domain or User Profile are
-    /// also added to all Apps that the Domain or User Profile launches, add the tags when
-    /// you first create the Domain or User Profile by specifying them in the
-    /// <code>Tags</code> parameter of <a>CreateDomain</a> or <a>CreateUserProfile</a>.</p>
+    /// <p>Adds or overwrites one or more tags for the specified Amazon SageMaker resource. You can add tags to notebook instances, training jobs, hyperparameter tuning jobs, batch transform jobs, models, labeling jobs, work teams, endpoint configurations, and endpoints.</p>
+    /// <p>Each tag consists of a key and an optional value. Tag keys must be unique per resource. For more information about tags, see For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">Amazon Web Services Tagging Strategies</a>.</p> <note>
+    /// <p>Tags that you add to a hyperparameter tuning job by calling this API are also added to any training jobs that the hyperparameter tuning job launches after you call this API, but not to training jobs that the hyperparameter tuning job launched before you called this API. To make sure that the tags associated with a hyperparameter tuning job are also added to all training jobs that the hyperparameter tuning job launches, add the tags when you first create the tuning job by specifying them in the <code>Tags</code> parameter of <code>CreateHyperParameterTuningJob</code> </p>
+    /// </note> <note>
+    /// <p>Tags that you add to a SageMaker Studio Domain or User Profile by calling this API are also added to any Apps that the Domain or User Profile launches after you call this API, but not to Apps that the Domain or User Profile launched before you called this API. To make sure that the tags associated with a Domain or User Profile are also added to all Apps that the Domain or User Profile launches, add the tags when you first create the Domain or User Profile by specifying them in the <code>Tags</code> parameter of <code>CreateDomain</code> or <code>CreateUserProfile</code>.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddTags<
@@ -2201,18 +2149,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in
-        /// different ways, for example, by purpose, owner, or environment. For more information,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
-        /// Resources</a>.</p>
+        /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in
-        /// different ways, for example, by purpose, owner, or environment. For more information,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
-        /// Resources</a>.</p>
+        /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2223,8 +2165,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `AssociateTrialComponent`.
     ///
-    /// <p>Associates a trial component with a trial. A trial component can be associated with
-    /// multiple trials. To disassociate a trial component from a trial, call the <a>DisassociateTrialComponent</a> API.</p>
+    /// <p>Associates a trial component with a trial. A trial component can be associated with multiple trials. To disassociate a trial component from a trial, call the <code>DisassociateTrialComponent</code> API.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateTrialComponent<
         C = aws_smithy_client::erase::DynConnector,
@@ -2384,11 +2325,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateAction`.
     ///
-    /// <p>Creates an <i>action</i>. An action is a lineage tracking entity that
-    /// represents an action or activity. For example, a model deployment or an HPO job.
-    /// Generally, an action involves at least one input or output artifact. For more information, see
-    /// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html">Amazon SageMaker
-    /// ML Lineage Tracking</a>.</p>
+    /// <p>Creates an <i>action</i>. An action is a lineage tracking entity that represents an action or activity. For example, a model deployment or an HPO job. Generally, an action involves at least one input or output artifact. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html">Amazon SageMaker ML Lineage Tracking</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAction<
         C = aws_smithy_client::erase::DynConnector,
@@ -2557,8 +2494,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateAlgorithm`.
     ///
-    /// <p>Create a machine learning algorithm that you can use in Amazon SageMaker and list in the Amazon Web Services
-    /// Marketplace.</p>
+    /// <p>Create a machine learning algorithm that you can use in Amazon SageMaker and list in the Amazon Web Services Marketplace.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAlgorithm<
         C = aws_smithy_client::erase::DynConnector,
@@ -2641,34 +2577,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_algorithm_description(input);
             self
         }
-        /// <p>Specifies details about training jobs run by this algorithm, including the
-        /// following:</p>
+        /// <p>Specifies details about training jobs run by this algorithm, including the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>The Amazon ECR path of the container and the version digest of the
-        /// algorithm.</p>
-        /// </li>
-        /// <li>
-        /// <p>The hyperparameters that the algorithm supports.</p>
-        /// </li>
-        /// <li>
-        /// <p>The instance types that the algorithm supports for training.</p>
-        /// </li>
-        /// <li>
-        /// <p>Whether the algorithm supports distributed training.</p>
-        /// </li>
-        /// <li>
-        /// <p>The metrics that the algorithm emits to Amazon CloudWatch.</p>
-        /// </li>
-        /// <li>
-        /// <p>Which metrics that the algorithm emits can be used as the objective metric for
-        /// hyperparameter tuning jobs.</p>
-        /// </li>
-        /// <li>
-        /// <p>The input channels that the algorithm supports for training data. For example,
-        /// an algorithm might support <code>train</code>, <code>validation</code>, and
-        /// <code>test</code> channels.</p>
-        /// </li>
+        /// <li> <p>The Amazon ECR path of the container and the version digest of the algorithm.</p> </li>
+        /// <li> <p>The hyperparameters that the algorithm supports.</p> </li>
+        /// <li> <p>The instance types that the algorithm supports for training.</p> </li>
+        /// <li> <p>Whether the algorithm supports distributed training.</p> </li>
+        /// <li> <p>The metrics that the algorithm emits to Amazon CloudWatch.</p> </li>
+        /// <li> <p>Which metrics that the algorithm emits can be used as the objective metric for hyperparameter tuning jobs.</p> </li>
+        /// <li> <p>The input channels that the algorithm supports for training data. For example, an algorithm might support <code>train</code>, <code>validation</code>, and <code>test</code> channels.</p> </li>
         /// </ul>
         pub fn training_specification(
             mut self,
@@ -2677,34 +2594,15 @@ pub mod fluent_builders {
             self.inner = self.inner.training_specification(input);
             self
         }
-        /// <p>Specifies details about training jobs run by this algorithm, including the
-        /// following:</p>
+        /// <p>Specifies details about training jobs run by this algorithm, including the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>The Amazon ECR path of the container and the version digest of the
-        /// algorithm.</p>
-        /// </li>
-        /// <li>
-        /// <p>The hyperparameters that the algorithm supports.</p>
-        /// </li>
-        /// <li>
-        /// <p>The instance types that the algorithm supports for training.</p>
-        /// </li>
-        /// <li>
-        /// <p>Whether the algorithm supports distributed training.</p>
-        /// </li>
-        /// <li>
-        /// <p>The metrics that the algorithm emits to Amazon CloudWatch.</p>
-        /// </li>
-        /// <li>
-        /// <p>Which metrics that the algorithm emits can be used as the objective metric for
-        /// hyperparameter tuning jobs.</p>
-        /// </li>
-        /// <li>
-        /// <p>The input channels that the algorithm supports for training data. For example,
-        /// an algorithm might support <code>train</code>, <code>validation</code>, and
-        /// <code>test</code> channels.</p>
-        /// </li>
+        /// <li> <p>The Amazon ECR path of the container and the version digest of the algorithm.</p> </li>
+        /// <li> <p>The hyperparameters that the algorithm supports.</p> </li>
+        /// <li> <p>The instance types that the algorithm supports for training.</p> </li>
+        /// <li> <p>Whether the algorithm supports distributed training.</p> </li>
+        /// <li> <p>The metrics that the algorithm emits to Amazon CloudWatch.</p> </li>
+        /// <li> <p>Which metrics that the algorithm emits can be used as the objective metric for hyperparameter tuning jobs.</p> </li>
+        /// <li> <p>The input channels that the algorithm supports for training data. For example, an algorithm might support <code>train</code>, <code>validation</code>, and <code>test</code> channels.</p> </li>
         /// </ul>
         pub fn set_training_specification(
             mut self,
@@ -2713,21 +2611,11 @@ pub mod fluent_builders {
             self.inner = self.inner.set_training_specification(input);
             self
         }
-        /// <p>Specifies details about inference jobs that the algorithm runs, including the
-        /// following:</p>
+        /// <p>Specifies details about inference jobs that the algorithm runs, including the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>The Amazon ECR paths of containers that contain the inference code and model
-        /// artifacts.</p>
-        /// </li>
-        /// <li>
-        /// <p>The instance types that the algorithm supports for transform jobs and
-        /// real-time endpoints used for inference.</p>
-        /// </li>
-        /// <li>
-        /// <p>The input and output content formats that the algorithm supports for
-        /// inference.</p>
-        /// </li>
+        /// <li> <p>The Amazon ECR paths of containers that contain the inference code and model artifacts.</p> </li>
+        /// <li> <p>The instance types that the algorithm supports for transform jobs and real-time endpoints used for inference.</p> </li>
+        /// <li> <p>The input and output content formats that the algorithm supports for inference.</p> </li>
         /// </ul>
         pub fn inference_specification(
             mut self,
@@ -2736,21 +2624,11 @@ pub mod fluent_builders {
             self.inner = self.inner.inference_specification(input);
             self
         }
-        /// <p>Specifies details about inference jobs that the algorithm runs, including the
-        /// following:</p>
+        /// <p>Specifies details about inference jobs that the algorithm runs, including the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>The Amazon ECR paths of containers that contain the inference code and model
-        /// artifacts.</p>
-        /// </li>
-        /// <li>
-        /// <p>The instance types that the algorithm supports for transform jobs and
-        /// real-time endpoints used for inference.</p>
-        /// </li>
-        /// <li>
-        /// <p>The input and output content formats that the algorithm supports for
-        /// inference.</p>
-        /// </li>
+        /// <li> <p>The Amazon ECR paths of containers that contain the inference code and model artifacts.</p> </li>
+        /// <li> <p>The instance types that the algorithm supports for transform jobs and real-time endpoints used for inference.</p> </li>
+        /// <li> <p>The input and output content formats that the algorithm supports for inference.</p> </li>
         /// </ul>
         pub fn set_inference_specification(
             mut self,
@@ -2759,9 +2637,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_inference_specification(input);
             self
         }
-        /// <p>Specifies configurations for one or more training jobs and that Amazon SageMaker runs to test the
-        /// algorithm's training code and, optionally, one or more batch transform jobs that Amazon SageMaker
-        /// runs to test the algorithm's inference code.</p>
+        /// <p>Specifies configurations for one or more training jobs and that Amazon SageMaker runs to test the algorithm's training code and, optionally, one or more batch transform jobs that Amazon SageMaker runs to test the algorithm's inference code.</p>
         pub fn validation_specification(
             mut self,
             input: crate::model::AlgorithmValidationSpecification,
@@ -2769,9 +2645,7 @@ pub mod fluent_builders {
             self.inner = self.inner.validation_specification(input);
             self
         }
-        /// <p>Specifies configurations for one or more training jobs and that Amazon SageMaker runs to test the
-        /// algorithm's training code and, optionally, one or more batch transform jobs that Amazon SageMaker
-        /// runs to test the algorithm's inference code.</p>
+        /// <p>Specifies configurations for one or more training jobs and that Amazon SageMaker runs to test the algorithm's training code and, optionally, one or more batch transform jobs that Amazon SageMaker runs to test the algorithm's inference code.</p>
         pub fn set_validation_specification(
             mut self,
             input: std::option::Option<crate::model::AlgorithmValidationSpecification>,
@@ -2793,18 +2667,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in
-        /// different ways, for example, by purpose, owner, or environment. For more information,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
-        /// Resources</a>.</p>
+        /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in
-        /// different ways, for example, by purpose, owner, or environment. For more information,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
-        /// Resources</a>.</p>
+        /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2815,10 +2683,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateApp`.
     ///
-    /// <p>Creates a running app for the specified UserProfile. Supported apps are
-    /// <code>JupyterServer</code> and <code>KernelGateway</code>. This operation is automatically
-    /// invoked by Amazon SageMaker Studio upon access to the associated Domain, and when new kernel
-    /// configurations are selected by the user. A user may have multiple Apps active simultaneously.</p>
+    /// <p>Creates a running app for the specified UserProfile. Supported apps are <code>JupyterServer</code> and <code>KernelGateway</code>. This operation is automatically invoked by Amazon SageMaker Studio upon access to the associated Domain, and when new kernel configurations are selected by the user. A user may have multiple Apps active simultaneously.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateApp<
         C = aws_smithy_client::erase::DynConnector,
@@ -2898,14 +2763,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_user_profile_name(input);
             self
         }
-        /// <p>The type of app. Supported apps are <code>JupyterServer</code> and
-        /// <code>KernelGateway</code>. <code>TensorBoard</code> is not supported.</p>
+        /// <p>The type of app. Supported apps are <code>JupyterServer</code> and <code>KernelGateway</code>. <code>TensorBoard</code> is not supported.</p>
         pub fn app_type(mut self, input: crate::model::AppType) -> Self {
             self.inner = self.inner.app_type(input);
             self
         }
-        /// <p>The type of app. Supported apps are <code>JupyterServer</code> and
-        /// <code>KernelGateway</code>. <code>TensorBoard</code> is not supported.</p>
+        /// <p>The type of app. Supported apps are <code>JupyterServer</code> and <code>KernelGateway</code>. <code>TensorBoard</code> is not supported.</p>
         pub fn set_app_type(mut self, input: std::option::Option<crate::model::AppType>) -> Self {
             self.inner = self.inner.set_app_type(input);
             self
@@ -2924,14 +2787,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Each tag consists of a key and an optional value.
-        /// Tag keys must be unique per resource.</p>
+        /// <p>Each tag consists of a key and an optional value. Tag keys must be unique per resource.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>Each tag consists of a key and an optional value.
-        /// Tag keys must be unique per resource.</p>
+        /// <p>Each tag consists of a key and an optional value. Tag keys must be unique per resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2955,9 +2816,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateAppImageConfig`.
     ///
-    /// <p>Creates a configuration for running a SageMaker image as a KernelGateway app. The
-    /// configuration specifies the Amazon Elastic File System (EFS) storage volume on the image, and a list of the
-    /// kernels in the image.</p>
+    /// <p>Creates a configuration for running a SageMaker image as a KernelGateway app. The configuration specifies the Amazon Elastic File System (EFS) storage volume on the image, and a list of the kernels in the image.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAppImageConfig<
         C = aws_smithy_client::erase::DynConnector,
@@ -3063,11 +2922,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateArtifact`.
     ///
-    /// <p>Creates an <i>artifact</i>. An artifact is a lineage tracking entity that
-    /// represents a URI addressable object or data. Some examples are the S3 URI of a dataset and
-    /// the ECR registry path of an image. For more information, see
-    /// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html">Amazon SageMaker
-    /// ML Lineage Tracking</a>.</p>
+    /// <p>Creates an <i>artifact</i>. An artifact is a lineage tracking entity that represents a URI addressable object or data. Some examples are the S3 URI of a dataset and the ECR registry path of an image. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html">Amazon SageMaker ML Lineage Tracking</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateArtifact<
         C = aws_smithy_client::erase::DynConnector,
@@ -3221,8 +3076,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates an Autopilot job.</p>
     /// <p>Find the best-performing model after you run an Autopilot job by calling .</p>
-    /// <p>For information about how to use Autopilot, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development.html">Automate Model
-    /// Development with Amazon SageMaker Autopilot</a>.</p>
+    /// <p>For information about how to use Autopilot, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development.html">Automate Model Development with Amazon SageMaker Autopilot</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAutoMLJob<
         C = aws_smithy_client::erase::DynConnector,
@@ -3279,14 +3133,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Identifies an Autopilot job. The name must be unique to your account and is
-        /// case-insensitive.</p>
+        /// <p>Identifies an Autopilot job. The name must be unique to your account and is case-insensitive.</p>
         pub fn auto_ml_job_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.auto_ml_job_name(input.into());
             self
         }
-        /// <p>Identifies an Autopilot job. The name must be unique to your account and is
-        /// case-insensitive.</p>
+        /// <p>Identifies an Autopilot job. The name must be unique to your account and is case-insensitive.</p>
         pub fn set_auto_ml_job_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3298,16 +3150,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_input_data_config`](Self::set_input_data_config).
         ///
-        /// <p>An array of channel objects that describes the input data and its location. Each channel
-        /// is a named input source. Similar to <code>InputDataConfig</code> supported by . Format(s) supported: CSV. Minimum
-        /// of 500 rows.</p>
+        /// <p>An array of channel objects that describes the input data and its location. Each channel is a named input source. Similar to <code>InputDataConfig</code> supported by . Format(s) supported: CSV. Minimum of 500 rows.</p>
         pub fn input_data_config(mut self, input: crate::model::AutoMlChannel) -> Self {
             self.inner = self.inner.input_data_config(input);
             self
         }
-        /// <p>An array of channel objects that describes the input data and its location. Each channel
-        /// is a named input source. Similar to <code>InputDataConfig</code> supported by . Format(s) supported: CSV. Minimum
-        /// of 500 rows.</p>
+        /// <p>An array of channel objects that describes the input data and its location. Each channel is a named input source. Similar to <code>InputDataConfig</code> supported by . Format(s) supported: CSV. Minimum of 500 rows.</p>
         pub fn set_input_data_config(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AutoMlChannel>>,
@@ -3315,14 +3163,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_input_data_config(input);
             self
         }
-        /// <p>Provides information about encryption and the Amazon S3 output path needed to store artifacts
-        /// from an AutoML job. Format(s) supported: CSV.</p>
+        /// <p>Provides information about encryption and the Amazon S3 output path needed to store artifacts from an AutoML job. Format(s) supported: CSV.</p>
         pub fn output_data_config(mut self, input: crate::model::AutoMlOutputDataConfig) -> Self {
             self.inner = self.inner.output_data_config(input);
             self
         }
-        /// <p>Provides information about encryption and the Amazon S3 output path needed to store artifacts
-        /// from an AutoML job. Format(s) supported: CSV.</p>
+        /// <p>Provides information about encryption and the Amazon S3 output path needed to store artifacts from an AutoML job. Format(s) supported: CSV.</p>
         pub fn set_output_data_config(
             mut self,
             input: std::option::Option<crate::model::AutoMlOutputDataConfig>,
@@ -3330,18 +3176,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_output_data_config(input);
             self
         }
-        /// <p>Defines the type of supervised learning available for the candidates. Options include:
-        /// <code>BinaryClassification</code>, <code>MulticlassClassification</code>, and
-        /// <code>Regression</code>. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html">
-        /// Amazon SageMaker Autopilot problem types and algorithm support</a>.</p>
+        /// <p>Defines the type of supervised learning available for the candidates. Options include: <code>BinaryClassification</code>, <code>MulticlassClassification</code>, and <code>Regression</code>. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html"> Amazon SageMaker Autopilot problem types and algorithm support</a>.</p>
         pub fn problem_type(mut self, input: crate::model::ProblemType) -> Self {
             self.inner = self.inner.problem_type(input);
             self
         }
-        /// <p>Defines the type of supervised learning available for the candidates. Options include:
-        /// <code>BinaryClassification</code>, <code>MulticlassClassification</code>, and
-        /// <code>Regression</code>. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html">
-        /// Amazon SageMaker Autopilot problem types and algorithm support</a>.</p>
+        /// <p>Defines the type of supervised learning available for the candidates. Options include: <code>BinaryClassification</code>, <code>MulticlassClassification</code>, and <code>Regression</code>. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html"> Amazon SageMaker Autopilot problem types and algorithm support</a>.</p>
         pub fn set_problem_type(
             mut self,
             input: std::option::Option<crate::model::ProblemType>,
@@ -3349,16 +3189,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_problem_type(input);
             self
         }
-        /// <p>Defines the objective metric used to measure the predictive quality of an AutoML job. You
-        /// provide an <a>AutoMLJobObjective$MetricName</a> and Autopilot infers whether to
-        /// minimize or maximize it.</p>
+        /// <p>Defines the objective metric used to measure the predictive quality of an AutoML job. You provide an <code>AutoMLJobObjective$MetricName</code> and Autopilot infers whether to minimize or maximize it.</p>
         pub fn auto_ml_job_objective(mut self, input: crate::model::AutoMlJobObjective) -> Self {
             self.inner = self.inner.auto_ml_job_objective(input);
             self
         }
-        /// <p>Defines the objective metric used to measure the predictive quality of an AutoML job. You
-        /// provide an <a>AutoMLJobObjective$MetricName</a> and Autopilot infers whether to
-        /// minimize or maximize it.</p>
+        /// <p>Defines the objective metric used to measure the predictive quality of an AutoML job. You provide an <code>AutoMLJobObjective$MetricName</code> and Autopilot infers whether to minimize or maximize it.</p>
         pub fn set_auto_ml_job_objective(
             mut self,
             input: std::option::Option<crate::model::AutoMlJobObjective>,
@@ -3366,14 +3202,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_auto_ml_job_objective(input);
             self
         }
-        /// <p>Contains <code>CompletionCriteria</code> and <code>SecurityConfig</code> settings for
-        /// the AutoML job.</p>
+        /// <p>Contains <code>CompletionCriteria</code> and <code>SecurityConfig</code> settings for the AutoML job.</p>
         pub fn auto_ml_job_config(mut self, input: crate::model::AutoMlJobConfig) -> Self {
             self.inner = self.inner.auto_ml_job_config(input);
             self
         }
-        /// <p>Contains <code>CompletionCriteria</code> and <code>SecurityConfig</code> settings for
-        /// the AutoML job.</p>
+        /// <p>Contains <code>CompletionCriteria</code> and <code>SecurityConfig</code> settings for the AutoML job.</p>
         pub fn set_auto_ml_job_config(
             mut self,
             input: std::option::Option<crate::model::AutoMlJobConfig>,
@@ -3391,14 +3225,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_role_arn(input);
             self
         }
-        /// <p>Generates possible candidates without training the models. A candidate is a combination
-        /// of data preprocessors, algorithms, and algorithm parameter settings.</p>
+        /// <p>Generates possible candidates without training the models. A candidate is a combination of data preprocessors, algorithms, and algorithm parameter settings.</p>
         pub fn generate_candidate_definitions_only(mut self, input: bool) -> Self {
             self.inner = self.inner.generate_candidate_definitions_only(input);
             self
         }
-        /// <p>Generates possible candidates without training the models. A candidate is a combination
-        /// of data preprocessors, algorithms, and algorithm parameter settings.</p>
+        /// <p>Generates possible candidates without training the models. A candidate is a combination of data preprocessors, algorithms, and algorithm parameter settings.</p>
         pub fn set_generate_candidate_definitions_only(
             mut self,
             input: std::option::Option<bool>,
@@ -3410,14 +3242,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Each tag consists of a key and an optional value. Tag keys must be unique per
-        /// resource.</p>
+        /// <p>Each tag consists of a key and an optional value. Tag keys must be unique per resource.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>Each tag consists of a key and an optional value. Tag keys must be unique per
-        /// resource.</p>
+        /// <p>Each tag consists of a key and an optional value. Tag keys must be unique per resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3425,14 +3255,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>Specifies how to generate the endpoint name for an automatic one-click Autopilot model
-        /// deployment.</p>
+        /// <p>Specifies how to generate the endpoint name for an automatic one-click Autopilot model deployment.</p>
         pub fn model_deploy_config(mut self, input: crate::model::ModelDeployConfig) -> Self {
             self.inner = self.inner.model_deploy_config(input);
             self
         }
-        /// <p>Specifies how to generate the endpoint name for an automatic one-click Autopilot model
-        /// deployment.</p>
+        /// <p>Specifies how to generate the endpoint name for an automatic one-click Autopilot model deployment.</p>
         pub fn set_model_deploy_config(
             mut self,
             input: std::option::Option<crate::model::ModelDeployConfig>,
@@ -3443,13 +3271,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateCodeRepository`.
     ///
-    /// <p>Creates a Git repository as a resource in your Amazon SageMaker account. You can associate the
-    /// repository with notebook instances so that you can use Git source control for the
-    /// notebooks you create. The Git repository is a resource in your Amazon SageMaker account, so it can
-    /// be associated with more than one notebook instance, and it persists independently from
-    /// the lifecycle of any notebook instances it is associated with.</p>
-    /// <p>The repository can be hosted either in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any
-    /// other Git repository.</p>
+    /// <p>Creates a Git repository as a resource in your Amazon SageMaker account. You can associate the repository with notebook instances so that you can use Git source control for the notebooks you create. The Git repository is a resource in your Amazon SageMaker account, so it can be associated with more than one notebook instance, and it persists independently from the lifecycle of any notebook instances it is associated with.</p>
+    /// <p>The repository can be hosted either in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCodeRepository<
         C = aws_smithy_client::erase::DynConnector,
@@ -3506,14 +3329,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the Git repository. The name must have 1 to 63 characters. Valid
-        /// characters are a-z, A-Z, 0-9, and - (hyphen).</p>
+        /// <p>The name of the Git repository. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).</p>
         pub fn code_repository_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.code_repository_name(input.into());
             self
         }
-        /// <p>The name of the Git repository. The name must have 1 to 63 characters. Valid
-        /// characters are a-z, A-Z, 0-9, and - (hyphen).</p>
+        /// <p>The name of the Git repository. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).</p>
         pub fn set_code_repository_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3521,14 +3342,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_code_repository_name(input);
             self
         }
-        /// <p>Specifies details about the repository, including the URL where the repository is
-        /// located, the default branch, and credentials to use to access the repository.</p>
+        /// <p>Specifies details about the repository, including the URL where the repository is located, the default branch, and credentials to use to access the repository.</p>
         pub fn git_config(mut self, input: crate::model::GitConfig) -> Self {
             self.inner = self.inner.git_config(input);
             self
         }
-        /// <p>Specifies details about the repository, including the URL where the repository is
-        /// located, the default branch, and credentials to use to access the repository.</p>
+        /// <p>Specifies details about the repository, including the URL where the repository is located, the default branch, and credentials to use to access the repository.</p>
         pub fn set_git_config(
             mut self,
             input: std::option::Option<crate::model::GitConfig>,
@@ -3540,18 +3359,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in
-        /// different ways, for example, by purpose, owner, or environment. For more information,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
-        /// Resources</a>.</p>
+        /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in
-        /// different ways, for example, by purpose, owner, or environment. For more information,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
-        /// Resources</a>.</p>
+        /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3562,38 +3375,17 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateCompilationJob`.
     ///
-    /// <p>Starts a model compilation job. After the model has been compiled, Amazon SageMaker saves the
-    /// resulting model artifacts to an Amazon Simple Storage Service (Amazon S3) bucket that you specify. </p>
-    /// <p>If
-    /// you choose to host your model using Amazon SageMaker hosting services, you can use the resulting
-    /// model artifacts as part of the model. You can also use the artifacts with
-    /// Amazon Web Services
-    /// IoT Greengrass. In that case, deploy them as an ML
-    /// resource.</p>
+    /// <p>Starts a model compilation job. After the model has been compiled, Amazon SageMaker saves the resulting model artifacts to an Amazon Simple Storage Service (Amazon S3) bucket that you specify. </p>
+    /// <p>If you choose to host your model using Amazon SageMaker hosting services, you can use the resulting model artifacts as part of the model. You can also use the artifacts with Amazon Web Services IoT Greengrass. In that case, deploy them as an ML resource.</p>
     /// <p>In the request body, you provide the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>A name for the compilation job</p>
-    /// </li>
-    /// <li>
-    /// <p> Information about the input model artifacts </p>
-    /// </li>
-    /// <li>
-    /// <p>The output location for the compiled model and the device (target) that the
-    /// model runs on </p>
-    /// </li>
-    /// <li>
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker assumes to perform
-    /// the model compilation job. </p>
-    /// </li>
+    /// <li> <p>A name for the compilation job</p> </li>
+    /// <li> <p> Information about the input model artifacts </p> </li>
+    /// <li> <p>The output location for the compiled model and the device (target) that the model runs on </p> </li>
+    /// <li> <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker assumes to perform the model compilation job. </p> </li>
     /// </ul>
-    /// <p>You can also provide a <code>Tag</code> to track the model compilation job's resource
-    /// use and costs. The response body contains the
-    /// <code>CompilationJobArn</code>
-    /// for the compiled job.</p>
-    /// <p>To stop a model compilation job, use <a>StopCompilationJob</a>. To get
-    /// information about a particular model compilation job, use <a>DescribeCompilationJob</a>. To get information about multiple model
-    /// compilation jobs, use <a>ListCompilationJobs</a>.</p>
+    /// <p>You can also provide a <code>Tag</code> to track the model compilation job's resource use and costs. The response body contains the <code>CompilationJobArn</code> for the compiled job.</p>
+    /// <p>To stop a model compilation job, use <code>StopCompilationJob</code>. To get information about a particular model compilation job, use <code>DescribeCompilationJob</code>. To get information about multiple model compilation jobs, use <code>ListCompilationJobs</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCompilationJob<
         C = aws_smithy_client::erase::DynConnector,
@@ -3650,14 +3442,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A name for the model compilation job. The name must be unique within the Amazon Web Services Region
-        /// and within your Amazon Web Services account. </p>
+        /// <p>A name for the model compilation job. The name must be unique within the Amazon Web Services Region and within your Amazon Web Services account. </p>
         pub fn compilation_job_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.compilation_job_name(input.into());
             self
         }
-        /// <p>A name for the model compilation job. The name must be unique within the Amazon Web Services Region
-        /// and within your Amazon Web Services account. </p>
+        /// <p>A name for the model compilation job. The name must be unique within the Amazon Web Services Region and within your Amazon Web Services account. </p>
         pub fn set_compilation_job_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3665,70 +3455,38 @@ pub mod fluent_builders {
             self.inner = self.inner.set_compilation_job_name(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on
-        /// your behalf. </p>
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on your behalf. </p>
         /// <p>During model compilation, Amazon SageMaker needs your permission to:</p>
         /// <ul>
-        /// <li>
-        /// <p>Read input data from an S3 bucket</p>
-        /// </li>
-        /// <li>
-        /// <p>Write model artifacts to an S3 bucket</p>
-        /// </li>
-        /// <li>
-        /// <p>Write logs to Amazon CloudWatch Logs</p>
-        /// </li>
-        /// <li>
-        /// <p>Publish metrics to Amazon CloudWatch</p>
-        /// </li>
+        /// <li> <p>Read input data from an S3 bucket</p> </li>
+        /// <li> <p>Write model artifacts to an S3 bucket</p> </li>
+        /// <li> <p>Write logs to Amazon CloudWatch Logs</p> </li>
+        /// <li> <p>Publish metrics to Amazon CloudWatch</p> </li>
         /// </ul>
-        /// <p>You grant permissions for all of these tasks to an IAM role. To pass this role to
-        /// Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission. For
-        /// more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker
-        /// Roles.</a>
-        /// </p>
+        /// <p>You grant permissions for all of these tasks to an IAM role. To pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles.</a> </p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on
-        /// your behalf. </p>
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on your behalf. </p>
         /// <p>During model compilation, Amazon SageMaker needs your permission to:</p>
         /// <ul>
-        /// <li>
-        /// <p>Read input data from an S3 bucket</p>
-        /// </li>
-        /// <li>
-        /// <p>Write model artifacts to an S3 bucket</p>
-        /// </li>
-        /// <li>
-        /// <p>Write logs to Amazon CloudWatch Logs</p>
-        /// </li>
-        /// <li>
-        /// <p>Publish metrics to Amazon CloudWatch</p>
-        /// </li>
+        /// <li> <p>Read input data from an S3 bucket</p> </li>
+        /// <li> <p>Write model artifacts to an S3 bucket</p> </li>
+        /// <li> <p>Write logs to Amazon CloudWatch Logs</p> </li>
+        /// <li> <p>Publish metrics to Amazon CloudWatch</p> </li>
         /// </ul>
-        /// <p>You grant permissions for all of these tasks to an IAM role. To pass this role to
-        /// Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission. For
-        /// more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker
-        /// Roles.</a>
-        /// </p>
+        /// <p>You grant permissions for all of these tasks to an IAM role. To pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles.</a> </p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a versioned model package. Provide either a
-        /// <code>ModelPackageVersionArn</code> or an <code>InputConfig</code> object in the
-        /// request syntax. The presence of both objects in the <code>CreateCompilationJob</code>
-        /// request will return an exception.</p>
+        /// <p>The Amazon Resource Name (ARN) of a versioned model package. Provide either a <code>ModelPackageVersionArn</code> or an <code>InputConfig</code> object in the request syntax. The presence of both objects in the <code>CreateCompilationJob</code> request will return an exception.</p>
         pub fn model_package_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.model_package_version_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a versioned model package. Provide either a
-        /// <code>ModelPackageVersionArn</code> or an <code>InputConfig</code> object in the
-        /// request syntax. The presence of both objects in the <code>CreateCompilationJob</code>
-        /// request will return an exception.</p>
+        /// <p>The Amazon Resource Name (ARN) of a versioned model package. Provide either a <code>ModelPackageVersionArn</code> or an <code>InputConfig</code> object in the request syntax. The presence of both objects in the <code>CreateCompilationJob</code> request will return an exception.</p>
         pub fn set_model_package_version_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3736,14 +3494,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_model_package_version_arn(input);
             self
         }
-        /// <p>Provides information about the location of input model artifacts, the name and shape
-        /// of the expected data inputs, and the framework in which the model was trained.</p>
+        /// <p>Provides information about the location of input model artifacts, the name and shape of the expected data inputs, and the framework in which the model was trained.</p>
         pub fn input_config(mut self, input: crate::model::InputConfig) -> Self {
             self.inner = self.inner.input_config(input);
             self
         }
-        /// <p>Provides information about the location of input model artifacts, the name and shape
-        /// of the expected data inputs, and the framework in which the model was trained.</p>
+        /// <p>Provides information about the location of input model artifacts, the name and shape of the expected data inputs, and the framework in which the model was trained.</p>
         pub fn set_input_config(
             mut self,
             input: std::option::Option<crate::model::InputConfig>,
@@ -3751,14 +3507,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_input_config(input);
             self
         }
-        /// <p>Provides information about the output location for the compiled model and the target
-        /// device the model runs on.</p>
+        /// <p>Provides information about the output location for the compiled model and the target device the model runs on.</p>
         pub fn output_config(mut self, input: crate::model::OutputConfig) -> Self {
             self.inner = self.inner.output_config(input);
             self
         }
-        /// <p>Provides information about the output location for the compiled model and the target
-        /// device the model runs on.</p>
+        /// <p>Provides information about the output location for the compiled model and the target device the model runs on.</p>
         pub fn set_output_config(
             mut self,
             input: std::option::Option<crate::model::OutputConfig>,
@@ -3766,18 +3520,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_output_config(input);
             self
         }
-        /// <p>A <a>VpcConfig</a> object that specifies the VPC that you want your
-        /// compilation job to connect to. Control access to your models by
-        /// configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect Compilation Jobs by Using an Amazon
-        /// Virtual Private Cloud</a>.</p>
+        /// <p>A <code>VpcConfig</code> object that specifies the VPC that you want your compilation job to connect to. Control access to your models by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect Compilation Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
         pub fn vpc_config(mut self, input: crate::model::NeoVpcConfig) -> Self {
             self.inner = self.inner.vpc_config(input);
             self
         }
-        /// <p>A <a>VpcConfig</a> object that specifies the VPC that you want your
-        /// compilation job to connect to. Control access to your models by
-        /// configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect Compilation Jobs by Using an Amazon
-        /// Virtual Private Cloud</a>.</p>
+        /// <p>A <code>VpcConfig</code> object that specifies the VPC that you want your compilation job to connect to. Control access to your models by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect Compilation Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
         pub fn set_vpc_config(
             mut self,
             input: std::option::Option<crate::model::NeoVpcConfig>,
@@ -3785,16 +3533,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_vpc_config(input);
             self
         }
-        /// <p>Specifies a limit to how long a model compilation job can run. When the job reaches
-        /// the time limit, Amazon SageMaker ends the compilation job. Use this API to cap model training
-        /// costs.</p>
+        /// <p>Specifies a limit to how long a model compilation job can run. When the job reaches the time limit, Amazon SageMaker ends the compilation job. Use this API to cap model training costs.</p>
         pub fn stopping_condition(mut self, input: crate::model::StoppingCondition) -> Self {
             self.inner = self.inner.stopping_condition(input);
             self
         }
-        /// <p>Specifies a limit to how long a model compilation job can run. When the job reaches
-        /// the time limit, Amazon SageMaker ends the compilation job. Use this API to cap model training
-        /// costs.</p>
+        /// <p>Specifies a limit to how long a model compilation job can run. When the job reaches the time limit, Amazon SageMaker ends the compilation job. Use this API to cap model training costs.</p>
         pub fn set_stopping_condition(
             mut self,
             input: std::option::Option<crate::model::StoppingCondition>,
@@ -3806,18 +3550,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in
-        /// different ways, for example, by purpose, owner, or environment. For more information,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
-        /// Resources</a>.</p>
+        /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in
-        /// different ways, for example, by purpose, owner, or environment. For more information,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
-        /// Resources</a>.</p>
+        /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3828,11 +3566,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateContext`.
     ///
-    /// <p>Creates a <i>context</i>. A context is a lineage tracking entity that
-    /// represents a logical grouping of other tracking or experiment entities. Some examples are
-    /// an endpoint and a model package. For more information, see
-    /// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html">Amazon SageMaker
-    /// ML Lineage Tracking</a>.</p>
+    /// <p>Creates a <i>context</i>. A context is a lineage tracking entity that represents a logical grouping of other tracking or experiment entities. Some examples are an endpoint and a model package. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html">Amazon SageMaker ML Lineage Tracking</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateContext<
         C = aws_smithy_client::erase::DynConnector,
@@ -3975,8 +3709,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateDataQualityJobDefinition`.
     ///
-    /// <p>Creates a definition for a job that monitors data quality and drift. For information
-    /// about model monitor, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html">Amazon SageMaker Model Monitor</a>.</p>
+    /// <p>Creates a definition for a job that monitors data quality and drift. For information about model monitor, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html">Amazon SageMaker Model Monitor</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDataQualityJobDefinition<
         C = aws_smithy_client::erase::DynConnector,
@@ -4078,14 +3811,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_data_quality_app_specification(input);
             self
         }
-        /// <p>A list of inputs for the monitoring job. Currently endpoints are supported as monitoring
-        /// inputs.</p>
+        /// <p>A list of inputs for the monitoring job. Currently endpoints are supported as monitoring inputs.</p>
         pub fn data_quality_job_input(mut self, input: crate::model::DataQualityJobInput) -> Self {
             self.inner = self.inner.data_quality_job_input(input);
             self
         }
-        /// <p>A list of inputs for the monitoring job. Currently endpoints are supported as monitoring
-        /// inputs.</p>
+        /// <p>A list of inputs for the monitoring job. Currently endpoints are supported as monitoring inputs.</p>
         pub fn set_data_quality_job_input(
             mut self,
             input: std::option::Option<crate::model::DataQualityJobInput>,
@@ -4135,14 +3866,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_network_config(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to
-        /// perform tasks on your behalf.</p>
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to
-        /// perform tasks on your behalf.</p>
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
@@ -4167,14 +3896,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management
-        /// User Guide</i>.</p>
+        /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management
-        /// User Guide</i>.</p>
+        /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -4305,20 +4032,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>Whether to create an Amazon Web Services IoT Role Alias during device fleet creation.
-        /// The name of the role alias generated will match this pattern:
-        /// "SageMakerEdge-{DeviceFleetName}".</p>
-        /// <p>For example, if your device fleet is called "demo-fleet", the name of
-        /// the role alias will be "SageMakerEdge-demo-fleet".</p>
+        /// <p>Whether to create an Amazon Web Services IoT Role Alias during device fleet creation. The name of the role alias generated will match this pattern: "SageMakerEdge-{DeviceFleetName}".</p>
+        /// <p>For example, if your device fleet is called "demo-fleet", the name of the role alias will be "SageMakerEdge-demo-fleet".</p>
         pub fn enable_iot_role_alias(mut self, input: bool) -> Self {
             self.inner = self.inner.enable_iot_role_alias(input);
             self
         }
-        /// <p>Whether to create an Amazon Web Services IoT Role Alias during device fleet creation.
-        /// The name of the role alias generated will match this pattern:
-        /// "SageMakerEdge-{DeviceFleetName}".</p>
-        /// <p>For example, if your device fleet is called "demo-fleet", the name of
-        /// the role alias will be "SageMakerEdge-demo-fleet".</p>
+        /// <p>Whether to create an Amazon Web Services IoT Role Alias during device fleet creation. The name of the role alias generated will match this pattern: "SageMakerEdge-{DeviceFleetName}".</p>
+        /// <p>For example, if your device fleet is called "demo-fleet", the name of the role alias will be "SageMakerEdge-demo-fleet".</p>
         pub fn set_enable_iot_role_alias(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_enable_iot_role_alias(input);
             self
@@ -4326,53 +4047,19 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateDomain`.
     ///
-    /// <p>Creates a <code>Domain</code> used by Amazon SageMaker Studio. A domain consists of an associated
-    /// Amazon Elastic File System (EFS) volume, a list of authorized users, and a variety of security, application,
-    /// policy, and Amazon Virtual Private Cloud (VPC) configurations. An Amazon Web Services account is limited to one domain per region.
-    /// Users within a domain can share notebook files and other artifacts with each other.</p>
-    ///
-    /// <p>
-    /// <b>EFS storage</b>
-    /// </p>
-    /// <p>When a domain is created, an EFS volume is created for use by all of the users within the
-    /// domain. Each user receives a private home directory within the EFS volume for notebooks,
-    /// Git repositories, and data files.</p>
-    /// <p>SageMaker uses the Amazon Web Services Key Management Service (Amazon Web Services KMS) to encrypt the EFS volume attached to the domain with
-    /// an Amazon Web Services managed key by default. For more control, you can specify a
-    /// customer managed key. For more information, see
-    /// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/encryption-at-rest.html">Protect Data at
-    /// Rest Using Encryption</a>.</p>
-    ///
-    /// <p>
-    /// <b>VPC configuration</b>
-    /// </p>
-    /// <p>All SageMaker Studio traffic between the domain and the EFS volume is through the specified
-    /// VPC and subnets. For other Studio traffic, you can specify the <code>AppNetworkAccessType</code>
-    /// parameter. <code>AppNetworkAccessType</code> corresponds to the network access type that you
-    /// choose when you onboard to Studio. The following options are available:</p>
+    /// <p>Creates a <code>Domain</code> used by Amazon SageMaker Studio. A domain consists of an associated Amazon Elastic File System (EFS) volume, a list of authorized users, and a variety of security, application, policy, and Amazon Virtual Private Cloud (VPC) configurations. An Amazon Web Services account is limited to one domain per region. Users within a domain can share notebook files and other artifacts with each other.</p>
+    /// <p> <b>EFS storage</b> </p>
+    /// <p>When a domain is created, an EFS volume is created for use by all of the users within the domain. Each user receives a private home directory within the EFS volume for notebooks, Git repositories, and data files.</p>
+    /// <p>SageMaker uses the Amazon Web Services Key Management Service (Amazon Web Services KMS) to encrypt the EFS volume attached to the domain with an Amazon Web Services managed key by default. For more control, you can specify a customer managed key. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/encryption-at-rest.html">Protect Data at Rest Using Encryption</a>.</p>
+    /// <p> <b>VPC configuration</b> </p>
+    /// <p>All SageMaker Studio traffic between the domain and the EFS volume is through the specified VPC and subnets. For other Studio traffic, you can specify the <code>AppNetworkAccessType</code> parameter. <code>AppNetworkAccessType</code> corresponds to the network access type that you choose when you onboard to Studio. The following options are available:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>PublicInternetOnly</code> - Non-EFS traffic goes through a VPC managed by
-    /// Amazon SageMaker, which allows internet access. This is the default value.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets.
-    /// Internet access is disabled by default. To allow internet access, you must specify a
-    /// NAT gateway.</p>
-    /// <p>When internet access is disabled, you won't be able to run a Studio notebook or to
-    /// train or host models unless your VPC has an interface endpoint to the SageMaker API and runtime
-    /// or a NAT gateway and your security groups allow outbound connections.</p>
-    /// </li>
-    /// </ul>
-    /// <important>
-    /// <p>NFS traffic over TCP on port 2049 needs to be allowed in both inbound and outbound rules
-    /// in order to launch a SageMaker Studio app successfully.</p>
+    /// <li> <p> <code>PublicInternetOnly</code> - Non-EFS traffic goes through a VPC managed by Amazon SageMaker, which allows internet access. This is the default value.</p> </li>
+    /// <li> <p> <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets. Internet access is disabled by default. To allow internet access, you must specify a NAT gateway.</p> <p>When internet access is disabled, you won't be able to run a Studio notebook or to train or host models unless your VPC has an interface endpoint to the SageMaker API and runtime or a NAT gateway and your security groups allow outbound connections.</p> </li>
+    /// </ul> <important>
+    /// <p>NFS traffic over TCP on port 2049 needs to be allowed in both inbound and outbound rules in order to launch a SageMaker Studio app successfully.</p>
     /// </important>
-    /// <p>For more information, see
-    /// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-notebooks-and-internet-access.html">Connect
-    /// SageMaker Studio Notebooks to Resources in a VPC</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-notebooks-and-internet-access.html">Connect SageMaker Studio Notebooks to Resources in a VPC</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDomain<
         C = aws_smithy_client::erase::DynConnector,
@@ -4449,22 +4136,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_auth_mode(input);
             self
         }
-        /// <p>The default settings to use to create a user profile when <code>UserSettings</code> isn't specified
-        /// in the call to the <code>CreateUserProfile</code> API.</p>
-        /// <p>
-        /// <code>SecurityGroups</code> is aggregated when specified in both calls. For all other
-        /// settings in <code>UserSettings</code>, the values specified in <code>CreateUserProfile</code>
-        /// take precedence over those specified in <code>CreateDomain</code>.</p>
+        /// <p>The default settings to use to create a user profile when <code>UserSettings</code> isn't specified in the call to the <code>CreateUserProfile</code> API.</p>
+        /// <p> <code>SecurityGroups</code> is aggregated when specified in both calls. For all other settings in <code>UserSettings</code>, the values specified in <code>CreateUserProfile</code> take precedence over those specified in <code>CreateDomain</code>.</p>
         pub fn default_user_settings(mut self, input: crate::model::UserSettings) -> Self {
             self.inner = self.inner.default_user_settings(input);
             self
         }
-        /// <p>The default settings to use to create a user profile when <code>UserSettings</code> isn't specified
-        /// in the call to the <code>CreateUserProfile</code> API.</p>
-        /// <p>
-        /// <code>SecurityGroups</code> is aggregated when specified in both calls. For all other
-        /// settings in <code>UserSettings</code>, the values specified in <code>CreateUserProfile</code>
-        /// take precedence over those specified in <code>CreateDomain</code>.</p>
+        /// <p>The default settings to use to create a user profile when <code>UserSettings</code> isn't specified in the call to the <code>CreateUserProfile</code> API.</p>
+        /// <p> <code>SecurityGroups</code> is aggregated when specified in both calls. For all other settings in <code>UserSettings</code>, the values specified in <code>CreateUserProfile</code> take precedence over those specified in <code>CreateDomain</code>.</p>
         pub fn set_default_user_settings(
             mut self,
             input: std::option::Option<crate::model::UserSettings>,
@@ -4503,20 +4182,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Tags to associated with the Domain. Each tag consists of a key and an optional value.
-        /// Tag keys must be unique per resource. Tags are searchable using the
-        /// <code>Search</code> API.</p>
-        /// <p>Tags that you specify for the Domain are also added to all Apps that the
-        /// Domain launches.</p>
+        /// <p>Tags to associated with the Domain. Each tag consists of a key and an optional value. Tag keys must be unique per resource. Tags are searchable using the <code>Search</code> API.</p>
+        /// <p>Tags that you specify for the Domain are also added to all Apps that the Domain launches.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>Tags to associated with the Domain. Each tag consists of a key and an optional value.
-        /// Tag keys must be unique per resource. Tags are searchable using the
-        /// <code>Search</code> API.</p>
-        /// <p>Tags that you specify for the Domain are also added to all Apps that the
-        /// Domain launches.</p>
+        /// <p>Tags to associated with the Domain. Each tag consists of a key and an optional value. Tag keys must be unique per resource. Tags are searchable using the <code>Search</code> API.</p>
+        /// <p>Tags that you specify for the Domain are also added to all Apps that the Domain launches.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -4524,18 +4197,10 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>Specifies the VPC used for non-EFS traffic. The default value is
-        /// <code>PublicInternetOnly</code>.</p>
+        /// <p>Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by
-        /// Amazon SageMaker, which allows direct internet access</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets</p>
-        /// </li>
+        /// <li> <p> <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access</p> </li>
+        /// <li> <p> <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets</p> </li>
         /// </ul>
         pub fn app_network_access_type(
             mut self,
@@ -4544,18 +4209,10 @@ pub mod fluent_builders {
             self.inner = self.inner.app_network_access_type(input);
             self
         }
-        /// <p>Specifies the VPC used for non-EFS traffic. The default value is
-        /// <code>PublicInternetOnly</code>.</p>
+        /// <p>Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by
-        /// Amazon SageMaker, which allows direct internet access</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets</p>
-        /// </li>
+        /// <li> <p> <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access</p> </li>
+        /// <li> <p> <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets</p> </li>
         /// </ul>
         pub fn set_app_network_access_type(
             mut self,
@@ -4580,23 +4237,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_home_efs_file_system_kms_key_id(input);
             self
         }
-        /// <p>SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to the domain with an Amazon Web Services managed
-        /// key by default. For more control, specify a customer managed key.</p>
+        /// <p>SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to the domain with an Amazon Web Services managed key by default. For more control, specify a customer managed key.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_key_id(input.into());
             self
         }
-        /// <p>SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to the domain with an Amazon Web Services managed
-        /// key by default. For more control, specify a customer managed key.</p>
+        /// <p>SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to the domain with an Amazon Web Services managed key by default. For more control, specify a customer managed key.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_kms_key_id(input);
             self
         }
-        /// <p>The entity that creates and manages the required security groups for inter-app
-        /// communication in <code>VPCOnly</code> mode. Required when
-        /// <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and
-        /// <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is
-        /// provided.</p>
+        /// <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided.</p>
         pub fn app_security_group_management(
             mut self,
             input: crate::model::AppSecurityGroupManagement,
@@ -4604,11 +4255,7 @@ pub mod fluent_builders {
             self.inner = self.inner.app_security_group_management(input);
             self
         }
-        /// <p>The entity that creates and manages the required security groups for inter-app
-        /// communication in <code>VPCOnly</code> mode. Required when
-        /// <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and
-        /// <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is
-        /// provided.</p>
+        /// <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided.</p>
         pub fn set_app_security_group_management(
             mut self,
             input: std::option::Option<crate::model::AppSecurityGroupManagement>,
@@ -4791,82 +4438,22 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateEndpoint`.
     ///
-    /// <p>Creates an endpoint using the endpoint configuration specified in the request. Amazon SageMaker
-    /// uses the endpoint to provision resources and deploy models. You create the endpoint
-    /// configuration with the <a>CreateEndpointConfig</a> API. </p>
+    /// <p>Creates an endpoint using the endpoint configuration specified in the request. Amazon SageMaker uses the endpoint to provision resources and deploy models. You create the endpoint configuration with the <code>CreateEndpointConfig</code> API. </p>
     /// <p> Use this API to deploy models using Amazon SageMaker hosting services. </p>
-    /// <p>For an example that calls this method when deploying a model to Amazon SageMaker hosting services,
-    /// see the <a href="https://github.com/aws/amazon-sagemaker-examples/blob/master/sagemaker-fundamentals/create-endpoint/create_endpoint.ipynb">Create Endpoint example notebook.</a>
-    /// </p>
-    /// <note>
-    /// <p> You must not delete an <code>EndpointConfig</code> that is in use by an endpoint
-    /// that is live or while the <code>UpdateEndpoint</code> or <code>CreateEndpoint</code>
-    /// operations are being performed on the endpoint. To update an endpoint, you must
-    /// create a new <code>EndpointConfig</code>.</p>
+    /// <p>For an example that calls this method when deploying a model to Amazon SageMaker hosting services, see the <a href="https://github.com/aws/amazon-sagemaker-examples/blob/master/sagemaker-fundamentals/create-endpoint/create_endpoint.ipynb">Create Endpoint example notebook.</a> </p> <note>
+    /// <p> You must not delete an <code>EndpointConfig</code> that is in use by an endpoint that is live or while the <code>UpdateEndpoint</code> or <code>CreateEndpoint</code> operations are being performed on the endpoint. To update an endpoint, you must create a new <code>EndpointConfig</code>.</p>
     /// </note>
     /// <p>The endpoint name must be unique within an Amazon Web Services Region in your Amazon Web Services account. </p>
-    /// <p>When it receives the request, Amazon SageMaker creates the endpoint, launches the resources (ML
-    /// compute instances), and deploys the model(s) on them. </p>
-    ///
-    /// <note>
-    /// <p>When you call <a>CreateEndpoint</a>, a load call is made to DynamoDB to
-    /// verify that your endpoint configuration exists. When you read data from a DynamoDB
-    /// table supporting <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html">
-    /// <code>Eventually Consistent Reads</code>
-    /// </a>, the response might not
-    /// reflect the results of a recently completed write operation. The response might
-    /// include some stale data. If the dependent entities are not yet in DynamoDB, this
-    /// causes a validation error. If you repeat your read request after a short time, the
-    /// response should return the latest data. So retry logic is recommended to handle
-    /// these possible issues. We also recommend that customers call <a>DescribeEndpointConfig</a> before calling <a>CreateEndpoint</a> to minimize the potential impact of a DynamoDB eventually consistent read.</p>
+    /// <p>When it receives the request, Amazon SageMaker creates the endpoint, launches the resources (ML compute instances), and deploys the model(s) on them. </p> <note>
+    /// <p>When you call <code>CreateEndpoint</code>, a load call is made to DynamoDB to verify that your endpoint configuration exists. When you read data from a DynamoDB table supporting <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html"> <code>Eventually Consistent Reads</code> </a>, the response might not reflect the results of a recently completed write operation. The response might include some stale data. If the dependent entities are not yet in DynamoDB, this causes a validation error. If you repeat your read request after a short time, the response should return the latest data. So retry logic is recommended to handle these possible issues. We also recommend that customers call <code>DescribeEndpointConfig</code> before calling <code>CreateEndpoint</code> to minimize the potential impact of a DynamoDB eventually consistent read.</p>
     /// </note>
-    /// <p>When Amazon SageMaker receives the request, it sets the endpoint status to
-    /// <code>Creating</code>. After it creates the endpoint, it sets the status to
-    /// <code>InService</code>. Amazon SageMaker can then process incoming requests for inferences. To
-    /// check the status of an endpoint, use the <a>DescribeEndpoint</a>
-    /// API.</p>
-    /// <p>If any of the models hosted at this endpoint get model data from an Amazon S3 location,
-    /// Amazon SageMaker uses Amazon Web Services Security Token Service to download model artifacts from the S3 path you
-    /// provided. Amazon Web Services STS is activated in your IAM user account by default. If you previously
-    /// deactivated Amazon Web Services STS for a region, you need to reactivate Amazon Web Services STS for that region. For
-    /// more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and
-    /// Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the <i>Amazon Web Services Identity and Access Management User
-    /// Guide</i>.</p>
-    /// <note>
-    /// <p> To add the IAM role policies for using this API operation, go to the <a href="https://console.aws.amazon.com/iam/">IAM console</a>, and choose
-    /// Roles in the left navigation pane. Search the IAM role that you want to grant
-    /// access to use the <a>CreateEndpoint</a> and <a>CreateEndpointConfig</a> API operations, add the following policies to
-    /// the role. </p>
+    /// <p>When Amazon SageMaker receives the request, it sets the endpoint status to <code>Creating</code>. After it creates the endpoint, it sets the status to <code>InService</code>. Amazon SageMaker can then process incoming requests for inferences. To check the status of an endpoint, use the <code>DescribeEndpoint</code> API.</p>
+    /// <p>If any of the models hosted at this endpoint get model data from an Amazon S3 location, Amazon SageMaker uses Amazon Web Services Security Token Service to download model artifacts from the S3 path you provided. Amazon Web Services STS is activated in your IAM user account by default. If you previously deactivated Amazon Web Services STS for a region, you need to reactivate Amazon Web Services STS for that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p> <note>
+    /// <p> To add the IAM role policies for using this API operation, go to the <a href="https://console.aws.amazon.com/iam/">IAM console</a>, and choose Roles in the left navigation pane. Search the IAM role that you want to grant access to use the <code>CreateEndpoint</code> and <code>CreateEndpointConfig</code> API operations, add the following policies to the role. </p>
     /// <ul>
-    /// <li>
-    /// <p>Option 1: For a full SageMaker access, search and attach the
-    /// <code>AmazonSageMakerFullAccess</code> policy.</p>
-    /// </li>
-    /// <li>
-    /// <p>Option 2: For granting a limited access to an IAM role, paste the
-    /// following Action elements manually into the JSON file of the IAM role: </p>
-    /// <p>
-    /// <code>"Action": ["sagemaker:CreateEndpoint",
-    /// "sagemaker:CreateEndpointConfig"]</code>
-    /// </p>
-    /// <p>
-    /// <code>"Resource": [</code>
-    /// </p>
-    /// <p>
-    /// <code>"arn:aws:sagemaker:region:account-id:endpoint/endpointName"</code>
-    /// </p>
-    /// <p>
-    /// <code>"arn:aws:sagemaker:region:account-id:endpoint-config/endpointConfigName"</code>
-    /// </p>
-    /// <p>
-    /// <code>]</code>
-    /// </p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/api-permissions-reference.html">SageMaker API
-    /// Permissions: Actions, Permissions, and Resources
-    /// Reference</a>.</p>
-    /// </li>
+    /// <li> <p>Option 1: For a full SageMaker access, search and attach the <code>AmazonSageMakerFullAccess</code> policy.</p> </li>
+    /// <li> <p>Option 2: For granting a limited access to an IAM role, paste the following Action elements manually into the JSON file of the IAM role: </p> <p> <code>"Action": ["sagemaker:CreateEndpoint", "sagemaker:CreateEndpointConfig"]</code> </p> <p> <code>"Resource": [</code> </p> <p> <code>"arn:aws:sagemaker:region:account-id:endpoint/endpointName"</code> </p> <p> <code>"arn:aws:sagemaker:region:account-id:endpoint-config/endpointConfigName"</code> </p> <p> <code>]</code> </p> <p>For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/api-permissions-reference.html">SageMaker API Permissions: Actions, Permissions, and Resources Reference</a>.</p> </li>
     /// </ul>
-    ///
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEndpoint<
@@ -4924,16 +4511,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the endpoint.The name must be unique within an Amazon Web Services Region in your Amazon Web Services
-        /// account. The name is case-insensitive in <code>CreateEndpoint</code>, but the case is
-        /// preserved and must be matched in .</p>
+        /// <p>The name of the endpoint.The name must be unique within an Amazon Web Services Region in your Amazon Web Services account. The name is case-insensitive in <code>CreateEndpoint</code>, but the case is preserved and must be matched in .</p>
         pub fn endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.endpoint_name(input.into());
             self
         }
-        /// <p>The name of the endpoint.The name must be unique within an Amazon Web Services Region in your Amazon Web Services
-        /// account. The name is case-insensitive in <code>CreateEndpoint</code>, but the case is
-        /// preserved and must be matched in .</p>
+        /// <p>The name of the endpoint.The name must be unique within an Amazon Web Services Region in your Amazon Web Services account. The name is case-insensitive in <code>CreateEndpoint</code>, but the case is preserved and must be matched in .</p>
         pub fn set_endpoint_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4941,12 +4524,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_endpoint_name(input);
             self
         }
-        /// <p>The name of an endpoint configuration. For more information, see <a>CreateEndpointConfig</a>. </p>
+        /// <p>The name of an endpoint configuration. For more information, see <code>CreateEndpointConfig</code>. </p>
         pub fn endpoint_config_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.endpoint_config_name(input.into());
             self
         }
-        /// <p>The name of an endpoint configuration. For more information, see <a>CreateEndpointConfig</a>. </p>
+        /// <p>The name of an endpoint configuration. For more information, see <code>CreateEndpointConfig</code>. </p>
         pub fn set_endpoint_config_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4954,14 +4537,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_endpoint_config_name(input);
             self
         }
-        /// <p>The deployment configuration for an endpoint, which contains the desired deployment
-        /// strategy and rollback configurations.</p>
+        /// <p>The deployment configuration for an endpoint, which contains the desired deployment strategy and rollback configurations.</p>
         pub fn deployment_config(mut self, input: crate::model::DeploymentConfig) -> Self {
             self.inner = self.inner.deployment_config(input);
             self
         }
-        /// <p>The deployment configuration for an endpoint, which contains the desired deployment
-        /// strategy and rollback configurations.</p>
+        /// <p>The deployment configuration for an endpoint, which contains the desired deployment strategy and rollback configurations.</p>
         pub fn set_deployment_config(
             mut self,
             input: std::option::Option<crate::model::DeploymentConfig>,
@@ -4973,18 +4554,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in
-        /// different ways, for example, by purpose, owner, or environment. For more information,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
-        /// Resources</a>.</p>
+        /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in
-        /// different ways, for example, by purpose, owner, or environment. For more information,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
-        /// Resources</a>.</p>
+        /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -4995,34 +4570,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateEndpointConfig`.
     ///
-    /// <p>Creates an endpoint configuration that Amazon SageMaker hosting services uses to deploy models. In
-    /// the configuration, you identify one or more models, created using the
-    /// <code>CreateModel</code> API, to deploy and the resources that you want Amazon SageMaker to
-    /// provision. Then you call the <a>CreateEndpoint</a> API.</p>
-    /// <note>
-    /// <p> Use this API if you want to use Amazon SageMaker hosting services to deploy models into
-    /// production. </p>
+    /// <p>Creates an endpoint configuration that Amazon SageMaker hosting services uses to deploy models. In the configuration, you identify one or more models, created using the <code>CreateModel</code> API, to deploy and the resources that you want Amazon SageMaker to provision. Then you call the <code>CreateEndpoint</code> API.</p> <note>
+    /// <p> Use this API if you want to use Amazon SageMaker hosting services to deploy models into production. </p>
     /// </note>
-    /// <p>In the request, you define a <code>ProductionVariant</code>, for each model that you
-    /// want to deploy. Each <code>ProductionVariant</code> parameter also describes the
-    /// resources that you want Amazon SageMaker to provision. This includes the number and type of ML
-    /// compute instances to deploy. </p>
-    /// <p>If you are hosting multiple models, you also assign a <code>VariantWeight</code> to
-    /// specify how much traffic you want to allocate to each model. For example, suppose that
-    /// you want to host two models, A and B, and you assign traffic weight 2 for model A and 1
-    /// for model B. Amazon SageMaker distributes two-thirds of the traffic to Model A, and one-third to
-    /// model B. </p>
-    /// <note>
-    /// <p>When you call <a>CreateEndpoint</a>, a load call is made to DynamoDB to
-    /// verify that your endpoint configuration exists. When you read data from a DynamoDB
-    /// table supporting <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html">
-    /// <code>Eventually Consistent Reads</code>
-    /// </a>, the response might not
-    /// reflect the results of a recently completed write operation. The response might
-    /// include some stale data. If the dependent entities are not yet in DynamoDB, this
-    /// causes a validation error. If you repeat your read request after a short time, the
-    /// response should return the latest data. So retry logic is recommended to handle
-    /// these possible issues. We also recommend that customers call <a>DescribeEndpointConfig</a> before calling <a>CreateEndpoint</a> to minimize the potential impact of a DynamoDB eventually consistent read.</p>
+    /// <p>In the request, you define a <code>ProductionVariant</code>, for each model that you want to deploy. Each <code>ProductionVariant</code> parameter also describes the resources that you want Amazon SageMaker to provision. This includes the number and type of ML compute instances to deploy. </p>
+    /// <p>If you are hosting multiple models, you also assign a <code>VariantWeight</code> to specify how much traffic you want to allocate to each model. For example, suppose that you want to host two models, A and B, and you assign traffic weight 2 for model A and 1 for model B. Amazon SageMaker distributes two-thirds of the traffic to Model A, and one-third to model B. </p> <note>
+    /// <p>When you call <code>CreateEndpoint</code>, a load call is made to DynamoDB to verify that your endpoint configuration exists. When you read data from a DynamoDB table supporting <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html"> <code>Eventually Consistent Reads</code> </a>, the response might not reflect the results of a recently completed write operation. The response might include some stale data. If the dependent entities are not yet in DynamoDB, this causes a validation error. If you repeat your read request after a short time, the response should return the latest data. So retry logic is recommended to handle these possible issues. We also recommend that customers call <code>DescribeEndpointConfig</code> before calling <code>CreateEndpoint</code> to minimize the potential impact of a DynamoDB eventually consistent read.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateEndpointConfig<
@@ -5080,12 +4633,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the endpoint configuration. You specify this name in a <a>CreateEndpoint</a> request. </p>
+        /// <p>The name of the endpoint configuration. You specify this name in a <code>CreateEndpoint</code> request. </p>
         pub fn endpoint_config_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.endpoint_config_name(input.into());
             self
         }
-        /// <p>The name of the endpoint configuration. You specify this name in a <a>CreateEndpoint</a> request. </p>
+        /// <p>The name of the endpoint configuration. You specify this name in a <code>CreateEndpoint</code> request. </p>
         pub fn set_endpoint_config_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5097,14 +4650,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_production_variants`](Self::set_production_variants).
         ///
-        /// <p>An list of <code>ProductionVariant</code> objects, one for each model that you want
-        /// to host at this endpoint.</p>
+        /// <p>An list of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint.</p>
         pub fn production_variants(mut self, input: crate::model::ProductionVariant) -> Self {
             self.inner = self.inner.production_variants(input);
             self
         }
-        /// <p>An list of <code>ProductionVariant</code> objects, one for each model that you want
-        /// to host at this endpoint.</p>
+        /// <p>An list of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint.</p>
         pub fn set_production_variants(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ProductionVariant>>,
@@ -5129,18 +4680,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in
-        /// different ways, for example, by purpose, owner, or environment. For more information,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
-        /// Resources</a>.</p>
+        /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in
-        /// different ways, for example, by purpose, owner, or environment. For more information,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
-        /// Resources</a>.</p>
+        /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -5148,110 +4693,46 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that Amazon SageMaker uses to encrypt data on
-        /// the storage volume attached to the ML compute instance that hosts the endpoint.</p>
+        /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint.</p>
         /// <p>The KmsKeyId can be any of the following formats: </p>
         /// <ul>
-        /// <li>
-        /// <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Key ARN:
-        /// <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Alias name: <code>alias/ExampleAlias</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Alias name ARN:
-        /// <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+        /// <li> <p>Key ARN: <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+        /// <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li>
+        /// <li> <p>Alias name ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code> </p> </li>
         /// </ul>
-        /// <p>The KMS key policy must grant permission to the IAM role that you specify in your
-        /// <code>CreateEndpoint</code>, <code>UpdateEndpoint</code> requests. For more
-        /// information, refer to the Amazon Web Services Key Management Service section<a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html"> Using Key
-        /// Policies in Amazon Web Services KMS </a>
-        /// </p>
-        /// <note>
-        /// <p>Certain Nitro-based instances include local storage, dependent on the instance
-        /// type. Local storage volumes are encrypted using a hardware module on the instance.
-        /// You can't request a <code>KmsKeyId</code> when using an instance type with local
-        /// storage. If any of the models that you specify in the
-        /// <code>ProductionVariants</code> parameter use nitro-based instances with local
-        /// storage, do not specify a value for the <code>KmsKeyId</code> parameter. If you
-        /// specify a value for <code>KmsKeyId</code> when using any nitro-based instances with
-        /// local storage, the call to <code>CreateEndpointConfig</code> fails.</p>
+        /// <p>The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateEndpoint</code>, <code>UpdateEndpoint</code> requests. For more information, refer to the Amazon Web Services Key Management Service section<a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html"> Using Key Policies in Amazon Web Services KMS </a> </p> <note>
+        /// <p>Certain Nitro-based instances include local storage, dependent on the instance type. Local storage volumes are encrypted using a hardware module on the instance. You can't request a <code>KmsKeyId</code> when using an instance type with local storage. If any of the models that you specify in the <code>ProductionVariants</code> parameter use nitro-based instances with local storage, do not specify a value for the <code>KmsKeyId</code> parameter. If you specify a value for <code>KmsKeyId</code> when using any nitro-based instances with local storage, the call to <code>CreateEndpointConfig</code> fails.</p>
         /// <p>For a list of instance types that support local instance storage, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance Store Volumes</a>.</p>
-        /// <p>For more information about local instance storage encryption, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD
-        /// Instance Store Volumes</a>.</p>
+        /// <p>For more information about local instance storage encryption, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD Instance Store Volumes</a>.</p>
         /// </note>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_key_id(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that Amazon SageMaker uses to encrypt data on
-        /// the storage volume attached to the ML compute instance that hosts the endpoint.</p>
+        /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint.</p>
         /// <p>The KmsKeyId can be any of the following formats: </p>
         /// <ul>
-        /// <li>
-        /// <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Key ARN:
-        /// <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Alias name: <code>alias/ExampleAlias</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Alias name ARN:
-        /// <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+        /// <li> <p>Key ARN: <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+        /// <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li>
+        /// <li> <p>Alias name ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code> </p> </li>
         /// </ul>
-        /// <p>The KMS key policy must grant permission to the IAM role that you specify in your
-        /// <code>CreateEndpoint</code>, <code>UpdateEndpoint</code> requests. For more
-        /// information, refer to the Amazon Web Services Key Management Service section<a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html"> Using Key
-        /// Policies in Amazon Web Services KMS </a>
-        /// </p>
-        /// <note>
-        /// <p>Certain Nitro-based instances include local storage, dependent on the instance
-        /// type. Local storage volumes are encrypted using a hardware module on the instance.
-        /// You can't request a <code>KmsKeyId</code> when using an instance type with local
-        /// storage. If any of the models that you specify in the
-        /// <code>ProductionVariants</code> parameter use nitro-based instances with local
-        /// storage, do not specify a value for the <code>KmsKeyId</code> parameter. If you
-        /// specify a value for <code>KmsKeyId</code> when using any nitro-based instances with
-        /// local storage, the call to <code>CreateEndpointConfig</code> fails.</p>
+        /// <p>The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateEndpoint</code>, <code>UpdateEndpoint</code> requests. For more information, refer to the Amazon Web Services Key Management Service section<a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html"> Using Key Policies in Amazon Web Services KMS </a> </p> <note>
+        /// <p>Certain Nitro-based instances include local storage, dependent on the instance type. Local storage volumes are encrypted using a hardware module on the instance. You can't request a <code>KmsKeyId</code> when using an instance type with local storage. If any of the models that you specify in the <code>ProductionVariants</code> parameter use nitro-based instances with local storage, do not specify a value for the <code>KmsKeyId</code> parameter. If you specify a value for <code>KmsKeyId</code> when using any nitro-based instances with local storage, the call to <code>CreateEndpointConfig</code> fails.</p>
         /// <p>For a list of instance types that support local instance storage, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance Store Volumes</a>.</p>
-        /// <p>For more information about local instance storage encryption, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD
-        /// Instance Store Volumes</a>.</p>
+        /// <p>For more information about local instance storage encryption, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD Instance Store Volumes</a>.</p>
         /// </note>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_kms_key_id(input);
             self
         }
-        /// <p>Specifies configuration for how an endpoint performs asynchronous inference.
-        /// This is a required field in order for your Endpoint to be invoked using
-        /// <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html">
-        /// <code>InvokeEndpointAsync</code>
-        /// </a>.</p>
+        /// <p>Specifies configuration for how an endpoint performs asynchronous inference. This is a required field in order for your Endpoint to be invoked using <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html"> <code>InvokeEndpointAsync</code> </a>.</p>
         pub fn async_inference_config(mut self, input: crate::model::AsyncInferenceConfig) -> Self {
             self.inner = self.inner.async_inference_config(input);
             self
         }
-        /// <p>Specifies configuration for how an endpoint performs asynchronous inference.
-        /// This is a required field in order for your Endpoint to be invoked using
-        /// <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html">
-        /// <code>InvokeEndpointAsync</code>
-        /// </a>.</p>
+        /// <p>Specifies configuration for how an endpoint performs asynchronous inference. This is a required field in order for your Endpoint to be invoked using <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html"> <code>InvokeEndpointAsync</code> </a>.</p>
         pub fn set_async_inference_config(
             mut self,
             input: std::option::Option<crate::model::AsyncInferenceConfig>,
@@ -5262,23 +4743,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateExperiment`.
     ///
-    /// <p>Creates an SageMaker <i>experiment</i>. An experiment is a collection of
-    /// <i>trials</i> that are observed, compared and evaluated as a group. A trial is
-    /// a set of steps, called <i>trial components</i>, that produce a machine learning
-    /// model.</p>
-    /// <p>The goal of an experiment is to determine the components that produce the best model.
-    /// Multiple trials are performed, each one isolating and measuring the impact of a change to one
-    /// or more inputs, while keeping the remaining inputs constant.</p>
-    /// <p>When you use SageMaker Studio or the SageMaker Python SDK, all experiments, trials, and trial
-    /// components are automatically tracked, logged, and indexed. When you use the Amazon Web Services SDK for Python (Boto), you
-    /// must use the logging APIs provided by the SDK.</p>
-    /// <p>You can add tags to experiments, trials, trial components and then use the <a>Search</a> API to search for the tags.</p>
-    /// <p>To add a description to an experiment, specify the optional <code>Description</code>
-    /// parameter. To add a description later, or to change the description, call the <a>UpdateExperiment</a> API.</p>
-    /// <p>To get a list of all your experiments, call the <a>ListExperiments</a> API. To
-    /// view an experiment's properties, call the <a>DescribeExperiment</a> API. To get a
-    /// list of all the trials associated with an experiment, call the <a>ListTrials</a>
-    /// API. To create a trial call the <a>CreateTrial</a> API.</p>
+    /// <p>Creates an SageMaker <i>experiment</i>. An experiment is a collection of <i>trials</i> that are observed, compared and evaluated as a group. A trial is a set of steps, called <i>trial components</i>, that produce a machine learning model.</p>
+    /// <p>The goal of an experiment is to determine the components that produce the best model. Multiple trials are performed, each one isolating and measuring the impact of a change to one or more inputs, while keeping the remaining inputs constant.</p>
+    /// <p>When you use SageMaker Studio or the SageMaker Python SDK, all experiments, trials, and trial components are automatically tracked, logged, and indexed. When you use the Amazon Web Services SDK for Python (Boto), you must use the logging APIs provided by the SDK.</p>
+    /// <p>You can add tags to experiments, trials, trial components and then use the <code>Search</code> API to search for the tags.</p>
+    /// <p>To add a description to an experiment, specify the optional <code>Description</code> parameter. To add a description later, or to change the description, call the <code>UpdateExperiment</code> API.</p>
+    /// <p>To get a list of all your experiments, call the <code>ListExperiments</code> API. To view an experiment's properties, call the <code>DescribeExperiment</code> API. To get a list of all the trials associated with an experiment, call the <code>ListTrials</code> API. To create a trial call the <code>CreateTrial</code> API.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateExperiment<
         C = aws_smithy_client::erase::DynConnector,
@@ -5335,14 +4805,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the experiment. The name must be unique in your Amazon Web Services account and is not
-        /// case-sensitive.</p>
+        /// <p>The name of the experiment. The name must be unique in your Amazon Web Services account and is not case-sensitive.</p>
         pub fn experiment_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.experiment_name(input.into());
             self
         }
-        /// <p>The name of the experiment. The name must be unique in your Amazon Web Services account and is not
-        /// case-sensitive.</p>
+        /// <p>The name of the experiment. The name must be unique in your Amazon Web Services account and is not case-sensitive.</p>
         pub fn set_experiment_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5350,16 +4818,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_experiment_name(input);
             self
         }
-        /// <p>The name of the experiment as displayed. The name doesn't need to be unique. If you don't
-        /// specify <code>DisplayName</code>, the value in <code>ExperimentName</code> is
-        /// displayed.</p>
+        /// <p>The name of the experiment as displayed. The name doesn't need to be unique. If you don't specify <code>DisplayName</code>, the value in <code>ExperimentName</code> is displayed.</p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.display_name(input.into());
             self
         }
-        /// <p>The name of the experiment as displayed. The name doesn't need to be unique. If you don't
-        /// specify <code>DisplayName</code>, the value in <code>ExperimentName</code> is
-        /// displayed.</p>
+        /// <p>The name of the experiment as displayed. The name doesn't need to be unique. If you don't specify <code>DisplayName</code>, the value in <code>ExperimentName</code> is displayed.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_display_name(input);
             self
@@ -5378,14 +4842,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of tags to associate with the experiment. You can use <a>Search</a> API
-        /// to search on the tags.</p>
+        /// <p>A list of tags to associate with the experiment. You can use <code>Search</code> API to search on the tags.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>A list of tags to associate with the experiment. You can use <a>Search</a> API
-        /// to search on the tags.</p>
+        /// <p>A list of tags to associate with the experiment. You can use <code>Search</code> API to search on the tags.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -5396,18 +4858,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateFeatureGroup`.
     ///
-    /// <p>Create a new <code>FeatureGroup</code>. A <code>FeatureGroup</code> is a group of
-    /// <code>Features</code> defined in the <code>FeatureStore</code> to describe a
-    /// <code>Record</code>. </p>
-    /// <p>The <code>FeatureGroup</code> defines the schema and features contained in the
-    /// FeatureGroup. A <code>FeatureGroup</code> definition is composed of a list of
-    /// <code>Features</code>, a <code>RecordIdentifierFeatureName</code>, an
-    /// <code>EventTimeFeatureName</code> and configurations for its <code>OnlineStore</code>
-    /// and <code>OfflineStore</code>. Check <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">Amazon Web Services service quotas</a> to see
-    /// the <code>FeatureGroup</code>s quota for your Amazon Web Services account.</p>
-    /// <important>
-    /// <p>You must include at least one of <code>OnlineStoreConfig</code> and
-    /// <code>OfflineStoreConfig</code> to create a <code>FeatureGroup</code>.</p>
+    /// <p>Create a new <code>FeatureGroup</code>. A <code>FeatureGroup</code> is a group of <code>Features</code> defined in the <code>FeatureStore</code> to describe a <code>Record</code>. </p>
+    /// <p>The <code>FeatureGroup</code> defines the schema and features contained in the FeatureGroup. A <code>FeatureGroup</code> definition is composed of a list of <code>Features</code>, a <code>RecordIdentifierFeatureName</code>, an <code>EventTimeFeatureName</code> and configurations for its <code>OnlineStore</code> and <code>OfflineStore</code>. Check <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">Amazon Web Services service quotas</a> to see the <code>FeatureGroup</code>s quota for your Amazon Web Services account.</p> <important>
+    /// <p>You must include at least one of <code>OnlineStoreConfig</code> and <code>OfflineStoreConfig</code> to create a <code>FeatureGroup</code>.</p>
     /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFeatureGroup<
@@ -5465,31 +4918,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the <code>FeatureGroup</code>. The name must be unique within an Amazon Web Services Region
-        /// in an Amazon Web Services account. The name:</p>
+        /// <p>The name of the <code>FeatureGroup</code>. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account. The name:</p>
         /// <ul>
-        /// <li>
-        /// <p>Must start and end with an alphanumeric character.</p>
-        /// </li>
-        /// <li>
-        /// <p>Can only contain alphanumeric character and hyphens. Spaces are not allowed.
-        /// </p>
-        /// </li>
+        /// <li> <p>Must start and end with an alphanumeric character.</p> </li>
+        /// <li> <p>Can only contain alphanumeric character and hyphens. Spaces are not allowed. </p> </li>
         /// </ul>
         pub fn feature_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.feature_group_name(input.into());
             self
         }
-        /// <p>The name of the <code>FeatureGroup</code>. The name must be unique within an Amazon Web Services Region
-        /// in an Amazon Web Services account. The name:</p>
+        /// <p>The name of the <code>FeatureGroup</code>. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account. The name:</p>
         /// <ul>
-        /// <li>
-        /// <p>Must start and end with an alphanumeric character.</p>
-        /// </li>
-        /// <li>
-        /// <p>Can only contain alphanumeric character and hyphens. Spaces are not allowed.
-        /// </p>
-        /// </li>
+        /// <li> <p>Must start and end with an alphanumeric character.</p> </li>
+        /// <li> <p>Can only contain alphanumeric character and hyphens. Spaces are not allowed. </p> </li>
         /// </ul>
         pub fn set_feature_group_name(
             mut self,
@@ -5498,22 +4939,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_feature_group_name(input);
             self
         }
-        /// <p>The name of the <code>Feature</code> whose value uniquely identifies a
-        /// <code>Record</code> defined in the <code>FeatureStore</code>. Only the latest record per
-        /// identifier value will be stored in the <code>OnlineStore</code>.
-        /// <code>RecordIdentifierFeatureName</code> must be one of feature definitions'
-        /// names.</p>
-        /// <p>You use the <code>RecordIdentifierFeatureName</code> to access data in a
-        /// <code>FeatureStore</code>.</p>
+        /// <p>The name of the <code>Feature</code> whose value uniquely identifies a <code>Record</code> defined in the <code>FeatureStore</code>. Only the latest record per identifier value will be stored in the <code>OnlineStore</code>. <code>RecordIdentifierFeatureName</code> must be one of feature definitions' names.</p>
+        /// <p>You use the <code>RecordIdentifierFeatureName</code> to access data in a <code>FeatureStore</code>.</p>
         /// <p>This name:</p>
         /// <ul>
-        /// <li>
-        /// <p>Must start and end with an alphanumeric character.</p>
-        /// </li>
-        /// <li>
-        /// <p>Can only contains alphanumeric characters, hyphens, underscores. Spaces are not
-        /// allowed. </p>
-        /// </li>
+        /// <li> <p>Must start and end with an alphanumeric character.</p> </li>
+        /// <li> <p>Can only contains alphanumeric characters, hyphens, underscores. Spaces are not allowed. </p> </li>
         /// </ul>
         pub fn record_identifier_feature_name(
             mut self,
@@ -5522,22 +4953,12 @@ pub mod fluent_builders {
             self.inner = self.inner.record_identifier_feature_name(input.into());
             self
         }
-        /// <p>The name of the <code>Feature</code> whose value uniquely identifies a
-        /// <code>Record</code> defined in the <code>FeatureStore</code>. Only the latest record per
-        /// identifier value will be stored in the <code>OnlineStore</code>.
-        /// <code>RecordIdentifierFeatureName</code> must be one of feature definitions'
-        /// names.</p>
-        /// <p>You use the <code>RecordIdentifierFeatureName</code> to access data in a
-        /// <code>FeatureStore</code>.</p>
+        /// <p>The name of the <code>Feature</code> whose value uniquely identifies a <code>Record</code> defined in the <code>FeatureStore</code>. Only the latest record per identifier value will be stored in the <code>OnlineStore</code>. <code>RecordIdentifierFeatureName</code> must be one of feature definitions' names.</p>
+        /// <p>You use the <code>RecordIdentifierFeatureName</code> to access data in a <code>FeatureStore</code>.</p>
         /// <p>This name:</p>
         /// <ul>
-        /// <li>
-        /// <p>Must start and end with an alphanumeric character.</p>
-        /// </li>
-        /// <li>
-        /// <p>Can only contains alphanumeric characters, hyphens, underscores. Spaces are not
-        /// allowed. </p>
-        /// </li>
+        /// <li> <p>Must start and end with an alphanumeric character.</p> </li>
+        /// <li> <p>Can only contains alphanumeric characters, hyphens, underscores. Spaces are not allowed. </p> </li>
         /// </ul>
         pub fn set_record_identifier_feature_name(
             mut self,
@@ -5546,57 +4967,23 @@ pub mod fluent_builders {
             self.inner = self.inner.set_record_identifier_feature_name(input);
             self
         }
-        /// <p>The name of the feature that stores the <code>EventTime</code> of a <code>Record</code>
-        /// in a <code>FeatureGroup</code>.</p>
-        /// <p>An <code>EventTime</code> is a point in time when a new event occurs that corresponds to
-        /// the creation or update of a <code>Record</code> in a <code>FeatureGroup</code>. All
-        /// <code>Records</code> in the <code>FeatureGroup</code> must have a corresponding
-        /// <code>EventTime</code>.</p>
+        /// <p>The name of the feature that stores the <code>EventTime</code> of a <code>Record</code> in a <code>FeatureGroup</code>.</p>
+        /// <p>An <code>EventTime</code> is a point in time when a new event occurs that corresponds to the creation or update of a <code>Record</code> in a <code>FeatureGroup</code>. All <code>Records</code> in the <code>FeatureGroup</code> must have a corresponding <code>EventTime</code>.</p>
         /// <p>An <code>EventTime</code> can be a <code>String</code> or <code>Fractional</code>. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Fractional</code>: <code>EventTime</code> feature values must be a Unix
-        /// timestamp in seconds.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>String</code>: <code>EventTime</code> feature values must be an ISO-8601
-        /// string in the format. The following formats are supported
-        /// <code>yyyy-MM-dd'T'HH:mm:ssZ</code> and <code>yyyy-MM-dd'T'HH:mm:ss.SSSZ</code>
-        /// where <code>yyyy</code>, <code>MM</code>, and <code>dd</code> represent the year,
-        /// month, and day respectively and <code>HH</code>, <code>mm</code>, <code>ss</code>,
-        /// and if applicable, <code>SSS</code> represent the hour, month, second and
-        /// milliseconds respsectively. <code>'T'</code> and <code>Z</code> are constants.</p>
-        /// </li>
+        /// <li> <p> <code>Fractional</code>: <code>EventTime</code> feature values must be a Unix timestamp in seconds.</p> </li>
+        /// <li> <p> <code>String</code>: <code>EventTime</code> feature values must be an ISO-8601 string in the format. The following formats are supported <code>yyyy-MM-dd'T'HH:mm:ssZ</code> and <code>yyyy-MM-dd'T'HH:mm:ss.SSSZ</code> where <code>yyyy</code>, <code>MM</code>, and <code>dd</code> represent the year, month, and day respectively and <code>HH</code>, <code>mm</code>, <code>ss</code>, and if applicable, <code>SSS</code> represent the hour, month, second and milliseconds respsectively. <code>'T'</code> and <code>Z</code> are constants.</p> </li>
         /// </ul>
         pub fn event_time_feature_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.event_time_feature_name(input.into());
             self
         }
-        /// <p>The name of the feature that stores the <code>EventTime</code> of a <code>Record</code>
-        /// in a <code>FeatureGroup</code>.</p>
-        /// <p>An <code>EventTime</code> is a point in time when a new event occurs that corresponds to
-        /// the creation or update of a <code>Record</code> in a <code>FeatureGroup</code>. All
-        /// <code>Records</code> in the <code>FeatureGroup</code> must have a corresponding
-        /// <code>EventTime</code>.</p>
+        /// <p>The name of the feature that stores the <code>EventTime</code> of a <code>Record</code> in a <code>FeatureGroup</code>.</p>
+        /// <p>An <code>EventTime</code> is a point in time when a new event occurs that corresponds to the creation or update of a <code>Record</code> in a <code>FeatureGroup</code>. All <code>Records</code> in the <code>FeatureGroup</code> must have a corresponding <code>EventTime</code>.</p>
         /// <p>An <code>EventTime</code> can be a <code>String</code> or <code>Fractional</code>. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Fractional</code>: <code>EventTime</code> feature values must be a Unix
-        /// timestamp in seconds.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>String</code>: <code>EventTime</code> feature values must be an ISO-8601
-        /// string in the format. The following formats are supported
-        /// <code>yyyy-MM-dd'T'HH:mm:ssZ</code> and <code>yyyy-MM-dd'T'HH:mm:ss.SSSZ</code>
-        /// where <code>yyyy</code>, <code>MM</code>, and <code>dd</code> represent the year,
-        /// month, and day respectively and <code>HH</code>, <code>mm</code>, <code>ss</code>,
-        /// and if applicable, <code>SSS</code> represent the hour, month, second and
-        /// milliseconds respsectively. <code>'T'</code> and <code>Z</code> are constants.</p>
-        /// </li>
+        /// <li> <p> <code>Fractional</code>: <code>EventTime</code> feature values must be a Unix timestamp in seconds.</p> </li>
+        /// <li> <p> <code>String</code>: <code>EventTime</code> feature values must be an ISO-8601 string in the format. The following formats are supported <code>yyyy-MM-dd'T'HH:mm:ssZ</code> and <code>yyyy-MM-dd'T'HH:mm:ss.SSSZ</code> where <code>yyyy</code>, <code>MM</code>, and <code>dd</code> represent the year, month, and day respectively and <code>HH</code>, <code>mm</code>, <code>ss</code>, and if applicable, <code>SSS</code> represent the hour, month, second and milliseconds respsectively. <code>'T'</code> and <code>Z</code> are constants.</p> </li>
         /// </ul>
         pub fn set_event_time_feature_name(
             mut self,
@@ -5609,30 +4996,18 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_feature_definitions`](Self::set_feature_definitions).
         ///
-        /// <p>A list of <code>Feature</code> names and types. <code>Name</code> and <code>Type</code>
-        /// is compulsory per <code>Feature</code>. </p>
-        /// <p>Valid feature <code>FeatureType</code>s are <code>Integral</code>,
-        /// <code>Fractional</code> and <code>String</code>.</p>
-        /// <p>
-        /// <code>FeatureName</code>s cannot be any of the following: <code>is_deleted</code>,
-        /// <code>write_time</code>, <code>api_invocation_time</code>
-        /// </p>
-        /// <p>You can create up to 2,500 <code>FeatureDefinition</code>s per
-        /// <code>FeatureGroup</code>.</p>
+        /// <p>A list of <code>Feature</code> names and types. <code>Name</code> and <code>Type</code> is compulsory per <code>Feature</code>. </p>
+        /// <p>Valid feature <code>FeatureType</code>s are <code>Integral</code>, <code>Fractional</code> and <code>String</code>.</p>
+        /// <p> <code>FeatureName</code>s cannot be any of the following: <code>is_deleted</code>, <code>write_time</code>, <code>api_invocation_time</code> </p>
+        /// <p>You can create up to 2,500 <code>FeatureDefinition</code>s per <code>FeatureGroup</code>.</p>
         pub fn feature_definitions(mut self, input: crate::model::FeatureDefinition) -> Self {
             self.inner = self.inner.feature_definitions(input);
             self
         }
-        /// <p>A list of <code>Feature</code> names and types. <code>Name</code> and <code>Type</code>
-        /// is compulsory per <code>Feature</code>. </p>
-        /// <p>Valid feature <code>FeatureType</code>s are <code>Integral</code>,
-        /// <code>Fractional</code> and <code>String</code>.</p>
-        /// <p>
-        /// <code>FeatureName</code>s cannot be any of the following: <code>is_deleted</code>,
-        /// <code>write_time</code>, <code>api_invocation_time</code>
-        /// </p>
-        /// <p>You can create up to 2,500 <code>FeatureDefinition</code>s per
-        /// <code>FeatureGroup</code>.</p>
+        /// <p>A list of <code>Feature</code> names and types. <code>Name</code> and <code>Type</code> is compulsory per <code>Feature</code>. </p>
+        /// <p>Valid feature <code>FeatureType</code>s are <code>Integral</code>, <code>Fractional</code> and <code>String</code>.</p>
+        /// <p> <code>FeatureName</code>s cannot be any of the following: <code>is_deleted</code>, <code>write_time</code>, <code>api_invocation_time</code> </p>
+        /// <p>You can create up to 2,500 <code>FeatureDefinition</code>s per <code>FeatureGroup</code>.</p>
         pub fn set_feature_definitions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FeatureDefinition>>,
@@ -5640,20 +5015,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_feature_definitions(input);
             self
         }
-        /// <p>You can turn the <code>OnlineStore</code> on or off by specifying <code>True</code> for
-        /// the <code>EnableOnlineStore</code> flag in <code>OnlineStoreConfig</code>; the default
-        /// value is <code>False</code>.</p>
-        /// <p>You can also include an Amazon Web Services KMS key ID (<code>KMSKeyId</code>) for at-rest encryption of
-        /// the <code>OnlineStore</code>.</p>
+        /// <p>You can turn the <code>OnlineStore</code> on or off by specifying <code>True</code> for the <code>EnableOnlineStore</code> flag in <code>OnlineStoreConfig</code>; the default value is <code>False</code>.</p>
+        /// <p>You can also include an Amazon Web Services KMS key ID (<code>KMSKeyId</code>) for at-rest encryption of the <code>OnlineStore</code>.</p>
         pub fn online_store_config(mut self, input: crate::model::OnlineStoreConfig) -> Self {
             self.inner = self.inner.online_store_config(input);
             self
         }
-        /// <p>You can turn the <code>OnlineStore</code> on or off by specifying <code>True</code> for
-        /// the <code>EnableOnlineStore</code> flag in <code>OnlineStoreConfig</code>; the default
-        /// value is <code>False</code>.</p>
-        /// <p>You can also include an Amazon Web Services KMS key ID (<code>KMSKeyId</code>) for at-rest encryption of
-        /// the <code>OnlineStore</code>.</p>
+        /// <p>You can turn the <code>OnlineStore</code> on or off by specifying <code>True</code> for the <code>EnableOnlineStore</code> flag in <code>OnlineStoreConfig</code>; the default value is <code>False</code>.</p>
+        /// <p>You can also include an Amazon Web Services KMS key ID (<code>KMSKeyId</code>) for at-rest encryption of the <code>OnlineStore</code>.</p>
         pub fn set_online_store_config(
             mut self,
             input: std::option::Option<crate::model::OnlineStoreConfig>,
@@ -5661,46 +5030,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_online_store_config(input);
             self
         }
-        /// <p>Use this to configure an <code>OfflineFeatureStore</code>. This parameter allows you to
-        /// specify:</p>
+        /// <p>Use this to configure an <code>OfflineFeatureStore</code>. This parameter allows you to specify:</p>
         /// <ul>
-        /// <li>
-        /// <p>The Amazon Simple Storage Service (Amazon S3) location of an
-        /// <code>OfflineStore</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>A configuration for an Amazon Web Services Glue or Amazon Web Services Hive data catalog. </p>
-        /// </li>
-        /// <li>
-        /// <p>An KMS encryption key to encrypt the Amazon S3 location used for
-        /// <code>OfflineStore</code>. If KMS encryption key is not specified, by default we encrypt all data at rest using
-        /// Amazon Web Services KMS key. By defining your <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-key.html">bucket-level key</a> for SSE,
-        /// you can reduce Amazon Web Services KMS requests costs by up to 99 percent.</p>
-        /// </li>
+        /// <li> <p>The Amazon Simple Storage Service (Amazon S3) location of an <code>OfflineStore</code>.</p> </li>
+        /// <li> <p>A configuration for an Amazon Web Services Glue or Amazon Web Services Hive data catalog. </p> </li>
+        /// <li> <p>An KMS encryption key to encrypt the Amazon S3 location used for <code>OfflineStore</code>. If KMS encryption key is not specified, by default we encrypt all data at rest using Amazon Web Services KMS key. By defining your <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-key.html">bucket-level key</a> for SSE, you can reduce Amazon Web Services KMS requests costs by up to 99 percent.</p> </li>
         /// </ul>
-        /// <p>To learn more about this parameter, see <a>OfflineStoreConfig</a>.</p>
+        /// <p>To learn more about this parameter, see <code>OfflineStoreConfig</code>.</p>
         pub fn offline_store_config(mut self, input: crate::model::OfflineStoreConfig) -> Self {
             self.inner = self.inner.offline_store_config(input);
             self
         }
-        /// <p>Use this to configure an <code>OfflineFeatureStore</code>. This parameter allows you to
-        /// specify:</p>
+        /// <p>Use this to configure an <code>OfflineFeatureStore</code>. This parameter allows you to specify:</p>
         /// <ul>
-        /// <li>
-        /// <p>The Amazon Simple Storage Service (Amazon S3) location of an
-        /// <code>OfflineStore</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>A configuration for an Amazon Web Services Glue or Amazon Web Services Hive data catalog. </p>
-        /// </li>
-        /// <li>
-        /// <p>An KMS encryption key to encrypt the Amazon S3 location used for
-        /// <code>OfflineStore</code>. If KMS encryption key is not specified, by default we encrypt all data at rest using
-        /// Amazon Web Services KMS key. By defining your <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-key.html">bucket-level key</a> for SSE,
-        /// you can reduce Amazon Web Services KMS requests costs by up to 99 percent.</p>
-        /// </li>
+        /// <li> <p>The Amazon Simple Storage Service (Amazon S3) location of an <code>OfflineStore</code>.</p> </li>
+        /// <li> <p>A configuration for an Amazon Web Services Glue or Amazon Web Services Hive data catalog. </p> </li>
+        /// <li> <p>An KMS encryption key to encrypt the Amazon S3 location used for <code>OfflineStore</code>. If KMS encryption key is not specified, by default we encrypt all data at rest using Amazon Web Services KMS key. By defining your <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-key.html">bucket-level key</a> for SSE, you can reduce Amazon Web Services KMS requests costs by up to 99 percent.</p> </li>
         /// </ul>
-        /// <p>To learn more about this parameter, see <a>OfflineStoreConfig</a>.</p>
+        /// <p>To learn more about this parameter, see <code>OfflineStoreConfig</code>.</p>
         pub fn set_offline_store_config(
             mut self,
             input: std::option::Option<crate::model::OfflineStoreConfig>,
@@ -5708,14 +5055,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_offline_store_config(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM execution role used to persist data into the
-        /// <code>OfflineStore</code> if an <code>OfflineStoreConfig</code> is provided.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM execution role used to persist data into the <code>OfflineStore</code> if an <code>OfflineStoreConfig</code> is provided.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM execution role used to persist data into the
-        /// <code>OfflineStore</code> if an <code>OfflineStoreConfig</code> is provided.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM execution role used to persist data into the <code>OfflineStore</code> if an <code>OfflineStoreConfig</code> is provided.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
@@ -5820,8 +5165,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_flow_definition_name(input);
             self
         }
-        /// <p>Container for configuring the source of human task requests. Use to specify if
-        /// Amazon Rekognition or Amazon Textract is used as an integration source.</p>
+        /// <p>Container for configuring the source of human task requests. Use to specify if Amazon Rekognition or Amazon Textract is used as an integration source.</p>
         pub fn human_loop_request_source(
             mut self,
             input: crate::model::HumanLoopRequestSource,
@@ -5829,8 +5173,7 @@ pub mod fluent_builders {
             self.inner = self.inner.human_loop_request_source(input);
             self
         }
-        /// <p>Container for configuring the source of human task requests. Use to specify if
-        /// Amazon Rekognition or Amazon Textract is used as an integration source.</p>
+        /// <p>Container for configuring the source of human task requests. Use to specify if Amazon Rekognition or Amazon Textract is used as an integration source.</p>
         pub fn set_human_loop_request_source(
             mut self,
             input: std::option::Option<crate::model::HumanLoopRequestSource>,
@@ -6013,11 +5356,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateHyperParameterTuningJob`.
     ///
-    /// <p>Starts a hyperparameter tuning job. A hyperparameter tuning job finds the best version
-    /// of a model by running many training jobs on your dataset using the algorithm you choose
-    /// and values for hyperparameters within ranges that you specify. It then chooses the
-    /// hyperparameter values that result in a model that performs the best, as measured by an
-    /// objective metric that you choose.</p>
+    /// <p>Starts a hyperparameter tuning job. A hyperparameter tuning job finds the best version of a model by running many training jobs on your dataset using the algorithm you choose and values for hyperparameters within ranges that you specify. It then chooses the hyperparameter values that result in a model that performs the best, as measured by an objective metric that you choose.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateHyperParameterTuningJob<
         C = aws_smithy_client::erase::DynConnector,
@@ -6074,10 +5413,7 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the tuning job. This name is the prefix for the names of all training jobs
-        /// that this tuning job launches. The name must be unique within the same Amazon Web Services account and
-        /// Amazon Web Services Region. The name must have 1 to 32 characters. Valid characters are a-z, A-Z, 0-9,
-        /// and : + = @ _ % - (hyphen). The name is not case sensitive.</p>
+        /// <p>The name of the tuning job. This name is the prefix for the names of all training jobs that this tuning job launches. The name must be unique within the same Amazon Web Services account and Amazon Web Services Region. The name must have 1 to 32 characters. Valid characters are a-z, A-Z, 0-9, and : + = @ _ % - (hyphen). The name is not case sensitive.</p>
         pub fn hyper_parameter_tuning_job_name(
             mut self,
             input: impl Into<std::string::String>,
@@ -6085,10 +5421,7 @@ pub mod fluent_builders {
             self.inner = self.inner.hyper_parameter_tuning_job_name(input.into());
             self
         }
-        /// <p>The name of the tuning job. This name is the prefix for the names of all training jobs
-        /// that this tuning job launches. The name must be unique within the same Amazon Web Services account and
-        /// Amazon Web Services Region. The name must have 1 to 32 characters. Valid characters are a-z, A-Z, 0-9,
-        /// and : + = @ _ % - (hyphen). The name is not case sensitive.</p>
+        /// <p>The name of the tuning job. This name is the prefix for the names of all training jobs that this tuning job launches. The name must be unique within the same Amazon Web Services account and Amazon Web Services Region. The name must have 1 to 32 characters. Valid characters are a-z, A-Z, 0-9, and : + = @ _ % - (hyphen). The name is not case sensitive.</p>
         pub fn set_hyper_parameter_tuning_job_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6096,11 +5429,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_hyper_parameter_tuning_job_name(input);
             self
         }
-        /// <p>The <a>HyperParameterTuningJobConfig</a> object that describes the tuning
-        /// job, including the search strategy, the objective metric used to evaluate training jobs,
-        /// ranges of parameters to search, and resource limits for the tuning job. For more
-        /// information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
-        /// Hyperparameter Tuning Works</a>.</p>
+        /// <p>The <code>HyperParameterTuningJobConfig</code> object that describes the tuning job, including the search strategy, the objective metric used to evaluate training jobs, ranges of parameters to search, and resource limits for the tuning job. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How Hyperparameter Tuning Works</a>.</p>
         pub fn hyper_parameter_tuning_job_config(
             mut self,
             input: crate::model::HyperParameterTuningJobConfig,
@@ -6108,11 +5437,7 @@ pub mod fluent_builders {
             self.inner = self.inner.hyper_parameter_tuning_job_config(input);
             self
         }
-        /// <p>The <a>HyperParameterTuningJobConfig</a> object that describes the tuning
-        /// job, including the search strategy, the objective metric used to evaluate training jobs,
-        /// ranges of parameters to search, and resource limits for the tuning job. For more
-        /// information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
-        /// Hyperparameter Tuning Works</a>.</p>
+        /// <p>The <code>HyperParameterTuningJobConfig</code> object that describes the tuning job, including the search strategy, the objective metric used to evaluate training jobs, ranges of parameters to search, and resource limits for the tuning job. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How Hyperparameter Tuning Works</a>.</p>
         pub fn set_hyper_parameter_tuning_job_config(
             mut self,
             input: std::option::Option<crate::model::HyperParameterTuningJobConfig>,
@@ -6120,11 +5445,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_hyper_parameter_tuning_job_config(input);
             self
         }
-        /// <p>The <a>HyperParameterTrainingJobDefinition</a> object that describes the
-        /// training jobs that this tuning job launches,
-        /// including
-        /// static hyperparameters, input data configuration, output data configuration, resource
-        /// configuration, and stopping condition.</p>
+        /// <p>The <code>HyperParameterTrainingJobDefinition</code> object that describes the training jobs that this tuning job launches, including static hyperparameters, input data configuration, output data configuration, resource configuration, and stopping condition.</p>
         pub fn training_job_definition(
             mut self,
             input: crate::model::HyperParameterTrainingJobDefinition,
@@ -6132,11 +5453,7 @@ pub mod fluent_builders {
             self.inner = self.inner.training_job_definition(input);
             self
         }
-        /// <p>The <a>HyperParameterTrainingJobDefinition</a> object that describes the
-        /// training jobs that this tuning job launches,
-        /// including
-        /// static hyperparameters, input data configuration, output data configuration, resource
-        /// configuration, and stopping condition.</p>
+        /// <p>The <code>HyperParameterTrainingJobDefinition</code> object that describes the training jobs that this tuning job launches, including static hyperparameters, input data configuration, output data configuration, resource configuration, and stopping condition.</p>
         pub fn set_training_job_definition(
             mut self,
             input: std::option::Option<crate::model::HyperParameterTrainingJobDefinition>,
@@ -6148,8 +5465,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_training_job_definitions`](Self::set_training_job_definitions).
         ///
-        /// <p>A list of the <a>HyperParameterTrainingJobDefinition</a> objects launched
-        /// for this tuning job.</p>
+        /// <p>A list of the <code>HyperParameterTrainingJobDefinition</code> objects launched for this tuning job.</p>
         pub fn training_job_definitions(
             mut self,
             input: crate::model::HyperParameterTrainingJobDefinition,
@@ -6157,8 +5473,7 @@ pub mod fluent_builders {
             self.inner = self.inner.training_job_definitions(input);
             self
         }
-        /// <p>A list of the <a>HyperParameterTrainingJobDefinition</a> objects launched
-        /// for this tuning job.</p>
+        /// <p>A list of the <code>HyperParameterTrainingJobDefinition</code> objects launched for this tuning job.</p>
         pub fn set_training_job_definitions(
             mut self,
             input: std::option::Option<
@@ -6168,20 +5483,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_training_job_definitions(input);
             self
         }
-        /// <p>Specifies the configuration for starting the hyperparameter tuning job using one or
-        /// more previous tuning jobs as a starting point. The results of previous tuning jobs are
-        /// used to inform which combinations of hyperparameters to search over in the new tuning
-        /// job.</p>
-        /// <p>All training jobs launched by the new hyperparameter tuning job are evaluated by using
-        /// the objective metric. If you specify <code>IDENTICAL_DATA_AND_ALGORITHM</code> as the
-        /// <code>WarmStartType</code> value for the warm start configuration, the training job
-        /// that performs the best in the new tuning job is compared to the best training jobs from
-        /// the parent tuning jobs. From these, the training job that performs the best as measured
-        /// by the objective metric is returned as the overall best training job.</p>
-        /// <note>
-        /// <p>All training jobs launched by parent hyperparameter tuning jobs and the new
-        /// hyperparameter tuning jobs count against the limit of training jobs for the tuning
-        /// job.</p>
+        /// <p>Specifies the configuration for starting the hyperparameter tuning job using one or more previous tuning jobs as a starting point. The results of previous tuning jobs are used to inform which combinations of hyperparameters to search over in the new tuning job.</p>
+        /// <p>All training jobs launched by the new hyperparameter tuning job are evaluated by using the objective metric. If you specify <code>IDENTICAL_DATA_AND_ALGORITHM</code> as the <code>WarmStartType</code> value for the warm start configuration, the training job that performs the best in the new tuning job is compared to the best training jobs from the parent tuning jobs. From these, the training job that performs the best as measured by the objective metric is returned as the overall best training job.</p> <note>
+        /// <p>All training jobs launched by parent hyperparameter tuning jobs and the new hyperparameter tuning jobs count against the limit of training jobs for the tuning job.</p>
         /// </note>
         pub fn warm_start_config(
             mut self,
@@ -6190,20 +5494,9 @@ pub mod fluent_builders {
             self.inner = self.inner.warm_start_config(input);
             self
         }
-        /// <p>Specifies the configuration for starting the hyperparameter tuning job using one or
-        /// more previous tuning jobs as a starting point. The results of previous tuning jobs are
-        /// used to inform which combinations of hyperparameters to search over in the new tuning
-        /// job.</p>
-        /// <p>All training jobs launched by the new hyperparameter tuning job are evaluated by using
-        /// the objective metric. If you specify <code>IDENTICAL_DATA_AND_ALGORITHM</code> as the
-        /// <code>WarmStartType</code> value for the warm start configuration, the training job
-        /// that performs the best in the new tuning job is compared to the best training jobs from
-        /// the parent tuning jobs. From these, the training job that performs the best as measured
-        /// by the objective metric is returned as the overall best training job.</p>
-        /// <note>
-        /// <p>All training jobs launched by parent hyperparameter tuning jobs and the new
-        /// hyperparameter tuning jobs count against the limit of training jobs for the tuning
-        /// job.</p>
+        /// <p>Specifies the configuration for starting the hyperparameter tuning job using one or more previous tuning jobs as a starting point. The results of previous tuning jobs are used to inform which combinations of hyperparameters to search over in the new tuning job.</p>
+        /// <p>All training jobs launched by the new hyperparameter tuning job are evaluated by using the objective metric. If you specify <code>IDENTICAL_DATA_AND_ALGORITHM</code> as the <code>WarmStartType</code> value for the warm start configuration, the training job that performs the best in the new tuning job is compared to the best training jobs from the parent tuning jobs. From these, the training job that performs the best as measured by the objective metric is returned as the overall best training job.</p> <note>
+        /// <p>All training jobs launched by parent hyperparameter tuning jobs and the new hyperparameter tuning jobs count against the limit of training jobs for the tuning job.</p>
         /// </note>
         pub fn set_warm_start_config(
             mut self,
@@ -6216,22 +5509,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in
-        /// different ways, for example, by purpose, owner, or environment. For more information,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
-        /// Resources</a>.</p>
-        /// <p>Tags that you specify for the tuning job are also added to all training jobs that the
-        /// tuning job launches.</p>
+        /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
+        /// <p>Tags that you specify for the tuning job are also added to all training jobs that the tuning job launches.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in
-        /// different ways, for example, by purpose, owner, or environment. For more information,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
-        /// Resources</a>.</p>
-        /// <p>Tags that you specify for the tuning job are also added to all training jobs that the
-        /// tuning job launches.</p>
+        /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
+        /// <p>Tags that you specify for the tuning job are also added to all training jobs that the tuning job launches.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -6242,9 +5527,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateImage`.
     ///
-    /// <p>Creates a custom SageMaker image. A SageMaker image is a set of image versions. Each image
-    /// version represents a container image stored in Amazon Container Registry (ECR). For more information, see
-    /// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-byoi.html">Bring your own SageMaker image</a>.</p>
+    /// <p>Creates a custom SageMaker image. A SageMaker image is a set of image versions. Each image version represents a container image stored in Amazon Container Registry (ECR). For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-byoi.html">Bring your own SageMaker image</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateImage<
         C = aws_smithy_client::erase::DynConnector,
@@ -6361,8 +5644,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateImageVersion`.
     ///
-    /// <p>Creates a version of the SageMaker image specified by <code>ImageName</code>. The version
-    /// represents the Amazon Container Registry (ECR) container image specified by <code>BaseImage</code>.</p>
+    /// <p>Creates a version of the SageMaker image specified by <code>ImageName</code>. The version represents the Amazon Container Registry (ECR) container image specified by <code>BaseImage</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateImageVersion<
         C = aws_smithy_client::erase::DynConnector,
@@ -6419,32 +5701,38 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The registry path of the container image to use as the starting point for this
-        /// version. The path is an Amazon Container Registry (ECR) URI in the following format:</p>
-        /// <p>
-        /// <code><acct-id>.dkr.ecr.<region>.amazonaws.com/<repo-name[:tag] or [@digest]></code>
-        /// </p>
+        /// <p>The registry path of the container image to use as the starting point for this version. The path is an Amazon Container Registry (ECR) URI in the following format:</p>
+        /// <p> <code>
+        /// <acct-id>
+        /// .dkr.ecr.
+        /// <region>
+        /// .amazonaws.com/
+        /// <repo-name[:tag] or [@digest]></repo-name[:tag]>
+        /// </region>
+        /// </acct-id></code> </p>
         pub fn base_image(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.base_image(input.into());
             self
         }
-        /// <p>The registry path of the container image to use as the starting point for this
-        /// version. The path is an Amazon Container Registry (ECR) URI in the following format:</p>
-        /// <p>
-        /// <code><acct-id>.dkr.ecr.<region>.amazonaws.com/<repo-name[:tag] or [@digest]></code>
-        /// </p>
+        /// <p>The registry path of the container image to use as the starting point for this version. The path is an Amazon Container Registry (ECR) URI in the following format:</p>
+        /// <p> <code>
+        /// <acct-id>
+        /// .dkr.ecr.
+        /// <region>
+        /// .amazonaws.com/
+        /// <repo-name[:tag] or [@digest]></repo-name[:tag]>
+        /// </region>
+        /// </acct-id></code> </p>
         pub fn set_base_image(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_base_image(input);
             self
         }
-        /// <p>A unique ID. If not specified, the Amazon Web Services CLI and Amazon Web Services SDKs, such as the SDK for Python
-        /// (Boto3), add a unique value to the call.</p>
+        /// <p>A unique ID. If not specified, the Amazon Web Services CLI and Amazon Web Services SDKs, such as the SDK for Python (Boto3), add a unique value to the call.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique ID. If not specified, the Amazon Web Services CLI and Amazon Web Services SDKs, such as the SDK for Python
-        /// (Boto3), add a unique value to the call.</p>
+        /// <p>A unique ID. If not specified, the Amazon Web Services CLI and Amazon Web Services SDKs, such as the SDK for Python (Boto3), add a unique value to the call.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -6462,8 +5750,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateInferenceRecommendationsJob`.
     ///
-    /// <p>Starts a recommendation job. You can create either an instance
-    /// recommendation or load test job.</p>
+    /// <p>Starts a recommendation job. You can create either an instance recommendation or load test job.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateInferenceRecommendationsJob<
         C = aws_smithy_client::erase::DynConnector,
@@ -6520,28 +5807,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A name for the recommendation job. The name must be unique within
-        /// the Amazon Web Services Region and within your Amazon Web Services account.</p>
+        /// <p>A name for the recommendation job. The name must be unique within the Amazon Web Services Region and within your Amazon Web Services account.</p>
         pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.job_name(input.into());
             self
         }
-        /// <p>A name for the recommendation job. The name must be unique within
-        /// the Amazon Web Services Region and within your Amazon Web Services account.</p>
+        /// <p>A name for the recommendation job. The name must be unique within the Amazon Web Services Region and within your Amazon Web Services account.</p>
         pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_job_name(input);
             self
         }
-        /// <p>Defines the type of recommendation job. Specify <code>Default</code> to initiate an instance
-        /// recommendation and <code>Advanced</code> to initiate a load test. If left unspecified,
-        /// Amazon SageMaker Inference Recommender will run an instance recommendation (<code>DEFAULT</code>) job.</p>
+        /// <p>Defines the type of recommendation job. Specify <code>Default</code> to initiate an instance recommendation and <code>Advanced</code> to initiate a load test. If left unspecified, Amazon SageMaker Inference Recommender will run an instance recommendation (<code>DEFAULT</code>) job.</p>
         pub fn job_type(mut self, input: crate::model::RecommendationJobType) -> Self {
             self.inner = self.inner.job_type(input);
             self
         }
-        /// <p>Defines the type of recommendation job. Specify <code>Default</code> to initiate an instance
-        /// recommendation and <code>Advanced</code> to initiate a load test. If left unspecified,
-        /// Amazon SageMaker Inference Recommender will run an instance recommendation (<code>DEFAULT</code>) job.</p>
+        /// <p>Defines the type of recommendation job. Specify <code>Default</code> to initiate an instance recommendation and <code>Advanced</code> to initiate a load test. If left unspecified, Amazon SageMaker Inference Recommender will run an instance recommendation (<code>DEFAULT</code>) job.</p>
         pub fn set_job_type(
             mut self,
             input: std::option::Option<crate::model::RecommendationJobType>,
@@ -6549,26 +5830,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_job_type(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker
-        /// to perform tasks on your behalf.</p>
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker
-        /// to perform tasks on your behalf.</p>
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
         }
-        /// <p>Provides information about the versioned model package Amazon Resource Name (ARN),
-        /// the traffic pattern, and endpoint configurations.</p>
+        /// <p>Provides information about the versioned model package Amazon Resource Name (ARN), the traffic pattern, and endpoint configurations.</p>
         pub fn input_config(mut self, input: crate::model::RecommendationJobInputConfig) -> Self {
             self.inner = self.inner.input_config(input);
             self
         }
-        /// <p>Provides information about the versioned model package Amazon Resource Name (ARN),
-        /// the traffic pattern, and endpoint configurations.</p>
+        /// <p>Provides information about the versioned model package Amazon Resource Name (ARN), the traffic pattern, and endpoint configurations.</p>
         pub fn set_input_config(
             mut self,
             input: std::option::Option<crate::model::RecommendationJobInputConfig>,
@@ -6589,8 +5866,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_job_description(input);
             self
         }
-        /// <p>A set of conditions for stopping a recommendation job.  If any of
-        /// the conditions are met, the job is automatically stopped.</p>
+        /// <p>A set of conditions for stopping a recommendation job. If any of the conditions are met, the job is automatically stopped.</p>
         pub fn stopping_conditions(
             mut self,
             input: crate::model::RecommendationJobStoppingConditions,
@@ -6598,8 +5874,7 @@ pub mod fluent_builders {
             self.inner = self.inner.stopping_conditions(input);
             self
         }
-        /// <p>A set of conditions for stopping a recommendation job.  If any of
-        /// the conditions are met, the job is automatically stopped.</p>
+        /// <p>A set of conditions for stopping a recommendation job. If any of the conditions are met, the job is automatically stopped.</p>
         pub fn set_stopping_conditions(
             mut self,
             input: std::option::Option<crate::model::RecommendationJobStoppingConditions>,
@@ -6611,20 +5886,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The metadata that you apply to Amazon Web Services resources to help you
-        /// categorize and organize them. Each tag consists of a key and a value, both of
-        /// which you define. For more information, see
-        /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>
-        /// in the Amazon Web Services General Reference.</p>
+        /// <p>The metadata that you apply to Amazon Web Services resources to help you categorize and organize them. Each tag consists of a key and a value, both of which you define. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in the Amazon Web Services General Reference.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>The metadata that you apply to Amazon Web Services resources to help you
-        /// categorize and organize them. Each tag consists of a key and a value, both of
-        /// which you define. For more information, see
-        /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>
-        /// in the Amazon Web Services General Reference.</p>
+        /// <p>The metadata that you apply to Amazon Web Services resources to help you categorize and organize them. Each tag consists of a key and a value, both of which you define. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in the Amazon Web Services General Reference.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -6635,44 +5902,17 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateLabelingJob`.
     ///
-    /// <p>Creates a job that uses workers to label the data objects in your input dataset. You
-    /// can use the labeled data to train machine learning models. </p>
+    /// <p>Creates a job that uses workers to label the data objects in your input dataset. You can use the labeled data to train machine learning models. </p>
     /// <p>You can select your workforce from one of three providers:</p>
     /// <ul>
-    /// <li>
-    /// <p>A private workforce that you create. It can include employees, contractors,
-    /// and outside experts. Use a private workforce when want the data to stay within
-    /// your organization or when a specific set of skills is required.</p>
-    /// </li>
-    /// <li>
-    /// <p>One or more vendors that you select from the Amazon Web Services Marketplace. Vendors provide
-    /// expertise in specific areas. </p>
-    /// </li>
-    /// <li>
-    /// <p>The Amazon Mechanical Turk workforce. This is the largest workforce, but it
-    /// should only be used for public data or data that has been stripped of any
-    /// personally identifiable information.</p>
-    /// </li>
+    /// <li> <p>A private workforce that you create. It can include employees, contractors, and outside experts. Use a private workforce when want the data to stay within your organization or when a specific set of skills is required.</p> </li>
+    /// <li> <p>One or more vendors that you select from the Amazon Web Services Marketplace. Vendors provide expertise in specific areas. </p> </li>
+    /// <li> <p>The Amazon Mechanical Turk workforce. This is the largest workforce, but it should only be used for public data or data that has been stripped of any personally identifiable information.</p> </li>
     /// </ul>
-    /// <p>You can also use <i>automated data labeling</i> to reduce the number of
-    /// data objects that need to be labeled by a human. Automated data labeling uses
-    /// <i>active learning</i> to determine if a data object can be labeled by
-    /// machine or if it needs to be sent to a human worker. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-automated-labeling.html">Using
-    /// Automated Data Labeling</a>.</p>
-    /// <p>The data objects to be labeled are contained in an Amazon S3 bucket. You create a
-    /// <i>manifest file</i> that describes the location of each object. For
-    /// more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data.html">Using Input and Output Data</a>.</p>
-    /// <p>The output can be used as the manifest file for another labeling job or as training
-    /// data for your machine learning models.</p>
-    /// <p>You can use this operation to create a static labeling job or a streaming labeling
-    /// job. A static labeling job stops if all data objects in the input manifest file
-    /// identified in <code>ManifestS3Uri</code> have been labeled. A streaming labeling job
-    /// runs perpetually until it is manually stopped, or remains idle for 10 days. You can send
-    /// new data objects to an active (<code>InProgress</code>) streaming labeling job in real
-    /// time. To learn how to create a static labeling job, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-create-labeling-job-api.html">Create a Labeling Job
-    /// (API) </a> in the Amazon SageMaker Developer Guide. To learn how to create a streaming
-    /// labeling job, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-streaming-create-job.html">Create a Streaming Labeling
-    /// Job</a>.</p>
+    /// <p>You can also use <i>automated data labeling</i> to reduce the number of data objects that need to be labeled by a human. Automated data labeling uses <i>active learning</i> to determine if a data object can be labeled by machine or if it needs to be sent to a human worker. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-automated-labeling.html">Using Automated Data Labeling</a>.</p>
+    /// <p>The data objects to be labeled are contained in an Amazon S3 bucket. You create a <i>manifest file</i> that describes the location of each object. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data.html">Using Input and Output Data</a>.</p>
+    /// <p>The output can be used as the manifest file for another labeling job or as training data for your machine learning models.</p>
+    /// <p>You can use this operation to create a static labeling job or a streaming labeling job. A static labeling job stops if all data objects in the input manifest file identified in <code>ManifestS3Uri</code> have been labeled. A streaming labeling job runs perpetually until it is manually stopped, or remains idle for 10 days. You can send new data objects to an active (<code>InProgress</code>) streaming labeling job in real time. To learn how to create a static labeling job, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-create-labeling-job-api.html">Create a Labeling Job (API) </a> in the Amazon SageMaker Developer Guide. To learn how to create a streaming labeling job, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-streaming-create-job.html">Create a Streaming Labeling Job</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLabelingJob<
         C = aws_smithy_client::erase::DynConnector,
@@ -6729,18 +5969,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the labeling job. This name is used to identify the job in a list of
-        /// labeling jobs. Labeling job names must be unique within an Amazon Web Services account and region.
-        /// <code>LabelingJobName</code> is not case sensitive. For example, Example-job and
-        /// example-job are considered the same labeling job name by Ground Truth.</p>
+        /// <p>The name of the labeling job. This name is used to identify the job in a list of labeling jobs. Labeling job names must be unique within an Amazon Web Services account and region. <code>LabelingJobName</code> is not case sensitive. For example, Example-job and example-job are considered the same labeling job name by Ground Truth.</p>
         pub fn labeling_job_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.labeling_job_name(input.into());
             self
         }
-        /// <p>The name of the labeling job. This name is used to identify the job in a list of
-        /// labeling jobs. Labeling job names must be unique within an Amazon Web Services account and region.
-        /// <code>LabelingJobName</code> is not case sensitive. For example, Example-job and
-        /// example-job are considered the same labeling job name by Ground Truth.</p>
+        /// <p>The name of the labeling job. This name is used to identify the job in a list of labeling jobs. Labeling job names must be unique within an Amazon Web Services account and region. <code>LabelingJobName</code> is not case sensitive. For example, Example-job and example-job are considered the same labeling job name by Ground Truth.</p>
         pub fn set_labeling_job_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6748,119 +5982,39 @@ pub mod fluent_builders {
             self.inner = self.inner.set_labeling_job_name(input);
             self
         }
-        /// <p>The attribute name to use for the label in the output manifest file. This is the key
-        /// for the key/value pair formed with the label that a worker assigns to the object. The
-        /// <code>LabelAttributeName</code> must meet the following requirements.</p>
+        /// <p>The attribute name to use for the label in the output manifest file. This is the key for the key/value pair formed with the label that a worker assigns to the object. The <code>LabelAttributeName</code> must meet the following requirements.</p>
         /// <ul>
-        /// <li>
-        /// <p>The name can't end with "-metadata". </p>
-        /// </li>
-        /// <li>
-        /// <p>If you are using one of the following <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in task types</a>,
-        /// the attribute name <i>must</i> end with "-ref". If the task type
-        /// you are using is not listed below, the attribute name <i>must
-        /// not</i> end with "-ref".</p>
+        /// <li> <p>The name can't end with "-metadata". </p> </li>
+        /// <li> <p>If you are using one of the following <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in task types</a>, the attribute name <i>must</i> end with "-ref". If the task type you are using is not listed below, the attribute name <i>must not</i> end with "-ref".</p>
         /// <ul>
-        /// <li>
-        /// <p>Image semantic segmentation (<code>SemanticSegmentation)</code>, and
-        /// adjustment (<code>AdjustmentSemanticSegmentation</code>) and
-        /// verification (<code>VerificationSemanticSegmentation</code>) labeling
-        /// jobs for this task type.</p>
-        /// </li>
-        /// <li>
-        /// <p>Video frame object detection (<code>VideoObjectDetection</code>), and
-        /// adjustment and verification
-        /// (<code>AdjustmentVideoObjectDetection</code>) labeling jobs for this
-        /// task type.</p>
-        /// </li>
-        /// <li>
-        /// <p>Video frame object tracking (<code>VideoObjectTracking</code>), and
-        /// adjustment and verification (<code>AdjustmentVideoObjectTracking</code>)
-        /// labeling jobs for this task type.</p>
-        /// </li>
-        /// <li>
-        /// <p>3D point cloud semantic segmentation
-        /// (<code>3DPointCloudSemanticSegmentation</code>), and adjustment and
-        /// verification (<code>Adjustment3DPointCloudSemanticSegmentation</code>)
-        /// labeling jobs for this task type. </p>
-        /// </li>
-        /// <li>
-        /// <p>3D point cloud object tracking
-        /// (<code>3DPointCloudObjectTracking</code>), and adjustment and
-        /// verification (<code>Adjustment3DPointCloudObjectTracking</code>)
-        /// labeling jobs for this task type. </p>
-        /// </li>
+        /// <li> <p>Image semantic segmentation (<code>SemanticSegmentation)</code>, and adjustment (<code>AdjustmentSemanticSegmentation</code>) and verification (<code>VerificationSemanticSegmentation</code>) labeling jobs for this task type.</p> </li>
+        /// <li> <p>Video frame object detection (<code>VideoObjectDetection</code>), and adjustment and verification (<code>AdjustmentVideoObjectDetection</code>) labeling jobs for this task type.</p> </li>
+        /// <li> <p>Video frame object tracking (<code>VideoObjectTracking</code>), and adjustment and verification (<code>AdjustmentVideoObjectTracking</code>) labeling jobs for this task type.</p> </li>
+        /// <li> <p>3D point cloud semantic segmentation (<code>3DPointCloudSemanticSegmentation</code>), and adjustment and verification (<code>Adjustment3DPointCloudSemanticSegmentation</code>) labeling jobs for this task type. </p> </li>
+        /// <li> <p>3D point cloud object tracking (<code>3DPointCloudObjectTracking</code>), and adjustment and verification (<code>Adjustment3DPointCloudObjectTracking</code>) labeling jobs for this task type. </p> </li>
+        /// </ul> </li>
         /// </ul>
-        /// </li>
-        /// </ul>
-        /// <p></p>
-        /// <important>
-        /// <p>If you are creating an adjustment or verification labeling job, you must use a
-        /// <i>different</i>
-        /// <code>LabelAttributeName</code> than the one used in the original labeling job. The
-        /// original labeling job is the Ground Truth labeling job that produced the labels that you
-        /// want verified or adjusted. To learn more about adjustment and verification labeling
-        /// jobs, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-verification-data.html">Verify and Adjust
-        /// Labels</a>.</p>
+        /// <p></p> <important>
+        /// <p>If you are creating an adjustment or verification labeling job, you must use a <i>different</i> <code>LabelAttributeName</code> than the one used in the original labeling job. The original labeling job is the Ground Truth labeling job that produced the labels that you want verified or adjusted. To learn more about adjustment and verification labeling jobs, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-verification-data.html">Verify and Adjust Labels</a>.</p>
         /// </important>
         pub fn label_attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.label_attribute_name(input.into());
             self
         }
-        /// <p>The attribute name to use for the label in the output manifest file. This is the key
-        /// for the key/value pair formed with the label that a worker assigns to the object. The
-        /// <code>LabelAttributeName</code> must meet the following requirements.</p>
+        /// <p>The attribute name to use for the label in the output manifest file. This is the key for the key/value pair formed with the label that a worker assigns to the object. The <code>LabelAttributeName</code> must meet the following requirements.</p>
         /// <ul>
-        /// <li>
-        /// <p>The name can't end with "-metadata". </p>
-        /// </li>
-        /// <li>
-        /// <p>If you are using one of the following <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in task types</a>,
-        /// the attribute name <i>must</i> end with "-ref". If the task type
-        /// you are using is not listed below, the attribute name <i>must
-        /// not</i> end with "-ref".</p>
+        /// <li> <p>The name can't end with "-metadata". </p> </li>
+        /// <li> <p>If you are using one of the following <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in task types</a>, the attribute name <i>must</i> end with "-ref". If the task type you are using is not listed below, the attribute name <i>must not</i> end with "-ref".</p>
         /// <ul>
-        /// <li>
-        /// <p>Image semantic segmentation (<code>SemanticSegmentation)</code>, and
-        /// adjustment (<code>AdjustmentSemanticSegmentation</code>) and
-        /// verification (<code>VerificationSemanticSegmentation</code>) labeling
-        /// jobs for this task type.</p>
-        /// </li>
-        /// <li>
-        /// <p>Video frame object detection (<code>VideoObjectDetection</code>), and
-        /// adjustment and verification
-        /// (<code>AdjustmentVideoObjectDetection</code>) labeling jobs for this
-        /// task type.</p>
-        /// </li>
-        /// <li>
-        /// <p>Video frame object tracking (<code>VideoObjectTracking</code>), and
-        /// adjustment and verification (<code>AdjustmentVideoObjectTracking</code>)
-        /// labeling jobs for this task type.</p>
-        /// </li>
-        /// <li>
-        /// <p>3D point cloud semantic segmentation
-        /// (<code>3DPointCloudSemanticSegmentation</code>), and adjustment and
-        /// verification (<code>Adjustment3DPointCloudSemanticSegmentation</code>)
-        /// labeling jobs for this task type. </p>
-        /// </li>
-        /// <li>
-        /// <p>3D point cloud object tracking
-        /// (<code>3DPointCloudObjectTracking</code>), and adjustment and
-        /// verification (<code>Adjustment3DPointCloudObjectTracking</code>)
-        /// labeling jobs for this task type. </p>
-        /// </li>
+        /// <li> <p>Image semantic segmentation (<code>SemanticSegmentation)</code>, and adjustment (<code>AdjustmentSemanticSegmentation</code>) and verification (<code>VerificationSemanticSegmentation</code>) labeling jobs for this task type.</p> </li>
+        /// <li> <p>Video frame object detection (<code>VideoObjectDetection</code>), and adjustment and verification (<code>AdjustmentVideoObjectDetection</code>) labeling jobs for this task type.</p> </li>
+        /// <li> <p>Video frame object tracking (<code>VideoObjectTracking</code>), and adjustment and verification (<code>AdjustmentVideoObjectTracking</code>) labeling jobs for this task type.</p> </li>
+        /// <li> <p>3D point cloud semantic segmentation (<code>3DPointCloudSemanticSegmentation</code>), and adjustment and verification (<code>Adjustment3DPointCloudSemanticSegmentation</code>) labeling jobs for this task type. </p> </li>
+        /// <li> <p>3D point cloud object tracking (<code>3DPointCloudObjectTracking</code>), and adjustment and verification (<code>Adjustment3DPointCloudObjectTracking</code>) labeling jobs for this task type. </p> </li>
+        /// </ul> </li>
         /// </ul>
-        /// </li>
-        /// </ul>
-        /// <p></p>
-        /// <important>
-        /// <p>If you are creating an adjustment or verification labeling job, you must use a
-        /// <i>different</i>
-        /// <code>LabelAttributeName</code> than the one used in the original labeling job. The
-        /// original labeling job is the Ground Truth labeling job that produced the labels that you
-        /// want verified or adjusted. To learn more about adjustment and verification labeling
-        /// jobs, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-verification-data.html">Verify and Adjust
-        /// Labels</a>.</p>
+        /// <p></p> <important>
+        /// <p>If you are creating an adjustment or verification labeling job, you must use a <i>different</i> <code>LabelAttributeName</code> than the one used in the original labeling job. The original labeling job is the Ground Truth labeling job that produced the labels that you want verified or adjusted. To learn more about adjustment and verification labeling jobs, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-verification-data.html">Verify and Adjust Labels</a>.</p>
         /// </important>
         pub fn set_label_attribute_name(
             mut self,
@@ -6869,54 +6023,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_label_attribute_name(input);
             self
         }
-        /// <p>Input data for the labeling job, such as the Amazon S3 location of the data objects and the
-        /// location of the manifest file that describes the data objects.</p>
-        /// <p>You must specify at least one of the following: <code>S3DataSource</code> or
-        /// <code>SnsDataSource</code>. </p>
+        /// <p>Input data for the labeling job, such as the Amazon S3 location of the data objects and the location of the manifest file that describes the data objects.</p>
+        /// <p>You must specify at least one of the following: <code>S3DataSource</code> or <code>SnsDataSource</code>. </p>
         /// <ul>
-        /// <li>
-        /// <p>Use <code>SnsDataSource</code> to specify an SNS input topic for a streaming
-        /// labeling job. If you do not specify and SNS input topic ARN, Ground Truth will
-        /// create a one-time labeling job that stops after all data objects in the input
-        /// manifest file have been labeled.</p>
-        /// </li>
-        /// <li>
-        /// <p>Use <code>S3DataSource</code> to specify an input manifest file for both
-        /// streaming and one-time labeling jobs. Adding an <code>S3DataSource</code> is
-        /// optional if you use <code>SnsDataSource</code> to create a streaming labeling
-        /// job.</p>
-        /// </li>
+        /// <li> <p>Use <code>SnsDataSource</code> to specify an SNS input topic for a streaming labeling job. If you do not specify and SNS input topic ARN, Ground Truth will create a one-time labeling job that stops after all data objects in the input manifest file have been labeled.</p> </li>
+        /// <li> <p>Use <code>S3DataSource</code> to specify an input manifest file for both streaming and one-time labeling jobs. Adding an <code>S3DataSource</code> is optional if you use <code>SnsDataSource</code> to create a streaming labeling job.</p> </li>
         /// </ul>
-        /// <p>If you use the Amazon Mechanical Turk workforce, your input data should not include
-        /// confidential information, personal information or protected health information. Use
-        /// <code>ContentClassifiers</code> to specify that your data is free of personally
-        /// identifiable information and adult content.</p>
+        /// <p>If you use the Amazon Mechanical Turk workforce, your input data should not include confidential information, personal information or protected health information. Use <code>ContentClassifiers</code> to specify that your data is free of personally identifiable information and adult content.</p>
         pub fn input_config(mut self, input: crate::model::LabelingJobInputConfig) -> Self {
             self.inner = self.inner.input_config(input);
             self
         }
-        /// <p>Input data for the labeling job, such as the Amazon S3 location of the data objects and the
-        /// location of the manifest file that describes the data objects.</p>
-        /// <p>You must specify at least one of the following: <code>S3DataSource</code> or
-        /// <code>SnsDataSource</code>. </p>
+        /// <p>Input data for the labeling job, such as the Amazon S3 location of the data objects and the location of the manifest file that describes the data objects.</p>
+        /// <p>You must specify at least one of the following: <code>S3DataSource</code> or <code>SnsDataSource</code>. </p>
         /// <ul>
-        /// <li>
-        /// <p>Use <code>SnsDataSource</code> to specify an SNS input topic for a streaming
-        /// labeling job. If you do not specify and SNS input topic ARN, Ground Truth will
-        /// create a one-time labeling job that stops after all data objects in the input
-        /// manifest file have been labeled.</p>
-        /// </li>
-        /// <li>
-        /// <p>Use <code>S3DataSource</code> to specify an input manifest file for both
-        /// streaming and one-time labeling jobs. Adding an <code>S3DataSource</code> is
-        /// optional if you use <code>SnsDataSource</code> to create a streaming labeling
-        /// job.</p>
-        /// </li>
+        /// <li> <p>Use <code>SnsDataSource</code> to specify an SNS input topic for a streaming labeling job. If you do not specify and SNS input topic ARN, Ground Truth will create a one-time labeling job that stops after all data objects in the input manifest file have been labeled.</p> </li>
+        /// <li> <p>Use <code>S3DataSource</code> to specify an input manifest file for both streaming and one-time labeling jobs. Adding an <code>S3DataSource</code> is optional if you use <code>SnsDataSource</code> to create a streaming labeling job.</p> </li>
         /// </ul>
-        /// <p>If you use the Amazon Mechanical Turk workforce, your input data should not include
-        /// confidential information, personal information or protected health information. Use
-        /// <code>ContentClassifiers</code> to specify that your data is free of personally
-        /// identifiable information and adult content.</p>
+        /// <p>If you use the Amazon Mechanical Turk workforce, your input data should not include confidential information, personal information or protected health information. Use <code>ContentClassifiers</code> to specify that your data is free of personally identifiable information and adult content.</p>
         pub fn set_input_config(
             mut self,
             input: std::option::Option<crate::model::LabelingJobInputConfig>,
@@ -6924,14 +6048,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_input_config(input);
             self
         }
-        /// <p>The location of the output data and the Amazon Web Services Key Management Service key ID for the key used to encrypt
-        /// the output data, if any.</p>
+        /// <p>The location of the output data and the Amazon Web Services Key Management Service key ID for the key used to encrypt the output data, if any.</p>
         pub fn output_config(mut self, input: crate::model::LabelingJobOutputConfig) -> Self {
             self.inner = self.inner.output_config(input);
             self
         }
-        /// <p>The location of the output data and the Amazon Web Services Key Management Service key ID for the key used to encrypt
-        /// the output data, if any.</p>
+        /// <p>The location of the output data and the Amazon Web Services Key Management Service key ID for the key used to encrypt the output data, if any.</p>
         pub fn set_output_config(
             mut self,
             input: std::option::Option<crate::model::LabelingJobOutputConfig>,
@@ -6939,69 +6061,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_output_config(input);
             self
         }
-        /// <p>The Amazon Resource Number (ARN) that Amazon SageMaker assumes to perform tasks on your behalf
-        /// during data labeling. You must grant this role the necessary permissions so that Amazon SageMaker
-        /// can successfully complete data labeling.</p>
+        /// <p>The Amazon Resource Number (ARN) that Amazon SageMaker assumes to perform tasks on your behalf during data labeling. You must grant this role the necessary permissions so that Amazon SageMaker can successfully complete data labeling.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Number (ARN) that Amazon SageMaker assumes to perform tasks on your behalf
-        /// during data labeling. You must grant this role the necessary permissions so that Amazon SageMaker
-        /// can successfully complete data labeling.</p>
+        /// <p>The Amazon Resource Number (ARN) that Amazon SageMaker assumes to perform tasks on your behalf during data labeling. You must grant this role the necessary permissions so that Amazon SageMaker can successfully complete data labeling.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
         }
-        /// <p>The S3 URI of the file, referred to as a <i>label category configuration
-        /// file</i>, that defines the categories used to label the data objects.</p>
-        /// <p>For 3D point cloud and video frame task types, you can add label category attributes
-        /// and frame attributes to your label category configuration file. To learn how, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud-label-category-config.html">Create a
-        /// Labeling Category Configuration File for 3D Point Cloud Labeling Jobs</a>. </p>
-        /// <p>For named entity recognition jobs, in addition to <code>"labels"</code>, you must
-        /// provide worker instructions in the label category configuration file using the
-        /// <code>"instructions"</code> parameter: <code>"instructions":
-        /// {"shortInstruction":"<h1>Add header</h1><p>Add Instructions</p>",
-        /// "fullInstruction":"<p>Add additional instructions.</p>"}</code>. For details
-        /// and an example, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-named-entity-recg.html#sms-creating-ner-api">Create a
-        /// Named Entity Recognition Labeling Job (API) </a>.</p>
-        /// <p>For all other <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in task types</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates.html">custom
-        /// tasks</a>, your label category configuration file must be a JSON file in the
-        /// following format. Identify the labels you want to use by replacing <code>label_1</code>,
-        /// <code>label_2</code>,<code>...</code>,<code>label_n</code> with your label
-        /// categories.</p>
-        /// <p>
-        /// <code>{ </code>
-        /// </p>
-        /// <p>
-        /// <code>"document-version": "2018-11-28",</code>
-        /// </p>
-        /// <p>
-        /// <code>"labels": [{"label": "label_1"},{"label": "label_2"},...{"label":
-        /// "label_n"}]</code>
-        /// </p>
-        /// <p>
-        /// <code>}</code>
-        /// </p>
+        /// <p>The S3 URI of the file, referred to as a <i>label category configuration file</i>, that defines the categories used to label the data objects.</p>
+        /// <p>For 3D point cloud and video frame task types, you can add label category attributes and frame attributes to your label category configuration file. To learn how, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud-label-category-config.html">Create a Labeling Category Configuration File for 3D Point Cloud Labeling Jobs</a>. </p>
+        /// <p>For named entity recognition jobs, in addition to <code>"labels"</code>, you must provide worker instructions in the label category configuration file using the <code>"instructions"</code> parameter: <code>"instructions": {"shortInstruction":"</code></p>
+        /// <h1><code>Add header</code></h1>
+        /// <p><code>Add Instructions</code></p><code>", "fullInstruction":"<p>Add additional instructions.</p>"}</code>. For details and an example, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-named-entity-recg.html#sms-creating-ner-api">Create a Named Entity Recognition Labeling Job (API) </a>.
+        /// <p></p>
+        /// <p>For all other <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in task types</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates.html">custom tasks</a>, your label category configuration file must be a JSON file in the following format. Identify the labels you want to use by replacing <code>label_1</code>, <code>label_2</code>,<code>...</code>,<code>label_n</code> with your label categories.</p>
+        /// <p> <code>{ </code> </p>
+        /// <p> <code>"document-version": "2018-11-28",</code> </p>
+        /// <p> <code>"labels": [{"label": "label_1"},{"label": "label_2"},...{"label": "label_n"}]</code> </p>
+        /// <p> <code>}</code> </p>
         /// <p>Note the following about the label category configuration file:</p>
         /// <ul>
-        /// <li>
-        /// <p>For image classification and text classification (single and multi-label) you
-        /// must specify at least two label categories. For all other task types, the
-        /// minimum number of label categories required is one. </p>
-        /// </li>
-        /// <li>
-        /// <p>Each label category must be unique, you cannot specify duplicate label
-        /// categories.</p>
-        /// </li>
-        /// <li>
-        /// <p>If you create a 3D point cloud or video frame adjustment or verification
-        /// labeling job, you must include <code>auditLabelAttributeName</code> in the label
-        /// category configuration. Use this parameter to enter the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateLabelingJob.html#sagemaker-CreateLabelingJob-request-LabelAttributeName">
-        /// <code>LabelAttributeName</code>
-        /// </a> of the labeling job you want to
-        /// adjust or verify annotations of.</p>
-        /// </li>
+        /// <li> <p>For image classification and text classification (single and multi-label) you must specify at least two label categories. For all other task types, the minimum number of label categories required is one. </p> </li>
+        /// <li> <p>Each label category must be unique, you cannot specify duplicate label categories.</p> </li>
+        /// <li> <p>If you create a 3D point cloud or video frame adjustment or verification labeling job, you must include <code>auditLabelAttributeName</code> in the label category configuration. Use this parameter to enter the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateLabelingJob.html#sagemaker-CreateLabelingJob-request-LabelAttributeName"> <code>LabelAttributeName</code> </a> of the labeling job you want to adjust or verify annotations of.</p> </li>
         /// </ul>
         pub fn label_category_config_s3_uri(
             mut self,
@@ -7010,55 +6095,22 @@ pub mod fluent_builders {
             self.inner = self.inner.label_category_config_s3_uri(input.into());
             self
         }
-        /// <p>The S3 URI of the file, referred to as a <i>label category configuration
-        /// file</i>, that defines the categories used to label the data objects.</p>
-        /// <p>For 3D point cloud and video frame task types, you can add label category attributes
-        /// and frame attributes to your label category configuration file. To learn how, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud-label-category-config.html">Create a
-        /// Labeling Category Configuration File for 3D Point Cloud Labeling Jobs</a>. </p>
-        /// <p>For named entity recognition jobs, in addition to <code>"labels"</code>, you must
-        /// provide worker instructions in the label category configuration file using the
-        /// <code>"instructions"</code> parameter: <code>"instructions":
-        /// {"shortInstruction":"<h1>Add header</h1><p>Add Instructions</p>",
-        /// "fullInstruction":"<p>Add additional instructions.</p>"}</code>. For details
-        /// and an example, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-named-entity-recg.html#sms-creating-ner-api">Create a
-        /// Named Entity Recognition Labeling Job (API) </a>.</p>
-        /// <p>For all other <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in task types</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates.html">custom
-        /// tasks</a>, your label category configuration file must be a JSON file in the
-        /// following format. Identify the labels you want to use by replacing <code>label_1</code>,
-        /// <code>label_2</code>,<code>...</code>,<code>label_n</code> with your label
-        /// categories.</p>
-        /// <p>
-        /// <code>{ </code>
-        /// </p>
-        /// <p>
-        /// <code>"document-version": "2018-11-28",</code>
-        /// </p>
-        /// <p>
-        /// <code>"labels": [{"label": "label_1"},{"label": "label_2"},...{"label":
-        /// "label_n"}]</code>
-        /// </p>
-        /// <p>
-        /// <code>}</code>
-        /// </p>
+        /// <p>The S3 URI of the file, referred to as a <i>label category configuration file</i>, that defines the categories used to label the data objects.</p>
+        /// <p>For 3D point cloud and video frame task types, you can add label category attributes and frame attributes to your label category configuration file. To learn how, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud-label-category-config.html">Create a Labeling Category Configuration File for 3D Point Cloud Labeling Jobs</a>. </p>
+        /// <p>For named entity recognition jobs, in addition to <code>"labels"</code>, you must provide worker instructions in the label category configuration file using the <code>"instructions"</code> parameter: <code>"instructions": {"shortInstruction":"</code></p>
+        /// <h1><code>Add header</code></h1>
+        /// <p><code>Add Instructions</code></p><code>", "fullInstruction":"<p>Add additional instructions.</p>"}</code>. For details and an example, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-named-entity-recg.html#sms-creating-ner-api">Create a Named Entity Recognition Labeling Job (API) </a>.
+        /// <p></p>
+        /// <p>For all other <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in task types</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates.html">custom tasks</a>, your label category configuration file must be a JSON file in the following format. Identify the labels you want to use by replacing <code>label_1</code>, <code>label_2</code>,<code>...</code>,<code>label_n</code> with your label categories.</p>
+        /// <p> <code>{ </code> </p>
+        /// <p> <code>"document-version": "2018-11-28",</code> </p>
+        /// <p> <code>"labels": [{"label": "label_1"},{"label": "label_2"},...{"label": "label_n"}]</code> </p>
+        /// <p> <code>}</code> </p>
         /// <p>Note the following about the label category configuration file:</p>
         /// <ul>
-        /// <li>
-        /// <p>For image classification and text classification (single and multi-label) you
-        /// must specify at least two label categories. For all other task types, the
-        /// minimum number of label categories required is one. </p>
-        /// </li>
-        /// <li>
-        /// <p>Each label category must be unique, you cannot specify duplicate label
-        /// categories.</p>
-        /// </li>
-        /// <li>
-        /// <p>If you create a 3D point cloud or video frame adjustment or verification
-        /// labeling job, you must include <code>auditLabelAttributeName</code> in the label
-        /// category configuration. Use this parameter to enter the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateLabelingJob.html#sagemaker-CreateLabelingJob-request-LabelAttributeName">
-        /// <code>LabelAttributeName</code>
-        /// </a> of the labeling job you want to
-        /// adjust or verify annotations of.</p>
-        /// </li>
+        /// <li> <p>For image classification and text classification (single and multi-label) you must specify at least two label categories. For all other task types, the minimum number of label categories required is one. </p> </li>
+        /// <li> <p>Each label category must be unique, you cannot specify duplicate label categories.</p> </li>
+        /// <li> <p>If you create a 3D point cloud or video frame adjustment or verification labeling job, you must include <code>auditLabelAttributeName</code> in the label category configuration. Use this parameter to enter the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateLabelingJob.html#sagemaker-CreateLabelingJob-request-LabelAttributeName"> <code>LabelAttributeName</code> </a> of the labeling job you want to adjust or verify annotations of.</p> </li>
         /// </ul>
         pub fn set_label_category_config_s3_uri(
             mut self,
@@ -7067,9 +6119,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_label_category_config_s3_uri(input);
             self
         }
-        /// <p>A set of conditions for stopping the labeling job. If any of the conditions are met,
-        /// the job is automatically stopped. You can use these conditions to control the cost of
-        /// data labeling.</p>
+        /// <p>A set of conditions for stopping the labeling job. If any of the conditions are met, the job is automatically stopped. You can use these conditions to control the cost of data labeling.</p>
         pub fn stopping_conditions(
             mut self,
             input: crate::model::LabelingJobStoppingConditions,
@@ -7077,9 +6127,7 @@ pub mod fluent_builders {
             self.inner = self.inner.stopping_conditions(input);
             self
         }
-        /// <p>A set of conditions for stopping the labeling job. If any of the conditions are met,
-        /// the job is automatically stopped. You can use these conditions to control the cost of
-        /// data labeling.</p>
+        /// <p>A set of conditions for stopping the labeling job. If any of the conditions are met, the job is automatically stopped. You can use these conditions to control the cost of data labeling.</p>
         pub fn set_stopping_conditions(
             mut self,
             input: std::option::Option<crate::model::LabelingJobStoppingConditions>,
@@ -7120,14 +6168,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>An array of key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management
-        /// User Guide</i>.</p>
+        /// <p>An array of key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>An array of key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management
-        /// User Guide</i>.</p>
+        /// <p>An array of key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -7138,31 +6184,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateModel`.
     ///
-    /// <p>Creates a model in Amazon SageMaker. In the request, you name the model and describe a primary
-    /// container. For the primary container, you specify the Docker image that
-    /// contains inference code, artifacts (from prior training), and a custom environment map
-    /// that the inference code uses when you deploy the model for predictions.</p>
-    /// <p>Use this API to create a model if you want to use Amazon SageMaker hosting services or run a batch
-    /// transform job.</p>
-    /// <p>To host your model, you create an endpoint configuration with the
-    /// <code>CreateEndpointConfig</code> API, and then create an endpoint with the
-    /// <code>CreateEndpoint</code> API. Amazon SageMaker then deploys all of the containers that you
-    /// defined for the model in the hosting environment. </p>
-    /// <p>For an example that calls this method when deploying a model to Amazon SageMaker hosting services,
-    /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html#ex1-deploy-model-boto">Deploy the
-    /// Model to Amazon SageMaker Hosting Services (Amazon Web Services SDK for Python (Boto
-    /// 3)).</a>
-    /// </p>
-    /// <p>To run a batch transform using your model, you start a job with the
-    /// <code>CreateTransformJob</code> API. Amazon SageMaker uses your model and your dataset to get
-    /// inferences which are then saved to a specified S3 location.</p>
-    /// <p>In the <code>CreateModel</code> request, you must define a container with the
-    /// <code>PrimaryContainer</code> parameter.</p>
-    /// <p>In the request, you also provide an IAM role that Amazon SageMaker can assume to access model
-    /// artifacts and docker image for deployment on ML compute hosting instances or for batch
-    /// transform jobs. In addition, you also use the IAM role to manage permissions the
-    /// inference code needs. For example, if the inference code access any other Amazon Web Services resources,
-    /// you grant necessary permissions via this role.</p>
+    /// <p>Creates a model in Amazon SageMaker. In the request, you name the model and describe a primary container. For the primary container, you specify the Docker image that contains inference code, artifacts (from prior training), and a custom environment map that the inference code uses when you deploy the model for predictions.</p>
+    /// <p>Use this API to create a model if you want to use Amazon SageMaker hosting services or run a batch transform job.</p>
+    /// <p>To host your model, you create an endpoint configuration with the <code>CreateEndpointConfig</code> API, and then create an endpoint with the <code>CreateEndpoint</code> API. Amazon SageMaker then deploys all of the containers that you defined for the model in the hosting environment. </p>
+    /// <p>For an example that calls this method when deploying a model to Amazon SageMaker hosting services, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html#ex1-deploy-model-boto">Deploy the Model to Amazon SageMaker Hosting Services (Amazon Web Services SDK for Python (Boto 3)).</a> </p>
+    /// <p>To run a batch transform using your model, you start a job with the <code>CreateTransformJob</code> API. Amazon SageMaker uses your model and your dataset to get inferences which are then saved to a specified S3 location.</p>
+    /// <p>In the <code>CreateModel</code> request, you must define a container with the <code>PrimaryContainer</code> parameter.</p>
+    /// <p>In the request, you also provide an IAM role that Amazon SageMaker can assume to access model artifacts and docker image for deployment on ML compute hosting instances or for batch transform jobs. In addition, you also use the IAM role to manage permissions the inference code needs. For example, if the inference code access any other Amazon Web Services resources, you grant necessary permissions via this role.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateModel<
         C = aws_smithy_client::erase::DynConnector,
@@ -7229,16 +6257,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_model_name(input);
             self
         }
-        /// <p>The location of the primary docker image containing inference code, associated
-        /// artifacts, and custom environment map that the inference code uses when the model is
-        /// deployed for predictions. </p>
+        /// <p>The location of the primary docker image containing inference code, associated artifacts, and custom environment map that the inference code uses when the model is deployed for predictions. </p>
         pub fn primary_container(mut self, input: crate::model::ContainerDefinition) -> Self {
             self.inner = self.inner.primary_container(input);
             self
         }
-        /// <p>The location of the primary docker image containing inference code, associated
-        /// artifacts, and custom environment map that the inference code uses when the model is
-        /// deployed for predictions. </p>
+        /// <p>The location of the primary docker image containing inference code, associated artifacts, and custom environment map that the inference code uses when the model is deployed for predictions. </p>
         pub fn set_primary_container(
             mut self,
             input: std::option::Option<crate::model::ContainerDefinition>,
@@ -7279,27 +6303,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_inference_execution_config(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can assume to access model
-        /// artifacts and docker image for deployment on ML compute instances or for batch transform
-        /// jobs. Deploying on ML compute instances is part of model hosting. For more information,
-        /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker
-        /// Roles</a>. </p>
-        /// <note>
-        /// <p>To be able to pass this role to Amazon SageMaker, the caller of this API must have the
-        /// <code>iam:PassRole</code> permission.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can assume to access model artifacts and docker image for deployment on ML compute instances or for batch transform jobs. Deploying on ML compute instances is part of model hosting. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>. </p> <note>
+        /// <p>To be able to pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission.</p>
         /// </note>
         pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.execution_role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can assume to access model
-        /// artifacts and docker image for deployment on ML compute instances or for batch transform
-        /// jobs. Deploying on ML compute instances is part of model hosting. For more information,
-        /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker
-        /// Roles</a>. </p>
-        /// <note>
-        /// <p>To be able to pass this role to Amazon SageMaker, the caller of this API must have the
-        /// <code>iam:PassRole</code> permission.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can assume to access model artifacts and docker image for deployment on ML compute instances or for batch transform jobs. Deploying on ML compute instances is part of model hosting. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>. </p> <note>
+        /// <p>To be able to pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission.</p>
         /// </note>
         pub fn set_execution_role_arn(
             mut self,
@@ -7312,18 +6324,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in
-        /// different ways, for example, by purpose, owner, or environment. For more information,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
-        /// Resources</a>.</p>
+        /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in
-        /// different ways, for example, by purpose, owner, or environment. For more information,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
-        /// Resources</a>.</p>
+        /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -7331,20 +6337,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>A <a>VpcConfig</a> object that specifies the VPC that you want your model
-        /// to connect to. Control access to and from your model container by configuring the VPC.
-        /// <code>VpcConfig</code> is used in hosting services and in batch transform. For more
-        /// information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual Private Cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-vpc.html">Protect Data in Batch
-        /// Transform Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
+        /// <p>A <code>VpcConfig</code> object that specifies the VPC that you want your model to connect to. Control access to and from your model container by configuring the VPC. <code>VpcConfig</code> is used in hosting services and in batch transform. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual Private Cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-vpc.html">Protect Data in Batch Transform Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
         pub fn vpc_config(mut self, input: crate::model::VpcConfig) -> Self {
             self.inner = self.inner.vpc_config(input);
             self
         }
-        /// <p>A <a>VpcConfig</a> object that specifies the VPC that you want your model
-        /// to connect to. Control access to and from your model container by configuring the VPC.
-        /// <code>VpcConfig</code> is used in hosting services and in batch transform. For more
-        /// information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual Private Cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-vpc.html">Protect Data in Batch
-        /// Transform Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
+        /// <p>A <code>VpcConfig</code> object that specifies the VPC that you want your model to connect to. Control access to and from your model container by configuring the VPC. <code>VpcConfig</code> is used in hosting services and in batch transform. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual Private Cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-vpc.html">Protect Data in Batch Transform Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
         pub fn set_vpc_config(
             mut self,
             input: std::option::Option<crate::model::VpcConfig>,
@@ -7352,14 +6350,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_vpc_config(input);
             self
         }
-        /// <p>Isolates the model container. No inbound or outbound network calls can be made to or
-        /// from the model container.</p>
+        /// <p>Isolates the model container. No inbound or outbound network calls can be made to or from the model container.</p>
         pub fn enable_network_isolation(mut self, input: bool) -> Self {
             self.inner = self.inner.enable_network_isolation(input);
             self
         }
-        /// <p>Isolates the model container. No inbound or outbound network calls can be made to or
-        /// from the model container.</p>
+        /// <p>Isolates the model container. No inbound or outbound network calls can be made to or from the model container.</p>
         pub fn set_enable_network_isolation(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_enable_network_isolation(input);
             self
@@ -7424,14 +6420,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the bias job definition. The name must be unique within an Amazon Web Services Region in the
-        /// Amazon Web Services account.</p>
+        /// <p>The name of the bias job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
         pub fn job_definition_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.job_definition_name(input.into());
             self
         }
-        /// <p>The name of the bias job definition. The name must be unique within an Amazon Web Services Region in the
-        /// Amazon Web Services account.</p>
+        /// <p>The name of the bias job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
         pub fn set_job_definition_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7526,14 +6520,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_network_config(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to
-        /// perform tasks on your behalf.</p>
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to
-        /// perform tasks on your behalf.</p>
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
@@ -7558,14 +6550,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management
-        /// User Guide</i>.</p>
+        /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management
-        /// User Guide</i>.</p>
+        /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -7635,14 +6625,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> The name of the model explainability job definition. The name must be unique within an
-        /// Amazon Web Services Region in the Amazon Web Services account.</p>
+        /// <p> The name of the model explainability job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
         pub fn job_definition_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.job_definition_name(input.into());
             self
         }
-        /// <p> The name of the model explainability job definition. The name must be unique within an
-        /// Amazon Web Services Region in the Amazon Web Services account.</p>
+        /// <p> The name of the model explainability job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
         pub fn set_job_definition_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7666,8 +6654,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_model_explainability_baseline_config(input);
             self
         }
-        /// <p>Configures the model explainability job to run a specified Docker container
-        /// image.</p>
+        /// <p>Configures the model explainability job to run a specified Docker container image.</p>
         pub fn model_explainability_app_specification(
             mut self,
             input: crate::model::ModelExplainabilityAppSpecification,
@@ -7675,8 +6662,7 @@ pub mod fluent_builders {
             self.inner = self.inner.model_explainability_app_specification(input);
             self
         }
-        /// <p>Configures the model explainability job to run a specified Docker container
-        /// image.</p>
+        /// <p>Configures the model explainability job to run a specified Docker container image.</p>
         pub fn set_model_explainability_app_specification(
             mut self,
             input: std::option::Option<crate::model::ModelExplainabilityAppSpecification>,
@@ -7742,14 +6728,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_network_config(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to
-        /// perform tasks on your behalf.</p>
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to
-        /// perform tasks on your behalf.</p>
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
@@ -7774,14 +6758,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management
-        /// User Guide</i>.</p>
+        /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management
-        /// User Guide</i>.</p>
+        /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -7792,24 +6774,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateModelPackage`.
     ///
-    /// <p>Creates a model package that you can use to create Amazon SageMaker models or list on Amazon Web Services
-    /// Marketplace, or a versioned model that is part of a model group. Buyers can subscribe to
-    /// model packages listed on Amazon Web Services Marketplace to create models in Amazon SageMaker.</p>
-    /// <p>To create a model package by specifying a Docker container that contains your
-    /// inference code and the Amazon S3 location of your model artifacts, provide values for
-    /// <code>InferenceSpecification</code>. To create a model from an algorithm resource
-    /// that you created or subscribed to in Amazon Web Services Marketplace, provide a value for
-    /// <code>SourceAlgorithmSpecification</code>.</p>
-    /// <note>
+    /// <p>Creates a model package that you can use to create Amazon SageMaker models or list on Amazon Web Services Marketplace, or a versioned model that is part of a model group. Buyers can subscribe to model packages listed on Amazon Web Services Marketplace to create models in Amazon SageMaker.</p>
+    /// <p>To create a model package by specifying a Docker container that contains your inference code and the Amazon S3 location of your model artifacts, provide values for <code>InferenceSpecification</code>. To create a model from an algorithm resource that you created or subscribed to in Amazon Web Services Marketplace, provide a value for <code>SourceAlgorithmSpecification</code>.</p> <note>
     /// <p>There are two types of model packages:</p>
     /// <ul>
-    /// <li>
-    /// <p>Versioned - a model that is part of a model group in the model
-    /// registry.</p>
-    /// </li>
-    /// <li>
-    /// <p>Unversioned - a model package that is not part of a model group.</p>
-    /// </li>
+    /// <li> <p>Versioned - a model that is part of a model group in the model registry.</p> </li>
+    /// <li> <p>Unversioned - a model package that is not part of a model group.</p> </li>
     /// </ul>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -7868,18 +6838,14 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the model package. The name must have 1 to 63 characters. Valid characters
-        /// are a-z, A-Z, 0-9, and - (hyphen).</p>
-        /// <p>This parameter is required for unversioned models. It is not applicable to versioned
-        /// models.</p>
+        /// <p>The name of the model package. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).</p>
+        /// <p>This parameter is required for unversioned models. It is not applicable to versioned models.</p>
         pub fn model_package_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.model_package_name(input.into());
             self
         }
-        /// <p>The name of the model package. The name must have 1 to 63 characters. Valid characters
-        /// are a-z, A-Z, 0-9, and - (hyphen).</p>
-        /// <p>This parameter is required for unversioned models. It is not applicable to versioned
-        /// models.</p>
+        /// <p>The name of the model package. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).</p>
+        /// <p>This parameter is required for unversioned models. It is not applicable to versioned models.</p>
         pub fn set_model_package_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7888,15 +6854,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name or Amazon Resource Name (ARN) of the model package group that this model version belongs to.</p>
-        /// <p>This parameter is required for versioned models, and does not apply to unversioned
-        /// models.</p>
+        /// <p>This parameter is required for versioned models, and does not apply to unversioned models.</p>
         pub fn model_package_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.model_package_group_name(input.into());
             self
         }
         /// <p>The name or Amazon Resource Name (ARN) of the model package group that this model version belongs to.</p>
-        /// <p>This parameter is required for versioned models, and does not apply to unversioned
-        /// models.</p>
+        /// <p>This parameter is required for versioned models, and does not apply to unversioned models.</p>
         pub fn set_model_package_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7917,21 +6881,11 @@ pub mod fluent_builders {
             self.inner = self.inner.set_model_package_description(input);
             self
         }
-        /// <p>Specifies details about inference jobs that can be run with models based on this model
-        /// package, including the following:</p>
+        /// <p>Specifies details about inference jobs that can be run with models based on this model package, including the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>The Amazon ECR paths of containers that contain the inference code and model
-        /// artifacts.</p>
-        /// </li>
-        /// <li>
-        /// <p>The instance types that the model package supports for transform jobs and
-        /// real-time endpoints used for inference.</p>
-        /// </li>
-        /// <li>
-        /// <p>The input and output content formats that the model package supports for
-        /// inference.</p>
-        /// </li>
+        /// <li> <p>The Amazon ECR paths of containers that contain the inference code and model artifacts.</p> </li>
+        /// <li> <p>The instance types that the model package supports for transform jobs and real-time endpoints used for inference.</p> </li>
+        /// <li> <p>The input and output content formats that the model package supports for inference.</p> </li>
         /// </ul>
         pub fn inference_specification(
             mut self,
@@ -7940,21 +6894,11 @@ pub mod fluent_builders {
             self.inner = self.inner.inference_specification(input);
             self
         }
-        /// <p>Specifies details about inference jobs that can be run with models based on this model
-        /// package, including the following:</p>
+        /// <p>Specifies details about inference jobs that can be run with models based on this model package, including the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>The Amazon ECR paths of containers that contain the inference code and model
-        /// artifacts.</p>
-        /// </li>
-        /// <li>
-        /// <p>The instance types that the model package supports for transform jobs and
-        /// real-time endpoints used for inference.</p>
-        /// </li>
-        /// <li>
-        /// <p>The input and output content formats that the model package supports for
-        /// inference.</p>
-        /// </li>
+        /// <li> <p>The Amazon ECR paths of containers that contain the inference code and model artifacts.</p> </li>
+        /// <li> <p>The instance types that the model package supports for transform jobs and real-time endpoints used for inference.</p> </li>
+        /// <li> <p>The input and output content formats that the model package supports for inference.</p> </li>
         /// </ul>
         pub fn set_inference_specification(
             mut self,
@@ -7963,8 +6907,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_inference_specification(input);
             self
         }
-        /// <p>Specifies configurations for one or more transform jobs that Amazon SageMaker runs to test the
-        /// model package.</p>
+        /// <p>Specifies configurations for one or more transform jobs that Amazon SageMaker runs to test the model package.</p>
         pub fn validation_specification(
             mut self,
             input: crate::model::ModelPackageValidationSpecification,
@@ -7972,8 +6915,7 @@ pub mod fluent_builders {
             self.inner = self.inner.validation_specification(input);
             self
         }
-        /// <p>Specifies configurations for one or more transform jobs that Amazon SageMaker runs to test the
-        /// model package.</p>
+        /// <p>Specifies configurations for one or more transform jobs that Amazon SageMaker runs to test the model package.</p>
         pub fn set_validation_specification(
             mut self,
             input: std::option::Option<crate::model::ModelPackageValidationSpecification>,
@@ -7998,15 +6940,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether to certify the model package for listing on Amazon Web Services Marketplace.</p>
-        /// <p>This parameter is optional for unversioned models, and does not apply to versioned
-        /// models.</p>
+        /// <p>This parameter is optional for unversioned models, and does not apply to versioned models.</p>
         pub fn certify_for_marketplace(mut self, input: bool) -> Self {
             self.inner = self.inner.certify_for_marketplace(input);
             self
         }
         /// <p>Whether to certify the model package for listing on Amazon Web Services Marketplace.</p>
-        /// <p>This parameter is optional for unversioned models, and does not apply to versioned
-        /// models.</p>
+        /// <p>This parameter is optional for unversioned models, and does not apply to versioned models.</p>
         pub fn set_certify_for_marketplace(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_certify_for_marketplace(input);
             self
@@ -8015,14 +6955,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of key value pairs associated with the model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
-        /// resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
+        /// <p>A list of key value pairs associated with the model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>A list of key value pairs associated with the model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
-        /// resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
+        /// <p>A list of key value pairs associated with the model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -8031,19 +6969,15 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether the model is approved for deployment.</p>
-        /// <p>This parameter is optional for versioned models, and does not apply to unversioned
-        /// models.</p>
-        /// <p>For versioned models, the value of this parameter must be set to <code>Approved</code>
-        /// to deploy the model.</p>
+        /// <p>This parameter is optional for versioned models, and does not apply to unversioned models.</p>
+        /// <p>For versioned models, the value of this parameter must be set to <code>Approved</code> to deploy the model.</p>
         pub fn model_approval_status(mut self, input: crate::model::ModelApprovalStatus) -> Self {
             self.inner = self.inner.model_approval_status(input);
             self
         }
         /// <p>Whether the model is approved for deployment.</p>
-        /// <p>This parameter is optional for versioned models, and does not apply to unversioned
-        /// models.</p>
-        /// <p>For versioned models, the value of this parameter must be set to <code>Approved</code>
-        /// to deploy the model.</p>
+        /// <p>This parameter is optional for versioned models, and does not apply to unversioned models.</p>
+        /// <p>For versioned models, the value of this parameter must be set to <code>Approved</code> to deploy the model.</p>
         pub fn set_model_approval_status(
             mut self,
             input: std::option::Option<crate::model::ModelApprovalStatus>,
@@ -8110,16 +7044,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_customer_metadata_properties(input);
             self
         }
-        /// <p>Represents the drift check baselines that can be used when the model monitor is set using the model package.
-        /// For more information, see the topic on <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon SageMaker Developer Guide</i>.
-        /// </p>
+        /// <p>Represents the drift check baselines that can be used when the model monitor is set using the model package. For more information, see the topic on <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon SageMaker Developer Guide</i>. </p>
         pub fn drift_check_baselines(mut self, input: crate::model::DriftCheckBaselines) -> Self {
             self.inner = self.inner.drift_check_baselines(input);
             self
         }
-        /// <p>Represents the drift check baselines that can be used when the model monitor is set using the model package.
-        /// For more information, see the topic on <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon SageMaker Developer Guide</i>.
-        /// </p>
+        /// <p>Represents the drift check baselines that can be used when the model monitor is set using the model package. For more information, see the topic on <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon SageMaker Developer Guide</i>. </p>
         pub fn set_drift_check_baselines(
             mut self,
             input: std::option::Option<crate::model::DriftCheckBaselines>,
@@ -8127,38 +7057,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_drift_check_baselines(input);
             self
         }
-        /// <p>The machine learning domain of your model package and its components. Common
-        /// machine learning domains include computer vision and natural language processing.</p>
+        /// <p>The machine learning domain of your model package and its components. Common machine learning domains include computer vision and natural language processing.</p>
         pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain(input.into());
             self
         }
-        /// <p>The machine learning domain of your model package and its components. Common
-        /// machine learning domains include computer vision and natural language processing.</p>
+        /// <p>The machine learning domain of your model package and its components. Common machine learning domains include computer vision and natural language processing.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p>The machine learning task your model package accomplishes. Common machine
-        /// learning tasks include object detection and image classification.</p>
+        /// <p>The machine learning task your model package accomplishes. Common machine learning tasks include object detection and image classification.</p>
         pub fn task(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.task(input.into());
             self
         }
-        /// <p>The machine learning task your model package accomplishes. Common machine
-        /// learning tasks include object detection and image classification.</p>
+        /// <p>The machine learning task your model package accomplishes. Common machine learning tasks include object detection and image classification.</p>
         pub fn set_task(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_task(input);
             self
         }
-        /// <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload are stored. This path must point
-        /// to a single gzip compressed tar archive (.tar.gz suffix).</p>
+        /// <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload are stored. This path must point to a single gzip compressed tar archive (.tar.gz suffix).</p>
         pub fn sample_payload_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.sample_payload_url(input.into());
             self
         }
-        /// <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload are stored. This path must point
-        /// to a single gzip compressed tar archive (.tar.gz suffix).</p>
+        /// <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload are stored. This path must point to a single gzip compressed tar archive (.tar.gz suffix).</p>
         pub fn set_sample_payload_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8170,10 +7094,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_additional_inference_specifications`](Self::set_additional_inference_specifications).
         ///
-        /// <p>An array of additional Inference Specification objects. Each additional
-        /// Inference Specification specifies artifacts based on this model package that can
-        /// be used on inference endpoints. Generally used with SageMaker Neo to store the
-        /// compiled artifacts. </p>
+        /// <p>An array of additional Inference Specification objects. Each additional Inference Specification specifies artifacts based on this model package that can be used on inference endpoints. Generally used with SageMaker Neo to store the compiled artifacts. </p>
         pub fn additional_inference_specifications(
             mut self,
             input: crate::model::AdditionalInferenceSpecificationDefinition,
@@ -8181,10 +7102,7 @@ pub mod fluent_builders {
             self.inner = self.inner.additional_inference_specifications(input);
             self
         }
-        /// <p>An array of additional Inference Specification objects. Each additional
-        /// Inference Specification specifies artifacts based on this model package that can
-        /// be used on inference endpoints. Generally used with SageMaker Neo to store the
-        /// compiled artifacts. </p>
+        /// <p>An array of additional Inference Specification objects. Each additional Inference Specification specifies artifacts based on this model package that can be used on inference endpoints. Generally used with SageMaker Neo to store the compiled artifacts. </p>
         pub fn set_additional_inference_specifications(
             mut self,
             input: std::option::Option<
@@ -8287,16 +7205,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of key value pairs associated with the model group. For more information, see
-        /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
-        /// resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
+        /// <p>A list of key value pairs associated with the model group. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>A list of key value pairs associated with the model group. For more information, see
-        /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
-        /// resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
+        /// <p>A list of key value pairs associated with the model group. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -8307,8 +7221,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateModelQualityJobDefinition`.
     ///
-    /// <p>Creates a definition for a job that monitors model quality and drift. For information
-    /// about model monitor, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html">Amazon SageMaker Model Monitor</a>.</p>
+    /// <p>Creates a definition for a job that monitors model quality and drift. For information about model monitor, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html">Amazon SageMaker Model Monitor</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateModelQualityJobDefinition<
         C = aws_smithy_client::erase::DynConnector,
@@ -8468,14 +7381,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_network_config(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to
-        /// perform tasks on your behalf.</p>
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to
-        /// perform tasks on your behalf.</p>
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
@@ -8500,14 +7411,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management
-        /// User Guide</i>.</p>
+        /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management
-        /// User Guide</i>.</p>
+        /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -8518,8 +7427,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateMonitoringSchedule`.
     ///
-    /// <p>Creates a schedule that regularly starts Amazon SageMaker Processing Jobs to monitor the data
-    /// captured for an Amazon SageMaker Endoint.</p>
+    /// <p>Creates a schedule that regularly starts Amazon SageMaker Processing Jobs to monitor the data captured for an Amazon SageMaker Endoint.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateMonitoringSchedule<
         C = aws_smithy_client::erase::DynConnector,
@@ -8576,14 +7484,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the monitoring schedule. The name must be unique within an Amazon Web Services Region within
-        /// an Amazon Web Services account.</p>
+        /// <p>The name of the monitoring schedule. The name must be unique within an Amazon Web Services Region within an Amazon Web Services account.</p>
         pub fn monitoring_schedule_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.monitoring_schedule_name(input.into());
             self
         }
-        /// <p>The name of the monitoring schedule. The name must be unique within an Amazon Web Services Region within
-        /// an Amazon Web Services account.</p>
+        /// <p>The name of the monitoring schedule. The name must be unique within an Amazon Web Services Region within an Amazon Web Services account.</p>
         pub fn set_monitoring_schedule_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8591,8 +7497,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_monitoring_schedule_name(input);
             self
         }
-        /// <p>The configuration object that specifies the monitoring schedule and defines the
-        /// monitoring job.</p>
+        /// <p>The configuration object that specifies the monitoring schedule and defines the monitoring job.</p>
         pub fn monitoring_schedule_config(
             mut self,
             input: crate::model::MonitoringScheduleConfig,
@@ -8600,8 +7505,7 @@ pub mod fluent_builders {
             self.inner = self.inner.monitoring_schedule_config(input);
             self
         }
-        /// <p>The configuration object that specifies the monitoring schedule and defines the
-        /// monitoring job.</p>
+        /// <p>The configuration object that specifies the monitoring schedule and defines the monitoring job.</p>
         pub fn set_monitoring_schedule_config(
             mut self,
             input: std::option::Option<crate::model::MonitoringScheduleConfig>,
@@ -8613,14 +7517,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>(Optional) An array of key-value pairs. For more information, see <a href=" https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management
-        /// User Guide</i>.</p>
+        /// <p>(Optional) An array of key-value pairs. For more information, see <a href=" https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>(Optional) An array of key-value pairs. For more information, see <a href=" https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management
-        /// User Guide</i>.</p>
+        /// <p>(Optional) An array of key-value pairs. For more information, see <a href=" https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -8631,42 +7533,17 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateNotebookInstance`.
     ///
-    /// <p>Creates an Amazon SageMaker notebook instance. A notebook instance is a machine learning (ML)
-    /// compute instance running on a Jupyter notebook. </p>
-    /// <p>In a <code>CreateNotebookInstance</code> request, specify the type of ML compute
-    /// instance that you want to run. Amazon SageMaker launches the instance, installs common libraries
-    /// that you can use to explore datasets for model training, and attaches an ML storage
-    /// volume to the notebook instance. </p>
-    /// <p>Amazon SageMaker also provides a set of example notebooks. Each notebook demonstrates how to
-    /// use Amazon SageMaker with a specific algorithm or with a machine learning framework. </p>
+    /// <p>Creates an Amazon SageMaker notebook instance. A notebook instance is a machine learning (ML) compute instance running on a Jupyter notebook. </p>
+    /// <p>In a <code>CreateNotebookInstance</code> request, specify the type of ML compute instance that you want to run. Amazon SageMaker launches the instance, installs common libraries that you can use to explore datasets for model training, and attaches an ML storage volume to the notebook instance. </p>
+    /// <p>Amazon SageMaker also provides a set of example notebooks. Each notebook demonstrates how to use Amazon SageMaker with a specific algorithm or with a machine learning framework. </p>
     /// <p>After receiving the request, Amazon SageMaker does the following:</p>
     /// <ol>
-    /// <li>
-    /// <p>Creates a network interface in the Amazon SageMaker VPC.</p>
-    /// </li>
-    /// <li>
-    /// <p>(Option) If you specified <code>SubnetId</code>, Amazon SageMaker creates a network
-    /// interface in your own VPC, which is inferred from the subnet ID that you provide
-    /// in the input. When creating this network interface, Amazon SageMaker attaches the security
-    /// group that you specified in the request to the network interface that it creates
-    /// in your VPC.</p>
-    ///
-    /// </li>
-    /// <li>
-    /// <p>Launches an EC2 instance of the type specified in the request in the Amazon SageMaker
-    /// VPC. If you specified <code>SubnetId</code> of your VPC, Amazon SageMaker specifies both
-    /// network interfaces when launching this instance. This enables inbound traffic
-    /// from your own VPC to the notebook instance, assuming that the security groups
-    /// allow it.</p>
-    /// </li>
+    /// <li> <p>Creates a network interface in the Amazon SageMaker VPC.</p> </li>
+    /// <li> <p>(Option) If you specified <code>SubnetId</code>, Amazon SageMaker creates a network interface in your own VPC, which is inferred from the subnet ID that you provide in the input. When creating this network interface, Amazon SageMaker attaches the security group that you specified in the request to the network interface that it creates in your VPC.</p> </li>
+    /// <li> <p>Launches an EC2 instance of the type specified in the request in the Amazon SageMaker VPC. If you specified <code>SubnetId</code> of your VPC, Amazon SageMaker specifies both network interfaces when launching this instance. This enables inbound traffic from your own VPC to the notebook instance, assuming that the security groups allow it.</p> </li>
     /// </ol>
-    ///
-    /// <p>After creating the notebook instance, Amazon SageMaker returns its Amazon Resource Name (ARN).
-    /// You can't change the name of a notebook instance after you create it.</p>
-    /// <p>After Amazon SageMaker creates the notebook instance, you can connect to the Jupyter server and
-    /// work in Jupyter notebooks. For example, you can write code to explore a dataset that you
-    /// can use for model training, train a model, host models by creating Amazon SageMaker endpoints, and
-    /// validate hosted models. </p>
+    /// <p>After creating the notebook instance, Amazon SageMaker returns its Amazon Resource Name (ARN). You can't change the name of a notebook instance after you create it.</p>
+    /// <p>After Amazon SageMaker creates the notebook instance, you can connect to the Jupyter server and work in Jupyter notebooks. For example, you can write code to explore a dataset that you can use for model training, train a model, host models by creating Amazon SageMaker endpoints, and validate hosted models. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How It Works</a>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateNotebookInstance<
@@ -8750,14 +7627,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_type(input);
             self
         }
-        /// <p>The ID of the subnet in a VPC to which you would like to have a connectivity from
-        /// your ML compute instance. </p>
+        /// <p>The ID of the subnet in a VPC to which you would like to have a connectivity from your ML compute instance. </p>
         pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.subnet_id(input.into());
             self
         }
-        /// <p>The ID of the subnet in a VPC to which you would like to have a connectivity from
-        /// your ML compute instance. </p>
+        /// <p>The ID of the subnet in a VPC to which you would like to have a connectivity from your ML compute instance. </p>
         pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_subnet_id(input);
             self
@@ -8766,14 +7641,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
         ///
-        /// <p>The VPC security group IDs, in the form sg-xxxxxxxx. The security groups must be
-        /// for the same VPC as specified in the subnet. </p>
+        /// <p>The VPC security group IDs, in the form sg-xxxxxxxx. The security groups must be for the same VPC as specified in the subnet. </p>
         pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.security_group_ids(input.into());
             self
         }
-        /// <p>The VPC security group IDs, in the form sg-xxxxxxxx. The security groups must be
-        /// for the same VPC as specified in the subnet. </p>
+        /// <p>The VPC security group IDs, in the form sg-xxxxxxxx. The security groups must be for the same VPC as specified in the subnet. </p>
         pub fn set_security_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8781,44 +7654,26 @@ pub mod fluent_builders {
             self.inner = self.inner.set_security_group_ids(input);
             self
         }
-        /// <p> When you send any requests to Amazon Web Services resources from the notebook instance, Amazon SageMaker
-        /// assumes this role to perform tasks on your behalf. You must grant this role necessary
-        /// permissions so Amazon SageMaker can perform these tasks. The policy must allow the Amazon SageMaker service
-        /// principal (sagemaker.amazonaws.com) permissions to assume this role. For more
-        /// information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>. </p>
-        /// <note>
-        /// <p>To be able to pass this role to Amazon SageMaker, the caller of this API must have the
-        /// <code>iam:PassRole</code> permission.</p>
+        /// <p> When you send any requests to Amazon Web Services resources from the notebook instance, Amazon SageMaker assumes this role to perform tasks on your behalf. You must grant this role necessary permissions so Amazon SageMaker can perform these tasks. The policy must allow the Amazon SageMaker service principal (sagemaker.amazonaws.com) permissions to assume this role. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>. </p> <note>
+        /// <p>To be able to pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission.</p>
         /// </note>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p> When you send any requests to Amazon Web Services resources from the notebook instance, Amazon SageMaker
-        /// assumes this role to perform tasks on your behalf. You must grant this role necessary
-        /// permissions so Amazon SageMaker can perform these tasks. The policy must allow the Amazon SageMaker service
-        /// principal (sagemaker.amazonaws.com) permissions to assume this role. For more
-        /// information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>. </p>
-        /// <note>
-        /// <p>To be able to pass this role to Amazon SageMaker, the caller of this API must have the
-        /// <code>iam:PassRole</code> permission.</p>
+        /// <p> When you send any requests to Amazon Web Services resources from the notebook instance, Amazon SageMaker assumes this role to perform tasks on your behalf. You must grant this role necessary permissions so Amazon SageMaker can perform these tasks. The policy must allow the Amazon SageMaker service principal (sagemaker.amazonaws.com) permissions to assume this role. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>. </p> <note>
+        /// <p>To be able to pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission.</p>
         /// </note>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that Amazon SageMaker uses to encrypt data on
-        /// the storage volume attached to your notebook instance. The KMS key you provide must be
-        /// enabled. For information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling and Disabling
-        /// Keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that Amazon SageMaker uses to encrypt data on the storage volume attached to your notebook instance. The KMS key you provide must be enabled. For information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling and Disabling Keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_key_id(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that Amazon SageMaker uses to encrypt data on
-        /// the storage volume attached to your notebook instance. The KMS key you provide must be
-        /// enabled. For information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling and Disabling
-        /// Keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that Amazon SageMaker uses to encrypt data on the storage volume attached to your notebook instance. The KMS key you provide must be enabled. For information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling and Disabling Keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_kms_key_id(input);
             self
@@ -8827,18 +7682,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in
-        /// different ways, for example, by purpose, owner, or environment. For more information,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
-        /// Resources</a>.</p>
+        /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in
-        /// different ways, for example, by purpose, owner, or environment. For more information,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
-        /// Resources</a>.</p>
+        /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -8846,16 +7695,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>The name of a lifecycle configuration to associate with the notebook instance. For
-        /// information about lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional)
-        /// Customize a Notebook Instance</a>.</p>
+        /// <p>The name of a lifecycle configuration to associate with the notebook instance. For information about lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional) Customize a Notebook Instance</a>.</p>
         pub fn lifecycle_config_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.lifecycle_config_name(input.into());
             self
         }
-        /// <p>The name of a lifecycle configuration to associate with the notebook instance. For
-        /// information about lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional)
-        /// Customize a Notebook Instance</a>.</p>
+        /// <p>The name of a lifecycle configuration to associate with the notebook instance. For information about lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional) Customize a Notebook Instance</a>.</p>
         pub fn set_lifecycle_config_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8863,24 +7708,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_lifecycle_config_name(input);
             self
         }
-        /// <p>Sets whether Amazon SageMaker provides internet access to the notebook instance. If you set this
-        /// to <code>Disabled</code> this notebook instance is able to access resources only in your
-        /// VPC, and is not be able to connect to Amazon SageMaker training and endpoint services unless you
-        /// configure a NAT Gateway in your VPC.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook Instances Are Internet-Enabled by Default</a>. You can set the value
-        /// of this parameter to <code>Disabled</code> only if you set a value for the
-        /// <code>SubnetId</code> parameter.</p>
+        /// <p>Sets whether Amazon SageMaker provides internet access to the notebook instance. If you set this to <code>Disabled</code> this notebook instance is able to access resources only in your VPC, and is not be able to connect to Amazon SageMaker training and endpoint services unless you configure a NAT Gateway in your VPC.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook Instances Are Internet-Enabled by Default</a>. You can set the value of this parameter to <code>Disabled</code> only if you set a value for the <code>SubnetId</code> parameter.</p>
         pub fn direct_internet_access(mut self, input: crate::model::DirectInternetAccess) -> Self {
             self.inner = self.inner.direct_internet_access(input);
             self
         }
-        /// <p>Sets whether Amazon SageMaker provides internet access to the notebook instance. If you set this
-        /// to <code>Disabled</code> this notebook instance is able to access resources only in your
-        /// VPC, and is not be able to connect to Amazon SageMaker training and endpoint services unless you
-        /// configure a NAT Gateway in your VPC.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook Instances Are Internet-Enabled by Default</a>. You can set the value
-        /// of this parameter to <code>Disabled</code> only if you set a value for the
-        /// <code>SubnetId</code> parameter.</p>
+        /// <p>Sets whether Amazon SageMaker provides internet access to the notebook instance. If you set this to <code>Disabled</code> this notebook instance is able to access resources only in your VPC, and is not be able to connect to Amazon SageMaker training and endpoint services unless you configure a NAT Gateway in your VPC.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook Instances Are Internet-Enabled by Default</a>. You can set the value of this parameter to <code>Disabled</code> only if you set a value for the <code>SubnetId</code> parameter.</p>
         pub fn set_direct_internet_access(
             mut self,
             input: std::option::Option<crate::model::DirectInternetAccess>,
@@ -8888,14 +7723,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_direct_internet_access(input);
             self
         }
-        /// <p>The size, in GB, of the ML storage volume to attach to the notebook instance. The
-        /// default value is 5 GB.</p>
+        /// <p>The size, in GB, of the ML storage volume to attach to the notebook instance. The default value is 5 GB.</p>
         pub fn volume_size_in_gb(mut self, input: i32) -> Self {
             self.inner = self.inner.volume_size_in_gb(input);
             self
         }
-        /// <p>The size, in GB, of the ML storage volume to attach to the notebook instance. The
-        /// default value is 5 GB.</p>
+        /// <p>The size, in GB, of the ML storage volume to attach to the notebook instance. The default value is 5 GB.</p>
         pub fn set_volume_size_in_gb(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_volume_size_in_gb(input);
             self
@@ -8904,9 +7737,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_accelerator_types`](Self::set_accelerator_types).
         ///
-        /// <p>A list of Elastic Inference (EI) instance types to associate with this notebook
-        /// instance. Currently, only one instance type can be associated with a notebook instance.
-        /// For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.</p>
+        /// <p>A list of Elastic Inference (EI) instance types to associate with this notebook instance. Currently, only one instance type can be associated with a notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.</p>
         pub fn accelerator_types(
             mut self,
             input: crate::model::NotebookInstanceAcceleratorType,
@@ -8914,9 +7745,7 @@ pub mod fluent_builders {
             self.inner = self.inner.accelerator_types(input);
             self
         }
-        /// <p>A list of Elastic Inference (EI) instance types to associate with this notebook
-        /// instance. Currently, only one instance type can be associated with a notebook instance.
-        /// For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.</p>
+        /// <p>A list of Elastic Inference (EI) instance types to associate with this notebook instance. Currently, only one instance type can be associated with a notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.</p>
         pub fn set_accelerator_types(
             mut self,
             input: std::option::Option<
@@ -8926,22 +7755,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_accelerator_types(input);
             self
         }
-        /// <p>A Git repository to associate with the notebook instance as its default code
-        /// repository. This can be either the name of a Git repository stored as a resource in your
-        /// account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any
-        /// other Git repository. When you open a notebook instance, it opens in the directory that
-        /// contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon SageMaker
-        /// Notebook Instances</a>.</p>
+        /// <p>A Git repository to associate with the notebook instance as its default code repository. This can be either the name of a Git repository stored as a resource in your account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the directory that contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
         pub fn default_code_repository(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.default_code_repository(input.into());
             self
         }
-        /// <p>A Git repository to associate with the notebook instance as its default code
-        /// repository. This can be either the name of a Git repository stored as a resource in your
-        /// account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any
-        /// other Git repository. When you open a notebook instance, it opens in the directory that
-        /// contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon SageMaker
-        /// Notebook Instances</a>.</p>
+        /// <p>A Git repository to associate with the notebook instance as its default code repository. This can be either the name of a Git repository stored as a resource in your account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the directory that contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
         pub fn set_default_code_repository(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8953,12 +7772,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_additional_code_repositories`](Self::set_additional_code_repositories).
         ///
-        /// <p>An array of up to three Git repositories to associate with the notebook instance.
-        /// These can be either the names of Git repositories stored as resources in your account,
-        /// or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any
-        /// other Git repository. These repositories are cloned at the same level as the default
-        /// repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git
-        /// Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+        /// <p>An array of up to three Git repositories to associate with the notebook instance. These can be either the names of Git repositories stored as resources in your account, or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the default repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
         pub fn additional_code_repositories(
             mut self,
             input: impl Into<std::string::String>,
@@ -8966,12 +7780,7 @@ pub mod fluent_builders {
             self.inner = self.inner.additional_code_repositories(input.into());
             self
         }
-        /// <p>An array of up to three Git repositories to associate with the notebook instance.
-        /// These can be either the names of Git repositories stored as resources in your account,
-        /// or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any
-        /// other Git repository. These repositories are cloned at the same level as the default
-        /// repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git
-        /// Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+        /// <p>An array of up to three Git repositories to associate with the notebook instance. These can be either the names of Git repositories stored as resources in your account, or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the default repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
         pub fn set_additional_code_repositories(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8979,25 +7788,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_additional_code_repositories(input);
             self
         }
-        /// <p>Whether root access is enabled or disabled for users of the notebook instance. The
-        /// default value is <code>Enabled</code>.</p>
-        /// <note>
-        /// <p>Lifecycle configurations need root access to be able to set up a notebook
-        /// instance. Because of this, lifecycle configurations associated with a notebook
-        /// instance always run with root access even if you disable root access for
-        /// users.</p>
+        /// <p>Whether root access is enabled or disabled for users of the notebook instance. The default value is <code>Enabled</code>.</p> <note>
+        /// <p>Lifecycle configurations need root access to be able to set up a notebook instance. Because of this, lifecycle configurations associated with a notebook instance always run with root access even if you disable root access for users.</p>
         /// </note>
         pub fn root_access(mut self, input: crate::model::RootAccess) -> Self {
             self.inner = self.inner.root_access(input);
             self
         }
-        /// <p>Whether root access is enabled or disabled for users of the notebook instance. The
-        /// default value is <code>Enabled</code>.</p>
-        /// <note>
-        /// <p>Lifecycle configurations need root access to be able to set up a notebook
-        /// instance. Because of this, lifecycle configurations associated with a notebook
-        /// instance always run with root access even if you disable root access for
-        /// users.</p>
+        /// <p>Whether root access is enabled or disabled for users of the notebook instance. The default value is <code>Enabled</code>.</p> <note>
+        /// <p>Lifecycle configurations need root access to be able to set up a notebook instance. Because of this, lifecycle configurations associated with a notebook instance always run with root access even if you disable root access for users.</p>
         /// </note>
         pub fn set_root_access(
             mut self,
@@ -9022,20 +7821,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateNotebookInstanceLifecycleConfig`.
     ///
-    /// <p>Creates a lifecycle configuration that you can associate with a notebook instance. A
-    /// <i>lifecycle configuration</i> is a collection of shell scripts that
-    /// run when you create or start a notebook instance.</p>
+    /// <p>Creates a lifecycle configuration that you can associate with a notebook instance. A <i>lifecycle configuration</i> is a collection of shell scripts that run when you create or start a notebook instance.</p>
     /// <p>Each lifecycle configuration script has a limit of 16384 characters.</p>
-    /// <p>The value of the <code>$PATH</code> environment variable that is available to both
-    /// scripts is <code>/sbin:bin:/usr/sbin:/usr/bin</code>.</p>
-    /// <p>View CloudWatch Logs for notebook instance lifecycle configurations in log group
-    /// <code>/aws/sagemaker/NotebookInstances</code> in log stream
-    /// <code>[notebook-instance-name]/[LifecycleConfigHook]</code>.</p>
-    /// <p>Lifecycle configuration scripts cannot run for longer than 5 minutes. If a script runs
-    /// for longer than 5 minutes, it fails and the notebook instance is not created or
-    /// started.</p>
-    /// <p>For information about notebook instance lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
-    /// 2.1: (Optional) Customize a Notebook Instance</a>.</p>
+    /// <p>The value of the <code>$PATH</code> environment variable that is available to both scripts is <code>/sbin:bin:/usr/sbin:/usr/bin</code>.</p>
+    /// <p>View CloudWatch Logs for notebook instance lifecycle configurations in log group <code>/aws/sagemaker/NotebookInstances</code> in log stream <code>[notebook-instance-name]/[LifecycleConfigHook]</code>.</p>
+    /// <p>Lifecycle configuration scripts cannot run for longer than 5 minutes. If a script runs for longer than 5 minutes, it fails and the notebook instance is not created or started.</p>
+    /// <p>For information about notebook instance lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional) Customize a Notebook Instance</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateNotebookInstanceLifecycleConfig<
         C = aws_smithy_client::erase::DynConnector,
@@ -9118,14 +7909,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_on_create`](Self::set_on_create).
         ///
-        /// <p>A shell script that runs only once, when you create a notebook instance. The shell
-        /// script must be a base64-encoded string.</p>
+        /// <p>A shell script that runs only once, when you create a notebook instance. The shell script must be a base64-encoded string.</p>
         pub fn on_create(mut self, input: crate::model::NotebookInstanceLifecycleHook) -> Self {
             self.inner = self.inner.on_create(input);
             self
         }
-        /// <p>A shell script that runs only once, when you create a notebook instance. The shell
-        /// script must be a base64-encoded string.</p>
+        /// <p>A shell script that runs only once, when you create a notebook instance. The shell script must be a base64-encoded string.</p>
         pub fn set_on_create(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::NotebookInstanceLifecycleHook>>,
@@ -9137,14 +7926,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_on_start`](Self::set_on_start).
         ///
-        /// <p>A shell script that runs every time you start a notebook instance, including when you
-        /// create the notebook instance. The shell script must be a base64-encoded string.</p>
+        /// <p>A shell script that runs every time you start a notebook instance, including when you create the notebook instance. The shell script must be a base64-encoded string.</p>
         pub fn on_start(mut self, input: crate::model::NotebookInstanceLifecycleHook) -> Self {
             self.inner = self.inner.on_start(input);
             self
         }
-        /// <p>A shell script that runs every time you start a notebook instance, including when you
-        /// create the notebook instance. The shell script must be a base64-encoded string.</p>
+        /// <p>A shell script that runs every time you start a notebook instance, including when you create the notebook instance. The shell script must be a base64-encoded string.</p>
         pub fn set_on_start(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::NotebookInstanceLifecycleHook>>,
@@ -9264,14 +8051,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_pipeline_description(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// operation. An idempotent operation completes no more than one time.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// operation. An idempotent operation completes no more than one time.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9309,22 +8094,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreatePresignedDomainUrl`.
     ///
-    /// <p>Creates a URL for a specified UserProfile in a Domain.  When accessed in a web browser,
-    /// the user will be automatically signed in to Amazon SageMaker Studio, and granted access to all of
-    /// the Apps and files associated with the Domain's Amazon Elastic File System (EFS) volume.
-    /// This operation can only be called when the authentication mode equals IAM.
-    /// </p>
-    /// <p>The IAM role or user used to call this API defines the permissions to access the app. Once
-    /// the presigned URL is created, no additional permission is required to access this URL. IAM
-    /// authorization policies for this API are also enforced for every HTTP request and WebSocket
-    /// frame that attempts to connect to the app.</p>
-    /// <p>You can restrict access to this API and to the
-    /// URL that it returns to a list of IP addresses, Amazon VPCs or Amazon VPC Endpoints that you specify. For more
-    /// information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-interface-endpoint.html">Connect to SageMaker Studio Through an Interface VPC Endpoint</a>
-    /// .</p>
-    /// <note>
-    /// <p>The URL that you get from a call to <code>CreatePresignedDomainUrl</code> has a default timeout of 5 minutes. You can configure this value using <code>ExpiresInSeconds</code>. If you try to use the URL after the timeout limit expires, you
-    /// are directed to the Amazon Web Services console sign-in page.</p>
+    /// <p>Creates a URL for a specified UserProfile in a Domain. When accessed in a web browser, the user will be automatically signed in to Amazon SageMaker Studio, and granted access to all of the Apps and files associated with the Domain's Amazon Elastic File System (EFS) volume. This operation can only be called when the authentication mode equals IAM. </p>
+    /// <p>The IAM role or user used to call this API defines the permissions to access the app. Once the presigned URL is created, no additional permission is required to access this URL. IAM authorization policies for this API are also enforced for every HTTP request and WebSocket frame that attempts to connect to the app.</p>
+    /// <p>You can restrict access to this API and to the URL that it returns to a list of IP addresses, Amazon VPCs or Amazon VPC Endpoints that you specify. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-interface-endpoint.html">Connect to SageMaker Studio Through an Interface VPC Endpoint</a> .</p> <note>
+    /// <p>The URL that you get from a call to <code>CreatePresignedDomainUrl</code> has a default timeout of 5 minutes. You can configure this value using <code>ExpiresInSeconds</code>. If you try to use the URL after the timeout limit expires, you are directed to the Amazon Web Services console sign-in page.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePresignedDomainUrl<
@@ -9418,14 +8191,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_session_expiration_duration_in_seconds(input);
             self
         }
-        /// <p>The number of seconds until the pre-signed URL expires. This value defaults to
-        /// 300.</p>
+        /// <p>The number of seconds until the pre-signed URL expires. This value defaults to 300.</p>
         pub fn expires_in_seconds(mut self, input: i32) -> Self {
             self.inner = self.inner.expires_in_seconds(input);
             self
         }
-        /// <p>The number of seconds until the pre-signed URL expires. This value defaults to
-        /// 300.</p>
+        /// <p>The number of seconds until the pre-signed URL expires. This value defaults to 300.</p>
         pub fn set_expires_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_expires_in_seconds(input);
             self
@@ -9433,23 +8204,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreatePresignedNotebookInstanceUrl`.
     ///
-    /// <p>Returns a URL that you can use to connect to the Jupyter server from a notebook
-    /// instance. In the Amazon SageMaker console, when you choose <code>Open</code> next to a notebook
-    /// instance, Amazon SageMaker opens a new tab showing the Jupyter server home page from the notebook
-    /// instance. The console uses this API to get the URL and show the page.</p>
-    /// <p> The IAM role or user used to call this API defines the permissions to access the
-    /// notebook instance. Once the presigned URL is created, no additional permission is
-    /// required to access this URL. IAM authorization policies for this API are also enforced
-    /// for every HTTP request and WebSocket frame that attempts to connect to the notebook
-    /// instance.</p>
-    /// <p>You can restrict access to this API and to the URL that it returns to a list of IP
-    /// addresses that you specify. Use the <code>NotIpAddress</code> condition operator and the
-    /// <code>aws:SourceIP</code> condition context key to specify the list of IP addresses
-    /// that you want to have access to the notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/security_iam_id-based-policy-examples.html#nbi-ip-filter">Limit Access to a Notebook Instance by IP Address</a>.</p>
-    /// <note>
-    /// <p>The URL that you get from a call to <a>CreatePresignedNotebookInstanceUrl</a> is valid only for 5 minutes. If
-    /// you try to use the URL after the 5-minute limit expires, you are directed to the
-    /// Amazon Web Services console sign-in page.</p>
+    /// <p>Returns a URL that you can use to connect to the Jupyter server from a notebook instance. In the Amazon SageMaker console, when you choose <code>Open</code> next to a notebook instance, Amazon SageMaker opens a new tab showing the Jupyter server home page from the notebook instance. The console uses this API to get the URL and show the page.</p>
+    /// <p> The IAM role or user used to call this API defines the permissions to access the notebook instance. Once the presigned URL is created, no additional permission is required to access this URL. IAM authorization policies for this API are also enforced for every HTTP request and WebSocket frame that attempts to connect to the notebook instance.</p>
+    /// <p>You can restrict access to this API and to the URL that it returns to a list of IP addresses that you specify. Use the <code>NotIpAddress</code> condition operator and the <code>aws:SourceIP</code> condition context key to specify the list of IP addresses that you want to have access to the notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/security_iam_id-based-policy-examples.html#nbi-ip-filter">Limit Access to a Notebook Instance by IP Address</a>.</p> <note>
+    /// <p>The URL that you get from a call to <code>CreatePresignedNotebookInstanceUrl</code> is valid only for 5 minutes. If you try to use the URL after the 5-minute limit expires, you are directed to the Amazon Web Services console sign-in page.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePresignedNotebookInstanceUrl<
@@ -9599,14 +8357,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_processing_inputs`](Self::set_processing_inputs).
         ///
-        /// <p>An array of inputs configuring the data to download into the
-        /// processing container.</p>
+        /// <p>An array of inputs configuring the data to download into the processing container.</p>
         pub fn processing_inputs(mut self, input: crate::model::ProcessingInput) -> Self {
             self.inner = self.inner.processing_inputs(input);
             self
         }
-        /// <p>An array of inputs configuring the data to download into the
-        /// processing container.</p>
+        /// <p>An array of inputs configuring the data to download into the processing container.</p>
         pub fn set_processing_inputs(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ProcessingInput>>,
@@ -9630,14 +8386,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_processing_output_config(input);
             self
         }
-        /// <p> The name of the processing job. The name must be unique within an Amazon Web Services Region in the
-        /// Amazon Web Services account.</p>
+        /// <p> The name of the processing job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
         pub fn processing_job_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.processing_job_name(input.into());
             self
         }
-        /// <p> The name of the processing job. The name must be unique within an Amazon Web Services Region in the
-        /// Amazon Web Services account.</p>
+        /// <p> The name of the processing job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
         pub fn set_processing_job_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9645,14 +8399,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_processing_job_name(input);
             self
         }
-        /// <p>Identifies the resources, ML compute instances, and ML storage volumes to deploy for a
-        /// processing job. In distributed training, you specify more than one instance.</p>
+        /// <p>Identifies the resources, ML compute instances, and ML storage volumes to deploy for a processing job. In distributed training, you specify more than one instance.</p>
         pub fn processing_resources(mut self, input: crate::model::ProcessingResources) -> Self {
             self.inner = self.inner.processing_resources(input);
             self
         }
-        /// <p>Identifies the resources, ML compute instances, and ML storage volumes to deploy for a
-        /// processing job. In distributed training, you specify more than one instance.</p>
+        /// <p>Identifies the resources, ML compute instances, and ML storage volumes to deploy for a processing job. In distributed training, you specify more than one instance.</p>
         pub fn set_processing_resources(
             mut self,
             input: std::option::Option<crate::model::ProcessingResources>,
@@ -9693,8 +8445,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_environment`](Self::set_environment).
         ///
-        /// <p>The environment variables to set in the Docker container. Up to
-        /// 100 key and values entries in the map are supported.</p>
+        /// <p>The environment variables to set in the Docker container. Up to 100 key and values entries in the map are supported.</p>
         pub fn environment(
             mut self,
             k: impl Into<std::string::String>,
@@ -9703,8 +8454,7 @@ pub mod fluent_builders {
             self.inner = self.inner.environment(k.into(), v.into());
             self
         }
-        /// <p>The environment variables to set in the Docker container. Up to
-        /// 100 key and values entries in the map are supported.</p>
+        /// <p>The environment variables to set in the Docker container. Up to 100 key and values entries in the map are supported.</p>
         pub fn set_environment(
             mut self,
             input: std::option::Option<
@@ -9714,16 +8464,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_environment(input);
             self
         }
-        /// <p>Networking options for a processing job, such as whether to allow inbound and
-        /// outbound network calls to and from processing containers, and the VPC subnets and
-        /// security groups to use for VPC-enabled processing jobs.</p>
+        /// <p>Networking options for a processing job, such as whether to allow inbound and outbound network calls to and from processing containers, and the VPC subnets and security groups to use for VPC-enabled processing jobs.</p>
         pub fn network_config(mut self, input: crate::model::NetworkConfig) -> Self {
             self.inner = self.inner.network_config(input);
             self
         }
-        /// <p>Networking options for a processing job, such as whether to allow inbound and
-        /// outbound network calls to and from processing containers, and the VPC subnets and
-        /// security groups to use for VPC-enabled processing jobs.</p>
+        /// <p>Networking options for a processing job, such as whether to allow inbound and outbound network calls to and from processing containers, and the VPC subnets and security groups to use for VPC-enabled processing jobs.</p>
         pub fn set_network_config(
             mut self,
             input: std::option::Option<crate::model::NetworkConfig>,
@@ -9731,14 +8477,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_network_config(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on
-        /// your behalf.</p>
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on
-        /// your behalf.</p>
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
@@ -9747,14 +8491,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management
-        /// User Guide</i>.</p>
+        /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management
-        /// User Guide</i>.</p>
+        /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -9762,47 +8504,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when
-        /// you call the following APIs:</p>
+        /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <a>CreateProcessingJob</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a>CreateTrainingJob</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a>CreateTransformJob</a>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>CreateProcessingJob</code> </p> </li>
+        /// <li> <p> <code>CreateTrainingJob</code> </p> </li>
+        /// <li> <p> <code>CreateTransformJob</code> </p> </li>
         /// </ul>
         pub fn experiment_config(mut self, input: crate::model::ExperimentConfig) -> Self {
             self.inner = self.inner.experiment_config(input);
             self
         }
-        /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when
-        /// you call the following APIs:</p>
+        /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <a>CreateProcessingJob</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a>CreateTrainingJob</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a>CreateTransformJob</a>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>CreateProcessingJob</code> </p> </li>
+        /// <li> <p> <code>CreateTrainingJob</code> </p> </li>
+        /// <li> <p> <code>CreateTransformJob</code> </p> </li>
         /// </ul>
         pub fn set_experiment_config(
             mut self,
@@ -9814,8 +8530,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateProject`.
     ///
-    /// <p>Creates a machine learning (ML) project that can contain one or more templates that set
-    /// up an ML pipeline from training to deploying an approved model.</p>
+    /// <p>Creates a machine learning (ML) project that can contain one or more templates that set up an ML pipeline from training to deploying an approved model.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateProject<
         C = aws_smithy_client::erase::DynConnector,
@@ -9895,10 +8610,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_project_description(input);
             self
         }
-        /// <p>The product ID and provisioning artifact ID to provision a service catalog. The provisioning
-        /// artifact ID will default to the latest provisioning artifact ID of the product, if you don't
-        /// provide the provisioning artifact ID. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service
-        /// Catalog</a>.</p>
+        /// <p>The product ID and provisioning artifact ID to provision a service catalog. The provisioning artifact ID will default to the latest provisioning artifact ID of the product, if you don't provide the provisioning artifact ID. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>.</p>
         pub fn service_catalog_provisioning_details(
             mut self,
             input: crate::model::ServiceCatalogProvisioningDetails,
@@ -9906,10 +8618,7 @@ pub mod fluent_builders {
             self.inner = self.inner.service_catalog_provisioning_details(input);
             self
         }
-        /// <p>The product ID and provisioning artifact ID to provision a service catalog. The provisioning
-        /// artifact ID will default to the latest provisioning artifact ID of the product, if you don't
-        /// provide the provisioning artifact ID. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service
-        /// Catalog</a>.</p>
+        /// <p>The product ID and provisioning artifact ID to provision a service catalog. The provisioning artifact ID will default to the latest provisioning artifact ID of the product, if you don't provide the provisioning artifact ID. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>.</p>
         pub fn set_service_catalog_provisioning_details(
             mut self,
             input: std::option::Option<crate::model::ServiceCatalogProvisioningDetails>,
@@ -9921,14 +8630,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>An array of key-value pairs that you want to use to organize and track your Amazon Web Services
-        /// resource costs. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
+        /// <p>An array of key-value pairs that you want to use to organize and track your Amazon Web Services resource costs. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>An array of key-value pairs that you want to use to organize and track your Amazon Web Services
-        /// resource costs. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
+        /// <p>An array of key-value pairs that you want to use to organize and track your Amazon Web Services resource costs. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -10064,77 +8771,20 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateTrainingJob`.
     ///
-    /// <p>Starts a model training job. After training completes, Amazon SageMaker saves the resulting
-    /// model artifacts to an Amazon S3 location that you specify. </p>
-    /// <p>If you choose to host your model using Amazon SageMaker hosting services, you can use the
-    /// resulting model artifacts as part of the model. You can also use the artifacts in a
-    /// machine learning service other than Amazon SageMaker, provided that you know how to use them for
-    /// inference.
-    /// </p>
+    /// <p>Starts a model training job. After training completes, Amazon SageMaker saves the resulting model artifacts to an Amazon S3 location that you specify. </p>
+    /// <p>If you choose to host your model using Amazon SageMaker hosting services, you can use the resulting model artifacts as part of the model. You can also use the artifacts in a machine learning service other than Amazon SageMaker, provided that you know how to use them for inference. </p>
     /// <p>In the request body, you provide the following: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>AlgorithmSpecification</code> - Identifies the training algorithm to
-    /// use.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>HyperParameters</code> - Specify these algorithm-specific parameters to
-    /// enable the estimation of model parameters during training. Hyperparameters can
-    /// be tuned to optimize this learning process. For a list of hyperparameters for
-    /// each training algorithm provided by Amazon SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>InputDataConfig</code> - Describes the training dataset and the Amazon S3,
-    /// EFS, or FSx location where it is stored.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OutputDataConfig</code> - Identifies the Amazon S3 bucket where you want
-    /// Amazon SageMaker to save the results of model training. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ResourceConfig</code> - Identifies the resources, ML compute
-    /// instances, and ML storage volumes to deploy for model training. In distributed
-    /// training, you specify more than one instance. </p>
-    ///
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>EnableManagedSpotTraining</code> - Optimize the cost of training machine
-    /// learning models by up to 80% by using Amazon EC2 Spot instances. For more
-    /// information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-managed-spot-training.html">Managed Spot
-    /// Training</a>. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RoleArn</code> - The Amazon Resource Name (ARN) that Amazon SageMaker assumes to perform tasks on
-    /// your behalf during model training.
-    ///
-    /// You must grant this role the necessary permissions so that Amazon SageMaker can successfully
-    /// complete model training. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>StoppingCondition</code> - To help cap training costs, use
-    /// <code>MaxRuntimeInSeconds</code> to set a time limit for training. Use
-    /// <code>MaxWaitTimeInSeconds</code> to specify how long a managed spot
-    /// training job has to complete. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Environment</code> - The environment variables to set in the Docker
-    /// container.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RetryStrategy</code> - The number of times to retry the job when the job
-    /// fails due to an <code>InternalServerError</code>.</p>
-    /// </li>
+    /// <li> <p> <code>AlgorithmSpecification</code> - Identifies the training algorithm to use. </p> </li>
+    /// <li> <p> <code>HyperParameters</code> - Specify these algorithm-specific parameters to enable the estimation of model parameters during training. Hyperparameters can be tuned to optimize this learning process. For a list of hyperparameters for each training algorithm provided by Amazon SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. </p> </li>
+    /// <li> <p> <code>InputDataConfig</code> - Describes the training dataset and the Amazon S3, EFS, or FSx location where it is stored.</p> </li>
+    /// <li> <p> <code>OutputDataConfig</code> - Identifies the Amazon S3 bucket where you want Amazon SageMaker to save the results of model training. </p> </li>
+    /// <li> <p> <code>ResourceConfig</code> - Identifies the resources, ML compute instances, and ML storage volumes to deploy for model training. In distributed training, you specify more than one instance. </p> </li>
+    /// <li> <p> <code>EnableManagedSpotTraining</code> - Optimize the cost of training machine learning models by up to 80% by using Amazon EC2 Spot instances. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-managed-spot-training.html">Managed Spot Training</a>. </p> </li>
+    /// <li> <p> <code>RoleArn</code> - The Amazon Resource Name (ARN) that Amazon SageMaker assumes to perform tasks on your behalf during model training. You must grant this role the necessary permissions so that Amazon SageMaker can successfully complete model training. </p> </li>
+    /// <li> <p> <code>StoppingCondition</code> - To help cap training costs, use <code>MaxRuntimeInSeconds</code> to set a time limit for training. Use <code>MaxWaitTimeInSeconds</code> to specify how long a managed spot training job has to complete. </p> </li>
+    /// <li> <p> <code>Environment</code> - The environment variables to set in the Docker container.</p> </li>
+    /// <li> <p> <code>RetryStrategy</code> - The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.</p> </li>
     /// </ul>
     /// <p> For more information about Amazon SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How It Works</a>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -10193,14 +8843,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the training job. The name must be unique within an Amazon Web Services Region in an
-        /// Amazon Web Services account. </p>
+        /// <p>The name of the training job. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account. </p>
         pub fn training_job_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.training_job_name(input.into());
             self
         }
-        /// <p>The name of the training job. The name must be unique within an Amazon Web Services Region in an
-        /// Amazon Web Services account. </p>
+        /// <p>The name of the training job. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account. </p>
         pub fn set_training_job_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10212,12 +8860,8 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_hyper_parameters`](Self::set_hyper_parameters).
         ///
-        /// <p>Algorithm-specific parameters that influence the quality of the model. You set
-        /// hyperparameters before you start the learning process. For a list of hyperparameters for
-        /// each training algorithm provided by Amazon SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. </p>
-        /// <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is a
-        /// key-value pair. Each key and value is limited to 256 characters, as specified by the
-        /// <code>Length Constraint</code>. </p>
+        /// <p>Algorithm-specific parameters that influence the quality of the model. You set hyperparameters before you start the learning process. For a list of hyperparameters for each training algorithm provided by Amazon SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. </p>
+        /// <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is a key-value pair. Each key and value is limited to 256 characters, as specified by the <code>Length Constraint</code>. </p>
         pub fn hyper_parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -10226,12 +8870,8 @@ pub mod fluent_builders {
             self.inner = self.inner.hyper_parameters(k.into(), v.into());
             self
         }
-        /// <p>Algorithm-specific parameters that influence the quality of the model. You set
-        /// hyperparameters before you start the learning process. For a list of hyperparameters for
-        /// each training algorithm provided by Amazon SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. </p>
-        /// <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is a
-        /// key-value pair. Each key and value is limited to 256 characters, as specified by the
-        /// <code>Length Constraint</code>. </p>
+        /// <p>Algorithm-specific parameters that influence the quality of the model. You set hyperparameters before you start the learning process. For a list of hyperparameters for each training algorithm provided by Amazon SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. </p>
+        /// <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is a key-value pair. Each key and value is limited to 256 characters, as specified by the <code>Length Constraint</code>. </p>
         pub fn set_hyper_parameters(
             mut self,
             input: std::option::Option<
@@ -10241,11 +8881,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_hyper_parameters(input);
             self
         }
-        /// <p>The registry path of the Docker image that contains the training algorithm and
-        /// algorithm-specific metadata, including the input mode. For more information about
-        /// algorithms provided by Amazon SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. For information about
-        /// providing your own algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon
-        /// SageMaker</a>. </p>
+        /// <p>The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata, including the input mode. For more information about algorithms provided by Amazon SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. For information about providing your own algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>. </p>
         pub fn algorithm_specification(
             mut self,
             input: crate::model::AlgorithmSpecification,
@@ -10253,11 +8889,7 @@ pub mod fluent_builders {
             self.inner = self.inner.algorithm_specification(input);
             self
         }
-        /// <p>The registry path of the Docker image that contains the training algorithm and
-        /// algorithm-specific metadata, including the input mode. For more information about
-        /// algorithms provided by Amazon SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. For information about
-        /// providing your own algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon
-        /// SageMaker</a>. </p>
+        /// <p>The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata, including the input mode. For more information about algorithms provided by Amazon SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. For information about providing your own algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>. </p>
         pub fn set_algorithm_specification(
             mut self,
             input: std::option::Option<crate::model::AlgorithmSpecification>,
@@ -10265,31 +8897,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_algorithm_specification(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform
-        /// tasks on your behalf. </p>
-        /// <p>During model training, Amazon SageMaker needs your permission to read input data from an S3
-        /// bucket, download a Docker image that contains training code, write model artifacts to an
-        /// S3 bucket, write logs to Amazon CloudWatch Logs, and publish metrics to Amazon CloudWatch. You grant
-        /// permissions for all of these tasks to an IAM role. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker
-        /// Roles</a>. </p>
-        /// <note>
-        /// <p>To be able to pass this role to Amazon SageMaker, the caller of this API must have the
-        /// <code>iam:PassRole</code> permission.</p>
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf. </p>
+        /// <p>During model training, Amazon SageMaker needs your permission to read input data from an S3 bucket, download a Docker image that contains training code, write model artifacts to an S3 bucket, write logs to Amazon CloudWatch Logs, and publish metrics to Amazon CloudWatch. You grant permissions for all of these tasks to an IAM role. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>. </p> <note>
+        /// <p>To be able to pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission.</p>
         /// </note>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform
-        /// tasks on your behalf. </p>
-        /// <p>During model training, Amazon SageMaker needs your permission to read input data from an S3
-        /// bucket, download a Docker image that contains training code, write model artifacts to an
-        /// S3 bucket, write logs to Amazon CloudWatch Logs, and publish metrics to Amazon CloudWatch. You grant
-        /// permissions for all of these tasks to an IAM role. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker
-        /// Roles</a>. </p>
-        /// <note>
-        /// <p>To be able to pass this role to Amazon SageMaker, the caller of this API must have the
-        /// <code>iam:PassRole</code> permission.</p>
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf. </p>
+        /// <p>During model training, Amazon SageMaker needs your permission to read input data from an S3 bucket, download a Docker image that contains training code, write model artifacts to an S3 bucket, write logs to Amazon CloudWatch Logs, and publish metrics to Amazon CloudWatch. You grant permissions for all of these tasks to an IAM role. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>. </p> <note>
+        /// <p>To be able to pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission.</p>
         /// </note>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
@@ -10299,38 +8917,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_input_data_config`](Self::set_input_data_config).
         ///
-        /// <p>An array of <code>Channel</code> objects. Each channel is a named input source.
-        /// <code>InputDataConfig</code>
-        /// describes the input data and its location. </p>
-        /// <p>Algorithms can accept input data from one or more channels. For example, an
-        /// algorithm might have two channels of input data, <code>training_data</code> and
-        /// <code>validation_data</code>. The configuration for each channel provides the S3,
-        /// EFS, or FSx location where the input data is stored. It also provides information about
-        /// the stored data: the MIME type, compression method, and whether the data is wrapped in
-        /// RecordIO format. </p>
-        /// <p>Depending on the input mode that the algorithm supports, Amazon SageMaker either copies input
-        /// data files from an S3 bucket to a local directory in the Docker container, or makes it
-        /// available as input streams. For example, if you specify an EFS location, input data
-        /// files will be made available as input streams. They do not need to be
-        /// downloaded.</p>
+        /// <p>An array of <code>Channel</code> objects. Each channel is a named input source. <code>InputDataConfig</code> describes the input data and its location. </p>
+        /// <p>Algorithms can accept input data from one or more channels. For example, an algorithm might have two channels of input data, <code>training_data</code> and <code>validation_data</code>. The configuration for each channel provides the S3, EFS, or FSx location where the input data is stored. It also provides information about the stored data: the MIME type, compression method, and whether the data is wrapped in RecordIO format. </p>
+        /// <p>Depending on the input mode that the algorithm supports, Amazon SageMaker either copies input data files from an S3 bucket to a local directory in the Docker container, or makes it available as input streams. For example, if you specify an EFS location, input data files will be made available as input streams. They do not need to be downloaded.</p>
         pub fn input_data_config(mut self, input: crate::model::Channel) -> Self {
             self.inner = self.inner.input_data_config(input);
             self
         }
-        /// <p>An array of <code>Channel</code> objects. Each channel is a named input source.
-        /// <code>InputDataConfig</code>
-        /// describes the input data and its location. </p>
-        /// <p>Algorithms can accept input data from one or more channels. For example, an
-        /// algorithm might have two channels of input data, <code>training_data</code> and
-        /// <code>validation_data</code>. The configuration for each channel provides the S3,
-        /// EFS, or FSx location where the input data is stored. It also provides information about
-        /// the stored data: the MIME type, compression method, and whether the data is wrapped in
-        /// RecordIO format. </p>
-        /// <p>Depending on the input mode that the algorithm supports, Amazon SageMaker either copies input
-        /// data files from an S3 bucket to a local directory in the Docker container, or makes it
-        /// available as input streams. For example, if you specify an EFS location, input data
-        /// files will be made available as input streams. They do not need to be
-        /// downloaded.</p>
+        /// <p>An array of <code>Channel</code> objects. Each channel is a named input source. <code>InputDataConfig</code> describes the input data and its location. </p>
+        /// <p>Algorithms can accept input data from one or more channels. For example, an algorithm might have two channels of input data, <code>training_data</code> and <code>validation_data</code>. The configuration for each channel provides the S3, EFS, or FSx location where the input data is stored. It also provides information about the stored data: the MIME type, compression method, and whether the data is wrapped in RecordIO format. </p>
+        /// <p>Depending on the input mode that the algorithm supports, Amazon SageMaker either copies input data files from an S3 bucket to a local directory in the Docker container, or makes it available as input streams. For example, if you specify an EFS location, input data files will be made available as input streams. They do not need to be downloaded.</p>
         pub fn set_input_data_config(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Channel>>,
@@ -10338,14 +8934,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_input_data_config(input);
             self
         }
-        /// <p>Specifies the path to the S3 location where you want to store model artifacts. Amazon SageMaker
-        /// creates subfolders for the artifacts. </p>
+        /// <p>Specifies the path to the S3 location where you want to store model artifacts. Amazon SageMaker creates subfolders for the artifacts. </p>
         pub fn output_data_config(mut self, input: crate::model::OutputDataConfig) -> Self {
             self.inner = self.inner.output_data_config(input);
             self
         }
-        /// <p>Specifies the path to the S3 location where you want to store model artifacts. Amazon SageMaker
-        /// creates subfolders for the artifacts. </p>
+        /// <p>Specifies the path to the S3 location where you want to store model artifacts. Amazon SageMaker creates subfolders for the artifacts. </p>
         pub fn set_output_data_config(
             mut self,
             input: std::option::Option<crate::model::OutputDataConfig>,
@@ -10353,24 +8947,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_output_data_config(input);
             self
         }
-        /// <p>The resources, including the ML compute instances and ML storage volumes, to use
-        /// for model training. </p>
-        /// <p>ML storage volumes store model artifacts and incremental states. Training
-        /// algorithms might also use ML storage volumes for scratch space. If you want Amazon SageMaker to use
-        /// the ML storage volume to store the training data, choose <code>File</code> as the
-        /// <code>TrainingInputMode</code> in the algorithm specification. For distributed
-        /// training algorithms, specify an instance count greater than 1.</p>
+        /// <p>The resources, including the ML compute instances and ML storage volumes, to use for model training. </p>
+        /// <p>ML storage volumes store model artifacts and incremental states. Training algorithms might also use ML storage volumes for scratch space. If you want Amazon SageMaker to use the ML storage volume to store the training data, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For distributed training algorithms, specify an instance count greater than 1.</p>
         pub fn resource_config(mut self, input: crate::model::ResourceConfig) -> Self {
             self.inner = self.inner.resource_config(input);
             self
         }
-        /// <p>The resources, including the ML compute instances and ML storage volumes, to use
-        /// for model training. </p>
-        /// <p>ML storage volumes store model artifacts and incremental states. Training
-        /// algorithms might also use ML storage volumes for scratch space. If you want Amazon SageMaker to use
-        /// the ML storage volume to store the training data, choose <code>File</code> as the
-        /// <code>TrainingInputMode</code> in the algorithm specification. For distributed
-        /// training algorithms, specify an instance count greater than 1.</p>
+        /// <p>The resources, including the ML compute instances and ML storage volumes, to use for model training. </p>
+        /// <p>ML storage volumes store model artifacts and incremental states. Training algorithms might also use ML storage volumes for scratch space. If you want Amazon SageMaker to use the ML storage volume to store the training data, choose <code>File</code> as the <code>TrainingInputMode</code> in the algorithm specification. For distributed training algorithms, specify an instance count greater than 1.</p>
         pub fn set_resource_config(
             mut self,
             input: std::option::Option<crate::model::ResourceConfig>,
@@ -10378,18 +8962,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_config(input);
             self
         }
-        /// <p>A <a>VpcConfig</a> object that specifies the VPC that you want your
-        /// training job to connect to. Control access to and from your training container by
-        /// configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon
-        /// Virtual Private Cloud</a>.</p>
+        /// <p>A <code>VpcConfig</code> object that specifies the VPC that you want your training job to connect to. Control access to and from your training container by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
         pub fn vpc_config(mut self, input: crate::model::VpcConfig) -> Self {
             self.inner = self.inner.vpc_config(input);
             self
         }
-        /// <p>A <a>VpcConfig</a> object that specifies the VPC that you want your
-        /// training job to connect to. Control access to and from your training container by
-        /// configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon
-        /// Virtual Private Cloud</a>.</p>
+        /// <p>A <code>VpcConfig</code> object that specifies the VPC that you want your training job to connect to. Control access to and from your training container by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
         pub fn set_vpc_config(
             mut self,
             input: std::option::Option<crate::model::VpcConfig>,
@@ -10397,22 +8975,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_vpc_config(input);
             self
         }
-        /// <p>Specifies a limit to how long a model training job can run. It also specifies how long
-        /// a managed Spot training job has to complete. When the job reaches the time limit, Amazon SageMaker
-        /// ends the training job. Use this API to cap model training costs.</p>
-        /// <p>To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays
-        /// job termination for 120 seconds. Algorithms can use this 120-second window to save the
-        /// model artifacts, so the results of training are not lost. </p>
+        /// <p>Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training job. Use this API to cap model training costs.</p>
+        /// <p>To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p>
         pub fn stopping_condition(mut self, input: crate::model::StoppingCondition) -> Self {
             self.inner = self.inner.stopping_condition(input);
             self
         }
-        /// <p>Specifies a limit to how long a model training job can run. It also specifies how long
-        /// a managed Spot training job has to complete. When the job reaches the time limit, Amazon SageMaker
-        /// ends the training job. Use this API to cap model training costs.</p>
-        /// <p>To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays
-        /// job termination for 120 seconds. Algorithms can use this 120-second window to save the
-        /// model artifacts, so the results of training are not lost. </p>
+        /// <p>Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training job. Use this API to cap model training costs.</p>
+        /// <p>To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. </p>
         pub fn set_stopping_condition(
             mut self,
             input: std::option::Option<crate::model::StoppingCondition>,
@@ -10424,18 +8994,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in
-        /// different ways, for example, by purpose, owner, or environment. For more information,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
-        /// Resources</a>.</p>
+        /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in
-        /// different ways, for example, by purpose, owner, or environment. For more information,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
-        /// Resources</a>.</p>
+        /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -10443,40 +9007,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>Isolates the training container. No inbound or outbound network calls can be made,
-        /// except for calls between peers within a training cluster for distributed training. If
-        /// you enable network isolation for training jobs that are configured to use a VPC, Amazon SageMaker
-        /// downloads and uploads customer data and model artifacts through the specified VPC, but
-        /// the training container does not have network access.</p>
+        /// <p>Isolates the training container. No inbound or outbound network calls can be made, except for calls between peers within a training cluster for distributed training. If you enable network isolation for training jobs that are configured to use a VPC, Amazon SageMaker downloads and uploads customer data and model artifacts through the specified VPC, but the training container does not have network access.</p>
         pub fn enable_network_isolation(mut self, input: bool) -> Self {
             self.inner = self.inner.enable_network_isolation(input);
             self
         }
-        /// <p>Isolates the training container. No inbound or outbound network calls can be made,
-        /// except for calls between peers within a training cluster for distributed training. If
-        /// you enable network isolation for training jobs that are configured to use a VPC, Amazon SageMaker
-        /// downloads and uploads customer data and model artifacts through the specified VPC, but
-        /// the training container does not have network access.</p>
+        /// <p>Isolates the training container. No inbound or outbound network calls can be made, except for calls between peers within a training cluster for distributed training. If you enable network isolation for training jobs that are configured to use a VPC, Amazon SageMaker downloads and uploads customer data and model artifacts through the specified VPC, but the training container does not have network access.</p>
         pub fn set_enable_network_isolation(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_enable_network_isolation(input);
             self
         }
-        /// <p>To encrypt all communications between ML compute instances in distributed training,
-        /// choose <code>True</code>. Encryption provides greater security for distributed training,
-        /// but training might take longer. How long it takes depends on the amount of communication
-        /// between compute instances, especially if you use a deep learning algorithm in
-        /// distributed training. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-encrypt.html">Protect Communications Between ML
-        /// Compute Instances in a Distributed Training Job</a>.</p>
+        /// <p>To encrypt all communications between ML compute instances in distributed training, choose <code>True</code>. Encryption provides greater security for distributed training, but training might take longer. How long it takes depends on the amount of communication between compute instances, especially if you use a deep learning algorithm in distributed training. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-encrypt.html">Protect Communications Between ML Compute Instances in a Distributed Training Job</a>.</p>
         pub fn enable_inter_container_traffic_encryption(mut self, input: bool) -> Self {
             self.inner = self.inner.enable_inter_container_traffic_encryption(input);
             self
         }
-        /// <p>To encrypt all communications between ML compute instances in distributed training,
-        /// choose <code>True</code>. Encryption provides greater security for distributed training,
-        /// but training might take longer. How long it takes depends on the amount of communication
-        /// between compute instances, especially if you use a deep learning algorithm in
-        /// distributed training. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-encrypt.html">Protect Communications Between ML
-        /// Compute Instances in a Distributed Training Job</a>.</p>
+        /// <p>To encrypt all communications between ML compute instances in distributed training, choose <code>True</code>. Encryption provides greater security for distributed training, but training might take longer. How long it takes depends on the amount of communication between compute instances, especially if you use a deep learning algorithm in distributed training. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-encrypt.html">Protect Communications Between ML Compute Instances in a Distributed Training Job</a>.</p>
         pub fn set_enable_inter_container_traffic_encryption(
             mut self,
             input: std::option::Option<bool>,
@@ -10486,26 +9032,14 @@ pub mod fluent_builders {
                 .set_enable_inter_container_traffic_encryption(input);
             self
         }
-        /// <p>To train models using managed spot training, choose <code>True</code>. Managed spot
-        /// training provides a fully managed and scalable infrastructure for training machine
-        /// learning models. this option is useful when training jobs can be interrupted and when
-        /// there is flexibility when the training job is run. </p>
-        /// <p>The complete and intermediate results of jobs are stored in an Amazon S3 bucket, and can be
-        /// used as a starting point to train models incrementally. Amazon SageMaker provides metrics and
-        /// logs in CloudWatch. They can be used to see when managed spot training jobs are running,
-        /// interrupted, resumed, or completed. </p>
+        /// <p>To train models using managed spot training, choose <code>True</code>. Managed spot training provides a fully managed and scalable infrastructure for training machine learning models. this option is useful when training jobs can be interrupted and when there is flexibility when the training job is run. </p>
+        /// <p>The complete and intermediate results of jobs are stored in an Amazon S3 bucket, and can be used as a starting point to train models incrementally. Amazon SageMaker provides metrics and logs in CloudWatch. They can be used to see when managed spot training jobs are running, interrupted, resumed, or completed. </p>
         pub fn enable_managed_spot_training(mut self, input: bool) -> Self {
             self.inner = self.inner.enable_managed_spot_training(input);
             self
         }
-        /// <p>To train models using managed spot training, choose <code>True</code>. Managed spot
-        /// training provides a fully managed and scalable infrastructure for training machine
-        /// learning models. this option is useful when training jobs can be interrupted and when
-        /// there is flexibility when the training job is run. </p>
-        /// <p>The complete and intermediate results of jobs are stored in an Amazon S3 bucket, and can be
-        /// used as a starting point to train models incrementally. Amazon SageMaker provides metrics and
-        /// logs in CloudWatch. They can be used to see when managed spot training jobs are running,
-        /// interrupted, resumed, or completed. </p>
+        /// <p>To train models using managed spot training, choose <code>True</code>. Managed spot training provides a fully managed and scalable infrastructure for training machine learning models. this option is useful when training jobs can be interrupted and when there is flexibility when the training job is run. </p>
+        /// <p>The complete and intermediate results of jobs are stored in an Amazon S3 bucket, and can be used as a starting point to train models incrementally. Amazon SageMaker provides metrics and logs in CloudWatch. They can be used to see when managed spot training jobs are running, interrupted, resumed, or completed. </p>
         pub fn set_enable_managed_spot_training(
             mut self,
             input: std::option::Option<bool>,
@@ -10513,14 +9047,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_enable_managed_spot_training(input);
             self
         }
-        /// <p>Contains information about the output location for managed spot training checkpoint
-        /// data.</p>
+        /// <p>Contains information about the output location for managed spot training checkpoint data.</p>
         pub fn checkpoint_config(mut self, input: crate::model::CheckpointConfig) -> Self {
             self.inner = self.inner.checkpoint_config(input);
             self
         }
-        /// <p>Contains information about the output location for managed spot training checkpoint
-        /// data.</p>
+        /// <p>Contains information about the output location for managed spot training checkpoint data.</p>
         pub fn set_checkpoint_config(
             mut self,
             input: std::option::Option<crate::model::CheckpointConfig>,
@@ -10528,18 +9060,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_checkpoint_config(input);
             self
         }
-        /// <p>Configuration information for the Debugger hook parameters, metric and tensor collections, and
-        /// storage paths. To learn more about
-        /// how to configure the <code>DebugHookConfig</code> parameter,
-        /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.</p>
+        /// <p>Configuration information for the Debugger hook parameters, metric and tensor collections, and storage paths. To learn more about how to configure the <code>DebugHookConfig</code> parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.</p>
         pub fn debug_hook_config(mut self, input: crate::model::DebugHookConfig) -> Self {
             self.inner = self.inner.debug_hook_config(input);
             self
         }
-        /// <p>Configuration information for the Debugger hook parameters, metric and tensor collections, and
-        /// storage paths. To learn more about
-        /// how to configure the <code>DebugHookConfig</code> parameter,
-        /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.</p>
+        /// <p>Configuration information for the Debugger hook parameters, metric and tensor collections, and storage paths. To learn more about how to configure the <code>DebugHookConfig</code> parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.</p>
         pub fn set_debug_hook_config(
             mut self,
             input: std::option::Option<crate::model::DebugHookConfig>,
@@ -10583,47 +9109,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tensor_board_output_config(input);
             self
         }
-        /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when
-        /// you call the following APIs:</p>
+        /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <a>CreateProcessingJob</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a>CreateTrainingJob</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a>CreateTransformJob</a>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>CreateProcessingJob</code> </p> </li>
+        /// <li> <p> <code>CreateTrainingJob</code> </p> </li>
+        /// <li> <p> <code>CreateTransformJob</code> </p> </li>
         /// </ul>
         pub fn experiment_config(mut self, input: crate::model::ExperimentConfig) -> Self {
             self.inner = self.inner.experiment_config(input);
             self
         }
-        /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when
-        /// you call the following APIs:</p>
+        /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <a>CreateProcessingJob</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a>CreateTrainingJob</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a>CreateTransformJob</a>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>CreateProcessingJob</code> </p> </li>
+        /// <li> <p> <code>CreateTrainingJob</code> </p> </li>
+        /// <li> <p> <code>CreateTransformJob</code> </p> </li>
         /// </ul>
         pub fn set_experiment_config(
             mut self,
@@ -10632,14 +9132,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_experiment_config(input);
             self
         }
-        /// <p>Configuration information for Debugger system monitoring, framework profiling, and
-        /// storage paths.</p>
+        /// <p>Configuration information for Debugger system monitoring, framework profiling, and storage paths.</p>
         pub fn profiler_config(mut self, input: crate::model::ProfilerConfig) -> Self {
             self.inner = self.inner.profiler_config(input);
             self
         }
-        /// <p>Configuration information for Debugger system monitoring, framework profiling, and
-        /// storage paths.</p>
+        /// <p>Configuration information for Debugger system monitoring, framework profiling, and storage paths.</p>
         pub fn set_profiler_config(
             mut self,
             input: std::option::Option<crate::model::ProfilerConfig>,
@@ -10651,8 +9149,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_profiler_rule_configurations`](Self::set_profiler_rule_configurations).
         ///
-        /// <p>Configuration information for Debugger rules for profiling system and framework
-        /// metrics.</p>
+        /// <p>Configuration information for Debugger rules for profiling system and framework metrics.</p>
         pub fn profiler_rule_configurations(
             mut self,
             input: crate::model::ProfilerRuleConfiguration,
@@ -10660,8 +9157,7 @@ pub mod fluent_builders {
             self.inner = self.inner.profiler_rule_configurations(input);
             self
         }
-        /// <p>Configuration information for Debugger rules for profiling system and framework
-        /// metrics.</p>
+        /// <p>Configuration information for Debugger rules for profiling system and framework metrics.</p>
         pub fn set_profiler_rule_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ProfilerRuleConfiguration>>,
@@ -10692,14 +9188,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_environment(input);
             self
         }
-        /// <p>The number of times to retry the job when the job fails due to an
-        /// <code>InternalServerError</code>.</p>
+        /// <p>The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.</p>
         pub fn retry_strategy(mut self, input: crate::model::RetryStrategy) -> Self {
             self.inner = self.inner.retry_strategy(input);
             self
         }
-        /// <p>The number of times to retry the job when the job fails due to an
-        /// <code>InternalServerError</code>.</p>
+        /// <p>The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.</p>
         pub fn set_retry_strategy(
             mut self,
             input: std::option::Option<crate::model::RetryStrategy>,
@@ -10710,41 +9204,17 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateTransformJob`.
     ///
-    /// <p>Starts a transform job. A transform job uses a trained model to get inferences on a
-    /// dataset and saves these results to an Amazon S3 location that you specify.</p>
-    /// <p>To perform batch transformations, you create a transform job and use the data that you
-    /// have readily available.</p>
+    /// <p>Starts a transform job. A transform job uses a trained model to get inferences on a dataset and saves these results to an Amazon S3 location that you specify.</p>
+    /// <p>To perform batch transformations, you create a transform job and use the data that you have readily available.</p>
     /// <p>In the request body, you provide the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>TransformJobName</code> - Identifies the transform job. The name must be
-    /// unique within an Amazon Web Services Region in an Amazon Web Services account.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ModelName</code> - Identifies the model to use. <code>ModelName</code>
-    /// must be the name of an existing Amazon SageMaker model in the same Amazon Web Services Region and Amazon Web Services
-    /// account. For information on creating a model, see <a>CreateModel</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TransformInput</code> - Describes the dataset to be transformed and the
-    /// Amazon S3 location where it is stored.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TransformOutput</code> - Identifies the Amazon S3 location where you want
-    /// Amazon SageMaker to save the results from the transform job.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TransformResources</code> - Identifies the ML compute instances for the
-    /// transform job.</p>
-    /// </li>
+    /// <li> <p> <code>TransformJobName</code> - Identifies the transform job. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account.</p> </li>
+    /// <li> <p> <code>ModelName</code> - Identifies the model to use. <code>ModelName</code> must be the name of an existing Amazon SageMaker model in the same Amazon Web Services Region and Amazon Web Services account. For information on creating a model, see <code>CreateModel</code>.</p> </li>
+    /// <li> <p> <code>TransformInput</code> - Describes the dataset to be transformed and the Amazon S3 location where it is stored.</p> </li>
+    /// <li> <p> <code>TransformOutput</code> - Identifies the Amazon S3 location where you want Amazon SageMaker to save the results from the transform job.</p> </li>
+    /// <li> <p> <code>TransformResources</code> - Identifies the ML compute instances for the transform job.</p> </li>
     /// </ul>
-    /// <p>For more information about how batch transformation works, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform.html">Batch
-    /// Transform</a>.</p>
+    /// <p>For more information about how batch transformation works, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform.html">Batch Transform</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTransformJob<
         C = aws_smithy_client::erase::DynConnector,
@@ -10801,14 +9271,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the transform job. The name must be unique within an Amazon Web Services Region in an
-        /// Amazon Web Services account. </p>
+        /// <p>The name of the transform job. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account. </p>
         pub fn transform_job_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.transform_job_name(input.into());
             self
         }
-        /// <p>The name of the transform job. The name must be unique within an Amazon Web Services Region in an
-        /// Amazon Web Services account. </p>
+        /// <p>The name of the transform job. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account. </p>
         pub fn set_transform_job_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10816,48 +9284,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_transform_job_name(input);
             self
         }
-        /// <p>The name of the model that you want to use for the transform job.
-        /// <code>ModelName</code> must be the name of an existing Amazon SageMaker model within an Amazon Web Services
-        /// Region in an Amazon Web Services account.</p>
+        /// <p>The name of the model that you want to use for the transform job. <code>ModelName</code> must be the name of an existing Amazon SageMaker model within an Amazon Web Services Region in an Amazon Web Services account.</p>
         pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.model_name(input.into());
             self
         }
-        /// <p>The name of the model that you want to use for the transform job.
-        /// <code>ModelName</code> must be the name of an existing Amazon SageMaker model within an Amazon Web Services
-        /// Region in an Amazon Web Services account.</p>
+        /// <p>The name of the model that you want to use for the transform job. <code>ModelName</code> must be the name of an existing Amazon SageMaker model within an Amazon Web Services Region in an Amazon Web Services account.</p>
         pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_model_name(input);
             self
         }
-        /// <p>The maximum number of parallel requests that can be sent to each instance in a
-        /// transform job. If <code>MaxConcurrentTransforms</code> is set to <code>0</code> or left
-        /// unset, Amazon SageMaker checks the optional execution-parameters to determine the settings for your
-        /// chosen algorithm. If the execution-parameters endpoint is not enabled, the default value
-        /// is <code>1</code>. For more information on execution-parameters, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-batch-code.html#your-algorithms-batch-code-how-containe-serves-requests">How Containers Serve Requests</a>. For built-in algorithms, you don't need to
-        /// set a value for <code>MaxConcurrentTransforms</code>.</p>
+        /// <p>The maximum number of parallel requests that can be sent to each instance in a transform job. If <code>MaxConcurrentTransforms</code> is set to <code>0</code> or left unset, Amazon SageMaker checks the optional execution-parameters to determine the settings for your chosen algorithm. If the execution-parameters endpoint is not enabled, the default value is <code>1</code>. For more information on execution-parameters, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-batch-code.html#your-algorithms-batch-code-how-containe-serves-requests">How Containers Serve Requests</a>. For built-in algorithms, you don't need to set a value for <code>MaxConcurrentTransforms</code>.</p>
         pub fn max_concurrent_transforms(mut self, input: i32) -> Self {
             self.inner = self.inner.max_concurrent_transforms(input);
             self
         }
-        /// <p>The maximum number of parallel requests that can be sent to each instance in a
-        /// transform job. If <code>MaxConcurrentTransforms</code> is set to <code>0</code> or left
-        /// unset, Amazon SageMaker checks the optional execution-parameters to determine the settings for your
-        /// chosen algorithm. If the execution-parameters endpoint is not enabled, the default value
-        /// is <code>1</code>. For more information on execution-parameters, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-batch-code.html#your-algorithms-batch-code-how-containe-serves-requests">How Containers Serve Requests</a>. For built-in algorithms, you don't need to
-        /// set a value for <code>MaxConcurrentTransforms</code>.</p>
+        /// <p>The maximum number of parallel requests that can be sent to each instance in a transform job. If <code>MaxConcurrentTransforms</code> is set to <code>0</code> or left unset, Amazon SageMaker checks the optional execution-parameters to determine the settings for your chosen algorithm. If the execution-parameters endpoint is not enabled, the default value is <code>1</code>. For more information on execution-parameters, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-batch-code.html#your-algorithms-batch-code-how-containe-serves-requests">How Containers Serve Requests</a>. For built-in algorithms, you don't need to set a value for <code>MaxConcurrentTransforms</code>.</p>
         pub fn set_max_concurrent_transforms(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_concurrent_transforms(input);
             self
         }
-        /// <p>Configures the timeout and maximum number of retries for processing a transform job
-        /// invocation.</p>
+        /// <p>Configures the timeout and maximum number of retries for processing a transform job invocation.</p>
         pub fn model_client_config(mut self, input: crate::model::ModelClientConfig) -> Self {
             self.inner = self.inner.model_client_config(input);
             self
         }
-        /// <p>Configures the timeout and maximum number of retries for processing a transform job
-        /// invocation.</p>
+        /// <p>Configures the timeout and maximum number of retries for processing a transform job invocation.</p>
         pub fn set_model_client_config(
             mut self,
             input: std::option::Option<crate::model::ModelClientConfig>,
@@ -10865,66 +9317,30 @@ pub mod fluent_builders {
             self.inner = self.inner.set_model_client_config(input);
             self
         }
-        /// <p>The maximum allowed size of the payload, in MB. A <i>payload</i> is the
-        /// data portion of a record (without metadata). The value in <code>MaxPayloadInMB</code>
-        /// must be greater than, or equal to, the size of a single record. To estimate the size of
-        /// a record in MB, divide the size of your dataset by the number of records. To ensure that
-        /// the records fit within the maximum payload size, we recommend using a slightly larger
-        /// value. The default value is <code>6</code> MB.
-        /// </p>
-        /// <p>For cases where the payload might be arbitrarily large and is transmitted using HTTP
-        /// chunked encoding, set the value to <code>0</code>.
-        /// This
-        /// feature works only in supported algorithms. Currently, Amazon SageMaker built-in
-        /// algorithms do not support HTTP chunked encoding.</p>
+        /// <p>The maximum allowed size of the payload, in MB. A <i>payload</i> is the data portion of a record (without metadata). The value in <code>MaxPayloadInMB</code> must be greater than, or equal to, the size of a single record. To estimate the size of a record in MB, divide the size of your dataset by the number of records. To ensure that the records fit within the maximum payload size, we recommend using a slightly larger value. The default value is <code>6</code> MB. </p>
+        /// <p>For cases where the payload might be arbitrarily large and is transmitted using HTTP chunked encoding, set the value to <code>0</code>. This feature works only in supported algorithms. Currently, Amazon SageMaker built-in algorithms do not support HTTP chunked encoding.</p>
         pub fn max_payload_in_mb(mut self, input: i32) -> Self {
             self.inner = self.inner.max_payload_in_mb(input);
             self
         }
-        /// <p>The maximum allowed size of the payload, in MB. A <i>payload</i> is the
-        /// data portion of a record (without metadata). The value in <code>MaxPayloadInMB</code>
-        /// must be greater than, or equal to, the size of a single record. To estimate the size of
-        /// a record in MB, divide the size of your dataset by the number of records. To ensure that
-        /// the records fit within the maximum payload size, we recommend using a slightly larger
-        /// value. The default value is <code>6</code> MB.
-        /// </p>
-        /// <p>For cases where the payload might be arbitrarily large and is transmitted using HTTP
-        /// chunked encoding, set the value to <code>0</code>.
-        /// This
-        /// feature works only in supported algorithms. Currently, Amazon SageMaker built-in
-        /// algorithms do not support HTTP chunked encoding.</p>
+        /// <p>The maximum allowed size of the payload, in MB. A <i>payload</i> is the data portion of a record (without metadata). The value in <code>MaxPayloadInMB</code> must be greater than, or equal to, the size of a single record. To estimate the size of a record in MB, divide the size of your dataset by the number of records. To ensure that the records fit within the maximum payload size, we recommend using a slightly larger value. The default value is <code>6</code> MB. </p>
+        /// <p>For cases where the payload might be arbitrarily large and is transmitted using HTTP chunked encoding, set the value to <code>0</code>. This feature works only in supported algorithms. Currently, Amazon SageMaker built-in algorithms do not support HTTP chunked encoding.</p>
         pub fn set_max_payload_in_mb(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_payload_in_mb(input);
             self
         }
-        /// <p>Specifies the number of records to include in a mini-batch for an HTTP inference
-        /// request. A <i>record</i>
-        /// <i></i> is a single unit of input data that
-        /// inference can be made on. For example, a single line in a CSV file is a record. </p>
-        /// <p>To enable the batch strategy, you must set the <code>SplitType</code> property to
-        /// <code>Line</code>, <code>RecordIO</code>, or <code>TFRecord</code>.</p>
-        /// <p>To use only one record when making an HTTP invocation request to a container, set
-        /// <code>BatchStrategy</code> to <code>SingleRecord</code> and <code>SplitType</code>
-        /// to <code>Line</code>.</p>
-        /// <p>To fit as many records in a mini-batch as can fit within the
-        /// <code>MaxPayloadInMB</code> limit, set <code>BatchStrategy</code> to
-        /// <code>MultiRecord</code> and <code>SplitType</code> to <code>Line</code>.</p>
+        /// <p>Specifies the number of records to include in a mini-batch for an HTTP inference request. A <i>record</i> <i></i> is a single unit of input data that inference can be made on. For example, a single line in a CSV file is a record. </p>
+        /// <p>To enable the batch strategy, you must set the <code>SplitType</code> property to <code>Line</code>, <code>RecordIO</code>, or <code>TFRecord</code>.</p>
+        /// <p>To use only one record when making an HTTP invocation request to a container, set <code>BatchStrategy</code> to <code>SingleRecord</code> and <code>SplitType</code> to <code>Line</code>.</p>
+        /// <p>To fit as many records in a mini-batch as can fit within the <code>MaxPayloadInMB</code> limit, set <code>BatchStrategy</code> to <code>MultiRecord</code> and <code>SplitType</code> to <code>Line</code>.</p>
         pub fn batch_strategy(mut self, input: crate::model::BatchStrategy) -> Self {
             self.inner = self.inner.batch_strategy(input);
             self
         }
-        /// <p>Specifies the number of records to include in a mini-batch for an HTTP inference
-        /// request. A <i>record</i>
-        /// <i></i> is a single unit of input data that
-        /// inference can be made on. For example, a single line in a CSV file is a record. </p>
-        /// <p>To enable the batch strategy, you must set the <code>SplitType</code> property to
-        /// <code>Line</code>, <code>RecordIO</code>, or <code>TFRecord</code>.</p>
-        /// <p>To use only one record when making an HTTP invocation request to a container, set
-        /// <code>BatchStrategy</code> to <code>SingleRecord</code> and <code>SplitType</code>
-        /// to <code>Line</code>.</p>
-        /// <p>To fit as many records in a mini-batch as can fit within the
-        /// <code>MaxPayloadInMB</code> limit, set <code>BatchStrategy</code> to
-        /// <code>MultiRecord</code> and <code>SplitType</code> to <code>Line</code>.</p>
+        /// <p>Specifies the number of records to include in a mini-batch for an HTTP inference request. A <i>record</i> <i></i> is a single unit of input data that inference can be made on. For example, a single line in a CSV file is a record. </p>
+        /// <p>To enable the batch strategy, you must set the <code>SplitType</code> property to <code>Line</code>, <code>RecordIO</code>, or <code>TFRecord</code>.</p>
+        /// <p>To use only one record when making an HTTP invocation request to a container, set <code>BatchStrategy</code> to <code>SingleRecord</code> and <code>SplitType</code> to <code>Line</code>.</p>
+        /// <p>To fit as many records in a mini-batch as can fit within the <code>MaxPayloadInMB</code> limit, set <code>BatchStrategy</code> to <code>MultiRecord</code> and <code>SplitType</code> to <code>Line</code>.</p>
         pub fn set_batch_strategy(
             mut self,
             input: std::option::Option<crate::model::BatchStrategy>,
@@ -10936,8 +9352,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_environment`](Self::set_environment).
         ///
-        /// <p>The environment variables to set in the Docker container. We support up to 16 key and
-        /// values entries in the map.</p>
+        /// <p>The environment variables to set in the Docker container. We support up to 16 key and values entries in the map.</p>
         pub fn environment(
             mut self,
             k: impl Into<std::string::String>,
@@ -10946,8 +9361,7 @@ pub mod fluent_builders {
             self.inner = self.inner.environment(k.into(), v.into());
             self
         }
-        /// <p>The environment variables to set in the Docker container. We support up to 16 key and
-        /// values entries in the map.</p>
+        /// <p>The environment variables to set in the Docker container. We support up to 16 key and values entries in the map.</p>
         pub fn set_environment(
             mut self,
             input: std::option::Option<
@@ -10957,16 +9371,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_environment(input);
             self
         }
-        /// <p>Describes the input source and
-        /// the
-        /// way the transform job consumes it.</p>
+        /// <p>Describes the input source and the way the transform job consumes it.</p>
         pub fn transform_input(mut self, input: crate::model::TransformInput) -> Self {
             self.inner = self.inner.transform_input(input);
             self
         }
-        /// <p>Describes the input source and
-        /// the
-        /// way the transform job consumes it.</p>
+        /// <p>Describes the input source and the way the transform job consumes it.</p>
         pub fn set_transform_input(
             mut self,
             input: std::option::Option<crate::model::TransformInput>,
@@ -10987,18 +9397,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_transform_output(input);
             self
         }
-        /// <p>Describes the resources, including
-        /// ML
-        /// instance types and ML instance count, to use for the transform
-        /// job.</p>
+        /// <p>Describes the resources, including ML instance types and ML instance count, to use for the transform job.</p>
         pub fn transform_resources(mut self, input: crate::model::TransformResources) -> Self {
             self.inner = self.inner.transform_resources(input);
             self
         }
-        /// <p>Describes the resources, including
-        /// ML
-        /// instance types and ML instance count, to use for the transform
-        /// job.</p>
+        /// <p>Describes the resources, including ML instance types and ML instance count, to use for the transform job.</p>
         pub fn set_transform_resources(
             mut self,
             input: std::option::Option<crate::model::TransformResources>,
@@ -11006,24 +9410,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_transform_resources(input);
             self
         }
-        /// <p>The data structure used to specify the data to be used for inference in a batch
-        /// transform job and to associate the data that is relevant to the prediction results in
-        /// the output. The input filter provided allows you to exclude input data that is not
-        /// needed for inference in a batch transform job. The output filter provided allows you to
-        /// include input data relevant to interpreting the predictions in the output from the job.
-        /// For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html">Associate Prediction
-        /// Results with their Corresponding Input Records</a>.</p>
+        /// <p>The data structure used to specify the data to be used for inference in a batch transform job and to associate the data that is relevant to the prediction results in the output. The input filter provided allows you to exclude input data that is not needed for inference in a batch transform job. The output filter provided allows you to include input data relevant to interpreting the predictions in the output from the job. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html">Associate Prediction Results with their Corresponding Input Records</a>.</p>
         pub fn data_processing(mut self, input: crate::model::DataProcessing) -> Self {
             self.inner = self.inner.data_processing(input);
             self
         }
-        /// <p>The data structure used to specify the data to be used for inference in a batch
-        /// transform job and to associate the data that is relevant to the prediction results in
-        /// the output. The input filter provided allows you to exclude input data that is not
-        /// needed for inference in a batch transform job. The output filter provided allows you to
-        /// include input data relevant to interpreting the predictions in the output from the job.
-        /// For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html">Associate Prediction
-        /// Results with their Corresponding Input Records</a>.</p>
+        /// <p>The data structure used to specify the data to be used for inference in a batch transform job and to associate the data that is relevant to the prediction results in the output. The input filter provided allows you to exclude input data that is not needed for inference in a batch transform job. The output filter provided allows you to include input data relevant to interpreting the predictions in the output from the job. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html">Associate Prediction Results with their Corresponding Input Records</a>.</p>
         pub fn set_data_processing(
             mut self,
             input: std::option::Option<crate::model::DataProcessing>,
@@ -11035,20 +9427,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>(Optional)
-        /// An
-        /// array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-        /// Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User
-        /// Guide</i>.</p>
+        /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>(Optional)
-        /// An
-        /// array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-        /// Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User
-        /// Guide</i>.</p>
+        /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -11056,47 +9440,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when
-        /// you call the following APIs:</p>
+        /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <a>CreateProcessingJob</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a>CreateTrainingJob</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a>CreateTransformJob</a>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>CreateProcessingJob</code> </p> </li>
+        /// <li> <p> <code>CreateTrainingJob</code> </p> </li>
+        /// <li> <p> <code>CreateTransformJob</code> </p> </li>
         /// </ul>
         pub fn experiment_config(mut self, input: crate::model::ExperimentConfig) -> Self {
             self.inner = self.inner.experiment_config(input);
             self
         }
-        /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when
-        /// you call the following APIs:</p>
+        /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <a>CreateProcessingJob</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a>CreateTrainingJob</a>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <a>CreateTransformJob</a>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>CreateProcessingJob</code> </p> </li>
+        /// <li> <p> <code>CreateTrainingJob</code> </p> </li>
+        /// <li> <p> <code>CreateTransformJob</code> </p> </li>
         /// </ul>
         pub fn set_experiment_config(
             mut self,
@@ -11108,17 +9466,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateTrial`.
     ///
-    /// <p>Creates an SageMaker <i>trial</i>. A trial is a set of steps called
-    /// <i>trial components</i> that produce a machine learning model. A trial is part
-    /// of a single SageMaker <i>experiment</i>.</p>
-    /// <p>When you use SageMaker Studio or the SageMaker Python SDK, all experiments, trials, and trial
-    /// components are automatically tracked, logged, and indexed. When you use the Amazon Web Services SDK for Python (Boto), you
-    /// must use the logging APIs provided by the SDK.</p>
-    /// <p>You can add tags to a trial and then use the <a>Search</a> API to search for
-    /// the tags.</p>
-    /// <p>To get a list of all your trials, call the <a>ListTrials</a> API. To view a
-    /// trial's properties, call the <a>DescribeTrial</a> API. To create a trial component,
-    /// call the <a>CreateTrialComponent</a> API.</p>
+    /// <p>Creates an SageMaker <i>trial</i>. A trial is a set of steps called <i>trial components</i> that produce a machine learning model. A trial is part of a single SageMaker <i>experiment</i>.</p>
+    /// <p>When you use SageMaker Studio or the SageMaker Python SDK, all experiments, trials, and trial components are automatically tracked, logged, and indexed. When you use the Amazon Web Services SDK for Python (Boto), you must use the logging APIs provided by the SDK.</p>
+    /// <p>You can add tags to a trial and then use the <code>Search</code> API to search for the tags.</p>
+    /// <p>To get a list of all your trials, call the <code>ListTrials</code> API. To view a trial's properties, call the <code>DescribeTrial</code> API. To create a trial component, call the <code>CreateTrialComponent</code> API.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTrial<
         C = aws_smithy_client::erase::DynConnector,
@@ -11175,26 +9526,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the trial. The name must be unique in your Amazon Web Services account and is not
-        /// case-sensitive.</p>
+        /// <p>The name of the trial. The name must be unique in your Amazon Web Services account and is not case-sensitive.</p>
         pub fn trial_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.trial_name(input.into());
             self
         }
-        /// <p>The name of the trial. The name must be unique in your Amazon Web Services account and is not
-        /// case-sensitive.</p>
+        /// <p>The name of the trial. The name must be unique in your Amazon Web Services account and is not case-sensitive.</p>
         pub fn set_trial_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_trial_name(input);
             self
         }
-        /// <p>The name of the trial as displayed. The name doesn't need to be unique. If
-        /// <code>DisplayName</code> isn't specified, <code>TrialName</code> is displayed.</p>
+        /// <p>The name of the trial as displayed. The name doesn't need to be unique. If <code>DisplayName</code> isn't specified, <code>TrialName</code> is displayed.</p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.display_name(input.into());
             self
         }
-        /// <p>The name of the trial as displayed. The name doesn't need to be unique. If
-        /// <code>DisplayName</code> isn't specified, <code>TrialName</code> is displayed.</p>
+        /// <p>The name of the trial as displayed. The name doesn't need to be unique. If <code>DisplayName</code> isn't specified, <code>TrialName</code> is displayed.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_display_name(input);
             self
@@ -11229,14 +9576,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of tags to associate with the trial. You can use <a>Search</a> API to
-        /// search on the tags.</p>
+        /// <p>A list of tags to associate with the trial. You can use <code>Search</code> API to search on the tags.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>A list of tags to associate with the trial. You can use <a>Search</a> API to
-        /// search on the tags.</p>
+        /// <p>A list of tags to associate with the trial. You can use <code>Search</code> API to search on the tags.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -11247,16 +9592,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateTrialComponent`.
     ///
-    /// <p>Creates a <i>trial component</i>, which is a stage of a machine learning
-    /// <i>trial</i>. A trial is composed of one or more trial components. A trial
-    /// component can be used in multiple trials.</p>
-    /// <p>Trial components include pre-processing jobs, training jobs, and batch transform
-    /// jobs.</p>
-    /// <p>When you use SageMaker Studio or the SageMaker Python SDK, all experiments, trials, and trial
-    /// components are automatically tracked, logged, and indexed. When you use the Amazon Web Services SDK for Python (Boto), you
-    /// must use the logging APIs provided by the SDK.</p>
-    /// <p>You can add tags to a trial component and then use the <a>Search</a> API to
-    /// search for the tags.</p>
+    /// <p>Creates a <i>trial component</i>, which is a stage of a machine learning <i>trial</i>. A trial is composed of one or more trial components. A trial component can be used in multiple trials.</p>
+    /// <p>Trial components include pre-processing jobs, training jobs, and batch transform jobs.</p>
+    /// <p>When you use SageMaker Studio or the SageMaker Python SDK, all experiments, trials, and trial components are automatically tracked, logged, and indexed. When you use the Amazon Web Services SDK for Python (Boto), you must use the logging APIs provided by the SDK.</p>
+    /// <p>You can add tags to a trial component and then use the <code>Search</code> API to search for the tags.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTrialComponent<
         C = aws_smithy_client::erase::DynConnector,
@@ -11313,14 +9652,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the component. The name must be unique in your Amazon Web Services account and is not
-        /// case-sensitive.</p>
+        /// <p>The name of the component. The name must be unique in your Amazon Web Services account and is not case-sensitive.</p>
         pub fn trial_component_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.trial_component_name(input.into());
             self
         }
-        /// <p>The name of the component. The name must be unique in your Amazon Web Services account and is not
-        /// case-sensitive.</p>
+        /// <p>The name of the component. The name must be unique in your Amazon Web Services account and is not case-sensitive.</p>
         pub fn set_trial_component_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11328,31 +9665,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_trial_component_name(input);
             self
         }
-        /// <p>The name of the component as displayed. The name doesn't need to be unique. If
-        /// <code>DisplayName</code> isn't specified, <code>TrialComponentName</code> is
-        /// displayed.</p>
+        /// <p>The name of the component as displayed. The name doesn't need to be unique. If <code>DisplayName</code> isn't specified, <code>TrialComponentName</code> is displayed.</p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.display_name(input.into());
             self
         }
-        /// <p>The name of the component as displayed. The name doesn't need to be unique. If
-        /// <code>DisplayName</code> isn't specified, <code>TrialComponentName</code> is
-        /// displayed.</p>
+        /// <p>The name of the component as displayed. The name doesn't need to be unique. If <code>DisplayName</code> isn't specified, <code>TrialComponentName</code> is displayed.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_display_name(input);
             self
         }
         /// <p>The status of the component. States include:</p>
         /// <ul>
-        /// <li>
-        /// <p>InProgress</p>
-        /// </li>
-        /// <li>
-        /// <p>Completed</p>
-        /// </li>
-        /// <li>
-        /// <p>Failed</p>
-        /// </li>
+        /// <li> <p>InProgress</p> </li>
+        /// <li> <p>Completed</p> </li>
+        /// <li> <p>Failed</p> </li>
         /// </ul>
         pub fn status(mut self, input: crate::model::TrialComponentStatus) -> Self {
             self.inner = self.inner.status(input);
@@ -11360,15 +9687,9 @@ pub mod fluent_builders {
         }
         /// <p>The status of the component. States include:</p>
         /// <ul>
-        /// <li>
-        /// <p>InProgress</p>
-        /// </li>
-        /// <li>
-        /// <p>Completed</p>
-        /// </li>
-        /// <li>
-        /// <p>Failed</p>
-        /// </li>
+        /// <li> <p>InProgress</p> </li>
+        /// <li> <p>Completed</p> </li>
+        /// <li> <p>Failed</p> </li>
         /// </ul>
         pub fn set_status(
             mut self,
@@ -11433,8 +9754,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_input_artifacts`](Self::set_input_artifacts).
         ///
-        /// <p>The input artifacts for the component. Examples of input artifacts are datasets,
-        /// algorithms, hyperparameters, source code, and instance types.</p>
+        /// <p>The input artifacts for the component. Examples of input artifacts are datasets, algorithms, hyperparameters, source code, and instance types.</p>
         pub fn input_artifacts(
             mut self,
             k: impl Into<std::string::String>,
@@ -11443,8 +9763,7 @@ pub mod fluent_builders {
             self.inner = self.inner.input_artifacts(k.into(), v);
             self
         }
-        /// <p>The input artifacts for the component. Examples of input artifacts are datasets,
-        /// algorithms, hyperparameters, source code, and instance types.</p>
+        /// <p>The input artifacts for the component. Examples of input artifacts are datasets, algorithms, hyperparameters, source code, and instance types.</p>
         pub fn set_input_artifacts(
             mut self,
             input: std::option::Option<
@@ -11461,8 +9780,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_output_artifacts`](Self::set_output_artifacts).
         ///
-        /// <p>The output artifacts for the component. Examples of output artifacts are metrics,
-        /// snapshots, logs, and images.</p>
+        /// <p>The output artifacts for the component. Examples of output artifacts are metrics, snapshots, logs, and images.</p>
         pub fn output_artifacts(
             mut self,
             k: impl Into<std::string::String>,
@@ -11471,8 +9789,7 @@ pub mod fluent_builders {
             self.inner = self.inner.output_artifacts(k.into(), v);
             self
         }
-        /// <p>The output artifacts for the component. Examples of output artifacts are metrics,
-        /// snapshots, logs, and images.</p>
+        /// <p>The output artifacts for the component. Examples of output artifacts are metrics, snapshots, logs, and images.</p>
         pub fn set_output_artifacts(
             mut self,
             input: std::option::Option<
@@ -11502,14 +9819,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of tags to associate with the component. You can use <a>Search</a> API
-        /// to search on the tags.</p>
+        /// <p>A list of tags to associate with the component. You can use <code>Search</code> API to search on the tags.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>A list of tags to associate with the component. You can use <a>Search</a> API
-        /// to search on the tags.</p>
+        /// <p>A list of tags to associate with the component. You can use <code>Search</code> API to search on the tags.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -11520,13 +9835,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateUserProfile`.
     ///
-    /// <p>Creates a user profile. A user profile represents a single user within a domain, and is
-    /// the main way to reference a "person" for the purposes of sharing, reporting, and other
-    /// user-oriented features. This entity is created when a user onboards to Amazon SageMaker Studio. If an
-    /// administrator invites a person by email or imports them from SSO, a user profile is
-    /// automatically created. A user profile is the primary holder of settings for an individual
-    /// user and has a reference to the user's private Amazon Elastic File System (EFS) home directory.
-    /// </p>
+    /// <p>Creates a user profile. A user profile represents a single user within a domain, and is the main way to reference a "person" for the purposes of sharing, reporting, and other user-oriented features. This entity is created when a user onboards to Amazon SageMaker Studio. If an administrator invites a person by email or imports them from SSO, a user profile is automatically created. A user profile is the primary holder of settings for an individual user and has a reference to the user's private Amazon Elastic File System (EFS) home directory. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateUserProfile<
         C = aws_smithy_client::erase::DynConnector,
@@ -11606,9 +9915,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_user_profile_name(input);
             self
         }
-        /// <p>A specifier for the type of value specified in SingleSignOnUserValue.  Currently, the only supported value is "UserName".
-        /// If the Domain's AuthMode is SSO, this field is required.  If the Domain's AuthMode is not SSO, this field cannot be specified.
-        /// </p>
+        /// <p>A specifier for the type of value specified in SingleSignOnUserValue. Currently, the only supported value is "UserName". If the Domain's AuthMode is SSO, this field is required. If the Domain's AuthMode is not SSO, this field cannot be specified. </p>
         pub fn single_sign_on_user_identifier(
             mut self,
             input: impl Into<std::string::String>,
@@ -11616,9 +9923,7 @@ pub mod fluent_builders {
             self.inner = self.inner.single_sign_on_user_identifier(input.into());
             self
         }
-        /// <p>A specifier for the type of value specified in SingleSignOnUserValue.  Currently, the only supported value is "UserName".
-        /// If the Domain's AuthMode is SSO, this field is required.  If the Domain's AuthMode is not SSO, this field cannot be specified.
-        /// </p>
+        /// <p>A specifier for the type of value specified in SingleSignOnUserValue. Currently, the only supported value is "UserName". If the Domain's AuthMode is SSO, this field is required. If the Domain's AuthMode is not SSO, this field cannot be specified. </p>
         pub fn set_single_sign_on_user_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11626,16 +9931,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_single_sign_on_user_identifier(input);
             self
         }
-        /// <p>The username of the associated Amazon Web Services Single Sign-On User for this UserProfile.  If the Domain's AuthMode is SSO, this field is
-        /// required, and must match a valid username of a user in your directory.  If the Domain's AuthMode is not SSO, this field cannot be specified.
-        /// </p>
+        /// <p>The username of the associated Amazon Web Services Single Sign-On User for this UserProfile. If the Domain's AuthMode is SSO, this field is required, and must match a valid username of a user in your directory. If the Domain's AuthMode is not SSO, this field cannot be specified. </p>
         pub fn single_sign_on_user_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.single_sign_on_user_value(input.into());
             self
         }
-        /// <p>The username of the associated Amazon Web Services Single Sign-On User for this UserProfile.  If the Domain's AuthMode is SSO, this field is
-        /// required, and must match a valid username of a user in your directory.  If the Domain's AuthMode is not SSO, this field cannot be specified.
-        /// </p>
+        /// <p>The username of the associated Amazon Web Services Single Sign-On User for this UserProfile. If the Domain's AuthMode is SSO, this field is required, and must match a valid username of a user in your directory. If the Domain's AuthMode is not SSO, this field cannot be specified. </p>
         pub fn set_single_sign_on_user_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11647,18 +9948,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Each tag consists of a key and an optional value.
-        /// Tag keys must be unique per resource.</p>
-        /// <p>Tags that you specify for the User Profile are also added to all Apps that the
-        /// User Profile launches.</p>
+        /// <p>Each tag consists of a key and an optional value. Tag keys must be unique per resource.</p>
+        /// <p>Tags that you specify for the User Profile are also added to all Apps that the User Profile launches.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>Each tag consists of a key and an optional value.
-        /// Tag keys must be unique per resource.</p>
-        /// <p>Tags that you specify for the User Profile are also added to all Apps that the
-        /// User Profile launches.</p>
+        /// <p>Each tag consists of a key and an optional value. Tag keys must be unique per resource.</p>
+        /// <p>Tags that you specify for the User Profile are also added to all Apps that the User Profile launches.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -11682,27 +9979,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateWorkforce`.
     ///
-    /// <p>Use this operation to create a workforce. This operation will return an error
-    /// if a workforce already exists in the Amazon Web Services Region that you specify. You can only
-    /// create one workforce in each Amazon Web Services Region per Amazon Web Services account.</p>
-    ///
-    /// <p>If you want to create a new workforce in an Amazon Web Services Region where
-    /// a workforce already exists, use the  API
-    /// operation to delete the existing workforce and then use <code>CreateWorkforce</code>
-    /// to create a new workforce.</p>
-    ///
-    /// <p>To create a private workforce using Amazon Cognito, you must specify a Cognito user pool
-    /// in <code>CognitoConfig</code>.
-    /// You can also create an Amazon Cognito workforce using the Amazon SageMaker console.
-    /// For more information, see
-    /// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private.html">
-    /// Create a Private Workforce (Amazon Cognito)</a>.</p>
-    ///
-    /// <p>To create a private workforce using your own OIDC Identity Provider (IdP), specify your IdP
-    /// configuration in <code>OidcConfig</code>. Your OIDC IdP must support <i>groups</i>
-    /// because groups are used by Ground Truth and Amazon A2I to create work teams.
-    /// For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private-oidc.html">
-    /// Create a Private Workforce (OIDC IdP)</a>.</p>
+    /// <p>Use this operation to create a workforce. This operation will return an error if a workforce already exists in the Amazon Web Services Region that you specify. You can only create one workforce in each Amazon Web Services Region per Amazon Web Services account.</p>
+    /// <p>If you want to create a new workforce in an Amazon Web Services Region where a workforce already exists, use the API operation to delete the existing workforce and then use <code>CreateWorkforce</code> to create a new workforce.</p>
+    /// <p>To create a private workforce using Amazon Cognito, you must specify a Cognito user pool in <code>CognitoConfig</code>. You can also create an Amazon Cognito workforce using the Amazon SageMaker console. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private.html"> Create a Private Workforce (Amazon Cognito)</a>.</p>
+    /// <p>To create a private workforce using your own OIDC Identity Provider (IdP), specify your IdP configuration in <code>OidcConfig</code>. Your OIDC IdP must support <i>groups</i> because groups are used by Ground Truth and Amazon A2I to create work teams. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private-oidc.html"> Create a Private Workforce (OIDC IdP)</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateWorkforce<
         C = aws_smithy_client::erase::DynConnector,
@@ -11759,24 +10039,14 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Use this parameter to configure an Amazon Cognito private workforce.
-        /// A single Cognito workforce is created using and corresponds to a single
-        /// <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">
-        /// Amazon Cognito user pool</a>.</p>
-        ///
-        /// <p>Do not use <code>OidcConfig</code> if you specify values for
-        /// <code>CognitoConfig</code>.</p>
+        /// <p>Use this parameter to configure an Amazon Cognito private workforce. A single Cognito workforce is created using and corresponds to a single <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html"> Amazon Cognito user pool</a>.</p>
+        /// <p>Do not use <code>OidcConfig</code> if you specify values for <code>CognitoConfig</code>.</p>
         pub fn cognito_config(mut self, input: crate::model::CognitoConfig) -> Self {
             self.inner = self.inner.cognito_config(input);
             self
         }
-        /// <p>Use this parameter to configure an Amazon Cognito private workforce.
-        /// A single Cognito workforce is created using and corresponds to a single
-        /// <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">
-        /// Amazon Cognito user pool</a>.</p>
-        ///
-        /// <p>Do not use <code>OidcConfig</code> if you specify values for
-        /// <code>CognitoConfig</code>.</p>
+        /// <p>Use this parameter to configure an Amazon Cognito private workforce. A single Cognito workforce is created using and corresponds to a single <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html"> Amazon Cognito user pool</a>.</p>
+        /// <p>Do not use <code>OidcConfig</code> if you specify values for <code>CognitoConfig</code>.</p>
         pub fn set_cognito_config(
             mut self,
             input: std::option::Option<crate::model::CognitoConfig>,
@@ -11785,15 +10055,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>Use this parameter to configure a private workforce using your own OIDC Identity Provider.</p>
-        /// <p>Do not use <code>CognitoConfig</code> if you specify values for
-        /// <code>OidcConfig</code>.</p>
+        /// <p>Do not use <code>CognitoConfig</code> if you specify values for <code>OidcConfig</code>.</p>
         pub fn oidc_config(mut self, input: crate::model::OidcConfig) -> Self {
             self.inner = self.inner.oidc_config(input);
             self
         }
         /// <p>Use this parameter to configure a private workforce using your own OIDC Identity Provider.</p>
-        /// <p>Do not use <code>CognitoConfig</code> if you specify values for
-        /// <code>OidcConfig</code>.</p>
+        /// <p>Do not use <code>CognitoConfig</code> if you specify values for <code>OidcConfig</code>.</p>
         pub fn set_oidc_config(
             mut self,
             input: std::option::Option<crate::model::OidcConfig>,
@@ -11801,16 +10069,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_oidc_config(input);
             self
         }
-        /// <p>A list of IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>). Used to create an allow
-        /// list of IP addresses for a private workforce. Workers will only be able to login to their worker portal from an
-        /// IP address within this range. By default, a workforce isn't restricted to specific IP addresses.</p>
+        /// <p>A list of IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>). Used to create an allow list of IP addresses for a private workforce. Workers will only be able to login to their worker portal from an IP address within this range. By default, a workforce isn't restricted to specific IP addresses.</p>
         pub fn source_ip_config(mut self, input: crate::model::SourceIpConfig) -> Self {
             self.inner = self.inner.source_ip_config(input);
             self
         }
-        /// <p>A list of IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>). Used to create an allow
-        /// list of IP addresses for a private workforce. Workers will only be able to login to their worker portal from an
-        /// IP address within this range. By default, a workforce isn't restricted to specific IP addresses.</p>
+        /// <p>A list of IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>). Used to create an allow list of IP addresses for a private workforce. Workers will only be able to login to their worker portal from an IP address within this range. By default, a workforce isn't restricted to specific IP addresses.</p>
         pub fn set_source_ip_config(
             mut self,
             input: std::option::Option<crate::model::SourceIpConfig>,
@@ -11835,16 +10099,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>An array of key-value pairs that contain metadata to help you categorize and
-        /// organize our workforce. Each tag consists of a key and a value,
-        /// both of which you define.</p>
+        /// <p>An array of key-value pairs that contain metadata to help you categorize and organize our workforce. Each tag consists of a key and a value, both of which you define.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>An array of key-value pairs that contain metadata to help you categorize and
-        /// organize our workforce. Each tag consists of a key and a value,
-        /// both of which you define.</p>
+        /// <p>An array of key-value pairs that contain metadata to help you categorize and organize our workforce. Each tag consists of a key and a value, both of which you define.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -11855,9 +10115,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateWorkteam`.
     ///
-    /// <p>Creates a new work team for labeling your data. A work team is defined by one or more
-    /// Amazon Cognito user pools. You must first create the user pools before you can create a work
-    /// team.</p>
+    /// <p>Creates a new work team for labeling your data. A work team is defined by one or more Amazon Cognito user pools. You must first create the user pools before you can create a work team.</p>
     /// <p>You cannot create more than 25 work teams in an account and region.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateWorkteam<
@@ -11945,44 +10203,18 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_member_definitions`](Self::set_member_definitions).
         ///
-        /// <p>A list of <code>MemberDefinition</code> objects that contains objects that identify
-        /// the workers that make up the work team. </p>
-        /// <p>Workforces can be created using Amazon Cognito or your own OIDC Identity Provider (IdP). For
-        /// private workforces created using Amazon Cognito use <code>CognitoMemberDefinition</code>. For
-        /// workforces created using your own OIDC identity provider (IdP) use
-        /// <code>OidcMemberDefinition</code>. Do not provide input for both of these parameters
-        /// in a single request.</p>
-        /// <p>For workforces created using Amazon Cognito, private work teams correspond to Amazon Cognito
-        /// <i>user groups</i> within the user pool used to create a workforce. All of the
-        /// <code>CognitoMemberDefinition</code> objects that make up the member definition must
-        /// have the same <code>ClientId</code> and <code>UserPool</code> values. To add a Amazon
-        /// Cognito user group to an existing worker pool, see <a href="">Adding groups to a User
-        /// Pool</a>. For more information about user pools, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon Cognito User
-        /// Pools</a>.</p>
-        /// <p>For workforces created using your own OIDC IdP, specify the user groups that you want to
-        /// include in your private work team in <code>OidcMemberDefinition</code> by listing those groups
-        /// in <code>Groups</code>.</p>
+        /// <p>A list of <code>MemberDefinition</code> objects that contains objects that identify the workers that make up the work team. </p>
+        /// <p>Workforces can be created using Amazon Cognito or your own OIDC Identity Provider (IdP). For private workforces created using Amazon Cognito use <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC identity provider (IdP) use <code>OidcMemberDefinition</code>. Do not provide input for both of these parameters in a single request.</p>
+        /// <p>For workforces created using Amazon Cognito, private work teams correspond to Amazon Cognito <i>user groups</i> within the user pool used to create a workforce. All of the <code>CognitoMemberDefinition</code> objects that make up the member definition must have the same <code>ClientId</code> and <code>UserPool</code> values. To add a Amazon Cognito user group to an existing worker pool, see <code>Adding groups to a User Pool</code>. For more information about user pools, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon Cognito User Pools</a>.</p>
+        /// <p>For workforces created using your own OIDC IdP, specify the user groups that you want to include in your private work team in <code>OidcMemberDefinition</code> by listing those groups in <code>Groups</code>.</p>
         pub fn member_definitions(mut self, input: crate::model::MemberDefinition) -> Self {
             self.inner = self.inner.member_definitions(input);
             self
         }
-        /// <p>A list of <code>MemberDefinition</code> objects that contains objects that identify
-        /// the workers that make up the work team. </p>
-        /// <p>Workforces can be created using Amazon Cognito or your own OIDC Identity Provider (IdP). For
-        /// private workforces created using Amazon Cognito use <code>CognitoMemberDefinition</code>. For
-        /// workforces created using your own OIDC identity provider (IdP) use
-        /// <code>OidcMemberDefinition</code>. Do not provide input for both of these parameters
-        /// in a single request.</p>
-        /// <p>For workforces created using Amazon Cognito, private work teams correspond to Amazon Cognito
-        /// <i>user groups</i> within the user pool used to create a workforce. All of the
-        /// <code>CognitoMemberDefinition</code> objects that make up the member definition must
-        /// have the same <code>ClientId</code> and <code>UserPool</code> values. To add a Amazon
-        /// Cognito user group to an existing worker pool, see <a href="">Adding groups to a User
-        /// Pool</a>. For more information about user pools, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon Cognito User
-        /// Pools</a>.</p>
-        /// <p>For workforces created using your own OIDC IdP, specify the user groups that you want to
-        /// include in your private work team in <code>OidcMemberDefinition</code> by listing those groups
-        /// in <code>Groups</code>.</p>
+        /// <p>A list of <code>MemberDefinition</code> objects that contains objects that identify the workers that make up the work team. </p>
+        /// <p>Workforces can be created using Amazon Cognito or your own OIDC Identity Provider (IdP). For private workforces created using Amazon Cognito use <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC identity provider (IdP) use <code>OidcMemberDefinition</code>. Do not provide input for both of these parameters in a single request.</p>
+        /// <p>For workforces created using Amazon Cognito, private work teams correspond to Amazon Cognito <i>user groups</i> within the user pool used to create a workforce. All of the <code>CognitoMemberDefinition</code> objects that make up the member definition must have the same <code>ClientId</code> and <code>UserPool</code> values. To add a Amazon Cognito user group to an existing worker pool, see <code>Adding groups to a User Pool</code>. For more information about user pools, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon Cognito User Pools</a>.</p>
+        /// <p>For workforces created using your own OIDC IdP, specify the user groups that you want to include in your private work team in <code>OidcMemberDefinition</code> by listing those groups in <code>Groups</code>.</p>
         pub fn set_member_definitions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MemberDefinition>>,
@@ -12021,19 +10253,13 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>An array of key-value pairs.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html">Resource
-        /// Tag</a> and <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-        /// Cost Allocation Tags</a> in the <i> Amazon Web Services Billing and Cost Management User
-        /// Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html">Resource Tag</a> and <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using Cost Allocation Tags</a> in the <i> Amazon Web Services Billing and Cost Management User Guide</i>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
         /// <p>An array of key-value pairs.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html">Resource
-        /// Tag</a> and <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-        /// Cost Allocation Tags</a> in the <i> Amazon Web Services Billing and Cost Management User
-        /// Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html">Resource Tag</a> and <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using Cost Allocation Tags</a> in the <i> Amazon Web Services Billing and Cost Management User Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -12363,8 +10589,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteArtifact`.
     ///
-    /// <p>Deletes an artifact. Either <code>ArtifactArn</code> or <code>Source</code> must be
-    /// specified.</p>
+    /// <p>Deletes an artifact. Either <code>ArtifactArn</code> or <code>Source</code> must be specified.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteArtifact<
         C = aws_smithy_client::erase::DynConnector,
@@ -12819,11 +11044,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteDomain`.
     ///
-    /// <p>Used to delete a domain.
-    /// If you onboarded with IAM mode, you will need to delete your domain to onboard again using SSO.
-    /// Use with caution. All of the members of the domain will lose access to their EFS volume,
-    /// including data, notebooks, and other artifacts.
-    /// </p>
+    /// <p>Used to delete a domain. If you onboarded with IAM mode, you will need to delete your domain to onboard again using SSO. Use with caution. All of the members of the domain will lose access to their EFS volume, including data, notebooks, and other artifacts. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDomain<
         C = aws_smithy_client::erase::DynConnector,
@@ -12890,16 +11111,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain_id(input);
             self
         }
-        /// <p>The retention policy for this domain, which specifies whether resources will be retained after the Domain is deleted.
-        /// By default, all resources are retained (not automatically deleted).
-        /// </p>
+        /// <p>The retention policy for this domain, which specifies whether resources will be retained after the Domain is deleted. By default, all resources are retained (not automatically deleted). </p>
         pub fn retention_policy(mut self, input: crate::model::RetentionPolicy) -> Self {
             self.inner = self.inner.retention_policy(input);
             self
         }
-        /// <p>The retention policy for this domain, which specifies whether resources will be retained after the Domain is deleted.
-        /// By default, all resources are retained (not automatically deleted).
-        /// </p>
+        /// <p>The retention policy for this domain, which specifies whether resources will be retained after the Domain is deleted. By default, all resources are retained (not automatically deleted). </p>
         pub fn set_retention_policy(
             mut self,
             input: std::option::Option<crate::model::RetentionPolicy>,
@@ -12910,10 +11127,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteEndpoint`.
     ///
-    /// <p>Deletes an endpoint. Amazon SageMaker frees up all of the resources that were deployed when the
-    /// endpoint was created. </p>
-    /// <p>Amazon SageMaker retires any custom KMS key grants associated with the endpoint, meaning you don't
-    /// need to use the <a href="http://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html">RevokeGrant</a> API call.</p>
+    /// <p>Deletes an endpoint. Amazon SageMaker frees up all of the resources that were deployed when the endpoint was created. </p>
+    /// <p>Amazon SageMaker retires any custom KMS key grants associated with the endpoint, meaning you don't need to use the <a href="http://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html">RevokeGrant</a> API call.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEndpoint<
         C = aws_smithy_client::erase::DynConnector,
@@ -12986,15 +11201,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteEndpointConfig`.
     ///
-    /// <p>Deletes an endpoint configuration. The <code>DeleteEndpointConfig</code> API
-    /// deletes only the specified configuration. It does not delete endpoints created using the
-    /// configuration. </p>
-    /// <p>You must not delete an <code>EndpointConfig</code> in use by an endpoint that is
-    /// live or while the <code>UpdateEndpoint</code> or <code>CreateEndpoint</code> operations
-    /// are being performed on the endpoint. If you delete the <code>EndpointConfig</code> of an
-    /// endpoint that is active or being created or updated you may lose visibility into the
-    /// instance type the endpoint is using. The endpoint must be deleted in order to stop
-    /// incurring charges.</p>
+    /// <p>Deletes an endpoint configuration. The <code>DeleteEndpointConfig</code> API deletes only the specified configuration. It does not delete endpoints created using the configuration. </p>
+    /// <p>You must not delete an <code>EndpointConfig</code> in use by an endpoint that is live or while the <code>UpdateEndpoint</code> or <code>CreateEndpoint</code> operations are being performed on the endpoint. If you delete the <code>EndpointConfig</code> of an endpoint that is active or being created or updated you may lose visibility into the instance type the endpoint is using. The endpoint must be deleted in order to stop incurring charges.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteEndpointConfig<
         C = aws_smithy_client::erase::DynConnector,
@@ -13067,9 +11275,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteExperiment`.
     ///
-    /// <p>Deletes an SageMaker experiment. All trials associated with the experiment must be deleted
-    /// first. Use the <a>ListTrials</a> API to get a list of the trials associated with
-    /// the experiment.</p>
+    /// <p>Deletes an SageMaker experiment. All trials associated with the experiment must be deleted first. Use the <code>ListTrials</code> API to get a list of the trials associated with the experiment.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteExperiment<
         C = aws_smithy_client::erase::DynConnector,
@@ -13142,12 +11348,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteFeatureGroup`.
     ///
-    /// <p>Delete the <code>FeatureGroup</code> and any data that was written to the
-    /// <code>OnlineStore</code> of the <code>FeatureGroup</code>. Data cannot be accessed from
-    /// the <code>OnlineStore</code> immediately after <code>DeleteFeatureGroup</code> is called. </p>
-    /// <p>Data written into the <code>OfflineStore</code> will not be deleted. The Amazon Web Services Glue
-    /// database and tables that are automatically created for your <code>OfflineStore</code> are
-    /// not deleted. </p>
+    /// <p>Delete the <code>FeatureGroup</code> and any data that was written to the <code>OnlineStore</code> of the <code>FeatureGroup</code>. Data cannot be accessed from the <code>OnlineStore</code> immediately after <code>DeleteFeatureGroup</code> is called. </p>
+    /// <p>Data written into the <code>OfflineStore</code> will not be deleted. The Amazon Web Services Glue database and tables that are automatically created for your <code>OfflineStore</code> are not deleted. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFeatureGroup<
         C = aws_smithy_client::erase::DynConnector,
@@ -13204,14 +11406,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the <code>FeatureGroup</code> you want to delete. The name must be unique
-        /// within an Amazon Web Services Region in an Amazon Web Services account. </p>
+        /// <p>The name of the <code>FeatureGroup</code> you want to delete. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account. </p>
         pub fn feature_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.feature_group_name(input.into());
             self
         }
-        /// <p>The name of the <code>FeatureGroup</code> you want to delete. The name must be unique
-        /// within an Amazon Web Services Region in an Amazon Web Services account. </p>
+        /// <p>The name of the <code>FeatureGroup</code> you want to delete. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account. </p>
         pub fn set_feature_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13296,10 +11496,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteHumanTaskUi`.
     ///
     /// <p>Use this operation to delete a human task user interface (worker task template).</p>
-    /// <p>
-    /// To see a list of human task user interfaces
-    /// (work task templates) in your account, use .
-    /// When you delete a worker task template, it no longer appears when you call <code>ListHumanTaskUis</code>.</p>
+    /// <p> To see a list of human task user interfaces (work task templates) in your account, use . When you delete a worker task template, it no longer appears when you call <code>ListHumanTaskUis</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteHumanTaskUi<
         C = aws_smithy_client::erase::DynConnector,
@@ -13372,8 +11569,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteImage`.
     ///
-    /// <p>Deletes a SageMaker image and all versions of the image. The container images aren't
-    /// deleted.</p>
+    /// <p>Deletes a SageMaker image and all versions of the image. The container images aren't deleted.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteImage<
         C = aws_smithy_client::erase::DynConnector,
@@ -13443,8 +11639,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteImageVersion`.
     ///
-    /// <p>Deletes a version of a SageMaker image. The container image the version represents isn't
-    /// deleted.</p>
+    /// <p>Deletes a version of a SageMaker image. The container image the version represents isn't deleted.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteImageVersion<
         C = aws_smithy_client::erase::DynConnector,
@@ -13524,10 +11719,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteModel`.
     ///
-    /// <p>Deletes a model. The <code>DeleteModel</code> API deletes only the model entry that
-    /// was created in Amazon SageMaker when you called the <code>CreateModel</code> API. It does not
-    /// delete model artifacts, inference code, or the IAM role that you specified when
-    /// creating the model. </p>
+    /// <p>Deletes a model. The <code>DeleteModel</code> API deletes only the model entry that was created in Amazon SageMaker when you called the <code>CreateModel</code> API. It does not delete model artifacts, inference code, or the IAM role that you specified when creating the model. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteModel<
         C = aws_smithy_client::erase::DynConnector,
@@ -13746,8 +11938,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteModelPackage`.
     ///
     /// <p>Deletes a model package.</p>
-    /// <p>A model package is used to create Amazon SageMaker models or list on Amazon Web Services Marketplace. Buyers can
-    /// subscribe to model packages listed on Amazon Web Services Marketplace to create models in Amazon SageMaker.</p>
+    /// <p>A model package is used to create Amazon SageMaker models or list on Amazon Web Services Marketplace. Buyers can subscribe to model packages listed on Amazon Web Services Marketplace to create models in Amazon SageMaker.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteModelPackage<
         C = aws_smithy_client::erase::DynConnector,
@@ -13805,15 +11996,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or Amazon Resource Name (ARN) of the model package to delete.</p>
-        /// <p>When you specify a name, the name must have 1 to 63 characters. Valid
-        /// characters are a-z, A-Z, 0-9, and - (hyphen).</p>
+        /// <p>When you specify a name, the name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).</p>
         pub fn model_package_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.model_package_name(input.into());
             self
         }
         /// <p>The name or Amazon Resource Name (ARN) of the model package to delete.</p>
-        /// <p>When you specify a name, the name must have 1 to 63 characters. Valid
-        /// characters are a-z, A-Z, 0-9, and - (hyphen).</p>
+        /// <p>When you specify a name, the name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).</p>
         pub fn set_model_package_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14043,8 +12232,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteMonitoringSchedule`.
     ///
-    /// <p>Deletes a monitoring schedule. Also stops the schedule had not already been stopped.
-    /// This does not delete the job execution history of the monitoring schedule. </p>
+    /// <p>Deletes a monitoring schedule. Also stops the schedule had not already been stopped. This does not delete the job execution history of the monitoring schedule. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteMonitoringSchedule<
         C = aws_smithy_client::erase::DynConnector,
@@ -14117,12 +12305,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteNotebookInstance`.
     ///
-    /// <p> Deletes an Amazon SageMaker notebook instance. Before you can delete a notebook instance, you
-    /// must call the <code>StopNotebookInstance</code> API. </p>
-    /// <important>
-    /// <p>When you delete a notebook instance, you lose all of your data. Amazon SageMaker removes
-    /// the ML compute instance, and deletes the ML storage volume and the network interface
-    /// associated with the notebook instance. </p>
+    /// <p> Deletes an Amazon SageMaker notebook instance. Before you can delete a notebook instance, you must call the <code>StopNotebookInstance</code> API. </p> <important>
+    /// <p>When you delete a notebook instance, you lose all of your data. Amazon SageMaker removes the ML compute instance, and deletes the ML storage volume and the network interface associated with the notebook instance. </p>
     /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteNotebookInstance<
@@ -14278,10 +12462,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeletePipeline`.
     ///
-    /// <p>Deletes a pipeline if there are no running instances of the pipeline. To delete a
-    /// pipeline, you must stop all running instances of the pipeline using the
-    /// <code>StopPipelineExecution</code> API. When you delete a pipeline, all instances of the
-    /// pipeline are deleted.</p>
+    /// <p>Deletes a pipeline if there are no running instances of the pipeline. To delete a pipeline, you must stop all running instances of the pipeline using the <code>StopPipelineExecution</code> API. When you delete a pipeline, all instances of the pipeline are deleted.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePipeline<
         C = aws_smithy_client::erase::DynConnector,
@@ -14351,14 +12532,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_pipeline_name(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// operation. An idempotent operation completes no more than one time.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// operation. An idempotent operation completes no more than one time.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14516,16 +12695,10 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteTags`.
     ///
     /// <p>Deletes the specified tags from an Amazon SageMaker resource.</p>
-    /// <p>To list a resource's tags, use the <code>ListTags</code> API. </p>
-    /// <note>
-    /// <p>When you call this API to delete tags from a hyperparameter tuning job, the
-    /// deleted tags are not removed from training jobs that the hyperparameter tuning job
-    /// launched before you called this API.</p>
-    /// </note>
-    /// <note>
-    /// <p>When you call this API to delete tags from a SageMaker Studio Domain or User
-    /// Profile, the deleted tags are not removed from Apps that the SageMaker Studio Domain
-    /// or User Profile launched before you called this API.</p>
+    /// <p>To list a resource's tags, use the <code>ListTags</code> API. </p> <note>
+    /// <p>When you call this API to delete tags from a hyperparameter tuning job, the deleted tags are not removed from training jobs that the hyperparameter tuning job launched before you called this API.</p>
+    /// </note> <note>
+    /// <p>When you call this API to delete tags from a SageMaker Studio Domain or User Profile, the deleted tags are not removed from Apps that the SageMaker Studio Domain or User Profile launched before you called this API.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTags<
@@ -14583,14 +12756,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource whose tags you want to
-        /// delete.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource whose tags you want to delete.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource whose tags you want to
-        /// delete.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource whose tags you want to delete.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -14615,9 +12786,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteTrial`.
     ///
-    /// <p>Deletes the specified trial. All trial components that make up the trial must be deleted
-    /// first. Use the <a>DescribeTrialComponent</a> API to get the list of trial
-    /// components.</p>
+    /// <p>Deletes the specified trial. All trial components that make up the trial must be deleted first. Use the <code>DescribeTrialComponent</code> API to get the list of trial components.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTrial<
         C = aws_smithy_client::erase::DynConnector,
@@ -14687,9 +12856,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteTrialComponent`.
     ///
-    /// <p>Deletes the specified trial component. A trial component must be disassociated from all
-    /// trials before the trial component can be deleted. To disassociate a trial component from a
-    /// trial, call the <a>DisassociateTrialComponent</a> API.</p>
+    /// <p>Deletes the specified trial component. A trial component must be disassociated from all trials before the trial component can be deleted. To disassociate a trial component from a trial, call the <code>DisassociateTrialComponent</code> API.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTrialComponent<
         C = aws_smithy_client::erase::DynConnector,
@@ -14762,8 +12929,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteUserProfile`.
     ///
-    /// <p>Deletes a user profile. When a user profile is deleted, the user loses access to their EFS
-    /// volume, including data, notebooks, and other artifacts.</p>
+    /// <p>Deletes a user profile. When a user profile is deleted, the user loses access to their EFS volume, including data, notebooks, and other artifacts.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteUserProfile<
         C = aws_smithy_client::erase::DynConnector,
@@ -14847,17 +13013,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteWorkforce`.
     ///
     /// <p>Use this operation to delete a workforce.</p>
-    ///
-    /// <p>If you want to create a new workforce in an Amazon Web Services Region where
-    /// a workforce already exists, use this operation to delete the
-    /// existing workforce and then use
-    /// to create a new workforce.</p>
-    /// <important>
-    /// <p>If a private workforce contains one or more work teams, you must use
-    /// the
-    /// operation to delete all work teams before you delete the workforce.
-    /// If you try to delete a workforce that contains one or more work teams,
-    /// you will recieve a <code>ResourceInUse</code> error.</p>
+    /// <p>If you want to create a new workforce in an Amazon Web Services Region where a workforce already exists, use this operation to delete the existing workforce and then use to create a new workforce.</p> <important>
+    /// <p>If a private workforce contains one or more work teams, you must use the operation to delete all work teams before you delete the workforce. If you try to delete a workforce that contains one or more work teams, you will recieve a <code>ResourceInUse</code> error.</p>
     /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteWorkforce<
@@ -15630,8 +13787,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeCompilationJob`.
     ///
     /// <p>Returns information about a model compilation job.</p>
-    /// <p>To create a model compilation job, use <a>CreateCompilationJob</a>. To get
-    /// information about multiple model compilation jobs, use <a>ListCompilationJobs</a>.</p>
+    /// <p>To create a model compilation job, use <code>CreateCompilationJob</code>. To get information about multiple model compilation jobs, use <code>ListCompilationJobs</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCompilationJob<
         C = aws_smithy_client::erase::DynConnector,
@@ -16229,8 +14385,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeEndpointConfig`.
     ///
-    /// <p>Returns the description of an endpoint configuration created using the
-    /// <code>CreateEndpointConfig</code> API.</p>
+    /// <p>Returns the description of an endpoint configuration created using the <code>CreateEndpointConfig</code> API.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEndpointConfig<
         C = aws_smithy_client::erase::DynConnector,
@@ -16376,9 +14531,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeFeatureGroup`.
     ///
-    /// <p>Use this operation to describe a <code>FeatureGroup</code>. The response includes
-    /// information on the creation time, <code>FeatureGroup</code> name, the unique identifier for
-    /// each <code>FeatureGroup</code>, and more.</p>
+    /// <p>Use this operation to describe a <code>FeatureGroup</code>. The response includes information on the creation time, <code>FeatureGroup</code> name, the unique identifier for each <code>FeatureGroup</code>, and more.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeFeatureGroup<
         C = aws_smithy_client::erase::DynConnector,
@@ -16448,16 +14601,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_feature_group_name(input);
             self
         }
-        /// <p>A token to resume pagination of the list of <code>Features</code>
-        /// (<code>FeatureDefinitions</code>). 2,500 <code>Features</code> are returned by
-        /// default.</p>
+        /// <p>A token to resume pagination of the list of <code>Features</code> (<code>FeatureDefinitions</code>). 2,500 <code>Features</code> are returned by default.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token to resume pagination of the list of <code>Features</code>
-        /// (<code>FeatureDefinitions</code>). 2,500 <code>Features</code> are returned by
-        /// default.</p>
+        /// <p>A token to resume pagination of the list of <code>Features</code> (<code>FeatureDefinitions</code>). 2,500 <code>Features</code> are returned by default.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -16595,14 +14744,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the human task user interface
-        /// (worker task template) you want information about.</p>
+        /// <p>The name of the human task user interface (worker task template) you want information about.</p>
         pub fn human_task_ui_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.human_task_ui_name(input.into());
             self
         }
-        /// <p>The name of the human task user interface
-        /// (worker task template) you want information about.</p>
+        /// <p>The name of the human task user interface (worker task template) you want information about.</p>
         pub fn set_human_task_ui_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16613,8 +14760,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeHyperParameterTuningJob`.
     ///
-    /// <p>Gets
-    /// a description of a hyperparameter tuning job.</p>
+    /// <p>Gets a description of a hyperparameter tuning job.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeHyperParameterTuningJob<
         C = aws_smithy_client::erase::DynConnector,
@@ -16840,8 +14986,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeInferenceRecommendationsJob`.
     ///
-    /// <p>Provides the results of the Inference Recommender job.
-    /// One or more recommendation jobs are returned.</p>
+    /// <p>Provides the results of the Inference Recommender job. One or more recommendation jobs are returned.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeInferenceRecommendationsJob<
         C = aws_smithy_client::erase::DynConnector,
@@ -16900,14 +15045,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the job. The name must be unique within an
-        /// Amazon Web Services Region in the Amazon Web Services account.</p>
+        /// <p>The name of the job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
         pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.job_name(input.into());
             self
         }
-        /// <p>The name of the job. The name must be unique within an
-        /// Amazon Web Services Region in the Amazon Web Services account.</p>
+        /// <p>The name of the job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
         pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_job_name(input);
             self
@@ -16988,9 +15131,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeLineageGroup`.
     ///
-    /// <p>Provides a list of properties for the requested lineage group.
-    /// For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/xaccount-lineage-tracking.html">
-    /// Cross-Account Lineage Tracking </a> in the <i>Amazon SageMaker Developer Guide</i>.</p>
+    /// <p>Provides a list of properties for the requested lineage group. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/xaccount-lineage-tracking.html"> Cross-Account Lineage Tracking </a> in the <i>Amazon SageMaker Developer Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLineageGroup<
         C = aws_smithy_client::erase::DynConnector,
@@ -17063,8 +15204,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeModel`.
     ///
-    /// <p>Describes a model that you created using the <code>CreateModel</code>
-    /// API.</p>
+    /// <p>Describes a model that you created using the <code>CreateModel</code> API.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeModel<
         C = aws_smithy_client::erase::DynConnector,
@@ -17191,14 +15331,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the model bias job definition. The name must be unique within an Amazon Web Services Region
-        /// in the Amazon Web Services account.</p>
+        /// <p>The name of the model bias job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
         pub fn job_definition_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.job_definition_name(input.into());
             self
         }
-        /// <p>The name of the model bias job definition. The name must be unique within an Amazon Web Services Region
-        /// in the Amazon Web Services account.</p>
+        /// <p>The name of the model bias job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
         pub fn set_job_definition_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17268,14 +15406,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the model explainability job definition. The name must be unique within an
-        /// Amazon Web Services Region in the Amazon Web Services account.</p>
+        /// <p>The name of the model explainability job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
         pub fn job_definition_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.job_definition_name(input.into());
             self
         }
-        /// <p>The name of the model explainability job definition. The name must be unique within an
-        /// Amazon Web Services Region in the Amazon Web Services account.</p>
+        /// <p>The name of the model explainability job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
         pub fn set_job_definition_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17286,10 +15422,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeModelPackage`.
     ///
-    /// <p>Returns a description of the specified model package, which is used to create SageMaker
-    /// models or list them on Amazon Web Services Marketplace.</p>
-    /// <p>To create models in SageMaker, buyers can subscribe to model packages listed on Amazon Web Services
-    /// Marketplace.</p>
+    /// <p>Returns a description of the specified model package, which is used to create SageMaker models or list them on Amazon Web Services Marketplace.</p>
+    /// <p>To create models in SageMaker, buyers can subscribe to model packages listed on Amazon Web Services Marketplace.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeModelPackage<
         C = aws_smithy_client::erase::DynConnector,
@@ -17347,15 +15481,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or Amazon Resource Name (ARN) of the model package to describe.</p>
-        /// <p>When you specify a name, the name must have 1 to 63 characters. Valid
-        /// characters are a-z, A-Z, 0-9, and - (hyphen).</p>
+        /// <p>When you specify a name, the name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).</p>
         pub fn model_package_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.model_package_name(input.into());
             self
         }
         /// <p>The name or Amazon Resource Name (ARN) of the model package to describe.</p>
-        /// <p>When you specify a name, the name must have 1 to 63 characters. Valid
-        /// characters are a-z, A-Z, 0-9, and - (hyphen).</p>
+        /// <p>When you specify a name, the name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).</p>
         pub fn set_model_package_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17496,14 +15628,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the model quality job. The name must be unique within an Amazon Web Services Region in the
-        /// Amazon Web Services account.</p>
+        /// <p>The name of the model quality job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
         pub fn job_definition_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.job_definition_name(input.into());
             self
         }
-        /// <p>The name of the model quality job. The name must be unique within an Amazon Web Services Region in the
-        /// Amazon Web Services account.</p>
+        /// <p>The name of the model quality job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
         pub fn set_job_definition_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17661,8 +15791,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeNotebookInstanceLifecycleConfig`.
     ///
     /// <p>Returns a description of a notebook instance lifecycle configuration.</p>
-    /// <p>For information about notebook instance lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
-    /// 2.1: (Optional) Customize a Notebook Instance</a>.</p>
+    /// <p>For information about notebook instance lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional) Customize a Notebook Instance</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeNotebookInstanceLifecycleConfig<
         C = aws_smithy_client::erase::DynConnector,
@@ -18022,14 +16151,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the processing job. The name must be unique within an Amazon Web Services Region in the
-        /// Amazon Web Services account.</p>
+        /// <p>The name of the processing job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
         pub fn processing_job_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.processing_job_name(input.into());
             self
         }
-        /// <p>The name of the processing job. The name must be unique within an Amazon Web Services Region in the
-        /// Amazon Web Services account.</p>
+        /// <p>The name of the processing job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
         pub fn set_processing_job_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -18186,8 +16313,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeSubscribedWorkteam`.
     ///
-    /// <p>Gets information about a work team provided by a vendor. It returns details about the
-    /// subscription with a vendor in the Amazon Web Services Marketplace.</p>
+    /// <p>Gets information about a work team provided by a vendor. It returns details about the subscription with a vendor in the Amazon Web Services Marketplace.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSubscribedWorkteam<
         C = aws_smithy_client::erase::DynConnector,
@@ -18258,12 +16384,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeTrainingJob`.
     ///
     /// <p>Returns information about a training job. </p>
-    /// <p>Some of the attributes below only appear if the training job successfully starts.
-    /// If the training job fails, <code>TrainingJobStatus</code> is <code>Failed</code> and,
-    /// depending on the <code>FailureReason</code>, attributes like
-    /// <code>TrainingStartTime</code>, <code>TrainingTimeInSeconds</code>,
-    /// <code>TrainingEndTime</code>, and <code>BillableTimeInSeconds</code> may not be
-    /// present in the response.</p>
+    /// <p>Some of the attributes below only appear if the training job successfully starts. If the training job fails, <code>TrainingJobStatus</code> is <code>Failed</code> and, depending on the <code>FailureReason</code>, attributes like <code>TrainingStartTime</code>, <code>TrainingTimeInSeconds</code>, <code>TrainingEndTime</code>, and <code>BillableTimeInSeconds</code> may not be present in the response.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTrainingJob<
         C = aws_smithy_client::erase::DynConnector,
@@ -18635,10 +16756,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeWorkforce`.
     ///
-    /// <p>Lists private workforce information, including workforce name, Amazon Resource Name
-    /// (ARN), and, if applicable, allowed IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>). Allowable IP address
-    /// ranges are the IP addresses that workers can use to access tasks. </p>
-    /// <important>
+    /// <p>Lists private workforce information, including workforce name, Amazon Resource Name (ARN), and, if applicable, allowed IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>). Allowable IP address ranges are the IP addresses that workers can use to access tasks. </p> <important>
     /// <p>This operation applies only to private workforces.</p>
     /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -18697,16 +16815,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the private workforce whose access you want to restrict.
-        /// <code>WorkforceName</code> is automatically set to <code>default</code> when a
-        /// workforce is created and cannot be modified. </p>
+        /// <p>The name of the private workforce whose access you want to restrict. <code>WorkforceName</code> is automatically set to <code>default</code> when a workforce is created and cannot be modified. </p>
         pub fn workforce_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.workforce_name(input.into());
             self
         }
-        /// <p>The name of the private workforce whose access you want to restrict.
-        /// <code>WorkforceName</code> is automatically set to <code>default</code> when a
-        /// workforce is created and cannot be modified. </p>
+        /// <p>The name of the private workforce whose access you want to restrict. <code>WorkforceName</code> is automatically set to <code>default</code> when a workforce is created and cannot be modified. </p>
         pub fn set_workforce_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -18717,9 +16831,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeWorkteam`.
     ///
-    /// <p>Gets information about a specific work team. You can see information such as the
-    /// create date, the last updated date, membership information, and the work team's Amazon
-    /// Resource Name (ARN).</p>
+    /// <p>Gets information about a specific work team. You can see information such as the create date, the last updated date, membership information, and the work team's Amazon Resource Name (ARN).</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeWorkteam<
         C = aws_smithy_client::erase::DynConnector,
@@ -18792,8 +16904,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisableSagemakerServicecatalogPortfolio`.
     ///
-    /// <p>Disables using Service Catalog in SageMaker. Service Catalog is used to create
-    /// SageMaker projects.</p>
+    /// <p>Disables using Service Catalog in SageMaker. Service Catalog is used to create SageMaker projects.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisableSagemakerServicecatalogPortfolio<
         C = aws_smithy_client::erase::DynConnector,
@@ -18855,12 +16966,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisassociateTrialComponent`.
     ///
-    /// <p>Disassociates a trial component from a trial. This doesn't effect other trials the
-    /// component is associated with. Before you can delete a component, you must disassociate the
-    /// component from all trials it is associated with. To associate a trial component with a trial,
-    /// call the <a>AssociateTrialComponent</a> API.</p>
-    /// <p>To get a list of the trials a component is associated with, use the <a>Search</a> API. Specify <code>ExperimentTrialComponent</code> for the <code>Resource</code> parameter.
-    /// The list appears in the response under <code>Results.TrialComponent.Parents</code>.</p>
+    /// <p>Disassociates a trial component from a trial. This doesn't effect other trials the component is associated with. Before you can delete a component, you must disassociate the component from all trials it is associated with. To associate a trial component with a trial, call the <code>AssociateTrialComponent</code> API.</p>
+    /// <p>To get a list of the trials a component is associated with, use the <code>Search</code> API. Specify <code>ExperimentTrialComponent</code> for the <code>Resource</code> parameter. The list appears in the response under <code>Results.TrialComponent.Parents</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateTrialComponent<
         C = aws_smithy_client::erase::DynConnector,
@@ -18943,8 +17050,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `EnableSagemakerServicecatalogPortfolio`.
     ///
-    /// <p>Enables using Service Catalog in SageMaker. Service Catalog is used to create
-    /// SageMaker projects.</p>
+    /// <p>Enables using Service Catalog in SageMaker. Service Catalog is used to create SageMaker projects.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableSagemakerServicecatalogPortfolio<
         C = aws_smithy_client::erase::DynConnector,
@@ -19152,10 +17258,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetModelPackageGroupPolicy`.
     ///
-    /// <p>Gets a resource policy that manages access for a model group. For information about
-    /// resource policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_identity-vs-resource.html">Identity-based
-    /// policies and resource-based policies</a> in the <i>Amazon Web Services Identity and
-    /// Access Management User Guide.</i>.</p>
+    /// <p>Gets a resource policy that manages access for a model group. For information about resource policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_identity-vs-resource.html">Identity-based policies and resource-based policies</a> in the <i>Amazon Web Services Identity and Access Management User Guide.</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetModelPackageGroupPolicy<
         C = aws_smithy_client::erase::DynConnector,
@@ -19228,8 +17331,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetSagemakerServicecatalogPortfolioStatus`.
     ///
-    /// <p>Gets the status of Service Catalog in SageMaker. Service Catalog is used to create
-    /// SageMaker projects.</p>
+    /// <p>Gets the status of Service Catalog in SageMaker. Service Catalog is used to create SageMaker projects.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSagemakerServicecatalogPortfolioStatus<
         C = aws_smithy_client::erase::DynConnector,
@@ -19291,10 +17393,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetSearchSuggestions`.
     ///
-    /// <p>An auto-complete API for the search functionality in the Amazon SageMaker console. It returns
-    /// suggestions of possible matches for the property name to use in <code>Search</code>
-    /// queries. Provides suggestions for <code>HyperParameters</code>, <code>Tags</code>, and
-    /// <code>Metrics</code>.</p>
+    /// <p>An auto-complete API for the search functionality in the Amazon SageMaker console. It returns suggestions of possible matches for the property name to use in <code>Search</code> queries. Provides suggestions for <code>HyperParameters</code>, <code>Tags</code>, and <code>Metrics</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSearchSuggestions<
         C = aws_smithy_client::erase::DynConnector,
@@ -19509,14 +17608,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sort_order(input);
             self
         }
-        /// <p>If the previous call to <code>ListActions</code> didn't return the full set of actions,
-        /// the call returns a token for getting the next set of actions.</p>
+        /// <p>If the previous call to <code>ListActions</code> didn't return the full set of actions, the call returns a token for getting the next set of actions.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the previous call to <code>ListActions</code> didn't return the full set of actions,
-        /// the call returns a token for getting the next set of actions.</p>
+        /// <p>If the previous call to <code>ListActions</code> didn't return the full set of actions, the call returns a token for getting the next set of actions.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -19591,14 +17688,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A filter that returns only algorithms created after the specified time
-        /// (timestamp).</p>
+        /// <p>A filter that returns only algorithms created after the specified time (timestamp).</p>
         pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_after(input);
             self
         }
-        /// <p>A filter that returns only algorithms created after the specified time
-        /// (timestamp).</p>
+        /// <p>A filter that returns only algorithms created after the specified time (timestamp).</p>
         pub fn set_creation_time_after(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -19606,14 +17701,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_creation_time_after(input);
             self
         }
-        /// <p>A filter that returns only algorithms created before the specified time
-        /// (timestamp).</p>
+        /// <p>A filter that returns only algorithms created before the specified time (timestamp).</p>
         pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_before(input);
             self
         }
-        /// <p>A filter that returns only algorithms created before the specified time
-        /// (timestamp).</p>
+        /// <p>A filter that returns only algorithms created before the specified time (timestamp).</p>
         pub fn set_creation_time_before(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -19631,14 +17724,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A string in the algorithm name. This filter returns only algorithms whose name
-        /// contains the specified string.</p>
+        /// <p>A string in the algorithm name. This filter returns only algorithms whose name contains the specified string.</p>
         pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name_contains(input.into());
             self
         }
-        /// <p>A string in the algorithm name. This filter returns only algorithms whose name
-        /// contains the specified string.</p>
+        /// <p>A string in the algorithm name. This filter returns only algorithms whose name contains the specified string.</p>
         pub fn set_name_contains(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19646,28 +17737,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name_contains(input);
             self
         }
-        /// <p>If the response to a previous <code>ListAlgorithms</code> request was truncated, the
-        /// response includes a <code>NextToken</code>. To retrieve the next set of algorithms, use
-        /// the token in the next request.</p>
+        /// <p>If the response to a previous <code>ListAlgorithms</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of algorithms, use the token in the next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the response to a previous <code>ListAlgorithms</code> request was truncated, the
-        /// response includes a <code>NextToken</code>. To retrieve the next set of algorithms, use
-        /// the token in the next request.</p>
+        /// <p>If the response to a previous <code>ListAlgorithms</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of algorithms, use the token in the next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The parameter by which to sort the results. The default is
-        /// <code>CreationTime</code>.</p>
+        /// <p>The parameter by which to sort the results. The default is <code>CreationTime</code>.</p>
         pub fn sort_by(mut self, input: crate::model::AlgorithmSortBy) -> Self {
             self.inner = self.inner.sort_by(input);
             self
         }
-        /// <p>The parameter by which to sort the results. The default is
-        /// <code>CreationTime</code>.</p>
+        /// <p>The parameter by which to sort the results. The default is <code>CreationTime</code>.</p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<crate::model::AlgorithmSortBy>,
@@ -19691,9 +17776,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAppImageConfigs`.
     ///
-    /// <p>Lists the AppImageConfigs in your account and their properties. The list can be
-    /// filtered by creation time or modified time, and whether the AppImageConfig name contains
-    /// a specified string.</p>
+    /// <p>Lists the AppImageConfigs in your account and their properties. The list can be filtered by creation time or modified time, and whether the AppImageConfig name contains a specified string.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAppImageConfigs<
         C = aws_smithy_client::erase::DynConnector,
@@ -19750,26 +17833,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The maximum number of AppImageConfigs to return in the response. The default value is
-        /// 10. </p>
+        /// <p>The maximum number of AppImageConfigs to return in the response. The default value is 10. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of AppImageConfigs to return in the response. The default value is
-        /// 10. </p>
+        /// <p>The maximum number of AppImageConfigs to return in the response. The default value is 10. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>If the previous call to <code>ListImages</code> didn't return the full set of
-        /// AppImageConfigs, the call returns a token for getting the next set of AppImageConfigs.</p>
+        /// <p>If the previous call to <code>ListImages</code> didn't return the full set of AppImageConfigs, the call returns a token for getting the next set of AppImageConfigs.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the previous call to <code>ListImages</code> didn't return the full set of
-        /// AppImageConfigs, the call returns a token for getting the next set of AppImageConfigs.</p>
+        /// <p>If the previous call to <code>ListImages</code> didn't return the full set of AppImageConfigs, the call returns a token for getting the next set of AppImageConfigs.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -19925,14 +18004,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>If the previous response was truncated, you will receive this token.
-        /// Use it in your next request to receive the next set of results.</p>
+        /// <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the previous response was truncated, you will receive this token.
-        /// Use it in your next request to receive the next set of results.</p>
+        /// <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -20131,14 +18208,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sort_order(input);
             self
         }
-        /// <p>If the previous call to <code>ListArtifacts</code> didn't return the full set of artifacts,
-        /// the call returns a token for getting the next set of artifacts.</p>
+        /// <p>If the previous call to <code>ListArtifacts</code> didn't return the full set of artifacts, the call returns a token for getting the next set of artifacts.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the previous call to <code>ListArtifacts</code> didn't return the full set of artifacts,
-        /// the call returns a token for getting the next set of artifacts.</p>
+        /// <p>If the previous call to <code>ListArtifacts</code> didn't return the full set of artifacts, the call returns a token for getting the next set of artifacts.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -20324,14 +18399,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sort_order(input);
             self
         }
-        /// <p>If the previous call to <code>ListAssociations</code> didn't return the full set of associations,
-        /// the call returns a token for getting the next set of associations.</p>
+        /// <p>If the previous call to <code>ListAssociations</code> didn't return the full set of associations, the call returns a token for getting the next set of associations.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the previous call to <code>ListAssociations</code> didn't return the full set of associations,
-        /// the call returns a token for getting the next set of associations.</p>
+        /// <p>If the previous call to <code>ListAssociations</code> didn't return the full set of associations, the call returns a token for getting the next set of associations.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -20520,14 +18593,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>If the previous response was truncated, you receive this token. Use it in your next
-        /// request to receive the next set of results.</p>
+        /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the previous response was truncated, you receive this token. Use it in your next
-        /// request to receive the next set of results.</p>
+        /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -20644,14 +18715,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sort_order(input);
             self
         }
-        /// <p>The parameter by which to sort the results. The default is
-        /// <code>Descending</code>.</p>
+        /// <p>The parameter by which to sort the results. The default is <code>Descending</code>.</p>
         pub fn sort_by(mut self, input: crate::model::CandidateSortBy) -> Self {
             self.inner = self.inner.sort_by(input);
             self
         }
-        /// <p>The parameter by which to sort the results. The default is
-        /// <code>Descending</code>.</p>
+        /// <p>The parameter by which to sort the results. The default is <code>Descending</code>.</p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<crate::model::CandidateSortBy>,
@@ -20669,14 +18738,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>If the previous response was truncated, you receive this token. Use it in your next
-        /// request to receive the next set of results.</p>
+        /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the previous response was truncated, you receive this token. Use it in your next
-        /// request to receive the next set of results.</p>
+        /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -20741,14 +18808,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A filter that returns only Git repositories that were created after the specified
-        /// time.</p>
+        /// <p>A filter that returns only Git repositories that were created after the specified time.</p>
         pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_after(input);
             self
         }
-        /// <p>A filter that returns only Git repositories that were created after the specified
-        /// time.</p>
+        /// <p>A filter that returns only Git repositories that were created after the specified time.</p>
         pub fn set_creation_time_after(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -20756,14 +18821,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_creation_time_after(input);
             self
         }
-        /// <p>A filter that returns only Git repositories that were created before the specified
-        /// time.</p>
+        /// <p>A filter that returns only Git repositories that were created before the specified time.</p>
         pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_before(input);
             self
         }
-        /// <p>A filter that returns only Git repositories that were created before the specified
-        /// time.</p>
+        /// <p>A filter that returns only Git repositories that were created before the specified time.</p>
         pub fn set_creation_time_before(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -20771,14 +18834,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_creation_time_before(input);
             self
         }
-        /// <p>A filter that returns only Git repositories that were last modified after the
-        /// specified time.</p>
+        /// <p>A filter that returns only Git repositories that were last modified after the specified time.</p>
         pub fn last_modified_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.last_modified_time_after(input);
             self
         }
-        /// <p>A filter that returns only Git repositories that were last modified after the
-        /// specified time.</p>
+        /// <p>A filter that returns only Git repositories that were last modified after the specified time.</p>
         pub fn set_last_modified_time_after(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -20786,14 +18847,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_last_modified_time_after(input);
             self
         }
-        /// <p>A filter that returns only Git repositories that were last modified before the
-        /// specified time.</p>
+        /// <p>A filter that returns only Git repositories that were last modified before the specified time.</p>
         pub fn last_modified_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.last_modified_time_before(input);
             self
         }
-        /// <p>A filter that returns only Git repositories that were last modified before the
-        /// specified time.</p>
+        /// <p>A filter that returns only Git repositories that were last modified before the specified time.</p>
         pub fn set_last_modified_time_before(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -20811,14 +18870,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A string in the Git repositories name. This filter returns only repositories whose
-        /// name contains the specified string.</p>
+        /// <p>A string in the Git repositories name. This filter returns only repositories whose name contains the specified string.</p>
         pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name_contains(input.into());
             self
         }
-        /// <p>A string in the Git repositories name. This filter returns only repositories whose
-        /// name contains the specified string.</p>
+        /// <p>A string in the Git repositories name. This filter returns only repositories whose name contains the specified string.</p>
         pub fn set_name_contains(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -20826,16 +18883,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name_contains(input);
             self
         }
-        /// <p>If the result of a <code>ListCodeRepositoriesOutput</code> request was truncated, the
-        /// response includes a <code>NextToken</code>. To get the next set of Git repositories, use
-        /// the token in the next request.</p>
+        /// <p>If the result of a <code>ListCodeRepositoriesOutput</code> request was truncated, the response includes a <code>NextToken</code>. To get the next set of Git repositories, use the token in the next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the result of a <code>ListCodeRepositoriesOutput</code> request was truncated, the
-        /// response includes a <code>NextToken</code>. To get the next set of Git repositories, use
-        /// the token in the next request.</p>
+        /// <p>If the result of a <code>ListCodeRepositoriesOutput</code> request was truncated, the response includes a <code>NextToken</code>. To get the next set of Git repositories, use the token in the next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -20870,8 +18923,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListCompilationJobs`.
     ///
     /// <p>Lists model compilation jobs that satisfy various filters.</p>
-    /// <p>To create a model compilation job, use <a>CreateCompilationJob</a>. To get
-    /// information about a particular model compilation job you have created, use <a>DescribeCompilationJob</a>.</p>
+    /// <p>To create a model compilation job, use <code>CreateCompilationJob</code>. To get information about a particular model compilation job you have created, use <code>DescribeCompilationJob</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCompilationJobs<
         C = aws_smithy_client::erase::DynConnector,
@@ -20928,16 +18980,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>If the result of the previous <code>ListCompilationJobs</code> request was truncated,
-        /// the response includes a <code>NextToken</code>. To retrieve the next set of model
-        /// compilation jobs, use the token in the next request.</p>
+        /// <p>If the result of the previous <code>ListCompilationJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model compilation jobs, use the token in the next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the result of the previous <code>ListCompilationJobs</code> request was truncated,
-        /// the response includes a <code>NextToken</code>. To retrieve the next set of model
-        /// compilation jobs, use the token in the next request.</p>
+        /// <p>If the result of the previous <code>ListCompilationJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model compilation jobs, use the token in the next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -20952,14 +19000,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A filter that returns the model compilation jobs that were created after a specified
-        /// time. </p>
+        /// <p>A filter that returns the model compilation jobs that were created after a specified time. </p>
         pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_after(input);
             self
         }
-        /// <p>A filter that returns the model compilation jobs that were created after a specified
-        /// time. </p>
+        /// <p>A filter that returns the model compilation jobs that were created after a specified time. </p>
         pub fn set_creation_time_after(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -20967,14 +19013,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_creation_time_after(input);
             self
         }
-        /// <p>A filter that returns the model compilation jobs that were created before a specified
-        /// time.</p>
+        /// <p>A filter that returns the model compilation jobs that were created before a specified time.</p>
         pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_before(input);
             self
         }
-        /// <p>A filter that returns the model compilation jobs that were created before a specified
-        /// time.</p>
+        /// <p>A filter that returns the model compilation jobs that were created before a specified time.</p>
         pub fn set_creation_time_before(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -20982,14 +19026,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_creation_time_before(input);
             self
         }
-        /// <p>A filter that returns the model compilation jobs that were modified after a specified
-        /// time.</p>
+        /// <p>A filter that returns the model compilation jobs that were modified after a specified time.</p>
         pub fn last_modified_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.last_modified_time_after(input);
             self
         }
-        /// <p>A filter that returns the model compilation jobs that were modified after a specified
-        /// time.</p>
+        /// <p>A filter that returns the model compilation jobs that were modified after a specified time.</p>
         pub fn set_last_modified_time_after(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -20997,14 +19039,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_last_modified_time_after(input);
             self
         }
-        /// <p>A filter that returns the model compilation jobs that were modified before a specified
-        /// time.</p>
+        /// <p>A filter that returns the model compilation jobs that were modified before a specified time.</p>
         pub fn last_modified_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.last_modified_time_before(input);
             self
         }
-        /// <p>A filter that returns the model compilation jobs that were modified before a specified
-        /// time.</p>
+        /// <p>A filter that returns the model compilation jobs that were modified before a specified time.</p>
         pub fn set_last_modified_time_before(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -21012,14 +19052,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_last_modified_time_before(input);
             self
         }
-        /// <p>A filter that returns the model compilation jobs whose name contains a specified
-        /// string.</p>
+        /// <p>A filter that returns the model compilation jobs whose name contains a specified string.</p>
         pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name_contains(input.into());
             self
         }
-        /// <p>A filter that returns the model compilation jobs whose name contains a specified
-        /// string.</p>
+        /// <p>A filter that returns the model compilation jobs whose name contains a specified string.</p>
         pub fn set_name_contains(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -21027,12 +19065,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name_contains(input);
             self
         }
-        /// <p>A filter that retrieves model compilation jobs with a specific <a>DescribeCompilationJobResponse$CompilationJobStatus</a> status.</p>
+        /// <p>A filter that retrieves model compilation jobs with a specific <code>DescribeCompilationJobResponse$CompilationJobStatus</code> status.</p>
         pub fn status_equals(mut self, input: crate::model::CompilationJobStatus) -> Self {
             self.inner = self.inner.status_equals(input);
             self
         }
-        /// <p>A filter that retrieves model compilation jobs with a specific <a>DescribeCompilationJobResponse$CompilationJobStatus</a> status.</p>
+        /// <p>A filter that retrieves model compilation jobs with a specific <code>DescribeCompilationJobResponse$CompilationJobStatus</code> status.</p>
         pub fn set_status_equals(
             mut self,
             input: std::option::Option<crate::model::CompilationJobStatus>,
@@ -21198,14 +19236,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sort_order(input);
             self
         }
-        /// <p>If the previous call to <code>ListContexts</code> didn't return the full set of contexts,
-        /// the call returns a token for getting the next set of contexts.</p>
+        /// <p>If the previous call to <code>ListContexts</code> didn't return the full set of contexts, the call returns a token for getting the next set of contexts.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the previous call to <code>ListContexts</code> didn't return the full set of contexts,
-        /// the call returns a token for getting the next set of contexts.</p>
+        /// <p>If the previous call to <code>ListContexts</code> didn't return the full set of contexts, the call returns a token for getting the next set of contexts.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -21280,14 +19316,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A filter that lists the data quality job definitions associated with the specified
-        /// endpoint.</p>
+        /// <p>A filter that lists the data quality job definitions associated with the specified endpoint.</p>
         pub fn endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.endpoint_name(input.into());
             self
         }
-        /// <p>A filter that lists the data quality job definitions associated with the specified
-        /// endpoint.</p>
+        /// <p>A filter that lists the data quality job definitions associated with the specified endpoint.</p>
         pub fn set_endpoint_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -21321,40 +19355,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sort_order(input);
             self
         }
-        /// <p>If the result of the previous <code>ListDataQualityJobDefinitions</code> request was
-        /// truncated, the response includes a <code>NextToken</code>. To retrieve the next set of
-        /// transform jobs, use the token in the next request.></p>
+        /// <p>If the result of the previous <code>ListDataQualityJobDefinitions</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of transform jobs, use the token in the next request.&gt;</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the result of the previous <code>ListDataQualityJobDefinitions</code> request was
-        /// truncated, the response includes a <code>NextToken</code>. To retrieve the next set of
-        /// transform jobs, use the token in the next request.></p>
+        /// <p>If the result of the previous <code>ListDataQualityJobDefinitions</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of transform jobs, use the token in the next request.&gt;</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of data quality monitoring job definitions to return in the
-        /// response.</p>
+        /// <p>The maximum number of data quality monitoring job definitions to return in the response.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of data quality monitoring job definitions to return in the
-        /// response.</p>
+        /// <p>The maximum number of data quality monitoring job definitions to return in the response.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A string in the data quality monitoring job definition name. This filter returns only
-        /// data quality monitoring job definitions whose name contains the specified string.</p>
+        /// <p>A string in the data quality monitoring job definition name. This filter returns only data quality monitoring job definitions whose name contains the specified string.</p>
         pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name_contains(input.into());
             self
         }
-        /// <p>A string in the data quality monitoring job definition name. This filter returns only
-        /// data quality monitoring job definitions whose name contains the specified string.</p>
+        /// <p>A string in the data quality monitoring job definition name. This filter returns only data quality monitoring job definitions whose name contains the specified string.</p>
         pub fn set_name_contains(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -21362,14 +19388,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name_contains(input);
             self
         }
-        /// <p>A filter that returns only data quality monitoring job definitions created before the
-        /// specified time.</p>
+        /// <p>A filter that returns only data quality monitoring job definitions created before the specified time.</p>
         pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_before(input);
             self
         }
-        /// <p>A filter that returns only data quality monitoring job definitions created before the
-        /// specified time.</p>
+        /// <p>A filter that returns only data quality monitoring job definitions created before the specified time.</p>
         pub fn set_creation_time_before(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -21377,14 +19401,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_creation_time_before(input);
             self
         }
-        /// <p>A filter that returns only data quality monitoring job definitions created after the
-        /// specified time.</p>
+        /// <p>A filter that returns only data quality monitoring job definitions created after the specified time.</p>
         pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_after(input);
             self
         }
-        /// <p>A filter that returns only data quality monitoring job definitions created after the
-        /// specified time.</p>
+        /// <p>A filter that returns only data quality monitoring job definitions created after the specified time.</p>
         pub fn set_creation_time_after(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -21739,14 +19761,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>If the previous response was truncated, you will receive this token.
-        /// Use it in your next request to receive the next set of results.</p>
+        /// <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the previous response was truncated, you will receive this token.
-        /// Use it in your next request to receive the next set of results.</p>
+        /// <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -22044,16 +20064,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sort_order(input);
             self
         }
-        /// <p>If the result of the previous <code>ListEndpointConfig</code> request was
-        /// truncated, the response includes a <code>NextToken</code>. To retrieve the next set of
-        /// endpoint configurations, use the token in the next request. </p>
+        /// <p>If the result of the previous <code>ListEndpointConfig</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of endpoint configurations, use the token in the next request. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the result of the previous <code>ListEndpointConfig</code> request was
-        /// truncated, the response includes a <code>NextToken</code>. To retrieve the next set of
-        /// endpoint configurations, use the token in the next request. </p>
+        /// <p>If the result of the previous <code>ListEndpointConfig</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of endpoint configurations, use the token in the next request. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -22068,14 +20084,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A string in the endpoint configuration name. This filter returns only endpoint
-        /// configurations whose name contains the specified string. </p>
+        /// <p>A string in the endpoint configuration name. This filter returns only endpoint configurations whose name contains the specified string. </p>
         pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name_contains(input.into());
             self
         }
-        /// <p>A string in the endpoint configuration name. This filter returns only endpoint
-        /// configurations whose name contains the specified string. </p>
+        /// <p>A string in the endpoint configuration name. This filter returns only endpoint configurations whose name contains the specified string. </p>
         pub fn set_name_contains(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -22083,14 +20097,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name_contains(input);
             self
         }
-        /// <p>A filter that returns only endpoint configurations created before the specified
-        /// time (timestamp).</p>
+        /// <p>A filter that returns only endpoint configurations created before the specified time (timestamp).</p>
         pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_before(input);
             self
         }
-        /// <p>A filter that returns only endpoint configurations created before the specified
-        /// time (timestamp).</p>
+        /// <p>A filter that returns only endpoint configurations created before the specified time (timestamp).</p>
         pub fn set_creation_time_before(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -22098,14 +20110,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_creation_time_before(input);
             self
         }
-        /// <p>A filter that returns only endpoint configurations with a creation time greater
-        /// than or equal to the specified time (timestamp).</p>
+        /// <p>A filter that returns only endpoint configurations with a creation time greater than or equal to the specified time (timestamp).</p>
         pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_after(input);
             self
         }
-        /// <p>A filter that returns only endpoint configurations with a creation time greater
-        /// than or equal to the specified time (timestamp).</p>
+        /// <p>A filter that returns only endpoint configurations with a creation time greater than or equal to the specified time (timestamp).</p>
         pub fn set_creation_time_after(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -22199,40 +20209,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sort_order(input);
             self
         }
-        /// <p>If the result of a <code>ListEndpoints</code> request was truncated, the response
-        /// includes a <code>NextToken</code>. To retrieve the next set of endpoints, use the token
-        /// in the next request.</p>
+        /// <p>If the result of a <code>ListEndpoints</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of endpoints, use the token in the next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the result of a <code>ListEndpoints</code> request was truncated, the response
-        /// includes a <code>NextToken</code>. To retrieve the next set of endpoints, use the token
-        /// in the next request.</p>
+        /// <p>If the result of a <code>ListEndpoints</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of endpoints, use the token in the next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of endpoints to return in the response. This value defaults to
-        /// 10.</p>
+        /// <p>The maximum number of endpoints to return in the response. This value defaults to 10.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of endpoints to return in the response. This value defaults to
-        /// 10.</p>
+        /// <p>The maximum number of endpoints to return in the response. This value defaults to 10.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A string in endpoint names. This filter returns only endpoints whose name contains
-        /// the specified string.</p>
+        /// <p>A string in endpoint names. This filter returns only endpoints whose name contains the specified string.</p>
         pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name_contains(input.into());
             self
         }
-        /// <p>A string in endpoint names. This filter returns only endpoints whose name contains
-        /// the specified string.</p>
+        /// <p>A string in endpoint names. This filter returns only endpoints whose name contains the specified string.</p>
         pub fn set_name_contains(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -22240,14 +20242,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name_contains(input);
             self
         }
-        /// <p>A filter that returns only endpoints that were created before the specified time
-        /// (timestamp).</p>
+        /// <p>A filter that returns only endpoints that were created before the specified time (timestamp).</p>
         pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_before(input);
             self
         }
-        /// <p>A filter that returns only endpoints that were created before the specified time
-        /// (timestamp).</p>
+        /// <p>A filter that returns only endpoints that were created before the specified time (timestamp).</p>
         pub fn set_creation_time_before(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -22255,14 +20255,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_creation_time_before(input);
             self
         }
-        /// <p>A filter that returns only endpoints with a creation time greater than or equal to
-        /// the specified time (timestamp).</p>
+        /// <p>A filter that returns only endpoints with a creation time greater than or equal to the specified time (timestamp).</p>
         pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_after(input);
             self
         }
-        /// <p>A filter that returns only endpoints with a creation time greater than or equal to
-        /// the specified time (timestamp).</p>
+        /// <p>A filter that returns only endpoints with a creation time greater than or equal to the specified time (timestamp).</p>
         pub fn set_creation_time_after(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -22270,14 +20268,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_creation_time_after(input);
             self
         }
-        /// <p> A filter that returns only endpoints that were modified before the specified
-        /// timestamp. </p>
+        /// <p> A filter that returns only endpoints that were modified before the specified timestamp. </p>
         pub fn last_modified_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.last_modified_time_before(input);
             self
         }
-        /// <p> A filter that returns only endpoints that were modified before the specified
-        /// timestamp. </p>
+        /// <p> A filter that returns only endpoints that were modified before the specified timestamp. </p>
         pub fn set_last_modified_time_before(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -22285,14 +20281,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_last_modified_time_before(input);
             self
         }
-        /// <p> A filter that returns only endpoints that were modified after the specified
-        /// timestamp. </p>
+        /// <p> A filter that returns only endpoints that were modified after the specified timestamp. </p>
         pub fn last_modified_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.last_modified_time_after(input);
             self
         }
-        /// <p> A filter that returns only endpoints that were modified after the specified
-        /// timestamp. </p>
+        /// <p> A filter that returns only endpoints that were modified after the specified timestamp. </p>
         pub fn set_last_modified_time_after(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -22316,9 +20310,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListExperiments`.
     ///
-    /// <p>Lists all the experiments in your account. The list can be filtered to show only
-    /// experiments that were created in a specific time range. The list can be sorted by experiment
-    /// name or creation time.</p>
+    /// <p>Lists all the experiments in your account. The list can be filtered to show only experiments that were created in a specific time range. The list can be sorted by experiment name or creation time.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListExperiments<
         C = aws_smithy_client::erase::DynConnector,
@@ -22427,26 +20419,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sort_order(input);
             self
         }
-        /// <p>If the previous call to <code>ListExperiments</code> didn't return the full set of
-        /// experiments, the call returns a token for getting the next set of experiments.</p>
+        /// <p>If the previous call to <code>ListExperiments</code> didn't return the full set of experiments, the call returns a token for getting the next set of experiments.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the previous call to <code>ListExperiments</code> didn't return the full set of
-        /// experiments, the call returns a token for getting the next set of experiments.</p>
+        /// <p>If the previous call to <code>ListExperiments</code> didn't return the full set of experiments, the call returns a token for getting the next set of experiments.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of experiments to return in the response. The default value is
-        /// 10.</p>
+        /// <p>The maximum number of experiments to return in the response. The default value is 10.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of experiments to return in the response. The default value is
-        /// 10.</p>
+        /// <p>The maximum number of experiments to return in the response. The default value is 10.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -22511,14 +20499,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A string that partially matches one or more <code>FeatureGroup</code>s names. Filters
-        /// <code>FeatureGroup</code>s by name. </p>
+        /// <p>A string that partially matches one or more <code>FeatureGroup</code>s names. Filters <code>FeatureGroup</code>s by name. </p>
         pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name_contains(input.into());
             self
         }
-        /// <p>A string that partially matches one or more <code>FeatureGroup</code>s names. Filters
-        /// <code>FeatureGroup</code>s by name. </p>
+        /// <p>A string that partially matches one or more <code>FeatureGroup</code>s names. Filters <code>FeatureGroup</code>s by name. </p>
         pub fn set_name_contains(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -22558,14 +20544,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_offline_store_status_equals(input);
             self
         }
-        /// <p>Use this parameter to search for <code>FeatureGroups</code>s created after a specific
-        /// date and time.</p>
+        /// <p>Use this parameter to search for <code>FeatureGroups</code>s created after a specific date and time.</p>
         pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_after(input);
             self
         }
-        /// <p>Use this parameter to search for <code>FeatureGroups</code>s created after a specific
-        /// date and time.</p>
+        /// <p>Use this parameter to search for <code>FeatureGroups</code>s created after a specific date and time.</p>
         pub fn set_creation_time_after(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -22573,14 +20557,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_creation_time_after(input);
             self
         }
-        /// <p>Use this parameter to search for <code>FeatureGroups</code>s created before a specific
-        /// date and time.</p>
+        /// <p>Use this parameter to search for <code>FeatureGroups</code>s created before a specific date and time.</p>
         pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_before(input);
             self
         }
-        /// <p>Use this parameter to search for <code>FeatureGroups</code>s created before a specific
-        /// date and time.</p>
+        /// <p>Use this parameter to search for <code>FeatureGroups</code>s created before a specific date and time.</p>
         pub fn set_creation_time_before(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -22875,9 +20857,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListHyperParameterTuningJobs`.
     ///
-    /// <p>Gets a list of <a>HyperParameterTuningJobSummary</a> objects that
-    /// describe
-    /// the hyperparameter tuning jobs launched in your account.</p>
+    /// <p>Gets a list of <code>HyperParameterTuningJobSummary</code> objects that describe the hyperparameter tuning jobs launched in your account.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListHyperParameterTuningJobs<
         C = aws_smithy_client::erase::DynConnector,
@@ -22934,37 +20914,27 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>If the result of the previous <code>ListHyperParameterTuningJobs</code> request was
-        /// truncated, the response includes a <code>NextToken</code>. To retrieve the next set of
-        /// tuning jobs, use the token in the next request.</p>
+        /// <p>If the result of the previous <code>ListHyperParameterTuningJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of tuning jobs, use the token in the next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the result of the previous <code>ListHyperParameterTuningJobs</code> request was
-        /// truncated, the response includes a <code>NextToken</code>. To retrieve the next set of
-        /// tuning jobs, use the token in the next request.</p>
+        /// <p>If the result of the previous <code>ListHyperParameterTuningJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of tuning jobs, use the token in the next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The
-        /// maximum number of tuning jobs to return. The default value is
-        /// 10.</p>
+        /// <p>The maximum number of tuning jobs to return. The default value is 10.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The
-        /// maximum number of tuning jobs to return. The default value is
-        /// 10.</p>
+        /// <p>The maximum number of tuning jobs to return. The default value is 10.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The
-        /// field
-        /// to sort results by. The default is <code>Name</code>.</p>
+        /// <p>The field to sort results by. The default is <code>Name</code>.</p>
         pub fn sort_by(
             mut self,
             input: crate::model::HyperParameterTuningJobSortByOptions,
@@ -22972,9 +20942,7 @@ pub mod fluent_builders {
             self.inner = self.inner.sort_by(input);
             self
         }
-        /// <p>The
-        /// field
-        /// to sort results by. The default is <code>Name</code>.</p>
+        /// <p>The field to sort results by. The default is <code>Name</code>.</p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<crate::model::HyperParameterTuningJobSortByOptions>,
@@ -22982,16 +20950,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sort_by(input);
             self
         }
-        /// <p>The sort
-        /// order
-        /// for results. The default is <code>Ascending</code>.</p>
+        /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
         pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
             self.inner = self.inner.sort_order(input);
             self
         }
-        /// <p>The sort
-        /// order
-        /// for results. The default is <code>Ascending</code>.</p>
+        /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
         pub fn set_sort_order(
             mut self,
             input: std::option::Option<crate::model::SortOrder>,
@@ -22999,14 +20963,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sort_order(input);
             self
         }
-        /// <p>A string in the tuning job name. This filter returns only tuning jobs whose name
-        /// contains the specified string.</p>
+        /// <p>A string in the tuning job name. This filter returns only tuning jobs whose name contains the specified string.</p>
         pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name_contains(input.into());
             self
         }
-        /// <p>A string in the tuning job name. This filter returns only tuning jobs whose name
-        /// contains the specified string.</p>
+        /// <p>A string in the tuning job name. This filter returns only tuning jobs whose name contains the specified string.</p>
         pub fn set_name_contains(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -23014,16 +20976,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name_contains(input);
             self
         }
-        /// <p>A filter that returns only tuning jobs that were created after the
-        /// specified
-        /// time.</p>
+        /// <p>A filter that returns only tuning jobs that were created after the specified time.</p>
         pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_after(input);
             self
         }
-        /// <p>A filter that returns only tuning jobs that were created after the
-        /// specified
-        /// time.</p>
+        /// <p>A filter that returns only tuning jobs that were created after the specified time.</p>
         pub fn set_creation_time_after(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -23031,16 +20989,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_creation_time_after(input);
             self
         }
-        /// <p>A filter that returns only tuning jobs that were created before the
-        /// specified
-        /// time.</p>
+        /// <p>A filter that returns only tuning jobs that were created before the specified time.</p>
         pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_before(input);
             self
         }
-        /// <p>A filter that returns only tuning jobs that were created before the
-        /// specified
-        /// time.</p>
+        /// <p>A filter that returns only tuning jobs that were created before the specified time.</p>
         pub fn set_creation_time_before(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -23048,14 +21002,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_creation_time_before(input);
             self
         }
-        /// <p>A filter that returns only tuning jobs that were modified after the specified
-        /// time.</p>
+        /// <p>A filter that returns only tuning jobs that were modified after the specified time.</p>
         pub fn last_modified_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.last_modified_time_after(input);
             self
         }
-        /// <p>A filter that returns only tuning jobs that were modified after the specified
-        /// time.</p>
+        /// <p>A filter that returns only tuning jobs that were modified after the specified time.</p>
         pub fn set_last_modified_time_after(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -23063,14 +21015,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_last_modified_time_after(input);
             self
         }
-        /// <p>A filter that returns only tuning jobs that were modified before the specified
-        /// time.</p>
+        /// <p>A filter that returns only tuning jobs that were modified before the specified time.</p>
         pub fn last_modified_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.last_modified_time_before(input);
             self
         }
-        /// <p>A filter that returns only tuning jobs that were modified before the specified
-        /// time.</p>
+        /// <p>A filter that returns only tuning jobs that were modified before the specified time.</p>
         pub fn set_last_modified_time_before(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -23078,16 +21028,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_last_modified_time_before(input);
             self
         }
-        /// <p>A filter that returns only tuning jobs with the
-        /// specified
-        /// status.</p>
+        /// <p>A filter that returns only tuning jobs with the specified status.</p>
         pub fn status_equals(mut self, input: crate::model::HyperParameterTuningJobStatus) -> Self {
             self.inner = self.inner.status_equals(input);
             self
         }
-        /// <p>A filter that returns only tuning jobs with the
-        /// specified
-        /// status.</p>
+        /// <p>A filter that returns only tuning jobs with the specified status.</p>
         pub fn set_status_equals(
             mut self,
             input: std::option::Option<crate::model::HyperParameterTuningJobStatus>,
@@ -23098,8 +21044,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListImages`.
     ///
-    /// <p>Lists the images in your account and their properties. The list can be filtered by
-    /// creation time or modified time, and whether the image name contains a specified string.</p>
+    /// <p>Lists the images in your account and their properties. The list can be filtered by creation time or modified time, and whether the image name contains a specified string.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListImages<
         C = aws_smithy_client::erase::DynConnector,
@@ -23231,14 +21176,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name_contains(input);
             self
         }
-        /// <p>If the previous call to <code>ListImages</code> didn't return the full set of images,
-        /// the call returns a token for getting the next set of images.</p>
+        /// <p>If the previous call to <code>ListImages</code> didn't return the full set of images, the call returns a token for getting the next set of images.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the previous call to <code>ListImages</code> didn't return the full set of images,
-        /// the call returns a token for getting the next set of images.</p>
+        /// <p>If the previous call to <code>ListImages</code> didn't return the full set of images, the call returns a token for getting the next set of images.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -23272,8 +21215,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListImageVersions`.
     ///
-    /// <p>Lists the versions of a specified image and their properties. The list can be filtered
-    /// by creation time or modified time.</p>
+    /// <p>Lists the versions of a specified image and their properties. The list can be filtered by creation time or modified time.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListImageVersions<
         C = aws_smithy_client::erase::DynConnector,
@@ -23402,14 +21344,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>If the previous call to <code>ListImageVersions</code> didn't return the full set of
-        /// versions, the call returns a token for getting the next set of versions.</p>
+        /// <p>If the previous call to <code>ListImageVersions</code> didn't return the full set of versions, the call returns a token for getting the next set of versions.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the previous call to <code>ListImageVersions</code> didn't return the full set of
-        /// versions, the call returns a token for getting the next set of versions.</p>
+        /// <p>If the previous call to <code>ListImageVersions</code> didn't return the full set of versions, the call returns a token for getting the next set of versions.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -23607,16 +21547,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sort_order(input);
             self
         }
-        /// <p>If the response to a previous <code>ListInferenceRecommendationsJobsRequest</code> request
-        /// was truncated, the response includes a <code>NextToken</code>. To retrieve the next set
-        /// of recommendations, use the token in the next request.</p>
+        /// <p>If the response to a previous <code>ListInferenceRecommendationsJobsRequest</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of recommendations, use the token in the next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the response to a previous <code>ListInferenceRecommendationsJobsRequest</code> request
-        /// was truncated, the response includes a <code>NextToken</code>. To retrieve the next set
-        /// of recommendations, use the token in the next request.</p>
+        /// <p>If the response to a previous <code>ListInferenceRecommendationsJobsRequest</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of recommendations, use the token in the next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -23691,14 +21627,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A filter that returns only labeling jobs created after the specified time
-        /// (timestamp).</p>
+        /// <p>A filter that returns only labeling jobs created after the specified time (timestamp).</p>
         pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_after(input);
             self
         }
-        /// <p>A filter that returns only labeling jobs created after the specified time
-        /// (timestamp).</p>
+        /// <p>A filter that returns only labeling jobs created after the specified time (timestamp).</p>
         pub fn set_creation_time_after(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -23706,14 +21640,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_creation_time_after(input);
             self
         }
-        /// <p>A filter that returns only labeling jobs created before the specified time
-        /// (timestamp).</p>
+        /// <p>A filter that returns only labeling jobs created before the specified time (timestamp).</p>
         pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_before(input);
             self
         }
-        /// <p>A filter that returns only labeling jobs created before the specified time
-        /// (timestamp).</p>
+        /// <p>A filter that returns only labeling jobs created before the specified time (timestamp).</p>
         pub fn set_creation_time_before(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -23721,14 +21653,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_creation_time_before(input);
             self
         }
-        /// <p>A filter that returns only labeling jobs modified after the specified time
-        /// (timestamp).</p>
+        /// <p>A filter that returns only labeling jobs modified after the specified time (timestamp).</p>
         pub fn last_modified_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.last_modified_time_after(input);
             self
         }
-        /// <p>A filter that returns only labeling jobs modified after the specified time
-        /// (timestamp).</p>
+        /// <p>A filter that returns only labeling jobs modified after the specified time (timestamp).</p>
         pub fn set_last_modified_time_after(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -23736,14 +21666,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_last_modified_time_after(input);
             self
         }
-        /// <p>A filter that returns only labeling jobs modified before the specified time
-        /// (timestamp).</p>
+        /// <p>A filter that returns only labeling jobs modified before the specified time (timestamp).</p>
         pub fn last_modified_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.last_modified_time_before(input);
             self
         }
-        /// <p>A filter that returns only labeling jobs modified before the specified time
-        /// (timestamp).</p>
+        /// <p>A filter that returns only labeling jobs modified before the specified time (timestamp).</p>
         pub fn set_last_modified_time_before(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -23761,28 +21689,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>If the result of the previous <code>ListLabelingJobs</code> request was truncated, the
-        /// response includes a <code>NextToken</code>. To retrieve the next set of labeling jobs,
-        /// use the token in the next request.</p>
+        /// <p>If the result of the previous <code>ListLabelingJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of labeling jobs, use the token in the next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the result of the previous <code>ListLabelingJobs</code> request was truncated, the
-        /// response includes a <code>NextToken</code>. To retrieve the next set of labeling jobs,
-        /// use the token in the next request.</p>
+        /// <p>If the result of the previous <code>ListLabelingJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of labeling jobs, use the token in the next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>A string in the labeling job name. This filter returns only labeling jobs whose name
-        /// contains the specified string.</p>
+        /// <p>A string in the labeling job name. This filter returns only labeling jobs whose name contains the specified string.</p>
         pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name_contains(input.into());
             self
         }
-        /// <p>A string in the labeling job name. This filter returns only labeling jobs whose name
-        /// contains the specified string.</p>
+        /// <p>A string in the labeling job name. This filter returns only labeling jobs whose name contains the specified string.</p>
         pub fn set_name_contains(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -23886,14 +21808,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the work team for which you want to see labeling
-        /// jobs for.</p>
+        /// <p>The Amazon Resource Name (ARN) of the work team for which you want to see labeling jobs for.</p>
         pub fn workteam_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.workteam_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the work team for which you want to see labeling
-        /// jobs for.</p>
+        /// <p>The Amazon Resource Name (ARN) of the work team for which you want to see labeling jobs for.</p>
         pub fn set_workteam_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_workteam_arn(input);
             self
@@ -23908,28 +21828,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>If the result of the previous <code>ListLabelingJobsForWorkteam</code> request was
-        /// truncated, the response includes a <code>NextToken</code>. To retrieve the next set of
-        /// labeling jobs, use the token in the next request.</p>
+        /// <p>If the result of the previous <code>ListLabelingJobsForWorkteam</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of labeling jobs, use the token in the next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the result of the previous <code>ListLabelingJobsForWorkteam</code> request was
-        /// truncated, the response includes a <code>NextToken</code>. To retrieve the next set of
-        /// labeling jobs, use the token in the next request.</p>
+        /// <p>If the result of the previous <code>ListLabelingJobsForWorkteam</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of labeling jobs, use the token in the next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>A filter that returns only labeling jobs created after the specified time
-        /// (timestamp).</p>
+        /// <p>A filter that returns only labeling jobs created after the specified time (timestamp).</p>
         pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_after(input);
             self
         }
-        /// <p>A filter that returns only labeling jobs created after the specified time
-        /// (timestamp).</p>
+        /// <p>A filter that returns only labeling jobs created after the specified time (timestamp).</p>
         pub fn set_creation_time_after(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -23937,14 +21851,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_creation_time_after(input);
             self
         }
-        /// <p>A filter that returns only labeling jobs created before the specified time
-        /// (timestamp).</p>
+        /// <p>A filter that returns only labeling jobs created before the specified time (timestamp).</p>
         pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_before(input);
             self
         }
-        /// <p>A filter that returns only labeling jobs created before the specified time
-        /// (timestamp).</p>
+        /// <p>A filter that returns only labeling jobs created before the specified time (timestamp).</p>
         pub fn set_creation_time_before(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -23952,8 +21864,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_creation_time_before(input);
             self
         }
-        /// <p>A filter the limits jobs to only the ones whose job reference code contains the
-        /// specified string.</p>
+        /// <p>A filter the limits jobs to only the ones whose job reference code contains the specified string.</p>
         pub fn job_reference_code_contains(
             mut self,
             input: impl Into<std::string::String>,
@@ -23961,8 +21872,7 @@ pub mod fluent_builders {
             self.inner = self.inner.job_reference_code_contains(input.into());
             self
         }
-        /// <p>A filter the limits jobs to only the ones whose job reference code contains the
-        /// specified string.</p>
+        /// <p>A filter the limits jobs to only the ones whose job reference code contains the specified string.</p>
         pub fn set_job_reference_code_contains(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -24002,9 +21912,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListLineageGroups`.
     ///
-    /// <p>A list of lineage groups shared with your Amazon Web Services account.
-    /// For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/xaccount-lineage-tracking.html">
-    /// Cross-Account Lineage Tracking </a> in the <i>Amazon SageMaker Developer Guide</i>.</p>
+    /// <p>A list of lineage groups shared with your Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/xaccount-lineage-tracking.html"> Cross-Account Lineage Tracking </a> in the <i>Amazon SageMaker Developer Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListLineageGroups<
         C = aws_smithy_client::erase::DynConnector,
@@ -24087,14 +21995,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_created_before(input);
             self
         }
-        /// <p>The parameter by which to sort the results. The default is
-        /// <code>CreationTime</code>.</p>
+        /// <p>The parameter by which to sort the results. The default is <code>CreationTime</code>.</p>
         pub fn sort_by(mut self, input: crate::model::SortLineageGroupsBy) -> Self {
             self.inner = self.inner.sort_by(input);
             self
         }
-        /// <p>The parameter by which to sort the results. The default is
-        /// <code>CreationTime</code>.</p>
+        /// <p>The parameter by which to sort the results. The default is <code>CreationTime</code>.</p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<crate::model::SortLineageGroupsBy>,
@@ -24115,26 +22021,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sort_order(input);
             self
         }
-        /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of
-        /// algorithms, use it in the subsequent request.</p>
+        /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of algorithms, use it in the subsequent request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of
-        /// algorithms, use it in the subsequent request.</p>
+        /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of algorithms, use it in the subsequent request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of endpoints to return in the response. This value defaults to
-        /// 10.</p>
+        /// <p>The maximum number of endpoints to return in the response. This value defaults to 10.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of endpoints to return in the response. This value defaults to
-        /// 10.</p>
+        /// <p>The maximum number of endpoints to return in the response. This value defaults to 10.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -24212,14 +22114,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_endpoint_name(input);
             self
         }
-        /// <p>Whether to sort results by the <code>Name</code> or <code>CreationTime</code> field. The
-        /// default is <code>CreationTime</code>.</p>
+        /// <p>Whether to sort results by the <code>Name</code> or <code>CreationTime</code> field. The default is <code>CreationTime</code>.</p>
         pub fn sort_by(mut self, input: crate::model::MonitoringJobDefinitionSortKey) -> Self {
             self.inner = self.inner.sort_by(input);
             self
         }
-        /// <p>Whether to sort results by the <code>Name</code> or <code>CreationTime</code> field. The
-        /// default is <code>CreationTime</code>.</p>
+        /// <p>Whether to sort results by the <code>Name</code> or <code>CreationTime</code> field. The default is <code>CreationTime</code>.</p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<crate::model::MonitoringJobDefinitionSortKey>,
@@ -24227,14 +22127,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sort_by(input);
             self
         }
-        /// <p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order.
-        /// The default is <code>Descending</code>.</p>
+        /// <p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order. The default is <code>Descending</code>.</p>
         pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
             self.inner = self.inner.sort_order(input);
             self
         }
-        /// <p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order.
-        /// The default is <code>Descending</code>.</p>
+        /// <p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order. The default is <code>Descending</code>.</p>
         pub fn set_sort_order(
             mut self,
             input: std::option::Option<crate::model::SortOrder>,
@@ -24242,26 +22140,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sort_order(input);
             self
         }
-        /// <p>The token returned if the response is truncated. To retrieve the next set of job
-        /// executions, use it in the next request.</p>
+        /// <p>The token returned if the response is truncated. To retrieve the next set of job executions, use it in the next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token returned if the response is truncated. To retrieve the next set of job
-        /// executions, use it in the next request.</p>
+        /// <p>The token returned if the response is truncated. To retrieve the next set of job executions, use it in the next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of model bias jobs to return in the response. The default value is
-        /// 10.</p>
+        /// <p>The maximum number of model bias jobs to return in the response. The default value is 10.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of model bias jobs to return in the response. The default value is
-        /// 10.</p>
+        /// <p>The maximum number of model bias jobs to return in the response. The default value is 10.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -24380,14 +22274,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_endpoint_name(input);
             self
         }
-        /// <p>Whether to sort results by the <code>Name</code> or <code>CreationTime</code> field. The
-        /// default is <code>CreationTime</code>.</p>
+        /// <p>Whether to sort results by the <code>Name</code> or <code>CreationTime</code> field. The default is <code>CreationTime</code>.</p>
         pub fn sort_by(mut self, input: crate::model::MonitoringJobDefinitionSortKey) -> Self {
             self.inner = self.inner.sort_by(input);
             self
         }
-        /// <p>Whether to sort results by the <code>Name</code> or <code>CreationTime</code> field. The
-        /// default is <code>CreationTime</code>.</p>
+        /// <p>Whether to sort results by the <code>Name</code> or <code>CreationTime</code> field. The default is <code>CreationTime</code>.</p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<crate::model::MonitoringJobDefinitionSortKey>,
@@ -24395,14 +22287,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sort_by(input);
             self
         }
-        /// <p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order.
-        /// The default is <code>Descending</code>.</p>
+        /// <p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order. The default is <code>Descending</code>.</p>
         pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
             self.inner = self.inner.sort_order(input);
             self
         }
-        /// <p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order.
-        /// The default is <code>Descending</code>.</p>
+        /// <p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order. The default is <code>Descending</code>.</p>
         pub fn set_sort_order(
             mut self,
             input: std::option::Option<crate::model::SortOrder>,
@@ -24410,14 +22300,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sort_order(input);
             self
         }
-        /// <p>The token returned if the response is truncated. To retrieve the next set of job
-        /// executions, use it in the next request.</p>
+        /// <p>The token returned if the response is truncated. To retrieve the next set of job executions, use it in the next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token returned if the response is truncated. To retrieve the next set of job
-        /// executions, use it in the next request.</p>
+        /// <p>The token returned if the response is truncated. To retrieve the next set of job executions, use it in the next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -24445,14 +22333,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name_contains(input);
             self
         }
-        /// <p>A filter that returns only model explainability jobs created before a specified
-        /// time.</p>
+        /// <p>A filter that returns only model explainability jobs created before a specified time.</p>
         pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_before(input);
             self
         }
-        /// <p>A filter that returns only model explainability jobs created before a specified
-        /// time.</p>
+        /// <p>A filter that returns only model explainability jobs created before a specified time.</p>
         pub fn set_creation_time_before(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -24460,14 +22346,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_creation_time_before(input);
             self
         }
-        /// <p>A filter that returns only model explainability jobs created after a specified
-        /// time.</p>
+        /// <p>A filter that returns only model explainability jobs created after a specified time.</p>
         pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_after(input);
             self
         }
-        /// <p>A filter that returns only model explainability jobs created after a specified
-        /// time.</p>
+        /// <p>A filter that returns only model explainability jobs created after a specified time.</p>
         pub fn set_creation_time_after(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -24478,8 +22362,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListModelMetadata`.
     ///
-    /// <p>Lists the domain, framework, task, and model name of standard
-    /// machine learning models found in common model zoos.</p>
+    /// <p>Lists the domain, framework, task, and model name of standard machine learning models found in common model zoos.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListModelMetadata<
         C = aws_smithy_client::erase::DynConnector,
@@ -24536,10 +22419,7 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>One or more filters that searches for the specified resource or resources
-        /// in a search. All resource objects that satisfy the expression's condition are
-        /// included in the search results. Specify the  Framework, FrameworkVersion, Domain
-        /// or Task to filter supported. Filter names and values are case-sensitive.</p>
+        /// <p>One or more filters that searches for the specified resource or resources in a search. All resource objects that satisfy the expression's condition are included in the search results. Specify the Framework, FrameworkVersion, Domain or Task to filter supported. Filter names and values are case-sensitive.</p>
         pub fn search_expression(
             mut self,
             input: crate::model::ModelMetadataSearchExpression,
@@ -24547,10 +22427,7 @@ pub mod fluent_builders {
             self.inner = self.inner.search_expression(input);
             self
         }
-        /// <p>One or more filters that searches for the specified resource or resources
-        /// in a search. All resource objects that satisfy the expression's condition are
-        /// included in the search results. Specify the  Framework, FrameworkVersion, Domain
-        /// or Task to filter supported. Filter names and values are case-sensitive.</p>
+        /// <p>One or more filters that searches for the specified resource or resources in a search. All resource objects that satisfy the expression's condition are included in the search results. Specify the Framework, FrameworkVersion, Domain or Task to filter supported. Filter names and values are case-sensitive.</p>
         pub fn set_search_expression(
             mut self,
             input: std::option::Option<crate::model::ModelMetadataSearchExpression>,
@@ -24558,16 +22435,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_search_expression(input);
             self
         }
-        /// <p>If the response to a previous <code>ListModelMetadataResponse</code> request was truncated,
-        /// the response includes a NextToken. To retrieve the next set of model metadata,
-        /// use the token in the next request.</p>
+        /// <p>If the response to a previous <code>ListModelMetadataResponse</code> request was truncated, the response includes a NextToken. To retrieve the next set of model metadata, use the token in the next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the response to a previous <code>ListModelMetadataResponse</code> request was truncated,
-        /// the response includes a NextToken. To retrieve the next set of model metadata,
-        /// use the token in the next request.</p>
+        /// <p>If the response to a previous <code>ListModelMetadataResponse</code> request was truncated, the response includes a NextToken. To retrieve the next set of model metadata, use the token in the next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -24678,14 +22551,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A string in the model group name. This filter returns only model groups whose name
-        /// contains the specified string.</p>
+        /// <p>A string in the model group name. This filter returns only model groups whose name contains the specified string.</p>
         pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name_contains(input.into());
             self
         }
-        /// <p>A string in the model group name. This filter returns only model groups whose name
-        /// contains the specified string.</p>
+        /// <p>A string in the model group name. This filter returns only model groups whose name contains the specified string.</p>
         pub fn set_name_contains(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -24693,16 +22564,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name_contains(input);
             self
         }
-        /// <p>If the result of the previous <code>ListModelPackageGroups</code> request was
-        /// truncated, the response includes a <code>NextToken</code>. To retrieve the next set of
-        /// model groups, use the token in the next request.</p>
+        /// <p>If the result of the previous <code>ListModelPackageGroups</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model groups, use the token in the next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the result of the previous <code>ListModelPackageGroups</code> request was
-        /// truncated, the response includes a <code>NextToken</code>. To retrieve the next set of
-        /// model groups, use the token in the next request.</p>
+        /// <p>If the result of the previous <code>ListModelPackageGroups</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model groups, use the token in the next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -24793,14 +22660,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A filter that returns only model packages created after the specified time
-        /// (timestamp).</p>
+        /// <p>A filter that returns only model packages created after the specified time (timestamp).</p>
         pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_after(input);
             self
         }
-        /// <p>A filter that returns only model packages created after the specified time
-        /// (timestamp).</p>
+        /// <p>A filter that returns only model packages created after the specified time (timestamp).</p>
         pub fn set_creation_time_after(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -24808,14 +22673,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_creation_time_after(input);
             self
         }
-        /// <p>A filter that returns only model packages created before the specified time
-        /// (timestamp).</p>
+        /// <p>A filter that returns only model packages created before the specified time (timestamp).</p>
         pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_before(input);
             self
         }
-        /// <p>A filter that returns only model packages created before the specified time
-        /// (timestamp).</p>
+        /// <p>A filter that returns only model packages created before the specified time (timestamp).</p>
         pub fn set_creation_time_before(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -24833,14 +22696,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A string in the model package name. This filter returns only model packages whose name
-        /// contains the specified string.</p>
+        /// <p>A string in the model package name. This filter returns only model packages whose name contains the specified string.</p>
         pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name_contains(input.into());
             self
         }
-        /// <p>A string in the model package name. This filter returns only model packages whose name
-        /// contains the specified string.</p>
+        /// <p>A string in the model package name. This filter returns only model packages whose name contains the specified string.</p>
         pub fn set_name_contains(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -24848,14 +22709,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name_contains(input);
             self
         }
-        /// <p>A filter that returns only the model packages with the specified approval
-        /// status.</p>
+        /// <p>A filter that returns only the model packages with the specified approval status.</p>
         pub fn model_approval_status(mut self, input: crate::model::ModelApprovalStatus) -> Self {
             self.inner = self.inner.model_approval_status(input);
             self
         }
-        /// <p>A filter that returns only the model packages with the specified approval
-        /// status.</p>
+        /// <p>A filter that returns only the model packages with the specified approval status.</p>
         pub fn set_model_approval_status(
             mut self,
             input: std::option::Option<crate::model::ModelApprovalStatus>,
@@ -24876,41 +22735,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_model_package_group_name(input);
             self
         }
-        /// <p>A filter that returns onlyl the model packages of the specified type. This can be one
-        /// of the following values.</p>
+        /// <p>A filter that returns onlyl the model packages of the specified type. This can be one of the following values.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>VERSIONED</code> - List only versioned models.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UNVERSIONED</code> - List only unversioined models.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>BOTH</code> - List both versioned and unversioned models.</p>
-        /// </li>
+        /// <li> <p> <code>VERSIONED</code> - List only versioned models.</p> </li>
+        /// <li> <p> <code>UNVERSIONED</code> - List only unversioined models.</p> </li>
+        /// <li> <p> <code>BOTH</code> - List both versioned and unversioned models.</p> </li>
         /// </ul>
         pub fn model_package_type(mut self, input: crate::model::ModelPackageType) -> Self {
             self.inner = self.inner.model_package_type(input);
             self
         }
-        /// <p>A filter that returns onlyl the model packages of the specified type. This can be one
-        /// of the following values.</p>
+        /// <p>A filter that returns onlyl the model packages of the specified type. This can be one of the following values.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>VERSIONED</code> - List only versioned models.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UNVERSIONED</code> - List only unversioined models.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>BOTH</code> - List both versioned and unversioned models.</p>
-        /// </li>
+        /// <li> <p> <code>VERSIONED</code> - List only versioned models.</p> </li>
+        /// <li> <p> <code>UNVERSIONED</code> - List only unversioined models.</p> </li>
+        /// <li> <p> <code>BOTH</code> - List both versioned and unversioned models.</p> </li>
         /// </ul>
         pub fn set_model_package_type(
             mut self,
@@ -24919,28 +22758,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_model_package_type(input);
             self
         }
-        /// <p>If the response to a previous <code>ListModelPackages</code> request was truncated,
-        /// the response includes a <code>NextToken</code>. To retrieve the next set of model
-        /// packages, use the token in the next request.</p>
+        /// <p>If the response to a previous <code>ListModelPackages</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model packages, use the token in the next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the response to a previous <code>ListModelPackages</code> request was truncated,
-        /// the response includes a <code>NextToken</code>. To retrieve the next set of model
-        /// packages, use the token in the next request.</p>
+        /// <p>If the response to a previous <code>ListModelPackages</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model packages, use the token in the next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The parameter by which to sort the results. The default is
-        /// <code>CreationTime</code>.</p>
+        /// <p>The parameter by which to sort the results. The default is <code>CreationTime</code>.</p>
         pub fn sort_by(mut self, input: crate::model::ModelPackageSortBy) -> Self {
             self.inner = self.inner.sort_by(input);
             self
         }
-        /// <p>The parameter by which to sort the results. The default is
-        /// <code>CreationTime</code>.</p>
+        /// <p>The parameter by which to sort the results. The default is <code>CreationTime</code>.</p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<crate::model::ModelPackageSortBy>,
@@ -25021,14 +22854,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A filter that returns only model quality monitoring job definitions that are associated
-        /// with the specified endpoint.</p>
+        /// <p>A filter that returns only model quality monitoring job definitions that are associated with the specified endpoint.</p>
         pub fn endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.endpoint_name(input.into());
             self
         }
-        /// <p>A filter that returns only model quality monitoring job definitions that are associated
-        /// with the specified endpoint.</p>
+        /// <p>A filter that returns only model quality monitoring job definitions that are associated with the specified endpoint.</p>
         pub fn set_endpoint_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -25062,40 +22893,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sort_order(input);
             self
         }
-        /// <p>If the result of the previous <code>ListModelQualityJobDefinitions</code> request was
-        /// truncated, the response includes a <code>NextToken</code>. To retrieve the next set of
-        /// model quality monitoring job definitions, use the token in the next request.</p>
+        /// <p>If the result of the previous <code>ListModelQualityJobDefinitions</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model quality monitoring job definitions, use the token in the next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the result of the previous <code>ListModelQualityJobDefinitions</code> request was
-        /// truncated, the response includes a <code>NextToken</code>. To retrieve the next set of
-        /// model quality monitoring job definitions, use the token in the next request.</p>
+        /// <p>If the result of the previous <code>ListModelQualityJobDefinitions</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model quality monitoring job definitions, use the token in the next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return in a call to
-        /// <code>ListModelQualityJobDefinitions</code>.</p>
+        /// <p>The maximum number of results to return in a call to <code>ListModelQualityJobDefinitions</code>.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return in a call to
-        /// <code>ListModelQualityJobDefinitions</code>.</p>
+        /// <p>The maximum number of results to return in a call to <code>ListModelQualityJobDefinitions</code>.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A string in the transform job name. This filter returns only model quality monitoring
-        /// job definitions whose name contains the specified string.</p>
+        /// <p>A string in the transform job name. This filter returns only model quality monitoring job definitions whose name contains the specified string.</p>
         pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name_contains(input.into());
             self
         }
-        /// <p>A string in the transform job name. This filter returns only model quality monitoring
-        /// job definitions whose name contains the specified string.</p>
+        /// <p>A string in the transform job name. This filter returns only model quality monitoring job definitions whose name contains the specified string.</p>
         pub fn set_name_contains(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -25103,14 +22926,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name_contains(input);
             self
         }
-        /// <p>A filter that returns only model quality monitoring job definitions created before the
-        /// specified time.</p>
+        /// <p>A filter that returns only model quality monitoring job definitions created before the specified time.</p>
         pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_before(input);
             self
         }
-        /// <p>A filter that returns only model quality monitoring job definitions created before the
-        /// specified time.</p>
+        /// <p>A filter that returns only model quality monitoring job definitions created before the specified time.</p>
         pub fn set_creation_time_before(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -25118,14 +22939,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_creation_time_before(input);
             self
         }
-        /// <p>A filter that returns only model quality monitoring job definitions created after the
-        /// specified time.</p>
+        /// <p>A filter that returns only model quality monitoring job definitions created after the specified time.</p>
         pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_after(input);
             self
         }
-        /// <p>A filter that returns only model quality monitoring job definitions created after the
-        /// specified time.</p>
+        /// <p>A filter that returns only model quality monitoring job definitions created after the specified time.</p>
         pub fn set_creation_time_after(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -25219,16 +23038,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sort_order(input);
             self
         }
-        /// <p>If the response to a previous <code>ListModels</code> request was truncated, the
-        /// response includes a <code>NextToken</code>. To retrieve the next set of models, use the
-        /// token in the next request.</p>
+        /// <p>If the response to a previous <code>ListModels</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of models, use the token in the next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the response to a previous <code>ListModels</code> request was truncated, the
-        /// response includes a <code>NextToken</code>. To retrieve the next set of models, use the
-        /// token in the next request.</p>
+        /// <p>If the response to a previous <code>ListModels</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of models, use the token in the next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -25243,14 +23058,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A string in the model name. This filter returns only models whose
-        /// name contains the specified string.</p>
+        /// <p>A string in the model name. This filter returns only models whose name contains the specified string.</p>
         pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name_contains(input.into());
             self
         }
-        /// <p>A string in the model name. This filter returns only models whose
-        /// name contains the specified string.</p>
+        /// <p>A string in the model name. This filter returns only models whose name contains the specified string.</p>
         pub fn set_name_contains(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -25258,14 +23071,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name_contains(input);
             self
         }
-        /// <p>A filter that returns only models created before the specified time
-        /// (timestamp).</p>
+        /// <p>A filter that returns only models created before the specified time (timestamp).</p>
         pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_before(input);
             self
         }
-        /// <p>A filter that returns only models created before the specified time
-        /// (timestamp).</p>
+        /// <p>A filter that returns only models created before the specified time (timestamp).</p>
         pub fn set_creation_time_before(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -25273,14 +23084,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_creation_time_before(input);
             self
         }
-        /// <p>A filter that returns only models with a creation time greater than or equal to the
-        /// specified time (timestamp).</p>
+        /// <p>A filter that returns only models with a creation time greater than or equal to the specified time (timestamp).</p>
         pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_after(input);
             self
         }
-        /// <p>A filter that returns only models with a creation time greater than or equal to the
-        /// specified time (timestamp).</p>
+        /// <p>A filter that returns only models with a creation time greater than or equal to the specified time (timestamp).</p>
         pub fn set_creation_time_after(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -25374,14 +23183,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_endpoint_name(input);
             self
         }
-        /// <p>Whether to sort results by <code>Status</code>, <code>CreationTime</code>,
-        /// <code>ScheduledTime</code> field. The default is <code>CreationTime</code>.</p>
+        /// <p>Whether to sort results by <code>Status</code>, <code>CreationTime</code>, <code>ScheduledTime</code> field. The default is <code>CreationTime</code>.</p>
         pub fn sort_by(mut self, input: crate::model::MonitoringExecutionSortKey) -> Self {
             self.inner = self.inner.sort_by(input);
             self
         }
-        /// <p>Whether to sort results by <code>Status</code>, <code>CreationTime</code>,
-        /// <code>ScheduledTime</code> field. The default is <code>CreationTime</code>.</p>
+        /// <p>Whether to sort results by <code>Status</code>, <code>CreationTime</code>, <code>ScheduledTime</code> field. The default is <code>CreationTime</code>.</p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<crate::model::MonitoringExecutionSortKey>,
@@ -25389,14 +23196,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sort_by(input);
             self
         }
-        /// <p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order.
-        /// The default is <code>Descending</code>.</p>
+        /// <p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order. The default is <code>Descending</code>.</p>
         pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
             self.inner = self.inner.sort_order(input);
             self
         }
-        /// <p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order.
-        /// The default is <code>Descending</code>.</p>
+        /// <p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order. The default is <code>Descending</code>.</p>
         pub fn set_sort_order(
             mut self,
             input: std::option::Option<crate::model::SortOrder>,
@@ -25404,14 +23209,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sort_order(input);
             self
         }
-        /// <p>The token returned if the response is truncated. To retrieve the next set of job
-        /// executions, use it in the next request.</p>
+        /// <p>The token returned if the response is truncated. To retrieve the next set of job executions, use it in the next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token returned if the response is truncated. To retrieve the next set of job
-        /// executions, use it in the next request.</p>
+        /// <p>The token returned if the response is truncated. To retrieve the next set of job executions, use it in the next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -25517,8 +23320,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_status_equals(input);
             self
         }
-        /// <p>Gets a list of the monitoring job runs of the specified monitoring job
-        /// definitions.</p>
+        /// <p>Gets a list of the monitoring job runs of the specified monitoring job definitions.</p>
         pub fn monitoring_job_definition_name(
             mut self,
             input: impl Into<std::string::String>,
@@ -25526,8 +23328,7 @@ pub mod fluent_builders {
             self.inner = self.inner.monitoring_job_definition_name(input.into());
             self
         }
-        /// <p>Gets a list of the monitoring job runs of the specified monitoring job
-        /// definitions.</p>
+        /// <p>Gets a list of the monitoring job runs of the specified monitoring job definitions.</p>
         pub fn set_monitoring_job_definition_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -25535,14 +23336,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_monitoring_job_definition_name(input);
             self
         }
-        /// <p>A filter that returns only the monitoring job runs of the specified monitoring
-        /// type.</p>
+        /// <p>A filter that returns only the monitoring job runs of the specified monitoring type.</p>
         pub fn monitoring_type_equals(mut self, input: crate::model::MonitoringType) -> Self {
             self.inner = self.inner.monitoring_type_equals(input);
             self
         }
-        /// <p>A filter that returns only the monitoring job runs of the specified monitoring
-        /// type.</p>
+        /// <p>A filter that returns only the monitoring job runs of the specified monitoring type.</p>
         pub fn set_monitoring_type_equals(
             mut self,
             input: std::option::Option<crate::model::MonitoringType>,
@@ -25623,14 +23422,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_endpoint_name(input);
             self
         }
-        /// <p>Whether to sort results by <code>Status</code>, <code>CreationTime</code>,
-        /// <code>ScheduledTime</code> field. The default is <code>CreationTime</code>.</p>
+        /// <p>Whether to sort results by <code>Status</code>, <code>CreationTime</code>, <code>ScheduledTime</code> field. The default is <code>CreationTime</code>.</p>
         pub fn sort_by(mut self, input: crate::model::MonitoringScheduleSortKey) -> Self {
             self.inner = self.inner.sort_by(input);
             self
         }
-        /// <p>Whether to sort results by <code>Status</code>, <code>CreationTime</code>,
-        /// <code>ScheduledTime</code> field. The default is <code>CreationTime</code>.</p>
+        /// <p>Whether to sort results by <code>Status</code>, <code>CreationTime</code>, <code>ScheduledTime</code> field. The default is <code>CreationTime</code>.</p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<crate::model::MonitoringScheduleSortKey>,
@@ -25638,14 +23435,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sort_by(input);
             self
         }
-        /// <p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order.
-        /// The default is <code>Descending</code>.</p>
+        /// <p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order. The default is <code>Descending</code>.</p>
         pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
             self.inner = self.inner.sort_order(input);
             self
         }
-        /// <p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order.
-        /// The default is <code>Descending</code>.</p>
+        /// <p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order. The default is <code>Descending</code>.</p>
         pub fn set_sort_order(
             mut self,
             input: std::option::Option<crate::model::SortOrder>,
@@ -25653,14 +23448,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sort_order(input);
             self
         }
-        /// <p>The token returned if the response is truncated. To retrieve the next set of job
-        /// executions, use it in the next request.</p>
+        /// <p>The token returned if the response is truncated. To retrieve the next set of job executions, use it in the next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token returned if the response is truncated. To retrieve the next set of job
-        /// executions, use it in the next request.</p>
+        /// <p>The token returned if the response is truncated. To retrieve the next set of job executions, use it in the next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -25753,8 +23546,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_status_equals(input);
             self
         }
-        /// <p>Gets a list of the monitoring schedules for the specified monitoring job
-        /// definition.</p>
+        /// <p>Gets a list of the monitoring schedules for the specified monitoring job definition.</p>
         pub fn monitoring_job_definition_name(
             mut self,
             input: impl Into<std::string::String>,
@@ -25762,8 +23554,7 @@ pub mod fluent_builders {
             self.inner = self.inner.monitoring_job_definition_name(input.into());
             self
         }
-        /// <p>Gets a list of the monitoring schedules for the specified monitoring job
-        /// definition.</p>
+        /// <p>Gets a list of the monitoring schedules for the specified monitoring job definition.</p>
         pub fn set_monitoring_job_definition_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -25771,14 +23562,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_monitoring_job_definition_name(input);
             self
         }
-        /// <p>A filter that returns only the monitoring schedules for the specified monitoring
-        /// type.</p>
+        /// <p>A filter that returns only the monitoring schedules for the specified monitoring type.</p>
         pub fn monitoring_type_equals(mut self, input: crate::model::MonitoringType) -> Self {
             self.inner = self.inner.monitoring_type_equals(input);
             self
         }
-        /// <p>A filter that returns only the monitoring schedules for the specified monitoring
-        /// type.</p>
+        /// <p>A filter that returns only the monitoring schedules for the specified monitoring type.</p>
         pub fn set_monitoring_type_equals(
             mut self,
             input: std::option::Option<crate::model::MonitoringType>,
@@ -25789,7 +23578,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListNotebookInstanceLifecycleConfigs`.
     ///
-    /// <p>Lists notebook instance lifestyle configurations created with the <a>CreateNotebookInstanceLifecycleConfig</a> API.</p>
+    /// <p>Lists notebook instance lifestyle configurations created with the <code>CreateNotebookInstanceLifecycleConfig</code> API.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListNotebookInstanceLifecycleConfigs<
         C = aws_smithy_client::erase::DynConnector,
@@ -25848,16 +23637,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>If the result of a <code>ListNotebookInstanceLifecycleConfigs</code> request was
-        /// truncated, the response includes a <code>NextToken</code>. To get the next set of
-        /// lifecycle configurations, use the token in the next request.</p>
+        /// <p>If the result of a <code>ListNotebookInstanceLifecycleConfigs</code> request was truncated, the response includes a <code>NextToken</code>. To get the next set of lifecycle configurations, use the token in the next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the result of a <code>ListNotebookInstanceLifecycleConfigs</code> request was
-        /// truncated, the response includes a <code>NextToken</code>. To get the next set of
-        /// lifecycle configurations, use the token in the next request.</p>
+        /// <p>If the result of a <code>ListNotebookInstanceLifecycleConfigs</code> request was truncated, the response includes a <code>NextToken</code>. To get the next set of lifecycle configurations, use the token in the next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -25904,14 +23689,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sort_order(input);
             self
         }
-        /// <p>A string in the lifecycle configuration name. This filter returns only lifecycle
-        /// configurations whose name contains the specified string.</p>
+        /// <p>A string in the lifecycle configuration name. This filter returns only lifecycle configurations whose name contains the specified string.</p>
         pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name_contains(input.into());
             self
         }
-        /// <p>A string in the lifecycle configuration name. This filter returns only lifecycle
-        /// configurations whose name contains the specified string.</p>
+        /// <p>A string in the lifecycle configuration name. This filter returns only lifecycle configurations whose name contains the specified string.</p>
         pub fn set_name_contains(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -25919,14 +23702,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name_contains(input);
             self
         }
-        /// <p>A filter that returns only lifecycle configurations that were created before the
-        /// specified time (timestamp).</p>
+        /// <p>A filter that returns only lifecycle configurations that were created before the specified time (timestamp).</p>
         pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_before(input);
             self
         }
-        /// <p>A filter that returns only lifecycle configurations that were created before the
-        /// specified time (timestamp).</p>
+        /// <p>A filter that returns only lifecycle configurations that were created before the specified time (timestamp).</p>
         pub fn set_creation_time_before(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -25934,14 +23715,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_creation_time_before(input);
             self
         }
-        /// <p>A filter that returns only lifecycle configurations that were created after the
-        /// specified time (timestamp).</p>
+        /// <p>A filter that returns only lifecycle configurations that were created after the specified time (timestamp).</p>
         pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_after(input);
             self
         }
-        /// <p>A filter that returns only lifecycle configurations that were created after the
-        /// specified time (timestamp).</p>
+        /// <p>A filter that returns only lifecycle configurations that were created after the specified time (timestamp).</p>
         pub fn set_creation_time_after(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -25949,14 +23728,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_creation_time_after(input);
             self
         }
-        /// <p>A filter that returns only lifecycle configurations that were modified before the
-        /// specified time (timestamp).</p>
+        /// <p>A filter that returns only lifecycle configurations that were modified before the specified time (timestamp).</p>
         pub fn last_modified_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.last_modified_time_before(input);
             self
         }
-        /// <p>A filter that returns only lifecycle configurations that were modified before the
-        /// specified time (timestamp).</p>
+        /// <p>A filter that returns only lifecycle configurations that were modified before the specified time (timestamp).</p>
         pub fn set_last_modified_time_before(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -25964,14 +23741,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_last_modified_time_before(input);
             self
         }
-        /// <p>A filter that returns only lifecycle configurations that were modified after the
-        /// specified time (timestamp).</p>
+        /// <p>A filter that returns only lifecycle configurations that were modified after the specified time (timestamp).</p>
         pub fn last_modified_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.last_modified_time_after(input);
             self
         }
-        /// <p>A filter that returns only lifecycle configurations that were modified after the
-        /// specified time (timestamp).</p>
+        /// <p>A filter that returns only lifecycle configurations that were modified after the specified time (timestamp).</p>
         pub fn set_last_modified_time_after(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -25982,8 +23757,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListNotebookInstances`.
     ///
-    /// <p>Returns a list of the Amazon SageMaker notebook instances in the requester's account in an Amazon Web Services
-    /// Region. </p>
+    /// <p>Returns a list of the Amazon SageMaker notebook instances in the requester's account in an Amazon Web Services Region. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListNotebookInstances<
         C = aws_smithy_client::erase::DynConnector,
@@ -26040,27 +23814,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> If the previous call to the <code>ListNotebookInstances</code> is truncated, the
-        /// response includes a <code>NextToken</code>. You can use this token in your subsequent
-        /// <code>ListNotebookInstances</code> request to fetch the next set of notebook
-        /// instances. </p>
-        /// <note>
-        /// <p>You might specify a filter or a sort order in your request. When response is
-        /// truncated, you must use the same values for the filer and sort order in the next
-        /// request. </p>
+        /// <p> If the previous call to the <code>ListNotebookInstances</code> is truncated, the response includes a <code>NextToken</code>. You can use this token in your subsequent <code>ListNotebookInstances</code> request to fetch the next set of notebook instances. </p> <note>
+        /// <p>You might specify a filter or a sort order in your request. When response is truncated, you must use the same values for the filer and sort order in the next request. </p>
         /// </note>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p> If the previous call to the <code>ListNotebookInstances</code> is truncated, the
-        /// response includes a <code>NextToken</code>. You can use this token in your subsequent
-        /// <code>ListNotebookInstances</code> request to fetch the next set of notebook
-        /// instances. </p>
-        /// <note>
-        /// <p>You might specify a filter or a sort order in your request. When response is
-        /// truncated, you must use the same values for the filer and sort order in the next
-        /// request. </p>
+        /// <p> If the previous call to the <code>ListNotebookInstances</code> is truncated, the response includes a <code>NextToken</code>. You can use this token in your subsequent <code>ListNotebookInstances</code> request to fetch the next set of notebook instances. </p> <note>
+        /// <p>You might specify a filter or a sort order in your request. When response is truncated, you must use the same values for the filer and sort order in the next request. </p>
         /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
@@ -26102,14 +23864,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sort_order(input);
             self
         }
-        /// <p>A string in the notebook instances' name. This filter returns only notebook
-        /// instances whose name contains the specified string.</p>
+        /// <p>A string in the notebook instances' name. This filter returns only notebook instances whose name contains the specified string.</p>
         pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name_contains(input.into());
             self
         }
-        /// <p>A string in the notebook instances' name. This filter returns only notebook
-        /// instances whose name contains the specified string.</p>
+        /// <p>A string in the notebook instances' name. This filter returns only notebook instances whose name contains the specified string.</p>
         pub fn set_name_contains(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -26117,14 +23877,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name_contains(input);
             self
         }
-        /// <p>A filter that returns only notebook instances that were created before the
-        /// specified time (timestamp). </p>
+        /// <p>A filter that returns only notebook instances that were created before the specified time (timestamp). </p>
         pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_before(input);
             self
         }
-        /// <p>A filter that returns only notebook instances that were created before the
-        /// specified time (timestamp). </p>
+        /// <p>A filter that returns only notebook instances that were created before the specified time (timestamp). </p>
         pub fn set_creation_time_before(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -26132,14 +23890,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_creation_time_before(input);
             self
         }
-        /// <p>A filter that returns only notebook instances that were created after the specified
-        /// time (timestamp).</p>
+        /// <p>A filter that returns only notebook instances that were created after the specified time (timestamp).</p>
         pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_after(input);
             self
         }
-        /// <p>A filter that returns only notebook instances that were created after the specified
-        /// time (timestamp).</p>
+        /// <p>A filter that returns only notebook instances that were created after the specified time (timestamp).</p>
         pub fn set_creation_time_after(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -26147,14 +23903,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_creation_time_after(input);
             self
         }
-        /// <p>A filter that returns only notebook instances that were modified before the
-        /// specified time (timestamp).</p>
+        /// <p>A filter that returns only notebook instances that were modified before the specified time (timestamp).</p>
         pub fn last_modified_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.last_modified_time_before(input);
             self
         }
-        /// <p>A filter that returns only notebook instances that were modified before the
-        /// specified time (timestamp).</p>
+        /// <p>A filter that returns only notebook instances that were modified before the specified time (timestamp).</p>
         pub fn set_last_modified_time_before(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -26162,14 +23916,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_last_modified_time_before(input);
             self
         }
-        /// <p>A filter that returns only notebook instances that were modified after the
-        /// specified time (timestamp).</p>
+        /// <p>A filter that returns only notebook instances that were modified after the specified time (timestamp).</p>
         pub fn last_modified_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.last_modified_time_after(input);
             self
         }
-        /// <p>A filter that returns only notebook instances that were modified after the
-        /// specified time (timestamp).</p>
+        /// <p>A filter that returns only notebook instances that were modified after the specified time (timestamp).</p>
         pub fn set_last_modified_time_after(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -26190,9 +23942,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_status_equals(input);
             self
         }
-        /// <p>A string in the name of a notebook instances lifecycle configuration associated with
-        /// this notebook instance. This filter returns only notebook instances associated with a
-        /// lifecycle configuration with a name that contains the specified string.</p>
+        /// <p>A string in the name of a notebook instances lifecycle configuration associated with this notebook instance. This filter returns only notebook instances associated with a lifecycle configuration with a name that contains the specified string.</p>
         pub fn notebook_instance_lifecycle_config_name_contains(
             mut self,
             input: impl Into<std::string::String>,
@@ -26202,9 +23952,7 @@ pub mod fluent_builders {
                 .notebook_instance_lifecycle_config_name_contains(input.into());
             self
         }
-        /// <p>A string in the name of a notebook instances lifecycle configuration associated with
-        /// this notebook instance. This filter returns only notebook instances associated with a
-        /// lifecycle configuration with a name that contains the specified string.</p>
+        /// <p>A string in the name of a notebook instances lifecycle configuration associated with this notebook instance. This filter returns only notebook instances associated with a lifecycle configuration with a name that contains the specified string.</p>
         pub fn set_notebook_instance_lifecycle_config_name_contains(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -26214,9 +23962,7 @@ pub mod fluent_builders {
                 .set_notebook_instance_lifecycle_config_name_contains(input);
             self
         }
-        /// <p>A string in the name or URL of a Git repository associated with this notebook
-        /// instance. This filter returns only notebook instances associated with a git repository
-        /// with a name that contains the specified string.</p>
+        /// <p>A string in the name or URL of a Git repository associated with this notebook instance. This filter returns only notebook instances associated with a git repository with a name that contains the specified string.</p>
         pub fn default_code_repository_contains(
             mut self,
             input: impl Into<std::string::String>,
@@ -26224,9 +23970,7 @@ pub mod fluent_builders {
             self.inner = self.inner.default_code_repository_contains(input.into());
             self
         }
-        /// <p>A string in the name or URL of a Git repository associated with this notebook
-        /// instance. This filter returns only notebook instances associated with a git repository
-        /// with a name that contains the specified string.</p>
+        /// <p>A string in the name or URL of a Git repository associated with this notebook instance. This filter returns only notebook instances associated with a git repository with a name that contains the specified string.</p>
         pub fn set_default_code_repository_contains(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -26234,8 +23978,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_default_code_repository_contains(input);
             self
         }
-        /// <p>A filter that returns only notebook instances with associated with the specified git
-        /// repository.</p>
+        /// <p>A filter that returns only notebook instances with associated with the specified git repository.</p>
         pub fn additional_code_repository_equals(
             mut self,
             input: impl Into<std::string::String>,
@@ -26243,8 +23986,7 @@ pub mod fluent_builders {
             self.inner = self.inner.additional_code_repository_equals(input.into());
             self
         }
-        /// <p>A filter that returns only notebook instances with associated with the specified git
-        /// repository.</p>
+        /// <p>A filter that returns only notebook instances with associated with the specified git repository.</p>
         pub fn set_additional_code_repository_equals(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -26325,14 +24067,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_pipeline_name(input);
             self
         }
-        /// <p>A filter that returns the pipeline executions that were created after a specified
-        /// time.</p>
+        /// <p>A filter that returns the pipeline executions that were created after a specified time.</p>
         pub fn created_after(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.created_after(input);
             self
         }
-        /// <p>A filter that returns the pipeline executions that were created after a specified
-        /// time.</p>
+        /// <p>A filter that returns the pipeline executions that were created after a specified time.</p>
         pub fn set_created_after(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -26340,14 +24080,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_created_after(input);
             self
         }
-        /// <p>A filter that returns the pipeline executions that were created before a specified
-        /// time.</p>
+        /// <p>A filter that returns the pipeline executions that were created before a specified time.</p>
         pub fn created_before(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.created_before(input);
             self
         }
-        /// <p>A filter that returns the pipeline executions that were created before a specified
-        /// time.</p>
+        /// <p>A filter that returns the pipeline executions that were created before a specified time.</p>
         pub fn set_created_before(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -26381,14 +24119,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sort_order(input);
             self
         }
-        /// <p>If the result of the previous <code>ListPipelineExecutions</code> request was truncated,
-        /// the response includes a <code>NextToken</code>. To retrieve the next set of pipeline executions, use the token in the next request.</p>
+        /// <p>If the result of the previous <code>ListPipelineExecutions</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of pipeline executions, use the token in the next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the result of the previous <code>ListPipelineExecutions</code> request was truncated,
-        /// the response includes a <code>NextToken</code>. To retrieve the next set of pipeline executions, use the token in the next request.</p>
+        /// <p>If the result of the previous <code>ListPipelineExecutions</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of pipeline executions, use the token in the next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -26476,14 +24212,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_pipeline_execution_arn(input);
             self
         }
-        /// <p>If the result of the previous <code>ListPipelineExecutionSteps</code> request was truncated,
-        /// the response includes a <code>NextToken</code>. To retrieve the next set of pipeline execution steps, use the token in the next request.</p>
+        /// <p>If the result of the previous <code>ListPipelineExecutionSteps</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of pipeline execution steps, use the token in the next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the result of the previous <code>ListPipelineExecutionSteps</code> request was truncated,
-        /// the response includes a <code>NextToken</code>. To retrieve the next set of pipeline execution steps, use the token in the next request.</p>
+        /// <p>If the result of the previous <code>ListPipelineExecutionSteps</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of pipeline execution steps, use the token in the next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -26586,14 +24320,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_pipeline_execution_arn(input);
             self
         }
-        /// <p>If the result of the previous <code>ListPipelineParametersForExecution</code> request was truncated,
-        /// the response includes a <code>NextToken</code>. To retrieve the next set of parameters, use the token in the next request.</p>
+        /// <p>If the result of the previous <code>ListPipelineParametersForExecution</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of parameters, use the token in the next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the result of the previous <code>ListPipelineParametersForExecution</code> request was truncated,
-        /// the response includes a <code>NextToken</code>. To retrieve the next set of parameters, use the token in the next request.</p>
+        /// <p>If the result of the previous <code>ListPipelineParametersForExecution</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of parameters, use the token in the next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -26681,14 +24413,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_pipeline_name_prefix(input);
             self
         }
-        /// <p>A filter that returns the pipelines that were created after a specified
-        /// time.</p>
+        /// <p>A filter that returns the pipelines that were created after a specified time.</p>
         pub fn created_after(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.created_after(input);
             self
         }
-        /// <p>A filter that returns the pipelines that were created after a specified
-        /// time.</p>
+        /// <p>A filter that returns the pipelines that were created after a specified time.</p>
         pub fn set_created_after(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -26696,14 +24426,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_created_after(input);
             self
         }
-        /// <p>A filter that returns the pipelines that were created before a specified
-        /// time.</p>
+        /// <p>A filter that returns the pipelines that were created before a specified time.</p>
         pub fn created_before(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.created_before(input);
             self
         }
-        /// <p>A filter that returns the pipelines that were created before a specified
-        /// time.</p>
+        /// <p>A filter that returns the pipelines that were created before a specified time.</p>
         pub fn set_created_before(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -26737,14 +24465,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sort_order(input);
             self
         }
-        /// <p>If the result of the previous <code>ListPipelines</code> request was truncated,
-        /// the response includes a <code>NextToken</code>. To retrieve the next set of pipelines, use the token in the next request.</p>
+        /// <p>If the result of the previous <code>ListPipelines</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of pipelines, use the token in the next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the result of the previous <code>ListPipelines</code> request was truncated,
-        /// the response includes a <code>NextToken</code>. To retrieve the next set of pipelines, use the token in the next request.</p>
+        /// <p>If the result of the previous <code>ListPipelines</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of pipelines, use the token in the next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -26871,14 +24597,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_last_modified_time_before(input);
             self
         }
-        /// <p>A string in the processing job name. This filter returns only processing jobs whose
-        /// name contains the specified string.</p>
+        /// <p>A string in the processing job name. This filter returns only processing jobs whose name contains the specified string.</p>
         pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name_contains(input.into());
             self
         }
-        /// <p>A string in the processing job name. This filter returns only processing jobs whose
-        /// name contains the specified string.</p>
+        /// <p>A string in the processing job name. This filter returns only processing jobs whose name contains the specified string.</p>
         pub fn set_name_contains(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -26922,16 +24646,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sort_order(input);
             self
         }
-        /// <p>If the result of the previous <code>ListProcessingJobs</code> request was truncated,
-        /// the response includes a <code>NextToken</code>. To retrieve the next set of processing
-        /// jobs, use the token in the next request.</p>
+        /// <p>If the result of the previous <code>ListProcessingJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of processing jobs, use the token in the next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the result of the previous <code>ListProcessingJobs</code> request was truncated,
-        /// the response includes a <code>NextToken</code>. To retrieve the next set of processing
-        /// jobs, use the token in the next request.</p>
+        /// <p>If the result of the previous <code>ListProcessingJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of processing jobs, use the token in the next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -27006,14 +24726,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A filter that returns the projects that were created after a specified
-        /// time.</p>
+        /// <p>A filter that returns the projects that were created after a specified time.</p>
         pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_after(input);
             self
         }
-        /// <p>A filter that returns the projects that were created after a specified
-        /// time.</p>
+        /// <p>A filter that returns the projects that were created after a specified time.</p>
         pub fn set_creation_time_after(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -27021,14 +24739,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_creation_time_after(input);
             self
         }
-        /// <p>A filter that returns the projects that were created before a specified
-        /// time.</p>
+        /// <p>A filter that returns the projects that were created before a specified time.</p>
         pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_before(input);
             self
         }
-        /// <p>A filter that returns the projects that were created before a specified
-        /// time.</p>
+        /// <p>A filter that returns the projects that were created before a specified time.</p>
         pub fn set_creation_time_before(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -27046,14 +24762,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A filter that returns the projects whose name contains a specified
-        /// string.</p>
+        /// <p>A filter that returns the projects whose name contains a specified string.</p>
         pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name_contains(input.into());
             self
         }
-        /// <p>A filter that returns the projects whose name contains a specified
-        /// string.</p>
+        /// <p>A filter that returns the projects whose name contains a specified string.</p>
         pub fn set_name_contains(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -27061,14 +24775,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name_contains(input);
             self
         }
-        /// <p>If the result of the previous <code>ListProjects</code> request was truncated,
-        /// the response includes a <code>NextToken</code>. To retrieve the next set of projects, use the token in the next request.</p>
+        /// <p>If the result of the previous <code>ListProjects</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of projects, use the token in the next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the result of the previous <code>ListProjects</code> request was truncated,
-        /// the response includes a <code>NextToken</code>. To retrieve the next set of projects, use the token in the next request.</p>
+        /// <p>If the result of the previous <code>ListProjects</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of projects, use the token in the next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -27289,9 +25001,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListSubscribedWorkteams`.
     ///
-    /// <p>Gets a list of the work teams that you are subscribed to in the Amazon Web Services Marketplace. The
-    /// list may be empty if no work team satisfies the filter specified in the
-    /// <code>NameContains</code> parameter.</p>
+    /// <p>Gets a list of the work teams that you are subscribed to in the Amazon Web Services Marketplace. The list may be empty if no work team satisfies the filter specified in the <code>NameContains</code> parameter.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSubscribedWorkteams<
         C = aws_smithy_client::erase::DynConnector,
@@ -27348,14 +25058,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A string in the work team name. This filter returns only work teams whose name
-        /// contains the specified string.</p>
+        /// <p>A string in the work team name. This filter returns only work teams whose name contains the specified string.</p>
         pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name_contains(input.into());
             self
         }
-        /// <p>A string in the work team name. This filter returns only work teams whose name
-        /// contains the specified string.</p>
+        /// <p>A string in the work team name. This filter returns only work teams whose name contains the specified string.</p>
         pub fn set_name_contains(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -27363,16 +25071,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name_contains(input);
             self
         }
-        /// <p>If the result of the previous <code>ListSubscribedWorkteams</code> request was
-        /// truncated, the response includes a <code>NextToken</code>. To retrieve the next set of
-        /// labeling jobs, use the token in the next request.</p>
+        /// <p>If the result of the previous <code>ListSubscribedWorkteams</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of labeling jobs, use the token in the next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the result of the previous <code>ListSubscribedWorkteams</code> request was
-        /// truncated, the response includes a <code>NextToken</code>. To retrieve the next set of
-        /// labeling jobs, use the token in the next request.</p>
+        /// <p>If the result of the previous <code>ListSubscribedWorkteams</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of labeling jobs, use the token in the next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -27447,28 +25151,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource whose tags you want to
-        /// retrieve.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource whose tags you want to retrieve.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource whose tags you want to
-        /// retrieve.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource whose tags you want to retrieve.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
         }
-        /// <p> If the response to the previous <code>ListTags</code> request is truncated, Amazon SageMaker
-        /// returns this token. To retrieve the next set of tags, use it in the subsequent request.
-        /// </p>
+        /// <p> If the response to the previous <code>ListTags</code> request is truncated, Amazon SageMaker returns this token. To retrieve the next set of tags, use it in the subsequent request. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p> If the response to the previous <code>ListTags</code> request is truncated, Amazon SageMaker
-        /// returns this token. To retrieve the next set of tags, use it in the subsequent request.
-        /// </p>
+        /// <p> If the response to the previous <code>ListTags</code> request is truncated, Amazon SageMaker returns this token. To retrieve the next set of tags, use it in the subsequent request. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -27486,26 +25184,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTrainingJobs`.
     ///
-    /// <p>Lists training jobs.</p>
-    /// <note>
-    /// <p>When <code>StatusEquals</code> and <code>MaxResults</code> are set at the same
-    /// time, the <code>MaxResults</code> number of training jobs are first retrieved
-    /// ignoring the <code>StatusEquals</code> parameter and then they are filtered by the
-    /// <code>StatusEquals</code> parameter, which is returned as a response.</p>
-    /// <p>For example, if <code>ListTrainingJobs</code> is invoked with the following
-    /// parameters:</p>
-    /// <p>
-    /// <code>{ ... MaxResults: 100, StatusEquals: InProgress ... }</code>
-    /// </p>
-    /// <p>First, 100 trainings jobs with any status, including those other than
-    /// <code>InProgress</code>, are selected (sorted according to the creation time,
-    /// from the most current to the oldest). Next, those with a status of
-    /// <code>InProgress</code> are returned.</p>
+    /// <p>Lists training jobs.</p> <note>
+    /// <p>When <code>StatusEquals</code> and <code>MaxResults</code> are set at the same time, the <code>MaxResults</code> number of training jobs are first retrieved ignoring the <code>StatusEquals</code> parameter and then they are filtered by the <code>StatusEquals</code> parameter, which is returned as a response.</p>
+    /// <p>For example, if <code>ListTrainingJobs</code> is invoked with the following parameters:</p>
+    /// <p> <code>{ ... MaxResults: 100, StatusEquals: InProgress ... }</code> </p>
+    /// <p>First, 100 trainings jobs with any status, including those other than <code>InProgress</code>, are selected (sorted according to the creation time, from the most current to the oldest). Next, those with a status of <code>InProgress</code> are returned.</p>
     /// <p>You can quickly test the API using the following Amazon Web Services CLI code.</p>
-    /// <p>
-    /// <code>aws sagemaker list-training-jobs --max-results 100 --status-equals
-    /// InProgress</code>
-    /// </p>
+    /// <p> <code>aws sagemaker list-training-jobs --max-results 100 --status-equals InProgress</code> </p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTrainingJobs<
@@ -27563,16 +25248,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>If the result of the previous <code>ListTrainingJobs</code> request was truncated,
-        /// the response includes a <code>NextToken</code>. To retrieve the next set of training
-        /// jobs, use the token in the next request. </p>
+        /// <p>If the result of the previous <code>ListTrainingJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of training jobs, use the token in the next request. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the result of the previous <code>ListTrainingJobs</code> request was truncated,
-        /// the response includes a <code>NextToken</code>. To retrieve the next set of training
-        /// jobs, use the token in the next request. </p>
+        /// <p>If the result of the previous <code>ListTrainingJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of training jobs, use the token in the next request. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -27587,14 +25268,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A filter that returns only training jobs created after the specified time
-        /// (timestamp).</p>
+        /// <p>A filter that returns only training jobs created after the specified time (timestamp).</p>
         pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_after(input);
             self
         }
-        /// <p>A filter that returns only training jobs created after the specified time
-        /// (timestamp).</p>
+        /// <p>A filter that returns only training jobs created after the specified time (timestamp).</p>
         pub fn set_creation_time_after(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -27602,14 +25281,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_creation_time_after(input);
             self
         }
-        /// <p>A filter that returns only training jobs created before the specified time
-        /// (timestamp).</p>
+        /// <p>A filter that returns only training jobs created before the specified time (timestamp).</p>
         pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.creation_time_before(input);
             self
         }
-        /// <p>A filter that returns only training jobs created before the specified time
-        /// (timestamp).</p>
+        /// <p>A filter that returns only training jobs created before the specified time (timestamp).</p>
         pub fn set_creation_time_before(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -27617,14 +25294,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_creation_time_before(input);
             self
         }
-        /// <p>A filter that returns only training jobs modified after the specified time
-        /// (timestamp).</p>
+        /// <p>A filter that returns only training jobs modified after the specified time (timestamp).</p>
         pub fn last_modified_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.last_modified_time_after(input);
             self
         }
-        /// <p>A filter that returns only training jobs modified after the specified time
-        /// (timestamp).</p>
+        /// <p>A filter that returns only training jobs modified after the specified time (timestamp).</p>
         pub fn set_last_modified_time_after(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -27632,14 +25307,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_last_modified_time_after(input);
             self
         }
-        /// <p>A filter that returns only training jobs modified before the specified time
-        /// (timestamp).</p>
+        /// <p>A filter that returns only training jobs modified before the specified time (timestamp).</p>
         pub fn last_modified_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.last_modified_time_before(input);
             self
         }
-        /// <p>A filter that returns only training jobs modified before the specified time
-        /// (timestamp).</p>
+        /// <p>A filter that returns only training jobs modified before the specified time (timestamp).</p>
         pub fn set_last_modified_time_before(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -27647,14 +25320,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_last_modified_time_before(input);
             self
         }
-        /// <p>A string in the training job name. This filter returns only training jobs whose
-        /// name contains the specified string.</p>
+        /// <p>A string in the training job name. This filter returns only training jobs whose name contains the specified string.</p>
         pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name_contains(input.into());
             self
         }
-        /// <p>A string in the training job name. This filter returns only training jobs whose
-        /// name contains the specified string.</p>
+        /// <p>A string in the training job name. This filter returns only training jobs whose name contains the specified string.</p>
         pub fn set_name_contains(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -27701,8 +25372,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTrainingJobsForHyperParameterTuningJob`.
     ///
-    /// <p>Gets a list of <a>TrainingJobSummary</a> objects that describe the training
-    /// jobs that a hyperparameter tuning job launched.</p>
+    /// <p>Gets a list of <code>TrainingJobSummary</code> objects that describe the training jobs that a hyperparameter tuning job launched.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTrainingJobsForHyperParameterTuningJob<
         C = aws_smithy_client::erase::DynConnector,
@@ -27777,16 +25447,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_hyper_parameter_tuning_job_name(input);
             self
         }
-        /// <p>If the result of the previous <code>ListTrainingJobsForHyperParameterTuningJob</code>
-        /// request was truncated, the response includes a <code>NextToken</code>. To retrieve the
-        /// next set of training jobs, use the token in the next request.</p>
+        /// <p>If the result of the previous <code>ListTrainingJobsForHyperParameterTuningJob</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of training jobs, use the token in the next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the result of the previous <code>ListTrainingJobsForHyperParameterTuningJob</code>
-        /// request was truncated, the response includes a <code>NextToken</code>. To retrieve the
-        /// next set of training jobs, use the token in the next request.</p>
+        /// <p>If the result of the previous <code>ListTrainingJobsForHyperParameterTuningJob</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of training jobs, use the token in the next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -27801,16 +25467,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A filter that returns only training jobs with the
-        /// specified
-        /// status.</p>
+        /// <p>A filter that returns only training jobs with the specified status.</p>
         pub fn status_equals(mut self, input: crate::model::TrainingJobStatus) -> Self {
             self.inner = self.inner.status_equals(input);
             self
         }
-        /// <p>A filter that returns only training jobs with the
-        /// specified
-        /// status.</p>
+        /// <p>A filter that returns only training jobs with the specified status.</p>
         pub fn set_status_equals(
             mut self,
             input: std::option::Option<crate::model::TrainingJobStatus>,
@@ -27818,20 +25480,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_status_equals(input);
             self
         }
-        /// <p>The field to sort
-        /// results
-        /// by. The default is <code>Name</code>.</p>
-        /// <p>If the value of this field is <code>FinalObjectiveMetricValue</code>, any training
-        /// jobs that did not return an objective metric are not listed.</p>
+        /// <p>The field to sort results by. The default is <code>Name</code>.</p>
+        /// <p>If the value of this field is <code>FinalObjectiveMetricValue</code>, any training jobs that did not return an objective metric are not listed.</p>
         pub fn sort_by(mut self, input: crate::model::TrainingJobSortByOptions) -> Self {
             self.inner = self.inner.sort_by(input);
             self
         }
-        /// <p>The field to sort
-        /// results
-        /// by. The default is <code>Name</code>.</p>
-        /// <p>If the value of this field is <code>FinalObjectiveMetricValue</code>, any training
-        /// jobs that did not return an objective metric are not listed.</p>
+        /// <p>The field to sort results by. The default is <code>Name</code>.</p>
+        /// <p>If the value of this field is <code>FinalObjectiveMetricValue</code>, any training jobs that did not return an objective metric are not listed.</p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<crate::model::TrainingJobSortByOptions>,
@@ -27839,16 +25495,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sort_by(input);
             self
         }
-        /// <p>The sort order
-        /// for
-        /// results. The default is <code>Ascending</code>.</p>
+        /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
         pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
             self.inner = self.inner.sort_order(input);
             self
         }
-        /// <p>The sort order
-        /// for
-        /// results. The default is <code>Ascending</code>.</p>
+        /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
         pub fn set_sort_order(
             mut self,
             input: std::option::Option<crate::model::SortOrder>,
@@ -27968,14 +25620,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_last_modified_time_before(input);
             self
         }
-        /// <p>A string in the transform job name. This filter returns only transform jobs whose name
-        /// contains the specified string.</p>
+        /// <p>A string in the transform job name. This filter returns only transform jobs whose name contains the specified string.</p>
         pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name_contains(input.into());
             self
         }
-        /// <p>A string in the transform job name. This filter returns only transform jobs whose name
-        /// contains the specified string.</p>
+        /// <p>A string in the transform job name. This filter returns only transform jobs whose name contains the specified string.</p>
         pub fn set_name_contains(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -28019,16 +25669,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sort_order(input);
             self
         }
-        /// <p>If the result of the previous <code>ListTransformJobs</code> request was truncated,
-        /// the response includes a <code>NextToken</code>. To retrieve the next set of transform
-        /// jobs, use the token in the next request.</p>
+        /// <p>If the result of the previous <code>ListTransformJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of transform jobs, use the token in the next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the result of the previous <code>ListTransformJobs</code> request was truncated,
-        /// the response includes a <code>NextToken</code>. To retrieve the next set of transform
-        /// jobs, use the token in the next request.</p>
+        /// <p>If the result of the previous <code>ListTransformJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of transform jobs, use the token in the next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -28046,25 +25692,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTrialComponents`.
     ///
-    /// <p>Lists the trial components in your account. You can sort the list by trial component name
-    /// or creation time. You can filter the list to show only components that were created in a
-    /// specific time range. You can also filter on one of the following:</p>
+    /// <p>Lists the trial components in your account. You can sort the list by trial component name or creation time. You can filter the list to show only components that were created in a specific time range. You can also filter on one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ExperimentName</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SourceArn</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TrialName</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>ExperimentName</code> </p> </li>
+    /// <li> <p> <code>SourceArn</code> </p> </li>
+    /// <li> <p> <code>TrialName</code> </p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTrialComponents<
@@ -28122,16 +25754,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A filter that returns only components that are part of the specified experiment. If you
-        /// specify <code>ExperimentName</code>, you can't filter by <code>SourceArn</code> or
-        /// <code>TrialName</code>.</p>
+        /// <p>A filter that returns only components that are part of the specified experiment. If you specify <code>ExperimentName</code>, you can't filter by <code>SourceArn</code> or <code>TrialName</code>.</p>
         pub fn experiment_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.experiment_name(input.into());
             self
         }
-        /// <p>A filter that returns only components that are part of the specified experiment. If you
-        /// specify <code>ExperimentName</code>, you can't filter by <code>SourceArn</code> or
-        /// <code>TrialName</code>.</p>
+        /// <p>A filter that returns only components that are part of the specified experiment. If you specify <code>ExperimentName</code>, you can't filter by <code>SourceArn</code> or <code>TrialName</code>.</p>
         pub fn set_experiment_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -28139,30 +25767,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_experiment_name(input);
             self
         }
-        /// <p>A filter that returns only components that are part of the specified trial. If you specify
-        /// <code>TrialName</code>, you can't filter by <code>ExperimentName</code> or
-        /// <code>SourceArn</code>.</p>
+        /// <p>A filter that returns only components that are part of the specified trial. If you specify <code>TrialName</code>, you can't filter by <code>ExperimentName</code> or <code>SourceArn</code>.</p>
         pub fn trial_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.trial_name(input.into());
             self
         }
-        /// <p>A filter that returns only components that are part of the specified trial. If you specify
-        /// <code>TrialName</code>, you can't filter by <code>ExperimentName</code> or
-        /// <code>SourceArn</code>.</p>
+        /// <p>A filter that returns only components that are part of the specified trial. If you specify <code>TrialName</code>, you can't filter by <code>ExperimentName</code> or <code>SourceArn</code>.</p>
         pub fn set_trial_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_trial_name(input);
             self
         }
-        /// <p>A filter that returns only components that have the specified source Amazon Resource Name
-        /// (ARN). If you specify <code>SourceArn</code>, you can't filter by <code>ExperimentName</code>
-        /// or <code>TrialName</code>.</p>
+        /// <p>A filter that returns only components that have the specified source Amazon Resource Name (ARN). If you specify <code>SourceArn</code>, you can't filter by <code>ExperimentName</code> or <code>TrialName</code>.</p>
         pub fn source_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.source_arn(input.into());
             self
         }
-        /// <p>A filter that returns only components that have the specified source Amazon Resource Name
-        /// (ARN). If you specify <code>SourceArn</code>, you can't filter by <code>ExperimentName</code>
-        /// or <code>TrialName</code>.</p>
+        /// <p>A filter that returns only components that have the specified source Amazon Resource Name (ARN). If you specify <code>SourceArn</code>, you can't filter by <code>ExperimentName</code> or <code>TrialName</code>.</p>
         pub fn set_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_source_arn(input);
             self
@@ -28219,26 +25839,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sort_order(input);
             self
         }
-        /// <p>The maximum number of components to return in the response. The default value is
-        /// 10.</p>
+        /// <p>The maximum number of components to return in the response. The default value is 10.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of components to return in the response. The default value is
-        /// 10.</p>
+        /// <p>The maximum number of components to return in the response. The default value is 10.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>If the previous call to <code>ListTrialComponents</code> didn't return the full set of
-        /// components, the call returns a token for getting the next set of components.</p>
+        /// <p>If the previous call to <code>ListTrialComponents</code> didn't return the full set of components, the call returns a token for getting the next set of components.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the previous call to <code>ListTrialComponents</code> didn't return the full set of
-        /// components, the call returns a token for getting the next set of components.</p>
+        /// <p>If the previous call to <code>ListTrialComponents</code> didn't return the full set of components, the call returns a token for getting the next set of components.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -28246,11 +25862,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTrials`.
     ///
-    /// <p>Lists the trials in your account. Specify an experiment name to limit the list to the
-    /// trials that are part of that experiment. Specify a trial component name to limit the list to
-    /// the trials that associated with that trial component. The list can be filtered to show only
-    /// trials that were created in a specific time range. The list can be sorted by trial name or
-    /// creation time.</p>
+    /// <p>Lists the trials in your account. Specify an experiment name to limit the list to the trials that are part of that experiment. Specify a trial component name to limit the list to the trials that associated with that trial component. The list can be filtered to show only trials that were created in a specific time range. The list can be sorted by trial name or creation time.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTrials<
         C = aws_smithy_client::erase::DynConnector,
@@ -28320,14 +25932,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_experiment_name(input);
             self
         }
-        /// <p>A filter that returns only trials that are associated with the specified trial
-        /// component.</p>
+        /// <p>A filter that returns only trials that are associated with the specified trial component.</p>
         pub fn trial_component_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.trial_component_name(input.into());
             self
         }
-        /// <p>A filter that returns only trials that are associated with the specified trial
-        /// component.</p>
+        /// <p>A filter that returns only trials that are associated with the specified trial component.</p>
         pub fn set_trial_component_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -28397,14 +26007,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>If the previous call to <code>ListTrials</code> didn't return the full set of trials, the
-        /// call returns a token for getting the next set of trials.</p>
+        /// <p>If the previous call to <code>ListTrials</code> didn't return the full set of trials, the call returns a token for getting the next set of trials.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the previous call to <code>ListTrials</code> didn't return the full set of trials, the
-        /// call returns a token for getting the next set of trials.</p>
+        /// <p>If the previous call to <code>ListTrials</code> didn't return the full set of trials, the call returns a token for getting the next set of trials.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -28469,14 +26077,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>If the previous response was truncated, you will receive this token.
-        /// Use it in your next request to receive the next set of results.</p>
+        /// <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the previous response was truncated, you will receive this token.
-        /// Use it in your next request to receive the next set of results.</p>
+        /// <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -28546,8 +26152,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListWorkforces`.
     ///
-    /// <p>Use this operation to list all private and vendor workforces in an Amazon Web Services Region. Note that you can only
-    /// have one private workforce per Amazon Web Services Region.</p>
+    /// <p>Use this operation to list all private and vendor workforces in an Amazon Web Services Region. Note that you can only have one private workforce per Amazon Web Services Region.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListWorkforces<
         C = aws_smithy_client::erase::DynConnector,
@@ -28666,9 +26271,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListWorkteams`.
     ///
-    /// <p>Gets a list of private work teams that you have defined in a region. The list may be empty if
-    /// no work team satisfies the filter specified in the <code>NameContains</code>
-    /// parameter.</p>
+    /// <p>Gets a list of private work teams that you have defined in a region. The list may be empty if no work team satisfies the filter specified in the <code>NameContains</code> parameter.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListWorkteams<
         C = aws_smithy_client::erase::DynConnector,
@@ -28751,14 +26354,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sort_order(input);
             self
         }
-        /// <p>A string in the work team's name. This filter returns only work teams whose name
-        /// contains the specified string.</p>
+        /// <p>A string in the work team's name. This filter returns only work teams whose name contains the specified string.</p>
         pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name_contains(input.into());
             self
         }
-        /// <p>A string in the work team's name. This filter returns only work teams whose name
-        /// contains the specified string.</p>
+        /// <p>A string in the work team's name. This filter returns only work teams whose name contains the specified string.</p>
         pub fn set_name_contains(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -28766,16 +26367,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name_contains(input);
             self
         }
-        /// <p>If the result of the previous <code>ListWorkteams</code> request was truncated, the
-        /// response includes a <code>NextToken</code>. To retrieve the next set of labeling jobs,
-        /// use the token in the next request.</p>
+        /// <p>If the result of the previous <code>ListWorkteams</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of labeling jobs, use the token in the next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the result of the previous <code>ListWorkteams</code> request was truncated, the
-        /// response includes a <code>NextToken</code>. To retrieve the next set of labeling jobs,
-        /// use the token in the next request.</p>
+        /// <p>If the result of the previous <code>ListWorkteams</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of labeling jobs, use the token in the next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -28793,9 +26390,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutModelPackageGroupPolicy`.
     ///
-    /// <p>Adds a resouce policy to control access to a model group. For information about
-    /// resoure policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_identity-vs-resource.html">Identity-based
-    /// policies and resource-based policies</a> in the <i>Amazon Web Services Identity and Access Management User Guide.</i>.</p>
+    /// <p>Adds a resouce policy to control access to a model group. For information about resoure policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_identity-vs-resource.html">Identity-based policies and resource-based policies</a> in the <i>Amazon Web Services Identity and Access Management User Guide.</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutModelPackageGroupPolicy<
         C = aws_smithy_client::erase::DynConnector,
@@ -28881,9 +26476,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `QueryLineage`.
     ///
-    /// <p>Use this action to inspect your lineage and discover relationships between entities.
-    /// For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/querying-lineage-entities.html">
-    /// Querying Lineage Entities</a> in the <i>Amazon SageMaker Developer Guide</i>.</p>
+    /// <p>Use this action to inspect your lineage and discover relationships between entities. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/querying-lineage-entities.html"> Querying Lineage Entities</a> in the <i>Amazon SageMaker Developer Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct QueryLineage<
         C = aws_smithy_client::erase::DynConnector,
@@ -28957,14 +26550,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_start_arns(input);
             self
         }
-        /// <p>Associations between lineage entities are directed.  This parameter determines the direction from the
-        /// StartArn(s) the query will look.</p>
+        /// <p>Associations between lineage entities are directed. This parameter determines the direction from the StartArn(s) the query will look.</p>
         pub fn direction(mut self, input: crate::model::Direction) -> Self {
             self.inner = self.inner.direction(input);
             self
         }
-        /// <p>Associations between lineage entities are directed.  This parameter determines the direction from the
-        /// StartArn(s) the query will look.</p>
+        /// <p>Associations between lineage entities are directed. This parameter determines the direction from the StartArn(s) the query will look.</p>
         pub fn set_direction(
             mut self,
             input: std::option::Option<crate::model::Direction>,
@@ -28972,38 +26563,23 @@ pub mod fluent_builders {
             self.inner = self.inner.set_direction(input);
             self
         }
-        /// <p> Setting this value to <code>True</code> will retrieve not only the entities of interest but also the
-        /// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking-entities.html">Associations</a> and
-        /// lineage entities on the path. Set to <code>False</code> to only return lineage entities that match your query.</p>
+        /// <p> Setting this value to <code>True</code> will retrieve not only the entities of interest but also the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking-entities.html">Associations</a> and lineage entities on the path. Set to <code>False</code> to only return lineage entities that match your query.</p>
         pub fn include_edges(mut self, input: bool) -> Self {
             self.inner = self.inner.include_edges(input);
             self
         }
-        /// <p> Setting this value to <code>True</code> will retrieve not only the entities of interest but also the
-        /// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking-entities.html">Associations</a> and
-        /// lineage entities on the path. Set to <code>False</code> to only return lineage entities that match your query.</p>
+        /// <p> Setting this value to <code>True</code> will retrieve not only the entities of interest but also the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking-entities.html">Associations</a> and lineage entities on the path. Set to <code>False</code> to only return lineage entities that match your query.</p>
         pub fn set_include_edges(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_include_edges(input);
             self
         }
         /// <p>A set of filtering parameters that allow you to specify which entities should be returned.</p>
         /// <ul>
-        /// <li>
-        /// <p>Properties - Key-value pairs to match on the lineage entities' properties.</p>
-        /// </li>
-        /// <li>
-        /// <p>LineageTypes - A set of lineage entity types to match on. For example: <code>TrialComponent</code>,
-        /// <code>Artifact</code>, or <code>Context</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>CreatedBefore - Filter entities created before this date.</p>
-        /// </li>
-        /// <li>
-        /// <p>ModifiedBefore - Filter entities modified before this date.</p>
-        /// </li>
-        /// <li>
-        /// <p>ModifiedAfter - Filter entities modified after this date.</p>
-        /// </li>
+        /// <li> <p>Properties - Key-value pairs to match on the lineage entities' properties.</p> </li>
+        /// <li> <p>LineageTypes - A set of lineage entity types to match on. For example: <code>TrialComponent</code>, <code>Artifact</code>, or <code>Context</code>.</p> </li>
+        /// <li> <p>CreatedBefore - Filter entities created before this date.</p> </li>
+        /// <li> <p>ModifiedBefore - Filter entities modified before this date.</p> </li>
+        /// <li> <p>ModifiedAfter - Filter entities modified after this date.</p> </li>
         /// </ul>
         pub fn filters(mut self, input: crate::model::QueryFilters) -> Self {
             self.inner = self.inner.filters(input);
@@ -29011,22 +26587,11 @@ pub mod fluent_builders {
         }
         /// <p>A set of filtering parameters that allow you to specify which entities should be returned.</p>
         /// <ul>
-        /// <li>
-        /// <p>Properties - Key-value pairs to match on the lineage entities' properties.</p>
-        /// </li>
-        /// <li>
-        /// <p>LineageTypes - A set of lineage entity types to match on. For example: <code>TrialComponent</code>,
-        /// <code>Artifact</code>, or <code>Context</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>CreatedBefore - Filter entities created before this date.</p>
-        /// </li>
-        /// <li>
-        /// <p>ModifiedBefore - Filter entities modified before this date.</p>
-        /// </li>
-        /// <li>
-        /// <p>ModifiedAfter - Filter entities modified after this date.</p>
-        /// </li>
+        /// <li> <p>Properties - Key-value pairs to match on the lineage entities' properties.</p> </li>
+        /// <li> <p>LineageTypes - A set of lineage entity types to match on. For example: <code>TrialComponent</code>, <code>Artifact</code>, or <code>Context</code>.</p> </li>
+        /// <li> <p>CreatedBefore - Filter entities created before this date.</p> </li>
+        /// <li> <p>ModifiedBefore - Filter entities modified before this date.</p> </li>
+        /// <li> <p>ModifiedAfter - Filter entities modified after this date.</p> </li>
         /// </ul>
         pub fn set_filters(
             mut self,
@@ -29035,14 +26600,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>The maximum depth in lineage relationships from the <code>StartArns</code> that will be traversed. Depth is a measure of the number
-        /// of <code>Associations</code> from the <code>StartArn</code> entity to the matched results.</p>
+        /// <p>The maximum depth in lineage relationships from the <code>StartArns</code> that will be traversed. Depth is a measure of the number of <code>Associations</code> from the <code>StartArn</code> entity to the matched results.</p>
         pub fn max_depth(mut self, input: i32) -> Self {
             self.inner = self.inner.max_depth(input);
             self
         }
-        /// <p>The maximum depth in lineage relationships from the <code>StartArns</code> that will be traversed. Depth is a measure of the number
-        /// of <code>Associations</code> from the <code>StartArn</code> entity to the matched results.</p>
+        /// <p>The maximum depth in lineage relationships from the <code>StartArns</code> that will be traversed. Depth is a measure of the number of <code>Associations</code> from the <code>StartArn</code> entity to the matched results.</p>
         pub fn set_max_depth(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_depth(input);
             self
@@ -29247,14 +26810,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ui_template(input);
             self
         }
-        /// <p>A <code>RenderableTask</code> object containing a representative task to
-        /// render.</p>
+        /// <p>A <code>RenderableTask</code> object containing a representative task to render.</p>
         pub fn task(mut self, input: crate::model::RenderableTask) -> Self {
             self.inner = self.inner.task(input);
             self
         }
-        /// <p>A <code>RenderableTask</code> object containing a representative task to
-        /// render.</p>
+        /// <p>A <code>RenderableTask</code> object containing a representative task to render.</p>
         pub fn set_task(
             mut self,
             input: std::option::Option<crate::model::RenderableTask>,
@@ -29262,30 +26823,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_task(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that has access to the S3 objects that are used by the
-        /// template.</p>
+        /// <p>The Amazon Resource Name (ARN) that has access to the S3 objects that are used by the template.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that has access to the S3 objects that are used by the
-        /// template.</p>
+        /// <p>The Amazon Resource Name (ARN) that has access to the S3 objects that are used by the template.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
         }
-        /// <p>The <code>HumanTaskUiArn</code> of the worker UI that you want to render. Do not
-        /// provide a <code>HumanTaskUiArn</code> if you use the <code>UiTemplate</code>
-        /// parameter.</p>
-        /// <p>See a list of available Human Ui Amazon Resource Names (ARNs) in <a>UiConfig</a>.</p>
+        /// <p>The <code>HumanTaskUiArn</code> of the worker UI that you want to render. Do not provide a <code>HumanTaskUiArn</code> if you use the <code>UiTemplate</code> parameter.</p>
+        /// <p>See a list of available Human Ui Amazon Resource Names (ARNs) in <code>UiConfig</code>.</p>
         pub fn human_task_ui_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.human_task_ui_arn(input.into());
             self
         }
-        /// <p>The <code>HumanTaskUiArn</code> of the worker UI that you want to render. Do not
-        /// provide a <code>HumanTaskUiArn</code> if you use the <code>UiTemplate</code>
-        /// parameter.</p>
-        /// <p>See a list of available Human Ui Amazon Resource Names (ARNs) in <a>UiConfig</a>.</p>
+        /// <p>The <code>HumanTaskUiArn</code> of the worker UI that you want to render. Do not provide a <code>HumanTaskUiArn</code> if you use the <code>UiTemplate</code> parameter.</p>
+        /// <p>See a list of available Human Ui Amazon Resource Names (ARNs) in <code>UiConfig</code>.</p>
         pub fn set_human_task_ui_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -29366,14 +26921,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_pipeline_execution_arn(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// operation. An idempotent operation completes no more than once.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than once.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// operation. An idempotent operation completes no more than once.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than once.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -29384,11 +26937,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `Search`.
     ///
-    /// <p>Finds Amazon SageMaker resources that match a search query. Matching resources are returned
-    /// as a list of <code>SearchRecord</code> objects in the response. You can sort the search
-    /// results by any resource property in a ascending or descending order.</p>
-    /// <p>You can query against the following value types: numeric, text, Boolean, and
-    /// timestamp.</p>
+    /// <p>Finds Amazon SageMaker resources that match a search query. Matching resources are returned as a list of <code>SearchRecord</code> objects in the response. You can sort the search results by any resource property in a ascending or descending order.</p>
+    /// <p>You can query against the following value types: numeric, text, Boolean, and timestamp.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct Search<
         C = aws_smithy_client::erase::DynConnector,
@@ -29458,20 +27008,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource(input);
             self
         }
-        /// <p>A Boolean conditional statement. Resources must satisfy this condition to be
-        /// included in search results. You must provide at least one subexpression, filter, or
-        /// nested filter. The maximum number of recursive <code>SubExpressions</code>,
-        /// <code>NestedFilters</code>, and <code>Filters</code> that can be included in a
-        /// <code>SearchExpression</code> object is 50.</p>
+        /// <p>A Boolean conditional statement. Resources must satisfy this condition to be included in search results. You must provide at least one subexpression, filter, or nested filter. The maximum number of recursive <code>SubExpressions</code>, <code>NestedFilters</code>, and <code>Filters</code> that can be included in a <code>SearchExpression</code> object is 50.</p>
         pub fn search_expression(mut self, input: crate::model::SearchExpression) -> Self {
             self.inner = self.inner.search_expression(input);
             self
         }
-        /// <p>A Boolean conditional statement. Resources must satisfy this condition to be
-        /// included in search results. You must provide at least one subexpression, filter, or
-        /// nested filter. The maximum number of recursive <code>SubExpressions</code>,
-        /// <code>NestedFilters</code>, and <code>Filters</code> that can be included in a
-        /// <code>SearchExpression</code> object is 50.</p>
+        /// <p>A Boolean conditional statement. Resources must satisfy this condition to be included in search results. You must provide at least one subexpression, filter, or nested filter. The maximum number of recursive <code>SubExpressions</code>, <code>NestedFilters</code>, and <code>Filters</code> that can be included in a <code>SearchExpression</code> object is 50.</p>
         pub fn set_search_expression(
             mut self,
             input: std::option::Option<crate::model::SearchExpression>,
@@ -29479,26 +27021,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_search_expression(input);
             self
         }
-        /// <p>The name of the resource property used to sort the <code>SearchResults</code>. The
-        /// default is <code>LastModifiedTime</code>.</p>
+        /// <p>The name of the resource property used to sort the <code>SearchResults</code>. The default is <code>LastModifiedTime</code>.</p>
         pub fn sort_by(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.sort_by(input.into());
             self
         }
-        /// <p>The name of the resource property used to sort the <code>SearchResults</code>. The
-        /// default is <code>LastModifiedTime</code>.</p>
+        /// <p>The name of the resource property used to sort the <code>SearchResults</code>. The default is <code>LastModifiedTime</code>.</p>
         pub fn set_sort_by(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_sort_by(input);
             self
         }
-        /// <p>How <code>SearchResults</code> are ordered. Valid values are <code>Ascending</code> or
-        /// <code>Descending</code>. The default is <code>Descending</code>.</p>
+        /// <p>How <code>SearchResults</code> are ordered. Valid values are <code>Ascending</code> or <code>Descending</code>. The default is <code>Descending</code>.</p>
         pub fn sort_order(mut self, input: crate::model::SearchSortOrder) -> Self {
             self.inner = self.inner.sort_order(input);
             self
         }
-        /// <p>How <code>SearchResults</code> are ordered. Valid values are <code>Ascending</code> or
-        /// <code>Descending</code>. The default is <code>Descending</code>.</p>
+        /// <p>How <code>SearchResults</code> are ordered. Valid values are <code>Ascending</code> or <code>Descending</code>. The default is <code>Descending</code>.</p>
         pub fn set_sort_order(
             mut self,
             input: std::option::Option<crate::model::SearchSortOrder>,
@@ -29506,18 +27044,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sort_order(input);
             self
         }
-        /// <p>If more than <code>MaxResults</code> resources match the specified
-        /// <code>SearchExpression</code>, the response includes a
-        /// <code>NextToken</code>. The <code>NextToken</code> can be passed to the next
-        /// <code>SearchRequest</code> to continue retrieving results.</p>
+        /// <p>If more than <code>MaxResults</code> resources match the specified <code>SearchExpression</code>, the response includes a <code>NextToken</code>. The <code>NextToken</code> can be passed to the next <code>SearchRequest</code> to continue retrieving results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If more than <code>MaxResults</code> resources match the specified
-        /// <code>SearchExpression</code>, the response includes a
-        /// <code>NextToken</code>. The <code>NextToken</code> can be passed to the next
-        /// <code>SearchRequest</code> to continue retrieving results.</p>
+        /// <p>If more than <code>MaxResults</code> resources match the specified <code>SearchExpression</code>, the response includes a <code>NextToken</code>. The <code>NextToken</code> can be passed to the next <code>SearchRequest</code> to continue retrieving results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -29535,9 +27067,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SendPipelineExecutionStepFailure`.
     ///
-    /// <p>Notifies the pipeline that the execution of a callback step failed, along with a
-    /// message describing why. When a callback step is run, the pipeline generates a callback
-    /// token and includes the token in a message sent to Amazon Simple Queue Service (Amazon SQS).</p>
+    /// <p>Notifies the pipeline that the execution of a callback step failed, along with a message describing why. When a callback step is run, the pipeline generates a callback token and includes the token in a message sent to Amazon Simple Queue Service (Amazon SQS).</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendPipelineExecutionStepFailure<
         C = aws_smithy_client::erase::DynConnector,
@@ -29620,14 +27150,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_failure_reason(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// operation. An idempotent operation completes no more than one time.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// operation. An idempotent operation completes no more than one time.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -29638,9 +27166,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SendPipelineExecutionStepSuccess`.
     ///
-    /// <p>Notifies the pipeline that the execution of a callback step succeeded and provides a
-    /// list of the step's output parameters. When a callback step is run, the pipeline generates
-    /// a callback token and includes the token in a message sent to Amazon Simple Queue Service (Amazon SQS).</p>
+    /// <p>Notifies the pipeline that the execution of a callback step succeeded and provides a list of the step's output parameters. When a callback step is run, the pipeline generates a callback token and includes the token in a message sent to Amazon Simple Queue Service (Amazon SQS).</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendPipelineExecutionStepSuccess<
         C = aws_smithy_client::erase::DynConnector,
@@ -29727,14 +27253,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_output_parameters(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// operation. An idempotent operation completes no more than one time.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// operation. An idempotent operation completes no more than one time.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -29745,10 +27269,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartMonitoringSchedule`.
     ///
-    /// <p>Starts a previously stopped monitoring schedule.</p>
-    /// <note>
-    /// <p>By default, when you successfully create a new schedule, the status of a monitoring
-    /// schedule is <code>scheduled</code>.</p>
+    /// <p>Starts a previously stopped monitoring schedule.</p> <note>
+    /// <p>By default, when you successfully create a new schedule, the status of a monitoring schedule is <code>scheduled</code>.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartMonitoringSchedule<
@@ -29822,10 +27344,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartNotebookInstance`.
     ///
-    /// <p>Launches an ML compute instance with the latest version of the libraries and
-    /// attaches your ML storage volume. After configuring the notebook instance, Amazon SageMaker sets the
-    /// notebook instance status to <code>InService</code>. A notebook instance's status must be
-    /// <code>InService</code> before you can connect to your Jupyter notebook. </p>
+    /// <p>Launches an ML compute instance with the latest version of the libraries and attaches your ML storage volume. After configuring the notebook instance, Amazon SageMaker sets the notebook instance status to <code>InService</code>. A notebook instance's status must be <code>InService</code> before you can connect to your Jupyter notebook. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartNotebookInstance<
         C = aws_smithy_client::erase::DynConnector,
@@ -30017,14 +27536,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_pipeline_execution_description(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// operation. An idempotent operation completes no more than once.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than once.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// operation. An idempotent operation completes no more than once.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than once.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -30109,11 +27626,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopCompilationJob`.
     ///
     /// <p>Stops a model compilation job.</p>
-    /// <p> To stop a job, Amazon SageMaker sends the algorithm the SIGTERM signal. This gracefully shuts the
-    /// job down. If the job hasn't stopped, it sends the SIGKILL signal.</p>
-    /// <p>When it receives a <code>StopCompilationJob</code> request, Amazon SageMaker changes the <a>CompilationJobSummary$CompilationJobStatus</a> of the job to
-    /// <code>Stopping</code>. After Amazon SageMaker stops the job, it sets the <a>CompilationJobSummary$CompilationJobStatus</a> to <code>Stopped</code>.
-    /// </p>
+    /// <p> To stop a job, Amazon SageMaker sends the algorithm the SIGTERM signal. This gracefully shuts the job down. If the job hasn't stopped, it sends the SIGKILL signal.</p>
+    /// <p>When it receives a <code>StopCompilationJob</code> request, Amazon SageMaker changes the <code>CompilationJobSummary$CompilationJobStatus</code> of the job to <code>Stopping</code>. After Amazon SageMaker stops the job, it sets the <code>CompilationJobSummary$CompilationJobStatus</code> to <code>Stopped</code>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopCompilationJob<
         C = aws_smithy_client::erase::DynConnector,
@@ -30259,13 +27773,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StopHyperParameterTuningJob`.
     ///
-    /// <p>Stops a running hyperparameter tuning job and all running training jobs that the
-    /// tuning job launched.</p>
-    /// <p>All model artifacts output from the training jobs are stored in Amazon Simple Storage Service (Amazon S3). All
-    /// data that the training jobs write to Amazon CloudWatch Logs are still available in CloudWatch. After the
-    /// tuning job moves to the <code>Stopped</code> state, it releases all
-    /// reserved
-    /// resources for the tuning job.</p>
+    /// <p>Stops a running hyperparameter tuning job and all running training jobs that the tuning job launched.</p>
+    /// <p>All model artifacts output from the training jobs are stored in Amazon Simple Storage Service (Amazon S3). All data that the training jobs write to Amazon CloudWatch Logs are still available in CloudWatch. After the tuning job moves to the <code>Stopped</code> state, it releases all reserved resources for the tuning job.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopHyperParameterTuningJob<
         C = aws_smithy_client::erase::DynConnector,
@@ -30411,8 +27920,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StopLabelingJob`.
     ///
-    /// <p>Stops a running labeling job. A job that is stopped cannot be restarted. Any results
-    /// obtained before the job is stopped are placed in the Amazon S3 output bucket.</p>
+    /// <p>Stops a running labeling job. A job that is stopped cannot be restarted. Any results obtained before the job is stopped are placed in the Amazon S3 output bucket.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopLabelingJob<
         C = aws_smithy_client::erase::DynConnector,
@@ -30558,15 +28066,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StopNotebookInstance`.
     ///
-    /// <p>Terminates the ML compute instance. Before terminating the instance, Amazon SageMaker
-    /// disconnects the ML storage volume from it. Amazon SageMaker preserves the ML storage volume. Amazon SageMaker
-    /// stops charging you for the ML compute instance when you call
-    /// <code>StopNotebookInstance</code>.</p>
-    /// <p>To access data on the ML storage volume for a notebook instance that has been
-    /// terminated, call the <code>StartNotebookInstance</code> API.
-    /// <code>StartNotebookInstance</code> launches another ML compute instance, configures
-    /// it, and attaches the preserved ML storage volume so you can continue your work.
-    /// </p>
+    /// <p>Terminates the ML compute instance. Before terminating the instance, Amazon SageMaker disconnects the ML storage volume from it. Amazon SageMaker preserves the ML storage volume. Amazon SageMaker stops charging you for the ML compute instance when you call <code>StopNotebookInstance</code>.</p>
+    /// <p>To access data on the ML storage volume for a notebook instance that has been terminated, call the <code>StartNotebookInstance</code> API. <code>StartNotebookInstance</code> launches another ML compute instance, configures it, and attaches the preserved ML storage volume so you can continue your work. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopNotebookInstance<
         C = aws_smithy_client::erase::DynConnector,
@@ -30640,30 +28141,12 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopPipelineExecution`.
     ///
     /// <p>Stops a pipeline execution.</p>
-    ///
-    /// <p>
-    /// <b>Callback Step</b>
-    /// </p>
-    /// <p>A pipeline execution won't stop while a callback step is running.
-    /// When you call <code>StopPipelineExecution</code>
-    /// on a pipeline execution with a running callback step, SageMaker Pipelines sends an
-    /// additional Amazon SQS message to the specified SQS queue. The body of the SQS message
-    /// contains a "Status" field which is set to "Stopping".</p>
-    /// <p>You should add logic to your Amazon SQS message consumer to take any needed action (for
-    /// example, resource cleanup) upon receipt of the message followed by a call to
-    /// <code>SendPipelineExecutionStepSuccess</code> or
-    /// <code>SendPipelineExecutionStepFailure</code>.</p>
+    /// <p> <b>Callback Step</b> </p>
+    /// <p>A pipeline execution won't stop while a callback step is running. When you call <code>StopPipelineExecution</code> on a pipeline execution with a running callback step, SageMaker Pipelines sends an additional Amazon SQS message to the specified SQS queue. The body of the SQS message contains a "Status" field which is set to "Stopping".</p>
+    /// <p>You should add logic to your Amazon SQS message consumer to take any needed action (for example, resource cleanup) upon receipt of the message followed by a call to <code>SendPipelineExecutionStepSuccess</code> or <code>SendPipelineExecutionStepFailure</code>.</p>
     /// <p>Only when SageMaker Pipelines receives one of these calls will it stop the pipeline execution.</p>
-    ///
-    /// <p>
-    /// <b>Lambda Step</b>
-    /// </p>
-    /// <p>A pipeline execution can't be stopped while a lambda step is running because the Lambda
-    /// function invoked by the lambda step can't be stopped. If you attempt to stop the execution
-    /// while the Lambda function is running, the pipeline waits for the Lambda function to finish
-    /// or until the timeout is hit, whichever occurs first, and then stops. If the Lambda function
-    /// finishes, the pipeline execution status is <code>Stopped</code>. If the timeout is hit
-    /// the pipeline execution status is <code>Failed</code>.</p>
+    /// <p> <b>Lambda Step</b> </p>
+    /// <p>A pipeline execution can't be stopped while a lambda step is running because the Lambda function invoked by the lambda step can't be stopped. If you attempt to stop the execution while the Lambda function is running, the pipeline waits for the Lambda function to finish or until the timeout is hit, whichever occurs first, and then stops. If the Lambda function finishes, the pipeline execution status is <code>Stopped</code>. If the timeout is hit the pipeline execution status is <code>Failed</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopPipelineExecution<
         C = aws_smithy_client::erase::DynConnector,
@@ -30733,14 +28216,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_pipeline_execution_arn(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// operation. An idempotent operation completes no more than once.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than once.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// operation. An idempotent operation completes no more than once.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than once.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -30824,13 +28305,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StopTrainingJob`.
     ///
-    /// <p>Stops a training job. To stop a job, Amazon SageMaker sends the algorithm the
-    /// <code>SIGTERM</code> signal, which delays job termination for 120 seconds.
-    /// Algorithms might use this 120-second window to save the model artifacts, so the results
-    /// of the training is not lost. </p>
-    /// <p>When it receives a <code>StopTrainingJob</code> request, Amazon SageMaker changes the status of
-    /// the job to <code>Stopping</code>. After Amazon SageMaker stops the job, it sets the status to
-    /// <code>Stopped</code>.</p>
+    /// <p>Stops a training job. To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms might use this 120-second window to save the model artifacts, so the results of the training is not lost. </p>
+    /// <p>When it receives a <code>StopTrainingJob</code> request, Amazon SageMaker changes the status of the job to <code>Stopping</code>. After Amazon SageMaker stops the job, it sets the status to <code>Stopped</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopTrainingJob<
         C = aws_smithy_client::erase::DynConnector,
@@ -30904,11 +28380,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StopTransformJob`.
     ///
     /// <p>Stops a transform job.</p>
-    /// <p>When Amazon SageMaker receives a <code>StopTransformJob</code> request, the status of the job
-    /// changes to <code>Stopping</code>. After Amazon SageMaker
-    /// stops
-    /// the job, the status is set to <code>Stopped</code>. When you stop a transform job before
-    /// it is completed, Amazon SageMaker doesn't store the job's output in Amazon S3.</p>
+    /// <p>When Amazon SageMaker receives a <code>StopTransformJob</code> request, the status of the job changes to <code>Stopping</code>. After Amazon SageMaker stops the job, the status is set to <code>Stopped</code>. When you stop a transform job before it is completed, Amazon SageMaker doesn't store the job's output in Amazon S3.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopTransformJob<
         C = aws_smithy_client::erase::DynConnector,
@@ -31396,26 +28868,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_code_repository_name(input);
             self
         }
-        /// <p>The configuration of the git repository, including the URL and the Amazon Resource
-        /// Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the credentials used to
-        /// access the repository. The secret must have a staging label of <code>AWSCURRENT</code>
-        /// and must be in the following format:</p>
-        /// <p>
-        /// <code>{"username": <i>UserName</i>, "password":
-        /// <i>Password</i>}</code>
-        /// </p>
+        /// <p>The configuration of the git repository, including the URL and the Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the repository. The secret must have a staging label of <code>AWSCURRENT</code> and must be in the following format:</p>
+        /// <p> <code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code> </p>
         pub fn git_config(mut self, input: crate::model::GitConfigForUpdate) -> Self {
             self.inner = self.inner.git_config(input);
             self
         }
-        /// <p>The configuration of the git repository, including the URL and the Amazon Resource
-        /// Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the credentials used to
-        /// access the repository. The secret must have a staging label of <code>AWSCURRENT</code>
-        /// and must be in the following format:</p>
-        /// <p>
-        /// <code>{"username": <i>UserName</i>, "password":
-        /// <i>Password</i>}</code>
-        /// </p>
+        /// <p>The configuration of the git repository, including the URL and the Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the repository. The secret must have a staging label of <code>AWSCURRENT</code> and must be in the following format:</p>
+        /// <p> <code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code> </p>
         pub fn set_git_config(
             mut self,
             input: std::option::Option<crate::model::GitConfigForUpdate>,
@@ -31636,12 +29096,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>Output configuration  for storing sample data collected by the fleet.</p>
+        /// <p>Output configuration for storing sample data collected by the fleet.</p>
         pub fn output_config(mut self, input: crate::model::EdgeOutputConfig) -> Self {
             self.inner = self.inner.output_config(input);
             self
         }
-        /// <p>Output configuration  for storing sample data collected by the fleet.</p>
+        /// <p>Output configuration for storing sample data collected by the fleet.</p>
         pub fn set_output_config(
             mut self,
             input: std::option::Option<crate::model::EdgeOutputConfig>,
@@ -31649,20 +29109,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_output_config(input);
             self
         }
-        /// <p>Whether to create an Amazon Web Services IoT Role Alias during device fleet creation.
-        /// The name of the role alias generated will match this pattern:
-        /// "SageMakerEdge-{DeviceFleetName}".</p>
-        /// <p>For example, if your device fleet is called "demo-fleet", the name of
-        /// the role alias will be "SageMakerEdge-demo-fleet".</p>
+        /// <p>Whether to create an Amazon Web Services IoT Role Alias during device fleet creation. The name of the role alias generated will match this pattern: "SageMakerEdge-{DeviceFleetName}".</p>
+        /// <p>For example, if your device fleet is called "demo-fleet", the name of the role alias will be "SageMakerEdge-demo-fleet".</p>
         pub fn enable_iot_role_alias(mut self, input: bool) -> Self {
             self.inner = self.inner.enable_iot_role_alias(input);
             self
         }
-        /// <p>Whether to create an Amazon Web Services IoT Role Alias during device fleet creation.
-        /// The name of the role alias generated will match this pattern:
-        /// "SageMakerEdge-{DeviceFleetName}".</p>
-        /// <p>For example, if your device fleet is called "demo-fleet", the name of
-        /// the role alias will be "SageMakerEdge-demo-fleet".</p>
+        /// <p>Whether to create an Amazon Web Services IoT Role Alias during device fleet creation. The name of the role alias generated will match this pattern: "SageMakerEdge-{DeviceFleetName}".</p>
+        /// <p>For example, if your device fleet is called "demo-fleet", the name of the role alias will be "SageMakerEdge-demo-fleet".</p>
         pub fn set_enable_iot_role_alias(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_enable_iot_role_alias(input);
             self
@@ -31859,22 +29313,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateEndpoint`.
     ///
-    /// <p>Deploys the new <code>EndpointConfig</code> specified in the request, switches to
-    /// using newly created endpoint, and then deletes resources provisioned for the endpoint
-    /// using the previous <code>EndpointConfig</code> (there is no availability loss). </p>
-    /// <p>When Amazon SageMaker receives the request, it sets the endpoint status to
-    /// <code>Updating</code>. After updating the endpoint, it sets the status to
-    /// <code>InService</code>. To check the status of an endpoint, use the <a>DescribeEndpoint</a> API.
-    ///
-    /// </p>
-    /// <note>
-    /// <p>You must not delete an <code>EndpointConfig</code> in use by an endpoint that is
-    /// live or while the <code>UpdateEndpoint</code> or <code>CreateEndpoint</code>
-    /// operations are being performed on the endpoint. To update an endpoint, you must
-    /// create a new <code>EndpointConfig</code>.</p>
-    /// <p>If you delete the <code>EndpointConfig</code> of an endpoint that is active or
-    /// being created or updated you may lose visibility into the instance type the endpoint
-    /// is using. The endpoint must be deleted in order to stop incurring charges.</p>
+    /// <p>Deploys the new <code>EndpointConfig</code> specified in the request, switches to using newly created endpoint, and then deletes resources provisioned for the endpoint using the previous <code>EndpointConfig</code> (there is no availability loss). </p>
+    /// <p>When Amazon SageMaker receives the request, it sets the endpoint status to <code>Updating</code>. After updating the endpoint, it sets the status to <code>InService</code>. To check the status of an endpoint, use the <code>DescribeEndpoint</code> API. </p> <note>
+    /// <p>You must not delete an <code>EndpointConfig</code> in use by an endpoint that is live or while the <code>UpdateEndpoint</code> or <code>CreateEndpoint</code> operations are being performed on the endpoint. To update an endpoint, you must create a new <code>EndpointConfig</code>.</p>
+    /// <p>If you delete the <code>EndpointConfig</code> of an endpoint that is active or being created or updated you may lose visibility into the instance type the endpoint is using. The endpoint must be deleted in order to stop incurring charges.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateEndpoint<
@@ -31958,22 +29400,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_endpoint_config_name(input);
             self
         }
-        /// <p>When updating endpoint resources, enables or disables the retention of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VariantProperty.html">variant properties</a>, such as the instance count or the variant weight. To
-        /// retain the variant properties of an endpoint when updating it, set
-        /// <code>RetainAllVariantProperties</code> to <code>true</code>. To use the variant
-        /// properties specified in a new <code>EndpointConfig</code> call when updating an
-        /// endpoint, set <code>RetainAllVariantProperties</code> to <code>false</code>. The default
-        /// is <code>false</code>.</p>
+        /// <p>When updating endpoint resources, enables or disables the retention of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VariantProperty.html">variant properties</a>, such as the instance count or the variant weight. To retain the variant properties of an endpoint when updating it, set <code>RetainAllVariantProperties</code> to <code>true</code>. To use the variant properties specified in a new <code>EndpointConfig</code> call when updating an endpoint, set <code>RetainAllVariantProperties</code> to <code>false</code>. The default is <code>false</code>.</p>
         pub fn retain_all_variant_properties(mut self, input: bool) -> Self {
             self.inner = self.inner.retain_all_variant_properties(input);
             self
         }
-        /// <p>When updating endpoint resources, enables or disables the retention of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VariantProperty.html">variant properties</a>, such as the instance count or the variant weight. To
-        /// retain the variant properties of an endpoint when updating it, set
-        /// <code>RetainAllVariantProperties</code> to <code>true</code>. To use the variant
-        /// properties specified in a new <code>EndpointConfig</code> call when updating an
-        /// endpoint, set <code>RetainAllVariantProperties</code> to <code>false</code>. The default
-        /// is <code>false</code>.</p>
+        /// <p>When updating endpoint resources, enables or disables the retention of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VariantProperty.html">variant properties</a>, such as the instance count or the variant weight. To retain the variant properties of an endpoint when updating it, set <code>RetainAllVariantProperties</code> to <code>true</code>. To use the variant properties specified in a new <code>EndpointConfig</code> call when updating an endpoint, set <code>RetainAllVariantProperties</code> to <code>false</code>. The default is <code>false</code>.</p>
         pub fn set_retain_all_variant_properties(
             mut self,
             input: std::option::Option<bool>,
@@ -31985,12 +29417,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_exclude_retained_variant_properties`](Self::set_exclude_retained_variant_properties).
         ///
-        /// <p>When you are updating endpoint resources with <a>UpdateEndpointInput$RetainAllVariantProperties</a>, whose value is set to
-        /// <code>true</code>, <code>ExcludeRetainedVariantProperties</code> specifies the list
-        /// of type <a>VariantProperty</a> to override with the values provided by
-        /// <code>EndpointConfig</code>. If you don't specify a value for
-        /// <code>ExcludeAllVariantProperties</code>, no variant properties are overridden.
-        /// </p>
+        /// <p>When you are updating endpoint resources with <code>UpdateEndpointInput$RetainAllVariantProperties</code>, whose value is set to <code>true</code>, <code>ExcludeRetainedVariantProperties</code> specifies the list of type <code>VariantProperty</code> to override with the values provided by <code>EndpointConfig</code>. If you don't specify a value for <code>ExcludeAllVariantProperties</code>, no variant properties are overridden. </p>
         pub fn exclude_retained_variant_properties(
             mut self,
             input: crate::model::VariantProperty,
@@ -31998,12 +29425,7 @@ pub mod fluent_builders {
             self.inner = self.inner.exclude_retained_variant_properties(input);
             self
         }
-        /// <p>When you are updating endpoint resources with <a>UpdateEndpointInput$RetainAllVariantProperties</a>, whose value is set to
-        /// <code>true</code>, <code>ExcludeRetainedVariantProperties</code> specifies the list
-        /// of type <a>VariantProperty</a> to override with the values provided by
-        /// <code>EndpointConfig</code>. If you don't specify a value for
-        /// <code>ExcludeAllVariantProperties</code>, no variant properties are overridden.
-        /// </p>
+        /// <p>When you are updating endpoint resources with <code>UpdateEndpointInput$RetainAllVariantProperties</code>, whose value is set to <code>true</code>, <code>ExcludeRetainedVariantProperties</code> specifies the list of type <code>VariantProperty</code> to override with the values provided by <code>EndpointConfig</code>. If you don't specify a value for <code>ExcludeAllVariantProperties</code>, no variant properties are overridden. </p>
         pub fn set_exclude_retained_variant_properties(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::VariantProperty>>,
@@ -32024,14 +29446,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_deployment_config(input);
             self
         }
-        /// <p>Specifies whether to reuse the last deployment configuration. The default value is
-        /// false (the configuration is not reused).</p>
+        /// <p>Specifies whether to reuse the last deployment configuration. The default value is false (the configuration is not reused).</p>
         pub fn retain_deployment_config(mut self, input: bool) -> Self {
             self.inner = self.inner.retain_deployment_config(input);
             self
         }
-        /// <p>Specifies whether to reuse the last deployment configuration. The default value is
-        /// false (the configuration is not reused).</p>
+        /// <p>Specifies whether to reuse the last deployment configuration. The default value is false (the configuration is not reused).</p>
         pub fn set_retain_deployment_config(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_retain_deployment_config(input);
             self
@@ -32039,11 +29459,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateEndpointWeightsAndCapacities`.
     ///
-    /// <p>Updates variant weight of one or more variants associated with an existing
-    /// endpoint, or capacity of one variant associated with an existing endpoint. When it
-    /// receives the request, Amazon SageMaker sets the endpoint status to <code>Updating</code>. After
-    /// updating the endpoint, it sets the status to <code>InService</code>. To check the status
-    /// of an endpoint, use the <a>DescribeEndpoint</a> API. </p>
+    /// <p>Updates variant weight of one or more variants associated with an existing endpoint, or capacity of one variant associated with an existing endpoint. When it receives the request, Amazon SageMaker sets the endpoint status to <code>Updating</code>. After updating the endpoint, it sets the status to <code>InService</code>. To check the status of an endpoint, use the <code>DescribeEndpoint</code> API. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateEndpointWeightsAndCapacities<
         C = aws_smithy_client::erase::DynConnector,
@@ -32138,8 +29554,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateExperiment`.
     ///
-    /// <p>Adds, updates, or removes the description of an experiment. Updates the display name of an
-    /// experiment.</p>
+    /// <p>Adds, updates, or removes the description of an experiment. Updates the display name of an experiment.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateExperiment<
         C = aws_smithy_client::erase::DynConnector,
@@ -32209,14 +29624,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_experiment_name(input);
             self
         }
-        /// <p>The name of the experiment as displayed. The name doesn't need to be unique. If
-        /// <code>DisplayName</code> isn't specified, <code>ExperimentName</code> is displayed.</p>
+        /// <p>The name of the experiment as displayed. The name doesn't need to be unique. If <code>DisplayName</code> isn't specified, <code>ExperimentName</code> is displayed.</p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.display_name(input.into());
             self
         }
-        /// <p>The name of the experiment as displayed. The name doesn't need to be unique. If
-        /// <code>DisplayName</code> isn't specified, <code>ExperimentName</code> is displayed.</p>
+        /// <p>The name of the experiment as displayed. The name doesn't need to be unique. If <code>DisplayName</code> isn't specified, <code>ExperimentName</code> is displayed.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_display_name(input);
             self
@@ -32234,8 +29647,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateImage`.
     ///
-    /// <p>Updates the properties of a SageMaker image. To change the image's tags, use the
-    /// <a>AddTags</a> and <a>DeleteTags</a> APIs.</p>
+    /// <p>Updates the properties of a SageMaker image. To change the image's tags, use the <code>AddTags</code> and <code>DeleteTags</code> APIs.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateImage<
         C = aws_smithy_client::erase::DynConnector,
@@ -32296,14 +29708,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_delete_properties`](Self::set_delete_properties).
         ///
-        /// <p>A list of properties to delete. Only the <code>Description</code> and
-        /// <code>DisplayName</code> properties can be deleted.</p>
+        /// <p>A list of properties to delete. Only the <code>Description</code> and <code>DisplayName</code> properties can be deleted.</p>
         pub fn delete_properties(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.delete_properties(input.into());
             self
         }
-        /// <p>A list of properties to delete. Only the <code>Description</code> and
-        /// <code>DisplayName</code> properties can be deleted.</p>
+        /// <p>A list of properties to delete. Only the <code>Description</code> and <code>DisplayName</code> properties can be deleted.</p>
         pub fn set_delete_properties(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -32499,11 +29909,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_additional_inference_specifications_to_add`](Self::set_additional_inference_specifications_to_add).
         ///
-        /// <p>An array of additional Inference Specification objects to be added to the
-        /// existing array additional Inference Specification. Total number of additional
-        /// Inference Specifications can not exceed 15. Each additional Inference Specification
-        /// specifies artifacts based on this model package that can be used on inference endpoints.
-        /// Generally used with SageMaker Neo to store the compiled artifacts.</p>
+        /// <p>An array of additional Inference Specification objects to be added to the existing array additional Inference Specification. Total number of additional Inference Specifications can not exceed 15. Each additional Inference Specification specifies artifacts based on this model package that can be used on inference endpoints. Generally used with SageMaker Neo to store the compiled artifacts.</p>
         pub fn additional_inference_specifications_to_add(
             mut self,
             input: crate::model::AdditionalInferenceSpecificationDefinition,
@@ -32511,11 +29917,7 @@ pub mod fluent_builders {
             self.inner = self.inner.additional_inference_specifications_to_add(input);
             self
         }
-        /// <p>An array of additional Inference Specification objects to be added to the
-        /// existing array additional Inference Specification. Total number of additional
-        /// Inference Specifications can not exceed 15. Each additional Inference Specification
-        /// specifies artifacts based on this model package that can be used on inference endpoints.
-        /// Generally used with SageMaker Neo to store the compiled artifacts.</p>
+        /// <p>An array of additional Inference Specification objects to be added to the existing array additional Inference Specification. Total number of additional Inference Specifications can not exceed 15. Each additional Inference Specification specifies artifacts based on this model package that can be used on inference endpoints. Generally used with SageMaker Neo to store the compiled artifacts.</p>
         pub fn set_additional_inference_specifications_to_add(
             mut self,
             input: std::option::Option<
@@ -32587,14 +29989,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the monitoring schedule. The name must be unique within an Amazon Web Services Region within
-        /// an Amazon Web Services account.</p>
+        /// <p>The name of the monitoring schedule. The name must be unique within an Amazon Web Services Region within an Amazon Web Services account.</p>
         pub fn monitoring_schedule_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.monitoring_schedule_name(input.into());
             self
         }
-        /// <p>The name of the monitoring schedule. The name must be unique within an Amazon Web Services Region within
-        /// an Amazon Web Services account.</p>
+        /// <p>The name of the monitoring schedule. The name must be unique within an Amazon Web Services Region within an Amazon Web Services account.</p>
         pub fn set_monitoring_schedule_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -32602,8 +30002,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_monitoring_schedule_name(input);
             self
         }
-        /// <p>The configuration object that specifies the monitoring schedule and defines the
-        /// monitoring job.</p>
+        /// <p>The configuration object that specifies the monitoring schedule and defines the monitoring job.</p>
         pub fn monitoring_schedule_config(
             mut self,
             input: crate::model::MonitoringScheduleConfig,
@@ -32611,8 +30010,7 @@ pub mod fluent_builders {
             self.inner = self.inner.monitoring_schedule_config(input);
             self
         }
-        /// <p>The configuration object that specifies the monitoring schedule and defines the
-        /// monitoring job.</p>
+        /// <p>The configuration object that specifies the monitoring schedule and defines the monitoring job.</p>
         pub fn set_monitoring_schedule_config(
             mut self,
             input: std::option::Option<crate::model::MonitoringScheduleConfig>,
@@ -32623,9 +30021,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateNotebookInstance`.
     ///
-    /// <p>Updates a notebook instance. NotebookInstance updates include upgrading or
-    /// downgrading the ML compute instance used for your notebook instance to accommodate
-    /// changes in your workload requirements.</p>
+    /// <p>Updates a notebook instance. NotebookInstance updates include upgrading or downgrading the ML compute instance used for your notebook instance to accommodate changes in your workload requirements.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateNotebookInstance<
         C = aws_smithy_client::erase::DynConnector,
@@ -32708,36 +30104,26 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_type(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can assume to access the
-        /// notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>. </p>
-        /// <note>
-        /// <p>To be able to pass this role to Amazon SageMaker, the caller of this API must have the
-        /// <code>iam:PassRole</code> permission.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can assume to access the notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>. </p> <note>
+        /// <p>To be able to pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission.</p>
         /// </note>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can assume to access the
-        /// notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>. </p>
-        /// <note>
-        /// <p>To be able to pass this role to Amazon SageMaker, the caller of this API must have the
-        /// <code>iam:PassRole</code> permission.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can assume to access the notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>. </p> <note>
+        /// <p>To be able to pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission.</p>
         /// </note>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
         }
-        /// <p>The name of a lifecycle configuration to associate with the notebook instance. For
-        /// information about lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional)
-        /// Customize a Notebook Instance</a>.</p>
+        /// <p>The name of a lifecycle configuration to associate with the notebook instance. For information about lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional) Customize a Notebook Instance</a>.</p>
         pub fn lifecycle_config_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.lifecycle_config_name(input.into());
             self
         }
-        /// <p>The name of a lifecycle configuration to associate with the notebook instance. For
-        /// information about lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional)
-        /// Customize a Notebook Instance</a>.</p>
+        /// <p>The name of a lifecycle configuration to associate with the notebook instance. For information about lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional) Customize a Notebook Instance</a>.</p>
         pub fn set_lifecycle_config_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -32745,18 +30131,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_lifecycle_config_name(input);
             self
         }
-        /// <p>Set to <code>true</code> to remove the notebook instance lifecycle configuration
-        /// currently associated with the notebook instance. This operation is idempotent. If you
-        /// specify a lifecycle configuration that is not associated with the notebook instance when
-        /// you call this method, it does not throw an error.</p>
+        /// <p>Set to <code>true</code> to remove the notebook instance lifecycle configuration currently associated with the notebook instance. This operation is idempotent. If you specify a lifecycle configuration that is not associated with the notebook instance when you call this method, it does not throw an error.</p>
         pub fn disassociate_lifecycle_config(mut self, input: bool) -> Self {
             self.inner = self.inner.disassociate_lifecycle_config(input);
             self
         }
-        /// <p>Set to <code>true</code> to remove the notebook instance lifecycle configuration
-        /// currently associated with the notebook instance. This operation is idempotent. If you
-        /// specify a lifecycle configuration that is not associated with the notebook instance when
-        /// you call this method, it does not throw an error.</p>
+        /// <p>Set to <code>true</code> to remove the notebook instance lifecycle configuration currently associated with the notebook instance. This operation is idempotent. If you specify a lifecycle configuration that is not associated with the notebook instance when you call this method, it does not throw an error.</p>
         pub fn set_disassociate_lifecycle_config(
             mut self,
             input: std::option::Option<bool>,
@@ -32764,42 +30144,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_disassociate_lifecycle_config(input);
             self
         }
-        /// <p>The size, in GB, of the ML storage volume to attach to the notebook instance. The
-        /// default value is 5 GB. ML storage volumes are encrypted, so Amazon SageMaker can't determine the
-        /// amount of available free space on the volume. Because of this, you can increase the
-        /// volume size when you update a notebook instance, but you can't decrease the volume size.
-        /// If you want to decrease the size of the ML storage volume in use, create a new notebook
-        /// instance with the desired size.</p>
+        /// <p>The size, in GB, of the ML storage volume to attach to the notebook instance. The default value is 5 GB. ML storage volumes are encrypted, so Amazon SageMaker can't determine the amount of available free space on the volume. Because of this, you can increase the volume size when you update a notebook instance, but you can't decrease the volume size. If you want to decrease the size of the ML storage volume in use, create a new notebook instance with the desired size.</p>
         pub fn volume_size_in_gb(mut self, input: i32) -> Self {
             self.inner = self.inner.volume_size_in_gb(input);
             self
         }
-        /// <p>The size, in GB, of the ML storage volume to attach to the notebook instance. The
-        /// default value is 5 GB. ML storage volumes are encrypted, so Amazon SageMaker can't determine the
-        /// amount of available free space on the volume. Because of this, you can increase the
-        /// volume size when you update a notebook instance, but you can't decrease the volume size.
-        /// If you want to decrease the size of the ML storage volume in use, create a new notebook
-        /// instance with the desired size.</p>
+        /// <p>The size, in GB, of the ML storage volume to attach to the notebook instance. The default value is 5 GB. ML storage volumes are encrypted, so Amazon SageMaker can't determine the amount of available free space on the volume. Because of this, you can increase the volume size when you update a notebook instance, but you can't decrease the volume size. If you want to decrease the size of the ML storage volume in use, create a new notebook instance with the desired size.</p>
         pub fn set_volume_size_in_gb(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_volume_size_in_gb(input);
             self
         }
-        /// <p>The Git repository to associate with the notebook instance as its default code
-        /// repository. This can be either the name of a Git repository stored as a resource in your
-        /// account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any
-        /// other Git repository. When you open a notebook instance, it opens in the directory that
-        /// contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon SageMaker
-        /// Notebook Instances</a>.</p>
+        /// <p>The Git repository to associate with the notebook instance as its default code repository. This can be either the name of a Git repository stored as a resource in your account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the directory that contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
         pub fn default_code_repository(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.default_code_repository(input.into());
             self
         }
-        /// <p>The Git repository to associate with the notebook instance as its default code
-        /// repository. This can be either the name of a Git repository stored as a resource in your
-        /// account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any
-        /// other Git repository. When you open a notebook instance, it opens in the directory that
-        /// contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon SageMaker
-        /// Notebook Instances</a>.</p>
+        /// <p>The Git repository to associate with the notebook instance as its default code repository. This can be either the name of a Git repository stored as a resource in your account, or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. When you open a notebook instance, it opens in the directory that contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
         pub fn set_default_code_repository(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -32811,12 +30171,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_additional_code_repositories`](Self::set_additional_code_repositories).
         ///
-        /// <p>An array of up to three Git repositories to associate with the notebook instance.
-        /// These can be either the names of Git repositories stored as resources in your account,
-        /// or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any
-        /// other Git repository. These repositories are cloned at the same level as the default
-        /// repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git
-        /// Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+        /// <p>An array of up to three Git repositories to associate with the notebook instance. These can be either the names of Git repositories stored as resources in your account, or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the default repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
         pub fn additional_code_repositories(
             mut self,
             input: impl Into<std::string::String>,
@@ -32824,12 +30179,7 @@ pub mod fluent_builders {
             self.inner = self.inner.additional_code_repositories(input.into());
             self
         }
-        /// <p>An array of up to three Git repositories to associate with the notebook instance.
-        /// These can be either the names of Git repositories stored as resources in your account,
-        /// or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any
-        /// other Git repository. These repositories are cloned at the same level as the default
-        /// repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git
-        /// Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+        /// <p>An array of up to three Git repositories to associate with the notebook instance. These can be either the names of Git repositories stored as resources in your account, or the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository. These repositories are cloned at the same level as the default repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
         pub fn set_additional_code_repositories(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -32841,10 +30191,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_accelerator_types`](Self::set_accelerator_types).
         ///
-        /// <p>A list of the Elastic Inference (EI) instance types to associate with this notebook
-        /// instance. Currently only one EI instance type can be associated with a notebook
-        /// instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon
-        /// SageMaker</a>.</p>
+        /// <p>A list of the Elastic Inference (EI) instance types to associate with this notebook instance. Currently only one EI instance type can be associated with a notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.</p>
         pub fn accelerator_types(
             mut self,
             input: crate::model::NotebookInstanceAcceleratorType,
@@ -32852,10 +30199,7 @@ pub mod fluent_builders {
             self.inner = self.inner.accelerator_types(input);
             self
         }
-        /// <p>A list of the Elastic Inference (EI) instance types to associate with this notebook
-        /// instance. Currently only one EI instance type can be associated with a notebook
-        /// instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon
-        /// SageMaker</a>.</p>
+        /// <p>A list of the Elastic Inference (EI) instance types to associate with this notebook instance. Currently only one EI instance type can be associated with a notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.</p>
         pub fn set_accelerator_types(
             mut self,
             input: std::option::Option<
@@ -32865,18 +30209,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_accelerator_types(input);
             self
         }
-        /// <p>A list of the Elastic Inference (EI) instance types to remove from this notebook
-        /// instance. This operation is idempotent. If you specify an accelerator type that is not
-        /// associated with the notebook instance when you call this method, it does not throw an
-        /// error.</p>
+        /// <p>A list of the Elastic Inference (EI) instance types to remove from this notebook instance. This operation is idempotent. If you specify an accelerator type that is not associated with the notebook instance when you call this method, it does not throw an error.</p>
         pub fn disassociate_accelerator_types(mut self, input: bool) -> Self {
             self.inner = self.inner.disassociate_accelerator_types(input);
             self
         }
-        /// <p>A list of the Elastic Inference (EI) instance types to remove from this notebook
-        /// instance. This operation is idempotent. If you specify an accelerator type that is not
-        /// associated with the notebook instance when you call this method, it does not throw an
-        /// error.</p>
+        /// <p>A list of the Elastic Inference (EI) instance types to remove from this notebook instance. This operation is idempotent. If you specify an accelerator type that is not associated with the notebook instance when you call this method, it does not throw an error.</p>
         pub fn set_disassociate_accelerator_types(
             mut self,
             input: std::option::Option<bool>,
@@ -32884,16 +30222,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_disassociate_accelerator_types(input);
             self
         }
-        /// <p>The name or URL of the default Git repository to remove from this notebook instance.
-        /// This operation is idempotent. If you specify a Git repository that is not associated
-        /// with the notebook instance when you call this method, it does not throw an error.</p>
+        /// <p>The name or URL of the default Git repository to remove from this notebook instance. This operation is idempotent. If you specify a Git repository that is not associated with the notebook instance when you call this method, it does not throw an error.</p>
         pub fn disassociate_default_code_repository(mut self, input: bool) -> Self {
             self.inner = self.inner.disassociate_default_code_repository(input);
             self
         }
-        /// <p>The name or URL of the default Git repository to remove from this notebook instance.
-        /// This operation is idempotent. If you specify a Git repository that is not associated
-        /// with the notebook instance when you call this method, it does not throw an error.</p>
+        /// <p>The name or URL of the default Git repository to remove from this notebook instance. This operation is idempotent. If you specify a Git repository that is not associated with the notebook instance when you call this method, it does not throw an error.</p>
         pub fn set_disassociate_default_code_repository(
             mut self,
             input: std::option::Option<bool>,
@@ -32901,18 +30235,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_disassociate_default_code_repository(input);
             self
         }
-        /// <p>A list of names or URLs of the default Git repositories to remove from this notebook
-        /// instance. This operation is idempotent. If you specify a Git repository that is not
-        /// associated with the notebook instance when you call this method, it does not throw an
-        /// error.</p>
+        /// <p>A list of names or URLs of the default Git repositories to remove from this notebook instance. This operation is idempotent. If you specify a Git repository that is not associated with the notebook instance when you call this method, it does not throw an error.</p>
         pub fn disassociate_additional_code_repositories(mut self, input: bool) -> Self {
             self.inner = self.inner.disassociate_additional_code_repositories(input);
             self
         }
-        /// <p>A list of names or URLs of the default Git repositories to remove from this notebook
-        /// instance. This operation is idempotent. If you specify a Git repository that is not
-        /// associated with the notebook instance when you call this method, it does not throw an
-        /// error.</p>
+        /// <p>A list of names or URLs of the default Git repositories to remove from this notebook instance. This operation is idempotent. If you specify a Git repository that is not associated with the notebook instance when you call this method, it does not throw an error.</p>
         pub fn set_disassociate_additional_code_repositories(
             mut self,
             input: std::option::Option<bool>,
@@ -32922,23 +30250,15 @@ pub mod fluent_builders {
                 .set_disassociate_additional_code_repositories(input);
             self
         }
-        /// <p>Whether root access is enabled or disabled for users of the notebook instance. The
-        /// default value is <code>Enabled</code>.</p>
-        /// <note>
-        /// <p>If you set this to <code>Disabled</code>, users don't have root access on the
-        /// notebook instance, but lifecycle configuration scripts still run with root
-        /// permissions.</p>
+        /// <p>Whether root access is enabled or disabled for users of the notebook instance. The default value is <code>Enabled</code>.</p> <note>
+        /// <p>If you set this to <code>Disabled</code>, users don't have root access on the notebook instance, but lifecycle configuration scripts still run with root permissions.</p>
         /// </note>
         pub fn root_access(mut self, input: crate::model::RootAccess) -> Self {
             self.inner = self.inner.root_access(input);
             self
         }
-        /// <p>Whether root access is enabled or disabled for users of the notebook instance. The
-        /// default value is <code>Enabled</code>.</p>
-        /// <note>
-        /// <p>If you set this to <code>Disabled</code>, users don't have root access on the
-        /// notebook instance, but lifecycle configuration scripts still run with root
-        /// permissions.</p>
+        /// <p>Whether root access is enabled or disabled for users of the notebook instance. The default value is <code>Enabled</code>.</p> <note>
+        /// <p>If you set this to <code>Disabled</code>, users don't have root access on the notebook instance, but lifecycle configuration scripts still run with root permissions.</p>
         /// </note>
         pub fn set_root_access(
             mut self,
@@ -32950,7 +30270,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateNotebookInstanceLifecycleConfig`.
     ///
-    /// <p>Updates a notebook instance lifecycle configuration created with the <a>CreateNotebookInstanceLifecycleConfig</a> API.</p>
+    /// <p>Updates a notebook instance lifecycle configuration created with the <code>CreateNotebookInstanceLifecycleConfig</code> API.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateNotebookInstanceLifecycleConfig<
         C = aws_smithy_client::erase::DynConnector,
@@ -33033,14 +30353,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_on_create`](Self::set_on_create).
         ///
-        /// <p>The shell script that runs only once, when you create a notebook instance. The shell
-        /// script must be a base64-encoded string.</p>
+        /// <p>The shell script that runs only once, when you create a notebook instance. The shell script must be a base64-encoded string.</p>
         pub fn on_create(mut self, input: crate::model::NotebookInstanceLifecycleHook) -> Self {
             self.inner = self.inner.on_create(input);
             self
         }
-        /// <p>The shell script that runs only once, when you create a notebook instance. The shell
-        /// script must be a base64-encoded string.</p>
+        /// <p>The shell script that runs only once, when you create a notebook instance. The shell script must be a base64-encoded string.</p>
         pub fn set_on_create(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::NotebookInstanceLifecycleHook>>,
@@ -33052,16 +30370,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_on_start`](Self::set_on_start).
         ///
-        /// <p>The shell script that runs every time you start a notebook instance, including when
-        /// you create the notebook instance. The shell script must be a base64-encoded
-        /// string.</p>
+        /// <p>The shell script that runs every time you start a notebook instance, including when you create the notebook instance. The shell script must be a base64-encoded string.</p>
         pub fn on_start(mut self, input: crate::model::NotebookInstanceLifecycleHook) -> Self {
             self.inner = self.inner.on_start(input);
             self
         }
-        /// <p>The shell script that runs every time you start a notebook instance, including when
-        /// you create the notebook instance. The shell script must be a base64-encoded
-        /// string.</p>
+        /// <p>The shell script that runs every time you start a notebook instance, including when you create the notebook instance. The shell script must be a base64-encoded string.</p>
         pub fn set_on_start(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::NotebookInstanceLifecycleHook>>,
@@ -33299,13 +30613,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateProject`.
     ///
-    /// <p>Updates a machine learning (ML) project that is created from a template that
-    /// sets up an ML pipeline from training to deploying an approved model.</p>   
-    /// <note>
-    /// <p>You must not update a project that is in use. If you update the
-    /// <code>ServiceCatalogProvisioningUpdateDetails</code> of a project that is active
-    /// or being created, or updated, you may lose resources already created by the
-    /// project.</p>
+    /// <p>Updates a machine learning (ML) project that is created from a template that sets up an ML pipeline from training to deploying an approved model.</p> <note>
+    /// <p>You must not update a project that is in use. If you update the <code>ServiceCatalogProvisioningUpdateDetails</code> of a project that is active or being created, or updated, you may lose resources already created by the project.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateProject<
@@ -33386,11 +30695,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_project_description(input);
             self
         }
-        /// <p>The product ID and provisioning artifact ID to provision a service catalog.
-        /// The provisioning artifact ID will default to the latest provisioning artifact
-        /// ID of the product, if you don't provide the provisioning artifact ID. For more
-        /// information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>.
-        /// </p>
+        /// <p>The product ID and provisioning artifact ID to provision a service catalog. The provisioning artifact ID will default to the latest provisioning artifact ID of the product, if you don't provide the provisioning artifact ID. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>. </p>
         pub fn service_catalog_provisioning_update_details(
             mut self,
             input: crate::model::ServiceCatalogProvisioningUpdateDetails,
@@ -33400,11 +30705,7 @@ pub mod fluent_builders {
                 .service_catalog_provisioning_update_details(input);
             self
         }
-        /// <p>The product ID and provisioning artifact ID to provision a service catalog.
-        /// The provisioning artifact ID will default to the latest provisioning artifact
-        /// ID of the product, if you don't provide the provisioning artifact ID. For more
-        /// information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>.
-        /// </p>
+        /// <p>The product ID and provisioning artifact ID to provision a service catalog. The provisioning artifact ID will default to the latest provisioning artifact ID of the product, if you don't provide the provisioning artifact ID. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>. </p>
         pub fn set_service_catalog_provisioning_update_details(
             mut self,
             input: std::option::Option<crate::model::ServiceCatalogProvisioningUpdateDetails>,
@@ -33418,16 +30719,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>An array of key-value pairs. You can use tags to categorize your
-        /// Amazon Web Services resources in different ways, for example, by purpose, owner, or
-        /// environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
+        /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>An array of key-value pairs. You can use tags to categorize your
-        /// Amazon Web Services resources in different ways, for example, by purpose, owner, or
-        /// environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
+        /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -33508,14 +30805,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_training_job_name(input);
             self
         }
-        /// <p>Configuration information for Debugger system monitoring, framework profiling, and
-        /// storage paths.</p>
+        /// <p>Configuration information for Debugger system monitoring, framework profiling, and storage paths.</p>
         pub fn profiler_config(mut self, input: crate::model::ProfilerConfigForUpdate) -> Self {
             self.inner = self.inner.profiler_config(input);
             self
         }
-        /// <p>Configuration information for Debugger system monitoring, framework profiling, and
-        /// storage paths.</p>
+        /// <p>Configuration information for Debugger system monitoring, framework profiling, and storage paths.</p>
         pub fn set_profiler_config(
             mut self,
             input: std::option::Option<crate::model::ProfilerConfigForUpdate>,
@@ -33527,8 +30822,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_profiler_rule_configurations`](Self::set_profiler_rule_configurations).
         ///
-        /// <p>Configuration information for Debugger rules for profiling system and framework
-        /// metrics.</p>
+        /// <p>Configuration information for Debugger rules for profiling system and framework metrics.</p>
         pub fn profiler_rule_configurations(
             mut self,
             input: crate::model::ProfilerRuleConfiguration,
@@ -33536,8 +30830,7 @@ pub mod fluent_builders {
             self.inner = self.inner.profiler_rule_configurations(input);
             self
         }
-        /// <p>Configuration information for Debugger rules for profiling system and framework
-        /// metrics.</p>
+        /// <p>Configuration information for Debugger rules for profiling system and framework metrics.</p>
         pub fn set_profiler_rule_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ProfilerRuleConfiguration>>,
@@ -33615,14 +30908,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_trial_name(input);
             self
         }
-        /// <p>The name of the trial as displayed. The name doesn't need to be unique. If
-        /// <code>DisplayName</code> isn't specified, <code>TrialName</code> is displayed.</p>
+        /// <p>The name of the trial as displayed. The name doesn't need to be unique. If <code>DisplayName</code> isn't specified, <code>TrialName</code> is displayed.</p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.display_name(input.into());
             self
         }
-        /// <p>The name of the trial as displayed. The name doesn't need to be unique. If
-        /// <code>DisplayName</code> isn't specified, <code>TrialName</code> is displayed.</p>
+        /// <p>The name of the trial as displayed. The name doesn't need to be unique. If <code>DisplayName</code> isn't specified, <code>TrialName</code> is displayed.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_display_name(input);
             self
@@ -33700,16 +30991,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_trial_component_name(input);
             self
         }
-        /// <p>The name of the component as displayed. The name doesn't need to be unique. If
-        /// <code>DisplayName</code> isn't specified, <code>TrialComponentName</code> is
-        /// displayed.</p>
+        /// <p>The name of the component as displayed. The name doesn't need to be unique. If <code>DisplayName</code> isn't specified, <code>TrialComponentName</code> is displayed.</p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.display_name(input.into());
             self
         }
-        /// <p>The name of the component as displayed. The name doesn't need to be unique. If
-        /// <code>DisplayName</code> isn't specified, <code>TrialComponentName</code> is
-        /// displayed.</p>
+        /// <p>The name of the component as displayed. The name doesn't need to be unique. If <code>DisplayName</code> isn't specified, <code>TrialComponentName</code> is displayed.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_display_name(input);
             self
@@ -33981,26 +31268,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateWorkforce`.
     ///
-    /// <p>Use this operation to update your workforce. You can use this operation to
-    /// require that workers use specific IP addresses to work on tasks
-    /// and to update your OpenID Connect (OIDC) Identity Provider (IdP) workforce configuration.</p>
-    ///
-    /// <p> Use <code>SourceIpConfig</code> to restrict worker access to tasks to a specific range of IP addresses.
-    /// You specify allowed IP addresses by creating a list of up to ten <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>.
-    /// By default, a workforce isn't restricted to specific IP addresses. If you specify a
-    /// range of IP addresses, workers who attempt to access tasks using any IP address outside
-    /// the specified range are denied and get a <code>Not Found</code> error message on
-    /// the worker portal.</p>
-    /// <p>Use <code>OidcConfig</code> to update the configuration of a workforce created using
-    /// your own OIDC IdP. </p>
-    /// <important>
-    /// <p>You can only update your OIDC IdP configuration when there are no work teams
-    /// associated with your workforce. You can delete work teams using the  operation.</p>
+    /// <p>Use this operation to update your workforce. You can use this operation to require that workers use specific IP addresses to work on tasks and to update your OpenID Connect (OIDC) Identity Provider (IdP) workforce configuration.</p>
+    /// <p> Use <code>SourceIpConfig</code> to restrict worker access to tasks to a specific range of IP addresses. You specify allowed IP addresses by creating a list of up to ten <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>. By default, a workforce isn't restricted to specific IP addresses. If you specify a range of IP addresses, workers who attempt to access tasks using any IP address outside the specified range are denied and get a <code>Not Found</code> error message on the worker portal.</p>
+    /// <p>Use <code>OidcConfig</code> to update the configuration of a workforce created using your own OIDC IdP. </p> <important>
+    /// <p>You can only update your OIDC IdP configuration when there are no work teams associated with your workforce. You can delete work teams using the operation.</p>
     /// </important>
-    /// <p>After restricting access to a range of IP addresses or updating your OIDC IdP configuration with this operation, you
-    /// can view details about your update workforce using the
-    /// operation.</p>
-    /// <important>
+    /// <p>After restricting access to a range of IP addresses or updating your OIDC IdP configuration with this operation, you can view details about your update workforce using the operation.</p> <important>
     /// <p>This operation only applies to private workforces.</p>
     /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -34059,14 +31332,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the private workforce that you want to update. You can find your workforce
-        /// name by using the  operation.</p>
+        /// <p>The name of the private workforce that you want to update. You can find your workforce name by using the operation.</p>
         pub fn workforce_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.workforce_name(input.into());
             self
         }
-        /// <p>The name of the private workforce that you want to update. You can find your workforce
-        /// name by using the  operation.</p>
+        /// <p>The name of the private workforce that you want to update. You can find your workforce name by using the operation.</p>
         pub fn set_workforce_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -34074,15 +31345,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_workforce_name(input);
             self
         }
-        /// <p>A list of one to ten worker IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) that can be used to
-        /// access tasks assigned to this workforce.</p>
+        /// <p>A list of one to ten worker IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) that can be used to access tasks assigned to this workforce.</p>
         /// <p>Maximum: Ten CIDR values</p>
         pub fn source_ip_config(mut self, input: crate::model::SourceIpConfig) -> Self {
             self.inner = self.inner.source_ip_config(input);
             self
         }
-        /// <p>A list of one to ten worker IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) that can be used to
-        /// access tasks assigned to this workforce.</p>
+        /// <p>A list of one to ten worker IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) that can be used to access tasks assigned to this workforce.</p>
         /// <p>Maximum: Ten CIDR values</p>
         pub fn set_source_ip_config(
             mut self,
@@ -34091,14 +31360,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_source_ip_config(input);
             self
         }
-        /// <p>Use this parameter to update your OIDC Identity Provider (IdP)
-        /// configuration for a workforce made using your own IdP.</p>
+        /// <p>Use this parameter to update your OIDC Identity Provider (IdP) configuration for a workforce made using your own IdP.</p>
         pub fn oidc_config(mut self, input: crate::model::OidcConfig) -> Self {
             self.inner = self.inner.oidc_config(input);
             self
         }
-        /// <p>Use this parameter to update your OIDC Identity Provider (IdP)
-        /// configuration for a workforce made using your own IdP.</p>
+        /// <p>Use this parameter to update your OIDC Identity Provider (IdP) configuration for a workforce made using your own IdP.</p>
         pub fn set_oidc_config(
             mut self,
             input: std::option::Option<crate::model::OidcConfig>,
@@ -34183,50 +31450,18 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_member_definitions`](Self::set_member_definitions).
         ///
-        /// <p>A list of <code>MemberDefinition</code> objects that contains objects that identify
-        /// the workers that make up the work team. </p>
-        /// <p>Workforces can be created using Amazon Cognito or your own OIDC Identity Provider (IdP).
-        /// For private workforces created using Amazon Cognito use
-        /// <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC identity
-        /// provider (IdP) use <code>OidcMemberDefinition</code>. You should not provide input
-        /// for both of these parameters in a single request.</p>
-        /// <p>For workforces created using Amazon Cognito, private work teams correspond to Amazon Cognito
-        /// <i>user groups</i> within the user pool used to create a workforce. All of the
-        /// <code>CognitoMemberDefinition</code> objects that make up the member definition must
-        /// have the same <code>ClientId</code> and <code>UserPool</code> values. To add a Amazon
-        /// Cognito user group to an existing worker pool, see <a href="">Adding groups to a User
-        /// Pool</a>. For more information about user pools, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon Cognito User
-        /// Pools</a>.</p>
-        /// <p>For workforces created using your own OIDC IdP, specify the user groups that you want
-        /// to include in your private work team in <code>OidcMemberDefinition</code> by listing
-        /// those groups in <code>Groups</code>. Be aware that user groups that are already in the
-        /// work team must also be listed in <code>Groups</code> when you make this request to
-        /// remain on the work team. If you do not include these user groups, they will no longer be
-        /// associated with the work team you update. </p>
+        /// <p>A list of <code>MemberDefinition</code> objects that contains objects that identify the workers that make up the work team. </p>
+        /// <p>Workforces can be created using Amazon Cognito or your own OIDC Identity Provider (IdP). For private workforces created using Amazon Cognito use <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC identity provider (IdP) use <code>OidcMemberDefinition</code>. You should not provide input for both of these parameters in a single request.</p>
+        /// <p>For workforces created using Amazon Cognito, private work teams correspond to Amazon Cognito <i>user groups</i> within the user pool used to create a workforce. All of the <code>CognitoMemberDefinition</code> objects that make up the member definition must have the same <code>ClientId</code> and <code>UserPool</code> values. To add a Amazon Cognito user group to an existing worker pool, see <code>Adding groups to a User Pool</code>. For more information about user pools, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon Cognito User Pools</a>.</p>
+        /// <p>For workforces created using your own OIDC IdP, specify the user groups that you want to include in your private work team in <code>OidcMemberDefinition</code> by listing those groups in <code>Groups</code>. Be aware that user groups that are already in the work team must also be listed in <code>Groups</code> when you make this request to remain on the work team. If you do not include these user groups, they will no longer be associated with the work team you update. </p>
         pub fn member_definitions(mut self, input: crate::model::MemberDefinition) -> Self {
             self.inner = self.inner.member_definitions(input);
             self
         }
-        /// <p>A list of <code>MemberDefinition</code> objects that contains objects that identify
-        /// the workers that make up the work team. </p>
-        /// <p>Workforces can be created using Amazon Cognito or your own OIDC Identity Provider (IdP).
-        /// For private workforces created using Amazon Cognito use
-        /// <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC identity
-        /// provider (IdP) use <code>OidcMemberDefinition</code>. You should not provide input
-        /// for both of these parameters in a single request.</p>
-        /// <p>For workforces created using Amazon Cognito, private work teams correspond to Amazon Cognito
-        /// <i>user groups</i> within the user pool used to create a workforce. All of the
-        /// <code>CognitoMemberDefinition</code> objects that make up the member definition must
-        /// have the same <code>ClientId</code> and <code>UserPool</code> values. To add a Amazon
-        /// Cognito user group to an existing worker pool, see <a href="">Adding groups to a User
-        /// Pool</a>. For more information about user pools, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon Cognito User
-        /// Pools</a>.</p>
-        /// <p>For workforces created using your own OIDC IdP, specify the user groups that you want
-        /// to include in your private work team in <code>OidcMemberDefinition</code> by listing
-        /// those groups in <code>Groups</code>. Be aware that user groups that are already in the
-        /// work team must also be listed in <code>Groups</code> when you make this request to
-        /// remain on the work team. If you do not include these user groups, they will no longer be
-        /// associated with the work team you update. </p>
+        /// <p>A list of <code>MemberDefinition</code> objects that contains objects that identify the workers that make up the work team. </p>
+        /// <p>Workforces can be created using Amazon Cognito or your own OIDC Identity Provider (IdP). For private workforces created using Amazon Cognito use <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC identity provider (IdP) use <code>OidcMemberDefinition</code>. You should not provide input for both of these parameters in a single request.</p>
+        /// <p>For workforces created using Amazon Cognito, private work teams correspond to Amazon Cognito <i>user groups</i> within the user pool used to create a workforce. All of the <code>CognitoMemberDefinition</code> objects that make up the member definition must have the same <code>ClientId</code> and <code>UserPool</code> values. To add a Amazon Cognito user group to an existing worker pool, see <code>Adding groups to a User Pool</code>. For more information about user pools, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon Cognito User Pools</a>.</p>
+        /// <p>For workforces created using your own OIDC IdP, specify the user groups that you want to include in your private work team in <code>OidcMemberDefinition</code> by listing those groups in <code>Groups</code>. Be aware that user groups that are already in the work team must also be listed in <code>Groups</code> when you make this request to remain on the work team. If you do not include these user groups, they will no longer be associated with the work team you update. </p>
         pub fn set_member_definitions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MemberDefinition>>,

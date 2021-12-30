@@ -27,14 +27,12 @@ pub mod associate_repository_input {
             self.repository = input;
             self
         }
-        /// <p>Amazon CodeGuru Reviewer uses this value to prevent the accidental creation of duplicate repository
-        /// associations if there are failures and retries. </p>
+        /// <p>Amazon CodeGuru Reviewer uses this value to prevent the accidental creation of duplicate repository associations if there are failures and retries. </p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>Amazon CodeGuru Reviewer uses this value to prevent the accidental creation of duplicate repository
-        /// associations if there are failures and retries. </p>
+        /// <p>Amazon CodeGuru Reviewer uses this value to prevent the accidental creation of duplicate repository associations if there are failures and retries. </p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -46,21 +44,10 @@ pub mod associate_repository_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>
-        /// An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:
-        /// </p>
+        /// <p> An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts: </p>
         /// <ul>
-        /// <li>
-        /// <p>A <i>tag key</i> (for example, <code>CostCenter</code>,
-        /// <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag
-        /// keys are case sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>An optional field known as a <i>tag value</i> (for example,
-        /// <code>111122223333</code>, <code>Production</code>, or a team name).
-        /// Omitting the tag value is the same as using an empty string. Like tag keys, tag
-        /// values are case sensitive.</p>
-        /// </li>
+        /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li>
+        /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li>
         /// </ul>
         pub fn tags(
             mut self,
@@ -72,21 +59,10 @@ pub mod associate_repository_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>
-        /// An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:
-        /// </p>
+        /// <p> An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts: </p>
         /// <ul>
-        /// <li>
-        /// <p>A <i>tag key</i> (for example, <code>CostCenter</code>,
-        /// <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag
-        /// keys are case sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>An optional field known as a <i>tag value</i> (for example,
-        /// <code>111122223333</code>, <code>Production</code>, or a team name).
-        /// Omitting the tag value is the same as using an empty string. Like tag keys, tag
-        /// values are case sensitive.</p>
-        /// </li>
+        /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li>
+        /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li>
         /// </ul>
         pub fn set_tags(
             mut self,
@@ -99,14 +75,8 @@ pub mod associate_repository_input {
         }
         /// <p>A <code>KMSKeyDetails</code> object that contains:</p>
         /// <ul>
-        /// <li>
-        /// <p>The encryption option for this repository association. It is either owned by Amazon Web Services
-        /// Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p>
-        /// </li>
-        /// <li>
-        /// <p>The ID of the Amazon Web Services KMS key that
-        /// is associated with this respository association.</p>
-        /// </li>
+        /// <li> <p>The encryption option for this repository association. It is either owned by Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p> </li>
+        /// <li> <p>The ID of the Amazon Web Services KMS key that is associated with this respository association.</p> </li>
         /// </ul>
         pub fn kms_key_details(mut self, input: crate::model::KmsKeyDetails) -> Self {
             self.kms_key_details = Some(input);
@@ -114,14 +84,8 @@ pub mod associate_repository_input {
         }
         /// <p>A <code>KMSKeyDetails</code> object that contains:</p>
         /// <ul>
-        /// <li>
-        /// <p>The encryption option for this repository association. It is either owned by Amazon Web Services
-        /// Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p>
-        /// </li>
-        /// <li>
-        /// <p>The ID of the Amazon Web Services KMS key that
-        /// is associated with this respository association.</p>
-        /// </li>
+        /// <li> <p>The encryption option for this repository association. It is either owned by Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p> </li>
+        /// <li> <p>The ID of the Amazon Web Services KMS key that is associated with this respository association.</p> </li>
         /// </ul>
         pub fn set_kms_key_details(
             mut self,
@@ -278,52 +242,24 @@ pub mod create_code_review_input {
         pub(crate) client_request_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The name of the code review. The name of each code review in your Amazon Web Services account must be unique.
-        /// </p>
+        /// <p> The name of the code review. The name of each code review in your Amazon Web Services account must be unique. </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>
-        /// The name of the code review. The name of each code review in your Amazon Web Services account must be unique.
-        /// </p>
+        /// <p> The name of the code review. The name of each code review in your Amazon Web Services account must be unique. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>
-        /// The Amazon Resource Name (ARN) of the  
-        /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-        /// <code>RepositoryAssociation</code>
-        /// </a> object.
-        /// You can retrieve this ARN by calling
-        /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
-        /// <code>ListRepositoryAssociations</code>
-        /// </a>.
-        /// </p>
-        /// <p>
-        /// A code review can only be created on an associated repository. This is the ARN of the
-        /// associated repository.
-        /// </p>
+        /// <p> The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html"> <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html"> <code>ListRepositoryAssociations</code> </a>. </p>
+        /// <p> A code review can only be created on an associated repository. This is the ARN of the associated repository. </p>
         pub fn repository_association_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.repository_association_arn = Some(input.into());
             self
         }
-        /// <p>
-        /// The Amazon Resource Name (ARN) of the  
-        /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-        /// <code>RepositoryAssociation</code>
-        /// </a> object.
-        /// You can retrieve this ARN by calling
-        /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
-        /// <code>ListRepositoryAssociations</code>
-        /// </a>.
-        /// </p>
-        /// <p>
-        /// A code review can only be created on an associated repository. This is the ARN of the
-        /// associated repository.
-        /// </p>
+        /// <p> The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html"> <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html"> <code>ListRepositoryAssociations</code> </a>. </p>
+        /// <p> A code review can only be created on an associated repository. This is the ARN of the associated repository. </p>
         pub fn set_repository_association_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -331,24 +267,12 @@ pub mod create_code_review_input {
             self.repository_association_arn = input;
             self
         }
-        /// <p>
-        /// The type of code review to create. This is specified using a
-        /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReviewType.html">
-        /// <code>CodeReviewType</code>
-        /// </a>
-        /// object. You can create a code review only of type <code>RepositoryAnalysis</code>.
-        /// </p>
+        /// <p> The type of code review to create. This is specified using a <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReviewType.html"> <code>CodeReviewType</code> </a> object. You can create a code review only of type <code>RepositoryAnalysis</code>. </p>
         pub fn r#type(mut self, input: crate::model::CodeReviewType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>
-        /// The type of code review to create. This is specified using a
-        /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReviewType.html">
-        /// <code>CodeReviewType</code>
-        /// </a>
-        /// object. You can create a code review only of type <code>RepositoryAnalysis</code>.
-        /// </p>
+        /// <p> The type of code review to create. This is specified using a <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReviewType.html"> <code>CodeReviewType</code> </a> object. You can create a code review only of type <code>RepositoryAnalysis</code>. </p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::CodeReviewType>,
@@ -356,18 +280,12 @@ pub mod create_code_review_input {
             self.r#type = input;
             self
         }
-        /// <p>
-        /// Amazon CodeGuru Reviewer uses this value to prevent the accidental creation of duplicate code
-        /// reviews if there are failures and retries.
-        /// </p>
+        /// <p> Amazon CodeGuru Reviewer uses this value to prevent the accidental creation of duplicate code reviews if there are failures and retries. </p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>
-        /// Amazon CodeGuru Reviewer uses this value to prevent the accidental creation of duplicate code
-        /// reviews if there are failures and retries.
-        /// </p>
+        /// <p> Amazon CodeGuru Reviewer uses this value to prevent the accidental creation of duplicate code reviews if there are failures and retries. </p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -520,18 +438,12 @@ pub mod describe_code_review_input {
         pub(crate) code_review_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
-        /// <code>CodeReview</code>
-        /// </a> object.
-        /// </p>
+        /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html"> <code>CodeReview</code> </a> object. </p>
         pub fn code_review_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.code_review_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
-        /// <code>CodeReview</code>
-        /// </a> object.
-        /// </p>
+        /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html"> <code>CodeReview</code> </a> object. </p>
         pub fn set_code_review_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -686,18 +598,12 @@ pub mod describe_recommendation_feedback_input {
         pub(crate) user_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
-        /// <code>CodeReview</code>
-        /// </a> object.
-        /// </p>
+        /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html"> <code>CodeReview</code> </a> object. </p>
         pub fn code_review_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.code_review_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
-        /// <code>CodeReview</code>
-        /// </a> object.
-        /// </p>
+        /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html"> <code>CodeReview</code> </a> object. </p>
         pub fn set_code_review_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -705,16 +611,12 @@ pub mod describe_recommendation_feedback_input {
             self.code_review_arn = input;
             self
         }
-        /// <p>
-        /// The recommendation ID that can be used to track the provided recommendations and then to collect the feedback.
-        /// </p>
+        /// <p> The recommendation ID that can be used to track the provided recommendations and then to collect the feedback. </p>
         pub fn recommendation_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.recommendation_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The recommendation ID that can be used to track the provided recommendations and then to collect the feedback.
-        /// </p>
+        /// <p> The recommendation ID that can be used to track the provided recommendations and then to collect the feedback. </p>
         pub fn set_recommendation_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -722,26 +624,14 @@ pub mod describe_recommendation_feedback_input {
             self.recommendation_id = input;
             self
         }
-        /// <p>
-        /// Optional parameter to describe the feedback for a given user. If this is not supplied, it defaults to the user making the request.
-        /// </p>
-        /// <p>
-        /// The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For
-        /// more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying">
-        /// Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.
-        /// </p>
+        /// <p> Optional parameter to describe the feedback for a given user. If this is not supplied, it defaults to the user making the request. </p>
+        /// <p> The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"> Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>. </p>
         pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_id = Some(input.into());
             self
         }
-        /// <p>
-        /// Optional parameter to describe the feedback for a given user. If this is not supplied, it defaults to the user making the request.
-        /// </p>
-        /// <p>
-        /// The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For
-        /// more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying">
-        /// Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.
-        /// </p>
+        /// <p> Optional parameter to describe the feedback for a given user. If this is not supplied, it defaults to the user making the request. </p>
+        /// <p> The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"> Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>. </p>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_id = input;
             self
@@ -912,30 +802,12 @@ pub mod describe_repository_association_input {
         pub(crate) association_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The Amazon Resource Name (ARN) of the  
-        /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-        /// <code>RepositoryAssociation</code>
-        /// </a> object.
-        /// You can retrieve this ARN by calling
-        /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
-        /// <code>ListRepositoryAssociations</code>
-        /// </a>.
-        /// </p>
+        /// <p> The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html"> <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html"> <code>ListRepositoryAssociations</code> </a>. </p>
         pub fn association_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.association_arn = Some(input.into());
             self
         }
-        /// <p>
-        /// The Amazon Resource Name (ARN) of the  
-        /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-        /// <code>RepositoryAssociation</code>
-        /// </a> object.
-        /// You can retrieve this ARN by calling
-        /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
-        /// <code>ListRepositoryAssociations</code>
-        /// </a>.
-        /// </p>
+        /// <p> The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html"> <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html"> <code>ListRepositoryAssociations</code> </a>. </p>
         pub fn set_association_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1090,30 +962,12 @@ pub mod disassociate_repository_input {
         pub(crate) association_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The Amazon Resource Name (ARN) of the  
-        /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-        /// <code>RepositoryAssociation</code>
-        /// </a> object.
-        /// You can retrieve this ARN by calling
-        /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
-        /// <code>ListRepositoryAssociations</code>
-        /// </a>.
-        /// </p>
+        /// <p> The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html"> <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html"> <code>ListRepositoryAssociations</code> </a>. </p>
         pub fn association_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.association_arn = Some(input.into());
             self
         }
-        /// <p>
-        /// The Amazon Resource Name (ARN) of the  
-        /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-        /// <code>RepositoryAssociation</code>
-        /// </a> object.
-        /// You can retrieve this ARN by calling
-        /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
-        /// <code>ListRepositoryAssociations</code>
-        /// </a>.
-        /// </p>
+        /// <p> The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html"> <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html"> <code>ListRepositoryAssociations</code> </a>. </p>
         pub fn set_association_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1275,18 +1129,14 @@ pub mod list_code_reviews_input {
         ///
         /// To override the contents of this collection use [`set_provider_types`](Self::set_provider_types).
         ///
-        /// <p>
-        /// List of provider types for filtering that needs to be applied before displaying the result. For example, <code>providerTypes=[GitHub]</code>  lists code reviews from GitHub.
-        /// </p>
+        /// <p> List of provider types for filtering that needs to be applied before displaying the result. For example, <code>providerTypes=[GitHub]</code> lists code reviews from GitHub. </p>
         pub fn provider_types(mut self, input: crate::model::ProviderType) -> Self {
             let mut v = self.provider_types.unwrap_or_default();
             v.push(input);
             self.provider_types = Some(v);
             self
         }
-        /// <p>
-        /// List of provider types for filtering that needs to be applied before displaying the result. For example, <code>providerTypes=[GitHub]</code>  lists code reviews from GitHub.
-        /// </p>
+        /// <p> List of provider types for filtering that needs to be applied before displaying the result. For example, <code>providerTypes=[GitHub]</code> lists code reviews from GitHub. </p>
         pub fn set_provider_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ProviderType>>,
@@ -1298,31 +1148,13 @@ pub mod list_code_reviews_input {
         ///
         /// To override the contents of this collection use [`set_states`](Self::set_states).
         ///
-        /// <p>
-        /// List of states for filtering that needs to be applied before displaying the result. For example, <code>states=[Pending]</code> lists code reviews in the Pending state.
-        /// </p>
+        /// <p> List of states for filtering that needs to be applied before displaying the result. For example, <code>states=[Pending]</code> lists code reviews in the Pending state. </p>
         /// <p>The valid code review states are:</p>
         /// <ul>
-        /// <li>            
-        /// <p>
-        /// <code>Completed</code>: The code review is complete.
-        /// </p>            
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Pending</code>: The code review started and has not completed or failed.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Failed</code>: The code review failed.
-        /// </p>            
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Deleting</code>: The code review is being deleted.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Completed</code>: The code review is complete. </p> </li>
+        /// <li> <p> <code>Pending</code>: The code review started and has not completed or failed. </p> </li>
+        /// <li> <p> <code>Failed</code>: The code review failed. </p> </li>
+        /// <li> <p> <code>Deleting</code>: The code review is being deleted. </p> </li>
         /// </ul>
         pub fn states(mut self, input: crate::model::JobState) -> Self {
             let mut v = self.states.unwrap_or_default();
@@ -1330,31 +1162,13 @@ pub mod list_code_reviews_input {
             self.states = Some(v);
             self
         }
-        /// <p>
-        /// List of states for filtering that needs to be applied before displaying the result. For example, <code>states=[Pending]</code> lists code reviews in the Pending state.
-        /// </p>
+        /// <p> List of states for filtering that needs to be applied before displaying the result. For example, <code>states=[Pending]</code> lists code reviews in the Pending state. </p>
         /// <p>The valid code review states are:</p>
         /// <ul>
-        /// <li>            
-        /// <p>
-        /// <code>Completed</code>: The code review is complete.
-        /// </p>            
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Pending</code>: The code review started and has not completed or failed.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Failed</code>: The code review failed.
-        /// </p>            
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Deleting</code>: The code review is being deleted.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Completed</code>: The code review is complete. </p> </li>
+        /// <li> <p> <code>Pending</code>: The code review started and has not completed or failed. </p> </li>
+        /// <li> <p> <code>Failed</code>: The code review failed. </p> </li>
+        /// <li> <p> <code>Deleting</code>: The code review is being deleted. </p> </li>
         /// </ul>
         pub fn set_states(
             mut self,
@@ -1367,18 +1181,14 @@ pub mod list_code_reviews_input {
         ///
         /// To override the contents of this collection use [`set_repository_names`](Self::set_repository_names).
         ///
-        /// <p>
-        /// List of repository names for filtering that needs to be applied before displaying the result.
-        /// </p>
+        /// <p> List of repository names for filtering that needs to be applied before displaying the result. </p>
         pub fn repository_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.repository_names.unwrap_or_default();
             v.push(input.into());
             self.repository_names = Some(v);
             self
         }
-        /// <p>
-        /// List of repository names for filtering that needs to be applied before displaying the result.
-        /// </p>
+        /// <p> List of repository names for filtering that needs to be applied before displaying the result. </p>
         pub fn set_repository_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1386,46 +1196,32 @@ pub mod list_code_reviews_input {
             self.repository_names = input;
             self
         }
-        /// <p>
-        /// The type of code reviews to list in the response.
-        /// </p>
+        /// <p> The type of code reviews to list in the response. </p>
         pub fn r#type(mut self, input: crate::model::Type) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>
-        /// The type of code reviews to list in the response.
-        /// </p>
+        /// <p> The type of code reviews to list in the response. </p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::Type>) -> Self {
             self.r#type = input;
             self
         }
-        /// <p>
-        /// The maximum number of results that are returned per call. The default is 100.
-        /// </p>
+        /// <p> The maximum number of results that are returned per call. The default is 100. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>
-        /// The maximum number of results that are returned per call. The default is 100.
-        /// </p>
+        /// <p> The maximum number of results that are returned per call. The default is 100. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>
-        /// If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page.
-        /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.
-        /// </p>
+        /// <p> If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>
-        /// If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page.
-        /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.
-        /// </p>
+        /// <p> If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1605,48 +1401,32 @@ pub mod list_recommendation_feedback_input {
         pub(crate) recommendation_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>
-        /// If <code>nextToken</code> is returned, there are more results available. The value of nextToken is a unique pagination token for each page.
-        /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.
-        /// </p>
+        /// <p> If <code>nextToken</code> is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>
-        /// If <code>nextToken</code> is returned, there are more results available. The value of nextToken is a unique pagination token for each page.
-        /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.
-        /// </p>
+        /// <p> If <code>nextToken</code> is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>
-        /// The maximum number of results that are returned per call. The default is 100.
-        /// </p>
+        /// <p> The maximum number of results that are returned per call. The default is 100. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>
-        /// The maximum number of results that are returned per call. The default is 100.
-        /// </p>
+        /// <p> The maximum number of results that are returned per call. The default is 100. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
-        /// <code>CodeReview</code>
-        /// </a> object.
-        /// </p>
+        /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html"> <code>CodeReview</code> </a> object. </p>
         pub fn code_review_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.code_review_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
-        /// <code>CodeReview</code>
-        /// </a> object.
-        /// </p>
+        /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html"> <code>CodeReview</code> </a> object. </p>
         pub fn set_code_review_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1658,28 +1438,16 @@ pub mod list_recommendation_feedback_input {
         ///
         /// To override the contents of this collection use [`set_user_ids`](Self::set_user_ids).
         ///
-        /// <p>
-        /// An Amazon Web Services user's account ID or Amazon Resource Name (ARN). Use this ID to query the recommendation feedback for a code review from that user.
-        /// </p>
-        /// <p>
-        /// The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For
-        /// more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying">
-        /// Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.
-        /// </p>
+        /// <p> An Amazon Web Services user's account ID or Amazon Resource Name (ARN). Use this ID to query the recommendation feedback for a code review from that user. </p>
+        /// <p> The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"> Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>. </p>
         pub fn user_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.user_ids.unwrap_or_default();
             v.push(input.into());
             self.user_ids = Some(v);
             self
         }
-        /// <p>
-        /// An Amazon Web Services user's account ID or Amazon Resource Name (ARN). Use this ID to query the recommendation feedback for a code review from that user.
-        /// </p>
-        /// <p>
-        /// The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For
-        /// more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying">
-        /// Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.
-        /// </p>
+        /// <p> An Amazon Web Services user's account ID or Amazon Resource Name (ARN). Use this ID to query the recommendation feedback for a code review from that user. </p>
+        /// <p> The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"> Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>. </p>
         pub fn set_user_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1691,18 +1459,14 @@ pub mod list_recommendation_feedback_input {
         ///
         /// To override the contents of this collection use [`set_recommendation_ids`](Self::set_recommendation_ids).
         ///
-        /// <p>
-        /// Used to query the recommendation feedback for a given recommendation.
-        /// </p>
+        /// <p> Used to query the recommendation feedback for a given recommendation. </p>
         pub fn recommendation_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.recommendation_ids.unwrap_or_default();
             v.push(input.into());
             self.recommendation_ids = Some(v);
             self
         }
-        /// <p>
-        /// Used to query the recommendation feedback for a given recommendation.
-        /// </p>
+        /// <p> Used to query the recommendation feedback for a given recommendation. </p>
         pub fn set_recommendation_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1892,46 +1656,32 @@ pub mod list_recommendations_input {
         pub(crate) code_review_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// Pagination token.
-        /// </p>
+        /// <p> Pagination token. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>
-        /// Pagination token.
-        /// </p>
+        /// <p> Pagination token. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>
-        /// The maximum number of results that are returned per call. The default is 100.
-        /// </p>
+        /// <p> The maximum number of results that are returned per call. The default is 100. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>
-        /// The maximum number of results that are returned per call. The default is 100.
-        /// </p>
+        /// <p> The maximum number of results that are returned per call. The default is 100. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
-        /// <code>CodeReview</code>
-        /// </a> object.
-        /// </p>
+        /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html"> <code>CodeReview</code> </a> object. </p>
         pub fn code_review_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.code_review_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
-        /// <code>CodeReview</code>
-        /// </a> object.
-        /// </p>
+        /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html"> <code>CodeReview</code> </a> object. </p>
         pub fn set_code_review_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2135,57 +1885,17 @@ pub mod list_repository_associations_input {
         /// <p>List of repository association states to use as a filter.</p>
         /// <p>The valid repository association states are:</p>
         /// <ul>
-        /// <li>            
-        /// <p>
-        /// <b>Associated</b>: The repository
-        /// association is complete.
-        /// </p>            
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Associating</b>: CodeGuru Reviewer is:               
-        /// </p>
+        /// <li> <p> <b>Associated</b>: The repository association is complete. </p> </li>
+        /// <li> <p> <b>Associating</b>: CodeGuru Reviewer is: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// Setting up pull request notifications. This is required
-        /// for pull requests to trigger a CodeGuru Reviewer review.
-        /// </p>
-        /// <note>
-        /// <p>
-        /// If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>,
-        /// CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks,
-        /// reviews of code in your repository cannot be triggered.
-        /// </p>
-        /// </note>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// Setting up source code access. This is required for CodeGuru Reviewer to securely
-        /// clone code in your repository.
-        /// </p>
-        /// </li>
-        /// </ul>            
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Failed</b>: The repository failed to associate or disassociate.
-        /// </p>            
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and
-        /// source code access.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association
-        /// with this repository if you want to review source code in it later. You can control access to code reviews created in an
-        /// associated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to
-        /// associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.
-        /// </p>
-        /// </li>
+        /// <li> <p> Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer review. </p> <note>
+        /// <p> If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered. </p>
+        /// </note> </li>
+        /// <li> <p> Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your repository. </p> </li>
+        /// </ul> </li>
+        /// <li> <p> <b>Failed</b>: The repository failed to associate or disassociate. </p> </li>
+        /// <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and source code access. </p> </li>
+        /// <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association with this repository if you want to review source code in it later. You can control access to code reviews created in an associated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>. </p> </li>
         /// </ul>
         pub fn states(mut self, input: crate::model::RepositoryAssociationState) -> Self {
             let mut v = self.states.unwrap_or_default();
@@ -2196,57 +1906,17 @@ pub mod list_repository_associations_input {
         /// <p>List of repository association states to use as a filter.</p>
         /// <p>The valid repository association states are:</p>
         /// <ul>
-        /// <li>            
-        /// <p>
-        /// <b>Associated</b>: The repository
-        /// association is complete.
-        /// </p>            
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Associating</b>: CodeGuru Reviewer is:               
-        /// </p>
+        /// <li> <p> <b>Associated</b>: The repository association is complete. </p> </li>
+        /// <li> <p> <b>Associating</b>: CodeGuru Reviewer is: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// Setting up pull request notifications. This is required
-        /// for pull requests to trigger a CodeGuru Reviewer review.
-        /// </p>
-        /// <note>
-        /// <p>
-        /// If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>,
-        /// CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks,
-        /// reviews of code in your repository cannot be triggered.
-        /// </p>
-        /// </note>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// Setting up source code access. This is required for CodeGuru Reviewer to securely
-        /// clone code in your repository.
-        /// </p>
-        /// </li>
-        /// </ul>            
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Failed</b>: The repository failed to associate or disassociate.
-        /// </p>            
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and
-        /// source code access.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association
-        /// with this repository if you want to review source code in it later. You can control access to code reviews created in an
-        /// associated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to
-        /// associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.
-        /// </p>
-        /// </li>
+        /// <li> <p> Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer review. </p> <note>
+        /// <p> If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered. </p>
+        /// </note> </li>
+        /// <li> <p> Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your repository. </p> </li>
+        /// </ul> </li>
+        /// <li> <p> <b>Failed</b>: The repository failed to associate or disassociate. </p> </li>
+        /// <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and source code access. </p> </li>
+        /// <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association with this repository if you want to review source code in it later. You can control access to code reviews created in an associated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>. </p> </li>
         /// </ul>
         pub fn set_states(
             mut self,
@@ -2278,20 +1948,14 @@ pub mod list_repository_associations_input {
         ///
         /// To override the contents of this collection use [`set_owners`](Self::set_owners).
         ///
-        /// <p>List of owners to use as a filter.
-        /// For Amazon Web Services CodeCommit, it is the name of the CodeCommit account that was
-        /// used to associate the repository. For other repository source providers, such as Bitbucket and GitHub Enterprise Server, this is name of the account
-        /// that was used to associate the repository. </p>
+        /// <p>List of owners to use as a filter. For Amazon Web Services CodeCommit, it is the name of the CodeCommit account that was used to associate the repository. For other repository source providers, such as Bitbucket and GitHub Enterprise Server, this is name of the account that was used to associate the repository. </p>
         pub fn owners(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.owners.unwrap_or_default();
             v.push(input.into());
             self.owners = Some(v);
             self
         }
-        /// <p>List of owners to use as a filter.
-        /// For Amazon Web Services CodeCommit, it is the name of the CodeCommit account that was
-        /// used to associate the repository. For other repository source providers, such as Bitbucket and GitHub Enterprise Server, this is name of the account
-        /// that was used to associate the repository. </p>
+        /// <p>List of owners to use as a filter. For Amazon Web Services CodeCommit, it is the name of the CodeCommit account that was used to associate the repository. For other repository source providers, such as Bitbucket and GitHub Enterprise Server, this is name of the account that was used to associate the repository. </p>
         pub fn set_owners(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2299,51 +1963,25 @@ pub mod list_repository_associations_input {
             self.owners = input;
             self
         }
-        /// <p>The maximum number of repository association results returned by <code>ListRepositoryAssociations</code>
-        /// in paginated output. When this parameter is used, <code>ListRepositoryAssociations</code> only returns
-        /// <code>maxResults</code> results in a single page with a <code>nextToken</code> response
-        /// element. The remaining results of the initial request
-        /// can be seen by sending another <code>ListRepositoryAssociations</code> request with the returned
-        /// <code>nextToken</code> value.
-        /// This value can be between 1 and 100. If this parameter is not used, <code>ListRepositoryAssociations</code>
-        /// returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
+        /// <p>The maximum number of repository association results returned by <code>ListRepositoryAssociations</code> in paginated output. When this parameter is used, <code>ListRepositoryAssociations</code> only returns <code>maxResults</code> results in a single page with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListRepositoryAssociations</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, <code>ListRepositoryAssociations</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of repository association results returned by <code>ListRepositoryAssociations</code>
-        /// in paginated output. When this parameter is used, <code>ListRepositoryAssociations</code> only returns
-        /// <code>maxResults</code> results in a single page with a <code>nextToken</code> response
-        /// element. The remaining results of the initial request
-        /// can be seen by sending another <code>ListRepositoryAssociations</code> request with the returned
-        /// <code>nextToken</code> value.
-        /// This value can be between 1 and 100. If this parameter is not used, <code>ListRepositoryAssociations</code>
-        /// returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
+        /// <p>The maximum number of repository association results returned by <code>ListRepositoryAssociations</code> in paginated output. When this parameter is used, <code>ListRepositoryAssociations</code> only returns <code>maxResults</code> results in a single page with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListRepositoryAssociations</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, <code>ListRepositoryAssociations</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>ListRepositoryAssociations</code> request where <code>maxResults</code> was used and the results
-        /// exceeded the value of that parameter. Pagination continues from the end of the previous results
-        /// that returned the <code>nextToken</code> value.
-        /// </p>
-        /// <note>
-        /// <p>Treat this token as an opaque identifier that is only used to retrieve
-        /// the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListRepositoryAssociations</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note>
+        /// <p>Treat this token as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>ListRepositoryAssociations</code> request where <code>maxResults</code> was used and the results
-        /// exceeded the value of that parameter. Pagination continues from the end of the previous results
-        /// that returned the <code>nextToken</code> value.
-        /// </p>
-        /// <note>
-        /// <p>Treat this token as an opaque identifier that is only used to retrieve
-        /// the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListRepositoryAssociations</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note>
+        /// <p>Treat this token as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
@@ -2520,30 +2158,12 @@ pub mod list_tags_for_resource_input {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The Amazon Resource Name (ARN) of the  
-        /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-        /// <code>RepositoryAssociation</code>
-        /// </a> object.
-        /// You can retrieve this ARN by calling
-        /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
-        /// <code>ListRepositoryAssociations</code>
-        /// </a>.
-        /// </p>
+        /// <p> The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html"> <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html"> <code>ListRepositoryAssociations</code> </a>. </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>
-        /// The Amazon Resource Name (ARN) of the  
-        /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-        /// <code>RepositoryAssociation</code>
-        /// </a> object.
-        /// You can retrieve this ARN by calling
-        /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
-        /// <code>ListRepositoryAssociations</code>
-        /// </a>.
-        /// </p>
+        /// <p> The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html"> <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html"> <code>ListRepositoryAssociations</code> </a>. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -2691,18 +2311,12 @@ pub mod put_recommendation_feedback_input {
         pub(crate) reactions: std::option::Option<std::vec::Vec<crate::model::Reaction>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
-        /// <code>CodeReview</code>
-        /// </a> object.
-        /// </p>
+        /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html"> <code>CodeReview</code> </a> object. </p>
         pub fn code_review_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.code_review_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
-        /// <code>CodeReview</code>
-        /// </a> object.
-        /// </p>
+        /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html"> <code>CodeReview</code> </a> object. </p>
         pub fn set_code_review_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2710,16 +2324,12 @@ pub mod put_recommendation_feedback_input {
             self.code_review_arn = input;
             self
         }
-        /// <p>
-        /// The recommendation ID that can be used to track the provided recommendations and then to collect the feedback.
-        /// </p>
+        /// <p> The recommendation ID that can be used to track the provided recommendations and then to collect the feedback. </p>
         pub fn recommendation_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.recommendation_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The recommendation ID that can be used to track the provided recommendations and then to collect the feedback.
-        /// </p>
+        /// <p> The recommendation ID that can be used to track the provided recommendations and then to collect the feedback. </p>
         pub fn set_recommendation_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2731,18 +2341,14 @@ pub mod put_recommendation_feedback_input {
         ///
         /// To override the contents of this collection use [`set_reactions`](Self::set_reactions).
         ///
-        /// <p>
-        /// List for storing reactions. Reactions are utf-8 text code for emojis. If you send an empty list it clears all your feedback.
-        /// </p>
+        /// <p> List for storing reactions. Reactions are utf-8 text code for emojis. If you send an empty list it clears all your feedback. </p>
         pub fn reactions(mut self, input: crate::model::Reaction) -> Self {
             let mut v = self.reactions.unwrap_or_default();
             v.push(input);
             self.reactions = Some(v);
             self
         }
-        /// <p>
-        /// List for storing reactions. Reactions are utf-8 text code for emojis. If you send an empty list it clears all your feedback.
-        /// </p>
+        /// <p> List for storing reactions. Reactions are utf-8 text code for emojis. If you send an empty list it clears all your feedback. </p>
         pub fn set_reactions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Reaction>>,
@@ -2897,30 +2503,12 @@ pub mod tag_resource_input {
         >,
     }
     impl Builder {
-        /// <p>
-        /// The Amazon Resource Name (ARN) of the  
-        /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-        /// <code>RepositoryAssociation</code>
-        /// </a> object.
-        /// You can retrieve this ARN by calling
-        /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
-        /// <code>ListRepositoryAssociations</code>
-        /// </a>.
-        /// </p>
+        /// <p> The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html"> <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html"> <code>ListRepositoryAssociations</code> </a>. </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>
-        /// The Amazon Resource Name (ARN) of the  
-        /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-        /// <code>RepositoryAssociation</code>
-        /// </a> object.
-        /// You can retrieve this ARN by calling
-        /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
-        /// <code>ListRepositoryAssociations</code>
-        /// </a>.
-        /// </p>
+        /// <p> The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html"> <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html"> <code>ListRepositoryAssociations</code> </a>. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -2929,21 +2517,10 @@ pub mod tag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>
-        /// An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:
-        /// </p>
+        /// <p> An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts: </p>
         /// <ul>
-        /// <li>
-        /// <p>A <i>tag key</i> (for example, <code>CostCenter</code>,
-        /// <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag
-        /// keys are case sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>An optional field known as a <i>tag value</i> (for example,
-        /// <code>111122223333</code>, <code>Production</code>, or a team name).
-        /// Omitting the tag value is the same as using an empty string. Like tag keys, tag
-        /// values are case sensitive.</p>
-        /// </li>
+        /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li>
+        /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li>
         /// </ul>
         pub fn tags(
             mut self,
@@ -2955,21 +2532,10 @@ pub mod tag_resource_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>
-        /// An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:
-        /// </p>
+        /// <p> An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts: </p>
         /// <ul>
-        /// <li>
-        /// <p>A <i>tag key</i> (for example, <code>CostCenter</code>,
-        /// <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag
-        /// keys are case sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>An optional field known as a <i>tag value</i> (for example,
-        /// <code>111122223333</code>, <code>Production</code>, or a team name).
-        /// Omitting the tag value is the same as using an empty string. Like tag keys, tag
-        /// values are case sensitive.</p>
-        /// </li>
+        /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li>
+        /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li>
         /// </ul>
         pub fn set_tags(
             mut self,
@@ -3136,30 +2702,12 @@ pub mod untag_resource_input {
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>
-        /// The Amazon Resource Name (ARN) of the  
-        /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-        /// <code>RepositoryAssociation</code>
-        /// </a> object.
-        /// You can retrieve this ARN by calling
-        /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
-        /// <code>ListRepositoryAssociations</code>
-        /// </a>.
-        /// </p>
+        /// <p> The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html"> <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html"> <code>ListRepositoryAssociations</code> </a>. </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>
-        /// The Amazon Resource Name (ARN) of the  
-        /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-        /// <code>RepositoryAssociation</code>
-        /// </a> object.
-        /// You can retrieve this ARN by calling
-        /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
-        /// <code>ListRepositoryAssociations</code>
-        /// </a>.
-        /// </p>
+        /// <p> The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html"> <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html"> <code>ListRepositoryAssociations</code> </a>. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -3333,31 +2881,13 @@ impl UntagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
-    /// <p>
-    /// The Amazon Resource Name (ARN) of the  
-    /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-    /// <code>RepositoryAssociation</code>
-    /// </a> object.
-    /// You can retrieve this ARN by calling
-    /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
-    /// <code>ListRepositoryAssociations</code>
-    /// </a>.
-    /// </p>
+    /// <p> The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html"> <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html"> <code>ListRepositoryAssociations</code> </a>. </p>
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A list of the keys for each tag you want to remove from an associated repository.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
-    /// <p>
-    /// The Amazon Resource Name (ARN) of the  
-    /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-    /// <code>RepositoryAssociation</code>
-    /// </a> object.
-    /// You can retrieve this ARN by calling
-    /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
-    /// <code>ListRepositoryAssociations</code>
-    /// </a>.
-    /// </p>
+    /// <p> The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html"> <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html"> <code>ListRepositoryAssociations</code> </a>. </p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -3379,65 +2909,25 @@ impl std::fmt::Debug for UntagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
-    /// <p>
-    /// The Amazon Resource Name (ARN) of the  
-    /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-    /// <code>RepositoryAssociation</code>
-    /// </a> object.
-    /// You can retrieve this ARN by calling
-    /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
-    /// <code>ListRepositoryAssociations</code>
-    /// </a>.
-    /// </p>
+    /// <p> The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html"> <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html"> <code>ListRepositoryAssociations</code> </a>. </p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>
-    /// An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:
-    /// </p>
+    /// <p> An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts: </p>
     /// <ul>
-    /// <li>
-    /// <p>A <i>tag key</i> (for example, <code>CostCenter</code>,
-    /// <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag
-    /// keys are case sensitive.</p>
-    /// </li>
-    /// <li>
-    /// <p>An optional field known as a <i>tag value</i> (for example,
-    /// <code>111122223333</code>, <code>Production</code>, or a team name).
-    /// Omitting the tag value is the same as using an empty string. Like tag keys, tag
-    /// values are case sensitive.</p>
-    /// </li>
+    /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li>
+    /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li>
     /// </ul>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl TagResourceInput {
-    /// <p>
-    /// The Amazon Resource Name (ARN) of the  
-    /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-    /// <code>RepositoryAssociation</code>
-    /// </a> object.
-    /// You can retrieve this ARN by calling
-    /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
-    /// <code>ListRepositoryAssociations</code>
-    /// </a>.
-    /// </p>
+    /// <p> The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html"> <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html"> <code>ListRepositoryAssociations</code> </a>. </p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>
-    /// An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:
-    /// </p>
+    /// <p> An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts: </p>
     /// <ul>
-    /// <li>
-    /// <p>A <i>tag key</i> (for example, <code>CostCenter</code>,
-    /// <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag
-    /// keys are case sensitive.</p>
-    /// </li>
-    /// <li>
-    /// <p>An optional field known as a <i>tag value</i> (for example,
-    /// <code>111122223333</code>, <code>Production</code>, or a team name).
-    /// Omitting the tag value is the same as using an empty string. Like tag keys, tag
-    /// values are case sensitive.</p>
-    /// </li>
+    /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li>
+    /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li>
     /// </ul>
     pub fn tags(
         &self,
@@ -3459,37 +2949,23 @@ impl std::fmt::Debug for TagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutRecommendationFeedbackInput {
-    /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
-    /// <code>CodeReview</code>
-    /// </a> object.
-    /// </p>
+    /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html"> <code>CodeReview</code> </a> object. </p>
     pub code_review_arn: std::option::Option<std::string::String>,
-    /// <p>
-    /// The recommendation ID that can be used to track the provided recommendations and then to collect the feedback.
-    /// </p>
+    /// <p> The recommendation ID that can be used to track the provided recommendations and then to collect the feedback. </p>
     pub recommendation_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// List for storing reactions. Reactions are utf-8 text code for emojis. If you send an empty list it clears all your feedback.
-    /// </p>
+    /// <p> List for storing reactions. Reactions are utf-8 text code for emojis. If you send an empty list it clears all your feedback. </p>
     pub reactions: std::option::Option<std::vec::Vec<crate::model::Reaction>>,
 }
 impl PutRecommendationFeedbackInput {
-    /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
-    /// <code>CodeReview</code>
-    /// </a> object.
-    /// </p>
+    /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html"> <code>CodeReview</code> </a> object. </p>
     pub fn code_review_arn(&self) -> std::option::Option<&str> {
         self.code_review_arn.as_deref()
     }
-    /// <p>
-    /// The recommendation ID that can be used to track the provided recommendations and then to collect the feedback.
-    /// </p>
+    /// <p> The recommendation ID that can be used to track the provided recommendations and then to collect the feedback. </p>
     pub fn recommendation_id(&self) -> std::option::Option<&str> {
         self.recommendation_id.as_deref()
     }
-    /// <p>
-    /// List for storing reactions. Reactions are utf-8 text code for emojis. If you send an empty list it clears all your feedback.
-    /// </p>
+    /// <p> List for storing reactions. Reactions are utf-8 text code for emojis. If you send an empty list it clears all your feedback. </p>
     pub fn reactions(&self) -> std::option::Option<&[crate::model::Reaction]> {
         self.reactions.as_deref()
     }
@@ -3508,29 +2984,11 @@ impl std::fmt::Debug for PutRecommendationFeedbackInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
-    /// <p>
-    /// The Amazon Resource Name (ARN) of the  
-    /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-    /// <code>RepositoryAssociation</code>
-    /// </a> object.
-    /// You can retrieve this ARN by calling
-    /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
-    /// <code>ListRepositoryAssociations</code>
-    /// </a>.
-    /// </p>
+    /// <p> The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html"> <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html"> <code>ListRepositoryAssociations</code> </a>. </p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
-    /// <p>
-    /// The Amazon Resource Name (ARN) of the  
-    /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-    /// <code>RepositoryAssociation</code>
-    /// </a> object.
-    /// You can retrieve this ARN by calling
-    /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
-    /// <code>ListRepositoryAssociations</code>
-    /// </a>.
-    /// </p>
+    /// <p> The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html"> <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html"> <code>ListRepositoryAssociations</code> </a>. </p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -3552,83 +3010,27 @@ pub struct ListRepositoryAssociationsInput {
     /// <p>List of repository association states to use as a filter.</p>
     /// <p>The valid repository association states are:</p>
     /// <ul>
-    /// <li>            
-    /// <p>
-    /// <b>Associated</b>: The repository
-    /// association is complete.
-    /// </p>            
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Associating</b>: CodeGuru Reviewer is:               
-    /// </p>
+    /// <li> <p> <b>Associated</b>: The repository association is complete. </p> </li>
+    /// <li> <p> <b>Associating</b>: CodeGuru Reviewer is: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// Setting up pull request notifications. This is required
-    /// for pull requests to trigger a CodeGuru Reviewer review.
-    /// </p>
-    /// <note>
-    /// <p>
-    /// If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>,
-    /// CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks,
-    /// reviews of code in your repository cannot be triggered.
-    /// </p>
-    /// </note>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// Setting up source code access. This is required for CodeGuru Reviewer to securely
-    /// clone code in your repository.
-    /// </p>
-    /// </li>
-    /// </ul>            
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Failed</b>: The repository failed to associate or disassociate.
-    /// </p>            
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and
-    /// source code access.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association
-    /// with this repository if you want to review source code in it later. You can control access to code reviews created in an
-    /// associated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to
-    /// associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.
-    /// </p>
-    /// </li>
+    /// <li> <p> Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer review. </p> <note>
+    /// <p> If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered. </p>
+    /// </note> </li>
+    /// <li> <p> Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your repository. </p> </li>
+    /// </ul> </li>
+    /// <li> <p> <b>Failed</b>: The repository failed to associate or disassociate. </p> </li>
+    /// <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and source code access. </p> </li>
+    /// <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association with this repository if you want to review source code in it later. You can control access to code reviews created in an associated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>. </p> </li>
     /// </ul>
     pub states: std::option::Option<std::vec::Vec<crate::model::RepositoryAssociationState>>,
     /// <p>List of repository names to use as a filter.</p>
     pub names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>List of owners to use as a filter.
-    /// For Amazon Web Services CodeCommit, it is the name of the CodeCommit account that was
-    /// used to associate the repository. For other repository source providers, such as Bitbucket and GitHub Enterprise Server, this is name of the account
-    /// that was used to associate the repository. </p>
+    /// <p>List of owners to use as a filter. For Amazon Web Services CodeCommit, it is the name of the CodeCommit account that was used to associate the repository. For other repository source providers, such as Bitbucket and GitHub Enterprise Server, this is name of the account that was used to associate the repository. </p>
     pub owners: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The maximum number of repository association results returned by <code>ListRepositoryAssociations</code>
-    /// in paginated output. When this parameter is used, <code>ListRepositoryAssociations</code> only returns
-    /// <code>maxResults</code> results in a single page with a <code>nextToken</code> response
-    /// element. The remaining results of the initial request
-    /// can be seen by sending another <code>ListRepositoryAssociations</code> request with the returned
-    /// <code>nextToken</code> value.
-    /// This value can be between 1 and 100. If this parameter is not used, <code>ListRepositoryAssociations</code>
-    /// returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
+    /// <p>The maximum number of repository association results returned by <code>ListRepositoryAssociations</code> in paginated output. When this parameter is used, <code>ListRepositoryAssociations</code> only returns <code>maxResults</code> results in a single page with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListRepositoryAssociations</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, <code>ListRepositoryAssociations</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The <code>nextToken</code> value returned from a previous paginated
-    /// <code>ListRepositoryAssociations</code> request where <code>maxResults</code> was used and the results
-    /// exceeded the value of that parameter. Pagination continues from the end of the previous results
-    /// that returned the <code>nextToken</code> value.
-    /// </p>
-    /// <note>
-    /// <p>Treat this token as an opaque identifier that is only used to retrieve
-    /// the next items in a list and not for other programmatic purposes.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListRepositoryAssociations</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note>
+    /// <p>Treat this token as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub next_token: std::option::Option<std::string::String>,
 }
@@ -3640,57 +3042,17 @@ impl ListRepositoryAssociationsInput {
     /// <p>List of repository association states to use as a filter.</p>
     /// <p>The valid repository association states are:</p>
     /// <ul>
-    /// <li>            
-    /// <p>
-    /// <b>Associated</b>: The repository
-    /// association is complete.
-    /// </p>            
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Associating</b>: CodeGuru Reviewer is:               
-    /// </p>
+    /// <li> <p> <b>Associated</b>: The repository association is complete. </p> </li>
+    /// <li> <p> <b>Associating</b>: CodeGuru Reviewer is: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// Setting up pull request notifications. This is required
-    /// for pull requests to trigger a CodeGuru Reviewer review.
-    /// </p>
-    /// <note>
-    /// <p>
-    /// If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>,
-    /// CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks,
-    /// reviews of code in your repository cannot be triggered.
-    /// </p>
-    /// </note>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// Setting up source code access. This is required for CodeGuru Reviewer to securely
-    /// clone code in your repository.
-    /// </p>
-    /// </li>
-    /// </ul>            
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Failed</b>: The repository failed to associate or disassociate.
-    /// </p>            
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and
-    /// source code access.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association
-    /// with this repository if you want to review source code in it later. You can control access to code reviews created in an
-    /// associated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to
-    /// associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.
-    /// </p>
-    /// </li>
+    /// <li> <p> Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer review. </p> <note>
+    /// <p> If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered. </p>
+    /// </note> </li>
+    /// <li> <p> Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your repository. </p> </li>
+    /// </ul> </li>
+    /// <li> <p> <b>Failed</b>: The repository failed to associate or disassociate. </p> </li>
+    /// <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and source code access. </p> </li>
+    /// <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association with this repository if you want to review source code in it later. You can control access to code reviews created in an associated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>. </p> </li>
     /// </ul>
     pub fn states(&self) -> std::option::Option<&[crate::model::RepositoryAssociationState]> {
         self.states.as_deref()
@@ -3699,32 +3061,16 @@ impl ListRepositoryAssociationsInput {
     pub fn names(&self) -> std::option::Option<&[std::string::String]> {
         self.names.as_deref()
     }
-    /// <p>List of owners to use as a filter.
-    /// For Amazon Web Services CodeCommit, it is the name of the CodeCommit account that was
-    /// used to associate the repository. For other repository source providers, such as Bitbucket and GitHub Enterprise Server, this is name of the account
-    /// that was used to associate the repository. </p>
+    /// <p>List of owners to use as a filter. For Amazon Web Services CodeCommit, it is the name of the CodeCommit account that was used to associate the repository. For other repository source providers, such as Bitbucket and GitHub Enterprise Server, this is name of the account that was used to associate the repository. </p>
     pub fn owners(&self) -> std::option::Option<&[std::string::String]> {
         self.owners.as_deref()
     }
-    /// <p>The maximum number of repository association results returned by <code>ListRepositoryAssociations</code>
-    /// in paginated output. When this parameter is used, <code>ListRepositoryAssociations</code> only returns
-    /// <code>maxResults</code> results in a single page with a <code>nextToken</code> response
-    /// element. The remaining results of the initial request
-    /// can be seen by sending another <code>ListRepositoryAssociations</code> request with the returned
-    /// <code>nextToken</code> value.
-    /// This value can be between 1 and 100. If this parameter is not used, <code>ListRepositoryAssociations</code>
-    /// returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
+    /// <p>The maximum number of repository association results returned by <code>ListRepositoryAssociations</code> in paginated output. When this parameter is used, <code>ListRepositoryAssociations</code> only returns <code>maxResults</code> results in a single page with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListRepositoryAssociations</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, <code>ListRepositoryAssociations</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The <code>nextToken</code> value returned from a previous paginated
-    /// <code>ListRepositoryAssociations</code> request where <code>maxResults</code> was used and the results
-    /// exceeded the value of that parameter. Pagination continues from the end of the previous results
-    /// that returned the <code>nextToken</code> value.
-    /// </p>
-    /// <note>
-    /// <p>Treat this token as an opaque identifier that is only used to retrieve
-    /// the next items in a list and not for other programmatic purposes.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListRepositoryAssociations</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note>
+    /// <p>Treat this token as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
@@ -3747,37 +3093,23 @@ impl std::fmt::Debug for ListRepositoryAssociationsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRecommendationsInput {
-    /// <p>
-    /// Pagination token.
-    /// </p>
+    /// <p> Pagination token. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>
-    /// The maximum number of results that are returned per call. The default is 100.
-    /// </p>
+    /// <p> The maximum number of results that are returned per call. The default is 100. </p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
-    /// <code>CodeReview</code>
-    /// </a> object.
-    /// </p>
+    /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html"> <code>CodeReview</code> </a> object. </p>
     pub code_review_arn: std::option::Option<std::string::String>,
 }
 impl ListRecommendationsInput {
-    /// <p>
-    /// Pagination token.
-    /// </p>
+    /// <p> Pagination token. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>
-    /// The maximum number of results that are returned per call. The default is 100.
-    /// </p>
+    /// <p> The maximum number of results that are returned per call. The default is 100. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
-    /// <code>CodeReview</code>
-    /// </a> object.
-    /// </p>
+    /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html"> <code>CodeReview</code> </a> object. </p>
     pub fn code_review_arn(&self) -> std::option::Option<&str> {
         self.code_review_arn.as_deref()
     }
@@ -3796,69 +3128,37 @@ impl std::fmt::Debug for ListRecommendationsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRecommendationFeedbackInput {
-    /// <p>
-    /// If <code>nextToken</code> is returned, there are more results available. The value of nextToken is a unique pagination token for each page.
-    /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.
-    /// </p>
+    /// <p> If <code>nextToken</code> is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>
-    /// The maximum number of results that are returned per call. The default is 100.
-    /// </p>
+    /// <p> The maximum number of results that are returned per call. The default is 100. </p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
-    /// <code>CodeReview</code>
-    /// </a> object.
-    /// </p>
+    /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html"> <code>CodeReview</code> </a> object. </p>
     pub code_review_arn: std::option::Option<std::string::String>,
-    /// <p>
-    /// An Amazon Web Services user's account ID or Amazon Resource Name (ARN). Use this ID to query the recommendation feedback for a code review from that user.
-    /// </p>
-    /// <p>
-    /// The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For
-    /// more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying">
-    /// Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.
-    /// </p>
+    /// <p> An Amazon Web Services user's account ID or Amazon Resource Name (ARN). Use this ID to query the recommendation feedback for a code review from that user. </p>
+    /// <p> The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"> Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>. </p>
     pub user_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>
-    /// Used to query the recommendation feedback for a given recommendation.
-    /// </p>
+    /// <p> Used to query the recommendation feedback for a given recommendation. </p>
     pub recommendation_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ListRecommendationFeedbackInput {
-    /// <p>
-    /// If <code>nextToken</code> is returned, there are more results available. The value of nextToken is a unique pagination token for each page.
-    /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.
-    /// </p>
+    /// <p> If <code>nextToken</code> is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>
-    /// The maximum number of results that are returned per call. The default is 100.
-    /// </p>
+    /// <p> The maximum number of results that are returned per call. The default is 100. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
-    /// <code>CodeReview</code>
-    /// </a> object.
-    /// </p>
+    /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html"> <code>CodeReview</code> </a> object. </p>
     pub fn code_review_arn(&self) -> std::option::Option<&str> {
         self.code_review_arn.as_deref()
     }
-    /// <p>
-    /// An Amazon Web Services user's account ID or Amazon Resource Name (ARN). Use this ID to query the recommendation feedback for a code review from that user.
-    /// </p>
-    /// <p>
-    /// The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For
-    /// more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying">
-    /// Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.
-    /// </p>
+    /// <p> An Amazon Web Services user's account ID or Amazon Resource Name (ARN). Use this ID to query the recommendation feedback for a code review from that user. </p>
+    /// <p> The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"> Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>. </p>
     pub fn user_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.user_ids.as_deref()
     }
-    /// <p>
-    /// Used to query the recommendation feedback for a given recommendation.
-    /// </p>
+    /// <p> Used to query the recommendation feedback for a given recommendation. </p>
     pub fn recommendation_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.recommendation_ids.as_deref()
     }
@@ -3879,113 +3179,55 @@ impl std::fmt::Debug for ListRecommendationFeedbackInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCodeReviewsInput {
-    /// <p>
-    /// List of provider types for filtering that needs to be applied before displaying the result. For example, <code>providerTypes=[GitHub]</code>  lists code reviews from GitHub.
-    /// </p>
+    /// <p> List of provider types for filtering that needs to be applied before displaying the result. For example, <code>providerTypes=[GitHub]</code> lists code reviews from GitHub. </p>
     pub provider_types: std::option::Option<std::vec::Vec<crate::model::ProviderType>>,
-    /// <p>
-    /// List of states for filtering that needs to be applied before displaying the result. For example, <code>states=[Pending]</code> lists code reviews in the Pending state.
-    /// </p>
+    /// <p> List of states for filtering that needs to be applied before displaying the result. For example, <code>states=[Pending]</code> lists code reviews in the Pending state. </p>
     /// <p>The valid code review states are:</p>
     /// <ul>
-    /// <li>            
-    /// <p>
-    /// <code>Completed</code>: The code review is complete.
-    /// </p>            
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Pending</code>: The code review started and has not completed or failed.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Failed</code>: The code review failed.
-    /// </p>            
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Deleting</code>: The code review is being deleted.
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>Completed</code>: The code review is complete. </p> </li>
+    /// <li> <p> <code>Pending</code>: The code review started and has not completed or failed. </p> </li>
+    /// <li> <p> <code>Failed</code>: The code review failed. </p> </li>
+    /// <li> <p> <code>Deleting</code>: The code review is being deleted. </p> </li>
     /// </ul>
     pub states: std::option::Option<std::vec::Vec<crate::model::JobState>>,
-    /// <p>
-    /// List of repository names for filtering that needs to be applied before displaying the result.
-    /// </p>
+    /// <p> List of repository names for filtering that needs to be applied before displaying the result. </p>
     pub repository_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>
-    /// The type of code reviews to list in the response.
-    /// </p>
+    /// <p> The type of code reviews to list in the response. </p>
     pub r#type: std::option::Option<crate::model::Type>,
-    /// <p>
-    /// The maximum number of results that are returned per call. The default is 100.
-    /// </p>
+    /// <p> The maximum number of results that are returned per call. The default is 100. </p>
     pub max_results: std::option::Option<i32>,
-    /// <p>
-    /// If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page.
-    /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.
-    /// </p>
+    /// <p> If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCodeReviewsInput {
-    /// <p>
-    /// List of provider types for filtering that needs to be applied before displaying the result. For example, <code>providerTypes=[GitHub]</code>  lists code reviews from GitHub.
-    /// </p>
+    /// <p> List of provider types for filtering that needs to be applied before displaying the result. For example, <code>providerTypes=[GitHub]</code> lists code reviews from GitHub. </p>
     pub fn provider_types(&self) -> std::option::Option<&[crate::model::ProviderType]> {
         self.provider_types.as_deref()
     }
-    /// <p>
-    /// List of states for filtering that needs to be applied before displaying the result. For example, <code>states=[Pending]</code> lists code reviews in the Pending state.
-    /// </p>
+    /// <p> List of states for filtering that needs to be applied before displaying the result. For example, <code>states=[Pending]</code> lists code reviews in the Pending state. </p>
     /// <p>The valid code review states are:</p>
     /// <ul>
-    /// <li>            
-    /// <p>
-    /// <code>Completed</code>: The code review is complete.
-    /// </p>            
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Pending</code>: The code review started and has not completed or failed.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Failed</code>: The code review failed.
-    /// </p>            
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Deleting</code>: The code review is being deleted.
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>Completed</code>: The code review is complete. </p> </li>
+    /// <li> <p> <code>Pending</code>: The code review started and has not completed or failed. </p> </li>
+    /// <li> <p> <code>Failed</code>: The code review failed. </p> </li>
+    /// <li> <p> <code>Deleting</code>: The code review is being deleted. </p> </li>
     /// </ul>
     pub fn states(&self) -> std::option::Option<&[crate::model::JobState]> {
         self.states.as_deref()
     }
-    /// <p>
-    /// List of repository names for filtering that needs to be applied before displaying the result.
-    /// </p>
+    /// <p> List of repository names for filtering that needs to be applied before displaying the result. </p>
     pub fn repository_names(&self) -> std::option::Option<&[std::string::String]> {
         self.repository_names.as_deref()
     }
-    /// <p>
-    /// The type of code reviews to list in the response.
-    /// </p>
+    /// <p> The type of code reviews to list in the response. </p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::Type> {
         self.r#type.as_ref()
     }
-    /// <p>
-    /// The maximum number of results that are returned per call. The default is 100.
-    /// </p>
+    /// <p> The maximum number of results that are returned per call. The default is 100. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>
-    /// If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page.
-    /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.
-    /// </p>
+    /// <p> If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -4007,29 +3249,11 @@ impl std::fmt::Debug for ListCodeReviewsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateRepositoryInput {
-    /// <p>
-    /// The Amazon Resource Name (ARN) of the  
-    /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-    /// <code>RepositoryAssociation</code>
-    /// </a> object.
-    /// You can retrieve this ARN by calling
-    /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
-    /// <code>ListRepositoryAssociations</code>
-    /// </a>.
-    /// </p>
+    /// <p> The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html"> <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html"> <code>ListRepositoryAssociations</code> </a>. </p>
     pub association_arn: std::option::Option<std::string::String>,
 }
 impl DisassociateRepositoryInput {
-    /// <p>
-    /// The Amazon Resource Name (ARN) of the  
-    /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-    /// <code>RepositoryAssociation</code>
-    /// </a> object.
-    /// You can retrieve this ARN by calling
-    /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
-    /// <code>ListRepositoryAssociations</code>
-    /// </a>.
-    /// </p>
+    /// <p> The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html"> <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html"> <code>ListRepositoryAssociations</code> </a>. </p>
     pub fn association_arn(&self) -> std::option::Option<&str> {
         self.association_arn.as_deref()
     }
@@ -4046,29 +3270,11 @@ impl std::fmt::Debug for DisassociateRepositoryInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRepositoryAssociationInput {
-    /// <p>
-    /// The Amazon Resource Name (ARN) of the  
-    /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-    /// <code>RepositoryAssociation</code>
-    /// </a> object.
-    /// You can retrieve this ARN by calling
-    /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
-    /// <code>ListRepositoryAssociations</code>
-    /// </a>.
-    /// </p>
+    /// <p> The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html"> <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html"> <code>ListRepositoryAssociations</code> </a>. </p>
     pub association_arn: std::option::Option<std::string::String>,
 }
 impl DescribeRepositoryAssociationInput {
-    /// <p>
-    /// The Amazon Resource Name (ARN) of the  
-    /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-    /// <code>RepositoryAssociation</code>
-    /// </a> object.
-    /// You can retrieve this ARN by calling
-    /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
-    /// <code>ListRepositoryAssociations</code>
-    /// </a>.
-    /// </p>
+    /// <p> The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html"> <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html"> <code>ListRepositoryAssociations</code> </a>. </p>
     pub fn association_arn(&self) -> std::option::Option<&str> {
         self.association_arn.as_deref()
     }
@@ -4085,47 +3291,25 @@ impl std::fmt::Debug for DescribeRepositoryAssociationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRecommendationFeedbackInput {
-    /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
-    /// <code>CodeReview</code>
-    /// </a> object.
-    /// </p>
+    /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html"> <code>CodeReview</code> </a> object. </p>
     pub code_review_arn: std::option::Option<std::string::String>,
-    /// <p>
-    /// The recommendation ID that can be used to track the provided recommendations and then to collect the feedback.
-    /// </p>
+    /// <p> The recommendation ID that can be used to track the provided recommendations and then to collect the feedback. </p>
     pub recommendation_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// Optional parameter to describe the feedback for a given user. If this is not supplied, it defaults to the user making the request.
-    /// </p>
-    /// <p>
-    /// The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For
-    /// more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying">
-    /// Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.
-    /// </p>
+    /// <p> Optional parameter to describe the feedback for a given user. If this is not supplied, it defaults to the user making the request. </p>
+    /// <p> The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"> Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>. </p>
     pub user_id: std::option::Option<std::string::String>,
 }
 impl DescribeRecommendationFeedbackInput {
-    /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
-    /// <code>CodeReview</code>
-    /// </a> object.
-    /// </p>
+    /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html"> <code>CodeReview</code> </a> object. </p>
     pub fn code_review_arn(&self) -> std::option::Option<&str> {
         self.code_review_arn.as_deref()
     }
-    /// <p>
-    /// The recommendation ID that can be used to track the provided recommendations and then to collect the feedback.
-    /// </p>
+    /// <p> The recommendation ID that can be used to track the provided recommendations and then to collect the feedback. </p>
     pub fn recommendation_id(&self) -> std::option::Option<&str> {
         self.recommendation_id.as_deref()
     }
-    /// <p>
-    /// Optional parameter to describe the feedback for a given user. If this is not supplied, it defaults to the user making the request.
-    /// </p>
-    /// <p>
-    /// The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For
-    /// more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying">
-    /// Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.
-    /// </p>
+    /// <p> Optional parameter to describe the feedback for a given user. If this is not supplied, it defaults to the user making the request. </p>
+    /// <p> The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"> Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>. </p>
     pub fn user_id(&self) -> std::option::Option<&str> {
         self.user_id.as_deref()
     }
@@ -4144,17 +3328,11 @@ impl std::fmt::Debug for DescribeRecommendationFeedbackInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCodeReviewInput {
-    /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
-    /// <code>CodeReview</code>
-    /// </a> object.
-    /// </p>
+    /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html"> <code>CodeReview</code> </a> object. </p>
     pub code_review_arn: std::option::Option<std::string::String>,
 }
 impl DescribeCodeReviewInput {
-    /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">
-    /// <code>CodeReview</code>
-    /// </a> object.
-    /// </p>
+    /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html"> <code>CodeReview</code> </a> object. </p>
     pub fn code_review_arn(&self) -> std::option::Option<&str> {
         self.code_review_arn.as_deref()
     }
@@ -4171,77 +3349,31 @@ impl std::fmt::Debug for DescribeCodeReviewInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCodeReviewInput {
-    /// <p>
-    /// The name of the code review. The name of each code review in your Amazon Web Services account must be unique.
-    /// </p>
+    /// <p> The name of the code review. The name of each code review in your Amazon Web Services account must be unique. </p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>
-    /// The Amazon Resource Name (ARN) of the  
-    /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-    /// <code>RepositoryAssociation</code>
-    /// </a> object.
-    /// You can retrieve this ARN by calling
-    /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
-    /// <code>ListRepositoryAssociations</code>
-    /// </a>.
-    /// </p>
-    /// <p>
-    /// A code review can only be created on an associated repository. This is the ARN of the
-    /// associated repository.
-    /// </p>
+    /// <p> The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html"> <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html"> <code>ListRepositoryAssociations</code> </a>. </p>
+    /// <p> A code review can only be created on an associated repository. This is the ARN of the associated repository. </p>
     pub repository_association_arn: std::option::Option<std::string::String>,
-    /// <p>
-    /// The type of code review to create. This is specified using a
-    /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReviewType.html">
-    /// <code>CodeReviewType</code>
-    /// </a>
-    /// object. You can create a code review only of type <code>RepositoryAnalysis</code>.
-    /// </p>
+    /// <p> The type of code review to create. This is specified using a <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReviewType.html"> <code>CodeReviewType</code> </a> object. You can create a code review only of type <code>RepositoryAnalysis</code>. </p>
     pub r#type: std::option::Option<crate::model::CodeReviewType>,
-    /// <p>
-    /// Amazon CodeGuru Reviewer uses this value to prevent the accidental creation of duplicate code
-    /// reviews if there are failures and retries.
-    /// </p>
+    /// <p> Amazon CodeGuru Reviewer uses this value to prevent the accidental creation of duplicate code reviews if there are failures and retries. </p>
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl CreateCodeReviewInput {
-    /// <p>
-    /// The name of the code review. The name of each code review in your Amazon Web Services account must be unique.
-    /// </p>
+    /// <p> The name of the code review. The name of each code review in your Amazon Web Services account must be unique. </p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>
-    /// The Amazon Resource Name (ARN) of the  
-    /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
-    /// <code>RepositoryAssociation</code>
-    /// </a> object.
-    /// You can retrieve this ARN by calling
-    /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
-    /// <code>ListRepositoryAssociations</code>
-    /// </a>.
-    /// </p>
-    /// <p>
-    /// A code review can only be created on an associated repository. This is the ARN of the
-    /// associated repository.
-    /// </p>
+    /// <p> The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html"> <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html"> <code>ListRepositoryAssociations</code> </a>. </p>
+    /// <p> A code review can only be created on an associated repository. This is the ARN of the associated repository. </p>
     pub fn repository_association_arn(&self) -> std::option::Option<&str> {
         self.repository_association_arn.as_deref()
     }
-    /// <p>
-    /// The type of code review to create. This is specified using a
-    /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReviewType.html">
-    /// <code>CodeReviewType</code>
-    /// </a>
-    /// object. You can create a code review only of type <code>RepositoryAnalysis</code>.
-    /// </p>
+    /// <p> The type of code review to create. This is specified using a <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReviewType.html"> <code>CodeReviewType</code> </a> object. You can create a code review only of type <code>RepositoryAnalysis</code>. </p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::CodeReviewType> {
         self.r#type.as_ref()
     }
-    /// <p>
-    /// Amazon CodeGuru Reviewer uses this value to prevent the accidental creation of duplicate code
-    /// reviews if there are failures and retries.
-    /// </p>
+    /// <p> Amazon CodeGuru Reviewer uses this value to prevent the accidental creation of duplicate code reviews if there are failures and retries. </p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
@@ -4266,37 +3398,19 @@ impl std::fmt::Debug for CreateCodeReviewInput {
 pub struct AssociateRepositoryInput {
     /// <p>The repository to associate.</p>
     pub repository: std::option::Option<crate::model::Repository>,
-    /// <p>Amazon CodeGuru Reviewer uses this value to prevent the accidental creation of duplicate repository
-    /// associations if there are failures and retries. </p>
+    /// <p>Amazon CodeGuru Reviewer uses this value to prevent the accidental creation of duplicate repository associations if there are failures and retries. </p>
     pub client_request_token: std::option::Option<std::string::String>,
-    /// <p>
-    /// An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:
-    /// </p>
+    /// <p> An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts: </p>
     /// <ul>
-    /// <li>
-    /// <p>A <i>tag key</i> (for example, <code>CostCenter</code>,
-    /// <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag
-    /// keys are case sensitive.</p>
-    /// </li>
-    /// <li>
-    /// <p>An optional field known as a <i>tag value</i> (for example,
-    /// <code>111122223333</code>, <code>Production</code>, or a team name).
-    /// Omitting the tag value is the same as using an empty string. Like tag keys, tag
-    /// values are case sensitive.</p>
-    /// </li>
+    /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li>
+    /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li>
     /// </ul>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A <code>KMSKeyDetails</code> object that contains:</p>
     /// <ul>
-    /// <li>
-    /// <p>The encryption option for this repository association. It is either owned by Amazon Web Services
-    /// Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p>
-    /// </li>
-    /// <li>
-    /// <p>The ID of the Amazon Web Services KMS key that
-    /// is associated with this respository association.</p>
-    /// </li>
+    /// <li> <p>The encryption option for this repository association. It is either owned by Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p> </li>
+    /// <li> <p>The ID of the Amazon Web Services KMS key that is associated with this respository association.</p> </li>
     /// </ul>
     pub kms_key_details: std::option::Option<crate::model::KmsKeyDetails>,
 }
@@ -4305,26 +3419,14 @@ impl AssociateRepositoryInput {
     pub fn repository(&self) -> std::option::Option<&crate::model::Repository> {
         self.repository.as_ref()
     }
-    /// <p>Amazon CodeGuru Reviewer uses this value to prevent the accidental creation of duplicate repository
-    /// associations if there are failures and retries. </p>
+    /// <p>Amazon CodeGuru Reviewer uses this value to prevent the accidental creation of duplicate repository associations if there are failures and retries. </p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p>
-    /// An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:
-    /// </p>
+    /// <p> An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts: </p>
     /// <ul>
-    /// <li>
-    /// <p>A <i>tag key</i> (for example, <code>CostCenter</code>,
-    /// <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag
-    /// keys are case sensitive.</p>
-    /// </li>
-    /// <li>
-    /// <p>An optional field known as a <i>tag value</i> (for example,
-    /// <code>111122223333</code>, <code>Production</code>, or a team name).
-    /// Omitting the tag value is the same as using an empty string. Like tag keys, tag
-    /// values are case sensitive.</p>
-    /// </li>
+    /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li>
+    /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li>
     /// </ul>
     pub fn tags(
         &self,
@@ -4334,14 +3436,8 @@ impl AssociateRepositoryInput {
     }
     /// <p>A <code>KMSKeyDetails</code> object that contains:</p>
     /// <ul>
-    /// <li>
-    /// <p>The encryption option for this repository association. It is either owned by Amazon Web Services
-    /// Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p>
-    /// </li>
-    /// <li>
-    /// <p>The ID of the Amazon Web Services KMS key that
-    /// is associated with this respository association.</p>
-    /// </li>
+    /// <li> <p>The encryption option for this repository association. It is either owned by Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p> </li>
+    /// <li> <p>The ID of the Amazon Web Services KMS key that is associated with this respository association.</p> </li>
     /// </ul>
     pub fn kms_key_details(&self) -> std::option::Option<&crate::model::KmsKeyDetails> {
         self.kms_key_details.as_ref()

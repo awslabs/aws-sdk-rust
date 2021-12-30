@@ -178,9 +178,7 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CreateConnection`.
     ///
-    /// <p>Creates a connection that can then be given to other AWS services like CodePipeline so
-    /// that it can access third-party code repositories. The connection is in pending status until
-    /// the third-party connection handshake is completed from the console.</p>
+    /// <p>Creates a connection that can then be given to other AWS services like CodePipeline so that it can access third-party code repositories. The connection is in pending status until the third-party connection handshake is completed from the console.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateConnection<
         C = aws_smithy_client::erase::DynConnector,
@@ -237,14 +235,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the external provider where your third-party code repository is
-        /// configured.</p>
+        /// <p>The name of the external provider where your third-party code repository is configured.</p>
         pub fn provider_type(mut self, input: crate::model::ProviderType) -> Self {
             self.inner = self.inner.provider_type(input);
             self
         }
-        /// <p>The name of the external provider where your third-party code repository is
-        /// configured.</p>
+        /// <p>The name of the external provider where your third-party code repository is configured.</p>
         pub fn set_provider_type(
             mut self,
             input: std::option::Option<crate::model::ProviderType>,
@@ -252,14 +248,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_provider_type(input);
             self
         }
-        /// <p>The name of the connection to be created. The name must be unique in the calling AWS
-        /// account.</p>
+        /// <p>The name of the connection to be created. The name must be unique in the calling AWS account.</p>
         pub fn connection_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.connection_name(input.into());
             self
         }
-        /// <p>The name of the connection to be created. The name must be unique in the calling AWS
-        /// account.</p>
+        /// <p>The name of the connection to be created. The name must be unique in the calling AWS account.</p>
         pub fn set_connection_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -297,13 +291,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateHost`.
     ///
-    /// <p>Creates a resource that represents the infrastructure where a third-party provider is
-    /// installed. The host is used when you create connections to an installed third-party provider
-    /// type, such as GitHub Enterprise Server. You create one host for all connections to that
-    /// provider.</p>
-    /// <note>
-    /// <p>A host created through the CLI or the SDK is in `PENDING` status by
-    /// default. You can make its status `AVAILABLE` by setting up the host in the console.</p>
+    /// <p>Creates a resource that represents the infrastructure where a third-party provider is installed. The host is used when you create connections to an installed third-party provider type, such as GitHub Enterprise Server. You create one host for all connections to that provider.</p> <note>
+    /// <p>A host created through the CLI or the SDK is in `PENDING` status by default. You can make its status `AVAILABLE` by setting up the host in the console.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateHost<
@@ -361,28 +350,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the host to be created. The name must be unique in the calling AWS
-        /// account.</p>
+        /// <p>The name of the host to be created. The name must be unique in the calling AWS account.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the host to be created. The name must be unique in the calling AWS
-        /// account.</p>
+        /// <p>The name of the host to be created. The name must be unique in the calling AWS account.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The name of the installed provider to be associated with your connection. The host
-        /// resource represents the infrastructure where your provider type is installed. The valid
-        /// provider type is GitHub Enterprise Server.</p>
+        /// <p>The name of the installed provider to be associated with your connection. The host resource represents the infrastructure where your provider type is installed. The valid provider type is GitHub Enterprise Server.</p>
         pub fn provider_type(mut self, input: crate::model::ProviderType) -> Self {
             self.inner = self.inner.provider_type(input);
             self
         }
-        /// <p>The name of the installed provider to be associated with your connection. The host
-        /// resource represents the infrastructure where your provider type is installed. The valid
-        /// provider type is GitHub Enterprise Server.</p>
+        /// <p>The name of the installed provider to be associated with your connection. The host resource represents the infrastructure where your provider type is installed. The valid provider type is GitHub Enterprise Server.</p>
         pub fn set_provider_type(
             mut self,
             input: std::option::Option<crate::model::ProviderType>,
@@ -390,14 +373,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_provider_type(input);
             self
         }
-        /// <p>The endpoint of the infrastructure to be represented by the host after it is
-        /// created.</p>
+        /// <p>The endpoint of the infrastructure to be represented by the host after it is created.</p>
         pub fn provider_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.provider_endpoint(input.into());
             self
         }
-        /// <p>The endpoint of the infrastructure to be represented by the host after it is
-        /// created.</p>
+        /// <p>The endpoint of the infrastructure to be represented by the host after it is created.</p>
         pub fn set_provider_endpoint(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -405,14 +386,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_provider_endpoint(input);
             self
         }
-        /// <p>The VPC configuration to be provisioned for the host. A VPC must be configured and the
-        /// infrastructure to be represented by the host must already be connected to the VPC.</p>
+        /// <p>The VPC configuration to be provisioned for the host. A VPC must be configured and the infrastructure to be represented by the host must already be connected to the VPC.</p>
         pub fn vpc_configuration(mut self, input: crate::model::VpcConfiguration) -> Self {
             self.inner = self.inner.vpc_configuration(input);
             self
         }
-        /// <p>The VPC configuration to be provisioned for the host. A VPC must be configured and the
-        /// infrastructure to be represented by the host must already be connected to the VPC.</p>
+        /// <p>The VPC configuration to be provisioned for the host. A VPC must be configured and the infrastructure to be represented by the host must already be connected to the VPC.</p>
         pub fn set_vpc_configuration(
             mut self,
             input: std::option::Option<crate::model::VpcConfiguration>,
@@ -497,16 +476,14 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the connection to be deleted.</p>
-        /// <note>
+        /// <p>The Amazon Resource Name (ARN) of the connection to be deleted.</p> <note>
         /// <p>The ARN is never reused if the connection is deleted.</p>
         /// </note>
         pub fn connection_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.connection_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the connection to be deleted.</p>
-        /// <note>
+        /// <p>The Amazon Resource Name (ARN) of the connection to be deleted.</p> <note>
         /// <p>The ARN is never reused if the connection is deleted.</p>
         /// </note>
         pub fn set_connection_arn(
@@ -519,8 +496,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteHost`.
     ///
-    /// <p>The host to be deleted. Before you delete a host, all connections associated to the host must be deleted.</p>
-    /// <note>
+    /// <p>The host to be deleted. Before you delete a host, all connections associated to the host must be deleted.</p> <note>
     /// <p>A host cannot be deleted if it is in the VPC_CONFIG_INITIALIZING or VPC_CONFIG_DELETING state.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -665,8 +641,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetHost`.
     ///
-    /// <p>Returns the host ARN and details such as status, provider type, endpoint, and, if
-    /// applicable, the VPC configuration.</p>
+    /// <p>Returns the host ARN and details such as status, provider type, endpoint, and, if applicable, the VPC configuration.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetHost<
         C = aws_smithy_client::erase::DynConnector,
@@ -793,14 +768,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Filters the list of connections to those associated with a specified provider, such as
-        /// Bitbucket.</p>
+        /// <p>Filters the list of connections to those associated with a specified provider, such as Bitbucket.</p>
         pub fn provider_type_filter(mut self, input: crate::model::ProviderType) -> Self {
             self.inner = self.inner.provider_type_filter(input);
             self
         }
-        /// <p>Filters the list of connections to those associated with a specified provider, such as
-        /// Bitbucket.</p>
+        /// <p>Filters the list of connections to those associated with a specified provider, such as Bitbucket.</p>
         pub fn set_provider_type_filter(
             mut self,
             input: std::option::Option<crate::model::ProviderType>,
@@ -821,26 +794,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_host_arn_filter(input);
             self
         }
-        /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token that was returned from the previous <code>ListConnections</code> call, which
-        /// can be used to return the next set of connections in the list.</p>
+        /// <p>The token that was returned from the previous <code>ListConnections</code> call, which can be used to return the next set of connections in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token that was returned from the previous <code>ListConnections</code> call, which
-        /// can be used to return the next set of connections in the list.</p>
+        /// <p>The token that was returned from the previous <code>ListConnections</code> call, which can be used to return the next set of connections in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -905,26 +874,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token that was returned from the previous <code>ListHosts</code> call, which can be
-        /// used to return the next set of hosts in the list.</p>
+        /// <p>The token that was returned from the previous <code>ListHosts</code> call, which can be used to return the next set of hosts in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token that was returned from the previous <code>ListHosts</code> call, which can be
-        /// used to return the next set of hosts in the list.</p>
+        /// <p>The token that was returned from the previous <code>ListHosts</code> call, which can be used to return the next set of hosts in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1002,8 +967,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Adds to or modifies the tags of the given resource. Tags are metadata that can be used
-    /// to manage a resource.</p>
+    /// <p>Adds to or modifies the tags of the given resource. Tags are metadata that can be used to manage a resource.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -1257,14 +1221,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_provider_endpoint(input);
             self
         }
-        /// <p>The VPC configuration of the host to be updated. A VPC must be configured and the
-        /// infrastructure to be represented by the host must already be connected to the VPC.</p>
+        /// <p>The VPC configuration of the host to be updated. A VPC must be configured and the infrastructure to be represented by the host must already be connected to the VPC.</p>
         pub fn vpc_configuration(mut self, input: crate::model::VpcConfiguration) -> Self {
             self.inner = self.inner.vpc_configuration(input);
             self
         }
-        /// <p>The VPC configuration of the host to be updated. A VPC must be configured and the
-        /// infrastructure to be represented by the host must already be connected to the VPC.</p>
+        /// <p>The VPC configuration of the host to be updated. A VPC must be configured and the infrastructure to be represented by the host must already be connected to the VPC.</p>
         pub fn set_vpc_configuration(
             mut self,
             input: std::option::Option<crate::model::VpcConfiguration>,

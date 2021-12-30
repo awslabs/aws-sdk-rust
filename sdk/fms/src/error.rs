@@ -12,21 +12,13 @@ pub struct AssociateAdminAccountError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AssociateAdminAccountErrorKind {
-    /// <p>The operation failed because of a system problem, even though the request was valid. Retry
-    /// your request.</p>
+    /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>The parameters of the request were invalid.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have
-    /// submitted an <code>AssociateAdminAccount</code> request for an account ID that
-    /// was already set as the Firewall Manager administrator. Or you might have tried to access a Region
-    /// that's disabled by default, and that you need to enable for the Firewall Manager         
-    /// administrator account and for Organizations before you can access it.</p>
+    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set as the Firewall Manager administrator. Or you might have tried to access a Region that's disabled by default, and that you need to enable for the Firewall Manager administrator account and for Organizations before you can access it.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
-    /// <p>The operation exceeds a resource limit, for example, the maximum number of
-    /// <code>policy</code> objects that you can create for an Amazon Web Services account. For more information,
-    /// see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall
-    /// Manager Limits</a> in the <i>WAF Developer Guide</i>.</p>
+    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>policy</code> objects that you can create for an Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall Manager Limits</a> in the <i>WAF Developer Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -157,14 +149,9 @@ pub struct DeleteAppsListError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteAppsListErrorKind {
-    /// <p>The operation failed because of a system problem, even though the request was valid. Retry
-    /// your request.</p>
+    /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have
-    /// submitted an <code>AssociateAdminAccount</code> request for an account ID that
-    /// was already set as the Firewall Manager administrator. Or you might have tried to access a Region
-    /// that's disabled by default, and that you need to enable for the Firewall Manager         
-    /// administrator account and for Organizations before you can access it.</p>
+    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set as the Firewall Manager administrator. Or you might have tried to access a Region that's disabled by default, and that you need to enable for the Firewall Manager administrator account and for Organizations before you can access it.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -277,14 +264,9 @@ pub struct DeleteNotificationChannelError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteNotificationChannelErrorKind {
-    /// <p>The operation failed because of a system problem, even though the request was valid. Retry
-    /// your request.</p>
+    /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have
-    /// submitted an <code>AssociateAdminAccount</code> request for an account ID that
-    /// was already set as the Firewall Manager administrator. Or you might have tried to access a Region
-    /// that's disabled by default, and that you need to enable for the Firewall Manager         
-    /// administrator account and for Organizations before you can access it.</p>
+    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set as the Firewall Manager administrator. Or you might have tried to access a Region that's disabled by default, and that you need to enable for the Firewall Manager administrator account and for Organizations before you can access it.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -397,21 +379,13 @@ pub struct DeletePolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeletePolicyErrorKind {
-    /// <p>The operation failed because of a system problem, even though the request was valid. Retry
-    /// your request.</p>
+    /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>The parameters of the request were invalid.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have
-    /// submitted an <code>AssociateAdminAccount</code> request for an account ID that
-    /// was already set as the Firewall Manager administrator. Or you might have tried to access a Region
-    /// that's disabled by default, and that you need to enable for the Firewall Manager         
-    /// administrator account and for Organizations before you can access it.</p>
+    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set as the Firewall Manager administrator. Or you might have tried to access a Region that's disabled by default, and that you need to enable for the Firewall Manager administrator account and for Organizations before you can access it.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
-    /// <p>The operation exceeds a resource limit, for example, the maximum number of
-    /// <code>policy</code> objects that you can create for an Amazon Web Services account. For more information,
-    /// see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall
-    /// Manager Limits</a> in the <i>WAF Developer Guide</i>.</p>
+    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>policy</code> objects that you can create for an Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall Manager Limits</a> in the <i>WAF Developer Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -533,14 +507,9 @@ pub struct DeleteProtocolsListError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteProtocolsListErrorKind {
-    /// <p>The operation failed because of a system problem, even though the request was valid. Retry
-    /// your request.</p>
+    /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have
-    /// submitted an <code>AssociateAdminAccount</code> request for an account ID that
-    /// was already set as the Firewall Manager administrator. Or you might have tried to access a Region
-    /// that's disabled by default, and that you need to enable for the Firewall Manager         
-    /// administrator account and for Organizations before you can access it.</p>
+    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set as the Firewall Manager administrator. Or you might have tried to access a Region that's disabled by default, and that you need to enable for the Firewall Manager administrator account and for Organizations before you can access it.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -653,14 +622,9 @@ pub struct DisassociateAdminAccountError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisassociateAdminAccountErrorKind {
-    /// <p>The operation failed because of a system problem, even though the request was valid. Retry
-    /// your request.</p>
+    /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have
-    /// submitted an <code>AssociateAdminAccount</code> request for an account ID that
-    /// was already set as the Firewall Manager administrator. Or you might have tried to access a Region
-    /// that's disabled by default, and that you need to enable for the Firewall Manager         
-    /// administrator account and for Organizations before you can access it.</p>
+    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set as the Firewall Manager administrator. Or you might have tried to access a Region that's disabled by default, and that you need to enable for the Firewall Manager administrator account and for Organizations before you can access it.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -773,14 +737,9 @@ pub struct GetAdminAccountError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetAdminAccountErrorKind {
-    /// <p>The operation failed because of a system problem, even though the request was valid. Retry
-    /// your request.</p>
+    /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have
-    /// submitted an <code>AssociateAdminAccount</code> request for an account ID that
-    /// was already set as the Firewall Manager administrator. Or you might have tried to access a Region
-    /// that's disabled by default, and that you need to enable for the Firewall Manager         
-    /// administrator account and for Organizations before you can access it.</p>
+    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set as the Firewall Manager administrator. Or you might have tried to access a Region that's disabled by default, and that you need to enable for the Firewall Manager administrator account and for Organizations before you can access it.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -893,14 +852,9 @@ pub struct GetAppsListError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetAppsListErrorKind {
-    /// <p>The operation failed because of a system problem, even though the request was valid. Retry
-    /// your request.</p>
+    /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have
-    /// submitted an <code>AssociateAdminAccount</code> request for an account ID that
-    /// was already set as the Firewall Manager administrator. Or you might have tried to access a Region
-    /// that's disabled by default, and that you need to enable for the Firewall Manager         
-    /// administrator account and for Organizations before you can access it.</p>
+    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set as the Firewall Manager administrator. Or you might have tried to access a Region that's disabled by default, and that you need to enable for the Firewall Manager administrator account and for Organizations before you can access it.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1010,16 +964,11 @@ pub struct GetComplianceDetailError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetComplianceDetailErrorKind {
-    /// <p>The operation failed because of a system problem, even though the request was valid. Retry
-    /// your request.</p>
+    /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>The parameters of the request were invalid.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have
-    /// submitted an <code>AssociateAdminAccount</code> request for an account ID that
-    /// was already set as the Firewall Manager administrator. Or you might have tried to access a Region
-    /// that's disabled by default, and that you need to enable for the Firewall Manager         
-    /// administrator account and for Organizations before you can access it.</p>
+    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set as the Firewall Manager administrator. Or you might have tried to access a Region that's disabled by default, and that you need to enable for the Firewall Manager administrator account and for Organizations before you can access it.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1141,14 +1090,9 @@ pub struct GetNotificationChannelError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetNotificationChannelErrorKind {
-    /// <p>The operation failed because of a system problem, even though the request was valid. Retry
-    /// your request.</p>
+    /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have
-    /// submitted an <code>AssociateAdminAccount</code> request for an account ID that
-    /// was already set as the Firewall Manager administrator. Or you might have tried to access a Region
-    /// that's disabled by default, and that you need to enable for the Firewall Manager         
-    /// administrator account and for Organizations before you can access it.</p>
+    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set as the Firewall Manager administrator. Or you might have tried to access a Region that's disabled by default, and that you need to enable for the Firewall Manager administrator account and for Organizations before you can access it.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1261,14 +1205,9 @@ pub struct GetPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetPolicyErrorKind {
-    /// <p>The operation failed because of a system problem, even though the request was valid. Retry
-    /// your request.</p>
+    /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have
-    /// submitted an <code>AssociateAdminAccount</code> request for an account ID that
-    /// was already set as the Firewall Manager administrator. Or you might have tried to access a Region
-    /// that's disabled by default, and that you need to enable for the Firewall Manager         
-    /// administrator account and for Organizations before you can access it.</p>
+    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set as the Firewall Manager administrator. Or you might have tried to access a Region that's disabled by default, and that you need to enable for the Firewall Manager administrator account and for Organizations before you can access it.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>The value of the <code>Type</code> parameter is invalid.</p>
     InvalidTypeException(crate::error::InvalidTypeException),
@@ -1380,8 +1319,7 @@ pub struct GetProtectionStatusError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetProtectionStatusErrorKind {
-    /// <p>The operation failed because of a system problem, even though the request was valid. Retry
-    /// your request.</p>
+    /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>The parameters of the request were invalid.</p>
     InvalidInputException(crate::error::InvalidInputException),
@@ -1496,14 +1434,9 @@ pub struct GetProtocolsListError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetProtocolsListErrorKind {
-    /// <p>The operation failed because of a system problem, even though the request was valid. Retry
-    /// your request.</p>
+    /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have
-    /// submitted an <code>AssociateAdminAccount</code> request for an account ID that
-    /// was already set as the Firewall Manager administrator. Or you might have tried to access a Region
-    /// that's disabled by default, and that you need to enable for the Firewall Manager         
-    /// administrator account and for Organizations before you can access it.</p>
+    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set as the Firewall Manager administrator. Or you might have tried to access a Region that's disabled by default, and that you need to enable for the Firewall Manager administrator account and for Organizations before you can access it.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1616,8 +1549,7 @@ pub struct GetViolationDetailsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetViolationDetailsErrorKind {
-    /// <p>The operation failed because of a system problem, even though the request was valid. Retry
-    /// your request.</p>
+    /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>The parameters of the request were invalid.</p>
     InvalidInputException(crate::error::InvalidInputException),
@@ -1732,19 +1664,11 @@ pub struct ListAppsListsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAppsListsErrorKind {
-    /// <p>The operation failed because of a system problem, even though the request was valid. Retry
-    /// your request.</p>
+    /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have
-    /// submitted an <code>AssociateAdminAccount</code> request for an account ID that
-    /// was already set as the Firewall Manager administrator. Or you might have tried to access a Region
-    /// that's disabled by default, and that you need to enable for the Firewall Manager         
-    /// administrator account and for Organizations before you can access it.</p>
+    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set as the Firewall Manager administrator. Or you might have tried to access a Region that's disabled by default, and that you need to enable for the Firewall Manager administrator account and for Organizations before you can access it.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
-    /// <p>The operation exceeds a resource limit, for example, the maximum number of
-    /// <code>policy</code> objects that you can create for an Amazon Web Services account. For more information,
-    /// see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall
-    /// Manager Limits</a> in the <i>WAF Developer Guide</i>.</p>
+    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>policy</code> objects that you can create for an Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall Manager Limits</a> in the <i>WAF Developer Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1866,8 +1790,7 @@ pub struct ListComplianceStatusError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListComplianceStatusErrorKind {
-    /// <p>The operation failed because of a system problem, even though the request was valid. Retry
-    /// your request.</p>
+    /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1971,8 +1894,7 @@ pub struct ListMemberAccountsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListMemberAccountsErrorKind {
-    /// <p>The operation failed because of a system problem, even though the request was valid. Retry
-    /// your request.</p>
+    /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2076,19 +1998,11 @@ pub struct ListPoliciesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListPoliciesErrorKind {
-    /// <p>The operation failed because of a system problem, even though the request was valid. Retry
-    /// your request.</p>
+    /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have
-    /// submitted an <code>AssociateAdminAccount</code> request for an account ID that
-    /// was already set as the Firewall Manager administrator. Or you might have tried to access a Region
-    /// that's disabled by default, and that you need to enable for the Firewall Manager         
-    /// administrator account and for Organizations before you can access it.</p>
+    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set as the Firewall Manager administrator. Or you might have tried to access a Region that's disabled by default, and that you need to enable for the Firewall Manager administrator account and for Organizations before you can access it.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
-    /// <p>The operation exceeds a resource limit, for example, the maximum number of
-    /// <code>policy</code> objects that you can create for an Amazon Web Services account. For more information,
-    /// see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall
-    /// Manager Limits</a> in the <i>WAF Developer Guide</i>.</p>
+    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>policy</code> objects that you can create for an Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall Manager Limits</a> in the <i>WAF Developer Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2204,14 +2118,9 @@ pub struct ListProtocolsListsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListProtocolsListsErrorKind {
-    /// <p>The operation failed because of a system problem, even though the request was valid. Retry
-    /// your request.</p>
+    /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have
-    /// submitted an <code>AssociateAdminAccount</code> request for an account ID that
-    /// was already set as the Firewall Manager administrator. Or you might have tried to access a Region
-    /// that's disabled by default, and that you need to enable for the Firewall Manager         
-    /// administrator account and for Organizations before you can access it.</p>
+    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set as the Firewall Manager administrator. Or you might have tried to access a Region that's disabled by default, and that you need to enable for the Firewall Manager administrator account and for Organizations before you can access it.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2324,16 +2233,11 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    /// <p>The operation failed because of a system problem, even though the request was valid. Retry
-    /// your request.</p>
+    /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>The parameters of the request were invalid.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have
-    /// submitted an <code>AssociateAdminAccount</code> request for an account ID that
-    /// was already set as the Firewall Manager administrator. Or you might have tried to access a Region
-    /// that's disabled by default, and that you need to enable for the Firewall Manager         
-    /// administrator account and for Organizations before you can access it.</p>
+    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set as the Firewall Manager administrator. Or you might have tried to access a Region that's disabled by default, and that you need to enable for the Firewall Manager administrator account and for Organizations before you can access it.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2455,21 +2359,13 @@ pub struct PutAppsListError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutAppsListErrorKind {
-    /// <p>The operation failed because of a system problem, even though the request was valid. Retry
-    /// your request.</p>
+    /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>The parameters of the request were invalid.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have
-    /// submitted an <code>AssociateAdminAccount</code> request for an account ID that
-    /// was already set as the Firewall Manager administrator. Or you might have tried to access a Region
-    /// that's disabled by default, and that you need to enable for the Firewall Manager         
-    /// administrator account and for Organizations before you can access it.</p>
+    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set as the Firewall Manager administrator. Or you might have tried to access a Region that's disabled by default, and that you need to enable for the Firewall Manager administrator account and for Organizations before you can access it.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
-    /// <p>The operation exceeds a resource limit, for example, the maximum number of
-    /// <code>policy</code> objects that you can create for an Amazon Web Services account. For more information,
-    /// see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall
-    /// Manager Limits</a> in the <i>WAF Developer Guide</i>.</p>
+    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>policy</code> objects that you can create for an Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall Manager Limits</a> in the <i>WAF Developer Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2591,14 +2487,9 @@ pub struct PutNotificationChannelError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutNotificationChannelErrorKind {
-    /// <p>The operation failed because of a system problem, even though the request was valid. Retry
-    /// your request.</p>
+    /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have
-    /// submitted an <code>AssociateAdminAccount</code> request for an account ID that
-    /// was already set as the Firewall Manager administrator. Or you might have tried to access a Region
-    /// that's disabled by default, and that you need to enable for the Firewall Manager         
-    /// administrator account and for Organizations before you can access it.</p>
+    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set as the Firewall Manager administrator. Or you might have tried to access a Region that's disabled by default, and that you need to enable for the Firewall Manager administrator account and for Organizations before you can access it.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2711,23 +2602,15 @@ pub struct PutPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutPolicyErrorKind {
-    /// <p>The operation failed because of a system problem, even though the request was valid. Retry
-    /// your request.</p>
+    /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>The parameters of the request were invalid.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have
-    /// submitted an <code>AssociateAdminAccount</code> request for an account ID that
-    /// was already set as the Firewall Manager administrator. Or you might have tried to access a Region
-    /// that's disabled by default, and that you need to enable for the Firewall Manager         
-    /// administrator account and for Organizations before you can access it.</p>
+    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set as the Firewall Manager administrator. Or you might have tried to access a Region that's disabled by default, and that you need to enable for the Firewall Manager administrator account and for Organizations before you can access it.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>The value of the <code>Type</code> parameter is invalid.</p>
     InvalidTypeException(crate::error::InvalidTypeException),
-    /// <p>The operation exceeds a resource limit, for example, the maximum number of
-    /// <code>policy</code> objects that you can create for an Amazon Web Services account. For more information,
-    /// see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall
-    /// Manager Limits</a> in the <i>WAF Developer Guide</i>.</p>
+    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>policy</code> objects that you can create for an Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall Manager Limits</a> in the <i>WAF Developer Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2849,21 +2732,13 @@ pub struct PutProtocolsListError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutProtocolsListErrorKind {
-    /// <p>The operation failed because of a system problem, even though the request was valid. Retry
-    /// your request.</p>
+    /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>The parameters of the request were invalid.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have
-    /// submitted an <code>AssociateAdminAccount</code> request for an account ID that
-    /// was already set as the Firewall Manager administrator. Or you might have tried to access a Region
-    /// that's disabled by default, and that you need to enable for the Firewall Manager         
-    /// administrator account and for Organizations before you can access it.</p>
+    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set as the Firewall Manager administrator. Or you might have tried to access a Region that's disabled by default, and that you need to enable for the Firewall Manager administrator account and for Organizations before you can access it.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
-    /// <p>The operation exceeds a resource limit, for example, the maximum number of
-    /// <code>policy</code> objects that you can create for an Amazon Web Services account. For more information,
-    /// see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall
-    /// Manager Limits</a> in the <i>WAF Developer Guide</i>.</p>
+    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>policy</code> objects that you can create for an Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall Manager Limits</a> in the <i>WAF Developer Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2994,21 +2869,13 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    /// <p>The operation failed because of a system problem, even though the request was valid. Retry
-    /// your request.</p>
+    /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>The parameters of the request were invalid.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have
-    /// submitted an <code>AssociateAdminAccount</code> request for an account ID that
-    /// was already set as the Firewall Manager administrator. Or you might have tried to access a Region
-    /// that's disabled by default, and that you need to enable for the Firewall Manager         
-    /// administrator account and for Organizations before you can access it.</p>
+    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set as the Firewall Manager administrator. Or you might have tried to access a Region that's disabled by default, and that you need to enable for the Firewall Manager administrator account and for Organizations before you can access it.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
-    /// <p>The operation exceeds a resource limit, for example, the maximum number of
-    /// <code>policy</code> objects that you can create for an Amazon Web Services account. For more information,
-    /// see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall
-    /// Manager Limits</a> in the <i>WAF Developer Guide</i>.</p>
+    /// <p>The operation exceeds a resource limit, for example, the maximum number of <code>policy</code> objects that you can create for an Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall Manager Limits</a> in the <i>WAF Developer Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3130,16 +2997,11 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    /// <p>The operation failed because of a system problem, even though the request was valid. Retry
-    /// your request.</p>
+    /// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>The parameters of the request were invalid.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have
-    /// submitted an <code>AssociateAdminAccount</code> request for an account ID that
-    /// was already set as the Firewall Manager administrator. Or you might have tried to access a Region
-    /// that's disabled by default, and that you need to enable for the Firewall Manager         
-    /// administrator account and for Organizations before you can access it.</p>
+    /// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set as the Firewall Manager administrator. Or you might have tried to access a Region that's disabled by default, and that you need to enable for the Firewall Manager administrator account and for Organizations before you can access it.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3309,11 +3171,7 @@ impl ResourceNotFoundException {
     }
 }
 
-/// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have
-/// submitted an <code>AssociateAdminAccount</code> request for an account ID that
-/// was already set as the Firewall Manager administrator. Or you might have tried to access a Region
-/// that's disabled by default, and that you need to enable for the Firewall Manager         
-/// administrator account and for Organizations before you can access it.</p>
+/// <p>The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set as the Firewall Manager administrator. Or you might have tried to access a Region that's disabled by default, and that you need to enable for the Firewall Manager administrator account and for Organizations before you can access it.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidOperationException {
@@ -3441,8 +3299,7 @@ impl InvalidInputException {
     }
 }
 
-/// <p>The operation failed because of a system problem, even though the request was valid. Retry
-/// your request.</p>
+/// <p>The operation failed because of a system problem, even though the request was valid. Retry your request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalErrorException {
@@ -3506,10 +3363,7 @@ impl InternalErrorException {
     }
 }
 
-/// <p>The operation exceeds a resource limit, for example, the maximum number of
-/// <code>policy</code> objects that you can create for an Amazon Web Services account. For more information,
-/// see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall
-/// Manager Limits</a> in the <i>WAF Developer Guide</i>.</p>
+/// <p>The operation exceeds a resource limit, for example, the maximum number of <code>policy</code> objects that you can create for an Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall Manager Limits</a> in the <i>WAF Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {

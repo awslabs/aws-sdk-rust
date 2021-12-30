@@ -265,18 +265,8 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `BatchAssociateClientDeviceWithCoreDevice`.
     ///
-    /// <p>Associate a list of client devices with a core device. Use this API operation to specify
-    /// which client devices can discover a core device through cloud discovery. With cloud discovery,
-    /// client devices connect to IoT Greengrass to retrieve associated core devices' connectivity information
-    /// and certificates. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-cloud-discovery.html">Configure cloud
-    /// discovery</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-    ///
-    /// <note>
-    /// <p>Client devices are local IoT devices that connect to and communicate with an IoT Greengrass core
-    /// device over MQTT. You can connect client devices to a core device to sync MQTT messages and
-    /// data to Amazon Web Services IoT Core and interact with client devices in Greengrass components. For more information,
-    /// see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/interact-with-local-iot-devices.html">Interact with
-    /// local IoT devices</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+    /// <p>Associate a list of client devices with a core device. Use this API operation to specify which client devices can discover a core device through cloud discovery. With cloud discovery, client devices connect to IoT Greengrass to retrieve associated core devices' connectivity information and certificates. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-cloud-discovery.html">Configure cloud discovery</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p> <note>
+    /// <p>Client devices are local IoT devices that connect to and communicate with an IoT Greengrass core device over MQTT. You can connect client devices to a core device to sync MQTT messages and data to Amazon Web Services IoT Core and interact with client devices in Greengrass components. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/interact-with-local-iot-devices.html">Interact with local IoT devices</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchAssociateClientDeviceWithCoreDevice<
@@ -374,9 +364,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BatchDisassociateClientDeviceFromCoreDevice`.
     ///
-    /// <p>Disassociate a list of client devices from a core device. After you disassociate a client
-    /// device from a core device, the client device won't be able to use cloud discovery to retrieve
-    /// the core device's connectivity information and certificates.</p>
+    /// <p>Disassociate a list of client devices from a core device. After you disassociate a client device from a core device, the client device won't be able to use cloud discovery to retrieve the core device's connectivity information and certificates.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchDisassociateClientDeviceFromCoreDevice<
         C = aws_smithy_client::erase::DynConnector,
@@ -473,9 +461,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CancelDeployment`.
     ///
-    /// <p>Cancels a deployment. This operation cancels the deployment for devices that haven't yet
-    /// received it. If a device already received the deployment, this operation doesn't change
-    /// anything for that device.</p>
+    /// <p>Cancels a deployment. This operation cancels the deployment for devices that haven't yet received it. If a device already received the deployment, this operation doesn't change anything for that device.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelDeployment<
         C = aws_smithy_client::erase::DynConnector,
@@ -548,62 +534,21 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateComponentVersion`.
     ///
-    /// <p>Creates a component. Components are software that run on Greengrass core devices. After you
-    /// develop and test a component on your core device, you can use this operation to upload your
-    /// component to IoT Greengrass. Then, you can deploy the component to other core devices.</p>
+    /// <p>Creates a component. Components are software that run on Greengrass core devices. After you develop and test a component on your core device, you can use this operation to upload your component to IoT Greengrass. Then, you can deploy the component to other core devices.</p>
     /// <p>You can use this operation to do the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>Create components from recipes</b>
-    /// </p>
-    /// <p>Create a component from a recipe, which is a file that defines the component's
-    /// metadata, parameters, dependencies, lifecycle, artifacts, and platform capability. For
-    /// more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/component-recipe-reference.html">IoT Greengrass component recipe
-    /// reference</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-    /// <p>To create a component from a recipe, specify <code>inlineRecipe</code> when you call
-    /// this operation.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Create components from Lambda functions</b>
-    /// </p>
-    /// <p>Create a component from an Lambda function that runs on IoT Greengrass. This creates a recipe
-    /// and artifacts from the Lambda function's deployment package. You can use this operation to
-    /// migrate Lambda functions from IoT Greengrass V1 to IoT Greengrass V2.</p>
-    /// <p>This function only accepts Lambda functions that use the following runtimes:</p>
+    /// <li> <p> <b>Create components from recipes</b> </p> <p>Create a component from a recipe, which is a file that defines the component's metadata, parameters, dependencies, lifecycle, artifacts, and platform capability. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/component-recipe-reference.html">IoT Greengrass component recipe reference</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p> <p>To create a component from a recipe, specify <code>inlineRecipe</code> when you call this operation.</p> </li>
+    /// <li> <p> <b>Create components from Lambda functions</b> </p> <p>Create a component from an Lambda function that runs on IoT Greengrass. This creates a recipe and artifacts from the Lambda function's deployment package. You can use this operation to migrate Lambda functions from IoT Greengrass V1 to IoT Greengrass V2.</p> <p>This function only accepts Lambda functions that use the following runtimes:</p>
     /// <ul>
-    /// <li>
-    /// <p>Python 2.7 – <code>python2.7</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Python 3.7 – <code>python3.7</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Python 3.8 – <code>python3.8</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Java 8 – <code>java8</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Node.js 10 – <code>nodejs10.x</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Node.js 12 – <code>nodejs12.x</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <p>To create a component from a Lambda function, specify <code>lambdaFunction</code>
-    /// when you call this operation.</p>
-    /// <note>
+    /// <li> <p>Python 2.7 – <code>python2.7</code> </p> </li>
+    /// <li> <p>Python 3.7 – <code>python3.7</code> </p> </li>
+    /// <li> <p>Python 3.8 – <code>python3.8</code> </p> </li>
+    /// <li> <p>Java 8 – <code>java8</code> </p> </li>
+    /// <li> <p>Node.js 10 – <code>nodejs10.x</code> </p> </li>
+    /// <li> <p>Node.js 12 – <code>nodejs12.x</code> </p> </li>
+    /// </ul> <p>To create a component from a Lambda function, specify <code>lambdaFunction</code> when you call this operation.</p> <note>
     /// <p>IoT Greengrass currently supports Lambda functions on only Linux core devices.</p>
-    /// </note>
-    /// </li>
+    /// </note> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateComponentVersion<
@@ -661,15 +606,13 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The recipe to use to create the component. The recipe defines the component's metadata,
-        /// parameters, dependencies, lifecycle, artifacts, and platform compatibility.</p>
+        /// <p>The recipe to use to create the component. The recipe defines the component's metadata, parameters, dependencies, lifecycle, artifacts, and platform compatibility.</p>
         /// <p>You must specify either <code>inlineRecipe</code> or <code>lambdaFunction</code>.</p>
         pub fn inline_recipe(mut self, input: aws_smithy_types::Blob) -> Self {
             self.inner = self.inner.inline_recipe(input);
             self
         }
-        /// <p>The recipe to use to create the component. The recipe defines the component's metadata,
-        /// parameters, dependencies, lifecycle, artifacts, and platform compatibility.</p>
+        /// <p>The recipe to use to create the component. The recipe defines the component's metadata, parameters, dependencies, lifecycle, artifacts, and platform compatibility.</p>
         /// <p>You must specify either <code>inlineRecipe</code> or <code>lambdaFunction</code>.</p>
         pub fn set_inline_recipe(
             mut self,
@@ -697,9 +640,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of key-value pairs that contain metadata for the resource. For more
-        /// information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your
-        /// resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+        /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -708,9 +649,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>A list of key-value pairs that contain metadata for the resource. For more
-        /// information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your
-        /// resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+        /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -720,20 +659,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you can provide to ensure that the request is idempotent.
-        /// Idempotency means that the request is successfully processed only once, even if you send the request multiple times.
-        /// When a request succeeds, and you specify the same client token for subsequent successful requests, the IoT Greengrass V2 service
-        /// returns the successful response that it caches from the previous request. IoT Greengrass V2 caches successful responses for
-        /// idempotent requests for up to 8 hours.</p>
+        /// <p>A unique, case-sensitive identifier that you can provide to ensure that the request is idempotent. Idempotency means that the request is successfully processed only once, even if you send the request multiple times. When a request succeeds, and you specify the same client token for subsequent successful requests, the IoT Greengrass V2 service returns the successful response that it caches from the previous request. IoT Greengrass V2 caches successful responses for idempotent requests for up to 8 hours.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you can provide to ensure that the request is idempotent.
-        /// Idempotency means that the request is successfully processed only once, even if you send the request multiple times.
-        /// When a request succeeds, and you specify the same client token for subsequent successful requests, the IoT Greengrass V2 service
-        /// returns the successful response that it caches from the previous request. IoT Greengrass V2 caches successful responses for
-        /// idempotent requests for up to 8 hours.</p>
+        /// <p>A unique, case-sensitive identifier that you can provide to ensure that the request is idempotent. Idempotency means that the request is successfully processed only once, even if you send the request multiple times. When a request succeeds, and you specify the same client token for subsequent successful requests, the IoT Greengrass V2 service returns the successful response that it caches from the previous request. IoT Greengrass V2 caches successful responses for idempotent requests for up to 8 hours.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -741,17 +672,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateDeployment`.
     ///
-    /// <p>Creates a continuous deployment for a target, which is a Greengrass core device or group of core
-    /// devices. When you add a new core device to a group of core devices that has a deployment, IoT Greengrass
-    /// deploys that group's deployment to the new device.</p>
-    /// <p>You can define one deployment for each target. When you create a new deployment for a
-    /// target that has an existing deployment, you replace the previous deployment. IoT Greengrass applies the
-    /// new deployment to the target devices.</p>
-    /// <p>Every deployment has a revision number that indicates how many deployment revisions you
-    /// define for a target. Use this operation to create a new revision of an existing deployment.
-    /// This operation returns the revision number of the new deployment when you create it.</p>
-    /// <p>For more information, see the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/create-deployments.html">Create deployments</a> in the
-    /// <i>IoT Greengrass V2 Developer Guide</i>.</p>
+    /// <p>Creates a continuous deployment for a target, which is a Greengrass core device or group of core devices. When you add a new core device to a group of core devices that has a deployment, IoT Greengrass deploys that group's deployment to the new device.</p>
+    /// <p>You can define one deployment for each target. When you create a new deployment for a target that has an existing deployment, you replace the previous deployment. IoT Greengrass applies the new deployment to the target devices.</p>
+    /// <p>Every deployment has a revision number that indicates how many deployment revisions you define for a target. Use this operation to create a new revision of an existing deployment. This operation returns the revision number of the new deployment when you create it.</p>
+    /// <p>For more information, see the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/create-deployments.html">Create deployments</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDeployment<
         C = aws_smithy_client::erase::DynConnector,
@@ -835,8 +759,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_components`](Self::set_components).
         ///
-        /// <p>The components to deploy. This is a dictionary, where each key is the name of a component,
-        /// and each key's value is the version and configuration to deploy for that component.</p>
+        /// <p>The components to deploy. This is a dictionary, where each key is the name of a component, and each key's value is the version and configuration to deploy for that component.</p>
         pub fn components(
             mut self,
             k: impl Into<std::string::String>,
@@ -845,8 +768,7 @@ pub mod fluent_builders {
             self.inner = self.inner.components(k.into(), v);
             self
         }
-        /// <p>The components to deploy. This is a dictionary, where each key is the name of a component,
-        /// and each key's value is the version and configuration to deploy for that component.</p>
+        /// <p>The components to deploy. This is a dictionary, where each key is the name of a component, and each key's value is the version and configuration to deploy for that component.</p>
         pub fn set_components(
             mut self,
             input: std::option::Option<
@@ -859,8 +781,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_components(input);
             self
         }
-        /// <p>The job configuration for the deployment configuration. The job configuration specifies
-        /// the rollout, timeout, and stop configurations for the deployment configuration.</p>
+        /// <p>The job configuration for the deployment configuration. The job configuration specifies the rollout, timeout, and stop configurations for the deployment configuration.</p>
         pub fn iot_job_configuration(
             mut self,
             input: crate::model::DeploymentIoTJobConfiguration,
@@ -868,8 +789,7 @@ pub mod fluent_builders {
             self.inner = self.inner.iot_job_configuration(input);
             self
         }
-        /// <p>The job configuration for the deployment configuration. The job configuration specifies
-        /// the rollout, timeout, and stop configurations for the deployment configuration.</p>
+        /// <p>The job configuration for the deployment configuration. The job configuration specifies the rollout, timeout, and stop configurations for the deployment configuration.</p>
         pub fn set_iot_job_configuration(
             mut self,
             input: std::option::Option<crate::model::DeploymentIoTJobConfiguration>,
@@ -877,14 +797,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_iot_job_configuration(input);
             self
         }
-        /// <p>The deployment policies for the deployment. These policies define how the deployment
-        /// updates components and handles failure.</p>
+        /// <p>The deployment policies for the deployment. These policies define how the deployment updates components and handles failure.</p>
         pub fn deployment_policies(mut self, input: crate::model::DeploymentPolicies) -> Self {
             self.inner = self.inner.deployment_policies(input);
             self
         }
-        /// <p>The deployment policies for the deployment. These policies define how the deployment
-        /// updates components and handles failure.</p>
+        /// <p>The deployment policies for the deployment. These policies define how the deployment updates components and handles failure.</p>
         pub fn set_deployment_policies(
             mut self,
             input: std::option::Option<crate::model::DeploymentPolicies>,
@@ -896,9 +814,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of key-value pairs that contain metadata for the resource. For more
-        /// information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your
-        /// resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+        /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -907,9 +823,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>A list of key-value pairs that contain metadata for the resource. For more
-        /// information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your
-        /// resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+        /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -919,20 +833,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you can provide to ensure that the request is idempotent.
-        /// Idempotency means that the request is successfully processed only once, even if you send the request multiple times.
-        /// When a request succeeds, and you specify the same client token for subsequent successful requests, the IoT Greengrass V2 service
-        /// returns the successful response that it caches from the previous request. IoT Greengrass V2 caches successful responses for
-        /// idempotent requests for up to 8 hours.</p>
+        /// <p>A unique, case-sensitive identifier that you can provide to ensure that the request is idempotent. Idempotency means that the request is successfully processed only once, even if you send the request multiple times. When a request succeeds, and you specify the same client token for subsequent successful requests, the IoT Greengrass V2 service returns the successful response that it caches from the previous request. IoT Greengrass V2 caches successful responses for idempotent requests for up to 8 hours.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you can provide to ensure that the request is idempotent.
-        /// Idempotency means that the request is successfully processed only once, even if you send the request multiple times.
-        /// When a request succeeds, and you specify the same client token for subsequent successful requests, the IoT Greengrass V2 service
-        /// returns the successful response that it caches from the previous request. IoT Greengrass V2 caches successful responses for
-        /// idempotent requests for up to 8 hours.</p>
+        /// <p>A unique, case-sensitive identifier that you can provide to ensure that the request is idempotent. Idempotency means that the request is successfully processed only once, even if you send the request multiple times. When a request succeeds, and you specify the same client token for subsequent successful requests, the IoT Greengrass V2 service returns the successful response that it caches from the previous request. IoT Greengrass V2 caches successful responses for idempotent requests for up to 8 hours.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -940,12 +846,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteComponent`.
     ///
-    /// <p>Deletes a version of a component from IoT Greengrass.</p>
-    /// <note>
-    /// <p>This operation deletes the component's recipe and artifacts. As a result, deployments
-    /// that refer to this component version will fail. If you have deployments that use this
-    /// component version, you can remove the component from the deployment or update the deployment
-    /// to use a valid version.</p>
+    /// <p>Deletes a version of a component from IoT Greengrass.</p> <note>
+    /// <p>This operation deletes the component's recipe and artifacts. As a result, deployments that refer to this component version will fail. If you have deployments that use this component version, you can remove the component from the deployment or update the deployment to use a valid version.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteComponent<
@@ -1016,10 +918,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteCoreDevice`.
     ///
-    /// <p>Deletes a Greengrass core device, which is an IoT thing. This operation removes the core
-    /// device from the list of core devices. This operation doesn't delete the IoT thing. For more
-    /// information about how to delete the IoT thing, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteThing.html">DeleteThing</a> in the
-    /// <i>IoT API Reference</i>.</p>
+    /// <p>Deletes a Greengrass core device, which is an IoT thing. This operation removes the core device from the list of core devices. This operation doesn't delete the IoT thing. For more information about how to delete the IoT thing, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteThing.html">DeleteThing</a> in the <i>IoT API Reference</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCoreDevice<
         C = aws_smithy_client::erase::DynConnector,
@@ -1162,8 +1061,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetComponent`.
     ///
-    /// <p>Gets the recipe for a version of a component. Core devices can call this operation to
-    /// identify the artifacts and requirements to install a component.</p>
+    /// <p>Gets the recipe for a version of a component. Core devices can call this operation to identify the artifacts and requirements to install a component.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetComponent<
         C = aws_smithy_client::erase::DynConnector,
@@ -1246,8 +1144,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetComponentVersionArtifact`.
     ///
-    /// <p>Gets the pre-signed URL to download a public component artifact. Core devices call this
-    /// operation to identify the URL that they can use to download an artifact to install.</p>
+    /// <p>Gets the pre-signed URL to download a public component artifact. Core devices call this operation to identify the URL that they can use to download an artifact to install.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetComponentVersionArtifact<
         C = aws_smithy_client::erase::DynConnector,
@@ -1315,21 +1212,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the artifact.</p>
-        /// <p>You can use the <a href="https://docs.aws.amazon.com/greengrass/v2/APIReference/API_GetComponent.html">GetComponent</a> operation to
-        /// download the component recipe, which includes the URI of the artifact. The artifact name is
-        /// the section of the URI after the scheme. For example, in the artifact URI
-        /// <code>greengrass:SomeArtifact.zip</code>, the artifact name is
-        /// <code>SomeArtifact.zip</code>.</p>
+        /// <p>You can use the <a href="https://docs.aws.amazon.com/greengrass/v2/APIReference/API_GetComponent.html">GetComponent</a> operation to download the component recipe, which includes the URI of the artifact. The artifact name is the section of the URI after the scheme. For example, in the artifact URI <code>greengrass:SomeArtifact.zip</code>, the artifact name is <code>SomeArtifact.zip</code>.</p>
         pub fn artifact_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.artifact_name(input.into());
             self
         }
         /// <p>The name of the artifact.</p>
-        /// <p>You can use the <a href="https://docs.aws.amazon.com/greengrass/v2/APIReference/API_GetComponent.html">GetComponent</a> operation to
-        /// download the component recipe, which includes the URI of the artifact. The artifact name is
-        /// the section of the URI after the scheme. For example, in the artifact URI
-        /// <code>greengrass:SomeArtifact.zip</code>, the artifact name is
-        /// <code>SomeArtifact.zip</code>.</p>
+        /// <p>You can use the <a href="https://docs.aws.amazon.com/greengrass/v2/APIReference/API_GetComponent.html">GetComponent</a> operation to download the component recipe, which includes the URI of the artifact. The artifact name is the section of the URI after the scheme. For example, in the artifact URI <code>greengrass:SomeArtifact.zip</code>, the artifact name is <code>SomeArtifact.zip</code>.</p>
         pub fn set_artifact_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1486,8 +1375,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListClientDevicesAssociatedWithCoreDevice`.
     ///
-    /// <p>Retrieves a paginated list of client devices that are associated with a core
-    /// device.</p>
+    /// <p>Retrieves a paginated list of client devices that are associated with a core device.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListClientDevicesAssociatedWithCoreDevice<
         C = aws_smithy_client::erase::DynConnector,
@@ -1582,8 +1470,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListComponents`.
     ///
-    /// <p>Retrieves a paginated list of component summaries. This list includes components that you
-    /// have permission to view.</p>
+    /// <p>Retrieves a paginated list of component summaries. This list includes components that you have permission to view.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListComponents<
         C = aws_smithy_client::erase::DynConnector,
@@ -1641,15 +1528,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The scope of the components to list.</p>
-        /// <p>Default: <code>PRIVATE</code>
-        /// </p>
+        /// <p>Default: <code>PRIVATE</code> </p>
         pub fn scope(mut self, input: crate::model::ComponentVisibilityScope) -> Self {
             self.inner = self.inner.scope(input);
             self
         }
         /// <p>The scope of the components to list.</p>
-        /// <p>Default: <code>PRIVATE</code>
-        /// </p>
+        /// <p>Default: <code>PRIVATE</code> </p>
         pub fn set_scope(
             mut self,
             input: std::option::Option<crate::model::ComponentVisibilityScope>,
@@ -1827,14 +1712,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT thing group by which to filter. If you specify this parameter, the
-        /// list includes only core devices that are members of this thing group.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT thing group by which to filter. If you specify this parameter, the list includes only core devices that are members of this thing group.</p>
         pub fn thing_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.thing_group_arn(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT thing group by which to filter. If you specify this parameter, the
-        /// list includes only core devices that are members of this thing group.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT thing group by which to filter. If you specify this parameter, the list includes only core devices that are members of this thing group.</p>
         pub fn set_thing_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1842,35 +1725,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_thing_group_arn(input);
             self
         }
-        /// <p>The core device status by which to filter. If you specify this parameter, the list
-        /// includes only core devices that have this status. Choose one of the following options:</p>
+        /// <p>The core device status by which to filter. If you specify this parameter, the list includes only core devices that have this status. Choose one of the following options:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>HEALTHY</code> – The IoT Greengrass Core software and all components run on the core device without issue.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a failed state
-        /// on the core device.</p>
-        /// </li>
+        /// <li> <p> <code>HEALTHY</code> – The IoT Greengrass Core software and all components run on the core device without issue.</p> </li>
+        /// <li> <p> <code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a failed state on the core device.</p> </li>
         /// </ul>
         pub fn status(mut self, input: crate::model::CoreDeviceStatus) -> Self {
             self.inner = self.inner.status(input);
             self
         }
-        /// <p>The core device status by which to filter. If you specify this parameter, the list
-        /// includes only core devices that have this status. Choose one of the following options:</p>
+        /// <p>The core device status by which to filter. If you specify this parameter, the list includes only core devices that have this status. Choose one of the following options:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>HEALTHY</code> – The IoT Greengrass Core software and all components run on the core device without issue.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a failed state
-        /// on the core device.</p>
-        /// </li>
+        /// <li> <p> <code>HEALTHY</code> – The IoT Greengrass Core software and all components run on the core device without issue.</p> </li>
+        /// <li> <p> <code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a failed state on the core device.</p> </li>
         /// </ul>
         pub fn set_status(
             mut self,
@@ -1971,36 +1838,20 @@ pub mod fluent_builders {
         }
         /// <p>The filter for the list of deployments. Choose one of the following options:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ALL</code> – The list includes all deployments.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LATEST_ONLY</code> – The list includes only the latest revision of each
-        /// deployment.</p>
-        /// </li>
+        /// <li> <p> <code>ALL</code> – The list includes all deployments.</p> </li>
+        /// <li> <p> <code>LATEST_ONLY</code> – The list includes only the latest revision of each deployment.</p> </li>
         /// </ul>
-        /// <p>Default: <code>LATEST_ONLY</code>
-        /// </p>
+        /// <p>Default: <code>LATEST_ONLY</code> </p>
         pub fn history_filter(mut self, input: crate::model::DeploymentHistoryFilter) -> Self {
             self.inner = self.inner.history_filter(input);
             self
         }
         /// <p>The filter for the list of deployments. Choose one of the following options:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ALL</code> – The list includes all deployments.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LATEST_ONLY</code> – The list includes only the latest revision of each
-        /// deployment.</p>
-        /// </li>
+        /// <li> <p> <code>ALL</code> – The list includes all deployments.</p> </li>
+        /// <li> <p> <code>LATEST_ONLY</code> – The list includes only the latest revision of each deployment.</p> </li>
         /// </ul>
-        /// <p>Default: <code>LATEST_ONLY</code>
-        /// </p>
+        /// <p>Default: <code>LATEST_ONLY</code> </p>
         pub fn set_history_filter(
             mut self,
             input: std::option::Option<crate::model::DeploymentHistoryFilter>,
@@ -2031,8 +1882,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListEffectiveDeployments`.
     ///
-    /// <p>Retrieves a paginated list of deployment jobs that IoT Greengrass sends to Greengrass core
-    /// devices.</p>
+    /// <p>Retrieves a paginated list of deployment jobs that IoT Greengrass sends to Greengrass core devices.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListEffectiveDeployments<
         C = aws_smithy_client::erase::DynConnector,
@@ -2288,20 +2138,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ResolveComponentCandidates`.
     ///
-    /// <p>Retrieves a list of components that meet the component, version, and platform requirements
-    /// of a deployment. Greengrass core devices call this operation when they receive a deployment to
-    /// identify the components to install.</p>
-    /// <p>This operation identifies components that meet all dependency requirements for a
-    /// deployment. If the requirements conflict, then this operation returns an error and the
-    /// deployment fails. For example, this occurs if component <code>A</code> requires version
-    /// <code>>2.0.0</code> and component <code>B</code> requires version <code><2.0.0</code>
-    /// of a component dependency.</p>
-    /// <p>When you specify the component candidates to resolve, IoT Greengrass compares each component's
-    /// digest from the core device with the component's digest in the Amazon Web Services Cloud. If the digests don't
-    /// match, then IoT Greengrass specifies to use the version from the Amazon Web Services Cloud.</p>
-    /// <important>
-    /// <p>To use this operation, you must use the data plane API endpoint and authenticate with an
-    /// IoT device certificate. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/greengrass.html">IoT Greengrass endpoints and quotas</a>.</p>
+    /// <p>Retrieves a list of components that meet the component, version, and platform requirements of a deployment. Greengrass core devices call this operation when they receive a deployment to identify the components to install.</p>
+    /// <p>This operation identifies components that meet all dependency requirements for a deployment. If the requirements conflict, then this operation returns an error and the deployment fails. For example, this occurs if component <code>A</code> requires version <code>&gt;2.0.0</code> and component <code>B</code> requires version <code>&lt;2.0.0</code> of a component dependency.</p>
+    /// <p>When you specify the component candidates to resolve, IoT Greengrass compares each component's digest from the core device with the component's digest in the Amazon Web Services Cloud. If the digests don't match, then IoT Greengrass specifies to use the version from the Amazon Web Services Cloud.</p> <important>
+    /// <p>To use this operation, you must use the data plane API endpoint and authenticate with an IoT device certificate. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/greengrass.html">IoT Greengrass endpoints and quotas</a>.</p>
     /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ResolveComponentCandidates<
@@ -2392,8 +2232,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Adds tags to an IoT Greengrass resource. If a tag already exists for the resource, this operation
-    /// updates the tag's value.</p>
+    /// <p>Adds tags to an IoT Greengrass resource. If a tag already exists for the resource, this operation updates the tag's value.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -2464,9 +2303,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of key-value pairs that contain metadata for the resource. For more
-        /// information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your
-        /// resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+        /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2475,9 +2312,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>A list of key-value pairs that contain metadata for the resource. For more
-        /// information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your
-        /// resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+        /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<

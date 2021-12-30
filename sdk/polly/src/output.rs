@@ -4,30 +4,12 @@
 pub struct SynthesizeSpeechOutput {
     /// <p> Stream containing the synthesized speech. </p>
     pub audio_stream: aws_smithy_http::byte_stream::ByteStream,
-    /// <p> Specifies the type audio stream. This should reflect the
-    /// <code>OutputFormat</code> parameter in your request. </p>
+    /// <p> Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p>
     /// <ul>
-    /// <li>
-    /// <p> If you request <code>mp3</code> as the
-    /// <code>OutputFormat</code>, the <code>ContentType</code> returned is
-    /// audio/mpeg. </p>
-    /// </li>
-    /// <li>
-    /// <p> If you request <code>ogg_vorbis</code> as the
-    /// <code>OutputFormat</code>, the <code>ContentType</code> returned is
-    /// audio/ogg. </p>
-    /// </li>
-    /// <li>
-    /// <p> If you request <code>pcm</code> as the
-    /// <code>OutputFormat</code>, the <code>ContentType</code> returned is
-    /// audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>If you request <code>json</code> as the
-    /// <code>OutputFormat</code>, the <code>ContentType</code> returned is
-    /// audio/json.</p>
-    /// </li>
+    /// <li> <p> If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg. </p> </li>
+    /// <li> <p> If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg. </p> </li>
+    /// <li> <p> If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p> </li>
+    /// <li> <p>If you request <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/json.</p> </li>
     /// </ul>
     /// <p> </p>
     pub content_type: std::option::Option<std::string::String>,
@@ -39,30 +21,12 @@ impl SynthesizeSpeechOutput {
     pub fn audio_stream(&self) -> &aws_smithy_http::byte_stream::ByteStream {
         &self.audio_stream
     }
-    /// <p> Specifies the type audio stream. This should reflect the
-    /// <code>OutputFormat</code> parameter in your request. </p>
+    /// <p> Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p>
     /// <ul>
-    /// <li>
-    /// <p> If you request <code>mp3</code> as the
-    /// <code>OutputFormat</code>, the <code>ContentType</code> returned is
-    /// audio/mpeg. </p>
-    /// </li>
-    /// <li>
-    /// <p> If you request <code>ogg_vorbis</code> as the
-    /// <code>OutputFormat</code>, the <code>ContentType</code> returned is
-    /// audio/ogg. </p>
-    /// </li>
-    /// <li>
-    /// <p> If you request <code>pcm</code> as the
-    /// <code>OutputFormat</code>, the <code>ContentType</code> returned is
-    /// audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>If you request <code>json</code> as the
-    /// <code>OutputFormat</code>, the <code>ContentType</code> returned is
-    /// audio/json.</p>
-    /// </li>
+    /// <li> <p> If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg. </p> </li>
+    /// <li> <p> If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg. </p> </li>
+    /// <li> <p> If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p> </li>
+    /// <li> <p>If you request <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/json.</p> </li>
     /// </ul>
     /// <p> </p>
     pub fn content_type(&self) -> std::option::Option<&str> {
@@ -106,60 +70,24 @@ pub mod synthesize_speech_output {
             self.audio_stream = input;
             self
         }
-        /// <p> Specifies the type audio stream. This should reflect the
-        /// <code>OutputFormat</code> parameter in your request. </p>
+        /// <p> Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p>
         /// <ul>
-        /// <li>
-        /// <p> If you request <code>mp3</code> as the
-        /// <code>OutputFormat</code>, the <code>ContentType</code> returned is
-        /// audio/mpeg. </p>
-        /// </li>
-        /// <li>
-        /// <p> If you request <code>ogg_vorbis</code> as the
-        /// <code>OutputFormat</code>, the <code>ContentType</code> returned is
-        /// audio/ogg. </p>
-        /// </li>
-        /// <li>
-        /// <p> If you request <code>pcm</code> as the
-        /// <code>OutputFormat</code>, the <code>ContentType</code> returned is
-        /// audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>If you request <code>json</code> as the
-        /// <code>OutputFormat</code>, the <code>ContentType</code> returned is
-        /// audio/json.</p>
-        /// </li>
+        /// <li> <p> If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg. </p> </li>
+        /// <li> <p> If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg. </p> </li>
+        /// <li> <p> If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p> </li>
+        /// <li> <p>If you request <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/json.</p> </li>
         /// </ul>
         /// <p> </p>
         pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.content_type = Some(input.into());
             self
         }
-        /// <p> Specifies the type audio stream. This should reflect the
-        /// <code>OutputFormat</code> parameter in your request. </p>
+        /// <p> Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p>
         /// <ul>
-        /// <li>
-        /// <p> If you request <code>mp3</code> as the
-        /// <code>OutputFormat</code>, the <code>ContentType</code> returned is
-        /// audio/mpeg. </p>
-        /// </li>
-        /// <li>
-        /// <p> If you request <code>ogg_vorbis</code> as the
-        /// <code>OutputFormat</code>, the <code>ContentType</code> returned is
-        /// audio/ogg. </p>
-        /// </li>
-        /// <li>
-        /// <p> If you request <code>pcm</code> as the
-        /// <code>OutputFormat</code>, the <code>ContentType</code> returned is
-        /// audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>If you request <code>json</code> as the
-        /// <code>OutputFormat</code>, the <code>ContentType</code> returned is
-        /// audio/json.</p>
-        /// </li>
+        /// <li> <p> If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg. </p> </li>
+        /// <li> <p> If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg. </p> </li>
+        /// <li> <p> If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p> </li>
+        /// <li> <p>If you request <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/json.</p> </li>
         /// </ul>
         /// <p> </p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -197,13 +125,11 @@ impl SynthesizeSpeechOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartSpeechSynthesisTaskOutput {
-    /// <p>SynthesisTask object that provides information and attributes about a
-    /// newly submitted speech synthesis task.</p>
+    /// <p>SynthesisTask object that provides information and attributes about a newly submitted speech synthesis task.</p>
     pub synthesis_task: std::option::Option<crate::model::SynthesisTask>,
 }
 impl StartSpeechSynthesisTaskOutput {
-    /// <p>SynthesisTask object that provides information and attributes about a
-    /// newly submitted speech synthesis task.</p>
+    /// <p>SynthesisTask object that provides information and attributes about a newly submitted speech synthesis task.</p>
     pub fn synthesis_task(&self) -> std::option::Option<&crate::model::SynthesisTask> {
         self.synthesis_task.as_ref()
     }
@@ -224,14 +150,12 @@ pub mod start_speech_synthesis_task_output {
         pub(crate) synthesis_task: std::option::Option<crate::model::SynthesisTask>,
     }
     impl Builder {
-        /// <p>SynthesisTask object that provides information and attributes about a
-        /// newly submitted speech synthesis task.</p>
+        /// <p>SynthesisTask object that provides information and attributes about a newly submitted speech synthesis task.</p>
         pub fn synthesis_task(mut self, input: crate::model::SynthesisTask) -> Self {
             self.synthesis_task = Some(input);
             self
         }
-        /// <p>SynthesisTask object that provides information and attributes about a
-        /// newly submitted speech synthesis task.</p>
+        /// <p>SynthesisTask object that provides information and attributes about a newly submitted speech synthesis task.</p>
         pub fn set_synthesis_task(
             mut self,
             input: std::option::Option<crate::model::SynthesisTask>,
@@ -288,25 +212,17 @@ impl PutLexiconOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSpeechSynthesisTasksOutput {
-    /// <p>An opaque pagination token returned from the previous List operation
-    /// in this request. If present, this indicates where to continue the
-    /// listing.</p>
+    /// <p>An opaque pagination token returned from the previous List operation in this request. If present, this indicates where to continue the listing.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>List of SynthesisTask objects that provides information from the
-    /// specified task in the list request, including output format, creation
-    /// time, task status, and so on.</p>
+    /// <p>List of SynthesisTask objects that provides information from the specified task in the list request, including output format, creation time, task status, and so on.</p>
     pub synthesis_tasks: std::option::Option<std::vec::Vec<crate::model::SynthesisTask>>,
 }
 impl ListSpeechSynthesisTasksOutput {
-    /// <p>An opaque pagination token returned from the previous List operation
-    /// in this request. If present, this indicates where to continue the
-    /// listing.</p>
+    /// <p>An opaque pagination token returned from the previous List operation in this request. If present, this indicates where to continue the listing.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>List of SynthesisTask objects that provides information from the
-    /// specified task in the list request, including output format, creation
-    /// time, task status, and so on.</p>
+    /// <p>List of SynthesisTask objects that provides information from the specified task in the list request, including output format, creation time, task status, and so on.</p>
     pub fn synthesis_tasks(&self) -> std::option::Option<&[crate::model::SynthesisTask]> {
         self.synthesis_tasks.as_deref()
     }
@@ -329,16 +245,12 @@ pub mod list_speech_synthesis_tasks_output {
         pub(crate) synthesis_tasks: std::option::Option<std::vec::Vec<crate::model::SynthesisTask>>,
     }
     impl Builder {
-        /// <p>An opaque pagination token returned from the previous List operation
-        /// in this request. If present, this indicates where to continue the
-        /// listing.</p>
+        /// <p>An opaque pagination token returned from the previous List operation in this request. If present, this indicates where to continue the listing.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An opaque pagination token returned from the previous List operation
-        /// in this request. If present, this indicates where to continue the
-        /// listing.</p>
+        /// <p>An opaque pagination token returned from the previous List operation in this request. If present, this indicates where to continue the listing.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -347,18 +259,14 @@ pub mod list_speech_synthesis_tasks_output {
         ///
         /// To override the contents of this collection use [`set_synthesis_tasks`](Self::set_synthesis_tasks).
         ///
-        /// <p>List of SynthesisTask objects that provides information from the
-        /// specified task in the list request, including output format, creation
-        /// time, task status, and so on.</p>
+        /// <p>List of SynthesisTask objects that provides information from the specified task in the list request, including output format, creation time, task status, and so on.</p>
         pub fn synthesis_tasks(mut self, input: crate::model::SynthesisTask) -> Self {
             let mut v = self.synthesis_tasks.unwrap_or_default();
             v.push(input);
             self.synthesis_tasks = Some(v);
             self
         }
-        /// <p>List of SynthesisTask objects that provides information from the
-        /// specified task in the list request, including output format, creation
-        /// time, task status, and so on.</p>
+        /// <p>List of SynthesisTask objects that provides information from the specified task in the list request, including output format, creation time, task status, and so on.</p>
         pub fn set_synthesis_tasks(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SynthesisTask>>,
@@ -388,9 +296,7 @@ impl ListSpeechSynthesisTasksOutput {
 pub struct ListLexiconsOutput {
     /// <p>A list of lexicon names and attributes.</p>
     pub lexicons: std::option::Option<std::vec::Vec<crate::model::LexiconDescription>>,
-    /// <p>The pagination token to use in the next request to continue the
-    /// listing of lexicons. <code>NextToken</code> is returned only if the
-    /// response is truncated.</p>
+    /// <p>The pagination token to use in the next request to continue the listing of lexicons. <code>NextToken</code> is returned only if the response is truncated.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListLexiconsOutput {
@@ -398,9 +304,7 @@ impl ListLexiconsOutput {
     pub fn lexicons(&self) -> std::option::Option<&[crate::model::LexiconDescription]> {
         self.lexicons.as_deref()
     }
-    /// <p>The pagination token to use in the next request to continue the
-    /// listing of lexicons. <code>NextToken</code> is returned only if the
-    /// response is truncated.</p>
+    /// <p>The pagination token to use in the next request to continue the listing of lexicons. <code>NextToken</code> is returned only if the response is truncated.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -442,16 +346,12 @@ pub mod list_lexicons_output {
             self.lexicons = input;
             self
         }
-        /// <p>The pagination token to use in the next request to continue the
-        /// listing of lexicons. <code>NextToken</code> is returned only if the
-        /// response is truncated.</p>
+        /// <p>The pagination token to use in the next request to continue the listing of lexicons. <code>NextToken</code> is returned only if the response is truncated.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token to use in the next request to continue the
-        /// listing of lexicons. <code>NextToken</code> is returned only if the
-        /// response is truncated.</p>
+        /// <p>The pagination token to use in the next request to continue the listing of lexicons. <code>NextToken</code> is returned only if the response is truncated.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -476,15 +376,11 @@ impl ListLexiconsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSpeechSynthesisTaskOutput {
-    /// <p>SynthesisTask object that provides information from the requested
-    /// task, including output format, creation time, task status, and so
-    /// on.</p>
+    /// <p>SynthesisTask object that provides information from the requested task, including output format, creation time, task status, and so on.</p>
     pub synthesis_task: std::option::Option<crate::model::SynthesisTask>,
 }
 impl GetSpeechSynthesisTaskOutput {
-    /// <p>SynthesisTask object that provides information from the requested
-    /// task, including output format, creation time, task status, and so
-    /// on.</p>
+    /// <p>SynthesisTask object that provides information from the requested task, including output format, creation time, task status, and so on.</p>
     pub fn synthesis_task(&self) -> std::option::Option<&crate::model::SynthesisTask> {
         self.synthesis_task.as_ref()
     }
@@ -505,16 +401,12 @@ pub mod get_speech_synthesis_task_output {
         pub(crate) synthesis_task: std::option::Option<crate::model::SynthesisTask>,
     }
     impl Builder {
-        /// <p>SynthesisTask object that provides information from the requested
-        /// task, including output format, creation time, task status, and so
-        /// on.</p>
+        /// <p>SynthesisTask object that provides information from the requested task, including output format, creation time, task status, and so on.</p>
         pub fn synthesis_task(mut self, input: crate::model::SynthesisTask) -> Self {
             self.synthesis_task = Some(input);
             self
         }
-        /// <p>SynthesisTask object that provides information from the requested
-        /// task, including output format, creation time, task status, and so
-        /// on.</p>
+        /// <p>SynthesisTask object that provides information from the requested task, including output format, creation time, task status, and so on.</p>
         pub fn set_synthesis_task(
             mut self,
             input: std::option::Option<crate::model::SynthesisTask>,
@@ -541,23 +433,17 @@ impl GetSpeechSynthesisTaskOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLexiconOutput {
-    /// <p>Lexicon object that provides name and the string content of the
-    /// lexicon. </p>
+    /// <p>Lexicon object that provides name and the string content of the lexicon. </p>
     pub lexicon: std::option::Option<crate::model::Lexicon>,
-    /// <p>Metadata of the lexicon, including phonetic alphabetic used,
-    /// language code, lexicon ARN, number of lexemes defined in the lexicon, and
-    /// size of lexicon in bytes.</p>
+    /// <p>Metadata of the lexicon, including phonetic alphabetic used, language code, lexicon ARN, number of lexemes defined in the lexicon, and size of lexicon in bytes.</p>
     pub lexicon_attributes: std::option::Option<crate::model::LexiconAttributes>,
 }
 impl GetLexiconOutput {
-    /// <p>Lexicon object that provides name and the string content of the
-    /// lexicon. </p>
+    /// <p>Lexicon object that provides name and the string content of the lexicon. </p>
     pub fn lexicon(&self) -> std::option::Option<&crate::model::Lexicon> {
         self.lexicon.as_ref()
     }
-    /// <p>Metadata of the lexicon, including phonetic alphabetic used,
-    /// language code, lexicon ARN, number of lexemes defined in the lexicon, and
-    /// size of lexicon in bytes.</p>
+    /// <p>Metadata of the lexicon, including phonetic alphabetic used, language code, lexicon ARN, number of lexemes defined in the lexicon, and size of lexicon in bytes.</p>
     pub fn lexicon_attributes(&self) -> std::option::Option<&crate::model::LexiconAttributes> {
         self.lexicon_attributes.as_ref()
     }
@@ -580,28 +466,22 @@ pub mod get_lexicon_output {
         pub(crate) lexicon_attributes: std::option::Option<crate::model::LexiconAttributes>,
     }
     impl Builder {
-        /// <p>Lexicon object that provides name and the string content of the
-        /// lexicon. </p>
+        /// <p>Lexicon object that provides name and the string content of the lexicon. </p>
         pub fn lexicon(mut self, input: crate::model::Lexicon) -> Self {
             self.lexicon = Some(input);
             self
         }
-        /// <p>Lexicon object that provides name and the string content of the
-        /// lexicon. </p>
+        /// <p>Lexicon object that provides name and the string content of the lexicon. </p>
         pub fn set_lexicon(mut self, input: std::option::Option<crate::model::Lexicon>) -> Self {
             self.lexicon = input;
             self
         }
-        /// <p>Metadata of the lexicon, including phonetic alphabetic used,
-        /// language code, lexicon ARN, number of lexemes defined in the lexicon, and
-        /// size of lexicon in bytes.</p>
+        /// <p>Metadata of the lexicon, including phonetic alphabetic used, language code, lexicon ARN, number of lexemes defined in the lexicon, and size of lexicon in bytes.</p>
         pub fn lexicon_attributes(mut self, input: crate::model::LexiconAttributes) -> Self {
             self.lexicon_attributes = Some(input);
             self
         }
-        /// <p>Metadata of the lexicon, including phonetic alphabetic used,
-        /// language code, lexicon ARN, number of lexemes defined in the lexicon, and
-        /// size of lexicon in bytes.</p>
+        /// <p>Metadata of the lexicon, including phonetic alphabetic used, language code, lexicon ARN, number of lexemes defined in the lexicon, and size of lexicon in bytes.</p>
         pub fn set_lexicon_attributes(
             mut self,
             input: std::option::Option<crate::model::LexiconAttributes>,
@@ -631,9 +511,7 @@ impl GetLexiconOutput {
 pub struct DescribeVoicesOutput {
     /// <p>A list of voices with their properties.</p>
     pub voices: std::option::Option<std::vec::Vec<crate::model::Voice>>,
-    /// <p>The pagination token to use in the next request to continue the
-    /// listing of voices. <code>NextToken</code> is returned only if the response
-    /// is truncated.</p>
+    /// <p>The pagination token to use in the next request to continue the listing of voices. <code>NextToken</code> is returned only if the response is truncated.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeVoicesOutput {
@@ -641,9 +519,7 @@ impl DescribeVoicesOutput {
     pub fn voices(&self) -> std::option::Option<&[crate::model::Voice]> {
         self.voices.as_deref()
     }
-    /// <p>The pagination token to use in the next request to continue the
-    /// listing of voices. <code>NextToken</code> is returned only if the response
-    /// is truncated.</p>
+    /// <p>The pagination token to use in the next request to continue the listing of voices. <code>NextToken</code> is returned only if the response is truncated.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -685,16 +561,12 @@ pub mod describe_voices_output {
             self.voices = input;
             self
         }
-        /// <p>The pagination token to use in the next request to continue the
-        /// listing of voices. <code>NextToken</code> is returned only if the response
-        /// is truncated.</p>
+        /// <p>The pagination token to use in the next request to continue the listing of voices. <code>NextToken</code> is returned only if the response is truncated.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token to use in the next request to continue the
-        /// listing of voices. <code>NextToken</code> is returned only if the response
-        /// is truncated.</p>
+        /// <p>The pagination token to use in the next request to continue the listing of voices. <code>NextToken</code> is returned only if the response is truncated.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self

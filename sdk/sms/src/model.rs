@@ -2591,16 +2591,14 @@ impl AsRef<str> for AppValidationStrategy {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServerGroupReplicationConfiguration {
-    /// <p>The ID of the server group with which this replication configuration is
-    /// associated.</p>
+    /// <p>The ID of the server group with which this replication configuration is associated.</p>
     pub server_group_id: std::option::Option<std::string::String>,
     /// <p>The replication configuration for servers in the server group.</p>
     pub server_replication_configurations:
         std::option::Option<std::vec::Vec<crate::model::ServerReplicationConfiguration>>,
 }
 impl ServerGroupReplicationConfiguration {
-    /// <p>The ID of the server group with which this replication configuration is
-    /// associated.</p>
+    /// <p>The ID of the server group with which this replication configuration is associated.</p>
     pub fn server_group_id(&self) -> std::option::Option<&str> {
         self.server_group_id.as_deref()
     }
@@ -2633,14 +2631,12 @@ pub mod server_group_replication_configuration {
             std::option::Option<std::vec::Vec<crate::model::ServerReplicationConfiguration>>,
     }
     impl Builder {
-        /// <p>The ID of the server group with which this replication configuration is
-        /// associated.</p>
+        /// <p>The ID of the server group with which this replication configuration is associated.</p>
         pub fn server_group_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.server_group_id = Some(input.into());
             self
         }
-        /// <p>The ID of the server group with which this replication configuration is
-        /// associated.</p>
+        /// <p>The ID of the server group with which this replication configuration is associated.</p>
         pub fn set_server_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2690,16 +2686,14 @@ impl ServerGroupReplicationConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServerReplicationConfiguration {
-    /// <p>The ID of the server with which this replication configuration is
-    /// associated.</p>
+    /// <p>The ID of the server with which this replication configuration is associated.</p>
     pub server: std::option::Option<crate::model::Server>,
     /// <p>The parameters for replicating the server.</p>
     pub server_replication_parameters:
         std::option::Option<crate::model::ServerReplicationParameters>,
 }
 impl ServerReplicationConfiguration {
-    /// <p>The ID of the server with which this replication configuration is
-    /// associated.</p>
+    /// <p>The ID of the server with which this replication configuration is associated.</p>
     pub fn server(&self) -> std::option::Option<&crate::model::Server> {
         self.server.as_ref()
     }
@@ -2732,14 +2726,12 @@ pub mod server_replication_configuration {
             std::option::Option<crate::model::ServerReplicationParameters>,
     }
     impl Builder {
-        /// <p>The ID of the server with which this replication configuration is
-        /// associated.</p>
+        /// <p>The ID of the server with which this replication configuration is associated.</p>
         pub fn server(mut self, input: crate::model::Server) -> Self {
             self.server = Some(input);
             self
         }
-        /// <p>The ID of the server with which this replication configuration is
-        /// associated.</p>
+        /// <p>The ID of the server with which this replication configuration is associated.</p>
         pub fn set_server(mut self, input: std::option::Option<crate::model::Server>) -> Self {
             self.server = input;
             self
@@ -2792,24 +2784,14 @@ pub struct ServerReplicationParameters {
     pub number_of_recent_amis_to_keep: std::option::Option<i32>,
     /// <p>Indicates whether the replication job produces encrypted AMIs.</p>
     pub encrypted: std::option::Option<bool>,
-    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs.
-    /// This value can be any of the following:</p>
+    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>KMS key ID</p>
-    /// </li>
-    /// <li>
-    /// <p>KMS key alias</p>
-    /// </li>
-    /// <li>
-    /// <p>ARN referring to the KMS key ID</p>
-    /// </li>
-    /// <li>
-    /// <p>ARN referring to the KMS key alias</p>
-    /// </li>
+    /// <li> <p>KMS key ID</p> </li>
+    /// <li> <p>KMS key alias</p> </li>
+    /// <li> <p>ARN referring to the KMS key ID</p> </li>
+    /// <li> <p>ARN referring to the KMS key alias</p> </li>
     /// </ul>
-    /// <p>If encrypted is enabled but a KMS key ID is not specified, the
-    /// customer's default KMS key for Amazon EBS is used.</p>
+    /// <p>If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl ServerReplicationParameters {
@@ -2837,24 +2819,14 @@ impl ServerReplicationParameters {
     pub fn encrypted(&self) -> std::option::Option<bool> {
         self.encrypted
     }
-    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs.
-    /// This value can be any of the following:</p>
+    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>KMS key ID</p>
-    /// </li>
-    /// <li>
-    /// <p>KMS key alias</p>
-    /// </li>
-    /// <li>
-    /// <p>ARN referring to the KMS key ID</p>
-    /// </li>
-    /// <li>
-    /// <p>ARN referring to the KMS key alias</p>
-    /// </li>
+    /// <li> <p>KMS key ID</p> </li>
+    /// <li> <p>KMS key alias</p> </li>
+    /// <li> <p>ARN referring to the KMS key ID</p> </li>
+    /// <li> <p>ARN referring to the KMS key alias</p> </li>
     /// </ul>
-    /// <p>If encrypted is enabled but a KMS key ID is not specified, the
-    /// customer's default KMS key for Amazon EBS is used.</p>
+    /// <p>If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used.</p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
@@ -2959,46 +2931,26 @@ pub mod server_replication_parameters {
             self.encrypted = input;
             self
         }
-        /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs.
-        /// This value can be any of the following:</p>
+        /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>KMS key ID</p>
-        /// </li>
-        /// <li>
-        /// <p>KMS key alias</p>
-        /// </li>
-        /// <li>
-        /// <p>ARN referring to the KMS key ID</p>
-        /// </li>
-        /// <li>
-        /// <p>ARN referring to the KMS key alias</p>
-        /// </li>
+        /// <li> <p>KMS key ID</p> </li>
+        /// <li> <p>KMS key alias</p> </li>
+        /// <li> <p>ARN referring to the KMS key ID</p> </li>
+        /// <li> <p>ARN referring to the KMS key alias</p> </li>
         /// </ul>
-        /// <p>If encrypted is enabled but a KMS key ID is not specified, the
-        /// customer's default KMS key for Amazon EBS is used.</p>
+        /// <p>If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs.
-        /// This value can be any of the following:</p>
+        /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>KMS key ID</p>
-        /// </li>
-        /// <li>
-        /// <p>KMS key alias</p>
-        /// </li>
-        /// <li>
-        /// <p>ARN referring to the KMS key ID</p>
-        /// </li>
-        /// <li>
-        /// <p>ARN referring to the KMS key alias</p>
-        /// </li>
+        /// <li> <p>KMS key ID</p> </li>
+        /// <li> <p>KMS key alias</p> </li>
+        /// <li> <p>ARN referring to the KMS key ID</p> </li>
+        /// <li> <p>ARN referring to the KMS key alias</p> </li>
         /// </ul>
-        /// <p>If encrypted is enabled but a KMS key ID is not specified, the
-        /// customer's default KMS key for Amazon EBS is used.</p>
+        /// <p>If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -3028,8 +2980,7 @@ impl ServerReplicationParameters {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServerGroupLaunchConfiguration {
-    /// <p>The ID of the server group with which the launch configuration is
-    /// associated.</p>
+    /// <p>The ID of the server group with which the launch configuration is associated.</p>
     pub server_group_id: std::option::Option<std::string::String>,
     /// <p>The launch order of servers in the server group.</p>
     pub launch_order: std::option::Option<i32>,
@@ -3038,8 +2989,7 @@ pub struct ServerGroupLaunchConfiguration {
         std::option::Option<std::vec::Vec<crate::model::ServerLaunchConfiguration>>,
 }
 impl ServerGroupLaunchConfiguration {
-    /// <p>The ID of the server group with which the launch configuration is
-    /// associated.</p>
+    /// <p>The ID of the server group with which the launch configuration is associated.</p>
     pub fn server_group_id(&self) -> std::option::Option<&str> {
         self.server_group_id.as_deref()
     }
@@ -3078,14 +3028,12 @@ pub mod server_group_launch_configuration {
             std::option::Option<std::vec::Vec<crate::model::ServerLaunchConfiguration>>,
     }
     impl Builder {
-        /// <p>The ID of the server group with which the launch configuration is
-        /// associated.</p>
+        /// <p>The ID of the server group with which the launch configuration is associated.</p>
         pub fn server_group_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.server_group_id = Some(input.into());
             self
         }
-        /// <p>The ID of the server group with which the launch configuration is
-        /// associated.</p>
+        /// <p>The ID of the server group with which the launch configuration is associated.</p>
         pub fn set_server_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3423,8 +3371,7 @@ impl ServerLaunchConfiguration {
     }
 }
 
-/// <p>A script that runs on first launch of an Amazon EC2 instance. Used for configuring the
-/// server during launch.</p>
+/// <p>A script that runs on first launch of an Amazon EC2 instance. Used for configuring the server during launch.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserData {
@@ -3742,8 +3689,7 @@ pub struct ReplicationRun {
     pub stage_details: std::option::Option<crate::model::ReplicationRunStageDetails>,
     /// <p>The description of the current status of the replication job.</p>
     pub status_message: std::option::Option<std::string::String>,
-    /// <p>The ID of the Amazon Machine Image (AMI) from the replication
-    /// run.</p>
+    /// <p>The ID of the Amazon Machine Image (AMI) from the replication run.</p>
     pub ami_id: std::option::Option<std::string::String>,
     /// <p>The start time of the next replication run.</p>
     pub scheduled_start_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -3753,24 +3699,14 @@ pub struct ReplicationRun {
     pub description: std::option::Option<std::string::String>,
     /// <p>Indicates whether the replication run should produce an encrypted AMI.</p>
     pub encrypted: std::option::Option<bool>,
-    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs.
-    /// This value can be any of the following:</p>
+    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>KMS key ID</p>
-    /// </li>
-    /// <li>
-    /// <p>KMS key alias</p>
-    /// </li>
-    /// <li>
-    /// <p>ARN referring to the KMS key ID</p>
-    /// </li>
-    /// <li>
-    /// <p>ARN referring to the KMS key alias</p>
-    /// </li>
+    /// <li> <p>KMS key ID</p> </li>
+    /// <li> <p>KMS key alias</p> </li>
+    /// <li> <p>ARN referring to the KMS key ID</p> </li>
+    /// <li> <p>ARN referring to the KMS key alias</p> </li>
     /// </ul>
-    /// <p> If encrypted is <i>true</i> but a KMS key ID is not specified, the
-    /// customer's default KMS key for Amazon EBS is used. </p>
+    /// <p> If encrypted is <i>true</i> but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used. </p>
     pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl ReplicationRun {
@@ -3794,8 +3730,7 @@ impl ReplicationRun {
     pub fn status_message(&self) -> std::option::Option<&str> {
         self.status_message.as_deref()
     }
-    /// <p>The ID of the Amazon Machine Image (AMI) from the replication
-    /// run.</p>
+    /// <p>The ID of the Amazon Machine Image (AMI) from the replication run.</p>
     pub fn ami_id(&self) -> std::option::Option<&str> {
         self.ami_id.as_deref()
     }
@@ -3815,24 +3750,14 @@ impl ReplicationRun {
     pub fn encrypted(&self) -> std::option::Option<bool> {
         self.encrypted
     }
-    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs.
-    /// This value can be any of the following:</p>
+    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>KMS key ID</p>
-    /// </li>
-    /// <li>
-    /// <p>KMS key alias</p>
-    /// </li>
-    /// <li>
-    /// <p>ARN referring to the KMS key ID</p>
-    /// </li>
-    /// <li>
-    /// <p>ARN referring to the KMS key alias</p>
-    /// </li>
+    /// <li> <p>KMS key ID</p> </li>
+    /// <li> <p>KMS key alias</p> </li>
+    /// <li> <p>ARN referring to the KMS key ID</p> </li>
+    /// <li> <p>ARN referring to the KMS key alias</p> </li>
     /// </ul>
-    /// <p> If encrypted is <i>true</i> but a KMS key ID is not specified, the
-    /// customer's default KMS key for Amazon EBS is used. </p>
+    /// <p> If encrypted is <i>true</i> but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used. </p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
@@ -3938,14 +3863,12 @@ pub mod replication_run {
             self.status_message = input;
             self
         }
-        /// <p>The ID of the Amazon Machine Image (AMI) from the replication
-        /// run.</p>
+        /// <p>The ID of the Amazon Machine Image (AMI) from the replication run.</p>
         pub fn ami_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.ami_id = Some(input.into());
             self
         }
-        /// <p>The ID of the Amazon Machine Image (AMI) from the replication
-        /// run.</p>
+        /// <p>The ID of the Amazon Machine Image (AMI) from the replication run.</p>
         pub fn set_ami_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ami_id = input;
             self
@@ -3996,46 +3919,26 @@ pub mod replication_run {
             self.encrypted = input;
             self
         }
-        /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs.
-        /// This value can be any of the following:</p>
+        /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>KMS key ID</p>
-        /// </li>
-        /// <li>
-        /// <p>KMS key alias</p>
-        /// </li>
-        /// <li>
-        /// <p>ARN referring to the KMS key ID</p>
-        /// </li>
-        /// <li>
-        /// <p>ARN referring to the KMS key alias</p>
-        /// </li>
+        /// <li> <p>KMS key ID</p> </li>
+        /// <li> <p>KMS key alias</p> </li>
+        /// <li> <p>ARN referring to the KMS key ID</p> </li>
+        /// <li> <p>ARN referring to the KMS key alias</p> </li>
         /// </ul>
-        /// <p> If encrypted is <i>true</i> but a KMS key ID is not specified, the
-        /// customer's default KMS key for Amazon EBS is used. </p>
+        /// <p> If encrypted is <i>true</i> but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used. </p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs.
-        /// This value can be any of the following:</p>
+        /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>KMS key ID</p>
-        /// </li>
-        /// <li>
-        /// <p>KMS key alias</p>
-        /// </li>
-        /// <li>
-        /// <p>ARN referring to the KMS key ID</p>
-        /// </li>
-        /// <li>
-        /// <p>ARN referring to the KMS key alias</p>
-        /// </li>
+        /// <li> <p>KMS key ID</p> </li>
+        /// <li> <p>KMS key alias</p> </li>
+        /// <li> <p>ARN referring to the KMS key ID</p> </li>
+        /// <li> <p>ARN referring to the KMS key alias</p> </li>
         /// </ul>
-        /// <p> If encrypted is <i>true</i> but a KMS key ID is not specified, the
-        /// customer's default KMS key for Amazon EBS is used. </p>
+        /// <p> If encrypted is <i>true</i> but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used. </p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -4299,8 +4202,7 @@ pub struct ReplicationJob {
     pub run_once: std::option::Option<bool>,
     /// <p>The start time of the next replication run.</p>
     pub next_replication_run_start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The license type to be used for the AMI created by a successful replication
-    /// run.</p>
+    /// <p>The license type to be used for the AMI created by a successful replication run.</p>
     pub license_type: std::option::Option<crate::model::LicenseType>,
     /// <p>The name of the IAM role to be used by AWS SMS.</p>
     pub role_name: std::option::Option<std::string::String>,
@@ -4312,29 +4214,18 @@ pub struct ReplicationJob {
     pub status_message: std::option::Option<std::string::String>,
     /// <p>The description of the replication job.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The number of recent AMIs to keep in the customer's account for a replication job. By
-    /// default, the value is set to zero, meaning that all AMIs are kept.</p>
+    /// <p>The number of recent AMIs to keep in the customer's account for a replication job. By default, the value is set to zero, meaning that all AMIs are kept.</p>
     pub number_of_recent_amis_to_keep: std::option::Option<i32>,
     /// <p>Indicates whether the replication job should produce encrypted AMIs.</p>
     pub encrypted: std::option::Option<bool>,
-    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs.
-    /// This value can be any of the following: </p>
+    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following: </p>
     /// <ul>
-    /// <li>
-    /// <p>KMS key ID</p>
-    /// </li>
-    /// <li>
-    /// <p>KMS key alias</p>
-    /// </li>
-    /// <li>
-    /// <p>ARN referring to the KMS key ID</p>
-    /// </li>
-    /// <li>
-    /// <p>ARN referring to the KMS key alias</p>
-    /// </li>
+    /// <li> <p>KMS key ID</p> </li>
+    /// <li> <p>KMS key alias</p> </li>
+    /// <li> <p>ARN referring to the KMS key ID</p> </li>
+    /// <li> <p>ARN referring to the KMS key alias</p> </li>
     /// </ul>
-    /// <p>If encrypted is enabled but a KMS key ID is not specified, the
-    /// customer's default KMS key for Amazon EBS is used.</p>
+    /// <p>If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>Information about the replication runs.</p>
     pub replication_run_list: std::option::Option<std::vec::Vec<crate::model::ReplicationRun>>,
@@ -4374,8 +4265,7 @@ impl ReplicationJob {
     ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.next_replication_run_start_time.as_ref()
     }
-    /// <p>The license type to be used for the AMI created by a successful replication
-    /// run.</p>
+    /// <p>The license type to be used for the AMI created by a successful replication run.</p>
     pub fn license_type(&self) -> std::option::Option<&crate::model::LicenseType> {
         self.license_type.as_ref()
     }
@@ -4399,8 +4289,7 @@ impl ReplicationJob {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The number of recent AMIs to keep in the customer's account for a replication job. By
-    /// default, the value is set to zero, meaning that all AMIs are kept.</p>
+    /// <p>The number of recent AMIs to keep in the customer's account for a replication job. By default, the value is set to zero, meaning that all AMIs are kept.</p>
     pub fn number_of_recent_amis_to_keep(&self) -> std::option::Option<i32> {
         self.number_of_recent_amis_to_keep
     }
@@ -4408,24 +4297,14 @@ impl ReplicationJob {
     pub fn encrypted(&self) -> std::option::Option<bool> {
         self.encrypted
     }
-    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs.
-    /// This value can be any of the following: </p>
+    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following: </p>
     /// <ul>
-    /// <li>
-    /// <p>KMS key ID</p>
-    /// </li>
-    /// <li>
-    /// <p>KMS key alias</p>
-    /// </li>
-    /// <li>
-    /// <p>ARN referring to the KMS key ID</p>
-    /// </li>
-    /// <li>
-    /// <p>ARN referring to the KMS key alias</p>
-    /// </li>
+    /// <li> <p>KMS key ID</p> </li>
+    /// <li> <p>KMS key alias</p> </li>
+    /// <li> <p>ARN referring to the KMS key ID</p> </li>
+    /// <li> <p>ARN referring to the KMS key alias</p> </li>
     /// </ul>
-    /// <p>If encrypted is enabled but a KMS key ID is not specified, the
-    /// customer's default KMS key for Amazon EBS is used.</p>
+    /// <p>If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used.</p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
@@ -4586,14 +4465,12 @@ pub mod replication_job {
             self.next_replication_run_start_time = input;
             self
         }
-        /// <p>The license type to be used for the AMI created by a successful replication
-        /// run.</p>
+        /// <p>The license type to be used for the AMI created by a successful replication run.</p>
         pub fn license_type(mut self, input: crate::model::LicenseType) -> Self {
             self.license_type = Some(input);
             self
         }
-        /// <p>The license type to be used for the AMI created by a successful replication
-        /// run.</p>
+        /// <p>The license type to be used for the AMI created by a successful replication run.</p>
         pub fn set_license_type(
             mut self,
             input: std::option::Option<crate::model::LicenseType>,
@@ -4660,14 +4537,12 @@ pub mod replication_job {
             self.description = input;
             self
         }
-        /// <p>The number of recent AMIs to keep in the customer's account for a replication job. By
-        /// default, the value is set to zero, meaning that all AMIs are kept.</p>
+        /// <p>The number of recent AMIs to keep in the customer's account for a replication job. By default, the value is set to zero, meaning that all AMIs are kept.</p>
         pub fn number_of_recent_amis_to_keep(mut self, input: i32) -> Self {
             self.number_of_recent_amis_to_keep = Some(input);
             self
         }
-        /// <p>The number of recent AMIs to keep in the customer's account for a replication job. By
-        /// default, the value is set to zero, meaning that all AMIs are kept.</p>
+        /// <p>The number of recent AMIs to keep in the customer's account for a replication job. By default, the value is set to zero, meaning that all AMIs are kept.</p>
         pub fn set_number_of_recent_amis_to_keep(
             mut self,
             input: std::option::Option<i32>,
@@ -4685,46 +4560,26 @@ pub mod replication_job {
             self.encrypted = input;
             self
         }
-        /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs.
-        /// This value can be any of the following: </p>
+        /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following: </p>
         /// <ul>
-        /// <li>
-        /// <p>KMS key ID</p>
-        /// </li>
-        /// <li>
-        /// <p>KMS key alias</p>
-        /// </li>
-        /// <li>
-        /// <p>ARN referring to the KMS key ID</p>
-        /// </li>
-        /// <li>
-        /// <p>ARN referring to the KMS key alias</p>
-        /// </li>
+        /// <li> <p>KMS key ID</p> </li>
+        /// <li> <p>KMS key alias</p> </li>
+        /// <li> <p>ARN referring to the KMS key ID</p> </li>
+        /// <li> <p>ARN referring to the KMS key alias</p> </li>
         /// </ul>
-        /// <p>If encrypted is enabled but a KMS key ID is not specified, the
-        /// customer's default KMS key for Amazon EBS is used.</p>
+        /// <p>If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs.
-        /// This value can be any of the following: </p>
+        /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following: </p>
         /// <ul>
-        /// <li>
-        /// <p>KMS key ID</p>
-        /// </li>
-        /// <li>
-        /// <p>KMS key alias</p>
-        /// </li>
-        /// <li>
-        /// <p>ARN referring to the KMS key ID</p>
-        /// </li>
-        /// <li>
-        /// <p>ARN referring to the KMS key alias</p>
-        /// </li>
+        /// <li> <p>KMS key ID</p> </li>
+        /// <li> <p>KMS key alias</p> </li>
+        /// <li> <p>ARN referring to the KMS key ID</p> </li>
+        /// <li> <p>ARN referring to the KMS key alias</p> </li>
         /// </ul>
-        /// <p>If encrypted is enabled but a KMS key ID is not specified, the
-        /// customer's default KMS key for Amazon EBS is used.</p>
+        /// <p>If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self

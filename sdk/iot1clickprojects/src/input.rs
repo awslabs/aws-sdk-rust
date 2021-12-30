@@ -35,16 +35,12 @@ pub mod associate_device_with_placement_input {
             self.placement_name = input;
             self
         }
-        /// <p>The ID of the physical device to be associated with the given placement in the project.
-        /// Note that a mandatory 4 character prefix is required for all <code>deviceId</code>
-        /// values.</p>
+        /// <p>The ID of the physical device to be associated with the given placement in the project. Note that a mandatory 4 character prefix is required for all <code>deviceId</code> values.</p>
         pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.device_id = Some(input.into());
             self
         }
-        /// <p>The ID of the physical device to be associated with the given placement in the project.
-        /// Note that a mandatory 4 character prefix is required for all <code>deviceId</code>
-        /// values.</p>
+        /// <p>The ID of the physical device to be associated with the given placement in the project. Note that a mandatory 4 character prefix is required for all <code>deviceId</code> values.</p>
         pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_id = input;
             self
@@ -290,8 +286,7 @@ pub mod create_placement_input {
         ///
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
-        /// <p>Optional user-defined key/value pairs providing contextual data (such as location or
-        /// function) for the placement.</p>
+        /// <p>Optional user-defined key/value pairs providing contextual data (such as location or function) for the placement.</p>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -302,8 +297,7 @@ pub mod create_placement_input {
             self.attributes = Some(hash_map);
             self
         }
-        /// <p>Optional user-defined key/value pairs providing contextual data (such as location or
-        /// function) for the placement.</p>
+        /// <p>Optional user-defined key/value pairs providing contextual data (such as location or function) for the placement.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -499,18 +493,12 @@ pub mod create_project_input {
             self.description = input;
             self
         }
-        /// <p>The schema defining the placement to be created. A placement template defines placement
-        /// default attributes and device templates. You cannot add or remove device templates after the
-        /// project has been created. However, you can update <code>callbackOverrides</code> for the
-        /// device templates using the <code>UpdateProject</code> API.</p>
+        /// <p>The schema defining the placement to be created. A placement template defines placement default attributes and device templates. You cannot add or remove device templates after the project has been created. However, you can update <code>callbackOverrides</code> for the device templates using the <code>UpdateProject</code> API.</p>
         pub fn placement_template(mut self, input: crate::model::PlacementTemplate) -> Self {
             self.placement_template = Some(input);
             self
         }
-        /// <p>The schema defining the placement to be created. A placement template defines placement
-        /// default attributes and device templates. You cannot add or remove device templates after the
-        /// project has been created. However, you can update <code>callbackOverrides</code> for the
-        /// device templates using the <code>UpdateProject</code> API.</p>
+        /// <p>The schema defining the placement to be created. A placement template defines placement default attributes and device templates. You cannot add or remove device templates after the project has been created. However, you can update <code>callbackOverrides</code> for the device templates using the <code>UpdateProject</code> API.</p>
         pub fn set_placement_template(
             mut self,
             input: std::option::Option<crate::model::PlacementTemplate>,
@@ -522,9 +510,7 @@ pub mod create_project_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Optional tags (metadata key/value pairs) to be associated with the project. For example,
-        /// <code>{ {"key1": "value1", "key2": "value2"} }</code>. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging
-        /// Strategies</a>.</p>
+        /// <p>Optional tags (metadata key/value pairs) to be associated with the project. For example, <code>{ {"key1": "value1", "key2": "value2"} }</code>. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -535,9 +521,7 @@ pub mod create_project_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>Optional tags (metadata key/value pairs) to be associated with the project. For example,
-        /// <code>{ {"key1": "value1", "key2": "value2"} }</code>. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging
-        /// Strategies</a>.</p>
+        /// <p>Optional tags (metadata key/value pairs) to be associated with the project. For example, <code>{ {"key1": "value1", "key2": "value2"} }</code>. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1797,14 +1781,12 @@ pub mod list_placements_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return per request. If not set, a default value of 100 is
-        /// used.</p>
+        /// <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return per request. If not set, a default value of 100 is
-        /// used.</p>
+        /// <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1984,14 +1966,12 @@ pub mod list_projects_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to return per request. If not set, a default value of 100 is
-        /// used.</p>
+        /// <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return per request. If not set, a default value of 100 is
-        /// used.</p>
+        /// <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2307,8 +2287,7 @@ pub mod tag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The new or modifying tag(s) for the resource. See <a href="https://docs.aws.amazon.com/iot-1-click/latest/developerguide/1click-appendix.html#1click-limits">AWS IoT 1-Click Service Limits</a> for the maximum number of tags allowed per
-        /// resource.</p>
+        /// <p>The new or modifying tag(s) for the resource. See <a href="https://docs.aws.amazon.com/iot-1-click/latest/developerguide/1click-appendix.html#1click-limits">AWS IoT 1-Click Service Limits</a> for the maximum number of tags allowed per resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2319,8 +2298,7 @@ pub mod tag_resource_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The new or modifying tag(s) for the resource. See <a href="https://docs.aws.amazon.com/iot-1-click/latest/developerguide/1click-appendix.html#1click-limits">AWS IoT 1-Click Service Limits</a> for the maximum number of tags allowed per
-        /// resource.</p>
+        /// <p>The new or modifying tag(s) for the resource. See <a href="https://docs.aws.amazon.com/iot-1-click/latest/developerguide/1click-appendix.html#1click-limits">AWS IoT 1-Click Service Limits</a> for the maximum number of tags allowed per resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2701,8 +2679,7 @@ pub mod update_placement_input {
         ///
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
-        /// <p>The user-defined object of attributes used to update the placement. The maximum number of
-        /// key/value pairs is 50.</p>
+        /// <p>The user-defined object of attributes used to update the placement. The maximum number of key/value pairs is 50.</p>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -2713,8 +2690,7 @@ pub mod update_placement_input {
             self.attributes = Some(hash_map);
             self
         }
-        /// <p>The user-defined object of attributes used to update the placement. The maximum number of
-        /// key/value pairs is 50.</p>
+        /// <p>The user-defined object of attributes used to update the placement. The maximum number of key/value pairs is 50.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -2923,18 +2899,12 @@ pub mod update_project_input {
             self.description = input;
             self
         }
-        /// <p>An object defining the project update. Once a project has been created, you cannot add
-        /// device template names to the project. However, for a given <code>placementTemplate</code>, you
-        /// can update the associated <code>callbackOverrides</code> for the device definition using this
-        /// API.</p>
+        /// <p>An object defining the project update. Once a project has been created, you cannot add device template names to the project. However, for a given <code>placementTemplate</code>, you can update the associated <code>callbackOverrides</code> for the device definition using this API.</p>
         pub fn placement_template(mut self, input: crate::model::PlacementTemplate) -> Self {
             self.placement_template = Some(input);
             self
         }
-        /// <p>An object defining the project update. Once a project has been created, you cannot add
-        /// device template names to the project. However, for a given <code>placementTemplate</code>, you
-        /// can update the associated <code>callbackOverrides</code> for the device definition using this
-        /// API.</p>
+        /// <p>An object defining the project update. Once a project has been created, you cannot add device template names to the project. However, for a given <code>placementTemplate</code>, you can update the associated <code>callbackOverrides</code> for the device definition using this API.</p>
         pub fn set_placement_template(
             mut self,
             input: std::option::Option<crate::model::PlacementTemplate>,
@@ -3101,10 +3071,7 @@ pub struct UpdateProjectInput {
     pub project_name: std::option::Option<std::string::String>,
     /// <p>An optional user-defined description for the project.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>An object defining the project update. Once a project has been created, you cannot add
-    /// device template names to the project. However, for a given <code>placementTemplate</code>, you
-    /// can update the associated <code>callbackOverrides</code> for the device definition using this
-    /// API.</p>
+    /// <p>An object defining the project update. Once a project has been created, you cannot add device template names to the project. However, for a given <code>placementTemplate</code>, you can update the associated <code>callbackOverrides</code> for the device definition using this API.</p>
     pub placement_template: std::option::Option<crate::model::PlacementTemplate>,
 }
 impl UpdateProjectInput {
@@ -3116,10 +3083,7 @@ impl UpdateProjectInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>An object defining the project update. Once a project has been created, you cannot add
-    /// device template names to the project. However, for a given <code>placementTemplate</code>, you
-    /// can update the associated <code>callbackOverrides</code> for the device definition using this
-    /// API.</p>
+    /// <p>An object defining the project update. Once a project has been created, you cannot add device template names to the project. However, for a given <code>placementTemplate</code>, you can update the associated <code>callbackOverrides</code> for the device definition using this API.</p>
     pub fn placement_template(&self) -> std::option::Option<&crate::model::PlacementTemplate> {
         self.placement_template.as_ref()
     }
@@ -3142,8 +3106,7 @@ pub struct UpdatePlacementInput {
     pub placement_name: std::option::Option<std::string::String>,
     /// <p>The name of the project containing the placement to be updated.</p>
     pub project_name: std::option::Option<std::string::String>,
-    /// <p>The user-defined object of attributes used to update the placement. The maximum number of
-    /// key/value pairs is 50.</p>
+    /// <p>The user-defined object of attributes used to update the placement. The maximum number of key/value pairs is 50.</p>
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3156,8 +3119,7 @@ impl UpdatePlacementInput {
     pub fn project_name(&self) -> std::option::Option<&str> {
         self.project_name.as_deref()
     }
-    /// <p>The user-defined object of attributes used to update the placement. The maximum number of
-    /// key/value pairs is 50.</p>
+    /// <p>The user-defined object of attributes used to update the placement. The maximum number of key/value pairs is 50.</p>
     pub fn attributes(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -3209,8 +3171,7 @@ impl std::fmt::Debug for UntagResourceInput {
 pub struct TagResourceInput {
     /// <p>The ARN of the resouce for which tag(s) should be added or modified.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The new or modifying tag(s) for the resource. See <a href="https://docs.aws.amazon.com/iot-1-click/latest/developerguide/1click-appendix.html#1click-limits">AWS IoT 1-Click Service Limits</a> for the maximum number of tags allowed per
-    /// resource.</p>
+    /// <p>The new or modifying tag(s) for the resource. See <a href="https://docs.aws.amazon.com/iot-1-click/latest/developerguide/1click-appendix.html#1click-limits">AWS IoT 1-Click Service Limits</a> for the maximum number of tags allowed per resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3219,8 +3180,7 @@ impl TagResourceInput {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The new or modifying tag(s) for the resource. See <a href="https://docs.aws.amazon.com/iot-1-click/latest/developerguide/1click-appendix.html#1click-limits">AWS IoT 1-Click Service Limits</a> for the maximum number of tags allowed per
-    /// resource.</p>
+    /// <p>The new or modifying tag(s) for the resource. See <a href="https://docs.aws.amazon.com/iot-1-click/latest/developerguide/1click-appendix.html#1click-limits">AWS IoT 1-Click Service Limits</a> for the maximum number of tags allowed per resource.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -3264,8 +3224,7 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 pub struct ListProjectsInput {
     /// <p>The token to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return per request. If not set, a default value of 100 is
-    /// used.</p>
+    /// <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListProjectsInput {
@@ -3273,8 +3232,7 @@ impl ListProjectsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return per request. If not set, a default value of 100 is
-    /// used.</p>
+    /// <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -3296,8 +3254,7 @@ pub struct ListPlacementsInput {
     pub project_name: std::option::Option<std::string::String>,
     /// <p>The token to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return per request. If not set, a default value of 100 is
-    /// used.</p>
+    /// <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListPlacementsInput {
@@ -3309,8 +3266,7 @@ impl ListPlacementsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return per request. If not set, a default value of 100 is
-    /// used.</p>
+    /// <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -3494,14 +3450,9 @@ pub struct CreateProjectInput {
     pub project_name: std::option::Option<std::string::String>,
     /// <p>An optional description for the project.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The schema defining the placement to be created. A placement template defines placement
-    /// default attributes and device templates. You cannot add or remove device templates after the
-    /// project has been created. However, you can update <code>callbackOverrides</code> for the
-    /// device templates using the <code>UpdateProject</code> API.</p>
+    /// <p>The schema defining the placement to be created. A placement template defines placement default attributes and device templates. You cannot add or remove device templates after the project has been created. However, you can update <code>callbackOverrides</code> for the device templates using the <code>UpdateProject</code> API.</p>
     pub placement_template: std::option::Option<crate::model::PlacementTemplate>,
-    /// <p>Optional tags (metadata key/value pairs) to be associated with the project. For example,
-    /// <code>{ {"key1": "value1", "key2": "value2"} }</code>. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging
-    /// Strategies</a>.</p>
+    /// <p>Optional tags (metadata key/value pairs) to be associated with the project. For example, <code>{ {"key1": "value1", "key2": "value2"} }</code>. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3514,16 +3465,11 @@ impl CreateProjectInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The schema defining the placement to be created. A placement template defines placement
-    /// default attributes and device templates. You cannot add or remove device templates after the
-    /// project has been created. However, you can update <code>callbackOverrides</code> for the
-    /// device templates using the <code>UpdateProject</code> API.</p>
+    /// <p>The schema defining the placement to be created. A placement template defines placement default attributes and device templates. You cannot add or remove device templates after the project has been created. However, you can update <code>callbackOverrides</code> for the device templates using the <code>UpdateProject</code> API.</p>
     pub fn placement_template(&self) -> std::option::Option<&crate::model::PlacementTemplate> {
         self.placement_template.as_ref()
     }
-    /// <p>Optional tags (metadata key/value pairs) to be associated with the project. For example,
-    /// <code>{ {"key1": "value1", "key2": "value2"} }</code>. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging
-    /// Strategies</a>.</p>
+    /// <p>Optional tags (metadata key/value pairs) to be associated with the project. For example, <code>{ {"key1": "value1", "key2": "value2"} }</code>. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -3550,8 +3496,7 @@ pub struct CreatePlacementInput {
     pub placement_name: std::option::Option<std::string::String>,
     /// <p>The name of the project in which to create the placement.</p>
     pub project_name: std::option::Option<std::string::String>,
-    /// <p>Optional user-defined key/value pairs providing contextual data (such as location or
-    /// function) for the placement.</p>
+    /// <p>Optional user-defined key/value pairs providing contextual data (such as location or function) for the placement.</p>
     pub attributes:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3564,8 +3509,7 @@ impl CreatePlacementInput {
     pub fn project_name(&self) -> std::option::Option<&str> {
         self.project_name.as_deref()
     }
-    /// <p>Optional user-defined key/value pairs providing contextual data (such as location or
-    /// function) for the placement.</p>
+    /// <p>Optional user-defined key/value pairs providing contextual data (such as location or function) for the placement.</p>
     pub fn attributes(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -3591,9 +3535,7 @@ pub struct AssociateDeviceWithPlacementInput {
     pub project_name: std::option::Option<std::string::String>,
     /// <p>The name of the placement in which to associate the device.</p>
     pub placement_name: std::option::Option<std::string::String>,
-    /// <p>The ID of the physical device to be associated with the given placement in the project.
-    /// Note that a mandatory 4 character prefix is required for all <code>deviceId</code>
-    /// values.</p>
+    /// <p>The ID of the physical device to be associated with the given placement in the project. Note that a mandatory 4 character prefix is required for all <code>deviceId</code> values.</p>
     pub device_id: std::option::Option<std::string::String>,
     /// <p>The device template name to associate with the device ID.</p>
     pub device_template_name: std::option::Option<std::string::String>,
@@ -3607,9 +3549,7 @@ impl AssociateDeviceWithPlacementInput {
     pub fn placement_name(&self) -> std::option::Option<&str> {
         self.placement_name.as_deref()
     }
-    /// <p>The ID of the physical device to be associated with the given placement in the project.
-    /// Note that a mandatory 4 character prefix is required for all <code>deviceId</code>
-    /// values.</p>
+    /// <p>The ID of the physical device to be associated with the given placement in the project. Note that a mandatory 4 character prefix is required for all <code>deviceId</code> values.</p>
     pub fn device_id(&self) -> std::option::Option<&str> {
         self.device_id.as_deref()
     }

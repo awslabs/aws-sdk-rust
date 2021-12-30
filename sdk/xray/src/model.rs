@@ -100,9 +100,7 @@ impl SamplingRuleRecord {
     }
 }
 
-/// <p>A sampling rule that services use to decide whether to instrument a request. Rule
-/// fields can match properties of the service, or properties of a request. The service can ignore
-/// rules that don't match its properties.</p>
+/// <p>A sampling rule that services use to decide whether to instrument a request. Rule fields can match properties of the service, or properties of a request. The service can ignore rules that don't match its properties.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SamplingRule {
@@ -114,11 +112,9 @@ pub struct SamplingRule {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The priority of the sampling rule.</p>
     pub priority: i32,
-    /// <p>The percentage of matching requests to instrument, after the reservoir is
-    /// exhausted.</p>
+    /// <p>The percentage of matching requests to instrument, after the reservoir is exhausted.</p>
     pub fixed_rate: f64,
-    /// <p>A fixed number of matching requests to instrument per second, prior to applying the
-    /// fixed rate. The reservoir is not used directly by services, but applies to all services using the rule collectively.</p>
+    /// <p>A fixed number of matching requests to instrument per second, prior to applying the fixed rate. The reservoir is not used directly by services, but applies to all services using the rule collectively.</p>
     pub reservoir_size: i32,
     /// <p>Matches the <code>name</code> that the service uses to identify itself in segments.</p>
     pub service_name: std::option::Option<std::string::String>,
@@ -153,13 +149,11 @@ impl SamplingRule {
     pub fn priority(&self) -> i32 {
         self.priority
     }
-    /// <p>The percentage of matching requests to instrument, after the reservoir is
-    /// exhausted.</p>
+    /// <p>The percentage of matching requests to instrument, after the reservoir is exhausted.</p>
     pub fn fixed_rate(&self) -> f64 {
         self.fixed_rate
     }
-    /// <p>A fixed number of matching requests to instrument per second, prior to applying the
-    /// fixed rate. The reservoir is not used directly by services, but applies to all services using the rule collectively.</p>
+    /// <p>A fixed number of matching requests to instrument per second, prior to applying the fixed rate. The reservoir is not used directly by services, but applies to all services using the rule collectively.</p>
     pub fn reservoir_size(&self) -> i32 {
         self.reservoir_size
     }
@@ -277,26 +271,22 @@ pub mod sampling_rule {
             self.priority = input;
             self
         }
-        /// <p>The percentage of matching requests to instrument, after the reservoir is
-        /// exhausted.</p>
+        /// <p>The percentage of matching requests to instrument, after the reservoir is exhausted.</p>
         pub fn fixed_rate(mut self, input: f64) -> Self {
             self.fixed_rate = Some(input);
             self
         }
-        /// <p>The percentage of matching requests to instrument, after the reservoir is
-        /// exhausted.</p>
+        /// <p>The percentage of matching requests to instrument, after the reservoir is exhausted.</p>
         pub fn set_fixed_rate(mut self, input: std::option::Option<f64>) -> Self {
             self.fixed_rate = input;
             self
         }
-        /// <p>A fixed number of matching requests to instrument per second, prior to applying the
-        /// fixed rate. The reservoir is not used directly by services, but applies to all services using the rule collectively.</p>
+        /// <p>A fixed number of matching requests to instrument per second, prior to applying the fixed rate. The reservoir is not used directly by services, but applies to all services using the rule collectively.</p>
         pub fn reservoir_size(mut self, input: i32) -> Self {
             self.reservoir_size = Some(input);
             self
         }
-        /// <p>A fixed number of matching requests to instrument per second, prior to applying the
-        /// fixed rate. The reservoir is not used directly by services, but applies to all services using the rule collectively.</p>
+        /// <p>A fixed number of matching requests to instrument per second, prior to applying the fixed rate. The reservoir is not used directly by services, but applies to all services using the rule collectively.</p>
         pub fn set_reservoir_size(mut self, input: std::option::Option<i32>) -> Self {
             self.reservoir_size = input;
             self
@@ -425,11 +415,9 @@ pub struct SamplingRuleUpdate {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The priority of the sampling rule.</p>
     pub priority: std::option::Option<i32>,
-    /// <p>The percentage of matching requests to instrument, after the reservoir is
-    /// exhausted.</p>
+    /// <p>The percentage of matching requests to instrument, after the reservoir is exhausted.</p>
     pub fixed_rate: std::option::Option<f64>,
-    /// <p>A fixed number of matching requests to instrument per second, prior to applying the
-    /// fixed rate. The reservoir is not used directly by services, but applies to all services using the rule collectively.</p>
+    /// <p>A fixed number of matching requests to instrument per second, prior to applying the fixed rate. The reservoir is not used directly by services, but applies to all services using the rule collectively.</p>
     pub reservoir_size: std::option::Option<i32>,
     /// <p>Matches the hostname from a request URL.</p>
     pub host: std::option::Option<std::string::String>,
@@ -462,13 +450,11 @@ impl SamplingRuleUpdate {
     pub fn priority(&self) -> std::option::Option<i32> {
         self.priority
     }
-    /// <p>The percentage of matching requests to instrument, after the reservoir is
-    /// exhausted.</p>
+    /// <p>The percentage of matching requests to instrument, after the reservoir is exhausted.</p>
     pub fn fixed_rate(&self) -> std::option::Option<f64> {
         self.fixed_rate
     }
-    /// <p>A fixed number of matching requests to instrument per second, prior to applying the
-    /// fixed rate. The reservoir is not used directly by services, but applies to all services using the rule collectively.</p>
+    /// <p>A fixed number of matching requests to instrument per second, prior to applying the fixed rate. The reservoir is not used directly by services, but applies to all services using the rule collectively.</p>
     pub fn reservoir_size(&self) -> std::option::Option<i32> {
         self.reservoir_size
     }
@@ -580,26 +566,22 @@ pub mod sampling_rule_update {
             self.priority = input;
             self
         }
-        /// <p>The percentage of matching requests to instrument, after the reservoir is
-        /// exhausted.</p>
+        /// <p>The percentage of matching requests to instrument, after the reservoir is exhausted.</p>
         pub fn fixed_rate(mut self, input: f64) -> Self {
             self.fixed_rate = Some(input);
             self
         }
-        /// <p>The percentage of matching requests to instrument, after the reservoir is
-        /// exhausted.</p>
+        /// <p>The percentage of matching requests to instrument, after the reservoir is exhausted.</p>
         pub fn set_fixed_rate(mut self, input: std::option::Option<f64>) -> Self {
             self.fixed_rate = input;
             self
         }
-        /// <p>A fixed number of matching requests to instrument per second, prior to applying the
-        /// fixed rate. The reservoir is not used directly by services, but applies to all services using the rule collectively.</p>
+        /// <p>A fixed number of matching requests to instrument per second, prior to applying the fixed rate. The reservoir is not used directly by services, but applies to all services using the rule collectively.</p>
         pub fn reservoir_size(mut self, input: i32) -> Self {
             self.reservoir_size = Some(input);
             self
         }
-        /// <p>A fixed number of matching requests to instrument per second, prior to applying the
-        /// fixed rate. The reservoir is not used directly by services, but applies to all services using the rule collectively.</p>
+        /// <p>A fixed number of matching requests to instrument per second, prior to applying the fixed rate. The reservoir is not used directly by services, but applies to all services using the rule collectively.</p>
         pub fn set_reservoir_size(mut self, input: std::option::Option<i32>) -> Self {
             self.reservoir_size = input;
             self
@@ -717,14 +699,8 @@ pub struct Group {
     pub filter_expression: std::option::Option<std::string::String>,
     /// <p>The structure containing configurations related to insights.</p>
     /// <ul>
-    /// <li>
-    /// <p>The InsightsEnabled boolean can be set to true to enable insights for the
-    /// group or false to disable insights for the group.</p>
-    /// </li>
-    /// <li>
-    /// <p>The NotificationsEnabled boolean can be set to true to enable insights
-    /// notifications through Amazon EventBridge for the group.</p>
-    /// </li>
+    /// <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p> </li>
+    /// <li> <p>The NotificationsEnabled boolean can be set to true to enable insights notifications through Amazon EventBridge for the group.</p> </li>
     /// </ul>
     pub insights_configuration: std::option::Option<crate::model::InsightsConfiguration>,
 }
@@ -743,14 +719,8 @@ impl Group {
     }
     /// <p>The structure containing configurations related to insights.</p>
     /// <ul>
-    /// <li>
-    /// <p>The InsightsEnabled boolean can be set to true to enable insights for the
-    /// group or false to disable insights for the group.</p>
-    /// </li>
-    /// <li>
-    /// <p>The NotificationsEnabled boolean can be set to true to enable insights
-    /// notifications through Amazon EventBridge for the group.</p>
-    /// </li>
+    /// <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p> </li>
+    /// <li> <p>The NotificationsEnabled boolean can be set to true to enable insights notifications through Amazon EventBridge for the group.</p> </li>
     /// </ul>
     pub fn insights_configuration(
         &self,
@@ -815,14 +785,8 @@ pub mod group {
         }
         /// <p>The structure containing configurations related to insights.</p>
         /// <ul>
-        /// <li>
-        /// <p>The InsightsEnabled boolean can be set to true to enable insights for the
-        /// group or false to disable insights for the group.</p>
-        /// </li>
-        /// <li>
-        /// <p>The NotificationsEnabled boolean can be set to true to enable insights
-        /// notifications through Amazon EventBridge for the group.</p>
-        /// </li>
+        /// <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p> </li>
+        /// <li> <p>The NotificationsEnabled boolean can be set to true to enable insights notifications through Amazon EventBridge for the group.</p> </li>
         /// </ul>
         pub fn insights_configuration(
             mut self,
@@ -833,14 +797,8 @@ pub mod group {
         }
         /// <p>The structure containing configurations related to insights.</p>
         /// <ul>
-        /// <li>
-        /// <p>The InsightsEnabled boolean can be set to true to enable insights for the
-        /// group or false to disable insights for the group.</p>
-        /// </li>
-        /// <li>
-        /// <p>The NotificationsEnabled boolean can be set to true to enable insights
-        /// notifications through Amazon EventBridge for the group.</p>
-        /// </li>
+        /// <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p> </li>
+        /// <li> <p>The NotificationsEnabled boolean can be set to true to enable insights notifications through Amazon EventBridge for the group.</p> </li>
         /// </ul>
         pub fn set_insights_configuration(
             mut self,
@@ -871,21 +829,17 @@ impl Group {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InsightsConfiguration {
-    /// <p>Set the InsightsEnabled value to true to enable insights or false to disable
-    /// insights.</p>
+    /// <p>Set the InsightsEnabled value to true to enable insights or false to disable insights.</p>
     pub insights_enabled: std::option::Option<bool>,
-    /// <p>Set the NotificationsEnabled value to true to enable insights notifications. Notifications can only be
-    /// enabled on a group with InsightsEnabled set to true.</p>
+    /// <p>Set the NotificationsEnabled value to true to enable insights notifications. Notifications can only be enabled on a group with InsightsEnabled set to true.</p>
     pub notifications_enabled: std::option::Option<bool>,
 }
 impl InsightsConfiguration {
-    /// <p>Set the InsightsEnabled value to true to enable insights or false to disable
-    /// insights.</p>
+    /// <p>Set the InsightsEnabled value to true to enable insights or false to disable insights.</p>
     pub fn insights_enabled(&self) -> std::option::Option<bool> {
         self.insights_enabled
     }
-    /// <p>Set the NotificationsEnabled value to true to enable insights notifications. Notifications can only be
-    /// enabled on a group with InsightsEnabled set to true.</p>
+    /// <p>Set the NotificationsEnabled value to true to enable insights notifications. Notifications can only be enabled on a group with InsightsEnabled set to true.</p>
     pub fn notifications_enabled(&self) -> std::option::Option<bool> {
         self.notifications_enabled
     }
@@ -908,26 +862,22 @@ pub mod insights_configuration {
         pub(crate) notifications_enabled: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>Set the InsightsEnabled value to true to enable insights or false to disable
-        /// insights.</p>
+        /// <p>Set the InsightsEnabled value to true to enable insights or false to disable insights.</p>
         pub fn insights_enabled(mut self, input: bool) -> Self {
             self.insights_enabled = Some(input);
             self
         }
-        /// <p>Set the InsightsEnabled value to true to enable insights or false to disable
-        /// insights.</p>
+        /// <p>Set the InsightsEnabled value to true to enable insights or false to disable insights.</p>
         pub fn set_insights_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.insights_enabled = input;
             self
         }
-        /// <p>Set the NotificationsEnabled value to true to enable insights notifications. Notifications can only be
-        /// enabled on a group with InsightsEnabled set to true.</p>
+        /// <p>Set the NotificationsEnabled value to true to enable insights notifications. Notifications can only be enabled on a group with InsightsEnabled set to true.</p>
         pub fn notifications_enabled(mut self, input: bool) -> Self {
             self.notifications_enabled = Some(input);
             self
         }
-        /// <p>Set the NotificationsEnabled value to true to enable insights notifications. Notifications can only be
-        /// enabled on a group with InsightsEnabled set to true.</p>
+        /// <p>Set the NotificationsEnabled value to true to enable insights notifications. Notifications can only be enabled on a group with InsightsEnabled set to true.</p>
         pub fn set_notifications_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.notifications_enabled = input;
             self
@@ -948,48 +898,27 @@ impl InsightsConfiguration {
     }
 }
 
-/// <p>A map that contains tag keys and tag values to attach to an Amazon Web Services X-Ray group or sampling
-/// rule. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>
-/// in the <i>Amazon Web Services General Reference</i>.</p>
+/// <p>A map that contains tag keys and tag values to attach to an Amazon Web Services X-Ray group or sampling rule. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
 /// <p>The following restrictions apply to tags:</p>
 /// <ul>
-/// <li>
-/// <p>Maximum number of user-applied tags per resource: 50</p>
-/// </li>
-/// <li>
-/// <p>Tag keys and values are case sensitive.</p>
-/// </li>
-/// <li>
-/// <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use. You
-/// cannot edit or delete system tags.</p>
-/// </li>
+/// <li> <p>Maximum number of user-applied tags per resource: 50</p> </li>
+/// <li> <p>Tag keys and values are case sensitive.</p> </li>
+/// <li> <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use. You cannot edit or delete system tags.</p> </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
-    /// <p>A tag key, such as <code>Stage</code> or <code>Name</code>. A tag key cannot be empty. The
-    /// key can be a maximum of 128 characters, and can contain only Unicode letters, numbers, or separators,
-    /// or the following special characters: <code>+ - = . _ : /</code>
-    /// </p>
+    /// <p>A tag key, such as <code>Stage</code> or <code>Name</code>. A tag key cannot be empty. The key can be a maximum of 128 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code> </p>
     pub key: std::option::Option<std::string::String>,
-    /// <p>An optional tag value, such as <code>Production</code> or <code>test-only</code>. The value can be
-    /// a maximum of 255 characters, and contain only Unicode letters, numbers, or separators, or the following
-    /// special characters: <code>+ - = . _ : /</code>
-    /// </p>
+    /// <p>An optional tag value, such as <code>Production</code> or <code>test-only</code>. The value can be a maximum of 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code> </p>
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
-    /// <p>A tag key, such as <code>Stage</code> or <code>Name</code>. A tag key cannot be empty. The
-    /// key can be a maximum of 128 characters, and can contain only Unicode letters, numbers, or separators,
-    /// or the following special characters: <code>+ - = . _ : /</code>
-    /// </p>
+    /// <p>A tag key, such as <code>Stage</code> or <code>Name</code>. A tag key cannot be empty. The key can be a maximum of 128 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code> </p>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
-    /// <p>An optional tag value, such as <code>Production</code> or <code>test-only</code>. The value can be
-    /// a maximum of 255 characters, and contain only Unicode letters, numbers, or separators, or the following
-    /// special characters: <code>+ - = . _ : /</code>
-    /// </p>
+    /// <p>An optional tag value, such as <code>Production</code> or <code>test-only</code>. The value can be a maximum of 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code> </p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
@@ -1012,34 +941,22 @@ pub mod tag {
         pub(crate) value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A tag key, such as <code>Stage</code> or <code>Name</code>. A tag key cannot be empty. The
-        /// key can be a maximum of 128 characters, and can contain only Unicode letters, numbers, or separators,
-        /// or the following special characters: <code>+ - = . _ : /</code>
-        /// </p>
+        /// <p>A tag key, such as <code>Stage</code> or <code>Name</code>. A tag key cannot be empty. The key can be a maximum of 128 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code> </p>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
             self
         }
-        /// <p>A tag key, such as <code>Stage</code> or <code>Name</code>. A tag key cannot be empty. The
-        /// key can be a maximum of 128 characters, and can contain only Unicode letters, numbers, or separators,
-        /// or the following special characters: <code>+ - = . _ : /</code>
-        /// </p>
+        /// <p>A tag key, such as <code>Stage</code> or <code>Name</code>. A tag key cannot be empty. The key can be a maximum of 128 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code> </p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
         }
-        /// <p>An optional tag value, such as <code>Production</code> or <code>test-only</code>. The value can be
-        /// a maximum of 255 characters, and contain only Unicode letters, numbers, or separators, or the following
-        /// special characters: <code>+ - = . _ : /</code>
-        /// </p>
+        /// <p>An optional tag value, such as <code>Production</code> or <code>test-only</code>. The value can be a maximum of 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code> </p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             self.value = Some(input.into());
             self
         }
-        /// <p>An optional tag value, such as <code>Production</code> or <code>test-only</code>. The value can be
-        /// a maximum of 255 characters, and contain only Unicode letters, numbers, or separators, or the following
-        /// special characters: <code>+ - = . _ : /</code>
-        /// </p>
+        /// <p>An optional tag value, such as <code>Production</code> or <code>test-only</code>. The value can be a maximum of 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code> </p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -1470,8 +1387,7 @@ pub struct EncryptionConfig {
     pub key_id: std::option::Option<std::string::String>,
     /// <p>The encryption status. While the status is <code>UPDATING</code>, X-Ray may encrypt data with a combination of the new and old settings.</p>
     pub status: std::option::Option<crate::model::EncryptionStatus>,
-    /// <p>The type of encryption. Set to <code>KMS</code> for encryption with KMS keys. Set to <code>NONE</code> for
-    /// default encryption.</p>
+    /// <p>The type of encryption. Set to <code>KMS</code> for encryption with KMS keys. Set to <code>NONE</code> for default encryption.</p>
     pub r#type: std::option::Option<crate::model::EncryptionType>,
 }
 impl EncryptionConfig {
@@ -1483,8 +1399,7 @@ impl EncryptionConfig {
     pub fn status(&self) -> std::option::Option<&crate::model::EncryptionStatus> {
         self.status.as_ref()
     }
-    /// <p>The type of encryption. Set to <code>KMS</code> for encryption with KMS keys. Set to <code>NONE</code> for
-    /// default encryption.</p>
+    /// <p>The type of encryption. Set to <code>KMS</code> for encryption with KMS keys. Set to <code>NONE</code> for default encryption.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::EncryptionType> {
         self.r#type.as_ref()
     }
@@ -1532,14 +1447,12 @@ pub mod encryption_config {
             self.status = input;
             self
         }
-        /// <p>The type of encryption. Set to <code>KMS</code> for encryption with KMS keys. Set to <code>NONE</code> for
-        /// default encryption.</p>
+        /// <p>The type of encryption. Set to <code>KMS</code> for encryption with KMS keys. Set to <code>NONE</code> for default encryption.</p>
         pub fn r#type(mut self, input: crate::model::EncryptionType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The type of encryption. Set to <code>KMS</code> for encryption with KMS keys. Set to <code>NONE</code> for
-        /// default encryption.</p>
+        /// <p>The type of encryption. Set to <code>KMS</code> for encryption with KMS keys. Set to <code>NONE</code> for default encryption.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::EncryptionType>,
@@ -1678,16 +1591,11 @@ impl AsRef<str> for EncryptionStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TraceSummary {
-    /// <p>The unique identifier for the request that generated the trace's segments and
-    /// subsegments.</p>
+    /// <p>The unique identifier for the request that generated the trace's segments and subsegments.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The length of time in seconds between the start time of the root segment and the end
-    /// time of the last segment that completed.</p>
+    /// <p>The length of time in seconds between the start time of the root segment and the end time of the last segment that completed.</p>
     pub duration: std::option::Option<f64>,
-    /// <p>The length of time in seconds between the start and end times of the root segment. If
-    /// the service performs work asynchronously, the response time measures the time before the
-    /// response is sent to the user, while the duration measures the amount of time before the last
-    /// traced activity completes.</p>
+    /// <p>The length of time in seconds between the start and end times of the root segment. If the service performs work asynchronously, the response time measures the time before the response is sent to the user, while the duration measures the amount of time before the last traced activity completes.</p>
     pub response_time: std::option::Option<f64>,
     /// <p>The root segment document has a 500 series error.</p>
     pub has_fault: std::option::Option<bool>,
@@ -1712,8 +1620,7 @@ pub struct TraceSummary {
     pub service_ids: std::option::Option<std::vec::Vec<crate::model::ServiceId>>,
     /// <p>A list of resource ARNs for any resource corresponding to the trace segments.</p>
     pub resource_ar_ns: std::option::Option<std::vec::Vec<crate::model::ResourceArnDetail>>,
-    /// <p>A list of EC2 instance IDs for any instance corresponding to the trace
-    /// segments.</p>
+    /// <p>A list of EC2 instance IDs for any instance corresponding to the trace segments.</p>
     pub instance_ids: std::option::Option<std::vec::Vec<crate::model::InstanceIdDetail>>,
     /// <p>A list of Availability Zones for any zone corresponding to the trace segments.</p>
     pub availability_zones:
@@ -1722,11 +1629,9 @@ pub struct TraceSummary {
     pub entry_point: std::option::Option<crate::model::ServiceId>,
     /// <p>A collection of FaultRootCause structures corresponding to the trace segments.</p>
     pub fault_root_causes: std::option::Option<std::vec::Vec<crate::model::FaultRootCause>>,
-    /// <p>A collection of ErrorRootCause structures corresponding to the trace
-    /// segments.</p>
+    /// <p>A collection of ErrorRootCause structures corresponding to the trace segments.</p>
     pub error_root_causes: std::option::Option<std::vec::Vec<crate::model::ErrorRootCause>>,
-    /// <p>A collection of ResponseTimeRootCause structures corresponding to the trace
-    /// segments.</p>
+    /// <p>A collection of ResponseTimeRootCause structures corresponding to the trace segments.</p>
     pub response_time_root_causes:
         std::option::Option<std::vec::Vec<crate::model::ResponseTimeRootCause>>,
     /// <p>The revision number of a trace.</p>
@@ -1735,20 +1640,15 @@ pub struct TraceSummary {
     pub matched_event_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl TraceSummary {
-    /// <p>The unique identifier for the request that generated the trace's segments and
-    /// subsegments.</p>
+    /// <p>The unique identifier for the request that generated the trace's segments and subsegments.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The length of time in seconds between the start time of the root segment and the end
-    /// time of the last segment that completed.</p>
+    /// <p>The length of time in seconds between the start time of the root segment and the end time of the last segment that completed.</p>
     pub fn duration(&self) -> std::option::Option<f64> {
         self.duration
     }
-    /// <p>The length of time in seconds between the start and end times of the root segment. If
-    /// the service performs work asynchronously, the response time measures the time before the
-    /// response is sent to the user, while the duration measures the amount of time before the last
-    /// traced activity completes.</p>
+    /// <p>The length of time in seconds between the start and end times of the root segment. If the service performs work asynchronously, the response time measures the time before the response is sent to the user, while the duration measures the amount of time before the last traced activity completes.</p>
     pub fn response_time(&self) -> std::option::Option<f64> {
         self.response_time
     }
@@ -1795,8 +1695,7 @@ impl TraceSummary {
     pub fn resource_ar_ns(&self) -> std::option::Option<&[crate::model::ResourceArnDetail]> {
         self.resource_ar_ns.as_deref()
     }
-    /// <p>A list of EC2 instance IDs for any instance corresponding to the trace
-    /// segments.</p>
+    /// <p>A list of EC2 instance IDs for any instance corresponding to the trace segments.</p>
     pub fn instance_ids(&self) -> std::option::Option<&[crate::model::InstanceIdDetail]> {
         self.instance_ids.as_deref()
     }
@@ -1814,13 +1713,11 @@ impl TraceSummary {
     pub fn fault_root_causes(&self) -> std::option::Option<&[crate::model::FaultRootCause]> {
         self.fault_root_causes.as_deref()
     }
-    /// <p>A collection of ErrorRootCause structures corresponding to the trace
-    /// segments.</p>
+    /// <p>A collection of ErrorRootCause structures corresponding to the trace segments.</p>
     pub fn error_root_causes(&self) -> std::option::Option<&[crate::model::ErrorRootCause]> {
         self.error_root_causes.as_deref()
     }
-    /// <p>A collection of ResponseTimeRootCause structures corresponding to the trace
-    /// segments.</p>
+    /// <p>A collection of ResponseTimeRootCause structures corresponding to the trace segments.</p>
     pub fn response_time_root_causes(
         &self,
     ) -> std::option::Option<&[crate::model::ResponseTimeRootCause]> {
@@ -1899,42 +1796,32 @@ pub mod trace_summary {
         pub(crate) matched_event_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>The unique identifier for the request that generated the trace's segments and
-        /// subsegments.</p>
+        /// <p>The unique identifier for the request that generated the trace's segments and subsegments.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The unique identifier for the request that generated the trace's segments and
-        /// subsegments.</p>
+        /// <p>The unique identifier for the request that generated the trace's segments and subsegments.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
-        /// <p>The length of time in seconds between the start time of the root segment and the end
-        /// time of the last segment that completed.</p>
+        /// <p>The length of time in seconds between the start time of the root segment and the end time of the last segment that completed.</p>
         pub fn duration(mut self, input: f64) -> Self {
             self.duration = Some(input);
             self
         }
-        /// <p>The length of time in seconds between the start time of the root segment and the end
-        /// time of the last segment that completed.</p>
+        /// <p>The length of time in seconds between the start time of the root segment and the end time of the last segment that completed.</p>
         pub fn set_duration(mut self, input: std::option::Option<f64>) -> Self {
             self.duration = input;
             self
         }
-        /// <p>The length of time in seconds between the start and end times of the root segment. If
-        /// the service performs work asynchronously, the response time measures the time before the
-        /// response is sent to the user, while the duration measures the amount of time before the last
-        /// traced activity completes.</p>
+        /// <p>The length of time in seconds between the start and end times of the root segment. If the service performs work asynchronously, the response time measures the time before the response is sent to the user, while the duration measures the amount of time before the last traced activity completes.</p>
         pub fn response_time(mut self, input: f64) -> Self {
             self.response_time = Some(input);
             self
         }
-        /// <p>The length of time in seconds between the start and end times of the root segment. If
-        /// the service performs work asynchronously, the response time measures the time before the
-        /// response is sent to the user, while the duration measures the amount of time before the last
-        /// traced activity completes.</p>
+        /// <p>The length of time in seconds between the start and end times of the root segment. If the service performs work asynchronously, the response time measures the time before the response is sent to the user, while the duration measures the amount of time before the last traced activity completes.</p>
         pub fn set_response_time(mut self, input: std::option::Option<f64>) -> Self {
             self.response_time = input;
             self
@@ -2078,16 +1965,14 @@ pub mod trace_summary {
         ///
         /// To override the contents of this collection use [`set_instance_ids`](Self::set_instance_ids).
         ///
-        /// <p>A list of EC2 instance IDs for any instance corresponding to the trace
-        /// segments.</p>
+        /// <p>A list of EC2 instance IDs for any instance corresponding to the trace segments.</p>
         pub fn instance_ids(mut self, input: crate::model::InstanceIdDetail) -> Self {
             let mut v = self.instance_ids.unwrap_or_default();
             v.push(input);
             self.instance_ids = Some(v);
             self
         }
-        /// <p>A list of EC2 instance IDs for any instance corresponding to the trace
-        /// segments.</p>
+        /// <p>A list of EC2 instance IDs for any instance corresponding to the trace segments.</p>
         pub fn set_instance_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InstanceIdDetail>>,
@@ -2150,16 +2035,14 @@ pub mod trace_summary {
         ///
         /// To override the contents of this collection use [`set_error_root_causes`](Self::set_error_root_causes).
         ///
-        /// <p>A collection of ErrorRootCause structures corresponding to the trace
-        /// segments.</p>
+        /// <p>A collection of ErrorRootCause structures corresponding to the trace segments.</p>
         pub fn error_root_causes(mut self, input: crate::model::ErrorRootCause) -> Self {
             let mut v = self.error_root_causes.unwrap_or_default();
             v.push(input);
             self.error_root_causes = Some(v);
             self
         }
-        /// <p>A collection of ErrorRootCause structures corresponding to the trace
-        /// segments.</p>
+        /// <p>A collection of ErrorRootCause structures corresponding to the trace segments.</p>
         pub fn set_error_root_causes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ErrorRootCause>>,
@@ -2171,8 +2054,7 @@ pub mod trace_summary {
         ///
         /// To override the contents of this collection use [`set_response_time_root_causes`](Self::set_response_time_root_causes).
         ///
-        /// <p>A collection of ResponseTimeRootCause structures corresponding to the trace
-        /// segments.</p>
+        /// <p>A collection of ResponseTimeRootCause structures corresponding to the trace segments.</p>
         pub fn response_time_root_causes(
             mut self,
             input: crate::model::ResponseTimeRootCause,
@@ -2182,8 +2064,7 @@ pub mod trace_summary {
             self.response_time_root_causes = Some(v);
             self
         }
-        /// <p>A collection of ResponseTimeRootCause structures corresponding to the trace
-        /// segments.</p>
+        /// <p>A collection of ResponseTimeRootCause structures corresponding to the trace segments.</p>
         pub fn set_response_time_root_causes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResponseTimeRootCause>>,
@@ -2252,15 +2133,13 @@ impl TraceSummary {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResponseTimeRootCause {
-    /// <p>A list of corresponding services. A service identifies a segment and contains a name,
-    /// account ID, type, and inferred flag.</p>
+    /// <p>A list of corresponding services. A service identifies a segment and contains a name, account ID, type, and inferred flag.</p>
     pub services: std::option::Option<std::vec::Vec<crate::model::ResponseTimeRootCauseService>>,
     /// <p>A flag that denotes that the root cause impacts the trace client.</p>
     pub client_impacting: std::option::Option<bool>,
 }
 impl ResponseTimeRootCause {
-    /// <p>A list of corresponding services. A service identifies a segment and contains a name,
-    /// account ID, type, and inferred flag.</p>
+    /// <p>A list of corresponding services. A service identifies a segment and contains a name, account ID, type, and inferred flag.</p>
     pub fn services(&self) -> std::option::Option<&[crate::model::ResponseTimeRootCauseService]> {
         self.services.as_deref()
     }
@@ -2292,16 +2171,14 @@ pub mod response_time_root_cause {
         ///
         /// To override the contents of this collection use [`set_services`](Self::set_services).
         ///
-        /// <p>A list of corresponding services. A service identifies a segment and contains a name,
-        /// account ID, type, and inferred flag.</p>
+        /// <p>A list of corresponding services. A service identifies a segment and contains a name, account ID, type, and inferred flag.</p>
         pub fn services(mut self, input: crate::model::ResponseTimeRootCauseService) -> Self {
             let mut v = self.services.unwrap_or_default();
             v.push(input);
             self.services = Some(v);
             self
         }
-        /// <p>A list of corresponding services. A service identifies a segment and contains a name,
-        /// account ID, type, and inferred flag.</p>
+        /// <p>A list of corresponding services. A service identifies a segment and contains a name, account ID, type, and inferred flag.</p>
         pub fn set_services(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResponseTimeRootCauseService>>,
@@ -2503,8 +2380,7 @@ impl ResponseTimeRootCauseService {
     }
 }
 
-/// <p>A collection of segments and corresponding subsegments associated to a response time
-/// warning.</p>
+/// <p>A collection of segments and corresponding subsegments associated to a response time warning.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResponseTimeRootCauseEntity {
@@ -2600,15 +2476,13 @@ impl ResponseTimeRootCauseEntity {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ErrorRootCause {
-    /// <p>A list of services corresponding to an error. A service identifies a segment and it
-    /// contains a name, account ID, type, and inferred flag.</p>
+    /// <p>A list of services corresponding to an error. A service identifies a segment and it contains a name, account ID, type, and inferred flag.</p>
     pub services: std::option::Option<std::vec::Vec<crate::model::ErrorRootCauseService>>,
     /// <p>A flag that denotes that the root cause impacts the trace client.</p>
     pub client_impacting: std::option::Option<bool>,
 }
 impl ErrorRootCause {
-    /// <p>A list of services corresponding to an error. A service identifies a segment and it
-    /// contains a name, account ID, type, and inferred flag.</p>
+    /// <p>A list of services corresponding to an error. A service identifies a segment and it contains a name, account ID, type, and inferred flag.</p>
     pub fn services(&self) -> std::option::Option<&[crate::model::ErrorRootCauseService]> {
         self.services.as_deref()
     }
@@ -2640,16 +2514,14 @@ pub mod error_root_cause {
         ///
         /// To override the contents of this collection use [`set_services`](Self::set_services).
         ///
-        /// <p>A list of services corresponding to an error. A service identifies a segment and it
-        /// contains a name, account ID, type, and inferred flag.</p>
+        /// <p>A list of services corresponding to an error. A service identifies a segment and it contains a name, account ID, type, and inferred flag.</p>
         pub fn services(mut self, input: crate::model::ErrorRootCauseService) -> Self {
             let mut v = self.services.unwrap_or_default();
             v.push(input);
             self.services = Some(v);
             self
         }
-        /// <p>A list of services corresponding to an error. A service identifies a segment and it
-        /// contains a name, account ID, type, and inferred flag.</p>
+        /// <p>A list of services corresponding to an error. A service identifies a segment and it contains a name, account ID, type, and inferred flag.</p>
         pub fn set_services(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ErrorRootCauseService>>,
@@ -2851,8 +2723,7 @@ impl ErrorRootCauseService {
     }
 }
 
-/// <p>A collection of segments and corresponding subsegments associated to a trace summary
-/// error.</p>
+/// <p>A collection of segments and corresponding subsegments associated to a trace summary error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ErrorRootCauseEntity {
@@ -3030,15 +2901,13 @@ impl RootCauseException {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FaultRootCause {
-    /// <p>A list of corresponding services. A service identifies a segment and it contains a
-    /// name, account ID, type, and inferred flag.</p>
+    /// <p>A list of corresponding services. A service identifies a segment and it contains a name, account ID, type, and inferred flag.</p>
     pub services: std::option::Option<std::vec::Vec<crate::model::FaultRootCauseService>>,
     /// <p>A flag that denotes that the root cause impacts the trace client.</p>
     pub client_impacting: std::option::Option<bool>,
 }
 impl FaultRootCause {
-    /// <p>A list of corresponding services. A service identifies a segment and it contains a
-    /// name, account ID, type, and inferred flag.</p>
+    /// <p>A list of corresponding services. A service identifies a segment and it contains a name, account ID, type, and inferred flag.</p>
     pub fn services(&self) -> std::option::Option<&[crate::model::FaultRootCauseService]> {
         self.services.as_deref()
     }
@@ -3070,16 +2939,14 @@ pub mod fault_root_cause {
         ///
         /// To override the contents of this collection use [`set_services`](Self::set_services).
         ///
-        /// <p>A list of corresponding services. A service identifies a segment and it contains a
-        /// name, account ID, type, and inferred flag.</p>
+        /// <p>A list of corresponding services. A service identifies a segment and it contains a name, account ID, type, and inferred flag.</p>
         pub fn services(mut self, input: crate::model::FaultRootCauseService) -> Self {
             let mut v = self.services.unwrap_or_default();
             v.push(input);
             self.services = Some(v);
             self
         }
-        /// <p>A list of corresponding services. A service identifies a segment and it contains a
-        /// name, account ID, type, and inferred flag.</p>
+        /// <p>A list of corresponding services. A service identifies a segment and it contains a name, account ID, type, and inferred flag.</p>
         pub fn set_services(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FaultRootCauseService>>,
@@ -3281,8 +3148,7 @@ impl FaultRootCauseService {
     }
 }
 
-/// <p>A collection of segments and corresponding subsegments associated to a trace summary
-/// fault error.</p>
+/// <p>A collection of segments and corresponding subsegments associated to a trace summary fault error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FaultRootCauseEntity {
@@ -4208,8 +4074,7 @@ impl AsRef<str> for TimeRangeType {
     }
 }
 
-/// <p>Information about an application that processed requests, users that made requests, or downstream services,
-/// resources, and applications that an application used.</p>
+/// <p>Information about an application that processed requests, users that made requests, or downstream services, resources, and applications that an application used.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Service {
@@ -4225,24 +4090,10 @@ pub struct Service {
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The type of service.</p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, <code>AWS::EC2::Instance</code> for an
-    /// application running on Amazon EC2 or <code>AWS::DynamoDB::Table</code> for an Amazon DynamoDB table that the
-    /// application used.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, <code>AWS::DynamoDB</code>
-    /// for downstream calls to Amazon DynamoDB that didn't target a specific table.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>client</code> - Represents the clients that sent requests to a root
-    /// service.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>remote</code> - A downstream service of indeterminate type.</p>
-    /// </li>
+    /// <li> <p>Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, <code>AWS::EC2::Instance</code> for an application running on Amazon EC2 or <code>AWS::DynamoDB::Table</code> for an Amazon DynamoDB table that the application used.</p> </li>
+    /// <li> <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, <code>AWS::DynamoDB</code> for downstream calls to Amazon DynamoDB that didn't target a specific table.</p> </li>
+    /// <li> <p> <code>client</code> - Represents the clients that sent requests to a root service.</p> </li>
+    /// <li> <p> <code>remote</code> - A downstream service of indeterminate type.</p> </li>
     /// </ul>
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The service's state.</p>
@@ -4283,24 +4134,10 @@ impl Service {
     }
     /// <p>The type of service.</p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, <code>AWS::EC2::Instance</code> for an
-    /// application running on Amazon EC2 or <code>AWS::DynamoDB::Table</code> for an Amazon DynamoDB table that the
-    /// application used.</p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, <code>AWS::DynamoDB</code>
-    /// for downstream calls to Amazon DynamoDB that didn't target a specific table.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>client</code> - Represents the clients that sent requests to a root
-    /// service.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>remote</code> - A downstream service of indeterminate type.</p>
-    /// </li>
+    /// <li> <p>Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, <code>AWS::EC2::Instance</code> for an application running on Amazon EC2 or <code>AWS::DynamoDB::Table</code> for an Amazon DynamoDB table that the application used.</p> </li>
+    /// <li> <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, <code>AWS::DynamoDB</code> for downstream calls to Amazon DynamoDB that didn't target a specific table.</p> </li>
+    /// <li> <p> <code>client</code> - Represents the clients that sent requests to a root service.</p> </li>
+    /// <li> <p> <code>remote</code> - A downstream service of indeterminate type.</p> </li>
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
@@ -4437,24 +4274,10 @@ pub mod service {
         }
         /// <p>The type of service.</p>
         /// <ul>
-        /// <li>
-        /// <p>Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, <code>AWS::EC2::Instance</code> for an
-        /// application running on Amazon EC2 or <code>AWS::DynamoDB::Table</code> for an Amazon DynamoDB table that the
-        /// application used.</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, <code>AWS::DynamoDB</code>
-        /// for downstream calls to Amazon DynamoDB that didn't target a specific table.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>client</code> - Represents the clients that sent requests to a root
-        /// service.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>remote</code> - A downstream service of indeterminate type.</p>
-        /// </li>
+        /// <li> <p>Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, <code>AWS::EC2::Instance</code> for an application running on Amazon EC2 or <code>AWS::DynamoDB::Table</code> for an Amazon DynamoDB table that the application used.</p> </li>
+        /// <li> <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, <code>AWS::DynamoDB</code> for downstream calls to Amazon DynamoDB that didn't target a specific table.</p> </li>
+        /// <li> <p> <code>client</code> - Represents the clients that sent requests to a root service.</p> </li>
+        /// <li> <p> <code>remote</code> - A downstream service of indeterminate type.</p> </li>
         /// </ul>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.r#type = Some(input.into());
@@ -4462,24 +4285,10 @@ pub mod service {
         }
         /// <p>The type of service.</p>
         /// <ul>
-        /// <li>
-        /// <p>Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, <code>AWS::EC2::Instance</code> for an
-        /// application running on Amazon EC2 or <code>AWS::DynamoDB::Table</code> for an Amazon DynamoDB table that the
-        /// application used.</p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, <code>AWS::DynamoDB</code>
-        /// for downstream calls to Amazon DynamoDB that didn't target a specific table.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>client</code> - Represents the clients that sent requests to a root
-        /// service.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>remote</code> - A downstream service of indeterminate type.</p>
-        /// </li>
+        /// <li> <p>Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, <code>AWS::EC2::Instance</code> for an application running on Amazon EC2 or <code>AWS::DynamoDB::Table</code> for an Amazon DynamoDB table that the application used.</p> </li>
+        /// <li> <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, <code>AWS::DynamoDB</code> for downstream calls to Amazon DynamoDB that didn't target a specific table.</p> </li>
+        /// <li> <p> <code>client</code> - Represents the clients that sent requests to a root service.</p> </li>
+        /// <li> <p> <code>remote</code> - A downstream service of indeterminate type.</p> </li>
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
@@ -4618,8 +4427,7 @@ impl Service {
     }
 }
 
-/// <p>An entry in a histogram for a statistic. A histogram maps the range of observed values
-/// on the X axis, and the prevalence of each value on the Y axis.</p>
+/// <p>An entry in a histogram for a statistic. A histogram maps the range of observed values on the X axis, and the prevalence of each value on the Y axis.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HistogramEntry {
@@ -4832,15 +4640,13 @@ impl ServiceStatistics {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FaultStatistics {
-    /// <p>The number of requests that failed with untracked 5xx Server Error status
-    /// codes.</p>
+    /// <p>The number of requests that failed with untracked 5xx Server Error status codes.</p>
     pub other_count: std::option::Option<i64>,
     /// <p>The total number of requests that failed with a 5xx Server Error status code.</p>
     pub total_count: std::option::Option<i64>,
 }
 impl FaultStatistics {
-    /// <p>The number of requests that failed with untracked 5xx Server Error status
-    /// codes.</p>
+    /// <p>The number of requests that failed with untracked 5xx Server Error status codes.</p>
     pub fn other_count(&self) -> std::option::Option<i64> {
         self.other_count
     }
@@ -4867,14 +4673,12 @@ pub mod fault_statistics {
         pub(crate) total_count: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>The number of requests that failed with untracked 5xx Server Error status
-        /// codes.</p>
+        /// <p>The number of requests that failed with untracked 5xx Server Error status codes.</p>
         pub fn other_count(mut self, input: i64) -> Self {
             self.other_count = Some(input);
             self
         }
-        /// <p>The number of requests that failed with untracked 5xx Server Error status
-        /// codes.</p>
+        /// <p>The number of requests that failed with untracked 5xx Server Error status codes.</p>
         pub fn set_other_count(mut self, input: std::option::Option<i64>) -> Self {
             self.other_count = input;
             self
@@ -4911,8 +4715,7 @@ impl FaultStatistics {
 pub struct ErrorStatistics {
     /// <p>The number of requests that failed with a 419 throttling status code.</p>
     pub throttle_count: std::option::Option<i64>,
-    /// <p>The number of requests that failed with untracked 4xx Client Error status
-    /// codes.</p>
+    /// <p>The number of requests that failed with untracked 4xx Client Error status codes.</p>
     pub other_count: std::option::Option<i64>,
     /// <p>The total number of requests that failed with a 4xx Client Error status code.</p>
     pub total_count: std::option::Option<i64>,
@@ -4922,8 +4725,7 @@ impl ErrorStatistics {
     pub fn throttle_count(&self) -> std::option::Option<i64> {
         self.throttle_count
     }
-    /// <p>The number of requests that failed with untracked 4xx Client Error status
-    /// codes.</p>
+    /// <p>The number of requests that failed with untracked 4xx Client Error status codes.</p>
     pub fn other_count(&self) -> std::option::Option<i64> {
         self.other_count
     }
@@ -4962,14 +4764,12 @@ pub mod error_statistics {
             self.throttle_count = input;
             self
         }
-        /// <p>The number of requests that failed with untracked 4xx Client Error status
-        /// codes.</p>
+        /// <p>The number of requests that failed with untracked 4xx Client Error status codes.</p>
         pub fn other_count(mut self, input: i64) -> Self {
             self.other_count = Some(input);
             self
         }
-        /// <p>The number of requests that failed with untracked 4xx Client Error status
-        /// codes.</p>
+        /// <p>The number of requests that failed with untracked 4xx Client Error status codes.</p>
         pub fn set_other_count(mut self, input: std::option::Option<i64>) -> Self {
             self.other_count = input;
             self
@@ -5584,8 +5384,7 @@ impl TimeSeriesServiceStatistics {
     }
 }
 
-/// <p>The predicted high and low fault count. This is used to determine if a service has
-/// become anomalous and if an insight should be created.</p>
+/// <p>The predicted high and low fault count. This is used to determine if a service has become anomalous and if an insight should be created.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ForecastStatistics {
@@ -5658,8 +5457,7 @@ impl ForecastStatistics {
     }
 }
 
-/// <p>Sampling statistics from a call to <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingTargets.html">GetSamplingTargets</a> that X-Ray
-/// could not process.</p>
+/// <p>Sampling statistics from a call to <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingTargets.html">GetSamplingTargets</a> that X-Ray could not process.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnprocessedStatistics {
@@ -5751,23 +5549,19 @@ impl UnprocessedStatistics {
     }
 }
 
-/// <p>Temporary changes to a sampling rule configuration. To meet the global sampling target for a rule, X-Ray
-/// calculates a new reservoir for each service based on the recent sampling results of all services that called
-/// <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingTargets.html">GetSamplingTargets</a>.</p>
+/// <p>Temporary changes to a sampling rule configuration. To meet the global sampling target for a rule, X-Ray calculates a new reservoir for each service based on the recent sampling results of all services that called <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingTargets.html">GetSamplingTargets</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SamplingTargetDocument {
     /// <p>The name of the sampling rule.</p>
     pub rule_name: std::option::Option<std::string::String>,
-    /// <p>The percentage of matching requests to instrument, after the reservoir is
-    /// exhausted.</p>
+    /// <p>The percentage of matching requests to instrument, after the reservoir is exhausted.</p>
     pub fixed_rate: f64,
     /// <p>The number of requests per second that X-Ray allocated for this service.</p>
     pub reservoir_quota: std::option::Option<i32>,
     /// <p>When the reservoir quota expires.</p>
     pub reservoir_quota_ttl: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The number of seconds for the service to wait before getting sampling targets
-    /// again.</p>
+    /// <p>The number of seconds for the service to wait before getting sampling targets again.</p>
     pub interval: std::option::Option<i32>,
 }
 impl SamplingTargetDocument {
@@ -5775,8 +5569,7 @@ impl SamplingTargetDocument {
     pub fn rule_name(&self) -> std::option::Option<&str> {
         self.rule_name.as_deref()
     }
-    /// <p>The percentage of matching requests to instrument, after the reservoir is
-    /// exhausted.</p>
+    /// <p>The percentage of matching requests to instrument, after the reservoir is exhausted.</p>
     pub fn fixed_rate(&self) -> f64 {
         self.fixed_rate
     }
@@ -5788,8 +5581,7 @@ impl SamplingTargetDocument {
     pub fn reservoir_quota_ttl(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.reservoir_quota_ttl.as_ref()
     }
-    /// <p>The number of seconds for the service to wait before getting sampling targets
-    /// again.</p>
+    /// <p>The number of seconds for the service to wait before getting sampling targets again.</p>
     pub fn interval(&self) -> std::option::Option<i32> {
         self.interval
     }
@@ -5828,14 +5620,12 @@ pub mod sampling_target_document {
             self.rule_name = input;
             self
         }
-        /// <p>The percentage of matching requests to instrument, after the reservoir is
-        /// exhausted.</p>
+        /// <p>The percentage of matching requests to instrument, after the reservoir is exhausted.</p>
         pub fn fixed_rate(mut self, input: f64) -> Self {
             self.fixed_rate = Some(input);
             self
         }
-        /// <p>The percentage of matching requests to instrument, after the reservoir is
-        /// exhausted.</p>
+        /// <p>The percentage of matching requests to instrument, after the reservoir is exhausted.</p>
         pub fn set_fixed_rate(mut self, input: std::option::Option<f64>) -> Self {
             self.fixed_rate = input;
             self
@@ -5863,14 +5653,12 @@ pub mod sampling_target_document {
             self.reservoir_quota_ttl = input;
             self
         }
-        /// <p>The number of seconds for the service to wait before getting sampling targets
-        /// again.</p>
+        /// <p>The number of seconds for the service to wait before getting sampling targets again.</p>
         pub fn interval(mut self, input: i32) -> Self {
             self.interval = Some(input);
             self
         }
-        /// <p>The number of seconds for the service to wait before getting sampling targets
-        /// again.</p>
+        /// <p>The number of seconds for the service to wait before getting sampling targets again.</p>
         pub fn set_interval(mut self, input: std::option::Option<i32>) -> Self {
             self.interval = input;
             self
@@ -5894,9 +5682,7 @@ impl SamplingTargetDocument {
     }
 }
 
-/// <p>Request sampling results for a single rule from a service. Results are for the last 10
-/// seconds unless the service has been assigned a longer reporting interval after a previous call
-/// to <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingTargets.html">GetSamplingTargets</a>.</p>
+/// <p>Request sampling results for a single rule from a service. Results are for the last 10 seconds unless the service has been assigned a longer reporting interval after a previous call to <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingTargets.html">GetSamplingTargets</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SamplingStatisticsDocument {
@@ -6189,7 +5975,7 @@ pub struct InsightSummary {
     pub insight_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the group that the insight belongs to.</p>
     pub group_arn: std::option::Option<std::string::String>,
-    /// <p>The name of the group  that the insight belongs to.</p>
+    /// <p>The name of the group that the insight belongs to.</p>
     pub group_name: std::option::Option<std::string::String>,
     /// <p></p>
     pub root_cause_service_id: std::option::Option<crate::model::ServiceId>,
@@ -6203,12 +5989,10 @@ pub struct InsightSummary {
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A brief description of the insight.</p>
     pub summary: std::option::Option<std::string::String>,
-    /// <p>The impact statistics of the client side service. This includes the number of requests
-    /// to the client service and whether the requests were faults or okay. </p>
+    /// <p>The impact statistics of the client side service. This includes the number of requests to the client service and whether the requests were faults or okay. </p>
     pub client_request_impact_statistics:
         std::option::Option<crate::model::RequestImpactStatistics>,
-    /// <p>The impact statistics of the root cause service. This includes the number of requests to
-    /// the client service and whether the requests were faults or okay. </p>
+    /// <p>The impact statistics of the root cause service. This includes the number of requests to the client service and whether the requests were faults or okay. </p>
     pub root_cause_service_request_impact_statistics:
         std::option::Option<crate::model::RequestImpactStatistics>,
     /// <p>The service within the insight that is most impacted by the incident.</p>
@@ -6225,7 +6009,7 @@ impl InsightSummary {
     pub fn group_arn(&self) -> std::option::Option<&str> {
         self.group_arn.as_deref()
     }
-    /// <p>The name of the group  that the insight belongs to.</p>
+    /// <p>The name of the group that the insight belongs to.</p>
     pub fn group_name(&self) -> std::option::Option<&str> {
         self.group_name.as_deref()
     }
@@ -6253,15 +6037,13 @@ impl InsightSummary {
     pub fn summary(&self) -> std::option::Option<&str> {
         self.summary.as_deref()
     }
-    /// <p>The impact statistics of the client side service. This includes the number of requests
-    /// to the client service and whether the requests were faults or okay. </p>
+    /// <p>The impact statistics of the client side service. This includes the number of requests to the client service and whether the requests were faults or okay. </p>
     pub fn client_request_impact_statistics(
         &self,
     ) -> std::option::Option<&crate::model::RequestImpactStatistics> {
         self.client_request_impact_statistics.as_ref()
     }
-    /// <p>The impact statistics of the root cause service. This includes the number of requests to
-    /// the client service and whether the requests were faults or okay. </p>
+    /// <p>The impact statistics of the root cause service. This includes the number of requests to the client service and whether the requests were faults or okay. </p>
     pub fn root_cause_service_request_impact_statistics(
         &self,
     ) -> std::option::Option<&crate::model::RequestImpactStatistics> {
@@ -6345,12 +6127,12 @@ pub mod insight_summary {
             self.group_arn = input;
             self
         }
-        /// <p>The name of the group  that the insight belongs to.</p>
+        /// <p>The name of the group that the insight belongs to.</p>
         pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.group_name = Some(input.into());
             self
         }
-        /// <p>The name of the group  that the insight belongs to.</p>
+        /// <p>The name of the group that the insight belongs to.</p>
         pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.group_name = input;
             self
@@ -6433,8 +6215,7 @@ pub mod insight_summary {
             self.summary = input;
             self
         }
-        /// <p>The impact statistics of the client side service. This includes the number of requests
-        /// to the client service and whether the requests were faults or okay. </p>
+        /// <p>The impact statistics of the client side service. This includes the number of requests to the client service and whether the requests were faults or okay. </p>
         pub fn client_request_impact_statistics(
             mut self,
             input: crate::model::RequestImpactStatistics,
@@ -6442,8 +6223,7 @@ pub mod insight_summary {
             self.client_request_impact_statistics = Some(input);
             self
         }
-        /// <p>The impact statistics of the client side service. This includes the number of requests
-        /// to the client service and whether the requests were faults or okay. </p>
+        /// <p>The impact statistics of the client side service. This includes the number of requests to the client service and whether the requests were faults or okay. </p>
         pub fn set_client_request_impact_statistics(
             mut self,
             input: std::option::Option<crate::model::RequestImpactStatistics>,
@@ -6451,8 +6231,7 @@ pub mod insight_summary {
             self.client_request_impact_statistics = input;
             self
         }
-        /// <p>The impact statistics of the root cause service. This includes the number of requests to
-        /// the client service and whether the requests were faults or okay. </p>
+        /// <p>The impact statistics of the root cause service. This includes the number of requests to the client service and whether the requests were faults or okay. </p>
         pub fn root_cause_service_request_impact_statistics(
             mut self,
             input: crate::model::RequestImpactStatistics,
@@ -6460,8 +6239,7 @@ pub mod insight_summary {
             self.root_cause_service_request_impact_statistics = Some(input);
             self
         }
-        /// <p>The impact statistics of the root cause service. This includes the number of requests to
-        /// the client service and whether the requests were faults or okay. </p>
+        /// <p>The impact statistics of the root cause service. This includes the number of requests to the client service and whether the requests were faults or okay. </p>
         pub fn set_root_cause_service_request_impact_statistics(
             mut self,
             input: std::option::Option<crate::model::RequestImpactStatistics>,
@@ -6784,8 +6562,7 @@ impl AsRef<str> for InsightCategory {
     }
 }
 
-/// <p>Information about an application that processed requests, users that made requests, or downstream services,
-/// resources, and applications that an application used. </p>
+/// <p>Information about an application that processed requests, users that made requests, or downstream services, resources, and applications that an application used. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InsightImpactGraphService {
@@ -6793,21 +6570,10 @@ pub struct InsightImpactGraphService {
     pub reference_id: std::option::Option<i32>,
     /// <p>Identifier for the service. Unique within the service map.</p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, AWS::EC2::Instance for an application running
-    /// on Amazon EC2 or AWS::DynamoDB::Table for an Amazon DynamoDB table that the application used. </p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon
-    /// DynamoDB that didn't target a specific table. </p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon
-    /// DynamoDB that didn't target a specific table. </p>
-    /// </li>
-    /// <li>
-    /// <p>remote - A downstream service of indeterminate type.</p>
-    /// </li>
+    /// <li> <p>Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, AWS::EC2::Instance for an application running on Amazon EC2 or AWS::DynamoDB::Table for an Amazon DynamoDB table that the application used. </p> </li>
+    /// <li> <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific table. </p> </li>
+    /// <li> <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific table. </p> </li>
+    /// <li> <p>remote - A downstream service of indeterminate type.</p> </li>
     /// </ul>
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The canonical name of the service.</p>
@@ -6826,21 +6592,10 @@ impl InsightImpactGraphService {
     }
     /// <p>Identifier for the service. Unique within the service map.</p>
     /// <ul>
-    /// <li>
-    /// <p>Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, AWS::EC2::Instance for an application running
-    /// on Amazon EC2 or AWS::DynamoDB::Table for an Amazon DynamoDB table that the application used. </p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon
-    /// DynamoDB that didn't target a specific table. </p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon
-    /// DynamoDB that didn't target a specific table. </p>
-    /// </li>
-    /// <li>
-    /// <p>remote - A downstream service of indeterminate type.</p>
-    /// </li>
+    /// <li> <p>Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, AWS::EC2::Instance for an application running on Amazon EC2 or AWS::DynamoDB::Table for an Amazon DynamoDB table that the application used. </p> </li>
+    /// <li> <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific table. </p> </li>
+    /// <li> <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific table. </p> </li>
+    /// <li> <p>remote - A downstream service of indeterminate type.</p> </li>
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
@@ -6900,21 +6655,10 @@ pub mod insight_impact_graph_service {
         }
         /// <p>Identifier for the service. Unique within the service map.</p>
         /// <ul>
-        /// <li>
-        /// <p>Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, AWS::EC2::Instance for an application running
-        /// on Amazon EC2 or AWS::DynamoDB::Table for an Amazon DynamoDB table that the application used. </p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon
-        /// DynamoDB that didn't target a specific table. </p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon
-        /// DynamoDB that didn't target a specific table. </p>
-        /// </li>
-        /// <li>
-        /// <p>remote - A downstream service of indeterminate type.</p>
-        /// </li>
+        /// <li> <p>Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, AWS::EC2::Instance for an application running on Amazon EC2 or AWS::DynamoDB::Table for an Amazon DynamoDB table that the application used. </p> </li>
+        /// <li> <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific table. </p> </li>
+        /// <li> <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific table. </p> </li>
+        /// <li> <p>remote - A downstream service of indeterminate type.</p> </li>
         /// </ul>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.r#type = Some(input.into());
@@ -6922,21 +6666,10 @@ pub mod insight_impact_graph_service {
         }
         /// <p>Identifier for the service. Unique within the service map.</p>
         /// <ul>
-        /// <li>
-        /// <p>Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, AWS::EC2::Instance for an application running
-        /// on Amazon EC2 or AWS::DynamoDB::Table for an Amazon DynamoDB table that the application used. </p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon
-        /// DynamoDB that didn't target a specific table. </p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon
-        /// DynamoDB that didn't target a specific table. </p>
-        /// </li>
-        /// <li>
-        /// <p>remote - A downstream service of indeterminate type.</p>
-        /// </li>
+        /// <li> <p>Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, AWS::EC2::Instance for an application running on Amazon EC2 or AWS::DynamoDB::Table for an Amazon DynamoDB table that the application used. </p> </li>
+        /// <li> <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific table. </p> </li>
+        /// <li> <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific table. </p> </li>
+        /// <li> <p>remote - A downstream service of indeterminate type.</p> </li>
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
@@ -7074,8 +6807,7 @@ impl InsightImpactGraphEdge {
     }
 }
 
-/// <p>X-Ray reevaluates insights periodically until they are resolved, and records each intermediate state in an
-/// event. You can review incident events in the Impact Timeline on the Inspect page in the X-Ray console.</p>
+/// <p>X-Ray reevaluates insights periodically until they are resolved, and records each intermediate state in an event. You can review incident events in the Impact Timeline on the Inspect page in the X-Ray console.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InsightEvent {
@@ -7083,12 +6815,10 @@ pub struct InsightEvent {
     pub summary: std::option::Option<std::string::String>,
     /// <p>The time, in Unix seconds, at which the event was recorded.</p>
     pub event_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The impact statistics of the client side service. This includes the number of requests to the client service
-    /// and whether the requests were faults or okay.</p>
+    /// <p>The impact statistics of the client side service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
     pub client_request_impact_statistics:
         std::option::Option<crate::model::RequestImpactStatistics>,
-    /// <p>The impact statistics of the root cause service. This includes the number of requests to the client service
-    /// and whether the requests were faults or okay.</p>
+    /// <p>The impact statistics of the root cause service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
     pub root_cause_service_request_impact_statistics:
         std::option::Option<crate::model::RequestImpactStatistics>,
     /// <p>The service during the event that is most impacted by the incident.</p>
@@ -7103,15 +6833,13 @@ impl InsightEvent {
     pub fn event_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.event_time.as_ref()
     }
-    /// <p>The impact statistics of the client side service. This includes the number of requests to the client service
-    /// and whether the requests were faults or okay.</p>
+    /// <p>The impact statistics of the client side service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
     pub fn client_request_impact_statistics(
         &self,
     ) -> std::option::Option<&crate::model::RequestImpactStatistics> {
         self.client_request_impact_statistics.as_ref()
     }
-    /// <p>The impact statistics of the root cause service. This includes the number of requests to the client service
-    /// and whether the requests were faults or okay.</p>
+    /// <p>The impact statistics of the root cause service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
     pub fn root_cause_service_request_impact_statistics(
         &self,
     ) -> std::option::Option<&crate::model::RequestImpactStatistics> {
@@ -7178,8 +6906,7 @@ pub mod insight_event {
             self.event_time = input;
             self
         }
-        /// <p>The impact statistics of the client side service. This includes the number of requests to the client service
-        /// and whether the requests were faults or okay.</p>
+        /// <p>The impact statistics of the client side service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
         pub fn client_request_impact_statistics(
             mut self,
             input: crate::model::RequestImpactStatistics,
@@ -7187,8 +6914,7 @@ pub mod insight_event {
             self.client_request_impact_statistics = Some(input);
             self
         }
-        /// <p>The impact statistics of the client side service. This includes the number of requests to the client service
-        /// and whether the requests were faults or okay.</p>
+        /// <p>The impact statistics of the client side service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
         pub fn set_client_request_impact_statistics(
             mut self,
             input: std::option::Option<crate::model::RequestImpactStatistics>,
@@ -7196,8 +6922,7 @@ pub mod insight_event {
             self.client_request_impact_statistics = input;
             self
         }
-        /// <p>The impact statistics of the root cause service. This includes the number of requests to the client service
-        /// and whether the requests were faults or okay.</p>
+        /// <p>The impact statistics of the root cause service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
         pub fn root_cause_service_request_impact_statistics(
             mut self,
             input: crate::model::RequestImpactStatistics,
@@ -7205,8 +6930,7 @@ pub mod insight_event {
             self.root_cause_service_request_impact_statistics = Some(input);
             self
         }
-        /// <p>The impact statistics of the root cause service. This includes the number of requests to the client service
-        /// and whether the requests were faults or okay.</p>
+        /// <p>The impact statistics of the root cause service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
         pub fn set_root_cause_service_request_impact_statistics(
             mut self,
             input: std::option::Option<crate::model::RequestImpactStatistics>,
@@ -7253,8 +6977,7 @@ impl InsightEvent {
     }
 }
 
-/// <p>When fault rates go outside of the expected range, X-Ray creates an insight. Insights
-/// tracks emergent issues within your applications.</p>
+/// <p>When fault rates go outside of the expected range, X-Ray creates an insight. Insights tracks emergent issues within your applications.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Insight {
@@ -7262,7 +6985,7 @@ pub struct Insight {
     pub insight_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the group that the insight belongs to.</p>
     pub group_arn: std::option::Option<std::string::String>,
-    /// <p>The name of the group  that the insight belongs to.</p>
+    /// <p>The name of the group that the insight belongs to.</p>
     pub group_name: std::option::Option<std::string::String>,
     /// <p></p>
     pub root_cause_service_id: std::option::Option<crate::model::ServiceId>,
@@ -7276,12 +6999,10 @@ pub struct Insight {
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A brief description of the insight.</p>
     pub summary: std::option::Option<std::string::String>,
-    /// <p>The impact statistics of the client side service. This includes the number of requests to the client service
-    /// and whether the requests were faults or okay.</p>
+    /// <p>The impact statistics of the client side service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
     pub client_request_impact_statistics:
         std::option::Option<crate::model::RequestImpactStatistics>,
-    /// <p>The impact statistics of the root cause service. This includes the number of requests to the client service
-    /// and whether the requests were faults or okay.</p>
+    /// <p>The impact statistics of the root cause service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
     pub root_cause_service_request_impact_statistics:
         std::option::Option<crate::model::RequestImpactStatistics>,
     /// <p>The service within the insight that is most impacted by the incident.</p>
@@ -7296,7 +7017,7 @@ impl Insight {
     pub fn group_arn(&self) -> std::option::Option<&str> {
         self.group_arn.as_deref()
     }
-    /// <p>The name of the group  that the insight belongs to.</p>
+    /// <p>The name of the group that the insight belongs to.</p>
     pub fn group_name(&self) -> std::option::Option<&str> {
         self.group_name.as_deref()
     }
@@ -7324,15 +7045,13 @@ impl Insight {
     pub fn summary(&self) -> std::option::Option<&str> {
         self.summary.as_deref()
     }
-    /// <p>The impact statistics of the client side service. This includes the number of requests to the client service
-    /// and whether the requests were faults or okay.</p>
+    /// <p>The impact statistics of the client side service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
     pub fn client_request_impact_statistics(
         &self,
     ) -> std::option::Option<&crate::model::RequestImpactStatistics> {
         self.client_request_impact_statistics.as_ref()
     }
-    /// <p>The impact statistics of the root cause service. This includes the number of requests to the client service
-    /// and whether the requests were faults or okay.</p>
+    /// <p>The impact statistics of the root cause service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
     pub fn root_cause_service_request_impact_statistics(
         &self,
     ) -> std::option::Option<&crate::model::RequestImpactStatistics> {
@@ -7410,12 +7129,12 @@ pub mod insight {
             self.group_arn = input;
             self
         }
-        /// <p>The name of the group  that the insight belongs to.</p>
+        /// <p>The name of the group that the insight belongs to.</p>
         pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.group_name = Some(input.into());
             self
         }
-        /// <p>The name of the group  that the insight belongs to.</p>
+        /// <p>The name of the group that the insight belongs to.</p>
         pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.group_name = input;
             self
@@ -7498,8 +7217,7 @@ pub mod insight {
             self.summary = input;
             self
         }
-        /// <p>The impact statistics of the client side service. This includes the number of requests to the client service
-        /// and whether the requests were faults or okay.</p>
+        /// <p>The impact statistics of the client side service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
         pub fn client_request_impact_statistics(
             mut self,
             input: crate::model::RequestImpactStatistics,
@@ -7507,8 +7225,7 @@ pub mod insight {
             self.client_request_impact_statistics = Some(input);
             self
         }
-        /// <p>The impact statistics of the client side service. This includes the number of requests to the client service
-        /// and whether the requests were faults or okay.</p>
+        /// <p>The impact statistics of the client side service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
         pub fn set_client_request_impact_statistics(
             mut self,
             input: std::option::Option<crate::model::RequestImpactStatistics>,
@@ -7516,8 +7233,7 @@ pub mod insight {
             self.client_request_impact_statistics = input;
             self
         }
-        /// <p>The impact statistics of the root cause service. This includes the number of requests to the client service
-        /// and whether the requests were faults or okay.</p>
+        /// <p>The impact statistics of the root cause service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
         pub fn root_cause_service_request_impact_statistics(
             mut self,
             input: crate::model::RequestImpactStatistics,
@@ -7525,8 +7241,7 @@ pub mod insight {
             self.root_cause_service_request_impact_statistics = Some(input);
             self
         }
-        /// <p>The impact statistics of the root cause service. This includes the number of requests to the client service
-        /// and whether the requests were faults or okay.</p>
+        /// <p>The impact statistics of the root cause service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
         pub fn set_root_cause_service_request_impact_statistics(
             mut self,
             input: std::option::Option<crate::model::RequestImpactStatistics>,
@@ -7592,14 +7307,8 @@ pub struct GroupSummary {
     pub filter_expression: std::option::Option<std::string::String>,
     /// <p>The structure containing configurations related to insights.</p>
     /// <ul>
-    /// <li>
-    /// <p>The InsightsEnabled boolean can be set to true to enable insights for the
-    /// group or false to disable insights for the group.</p>
-    /// </li>
-    /// <li>
-    /// <p>The NotificationsEnabled boolean can be set to true to enable insights notifications.
-    /// Notifications can only be enabled on a group with InsightsEnabled set to true.</p>
-    /// </li>
+    /// <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p> </li>
+    /// <li> <p>The NotificationsEnabled boolean can be set to true to enable insights notifications. Notifications can only be enabled on a group with InsightsEnabled set to true.</p> </li>
     /// </ul>
     pub insights_configuration: std::option::Option<crate::model::InsightsConfiguration>,
 }
@@ -7618,14 +7327,8 @@ impl GroupSummary {
     }
     /// <p>The structure containing configurations related to insights.</p>
     /// <ul>
-    /// <li>
-    /// <p>The InsightsEnabled boolean can be set to true to enable insights for the
-    /// group or false to disable insights for the group.</p>
-    /// </li>
-    /// <li>
-    /// <p>The NotificationsEnabled boolean can be set to true to enable insights notifications.
-    /// Notifications can only be enabled on a group with InsightsEnabled set to true.</p>
-    /// </li>
+    /// <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p> </li>
+    /// <li> <p>The NotificationsEnabled boolean can be set to true to enable insights notifications. Notifications can only be enabled on a group with InsightsEnabled set to true.</p> </li>
     /// </ul>
     pub fn insights_configuration(
         &self,
@@ -7690,14 +7393,8 @@ pub mod group_summary {
         }
         /// <p>The structure containing configurations related to insights.</p>
         /// <ul>
-        /// <li>
-        /// <p>The InsightsEnabled boolean can be set to true to enable insights for the
-        /// group or false to disable insights for the group.</p>
-        /// </li>
-        /// <li>
-        /// <p>The NotificationsEnabled boolean can be set to true to enable insights notifications.
-        /// Notifications can only be enabled on a group with InsightsEnabled set to true.</p>
-        /// </li>
+        /// <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p> </li>
+        /// <li> <p>The NotificationsEnabled boolean can be set to true to enable insights notifications. Notifications can only be enabled on a group with InsightsEnabled set to true.</p> </li>
         /// </ul>
         pub fn insights_configuration(
             mut self,
@@ -7708,14 +7405,8 @@ pub mod group_summary {
         }
         /// <p>The structure containing configurations related to insights.</p>
         /// <ul>
-        /// <li>
-        /// <p>The InsightsEnabled boolean can be set to true to enable insights for the
-        /// group or false to disable insights for the group.</p>
-        /// </li>
-        /// <li>
-        /// <p>The NotificationsEnabled boolean can be set to true to enable insights notifications.
-        /// Notifications can only be enabled on a group with InsightsEnabled set to true.</p>
-        /// </li>
+        /// <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p> </li>
+        /// <li> <p>The NotificationsEnabled boolean can be set to true to enable insights notifications. Notifications can only be enabled on a group with InsightsEnabled set to true.</p> </li>
         /// </ul>
         pub fn set_insights_configuration(
             mut self,
@@ -7746,31 +7437,25 @@ impl GroupSummary {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Trace {
-    /// <p>The unique identifier for the request that generated the trace's segments and
-    /// subsegments.</p>
+    /// <p>The unique identifier for the request that generated the trace's segments and subsegments.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The length of time in seconds between the start time of the root segment and the end
-    /// time of the last segment that completed.</p>
+    /// <p>The length of time in seconds between the start time of the root segment and the end time of the last segment that completed.</p>
     pub duration: std::option::Option<f64>,
-    /// <p>LimitExceeded is set to true when the trace has exceeded one of the defined quotas. For
-    /// more information about quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/xray.html">Amazon Web Services X-Ray endpoints and quotas</a>.</p>
+    /// <p>LimitExceeded is set to true when the trace has exceeded one of the defined quotas. For more information about quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/xray.html">Amazon Web Services X-Ray endpoints and quotas</a>.</p>
     pub limit_exceeded: std::option::Option<bool>,
     /// <p>Segment documents for the segments and subsegments that comprise the trace.</p>
     pub segments: std::option::Option<std::vec::Vec<crate::model::Segment>>,
 }
 impl Trace {
-    /// <p>The unique identifier for the request that generated the trace's segments and
-    /// subsegments.</p>
+    /// <p>The unique identifier for the request that generated the trace's segments and subsegments.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The length of time in seconds between the start time of the root segment and the end
-    /// time of the last segment that completed.</p>
+    /// <p>The length of time in seconds between the start time of the root segment and the end time of the last segment that completed.</p>
     pub fn duration(&self) -> std::option::Option<f64> {
         self.duration
     }
-    /// <p>LimitExceeded is set to true when the trace has exceeded one of the defined quotas. For
-    /// more information about quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/xray.html">Amazon Web Services X-Ray endpoints and quotas</a>.</p>
+    /// <p>LimitExceeded is set to true when the trace has exceeded one of the defined quotas. For more information about quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/xray.html">Amazon Web Services X-Ray endpoints and quotas</a>.</p>
     pub fn limit_exceeded(&self) -> std::option::Option<bool> {
         self.limit_exceeded
     }
@@ -7801,38 +7486,32 @@ pub mod trace {
         pub(crate) segments: std::option::Option<std::vec::Vec<crate::model::Segment>>,
     }
     impl Builder {
-        /// <p>The unique identifier for the request that generated the trace's segments and
-        /// subsegments.</p>
+        /// <p>The unique identifier for the request that generated the trace's segments and subsegments.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The unique identifier for the request that generated the trace's segments and
-        /// subsegments.</p>
+        /// <p>The unique identifier for the request that generated the trace's segments and subsegments.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
-        /// <p>The length of time in seconds between the start time of the root segment and the end
-        /// time of the last segment that completed.</p>
+        /// <p>The length of time in seconds between the start time of the root segment and the end time of the last segment that completed.</p>
         pub fn duration(mut self, input: f64) -> Self {
             self.duration = Some(input);
             self
         }
-        /// <p>The length of time in seconds between the start time of the root segment and the end
-        /// time of the last segment that completed.</p>
+        /// <p>The length of time in seconds between the start time of the root segment and the end time of the last segment that completed.</p>
         pub fn set_duration(mut self, input: std::option::Option<f64>) -> Self {
             self.duration = input;
             self
         }
-        /// <p>LimitExceeded is set to true when the trace has exceeded one of the defined quotas. For
-        /// more information about quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/xray.html">Amazon Web Services X-Ray endpoints and quotas</a>.</p>
+        /// <p>LimitExceeded is set to true when the trace has exceeded one of the defined quotas. For more information about quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/xray.html">Amazon Web Services X-Ray endpoints and quotas</a>.</p>
         pub fn limit_exceeded(mut self, input: bool) -> Self {
             self.limit_exceeded = Some(input);
             self
         }
-        /// <p>LimitExceeded is set to true when the trace has exceeded one of the defined quotas. For
-        /// more information about quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/xray.html">Amazon Web Services X-Ray endpoints and quotas</a>.</p>
+        /// <p>LimitExceeded is set to true when the trace has exceeded one of the defined quotas. For more information about quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/xray.html">Amazon Web Services X-Ray endpoints and quotas</a>.</p>
         pub fn set_limit_exceeded(mut self, input: std::option::Option<bool>) -> Self {
             self.limit_exceeded = input;
             self
@@ -7874,12 +7553,8 @@ impl Trace {
     }
 }
 
-/// <p>A segment from a trace that has been ingested by the X-Ray service. The segment can be
-/// compiled from documents uploaded with <a href="https://docs.aws.amazon.com/xray/latest/api/API_PutTraceSegments.html">PutTraceSegments</a>, or an
-/// <code>inferred</code> segment for a downstream service, generated from a subsegment sent by
-/// the service that called it.</p>
-/// <p>For the full segment document schema, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html">Amazon Web Services X-Ray Segment
-/// Documents</a> in the <i>Amazon Web Services X-Ray Developer Guide</i>.</p>
+/// <p>A segment from a trace that has been ingested by the X-Ray service. The segment can be compiled from documents uploaded with <a href="https://docs.aws.amazon.com/xray/latest/api/API_PutTraceSegments.html">PutTraceSegments</a>, or an <code>inferred</code> segment for a downstream service, generated from a subsegment sent by the service that called it.</p>
+/// <p>For the full segment document schema, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html">Amazon Web Services X-Ray Segment Documents</a> in the <i>Amazon Web Services X-Ray Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Segment {

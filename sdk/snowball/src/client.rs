@@ -273,9 +273,7 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CancelCluster`.
     ///
-    /// <p>Cancels a cluster job. You can only cancel a cluster job while it's in the
-    /// <code>AwaitingQuorum</code> status. You'll have at least an hour after creating a cluster
-    /// job to cancel it.</p>
+    /// <p>Cancels a cluster job. You can only cancel a cluster job while it's in the <code>AwaitingQuorum</code> status. You'll have at least an hour after creating a cluster job to cancel it.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelCluster<
         C = aws_smithy_client::erase::DynConnector,
@@ -332,14 +330,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The 39-character ID for the cluster that you want to cancel, for example
-        /// <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+        /// <p>The 39-character ID for the cluster that you want to cancel, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.cluster_id(input.into());
             self
         }
-        /// <p>The 39-character ID for the cluster that you want to cancel, for example
-        /// <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+        /// <p>The 39-character ID for the cluster that you want to cancel, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_cluster_id(input);
             self
@@ -347,10 +343,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CancelJob`.
     ///
-    /// <p>Cancels the specified job. You can only cancel a job before its <code>JobState</code>
-    /// value changes to <code>PreparingAppliance</code>. Requesting the <code>ListJobs</code> or
-    /// <code>DescribeJob</code> action returns a job's <code>JobState</code> as part of the
-    /// response element data returned.</p>
+    /// <p>Cancels the specified job. You can only cancel a job before its <code>JobState</code> value changes to <code>PreparingAppliance</code>. Requesting the <code>ListJobs</code> or <code>DescribeJob</code> action returns a job's <code>JobState</code> as part of the response element data returned.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelJob<
         C = aws_smithy_client::erase::DynConnector,
@@ -407,14 +400,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The 39-character job ID for the job that you want to cancel, for example
-        /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+        /// <p>The 39-character job ID for the job that you want to cancel, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.job_id(input.into());
             self
         }
-        /// <p>The 39-character job ID for the job that you want to cancel, for example
-        /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+        /// <p>The 39-character job ID for the job that you want to cancel, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_job_id(input);
             self
@@ -422,10 +413,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateAddress`.
     ///
-    /// <p>Creates an address for a Snow device to be shipped to. In most regions,
-    /// addresses are validated at the time of creation. The address you provide must be located
-    /// within the serviceable area of your region. If the address is invalid or unsupported, then an
-    /// exception is thrown.</p>
+    /// <p>Creates an address for a Snow device to be shipped to. In most regions, addresses are validated at the time of creation. The address you provide must be located within the serviceable area of your region. If the address is invalid or unsupported, then an exception is thrown.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAddress<
         C = aws_smithy_client::erase::DynConnector,
@@ -495,8 +483,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateCluster`.
     ///
-    /// <p>Creates an empty cluster. Each cluster supports five nodes. You use the <a>CreateJob</a> action separately to create the jobs for each of these nodes. The
-    /// cluster does not ship until these five node jobs have been created.</p>
+    /// <p>Creates an empty cluster. Each cluster supports five nodes. You use the <code>CreateJob</code> action separately to create the jobs for each of these nodes. The cluster does not ship until these five node jobs have been created.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCluster<
         C = aws_smithy_client::erase::DynConnector,
@@ -553,40 +540,24 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The type of job for this cluster. Currently, the only job type supported for clusters
-        /// is <code>LOCAL_USE</code>.</p>
-        ///
-        /// <p>For more information, see
-        /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
-        /// Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
-        /// "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow
-        /// Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+        /// <p>The type of job for this cluster. Currently, the only job type supported for clusters is <code>LOCAL_USE</code>.</p>
+        /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
         pub fn job_type(mut self, input: crate::model::JobType) -> Self {
             self.inner = self.inner.job_type(input);
             self
         }
-        /// <p>The type of job for this cluster. Currently, the only job type supported for clusters
-        /// is <code>LOCAL_USE</code>.</p>
-        ///
-        /// <p>For more information, see
-        /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
-        /// Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
-        /// "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow
-        /// Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+        /// <p>The type of job for this cluster. Currently, the only job type supported for clusters is <code>LOCAL_USE</code>.</p>
+        /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
         pub fn set_job_type(mut self, input: std::option::Option<crate::model::JobType>) -> Self {
             self.inner = self.inner.set_job_type(input);
             self
         }
-        /// <p>The resources associated with the cluster job. These resources include Amazon S3
-        /// buckets and optional Lambda functions written in the Python language.
-        /// </p>
+        /// <p>The resources associated with the cluster job. These resources include Amazon S3 buckets and optional Lambda functions written in the Python language. </p>
         pub fn resources(mut self, input: crate::model::JobResource) -> Self {
             self.inner = self.inner.resources(input);
             self
         }
-        /// <p>The resources associated with the cluster job. These resources include Amazon S3
-        /// buckets and optional Lambda functions written in the Python language.
-        /// </p>
+        /// <p>The resources associated with the cluster job. These resources include Amazon S3 buckets and optional Lambda functions written in the Python language. </p>
         pub fn set_resources(
             mut self,
             input: std::option::Option<crate::model::JobResource>,
@@ -594,9 +565,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resources(input);
             self
         }
-        /// <p>Specifies the service or services on the Snow Family device that your transferred data
-        /// will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS
-        /// (Network File System).</p>
+        /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS (Network File System).</p>
         pub fn on_device_service_configuration(
             mut self,
             input: crate::model::OnDeviceServiceConfiguration,
@@ -604,9 +573,7 @@ pub mod fluent_builders {
             self.inner = self.inner.on_device_service_configuration(input);
             self
         }
-        /// <p>Specifies the service or services on the Snow Family device that your transferred data
-        /// will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS
-        /// (Network File System).</p>
+        /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS (Network File System).</p>
         pub fn set_on_device_service_configuration(
             mut self,
             input: std::option::Option<crate::model::OnDeviceServiceConfiguration>,
@@ -614,14 +581,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_on_device_service_configuration(input);
             self
         }
-        /// <p>An optional description of this specific cluster, for example <code>Environmental Data
-        /// Cluster-01</code>.</p>
+        /// <p>An optional description of this specific cluster, for example <code>Environmental Data Cluster-01</code>.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>An optional description of this specific cluster, for example <code>Environmental Data
-        /// Cluster-01</code>.</p>
+        /// <p>An optional description of this specific cluster, for example <code>Environmental Data Cluster-01</code>.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
@@ -636,56 +601,38 @@ pub mod fluent_builders {
             self.inner = self.inner.set_address_id(input);
             self
         }
-        /// <p>The <code>KmsKeyARN</code> value that you want to associate with this cluster.
-        /// <code>KmsKeyARN</code> values are created by using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in Key Management Service (KMS). </p>
+        /// <p>The <code>KmsKeyARN</code> value that you want to associate with this cluster. <code>KmsKeyARN</code> values are created by using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in Key Management Service (KMS). </p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_key_arn(input.into());
             self
         }
-        /// <p>The <code>KmsKeyARN</code> value that you want to associate with this cluster.
-        /// <code>KmsKeyARN</code> values are created by using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in Key Management Service (KMS). </p>
+        /// <p>The <code>KmsKeyARN</code> value that you want to associate with this cluster. <code>KmsKeyARN</code> values are created by using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in Key Management Service (KMS). </p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_kms_key_arn(input);
             self
         }
-        /// <p>The <code>RoleARN</code> that you want to associate with this cluster.
-        /// <code>RoleArn</code> values are created by using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
+        /// <p>The <code>RoleARN</code> that you want to associate with this cluster. <code>RoleArn</code> values are created by using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The <code>RoleARN</code> that you want to associate with this cluster.
-        /// <code>RoleArn</code> values are created by using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
+        /// <p>The <code>RoleARN</code> that you want to associate with this cluster. <code>RoleArn</code> values are created by using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
         }
-        /// <p>The type of Snow Family Devices to use for this cluster. </p>
-        /// <note>
-        /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the
-        /// <code>EDGE</code> device type.</p>
+        /// <p>The type of Snow Family Devices to use for this cluster. </p> <note>
+        /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
         /// </note>
-        ///
-        /// <p>For more information, see
-        /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
-        /// Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
-        /// "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow
-        /// Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+        /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
         pub fn snowball_type(mut self, input: crate::model::SnowballType) -> Self {
             self.inner = self.inner.snowball_type(input);
             self
         }
-        /// <p>The type of Snow Family Devices to use for this cluster. </p>
-        /// <note>
-        /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the
-        /// <code>EDGE</code> device type.</p>
+        /// <p>The type of Snow Family Devices to use for this cluster. </p> <note>
+        /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
         /// </note>
-        ///
-        /// <p>For more information, see
-        /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
-        /// Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
-        /// "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow
-        /// Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+        /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
         pub fn set_snowball_type(
             mut self,
             input: std::option::Option<crate::model::SnowballType>,
@@ -693,91 +640,35 @@ pub mod fluent_builders {
             self.inner = self.inner.set_snowball_type(input);
             self
         }
-        /// <p>The shipping speed for each node in this cluster. This speed doesn't dictate how soon
-        /// you'll get each Snowball Edge device, rather it represents how quickly each device moves to
-        /// its destination while in transit. Regional shipping speeds are as follows: </p>
+        /// <p>The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each Snowball Edge device, rather it represents how quickly each device moves to its destination while in transit. Regional shipping speeds are as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>In Australia, you have access to express shipping. Typically, Snow devices shipped
-        /// express are delivered in about a day.</p>
-        /// </li>
-        /// <li>
-        /// <p>In the European Union (EU), you have access to express shipping. Typically, Snow
-        /// devices shipped express are delivered in about a day. In addition, most countries in the
-        /// EU have access to standard shipping, which typically takes less than a week, one
-        /// way.</p>
-        /// </li>
-        /// <li>
-        /// <p>In India, Snow devices are delivered in one to seven days.</p>
-        /// </li>
-        /// <li>
-        /// <p>In the United States of America (US), you have access to one-day shipping and
-        /// two-day shipping.</p>
-        /// </li>
+        /// <li> <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p> </li>
+        /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li>
+        /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>
+        /// <li> <p>In the United States of America (US), you have access to one-day shipping and two-day shipping.</p> </li>
         /// </ul>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>In Australia, you have access to express shipping. Typically, devices shipped
-        /// express are delivered in about a day.</p>
-        /// </li>
-        /// <li>
-        /// <p>In the European Union (EU), you have access to express shipping. Typically, Snow
-        /// devices shipped express are delivered in about a day. In addition, most countries in the
-        /// EU have access to standard shipping, which typically takes less than a week, one
-        /// way.</p>
-        /// </li>
-        /// <li>
-        /// <p>In India, Snow devices are delivered in one to seven days.</p>
-        /// </li>
-        /// <li>
-        /// <p>In the US, you have access to one-day shipping and two-day shipping.</p>
-        /// </li>
+        /// <li> <p>In Australia, you have access to express shipping. Typically, devices shipped express are delivered in about a day.</p> </li>
+        /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li>
+        /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>
+        /// <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li>
         /// </ul>
         pub fn shipping_option(mut self, input: crate::model::ShippingOption) -> Self {
             self.inner = self.inner.shipping_option(input);
             self
         }
-        /// <p>The shipping speed for each node in this cluster. This speed doesn't dictate how soon
-        /// you'll get each Snowball Edge device, rather it represents how quickly each device moves to
-        /// its destination while in transit. Regional shipping speeds are as follows: </p>
+        /// <p>The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each Snowball Edge device, rather it represents how quickly each device moves to its destination while in transit. Regional shipping speeds are as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p>In Australia, you have access to express shipping. Typically, Snow devices shipped
-        /// express are delivered in about a day.</p>
-        /// </li>
-        /// <li>
-        /// <p>In the European Union (EU), you have access to express shipping. Typically, Snow
-        /// devices shipped express are delivered in about a day. In addition, most countries in the
-        /// EU have access to standard shipping, which typically takes less than a week, one
-        /// way.</p>
-        /// </li>
-        /// <li>
-        /// <p>In India, Snow devices are delivered in one to seven days.</p>
-        /// </li>
-        /// <li>
-        /// <p>In the United States of America (US), you have access to one-day shipping and
-        /// two-day shipping.</p>
-        /// </li>
+        /// <li> <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p> </li>
+        /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li>
+        /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>
+        /// <li> <p>In the United States of America (US), you have access to one-day shipping and two-day shipping.</p> </li>
         /// </ul>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>In Australia, you have access to express shipping. Typically, devices shipped
-        /// express are delivered in about a day.</p>
-        /// </li>
-        /// <li>
-        /// <p>In the European Union (EU), you have access to express shipping. Typically, Snow
-        /// devices shipped express are delivered in about a day. In addition, most countries in the
-        /// EU have access to standard shipping, which typically takes less than a week, one
-        /// way.</p>
-        /// </li>
-        /// <li>
-        /// <p>In India, Snow devices are delivered in one to seven days.</p>
-        /// </li>
-        /// <li>
-        /// <p>In the US, you have access to one-day shipping and two-day shipping.</p>
-        /// </li>
+        /// <li> <p>In Australia, you have access to express shipping. Typically, devices shipped express are delivered in about a day.</p> </li>
+        /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li>
+        /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>
+        /// <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li>
         /// </ul>
         pub fn set_shipping_option(
             mut self,
@@ -786,14 +677,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_shipping_option(input);
             self
         }
-        /// <p>The Amazon Simple Notification Service (Amazon SNS) notification settings for this
-        /// cluster.</p>
+        /// <p>The Amazon Simple Notification Service (Amazon SNS) notification settings for this cluster.</p>
         pub fn notification(mut self, input: crate::model::Notification) -> Self {
             self.inner = self.inner.notification(input);
             self
         }
-        /// <p>The Amazon Simple Notification Service (Amazon SNS) notification settings for this
-        /// cluster.</p>
+        /// <p>The Amazon Simple Notification Service (Amazon SNS) notification settings for this cluster.</p>
         pub fn set_notification(
             mut self,
             input: std::option::Option<crate::model::Notification>,
@@ -801,14 +690,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_notification(input);
             self
         }
-        /// <p>The forwarding address ID for a cluster. This field is not supported in most
-        /// regions.</p>
+        /// <p>The forwarding address ID for a cluster. This field is not supported in most regions.</p>
         pub fn forwarding_address_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.forwarding_address_id(input.into());
             self
         }
-        /// <p>The forwarding address ID for a cluster. This field is not supported in most
-        /// regions.</p>
+        /// <p>The forwarding address ID for a cluster. This field is not supported in most regions.</p>
         pub fn set_forwarding_address_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -829,18 +716,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tax_documents(input);
             self
         }
-        /// <p>Allows you to securely operate and manage Snow devices in a cluster remotely from outside
-        /// of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will
-        /// automatically be available when the device arrives at your location. Otherwise, you need to
-        /// use the Snowball Client to manage the device.</p>
+        /// <p>Allows you to securely operate and manage Snow devices in a cluster remotely from outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.</p>
         pub fn remote_management(mut self, input: crate::model::RemoteManagement) -> Self {
             self.inner = self.inner.remote_management(input);
             self
         }
-        /// <p>Allows you to securely operate and manage Snow devices in a cluster remotely from outside
-        /// of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will
-        /// automatically be available when the device arrives at your location. Otherwise, you need to
-        /// use the Snowball Client to manage the device.</p>
+        /// <p>Allows you to securely operate and manage Snow devices in a cluster remotely from outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.</p>
         pub fn set_remote_management(
             mut self,
             input: std::option::Option<crate::model::RemoteManagement>,
@@ -851,138 +732,58 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateJob`.
     ///
-    /// <p>Creates a job to import or export data between Amazon S3 and your on-premises data
-    /// center. Your Amazon Web Services account must have the right trust policies and permissions in
-    /// place to create a job for a Snow device. If you're creating a job for a node in a cluster, you
-    /// only need to provide the <code>clusterId</code> value; the other job attributes are inherited
-    /// from the cluster. </p>
-    /// <note>
+    /// <p>Creates a job to import or export data between Amazon S3 and your on-premises data center. Your Amazon Web Services account must have the right trust policies and permissions in place to create a job for a Snow device. If you're creating a job for a node in a cluster, you only need to provide the <code>clusterId</code> value; the other job attributes are inherited from the cluster. </p> <note>
     /// <p>Only the Snowball; Edge device type is supported when ordering clustered jobs.</p>
     /// <p>The device capacity is optional.</p>
-    /// <p>Availability of device types differ by Amazon Web Services Region. For more information
-    /// about Region availability, see <a href="https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/?p=ngi&loc=4">Amazon Web Services Regional Services</a>.</p>
+    /// <p>Availability of device types differ by Amazon Web Services Region. For more information about Region availability, see <a href="https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/?p=ngi&amp;loc=4">Amazon Web Services Regional Services</a>.</p>
     /// </note>
-    ///
     /// <p></p>
-    ///
-    /// <p class="title">
-    /// <b>Snow Family Devices and their capacities.</b>
-    /// </p>
+    /// <p class="title"> <b>Snow Family Devices and their capacities.</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>Snow Family device type: <b>SNC1_SSD</b>
-    /// </p>
+    /// <li> <p>Snow Family device type: <b>SNC1_SSD</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>Capacity: T14</p>
-    /// </li>
-    /// <li>
-    /// <p>Description: Snowcone </p>
-    /// </li>
-    /// </ul>
-    ///
-    /// <p></p>
-    /// </li>
-    /// <li>
-    /// <p>Snow Family device type: <b>SNC1_HDD</b>
-    /// </p>
+    /// <li> <p>Capacity: T14</p> </li>
+    /// <li> <p>Description: Snowcone </p> </li>
+    /// </ul> <p></p> </li>
+    /// <li> <p>Snow Family device type: <b>SNC1_HDD</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>Capacity: T8</p>
-    /// </li>
-    /// <li>
-    /// <p>Description: Snowcone </p>
-    /// </li>
-    /// </ul>
-    /// <p></p>
-    /// </li>
-    /// <li>
-    /// <p>Device type: <b>EDGE_S</b>
-    /// </p>
+    /// <li> <p>Capacity: T8</p> </li>
+    /// <li> <p>Description: Snowcone </p> </li>
+    /// </ul> <p></p> </li>
+    /// <li> <p>Device type: <b>EDGE_S</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>Capacity: T98</p>
-    /// </li>
-    /// <li>
-    /// <p>Description: Snowball Edge Storage Optimized for data transfer only </p>
-    /// </li>
-    /// </ul>
-    ///
-    ///
-    /// <p></p>
-    /// </li>
-    /// <li>
-    /// <p>Device type: <b>EDGE_CG</b>
-    /// </p>
+    /// <li> <p>Capacity: T98</p> </li>
+    /// <li> <p>Description: Snowball Edge Storage Optimized for data transfer only </p> </li>
+    /// </ul> <p></p> </li>
+    /// <li> <p>Device type: <b>EDGE_CG</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>Capacity: T42</p>
-    /// </li>
-    /// <li>
-    /// <p>Description: Snowball Edge Compute Optimized with GPU</p>
-    /// </li>
-    /// </ul>
-    /// <p></p>
-    /// </li>
-    /// <li>
-    /// <p>Device type: <b>EDGE_C</b>
-    /// </p>
+    /// <li> <p>Capacity: T42</p> </li>
+    /// <li> <p>Description: Snowball Edge Compute Optimized with GPU</p> </li>
+    /// </ul> <p></p> </li>
+    /// <li> <p>Device type: <b>EDGE_C</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>Capacity: T42</p>
-    /// </li>
-    /// <li>
-    /// <p>Description: Snowball Edge Compute Optimized without GPU</p>
-    /// </li>
-    /// </ul>
-    /// <p></p>
-    /// </li>
-    /// <li>
-    /// <p>Device type: <b>EDGE</b>
-    /// </p>
+    /// <li> <p>Capacity: T42</p> </li>
+    /// <li> <p>Description: Snowball Edge Compute Optimized without GPU</p> </li>
+    /// </ul> <p></p> </li>
+    /// <li> <p>Device type: <b>EDGE</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>Capacity: T100</p>
-    /// </li>
-    /// <li>
-    /// <p>Description: Snowball Edge Storage Optimized with EC2 Compute</p>
-    /// </li>
-    /// </ul>
-    /// <p></p>
-    /// </li>
-    /// <li>
-    /// <p>Device type: <b>STANDARD</b>
-    /// </p>
+    /// <li> <p>Capacity: T100</p> </li>
+    /// <li> <p>Description: Snowball Edge Storage Optimized with EC2 Compute</p> </li>
+    /// </ul> <p></p> </li>
+    /// <li> <p>Device type: <b>STANDARD</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>Capacity: T50</p>
-    /// </li>
-    /// <li>
-    /// <p>Description: Original Snowball device</p>
-    /// <note>
-    /// <p>This device is only available in the Ningxia, Beijing, and Singapore Amazon Web Services Region
-    /// </p>
-    /// </note>
-    /// </li>
-    /// </ul>
-    /// <p></p>
-    /// </li>
-    /// <li>
-    /// <p>Device type: <b>STANDARD</b>
-    /// </p>
+    /// <li> <p>Capacity: T50</p> </li>
+    /// <li> <p>Description: Original Snowball device</p> <note>
+    /// <p>This device is only available in the Ningxia, Beijing, and Singapore Amazon Web Services Region </p>
+    /// </note> </li>
+    /// </ul> <p></p> </li>
+    /// <li> <p>Device type: <b>STANDARD</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>Capacity: T80</p>
-    /// </li>
-    /// <li>
-    /// <p>Description: Original Snowball device</p>
-    /// <note>
+    /// <li> <p>Capacity: T80</p> </li>
+    /// <li> <p>Description: Original Snowball device</p> <note>
     /// <p>This device is only available in the Ningxia, Beijing, and Singapore Amazon Web Services Region. </p>
-    /// </note>
-    /// </li>
-    /// </ul>
-    /// <p></p>
-    /// </li>
+    /// </note> </li>
+    /// </ul> <p></p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateJob<
@@ -1040,42 +841,26 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Defines the type of job that you're creating.
-        /// </p>
+        /// <p>Defines the type of job that you're creating. </p>
         pub fn job_type(mut self, input: crate::model::JobType) -> Self {
             self.inner = self.inner.job_type(input);
             self
         }
-        /// <p>Defines the type of job that you're creating.
-        /// </p>
+        /// <p>Defines the type of job that you're creating. </p>
         pub fn set_job_type(mut self, input: std::option::Option<crate::model::JobType>) -> Self {
             self.inner = self.inner.set_job_type(input);
             self
         }
         /// <p>Defines the Amazon S3 buckets associated with this job.</p>
-        ///
-        /// <p>With <code>IMPORT</code> jobs, you specify the bucket or buckets that your transferred
-        /// data will be imported into.</p>
-        ///
-        /// <p>With <code>EXPORT</code> jobs, you specify the bucket or buckets that your transferred
-        /// data will be exported from. Optionally, you can also specify a <code>KeyRange</code> value. If
-        /// you choose to export a range, you define the length of the range by providing either an
-        /// inclusive <code>BeginMarker</code> value, an inclusive <code>EndMarker</code> value, or both.
-        /// Ranges are UTF-8 binary sorted.</p>
+        /// <p>With <code>IMPORT</code> jobs, you specify the bucket or buckets that your transferred data will be imported into.</p>
+        /// <p>With <code>EXPORT</code> jobs, you specify the bucket or buckets that your transferred data will be exported from. Optionally, you can also specify a <code>KeyRange</code> value. If you choose to export a range, you define the length of the range by providing either an inclusive <code>BeginMarker</code> value, an inclusive <code>EndMarker</code> value, or both. Ranges are UTF-8 binary sorted.</p>
         pub fn resources(mut self, input: crate::model::JobResource) -> Self {
             self.inner = self.inner.resources(input);
             self
         }
         /// <p>Defines the Amazon S3 buckets associated with this job.</p>
-        ///
-        /// <p>With <code>IMPORT</code> jobs, you specify the bucket or buckets that your transferred
-        /// data will be imported into.</p>
-        ///
-        /// <p>With <code>EXPORT</code> jobs, you specify the bucket or buckets that your transferred
-        /// data will be exported from. Optionally, you can also specify a <code>KeyRange</code> value. If
-        /// you choose to export a range, you define the length of the range by providing either an
-        /// inclusive <code>BeginMarker</code> value, an inclusive <code>EndMarker</code> value, or both.
-        /// Ranges are UTF-8 binary sorted.</p>
+        /// <p>With <code>IMPORT</code> jobs, you specify the bucket or buckets that your transferred data will be imported into.</p>
+        /// <p>With <code>EXPORT</code> jobs, you specify the bucket or buckets that your transferred data will be exported from. Optionally, you can also specify a <code>KeyRange</code> value. If you choose to export a range, you define the length of the range by providing either an inclusive <code>BeginMarker</code> value, an inclusive <code>EndMarker</code> value, or both. Ranges are UTF-8 binary sorted.</p>
         pub fn set_resources(
             mut self,
             input: std::option::Option<crate::model::JobResource>,
@@ -1083,9 +868,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resources(input);
             self
         }
-        /// <p>Specifies the service or services on the Snow Family device that your transferred data
-        /// will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File
-        /// System) and the Amazon Web Services Storage Gateway service Tape Gateway type.</p>
+        /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File System) and the Amazon Web Services Storage Gateway service Tape Gateway type.</p>
         pub fn on_device_service_configuration(
             mut self,
             input: crate::model::OnDeviceServiceConfiguration,
@@ -1093,9 +876,7 @@ pub mod fluent_builders {
             self.inner = self.inner.on_device_service_configuration(input);
             self
         }
-        /// <p>Specifies the service or services on the Snow Family device that your transferred data
-        /// will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File
-        /// System) and the Amazon Web Services Storage Gateway service Tape Gateway type.</p>
+        /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File System) and the Amazon Web Services Storage Gateway service Tape Gateway type.</p>
         pub fn set_on_device_service_configuration(
             mut self,
             input: std::option::Option<crate::model::OnDeviceServiceConfiguration>,
@@ -1103,14 +884,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_on_device_service_configuration(input);
             self
         }
-        /// <p>Defines an optional description of this specific job, for example <code>Important
-        /// Photos 2016-08-11</code>.</p>
+        /// <p>Defines an optional description of this specific job, for example <code>Important Photos 2016-08-11</code>.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>Defines an optional description of this specific job, for example <code>Important
-        /// Photos 2016-08-11</code>.</p>
+        /// <p>Defines an optional description of this specific job, for example <code>Important Photos 2016-08-11</code>.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
@@ -1125,43 +904,28 @@ pub mod fluent_builders {
             self.inner = self.inner.set_address_id(input);
             self
         }
-        /// <p>The <code>KmsKeyARN</code> that you want to associate with this job.
-        /// <code>KmsKeyARN</code>s are created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
-        /// Key Management Service (KMS) API action.</p>
+        /// <p>The <code>KmsKeyARN</code> that you want to associate with this job. <code>KmsKeyARN</code>s are created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> Key Management Service (KMS) API action.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_key_arn(input.into());
             self
         }
-        /// <p>The <code>KmsKeyARN</code> that you want to associate with this job.
-        /// <code>KmsKeyARN</code>s are created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
-        /// Key Management Service (KMS) API action.</p>
+        /// <p>The <code>KmsKeyARN</code> that you want to associate with this job. <code>KmsKeyARN</code>s are created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> Key Management Service (KMS) API action.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_kms_key_arn(input);
             self
         }
-        /// <p>The <code>RoleARN</code> that you want to associate with this job.
-        /// <code>RoleArn</code>s are created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
-        /// Identity and Access Management (IAM) API action.</p>
+        /// <p>The <code>RoleARN</code> that you want to associate with this job. <code>RoleArn</code>s are created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> Identity and Access Management (IAM) API action.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The <code>RoleARN</code> that you want to associate with this job.
-        /// <code>RoleArn</code>s are created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
-        /// Identity and Access Management (IAM) API action.</p>
+        /// <p>The <code>RoleARN</code> that you want to associate with this job. <code>RoleArn</code>s are created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> Identity and Access Management (IAM) API action.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
         }
-        /// <p>If your job is being created in one of the US regions, you have the option of
-        /// specifying what size Snow device you'd like for this job. In all other regions, Snowballs come
-        /// with 80 TB in storage capacity.</p>
-        ///
-        /// <p>For more information, see
-        /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
-        /// Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
-        /// "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow
-        /// Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+        /// <p>If your job is being created in one of the US regions, you have the option of specifying what size Snow device you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.</p>
+        /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
         pub fn snowball_capacity_preference(
             mut self,
             input: crate::model::SnowballCapacity,
@@ -1169,15 +933,8 @@ pub mod fluent_builders {
             self.inner = self.inner.snowball_capacity_preference(input);
             self
         }
-        /// <p>If your job is being created in one of the US regions, you have the option of
-        /// specifying what size Snow device you'd like for this job. In all other regions, Snowballs come
-        /// with 80 TB in storage capacity.</p>
-        ///
-        /// <p>For more information, see
-        /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
-        /// Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
-        /// "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow
-        /// Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+        /// <p>If your job is being created in one of the US regions, you have the option of specifying what size Snow device you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.</p>
+        /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
         pub fn set_snowball_capacity_preference(
             mut self,
             input: std::option::Option<crate::model::SnowballCapacity>,
@@ -1185,53 +942,23 @@ pub mod fluent_builders {
             self.inner = self.inner.set_snowball_capacity_preference(input);
             self
         }
-        /// <p>The shipping speed for this job. This speed doesn't dictate how soon you'll get the
-        /// Snow device, rather it represents how quickly the Snow device moves to its destination while
-        /// in transit. Regional shipping speeds are as follows:</p>
-        ///
+        /// <p>The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snow device, rather it represents how quickly the Snow device moves to its destination while in transit. Regional shipping speeds are as follows:</p>
         /// <ul>
-        /// <li>
-        /// <p>In Australia, you have access to express shipping. Typically, Snow devices shipped
-        /// express are delivered in about a day.</p>
-        /// </li>
-        /// <li>
-        /// <p>In the European Union (EU), you have access to express shipping. Typically, Snow
-        /// devices shipped express are delivered in about a day. In addition, most countries in the
-        /// EU have access to standard shipping, which typically takes less than a week, one
-        /// way.</p>
-        /// </li>
-        /// <li>
-        /// <p>In India, Snow devices are delivered in one to seven days.</p>
-        /// </li>
-        /// <li>
-        /// <p>In the US, you have access to one-day shipping and two-day shipping.</p>
-        /// </li>
+        /// <li> <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p> </li>
+        /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li>
+        /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>
+        /// <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li>
         /// </ul>
         pub fn shipping_option(mut self, input: crate::model::ShippingOption) -> Self {
             self.inner = self.inner.shipping_option(input);
             self
         }
-        /// <p>The shipping speed for this job. This speed doesn't dictate how soon you'll get the
-        /// Snow device, rather it represents how quickly the Snow device moves to its destination while
-        /// in transit. Regional shipping speeds are as follows:</p>
-        ///
+        /// <p>The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snow device, rather it represents how quickly the Snow device moves to its destination while in transit. Regional shipping speeds are as follows:</p>
         /// <ul>
-        /// <li>
-        /// <p>In Australia, you have access to express shipping. Typically, Snow devices shipped
-        /// express are delivered in about a day.</p>
-        /// </li>
-        /// <li>
-        /// <p>In the European Union (EU), you have access to express shipping. Typically, Snow
-        /// devices shipped express are delivered in about a day. In addition, most countries in the
-        /// EU have access to standard shipping, which typically takes less than a week, one
-        /// way.</p>
-        /// </li>
-        /// <li>
-        /// <p>In India, Snow devices are delivered in one to seven days.</p>
-        /// </li>
-        /// <li>
-        /// <p>In the US, you have access to one-day shipping and two-day shipping.</p>
-        /// </li>
+        /// <li> <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p> </li>
+        /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li>
+        /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>
+        /// <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li>
         /// </ul>
         pub fn set_shipping_option(
             mut self,
@@ -1240,14 +967,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_shipping_option(input);
             self
         }
-        /// <p>Defines the Amazon Simple Notification Service (Amazon SNS) notification settings for
-        /// this job.</p>
+        /// <p>Defines the Amazon Simple Notification Service (Amazon SNS) notification settings for this job.</p>
         pub fn notification(mut self, input: crate::model::Notification) -> Self {
             self.inner = self.inner.notification(input);
             self
         }
-        /// <p>Defines the Amazon Simple Notification Service (Amazon SNS) notification settings for
-        /// this job.</p>
+        /// <p>Defines the Amazon Simple Notification Service (Amazon SNS) notification settings for this job.</p>
         pub fn set_notification(
             mut self,
             input: std::option::Option<crate::model::Notification>,
@@ -1255,56 +980,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_notification(input);
             self
         }
-        /// <p>The ID of a cluster. If you're creating a job for a node in a cluster, you need to
-        /// provide only this <code>clusterId</code> value. The other job attributes are inherited from
-        /// the cluster.</p>
+        /// <p>The ID of a cluster. If you're creating a job for a node in a cluster, you need to provide only this <code>clusterId</code> value. The other job attributes are inherited from the cluster.</p>
         pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.cluster_id(input.into());
             self
         }
-        /// <p>The ID of a cluster. If you're creating a job for a node in a cluster, you need to
-        /// provide only this <code>clusterId</code> value. The other job attributes are inherited from
-        /// the cluster.</p>
+        /// <p>The ID of a cluster. If you're creating a job for a node in a cluster, you need to provide only this <code>clusterId</code> value. The other job attributes are inherited from the cluster.</p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_cluster_id(input);
             self
         }
-        /// <p>The type of Snow Family Devices to use for this job.
-        /// </p>
-        /// <note>
-        /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the
-        /// <code>EDGE</code> device type.</p>
+        /// <p>The type of Snow Family Devices to use for this job. </p> <note>
+        /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
         /// </note>
-        /// <p>The type of Amazon Web Services Snow device to use for this job. Currently, the only
-        /// supported device type for cluster jobs is <code>EDGE</code>.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge Device
-        /// Options</a> in the Snowball Edge Developer Guide.</p>
-        ///
-        /// <p>For more information, see
-        /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
-        /// Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
-        /// "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow
-        /// Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+        /// <p>The type of Amazon Web Services Snow device to use for this job. Currently, the only supported device type for cluster jobs is <code>EDGE</code>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge Device Options</a> in the Snowball Edge Developer Guide.</p>
+        /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
         pub fn snowball_type(mut self, input: crate::model::SnowballType) -> Self {
             self.inner = self.inner.snowball_type(input);
             self
         }
-        /// <p>The type of Snow Family Devices to use for this job.
-        /// </p>
-        /// <note>
-        /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the
-        /// <code>EDGE</code> device type.</p>
+        /// <p>The type of Snow Family Devices to use for this job. </p> <note>
+        /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
         /// </note>
-        /// <p>The type of Amazon Web Services Snow device to use for this job. Currently, the only
-        /// supported device type for cluster jobs is <code>EDGE</code>.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge Device
-        /// Options</a> in the Snowball Edge Developer Guide.</p>
-        ///
-        /// <p>For more information, see
-        /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
-        /// Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
-        /// "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow
-        /// Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+        /// <p>The type of Amazon Web Services Snow device to use for this job. Currently, the only supported device type for cluster jobs is <code>EDGE</code>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge Device Options</a> in the Snowball Edge Developer Guide.</p>
+        /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
         pub fn set_snowball_type(
             mut self,
             input: std::option::Option<crate::model::SnowballType>,
@@ -1312,14 +1013,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_snowball_type(input);
             self
         }
-        /// <p>The forwarding address ID for a job. This field is not supported in most
-        /// Regions.</p>
+        /// <p>The forwarding address ID for a job. This field is not supported in most Regions.</p>
         pub fn forwarding_address_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.forwarding_address_id(input.into());
             self
         }
-        /// <p>The forwarding address ID for a job. This field is not supported in most
-        /// Regions.</p>
+        /// <p>The forwarding address ID for a job. This field is not supported in most Regions.</p>
         pub fn set_forwarding_address_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1341,23 +1040,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>Defines the device configuration for an Snowcone job.</p>
-        ///
-        /// <p>For more information, see
-        /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
-        /// Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
-        /// "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow
-        /// Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+        /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
         pub fn device_configuration(mut self, input: crate::model::DeviceConfiguration) -> Self {
             self.inner = self.inner.device_configuration(input);
             self
         }
         /// <p>Defines the device configuration for an Snowcone job.</p>
-        ///
-        /// <p>For more information, see
-        /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
-        /// Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
-        /// "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow
-        /// Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+        /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
         pub fn set_device_configuration(
             mut self,
             input: std::option::Option<crate::model::DeviceConfiguration>,
@@ -1365,18 +1054,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_device_configuration(input);
             self
         }
-        /// <p>Allows you to securely operate and manage Snowcone devices remotely from outside of your
-        /// internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will
-        /// automatically be available when the device arrives at your location. Otherwise, you need to
-        /// use the Snowball Client to manage the device.</p>
+        /// <p>Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.</p>
         pub fn remote_management(mut self, input: crate::model::RemoteManagement) -> Self {
             self.inner = self.inner.remote_management(input);
             self
         }
-        /// <p>Allows you to securely operate and manage Snowcone devices remotely from outside of your
-        /// internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will
-        /// automatically be available when the device arrives at your location. Otherwise, you need to
-        /// use the Snowball Client to manage the device.</p>
+        /// <p>Allows you to securely operate and manage Snowcone devices remotely from outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.</p>
         pub fn set_remote_management(
             mut self,
             input: std::option::Option<crate::model::RemoteManagement>,
@@ -1400,9 +1083,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateLongTermPricing`.
     ///
-    /// <p>Creates a job with the long-term usage option for a device. The long-term usage is a
-    /// 1-year or 3-year long-term pricing type for the device. You are billed upfront, and Amazon Web Services provides discounts for long-term pricing.
-    /// </p>
+    /// <p>Creates a job with the long-term usage option for a device. The long-term usage is a 1-year or 3-year long-term pricing type for the device. You are billed upfront, and Amazon Web Services provides discounts for long-term pricing. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLongTermPricing<
         C = aws_smithy_client::erase::DynConnector,
@@ -1459,14 +1140,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The type of long-term pricing option you want for the device, either 1-year or 3-year
-        /// long-term pricing.</p>
+        /// <p>The type of long-term pricing option you want for the device, either 1-year or 3-year long-term pricing.</p>
         pub fn long_term_pricing_type(mut self, input: crate::model::LongTermPricingType) -> Self {
             self.inner = self.inner.long_term_pricing_type(input);
             self
         }
-        /// <p>The type of long-term pricing option you want for the device, either 1-year or 3-year
-        /// long-term pricing.</p>
+        /// <p>The type of long-term pricing option you want for the device, either 1-year or 3-year long-term pricing.</p>
         pub fn set_long_term_pricing_type(
             mut self,
             input: std::option::Option<crate::model::LongTermPricingType>,
@@ -1474,14 +1153,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_long_term_pricing_type(input);
             self
         }
-        /// <p>Specifies whether the current long-term pricing type for the device should be
-        /// renewed.</p>
+        /// <p>Specifies whether the current long-term pricing type for the device should be renewed.</p>
         pub fn is_long_term_pricing_auto_renew(mut self, input: bool) -> Self {
             self.inner = self.inner.is_long_term_pricing_auto_renew(input);
             self
         }
-        /// <p>Specifies whether the current long-term pricing type for the device should be
-        /// renewed.</p>
+        /// <p>Specifies whether the current long-term pricing type for the device should be renewed.</p>
         pub fn set_is_long_term_pricing_auto_renew(
             mut self,
             input: std::option::Option<bool>,
@@ -1562,28 +1239,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID for a job that you want to create the return shipping label for; for example,
-        /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+        /// <p>The ID for a job that you want to create the return shipping label for; for example, <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.job_id(input.into());
             self
         }
-        /// <p>The ID for a job that you want to create the return shipping label for; for example,
-        /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+        /// <p>The ID for a job that you want to create the return shipping label for; for example, <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_job_id(input);
             self
         }
-        /// <p>The shipping speed for a particular job. This speed doesn't dictate how soon the device
-        /// is returned to Amazon Web Services. This speed represents how quickly it moves to its
-        /// destination while in transit. Regional shipping speeds are as follows:</p>
+        /// <p>The shipping speed for a particular job. This speed doesn't dictate how soon the device is returned to Amazon Web Services. This speed represents how quickly it moves to its destination while in transit. Regional shipping speeds are as follows:</p>
         pub fn shipping_option(mut self, input: crate::model::ShippingOption) -> Self {
             self.inner = self.inner.shipping_option(input);
             self
         }
-        /// <p>The shipping speed for a particular job. This speed doesn't dictate how soon the device
-        /// is returned to Amazon Web Services. This speed represents how quickly it moves to its
-        /// destination while in transit. Regional shipping speeds are as follows:</p>
+        /// <p>The shipping speed for a particular job. This speed doesn't dictate how soon the device is returned to Amazon Web Services. This speed represents how quickly it moves to its destination while in transit. Regional shipping speeds are as follows:</p>
         pub fn set_shipping_option(
             mut self,
             input: std::option::Option<crate::model::ShippingOption>,
@@ -1594,8 +1265,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeAddress`.
     ///
-    /// <p>Takes an <code>AddressId</code> and returns specific details about that address in the
-    /// form of an <code>Address</code> object.</p>
+    /// <p>Takes an <code>AddressId</code> and returns specific details about that address in the form of an <code>Address</code> object.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAddress<
         C = aws_smithy_client::erase::DynConnector,
@@ -1665,9 +1335,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeAddresses`.
     ///
-    /// <p>Returns a specified number of <code>ADDRESS</code> objects. Calling this API in one of
-    /// the US regions will return addresses from the list of all addresses associated with this
-    /// account in all US regions.</p>
+    /// <p>Returns a specified number of <code>ADDRESS</code> objects. Calling this API in one of the US regions will return addresses from the list of all addresses associated with this account in all US regions.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAddresses<
         C = aws_smithy_client::erase::DynConnector,
@@ -1734,16 +1402,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of
-        /// <code>ADDRESS</code> objects, you have the option of specifying a value for
-        /// <code>NextToken</code> as the starting point for your list of returned addresses.</p>
+        /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of <code>ADDRESS</code> objects, you have the option of specifying a value for <code>NextToken</code> as the starting point for your list of returned addresses.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of
-        /// <code>ADDRESS</code> objects, you have the option of specifying a value for
-        /// <code>NextToken</code> as the starting point for your list of returned addresses.</p>
+        /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of <code>ADDRESS</code> objects, you have the option of specifying a value for <code>NextToken</code> as the starting point for your list of returned addresses.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1751,8 +1415,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeCluster`.
     ///
-    /// <p>Returns information about a specific cluster including shipping information, cluster
-    /// status, and other important metadata.</p>
+    /// <p>Returns information about a specific cluster including shipping information, cluster status, and other important metadata.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCluster<
         C = aws_smithy_client::erase::DynConnector,
@@ -1822,8 +1485,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeJob`.
     ///
-    /// <p>Returns information about a specific job including shipping information, job status,
-    /// and other important metadata. </p>
+    /// <p>Returns information about a specific job including shipping information, job status, and other important metadata. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeJob<
         C = aws_smithy_client::erase::DynConnector,
@@ -1880,14 +1542,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The automatically generated ID for a job, for example
-        /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+        /// <p>The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.job_id(input.into());
             self
         }
-        /// <p>The automatically generated ID for a job, for example
-        /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+        /// <p>The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_job_id(input);
             self
@@ -1952,14 +1612,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The automatically generated ID for a job, for example
-        /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+        /// <p>The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.job_id(input.into());
             self
         }
-        /// <p>The automatically generated ID for a job, for example
-        /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+        /// <p>The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_job_id(input);
             self
@@ -1967,25 +1625,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetJobManifest`.
     ///
-    /// <p>Returns a link to an Amazon S3 presigned URL for the manifest file associated with the
-    /// specified <code>JobId</code> value. You can access the manifest file for up to 60 minutes
-    /// after this request has been made. To access the manifest file after 60 minutes have passed,
-    /// you'll have to make another call to the <code>GetJobManifest</code> action.</p>
-    ///
-    /// <p>The manifest is an encrypted file that you can download after your job enters the
-    /// <code>WithCustomer</code> status. The manifest is decrypted by using the
-    /// <code>UnlockCode</code> code value, when you pass both values to the Snow device through the
-    /// Snowball client when the client is started for the first time.</p>
-    ///
-    ///
-    /// <p>As a best practice, we recommend that you don't save a copy of an
-    /// <code>UnlockCode</code> value in the same location as the manifest file for that job. Saving
-    /// these separately helps prevent unauthorized parties from gaining access to the Snow device
-    /// associated with that job.</p>
-    ///
-    ///
-    /// <p>The credentials of a given job, including its manifest file and unlock code, expire 360
-    /// days after the job is created.</p>
+    /// <p>Returns a link to an Amazon S3 presigned URL for the manifest file associated with the specified <code>JobId</code> value. You can access the manifest file for up to 60 minutes after this request has been made. To access the manifest file after 60 minutes have passed, you'll have to make another call to the <code>GetJobManifest</code> action.</p>
+    /// <p>The manifest is an encrypted file that you can download after your job enters the <code>WithCustomer</code> status. The manifest is decrypted by using the <code>UnlockCode</code> code value, when you pass both values to the Snow device through the Snowball client when the client is started for the first time.</p>
+    /// <p>As a best practice, we recommend that you don't save a copy of an <code>UnlockCode</code> value in the same location as the manifest file for that job. Saving these separately helps prevent unauthorized parties from gaining access to the Snow device associated with that job.</p>
+    /// <p>The credentials of a given job, including its manifest file and unlock code, expire 360 days after the job is created.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetJobManifest<
         C = aws_smithy_client::erase::DynConnector,
@@ -2042,14 +1685,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID for a job that you want to get the manifest file for, for example
-        /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+        /// <p>The ID for a job that you want to get the manifest file for, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.job_id(input.into());
             self
         }
-        /// <p>The ID for a job that you want to get the manifest file for, for example
-        /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+        /// <p>The ID for a job that you want to get the manifest file for, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_job_id(input);
             self
@@ -2057,19 +1698,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetJobUnlockCode`.
     ///
-    /// <p>Returns the <code>UnlockCode</code> code value for the specified job. A particular
-    /// <code>UnlockCode</code> value can be accessed for up to 360 days after the associated job
-    /// has been created.</p>
-    ///
-    /// <p>The <code>UnlockCode</code> value is a 29-character code with 25 alphanumeric
-    /// characters and 4 hyphens. This code is used to decrypt the manifest file when it is passed
-    /// along with the manifest to the Snow device through the Snowball client when the client is
-    /// started for the first time.</p>
-    ///
-    /// <p>As a best practice, we recommend that you don't save a copy of the
-    /// <code>UnlockCode</code> in the same location as the manifest file for that job. Saving these
-    /// separately helps prevent unauthorized parties from gaining access to the Snow device
-    /// associated with that job.</p>
+    /// <p>Returns the <code>UnlockCode</code> code value for the specified job. A particular <code>UnlockCode</code> value can be accessed for up to 360 days after the associated job has been created.</p>
+    /// <p>The <code>UnlockCode</code> value is a 29-character code with 25 alphanumeric characters and 4 hyphens. This code is used to decrypt the manifest file when it is passed along with the manifest to the Snow device through the Snowball client when the client is started for the first time.</p>
+    /// <p>As a best practice, we recommend that you don't save a copy of the <code>UnlockCode</code> in the same location as the manifest file for that job. Saving these separately helps prevent unauthorized parties from gaining access to the Snow device associated with that job.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetJobUnlockCode<
         C = aws_smithy_client::erase::DynConnector,
@@ -2126,14 +1757,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID for the job that you want to get the <code>UnlockCode</code> value for, for
-        /// example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+        /// <p>The ID for the job that you want to get the <code>UnlockCode</code> value for, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.job_id(input.into());
             self
         }
-        /// <p>The ID for the job that you want to get the <code>UnlockCode</code> value for, for
-        /// example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+        /// <p>The ID for the job that you want to get the <code>UnlockCode</code> value for, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_job_id(input);
             self
@@ -2141,11 +1770,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetSnowballUsage`.
     ///
-    /// <p>Returns information about the Snow Family service limit for your account, and also the
-    /// number of Snow devices your account has in use.</p>
-    ///
-    /// <p>The default service limit for the number of Snow devices that you can have at one time
-    /// is 1. If you want to increase your service limit, contact Amazon Web Services Support.</p>
+    /// <p>Returns information about the Snow Family service limit for your account, and also the number of Snow devices your account has in use.</p>
+    /// <p>The default service limit for the number of Snow devices that you can have at one time is 1. If you want to increase your service limit, contact Amazon Web Services Support.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSnowballUsage<
         C = aws_smithy_client::erase::DynConnector,
@@ -2205,8 +1831,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetSoftwareUpdates`.
     ///
-    /// <p>Returns an Amazon S3 presigned URL for an update file associated with a specified
-    /// <code>JobId</code>.</p>
+    /// <p>Returns an Amazon S3 presigned URL for an update file associated with a specified <code>JobId</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSoftwareUpdates<
         C = aws_smithy_client::erase::DynConnector,
@@ -2263,14 +1888,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID for a job that you want to get the software update file for, for example
-        /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+        /// <p>The ID for a job that you want to get the software update file for, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.job_id(input.into());
             self
         }
-        /// <p>The ID for a job that you want to get the software update file for, for example
-        /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+        /// <p>The ID for a job that you want to get the software update file for, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_job_id(input);
             self
@@ -2278,9 +1901,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListClusterJobs`.
     ///
-    /// <p>Returns an array of <code>JobListEntry</code> objects of the specified length. Each
-    /// <code>JobListEntry</code> object is for a job in the specified cluster and contains a job's
-    /// state, a job's ID, and other information.</p>
+    /// <p>Returns an array of <code>JobListEntry</code> objects of the specified length. Each <code>JobListEntry</code> object is for a job in the specified cluster and contains a job's state, a job's ID, and other information.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListClusterJobs<
         C = aws_smithy_client::erase::DynConnector,
@@ -2337,14 +1958,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The 39-character ID for the cluster that you want to list, for example
-        /// <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+        /// <p>The 39-character ID for the cluster that you want to list, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.cluster_id(input.into());
             self
         }
-        /// <p>The 39-character ID for the cluster that you want to list, for example
-        /// <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+        /// <p>The 39-character ID for the cluster that you want to list, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_cluster_id(input);
             self
@@ -2359,16 +1978,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of
-        /// <code>JobListEntry</code> objects, you have the option of specifying <code>NextToken</code>
-        /// as the starting point for your returned list.</p>
+        /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of <code>JobListEntry</code> objects, you have the option of specifying <code>NextToken</code> as the starting point for your returned list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of
-        /// <code>JobListEntry</code> objects, you have the option of specifying <code>NextToken</code>
-        /// as the starting point for your returned list.</p>
+        /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of <code>JobListEntry</code> objects, you have the option of specifying <code>NextToken</code> as the starting point for your returned list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2376,9 +1991,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListClusters`.
     ///
-    /// <p>Returns an array of <code>ClusterListEntry</code> objects of the specified length. Each
-    /// <code>ClusterListEntry</code> object contains a cluster's state, a cluster's ID, and other
-    /// important status information.</p>
+    /// <p>Returns an array of <code>ClusterListEntry</code> objects of the specified length. Each <code>ClusterListEntry</code> object contains a cluster's state, a cluster's ID, and other important status information.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListClusters<
         C = aws_smithy_client::erase::DynConnector,
@@ -2445,16 +2058,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of
-        /// <code>ClusterListEntry</code> objects, you have the option of specifying
-        /// <code>NextToken</code> as the starting point for your returned list.</p>
+        /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of <code>ClusterListEntry</code> objects, you have the option of specifying <code>NextToken</code> as the starting point for your returned list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of
-        /// <code>ClusterListEntry</code> objects, you have the option of specifying
-        /// <code>NextToken</code> as the starting point for your returned list.</p>
+        /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of <code>ClusterListEntry</code> objects, you have the option of specifying <code>NextToken</code> as the starting point for your returned list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2462,11 +2071,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListCompatibleImages`.
     ///
-    /// <p>This action returns a list of the different Amazon EC2 Amazon Machine Images (AMIs)
-    /// that are owned by your Amazon Web Services accountthat would be supported for use on a Snow
-    /// device. Currently, supported AMIs are based on the CentOS 7 (x86_64) - with Updates HVM,
-    /// Ubuntu Server 14.04 LTS (HVM), and Ubuntu 16.04 LTS - Xenial (HVM) images, available on the
-    /// Amazon Web Services Marketplace.</p>
+    /// <p>This action returns a list of the different Amazon EC2 Amazon Machine Images (AMIs) that are owned by your Amazon Web Services accountthat would be supported for use on a Snow device. Currently, supported AMIs are based on the CentOS 7 (x86_64) - with Updates HVM, Ubuntu Server 14.04 LTS (HVM), and Ubuntu 16.04 LTS - Xenial (HVM) images, available on the Amazon Web Services Marketplace.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCompatibleImages<
         C = aws_smithy_client::erase::DynConnector,
@@ -2523,28 +2128,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The maximum number of results for the list of compatible images. Currently, a Snowball
-        /// Edge device can store 10 AMIs.</p>
+        /// <p>The maximum number of results for the list of compatible images. Currently, a Snowball Edge device can store 10 AMIs.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results for the list of compatible images. Currently, a Snowball
-        /// Edge device can store 10 AMIs.</p>
+        /// <p>The maximum number of results for the list of compatible images. Currently, a Snowball Edge device can store 10 AMIs.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of
-        /// compatible images, you can specify a value for <code>NextToken</code> as the starting point
-        /// for your list of returned images.</p>
+        /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of compatible images, you can specify a value for <code>NextToken</code> as the starting point for your list of returned images.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of
-        /// compatible images, you can specify a value for <code>NextToken</code> as the starting point
-        /// for your list of returned images.</p>
+        /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of compatible images, you can specify a value for <code>NextToken</code> as the starting point for your list of returned images.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2552,11 +2151,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListJobs`.
     ///
-    /// <p>Returns an array of <code>JobListEntry</code> objects of the specified length. Each
-    /// <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that
-    /// indicates whether the job is a job part, in the case of export jobs. Calling this API action
-    /// in one of the US regions will return jobs from the list of all jobs associated with this
-    /// account in all US regions.</p>
+    /// <p>Returns an array of <code>JobListEntry</code> objects of the specified length. Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that indicates whether the job is a job part, in the case of export jobs. Calling this API action in one of the US regions will return jobs from the list of all jobs associated with this account in all US regions.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListJobs<
         C = aws_smithy_client::erase::DynConnector,
@@ -2623,16 +2218,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of
-        /// <code>JobListEntry</code> objects, you have the option of specifying <code>NextToken</code>
-        /// as the starting point for your returned list.</p>
+        /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of <code>JobListEntry</code> objects, you have the option of specifying <code>NextToken</code> as the starting point for your returned list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of
-        /// <code>JobListEntry</code> objects, you have the option of specifying <code>NextToken</code>
-        /// as the starting point for your returned list.</p>
+        /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of <code>JobListEntry</code> objects, you have the option of specifying <code>NextToken</code> as the starting point for your returned list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2707,14 +2298,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>Because HTTP requests are stateless, this is the starting point for your next list of
-        /// <code>ListLongTermPricing</code> to return.</p>
+        /// <p>Because HTTP requests are stateless, this is the starting point for your next list of <code>ListLongTermPricing</code> to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>Because HTTP requests are stateless, this is the starting point for your next list of
-        /// <code>ListLongTermPricing</code> to return.</p>
+        /// <p>Because HTTP requests are stateless, this is the starting point for your next list of <code>ListLongTermPricing</code> to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2722,10 +2311,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateCluster`.
     ///
-    /// <p>While a cluster's <code>ClusterState</code> value is in the <code>AwaitingQuorum</code>
-    /// state, you can update some of the information associated with a cluster. Once the cluster
-    /// changes to a different job state, usually 60 minutes after the cluster being created, this
-    /// action is no longer available.</p>
+    /// <p>While a cluster's <code>ClusterState</code> value is in the <code>AwaitingQuorum</code> state, you can update some of the information associated with a cluster. Once the cluster changes to a different job state, usually 60 minutes after the cluster being created, this action is no longer available.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateCluster<
         C = aws_smithy_client::erase::DynConnector,
@@ -2782,26 +2368,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The cluster ID of the cluster that you want to update, for example
-        /// <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+        /// <p>The cluster ID of the cluster that you want to update, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.cluster_id(input.into());
             self
         }
-        /// <p>The cluster ID of the cluster that you want to update, for example
-        /// <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+        /// <p>The cluster ID of the cluster that you want to update, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_cluster_id(input);
             self
         }
-        /// <p>The new role Amazon Resource Name (ARN) that you want to associate with this cluster.
-        /// To create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
+        /// <p>The new role Amazon Resource Name (ARN) that you want to associate with this cluster. To create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The new role Amazon Resource Name (ARN) that you want to associate with this cluster.
-        /// To create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
+        /// <p>The new role Amazon Resource Name (ARN) that you want to associate with this cluster. To create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
@@ -2816,14 +2398,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The updated arrays of <a>JobResource</a> objects that can include updated
-        /// <a>S3Resource</a> objects or <a>LambdaResource</a> objects.</p>
+        /// <p>The updated arrays of <code>JobResource</code> objects that can include updated <code>S3Resource</code> objects or <code>LambdaResource</code> objects.</p>
         pub fn resources(mut self, input: crate::model::JobResource) -> Self {
             self.inner = self.inner.resources(input);
             self
         }
-        /// <p>The updated arrays of <a>JobResource</a> objects that can include updated
-        /// <a>S3Resource</a> objects or <a>LambdaResource</a> objects.</p>
+        /// <p>The updated arrays of <code>JobResource</code> objects that can include updated <code>S3Resource</code> objects or <code>LambdaResource</code> objects.</p>
         pub fn set_resources(
             mut self,
             input: std::option::Option<crate::model::JobResource>,
@@ -2831,9 +2411,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resources(input);
             self
         }
-        /// <p>Specifies the service or services on the Snow Family device that your transferred data
-        /// will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS
-        /// (Network File System).</p>
+        /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS (Network File System).</p>
         pub fn on_device_service_configuration(
             mut self,
             input: crate::model::OnDeviceServiceConfiguration,
@@ -2841,9 +2419,7 @@ pub mod fluent_builders {
             self.inner = self.inner.on_device_service_configuration(input);
             self
         }
-        /// <p>Specifies the service or services on the Snow Family device that your transferred data
-        /// will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS
-        /// (Network File System).</p>
+        /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS (Network File System).</p>
         pub fn set_on_device_service_configuration(
             mut self,
             input: std::option::Option<crate::model::OnDeviceServiceConfiguration>,
@@ -2851,24 +2427,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_on_device_service_configuration(input);
             self
         }
-        /// <p>The ID of the updated <a>Address</a> object.</p>
+        /// <p>The ID of the updated <code>Address</code> object.</p>
         pub fn address_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.address_id(input.into());
             self
         }
-        /// <p>The ID of the updated <a>Address</a> object.</p>
+        /// <p>The ID of the updated <code>Address</code> object.</p>
         pub fn set_address_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_address_id(input);
             self
         }
-        /// <p>The updated shipping option value of this cluster's <a>ShippingDetails</a>
-        /// object.</p>
+        /// <p>The updated shipping option value of this cluster's <code>ShippingDetails</code> object.</p>
         pub fn shipping_option(mut self, input: crate::model::ShippingOption) -> Self {
             self.inner = self.inner.shipping_option(input);
             self
         }
-        /// <p>The updated shipping option value of this cluster's <a>ShippingDetails</a>
-        /// object.</p>
+        /// <p>The updated shipping option value of this cluster's <code>ShippingDetails</code> object.</p>
         pub fn set_shipping_option(
             mut self,
             input: std::option::Option<crate::model::ShippingOption>,
@@ -2876,12 +2450,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_shipping_option(input);
             self
         }
-        /// <p>The new or updated <a>Notification</a> object.</p>
+        /// <p>The new or updated <code>Notification</code> object.</p>
         pub fn notification(mut self, input: crate::model::Notification) -> Self {
             self.inner = self.inner.notification(input);
             self
         }
-        /// <p>The new or updated <a>Notification</a> object.</p>
+        /// <p>The new or updated <code>Notification</code> object.</p>
         pub fn set_notification(
             mut self,
             input: std::option::Option<crate::model::Notification>,
@@ -2889,14 +2463,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_notification(input);
             self
         }
-        /// <p>The updated ID for the forwarding address for a cluster. This field is not
-        /// supported in most regions.</p>
+        /// <p>The updated ID for the forwarding address for a cluster. This field is not supported in most regions.</p>
         pub fn forwarding_address_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.forwarding_address_id(input.into());
             self
         }
-        /// <p>The updated ID for the forwarding address for a cluster. This field is not
-        /// supported in most regions.</p>
+        /// <p>The updated ID for the forwarding address for a cluster. This field is not supported in most regions.</p>
         pub fn set_forwarding_address_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2907,9 +2479,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateJob`.
     ///
-    /// <p>While a job's <code>JobState</code> value is <code>New</code>, you can update some of
-    /// the information associated with a job. Once the job changes to a different job state, usually
-    /// within 60 minutes of the job being created, this action is no longer available.</p>
+    /// <p>While a job's <code>JobState</code> value is <code>New</code>, you can update some of the information associated with a job. Once the job changes to a different job state, usually within 60 minutes of the job being created, this action is no longer available.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateJob<
         C = aws_smithy_client::erase::DynConnector,
@@ -2966,38 +2536,32 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The job ID of the job that you want to update, for example
-        /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+        /// <p>The job ID of the job that you want to update, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.job_id(input.into());
             self
         }
-        /// <p>The job ID of the job that you want to update, for example
-        /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+        /// <p>The job ID of the job that you want to update, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_job_id(input);
             self
         }
-        /// <p>The new role Amazon Resource Name (ARN) that you want to associate with this job. To
-        /// create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>Identity and Access Management
-        /// (IAM) API action.</p>
+        /// <p>The new role Amazon Resource Name (ARN) that you want to associate with this job. To create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>Identity and Access Management (IAM) API action.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The new role Amazon Resource Name (ARN) that you want to associate with this job. To
-        /// create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>Identity and Access Management
-        /// (IAM) API action.</p>
+        /// <p>The new role Amazon Resource Name (ARN) that you want to associate with this job. To create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>Identity and Access Management (IAM) API action.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
         }
-        /// <p>The new or updated <a>Notification</a> object.</p>
+        /// <p>The new or updated <code>Notification</code> object.</p>
         pub fn notification(mut self, input: crate::model::Notification) -> Self {
             self.inner = self.inner.notification(input);
             self
         }
-        /// <p>The new or updated <a>Notification</a> object.</p>
+        /// <p>The new or updated <code>Notification</code> object.</p>
         pub fn set_notification(
             mut self,
             input: std::option::Option<crate::model::Notification>,
@@ -3005,12 +2569,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_notification(input);
             self
         }
-        /// <p>The updated <code>JobResource</code> object, or the updated <a>JobResource</a> object. </p>
+        /// <p>The updated <code>JobResource</code> object, or the updated <code>JobResource</code> object. </p>
         pub fn resources(mut self, input: crate::model::JobResource) -> Self {
             self.inner = self.inner.resources(input);
             self
         }
-        /// <p>The updated <code>JobResource</code> object, or the updated <a>JobResource</a> object. </p>
+        /// <p>The updated <code>JobResource</code> object, or the updated <code>JobResource</code> object. </p>
         pub fn set_resources(
             mut self,
             input: std::option::Option<crate::model::JobResource>,
@@ -3018,9 +2582,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resources(input);
             self
         }
-        /// <p>Specifies the service or services on the Snow Family device that your transferred data
-        /// will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File
-        /// System) and the Amazon Web Services Storage Gateway service Tape Gateway type.</p>
+        /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File System) and the Amazon Web Services Storage Gateway service Tape Gateway type.</p>
         pub fn on_device_service_configuration(
             mut self,
             input: crate::model::OnDeviceServiceConfiguration,
@@ -3028,9 +2590,7 @@ pub mod fluent_builders {
             self.inner = self.inner.on_device_service_configuration(input);
             self
         }
-        /// <p>Specifies the service or services on the Snow Family device that your transferred data
-        /// will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File
-        /// System) and the Amazon Web Services Storage Gateway service Tape Gateway type.</p>
+        /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File System) and the Amazon Web Services Storage Gateway service Tape Gateway type.</p>
         pub fn set_on_device_service_configuration(
             mut self,
             input: std::option::Option<crate::model::OnDeviceServiceConfiguration>,
@@ -3038,24 +2598,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_on_device_service_configuration(input);
             self
         }
-        /// <p>The ID of the updated <a>Address</a> object.</p>
+        /// <p>The ID of the updated <code>Address</code> object.</p>
         pub fn address_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.address_id(input.into());
             self
         }
-        /// <p>The ID of the updated <a>Address</a> object.</p>
+        /// <p>The ID of the updated <code>Address</code> object.</p>
         pub fn set_address_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_address_id(input);
             self
         }
-        /// <p>The updated shipping option value of this job's <a>ShippingDetails</a>
-        /// object.</p>
+        /// <p>The updated shipping option value of this job's <code>ShippingDetails</code> object.</p>
         pub fn shipping_option(mut self, input: crate::model::ShippingOption) -> Self {
             self.inner = self.inner.shipping_option(input);
             self
         }
-        /// <p>The updated shipping option value of this job's <a>ShippingDetails</a>
-        /// object.</p>
+        /// <p>The updated shipping option value of this job's <code>ShippingDetails</code> object.</p>
         pub fn set_shipping_option(
             mut self,
             input: std::option::Option<crate::model::ShippingOption>,
@@ -3063,24 +2621,18 @@ pub mod fluent_builders {
             self.inner = self.inner.set_shipping_option(input);
             self
         }
-        /// <p>The updated description of this job's <a>JobMetadata</a> object.</p>
+        /// <p>The updated description of this job's <code>JobMetadata</code> object.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>The updated description of this job's <a>JobMetadata</a> object.</p>
+        /// <p>The updated description of this job's <code>JobMetadata</code> object.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The updated <code>SnowballCapacityPreference</code> of this job's <a>JobMetadata</a> object. The 50 TB Snowballs are only available in the US
-        /// regions.</p>
-        ///
-        /// <p>For more information, see
-        /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
-        /// Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
-        /// "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow
-        /// Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+        /// <p>The updated <code>SnowballCapacityPreference</code> of this job's <code>JobMetadata</code> object. The 50 TB Snowballs are only available in the US regions.</p>
+        /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
         pub fn snowball_capacity_preference(
             mut self,
             input: crate::model::SnowballCapacity,
@@ -3088,14 +2640,8 @@ pub mod fluent_builders {
             self.inner = self.inner.snowball_capacity_preference(input);
             self
         }
-        /// <p>The updated <code>SnowballCapacityPreference</code> of this job's <a>JobMetadata</a> object. The 50 TB Snowballs are only available in the US
-        /// regions.</p>
-        ///
-        /// <p>For more information, see
-        /// "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow
-        /// Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
-        /// "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow
-        /// Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+        /// <p>The updated <code>SnowballCapacityPreference</code> of this job's <code>JobMetadata</code> object. The 50 TB Snowballs are only available in the US regions.</p>
+        /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
         pub fn set_snowball_capacity_preference(
             mut self,
             input: std::option::Option<crate::model::SnowballCapacity>,
@@ -3103,14 +2649,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_snowball_capacity_preference(input);
             self
         }
-        /// <p>The updated ID for the forwarding address for a job. This field is not
-        /// supported in most regions.</p>
+        /// <p>The updated ID for the forwarding address for a job. This field is not supported in most regions.</p>
         pub fn forwarding_address_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.forwarding_address_id(input.into());
             self
         }
-        /// <p>The updated ID for the forwarding address for a job. This field is not
-        /// supported in most regions.</p>
+        /// <p>The updated ID for the forwarding address for a job. This field is not supported in most regions.</p>
         pub fn set_forwarding_address_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3178,14 +2722,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The job ID of the job whose shipment date you want to update, for example
-        /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+        /// <p>The job ID of the job whose shipment date you want to update, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.job_id(input.into());
             self
         }
-        /// <p>The job ID of the job whose shipment date you want to update, for example
-        /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+        /// <p>The job ID of the job whose shipment date you want to update, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_job_id(input);
             self
@@ -3280,14 +2822,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_long_term_pricing_id(input);
             self
         }
-        /// <p>Specifies that a device that is ordered with long-term pricing should be replaced with a
-        /// new device.</p>
+        /// <p>Specifies that a device that is ordered with long-term pricing should be replaced with a new device.</p>
         pub fn replacement_job(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.replacement_job(input.into());
             self
         }
-        /// <p>Specifies that a device that is ordered with long-term pricing should be replaced with a
-        /// new device.</p>
+        /// <p>Specifies that a device that is ordered with long-term pricing should be replaced with a new device.</p>
         pub fn set_replacement_job(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3295,14 +2835,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_replacement_job(input);
             self
         }
-        /// <p>If set to <code>true</code>, specifies that the current long-term pricing type for the
-        /// device should be automatically renewed before the long-term pricing contract expires.</p>
+        /// <p>If set to <code>true</code>, specifies that the current long-term pricing type for the device should be automatically renewed before the long-term pricing contract expires.</p>
         pub fn is_long_term_pricing_auto_renew(mut self, input: bool) -> Self {
             self.inner = self.inner.is_long_term_pricing_auto_renew(input);
             self
         }
-        /// <p>If set to <code>true</code>, specifies that the current long-term pricing type for the
-        /// device should be automatically renewed before the long-term pricing contract expires.</p>
+        /// <p>If set to <code>true</code>, specifies that the current long-term pricing type for the device should be automatically renewed before the long-term pricing contract expires.</p>
         pub fn set_is_long_term_pricing_auto_renew(
             mut self,
             input: std::option::Option<bool>,

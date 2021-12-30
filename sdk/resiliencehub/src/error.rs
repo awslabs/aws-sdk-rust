@@ -12,17 +12,11 @@ pub struct AddDraftAppVersionResourceMappingsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AddDraftAppVersionResourceMappingsErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -189,22 +183,15 @@ pub struct CreateAppError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateAppErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>You have exceeded your service quota. To perform the requested action, remove some of the
-    /// relevant resources, or use Service Quotas to request a service quota increase.</p>
+    /// <p>You have exceeded your service quota. To perform the requested action, remove some of the relevant resources, or use Service Quotas to request a service quota increase.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -337,17 +324,11 @@ pub struct CreateRecommendationTemplateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateRecommendationTemplateErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -495,20 +476,13 @@ pub struct CreateResiliencyPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateResiliencyPolicyErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>You have exceeded your service quota. To perform the requested action, remove some of the
-    /// relevant resources, or use Service Quotas to request a service quota increase.</p>
+    /// <p>You have exceeded your service quota. To perform the requested action, remove some of the relevant resources, or use Service Quotas to request a service quota increase.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -650,13 +624,9 @@ pub struct DeleteAppError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteAppErrorKind {
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -776,17 +746,11 @@ pub struct DeleteAppAssessmentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteAppAssessmentErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -930,12 +894,9 @@ pub struct DeleteRecommendationTemplateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteRecommendationTemplateErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1074,17 +1035,11 @@ pub struct DeleteResiliencyPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteResiliencyPolicyErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1228,12 +1183,9 @@ pub struct DescribeAppError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeAppErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1356,12 +1308,9 @@ pub struct DescribeAppAssessmentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeAppAssessmentErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1496,12 +1445,9 @@ pub struct DescribeAppVersionResourcesResolutionStatusError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeAppVersionResourcesResolutionStatusErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1665,12 +1611,9 @@ pub struct DescribeAppVersionTemplateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeAppVersionTemplateErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1805,12 +1748,9 @@ pub struct DescribeDraftAppVersionResourcesImportStatusError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeDraftAppVersionResourcesImportStatusErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1974,12 +1914,9 @@ pub struct DescribeResiliencyPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeResiliencyPolicyErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2114,17 +2051,11 @@ pub struct ImportResourcesToDraftAppVersionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ImportResourcesToDraftAppVersionErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2283,12 +2214,9 @@ pub struct ListAlarmRecommendationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAlarmRecommendationsErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2423,12 +2351,9 @@ pub struct ListAppAssessmentsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAppAssessmentsErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2563,12 +2488,9 @@ pub struct ListAppComponentCompliancesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAppComponentCompliancesErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2705,12 +2627,9 @@ pub struct ListAppComponentRecommendationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAppComponentRecommendationsErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2858,12 +2777,9 @@ pub struct ListAppsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAppsErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -2975,12 +2891,9 @@ pub struct ListAppVersionResourceMappingsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAppVersionResourceMappingsErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3126,17 +3039,11 @@ pub struct ListAppVersionResourcesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAppVersionResourcesErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3280,12 +3187,9 @@ pub struct ListAppVersionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAppVersionsErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3406,12 +3310,9 @@ pub struct ListRecommendationTemplatesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListRecommendationTemplatesErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -3535,12 +3436,9 @@ pub struct ListResiliencyPoliciesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListResiliencyPoliciesErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3675,17 +3573,11 @@ pub struct ListSopRecommendationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListSopRecommendationsErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3829,12 +3721,9 @@ pub struct ListSuggestedResiliencyPoliciesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListSuggestedResiliencyPoliciesErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3982,12 +3871,9 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -4122,17 +4008,11 @@ pub struct ListTestRecommendationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTestRecommendationsErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -4276,17 +4156,11 @@ pub struct ListUnsupportedAppVersionResourcesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListUnsupportedAppVersionResourcesErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -4453,17 +4327,11 @@ pub struct PublishAppVersionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PublishAppVersionErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -4604,17 +4472,11 @@ pub struct PutDraftAppVersionTemplateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutDraftAppVersionTemplateErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -4758,17 +4620,11 @@ pub struct RemoveDraftAppVersionResourceMappingsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RemoveDraftAppVersionResourceMappingsErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -4941,17 +4797,11 @@ pub struct ResolveAppVersionResourcesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ResolveAppVersionResourcesErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -5095,22 +4945,15 @@ pub struct StartAppAssessmentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartAppAssessmentErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>You have exceeded your service quota. To perform the requested action, remove some of the
-    /// relevant resources, or use Service Quotas to request a service quota increase.</p>
+    /// <p>You have exceeded your service quota. To perform the requested action, remove some of the relevant resources, or use Service Quotas to request a service quota increase.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -5261,12 +5104,9 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -5389,12 +5229,9 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -5520,17 +5357,11 @@ pub struct UpdateAppError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateAppErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -5656,17 +5487,11 @@ pub struct UpdateResiliencyPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateResiliencyPolicyErrorKind {
-    /// <p>You don't have permissions to perform the requested operation. The user or role that is
-    /// making the request must have at least one IAM permissions policy attached that grants the
-    /// required permissions.</p>
+    /// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-    /// when the previous write did not have time to propagate to the host serving the current
-    /// request. A retry (with appropriate backoff logic) is the recommended response to this
-    /// exception.</p>
+    /// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-    /// service.</p>
+    /// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -6053,8 +5878,7 @@ impl ResourceNotFoundException {
     }
 }
 
-/// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub
-/// service.</p>
+/// <p>This exception occurs when there is an internal failure in the AWS Resilience Hub service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerException {
@@ -6118,10 +5942,7 @@ impl InternalServerException {
     }
 }
 
-/// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs
-/// when the previous write did not have time to propagate to the host serving the current
-/// request. A retry (with appropriate backoff logic) is the recommended response to this
-/// exception.</p>
+/// <p>Occurs when a conflict with a previous successful write is detected. This generally occurs when the previous write did not have time to propagate to the host serving the current request. A retry (with appropriate backoff logic) is the recommended response to this exception.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {
@@ -6228,9 +6049,7 @@ impl ConflictException {
     }
 }
 
-/// <p>You don't have permissions to perform the requested operation. The user or role that is
-/// making the request must have at least one IAM permissions policy attached that grants the
-/// required permissions.</p>
+/// <p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedException {
@@ -6294,8 +6113,7 @@ impl AccessDeniedException {
     }
 }
 
-/// <p>You have exceeded your service quota. To perform the requested action, remove some of the
-/// relevant resources, or use Service Quotas to request a service quota increase.</p>
+/// <p>You have exceeded your service quota. To perform the requested action, remove some of the relevant resources, or use Service Quotas to request a service quota increase.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceQuotaExceededException {

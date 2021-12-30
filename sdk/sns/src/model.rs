@@ -290,8 +290,7 @@ impl PublishBatchResultEntry {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PublishBatchRequestEntry {
-    /// <p>An identifier for the message in this batch.</p>  
-    /// <note>
+    /// <p>An identifier for the message in this batch.</p> <note>
     /// <p>The <code>Ids</code> of a batch request must be unique within a request. </p>
     /// <p>This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters, hyphens(-), and underscores (_). </p>
     /// </note>
@@ -300,17 +299,12 @@ pub struct PublishBatchRequestEntry {
     pub message: std::option::Option<std::string::String>,
     /// <p>The subject of the batch message.</p>
     pub subject: std::option::Option<std::string::String>,
-    /// <p>Set <code>MessageStructure</code> to <code>json</code> if you want to send a different message for each protocol. For example, using one publish action, you can send a short message to your SMS subscribers and a longer message to your email subscribers. If you set <code>MessageStructure</code> to <code>json</code>, the value of the <code>Message</code> parameter must: </p>                
+    /// <p>Set <code>MessageStructure</code> to <code>json</code> if you want to send a different message for each protocol. For example, using one publish action, you can send a short message to your SMS subscribers and a longer message to your email subscribers. If you set <code>MessageStructure</code> to <code>json</code>, the value of the <code>Message</code> parameter must: </p>
     /// <ul>
-    /// <li>
-    /// <p>be a syntactically valid JSON object; and</p>
-    /// </li>
-    /// <li>
-    /// <p>contain at least a top-level JSON key of "default" with a value that is a string.</p>
-    /// </li>
+    /// <li> <p>be a syntactically valid JSON object; and</p> </li>
+    /// <li> <p>contain at least a top-level JSON key of "default" with a value that is a string.</p> </li>
     /// </ul>
-    /// <p>You can define other top-level keys that define the message you want to send to a
-    /// specific transport protocol (e.g. http). </p>
+    /// <p>You can define other top-level keys that define the message you want to send to a specific transport protocol (e.g. http). </p>
     pub message_structure: std::option::Option<std::string::String>,
     /// <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-message-attributes.html">Amazon SNS message attributes</a> in the Amazon SNS Developer Guide.</p>
     pub message_attributes: std::option::Option<
@@ -319,60 +313,34 @@ pub struct PublishBatchRequestEntry {
     /// <p>This parameter applies only to FIFO (first-in-first-out) topics.</p>
     /// <p>The token used for deduplication of messages within a 5-minute minimum deduplication interval. If a message with a particular <code>MessageDeduplicationId</code> is sent successfully, subsequent messages with the same <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered.</p>
     /// <ul>
-    /// <li>
-    /// <p>Every message must have a unique <code>MessageDeduplicationId</code>.</p>
+    /// <li> <p>Every message must have a unique <code>MessageDeduplicationId</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p>You may provide a <code>MessageDeduplicationId</code> explicitly.</p>
-    /// </li>
-    /// <li>
-    /// <p>If you aren't able to provide a <code>MessageDeduplicationId</code> and you enable <code>ContentBasedDeduplication</code> for your topic, Amazon SNS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).</p>
-    /// </li>
-    /// <li>
-    /// <p>If you don't provide a <code>MessageDeduplicationId</code> and the topic doesn't have <code>ContentBasedDeduplication</code> set, the action fails with an error.</p>
-    /// </li>
-    /// <li>
-    /// <p>If the topic has a <code>ContentBasedDeduplication</code> set, your
-    /// <code>MessageDeduplicationId</code> overrides the generated one. </p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the deduplication interval are treated as duplicates and only one copy of the message is delivered.</p>
-    /// </li>
-    /// <li>
-    /// <p>If you send one message with <code>ContentBasedDeduplication</code> enabled, and then another
-    /// message with a <code>MessageDeduplicationId</code> that is the same as the one
-    /// generated for the first <code>MessageDeduplicationId</code>, the two messages
-    /// are treated as duplicates and only one copy of the message is delivered. </p>
-    /// </li>
-    /// </ul>
-    /// <note>
+    /// <li> <p>You may provide a <code>MessageDeduplicationId</code> explicitly.</p> </li>
+    /// <li> <p>If you aren't able to provide a <code>MessageDeduplicationId</code> and you enable <code>ContentBasedDeduplication</code> for your topic, Amazon SNS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).</p> </li>
+    /// <li> <p>If you don't provide a <code>MessageDeduplicationId</code> and the topic doesn't have <code>ContentBasedDeduplication</code> set, the action fails with an error.</p> </li>
+    /// <li> <p>If the topic has a <code>ContentBasedDeduplication</code> set, your <code>MessageDeduplicationId</code> overrides the generated one. </p> </li>
+    /// </ul> </li>
+    /// <li> <p>When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the deduplication interval are treated as duplicates and only one copy of the message is delivered.</p> </li>
+    /// <li> <p>If you send one message with <code>ContentBasedDeduplication</code> enabled, and then another message with a <code>MessageDeduplicationId</code> that is the same as the one generated for the first <code>MessageDeduplicationId</code>, the two messages are treated as duplicates and only one copy of the message is delivered. </p> </li>
+    /// </ul> <note>
     /// <p>The <code>MessageDeduplicationId</code> is available to the consumer of the message (this can be useful for troubleshooting delivery issues).</p>
     /// <p>If a message is sent successfully but the acknowledgement is lost and the message is resent with the same <code>MessageDeduplicationId</code> after the deduplication interval, Amazon SNS can't detect duplicate messages. </p>
     /// <p>Amazon SNS continues to keep track of the message deduplication ID even after the message is received and deleted. </p>
     /// </note>
     /// <p>The length of <code>MessageDeduplicationId</code> is 128 characters.</p>
-    /// <p>
-    /// <code>MessageDeduplicationId</code> can contain alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)</code>.</p>
+    /// <p> <code>MessageDeduplicationId</code> can contain alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p>
     pub message_deduplication_id: std::option::Option<std::string::String>,
     /// <p>This parameter applies only to FIFO (first-in-first-out) topics.</p>
     /// <p>The tag that specifies that a message belongs to a specific message group. Messages that belong to the same message group are processed in a FIFO manner (however, messages in different message groups might be processed out of order). To interleave multiple ordered streams within a single topic, use <code>MessageGroupId</code> values (for example, session data for multiple users). In this scenario, multiple consumers can process the topic, but the session data of each user is processed in a FIFO fashion. </p>
     /// <p>You must associate a non-empty <code>MessageGroupId</code> with a message. If you don't provide a <code>MessageGroupId</code>, the action fails. </p>
     /// <p>The length of <code>MessageGroupId</code> is 128 characters.</p>
-    /// <p>
-    /// <code>MessageGroupId</code> can contain alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)</code>.</p>      
-    ///
-    ///
-    /// <important>
-    /// <p>
-    /// <code>MessageGroupId</code> is required for FIFO topics. You can't use it for standard topics. </p>
+    /// <p> <code>MessageGroupId</code> can contain alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p> <important>
+    /// <p> <code>MessageGroupId</code> is required for FIFO topics. You can't use it for standard topics. </p>
     /// </important>
     pub message_group_id: std::option::Option<std::string::String>,
 }
 impl PublishBatchRequestEntry {
-    /// <p>An identifier for the message in this batch.</p>  
-    /// <note>
+    /// <p>An identifier for the message in this batch.</p> <note>
     /// <p>The <code>Ids</code> of a batch request must be unique within a request. </p>
     /// <p>This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters, hyphens(-), and underscores (_). </p>
     /// </note>
@@ -387,17 +355,12 @@ impl PublishBatchRequestEntry {
     pub fn subject(&self) -> std::option::Option<&str> {
         self.subject.as_deref()
     }
-    /// <p>Set <code>MessageStructure</code> to <code>json</code> if you want to send a different message for each protocol. For example, using one publish action, you can send a short message to your SMS subscribers and a longer message to your email subscribers. If you set <code>MessageStructure</code> to <code>json</code>, the value of the <code>Message</code> parameter must: </p>                
+    /// <p>Set <code>MessageStructure</code> to <code>json</code> if you want to send a different message for each protocol. For example, using one publish action, you can send a short message to your SMS subscribers and a longer message to your email subscribers. If you set <code>MessageStructure</code> to <code>json</code>, the value of the <code>Message</code> parameter must: </p>
     /// <ul>
-    /// <li>
-    /// <p>be a syntactically valid JSON object; and</p>
-    /// </li>
-    /// <li>
-    /// <p>contain at least a top-level JSON key of "default" with a value that is a string.</p>
-    /// </li>
+    /// <li> <p>be a syntactically valid JSON object; and</p> </li>
+    /// <li> <p>contain at least a top-level JSON key of "default" with a value that is a string.</p> </li>
     /// </ul>
-    /// <p>You can define other top-level keys that define the message you want to send to a
-    /// specific transport protocol (e.g. http). </p>
+    /// <p>You can define other top-level keys that define the message you want to send to a specific transport protocol (e.g. http). </p>
     pub fn message_structure(&self) -> std::option::Option<&str> {
         self.message_structure.as_deref()
     }
@@ -412,42 +375,22 @@ impl PublishBatchRequestEntry {
     /// <p>This parameter applies only to FIFO (first-in-first-out) topics.</p>
     /// <p>The token used for deduplication of messages within a 5-minute minimum deduplication interval. If a message with a particular <code>MessageDeduplicationId</code> is sent successfully, subsequent messages with the same <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered.</p>
     /// <ul>
-    /// <li>
-    /// <p>Every message must have a unique <code>MessageDeduplicationId</code>.</p>
+    /// <li> <p>Every message must have a unique <code>MessageDeduplicationId</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p>You may provide a <code>MessageDeduplicationId</code> explicitly.</p>
-    /// </li>
-    /// <li>
-    /// <p>If you aren't able to provide a <code>MessageDeduplicationId</code> and you enable <code>ContentBasedDeduplication</code> for your topic, Amazon SNS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).</p>
-    /// </li>
-    /// <li>
-    /// <p>If you don't provide a <code>MessageDeduplicationId</code> and the topic doesn't have <code>ContentBasedDeduplication</code> set, the action fails with an error.</p>
-    /// </li>
-    /// <li>
-    /// <p>If the topic has a <code>ContentBasedDeduplication</code> set, your
-    /// <code>MessageDeduplicationId</code> overrides the generated one. </p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the deduplication interval are treated as duplicates and only one copy of the message is delivered.</p>
-    /// </li>
-    /// <li>
-    /// <p>If you send one message with <code>ContentBasedDeduplication</code> enabled, and then another
-    /// message with a <code>MessageDeduplicationId</code> that is the same as the one
-    /// generated for the first <code>MessageDeduplicationId</code>, the two messages
-    /// are treated as duplicates and only one copy of the message is delivered. </p>
-    /// </li>
-    /// </ul>
-    /// <note>
+    /// <li> <p>You may provide a <code>MessageDeduplicationId</code> explicitly.</p> </li>
+    /// <li> <p>If you aren't able to provide a <code>MessageDeduplicationId</code> and you enable <code>ContentBasedDeduplication</code> for your topic, Amazon SNS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).</p> </li>
+    /// <li> <p>If you don't provide a <code>MessageDeduplicationId</code> and the topic doesn't have <code>ContentBasedDeduplication</code> set, the action fails with an error.</p> </li>
+    /// <li> <p>If the topic has a <code>ContentBasedDeduplication</code> set, your <code>MessageDeduplicationId</code> overrides the generated one. </p> </li>
+    /// </ul> </li>
+    /// <li> <p>When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the deduplication interval are treated as duplicates and only one copy of the message is delivered.</p> </li>
+    /// <li> <p>If you send one message with <code>ContentBasedDeduplication</code> enabled, and then another message with a <code>MessageDeduplicationId</code> that is the same as the one generated for the first <code>MessageDeduplicationId</code>, the two messages are treated as duplicates and only one copy of the message is delivered. </p> </li>
+    /// </ul> <note>
     /// <p>The <code>MessageDeduplicationId</code> is available to the consumer of the message (this can be useful for troubleshooting delivery issues).</p>
     /// <p>If a message is sent successfully but the acknowledgement is lost and the message is resent with the same <code>MessageDeduplicationId</code> after the deduplication interval, Amazon SNS can't detect duplicate messages. </p>
     /// <p>Amazon SNS continues to keep track of the message deduplication ID even after the message is received and deleted. </p>
     /// </note>
     /// <p>The length of <code>MessageDeduplicationId</code> is 128 characters.</p>
-    /// <p>
-    /// <code>MessageDeduplicationId</code> can contain alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)</code>.</p>
+    /// <p> <code>MessageDeduplicationId</code> can contain alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p>
     pub fn message_deduplication_id(&self) -> std::option::Option<&str> {
         self.message_deduplication_id.as_deref()
     }
@@ -455,13 +398,8 @@ impl PublishBatchRequestEntry {
     /// <p>The tag that specifies that a message belongs to a specific message group. Messages that belong to the same message group are processed in a FIFO manner (however, messages in different message groups might be processed out of order). To interleave multiple ordered streams within a single topic, use <code>MessageGroupId</code> values (for example, session data for multiple users). In this scenario, multiple consumers can process the topic, but the session data of each user is processed in a FIFO fashion. </p>
     /// <p>You must associate a non-empty <code>MessageGroupId</code> with a message. If you don't provide a <code>MessageGroupId</code>, the action fails. </p>
     /// <p>The length of <code>MessageGroupId</code> is 128 characters.</p>
-    /// <p>
-    /// <code>MessageGroupId</code> can contain alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)</code>.</p>      
-    ///
-    ///
-    /// <important>
-    /// <p>
-    /// <code>MessageGroupId</code> is required for FIFO topics. You can't use it for standard topics. </p>
+    /// <p> <code>MessageGroupId</code> can contain alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p> <important>
+    /// <p> <code>MessageGroupId</code> is required for FIFO topics. You can't use it for standard topics. </p>
     /// </important>
     pub fn message_group_id(&self) -> std::option::Option<&str> {
         self.message_group_id.as_deref()
@@ -497,8 +435,7 @@ pub mod publish_batch_request_entry {
         pub(crate) message_group_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>An identifier for the message in this batch.</p>  
-        /// <note>
+        /// <p>An identifier for the message in this batch.</p> <note>
         /// <p>The <code>Ids</code> of a batch request must be unique within a request. </p>
         /// <p>This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters, hyphens(-), and underscores (_). </p>
         /// </note>
@@ -506,8 +443,7 @@ pub mod publish_batch_request_entry {
             self.id = Some(input.into());
             self
         }
-        /// <p>An identifier for the message in this batch.</p>  
-        /// <note>
+        /// <p>An identifier for the message in this batch.</p> <note>
         /// <p>The <code>Ids</code> of a batch request must be unique within a request. </p>
         /// <p>This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters, hyphens(-), and underscores (_). </p>
         /// </note>
@@ -535,32 +471,22 @@ pub mod publish_batch_request_entry {
             self.subject = input;
             self
         }
-        /// <p>Set <code>MessageStructure</code> to <code>json</code> if you want to send a different message for each protocol. For example, using one publish action, you can send a short message to your SMS subscribers and a longer message to your email subscribers. If you set <code>MessageStructure</code> to <code>json</code>, the value of the <code>Message</code> parameter must: </p>                
+        /// <p>Set <code>MessageStructure</code> to <code>json</code> if you want to send a different message for each protocol. For example, using one publish action, you can send a short message to your SMS subscribers and a longer message to your email subscribers. If you set <code>MessageStructure</code> to <code>json</code>, the value of the <code>Message</code> parameter must: </p>
         /// <ul>
-        /// <li>
-        /// <p>be a syntactically valid JSON object; and</p>
-        /// </li>
-        /// <li>
-        /// <p>contain at least a top-level JSON key of "default" with a value that is a string.</p>
-        /// </li>
+        /// <li> <p>be a syntactically valid JSON object; and</p> </li>
+        /// <li> <p>contain at least a top-level JSON key of "default" with a value that is a string.</p> </li>
         /// </ul>
-        /// <p>You can define other top-level keys that define the message you want to send to a
-        /// specific transport protocol (e.g. http). </p>
+        /// <p>You can define other top-level keys that define the message you want to send to a specific transport protocol (e.g. http). </p>
         pub fn message_structure(mut self, input: impl Into<std::string::String>) -> Self {
             self.message_structure = Some(input.into());
             self
         }
-        /// <p>Set <code>MessageStructure</code> to <code>json</code> if you want to send a different message for each protocol. For example, using one publish action, you can send a short message to your SMS subscribers and a longer message to your email subscribers. If you set <code>MessageStructure</code> to <code>json</code>, the value of the <code>Message</code> parameter must: </p>                
+        /// <p>Set <code>MessageStructure</code> to <code>json</code> if you want to send a different message for each protocol. For example, using one publish action, you can send a short message to your SMS subscribers and a longer message to your email subscribers. If you set <code>MessageStructure</code> to <code>json</code>, the value of the <code>Message</code> parameter must: </p>
         /// <ul>
-        /// <li>
-        /// <p>be a syntactically valid JSON object; and</p>
-        /// </li>
-        /// <li>
-        /// <p>contain at least a top-level JSON key of "default" with a value that is a string.</p>
-        /// </li>
+        /// <li> <p>be a syntactically valid JSON object; and</p> </li>
+        /// <li> <p>contain at least a top-level JSON key of "default" with a value that is a string.</p> </li>
         /// </ul>
-        /// <p>You can define other top-level keys that define the message you want to send to a
-        /// specific transport protocol (e.g. http). </p>
+        /// <p>You can define other top-level keys that define the message you want to send to a specific transport protocol (e.g. http). </p>
         pub fn set_message_structure(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -596,42 +522,22 @@ pub mod publish_batch_request_entry {
         /// <p>This parameter applies only to FIFO (first-in-first-out) topics.</p>
         /// <p>The token used for deduplication of messages within a 5-minute minimum deduplication interval. If a message with a particular <code>MessageDeduplicationId</code> is sent successfully, subsequent messages with the same <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered.</p>
         /// <ul>
-        /// <li>
-        /// <p>Every message must have a unique <code>MessageDeduplicationId</code>.</p>
+        /// <li> <p>Every message must have a unique <code>MessageDeduplicationId</code>.</p>
         /// <ul>
-        /// <li>
-        /// <p>You may provide a <code>MessageDeduplicationId</code> explicitly.</p>
-        /// </li>
-        /// <li>
-        /// <p>If you aren't able to provide a <code>MessageDeduplicationId</code> and you enable <code>ContentBasedDeduplication</code> for your topic, Amazon SNS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).</p>
-        /// </li>
-        /// <li>
-        /// <p>If you don't provide a <code>MessageDeduplicationId</code> and the topic doesn't have <code>ContentBasedDeduplication</code> set, the action fails with an error.</p>
-        /// </li>
-        /// <li>
-        /// <p>If the topic has a <code>ContentBasedDeduplication</code> set, your
-        /// <code>MessageDeduplicationId</code> overrides the generated one. </p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the deduplication interval are treated as duplicates and only one copy of the message is delivered.</p>
-        /// </li>
-        /// <li>
-        /// <p>If you send one message with <code>ContentBasedDeduplication</code> enabled, and then another
-        /// message with a <code>MessageDeduplicationId</code> that is the same as the one
-        /// generated for the first <code>MessageDeduplicationId</code>, the two messages
-        /// are treated as duplicates and only one copy of the message is delivered. </p>
-        /// </li>
-        /// </ul>
-        /// <note>
+        /// <li> <p>You may provide a <code>MessageDeduplicationId</code> explicitly.</p> </li>
+        /// <li> <p>If you aren't able to provide a <code>MessageDeduplicationId</code> and you enable <code>ContentBasedDeduplication</code> for your topic, Amazon SNS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).</p> </li>
+        /// <li> <p>If you don't provide a <code>MessageDeduplicationId</code> and the topic doesn't have <code>ContentBasedDeduplication</code> set, the action fails with an error.</p> </li>
+        /// <li> <p>If the topic has a <code>ContentBasedDeduplication</code> set, your <code>MessageDeduplicationId</code> overrides the generated one. </p> </li>
+        /// </ul> </li>
+        /// <li> <p>When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the deduplication interval are treated as duplicates and only one copy of the message is delivered.</p> </li>
+        /// <li> <p>If you send one message with <code>ContentBasedDeduplication</code> enabled, and then another message with a <code>MessageDeduplicationId</code> that is the same as the one generated for the first <code>MessageDeduplicationId</code>, the two messages are treated as duplicates and only one copy of the message is delivered. </p> </li>
+        /// </ul> <note>
         /// <p>The <code>MessageDeduplicationId</code> is available to the consumer of the message (this can be useful for troubleshooting delivery issues).</p>
         /// <p>If a message is sent successfully but the acknowledgement is lost and the message is resent with the same <code>MessageDeduplicationId</code> after the deduplication interval, Amazon SNS can't detect duplicate messages. </p>
         /// <p>Amazon SNS continues to keep track of the message deduplication ID even after the message is received and deleted. </p>
         /// </note>
         /// <p>The length of <code>MessageDeduplicationId</code> is 128 characters.</p>
-        /// <p>
-        /// <code>MessageDeduplicationId</code> can contain alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)</code>.</p>
+        /// <p> <code>MessageDeduplicationId</code> can contain alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p>
         pub fn message_deduplication_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.message_deduplication_id = Some(input.into());
             self
@@ -639,42 +545,22 @@ pub mod publish_batch_request_entry {
         /// <p>This parameter applies only to FIFO (first-in-first-out) topics.</p>
         /// <p>The token used for deduplication of messages within a 5-minute minimum deduplication interval. If a message with a particular <code>MessageDeduplicationId</code> is sent successfully, subsequent messages with the same <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered.</p>
         /// <ul>
-        /// <li>
-        /// <p>Every message must have a unique <code>MessageDeduplicationId</code>.</p>
+        /// <li> <p>Every message must have a unique <code>MessageDeduplicationId</code>.</p>
         /// <ul>
-        /// <li>
-        /// <p>You may provide a <code>MessageDeduplicationId</code> explicitly.</p>
-        /// </li>
-        /// <li>
-        /// <p>If you aren't able to provide a <code>MessageDeduplicationId</code> and you enable <code>ContentBasedDeduplication</code> for your topic, Amazon SNS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).</p>
-        /// </li>
-        /// <li>
-        /// <p>If you don't provide a <code>MessageDeduplicationId</code> and the topic doesn't have <code>ContentBasedDeduplication</code> set, the action fails with an error.</p>
-        /// </li>
-        /// <li>
-        /// <p>If the topic has a <code>ContentBasedDeduplication</code> set, your
-        /// <code>MessageDeduplicationId</code> overrides the generated one. </p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the deduplication interval are treated as duplicates and only one copy of the message is delivered.</p>
-        /// </li>
-        /// <li>
-        /// <p>If you send one message with <code>ContentBasedDeduplication</code> enabled, and then another
-        /// message with a <code>MessageDeduplicationId</code> that is the same as the one
-        /// generated for the first <code>MessageDeduplicationId</code>, the two messages
-        /// are treated as duplicates and only one copy of the message is delivered. </p>
-        /// </li>
-        /// </ul>
-        /// <note>
+        /// <li> <p>You may provide a <code>MessageDeduplicationId</code> explicitly.</p> </li>
+        /// <li> <p>If you aren't able to provide a <code>MessageDeduplicationId</code> and you enable <code>ContentBasedDeduplication</code> for your topic, Amazon SNS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).</p> </li>
+        /// <li> <p>If you don't provide a <code>MessageDeduplicationId</code> and the topic doesn't have <code>ContentBasedDeduplication</code> set, the action fails with an error.</p> </li>
+        /// <li> <p>If the topic has a <code>ContentBasedDeduplication</code> set, your <code>MessageDeduplicationId</code> overrides the generated one. </p> </li>
+        /// </ul> </li>
+        /// <li> <p>When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the deduplication interval are treated as duplicates and only one copy of the message is delivered.</p> </li>
+        /// <li> <p>If you send one message with <code>ContentBasedDeduplication</code> enabled, and then another message with a <code>MessageDeduplicationId</code> that is the same as the one generated for the first <code>MessageDeduplicationId</code>, the two messages are treated as duplicates and only one copy of the message is delivered. </p> </li>
+        /// </ul> <note>
         /// <p>The <code>MessageDeduplicationId</code> is available to the consumer of the message (this can be useful for troubleshooting delivery issues).</p>
         /// <p>If a message is sent successfully but the acknowledgement is lost and the message is resent with the same <code>MessageDeduplicationId</code> after the deduplication interval, Amazon SNS can't detect duplicate messages. </p>
         /// <p>Amazon SNS continues to keep track of the message deduplication ID even after the message is received and deleted. </p>
         /// </note>
         /// <p>The length of <code>MessageDeduplicationId</code> is 128 characters.</p>
-        /// <p>
-        /// <code>MessageDeduplicationId</code> can contain alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)</code>.</p>
+        /// <p> <code>MessageDeduplicationId</code> can contain alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p>
         pub fn set_message_deduplication_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -686,13 +572,8 @@ pub mod publish_batch_request_entry {
         /// <p>The tag that specifies that a message belongs to a specific message group. Messages that belong to the same message group are processed in a FIFO manner (however, messages in different message groups might be processed out of order). To interleave multiple ordered streams within a single topic, use <code>MessageGroupId</code> values (for example, session data for multiple users). In this scenario, multiple consumers can process the topic, but the session data of each user is processed in a FIFO fashion. </p>
         /// <p>You must associate a non-empty <code>MessageGroupId</code> with a message. If you don't provide a <code>MessageGroupId</code>, the action fails. </p>
         /// <p>The length of <code>MessageGroupId</code> is 128 characters.</p>
-        /// <p>
-        /// <code>MessageGroupId</code> can contain alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)</code>.</p>      
-        ///
-        ///
-        /// <important>
-        /// <p>
-        /// <code>MessageGroupId</code> is required for FIFO topics. You can't use it for standard topics. </p>
+        /// <p> <code>MessageGroupId</code> can contain alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p> <important>
+        /// <p> <code>MessageGroupId</code> is required for FIFO topics. You can't use it for standard topics. </p>
         /// </important>
         pub fn message_group_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.message_group_id = Some(input.into());
@@ -702,13 +583,8 @@ pub mod publish_batch_request_entry {
         /// <p>The tag that specifies that a message belongs to a specific message group. Messages that belong to the same message group are processed in a FIFO manner (however, messages in different message groups might be processed out of order). To interleave multiple ordered streams within a single topic, use <code>MessageGroupId</code> values (for example, session data for multiple users). In this scenario, multiple consumers can process the topic, but the session data of each user is processed in a FIFO fashion. </p>
         /// <p>You must associate a non-empty <code>MessageGroupId</code> with a message. If you don't provide a <code>MessageGroupId</code>, the action fails. </p>
         /// <p>The length of <code>MessageGroupId</code> is 128 characters.</p>
-        /// <p>
-        /// <code>MessageGroupId</code> can contain alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)</code>.</p>      
-        ///
-        ///
-        /// <important>
-        /// <p>
-        /// <code>MessageGroupId</code> is required for FIFO topics. You can't use it for standard topics. </p>
+        /// <p> <code>MessageGroupId</code> can contain alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p> <important>
+        /// <p> <code>MessageGroupId</code> is required for FIFO topics. You can't use it for standard topics. </p>
         /// </important>
         pub fn set_message_group_id(
             mut self,
@@ -738,44 +614,28 @@ impl PublishBatchRequestEntry {
     }
 }
 
-/// <p>The user-specified message attribute value. For string data types, the value attribute
-/// has the same restrictions on the content as the message body. For more information, see
-/// <a href="https://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a>.</p>
-/// <p>Name, type, and value must not be empty or null. In addition, the message body should
-/// not be empty or null. All parts of the message attribute, including name, type, and
-/// value, are included in the message size restriction, which is currently 256 KB (262,144
-/// bytes). For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html">Amazon SNS message attributes</a> and
-/// <a href="https://docs.aws.amazon.com/sns/latest/dg/sms_publish-to-phone.html">Publishing
-/// to a mobile phone</a> in the <i>Amazon SNS Developer Guide.</i>
-/// </p>
+/// <p>The user-specified message attribute value. For string data types, the value attribute has the same restrictions on the content as the message body. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a>.</p>
+/// <p>Name, type, and value must not be empty or null. In addition, the message body should not be empty or null. All parts of the message attribute, including name, type, and value, are included in the message size restriction, which is currently 256 KB (262,144 bytes). For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html">Amazon SNS message attributes</a> and <a href="https://docs.aws.amazon.com/sns/latest/dg/sms_publish-to-phone.html">Publishing to a mobile phone</a> in the <i>Amazon SNS Developer Guide.</i> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MessageAttributeValue {
-    /// <p>Amazon SNS supports the following logical data types: String, String.Array, Number, and
-    /// Binary. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes">Message
-    /// Attribute Data Types</a>.</p>
+    /// <p>Amazon SNS supports the following logical data types: String, String.Array, Number, and Binary. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes">Message Attribute Data Types</a>.</p>
     pub data_type: std::option::Option<std::string::String>,
-    /// <p>Strings are Unicode with UTF8 binary encoding. For a list of code values, see <a href="https://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII Printable
-    /// Characters</a>.</p>
+    /// <p>Strings are Unicode with UTF8 binary encoding. For a list of code values, see <a href="https://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII Printable Characters</a>.</p>
     pub string_value: std::option::Option<std::string::String>,
-    /// <p>Binary type attributes can store any binary data, for example, compressed data,
-    /// encrypted data, or images.</p>
+    /// <p>Binary type attributes can store any binary data, for example, compressed data, encrypted data, or images.</p>
     pub binary_value: std::option::Option<aws_smithy_types::Blob>,
 }
 impl MessageAttributeValue {
-    /// <p>Amazon SNS supports the following logical data types: String, String.Array, Number, and
-    /// Binary. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes">Message
-    /// Attribute Data Types</a>.</p>
+    /// <p>Amazon SNS supports the following logical data types: String, String.Array, Number, and Binary. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes">Message Attribute Data Types</a>.</p>
     pub fn data_type(&self) -> std::option::Option<&str> {
         self.data_type.as_deref()
     }
-    /// <p>Strings are Unicode with UTF8 binary encoding. For a list of code values, see <a href="https://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII Printable
-    /// Characters</a>.</p>
+    /// <p>Strings are Unicode with UTF8 binary encoding. For a list of code values, see <a href="https://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII Printable Characters</a>.</p>
     pub fn string_value(&self) -> std::option::Option<&str> {
         self.string_value.as_deref()
     }
-    /// <p>Binary type attributes can store any binary data, for example, compressed data,
-    /// encrypted data, or images.</p>
+    /// <p>Binary type attributes can store any binary data, for example, compressed data, encrypted data, or images.</p>
     pub fn binary_value(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.binary_value.as_ref()
     }
@@ -800,40 +660,32 @@ pub mod message_attribute_value {
         pub(crate) binary_value: std::option::Option<aws_smithy_types::Blob>,
     }
     impl Builder {
-        /// <p>Amazon SNS supports the following logical data types: String, String.Array, Number, and
-        /// Binary. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes">Message
-        /// Attribute Data Types</a>.</p>
+        /// <p>Amazon SNS supports the following logical data types: String, String.Array, Number, and Binary. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes">Message Attribute Data Types</a>.</p>
         pub fn data_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_type = Some(input.into());
             self
         }
-        /// <p>Amazon SNS supports the following logical data types: String, String.Array, Number, and
-        /// Binary. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes">Message
-        /// Attribute Data Types</a>.</p>
+        /// <p>Amazon SNS supports the following logical data types: String, String.Array, Number, and Binary. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes">Message Attribute Data Types</a>.</p>
         pub fn set_data_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.data_type = input;
             self
         }
-        /// <p>Strings are Unicode with UTF8 binary encoding. For a list of code values, see <a href="https://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII Printable
-        /// Characters</a>.</p>
+        /// <p>Strings are Unicode with UTF8 binary encoding. For a list of code values, see <a href="https://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII Printable Characters</a>.</p>
         pub fn string_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.string_value = Some(input.into());
             self
         }
-        /// <p>Strings are Unicode with UTF8 binary encoding. For a list of code values, see <a href="https://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII Printable
-        /// Characters</a>.</p>
+        /// <p>Strings are Unicode with UTF8 binary encoding. For a list of code values, see <a href="https://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII Printable Characters</a>.</p>
         pub fn set_string_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.string_value = input;
             self
         }
-        /// <p>Binary type attributes can store any binary data, for example, compressed data,
-        /// encrypted data, or images.</p>
+        /// <p>Binary type attributes can store any binary data, for example, compressed data, encrypted data, or images.</p>
         pub fn binary_value(mut self, input: aws_smithy_types::Blob) -> Self {
             self.binary_value = Some(input);
             self
         }
-        /// <p>Binary type attributes can store any binary data, for example, compressed data,
-        /// encrypted data, or images.</p>
+        /// <p>Binary type attributes can store any binary data, for example, compressed data, encrypted data, or images.</p>
         pub fn set_binary_value(
             mut self,
             input: std::option::Option<aws_smithy_types::Blob>,
@@ -858,8 +710,7 @@ impl MessageAttributeValue {
     }
 }
 
-/// <p>A wrapper type for the topic's Amazon Resource Name (ARN). To retrieve a topic's
-/// attributes, use <code>GetTopicAttributes</code>.</p>
+/// <p>A wrapper type for the topic's Amazon Resource Name (ARN). To retrieve a topic's attributes, use <code>GetTopicAttributes</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Topic {
@@ -1047,14 +898,7 @@ impl Subscription {
 }
 
 /// <p>A verified or pending destination phone number in the SMS sandbox.</p>
-/// <p>When you start using Amazon SNS to send SMS messages, your Amazon Web Services account is in the
-/// <i>SMS sandbox</i>. The SMS sandbox provides a safe environment for
-/// you to try Amazon SNS features without risking your reputation as an SMS sender. While your
-/// Amazon Web Services account is in the SMS sandbox, you can use all of the features of Amazon SNS. However, you can send
-/// SMS messages only to verified destination phone numbers. For more information, including how to
-/// move out of the sandbox to send messages without restrictions,
-/// see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS sandbox</a> in
-/// the <i>Amazon SNS Developer Guide</i>.</p>
+/// <p>When you start using Amazon SNS to send SMS messages, your Amazon Web Services account is in the <i>SMS sandbox</i>. The SMS sandbox provides a safe environment for you to try Amazon SNS features without risking your reputation as an SMS sender. While your Amazon Web Services account is in the SMS sandbox, you can use all of the features of Amazon SNS. However, you can send SMS messages only to verified destination phone numbers. For more information, including how to move out of the sandbox to send messages without restrictions, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS sandbox</a> in the <i>Amazon SNS Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SmsSandboxPhoneNumber {

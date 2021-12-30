@@ -236,18 +236,12 @@ pub mod allocate_connection_on_interconnect_input {
         pub(crate) vlan: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The bandwidth of the connection. The possible values are 50Mbps, 100Mbps, 200Mbps,
-        /// 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those Direct Connect Partners
-        /// who have met specific requirements
-        /// are allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection.</p>
+        /// <p>The bandwidth of the connection. The possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those Direct Connect Partners who have met specific requirements are allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection.</p>
         pub fn bandwidth(mut self, input: impl Into<std::string::String>) -> Self {
             self.bandwidth = Some(input.into());
             self
         }
-        /// <p>The bandwidth of the connection. The possible values are 50Mbps, 100Mbps, 200Mbps,
-        /// 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those Direct Connect Partners
-        /// who have met specific requirements
-        /// are allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection.</p>
+        /// <p>The bandwidth of the connection. The possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those Direct Connect Partners who have met specific requirements are allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection.</p>
         pub fn set_bandwidth(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bandwidth = input;
             self
@@ -1622,13 +1616,13 @@ pub mod associate_mac_sec_key_input {
     }
     impl Builder {
         /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
-        /// <p>You can use <a>DescribeConnections</a> or <a>DescribeLags</a> to retrieve connection ID.</p>
+        /// <p>You can use <code>DescribeConnections</code> or <code>DescribeLags</code> to retrieve connection ID.</p>
         pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.connection_id = Some(input.into());
             self
         }
         /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
-        /// <p>You can use <a>DescribeConnections</a> or <a>DescribeLags</a> to retrieve connection ID.</p>
+        /// <p>You can use <code>DescribeConnections</code> or <code>DescribeLags</code> to retrieve connection ID.</p>
         pub fn set_connection_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1637,14 +1631,14 @@ pub mod associate_mac_sec_key_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the MAC Security (MACsec) secret key to associate with the dedicated connection.</p>
-        /// <p>You can use <a>DescribeConnections</a> or <a>DescribeLags</a> to retrieve the MAC Security (MACsec) secret key.</p>
+        /// <p>You can use <code>DescribeConnections</code> or <code>DescribeLags</code> to retrieve the MAC Security (MACsec) secret key.</p>
         /// <p>If you use this request parameter, you do not use the <code>ckn</code> and <code>cak</code> request parameters.</p>
         pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the MAC Security (MACsec) secret key to associate with the dedicated connection.</p>
-        /// <p>You can use <a>DescribeConnections</a> or <a>DescribeLags</a> to retrieve the MAC Security (MACsec) secret key.</p>
+        /// <p>You can use <code>DescribeConnections</code> or <code>DescribeLags</code> to retrieve the MAC Security (MACsec) secret key.</p>
         /// <p>If you use this request parameter, you do not use the <code>ckn</code> and <code>cak</code> request parameters.</p>
         pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_arn = input;
@@ -2161,20 +2155,12 @@ pub mod confirm_customer_agreement_input {
         pub(crate) agreement_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        ///
-        /// The name of the customer agreement.
-        ///
-        /// </p>
+        /// <p> The name of the customer agreement. </p>
         pub fn agreement_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.agreement_name = Some(input.into());
             self
         }
-        /// <p>
-        ///
-        /// The name of the customer agreement.
-        ///
-        /// </p>
+        /// <p> The name of the customer agreement. </p>
         pub fn set_agreement_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3108,13 +3094,13 @@ pub mod create_connection_input {
             self
         }
         /// <p>Indicates whether you want the connection to support MAC Security (MACsec).</p>
-        /// <p>MAC Security (MACsec) is only available on dedicated connections. For information about MAC Security (MACsec) prerequisties, see  <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.</p>
+        /// <p>MAC Security (MACsec) is only available on dedicated connections. For information about MAC Security (MACsec) prerequisties, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.</p>
         pub fn request_mac_sec(mut self, input: bool) -> Self {
             self.request_mac_sec = Some(input);
             self
         }
         /// <p>Indicates whether you want the connection to support MAC Security (MACsec).</p>
-        /// <p>MAC Security (MACsec) is only available on dedicated connections. For information about MAC Security (MACsec) prerequisties, see  <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.</p>
+        /// <p>MAC Security (MACsec) is only available on dedicated connections. For information about MAC Security (MACsec) prerequisties, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.</p>
         pub fn set_request_mac_sec(mut self, input: std::option::Option<bool>) -> Self {
             self.request_mac_sec = input;
             self
@@ -3286,16 +3272,12 @@ pub mod create_direct_connect_gateway_input {
             self.direct_connect_gateway_name = input;
             self
         }
-        /// <p>The autonomous system number (ASN) for Border Gateway Protocol (BGP) to be configured
-        /// on the Amazon side of the connection. The ASN must be in the private range of 64,512 to
-        /// 65,534 or 4,200,000,000 to 4,294,967,294. The default is 64512.</p>
+        /// <p>The autonomous system number (ASN) for Border Gateway Protocol (BGP) to be configured on the Amazon side of the connection. The ASN must be in the private range of 64,512 to 65,534 or 4,200,000,000 to 4,294,967,294. The default is 64512.</p>
         pub fn amazon_side_asn(mut self, input: i64) -> Self {
             self.amazon_side_asn = Some(input);
             self
         }
-        /// <p>The autonomous system number (ASN) for Border Gateway Protocol (BGP) to be configured
-        /// on the Amazon side of the connection. The ASN must be in the private range of 64,512 to
-        /// 65,534 or 4,200,000,000 to 4,294,967,294. The default is 64512.</p>
+        /// <p>The autonomous system number (ASN) for Border Gateway Protocol (BGP) to be configured on the Amazon side of the connection. The ASN must be in the private range of 64,512 to 65,534 or 4,200,000,000 to 4,294,967,294. The default is 64512.</p>
         pub fn set_amazon_side_asn(mut self, input: std::option::Option<i64>) -> Self {
             self.amazon_side_asn = input;
             self
@@ -4152,14 +4134,12 @@ pub mod create_lag_input {
         pub(crate) request_mac_sec: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The number of physical dedicated connections initially provisioned and bundled by the
-        /// LAG.</p>
+        /// <p>The number of physical dedicated connections initially provisioned and bundled by the LAG.</p>
         pub fn number_of_connections(mut self, input: i32) -> Self {
             self.number_of_connections = Some(input);
             self
         }
-        /// <p>The number of physical dedicated connections initially provisioned and bundled by the
-        /// LAG.</p>
+        /// <p>The number of physical dedicated connections initially provisioned and bundled by the LAG.</p>
         pub fn set_number_of_connections(mut self, input: std::option::Option<i32>) -> Self {
             self.number_of_connections = input;
             self
@@ -4174,14 +4154,12 @@ pub mod create_lag_input {
             self.location = input;
             self
         }
-        /// <p>The bandwidth of the individual physical dedicated connections bundled by the LAG. The
-        /// possible values are 1Gbps and 10Gbps. </p>
+        /// <p>The bandwidth of the individual physical dedicated connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>
         pub fn connections_bandwidth(mut self, input: impl Into<std::string::String>) -> Self {
             self.connections_bandwidth = Some(input.into());
             self
         }
-        /// <p>The bandwidth of the individual physical dedicated connections bundled by the LAG. The
-        /// possible values are 1Gbps and 10Gbps. </p>
+        /// <p>The bandwidth of the individual physical dedicated connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>
         pub fn set_connections_bandwidth(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4263,17 +4241,15 @@ pub mod create_lag_input {
             self.provider_name = input;
             self
         }
-        /// <p>Indicates whether the connection will support MAC Security (MACsec).</p>
-        /// <note>
-        /// <p>All connections in the LAG must be capable of  supporting MAC Security (MACsec). For information about MAC Security (MACsec) prerequisties, see  <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.</p>
+        /// <p>Indicates whether the connection will support MAC Security (MACsec).</p> <note>
+        /// <p>All connections in the LAG must be capable of supporting MAC Security (MACsec). For information about MAC Security (MACsec) prerequisties, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.</p>
         /// </note>
         pub fn request_mac_sec(mut self, input: bool) -> Self {
             self.request_mac_sec = Some(input);
             self
         }
-        /// <p>Indicates whether the connection will support MAC Security (MACsec).</p>
-        /// <note>
-        /// <p>All connections in the LAG must be capable of  supporting MAC Security (MACsec). For information about MAC Security (MACsec) prerequisties, see  <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.</p>
+        /// <p>Indicates whether the connection will support MAC Security (MACsec).</p> <note>
+        /// <p>All connections in the LAG must be capable of supporting MAC Security (MACsec). For information about MAC Security (MACsec) prerequisties, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.</p>
         /// </note>
         pub fn set_request_mac_sec(mut self, input: std::option::Option<bool>) -> Self {
             self.request_mac_sec = input;
@@ -6305,14 +6281,12 @@ pub mod describe_connection_loa_input {
             self.connection_id = input;
             self
         }
-        /// <p>The name of the APN partner or service provider who establishes connectivity on your behalf. If you specify this parameter,
-        /// the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p>
+        /// <p>The name of the APN partner or service provider who establishes connectivity on your behalf. If you specify this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p>
         pub fn provider_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.provider_name = Some(input.into());
             self
         }
-        /// <p>The name of the APN partner or service provider who establishes connectivity on your behalf. If you specify this parameter,
-        /// the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p>
+        /// <p>The name of the APN partner or service provider who establishes connectivity on your behalf. If you specify this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p>
         pub fn set_provider_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6973,18 +6947,14 @@ pub mod describe_direct_connect_gateway_association_proposals_input {
             self.associated_gateway_id = input;
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-        /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are
-        /// returned.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-        /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are
-        /// returned.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -7198,18 +7168,14 @@ pub mod describe_direct_connect_gateway_associations_input {
             self.direct_connect_gateway_id = input;
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-        /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are
-        /// returned.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-        /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are
-        /// returned.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -7420,18 +7386,14 @@ pub mod describe_direct_connect_gateway_attachments_input {
             self.virtual_interface_id = input;
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-        /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are
-        /// returned.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-        /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are
-        /// returned.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -7611,18 +7573,14 @@ pub mod describe_direct_connect_gateways_input {
             self.direct_connect_gateway_id = input;
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-        /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are
-        /// returned.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-        /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are
-        /// returned.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -8463,14 +8421,12 @@ pub mod describe_loa_input {
             self.connection_id = input;
             self
         }
-        /// <p>The name of the service provider who establishes connectivity on your behalf. If you specify this parameter, the
-        /// LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p>
+        /// <p>The name of the service provider who establishes connectivity on your behalf. If you specify this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p>
         pub fn provider_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.provider_name = Some(input.into());
             self
         }
-        /// <p>The name of the service provider who establishes connectivity on your behalf. If you specify this parameter, the
-        /// LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p>
+        /// <p>The name of the service provider who establishes connectivity on your behalf. If you specify this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p>
         pub fn set_provider_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9588,13 +9544,13 @@ pub mod disassociate_mac_sec_key_input {
     }
     impl Builder {
         /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
-        /// <p>You can use <a>DescribeConnections</a> or <a>DescribeLags</a> to retrieve connection ID.</p>
+        /// <p>You can use <code>DescribeConnections</code> or <code>DescribeLags</code> to retrieve connection ID.</p>
         pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.connection_id = Some(input.into());
             self
         }
         /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
-        /// <p>You can use <a>DescribeConnections</a> or <a>DescribeLags</a> to retrieve connection ID.</p>
+        /// <p>You can use <code>DescribeConnections</code> or <code>DescribeLags</code> to retrieve connection ID.</p>
         pub fn set_connection_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9603,13 +9559,13 @@ pub mod disassociate_mac_sec_key_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the MAC Security (MACsec) secret key.</p>
-        /// <p>You can use <a>DescribeConnections</a> to retrieve the ARN of the MAC Security (MACsec) secret key.</p>
+        /// <p>You can use <code>DescribeConnections</code> to retrieve the ARN of the MAC Security (MACsec) secret key.</p>
         pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the MAC Security (MACsec) secret key.</p>
-        /// <p>You can use <a>DescribeConnections</a> to retrieve the ARN of the MAC Security (MACsec) secret key.</p>
+        /// <p>You can use <code>DescribeConnections</code> to retrieve the ARN of the MAC Security (MACsec) secret key.</p>
         pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_arn = input;
             self
@@ -9818,18 +9774,14 @@ pub mod list_virtual_interface_test_history_input {
             self.status = input;
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-        /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are
-        /// returned.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-        /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are
-        /// returned.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -10702,13 +10654,13 @@ pub mod update_connection_input {
     }
     impl Builder {
         /// <p>The ID of the dedicated connection.</p>
-        /// <p>You can use <a>DescribeConnections</a> to retrieve the connection ID.</p>
+        /// <p>You can use <code>DescribeConnections</code> to retrieve the connection ID.</p>
         pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.connection_id = Some(input.into());
             self
         }
         /// <p>The ID of the dedicated connection.</p>
-        /// <p>You can use <a>DescribeConnections</a> to retrieve the connection ID.</p>
+        /// <p>You can use <code>DescribeConnections</code> to retrieve the connection ID.</p>
         pub fn set_connection_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11834,7 +11786,7 @@ impl std::fmt::Debug for UpdateDirectConnectGatewayInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateConnectionInput {
     /// <p>The ID of the dedicated connection.</p>
-    /// <p>You can use <a>DescribeConnections</a> to retrieve the connection ID.</p>
+    /// <p>You can use <code>DescribeConnections</code> to retrieve the connection ID.</p>
     pub connection_id: std::option::Option<std::string::String>,
     /// <p>The name of the connection.</p>
     pub connection_name: std::option::Option<std::string::String>,
@@ -11844,7 +11796,7 @@ pub struct UpdateConnectionInput {
 }
 impl UpdateConnectionInput {
     /// <p>The ID of the dedicated connection.</p>
-    /// <p>You can use <a>DescribeConnections</a> to retrieve the connection ID.</p>
+    /// <p>You can use <code>DescribeConnections</code> to retrieve the connection ID.</p>
     pub fn connection_id(&self) -> std::option::Option<&str> {
         self.connection_id.as_deref()
     }
@@ -11996,10 +11948,8 @@ pub struct ListVirtualInterfaceTestHistoryInput {
     pub bgp_peers: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The status of the virtual interface failover test.</p>
     pub status: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-    /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are
-    /// returned.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.</p>
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -12021,10 +11971,8 @@ impl ListVirtualInterfaceTestHistoryInput {
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
     }
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-    /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are
-    /// returned.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -12051,20 +11999,20 @@ impl std::fmt::Debug for ListVirtualInterfaceTestHistoryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateMacSecKeyInput {
     /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
-    /// <p>You can use <a>DescribeConnections</a> or <a>DescribeLags</a> to retrieve connection ID.</p>
+    /// <p>You can use <code>DescribeConnections</code> or <code>DescribeLags</code> to retrieve connection ID.</p>
     pub connection_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the MAC Security (MACsec) secret key.</p>
-    /// <p>You can use <a>DescribeConnections</a> to retrieve the ARN of the MAC Security (MACsec) secret key.</p>
+    /// <p>You can use <code>DescribeConnections</code> to retrieve the ARN of the MAC Security (MACsec) secret key.</p>
     pub secret_arn: std::option::Option<std::string::String>,
 }
 impl DisassociateMacSecKeyInput {
     /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
-    /// <p>You can use <a>DescribeConnections</a> or <a>DescribeLags</a> to retrieve connection ID.</p>
+    /// <p>You can use <code>DescribeConnections</code> or <code>DescribeLags</code> to retrieve connection ID.</p>
     pub fn connection_id(&self) -> std::option::Option<&str> {
         self.connection_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the MAC Security (MACsec) secret key.</p>
-    /// <p>You can use <a>DescribeConnections</a> to retrieve the ARN of the MAC Security (MACsec) secret key.</p>
+    /// <p>You can use <code>DescribeConnections</code> to retrieve the ARN of the MAC Security (MACsec) secret key.</p>
     pub fn secret_arn(&self) -> std::option::Option<&str> {
         self.secret_arn.as_deref()
     }
@@ -12211,8 +12159,7 @@ impl std::fmt::Debug for DescribeLocationsInput {
 pub struct DescribeLoaInput {
     /// <p>The ID of a connection, LAG, or interconnect.</p>
     pub connection_id: std::option::Option<std::string::String>,
-    /// <p>The name of the service provider who establishes connectivity on your behalf. If you specify this parameter, the
-    /// LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p>
+    /// <p>The name of the service provider who establishes connectivity on your behalf. If you specify this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p>
     pub provider_name: std::option::Option<std::string::String>,
     /// <p>The standard media type for the LOA-CFA document. The only supported value is application/pdf.</p>
     pub loa_content_type: std::option::Option<crate::model::LoaContentType>,
@@ -12222,8 +12169,7 @@ impl DescribeLoaInput {
     pub fn connection_id(&self) -> std::option::Option<&str> {
         self.connection_id.as_deref()
     }
-    /// <p>The name of the service provider who establishes connectivity on your behalf. If you specify this parameter, the
-    /// LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p>
+    /// <p>The name of the service provider who establishes connectivity on your behalf. If you specify this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p>
     pub fn provider_name(&self) -> std::option::Option<&str> {
         self.provider_name.as_deref()
     }
@@ -12346,10 +12292,8 @@ impl std::fmt::Debug for DescribeHostedConnectionsInput {
 pub struct DescribeDirectConnectGatewaysInput {
     /// <p>The ID of the Direct Connect gateway.</p>
     pub direct_connect_gateway_id: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-    /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are
-    /// returned.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.</p>
     pub max_results: std::option::Option<i32>,
     /// <p>The token provided in the previous call to retrieve the next page.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -12359,10 +12303,8 @@ impl DescribeDirectConnectGatewaysInput {
     pub fn direct_connect_gateway_id(&self) -> std::option::Option<&str> {
         self.direct_connect_gateway_id.as_deref()
     }
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-    /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are
-    /// returned.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -12389,10 +12331,8 @@ pub struct DescribeDirectConnectGatewayAttachmentsInput {
     pub direct_connect_gateway_id: std::option::Option<std::string::String>,
     /// <p>The ID of the virtual interface.</p>
     pub virtual_interface_id: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-    /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are
-    /// returned.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.</p>
     pub max_results: std::option::Option<i32>,
     /// <p>The token provided in the previous call to retrieve the next page.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -12406,10 +12346,8 @@ impl DescribeDirectConnectGatewayAttachmentsInput {
     pub fn virtual_interface_id(&self) -> std::option::Option<&str> {
         self.virtual_interface_id.as_deref()
     }
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-    /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are
-    /// returned.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -12439,10 +12377,8 @@ pub struct DescribeDirectConnectGatewayAssociationsInput {
     pub associated_gateway_id: std::option::Option<std::string::String>,
     /// <p>The ID of the Direct Connect gateway.</p>
     pub direct_connect_gateway_id: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-    /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are
-    /// returned.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.</p>
     pub max_results: std::option::Option<i32>,
     /// <p>The token provided in the previous call to retrieve the next page.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -12462,10 +12398,8 @@ impl DescribeDirectConnectGatewayAssociationsInput {
     pub fn direct_connect_gateway_id(&self) -> std::option::Option<&str> {
         self.direct_connect_gateway_id.as_deref()
     }
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-    /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are
-    /// returned.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -12501,10 +12435,8 @@ pub struct DescribeDirectConnectGatewayAssociationProposalsInput {
     pub proposal_id: std::option::Option<std::string::String>,
     /// <p>The ID of the associated gateway.</p>
     pub associated_gateway_id: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-    /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are
-    /// returned.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.</p>
     pub max_results: std::option::Option<i32>,
     /// <p>The token for the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -12522,10 +12454,8 @@ impl DescribeDirectConnectGatewayAssociationProposalsInput {
     pub fn associated_gateway_id(&self) -> std::option::Option<&str> {
         self.associated_gateway_id.as_deref()
     }
-    /// <p>The maximum number of results to return with a single call.
-    /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-    /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are
-    /// returned.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -12605,8 +12535,7 @@ impl std::fmt::Debug for DescribeConnectionsInput {
 pub struct DescribeConnectionLoaInput {
     /// <p>The ID of the connection.</p>
     pub connection_id: std::option::Option<std::string::String>,
-    /// <p>The name of the APN partner or service provider who establishes connectivity on your behalf. If you specify this parameter,
-    /// the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p>
+    /// <p>The name of the APN partner or service provider who establishes connectivity on your behalf. If you specify this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p>
     pub provider_name: std::option::Option<std::string::String>,
     /// <p>The standard media type for the LOA-CFA document. The only supported value is application/pdf.</p>
     pub loa_content_type: std::option::Option<crate::model::LoaContentType>,
@@ -12616,8 +12545,7 @@ impl DescribeConnectionLoaInput {
     pub fn connection_id(&self) -> std::option::Option<&str> {
         self.connection_id.as_deref()
     }
-    /// <p>The name of the APN partner or service provider who establishes connectivity on your behalf. If you specify this parameter,
-    /// the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p>
+    /// <p>The name of the APN partner or service provider who establishes connectivity on your behalf. If you specify this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p>
     pub fn provider_name(&self) -> std::option::Option<&str> {
         self.provider_name.as_deref()
     }
@@ -12944,13 +12872,11 @@ impl std::fmt::Debug for CreatePrivateVirtualInterfaceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLagInput {
-    /// <p>The number of physical dedicated connections initially provisioned and bundled by the
-    /// LAG.</p>
+    /// <p>The number of physical dedicated connections initially provisioned and bundled by the LAG.</p>
     pub number_of_connections: i32,
     /// <p>The location for the LAG.</p>
     pub location: std::option::Option<std::string::String>,
-    /// <p>The bandwidth of the individual physical dedicated connections bundled by the LAG. The
-    /// possible values are 1Gbps and 10Gbps. </p>
+    /// <p>The bandwidth of the individual physical dedicated connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>
     pub connections_bandwidth: std::option::Option<std::string::String>,
     /// <p>The name of the LAG.</p>
     pub lag_name: std::option::Option<std::string::String>,
@@ -12962,15 +12888,13 @@ pub struct CreateLagInput {
     pub child_connection_tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The name of the service provider associated with the LAG.</p>
     pub provider_name: std::option::Option<std::string::String>,
-    /// <p>Indicates whether the connection will support MAC Security (MACsec).</p>
-    /// <note>
-    /// <p>All connections in the LAG must be capable of  supporting MAC Security (MACsec). For information about MAC Security (MACsec) prerequisties, see  <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.</p>
+    /// <p>Indicates whether the connection will support MAC Security (MACsec).</p> <note>
+    /// <p>All connections in the LAG must be capable of supporting MAC Security (MACsec). For information about MAC Security (MACsec) prerequisties, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.</p>
     /// </note>
     pub request_mac_sec: std::option::Option<bool>,
 }
 impl CreateLagInput {
-    /// <p>The number of physical dedicated connections initially provisioned and bundled by the
-    /// LAG.</p>
+    /// <p>The number of physical dedicated connections initially provisioned and bundled by the LAG.</p>
     pub fn number_of_connections(&self) -> i32 {
         self.number_of_connections
     }
@@ -12978,8 +12902,7 @@ impl CreateLagInput {
     pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
     }
-    /// <p>The bandwidth of the individual physical dedicated connections bundled by the LAG. The
-    /// possible values are 1Gbps and 10Gbps. </p>
+    /// <p>The bandwidth of the individual physical dedicated connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>
     pub fn connections_bandwidth(&self) -> std::option::Option<&str> {
         self.connections_bandwidth.as_deref()
     }
@@ -13003,9 +12926,8 @@ impl CreateLagInput {
     pub fn provider_name(&self) -> std::option::Option<&str> {
         self.provider_name.as_deref()
     }
-    /// <p>Indicates whether the connection will support MAC Security (MACsec).</p>
-    /// <note>
-    /// <p>All connections in the LAG must be capable of  supporting MAC Security (MACsec). For information about MAC Security (MACsec) prerequisties, see  <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.</p>
+    /// <p>Indicates whether the connection will support MAC Security (MACsec).</p> <note>
+    /// <p>All connections in the LAG must be capable of supporting MAC Security (MACsec). For information about MAC Security (MACsec) prerequisties, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.</p>
     /// </note>
     pub fn request_mac_sec(&self) -> std::option::Option<bool> {
         self.request_mac_sec
@@ -13208,9 +13130,7 @@ impl std::fmt::Debug for CreateDirectConnectGatewayAssociationInput {
 pub struct CreateDirectConnectGatewayInput {
     /// <p>The name of the Direct Connect gateway.</p>
     pub direct_connect_gateway_name: std::option::Option<std::string::String>,
-    /// <p>The autonomous system number (ASN) for Border Gateway Protocol (BGP) to be configured
-    /// on the Amazon side of the connection. The ASN must be in the private range of 64,512 to
-    /// 65,534 or 4,200,000,000 to 4,294,967,294. The default is 64512.</p>
+    /// <p>The autonomous system number (ASN) for Border Gateway Protocol (BGP) to be configured on the Amazon side of the connection. The ASN must be in the private range of 64,512 to 65,534 or 4,200,000,000 to 4,294,967,294. The default is 64512.</p>
     pub amazon_side_asn: std::option::Option<i64>,
 }
 impl CreateDirectConnectGatewayInput {
@@ -13218,9 +13138,7 @@ impl CreateDirectConnectGatewayInput {
     pub fn direct_connect_gateway_name(&self) -> std::option::Option<&str> {
         self.direct_connect_gateway_name.as_deref()
     }
-    /// <p>The autonomous system number (ASN) for Border Gateway Protocol (BGP) to be configured
-    /// on the Amazon side of the connection. The ASN must be in the private range of 64,512 to
-    /// 65,534 or 4,200,000,000 to 4,294,967,294. The default is 64512.</p>
+    /// <p>The autonomous system number (ASN) for Border Gateway Protocol (BGP) to be configured on the Amazon side of the connection. The ASN must be in the private range of 64,512 to 65,534 or 4,200,000,000 to 4,294,967,294. The default is 64512.</p>
     pub fn amazon_side_asn(&self) -> std::option::Option<i64> {
         self.amazon_side_asn
     }
@@ -13254,7 +13172,7 @@ pub struct CreateConnectionInput {
     /// <p>The name of the service provider associated with the requested connection.</p>
     pub provider_name: std::option::Option<std::string::String>,
     /// <p>Indicates whether you want the connection to support MAC Security (MACsec).</p>
-    /// <p>MAC Security (MACsec) is only available on dedicated connections. For information about MAC Security (MACsec) prerequisties, see  <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.</p>
+    /// <p>MAC Security (MACsec) is only available on dedicated connections. For information about MAC Security (MACsec) prerequisties, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.</p>
     pub request_mac_sec: std::option::Option<bool>,
 }
 impl CreateConnectionInput {
@@ -13283,7 +13201,7 @@ impl CreateConnectionInput {
         self.provider_name.as_deref()
     }
     /// <p>Indicates whether you want the connection to support MAC Security (MACsec).</p>
-    /// <p>MAC Security (MACsec) is only available on dedicated connections. For information about MAC Security (MACsec) prerequisties, see  <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.</p>
+    /// <p>MAC Security (MACsec) is only available on dedicated connections. For information about MAC Security (MACsec) prerequisties, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.</p>
     pub fn request_mac_sec(&self) -> std::option::Option<bool> {
         self.request_mac_sec
     }
@@ -13418,19 +13336,11 @@ impl std::fmt::Debug for ConfirmPrivateVirtualInterfaceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfirmCustomerAgreementInput {
-    /// <p>
-    ///
-    /// The name of the customer agreement.
-    ///
-    /// </p>
+    /// <p> The name of the customer agreement. </p>
     pub agreement_name: std::option::Option<std::string::String>,
 }
 impl ConfirmCustomerAgreementInput {
-    /// <p>
-    ///
-    /// The name of the customer agreement.
-    ///
-    /// </p>
+    /// <p> The name of the customer agreement. </p>
     pub fn agreement_name(&self) -> std::option::Option<&str> {
         self.agreement_name.as_deref()
     }
@@ -13497,10 +13407,10 @@ impl std::fmt::Debug for AssociateVirtualInterfaceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateMacSecKeyInput {
     /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
-    /// <p>You can use <a>DescribeConnections</a> or <a>DescribeLags</a> to retrieve connection ID.</p>
+    /// <p>You can use <code>DescribeConnections</code> or <code>DescribeLags</code> to retrieve connection ID.</p>
     pub connection_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the MAC Security (MACsec) secret key to associate with the dedicated connection.</p>
-    /// <p>You can use <a>DescribeConnections</a> or <a>DescribeLags</a> to retrieve the MAC Security (MACsec) secret key.</p>
+    /// <p>You can use <code>DescribeConnections</code> or <code>DescribeLags</code> to retrieve the MAC Security (MACsec) secret key.</p>
     /// <p>If you use this request parameter, you do not use the <code>ckn</code> and <code>cak</code> request parameters.</p>
     pub secret_arn: std::option::Option<std::string::String>,
     /// <p>The MAC Security (MACsec) CKN to associate with the dedicated connection.</p>
@@ -13516,12 +13426,12 @@ pub struct AssociateMacSecKeyInput {
 }
 impl AssociateMacSecKeyInput {
     /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
-    /// <p>You can use <a>DescribeConnections</a> or <a>DescribeLags</a> to retrieve connection ID.</p>
+    /// <p>You can use <code>DescribeConnections</code> or <code>DescribeLags</code> to retrieve connection ID.</p>
     pub fn connection_id(&self) -> std::option::Option<&str> {
         self.connection_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the MAC Security (MACsec) secret key to associate with the dedicated connection.</p>
-    /// <p>You can use <a>DescribeConnections</a> or <a>DescribeLags</a> to retrieve the MAC Security (MACsec) secret key.</p>
+    /// <p>You can use <code>DescribeConnections</code> or <code>DescribeLags</code> to retrieve the MAC Security (MACsec) secret key.</p>
     /// <p>If you use this request parameter, you do not use the <code>ckn</code> and <code>cak</code> request parameters.</p>
     pub fn secret_arn(&self) -> std::option::Option<&str> {
         self.secret_arn.as_deref()
@@ -13791,10 +13701,7 @@ impl std::fmt::Debug for AllocateHostedConnectionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AllocateConnectionOnInterconnectInput {
-    /// <p>The bandwidth of the connection. The possible values are 50Mbps, 100Mbps, 200Mbps,
-    /// 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those Direct Connect Partners
-    /// who have met specific requirements
-    /// are allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection.</p>
+    /// <p>The bandwidth of the connection. The possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those Direct Connect Partners who have met specific requirements are allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection.</p>
     pub bandwidth: std::option::Option<std::string::String>,
     /// <p>The name of the provisioned connection.</p>
     pub connection_name: std::option::Option<std::string::String>,
@@ -13806,10 +13713,7 @@ pub struct AllocateConnectionOnInterconnectInput {
     pub vlan: i32,
 }
 impl AllocateConnectionOnInterconnectInput {
-    /// <p>The bandwidth of the connection. The possible values are 50Mbps, 100Mbps, 200Mbps,
-    /// 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those Direct Connect Partners
-    /// who have met specific requirements
-    /// are allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection.</p>
+    /// <p>The bandwidth of the connection. The possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those Direct Connect Partners who have met specific requirements are allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection.</p>
     pub fn bandwidth(&self) -> std::option::Option<&str> {
         self.bandwidth.as_deref()
     }

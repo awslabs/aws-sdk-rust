@@ -3,21 +3,15 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>You don't have access to this item. The provided credentials couldn't be
-    /// validated. You might not be authorized to carry out the request. Make sure that your
-    /// account is authorized to use the Amazon QuickSight service, that your policies have the
-    /// correct permissions, and that you are using the correct access keys.</p>
+    /// <p>You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your policies have the correct permissions, and that you are using the correct access keys.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>A resource is already in a state that indicates an operation is happening that must complete
-    /// before a new update can be applied.</p>
+    /// <p>A resource is already in a state that indicates an operation is happening that must complete before a new update can be applied.</p>
     ConcurrentUpdatingException(crate::error::ConcurrentUpdatingException),
     /// <p>Updating or deleting a resource can cause an inconsistent state.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The domain specified isn't on the allow list. All domains for embedded dashboards must be
-    /// added to the approved list by an Amazon QuickSight admin.</p>
+    /// <p>The domain specified isn't on the allow list. All domains for embedded dashboards must be added to the approved list by an Amazon QuickSight admin.</p>
     DomainNotWhitelistedException(crate::error::DomainNotWhitelistedException),
-    /// <p>The identity type specified isn't supported. Supported identity types include
-    /// <code>IAM</code> and <code>QUICKSIGHT</code>.</p>
+    /// <p>The identity type specified isn't supported. Supported identity types include <code>IAM</code> and <code>QUICKSIGHT</code>.</p>
     IdentityTypeNotSupportedException(crate::error::IdentityTypeNotSupportedException),
     /// <p>An internal failure occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -29,9 +23,7 @@ pub enum Error {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>One or more preconditions aren't met.</p>
     PreconditionNotMetException(crate::error::PreconditionNotMetException),
-    /// <p>The user with the provided name isn't found. This error can happen in any operation
-    /// that requires finding a user based on a provided user name, such as
-    /// <code>DeleteUser</code>, <code>DescribeUser</code>, and so on.</p>
+    /// <p>The user with the provided name isn't found. This error can happen in any operation that requires finding a user based on a provided user name, such as <code>DeleteUser</code>, <code>DescribeUser</code>, and so on.</p>
     QuickSightUserNotFoundException(crate::error::QuickSightUserNotFoundException),
     /// <p>The resource specified already exists. </p>
     ResourceExistsException(crate::error::ResourceExistsException),
@@ -39,27 +31,16 @@ pub enum Error {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>This resource is currently unavailable.</p>
     ResourceUnavailableException(crate::error::ResourceUnavailableException),
-    /// <p>The number of minutes specified for the lifetime of a session isn't valid. The session
-    /// lifetime must be 15-600 minutes.</p>
+    /// <p>The number of minutes specified for the lifetime of a session isn't valid. The session lifetime must be 15-600 minutes.</p>
     SessionLifetimeInMinutesInvalidException(
         crate::error::SessionLifetimeInMinutesInvalidException,
     ),
     /// <p>Access is throttled.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>This error indicates that you are calling an embedding operation in Amazon QuickSight
-    /// without the required pricing plan on your Amazon Web Services account. Before you can use embedding
-    /// for anonymous users, a QuickSight administrator needs to add capacity pricing to Amazon QuickSight. You
-    /// can do this on the <b>Manage Amazon QuickSight</b> page. </p>
-    /// <p>After capacity pricing is added, you can use the
-    /// <code>
-    /// <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GetDashboardEmbedUrl.html">GetDashboardEmbedUrl</a>
-    /// </code> API operation with the
-    /// <code>--identity-type ANONYMOUS</code> option.</p>
+    /// <p>This error indicates that you are calling an embedding operation in Amazon QuickSight without the required pricing plan on your Amazon Web Services account. Before you can use embedding for anonymous users, a QuickSight administrator needs to add capacity pricing to Amazon QuickSight. You can do this on the <b>Manage Amazon QuickSight</b> page. </p>
+    /// <p>After capacity pricing is added, you can use the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GetDashboardEmbedUrl.html">GetDashboardEmbedUrl</a> </code> API operation with the <code>--identity-type ANONYMOUS</code> option.</p>
     UnsupportedPricingPlanException(crate::error::UnsupportedPricingPlanException),
-    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight
-    /// subscription where the edition doesn't include support for that operation. Amazon
-    /// Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and
-    /// capability is available in every edition.</p>
+    /// <p>This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every operation and capability is available in every edition.</p>
     UnsupportedUserEditionException(crate::error::UnsupportedUserEditionException),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),

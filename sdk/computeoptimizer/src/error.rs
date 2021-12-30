@@ -18,8 +18,7 @@ pub enum DeleteRecommendationPreferencesErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The value supplied for the input parameter is out of range or not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID
-    /// or X.509 certificate.</p>
+    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID or X.509 certificate.</p>
     MissingAuthenticationToken(crate::error::MissingAuthenticationToken),
     /// <p>The account is not opted in to Compute Optimizer.</p>
     OptInRequiredException(crate::error::OptInRequiredException),
@@ -218,8 +217,7 @@ pub enum DescribeRecommendationExportJobsErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The value supplied for the input parameter is out of range or not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID
-    /// or X.509 certificate.</p>
+    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID or X.509 certificate.</p>
     MissingAuthenticationToken(crate::error::MissingAuthenticationToken),
     /// <p>The account is not opted in to Compute Optimizer.</p>
     OptInRequiredException(crate::error::OptInRequiredException),
@@ -422,8 +420,7 @@ pub enum ExportAutoScalingGroupRecommendationsErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The request exceeds a limit of the service.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID
-    /// or X.509 certificate.</p>
+    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID or X.509 certificate.</p>
     MissingAuthenticationToken(crate::error::MissingAuthenticationToken),
     /// <p>The account is not opted in to Compute Optimizer.</p>
     OptInRequiredException(crate::error::OptInRequiredException),
@@ -630,8 +627,7 @@ pub enum ExportEBSVolumeRecommendationsErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The request exceeds a limit of the service.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID
-    /// or X.509 certificate.</p>
+    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID or X.509 certificate.</p>
     MissingAuthenticationToken(crate::error::MissingAuthenticationToken),
     /// <p>The account is not opted in to Compute Optimizer.</p>
     OptInRequiredException(crate::error::OptInRequiredException),
@@ -824,8 +820,7 @@ pub enum ExportEC2InstanceRecommendationsErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The request exceeds a limit of the service.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID
-    /// or X.509 certificate.</p>
+    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID or X.509 certificate.</p>
     MissingAuthenticationToken(crate::error::MissingAuthenticationToken),
     /// <p>The account is not opted in to Compute Optimizer.</p>
     OptInRequiredException(crate::error::OptInRequiredException),
@@ -1026,8 +1021,7 @@ pub enum ExportLambdaFunctionRecommendationsErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The request exceeds a limit of the service.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID
-    /// or X.509 certificate.</p>
+    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID or X.509 certificate.</p>
     MissingAuthenticationToken(crate::error::MissingAuthenticationToken),
     /// <p>The account is not opted in to Compute Optimizer.</p>
     OptInRequiredException(crate::error::OptInRequiredException),
@@ -1232,8 +1226,7 @@ pub enum GetAutoScalingGroupRecommendationsErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The value supplied for the input parameter is out of range or not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID
-    /// or X.509 certificate.</p>
+    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID or X.509 certificate.</p>
     MissingAuthenticationToken(crate::error::MissingAuthenticationToken),
     /// <p>The account is not opted in to Compute Optimizer.</p>
     OptInRequiredException(crate::error::OptInRequiredException),
@@ -1438,8 +1431,7 @@ pub enum GetEBSVolumeRecommendationsErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The value supplied for the input parameter is out of range or not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID
-    /// or X.509 certificate.</p>
+    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID or X.509 certificate.</p>
     MissingAuthenticationToken(crate::error::MissingAuthenticationToken),
     /// <p>The account is not opted in to Compute Optimizer.</p>
     OptInRequiredException(crate::error::OptInRequiredException),
@@ -1623,8 +1615,7 @@ pub enum GetEC2InstanceRecommendationsErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The value supplied for the input parameter is out of range or not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID
-    /// or X.509 certificate.</p>
+    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID or X.509 certificate.</p>
     MissingAuthenticationToken(crate::error::MissingAuthenticationToken),
     /// <p>The account is not opted in to Compute Optimizer.</p>
     OptInRequiredException(crate::error::OptInRequiredException),
@@ -1815,8 +1806,7 @@ pub enum GetEC2RecommendationProjectedMetricsErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The value supplied for the input parameter is out of range or not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID
-    /// or X.509 certificate.</p>
+    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID or X.509 certificate.</p>
     MissingAuthenticationToken(crate::error::MissingAuthenticationToken),
     /// <p>The account is not opted in to Compute Optimizer.</p>
     OptInRequiredException(crate::error::OptInRequiredException),
@@ -2023,8 +2013,7 @@ pub enum GetEffectiveRecommendationPreferencesErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The value supplied for the input parameter is out of range or not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID
-    /// or X.509 certificate.</p>
+    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID or X.509 certificate.</p>
     MissingAuthenticationToken(crate::error::MissingAuthenticationToken),
     /// <p>The account is not opted in to Compute Optimizer.</p>
     OptInRequiredException(crate::error::OptInRequiredException),
@@ -2231,8 +2220,7 @@ pub enum GetEnrollmentStatusErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The value supplied for the input parameter is out of range or not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID
-    /// or X.509 certificate.</p>
+    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID or X.509 certificate.</p>
     MissingAuthenticationToken(crate::error::MissingAuthenticationToken),
     /// <p>The request has failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -2380,8 +2368,7 @@ pub enum GetEnrollmentStatusesForOrganizationErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The value supplied for the input parameter is out of range or not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID
-    /// or X.509 certificate.</p>
+    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID or X.509 certificate.</p>
     MissingAuthenticationToken(crate::error::MissingAuthenticationToken),
     /// <p>The request has failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -2560,8 +2547,7 @@ pub enum GetLambdaFunctionRecommendationsErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The request exceeds a limit of the service.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID
-    /// or X.509 certificate.</p>
+    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID or X.509 certificate.</p>
     MissingAuthenticationToken(crate::error::MissingAuthenticationToken),
     /// <p>The account is not opted in to Compute Optimizer.</p>
     OptInRequiredException(crate::error::OptInRequiredException),
@@ -2760,8 +2746,7 @@ pub enum GetRecommendationPreferencesErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The value supplied for the input parameter is out of range or not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID
-    /// or X.509 certificate.</p>
+    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID or X.509 certificate.</p>
     MissingAuthenticationToken(crate::error::MissingAuthenticationToken),
     /// <p>The account is not opted in to Compute Optimizer.</p>
     OptInRequiredException(crate::error::OptInRequiredException),
@@ -2947,8 +2932,7 @@ pub enum GetRecommendationSummariesErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The value supplied for the input parameter is out of range or not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID
-    /// or X.509 certificate.</p>
+    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID or X.509 certificate.</p>
     MissingAuthenticationToken(crate::error::MissingAuthenticationToken),
     /// <p>The account is not opted in to Compute Optimizer.</p>
     OptInRequiredException(crate::error::OptInRequiredException),
@@ -3117,8 +3101,7 @@ pub enum PutRecommendationPreferencesErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The value supplied for the input parameter is out of range or not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID
-    /// or X.509 certificate.</p>
+    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID or X.509 certificate.</p>
     MissingAuthenticationToken(crate::error::MissingAuthenticationToken),
     /// <p>The account is not opted in to Compute Optimizer.</p>
     OptInRequiredException(crate::error::OptInRequiredException),
@@ -3304,8 +3287,7 @@ pub enum UpdateEnrollmentStatusErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The value supplied for the input parameter is out of range or not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID
-    /// or X.509 certificate.</p>
+    /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID or X.509 certificate.</p>
     MissingAuthenticationToken(crate::error::MissingAuthenticationToken),
     /// <p>The request has failed due to a temporary failure of the server.</p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
@@ -3564,8 +3546,7 @@ impl ServiceUnavailableException {
     }
 }
 
-/// <p>The request must contain either a valid (registered) Amazon Web Services access key ID
-/// or X.509 certificate.</p>
+/// <p>The request must contain either a valid (registered) Amazon Web Services access key ID or X.509 certificate.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MissingAuthenticationToken {

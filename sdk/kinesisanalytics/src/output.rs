@@ -653,15 +653,11 @@ impl DeleteApplicationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateApplicationOutput {
-    /// <p>In response to your <code>CreateApplication</code> request, Amazon Kinesis Analytics returns a
-    /// response with a summary of the application it created, including the application Amazon Resource Name (ARN),
-    /// name, and status.</p>
+    /// <p>In response to your <code>CreateApplication</code> request, Amazon Kinesis Analytics returns a response with a summary of the application it created, including the application Amazon Resource Name (ARN), name, and status.</p>
     pub application_summary: std::option::Option<crate::model::ApplicationSummary>,
 }
 impl CreateApplicationOutput {
-    /// <p>In response to your <code>CreateApplication</code> request, Amazon Kinesis Analytics returns a
-    /// response with a summary of the application it created, including the application Amazon Resource Name (ARN),
-    /// name, and status.</p>
+    /// <p>In response to your <code>CreateApplication</code> request, Amazon Kinesis Analytics returns a response with a summary of the application it created, including the application Amazon Resource Name (ARN), name, and status.</p>
     pub fn application_summary(&self) -> std::option::Option<&crate::model::ApplicationSummary> {
         self.application_summary.as_ref()
     }
@@ -682,16 +678,12 @@ pub mod create_application_output {
         pub(crate) application_summary: std::option::Option<crate::model::ApplicationSummary>,
     }
     impl Builder {
-        /// <p>In response to your <code>CreateApplication</code> request, Amazon Kinesis Analytics returns a
-        /// response with a summary of the application it created, including the application Amazon Resource Name (ARN),
-        /// name, and status.</p>
+        /// <p>In response to your <code>CreateApplication</code> request, Amazon Kinesis Analytics returns a response with a summary of the application it created, including the application Amazon Resource Name (ARN), name, and status.</p>
         pub fn application_summary(mut self, input: crate::model::ApplicationSummary) -> Self {
             self.application_summary = Some(input);
             self
         }
-        /// <p>In response to your <code>CreateApplication</code> request, Amazon Kinesis Analytics returns a
-        /// response with a summary of the application it created, including the application Amazon Resource Name (ARN),
-        /// name, and status.</p>
+        /// <p>In response to your <code>CreateApplication</code> request, Amazon Kinesis Analytics returns a response with a summary of the application it created, including the application Amazon Resource Name (ARN), name, and status.</p>
         pub fn set_application_summary(
             mut self,
             input: std::option::Option<crate::model::ApplicationSummary>,

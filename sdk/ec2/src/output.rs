@@ -268,7 +268,7 @@ pub struct UnassignIpv6AddressesOutput {
     pub network_interface_id: std::option::Option<std::string::String>,
     /// <p>The IPv6 addresses that have been unassigned from the network interface.</p>
     pub unassigned_ipv6_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The IPv4 prefixes that have been unassigned from  the network interface.</p>
+    /// <p>The IPv4 prefixes that have been unassigned from the network interface.</p>
     pub unassigned_ipv6_prefixes: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UnassignIpv6AddressesOutput {
@@ -280,7 +280,7 @@ impl UnassignIpv6AddressesOutput {
     pub fn unassigned_ipv6_addresses(&self) -> std::option::Option<&[std::string::String]> {
         self.unassigned_ipv6_addresses.as_deref()
     }
-    /// <p>The IPv4 prefixes that have been unassigned from  the network interface.</p>
+    /// <p>The IPv4 prefixes that have been unassigned from the network interface.</p>
     pub fn unassigned_ipv6_prefixes(&self) -> std::option::Option<&[std::string::String]> {
         self.unassigned_ipv6_prefixes.as_deref()
     }
@@ -343,14 +343,14 @@ pub mod unassign_ipv6_addresses_output {
         ///
         /// To override the contents of this collection use [`set_unassigned_ipv6_prefixes`](Self::set_unassigned_ipv6_prefixes).
         ///
-        /// <p>The IPv4 prefixes that have been unassigned from  the network interface.</p>
+        /// <p>The IPv4 prefixes that have been unassigned from the network interface.</p>
         pub fn unassigned_ipv6_prefixes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.unassigned_ipv6_prefixes.unwrap_or_default();
             v.push(input.into());
             self.unassigned_ipv6_prefixes = Some(v);
             self
         }
-        /// <p>The IPv4 prefixes that have been unassigned from  the network interface.</p>
+        /// <p>The IPv4 prefixes that have been unassigned from the network interface.</p>
         pub fn set_unassigned_ipv6_prefixes(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -987,14 +987,14 @@ impl SearchTransitGatewayRoutesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchTransitGatewayMulticastGroupsOutput {
-    /// <p>Information about the  transit gateway multicast group.</p>
+    /// <p>Information about the transit gateway multicast group.</p>
     pub multicast_groups:
         std::option::Option<std::vec::Vec<crate::model::TransitGatewayMulticastGroup>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl SearchTransitGatewayMulticastGroupsOutput {
-    /// <p>Information about the  transit gateway multicast group.</p>
+    /// <p>Information about the transit gateway multicast group.</p>
     pub fn multicast_groups(
         &self,
     ) -> std::option::Option<&[crate::model::TransitGatewayMulticastGroup]> {
@@ -1028,7 +1028,7 @@ pub mod search_transit_gateway_multicast_groups_output {
         ///
         /// To override the contents of this collection use [`set_multicast_groups`](Self::set_multicast_groups).
         ///
-        /// <p>Information about the  transit gateway multicast group.</p>
+        /// <p>Information about the transit gateway multicast group.</p>
         pub fn multicast_groups(
             mut self,
             input: crate::model::TransitGatewayMulticastGroup,
@@ -1038,7 +1038,7 @@ pub mod search_transit_gateway_multicast_groups_output {
             self.multicast_groups = Some(v);
             self
         }
-        /// <p>Information about the  transit gateway multicast group.</p>
+        /// <p>Information about the transit gateway multicast group.</p>
         pub fn set_multicast_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TransitGatewayMulticastGroup>>,
@@ -1217,9 +1217,7 @@ impl RunScheduledInstancesOutput {
     }
 }
 
-/// <p>Describes a launch request for one or more instances, and includes
-/// owner, requester, and security group information that applies to all
-/// instances in the launch request.</p>
+/// <p>Describes a launch request for one or more instances, and includes owner, requester, and security group information that applies to all instances in the launch request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RunInstancesOutput {
@@ -1229,8 +1227,7 @@ pub struct RunInstancesOutput {
     pub instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
     /// <p>The ID of the Amazon Web Services account that owns the reservation.</p>
     pub owner_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the requester that launched the instances on your behalf (for example,
-    /// Amazon Web Services Management Console or Auto Scaling).</p>
+    /// <p>The ID of the requester that launched the instances on your behalf (for example, Amazon Web Services Management Console or Auto Scaling).</p>
     pub requester_id: std::option::Option<std::string::String>,
     /// <p>The ID of the reservation.</p>
     pub reservation_id: std::option::Option<std::string::String>,
@@ -1248,8 +1245,7 @@ impl RunInstancesOutput {
     pub fn owner_id(&self) -> std::option::Option<&str> {
         self.owner_id.as_deref()
     }
-    /// <p>The ID of the requester that launched the instances on your behalf (for example,
-    /// Amazon Web Services Management Console or Auto Scaling).</p>
+    /// <p>The ID of the requester that launched the instances on your behalf (for example, Amazon Web Services Management Console or Auto Scaling).</p>
     pub fn requester_id(&self) -> std::option::Option<&str> {
         self.requester_id.as_deref()
     }
@@ -1330,14 +1326,12 @@ pub mod run_instances_output {
             self.owner_id = input;
             self
         }
-        /// <p>The ID of the requester that launched the instances on your behalf (for example,
-        /// Amazon Web Services Management Console or Auto Scaling).</p>
+        /// <p>The ID of the requester that launched the instances on your behalf (for example, Amazon Web Services Management Console or Auto Scaling).</p>
         pub fn requester_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.requester_id = Some(input.into());
             self
         }
-        /// <p>The ID of the requester that launched the instances on your behalf (for example,
-        /// Amazon Web Services Management Console or Auto Scaling).</p>
+        /// <p>The ID of the requester that launched the instances on your behalf (for example, Amazon Web Services Management Console or Auto Scaling).</p>
         pub fn set_requester_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.requester_id = input;
             self
@@ -1380,9 +1374,7 @@ impl RunInstancesOutput {
 pub struct RevokeSecurityGroupIngressOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
     pub r#return: std::option::Option<bool>,
-    /// <p>The inbound rules that were unknown to the service. In some cases,
-    /// <code>unknownIpPermissionSet</code> might be in a different format from the request
-    /// parameter. </p>
+    /// <p>The inbound rules that were unknown to the service. In some cases, <code>unknownIpPermissionSet</code> might be in a different format from the request parameter. </p>
     pub unknown_ip_permissions: std::option::Option<std::vec::Vec<crate::model::IpPermission>>,
 }
 impl RevokeSecurityGroupIngressOutput {
@@ -1390,9 +1382,7 @@ impl RevokeSecurityGroupIngressOutput {
     pub fn r#return(&self) -> std::option::Option<bool> {
         self.r#return
     }
-    /// <p>The inbound rules that were unknown to the service. In some cases,
-    /// <code>unknownIpPermissionSet</code> might be in a different format from the request
-    /// parameter. </p>
+    /// <p>The inbound rules that were unknown to the service. In some cases, <code>unknownIpPermissionSet</code> might be in a different format from the request parameter. </p>
     pub fn unknown_ip_permissions(&self) -> std::option::Option<&[crate::model::IpPermission]> {
         self.unknown_ip_permissions.as_deref()
     }
@@ -1430,18 +1420,14 @@ pub mod revoke_security_group_ingress_output {
         ///
         /// To override the contents of this collection use [`set_unknown_ip_permissions`](Self::set_unknown_ip_permissions).
         ///
-        /// <p>The inbound rules that were unknown to the service. In some cases,
-        /// <code>unknownIpPermissionSet</code> might be in a different format from the request
-        /// parameter. </p>
+        /// <p>The inbound rules that were unknown to the service. In some cases, <code>unknownIpPermissionSet</code> might be in a different format from the request parameter. </p>
         pub fn unknown_ip_permissions(mut self, input: crate::model::IpPermission) -> Self {
             let mut v = self.unknown_ip_permissions.unwrap_or_default();
             v.push(input);
             self.unknown_ip_permissions = Some(v);
             self
         }
-        /// <p>The inbound rules that were unknown to the service. In some cases,
-        /// <code>unknownIpPermissionSet</code> might be in a different format from the request
-        /// parameter. </p>
+        /// <p>The inbound rules that were unknown to the service. In some cases, <code>unknownIpPermissionSet</code> might be in a different format from the request parameter. </p>
         pub fn set_unknown_ip_permissions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::IpPermission>>,
@@ -1471,9 +1457,7 @@ impl RevokeSecurityGroupIngressOutput {
 pub struct RevokeSecurityGroupEgressOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
     pub r#return: std::option::Option<bool>,
-    /// <p>The outbound rules that were unknown to the service. In some cases,
-    /// <code>unknownIpPermissionSet</code> might be in a different format from the request
-    /// parameter. </p>
+    /// <p>The outbound rules that were unknown to the service. In some cases, <code>unknownIpPermissionSet</code> might be in a different format from the request parameter. </p>
     pub unknown_ip_permissions: std::option::Option<std::vec::Vec<crate::model::IpPermission>>,
 }
 impl RevokeSecurityGroupEgressOutput {
@@ -1481,9 +1465,7 @@ impl RevokeSecurityGroupEgressOutput {
     pub fn r#return(&self) -> std::option::Option<bool> {
         self.r#return
     }
-    /// <p>The outbound rules that were unknown to the service. In some cases,
-    /// <code>unknownIpPermissionSet</code> might be in a different format from the request
-    /// parameter. </p>
+    /// <p>The outbound rules that were unknown to the service. In some cases, <code>unknownIpPermissionSet</code> might be in a different format from the request parameter. </p>
     pub fn unknown_ip_permissions(&self) -> std::option::Option<&[crate::model::IpPermission]> {
         self.unknown_ip_permissions.as_deref()
     }
@@ -1521,18 +1503,14 @@ pub mod revoke_security_group_egress_output {
         ///
         /// To override the contents of this collection use [`set_unknown_ip_permissions`](Self::set_unknown_ip_permissions).
         ///
-        /// <p>The outbound rules that were unknown to the service. In some cases,
-        /// <code>unknownIpPermissionSet</code> might be in a different format from the request
-        /// parameter. </p>
+        /// <p>The outbound rules that were unknown to the service. In some cases, <code>unknownIpPermissionSet</code> might be in a different format from the request parameter. </p>
         pub fn unknown_ip_permissions(mut self, input: crate::model::IpPermission) -> Self {
             let mut v = self.unknown_ip_permissions.unwrap_or_default();
             v.push(input);
             self.unknown_ip_permissions = Some(v);
             self
         }
-        /// <p>The outbound rules that were unknown to the service. In some cases,
-        /// <code>unknownIpPermissionSet</code> might be in a different format from the request
-        /// parameter. </p>
+        /// <p>The outbound rules that were unknown to the service. In some cases, <code>unknownIpPermissionSet</code> might be in a different format from the request parameter. </p>
         pub fn set_unknown_ip_permissions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::IpPermission>>,
@@ -1621,11 +1599,9 @@ pub struct RestoreSnapshotTierOutput {
     pub snapshot_id: std::option::Option<std::string::String>,
     /// <p>The date and time when the snapshot restore process started.</p>
     pub restore_start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>For temporary restores only. The number of days for which the archived snapshot
-    /// is temporarily restored.</p>
+    /// <p>For temporary restores only. The number of days for which the archived snapshot is temporarily restored.</p>
     pub restore_duration: std::option::Option<i32>,
-    /// <p>Indicates whether the snapshot is permanently restored. <code>true</code> indicates a permanent
-    /// restore. <code>false</code> indicates a temporary restore.</p>
+    /// <p>Indicates whether the snapshot is permanently restored. <code>true</code> indicates a permanent restore. <code>false</code> indicates a temporary restore.</p>
     pub is_permanent_restore: std::option::Option<bool>,
 }
 impl RestoreSnapshotTierOutput {
@@ -1637,13 +1613,11 @@ impl RestoreSnapshotTierOutput {
     pub fn restore_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.restore_start_time.as_ref()
     }
-    /// <p>For temporary restores only. The number of days for which the archived snapshot
-    /// is temporarily restored.</p>
+    /// <p>For temporary restores only. The number of days for which the archived snapshot is temporarily restored.</p>
     pub fn restore_duration(&self) -> std::option::Option<i32> {
         self.restore_duration
     }
-    /// <p>Indicates whether the snapshot is permanently restored. <code>true</code> indicates a permanent
-    /// restore. <code>false</code> indicates a temporary restore.</p>
+    /// <p>Indicates whether the snapshot is permanently restored. <code>true</code> indicates a permanent restore. <code>false</code> indicates a temporary restore.</p>
     pub fn is_permanent_restore(&self) -> std::option::Option<bool> {
         self.is_permanent_restore
     }
@@ -1693,26 +1667,22 @@ pub mod restore_snapshot_tier_output {
             self.restore_start_time = input;
             self
         }
-        /// <p>For temporary restores only. The number of days for which the archived snapshot
-        /// is temporarily restored.</p>
+        /// <p>For temporary restores only. The number of days for which the archived snapshot is temporarily restored.</p>
         pub fn restore_duration(mut self, input: i32) -> Self {
             self.restore_duration = Some(input);
             self
         }
-        /// <p>For temporary restores only. The number of days for which the archived snapshot
-        /// is temporarily restored.</p>
+        /// <p>For temporary restores only. The number of days for which the archived snapshot is temporarily restored.</p>
         pub fn set_restore_duration(mut self, input: std::option::Option<i32>) -> Self {
             self.restore_duration = input;
             self
         }
-        /// <p>Indicates whether the snapshot is permanently restored. <code>true</code> indicates a permanent
-        /// restore. <code>false</code> indicates a temporary restore.</p>
+        /// <p>Indicates whether the snapshot is permanently restored. <code>true</code> indicates a permanent restore. <code>false</code> indicates a temporary restore.</p>
         pub fn is_permanent_restore(mut self, input: bool) -> Self {
             self.is_permanent_restore = Some(input);
             self
         }
-        /// <p>Indicates whether the snapshot is permanently restored. <code>true</code> indicates a permanent
-        /// restore. <code>false</code> indicates a temporary restore.</p>
+        /// <p>Indicates whether the snapshot is permanently restored. <code>true</code> indicates a permanent restore. <code>false</code> indicates a temporary restore.</p>
         pub fn set_is_permanent_restore(mut self, input: std::option::Option<bool>) -> Self {
             self.is_permanent_restore = input;
             self
@@ -1741,8 +1711,7 @@ impl RestoreSnapshotTierOutput {
 pub struct RestoreSnapshotFromRecycleBinOutput {
     /// <p>The ID of the snapshot.</p>
     pub snapshot_id: std::option::Option<std::string::String>,
-    /// <p>The ARN of the Outpost on which the snapshot is stored. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">Amazon EBS local snapshots on Outposts</a> in the
-    /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    /// <p>The ARN of the Outpost on which the snapshot is stored. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">Amazon EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub outpost_arn: std::option::Option<std::string::String>,
     /// <p>The description for the snapshot.</p>
     pub description: std::option::Option<std::string::String>,
@@ -1766,8 +1735,7 @@ impl RestoreSnapshotFromRecycleBinOutput {
     pub fn snapshot_id(&self) -> std::option::Option<&str> {
         self.snapshot_id.as_deref()
     }
-    /// <p>The ARN of the Outpost on which the snapshot is stored. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">Amazon EBS local snapshots on Outposts</a> in the
-    /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    /// <p>The ARN of the Outpost on which the snapshot is stored. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">Amazon EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub fn outpost_arn(&self) -> std::option::Option<&str> {
         self.outpost_arn.as_deref()
     }
@@ -1848,14 +1816,12 @@ pub mod restore_snapshot_from_recycle_bin_output {
             self.snapshot_id = input;
             self
         }
-        /// <p>The ARN of the Outpost on which the snapshot is stored. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">Amazon EBS local snapshots on Outposts</a> in the
-        /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+        /// <p>The ARN of the Outpost on which the snapshot is stored. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">Amazon EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
         pub fn outpost_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.outpost_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the Outpost on which the snapshot is stored. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">Amazon EBS local snapshots on Outposts</a> in the
-        /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+        /// <p>The ARN of the Outpost on which the snapshot is stored. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">Amazon EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
         pub fn set_outpost_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.outpost_arn = input;
             self
@@ -2922,8 +2888,7 @@ impl ReleaseIpamPoolAllocationOutput {
 pub struct ReleaseHostsOutput {
     /// <p>The IDs of the Dedicated Hosts that were successfully released.</p>
     pub successful: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The IDs of the Dedicated Hosts that could not be released, including an error
-    /// message.</p>
+    /// <p>The IDs of the Dedicated Hosts that could not be released, including an error message.</p>
     pub unsuccessful: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,
 }
 impl ReleaseHostsOutput {
@@ -2931,8 +2896,7 @@ impl ReleaseHostsOutput {
     pub fn successful(&self) -> std::option::Option<&[std::string::String]> {
         self.successful.as_deref()
     }
-    /// <p>The IDs of the Dedicated Hosts that could not be released, including an error
-    /// message.</p>
+    /// <p>The IDs of the Dedicated Hosts that could not be released, including an error message.</p>
     pub fn unsuccessful(&self) -> std::option::Option<&[crate::model::UnsuccessfulItem]> {
         self.unsuccessful.as_deref()
     }
@@ -2978,16 +2942,14 @@ pub mod release_hosts_output {
         ///
         /// To override the contents of this collection use [`set_unsuccessful`](Self::set_unsuccessful).
         ///
-        /// <p>The IDs of the Dedicated Hosts that could not be released, including an error
-        /// message.</p>
+        /// <p>The IDs of the Dedicated Hosts that could not be released, including an error message.</p>
         pub fn unsuccessful(mut self, input: crate::model::UnsuccessfulItem) -> Self {
             let mut v = self.unsuccessful.unwrap_or_default();
             v.push(input);
             self.unsuccessful = Some(v);
             self
         }
-        /// <p>The IDs of the Dedicated Hosts that could not be released, including an error
-        /// message.</p>
+        /// <p>The IDs of the Dedicated Hosts that could not be released, including an error message.</p>
         pub fn set_unsuccessful(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,
@@ -3361,12 +3323,12 @@ impl RejectTransitGatewayMulticastDomainAssociationsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterTransitGatewayMulticastGroupSourcesOutput {
-    /// <p>Information about the  transit gateway multicast group sources.</p>
+    /// <p>Information about the transit gateway multicast group sources.</p>
     pub registered_multicast_group_sources:
         std::option::Option<crate::model::TransitGatewayMulticastRegisteredGroupSources>,
 }
 impl RegisterTransitGatewayMulticastGroupSourcesOutput {
-    /// <p>Information about the  transit gateway multicast group sources.</p>
+    /// <p>Information about the transit gateway multicast group sources.</p>
     pub fn registered_multicast_group_sources(
         &self,
     ) -> std::option::Option<&crate::model::TransitGatewayMulticastRegisteredGroupSources> {
@@ -3393,7 +3355,7 @@ pub mod register_transit_gateway_multicast_group_sources_output {
             std::option::Option<crate::model::TransitGatewayMulticastRegisteredGroupSources>,
     }
     impl Builder {
-        /// <p>Information about the  transit gateway multicast group sources.</p>
+        /// <p>Information about the transit gateway multicast group sources.</p>
         pub fn registered_multicast_group_sources(
             mut self,
             input: crate::model::TransitGatewayMulticastRegisteredGroupSources,
@@ -3401,7 +3363,7 @@ pub mod register_transit_gateway_multicast_group_sources_output {
             self.registered_multicast_group_sources = Some(input);
             self
         }
-        /// <p>Information about the  transit gateway multicast group sources.</p>
+        /// <p>Information about the transit gateway multicast group sources.</p>
         pub fn set_registered_multicast_group_sources(
             mut self,
             input: std::option::Option<crate::model::TransitGatewayMulticastRegisteredGroupSources>,
@@ -3429,12 +3391,12 @@ impl RegisterTransitGatewayMulticastGroupSourcesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterTransitGatewayMulticastGroupMembersOutput {
-    /// <p>Information about the registered  transit gateway multicast group members.</p>
+    /// <p>Information about the registered transit gateway multicast group members.</p>
     pub registered_multicast_group_members:
         std::option::Option<crate::model::TransitGatewayMulticastRegisteredGroupMembers>,
 }
 impl RegisterTransitGatewayMulticastGroupMembersOutput {
-    /// <p>Information about the registered  transit gateway multicast group members.</p>
+    /// <p>Information about the registered transit gateway multicast group members.</p>
     pub fn registered_multicast_group_members(
         &self,
     ) -> std::option::Option<&crate::model::TransitGatewayMulticastRegisteredGroupMembers> {
@@ -3461,7 +3423,7 @@ pub mod register_transit_gateway_multicast_group_members_output {
             std::option::Option<crate::model::TransitGatewayMulticastRegisteredGroupMembers>,
     }
     impl Builder {
-        /// <p>Information about the registered  transit gateway multicast group members.</p>
+        /// <p>Information about the registered transit gateway multicast group members.</p>
         pub fn registered_multicast_group_members(
             mut self,
             input: crate::model::TransitGatewayMulticastRegisteredGroupMembers,
@@ -3469,7 +3431,7 @@ pub mod register_transit_gateway_multicast_group_members_output {
             self.registered_multicast_group_members = Some(input);
             self
         }
-        /// <p>Information about the registered  transit gateway multicast group members.</p>
+        /// <p>Information about the registered transit gateway multicast group members.</p>
         pub fn set_registered_multicast_group_members(
             mut self,
             input: std::option::Option<crate::model::TransitGatewayMulticastRegisteredGroupMembers>,
@@ -3711,15 +3673,11 @@ impl PurchaseScheduledInstancesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PurchaseReservedInstancesOfferingOutput {
-    /// <p>The IDs of the purchased Reserved Instances. If your purchase crosses into a discounted
-    /// pricing tier, the final Reserved Instances IDs might change. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-reserved-instances-application.html#crossing-pricing-tiers">Crossing
-    /// pricing tiers</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    /// <p>The IDs of the purchased Reserved Instances. If your purchase crosses into a discounted pricing tier, the final Reserved Instances IDs might change. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-reserved-instances-application.html#crossing-pricing-tiers">Crossing pricing tiers</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub reserved_instances_id: std::option::Option<std::string::String>,
 }
 impl PurchaseReservedInstancesOfferingOutput {
-    /// <p>The IDs of the purchased Reserved Instances. If your purchase crosses into a discounted
-    /// pricing tier, the final Reserved Instances IDs might change. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-reserved-instances-application.html#crossing-pricing-tiers">Crossing
-    /// pricing tiers</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    /// <p>The IDs of the purchased Reserved Instances. If your purchase crosses into a discounted pricing tier, the final Reserved Instances IDs might change. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-reserved-instances-application.html#crossing-pricing-tiers">Crossing pricing tiers</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub fn reserved_instances_id(&self) -> std::option::Option<&str> {
         self.reserved_instances_id.as_deref()
     }
@@ -3740,16 +3698,12 @@ pub mod purchase_reserved_instances_offering_output {
         pub(crate) reserved_instances_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The IDs of the purchased Reserved Instances. If your purchase crosses into a discounted
-        /// pricing tier, the final Reserved Instances IDs might change. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-reserved-instances-application.html#crossing-pricing-tiers">Crossing
-        /// pricing tiers</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+        /// <p>The IDs of the purchased Reserved Instances. If your purchase crosses into a discounted pricing tier, the final Reserved Instances IDs might change. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-reserved-instances-application.html#crossing-pricing-tiers">Crossing pricing tiers</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
         pub fn reserved_instances_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.reserved_instances_id = Some(input.into());
             self
         }
-        /// <p>The IDs of the purchased Reserved Instances. If your purchase crosses into a discounted
-        /// pricing tier, the final Reserved Instances IDs might change. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-reserved-instances-application.html#crossing-pricing-tiers">Crossing
-        /// pricing tiers</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+        /// <p>The IDs of the purchased Reserved Instances. If your purchase crosses into a discounted pricing tier, the final Reserved Instances IDs might change. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-reserved-instances-application.html#crossing-pricing-tiers">Crossing pricing tiers</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
         pub fn set_reserved_instances_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3778,9 +3732,7 @@ impl PurchaseReservedInstancesOfferingOutput {
 pub struct PurchaseHostReservationOutput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The currency in which the <code>totalUpfrontPrice</code> and
-    /// <code>totalHourlyPrice</code> amounts are specified. At this time, the only
-    /// supported currency is <code>USD</code>.</p>
+    /// <p>The currency in which the <code>totalUpfrontPrice</code> and <code>totalHourlyPrice</code> amounts are specified. At this time, the only supported currency is <code>USD</code>.</p>
     pub currency_code: std::option::Option<crate::model::CurrencyCodeValues>,
     /// <p>Describes the details of the purchase.</p>
     pub purchase: std::option::Option<std::vec::Vec<crate::model::Purchase>>,
@@ -3794,9 +3746,7 @@ impl PurchaseHostReservationOutput {
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The currency in which the <code>totalUpfrontPrice</code> and
-    /// <code>totalHourlyPrice</code> amounts are specified. At this time, the only
-    /// supported currency is <code>USD</code>.</p>
+    /// <p>The currency in which the <code>totalUpfrontPrice</code> and <code>totalHourlyPrice</code> amounts are specified. At this time, the only supported currency is <code>USD</code>.</p>
     pub fn currency_code(&self) -> std::option::Option<&crate::model::CurrencyCodeValues> {
         self.currency_code.as_ref()
     }
@@ -3847,16 +3797,12 @@ pub mod purchase_host_reservation_output {
             self.client_token = input;
             self
         }
-        /// <p>The currency in which the <code>totalUpfrontPrice</code> and
-        /// <code>totalHourlyPrice</code> amounts are specified. At this time, the only
-        /// supported currency is <code>USD</code>.</p>
+        /// <p>The currency in which the <code>totalUpfrontPrice</code> and <code>totalHourlyPrice</code> amounts are specified. At this time, the only supported currency is <code>USD</code>.</p>
         pub fn currency_code(mut self, input: crate::model::CurrencyCodeValues) -> Self {
             self.currency_code = Some(input);
             self
         }
-        /// <p>The currency in which the <code>totalUpfrontPrice</code> and
-        /// <code>totalHourlyPrice</code> amounts are specified. At this time, the only
-        /// supported currency is <code>USD</code>.</p>
+        /// <p>The currency in which the <code>totalUpfrontPrice</code> and <code>totalHourlyPrice</code> amounts are specified. At this time, the only supported currency is <code>USD</code>.</p>
         pub fn set_currency_code(
             mut self,
             input: std::option::Option<crate::model::CurrencyCodeValues>,
@@ -4122,13 +4068,11 @@ impl ProvisionByoipCidrOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MoveByoipCidrToIpamOutput {
-    /// <p>Information about an address range that is provisioned for use with your Amazon Web Services resources
-    /// through bring your own IP addresses (BYOIP).</p>
+    /// <p>Information about an address range that is provisioned for use with your Amazon Web Services resources through bring your own IP addresses (BYOIP).</p>
     pub byoip_cidr: std::option::Option<crate::model::ByoipCidr>,
 }
 impl MoveByoipCidrToIpamOutput {
-    /// <p>Information about an address range that is provisioned for use with your Amazon Web Services resources
-    /// through bring your own IP addresses (BYOIP).</p>
+    /// <p>Information about an address range that is provisioned for use with your Amazon Web Services resources through bring your own IP addresses (BYOIP).</p>
     pub fn byoip_cidr(&self) -> std::option::Option<&crate::model::ByoipCidr> {
         self.byoip_cidr.as_ref()
     }
@@ -4149,14 +4093,12 @@ pub mod move_byoip_cidr_to_ipam_output {
         pub(crate) byoip_cidr: std::option::Option<crate::model::ByoipCidr>,
     }
     impl Builder {
-        /// <p>Information about an address range that is provisioned for use with your Amazon Web Services resources
-        /// through bring your own IP addresses (BYOIP).</p>
+        /// <p>Information about an address range that is provisioned for use with your Amazon Web Services resources through bring your own IP addresses (BYOIP).</p>
         pub fn byoip_cidr(mut self, input: crate::model::ByoipCidr) -> Self {
             self.byoip_cidr = Some(input);
             self
         }
-        /// <p>Information about an address range that is provisioned for use with your Amazon Web Services resources
-        /// through bring your own IP addresses (BYOIP).</p>
+        /// <p>Information about an address range that is provisioned for use with your Amazon Web Services resources through bring your own IP addresses (BYOIP).</p>
         pub fn set_byoip_cidr(
             mut self,
             input: std::option::Option<crate::model::ByoipCidr>,
@@ -4551,13 +4493,11 @@ impl ModifyVpnConnectionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyVpcTenancyOutput {
-    /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an
-    /// error.</p>
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
     pub return_value: std::option::Option<bool>,
 }
 impl ModifyVpcTenancyOutput {
-    /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an
-    /// error.</p>
+    /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
     pub fn return_value(&self) -> std::option::Option<bool> {
         self.return_value
     }
@@ -4578,14 +4518,12 @@ pub mod modify_vpc_tenancy_output {
         pub(crate) return_value: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an
-        /// error.</p>
+        /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
         pub fn return_value(mut self, input: bool) -> Self {
             self.return_value = Some(input);
             self
         }
-        /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an
-        /// error.</p>
+        /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
         pub fn set_return_value(mut self, input: std::option::Option<bool>) -> Self {
             self.return_value = input;
             self
@@ -6390,26 +6328,22 @@ impl ModifyInstanceEventStartTimeOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyInstanceCreditSpecificationOutput {
-    /// <p>Information about the instances whose credit option for CPU usage was successfully
-    /// modified.</p>
+    /// <p>Information about the instances whose credit option for CPU usage was successfully modified.</p>
     pub successful_instance_credit_specifications:
         std::option::Option<std::vec::Vec<crate::model::SuccessfulInstanceCreditSpecificationItem>>,
-    /// <p>Information about the instances whose credit option for CPU usage was not
-    /// modified.</p>
+    /// <p>Information about the instances whose credit option for CPU usage was not modified.</p>
     pub unsuccessful_instance_credit_specifications: std::option::Option<
         std::vec::Vec<crate::model::UnsuccessfulInstanceCreditSpecificationItem>,
     >,
 }
 impl ModifyInstanceCreditSpecificationOutput {
-    /// <p>Information about the instances whose credit option for CPU usage was successfully
-    /// modified.</p>
+    /// <p>Information about the instances whose credit option for CPU usage was successfully modified.</p>
     pub fn successful_instance_credit_specifications(
         &self,
     ) -> std::option::Option<&[crate::model::SuccessfulInstanceCreditSpecificationItem]> {
         self.successful_instance_credit_specifications.as_deref()
     }
-    /// <p>Information about the instances whose credit option for CPU usage was not
-    /// modified.</p>
+    /// <p>Information about the instances whose credit option for CPU usage was not modified.</p>
     pub fn unsuccessful_instance_credit_specifications(
         &self,
     ) -> std::option::Option<&[crate::model::UnsuccessfulInstanceCreditSpecificationItem]> {
@@ -6448,8 +6382,7 @@ pub mod modify_instance_credit_specification_output {
         ///
         /// To override the contents of this collection use [`set_successful_instance_credit_specifications`](Self::set_successful_instance_credit_specifications).
         ///
-        /// <p>Information about the instances whose credit option for CPU usage was successfully
-        /// modified.</p>
+        /// <p>Information about the instances whose credit option for CPU usage was successfully modified.</p>
         pub fn successful_instance_credit_specifications(
             mut self,
             input: crate::model::SuccessfulInstanceCreditSpecificationItem,
@@ -6461,8 +6394,7 @@ pub mod modify_instance_credit_specification_output {
             self.successful_instance_credit_specifications = Some(v);
             self
         }
-        /// <p>Information about the instances whose credit option for CPU usage was successfully
-        /// modified.</p>
+        /// <p>Information about the instances whose credit option for CPU usage was successfully modified.</p>
         pub fn set_successful_instance_credit_specifications(
             mut self,
             input: std::option::Option<
@@ -6476,8 +6408,7 @@ pub mod modify_instance_credit_specification_output {
         ///
         /// To override the contents of this collection use [`set_unsuccessful_instance_credit_specifications`](Self::set_unsuccessful_instance_credit_specifications).
         ///
-        /// <p>Information about the instances whose credit option for CPU usage was not
-        /// modified.</p>
+        /// <p>Information about the instances whose credit option for CPU usage was not modified.</p>
         pub fn unsuccessful_instance_credit_specifications(
             mut self,
             input: crate::model::UnsuccessfulInstanceCreditSpecificationItem,
@@ -6489,8 +6420,7 @@ pub mod modify_instance_credit_specification_output {
             self.unsuccessful_instance_credit_specifications = Some(v);
             self
         }
-        /// <p>Information about the instances whose credit option for CPU usage was not
-        /// modified.</p>
+        /// <p>Information about the instances whose credit option for CPU usage was not modified.</p>
         pub fn set_unsuccessful_instance_credit_specifications(
             mut self,
             input: std::option::Option<
@@ -6699,8 +6629,7 @@ impl ModifyIdentityIdFormatOutput {
 pub struct ModifyHostsOutput {
     /// <p>The IDs of the Dedicated Hosts that were successfully modified.</p>
     pub successful: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The IDs of the Dedicated Hosts that could not be modified. Check whether the
-    /// setting you requested can be used.</p>
+    /// <p>The IDs of the Dedicated Hosts that could not be modified. Check whether the setting you requested can be used.</p>
     pub unsuccessful: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,
 }
 impl ModifyHostsOutput {
@@ -6708,8 +6637,7 @@ impl ModifyHostsOutput {
     pub fn successful(&self) -> std::option::Option<&[std::string::String]> {
         self.successful.as_deref()
     }
-    /// <p>The IDs of the Dedicated Hosts that could not be modified. Check whether the
-    /// setting you requested can be used.</p>
+    /// <p>The IDs of the Dedicated Hosts that could not be modified. Check whether the setting you requested can be used.</p>
     pub fn unsuccessful(&self) -> std::option::Option<&[crate::model::UnsuccessfulItem]> {
         self.unsuccessful.as_deref()
     }
@@ -6755,16 +6683,14 @@ pub mod modify_hosts_output {
         ///
         /// To override the contents of this collection use [`set_unsuccessful`](Self::set_unsuccessful).
         ///
-        /// <p>The IDs of the Dedicated Hosts that could not be modified. Check whether the
-        /// setting you requested can be used.</p>
+        /// <p>The IDs of the Dedicated Hosts that could not be modified. Check whether the setting you requested can be used.</p>
         pub fn unsuccessful(mut self, input: crate::model::UnsuccessfulItem) -> Self {
             let mut v = self.unsuccessful.unwrap_or_default();
             v.push(input);
             self.unsuccessful = Some(v);
             self
         }
-        /// <p>The IDs of the Dedicated Hosts that could not be modified. Check whether the
-        /// setting you requested can be used.</p>
+        /// <p>The IDs of the Dedicated Hosts that could not be modified. Check whether the setting you requested can be used.</p>
         pub fn set_unsuccessful(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,
@@ -8185,30 +8111,20 @@ impl ImportClientVpnClientCertificateRevocationListOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetVpnConnectionDeviceTypesOutput {
-    /// <p>List of customer gateway devices that have a sample configuration file available for
-    /// use.</p>
+    /// <p>List of customer gateway devices that have a sample configuration file available for use.</p>
     pub vpn_connection_device_types:
         std::option::Option<std::vec::Vec<crate::model::VpnConnectionDeviceType>>,
-    /// <p>The <code>NextToken</code> value to include in a future
-    /// <code>GetVpnConnectionDeviceTypes</code> request. When the results of a
-    /// <code>GetVpnConnectionDeviceTypes</code> request exceed <code>MaxResults</code>,
-    /// this value can be used to retrieve the next page of results. This value is null when
-    /// there are no more results to return.</p>
+    /// <p>The <code>NextToken</code> value to include in a future <code>GetVpnConnectionDeviceTypes</code> request. When the results of a <code>GetVpnConnectionDeviceTypes</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetVpnConnectionDeviceTypesOutput {
-    /// <p>List of customer gateway devices that have a sample configuration file available for
-    /// use.</p>
+    /// <p>List of customer gateway devices that have a sample configuration file available for use.</p>
     pub fn vpn_connection_device_types(
         &self,
     ) -> std::option::Option<&[crate::model::VpnConnectionDeviceType]> {
         self.vpn_connection_device_types.as_deref()
     }
-    /// <p>The <code>NextToken</code> value to include in a future
-    /// <code>GetVpnConnectionDeviceTypes</code> request. When the results of a
-    /// <code>GetVpnConnectionDeviceTypes</code> request exceed <code>MaxResults</code>,
-    /// this value can be used to retrieve the next page of results. This value is null when
-    /// there are no more results to return.</p>
+    /// <p>The <code>NextToken</code> value to include in a future <code>GetVpnConnectionDeviceTypes</code> request. When the results of a <code>GetVpnConnectionDeviceTypes</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -8239,8 +8155,7 @@ pub mod get_vpn_connection_device_types_output {
         ///
         /// To override the contents of this collection use [`set_vpn_connection_device_types`](Self::set_vpn_connection_device_types).
         ///
-        /// <p>List of customer gateway devices that have a sample configuration file available for
-        /// use.</p>
+        /// <p>List of customer gateway devices that have a sample configuration file available for use.</p>
         pub fn vpn_connection_device_types(
             mut self,
             input: crate::model::VpnConnectionDeviceType,
@@ -8250,8 +8165,7 @@ pub mod get_vpn_connection_device_types_output {
             self.vpn_connection_device_types = Some(v);
             self
         }
-        /// <p>List of customer gateway devices that have a sample configuration file available for
-        /// use.</p>
+        /// <p>List of customer gateway devices that have a sample configuration file available for use.</p>
         pub fn set_vpn_connection_device_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::VpnConnectionDeviceType>>,
@@ -8259,20 +8173,12 @@ pub mod get_vpn_connection_device_types_output {
             self.vpn_connection_device_types = input;
             self
         }
-        /// <p>The <code>NextToken</code> value to include in a future
-        /// <code>GetVpnConnectionDeviceTypes</code> request. When the results of a
-        /// <code>GetVpnConnectionDeviceTypes</code> request exceed <code>MaxResults</code>,
-        /// this value can be used to retrieve the next page of results. This value is null when
-        /// there are no more results to return.</p>
+        /// <p>The <code>NextToken</code> value to include in a future <code>GetVpnConnectionDeviceTypes</code> request. When the results of a <code>GetVpnConnectionDeviceTypes</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is null when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>NextToken</code> value to include in a future
-        /// <code>GetVpnConnectionDeviceTypes</code> request. When the results of a
-        /// <code>GetVpnConnectionDeviceTypes</code> request exceed <code>MaxResults</code>,
-        /// this value can be used to retrieve the next page of results. This value is null when
-        /// there are no more results to return.</p>
+        /// <p>The <code>NextToken</code> value to include in a future <code>GetVpnConnectionDeviceTypes</code> request. When the results of a <code>GetVpnConnectionDeviceTypes</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is null when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8972,42 +8878,20 @@ impl GetSubnetCidrReservationsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSpotPlacementScoresOutput {
-    /// <p>The Spot placement score for the top 10 Regions or Availability Zones, scored on a scale
-    /// from 1 to 10. Each score  reflects how likely it is that each Region or Availability Zone
-    /// will succeed at fulfilling the specified target capacity  <i>at the time of the Spot
-    /// placement score request</i>. A score of <code>10</code> means that your Spot
-    /// capacity request is highly likely to succeed in that Region or Availability Zone. </p>
-    /// <p>If you request a Spot placement score for Regions, a high score assumes that your fleet
-    /// request will be configured to use all Availability Zones and the
-    /// <code>capacity-optimized</code> allocation strategy. If you request a Spot placement
-    /// score for Availability Zones, a high score assumes that your fleet request will be
-    /// configured to use a single Availability Zone and the <code>capacity-optimized</code>
-    /// allocation strategy.</p>
-    /// <p>Different  Regions or Availability Zones might return the same score.</p>
-    /// <note>
-    /// <p>The Spot placement score serves as a recommendation only. No score guarantees that your
-    /// Spot request will be fully or partially fulfilled.</p>
+    /// <p>The Spot placement score for the top 10 Regions or Availability Zones, scored on a scale from 1 to 10. Each score  reflects how likely it is that each Region or Availability Zone will succeed at fulfilling the specified target capacity  <i>at the time of the Spot placement score request</i>. A score of <code>10</code> means that your Spot capacity request is highly likely to succeed in that Region or Availability Zone. </p>
+    /// <p>If you request a Spot placement score for Regions, a high score assumes that your fleet request will be configured to use all Availability Zones and the <code>capacity-optimized</code> allocation strategy. If you request a Spot placement score for Availability Zones, a high score assumes that your fleet request will be configured to use a single Availability Zone and the <code>capacity-optimized</code> allocation strategy.</p>
+    /// <p>Different  Regions or Availability Zones might return the same score.</p> <note>
+    /// <p>The Spot placement score serves as a recommendation only. No score guarantees that your Spot request will be fully or partially fulfilled.</p>
     /// </note>
     pub spot_placement_scores: std::option::Option<std::vec::Vec<crate::model::SpotPlacementScore>>,
     /// <p>The token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetSpotPlacementScoresOutput {
-    /// <p>The Spot placement score for the top 10 Regions or Availability Zones, scored on a scale
-    /// from 1 to 10. Each score  reflects how likely it is that each Region or Availability Zone
-    /// will succeed at fulfilling the specified target capacity  <i>at the time of the Spot
-    /// placement score request</i>. A score of <code>10</code> means that your Spot
-    /// capacity request is highly likely to succeed in that Region or Availability Zone. </p>
-    /// <p>If you request a Spot placement score for Regions, a high score assumes that your fleet
-    /// request will be configured to use all Availability Zones and the
-    /// <code>capacity-optimized</code> allocation strategy. If you request a Spot placement
-    /// score for Availability Zones, a high score assumes that your fleet request will be
-    /// configured to use a single Availability Zone and the <code>capacity-optimized</code>
-    /// allocation strategy.</p>
-    /// <p>Different  Regions or Availability Zones might return the same score.</p>
-    /// <note>
-    /// <p>The Spot placement score serves as a recommendation only. No score guarantees that your
-    /// Spot request will be fully or partially fulfilled.</p>
+    /// <p>The Spot placement score for the top 10 Regions or Availability Zones, scored on a scale from 1 to 10. Each score  reflects how likely it is that each Region or Availability Zone will succeed at fulfilling the specified target capacity  <i>at the time of the Spot placement score request</i>. A score of <code>10</code> means that your Spot capacity request is highly likely to succeed in that Region or Availability Zone. </p>
+    /// <p>If you request a Spot placement score for Regions, a high score assumes that your fleet request will be configured to use all Availability Zones and the <code>capacity-optimized</code> allocation strategy. If you request a Spot placement score for Availability Zones, a high score assumes that your fleet request will be configured to use a single Availability Zone and the <code>capacity-optimized</code> allocation strategy.</p>
+    /// <p>Different  Regions or Availability Zones might return the same score.</p> <note>
+    /// <p>The Spot placement score serves as a recommendation only. No score guarantees that your Spot request will be fully or partially fulfilled.</p>
     /// </note>
     pub fn spot_placement_scores(
         &self,
@@ -9042,21 +8926,10 @@ pub mod get_spot_placement_scores_output {
         ///
         /// To override the contents of this collection use [`set_spot_placement_scores`](Self::set_spot_placement_scores).
         ///
-        /// <p>The Spot placement score for the top 10 Regions or Availability Zones, scored on a scale
-        /// from 1 to 10. Each score  reflects how likely it is that each Region or Availability Zone
-        /// will succeed at fulfilling the specified target capacity  <i>at the time of the Spot
-        /// placement score request</i>. A score of <code>10</code> means that your Spot
-        /// capacity request is highly likely to succeed in that Region or Availability Zone. </p>
-        /// <p>If you request a Spot placement score for Regions, a high score assumes that your fleet
-        /// request will be configured to use all Availability Zones and the
-        /// <code>capacity-optimized</code> allocation strategy. If you request a Spot placement
-        /// score for Availability Zones, a high score assumes that your fleet request will be
-        /// configured to use a single Availability Zone and the <code>capacity-optimized</code>
-        /// allocation strategy.</p>
-        /// <p>Different  Regions or Availability Zones might return the same score.</p>
-        /// <note>
-        /// <p>The Spot placement score serves as a recommendation only. No score guarantees that your
-        /// Spot request will be fully or partially fulfilled.</p>
+        /// <p>The Spot placement score for the top 10 Regions or Availability Zones, scored on a scale from 1 to 10. Each score  reflects how likely it is that each Region or Availability Zone will succeed at fulfilling the specified target capacity  <i>at the time of the Spot placement score request</i>. A score of <code>10</code> means that your Spot capacity request is highly likely to succeed in that Region or Availability Zone. </p>
+        /// <p>If you request a Spot placement score for Regions, a high score assumes that your fleet request will be configured to use all Availability Zones and the <code>capacity-optimized</code> allocation strategy. If you request a Spot placement score for Availability Zones, a high score assumes that your fleet request will be configured to use a single Availability Zone and the <code>capacity-optimized</code> allocation strategy.</p>
+        /// <p>Different  Regions or Availability Zones might return the same score.</p> <note>
+        /// <p>The Spot placement score serves as a recommendation only. No score guarantees that your Spot request will be fully or partially fulfilled.</p>
         /// </note>
         pub fn spot_placement_scores(mut self, input: crate::model::SpotPlacementScore) -> Self {
             let mut v = self.spot_placement_scores.unwrap_or_default();
@@ -9064,21 +8937,10 @@ pub mod get_spot_placement_scores_output {
             self.spot_placement_scores = Some(v);
             self
         }
-        /// <p>The Spot placement score for the top 10 Regions or Availability Zones, scored on a scale
-        /// from 1 to 10. Each score  reflects how likely it is that each Region or Availability Zone
-        /// will succeed at fulfilling the specified target capacity  <i>at the time of the Spot
-        /// placement score request</i>. A score of <code>10</code> means that your Spot
-        /// capacity request is highly likely to succeed in that Region or Availability Zone. </p>
-        /// <p>If you request a Spot placement score for Regions, a high score assumes that your fleet
-        /// request will be configured to use all Availability Zones and the
-        /// <code>capacity-optimized</code> allocation strategy. If you request a Spot placement
-        /// score for Availability Zones, a high score assumes that your fleet request will be
-        /// configured to use a single Availability Zone and the <code>capacity-optimized</code>
-        /// allocation strategy.</p>
-        /// <p>Different  Regions or Availability Zones might return the same score.</p>
-        /// <note>
-        /// <p>The Spot placement score serves as a recommendation only. No score guarantees that your
-        /// Spot request will be fully or partially fulfilled.</p>
+        /// <p>The Spot placement score for the top 10 Regions or Availability Zones, scored on a scale from 1 to 10. Each score  reflects how likely it is that each Region or Availability Zone will succeed at fulfilling the specified target capacity  <i>at the time of the Spot placement score request</i>. A score of <code>10</code> means that your Spot capacity request is highly likely to succeed in that Region or Availability Zone. </p>
+        /// <p>If you request a Spot placement score for Regions, a high score assumes that your fleet request will be configured to use all Availability Zones and the <code>capacity-optimized</code> allocation strategy. If you request a Spot placement score for Availability Zones, a high score assumes that your fleet request will be configured to use a single Availability Zone and the <code>capacity-optimized</code> allocation strategy.</p>
+        /// <p>Different  Regions or Availability Zones might return the same score.</p> <note>
+        /// <p>The Spot placement score serves as a recommendation only. No score guarantees that your Spot request will be fully or partially fulfilled.</p>
         /// </note>
         pub fn set_spot_placement_scores(
             mut self,
@@ -9117,15 +8979,11 @@ impl GetSpotPlacementScoresOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSerialConsoleAccessStatusOutput {
-    /// <p>If <code>true</code>, access to the EC2 serial console of all instances is enabled for
-    /// your account. If <code>false</code>, access to the EC2 serial console of all instances
-    /// is disabled for your account.</p>
+    /// <p>If <code>true</code>, access to the EC2 serial console of all instances is enabled for your account. If <code>false</code>, access to the EC2 serial console of all instances is disabled for your account.</p>
     pub serial_console_access_enabled: std::option::Option<bool>,
 }
 impl GetSerialConsoleAccessStatusOutput {
-    /// <p>If <code>true</code>, access to the EC2 serial console of all instances is enabled for
-    /// your account. If <code>false</code>, access to the EC2 serial console of all instances
-    /// is disabled for your account.</p>
+    /// <p>If <code>true</code>, access to the EC2 serial console of all instances is enabled for your account. If <code>false</code>, access to the EC2 serial console of all instances is disabled for your account.</p>
     pub fn serial_console_access_enabled(&self) -> std::option::Option<bool> {
         self.serial_console_access_enabled
     }
@@ -9149,16 +9007,12 @@ pub mod get_serial_console_access_status_output {
         pub(crate) serial_console_access_enabled: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>If <code>true</code>, access to the EC2 serial console of all instances is enabled for
-        /// your account. If <code>false</code>, access to the EC2 serial console of all instances
-        /// is disabled for your account.</p>
+        /// <p>If <code>true</code>, access to the EC2 serial console of all instances is enabled for your account. If <code>false</code>, access to the EC2 serial console of all instances is disabled for your account.</p>
         pub fn serial_console_access_enabled(mut self, input: bool) -> Self {
             self.serial_console_access_enabled = Some(input);
             self
         }
-        /// <p>If <code>true</code>, access to the EC2 serial console of all instances is enabled for
-        /// your account. If <code>false</code>, access to the EC2 serial console of all instances
-        /// is disabled for your account.</p>
+        /// <p>If <code>true</code>, access to the EC2 serial console of all instances is enabled for your account. If <code>false</code>, access to the EC2 serial console of all instances is disabled for your account.</p>
         pub fn set_serial_console_access_enabled(
             mut self,
             input: std::option::Option<bool>,
@@ -9476,8 +9330,7 @@ impl GetReservedInstancesExchangeQuoteOutput {
 pub struct GetPasswordDataOutput {
     /// <p>The ID of the Windows instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>The password of the instance. Returns an empty string if the password is not
-    /// available.</p>
+    /// <p>The password of the instance. Returns an empty string if the password is not available.</p>
     pub password_data: std::option::Option<std::string::String>,
     /// <p>The time the data was last updated.</p>
     pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -9487,8 +9340,7 @@ impl GetPasswordDataOutput {
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The password of the instance. Returns an empty string if the password is not
-    /// available.</p>
+    /// <p>The password of the instance. Returns an empty string if the password is not available.</p>
     pub fn password_data(&self) -> std::option::Option<&str> {
         self.password_data.as_deref()
     }
@@ -9527,14 +9379,12 @@ pub mod get_password_data_output {
             self.instance_id = input;
             self
         }
-        /// <p>The password of the instance. Returns an empty string if the password is not
-        /// available.</p>
+        /// <p>The password of the instance. Returns an empty string if the password is not available.</p>
         pub fn password_data(mut self, input: impl Into<std::string::String>) -> Self {
             self.password_data = Some(input.into());
             self
         }
-        /// <p>The password of the instance. Returns an empty string if the password is not
-        /// available.</p>
+        /// <p>The password of the instance. Returns an empty string if the password is not available.</p>
         pub fn set_password_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10448,12 +10298,9 @@ impl GetInstanceTypesFromInstanceRequirementsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetHostReservationPurchasePreviewOutput {
-    /// <p>The currency in which the <code>totalUpfrontPrice</code> and
-    /// <code>totalHourlyPrice</code> amounts are specified. At this time, the only
-    /// supported currency is <code>USD</code>.</p>
+    /// <p>The currency in which the <code>totalUpfrontPrice</code> and <code>totalHourlyPrice</code> amounts are specified. At this time, the only supported currency is <code>USD</code>.</p>
     pub currency_code: std::option::Option<crate::model::CurrencyCodeValues>,
-    /// <p>The purchase information of the Dedicated Host reservation and the Dedicated Hosts
-    /// associated with it.</p>
+    /// <p>The purchase information of the Dedicated Host reservation and the Dedicated Hosts associated with it.</p>
     pub purchase: std::option::Option<std::vec::Vec<crate::model::Purchase>>,
     /// <p>The potential total hourly price of the reservation per hour.</p>
     pub total_hourly_price: std::option::Option<std::string::String>,
@@ -10461,14 +10308,11 @@ pub struct GetHostReservationPurchasePreviewOutput {
     pub total_upfront_price: std::option::Option<std::string::String>,
 }
 impl GetHostReservationPurchasePreviewOutput {
-    /// <p>The currency in which the <code>totalUpfrontPrice</code> and
-    /// <code>totalHourlyPrice</code> amounts are specified. At this time, the only
-    /// supported currency is <code>USD</code>.</p>
+    /// <p>The currency in which the <code>totalUpfrontPrice</code> and <code>totalHourlyPrice</code> amounts are specified. At this time, the only supported currency is <code>USD</code>.</p>
     pub fn currency_code(&self) -> std::option::Option<&crate::model::CurrencyCodeValues> {
         self.currency_code.as_ref()
     }
-    /// <p>The purchase information of the Dedicated Host reservation and the Dedicated Hosts
-    /// associated with it.</p>
+    /// <p>The purchase information of the Dedicated Host reservation and the Dedicated Hosts associated with it.</p>
     pub fn purchase(&self) -> std::option::Option<&[crate::model::Purchase]> {
         self.purchase.as_deref()
     }
@@ -10503,16 +10347,12 @@ pub mod get_host_reservation_purchase_preview_output {
         pub(crate) total_upfront_price: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The currency in which the <code>totalUpfrontPrice</code> and
-        /// <code>totalHourlyPrice</code> amounts are specified. At this time, the only
-        /// supported currency is <code>USD</code>.</p>
+        /// <p>The currency in which the <code>totalUpfrontPrice</code> and <code>totalHourlyPrice</code> amounts are specified. At this time, the only supported currency is <code>USD</code>.</p>
         pub fn currency_code(mut self, input: crate::model::CurrencyCodeValues) -> Self {
             self.currency_code = Some(input);
             self
         }
-        /// <p>The currency in which the <code>totalUpfrontPrice</code> and
-        /// <code>totalHourlyPrice</code> amounts are specified. At this time, the only
-        /// supported currency is <code>USD</code>.</p>
+        /// <p>The currency in which the <code>totalUpfrontPrice</code> and <code>totalHourlyPrice</code> amounts are specified. At this time, the only supported currency is <code>USD</code>.</p>
         pub fn set_currency_code(
             mut self,
             input: std::option::Option<crate::model::CurrencyCodeValues>,
@@ -10524,16 +10364,14 @@ pub mod get_host_reservation_purchase_preview_output {
         ///
         /// To override the contents of this collection use [`set_purchase`](Self::set_purchase).
         ///
-        /// <p>The purchase information of the Dedicated Host reservation and the Dedicated Hosts
-        /// associated with it.</p>
+        /// <p>The purchase information of the Dedicated Host reservation and the Dedicated Hosts associated with it.</p>
         pub fn purchase(mut self, input: crate::model::Purchase) -> Self {
             let mut v = self.purchase.unwrap_or_default();
             v.push(input);
             self.purchase = Some(v);
             self
         }
-        /// <p>The purchase information of the Dedicated Host reservation and the Dedicated Hosts
-        /// associated with it.</p>
+        /// <p>The purchase information of the Dedicated Host reservation and the Dedicated Hosts associated with it.</p>
         pub fn set_purchase(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Purchase>>,
@@ -10985,8 +10823,7 @@ impl GetConsoleScreenshotOutput {
 pub struct GetConsoleOutputOutput {
     /// <p>The ID of the instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>The console output, base64-encoded. If you are using a command line tool, the tool
-    /// decodes the output for you.</p>
+    /// <p>The console output, base64-encoded. If you are using a command line tool, the tool decodes the output for you.</p>
     pub output: std::option::Option<std::string::String>,
     /// <p>The time at which the output was last updated.</p>
     pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -10996,8 +10833,7 @@ impl GetConsoleOutputOutput {
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The console output, base64-encoded. If you are using a command line tool, the tool
-    /// decodes the output for you.</p>
+    /// <p>The console output, base64-encoded. If you are using a command line tool, the tool decodes the output for you.</p>
     pub fn output(&self) -> std::option::Option<&str> {
         self.output.as_deref()
     }
@@ -11036,14 +10872,12 @@ pub mod get_console_output_output {
             self.instance_id = input;
             self
         }
-        /// <p>The console output, base64-encoded. If you are using a command line tool, the tool
-        /// decodes the output for you.</p>
+        /// <p>The console output, base64-encoded. If you are using a command line tool, the tool decodes the output for you.</p>
         pub fn output(mut self, input: impl Into<std::string::String>) -> Self {
             self.output = Some(input.into());
             self
         }
-        /// <p>The console output, base64-encoded. If you are using a command line tool, the tool
-        /// decodes the output for you.</p>
+        /// <p>The console output, base64-encoded. If you are using a command line tool, the tool decodes the output for you.</p>
         pub fn set_output(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.output = input;
             self
@@ -11205,31 +11039,11 @@ pub struct GetCapacityReservationUsageOutput {
     pub available_instance_count: std::option::Option<i32>,
     /// <p>The current state of the Capacity Reservation. A Capacity Reservation can be in one of the following states:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>active</code> - The Capacity Reservation is active and the capacity is available for your use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>expired</code> - The Capacity Reservation expired automatically at the date and time specified
-    /// in your request. The reserved capacity is no longer available for your use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>cancelled</code> - The Capacity Reservation was cancelled. The reserved capacity is no
-    /// longer available for your use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code> - The Capacity Reservation request was successful but the capacity
-    /// provisioning is still pending.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>failed</code> - The Capacity Reservation request has failed. A request might fail
-    /// due to invalid request parameters, capacity constraints, or instance limit constraints.
-    /// Failed requests are retained for 60 minutes.</p>
-    /// </li>
+    /// <li> <p> <code>active</code> - The Capacity Reservation is active and the capacity is available for your use.</p> </li>
+    /// <li> <p> <code>expired</code> - The Capacity Reservation expired automatically at the date and time specified in your request. The reserved capacity is no longer available for your use.</p> </li>
+    /// <li> <p> <code>cancelled</code> - The Capacity Reservation was cancelled. The reserved capacity is no longer available for your use.</p> </li>
+    /// <li> <p> <code>pending</code> - The Capacity Reservation request was successful but the capacity provisioning is still pending.</p> </li>
+    /// <li> <p> <code>failed</code> - The Capacity Reservation request has failed. A request might fail due to invalid request parameters, capacity constraints, or instance limit constraints. Failed requests are retained for 60 minutes.</p> </li>
     /// </ul>
     pub state: std::option::Option<crate::model::CapacityReservationState>,
     /// <p>Information about the Capacity Reservation usage.</p>
@@ -11258,31 +11072,11 @@ impl GetCapacityReservationUsageOutput {
     }
     /// <p>The current state of the Capacity Reservation. A Capacity Reservation can be in one of the following states:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>active</code> - The Capacity Reservation is active and the capacity is available for your use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>expired</code> - The Capacity Reservation expired automatically at the date and time specified
-    /// in your request. The reserved capacity is no longer available for your use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>cancelled</code> - The Capacity Reservation was cancelled. The reserved capacity is no
-    /// longer available for your use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code> - The Capacity Reservation request was successful but the capacity
-    /// provisioning is still pending.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>failed</code> - The Capacity Reservation request has failed. A request might fail
-    /// due to invalid request parameters, capacity constraints, or instance limit constraints.
-    /// Failed requests are retained for 60 minutes.</p>
-    /// </li>
+    /// <li> <p> <code>active</code> - The Capacity Reservation is active and the capacity is available for your use.</p> </li>
+    /// <li> <p> <code>expired</code> - The Capacity Reservation expired automatically at the date and time specified in your request. The reserved capacity is no longer available for your use.</p> </li>
+    /// <li> <p> <code>cancelled</code> - The Capacity Reservation was cancelled. The reserved capacity is no longer available for your use.</p> </li>
+    /// <li> <p> <code>pending</code> - The Capacity Reservation request was successful but the capacity provisioning is still pending.</p> </li>
+    /// <li> <p> <code>failed</code> - The Capacity Reservation request has failed. A request might fail due to invalid request parameters, capacity constraints, or instance limit constraints. Failed requests are retained for 60 minutes.</p> </li>
     /// </ul>
     pub fn state(&self) -> std::option::Option<&crate::model::CapacityReservationState> {
         self.state.as_ref()
@@ -11378,31 +11172,11 @@ pub mod get_capacity_reservation_usage_output {
         }
         /// <p>The current state of the Capacity Reservation. A Capacity Reservation can be in one of the following states:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>active</code> - The Capacity Reservation is active and the capacity is available for your use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>expired</code> - The Capacity Reservation expired automatically at the date and time specified
-        /// in your request. The reserved capacity is no longer available for your use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>cancelled</code> - The Capacity Reservation was cancelled. The reserved capacity is no
-        /// longer available for your use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code> - The Capacity Reservation request was successful but the capacity
-        /// provisioning is still pending.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>failed</code> - The Capacity Reservation request has failed. A request might fail
-        /// due to invalid request parameters, capacity constraints, or instance limit constraints.
-        /// Failed requests are retained for 60 minutes.</p>
-        /// </li>
+        /// <li> <p> <code>active</code> - The Capacity Reservation is active and the capacity is available for your use.</p> </li>
+        /// <li> <p> <code>expired</code> - The Capacity Reservation expired automatically at the date and time specified in your request. The reserved capacity is no longer available for your use.</p> </li>
+        /// <li> <p> <code>cancelled</code> - The Capacity Reservation was cancelled. The reserved capacity is no longer available for your use.</p> </li>
+        /// <li> <p> <code>pending</code> - The Capacity Reservation request was successful but the capacity provisioning is still pending.</p> </li>
+        /// <li> <p> <code>failed</code> - The Capacity Reservation request has failed. A request might fail due to invalid request parameters, capacity constraints, or instance limit constraints. Failed requests are retained for 60 minutes.</p> </li>
         /// </ul>
         pub fn state(mut self, input: crate::model::CapacityReservationState) -> Self {
             self.state = Some(input);
@@ -11410,31 +11184,11 @@ pub mod get_capacity_reservation_usage_output {
         }
         /// <p>The current state of the Capacity Reservation. A Capacity Reservation can be in one of the following states:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>active</code> - The Capacity Reservation is active and the capacity is available for your use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>expired</code> - The Capacity Reservation expired automatically at the date and time specified
-        /// in your request. The reserved capacity is no longer available for your use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>cancelled</code> - The Capacity Reservation was cancelled. The reserved capacity is no
-        /// longer available for your use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code> - The Capacity Reservation request was successful but the capacity
-        /// provisioning is still pending.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>failed</code> - The Capacity Reservation request has failed. A request might fail
-        /// due to invalid request parameters, capacity constraints, or instance limit constraints.
-        /// Failed requests are retained for 60 minutes.</p>
-        /// </li>
+        /// <li> <p> <code>active</code> - The Capacity Reservation is active and the capacity is available for your use.</p> </li>
+        /// <li> <p> <code>expired</code> - The Capacity Reservation expired automatically at the date and time specified in your request. The reserved capacity is no longer available for your use.</p> </li>
+        /// <li> <p> <code>cancelled</code> - The Capacity Reservation was cancelled. The reserved capacity is no longer available for your use.</p> </li>
+        /// <li> <p> <code>pending</code> - The Capacity Reservation request was successful but the capacity provisioning is still pending.</p> </li>
+        /// <li> <p> <code>failed</code> - The Capacity Reservation request has failed. A request might fail due to invalid request parameters, capacity constraints, or instance limit constraints. Failed requests are retained for 60 minutes.</p> </li>
         /// </ul>
         pub fn set_state(
             mut self,
@@ -11638,13 +11392,11 @@ impl GetAssociatedEnclaveCertificateIamRolesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportTransitGatewayRoutesOutput {
-    /// <p>The URL of the exported file in Amazon S3. For example,
-    /// s3://<i>bucket_name</i>/VPCTransitGateway/TransitGatewayRouteTables/<i>file_name</i>.</p>
+    /// <p>The URL of the exported file in Amazon S3. For example, s3://<i>bucket_name</i>/VPCTransitGateway/TransitGatewayRouteTables/<i>file_name</i>.</p>
     pub s3_location: std::option::Option<std::string::String>,
 }
 impl ExportTransitGatewayRoutesOutput {
-    /// <p>The URL of the exported file in Amazon S3. For example,
-    /// s3://<i>bucket_name</i>/VPCTransitGateway/TransitGatewayRouteTables/<i>file_name</i>.</p>
+    /// <p>The URL of the exported file in Amazon S3. For example, s3://<i>bucket_name</i>/VPCTransitGateway/TransitGatewayRouteTables/<i>file_name</i>.</p>
     pub fn s3_location(&self) -> std::option::Option<&str> {
         self.s3_location.as_deref()
     }
@@ -11665,14 +11417,12 @@ pub mod export_transit_gateway_routes_output {
         pub(crate) s3_location: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The URL of the exported file in Amazon S3. For example,
-        /// s3://<i>bucket_name</i>/VPCTransitGateway/TransitGatewayRouteTables/<i>file_name</i>.</p>
+        /// <p>The URL of the exported file in Amazon S3. For example, s3://<i>bucket_name</i>/VPCTransitGateway/TransitGatewayRouteTables/<i>file_name</i>.</p>
         pub fn s3_location(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_location = Some(input.into());
             self
         }
-        /// <p>The URL of the exported file in Amazon S3. For example,
-        /// s3://<i>bucket_name</i>/VPCTransitGateway/TransitGatewayRouteTables/<i>file_name</i>.</p>
+        /// <p>The URL of the exported file in Amazon S3. For example, s3://<i>bucket_name</i>/VPCTransitGateway/TransitGatewayRouteTables/<i>file_name</i>.</p>
         pub fn set_s3_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.s3_location = input;
             self
@@ -11704,15 +11454,13 @@ pub struct ExportImageOutput {
     pub export_image_task_id: std::option::Option<std::string::String>,
     /// <p>The ID of the image.</p>
     pub image_id: std::option::Option<std::string::String>,
-    /// <p>The name of the role that grants VM Import/Export permission to export images to your Amazon
-    /// S3 bucket.</p>
+    /// <p>The name of the role that grants VM Import/Export permission to export images to your Amazon S3 bucket.</p>
     pub role_name: std::option::Option<std::string::String>,
     /// <p>The percent complete of the export image task.</p>
     pub progress: std::option::Option<std::string::String>,
     /// <p>Information about the destination Amazon S3 bucket.</p>
     pub s3_export_location: std::option::Option<crate::model::ExportTaskS3Location>,
-    /// <p>The status of the export image task. The possible values are <code>active</code>, <code>completed</code>,
-    /// <code>deleting</code>, and <code>deleted</code>.</p>
+    /// <p>The status of the export image task. The possible values are <code>active</code>, <code>completed</code>, <code>deleting</code>, and <code>deleted</code>.</p>
     pub status: std::option::Option<std::string::String>,
     /// <p>The status message for the export image task.</p>
     pub status_message: std::option::Option<std::string::String>,
@@ -11736,8 +11484,7 @@ impl ExportImageOutput {
     pub fn image_id(&self) -> std::option::Option<&str> {
         self.image_id.as_deref()
     }
-    /// <p>The name of the role that grants VM Import/Export permission to export images to your Amazon
-    /// S3 bucket.</p>
+    /// <p>The name of the role that grants VM Import/Export permission to export images to your Amazon S3 bucket.</p>
     pub fn role_name(&self) -> std::option::Option<&str> {
         self.role_name.as_deref()
     }
@@ -11749,8 +11496,7 @@ impl ExportImageOutput {
     pub fn s3_export_location(&self) -> std::option::Option<&crate::model::ExportTaskS3Location> {
         self.s3_export_location.as_ref()
     }
-    /// <p>The status of the export image task. The possible values are <code>active</code>, <code>completed</code>,
-    /// <code>deleting</code>, and <code>deleted</code>.</p>
+    /// <p>The status of the export image task. The possible values are <code>active</code>, <code>completed</code>, <code>deleting</code>, and <code>deleted</code>.</p>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
     }
@@ -11843,14 +11589,12 @@ pub mod export_image_output {
             self.image_id = input;
             self
         }
-        /// <p>The name of the role that grants VM Import/Export permission to export images to your Amazon
-        /// S3 bucket.</p>
+        /// <p>The name of the role that grants VM Import/Export permission to export images to your Amazon S3 bucket.</p>
         pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_name = Some(input.into());
             self
         }
-        /// <p>The name of the role that grants VM Import/Export permission to export images to your Amazon
-        /// S3 bucket.</p>
+        /// <p>The name of the role that grants VM Import/Export permission to export images to your Amazon S3 bucket.</p>
         pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_name = input;
             self
@@ -11878,14 +11622,12 @@ pub mod export_image_output {
             self.s3_export_location = input;
             self
         }
-        /// <p>The status of the export image task. The possible values are <code>active</code>, <code>completed</code>,
-        /// <code>deleting</code>, and <code>deleted</code>.</p>
+        /// <p>The status of the export image task. The possible values are <code>active</code>, <code>completed</code>, <code>deleting</code>, and <code>deleted</code>.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
             self
         }
-        /// <p>The status of the export image task. The possible values are <code>active</code>, <code>completed</code>,
-        /// <code>deleting</code>, and <code>deleted</code>.</p>
+        /// <p>The status of the export image task. The possible values are <code>active</code>, <code>completed</code>, <code>deleting</code>, and <code>deleted</code>.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -12325,15 +12067,11 @@ impl EnableTransitGatewayRouteTablePropagationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableSerialConsoleAccessOutput {
-    /// <p>If <code>true</code>, access to the EC2 serial console of all instances is enabled for
-    /// your account. If <code>false</code>, access to the EC2 serial console of all instances
-    /// is disabled for your account.</p>
+    /// <p>If <code>true</code>, access to the EC2 serial console of all instances is enabled for your account. If <code>false</code>, access to the EC2 serial console of all instances is disabled for your account.</p>
     pub serial_console_access_enabled: std::option::Option<bool>,
 }
 impl EnableSerialConsoleAccessOutput {
-    /// <p>If <code>true</code>, access to the EC2 serial console of all instances is enabled for
-    /// your account. If <code>false</code>, access to the EC2 serial console of all instances
-    /// is disabled for your account.</p>
+    /// <p>If <code>true</code>, access to the EC2 serial console of all instances is enabled for your account. If <code>false</code>, access to the EC2 serial console of all instances is disabled for your account.</p>
     pub fn serial_console_access_enabled(&self) -> std::option::Option<bool> {
         self.serial_console_access_enabled
     }
@@ -12357,16 +12095,12 @@ pub mod enable_serial_console_access_output {
         pub(crate) serial_console_access_enabled: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>If <code>true</code>, access to the EC2 serial console of all instances is enabled for
-        /// your account. If <code>false</code>, access to the EC2 serial console of all instances
-        /// is disabled for your account.</p>
+        /// <p>If <code>true</code>, access to the EC2 serial console of all instances is enabled for your account. If <code>false</code>, access to the EC2 serial console of all instances is disabled for your account.</p>
         pub fn serial_console_access_enabled(mut self, input: bool) -> Self {
             self.serial_console_access_enabled = Some(input);
             self
         }
-        /// <p>If <code>true</code>, access to the EC2 serial console of all instances is enabled for
-        /// your account. If <code>false</code>, access to the EC2 serial console of all instances
-        /// is disabled for your account.</p>
+        /// <p>If <code>true</code>, access to the EC2 serial console of all instances is enabled for your account. If <code>false</code>, access to the EC2 serial console of all instances is disabled for your account.</p>
         pub fn set_serial_console_access_enabled(
             mut self,
             input: std::option::Option<bool>,
@@ -12779,9 +12513,7 @@ impl DisassociateVpcCidrBlockOutput {
 pub struct DisassociateTrunkInterfaceOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     pub r#return: std::option::Option<bool>,
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
-    /// Idempotency</a>.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure Idempotency</a>.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl DisassociateTrunkInterfaceOutput {
@@ -12789,9 +12521,7 @@ impl DisassociateTrunkInterfaceOutput {
     pub fn r#return(&self) -> std::option::Option<bool> {
         self.r#return
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
-    /// Idempotency</a>.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure Idempotency</a>.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -12824,16 +12554,12 @@ pub mod disassociate_trunk_interface_output {
             self.r#return = input;
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
-        /// Idempotency</a>.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure Idempotency</a>.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
-        /// Idempotency</a>.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure Idempotency</a>.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -13578,15 +13304,11 @@ impl DisableTransitGatewayRouteTablePropagationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableSerialConsoleAccessOutput {
-    /// <p>If <code>true</code>, access to the EC2 serial console of all instances is enabled for
-    /// your account. If <code>false</code>, access to the EC2 serial console of all instances
-    /// is disabled for your account.</p>
+    /// <p>If <code>true</code>, access to the EC2 serial console of all instances is enabled for your account. If <code>false</code>, access to the EC2 serial console of all instances is disabled for your account.</p>
     pub serial_console_access_enabled: std::option::Option<bool>,
 }
 impl DisableSerialConsoleAccessOutput {
-    /// <p>If <code>true</code>, access to the EC2 serial console of all instances is enabled for
-    /// your account. If <code>false</code>, access to the EC2 serial console of all instances
-    /// is disabled for your account.</p>
+    /// <p>If <code>true</code>, access to the EC2 serial console of all instances is enabled for your account. If <code>false</code>, access to the EC2 serial console of all instances is disabled for your account.</p>
     pub fn serial_console_access_enabled(&self) -> std::option::Option<bool> {
         self.serial_console_access_enabled
     }
@@ -13610,16 +13332,12 @@ pub mod disable_serial_console_access_output {
         pub(crate) serial_console_access_enabled: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>If <code>true</code>, access to the EC2 serial console of all instances is enabled for
-        /// your account. If <code>false</code>, access to the EC2 serial console of all instances
-        /// is disabled for your account.</p>
+        /// <p>If <code>true</code>, access to the EC2 serial console of all instances is enabled for your account. If <code>false</code>, access to the EC2 serial console of all instances is disabled for your account.</p>
         pub fn serial_console_access_enabled(mut self, input: bool) -> Self {
             self.serial_console_access_enabled = Some(input);
             self
         }
-        /// <p>If <code>true</code>, access to the EC2 serial console of all instances is enabled for
-        /// your account. If <code>false</code>, access to the EC2 serial console of all instances
-        /// is disabled for your account.</p>
+        /// <p>If <code>true</code>, access to the EC2 serial console of all instances is enabled for your account. If <code>false</code>, access to the EC2 serial console of all instances is disabled for your account.</p>
         pub fn set_serial_console_access_enabled(
             mut self,
             input: std::option::Option<bool>,
@@ -14967,8 +14685,7 @@ pub struct DescribeVpcEndpointConnectionNotificationsOutput {
     /// <p>One or more notifications.</p>
     pub connection_notification_set:
         std::option::Option<std::vec::Vec<crate::model::ConnectionNotification>>,
-    /// <p>The token to use to retrieve the next page of results. This value is
-    /// <code>null</code> when there are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeVpcEndpointConnectionNotificationsOutput {
@@ -14978,8 +14695,7 @@ impl DescribeVpcEndpointConnectionNotificationsOutput {
     ) -> std::option::Option<&[crate::model::ConnectionNotification]> {
         self.connection_notification_set.as_deref()
     }
-    /// <p>The token to use to retrieve the next page of results. This value is
-    /// <code>null</code> when there are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -15028,14 +14744,12 @@ pub mod describe_vpc_endpoint_connection_notifications_output {
             self.connection_notification_set = input;
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is
-        /// <code>null</code> when there are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is
-        /// <code>null</code> when there are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -15206,14 +14920,9 @@ impl DescribeVpcClassicLinkOutput {
 pub struct DescribeVpcAttributeOutput {
     /// <p>The ID of the VPC.</p>
     pub vpc_id: std::option::Option<std::string::String>,
-    /// <p>Indicates whether the instances launched in the VPC get DNS hostnames.
-    /// If this attribute is <code>true</code>, instances in the VPC get DNS hostnames;
-    /// otherwise, they do not.</p>
+    /// <p>Indicates whether the instances launched in the VPC get DNS hostnames. If this attribute is <code>true</code>, instances in the VPC get DNS hostnames; otherwise, they do not.</p>
     pub enable_dns_hostnames: std::option::Option<crate::model::AttributeBooleanValue>,
-    /// <p>Indicates whether DNS resolution is enabled for
-    /// the VPC. If this attribute is <code>true</code>, the Amazon DNS server
-    /// resolves DNS hostnames for your instances to their corresponding
-    /// IP addresses; otherwise, it does not.</p>
+    /// <p>Indicates whether DNS resolution is enabled for the VPC. If this attribute is <code>true</code>, the Amazon DNS server resolves DNS hostnames for your instances to their corresponding IP addresses; otherwise, it does not.</p>
     pub enable_dns_support: std::option::Option<crate::model::AttributeBooleanValue>,
 }
 impl DescribeVpcAttributeOutput {
@@ -15221,18 +14930,13 @@ impl DescribeVpcAttributeOutput {
     pub fn vpc_id(&self) -> std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
-    /// <p>Indicates whether the instances launched in the VPC get DNS hostnames.
-    /// If this attribute is <code>true</code>, instances in the VPC get DNS hostnames;
-    /// otherwise, they do not.</p>
+    /// <p>Indicates whether the instances launched in the VPC get DNS hostnames. If this attribute is <code>true</code>, instances in the VPC get DNS hostnames; otherwise, they do not.</p>
     pub fn enable_dns_hostnames(
         &self,
     ) -> std::option::Option<&crate::model::AttributeBooleanValue> {
         self.enable_dns_hostnames.as_ref()
     }
-    /// <p>Indicates whether DNS resolution is enabled for
-    /// the VPC. If this attribute is <code>true</code>, the Amazon DNS server
-    /// resolves DNS hostnames for your instances to their corresponding
-    /// IP addresses; otherwise, it does not.</p>
+    /// <p>Indicates whether DNS resolution is enabled for the VPC. If this attribute is <code>true</code>, the Amazon DNS server resolves DNS hostnames for your instances to their corresponding IP addresses; otherwise, it does not.</p>
     pub fn enable_dns_support(&self) -> std::option::Option<&crate::model::AttributeBooleanValue> {
         self.enable_dns_support.as_ref()
     }
@@ -15267,16 +14971,12 @@ pub mod describe_vpc_attribute_output {
             self.vpc_id = input;
             self
         }
-        /// <p>Indicates whether the instances launched in the VPC get DNS hostnames.
-        /// If this attribute is <code>true</code>, instances in the VPC get DNS hostnames;
-        /// otherwise, they do not.</p>
+        /// <p>Indicates whether the instances launched in the VPC get DNS hostnames. If this attribute is <code>true</code>, instances in the VPC get DNS hostnames; otherwise, they do not.</p>
         pub fn enable_dns_hostnames(mut self, input: crate::model::AttributeBooleanValue) -> Self {
             self.enable_dns_hostnames = Some(input);
             self
         }
-        /// <p>Indicates whether the instances launched in the VPC get DNS hostnames.
-        /// If this attribute is <code>true</code>, instances in the VPC get DNS hostnames;
-        /// otherwise, they do not.</p>
+        /// <p>Indicates whether the instances launched in the VPC get DNS hostnames. If this attribute is <code>true</code>, instances in the VPC get DNS hostnames; otherwise, they do not.</p>
         pub fn set_enable_dns_hostnames(
             mut self,
             input: std::option::Option<crate::model::AttributeBooleanValue>,
@@ -15284,18 +14984,12 @@ pub mod describe_vpc_attribute_output {
             self.enable_dns_hostnames = input;
             self
         }
-        /// <p>Indicates whether DNS resolution is enabled for
-        /// the VPC. If this attribute is <code>true</code>, the Amazon DNS server
-        /// resolves DNS hostnames for your instances to their corresponding
-        /// IP addresses; otherwise, it does not.</p>
+        /// <p>Indicates whether DNS resolution is enabled for the VPC. If this attribute is <code>true</code>, the Amazon DNS server resolves DNS hostnames for your instances to their corresponding IP addresses; otherwise, it does not.</p>
         pub fn enable_dns_support(mut self, input: crate::model::AttributeBooleanValue) -> Self {
             self.enable_dns_support = Some(input);
             self
         }
-        /// <p>Indicates whether DNS resolution is enabled for
-        /// the VPC. If this attribute is <code>true</code>, the Amazon DNS server
-        /// resolves DNS hostnames for your instances to their corresponding
-        /// IP addresses; otherwise, it does not.</p>
+        /// <p>Indicates whether DNS resolution is enabled for the VPC. If this attribute is <code>true</code>, the Amazon DNS server resolves DNS hostnames for your instances to their corresponding IP addresses; otherwise, it does not.</p>
         pub fn set_enable_dns_support(
             mut self,
             input: std::option::Option<crate::model::AttributeBooleanValue>,
@@ -15324,15 +15018,13 @@ impl DescribeVpcAttributeOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeVolumeStatusOutput {
-    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code>
-    /// when there are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Information about the status of the volumes.</p>
     pub volume_statuses: std::option::Option<std::vec::Vec<crate::model::VolumeStatusItem>>,
 }
 impl DescribeVolumeStatusOutput {
-    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code>
-    /// when there are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -15360,14 +15052,12 @@ pub mod describe_volume_status_output {
             std::option::Option<std::vec::Vec<crate::model::VolumeStatusItem>>,
     }
     impl Builder {
-        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code>
-        /// when there are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code>
-        /// when there are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -15498,10 +15188,7 @@ impl DescribeVolumesModificationsOutput {
 pub struct DescribeVolumesOutput {
     /// <p>Information about the volumes.</p>
     pub volumes: std::option::Option<std::vec::Vec<crate::model::Volume>>,
-    /// <p>The <code>NextToken</code> value to include in a future <code>DescribeVolumes</code>
-    /// request. When the results of a <code>DescribeVolumes</code> request exceed
-    /// <code>MaxResults</code>, this value can be used to retrieve the next page of results. This
-    /// value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The <code>NextToken</code> value to include in a future <code>DescribeVolumes</code> request. When the results of a <code>DescribeVolumes</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeVolumesOutput {
@@ -15509,10 +15196,7 @@ impl DescribeVolumesOutput {
     pub fn volumes(&self) -> std::option::Option<&[crate::model::Volume]> {
         self.volumes.as_deref()
     }
-    /// <p>The <code>NextToken</code> value to include in a future <code>DescribeVolumes</code>
-    /// request. When the results of a <code>DescribeVolumes</code> request exceed
-    /// <code>MaxResults</code>, this value can be used to retrieve the next page of results. This
-    /// value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The <code>NextToken</code> value to include in a future <code>DescribeVolumes</code> request. When the results of a <code>DescribeVolumes</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -15554,18 +15238,12 @@ pub mod describe_volumes_output {
             self.volumes = input;
             self
         }
-        /// <p>The <code>NextToken</code> value to include in a future <code>DescribeVolumes</code>
-        /// request. When the results of a <code>DescribeVolumes</code> request exceed
-        /// <code>MaxResults</code>, this value can be used to retrieve the next page of results. This
-        /// value is <code>null</code> when there are no more results to return.</p>
+        /// <p>The <code>NextToken</code> value to include in a future <code>DescribeVolumes</code> request. When the results of a <code>DescribeVolumes</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>NextToken</code> value to include in a future <code>DescribeVolumes</code>
-        /// request. When the results of a <code>DescribeVolumes</code> request exceed
-        /// <code>MaxResults</code>, this value can be used to retrieve the next page of results. This
-        /// value is <code>null</code> when there are no more results to return.</p>
+        /// <p>The <code>NextToken</code> value to include in a future <code>DescribeVolumes</code> request. When the results of a <code>DescribeVolumes</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -16771,15 +16449,13 @@ impl DescribeTrafficMirrorFiltersOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTagsOutput {
-    /// <p>The token to use to retrieve the next page of results. This value is
-    /// <code>null</code> when there are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The tags.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::TagDescription>>,
 }
 impl DescribeTagsOutput {
-    /// <p>The token to use to retrieve the next page of results. This value is
-    /// <code>null</code> when there are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -16806,14 +16482,12 @@ pub mod describe_tags_output {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::TagDescription>>,
     }
     impl Builder {
-        /// <p>The token to use to retrieve the next page of results. This value is
-        /// <code>null</code> when there are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is
-        /// <code>null</code> when there are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -16942,8 +16616,7 @@ pub struct DescribeStoreImageTasksOutput {
     /// <p>The information about the AMI store tasks.</p>
     pub store_image_task_results:
         std::option::Option<std::vec::Vec<crate::model::StoreImageTaskResult>>,
-    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code>
-    /// when there are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeStoreImageTasksOutput {
@@ -16953,8 +16626,7 @@ impl DescribeStoreImageTasksOutput {
     ) -> std::option::Option<&[crate::model::StoreImageTaskResult]> {
         self.store_image_task_results.as_deref()
     }
-    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code>
-    /// when there are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -17000,14 +16672,12 @@ pub mod describe_store_image_tasks_output {
             self.store_image_task_results = input;
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code>
-        /// when there are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code>
-        /// when there are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -17118,15 +16788,13 @@ impl DescribeStaleSecurityGroupsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSpotPriceHistoryOutput {
-    /// <p>The token required to retrieve the next set of results. This value is null or an empty
-    /// string when there are no more results to return.</p>
+    /// <p>The token required to retrieve the next set of results. This value is null or an empty string when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The historical Spot prices.</p>
     pub spot_price_history: std::option::Option<std::vec::Vec<crate::model::SpotPrice>>,
 }
 impl DescribeSpotPriceHistoryOutput {
-    /// <p>The token required to retrieve the next set of results. This value is null or an empty
-    /// string when there are no more results to return.</p>
+    /// <p>The token required to retrieve the next set of results. This value is null or an empty string when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -17153,14 +16821,12 @@ pub mod describe_spot_price_history_output {
         pub(crate) spot_price_history: std::option::Option<std::vec::Vec<crate::model::SpotPrice>>,
     }
     impl Builder {
-        /// <p>The token required to retrieve the next set of results. This value is null or an empty
-        /// string when there are no more results to return.</p>
+        /// <p>The token required to retrieve the next set of results. This value is null or an empty string when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token required to retrieve the next set of results. This value is null or an empty
-        /// string when there are no more results to return.</p>
+        /// <p>The token required to retrieve the next set of results. This value is null or an empty string when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -17207,8 +16873,7 @@ pub struct DescribeSpotInstanceRequestsOutput {
     /// <p>One or more Spot Instance requests.</p>
     pub spot_instance_requests:
         std::option::Option<std::vec::Vec<crate::model::SpotInstanceRequest>>,
-    /// <p>The token to use to retrieve the next set of results. This value is <code>null</code>
-    /// when there are no more results to return.</p>
+    /// <p>The token to use to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeSpotInstanceRequestsOutput {
@@ -17218,8 +16883,7 @@ impl DescribeSpotInstanceRequestsOutput {
     ) -> std::option::Option<&[crate::model::SpotInstanceRequest]> {
         self.spot_instance_requests.as_deref()
     }
-    /// <p>The token to use to retrieve the next set of results. This value is <code>null</code>
-    /// when there are no more results to return.</p>
+    /// <p>The token to use to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -17262,14 +16926,12 @@ pub mod describe_spot_instance_requests_output {
             self.spot_instance_requests = input;
             self
         }
-        /// <p>The token to use to retrieve the next set of results. This value is <code>null</code>
-        /// when there are no more results to return.</p>
+        /// <p>The token to use to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next set of results. This value is <code>null</code>
-        /// when there are no more results to return.</p>
+        /// <p>The token to use to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -17294,16 +16956,14 @@ impl DescribeSpotInstanceRequestsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSpotFleetRequestsOutput {
-    /// <p>The token required to retrieve the next set of results. This value is
-    /// <code>null</code> when there are no more results to return.</p>
+    /// <p>The token required to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Information about the configuration of your Spot Fleet.</p>
     pub spot_fleet_request_configs:
         std::option::Option<std::vec::Vec<crate::model::SpotFleetRequestConfig>>,
 }
 impl DescribeSpotFleetRequestsOutput {
-    /// <p>The token required to retrieve the next set of results. This value is
-    /// <code>null</code> when there are no more results to return.</p>
+    /// <p>The token required to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -17336,14 +16996,12 @@ pub mod describe_spot_fleet_requests_output {
             std::option::Option<std::vec::Vec<crate::model::SpotFleetRequestConfig>>,
     }
     impl Builder {
-        /// <p>The token required to retrieve the next set of results. This value is
-        /// <code>null</code> when there are no more results to return.</p>
+        /// <p>The token required to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token required to retrieve the next set of results. This value is
-        /// <code>null</code> when there are no more results to return.</p>
+        /// <p>The token required to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -17392,19 +17050,14 @@ impl DescribeSpotFleetRequestsOutput {
 pub struct DescribeSpotFleetRequestHistoryOutput {
     /// <p>Information about the events in the history of the Spot Fleet request.</p>
     pub history_records: std::option::Option<std::vec::Vec<crate::model::HistoryRecord>>,
-    /// <p>The last date and time for the events, in UTC format (for example,
-    /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
-    /// All records up to this time were retrieved.</p>
-    /// <p>If <code>nextToken</code> indicates that there are more results, this value is not
-    /// present.</p>
+    /// <p>The last date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). All records up to this time were retrieved.</p>
+    /// <p>If <code>nextToken</code> indicates that there are more results, this value is not present.</p>
     pub last_evaluated_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The token required to retrieve the next set of results. This value is
-    /// <code>null</code> when there are no more results to return.</p>
+    /// <p>The token required to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The ID of the Spot Fleet request.</p>
     pub spot_fleet_request_id: std::option::Option<std::string::String>,
-    /// <p>The starting date and time for the events, in UTC format (for example,
-    /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+    /// <p>The starting date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeSpotFleetRequestHistoryOutput {
@@ -17412,16 +17065,12 @@ impl DescribeSpotFleetRequestHistoryOutput {
     pub fn history_records(&self) -> std::option::Option<&[crate::model::HistoryRecord]> {
         self.history_records.as_deref()
     }
-    /// <p>The last date and time for the events, in UTC format (for example,
-    /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
-    /// All records up to this time were retrieved.</p>
-    /// <p>If <code>nextToken</code> indicates that there are more results, this value is not
-    /// present.</p>
+    /// <p>The last date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). All records up to this time were retrieved.</p>
+    /// <p>If <code>nextToken</code> indicates that there are more results, this value is not present.</p>
     pub fn last_evaluated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_evaluated_time.as_ref()
     }
-    /// <p>The token required to retrieve the next set of results. This value is
-    /// <code>null</code> when there are no more results to return.</p>
+    /// <p>The token required to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -17429,8 +17078,7 @@ impl DescribeSpotFleetRequestHistoryOutput {
     pub fn spot_fleet_request_id(&self) -> std::option::Option<&str> {
         self.spot_fleet_request_id.as_deref()
     }
-    /// <p>The starting date and time for the events, in UTC format (for example,
-    /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+    /// <p>The starting date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
@@ -17478,20 +17126,14 @@ pub mod describe_spot_fleet_request_history_output {
             self.history_records = input;
             self
         }
-        /// <p>The last date and time for the events, in UTC format (for example,
-        /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
-        /// All records up to this time were retrieved.</p>
-        /// <p>If <code>nextToken</code> indicates that there are more results, this value is not
-        /// present.</p>
+        /// <p>The last date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). All records up to this time were retrieved.</p>
+        /// <p>If <code>nextToken</code> indicates that there are more results, this value is not present.</p>
         pub fn last_evaluated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_evaluated_time = Some(input);
             self
         }
-        /// <p>The last date and time for the events, in UTC format (for example,
-        /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
-        /// All records up to this time were retrieved.</p>
-        /// <p>If <code>nextToken</code> indicates that there are more results, this value is not
-        /// present.</p>
+        /// <p>The last date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). All records up to this time were retrieved.</p>
+        /// <p>If <code>nextToken</code> indicates that there are more results, this value is not present.</p>
         pub fn set_last_evaluated_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -17499,14 +17141,12 @@ pub mod describe_spot_fleet_request_history_output {
             self.last_evaluated_time = input;
             self
         }
-        /// <p>The token required to retrieve the next set of results. This value is
-        /// <code>null</code> when there are no more results to return.</p>
+        /// <p>The token required to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token required to retrieve the next set of results. This value is
-        /// <code>null</code> when there are no more results to return.</p>
+        /// <p>The token required to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -17524,14 +17164,12 @@ pub mod describe_spot_fleet_request_history_output {
             self.spot_fleet_request_id = input;
             self
         }
-        /// <p>The starting date and time for the events, in UTC format (for example,
-        /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+        /// <p>The starting date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>The starting date and time for the events, in UTC format (for example,
-        /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+        /// <p>The starting date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -17562,23 +17200,19 @@ impl DescribeSpotFleetRequestHistoryOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSpotFleetInstancesOutput {
-    /// <p>The running instances. This list is refreshed periodically and might be out of
-    /// date.</p>
+    /// <p>The running instances. This list is refreshed periodically and might be out of date.</p>
     pub active_instances: std::option::Option<std::vec::Vec<crate::model::ActiveInstance>>,
-    /// <p>The token required to retrieve the next set of results. This value is
-    /// <code>null</code> when there are no more results to return.</p>
+    /// <p>The token required to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The ID of the Spot Fleet request.</p>
     pub spot_fleet_request_id: std::option::Option<std::string::String>,
 }
 impl DescribeSpotFleetInstancesOutput {
-    /// <p>The running instances. This list is refreshed periodically and might be out of
-    /// date.</p>
+    /// <p>The running instances. This list is refreshed periodically and might be out of date.</p>
     pub fn active_instances(&self) -> std::option::Option<&[crate::model::ActiveInstance]> {
         self.active_instances.as_deref()
     }
-    /// <p>The token required to retrieve the next set of results. This value is
-    /// <code>null</code> when there are no more results to return.</p>
+    /// <p>The token required to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -17612,16 +17246,14 @@ pub mod describe_spot_fleet_instances_output {
         ///
         /// To override the contents of this collection use [`set_active_instances`](Self::set_active_instances).
         ///
-        /// <p>The running instances. This list is refreshed periodically and might be out of
-        /// date.</p>
+        /// <p>The running instances. This list is refreshed periodically and might be out of date.</p>
         pub fn active_instances(mut self, input: crate::model::ActiveInstance) -> Self {
             let mut v = self.active_instances.unwrap_or_default();
             v.push(input);
             self.active_instances = Some(v);
             self
         }
-        /// <p>The running instances. This list is refreshed periodically and might be out of
-        /// date.</p>
+        /// <p>The running instances. This list is refreshed periodically and might be out of date.</p>
         pub fn set_active_instances(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ActiveInstance>>,
@@ -17629,14 +17261,12 @@ pub mod describe_spot_fleet_instances_output {
             self.active_instances = input;
             self
         }
-        /// <p>The token required to retrieve the next set of results. This value is
-        /// <code>null</code> when there are no more results to return.</p>
+        /// <p>The token required to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token required to retrieve the next set of results. This value is
-        /// <code>null</code> when there are no more results to return.</p>
+        /// <p>The token required to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -17829,10 +17459,7 @@ impl DescribeSnapshotTierStatusOutput {
 pub struct DescribeSnapshotsOutput {
     /// <p>Information about the snapshots.</p>
     pub snapshots: std::option::Option<std::vec::Vec<crate::model::Snapshot>>,
-    /// <p>The <code>NextToken</code> value to include in a future <code>DescribeSnapshots</code>
-    /// request. When the results of a <code>DescribeSnapshots</code> request exceed
-    /// <code>MaxResults</code>, this value can be used to retrieve the next page of results. This
-    /// value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The <code>NextToken</code> value to include in a future <code>DescribeSnapshots</code> request. When the results of a <code>DescribeSnapshots</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeSnapshotsOutput {
@@ -17840,10 +17467,7 @@ impl DescribeSnapshotsOutput {
     pub fn snapshots(&self) -> std::option::Option<&[crate::model::Snapshot]> {
         self.snapshots.as_deref()
     }
-    /// <p>The <code>NextToken</code> value to include in a future <code>DescribeSnapshots</code>
-    /// request. When the results of a <code>DescribeSnapshots</code> request exceed
-    /// <code>MaxResults</code>, this value can be used to retrieve the next page of results. This
-    /// value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The <code>NextToken</code> value to include in a future <code>DescribeSnapshots</code> request. When the results of a <code>DescribeSnapshots</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -17885,18 +17509,12 @@ pub mod describe_snapshots_output {
             self.snapshots = input;
             self
         }
-        /// <p>The <code>NextToken</code> value to include in a future <code>DescribeSnapshots</code>
-        /// request. When the results of a <code>DescribeSnapshots</code> request exceed
-        /// <code>MaxResults</code>, this value can be used to retrieve the next page of results. This
-        /// value is <code>null</code> when there are no more results to return.</p>
+        /// <p>The <code>NextToken</code> value to include in a future <code>DescribeSnapshots</code> request. When the results of a <code>DescribeSnapshots</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>NextToken</code> value to include in a future <code>DescribeSnapshots</code>
-        /// request. When the results of a <code>DescribeSnapshots</code> request exceed
-        /// <code>MaxResults</code>, this value can be used to retrieve the next page of results. This
-        /// value is <code>null</code> when there are no more results to return.</p>
+        /// <p>The <code>NextToken</code> value to include in a future <code>DescribeSnapshots</code> request. When the results of a <code>DescribeSnapshots</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -17921,8 +17539,7 @@ impl DescribeSnapshotsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSnapshotAttributeOutput {
-    /// <p>The users and groups that have the permissions for creating volumes from the
-    /// snapshot.</p>
+    /// <p>The users and groups that have the permissions for creating volumes from the snapshot.</p>
     pub create_volume_permissions:
         std::option::Option<std::vec::Vec<crate::model::CreateVolumePermission>>,
     /// <p>The product codes.</p>
@@ -17931,8 +17548,7 @@ pub struct DescribeSnapshotAttributeOutput {
     pub snapshot_id: std::option::Option<std::string::String>,
 }
 impl DescribeSnapshotAttributeOutput {
-    /// <p>The users and groups that have the permissions for creating volumes from the
-    /// snapshot.</p>
+    /// <p>The users and groups that have the permissions for creating volumes from the snapshot.</p>
     pub fn create_volume_permissions(
         &self,
     ) -> std::option::Option<&[crate::model::CreateVolumePermission]> {
@@ -17972,8 +17588,7 @@ pub mod describe_snapshot_attribute_output {
         ///
         /// To override the contents of this collection use [`set_create_volume_permissions`](Self::set_create_volume_permissions).
         ///
-        /// <p>The users and groups that have the permissions for creating volumes from the
-        /// snapshot.</p>
+        /// <p>The users and groups that have the permissions for creating volumes from the snapshot.</p>
         pub fn create_volume_permissions(
             mut self,
             input: crate::model::CreateVolumePermission,
@@ -17983,8 +17598,7 @@ pub mod describe_snapshot_attribute_output {
             self.create_volume_permissions = Some(v);
             self
         }
-        /// <p>The users and groups that have the permissions for creating volumes from the
-        /// snapshot.</p>
+        /// <p>The users and groups that have the permissions for creating volumes from the snapshot.</p>
         pub fn set_create_volume_permissions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CreateVolumePermission>>,
@@ -18542,8 +18156,7 @@ pub struct DescribeReservedInstancesOfferingsOutput {
     /// <p>A list of Reserved Instances offerings.</p>
     pub reserved_instances_offerings:
         std::option::Option<std::vec::Vec<crate::model::ReservedInstancesOffering>>,
-    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when
-    /// there are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeReservedInstancesOfferingsOutput {
@@ -18553,8 +18166,7 @@ impl DescribeReservedInstancesOfferingsOutput {
     ) -> std::option::Option<&[crate::model::ReservedInstancesOffering]> {
         self.reserved_instances_offerings.as_deref()
     }
-    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when
-    /// there are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -18603,14 +18215,12 @@ pub mod describe_reserved_instances_offerings_output {
             self.reserved_instances_offerings = input;
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when
-        /// there are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when
-        /// there are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -18635,16 +18245,14 @@ impl DescribeReservedInstancesOfferingsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReservedInstancesModificationsOutput {
-    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when
-    /// there are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The Reserved Instance modification information.</p>
     pub reserved_instances_modifications:
         std::option::Option<std::vec::Vec<crate::model::ReservedInstancesModification>>,
 }
 impl DescribeReservedInstancesModificationsOutput {
-    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when
-    /// there are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -18677,14 +18285,12 @@ pub mod describe_reserved_instances_modifications_output {
             std::option::Option<std::vec::Vec<crate::model::ReservedInstancesModification>>,
     }
     impl Builder {
-        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when
-        /// there are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when
-        /// there are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -20925,8 +20531,7 @@ pub struct DescribeLaunchTemplateVersionsOutput {
     /// <p>Information about the launch template versions.</p>
     pub launch_template_versions:
         std::option::Option<std::vec::Vec<crate::model::LaunchTemplateVersion>>,
-    /// <p>The token to use to retrieve the next page of results. This value is
-    /// <code>null</code> when there are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeLaunchTemplateVersionsOutput {
@@ -20936,8 +20541,7 @@ impl DescribeLaunchTemplateVersionsOutput {
     ) -> std::option::Option<&[crate::model::LaunchTemplateVersion]> {
         self.launch_template_versions.as_deref()
     }
-    /// <p>The token to use to retrieve the next page of results. This value is
-    /// <code>null</code> when there are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -20983,14 +20587,12 @@ pub mod describe_launch_template_versions_output {
             self.launch_template_versions = input;
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is
-        /// <code>null</code> when there are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is
-        /// <code>null</code> when there are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -21017,8 +20619,7 @@ impl DescribeLaunchTemplateVersionsOutput {
 pub struct DescribeLaunchTemplatesOutput {
     /// <p>Information about the launch templates.</p>
     pub launch_templates: std::option::Option<std::vec::Vec<crate::model::LaunchTemplate>>,
-    /// <p>The token to use to retrieve the next page of results. This value is
-    /// <code>null</code> when there are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeLaunchTemplatesOutput {
@@ -21026,8 +20627,7 @@ impl DescribeLaunchTemplatesOutput {
     pub fn launch_templates(&self) -> std::option::Option<&[crate::model::LaunchTemplate]> {
         self.launch_templates.as_deref()
     }
-    /// <p>The token to use to retrieve the next page of results. This value is
-    /// <code>null</code> when there are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -21070,14 +20670,12 @@ pub mod describe_launch_templates_output {
             self.launch_templates = input;
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is
-        /// <code>null</code> when there are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is
-        /// <code>null</code> when there are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -21578,8 +21176,7 @@ impl DescribeInternetGatewaysOutput {
 pub struct DescribeInstanceTypesOutput {
     /// <p>The instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub instance_types: std::option::Option<std::vec::Vec<crate::model::InstanceTypeInfo>>,
-    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there
-    /// are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeInstanceTypesOutput {
@@ -21587,8 +21184,7 @@ impl DescribeInstanceTypesOutput {
     pub fn instance_types(&self) -> std::option::Option<&[crate::model::InstanceTypeInfo]> {
         self.instance_types.as_deref()
     }
-    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there
-    /// are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -21631,14 +21227,12 @@ pub mod describe_instance_types_output {
             self.instance_types = input;
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there
-        /// are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there
-        /// are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -21666,8 +21260,7 @@ pub struct DescribeInstanceTypeOfferingsOutput {
     /// <p>The instance types offered.</p>
     pub instance_type_offerings:
         std::option::Option<std::vec::Vec<crate::model::InstanceTypeOffering>>,
-    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there
-    /// are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeInstanceTypeOfferingsOutput {
@@ -21677,8 +21270,7 @@ impl DescribeInstanceTypeOfferingsOutput {
     ) -> std::option::Option<&[crate::model::InstanceTypeOffering]> {
         self.instance_type_offerings.as_deref()
     }
-    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there
-    /// are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -21724,14 +21316,12 @@ pub mod describe_instance_type_offerings_output {
             self.instance_type_offerings = input;
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there
-        /// are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there
-        /// are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -21758,8 +21348,7 @@ impl DescribeInstanceTypeOfferingsOutput {
 pub struct DescribeInstanceStatusOutput {
     /// <p>Information about the status of the instances.</p>
     pub instance_statuses: std::option::Option<std::vec::Vec<crate::model::InstanceStatus>>,
-    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code>
-    /// when there are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeInstanceStatusOutput {
@@ -21767,8 +21356,7 @@ impl DescribeInstanceStatusOutput {
     pub fn instance_statuses(&self) -> std::option::Option<&[crate::model::InstanceStatus]> {
         self.instance_statuses.as_deref()
     }
-    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code>
-    /// when there are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -21811,14 +21399,12 @@ pub mod describe_instance_status_output {
             self.instance_statuses = input;
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code>
-        /// when there are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code>
-        /// when there are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -21845,8 +21431,7 @@ impl DescribeInstanceStatusOutput {
 pub struct DescribeInstancesOutput {
     /// <p>Information about the reservations.</p>
     pub reservations: std::option::Option<std::vec::Vec<crate::model::Reservation>>,
-    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code>
-    /// when there are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeInstancesOutput {
@@ -21854,8 +21439,7 @@ impl DescribeInstancesOutput {
     pub fn reservations(&self) -> std::option::Option<&[crate::model::Reservation]> {
         self.reservations.as_deref()
     }
-    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code>
-    /// when there are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -21897,14 +21481,12 @@ pub mod describe_instances_output {
             self.reservations = input;
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code>
-        /// when there are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code>
-        /// when there are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -22082,8 +21664,7 @@ pub struct DescribeInstanceCreditSpecificationsOutput {
     /// <p>Information about the credit option for CPU usage of an instance.</p>
     pub instance_credit_specifications:
         std::option::Option<std::vec::Vec<crate::model::InstanceCreditSpecification>>,
-    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code>
-    /// when there are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeInstanceCreditSpecificationsOutput {
@@ -22093,8 +21674,7 @@ impl DescribeInstanceCreditSpecificationsOutput {
     ) -> std::option::Option<&[crate::model::InstanceCreditSpecification]> {
         self.instance_credit_specifications.as_deref()
     }
-    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code>
-    /// when there are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -22143,14 +21723,12 @@ pub mod describe_instance_credit_specifications_output {
             self.instance_credit_specifications = input;
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code>
-        /// when there are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code>
-        /// when there are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -22180,20 +21758,17 @@ pub struct DescribeInstanceAttributeOutput {
     /// <p>The block device mapping of the instance.</p>
     pub block_device_mappings:
         std::option::Option<std::vec::Vec<crate::model::InstanceBlockDeviceMapping>>,
-    /// <p>If the value is <code>true</code>, you can't terminate the instance through the Amazon
-    /// EC2 console, CLI, or API; otherwise, you can.</p>
+    /// <p>If the value is <code>true</code>, you can't terminate the instance through the Amazon EC2 console, CLI, or API; otherwise, you can.</p>
     pub disable_api_termination: std::option::Option<crate::model::AttributeBooleanValue>,
     /// <p>Indicates whether enhanced networking with ENA is enabled.</p>
     pub ena_support: std::option::Option<crate::model::AttributeBooleanValue>,
-    /// <p>To enable the instance for Amazon Web Services Nitro Enclaves, set this parameter to <code>true</code>; otherwise,
-    /// set it to <code>false</code>.</p>
+    /// <p>To enable the instance for Amazon Web Services Nitro Enclaves, set this parameter to <code>true</code>; otherwise, set it to <code>false</code>.</p>
     pub enclave_options: std::option::Option<crate::model::EnclaveOptions>,
     /// <p>Indicates whether the instance is optimized for Amazon EBS I/O.</p>
     pub ebs_optimized: std::option::Option<crate::model::AttributeBooleanValue>,
     /// <p>The ID of the instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>Indicates whether an instance stops or terminates when you initiate shutdown from the
-    /// instance (using the operating system command for system shutdown).</p>
+    /// <p>Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
     pub instance_initiated_shutdown_behavior: std::option::Option<crate::model::AttributeValue>,
     /// <p>The instance type.</p>
     pub instance_type: std::option::Option<crate::model::AttributeValue>,
@@ -22203,18 +21778,11 @@ pub struct DescribeInstanceAttributeOutput {
     pub product_codes: std::option::Option<std::vec::Vec<crate::model::ProductCode>>,
     /// <p>The RAM disk ID.</p>
     pub ramdisk_id: std::option::Option<crate::model::AttributeValue>,
-    /// <p>The device name of the root device volume (for example,
-    /// <code>/dev/sda1</code>).</p>
+    /// <p>The device name of the root device volume (for example, <code>/dev/sda1</code>).</p>
     pub root_device_name: std::option::Option<crate::model::AttributeValue>,
-    /// <p>Enable or disable source/destination checks, which ensure that the instance
-    /// is either the source or the destination of any traffic that it receives.
-    /// If the value is <code>true</code>, source/destination checks are enabled;
-    /// otherwise, they are disabled. The default value is <code>true</code>.
-    /// You must disable source/destination checks if the instance runs services
-    /// such as network address translation, routing, or firewalls.</p>
+    /// <p>Enable or disable source/destination checks, which ensure that the instance is either the source or the destination of any traffic that it receives. If the value is <code>true</code>, source/destination checks are enabled; otherwise, they are disabled. The default value is <code>true</code>. You must disable source/destination checks if the instance runs services such as network address translation, routing, or firewalls.</p>
     pub source_dest_check: std::option::Option<crate::model::AttributeBooleanValue>,
-    /// <p>Indicates whether enhanced networking with the Intel 82599 Virtual Function interface
-    /// is enabled.</p>
+    /// <p>Indicates whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.</p>
     pub sriov_net_support: std::option::Option<crate::model::AttributeValue>,
     /// <p>The user data.</p>
     pub user_data: std::option::Option<crate::model::AttributeValue>,
@@ -22230,8 +21798,7 @@ impl DescribeInstanceAttributeOutput {
     ) -> std::option::Option<&[crate::model::InstanceBlockDeviceMapping]> {
         self.block_device_mappings.as_deref()
     }
-    /// <p>If the value is <code>true</code>, you can't terminate the instance through the Amazon
-    /// EC2 console, CLI, or API; otherwise, you can.</p>
+    /// <p>If the value is <code>true</code>, you can't terminate the instance through the Amazon EC2 console, CLI, or API; otherwise, you can.</p>
     pub fn disable_api_termination(
         &self,
     ) -> std::option::Option<&crate::model::AttributeBooleanValue> {
@@ -22241,8 +21808,7 @@ impl DescribeInstanceAttributeOutput {
     pub fn ena_support(&self) -> std::option::Option<&crate::model::AttributeBooleanValue> {
         self.ena_support.as_ref()
     }
-    /// <p>To enable the instance for Amazon Web Services Nitro Enclaves, set this parameter to <code>true</code>; otherwise,
-    /// set it to <code>false</code>.</p>
+    /// <p>To enable the instance for Amazon Web Services Nitro Enclaves, set this parameter to <code>true</code>; otherwise, set it to <code>false</code>.</p>
     pub fn enclave_options(&self) -> std::option::Option<&crate::model::EnclaveOptions> {
         self.enclave_options.as_ref()
     }
@@ -22254,8 +21820,7 @@ impl DescribeInstanceAttributeOutput {
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>Indicates whether an instance stops or terminates when you initiate shutdown from the
-    /// instance (using the operating system command for system shutdown).</p>
+    /// <p>Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
     pub fn instance_initiated_shutdown_behavior(
         &self,
     ) -> std::option::Option<&crate::model::AttributeValue> {
@@ -22277,22 +21842,15 @@ impl DescribeInstanceAttributeOutput {
     pub fn ramdisk_id(&self) -> std::option::Option<&crate::model::AttributeValue> {
         self.ramdisk_id.as_ref()
     }
-    /// <p>The device name of the root device volume (for example,
-    /// <code>/dev/sda1</code>).</p>
+    /// <p>The device name of the root device volume (for example, <code>/dev/sda1</code>).</p>
     pub fn root_device_name(&self) -> std::option::Option<&crate::model::AttributeValue> {
         self.root_device_name.as_ref()
     }
-    /// <p>Enable or disable source/destination checks, which ensure that the instance
-    /// is either the source or the destination of any traffic that it receives.
-    /// If the value is <code>true</code>, source/destination checks are enabled;
-    /// otherwise, they are disabled. The default value is <code>true</code>.
-    /// You must disable source/destination checks if the instance runs services
-    /// such as network address translation, routing, or firewalls.</p>
+    /// <p>Enable or disable source/destination checks, which ensure that the instance is either the source or the destination of any traffic that it receives. If the value is <code>true</code>, source/destination checks are enabled; otherwise, they are disabled. The default value is <code>true</code>. You must disable source/destination checks if the instance runs services such as network address translation, routing, or firewalls.</p>
     pub fn source_dest_check(&self) -> std::option::Option<&crate::model::AttributeBooleanValue> {
         self.source_dest_check.as_ref()
     }
-    /// <p>Indicates whether enhanced networking with the Intel 82599 Virtual Function interface
-    /// is enabled.</p>
+    /// <p>Indicates whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.</p>
     pub fn sriov_net_support(&self) -> std::option::Option<&crate::model::AttributeValue> {
         self.sriov_net_support.as_ref()
     }
@@ -22394,8 +21952,7 @@ pub mod describe_instance_attribute_output {
             self.block_device_mappings = input;
             self
         }
-        /// <p>If the value is <code>true</code>, you can't terminate the instance through the Amazon
-        /// EC2 console, CLI, or API; otherwise, you can.</p>
+        /// <p>If the value is <code>true</code>, you can't terminate the instance through the Amazon EC2 console, CLI, or API; otherwise, you can.</p>
         pub fn disable_api_termination(
             mut self,
             input: crate::model::AttributeBooleanValue,
@@ -22403,8 +21960,7 @@ pub mod describe_instance_attribute_output {
             self.disable_api_termination = Some(input);
             self
         }
-        /// <p>If the value is <code>true</code>, you can't terminate the instance through the Amazon
-        /// EC2 console, CLI, or API; otherwise, you can.</p>
+        /// <p>If the value is <code>true</code>, you can't terminate the instance through the Amazon EC2 console, CLI, or API; otherwise, you can.</p>
         pub fn set_disable_api_termination(
             mut self,
             input: std::option::Option<crate::model::AttributeBooleanValue>,
@@ -22425,14 +21981,12 @@ pub mod describe_instance_attribute_output {
             self.ena_support = input;
             self
         }
-        /// <p>To enable the instance for Amazon Web Services Nitro Enclaves, set this parameter to <code>true</code>; otherwise,
-        /// set it to <code>false</code>.</p>
+        /// <p>To enable the instance for Amazon Web Services Nitro Enclaves, set this parameter to <code>true</code>; otherwise, set it to <code>false</code>.</p>
         pub fn enclave_options(mut self, input: crate::model::EnclaveOptions) -> Self {
             self.enclave_options = Some(input);
             self
         }
-        /// <p>To enable the instance for Amazon Web Services Nitro Enclaves, set this parameter to <code>true</code>; otherwise,
-        /// set it to <code>false</code>.</p>
+        /// <p>To enable the instance for Amazon Web Services Nitro Enclaves, set this parameter to <code>true</code>; otherwise, set it to <code>false</code>.</p>
         pub fn set_enclave_options(
             mut self,
             input: std::option::Option<crate::model::EnclaveOptions>,
@@ -22463,8 +22017,7 @@ pub mod describe_instance_attribute_output {
             self.instance_id = input;
             self
         }
-        /// <p>Indicates whether an instance stops or terminates when you initiate shutdown from the
-        /// instance (using the operating system command for system shutdown).</p>
+        /// <p>Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
         pub fn instance_initiated_shutdown_behavior(
             mut self,
             input: crate::model::AttributeValue,
@@ -22472,8 +22025,7 @@ pub mod describe_instance_attribute_output {
             self.instance_initiated_shutdown_behavior = Some(input);
             self
         }
-        /// <p>Indicates whether an instance stops or terminates when you initiate shutdown from the
-        /// instance (using the operating system command for system shutdown).</p>
+        /// <p>Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
         pub fn set_instance_initiated_shutdown_behavior(
             mut self,
             input: std::option::Option<crate::model::AttributeValue>,
@@ -22539,14 +22091,12 @@ pub mod describe_instance_attribute_output {
             self.ramdisk_id = input;
             self
         }
-        /// <p>The device name of the root device volume (for example,
-        /// <code>/dev/sda1</code>).</p>
+        /// <p>The device name of the root device volume (for example, <code>/dev/sda1</code>).</p>
         pub fn root_device_name(mut self, input: crate::model::AttributeValue) -> Self {
             self.root_device_name = Some(input);
             self
         }
-        /// <p>The device name of the root device volume (for example,
-        /// <code>/dev/sda1</code>).</p>
+        /// <p>The device name of the root device volume (for example, <code>/dev/sda1</code>).</p>
         pub fn set_root_device_name(
             mut self,
             input: std::option::Option<crate::model::AttributeValue>,
@@ -22554,22 +22104,12 @@ pub mod describe_instance_attribute_output {
             self.root_device_name = input;
             self
         }
-        /// <p>Enable or disable source/destination checks, which ensure that the instance
-        /// is either the source or the destination of any traffic that it receives.
-        /// If the value is <code>true</code>, source/destination checks are enabled;
-        /// otherwise, they are disabled. The default value is <code>true</code>.
-        /// You must disable source/destination checks if the instance runs services
-        /// such as network address translation, routing, or firewalls.</p>
+        /// <p>Enable or disable source/destination checks, which ensure that the instance is either the source or the destination of any traffic that it receives. If the value is <code>true</code>, source/destination checks are enabled; otherwise, they are disabled. The default value is <code>true</code>. You must disable source/destination checks if the instance runs services such as network address translation, routing, or firewalls.</p>
         pub fn source_dest_check(mut self, input: crate::model::AttributeBooleanValue) -> Self {
             self.source_dest_check = Some(input);
             self
         }
-        /// <p>Enable or disable source/destination checks, which ensure that the instance
-        /// is either the source or the destination of any traffic that it receives.
-        /// If the value is <code>true</code>, source/destination checks are enabled;
-        /// otherwise, they are disabled. The default value is <code>true</code>.
-        /// You must disable source/destination checks if the instance runs services
-        /// such as network address translation, routing, or firewalls.</p>
+        /// <p>Enable or disable source/destination checks, which ensure that the instance is either the source or the destination of any traffic that it receives. If the value is <code>true</code>, source/destination checks are enabled; otherwise, they are disabled. The default value is <code>true</code>. You must disable source/destination checks if the instance runs services such as network address translation, routing, or firewalls.</p>
         pub fn set_source_dest_check(
             mut self,
             input: std::option::Option<crate::model::AttributeBooleanValue>,
@@ -22577,14 +22117,12 @@ pub mod describe_instance_attribute_output {
             self.source_dest_check = input;
             self
         }
-        /// <p>Indicates whether enhanced networking with the Intel 82599 Virtual Function interface
-        /// is enabled.</p>
+        /// <p>Indicates whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.</p>
         pub fn sriov_net_support(mut self, input: crate::model::AttributeValue) -> Self {
             self.sriov_net_support = Some(input);
             self
         }
-        /// <p>Indicates whether enhanced networking with the Intel 82599 Virtual Function interface
-        /// is enabled.</p>
+        /// <p>Indicates whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.</p>
         pub fn set_sriov_net_support(
             mut self,
             input: std::option::Option<crate::model::AttributeValue>,
@@ -22639,23 +22177,19 @@ impl DescribeInstanceAttributeOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeImportSnapshotTasksOutput {
-    /// <p>A list of zero or more import snapshot tasks that are currently active or were completed or canceled in the
-    /// previous 7 days.</p>
+    /// <p>A list of zero or more import snapshot tasks that are currently active or were completed or canceled in the previous 7 days.</p>
     pub import_snapshot_tasks: std::option::Option<std::vec::Vec<crate::model::ImportSnapshotTask>>,
-    /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results
-    /// to return.</p>
+    /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeImportSnapshotTasksOutput {
-    /// <p>A list of zero or more import snapshot tasks that are currently active or were completed or canceled in the
-    /// previous 7 days.</p>
+    /// <p>A list of zero or more import snapshot tasks that are currently active or were completed or canceled in the previous 7 days.</p>
     pub fn import_snapshot_tasks(
         &self,
     ) -> std::option::Option<&[crate::model::ImportSnapshotTask]> {
         self.import_snapshot_tasks.as_deref()
     }
-    /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results
-    /// to return.</p>
+    /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -22683,16 +22217,14 @@ pub mod describe_import_snapshot_tasks_output {
         ///
         /// To override the contents of this collection use [`set_import_snapshot_tasks`](Self::set_import_snapshot_tasks).
         ///
-        /// <p>A list of zero or more import snapshot tasks that are currently active or were completed or canceled in the
-        /// previous 7 days.</p>
+        /// <p>A list of zero or more import snapshot tasks that are currently active or were completed or canceled in the previous 7 days.</p>
         pub fn import_snapshot_tasks(mut self, input: crate::model::ImportSnapshotTask) -> Self {
             let mut v = self.import_snapshot_tasks.unwrap_or_default();
             v.push(input);
             self.import_snapshot_tasks = Some(v);
             self
         }
-        /// <p>A list of zero or more import snapshot tasks that are currently active or were completed or canceled in the
-        /// previous 7 days.</p>
+        /// <p>A list of zero or more import snapshot tasks that are currently active or were completed or canceled in the previous 7 days.</p>
         pub fn set_import_snapshot_tasks(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ImportSnapshotTask>>,
@@ -22700,14 +22232,12 @@ pub mod describe_import_snapshot_tasks_output {
             self.import_snapshot_tasks = input;
             self
         }
-        /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results
-        /// to return.</p>
+        /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results
-        /// to return.</p>
+        /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -22732,21 +22262,17 @@ impl DescribeImportSnapshotTasksOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeImportImageTasksOutput {
-    /// <p>A list of zero or more import image tasks that are currently active or were completed or canceled in the
-    /// previous 7 days.</p>
+    /// <p>A list of zero or more import image tasks that are currently active or were completed or canceled in the previous 7 days.</p>
     pub import_image_tasks: std::option::Option<std::vec::Vec<crate::model::ImportImageTask>>,
-    /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results
-    /// to return.</p>
+    /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeImportImageTasksOutput {
-    /// <p>A list of zero or more import image tasks that are currently active or were completed or canceled in the
-    /// previous 7 days.</p>
+    /// <p>A list of zero or more import image tasks that are currently active or were completed or canceled in the previous 7 days.</p>
     pub fn import_image_tasks(&self) -> std::option::Option<&[crate::model::ImportImageTask]> {
         self.import_image_tasks.as_deref()
     }
-    /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results
-    /// to return.</p>
+    /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -22774,16 +22300,14 @@ pub mod describe_import_image_tasks_output {
         ///
         /// To override the contents of this collection use [`set_import_image_tasks`](Self::set_import_image_tasks).
         ///
-        /// <p>A list of zero or more import image tasks that are currently active or were completed or canceled in the
-        /// previous 7 days.</p>
+        /// <p>A list of zero or more import image tasks that are currently active or were completed or canceled in the previous 7 days.</p>
         pub fn import_image_tasks(mut self, input: crate::model::ImportImageTask) -> Self {
             let mut v = self.import_image_tasks.unwrap_or_default();
             v.push(input);
             self.import_image_tasks = Some(v);
             self
         }
-        /// <p>A list of zero or more import image tasks that are currently active or were completed or canceled in the
-        /// previous 7 days.</p>
+        /// <p>A list of zero or more import image tasks that are currently active or were completed or canceled in the previous 7 days.</p>
         pub fn set_import_image_tasks(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ImportImageTask>>,
@@ -22791,14 +22315,12 @@ pub mod describe_import_image_tasks_output {
             self.import_image_tasks = input;
             self
         }
-        /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results
-        /// to return.</p>
+        /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results
-        /// to return.</p>
+        /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -23906,8 +23428,7 @@ impl DescribeFleetsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFleetInstancesOutput {
-    /// <p>The running instances. This list is refreshed periodically and might be out of
-    /// date.</p>
+    /// <p>The running instances. This list is refreshed periodically and might be out of date.</p>
     pub active_instances: std::option::Option<std::vec::Vec<crate::model::ActiveInstance>>,
     /// <p>The token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -23915,8 +23436,7 @@ pub struct DescribeFleetInstancesOutput {
     pub fleet_id: std::option::Option<std::string::String>,
 }
 impl DescribeFleetInstancesOutput {
-    /// <p>The running instances. This list is refreshed periodically and might be out of
-    /// date.</p>
+    /// <p>The running instances. This list is refreshed periodically and might be out of date.</p>
     pub fn active_instances(&self) -> std::option::Option<&[crate::model::ActiveInstance]> {
         self.active_instances.as_deref()
     }
@@ -23954,16 +23474,14 @@ pub mod describe_fleet_instances_output {
         ///
         /// To override the contents of this collection use [`set_active_instances`](Self::set_active_instances).
         ///
-        /// <p>The running instances. This list is refreshed periodically and might be out of
-        /// date.</p>
+        /// <p>The running instances. This list is refreshed periodically and might be out of date.</p>
         pub fn active_instances(mut self, input: crate::model::ActiveInstance) -> Self {
             let mut v = self.active_instances.unwrap_or_default();
             v.push(input);
             self.active_instances = Some(v);
             self
         }
-        /// <p>The running instances. This list is refreshed periodically and might be out of
-        /// date.</p>
+        /// <p>The running instances. This list is refreshed periodically and might be out of date.</p>
         pub fn set_active_instances(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ActiveInstance>>,
@@ -24014,18 +23532,14 @@ impl DescribeFleetInstancesOutput {
 pub struct DescribeFleetHistoryOutput {
     /// <p>Information about the events in the history of the EC2 Fleet.</p>
     pub history_records: std::option::Option<std::vec::Vec<crate::model::HistoryRecordEntry>>,
-    /// <p>The last date and time for the events, in UTC format (for example,
-    /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
-    /// All records up to this time were retrieved.</p>
-    /// <p>If <code>nextToken</code> indicates that there are more results, this value is not
-    /// present.</p>
+    /// <p>The last date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). All records up to this time were retrieved.</p>
+    /// <p>If <code>nextToken</code> indicates that there are more results, this value is not present.</p>
     pub last_evaluated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The ID of the EC Fleet.</p>
     pub fleet_id: std::option::Option<std::string::String>,
-    /// <p>The start date and time for the events, in UTC format (for example,
-    /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+    /// <p>The start date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeFleetHistoryOutput {
@@ -24033,11 +23547,8 @@ impl DescribeFleetHistoryOutput {
     pub fn history_records(&self) -> std::option::Option<&[crate::model::HistoryRecordEntry]> {
         self.history_records.as_deref()
     }
-    /// <p>The last date and time for the events, in UTC format (for example,
-    /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
-    /// All records up to this time were retrieved.</p>
-    /// <p>If <code>nextToken</code> indicates that there are more results, this value is not
-    /// present.</p>
+    /// <p>The last date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). All records up to this time were retrieved.</p>
+    /// <p>If <code>nextToken</code> indicates that there are more results, this value is not present.</p>
     pub fn last_evaluated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_evaluated_time.as_ref()
     }
@@ -24049,8 +23560,7 @@ impl DescribeFleetHistoryOutput {
     pub fn fleet_id(&self) -> std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
-    /// <p>The start date and time for the events, in UTC format (for example,
-    /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+    /// <p>The start date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
@@ -24099,20 +23609,14 @@ pub mod describe_fleet_history_output {
             self.history_records = input;
             self
         }
-        /// <p>The last date and time for the events, in UTC format (for example,
-        /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
-        /// All records up to this time were retrieved.</p>
-        /// <p>If <code>nextToken</code> indicates that there are more results, this value is not
-        /// present.</p>
+        /// <p>The last date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). All records up to this time were retrieved.</p>
+        /// <p>If <code>nextToken</code> indicates that there are more results, this value is not present.</p>
         pub fn last_evaluated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_evaluated_time = Some(input);
             self
         }
-        /// <p>The last date and time for the events, in UTC format (for example,
-        /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
-        /// All records up to this time were retrieved.</p>
-        /// <p>If <code>nextToken</code> indicates that there are more results, this value is not
-        /// present.</p>
+        /// <p>The last date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). All records up to this time were retrieved.</p>
+        /// <p>If <code>nextToken</code> indicates that there are more results, this value is not present.</p>
         pub fn set_last_evaluated_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -24140,14 +23644,12 @@ pub mod describe_fleet_history_output {
             self.fleet_id = input;
             self
         }
-        /// <p>The start date and time for the events, in UTC format (for example,
-        /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+        /// <p>The start date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>The start date and time for the events, in UTC format (for example,
-        /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+        /// <p>The start date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -24335,8 +23837,7 @@ impl DescribeExportTasksOutput {
 pub struct DescribeExportImageTasksOutput {
     /// <p>Information about the export image tasks.</p>
     pub export_image_tasks: std::option::Option<std::vec::Vec<crate::model::ExportImageTask>>,
-    /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results
-    /// to return.</p>
+    /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeExportImageTasksOutput {
@@ -24344,8 +23845,7 @@ impl DescribeExportImageTasksOutput {
     pub fn export_image_tasks(&self) -> std::option::Option<&[crate::model::ExportImageTask]> {
         self.export_image_tasks.as_deref()
     }
-    /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results
-    /// to return.</p>
+    /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -24388,14 +23888,12 @@ pub mod describe_export_image_tasks_output {
             self.export_image_tasks = input;
             self
         }
-        /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results
-        /// to return.</p>
+        /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results
-        /// to return.</p>
+        /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -24422,12 +23920,9 @@ impl DescribeExportImageTasksOutput {
 pub struct DescribeElasticGpusOutput {
     /// <p>Information about the Elastic Graphics accelerators.</p>
     pub elastic_gpu_set: std::option::Option<std::vec::Vec<crate::model::ElasticGpus>>,
-    /// <p>The total number of items to return. If the total number of items available is more
-    /// than the value specified in max-items then a Next-Token will be provided in the output
-    /// that you can use to resume pagination.</p>
+    /// <p>The total number of items to return. If the total number of items available is more than the value specified in max-items then a Next-Token will be provided in the output that you can use to resume pagination.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The token to use to retrieve the next page of results. This value is
-    /// <code>null</code> when there are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeElasticGpusOutput {
@@ -24435,14 +23930,11 @@ impl DescribeElasticGpusOutput {
     pub fn elastic_gpu_set(&self) -> std::option::Option<&[crate::model::ElasticGpus]> {
         self.elastic_gpu_set.as_deref()
     }
-    /// <p>The total number of items to return. If the total number of items available is more
-    /// than the value specified in max-items then a Next-Token will be provided in the output
-    /// that you can use to resume pagination.</p>
+    /// <p>The total number of items to return. If the total number of items available is more than the value specified in max-items then a Next-Token will be provided in the output that you can use to resume pagination.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The token to use to retrieve the next page of results. This value is
-    /// <code>null</code> when there are no more results to return.</p>
+    /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -24486,28 +23978,22 @@ pub mod describe_elastic_gpus_output {
             self.elastic_gpu_set = input;
             self
         }
-        /// <p>The total number of items to return. If the total number of items available is more
-        /// than the value specified in max-items then a Next-Token will be provided in the output
-        /// that you can use to resume pagination.</p>
+        /// <p>The total number of items to return. If the total number of items available is more than the value specified in max-items then a Next-Token will be provided in the output that you can use to resume pagination.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The total number of items to return. If the total number of items available is more
-        /// than the value specified in max-items then a Next-Token will be provided in the output
-        /// that you can use to resume pagination.</p>
+        /// <p>The total number of items to return. If the total number of items available is more than the value specified in max-items then a Next-Token will be provided in the output that you can use to resume pagination.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is
-        /// <code>null</code> when there are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. This value is
-        /// <code>null</code> when there are no more results to return.</p>
+        /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -25888,17 +25374,13 @@ impl DescribeAvailabilityZonesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAggregateIdFormatOutput {
-    /// <p>Indicates whether all resource types in the Region are configured to use longer IDs.
-    /// This value is only <code>true</code> if all users are configured to use longer IDs for
-    /// all resources types in the Region.</p>
+    /// <p>Indicates whether all resource types in the Region are configured to use longer IDs. This value is only <code>true</code> if all users are configured to use longer IDs for all resources types in the Region.</p>
     pub use_long_ids_aggregated: std::option::Option<bool>,
     /// <p>Information about each resource's ID format.</p>
     pub statuses: std::option::Option<std::vec::Vec<crate::model::IdFormat>>,
 }
 impl DescribeAggregateIdFormatOutput {
-    /// <p>Indicates whether all resource types in the Region are configured to use longer IDs.
-    /// This value is only <code>true</code> if all users are configured to use longer IDs for
-    /// all resources types in the Region.</p>
+    /// <p>Indicates whether all resource types in the Region are configured to use longer IDs. This value is only <code>true</code> if all users are configured to use longer IDs for all resources types in the Region.</p>
     pub fn use_long_ids_aggregated(&self) -> std::option::Option<bool> {
         self.use_long_ids_aggregated
     }
@@ -25925,16 +25407,12 @@ pub mod describe_aggregate_id_format_output {
         pub(crate) statuses: std::option::Option<std::vec::Vec<crate::model::IdFormat>>,
     }
     impl Builder {
-        /// <p>Indicates whether all resource types in the Region are configured to use longer IDs.
-        /// This value is only <code>true</code> if all users are configured to use longer IDs for
-        /// all resources types in the Region.</p>
+        /// <p>Indicates whether all resource types in the Region are configured to use longer IDs. This value is only <code>true</code> if all users are configured to use longer IDs for all resources types in the Region.</p>
         pub fn use_long_ids_aggregated(mut self, input: bool) -> Self {
             self.use_long_ids_aggregated = Some(input);
             self
         }
-        /// <p>Indicates whether all resource types in the Region are configured to use longer IDs.
-        /// This value is only <code>true</code> if all users are configured to use longer IDs for
-        /// all resources types in the Region.</p>
+        /// <p>Indicates whether all resource types in the Region are configured to use longer IDs. This value is only <code>true</code> if all users are configured to use longer IDs for all resources types in the Region.</p>
         pub fn set_use_long_ids_aggregated(mut self, input: std::option::Option<bool>) -> Self {
             self.use_long_ids_aggregated = input;
             self
@@ -26761,13 +26239,11 @@ impl DeleteVpcPeeringConnectionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVpcEndpointServiceConfigurationsOutput {
-    /// <p>Information about the service configurations that were not deleted, if
-    /// applicable.</p>
+    /// <p>Information about the service configurations that were not deleted, if applicable.</p>
     pub unsuccessful: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,
 }
 impl DeleteVpcEndpointServiceConfigurationsOutput {
-    /// <p>Information about the service configurations that were not deleted, if
-    /// applicable.</p>
+    /// <p>Information about the service configurations that were not deleted, if applicable.</p>
     pub fn unsuccessful(&self) -> std::option::Option<&[crate::model::UnsuccessfulItem]> {
         self.unsuccessful.as_deref()
     }
@@ -26792,16 +26268,14 @@ pub mod delete_vpc_endpoint_service_configurations_output {
         ///
         /// To override the contents of this collection use [`set_unsuccessful`](Self::set_unsuccessful).
         ///
-        /// <p>Information about the service configurations that were not deleted, if
-        /// applicable.</p>
+        /// <p>Information about the service configurations that were not deleted, if applicable.</p>
         pub fn unsuccessful(mut self, input: crate::model::UnsuccessfulItem) -> Self {
             let mut v = self.unsuccessful.unwrap_or_default();
             v.push(input);
             self.unsuccessful = Some(v);
             self
         }
-        /// <p>Information about the service configurations that were not deleted, if
-        /// applicable.</p>
+        /// <p>Information about the service configurations that were not deleted, if applicable.</p>
         pub fn set_unsuccessful(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,
@@ -26891,13 +26365,11 @@ impl DeleteVpcEndpointsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVpcEndpointConnectionNotificationsOutput {
-    /// <p>Information about the notifications that could not be deleted
-    /// successfully.</p>
+    /// <p>Information about the notifications that could not be deleted successfully.</p>
     pub unsuccessful: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,
 }
 impl DeleteVpcEndpointConnectionNotificationsOutput {
-    /// <p>Information about the notifications that could not be deleted
-    /// successfully.</p>
+    /// <p>Information about the notifications that could not be deleted successfully.</p>
     pub fn unsuccessful(&self) -> std::option::Option<&[crate::model::UnsuccessfulItem]> {
         self.unsuccessful.as_deref()
     }
@@ -26922,16 +26394,14 @@ pub mod delete_vpc_endpoint_connection_notifications_output {
         ///
         /// To override the contents of this collection use [`set_unsuccessful`](Self::set_unsuccessful).
         ///
-        /// <p>Information about the notifications that could not be deleted
-        /// successfully.</p>
+        /// <p>Information about the notifications that could not be deleted successfully.</p>
         pub fn unsuccessful(mut self, input: crate::model::UnsuccessfulItem) -> Self {
             let mut v = self.unsuccessful.unwrap_or_default();
             v.push(input);
             self.unsuccessful = Some(v);
             self
         }
-        /// <p>Information about the notifications that could not be deleted
-        /// successfully.</p>
+        /// <p>Information about the notifications that could not be deleted successfully.</p>
         pub fn set_unsuccessful(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,
@@ -28935,8 +28405,7 @@ impl DeleteLocalGatewayRouteOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLaunchTemplateVersionsOutput {
-    /// <p>Information about the launch template versions that were successfully
-    /// deleted.</p>
+    /// <p>Information about the launch template versions that were successfully deleted.</p>
     pub successfully_deleted_launch_template_versions: std::option::Option<
         std::vec::Vec<crate::model::DeleteLaunchTemplateVersionsResponseSuccessItem>,
     >,
@@ -28946,8 +28415,7 @@ pub struct DeleteLaunchTemplateVersionsOutput {
     >,
 }
 impl DeleteLaunchTemplateVersionsOutput {
-    /// <p>Information about the launch template versions that were successfully
-    /// deleted.</p>
+    /// <p>Information about the launch template versions that were successfully deleted.</p>
     pub fn successfully_deleted_launch_template_versions(
         &self,
     ) -> std::option::Option<&[crate::model::DeleteLaunchTemplateVersionsResponseSuccessItem]> {
@@ -28994,8 +28462,7 @@ pub mod delete_launch_template_versions_output {
         ///
         /// To override the contents of this collection use [`set_successfully_deleted_launch_template_versions`](Self::set_successfully_deleted_launch_template_versions).
         ///
-        /// <p>Information about the launch template versions that were successfully
-        /// deleted.</p>
+        /// <p>Information about the launch template versions that were successfully deleted.</p>
         pub fn successfully_deleted_launch_template_versions(
             mut self,
             input: crate::model::DeleteLaunchTemplateVersionsResponseSuccessItem,
@@ -29007,8 +28474,7 @@ pub mod delete_launch_template_versions_output {
             self.successfully_deleted_launch_template_versions = Some(v);
             self
         }
-        /// <p>Information about the launch template versions that were successfully
-        /// deleted.</p>
+        /// <p>Information about the launch template versions that were successfully deleted.</p>
         pub fn set_successfully_deleted_launch_template_versions(
             mut self,
             input: std::option::Option<
@@ -30131,8 +29597,7 @@ impl CreateVpcPeeringConnectionOutput {
 pub struct CreateVpcEndpointServiceConfigurationOutput {
     /// <p>Information about the service configuration.</p>
     pub service_configuration: std::option::Option<crate::model::ServiceConfiguration>,
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateVpcEndpointServiceConfigurationOutput {
@@ -30142,8 +29607,7 @@ impl CreateVpcEndpointServiceConfigurationOutput {
     ) -> std::option::Option<&crate::model::ServiceConfiguration> {
         self.service_configuration.as_ref()
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -30179,14 +29643,12 @@ pub mod create_vpc_endpoint_service_configuration_output {
             self.service_configuration = input;
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -30213,8 +29675,7 @@ impl CreateVpcEndpointServiceConfigurationOutput {
 pub struct CreateVpcEndpointConnectionNotificationOutput {
     /// <p>Information about the notification.</p>
     pub connection_notification: std::option::Option<crate::model::ConnectionNotification>,
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateVpcEndpointConnectionNotificationOutput {
@@ -30224,8 +29685,7 @@ impl CreateVpcEndpointConnectionNotificationOutput {
     ) -> std::option::Option<&crate::model::ConnectionNotification> {
         self.connection_notification.as_ref()
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -30265,14 +29725,12 @@ pub mod create_vpc_endpoint_connection_notification_output {
             self.connection_notification = input;
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -30299,8 +29757,7 @@ impl CreateVpcEndpointConnectionNotificationOutput {
 pub struct CreateVpcEndpointOutput {
     /// <p>Information about the endpoint.</p>
     pub vpc_endpoint: std::option::Option<crate::model::VpcEndpoint>,
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateVpcEndpointOutput {
@@ -30308,8 +29765,7 @@ impl CreateVpcEndpointOutput {
     pub fn vpc_endpoint(&self) -> std::option::Option<&crate::model::VpcEndpoint> {
         self.vpc_endpoint.as_ref()
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -30345,14 +29801,12 @@ pub mod create_vpc_endpoint_output {
             self.vpc_endpoint = input;
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -30437,8 +29891,7 @@ pub struct CreateVolumeOutput {
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Indicates whether the volume is encrypted.</p>
     pub encrypted: std::option::Option<bool>,
-    /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key that was used to protect the
-    /// volume encryption key for the volume.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key that was used to protect the volume encryption key for the volume.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
     pub outpost_arn: std::option::Option<std::string::String>,
@@ -30450,9 +29903,7 @@ pub struct CreateVolumeOutput {
     pub state: std::option::Option<crate::model::VolumeState>,
     /// <p>The ID of the volume.</p>
     pub volume_id: std::option::Option<std::string::String>,
-    /// <p>The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>, and <code>io2</code> volumes, this represents
-    /// the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline
-    /// performance of the volume and the rate at which the volume accumulates I/O credits for bursting.</p>
+    /// <p>The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>, and <code>io2</code> volumes, this represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting.</p>
     pub iops: std::option::Option<i32>,
     /// <p>Any tags assigned to the volume.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -30482,8 +29933,7 @@ impl CreateVolumeOutput {
     pub fn encrypted(&self) -> std::option::Option<bool> {
         self.encrypted
     }
-    /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key that was used to protect the
-    /// volume encryption key for the volume.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key that was used to protect the volume encryption key for the volume.</p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
@@ -30507,9 +29957,7 @@ impl CreateVolumeOutput {
     pub fn volume_id(&self) -> std::option::Option<&str> {
         self.volume_id.as_deref()
     }
-    /// <p>The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>, and <code>io2</code> volumes, this represents
-    /// the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline
-    /// performance of the volume and the rate at which the volume accumulates I/O credits for bursting.</p>
+    /// <p>The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>, and <code>io2</code> volumes, this represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting.</p>
     pub fn iops(&self) -> std::option::Option<i32> {
         self.iops
     }
@@ -30635,14 +30083,12 @@ pub mod create_volume_output {
             self.encrypted = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key that was used to protect the
-        /// volume encryption key for the volume.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key that was used to protect the volume encryption key for the volume.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key that was used to protect the
-        /// volume encryption key for the volume.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key that was used to protect the volume encryption key for the volume.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -30697,16 +30143,12 @@ pub mod create_volume_output {
             self.volume_id = input;
             self
         }
-        /// <p>The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>, and <code>io2</code> volumes, this represents
-        /// the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline
-        /// performance of the volume and the rate at which the volume accumulates I/O credits for bursting.</p>
+        /// <p>The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>, and <code>io2</code> volumes, this represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting.</p>
         pub fn iops(mut self, input: i32) -> Self {
             self.iops = Some(input);
             self
         }
-        /// <p>The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>, and <code>io2</code> volumes, this represents
-        /// the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline
-        /// performance of the volume and the rate at which the volume accumulates I/O credits for bursting.</p>
+        /// <p>The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>, and <code>io2</code> volumes, this represents the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting.</p>
         pub fn set_iops(mut self, input: std::option::Option<i32>) -> Self {
             self.iops = input;
             self
@@ -32028,63 +31470,43 @@ impl CreateSnapshotsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSnapshotOutput {
-    /// <p>The data encryption key identifier for the snapshot. This value is a unique identifier
-    /// that corresponds to the data encryption key that was used to encrypt the original volume or
-    /// snapshot copy. Because data encryption keys are inherited by volumes created from snapshots,
-    /// and vice versa, if snapshots share the same data encryption key identifier, then they belong
-    /// to the same volume/snapshot lineage. This parameter is only returned by <a>DescribeSnapshots</a>.</p>
+    /// <p>The data encryption key identifier for the snapshot. This value is a unique identifier that corresponds to the data encryption key that was used to encrypt the original volume or snapshot copy. Because data encryption keys are inherited by volumes created from snapshots, and vice versa, if snapshots share the same data encryption key identifier, then they belong to the same volume/snapshot lineage. This parameter is only returned by <code>DescribeSnapshots</code>.</p>
     pub data_encryption_key_id: std::option::Option<std::string::String>,
     /// <p>The description for the snapshot.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>Indicates whether the snapshot is encrypted.</p>
     pub encrypted: std::option::Option<bool>,
-    /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key that was used to protect the
-    /// volume encryption key for the parent volume.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key that was used to protect the volume encryption key for the parent volume.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The ID of the Amazon Web Services account that owns the EBS snapshot.</p>
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>The progress of the snapshot, as a percentage.</p>
     pub progress: std::option::Option<std::string::String>,
-    /// <p>The ID of the snapshot. Each snapshot receives a unique identifier when it is
-    /// created.</p>
+    /// <p>The ID of the snapshot. Each snapshot receives a unique identifier when it is created.</p>
     pub snapshot_id: std::option::Option<std::string::String>,
     /// <p>The time stamp when the snapshot was initiated.</p>
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The snapshot state.</p>
     pub state: std::option::Option<crate::model::SnapshotState>,
-    /// <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy operation fails
-    /// (for example, if the proper Key Management Service (KMS) permissions are not obtained) this field displays error
-    /// state details to help you diagnose why the error occurred. This parameter is only returned by
-    /// <a>DescribeSnapshots</a>.</p>
+    /// <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy operation fails (for example, if the proper Key Management Service (KMS) permissions are not obtained) this field displays error state details to help you diagnose why the error occurred. This parameter is only returned by <code>DescribeSnapshots</code>.</p>
     pub state_message: std::option::Option<std::string::String>,
-    /// <p>The ID of the volume that was used to create the snapshot. Snapshots created by the <a>CopySnapshot</a> action have an arbitrary volume ID that should not be used for any
-    /// purpose.</p>
+    /// <p>The ID of the volume that was used to create the snapshot. Snapshots created by the <code>CopySnapshot</code> action have an arbitrary volume ID that should not be used for any purpose.</p>
     pub volume_id: std::option::Option<std::string::String>,
     /// <p>The size of the volume, in GiB.</p>
     pub volume_size: std::option::Option<i32>,
-    /// <p>The Amazon Web Services owner alias, from an Amazon-maintained list (<code>amazon</code>). This is not  
-    /// the user-configured Amazon Web Services account alias set using the IAM console.</p>
+    /// <p>The Amazon Web Services owner alias, from an Amazon-maintained list (<code>amazon</code>). This is not the user-configured Amazon Web Services account alias set using the IAM console.</p>
     pub owner_alias: std::option::Option<std::string::String>,
-    /// <p>The ARN of the Outpost on which the snapshot is stored. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">Amazon EBS local snapshots on Outposts</a> in the
-    /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    /// <p>The ARN of the Outpost on which the snapshot is stored. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">Amazon EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub outpost_arn: std::option::Option<std::string::String>,
     /// <p>Any tags assigned to the snapshot.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>The storage tier in which the snapshot is stored. <code>standard</code> indicates
-    /// that the snapshot is stored in the standard snapshot storage tier and that it is ready
-    /// for use. <code>archive</code> indicates that the snapshot is currently archived and that
-    /// it must be restored before it can be used.</p>
+    /// <p>The storage tier in which the snapshot is stored. <code>standard</code> indicates that the snapshot is stored in the standard snapshot storage tier and that it is ready for use. <code>archive</code> indicates that the snapshot is currently archived and that it must be restored before it can be used.</p>
     pub storage_tier: std::option::Option<crate::model::StorageTier>,
-    /// <p>Only for archived snapshots that are temporarily restored. Indicates the date and
-    /// time when a temporarily restored snapshot will be automatically re-archived.</p>
+    /// <p>Only for archived snapshots that are temporarily restored. Indicates the date and time when a temporarily restored snapshot will be automatically re-archived.</p>
     pub restore_expiry_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateSnapshotOutput {
-    /// <p>The data encryption key identifier for the snapshot. This value is a unique identifier
-    /// that corresponds to the data encryption key that was used to encrypt the original volume or
-    /// snapshot copy. Because data encryption keys are inherited by volumes created from snapshots,
-    /// and vice versa, if snapshots share the same data encryption key identifier, then they belong
-    /// to the same volume/snapshot lineage. This parameter is only returned by <a>DescribeSnapshots</a>.</p>
+    /// <p>The data encryption key identifier for the snapshot. This value is a unique identifier that corresponds to the data encryption key that was used to encrypt the original volume or snapshot copy. Because data encryption keys are inherited by volumes created from snapshots, and vice versa, if snapshots share the same data encryption key identifier, then they belong to the same volume/snapshot lineage. This parameter is only returned by <code>DescribeSnapshots</code>.</p>
     pub fn data_encryption_key_id(&self) -> std::option::Option<&str> {
         self.data_encryption_key_id.as_deref()
     }
@@ -32096,8 +31518,7 @@ impl CreateSnapshotOutput {
     pub fn encrypted(&self) -> std::option::Option<bool> {
         self.encrypted
     }
-    /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key that was used to protect the
-    /// volume encryption key for the parent volume.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key that was used to protect the volume encryption key for the parent volume.</p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
@@ -32109,8 +31530,7 @@ impl CreateSnapshotOutput {
     pub fn progress(&self) -> std::option::Option<&str> {
         self.progress.as_deref()
     }
-    /// <p>The ID of the snapshot. Each snapshot receives a unique identifier when it is
-    /// created.</p>
+    /// <p>The ID of the snapshot. Each snapshot receives a unique identifier when it is created.</p>
     pub fn snapshot_id(&self) -> std::option::Option<&str> {
         self.snapshot_id.as_deref()
     }
@@ -32122,15 +31542,11 @@ impl CreateSnapshotOutput {
     pub fn state(&self) -> std::option::Option<&crate::model::SnapshotState> {
         self.state.as_ref()
     }
-    /// <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy operation fails
-    /// (for example, if the proper Key Management Service (KMS) permissions are not obtained) this field displays error
-    /// state details to help you diagnose why the error occurred. This parameter is only returned by
-    /// <a>DescribeSnapshots</a>.</p>
+    /// <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy operation fails (for example, if the proper Key Management Service (KMS) permissions are not obtained) this field displays error state details to help you diagnose why the error occurred. This parameter is only returned by <code>DescribeSnapshots</code>.</p>
     pub fn state_message(&self) -> std::option::Option<&str> {
         self.state_message.as_deref()
     }
-    /// <p>The ID of the volume that was used to create the snapshot. Snapshots created by the <a>CopySnapshot</a> action have an arbitrary volume ID that should not be used for any
-    /// purpose.</p>
+    /// <p>The ID of the volume that was used to create the snapshot. Snapshots created by the <code>CopySnapshot</code> action have an arbitrary volume ID that should not be used for any purpose.</p>
     pub fn volume_id(&self) -> std::option::Option<&str> {
         self.volume_id.as_deref()
     }
@@ -32138,13 +31554,11 @@ impl CreateSnapshotOutput {
     pub fn volume_size(&self) -> std::option::Option<i32> {
         self.volume_size
     }
-    /// <p>The Amazon Web Services owner alias, from an Amazon-maintained list (<code>amazon</code>). This is not  
-    /// the user-configured Amazon Web Services account alias set using the IAM console.</p>
+    /// <p>The Amazon Web Services owner alias, from an Amazon-maintained list (<code>amazon</code>). This is not the user-configured Amazon Web Services account alias set using the IAM console.</p>
     pub fn owner_alias(&self) -> std::option::Option<&str> {
         self.owner_alias.as_deref()
     }
-    /// <p>The ARN of the Outpost on which the snapshot is stored. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">Amazon EBS local snapshots on Outposts</a> in the
-    /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    /// <p>The ARN of the Outpost on which the snapshot is stored. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">Amazon EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub fn outpost_arn(&self) -> std::option::Option<&str> {
         self.outpost_arn.as_deref()
     }
@@ -32152,15 +31566,11 @@ impl CreateSnapshotOutput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>The storage tier in which the snapshot is stored. <code>standard</code> indicates
-    /// that the snapshot is stored in the standard snapshot storage tier and that it is ready
-    /// for use. <code>archive</code> indicates that the snapshot is currently archived and that
-    /// it must be restored before it can be used.</p>
+    /// <p>The storage tier in which the snapshot is stored. <code>standard</code> indicates that the snapshot is stored in the standard snapshot storage tier and that it is ready for use. <code>archive</code> indicates that the snapshot is currently archived and that it must be restored before it can be used.</p>
     pub fn storage_tier(&self) -> std::option::Option<&crate::model::StorageTier> {
         self.storage_tier.as_ref()
     }
-    /// <p>Only for archived snapshots that are temporarily restored. Indicates the date and
-    /// time when a temporarily restored snapshot will be automatically re-archived.</p>
+    /// <p>Only for archived snapshots that are temporarily restored. Indicates the date and time when a temporarily restored snapshot will be automatically re-archived.</p>
     pub fn restore_expiry_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.restore_expiry_time.as_ref()
     }
@@ -32213,20 +31623,12 @@ pub mod create_snapshot_output {
         pub(crate) restore_expiry_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>The data encryption key identifier for the snapshot. This value is a unique identifier
-        /// that corresponds to the data encryption key that was used to encrypt the original volume or
-        /// snapshot copy. Because data encryption keys are inherited by volumes created from snapshots,
-        /// and vice versa, if snapshots share the same data encryption key identifier, then they belong
-        /// to the same volume/snapshot lineage. This parameter is only returned by <a>DescribeSnapshots</a>.</p>
+        /// <p>The data encryption key identifier for the snapshot. This value is a unique identifier that corresponds to the data encryption key that was used to encrypt the original volume or snapshot copy. Because data encryption keys are inherited by volumes created from snapshots, and vice versa, if snapshots share the same data encryption key identifier, then they belong to the same volume/snapshot lineage. This parameter is only returned by <code>DescribeSnapshots</code>.</p>
         pub fn data_encryption_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_encryption_key_id = Some(input.into());
             self
         }
-        /// <p>The data encryption key identifier for the snapshot. This value is a unique identifier
-        /// that corresponds to the data encryption key that was used to encrypt the original volume or
-        /// snapshot copy. Because data encryption keys are inherited by volumes created from snapshots,
-        /// and vice versa, if snapshots share the same data encryption key identifier, then they belong
-        /// to the same volume/snapshot lineage. This parameter is only returned by <a>DescribeSnapshots</a>.</p>
+        /// <p>The data encryption key identifier for the snapshot. This value is a unique identifier that corresponds to the data encryption key that was used to encrypt the original volume or snapshot copy. Because data encryption keys are inherited by volumes created from snapshots, and vice versa, if snapshots share the same data encryption key identifier, then they belong to the same volume/snapshot lineage. This parameter is only returned by <code>DescribeSnapshots</code>.</p>
         pub fn set_data_encryption_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -32254,14 +31656,12 @@ pub mod create_snapshot_output {
             self.encrypted = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key that was used to protect the
-        /// volume encryption key for the parent volume.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key that was used to protect the volume encryption key for the parent volume.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key that was used to protect the
-        /// volume encryption key for the parent volume.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key that was used to protect the volume encryption key for the parent volume.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -32286,14 +31686,12 @@ pub mod create_snapshot_output {
             self.progress = input;
             self
         }
-        /// <p>The ID of the snapshot. Each snapshot receives a unique identifier when it is
-        /// created.</p>
+        /// <p>The ID of the snapshot. Each snapshot receives a unique identifier when it is created.</p>
         pub fn snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.snapshot_id = Some(input.into());
             self
         }
-        /// <p>The ID of the snapshot. Each snapshot receives a unique identifier when it is
-        /// created.</p>
+        /// <p>The ID of the snapshot. Each snapshot receives a unique identifier when it is created.</p>
         pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.snapshot_id = input;
             self
@@ -32324,18 +31722,12 @@ pub mod create_snapshot_output {
             self.state = input;
             self
         }
-        /// <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy operation fails
-        /// (for example, if the proper Key Management Service (KMS) permissions are not obtained) this field displays error
-        /// state details to help you diagnose why the error occurred. This parameter is only returned by
-        /// <a>DescribeSnapshots</a>.</p>
+        /// <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy operation fails (for example, if the proper Key Management Service (KMS) permissions are not obtained) this field displays error state details to help you diagnose why the error occurred. This parameter is only returned by <code>DescribeSnapshots</code>.</p>
         pub fn state_message(mut self, input: impl Into<std::string::String>) -> Self {
             self.state_message = Some(input.into());
             self
         }
-        /// <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy operation fails
-        /// (for example, if the proper Key Management Service (KMS) permissions are not obtained) this field displays error
-        /// state details to help you diagnose why the error occurred. This parameter is only returned by
-        /// <a>DescribeSnapshots</a>.</p>
+        /// <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy operation fails (for example, if the proper Key Management Service (KMS) permissions are not obtained) this field displays error state details to help you diagnose why the error occurred. This parameter is only returned by <code>DescribeSnapshots</code>.</p>
         pub fn set_state_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -32343,14 +31735,12 @@ pub mod create_snapshot_output {
             self.state_message = input;
             self
         }
-        /// <p>The ID of the volume that was used to create the snapshot. Snapshots created by the <a>CopySnapshot</a> action have an arbitrary volume ID that should not be used for any
-        /// purpose.</p>
+        /// <p>The ID of the volume that was used to create the snapshot. Snapshots created by the <code>CopySnapshot</code> action have an arbitrary volume ID that should not be used for any purpose.</p>
         pub fn volume_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.volume_id = Some(input.into());
             self
         }
-        /// <p>The ID of the volume that was used to create the snapshot. Snapshots created by the <a>CopySnapshot</a> action have an arbitrary volume ID that should not be used for any
-        /// purpose.</p>
+        /// <p>The ID of the volume that was used to create the snapshot. Snapshots created by the <code>CopySnapshot</code> action have an arbitrary volume ID that should not be used for any purpose.</p>
         pub fn set_volume_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.volume_id = input;
             self
@@ -32365,26 +31755,22 @@ pub mod create_snapshot_output {
             self.volume_size = input;
             self
         }
-        /// <p>The Amazon Web Services owner alias, from an Amazon-maintained list (<code>amazon</code>). This is not  
-        /// the user-configured Amazon Web Services account alias set using the IAM console.</p>
+        /// <p>The Amazon Web Services owner alias, from an Amazon-maintained list (<code>amazon</code>). This is not the user-configured Amazon Web Services account alias set using the IAM console.</p>
         pub fn owner_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_alias = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services owner alias, from an Amazon-maintained list (<code>amazon</code>). This is not  
-        /// the user-configured Amazon Web Services account alias set using the IAM console.</p>
+        /// <p>The Amazon Web Services owner alias, from an Amazon-maintained list (<code>amazon</code>). This is not the user-configured Amazon Web Services account alias set using the IAM console.</p>
         pub fn set_owner_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.owner_alias = input;
             self
         }
-        /// <p>The ARN of the Outpost on which the snapshot is stored. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">Amazon EBS local snapshots on Outposts</a> in the
-        /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+        /// <p>The ARN of the Outpost on which the snapshot is stored. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">Amazon EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
         pub fn outpost_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.outpost_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the Outpost on which the snapshot is stored. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">Amazon EBS local snapshots on Outposts</a> in the
-        /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+        /// <p>The ARN of the Outpost on which the snapshot is stored. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">Amazon EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
         pub fn set_outpost_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.outpost_arn = input;
             self
@@ -32408,18 +31794,12 @@ pub mod create_snapshot_output {
             self.tags = input;
             self
         }
-        /// <p>The storage tier in which the snapshot is stored. <code>standard</code> indicates
-        /// that the snapshot is stored in the standard snapshot storage tier and that it is ready
-        /// for use. <code>archive</code> indicates that the snapshot is currently archived and that
-        /// it must be restored before it can be used.</p>
+        /// <p>The storage tier in which the snapshot is stored. <code>standard</code> indicates that the snapshot is stored in the standard snapshot storage tier and that it is ready for use. <code>archive</code> indicates that the snapshot is currently archived and that it must be restored before it can be used.</p>
         pub fn storage_tier(mut self, input: crate::model::StorageTier) -> Self {
             self.storage_tier = Some(input);
             self
         }
-        /// <p>The storage tier in which the snapshot is stored. <code>standard</code> indicates
-        /// that the snapshot is stored in the standard snapshot storage tier and that it is ready
-        /// for use. <code>archive</code> indicates that the snapshot is currently archived and that
-        /// it must be restored before it can be used.</p>
+        /// <p>The storage tier in which the snapshot is stored. <code>standard</code> indicates that the snapshot is stored in the standard snapshot storage tier and that it is ready for use. <code>archive</code> indicates that the snapshot is currently archived and that it must be restored before it can be used.</p>
         pub fn set_storage_tier(
             mut self,
             input: std::option::Option<crate::model::StorageTier>,
@@ -32427,14 +31807,12 @@ pub mod create_snapshot_output {
             self.storage_tier = input;
             self
         }
-        /// <p>Only for archived snapshots that are temporarily restored. Indicates the date and
-        /// time when a temporarily restored snapshot will be automatically re-archived.</p>
+        /// <p>Only for archived snapshots that are temporarily restored. Indicates the date and time when a temporarily restored snapshot will be automatically re-archived.</p>
         pub fn restore_expiry_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.restore_expiry_time = Some(input);
             self
         }
-        /// <p>Only for archived snapshots that are temporarily restored. Indicates the date and
-        /// time when a temporarily restored snapshot will be automatically re-archived.</p>
+        /// <p>Only for archived snapshots that are temporarily restored. Indicates the date and time when a temporarily restored snapshot will be automatically re-archived.</p>
         pub fn set_restore_expiry_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -34383,8 +33761,7 @@ impl CreateFpgaImageOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFlowLogsOutput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The IDs of the flow logs.</p>
     pub flow_log_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -34392,8 +33769,7 @@ pub struct CreateFlowLogsOutput {
     pub unsuccessful: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,
 }
 impl CreateFlowLogsOutput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -34426,14 +33802,12 @@ pub mod create_flow_logs_output {
         pub(crate) unsuccessful: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -34499,11 +33873,9 @@ impl CreateFlowLogsOutput {
 pub struct CreateFleetOutput {
     /// <p>The ID of the EC2 Fleet.</p>
     pub fleet_id: std::option::Option<std::string::String>,
-    /// <p>Information about the instances that could not be launched by the fleet. Supported only for
-    /// fleets of type <code>instant</code>.</p>
+    /// <p>Information about the instances that could not be launched by the fleet. Supported only for fleets of type <code>instant</code>.</p>
     pub errors: std::option::Option<std::vec::Vec<crate::model::CreateFleetError>>,
-    /// <p>Information about the instances that were launched by the fleet. Supported only for
-    /// fleets of type <code>instant</code>.</p>
+    /// <p>Information about the instances that were launched by the fleet. Supported only for fleets of type <code>instant</code>.</p>
     pub instances: std::option::Option<std::vec::Vec<crate::model::CreateFleetInstance>>,
 }
 impl CreateFleetOutput {
@@ -34511,13 +33883,11 @@ impl CreateFleetOutput {
     pub fn fleet_id(&self) -> std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
-    /// <p>Information about the instances that could not be launched by the fleet. Supported only for
-    /// fleets of type <code>instant</code>.</p>
+    /// <p>Information about the instances that could not be launched by the fleet. Supported only for fleets of type <code>instant</code>.</p>
     pub fn errors(&self) -> std::option::Option<&[crate::model::CreateFleetError]> {
         self.errors.as_deref()
     }
-    /// <p>Information about the instances that were launched by the fleet. Supported only for
-    /// fleets of type <code>instant</code>.</p>
+    /// <p>Information about the instances that were launched by the fleet. Supported only for fleets of type <code>instant</code>.</p>
     pub fn instances(&self) -> std::option::Option<&[crate::model::CreateFleetInstance]> {
         self.instances.as_deref()
     }
@@ -34556,16 +33926,14 @@ pub mod create_fleet_output {
         ///
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
-        /// <p>Information about the instances that could not be launched by the fleet. Supported only for
-        /// fleets of type <code>instant</code>.</p>
+        /// <p>Information about the instances that could not be launched by the fleet. Supported only for fleets of type <code>instant</code>.</p>
         pub fn errors(mut self, input: crate::model::CreateFleetError) -> Self {
             let mut v = self.errors.unwrap_or_default();
             v.push(input);
             self.errors = Some(v);
             self
         }
-        /// <p>Information about the instances that could not be launched by the fleet. Supported only for
-        /// fleets of type <code>instant</code>.</p>
+        /// <p>Information about the instances that could not be launched by the fleet. Supported only for fleets of type <code>instant</code>.</p>
         pub fn set_errors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CreateFleetError>>,
@@ -34577,16 +33945,14 @@ pub mod create_fleet_output {
         ///
         /// To override the contents of this collection use [`set_instances`](Self::set_instances).
         ///
-        /// <p>Information about the instances that were launched by the fleet. Supported only for
-        /// fleets of type <code>instant</code>.</p>
+        /// <p>Information about the instances that were launched by the fleet. Supported only for fleets of type <code>instant</code>.</p>
         pub fn instances(mut self, input: crate::model::CreateFleetInstance) -> Self {
             let mut v = self.instances.unwrap_or_default();
             v.push(input);
             self.instances = Some(v);
             self
         }
-        /// <p>Information about the instances that were launched by the fleet. Supported only for
-        /// fleets of type <code>instant</code>.</p>
+        /// <p>Information about the instances that were launched by the fleet. Supported only for fleets of type <code>instant</code>.</p>
         pub fn set_instances(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CreateFleetInstance>>,
@@ -34615,15 +33981,13 @@ impl CreateFleetOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEgressOnlyInternetGatewayOutput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>Information about the egress-only internet gateway.</p>
     pub egress_only_internet_gateway: std::option::Option<crate::model::EgressOnlyInternetGateway>,
 }
 impl CreateEgressOnlyInternetGatewayOutput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -34656,14 +34020,12 @@ pub mod create_egress_only_internet_gateway_output {
             std::option::Option<crate::model::EgressOnlyInternetGateway>,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -35691,21 +35053,17 @@ impl CopyFpgaImageOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfirmProductInstanceOutput {
-    /// <p>The Amazon Web Services account ID of the instance owner. This is only present if the product code is
-    /// attached to the instance.</p>
+    /// <p>The Amazon Web Services account ID of the instance owner. This is only present if the product code is attached to the instance.</p>
     pub owner_id: std::option::Option<std::string::String>,
-    /// <p>The return value of the request. Returns <code>true</code> if the specified product
-    /// code is owned by the requester and associated with the specified instance.</p>
+    /// <p>The return value of the request. Returns <code>true</code> if the specified product code is owned by the requester and associated with the specified instance.</p>
     pub r#return: std::option::Option<bool>,
 }
 impl ConfirmProductInstanceOutput {
-    /// <p>The Amazon Web Services account ID of the instance owner. This is only present if the product code is
-    /// attached to the instance.</p>
+    /// <p>The Amazon Web Services account ID of the instance owner. This is only present if the product code is attached to the instance.</p>
     pub fn owner_id(&self) -> std::option::Option<&str> {
         self.owner_id.as_deref()
     }
-    /// <p>The return value of the request. Returns <code>true</code> if the specified product
-    /// code is owned by the requester and associated with the specified instance.</p>
+    /// <p>The return value of the request. Returns <code>true</code> if the specified product code is owned by the requester and associated with the specified instance.</p>
     pub fn r#return(&self) -> std::option::Option<bool> {
         self.r#return
     }
@@ -35728,26 +35086,22 @@ pub mod confirm_product_instance_output {
         pub(crate) r#return: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The Amazon Web Services account ID of the instance owner. This is only present if the product code is
-        /// attached to the instance.</p>
+        /// <p>The Amazon Web Services account ID of the instance owner. This is only present if the product code is attached to the instance.</p>
         pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_id = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID of the instance owner. This is only present if the product code is
-        /// attached to the instance.</p>
+        /// <p>The Amazon Web Services account ID of the instance owner. This is only present if the product code is attached to the instance.</p>
         pub fn set_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.owner_id = input;
             self
         }
-        /// <p>The return value of the request. Returns <code>true</code> if the specified product
-        /// code is owned by the requester and associated with the specified instance.</p>
+        /// <p>The return value of the request. Returns <code>true</code> if the specified product code is owned by the requester and associated with the specified instance.</p>
         pub fn r#return(mut self, input: bool) -> Self {
             self.r#return = Some(input);
             self
         }
-        /// <p>The return value of the request. Returns <code>true</code> if the specified product
-        /// code is owned by the requester and associated with the specified instance.</p>
+        /// <p>The return value of the request. Returns <code>true</code> if the specified product code is owned by the requester and associated with the specified instance.</p>
         pub fn set_return(mut self, input: std::option::Option<bool>) -> Self {
             self.r#return = input;
             self
@@ -37185,9 +36539,7 @@ impl AssociateVpcCidrBlockOutput {
 pub struct AssociateTrunkInterfaceOutput {
     /// <p>Information about the association between the trunk network interface and branch network interface.</p>
     pub interface_association: std::option::Option<crate::model::TrunkInterfaceAssociation>,
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
-    /// Idempotency</a>.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure Idempotency</a>.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
 impl AssociateTrunkInterfaceOutput {
@@ -37197,9 +36549,7 @@ impl AssociateTrunkInterfaceOutput {
     ) -> std::option::Option<&crate::model::TrunkInterfaceAssociation> {
         self.interface_association.as_ref()
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
-    /// Idempotency</a>.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure Idempotency</a>.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -37239,16 +36589,12 @@ pub mod associate_trunk_interface_output {
             self.interface_association = input;
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
-        /// Idempotency</a>.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure Idempotency</a>.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
-        /// Idempotency</a>.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure Idempotency</a>.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -37479,15 +36825,13 @@ impl AssociateSubnetCidrBlockOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateRouteTableOutput {
-    /// <p>The route table association ID. This ID is required for disassociating the route
-    /// table.</p>
+    /// <p>The route table association ID. This ID is required for disassociating the route table.</p>
     pub association_id: std::option::Option<std::string::String>,
     /// <p>The state of the association.</p>
     pub association_state: std::option::Option<crate::model::RouteTableAssociationState>,
 }
 impl AssociateRouteTableOutput {
-    /// <p>The route table association ID. This ID is required for disassociating the route
-    /// table.</p>
+    /// <p>The route table association ID. This ID is required for disassociating the route table.</p>
     pub fn association_id(&self) -> std::option::Option<&str> {
         self.association_id.as_deref()
     }
@@ -37516,14 +36860,12 @@ pub mod associate_route_table_output {
         pub(crate) association_state: std::option::Option<crate::model::RouteTableAssociationState>,
     }
     impl Builder {
-        /// <p>The route table association ID. This ID is required for disassociating the route
-        /// table.</p>
+        /// <p>The route table association ID. This ID is required for disassociating the route table.</p>
         pub fn association_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.association_id = Some(input.into());
             self
         }
-        /// <p>The route table association ID. This ID is required for disassociating the route
-        /// table.</p>
+        /// <p>The route table association ID. This ID is required for disassociating the route table.</p>
         pub fn set_association_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -37693,8 +37035,7 @@ impl AssociateIamInstanceProfileOutput {
 pub struct AssociateEnclaveCertificateIamRoleOutput {
     /// <p>The name of the Amazon S3 bucket to which the certificate was uploaded.</p>
     pub certificate_s3_bucket_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon S3 object key where the certificate, certificate chain, and encrypted private key bundle are stored. The
-    /// object key is formatted as follows:  <code>role_arn</code>/<code>certificate_arn</code>.</p>
+    /// <p>The Amazon S3 object key where the certificate, certificate chain, and encrypted private key bundle are stored. The object key is formatted as follows: <code>role_arn</code>/<code>certificate_arn</code>.</p>
     pub certificate_s3_object_key: std::option::Option<std::string::String>,
     /// <p>The ID of the KMS key used to encrypt the private key of the certificate.</p>
     pub encryption_kms_key_id: std::option::Option<std::string::String>,
@@ -37704,8 +37045,7 @@ impl AssociateEnclaveCertificateIamRoleOutput {
     pub fn certificate_s3_bucket_name(&self) -> std::option::Option<&str> {
         self.certificate_s3_bucket_name.as_deref()
     }
-    /// <p>The Amazon S3 object key where the certificate, certificate chain, and encrypted private key bundle are stored. The
-    /// object key is formatted as follows:  <code>role_arn</code>/<code>certificate_arn</code>.</p>
+    /// <p>The Amazon S3 object key where the certificate, certificate chain, and encrypted private key bundle are stored. The object key is formatted as follows: <code>role_arn</code>/<code>certificate_arn</code>.</p>
     pub fn certificate_s3_object_key(&self) -> std::option::Option<&str> {
         self.certificate_s3_object_key.as_deref()
     }
@@ -37750,14 +37090,12 @@ pub mod associate_enclave_certificate_iam_role_output {
             self.certificate_s3_bucket_name = input;
             self
         }
-        /// <p>The Amazon S3 object key where the certificate, certificate chain, and encrypted private key bundle are stored. The
-        /// object key is formatted as follows:  <code>role_arn</code>/<code>certificate_arn</code>.</p>
+        /// <p>The Amazon S3 object key where the certificate, certificate chain, and encrypted private key bundle are stored. The object key is formatted as follows: <code>role_arn</code>/<code>certificate_arn</code>.</p>
         pub fn certificate_s3_object_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_s3_object_key = Some(input.into());
             self
         }
-        /// <p>The Amazon S3 object key where the certificate, certificate chain, and encrypted private key bundle are stored. The
-        /// object key is formatted as follows:  <code>role_arn</code>/<code>certificate_arn</code>.</p>
+        /// <p>The Amazon S3 object key where the certificate, certificate chain, and encrypted private key bundle are stored. The object key is formatted as follows: <code>role_arn</code>/<code>certificate_arn</code>.</p>
         pub fn set_certificate_s3_object_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -38095,8 +37433,7 @@ impl AssignPrivateIpAddressesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssignIpv6AddressesOutput {
-    /// <p>The new IPv6 addresses assigned to the network interface. Existing IPv6 addresses
-    /// that were assigned to the network interface before the request are not included.</p>
+    /// <p>The new IPv6 addresses assigned to the network interface. Existing IPv6 addresses that were assigned to the network interface before the request are not included.</p>
     pub assigned_ipv6_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The IPv6 prefixes that are assigned to the network interface.</p>
     pub assigned_ipv6_prefixes: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -38104,8 +37441,7 @@ pub struct AssignIpv6AddressesOutput {
     pub network_interface_id: std::option::Option<std::string::String>,
 }
 impl AssignIpv6AddressesOutput {
-    /// <p>The new IPv6 addresses assigned to the network interface. Existing IPv6 addresses
-    /// that were assigned to the network interface before the request are not included.</p>
+    /// <p>The new IPv6 addresses assigned to the network interface. Existing IPv6 addresses that were assigned to the network interface before the request are not included.</p>
     pub fn assigned_ipv6_addresses(&self) -> std::option::Option<&[std::string::String]> {
         self.assigned_ipv6_addresses.as_deref()
     }
@@ -38142,16 +37478,14 @@ pub mod assign_ipv6_addresses_output {
         ///
         /// To override the contents of this collection use [`set_assigned_ipv6_addresses`](Self::set_assigned_ipv6_addresses).
         ///
-        /// <p>The new IPv6 addresses assigned to the network interface. Existing IPv6 addresses
-        /// that were assigned to the network interface before the request are not included.</p>
+        /// <p>The new IPv6 addresses assigned to the network interface. Existing IPv6 addresses that were assigned to the network interface before the request are not included.</p>
         pub fn assigned_ipv6_addresses(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.assigned_ipv6_addresses.unwrap_or_default();
             v.push(input.into());
             self.assigned_ipv6_addresses = Some(v);
             self
         }
-        /// <p>The new IPv6 addresses assigned to the network interface. Existing IPv6 addresses
-        /// that were assigned to the network interface before the request are not included.</p>
+        /// <p>The new IPv6 addresses assigned to the network interface. Existing IPv6 addresses that were assigned to the network interface before the request are not included.</p>
         pub fn set_assigned_ipv6_addresses(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -38333,13 +37667,11 @@ impl AllocateIpamPoolCidrOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AllocateHostsOutput {
-    /// <p>The ID of the allocated Dedicated Host. This is used to launch an instance onto a
-    /// specific host.</p>
+    /// <p>The ID of the allocated Dedicated Host. This is used to launch an instance onto a specific host.</p>
     pub host_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AllocateHostsOutput {
-    /// <p>The ID of the allocated Dedicated Host. This is used to launch an instance onto a
-    /// specific host.</p>
+    /// <p>The ID of the allocated Dedicated Host. This is used to launch an instance onto a specific host.</p>
     pub fn host_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.host_ids.as_deref()
     }
@@ -38364,16 +37696,14 @@ pub mod allocate_hosts_output {
         ///
         /// To override the contents of this collection use [`set_host_ids`](Self::set_host_ids).
         ///
-        /// <p>The ID of the allocated Dedicated Host. This is used to launch an instance onto a
-        /// specific host.</p>
+        /// <p>The ID of the allocated Dedicated Host. This is used to launch an instance onto a specific host.</p>
         pub fn host_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.host_ids.unwrap_or_default();
             v.push(input.into());
             self.host_ids = Some(v);
             self
         }
-        /// <p>The ID of the allocated Dedicated Host. This is used to launch an instance onto a
-        /// specific host.</p>
+        /// <p>The ID of the allocated Dedicated Host. This is used to launch an instance onto a specific host.</p>
         pub fn set_host_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -38406,18 +37736,15 @@ pub struct AllocateAddressOutput {
     pub allocation_id: std::option::Option<std::string::String>,
     /// <p>The ID of an address pool.</p>
     pub public_ipv4_pool: std::option::Option<std::string::String>,
-    /// <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which Amazon Web Services advertises
-    /// IP addresses.</p>
+    /// <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which Amazon Web Services advertises IP addresses.</p>
     pub network_border_group: std::option::Option<std::string::String>,
-    /// <p>Indicates whether the Elastic IP address is for use with instances in a VPC (<code>vpc</code>) or
-    /// instances in EC2-Classic (<code>standard</code>).</p>
+    /// <p>Indicates whether the Elastic IP address is for use with instances in a VPC (<code>vpc</code>) or instances in EC2-Classic (<code>standard</code>).</p>
     pub domain: std::option::Option<crate::model::DomainType>,
     /// <p>The customer-owned IP address.</p>
     pub customer_owned_ip: std::option::Option<std::string::String>,
     /// <p>The ID of the customer-owned address pool.</p>
     pub customer_owned_ipv4_pool: std::option::Option<std::string::String>,
-    /// <p>The carrier IP address. This option is only available for network interfaces which  reside
-    /// in a subnet in a Wavelength Zone (for example an EC2 instance). </p>
+    /// <p>The carrier IP address. This option is only available for network interfaces which reside in a subnet in a Wavelength Zone (for example an EC2 instance). </p>
     pub carrier_ip: std::option::Option<std::string::String>,
 }
 impl AllocateAddressOutput {
@@ -38433,13 +37760,11 @@ impl AllocateAddressOutput {
     pub fn public_ipv4_pool(&self) -> std::option::Option<&str> {
         self.public_ipv4_pool.as_deref()
     }
-    /// <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which Amazon Web Services advertises
-    /// IP addresses.</p>
+    /// <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which Amazon Web Services advertises IP addresses.</p>
     pub fn network_border_group(&self) -> std::option::Option<&str> {
         self.network_border_group.as_deref()
     }
-    /// <p>Indicates whether the Elastic IP address is for use with instances in a VPC (<code>vpc</code>) or
-    /// instances in EC2-Classic (<code>standard</code>).</p>
+    /// <p>Indicates whether the Elastic IP address is for use with instances in a VPC (<code>vpc</code>) or instances in EC2-Classic (<code>standard</code>).</p>
     pub fn domain(&self) -> std::option::Option<&crate::model::DomainType> {
         self.domain.as_ref()
     }
@@ -38451,8 +37776,7 @@ impl AllocateAddressOutput {
     pub fn customer_owned_ipv4_pool(&self) -> std::option::Option<&str> {
         self.customer_owned_ipv4_pool.as_deref()
     }
-    /// <p>The carrier IP address. This option is only available for network interfaces which  reside
-    /// in a subnet in a Wavelength Zone (for example an EC2 instance). </p>
+    /// <p>The carrier IP address. This option is only available for network interfaces which reside in a subnet in a Wavelength Zone (for example an EC2 instance). </p>
     pub fn carrier_ip(&self) -> std::option::Option<&str> {
         self.carrier_ip.as_deref()
     }
@@ -38523,14 +37847,12 @@ pub mod allocate_address_output {
             self.public_ipv4_pool = input;
             self
         }
-        /// <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which Amazon Web Services advertises
-        /// IP addresses.</p>
+        /// <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which Amazon Web Services advertises IP addresses.</p>
         pub fn network_border_group(mut self, input: impl Into<std::string::String>) -> Self {
             self.network_border_group = Some(input.into());
             self
         }
-        /// <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which Amazon Web Services advertises
-        /// IP addresses.</p>
+        /// <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which Amazon Web Services advertises IP addresses.</p>
         pub fn set_network_border_group(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -38538,14 +37860,12 @@ pub mod allocate_address_output {
             self.network_border_group = input;
             self
         }
-        /// <p>Indicates whether the Elastic IP address is for use with instances in a VPC (<code>vpc</code>) or
-        /// instances in EC2-Classic (<code>standard</code>).</p>
+        /// <p>Indicates whether the Elastic IP address is for use with instances in a VPC (<code>vpc</code>) or instances in EC2-Classic (<code>standard</code>).</p>
         pub fn domain(mut self, input: crate::model::DomainType) -> Self {
             self.domain = Some(input);
             self
         }
-        /// <p>Indicates whether the Elastic IP address is for use with instances in a VPC (<code>vpc</code>) or
-        /// instances in EC2-Classic (<code>standard</code>).</p>
+        /// <p>Indicates whether the Elastic IP address is for use with instances in a VPC (<code>vpc</code>) or instances in EC2-Classic (<code>standard</code>).</p>
         pub fn set_domain(mut self, input: std::option::Option<crate::model::DomainType>) -> Self {
             self.domain = input;
             self
@@ -38576,14 +37896,12 @@ pub mod allocate_address_output {
             self.customer_owned_ipv4_pool = input;
             self
         }
-        /// <p>The carrier IP address. This option is only available for network interfaces which  reside
-        /// in a subnet in a Wavelength Zone (for example an EC2 instance). </p>
+        /// <p>The carrier IP address. This option is only available for network interfaces which reside in a subnet in a Wavelength Zone (for example an EC2 instance). </p>
         pub fn carrier_ip(mut self, input: impl Into<std::string::String>) -> Self {
             self.carrier_ip = Some(input.into());
             self
         }
-        /// <p>The carrier IP address. This option is only available for network interfaces which  reside
-        /// in a subnet in a Wavelength Zone (for example an EC2 instance). </p>
+        /// <p>The carrier IP address. This option is only available for network interfaces which reside in a subnet in a Wavelength Zone (for example an EC2 instance). </p>
         pub fn set_carrier_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.carrier_ip = input;
             self
@@ -38730,13 +38048,11 @@ impl AcceptVpcPeeringConnectionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcceptVpcEndpointConnectionsOutput {
-    /// <p>Information about the interface endpoints that were not accepted, if
-    /// applicable.</p>
+    /// <p>Information about the interface endpoints that were not accepted, if applicable.</p>
     pub unsuccessful: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,
 }
 impl AcceptVpcEndpointConnectionsOutput {
-    /// <p>Information about the interface endpoints that were not accepted, if
-    /// applicable.</p>
+    /// <p>Information about the interface endpoints that were not accepted, if applicable.</p>
     pub fn unsuccessful(&self) -> std::option::Option<&[crate::model::UnsuccessfulItem]> {
         self.unsuccessful.as_deref()
     }
@@ -38761,16 +38077,14 @@ pub mod accept_vpc_endpoint_connections_output {
         ///
         /// To override the contents of this collection use [`set_unsuccessful`](Self::set_unsuccessful).
         ///
-        /// <p>Information about the interface endpoints that were not accepted, if
-        /// applicable.</p>
+        /// <p>Information about the interface endpoints that were not accepted, if applicable.</p>
         pub fn unsuccessful(mut self, input: crate::model::UnsuccessfulItem) -> Self {
             let mut v = self.unsuccessful.unwrap_or_default();
             v.push(input);
             self.unsuccessful = Some(v);
             self
         }
-        /// <p>Information about the interface endpoints that were not accepted, if
-        /// applicable.</p>
+        /// <p>Information about the interface endpoints that were not accepted, if applicable.</p>
         pub fn set_unsuccessful(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,

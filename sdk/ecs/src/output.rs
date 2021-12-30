@@ -762,15 +762,13 @@ impl StopTaskOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartTaskOutput {
-    /// <p>A full description of the tasks that were started. Each task that was successfully
-    /// placed on your container instances is described.</p>
+    /// <p>A full description of the tasks that were started. Each task that was successfully placed on your container instances is described.</p>
     pub tasks: std::option::Option<std::vec::Vec<crate::model::Task>>,
     /// <p>Any failures associated with the call.</p>
     pub failures: std::option::Option<std::vec::Vec<crate::model::Failure>>,
 }
 impl StartTaskOutput {
-    /// <p>A full description of the tasks that were started. Each task that was successfully
-    /// placed on your container instances is described.</p>
+    /// <p>A full description of the tasks that were started. Each task that was successfully placed on your container instances is described.</p>
     pub fn tasks(&self) -> std::option::Option<&[crate::model::Task]> {
         self.tasks.as_deref()
     }
@@ -801,16 +799,14 @@ pub mod start_task_output {
         ///
         /// To override the contents of this collection use [`set_tasks`](Self::set_tasks).
         ///
-        /// <p>A full description of the tasks that were started. Each task that was successfully
-        /// placed on your container instances is described.</p>
+        /// <p>A full description of the tasks that were started. Each task that was successfully placed on your container instances is described.</p>
         pub fn tasks(mut self, input: crate::model::Task) -> Self {
             let mut v = self.tasks.unwrap_or_default();
             v.push(input);
             self.tasks = Some(v);
             self
         }
-        /// <p>A full description of the tasks that were started. Each task that was successfully
-        /// placed on your container instances is described.</p>
+        /// <p>A full description of the tasks that were started. Each task that was successfully placed on your container instances is described.</p>
         pub fn set_tasks(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Task>>,
@@ -857,15 +853,13 @@ impl StartTaskOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RunTaskOutput {
-    /// <p>A full description of the tasks that were run. The tasks that were successfully placed
-    /// on your cluster are described here.</p>
+    /// <p>A full description of the tasks that were run. The tasks that were successfully placed on your cluster are described here.</p>
     pub tasks: std::option::Option<std::vec::Vec<crate::model::Task>>,
     /// <p>Any failures associated with the call.</p>
     pub failures: std::option::Option<std::vec::Vec<crate::model::Failure>>,
 }
 impl RunTaskOutput {
-    /// <p>A full description of the tasks that were run. The tasks that were successfully placed
-    /// on your cluster are described here.</p>
+    /// <p>A full description of the tasks that were run. The tasks that were successfully placed on your cluster are described here.</p>
     pub fn tasks(&self) -> std::option::Option<&[crate::model::Task]> {
         self.tasks.as_deref()
     }
@@ -896,16 +890,14 @@ pub mod run_task_output {
         ///
         /// To override the contents of this collection use [`set_tasks`](Self::set_tasks).
         ///
-        /// <p>A full description of the tasks that were run. The tasks that were successfully placed
-        /// on your cluster are described here.</p>
+        /// <p>A full description of the tasks that were run. The tasks that were successfully placed on your cluster are described here.</p>
         pub fn tasks(mut self, input: crate::model::Task) -> Self {
             let mut v = self.tasks.unwrap_or_default();
             v.push(input);
             self.tasks = Some(v);
             self
         }
-        /// <p>A full description of the tasks that were run. The tasks that were successfully placed
-        /// on your cluster are described here.</p>
+        /// <p>A full description of the tasks that were run. The tasks that were successfully placed on your cluster are described here.</p>
         pub fn set_tasks(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Task>>,
@@ -1321,11 +1313,7 @@ impl PutAccountSettingOutput {
 pub struct ListTasksOutput {
     /// <p>The list of task ARN entries for the <code>ListTasks</code> request.</p>
     pub task_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The <code>nextToken</code> value to include in a future <code>ListTasks</code>
-    /// request. When the results of a <code>ListTasks</code> request exceed
-    /// <code>maxResults</code>, this value can be used to retrieve the next page of
-    /// results. This value is <code>null</code> when there are no more results to
-    /// return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListTasks</code> request. When the results of a <code>ListTasks</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTasksOutput {
@@ -1333,11 +1321,7 @@ impl ListTasksOutput {
     pub fn task_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.task_arns.as_deref()
     }
-    /// <p>The <code>nextToken</code> value to include in a future <code>ListTasks</code>
-    /// request. When the results of a <code>ListTasks</code> request exceed
-    /// <code>maxResults</code>, this value can be used to retrieve the next page of
-    /// results. This value is <code>null</code> when there are no more results to
-    /// return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListTasks</code> request. When the results of a <code>ListTasks</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1379,20 +1363,12 @@ pub mod list_tasks_output {
             self.task_arns = input;
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future <code>ListTasks</code>
-        /// request. When the results of a <code>ListTasks</code> request exceed
-        /// <code>maxResults</code>, this value can be used to retrieve the next page of
-        /// results. This value is <code>null</code> when there are no more results to
-        /// return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>ListTasks</code> request. When the results of a <code>ListTasks</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future <code>ListTasks</code>
-        /// request. When the results of a <code>ListTasks</code> request exceed
-        /// <code>maxResults</code>, this value can be used to retrieve the next page of
-        /// results. This value is <code>null</code> when there are no more results to
-        /// return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>ListTasks</code> request. When the results of a <code>ListTasks</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1417,27 +1393,17 @@ impl ListTasksOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTaskDefinitionsOutput {
-    /// <p>The list of task definition Amazon Resource Name (ARN) entries for the <code>ListTaskDefinitions</code>
-    /// request.</p>
+    /// <p>The list of task definition Amazon Resource Name (ARN) entries for the <code>ListTaskDefinitions</code> request.</p>
     pub task_definition_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The <code>nextToken</code> value to include in a future
-    /// <code>ListTaskDefinitions</code> request. When the results of a
-    /// <code>ListTaskDefinitions</code> request exceed <code>maxResults</code>, this value
-    /// can be used to retrieve the next page of results. This value is <code>null</code> when
-    /// there are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListTaskDefinitions</code> request. When the results of a <code>ListTaskDefinitions</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTaskDefinitionsOutput {
-    /// <p>The list of task definition Amazon Resource Name (ARN) entries for the <code>ListTaskDefinitions</code>
-    /// request.</p>
+    /// <p>The list of task definition Amazon Resource Name (ARN) entries for the <code>ListTaskDefinitions</code> request.</p>
     pub fn task_definition_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.task_definition_arns.as_deref()
     }
-    /// <p>The <code>nextToken</code> value to include in a future
-    /// <code>ListTaskDefinitions</code> request. When the results of a
-    /// <code>ListTaskDefinitions</code> request exceed <code>maxResults</code>, this value
-    /// can be used to retrieve the next page of results. This value is <code>null</code> when
-    /// there are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListTaskDefinitions</code> request. When the results of a <code>ListTaskDefinitions</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1464,16 +1430,14 @@ pub mod list_task_definitions_output {
         ///
         /// To override the contents of this collection use [`set_task_definition_arns`](Self::set_task_definition_arns).
         ///
-        /// <p>The list of task definition Amazon Resource Name (ARN) entries for the <code>ListTaskDefinitions</code>
-        /// request.</p>
+        /// <p>The list of task definition Amazon Resource Name (ARN) entries for the <code>ListTaskDefinitions</code> request.</p>
         pub fn task_definition_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.task_definition_arns.unwrap_or_default();
             v.push(input.into());
             self.task_definition_arns = Some(v);
             self
         }
-        /// <p>The list of task definition Amazon Resource Name (ARN) entries for the <code>ListTaskDefinitions</code>
-        /// request.</p>
+        /// <p>The list of task definition Amazon Resource Name (ARN) entries for the <code>ListTaskDefinitions</code> request.</p>
         pub fn set_task_definition_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1481,20 +1445,12 @@ pub mod list_task_definitions_output {
             self.task_definition_arns = input;
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future
-        /// <code>ListTaskDefinitions</code> request. When the results of a
-        /// <code>ListTaskDefinitions</code> request exceed <code>maxResults</code>, this value
-        /// can be used to retrieve the next page of results. This value is <code>null</code> when
-        /// there are no more results to return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>ListTaskDefinitions</code> request. When the results of a <code>ListTaskDefinitions</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future
-        /// <code>ListTaskDefinitions</code> request. When the results of a
-        /// <code>ListTaskDefinitions</code> request exceed <code>maxResults</code>, this value
-        /// can be used to retrieve the next page of results. This value is <code>null</code> when
-        /// there are no more results to return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>ListTaskDefinitions</code> request. When the results of a <code>ListTaskDefinitions</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1519,27 +1475,17 @@ impl ListTaskDefinitionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTaskDefinitionFamiliesOutput {
-    /// <p>The list of task definition family names that match the
-    /// <code>ListTaskDefinitionFamilies</code> request.</p>
+    /// <p>The list of task definition family names that match the <code>ListTaskDefinitionFamilies</code> request.</p>
     pub families: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The <code>nextToken</code> value to include in a future
-    /// <code>ListTaskDefinitionFamilies</code> request. When the results of a
-    /// <code>ListTaskDefinitionFamilies</code> request exceed <code>maxResults</code>, this
-    /// value can be used to retrieve the next page of results. This value is <code>null</code>
-    /// when there are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListTaskDefinitionFamilies</code> request. When the results of a <code>ListTaskDefinitionFamilies</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTaskDefinitionFamiliesOutput {
-    /// <p>The list of task definition family names that match the
-    /// <code>ListTaskDefinitionFamilies</code> request.</p>
+    /// <p>The list of task definition family names that match the <code>ListTaskDefinitionFamilies</code> request.</p>
     pub fn families(&self) -> std::option::Option<&[std::string::String]> {
         self.families.as_deref()
     }
-    /// <p>The <code>nextToken</code> value to include in a future
-    /// <code>ListTaskDefinitionFamilies</code> request. When the results of a
-    /// <code>ListTaskDefinitionFamilies</code> request exceed <code>maxResults</code>, this
-    /// value can be used to retrieve the next page of results. This value is <code>null</code>
-    /// when there are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListTaskDefinitionFamilies</code> request. When the results of a <code>ListTaskDefinitionFamilies</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1566,16 +1512,14 @@ pub mod list_task_definition_families_output {
         ///
         /// To override the contents of this collection use [`set_families`](Self::set_families).
         ///
-        /// <p>The list of task definition family names that match the
-        /// <code>ListTaskDefinitionFamilies</code> request.</p>
+        /// <p>The list of task definition family names that match the <code>ListTaskDefinitionFamilies</code> request.</p>
         pub fn families(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.families.unwrap_or_default();
             v.push(input.into());
             self.families = Some(v);
             self
         }
-        /// <p>The list of task definition family names that match the
-        /// <code>ListTaskDefinitionFamilies</code> request.</p>
+        /// <p>The list of task definition family names that match the <code>ListTaskDefinitionFamilies</code> request.</p>
         pub fn set_families(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1583,20 +1527,12 @@ pub mod list_task_definition_families_output {
             self.families = input;
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future
-        /// <code>ListTaskDefinitionFamilies</code> request. When the results of a
-        /// <code>ListTaskDefinitionFamilies</code> request exceed <code>maxResults</code>, this
-        /// value can be used to retrieve the next page of results. This value is <code>null</code>
-        /// when there are no more results to return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>ListTaskDefinitionFamilies</code> request. When the results of a <code>ListTaskDefinitionFamilies</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future
-        /// <code>ListTaskDefinitionFamilies</code> request. When the results of a
-        /// <code>ListTaskDefinitionFamilies</code> request exceed <code>maxResults</code>, this
-        /// value can be used to retrieve the next page of results. This value is <code>null</code>
-        /// when there are no more results to return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>ListTaskDefinitionFamilies</code> request. When the results of a <code>ListTaskDefinitionFamilies</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1682,27 +1618,17 @@ impl ListTagsForResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServicesOutput {
-    /// <p>The list of full ARN entries for each service that's associated with the specified
-    /// cluster.</p>
+    /// <p>The list of full ARN entries for each service that's associated with the specified cluster.</p>
     pub service_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The <code>nextToken</code> value to include in a future <code>ListServices</code>
-    /// request. When the results of a <code>ListServices</code> request exceed
-    /// <code>maxResults</code>, this value can be used to retrieve the next page of
-    /// results. This value is <code>null</code> when there are no more results to
-    /// return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListServices</code> request. When the results of a <code>ListServices</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListServicesOutput {
-    /// <p>The list of full ARN entries for each service that's associated with the specified
-    /// cluster.</p>
+    /// <p>The list of full ARN entries for each service that's associated with the specified cluster.</p>
     pub fn service_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.service_arns.as_deref()
     }
-    /// <p>The <code>nextToken</code> value to include in a future <code>ListServices</code>
-    /// request. When the results of a <code>ListServices</code> request exceed
-    /// <code>maxResults</code>, this value can be used to retrieve the next page of
-    /// results. This value is <code>null</code> when there are no more results to
-    /// return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListServices</code> request. When the results of a <code>ListServices</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1729,16 +1655,14 @@ pub mod list_services_output {
         ///
         /// To override the contents of this collection use [`set_service_arns`](Self::set_service_arns).
         ///
-        /// <p>The list of full ARN entries for each service that's associated with the specified
-        /// cluster.</p>
+        /// <p>The list of full ARN entries for each service that's associated with the specified cluster.</p>
         pub fn service_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.service_arns.unwrap_or_default();
             v.push(input.into());
             self.service_arns = Some(v);
             self
         }
-        /// <p>The list of full ARN entries for each service that's associated with the specified
-        /// cluster.</p>
+        /// <p>The list of full ARN entries for each service that's associated with the specified cluster.</p>
         pub fn set_service_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1746,20 +1670,12 @@ pub mod list_services_output {
             self.service_arns = input;
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future <code>ListServices</code>
-        /// request. When the results of a <code>ListServices</code> request exceed
-        /// <code>maxResults</code>, this value can be used to retrieve the next page of
-        /// results. This value is <code>null</code> when there are no more results to
-        /// return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>ListServices</code> request. When the results of a <code>ListServices</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future <code>ListServices</code>
-        /// request. When the results of a <code>ListServices</code> request exceed
-        /// <code>maxResults</code>, this value can be used to retrieve the next page of
-        /// results. This value is <code>null</code> when there are no more results to
-        /// return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>ListServices</code> request. When the results of a <code>ListServices</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1784,27 +1700,17 @@ impl ListServicesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListContainerInstancesOutput {
-    /// <p>The list of container instances with full ARN entries for each container instance
-    /// associated with the specified cluster.</p>
+    /// <p>The list of container instances with full ARN entries for each container instance associated with the specified cluster.</p>
     pub container_instance_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The <code>nextToken</code> value to include in a future
-    /// <code>ListContainerInstances</code> request. When the results of a
-    /// <code>ListContainerInstances</code> request exceed <code>maxResults</code>, this
-    /// value can be used to retrieve the next page of results. This value is <code>null</code>
-    /// when there are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListContainerInstances</code> request. When the results of a <code>ListContainerInstances</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListContainerInstancesOutput {
-    /// <p>The list of container instances with full ARN entries for each container instance
-    /// associated with the specified cluster.</p>
+    /// <p>The list of container instances with full ARN entries for each container instance associated with the specified cluster.</p>
     pub fn container_instance_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.container_instance_arns.as_deref()
     }
-    /// <p>The <code>nextToken</code> value to include in a future
-    /// <code>ListContainerInstances</code> request. When the results of a
-    /// <code>ListContainerInstances</code> request exceed <code>maxResults</code>, this
-    /// value can be used to retrieve the next page of results. This value is <code>null</code>
-    /// when there are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListContainerInstances</code> request. When the results of a <code>ListContainerInstances</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1831,16 +1737,14 @@ pub mod list_container_instances_output {
         ///
         /// To override the contents of this collection use [`set_container_instance_arns`](Self::set_container_instance_arns).
         ///
-        /// <p>The list of container instances with full ARN entries for each container instance
-        /// associated with the specified cluster.</p>
+        /// <p>The list of container instances with full ARN entries for each container instance associated with the specified cluster.</p>
         pub fn container_instance_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.container_instance_arns.unwrap_or_default();
             v.push(input.into());
             self.container_instance_arns = Some(v);
             self
         }
-        /// <p>The list of container instances with full ARN entries for each container instance
-        /// associated with the specified cluster.</p>
+        /// <p>The list of container instances with full ARN entries for each container instance associated with the specified cluster.</p>
         pub fn set_container_instance_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1848,20 +1752,12 @@ pub mod list_container_instances_output {
             self.container_instance_arns = input;
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future
-        /// <code>ListContainerInstances</code> request. When the results of a
-        /// <code>ListContainerInstances</code> request exceed <code>maxResults</code>, this
-        /// value can be used to retrieve the next page of results. This value is <code>null</code>
-        /// when there are no more results to return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>ListContainerInstances</code> request. When the results of a <code>ListContainerInstances</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future
-        /// <code>ListContainerInstances</code> request. When the results of a
-        /// <code>ListContainerInstances</code> request exceed <code>maxResults</code>, this
-        /// value can be used to retrieve the next page of results. This value is <code>null</code>
-        /// when there are no more results to return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>ListContainerInstances</code> request. When the results of a <code>ListContainerInstances</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1886,27 +1782,17 @@ impl ListContainerInstancesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListClustersOutput {
-    /// <p>The list of full Amazon Resource Name (ARN) entries for each cluster that's associated with your
-    /// account.</p>
+    /// <p>The list of full Amazon Resource Name (ARN) entries for each cluster that's associated with your account.</p>
     pub cluster_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The <code>nextToken</code> value to include in a future <code>ListClusters</code>
-    /// request. When the results of a <code>ListClusters</code> request exceed
-    /// <code>maxResults</code>, this value can be used to retrieve the next page of
-    /// results. This value is <code>null</code> when there are no more results to
-    /// return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListClusters</code> request. When the results of a <code>ListClusters</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListClustersOutput {
-    /// <p>The list of full Amazon Resource Name (ARN) entries for each cluster that's associated with your
-    /// account.</p>
+    /// <p>The list of full Amazon Resource Name (ARN) entries for each cluster that's associated with your account.</p>
     pub fn cluster_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.cluster_arns.as_deref()
     }
-    /// <p>The <code>nextToken</code> value to include in a future <code>ListClusters</code>
-    /// request. When the results of a <code>ListClusters</code> request exceed
-    /// <code>maxResults</code>, this value can be used to retrieve the next page of
-    /// results. This value is <code>null</code> when there are no more results to
-    /// return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListClusters</code> request. When the results of a <code>ListClusters</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1933,16 +1819,14 @@ pub mod list_clusters_output {
         ///
         /// To override the contents of this collection use [`set_cluster_arns`](Self::set_cluster_arns).
         ///
-        /// <p>The list of full Amazon Resource Name (ARN) entries for each cluster that's associated with your
-        /// account.</p>
+        /// <p>The list of full Amazon Resource Name (ARN) entries for each cluster that's associated with your account.</p>
         pub fn cluster_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.cluster_arns.unwrap_or_default();
             v.push(input.into());
             self.cluster_arns = Some(v);
             self
         }
-        /// <p>The list of full Amazon Resource Name (ARN) entries for each cluster that's associated with your
-        /// account.</p>
+        /// <p>The list of full Amazon Resource Name (ARN) entries for each cluster that's associated with your account.</p>
         pub fn set_cluster_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1950,20 +1834,12 @@ pub mod list_clusters_output {
             self.cluster_arns = input;
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future <code>ListClusters</code>
-        /// request. When the results of a <code>ListClusters</code> request exceed
-        /// <code>maxResults</code>, this value can be used to retrieve the next page of
-        /// results. This value is <code>null</code> when there are no more results to
-        /// return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>ListClusters</code> request. When the results of a <code>ListClusters</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future <code>ListClusters</code>
-        /// request. When the results of a <code>ListClusters</code> request exceed
-        /// <code>maxResults</code>, this value can be used to retrieve the next page of
-        /// results. This value is <code>null</code> when there are no more results to
-        /// return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>ListClusters</code> request. When the results of a <code>ListClusters</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1990,11 +1866,7 @@ impl ListClustersOutput {
 pub struct ListAttributesOutput {
     /// <p>A list of attribute objects that meet the criteria of the request.</p>
     pub attributes: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
-    /// <p>The <code>nextToken</code> value to include in a future <code>ListAttributes</code>
-    /// request. When the results of a <code>ListAttributes</code> request exceed
-    /// <code>maxResults</code>, this value can be used to retrieve the next page of
-    /// results. This value is <code>null</code> when there are no more results to
-    /// return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListAttributes</code> request. When the results of a <code>ListAttributes</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAttributesOutput {
@@ -2002,11 +1874,7 @@ impl ListAttributesOutput {
     pub fn attributes(&self) -> std::option::Option<&[crate::model::Attribute]> {
         self.attributes.as_deref()
     }
-    /// <p>The <code>nextToken</code> value to include in a future <code>ListAttributes</code>
-    /// request. When the results of a <code>ListAttributes</code> request exceed
-    /// <code>maxResults</code>, this value can be used to retrieve the next page of
-    /// results. This value is <code>null</code> when there are no more results to
-    /// return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListAttributes</code> request. When the results of a <code>ListAttributes</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2048,20 +1916,12 @@ pub mod list_attributes_output {
             self.attributes = input;
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future <code>ListAttributes</code>
-        /// request. When the results of a <code>ListAttributes</code> request exceed
-        /// <code>maxResults</code>, this value can be used to retrieve the next page of
-        /// results. This value is <code>null</code> when there are no more results to
-        /// return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>ListAttributes</code> request. When the results of a <code>ListAttributes</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future <code>ListAttributes</code>
-        /// request. When the results of a <code>ListAttributes</code> request exceed
-        /// <code>maxResults</code>, this value can be used to retrieve the next page of
-        /// results. This value is <code>null</code> when there are no more results to
-        /// return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>ListAttributes</code> request. When the results of a <code>ListAttributes</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2088,11 +1948,7 @@ impl ListAttributesOutput {
 pub struct ListAccountSettingsOutput {
     /// <p>The account settings for the resource.</p>
     pub settings: std::option::Option<std::vec::Vec<crate::model::Setting>>,
-    /// <p>The <code>nextToken</code> value to include in a future
-    /// <code>ListAccountSettings</code> request. When the results of a
-    /// <code>ListAccountSettings</code> request exceed <code>maxResults</code>, this value
-    /// can be used to retrieve the next page of results. This value is <code>null</code> when
-    /// there are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListAccountSettings</code> request. When the results of a <code>ListAccountSettings</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAccountSettingsOutput {
@@ -2100,11 +1956,7 @@ impl ListAccountSettingsOutput {
     pub fn settings(&self) -> std::option::Option<&[crate::model::Setting]> {
         self.settings.as_deref()
     }
-    /// <p>The <code>nextToken</code> value to include in a future
-    /// <code>ListAccountSettings</code> request. When the results of a
-    /// <code>ListAccountSettings</code> request exceed <code>maxResults</code>, this value
-    /// can be used to retrieve the next page of results. This value is <code>null</code> when
-    /// there are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>ListAccountSettings</code> request. When the results of a <code>ListAccountSettings</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2146,20 +1998,12 @@ pub mod list_account_settings_output {
             self.settings = input;
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future
-        /// <code>ListAccountSettings</code> request. When the results of a
-        /// <code>ListAccountSettings</code> request exceed <code>maxResults</code>, this value
-        /// can be used to retrieve the next page of results. This value is <code>null</code> when
-        /// there are no more results to return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>ListAccountSettings</code> request. When the results of a <code>ListAccountSettings</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future
-        /// <code>ListAccountSettings</code> request. When the results of a
-        /// <code>ListAccountSettings</code> request exceed <code>maxResults</code>, this value
-        /// can be used to retrieve the next page of results. This value is <code>null</code> when
-        /// there are no more results to return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>ListAccountSettings</code> request. When the results of a <code>ListAccountSettings</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2190,12 +2034,9 @@ pub struct ExecuteCommandOutput {
     pub container_arn: std::option::Option<std::string::String>,
     /// <p>The name of the container.</p>
     pub container_name: std::option::Option<std::string::String>,
-    /// <p>Determines whether the execute command session is running in interactive mode. Amazon ECS
-    /// only supports initiating interactive sessions, so you must specify <code>true</code> for
-    /// this value.</p>
+    /// <p>Determines whether the execute command session is running in interactive mode. Amazon ECS only supports initiating interactive sessions, so you must specify <code>true</code> for this value.</p>
     pub interactive: bool,
-    /// <p>The details of the SSM session that was created for this instance of
-    /// execute-command.</p>
+    /// <p>The details of the SSM session that was created for this instance of execute-command.</p>
     pub session: std::option::Option<crate::model::Session>,
     /// <p>The Amazon Resource Name (ARN) of the task.</p>
     pub task_arn: std::option::Option<std::string::String>,
@@ -2213,14 +2054,11 @@ impl ExecuteCommandOutput {
     pub fn container_name(&self) -> std::option::Option<&str> {
         self.container_name.as_deref()
     }
-    /// <p>Determines whether the execute command session is running in interactive mode. Amazon ECS
-    /// only supports initiating interactive sessions, so you must specify <code>true</code> for
-    /// this value.</p>
+    /// <p>Determines whether the execute command session is running in interactive mode. Amazon ECS only supports initiating interactive sessions, so you must specify <code>true</code> for this value.</p>
     pub fn interactive(&self) -> bool {
         self.interactive
     }
-    /// <p>The details of the SSM session that was created for this instance of
-    /// execute-command.</p>
+    /// <p>The details of the SSM session that was created for this instance of execute-command.</p>
     pub fn session(&self) -> std::option::Option<&crate::model::Session> {
         self.session.as_ref()
     }
@@ -2291,28 +2129,22 @@ pub mod execute_command_output {
             self.container_name = input;
             self
         }
-        /// <p>Determines whether the execute command session is running in interactive mode. Amazon ECS
-        /// only supports initiating interactive sessions, so you must specify <code>true</code> for
-        /// this value.</p>
+        /// <p>Determines whether the execute command session is running in interactive mode. Amazon ECS only supports initiating interactive sessions, so you must specify <code>true</code> for this value.</p>
         pub fn interactive(mut self, input: bool) -> Self {
             self.interactive = Some(input);
             self
         }
-        /// <p>Determines whether the execute command session is running in interactive mode. Amazon ECS
-        /// only supports initiating interactive sessions, so you must specify <code>true</code> for
-        /// this value.</p>
+        /// <p>Determines whether the execute command session is running in interactive mode. Amazon ECS only supports initiating interactive sessions, so you must specify <code>true</code> for this value.</p>
         pub fn set_interactive(mut self, input: std::option::Option<bool>) -> Self {
             self.interactive = input;
             self
         }
-        /// <p>The details of the SSM session that was created for this instance of
-        /// execute-command.</p>
+        /// <p>The details of the SSM session that was created for this instance of execute-command.</p>
         pub fn session(mut self, input: crate::model::Session) -> Self {
             self.session = Some(input);
             self
         }
-        /// <p>The details of the SSM session that was created for this instance of
-        /// execute-command.</p>
+        /// <p>The details of the SSM session that was created for this instance of execute-command.</p>
         pub fn set_session(mut self, input: std::option::Option<crate::model::Session>) -> Self {
             self.session = input;
             self
@@ -2611,38 +2443,16 @@ impl DescribeTasksOutput {
 pub struct DescribeTaskDefinitionOutput {
     /// <p>The full task definition description.</p>
     pub task_definition: std::option::Option<crate::model::TaskDefinition>,
-    /// <p>The metadata that's applied to the task definition to help you categorize and organize
-    /// them. Each tag consists of a key and an optional value. You define both.</p>
+    /// <p>The metadata that's applied to the task definition to help you categorize and organize them. Each tag consists of a key and an optional value. You define both.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
-    /// <li>
-    /// <p>Maximum number of tags per resource - 50</p>
-    /// </li>
-    /// <li>
-    /// <p>For each resource, each tag key must be unique, and each tag key can have only
-    /// one value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum key length - 128 Unicode characters in UTF-8</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum value length - 256 Unicode characters in UTF-8</p>
-    /// </li>
-    /// <li>
-    /// <p>If your tagging schema is used across multiple services and resources,
-    /// remember that other services may have restrictions on allowed characters.
-    /// Generally allowed characters are: letters, numbers, and spaces representable in
-    /// UTF-8, and the following characters: + - = . _ : / @.</p>
-    /// </li>
-    /// <li>
-    /// <p>Tag keys and values are case-sensitive.</p>
-    /// </li>
-    /// <li>
-    /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
-    /// combination of such as a prefix for either keys or values as it is reserved for
-    /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
-    /// this prefix do not count against your tags per resource limit.</p>
-    /// </li>
+    /// <li> <p>Maximum number of tags per resource - 50</p> </li>
+    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+    /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
+    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
     /// </ul>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
@@ -2651,38 +2461,16 @@ impl DescribeTaskDefinitionOutput {
     pub fn task_definition(&self) -> std::option::Option<&crate::model::TaskDefinition> {
         self.task_definition.as_ref()
     }
-    /// <p>The metadata that's applied to the task definition to help you categorize and organize
-    /// them. Each tag consists of a key and an optional value. You define both.</p>
+    /// <p>The metadata that's applied to the task definition to help you categorize and organize them. Each tag consists of a key and an optional value. You define both.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
-    /// <li>
-    /// <p>Maximum number of tags per resource - 50</p>
-    /// </li>
-    /// <li>
-    /// <p>For each resource, each tag key must be unique, and each tag key can have only
-    /// one value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum key length - 128 Unicode characters in UTF-8</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum value length - 256 Unicode characters in UTF-8</p>
-    /// </li>
-    /// <li>
-    /// <p>If your tagging schema is used across multiple services and resources,
-    /// remember that other services may have restrictions on allowed characters.
-    /// Generally allowed characters are: letters, numbers, and spaces representable in
-    /// UTF-8, and the following characters: + - = . _ : / @.</p>
-    /// </li>
-    /// <li>
-    /// <p>Tag keys and values are case-sensitive.</p>
-    /// </li>
-    /// <li>
-    /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
-    /// combination of such as a prefix for either keys or values as it is reserved for
-    /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
-    /// this prefix do not count against your tags per resource limit.</p>
-    /// </li>
+    /// <li> <p>Maximum number of tags per resource - 50</p> </li>
+    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+    /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
+    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
     /// </ul>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
@@ -2723,38 +2511,16 @@ pub mod describe_task_definition_output {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The metadata that's applied to the task definition to help you categorize and organize
-        /// them. Each tag consists of a key and an optional value. You define both.</p>
+        /// <p>The metadata that's applied to the task definition to help you categorize and organize them. Each tag consists of a key and an optional value. You define both.</p>
         /// <p>The following basic restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum number of tags per resource - 50</p>
-        /// </li>
-        /// <li>
-        /// <p>For each resource, each tag key must be unique, and each tag key can have only
-        /// one value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length - 128 Unicode characters in UTF-8</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length - 256 Unicode characters in UTF-8</p>
-        /// </li>
-        /// <li>
-        /// <p>If your tagging schema is used across multiple services and resources,
-        /// remember that other services may have restrictions on allowed characters.
-        /// Generally allowed characters are: letters, numbers, and spaces representable in
-        /// UTF-8, and the following characters: + - = . _ : / @.</p>
-        /// </li>
-        /// <li>
-        /// <p>Tag keys and values are case-sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
-        /// combination of such as a prefix for either keys or values as it is reserved for
-        /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
-        /// this prefix do not count against your tags per resource limit.</p>
-        /// </li>
+        /// <li> <p>Maximum number of tags per resource - 50</p> </li>
+        /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+        /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li>
+        /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li>
+        /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+        /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
+        /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
         /// </ul>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
@@ -2762,38 +2528,16 @@ pub mod describe_task_definition_output {
             self.tags = Some(v);
             self
         }
-        /// <p>The metadata that's applied to the task definition to help you categorize and organize
-        /// them. Each tag consists of a key and an optional value. You define both.</p>
+        /// <p>The metadata that's applied to the task definition to help you categorize and organize them. Each tag consists of a key and an optional value. You define both.</p>
         /// <p>The following basic restrictions apply to tags:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum number of tags per resource - 50</p>
-        /// </li>
-        /// <li>
-        /// <p>For each resource, each tag key must be unique, and each tag key can have only
-        /// one value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length - 128 Unicode characters in UTF-8</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length - 256 Unicode characters in UTF-8</p>
-        /// </li>
-        /// <li>
-        /// <p>If your tagging schema is used across multiple services and resources,
-        /// remember that other services may have restrictions on allowed characters.
-        /// Generally allowed characters are: letters, numbers, and spaces representable in
-        /// UTF-8, and the following characters: + - = . _ : / @.</p>
-        /// </li>
-        /// <li>
-        /// <p>Tag keys and values are case-sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
-        /// combination of such as a prefix for either keys or values as it is reserved for
-        /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
-        /// this prefix do not count against your tags per resource limit.</p>
-        /// </li>
+        /// <li> <p>Maximum number of tags per resource - 50</p> </li>
+        /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+        /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li>
+        /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li>
+        /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+        /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
+        /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
         /// </ul>
         pub fn set_tags(
             mut self,
@@ -3100,11 +2844,7 @@ pub struct DescribeCapacityProvidersOutput {
     pub capacity_providers: std::option::Option<std::vec::Vec<crate::model::CapacityProvider>>,
     /// <p>Any failures associated with the call.</p>
     pub failures: std::option::Option<std::vec::Vec<crate::model::Failure>>,
-    /// <p>The <code>nextToken</code> value to include in a future
-    /// <code>DescribeCapacityProviders</code> request. When the results of a
-    /// <code>DescribeCapacityProviders</code> request exceed <code>maxResults</code>, this
-    /// value can be used to retrieve the next page of results. This value is <code>null</code>
-    /// when there are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>DescribeCapacityProviders</code> request. When the results of a <code>DescribeCapacityProviders</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeCapacityProvidersOutput {
@@ -3116,11 +2856,7 @@ impl DescribeCapacityProvidersOutput {
     pub fn failures(&self) -> std::option::Option<&[crate::model::Failure]> {
         self.failures.as_deref()
     }
-    /// <p>The <code>nextToken</code> value to include in a future
-    /// <code>DescribeCapacityProviders</code> request. When the results of a
-    /// <code>DescribeCapacityProviders</code> request exceed <code>maxResults</code>, this
-    /// value can be used to retrieve the next page of results. This value is <code>null</code>
-    /// when there are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value to include in a future <code>DescribeCapacityProviders</code> request. When the results of a <code>DescribeCapacityProviders</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3184,20 +2920,12 @@ pub mod describe_capacity_providers_output {
             self.failures = input;
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future
-        /// <code>DescribeCapacityProviders</code> request. When the results of a
-        /// <code>DescribeCapacityProviders</code> request exceed <code>maxResults</code>, this
-        /// value can be used to retrieve the next page of results. This value is <code>null</code>
-        /// when there are no more results to return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>DescribeCapacityProviders</code> request. When the results of a <code>DescribeCapacityProviders</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value to include in a future
-        /// <code>DescribeCapacityProviders</code> request. When the results of a
-        /// <code>DescribeCapacityProviders</code> request exceed <code>maxResults</code>, this
-        /// value can be used to retrieve the next page of results. This value is <code>null</code>
-        /// when there are no more results to return.</p>
+        /// <p>The <code>nextToken</code> value to include in a future <code>DescribeCapacityProviders</code> request. When the results of a <code>DescribeCapacityProviders</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3673,17 +3401,11 @@ impl DeleteAccountSettingOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTaskSetOutput {
-    /// <p>Information about a set of Amazon ECS tasks in either an CodeDeploy or an
-    /// <code>EXTERNAL</code> deployment. A task set includes details such as the desired
-    /// number of tasks, how many tasks are running, and whether the task set serves production
-    /// traffic.</p>
+    /// <p>Information about a set of Amazon ECS tasks in either an CodeDeploy or an <code>EXTERNAL</code> deployment. A task set includes details such as the desired number of tasks, how many tasks are running, and whether the task set serves production traffic.</p>
     pub task_set: std::option::Option<crate::model::TaskSet>,
 }
 impl CreateTaskSetOutput {
-    /// <p>Information about a set of Amazon ECS tasks in either an CodeDeploy or an
-    /// <code>EXTERNAL</code> deployment. A task set includes details such as the desired
-    /// number of tasks, how many tasks are running, and whether the task set serves production
-    /// traffic.</p>
+    /// <p>Information about a set of Amazon ECS tasks in either an CodeDeploy or an <code>EXTERNAL</code> deployment. A task set includes details such as the desired number of tasks, how many tasks are running, and whether the task set serves production traffic.</p>
     pub fn task_set(&self) -> std::option::Option<&crate::model::TaskSet> {
         self.task_set.as_ref()
     }
@@ -3704,18 +3426,12 @@ pub mod create_task_set_output {
         pub(crate) task_set: std::option::Option<crate::model::TaskSet>,
     }
     impl Builder {
-        /// <p>Information about a set of Amazon ECS tasks in either an CodeDeploy or an
-        /// <code>EXTERNAL</code> deployment. A task set includes details such as the desired
-        /// number of tasks, how many tasks are running, and whether the task set serves production
-        /// traffic.</p>
+        /// <p>Information about a set of Amazon ECS tasks in either an CodeDeploy or an <code>EXTERNAL</code> deployment. A task set includes details such as the desired number of tasks, how many tasks are running, and whether the task set serves production traffic.</p>
         pub fn task_set(mut self, input: crate::model::TaskSet) -> Self {
             self.task_set = Some(input);
             self
         }
-        /// <p>Information about a set of Amazon ECS tasks in either an CodeDeploy or an
-        /// <code>EXTERNAL</code> deployment. A task set includes details such as the desired
-        /// number of tasks, how many tasks are running, and whether the task set serves production
-        /// traffic.</p>
+        /// <p>Information about a set of Amazon ECS tasks in either an CodeDeploy or an <code>EXTERNAL</code> deployment. A task set includes details such as the desired number of tasks, how many tasks are running, and whether the task set serves production traffic.</p>
         pub fn set_task_set(mut self, input: std::option::Option<crate::model::TaskSet>) -> Self {
             self.task_set = input;
             self
@@ -3740,30 +3456,16 @@ impl CreateTaskSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateServiceOutput {
     /// <p>The full description of your service following the create call.</p>
-    /// <p>A service will return either a <code>capacityProviderStrategy</code> or
-    /// <code>launchType</code> parameter, but not both, depending where one was specified
-    /// when it was created.</p>
-    /// <p>If a service is using the <code>ECS</code> deployment controller, the
-    /// <code>deploymentController</code> and <code>taskSets</code> parameters will not be
-    /// returned.</p>
-    /// <p>if the service uses the <code>CODE_DEPLOY</code> deployment controller, the
-    /// <code>deploymentController</code>, <code>taskSets</code> and
-    /// <code>deployments</code> parameters will be returned, however the
-    /// <code>deployments</code> parameter will be an empty list.</p>
+    /// <p>A service will return either a <code>capacityProviderStrategy</code> or <code>launchType</code> parameter, but not both, depending where one was specified when it was created.</p>
+    /// <p>If a service is using the <code>ECS</code> deployment controller, the <code>deploymentController</code> and <code>taskSets</code> parameters will not be returned.</p>
+    /// <p>if the service uses the <code>CODE_DEPLOY</code> deployment controller, the <code>deploymentController</code>, <code>taskSets</code> and <code>deployments</code> parameters will be returned, however the <code>deployments</code> parameter will be an empty list.</p>
     pub service: std::option::Option<crate::model::Service>,
 }
 impl CreateServiceOutput {
     /// <p>The full description of your service following the create call.</p>
-    /// <p>A service will return either a <code>capacityProviderStrategy</code> or
-    /// <code>launchType</code> parameter, but not both, depending where one was specified
-    /// when it was created.</p>
-    /// <p>If a service is using the <code>ECS</code> deployment controller, the
-    /// <code>deploymentController</code> and <code>taskSets</code> parameters will not be
-    /// returned.</p>
-    /// <p>if the service uses the <code>CODE_DEPLOY</code> deployment controller, the
-    /// <code>deploymentController</code>, <code>taskSets</code> and
-    /// <code>deployments</code> parameters will be returned, however the
-    /// <code>deployments</code> parameter will be an empty list.</p>
+    /// <p>A service will return either a <code>capacityProviderStrategy</code> or <code>launchType</code> parameter, but not both, depending where one was specified when it was created.</p>
+    /// <p>If a service is using the <code>ECS</code> deployment controller, the <code>deploymentController</code> and <code>taskSets</code> parameters will not be returned.</p>
+    /// <p>if the service uses the <code>CODE_DEPLOY</code> deployment controller, the <code>deploymentController</code>, <code>taskSets</code> and <code>deployments</code> parameters will be returned, however the <code>deployments</code> parameter will be an empty list.</p>
     pub fn service(&self) -> std::option::Option<&crate::model::Service> {
         self.service.as_ref()
     }
@@ -3785,31 +3487,17 @@ pub mod create_service_output {
     }
     impl Builder {
         /// <p>The full description of your service following the create call.</p>
-        /// <p>A service will return either a <code>capacityProviderStrategy</code> or
-        /// <code>launchType</code> parameter, but not both, depending where one was specified
-        /// when it was created.</p>
-        /// <p>If a service is using the <code>ECS</code> deployment controller, the
-        /// <code>deploymentController</code> and <code>taskSets</code> parameters will not be
-        /// returned.</p>
-        /// <p>if the service uses the <code>CODE_DEPLOY</code> deployment controller, the
-        /// <code>deploymentController</code>, <code>taskSets</code> and
-        /// <code>deployments</code> parameters will be returned, however the
-        /// <code>deployments</code> parameter will be an empty list.</p>
+        /// <p>A service will return either a <code>capacityProviderStrategy</code> or <code>launchType</code> parameter, but not both, depending where one was specified when it was created.</p>
+        /// <p>If a service is using the <code>ECS</code> deployment controller, the <code>deploymentController</code> and <code>taskSets</code> parameters will not be returned.</p>
+        /// <p>if the service uses the <code>CODE_DEPLOY</code> deployment controller, the <code>deploymentController</code>, <code>taskSets</code> and <code>deployments</code> parameters will be returned, however the <code>deployments</code> parameter will be an empty list.</p>
         pub fn service(mut self, input: crate::model::Service) -> Self {
             self.service = Some(input);
             self
         }
         /// <p>The full description of your service following the create call.</p>
-        /// <p>A service will return either a <code>capacityProviderStrategy</code> or
-        /// <code>launchType</code> parameter, but not both, depending where one was specified
-        /// when it was created.</p>
-        /// <p>If a service is using the <code>ECS</code> deployment controller, the
-        /// <code>deploymentController</code> and <code>taskSets</code> parameters will not be
-        /// returned.</p>
-        /// <p>if the service uses the <code>CODE_DEPLOY</code> deployment controller, the
-        /// <code>deploymentController</code>, <code>taskSets</code> and
-        /// <code>deployments</code> parameters will be returned, however the
-        /// <code>deployments</code> parameter will be an empty list.</p>
+        /// <p>A service will return either a <code>capacityProviderStrategy</code> or <code>launchType</code> parameter, but not both, depending where one was specified when it was created.</p>
+        /// <p>If a service is using the <code>ECS</code> deployment controller, the <code>deploymentController</code> and <code>taskSets</code> parameters will not be returned.</p>
+        /// <p>if the service uses the <code>CODE_DEPLOY</code> deployment controller, the <code>deploymentController</code>, <code>taskSets</code> and <code>deployments</code> parameters will be returned, however the <code>deployments</code> parameter will be an empty list.</p>
         pub fn set_service(mut self, input: std::option::Option<crate::model::Service>) -> Self {
             self.service = input;
             self

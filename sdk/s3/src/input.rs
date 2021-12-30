@@ -47,18 +47,12 @@ pub mod abort_multipart_upload_input {
             self.upload_id = input;
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-        /// owners need not specify this parameter in their requests. For information about downloading
-        /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-        /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
             self.request_payer = Some(input);
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-        /// owners need not specify this parameter in their requests. For information about downloading
-        /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-        /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_request_payer(
             mut self,
             input: std::option::Option<crate::model::RequestPayer>,
@@ -345,18 +339,12 @@ pub mod complete_multipart_upload_input {
             self.upload_id = input;
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-        /// owners need not specify this parameter in their requests. For information about downloading
-        /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-        /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
             self.request_payer = Some(input);
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-        /// owners need not specify this parameter in their requests. For information about downloading
-        /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-        /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_request_payer(
             mut self,
             input: std::option::Option<crate::model::RequestPayer>,
@@ -705,16 +693,12 @@ pub mod copy_object_input {
             self.content_disposition = input;
             self
         }
-        /// <p>Specifies what content encodings have been applied to the object and thus what decoding
-        /// mechanisms must be applied to obtain the media-type referenced by the Content-Type header
-        /// field.</p>
+        /// <p>Specifies what content encodings have been applied to the object and thus what decoding mechanisms must be applied to obtain the media-type referenced by the Content-Type header field.</p>
         pub fn content_encoding(mut self, input: impl Into<std::string::String>) -> Self {
             self.content_encoding = Some(input.into());
             self
         }
-        /// <p>Specifies what content encodings have been applied to the object and thus what decoding
-        /// mechanisms must be applied to obtain the media-type referenced by the Content-Type header
-        /// field.</p>
+        /// <p>Specifies what content encodings have been applied to the object and thus what decoding mechanisms must be applied to obtain the media-type referenced by the Content-Type header field.</p>
         pub fn set_content_encoding(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -745,58 +729,68 @@ pub mod copy_object_input {
             self.content_type = input;
             self
         }
-        /// <p>Specifies the source object for the copy operation. You specify the value in one of two
-        /// formats, depending on whether you want to access the source object through an <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">access point</a>:</p>
+        /// <p>Specifies the source object for the copy operation. You specify the value in one of two formats, depending on whether you want to access the source object through an <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">access point</a>:</p>
         /// <ul>
-        /// <li>
-        /// <p>For objects not accessed through an access point, specify the name of the source
-        /// bucket and the key of the source object, separated by a slash (/). For example, to
-        /// copy the object <code>reports/january.pdf</code> from the bucket
-        /// <code>awsexamplebucket</code>, use
-        /// <code>awsexamplebucket/reports/january.pdf</code>. The value must be URL
-        /// encoded.</p>
-        /// </li>
-        /// <li>
-        /// <p>For objects accessed through access points, specify the Amazon Resource Name (ARN) of the object as accessed through the access point, in the format <code>arn:aws:s3:<Region>:<account-id>:accesspoint/<access-point-name>/object/<key></code>. For example, to copy the object <code>reports/january.pdf</code> through access point <code>my-access-point</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3:us-west-2:123456789012:accesspoint/my-access-point/object/reports/january.pdf</code>. The value must be URL encoded.</p>
-        /// <note>
+        /// <li> <p>For objects not accessed through an access point, specify the name of the source bucket and the key of the source object, separated by a slash (/). For example, to copy the object <code>reports/january.pdf</code> from the bucket <code>awsexamplebucket</code>, use <code>awsexamplebucket/reports/january.pdf</code>. The value must be URL encoded.</p> </li>
+        /// <li> <p>For objects accessed through access points, specify the Amazon Resource Name (ARN) of the object as accessed through the access point, in the format <code>arn:aws:s3:
+        /// <region>
+        /// :
+        /// <account-id>
+        /// :accesspoint/
+        /// <access-point-name>
+        /// /object/
+        /// <key></key>
+        /// </access-point-name>
+        /// </account-id>
+        /// </region></code>. For example, to copy the object <code>reports/january.pdf</code> through access point <code>my-access-point</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3:us-west-2:123456789012:accesspoint/my-access-point/object/reports/january.pdf</code>. The value must be URL encoded.</p> <note>
         /// <p>Amazon S3 supports copy operations using access points only when the source and destination buckets are in the same Amazon Web Services Region.</p>
-        /// </note>
-        /// <p>Alternatively, for objects accessed through Amazon S3 on Outposts, specify the ARN of the object as accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/object/<key></code>. For example, to copy the object <code>reports/january.pdf</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/object/reports/january.pdf</code>. The value must be URL encoded.  </p>
-        /// </li>
+        /// </note> <p>Alternatively, for objects accessed through Amazon S3 on Outposts, specify the ARN of the object as accessed in the format <code>arn:aws:s3-outposts:
+        /// <region>
+        /// :
+        /// <account-id>
+        /// :outpost/
+        /// <outpost-id>
+        /// /object/
+        /// <key></key>
+        /// </outpost-id>
+        /// </account-id>
+        /// </region></code>. For example, to copy the object <code>reports/january.pdf</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/object/reports/january.pdf</code>. The value must be URL encoded. </p> </li>
         /// </ul>
-        /// <p>To copy a specific version of an object, append <code>?versionId=<version-id></code>
-        /// to the value (for example,
-        /// <code>awsexamplebucket/reports/january.pdf?versionId=QUpfdndhfd8438MNFDN93jdnJFkdmqnh893</code>).
-        /// If you don't specify a version ID, Amazon S3 copies the latest version of the source
-        /// object.</p>
+        /// <p>To copy a specific version of an object, append <code>?versionId=
+        /// <version-id></version-id></code> to the value (for example, <code>awsexamplebucket/reports/january.pdf?versionId=QUpfdndhfd8438MNFDN93jdnJFkdmqnh893</code>). If you don't specify a version ID, Amazon S3 copies the latest version of the source object.</p>
         pub fn copy_source(mut self, input: impl Into<std::string::String>) -> Self {
             self.copy_source = Some(input.into());
             self
         }
-        /// <p>Specifies the source object for the copy operation. You specify the value in one of two
-        /// formats, depending on whether you want to access the source object through an <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">access point</a>:</p>
+        /// <p>Specifies the source object for the copy operation. You specify the value in one of two formats, depending on whether you want to access the source object through an <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">access point</a>:</p>
         /// <ul>
-        /// <li>
-        /// <p>For objects not accessed through an access point, specify the name of the source
-        /// bucket and the key of the source object, separated by a slash (/). For example, to
-        /// copy the object <code>reports/january.pdf</code> from the bucket
-        /// <code>awsexamplebucket</code>, use
-        /// <code>awsexamplebucket/reports/january.pdf</code>. The value must be URL
-        /// encoded.</p>
-        /// </li>
-        /// <li>
-        /// <p>For objects accessed through access points, specify the Amazon Resource Name (ARN) of the object as accessed through the access point, in the format <code>arn:aws:s3:<Region>:<account-id>:accesspoint/<access-point-name>/object/<key></code>. For example, to copy the object <code>reports/january.pdf</code> through access point <code>my-access-point</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3:us-west-2:123456789012:accesspoint/my-access-point/object/reports/january.pdf</code>. The value must be URL encoded.</p>
-        /// <note>
+        /// <li> <p>For objects not accessed through an access point, specify the name of the source bucket and the key of the source object, separated by a slash (/). For example, to copy the object <code>reports/january.pdf</code> from the bucket <code>awsexamplebucket</code>, use <code>awsexamplebucket/reports/january.pdf</code>. The value must be URL encoded.</p> </li>
+        /// <li> <p>For objects accessed through access points, specify the Amazon Resource Name (ARN) of the object as accessed through the access point, in the format <code>arn:aws:s3:
+        /// <region>
+        /// :
+        /// <account-id>
+        /// :accesspoint/
+        /// <access-point-name>
+        /// /object/
+        /// <key></key>
+        /// </access-point-name>
+        /// </account-id>
+        /// </region></code>. For example, to copy the object <code>reports/january.pdf</code> through access point <code>my-access-point</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3:us-west-2:123456789012:accesspoint/my-access-point/object/reports/january.pdf</code>. The value must be URL encoded.</p> <note>
         /// <p>Amazon S3 supports copy operations using access points only when the source and destination buckets are in the same Amazon Web Services Region.</p>
-        /// </note>
-        /// <p>Alternatively, for objects accessed through Amazon S3 on Outposts, specify the ARN of the object as accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/object/<key></code>. For example, to copy the object <code>reports/january.pdf</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/object/reports/january.pdf</code>. The value must be URL encoded.  </p>
-        /// </li>
+        /// </note> <p>Alternatively, for objects accessed through Amazon S3 on Outposts, specify the ARN of the object as accessed in the format <code>arn:aws:s3-outposts:
+        /// <region>
+        /// :
+        /// <account-id>
+        /// :outpost/
+        /// <outpost-id>
+        /// /object/
+        /// <key></key>
+        /// </outpost-id>
+        /// </account-id>
+        /// </region></code>. For example, to copy the object <code>reports/january.pdf</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/object/reports/january.pdf</code>. The value must be URL encoded. </p> </li>
         /// </ul>
-        /// <p>To copy a specific version of an object, append <code>?versionId=<version-id></code>
-        /// to the value (for example,
-        /// <code>awsexamplebucket/reports/january.pdf?versionId=QUpfdndhfd8438MNFDN93jdnJFkdmqnh893</code>).
-        /// If you don't specify a version ID, Amazon S3 copies the latest version of the source
-        /// object.</p>
+        /// <p>To copy a specific version of an object, append <code>?versionId=
+        /// <version-id></version-id></code> to the value (for example, <code>awsexamplebucket/reports/january.pdf?versionId=QUpfdndhfd8438MNFDN93jdnJFkdmqnh893</code>). If you don't specify a version ID, Amazon S3 copies the latest version of the source object.</p>
         pub fn set_copy_source(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.copy_source = input;
             self
@@ -869,15 +863,13 @@ pub mod copy_object_input {
             self.expires = input;
             self
         }
-        /// <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the
-        /// object.</p>
+        /// <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the object.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
         pub fn grant_full_control(mut self, input: impl Into<std::string::String>) -> Self {
             self.grant_full_control = Some(input.into());
             self
         }
-        /// <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the
-        /// object.</p>
+        /// <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the object.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
         pub fn set_grant_full_control(
             mut self,
@@ -886,15 +878,13 @@ pub mod copy_object_input {
             self.grant_full_control = input;
             self
         }
-        /// <p>Allows grantee to read the object data and its
-        /// metadata.</p>
+        /// <p>Allows grantee to read the object data and its metadata.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
         pub fn grant_read(mut self, input: impl Into<std::string::String>) -> Self {
             self.grant_read = Some(input.into());
             self
         }
-        /// <p>Allows grantee to read the object data and its
-        /// metadata.</p>
+        /// <p>Allows grantee to read the object data and its metadata.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
         pub fn set_grant_read(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.grant_read = input;
@@ -915,15 +905,13 @@ pub mod copy_object_input {
             self.grant_read_acp = input;
             self
         }
-        /// <p>Allows grantee to write the ACL for the applicable
-        /// object.</p>
+        /// <p>Allows grantee to write the ACL for the applicable object.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
         pub fn grant_write_acp(mut self, input: impl Into<std::string::String>) -> Self {
             self.grant_write_acp = Some(input.into());
             self
         }
-        /// <p>Allows grantee to write the ACL for the applicable
-        /// object.</p>
+        /// <p>Allows grantee to write the ACL for the applicable object.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
         pub fn set_grant_write_acp(
             mut self,
@@ -967,14 +955,12 @@ pub mod copy_object_input {
             self.metadata = input;
             self
         }
-        /// <p>Specifies whether the metadata is copied from the source object or replaced with
-        /// metadata provided in the request.</p>
+        /// <p>Specifies whether the metadata is copied from the source object or replaced with metadata provided in the request.</p>
         pub fn metadata_directive(mut self, input: crate::model::MetadataDirective) -> Self {
             self.metadata_directive = Some(input);
             self
         }
-        /// <p>Specifies whether the metadata is copied from the source object or replaced with
-        /// metadata provided in the request.</p>
+        /// <p>Specifies whether the metadata is copied from the source object or replaced with metadata provided in the request.</p>
         pub fn set_metadata_directive(
             mut self,
             input: std::option::Option<crate::model::MetadataDirective>,
@@ -982,14 +968,12 @@ pub mod copy_object_input {
             self.metadata_directive = input;
             self
         }
-        /// <p>Specifies whether the object tag-set are copied from the source object or replaced with
-        /// tag-set provided in the request.</p>
+        /// <p>Specifies whether the object tag-set are copied from the source object or replaced with tag-set provided in the request.</p>
         pub fn tagging_directive(mut self, input: crate::model::TaggingDirective) -> Self {
             self.tagging_directive = Some(input);
             self
         }
-        /// <p>Specifies whether the object tag-set are copied from the source object or replaced with
-        /// tag-set provided in the request.</p>
+        /// <p>Specifies whether the object tag-set are copied from the source object or replaced with tag-set provided in the request.</p>
         pub fn set_tagging_directive(
             mut self,
             input: std::option::Option<crate::model::TaggingDirective>,
@@ -997,14 +981,12 @@ pub mod copy_object_input {
             self.tagging_directive = input;
             self
         }
-        /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example,
-        /// AES256, aws:kms).</p>
+        /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example, AES256, aws:kms).</p>
         pub fn server_side_encryption(mut self, input: crate::model::ServerSideEncryption) -> Self {
             self.server_side_encryption = Some(input);
             self
         }
-        /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example,
-        /// AES256, aws:kms).</p>
+        /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example, AES256, aws:kms).</p>
         pub fn set_server_side_encryption(
             mut self,
             input: std::option::Option<crate::model::ServerSideEncryption>,
@@ -1012,20 +994,12 @@ pub mod copy_object_input {
             self.server_side_encryption = input;
             self
         }
-        /// <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created objects. The
-        /// STANDARD storage class provides high durability and high availability. Depending on
-        /// performance needs, you can specify a different Storage Class. Amazon S3 on Outposts only uses
-        /// the OUTPOSTS Storage Class. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a> in the
-        /// <i>Amazon S3 User Guide</i>.</p>
+        /// <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created objects. The STANDARD storage class provides high durability and high availability. Depending on performance needs, you can specify a different Storage Class. Amazon S3 on Outposts only uses the OUTPOSTS Storage Class. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn storage_class(mut self, input: crate::model::StorageClass) -> Self {
             self.storage_class = Some(input);
             self
         }
-        /// <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created objects. The
-        /// STANDARD storage class provides high durability and high availability. Depending on
-        /// performance needs, you can specify a different Storage Class. Amazon S3 on Outposts only uses
-        /// the OUTPOSTS Storage Class. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a> in the
-        /// <i>Amazon S3 User Guide</i>.</p>
+        /// <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created objects. The STANDARD storage class provides high durability and high availability. Depending on performance needs, you can specify a different Storage Class. Amazon S3 on Outposts only uses the OUTPOSTS Storage Class. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_storage_class(
             mut self,
             input: std::option::Option<crate::model::StorageClass>,
@@ -1033,16 +1007,12 @@ pub mod copy_object_input {
             self.storage_class = input;
             self
         }
-        /// <p>If the bucket is configured as a website, redirects requests for this object to another
-        /// object in the same bucket or to an external URL. Amazon S3 stores the value of this header in
-        /// the object metadata.</p>
+        /// <p>If the bucket is configured as a website, redirects requests for this object to another object in the same bucket or to an external URL. Amazon S3 stores the value of this header in the object metadata.</p>
         pub fn website_redirect_location(mut self, input: impl Into<std::string::String>) -> Self {
             self.website_redirect_location = Some(input.into());
             self
         }
-        /// <p>If the bucket is configured as a website, redirects requests for this object to another
-        /// object in the same bucket or to an external URL. Amazon S3 stores the value of this header in
-        /// the object metadata.</p>
+        /// <p>If the bucket is configured as a website, redirects requests for this object to another object in the same bucket or to an external URL. Amazon S3 stores the value of this header in the object metadata.</p>
         pub fn set_website_redirect_location(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1050,14 +1020,12 @@ pub mod copy_object_input {
             self.website_redirect_location = input;
             self
         }
-        /// <p>Specifies the algorithm to use to when encrypting the object (for example,
-        /// AES256).</p>
+        /// <p>Specifies the algorithm to use to when encrypting the object (for example, AES256).</p>
         pub fn sse_customer_algorithm(mut self, input: impl Into<std::string::String>) -> Self {
             self.sse_customer_algorithm = Some(input.into());
             self
         }
-        /// <p>Specifies the algorithm to use to when encrypting the object (for example,
-        /// AES256).</p>
+        /// <p>Specifies the algorithm to use to when encrypting the object (for example, AES256).</p>
         pub fn set_sse_customer_algorithm(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1065,18 +1033,12 @@ pub mod copy_object_input {
             self.sse_customer_algorithm = input;
             self
         }
-        /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This
-        /// value is used to store the object and then it is discarded; Amazon S3 does not store the
-        /// encryption key. The key must be appropriate for use with the algorithm specified in the
-        /// <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
+        /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This value is used to store the object and then it is discarded; Amazon S3 does not store the encryption key. The key must be appropriate for use with the algorithm specified in the <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
         pub fn sse_customer_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.sse_customer_key = Some(input.into());
             self
         }
-        /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This
-        /// value is used to store the object and then it is discarded; Amazon S3 does not store the
-        /// encryption key. The key must be appropriate for use with the algorithm specified in the
-        /// <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
+        /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This value is used to store the object and then it is discarded; Amazon S3 does not store the encryption key. The key must be appropriate for use with the algorithm specified in the <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
         pub fn set_sse_customer_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1084,16 +1046,12 @@ pub mod copy_object_input {
             self.sse_customer_key = input;
             self
         }
-        /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses
-        /// this header for a message integrity check to ensure that the encryption key was transmitted
-        /// without error.</p>
+        /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
         pub fn sse_customer_key_md5(mut self, input: impl Into<std::string::String>) -> Self {
             self.sse_customer_key_md5 = Some(input.into());
             self
         }
-        /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses
-        /// this header for a message integrity check to ensure that the encryption key was transmitted
-        /// without error.</p>
+        /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
         pub fn set_sse_customer_key_md5(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1101,20 +1059,12 @@ pub mod copy_object_input {
             self.sse_customer_key_md5 = input;
             self
         }
-        /// <p>Specifies the Amazon Web Services KMS key ID to use for object encryption. All GET and PUT requests for
-        /// an object protected by Amazon Web Services KMS will fail if not made via SSL or using SigV4. For
-        /// information about configuring using any of the officially supported Amazon Web Services SDKs and Amazon Web Services CLI,
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying the
-        /// Signature Version in Request Authentication</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Specifies the Amazon Web Services KMS key ID to use for object encryption. All GET and PUT requests for an object protected by Amazon Web Services KMS will fail if not made via SSL or using SigV4. For information about configuring using any of the officially supported Amazon Web Services SDKs and Amazon Web Services CLI, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying the Signature Version in Request Authentication</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn ssekms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.ssekms_key_id = Some(input.into());
             self
         }
-        /// <p>Specifies the Amazon Web Services KMS key ID to use for object encryption. All GET and PUT requests for
-        /// an object protected by Amazon Web Services KMS will fail if not made via SSL or using SigV4. For
-        /// information about configuring using any of the officially supported Amazon Web Services SDKs and Amazon Web Services CLI,
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying the
-        /// Signature Version in Request Authentication</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Specifies the Amazon Web Services KMS key ID to use for object encryption. All GET and PUT requests for an object protected by Amazon Web Services KMS will fail if not made via SSL or using SigV4. For information about configuring using any of the officially supported Amazon Web Services SDKs and Amazon Web Services CLI, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying the Signature Version in Request Authentication</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_ssekms_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1122,16 +1072,12 @@ pub mod copy_object_input {
             self.ssekms_key_id = input;
             self
         }
-        /// <p>Specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The value of this
-        /// header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value
-        /// pairs.</p>
+        /// <p>Specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value pairs.</p>
         pub fn ssekms_encryption_context(mut self, input: impl Into<std::string::String>) -> Self {
             self.ssekms_encryption_context = Some(input.into());
             self
         }
-        /// <p>Specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The value of this
-        /// header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value
-        /// pairs.</p>
+        /// <p>Specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value pairs.</p>
         pub fn set_ssekms_encryption_context(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1151,8 +1097,7 @@ pub mod copy_object_input {
             self.bucket_key_enabled = input;
             self
         }
-        /// <p>Specifies the algorithm to use when decrypting the source object (for example,
-        /// AES256).</p>
+        /// <p>Specifies the algorithm to use when decrypting the source object (for example, AES256).</p>
         pub fn copy_source_sse_customer_algorithm(
             mut self,
             input: impl Into<std::string::String>,
@@ -1160,8 +1105,7 @@ pub mod copy_object_input {
             self.copy_source_sse_customer_algorithm = Some(input.into());
             self
         }
-        /// <p>Specifies the algorithm to use when decrypting the source object (for example,
-        /// AES256).</p>
+        /// <p>Specifies the algorithm to use when decrypting the source object (for example, AES256).</p>
         pub fn set_copy_source_sse_customer_algorithm(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1169,9 +1113,7 @@ pub mod copy_object_input {
             self.copy_source_sse_customer_algorithm = input;
             self
         }
-        /// <p>Specifies the customer-provided encryption key for Amazon S3 to use to decrypt the source
-        /// object. The encryption key provided in this header must be one that was used when the
-        /// source object was created.</p>
+        /// <p>Specifies the customer-provided encryption key for Amazon S3 to use to decrypt the source object. The encryption key provided in this header must be one that was used when the source object was created.</p>
         pub fn copy_source_sse_customer_key(
             mut self,
             input: impl Into<std::string::String>,
@@ -1179,9 +1121,7 @@ pub mod copy_object_input {
             self.copy_source_sse_customer_key = Some(input.into());
             self
         }
-        /// <p>Specifies the customer-provided encryption key for Amazon S3 to use to decrypt the source
-        /// object. The encryption key provided in this header must be one that was used when the
-        /// source object was created.</p>
+        /// <p>Specifies the customer-provided encryption key for Amazon S3 to use to decrypt the source object. The encryption key provided in this header must be one that was used when the source object was created.</p>
         pub fn set_copy_source_sse_customer_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1189,9 +1129,7 @@ pub mod copy_object_input {
             self.copy_source_sse_customer_key = input;
             self
         }
-        /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses
-        /// this header for a message integrity check to ensure that the encryption key was transmitted
-        /// without error.</p>
+        /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
         pub fn copy_source_sse_customer_key_md5(
             mut self,
             input: impl Into<std::string::String>,
@@ -1199,9 +1137,7 @@ pub mod copy_object_input {
             self.copy_source_sse_customer_key_md5 = Some(input.into());
             self
         }
-        /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses
-        /// this header for a message integrity check to ensure that the encryption key was transmitted
-        /// without error.</p>
+        /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
         pub fn set_copy_source_sse_customer_key_md5(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1209,18 +1145,12 @@ pub mod copy_object_input {
             self.copy_source_sse_customer_key_md5 = input;
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-        /// owners need not specify this parameter in their requests. For information about downloading
-        /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-        /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
             self.request_payer = Some(input);
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-        /// owners need not specify this parameter in their requests. For information about downloading
-        /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-        /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_request_payer(
             mut self,
             input: std::option::Option<crate::model::RequestPayer>,
@@ -1228,16 +1158,12 @@ pub mod copy_object_input {
             self.request_payer = input;
             self
         }
-        /// <p>The tag-set for the object destination object this value must be used in conjunction
-        /// with the <code>TaggingDirective</code>. The tag-set must be encoded as URL Query
-        /// parameters.</p>
+        /// <p>The tag-set for the object destination object this value must be used in conjunction with the <code>TaggingDirective</code>. The tag-set must be encoded as URL Query parameters.</p>
         pub fn tagging(mut self, input: impl Into<std::string::String>) -> Self {
             self.tagging = Some(input.into());
             self
         }
-        /// <p>The tag-set for the object destination object this value must be used in conjunction
-        /// with the <code>TaggingDirective</code>. The tag-set must be encoded as URL Query
-        /// parameters.</p>
+        /// <p>The tag-set for the object destination object this value must be used in conjunction with the <code>TaggingDirective</code>. The tag-set must be encoded as URL Query parameters.</p>
         pub fn set_tagging(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.tagging = input;
             self
@@ -2219,14 +2145,12 @@ pub mod create_bucket_input {
             self.create_bucket_configuration = input;
             self
         }
-        /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the
-        /// bucket.</p>
+        /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p>
         pub fn grant_full_control(mut self, input: impl Into<std::string::String>) -> Self {
             self.grant_full_control = Some(input.into());
             self
         }
-        /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the
-        /// bucket.</p>
+        /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p>
         pub fn set_grant_full_control(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2296,31 +2220,17 @@ pub mod create_bucket_input {
             self
         }
         /// <p>The container element for object ownership for a bucket's ownership controls.</p>
-        /// <p>BucketOwnerPreferred - Objects uploaded to the bucket change ownership to the bucket
-        /// owner if the objects are uploaded with the <code>bucket-owner-full-control</code> canned
-        /// ACL.</p>
-        /// <p>ObjectWriter - The uploading account will own the object if the object is uploaded with
-        /// the <code>bucket-owner-full-control</code> canned ACL.</p>
-        /// <p>BucketOwnerEnforced - Access control lists (ACLs) are disabled and no longer affect permissions.
-        /// The bucket owner automatically owns and has full control over every object in the bucket. The bucket only
-        /// accepts PUT requests that don't specify an ACL or bucket owner full control
-        /// ACLs, such as the <code>bucket-owner-full-control</code> canned
-        /// ACL or an equivalent form of this ACL expressed in the XML format.</p>
+        /// <p>BucketOwnerPreferred - Objects uploaded to the bucket change ownership to the bucket owner if the objects are uploaded with the <code>bucket-owner-full-control</code> canned ACL.</p>
+        /// <p>ObjectWriter - The uploading account will own the object if the object is uploaded with the <code>bucket-owner-full-control</code> canned ACL.</p>
+        /// <p>BucketOwnerEnforced - Access control lists (ACLs) are disabled and no longer affect permissions. The bucket owner automatically owns and has full control over every object in the bucket. The bucket only accepts PUT requests that don't specify an ACL or bucket owner full control ACLs, such as the <code>bucket-owner-full-control</code> canned ACL or an equivalent form of this ACL expressed in the XML format.</p>
         pub fn object_ownership(mut self, input: crate::model::ObjectOwnership) -> Self {
             self.object_ownership = Some(input);
             self
         }
         /// <p>The container element for object ownership for a bucket's ownership controls.</p>
-        /// <p>BucketOwnerPreferred - Objects uploaded to the bucket change ownership to the bucket
-        /// owner if the objects are uploaded with the <code>bucket-owner-full-control</code> canned
-        /// ACL.</p>
-        /// <p>ObjectWriter - The uploading account will own the object if the object is uploaded with
-        /// the <code>bucket-owner-full-control</code> canned ACL.</p>
-        /// <p>BucketOwnerEnforced - Access control lists (ACLs) are disabled and no longer affect permissions.
-        /// The bucket owner automatically owns and has full control over every object in the bucket. The bucket only
-        /// accepts PUT requests that don't specify an ACL or bucket owner full control
-        /// ACLs, such as the <code>bucket-owner-full-control</code> canned
-        /// ACL or an equivalent form of this ACL expressed in the XML format.</p>
+        /// <p>BucketOwnerPreferred - Objects uploaded to the bucket change ownership to the bucket owner if the objects are uploaded with the <code>bucket-owner-full-control</code> canned ACL.</p>
+        /// <p>ObjectWriter - The uploading account will own the object if the object is uploaded with the <code>bucket-owner-full-control</code> canned ACL.</p>
+        /// <p>BucketOwnerEnforced - Access control lists (ACLs) are disabled and no longer affect permissions. The bucket owner automatically owns and has full control over every object in the bucket. The bucket only accepts PUT requests that don't specify an ACL or bucket owner full control ACLs, such as the <code>bucket-owner-full-control</code> canned ACL or an equivalent form of this ACL expressed in the XML format.</p>
         pub fn set_object_ownership(
             mut self,
             input: std::option::Option<crate::model::ObjectOwnership>,
@@ -2721,16 +2631,12 @@ pub mod create_multipart_upload_input {
             self.content_disposition = input;
             self
         }
-        /// <p>Specifies what content encodings have been applied to the object and thus what decoding
-        /// mechanisms must be applied to obtain the media-type referenced by the Content-Type header
-        /// field.</p>
+        /// <p>Specifies what content encodings have been applied to the object and thus what decoding mechanisms must be applied to obtain the media-type referenced by the Content-Type header field.</p>
         pub fn content_encoding(mut self, input: impl Into<std::string::String>) -> Self {
             self.content_encoding = Some(input.into());
             self
         }
-        /// <p>Specifies what content encodings have been applied to the object and thus what decoding
-        /// mechanisms must be applied to obtain the media-type referenced by the Content-Type header
-        /// field.</p>
+        /// <p>Specifies what content encodings have been applied to the object and thus what decoding mechanisms must be applied to obtain the media-type referenced by the Content-Type header field.</p>
         pub fn set_content_encoding(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2774,15 +2680,13 @@ pub mod create_multipart_upload_input {
             self.expires = input;
             self
         }
-        /// <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the
-        /// object.</p>
+        /// <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the object.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
         pub fn grant_full_control(mut self, input: impl Into<std::string::String>) -> Self {
             self.grant_full_control = Some(input.into());
             self
         }
-        /// <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the
-        /// object.</p>
+        /// <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the object.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
         pub fn set_grant_full_control(
             mut self,
@@ -2791,15 +2695,13 @@ pub mod create_multipart_upload_input {
             self.grant_full_control = input;
             self
         }
-        /// <p>Allows grantee to read the object data and its
-        /// metadata.</p>
+        /// <p>Allows grantee to read the object data and its metadata.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
         pub fn grant_read(mut self, input: impl Into<std::string::String>) -> Self {
             self.grant_read = Some(input.into());
             self
         }
-        /// <p>Allows grantee to read the object data and its
-        /// metadata.</p>
+        /// <p>Allows grantee to read the object data and its metadata.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
         pub fn set_grant_read(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.grant_read = input;
@@ -2820,15 +2722,13 @@ pub mod create_multipart_upload_input {
             self.grant_read_acp = input;
             self
         }
-        /// <p>Allows grantee to write the ACL for the applicable
-        /// object.</p>
+        /// <p>Allows grantee to write the ACL for the applicable object.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
         pub fn grant_write_acp(mut self, input: impl Into<std::string::String>) -> Self {
             self.grant_write_acp = Some(input.into());
             self
         }
-        /// <p>Allows grantee to write the ACL for the applicable
-        /// object.</p>
+        /// <p>Allows grantee to write the ACL for the applicable object.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
         pub fn set_grant_write_acp(
             mut self,
@@ -2872,14 +2772,12 @@ pub mod create_multipart_upload_input {
             self.metadata = input;
             self
         }
-        /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example,
-        /// AES256, aws:kms).</p>
+        /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example, AES256, aws:kms).</p>
         pub fn server_side_encryption(mut self, input: crate::model::ServerSideEncryption) -> Self {
             self.server_side_encryption = Some(input);
             self
         }
-        /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example,
-        /// AES256, aws:kms).</p>
+        /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example, AES256, aws:kms).</p>
         pub fn set_server_side_encryption(
             mut self,
             input: std::option::Option<crate::model::ServerSideEncryption>,
@@ -2887,20 +2785,12 @@ pub mod create_multipart_upload_input {
             self.server_side_encryption = input;
             self
         }
-        /// <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created objects. The
-        /// STANDARD storage class provides high durability and high availability. Depending on
-        /// performance needs, you can specify a different Storage Class. Amazon S3 on Outposts only uses
-        /// the OUTPOSTS Storage Class. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a> in the
-        /// <i>Amazon S3 User Guide</i>.</p>
+        /// <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created objects. The STANDARD storage class provides high durability and high availability. Depending on performance needs, you can specify a different Storage Class. Amazon S3 on Outposts only uses the OUTPOSTS Storage Class. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn storage_class(mut self, input: crate::model::StorageClass) -> Self {
             self.storage_class = Some(input);
             self
         }
-        /// <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created objects. The
-        /// STANDARD storage class provides high durability and high availability. Depending on
-        /// performance needs, you can specify a different Storage Class. Amazon S3 on Outposts only uses
-        /// the OUTPOSTS Storage Class. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a> in the
-        /// <i>Amazon S3 User Guide</i>.</p>
+        /// <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created objects. The STANDARD storage class provides high durability and high availability. Depending on performance needs, you can specify a different Storage Class. Amazon S3 on Outposts only uses the OUTPOSTS Storage Class. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_storage_class(
             mut self,
             input: std::option::Option<crate::model::StorageClass>,
@@ -2908,16 +2798,12 @@ pub mod create_multipart_upload_input {
             self.storage_class = input;
             self
         }
-        /// <p>If the bucket is configured as a website, redirects requests for this object to another
-        /// object in the same bucket or to an external URL. Amazon S3 stores the value of this header in
-        /// the object metadata.</p>
+        /// <p>If the bucket is configured as a website, redirects requests for this object to another object in the same bucket or to an external URL. Amazon S3 stores the value of this header in the object metadata.</p>
         pub fn website_redirect_location(mut self, input: impl Into<std::string::String>) -> Self {
             self.website_redirect_location = Some(input.into());
             self
         }
-        /// <p>If the bucket is configured as a website, redirects requests for this object to another
-        /// object in the same bucket or to an external URL. Amazon S3 stores the value of this header in
-        /// the object metadata.</p>
+        /// <p>If the bucket is configured as a website, redirects requests for this object to another object in the same bucket or to an external URL. Amazon S3 stores the value of this header in the object metadata.</p>
         pub fn set_website_redirect_location(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2925,14 +2811,12 @@ pub mod create_multipart_upload_input {
             self.website_redirect_location = input;
             self
         }
-        /// <p>Specifies the algorithm to use to when encrypting the object (for example,
-        /// AES256).</p>
+        /// <p>Specifies the algorithm to use to when encrypting the object (for example, AES256).</p>
         pub fn sse_customer_algorithm(mut self, input: impl Into<std::string::String>) -> Self {
             self.sse_customer_algorithm = Some(input.into());
             self
         }
-        /// <p>Specifies the algorithm to use to when encrypting the object (for example,
-        /// AES256).</p>
+        /// <p>Specifies the algorithm to use to when encrypting the object (for example, AES256).</p>
         pub fn set_sse_customer_algorithm(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2940,18 +2824,12 @@ pub mod create_multipart_upload_input {
             self.sse_customer_algorithm = input;
             self
         }
-        /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This
-        /// value is used to store the object and then it is discarded; Amazon S3 does not store the
-        /// encryption key. The key must be appropriate for use with the algorithm specified in the
-        /// <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
+        /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This value is used to store the object and then it is discarded; Amazon S3 does not store the encryption key. The key must be appropriate for use with the algorithm specified in the <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
         pub fn sse_customer_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.sse_customer_key = Some(input.into());
             self
         }
-        /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This
-        /// value is used to store the object and then it is discarded; Amazon S3 does not store the
-        /// encryption key. The key must be appropriate for use with the algorithm specified in the
-        /// <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
+        /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This value is used to store the object and then it is discarded; Amazon S3 does not store the encryption key. The key must be appropriate for use with the algorithm specified in the <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
         pub fn set_sse_customer_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2959,16 +2837,12 @@ pub mod create_multipart_upload_input {
             self.sse_customer_key = input;
             self
         }
-        /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses
-        /// this header for a message integrity check to ensure that the encryption key was transmitted
-        /// without error.</p>
+        /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
         pub fn sse_customer_key_md5(mut self, input: impl Into<std::string::String>) -> Self {
             self.sse_customer_key_md5 = Some(input.into());
             self
         }
-        /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses
-        /// this header for a message integrity check to ensure that the encryption key was transmitted
-        /// without error.</p>
+        /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
         pub fn set_sse_customer_key_md5(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2976,20 +2850,12 @@ pub mod create_multipart_upload_input {
             self.sse_customer_key_md5 = input;
             self
         }
-        /// <p>Specifies the ID of the symmetric customer managed key to use for object
-        /// encryption. All GET and PUT requests for an object protected by Amazon Web Services KMS will fail if not
-        /// made via SSL or using SigV4. For information about configuring using any of the officially
-        /// supported Amazon Web Services SDKs and Amazon Web Services CLI, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying the Signature Version in Request Authentication</a>
-        /// in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Specifies the ID of the symmetric customer managed key to use for object encryption. All GET and PUT requests for an object protected by Amazon Web Services KMS will fail if not made via SSL or using SigV4. For information about configuring using any of the officially supported Amazon Web Services SDKs and Amazon Web Services CLI, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying the Signature Version in Request Authentication</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn ssekms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.ssekms_key_id = Some(input.into());
             self
         }
-        /// <p>Specifies the ID of the symmetric customer managed key to use for object
-        /// encryption. All GET and PUT requests for an object protected by Amazon Web Services KMS will fail if not
-        /// made via SSL or using SigV4. For information about configuring using any of the officially
-        /// supported Amazon Web Services SDKs and Amazon Web Services CLI, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying the Signature Version in Request Authentication</a>
-        /// in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Specifies the ID of the symmetric customer managed key to use for object encryption. All GET and PUT requests for an object protected by Amazon Web Services KMS will fail if not made via SSL or using SigV4. For information about configuring using any of the officially supported Amazon Web Services SDKs and Amazon Web Services CLI, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying the Signature Version in Request Authentication</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_ssekms_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2997,16 +2863,12 @@ pub mod create_multipart_upload_input {
             self.ssekms_key_id = input;
             self
         }
-        /// <p>Specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The value of this
-        /// header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value
-        /// pairs.</p>
+        /// <p>Specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value pairs.</p>
         pub fn ssekms_encryption_context(mut self, input: impl Into<std::string::String>) -> Self {
             self.ssekms_encryption_context = Some(input.into());
             self
         }
-        /// <p>Specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The value of this
-        /// header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value
-        /// pairs.</p>
+        /// <p>Specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value pairs.</p>
         pub fn set_ssekms_encryption_context(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3026,18 +2888,12 @@ pub mod create_multipart_upload_input {
             self.bucket_key_enabled = input;
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-        /// owners need not specify this parameter in their requests. For information about downloading
-        /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-        /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
             self.request_payer = Some(input);
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-        /// owners need not specify this parameter in their requests. For information about downloading
-        /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-        /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_request_payer(
             mut self,
             input: std::option::Option<crate::model::RequestPayer>,
@@ -4381,14 +4237,12 @@ pub mod delete_bucket_encryption_input {
         pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the bucket containing the server-side encryption configuration to
-        /// delete.</p>
+        /// <p>The name of the bucket containing the server-side encryption configuration to delete.</p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket = Some(input.into());
             self
         }
-        /// <p>The name of the bucket containing the server-side encryption configuration to
-        /// delete.</p>
+        /// <p>The name of the bucket containing the server-side encryption configuration to delete.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -6430,16 +6284,12 @@ pub mod delete_object_input {
             self.key = input;
             self
         }
-        /// <p>The concatenation of the authentication device's serial number, a space, and the value
-        /// that is displayed on your authentication device. Required to permanently delete a versioned
-        /// object if versioning is configured with MFA delete enabled.</p>
+        /// <p>The concatenation of the authentication device's serial number, a space, and the value that is displayed on your authentication device. Required to permanently delete a versioned object if versioning is configured with MFA delete enabled.</p>
         pub fn mfa(mut self, input: impl Into<std::string::String>) -> Self {
             self.mfa = Some(input.into());
             self
         }
-        /// <p>The concatenation of the authentication device's serial number, a space, and the value
-        /// that is displayed on your authentication device. Required to permanently delete a versioned
-        /// object if versioning is configured with MFA delete enabled.</p>
+        /// <p>The concatenation of the authentication device's serial number, a space, and the value that is displayed on your authentication device. Required to permanently delete a versioned object if versioning is configured with MFA delete enabled.</p>
         pub fn set_mfa(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mfa = input;
             self
@@ -6454,18 +6304,12 @@ pub mod delete_object_input {
             self.version_id = input;
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-        /// owners need not specify this parameter in their requests. For information about downloading
-        /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-        /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
             self.request_payer = Some(input);
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-        /// owners need not specify this parameter in their requests. For information about downloading
-        /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-        /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_request_payer(
             mut self,
             input: std::option::Option<crate::model::RequestPayer>,
@@ -6473,16 +6317,12 @@ pub mod delete_object_input {
             self.request_payer = input;
             self
         }
-        /// <p>Indicates whether S3 Object Lock should bypass Governance-mode restrictions to process
-        /// this operation. To use this header, you must have the <code>s3:PutBucketPublicAccessBlock</code>
-        /// permission.</p>
+        /// <p>Indicates whether S3 Object Lock should bypass Governance-mode restrictions to process this operation. To use this header, you must have the <code>s3:PutBucketPublicAccessBlock</code> permission.</p>
         pub fn bypass_governance_retention(mut self, input: bool) -> Self {
             self.bypass_governance_retention = Some(input);
             self
         }
-        /// <p>Indicates whether S3 Object Lock should bypass Governance-mode restrictions to process
-        /// this operation. To use this header, you must have the <code>s3:PutBucketPublicAccessBlock</code>
-        /// permission.</p>
+        /// <p>Indicates whether S3 Object Lock should bypass Governance-mode restrictions to process this operation. To use this header, you must have the <code>s3:PutBucketPublicAccessBlock</code> permission.</p>
         pub fn set_bypass_governance_retention(mut self, input: std::option::Option<bool>) -> Self {
             self.bypass_governance_retention = input;
             self
@@ -6779,32 +6619,22 @@ pub mod delete_objects_input {
             self.delete = input;
             self
         }
-        /// <p>The concatenation of the authentication device's serial number, a space, and the value
-        /// that is displayed on your authentication device. Required to permanently delete a versioned
-        /// object if versioning is configured with MFA delete enabled.</p>
+        /// <p>The concatenation of the authentication device's serial number, a space, and the value that is displayed on your authentication device. Required to permanently delete a versioned object if versioning is configured with MFA delete enabled.</p>
         pub fn mfa(mut self, input: impl Into<std::string::String>) -> Self {
             self.mfa = Some(input.into());
             self
         }
-        /// <p>The concatenation of the authentication device's serial number, a space, and the value
-        /// that is displayed on your authentication device. Required to permanently delete a versioned
-        /// object if versioning is configured with MFA delete enabled.</p>
+        /// <p>The concatenation of the authentication device's serial number, a space, and the value that is displayed on your authentication device. Required to permanently delete a versioned object if versioning is configured with MFA delete enabled.</p>
         pub fn set_mfa(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mfa = input;
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-        /// owners need not specify this parameter in their requests. For information about downloading
-        /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-        /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
             self.request_payer = Some(input);
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-        /// owners need not specify this parameter in their requests. For information about downloading
-        /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-        /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_request_payer(
             mut self,
             input: std::option::Option<crate::model::RequestPayer>,
@@ -6812,16 +6642,12 @@ pub mod delete_objects_input {
             self.request_payer = input;
             self
         }
-        /// <p>Specifies whether you want to delete this object even if it has a Governance-type Object
-        /// Lock in place. To use this header, you must have the <code>s3:PutBucketPublicAccessBlock</code>
-        /// permission.</p>
+        /// <p>Specifies whether you want to delete this object even if it has a Governance-type Object Lock in place. To use this header, you must have the <code>s3:PutBucketPublicAccessBlock</code> permission.</p>
         pub fn bypass_governance_retention(mut self, input: bool) -> Self {
             self.bypass_governance_retention = Some(input);
             self
         }
-        /// <p>Specifies whether you want to delete this object even if it has a Governance-type Object
-        /// Lock in place. To use this header, you must have the <code>s3:PutBucketPublicAccessBlock</code>
-        /// permission.</p>
+        /// <p>Specifies whether you want to delete this object even if it has a Governance-type Object Lock in place. To use this header, you must have the <code>s3:PutBucketPublicAccessBlock</code> permission.</p>
         pub fn set_bypass_governance_retention(mut self, input: std::option::Option<bool>) -> Self {
             self.bypass_governance_retention = input;
             self
@@ -7345,14 +7171,12 @@ pub mod delete_public_access_block_input {
         pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon S3 bucket whose <code>PublicAccessBlock</code> configuration you want to delete.
-        /// </p>
+        /// <p>The Amazon S3 bucket whose <code>PublicAccessBlock</code> configuration you want to delete. </p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket = Some(input.into());
             self
         }
-        /// <p>The Amazon S3 bucket whose <code>PublicAccessBlock</code> configuration you want to delete.
-        /// </p>
+        /// <p>The Amazon S3 bucket whose <code>PublicAccessBlock</code> configuration you want to delete. </p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -8368,14 +8192,12 @@ pub mod get_bucket_encryption_input {
         pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the bucket from which the server-side encryption configuration is
-        /// retrieved.</p>
+        /// <p>The name of the bucket from which the server-side encryption configuration is retrieved.</p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket = Some(input.into());
             self
         }
-        /// <p>The name of the bucket from which the server-side encryption configuration is
-        /// retrieved.</p>
+        /// <p>The name of the bucket from which the server-side encryption configuration is retrieved.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -9991,14 +9813,12 @@ pub mod get_bucket_ownership_controls_input {
         pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the Amazon S3 bucket whose <code>OwnershipControls</code> you want to retrieve.
-        /// </p>
+        /// <p>The name of the Amazon S3 bucket whose <code>OwnershipControls</code> you want to retrieve. </p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket = Some(input.into());
             self
         }
-        /// <p>The name of the Amazon S3 bucket whose <code>OwnershipControls</code> you want to retrieve.
-        /// </p>
+        /// <p>The name of the Amazon S3 bucket whose <code>OwnershipControls</code> you want to retrieve. </p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -11629,26 +11449,22 @@ pub mod get_object_input {
             self.bucket = input;
             self
         }
-        /// <p>Return the object only if its entity tag (ETag) is the same as the one specified,
-        /// otherwise return a 412 (precondition failed).</p>
+        /// <p>Return the object only if its entity tag (ETag) is the same as the one specified, otherwise return a 412 (precondition failed).</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.if_match = Some(input.into());
             self
         }
-        /// <p>Return the object only if its entity tag (ETag) is the same as the one specified,
-        /// otherwise return a 412 (precondition failed).</p>
+        /// <p>Return the object only if its entity tag (ETag) is the same as the one specified, otherwise return a 412 (precondition failed).</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.if_match = input;
             self
         }
-        /// <p>Return the object only if it has been modified since the specified time, otherwise
-        /// return a 304 (not modified).</p>
+        /// <p>Return the object only if it has been modified since the specified time, otherwise return a 304 (not modified).</p>
         pub fn if_modified_since(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.if_modified_since = Some(input);
             self
         }
-        /// <p>Return the object only if it has been modified since the specified time, otherwise
-        /// return a 304 (not modified).</p>
+        /// <p>Return the object only if it has been modified since the specified time, otherwise return a 304 (not modified).</p>
         pub fn set_if_modified_since(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -11656,14 +11472,12 @@ pub mod get_object_input {
             self.if_modified_since = input;
             self
         }
-        /// <p>Return the object only if its entity tag (ETag) is different from the one specified,
-        /// otherwise return a 304 (not modified).</p>
+        /// <p>Return the object only if its entity tag (ETag) is different from the one specified, otherwise return a 304 (not modified).</p>
         pub fn if_none_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.if_none_match = Some(input.into());
             self
         }
-        /// <p>Return the object only if its entity tag (ETag) is different from the one specified,
-        /// otherwise return a 304 (not modified).</p>
+        /// <p>Return the object only if its entity tag (ETag) is different from the one specified, otherwise return a 304 (not modified).</p>
         pub fn set_if_none_match(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11671,14 +11485,12 @@ pub mod get_object_input {
             self.if_none_match = input;
             self
         }
-        /// <p>Return the object only if it has not been modified since the specified time, otherwise
-        /// return a 412 (precondition failed).</p>
+        /// <p>Return the object only if it has not been modified since the specified time, otherwise return a 412 (precondition failed).</p>
         pub fn if_unmodified_since(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.if_unmodified_since = Some(input);
             self
         }
-        /// <p>Return the object only if it has not been modified since the specified time, otherwise
-        /// return a 412 (precondition failed).</p>
+        /// <p>Return the object only if it has not been modified since the specified time, otherwise return a 412 (precondition failed).</p>
         pub fn set_if_unmodified_since(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -11696,21 +11508,15 @@ pub mod get_object_input {
             self.key = input;
             self
         }
-        /// <p>Downloads the specified range bytes of an object. For more information about the HTTP
-        /// Range header, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.</p>
-        /// <note>
-        /// <p>Amazon S3 doesn't support retrieving multiple ranges of data per <code>GET</code>
-        /// request.</p>
+        /// <p>Downloads the specified range bytes of an object. For more information about the HTTP Range header, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.</p> <note>
+        /// <p>Amazon S3 doesn't support retrieving multiple ranges of data per <code>GET</code> request.</p>
         /// </note>
         pub fn range(mut self, input: impl Into<std::string::String>) -> Self {
             self.range = Some(input.into());
             self
         }
-        /// <p>Downloads the specified range bytes of an object. For more information about the HTTP
-        /// Range header, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.</p>
-        /// <note>
-        /// <p>Amazon S3 doesn't support retrieving multiple ranges of data per <code>GET</code>
-        /// request.</p>
+        /// <p>Downloads the specified range bytes of an object. For more information about the HTTP Range header, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.</p> <note>
+        /// <p>Amazon S3 doesn't support retrieving multiple ranges of data per <code>GET</code> request.</p>
         /// </note>
         pub fn set_range(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.range = input;
@@ -11807,14 +11613,12 @@ pub mod get_object_input {
             self.version_id = input;
             self
         }
-        /// <p>Specifies the algorithm to use to when decrypting the object (for example,
-        /// AES256).</p>
+        /// <p>Specifies the algorithm to use to when decrypting the object (for example, AES256).</p>
         pub fn sse_customer_algorithm(mut self, input: impl Into<std::string::String>) -> Self {
             self.sse_customer_algorithm = Some(input.into());
             self
         }
-        /// <p>Specifies the algorithm to use to when decrypting the object (for example,
-        /// AES256).</p>
+        /// <p>Specifies the algorithm to use to when decrypting the object (for example, AES256).</p>
         pub fn set_sse_customer_algorithm(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11822,18 +11626,12 @@ pub mod get_object_input {
             self.sse_customer_algorithm = input;
             self
         }
-        /// <p>Specifies the customer-provided encryption key for Amazon S3 used to encrypt the data. This
-        /// value is used to decrypt the object when recovering it and must match the one used when
-        /// storing the data. The key must be appropriate for use with the algorithm specified in the
-        /// <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
+        /// <p>Specifies the customer-provided encryption key for Amazon S3 used to encrypt the data. This value is used to decrypt the object when recovering it and must match the one used when storing the data. The key must be appropriate for use with the algorithm specified in the <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
         pub fn sse_customer_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.sse_customer_key = Some(input.into());
             self
         }
-        /// <p>Specifies the customer-provided encryption key for Amazon S3 used to encrypt the data. This
-        /// value is used to decrypt the object when recovering it and must match the one used when
-        /// storing the data. The key must be appropriate for use with the algorithm specified in the
-        /// <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
+        /// <p>Specifies the customer-provided encryption key for Amazon S3 used to encrypt the data. This value is used to decrypt the object when recovering it and must match the one used when storing the data. The key must be appropriate for use with the algorithm specified in the <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
         pub fn set_sse_customer_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11841,16 +11639,12 @@ pub mod get_object_input {
             self.sse_customer_key = input;
             self
         }
-        /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses
-        /// this header for a message integrity check to ensure that the encryption key was transmitted
-        /// without error.</p>
+        /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
         pub fn sse_customer_key_md5(mut self, input: impl Into<std::string::String>) -> Self {
             self.sse_customer_key_md5 = Some(input.into());
             self
         }
-        /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses
-        /// this header for a message integrity check to ensure that the encryption key was transmitted
-        /// without error.</p>
+        /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
         pub fn set_sse_customer_key_md5(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11858,18 +11652,12 @@ pub mod get_object_input {
             self.sse_customer_key_md5 = input;
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-        /// owners need not specify this parameter in their requests. For information about downloading
-        /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-        /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
             self.request_payer = Some(input);
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-        /// owners need not specify this parameter in their requests. For information about downloading
-        /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-        /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_request_payer(
             mut self,
             input: std::option::Option<crate::model::RequestPayer>,
@@ -11877,16 +11665,12 @@ pub mod get_object_input {
             self.request_payer = input;
             self
         }
-        /// <p>Part number of the object being read. This is a positive integer between 1 and 10,000.
-        /// Effectively performs a 'ranged' GET request for the part specified. Useful for downloading
-        /// just a part of an object.</p>
+        /// <p>Part number of the object being read. This is a positive integer between 1 and 10,000. Effectively performs a 'ranged' GET request for the part specified. Useful for downloading just a part of an object.</p>
         pub fn part_number(mut self, input: i32) -> Self {
             self.part_number = Some(input);
             self
         }
-        /// <p>Part number of the object being read. This is a positive integer between 1 and 10,000.
-        /// Effectively performs a 'ranged' GET request for the part specified. Useful for downloading
-        /// just a part of an object.</p>
+        /// <p>Part number of the object being read. This is a positive integer between 1 and 10,000. Effectively performs a 'ranged' GET request for the part specified. Useful for downloading just a part of an object.</p>
         pub fn set_part_number(mut self, input: std::option::Option<i32>) -> Self {
             self.part_number = input;
             self
@@ -12384,18 +12168,12 @@ pub mod get_object_acl_input {
             self.version_id = input;
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-        /// owners need not specify this parameter in their requests. For information about downloading
-        /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-        /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
             self.request_payer = Some(input);
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-        /// owners need not specify this parameter in their requests. For information about downloading
-        /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-        /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_request_payer(
             mut self,
             input: std::option::Option<crate::model::RequestPayer>,
@@ -12666,18 +12444,12 @@ pub mod get_object_legal_hold_input {
             self.version_id = input;
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-        /// owners need not specify this parameter in their requests. For information about downloading
-        /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-        /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
             self.request_payer = Some(input);
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-        /// owners need not specify this parameter in their requests. For information about downloading
-        /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-        /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_request_payer(
             mut self,
             input: std::option::Option<crate::model::RequestPayer>,
@@ -13151,18 +12923,12 @@ pub mod get_object_retention_input {
             self.version_id = input;
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-        /// owners need not specify this parameter in their requests. For information about downloading
-        /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-        /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
             self.request_payer = Some(input);
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-        /// owners need not specify this parameter in their requests. For information about downloading
-        /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-        /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_request_payer(
             mut self,
             input: std::option::Option<crate::model::RequestPayer>,
@@ -13448,18 +13214,12 @@ pub mod get_object_tagging_input {
             self.expected_bucket_owner = input;
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-        /// owners need not specify this parameter in their requests. For information about downloading
-        /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-        /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
             self.request_payer = Some(input);
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-        /// owners need not specify this parameter in their requests. For information about downloading
-        /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-        /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_request_payer(
             mut self,
             input: std::option::Option<crate::model::RequestPayer>,
@@ -13704,18 +13464,12 @@ pub mod get_object_torrent_input {
             self.key = input;
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-        /// owners need not specify this parameter in their requests. For information about downloading
-        /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-        /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
             self.request_payer = Some(input);
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-        /// owners need not specify this parameter in their requests. For information about downloading
-        /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-        /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_request_payer(
             mut self,
             input: std::option::Option<crate::model::RequestPayer>,
@@ -13947,14 +13701,12 @@ pub mod get_public_access_block_input {
         pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the Amazon S3 bucket whose <code>PublicAccessBlock</code> configuration you want
-        /// to retrieve. </p>
+        /// <p>The name of the Amazon S3 bucket whose <code>PublicAccessBlock</code> configuration you want to retrieve. </p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket = Some(input.into());
             self
         }
-        /// <p>The name of the Amazon S3 bucket whose <code>PublicAccessBlock</code> configuration you want
-        /// to retrieve. </p>
+        /// <p>The name of the Amazon S3 bucket whose <code>PublicAccessBlock</code> configuration you want to retrieve. </p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -14370,26 +14122,22 @@ pub mod head_object_input {
             self.bucket = input;
             self
         }
-        /// <p>Return the object only if its entity tag (ETag) is the same as the one specified,
-        /// otherwise return a 412 (precondition failed).</p>
+        /// <p>Return the object only if its entity tag (ETag) is the same as the one specified, otherwise return a 412 (precondition failed).</p>
         pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.if_match = Some(input.into());
             self
         }
-        /// <p>Return the object only if its entity tag (ETag) is the same as the one specified,
-        /// otherwise return a 412 (precondition failed).</p>
+        /// <p>Return the object only if its entity tag (ETag) is the same as the one specified, otherwise return a 412 (precondition failed).</p>
         pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.if_match = input;
             self
         }
-        /// <p>Return the object only if it has been modified since the specified time, otherwise
-        /// return a 304 (not modified).</p>
+        /// <p>Return the object only if it has been modified since the specified time, otherwise return a 304 (not modified).</p>
         pub fn if_modified_since(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.if_modified_since = Some(input);
             self
         }
-        /// <p>Return the object only if it has been modified since the specified time, otherwise
-        /// return a 304 (not modified).</p>
+        /// <p>Return the object only if it has been modified since the specified time, otherwise return a 304 (not modified).</p>
         pub fn set_if_modified_since(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -14397,14 +14145,12 @@ pub mod head_object_input {
             self.if_modified_since = input;
             self
         }
-        /// <p>Return the object only if its entity tag (ETag) is different from the one specified,
-        /// otherwise return a 304 (not modified).</p>
+        /// <p>Return the object only if its entity tag (ETag) is different from the one specified, otherwise return a 304 (not modified).</p>
         pub fn if_none_match(mut self, input: impl Into<std::string::String>) -> Self {
             self.if_none_match = Some(input.into());
             self
         }
-        /// <p>Return the object only if its entity tag (ETag) is different from the one specified,
-        /// otherwise return a 304 (not modified).</p>
+        /// <p>Return the object only if its entity tag (ETag) is different from the one specified, otherwise return a 304 (not modified).</p>
         pub fn set_if_none_match(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14412,14 +14158,12 @@ pub mod head_object_input {
             self.if_none_match = input;
             self
         }
-        /// <p>Return the object only if it has not been modified since the specified time, otherwise
-        /// return a 412 (precondition failed).</p>
+        /// <p>Return the object only if it has not been modified since the specified time, otherwise return a 412 (precondition failed).</p>
         pub fn if_unmodified_since(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.if_unmodified_since = Some(input);
             self
         }
-        /// <p>Return the object only if it has not been modified since the specified time, otherwise
-        /// return a 412 (precondition failed).</p>
+        /// <p>Return the object only if it has not been modified since the specified time, otherwise return a 412 (precondition failed).</p>
         pub fn set_if_unmodified_since(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -14437,21 +14181,15 @@ pub mod head_object_input {
             self.key = input;
             self
         }
-        /// <p>Downloads the specified range bytes of an object. For more information about the HTTP
-        /// Range header, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.</p>
-        /// <note>
-        /// <p>Amazon S3 doesn't support retrieving multiple ranges of data per <code>GET</code>
-        /// request.</p>
+        /// <p>Downloads the specified range bytes of an object. For more information about the HTTP Range header, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.</p> <note>
+        /// <p>Amazon S3 doesn't support retrieving multiple ranges of data per <code>GET</code> request.</p>
         /// </note>
         pub fn range(mut self, input: impl Into<std::string::String>) -> Self {
             self.range = Some(input.into());
             self
         }
-        /// <p>Downloads the specified range bytes of an object. For more information about the HTTP
-        /// Range header, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.</p>
-        /// <note>
-        /// <p>Amazon S3 doesn't support retrieving multiple ranges of data per <code>GET</code>
-        /// request.</p>
+        /// <p>Downloads the specified range bytes of an object. For more information about the HTTP Range header, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.</p> <note>
+        /// <p>Amazon S3 doesn't support retrieving multiple ranges of data per <code>GET</code> request.</p>
         /// </note>
         pub fn set_range(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.range = input;
@@ -14467,14 +14205,12 @@ pub mod head_object_input {
             self.version_id = input;
             self
         }
-        /// <p>Specifies the algorithm to use to when encrypting the object (for example,
-        /// AES256).</p>
+        /// <p>Specifies the algorithm to use to when encrypting the object (for example, AES256).</p>
         pub fn sse_customer_algorithm(mut self, input: impl Into<std::string::String>) -> Self {
             self.sse_customer_algorithm = Some(input.into());
             self
         }
-        /// <p>Specifies the algorithm to use to when encrypting the object (for example,
-        /// AES256).</p>
+        /// <p>Specifies the algorithm to use to when encrypting the object (for example, AES256).</p>
         pub fn set_sse_customer_algorithm(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14482,18 +14218,12 @@ pub mod head_object_input {
             self.sse_customer_algorithm = input;
             self
         }
-        /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This
-        /// value is used to store the object and then it is discarded; Amazon S3 does not store the
-        /// encryption key. The key must be appropriate for use with the algorithm specified in the
-        /// <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
+        /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This value is used to store the object and then it is discarded; Amazon S3 does not store the encryption key. The key must be appropriate for use with the algorithm specified in the <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
         pub fn sse_customer_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.sse_customer_key = Some(input.into());
             self
         }
-        /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This
-        /// value is used to store the object and then it is discarded; Amazon S3 does not store the
-        /// encryption key. The key must be appropriate for use with the algorithm specified in the
-        /// <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
+        /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This value is used to store the object and then it is discarded; Amazon S3 does not store the encryption key. The key must be appropriate for use with the algorithm specified in the <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
         pub fn set_sse_customer_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14501,16 +14231,12 @@ pub mod head_object_input {
             self.sse_customer_key = input;
             self
         }
-        /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses
-        /// this header for a message integrity check to ensure that the encryption key was transmitted
-        /// without error.</p>
+        /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
         pub fn sse_customer_key_md5(mut self, input: impl Into<std::string::String>) -> Self {
             self.sse_customer_key_md5 = Some(input.into());
             self
         }
-        /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses
-        /// this header for a message integrity check to ensure that the encryption key was transmitted
-        /// without error.</p>
+        /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
         pub fn set_sse_customer_key_md5(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14518,18 +14244,12 @@ pub mod head_object_input {
             self.sse_customer_key_md5 = input;
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-        /// owners need not specify this parameter in their requests. For information about downloading
-        /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-        /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
             self.request_payer = Some(input);
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-        /// owners need not specify this parameter in their requests. For information about downloading
-        /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-        /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_request_payer(
             mut self,
             input: std::option::Option<crate::model::RequestPayer>,
@@ -14537,16 +14257,12 @@ pub mod head_object_input {
             self.request_payer = input;
             self
         }
-        /// <p>Part number of the object being read. This is a positive integer between 1 and 10,000.
-        /// Effectively performs a 'ranged' HEAD request for the part specified. Useful querying about
-        /// the size of the part and the number of parts in this object.</p>
+        /// <p>Part number of the object being read. This is a positive integer between 1 and 10,000. Effectively performs a 'ranged' HEAD request for the part specified. Useful querying about the size of the part and the number of parts in this object.</p>
         pub fn part_number(mut self, input: i32) -> Self {
             self.part_number = Some(input);
             self
         }
-        /// <p>Part number of the object being read. This is a positive integer between 1 and 10,000.
-        /// Effectively performs a 'ranged' HEAD request for the part specified. Useful querying about
-        /// the size of the part and the number of parts in this object.</p>
+        /// <p>Part number of the object being read. This is a positive integer between 1 and 10,000. Effectively performs a 'ranged' HEAD request for the part specified. Useful querying about the size of the part and the number of parts in this object.</p>
         pub fn set_part_number(mut self, input: std::option::Option<i32>) -> Self {
             self.part_number = input;
             self
@@ -14939,14 +14655,12 @@ pub mod list_bucket_analytics_configurations_input {
             self.bucket = input;
             self
         }
-        /// <p>The ContinuationToken that represents a placeholder from where this request should
-        /// begin.</p>
+        /// <p>The ContinuationToken that represents a placeholder from where this request should begin.</p>
         pub fn continuation_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.continuation_token = Some(input.into());
             self
         }
-        /// <p>The ContinuationToken that represents a placeholder from where this request should
-        /// begin.</p>
+        /// <p>The ContinuationToken that represents a placeholder from where this request should begin.</p>
         pub fn set_continuation_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15164,14 +14878,12 @@ pub mod list_bucket_intelligent_tiering_configurations_input {
             self.bucket = input;
             self
         }
-        /// <p>The ContinuationToken that represents a placeholder from where this request should
-        /// begin.</p>
+        /// <p>The ContinuationToken that represents a placeholder from where this request should begin.</p>
         pub fn continuation_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.continuation_token = Some(input.into());
             self
         }
-        /// <p>The ContinuationToken that represents a placeholder from where this request should
-        /// begin.</p>
+        /// <p>The ContinuationToken that represents a placeholder from where this request should begin.</p>
         pub fn set_continuation_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15355,16 +15067,12 @@ pub mod list_bucket_inventory_configurations_input {
             self.bucket = input;
             self
         }
-        /// <p>The marker used to continue an inventory configuration listing that has been truncated.
-        /// Use the NextContinuationToken from a previously truncated list response to continue the
-        /// listing. The continuation token is an opaque value that Amazon S3 understands.</p>
+        /// <p>The marker used to continue an inventory configuration listing that has been truncated. Use the NextContinuationToken from a previously truncated list response to continue the listing. The continuation token is an opaque value that Amazon S3 understands.</p>
         pub fn continuation_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.continuation_token = Some(input.into());
             self
         }
-        /// <p>The marker used to continue an inventory configuration listing that has been truncated.
-        /// Use the NextContinuationToken from a previously truncated list response to continue the
-        /// listing. The continuation token is an opaque value that Amazon S3 understands.</p>
+        /// <p>The marker used to continue an inventory configuration listing that has been truncated. Use the NextContinuationToken from a previously truncated list response to continue the listing. The continuation token is an opaque value that Amazon S3 understands.</p>
         pub fn set_continuation_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15583,18 +15291,12 @@ pub mod list_bucket_metrics_configurations_input {
             self.bucket = input;
             self
         }
-        /// <p>The marker that is used to continue a metrics configuration listing that has been
-        /// truncated. Use the NextContinuationToken from a previously truncated list response to
-        /// continue the listing. The continuation token is an opaque value that Amazon S3
-        /// understands.</p>
+        /// <p>The marker that is used to continue a metrics configuration listing that has been truncated. Use the NextContinuationToken from a previously truncated list response to continue the listing. The continuation token is an opaque value that Amazon S3 understands.</p>
         pub fn continuation_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.continuation_token = Some(input.into());
             self
         }
-        /// <p>The marker that is used to continue a metrics configuration listing that has been
-        /// truncated. Use the NextContinuationToken from a previously truncated list response to
-        /// continue the listing. The continuation token is an opaque value that Amazon S3
-        /// understands.</p>
+        /// <p>The marker that is used to continue a metrics configuration listing that has been truncated. Use the NextContinuationToken from a previously truncated list response to continue the listing. The continuation token is an opaque value that Amazon S3 understands.</p>
         pub fn set_continuation_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15946,41 +15648,23 @@ pub mod list_multipart_uploads_input {
             self
         }
         /// <p>Character you use to group keys.</p>
-        /// <p>All keys that contain the same string between the prefix, if specified, and the first
-        /// occurrence of the delimiter after the prefix are grouped under a single result element,
-        /// <code>CommonPrefixes</code>. If you don't specify the prefix parameter, then the
-        /// substring starts at the beginning of the key. The keys that are grouped under
-        /// <code>CommonPrefixes</code> result element are not returned elsewhere in the
-        /// response.</p>
+        /// <p>All keys that contain the same string between the prefix, if specified, and the first occurrence of the delimiter after the prefix are grouped under a single result element, <code>CommonPrefixes</code>. If you don't specify the prefix parameter, then the substring starts at the beginning of the key. The keys that are grouped under <code>CommonPrefixes</code> result element are not returned elsewhere in the response.</p>
         pub fn delimiter(mut self, input: impl Into<std::string::String>) -> Self {
             self.delimiter = Some(input.into());
             self
         }
         /// <p>Character you use to group keys.</p>
-        /// <p>All keys that contain the same string between the prefix, if specified, and the first
-        /// occurrence of the delimiter after the prefix are grouped under a single result element,
-        /// <code>CommonPrefixes</code>. If you don't specify the prefix parameter, then the
-        /// substring starts at the beginning of the key. The keys that are grouped under
-        /// <code>CommonPrefixes</code> result element are not returned elsewhere in the
-        /// response.</p>
+        /// <p>All keys that contain the same string between the prefix, if specified, and the first occurrence of the delimiter after the prefix are grouped under a single result element, <code>CommonPrefixes</code>. If you don't specify the prefix parameter, then the substring starts at the beginning of the key. The keys that are grouped under <code>CommonPrefixes</code> result element are not returned elsewhere in the response.</p>
         pub fn set_delimiter(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.delimiter = input;
             self
         }
-        /// <p>Requests Amazon S3 to encode the object keys in the response and specifies the encoding
-        /// method to use. An object key may contain any Unicode character; however, XML 1.0 parser
-        /// cannot parse some characters, such as characters with an ASCII value from 0 to 10. For
-        /// characters that are not supported in XML 1.0, you can add this parameter to request that
-        /// Amazon S3 encode the keys in the response.</p>
+        /// <p>Requests Amazon S3 to encode the object keys in the response and specifies the encoding method to use. An object key may contain any Unicode character; however, XML 1.0 parser cannot parse some characters, such as characters with an ASCII value from 0 to 10. For characters that are not supported in XML 1.0, you can add this parameter to request that Amazon S3 encode the keys in the response.</p>
         pub fn encoding_type(mut self, input: crate::model::EncodingType) -> Self {
             self.encoding_type = Some(input);
             self
         }
-        /// <p>Requests Amazon S3 to encode the object keys in the response and specifies the encoding
-        /// method to use. An object key may contain any Unicode character; however, XML 1.0 parser
-        /// cannot parse some characters, such as characters with an ASCII value from 0 to 10. For
-        /// characters that are not supported in XML 1.0, you can add this parameter to request that
-        /// Amazon S3 encode the keys in the response.</p>
+        /// <p>Requests Amazon S3 to encode the object keys in the response and specifies the encoding method to use. An object key may contain any Unicode character; however, XML 1.0 parser cannot parse some characters, such as characters with an ASCII value from 0 to 10. For characters that are not supported in XML 1.0, you can add this parameter to request that Amazon S3 encode the keys in the response.</p>
         pub fn set_encoding_type(
             mut self,
             input: std::option::Option<crate::model::EncodingType>,
@@ -15988,72 +15672,46 @@ pub mod list_multipart_uploads_input {
             self.encoding_type = input;
             self
         }
-        /// <p>Together with upload-id-marker, this parameter specifies the multipart upload after
-        /// which listing should begin.</p>
-        /// <p>If <code>upload-id-marker</code> is not specified, only the keys lexicographically
-        /// greater than the specified <code>key-marker</code> will be included in the list.</p>
-        ///
-        /// <p>If <code>upload-id-marker</code> is specified, any multipart uploads for a key equal to
-        /// the <code>key-marker</code> might also be included, provided those multipart uploads have
-        /// upload IDs lexicographically greater than the specified
-        /// <code>upload-id-marker</code>.</p>
+        /// <p>Together with upload-id-marker, this parameter specifies the multipart upload after which listing should begin.</p>
+        /// <p>If <code>upload-id-marker</code> is not specified, only the keys lexicographically greater than the specified <code>key-marker</code> will be included in the list.</p>
+        /// <p>If <code>upload-id-marker</code> is specified, any multipart uploads for a key equal to the <code>key-marker</code> might also be included, provided those multipart uploads have upload IDs lexicographically greater than the specified <code>upload-id-marker</code>.</p>
         pub fn key_marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_marker = Some(input.into());
             self
         }
-        /// <p>Together with upload-id-marker, this parameter specifies the multipart upload after
-        /// which listing should begin.</p>
-        /// <p>If <code>upload-id-marker</code> is not specified, only the keys lexicographically
-        /// greater than the specified <code>key-marker</code> will be included in the list.</p>
-        ///
-        /// <p>If <code>upload-id-marker</code> is specified, any multipart uploads for a key equal to
-        /// the <code>key-marker</code> might also be included, provided those multipart uploads have
-        /// upload IDs lexicographically greater than the specified
-        /// <code>upload-id-marker</code>.</p>
+        /// <p>Together with upload-id-marker, this parameter specifies the multipart upload after which listing should begin.</p>
+        /// <p>If <code>upload-id-marker</code> is not specified, only the keys lexicographically greater than the specified <code>key-marker</code> will be included in the list.</p>
+        /// <p>If <code>upload-id-marker</code> is specified, any multipart uploads for a key equal to the <code>key-marker</code> might also be included, provided those multipart uploads have upload IDs lexicographically greater than the specified <code>upload-id-marker</code>.</p>
         pub fn set_key_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_marker = input;
             self
         }
-        /// <p>Sets the maximum number of multipart uploads, from 1 to 1,000, to return in the response
-        /// body. 1,000 is the maximum number of uploads that can be returned in a response.</p>
+        /// <p>Sets the maximum number of multipart uploads, from 1 to 1,000, to return in the response body. 1,000 is the maximum number of uploads that can be returned in a response.</p>
         pub fn max_uploads(mut self, input: i32) -> Self {
             self.max_uploads = Some(input);
             self
         }
-        /// <p>Sets the maximum number of multipart uploads, from 1 to 1,000, to return in the response
-        /// body. 1,000 is the maximum number of uploads that can be returned in a response.</p>
+        /// <p>Sets the maximum number of multipart uploads, from 1 to 1,000, to return in the response body. 1,000 is the maximum number of uploads that can be returned in a response.</p>
         pub fn set_max_uploads(mut self, input: std::option::Option<i32>) -> Self {
             self.max_uploads = input;
             self
         }
-        /// <p>Lists in-progress uploads only for those keys that begin with the specified prefix. You
-        /// can use prefixes to separate a bucket into different grouping of keys. (You can think of
-        /// using prefix to make groups in the same way you'd use a folder in a file system.)</p>
+        /// <p>Lists in-progress uploads only for those keys that begin with the specified prefix. You can use prefixes to separate a bucket into different grouping of keys. (You can think of using prefix to make groups in the same way you'd use a folder in a file system.)</p>
         pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.prefix = Some(input.into());
             self
         }
-        /// <p>Lists in-progress uploads only for those keys that begin with the specified prefix. You
-        /// can use prefixes to separate a bucket into different grouping of keys. (You can think of
-        /// using prefix to make groups in the same way you'd use a folder in a file system.)</p>
+        /// <p>Lists in-progress uploads only for those keys that begin with the specified prefix. You can use prefixes to separate a bucket into different grouping of keys. (You can think of using prefix to make groups in the same way you'd use a folder in a file system.)</p>
         pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.prefix = input;
             self
         }
-        /// <p>Together with key-marker, specifies the multipart upload after which listing should
-        /// begin. If key-marker is not specified, the upload-id-marker parameter is ignored.
-        /// Otherwise, any multipart uploads for a key equal to the key-marker might be included in the
-        /// list only if they have an upload ID lexicographically greater than the specified
-        /// <code>upload-id-marker</code>.</p>
+        /// <p>Together with key-marker, specifies the multipart upload after which listing should begin. If key-marker is not specified, the upload-id-marker parameter is ignored. Otherwise, any multipart uploads for a key equal to the key-marker might be included in the list only if they have an upload ID lexicographically greater than the specified <code>upload-id-marker</code>.</p>
         pub fn upload_id_marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.upload_id_marker = Some(input.into());
             self
         }
-        /// <p>Together with key-marker, specifies the multipart upload after which listing should
-        /// begin. If key-marker is not specified, the upload-id-marker parameter is ignored.
-        /// Otherwise, any multipart uploads for a key equal to the key-marker might be included in the
-        /// list only if they have an upload ID lexicographically greater than the specified
-        /// <code>upload-id-marker</code>.</p>
+        /// <p>Together with key-marker, specifies the multipart upload after which listing should begin. If key-marker is not specified, the upload-id-marker parameter is ignored. Otherwise, any multipart uploads for a key equal to the key-marker might be included in the list only if they have an upload ID lexicographically greater than the specified <code>upload-id-marker</code>.</p>
         pub fn set_upload_id_marker(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16317,20 +15975,12 @@ pub mod list_objects_input {
             self.delimiter = input;
             self
         }
-        /// <p>Requests Amazon S3 to encode the object keys in the response and specifies the encoding
-        /// method to use. An object key may contain any Unicode character; however, XML 1.0 parser
-        /// cannot parse some characters, such as characters with an ASCII value from 0 to 10. For
-        /// characters that are not supported in XML 1.0, you can add this parameter to request that
-        /// Amazon S3 encode the keys in the response.</p>
+        /// <p>Requests Amazon S3 to encode the object keys in the response and specifies the encoding method to use. An object key may contain any Unicode character; however, XML 1.0 parser cannot parse some characters, such as characters with an ASCII value from 0 to 10. For characters that are not supported in XML 1.0, you can add this parameter to request that Amazon S3 encode the keys in the response.</p>
         pub fn encoding_type(mut self, input: crate::model::EncodingType) -> Self {
             self.encoding_type = Some(input);
             self
         }
-        /// <p>Requests Amazon S3 to encode the object keys in the response and specifies the encoding
-        /// method to use. An object key may contain any Unicode character; however, XML 1.0 parser
-        /// cannot parse some characters, such as characters with an ASCII value from 0 to 10. For
-        /// characters that are not supported in XML 1.0, you can add this parameter to request that
-        /// Amazon S3 encode the keys in the response.</p>
+        /// <p>Requests Amazon S3 to encode the object keys in the response and specifies the encoding method to use. An object key may contain any Unicode character; however, XML 1.0 parser cannot parse some characters, such as characters with an ASCII value from 0 to 10. For characters that are not supported in XML 1.0, you can add this parameter to request that Amazon S3 encode the keys in the response.</p>
         pub fn set_encoding_type(
             mut self,
             input: std::option::Option<crate::model::EncodingType>,
@@ -16338,28 +15988,22 @@ pub mod list_objects_input {
             self.encoding_type = input;
             self
         }
-        /// <p>Marker is where you want Amazon S3 to start listing from. Amazon S3 starts listing after
-        /// this specified key. Marker can be any key in the bucket.</p>
+        /// <p>Marker is where you want Amazon S3 to start listing from. Amazon S3 starts listing after this specified key. Marker can be any key in the bucket.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>Marker is where you want Amazon S3 to start listing from. Amazon S3 starts listing after
-        /// this specified key. Marker can be any key in the bucket.</p>
+        /// <p>Marker is where you want Amazon S3 to start listing from. Amazon S3 starts listing after this specified key. Marker can be any key in the bucket.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
         }
-        /// <p>Sets the maximum number of keys returned in the response. By default the action returns up
-        /// to 1,000 key names. The response might contain fewer keys but will never contain more.
-        /// </p>
+        /// <p>Sets the maximum number of keys returned in the response. By default the action returns up to 1,000 key names. The response might contain fewer keys but will never contain more. </p>
         pub fn max_keys(mut self, input: i32) -> Self {
             self.max_keys = Some(input);
             self
         }
-        /// <p>Sets the maximum number of keys returned in the response. By default the action returns up
-        /// to 1,000 key names. The response might contain fewer keys but will never contain more.
-        /// </p>
+        /// <p>Sets the maximum number of keys returned in the response. By default the action returns up to 1,000 key names. The response might contain fewer keys but will never contain more. </p>
         pub fn set_max_keys(mut self, input: std::option::Option<i32>) -> Self {
             self.max_keys = input;
             self
@@ -16374,14 +16018,12 @@ pub mod list_objects_input {
             self.prefix = input;
             self
         }
-        /// <p>Confirms that the requester knows that she or he will be charged for the list objects
-        /// request. Bucket owners need not specify this parameter in their requests.</p>
+        /// <p>Confirms that the requester knows that she or he will be charged for the list objects request. Bucket owners need not specify this parameter in their requests.</p>
         pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
             self.request_payer = Some(input);
             self
         }
-        /// <p>Confirms that the requester knows that she or he will be charged for the list objects
-        /// request. Bucket owners need not specify this parameter in their requests.</p>
+        /// <p>Confirms that the requester knows that she or he will be charged for the list objects request. Bucket owners need not specify this parameter in their requests.</p>
         pub fn set_request_payer(
             mut self,
             input: std::option::Option<crate::model::RequestPayer>,
@@ -16666,16 +16308,12 @@ pub mod list_objects_v2_input {
             self.encoding_type = input;
             self
         }
-        /// <p>Sets the maximum number of keys returned in the response. By default the action returns up
-        /// to 1,000 key names. The response might contain fewer keys but will never contain
-        /// more.</p>
+        /// <p>Sets the maximum number of keys returned in the response. By default the action returns up to 1,000 key names. The response might contain fewer keys but will never contain more.</p>
         pub fn max_keys(mut self, input: i32) -> Self {
             self.max_keys = Some(input);
             self
         }
-        /// <p>Sets the maximum number of keys returned in the response. By default the action returns up
-        /// to 1,000 key names. The response might contain fewer keys but will never contain
-        /// more.</p>
+        /// <p>Sets the maximum number of keys returned in the response. By default the action returns up to 1,000 key names. The response might contain fewer keys but will never contain more.</p>
         pub fn set_max_keys(mut self, input: std::option::Option<i32>) -> Self {
             self.max_keys = input;
             self
@@ -16690,14 +16328,12 @@ pub mod list_objects_v2_input {
             self.prefix = input;
             self
         }
-        /// <p>ContinuationToken indicates Amazon S3 that the list is being continued on this bucket with a
-        /// token. ContinuationToken is obfuscated and is not a real key.</p>
+        /// <p>ContinuationToken indicates Amazon S3 that the list is being continued on this bucket with a token. ContinuationToken is obfuscated and is not a real key.</p>
         pub fn continuation_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.continuation_token = Some(input.into());
             self
         }
-        /// <p>ContinuationToken indicates Amazon S3 that the list is being continued on this bucket with a
-        /// token. ContinuationToken is obfuscated and is not a real key.</p>
+        /// <p>ContinuationToken indicates Amazon S3 that the list is being continued on this bucket with a token. ContinuationToken is obfuscated and is not a real key.</p>
         pub fn set_continuation_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16705,40 +16341,32 @@ pub mod list_objects_v2_input {
             self.continuation_token = input;
             self
         }
-        /// <p>The owner field is not present in listV2 by default, if you want to return owner field
-        /// with each key in the result then set the fetch owner field to true.</p>
+        /// <p>The owner field is not present in listV2 by default, if you want to return owner field with each key in the result then set the fetch owner field to true.</p>
         pub fn fetch_owner(mut self, input: bool) -> Self {
             self.fetch_owner = Some(input);
             self
         }
-        /// <p>The owner field is not present in listV2 by default, if you want to return owner field
-        /// with each key in the result then set the fetch owner field to true.</p>
+        /// <p>The owner field is not present in listV2 by default, if you want to return owner field with each key in the result then set the fetch owner field to true.</p>
         pub fn set_fetch_owner(mut self, input: std::option::Option<bool>) -> Self {
             self.fetch_owner = input;
             self
         }
-        /// <p>StartAfter is where you want Amazon S3 to start listing from. Amazon S3 starts listing after this
-        /// specified key. StartAfter can be any key in the bucket.</p>
+        /// <p>StartAfter is where you want Amazon S3 to start listing from. Amazon S3 starts listing after this specified key. StartAfter can be any key in the bucket.</p>
         pub fn start_after(mut self, input: impl Into<std::string::String>) -> Self {
             self.start_after = Some(input.into());
             self
         }
-        /// <p>StartAfter is where you want Amazon S3 to start listing from. Amazon S3 starts listing after this
-        /// specified key. StartAfter can be any key in the bucket.</p>
+        /// <p>StartAfter is where you want Amazon S3 to start listing from. Amazon S3 starts listing after this specified key. StartAfter can be any key in the bucket.</p>
         pub fn set_start_after(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.start_after = input;
             self
         }
-        /// <p>Confirms that the requester knows that she or he will be charged for the list objects
-        /// request in V2 style. Bucket owners need not specify this parameter in their
-        /// requests.</p>
+        /// <p>Confirms that the requester knows that she or he will be charged for the list objects request in V2 style. Bucket owners need not specify this parameter in their requests.</p>
         pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
             self.request_payer = Some(input);
             self
         }
-        /// <p>Confirms that the requester knows that she or he will be charged for the list objects
-        /// request in V2 style. Bucket owners need not specify this parameter in their
-        /// requests.</p>
+        /// <p>Confirms that the requester knows that she or he will be charged for the list objects request in V2 style. Bucket owners need not specify this parameter in their requests.</p>
         pub fn set_request_payer(
             mut self,
             input: std::option::Option<crate::model::RequestPayer>,
@@ -17012,38 +16640,22 @@ pub mod list_object_versions_input {
             self.bucket = input;
             self
         }
-        /// <p>A delimiter is a character that you specify to group keys. All keys that contain the
-        /// same string between the <code>prefix</code> and the first occurrence of the delimiter are
-        /// grouped under a single result element in CommonPrefixes. These groups are counted as one
-        /// result against the max-keys limitation. These keys are not returned elsewhere in the
-        /// response.</p>
+        /// <p>A delimiter is a character that you specify to group keys. All keys that contain the same string between the <code>prefix</code> and the first occurrence of the delimiter are grouped under a single result element in CommonPrefixes. These groups are counted as one result against the max-keys limitation. These keys are not returned elsewhere in the response.</p>
         pub fn delimiter(mut self, input: impl Into<std::string::String>) -> Self {
             self.delimiter = Some(input.into());
             self
         }
-        /// <p>A delimiter is a character that you specify to group keys. All keys that contain the
-        /// same string between the <code>prefix</code> and the first occurrence of the delimiter are
-        /// grouped under a single result element in CommonPrefixes. These groups are counted as one
-        /// result against the max-keys limitation. These keys are not returned elsewhere in the
-        /// response.</p>
+        /// <p>A delimiter is a character that you specify to group keys. All keys that contain the same string between the <code>prefix</code> and the first occurrence of the delimiter are grouped under a single result element in CommonPrefixes. These groups are counted as one result against the max-keys limitation. These keys are not returned elsewhere in the response.</p>
         pub fn set_delimiter(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.delimiter = input;
             self
         }
-        /// <p>Requests Amazon S3 to encode the object keys in the response and specifies the encoding
-        /// method to use. An object key may contain any Unicode character; however, XML 1.0 parser
-        /// cannot parse some characters, such as characters with an ASCII value from 0 to 10. For
-        /// characters that are not supported in XML 1.0, you can add this parameter to request that
-        /// Amazon S3 encode the keys in the response.</p>
+        /// <p>Requests Amazon S3 to encode the object keys in the response and specifies the encoding method to use. An object key may contain any Unicode character; however, XML 1.0 parser cannot parse some characters, such as characters with an ASCII value from 0 to 10. For characters that are not supported in XML 1.0, you can add this parameter to request that Amazon S3 encode the keys in the response.</p>
         pub fn encoding_type(mut self, input: crate::model::EncodingType) -> Self {
             self.encoding_type = Some(input);
             self
         }
-        /// <p>Requests Amazon S3 to encode the object keys in the response and specifies the encoding
-        /// method to use. An object key may contain any Unicode character; however, XML 1.0 parser
-        /// cannot parse some characters, such as characters with an ASCII value from 0 to 10. For
-        /// characters that are not supported in XML 1.0, you can add this parameter to request that
-        /// Amazon S3 encode the keys in the response.</p>
+        /// <p>Requests Amazon S3 to encode the object keys in the response and specifies the encoding method to use. An object key may contain any Unicode character; however, XML 1.0 parser cannot parse some characters, such as characters with an ASCII value from 0 to 10. For characters that are not supported in XML 1.0, you can add this parameter to request that Amazon S3 encode the keys in the response.</p>
         pub fn set_encoding_type(
             mut self,
             input: std::option::Option<crate::model::EncodingType>,
@@ -17061,38 +16673,26 @@ pub mod list_object_versions_input {
             self.key_marker = input;
             self
         }
-        /// <p>Sets the maximum number of keys returned in the response. By default the action returns up
-        /// to 1,000 key names. The response might contain fewer keys but will never contain more. If
-        /// additional keys satisfy the search criteria, but were not returned because max-keys was
-        /// exceeded, the response contains <isTruncated>true</isTruncated>. To return the
-        /// additional keys, see key-marker and version-id-marker.</p>
+        /// <p>Sets the maximum number of keys returned in the response. By default the action returns up to 1,000 key names. The response might contain fewer keys but will never contain more. If additional keys satisfy the search criteria, but were not returned because max-keys was exceeded, the response contains <istruncated>
+        /// true
+        /// </istruncated>. To return the additional keys, see key-marker and version-id-marker.</p>
         pub fn max_keys(mut self, input: i32) -> Self {
             self.max_keys = Some(input);
             self
         }
-        /// <p>Sets the maximum number of keys returned in the response. By default the action returns up
-        /// to 1,000 key names. The response might contain fewer keys but will never contain more. If
-        /// additional keys satisfy the search criteria, but were not returned because max-keys was
-        /// exceeded, the response contains <isTruncated>true</isTruncated>. To return the
-        /// additional keys, see key-marker and version-id-marker.</p>
+        /// <p>Sets the maximum number of keys returned in the response. By default the action returns up to 1,000 key names. The response might contain fewer keys but will never contain more. If additional keys satisfy the search criteria, but were not returned because max-keys was exceeded, the response contains <istruncated>
+        /// true
+        /// </istruncated>. To return the additional keys, see key-marker and version-id-marker.</p>
         pub fn set_max_keys(mut self, input: std::option::Option<i32>) -> Self {
             self.max_keys = input;
             self
         }
-        /// <p>Use this parameter to select only those keys that begin with the specified prefix. You
-        /// can use prefixes to separate a bucket into different groupings of keys. (You can think of
-        /// using prefix to make groups in the same way you'd use a folder in a file system.) You can
-        /// use prefix with delimiter to roll up numerous objects into a single result under
-        /// CommonPrefixes. </p>
+        /// <p>Use this parameter to select only those keys that begin with the specified prefix. You can use prefixes to separate a bucket into different groupings of keys. (You can think of using prefix to make groups in the same way you'd use a folder in a file system.) You can use prefix with delimiter to roll up numerous objects into a single result under CommonPrefixes. </p>
         pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.prefix = Some(input.into());
             self
         }
-        /// <p>Use this parameter to select only those keys that begin with the specified prefix. You
-        /// can use prefixes to separate a bucket into different groupings of keys. (You can think of
-        /// using prefix to make groups in the same way you'd use a folder in a file system.) You can
-        /// use prefix with delimiter to roll up numerous objects into a single result under
-        /// CommonPrefixes. </p>
+        /// <p>Use this parameter to select only those keys that begin with the specified prefix. You can use prefixes to separate a bucket into different groupings of keys. (You can think of using prefix to make groups in the same way you'd use a folder in a file system.) You can use prefix with delimiter to roll up numerous objects into a single result under CommonPrefixes. </p>
         pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.prefix = input;
             self
@@ -17375,14 +16975,12 @@ pub mod list_parts_input {
             self.max_parts = input;
             self
         }
-        /// <p>Specifies the part after which listing should begin. Only parts with higher part numbers
-        /// will be listed.</p>
+        /// <p>Specifies the part after which listing should begin. Only parts with higher part numbers will be listed.</p>
         pub fn part_number_marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.part_number_marker = Some(input.into());
             self
         }
-        /// <p>Specifies the part after which listing should begin. Only parts with higher part numbers
-        /// will be listed.</p>
+        /// <p>Specifies the part after which listing should begin. Only parts with higher part numbers will be listed.</p>
         pub fn set_part_number_marker(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17400,18 +16998,12 @@ pub mod list_parts_input {
             self.upload_id = input;
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-        /// owners need not specify this parameter in their requests. For information about downloading
-        /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-        /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
             self.request_payer = Some(input);
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-        /// owners need not specify this parameter in their requests. For information about downloading
-        /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-        /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_request_payer(
             mut self,
             input: std::option::Option<crate::model::RequestPayer>,
@@ -17934,34 +17526,24 @@ pub mod put_bucket_acl_input {
             self.bucket = input;
             self
         }
-        /// <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used as a message
-        /// integrity check to verify that the request body was not corrupted in transit. For more
-        /// information, go to <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC
-        /// 1864.</a>
-        /// </p>
+        /// <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used as a message integrity check to verify that the request body was not corrupted in transit. For more information, go to <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864.</a> </p>
         /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
         pub fn content_md5(mut self, input: impl Into<std::string::String>) -> Self {
             self.content_md5 = Some(input.into());
             self
         }
-        /// <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used as a message
-        /// integrity check to verify that the request body was not corrupted in transit. For more
-        /// information, go to <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC
-        /// 1864.</a>
-        /// </p>
+        /// <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used as a message integrity check to verify that the request body was not corrupted in transit. For more information, go to <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864.</a> </p>
         /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
         pub fn set_content_md5(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_md5 = input;
             self
         }
-        /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the
-        /// bucket.</p>
+        /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p>
         pub fn grant_full_control(mut self, input: impl Into<std::string::String>) -> Self {
             self.grant_full_control = Some(input.into());
             self
         }
-        /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the
-        /// bucket.</p>
+        /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p>
         pub fn set_grant_full_control(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -18618,16 +18200,12 @@ pub mod put_bucket_cors_input {
             self.bucket = input;
             self
         }
-        /// <p>Describes the cross-origin access configuration for objects in an Amazon S3 bucket. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">Enabling Cross-Origin Resource
-        /// Sharing</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Describes the cross-origin access configuration for objects in an Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">Enabling Cross-Origin Resource Sharing</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn cors_configuration(mut self, input: crate::model::CorsConfiguration) -> Self {
             self.cors_configuration = Some(input);
             self
         }
-        /// <p>Describes the cross-origin access configuration for objects in an Amazon S3 bucket. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">Enabling Cross-Origin Resource
-        /// Sharing</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Describes the cross-origin access configuration for objects in an Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">Enabling Cross-Origin Resource Sharing</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_cors_configuration(
             mut self,
             input: std::option::Option<crate::model::CorsConfiguration>,
@@ -18635,21 +18213,13 @@ pub mod put_bucket_cors_input {
             self.cors_configuration = input;
             self
         }
-        /// <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used as a message
-        /// integrity check to verify that the request body was not corrupted in transit. For more
-        /// information, go to <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC
-        /// 1864.</a>
-        /// </p>
+        /// <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used as a message integrity check to verify that the request body was not corrupted in transit. For more information, go to <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864.</a> </p>
         /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
         pub fn content_md5(mut self, input: impl Into<std::string::String>) -> Self {
             self.content_md5 = Some(input.into());
             self
         }
-        /// <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used as a message
-        /// integrity check to verify that the request body was not corrupted in transit. For more
-        /// information, go to <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC
-        /// 1864.</a>
-        /// </p>
+        /// <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used as a message integrity check to verify that the request body was not corrupted in transit. For more information, go to <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864.</a> </p>
         /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
         pub fn set_content_md5(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_md5 = input;
@@ -18894,18 +18464,12 @@ pub mod put_bucket_encryption_input {
         pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies default encryption for a bucket using server-side encryption with Amazon S3-managed
-        /// keys (SSE-S3) or customer managed keys (SSE-KMS). For information about
-        /// the Amazon S3 default encryption feature, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon S3 Default Bucket Encryption</a>
-        /// in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Specifies default encryption for a bucket using server-side encryption with Amazon S3-managed keys (SSE-S3) or customer managed keys (SSE-KMS). For information about the Amazon S3 default encryption feature, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon S3 Default Bucket Encryption</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket = Some(input.into());
             self
         }
-        /// <p>Specifies default encryption for a bucket using server-side encryption with Amazon S3-managed
-        /// keys (SSE-S3) or customer managed keys (SSE-KMS). For information about
-        /// the Amazon S3 default encryption feature, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon S3 Default Bucket Encryption</a>
-        /// in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Specifies default encryption for a bucket using server-side encryption with Amazon S3-managed keys (SSE-S3) or customer managed keys (SSE-KMS). For information about the Amazon S3 default encryption feature, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon S3 Default Bucket Encryption</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -20425,8 +19989,7 @@ pub mod put_bucket_notification_configuration_input {
             self.bucket = input;
             self
         }
-        /// <p>A container for specifying the notification configuration of the bucket. If this element
-        /// is empty, notifications are turned off for the bucket.</p>
+        /// <p>A container for specifying the notification configuration of the bucket. If this element is empty, notifications are turned off for the bucket.</p>
         pub fn notification_configuration(
             mut self,
             input: crate::model::NotificationConfiguration,
@@ -20434,8 +19997,7 @@ pub mod put_bucket_notification_configuration_input {
             self.notification_configuration = Some(input);
             self
         }
-        /// <p>A container for specifying the notification configuration of the bucket. If this element
-        /// is empty, notifications are turned off for the bucket.</p>
+        /// <p>A container for specifying the notification configuration of the bucket. If this element is empty, notifications are turned off for the bucket.</p>
         pub fn set_notification_configuration(
             mut self,
             input: std::option::Option<crate::model::NotificationConfiguration>,
@@ -20717,14 +20279,12 @@ pub mod put_bucket_ownership_controls_input {
             self.expected_bucket_owner = input;
             self
         }
-        /// <p>The <code>OwnershipControls</code> (BucketOwnerEnforced, BucketOwnerPreferred, or ObjectWriter) that you want
-        /// to apply to this Amazon S3 bucket.</p>
+        /// <p>The <code>OwnershipControls</code> (BucketOwnerEnforced, BucketOwnerPreferred, or ObjectWriter) that you want to apply to this Amazon S3 bucket.</p>
         pub fn ownership_controls(mut self, input: crate::model::OwnershipControls) -> Self {
             self.ownership_controls = Some(input);
             self
         }
-        /// <p>The <code>OwnershipControls</code> (BucketOwnerEnforced, BucketOwnerPreferred, or ObjectWriter) that you want
-        /// to apply to this Amazon S3 bucket.</p>
+        /// <p>The <code>OwnershipControls</code> (BucketOwnerEnforced, BucketOwnerPreferred, or ObjectWriter) that you want to apply to this Amazon S3 bucket.</p>
         pub fn set_ownership_controls(
             mut self,
             input: std::option::Option<crate::model::OwnershipControls>,
@@ -20982,14 +20542,12 @@ pub mod put_bucket_policy_input {
             self.content_md5 = input;
             self
         }
-        /// <p>Set this parameter to true to confirm that you want to remove your permissions to change
-        /// this bucket policy in the future.</p>
+        /// <p>Set this parameter to true to confirm that you want to remove your permissions to change this bucket policy in the future.</p>
         pub fn confirm_remove_self_bucket_access(mut self, input: bool) -> Self {
             self.confirm_remove_self_bucket_access = Some(input);
             self
         }
-        /// <p>Set this parameter to true to confirm that you want to remove your permissions to change
-        /// this bucket policy in the future.</p>
+        /// <p>Set this parameter to true to confirm that you want to remove your permissions to change this bucket policy in the future.</p>
         pub fn set_confirm_remove_self_bucket_access(
             mut self,
             input: std::option::Option<bool>,
@@ -21279,24 +20837,19 @@ pub mod put_bucket_replication_input {
             self.bucket = input;
             self
         }
-        /// <p>The base64-encoded 128-bit MD5 digest of the data. You must use this header as a message
-        /// integrity check to verify that the request body was not corrupted in transit. For more
-        /// information, see <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p>
+        /// <p>The base64-encoded 128-bit MD5 digest of the data. You must use this header as a message integrity check to verify that the request body was not corrupted in transit. For more information, see <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p>
         /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
         pub fn content_md5(mut self, input: impl Into<std::string::String>) -> Self {
             self.content_md5 = Some(input.into());
             self
         }
-        /// <p>The base64-encoded 128-bit MD5 digest of the data. You must use this header as a message
-        /// integrity check to verify that the request body was not corrupted in transit. For more
-        /// information, see <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p>
+        /// <p>The base64-encoded 128-bit MD5 digest of the data. You must use this header as a message integrity check to verify that the request body was not corrupted in transit. For more information, see <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p>
         /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
         pub fn set_content_md5(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_md5 = input;
             self
         }
-        /// <p>A container for replication rules. You can add up to 1,000 rules. The maximum size of a
-        /// replication configuration is 2 MB.</p>
+        /// <p>A container for replication rules. You can add up to 1,000 rules. The maximum size of a replication configuration is 2 MB.</p>
         pub fn replication_configuration(
             mut self,
             input: crate::model::ReplicationConfiguration,
@@ -21304,8 +20857,7 @@ pub mod put_bucket_replication_input {
             self.replication_configuration = Some(input);
             self
         }
-        /// <p>A container for replication rules. You can add up to 1,000 rules. The maximum size of a
-        /// replication configuration is 2 MB.</p>
+        /// <p>A container for replication rules. You can add up to 1,000 rules. The maximum size of a replication configuration is 2 MB.</p>
         pub fn set_replication_configuration(
             mut self,
             input: std::option::Option<crate::model::ReplicationConfiguration>,
@@ -21590,19 +21142,13 @@ pub mod put_bucket_request_payment_input {
             self.bucket = input;
             self
         }
-        /// <p>The base64-encoded 128-bit MD5 digest of the data. You must use this header as a
-        /// message integrity check to verify that the request body was not corrupted in transit. For
-        /// more information, see <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC
-        /// 1864</a>.</p>
+        /// <p>The base64-encoded 128-bit MD5 digest of the data. You must use this header as a message integrity check to verify that the request body was not corrupted in transit. For more information, see <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p>
         /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
         pub fn content_md5(mut self, input: impl Into<std::string::String>) -> Self {
             self.content_md5 = Some(input.into());
             self
         }
-        /// <p>The base64-encoded 128-bit MD5 digest of the data. You must use this header as a
-        /// message integrity check to verify that the request body was not corrupted in transit. For
-        /// more information, see <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC
-        /// 1864</a>.</p>
+        /// <p>The base64-encoded 128-bit MD5 digest of the data. You must use this header as a message integrity check to verify that the request body was not corrupted in transit. For more information, see <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p>
         /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
         pub fn set_content_md5(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_md5 = input;
@@ -21874,17 +21420,13 @@ pub mod put_bucket_tagging_input {
             self.bucket = input;
             self
         }
-        /// <p>The base64-encoded 128-bit MD5 digest of the data. You must use this header as a message
-        /// integrity check to verify that the request body was not corrupted in transit. For more
-        /// information, see <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p>
+        /// <p>The base64-encoded 128-bit MD5 digest of the data. You must use this header as a message integrity check to verify that the request body was not corrupted in transit. For more information, see <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p>
         /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
         pub fn content_md5(mut self, input: impl Into<std::string::String>) -> Self {
             self.content_md5 = Some(input.into());
             self
         }
-        /// <p>The base64-encoded 128-bit MD5 digest of the data. You must use this header as a message
-        /// integrity check to verify that the request body was not corrupted in transit. For more
-        /// information, see <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p>
+        /// <p>The base64-encoded 128-bit MD5 digest of the data. You must use this header as a message integrity check to verify that the request body was not corrupted in transit. For more information, see <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p>
         /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
         pub fn set_content_md5(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_md5 = input;
@@ -22149,32 +21691,24 @@ pub mod put_bucket_versioning_input {
             self.bucket = input;
             self
         }
-        /// <p>>The base64-encoded 128-bit MD5 digest of the data. You must use this header as a
-        /// message integrity check to verify that the request body was not corrupted in transit. For
-        /// more information, see <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC
-        /// 1864</a>.</p>
+        /// <p>&gt;The base64-encoded 128-bit MD5 digest of the data. You must use this header as a message integrity check to verify that the request body was not corrupted in transit. For more information, see <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p>
         /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
         pub fn content_md5(mut self, input: impl Into<std::string::String>) -> Self {
             self.content_md5 = Some(input.into());
             self
         }
-        /// <p>>The base64-encoded 128-bit MD5 digest of the data. You must use this header as a
-        /// message integrity check to verify that the request body was not corrupted in transit. For
-        /// more information, see <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC
-        /// 1864</a>.</p>
+        /// <p>&gt;The base64-encoded 128-bit MD5 digest of the data. You must use this header as a message integrity check to verify that the request body was not corrupted in transit. For more information, see <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p>
         /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
         pub fn set_content_md5(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_md5 = input;
             self
         }
-        /// <p>The concatenation of the authentication device's serial number, a space, and the value
-        /// that is displayed on your authentication device.</p>
+        /// <p>The concatenation of the authentication device's serial number, a space, and the value that is displayed on your authentication device.</p>
         pub fn mfa(mut self, input: impl Into<std::string::String>) -> Self {
             self.mfa = Some(input.into());
             self
         }
-        /// <p>The concatenation of the authentication device's serial number, a space, and the value
-        /// that is displayed on your authentication device.</p>
+        /// <p>The concatenation of the authentication device's serial number, a space, and the value that is displayed on your authentication device.</p>
         pub fn set_mfa(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mfa = input;
             self
@@ -22461,17 +21995,13 @@ pub mod put_bucket_website_input {
             self.bucket = input;
             self
         }
-        /// <p>The base64-encoded 128-bit MD5 digest of the data. You must use this header as a message
-        /// integrity check to verify that the request body was not corrupted in transit. For more
-        /// information, see <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p>
+        /// <p>The base64-encoded 128-bit MD5 digest of the data. You must use this header as a message integrity check to verify that the request body was not corrupted in transit. For more information, see <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p>
         /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
         pub fn content_md5(mut self, input: impl Into<std::string::String>) -> Self {
             self.content_md5 = Some(input.into());
             self
         }
-        /// <p>The base64-encoded 128-bit MD5 digest of the data. You must use this header as a message
-        /// integrity check to verify that the request body was not corrupted in transit. For more
-        /// information, see <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p>
+        /// <p>The base64-encoded 128-bit MD5 digest of the data. You must use this header as a message integrity check to verify that the request body was not corrupted in transit. For more information, see <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p>
         /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
         pub fn set_content_md5(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_md5 = input;
@@ -22760,15 +22290,13 @@ pub mod put_object_input {
         pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The canned ACL to apply to the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
-        /// ACL</a>.</p>
+        /// <p>The canned ACL to apply to the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned ACL</a>.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
         pub fn acl(mut self, input: crate::model::ObjectCannedAcl) -> Self {
             self.acl = Some(input);
             self
         }
-        /// <p>The canned ACL to apply to the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
-        /// ACL</a>.</p>
+        /// <p>The canned ACL to apply to the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned ACL</a>.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
         pub fn set_acl(
             mut self,
@@ -22804,14 +22332,12 @@ pub mod put_object_input {
             self.bucket = input;
             self
         }
-        /// <p> Can be used to specify caching behavior along the request/reply chain. For more
-        /// information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
+        /// <p> Can be used to specify caching behavior along the request/reply chain. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
         pub fn cache_control(mut self, input: impl Into<std::string::String>) -> Self {
             self.cache_control = Some(input.into());
             self
         }
-        /// <p> Can be used to specify caching behavior along the request/reply chain. For more
-        /// information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
+        /// <p> Can be used to specify caching behavior along the request/reply chain. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
         pub fn set_cache_control(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -22832,16 +22358,12 @@ pub mod put_object_input {
             self.content_disposition = input;
             self
         }
-        /// <p>Specifies what content encodings have been applied to the object and thus what decoding
-        /// mechanisms must be applied to obtain the media-type referenced by the Content-Type header
-        /// field. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11</a>.</p>
+        /// <p>Specifies what content encodings have been applied to the object and thus what decoding mechanisms must be applied to obtain the media-type referenced by the Content-Type header field. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11</a>.</p>
         pub fn content_encoding(mut self, input: impl Into<std::string::String>) -> Self {
             self.content_encoding = Some(input.into());
             self
         }
-        /// <p>Specifies what content encodings have been applied to the object and thus what decoding
-        /// mechanisms must be applied to obtain the media-type referenced by the Content-Type header
-        /// field. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11</a>.</p>
+        /// <p>Specifies what content encodings have been applied to the object and thus what decoding mechanisms must be applied to obtain the media-type referenced by the Content-Type header field. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11</a>.</p>
         pub fn set_content_encoding(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -22862,58 +22384,42 @@ pub mod put_object_input {
             self.content_language = input;
             self
         }
-        /// <p>Size of the body in bytes. This parameter is useful when the size of the body cannot be
-        /// determined automatically. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.13">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.13</a>.</p>
+        /// <p>Size of the body in bytes. This parameter is useful when the size of the body cannot be determined automatically. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.13">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.13</a>.</p>
         pub fn content_length(mut self, input: i64) -> Self {
             self.content_length = Some(input);
             self
         }
-        /// <p>Size of the body in bytes. This parameter is useful when the size of the body cannot be
-        /// determined automatically. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.13">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.13</a>.</p>
+        /// <p>Size of the body in bytes. This parameter is useful when the size of the body cannot be determined automatically. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.13">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.13</a>.</p>
         pub fn set_content_length(mut self, input: std::option::Option<i64>) -> Self {
             self.content_length = input;
             self
         }
-        /// <p>The base64-encoded 128-bit MD5 digest of the message (without the headers) according to
-        /// RFC 1864. This header can be used as a message integrity check to verify that the data is
-        /// the same data that was originally sent. Although it is optional, we recommend using the
-        /// Content-MD5 mechanism as an end-to-end integrity check. For more information about REST
-        /// request authentication, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST
-        /// Authentication</a>.</p>
+        /// <p>The base64-encoded 128-bit MD5 digest of the message (without the headers) according to RFC 1864. This header can be used as a message integrity check to verify that the data is the same data that was originally sent. Although it is optional, we recommend using the Content-MD5 mechanism as an end-to-end integrity check. For more information about REST request authentication, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST Authentication</a>.</p>
         pub fn content_md5(mut self, input: impl Into<std::string::String>) -> Self {
             self.content_md5 = Some(input.into());
             self
         }
-        /// <p>The base64-encoded 128-bit MD5 digest of the message (without the headers) according to
-        /// RFC 1864. This header can be used as a message integrity check to verify that the data is
-        /// the same data that was originally sent. Although it is optional, we recommend using the
-        /// Content-MD5 mechanism as an end-to-end integrity check. For more information about REST
-        /// request authentication, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST
-        /// Authentication</a>.</p>
+        /// <p>The base64-encoded 128-bit MD5 digest of the message (without the headers) according to RFC 1864. This header can be used as a message integrity check to verify that the data is the same data that was originally sent. Although it is optional, we recommend using the Content-MD5 mechanism as an end-to-end integrity check. For more information about REST request authentication, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST Authentication</a>.</p>
         pub fn set_content_md5(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_md5 = input;
             self
         }
-        /// <p>A standard MIME type describing the format of the contents. For more information, see
-        /// <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17</a>.</p>
+        /// <p>A standard MIME type describing the format of the contents. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17</a>.</p>
         pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.content_type = Some(input.into());
             self
         }
-        /// <p>A standard MIME type describing the format of the contents. For more information, see
-        /// <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17</a>.</p>
+        /// <p>A standard MIME type describing the format of the contents. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17</a>.</p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_type = input;
             self
         }
-        /// <p>The date and time at which the object is no longer cacheable. For more information, see
-        /// <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.21">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.21</a>.</p>
+        /// <p>The date and time at which the object is no longer cacheable. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.21">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.21</a>.</p>
         pub fn expires(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.expires = Some(input);
             self
         }
-        /// <p>The date and time at which the object is no longer cacheable. For more information, see
-        /// <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.21">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.21</a>.</p>
+        /// <p>The date and time at which the object is no longer cacheable. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.21">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.21</a>.</p>
         pub fn set_expires(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -22921,15 +22427,13 @@ pub mod put_object_input {
             self.expires = input;
             self
         }
-        /// <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the
-        /// object.</p>
+        /// <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the object.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
         pub fn grant_full_control(mut self, input: impl Into<std::string::String>) -> Self {
             self.grant_full_control = Some(input.into());
             self
         }
-        /// <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the
-        /// object.</p>
+        /// <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the object.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
         pub fn set_grant_full_control(
             mut self,
@@ -22938,15 +22442,13 @@ pub mod put_object_input {
             self.grant_full_control = input;
             self
         }
-        /// <p>Allows grantee to read the object data and its
-        /// metadata.</p>
+        /// <p>Allows grantee to read the object data and its metadata.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
         pub fn grant_read(mut self, input: impl Into<std::string::String>) -> Self {
             self.grant_read = Some(input.into());
             self
         }
-        /// <p>Allows grantee to read the object data and its
-        /// metadata.</p>
+        /// <p>Allows grantee to read the object data and its metadata.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
         pub fn set_grant_read(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.grant_read = input;
@@ -22967,15 +22469,13 @@ pub mod put_object_input {
             self.grant_read_acp = input;
             self
         }
-        /// <p>Allows grantee to write the ACL for the applicable
-        /// object.</p>
+        /// <p>Allows grantee to write the ACL for the applicable object.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
         pub fn grant_write_acp(mut self, input: impl Into<std::string::String>) -> Self {
             self.grant_write_acp = Some(input.into());
             self
         }
-        /// <p>Allows grantee to write the ACL for the applicable
-        /// object.</p>
+        /// <p>Allows grantee to write the ACL for the applicable object.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
         pub fn set_grant_write_acp(
             mut self,
@@ -23019,14 +22519,12 @@ pub mod put_object_input {
             self.metadata = input;
             self
         }
-        /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example,
-        /// AES256, aws:kms).</p>
+        /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example, AES256, aws:kms).</p>
         pub fn server_side_encryption(mut self, input: crate::model::ServerSideEncryption) -> Self {
             self.server_side_encryption = Some(input);
             self
         }
-        /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example,
-        /// AES256, aws:kms).</p>
+        /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example, AES256, aws:kms).</p>
         pub fn set_server_side_encryption(
             mut self,
             input: std::option::Option<crate::model::ServerSideEncryption>,
@@ -23034,20 +22532,12 @@ pub mod put_object_input {
             self.server_side_encryption = input;
             self
         }
-        /// <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created objects. The
-        /// STANDARD storage class provides high durability and high availability. Depending on
-        /// performance needs, you can specify a different Storage Class. Amazon S3 on Outposts only uses
-        /// the OUTPOSTS Storage Class. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a> in the
-        /// <i>Amazon S3 User Guide</i>.</p>
+        /// <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created objects. The STANDARD storage class provides high durability and high availability. Depending on performance needs, you can specify a different Storage Class. Amazon S3 on Outposts only uses the OUTPOSTS Storage Class. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn storage_class(mut self, input: crate::model::StorageClass) -> Self {
             self.storage_class = Some(input);
             self
         }
-        /// <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created objects. The
-        /// STANDARD storage class provides high durability and high availability. Depending on
-        /// performance needs, you can specify a different Storage Class. Amazon S3 on Outposts only uses
-        /// the OUTPOSTS Storage Class. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a> in the
-        /// <i>Amazon S3 User Guide</i>.</p>
+        /// <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created objects. The STANDARD storage class provides high durability and high availability. Depending on performance needs, you can specify a different Storage Class. Amazon S3 on Outposts only uses the OUTPOSTS Storage Class. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_storage_class(
             mut self,
             input: std::option::Option<crate::model::StorageClass>,
@@ -23055,50 +22545,22 @@ pub mod put_object_input {
             self.storage_class = input;
             self
         }
-        /// <p>If the bucket is configured as a website, redirects requests for this object to another
-        /// object in the same bucket or to an external URL. Amazon S3 stores the value of this header in
-        /// the object metadata. For information about object metadata, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html">Object Key and Metadata</a>.</p>
-        ///
-        /// <p>In the following example, the request header sets the redirect to an object
-        /// (anotherPage.html) in the same bucket:</p>
-        ///
-        /// <p>
-        /// <code>x-amz-website-redirect-location: /anotherPage.html</code>
-        /// </p>
-        ///
-        /// <p>In the following example, the request header sets the object redirect to another
-        /// website:</p>
-        ///
-        /// <p>
-        /// <code>x-amz-website-redirect-location: http://www.example.com/</code>
-        /// </p>
-        ///
-        /// <p>For more information about website hosting in Amazon S3, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">Hosting Websites on Amazon S3</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/how-to-page-redirect.html">How to Configure Website Page
-        /// Redirects</a>. </p>
+        /// <p>If the bucket is configured as a website, redirects requests for this object to another object in the same bucket or to an external URL. Amazon S3 stores the value of this header in the object metadata. For information about object metadata, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html">Object Key and Metadata</a>.</p>
+        /// <p>In the following example, the request header sets the redirect to an object (anotherPage.html) in the same bucket:</p>
+        /// <p> <code>x-amz-website-redirect-location: /anotherPage.html</code> </p>
+        /// <p>In the following example, the request header sets the object redirect to another website:</p>
+        /// <p> <code>x-amz-website-redirect-location: http://www.example.com/</code> </p>
+        /// <p>For more information about website hosting in Amazon S3, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">Hosting Websites on Amazon S3</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/how-to-page-redirect.html">How to Configure Website Page Redirects</a>. </p>
         pub fn website_redirect_location(mut self, input: impl Into<std::string::String>) -> Self {
             self.website_redirect_location = Some(input.into());
             self
         }
-        /// <p>If the bucket is configured as a website, redirects requests for this object to another
-        /// object in the same bucket or to an external URL. Amazon S3 stores the value of this header in
-        /// the object metadata. For information about object metadata, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html">Object Key and Metadata</a>.</p>
-        ///
-        /// <p>In the following example, the request header sets the redirect to an object
-        /// (anotherPage.html) in the same bucket:</p>
-        ///
-        /// <p>
-        /// <code>x-amz-website-redirect-location: /anotherPage.html</code>
-        /// </p>
-        ///
-        /// <p>In the following example, the request header sets the object redirect to another
-        /// website:</p>
-        ///
-        /// <p>
-        /// <code>x-amz-website-redirect-location: http://www.example.com/</code>
-        /// </p>
-        ///
-        /// <p>For more information about website hosting in Amazon S3, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">Hosting Websites on Amazon S3</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/how-to-page-redirect.html">How to Configure Website Page
-        /// Redirects</a>. </p>
+        /// <p>If the bucket is configured as a website, redirects requests for this object to another object in the same bucket or to an external URL. Amazon S3 stores the value of this header in the object metadata. For information about object metadata, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html">Object Key and Metadata</a>.</p>
+        /// <p>In the following example, the request header sets the redirect to an object (anotherPage.html) in the same bucket:</p>
+        /// <p> <code>x-amz-website-redirect-location: /anotherPage.html</code> </p>
+        /// <p>In the following example, the request header sets the object redirect to another website:</p>
+        /// <p> <code>x-amz-website-redirect-location: http://www.example.com/</code> </p>
+        /// <p>For more information about website hosting in Amazon S3, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">Hosting Websites on Amazon S3</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/how-to-page-redirect.html">How to Configure Website Page Redirects</a>. </p>
         pub fn set_website_redirect_location(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -23106,14 +22568,12 @@ pub mod put_object_input {
             self.website_redirect_location = input;
             self
         }
-        /// <p>Specifies the algorithm to use to when encrypting the object (for example,
-        /// AES256).</p>
+        /// <p>Specifies the algorithm to use to when encrypting the object (for example, AES256).</p>
         pub fn sse_customer_algorithm(mut self, input: impl Into<std::string::String>) -> Self {
             self.sse_customer_algorithm = Some(input.into());
             self
         }
-        /// <p>Specifies the algorithm to use to when encrypting the object (for example,
-        /// AES256).</p>
+        /// <p>Specifies the algorithm to use to when encrypting the object (for example, AES256).</p>
         pub fn set_sse_customer_algorithm(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -23121,18 +22581,12 @@ pub mod put_object_input {
             self.sse_customer_algorithm = input;
             self
         }
-        /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This
-        /// value is used to store the object and then it is discarded; Amazon S3 does not store the
-        /// encryption key. The key must be appropriate for use with the algorithm specified in the
-        /// <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
+        /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This value is used to store the object and then it is discarded; Amazon S3 does not store the encryption key. The key must be appropriate for use with the algorithm specified in the <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
         pub fn sse_customer_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.sse_customer_key = Some(input.into());
             self
         }
-        /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This
-        /// value is used to store the object and then it is discarded; Amazon S3 does not store the
-        /// encryption key. The key must be appropriate for use with the algorithm specified in the
-        /// <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
+        /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This value is used to store the object and then it is discarded; Amazon S3 does not store the encryption key. The key must be appropriate for use with the algorithm specified in the <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
         pub fn set_sse_customer_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -23140,16 +22594,12 @@ pub mod put_object_input {
             self.sse_customer_key = input;
             self
         }
-        /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses
-        /// this header for a message integrity check to ensure that the encryption key was transmitted
-        /// without error.</p>
+        /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
         pub fn sse_customer_key_md5(mut self, input: impl Into<std::string::String>) -> Self {
             self.sse_customer_key_md5 = Some(input.into());
             self
         }
-        /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses
-        /// this header for a message integrity check to ensure that the encryption key was transmitted
-        /// without error.</p>
+        /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
         pub fn set_sse_customer_key_md5(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -23157,26 +22607,12 @@ pub mod put_object_input {
             self.sse_customer_key_md5 = input;
             self
         }
-        /// <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
-        /// <code>aws:kms</code>, this header specifies the ID of the Amazon Web Services Key Management Service
-        /// (Amazon Web Services KMS) symmetrical customer managed key that was used for the
-        /// object. If you specify <code>x-amz-server-side-encryption:aws:kms</code>, but do not
-        /// provide<code> x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the Amazon Web Services
-        /// managed key to protect the data. If the KMS key does not exist in the same account
-        /// issuing the command, you must use the full ARN and not just the ID.
-        /// </p>
+        /// <p>If <code>x-amz-server-side-encryption</code> is present and has the value of <code>aws:kms</code>, this header specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetrical customer managed key that was used for the object. If you specify <code>x-amz-server-side-encryption:aws:kms</code>, but do not provide<code> x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the Amazon Web Services managed key to protect the data. If the KMS key does not exist in the same account issuing the command, you must use the full ARN and not just the ID. </p>
         pub fn ssekms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.ssekms_key_id = Some(input.into());
             self
         }
-        /// <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
-        /// <code>aws:kms</code>, this header specifies the ID of the Amazon Web Services Key Management Service
-        /// (Amazon Web Services KMS) symmetrical customer managed key that was used for the
-        /// object. If you specify <code>x-amz-server-side-encryption:aws:kms</code>, but do not
-        /// provide<code> x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the Amazon Web Services
-        /// managed key to protect the data. If the KMS key does not exist in the same account
-        /// issuing the command, you must use the full ARN and not just the ID.
-        /// </p>
+        /// <p>If <code>x-amz-server-side-encryption</code> is present and has the value of <code>aws:kms</code>, this header specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetrical customer managed key that was used for the object. If you specify <code>x-amz-server-side-encryption:aws:kms</code>, but do not provide<code> x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the Amazon Web Services managed key to protect the data. If the KMS key does not exist in the same account issuing the command, you must use the full ARN and not just the ID. </p>
         pub fn set_ssekms_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -23184,16 +22620,12 @@ pub mod put_object_input {
             self.ssekms_key_id = input;
             self
         }
-        /// <p>Specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The value of this
-        /// header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value
-        /// pairs.</p>
+        /// <p>Specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value pairs.</p>
         pub fn ssekms_encryption_context(mut self, input: impl Into<std::string::String>) -> Self {
             self.ssekms_encryption_context = Some(input.into());
             self
         }
-        /// <p>Specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The value of this
-        /// header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value
-        /// pairs.</p>
+        /// <p>Specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value pairs.</p>
         pub fn set_ssekms_encryption_context(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -23213,18 +22645,12 @@ pub mod put_object_input {
             self.bucket_key_enabled = input;
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-        /// owners need not specify this parameter in their requests. For information about downloading
-        /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-        /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
             self.request_payer = Some(input);
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-        /// owners need not specify this parameter in their requests. For information about downloading
-        /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-        /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_request_payer(
             mut self,
             input: std::option::Option<crate::model::RequestPayer>,
@@ -23232,14 +22658,12 @@ pub mod put_object_input {
             self.request_payer = input;
             self
         }
-        /// <p>The tag-set for the object. The tag-set must be encoded as URL Query parameters. (For
-        /// example, "Key1=Value1")</p>
+        /// <p>The tag-set for the object. The tag-set must be encoded as URL Query parameters. (For example, "Key1=Value1")</p>
         pub fn tagging(mut self, input: impl Into<std::string::String>) -> Self {
             self.tagging = Some(input.into());
             self
         }
-        /// <p>The tag-set for the object. The tag-set must be encoded as URL Query parameters. (For
-        /// example, "Key1=Value1")</p>
+        /// <p>The tag-set for the object. The tag-set must be encoded as URL Query parameters. (For example, "Key1=Value1")</p>
         pub fn set_tagging(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.tagging = input;
             self
@@ -23257,14 +22681,12 @@ pub mod put_object_input {
             self.object_lock_mode = input;
             self
         }
-        /// <p>The date and time when you want this object's Object Lock to expire. Must be formatted
-        /// as a timestamp parameter.</p>
+        /// <p>The date and time when you want this object's Object Lock to expire. Must be formatted as a timestamp parameter.</p>
         pub fn object_lock_retain_until_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.object_lock_retain_until_date = Some(input);
             self
         }
-        /// <p>The date and time when you want this object's Object Lock to expire. Must be formatted
-        /// as a timestamp parameter.</p>
+        /// <p>The date and time when you want this object's Object Lock to expire. Must be formatted as a timestamp parameter.</p>
         pub fn set_object_lock_retain_until_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -23272,9 +22694,7 @@ pub mod put_object_input {
             self.object_lock_retain_until_date = input;
             self
         }
-        /// <p>Specifies whether a legal hold will be applied to this object. For more information
-        /// about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Object
-        /// Lock</a>.</p>
+        /// <p>Specifies whether a legal hold will be applied to this object. For more information about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Object Lock</a>.</p>
         pub fn object_lock_legal_hold_status(
             mut self,
             input: crate::model::ObjectLockLegalHoldStatus,
@@ -23282,9 +22702,7 @@ pub mod put_object_input {
             self.object_lock_legal_hold_status = Some(input);
             self
         }
-        /// <p>Specifies whether a legal hold will be applied to this object. For more information
-        /// about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Object
-        /// Lock</a>.</p>
+        /// <p>Specifies whether a legal hold will be applied to this object. For more information about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Object Lock</a>.</p>
         pub fn set_object_lock_legal_hold_status(
             mut self,
             input: std::option::Option<crate::model::ObjectLockLegalHoldStatus>,
@@ -24100,35 +23518,25 @@ pub mod put_object_acl_input {
             self.bucket = input;
             self
         }
-        /// <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used as a message
-        /// integrity check to verify that the request body was not corrupted in transit. For more
-        /// information, go to <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC
-        /// 1864.></a>
-        /// </p>
+        /// <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used as a message integrity check to verify that the request body was not corrupted in transit. For more information, go to <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864.&gt;</a> </p>
         /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
         pub fn content_md5(mut self, input: impl Into<std::string::String>) -> Self {
             self.content_md5 = Some(input.into());
             self
         }
-        /// <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used as a message
-        /// integrity check to verify that the request body was not corrupted in transit. For more
-        /// information, go to <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC
-        /// 1864.></a>
-        /// </p>
+        /// <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used as a message integrity check to verify that the request body was not corrupted in transit. For more information, go to <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864.&gt;</a> </p>
         /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
         pub fn set_content_md5(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_md5 = input;
             self
         }
-        /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the
-        /// bucket.</p>
+        /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
         pub fn grant_full_control(mut self, input: impl Into<std::string::String>) -> Self {
             self.grant_full_control = Some(input.into());
             self
         }
-        /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the
-        /// bucket.</p>
+        /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
         pub fn set_grant_full_control(
             mut self,
@@ -24137,15 +23545,13 @@ pub mod put_object_acl_input {
             self.grant_full_control = input;
             self
         }
-        /// <p>Allows grantee to list the objects in the
-        /// bucket.</p>
+        /// <p>Allows grantee to list the objects in the bucket.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
         pub fn grant_read(mut self, input: impl Into<std::string::String>) -> Self {
             self.grant_read = Some(input.into());
             self
         }
-        /// <p>Allows grantee to list the objects in the
-        /// bucket.</p>
+        /// <p>Allows grantee to list the objects in the bucket.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
         pub fn set_grant_read(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.grant_read = input;
@@ -24178,15 +23584,13 @@ pub mod put_object_acl_input {
             self.grant_write = input;
             self
         }
-        /// <p>Allows grantee to write the ACL for the applicable
-        /// bucket.</p>
+        /// <p>Allows grantee to write the ACL for the applicable bucket.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
         pub fn grant_write_acp(mut self, input: impl Into<std::string::String>) -> Self {
             self.grant_write_acp = Some(input.into());
             self
         }
-        /// <p>Allows grantee to write the ACL for the applicable
-        /// bucket.</p>
+        /// <p>Allows grantee to write the ACL for the applicable bucket.</p>
         /// <p>This action is not supported by Amazon S3 on Outposts.</p>
         pub fn set_grant_write_acp(
             mut self,
@@ -24209,18 +23613,12 @@ pub mod put_object_acl_input {
             self.key = input;
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-        /// owners need not specify this parameter in their requests. For information about downloading
-        /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-        /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
             self.request_payer = Some(input);
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-        /// owners need not specify this parameter in their requests. For information about downloading
-        /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-        /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_request_payer(
             mut self,
             input: std::option::Option<crate::model::RequestPayer>,
@@ -24641,14 +24039,12 @@ pub mod put_object_legal_hold_input {
             self.key = input;
             self
         }
-        /// <p>Container element for the Legal Hold configuration you want to apply to the specified
-        /// object.</p>
+        /// <p>Container element for the Legal Hold configuration you want to apply to the specified object.</p>
         pub fn legal_hold(mut self, input: crate::model::ObjectLockLegalHold) -> Self {
             self.legal_hold = Some(input);
             self
         }
-        /// <p>Container element for the Legal Hold configuration you want to apply to the specified
-        /// object.</p>
+        /// <p>Container element for the Legal Hold configuration you want to apply to the specified object.</p>
         pub fn set_legal_hold(
             mut self,
             input: std::option::Option<crate::model::ObjectLockLegalHold>,
@@ -24656,18 +24052,12 @@ pub mod put_object_legal_hold_input {
             self.legal_hold = input;
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-        /// owners need not specify this parameter in their requests. For information about downloading
-        /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-        /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
             self.request_payer = Some(input);
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-        /// owners need not specify this parameter in their requests. For information about downloading
-        /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-        /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_request_payer(
             mut self,
             input: std::option::Option<crate::model::RequestPayer>,
@@ -25001,18 +24391,12 @@ pub mod put_object_lock_configuration_input {
             self.object_lock_configuration = input;
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-        /// owners need not specify this parameter in their requests. For information about downloading
-        /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-        /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
             self.request_payer = Some(input);
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-        /// owners need not specify this parameter in their requests. For information about downloading
-        /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-        /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_request_payer(
             mut self,
             input: std::option::Option<crate::model::RequestPayer>,
@@ -25320,28 +24704,24 @@ pub mod put_object_retention_input {
         pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The bucket name that contains the object you want to apply this Object Retention
-        /// configuration to. </p>
+        /// <p>The bucket name that contains the object you want to apply this Object Retention configuration to. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket = Some(input.into());
             self
         }
-        /// <p>The bucket name that contains the object you want to apply this Object Retention
-        /// configuration to. </p>
+        /// <p>The bucket name that contains the object you want to apply this Object Retention configuration to. </p>
         /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
         }
-        /// <p>The key name for the object that you want to apply this Object Retention configuration
-        /// to.</p>
+        /// <p>The key name for the object that you want to apply this Object Retention configuration to.</p>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
             self
         }
-        /// <p>The key name for the object that you want to apply this Object Retention configuration
-        /// to.</p>
+        /// <p>The key name for the object that you want to apply this Object Retention configuration to.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -25359,18 +24739,12 @@ pub mod put_object_retention_input {
             self.retention = input;
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-        /// owners need not specify this parameter in their requests. For information about downloading
-        /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-        /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
             self.request_payer = Some(input);
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-        /// owners need not specify this parameter in their requests. For information about downloading
-        /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-        /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_request_payer(
             mut self,
             input: std::option::Option<crate::model::RequestPayer>,
@@ -25378,14 +24752,12 @@ pub mod put_object_retention_input {
             self.request_payer = input;
             self
         }
-        /// <p>The version ID for the object that you want to apply this Object Retention configuration
-        /// to.</p>
+        /// <p>The version ID for the object that you want to apply this Object Retention configuration to.</p>
         pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.version_id = Some(input.into());
             self
         }
-        /// <p>The version ID for the object that you want to apply this Object Retention configuration
-        /// to.</p>
+        /// <p>The version ID for the object that you want to apply this Object Retention configuration to.</p>
         pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version_id = input;
             self
@@ -25778,18 +25150,12 @@ pub mod put_object_tagging_input {
             self.expected_bucket_owner = input;
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-        /// owners need not specify this parameter in their requests. For information about downloading
-        /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-        /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
             self.request_payer = Some(input);
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-        /// owners need not specify this parameter in their requests. For information about downloading
-        /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-        /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_request_payer(
             mut self,
             input: std::option::Option<crate::model::RequestPayer>,
@@ -26060,14 +25426,12 @@ pub mod put_public_access_block_input {
         pub(crate) expected_bucket_owner: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the Amazon S3 bucket whose <code>PublicAccessBlock</code> configuration you want
-        /// to set.</p>
+        /// <p>The name of the Amazon S3 bucket whose <code>PublicAccessBlock</code> configuration you want to set.</p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket = Some(input.into());
             self
         }
-        /// <p>The name of the Amazon S3 bucket whose <code>PublicAccessBlock</code> configuration you want
-        /// to set.</p>
+        /// <p>The name of the Amazon S3 bucket whose <code>PublicAccessBlock</code> configuration you want to set.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -26084,9 +25448,7 @@ pub mod put_public_access_block_input {
             self.content_md5 = input;
             self
         }
-        /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3
-        /// bucket. You can enable the configuration options in any combination. For more information
-        /// about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 bucket. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn public_access_block_configuration(
             mut self,
             input: crate::model::PublicAccessBlockConfiguration,
@@ -26094,9 +25456,7 @@ pub mod put_public_access_block_input {
             self.public_access_block_configuration = Some(input);
             self
         }
-        /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3
-        /// bucket. You can enable the configuration options in any combination. For more information
-        /// about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 bucket. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_public_access_block_configuration(
             mut self,
             input: std::option::Option<crate::model::PublicAccessBlockConfiguration>,
@@ -26392,18 +25752,12 @@ pub mod restore_object_input {
             self.restore_request = input;
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-        /// owners need not specify this parameter in their requests. For information about downloading
-        /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-        /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
             self.request_payer = Some(input);
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-        /// owners need not specify this parameter in their requests. For information about downloading
-        /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-        /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_request_payer(
             mut self,
             input: std::option::Option<crate::model::RequestPayer>,
@@ -26697,14 +26051,12 @@ pub mod select_object_content_input {
             self.sse_customer_algorithm = input;
             self
         }
-        /// <p>The SSE Customer Key. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side Encryption
-        /// (Using Customer-Provided Encryption Keys</a>. </p>
+        /// <p>The SSE Customer Key. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side Encryption (Using Customer-Provided Encryption Keys</a>. </p>
         pub fn sse_customer_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.sse_customer_key = Some(input.into());
             self
         }
-        /// <p>The SSE Customer Key. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side Encryption
-        /// (Using Customer-Provided Encryption Keys</a>. </p>
+        /// <p>The SSE Customer Key. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side Encryption (Using Customer-Provided Encryption Keys</a>. </p>
         pub fn set_sse_customer_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -26712,14 +26064,12 @@ pub mod select_object_content_input {
             self.sse_customer_key = input;
             self
         }
-        /// <p>The SSE Customer Key MD5. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side Encryption
-        /// (Using Customer-Provided Encryption Keys</a>. </p>
+        /// <p>The SSE Customer Key MD5. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side Encryption (Using Customer-Provided Encryption Keys</a>. </p>
         pub fn sse_customer_key_md5(mut self, input: impl Into<std::string::String>) -> Self {
             self.sse_customer_key_md5 = Some(input.into());
             self
         }
-        /// <p>The SSE Customer Key MD5. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side Encryption
-        /// (Using Customer-Provided Encryption Keys</a>. </p>
+        /// <p>The SSE Customer Key MD5. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side Encryption (Using Customer-Provided Encryption Keys</a>. </p>
         pub fn set_sse_customer_key_md5(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -26789,57 +26139,59 @@ pub mod select_object_content_input {
             self.output_serialization = input;
             self
         }
-        /// <p>Specifies the byte range of the object to get the records from. A record is processed
-        /// when its first byte is contained by the range. This parameter is optional, but when
-        /// specified, it must not be empty. See RFC 2616, Section 14.35.1 about how to specify the
-        /// start and end of the range.</p>
-        /// <p>
-        /// <code>ScanRange</code>may be used in the following ways:</p>
+        /// <p>Specifies the byte range of the object to get the records from. A record is processed when its first byte is contained by the range. This parameter is optional, but when specified, it must not be empty. See RFC 2616, Section 14.35.1 about how to specify the start and end of the range.</p>
+        /// <p> <code>ScanRange</code>may be used in the following ways:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code><scanrange><start>50</start><end>100</end></scanrange></code>
-        /// - process only the records starting between the bytes 50 and 100 (inclusive, counting
-        /// from zero)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code><scanrange><start>50</start></scanrange></code> -
-        /// process only the records starting after the byte 50</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code><scanrange><end>50</end></scanrange></code> -
-        /// process only the records within the last 50 bytes of the file.</p>
-        /// </li>
+        /// <li> <p> <code>
+        /// <scanrange>
+        /// <start>
+        /// 50
+        /// </start>
+        /// <end>
+        /// 100
+        /// </end>
+        /// </scanrange></code> - process only the records starting between the bytes 50 and 100 (inclusive, counting from zero)</p> </li>
+        /// <li> <p> <code>
+        /// <scanrange>
+        /// <start>
+        /// 50
+        /// </start>
+        /// </scanrange></code> - process only the records starting after the byte 50</p> </li>
+        /// <li> <p> <code>
+        /// <scanrange>
+        /// <end>
+        /// 50
+        /// </end>
+        /// </scanrange></code> - process only the records within the last 50 bytes of the file.</p> </li>
         /// </ul>
         pub fn scan_range(mut self, input: crate::model::ScanRange) -> Self {
             self.scan_range = Some(input);
             self
         }
-        /// <p>Specifies the byte range of the object to get the records from. A record is processed
-        /// when its first byte is contained by the range. This parameter is optional, but when
-        /// specified, it must not be empty. See RFC 2616, Section 14.35.1 about how to specify the
-        /// start and end of the range.</p>
-        /// <p>
-        /// <code>ScanRange</code>may be used in the following ways:</p>
+        /// <p>Specifies the byte range of the object to get the records from. A record is processed when its first byte is contained by the range. This parameter is optional, but when specified, it must not be empty. See RFC 2616, Section 14.35.1 about how to specify the start and end of the range.</p>
+        /// <p> <code>ScanRange</code>may be used in the following ways:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code><scanrange><start>50</start><end>100</end></scanrange></code>
-        /// - process only the records starting between the bytes 50 and 100 (inclusive, counting
-        /// from zero)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code><scanrange><start>50</start></scanrange></code> -
-        /// process only the records starting after the byte 50</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code><scanrange><end>50</end></scanrange></code> -
-        /// process only the records within the last 50 bytes of the file.</p>
-        /// </li>
+        /// <li> <p> <code>
+        /// <scanrange>
+        /// <start>
+        /// 50
+        /// </start>
+        /// <end>
+        /// 100
+        /// </end>
+        /// </scanrange></code> - process only the records starting between the bytes 50 and 100 (inclusive, counting from zero)</p> </li>
+        /// <li> <p> <code>
+        /// <scanrange>
+        /// <start>
+        /// 50
+        /// </start>
+        /// </scanrange></code> - process only the records starting after the byte 50</p> </li>
+        /// <li> <p> <code>
+        /// <scanrange>
+        /// <end>
+        /// 50
+        /// </end>
+        /// </scanrange></code> - process only the records within the last 50 bytes of the file.</p> </li>
         /// </ul>
         pub fn set_scan_range(
             mut self,
@@ -27172,28 +26524,22 @@ pub mod upload_part_input {
             self.bucket = input;
             self
         }
-        /// <p>Size of the body in bytes. This parameter is useful when the size of the body cannot be
-        /// determined automatically.</p>
+        /// <p>Size of the body in bytes. This parameter is useful when the size of the body cannot be determined automatically.</p>
         pub fn content_length(mut self, input: i64) -> Self {
             self.content_length = Some(input);
             self
         }
-        /// <p>Size of the body in bytes. This parameter is useful when the size of the body cannot be
-        /// determined automatically.</p>
+        /// <p>Size of the body in bytes. This parameter is useful when the size of the body cannot be determined automatically.</p>
         pub fn set_content_length(mut self, input: std::option::Option<i64>) -> Self {
             self.content_length = input;
             self
         }
-        /// <p>The base64-encoded 128-bit MD5 digest of the part data. This parameter is auto-populated
-        /// when using the command from the CLI. This parameter is required if object lock parameters
-        /// are specified.</p>
+        /// <p>The base64-encoded 128-bit MD5 digest of the part data. This parameter is auto-populated when using the command from the CLI. This parameter is required if object lock parameters are specified.</p>
         pub fn content_md5(mut self, input: impl Into<std::string::String>) -> Self {
             self.content_md5 = Some(input.into());
             self
         }
-        /// <p>The base64-encoded 128-bit MD5 digest of the part data. This parameter is auto-populated
-        /// when using the command from the CLI. This parameter is required if object lock parameters
-        /// are specified.</p>
+        /// <p>The base64-encoded 128-bit MD5 digest of the part data. This parameter is auto-populated when using the command from the CLI. This parameter is required if object lock parameters are specified.</p>
         pub fn set_content_md5(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_md5 = input;
             self
@@ -27208,14 +26554,12 @@ pub mod upload_part_input {
             self.key = input;
             self
         }
-        /// <p>Part number of part being uploaded. This is a positive integer between 1 and
-        /// 10,000.</p>
+        /// <p>Part number of part being uploaded. This is a positive integer between 1 and 10,000.</p>
         pub fn part_number(mut self, input: i32) -> Self {
             self.part_number = Some(input);
             self
         }
-        /// <p>Part number of part being uploaded. This is a positive integer between 1 and
-        /// 10,000.</p>
+        /// <p>Part number of part being uploaded. This is a positive integer between 1 and 10,000.</p>
         pub fn set_part_number(mut self, input: std::option::Option<i32>) -> Self {
             self.part_number = input;
             self
@@ -27230,14 +26574,12 @@ pub mod upload_part_input {
             self.upload_id = input;
             self
         }
-        /// <p>Specifies the algorithm to use to when encrypting the object (for example,
-        /// AES256).</p>
+        /// <p>Specifies the algorithm to use to when encrypting the object (for example, AES256).</p>
         pub fn sse_customer_algorithm(mut self, input: impl Into<std::string::String>) -> Self {
             self.sse_customer_algorithm = Some(input.into());
             self
         }
-        /// <p>Specifies the algorithm to use to when encrypting the object (for example,
-        /// AES256).</p>
+        /// <p>Specifies the algorithm to use to when encrypting the object (for example, AES256).</p>
         pub fn set_sse_customer_algorithm(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -27245,20 +26587,12 @@ pub mod upload_part_input {
             self.sse_customer_algorithm = input;
             self
         }
-        /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This
-        /// value is used to store the object and then it is discarded; Amazon S3 does not store the
-        /// encryption key. The key must be appropriate for use with the algorithm specified in the
-        /// <code>x-amz-server-side-encryption-customer-algorithm header</code>. This must be the
-        /// same encryption key specified in the initiate multipart upload request.</p>
+        /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This value is used to store the object and then it is discarded; Amazon S3 does not store the encryption key. The key must be appropriate for use with the algorithm specified in the <code>x-amz-server-side-encryption-customer-algorithm header</code>. This must be the same encryption key specified in the initiate multipart upload request.</p>
         pub fn sse_customer_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.sse_customer_key = Some(input.into());
             self
         }
-        /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This
-        /// value is used to store the object and then it is discarded; Amazon S3 does not store the
-        /// encryption key. The key must be appropriate for use with the algorithm specified in the
-        /// <code>x-amz-server-side-encryption-customer-algorithm header</code>. This must be the
-        /// same encryption key specified in the initiate multipart upload request.</p>
+        /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This value is used to store the object and then it is discarded; Amazon S3 does not store the encryption key. The key must be appropriate for use with the algorithm specified in the <code>x-amz-server-side-encryption-customer-algorithm header</code>. This must be the same encryption key specified in the initiate multipart upload request.</p>
         pub fn set_sse_customer_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -27266,16 +26600,12 @@ pub mod upload_part_input {
             self.sse_customer_key = input;
             self
         }
-        /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses
-        /// this header for a message integrity check to ensure that the encryption key was transmitted
-        /// without error.</p>
+        /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
         pub fn sse_customer_key_md5(mut self, input: impl Into<std::string::String>) -> Self {
             self.sse_customer_key_md5 = Some(input.into());
             self
         }
-        /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses
-        /// this header for a message integrity check to ensure that the encryption key was transmitted
-        /// without error.</p>
+        /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
         pub fn set_sse_customer_key_md5(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -27283,18 +26613,12 @@ pub mod upload_part_input {
             self.sse_customer_key_md5 = input;
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-        /// owners need not specify this parameter in their requests. For information about downloading
-        /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-        /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
             self.request_payer = Some(input);
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-        /// owners need not specify this parameter in their requests. For information about downloading
-        /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-        /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_request_payer(
             mut self,
             input: std::option::Option<crate::model::RequestPayer>,
@@ -27675,58 +26999,68 @@ pub mod upload_part_copy_input {
             self.bucket = input;
             self
         }
-        /// <p>Specifies the source object for the copy operation. You specify the value in one of two
-        /// formats, depending on whether you want to access the source object through an <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">access point</a>:</p>
+        /// <p>Specifies the source object for the copy operation. You specify the value in one of two formats, depending on whether you want to access the source object through an <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">access point</a>:</p>
         /// <ul>
-        /// <li>
-        /// <p>For objects not accessed through an access point, specify the name of the source
-        /// bucket and key of the source object, separated by a slash (/). For example, to copy
-        /// the object <code>reports/january.pdf</code> from the bucket
-        /// <code>awsexamplebucket</code>, use
-        /// <code>awsexamplebucket/reports/january.pdf</code>. The value must be URL
-        /// encoded.</p>
-        /// </li>
-        /// <li>
-        /// <p>For objects accessed through access points, specify the Amazon Resource Name (ARN) of the object as accessed through the access point, in the format <code>arn:aws:s3:<Region>:<account-id>:accesspoint/<access-point-name>/object/<key></code>. For example, to copy the object <code>reports/january.pdf</code> through access point <code>my-access-point</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3:us-west-2:123456789012:accesspoint/my-access-point/object/reports/january.pdf</code>. The value must be URL encoded.</p>
-        /// <note>
+        /// <li> <p>For objects not accessed through an access point, specify the name of the source bucket and key of the source object, separated by a slash (/). For example, to copy the object <code>reports/january.pdf</code> from the bucket <code>awsexamplebucket</code>, use <code>awsexamplebucket/reports/january.pdf</code>. The value must be URL encoded.</p> </li>
+        /// <li> <p>For objects accessed through access points, specify the Amazon Resource Name (ARN) of the object as accessed through the access point, in the format <code>arn:aws:s3:
+        /// <region>
+        /// :
+        /// <account-id>
+        /// :accesspoint/
+        /// <access-point-name>
+        /// /object/
+        /// <key></key>
+        /// </access-point-name>
+        /// </account-id>
+        /// </region></code>. For example, to copy the object <code>reports/january.pdf</code> through access point <code>my-access-point</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3:us-west-2:123456789012:accesspoint/my-access-point/object/reports/january.pdf</code>. The value must be URL encoded.</p> <note>
         /// <p>Amazon S3 supports copy operations using access points only when the source and destination buckets are in the same Amazon Web Services Region.</p>
-        /// </note>
-        /// <p>Alternatively, for objects accessed through Amazon S3 on Outposts, specify the ARN of the object as accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/object/<key></code>. For example, to copy the object <code>reports/january.pdf</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/object/reports/january.pdf</code>. The value must be URL encoded.  </p>
-        /// </li>
+        /// </note> <p>Alternatively, for objects accessed through Amazon S3 on Outposts, specify the ARN of the object as accessed in the format <code>arn:aws:s3-outposts:
+        /// <region>
+        /// :
+        /// <account-id>
+        /// :outpost/
+        /// <outpost-id>
+        /// /object/
+        /// <key></key>
+        /// </outpost-id>
+        /// </account-id>
+        /// </region></code>. For example, to copy the object <code>reports/january.pdf</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/object/reports/january.pdf</code>. The value must be URL encoded. </p> </li>
         /// </ul>
-        /// <p>To copy a specific version of an object, append <code>?versionId=<version-id></code>
-        /// to the value (for example,
-        /// <code>awsexamplebucket/reports/january.pdf?versionId=QUpfdndhfd8438MNFDN93jdnJFkdmqnh893</code>).
-        /// If you don't specify a version ID, Amazon S3 copies the latest version of the source
-        /// object.</p>
+        /// <p>To copy a specific version of an object, append <code>?versionId=
+        /// <version-id></version-id></code> to the value (for example, <code>awsexamplebucket/reports/january.pdf?versionId=QUpfdndhfd8438MNFDN93jdnJFkdmqnh893</code>). If you don't specify a version ID, Amazon S3 copies the latest version of the source object.</p>
         pub fn copy_source(mut self, input: impl Into<std::string::String>) -> Self {
             self.copy_source = Some(input.into());
             self
         }
-        /// <p>Specifies the source object for the copy operation. You specify the value in one of two
-        /// formats, depending on whether you want to access the source object through an <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">access point</a>:</p>
+        /// <p>Specifies the source object for the copy operation. You specify the value in one of two formats, depending on whether you want to access the source object through an <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">access point</a>:</p>
         /// <ul>
-        /// <li>
-        /// <p>For objects not accessed through an access point, specify the name of the source
-        /// bucket and key of the source object, separated by a slash (/). For example, to copy
-        /// the object <code>reports/january.pdf</code> from the bucket
-        /// <code>awsexamplebucket</code>, use
-        /// <code>awsexamplebucket/reports/january.pdf</code>. The value must be URL
-        /// encoded.</p>
-        /// </li>
-        /// <li>
-        /// <p>For objects accessed through access points, specify the Amazon Resource Name (ARN) of the object as accessed through the access point, in the format <code>arn:aws:s3:<Region>:<account-id>:accesspoint/<access-point-name>/object/<key></code>. For example, to copy the object <code>reports/january.pdf</code> through access point <code>my-access-point</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3:us-west-2:123456789012:accesspoint/my-access-point/object/reports/january.pdf</code>. The value must be URL encoded.</p>
-        /// <note>
+        /// <li> <p>For objects not accessed through an access point, specify the name of the source bucket and key of the source object, separated by a slash (/). For example, to copy the object <code>reports/january.pdf</code> from the bucket <code>awsexamplebucket</code>, use <code>awsexamplebucket/reports/january.pdf</code>. The value must be URL encoded.</p> </li>
+        /// <li> <p>For objects accessed through access points, specify the Amazon Resource Name (ARN) of the object as accessed through the access point, in the format <code>arn:aws:s3:
+        /// <region>
+        /// :
+        /// <account-id>
+        /// :accesspoint/
+        /// <access-point-name>
+        /// /object/
+        /// <key></key>
+        /// </access-point-name>
+        /// </account-id>
+        /// </region></code>. For example, to copy the object <code>reports/january.pdf</code> through access point <code>my-access-point</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3:us-west-2:123456789012:accesspoint/my-access-point/object/reports/january.pdf</code>. The value must be URL encoded.</p> <note>
         /// <p>Amazon S3 supports copy operations using access points only when the source and destination buckets are in the same Amazon Web Services Region.</p>
-        /// </note>
-        /// <p>Alternatively, for objects accessed through Amazon S3 on Outposts, specify the ARN of the object as accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/object/<key></code>. For example, to copy the object <code>reports/january.pdf</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/object/reports/january.pdf</code>. The value must be URL encoded.  </p>
-        /// </li>
+        /// </note> <p>Alternatively, for objects accessed through Amazon S3 on Outposts, specify the ARN of the object as accessed in the format <code>arn:aws:s3-outposts:
+        /// <region>
+        /// :
+        /// <account-id>
+        /// :outpost/
+        /// <outpost-id>
+        /// /object/
+        /// <key></key>
+        /// </outpost-id>
+        /// </account-id>
+        /// </region></code>. For example, to copy the object <code>reports/january.pdf</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/object/reports/january.pdf</code>. The value must be URL encoded. </p> </li>
         /// </ul>
-        /// <p>To copy a specific version of an object, append <code>?versionId=<version-id></code>
-        /// to the value (for example,
-        /// <code>awsexamplebucket/reports/january.pdf?versionId=QUpfdndhfd8438MNFDN93jdnJFkdmqnh893</code>).
-        /// If you don't specify a version ID, Amazon S3 copies the latest version of the source
-        /// object.</p>
+        /// <p>To copy a specific version of an object, append <code>?versionId=
+        /// <version-id></version-id></code> to the value (for example, <code>awsexamplebucket/reports/january.pdf?versionId=QUpfdndhfd8438MNFDN93jdnJFkdmqnh893</code>). If you don't specify a version ID, Amazon S3 copies the latest version of the source object.</p>
         pub fn set_copy_source(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.copy_source = input;
             self
@@ -27786,18 +27120,12 @@ pub mod upload_part_copy_input {
             self.copy_source_if_unmodified_since = input;
             self
         }
-        /// <p>The range of bytes to copy from the source object. The range value must use the form
-        /// bytes=first-last, where the first and last are the zero-based byte offsets to copy. For
-        /// example, bytes=0-9 indicates that you want to copy the first 10 bytes of the source. You
-        /// can copy a range only if the source object is greater than 5 MB.</p>
+        /// <p>The range of bytes to copy from the source object. The range value must use the form bytes=first-last, where the first and last are the zero-based byte offsets to copy. For example, bytes=0-9 indicates that you want to copy the first 10 bytes of the source. You can copy a range only if the source object is greater than 5 MB.</p>
         pub fn copy_source_range(mut self, input: impl Into<std::string::String>) -> Self {
             self.copy_source_range = Some(input.into());
             self
         }
-        /// <p>The range of bytes to copy from the source object. The range value must use the form
-        /// bytes=first-last, where the first and last are the zero-based byte offsets to copy. For
-        /// example, bytes=0-9 indicates that you want to copy the first 10 bytes of the source. You
-        /// can copy a range only if the source object is greater than 5 MB.</p>
+        /// <p>The range of bytes to copy from the source object. The range value must use the form bytes=first-last, where the first and last are the zero-based byte offsets to copy. For example, bytes=0-9 indicates that you want to copy the first 10 bytes of the source. You can copy a range only if the source object is greater than 5 MB.</p>
         pub fn set_copy_source_range(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -27815,14 +27143,12 @@ pub mod upload_part_copy_input {
             self.key = input;
             self
         }
-        /// <p>Part number of part being copied. This is a positive integer between 1 and
-        /// 10,000.</p>
+        /// <p>Part number of part being copied. This is a positive integer between 1 and 10,000.</p>
         pub fn part_number(mut self, input: i32) -> Self {
             self.part_number = Some(input);
             self
         }
-        /// <p>Part number of part being copied. This is a positive integer between 1 and
-        /// 10,000.</p>
+        /// <p>Part number of part being copied. This is a positive integer between 1 and 10,000.</p>
         pub fn set_part_number(mut self, input: std::option::Option<i32>) -> Self {
             self.part_number = input;
             self
@@ -27837,14 +27163,12 @@ pub mod upload_part_copy_input {
             self.upload_id = input;
             self
         }
-        /// <p>Specifies the algorithm to use to when encrypting the object (for example,
-        /// AES256).</p>
+        /// <p>Specifies the algorithm to use to when encrypting the object (for example, AES256).</p>
         pub fn sse_customer_algorithm(mut self, input: impl Into<std::string::String>) -> Self {
             self.sse_customer_algorithm = Some(input.into());
             self
         }
-        /// <p>Specifies the algorithm to use to when encrypting the object (for example,
-        /// AES256).</p>
+        /// <p>Specifies the algorithm to use to when encrypting the object (for example, AES256).</p>
         pub fn set_sse_customer_algorithm(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -27852,20 +27176,12 @@ pub mod upload_part_copy_input {
             self.sse_customer_algorithm = input;
             self
         }
-        /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This
-        /// value is used to store the object and then it is discarded; Amazon S3 does not store the
-        /// encryption key. The key must be appropriate for use with the algorithm specified in the
-        /// <code>x-amz-server-side-encryption-customer-algorithm</code> header. This must be the
-        /// same encryption key specified in the initiate multipart upload request.</p>
+        /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This value is used to store the object and then it is discarded; Amazon S3 does not store the encryption key. The key must be appropriate for use with the algorithm specified in the <code>x-amz-server-side-encryption-customer-algorithm</code> header. This must be the same encryption key specified in the initiate multipart upload request.</p>
         pub fn sse_customer_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.sse_customer_key = Some(input.into());
             self
         }
-        /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This
-        /// value is used to store the object and then it is discarded; Amazon S3 does not store the
-        /// encryption key. The key must be appropriate for use with the algorithm specified in the
-        /// <code>x-amz-server-side-encryption-customer-algorithm</code> header. This must be the
-        /// same encryption key specified in the initiate multipart upload request.</p>
+        /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This value is used to store the object and then it is discarded; Amazon S3 does not store the encryption key. The key must be appropriate for use with the algorithm specified in the <code>x-amz-server-side-encryption-customer-algorithm</code> header. This must be the same encryption key specified in the initiate multipart upload request.</p>
         pub fn set_sse_customer_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -27873,16 +27189,12 @@ pub mod upload_part_copy_input {
             self.sse_customer_key = input;
             self
         }
-        /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses
-        /// this header for a message integrity check to ensure that the encryption key was transmitted
-        /// without error.</p>
+        /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
         pub fn sse_customer_key_md5(mut self, input: impl Into<std::string::String>) -> Self {
             self.sse_customer_key_md5 = Some(input.into());
             self
         }
-        /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses
-        /// this header for a message integrity check to ensure that the encryption key was transmitted
-        /// without error.</p>
+        /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
         pub fn set_sse_customer_key_md5(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -27890,8 +27202,7 @@ pub mod upload_part_copy_input {
             self.sse_customer_key_md5 = input;
             self
         }
-        /// <p>Specifies the algorithm to use when decrypting the source object (for example,
-        /// AES256).</p>
+        /// <p>Specifies the algorithm to use when decrypting the source object (for example, AES256).</p>
         pub fn copy_source_sse_customer_algorithm(
             mut self,
             input: impl Into<std::string::String>,
@@ -27899,8 +27210,7 @@ pub mod upload_part_copy_input {
             self.copy_source_sse_customer_algorithm = Some(input.into());
             self
         }
-        /// <p>Specifies the algorithm to use when decrypting the source object (for example,
-        /// AES256).</p>
+        /// <p>Specifies the algorithm to use when decrypting the source object (for example, AES256).</p>
         pub fn set_copy_source_sse_customer_algorithm(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -27908,9 +27218,7 @@ pub mod upload_part_copy_input {
             self.copy_source_sse_customer_algorithm = input;
             self
         }
-        /// <p>Specifies the customer-provided encryption key for Amazon S3 to use to decrypt the source
-        /// object. The encryption key provided in this header must be one that was used when the
-        /// source object was created.</p>
+        /// <p>Specifies the customer-provided encryption key for Amazon S3 to use to decrypt the source object. The encryption key provided in this header must be one that was used when the source object was created.</p>
         pub fn copy_source_sse_customer_key(
             mut self,
             input: impl Into<std::string::String>,
@@ -27918,9 +27226,7 @@ pub mod upload_part_copy_input {
             self.copy_source_sse_customer_key = Some(input.into());
             self
         }
-        /// <p>Specifies the customer-provided encryption key for Amazon S3 to use to decrypt the source
-        /// object. The encryption key provided in this header must be one that was used when the
-        /// source object was created.</p>
+        /// <p>Specifies the customer-provided encryption key for Amazon S3 to use to decrypt the source object. The encryption key provided in this header must be one that was used when the source object was created.</p>
         pub fn set_copy_source_sse_customer_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -27928,9 +27234,7 @@ pub mod upload_part_copy_input {
             self.copy_source_sse_customer_key = input;
             self
         }
-        /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses
-        /// this header for a message integrity check to ensure that the encryption key was transmitted
-        /// without error.</p>
+        /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
         pub fn copy_source_sse_customer_key_md5(
             mut self,
             input: impl Into<std::string::String>,
@@ -27938,9 +27242,7 @@ pub mod upload_part_copy_input {
             self.copy_source_sse_customer_key_md5 = Some(input.into());
             self
         }
-        /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses
-        /// this header for a message integrity check to ensure that the encryption key was transmitted
-        /// without error.</p>
+        /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
         pub fn set_copy_source_sse_customer_key_md5(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -27948,18 +27250,12 @@ pub mod upload_part_copy_input {
             self.copy_source_sse_customer_key_md5 = input;
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-        /// owners need not specify this parameter in their requests. For information about downloading
-        /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-        /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn request_payer(mut self, input: crate::model::RequestPayer) -> Self {
             self.request_payer = Some(input);
             self
         }
-        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-        /// owners need not specify this parameter in their requests. For information about downloading
-        /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-        /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn set_request_payer(
             mut self,
             input: std::option::Option<crate::model::RequestPayer>,
@@ -28505,14 +27801,12 @@ pub mod write_get_object_response_input {
             self.request_route = input;
             self
         }
-        /// <p>A single use encrypted token that maps <code>WriteGetObjectResponse</code> to the end
-        /// user <code>GetObject</code> request.</p>
+        /// <p>A single use encrypted token that maps <code>WriteGetObjectResponse</code> to the end user <code>GetObject</code> request.</p>
         pub fn request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_token = Some(input.into());
             self
         }
-        /// <p>A single use encrypted token that maps <code>WriteGetObjectResponse</code> to the end
-        /// user <code>GetObject</code> request.</p>
+        /// <p>A single use encrypted token that maps <code>WriteGetObjectResponse</code> to the end user <code>GetObject</code> request.</p>
         pub fn set_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -28533,196 +27827,74 @@ pub mod write_get_object_response_input {
             self.body = input;
             self
         }
-        /// <p>The integer status code for an HTTP response of a corresponding <code>GetObject</code>
-        /// request.</p>
-        /// <p class="title">
-        /// <b>Status Codes</b>
-        /// </p>
+        /// <p>The integer status code for an HTTP response of a corresponding <code>GetObject</code> request.</p>
+        /// <p class="title"> <b>Status Codes</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>200 - OK</i>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>206 - Partial Content</i>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>304 - Not Modified</i>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>400 - Bad Request</i>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>401 - Unauthorized</i>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>403 - Forbidden</i>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>404 - Not Found</i>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>405 - Method Not Allowed</i>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>409 - Conflict</i>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>411 - Length Required</i>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>412 - Precondition Failed</i>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>416 - Range Not Satisfiable</i>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>500 - Internal Server Error</i>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>503 - Service Unavailable</i>
-        /// </p>
-        /// </li>
+        /// <li> <p> <i>200 - OK</i> </p> </li>
+        /// <li> <p> <i>206 - Partial Content</i> </p> </li>
+        /// <li> <p> <i>304 - Not Modified</i> </p> </li>
+        /// <li> <p> <i>400 - Bad Request</i> </p> </li>
+        /// <li> <p> <i>401 - Unauthorized</i> </p> </li>
+        /// <li> <p> <i>403 - Forbidden</i> </p> </li>
+        /// <li> <p> <i>404 - Not Found</i> </p> </li>
+        /// <li> <p> <i>405 - Method Not Allowed</i> </p> </li>
+        /// <li> <p> <i>409 - Conflict</i> </p> </li>
+        /// <li> <p> <i>411 - Length Required</i> </p> </li>
+        /// <li> <p> <i>412 - Precondition Failed</i> </p> </li>
+        /// <li> <p> <i>416 - Range Not Satisfiable</i> </p> </li>
+        /// <li> <p> <i>500 - Internal Server Error</i> </p> </li>
+        /// <li> <p> <i>503 - Service Unavailable</i> </p> </li>
         /// </ul>
         pub fn status_code(mut self, input: i32) -> Self {
             self.status_code = Some(input);
             self
         }
-        /// <p>The integer status code for an HTTP response of a corresponding <code>GetObject</code>
-        /// request.</p>
-        /// <p class="title">
-        /// <b>Status Codes</b>
-        /// </p>
+        /// <p>The integer status code for an HTTP response of a corresponding <code>GetObject</code> request.</p>
+        /// <p class="title"> <b>Status Codes</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>200 - OK</i>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>206 - Partial Content</i>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>304 - Not Modified</i>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>400 - Bad Request</i>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>401 - Unauthorized</i>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>403 - Forbidden</i>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>404 - Not Found</i>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>405 - Method Not Allowed</i>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>409 - Conflict</i>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>411 - Length Required</i>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>412 - Precondition Failed</i>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>416 - Range Not Satisfiable</i>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>500 - Internal Server Error</i>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>503 - Service Unavailable</i>
-        /// </p>
-        /// </li>
+        /// <li> <p> <i>200 - OK</i> </p> </li>
+        /// <li> <p> <i>206 - Partial Content</i> </p> </li>
+        /// <li> <p> <i>304 - Not Modified</i> </p> </li>
+        /// <li> <p> <i>400 - Bad Request</i> </p> </li>
+        /// <li> <p> <i>401 - Unauthorized</i> </p> </li>
+        /// <li> <p> <i>403 - Forbidden</i> </p> </li>
+        /// <li> <p> <i>404 - Not Found</i> </p> </li>
+        /// <li> <p> <i>405 - Method Not Allowed</i> </p> </li>
+        /// <li> <p> <i>409 - Conflict</i> </p> </li>
+        /// <li> <p> <i>411 - Length Required</i> </p> </li>
+        /// <li> <p> <i>412 - Precondition Failed</i> </p> </li>
+        /// <li> <p> <i>416 - Range Not Satisfiable</i> </p> </li>
+        /// <li> <p> <i>500 - Internal Server Error</i> </p> </li>
+        /// <li> <p> <i>503 - Service Unavailable</i> </p> </li>
         /// </ul>
         pub fn set_status_code(mut self, input: std::option::Option<i32>) -> Self {
             self.status_code = input;
             self
         }
-        /// <p>A string that uniquely identifies an error condition. Returned in the <Code> tag
-        /// of the error XML response for a corresponding <code>GetObject</code> call. Cannot be used
-        /// with a successful <code>StatusCode</code> header or when the transformed object is provided
-        /// in the body. All error codes from S3 are sentence-cased. Regex value is "^[A-Z][a-zA-Z]+$".</p>
+        /// <p>A string that uniquely identifies an error condition. Returned in the <code> tag of the error XML response for a corresponding <code>GetObject</code> call. Cannot be used with a successful <code>StatusCode</code> header or when the transformed object is provided in the body. All error codes from S3 are sentence-cased. Regex value is "^[A-Z][a-zA-Z]+$".</code></p>
         pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_code = Some(input.into());
             self
         }
-        /// <p>A string that uniquely identifies an error condition. Returned in the <Code> tag
-        /// of the error XML response for a corresponding <code>GetObject</code> call. Cannot be used
-        /// with a successful <code>StatusCode</code> header or when the transformed object is provided
-        /// in the body. All error codes from S3 are sentence-cased. Regex value is "^[A-Z][a-zA-Z]+$".</p>
+        /// <p>A string that uniquely identifies an error condition. Returned in the <code> tag of the error XML response for a corresponding <code>GetObject</code> call. Cannot be used with a successful <code>StatusCode</code> header or when the transformed object is provided in the body. All error codes from S3 are sentence-cased. Regex value is "^[A-Z][a-zA-Z]+$".</code></p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
         }
-        /// <p>Contains a generic description of the error condition. Returned in the <Message>
-        /// tag of the error XML response for a corresponding <code>GetObject</code> call. Cannot be
-        /// used with a successful <code>StatusCode</code> header or when the transformed object is
-        /// provided in body.</p>
+        /// <p>Contains a generic description of the error condition. Returned in the <message>
+        /// tag of the error XML response for a corresponding
+        /// <code>GetObject</code> call. Cannot be used with a successful
+        /// <code>StatusCode</code> header or when the transformed object is provided in body.
+        /// </message></p>
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_message = Some(input.into());
             self
         }
-        /// <p>Contains a generic description of the error condition. Returned in the <Message>
-        /// tag of the error XML response for a corresponding <code>GetObject</code> call. Cannot be
-        /// used with a successful <code>StatusCode</code> header or when the transformed object is
-        /// provided in body.</p>
+        /// <p>Contains a generic description of the error condition. Returned in the <message>
+        /// tag of the error XML response for a corresponding
+        /// <code>GetObject</code> call. Cannot be used with a successful
+        /// <code>StatusCode</code> header or when the transformed object is provided in body.
+        /// </message></p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -28769,16 +27941,12 @@ pub mod write_get_object_response_input {
             self.content_disposition = input;
             self
         }
-        /// <p>Specifies what content encodings have been applied to the object and thus what decoding
-        /// mechanisms must be applied to obtain the media-type referenced by the Content-Type header
-        /// field.</p>
+        /// <p>Specifies what content encodings have been applied to the object and thus what decoding mechanisms must be applied to obtain the media-type referenced by the Content-Type header field.</p>
         pub fn content_encoding(mut self, input: impl Into<std::string::String>) -> Self {
             self.content_encoding = Some(input.into());
             self
         }
-        /// <p>Specifies what content encodings have been applied to the object and thus what decoding
-        /// mechanisms must be applied to obtain the media-type referenced by the Content-Type header
-        /// field.</p>
+        /// <p>Specifies what content encodings have been applied to the object and thus what decoding mechanisms must be applied to obtain the media-type referenced by the Content-Type header field.</p>
         pub fn set_content_encoding(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -28832,26 +28000,22 @@ pub mod write_get_object_response_input {
             self.content_type = input;
             self
         }
-        /// <p>Specifies whether an object stored in Amazon S3 is (<code>true</code>) or is not
-        /// (<code>false</code>) a delete marker. </p>
+        /// <p>Specifies whether an object stored in Amazon S3 is (<code>true</code>) or is not (<code>false</code>) a delete marker. </p>
         pub fn delete_marker(mut self, input: bool) -> Self {
             self.delete_marker = Some(input);
             self
         }
-        /// <p>Specifies whether an object stored in Amazon S3 is (<code>true</code>) or is not
-        /// (<code>false</code>) a delete marker. </p>
+        /// <p>Specifies whether an object stored in Amazon S3 is (<code>true</code>) or is not (<code>false</code>) a delete marker. </p>
         pub fn set_delete_marker(mut self, input: std::option::Option<bool>) -> Self {
             self.delete_marker = input;
             self
         }
-        /// <p>An opaque identifier assigned by a web server to a specific version of a resource found
-        /// at a URL. </p>
+        /// <p>An opaque identifier assigned by a web server to a specific version of a resource found at a URL. </p>
         pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
             self.e_tag = Some(input.into());
             self
         }
-        /// <p>An opaque identifier assigned by a web server to a specific version of a resource found
-        /// at a URL. </p>
+        /// <p>An opaque identifier assigned by a web server to a specific version of a resource found at a URL. </p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
             self
@@ -28892,18 +28056,12 @@ pub mod write_get_object_response_input {
             self.last_modified = input;
             self
         }
-        /// <p>Set to the number of metadata entries not returned in <code>x-amz-meta</code> headers.
-        /// This can happen if you create metadata using an API like SOAP that supports more flexible
-        /// metadata than the REST API. For example, using SOAP, you can create metadata whose values
-        /// are not legal HTTP headers.</p>
+        /// <p>Set to the number of metadata entries not returned in <code>x-amz-meta</code> headers. This can happen if you create metadata using an API like SOAP that supports more flexible metadata than the REST API. For example, using SOAP, you can create metadata whose values are not legal HTTP headers.</p>
         pub fn missing_meta(mut self, input: i32) -> Self {
             self.missing_meta = Some(input);
             self
         }
-        /// <p>Set to the number of metadata entries not returned in <code>x-amz-meta</code> headers.
-        /// This can happen if you create metadata using an API like SOAP that supports more flexible
-        /// metadata than the REST API. For example, using SOAP, you can create metadata whose values
-        /// are not legal HTTP headers.</p>
+        /// <p>Set to the number of metadata entries not returned in <code>x-amz-meta</code> headers. This can happen if you create metadata using an API like SOAP that supports more flexible metadata than the REST API. For example, using SOAP, you can create metadata whose values are not legal HTTP headers.</p>
         pub fn set_missing_meta(mut self, input: std::option::Option<i32>) -> Self {
             self.missing_meta = input;
             self
@@ -28933,14 +28091,12 @@ pub mod write_get_object_response_input {
             self.metadata = input;
             self
         }
-        /// <p>Indicates whether an object stored in Amazon S3 has Object Lock enabled. For more
-        /// information about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html">Object Lock</a>.</p>
+        /// <p>Indicates whether an object stored in Amazon S3 has Object Lock enabled. For more information about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html">Object Lock</a>.</p>
         pub fn object_lock_mode(mut self, input: crate::model::ObjectLockMode) -> Self {
             self.object_lock_mode = Some(input);
             self
         }
-        /// <p>Indicates whether an object stored in Amazon S3 has Object Lock enabled. For more
-        /// information about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html">Object Lock</a>.</p>
+        /// <p>Indicates whether an object stored in Amazon S3 has Object Lock enabled. For more information about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html">Object Lock</a>.</p>
         pub fn set_object_lock_mode(
             mut self,
             input: std::option::Option<crate::model::ObjectLockMode>,
@@ -28987,14 +28143,12 @@ pub mod write_get_object_response_input {
             self.parts_count = input;
             self
         }
-        /// <p>Indicates if request involves bucket that is either a source or destination in a Replication rule. For more
-        /// information about S3 Replication, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication.html">Replication</a>.</p>
+        /// <p>Indicates if request involves bucket that is either a source or destination in a Replication rule. For more information about S3 Replication, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication.html">Replication</a>.</p>
         pub fn replication_status(mut self, input: crate::model::ReplicationStatus) -> Self {
             self.replication_status = Some(input);
             self
         }
-        /// <p>Indicates if request involves bucket that is either a source or destination in a Replication rule. For more
-        /// information about S3 Replication, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication.html">Replication</a>.</p>
+        /// <p>Indicates if request involves bucket that is either a source or destination in a Replication rule. For more information about S3 Replication, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication.html">Replication</a>.</p>
         pub fn set_replication_status(
             mut self,
             input: std::option::Option<crate::model::ReplicationStatus>,
@@ -29002,14 +28156,12 @@ pub mod write_get_object_response_input {
             self.replication_status = input;
             self
         }
-        /// <p>If present, indicates that the requester was successfully charged for the
-        /// request.</p>
+        /// <p>If present, indicates that the requester was successfully charged for the request.</p>
         pub fn request_charged(mut self, input: crate::model::RequestCharged) -> Self {
             self.request_charged = Some(input);
             self
         }
-        /// <p>If present, indicates that the requester was successfully charged for the
-        /// request.</p>
+        /// <p>If present, indicates that the requester was successfully charged for the request.</p>
         pub fn set_request_charged(
             mut self,
             input: std::option::Option<crate::model::RequestCharged>,
@@ -29017,14 +28169,12 @@ pub mod write_get_object_response_input {
             self.request_charged = input;
             self
         }
-        /// <p>Provides information about object restoration operation and expiration time of the
-        /// restored object copy.</p>
+        /// <p>Provides information about object restoration operation and expiration time of the restored object copy.</p>
         pub fn restore(mut self, input: impl Into<std::string::String>) -> Self {
             self.restore = Some(input.into());
             self
         }
-        /// <p>Provides information about object restoration operation and expiration time of the
-        /// restored object copy.</p>
+        /// <p>Provides information about object restoration operation and expiration time of the restored object copy.</p>
         pub fn set_restore(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.restore = input;
             self
@@ -29068,18 +28218,12 @@ pub mod write_get_object_response_input {
             self.ssekms_key_id = input;
             self
         }
-        /// <p> 128-bit MD5 digest of customer-provided encryption key used in Amazon S3 to encrypt data
-        /// stored in S3. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerSideEncryptionCustomerKeys.html">Protecting data
-        /// using server-side encryption with customer-provided encryption keys
-        /// (SSE-C)</a>.</p>
+        /// <p> 128-bit MD5 digest of customer-provided encryption key used in Amazon S3 to encrypt data stored in S3. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerSideEncryptionCustomerKeys.html">Protecting data using server-side encryption with customer-provided encryption keys (SSE-C)</a>.</p>
         pub fn sse_customer_key_md5(mut self, input: impl Into<std::string::String>) -> Self {
             self.sse_customer_key_md5 = Some(input.into());
             self
         }
-        /// <p> 128-bit MD5 digest of customer-provided encryption key used in Amazon S3 to encrypt data
-        /// stored in S3. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerSideEncryptionCustomerKeys.html">Protecting data
-        /// using server-side encryption with customer-provided encryption keys
-        /// (SSE-C)</a>.</p>
+        /// <p> 128-bit MD5 digest of customer-provided encryption key used in Amazon S3 to encrypt data stored in S3. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerSideEncryptionCustomerKeys.html">Protecting data using server-side encryption with customer-provided encryption keys (SSE-C)</a>.</p>
         pub fn set_sse_customer_key_md5(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -29120,14 +28264,12 @@ pub mod write_get_object_response_input {
             self.version_id = input;
             self
         }
-        /// <p> Indicates whether the object stored in Amazon S3 uses an S3 bucket key for server-side
-        /// encryption with Amazon Web Services KMS (SSE-KMS).</p>
+        /// <p> Indicates whether the object stored in Amazon S3 uses an S3 bucket key for server-side encryption with Amazon Web Services KMS (SSE-KMS).</p>
         pub fn bucket_key_enabled(mut self, input: bool) -> Self {
             self.bucket_key_enabled = Some(input);
             self
         }
-        /// <p> Indicates whether the object stored in Amazon S3 uses an S3 bucket key for server-side
-        /// encryption with Amazon Web Services KMS (SSE-KMS).</p>
+        /// <p> Indicates whether the object stored in Amazon S3 uses an S3 bucket key for server-side encryption with Amazon Web Services KMS (SSE-KMS).</p>
         pub fn set_bucket_key_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.bucket_key_enabled = input;
             self
@@ -29940,98 +29082,36 @@ impl WriteGetObjectResponseInput {
 pub struct WriteGetObjectResponseInput {
     /// <p>Route prefix to the HTTP URL generated.</p>
     pub request_route: std::option::Option<std::string::String>,
-    /// <p>A single use encrypted token that maps <code>WriteGetObjectResponse</code> to the end
-    /// user <code>GetObject</code> request.</p>
+    /// <p>A single use encrypted token that maps <code>WriteGetObjectResponse</code> to the end user <code>GetObject</code> request.</p>
     pub request_token: std::option::Option<std::string::String>,
     /// <p>The object data.</p>
     pub body: aws_smithy_http::byte_stream::ByteStream,
-    /// <p>The integer status code for an HTTP response of a corresponding <code>GetObject</code>
-    /// request.</p>
-    /// <p class="title">
-    /// <b>Status Codes</b>
-    /// </p>
+    /// <p>The integer status code for an HTTP response of a corresponding <code>GetObject</code> request.</p>
+    /// <p class="title"> <b>Status Codes</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>200 - OK</i>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>206 - Partial Content</i>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>304 - Not Modified</i>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>400 - Bad Request</i>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>401 - Unauthorized</i>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>403 - Forbidden</i>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>404 - Not Found</i>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>405 - Method Not Allowed</i>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>409 - Conflict</i>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>411 - Length Required</i>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>412 - Precondition Failed</i>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>416 - Range Not Satisfiable</i>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>500 - Internal Server Error</i>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>503 - Service Unavailable</i>
-    /// </p>
-    /// </li>
+    /// <li> <p> <i>200 - OK</i> </p> </li>
+    /// <li> <p> <i>206 - Partial Content</i> </p> </li>
+    /// <li> <p> <i>304 - Not Modified</i> </p> </li>
+    /// <li> <p> <i>400 - Bad Request</i> </p> </li>
+    /// <li> <p> <i>401 - Unauthorized</i> </p> </li>
+    /// <li> <p> <i>403 - Forbidden</i> </p> </li>
+    /// <li> <p> <i>404 - Not Found</i> </p> </li>
+    /// <li> <p> <i>405 - Method Not Allowed</i> </p> </li>
+    /// <li> <p> <i>409 - Conflict</i> </p> </li>
+    /// <li> <p> <i>411 - Length Required</i> </p> </li>
+    /// <li> <p> <i>412 - Precondition Failed</i> </p> </li>
+    /// <li> <p> <i>416 - Range Not Satisfiable</i> </p> </li>
+    /// <li> <p> <i>500 - Internal Server Error</i> </p> </li>
+    /// <li> <p> <i>503 - Service Unavailable</i> </p> </li>
     /// </ul>
     pub status_code: i32,
-    /// <p>A string that uniquely identifies an error condition. Returned in the <Code> tag
-    /// of the error XML response for a corresponding <code>GetObject</code> call. Cannot be used
-    /// with a successful <code>StatusCode</code> header or when the transformed object is provided
-    /// in the body. All error codes from S3 are sentence-cased. Regex value is "^[A-Z][a-zA-Z]+$".</p>
+    /// <p>A string that uniquely identifies an error condition. Returned in the <code> tag of the error XML response for a corresponding <code>GetObject</code> call. Cannot be used with a successful <code>StatusCode</code> header or when the transformed object is provided in the body. All error codes from S3 are sentence-cased. Regex value is "^[A-Z][a-zA-Z]+$".</code></p>
     pub error_code: std::option::Option<std::string::String>,
-    /// <p>Contains a generic description of the error condition. Returned in the <Message>
-    /// tag of the error XML response for a corresponding <code>GetObject</code> call. Cannot be
-    /// used with a successful <code>StatusCode</code> header or when the transformed object is
-    /// provided in body.</p>
+    /// <p>Contains a generic description of the error condition. Returned in the <message>
+    /// tag of the error XML response for a corresponding
+    /// <code>GetObject</code> call. Cannot be used with a successful
+    /// <code>StatusCode</code> header or when the transformed object is provided in body.
+    /// </message></p>
     pub error_message: std::option::Option<std::string::String>,
     /// <p>Indicates that a range of bytes was specified.</p>
     pub accept_ranges: std::option::Option<std::string::String>,
@@ -30039,9 +29119,7 @@ pub struct WriteGetObjectResponseInput {
     pub cache_control: std::option::Option<std::string::String>,
     /// <p>Specifies presentational information for the object.</p>
     pub content_disposition: std::option::Option<std::string::String>,
-    /// <p>Specifies what content encodings have been applied to the object and thus what decoding
-    /// mechanisms must be applied to obtain the media-type referenced by the Content-Type header
-    /// field.</p>
+    /// <p>Specifies what content encodings have been applied to the object and thus what decoding mechanisms must be applied to obtain the media-type referenced by the Content-Type header field.</p>
     pub content_encoding: std::option::Option<std::string::String>,
     /// <p>The language the content is in.</p>
     pub content_language: std::option::Option<std::string::String>,
@@ -30051,11 +29129,9 @@ pub struct WriteGetObjectResponseInput {
     pub content_range: std::option::Option<std::string::String>,
     /// <p>A standard MIME type describing the format of the object data.</p>
     pub content_type: std::option::Option<std::string::String>,
-    /// <p>Specifies whether an object stored in Amazon S3 is (<code>true</code>) or is not
-    /// (<code>false</code>) a delete marker. </p>
+    /// <p>Specifies whether an object stored in Amazon S3 is (<code>true</code>) or is not (<code>false</code>) a delete marker. </p>
     pub delete_marker: bool,
-    /// <p>An opaque identifier assigned by a web server to a specific version of a resource found
-    /// at a URL. </p>
+    /// <p>An opaque identifier assigned by a web server to a specific version of a resource found at a URL. </p>
     pub e_tag: std::option::Option<std::string::String>,
     /// <p>The date and time at which the object is no longer cacheable.</p>
     pub expires: std::option::Option<aws_smithy_types::DateTime>,
@@ -30063,16 +29139,12 @@ pub struct WriteGetObjectResponseInput {
     pub expiration: std::option::Option<std::string::String>,
     /// <p>The date and time that the object was last modified.</p>
     pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Set to the number of metadata entries not returned in <code>x-amz-meta</code> headers.
-    /// This can happen if you create metadata using an API like SOAP that supports more flexible
-    /// metadata than the REST API. For example, using SOAP, you can create metadata whose values
-    /// are not legal HTTP headers.</p>
+    /// <p>Set to the number of metadata entries not returned in <code>x-amz-meta</code> headers. This can happen if you create metadata using an API like SOAP that supports more flexible metadata than the REST API. For example, using SOAP, you can create metadata whose values are not legal HTTP headers.</p>
     pub missing_meta: i32,
     /// <p>A map of metadata to store with the object in S3.</p>
     pub metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>Indicates whether an object stored in Amazon S3 has Object Lock enabled. For more
-    /// information about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html">Object Lock</a>.</p>
+    /// <p>Indicates whether an object stored in Amazon S3 has Object Lock enabled. For more information about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html">Object Lock</a>.</p>
     pub object_lock_mode: std::option::Option<crate::model::ObjectLockMode>,
     /// <p>Indicates whether an object stored in Amazon S3 has an active legal hold.</p>
     pub object_lock_legal_hold_status: std::option::Option<crate::model::ObjectLockLegalHoldStatus>,
@@ -30080,14 +29152,11 @@ pub struct WriteGetObjectResponseInput {
     pub object_lock_retain_until_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The count of parts this object has.</p>
     pub parts_count: i32,
-    /// <p>Indicates if request involves bucket that is either a source or destination in a Replication rule. For more
-    /// information about S3 Replication, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication.html">Replication</a>.</p>
+    /// <p>Indicates if request involves bucket that is either a source or destination in a Replication rule. For more information about S3 Replication, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication.html">Replication</a>.</p>
     pub replication_status: std::option::Option<crate::model::ReplicationStatus>,
-    /// <p>If present, indicates that the requester was successfully charged for the
-    /// request.</p>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     pub request_charged: std::option::Option<crate::model::RequestCharged>,
-    /// <p>Provides information about object restoration operation and expiration time of the
-    /// restored object copy.</p>
+    /// <p>Provides information about object restoration operation and expiration time of the restored object copy.</p>
     pub restore: std::option::Option<std::string::String>,
     /// <p> The server-side encryption algorithm used when storing requested object in Amazon S3 (for example, AES256, aws:kms).</p>
     pub server_side_encryption: std::option::Option<crate::model::ServerSideEncryption>,
@@ -30095,10 +29164,7 @@ pub struct WriteGetObjectResponseInput {
     pub sse_customer_algorithm: std::option::Option<std::string::String>,
     /// <p> If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key that was used for stored in Amazon S3 object. </p>
     pub ssekms_key_id: std::option::Option<std::string::String>,
-    /// <p> 128-bit MD5 digest of customer-provided encryption key used in Amazon S3 to encrypt data
-    /// stored in S3. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerSideEncryptionCustomerKeys.html">Protecting data
-    /// using server-side encryption with customer-provided encryption keys
-    /// (SSE-C)</a>.</p>
+    /// <p> 128-bit MD5 digest of customer-provided encryption key used in Amazon S3 to encrypt data stored in S3. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerSideEncryptionCustomerKeys.html">Protecting data using server-side encryption with customer-provided encryption keys (SSE-C)</a>.</p>
     pub sse_customer_key_md5: std::option::Option<std::string::String>,
     /// <p> The class of storage used to store object in Amazon S3.</p>
     pub storage_class: std::option::Option<crate::model::StorageClass>,
@@ -30106,8 +29172,7 @@ pub struct WriteGetObjectResponseInput {
     pub tag_count: i32,
     /// <p>An ID used to reference a specific version of the object.</p>
     pub version_id: std::option::Option<std::string::String>,
-    /// <p> Indicates whether the object stored in Amazon S3 uses an S3 bucket key for server-side
-    /// encryption with Amazon Web Services KMS (SSE-KMS).</p>
+    /// <p> Indicates whether the object stored in Amazon S3 uses an S3 bucket key for server-side encryption with Amazon Web Services KMS (SSE-KMS).</p>
     pub bucket_key_enabled: bool,
 }
 impl WriteGetObjectResponseInput {
@@ -30115,8 +29180,7 @@ impl WriteGetObjectResponseInput {
     pub fn request_route(&self) -> std::option::Option<&str> {
         self.request_route.as_deref()
     }
-    /// <p>A single use encrypted token that maps <code>WriteGetObjectResponse</code> to the end
-    /// user <code>GetObject</code> request.</p>
+    /// <p>A single use encrypted token that maps <code>WriteGetObjectResponse</code> to the end user <code>GetObject</code> request.</p>
     pub fn request_token(&self) -> std::option::Option<&str> {
         self.request_token.as_deref()
     }
@@ -30124,97 +29188,36 @@ impl WriteGetObjectResponseInput {
     pub fn body(&self) -> &aws_smithy_http::byte_stream::ByteStream {
         &self.body
     }
-    /// <p>The integer status code for an HTTP response of a corresponding <code>GetObject</code>
-    /// request.</p>
-    /// <p class="title">
-    /// <b>Status Codes</b>
-    /// </p>
+    /// <p>The integer status code for an HTTP response of a corresponding <code>GetObject</code> request.</p>
+    /// <p class="title"> <b>Status Codes</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>200 - OK</i>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>206 - Partial Content</i>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>304 - Not Modified</i>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>400 - Bad Request</i>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>401 - Unauthorized</i>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>403 - Forbidden</i>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>404 - Not Found</i>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>405 - Method Not Allowed</i>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>409 - Conflict</i>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>411 - Length Required</i>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>412 - Precondition Failed</i>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>416 - Range Not Satisfiable</i>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>500 - Internal Server Error</i>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>503 - Service Unavailable</i>
-    /// </p>
-    /// </li>
+    /// <li> <p> <i>200 - OK</i> </p> </li>
+    /// <li> <p> <i>206 - Partial Content</i> </p> </li>
+    /// <li> <p> <i>304 - Not Modified</i> </p> </li>
+    /// <li> <p> <i>400 - Bad Request</i> </p> </li>
+    /// <li> <p> <i>401 - Unauthorized</i> </p> </li>
+    /// <li> <p> <i>403 - Forbidden</i> </p> </li>
+    /// <li> <p> <i>404 - Not Found</i> </p> </li>
+    /// <li> <p> <i>405 - Method Not Allowed</i> </p> </li>
+    /// <li> <p> <i>409 - Conflict</i> </p> </li>
+    /// <li> <p> <i>411 - Length Required</i> </p> </li>
+    /// <li> <p> <i>412 - Precondition Failed</i> </p> </li>
+    /// <li> <p> <i>416 - Range Not Satisfiable</i> </p> </li>
+    /// <li> <p> <i>500 - Internal Server Error</i> </p> </li>
+    /// <li> <p> <i>503 - Service Unavailable</i> </p> </li>
     /// </ul>
     pub fn status_code(&self) -> i32 {
         self.status_code
     }
-    /// <p>A string that uniquely identifies an error condition. Returned in the <Code> tag
-    /// of the error XML response for a corresponding <code>GetObject</code> call. Cannot be used
-    /// with a successful <code>StatusCode</code> header or when the transformed object is provided
-    /// in the body. All error codes from S3 are sentence-cased. Regex value is "^[A-Z][a-zA-Z]+$".</p>
+    /// <p>A string that uniquely identifies an error condition. Returned in the <code> tag of the error XML response for a corresponding <code>GetObject</code> call. Cannot be used with a successful <code>StatusCode</code> header or when the transformed object is provided in the body. All error codes from S3 are sentence-cased. Regex value is "^[A-Z][a-zA-Z]+$".</code></p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
     }
-    /// <p>Contains a generic description of the error condition. Returned in the <Message>
-    /// tag of the error XML response for a corresponding <code>GetObject</code> call. Cannot be
-    /// used with a successful <code>StatusCode</code> header or when the transformed object is
-    /// provided in body.</p>
+    /// <p>Contains a generic description of the error condition. Returned in the <message>
+    /// tag of the error XML response for a corresponding
+    /// <code>GetObject</code> call. Cannot be used with a successful
+    /// <code>StatusCode</code> header or when the transformed object is provided in body.
+    /// </message></p>
     pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
     }
@@ -30230,9 +29233,7 @@ impl WriteGetObjectResponseInput {
     pub fn content_disposition(&self) -> std::option::Option<&str> {
         self.content_disposition.as_deref()
     }
-    /// <p>Specifies what content encodings have been applied to the object and thus what decoding
-    /// mechanisms must be applied to obtain the media-type referenced by the Content-Type header
-    /// field.</p>
+    /// <p>Specifies what content encodings have been applied to the object and thus what decoding mechanisms must be applied to obtain the media-type referenced by the Content-Type header field.</p>
     pub fn content_encoding(&self) -> std::option::Option<&str> {
         self.content_encoding.as_deref()
     }
@@ -30252,13 +29253,11 @@ impl WriteGetObjectResponseInput {
     pub fn content_type(&self) -> std::option::Option<&str> {
         self.content_type.as_deref()
     }
-    /// <p>Specifies whether an object stored in Amazon S3 is (<code>true</code>) or is not
-    /// (<code>false</code>) a delete marker. </p>
+    /// <p>Specifies whether an object stored in Amazon S3 is (<code>true</code>) or is not (<code>false</code>) a delete marker. </p>
     pub fn delete_marker(&self) -> bool {
         self.delete_marker
     }
-    /// <p>An opaque identifier assigned by a web server to a specific version of a resource found
-    /// at a URL. </p>
+    /// <p>An opaque identifier assigned by a web server to a specific version of a resource found at a URL. </p>
     pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
     }
@@ -30274,10 +29273,7 @@ impl WriteGetObjectResponseInput {
     pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
-    /// <p>Set to the number of metadata entries not returned in <code>x-amz-meta</code> headers.
-    /// This can happen if you create metadata using an API like SOAP that supports more flexible
-    /// metadata than the REST API. For example, using SOAP, you can create metadata whose values
-    /// are not legal HTTP headers.</p>
+    /// <p>Set to the number of metadata entries not returned in <code>x-amz-meta</code> headers. This can happen if you create metadata using an API like SOAP that supports more flexible metadata than the REST API. For example, using SOAP, you can create metadata whose values are not legal HTTP headers.</p>
     pub fn missing_meta(&self) -> i32 {
         self.missing_meta
     }
@@ -30288,8 +29284,7 @@ impl WriteGetObjectResponseInput {
     {
         self.metadata.as_ref()
     }
-    /// <p>Indicates whether an object stored in Amazon S3 has Object Lock enabled. For more
-    /// information about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html">Object Lock</a>.</p>
+    /// <p>Indicates whether an object stored in Amazon S3 has Object Lock enabled. For more information about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html">Object Lock</a>.</p>
     pub fn object_lock_mode(&self) -> std::option::Option<&crate::model::ObjectLockMode> {
         self.object_lock_mode.as_ref()
     }
@@ -30309,18 +29304,15 @@ impl WriteGetObjectResponseInput {
     pub fn parts_count(&self) -> i32 {
         self.parts_count
     }
-    /// <p>Indicates if request involves bucket that is either a source or destination in a Replication rule. For more
-    /// information about S3 Replication, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication.html">Replication</a>.</p>
+    /// <p>Indicates if request involves bucket that is either a source or destination in a Replication rule. For more information about S3 Replication, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication.html">Replication</a>.</p>
     pub fn replication_status(&self) -> std::option::Option<&crate::model::ReplicationStatus> {
         self.replication_status.as_ref()
     }
-    /// <p>If present, indicates that the requester was successfully charged for the
-    /// request.</p>
+    /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     pub fn request_charged(&self) -> std::option::Option<&crate::model::RequestCharged> {
         self.request_charged.as_ref()
     }
-    /// <p>Provides information about object restoration operation and expiration time of the
-    /// restored object copy.</p>
+    /// <p>Provides information about object restoration operation and expiration time of the restored object copy.</p>
     pub fn restore(&self) -> std::option::Option<&str> {
         self.restore.as_deref()
     }
@@ -30338,10 +29330,7 @@ impl WriteGetObjectResponseInput {
     pub fn ssekms_key_id(&self) -> std::option::Option<&str> {
         self.ssekms_key_id.as_deref()
     }
-    /// <p> 128-bit MD5 digest of customer-provided encryption key used in Amazon S3 to encrypt data
-    /// stored in S3. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerSideEncryptionCustomerKeys.html">Protecting data
-    /// using server-side encryption with customer-provided encryption keys
-    /// (SSE-C)</a>.</p>
+    /// <p> 128-bit MD5 digest of customer-provided encryption key used in Amazon S3 to encrypt data stored in S3. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerSideEncryptionCustomerKeys.html">Protecting data using server-side encryption with customer-provided encryption keys (SSE-C)</a>.</p>
     pub fn sse_customer_key_md5(&self) -> std::option::Option<&str> {
         self.sse_customer_key_md5.as_deref()
     }
@@ -30357,8 +29346,7 @@ impl WriteGetObjectResponseInput {
     pub fn version_id(&self) -> std::option::Option<&str> {
         self.version_id.as_deref()
     }
-    /// <p> Indicates whether the object stored in Amazon S3 uses an S3 bucket key for server-side
-    /// encryption with Amazon Web Services KMS (SSE-KMS).</p>
+    /// <p> Indicates whether the object stored in Amazon S3 uses an S3 bucket key for server-side encryption with Amazon Web Services KMS (SSE-KMS).</p>
     pub fn bucket_key_enabled(&self) -> bool {
         self.bucket_key_enabled
     }
@@ -30420,30 +29408,35 @@ pub struct UploadPartCopyInput {
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>Specifies the source object for the copy operation. You specify the value in one of two
-    /// formats, depending on whether you want to access the source object through an <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">access point</a>:</p>
+    /// <p>Specifies the source object for the copy operation. You specify the value in one of two formats, depending on whether you want to access the source object through an <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">access point</a>:</p>
     /// <ul>
-    /// <li>
-    /// <p>For objects not accessed through an access point, specify the name of the source
-    /// bucket and key of the source object, separated by a slash (/). For example, to copy
-    /// the object <code>reports/january.pdf</code> from the bucket
-    /// <code>awsexamplebucket</code>, use
-    /// <code>awsexamplebucket/reports/january.pdf</code>. The value must be URL
-    /// encoded.</p>
-    /// </li>
-    /// <li>
-    /// <p>For objects accessed through access points, specify the Amazon Resource Name (ARN) of the object as accessed through the access point, in the format <code>arn:aws:s3:<Region>:<account-id>:accesspoint/<access-point-name>/object/<key></code>. For example, to copy the object <code>reports/january.pdf</code> through access point <code>my-access-point</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3:us-west-2:123456789012:accesspoint/my-access-point/object/reports/january.pdf</code>. The value must be URL encoded.</p>
-    /// <note>
+    /// <li> <p>For objects not accessed through an access point, specify the name of the source bucket and key of the source object, separated by a slash (/). For example, to copy the object <code>reports/january.pdf</code> from the bucket <code>awsexamplebucket</code>, use <code>awsexamplebucket/reports/january.pdf</code>. The value must be URL encoded.</p> </li>
+    /// <li> <p>For objects accessed through access points, specify the Amazon Resource Name (ARN) of the object as accessed through the access point, in the format <code>arn:aws:s3:
+    /// <region>
+    /// :
+    /// <account-id>
+    /// :accesspoint/
+    /// <access-point-name>
+    /// /object/
+    /// <key></key>
+    /// </access-point-name>
+    /// </account-id>
+    /// </region></code>. For example, to copy the object <code>reports/january.pdf</code> through access point <code>my-access-point</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3:us-west-2:123456789012:accesspoint/my-access-point/object/reports/january.pdf</code>. The value must be URL encoded.</p> <note>
     /// <p>Amazon S3 supports copy operations using access points only when the source and destination buckets are in the same Amazon Web Services Region.</p>
-    /// </note>
-    /// <p>Alternatively, for objects accessed through Amazon S3 on Outposts, specify the ARN of the object as accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/object/<key></code>. For example, to copy the object <code>reports/january.pdf</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/object/reports/january.pdf</code>. The value must be URL encoded.  </p>
-    /// </li>
+    /// </note> <p>Alternatively, for objects accessed through Amazon S3 on Outposts, specify the ARN of the object as accessed in the format <code>arn:aws:s3-outposts:
+    /// <region>
+    /// :
+    /// <account-id>
+    /// :outpost/
+    /// <outpost-id>
+    /// /object/
+    /// <key></key>
+    /// </outpost-id>
+    /// </account-id>
+    /// </region></code>. For example, to copy the object <code>reports/january.pdf</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/object/reports/january.pdf</code>. The value must be URL encoded. </p> </li>
     /// </ul>
-    /// <p>To copy a specific version of an object, append <code>?versionId=<version-id></code>
-    /// to the value (for example,
-    /// <code>awsexamplebucket/reports/january.pdf?versionId=QUpfdndhfd8438MNFDN93jdnJFkdmqnh893</code>).
-    /// If you don't specify a version ID, Amazon S3 copies the latest version of the source
-    /// object.</p>
+    /// <p>To copy a specific version of an object, append <code>?versionId=
+    /// <version-id></version-id></code> to the value (for example, <code>awsexamplebucket/reports/january.pdf?versionId=QUpfdndhfd8438MNFDN93jdnJFkdmqnh893</code>). If you don't specify a version ID, Amazon S3 copies the latest version of the source object.</p>
     pub copy_source: std::option::Option<std::string::String>,
     /// <p>Copies the object if its entity tag (ETag) matches the specified tag.</p>
     pub copy_source_if_match: std::option::Option<std::string::String>,
@@ -30453,46 +29446,27 @@ pub struct UploadPartCopyInput {
     pub copy_source_if_none_match: std::option::Option<std::string::String>,
     /// <p>Copies the object if it hasn't been modified since the specified time.</p>
     pub copy_source_if_unmodified_since: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The range of bytes to copy from the source object. The range value must use the form
-    /// bytes=first-last, where the first and last are the zero-based byte offsets to copy. For
-    /// example, bytes=0-9 indicates that you want to copy the first 10 bytes of the source. You
-    /// can copy a range only if the source object is greater than 5 MB.</p>
+    /// <p>The range of bytes to copy from the source object. The range value must use the form bytes=first-last, where the first and last are the zero-based byte offsets to copy. For example, bytes=0-9 indicates that you want to copy the first 10 bytes of the source. You can copy a range only if the source object is greater than 5 MB.</p>
     pub copy_source_range: std::option::Option<std::string::String>,
     /// <p>Object key for which the multipart upload was initiated.</p>
     pub key: std::option::Option<std::string::String>,
-    /// <p>Part number of part being copied. This is a positive integer between 1 and
-    /// 10,000.</p>
+    /// <p>Part number of part being copied. This is a positive integer between 1 and 10,000.</p>
     pub part_number: i32,
     /// <p>Upload ID identifying the multipart upload whose part is being copied.</p>
     pub upload_id: std::option::Option<std::string::String>,
-    /// <p>Specifies the algorithm to use to when encrypting the object (for example,
-    /// AES256).</p>
+    /// <p>Specifies the algorithm to use to when encrypting the object (for example, AES256).</p>
     pub sse_customer_algorithm: std::option::Option<std::string::String>,
-    /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This
-    /// value is used to store the object and then it is discarded; Amazon S3 does not store the
-    /// encryption key. The key must be appropriate for use with the algorithm specified in the
-    /// <code>x-amz-server-side-encryption-customer-algorithm</code> header. This must be the
-    /// same encryption key specified in the initiate multipart upload request.</p>
+    /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This value is used to store the object and then it is discarded; Amazon S3 does not store the encryption key. The key must be appropriate for use with the algorithm specified in the <code>x-amz-server-side-encryption-customer-algorithm</code> header. This must be the same encryption key specified in the initiate multipart upload request.</p>
     pub sse_customer_key: std::option::Option<std::string::String>,
-    /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses
-    /// this header for a message integrity check to ensure that the encryption key was transmitted
-    /// without error.</p>
+    /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
     pub sse_customer_key_md5: std::option::Option<std::string::String>,
-    /// <p>Specifies the algorithm to use when decrypting the source object (for example,
-    /// AES256).</p>
+    /// <p>Specifies the algorithm to use when decrypting the source object (for example, AES256).</p>
     pub copy_source_sse_customer_algorithm: std::option::Option<std::string::String>,
-    /// <p>Specifies the customer-provided encryption key for Amazon S3 to use to decrypt the source
-    /// object. The encryption key provided in this header must be one that was used when the
-    /// source object was created.</p>
+    /// <p>Specifies the customer-provided encryption key for Amazon S3 to use to decrypt the source object. The encryption key provided in this header must be one that was used when the source object was created.</p>
     pub copy_source_sse_customer_key: std::option::Option<std::string::String>,
-    /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses
-    /// this header for a message integrity check to ensure that the encryption key was transmitted
-    /// without error.</p>
+    /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
     pub copy_source_sse_customer_key_md5: std::option::Option<std::string::String>,
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-    /// owners need not specify this parameter in their requests. For information about downloading
-    /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-    /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub request_payer: std::option::Option<crate::model::RequestPayer>,
     /// <p>The account ID of the expected destination bucket owner. If the destination bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
@@ -30506,30 +29480,35 @@ impl UploadPartCopyInput {
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>Specifies the source object for the copy operation. You specify the value in one of two
-    /// formats, depending on whether you want to access the source object through an <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">access point</a>:</p>
+    /// <p>Specifies the source object for the copy operation. You specify the value in one of two formats, depending on whether you want to access the source object through an <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">access point</a>:</p>
     /// <ul>
-    /// <li>
-    /// <p>For objects not accessed through an access point, specify the name of the source
-    /// bucket and key of the source object, separated by a slash (/). For example, to copy
-    /// the object <code>reports/january.pdf</code> from the bucket
-    /// <code>awsexamplebucket</code>, use
-    /// <code>awsexamplebucket/reports/january.pdf</code>. The value must be URL
-    /// encoded.</p>
-    /// </li>
-    /// <li>
-    /// <p>For objects accessed through access points, specify the Amazon Resource Name (ARN) of the object as accessed through the access point, in the format <code>arn:aws:s3:<Region>:<account-id>:accesspoint/<access-point-name>/object/<key></code>. For example, to copy the object <code>reports/january.pdf</code> through access point <code>my-access-point</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3:us-west-2:123456789012:accesspoint/my-access-point/object/reports/january.pdf</code>. The value must be URL encoded.</p>
-    /// <note>
+    /// <li> <p>For objects not accessed through an access point, specify the name of the source bucket and key of the source object, separated by a slash (/). For example, to copy the object <code>reports/january.pdf</code> from the bucket <code>awsexamplebucket</code>, use <code>awsexamplebucket/reports/january.pdf</code>. The value must be URL encoded.</p> </li>
+    /// <li> <p>For objects accessed through access points, specify the Amazon Resource Name (ARN) of the object as accessed through the access point, in the format <code>arn:aws:s3:
+    /// <region>
+    /// :
+    /// <account-id>
+    /// :accesspoint/
+    /// <access-point-name>
+    /// /object/
+    /// <key></key>
+    /// </access-point-name>
+    /// </account-id>
+    /// </region></code>. For example, to copy the object <code>reports/january.pdf</code> through access point <code>my-access-point</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3:us-west-2:123456789012:accesspoint/my-access-point/object/reports/january.pdf</code>. The value must be URL encoded.</p> <note>
     /// <p>Amazon S3 supports copy operations using access points only when the source and destination buckets are in the same Amazon Web Services Region.</p>
-    /// </note>
-    /// <p>Alternatively, for objects accessed through Amazon S3 on Outposts, specify the ARN of the object as accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/object/<key></code>. For example, to copy the object <code>reports/january.pdf</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/object/reports/january.pdf</code>. The value must be URL encoded.  </p>
-    /// </li>
+    /// </note> <p>Alternatively, for objects accessed through Amazon S3 on Outposts, specify the ARN of the object as accessed in the format <code>arn:aws:s3-outposts:
+    /// <region>
+    /// :
+    /// <account-id>
+    /// :outpost/
+    /// <outpost-id>
+    /// /object/
+    /// <key></key>
+    /// </outpost-id>
+    /// </account-id>
+    /// </region></code>. For example, to copy the object <code>reports/january.pdf</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/object/reports/january.pdf</code>. The value must be URL encoded. </p> </li>
     /// </ul>
-    /// <p>To copy a specific version of an object, append <code>?versionId=<version-id></code>
-    /// to the value (for example,
-    /// <code>awsexamplebucket/reports/january.pdf?versionId=QUpfdndhfd8438MNFDN93jdnJFkdmqnh893</code>).
-    /// If you don't specify a version ID, Amazon S3 copies the latest version of the source
-    /// object.</p>
+    /// <p>To copy a specific version of an object, append <code>?versionId=
+    /// <version-id></version-id></code> to the value (for example, <code>awsexamplebucket/reports/january.pdf?versionId=QUpfdndhfd8438MNFDN93jdnJFkdmqnh893</code>). If you don't specify a version ID, Amazon S3 copies the latest version of the source object.</p>
     pub fn copy_source(&self) -> std::option::Option<&str> {
         self.copy_source.as_deref()
     }
@@ -30553,10 +29532,7 @@ impl UploadPartCopyInput {
     ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.copy_source_if_unmodified_since.as_ref()
     }
-    /// <p>The range of bytes to copy from the source object. The range value must use the form
-    /// bytes=first-last, where the first and last are the zero-based byte offsets to copy. For
-    /// example, bytes=0-9 indicates that you want to copy the first 10 bytes of the source. You
-    /// can copy a range only if the source object is greater than 5 MB.</p>
+    /// <p>The range of bytes to copy from the source object. The range value must use the form bytes=first-last, where the first and last are the zero-based byte offsets to copy. For example, bytes=0-9 indicates that you want to copy the first 10 bytes of the source. You can copy a range only if the source object is greater than 5 MB.</p>
     pub fn copy_source_range(&self) -> std::option::Option<&str> {
         self.copy_source_range.as_deref()
     }
@@ -30564,8 +29540,7 @@ impl UploadPartCopyInput {
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
-    /// <p>Part number of part being copied. This is a positive integer between 1 and
-    /// 10,000.</p>
+    /// <p>Part number of part being copied. This is a positive integer between 1 and 10,000.</p>
     pub fn part_number(&self) -> i32 {
         self.part_number
     }
@@ -30573,46 +29548,31 @@ impl UploadPartCopyInput {
     pub fn upload_id(&self) -> std::option::Option<&str> {
         self.upload_id.as_deref()
     }
-    /// <p>Specifies the algorithm to use to when encrypting the object (for example,
-    /// AES256).</p>
+    /// <p>Specifies the algorithm to use to when encrypting the object (for example, AES256).</p>
     pub fn sse_customer_algorithm(&self) -> std::option::Option<&str> {
         self.sse_customer_algorithm.as_deref()
     }
-    /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This
-    /// value is used to store the object and then it is discarded; Amazon S3 does not store the
-    /// encryption key. The key must be appropriate for use with the algorithm specified in the
-    /// <code>x-amz-server-side-encryption-customer-algorithm</code> header. This must be the
-    /// same encryption key specified in the initiate multipart upload request.</p>
+    /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This value is used to store the object and then it is discarded; Amazon S3 does not store the encryption key. The key must be appropriate for use with the algorithm specified in the <code>x-amz-server-side-encryption-customer-algorithm</code> header. This must be the same encryption key specified in the initiate multipart upload request.</p>
     pub fn sse_customer_key(&self) -> std::option::Option<&str> {
         self.sse_customer_key.as_deref()
     }
-    /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses
-    /// this header for a message integrity check to ensure that the encryption key was transmitted
-    /// without error.</p>
+    /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
     pub fn sse_customer_key_md5(&self) -> std::option::Option<&str> {
         self.sse_customer_key_md5.as_deref()
     }
-    /// <p>Specifies the algorithm to use when decrypting the source object (for example,
-    /// AES256).</p>
+    /// <p>Specifies the algorithm to use when decrypting the source object (for example, AES256).</p>
     pub fn copy_source_sse_customer_algorithm(&self) -> std::option::Option<&str> {
         self.copy_source_sse_customer_algorithm.as_deref()
     }
-    /// <p>Specifies the customer-provided encryption key for Amazon S3 to use to decrypt the source
-    /// object. The encryption key provided in this header must be one that was used when the
-    /// source object was created.</p>
+    /// <p>Specifies the customer-provided encryption key for Amazon S3 to use to decrypt the source object. The encryption key provided in this header must be one that was used when the source object was created.</p>
     pub fn copy_source_sse_customer_key(&self) -> std::option::Option<&str> {
         self.copy_source_sse_customer_key.as_deref()
     }
-    /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses
-    /// this header for a message integrity check to ensure that the encryption key was transmitted
-    /// without error.</p>
+    /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
     pub fn copy_source_sse_customer_key_md5(&self) -> std::option::Option<&str> {
         self.copy_source_sse_customer_key_md5.as_deref()
     }
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-    /// owners need not specify this parameter in their requests. For information about downloading
-    /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-    /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn request_payer(&self) -> std::option::Option<&crate::model::RequestPayer> {
         self.request_payer.as_ref()
     }
@@ -30678,37 +29638,23 @@ pub struct UploadPartInput {
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>Size of the body in bytes. This parameter is useful when the size of the body cannot be
-    /// determined automatically.</p>
+    /// <p>Size of the body in bytes. This parameter is useful when the size of the body cannot be determined automatically.</p>
     pub content_length: i64,
-    /// <p>The base64-encoded 128-bit MD5 digest of the part data. This parameter is auto-populated
-    /// when using the command from the CLI. This parameter is required if object lock parameters
-    /// are specified.</p>
+    /// <p>The base64-encoded 128-bit MD5 digest of the part data. This parameter is auto-populated when using the command from the CLI. This parameter is required if object lock parameters are specified.</p>
     pub content_md5: std::option::Option<std::string::String>,
     /// <p>Object key for which the multipart upload was initiated.</p>
     pub key: std::option::Option<std::string::String>,
-    /// <p>Part number of part being uploaded. This is a positive integer between 1 and
-    /// 10,000.</p>
+    /// <p>Part number of part being uploaded. This is a positive integer between 1 and 10,000.</p>
     pub part_number: i32,
     /// <p>Upload ID identifying the multipart upload whose part is being uploaded.</p>
     pub upload_id: std::option::Option<std::string::String>,
-    /// <p>Specifies the algorithm to use to when encrypting the object (for example,
-    /// AES256).</p>
+    /// <p>Specifies the algorithm to use to when encrypting the object (for example, AES256).</p>
     pub sse_customer_algorithm: std::option::Option<std::string::String>,
-    /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This
-    /// value is used to store the object and then it is discarded; Amazon S3 does not store the
-    /// encryption key. The key must be appropriate for use with the algorithm specified in the
-    /// <code>x-amz-server-side-encryption-customer-algorithm header</code>. This must be the
-    /// same encryption key specified in the initiate multipart upload request.</p>
+    /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This value is used to store the object and then it is discarded; Amazon S3 does not store the encryption key. The key must be appropriate for use with the algorithm specified in the <code>x-amz-server-side-encryption-customer-algorithm header</code>. This must be the same encryption key specified in the initiate multipart upload request.</p>
     pub sse_customer_key: std::option::Option<std::string::String>,
-    /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses
-    /// this header for a message integrity check to ensure that the encryption key was transmitted
-    /// without error.</p>
+    /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
     pub sse_customer_key_md5: std::option::Option<std::string::String>,
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-    /// owners need not specify this parameter in their requests. For information about downloading
-    /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-    /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub request_payer: std::option::Option<crate::model::RequestPayer>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
@@ -30724,14 +29670,11 @@ impl UploadPartInput {
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>Size of the body in bytes. This parameter is useful when the size of the body cannot be
-    /// determined automatically.</p>
+    /// <p>Size of the body in bytes. This parameter is useful when the size of the body cannot be determined automatically.</p>
     pub fn content_length(&self) -> i64 {
         self.content_length
     }
-    /// <p>The base64-encoded 128-bit MD5 digest of the part data. This parameter is auto-populated
-    /// when using the command from the CLI. This parameter is required if object lock parameters
-    /// are specified.</p>
+    /// <p>The base64-encoded 128-bit MD5 digest of the part data. This parameter is auto-populated when using the command from the CLI. This parameter is required if object lock parameters are specified.</p>
     pub fn content_md5(&self) -> std::option::Option<&str> {
         self.content_md5.as_deref()
     }
@@ -30739,8 +29682,7 @@ impl UploadPartInput {
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
-    /// <p>Part number of part being uploaded. This is a positive integer between 1 and
-    /// 10,000.</p>
+    /// <p>Part number of part being uploaded. This is a positive integer between 1 and 10,000.</p>
     pub fn part_number(&self) -> i32 {
         self.part_number
     }
@@ -30748,29 +29690,19 @@ impl UploadPartInput {
     pub fn upload_id(&self) -> std::option::Option<&str> {
         self.upload_id.as_deref()
     }
-    /// <p>Specifies the algorithm to use to when encrypting the object (for example,
-    /// AES256).</p>
+    /// <p>Specifies the algorithm to use to when encrypting the object (for example, AES256).</p>
     pub fn sse_customer_algorithm(&self) -> std::option::Option<&str> {
         self.sse_customer_algorithm.as_deref()
     }
-    /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This
-    /// value is used to store the object and then it is discarded; Amazon S3 does not store the
-    /// encryption key. The key must be appropriate for use with the algorithm specified in the
-    /// <code>x-amz-server-side-encryption-customer-algorithm header</code>. This must be the
-    /// same encryption key specified in the initiate multipart upload request.</p>
+    /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This value is used to store the object and then it is discarded; Amazon S3 does not store the encryption key. The key must be appropriate for use with the algorithm specified in the <code>x-amz-server-side-encryption-customer-algorithm header</code>. This must be the same encryption key specified in the initiate multipart upload request.</p>
     pub fn sse_customer_key(&self) -> std::option::Option<&str> {
         self.sse_customer_key.as_deref()
     }
-    /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses
-    /// this header for a message integrity check to ensure that the encryption key was transmitted
-    /// without error.</p>
+    /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
     pub fn sse_customer_key_md5(&self) -> std::option::Option<&str> {
         self.sse_customer_key_md5.as_deref()
     }
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-    /// owners need not specify this parameter in their requests. For information about downloading
-    /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-    /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn request_payer(&self) -> std::option::Option<&crate::model::RequestPayer> {
         self.request_payer.as_ref()
     }
@@ -30798,12 +29730,7 @@ impl std::fmt::Debug for UploadPartInput {
     }
 }
 
-/// <p>Request to filter the contents of an Amazon S3 object based on a simple Structured Query
-/// Language (SQL) statement. In the request, along with the SQL expression, you must specify a
-/// data serialization format (JSON or CSV) of the object. Amazon S3 uses this to parse object data
-/// into records. It returns only records that match the specified SQL expression. You must
-/// also specify the data serialization format for the response. For more information, see
-/// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectSELECTContent.html">S3Select API Documentation</a>.</p>
+/// <p>Request to filter the contents of an Amazon S3 object based on a simple Structured Query Language (SQL) statement. In the request, along with the SQL expression, you must specify a data serialization format (JSON or CSV) of the object. Amazon S3 uses this to parse object data into records. It returns only records that match the specified SQL expression. You must also specify the data serialization format for the response. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectSELECTContent.html">S3Select API Documentation</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SelectObjectContentInput {
@@ -30813,11 +29740,9 @@ pub struct SelectObjectContentInput {
     pub key: std::option::Option<std::string::String>,
     /// <p>The SSE Algorithm used to encrypt the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side Encryption (Using Customer-Provided Encryption Keys</a>. </p>
     pub sse_customer_algorithm: std::option::Option<std::string::String>,
-    /// <p>The SSE Customer Key. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side Encryption
-    /// (Using Customer-Provided Encryption Keys</a>. </p>
+    /// <p>The SSE Customer Key. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side Encryption (Using Customer-Provided Encryption Keys</a>. </p>
     pub sse_customer_key: std::option::Option<std::string::String>,
-    /// <p>The SSE Customer Key MD5. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side Encryption
-    /// (Using Customer-Provided Encryption Keys</a>. </p>
+    /// <p>The SSE Customer Key MD5. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side Encryption (Using Customer-Provided Encryption Keys</a>. </p>
     pub sse_customer_key_md5: std::option::Option<std::string::String>,
     /// <p>The expression that is used to query the object.</p>
     pub expression: std::option::Option<std::string::String>,
@@ -30829,29 +29754,30 @@ pub struct SelectObjectContentInput {
     pub input_serialization: std::option::Option<crate::model::InputSerialization>,
     /// <p>Describes the format of the data that you want Amazon S3 to return in response.</p>
     pub output_serialization: std::option::Option<crate::model::OutputSerialization>,
-    /// <p>Specifies the byte range of the object to get the records from. A record is processed
-    /// when its first byte is contained by the range. This parameter is optional, but when
-    /// specified, it must not be empty. See RFC 2616, Section 14.35.1 about how to specify the
-    /// start and end of the range.</p>
-    /// <p>
-    /// <code>ScanRange</code>may be used in the following ways:</p>
+    /// <p>Specifies the byte range of the object to get the records from. A record is processed when its first byte is contained by the range. This parameter is optional, but when specified, it must not be empty. See RFC 2616, Section 14.35.1 about how to specify the start and end of the range.</p>
+    /// <p> <code>ScanRange</code>may be used in the following ways:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code><scanrange><start>50</start><end>100</end></scanrange></code>
-    /// - process only the records starting between the bytes 50 and 100 (inclusive, counting
-    /// from zero)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code><scanrange><start>50</start></scanrange></code> -
-    /// process only the records starting after the byte 50</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code><scanrange><end>50</end></scanrange></code> -
-    /// process only the records within the last 50 bytes of the file.</p>
-    /// </li>
+    /// <li> <p> <code>
+    /// <scanrange>
+    /// <start>
+    /// 50
+    /// </start>
+    /// <end>
+    /// 100
+    /// </end>
+    /// </scanrange></code> - process only the records starting between the bytes 50 and 100 (inclusive, counting from zero)</p> </li>
+    /// <li> <p> <code>
+    /// <scanrange>
+    /// <start>
+    /// 50
+    /// </start>
+    /// </scanrange></code> - process only the records starting after the byte 50</p> </li>
+    /// <li> <p> <code>
+    /// <scanrange>
+    /// <end>
+    /// 50
+    /// </end>
+    /// </scanrange></code> - process only the records within the last 50 bytes of the file.</p> </li>
     /// </ul>
     pub scan_range: std::option::Option<crate::model::ScanRange>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -30870,13 +29796,11 @@ impl SelectObjectContentInput {
     pub fn sse_customer_algorithm(&self) -> std::option::Option<&str> {
         self.sse_customer_algorithm.as_deref()
     }
-    /// <p>The SSE Customer Key. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side Encryption
-    /// (Using Customer-Provided Encryption Keys</a>. </p>
+    /// <p>The SSE Customer Key. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side Encryption (Using Customer-Provided Encryption Keys</a>. </p>
     pub fn sse_customer_key(&self) -> std::option::Option<&str> {
         self.sse_customer_key.as_deref()
     }
-    /// <p>The SSE Customer Key MD5. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side Encryption
-    /// (Using Customer-Provided Encryption Keys</a>. </p>
+    /// <p>The SSE Customer Key MD5. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side Encryption (Using Customer-Provided Encryption Keys</a>. </p>
     pub fn sse_customer_key_md5(&self) -> std::option::Option<&str> {
         self.sse_customer_key_md5.as_deref()
     }
@@ -30900,29 +29824,30 @@ impl SelectObjectContentInput {
     pub fn output_serialization(&self) -> std::option::Option<&crate::model::OutputSerialization> {
         self.output_serialization.as_ref()
     }
-    /// <p>Specifies the byte range of the object to get the records from. A record is processed
-    /// when its first byte is contained by the range. This parameter is optional, but when
-    /// specified, it must not be empty. See RFC 2616, Section 14.35.1 about how to specify the
-    /// start and end of the range.</p>
-    /// <p>
-    /// <code>ScanRange</code>may be used in the following ways:</p>
+    /// <p>Specifies the byte range of the object to get the records from. A record is processed when its first byte is contained by the range. This parameter is optional, but when specified, it must not be empty. See RFC 2616, Section 14.35.1 about how to specify the start and end of the range.</p>
+    /// <p> <code>ScanRange</code>may be used in the following ways:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code><scanrange><start>50</start><end>100</end></scanrange></code>
-    /// - process only the records starting between the bytes 50 and 100 (inclusive, counting
-    /// from zero)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code><scanrange><start>50</start></scanrange></code> -
-    /// process only the records starting after the byte 50</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code><scanrange><end>50</end></scanrange></code> -
-    /// process only the records within the last 50 bytes of the file.</p>
-    /// </li>
+    /// <li> <p> <code>
+    /// <scanrange>
+    /// <start>
+    /// 50
+    /// </start>
+    /// <end>
+    /// 100
+    /// </end>
+    /// </scanrange></code> - process only the records starting between the bytes 50 and 100 (inclusive, counting from zero)</p> </li>
+    /// <li> <p> <code>
+    /// <scanrange>
+    /// <start>
+    /// 50
+    /// </start>
+    /// </scanrange></code> - process only the records starting after the byte 50</p> </li>
+    /// <li> <p> <code>
+    /// <scanrange>
+    /// <end>
+    /// 50
+    /// </end>
+    /// </scanrange></code> - process only the records within the last 50 bytes of the file.</p> </li>
     /// </ul>
     pub fn scan_range(&self) -> std::option::Option<&crate::model::ScanRange> {
         self.scan_range.as_ref()
@@ -30965,10 +29890,7 @@ pub struct RestoreObjectInput {
     pub version_id: std::option::Option<std::string::String>,
     /// <p>Container for restore job parameters.</p>
     pub restore_request: std::option::Option<crate::model::RestoreRequest>,
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-    /// owners need not specify this parameter in their requests. For information about downloading
-    /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-    /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub request_payer: std::option::Option<crate::model::RequestPayer>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
@@ -30992,10 +29914,7 @@ impl RestoreObjectInput {
     pub fn restore_request(&self) -> std::option::Option<&crate::model::RestoreRequest> {
         self.restore_request.as_ref()
     }
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-    /// owners need not specify this parameter in their requests. For information about downloading
-    /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-    /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn request_payer(&self) -> std::option::Option<&crate::model::RequestPayer> {
         self.request_payer.as_ref()
     }
@@ -31021,23 +29940,19 @@ impl std::fmt::Debug for RestoreObjectInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutPublicAccessBlockInput {
-    /// <p>The name of the Amazon S3 bucket whose <code>PublicAccessBlock</code> configuration you want
-    /// to set.</p>
+    /// <p>The name of the Amazon S3 bucket whose <code>PublicAccessBlock</code> configuration you want to set.</p>
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The MD5 hash of the <code>PutPublicAccessBlock</code> request body. </p>
     /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
     pub content_md5: std::option::Option<std::string::String>,
-    /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3
-    /// bucket. You can enable the configuration options in any combination. For more information
-    /// about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 bucket. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub public_access_block_configuration:
         std::option::Option<crate::model::PublicAccessBlockConfiguration>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl PutPublicAccessBlockInput {
-    /// <p>The name of the Amazon S3 bucket whose <code>PublicAccessBlock</code> configuration you want
-    /// to set.</p>
+    /// <p>The name of the Amazon S3 bucket whose <code>PublicAccessBlock</code> configuration you want to set.</p>
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
@@ -31046,9 +29961,7 @@ impl PutPublicAccessBlockInput {
     pub fn content_md5(&self) -> std::option::Option<&str> {
         self.content_md5.as_deref()
     }
-    /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3
-    /// bucket. You can enable the configuration options in any combination. For more information
-    /// about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 bucket. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn public_access_block_configuration(
         &self,
     ) -> std::option::Option<&crate::model::PublicAccessBlockConfiguration> {
@@ -31092,10 +30005,7 @@ pub struct PutObjectTaggingInput {
     pub tagging: std::option::Option<crate::model::Tagging>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-    /// owners need not specify this parameter in their requests. For information about downloading
-    /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-    /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub request_payer: std::option::Option<crate::model::RequestPayer>,
 }
 impl PutObjectTaggingInput {
@@ -31126,10 +30036,7 @@ impl PutObjectTaggingInput {
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-    /// owners need not specify this parameter in their requests. For information about downloading
-    /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-    /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn request_payer(&self) -> std::option::Option<&crate::model::RequestPayer> {
         self.request_payer.as_ref()
     }
@@ -31152,22 +30059,16 @@ impl std::fmt::Debug for PutObjectTaggingInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutObjectRetentionInput {
-    /// <p>The bucket name that contains the object you want to apply this Object Retention
-    /// configuration to. </p>
+    /// <p>The bucket name that contains the object you want to apply this Object Retention configuration to. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>The key name for the object that you want to apply this Object Retention configuration
-    /// to.</p>
+    /// <p>The key name for the object that you want to apply this Object Retention configuration to.</p>
     pub key: std::option::Option<std::string::String>,
     /// <p>The container element for the Object Retention configuration.</p>
     pub retention: std::option::Option<crate::model::ObjectLockRetention>,
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-    /// owners need not specify this parameter in their requests. For information about downloading
-    /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-    /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub request_payer: std::option::Option<crate::model::RequestPayer>,
-    /// <p>The version ID for the object that you want to apply this Object Retention configuration
-    /// to.</p>
+    /// <p>The version ID for the object that you want to apply this Object Retention configuration to.</p>
     pub version_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether this action should bypass Governance-mode restrictions.</p>
     pub bypass_governance_retention: bool,
@@ -31178,14 +30079,12 @@ pub struct PutObjectRetentionInput {
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl PutObjectRetentionInput {
-    /// <p>The bucket name that contains the object you want to apply this Object Retention
-    /// configuration to. </p>
+    /// <p>The bucket name that contains the object you want to apply this Object Retention configuration to. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>The key name for the object that you want to apply this Object Retention configuration
-    /// to.</p>
+    /// <p>The key name for the object that you want to apply this Object Retention configuration to.</p>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
@@ -31193,15 +30092,11 @@ impl PutObjectRetentionInput {
     pub fn retention(&self) -> std::option::Option<&crate::model::ObjectLockRetention> {
         self.retention.as_ref()
     }
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-    /// owners need not specify this parameter in their requests. For information about downloading
-    /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-    /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn request_payer(&self) -> std::option::Option<&crate::model::RequestPayer> {
         self.request_payer.as_ref()
     }
-    /// <p>The version ID for the object that you want to apply this Object Retention configuration
-    /// to.</p>
+    /// <p>The version ID for the object that you want to apply this Object Retention configuration to.</p>
     pub fn version_id(&self) -> std::option::Option<&str> {
         self.version_id.as_deref()
     }
@@ -31245,10 +30140,7 @@ pub struct PutObjectLockConfigurationInput {
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The Object Lock configuration that you want to apply to the specified bucket.</p>
     pub object_lock_configuration: std::option::Option<crate::model::ObjectLockConfiguration>,
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-    /// owners need not specify this parameter in their requests. For information about downloading
-    /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-    /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub request_payer: std::option::Option<crate::model::RequestPayer>,
     /// <p>A token to allow Object Lock to be enabled for an existing bucket.</p>
     pub token: std::option::Option<std::string::String>,
@@ -31269,10 +30161,7 @@ impl PutObjectLockConfigurationInput {
     ) -> std::option::Option<&crate::model::ObjectLockConfiguration> {
         self.object_lock_configuration.as_ref()
     }
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-    /// owners need not specify this parameter in their requests. For information about downloading
-    /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-    /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn request_payer(&self) -> std::option::Option<&crate::model::RequestPayer> {
         self.request_payer.as_ref()
     }
@@ -31312,13 +30201,9 @@ pub struct PutObjectLegalHoldInput {
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The key name for the object that you want to place a Legal Hold on.</p>
     pub key: std::option::Option<std::string::String>,
-    /// <p>Container element for the Legal Hold configuration you want to apply to the specified
-    /// object.</p>
+    /// <p>Container element for the Legal Hold configuration you want to apply to the specified object.</p>
     pub legal_hold: std::option::Option<crate::model::ObjectLockLegalHold>,
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-    /// owners need not specify this parameter in their requests. For information about downloading
-    /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-    /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub request_payer: std::option::Option<crate::model::RequestPayer>,
     /// <p>The version ID of the object that you want to place a Legal Hold on.</p>
     pub version_id: std::option::Option<std::string::String>,
@@ -31338,15 +30223,11 @@ impl PutObjectLegalHoldInput {
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
-    /// <p>Container element for the Legal Hold configuration you want to apply to the specified
-    /// object.</p>
+    /// <p>Container element for the Legal Hold configuration you want to apply to the specified object.</p>
     pub fn legal_hold(&self) -> std::option::Option<&crate::model::ObjectLockLegalHold> {
         self.legal_hold.as_ref()
     }
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-    /// owners need not specify this parameter in their requests. For information about downloading
-    /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-    /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn request_payer(&self) -> std::option::Option<&crate::model::RequestPayer> {
         self.request_payer.as_ref()
     }
@@ -31389,19 +30270,13 @@ pub struct PutObjectAclInput {
     /// <p>The bucket name that contains the object to which you want to attach the ACL. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used as a message
-    /// integrity check to verify that the request body was not corrupted in transit. For more
-    /// information, go to <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC
-    /// 1864.></a>
-    /// </p>
+    /// <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used as a message integrity check to verify that the request body was not corrupted in transit. For more information, go to <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864.&gt;</a> </p>
     /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
     pub content_md5: std::option::Option<std::string::String>,
-    /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the
-    /// bucket.</p>
+    /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p>
     /// <p>This action is not supported by Amazon S3 on Outposts.</p>
     pub grant_full_control: std::option::Option<std::string::String>,
-    /// <p>Allows grantee to list the objects in the
-    /// bucket.</p>
+    /// <p>Allows grantee to list the objects in the bucket.</p>
     /// <p>This action is not supported by Amazon S3 on Outposts.</p>
     pub grant_read: std::option::Option<std::string::String>,
     /// <p>Allows grantee to read the bucket ACL.</p>
@@ -31410,18 +30285,14 @@ pub struct PutObjectAclInput {
     /// <p>Allows grantee to create new objects in the bucket.</p>
     /// <p>For the bucket and object owners of existing objects, also allows deletions and overwrites of those objects.</p>
     pub grant_write: std::option::Option<std::string::String>,
-    /// <p>Allows grantee to write the ACL for the applicable
-    /// bucket.</p>
+    /// <p>Allows grantee to write the ACL for the applicable bucket.</p>
     /// <p>This action is not supported by Amazon S3 on Outposts.</p>
     pub grant_write_acp: std::option::Option<std::string::String>,
     /// <p>Key for which the PUT action was initiated.</p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub key: std::option::Option<std::string::String>,
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-    /// owners need not specify this parameter in their requests. For information about downloading
-    /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-    /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub request_payer: std::option::Option<crate::model::RequestPayer>,
     /// <p>VersionId used to reference a specific version of the object.</p>
     pub version_id: std::option::Option<std::string::String>,
@@ -31442,23 +30313,17 @@ impl PutObjectAclInput {
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used as a message
-    /// integrity check to verify that the request body was not corrupted in transit. For more
-    /// information, go to <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC
-    /// 1864.></a>
-    /// </p>
+    /// <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used as a message integrity check to verify that the request body was not corrupted in transit. For more information, go to <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864.&gt;</a> </p>
     /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
     pub fn content_md5(&self) -> std::option::Option<&str> {
         self.content_md5.as_deref()
     }
-    /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the
-    /// bucket.</p>
+    /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p>
     /// <p>This action is not supported by Amazon S3 on Outposts.</p>
     pub fn grant_full_control(&self) -> std::option::Option<&str> {
         self.grant_full_control.as_deref()
     }
-    /// <p>Allows grantee to list the objects in the
-    /// bucket.</p>
+    /// <p>Allows grantee to list the objects in the bucket.</p>
     /// <p>This action is not supported by Amazon S3 on Outposts.</p>
     pub fn grant_read(&self) -> std::option::Option<&str> {
         self.grant_read.as_deref()
@@ -31473,8 +30338,7 @@ impl PutObjectAclInput {
     pub fn grant_write(&self) -> std::option::Option<&str> {
         self.grant_write.as_deref()
     }
-    /// <p>Allows grantee to write the ACL for the applicable
-    /// bucket.</p>
+    /// <p>Allows grantee to write the ACL for the applicable bucket.</p>
     /// <p>This action is not supported by Amazon S3 on Outposts.</p>
     pub fn grant_write_acp(&self) -> std::option::Option<&str> {
         self.grant_write_acp.as_deref()
@@ -31485,10 +30349,7 @@ impl PutObjectAclInput {
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-    /// owners need not specify this parameter in their requests. For information about downloading
-    /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-    /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn request_payer(&self) -> std::option::Option<&crate::model::RequestPayer> {
         self.request_payer.as_ref()
     }
@@ -31524,8 +30385,7 @@ impl std::fmt::Debug for PutObjectAclInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 pub struct PutObjectInput {
-    /// <p>The canned ACL to apply to the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
-    /// ACL</a>.</p>
+    /// <p>The canned ACL to apply to the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned ACL</a>.</p>
     /// <p>This action is not supported by Amazon S3 on Outposts.</p>
     pub acl: std::option::Option<crate::model::ObjectCannedAcl>,
     /// <p>Object data.</p>
@@ -31534,46 +30394,32 @@ pub struct PutObjectInput {
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p> Can be used to specify caching behavior along the request/reply chain. For more
-    /// information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
+    /// <p> Can be used to specify caching behavior along the request/reply chain. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
     pub cache_control: std::option::Option<std::string::String>,
     /// <p>Specifies presentational information for the object. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html#sec19.5.1">http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html#sec19.5.1</a>.</p>
     pub content_disposition: std::option::Option<std::string::String>,
-    /// <p>Specifies what content encodings have been applied to the object and thus what decoding
-    /// mechanisms must be applied to obtain the media-type referenced by the Content-Type header
-    /// field. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11</a>.</p>
+    /// <p>Specifies what content encodings have been applied to the object and thus what decoding mechanisms must be applied to obtain the media-type referenced by the Content-Type header field. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11</a>.</p>
     pub content_encoding: std::option::Option<std::string::String>,
     /// <p>The language the content is in.</p>
     pub content_language: std::option::Option<std::string::String>,
-    /// <p>Size of the body in bytes. This parameter is useful when the size of the body cannot be
-    /// determined automatically. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.13">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.13</a>.</p>
+    /// <p>Size of the body in bytes. This parameter is useful when the size of the body cannot be determined automatically. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.13">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.13</a>.</p>
     pub content_length: i64,
-    /// <p>The base64-encoded 128-bit MD5 digest of the message (without the headers) according to
-    /// RFC 1864. This header can be used as a message integrity check to verify that the data is
-    /// the same data that was originally sent. Although it is optional, we recommend using the
-    /// Content-MD5 mechanism as an end-to-end integrity check. For more information about REST
-    /// request authentication, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST
-    /// Authentication</a>.</p>
+    /// <p>The base64-encoded 128-bit MD5 digest of the message (without the headers) according to RFC 1864. This header can be used as a message integrity check to verify that the data is the same data that was originally sent. Although it is optional, we recommend using the Content-MD5 mechanism as an end-to-end integrity check. For more information about REST request authentication, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST Authentication</a>.</p>
     pub content_md5: std::option::Option<std::string::String>,
-    /// <p>A standard MIME type describing the format of the contents. For more information, see
-    /// <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17</a>.</p>
+    /// <p>A standard MIME type describing the format of the contents. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17</a>.</p>
     pub content_type: std::option::Option<std::string::String>,
-    /// <p>The date and time at which the object is no longer cacheable. For more information, see
-    /// <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.21">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.21</a>.</p>
+    /// <p>The date and time at which the object is no longer cacheable. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.21">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.21</a>.</p>
     pub expires: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the
-    /// object.</p>
+    /// <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the object.</p>
     /// <p>This action is not supported by Amazon S3 on Outposts.</p>
     pub grant_full_control: std::option::Option<std::string::String>,
-    /// <p>Allows grantee to read the object data and its
-    /// metadata.</p>
+    /// <p>Allows grantee to read the object data and its metadata.</p>
     /// <p>This action is not supported by Amazon S3 on Outposts.</p>
     pub grant_read: std::option::Option<std::string::String>,
     /// <p>Allows grantee to read the object ACL.</p>
     /// <p>This action is not supported by Amazon S3 on Outposts.</p>
     pub grant_read_acp: std::option::Option<std::string::String>,
-    /// <p>Allows grantee to write the ACL for the applicable
-    /// object.</p>
+    /// <p>Allows grantee to write the ACL for the applicable object.</p>
     /// <p>This action is not supported by Amazon S3 on Outposts.</p>
     pub grant_write_acp: std::option::Option<std::string::String>,
     /// <p>Object key for which the PUT action was initiated.</p>
@@ -31581,87 +30427,45 @@ pub struct PutObjectInput {
     /// <p>A map of metadata to store with the object in S3.</p>
     pub metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example,
-    /// AES256, aws:kms).</p>
+    /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example, AES256, aws:kms).</p>
     pub server_side_encryption: std::option::Option<crate::model::ServerSideEncryption>,
-    /// <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created objects. The
-    /// STANDARD storage class provides high durability and high availability. Depending on
-    /// performance needs, you can specify a different Storage Class. Amazon S3 on Outposts only uses
-    /// the OUTPOSTS Storage Class. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a> in the
-    /// <i>Amazon S3 User Guide</i>.</p>
+    /// <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created objects. The STANDARD storage class provides high durability and high availability. Depending on performance needs, you can specify a different Storage Class. Amazon S3 on Outposts only uses the OUTPOSTS Storage Class. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub storage_class: std::option::Option<crate::model::StorageClass>,
-    /// <p>If the bucket is configured as a website, redirects requests for this object to another
-    /// object in the same bucket or to an external URL. Amazon S3 stores the value of this header in
-    /// the object metadata. For information about object metadata, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html">Object Key and Metadata</a>.</p>
-    ///
-    /// <p>In the following example, the request header sets the redirect to an object
-    /// (anotherPage.html) in the same bucket:</p>
-    ///
-    /// <p>
-    /// <code>x-amz-website-redirect-location: /anotherPage.html</code>
-    /// </p>
-    ///
-    /// <p>In the following example, the request header sets the object redirect to another
-    /// website:</p>
-    ///
-    /// <p>
-    /// <code>x-amz-website-redirect-location: http://www.example.com/</code>
-    /// </p>
-    ///
-    /// <p>For more information about website hosting in Amazon S3, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">Hosting Websites on Amazon S3</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/how-to-page-redirect.html">How to Configure Website Page
-    /// Redirects</a>. </p>
+    /// <p>If the bucket is configured as a website, redirects requests for this object to another object in the same bucket or to an external URL. Amazon S3 stores the value of this header in the object metadata. For information about object metadata, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html">Object Key and Metadata</a>.</p>
+    /// <p>In the following example, the request header sets the redirect to an object (anotherPage.html) in the same bucket:</p>
+    /// <p> <code>x-amz-website-redirect-location: /anotherPage.html</code> </p>
+    /// <p>In the following example, the request header sets the object redirect to another website:</p>
+    /// <p> <code>x-amz-website-redirect-location: http://www.example.com/</code> </p>
+    /// <p>For more information about website hosting in Amazon S3, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">Hosting Websites on Amazon S3</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/how-to-page-redirect.html">How to Configure Website Page Redirects</a>. </p>
     pub website_redirect_location: std::option::Option<std::string::String>,
-    /// <p>Specifies the algorithm to use to when encrypting the object (for example,
-    /// AES256).</p>
+    /// <p>Specifies the algorithm to use to when encrypting the object (for example, AES256).</p>
     pub sse_customer_algorithm: std::option::Option<std::string::String>,
-    /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This
-    /// value is used to store the object and then it is discarded; Amazon S3 does not store the
-    /// encryption key. The key must be appropriate for use with the algorithm specified in the
-    /// <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
+    /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This value is used to store the object and then it is discarded; Amazon S3 does not store the encryption key. The key must be appropriate for use with the algorithm specified in the <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
     pub sse_customer_key: std::option::Option<std::string::String>,
-    /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses
-    /// this header for a message integrity check to ensure that the encryption key was transmitted
-    /// without error.</p>
+    /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
     pub sse_customer_key_md5: std::option::Option<std::string::String>,
-    /// <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
-    /// <code>aws:kms</code>, this header specifies the ID of the Amazon Web Services Key Management Service
-    /// (Amazon Web Services KMS) symmetrical customer managed key that was used for the
-    /// object. If you specify <code>x-amz-server-side-encryption:aws:kms</code>, but do not
-    /// provide<code> x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the Amazon Web Services
-    /// managed key to protect the data. If the KMS key does not exist in the same account
-    /// issuing the command, you must use the full ARN and not just the ID.
-    /// </p>
+    /// <p>If <code>x-amz-server-side-encryption</code> is present and has the value of <code>aws:kms</code>, this header specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetrical customer managed key that was used for the object. If you specify <code>x-amz-server-side-encryption:aws:kms</code>, but do not provide<code> x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the Amazon Web Services managed key to protect the data. If the KMS key does not exist in the same account issuing the command, you must use the full ARN and not just the ID. </p>
     pub ssekms_key_id: std::option::Option<std::string::String>,
-    /// <p>Specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The value of this
-    /// header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value
-    /// pairs.</p>
+    /// <p>Specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value pairs.</p>
     pub ssekms_encryption_context: std::option::Option<std::string::String>,
     /// <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption using AWS KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object encryption with SSE-KMS.</p>
     /// <p>Specifying this header with a PUT action doesn’t affect bucket-level settings for S3 Bucket Key.</p>
     pub bucket_key_enabled: bool,
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-    /// owners need not specify this parameter in their requests. For information about downloading
-    /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-    /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub request_payer: std::option::Option<crate::model::RequestPayer>,
-    /// <p>The tag-set for the object. The tag-set must be encoded as URL Query parameters. (For
-    /// example, "Key1=Value1")</p>
+    /// <p>The tag-set for the object. The tag-set must be encoded as URL Query parameters. (For example, "Key1=Value1")</p>
     pub tagging: std::option::Option<std::string::String>,
     /// <p>The Object Lock mode that you want to apply to this object.</p>
     pub object_lock_mode: std::option::Option<crate::model::ObjectLockMode>,
-    /// <p>The date and time when you want this object's Object Lock to expire. Must be formatted
-    /// as a timestamp parameter.</p>
+    /// <p>The date and time when you want this object's Object Lock to expire. Must be formatted as a timestamp parameter.</p>
     pub object_lock_retain_until_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Specifies whether a legal hold will be applied to this object. For more information
-    /// about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Object
-    /// Lock</a>.</p>
+    /// <p>Specifies whether a legal hold will be applied to this object. For more information about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Object Lock</a>.</p>
     pub object_lock_legal_hold_status: std::option::Option<crate::model::ObjectLockLegalHoldStatus>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl PutObjectInput {
-    /// <p>The canned ACL to apply to the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
-    /// ACL</a>.</p>
+    /// <p>The canned ACL to apply to the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned ACL</a>.</p>
     /// <p>This action is not supported by Amazon S3 on Outposts.</p>
     pub fn acl(&self) -> std::option::Option<&crate::model::ObjectCannedAcl> {
         self.acl.as_ref()
@@ -31676,8 +30480,7 @@ impl PutObjectInput {
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p> Can be used to specify caching behavior along the request/reply chain. For more
-    /// information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
+    /// <p> Can be used to specify caching behavior along the request/reply chain. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
     pub fn cache_control(&self) -> std::option::Option<&str> {
         self.cache_control.as_deref()
     }
@@ -31685,9 +30488,7 @@ impl PutObjectInput {
     pub fn content_disposition(&self) -> std::option::Option<&str> {
         self.content_disposition.as_deref()
     }
-    /// <p>Specifies what content encodings have been applied to the object and thus what decoding
-    /// mechanisms must be applied to obtain the media-type referenced by the Content-Type header
-    /// field. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11</a>.</p>
+    /// <p>Specifies what content encodings have been applied to the object and thus what decoding mechanisms must be applied to obtain the media-type referenced by the Content-Type header field. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11</a>.</p>
     pub fn content_encoding(&self) -> std::option::Option<&str> {
         self.content_encoding.as_deref()
     }
@@ -31695,38 +30496,28 @@ impl PutObjectInput {
     pub fn content_language(&self) -> std::option::Option<&str> {
         self.content_language.as_deref()
     }
-    /// <p>Size of the body in bytes. This parameter is useful when the size of the body cannot be
-    /// determined automatically. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.13">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.13</a>.</p>
+    /// <p>Size of the body in bytes. This parameter is useful when the size of the body cannot be determined automatically. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.13">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.13</a>.</p>
     pub fn content_length(&self) -> i64 {
         self.content_length
     }
-    /// <p>The base64-encoded 128-bit MD5 digest of the message (without the headers) according to
-    /// RFC 1864. This header can be used as a message integrity check to verify that the data is
-    /// the same data that was originally sent. Although it is optional, we recommend using the
-    /// Content-MD5 mechanism as an end-to-end integrity check. For more information about REST
-    /// request authentication, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST
-    /// Authentication</a>.</p>
+    /// <p>The base64-encoded 128-bit MD5 digest of the message (without the headers) according to RFC 1864. This header can be used as a message integrity check to verify that the data is the same data that was originally sent. Although it is optional, we recommend using the Content-MD5 mechanism as an end-to-end integrity check. For more information about REST request authentication, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST Authentication</a>.</p>
     pub fn content_md5(&self) -> std::option::Option<&str> {
         self.content_md5.as_deref()
     }
-    /// <p>A standard MIME type describing the format of the contents. For more information, see
-    /// <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17</a>.</p>
+    /// <p>A standard MIME type describing the format of the contents. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17</a>.</p>
     pub fn content_type(&self) -> std::option::Option<&str> {
         self.content_type.as_deref()
     }
-    /// <p>The date and time at which the object is no longer cacheable. For more information, see
-    /// <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.21">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.21</a>.</p>
+    /// <p>The date and time at which the object is no longer cacheable. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.21">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.21</a>.</p>
     pub fn expires(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expires.as_ref()
     }
-    /// <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the
-    /// object.</p>
+    /// <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the object.</p>
     /// <p>This action is not supported by Amazon S3 on Outposts.</p>
     pub fn grant_full_control(&self) -> std::option::Option<&str> {
         self.grant_full_control.as_deref()
     }
-    /// <p>Allows grantee to read the object data and its
-    /// metadata.</p>
+    /// <p>Allows grantee to read the object data and its metadata.</p>
     /// <p>This action is not supported by Amazon S3 on Outposts.</p>
     pub fn grant_read(&self) -> std::option::Option<&str> {
         self.grant_read.as_deref()
@@ -31736,8 +30527,7 @@ impl PutObjectInput {
     pub fn grant_read_acp(&self) -> std::option::Option<&str> {
         self.grant_read_acp.as_deref()
     }
-    /// <p>Allows grantee to write the ACL for the applicable
-    /// object.</p>
+    /// <p>Allows grantee to write the ACL for the applicable object.</p>
     /// <p>This action is not supported by Amazon S3 on Outposts.</p>
     pub fn grant_write_acp(&self) -> std::option::Option<&str> {
         self.grant_write_acp.as_deref()
@@ -31753,76 +30543,42 @@ impl PutObjectInput {
     {
         self.metadata.as_ref()
     }
-    /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example,
-    /// AES256, aws:kms).</p>
+    /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example, AES256, aws:kms).</p>
     pub fn server_side_encryption(
         &self,
     ) -> std::option::Option<&crate::model::ServerSideEncryption> {
         self.server_side_encryption.as_ref()
     }
-    /// <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created objects. The
-    /// STANDARD storage class provides high durability and high availability. Depending on
-    /// performance needs, you can specify a different Storage Class. Amazon S3 on Outposts only uses
-    /// the OUTPOSTS Storage Class. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a> in the
-    /// <i>Amazon S3 User Guide</i>.</p>
+    /// <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created objects. The STANDARD storage class provides high durability and high availability. Depending on performance needs, you can specify a different Storage Class. Amazon S3 on Outposts only uses the OUTPOSTS Storage Class. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn storage_class(&self) -> std::option::Option<&crate::model::StorageClass> {
         self.storage_class.as_ref()
     }
-    /// <p>If the bucket is configured as a website, redirects requests for this object to another
-    /// object in the same bucket or to an external URL. Amazon S3 stores the value of this header in
-    /// the object metadata. For information about object metadata, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html">Object Key and Metadata</a>.</p>
-    ///
-    /// <p>In the following example, the request header sets the redirect to an object
-    /// (anotherPage.html) in the same bucket:</p>
-    ///
-    /// <p>
-    /// <code>x-amz-website-redirect-location: /anotherPage.html</code>
-    /// </p>
-    ///
-    /// <p>In the following example, the request header sets the object redirect to another
-    /// website:</p>
-    ///
-    /// <p>
-    /// <code>x-amz-website-redirect-location: http://www.example.com/</code>
-    /// </p>
-    ///
-    /// <p>For more information about website hosting in Amazon S3, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">Hosting Websites on Amazon S3</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/how-to-page-redirect.html">How to Configure Website Page
-    /// Redirects</a>. </p>
+    /// <p>If the bucket is configured as a website, redirects requests for this object to another object in the same bucket or to an external URL. Amazon S3 stores the value of this header in the object metadata. For information about object metadata, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html">Object Key and Metadata</a>.</p>
+    /// <p>In the following example, the request header sets the redirect to an object (anotherPage.html) in the same bucket:</p>
+    /// <p> <code>x-amz-website-redirect-location: /anotherPage.html</code> </p>
+    /// <p>In the following example, the request header sets the object redirect to another website:</p>
+    /// <p> <code>x-amz-website-redirect-location: http://www.example.com/</code> </p>
+    /// <p>For more information about website hosting in Amazon S3, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">Hosting Websites on Amazon S3</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/how-to-page-redirect.html">How to Configure Website Page Redirects</a>. </p>
     pub fn website_redirect_location(&self) -> std::option::Option<&str> {
         self.website_redirect_location.as_deref()
     }
-    /// <p>Specifies the algorithm to use to when encrypting the object (for example,
-    /// AES256).</p>
+    /// <p>Specifies the algorithm to use to when encrypting the object (for example, AES256).</p>
     pub fn sse_customer_algorithm(&self) -> std::option::Option<&str> {
         self.sse_customer_algorithm.as_deref()
     }
-    /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This
-    /// value is used to store the object and then it is discarded; Amazon S3 does not store the
-    /// encryption key. The key must be appropriate for use with the algorithm specified in the
-    /// <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
+    /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This value is used to store the object and then it is discarded; Amazon S3 does not store the encryption key. The key must be appropriate for use with the algorithm specified in the <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
     pub fn sse_customer_key(&self) -> std::option::Option<&str> {
         self.sse_customer_key.as_deref()
     }
-    /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses
-    /// this header for a message integrity check to ensure that the encryption key was transmitted
-    /// without error.</p>
+    /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
     pub fn sse_customer_key_md5(&self) -> std::option::Option<&str> {
         self.sse_customer_key_md5.as_deref()
     }
-    /// <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
-    /// <code>aws:kms</code>, this header specifies the ID of the Amazon Web Services Key Management Service
-    /// (Amazon Web Services KMS) symmetrical customer managed key that was used for the
-    /// object. If you specify <code>x-amz-server-side-encryption:aws:kms</code>, but do not
-    /// provide<code> x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the Amazon Web Services
-    /// managed key to protect the data. If the KMS key does not exist in the same account
-    /// issuing the command, you must use the full ARN and not just the ID.
-    /// </p>
+    /// <p>If <code>x-amz-server-side-encryption</code> is present and has the value of <code>aws:kms</code>, this header specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetrical customer managed key that was used for the object. If you specify <code>x-amz-server-side-encryption:aws:kms</code>, but do not provide<code> x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the Amazon Web Services managed key to protect the data. If the KMS key does not exist in the same account issuing the command, you must use the full ARN and not just the ID. </p>
     pub fn ssekms_key_id(&self) -> std::option::Option<&str> {
         self.ssekms_key_id.as_deref()
     }
-    /// <p>Specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The value of this
-    /// header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value
-    /// pairs.</p>
+    /// <p>Specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value pairs.</p>
     pub fn ssekms_encryption_context(&self) -> std::option::Option<&str> {
         self.ssekms_encryption_context.as_deref()
     }
@@ -31831,15 +30587,11 @@ impl PutObjectInput {
     pub fn bucket_key_enabled(&self) -> bool {
         self.bucket_key_enabled
     }
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-    /// owners need not specify this parameter in their requests. For information about downloading
-    /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-    /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn request_payer(&self) -> std::option::Option<&crate::model::RequestPayer> {
         self.request_payer.as_ref()
     }
-    /// <p>The tag-set for the object. The tag-set must be encoded as URL Query parameters. (For
-    /// example, "Key1=Value1")</p>
+    /// <p>The tag-set for the object. The tag-set must be encoded as URL Query parameters. (For example, "Key1=Value1")</p>
     pub fn tagging(&self) -> std::option::Option<&str> {
         self.tagging.as_deref()
     }
@@ -31847,16 +30599,13 @@ impl PutObjectInput {
     pub fn object_lock_mode(&self) -> std::option::Option<&crate::model::ObjectLockMode> {
         self.object_lock_mode.as_ref()
     }
-    /// <p>The date and time when you want this object's Object Lock to expire. Must be formatted
-    /// as a timestamp parameter.</p>
+    /// <p>The date and time when you want this object's Object Lock to expire. Must be formatted as a timestamp parameter.</p>
     pub fn object_lock_retain_until_date(
         &self,
     ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.object_lock_retain_until_date.as_ref()
     }
-    /// <p>Specifies whether a legal hold will be applied to this object. For more information
-    /// about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Object
-    /// Lock</a>.</p>
+    /// <p>Specifies whether a legal hold will be applied to this object. For more information about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Object Lock</a>.</p>
     pub fn object_lock_legal_hold_status(
         &self,
     ) -> std::option::Option<&crate::model::ObjectLockLegalHoldStatus> {
@@ -31921,9 +30670,7 @@ impl std::fmt::Debug for PutObjectInput {
 pub struct PutBucketWebsiteInput {
     /// <p>The bucket name.</p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>The base64-encoded 128-bit MD5 digest of the data. You must use this header as a message
-    /// integrity check to verify that the request body was not corrupted in transit. For more
-    /// information, see <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p>
+    /// <p>The base64-encoded 128-bit MD5 digest of the data. You must use this header as a message integrity check to verify that the request body was not corrupted in transit. For more information, see <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p>
     /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
     pub content_md5: std::option::Option<std::string::String>,
     /// <p>Container for the request.</p>
@@ -31936,9 +30683,7 @@ impl PutBucketWebsiteInput {
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>The base64-encoded 128-bit MD5 digest of the data. You must use this header as a message
-    /// integrity check to verify that the request body was not corrupted in transit. For more
-    /// information, see <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p>
+    /// <p>The base64-encoded 128-bit MD5 digest of the data. You must use this header as a message integrity check to verify that the request body was not corrupted in transit. For more information, see <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p>
     /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
     pub fn content_md5(&self) -> std::option::Option<&str> {
         self.content_md5.as_deref()
@@ -31971,14 +30716,10 @@ impl std::fmt::Debug for PutBucketWebsiteInput {
 pub struct PutBucketVersioningInput {
     /// <p>The bucket name.</p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>>The base64-encoded 128-bit MD5 digest of the data. You must use this header as a
-    /// message integrity check to verify that the request body was not corrupted in transit. For
-    /// more information, see <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC
-    /// 1864</a>.</p>
+    /// <p>&gt;The base64-encoded 128-bit MD5 digest of the data. You must use this header as a message integrity check to verify that the request body was not corrupted in transit. For more information, see <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p>
     /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
     pub content_md5: std::option::Option<std::string::String>,
-    /// <p>The concatenation of the authentication device's serial number, a space, and the value
-    /// that is displayed on your authentication device.</p>
+    /// <p>The concatenation of the authentication device's serial number, a space, and the value that is displayed on your authentication device.</p>
     pub mfa: std::option::Option<std::string::String>,
     /// <p>Container for setting the versioning state.</p>
     pub versioning_configuration: std::option::Option<crate::model::VersioningConfiguration>,
@@ -31990,16 +30731,12 @@ impl PutBucketVersioningInput {
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>>The base64-encoded 128-bit MD5 digest of the data. You must use this header as a
-    /// message integrity check to verify that the request body was not corrupted in transit. For
-    /// more information, see <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC
-    /// 1864</a>.</p>
+    /// <p>&gt;The base64-encoded 128-bit MD5 digest of the data. You must use this header as a message integrity check to verify that the request body was not corrupted in transit. For more information, see <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p>
     /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
     pub fn content_md5(&self) -> std::option::Option<&str> {
         self.content_md5.as_deref()
     }
-    /// <p>The concatenation of the authentication device's serial number, a space, and the value
-    /// that is displayed on your authentication device.</p>
+    /// <p>The concatenation of the authentication device's serial number, a space, and the value that is displayed on your authentication device.</p>
     pub fn mfa(&self) -> std::option::Option<&str> {
         self.mfa.as_deref()
     }
@@ -32032,9 +30769,7 @@ impl std::fmt::Debug for PutBucketVersioningInput {
 pub struct PutBucketTaggingInput {
     /// <p>The bucket name.</p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>The base64-encoded 128-bit MD5 digest of the data. You must use this header as a message
-    /// integrity check to verify that the request body was not corrupted in transit. For more
-    /// information, see <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p>
+    /// <p>The base64-encoded 128-bit MD5 digest of the data. You must use this header as a message integrity check to verify that the request body was not corrupted in transit. For more information, see <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p>
     /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
     pub content_md5: std::option::Option<std::string::String>,
     /// <p>Container for the <code>TagSet</code> and <code>Tag</code> elements.</p>
@@ -32047,9 +30782,7 @@ impl PutBucketTaggingInput {
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>The base64-encoded 128-bit MD5 digest of the data. You must use this header as a message
-    /// integrity check to verify that the request body was not corrupted in transit. For more
-    /// information, see <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p>
+    /// <p>The base64-encoded 128-bit MD5 digest of the data. You must use this header as a message integrity check to verify that the request body was not corrupted in transit. For more information, see <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p>
     /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
     pub fn content_md5(&self) -> std::option::Option<&str> {
         self.content_md5.as_deref()
@@ -32080,10 +30813,7 @@ impl std::fmt::Debug for PutBucketTaggingInput {
 pub struct PutBucketRequestPaymentInput {
     /// <p>The bucket name.</p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>The base64-encoded 128-bit MD5 digest of the data. You must use this header as a
-    /// message integrity check to verify that the request body was not corrupted in transit. For
-    /// more information, see <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC
-    /// 1864</a>.</p>
+    /// <p>The base64-encoded 128-bit MD5 digest of the data. You must use this header as a message integrity check to verify that the request body was not corrupted in transit. For more information, see <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p>
     /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
     pub content_md5: std::option::Option<std::string::String>,
     /// <p>Container for Payer.</p>
@@ -32097,10 +30827,7 @@ impl PutBucketRequestPaymentInput {
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>The base64-encoded 128-bit MD5 digest of the data. You must use this header as a
-    /// message integrity check to verify that the request body was not corrupted in transit. For
-    /// more information, see <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC
-    /// 1864</a>.</p>
+    /// <p>The base64-encoded 128-bit MD5 digest of the data. You must use this header as a message integrity check to verify that the request body was not corrupted in transit. For more information, see <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p>
     /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
     pub fn content_md5(&self) -> std::option::Option<&str> {
         self.content_md5.as_deref()
@@ -32136,13 +30863,10 @@ impl std::fmt::Debug for PutBucketRequestPaymentInput {
 pub struct PutBucketReplicationInput {
     /// <p>The name of the bucket</p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>The base64-encoded 128-bit MD5 digest of the data. You must use this header as a message
-    /// integrity check to verify that the request body was not corrupted in transit. For more
-    /// information, see <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p>
+    /// <p>The base64-encoded 128-bit MD5 digest of the data. You must use this header as a message integrity check to verify that the request body was not corrupted in transit. For more information, see <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p>
     /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
     pub content_md5: std::option::Option<std::string::String>,
-    /// <p>A container for replication rules. You can add up to 1,000 rules. The maximum size of a
-    /// replication configuration is 2 MB.</p>
+    /// <p>A container for replication rules. You can add up to 1,000 rules. The maximum size of a replication configuration is 2 MB.</p>
     pub replication_configuration: std::option::Option<crate::model::ReplicationConfiguration>,
     /// <p>A token to allow Object Lock to be enabled for an existing bucket.</p>
     pub token: std::option::Option<std::string::String>,
@@ -32154,15 +30878,12 @@ impl PutBucketReplicationInput {
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>The base64-encoded 128-bit MD5 digest of the data. You must use this header as a message
-    /// integrity check to verify that the request body was not corrupted in transit. For more
-    /// information, see <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p>
+    /// <p>The base64-encoded 128-bit MD5 digest of the data. You must use this header as a message integrity check to verify that the request body was not corrupted in transit. For more information, see <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p>
     /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
     pub fn content_md5(&self) -> std::option::Option<&str> {
         self.content_md5.as_deref()
     }
-    /// <p>A container for replication rules. You can add up to 1,000 rules. The maximum size of a
-    /// replication configuration is 2 MB.</p>
+    /// <p>A container for replication rules. You can add up to 1,000 rules. The maximum size of a replication configuration is 2 MB.</p>
     pub fn replication_configuration(
         &self,
     ) -> std::option::Option<&crate::model::ReplicationConfiguration> {
@@ -32198,8 +30919,7 @@ pub struct PutBucketPolicyInput {
     /// <p>The MD5 hash of the request body.</p>
     /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
     pub content_md5: std::option::Option<std::string::String>,
-    /// <p>Set this parameter to true to confirm that you want to remove your permissions to change
-    /// this bucket policy in the future.</p>
+    /// <p>Set this parameter to true to confirm that you want to remove your permissions to change this bucket policy in the future.</p>
     pub confirm_remove_self_bucket_access: bool,
     /// <p>The bucket policy as a JSON document.</p>
     pub policy: std::option::Option<std::string::String>,
@@ -32216,8 +30936,7 @@ impl PutBucketPolicyInput {
     pub fn content_md5(&self) -> std::option::Option<&str> {
         self.content_md5.as_deref()
     }
-    /// <p>Set this parameter to true to confirm that you want to remove your permissions to change
-    /// this bucket policy in the future.</p>
+    /// <p>Set this parameter to true to confirm that you want to remove your permissions to change this bucket policy in the future.</p>
     pub fn confirm_remove_self_bucket_access(&self) -> bool {
         self.confirm_remove_self_bucket_access
     }
@@ -32256,8 +30975,7 @@ pub struct PutBucketOwnershipControlsInput {
     pub content_md5: std::option::Option<std::string::String>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
-    /// <p>The <code>OwnershipControls</code> (BucketOwnerEnforced, BucketOwnerPreferred, or ObjectWriter) that you want
-    /// to apply to this Amazon S3 bucket.</p>
+    /// <p>The <code>OwnershipControls</code> (BucketOwnerEnforced, BucketOwnerPreferred, or ObjectWriter) that you want to apply to this Amazon S3 bucket.</p>
     pub ownership_controls: std::option::Option<crate::model::OwnershipControls>,
 }
 impl PutBucketOwnershipControlsInput {
@@ -32274,8 +30992,7 @@ impl PutBucketOwnershipControlsInput {
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
-    /// <p>The <code>OwnershipControls</code> (BucketOwnerEnforced, BucketOwnerPreferred, or ObjectWriter) that you want
-    /// to apply to this Amazon S3 bucket.</p>
+    /// <p>The <code>OwnershipControls</code> (BucketOwnerEnforced, BucketOwnerPreferred, or ObjectWriter) that you want to apply to this Amazon S3 bucket.</p>
     pub fn ownership_controls(&self) -> std::option::Option<&crate::model::OwnershipControls> {
         self.ownership_controls.as_ref()
     }
@@ -32297,8 +31014,7 @@ impl std::fmt::Debug for PutBucketOwnershipControlsInput {
 pub struct PutBucketNotificationConfigurationInput {
     /// <p>The name of the bucket.</p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>A container for specifying the notification configuration of the bucket. If this element
-    /// is empty, notifications are turned off for the bucket.</p>
+    /// <p>A container for specifying the notification configuration of the bucket. If this element is empty, notifications are turned off for the bucket.</p>
     pub notification_configuration: std::option::Option<crate::model::NotificationConfiguration>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
@@ -32310,8 +31026,7 @@ impl PutBucketNotificationConfigurationInput {
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>A container for specifying the notification configuration of the bucket. If this element
-    /// is empty, notifications are turned off for the bucket.</p>
+    /// <p>A container for specifying the notification configuration of the bucket. If this element is empty, notifications are turned off for the bucket.</p>
     pub fn notification_configuration(
         &self,
     ) -> std::option::Option<&crate::model::NotificationConfiguration> {
@@ -32557,10 +31272,7 @@ impl std::fmt::Debug for PutBucketIntelligentTieringConfigurationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutBucketEncryptionInput {
-    /// <p>Specifies default encryption for a bucket using server-side encryption with Amazon S3-managed
-    /// keys (SSE-S3) or customer managed keys (SSE-KMS). For information about
-    /// the Amazon S3 default encryption feature, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon S3 Default Bucket Encryption</a>
-    /// in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Specifies default encryption for a bucket using server-side encryption with Amazon S3-managed keys (SSE-S3) or customer managed keys (SSE-KMS). For information about the Amazon S3 default encryption feature, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon S3 Default Bucket Encryption</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The base64-encoded 128-bit MD5 digest of the server-side encryption configuration.</p>
     /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
@@ -32572,10 +31284,7 @@ pub struct PutBucketEncryptionInput {
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl PutBucketEncryptionInput {
-    /// <p>Specifies default encryption for a bucket using server-side encryption with Amazon S3-managed
-    /// keys (SSE-S3) or customer managed keys (SSE-KMS). For information about
-    /// the Amazon S3 default encryption feature, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon S3 Default Bucket Encryption</a>
-    /// in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Specifies default encryption for a bucket using server-side encryption with Amazon S3-managed keys (SSE-S3) or customer managed keys (SSE-KMS). For information about the Amazon S3 default encryption feature, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon S3 Default Bucket Encryption</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
@@ -32615,15 +31324,9 @@ impl std::fmt::Debug for PutBucketEncryptionInput {
 pub struct PutBucketCorsInput {
     /// <p>Specifies the bucket impacted by the <code>cors</code>configuration.</p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>Describes the cross-origin access configuration for objects in an Amazon S3 bucket. For more
-    /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">Enabling Cross-Origin Resource
-    /// Sharing</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Describes the cross-origin access configuration for objects in an Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">Enabling Cross-Origin Resource Sharing</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub cors_configuration: std::option::Option<crate::model::CorsConfiguration>,
-    /// <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used as a message
-    /// integrity check to verify that the request body was not corrupted in transit. For more
-    /// information, go to <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC
-    /// 1864.</a>
-    /// </p>
+    /// <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used as a message integrity check to verify that the request body was not corrupted in transit. For more information, go to <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864.</a> </p>
     /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
     pub content_md5: std::option::Option<std::string::String>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
@@ -32634,17 +31337,11 @@ impl PutBucketCorsInput {
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>Describes the cross-origin access configuration for objects in an Amazon S3 bucket. For more
-    /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">Enabling Cross-Origin Resource
-    /// Sharing</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Describes the cross-origin access configuration for objects in an Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">Enabling Cross-Origin Resource Sharing</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn cors_configuration(&self) -> std::option::Option<&crate::model::CorsConfiguration> {
         self.cors_configuration.as_ref()
     }
-    /// <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used as a message
-    /// integrity check to verify that the request body was not corrupted in transit. For more
-    /// information, go to <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC
-    /// 1864.</a>
-    /// </p>
+    /// <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used as a message integrity check to verify that the request body was not corrupted in transit. For more information, go to <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864.</a> </p>
     /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
     pub fn content_md5(&self) -> std::option::Option<&str> {
         self.content_md5.as_deref()
@@ -32719,15 +31416,10 @@ pub struct PutBucketAclInput {
     pub access_control_policy: std::option::Option<crate::model::AccessControlPolicy>,
     /// <p>The bucket to which to apply the ACL.</p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used as a message
-    /// integrity check to verify that the request body was not corrupted in transit. For more
-    /// information, go to <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC
-    /// 1864.</a>
-    /// </p>
+    /// <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used as a message integrity check to verify that the request body was not corrupted in transit. For more information, go to <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864.</a> </p>
     /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
     pub content_md5: std::option::Option<std::string::String>,
-    /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the
-    /// bucket.</p>
+    /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p>
     pub grant_full_control: std::option::Option<std::string::String>,
     /// <p>Allows grantee to list the objects in the bucket.</p>
     pub grant_read: std::option::Option<std::string::String>,
@@ -32754,17 +31446,12 @@ impl PutBucketAclInput {
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used as a message
-    /// integrity check to verify that the request body was not corrupted in transit. For more
-    /// information, go to <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC
-    /// 1864.</a>
-    /// </p>
+    /// <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used as a message integrity check to verify that the request body was not corrupted in transit. For more information, go to <a href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864.</a> </p>
     /// <p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
     pub fn content_md5(&self) -> std::option::Option<&str> {
         self.content_md5.as_deref()
     }
-    /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the
-    /// bucket.</p>
+    /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p>
     pub fn grant_full_control(&self) -> std::option::Option<&str> {
         self.grant_full_control.as_deref()
     }
@@ -32856,15 +31543,11 @@ pub struct ListPartsInput {
     pub key: std::option::Option<std::string::String>,
     /// <p>Sets the maximum number of parts to return.</p>
     pub max_parts: i32,
-    /// <p>Specifies the part after which listing should begin. Only parts with higher part numbers
-    /// will be listed.</p>
+    /// <p>Specifies the part after which listing should begin. Only parts with higher part numbers will be listed.</p>
     pub part_number_marker: std::option::Option<std::string::String>,
     /// <p>Upload ID identifying the multipart upload whose parts are being listed.</p>
     pub upload_id: std::option::Option<std::string::String>,
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-    /// owners need not specify this parameter in their requests. For information about downloading
-    /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-    /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub request_payer: std::option::Option<crate::model::RequestPayer>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
@@ -32884,8 +31567,7 @@ impl ListPartsInput {
     pub fn max_parts(&self) -> i32 {
         self.max_parts
     }
-    /// <p>Specifies the part after which listing should begin. Only parts with higher part numbers
-    /// will be listed.</p>
+    /// <p>Specifies the part after which listing should begin. Only parts with higher part numbers will be listed.</p>
     pub fn part_number_marker(&self) -> std::option::Option<&str> {
         self.part_number_marker.as_deref()
     }
@@ -32893,10 +31575,7 @@ impl ListPartsInput {
     pub fn upload_id(&self) -> std::option::Option<&str> {
         self.upload_id.as_deref()
     }
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-    /// owners need not specify this parameter in their requests. For information about downloading
-    /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-    /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn request_payer(&self) -> std::option::Option<&crate::model::RequestPayer> {
         self.request_payer.as_ref()
     }
@@ -32925,31 +31604,17 @@ impl std::fmt::Debug for ListPartsInput {
 pub struct ListObjectVersionsInput {
     /// <p>The bucket name that contains the objects. </p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>A delimiter is a character that you specify to group keys. All keys that contain the
-    /// same string between the <code>prefix</code> and the first occurrence of the delimiter are
-    /// grouped under a single result element in CommonPrefixes. These groups are counted as one
-    /// result against the max-keys limitation. These keys are not returned elsewhere in the
-    /// response.</p>
+    /// <p>A delimiter is a character that you specify to group keys. All keys that contain the same string between the <code>prefix</code> and the first occurrence of the delimiter are grouped under a single result element in CommonPrefixes. These groups are counted as one result against the max-keys limitation. These keys are not returned elsewhere in the response.</p>
     pub delimiter: std::option::Option<std::string::String>,
-    /// <p>Requests Amazon S3 to encode the object keys in the response and specifies the encoding
-    /// method to use. An object key may contain any Unicode character; however, XML 1.0 parser
-    /// cannot parse some characters, such as characters with an ASCII value from 0 to 10. For
-    /// characters that are not supported in XML 1.0, you can add this parameter to request that
-    /// Amazon S3 encode the keys in the response.</p>
+    /// <p>Requests Amazon S3 to encode the object keys in the response and specifies the encoding method to use. An object key may contain any Unicode character; however, XML 1.0 parser cannot parse some characters, such as characters with an ASCII value from 0 to 10. For characters that are not supported in XML 1.0, you can add this parameter to request that Amazon S3 encode the keys in the response.</p>
     pub encoding_type: std::option::Option<crate::model::EncodingType>,
     /// <p>Specifies the key to start with when listing objects in a bucket.</p>
     pub key_marker: std::option::Option<std::string::String>,
-    /// <p>Sets the maximum number of keys returned in the response. By default the action returns up
-    /// to 1,000 key names. The response might contain fewer keys but will never contain more. If
-    /// additional keys satisfy the search criteria, but were not returned because max-keys was
-    /// exceeded, the response contains <isTruncated>true</isTruncated>. To return the
-    /// additional keys, see key-marker and version-id-marker.</p>
+    /// <p>Sets the maximum number of keys returned in the response. By default the action returns up to 1,000 key names. The response might contain fewer keys but will never contain more. If additional keys satisfy the search criteria, but were not returned because max-keys was exceeded, the response contains <istruncated>
+    /// true
+    /// </istruncated>. To return the additional keys, see key-marker and version-id-marker.</p>
     pub max_keys: i32,
-    /// <p>Use this parameter to select only those keys that begin with the specified prefix. You
-    /// can use prefixes to separate a bucket into different groupings of keys. (You can think of
-    /// using prefix to make groups in the same way you'd use a folder in a file system.) You can
-    /// use prefix with delimiter to roll up numerous objects into a single result under
-    /// CommonPrefixes. </p>
+    /// <p>Use this parameter to select only those keys that begin with the specified prefix. You can use prefixes to separate a bucket into different groupings of keys. (You can think of using prefix to make groups in the same way you'd use a folder in a file system.) You can use prefix with delimiter to roll up numerous objects into a single result under CommonPrefixes. </p>
     pub prefix: std::option::Option<std::string::String>,
     /// <p>Specifies the object version you want to start listing from.</p>
     pub version_id_marker: std::option::Option<std::string::String>,
@@ -32961,19 +31626,11 @@ impl ListObjectVersionsInput {
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>A delimiter is a character that you specify to group keys. All keys that contain the
-    /// same string between the <code>prefix</code> and the first occurrence of the delimiter are
-    /// grouped under a single result element in CommonPrefixes. These groups are counted as one
-    /// result against the max-keys limitation. These keys are not returned elsewhere in the
-    /// response.</p>
+    /// <p>A delimiter is a character that you specify to group keys. All keys that contain the same string between the <code>prefix</code> and the first occurrence of the delimiter are grouped under a single result element in CommonPrefixes. These groups are counted as one result against the max-keys limitation. These keys are not returned elsewhere in the response.</p>
     pub fn delimiter(&self) -> std::option::Option<&str> {
         self.delimiter.as_deref()
     }
-    /// <p>Requests Amazon S3 to encode the object keys in the response and specifies the encoding
-    /// method to use. An object key may contain any Unicode character; however, XML 1.0 parser
-    /// cannot parse some characters, such as characters with an ASCII value from 0 to 10. For
-    /// characters that are not supported in XML 1.0, you can add this parameter to request that
-    /// Amazon S3 encode the keys in the response.</p>
+    /// <p>Requests Amazon S3 to encode the object keys in the response and specifies the encoding method to use. An object key may contain any Unicode character; however, XML 1.0 parser cannot parse some characters, such as characters with an ASCII value from 0 to 10. For characters that are not supported in XML 1.0, you can add this parameter to request that Amazon S3 encode the keys in the response.</p>
     pub fn encoding_type(&self) -> std::option::Option<&crate::model::EncodingType> {
         self.encoding_type.as_ref()
     }
@@ -32981,19 +31638,13 @@ impl ListObjectVersionsInput {
     pub fn key_marker(&self) -> std::option::Option<&str> {
         self.key_marker.as_deref()
     }
-    /// <p>Sets the maximum number of keys returned in the response. By default the action returns up
-    /// to 1,000 key names. The response might contain fewer keys but will never contain more. If
-    /// additional keys satisfy the search criteria, but were not returned because max-keys was
-    /// exceeded, the response contains <isTruncated>true</isTruncated>. To return the
-    /// additional keys, see key-marker and version-id-marker.</p>
+    /// <p>Sets the maximum number of keys returned in the response. By default the action returns up to 1,000 key names. The response might contain fewer keys but will never contain more. If additional keys satisfy the search criteria, but were not returned because max-keys was exceeded, the response contains <istruncated>
+    /// true
+    /// </istruncated>. To return the additional keys, see key-marker and version-id-marker.</p>
     pub fn max_keys(&self) -> i32 {
         self.max_keys
     }
-    /// <p>Use this parameter to select only those keys that begin with the specified prefix. You
-    /// can use prefixes to separate a bucket into different groupings of keys. (You can think of
-    /// using prefix to make groups in the same way you'd use a folder in a file system.) You can
-    /// use prefix with delimiter to roll up numerous objects into a single result under
-    /// CommonPrefixes. </p>
+    /// <p>Use this parameter to select only those keys that begin with the specified prefix. You can use prefixes to separate a bucket into different groupings of keys. (You can think of using prefix to make groups in the same way you'd use a folder in a file system.) You can use prefix with delimiter to roll up numerous objects into a single result under CommonPrefixes. </p>
     pub fn prefix(&self) -> std::option::Option<&str> {
         self.prefix.as_deref()
     }
@@ -33033,24 +31684,17 @@ pub struct ListObjectsV2Input {
     pub delimiter: std::option::Option<std::string::String>,
     /// <p>Encoding type used by Amazon S3 to encode object keys in the response.</p>
     pub encoding_type: std::option::Option<crate::model::EncodingType>,
-    /// <p>Sets the maximum number of keys returned in the response. By default the action returns up
-    /// to 1,000 key names. The response might contain fewer keys but will never contain
-    /// more.</p>
+    /// <p>Sets the maximum number of keys returned in the response. By default the action returns up to 1,000 key names. The response might contain fewer keys but will never contain more.</p>
     pub max_keys: i32,
     /// <p>Limits the response to keys that begin with the specified prefix.</p>
     pub prefix: std::option::Option<std::string::String>,
-    /// <p>ContinuationToken indicates Amazon S3 that the list is being continued on this bucket with a
-    /// token. ContinuationToken is obfuscated and is not a real key.</p>
+    /// <p>ContinuationToken indicates Amazon S3 that the list is being continued on this bucket with a token. ContinuationToken is obfuscated and is not a real key.</p>
     pub continuation_token: std::option::Option<std::string::String>,
-    /// <p>The owner field is not present in listV2 by default, if you want to return owner field
-    /// with each key in the result then set the fetch owner field to true.</p>
+    /// <p>The owner field is not present in listV2 by default, if you want to return owner field with each key in the result then set the fetch owner field to true.</p>
     pub fetch_owner: bool,
-    /// <p>StartAfter is where you want Amazon S3 to start listing from. Amazon S3 starts listing after this
-    /// specified key. StartAfter can be any key in the bucket.</p>
+    /// <p>StartAfter is where you want Amazon S3 to start listing from. Amazon S3 starts listing after this specified key. StartAfter can be any key in the bucket.</p>
     pub start_after: std::option::Option<std::string::String>,
-    /// <p>Confirms that the requester knows that she or he will be charged for the list objects
-    /// request in V2 style. Bucket owners need not specify this parameter in their
-    /// requests.</p>
+    /// <p>Confirms that the requester knows that she or he will be charged for the list objects request in V2 style. Bucket owners need not specify this parameter in their requests.</p>
     pub request_payer: std::option::Option<crate::model::RequestPayer>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
@@ -33070,9 +31714,7 @@ impl ListObjectsV2Input {
     pub fn encoding_type(&self) -> std::option::Option<&crate::model::EncodingType> {
         self.encoding_type.as_ref()
     }
-    /// <p>Sets the maximum number of keys returned in the response. By default the action returns up
-    /// to 1,000 key names. The response might contain fewer keys but will never contain
-    /// more.</p>
+    /// <p>Sets the maximum number of keys returned in the response. By default the action returns up to 1,000 key names. The response might contain fewer keys but will never contain more.</p>
     pub fn max_keys(&self) -> i32 {
         self.max_keys
     }
@@ -33080,24 +31722,19 @@ impl ListObjectsV2Input {
     pub fn prefix(&self) -> std::option::Option<&str> {
         self.prefix.as_deref()
     }
-    /// <p>ContinuationToken indicates Amazon S3 that the list is being continued on this bucket with a
-    /// token. ContinuationToken is obfuscated and is not a real key.</p>
+    /// <p>ContinuationToken indicates Amazon S3 that the list is being continued on this bucket with a token. ContinuationToken is obfuscated and is not a real key.</p>
     pub fn continuation_token(&self) -> std::option::Option<&str> {
         self.continuation_token.as_deref()
     }
-    /// <p>The owner field is not present in listV2 by default, if you want to return owner field
-    /// with each key in the result then set the fetch owner field to true.</p>
+    /// <p>The owner field is not present in listV2 by default, if you want to return owner field with each key in the result then set the fetch owner field to true.</p>
     pub fn fetch_owner(&self) -> bool {
         self.fetch_owner
     }
-    /// <p>StartAfter is where you want Amazon S3 to start listing from. Amazon S3 starts listing after this
-    /// specified key. StartAfter can be any key in the bucket.</p>
+    /// <p>StartAfter is where you want Amazon S3 to start listing from. Amazon S3 starts listing after this specified key. StartAfter can be any key in the bucket.</p>
     pub fn start_after(&self) -> std::option::Option<&str> {
         self.start_after.as_deref()
     }
-    /// <p>Confirms that the requester knows that she or he will be charged for the list objects
-    /// request in V2 style. Bucket owners need not specify this parameter in their
-    /// requests.</p>
+    /// <p>Confirms that the requester knows that she or he will be charged for the list objects request in V2 style. Bucket owners need not specify this parameter in their requests.</p>
     pub fn request_payer(&self) -> std::option::Option<&crate::model::RequestPayer> {
         self.request_payer.as_ref()
     }
@@ -33133,23 +31770,15 @@ pub struct ListObjectsInput {
     pub bucket: std::option::Option<std::string::String>,
     /// <p>A delimiter is a character you use to group keys.</p>
     pub delimiter: std::option::Option<std::string::String>,
-    /// <p>Requests Amazon S3 to encode the object keys in the response and specifies the encoding
-    /// method to use. An object key may contain any Unicode character; however, XML 1.0 parser
-    /// cannot parse some characters, such as characters with an ASCII value from 0 to 10. For
-    /// characters that are not supported in XML 1.0, you can add this parameter to request that
-    /// Amazon S3 encode the keys in the response.</p>
+    /// <p>Requests Amazon S3 to encode the object keys in the response and specifies the encoding method to use. An object key may contain any Unicode character; however, XML 1.0 parser cannot parse some characters, such as characters with an ASCII value from 0 to 10. For characters that are not supported in XML 1.0, you can add this parameter to request that Amazon S3 encode the keys in the response.</p>
     pub encoding_type: std::option::Option<crate::model::EncodingType>,
-    /// <p>Marker is where you want Amazon S3 to start listing from. Amazon S3 starts listing after
-    /// this specified key. Marker can be any key in the bucket.</p>
+    /// <p>Marker is where you want Amazon S3 to start listing from. Amazon S3 starts listing after this specified key. Marker can be any key in the bucket.</p>
     pub marker: std::option::Option<std::string::String>,
-    /// <p>Sets the maximum number of keys returned in the response. By default the action returns up
-    /// to 1,000 key names. The response might contain fewer keys but will never contain more.
-    /// </p>
+    /// <p>Sets the maximum number of keys returned in the response. By default the action returns up to 1,000 key names. The response might contain fewer keys but will never contain more. </p>
     pub max_keys: i32,
     /// <p>Limits the response to keys that begin with the specified prefix.</p>
     pub prefix: std::option::Option<std::string::String>,
-    /// <p>Confirms that the requester knows that she or he will be charged for the list objects
-    /// request. Bucket owners need not specify this parameter in their requests.</p>
+    /// <p>Confirms that the requester knows that she or he will be charged for the list objects request. Bucket owners need not specify this parameter in their requests.</p>
     pub request_payer: std::option::Option<crate::model::RequestPayer>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
@@ -33165,22 +31794,15 @@ impl ListObjectsInput {
     pub fn delimiter(&self) -> std::option::Option<&str> {
         self.delimiter.as_deref()
     }
-    /// <p>Requests Amazon S3 to encode the object keys in the response and specifies the encoding
-    /// method to use. An object key may contain any Unicode character; however, XML 1.0 parser
-    /// cannot parse some characters, such as characters with an ASCII value from 0 to 10. For
-    /// characters that are not supported in XML 1.0, you can add this parameter to request that
-    /// Amazon S3 encode the keys in the response.</p>
+    /// <p>Requests Amazon S3 to encode the object keys in the response and specifies the encoding method to use. An object key may contain any Unicode character; however, XML 1.0 parser cannot parse some characters, such as characters with an ASCII value from 0 to 10. For characters that are not supported in XML 1.0, you can add this parameter to request that Amazon S3 encode the keys in the response.</p>
     pub fn encoding_type(&self) -> std::option::Option<&crate::model::EncodingType> {
         self.encoding_type.as_ref()
     }
-    /// <p>Marker is where you want Amazon S3 to start listing from. Amazon S3 starts listing after
-    /// this specified key. Marker can be any key in the bucket.</p>
+    /// <p>Marker is where you want Amazon S3 to start listing from. Amazon S3 starts listing after this specified key. Marker can be any key in the bucket.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
-    /// <p>Sets the maximum number of keys returned in the response. By default the action returns up
-    /// to 1,000 key names. The response might contain fewer keys but will never contain more.
-    /// </p>
+    /// <p>Sets the maximum number of keys returned in the response. By default the action returns up to 1,000 key names. The response might contain fewer keys but will never contain more. </p>
     pub fn max_keys(&self) -> i32 {
         self.max_keys
     }
@@ -33188,8 +31810,7 @@ impl ListObjectsInput {
     pub fn prefix(&self) -> std::option::Option<&str> {
         self.prefix.as_deref()
     }
-    /// <p>Confirms that the requester knows that she or he will be charged for the list objects
-    /// request. Bucket owners need not specify this parameter in their requests.</p>
+    /// <p>Confirms that the requester knows that she or he will be charged for the list objects request. Bucket owners need not specify this parameter in their requests.</p>
     pub fn request_payer(&self) -> std::option::Option<&crate::model::RequestPayer> {
         self.request_payer.as_ref()
     }
@@ -33222,41 +31843,19 @@ pub struct ListMultipartUploadsInput {
     /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub bucket: std::option::Option<std::string::String>,
     /// <p>Character you use to group keys.</p>
-    /// <p>All keys that contain the same string between the prefix, if specified, and the first
-    /// occurrence of the delimiter after the prefix are grouped under a single result element,
-    /// <code>CommonPrefixes</code>. If you don't specify the prefix parameter, then the
-    /// substring starts at the beginning of the key. The keys that are grouped under
-    /// <code>CommonPrefixes</code> result element are not returned elsewhere in the
-    /// response.</p>
+    /// <p>All keys that contain the same string between the prefix, if specified, and the first occurrence of the delimiter after the prefix are grouped under a single result element, <code>CommonPrefixes</code>. If you don't specify the prefix parameter, then the substring starts at the beginning of the key. The keys that are grouped under <code>CommonPrefixes</code> result element are not returned elsewhere in the response.</p>
     pub delimiter: std::option::Option<std::string::String>,
-    /// <p>Requests Amazon S3 to encode the object keys in the response and specifies the encoding
-    /// method to use. An object key may contain any Unicode character; however, XML 1.0 parser
-    /// cannot parse some characters, such as characters with an ASCII value from 0 to 10. For
-    /// characters that are not supported in XML 1.0, you can add this parameter to request that
-    /// Amazon S3 encode the keys in the response.</p>
+    /// <p>Requests Amazon S3 to encode the object keys in the response and specifies the encoding method to use. An object key may contain any Unicode character; however, XML 1.0 parser cannot parse some characters, such as characters with an ASCII value from 0 to 10. For characters that are not supported in XML 1.0, you can add this parameter to request that Amazon S3 encode the keys in the response.</p>
     pub encoding_type: std::option::Option<crate::model::EncodingType>,
-    /// <p>Together with upload-id-marker, this parameter specifies the multipart upload after
-    /// which listing should begin.</p>
-    /// <p>If <code>upload-id-marker</code> is not specified, only the keys lexicographically
-    /// greater than the specified <code>key-marker</code> will be included in the list.</p>
-    ///
-    /// <p>If <code>upload-id-marker</code> is specified, any multipart uploads for a key equal to
-    /// the <code>key-marker</code> might also be included, provided those multipart uploads have
-    /// upload IDs lexicographically greater than the specified
-    /// <code>upload-id-marker</code>.</p>
+    /// <p>Together with upload-id-marker, this parameter specifies the multipart upload after which listing should begin.</p>
+    /// <p>If <code>upload-id-marker</code> is not specified, only the keys lexicographically greater than the specified <code>key-marker</code> will be included in the list.</p>
+    /// <p>If <code>upload-id-marker</code> is specified, any multipart uploads for a key equal to the <code>key-marker</code> might also be included, provided those multipart uploads have upload IDs lexicographically greater than the specified <code>upload-id-marker</code>.</p>
     pub key_marker: std::option::Option<std::string::String>,
-    /// <p>Sets the maximum number of multipart uploads, from 1 to 1,000, to return in the response
-    /// body. 1,000 is the maximum number of uploads that can be returned in a response.</p>
+    /// <p>Sets the maximum number of multipart uploads, from 1 to 1,000, to return in the response body. 1,000 is the maximum number of uploads that can be returned in a response.</p>
     pub max_uploads: i32,
-    /// <p>Lists in-progress uploads only for those keys that begin with the specified prefix. You
-    /// can use prefixes to separate a bucket into different grouping of keys. (You can think of
-    /// using prefix to make groups in the same way you'd use a folder in a file system.)</p>
+    /// <p>Lists in-progress uploads only for those keys that begin with the specified prefix. You can use prefixes to separate a bucket into different grouping of keys. (You can think of using prefix to make groups in the same way you'd use a folder in a file system.)</p>
     pub prefix: std::option::Option<std::string::String>,
-    /// <p>Together with key-marker, specifies the multipart upload after which listing should
-    /// begin. If key-marker is not specified, the upload-id-marker parameter is ignored.
-    /// Otherwise, any multipart uploads for a key equal to the key-marker might be included in the
-    /// list only if they have an upload ID lexicographically greater than the specified
-    /// <code>upload-id-marker</code>.</p>
+    /// <p>Together with key-marker, specifies the multipart upload after which listing should begin. If key-marker is not specified, the upload-id-marker parameter is ignored. Otherwise, any multipart uploads for a key equal to the key-marker might be included in the list only if they have an upload ID lexicographically greater than the specified <code>upload-id-marker</code>.</p>
     pub upload_id_marker: std::option::Option<std::string::String>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
@@ -33269,51 +31868,29 @@ impl ListMultipartUploadsInput {
         self.bucket.as_deref()
     }
     /// <p>Character you use to group keys.</p>
-    /// <p>All keys that contain the same string between the prefix, if specified, and the first
-    /// occurrence of the delimiter after the prefix are grouped under a single result element,
-    /// <code>CommonPrefixes</code>. If you don't specify the prefix parameter, then the
-    /// substring starts at the beginning of the key. The keys that are grouped under
-    /// <code>CommonPrefixes</code> result element are not returned elsewhere in the
-    /// response.</p>
+    /// <p>All keys that contain the same string between the prefix, if specified, and the first occurrence of the delimiter after the prefix are grouped under a single result element, <code>CommonPrefixes</code>. If you don't specify the prefix parameter, then the substring starts at the beginning of the key. The keys that are grouped under <code>CommonPrefixes</code> result element are not returned elsewhere in the response.</p>
     pub fn delimiter(&self) -> std::option::Option<&str> {
         self.delimiter.as_deref()
     }
-    /// <p>Requests Amazon S3 to encode the object keys in the response and specifies the encoding
-    /// method to use. An object key may contain any Unicode character; however, XML 1.0 parser
-    /// cannot parse some characters, such as characters with an ASCII value from 0 to 10. For
-    /// characters that are not supported in XML 1.0, you can add this parameter to request that
-    /// Amazon S3 encode the keys in the response.</p>
+    /// <p>Requests Amazon S3 to encode the object keys in the response and specifies the encoding method to use. An object key may contain any Unicode character; however, XML 1.0 parser cannot parse some characters, such as characters with an ASCII value from 0 to 10. For characters that are not supported in XML 1.0, you can add this parameter to request that Amazon S3 encode the keys in the response.</p>
     pub fn encoding_type(&self) -> std::option::Option<&crate::model::EncodingType> {
         self.encoding_type.as_ref()
     }
-    /// <p>Together with upload-id-marker, this parameter specifies the multipart upload after
-    /// which listing should begin.</p>
-    /// <p>If <code>upload-id-marker</code> is not specified, only the keys lexicographically
-    /// greater than the specified <code>key-marker</code> will be included in the list.</p>
-    ///
-    /// <p>If <code>upload-id-marker</code> is specified, any multipart uploads for a key equal to
-    /// the <code>key-marker</code> might also be included, provided those multipart uploads have
-    /// upload IDs lexicographically greater than the specified
-    /// <code>upload-id-marker</code>.</p>
+    /// <p>Together with upload-id-marker, this parameter specifies the multipart upload after which listing should begin.</p>
+    /// <p>If <code>upload-id-marker</code> is not specified, only the keys lexicographically greater than the specified <code>key-marker</code> will be included in the list.</p>
+    /// <p>If <code>upload-id-marker</code> is specified, any multipart uploads for a key equal to the <code>key-marker</code> might also be included, provided those multipart uploads have upload IDs lexicographically greater than the specified <code>upload-id-marker</code>.</p>
     pub fn key_marker(&self) -> std::option::Option<&str> {
         self.key_marker.as_deref()
     }
-    /// <p>Sets the maximum number of multipart uploads, from 1 to 1,000, to return in the response
-    /// body. 1,000 is the maximum number of uploads that can be returned in a response.</p>
+    /// <p>Sets the maximum number of multipart uploads, from 1 to 1,000, to return in the response body. 1,000 is the maximum number of uploads that can be returned in a response.</p>
     pub fn max_uploads(&self) -> i32 {
         self.max_uploads
     }
-    /// <p>Lists in-progress uploads only for those keys that begin with the specified prefix. You
-    /// can use prefixes to separate a bucket into different grouping of keys. (You can think of
-    /// using prefix to make groups in the same way you'd use a folder in a file system.)</p>
+    /// <p>Lists in-progress uploads only for those keys that begin with the specified prefix. You can use prefixes to separate a bucket into different grouping of keys. (You can think of using prefix to make groups in the same way you'd use a folder in a file system.)</p>
     pub fn prefix(&self) -> std::option::Option<&str> {
         self.prefix.as_deref()
     }
-    /// <p>Together with key-marker, specifies the multipart upload after which listing should
-    /// begin. If key-marker is not specified, the upload-id-marker parameter is ignored.
-    /// Otherwise, any multipart uploads for a key equal to the key-marker might be included in the
-    /// list only if they have an upload ID lexicographically greater than the specified
-    /// <code>upload-id-marker</code>.</p>
+    /// <p>Together with key-marker, specifies the multipart upload after which listing should begin. If key-marker is not specified, the upload-id-marker parameter is ignored. Otherwise, any multipart uploads for a key equal to the key-marker might be included in the list only if they have an upload ID lexicographically greater than the specified <code>upload-id-marker</code>.</p>
     pub fn upload_id_marker(&self) -> std::option::Option<&str> {
         self.upload_id_marker.as_deref()
     }
@@ -33354,10 +31931,7 @@ impl std::fmt::Debug for ListBucketsInput {
 pub struct ListBucketMetricsConfigurationsInput {
     /// <p>The name of the bucket containing the metrics configurations to retrieve.</p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>The marker that is used to continue a metrics configuration listing that has been
-    /// truncated. Use the NextContinuationToken from a previously truncated list response to
-    /// continue the listing. The continuation token is an opaque value that Amazon S3
-    /// understands.</p>
+    /// <p>The marker that is used to continue a metrics configuration listing that has been truncated. Use the NextContinuationToken from a previously truncated list response to continue the listing. The continuation token is an opaque value that Amazon S3 understands.</p>
     pub continuation_token: std::option::Option<std::string::String>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
@@ -33367,10 +31941,7 @@ impl ListBucketMetricsConfigurationsInput {
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>The marker that is used to continue a metrics configuration listing that has been
-    /// truncated. Use the NextContinuationToken from a previously truncated list response to
-    /// continue the listing. The continuation token is an opaque value that Amazon S3
-    /// understands.</p>
+    /// <p>The marker that is used to continue a metrics configuration listing that has been truncated. Use the NextContinuationToken from a previously truncated list response to continue the listing. The continuation token is an opaque value that Amazon S3 understands.</p>
     pub fn continuation_token(&self) -> std::option::Option<&str> {
         self.continuation_token.as_deref()
     }
@@ -33395,9 +31966,7 @@ impl std::fmt::Debug for ListBucketMetricsConfigurationsInput {
 pub struct ListBucketInventoryConfigurationsInput {
     /// <p>The name of the bucket containing the inventory configurations to retrieve.</p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>The marker used to continue an inventory configuration listing that has been truncated.
-    /// Use the NextContinuationToken from a previously truncated list response to continue the
-    /// listing. The continuation token is an opaque value that Amazon S3 understands.</p>
+    /// <p>The marker used to continue an inventory configuration listing that has been truncated. Use the NextContinuationToken from a previously truncated list response to continue the listing. The continuation token is an opaque value that Amazon S3 understands.</p>
     pub continuation_token: std::option::Option<std::string::String>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
@@ -33407,9 +31976,7 @@ impl ListBucketInventoryConfigurationsInput {
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>The marker used to continue an inventory configuration listing that has been truncated.
-    /// Use the NextContinuationToken from a previously truncated list response to continue the
-    /// listing. The continuation token is an opaque value that Amazon S3 understands.</p>
+    /// <p>The marker used to continue an inventory configuration listing that has been truncated. Use the NextContinuationToken from a previously truncated list response to continue the listing. The continuation token is an opaque value that Amazon S3 understands.</p>
     pub fn continuation_token(&self) -> std::option::Option<&str> {
         self.continuation_token.as_deref()
     }
@@ -33434,8 +32001,7 @@ impl std::fmt::Debug for ListBucketInventoryConfigurationsInput {
 pub struct ListBucketIntelligentTieringConfigurationsInput {
     /// <p>The name of the Amazon S3 bucket whose configuration you want to modify or retrieve.</p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>The ContinuationToken that represents a placeholder from where this request should
-    /// begin.</p>
+    /// <p>The ContinuationToken that represents a placeholder from where this request should begin.</p>
     pub continuation_token: std::option::Option<std::string::String>,
 }
 impl ListBucketIntelligentTieringConfigurationsInput {
@@ -33443,8 +32009,7 @@ impl ListBucketIntelligentTieringConfigurationsInput {
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>The ContinuationToken that represents a placeholder from where this request should
-    /// begin.</p>
+    /// <p>The ContinuationToken that represents a placeholder from where this request should begin.</p>
     pub fn continuation_token(&self) -> std::option::Option<&str> {
         self.continuation_token.as_deref()
     }
@@ -33464,8 +32029,7 @@ impl std::fmt::Debug for ListBucketIntelligentTieringConfigurationsInput {
 pub struct ListBucketAnalyticsConfigurationsInput {
     /// <p>The name of the bucket from which analytics configurations are retrieved.</p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>The ContinuationToken that represents a placeholder from where this request should
-    /// begin.</p>
+    /// <p>The ContinuationToken that represents a placeholder from where this request should begin.</p>
     pub continuation_token: std::option::Option<std::string::String>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
@@ -33475,8 +32039,7 @@ impl ListBucketAnalyticsConfigurationsInput {
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>The ContinuationToken that represents a placeholder from where this request should
-    /// begin.</p>
+    /// <p>The ContinuationToken that represents a placeholder from where this request should begin.</p>
     pub fn continuation_token(&self) -> std::option::Option<&str> {
         self.continuation_token.as_deref()
     }
@@ -33503,49 +32066,31 @@ pub struct HeadObjectInput {
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>Return the object only if its entity tag (ETag) is the same as the one specified,
-    /// otherwise return a 412 (precondition failed).</p>
+    /// <p>Return the object only if its entity tag (ETag) is the same as the one specified, otherwise return a 412 (precondition failed).</p>
     pub if_match: std::option::Option<std::string::String>,
-    /// <p>Return the object only if it has been modified since the specified time, otherwise
-    /// return a 304 (not modified).</p>
+    /// <p>Return the object only if it has been modified since the specified time, otherwise return a 304 (not modified).</p>
     pub if_modified_since: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Return the object only if its entity tag (ETag) is different from the one specified,
-    /// otherwise return a 304 (not modified).</p>
+    /// <p>Return the object only if its entity tag (ETag) is different from the one specified, otherwise return a 304 (not modified).</p>
     pub if_none_match: std::option::Option<std::string::String>,
-    /// <p>Return the object only if it has not been modified since the specified time, otherwise
-    /// return a 412 (precondition failed).</p>
+    /// <p>Return the object only if it has not been modified since the specified time, otherwise return a 412 (precondition failed).</p>
     pub if_unmodified_since: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The object key.</p>
     pub key: std::option::Option<std::string::String>,
-    /// <p>Downloads the specified range bytes of an object. For more information about the HTTP
-    /// Range header, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.</p>
-    /// <note>
-    /// <p>Amazon S3 doesn't support retrieving multiple ranges of data per <code>GET</code>
-    /// request.</p>
+    /// <p>Downloads the specified range bytes of an object. For more information about the HTTP Range header, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.</p> <note>
+    /// <p>Amazon S3 doesn't support retrieving multiple ranges of data per <code>GET</code> request.</p>
     /// </note>
     pub range: std::option::Option<std::string::String>,
     /// <p>VersionId used to reference a specific version of the object.</p>
     pub version_id: std::option::Option<std::string::String>,
-    /// <p>Specifies the algorithm to use to when encrypting the object (for example,
-    /// AES256).</p>
+    /// <p>Specifies the algorithm to use to when encrypting the object (for example, AES256).</p>
     pub sse_customer_algorithm: std::option::Option<std::string::String>,
-    /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This
-    /// value is used to store the object and then it is discarded; Amazon S3 does not store the
-    /// encryption key. The key must be appropriate for use with the algorithm specified in the
-    /// <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
+    /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This value is used to store the object and then it is discarded; Amazon S3 does not store the encryption key. The key must be appropriate for use with the algorithm specified in the <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
     pub sse_customer_key: std::option::Option<std::string::String>,
-    /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses
-    /// this header for a message integrity check to ensure that the encryption key was transmitted
-    /// without error.</p>
+    /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
     pub sse_customer_key_md5: std::option::Option<std::string::String>,
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-    /// owners need not specify this parameter in their requests. For information about downloading
-    /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-    /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub request_payer: std::option::Option<crate::model::RequestPayer>,
-    /// <p>Part number of the object being read. This is a positive integer between 1 and 10,000.
-    /// Effectively performs a 'ranged' HEAD request for the part specified. Useful querying about
-    /// the size of the part and the number of parts in this object.</p>
+    /// <p>Part number of the object being read. This is a positive integer between 1 and 10,000. Effectively performs a 'ranged' HEAD request for the part specified. Useful querying about the size of the part and the number of parts in this object.</p>
     pub part_number: i32,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
@@ -33557,23 +32102,19 @@ impl HeadObjectInput {
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>Return the object only if its entity tag (ETag) is the same as the one specified,
-    /// otherwise return a 412 (precondition failed).</p>
+    /// <p>Return the object only if its entity tag (ETag) is the same as the one specified, otherwise return a 412 (precondition failed).</p>
     pub fn if_match(&self) -> std::option::Option<&str> {
         self.if_match.as_deref()
     }
-    /// <p>Return the object only if it has been modified since the specified time, otherwise
-    /// return a 304 (not modified).</p>
+    /// <p>Return the object only if it has been modified since the specified time, otherwise return a 304 (not modified).</p>
     pub fn if_modified_since(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.if_modified_since.as_ref()
     }
-    /// <p>Return the object only if its entity tag (ETag) is different from the one specified,
-    /// otherwise return a 304 (not modified).</p>
+    /// <p>Return the object only if its entity tag (ETag) is different from the one specified, otherwise return a 304 (not modified).</p>
     pub fn if_none_match(&self) -> std::option::Option<&str> {
         self.if_none_match.as_deref()
     }
-    /// <p>Return the object only if it has not been modified since the specified time, otherwise
-    /// return a 412 (precondition failed).</p>
+    /// <p>Return the object only if it has not been modified since the specified time, otherwise return a 412 (precondition failed).</p>
     pub fn if_unmodified_since(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.if_unmodified_since.as_ref()
     }
@@ -33581,11 +32122,8 @@ impl HeadObjectInput {
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
-    /// <p>Downloads the specified range bytes of an object. For more information about the HTTP
-    /// Range header, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.</p>
-    /// <note>
-    /// <p>Amazon S3 doesn't support retrieving multiple ranges of data per <code>GET</code>
-    /// request.</p>
+    /// <p>Downloads the specified range bytes of an object. For more information about the HTTP Range header, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.</p> <note>
+    /// <p>Amazon S3 doesn't support retrieving multiple ranges of data per <code>GET</code> request.</p>
     /// </note>
     pub fn range(&self) -> std::option::Option<&str> {
         self.range.as_deref()
@@ -33594,34 +32132,23 @@ impl HeadObjectInput {
     pub fn version_id(&self) -> std::option::Option<&str> {
         self.version_id.as_deref()
     }
-    /// <p>Specifies the algorithm to use to when encrypting the object (for example,
-    /// AES256).</p>
+    /// <p>Specifies the algorithm to use to when encrypting the object (for example, AES256).</p>
     pub fn sse_customer_algorithm(&self) -> std::option::Option<&str> {
         self.sse_customer_algorithm.as_deref()
     }
-    /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This
-    /// value is used to store the object and then it is discarded; Amazon S3 does not store the
-    /// encryption key. The key must be appropriate for use with the algorithm specified in the
-    /// <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
+    /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This value is used to store the object and then it is discarded; Amazon S3 does not store the encryption key. The key must be appropriate for use with the algorithm specified in the <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
     pub fn sse_customer_key(&self) -> std::option::Option<&str> {
         self.sse_customer_key.as_deref()
     }
-    /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses
-    /// this header for a message integrity check to ensure that the encryption key was transmitted
-    /// without error.</p>
+    /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
     pub fn sse_customer_key_md5(&self) -> std::option::Option<&str> {
         self.sse_customer_key_md5.as_deref()
     }
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-    /// owners need not specify this parameter in their requests. For information about downloading
-    /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-    /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn request_payer(&self) -> std::option::Option<&crate::model::RequestPayer> {
         self.request_payer.as_ref()
     }
-    /// <p>Part number of the object being read. This is a positive integer between 1 and 10,000.
-    /// Effectively performs a 'ranged' HEAD request for the part specified. Useful querying about
-    /// the size of the part and the number of parts in this object.</p>
+    /// <p>Part number of the object being read. This is a positive integer between 1 and 10,000. Effectively performs a 'ranged' HEAD request for the part specified. Useful querying about the size of the part and the number of parts in this object.</p>
     pub fn part_number(&self) -> i32 {
         self.part_number
     }
@@ -33687,15 +32214,13 @@ impl std::fmt::Debug for HeadBucketInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPublicAccessBlockInput {
-    /// <p>The name of the Amazon S3 bucket whose <code>PublicAccessBlock</code> configuration you want
-    /// to retrieve. </p>
+    /// <p>The name of the Amazon S3 bucket whose <code>PublicAccessBlock</code> configuration you want to retrieve. </p>
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl GetPublicAccessBlockInput {
-    /// <p>The name of the Amazon S3 bucket whose <code>PublicAccessBlock</code> configuration you want
-    /// to retrieve. </p>
+    /// <p>The name of the Amazon S3 bucket whose <code>PublicAccessBlock</code> configuration you want to retrieve. </p>
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
@@ -33721,10 +32246,7 @@ pub struct GetObjectTorrentInput {
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The object key for which to get the information.</p>
     pub key: std::option::Option<std::string::String>,
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-    /// owners need not specify this parameter in their requests. For information about downloading
-    /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-    /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub request_payer: std::option::Option<crate::model::RequestPayer>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
@@ -33738,10 +32260,7 @@ impl GetObjectTorrentInput {
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-    /// owners need not specify this parameter in their requests. For information about downloading
-    /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-    /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn request_payer(&self) -> std::option::Option<&crate::model::RequestPayer> {
         self.request_payer.as_ref()
     }
@@ -33775,10 +32294,7 @@ pub struct GetObjectTaggingInput {
     pub version_id: std::option::Option<std::string::String>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-    /// owners need not specify this parameter in their requests. For information about downloading
-    /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-    /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub request_payer: std::option::Option<crate::model::RequestPayer>,
 }
 impl GetObjectTaggingInput {
@@ -33800,10 +32316,7 @@ impl GetObjectTaggingInput {
     pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-    /// owners need not specify this parameter in their requests. For information about downloading
-    /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-    /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn request_payer(&self) -> std::option::Option<&crate::model::RequestPayer> {
         self.request_payer.as_ref()
     }
@@ -33831,10 +32344,7 @@ pub struct GetObjectRetentionInput {
     pub key: std::option::Option<std::string::String>,
     /// <p>The version ID for the object whose retention settings you want to retrieve.</p>
     pub version_id: std::option::Option<std::string::String>,
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-    /// owners need not specify this parameter in their requests. For information about downloading
-    /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-    /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub request_payer: std::option::Option<crate::model::RequestPayer>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
@@ -33853,10 +32363,7 @@ impl GetObjectRetentionInput {
     pub fn version_id(&self) -> std::option::Option<&str> {
         self.version_id.as_deref()
     }
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-    /// owners need not specify this parameter in their requests. For information about downloading
-    /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-    /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn request_payer(&self) -> std::option::Option<&crate::model::RequestPayer> {
         self.request_payer.as_ref()
     }
@@ -33918,10 +32425,7 @@ pub struct GetObjectLegalHoldInput {
     pub key: std::option::Option<std::string::String>,
     /// <p>The version ID of the object whose Legal Hold status you want to retrieve.</p>
     pub version_id: std::option::Option<std::string::String>,
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-    /// owners need not specify this parameter in their requests. For information about downloading
-    /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-    /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub request_payer: std::option::Option<crate::model::RequestPayer>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
@@ -33940,10 +32444,7 @@ impl GetObjectLegalHoldInput {
     pub fn version_id(&self) -> std::option::Option<&str> {
         self.version_id.as_deref()
     }
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-    /// owners need not specify this parameter in their requests. For information about downloading
-    /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-    /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn request_payer(&self) -> std::option::Option<&crate::model::RequestPayer> {
         self.request_payer.as_ref()
     }
@@ -33975,10 +32476,7 @@ pub struct GetObjectAclInput {
     pub key: std::option::Option<std::string::String>,
     /// <p>VersionId used to reference a specific version of the object.</p>
     pub version_id: std::option::Option<std::string::String>,
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-    /// owners need not specify this parameter in their requests. For information about downloading
-    /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-    /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub request_payer: std::option::Option<crate::model::RequestPayer>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
@@ -33997,10 +32495,7 @@ impl GetObjectAclInput {
     pub fn version_id(&self) -> std::option::Option<&str> {
         self.version_id.as_deref()
     }
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-    /// owners need not specify this parameter in their requests. For information about downloading
-    /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-    /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn request_payer(&self) -> std::option::Option<&crate::model::RequestPayer> {
         self.request_payer.as_ref()
     }
@@ -34030,25 +32525,18 @@ pub struct GetObjectInput {
     /// <p>When using an Object Lambda access point the hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-object-lambda.<i>Region</i>.amazonaws.com.</p>
     /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>Return the object only if its entity tag (ETag) is the same as the one specified,
-    /// otherwise return a 412 (precondition failed).</p>
+    /// <p>Return the object only if its entity tag (ETag) is the same as the one specified, otherwise return a 412 (precondition failed).</p>
     pub if_match: std::option::Option<std::string::String>,
-    /// <p>Return the object only if it has been modified since the specified time, otherwise
-    /// return a 304 (not modified).</p>
+    /// <p>Return the object only if it has been modified since the specified time, otherwise return a 304 (not modified).</p>
     pub if_modified_since: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Return the object only if its entity tag (ETag) is different from the one specified,
-    /// otherwise return a 304 (not modified).</p>
+    /// <p>Return the object only if its entity tag (ETag) is different from the one specified, otherwise return a 304 (not modified).</p>
     pub if_none_match: std::option::Option<std::string::String>,
-    /// <p>Return the object only if it has not been modified since the specified time, otherwise
-    /// return a 412 (precondition failed).</p>
+    /// <p>Return the object only if it has not been modified since the specified time, otherwise return a 412 (precondition failed).</p>
     pub if_unmodified_since: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Key of the object to get.</p>
     pub key: std::option::Option<std::string::String>,
-    /// <p>Downloads the specified range bytes of an object. For more information about the HTTP
-    /// Range header, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.</p>
-    /// <note>
-    /// <p>Amazon S3 doesn't support retrieving multiple ranges of data per <code>GET</code>
-    /// request.</p>
+    /// <p>Downloads the specified range bytes of an object. For more information about the HTTP Range header, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.</p> <note>
+    /// <p>Amazon S3 doesn't support retrieving multiple ranges of data per <code>GET</code> request.</p>
     /// </note>
     pub range: std::option::Option<std::string::String>,
     /// <p>Sets the <code>Cache-Control</code> header of the response.</p>
@@ -34065,26 +32553,15 @@ pub struct GetObjectInput {
     pub response_expires: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>VersionId used to reference a specific version of the object.</p>
     pub version_id: std::option::Option<std::string::String>,
-    /// <p>Specifies the algorithm to use to when decrypting the object (for example,
-    /// AES256).</p>
+    /// <p>Specifies the algorithm to use to when decrypting the object (for example, AES256).</p>
     pub sse_customer_algorithm: std::option::Option<std::string::String>,
-    /// <p>Specifies the customer-provided encryption key for Amazon S3 used to encrypt the data. This
-    /// value is used to decrypt the object when recovering it and must match the one used when
-    /// storing the data. The key must be appropriate for use with the algorithm specified in the
-    /// <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
+    /// <p>Specifies the customer-provided encryption key for Amazon S3 used to encrypt the data. This value is used to decrypt the object when recovering it and must match the one used when storing the data. The key must be appropriate for use with the algorithm specified in the <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
     pub sse_customer_key: std::option::Option<std::string::String>,
-    /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses
-    /// this header for a message integrity check to ensure that the encryption key was transmitted
-    /// without error.</p>
+    /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
     pub sse_customer_key_md5: std::option::Option<std::string::String>,
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-    /// owners need not specify this parameter in their requests. For information about downloading
-    /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-    /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub request_payer: std::option::Option<crate::model::RequestPayer>,
-    /// <p>Part number of the object being read. This is a positive integer between 1 and 10,000.
-    /// Effectively performs a 'ranged' GET request for the part specified. Useful for downloading
-    /// just a part of an object.</p>
+    /// <p>Part number of the object being read. This is a positive integer between 1 and 10,000. Effectively performs a 'ranged' GET request for the part specified. Useful for downloading just a part of an object.</p>
     pub part_number: i32,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
@@ -34097,23 +32574,19 @@ impl GetObjectInput {
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>Return the object only if its entity tag (ETag) is the same as the one specified,
-    /// otherwise return a 412 (precondition failed).</p>
+    /// <p>Return the object only if its entity tag (ETag) is the same as the one specified, otherwise return a 412 (precondition failed).</p>
     pub fn if_match(&self) -> std::option::Option<&str> {
         self.if_match.as_deref()
     }
-    /// <p>Return the object only if it has been modified since the specified time, otherwise
-    /// return a 304 (not modified).</p>
+    /// <p>Return the object only if it has been modified since the specified time, otherwise return a 304 (not modified).</p>
     pub fn if_modified_since(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.if_modified_since.as_ref()
     }
-    /// <p>Return the object only if its entity tag (ETag) is different from the one specified,
-    /// otherwise return a 304 (not modified).</p>
+    /// <p>Return the object only if its entity tag (ETag) is different from the one specified, otherwise return a 304 (not modified).</p>
     pub fn if_none_match(&self) -> std::option::Option<&str> {
         self.if_none_match.as_deref()
     }
-    /// <p>Return the object only if it has not been modified since the specified time, otherwise
-    /// return a 412 (precondition failed).</p>
+    /// <p>Return the object only if it has not been modified since the specified time, otherwise return a 412 (precondition failed).</p>
     pub fn if_unmodified_since(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.if_unmodified_since.as_ref()
     }
@@ -34121,11 +32594,8 @@ impl GetObjectInput {
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
-    /// <p>Downloads the specified range bytes of an object. For more information about the HTTP
-    /// Range header, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.</p>
-    /// <note>
-    /// <p>Amazon S3 doesn't support retrieving multiple ranges of data per <code>GET</code>
-    /// request.</p>
+    /// <p>Downloads the specified range bytes of an object. For more information about the HTTP Range header, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.</p> <note>
+    /// <p>Amazon S3 doesn't support retrieving multiple ranges of data per <code>GET</code> request.</p>
     /// </note>
     pub fn range(&self) -> std::option::Option<&str> {
         self.range.as_deref()
@@ -34158,34 +32628,23 @@ impl GetObjectInput {
     pub fn version_id(&self) -> std::option::Option<&str> {
         self.version_id.as_deref()
     }
-    /// <p>Specifies the algorithm to use to when decrypting the object (for example,
-    /// AES256).</p>
+    /// <p>Specifies the algorithm to use to when decrypting the object (for example, AES256).</p>
     pub fn sse_customer_algorithm(&self) -> std::option::Option<&str> {
         self.sse_customer_algorithm.as_deref()
     }
-    /// <p>Specifies the customer-provided encryption key for Amazon S3 used to encrypt the data. This
-    /// value is used to decrypt the object when recovering it and must match the one used when
-    /// storing the data. The key must be appropriate for use with the algorithm specified in the
-    /// <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
+    /// <p>Specifies the customer-provided encryption key for Amazon S3 used to encrypt the data. This value is used to decrypt the object when recovering it and must match the one used when storing the data. The key must be appropriate for use with the algorithm specified in the <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
     pub fn sse_customer_key(&self) -> std::option::Option<&str> {
         self.sse_customer_key.as_deref()
     }
-    /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses
-    /// this header for a message integrity check to ensure that the encryption key was transmitted
-    /// without error.</p>
+    /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
     pub fn sse_customer_key_md5(&self) -> std::option::Option<&str> {
         self.sse_customer_key_md5.as_deref()
     }
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-    /// owners need not specify this parameter in their requests. For information about downloading
-    /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-    /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn request_payer(&self) -> std::option::Option<&crate::model::RequestPayer> {
         self.request_payer.as_ref()
     }
-    /// <p>Part number of the object being read. This is a positive integer between 1 and 10,000.
-    /// Effectively performs a 'ranged' GET request for the part specified. Useful for downloading
-    /// just a part of an object.</p>
+    /// <p>Part number of the object being read. This is a positive integer between 1 and 10,000. Effectively performs a 'ranged' GET request for the part specified. Useful for downloading just a part of an object.</p>
     pub fn part_number(&self) -> i32 {
         self.part_number
     }
@@ -34424,15 +32883,13 @@ impl std::fmt::Debug for GetBucketPolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBucketOwnershipControlsInput {
-    /// <p>The name of the Amazon S3 bucket whose <code>OwnershipControls</code> you want to retrieve.
-    /// </p>
+    /// <p>The name of the Amazon S3 bucket whose <code>OwnershipControls</code> you want to retrieve. </p>
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl GetBucketOwnershipControlsInput {
-    /// <p>The name of the Amazon S3 bucket whose <code>OwnershipControls</code> you want to retrieve.
-    /// </p>
+    /// <p>The name of the Amazon S3 bucket whose <code>OwnershipControls</code> you want to retrieve. </p>
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
@@ -34664,15 +33121,13 @@ impl std::fmt::Debug for GetBucketIntelligentTieringConfigurationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBucketEncryptionInput {
-    /// <p>The name of the bucket from which the server-side encryption configuration is
-    /// retrieved.</p>
+    /// <p>The name of the bucket from which the server-side encryption configuration is retrieved.</p>
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl GetBucketEncryptionInput {
-    /// <p>The name of the bucket from which the server-side encryption configuration is
-    /// retrieved.</p>
+    /// <p>The name of the bucket from which the server-side encryption configuration is retrieved.</p>
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
@@ -34813,15 +33268,13 @@ impl std::fmt::Debug for GetBucketAccelerateConfigurationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePublicAccessBlockInput {
-    /// <p>The Amazon S3 bucket whose <code>PublicAccessBlock</code> configuration you want to delete.
-    /// </p>
+    /// <p>The Amazon S3 bucket whose <code>PublicAccessBlock</code> configuration you want to delete. </p>
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl DeletePublicAccessBlockInput {
-    /// <p>The Amazon S3 bucket whose <code>PublicAccessBlock</code> configuration you want to delete.
-    /// </p>
+    /// <p>The Amazon S3 bucket whose <code>PublicAccessBlock</code> configuration you want to delete. </p>
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
@@ -34895,18 +33348,11 @@ pub struct DeleteObjectsInput {
     pub bucket: std::option::Option<std::string::String>,
     /// <p>Container for the request.</p>
     pub delete: std::option::Option<crate::model::Delete>,
-    /// <p>The concatenation of the authentication device's serial number, a space, and the value
-    /// that is displayed on your authentication device. Required to permanently delete a versioned
-    /// object if versioning is configured with MFA delete enabled.</p>
+    /// <p>The concatenation of the authentication device's serial number, a space, and the value that is displayed on your authentication device. Required to permanently delete a versioned object if versioning is configured with MFA delete enabled.</p>
     pub mfa: std::option::Option<std::string::String>,
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-    /// owners need not specify this parameter in their requests. For information about downloading
-    /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-    /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub request_payer: std::option::Option<crate::model::RequestPayer>,
-    /// <p>Specifies whether you want to delete this object even if it has a Governance-type Object
-    /// Lock in place. To use this header, you must have the <code>s3:PutBucketPublicAccessBlock</code>
-    /// permission.</p>
+    /// <p>Specifies whether you want to delete this object even if it has a Governance-type Object Lock in place. To use this header, you must have the <code>s3:PutBucketPublicAccessBlock</code> permission.</p>
     pub bypass_governance_retention: bool,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
@@ -34922,22 +33368,15 @@ impl DeleteObjectsInput {
     pub fn delete(&self) -> std::option::Option<&crate::model::Delete> {
         self.delete.as_ref()
     }
-    /// <p>The concatenation of the authentication device's serial number, a space, and the value
-    /// that is displayed on your authentication device. Required to permanently delete a versioned
-    /// object if versioning is configured with MFA delete enabled.</p>
+    /// <p>The concatenation of the authentication device's serial number, a space, and the value that is displayed on your authentication device. Required to permanently delete a versioned object if versioning is configured with MFA delete enabled.</p>
     pub fn mfa(&self) -> std::option::Option<&str> {
         self.mfa.as_deref()
     }
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-    /// owners need not specify this parameter in their requests. For information about downloading
-    /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-    /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn request_payer(&self) -> std::option::Option<&crate::model::RequestPayer> {
         self.request_payer.as_ref()
     }
-    /// <p>Specifies whether you want to delete this object even if it has a Governance-type Object
-    /// Lock in place. To use this header, you must have the <code>s3:PutBucketPublicAccessBlock</code>
-    /// permission.</p>
+    /// <p>Specifies whether you want to delete this object even if it has a Governance-type Object Lock in place. To use this header, you must have the <code>s3:PutBucketPublicAccessBlock</code> permission.</p>
     pub fn bypass_governance_retention(&self) -> bool {
         self.bypass_governance_retention
     }
@@ -34972,20 +33411,13 @@ pub struct DeleteObjectInput {
     pub bucket: std::option::Option<std::string::String>,
     /// <p>Key name of the object to delete.</p>
     pub key: std::option::Option<std::string::String>,
-    /// <p>The concatenation of the authentication device's serial number, a space, and the value
-    /// that is displayed on your authentication device. Required to permanently delete a versioned
-    /// object if versioning is configured with MFA delete enabled.</p>
+    /// <p>The concatenation of the authentication device's serial number, a space, and the value that is displayed on your authentication device. Required to permanently delete a versioned object if versioning is configured with MFA delete enabled.</p>
     pub mfa: std::option::Option<std::string::String>,
     /// <p>VersionId used to reference a specific version of the object.</p>
     pub version_id: std::option::Option<std::string::String>,
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-    /// owners need not specify this parameter in their requests. For information about downloading
-    /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-    /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub request_payer: std::option::Option<crate::model::RequestPayer>,
-    /// <p>Indicates whether S3 Object Lock should bypass Governance-mode restrictions to process
-    /// this operation. To use this header, you must have the <code>s3:PutBucketPublicAccessBlock</code>
-    /// permission.</p>
+    /// <p>Indicates whether S3 Object Lock should bypass Governance-mode restrictions to process this operation. To use this header, you must have the <code>s3:PutBucketPublicAccessBlock</code> permission.</p>
     pub bypass_governance_retention: bool,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
@@ -35001,9 +33433,7 @@ impl DeleteObjectInput {
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
-    /// <p>The concatenation of the authentication device's serial number, a space, and the value
-    /// that is displayed on your authentication device. Required to permanently delete a versioned
-    /// object if versioning is configured with MFA delete enabled.</p>
+    /// <p>The concatenation of the authentication device's serial number, a space, and the value that is displayed on your authentication device. Required to permanently delete a versioned object if versioning is configured with MFA delete enabled.</p>
     pub fn mfa(&self) -> std::option::Option<&str> {
         self.mfa.as_deref()
     }
@@ -35011,16 +33441,11 @@ impl DeleteObjectInput {
     pub fn version_id(&self) -> std::option::Option<&str> {
         self.version_id.as_deref()
     }
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-    /// owners need not specify this parameter in their requests. For information about downloading
-    /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-    /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn request_payer(&self) -> std::option::Option<&crate::model::RequestPayer> {
         self.request_payer.as_ref()
     }
-    /// <p>Indicates whether S3 Object Lock should bypass Governance-mode restrictions to process
-    /// this operation. To use this header, you must have the <code>s3:PutBucketPublicAccessBlock</code>
-    /// permission.</p>
+    /// <p>Indicates whether S3 Object Lock should bypass Governance-mode restrictions to process this operation. To use this header, you must have the <code>s3:PutBucketPublicAccessBlock</code> permission.</p>
     pub fn bypass_governance_retention(&self) -> bool {
         self.bypass_governance_retention
     }
@@ -35316,15 +33741,13 @@ impl std::fmt::Debug for DeleteBucketIntelligentTieringConfigurationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBucketEncryptionInput {
-    /// <p>The name of the bucket containing the server-side encryption configuration to
-    /// delete.</p>
+    /// <p>The name of the bucket containing the server-side encryption configuration to delete.</p>
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
 }
 impl DeleteBucketEncryptionInput {
-    /// <p>The name of the bucket containing the server-side encryption configuration to
-    /// delete.</p>
+    /// <p>The name of the bucket containing the server-side encryption configuration to delete.</p>
     pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
@@ -35448,9 +33871,7 @@ pub struct CreateMultipartUploadInput {
     pub cache_control: std::option::Option<std::string::String>,
     /// <p>Specifies presentational information for the object.</p>
     pub content_disposition: std::option::Option<std::string::String>,
-    /// <p>Specifies what content encodings have been applied to the object and thus what decoding
-    /// mechanisms must be applied to obtain the media-type referenced by the Content-Type header
-    /// field.</p>
+    /// <p>Specifies what content encodings have been applied to the object and thus what decoding mechanisms must be applied to obtain the media-type referenced by the Content-Type header field.</p>
     pub content_encoding: std::option::Option<std::string::String>,
     /// <p>The language the content is in.</p>
     pub content_language: std::option::Option<std::string::String>,
@@ -35458,19 +33879,16 @@ pub struct CreateMultipartUploadInput {
     pub content_type: std::option::Option<std::string::String>,
     /// <p>The date and time at which the object is no longer cacheable.</p>
     pub expires: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the
-    /// object.</p>
+    /// <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the object.</p>
     /// <p>This action is not supported by Amazon S3 on Outposts.</p>
     pub grant_full_control: std::option::Option<std::string::String>,
-    /// <p>Allows grantee to read the object data and its
-    /// metadata.</p>
+    /// <p>Allows grantee to read the object data and its metadata.</p>
     /// <p>This action is not supported by Amazon S3 on Outposts.</p>
     pub grant_read: std::option::Option<std::string::String>,
     /// <p>Allows grantee to read the object ACL.</p>
     /// <p>This action is not supported by Amazon S3 on Outposts.</p>
     pub grant_read_acp: std::option::Option<std::string::String>,
-    /// <p>Allows grantee to write the ACL for the applicable
-    /// object.</p>
+    /// <p>Allows grantee to write the ACL for the applicable object.</p>
     /// <p>This action is not supported by Amazon S3 on Outposts.</p>
     pub grant_write_acp: std::option::Option<std::string::String>,
     /// <p>Object key for which the multipart upload is to be initiated.</p>
@@ -35478,48 +33896,26 @@ pub struct CreateMultipartUploadInput {
     /// <p>A map of metadata to store with the object in S3.</p>
     pub metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example,
-    /// AES256, aws:kms).</p>
+    /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example, AES256, aws:kms).</p>
     pub server_side_encryption: std::option::Option<crate::model::ServerSideEncryption>,
-    /// <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created objects. The
-    /// STANDARD storage class provides high durability and high availability. Depending on
-    /// performance needs, you can specify a different Storage Class. Amazon S3 on Outposts only uses
-    /// the OUTPOSTS Storage Class. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a> in the
-    /// <i>Amazon S3 User Guide</i>.</p>
+    /// <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created objects. The STANDARD storage class provides high durability and high availability. Depending on performance needs, you can specify a different Storage Class. Amazon S3 on Outposts only uses the OUTPOSTS Storage Class. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub storage_class: std::option::Option<crate::model::StorageClass>,
-    /// <p>If the bucket is configured as a website, redirects requests for this object to another
-    /// object in the same bucket or to an external URL. Amazon S3 stores the value of this header in
-    /// the object metadata.</p>
+    /// <p>If the bucket is configured as a website, redirects requests for this object to another object in the same bucket or to an external URL. Amazon S3 stores the value of this header in the object metadata.</p>
     pub website_redirect_location: std::option::Option<std::string::String>,
-    /// <p>Specifies the algorithm to use to when encrypting the object (for example,
-    /// AES256).</p>
+    /// <p>Specifies the algorithm to use to when encrypting the object (for example, AES256).</p>
     pub sse_customer_algorithm: std::option::Option<std::string::String>,
-    /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This
-    /// value is used to store the object and then it is discarded; Amazon S3 does not store the
-    /// encryption key. The key must be appropriate for use with the algorithm specified in the
-    /// <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
+    /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This value is used to store the object and then it is discarded; Amazon S3 does not store the encryption key. The key must be appropriate for use with the algorithm specified in the <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
     pub sse_customer_key: std::option::Option<std::string::String>,
-    /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses
-    /// this header for a message integrity check to ensure that the encryption key was transmitted
-    /// without error.</p>
+    /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
     pub sse_customer_key_md5: std::option::Option<std::string::String>,
-    /// <p>Specifies the ID of the symmetric customer managed key to use for object
-    /// encryption. All GET and PUT requests for an object protected by Amazon Web Services KMS will fail if not
-    /// made via SSL or using SigV4. For information about configuring using any of the officially
-    /// supported Amazon Web Services SDKs and Amazon Web Services CLI, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying the Signature Version in Request Authentication</a>
-    /// in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Specifies the ID of the symmetric customer managed key to use for object encryption. All GET and PUT requests for an object protected by Amazon Web Services KMS will fail if not made via SSL or using SigV4. For information about configuring using any of the officially supported Amazon Web Services SDKs and Amazon Web Services CLI, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying the Signature Version in Request Authentication</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub ssekms_key_id: std::option::Option<std::string::String>,
-    /// <p>Specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The value of this
-    /// header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value
-    /// pairs.</p>
+    /// <p>Specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value pairs.</p>
     pub ssekms_encryption_context: std::option::Option<std::string::String>,
     /// <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption using AWS KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object encryption with SSE-KMS.</p>
     /// <p>Specifying this header with an object action doesn’t affect bucket-level settings for S3 Bucket Key.</p>
     pub bucket_key_enabled: bool,
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-    /// owners need not specify this parameter in their requests. For information about downloading
-    /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-    /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub request_payer: std::option::Option<crate::model::RequestPayer>,
     /// <p>The tag-set for the object. The tag-set must be encoded as URL Query parameters.</p>
     pub tagging: std::option::Option<std::string::String>,
@@ -35552,9 +33948,7 @@ impl CreateMultipartUploadInput {
     pub fn content_disposition(&self) -> std::option::Option<&str> {
         self.content_disposition.as_deref()
     }
-    /// <p>Specifies what content encodings have been applied to the object and thus what decoding
-    /// mechanisms must be applied to obtain the media-type referenced by the Content-Type header
-    /// field.</p>
+    /// <p>Specifies what content encodings have been applied to the object and thus what decoding mechanisms must be applied to obtain the media-type referenced by the Content-Type header field.</p>
     pub fn content_encoding(&self) -> std::option::Option<&str> {
         self.content_encoding.as_deref()
     }
@@ -35570,14 +33964,12 @@ impl CreateMultipartUploadInput {
     pub fn expires(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expires.as_ref()
     }
-    /// <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the
-    /// object.</p>
+    /// <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the object.</p>
     /// <p>This action is not supported by Amazon S3 on Outposts.</p>
     pub fn grant_full_control(&self) -> std::option::Option<&str> {
         self.grant_full_control.as_deref()
     }
-    /// <p>Allows grantee to read the object data and its
-    /// metadata.</p>
+    /// <p>Allows grantee to read the object data and its metadata.</p>
     /// <p>This action is not supported by Amazon S3 on Outposts.</p>
     pub fn grant_read(&self) -> std::option::Option<&str> {
         self.grant_read.as_deref()
@@ -35587,8 +33979,7 @@ impl CreateMultipartUploadInput {
     pub fn grant_read_acp(&self) -> std::option::Option<&str> {
         self.grant_read_acp.as_deref()
     }
-    /// <p>Allows grantee to write the ACL for the applicable
-    /// object.</p>
+    /// <p>Allows grantee to write the ACL for the applicable object.</p>
     /// <p>This action is not supported by Amazon S3 on Outposts.</p>
     pub fn grant_write_acp(&self) -> std::option::Option<&str> {
         self.grant_write_acp.as_deref()
@@ -35604,56 +33995,37 @@ impl CreateMultipartUploadInput {
     {
         self.metadata.as_ref()
     }
-    /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example,
-    /// AES256, aws:kms).</p>
+    /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example, AES256, aws:kms).</p>
     pub fn server_side_encryption(
         &self,
     ) -> std::option::Option<&crate::model::ServerSideEncryption> {
         self.server_side_encryption.as_ref()
     }
-    /// <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created objects. The
-    /// STANDARD storage class provides high durability and high availability. Depending on
-    /// performance needs, you can specify a different Storage Class. Amazon S3 on Outposts only uses
-    /// the OUTPOSTS Storage Class. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a> in the
-    /// <i>Amazon S3 User Guide</i>.</p>
+    /// <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created objects. The STANDARD storage class provides high durability and high availability. Depending on performance needs, you can specify a different Storage Class. Amazon S3 on Outposts only uses the OUTPOSTS Storage Class. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn storage_class(&self) -> std::option::Option<&crate::model::StorageClass> {
         self.storage_class.as_ref()
     }
-    /// <p>If the bucket is configured as a website, redirects requests for this object to another
-    /// object in the same bucket or to an external URL. Amazon S3 stores the value of this header in
-    /// the object metadata.</p>
+    /// <p>If the bucket is configured as a website, redirects requests for this object to another object in the same bucket or to an external URL. Amazon S3 stores the value of this header in the object metadata.</p>
     pub fn website_redirect_location(&self) -> std::option::Option<&str> {
         self.website_redirect_location.as_deref()
     }
-    /// <p>Specifies the algorithm to use to when encrypting the object (for example,
-    /// AES256).</p>
+    /// <p>Specifies the algorithm to use to when encrypting the object (for example, AES256).</p>
     pub fn sse_customer_algorithm(&self) -> std::option::Option<&str> {
         self.sse_customer_algorithm.as_deref()
     }
-    /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This
-    /// value is used to store the object and then it is discarded; Amazon S3 does not store the
-    /// encryption key. The key must be appropriate for use with the algorithm specified in the
-    /// <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
+    /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This value is used to store the object and then it is discarded; Amazon S3 does not store the encryption key. The key must be appropriate for use with the algorithm specified in the <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
     pub fn sse_customer_key(&self) -> std::option::Option<&str> {
         self.sse_customer_key.as_deref()
     }
-    /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses
-    /// this header for a message integrity check to ensure that the encryption key was transmitted
-    /// without error.</p>
+    /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
     pub fn sse_customer_key_md5(&self) -> std::option::Option<&str> {
         self.sse_customer_key_md5.as_deref()
     }
-    /// <p>Specifies the ID of the symmetric customer managed key to use for object
-    /// encryption. All GET and PUT requests for an object protected by Amazon Web Services KMS will fail if not
-    /// made via SSL or using SigV4. For information about configuring using any of the officially
-    /// supported Amazon Web Services SDKs and Amazon Web Services CLI, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying the Signature Version in Request Authentication</a>
-    /// in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Specifies the ID of the symmetric customer managed key to use for object encryption. All GET and PUT requests for an object protected by Amazon Web Services KMS will fail if not made via SSL or using SigV4. For information about configuring using any of the officially supported Amazon Web Services SDKs and Amazon Web Services CLI, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying the Signature Version in Request Authentication</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn ssekms_key_id(&self) -> std::option::Option<&str> {
         self.ssekms_key_id.as_deref()
     }
-    /// <p>Specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The value of this
-    /// header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value
-    /// pairs.</p>
+    /// <p>Specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value pairs.</p>
     pub fn ssekms_encryption_context(&self) -> std::option::Option<&str> {
         self.ssekms_encryption_context.as_deref()
     }
@@ -35662,10 +34034,7 @@ impl CreateMultipartUploadInput {
     pub fn bucket_key_enabled(&self) -> bool {
         self.bucket_key_enabled
     }
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-    /// owners need not specify this parameter in their requests. For information about downloading
-    /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-    /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn request_payer(&self) -> std::option::Option<&crate::model::RequestPayer> {
         self.request_payer.as_ref()
     }
@@ -35749,8 +34118,7 @@ pub struct CreateBucketInput {
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The configuration information for the bucket.</p>
     pub create_bucket_configuration: std::option::Option<crate::model::CreateBucketConfiguration>,
-    /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the
-    /// bucket.</p>
+    /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p>
     pub grant_full_control: std::option::Option<std::string::String>,
     /// <p>Allows grantee to list the objects in the bucket.</p>
     pub grant_read: std::option::Option<std::string::String>,
@@ -35764,16 +34132,9 @@ pub struct CreateBucketInput {
     /// <p>Specifies whether you want S3 Object Lock to be enabled for the new bucket.</p>
     pub object_lock_enabled_for_bucket: bool,
     /// <p>The container element for object ownership for a bucket's ownership controls.</p>
-    /// <p>BucketOwnerPreferred - Objects uploaded to the bucket change ownership to the bucket
-    /// owner if the objects are uploaded with the <code>bucket-owner-full-control</code> canned
-    /// ACL.</p>
-    /// <p>ObjectWriter - The uploading account will own the object if the object is uploaded with
-    /// the <code>bucket-owner-full-control</code> canned ACL.</p>
-    /// <p>BucketOwnerEnforced - Access control lists (ACLs) are disabled and no longer affect permissions.
-    /// The bucket owner automatically owns and has full control over every object in the bucket. The bucket only
-    /// accepts PUT requests that don't specify an ACL or bucket owner full control
-    /// ACLs, such as the <code>bucket-owner-full-control</code> canned
-    /// ACL or an equivalent form of this ACL expressed in the XML format.</p>
+    /// <p>BucketOwnerPreferred - Objects uploaded to the bucket change ownership to the bucket owner if the objects are uploaded with the <code>bucket-owner-full-control</code> canned ACL.</p>
+    /// <p>ObjectWriter - The uploading account will own the object if the object is uploaded with the <code>bucket-owner-full-control</code> canned ACL.</p>
+    /// <p>BucketOwnerEnforced - Access control lists (ACLs) are disabled and no longer affect permissions. The bucket owner automatically owns and has full control over every object in the bucket. The bucket only accepts PUT requests that don't specify an ACL or bucket owner full control ACLs, such as the <code>bucket-owner-full-control</code> canned ACL or an equivalent form of this ACL expressed in the XML format.</p>
     pub object_ownership: std::option::Option<crate::model::ObjectOwnership>,
 }
 impl CreateBucketInput {
@@ -35791,8 +34152,7 @@ impl CreateBucketInput {
     ) -> std::option::Option<&crate::model::CreateBucketConfiguration> {
         self.create_bucket_configuration.as_ref()
     }
-    /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the
-    /// bucket.</p>
+    /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p>
     pub fn grant_full_control(&self) -> std::option::Option<&str> {
         self.grant_full_control.as_deref()
     }
@@ -35818,16 +34178,9 @@ impl CreateBucketInput {
         self.object_lock_enabled_for_bucket
     }
     /// <p>The container element for object ownership for a bucket's ownership controls.</p>
-    /// <p>BucketOwnerPreferred - Objects uploaded to the bucket change ownership to the bucket
-    /// owner if the objects are uploaded with the <code>bucket-owner-full-control</code> canned
-    /// ACL.</p>
-    /// <p>ObjectWriter - The uploading account will own the object if the object is uploaded with
-    /// the <code>bucket-owner-full-control</code> canned ACL.</p>
-    /// <p>BucketOwnerEnforced - Access control lists (ACLs) are disabled and no longer affect permissions.
-    /// The bucket owner automatically owns and has full control over every object in the bucket. The bucket only
-    /// accepts PUT requests that don't specify an ACL or bucket owner full control
-    /// ACLs, such as the <code>bucket-owner-full-control</code> canned
-    /// ACL or an equivalent form of this ACL expressed in the XML format.</p>
+    /// <p>BucketOwnerPreferred - Objects uploaded to the bucket change ownership to the bucket owner if the objects are uploaded with the <code>bucket-owner-full-control</code> canned ACL.</p>
+    /// <p>ObjectWriter - The uploading account will own the object if the object is uploaded with the <code>bucket-owner-full-control</code> canned ACL.</p>
+    /// <p>BucketOwnerEnforced - Access control lists (ACLs) are disabled and no longer affect permissions. The bucket owner automatically owns and has full control over every object in the bucket. The bucket only accepts PUT requests that don't specify an ACL or bucket owner full control ACLs, such as the <code>bucket-owner-full-control</code> canned ACL or an equivalent form of this ACL expressed in the XML format.</p>
     pub fn object_ownership(&self) -> std::option::Option<&crate::model::ObjectOwnership> {
         self.object_ownership.as_ref()
     }
@@ -35870,38 +34223,41 @@ pub struct CopyObjectInput {
     pub cache_control: std::option::Option<std::string::String>,
     /// <p>Specifies presentational information for the object.</p>
     pub content_disposition: std::option::Option<std::string::String>,
-    /// <p>Specifies what content encodings have been applied to the object and thus what decoding
-    /// mechanisms must be applied to obtain the media-type referenced by the Content-Type header
-    /// field.</p>
+    /// <p>Specifies what content encodings have been applied to the object and thus what decoding mechanisms must be applied to obtain the media-type referenced by the Content-Type header field.</p>
     pub content_encoding: std::option::Option<std::string::String>,
     /// <p>The language the content is in.</p>
     pub content_language: std::option::Option<std::string::String>,
     /// <p>A standard MIME type describing the format of the object data.</p>
     pub content_type: std::option::Option<std::string::String>,
-    /// <p>Specifies the source object for the copy operation. You specify the value in one of two
-    /// formats, depending on whether you want to access the source object through an <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">access point</a>:</p>
+    /// <p>Specifies the source object for the copy operation. You specify the value in one of two formats, depending on whether you want to access the source object through an <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">access point</a>:</p>
     /// <ul>
-    /// <li>
-    /// <p>For objects not accessed through an access point, specify the name of the source
-    /// bucket and the key of the source object, separated by a slash (/). For example, to
-    /// copy the object <code>reports/january.pdf</code> from the bucket
-    /// <code>awsexamplebucket</code>, use
-    /// <code>awsexamplebucket/reports/january.pdf</code>. The value must be URL
-    /// encoded.</p>
-    /// </li>
-    /// <li>
-    /// <p>For objects accessed through access points, specify the Amazon Resource Name (ARN) of the object as accessed through the access point, in the format <code>arn:aws:s3:<Region>:<account-id>:accesspoint/<access-point-name>/object/<key></code>. For example, to copy the object <code>reports/january.pdf</code> through access point <code>my-access-point</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3:us-west-2:123456789012:accesspoint/my-access-point/object/reports/january.pdf</code>. The value must be URL encoded.</p>
-    /// <note>
+    /// <li> <p>For objects not accessed through an access point, specify the name of the source bucket and the key of the source object, separated by a slash (/). For example, to copy the object <code>reports/january.pdf</code> from the bucket <code>awsexamplebucket</code>, use <code>awsexamplebucket/reports/january.pdf</code>. The value must be URL encoded.</p> </li>
+    /// <li> <p>For objects accessed through access points, specify the Amazon Resource Name (ARN) of the object as accessed through the access point, in the format <code>arn:aws:s3:
+    /// <region>
+    /// :
+    /// <account-id>
+    /// :accesspoint/
+    /// <access-point-name>
+    /// /object/
+    /// <key></key>
+    /// </access-point-name>
+    /// </account-id>
+    /// </region></code>. For example, to copy the object <code>reports/january.pdf</code> through access point <code>my-access-point</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3:us-west-2:123456789012:accesspoint/my-access-point/object/reports/january.pdf</code>. The value must be URL encoded.</p> <note>
     /// <p>Amazon S3 supports copy operations using access points only when the source and destination buckets are in the same Amazon Web Services Region.</p>
-    /// </note>
-    /// <p>Alternatively, for objects accessed through Amazon S3 on Outposts, specify the ARN of the object as accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/object/<key></code>. For example, to copy the object <code>reports/january.pdf</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/object/reports/january.pdf</code>. The value must be URL encoded.  </p>
-    /// </li>
+    /// </note> <p>Alternatively, for objects accessed through Amazon S3 on Outposts, specify the ARN of the object as accessed in the format <code>arn:aws:s3-outposts:
+    /// <region>
+    /// :
+    /// <account-id>
+    /// :outpost/
+    /// <outpost-id>
+    /// /object/
+    /// <key></key>
+    /// </outpost-id>
+    /// </account-id>
+    /// </region></code>. For example, to copy the object <code>reports/january.pdf</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/object/reports/january.pdf</code>. The value must be URL encoded. </p> </li>
     /// </ul>
-    /// <p>To copy a specific version of an object, append <code>?versionId=<version-id></code>
-    /// to the value (for example,
-    /// <code>awsexamplebucket/reports/january.pdf?versionId=QUpfdndhfd8438MNFDN93jdnJFkdmqnh893</code>).
-    /// If you don't specify a version ID, Amazon S3 copies the latest version of the source
-    /// object.</p>
+    /// <p>To copy a specific version of an object, append <code>?versionId=
+    /// <version-id></version-id></code> to the value (for example, <code>awsexamplebucket/reports/january.pdf?versionId=QUpfdndhfd8438MNFDN93jdnJFkdmqnh893</code>). If you don't specify a version ID, Amazon S3 copies the latest version of the source object.</p>
     pub copy_source: std::option::Option<std::string::String>,
     /// <p>Copies the object if its entity tag (ETag) matches the specified tag.</p>
     pub copy_source_if_match: std::option::Option<std::string::String>,
@@ -35913,19 +34269,16 @@ pub struct CopyObjectInput {
     pub copy_source_if_unmodified_since: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time at which the object is no longer cacheable.</p>
     pub expires: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the
-    /// object.</p>
+    /// <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the object.</p>
     /// <p>This action is not supported by Amazon S3 on Outposts.</p>
     pub grant_full_control: std::option::Option<std::string::String>,
-    /// <p>Allows grantee to read the object data and its
-    /// metadata.</p>
+    /// <p>Allows grantee to read the object data and its metadata.</p>
     /// <p>This action is not supported by Amazon S3 on Outposts.</p>
     pub grant_read: std::option::Option<std::string::String>,
     /// <p>Allows grantee to read the object ACL.</p>
     /// <p>This action is not supported by Amazon S3 on Outposts.</p>
     pub grant_read_acp: std::option::Option<std::string::String>,
-    /// <p>Allows grantee to write the ACL for the applicable
-    /// object.</p>
+    /// <p>Allows grantee to write the ACL for the applicable object.</p>
     /// <p>This action is not supported by Amazon S3 on Outposts.</p>
     pub grant_write_acp: std::option::Option<std::string::String>,
     /// <p>The key of the destination object.</p>
@@ -35933,69 +34286,38 @@ pub struct CopyObjectInput {
     /// <p>A map of metadata to store with the object in S3.</p>
     pub metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>Specifies whether the metadata is copied from the source object or replaced with
-    /// metadata provided in the request.</p>
+    /// <p>Specifies whether the metadata is copied from the source object or replaced with metadata provided in the request.</p>
     pub metadata_directive: std::option::Option<crate::model::MetadataDirective>,
-    /// <p>Specifies whether the object tag-set are copied from the source object or replaced with
-    /// tag-set provided in the request.</p>
+    /// <p>Specifies whether the object tag-set are copied from the source object or replaced with tag-set provided in the request.</p>
     pub tagging_directive: std::option::Option<crate::model::TaggingDirective>,
-    /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example,
-    /// AES256, aws:kms).</p>
+    /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example, AES256, aws:kms).</p>
     pub server_side_encryption: std::option::Option<crate::model::ServerSideEncryption>,
-    /// <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created objects. The
-    /// STANDARD storage class provides high durability and high availability. Depending on
-    /// performance needs, you can specify a different Storage Class. Amazon S3 on Outposts only uses
-    /// the OUTPOSTS Storage Class. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a> in the
-    /// <i>Amazon S3 User Guide</i>.</p>
+    /// <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created objects. The STANDARD storage class provides high durability and high availability. Depending on performance needs, you can specify a different Storage Class. Amazon S3 on Outposts only uses the OUTPOSTS Storage Class. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub storage_class: std::option::Option<crate::model::StorageClass>,
-    /// <p>If the bucket is configured as a website, redirects requests for this object to another
-    /// object in the same bucket or to an external URL. Amazon S3 stores the value of this header in
-    /// the object metadata.</p>
+    /// <p>If the bucket is configured as a website, redirects requests for this object to another object in the same bucket or to an external URL. Amazon S3 stores the value of this header in the object metadata.</p>
     pub website_redirect_location: std::option::Option<std::string::String>,
-    /// <p>Specifies the algorithm to use to when encrypting the object (for example,
-    /// AES256).</p>
+    /// <p>Specifies the algorithm to use to when encrypting the object (for example, AES256).</p>
     pub sse_customer_algorithm: std::option::Option<std::string::String>,
-    /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This
-    /// value is used to store the object and then it is discarded; Amazon S3 does not store the
-    /// encryption key. The key must be appropriate for use with the algorithm specified in the
-    /// <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
+    /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This value is used to store the object and then it is discarded; Amazon S3 does not store the encryption key. The key must be appropriate for use with the algorithm specified in the <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
     pub sse_customer_key: std::option::Option<std::string::String>,
-    /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses
-    /// this header for a message integrity check to ensure that the encryption key was transmitted
-    /// without error.</p>
+    /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
     pub sse_customer_key_md5: std::option::Option<std::string::String>,
-    /// <p>Specifies the Amazon Web Services KMS key ID to use for object encryption. All GET and PUT requests for
-    /// an object protected by Amazon Web Services KMS will fail if not made via SSL or using SigV4. For
-    /// information about configuring using any of the officially supported Amazon Web Services SDKs and Amazon Web Services CLI,
-    /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying the
-    /// Signature Version in Request Authentication</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Specifies the Amazon Web Services KMS key ID to use for object encryption. All GET and PUT requests for an object protected by Amazon Web Services KMS will fail if not made via SSL or using SigV4. For information about configuring using any of the officially supported Amazon Web Services SDKs and Amazon Web Services CLI, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying the Signature Version in Request Authentication</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub ssekms_key_id: std::option::Option<std::string::String>,
-    /// <p>Specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The value of this
-    /// header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value
-    /// pairs.</p>
+    /// <p>Specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value pairs.</p>
     pub ssekms_encryption_context: std::option::Option<std::string::String>,
     /// <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption using AWS KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object encryption with SSE-KMS. </p>
     /// <p>Specifying this header with a COPY action doesn’t affect bucket-level settings for S3 Bucket Key.</p>
     pub bucket_key_enabled: bool,
-    /// <p>Specifies the algorithm to use when decrypting the source object (for example,
-    /// AES256).</p>
+    /// <p>Specifies the algorithm to use when decrypting the source object (for example, AES256).</p>
     pub copy_source_sse_customer_algorithm: std::option::Option<std::string::String>,
-    /// <p>Specifies the customer-provided encryption key for Amazon S3 to use to decrypt the source
-    /// object. The encryption key provided in this header must be one that was used when the
-    /// source object was created.</p>
+    /// <p>Specifies the customer-provided encryption key for Amazon S3 to use to decrypt the source object. The encryption key provided in this header must be one that was used when the source object was created.</p>
     pub copy_source_sse_customer_key: std::option::Option<std::string::String>,
-    /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses
-    /// this header for a message integrity check to ensure that the encryption key was transmitted
-    /// without error.</p>
+    /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
     pub copy_source_sse_customer_key_md5: std::option::Option<std::string::String>,
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-    /// owners need not specify this parameter in their requests. For information about downloading
-    /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-    /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub request_payer: std::option::Option<crate::model::RequestPayer>,
-    /// <p>The tag-set for the object destination object this value must be used in conjunction
-    /// with the <code>TaggingDirective</code>. The tag-set must be encoded as URL Query
-    /// parameters.</p>
+    /// <p>The tag-set for the object destination object this value must be used in conjunction with the <code>TaggingDirective</code>. The tag-set must be encoded as URL Query parameters.</p>
     pub tagging: std::option::Option<std::string::String>,
     /// <p>The Object Lock mode that you want to apply to the copied object.</p>
     pub object_lock_mode: std::option::Option<crate::model::ObjectLockMode>,
@@ -36028,9 +34350,7 @@ impl CopyObjectInput {
     pub fn content_disposition(&self) -> std::option::Option<&str> {
         self.content_disposition.as_deref()
     }
-    /// <p>Specifies what content encodings have been applied to the object and thus what decoding
-    /// mechanisms must be applied to obtain the media-type referenced by the Content-Type header
-    /// field.</p>
+    /// <p>Specifies what content encodings have been applied to the object and thus what decoding mechanisms must be applied to obtain the media-type referenced by the Content-Type header field.</p>
     pub fn content_encoding(&self) -> std::option::Option<&str> {
         self.content_encoding.as_deref()
     }
@@ -36042,30 +34362,35 @@ impl CopyObjectInput {
     pub fn content_type(&self) -> std::option::Option<&str> {
         self.content_type.as_deref()
     }
-    /// <p>Specifies the source object for the copy operation. You specify the value in one of two
-    /// formats, depending on whether you want to access the source object through an <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">access point</a>:</p>
+    /// <p>Specifies the source object for the copy operation. You specify the value in one of two formats, depending on whether you want to access the source object through an <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">access point</a>:</p>
     /// <ul>
-    /// <li>
-    /// <p>For objects not accessed through an access point, specify the name of the source
-    /// bucket and the key of the source object, separated by a slash (/). For example, to
-    /// copy the object <code>reports/january.pdf</code> from the bucket
-    /// <code>awsexamplebucket</code>, use
-    /// <code>awsexamplebucket/reports/january.pdf</code>. The value must be URL
-    /// encoded.</p>
-    /// </li>
-    /// <li>
-    /// <p>For objects accessed through access points, specify the Amazon Resource Name (ARN) of the object as accessed through the access point, in the format <code>arn:aws:s3:<Region>:<account-id>:accesspoint/<access-point-name>/object/<key></code>. For example, to copy the object <code>reports/january.pdf</code> through access point <code>my-access-point</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3:us-west-2:123456789012:accesspoint/my-access-point/object/reports/january.pdf</code>. The value must be URL encoded.</p>
-    /// <note>
+    /// <li> <p>For objects not accessed through an access point, specify the name of the source bucket and the key of the source object, separated by a slash (/). For example, to copy the object <code>reports/january.pdf</code> from the bucket <code>awsexamplebucket</code>, use <code>awsexamplebucket/reports/january.pdf</code>. The value must be URL encoded.</p> </li>
+    /// <li> <p>For objects accessed through access points, specify the Amazon Resource Name (ARN) of the object as accessed through the access point, in the format <code>arn:aws:s3:
+    /// <region>
+    /// :
+    /// <account-id>
+    /// :accesspoint/
+    /// <access-point-name>
+    /// /object/
+    /// <key></key>
+    /// </access-point-name>
+    /// </account-id>
+    /// </region></code>. For example, to copy the object <code>reports/january.pdf</code> through access point <code>my-access-point</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3:us-west-2:123456789012:accesspoint/my-access-point/object/reports/january.pdf</code>. The value must be URL encoded.</p> <note>
     /// <p>Amazon S3 supports copy operations using access points only when the source and destination buckets are in the same Amazon Web Services Region.</p>
-    /// </note>
-    /// <p>Alternatively, for objects accessed through Amazon S3 on Outposts, specify the ARN of the object as accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/object/<key></code>. For example, to copy the object <code>reports/january.pdf</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/object/reports/january.pdf</code>. The value must be URL encoded.  </p>
-    /// </li>
+    /// </note> <p>Alternatively, for objects accessed through Amazon S3 on Outposts, specify the ARN of the object as accessed in the format <code>arn:aws:s3-outposts:
+    /// <region>
+    /// :
+    /// <account-id>
+    /// :outpost/
+    /// <outpost-id>
+    /// /object/
+    /// <key></key>
+    /// </outpost-id>
+    /// </account-id>
+    /// </region></code>. For example, to copy the object <code>reports/january.pdf</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/object/reports/january.pdf</code>. The value must be URL encoded. </p> </li>
     /// </ul>
-    /// <p>To copy a specific version of an object, append <code>?versionId=<version-id></code>
-    /// to the value (for example,
-    /// <code>awsexamplebucket/reports/january.pdf?versionId=QUpfdndhfd8438MNFDN93jdnJFkdmqnh893</code>).
-    /// If you don't specify a version ID, Amazon S3 copies the latest version of the source
-    /// object.</p>
+    /// <p>To copy a specific version of an object, append <code>?versionId=
+    /// <version-id></version-id></code> to the value (for example, <code>awsexamplebucket/reports/january.pdf?versionId=QUpfdndhfd8438MNFDN93jdnJFkdmqnh893</code>). If you don't specify a version ID, Amazon S3 copies the latest version of the source object.</p>
     pub fn copy_source(&self) -> std::option::Option<&str> {
         self.copy_source.as_deref()
     }
@@ -36093,14 +34418,12 @@ impl CopyObjectInput {
     pub fn expires(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expires.as_ref()
     }
-    /// <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the
-    /// object.</p>
+    /// <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the object.</p>
     /// <p>This action is not supported by Amazon S3 on Outposts.</p>
     pub fn grant_full_control(&self) -> std::option::Option<&str> {
         self.grant_full_control.as_deref()
     }
-    /// <p>Allows grantee to read the object data and its
-    /// metadata.</p>
+    /// <p>Allows grantee to read the object data and its metadata.</p>
     /// <p>This action is not supported by Amazon S3 on Outposts.</p>
     pub fn grant_read(&self) -> std::option::Option<&str> {
         self.grant_read.as_deref()
@@ -36110,8 +34433,7 @@ impl CopyObjectInput {
     pub fn grant_read_acp(&self) -> std::option::Option<&str> {
         self.grant_read_acp.as_deref()
     }
-    /// <p>Allows grantee to write the ACL for the applicable
-    /// object.</p>
+    /// <p>Allows grantee to write the ACL for the applicable object.</p>
     /// <p>This action is not supported by Amazon S3 on Outposts.</p>
     pub fn grant_write_acp(&self) -> std::option::Option<&str> {
         self.grant_write_acp.as_deref()
@@ -36127,66 +34449,45 @@ impl CopyObjectInput {
     {
         self.metadata.as_ref()
     }
-    /// <p>Specifies whether the metadata is copied from the source object or replaced with
-    /// metadata provided in the request.</p>
+    /// <p>Specifies whether the metadata is copied from the source object or replaced with metadata provided in the request.</p>
     pub fn metadata_directive(&self) -> std::option::Option<&crate::model::MetadataDirective> {
         self.metadata_directive.as_ref()
     }
-    /// <p>Specifies whether the object tag-set are copied from the source object or replaced with
-    /// tag-set provided in the request.</p>
+    /// <p>Specifies whether the object tag-set are copied from the source object or replaced with tag-set provided in the request.</p>
     pub fn tagging_directive(&self) -> std::option::Option<&crate::model::TaggingDirective> {
         self.tagging_directive.as_ref()
     }
-    /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example,
-    /// AES256, aws:kms).</p>
+    /// <p>The server-side encryption algorithm used when storing this object in Amazon S3 (for example, AES256, aws:kms).</p>
     pub fn server_side_encryption(
         &self,
     ) -> std::option::Option<&crate::model::ServerSideEncryption> {
         self.server_side_encryption.as_ref()
     }
-    /// <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created objects. The
-    /// STANDARD storage class provides high durability and high availability. Depending on
-    /// performance needs, you can specify a different Storage Class. Amazon S3 on Outposts only uses
-    /// the OUTPOSTS Storage Class. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a> in the
-    /// <i>Amazon S3 User Guide</i>.</p>
+    /// <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created objects. The STANDARD storage class provides high durability and high availability. Depending on performance needs, you can specify a different Storage Class. Amazon S3 on Outposts only uses the OUTPOSTS Storage Class. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn storage_class(&self) -> std::option::Option<&crate::model::StorageClass> {
         self.storage_class.as_ref()
     }
-    /// <p>If the bucket is configured as a website, redirects requests for this object to another
-    /// object in the same bucket or to an external URL. Amazon S3 stores the value of this header in
-    /// the object metadata.</p>
+    /// <p>If the bucket is configured as a website, redirects requests for this object to another object in the same bucket or to an external URL. Amazon S3 stores the value of this header in the object metadata.</p>
     pub fn website_redirect_location(&self) -> std::option::Option<&str> {
         self.website_redirect_location.as_deref()
     }
-    /// <p>Specifies the algorithm to use to when encrypting the object (for example,
-    /// AES256).</p>
+    /// <p>Specifies the algorithm to use to when encrypting the object (for example, AES256).</p>
     pub fn sse_customer_algorithm(&self) -> std::option::Option<&str> {
         self.sse_customer_algorithm.as_deref()
     }
-    /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This
-    /// value is used to store the object and then it is discarded; Amazon S3 does not store the
-    /// encryption key. The key must be appropriate for use with the algorithm specified in the
-    /// <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
+    /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This value is used to store the object and then it is discarded; Amazon S3 does not store the encryption key. The key must be appropriate for use with the algorithm specified in the <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
     pub fn sse_customer_key(&self) -> std::option::Option<&str> {
         self.sse_customer_key.as_deref()
     }
-    /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses
-    /// this header for a message integrity check to ensure that the encryption key was transmitted
-    /// without error.</p>
+    /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
     pub fn sse_customer_key_md5(&self) -> std::option::Option<&str> {
         self.sse_customer_key_md5.as_deref()
     }
-    /// <p>Specifies the Amazon Web Services KMS key ID to use for object encryption. All GET and PUT requests for
-    /// an object protected by Amazon Web Services KMS will fail if not made via SSL or using SigV4. For
-    /// information about configuring using any of the officially supported Amazon Web Services SDKs and Amazon Web Services CLI,
-    /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying the
-    /// Signature Version in Request Authentication</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Specifies the Amazon Web Services KMS key ID to use for object encryption. All GET and PUT requests for an object protected by Amazon Web Services KMS will fail if not made via SSL or using SigV4. For information about configuring using any of the officially supported Amazon Web Services SDKs and Amazon Web Services CLI, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying the Signature Version in Request Authentication</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn ssekms_key_id(&self) -> std::option::Option<&str> {
         self.ssekms_key_id.as_deref()
     }
-    /// <p>Specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The value of this
-    /// header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value
-    /// pairs.</p>
+    /// <p>Specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value pairs.</p>
     pub fn ssekms_encryption_context(&self) -> std::option::Option<&str> {
         self.ssekms_encryption_context.as_deref()
     }
@@ -36195,33 +34496,23 @@ impl CopyObjectInput {
     pub fn bucket_key_enabled(&self) -> bool {
         self.bucket_key_enabled
     }
-    /// <p>Specifies the algorithm to use when decrypting the source object (for example,
-    /// AES256).</p>
+    /// <p>Specifies the algorithm to use when decrypting the source object (for example, AES256).</p>
     pub fn copy_source_sse_customer_algorithm(&self) -> std::option::Option<&str> {
         self.copy_source_sse_customer_algorithm.as_deref()
     }
-    /// <p>Specifies the customer-provided encryption key for Amazon S3 to use to decrypt the source
-    /// object. The encryption key provided in this header must be one that was used when the
-    /// source object was created.</p>
+    /// <p>Specifies the customer-provided encryption key for Amazon S3 to use to decrypt the source object. The encryption key provided in this header must be one that was used when the source object was created.</p>
     pub fn copy_source_sse_customer_key(&self) -> std::option::Option<&str> {
         self.copy_source_sse_customer_key.as_deref()
     }
-    /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses
-    /// this header for a message integrity check to ensure that the encryption key was transmitted
-    /// without error.</p>
+    /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
     pub fn copy_source_sse_customer_key_md5(&self) -> std::option::Option<&str> {
         self.copy_source_sse_customer_key_md5.as_deref()
     }
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-    /// owners need not specify this parameter in their requests. For information about downloading
-    /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-    /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn request_payer(&self) -> std::option::Option<&crate::model::RequestPayer> {
         self.request_payer.as_ref()
     }
-    /// <p>The tag-set for the object destination object this value must be used in conjunction
-    /// with the <code>TaggingDirective</code>. The tag-set must be encoded as URL Query
-    /// parameters.</p>
+    /// <p>The tag-set for the object destination object this value must be used in conjunction with the <code>TaggingDirective</code>. The tag-set must be encoded as URL Query parameters.</p>
     pub fn tagging(&self) -> std::option::Option<&str> {
         self.tagging.as_deref()
     }
@@ -36338,10 +34629,7 @@ pub struct CompleteMultipartUploadInput {
     pub multipart_upload: std::option::Option<crate::model::CompletedMultipartUpload>,
     /// <p>ID for the initiated multipart upload.</p>
     pub upload_id: std::option::Option<std::string::String>,
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-    /// owners need not specify this parameter in their requests. For information about downloading
-    /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-    /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub request_payer: std::option::Option<crate::model::RequestPayer>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
@@ -36365,10 +34653,7 @@ impl CompleteMultipartUploadInput {
     pub fn upload_id(&self) -> std::option::Option<&str> {
         self.upload_id.as_deref()
     }
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-    /// owners need not specify this parameter in their requests. For information about downloading
-    /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-    /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn request_payer(&self) -> std::option::Option<&crate::model::RequestPayer> {
         self.request_payer.as_ref()
     }
@@ -36402,10 +34687,7 @@ pub struct AbortMultipartUploadInput {
     pub key: std::option::Option<std::string::String>,
     /// <p>Upload ID that identifies the multipart upload.</p>
     pub upload_id: std::option::Option<std::string::String>,
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-    /// owners need not specify this parameter in their requests. For information about downloading
-    /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-    /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub request_payer: std::option::Option<crate::model::RequestPayer>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request will fail with an HTTP <code>403 (Access Denied)</code> error.</p>
     pub expected_bucket_owner: std::option::Option<std::string::String>,
@@ -36425,10 +34707,7 @@ impl AbortMultipartUploadInput {
     pub fn upload_id(&self) -> std::option::Option<&str> {
         self.upload_id.as_deref()
     }
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket
-    /// owners need not specify this parameter in their requests. For information about downloading
-    /// objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in
-    /// Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requestor Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn request_payer(&self) -> std::option::Option<&crate::model::RequestPayer> {
         self.request_payer.as_ref()
     }

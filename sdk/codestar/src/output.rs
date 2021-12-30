@@ -7,12 +7,9 @@ pub struct UpdateUserProfileOutput {
     pub user_arn: std::option::Option<std::string::String>,
     /// <p>The name that is displayed as the friendly name for the user in AWS CodeStar.</p>
     pub display_name: std::option::Option<std::string::String>,
-    /// <p>The email address that is displayed as part of the user's profile in AWS
-    /// CodeStar.</p>
+    /// <p>The email address that is displayed as part of the user's profile in AWS CodeStar.</p>
     pub email_address: std::option::Option<std::string::String>,
-    /// <p>The SSH public key associated with the user in AWS CodeStar. This is the public portion of the
-    /// public/private keypair the user can use to access project resources if a project owner allows
-    /// the user remote access to those resources.</p>
+    /// <p>The SSH public key associated with the user in AWS CodeStar. This is the public portion of the public/private keypair the user can use to access project resources if a project owner allows the user remote access to those resources.</p>
     pub ssh_public_key: std::option::Option<std::string::String>,
     /// <p>The date the user profile was created, in timestamp format.</p>
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -28,14 +25,11 @@ impl UpdateUserProfileOutput {
     pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
     }
-    /// <p>The email address that is displayed as part of the user's profile in AWS
-    /// CodeStar.</p>
+    /// <p>The email address that is displayed as part of the user's profile in AWS CodeStar.</p>
     pub fn email_address(&self) -> std::option::Option<&str> {
         self.email_address.as_deref()
     }
-    /// <p>The SSH public key associated with the user in AWS CodeStar. This is the public portion of the
-    /// public/private keypair the user can use to access project resources if a project owner allows
-    /// the user remote access to those resources.</p>
+    /// <p>The SSH public key associated with the user in AWS CodeStar. This is the public portion of the public/private keypair the user can use to access project resources if a project owner allows the user remote access to those resources.</p>
     pub fn ssh_public_key(&self) -> std::option::Option<&str> {
         self.ssh_public_key.as_deref()
     }
@@ -94,14 +88,12 @@ pub mod update_user_profile_output {
             self.display_name = input;
             self
         }
-        /// <p>The email address that is displayed as part of the user's profile in AWS
-        /// CodeStar.</p>
+        /// <p>The email address that is displayed as part of the user's profile in AWS CodeStar.</p>
         pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
             self.email_address = Some(input.into());
             self
         }
-        /// <p>The email address that is displayed as part of the user's profile in AWS
-        /// CodeStar.</p>
+        /// <p>The email address that is displayed as part of the user's profile in AWS CodeStar.</p>
         pub fn set_email_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -109,16 +101,12 @@ pub mod update_user_profile_output {
             self.email_address = input;
             self
         }
-        /// <p>The SSH public key associated with the user in AWS CodeStar. This is the public portion of the
-        /// public/private keypair the user can use to access project resources if a project owner allows
-        /// the user remote access to those resources.</p>
+        /// <p>The SSH public key associated with the user in AWS CodeStar. This is the public portion of the public/private keypair the user can use to access project resources if a project owner allows the user remote access to those resources.</p>
         pub fn ssh_public_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.ssh_public_key = Some(input.into());
             self
         }
-        /// <p>The SSH public key associated with the user in AWS CodeStar. This is the public portion of the
-        /// public/private keypair the user can use to access project resources if a project owner allows
-        /// the user remote access to those resources.</p>
+        /// <p>The SSH public key associated with the user in AWS CodeStar. This is the public portion of the public/private keypair the user can use to access project resources if a project owner allows the user remote access to those resources.</p>
         pub fn set_ssh_public_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -176,18 +164,15 @@ impl UpdateUserProfileOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTeamMemberOutput {
-    /// <p>The Amazon Resource Name (ARN) of the user whose team membership attributes were
-    /// updated.</p>
+    /// <p>The Amazon Resource Name (ARN) of the user whose team membership attributes were updated.</p>
     pub user_arn: std::option::Option<std::string::String>,
     /// <p>The project role granted to the user.</p>
     pub project_role: std::option::Option<std::string::String>,
-    /// <p>Whether a team member is allowed to remotely access project resources using the SSH
-    /// public key associated with the user's profile.</p>
+    /// <p>Whether a team member is allowed to remotely access project resources using the SSH public key associated with the user's profile.</p>
     pub remote_access_allowed: std::option::Option<bool>,
 }
 impl UpdateTeamMemberOutput {
-    /// <p>The Amazon Resource Name (ARN) of the user whose team membership attributes were
-    /// updated.</p>
+    /// <p>The Amazon Resource Name (ARN) of the user whose team membership attributes were updated.</p>
     pub fn user_arn(&self) -> std::option::Option<&str> {
         self.user_arn.as_deref()
     }
@@ -195,8 +180,7 @@ impl UpdateTeamMemberOutput {
     pub fn project_role(&self) -> std::option::Option<&str> {
         self.project_role.as_deref()
     }
-    /// <p>Whether a team member is allowed to remotely access project resources using the SSH
-    /// public key associated with the user's profile.</p>
+    /// <p>Whether a team member is allowed to remotely access project resources using the SSH public key associated with the user's profile.</p>
     pub fn remote_access_allowed(&self) -> std::option::Option<bool> {
         self.remote_access_allowed
     }
@@ -221,14 +205,12 @@ pub mod update_team_member_output {
         pub(crate) remote_access_allowed: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the user whose team membership attributes were
-        /// updated.</p>
+        /// <p>The Amazon Resource Name (ARN) of the user whose team membership attributes were updated.</p>
         pub fn user_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the user whose team membership attributes were
-        /// updated.</p>
+        /// <p>The Amazon Resource Name (ARN) of the user whose team membership attributes were updated.</p>
         pub fn set_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_arn = input;
             self
@@ -243,14 +225,12 @@ pub mod update_team_member_output {
             self.project_role = input;
             self
         }
-        /// <p>Whether a team member is allowed to remotely access project resources using the SSH
-        /// public key associated with the user's profile.</p>
+        /// <p>Whether a team member is allowed to remotely access project resources using the SSH public key associated with the user's profile.</p>
         pub fn remote_access_allowed(mut self, input: bool) -> Self {
             self.remote_access_allowed = Some(input);
             self
         }
-        /// <p>Whether a team member is allowed to remotely access project resources using the SSH
-        /// public key associated with the user's profile.</p>
+        /// <p>Whether a team member is allowed to remotely access project resources using the SSH public key associated with the user's profile.</p>
         pub fn set_remote_access_allowed(mut self, input: std::option::Option<bool>) -> Self {
             self.remote_access_allowed = input;
             self
@@ -411,8 +391,7 @@ impl TagProjectOutput {
 pub struct ListUserProfilesOutput {
     /// <p>All the user profiles configured in AWS CodeStar for an AWS account.</p>
     pub user_profiles: std::option::Option<std::vec::Vec<crate::model::UserProfileSummary>>,
-    /// <p>The continuation token to use when requesting the next set of results, if there are
-    /// more results to be returned.</p>
+    /// <p>The continuation token to use when requesting the next set of results, if there are more results to be returned.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListUserProfilesOutput {
@@ -420,8 +399,7 @@ impl ListUserProfilesOutput {
     pub fn user_profiles(&self) -> std::option::Option<&[crate::model::UserProfileSummary]> {
         self.user_profiles.as_deref()
     }
-    /// <p>The continuation token to use when requesting the next set of results, if there are
-    /// more results to be returned.</p>
+    /// <p>The continuation token to use when requesting the next set of results, if there are more results to be returned.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -464,14 +442,12 @@ pub mod list_user_profiles_output {
             self.user_profiles = input;
             self
         }
-        /// <p>The continuation token to use when requesting the next set of results, if there are
-        /// more results to be returned.</p>
+        /// <p>The continuation token to use when requesting the next set of results, if there are more results to be returned.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The continuation token to use when requesting the next set of results, if there are
-        /// more results to be returned.</p>
+        /// <p>The continuation token to use when requesting the next set of results, if there are more results to be returned.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -498,8 +474,7 @@ impl ListUserProfilesOutput {
 pub struct ListTeamMembersOutput {
     /// <p>A list of team member objects for the project.</p>
     pub team_members: std::option::Option<std::vec::Vec<crate::model::TeamMember>>,
-    /// <p>The continuation token to use when requesting the next set of results, if there are
-    /// more results to be returned.</p>
+    /// <p>The continuation token to use when requesting the next set of results, if there are more results to be returned.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTeamMembersOutput {
@@ -507,8 +482,7 @@ impl ListTeamMembersOutput {
     pub fn team_members(&self) -> std::option::Option<&[crate::model::TeamMember]> {
         self.team_members.as_deref()
     }
-    /// <p>The continuation token to use when requesting the next set of results, if there are
-    /// more results to be returned.</p>
+    /// <p>The continuation token to use when requesting the next set of results, if there are more results to be returned.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -550,14 +524,12 @@ pub mod list_team_members_output {
             self.team_members = input;
             self
         }
-        /// <p>The continuation token to use when requesting the next set of results, if there are
-        /// more results to be returned.</p>
+        /// <p>The continuation token to use when requesting the next set of results, if there are more results to be returned.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The continuation token to use when requesting the next set of results, if there are
-        /// more results to be returned.</p>
+        /// <p>The continuation token to use when requesting the next set of results, if there are more results to be returned.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -678,8 +650,7 @@ impl ListTagsForProjectOutput {
 pub struct ListResourcesOutput {
     /// <p>An array of resources associated with the project. </p>
     pub resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
-    /// <p>The continuation token to use when requesting the next set of results, if there are
-    /// more results to be returned.</p>
+    /// <p>The continuation token to use when requesting the next set of results, if there are more results to be returned.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListResourcesOutput {
@@ -687,8 +658,7 @@ impl ListResourcesOutput {
     pub fn resources(&self) -> std::option::Option<&[crate::model::Resource]> {
         self.resources.as_deref()
     }
-    /// <p>The continuation token to use when requesting the next set of results, if there are
-    /// more results to be returned.</p>
+    /// <p>The continuation token to use when requesting the next set of results, if there are more results to be returned.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -730,14 +700,12 @@ pub mod list_resources_output {
             self.resources = input;
             self
         }
-        /// <p>The continuation token to use when requesting the next set of results, if there are
-        /// more results to be returned.</p>
+        /// <p>The continuation token to use when requesting the next set of results, if there are more results to be returned.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The continuation token to use when requesting the next set of results, if there are
-        /// more results to be returned.</p>
+        /// <p>The continuation token to use when requesting the next set of results, if there are more results to be returned.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -764,8 +732,7 @@ impl ListResourcesOutput {
 pub struct ListProjectsOutput {
     /// <p>A list of projects.</p>
     pub projects: std::option::Option<std::vec::Vec<crate::model::ProjectSummary>>,
-    /// <p>The continuation token to use when requesting the next set of results, if there are
-    /// more results to be returned.</p>
+    /// <p>The continuation token to use when requesting the next set of results, if there are more results to be returned.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListProjectsOutput {
@@ -773,8 +740,7 @@ impl ListProjectsOutput {
     pub fn projects(&self) -> std::option::Option<&[crate::model::ProjectSummary]> {
         self.projects.as_deref()
     }
-    /// <p>The continuation token to use when requesting the next set of results, if there are
-    /// more results to be returned.</p>
+    /// <p>The continuation token to use when requesting the next set of results, if there are more results to be returned.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -816,14 +782,12 @@ pub mod list_projects_output {
             self.projects = input;
             self
         }
-        /// <p>The continuation token to use when requesting the next set of results, if there are
-        /// more results to be returned.</p>
+        /// <p>The continuation token to use when requesting the next set of results, if there are more results to be returned.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The continuation token to use when requesting the next set of results, if there are
-        /// more results to be returned.</p>
+        /// <p>The continuation token to use when requesting the next set of results, if there are more results to be returned.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -880,27 +844,15 @@ impl DisassociateTeamMemberOutput {
 pub struct DescribeUserProfileOutput {
     /// <p>The Amazon Resource Name (ARN) of the user.</p>
     pub user_arn: std::option::Option<std::string::String>,
-    /// <p>The display name shown for the user in AWS CodeStar projects. For example, this could be set
-    /// to both first and last name ("Mary Major") or a single name ("Mary"). The display name is also
-    /// used to generate the initial icon associated with the user in AWS CodeStar projects. If spaces are
-    /// included in the display name, the first character that appears after the space will be used as
-    /// the second character in the user initial icon. The initial icon displays a maximum of two
-    /// characters, so a display name with more than one space (for example "Mary Jane Major") would
-    /// generate an initial icon using the first character and the first character after the space
-    /// ("MJ", not "MM").</p>
+    /// <p>The display name shown for the user in AWS CodeStar projects. For example, this could be set to both first and last name ("Mary Major") or a single name ("Mary"). The display name is also used to generate the initial icon associated with the user in AWS CodeStar projects. If spaces are included in the display name, the first character that appears after the space will be used as the second character in the user initial icon. The initial icon displays a maximum of two characters, so a display name with more than one space (for example "Mary Jane Major") would generate an initial icon using the first character and the first character after the space ("MJ", not "MM").</p>
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The email address for the user. Optional.</p>
     pub email_address: std::option::Option<std::string::String>,
-    /// <p>The SSH public key associated with the user. This SSH public key is associated with the
-    /// user profile, and can be used in conjunction with the associated private key for access to
-    /// project resources, such as Amazon EC2 instances, if a project owner grants remote access to
-    /// those resources.</p>
+    /// <p>The SSH public key associated with the user. This SSH public key is associated with the user profile, and can be used in conjunction with the associated private key for access to project resources, such as Amazon EC2 instances, if a project owner grants remote access to those resources.</p>
     pub ssh_public_key: std::option::Option<std::string::String>,
-    /// <p>The date and time when the user profile was created in AWS CodeStar, in timestamp
-    /// format.</p>
+    /// <p>The date and time when the user profile was created in AWS CodeStar, in timestamp format.</p>
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The date and time when the user profile was last modified, in timestamp
-    /// format.</p>
+    /// <p>The date and time when the user profile was last modified, in timestamp format.</p>
     pub last_modified_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DescribeUserProfileOutput {
@@ -908,14 +860,7 @@ impl DescribeUserProfileOutput {
     pub fn user_arn(&self) -> std::option::Option<&str> {
         self.user_arn.as_deref()
     }
-    /// <p>The display name shown for the user in AWS CodeStar projects. For example, this could be set
-    /// to both first and last name ("Mary Major") or a single name ("Mary"). The display name is also
-    /// used to generate the initial icon associated with the user in AWS CodeStar projects. If spaces are
-    /// included in the display name, the first character that appears after the space will be used as
-    /// the second character in the user initial icon. The initial icon displays a maximum of two
-    /// characters, so a display name with more than one space (for example "Mary Jane Major") would
-    /// generate an initial icon using the first character and the first character after the space
-    /// ("MJ", not "MM").</p>
+    /// <p>The display name shown for the user in AWS CodeStar projects. For example, this could be set to both first and last name ("Mary Major") or a single name ("Mary"). The display name is also used to generate the initial icon associated with the user in AWS CodeStar projects. If spaces are included in the display name, the first character that appears after the space will be used as the second character in the user initial icon. The initial icon displays a maximum of two characters, so a display name with more than one space (for example "Mary Jane Major") would generate an initial icon using the first character and the first character after the space ("MJ", not "MM").</p>
     pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
     }
@@ -923,20 +868,15 @@ impl DescribeUserProfileOutput {
     pub fn email_address(&self) -> std::option::Option<&str> {
         self.email_address.as_deref()
     }
-    /// <p>The SSH public key associated with the user. This SSH public key is associated with the
-    /// user profile, and can be used in conjunction with the associated private key for access to
-    /// project resources, such as Amazon EC2 instances, if a project owner grants remote access to
-    /// those resources.</p>
+    /// <p>The SSH public key associated with the user. This SSH public key is associated with the user profile, and can be used in conjunction with the associated private key for access to project resources, such as Amazon EC2 instances, if a project owner grants remote access to those resources.</p>
     pub fn ssh_public_key(&self) -> std::option::Option<&str> {
         self.ssh_public_key.as_deref()
     }
-    /// <p>The date and time when the user profile was created in AWS CodeStar, in timestamp
-    /// format.</p>
+    /// <p>The date and time when the user profile was created in AWS CodeStar, in timestamp format.</p>
     pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
-    /// <p>The date and time when the user profile was last modified, in timestamp
-    /// format.</p>
+    /// <p>The date and time when the user profile was last modified, in timestamp format.</p>
     pub fn last_modified_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_timestamp.as_ref()
     }
@@ -977,26 +917,12 @@ pub mod describe_user_profile_output {
             self.user_arn = input;
             self
         }
-        /// <p>The display name shown for the user in AWS CodeStar projects. For example, this could be set
-        /// to both first and last name ("Mary Major") or a single name ("Mary"). The display name is also
-        /// used to generate the initial icon associated with the user in AWS CodeStar projects. If spaces are
-        /// included in the display name, the first character that appears after the space will be used as
-        /// the second character in the user initial icon. The initial icon displays a maximum of two
-        /// characters, so a display name with more than one space (for example "Mary Jane Major") would
-        /// generate an initial icon using the first character and the first character after the space
-        /// ("MJ", not "MM").</p>
+        /// <p>The display name shown for the user in AWS CodeStar projects. For example, this could be set to both first and last name ("Mary Major") or a single name ("Mary"). The display name is also used to generate the initial icon associated with the user in AWS CodeStar projects. If spaces are included in the display name, the first character that appears after the space will be used as the second character in the user initial icon. The initial icon displays a maximum of two characters, so a display name with more than one space (for example "Mary Jane Major") would generate an initial icon using the first character and the first character after the space ("MJ", not "MM").</p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.display_name = Some(input.into());
             self
         }
-        /// <p>The display name shown for the user in AWS CodeStar projects. For example, this could be set
-        /// to both first and last name ("Mary Major") or a single name ("Mary"). The display name is also
-        /// used to generate the initial icon associated with the user in AWS CodeStar projects. If spaces are
-        /// included in the display name, the first character that appears after the space will be used as
-        /// the second character in the user initial icon. The initial icon displays a maximum of two
-        /// characters, so a display name with more than one space (for example "Mary Jane Major") would
-        /// generate an initial icon using the first character and the first character after the space
-        /// ("MJ", not "MM").</p>
+        /// <p>The display name shown for the user in AWS CodeStar projects. For example, this could be set to both first and last name ("Mary Major") or a single name ("Mary"). The display name is also used to generate the initial icon associated with the user in AWS CodeStar projects. If spaces are included in the display name, the first character that appears after the space will be used as the second character in the user initial icon. The initial icon displays a maximum of two characters, so a display name with more than one space (for example "Mary Jane Major") would generate an initial icon using the first character and the first character after the space ("MJ", not "MM").</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.display_name = input;
             self
@@ -1014,18 +940,12 @@ pub mod describe_user_profile_output {
             self.email_address = input;
             self
         }
-        /// <p>The SSH public key associated with the user. This SSH public key is associated with the
-        /// user profile, and can be used in conjunction with the associated private key for access to
-        /// project resources, such as Amazon EC2 instances, if a project owner grants remote access to
-        /// those resources.</p>
+        /// <p>The SSH public key associated with the user. This SSH public key is associated with the user profile, and can be used in conjunction with the associated private key for access to project resources, such as Amazon EC2 instances, if a project owner grants remote access to those resources.</p>
         pub fn ssh_public_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.ssh_public_key = Some(input.into());
             self
         }
-        /// <p>The SSH public key associated with the user. This SSH public key is associated with the
-        /// user profile, and can be used in conjunction with the associated private key for access to
-        /// project resources, such as Amazon EC2 instances, if a project owner grants remote access to
-        /// those resources.</p>
+        /// <p>The SSH public key associated with the user. This SSH public key is associated with the user profile, and can be used in conjunction with the associated private key for access to project resources, such as Amazon EC2 instances, if a project owner grants remote access to those resources.</p>
         pub fn set_ssh_public_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1033,14 +953,12 @@ pub mod describe_user_profile_output {
             self.ssh_public_key = input;
             self
         }
-        /// <p>The date and time when the user profile was created in AWS CodeStar, in timestamp
-        /// format.</p>
+        /// <p>The date and time when the user profile was created in AWS CodeStar, in timestamp format.</p>
         pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.created_timestamp = Some(input);
             self
         }
-        /// <p>The date and time when the user profile was created in AWS CodeStar, in timestamp
-        /// format.</p>
+        /// <p>The date and time when the user profile was created in AWS CodeStar, in timestamp format.</p>
         pub fn set_created_timestamp(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1048,14 +966,12 @@ pub mod describe_user_profile_output {
             self.created_timestamp = input;
             self
         }
-        /// <p>The date and time when the user profile was last modified, in timestamp
-        /// format.</p>
+        /// <p>The date and time when the user profile was last modified, in timestamp format.</p>
         pub fn last_modified_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_modified_timestamp = Some(input);
             self
         }
-        /// <p>The date and time when the user profile was last modified, in timestamp
-        /// format.</p>
+        /// <p>The date and time when the user profile was last modified, in timestamp format.</p>
         pub fn set_last_modified_timestamp(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1095,13 +1011,11 @@ pub struct DescribeProjectOutput {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The description of the project, if any.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>A user- or system-generated token that identifies the entity that requested project
-    /// creation. </p>
+    /// <p>A user- or system-generated token that identifies the entity that requested project creation. </p>
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The date and time the project was created, in timestamp format.</p>
     pub created_time_stamp: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The ID of the primary stack in AWS CloudFormation used to generate resources for the
-    /// project.</p>
+    /// <p>The ID of the primary stack in AWS CloudFormation used to generate resources for the project.</p>
     pub stack_id: std::option::Option<std::string::String>,
     /// <p>The ID for the AWS CodeStar project template used to create the project.</p>
     pub project_template_id: std::option::Option<std::string::String>,
@@ -1125,8 +1039,7 @@ impl DescribeProjectOutput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>A user- or system-generated token that identifies the entity that requested project
-    /// creation. </p>
+    /// <p>A user- or system-generated token that identifies the entity that requested project creation. </p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
@@ -1134,8 +1047,7 @@ impl DescribeProjectOutput {
     pub fn created_time_stamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time_stamp.as_ref()
     }
-    /// <p>The ID of the primary stack in AWS CloudFormation used to generate resources for the
-    /// project.</p>
+    /// <p>The ID of the primary stack in AWS CloudFormation used to generate resources for the project.</p>
     pub fn stack_id(&self) -> std::option::Option<&str> {
         self.stack_id.as_deref()
     }
@@ -1220,14 +1132,12 @@ pub mod describe_project_output {
             self.description = input;
             self
         }
-        /// <p>A user- or system-generated token that identifies the entity that requested project
-        /// creation. </p>
+        /// <p>A user- or system-generated token that identifies the entity that requested project creation. </p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>A user- or system-generated token that identifies the entity that requested project
-        /// creation. </p>
+        /// <p>A user- or system-generated token that identifies the entity that requested project creation. </p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1248,14 +1158,12 @@ pub mod describe_project_output {
             self.created_time_stamp = input;
             self
         }
-        /// <p>The ID of the primary stack in AWS CloudFormation used to generate resources for the
-        /// project.</p>
+        /// <p>The ID of the primary stack in AWS CloudFormation used to generate resources for the project.</p>
         pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.stack_id = Some(input.into());
             self
         }
-        /// <p>The ID of the primary stack in AWS CloudFormation used to generate resources for the
-        /// project.</p>
+        /// <p>The ID of the primary stack in AWS CloudFormation used to generate resources for the project.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_id = input;
             self
@@ -1367,15 +1275,13 @@ impl DeleteUserProfileOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteProjectOutput {
-    /// <p>The ID of the primary stack in AWS CloudFormation that will be deleted as part of
-    /// deleting the project and its resources.</p>
+    /// <p>The ID of the primary stack in AWS CloudFormation that will be deleted as part of deleting the project and its resources.</p>
     pub stack_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the deleted project.</p>
     pub project_arn: std::option::Option<std::string::String>,
 }
 impl DeleteProjectOutput {
-    /// <p>The ID of the primary stack in AWS CloudFormation that will be deleted as part of
-    /// deleting the project and its resources.</p>
+    /// <p>The ID of the primary stack in AWS CloudFormation that will be deleted as part of deleting the project and its resources.</p>
     pub fn stack_id(&self) -> std::option::Option<&str> {
         self.stack_id.as_deref()
     }
@@ -1402,14 +1308,12 @@ pub mod delete_project_output {
         pub(crate) project_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the primary stack in AWS CloudFormation that will be deleted as part of
-        /// deleting the project and its resources.</p>
+        /// <p>The ID of the primary stack in AWS CloudFormation that will be deleted as part of deleting the project and its resources.</p>
         pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.stack_id = Some(input.into());
             self
         }
-        /// <p>The ID of the primary stack in AWS CloudFormation that will be deleted as part of
-        /// deleting the project and its resources.</p>
+        /// <p>The ID of the primary stack in AWS CloudFormation that will be deleted as part of deleting the project and its resources.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_id = input;
             self
@@ -1450,9 +1354,7 @@ pub struct CreateUserProfileOutput {
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The email address that is displayed as part of the user's profile in AWS CodeStar.</p>
     pub email_address: std::option::Option<std::string::String>,
-    /// <p>The SSH public key associated with the user in AWS CodeStar. This is the public portion of the
-    /// public/private keypair the user can use to access project resources if a project owner allows
-    /// the user remote access to those resources.</p>
+    /// <p>The SSH public key associated with the user in AWS CodeStar. This is the public portion of the public/private keypair the user can use to access project resources if a project owner allows the user remote access to those resources.</p>
     pub ssh_public_key: std::option::Option<std::string::String>,
     /// <p>The date the user profile was created, in timestamp format.</p>
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -1472,9 +1374,7 @@ impl CreateUserProfileOutput {
     pub fn email_address(&self) -> std::option::Option<&str> {
         self.email_address.as_deref()
     }
-    /// <p>The SSH public key associated with the user in AWS CodeStar. This is the public portion of the
-    /// public/private keypair the user can use to access project resources if a project owner allows
-    /// the user remote access to those resources.</p>
+    /// <p>The SSH public key associated with the user in AWS CodeStar. This is the public portion of the public/private keypair the user can use to access project resources if a project owner allows the user remote access to those resources.</p>
     pub fn ssh_public_key(&self) -> std::option::Option<&str> {
         self.ssh_public_key.as_deref()
     }
@@ -1546,16 +1446,12 @@ pub mod create_user_profile_output {
             self.email_address = input;
             self
         }
-        /// <p>The SSH public key associated with the user in AWS CodeStar. This is the public portion of the
-        /// public/private keypair the user can use to access project resources if a project owner allows
-        /// the user remote access to those resources.</p>
+        /// <p>The SSH public key associated with the user in AWS CodeStar. This is the public portion of the public/private keypair the user can use to access project resources if a project owner allows the user remote access to those resources.</p>
         pub fn ssh_public_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.ssh_public_key = Some(input.into());
             self
         }
-        /// <p>The SSH public key associated with the user in AWS CodeStar. This is the public portion of the
-        /// public/private keypair the user can use to access project resources if a project owner allows
-        /// the user remote access to those resources.</p>
+        /// <p>The SSH public key associated with the user in AWS CodeStar. This is the public portion of the public/private keypair the user can use to access project resources if a project owner allows the user remote access to those resources.</p>
         pub fn set_ssh_public_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1617,8 +1513,7 @@ pub struct CreateProjectOutput {
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the created project.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>A user- or system-generated token that identifies the entity that requested project
-    /// creation.</p>
+    /// <p>A user- or system-generated token that identifies the entity that requested project creation.</p>
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>Reserved for future use.</p>
     pub project_template_id: std::option::Option<std::string::String>,
@@ -1632,8 +1527,7 @@ impl CreateProjectOutput {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>A user- or system-generated token that identifies the entity that requested project
-    /// creation.</p>
+    /// <p>A user- or system-generated token that identifies the entity that requested project creation.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
@@ -1684,14 +1578,12 @@ pub mod create_project_output {
             self.arn = input;
             self
         }
-        /// <p>A user- or system-generated token that identifies the entity that requested project
-        /// creation.</p>
+        /// <p>A user- or system-generated token that identifies the entity that requested project creation.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>A user- or system-generated token that identifies the entity that requested project
-        /// creation.</p>
+        /// <p>A user- or system-generated token that identifies the entity that requested project creation.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1734,13 +1626,11 @@ impl CreateProjectOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateTeamMemberOutput {
-    /// <p>The user- or system-generated token from the initial request that can be used to repeat
-    /// the request.</p>
+    /// <p>The user- or system-generated token from the initial request that can be used to repeat the request.</p>
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl AssociateTeamMemberOutput {
-    /// <p>The user- or system-generated token from the initial request that can be used to repeat
-    /// the request.</p>
+    /// <p>The user- or system-generated token from the initial request that can be used to repeat the request.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
@@ -1761,14 +1651,12 @@ pub mod associate_team_member_output {
         pub(crate) client_request_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The user- or system-generated token from the initial request that can be used to repeat
-        /// the request.</p>
+        /// <p>The user- or system-generated token from the initial request that can be used to repeat the request.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>The user- or system-generated token from the initial request that can be used to repeat
-        /// the request.</p>
+        /// <p>The user- or system-generated token from the initial request that can be used to repeat the request.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,

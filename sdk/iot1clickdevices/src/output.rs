@@ -145,20 +145,14 @@ impl TagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
-    /// <p>A collection of key/value pairs defining the resource tags. For example, {
-    /// "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
-    /// Tagging Strategies</a>.</p><p>
-    ///
-    /// </p>
+    /// <p>A collection of key/value pairs defining the resource tags. For example, { "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.</p>
+    /// <p> </p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
-    /// <p>A collection of key/value pairs defining the resource tags. For example, {
-    /// "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
-    /// Tagging Strategies</a>.</p><p>
-    ///
-    /// </p>
+    /// <p>A collection of key/value pairs defining the resource tags. For example, { "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.</p>
+    /// <p> </p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -188,11 +182,8 @@ pub mod list_tags_for_resource_output {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A collection of key/value pairs defining the resource tags. For example, {
-        /// "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
-        /// Tagging Strategies</a>.</p><p>
-        ///
-        /// </p>
+        /// <p>A collection of key/value pairs defining the resource tags. For example, { "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.</p>
+        /// <p> </p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -203,11 +194,8 @@ pub mod list_tags_for_resource_output {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A collection of key/value pairs defining the resource tags. For example, {
-        /// "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
-        /// Tagging Strategies</a>.</p><p>
-        ///
-        /// </p>
+        /// <p>A collection of key/value pairs defining the resource tags. For example, { "tags": {"key1": "value1", "key2": "value2"} }. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.</p>
+        /// <p> </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -316,15 +304,13 @@ impl ListDevicesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDeviceEventsOutput {
-    /// <p>An array of zero or more elements describing the event(s) associated with the
-    /// device.</p>
+    /// <p>An array of zero or more elements describing the event(s) associated with the device.</p>
     pub events: std::option::Option<std::vec::Vec<crate::model::DeviceEvent>>,
     /// <p>The token to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDeviceEventsOutput {
-    /// <p>An array of zero or more elements describing the event(s) associated with the
-    /// device.</p>
+    /// <p>An array of zero or more elements describing the event(s) associated with the device.</p>
     pub fn events(&self) -> std::option::Option<&[crate::model::DeviceEvent]> {
         self.events.as_deref()
     }
@@ -355,16 +341,14 @@ pub mod list_device_events_output {
         ///
         /// To override the contents of this collection use [`set_events`](Self::set_events).
         ///
-        /// <p>An array of zero or more elements describing the event(s) associated with the
-        /// device.</p>
+        /// <p>An array of zero or more elements describing the event(s) associated with the device.</p>
         pub fn events(mut self, input: crate::model::DeviceEvent) -> Self {
             let mut v = self.events.unwrap_or_default();
             v.push(input);
             self.events = Some(v);
             self
         }
-        /// <p>An array of zero or more elements describing the event(s) associated with the
-        /// device.</p>
+        /// <p>An array of zero or more elements describing the event(s) associated with the device.</p>
         pub fn set_events(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DeviceEvent>>,
@@ -685,8 +669,7 @@ impl DescribeDeviceOutput {
 pub struct ClaimDevicesByClaimCodeOutput {
     /// <p>The claim code provided by the device manufacturer.</p>
     pub claim_code: std::option::Option<std::string::String>,
-    /// <p>The total number of devices associated with the claim code that has been processed in
-    /// the claim request.</p>
+    /// <p>The total number of devices associated with the claim code that has been processed in the claim request.</p>
     pub total: i32,
 }
 impl ClaimDevicesByClaimCodeOutput {
@@ -694,8 +677,7 @@ impl ClaimDevicesByClaimCodeOutput {
     pub fn claim_code(&self) -> std::option::Option<&str> {
         self.claim_code.as_deref()
     }
-    /// <p>The total number of devices associated with the claim code that has been processed in
-    /// the claim request.</p>
+    /// <p>The total number of devices associated with the claim code that has been processed in the claim request.</p>
     pub fn total(&self) -> i32 {
         self.total
     }
@@ -728,14 +710,12 @@ pub mod claim_devices_by_claim_code_output {
             self.claim_code = input;
             self
         }
-        /// <p>The total number of devices associated with the claim code that has been processed in
-        /// the claim request.</p>
+        /// <p>The total number of devices associated with the claim code that has been processed in the claim request.</p>
         pub fn total(mut self, input: i32) -> Self {
             self.total = Some(input);
             self
         }
-        /// <p>The total number of devices associated with the claim code that has been processed in
-        /// the claim request.</p>
+        /// <p>The total number of devices associated with the claim code that has been processed in the claim request.</p>
         pub fn set_total(mut self, input: std::option::Option<i32>) -> Self {
             self.total = input;
             self

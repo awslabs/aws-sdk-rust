@@ -3,24 +3,17 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CognitoIdentityProvider {
-    /// <p>The provider name for an Amazon Cognito user pool. For example,
-    /// <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.</p>
+    /// <p>The provider name for an Amazon Cognito user pool. For example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.</p>
     pub provider_name: std::option::Option<std::string::String>,
     /// <p>The client ID for the Amazon Cognito user pool.</p>
     pub client_id: std::option::Option<std::string::String>,
-    /// <p>TRUE if server-side token validation is enabled for the identity provider’s
-    /// token.</p>
-    /// <p>Once you set <code>ServerSideTokenCheck</code> to TRUE for an identity pool, that
-    /// identity pool will check with the integrated user pools to make sure that the user has not
-    /// been globally signed out or deleted before the identity pool provides an OIDC token or AWS
-    /// credentials for the user.</p>
-    /// <p>If the user is signed out or deleted, the identity pool will return a 400 Not
-    /// Authorized error.</p>
+    /// <p>TRUE if server-side token validation is enabled for the identity provider’s token.</p>
+    /// <p>Once you set <code>ServerSideTokenCheck</code> to TRUE for an identity pool, that identity pool will check with the integrated user pools to make sure that the user has not been globally signed out or deleted before the identity pool provides an OIDC token or AWS credentials for the user.</p>
+    /// <p>If the user is signed out or deleted, the identity pool will return a 400 Not Authorized error.</p>
     pub server_side_token_check: std::option::Option<bool>,
 }
 impl CognitoIdentityProvider {
-    /// <p>The provider name for an Amazon Cognito user pool. For example,
-    /// <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.</p>
+    /// <p>The provider name for an Amazon Cognito user pool. For example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.</p>
     pub fn provider_name(&self) -> std::option::Option<&str> {
         self.provider_name.as_deref()
     }
@@ -28,14 +21,9 @@ impl CognitoIdentityProvider {
     pub fn client_id(&self) -> std::option::Option<&str> {
         self.client_id.as_deref()
     }
-    /// <p>TRUE if server-side token validation is enabled for the identity provider’s
-    /// token.</p>
-    /// <p>Once you set <code>ServerSideTokenCheck</code> to TRUE for an identity pool, that
-    /// identity pool will check with the integrated user pools to make sure that the user has not
-    /// been globally signed out or deleted before the identity pool provides an OIDC token or AWS
-    /// credentials for the user.</p>
-    /// <p>If the user is signed out or deleted, the identity pool will return a 400 Not
-    /// Authorized error.</p>
+    /// <p>TRUE if server-side token validation is enabled for the identity provider’s token.</p>
+    /// <p>Once you set <code>ServerSideTokenCheck</code> to TRUE for an identity pool, that identity pool will check with the integrated user pools to make sure that the user has not been globally signed out or deleted before the identity pool provides an OIDC token or AWS credentials for the user.</p>
+    /// <p>If the user is signed out or deleted, the identity pool will return a 400 Not Authorized error.</p>
     pub fn server_side_token_check(&self) -> std::option::Option<bool> {
         self.server_side_token_check
     }
@@ -60,14 +48,12 @@ pub mod cognito_identity_provider {
         pub(crate) server_side_token_check: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The provider name for an Amazon Cognito user pool. For example,
-        /// <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.</p>
+        /// <p>The provider name for an Amazon Cognito user pool. For example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.</p>
         pub fn provider_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.provider_name = Some(input.into());
             self
         }
-        /// <p>The provider name for an Amazon Cognito user pool. For example,
-        /// <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.</p>
+        /// <p>The provider name for an Amazon Cognito user pool. For example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.</p>
         pub fn set_provider_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -85,26 +71,16 @@ pub mod cognito_identity_provider {
             self.client_id = input;
             self
         }
-        /// <p>TRUE if server-side token validation is enabled for the identity provider’s
-        /// token.</p>
-        /// <p>Once you set <code>ServerSideTokenCheck</code> to TRUE for an identity pool, that
-        /// identity pool will check with the integrated user pools to make sure that the user has not
-        /// been globally signed out or deleted before the identity pool provides an OIDC token or AWS
-        /// credentials for the user.</p>
-        /// <p>If the user is signed out or deleted, the identity pool will return a 400 Not
-        /// Authorized error.</p>
+        /// <p>TRUE if server-side token validation is enabled for the identity provider’s token.</p>
+        /// <p>Once you set <code>ServerSideTokenCheck</code> to TRUE for an identity pool, that identity pool will check with the integrated user pools to make sure that the user has not been globally signed out or deleted before the identity pool provides an OIDC token or AWS credentials for the user.</p>
+        /// <p>If the user is signed out or deleted, the identity pool will return a 400 Not Authorized error.</p>
         pub fn server_side_token_check(mut self, input: bool) -> Self {
             self.server_side_token_check = Some(input);
             self
         }
-        /// <p>TRUE if server-side token validation is enabled for the identity provider’s
-        /// token.</p>
-        /// <p>Once you set <code>ServerSideTokenCheck</code> to TRUE for an identity pool, that
-        /// identity pool will check with the integrated user pools to make sure that the user has not
-        /// been globally signed out or deleted before the identity pool provides an OIDC token or AWS
-        /// credentials for the user.</p>
-        /// <p>If the user is signed out or deleted, the identity pool will return a 400 Not
-        /// Authorized error.</p>
+        /// <p>TRUE if server-side token validation is enabled for the identity provider’s token.</p>
+        /// <p>Once you set <code>ServerSideTokenCheck</code> to TRUE for an identity pool, that identity pool will check with the integrated user pools to make sure that the user has not been globally signed out or deleted before the identity pool provides an OIDC token or AWS credentials for the user.</p>
+        /// <p>If the user is signed out or deleted, the identity pool will return a 400 Not Authorized error.</p>
         pub fn set_server_side_token_check(mut self, input: std::option::Option<bool>) -> Self {
             self.server_side_token_check = input;
             self
@@ -130,45 +106,29 @@ impl CognitoIdentityProvider {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RoleMapping {
-    /// <p>The role mapping type. Token will use <code>cognito:roles</code> and
-    /// <code>cognito:preferred_role</code> claims from the Cognito identity provider token to
-    /// map groups to roles. Rules will attempt to match claims from the token to map to a
-    /// role.</p>
+    /// <p>The role mapping type. Token will use <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims from the Cognito identity provider token to map groups to roles. Rules will attempt to match claims from the token to map to a role.</p>
     pub r#type: std::option::Option<crate::model::RoleMappingType>,
-    /// <p>If you specify Token or Rules as the <code>Type</code>,
-    /// <code>AmbiguousRoleResolution</code> is required.</p>
-    /// <p>Specifies the action to be taken if either no rules match the claim value for the
-    /// <code>Rules</code> type, or there is no <code>cognito:preferred_role</code> claim and
-    /// there are multiple <code>cognito:roles</code> matches for the <code>Token</code>
-    /// type.</p>
+    /// <p>If you specify Token or Rules as the <code>Type</code>, <code>AmbiguousRoleResolution</code> is required.</p>
+    /// <p>Specifies the action to be taken if either no rules match the claim value for the <code>Rules</code> type, or there is no <code>cognito:preferred_role</code> claim and there are multiple <code>cognito:roles</code> matches for the <code>Token</code> type.</p>
     pub ambiguous_role_resolution: std::option::Option<crate::model::AmbiguousRoleResolutionType>,
     /// <p>The rules to be used for mapping users to roles.</p>
-    /// <p>If you specify Rules as the role mapping type, <code>RulesConfiguration</code> is
-    /// required.</p>
+    /// <p>If you specify Rules as the role mapping type, <code>RulesConfiguration</code> is required.</p>
     pub rules_configuration: std::option::Option<crate::model::RulesConfigurationType>,
 }
 impl RoleMapping {
-    /// <p>The role mapping type. Token will use <code>cognito:roles</code> and
-    /// <code>cognito:preferred_role</code> claims from the Cognito identity provider token to
-    /// map groups to roles. Rules will attempt to match claims from the token to map to a
-    /// role.</p>
+    /// <p>The role mapping type. Token will use <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims from the Cognito identity provider token to map groups to roles. Rules will attempt to match claims from the token to map to a role.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::RoleMappingType> {
         self.r#type.as_ref()
     }
-    /// <p>If you specify Token or Rules as the <code>Type</code>,
-    /// <code>AmbiguousRoleResolution</code> is required.</p>
-    /// <p>Specifies the action to be taken if either no rules match the claim value for the
-    /// <code>Rules</code> type, or there is no <code>cognito:preferred_role</code> claim and
-    /// there are multiple <code>cognito:roles</code> matches for the <code>Token</code>
-    /// type.</p>
+    /// <p>If you specify Token or Rules as the <code>Type</code>, <code>AmbiguousRoleResolution</code> is required.</p>
+    /// <p>Specifies the action to be taken if either no rules match the claim value for the <code>Rules</code> type, or there is no <code>cognito:preferred_role</code> claim and there are multiple <code>cognito:roles</code> matches for the <code>Token</code> type.</p>
     pub fn ambiguous_role_resolution(
         &self,
     ) -> std::option::Option<&crate::model::AmbiguousRoleResolutionType> {
         self.ambiguous_role_resolution.as_ref()
     }
     /// <p>The rules to be used for mapping users to roles.</p>
-    /// <p>If you specify Rules as the role mapping type, <code>RulesConfiguration</code> is
-    /// required.</p>
+    /// <p>If you specify Rules as the role mapping type, <code>RulesConfiguration</code> is required.</p>
     pub fn rules_configuration(
         &self,
     ) -> std::option::Option<&crate::model::RulesConfigurationType> {
@@ -196,18 +156,12 @@ pub mod role_mapping {
         pub(crate) rules_configuration: std::option::Option<crate::model::RulesConfigurationType>,
     }
     impl Builder {
-        /// <p>The role mapping type. Token will use <code>cognito:roles</code> and
-        /// <code>cognito:preferred_role</code> claims from the Cognito identity provider token to
-        /// map groups to roles. Rules will attempt to match claims from the token to map to a
-        /// role.</p>
+        /// <p>The role mapping type. Token will use <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims from the Cognito identity provider token to map groups to roles. Rules will attempt to match claims from the token to map to a role.</p>
         pub fn r#type(mut self, input: crate::model::RoleMappingType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The role mapping type. Token will use <code>cognito:roles</code> and
-        /// <code>cognito:preferred_role</code> claims from the Cognito identity provider token to
-        /// map groups to roles. Rules will attempt to match claims from the token to map to a
-        /// role.</p>
+        /// <p>The role mapping type. Token will use <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims from the Cognito identity provider token to map groups to roles. Rules will attempt to match claims from the token to map to a role.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::RoleMappingType>,
@@ -215,12 +169,8 @@ pub mod role_mapping {
             self.r#type = input;
             self
         }
-        /// <p>If you specify Token or Rules as the <code>Type</code>,
-        /// <code>AmbiguousRoleResolution</code> is required.</p>
-        /// <p>Specifies the action to be taken if either no rules match the claim value for the
-        /// <code>Rules</code> type, or there is no <code>cognito:preferred_role</code> claim and
-        /// there are multiple <code>cognito:roles</code> matches for the <code>Token</code>
-        /// type.</p>
+        /// <p>If you specify Token or Rules as the <code>Type</code>, <code>AmbiguousRoleResolution</code> is required.</p>
+        /// <p>Specifies the action to be taken if either no rules match the claim value for the <code>Rules</code> type, or there is no <code>cognito:preferred_role</code> claim and there are multiple <code>cognito:roles</code> matches for the <code>Token</code> type.</p>
         pub fn ambiguous_role_resolution(
             mut self,
             input: crate::model::AmbiguousRoleResolutionType,
@@ -228,12 +178,8 @@ pub mod role_mapping {
             self.ambiguous_role_resolution = Some(input);
             self
         }
-        /// <p>If you specify Token or Rules as the <code>Type</code>,
-        /// <code>AmbiguousRoleResolution</code> is required.</p>
-        /// <p>Specifies the action to be taken if either no rules match the claim value for the
-        /// <code>Rules</code> type, or there is no <code>cognito:preferred_role</code> claim and
-        /// there are multiple <code>cognito:roles</code> matches for the <code>Token</code>
-        /// type.</p>
+        /// <p>If you specify Token or Rules as the <code>Type</code>, <code>AmbiguousRoleResolution</code> is required.</p>
+        /// <p>Specifies the action to be taken if either no rules match the claim value for the <code>Rules</code> type, or there is no <code>cognito:preferred_role</code> claim and there are multiple <code>cognito:roles</code> matches for the <code>Token</code> type.</p>
         pub fn set_ambiguous_role_resolution(
             mut self,
             input: std::option::Option<crate::model::AmbiguousRoleResolutionType>,
@@ -242,15 +188,13 @@ pub mod role_mapping {
             self
         }
         /// <p>The rules to be used for mapping users to roles.</p>
-        /// <p>If you specify Rules as the role mapping type, <code>RulesConfiguration</code> is
-        /// required.</p>
+        /// <p>If you specify Rules as the role mapping type, <code>RulesConfiguration</code> is required.</p>
         pub fn rules_configuration(mut self, input: crate::model::RulesConfigurationType) -> Self {
             self.rules_configuration = Some(input);
             self
         }
         /// <p>The rules to be used for mapping users to roles.</p>
-        /// <p>If you specify Rules as the role mapping type, <code>RulesConfiguration</code> is
-        /// required.</p>
+        /// <p>If you specify Rules as the role mapping type, <code>RulesConfiguration</code> is required.</p>
         pub fn set_rules_configuration(
             mut self,
             input: std::option::Option<crate::model::RulesConfigurationType>,
@@ -340,16 +284,13 @@ impl RulesConfigurationType {
     }
 }
 
-/// <p>A rule that maps a claim name, a claim value, and a match type to a role
-/// ARN.</p>
+/// <p>A rule that maps a claim name, a claim value, and a match type to a role ARN.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MappingRule {
-    /// <p>The claim name that must be present in the token, for example, "isAdmin" or
-    /// "paid".</p>
+    /// <p>The claim name that must be present in the token, for example, "isAdmin" or "paid".</p>
     pub claim: std::option::Option<std::string::String>,
-    /// <p>The match condition that specifies how closely the claim value in the IdP token must
-    /// match <code>Value</code>.</p>
+    /// <p>The match condition that specifies how closely the claim value in the IdP token must match <code>Value</code>.</p>
     pub match_type: std::option::Option<crate::model::MappingRuleMatchType>,
     /// <p>A brief string that the claim must match, for example, "paid" or "yes".</p>
     pub value: std::option::Option<std::string::String>,
@@ -357,13 +298,11 @@ pub struct MappingRule {
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl MappingRule {
-    /// <p>The claim name that must be present in the token, for example, "isAdmin" or
-    /// "paid".</p>
+    /// <p>The claim name that must be present in the token, for example, "isAdmin" or "paid".</p>
     pub fn claim(&self) -> std::option::Option<&str> {
         self.claim.as_deref()
     }
-    /// <p>The match condition that specifies how closely the claim value in the IdP token must
-    /// match <code>Value</code>.</p>
+    /// <p>The match condition that specifies how closely the claim value in the IdP token must match <code>Value</code>.</p>
     pub fn match_type(&self) -> std::option::Option<&crate::model::MappingRuleMatchType> {
         self.match_type.as_ref()
     }
@@ -398,26 +337,22 @@ pub mod mapping_rule {
         pub(crate) role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The claim name that must be present in the token, for example, "isAdmin" or
-        /// "paid".</p>
+        /// <p>The claim name that must be present in the token, for example, "isAdmin" or "paid".</p>
         pub fn claim(mut self, input: impl Into<std::string::String>) -> Self {
             self.claim = Some(input.into());
             self
         }
-        /// <p>The claim name that must be present in the token, for example, "isAdmin" or
-        /// "paid".</p>
+        /// <p>The claim name that must be present in the token, for example, "isAdmin" or "paid".</p>
         pub fn set_claim(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.claim = input;
             self
         }
-        /// <p>The match condition that specifies how closely the claim value in the IdP token must
-        /// match <code>Value</code>.</p>
+        /// <p>The match condition that specifies how closely the claim value in the IdP token must match <code>Value</code>.</p>
         pub fn match_type(mut self, input: crate::model::MappingRuleMatchType) -> Self {
             self.match_type = Some(input);
             self
         }
-        /// <p>The match condition that specifies how closely the claim value in the IdP token must
-        /// match <code>Value</code>.</p>
+        /// <p>The match condition that specifies how closely the claim value in the IdP token must match <code>Value</code>.</p>
         pub fn set_match_type(
             mut self,
             input: std::option::Option<crate::model::MappingRuleMatchType>,
@@ -961,8 +896,7 @@ impl Credentials {
     }
 }
 
-/// <p>An array of UnprocessedIdentityId objects, each of which contains an ErrorCode and
-/// IdentityId.</p>
+/// <p>An array of UnprocessedIdentityId objects, each of which contains an ErrorCode and IdentityId.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnprocessedIdentityId {

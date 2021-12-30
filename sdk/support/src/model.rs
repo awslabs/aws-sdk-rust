@@ -5,36 +5,16 @@
 pub struct TrustedAdvisorCheckRefreshStatus {
     /// <p>The unique identifier for the Trusted Advisor check.</p>
     pub check_id: std::option::Option<std::string::String>,
-    /// <p>The status of the Trusted Advisor check for which a refresh has been requested:
-    /// </p>
+    /// <p>The status of the Trusted Advisor check for which a refresh has been requested: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>none</code> - The check is not refreshed or the non-success status
-    /// exceeds the timeout</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>enqueued</code> - The check refresh requests has entered the refresh
-    /// queue</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>processing</code> - The check refresh request is picked up by the rule
-    /// processing engine</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>success</code> - The check is successfully refreshed</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>abandoned</code> - The check refresh has failed</p>
-    /// </li>
+    /// <li> <p> <code>none</code> - The check is not refreshed or the non-success status exceeds the timeout</p> </li>
+    /// <li> <p> <code>enqueued</code> - The check refresh requests has entered the refresh queue</p> </li>
+    /// <li> <p> <code>processing</code> - The check refresh request is picked up by the rule processing engine</p> </li>
+    /// <li> <p> <code>success</code> - The check is successfully refreshed</p> </li>
+    /// <li> <p> <code>abandoned</code> - The check refresh has failed</p> </li>
     /// </ul>
     pub status: std::option::Option<std::string::String>,
-    /// <p>The amount of time, in milliseconds, until the Trusted Advisor check is eligible for
-    /// refresh.</p>
+    /// <p>The amount of time, in milliseconds, until the Trusted Advisor check is eligible for refresh.</p>
     pub millis_until_next_refreshable: i64,
 }
 impl TrustedAdvisorCheckRefreshStatus {
@@ -42,38 +22,18 @@ impl TrustedAdvisorCheckRefreshStatus {
     pub fn check_id(&self) -> std::option::Option<&str> {
         self.check_id.as_deref()
     }
-    /// <p>The status of the Trusted Advisor check for which a refresh has been requested:
-    /// </p>
+    /// <p>The status of the Trusted Advisor check for which a refresh has been requested: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>none</code> - The check is not refreshed or the non-success status
-    /// exceeds the timeout</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>enqueued</code> - The check refresh requests has entered the refresh
-    /// queue</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>processing</code> - The check refresh request is picked up by the rule
-    /// processing engine</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>success</code> - The check is successfully refreshed</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>abandoned</code> - The check refresh has failed</p>
-    /// </li>
+    /// <li> <p> <code>none</code> - The check is not refreshed or the non-success status exceeds the timeout</p> </li>
+    /// <li> <p> <code>enqueued</code> - The check refresh requests has entered the refresh queue</p> </li>
+    /// <li> <p> <code>processing</code> - The check refresh request is picked up by the rule processing engine</p> </li>
+    /// <li> <p> <code>success</code> - The check is successfully refreshed</p> </li>
+    /// <li> <p> <code>abandoned</code> - The check refresh has failed</p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
     }
-    /// <p>The amount of time, in milliseconds, until the Trusted Advisor check is eligible for
-    /// refresh.</p>
+    /// <p>The amount of time, in milliseconds, until the Trusted Advisor check is eligible for refresh.</p>
     pub fn millis_until_next_refreshable(&self) -> i64 {
         self.millis_until_next_refreshable
     }
@@ -111,76 +71,36 @@ pub mod trusted_advisor_check_refresh_status {
             self.check_id = input;
             self
         }
-        /// <p>The status of the Trusted Advisor check for which a refresh has been requested:
-        /// </p>
+        /// <p>The status of the Trusted Advisor check for which a refresh has been requested: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>none</code> - The check is not refreshed or the non-success status
-        /// exceeds the timeout</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>enqueued</code> - The check refresh requests has entered the refresh
-        /// queue</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>processing</code> - The check refresh request is picked up by the rule
-        /// processing engine</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>success</code> - The check is successfully refreshed</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>abandoned</code> - The check refresh has failed</p>
-        /// </li>
+        /// <li> <p> <code>none</code> - The check is not refreshed or the non-success status exceeds the timeout</p> </li>
+        /// <li> <p> <code>enqueued</code> - The check refresh requests has entered the refresh queue</p> </li>
+        /// <li> <p> <code>processing</code> - The check refresh request is picked up by the rule processing engine</p> </li>
+        /// <li> <p> <code>success</code> - The check is successfully refreshed</p> </li>
+        /// <li> <p> <code>abandoned</code> - The check refresh has failed</p> </li>
         /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
             self
         }
-        /// <p>The status of the Trusted Advisor check for which a refresh has been requested:
-        /// </p>
+        /// <p>The status of the Trusted Advisor check for which a refresh has been requested: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>none</code> - The check is not refreshed or the non-success status
-        /// exceeds the timeout</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>enqueued</code> - The check refresh requests has entered the refresh
-        /// queue</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>processing</code> - The check refresh request is picked up by the rule
-        /// processing engine</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>success</code> - The check is successfully refreshed</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>abandoned</code> - The check refresh has failed</p>
-        /// </li>
+        /// <li> <p> <code>none</code> - The check is not refreshed or the non-success status exceeds the timeout</p> </li>
+        /// <li> <p> <code>enqueued</code> - The check refresh requests has entered the refresh queue</p> </li>
+        /// <li> <p> <code>processing</code> - The check refresh request is picked up by the rule processing engine</p> </li>
+        /// <li> <p> <code>success</code> - The check is successfully refreshed</p> </li>
+        /// <li> <p> <code>abandoned</code> - The check refresh has failed</p> </li>
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
         }
-        /// <p>The amount of time, in milliseconds, until the Trusted Advisor check is eligible for
-        /// refresh.</p>
+        /// <p>The amount of time, in milliseconds, until the Trusted Advisor check is eligible for refresh.</p>
         pub fn millis_until_next_refreshable(mut self, input: i64) -> Self {
             self.millis_until_next_refreshable = Some(input);
             self
         }
-        /// <p>The amount of time, in milliseconds, until the Trusted Advisor check is eligible for
-        /// refresh.</p>
+        /// <p>The amount of time, in milliseconds, until the Trusted Advisor check is eligible for refresh.</p>
         pub fn set_millis_until_next_refreshable(
             mut self,
             input: std::option::Option<i64>,
@@ -207,8 +127,7 @@ impl TrustedAdvisorCheckRefreshStatus {
     }
 }
 
-/// <p>A summary of a Trusted Advisor check result, including the alert status, last refresh,
-/// and number of resources examined.</p>
+/// <p>A summary of a Trusted Advisor check result, including the alert status, last refresh, and number of resources examined.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TrustedAdvisorCheckSummary {
@@ -216,15 +135,13 @@ pub struct TrustedAdvisorCheckSummary {
     pub check_id: std::option::Option<std::string::String>,
     /// <p>The time of the last refresh of the check.</p>
     pub timestamp: std::option::Option<std::string::String>,
-    /// <p>The alert status of the check: "ok" (green), "warning" (yellow), "error" (red), or
-    /// "not_available".</p>
+    /// <p>The alert status of the check: "ok" (green), "warning" (yellow), "error" (red), or "not_available".</p>
     pub status: std::option::Option<std::string::String>,
     /// <p>Specifies whether the Trusted Advisor check has flagged resources.</p>
     pub has_flagged_resources: bool,
-    /// <p>Details about AWS resources that were analyzed in a call to Trusted Advisor <a>DescribeTrustedAdvisorCheckSummaries</a>.</p>
+    /// <p>Details about AWS resources that were analyzed in a call to Trusted Advisor <code>DescribeTrustedAdvisorCheckSummaries</code>.</p>
     pub resources_summary: std::option::Option<crate::model::TrustedAdvisorResourcesSummary>,
-    /// <p>Summary information that relates to the category of the check. Cost Optimizing is the
-    /// only category that is currently supported.</p>
+    /// <p>Summary information that relates to the category of the check. Cost Optimizing is the only category that is currently supported.</p>
     pub category_specific_summary:
         std::option::Option<crate::model::TrustedAdvisorCategorySpecificSummary>,
 }
@@ -237,8 +154,7 @@ impl TrustedAdvisorCheckSummary {
     pub fn timestamp(&self) -> std::option::Option<&str> {
         self.timestamp.as_deref()
     }
-    /// <p>The alert status of the check: "ok" (green), "warning" (yellow), "error" (red), or
-    /// "not_available".</p>
+    /// <p>The alert status of the check: "ok" (green), "warning" (yellow), "error" (red), or "not_available".</p>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
     }
@@ -246,14 +162,13 @@ impl TrustedAdvisorCheckSummary {
     pub fn has_flagged_resources(&self) -> bool {
         self.has_flagged_resources
     }
-    /// <p>Details about AWS resources that were analyzed in a call to Trusted Advisor <a>DescribeTrustedAdvisorCheckSummaries</a>.</p>
+    /// <p>Details about AWS resources that were analyzed in a call to Trusted Advisor <code>DescribeTrustedAdvisorCheckSummaries</code>.</p>
     pub fn resources_summary(
         &self,
     ) -> std::option::Option<&crate::model::TrustedAdvisorResourcesSummary> {
         self.resources_summary.as_ref()
     }
-    /// <p>Summary information that relates to the category of the check. Cost Optimizing is the
-    /// only category that is currently supported.</p>
+    /// <p>Summary information that relates to the category of the check. Cost Optimizing is the only category that is currently supported.</p>
     pub fn category_specific_summary(
         &self,
     ) -> std::option::Option<&crate::model::TrustedAdvisorCategorySpecificSummary> {
@@ -308,14 +223,12 @@ pub mod trusted_advisor_check_summary {
             self.timestamp = input;
             self
         }
-        /// <p>The alert status of the check: "ok" (green), "warning" (yellow), "error" (red), or
-        /// "not_available".</p>
+        /// <p>The alert status of the check: "ok" (green), "warning" (yellow), "error" (red), or "not_available".</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
             self
         }
-        /// <p>The alert status of the check: "ok" (green), "warning" (yellow), "error" (red), or
-        /// "not_available".</p>
+        /// <p>The alert status of the check: "ok" (green), "warning" (yellow), "error" (red), or "not_available".</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -330,7 +243,7 @@ pub mod trusted_advisor_check_summary {
             self.has_flagged_resources = input;
             self
         }
-        /// <p>Details about AWS resources that were analyzed in a call to Trusted Advisor <a>DescribeTrustedAdvisorCheckSummaries</a>.</p>
+        /// <p>Details about AWS resources that were analyzed in a call to Trusted Advisor <code>DescribeTrustedAdvisorCheckSummaries</code>.</p>
         pub fn resources_summary(
             mut self,
             input: crate::model::TrustedAdvisorResourcesSummary,
@@ -338,7 +251,7 @@ pub mod trusted_advisor_check_summary {
             self.resources_summary = Some(input);
             self
         }
-        /// <p>Details about AWS resources that were analyzed in a call to Trusted Advisor <a>DescribeTrustedAdvisorCheckSummaries</a>.</p>
+        /// <p>Details about AWS resources that were analyzed in a call to Trusted Advisor <code>DescribeTrustedAdvisorCheckSummaries</code>.</p>
         pub fn set_resources_summary(
             mut self,
             input: std::option::Option<crate::model::TrustedAdvisorResourcesSummary>,
@@ -346,8 +259,7 @@ pub mod trusted_advisor_check_summary {
             self.resources_summary = input;
             self
         }
-        /// <p>Summary information that relates to the category of the check. Cost Optimizing is the
-        /// only category that is currently supported.</p>
+        /// <p>Summary information that relates to the category of the check. Cost Optimizing is the only category that is currently supported.</p>
         pub fn category_specific_summary(
             mut self,
             input: crate::model::TrustedAdvisorCategorySpecificSummary,
@@ -355,8 +267,7 @@ pub mod trusted_advisor_check_summary {
             self.category_specific_summary = Some(input);
             self
         }
-        /// <p>Summary information that relates to the category of the check. Cost Optimizing is the
-        /// only category that is currently supported.</p>
+        /// <p>Summary information that relates to the category of the check. Cost Optimizing is the only category that is currently supported.</p>
         pub fn set_category_specific_summary(
             mut self,
             input: std::option::Option<crate::model::TrustedAdvisorCategorySpecificSummary>,
@@ -388,13 +299,11 @@ impl TrustedAdvisorCheckSummary {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TrustedAdvisorCategorySpecificSummary {
-    /// <p>The summary information about cost savings for a Trusted Advisor check that is in the
-    /// Cost Optimizing category.</p>
+    /// <p>The summary information about cost savings for a Trusted Advisor check that is in the Cost Optimizing category.</p>
     pub cost_optimizing: std::option::Option<crate::model::TrustedAdvisorCostOptimizingSummary>,
 }
 impl TrustedAdvisorCategorySpecificSummary {
-    /// <p>The summary information about cost savings for a Trusted Advisor check that is in the
-    /// Cost Optimizing category.</p>
+    /// <p>The summary information about cost savings for a Trusted Advisor check that is in the Cost Optimizing category.</p>
     pub fn cost_optimizing(
         &self,
     ) -> std::option::Option<&crate::model::TrustedAdvisorCostOptimizingSummary> {
@@ -418,8 +327,7 @@ pub mod trusted_advisor_category_specific_summary {
             std::option::Option<crate::model::TrustedAdvisorCostOptimizingSummary>,
     }
     impl Builder {
-        /// <p>The summary information about cost savings for a Trusted Advisor check that is in the
-        /// Cost Optimizing category.</p>
+        /// <p>The summary information about cost savings for a Trusted Advisor check that is in the Cost Optimizing category.</p>
         pub fn cost_optimizing(
             mut self,
             input: crate::model::TrustedAdvisorCostOptimizingSummary,
@@ -427,8 +335,7 @@ pub mod trusted_advisor_category_specific_summary {
             self.cost_optimizing = Some(input);
             self
         }
-        /// <p>The summary information about cost savings for a Trusted Advisor check that is in the
-        /// Cost Optimizing category.</p>
+        /// <p>The summary information about cost savings for a Trusted Advisor check that is in the Cost Optimizing category.</p>
         pub fn set_cost_optimizing(
             mut self,
             input: std::option::Option<crate::model::TrustedAdvisorCostOptimizingSummary>,
@@ -451,26 +358,21 @@ impl TrustedAdvisorCategorySpecificSummary {
     }
 }
 
-/// <p>The estimated cost savings that might be realized if the recommended operations are
-/// taken.</p>
+/// <p>The estimated cost savings that might be realized if the recommended operations are taken.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TrustedAdvisorCostOptimizingSummary {
-    /// <p>The estimated monthly savings that might be realized if the recommended operations are
-    /// taken.</p>
+    /// <p>The estimated monthly savings that might be realized if the recommended operations are taken.</p>
     pub estimated_monthly_savings: f64,
-    /// <p>The estimated percentage of savings that might be realized if the recommended
-    /// operations are taken.</p>
+    /// <p>The estimated percentage of savings that might be realized if the recommended operations are taken.</p>
     pub estimated_percent_monthly_savings: f64,
 }
 impl TrustedAdvisorCostOptimizingSummary {
-    /// <p>The estimated monthly savings that might be realized if the recommended operations are
-    /// taken.</p>
+    /// <p>The estimated monthly savings that might be realized if the recommended operations are taken.</p>
     pub fn estimated_monthly_savings(&self) -> f64 {
         self.estimated_monthly_savings
     }
-    /// <p>The estimated percentage of savings that might be realized if the recommended
-    /// operations are taken.</p>
+    /// <p>The estimated percentage of savings that might be realized if the recommended operations are taken.</p>
     pub fn estimated_percent_monthly_savings(&self) -> f64 {
         self.estimated_percent_monthly_savings
     }
@@ -496,26 +398,22 @@ pub mod trusted_advisor_cost_optimizing_summary {
         pub(crate) estimated_percent_monthly_savings: std::option::Option<f64>,
     }
     impl Builder {
-        /// <p>The estimated monthly savings that might be realized if the recommended operations are
-        /// taken.</p>
+        /// <p>The estimated monthly savings that might be realized if the recommended operations are taken.</p>
         pub fn estimated_monthly_savings(mut self, input: f64) -> Self {
             self.estimated_monthly_savings = Some(input);
             self
         }
-        /// <p>The estimated monthly savings that might be realized if the recommended operations are
-        /// taken.</p>
+        /// <p>The estimated monthly savings that might be realized if the recommended operations are taken.</p>
         pub fn set_estimated_monthly_savings(mut self, input: std::option::Option<f64>) -> Self {
             self.estimated_monthly_savings = input;
             self
         }
-        /// <p>The estimated percentage of savings that might be realized if the recommended
-        /// operations are taken.</p>
+        /// <p>The estimated percentage of savings that might be realized if the recommended operations are taken.</p>
         pub fn estimated_percent_monthly_savings(mut self, input: f64) -> Self {
             self.estimated_percent_monthly_savings = Some(input);
             self
         }
-        /// <p>The estimated percentage of savings that might be realized if the recommended
-        /// operations are taken.</p>
+        /// <p>The estimated percentage of savings that might be realized if the recommended operations are taken.</p>
         pub fn set_estimated_percent_monthly_savings(
             mut self,
             input: std::option::Option<f64>,
@@ -541,20 +439,17 @@ impl TrustedAdvisorCostOptimizingSummary {
     }
 }
 
-/// <p>Details about AWS resources that were analyzed in a call to Trusted Advisor <a>DescribeTrustedAdvisorCheckSummaries</a>.</p>
+/// <p>Details about AWS resources that were analyzed in a call to Trusted Advisor <code>DescribeTrustedAdvisorCheckSummaries</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TrustedAdvisorResourcesSummary {
     /// <p>The number of AWS resources that were analyzed by the Trusted Advisor check.</p>
     pub resources_processed: i64,
-    /// <p>The number of AWS resources that were flagged (listed) by the Trusted Advisor
-    /// check.</p>
+    /// <p>The number of AWS resources that were flagged (listed) by the Trusted Advisor check.</p>
     pub resources_flagged: i64,
-    /// <p>The number of AWS resources ignored by Trusted Advisor because information was
-    /// unavailable.</p>
+    /// <p>The number of AWS resources ignored by Trusted Advisor because information was unavailable.</p>
     pub resources_ignored: i64,
-    /// <p>The number of AWS resources ignored by Trusted Advisor because they were marked as
-    /// suppressed by the user.</p>
+    /// <p>The number of AWS resources ignored by Trusted Advisor because they were marked as suppressed by the user.</p>
     pub resources_suppressed: i64,
 }
 impl TrustedAdvisorResourcesSummary {
@@ -562,18 +457,15 @@ impl TrustedAdvisorResourcesSummary {
     pub fn resources_processed(&self) -> i64 {
         self.resources_processed
     }
-    /// <p>The number of AWS resources that were flagged (listed) by the Trusted Advisor
-    /// check.</p>
+    /// <p>The number of AWS resources that were flagged (listed) by the Trusted Advisor check.</p>
     pub fn resources_flagged(&self) -> i64 {
         self.resources_flagged
     }
-    /// <p>The number of AWS resources ignored by Trusted Advisor because information was
-    /// unavailable.</p>
+    /// <p>The number of AWS resources ignored by Trusted Advisor because information was unavailable.</p>
     pub fn resources_ignored(&self) -> i64 {
         self.resources_ignored
     }
-    /// <p>The number of AWS resources ignored by Trusted Advisor because they were marked as
-    /// suppressed by the user.</p>
+    /// <p>The number of AWS resources ignored by Trusted Advisor because they were marked as suppressed by the user.</p>
     pub fn resources_suppressed(&self) -> i64 {
         self.resources_suppressed
     }
@@ -610,38 +502,32 @@ pub mod trusted_advisor_resources_summary {
             self.resources_processed = input;
             self
         }
-        /// <p>The number of AWS resources that were flagged (listed) by the Trusted Advisor
-        /// check.</p>
+        /// <p>The number of AWS resources that were flagged (listed) by the Trusted Advisor check.</p>
         pub fn resources_flagged(mut self, input: i64) -> Self {
             self.resources_flagged = Some(input);
             self
         }
-        /// <p>The number of AWS resources that were flagged (listed) by the Trusted Advisor
-        /// check.</p>
+        /// <p>The number of AWS resources that were flagged (listed) by the Trusted Advisor check.</p>
         pub fn set_resources_flagged(mut self, input: std::option::Option<i64>) -> Self {
             self.resources_flagged = input;
             self
         }
-        /// <p>The number of AWS resources ignored by Trusted Advisor because information was
-        /// unavailable.</p>
+        /// <p>The number of AWS resources ignored by Trusted Advisor because information was unavailable.</p>
         pub fn resources_ignored(mut self, input: i64) -> Self {
             self.resources_ignored = Some(input);
             self
         }
-        /// <p>The number of AWS resources ignored by Trusted Advisor because information was
-        /// unavailable.</p>
+        /// <p>The number of AWS resources ignored by Trusted Advisor because information was unavailable.</p>
         pub fn set_resources_ignored(mut self, input: std::option::Option<i64>) -> Self {
             self.resources_ignored = input;
             self
         }
-        /// <p>The number of AWS resources ignored by Trusted Advisor because they were marked as
-        /// suppressed by the user.</p>
+        /// <p>The number of AWS resources ignored by Trusted Advisor because they were marked as suppressed by the user.</p>
         pub fn resources_suppressed(mut self, input: i64) -> Self {
             self.resources_suppressed = Some(input);
             self
         }
-        /// <p>The number of AWS resources ignored by Trusted Advisor because they were marked as
-        /// suppressed by the user.</p>
+        /// <p>The number of AWS resources ignored by Trusted Advisor because they were marked as suppressed by the user.</p>
         pub fn set_resources_suppressed(mut self, input: std::option::Option<i64>) -> Self {
             self.resources_suppressed = input;
             self
@@ -672,16 +558,11 @@ pub struct TrustedAdvisorCheckDescription {
     pub id: std::option::Option<std::string::String>,
     /// <p>The display name for the Trusted Advisor check.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The description of the Trusted Advisor check, which includes the alert criteria and
-    /// recommended operations (contains HTML markup).</p>
+    /// <p>The description of the Trusted Advisor check, which includes the alert criteria and recommended operations (contains HTML markup).</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The category of the Trusted Advisor check.</p>
     pub category: std::option::Option<std::string::String>,
-    /// <p>The column headings for the data returned by the Trusted Advisor check. The order of
-    /// the headings corresponds to the order of the data in the <b>Metadata</b> element of the <a>TrustedAdvisorResourceDetail</a>
-    /// for the check. <b>Metadata</b> contains all the data that is
-    /// shown in the Excel download, even in those cases where the UI shows just summary data.
-    /// </p>
+    /// <p>The column headings for the data returned by the Trusted Advisor check. The order of the headings corresponds to the order of the data in the <b>Metadata</b> element of the <code>TrustedAdvisorResourceDetail</code> for the check. <b>Metadata</b> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data. </p>
     pub metadata: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl TrustedAdvisorCheckDescription {
@@ -693,8 +574,7 @@ impl TrustedAdvisorCheckDescription {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The description of the Trusted Advisor check, which includes the alert criteria and
-    /// recommended operations (contains HTML markup).</p>
+    /// <p>The description of the Trusted Advisor check, which includes the alert criteria and recommended operations (contains HTML markup).</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -702,11 +582,7 @@ impl TrustedAdvisorCheckDescription {
     pub fn category(&self) -> std::option::Option<&str> {
         self.category.as_deref()
     }
-    /// <p>The column headings for the data returned by the Trusted Advisor check. The order of
-    /// the headings corresponds to the order of the data in the <b>Metadata</b> element of the <a>TrustedAdvisorResourceDetail</a>
-    /// for the check. <b>Metadata</b> contains all the data that is
-    /// shown in the Excel download, even in those cases where the UI shows just summary data.
-    /// </p>
+    /// <p>The column headings for the data returned by the Trusted Advisor check. The order of the headings corresponds to the order of the data in the <b>Metadata</b> element of the <code>TrustedAdvisorResourceDetail</code> for the check. <b>Metadata</b> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data. </p>
     pub fn metadata(&self) -> std::option::Option<&[std::string::String]> {
         self.metadata.as_deref()
     }
@@ -755,14 +631,12 @@ pub mod trusted_advisor_check_description {
             self.name = input;
             self
         }
-        /// <p>The description of the Trusted Advisor check, which includes the alert criteria and
-        /// recommended operations (contains HTML markup).</p>
+        /// <p>The description of the Trusted Advisor check, which includes the alert criteria and recommended operations (contains HTML markup).</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>The description of the Trusted Advisor check, which includes the alert criteria and
-        /// recommended operations (contains HTML markup).</p>
+        /// <p>The description of the Trusted Advisor check, which includes the alert criteria and recommended operations (contains HTML markup).</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -781,22 +655,14 @@ pub mod trusted_advisor_check_description {
         ///
         /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
         ///
-        /// <p>The column headings for the data returned by the Trusted Advisor check. The order of
-        /// the headings corresponds to the order of the data in the <b>Metadata</b> element of the <a>TrustedAdvisorResourceDetail</a>
-        /// for the check. <b>Metadata</b> contains all the data that is
-        /// shown in the Excel download, even in those cases where the UI shows just summary data.
-        /// </p>
+        /// <p>The column headings for the data returned by the Trusted Advisor check. The order of the headings corresponds to the order of the data in the <b>Metadata</b> element of the <code>TrustedAdvisorResourceDetail</code> for the check. <b>Metadata</b> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data. </p>
         pub fn metadata(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.metadata.unwrap_or_default();
             v.push(input.into());
             self.metadata = Some(v);
             self
         }
-        /// <p>The column headings for the data returned by the Trusted Advisor check. The order of
-        /// the headings corresponds to the order of the data in the <b>Metadata</b> element of the <a>TrustedAdvisorResourceDetail</a>
-        /// for the check. <b>Metadata</b> contains all the data that is
-        /// shown in the Excel download, even in those cases where the UI shows just summary data.
-        /// </p>
+        /// <p>The column headings for the data returned by the Trusted Advisor check. The order of the headings corresponds to the order of the data in the <b>Metadata</b> element of the <code>TrustedAdvisorResourceDetail</code> for the check. <b>Metadata</b> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data. </p>
         pub fn set_metadata(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -823,7 +689,7 @@ impl TrustedAdvisorCheckDescription {
     }
 }
 
-/// <p>The results of a Trusted Advisor check returned by <a>DescribeTrustedAdvisorCheckResult</a>.</p>
+/// <p>The results of a Trusted Advisor check returned by <code>DescribeTrustedAdvisorCheckResult</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TrustedAdvisorCheckResult {
@@ -831,13 +697,11 @@ pub struct TrustedAdvisorCheckResult {
     pub check_id: std::option::Option<std::string::String>,
     /// <p>The time of the last refresh of the check.</p>
     pub timestamp: std::option::Option<std::string::String>,
-    /// <p>The alert status of the check: "ok" (green), "warning" (yellow), "error" (red), or
-    /// "not_available".</p>
+    /// <p>The alert status of the check: "ok" (green), "warning" (yellow), "error" (red), or "not_available".</p>
     pub status: std::option::Option<std::string::String>,
-    /// <p>Details about AWS resources that were analyzed in a call to Trusted Advisor <a>DescribeTrustedAdvisorCheckSummaries</a>.</p>
+    /// <p>Details about AWS resources that were analyzed in a call to Trusted Advisor <code>DescribeTrustedAdvisorCheckSummaries</code>.</p>
     pub resources_summary: std::option::Option<crate::model::TrustedAdvisorResourcesSummary>,
-    /// <p>Summary information that relates to the category of the check. Cost Optimizing is the
-    /// only category that is currently supported.</p>
+    /// <p>Summary information that relates to the category of the check. Cost Optimizing is the only category that is currently supported.</p>
     pub category_specific_summary:
         std::option::Option<crate::model::TrustedAdvisorCategorySpecificSummary>,
     /// <p>The details about each resource listed in the check result.</p>
@@ -853,19 +717,17 @@ impl TrustedAdvisorCheckResult {
     pub fn timestamp(&self) -> std::option::Option<&str> {
         self.timestamp.as_deref()
     }
-    /// <p>The alert status of the check: "ok" (green), "warning" (yellow), "error" (red), or
-    /// "not_available".</p>
+    /// <p>The alert status of the check: "ok" (green), "warning" (yellow), "error" (red), or "not_available".</p>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
     }
-    /// <p>Details about AWS resources that were analyzed in a call to Trusted Advisor <a>DescribeTrustedAdvisorCheckSummaries</a>.</p>
+    /// <p>Details about AWS resources that were analyzed in a call to Trusted Advisor <code>DescribeTrustedAdvisorCheckSummaries</code>.</p>
     pub fn resources_summary(
         &self,
     ) -> std::option::Option<&crate::model::TrustedAdvisorResourcesSummary> {
         self.resources_summary.as_ref()
     }
-    /// <p>Summary information that relates to the category of the check. Cost Optimizing is the
-    /// only category that is currently supported.</p>
+    /// <p>Summary information that relates to the category of the check. Cost Optimizing is the only category that is currently supported.</p>
     pub fn category_specific_summary(
         &self,
     ) -> std::option::Option<&crate::model::TrustedAdvisorCategorySpecificSummary> {
@@ -927,19 +789,17 @@ pub mod trusted_advisor_check_result {
             self.timestamp = input;
             self
         }
-        /// <p>The alert status of the check: "ok" (green), "warning" (yellow), "error" (red), or
-        /// "not_available".</p>
+        /// <p>The alert status of the check: "ok" (green), "warning" (yellow), "error" (red), or "not_available".</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
             self
         }
-        /// <p>The alert status of the check: "ok" (green), "warning" (yellow), "error" (red), or
-        /// "not_available".</p>
+        /// <p>The alert status of the check: "ok" (green), "warning" (yellow), "error" (red), or "not_available".</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
         }
-        /// <p>Details about AWS resources that were analyzed in a call to Trusted Advisor <a>DescribeTrustedAdvisorCheckSummaries</a>.</p>
+        /// <p>Details about AWS resources that were analyzed in a call to Trusted Advisor <code>DescribeTrustedAdvisorCheckSummaries</code>.</p>
         pub fn resources_summary(
             mut self,
             input: crate::model::TrustedAdvisorResourcesSummary,
@@ -947,7 +807,7 @@ pub mod trusted_advisor_check_result {
             self.resources_summary = Some(input);
             self
         }
-        /// <p>Details about AWS resources that were analyzed in a call to Trusted Advisor <a>DescribeTrustedAdvisorCheckSummaries</a>.</p>
+        /// <p>Details about AWS resources that were analyzed in a call to Trusted Advisor <code>DescribeTrustedAdvisorCheckSummaries</code>.</p>
         pub fn set_resources_summary(
             mut self,
             input: std::option::Option<crate::model::TrustedAdvisorResourcesSummary>,
@@ -955,8 +815,7 @@ pub mod trusted_advisor_check_result {
             self.resources_summary = input;
             self
         }
-        /// <p>Summary information that relates to the category of the check. Cost Optimizing is the
-        /// only category that is currently supported.</p>
+        /// <p>Summary information that relates to the category of the check. Cost Optimizing is the only category that is currently supported.</p>
         pub fn category_specific_summary(
             mut self,
             input: crate::model::TrustedAdvisorCategorySpecificSummary,
@@ -964,8 +823,7 @@ pub mod trusted_advisor_check_result {
             self.category_specific_summary = Some(input);
             self
         }
-        /// <p>Summary information that relates to the category of the check. Cost Optimizing is the
-        /// only category that is currently supported.</p>
+        /// <p>Summary information that relates to the category of the check. Cost Optimizing is the only category that is currently supported.</p>
         pub fn set_category_specific_summary(
             mut self,
             input: std::option::Option<crate::model::TrustedAdvisorCategorySpecificSummary>,
@@ -1025,13 +883,9 @@ pub struct TrustedAdvisorResourceDetail {
     pub region: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the identified resource.</p>
     pub resource_id: std::option::Option<std::string::String>,
-    /// <p>Specifies whether the AWS resource was ignored by Trusted Advisor because it was
-    /// marked as suppressed by the user.</p>
+    /// <p>Specifies whether the AWS resource was ignored by Trusted Advisor because it was marked as suppressed by the user.</p>
     pub is_suppressed: bool,
-    /// <p>Additional information about the identified resource. The exact metadata and its order
-    /// can be obtained by inspecting the <a>TrustedAdvisorCheckDescription</a>
-    /// object returned by the call to <a>DescribeTrustedAdvisorChecks</a>. <b>Metadata</b> contains all the data that is shown in the Excel
-    /// download, even in those cases where the UI shows just summary data.</p>
+    /// <p>Additional information about the identified resource. The exact metadata and its order can be obtained by inspecting the <code>TrustedAdvisorCheckDescription</code> object returned by the call to <code>DescribeTrustedAdvisorChecks</code>. <b>Metadata</b> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data.</p>
     pub metadata: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl TrustedAdvisorResourceDetail {
@@ -1047,15 +901,11 @@ impl TrustedAdvisorResourceDetail {
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
-    /// <p>Specifies whether the AWS resource was ignored by Trusted Advisor because it was
-    /// marked as suppressed by the user.</p>
+    /// <p>Specifies whether the AWS resource was ignored by Trusted Advisor because it was marked as suppressed by the user.</p>
     pub fn is_suppressed(&self) -> bool {
         self.is_suppressed
     }
-    /// <p>Additional information about the identified resource. The exact metadata and its order
-    /// can be obtained by inspecting the <a>TrustedAdvisorCheckDescription</a>
-    /// object returned by the call to <a>DescribeTrustedAdvisorChecks</a>. <b>Metadata</b> contains all the data that is shown in the Excel
-    /// download, even in those cases where the UI shows just summary data.</p>
+    /// <p>Additional information about the identified resource. The exact metadata and its order can be obtained by inspecting the <code>TrustedAdvisorCheckDescription</code> object returned by the call to <code>DescribeTrustedAdvisorChecks</code>. <b>Metadata</b> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data.</p>
     pub fn metadata(&self) -> std::option::Option<&[std::string::String]> {
         self.metadata.as_deref()
     }
@@ -1114,14 +964,12 @@ pub mod trusted_advisor_resource_detail {
             self.resource_id = input;
             self
         }
-        /// <p>Specifies whether the AWS resource was ignored by Trusted Advisor because it was
-        /// marked as suppressed by the user.</p>
+        /// <p>Specifies whether the AWS resource was ignored by Trusted Advisor because it was marked as suppressed by the user.</p>
         pub fn is_suppressed(mut self, input: bool) -> Self {
             self.is_suppressed = Some(input);
             self
         }
-        /// <p>Specifies whether the AWS resource was ignored by Trusted Advisor because it was
-        /// marked as suppressed by the user.</p>
+        /// <p>Specifies whether the AWS resource was ignored by Trusted Advisor because it was marked as suppressed by the user.</p>
         pub fn set_is_suppressed(mut self, input: std::option::Option<bool>) -> Self {
             self.is_suppressed = input;
             self
@@ -1130,20 +978,14 @@ pub mod trusted_advisor_resource_detail {
         ///
         /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
         ///
-        /// <p>Additional information about the identified resource. The exact metadata and its order
-        /// can be obtained by inspecting the <a>TrustedAdvisorCheckDescription</a>
-        /// object returned by the call to <a>DescribeTrustedAdvisorChecks</a>. <b>Metadata</b> contains all the data that is shown in the Excel
-        /// download, even in those cases where the UI shows just summary data.</p>
+        /// <p>Additional information about the identified resource. The exact metadata and its order can be obtained by inspecting the <code>TrustedAdvisorCheckDescription</code> object returned by the call to <code>DescribeTrustedAdvisorChecks</code>. <b>Metadata</b> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data.</p>
         pub fn metadata(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.metadata.unwrap_or_default();
             v.push(input.into());
             self.metadata = Some(v);
             self
         }
-        /// <p>Additional information about the identified resource. The exact metadata and its order
-        /// can be obtained by inspecting the <a>TrustedAdvisorCheckDescription</a>
-        /// object returned by the call to <a>DescribeTrustedAdvisorChecks</a>. <b>Metadata</b> contains all the data that is shown in the Excel
-        /// download, even in those cases where the UI shows just summary data.</p>
+        /// <p>Additional information about the identified resource. The exact metadata and its order can be obtained by inspecting the <code>TrustedAdvisorCheckDescription</code> object returned by the call to <code>DescribeTrustedAdvisorChecks</code>. <b>Metadata</b> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data.</p>
         pub fn set_metadata(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1170,90 +1012,45 @@ impl TrustedAdvisorResourceDetail {
     }
 }
 
-/// <p>A code and name pair that represents the severity level of a support case. The
-/// available values depend on the support plan for the account. For more information, see
-/// <a href="https://docs.aws.amazon.com/awssupport/latest/user/case-management.html#choosing-severity">Choosing a
-/// severity</a> in the <i>AWS Support User Guide</i>.</p>
+/// <p>A code and name pair that represents the severity level of a support case. The available values depend on the support plan for the account. For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/case-management.html#choosing-severity">Choosing a severity</a> in the <i>AWS Support User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SeverityLevel {
     /// <p>The code for case severity level.</p>
-    /// <p>Valid values: <code>low</code> | <code>normal</code> | <code>high</code> |
-    /// <code>urgent</code> | <code>critical</code>
-    /// </p>
+    /// <p>Valid values: <code>low</code> | <code>normal</code> | <code>high</code> | <code>urgent</code> | <code>critical</code> </p>
     pub code: std::option::Option<std::string::String>,
-    /// <p>The name of the severity level that corresponds to the severity level code.</p>
-    /// <note>
-    /// <p>The values returned by the API are different from the values that appear in the
-    /// AWS Support Center. For example, the API uses the code <code>low</code>, but the name
-    /// appears as General guidance in Support Center. </p>
+    /// <p>The name of the severity level that corresponds to the severity level code.</p> <note>
+    /// <p>The values returned by the API are different from the values that appear in the AWS Support Center. For example, the API uses the code <code>low</code>, but the name appears as General guidance in Support Center. </p>
     /// <p>The following are the API code names and how they appear in the console:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>low</code> - General guidance</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>normal</code> - System impaired</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>high</code> - Production system impaired</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>urgent</code> - Production system down</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>critical</code> - Business-critical system down</p>
-    /// </li>
+    /// <li> <p> <code>low</code> - General guidance</p> </li>
+    /// <li> <p> <code>normal</code> - System impaired</p> </li>
+    /// <li> <p> <code>high</code> - Production system impaired</p> </li>
+    /// <li> <p> <code>urgent</code> - Production system down</p> </li>
+    /// <li> <p> <code>critical</code> - Business-critical system down</p> </li>
     /// </ul>
     /// </note>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/case-management.html#choosing-severity">Choosing a
-    /// severity</a> in the <i>AWS Support User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/case-management.html#choosing-severity">Choosing a severity</a> in the <i>AWS Support User Guide</i>.</p>
     pub name: std::option::Option<std::string::String>,
 }
 impl SeverityLevel {
     /// <p>The code for case severity level.</p>
-    /// <p>Valid values: <code>low</code> | <code>normal</code> | <code>high</code> |
-    /// <code>urgent</code> | <code>critical</code>
-    /// </p>
+    /// <p>Valid values: <code>low</code> | <code>normal</code> | <code>high</code> | <code>urgent</code> | <code>critical</code> </p>
     pub fn code(&self) -> std::option::Option<&str> {
         self.code.as_deref()
     }
-    /// <p>The name of the severity level that corresponds to the severity level code.</p>
-    /// <note>
-    /// <p>The values returned by the API are different from the values that appear in the
-    /// AWS Support Center. For example, the API uses the code <code>low</code>, but the name
-    /// appears as General guidance in Support Center. </p>
+    /// <p>The name of the severity level that corresponds to the severity level code.</p> <note>
+    /// <p>The values returned by the API are different from the values that appear in the AWS Support Center. For example, the API uses the code <code>low</code>, but the name appears as General guidance in Support Center. </p>
     /// <p>The following are the API code names and how they appear in the console:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>low</code> - General guidance</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>normal</code> - System impaired</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>high</code> - Production system impaired</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>urgent</code> - Production system down</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>critical</code> - Business-critical system down</p>
-    /// </li>
+    /// <li> <p> <code>low</code> - General guidance</p> </li>
+    /// <li> <p> <code>normal</code> - System impaired</p> </li>
+    /// <li> <p> <code>high</code> - Production system impaired</p> </li>
+    /// <li> <p> <code>urgent</code> - Production system down</p> </li>
+    /// <li> <p> <code>critical</code> - Business-critical system down</p> </li>
     /// </ul>
     /// </note>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/case-management.html#choosing-severity">Choosing a
-    /// severity</a> in the <i>AWS Support User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/case-management.html#choosing-severity">Choosing a severity</a> in the <i>AWS Support User Guide</i>.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -1277,87 +1074,45 @@ pub mod severity_level {
     }
     impl Builder {
         /// <p>The code for case severity level.</p>
-        /// <p>Valid values: <code>low</code> | <code>normal</code> | <code>high</code> |
-        /// <code>urgent</code> | <code>critical</code>
-        /// </p>
+        /// <p>Valid values: <code>low</code> | <code>normal</code> | <code>high</code> | <code>urgent</code> | <code>critical</code> </p>
         pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
             self.code = Some(input.into());
             self
         }
         /// <p>The code for case severity level.</p>
-        /// <p>Valid values: <code>low</code> | <code>normal</code> | <code>high</code> |
-        /// <code>urgent</code> | <code>critical</code>
-        /// </p>
+        /// <p>Valid values: <code>low</code> | <code>normal</code> | <code>high</code> | <code>urgent</code> | <code>critical</code> </p>
         pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.code = input;
             self
         }
-        /// <p>The name of the severity level that corresponds to the severity level code.</p>
-        /// <note>
-        /// <p>The values returned by the API are different from the values that appear in the
-        /// AWS Support Center. For example, the API uses the code <code>low</code>, but the name
-        /// appears as General guidance in Support Center. </p>
+        /// <p>The name of the severity level that corresponds to the severity level code.</p> <note>
+        /// <p>The values returned by the API are different from the values that appear in the AWS Support Center. For example, the API uses the code <code>low</code>, but the name appears as General guidance in Support Center. </p>
         /// <p>The following are the API code names and how they appear in the console:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>low</code> - General guidance</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>normal</code> - System impaired</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>high</code> - Production system impaired</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>urgent</code> - Production system down</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>critical</code> - Business-critical system down</p>
-        /// </li>
+        /// <li> <p> <code>low</code> - General guidance</p> </li>
+        /// <li> <p> <code>normal</code> - System impaired</p> </li>
+        /// <li> <p> <code>high</code> - Production system impaired</p> </li>
+        /// <li> <p> <code>urgent</code> - Production system down</p> </li>
+        /// <li> <p> <code>critical</code> - Business-critical system down</p> </li>
         /// </ul>
         /// </note>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/case-management.html#choosing-severity">Choosing a
-        /// severity</a> in the <i>AWS Support User Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/case-management.html#choosing-severity">Choosing a severity</a> in the <i>AWS Support User Guide</i>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the severity level that corresponds to the severity level code.</p>
-        /// <note>
-        /// <p>The values returned by the API are different from the values that appear in the
-        /// AWS Support Center. For example, the API uses the code <code>low</code>, but the name
-        /// appears as General guidance in Support Center. </p>
+        /// <p>The name of the severity level that corresponds to the severity level code.</p> <note>
+        /// <p>The values returned by the API are different from the values that appear in the AWS Support Center. For example, the API uses the code <code>low</code>, but the name appears as General guidance in Support Center. </p>
         /// <p>The following are the API code names and how they appear in the console:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>low</code> - General guidance</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>normal</code> - System impaired</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>high</code> - Production system impaired</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>urgent</code> - Production system down</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>critical</code> - Business-critical system down</p>
-        /// </li>
+        /// <li> <p> <code>low</code> - General guidance</p> </li>
+        /// <li> <p> <code>normal</code> - System impaired</p> </li>
+        /// <li> <p> <code>high</code> - Production system impaired</p> </li>
+        /// <li> <p> <code>urgent</code> - Production system down</p> </li>
+        /// <li> <p> <code>critical</code> - Business-critical system down</p> </li>
         /// </ul>
         /// </note>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/case-management.html#choosing-severity">Choosing a
-        /// severity</a> in the <i>AWS Support User Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/case-management.html#choosing-severity">Choosing a severity</a> in the <i>AWS Support User Guide</i>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1378,36 +1133,27 @@ impl SeverityLevel {
     }
 }
 
-/// <p>Information about an AWS service returned by the <a>DescribeServices</a>
-/// operation.</p>
+/// <p>Information about an AWS service returned by the <code>DescribeServices</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Service {
-    /// <p>The code for an AWS service returned by the <a>DescribeServices</a>
-    /// response. The <code>name</code> element contains the corresponding friendly name.</p>
+    /// <p>The code for an AWS service returned by the <code>DescribeServices</code> response. The <code>name</code> element contains the corresponding friendly name.</p>
     pub code: std::option::Option<std::string::String>,
-    /// <p>The friendly name for an AWS service. The <code>code</code> element contains the
-    /// corresponding code.</p>
+    /// <p>The friendly name for an AWS service. The <code>code</code> element contains the corresponding code.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>A list of categories that describe the type of support issue a case describes.
-    /// Categories consist of a category name and a category code. Category names and codes are
-    /// passed to AWS Support when you call <a>CreateCase</a>.</p>
+    /// <p>A list of categories that describe the type of support issue a case describes. Categories consist of a category name and a category code. Category names and codes are passed to AWS Support when you call <code>CreateCase</code>.</p>
     pub categories: std::option::Option<std::vec::Vec<crate::model::Category>>,
 }
 impl Service {
-    /// <p>The code for an AWS service returned by the <a>DescribeServices</a>
-    /// response. The <code>name</code> element contains the corresponding friendly name.</p>
+    /// <p>The code for an AWS service returned by the <code>DescribeServices</code> response. The <code>name</code> element contains the corresponding friendly name.</p>
     pub fn code(&self) -> std::option::Option<&str> {
         self.code.as_deref()
     }
-    /// <p>The friendly name for an AWS service. The <code>code</code> element contains the
-    /// corresponding code.</p>
+    /// <p>The friendly name for an AWS service. The <code>code</code> element contains the corresponding code.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>A list of categories that describe the type of support issue a case describes.
-    /// Categories consist of a category name and a category code. Category names and codes are
-    /// passed to AWS Support when you call <a>CreateCase</a>.</p>
+    /// <p>A list of categories that describe the type of support issue a case describes. Categories consist of a category name and a category code. Category names and codes are passed to AWS Support when you call <code>CreateCase</code>.</p>
     pub fn categories(&self) -> std::option::Option<&[crate::model::Category]> {
         self.categories.as_deref()
     }
@@ -1432,26 +1178,22 @@ pub mod service {
         pub(crate) categories: std::option::Option<std::vec::Vec<crate::model::Category>>,
     }
     impl Builder {
-        /// <p>The code for an AWS service returned by the <a>DescribeServices</a>
-        /// response. The <code>name</code> element contains the corresponding friendly name.</p>
+        /// <p>The code for an AWS service returned by the <code>DescribeServices</code> response. The <code>name</code> element contains the corresponding friendly name.</p>
         pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
             self.code = Some(input.into());
             self
         }
-        /// <p>The code for an AWS service returned by the <a>DescribeServices</a>
-        /// response. The <code>name</code> element contains the corresponding friendly name.</p>
+        /// <p>The code for an AWS service returned by the <code>DescribeServices</code> response. The <code>name</code> element contains the corresponding friendly name.</p>
         pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.code = input;
             self
         }
-        /// <p>The friendly name for an AWS service. The <code>code</code> element contains the
-        /// corresponding code.</p>
+        /// <p>The friendly name for an AWS service. The <code>code</code> element contains the corresponding code.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The friendly name for an AWS service. The <code>code</code> element contains the
-        /// corresponding code.</p>
+        /// <p>The friendly name for an AWS service. The <code>code</code> element contains the corresponding code.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1460,18 +1202,14 @@ pub mod service {
         ///
         /// To override the contents of this collection use [`set_categories`](Self::set_categories).
         ///
-        /// <p>A list of categories that describe the type of support issue a case describes.
-        /// Categories consist of a category name and a category code. Category names and codes are
-        /// passed to AWS Support when you call <a>CreateCase</a>.</p>
+        /// <p>A list of categories that describe the type of support issue a case describes. Categories consist of a category name and a category code. Category names and codes are passed to AWS Support when you call <code>CreateCase</code>.</p>
         pub fn categories(mut self, input: crate::model::Category) -> Self {
             let mut v = self.categories.unwrap_or_default();
             v.push(input);
             self.categories = Some(v);
             self
         }
-        /// <p>A list of categories that describe the type of support issue a case describes.
-        /// Categories consist of a category name and a category code. Category names and codes are
-        /// passed to AWS Support when you call <a>CreateCase</a>.</p>
+        /// <p>A list of categories that describe the type of support issue a case describes. Categories consist of a category name and a category code. Category names and codes are passed to AWS Support when you call <code>CreateCase</code>.</p>
         pub fn set_categories(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Category>>,
@@ -1496,9 +1234,7 @@ impl Service {
     }
 }
 
-/// <p>A JSON-formatted name/value pair that represents the category name and category code
-/// of the problem, selected from the <a>DescribeServices</a> response for each
-/// AWS service.</p>
+/// <p>A JSON-formatted name/value pair that represents the category name and category code of the problem, selected from the <code>DescribeServices</code> response for each AWS service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Category {
@@ -1571,24 +1307,17 @@ impl Category {
     }
 }
 
-/// <p>A communication associated with a support case. The communication consists of the
-/// case ID, the message body, attachment information, the submitter of the communication,
-/// and the date and time of the communication.</p>
+/// <p>A communication associated with a support case. The communication consists of the case ID, the message body, attachment information, the submitter of the communication, and the date and time of the communication.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Communication {
-    /// <p>The support case ID requested or returned in the call. The case ID is an
-    /// alphanumeric string formatted as shown in this example:
-    /// case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
-    /// </p>
+    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
     pub case_id: std::option::Option<std::string::String>,
     /// <p>The text of the communication between the customer and AWS Support.</p>
     pub body: std::option::Option<std::string::String>,
-    /// <p>The identity of the account that submitted, or responded to, the support case.
-    /// Customer entries include the role or IAM user as well as the email address. For example,
-    /// "AdminRole (Role) <janedoe@example.com>. Entries from the AWS Support team display
-    /// "Amazon Web Services," and don't show an email address.
-    /// </p>
+    /// <p>The identity of the account that submitted, or responded to, the support case. Customer entries include the role or IAM user as well as the email address. For example, "AdminRole (Role) <janedoe@example.com>
+    /// . Entries from the AWS Support team display "Amazon Web Services," and don't show an email address.
+    /// </janedoe@example.com></p>
     pub submitted_by: std::option::Option<std::string::String>,
     /// <p>The time the communication was created.</p>
     pub time_created: std::option::Option<std::string::String>,
@@ -1596,10 +1325,7 @@ pub struct Communication {
     pub attachment_set: std::option::Option<std::vec::Vec<crate::model::AttachmentDetails>>,
 }
 impl Communication {
-    /// <p>The support case ID requested or returned in the call. The case ID is an
-    /// alphanumeric string formatted as shown in this example:
-    /// case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
-    /// </p>
+    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
     pub fn case_id(&self) -> std::option::Option<&str> {
         self.case_id.as_deref()
     }
@@ -1607,11 +1333,9 @@ impl Communication {
     pub fn body(&self) -> std::option::Option<&str> {
         self.body.as_deref()
     }
-    /// <p>The identity of the account that submitted, or responded to, the support case.
-    /// Customer entries include the role or IAM user as well as the email address. For example,
-    /// "AdminRole (Role) <janedoe@example.com>. Entries from the AWS Support team display
-    /// "Amazon Web Services," and don't show an email address.
-    /// </p>
+    /// <p>The identity of the account that submitted, or responded to, the support case. Customer entries include the role or IAM user as well as the email address. For example, "AdminRole (Role) <janedoe@example.com>
+    /// . Entries from the AWS Support team display "Amazon Web Services," and don't show an email address.
+    /// </janedoe@example.com></p>
     pub fn submitted_by(&self) -> std::option::Option<&str> {
         self.submitted_by.as_deref()
     }
@@ -1649,18 +1373,12 @@ pub mod communication {
             std::option::Option<std::vec::Vec<crate::model::AttachmentDetails>>,
     }
     impl Builder {
-        /// <p>The support case ID requested or returned in the call. The case ID is an
-        /// alphanumeric string formatted as shown in this example:
-        /// case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
-        /// </p>
+        /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
         pub fn case_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.case_id = Some(input.into());
             self
         }
-        /// <p>The support case ID requested or returned in the call. The case ID is an
-        /// alphanumeric string formatted as shown in this example:
-        /// case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
-        /// </p>
+        /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
         pub fn set_case_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.case_id = input;
             self
@@ -1675,20 +1393,16 @@ pub mod communication {
             self.body = input;
             self
         }
-        /// <p>The identity of the account that submitted, or responded to, the support case.
-        /// Customer entries include the role or IAM user as well as the email address. For example,
-        /// "AdminRole (Role) <janedoe@example.com>. Entries from the AWS Support team display
-        /// "Amazon Web Services," and don't show an email address.
-        /// </p>
+        /// <p>The identity of the account that submitted, or responded to, the support case. Customer entries include the role or IAM user as well as the email address. For example, "AdminRole (Role) <janedoe@example.com>
+        /// . Entries from the AWS Support team display "Amazon Web Services," and don't show an email address.
+        /// </janedoe@example.com></p>
         pub fn submitted_by(mut self, input: impl Into<std::string::String>) -> Self {
             self.submitted_by = Some(input.into());
             self
         }
-        /// <p>The identity of the account that submitted, or responded to, the support case.
-        /// Customer entries include the role or IAM user as well as the email address. For example,
-        /// "AdminRole (Role) <janedoe@example.com>. Entries from the AWS Support team display
-        /// "Amazon Web Services," and don't show an email address.
-        /// </p>
+        /// <p>The identity of the account that submitted, or responded to, the support case. Customer entries include the role or IAM user as well as the email address. For example, "AdminRole (Role) <janedoe@example.com>
+        /// . Entries from the AWS Support team display "Amazon Web Services," and don't show an email address.
+        /// </janedoe@example.com></p>
         pub fn set_submitted_by(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.submitted_by = input;
             self
@@ -1741,8 +1455,7 @@ impl Communication {
     }
 }
 
-/// <p>The file name and ID of an attachment to a case communication. You can use the ID to
-/// retrieve the attachment with the <a>DescribeAttachment</a> operation.</p>
+/// <p>The file name and ID of an attachment to a case communication. You can use the ID to retrieve the attachment with the <code>DescribeAttachment</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttachmentDetails {
@@ -1818,188 +1531,72 @@ impl AttachmentDetails {
     }
 }
 
-/// <p>A JSON-formatted object that contains the metadata for a support case. It is contained
-/// in the response from a <a>DescribeCases</a> request. <b>CaseDetails</b> contains the following fields:</p>
+/// <p>A JSON-formatted object that contains the metadata for a support case. It is contained in the response from a <code>DescribeCases</code> request. <b>CaseDetails</b> contains the following fields:</p>
 /// <ul>
-/// <li>
-/// <p>
-/// <b>caseId</b> - The support case ID requested or
-/// returned in the call. The case ID is an alphanumeric string formatted as shown
-/// in this example:
-/// case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>.</p>
-/// </li>
-/// <li>
-/// <p>
-/// <b>categoryCode</b> - The category of problem for the
-/// support case. Corresponds to the <code>CategoryCode</code> values returned by a call to
-/// <a>DescribeServices</a>.</p>
-/// </li>
-/// <li>
-/// <p>
-/// <b>displayId</b> - The identifier for the case on pages
-/// in the AWS Support Center.</p>
-/// </li>
-/// <li>
-/// <p>
-/// <b>language</b> - The ISO 639-1 code for the language
-/// in which AWS provides support. AWS Support currently supports English ("en") and
-/// Japanese ("ja"). Language parameters must be passed explicitly for operations
-/// that take them.</p>
-/// </li>
-/// <li>
-/// <p>
-/// <b>nextToken</b> - A resumption point for
-/// pagination.</p>
-/// </li>
-/// <li>
-/// <p>
-/// <b>recentCommunications</b> - One or more <a>Communication</a> objects. Fields of these objects are
-/// <code>attachments</code>, <code>body</code>, <code>caseId</code>,
-/// <code>submittedBy</code>, and <code>timeCreated</code>.</p>
-/// </li>
-/// <li>
-/// <p>
-/// <b>serviceCode</b> - The identifier for the AWS service
-/// that corresponds to the service code defined in the call to <a>DescribeServices</a>.</p>
-/// </li>
-/// <li>
-/// <p>
-/// <b>severityCode</b> - The severity code assigned to the
-/// case. Contains one of the values returned by the call to <a>DescribeSeverityLevels</a>. The possible values are:
-/// <code>low</code>, <code>normal</code>, <code>high</code>,
-/// <code>urgent</code>, and <code>critical</code>.</p>
-/// </li>
-/// <li>
-/// <p>
-/// <b>status</b> - The status of the case in the AWS Support Center. Valid values:</p>
+/// <li> <p> <b>caseId</b> - The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>.</p> </li>
+/// <li> <p> <b>categoryCode</b> - The category of problem for the support case. Corresponds to the <code>CategoryCode</code> values returned by a call to <code>DescribeServices</code>.</p> </li>
+/// <li> <p> <b>displayId</b> - The identifier for the case on pages in the AWS Support Center.</p> </li>
+/// <li> <p> <b>language</b> - The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.</p> </li>
+/// <li> <p> <b>nextToken</b> - A resumption point for pagination.</p> </li>
+/// <li> <p> <b>recentCommunications</b> - One or more <code>Communication</code> objects. Fields of these objects are <code>attachments</code>, <code>body</code>, <code>caseId</code>, <code>submittedBy</code>, and <code>timeCreated</code>.</p> </li>
+/// <li> <p> <b>serviceCode</b> - The identifier for the AWS service that corresponds to the service code defined in the call to <code>DescribeServices</code>.</p> </li>
+/// <li> <p> <b>severityCode</b> - The severity code assigned to the case. Contains one of the values returned by the call to <code>DescribeSeverityLevels</code>. The possible values are: <code>low</code>, <code>normal</code>, <code>high</code>, <code>urgent</code>, and <code>critical</code>.</p> </li>
+/// <li> <p> <b>status</b> - The status of the case in the AWS Support Center. Valid values:</p>
 /// <ul>
-/// <li>
-/// <p>
-/// <code>opened</code>
-/// </p>
-/// </li>
-/// <li>
-/// <p>
-/// <code>pending-customer-action</code>
-/// </p>
-/// </li>
-/// <li>
-/// <p>
-/// <code>reopened</code>
-/// </p>
-/// </li>
-/// <li>
-/// <p>
-/// <code>resolved</code>
-/// </p>
-/// </li>
-/// <li>
-/// <p>
-/// <code>unassigned</code>
-/// </p>
-/// </li>
-/// <li>
-/// <p>
-/// <code>work-in-progress</code>
-/// </p>
-/// </li>
-/// </ul>
-/// </li>
-/// <li>
-/// <p>
-/// <b>subject</b> - The subject line of the case.</p>
-/// </li>
-/// <li>
-/// <p>
-/// <b>submittedBy</b> - The email address of the account
-/// that submitted the case.</p>
-/// </li>
-/// <li>
-/// <p>
-/// <b>timeCreated</b> - The time the case was created, in
-/// ISO-8601 format.</p>
-/// </li>
+/// <li> <p> <code>opened</code> </p> </li>
+/// <li> <p> <code>pending-customer-action</code> </p> </li>
+/// <li> <p> <code>reopened</code> </p> </li>
+/// <li> <p> <code>resolved</code> </p> </li>
+/// <li> <p> <code>unassigned</code> </p> </li>
+/// <li> <p> <code>work-in-progress</code> </p> </li>
+/// </ul> </li>
+/// <li> <p> <b>subject</b> - The subject line of the case.</p> </li>
+/// <li> <p> <b>submittedBy</b> - The email address of the account that submitted the case.</p> </li>
+/// <li> <p> <b>timeCreated</b> - The time the case was created, in ISO-8601 format.</p> </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CaseDetails {
-    /// <p>The support case ID requested or returned in the call. The case ID is an
-    /// alphanumeric string formatted as shown in this example:
-    /// case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
-    /// </p>
+    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
     pub case_id: std::option::Option<std::string::String>,
-    /// <p>The ID displayed for the case in the AWS Support Center. This is a numeric
-    /// string.</p>
+    /// <p>The ID displayed for the case in the AWS Support Center. This is a numeric string.</p>
     pub display_id: std::option::Option<std::string::String>,
     /// <p>The subject line for the case in the AWS Support Center.</p>
     pub subject: std::option::Option<std::string::String>,
     /// <p>The status of the case.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>opened</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending-customer-action</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>reopened</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>resolved</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>unassigned</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>work-in-progress</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>opened</code> </p> </li>
+    /// <li> <p> <code>pending-customer-action</code> </p> </li>
+    /// <li> <p> <code>reopened</code> </p> </li>
+    /// <li> <p> <code>resolved</code> </p> </li>
+    /// <li> <p> <code>unassigned</code> </p> </li>
+    /// <li> <p> <code>work-in-progress</code> </p> </li>
     /// </ul>
     pub status: std::option::Option<std::string::String>,
-    /// <p>The code for the AWS service. You can get a list of codes and the corresponding
-    /// service names by calling <a>DescribeServices</a>.</p>
+    /// <p>The code for the AWS service. You can get a list of codes and the corresponding service names by calling <code>DescribeServices</code>.</p>
     pub service_code: std::option::Option<std::string::String>,
     /// <p>The category of problem for the support case.</p>
     pub category_code: std::option::Option<std::string::String>,
-    /// <p>The code for the severity level returned by the call to <a>DescribeSeverityLevels</a>.</p>
+    /// <p>The code for the severity level returned by the call to <code>DescribeSeverityLevels</code>.</p>
     pub severity_code: std::option::Option<std::string::String>,
     /// <p>The email address of the account that submitted the case.</p>
     pub submitted_by: std::option::Option<std::string::String>,
     /// <p>The time that the case was created in the AWS Support Center.</p>
     pub time_created: std::option::Option<std::string::String>,
-    /// <p>The five most recent communications between you and AWS Support Center, including the
-    /// IDs of any attachments to the communications. Also includes a <code>nextToken</code>
-    /// that you can use to retrieve earlier communications.</p>
+    /// <p>The five most recent communications between you and AWS Support Center, including the IDs of any attachments to the communications. Also includes a <code>nextToken</code> that you can use to retrieve earlier communications.</p>
     pub recent_communications: std::option::Option<crate::model::RecentCaseCommunications>,
     /// <p>The email addresses that receive copies of communication about the case.</p>
     pub cc_email_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The ISO 639-1 code for the language in which AWS provides support. AWS Support
-    /// currently supports English ("en") and Japanese ("ja"). Language parameters must be
-    /// passed explicitly for operations that take them.</p>
+    /// <p>The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.</p>
     pub language: std::option::Option<std::string::String>,
 }
 impl CaseDetails {
-    /// <p>The support case ID requested or returned in the call. The case ID is an
-    /// alphanumeric string formatted as shown in this example:
-    /// case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
-    /// </p>
+    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
     pub fn case_id(&self) -> std::option::Option<&str> {
         self.case_id.as_deref()
     }
-    /// <p>The ID displayed for the case in the AWS Support Center. This is a numeric
-    /// string.</p>
+    /// <p>The ID displayed for the case in the AWS Support Center. This is a numeric string.</p>
     pub fn display_id(&self) -> std::option::Option<&str> {
         self.display_id.as_deref()
     }
@@ -2010,42 +1607,17 @@ impl CaseDetails {
     /// <p>The status of the case.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>opened</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending-customer-action</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>reopened</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>resolved</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>unassigned</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>work-in-progress</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>opened</code> </p> </li>
+    /// <li> <p> <code>pending-customer-action</code> </p> </li>
+    /// <li> <p> <code>reopened</code> </p> </li>
+    /// <li> <p> <code>resolved</code> </p> </li>
+    /// <li> <p> <code>unassigned</code> </p> </li>
+    /// <li> <p> <code>work-in-progress</code> </p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
     }
-    /// <p>The code for the AWS service. You can get a list of codes and the corresponding
-    /// service names by calling <a>DescribeServices</a>.</p>
+    /// <p>The code for the AWS service. You can get a list of codes and the corresponding service names by calling <code>DescribeServices</code>.</p>
     pub fn service_code(&self) -> std::option::Option<&str> {
         self.service_code.as_deref()
     }
@@ -2053,7 +1625,7 @@ impl CaseDetails {
     pub fn category_code(&self) -> std::option::Option<&str> {
         self.category_code.as_deref()
     }
-    /// <p>The code for the severity level returned by the call to <a>DescribeSeverityLevels</a>.</p>
+    /// <p>The code for the severity level returned by the call to <code>DescribeSeverityLevels</code>.</p>
     pub fn severity_code(&self) -> std::option::Option<&str> {
         self.severity_code.as_deref()
     }
@@ -2065,9 +1637,7 @@ impl CaseDetails {
     pub fn time_created(&self) -> std::option::Option<&str> {
         self.time_created.as_deref()
     }
-    /// <p>The five most recent communications between you and AWS Support Center, including the
-    /// IDs of any attachments to the communications. Also includes a <code>nextToken</code>
-    /// that you can use to retrieve earlier communications.</p>
+    /// <p>The five most recent communications between you and AWS Support Center, including the IDs of any attachments to the communications. Also includes a <code>nextToken</code> that you can use to retrieve earlier communications.</p>
     pub fn recent_communications(
         &self,
     ) -> std::option::Option<&crate::model::RecentCaseCommunications> {
@@ -2077,9 +1647,7 @@ impl CaseDetails {
     pub fn cc_email_addresses(&self) -> std::option::Option<&[std::string::String]> {
         self.cc_email_addresses.as_deref()
     }
-    /// <p>The ISO 639-1 code for the language in which AWS provides support. AWS Support
-    /// currently supports English ("en") and Japanese ("ja"). Language parameters must be
-    /// passed explicitly for operations that take them.</p>
+    /// <p>The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.</p>
     pub fn language(&self) -> std::option::Option<&str> {
         self.language.as_deref()
     }
@@ -2123,30 +1691,22 @@ pub mod case_details {
         pub(crate) language: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The support case ID requested or returned in the call. The case ID is an
-        /// alphanumeric string formatted as shown in this example:
-        /// case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
-        /// </p>
+        /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
         pub fn case_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.case_id = Some(input.into());
             self
         }
-        /// <p>The support case ID requested or returned in the call. The case ID is an
-        /// alphanumeric string formatted as shown in this example:
-        /// case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
-        /// </p>
+        /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
         pub fn set_case_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.case_id = input;
             self
         }
-        /// <p>The ID displayed for the case in the AWS Support Center. This is a numeric
-        /// string.</p>
+        /// <p>The ID displayed for the case in the AWS Support Center. This is a numeric string.</p>
         pub fn display_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.display_id = Some(input.into());
             self
         }
-        /// <p>The ID displayed for the case in the AWS Support Center. This is a numeric
-        /// string.</p>
+        /// <p>The ID displayed for the case in the AWS Support Center. This is a numeric string.</p>
         pub fn set_display_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.display_id = input;
             self
@@ -2164,36 +1724,12 @@ pub mod case_details {
         /// <p>The status of the case.</p>
         /// <p>Valid values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>opened</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending-customer-action</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>reopened</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>resolved</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>unassigned</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>work-in-progress</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>opened</code> </p> </li>
+        /// <li> <p> <code>pending-customer-action</code> </p> </li>
+        /// <li> <p> <code>reopened</code> </p> </li>
+        /// <li> <p> <code>resolved</code> </p> </li>
+        /// <li> <p> <code>unassigned</code> </p> </li>
+        /// <li> <p> <code>work-in-progress</code> </p> </li>
         /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
@@ -2202,49 +1738,23 @@ pub mod case_details {
         /// <p>The status of the case.</p>
         /// <p>Valid values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>opened</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending-customer-action</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>reopened</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>resolved</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>unassigned</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>work-in-progress</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>opened</code> </p> </li>
+        /// <li> <p> <code>pending-customer-action</code> </p> </li>
+        /// <li> <p> <code>reopened</code> </p> </li>
+        /// <li> <p> <code>resolved</code> </p> </li>
+        /// <li> <p> <code>unassigned</code> </p> </li>
+        /// <li> <p> <code>work-in-progress</code> </p> </li>
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
         }
-        /// <p>The code for the AWS service. You can get a list of codes and the corresponding
-        /// service names by calling <a>DescribeServices</a>.</p>
+        /// <p>The code for the AWS service. You can get a list of codes and the corresponding service names by calling <code>DescribeServices</code>.</p>
         pub fn service_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_code = Some(input.into());
             self
         }
-        /// <p>The code for the AWS service. You can get a list of codes and the corresponding
-        /// service names by calling <a>DescribeServices</a>.</p>
+        /// <p>The code for the AWS service. You can get a list of codes and the corresponding service names by calling <code>DescribeServices</code>.</p>
         pub fn set_service_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_code = input;
             self
@@ -2262,12 +1772,12 @@ pub mod case_details {
             self.category_code = input;
             self
         }
-        /// <p>The code for the severity level returned by the call to <a>DescribeSeverityLevels</a>.</p>
+        /// <p>The code for the severity level returned by the call to <code>DescribeSeverityLevels</code>.</p>
         pub fn severity_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.severity_code = Some(input.into());
             self
         }
-        /// <p>The code for the severity level returned by the call to <a>DescribeSeverityLevels</a>.</p>
+        /// <p>The code for the severity level returned by the call to <code>DescribeSeverityLevels</code>.</p>
         pub fn set_severity_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2295,9 +1805,7 @@ pub mod case_details {
             self.time_created = input;
             self
         }
-        /// <p>The five most recent communications between you and AWS Support Center, including the
-        /// IDs of any attachments to the communications. Also includes a <code>nextToken</code>
-        /// that you can use to retrieve earlier communications.</p>
+        /// <p>The five most recent communications between you and AWS Support Center, including the IDs of any attachments to the communications. Also includes a <code>nextToken</code> that you can use to retrieve earlier communications.</p>
         pub fn recent_communications(
             mut self,
             input: crate::model::RecentCaseCommunications,
@@ -2305,9 +1813,7 @@ pub mod case_details {
             self.recent_communications = Some(input);
             self
         }
-        /// <p>The five most recent communications between you and AWS Support Center, including the
-        /// IDs of any attachments to the communications. Also includes a <code>nextToken</code>
-        /// that you can use to retrieve earlier communications.</p>
+        /// <p>The five most recent communications between you and AWS Support Center, including the IDs of any attachments to the communications. Also includes a <code>nextToken</code> that you can use to retrieve earlier communications.</p>
         pub fn set_recent_communications(
             mut self,
             input: std::option::Option<crate::model::RecentCaseCommunications>,
@@ -2334,16 +1840,12 @@ pub mod case_details {
             self.cc_email_addresses = input;
             self
         }
-        /// <p>The ISO 639-1 code for the language in which AWS provides support. AWS Support
-        /// currently supports English ("en") and Japanese ("ja"). Language parameters must be
-        /// passed explicitly for operations that take them.</p>
+        /// <p>The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.</p>
         pub fn language(mut self, input: impl Into<std::string::String>) -> Self {
             self.language = Some(input.into());
             self
         }
-        /// <p>The ISO 639-1 code for the language in which AWS provides support. AWS Support
-        /// currently supports English ("en") and Japanese ("ja"). Language parameters must be
-        /// passed explicitly for operations that take them.</p>
+        /// <p>The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.</p>
         pub fn set_language(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.language = input;
             self
@@ -2456,8 +1958,7 @@ impl RecentCaseCommunications {
     }
 }
 
-/// <p>An attachment to a case communication. The attachment consists of the file name and
-/// the content of the file.</p>
+/// <p>An attachment to a case communication. The attachment consists of the file name and the content of the file.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Attachment {

@@ -333,10 +333,8 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `AddProfileKey`.
     ///
-    /// <p>Associates a new key value with a specific profile, such as a Contact Trace Record (CTR)
-    /// ContactId.</p>
-    /// <p>A profile object can have a single unique key and any number of additional keys that can
-    /// be used to identify the profile that it belongs to.</p>
+    /// <p>Associates a new key value with a specific profile, such as a Contact Trace Record (CTR) ContactId.</p>
+    /// <p>A profile object can have a single unique key and any number of additional keys that can be used to identify the profile that it belongs to.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddProfileKey<
         C = aws_smithy_client::erase::DynConnector,
@@ -443,16 +441,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateDomain`.
     ///
-    /// <p>Creates a domain, which is a container for all customer data, such as customer profile
-    /// attributes, object types, profile keys, and encryption keys. You can create multiple
-    /// domains, and each domain can have multiple third-party integrations.</p>
-    /// <p>Each Amazon Connect instance can be associated with only one domain. Multiple Amazon Connect instances can
-    /// be associated with one domain.</p>
-    /// <p>Use this API or <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UpdateDomain.html">UpdateDomain</a> to
-    /// enable <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">identity
-    /// resolution</a>: set <code>Matching</code> to true. </p>
-    /// <p>To prevent cross-service impersonation when you call this API, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html">Cross-service confused deputy prevention</a> for sample policies that you should
-    /// apply. </p>
+    /// <p>Creates a domain, which is a container for all customer data, such as customer profile attributes, object types, profile keys, and encryption keys. You can create multiple domains, and each domain can have multiple third-party integrations.</p>
+    /// <p>Each Amazon Connect instance can be associated with only one domain. Multiple Amazon Connect instances can be associated with one domain.</p>
+    /// <p>Use this API or <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UpdateDomain.html">UpdateDomain</a> to enable <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">identity resolution</a>: set <code>Matching</code> to true. </p>
+    /// <p>To prevent cross-service impersonation when you call this API, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html">Cross-service confused deputy prevention</a> for sample policies that you should apply. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDomain<
         C = aws_smithy_client::erase::DynConnector,
@@ -529,16 +521,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_default_expiration_days(input);
             self
         }
-        /// <p>The default encryption key, which is an AWS managed key, is used when no specific type
-        /// of encryption key is specified. It is used to encrypt all data before it is placed in
-        /// permanent or semi-permanent storage.</p>
+        /// <p>The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage.</p>
         pub fn default_encryption_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.default_encryption_key(input.into());
             self
         }
-        /// <p>The default encryption key, which is an AWS managed key, is used when no specific type
-        /// of encryption key is specified. It is used to encrypt all data before it is placed in
-        /// permanent or semi-permanent storage.</p>
+        /// <p>The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage.</p>
         pub fn set_default_encryption_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -546,18 +534,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_default_encryption_key(input);
             self
         }
-        /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with
-        /// ingesting data from third party applications. You must set up a policy on the
-        /// DeadLetterQueue for the SendMessage operation to enable Amazon Connect Customer Profiles to send
-        /// messages to the DeadLetterQueue.</p>
+        /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications. You must set up a policy on the DeadLetterQueue for the SendMessage operation to enable Amazon Connect Customer Profiles to send messages to the DeadLetterQueue.</p>
         pub fn dead_letter_queue_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.dead_letter_queue_url(input.into());
             self
         }
-        /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with
-        /// ingesting data from third party applications. You must set up a policy on the
-        /// DeadLetterQueue for the SendMessage operation to enable Amazon Connect Customer Profiles to send
-        /// messages to the DeadLetterQueue.</p>
+        /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications. You must set up a policy on the DeadLetterQueue for the SendMessage operation to enable Amazon Connect Customer Profiles to send messages to the DeadLetterQueue.</p>
         pub fn set_dead_letter_queue_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -565,24 +547,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dead_letter_queue_url(input);
             self
         }
-        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly
-        /// batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every
-        /// Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
-        /// <p>After the Identity Resolution Job completes, use the
-        /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
-        /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from
-        /// S3.</p>
+        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+        /// <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
         pub fn matching(mut self, input: crate::model::MatchingRequest) -> Self {
             self.inner = self.inner.matching(input);
             self
         }
-        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly
-        /// batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every
-        /// Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
-        /// <p>After the Identity Resolution Job completes, use the
-        /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
-        /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from
-        /// S3.</p>
+        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+        /// <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
         pub fn set_matching(
             mut self,
             input: std::option::Option<crate::model::MatchingRequest>,
@@ -617,8 +589,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateProfile`.
     ///
     /// <p>Creates a standard profile.</p>
-    /// <p>A standard profile represents the following attributes for a customer profile in a
-    /// domain.</p>
+    /// <p>A standard profile represents the following attributes for a customer profile in a domain.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateProfile<
         C = aws_smithy_client::erase::DynConnector,
@@ -787,14 +758,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_gender(input);
             self
         }
-        /// <p>The customer’s phone number, which has not been specified as a mobile, home, or business
-        /// number. </p>
+        /// <p>The customer’s phone number, which has not been specified as a mobile, home, or business number. </p>
         pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.phone_number(input.into());
             self
         }
-        /// <p>The customer’s phone number, which has not been specified as a mobile, home, or business
-        /// number. </p>
+        /// <p>The customer’s phone number, which has not been specified as a mobile, home, or business number. </p>
         pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_phone_number(input);
             self
@@ -838,14 +807,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_business_phone_number(input);
             self
         }
-        /// <p>The customer’s email address, which has not been specified as a personal or business
-        /// address. </p>
+        /// <p>The customer’s email address, which has not been specified as a personal or business address. </p>
         pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.email_address(input.into());
             self
         }
-        /// <p>The customer’s email address, which has not been specified as a personal or business
-        /// address. </p>
+        /// <p>The customer’s email address, which has not been specified as a personal or business address. </p>
         pub fn set_email_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -879,14 +846,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_business_email_address(input);
             self
         }
-        /// <p>A generic address associated with the customer that is not mailing, shipping, or
-        /// billing.</p>
+        /// <p>A generic address associated with the customer that is not mailing, shipping, or billing.</p>
         pub fn address(mut self, input: crate::model::Address) -> Self {
             self.inner = self.inner.address(input);
             self
         }
-        /// <p>A generic address associated with the customer that is not mailing, shipping, or
-        /// billing.</p>
+        /// <p>A generic address associated with the customer that is not mailing, shipping, or billing.</p>
         pub fn set_address(mut self, input: std::option::Option<crate::model::Address>) -> Self {
             self.inner = self.inner.set_address(input);
             self
@@ -956,8 +921,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteDomain`.
     ///
-    /// <p>Deletes a specific domain and all of its customer data, such as customer profile
-    /// attributes and their related objects.</p>
+    /// <p>Deletes a specific domain and all of its customer data, such as customer profile attributes and their related objects.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDomain<
         C = aws_smithy_client::erase::DynConnector,
@@ -1400,10 +1364,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteProfileObjectType`.
     ///
-    /// <p>Removes a ProfileObjectType from a specific domain as well as removes all the
-    /// ProfileObjects of that type. It also disables integrations from this specific
-    /// ProfileObjectType. In addition, it scrubs all of the fields of the standard profile that
-    /// were populated from this ProfileObjectType.</p>
+    /// <p>Removes a ProfileObjectType from a specific domain as well as removes all the ProfileObjects of that type. It also disables integrations from this specific ProfileObjectType. In addition, it scrubs all of the fields of the standard profile that were populated from this ProfileObjectType.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteProfileObjectType<
         C = aws_smithy_client::erase::DynConnector,
@@ -1486,19 +1447,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetAutoMergingPreview`.
     ///
-    /// <p>Tests the auto-merging settings of your Identity Resolution Job without merging your data. It randomly
-    /// selects a sample of matching groups from the existing matching results, and applies the
-    /// automerging settings that you provided. You can then view the number of profiles in the
-    /// sample, the number of matches, and the number of profiles identified to be merged. This
-    /// enables you to evaluate the accuracy of the attributes in your matching list. </p>
-    /// <p>You can't view which profiles are matched and would be merged.</p>
-    /// <important>
-    ///
-    /// <p>We strongly recommend you use this API to do a dry run of the automerging process
-    /// before running the Identity Resolution Job. Include <b>at least</b> two matching
-    /// attributes. If your matching list includes too few attributes (such as only
-    /// <code>FirstName</code> or only <code>LastName</code>), there may be a large number of
-    /// matches. This increases the chances of erroneous merges.</p>
+    /// <p>Tests the auto-merging settings of your Identity Resolution Job without merging your data. It randomly selects a sample of matching groups from the existing matching results, and applies the automerging settings that you provided. You can then view the number of profiles in the sample, the number of matches, and the number of profiles identified to be merged. This enables you to evaluate the accuracy of the attributes in your matching list. </p>
+    /// <p>You can't view which profiles are matched and would be merged.</p> <important>
+    /// <p>We strongly recommend you use this API to do a dry run of the automerging process before running the Identity Resolution Job. Include <b>at least</b> two matching attributes. If your matching list includes too few attributes (such as only <code>FirstName</code> or only <code>LastName</code>), there may be a large number of matches. This increases the chances of erroneous merges.</p>
     /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAutoMergingPreview<
@@ -1666,8 +1617,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetIdentityResolutionJob`.
     ///
     /// <p>Returns information about an Identity Resolution Job in a specific domain. </p>
-    /// <p>Identity Resolution Jobs are set up using the Amazon Connect admin console. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/use-identity-resolution.html">Use
-    /// Identity Resolution to consolidate similar profiles</a>.</p>
+    /// <p>Identity Resolution Jobs are set up using the Amazon Connect admin console. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/use-identity-resolution.html">Use Identity Resolution to consolidate similar profiles</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetIdentityResolutionJob<
         C = aws_smithy_client::erase::DynConnector,
@@ -1828,55 +1778,24 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetMatches`.
     ///
     /// <p>This API is in preview release for Amazon Connect and subject to change.</p>
-    /// <p>Before calling this API, use <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateDomain.html">CreateDomain</a> or
-    /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UpdateDomain.html">UpdateDomain</a> to
-    /// enable identity resolution: set <code>Matching</code> to true.</p>
-    /// <p>GetMatches returns potentially matching profiles, based on the results of the latest run
-    /// of a machine learning process. </p>
-    /// <important>
-    /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly
-    /// batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every
-    /// Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
-    /// <p>After the Identity Resolution Job completes, use the
-    /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
-    /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from
-    /// S3.</p>
+    /// <p>Before calling this API, use <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateDomain.html">CreateDomain</a> or <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UpdateDomain.html">UpdateDomain</a> to enable identity resolution: set <code>Matching</code> to true.</p>
+    /// <p>GetMatches returns potentially matching profiles, based on the results of the latest run of a machine learning process. </p> <important>
+    /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+    /// <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
     /// </important>
-    ///
     /// <p>Amazon Connect uses the following profile attributes to identify matches:</p>
     /// <ul>
-    /// <li>
-    /// <p>PhoneNumber</p>
-    /// </li>
-    /// <li>
-    /// <p>HomePhoneNumber</p>
-    /// </li>
-    /// <li>
-    /// <p>BusinessPhoneNumber</p>
-    /// </li>
-    /// <li>
-    /// <p>MobilePhoneNumber</p>
-    /// </li>
-    /// <li>
-    /// <p>EmailAddress</p>
-    /// </li>
-    /// <li>
-    /// <p>PersonalEmailAddress</p>
-    /// </li>
-    /// <li>
-    /// <p>BusinessEmailAddress</p>
-    /// </li>
-    /// <li>
-    /// <p>FullName</p>
-    /// </li>
-    /// <li>
-    /// <p>BusinessName</p>
-    /// </li>
+    /// <li> <p>PhoneNumber</p> </li>
+    /// <li> <p>HomePhoneNumber</p> </li>
+    /// <li> <p>BusinessPhoneNumber</p> </li>
+    /// <li> <p>MobilePhoneNumber</p> </li>
+    /// <li> <p>EmailAddress</p> </li>
+    /// <li> <p>PersonalEmailAddress</p> </li>
+    /// <li> <p>BusinessEmailAddress</p> </li>
+    /// <li> <p>FullName</p> </li>
+    /// <li> <p>BusinessName</p> </li>
     /// </ul>
-    /// <p>For example, two or more profiles—with spelling mistakes such as <b>John Doe</b> and <b>Jhn Doe</b>, or different casing
-    /// email addresses such as <b>JOHN_DOE@ANYCOMPANY.COM</b> and
-    /// <b>johndoe@anycompany.com</b>, or different phone number
-    /// formats such as <b>555-010-0000</b> and <b>+1-555-010-0000</b>—can be detected as belonging to the same customer <b>John Doe</b> and merged into a unified profile.</p>
+    /// <p>For example, two or more profiles—with spelling mistakes such as <b>John Doe</b> and <b>Jhn Doe</b>, or different casing email addresses such as <b>JOHN_DOE@ANYCOMPANY.COM</b> and <b>johndoe@anycompany.com</b>, or different phone number formats such as <b>555-010-0000</b> and <b>+1-555-010-0000</b>—can be detected as belonging to the same customer <b>John Doe</b> and merged into a unified profile.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMatches<
         C = aws_smithy_client::erase::DynConnector,
@@ -1933,14 +1852,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2052,10 +1969,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetProfileObjectTypeTemplate`.
     ///
     /// <p>Returns the template information for a specific object type.</p>
-    /// <p>A template is a predefined ProfileObjectType, such as “Salesforce-Account” or
-    /// “Salesforce-Contact.” When a user sends a ProfileObject, using the PutProfileObject API,
-    /// with an ObjectTypeName that matches one of the TemplateIds, it uses the mappings from the
-    /// template.</p>
+    /// <p>A template is a predefined ProfileObjectType, such as “Salesforce-Account” or “Salesforce-Contact.” When a user sends a ProfileObject, using the PutProfileObject API, with an ObjectTypeName that matches one of the TemplateIds, it uses the mappings from the template.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetProfileObjectTypeTemplate<
         C = aws_smithy_client::erase::DynConnector,
@@ -2295,8 +2209,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListIdentityResolutionJobs`.
     ///
-    /// <p>Lists all of the Identity Resolution Jobs in your domain. The response sorts the list by
-    /// <code>JobStartTime</code>.</p>
+    /// <p>Lists all of the Identity Resolution Jobs in your domain. The response sorts the list by <code>JobStartTime</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListIdentityResolutionJobs<
         C = aws_smithy_client::erase::DynConnector,
@@ -2363,14 +2276,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain_name(input);
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2588,14 +2499,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_profile_id(input);
             self
         }
-        /// <p>Applies a filter to the response to include profile objects with the specified index
-        /// values. This filter is only supported for ObjectTypeName _asset and _case.</p>
+        /// <p>Applies a filter to the response to include profile objects with the specified index values. This filter is only supported for ObjectTypeName _asset and _case.</p>
         pub fn object_filter(mut self, input: crate::model::ObjectFilter) -> Self {
             self.inner = self.inner.object_filter(input);
             self
         }
-        /// <p>Applies a filter to the response to include profile objects with the specified index
-        /// values. This filter is only supported for ObjectTypeName _asset and _case.</p>
+        /// <p>Applies a filter to the response to include profile objects with the specified index values. This filter is only supported for ObjectTypeName _asset and _case.</p>
         pub fn set_object_filter(
             mut self,
             input: std::option::Option<crate::model::ObjectFilter>,
@@ -2776,8 +2685,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
-    /// <p>Displays the tags associated with an Amazon Connect Customer Profiles resource. In Connect
-    /// Customer Profiles, domains, profile object types, and integrations can be tagged.</p>
+    /// <p>Displays the tags associated with an Amazon Connect Customer Profiles resource. In Connect Customer Profiles, domains, profile object types, and integrations can be tagged.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -2850,48 +2758,21 @@ pub mod fluent_builders {
     /// <p>This API is in preview release for Amazon Connect and subject to change.</p>
     /// <p>Runs an AWS Lambda job that does the following:</p>
     /// <ol>
-    /// <li>
-    /// <p>All the profileKeys in the <code>ProfileToBeMerged</code> will be moved to the
-    /// main profile.</p>
-    /// </li>
-    /// <li>
-    /// <p>All the objects in the <code>ProfileToBeMerged</code> will be moved to the main
-    /// profile.</p>
-    /// </li>
-    /// <li>
-    /// <p>All the <code>ProfileToBeMerged</code> will be deleted at the end.</p>
-    /// </li>
-    /// <li>
-    /// <p>All the profileKeys in the <code>ProfileIdsToBeMerged</code> will be moved to the
-    /// main profile.</p>
-    /// </li>
-    /// <li>
-    /// <p>Standard fields are merged as follows:</p>
+    /// <li> <p>All the profileKeys in the <code>ProfileToBeMerged</code> will be moved to the main profile.</p> </li>
+    /// <li> <p>All the objects in the <code>ProfileToBeMerged</code> will be moved to the main profile.</p> </li>
+    /// <li> <p>All the <code>ProfileToBeMerged</code> will be deleted at the end.</p> </li>
+    /// <li> <p>All the profileKeys in the <code>ProfileIdsToBeMerged</code> will be moved to the main profile.</p> </li>
+    /// <li> <p>Standard fields are merged as follows:</p>
     /// <ol>
-    /// <li>
-    /// <p>Fields are always "union"-ed if there are no conflicts in standard fields or
-    /// attributeKeys.</p>
-    /// </li>
-    /// <li>
-    /// <p>When there are conflicting fields:</p>
-    ///
+    /// <li> <p>Fields are always "union"-ed if there are no conflicts in standard fields or attributeKeys.</p> </li>
+    /// <li> <p>When there are conflicting fields:</p>
     /// <ol>
-    /// <li>
-    /// <p>If no <code>SourceProfileIds</code> entry is specified, the main
-    /// Profile value is always taken. </p>
-    /// </li>
-    /// <li>
-    /// <p>If a <code>SourceProfileIds</code> entry is specified, the specified
-    /// profileId is always taken, even if it is a NULL value.</p>
-    /// </li>
+    /// <li> <p>If no <code>SourceProfileIds</code> entry is specified, the main Profile value is always taken. </p> </li>
+    /// <li> <p>If a <code>SourceProfileIds</code> entry is specified, the specified profileId is always taken, even if it is a NULL value.</p> </li>
+    /// </ol> </li>
+    /// </ol> </li>
     /// </ol>
-    /// </li>
-    /// </ol>
-    /// </li>
-    /// </ol>
-    /// <p>You can use MergeProfiles together with <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>, which
-    /// returns potentially matching profiles, or use it with the results of another matching
-    /// system. After profiles have been merged, they cannot be separated (unmerged).</p>
+    /// <p>You can use MergeProfiles together with <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>, which returns potentially matching profiles, or use it with the results of another matching system. After profiles have been merged, they cannot be separated (unmerged).</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct MergeProfiles<
         C = aws_smithy_client::erase::DynConnector,
@@ -2988,9 +2869,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_profile_ids_to_be_merged(input);
             self
         }
-        /// <p>The identifiers of the fields in the profile that has the information you want to apply
-        /// to the merge. For example, say you want to merge EmailAddress from Profile1 into
-        /// MainProfile. This would be the identifier of the EmailAddress field in Profile1. </p>
+        /// <p>The identifiers of the fields in the profile that has the information you want to apply to the merge. For example, say you want to merge EmailAddress from Profile1 into MainProfile. This would be the identifier of the EmailAddress field in Profile1. </p>
         pub fn field_source_profile_ids(
             mut self,
             input: crate::model::FieldSourceProfileIds,
@@ -2998,9 +2877,7 @@ pub mod fluent_builders {
             self.inner = self.inner.field_source_profile_ids(input);
             self
         }
-        /// <p>The identifiers of the fields in the profile that has the information you want to apply
-        /// to the merge. For example, say you want to merge EmailAddress from Profile1 into
-        /// MainProfile. This would be the identifier of the EmailAddress field in Profile1. </p>
+        /// <p>The identifiers of the fields in the profile that has the information you want to apply to the merge. For example, say you want to merge EmailAddress from Profile1 into MainProfile. This would be the identifier of the EmailAddress field in Profile1. </p>
         pub fn set_field_source_profile_ids(
             mut self,
             input: std::option::Option<crate::model::FieldSourceProfileIds>,
@@ -3011,8 +2888,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutIntegration`.
     ///
-    /// <p>Adds an integration between the service and a third-party service, which includes
-    /// Amazon AppFlow and Amazon Connect.</p>
+    /// <p>Adds an integration between the service and a third-party service, which includes Amazon AppFlow and Amazon Connect.</p>
     /// <p>An integration can belong to only one domain.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutIntegration<
@@ -3126,14 +3002,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>The configuration that controls how Customer Profiles retrieves data from the
-        /// source.</p>
+        /// <p>The configuration that controls how Customer Profiles retrieves data from the source.</p>
         pub fn flow_definition(mut self, input: crate::model::FlowDefinition) -> Self {
             self.inner = self.inner.flow_definition(input);
             self
         }
-        /// <p>The configuration that controls how Customer Profiles retrieves data from the
-        /// source.</p>
+        /// <p>The configuration that controls how Customer Profiles retrieves data from the source.</p>
         pub fn set_flow_definition(
             mut self,
             input: std::option::Option<crate::model::FlowDefinition>,
@@ -3145,15 +3019,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutProfileObject`.
     ///
     /// <p>Adds additional objects to customer profiles of a given ObjectType.</p>
-    /// <p>When adding a specific profile object, like a Contact Trace Record (CTR), an inferred
-    /// profile can get created if it is not mapped to an existing profile. The resulting profile
-    /// will only have a phone number populated in the standard ProfileObject. Any additional CTRs
-    /// with the same phone number will be mapped to the same inferred profile.</p>
-    /// <p>When a ProfileObject is created and if a ProfileObjectType already exists for the
-    /// ProfileObject, it will provide data to a standard profile depending on the
-    /// ProfileObjectType definition.</p>
-    /// <p>PutProfileObject needs an ObjectType, which can be created using
-    /// PutProfileObjectType.</p>
+    /// <p>When adding a specific profile object, like a Contact Trace Record (CTR), an inferred profile can get created if it is not mapped to an existing profile. The resulting profile will only have a phone number populated in the standard ProfileObject. Any additional CTRs with the same phone number will be mapped to the same inferred profile.</p>
+    /// <p>When a ProfileObject is created and if a ProfileObjectType already exists for the ProfileObject, it will provide data to a standard profile depending on the ProfileObjectType definition.</p>
+    /// <p>PutProfileObject needs an ObjectType, which can be created using PutProfileObjectType.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutProfileObject<
         C = aws_smithy_client::erase::DynConnector,
@@ -3356,14 +3224,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_expiration_days(input);
             self
         }
-        /// <p>The customer-provided key to encrypt the profile object that will be created in this
-        /// profile object type.</p>
+        /// <p>The customer-provided key to encrypt the profile object that will be created in this profile object type.</p>
         pub fn encryption_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.encryption_key(input.into());
             self
         }
-        /// <p>The customer-provided key to encrypt the profile object that will be created in this
-        /// profile object type.</p>
+        /// <p>The customer-provided key to encrypt the profile object that will be created in this profile object type.</p>
         pub fn set_encryption_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3371,26 +3237,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_encryption_key(input);
             self
         }
-        /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist
-        /// for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation
-        /// flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and
-        /// associate this object with the profile. If it is set to <code>TRUE</code>, and if no match
-        /// is found, then the service creates a new standard profile.</p>
+        /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and associate this object with the profile. If it is set to <code>TRUE</code>, and if no match is found, then the service creates a new standard profile.</p>
         pub fn allow_profile_creation(mut self, input: bool) -> Self {
             self.inner = self.inner.allow_profile_creation(input);
             self
         }
-        /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist
-        /// for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation
-        /// flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and
-        /// associate this object with the profile. If it is set to <code>TRUE</code>, and if no match
-        /// is found, then the service creates a new standard profile.</p>
+        /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and associate this object with the profile. If it is set to <code>TRUE</code>, and if no match is found, then the service creates a new standard profile.</p>
         pub fn set_allow_profile_creation(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_allow_profile_creation(input);
             self
         }
-        /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up.
-        /// </p>
+        /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up. </p>
         pub fn source_last_updated_timestamp_format(
             mut self,
             input: impl Into<std::string::String>,
@@ -3400,8 +3257,7 @@ pub mod fluent_builders {
                 .source_last_updated_timestamp_format(input.into());
             self
         }
-        /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up.
-        /// </p>
+        /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up. </p>
         pub fn set_source_last_updated_timestamp_format(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3484,8 +3340,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SearchProfiles`.
     ///
-    /// <p>Searches for profiles within a specific domain name using name, phone number, email
-    /// address, account number, or a custom defined index.</p>
+    /// <p>Searches for profiles within a specific domain name using name, phone number, email address, account number, or a custom defined index.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchProfiles<
         C = aws_smithy_client::erase::DynConnector,
@@ -3572,16 +3427,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain_name(input);
             self
         }
-        /// <p>A searchable identifier of a customer profile. The predefined keys you can use to search include: _account, _profileId,
-        /// _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId,
-        /// _salesforceContactId, _zendeskUserId, _zendeskExternalId, _serviceNowSystemId.</p>
+        /// <p>A searchable identifier of a customer profile. The predefined keys you can use to search include: _account, _profileId, _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId, _salesforceContactId, _zendeskUserId, _zendeskExternalId, _serviceNowSystemId.</p>
         pub fn key_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.key_name(input.into());
             self
         }
-        /// <p>A searchable identifier of a customer profile. The predefined keys you can use to search include: _account, _profileId,
-        /// _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId,
-        /// _salesforceContactId, _zendeskUserId, _zendeskExternalId, _serviceNowSystemId.</p>
+        /// <p>A searchable identifier of a customer profile. The predefined keys you can use to search include: _account, _profileId, _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId, _salesforceContactId, _zendeskUserId, _zendeskExternalId, _serviceNowSystemId.</p>
         pub fn set_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_key_name(input);
             self
@@ -3606,17 +3457,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Assigns one or more tags (key-value pairs) to the specified Amazon Connect Customer Profiles
-    /// resource. Tags can help you organize and categorize your resources. You can also use them
-    /// to scope user permissions by granting a user permission to access or change only resources
-    /// with certain tag values. In Connect Customer Profiles, domains, profile object types, and
-    /// integrations can be tagged.</p>
-    /// <p>Tags don't have any semantic meaning to AWS and are interpreted strictly as strings of
-    /// characters.</p>
-    /// <p>You can use the TagResource action with a resource that already has tags. If you specify
-    /// a new tag key, this tag is appended to the list of tags associated with the resource. If
-    /// you specify a tag key that is already associated with the resource, the new tag value that
-    /// you specify replaces the previous value for that tag.</p>
+    /// <p>Assigns one or more tags (key-value pairs) to the specified Amazon Connect Customer Profiles resource. Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values. In Connect Customer Profiles, domains, profile object types, and integrations can be tagged.</p>
+    /// <p>Tags don't have any semantic meaning to AWS and are interpreted strictly as strings of characters.</p>
+    /// <p>You can use the TagResource action with a resource that already has tags. If you specify a new tag key, this tag is appended to the list of tags associated with the resource. If you specify a tag key that is already associated with the resource, the new tag value that you specify replaces the previous value for that tag.</p>
     /// <p>You can associate as many as 50 tags with a resource.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
@@ -3710,8 +3553,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UntagResource`.
     ///
-    /// <p>Removes one or more tags from the specified Amazon Connect Customer Profiles resource. In Connect
-    /// Customer Profiles, domains, profile object types, and integrations can be tagged.</p>
+    /// <p>Removes one or more tags from the specified Amazon Connect Customer Profiles resource. In Connect Customer Profiles, domains, profile object types, and integrations can be tagged.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -3798,14 +3640,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateDomain`.
     ///
-    /// <p>Updates the properties of a domain, including creating or selecting a dead letter queue
-    /// or an encryption key.</p>
+    /// <p>Updates the properties of a domain, including creating or selecting a dead letter queue or an encryption key.</p>
     /// <p>After a domain is created, the name can’t be changed.</p>
-    /// <p>Use this API or <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateDomain.html">CreateDomain</a> to
-    /// enable <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">identity
-    /// resolution</a>: set <code>Matching</code> to true. </p>
-    /// <p>To prevent cross-service impersonation when you call this API, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html">Cross-service confused deputy prevention</a> for sample policies that you should
-    /// apply. </p>
+    /// <p>Use this API or <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateDomain.html">CreateDomain</a> to enable <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">identity resolution</a>: set <code>Matching</code> to true. </p>
+    /// <p>To prevent cross-service impersonation when you call this API, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html">Cross-service confused deputy prevention</a> for sample policies that you should apply. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateDomain<
         C = aws_smithy_client::erase::DynConnector,
@@ -3882,18 +3720,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_default_expiration_days(input);
             self
         }
-        /// <p>The default encryption key, which is an AWS managed key, is used when no specific type
-        /// of encryption key is specified. It is used to encrypt all data before it is placed in
-        /// permanent or semi-permanent storage. If specified as an empty string, it will clear any
-        /// existing value.</p>
+        /// <p>The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage. If specified as an empty string, it will clear any existing value.</p>
         pub fn default_encryption_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.default_encryption_key(input.into());
             self
         }
-        /// <p>The default encryption key, which is an AWS managed key, is used when no specific type
-        /// of encryption key is specified. It is used to encrypt all data before it is placed in
-        /// permanent or semi-permanent storage. If specified as an empty string, it will clear any
-        /// existing value.</p>
+        /// <p>The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage. If specified as an empty string, it will clear any existing value.</p>
         pub fn set_default_encryption_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3901,20 +3733,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_default_encryption_key(input);
             self
         }
-        /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with
-        /// ingesting data from third party applications. If specified as an empty string, it will
-        /// clear any existing value. You must set up a policy on the DeadLetterQueue for the
-        /// SendMessage operation to enable Amazon Connect Customer Profiles to send messages to the
-        /// DeadLetterQueue.</p>
+        /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications. If specified as an empty string, it will clear any existing value. You must set up a policy on the DeadLetterQueue for the SendMessage operation to enable Amazon Connect Customer Profiles to send messages to the DeadLetterQueue.</p>
         pub fn dead_letter_queue_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.dead_letter_queue_url(input.into());
             self
         }
-        /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with
-        /// ingesting data from third party applications. If specified as an empty string, it will
-        /// clear any existing value. You must set up a policy on the DeadLetterQueue for the
-        /// SendMessage operation to enable Amazon Connect Customer Profiles to send messages to the
-        /// DeadLetterQueue.</p>
+        /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications. If specified as an empty string, it will clear any existing value. You must set up a policy on the DeadLetterQueue for the SendMessage operation to enable Amazon Connect Customer Profiles to send messages to the DeadLetterQueue.</p>
         pub fn set_dead_letter_queue_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3922,24 +3746,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dead_letter_queue_url(input);
             self
         }
-        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly
-        /// batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every
-        /// Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
-        /// <p>After the Identity Resolution Job completes, use the
-        /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
-        /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from
-        /// S3.</p>
+        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+        /// <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
         pub fn matching(mut self, input: crate::model::MatchingRequest) -> Self {
             self.inner = self.inner.matching(input);
             self
         }
-        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly
-        /// batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every
-        /// Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
-        /// <p>After the Identity Resolution Job completes, use the
-        /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
-        /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from
-        /// S3.</p>
+        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+        /// <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
         pub fn set_matching(
             mut self,
             input: std::option::Option<crate::model::MatchingRequest>,
@@ -3973,11 +3787,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateProfile`.
     ///
-    /// <p>Updates the properties of a profile. The ProfileId is required for updating a customer
-    /// profile.</p>
-    /// <p>When calling the UpdateProfile API, specifying an empty string value means that any
-    /// existing value will be removed. Not specifying a string value means that any value already
-    /// there will be kept.</p>
+    /// <p>Updates the properties of a profile. The ProfileId is required for updating a customer profile.</p>
+    /// <p>When calling the UpdateProfile API, specifying an empty string value means that any existing value will be removed. Not specifying a string value means that any value already there will be kept.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateProfile<
         C = aws_smithy_client::erase::DynConnector,
@@ -4156,14 +3967,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_gender(input);
             self
         }
-        /// <p>The customer’s phone number, which has not been specified as a mobile, home, or business
-        /// number. </p>
+        /// <p>The customer’s phone number, which has not been specified as a mobile, home, or business number. </p>
         pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.phone_number(input.into());
             self
         }
-        /// <p>The customer’s phone number, which has not been specified as a mobile, home, or business
-        /// number. </p>
+        /// <p>The customer’s phone number, which has not been specified as a mobile, home, or business number. </p>
         pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_phone_number(input);
             self
@@ -4207,14 +4016,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_business_phone_number(input);
             self
         }
-        /// <p>The customer’s email address, which has not been specified as a personal or business
-        /// address. </p>
+        /// <p>The customer’s email address, which has not been specified as a personal or business address. </p>
         pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.email_address(input.into());
             self
         }
-        /// <p>The customer’s email address, which has not been specified as a personal or business
-        /// address. </p>
+        /// <p>The customer’s email address, which has not been specified as a personal or business address. </p>
         pub fn set_email_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4248,14 +4055,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_business_email_address(input);
             self
         }
-        /// <p>A generic address associated with the customer that is not mailing, shipping, or
-        /// billing.</p>
+        /// <p>A generic address associated with the customer that is not mailing, shipping, or billing.</p>
         pub fn address(mut self, input: crate::model::UpdateAddress) -> Self {
             self.inner = self.inner.address(input);
             self
         }
-        /// <p>A generic address associated with the customer that is not mailing, shipping, or
-        /// billing.</p>
+        /// <p>A generic address associated with the customer that is not mailing, shipping, or billing.</p>
         pub fn set_address(
             mut self,
             input: std::option::Option<crate::model::UpdateAddress>,

@@ -231,16 +231,14 @@ impl GetTemplateSyncConfigOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServiceTemplateVersionsOutput {
-    /// <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of a service template, after the
-    /// current requested list of service major or minor versions.</p>
+    /// <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of a service template, after the current requested list of service major or minor versions.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of major or minor versions of a service template with detail data.</p>
     pub template_versions:
         std::option::Option<std::vec::Vec<crate::model::ServiceTemplateVersionSummary>>,
 }
 impl ListServiceTemplateVersionsOutput {
-    /// <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of a service template, after the
-    /// current requested list of service major or minor versions.</p>
+    /// <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of a service template, after the current requested list of service major or minor versions.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -270,14 +268,12 @@ pub mod list_service_template_versions_output {
             std::option::Option<std::vec::Vec<crate::model::ServiceTemplateVersionSummary>>,
     }
     impl Builder {
-        /// <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of a service template, after the
-        /// current requested list of service major or minor versions.</p>
+        /// <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of a service template, after the current requested list of service major or minor versions.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of a service template, after the
-        /// current requested list of service major or minor versions.</p>
+        /// <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of a service template, after the current requested list of service major or minor versions.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -576,15 +572,13 @@ impl GetServiceTemplateVersionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServiceTemplatesOutput {
-    /// <p>A token to indicate the location of the next service template in the array of service templates, after the current requested list of service
-    /// templates.</p>
+    /// <p>A token to indicate the location of the next service template in the array of service templates, after the current requested list of service templates.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of service templates with detail data.</p>
     pub templates: std::option::Option<std::vec::Vec<crate::model::ServiceTemplateSummary>>,
 }
 impl ListServiceTemplatesOutput {
-    /// <p>A token to indicate the location of the next service template in the array of service templates, after the current requested list of service
-    /// templates.</p>
+    /// <p>A token to indicate the location of the next service template in the array of service templates, after the current requested list of service templates.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -612,14 +606,12 @@ pub mod list_service_templates_output {
             std::option::Option<std::vec::Vec<crate::model::ServiceTemplateSummary>>,
     }
     impl Builder {
-        /// <p>A token to indicate the location of the next service template in the array of service templates, after the current requested list of service
-        /// templates.</p>
+        /// <p>A token to indicate the location of the next service template in the array of service templates, after the current requested list of service templates.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to indicate the location of the next service template in the array of service templates, after the current requested list of service
-        /// templates.</p>
+        /// <p>A token to indicate the location of the next service template in the array of service templates, after the current requested list of service templates.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1246,16 +1238,14 @@ impl UpdateServicePipelineOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServicePipelineProvisionedResourcesOutput {
-    /// <p>A token to indicate the location of the next provisioned resource in the array of provisioned resources, after the current requested list of
-    /// provisioned resources.</p>
+    /// <p>A token to indicate the location of the next provisioned resource in the array of provisioned resources, after the current requested list of provisioned resources.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of provisioned resources for a service and pipeline.</p>
     pub provisioned_resources:
         std::option::Option<std::vec::Vec<crate::model::ProvisionedResource>>,
 }
 impl ListServicePipelineProvisionedResourcesOutput {
-    /// <p>A token to indicate the location of the next provisioned resource in the array of provisioned resources, after the current requested list of
-    /// provisioned resources.</p>
+    /// <p>A token to indicate the location of the next provisioned resource in the array of provisioned resources, after the current requested list of provisioned resources.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1285,14 +1275,12 @@ pub mod list_service_pipeline_provisioned_resources_output {
             std::option::Option<std::vec::Vec<crate::model::ProvisionedResource>>,
     }
     impl Builder {
-        /// <p>A token to indicate the location of the next provisioned resource in the array of provisioned resources, after the current requested list of
-        /// provisioned resources.</p>
+        /// <p>A token to indicate the location of the next provisioned resource in the array of provisioned resources, after the current requested list of provisioned resources.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to indicate the location of the next provisioned resource in the array of provisioned resources, after the current requested list of
-        /// provisioned resources.</p>
+        /// <p>A token to indicate the location of the next provisioned resource in the array of provisioned resources, after the current requested list of provisioned resources.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1418,15 +1406,13 @@ impl ListServicePipelineOutputsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServiceInstancesOutput {
-    /// <p>A token to indicate the location of the next service instance in the array of service instances, after the current requested list of service
-    /// instances.</p>
+    /// <p>A token to indicate the location of the next service instance in the array of service instances, after the current requested list of service instances.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of service instances with summaries of detail data.</p>
     pub service_instances: std::option::Option<std::vec::Vec<crate::model::ServiceInstanceSummary>>,
 }
 impl ListServiceInstancesOutput {
-    /// <p>A token to indicate the location of the next service instance in the array of service instances, after the current requested list of service
-    /// instances.</p>
+    /// <p>A token to indicate the location of the next service instance in the array of service instances, after the current requested list of service instances.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1456,14 +1442,12 @@ pub mod list_service_instances_output {
             std::option::Option<std::vec::Vec<crate::model::ServiceInstanceSummary>>,
     }
     impl Builder {
-        /// <p>A token to indicate the location of the next service instance in the array of service instances, after the current requested list of service
-        /// instances.</p>
+        /// <p>A token to indicate the location of the next service instance in the array of service instances, after the current requested list of service instances.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to indicate the location of the next service instance in the array of service instances, after the current requested list of service
-        /// instances.</p>
+        /// <p>A token to indicate the location of the next service instance in the array of service instances, after the current requested list of service instances.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1621,16 +1605,14 @@ impl GetServiceInstanceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServiceInstanceProvisionedResourcesOutput {
-    /// <p>A token to indicate the location of the next provisioned resource in the array of provisioned resources, after the current requested list of
-    /// provisioned resources.</p>
+    /// <p>A token to indicate the location of the next provisioned resource in the array of provisioned resources, after the current requested list of provisioned resources.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of provisioned resources for a service instance.</p>
     pub provisioned_resources:
         std::option::Option<std::vec::Vec<crate::model::ProvisionedResource>>,
 }
 impl ListServiceInstanceProvisionedResourcesOutput {
-    /// <p>A token to indicate the location of the next provisioned resource in the array of provisioned resources, after the current requested list of
-    /// provisioned resources.</p>
+    /// <p>A token to indicate the location of the next provisioned resource in the array of provisioned resources, after the current requested list of provisioned resources.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1660,14 +1642,12 @@ pub mod list_service_instance_provisioned_resources_output {
             std::option::Option<std::vec::Vec<crate::model::ProvisionedResource>>,
     }
     impl Builder {
-        /// <p>A token to indicate the location of the next provisioned resource in the array of provisioned resources, after the current requested list of
-        /// provisioned resources.</p>
+        /// <p>A token to indicate the location of the next provisioned resource in the array of provisioned resources, after the current requested list of provisioned resources.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to indicate the location of the next provisioned resource in the array of provisioned resources, after the current requested list of
-        /// provisioned resources.</p>
+        /// <p>A token to indicate the location of the next provisioned resource in the array of provisioned resources, after the current requested list of provisioned resources.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1793,15 +1773,13 @@ impl ListServiceInstanceOutputsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRepositoriesOutput {
-    /// <p>A token to indicate the location of the next repository in the array of repositories, after the current requested list of repositories.
-    /// </p>
+    /// <p>A token to indicate the location of the next repository in the array of repositories, after the current requested list of repositories. </p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of repositories.</p>
     pub repositories: std::option::Option<std::vec::Vec<crate::model::RepositorySummary>>,
 }
 impl ListRepositoriesOutput {
-    /// <p>A token to indicate the location of the next repository in the array of repositories, after the current requested list of repositories.
-    /// </p>
+    /// <p>A token to indicate the location of the next repository in the array of repositories, after the current requested list of repositories. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1829,14 +1807,12 @@ pub mod list_repositories_output {
             std::option::Option<std::vec::Vec<crate::model::RepositorySummary>>,
     }
     impl Builder {
-        /// <p>A token to indicate the location of the next repository in the array of repositories, after the current requested list of repositories.
-        /// </p>
+        /// <p>A token to indicate the location of the next repository in the array of repositories, after the current requested list of repositories. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to indicate the location of the next repository in the array of repositories, after the current requested list of repositories.
-        /// </p>
+        /// <p>A token to indicate the location of the next repository in the array of repositories, after the current requested list of repositories. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2051,16 +2027,14 @@ impl GetRepositoryOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEnvironmentTemplateVersionsOutput {
-    /// <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of an environment template, after
-    /// the list of major or minor versions that was previously requested.</p>
+    /// <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of an environment template, after the list of major or minor versions that was previously requested.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of major or minor versions of an environment template detail data.</p>
     pub template_versions:
         std::option::Option<std::vec::Vec<crate::model::EnvironmentTemplateVersionSummary>>,
 }
 impl ListEnvironmentTemplateVersionsOutput {
-    /// <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of an environment template, after
-    /// the list of major or minor versions that was previously requested.</p>
+    /// <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of an environment template, after the list of major or minor versions that was previously requested.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2090,14 +2064,12 @@ pub mod list_environment_template_versions_output {
             std::option::Option<std::vec::Vec<crate::model::EnvironmentTemplateVersionSummary>>,
     }
     impl Builder {
-        /// <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of an environment template, after
-        /// the list of major or minor versions that was previously requested.</p>
+        /// <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of an environment template, after the list of major or minor versions that was previously requested.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of an environment template, after
-        /// the list of major or minor versions that was previously requested.</p>
+        /// <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of an environment template, after the list of major or minor versions that was previously requested.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2410,15 +2382,13 @@ impl GetEnvironmentTemplateVersionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEnvironmentTemplatesOutput {
-    /// <p>A token to indicate the location of the next environment template in the array of environment templates, after the current requested list of
-    /// environment templates.</p>
+    /// <p>A token to indicate the location of the next environment template in the array of environment templates, after the current requested list of environment templates.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of environment templates with detail data.</p>
     pub templates: std::option::Option<std::vec::Vec<crate::model::EnvironmentTemplateSummary>>,
 }
 impl ListEnvironmentTemplatesOutput {
-    /// <p>A token to indicate the location of the next environment template in the array of environment templates, after the current requested list of
-    /// environment templates.</p>
+    /// <p>A token to indicate the location of the next environment template in the array of environment templates, after the current requested list of environment templates.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2446,14 +2416,12 @@ pub mod list_environment_templates_output {
             std::option::Option<std::vec::Vec<crate::model::EnvironmentTemplateSummary>>,
     }
     impl Builder {
-        /// <p>A token to indicate the location of the next environment template in the array of environment templates, after the current requested list of
-        /// environment templates.</p>
+        /// <p>A token to indicate the location of the next environment template in the array of environment templates, after the current requested list of environment templates.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to indicate the location of the next environment template in the array of environment templates, after the current requested list of
-        /// environment templates.</p>
+        /// <p>A token to indicate the location of the next environment template in the array of environment templates, after the current requested list of environment templates.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2725,15 +2693,13 @@ impl GetEnvironmentTemplateOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEnvironmentsOutput {
-    /// <p>A token to indicate the location of the next environment in the array of environments, after the current requested list of
-    /// environments.</p>
+    /// <p>A token to indicate the location of the next environment in the array of environments, after the current requested list of environments.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of environment detail data summaries.</p>
     pub environments: std::option::Option<std::vec::Vec<crate::model::EnvironmentSummary>>,
 }
 impl ListEnvironmentsOutput {
-    /// <p>A token to indicate the location of the next environment in the array of environments, after the current requested list of
-    /// environments.</p>
+    /// <p>A token to indicate the location of the next environment in the array of environments, after the current requested list of environments.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2761,14 +2727,12 @@ pub mod list_environments_output {
             std::option::Option<std::vec::Vec<crate::model::EnvironmentSummary>>,
     }
     impl Builder {
-        /// <p>A token to indicate the location of the next environment in the array of environments, after the current requested list of
-        /// environments.</p>
+        /// <p>A token to indicate the location of the next environment in the array of environments, after the current requested list of environments.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to indicate the location of the next environment in the array of environments, after the current requested list of
-        /// environments.</p>
+        /// <p>A token to indicate the location of the next environment in the array of environments, after the current requested list of environments.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3040,16 +3004,14 @@ impl GetEnvironmentOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEnvironmentProvisionedResourcesOutput {
-    /// <p>A token to indicate the location of the next environment provisioned resource in the array of provisioned resources, after the current
-    /// requested list of environment provisioned resources.</p>
+    /// <p>A token to indicate the location of the next environment provisioned resource in the array of provisioned resources, after the current requested list of environment provisioned resources.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of environment provisioned resources.</p>
     pub provisioned_resources:
         std::option::Option<std::vec::Vec<crate::model::ProvisionedResource>>,
 }
 impl ListEnvironmentProvisionedResourcesOutput {
-    /// <p>A token to indicate the location of the next environment provisioned resource in the array of provisioned resources, after the current
-    /// requested list of environment provisioned resources.</p>
+    /// <p>A token to indicate the location of the next environment provisioned resource in the array of provisioned resources, after the current requested list of environment provisioned resources.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3079,14 +3041,12 @@ pub mod list_environment_provisioned_resources_output {
             std::option::Option<std::vec::Vec<crate::model::ProvisionedResource>>,
     }
     impl Builder {
-        /// <p>A token to indicate the location of the next environment provisioned resource in the array of provisioned resources, after the current
-        /// requested list of environment provisioned resources.</p>
+        /// <p>A token to indicate the location of the next environment provisioned resource in the array of provisioned resources, after the current requested list of environment provisioned resources.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to indicate the location of the next environment provisioned resource in the array of provisioned resources, after the current
-        /// requested list of environment provisioned resources.</p>
+        /// <p>A token to indicate the location of the next environment provisioned resource in the array of provisioned resources, after the current requested list of environment provisioned resources.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3130,15 +3090,13 @@ impl ListEnvironmentProvisionedResourcesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEnvironmentOutputsOutput {
-    /// <p>A token to indicate the location of the next environment output in the array of environment outputs, after the current requested list of
-    /// environment outputs.</p>
+    /// <p>A token to indicate the location of the next environment output in the array of environment outputs, after the current requested list of environment outputs.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of environment outputs with detail data.</p>
     pub outputs: std::option::Option<std::vec::Vec<crate::model::Output>>,
 }
 impl ListEnvironmentOutputsOutput {
-    /// <p>A token to indicate the location of the next environment output in the array of environment outputs, after the current requested list of
-    /// environment outputs.</p>
+    /// <p>A token to indicate the location of the next environment output in the array of environment outputs, after the current requested list of environment outputs.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3165,14 +3123,12 @@ pub mod list_environment_outputs_output {
         pub(crate) outputs: std::option::Option<std::vec::Vec<crate::model::Output>>,
     }
     impl Builder {
-        /// <p>A token to indicate the location of the next environment output in the array of environment outputs, after the current requested list of
-        /// environment outputs.</p>
+        /// <p>A token to indicate the location of the next environment output in the array of environment outputs, after the current requested list of environment outputs.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to indicate the location of the next environment output in the array of environment outputs, after the current requested list of
-        /// environment outputs.</p>
+        /// <p>A token to indicate the location of the next environment output in the array of environment outputs, after the current requested list of environment outputs.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3353,8 +3309,7 @@ pub struct ListEnvironmentAccountConnectionsOutput {
     /// <p>An array of environment account connections with details that's returned by Proton. </p>
     pub environment_account_connections:
         std::option::Option<std::vec::Vec<crate::model::EnvironmentAccountConnectionSummary>>,
-    /// <p>A token to indicate the location of the next environment account connection in the array of environment account connections, after the current
-    /// requested list of environment account connections.</p>
+    /// <p>A token to indicate the location of the next environment account connection in the array of environment account connections, after the current requested list of environment account connections.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEnvironmentAccountConnectionsOutput {
@@ -3364,8 +3319,7 @@ impl ListEnvironmentAccountConnectionsOutput {
     ) -> std::option::Option<&[crate::model::EnvironmentAccountConnectionSummary]> {
         self.environment_account_connections.as_deref()
     }
-    /// <p>A token to indicate the location of the next environment account connection in the array of environment account connections, after the current
-    /// requested list of environment account connections.</p>
+    /// <p>A token to indicate the location of the next environment account connection in the array of environment account connections, after the current requested list of environment account connections.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3416,14 +3370,12 @@ pub mod list_environment_account_connections_output {
             self.environment_account_connections = input;
             self
         }
-        /// <p>A token to indicate the location of the next environment account connection in the array of environment account connections, after the current
-        /// requested list of environment account connections.</p>
+        /// <p>A token to indicate the location of the next environment account connection in the array of environment account connections, after the current requested list of environment account connections.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to indicate the location of the next environment account connection in the array of environment account connections, after the current
-        /// requested list of environment account connections.</p>
+        /// <p>A token to indicate the location of the next environment account connection in the array of environment account connections, after the current requested list of environment account connections.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3922,8 +3874,7 @@ impl NotifyResourceDeploymentStatusChangeOutput {
 pub struct ListTagsForResourceOutput {
     /// <p>An array of resource tags with detail data.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>A token to indicate the location of the next resource tag in the array of resource tags, after the current requested list of resource
-    /// tags.</p>
+    /// <p>A token to indicate the location of the next resource tag in the array of resource tags, after the current requested list of resource tags.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceOutput {
@@ -3931,8 +3882,7 @@ impl ListTagsForResourceOutput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>A token to indicate the location of the next resource tag in the array of resource tags, after the current requested list of resource
-    /// tags.</p>
+    /// <p>A token to indicate the location of the next resource tag in the array of resource tags, after the current requested list of resource tags.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -3974,14 +3924,12 @@ pub mod list_tags_for_resource_output {
             self.tags = input;
             self
         }
-        /// <p>A token to indicate the location of the next resource tag in the array of resource tags, after the current requested list of resource
-        /// tags.</p>
+        /// <p>A token to indicate the location of the next resource tag in the array of resource tags, after the current requested list of resource tags.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to indicate the location of the next resource tag in the array of resource tags, after the current requested list of resource
-        /// tags.</p>
+        /// <p>A token to indicate the location of the next resource tag in the array of resource tags, after the current requested list of resource tags.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4006,16 +3954,14 @@ impl ListTagsForResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRepositorySyncDefinitionsOutput {
-    /// <p>A token to indicate the location of the next repository sync definition in the array of repository sync definitions, after the current
-    /// requested list of repository sync definitions.</p>
+    /// <p>A token to indicate the location of the next repository sync definition in the array of repository sync definitions, after the current requested list of repository sync definitions.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of repository sync definitions.</p>
     pub sync_definitions:
         std::option::Option<std::vec::Vec<crate::model::RepositorySyncDefinition>>,
 }
 impl ListRepositorySyncDefinitionsOutput {
-    /// <p>A token to indicate the location of the next repository sync definition in the array of repository sync definitions, after the current
-    /// requested list of repository sync definitions.</p>
+    /// <p>A token to indicate the location of the next repository sync definition in the array of repository sync definitions, after the current requested list of repository sync definitions.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -4045,14 +3991,12 @@ pub mod list_repository_sync_definitions_output {
             std::option::Option<std::vec::Vec<crate::model::RepositorySyncDefinition>>,
     }
     impl Builder {
-        /// <p>A token to indicate the location of the next repository sync definition in the array of repository sync definitions, after the current
-        /// requested list of repository sync definitions.</p>
+        /// <p>A token to indicate the location of the next repository sync definition in the array of repository sync definitions, after the current requested list of repository sync definitions.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to indicate the location of the next repository sync definition in the array of repository sync definitions, after the current
-        /// requested list of repository sync definitions.</p>
+        /// <p>A token to indicate the location of the next repository sync definition in the array of repository sync definitions, after the current requested list of repository sync definitions.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self

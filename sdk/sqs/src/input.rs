@@ -38,18 +38,14 @@ pub mod add_permission_input {
         ///
         /// To override the contents of this collection use [`set_aws_account_ids`](Self::set_aws_account_ids).
         ///
-        /// <p>The Amazon Web Services account numbers of the <a href="https://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principals</a> who are to receive
-        /// permission. For information about locating the Amazon Web Services account identification, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-making-api-requests.html#sqs-api-request-authentication">Your Amazon Web Services Identifiers</a> in the <i>Amazon SQS Developer
-        /// Guide</i>.</p>
+        /// <p>The Amazon Web Services account numbers of the <a href="https://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principals</a> who are to receive permission. For information about locating the Amazon Web Services account identification, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-making-api-requests.html#sqs-api-request-authentication">Your Amazon Web Services Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.</p>
         pub fn aws_account_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.aws_account_ids.unwrap_or_default();
             v.push(input.into());
             self.aws_account_ids = Some(v);
             self
         }
-        /// <p>The Amazon Web Services account numbers of the <a href="https://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principals</a> who are to receive
-        /// permission. For information about locating the Amazon Web Services account identification, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-making-api-requests.html#sqs-api-request-authentication">Your Amazon Web Services Identifiers</a> in the <i>Amazon SQS Developer
-        /// Guide</i>.</p>
+        /// <p>The Amazon Web Services account numbers of the <a href="https://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principals</a> who are to receive permission. For information about locating the Amazon Web Services account identification, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-making-api-requests.html#sqs-api-request-authentication">Your Amazon Web Services Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.</p>
         pub fn set_aws_account_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -62,10 +58,8 @@ pub mod add_permission_input {
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
         /// <p>The action the client wants to allow for the specified principal. Valid values: the name of any action or <code>*</code>.</p>
-        /// <p>For more information about these actions, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-overview-of-managing-access.html">Overview of Managing Access Permissions to Your Amazon Simple Queue Service Resource</a>
-        /// in the <i>Amazon SQS Developer Guide</i>.</p>
-        /// <p>Specifying <code>SendMessage</code>, <code>DeleteMessage</code>, or <code>ChangeMessageVisibility</code> for <code>ActionName.n</code> also grants permissions for the corresponding batch versions of those actions: <code>SendMessageBatch</code>,
-        /// <code>DeleteMessageBatch</code>, and <code>ChangeMessageVisibilityBatch</code>.</p>
+        /// <p>For more information about these actions, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-overview-of-managing-access.html">Overview of Managing Access Permissions to Your Amazon Simple Queue Service Resource</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+        /// <p>Specifying <code>SendMessage</code>, <code>DeleteMessage</code>, or <code>ChangeMessageVisibility</code> for <code>ActionName.n</code> also grants permissions for the corresponding batch versions of those actions: <code>SendMessageBatch</code>, <code>DeleteMessageBatch</code>, and <code>ChangeMessageVisibilityBatch</code>.</p>
         pub fn actions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.actions.unwrap_or_default();
             v.push(input.into());
@@ -73,10 +67,8 @@ pub mod add_permission_input {
             self
         }
         /// <p>The action the client wants to allow for the specified principal. Valid values: the name of any action or <code>*</code>.</p>
-        /// <p>For more information about these actions, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-overview-of-managing-access.html">Overview of Managing Access Permissions to Your Amazon Simple Queue Service Resource</a>
-        /// in the <i>Amazon SQS Developer Guide</i>.</p>
-        /// <p>Specifying <code>SendMessage</code>, <code>DeleteMessage</code>, or <code>ChangeMessageVisibility</code> for <code>ActionName.n</code> also grants permissions for the corresponding batch versions of those actions: <code>SendMessageBatch</code>,
-        /// <code>DeleteMessageBatch</code>, and <code>ChangeMessageVisibilityBatch</code>.</p>
+        /// <p>For more information about these actions, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-overview-of-managing-access.html">Overview of Managing Access Permissions to Your Amazon Simple Queue Service Resource</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+        /// <p>Specifying <code>SendMessage</code>, <code>DeleteMessage</code>, or <code>ChangeMessageVisibility</code> for <code>ActionName.n</code> also grants permissions for the corresponding batch versions of those actions: <code>SendMessageBatch</code>, <code>DeleteMessageBatch</code>, and <code>ChangeMessageVisibilityBatch</code>.</p>
         pub fn set_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -239,16 +231,12 @@ pub mod change_message_visibility_input {
             self.queue_url = input;
             self
         }
-        /// <p>The receipt handle associated with the message whose visibility timeout is changed. This parameter is returned by the <code>
-        /// <a>ReceiveMessage</a>
-        /// </code> action.</p>
+        /// <p>The receipt handle associated with the message whose visibility timeout is changed. This parameter is returned by the <code> <code>ReceiveMessage</code> </code> action.</p>
         pub fn receipt_handle(mut self, input: impl Into<std::string::String>) -> Self {
             self.receipt_handle = Some(input.into());
             self
         }
-        /// <p>The receipt handle associated with the message whose visibility timeout is changed. This parameter is returned by the <code>
-        /// <a>ReceiveMessage</a>
-        /// </code> action.</p>
+        /// <p>The receipt handle associated with the message whose visibility timeout is changed. This parameter is returned by the <code> <code>ReceiveMessage</code> </code> action.</p>
         pub fn set_receipt_handle(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -600,15 +588,9 @@ pub mod create_queue_input {
     impl Builder {
         /// <p>The name of the new queue. The following limits apply to this name:</p>
         /// <ul>
-        /// <li>
-        /// <p>A queue name can have up to 80 characters.</p>               
-        /// </li>
-        /// <li>
-        /// <p>Valid values: alphanumeric characters, hyphens (<code>-</code>), and underscores (<code>_</code>).</p>
-        /// </li>
-        /// <li>
-        /// <p>A FIFO queue name must end with the <code>.fifo</code> suffix.</p>
-        /// </li>
+        /// <li> <p>A queue name can have up to 80 characters.</p> </li>
+        /// <li> <p>Valid values: alphanumeric characters, hyphens (<code>-</code>), and underscores (<code>_</code>).</p> </li>
+        /// <li> <p>A FIFO queue name must end with the <code>.fifo</code> suffix.</p> </li>
         /// </ul>
         /// <p>Queue URLs and names are case-sensitive.</p>
         pub fn queue_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -617,15 +599,9 @@ pub mod create_queue_input {
         }
         /// <p>The name of the new queue. The following limits apply to this name:</p>
         /// <ul>
-        /// <li>
-        /// <p>A queue name can have up to 80 characters.</p>               
-        /// </li>
-        /// <li>
-        /// <p>Valid values: alphanumeric characters, hyphens (<code>-</code>), and underscores (<code>_</code>).</p>
-        /// </li>
-        /// <li>
-        /// <p>A FIFO queue name must end with the <code>.fifo</code> suffix.</p>
-        /// </li>
+        /// <li> <p>A queue name can have up to 80 characters.</p> </li>
+        /// <li> <p>Valid values: alphanumeric characters, hyphens (<code>-</code>), and underscores (<code>_</code>).</p> </li>
+        /// <li> <p>A FIFO queue name must end with the <code>.fifo</code> suffix.</p> </li>
         /// </ul>
         /// <p>Queue URLs and names are case-sensitive.</p>
         pub fn set_queue_name(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -636,33 +612,17 @@ pub mod create_queue_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Add cost allocation tags to the specified Amazon SQS queue. For an overview, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html">Tagging
-        /// Your Amazon SQS Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p>
-        ///
+        /// <p>Add cost allocation tags to the specified Amazon SQS queue. For an overview, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html">Tagging Your Amazon SQS Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p>
         /// <p>When you use queue tags, keep the following guidelines in mind:</p>
         /// <ul>
-        /// <li>
-        /// <p>Adding more than 50 tags to a queue isn't recommended.</p>
-        /// </li>
-        /// <li>
-        /// <p>Tags don't have any semantic meaning. Amazon SQS interprets tags as character strings.</p>
-        /// </li>
-        /// <li>
-        /// <p>Tags are case-sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>A new tag with a key identical to that of an existing tag overwrites the existing tag.</p>
-        /// </li>
+        /// <li> <p>Adding more than 50 tags to a queue isn't recommended.</p> </li>
+        /// <li> <p>Tags don't have any semantic meaning. Amazon SQS interprets tags as character strings.</p> </li>
+        /// <li> <p>Tags are case-sensitive.</p> </li>
+        /// <li> <p>A new tag with a key identical to that of an existing tag overwrites the existing tag.</p> </li>
         /// </ul>
-        /// <p>For a full list of tag restrictions, see
-        /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-limits.html#limits-queues">Quotas related to queues</a>
-        /// in the <i>Amazon SQS Developer Guide</i>.</p>
-        /// <note>
-        /// <p>To be able to tag a queue on creation, you must have the
-        /// <code>sqs:CreateQueue</code> and <code>sqs:TagQueue</code> permissions.</p>
-        /// <p>Cross-account permissions don't apply to this action. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-        /// cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+        /// <p>For a full list of tag restrictions, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-limits.html#limits-queues">Quotas related to queues</a> in the <i>Amazon SQS Developer Guide</i>.</p> <note>
+        /// <p>To be able to tag a queue on creation, you must have the <code>sqs:CreateQueue</code> and <code>sqs:TagQueue</code> permissions.</p>
+        /// <p>Cross-account permissions don't apply to this action. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer Guide</i>.</p>
         /// </note>
         pub fn tags(
             mut self,
@@ -674,33 +634,17 @@ pub mod create_queue_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>Add cost allocation tags to the specified Amazon SQS queue. For an overview, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html">Tagging
-        /// Your Amazon SQS Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p>
-        ///
+        /// <p>Add cost allocation tags to the specified Amazon SQS queue. For an overview, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html">Tagging Your Amazon SQS Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p>
         /// <p>When you use queue tags, keep the following guidelines in mind:</p>
         /// <ul>
-        /// <li>
-        /// <p>Adding more than 50 tags to a queue isn't recommended.</p>
-        /// </li>
-        /// <li>
-        /// <p>Tags don't have any semantic meaning. Amazon SQS interprets tags as character strings.</p>
-        /// </li>
-        /// <li>
-        /// <p>Tags are case-sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>A new tag with a key identical to that of an existing tag overwrites the existing tag.</p>
-        /// </li>
+        /// <li> <p>Adding more than 50 tags to a queue isn't recommended.</p> </li>
+        /// <li> <p>Tags don't have any semantic meaning. Amazon SQS interprets tags as character strings.</p> </li>
+        /// <li> <p>Tags are case-sensitive.</p> </li>
+        /// <li> <p>A new tag with a key identical to that of an existing tag overwrites the existing tag.</p> </li>
         /// </ul>
-        /// <p>For a full list of tag restrictions, see
-        /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-limits.html#limits-queues">Quotas related to queues</a>
-        /// in the <i>Amazon SQS Developer Guide</i>.</p>
-        /// <note>
-        /// <p>To be able to tag a queue on creation, you must have the
-        /// <code>sqs:CreateQueue</code> and <code>sqs:TagQueue</code> permissions.</p>
-        /// <p>Cross-account permissions don't apply to this action. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-        /// cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+        /// <p>For a full list of tag restrictions, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-limits.html#limits-queues">Quotas related to queues</a> in the <i>Amazon SQS Developer Guide</i>.</p> <note>
+        /// <p>To be able to tag a queue on creation, you must have the <code>sqs:CreateQueue</code> and <code>sqs:TagQueue</code> permissions.</p>
+        /// <p>Cross-account permissions don't apply to this action. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer Guide</i>.</p>
         /// </note>
         pub fn set_tags(
             mut self,
@@ -718,166 +662,54 @@ pub mod create_queue_input {
         /// <p>A map of attributes with their corresponding values.</p>
         /// <p>The following lists the names, descriptions, and values of the special request parameters that the <code>CreateQueue</code> action uses:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DelaySeconds</code> – The length of time, in seconds, for which the delivery of all messages in the queue is delayed. Valid values: An integer from 0 to 900 seconds (15 minutes). Default: 0.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MaximumMessageSize</code> – The limit of how many bytes a message can contain before Amazon SQS rejects it. Valid values: An integer from 1,024 bytes (1 KiB) to 262,144 bytes (256 KiB). Default: 262,144 (256 KiB).
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MessageRetentionPeriod</code> – The length of time, in seconds, for which Amazon SQS retains a message. Valid values: An integer from 60 seconds (1 minute) to 1,209,600 seconds (14 days). Default: 345,600 (4 days).
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Policy</code> – The queue's policy. A valid Amazon Web Services policy. For more information about policy structure, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview of Amazon Web Services IAM Policies</a> in the <i>Amazon IAM User Guide</i>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ReceiveMessageWaitTimeSeconds</code> – The length of time, in seconds, for which a <code>
-        /// <a>ReceiveMessage</a>
-        /// </code> action waits for a message to arrive. Valid values: An integer from 0 to 20 (seconds). Default: 0.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RedrivePolicy</code> – The string that includes the parameters for the dead-letter queue functionality
-        /// of the source queue as a JSON object. For more information about the redrive policy and dead-letter queues, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using Amazon SQS Dead-Letter Queues</a>
-        /// in the <i>Amazon SQS Developer Guide</i>.</p>
+        /// <li> <p> <code>DelaySeconds</code> – The length of time, in seconds, for which the delivery of all messages in the queue is delayed. Valid values: An integer from 0 to 900 seconds (15 minutes). Default: 0. </p> </li>
+        /// <li> <p> <code>MaximumMessageSize</code> – The limit of how many bytes a message can contain before Amazon SQS rejects it. Valid values: An integer from 1,024 bytes (1 KiB) to 262,144 bytes (256 KiB). Default: 262,144 (256 KiB). </p> </li>
+        /// <li> <p> <code>MessageRetentionPeriod</code> – The length of time, in seconds, for which Amazon SQS retains a message. Valid values: An integer from 60 seconds (1 minute) to 1,209,600 seconds (14 days). Default: 345,600 (4 days). </p> </li>
+        /// <li> <p> <code>Policy</code> – The queue's policy. A valid Amazon Web Services policy. For more information about policy structure, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview of Amazon Web Services IAM Policies</a> in the <i>Amazon IAM User Guide</i>. </p> </li>
+        /// <li> <p> <code>ReceiveMessageWaitTimeSeconds</code> – The length of time, in seconds, for which a <code> <code>ReceiveMessage</code> </code> action waits for a message to arrive. Valid values: An integer from 0 to 20 (seconds). Default: 0. </p> </li>
+        /// <li> <p> <code>RedrivePolicy</code> – The string that includes the parameters for the dead-letter queue functionality of the source queue as a JSON object. For more information about the redrive policy and dead-letter queues, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves messages after the value of <code>maxReceiveCount</code> is exceeded.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>maxReceiveCount</code> – The number of times a message is delivered to the source queue before being moved to the dead-letter queue.
-        /// When the <code>ReceiveCount</code> for a message exceeds the <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the dead-letter-queue.</p>
-        /// </li>
-        /// </ul>
-        /// <note>
+        /// <li> <p> <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves messages after the value of <code>maxReceiveCount</code> is exceeded.</p> </li>
+        /// <li> <p> <code>maxReceiveCount</code> – The number of times a message is delivered to the source queue before being moved to the dead-letter queue. When the <code>ReceiveCount</code> for a message exceeds the <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the dead-letter-queue.</p> </li>
+        /// </ul> <note>
         /// <p>The dead-letter queue of a FIFO queue must also be a FIFO queue. Similarly, the dead-letter queue of a standard queue must also be a standard queue.</p>
-        /// </note>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>VisibilityTimeout</code> – The visibility timeout for the queue, in seconds. Valid values: An integer from 0 to 43,200 (12 hours). Default: 30. For more information about the visibility timeout, see
-        /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p>
-        /// </li>
+        /// </note> </li>
+        /// <li> <p> <code>VisibilityTimeout</code> – The visibility timeout for the queue, in seconds. Valid values: An integer from 0 to 43,200 (12 hours). Default: 30. For more information about the visibility timeout, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li>
         /// </ul>
-        ///
         /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services managed customer master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key Terms</a>.
-        /// While the alias of the Amazon Web Services managed CMK for Amazon SQS is always <code>alias/aws/sqs</code>, the alias of a custom CMK can, for example, be <code>alias/<i>MyAlias</i>
-        /// </code>.
-        /// For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>Key Management Service API Reference</i>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>KmsDataKeyReusePeriodSeconds</code> – The length of time, in seconds, for which Amazon SQS can reuse a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data key</a> to encrypt
-        /// or decrypt messages before calling KMS again. An integer representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24 hours). Default: 300 (5 minutes). A shorter time period provides better security
-        /// but results in more calls to KMS which might incur charges after Free Tier. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How Does the Data Key Reuse Period Work?</a>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SqsManagedSseEnabled</code> – Enables server-side queue encryption using SQS owned encryption keys. Only one server-side encryption option is supported per queue (e.g. <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a> or <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p>
-        /// </li>
+        /// <li> <p> <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services managed customer master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key Terms</a>. While the alias of the Amazon Web Services managed CMK for Amazon SQS is always <code>alias/aws/sqs</code>, the alias of a custom CMK can, for example, be <code>alias/<i>MyAlias</i> </code>. For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>Key Management Service API Reference</i>. </p> </li>
+        /// <li> <p> <code>KmsDataKeyReusePeriodSeconds</code> – The length of time, in seconds, for which Amazon SQS can reuse a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data key</a> to encrypt or decrypt messages before calling KMS again. An integer representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24 hours). Default: 300 (5 minutes). A shorter time period provides better security but results in more calls to KMS which might incur charges after Free Tier. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How Does the Data Key Reuse Period Work?</a>. </p> </li>
+        /// <li> <p> <code>SqsManagedSseEnabled</code> – Enables server-side queue encryption using SQS owned encryption keys. Only one server-side encryption option is supported per queue (e.g. <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a> or <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p> </li>
         /// </ul>
-        ///
-        ///
         /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO (first-in-first-out) queues</a>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>FifoQueue</code> – Designates a queue as FIFO. Valid values are <code>true</code> and <code>false</code>. If you don't specify the <code>FifoQueue</code> attribute, Amazon SQS creates a standard queue.
-        /// You can provide this attribute only during queue creation. You can't change it for an existing queue.
-        /// When you set this attribute, you must also provide the <code>MessageGroupId</code> for your messages explicitly.</p>
-        /// <p>For more information, see
-        /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-understanding-logic.html">FIFO queue logic</a>
-        /// in the <i>Amazon SQS Developer Guide</i>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ContentBasedDeduplication</code> – Enables content-based deduplication. Valid values are <code>true</code> and <code>false</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">Exactly-once processing</a> in the
-        /// <i>Amazon SQS Developer Guide</i>. Note the following:
-        /// </p>
+        /// <li> <p> <code>FifoQueue</code> – Designates a queue as FIFO. Valid values are <code>true</code> and <code>false</code>. If you don't specify the <code>FifoQueue</code> attribute, Amazon SQS creates a standard queue. You can provide this attribute only during queue creation. You can't change it for an existing queue. When you set this attribute, you must also provide the <code>MessageGroupId</code> for your messages explicitly.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-understanding-logic.html">FIFO queue logic</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li>
+        /// <li> <p> <code>ContentBasedDeduplication</code> – Enables content-based deduplication. Valid values are <code>true</code> and <code>false</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>. Note the following: </p>
         /// <ul>
-        /// <li>
-        /// <p>Every message must have a unique <code>MessageDeduplicationId</code>.</p>
+        /// <li> <p>Every message must have a unique <code>MessageDeduplicationId</code>.</p>
         /// <ul>
-        /// <li>
-        /// <p>You may provide a <code>MessageDeduplicationId</code> explicitly.</p>
-        /// </li>
-        /// <li>
-        /// <p>If you aren't able to provide a <code>MessageDeduplicationId</code> and you enable <code>ContentBasedDeduplication</code> for your queue,
-        /// Amazon SQS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>If you don't provide a <code>MessageDeduplicationId</code> and the queue doesn't have <code>ContentBasedDeduplication</code> set,
-        /// the action fails with an error.</p>
-        /// </li>
-        /// <li>
-        /// <p>If the queue has <code>ContentBasedDeduplication</code> set, your <code>MessageDeduplicationId</code> overrides the generated one.</p>
-        /// </li>
+        /// <li> <p>You may provide a <code>MessageDeduplicationId</code> explicitly.</p> </li>
+        /// <li> <p>If you aren't able to provide a <code>MessageDeduplicationId</code> and you enable <code>ContentBasedDeduplication</code> for your queue, Amazon SQS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message). </p> </li>
+        /// <li> <p>If you don't provide a <code>MessageDeduplicationId</code> and the queue doesn't have <code>ContentBasedDeduplication</code> set, the action fails with an error.</p> </li>
+        /// <li> <p>If the queue has <code>ContentBasedDeduplication</code> set, your <code>MessageDeduplicationId</code> overrides the generated one.</p> </li>
+        /// </ul> </li>
+        /// <li> <p>When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the deduplication interval are treated as duplicates and only one copy of the message is delivered.</p> </li>
+        /// <li> <p>If you send one message with <code>ContentBasedDeduplication</code> enabled and then another message with a <code>MessageDeduplicationId</code> that is the same as the one generated for the first <code>MessageDeduplicationId</code>, the two messages are treated as duplicates and only one copy of the message is delivered. </p> </li>
+        /// </ul> </li>
         /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the deduplication interval are treated as duplicates
-        /// and only one copy of the message is delivered.</p>
-        /// </li>
-        /// <li>
-        /// <p>If you send one message with <code>ContentBasedDeduplication</code> enabled and then another message with a <code>MessageDeduplicationId</code> that is the same
-        /// as the one generated for the first <code>MessageDeduplicationId</code>, the two messages are treated as duplicates and only one copy of the message is delivered.
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// </ul>  
-        ///
-        ///
-        /// <p>The following attributes apply only to
-        /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html">high throughput
-        /// for FIFO queues</a>:</p>
+        /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html">high throughput for FIFO queues</a>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DeduplicationScope</code> – Specifies whether message deduplication occurs at the
-        /// message group or queue level. Valid values are <code>messageGroup</code> and <code>queue</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FifoThroughputLimit</code> – Specifies whether the FIFO queue throughput
-        /// quota applies to the entire queue or per message group. Valid values are <code>perQueue</code> and <code>perMessageGroupId</code>.
-        /// The <code>perMessageGroupId</code> value is allowed only when the value for <code>DeduplicationScope</code> is <code>messageGroup</code>.</p>
-        /// </li>
+        /// <li> <p> <code>DeduplicationScope</code> – Specifies whether message deduplication occurs at the message group or queue level. Valid values are <code>messageGroup</code> and <code>queue</code>.</p> </li>
+        /// <li> <p> <code>FifoThroughputLimit</code> – Specifies whether the FIFO queue throughput quota applies to the entire queue or per message group. Valid values are <code>perQueue</code> and <code>perMessageGroupId</code>. The <code>perMessageGroupId</code> value is allowed only when the value for <code>DeduplicationScope</code> is <code>messageGroup</code>.</p> </li>
         /// </ul>
         /// <p>To enable high throughput for FIFO queues, do the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>Set <code>DeduplicationScope</code> to <code>messageGroup</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>Set <code>FifoThroughputLimit</code> to <code>perMessageGroupId</code>.</p>
-        /// </li>
+        /// <li> <p>Set <code>DeduplicationScope</code> to <code>messageGroup</code>.</p> </li>
+        /// <li> <p>Set <code>FifoThroughputLimit</code> to <code>perMessageGroupId</code>.</p> </li>
         /// </ul>
-        /// <p>If you set these attributes to anything other than the values shown for enabling high
-        /// throughput, normal throughput is in effect and deduplication occurs as specified.</p>
-        /// <p>For information on throughput quotas,
-        /// see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a>
-        /// in the <i>Amazon SQS Developer Guide</i>.</p>
+        /// <p>If you set these attributes to anything other than the values shown for enabling high throughput, normal throughput is in effect and deduplication occurs as specified.</p>
+        /// <p>For information on throughput quotas, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a> in the <i>Amazon SQS Developer Guide</i>.</p>
         pub fn attributes(
             mut self,
             k: crate::model::QueueAttributeName,
@@ -891,166 +723,54 @@ pub mod create_queue_input {
         /// <p>A map of attributes with their corresponding values.</p>
         /// <p>The following lists the names, descriptions, and values of the special request parameters that the <code>CreateQueue</code> action uses:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DelaySeconds</code> – The length of time, in seconds, for which the delivery of all messages in the queue is delayed. Valid values: An integer from 0 to 900 seconds (15 minutes). Default: 0.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MaximumMessageSize</code> – The limit of how many bytes a message can contain before Amazon SQS rejects it. Valid values: An integer from 1,024 bytes (1 KiB) to 262,144 bytes (256 KiB). Default: 262,144 (256 KiB).
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MessageRetentionPeriod</code> – The length of time, in seconds, for which Amazon SQS retains a message. Valid values: An integer from 60 seconds (1 minute) to 1,209,600 seconds (14 days). Default: 345,600 (4 days).
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Policy</code> – The queue's policy. A valid Amazon Web Services policy. For more information about policy structure, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview of Amazon Web Services IAM Policies</a> in the <i>Amazon IAM User Guide</i>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ReceiveMessageWaitTimeSeconds</code> – The length of time, in seconds, for which a <code>
-        /// <a>ReceiveMessage</a>
-        /// </code> action waits for a message to arrive. Valid values: An integer from 0 to 20 (seconds). Default: 0.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RedrivePolicy</code> – The string that includes the parameters for the dead-letter queue functionality
-        /// of the source queue as a JSON object. For more information about the redrive policy and dead-letter queues, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using Amazon SQS Dead-Letter Queues</a>
-        /// in the <i>Amazon SQS Developer Guide</i>.</p>
+        /// <li> <p> <code>DelaySeconds</code> – The length of time, in seconds, for which the delivery of all messages in the queue is delayed. Valid values: An integer from 0 to 900 seconds (15 minutes). Default: 0. </p> </li>
+        /// <li> <p> <code>MaximumMessageSize</code> – The limit of how many bytes a message can contain before Amazon SQS rejects it. Valid values: An integer from 1,024 bytes (1 KiB) to 262,144 bytes (256 KiB). Default: 262,144 (256 KiB). </p> </li>
+        /// <li> <p> <code>MessageRetentionPeriod</code> – The length of time, in seconds, for which Amazon SQS retains a message. Valid values: An integer from 60 seconds (1 minute) to 1,209,600 seconds (14 days). Default: 345,600 (4 days). </p> </li>
+        /// <li> <p> <code>Policy</code> – The queue's policy. A valid Amazon Web Services policy. For more information about policy structure, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview of Amazon Web Services IAM Policies</a> in the <i>Amazon IAM User Guide</i>. </p> </li>
+        /// <li> <p> <code>ReceiveMessageWaitTimeSeconds</code> – The length of time, in seconds, for which a <code> <code>ReceiveMessage</code> </code> action waits for a message to arrive. Valid values: An integer from 0 to 20 (seconds). Default: 0. </p> </li>
+        /// <li> <p> <code>RedrivePolicy</code> – The string that includes the parameters for the dead-letter queue functionality of the source queue as a JSON object. For more information about the redrive policy and dead-letter queues, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves messages after the value of <code>maxReceiveCount</code> is exceeded.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>maxReceiveCount</code> – The number of times a message is delivered to the source queue before being moved to the dead-letter queue.
-        /// When the <code>ReceiveCount</code> for a message exceeds the <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the dead-letter-queue.</p>
-        /// </li>
-        /// </ul>
-        /// <note>
+        /// <li> <p> <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves messages after the value of <code>maxReceiveCount</code> is exceeded.</p> </li>
+        /// <li> <p> <code>maxReceiveCount</code> – The number of times a message is delivered to the source queue before being moved to the dead-letter queue. When the <code>ReceiveCount</code> for a message exceeds the <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the dead-letter-queue.</p> </li>
+        /// </ul> <note>
         /// <p>The dead-letter queue of a FIFO queue must also be a FIFO queue. Similarly, the dead-letter queue of a standard queue must also be a standard queue.</p>
-        /// </note>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>VisibilityTimeout</code> – The visibility timeout for the queue, in seconds. Valid values: An integer from 0 to 43,200 (12 hours). Default: 30. For more information about the visibility timeout, see
-        /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p>
-        /// </li>
+        /// </note> </li>
+        /// <li> <p> <code>VisibilityTimeout</code> – The visibility timeout for the queue, in seconds. Valid values: An integer from 0 to 43,200 (12 hours). Default: 30. For more information about the visibility timeout, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li>
         /// </ul>
-        ///
         /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services managed customer master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key Terms</a>.
-        /// While the alias of the Amazon Web Services managed CMK for Amazon SQS is always <code>alias/aws/sqs</code>, the alias of a custom CMK can, for example, be <code>alias/<i>MyAlias</i>
-        /// </code>.
-        /// For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>Key Management Service API Reference</i>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>KmsDataKeyReusePeriodSeconds</code> – The length of time, in seconds, for which Amazon SQS can reuse a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data key</a> to encrypt
-        /// or decrypt messages before calling KMS again. An integer representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24 hours). Default: 300 (5 minutes). A shorter time period provides better security
-        /// but results in more calls to KMS which might incur charges after Free Tier. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How Does the Data Key Reuse Period Work?</a>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SqsManagedSseEnabled</code> – Enables server-side queue encryption using SQS owned encryption keys. Only one server-side encryption option is supported per queue (e.g. <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a> or <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p>
-        /// </li>
+        /// <li> <p> <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services managed customer master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key Terms</a>. While the alias of the Amazon Web Services managed CMK for Amazon SQS is always <code>alias/aws/sqs</code>, the alias of a custom CMK can, for example, be <code>alias/<i>MyAlias</i> </code>. For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>Key Management Service API Reference</i>. </p> </li>
+        /// <li> <p> <code>KmsDataKeyReusePeriodSeconds</code> – The length of time, in seconds, for which Amazon SQS can reuse a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data key</a> to encrypt or decrypt messages before calling KMS again. An integer representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24 hours). Default: 300 (5 minutes). A shorter time period provides better security but results in more calls to KMS which might incur charges after Free Tier. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How Does the Data Key Reuse Period Work?</a>. </p> </li>
+        /// <li> <p> <code>SqsManagedSseEnabled</code> – Enables server-side queue encryption using SQS owned encryption keys. Only one server-side encryption option is supported per queue (e.g. <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a> or <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p> </li>
         /// </ul>
-        ///
-        ///
         /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO (first-in-first-out) queues</a>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>FifoQueue</code> – Designates a queue as FIFO. Valid values are <code>true</code> and <code>false</code>. If you don't specify the <code>FifoQueue</code> attribute, Amazon SQS creates a standard queue.
-        /// You can provide this attribute only during queue creation. You can't change it for an existing queue.
-        /// When you set this attribute, you must also provide the <code>MessageGroupId</code> for your messages explicitly.</p>
-        /// <p>For more information, see
-        /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-understanding-logic.html">FIFO queue logic</a>
-        /// in the <i>Amazon SQS Developer Guide</i>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ContentBasedDeduplication</code> – Enables content-based deduplication. Valid values are <code>true</code> and <code>false</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">Exactly-once processing</a> in the
-        /// <i>Amazon SQS Developer Guide</i>. Note the following:
-        /// </p>
+        /// <li> <p> <code>FifoQueue</code> – Designates a queue as FIFO. Valid values are <code>true</code> and <code>false</code>. If you don't specify the <code>FifoQueue</code> attribute, Amazon SQS creates a standard queue. You can provide this attribute only during queue creation. You can't change it for an existing queue. When you set this attribute, you must also provide the <code>MessageGroupId</code> for your messages explicitly.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-understanding-logic.html">FIFO queue logic</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li>
+        /// <li> <p> <code>ContentBasedDeduplication</code> – Enables content-based deduplication. Valid values are <code>true</code> and <code>false</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>. Note the following: </p>
         /// <ul>
-        /// <li>
-        /// <p>Every message must have a unique <code>MessageDeduplicationId</code>.</p>
+        /// <li> <p>Every message must have a unique <code>MessageDeduplicationId</code>.</p>
         /// <ul>
-        /// <li>
-        /// <p>You may provide a <code>MessageDeduplicationId</code> explicitly.</p>
-        /// </li>
-        /// <li>
-        /// <p>If you aren't able to provide a <code>MessageDeduplicationId</code> and you enable <code>ContentBasedDeduplication</code> for your queue,
-        /// Amazon SQS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>If you don't provide a <code>MessageDeduplicationId</code> and the queue doesn't have <code>ContentBasedDeduplication</code> set,
-        /// the action fails with an error.</p>
-        /// </li>
-        /// <li>
-        /// <p>If the queue has <code>ContentBasedDeduplication</code> set, your <code>MessageDeduplicationId</code> overrides the generated one.</p>
-        /// </li>
+        /// <li> <p>You may provide a <code>MessageDeduplicationId</code> explicitly.</p> </li>
+        /// <li> <p>If you aren't able to provide a <code>MessageDeduplicationId</code> and you enable <code>ContentBasedDeduplication</code> for your queue, Amazon SQS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message). </p> </li>
+        /// <li> <p>If you don't provide a <code>MessageDeduplicationId</code> and the queue doesn't have <code>ContentBasedDeduplication</code> set, the action fails with an error.</p> </li>
+        /// <li> <p>If the queue has <code>ContentBasedDeduplication</code> set, your <code>MessageDeduplicationId</code> overrides the generated one.</p> </li>
+        /// </ul> </li>
+        /// <li> <p>When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the deduplication interval are treated as duplicates and only one copy of the message is delivered.</p> </li>
+        /// <li> <p>If you send one message with <code>ContentBasedDeduplication</code> enabled and then another message with a <code>MessageDeduplicationId</code> that is the same as the one generated for the first <code>MessageDeduplicationId</code>, the two messages are treated as duplicates and only one copy of the message is delivered. </p> </li>
+        /// </ul> </li>
         /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the deduplication interval are treated as duplicates
-        /// and only one copy of the message is delivered.</p>
-        /// </li>
-        /// <li>
-        /// <p>If you send one message with <code>ContentBasedDeduplication</code> enabled and then another message with a <code>MessageDeduplicationId</code> that is the same
-        /// as the one generated for the first <code>MessageDeduplicationId</code>, the two messages are treated as duplicates and only one copy of the message is delivered.
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// </ul>  
-        ///
-        ///
-        /// <p>The following attributes apply only to
-        /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html">high throughput
-        /// for FIFO queues</a>:</p>
+        /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html">high throughput for FIFO queues</a>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DeduplicationScope</code> – Specifies whether message deduplication occurs at the
-        /// message group or queue level. Valid values are <code>messageGroup</code> and <code>queue</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FifoThroughputLimit</code> – Specifies whether the FIFO queue throughput
-        /// quota applies to the entire queue or per message group. Valid values are <code>perQueue</code> and <code>perMessageGroupId</code>.
-        /// The <code>perMessageGroupId</code> value is allowed only when the value for <code>DeduplicationScope</code> is <code>messageGroup</code>.</p>
-        /// </li>
+        /// <li> <p> <code>DeduplicationScope</code> – Specifies whether message deduplication occurs at the message group or queue level. Valid values are <code>messageGroup</code> and <code>queue</code>.</p> </li>
+        /// <li> <p> <code>FifoThroughputLimit</code> – Specifies whether the FIFO queue throughput quota applies to the entire queue or per message group. Valid values are <code>perQueue</code> and <code>perMessageGroupId</code>. The <code>perMessageGroupId</code> value is allowed only when the value for <code>DeduplicationScope</code> is <code>messageGroup</code>.</p> </li>
         /// </ul>
         /// <p>To enable high throughput for FIFO queues, do the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>Set <code>DeduplicationScope</code> to <code>messageGroup</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>Set <code>FifoThroughputLimit</code> to <code>perMessageGroupId</code>.</p>
-        /// </li>
+        /// <li> <p>Set <code>DeduplicationScope</code> to <code>messageGroup</code>.</p> </li>
+        /// <li> <p>Set <code>FifoThroughputLimit</code> to <code>perMessageGroupId</code>.</p> </li>
         /// </ul>
-        /// <p>If you set these attributes to anything other than the values shown for enabling high
-        /// throughput, normal throughput is in effect and deduplication occurs as specified.</p>
-        /// <p>For information on throughput quotas,
-        /// see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a>
-        /// in the <i>Amazon SQS Developer Guide</i>.</p>
+        /// <p>If you set these attributes to anything other than the values shown for enabling high throughput, normal throughput is in effect and deduplication occurs as specified.</p>
+        /// <p>For information on throughput quotas, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a> in the <i>Amazon SQS Developer Guide</i>.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -1707,175 +1427,57 @@ pub mod get_queue_attributes_input {
         /// To override the contents of this collection use [`set_attribute_names`](Self::set_attribute_names).
         ///
         /// <p>A list of attributes for which to retrieve information.</p>
-        /// <p>The <code>AttributeName.N</code> parameter is optional, but if you don't specify values for this parameter,
-        /// the request returns empty results.</p>
-        /// <note>
+        /// <p>The <code>AttributeName.N</code> parameter is optional, but if you don't specify values for this parameter, the request returns empty results.</p> <note>
         /// <p>In the future, new attributes might be added. If you write code that calls this action, we recommend that you structure your code so that it can handle new attributes gracefully.</p>
         /// </note>
-        /// <p>The following attributes are supported:</p>
-        /// <important>
-        /// <p>The <code>ApproximateNumberOfMessagesDelayed</code>, <code>ApproximateNumberOfMessagesNotVisible</code>,
-        /// and <code>ApproximateNumberOfMessagesVisible</code> metrics may not achieve consistency
-        /// until at least 1 minute after the producers stop sending messages. This period is required for
-        /// the queue metadata to reach eventual consistency. </p>
+        /// <p>The following attributes are supported:</p> <important>
+        /// <p>The <code>ApproximateNumberOfMessagesDelayed</code>, <code>ApproximateNumberOfMessagesNotVisible</code>, and <code>ApproximateNumberOfMessagesVisible</code> metrics may not achieve consistency until at least 1 minute after the producers stop sending messages. This period is required for the queue metadata to reach eventual consistency. </p>
         /// </important>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>All</code> – Returns all values. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ApproximateNumberOfMessages</code> – Returns the approximate number of
-        /// messages available for retrieval from the queue.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ApproximateNumberOfMessagesDelayed</code> – Returns the approximate number
-        /// of messages in the queue that are delayed and not available for reading
-        /// immediately. This can happen when the queue is configured as a delay queue or
-        /// when a message has been sent with a delay parameter.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ApproximateNumberOfMessagesNotVisible</code> – Returns the approximate
-        /// number of messages that are in flight. Messages are considered to be
-        /// <i>in flight</i> if they have been sent to a client but have
-        /// not yet been deleted or have not yet reached the end of their visibility window. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CreatedTimestamp</code> – Returns the time when the queue was created in
-        /// seconds (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch
-        /// time</a>).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DelaySeconds</code> – Returns the default delay on the queue in
-        /// seconds.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LastModifiedTimestamp</code> – Returns the time when the queue was last
-        /// changed in seconds (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch
-        /// time</a>).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MaximumMessageSize</code> – Returns the limit of how many bytes a message
-        /// can contain before Amazon SQS rejects it.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MessageRetentionPeriod</code> – Returns the length of time, in seconds,
-        /// for which Amazon SQS retains a message.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Policy</code> – Returns the policy of the queue.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>QueueArn</code> – Returns the Amazon resource name (ARN) of the
-        /// queue.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ReceiveMessageWaitTimeSeconds</code> – Returns the length of time, in
-        /// seconds, for which the <code>ReceiveMessage</code> action waits for a message to
-        /// arrive. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RedrivePolicy</code> – The string that includes the parameters for the dead-letter queue functionality
-        /// of the source queue as a JSON object. For more information about the redrive policy and dead-letter queues, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using Amazon SQS Dead-Letter Queues</a>
-        /// in the <i>Amazon SQS Developer Guide</i>.</p>
+        /// <li> <p> <code>All</code> – Returns all values. </p> </li>
+        /// <li> <p> <code>ApproximateNumberOfMessages</code> – Returns the approximate number of messages available for retrieval from the queue.</p> </li>
+        /// <li> <p> <code>ApproximateNumberOfMessagesDelayed</code> – Returns the approximate number of messages in the queue that are delayed and not available for reading immediately. This can happen when the queue is configured as a delay queue or when a message has been sent with a delay parameter.</p> </li>
+        /// <li> <p> <code>ApproximateNumberOfMessagesNotVisible</code> – Returns the approximate number of messages that are in flight. Messages are considered to be <i>in flight</i> if they have been sent to a client but have not yet been deleted or have not yet reached the end of their visibility window. </p> </li>
+        /// <li> <p> <code>CreatedTimestamp</code> – Returns the time when the queue was created in seconds (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>).</p> </li>
+        /// <li> <p> <code>DelaySeconds</code> – Returns the default delay on the queue in seconds.</p> </li>
+        /// <li> <p> <code>LastModifiedTimestamp</code> – Returns the time when the queue was last changed in seconds (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>).</p> </li>
+        /// <li> <p> <code>MaximumMessageSize</code> – Returns the limit of how many bytes a message can contain before Amazon SQS rejects it.</p> </li>
+        /// <li> <p> <code>MessageRetentionPeriod</code> – Returns the length of time, in seconds, for which Amazon SQS retains a message.</p> </li>
+        /// <li> <p> <code>Policy</code> – Returns the policy of the queue.</p> </li>
+        /// <li> <p> <code>QueueArn</code> – Returns the Amazon resource name (ARN) of the queue.</p> </li>
+        /// <li> <p> <code>ReceiveMessageWaitTimeSeconds</code> – Returns the length of time, in seconds, for which the <code>ReceiveMessage</code> action waits for a message to arrive. </p> </li>
+        /// <li> <p> <code>RedrivePolicy</code> – The string that includes the parameters for the dead-letter queue functionality of the source queue as a JSON object. For more information about the redrive policy and dead-letter queues, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves messages after the value of <code>maxReceiveCount</code> is exceeded.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>maxReceiveCount</code> – The number of times a message is delivered to the source queue before being moved to the dead-letter queue.
-        /// When the <code>ReceiveCount</code> for a message exceeds the <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the dead-letter-queue.</p>
-        /// </li>
+        /// <li> <p> <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves messages after the value of <code>maxReceiveCount</code> is exceeded.</p> </li>
+        /// <li> <p> <code>maxReceiveCount</code> – The number of times a message is delivered to the source queue before being moved to the dead-letter queue. When the <code>ReceiveCount</code> for a message exceeds the <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the dead-letter-queue.</p> </li>
+        /// </ul> </li>
+        /// <li> <p> <code>VisibilityTimeout</code> – Returns the visibility timeout for the queue. For more information about the visibility timeout, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>. </p> </li>
         /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>VisibilityTimeout</code> – Returns the visibility timeout for the queue. For more information about the visibility timeout, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
-        /// </p>
-        /// </li>
-        /// </ul>
-        ///
         /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>KmsMasterKeyId</code> – Returns the ID of an Amazon Web Services managed customer master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key Terms</a>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>KmsDataKeyReusePeriodSeconds</code> – Returns the length of time, in seconds, for which Amazon SQS can reuse a data key to encrypt or decrypt messages before calling KMS again.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How Does the Data Key Reuse Period Work?</a>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SqsManagedSseEnabled</code> – Returns information about whether the queue is using SSE-SQS encryption using SQS owned encryption keys. Only one server-side encryption option is supported per queue (e.g. <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a> or <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p>
-        /// </li>
+        /// <li> <p> <code>KmsMasterKeyId</code> – Returns the ID of an Amazon Web Services managed customer master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key Terms</a>. </p> </li>
+        /// <li> <p> <code>KmsDataKeyReusePeriodSeconds</code> – Returns the length of time, in seconds, for which Amazon SQS can reuse a data key to encrypt or decrypt messages before calling KMS again. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How Does the Data Key Reuse Period Work?</a>. </p> </li>
+        /// <li> <p> <code>SqsManagedSseEnabled</code> – Returns information about whether the queue is using SSE-SQS encryption using SQS owned encryption keys. Only one server-side encryption option is supported per queue (e.g. <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a> or <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p> </li>
         /// </ul>
-        ///
-        ///
         /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO (first-in-first-out) queues</a>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>FifoQueue</code> – Returns information about whether the queue is FIFO. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-understanding-logic.html">FIFO queue logic</a> in the <i>Amazon SQS Developer Guide</i>.</p>
-        /// <note>
+        /// <li> <p> <code>FifoQueue</code> – Returns information about whether the queue is FIFO. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-understanding-logic.html">FIFO queue logic</a> in the <i>Amazon SQS Developer Guide</i>.</p> <note>
         /// <p>To determine whether a queue is <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO</a>, you can check whether <code>QueueName</code> ends with the <code>.fifo</code> suffix.</p>
-        /// </note>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ContentBasedDeduplication</code> – Returns whether content-based deduplication is enabled for the queue. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>.
-        /// </p>
-        /// </li>
+        /// </note> </li>
+        /// <li> <p> <code>ContentBasedDeduplication</code> – Returns whether content-based deduplication is enabled for the queue. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>. </p> </li>
         /// </ul>
-        ///
-        ///
-        /// <p>The following attributes apply only to
-        /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html">high throughput
-        /// for FIFO queues</a>:</p>
+        /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html">high throughput for FIFO queues</a>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DeduplicationScope</code> – Specifies whether message deduplication occurs at the
-        /// message group or queue level. Valid values are <code>messageGroup</code> and <code>queue</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FifoThroughputLimit</code> – Specifies whether the FIFO queue throughput
-        /// quota applies to the entire queue or per message group. Valid values are <code>perQueue</code> and <code>perMessageGroupId</code>.
-        /// The <code>perMessageGroupId</code> value is allowed only when the value for <code>DeduplicationScope</code> is <code>messageGroup</code>.</p>
-        /// </li>
+        /// <li> <p> <code>DeduplicationScope</code> – Specifies whether message deduplication occurs at the message group or queue level. Valid values are <code>messageGroup</code> and <code>queue</code>.</p> </li>
+        /// <li> <p> <code>FifoThroughputLimit</code> – Specifies whether the FIFO queue throughput quota applies to the entire queue or per message group. Valid values are <code>perQueue</code> and <code>perMessageGroupId</code>. The <code>perMessageGroupId</code> value is allowed only when the value for <code>DeduplicationScope</code> is <code>messageGroup</code>.</p> </li>
         /// </ul>
         /// <p>To enable high throughput for FIFO queues, do the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>Set <code>DeduplicationScope</code> to <code>messageGroup</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>Set <code>FifoThroughputLimit</code> to <code>perMessageGroupId</code>.</p>
-        /// </li>
+        /// <li> <p>Set <code>DeduplicationScope</code> to <code>messageGroup</code>.</p> </li>
+        /// <li> <p>Set <code>FifoThroughputLimit</code> to <code>perMessageGroupId</code>.</p> </li>
         /// </ul>
-        /// <p>If you set these attributes to anything other than the values shown for enabling high
-        /// throughput, normal throughput is in effect and deduplication occurs as specified.</p>
-        /// <p>For information on throughput quotas,
-        /// see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a>
-        /// in the <i>Amazon SQS Developer Guide</i>.</p>
+        /// <p>If you set these attributes to anything other than the values shown for enabling high throughput, normal throughput is in effect and deduplication occurs as specified.</p>
+        /// <p>For information on throughput quotas, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a> in the <i>Amazon SQS Developer Guide</i>.</p>
         pub fn attribute_names(mut self, input: crate::model::QueueAttributeName) -> Self {
             let mut v = self.attribute_names.unwrap_or_default();
             v.push(input);
@@ -1883,175 +1485,57 @@ pub mod get_queue_attributes_input {
             self
         }
         /// <p>A list of attributes for which to retrieve information.</p>
-        /// <p>The <code>AttributeName.N</code> parameter is optional, but if you don't specify values for this parameter,
-        /// the request returns empty results.</p>
-        /// <note>
+        /// <p>The <code>AttributeName.N</code> parameter is optional, but if you don't specify values for this parameter, the request returns empty results.</p> <note>
         /// <p>In the future, new attributes might be added. If you write code that calls this action, we recommend that you structure your code so that it can handle new attributes gracefully.</p>
         /// </note>
-        /// <p>The following attributes are supported:</p>
-        /// <important>
-        /// <p>The <code>ApproximateNumberOfMessagesDelayed</code>, <code>ApproximateNumberOfMessagesNotVisible</code>,
-        /// and <code>ApproximateNumberOfMessagesVisible</code> metrics may not achieve consistency
-        /// until at least 1 minute after the producers stop sending messages. This period is required for
-        /// the queue metadata to reach eventual consistency. </p>
+        /// <p>The following attributes are supported:</p> <important>
+        /// <p>The <code>ApproximateNumberOfMessagesDelayed</code>, <code>ApproximateNumberOfMessagesNotVisible</code>, and <code>ApproximateNumberOfMessagesVisible</code> metrics may not achieve consistency until at least 1 minute after the producers stop sending messages. This period is required for the queue metadata to reach eventual consistency. </p>
         /// </important>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>All</code> – Returns all values. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ApproximateNumberOfMessages</code> – Returns the approximate number of
-        /// messages available for retrieval from the queue.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ApproximateNumberOfMessagesDelayed</code> – Returns the approximate number
-        /// of messages in the queue that are delayed and not available for reading
-        /// immediately. This can happen when the queue is configured as a delay queue or
-        /// when a message has been sent with a delay parameter.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ApproximateNumberOfMessagesNotVisible</code> – Returns the approximate
-        /// number of messages that are in flight. Messages are considered to be
-        /// <i>in flight</i> if they have been sent to a client but have
-        /// not yet been deleted or have not yet reached the end of their visibility window. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CreatedTimestamp</code> – Returns the time when the queue was created in
-        /// seconds (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch
-        /// time</a>).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DelaySeconds</code> – Returns the default delay on the queue in
-        /// seconds.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LastModifiedTimestamp</code> – Returns the time when the queue was last
-        /// changed in seconds (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch
-        /// time</a>).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MaximumMessageSize</code> – Returns the limit of how many bytes a message
-        /// can contain before Amazon SQS rejects it.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MessageRetentionPeriod</code> – Returns the length of time, in seconds,
-        /// for which Amazon SQS retains a message.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Policy</code> – Returns the policy of the queue.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>QueueArn</code> – Returns the Amazon resource name (ARN) of the
-        /// queue.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ReceiveMessageWaitTimeSeconds</code> – Returns the length of time, in
-        /// seconds, for which the <code>ReceiveMessage</code> action waits for a message to
-        /// arrive. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RedrivePolicy</code> – The string that includes the parameters for the dead-letter queue functionality
-        /// of the source queue as a JSON object. For more information about the redrive policy and dead-letter queues, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using Amazon SQS Dead-Letter Queues</a>
-        /// in the <i>Amazon SQS Developer Guide</i>.</p>
+        /// <li> <p> <code>All</code> – Returns all values. </p> </li>
+        /// <li> <p> <code>ApproximateNumberOfMessages</code> – Returns the approximate number of messages available for retrieval from the queue.</p> </li>
+        /// <li> <p> <code>ApproximateNumberOfMessagesDelayed</code> – Returns the approximate number of messages in the queue that are delayed and not available for reading immediately. This can happen when the queue is configured as a delay queue or when a message has been sent with a delay parameter.</p> </li>
+        /// <li> <p> <code>ApproximateNumberOfMessagesNotVisible</code> – Returns the approximate number of messages that are in flight. Messages are considered to be <i>in flight</i> if they have been sent to a client but have not yet been deleted or have not yet reached the end of their visibility window. </p> </li>
+        /// <li> <p> <code>CreatedTimestamp</code> – Returns the time when the queue was created in seconds (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>).</p> </li>
+        /// <li> <p> <code>DelaySeconds</code> – Returns the default delay on the queue in seconds.</p> </li>
+        /// <li> <p> <code>LastModifiedTimestamp</code> – Returns the time when the queue was last changed in seconds (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>).</p> </li>
+        /// <li> <p> <code>MaximumMessageSize</code> – Returns the limit of how many bytes a message can contain before Amazon SQS rejects it.</p> </li>
+        /// <li> <p> <code>MessageRetentionPeriod</code> – Returns the length of time, in seconds, for which Amazon SQS retains a message.</p> </li>
+        /// <li> <p> <code>Policy</code> – Returns the policy of the queue.</p> </li>
+        /// <li> <p> <code>QueueArn</code> – Returns the Amazon resource name (ARN) of the queue.</p> </li>
+        /// <li> <p> <code>ReceiveMessageWaitTimeSeconds</code> – Returns the length of time, in seconds, for which the <code>ReceiveMessage</code> action waits for a message to arrive. </p> </li>
+        /// <li> <p> <code>RedrivePolicy</code> – The string that includes the parameters for the dead-letter queue functionality of the source queue as a JSON object. For more information about the redrive policy and dead-letter queues, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves messages after the value of <code>maxReceiveCount</code> is exceeded.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>maxReceiveCount</code> – The number of times a message is delivered to the source queue before being moved to the dead-letter queue.
-        /// When the <code>ReceiveCount</code> for a message exceeds the <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the dead-letter-queue.</p>
-        /// </li>
+        /// <li> <p> <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves messages after the value of <code>maxReceiveCount</code> is exceeded.</p> </li>
+        /// <li> <p> <code>maxReceiveCount</code> – The number of times a message is delivered to the source queue before being moved to the dead-letter queue. When the <code>ReceiveCount</code> for a message exceeds the <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the dead-letter-queue.</p> </li>
+        /// </ul> </li>
+        /// <li> <p> <code>VisibilityTimeout</code> – Returns the visibility timeout for the queue. For more information about the visibility timeout, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>. </p> </li>
         /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>VisibilityTimeout</code> – Returns the visibility timeout for the queue. For more information about the visibility timeout, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
-        /// </p>
-        /// </li>
-        /// </ul>
-        ///
         /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>KmsMasterKeyId</code> – Returns the ID of an Amazon Web Services managed customer master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key Terms</a>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>KmsDataKeyReusePeriodSeconds</code> – Returns the length of time, in seconds, for which Amazon SQS can reuse a data key to encrypt or decrypt messages before calling KMS again.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How Does the Data Key Reuse Period Work?</a>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SqsManagedSseEnabled</code> – Returns information about whether the queue is using SSE-SQS encryption using SQS owned encryption keys. Only one server-side encryption option is supported per queue (e.g. <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a> or <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p>
-        /// </li>
+        /// <li> <p> <code>KmsMasterKeyId</code> – Returns the ID of an Amazon Web Services managed customer master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key Terms</a>. </p> </li>
+        /// <li> <p> <code>KmsDataKeyReusePeriodSeconds</code> – Returns the length of time, in seconds, for which Amazon SQS can reuse a data key to encrypt or decrypt messages before calling KMS again. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How Does the Data Key Reuse Period Work?</a>. </p> </li>
+        /// <li> <p> <code>SqsManagedSseEnabled</code> – Returns information about whether the queue is using SSE-SQS encryption using SQS owned encryption keys. Only one server-side encryption option is supported per queue (e.g. <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a> or <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p> </li>
         /// </ul>
-        ///
-        ///
         /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO (first-in-first-out) queues</a>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>FifoQueue</code> – Returns information about whether the queue is FIFO. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-understanding-logic.html">FIFO queue logic</a> in the <i>Amazon SQS Developer Guide</i>.</p>
-        /// <note>
+        /// <li> <p> <code>FifoQueue</code> – Returns information about whether the queue is FIFO. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-understanding-logic.html">FIFO queue logic</a> in the <i>Amazon SQS Developer Guide</i>.</p> <note>
         /// <p>To determine whether a queue is <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO</a>, you can check whether <code>QueueName</code> ends with the <code>.fifo</code> suffix.</p>
-        /// </note>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ContentBasedDeduplication</code> – Returns whether content-based deduplication is enabled for the queue. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>.
-        /// </p>
-        /// </li>
+        /// </note> </li>
+        /// <li> <p> <code>ContentBasedDeduplication</code> – Returns whether content-based deduplication is enabled for the queue. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>. </p> </li>
         /// </ul>
-        ///
-        ///
-        /// <p>The following attributes apply only to
-        /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html">high throughput
-        /// for FIFO queues</a>:</p>
+        /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html">high throughput for FIFO queues</a>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DeduplicationScope</code> – Specifies whether message deduplication occurs at the
-        /// message group or queue level. Valid values are <code>messageGroup</code> and <code>queue</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FifoThroughputLimit</code> – Specifies whether the FIFO queue throughput
-        /// quota applies to the entire queue or per message group. Valid values are <code>perQueue</code> and <code>perMessageGroupId</code>.
-        /// The <code>perMessageGroupId</code> value is allowed only when the value for <code>DeduplicationScope</code> is <code>messageGroup</code>.</p>
-        /// </li>
+        /// <li> <p> <code>DeduplicationScope</code> – Specifies whether message deduplication occurs at the message group or queue level. Valid values are <code>messageGroup</code> and <code>queue</code>.</p> </li>
+        /// <li> <p> <code>FifoThroughputLimit</code> – Specifies whether the FIFO queue throughput quota applies to the entire queue or per message group. Valid values are <code>perQueue</code> and <code>perMessageGroupId</code>. The <code>perMessageGroupId</code> value is allowed only when the value for <code>DeduplicationScope</code> is <code>messageGroup</code>.</p> </li>
         /// </ul>
         /// <p>To enable high throughput for FIFO queues, do the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>Set <code>DeduplicationScope</code> to <code>messageGroup</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>Set <code>FifoThroughputLimit</code> to <code>perMessageGroupId</code>.</p>
-        /// </li>
+        /// <li> <p>Set <code>DeduplicationScope</code> to <code>messageGroup</code>.</p> </li>
+        /// <li> <p>Set <code>FifoThroughputLimit</code> to <code>perMessageGroupId</code>.</p> </li>
         /// </ul>
-        /// <p>If you set these attributes to anything other than the values shown for enabling high
-        /// throughput, normal throughput is in effect and deduplication occurs as specified.</p>
-        /// <p>For information on throughput quotas,
-        /// see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a>
-        /// in the <i>Amazon SQS Developer Guide</i>.</p>
+        /// <p>If you set these attributes to anything other than the values shown for enabling high throughput, normal throughput is in effect and deduplication occurs as specified.</p>
+        /// <p>For information on throughput quotas, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a> in the <i>Amazon SQS Developer Guide</i>.</p>
         pub fn set_attribute_names(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::QueueAttributeName>>,
@@ -2388,14 +1872,12 @@ pub mod list_dead_letter_source_queues_input {
             self.next_token = input;
             self
         }
-        /// <p>Maximum number of results to include in the response. Value range is 1 to 1000.
-        /// You must set <code>MaxResults</code> to receive a value for <code>NextToken</code> in the response.</p>
+        /// <p>Maximum number of results to include in the response. Value range is 1 to 1000. You must set <code>MaxResults</code> to receive a value for <code>NextToken</code> in the response.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>Maximum number of results to include in the response. Value range is 1 to 1000.
-        /// You must set <code>MaxResults</code> to receive a value for <code>NextToken</code> in the response.</p>
+        /// <p>Maximum number of results to include in the response. Value range is 1 to 1000. You must set <code>MaxResults</code> to receive a value for <code>NextToken</code> in the response.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2570,14 +2052,12 @@ pub mod list_queues_input {
             self.next_token = input;
             self
         }
-        /// <p>Maximum number of results to include in the response. Value range is 1 to 1000.
-        /// You must set <code>MaxResults</code> to receive a value for <code>NextToken</code> in the response.</p>
+        /// <p>Maximum number of results to include in the response. Value range is 1 to 1000. You must set <code>MaxResults</code> to receive a value for <code>NextToken</code> in the response.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>Maximum number of results to include in the response. Value range is 1 to 1000.
-        /// You must set <code>MaxResults</code> to receive a value for <code>NextToken</code> in the response.</p>
+        /// <p>Maximum number of results to include in the response. Value range is 1 to 1000. You must set <code>MaxResults</code> to receive a value for <code>NextToken</code> in the response.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3044,67 +2524,22 @@ pub mod receive_message_input {
         ///
         /// To override the contents of this collection use [`set_attribute_names`](Self::set_attribute_names).
         ///
-        /// <p>A list of attributes that need to be returned along with each message. These attributes
-        /// include:</p>
+        /// <p>A list of attributes that need to be returned along with each message. These attributes include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>All</code> – Returns all values.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ApproximateFirstReceiveTimestamp</code> – Returns the time the message was first received from the queue (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ApproximateReceiveCount</code> – Returns the number of times a message has been received across all queues but not deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AWSTraceHeader</code> – Returns the X-Ray trace header string.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SenderId</code>
-        /// </p>
+        /// <li> <p> <code>All</code> – Returns all values.</p> </li>
+        /// <li> <p> <code>ApproximateFirstReceiveTimestamp</code> – Returns the time the message was first received from the queue (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds).</p> </li>
+        /// <li> <p> <code>ApproximateReceiveCount</code> – Returns the number of times a message has been received across all queues but not deleted.</p> </li>
+        /// <li> <p> <code>AWSTraceHeader</code> – Returns the X-Ray trace header string. </p> </li>
+        /// <li> <p> <code>SenderId</code> </p>
         /// <ul>
-        /// <li>
-        /// <p>For an IAM user, returns the IAM user ID, for example <code>ABCDEFGHI1JKLMNOPQ23R</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>For an IAM role, returns the IAM role ID, for example <code>ABCDE1F2GH3I4JK5LMNOP:i-a123b456</code>.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SentTimestamp</code> – Returns the time the message was sent to the queue (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SqsManagedSseEnabled</code> – Enables server-side queue encryption using SQS owned encryption keys. Only one server-side encryption option is supported per queue (e.g. <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a> or <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MessageDeduplicationId</code> – Returns the value provided by the
-        /// producer that calls the <code>
-        /// <a>SendMessage</a>
-        /// </code>
-        /// action.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MessageGroupId</code> – Returns the value provided by the producer that
-        /// calls the <code>
-        /// <a>SendMessage</a>
-        /// </code> action. Messages with the
-        /// same <code>MessageGroupId</code> are returned in sequence.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SequenceNumber</code> – Returns the value provided by Amazon SQS.</p>
-        /// </li>
+        /// <li> <p>For an IAM user, returns the IAM user ID, for example <code>ABCDEFGHI1JKLMNOPQ23R</code>.</p> </li>
+        /// <li> <p>For an IAM role, returns the IAM role ID, for example <code>ABCDE1F2GH3I4JK5LMNOP:i-a123b456</code>.</p> </li>
+        /// </ul> </li>
+        /// <li> <p> <code>SentTimestamp</code> – Returns the time the message was sent to the queue (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds).</p> </li>
+        /// <li> <p> <code>SqsManagedSseEnabled</code> – Enables server-side queue encryption using SQS owned encryption keys. Only one server-side encryption option is supported per queue (e.g. <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a> or <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p> </li>
+        /// <li> <p> <code>MessageDeduplicationId</code> – Returns the value provided by the producer that calls the <code> <code>SendMessage</code> </code> action.</p> </li>
+        /// <li> <p> <code>MessageGroupId</code> – Returns the value provided by the producer that calls the <code> <code>SendMessage</code> </code> action. Messages with the same <code>MessageGroupId</code> are returned in sequence.</p> </li>
+        /// <li> <p> <code>SequenceNumber</code> – Returns the value provided by Amazon SQS.</p> </li>
         /// </ul>
         pub fn attribute_names(mut self, input: crate::model::QueueAttributeName) -> Self {
             let mut v = self.attribute_names.unwrap_or_default();
@@ -3112,67 +2547,22 @@ pub mod receive_message_input {
             self.attribute_names = Some(v);
             self
         }
-        /// <p>A list of attributes that need to be returned along with each message. These attributes
-        /// include:</p>
+        /// <p>A list of attributes that need to be returned along with each message. These attributes include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>All</code> – Returns all values.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ApproximateFirstReceiveTimestamp</code> – Returns the time the message was first received from the queue (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ApproximateReceiveCount</code> – Returns the number of times a message has been received across all queues but not deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AWSTraceHeader</code> – Returns the X-Ray trace header string.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SenderId</code>
-        /// </p>
+        /// <li> <p> <code>All</code> – Returns all values.</p> </li>
+        /// <li> <p> <code>ApproximateFirstReceiveTimestamp</code> – Returns the time the message was first received from the queue (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds).</p> </li>
+        /// <li> <p> <code>ApproximateReceiveCount</code> – Returns the number of times a message has been received across all queues but not deleted.</p> </li>
+        /// <li> <p> <code>AWSTraceHeader</code> – Returns the X-Ray trace header string. </p> </li>
+        /// <li> <p> <code>SenderId</code> </p>
         /// <ul>
-        /// <li>
-        /// <p>For an IAM user, returns the IAM user ID, for example <code>ABCDEFGHI1JKLMNOPQ23R</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>For an IAM role, returns the IAM role ID, for example <code>ABCDE1F2GH3I4JK5LMNOP:i-a123b456</code>.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SentTimestamp</code> – Returns the time the message was sent to the queue (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SqsManagedSseEnabled</code> – Enables server-side queue encryption using SQS owned encryption keys. Only one server-side encryption option is supported per queue (e.g. <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a> or <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MessageDeduplicationId</code> – Returns the value provided by the
-        /// producer that calls the <code>
-        /// <a>SendMessage</a>
-        /// </code>
-        /// action.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MessageGroupId</code> – Returns the value provided by the producer that
-        /// calls the <code>
-        /// <a>SendMessage</a>
-        /// </code> action. Messages with the
-        /// same <code>MessageGroupId</code> are returned in sequence.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SequenceNumber</code> – Returns the value provided by Amazon SQS.</p>
-        /// </li>
+        /// <li> <p>For an IAM user, returns the IAM user ID, for example <code>ABCDEFGHI1JKLMNOPQ23R</code>.</p> </li>
+        /// <li> <p>For an IAM role, returns the IAM role ID, for example <code>ABCDE1F2GH3I4JK5LMNOP:i-a123b456</code>.</p> </li>
+        /// </ul> </li>
+        /// <li> <p> <code>SentTimestamp</code> – Returns the time the message was sent to the queue (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds).</p> </li>
+        /// <li> <p> <code>SqsManagedSseEnabled</code> – Enables server-side queue encryption using SQS owned encryption keys. Only one server-side encryption option is supported per queue (e.g. <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a> or <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p> </li>
+        /// <li> <p> <code>MessageDeduplicationId</code> – Returns the value provided by the producer that calls the <code> <code>SendMessage</code> </code> action.</p> </li>
+        /// <li> <p> <code>MessageGroupId</code> – Returns the value provided by the producer that calls the <code> <code>SendMessage</code> </code> action. Messages with the same <code>MessageGroupId</code> are returned in sequence.</p> </li>
+        /// <li> <p> <code>SequenceNumber</code> – Returns the value provided by Amazon SQS.</p> </li>
         /// </ul>
         pub fn set_attribute_names(
             mut self,
@@ -3187,25 +2577,13 @@ pub mod receive_message_input {
         ///
         /// <p>The name of the message attribute, where <i>N</i> is the index.</p>
         /// <ul>
-        /// <li>
-        /// <p>The name can contain alphanumeric characters and the underscore (<code>_</code>), hyphen (<code>-</code>), and period (<code>.</code>).</p>
-        /// </li>
-        /// <li>
-        /// <p>The name is case-sensitive and must be unique among all attribute names for the message.</p>
-        /// </li>
-        /// <li>
-        /// <p>The name must not start with AWS-reserved prefixes such as <code>AWS.</code> or <code>Amazon.</code> (or any casing variants).</p>
-        /// </li>
-        /// <li>
-        /// <p>The name must not start or end with a period (<code>.</code>), and it should not have periods in succession (<code>..</code>).</p>
-        /// </li>
-        /// <li>
-        /// <p>The name can be up to 256 characters long.</p>
-        /// </li>
+        /// <li> <p>The name can contain alphanumeric characters and the underscore (<code>_</code>), hyphen (<code>-</code>), and period (<code>.</code>).</p> </li>
+        /// <li> <p>The name is case-sensitive and must be unique among all attribute names for the message.</p> </li>
+        /// <li> <p>The name must not start with AWS-reserved prefixes such as <code>AWS.</code> or <code>Amazon.</code> (or any casing variants).</p> </li>
+        /// <li> <p>The name must not start or end with a period (<code>.</code>), and it should not have periods in succession (<code>..</code>).</p> </li>
+        /// <li> <p>The name can be up to 256 characters long.</p> </li>
         /// </ul>
-        ///
-        /// <p>When using <code>ReceiveMessage</code>, you can send a list of attribute names to receive, or you can return all of the attributes by specifying <code>All</code> or <code>.*</code> in your request.
-        /// You can also use all message attributes starting with a prefix, for example <code>bar.*</code>.</p>
+        /// <p>When using <code>ReceiveMessage</code>, you can send a list of attribute names to receive, or you can return all of the attributes by specifying <code>All</code> or <code>.*</code> in your request. You can also use all message attributes starting with a prefix, for example <code>bar.*</code>.</p>
         pub fn message_attribute_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.message_attribute_names.unwrap_or_default();
             v.push(input.into());
@@ -3214,25 +2592,13 @@ pub mod receive_message_input {
         }
         /// <p>The name of the message attribute, where <i>N</i> is the index.</p>
         /// <ul>
-        /// <li>
-        /// <p>The name can contain alphanumeric characters and the underscore (<code>_</code>), hyphen (<code>-</code>), and period (<code>.</code>).</p>
-        /// </li>
-        /// <li>
-        /// <p>The name is case-sensitive and must be unique among all attribute names for the message.</p>
-        /// </li>
-        /// <li>
-        /// <p>The name must not start with AWS-reserved prefixes such as <code>AWS.</code> or <code>Amazon.</code> (or any casing variants).</p>
-        /// </li>
-        /// <li>
-        /// <p>The name must not start or end with a period (<code>.</code>), and it should not have periods in succession (<code>..</code>).</p>
-        /// </li>
-        /// <li>
-        /// <p>The name can be up to 256 characters long.</p>
-        /// </li>
+        /// <li> <p>The name can contain alphanumeric characters and the underscore (<code>_</code>), hyphen (<code>-</code>), and period (<code>.</code>).</p> </li>
+        /// <li> <p>The name is case-sensitive and must be unique among all attribute names for the message.</p> </li>
+        /// <li> <p>The name must not start with AWS-reserved prefixes such as <code>AWS.</code> or <code>Amazon.</code> (or any casing variants).</p> </li>
+        /// <li> <p>The name must not start or end with a period (<code>.</code>), and it should not have periods in succession (<code>..</code>).</p> </li>
+        /// <li> <p>The name can be up to 256 characters long.</p> </li>
         /// </ul>
-        ///
-        /// <p>When using <code>ReceiveMessage</code>, you can send a list of attribute names to receive, or you can return all of the attributes by specifying <code>All</code> or <code>.*</code> in your request.
-        /// You can also use all message attributes starting with a prefix, for example <code>bar.*</code>.</p>
+        /// <p>When using <code>ReceiveMessage</code>, you can send a list of attribute names to receive, or you can return all of the attributes by specifying <code>All</code> or <code>.*</code> in your request. You can also use all message attributes starting with a prefix, for example <code>bar.*</code>.</p>
         pub fn set_message_attribute_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3260,122 +2626,56 @@ pub mod receive_message_input {
             self.visibility_timeout = input;
             self
         }
-        /// <p>The duration (in seconds) for which the call waits for a message to arrive in the queue before returning. If a message is available, the call returns sooner than <code>WaitTimeSeconds</code>.
-        /// If no messages are available and the wait time expires, the call returns successfully with an empty list of messages.</p>
-        /// <important>
-        /// <p>To avoid HTTP errors, ensure that the HTTP response timeout for <code>ReceiveMessage</code>
-        /// requests is longer than the <code>WaitTimeSeconds</code> parameter. For example,
-        /// with the Java SDK, you can set HTTP transport settings using the <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/nio/netty/NettyNioAsyncHttpClient.html"> NettyNioAsyncHttpClient</a> for asynchronous clients, or the <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/apache/ApacheHttpClient.html"> ApacheHttpClient</a> for synchronous clients. </p>
+        /// <p>The duration (in seconds) for which the call waits for a message to arrive in the queue before returning. If a message is available, the call returns sooner than <code>WaitTimeSeconds</code>. If no messages are available and the wait time expires, the call returns successfully with an empty list of messages.</p> <important>
+        /// <p>To avoid HTTP errors, ensure that the HTTP response timeout for <code>ReceiveMessage</code> requests is longer than the <code>WaitTimeSeconds</code> parameter. For example, with the Java SDK, you can set HTTP transport settings using the <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/nio/netty/NettyNioAsyncHttpClient.html"> NettyNioAsyncHttpClient</a> for asynchronous clients, or the <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/apache/ApacheHttpClient.html"> ApacheHttpClient</a> for synchronous clients. </p>
         /// </important>
         pub fn wait_time_seconds(mut self, input: i32) -> Self {
             self.wait_time_seconds = Some(input);
             self
         }
-        /// <p>The duration (in seconds) for which the call waits for a message to arrive in the queue before returning. If a message is available, the call returns sooner than <code>WaitTimeSeconds</code>.
-        /// If no messages are available and the wait time expires, the call returns successfully with an empty list of messages.</p>
-        /// <important>
-        /// <p>To avoid HTTP errors, ensure that the HTTP response timeout for <code>ReceiveMessage</code>
-        /// requests is longer than the <code>WaitTimeSeconds</code> parameter. For example,
-        /// with the Java SDK, you can set HTTP transport settings using the <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/nio/netty/NettyNioAsyncHttpClient.html"> NettyNioAsyncHttpClient</a> for asynchronous clients, or the <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/apache/ApacheHttpClient.html"> ApacheHttpClient</a> for synchronous clients. </p>
+        /// <p>The duration (in seconds) for which the call waits for a message to arrive in the queue before returning. If a message is available, the call returns sooner than <code>WaitTimeSeconds</code>. If no messages are available and the wait time expires, the call returns successfully with an empty list of messages.</p> <important>
+        /// <p>To avoid HTTP errors, ensure that the HTTP response timeout for <code>ReceiveMessage</code> requests is longer than the <code>WaitTimeSeconds</code> parameter. For example, with the Java SDK, you can set HTTP transport settings using the <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/nio/netty/NettyNioAsyncHttpClient.html"> NettyNioAsyncHttpClient</a> for asynchronous clients, or the <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/apache/ApacheHttpClient.html"> ApacheHttpClient</a> for synchronous clients. </p>
         /// </important>
         pub fn set_wait_time_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.wait_time_seconds = input;
             self
         }
         /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
-        /// <p>The token used for deduplication of <code>ReceiveMessage</code> calls. If a networking issue occurs after a <code>ReceiveMessage</code> action, and instead of a response you receive a generic error,
-        /// it is possible to retry the same action with an identical <code>ReceiveRequestAttemptId</code> to retrieve the same set of messages, even if their visibility timeout has not yet expired.</p>
+        /// <p>The token used for deduplication of <code>ReceiveMessage</code> calls. If a networking issue occurs after a <code>ReceiveMessage</code> action, and instead of a response you receive a generic error, it is possible to retry the same action with an identical <code>ReceiveRequestAttemptId</code> to retrieve the same set of messages, even if their visibility timeout has not yet expired.</p>
         /// <ul>
-        /// <li>
-        /// <p>You can use <code>ReceiveRequestAttemptId</code> only for 5 minutes after a <code>ReceiveMessage</code> action.</p>
-        /// </li>
-        /// <li>
-        /// <p>When you set <code>FifoQueue</code>, a caller of the <code>ReceiveMessage</code> action can provide a <code>ReceiveRequestAttemptId</code> explicitly.</p>
-        /// </li>
-        /// <li>
-        /// <p>If a caller of the <code>ReceiveMessage</code> action doesn't provide a <code>ReceiveRequestAttemptId</code>, Amazon SQS generates a <code>ReceiveRequestAttemptId</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>It is possible to retry the <code>ReceiveMessage</code> action with the same <code>ReceiveRequestAttemptId</code> if none of the messages have been modified (deleted or had their visibility changes).</p>
-        /// </li>
-        /// <li>
-        /// <p>During a visibility timeout, subsequent calls with the same <code>ReceiveRequestAttemptId</code> return the same messages and receipt handles. If a retry occurs within the deduplication interval,
-        /// it resets the visibility timeout. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility Timeout</a>
-        /// in the <i>Amazon SQS Developer Guide</i>.</p>
-        /// <important>
-        /// <p>If a caller of the <code>ReceiveMessage</code> action still processes
-        /// messages when the visibility timeout expires and messages become visible,
-        /// another worker consuming from the same queue can receive the same messages
-        /// and therefore process duplicates. Also, if a consumer whose message
-        /// processing time is longer than the visibility timeout tries to delete the
-        /// processed messages, the action fails with an error.</p>
+        /// <li> <p>You can use <code>ReceiveRequestAttemptId</code> only for 5 minutes after a <code>ReceiveMessage</code> action.</p> </li>
+        /// <li> <p>When you set <code>FifoQueue</code>, a caller of the <code>ReceiveMessage</code> action can provide a <code>ReceiveRequestAttemptId</code> explicitly.</p> </li>
+        /// <li> <p>If a caller of the <code>ReceiveMessage</code> action doesn't provide a <code>ReceiveRequestAttemptId</code>, Amazon SQS generates a <code>ReceiveRequestAttemptId</code>.</p> </li>
+        /// <li> <p>It is possible to retry the <code>ReceiveMessage</code> action with the same <code>ReceiveRequestAttemptId</code> if none of the messages have been modified (deleted or had their visibility changes).</p> </li>
+        /// <li> <p>During a visibility timeout, subsequent calls with the same <code>ReceiveRequestAttemptId</code> return the same messages and receipt handles. If a retry occurs within the deduplication interval, it resets the visibility timeout. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> <important>
+        /// <p>If a caller of the <code>ReceiveMessage</code> action still processes messages when the visibility timeout expires and messages become visible, another worker consuming from the same queue can receive the same messages and therefore process duplicates. Also, if a consumer whose message processing time is longer than the visibility timeout tries to delete the processed messages, the action fails with an error.</p>
         /// <p>To mitigate this effect, ensure that your application observes a safe threshold before the visibility timeout expires and extend the visibility timeout as necessary.</p>
-        /// </important>
-        /// </li>
-        /// <li>
-        /// <p>While messages with a particular <code>MessageGroupId</code> are invisible, no more messages belonging to the same <code>MessageGroupId</code> are returned until the visibility timeout expires. You can still receive
-        /// messages with another <code>MessageGroupId</code> as long as it is also visible.</p>
-        /// </li>
-        /// <li>
-        /// <p>If a caller of <code>ReceiveMessage</code> can't track the <code>ReceiveRequestAttemptId</code>, no retries work until the original visibility timeout expires. As a result, delays might occur but
-        /// the messages in the queue remain in a strict order.</p>
-        /// </li>
+        /// </important> </li>
+        /// <li> <p>While messages with a particular <code>MessageGroupId</code> are invisible, no more messages belonging to the same <code>MessageGroupId</code> are returned until the visibility timeout expires. You can still receive messages with another <code>MessageGroupId</code> as long as it is also visible.</p> </li>
+        /// <li> <p>If a caller of <code>ReceiveMessage</code> can't track the <code>ReceiveRequestAttemptId</code>, no retries work until the original visibility timeout expires. As a result, delays might occur but the messages in the queue remain in a strict order.</p> </li>
         /// </ul>
-        /// <p>The maximum length of <code>ReceiveRequestAttemptId</code> is 128 characters. <code>ReceiveRequestAttemptId</code> can contain alphanumeric characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and
-        /// punctuation (<code>!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~</code>).</p>
-        /// <p>For best practices of using <code>ReceiveRequestAttemptId</code>, see
-        /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-receiverequestattemptid-request-parameter.html">Using the ReceiveRequestAttemptId Request Parameter</a>
-        /// in the <i>Amazon SQS Developer Guide</i>.</p>
+        /// <p>The maximum length of <code>ReceiveRequestAttemptId</code> is 128 characters. <code>ReceiveRequestAttemptId</code> can contain alphanumeric characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p>
+        /// <p>For best practices of using <code>ReceiveRequestAttemptId</code>, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-receiverequestattemptid-request-parameter.html">Using the ReceiveRequestAttemptId Request Parameter</a> in the <i>Amazon SQS Developer Guide</i>.</p>
         pub fn receive_request_attempt_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.receive_request_attempt_id = Some(input.into());
             self
         }
         /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
-        /// <p>The token used for deduplication of <code>ReceiveMessage</code> calls. If a networking issue occurs after a <code>ReceiveMessage</code> action, and instead of a response you receive a generic error,
-        /// it is possible to retry the same action with an identical <code>ReceiveRequestAttemptId</code> to retrieve the same set of messages, even if their visibility timeout has not yet expired.</p>
+        /// <p>The token used for deduplication of <code>ReceiveMessage</code> calls. If a networking issue occurs after a <code>ReceiveMessage</code> action, and instead of a response you receive a generic error, it is possible to retry the same action with an identical <code>ReceiveRequestAttemptId</code> to retrieve the same set of messages, even if their visibility timeout has not yet expired.</p>
         /// <ul>
-        /// <li>
-        /// <p>You can use <code>ReceiveRequestAttemptId</code> only for 5 minutes after a <code>ReceiveMessage</code> action.</p>
-        /// </li>
-        /// <li>
-        /// <p>When you set <code>FifoQueue</code>, a caller of the <code>ReceiveMessage</code> action can provide a <code>ReceiveRequestAttemptId</code> explicitly.</p>
-        /// </li>
-        /// <li>
-        /// <p>If a caller of the <code>ReceiveMessage</code> action doesn't provide a <code>ReceiveRequestAttemptId</code>, Amazon SQS generates a <code>ReceiveRequestAttemptId</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>It is possible to retry the <code>ReceiveMessage</code> action with the same <code>ReceiveRequestAttemptId</code> if none of the messages have been modified (deleted or had their visibility changes).</p>
-        /// </li>
-        /// <li>
-        /// <p>During a visibility timeout, subsequent calls with the same <code>ReceiveRequestAttemptId</code> return the same messages and receipt handles. If a retry occurs within the deduplication interval,
-        /// it resets the visibility timeout. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility Timeout</a>
-        /// in the <i>Amazon SQS Developer Guide</i>.</p>
-        /// <important>
-        /// <p>If a caller of the <code>ReceiveMessage</code> action still processes
-        /// messages when the visibility timeout expires and messages become visible,
-        /// another worker consuming from the same queue can receive the same messages
-        /// and therefore process duplicates. Also, if a consumer whose message
-        /// processing time is longer than the visibility timeout tries to delete the
-        /// processed messages, the action fails with an error.</p>
+        /// <li> <p>You can use <code>ReceiveRequestAttemptId</code> only for 5 minutes after a <code>ReceiveMessage</code> action.</p> </li>
+        /// <li> <p>When you set <code>FifoQueue</code>, a caller of the <code>ReceiveMessage</code> action can provide a <code>ReceiveRequestAttemptId</code> explicitly.</p> </li>
+        /// <li> <p>If a caller of the <code>ReceiveMessage</code> action doesn't provide a <code>ReceiveRequestAttemptId</code>, Amazon SQS generates a <code>ReceiveRequestAttemptId</code>.</p> </li>
+        /// <li> <p>It is possible to retry the <code>ReceiveMessage</code> action with the same <code>ReceiveRequestAttemptId</code> if none of the messages have been modified (deleted or had their visibility changes).</p> </li>
+        /// <li> <p>During a visibility timeout, subsequent calls with the same <code>ReceiveRequestAttemptId</code> return the same messages and receipt handles. If a retry occurs within the deduplication interval, it resets the visibility timeout. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> <important>
+        /// <p>If a caller of the <code>ReceiveMessage</code> action still processes messages when the visibility timeout expires and messages become visible, another worker consuming from the same queue can receive the same messages and therefore process duplicates. Also, if a consumer whose message processing time is longer than the visibility timeout tries to delete the processed messages, the action fails with an error.</p>
         /// <p>To mitigate this effect, ensure that your application observes a safe threshold before the visibility timeout expires and extend the visibility timeout as necessary.</p>
-        /// </important>
-        /// </li>
-        /// <li>
-        /// <p>While messages with a particular <code>MessageGroupId</code> are invisible, no more messages belonging to the same <code>MessageGroupId</code> are returned until the visibility timeout expires. You can still receive
-        /// messages with another <code>MessageGroupId</code> as long as it is also visible.</p>
-        /// </li>
-        /// <li>
-        /// <p>If a caller of <code>ReceiveMessage</code> can't track the <code>ReceiveRequestAttemptId</code>, no retries work until the original visibility timeout expires. As a result, delays might occur but
-        /// the messages in the queue remain in a strict order.</p>
-        /// </li>
+        /// </important> </li>
+        /// <li> <p>While messages with a particular <code>MessageGroupId</code> are invisible, no more messages belonging to the same <code>MessageGroupId</code> are returned until the visibility timeout expires. You can still receive messages with another <code>MessageGroupId</code> as long as it is also visible.</p> </li>
+        /// <li> <p>If a caller of <code>ReceiveMessage</code> can't track the <code>ReceiveRequestAttemptId</code>, no retries work until the original visibility timeout expires. As a result, delays might occur but the messages in the queue remain in a strict order.</p> </li>
         /// </ul>
-        /// <p>The maximum length of <code>ReceiveRequestAttemptId</code> is 128 characters. <code>ReceiveRequestAttemptId</code> can contain alphanumeric characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and
-        /// punctuation (<code>!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~</code>).</p>
-        /// <p>For best practices of using <code>ReceiveRequestAttemptId</code>, see
-        /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-receiverequestattemptid-request-parameter.html">Using the ReceiveRequestAttemptId Request Parameter</a>
-        /// in the <i>Amazon SQS Developer Guide</i>.</p>
+        /// <p>The maximum length of <code>ReceiveRequestAttemptId</code> is 128 characters. <code>ReceiveRequestAttemptId</code> can contain alphanumeric characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p>
+        /// <p>For best practices of using <code>ReceiveRequestAttemptId</code>, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-receiverequestattemptid-request-parameter.html">Using the ReceiveRequestAttemptId Request Parameter</a> in the <i>Amazon SQS Developer Guide</i>.</p>
         pub fn set_receive_request_attempt_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3541,16 +2841,12 @@ pub mod remove_permission_input {
             self.queue_url = input;
             self
         }
-        /// <p>The identification of the permission to remove. This is the label added using the <code>
-        /// <a>AddPermission</a>
-        /// </code> action.</p>
+        /// <p>The identification of the permission to remove. This is the label added using the <code> <code>AddPermission</code> </code> action.</p>
         pub fn label(mut self, input: impl Into<std::string::String>) -> Self {
             self.label = Some(input.into());
             self
         }
-        /// <p>The identification of the permission to remove. This is the label added using the <code>
-        /// <a>AddPermission</a>
-        /// </code> action.</p>
+        /// <p>The identification of the permission to remove. This is the label added using the <code> <code>AddPermission</code> </code> action.</p>
         pub fn set_label(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.label = input;
             self
@@ -3720,46 +3016,32 @@ pub mod send_message_input {
             self.queue_url = input;
             self
         }
-        /// <p>The message to send. The minimum size is one character. The maximum size is 256 KB.</p>
-        /// <important>
+        /// <p>The message to send. The minimum size is one character. The maximum size is 256 KB.</p> <important>
         /// <p>A message can include only XML, JSON, and unformatted text. The following Unicode characters are allowed:</p>
-        /// <p>
-        /// <code>#x9</code> | <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> | <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to <code>#x10FFFF</code>
-        /// </p>
+        /// <p> <code>#x9</code> | <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> | <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to <code>#x10FFFF</code> </p>
         /// <p>Any characters not included in this list will be rejected. For more information, see the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for characters</a>.</p>
         /// </important>
         pub fn message_body(mut self, input: impl Into<std::string::String>) -> Self {
             self.message_body = Some(input.into());
             self
         }
-        /// <p>The message to send. The minimum size is one character. The maximum size is 256 KB.</p>
-        /// <important>
+        /// <p>The message to send. The minimum size is one character. The maximum size is 256 KB.</p> <important>
         /// <p>A message can include only XML, JSON, and unformatted text. The following Unicode characters are allowed:</p>
-        /// <p>
-        /// <code>#x9</code> | <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> | <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to <code>#x10FFFF</code>
-        /// </p>
+        /// <p> <code>#x9</code> | <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> | <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to <code>#x10FFFF</code> </p>
         /// <p>Any characters not included in this list will be rejected. For more information, see the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for characters</a>.</p>
         /// </important>
         pub fn set_message_body(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message_body = input;
             self
         }
-        /// <p>
-        /// The length of time, in seconds, for which to delay a specific message. Valid values: 0 to 900. Maximum: 15 minutes. Messages with a positive <code>DelaySeconds</code> value become available for processing after the delay period is finished.
-        /// If you don't specify a value, the default value for the queue applies.
-        /// </p>
-        /// <note>
+        /// <p> The length of time, in seconds, for which to delay a specific message. Valid values: 0 to 900. Maximum: 15 minutes. Messages with a positive <code>DelaySeconds</code> value become available for processing after the delay period is finished. If you don't specify a value, the default value for the queue applies. </p> <note>
         /// <p>When you set <code>FifoQueue</code>, you can't set <code>DelaySeconds</code> per message. You can set this parameter only on a queue level.</p>
         /// </note>
         pub fn delay_seconds(mut self, input: i32) -> Self {
             self.delay_seconds = Some(input);
             self
         }
-        /// <p>
-        /// The length of time, in seconds, for which to delay a specific message. Valid values: 0 to 900. Maximum: 15 minutes. Messages with a positive <code>DelaySeconds</code> value become available for processing after the delay period is finished.
-        /// If you don't specify a value, the default value for the queue applies.
-        /// </p>
-        /// <note>
+        /// <p> The length of time, in seconds, for which to delay a specific message. Valid values: 0 to 900. Maximum: 15 minutes. Messages with a positive <code>DelaySeconds</code> value become available for processing after the delay period is finished. If you don't specify a value, the default value for the queue applies. </p> <note>
         /// <p>When you set <code>FifoQueue</code>, you can't set <code>DelaySeconds</code> per message. You can set this parameter only on a queue level.</p>
         /// </note>
         pub fn set_delay_seconds(mut self, input: std::option::Option<i32>) -> Self {
@@ -3770,10 +3052,7 @@ pub mod send_message_input {
         ///
         /// To override the contents of this collection use [`set_message_attributes`](Self::set_message_attributes).
         ///
-        /// <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
-        /// and <code>Value</code>. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon SQS
-        /// message attributes</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+        /// <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon SQS message attributes</a> in the <i>Amazon SQS Developer Guide</i>.</p>
         pub fn message_attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -3784,10 +3063,7 @@ pub mod send_message_input {
             self.message_attributes = Some(hash_map);
             self
         }
-        /// <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
-        /// and <code>Value</code>. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon SQS
-        /// message attributes</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+        /// <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon SQS message attributes</a> in the <i>Amazon SQS Developer Guide</i>.</p>
         pub fn set_message_attributes(
             mut self,
             input: std::option::Option<
@@ -3801,17 +3077,10 @@ pub mod send_message_input {
         ///
         /// To override the contents of this collection use [`set_message_system_attributes`](Self::set_message_system_attributes).
         ///
-        /// <p>The message system attribute to send. Each message system attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.</p>
-        /// <important>
+        /// <p>The message system attribute to send. Each message system attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.</p> <important>
         /// <ul>
-        /// <li>
-        /// <p>Currently, the only supported message system attribute is <code>AWSTraceHeader</code>.
-        /// Its type must be <code>String</code> and its value must be a correctly formatted
-        /// X-Ray trace header string.</p>
-        /// </li>
-        /// <li>
-        /// <p>The size of a message system attribute doesn't count towards the total size of a message.</p>
-        /// </li>
+        /// <li> <p>Currently, the only supported message system attribute is <code>AWSTraceHeader</code>. Its type must be <code>String</code> and its value must be a correctly formatted X-Ray trace header string.</p> </li>
+        /// <li> <p>The size of a message system attribute doesn't count towards the total size of a message.</p> </li>
         /// </ul>
         /// </important>
         pub fn message_system_attributes(
@@ -3824,17 +3093,10 @@ pub mod send_message_input {
             self.message_system_attributes = Some(hash_map);
             self
         }
-        /// <p>The message system attribute to send. Each message system attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.</p>
-        /// <important>
+        /// <p>The message system attribute to send. Each message system attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.</p> <important>
         /// <ul>
-        /// <li>
-        /// <p>Currently, the only supported message system attribute is <code>AWSTraceHeader</code>.
-        /// Its type must be <code>String</code> and its value must be a correctly formatted
-        /// X-Ray trace header string.</p>
-        /// </li>
-        /// <li>
-        /// <p>The size of a message system attribute doesn't count towards the total size of a message.</p>
-        /// </li>
+        /// <li> <p>Currently, the only supported message system attribute is <code>AWSTraceHeader</code>. Its type must be <code>String</code> and its value must be a correctly formatted X-Ray trace header string.</p> </li>
+        /// <li> <p>The size of a message system attribute doesn't count towards the total size of a message.</p> </li>
         /// </ul>
         /// </important>
         pub fn set_message_system_attributes(
@@ -3850,103 +3112,47 @@ pub mod send_message_input {
             self
         }
         /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
-        /// <p>The token used for deduplication of sent messages. If a message with a particular <code>MessageDeduplicationId</code> is sent successfully, any messages sent with the same <code>MessageDeduplicationId</code>
-        /// are accepted successfully but aren't delivered during the 5-minute deduplication interval. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">
-        /// Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+        /// <p>The token used for deduplication of sent messages. If a message with a particular <code>MessageDeduplicationId</code> is sent successfully, any messages sent with the same <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered during the 5-minute deduplication interval. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html"> Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>.</p>
         /// <ul>
-        /// <li>
-        /// <p>Every message must have a unique <code>MessageDeduplicationId</code>,</p>
+        /// <li> <p>Every message must have a unique <code>MessageDeduplicationId</code>,</p>
         /// <ul>
-        /// <li>
-        /// <p>You may provide a <code>MessageDeduplicationId</code> explicitly.</p>
-        /// </li>
-        /// <li>
-        /// <p>If you aren't able to provide a <code>MessageDeduplicationId</code> and you enable <code>ContentBasedDeduplication</code> for your queue,
-        /// Amazon SQS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>If you don't provide a <code>MessageDeduplicationId</code> and the queue doesn't have <code>ContentBasedDeduplication</code> set,
-        /// the action fails with an error.</p>
-        /// </li>
-        /// <li>
-        /// <p>If the queue has <code>ContentBasedDeduplication</code> set, your <code>MessageDeduplicationId</code> overrides the generated one.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the deduplication interval are treated as duplicates
-        /// and only one copy of the message is delivered.</p>
-        /// </li>
-        /// <li>
-        /// <p>If you send one message with <code>ContentBasedDeduplication</code> enabled and then another message with a <code>MessageDeduplicationId</code> that is the same
-        /// as the one generated for the first <code>MessageDeduplicationId</code>, the two messages are treated as duplicates and only one copy of the message is delivered.
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>The <code>MessageDeduplicationId</code> is available to the consumer of the
-        /// message (this can be useful for troubleshooting delivery issues).</p>
-        /// <p>If a message is sent successfully but the acknowledgement is lost and the message is resent with the same
-        /// <code>MessageDeduplicationId</code> after the deduplication interval, Amazon SQS can't detect duplicate messages.</p>
+        /// <li> <p>You may provide a <code>MessageDeduplicationId</code> explicitly.</p> </li>
+        /// <li> <p>If you aren't able to provide a <code>MessageDeduplicationId</code> and you enable <code>ContentBasedDeduplication</code> for your queue, Amazon SQS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message). </p> </li>
+        /// <li> <p>If you don't provide a <code>MessageDeduplicationId</code> and the queue doesn't have <code>ContentBasedDeduplication</code> set, the action fails with an error.</p> </li>
+        /// <li> <p>If the queue has <code>ContentBasedDeduplication</code> set, your <code>MessageDeduplicationId</code> overrides the generated one.</p> </li>
+        /// </ul> </li>
+        /// <li> <p>When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the deduplication interval are treated as duplicates and only one copy of the message is delivered.</p> </li>
+        /// <li> <p>If you send one message with <code>ContentBasedDeduplication</code> enabled and then another message with a <code>MessageDeduplicationId</code> that is the same as the one generated for the first <code>MessageDeduplicationId</code>, the two messages are treated as duplicates and only one copy of the message is delivered. </p> </li>
+        /// </ul> <note>
+        /// <p>The <code>MessageDeduplicationId</code> is available to the consumer of the message (this can be useful for troubleshooting delivery issues).</p>
+        /// <p>If a message is sent successfully but the acknowledgement is lost and the message is resent with the same <code>MessageDeduplicationId</code> after the deduplication interval, Amazon SQS can't detect duplicate messages.</p>
         /// <p>Amazon SQS continues to keep track of the message deduplication ID even after the message is received and deleted.</p>
         /// </note>
-        /// <p>The maximum length of <code>MessageDeduplicationId</code> is 128 characters. <code>MessageDeduplicationId</code> can contain alphanumeric characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and
-        /// punctuation (<code>!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~</code>).</p>
-        /// <p>For best practices of using <code>MessageDeduplicationId</code>, see
-        /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using the MessageDeduplicationId Property</a>
-        /// in the <i>Amazon SQS Developer Guide</i>.</p>
+        /// <p>The maximum length of <code>MessageDeduplicationId</code> is 128 characters. <code>MessageDeduplicationId</code> can contain alphanumeric characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p>
+        /// <p>For best practices of using <code>MessageDeduplicationId</code>, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using the MessageDeduplicationId Property</a> in the <i>Amazon SQS Developer Guide</i>.</p>
         pub fn message_deduplication_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.message_deduplication_id = Some(input.into());
             self
         }
         /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
-        /// <p>The token used for deduplication of sent messages. If a message with a particular <code>MessageDeduplicationId</code> is sent successfully, any messages sent with the same <code>MessageDeduplicationId</code>
-        /// are accepted successfully but aren't delivered during the 5-minute deduplication interval. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">
-        /// Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+        /// <p>The token used for deduplication of sent messages. If a message with a particular <code>MessageDeduplicationId</code> is sent successfully, any messages sent with the same <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered during the 5-minute deduplication interval. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html"> Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>.</p>
         /// <ul>
-        /// <li>
-        /// <p>Every message must have a unique <code>MessageDeduplicationId</code>,</p>
+        /// <li> <p>Every message must have a unique <code>MessageDeduplicationId</code>,</p>
         /// <ul>
-        /// <li>
-        /// <p>You may provide a <code>MessageDeduplicationId</code> explicitly.</p>
-        /// </li>
-        /// <li>
-        /// <p>If you aren't able to provide a <code>MessageDeduplicationId</code> and you enable <code>ContentBasedDeduplication</code> for your queue,
-        /// Amazon SQS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>If you don't provide a <code>MessageDeduplicationId</code> and the queue doesn't have <code>ContentBasedDeduplication</code> set,
-        /// the action fails with an error.</p>
-        /// </li>
-        /// <li>
-        /// <p>If the queue has <code>ContentBasedDeduplication</code> set, your <code>MessageDeduplicationId</code> overrides the generated one.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the deduplication interval are treated as duplicates
-        /// and only one copy of the message is delivered.</p>
-        /// </li>
-        /// <li>
-        /// <p>If you send one message with <code>ContentBasedDeduplication</code> enabled and then another message with a <code>MessageDeduplicationId</code> that is the same
-        /// as the one generated for the first <code>MessageDeduplicationId</code>, the two messages are treated as duplicates and only one copy of the message is delivered.
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>The <code>MessageDeduplicationId</code> is available to the consumer of the
-        /// message (this can be useful for troubleshooting delivery issues).</p>
-        /// <p>If a message is sent successfully but the acknowledgement is lost and the message is resent with the same
-        /// <code>MessageDeduplicationId</code> after the deduplication interval, Amazon SQS can't detect duplicate messages.</p>
+        /// <li> <p>You may provide a <code>MessageDeduplicationId</code> explicitly.</p> </li>
+        /// <li> <p>If you aren't able to provide a <code>MessageDeduplicationId</code> and you enable <code>ContentBasedDeduplication</code> for your queue, Amazon SQS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message). </p> </li>
+        /// <li> <p>If you don't provide a <code>MessageDeduplicationId</code> and the queue doesn't have <code>ContentBasedDeduplication</code> set, the action fails with an error.</p> </li>
+        /// <li> <p>If the queue has <code>ContentBasedDeduplication</code> set, your <code>MessageDeduplicationId</code> overrides the generated one.</p> </li>
+        /// </ul> </li>
+        /// <li> <p>When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the deduplication interval are treated as duplicates and only one copy of the message is delivered.</p> </li>
+        /// <li> <p>If you send one message with <code>ContentBasedDeduplication</code> enabled and then another message with a <code>MessageDeduplicationId</code> that is the same as the one generated for the first <code>MessageDeduplicationId</code>, the two messages are treated as duplicates and only one copy of the message is delivered. </p> </li>
+        /// </ul> <note>
+        /// <p>The <code>MessageDeduplicationId</code> is available to the consumer of the message (this can be useful for troubleshooting delivery issues).</p>
+        /// <p>If a message is sent successfully but the acknowledgement is lost and the message is resent with the same <code>MessageDeduplicationId</code> after the deduplication interval, Amazon SQS can't detect duplicate messages.</p>
         /// <p>Amazon SQS continues to keep track of the message deduplication ID even after the message is received and deleted.</p>
         /// </note>
-        /// <p>The maximum length of <code>MessageDeduplicationId</code> is 128 characters. <code>MessageDeduplicationId</code> can contain alphanumeric characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and
-        /// punctuation (<code>!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~</code>).</p>
-        /// <p>For best practices of using <code>MessageDeduplicationId</code>, see
-        /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using the MessageDeduplicationId Property</a>
-        /// in the <i>Amazon SQS Developer Guide</i>.</p>
+        /// <p>The maximum length of <code>MessageDeduplicationId</code> is 128 characters. <code>MessageDeduplicationId</code> can contain alphanumeric characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p>
+        /// <p>For best practices of using <code>MessageDeduplicationId</code>, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using the MessageDeduplicationId Property</a> in the <i>Amazon SQS Developer Guide</i>.</p>
         pub fn set_message_deduplication_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3955,60 +3161,28 @@ pub mod send_message_input {
             self
         }
         /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
-        /// <p>The tag that specifies that a message belongs to a specific message group. Messages
-        /// that belong to the same message group are processed in a FIFO manner (however,
-        /// messages in different message groups might be processed out of order). To interleave
-        /// multiple ordered streams within a single queue, use <code>MessageGroupId</code> values
-        /// (for example, session data for multiple users). In this scenario, multiple consumers can
-        /// process the queue, but the session data of each user is processed in a FIFO
-        /// fashion.</p>
+        /// <p>The tag that specifies that a message belongs to a specific message group. Messages that belong to the same message group are processed in a FIFO manner (however, messages in different message groups might be processed out of order). To interleave multiple ordered streams within a single queue, use <code>MessageGroupId</code> values (for example, session data for multiple users). In this scenario, multiple consumers can process the queue, but the session data of each user is processed in a FIFO fashion.</p>
         /// <ul>
-        /// <li>
-        /// <p>You must associate a non-empty <code>MessageGroupId</code> with a message. If you don't provide a <code>MessageGroupId</code>, the action fails.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ReceiveMessage</code> might return messages with multiple <code>MessageGroupId</code> values. For each <code>MessageGroupId</code>, the messages are sorted by time sent. The caller can't
-        /// specify a <code>MessageGroupId</code>.</p>
-        /// </li>
+        /// <li> <p>You must associate a non-empty <code>MessageGroupId</code> with a message. If you don't provide a <code>MessageGroupId</code>, the action fails.</p> </li>
+        /// <li> <p> <code>ReceiveMessage</code> might return messages with multiple <code>MessageGroupId</code> values. For each <code>MessageGroupId</code>, the messages are sorted by time sent. The caller can't specify a <code>MessageGroupId</code>.</p> </li>
         /// </ul>
-        /// <p>The length of <code>MessageGroupId</code> is 128 characters. Valid values: alphanumeric characters and punctuation <code>(!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)</code>.</p>
-        /// <p>For best practices of using <code>MessageGroupId</code>, see
-        /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html">Using the MessageGroupId Property</a>
-        /// in the <i>Amazon SQS Developer Guide</i>.</p>
-        /// <important>
-        /// <p>
-        /// <code>MessageGroupId</code> is required for FIFO queues. You can't use it for Standard queues.</p>
+        /// <p>The length of <code>MessageGroupId</code> is 128 characters. Valid values: alphanumeric characters and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p>
+        /// <p>For best practices of using <code>MessageGroupId</code>, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html">Using the MessageGroupId Property</a> in the <i>Amazon SQS Developer Guide</i>.</p> <important>
+        /// <p> <code>MessageGroupId</code> is required for FIFO queues. You can't use it for Standard queues.</p>
         /// </important>
         pub fn message_group_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.message_group_id = Some(input.into());
             self
         }
         /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
-        /// <p>The tag that specifies that a message belongs to a specific message group. Messages
-        /// that belong to the same message group are processed in a FIFO manner (however,
-        /// messages in different message groups might be processed out of order). To interleave
-        /// multiple ordered streams within a single queue, use <code>MessageGroupId</code> values
-        /// (for example, session data for multiple users). In this scenario, multiple consumers can
-        /// process the queue, but the session data of each user is processed in a FIFO
-        /// fashion.</p>
+        /// <p>The tag that specifies that a message belongs to a specific message group. Messages that belong to the same message group are processed in a FIFO manner (however, messages in different message groups might be processed out of order). To interleave multiple ordered streams within a single queue, use <code>MessageGroupId</code> values (for example, session data for multiple users). In this scenario, multiple consumers can process the queue, but the session data of each user is processed in a FIFO fashion.</p>
         /// <ul>
-        /// <li>
-        /// <p>You must associate a non-empty <code>MessageGroupId</code> with a message. If you don't provide a <code>MessageGroupId</code>, the action fails.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ReceiveMessage</code> might return messages with multiple <code>MessageGroupId</code> values. For each <code>MessageGroupId</code>, the messages are sorted by time sent. The caller can't
-        /// specify a <code>MessageGroupId</code>.</p>
-        /// </li>
+        /// <li> <p>You must associate a non-empty <code>MessageGroupId</code> with a message. If you don't provide a <code>MessageGroupId</code>, the action fails.</p> </li>
+        /// <li> <p> <code>ReceiveMessage</code> might return messages with multiple <code>MessageGroupId</code> values. For each <code>MessageGroupId</code>, the messages are sorted by time sent. The caller can't specify a <code>MessageGroupId</code>.</p> </li>
         /// </ul>
-        /// <p>The length of <code>MessageGroupId</code> is 128 characters. Valid values: alphanumeric characters and punctuation <code>(!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)</code>.</p>
-        /// <p>For best practices of using <code>MessageGroupId</code>, see
-        /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html">Using the MessageGroupId Property</a>
-        /// in the <i>Amazon SQS Developer Guide</i>.</p>
-        /// <important>
-        /// <p>
-        /// <code>MessageGroupId</code> is required for FIFO queues. You can't use it for Standard queues.</p>
+        /// <p>The length of <code>MessageGroupId</code> is 128 characters. Valid values: alphanumeric characters and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p>
+        /// <p>For best practices of using <code>MessageGroupId</code>, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html">Using the MessageGroupId Property</a> in the <i>Amazon SQS Developer Guide</i>.</p> <important>
+        /// <p> <code>MessageGroupId</code> is required for FIFO queues. You can't use it for Standard queues.</p>
         /// </important>
         pub fn set_message_group_id(
             mut self,
@@ -4179,18 +3353,14 @@ pub mod send_message_batch_input {
         ///
         /// To override the contents of this collection use [`set_entries`](Self::set_entries).
         ///
-        /// <p>A list of <code>
-        /// <a>SendMessageBatchRequestEntry</a>
-        /// </code> items.</p>
+        /// <p>A list of <code> <code>SendMessageBatchRequestEntry</code> </code> items.</p>
         pub fn entries(mut self, input: crate::model::SendMessageBatchRequestEntry) -> Self {
             let mut v = self.entries.unwrap_or_default();
             v.push(input);
             self.entries = Some(v);
             self
         }
-        /// <p>A list of <code>
-        /// <a>SendMessageBatchRequestEntry</a>
-        /// </code> items.</p>
+        /// <p>A list of <code> <code>SendMessageBatchRequestEntry</code> </code> items.</p>
         pub fn set_entries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SendMessageBatchRequestEntry>>,
@@ -4358,160 +3528,55 @@ pub mod set_queue_attributes_input {
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>A map of attributes to set.</p>
-        /// <p>The following lists the names, descriptions, and values of the special request parameters that the <code>SetQueueAttributes</code> action uses:</p>      
+        /// <p>The following lists the names, descriptions, and values of the special request parameters that the <code>SetQueueAttributes</code> action uses:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DelaySeconds</code> – The length of time, in seconds, for which the delivery of all messages in the queue is delayed. Valid values: An integer from 0 to 900 (15 minutes). Default: 0.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MaximumMessageSize</code> – The limit of how many bytes a message can contain before Amazon SQS rejects it. Valid values: An integer from 1,024 bytes (1 KiB) up to 262,144 bytes (256 KiB). Default: 262,144 (256 KiB).
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MessageRetentionPeriod</code> – The length of time, in seconds, for which Amazon SQS retains a message. Valid values: An integer representing seconds, from 60 (1 minute) to 1,209,600 (14 days). Default: 345,600 (4 days).
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Policy</code> – The queue's policy. A valid Amazon Web Services policy. For more information about policy structure, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview of Amazon Web Services IAM Policies</a>
-        /// in the <i>Identity and Access Management User Guide</i>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ReceiveMessageWaitTimeSeconds</code> – The length of time, in seconds, for which a <code>
-        /// <a>ReceiveMessage</a>
-        /// </code> action waits for a message to arrive. Valid values: An integer from 0 to 20 (seconds). Default: 0.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RedrivePolicy</code> – The string that includes the parameters for the dead-letter queue functionality
-        /// of the source queue as a JSON object. For more information about the redrive policy and dead-letter queues, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using Amazon SQS Dead-Letter Queues</a>
-        /// in the <i>Amazon SQS Developer Guide</i>.</p>
+        /// <li> <p> <code>DelaySeconds</code> – The length of time, in seconds, for which the delivery of all messages in the queue is delayed. Valid values: An integer from 0 to 900 (15 minutes). Default: 0. </p> </li>
+        /// <li> <p> <code>MaximumMessageSize</code> – The limit of how many bytes a message can contain before Amazon SQS rejects it. Valid values: An integer from 1,024 bytes (1 KiB) up to 262,144 bytes (256 KiB). Default: 262,144 (256 KiB). </p> </li>
+        /// <li> <p> <code>MessageRetentionPeriod</code> – The length of time, in seconds, for which Amazon SQS retains a message. Valid values: An integer representing seconds, from 60 (1 minute) to 1,209,600 (14 days). Default: 345,600 (4 days). </p> </li>
+        /// <li> <p> <code>Policy</code> – The queue's policy. A valid Amazon Web Services policy. For more information about policy structure, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview of Amazon Web Services IAM Policies</a> in the <i>Identity and Access Management User Guide</i>. </p> </li>
+        /// <li> <p> <code>ReceiveMessageWaitTimeSeconds</code> – The length of time, in seconds, for which a <code> <code>ReceiveMessage</code> </code> action waits for a message to arrive. Valid values: An integer from 0 to 20 (seconds). Default: 0. </p> </li>
+        /// <li> <p> <code>RedrivePolicy</code> – The string that includes the parameters for the dead-letter queue functionality of the source queue as a JSON object. For more information about the redrive policy and dead-letter queues, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves messages after the value of <code>maxReceiveCount</code> is exceeded.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>maxReceiveCount</code> – The number of times a message is delivered to the source queue before being moved to the dead-letter queue.
-        /// When the <code>ReceiveCount</code> for a message exceeds the <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the dead-letter-queue.</p>
-        /// </li>
-        /// </ul>
-        /// <note>
+        /// <li> <p> <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves messages after the value of <code>maxReceiveCount</code> is exceeded.</p> </li>
+        /// <li> <p> <code>maxReceiveCount</code> – The number of times a message is delivered to the source queue before being moved to the dead-letter queue. When the <code>ReceiveCount</code> for a message exceeds the <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the dead-letter-queue.</p> </li>
+        /// </ul> <note>
         /// <p>The dead-letter queue of a FIFO queue must also be a FIFO queue. Similarly, the dead-letter queue of a standard queue must also be a standard queue.</p>
-        /// </note>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>VisibilityTimeout</code> – The visibility timeout for the queue, in seconds. Valid values: An integer from 0 to 43,200 (12 hours). Default: 30. For more information about the visibility timeout,
-        /// see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p>
-        /// </li>
+        /// </note> </li>
+        /// <li> <p> <code>VisibilityTimeout</code> – The visibility timeout for the queue, in seconds. Valid values: An integer from 0 to 43,200 (12 hours). Default: 30. For more information about the visibility timeout, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li>
         /// </ul>
-        ///
-        /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>     
+        /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services managed customer master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key Terms</a>.
-        /// While the alias of the AWS-managed CMK for Amazon SQS is always <code>alias/aws/sqs</code>, the alias of a custom CMK can, for example, be <code>alias/<i>MyAlias</i>
-        /// </code>.
-        /// For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>Key Management Service API Reference</i>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>KmsDataKeyReusePeriodSeconds</code> – The length of time, in seconds, for which Amazon SQS can reuse a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data key</a> to encrypt
-        /// or decrypt messages before calling KMS again. An integer representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24 hours). Default: 300 (5 minutes). A shorter time period provides better security
-        /// but results in more calls to KMS which might incur charges after Free Tier. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How Does the Data Key Reuse Period Work?</a>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SqsManagedSseEnabled</code> – Enables server-side queue encryption using SQS owned encryption keys. Only one server-side encryption option is supported per queue (e.g. <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a> or <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p>
-        /// </li>
+        /// <li> <p> <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services managed customer master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key Terms</a>. While the alias of the AWS-managed CMK for Amazon SQS is always <code>alias/aws/sqs</code>, the alias of a custom CMK can, for example, be <code>alias/<i>MyAlias</i> </code>. For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>Key Management Service API Reference</i>. </p> </li>
+        /// <li> <p> <code>KmsDataKeyReusePeriodSeconds</code> – The length of time, in seconds, for which Amazon SQS can reuse a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data key</a> to encrypt or decrypt messages before calling KMS again. An integer representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24 hours). Default: 300 (5 minutes). A shorter time period provides better security but results in more calls to KMS which might incur charges after Free Tier. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How Does the Data Key Reuse Period Work?</a>. </p> </li>
+        /// <li> <p> <code>SqsManagedSseEnabled</code> – Enables server-side queue encryption using SQS owned encryption keys. Only one server-side encryption option is supported per queue (e.g. <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a> or <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p> </li>
         /// </ul>
-        ///
-        ///
         /// <p>The following attribute applies only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO (first-in-first-out) queues</a>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ContentBasedDeduplication</code> – Enables content-based deduplication. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">Exactly-once processing</a> in the
-        /// <i>Amazon SQS Developer Guide</i>. Note the following:
-        /// </p>
+        /// <li> <p> <code>ContentBasedDeduplication</code> – Enables content-based deduplication. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>. Note the following: </p>
         /// <ul>
-        /// <li>
-        /// <p>Every message must have a unique <code>MessageDeduplicationId</code>.</p>
+        /// <li> <p>Every message must have a unique <code>MessageDeduplicationId</code>.</p>
         /// <ul>
-        /// <li>
-        /// <p>You may provide a <code>MessageDeduplicationId</code> explicitly.</p>
-        /// </li>
-        /// <li>
-        /// <p>If you aren't able to provide a <code>MessageDeduplicationId</code> and you enable <code>ContentBasedDeduplication</code> for your queue,
-        /// Amazon SQS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>If you don't provide a <code>MessageDeduplicationId</code> and the queue doesn't have <code>ContentBasedDeduplication</code> set,
-        /// the action fails with an error.</p>
-        /// </li>
-        /// <li>
-        /// <p>If the queue has <code>ContentBasedDeduplication</code> set, your <code>MessageDeduplicationId</code> overrides the generated one.</p>
-        /// </li>
+        /// <li> <p>You may provide a <code>MessageDeduplicationId</code> explicitly.</p> </li>
+        /// <li> <p>If you aren't able to provide a <code>MessageDeduplicationId</code> and you enable <code>ContentBasedDeduplication</code> for your queue, Amazon SQS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message). </p> </li>
+        /// <li> <p>If you don't provide a <code>MessageDeduplicationId</code> and the queue doesn't have <code>ContentBasedDeduplication</code> set, the action fails with an error.</p> </li>
+        /// <li> <p>If the queue has <code>ContentBasedDeduplication</code> set, your <code>MessageDeduplicationId</code> overrides the generated one.</p> </li>
+        /// </ul> </li>
+        /// <li> <p>When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the deduplication interval are treated as duplicates and only one copy of the message is delivered.</p> </li>
+        /// <li> <p>If you send one message with <code>ContentBasedDeduplication</code> enabled and then another message with a <code>MessageDeduplicationId</code> that is the same as the one generated for the first <code>MessageDeduplicationId</code>, the two messages are treated as duplicates and only one copy of the message is delivered. </p> </li>
+        /// </ul> </li>
         /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the deduplication interval are treated as duplicates
-        /// and only one copy of the message is delivered.</p>
-        /// </li>
-        /// <li>
-        /// <p>If you send one message with <code>ContentBasedDeduplication</code> enabled and then another message with a <code>MessageDeduplicationId</code> that is the same
-        /// as the one generated for the first <code>MessageDeduplicationId</code>, the two messages are treated as duplicates and only one copy of the message is delivered.
-        /// </p>
-        /// </li>
-        /// </ul>  
-        /// </li>
-        /// </ul>
-        ///
-        ///
-        /// <p>The following attributes apply only to
-        /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html">high throughput
-        /// for FIFO queues</a>:</p>
+        /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html">high throughput for FIFO queues</a>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DeduplicationScope</code> – Specifies whether message deduplication occurs at the
-        /// message group or queue level. Valid values are <code>messageGroup</code> and <code>queue</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FifoThroughputLimit</code> – Specifies whether the FIFO queue throughput
-        /// quota applies to the entire queue or per message group. Valid values are <code>perQueue</code> and <code>perMessageGroupId</code>.
-        /// The <code>perMessageGroupId</code> value is allowed only when the value for <code>DeduplicationScope</code> is <code>messageGroup</code>.</p>
-        /// </li>
+        /// <li> <p> <code>DeduplicationScope</code> – Specifies whether message deduplication occurs at the message group or queue level. Valid values are <code>messageGroup</code> and <code>queue</code>.</p> </li>
+        /// <li> <p> <code>FifoThroughputLimit</code> – Specifies whether the FIFO queue throughput quota applies to the entire queue or per message group. Valid values are <code>perQueue</code> and <code>perMessageGroupId</code>. The <code>perMessageGroupId</code> value is allowed only when the value for <code>DeduplicationScope</code> is <code>messageGroup</code>.</p> </li>
         /// </ul>
         /// <p>To enable high throughput for FIFO queues, do the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>Set <code>DeduplicationScope</code> to <code>messageGroup</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>Set <code>FifoThroughputLimit</code> to <code>perMessageGroupId</code>.</p>
-        /// </li>
+        /// <li> <p>Set <code>DeduplicationScope</code> to <code>messageGroup</code>.</p> </li>
+        /// <li> <p>Set <code>FifoThroughputLimit</code> to <code>perMessageGroupId</code>.</p> </li>
         /// </ul>
-        /// <p>If you set these attributes to anything other than the values shown for enabling high
-        /// throughput, normal throughput is in effect and deduplication occurs as specified.</p>
-        /// <p>For information on throughput quotas,
-        /// see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a>
-        /// in the <i>Amazon SQS Developer Guide</i>.</p>
+        /// <p>If you set these attributes to anything other than the values shown for enabling high throughput, normal throughput is in effect and deduplication occurs as specified.</p>
+        /// <p>For information on throughput quotas, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a> in the <i>Amazon SQS Developer Guide</i>.</p>
         pub fn attributes(
             mut self,
             k: crate::model::QueueAttributeName,
@@ -4523,160 +3588,55 @@ pub mod set_queue_attributes_input {
             self
         }
         /// <p>A map of attributes to set.</p>
-        /// <p>The following lists the names, descriptions, and values of the special request parameters that the <code>SetQueueAttributes</code> action uses:</p>      
+        /// <p>The following lists the names, descriptions, and values of the special request parameters that the <code>SetQueueAttributes</code> action uses:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DelaySeconds</code> – The length of time, in seconds, for which the delivery of all messages in the queue is delayed. Valid values: An integer from 0 to 900 (15 minutes). Default: 0.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MaximumMessageSize</code> – The limit of how many bytes a message can contain before Amazon SQS rejects it. Valid values: An integer from 1,024 bytes (1 KiB) up to 262,144 bytes (256 KiB). Default: 262,144 (256 KiB).
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MessageRetentionPeriod</code> – The length of time, in seconds, for which Amazon SQS retains a message. Valid values: An integer representing seconds, from 60 (1 minute) to 1,209,600 (14 days). Default: 345,600 (4 days).
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Policy</code> – The queue's policy. A valid Amazon Web Services policy. For more information about policy structure, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview of Amazon Web Services IAM Policies</a>
-        /// in the <i>Identity and Access Management User Guide</i>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ReceiveMessageWaitTimeSeconds</code> – The length of time, in seconds, for which a <code>
-        /// <a>ReceiveMessage</a>
-        /// </code> action waits for a message to arrive. Valid values: An integer from 0 to 20 (seconds). Default: 0.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RedrivePolicy</code> – The string that includes the parameters for the dead-letter queue functionality
-        /// of the source queue as a JSON object. For more information about the redrive policy and dead-letter queues, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using Amazon SQS Dead-Letter Queues</a>
-        /// in the <i>Amazon SQS Developer Guide</i>.</p>
+        /// <li> <p> <code>DelaySeconds</code> – The length of time, in seconds, for which the delivery of all messages in the queue is delayed. Valid values: An integer from 0 to 900 (15 minutes). Default: 0. </p> </li>
+        /// <li> <p> <code>MaximumMessageSize</code> – The limit of how many bytes a message can contain before Amazon SQS rejects it. Valid values: An integer from 1,024 bytes (1 KiB) up to 262,144 bytes (256 KiB). Default: 262,144 (256 KiB). </p> </li>
+        /// <li> <p> <code>MessageRetentionPeriod</code> – The length of time, in seconds, for which Amazon SQS retains a message. Valid values: An integer representing seconds, from 60 (1 minute) to 1,209,600 (14 days). Default: 345,600 (4 days). </p> </li>
+        /// <li> <p> <code>Policy</code> – The queue's policy. A valid Amazon Web Services policy. For more information about policy structure, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview of Amazon Web Services IAM Policies</a> in the <i>Identity and Access Management User Guide</i>. </p> </li>
+        /// <li> <p> <code>ReceiveMessageWaitTimeSeconds</code> – The length of time, in seconds, for which a <code> <code>ReceiveMessage</code> </code> action waits for a message to arrive. Valid values: An integer from 0 to 20 (seconds). Default: 0. </p> </li>
+        /// <li> <p> <code>RedrivePolicy</code> – The string that includes the parameters for the dead-letter queue functionality of the source queue as a JSON object. For more information about the redrive policy and dead-letter queues, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves messages after the value of <code>maxReceiveCount</code> is exceeded.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>maxReceiveCount</code> – The number of times a message is delivered to the source queue before being moved to the dead-letter queue.
-        /// When the <code>ReceiveCount</code> for a message exceeds the <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the dead-letter-queue.</p>
-        /// </li>
-        /// </ul>
-        /// <note>
+        /// <li> <p> <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves messages after the value of <code>maxReceiveCount</code> is exceeded.</p> </li>
+        /// <li> <p> <code>maxReceiveCount</code> – The number of times a message is delivered to the source queue before being moved to the dead-letter queue. When the <code>ReceiveCount</code> for a message exceeds the <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the dead-letter-queue.</p> </li>
+        /// </ul> <note>
         /// <p>The dead-letter queue of a FIFO queue must also be a FIFO queue. Similarly, the dead-letter queue of a standard queue must also be a standard queue.</p>
-        /// </note>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>VisibilityTimeout</code> – The visibility timeout for the queue, in seconds. Valid values: An integer from 0 to 43,200 (12 hours). Default: 30. For more information about the visibility timeout,
-        /// see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p>
-        /// </li>
+        /// </note> </li>
+        /// <li> <p> <code>VisibilityTimeout</code> – The visibility timeout for the queue, in seconds. Valid values: An integer from 0 to 43,200 (12 hours). Default: 30. For more information about the visibility timeout, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li>
         /// </ul>
-        ///
-        /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>     
+        /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services managed customer master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key Terms</a>.
-        /// While the alias of the AWS-managed CMK for Amazon SQS is always <code>alias/aws/sqs</code>, the alias of a custom CMK can, for example, be <code>alias/<i>MyAlias</i>
-        /// </code>.
-        /// For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>Key Management Service API Reference</i>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>KmsDataKeyReusePeriodSeconds</code> – The length of time, in seconds, for which Amazon SQS can reuse a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data key</a> to encrypt
-        /// or decrypt messages before calling KMS again. An integer representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24 hours). Default: 300 (5 minutes). A shorter time period provides better security
-        /// but results in more calls to KMS which might incur charges after Free Tier. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How Does the Data Key Reuse Period Work?</a>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SqsManagedSseEnabled</code> – Enables server-side queue encryption using SQS owned encryption keys. Only one server-side encryption option is supported per queue (e.g. <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a> or <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p>
-        /// </li>
+        /// <li> <p> <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services managed customer master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key Terms</a>. While the alias of the AWS-managed CMK for Amazon SQS is always <code>alias/aws/sqs</code>, the alias of a custom CMK can, for example, be <code>alias/<i>MyAlias</i> </code>. For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>Key Management Service API Reference</i>. </p> </li>
+        /// <li> <p> <code>KmsDataKeyReusePeriodSeconds</code> – The length of time, in seconds, for which Amazon SQS can reuse a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data key</a> to encrypt or decrypt messages before calling KMS again. An integer representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24 hours). Default: 300 (5 minutes). A shorter time period provides better security but results in more calls to KMS which might incur charges after Free Tier. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How Does the Data Key Reuse Period Work?</a>. </p> </li>
+        /// <li> <p> <code>SqsManagedSseEnabled</code> – Enables server-side queue encryption using SQS owned encryption keys. Only one server-side encryption option is supported per queue (e.g. <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a> or <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p> </li>
         /// </ul>
-        ///
-        ///
         /// <p>The following attribute applies only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO (first-in-first-out) queues</a>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ContentBasedDeduplication</code> – Enables content-based deduplication. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">Exactly-once processing</a> in the
-        /// <i>Amazon SQS Developer Guide</i>. Note the following:
-        /// </p>
+        /// <li> <p> <code>ContentBasedDeduplication</code> – Enables content-based deduplication. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>. Note the following: </p>
         /// <ul>
-        /// <li>
-        /// <p>Every message must have a unique <code>MessageDeduplicationId</code>.</p>
+        /// <li> <p>Every message must have a unique <code>MessageDeduplicationId</code>.</p>
         /// <ul>
-        /// <li>
-        /// <p>You may provide a <code>MessageDeduplicationId</code> explicitly.</p>
-        /// </li>
-        /// <li>
-        /// <p>If you aren't able to provide a <code>MessageDeduplicationId</code> and you enable <code>ContentBasedDeduplication</code> for your queue,
-        /// Amazon SQS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>If you don't provide a <code>MessageDeduplicationId</code> and the queue doesn't have <code>ContentBasedDeduplication</code> set,
-        /// the action fails with an error.</p>
-        /// </li>
-        /// <li>
-        /// <p>If the queue has <code>ContentBasedDeduplication</code> set, your <code>MessageDeduplicationId</code> overrides the generated one.</p>
-        /// </li>
+        /// <li> <p>You may provide a <code>MessageDeduplicationId</code> explicitly.</p> </li>
+        /// <li> <p>If you aren't able to provide a <code>MessageDeduplicationId</code> and you enable <code>ContentBasedDeduplication</code> for your queue, Amazon SQS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message). </p> </li>
+        /// <li> <p>If you don't provide a <code>MessageDeduplicationId</code> and the queue doesn't have <code>ContentBasedDeduplication</code> set, the action fails with an error.</p> </li>
+        /// <li> <p>If the queue has <code>ContentBasedDeduplication</code> set, your <code>MessageDeduplicationId</code> overrides the generated one.</p> </li>
+        /// </ul> </li>
+        /// <li> <p>When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the deduplication interval are treated as duplicates and only one copy of the message is delivered.</p> </li>
+        /// <li> <p>If you send one message with <code>ContentBasedDeduplication</code> enabled and then another message with a <code>MessageDeduplicationId</code> that is the same as the one generated for the first <code>MessageDeduplicationId</code>, the two messages are treated as duplicates and only one copy of the message is delivered. </p> </li>
+        /// </ul> </li>
         /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the deduplication interval are treated as duplicates
-        /// and only one copy of the message is delivered.</p>
-        /// </li>
-        /// <li>
-        /// <p>If you send one message with <code>ContentBasedDeduplication</code> enabled and then another message with a <code>MessageDeduplicationId</code> that is the same
-        /// as the one generated for the first <code>MessageDeduplicationId</code>, the two messages are treated as duplicates and only one copy of the message is delivered.
-        /// </p>
-        /// </li>
-        /// </ul>  
-        /// </li>
-        /// </ul>
-        ///
-        ///
-        /// <p>The following attributes apply only to
-        /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html">high throughput
-        /// for FIFO queues</a>:</p>
+        /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html">high throughput for FIFO queues</a>:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DeduplicationScope</code> – Specifies whether message deduplication occurs at the
-        /// message group or queue level. Valid values are <code>messageGroup</code> and <code>queue</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FifoThroughputLimit</code> – Specifies whether the FIFO queue throughput
-        /// quota applies to the entire queue or per message group. Valid values are <code>perQueue</code> and <code>perMessageGroupId</code>.
-        /// The <code>perMessageGroupId</code> value is allowed only when the value for <code>DeduplicationScope</code> is <code>messageGroup</code>.</p>
-        /// </li>
+        /// <li> <p> <code>DeduplicationScope</code> – Specifies whether message deduplication occurs at the message group or queue level. Valid values are <code>messageGroup</code> and <code>queue</code>.</p> </li>
+        /// <li> <p> <code>FifoThroughputLimit</code> – Specifies whether the FIFO queue throughput quota applies to the entire queue or per message group. Valid values are <code>perQueue</code> and <code>perMessageGroupId</code>. The <code>perMessageGroupId</code> value is allowed only when the value for <code>DeduplicationScope</code> is <code>messageGroup</code>.</p> </li>
         /// </ul>
         /// <p>To enable high throughput for FIFO queues, do the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>Set <code>DeduplicationScope</code> to <code>messageGroup</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>Set <code>FifoThroughputLimit</code> to <code>perMessageGroupId</code>.</p>
-        /// </li>
+        /// <li> <p>Set <code>DeduplicationScope</code> to <code>messageGroup</code>.</p> </li>
+        /// <li> <p>Set <code>FifoThroughputLimit</code> to <code>perMessageGroupId</code>.</p> </li>
         /// </ul>
-        /// <p>If you set these attributes to anything other than the values shown for enabling high
-        /// throughput, normal throughput is in effect and deduplication occurs as specified.</p>
-        /// <p>For information on throughput quotas,
-        /// see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a>
-        /// in the <i>Amazon SQS Developer Guide</i>.</p>
+        /// <p>If you set these attributes to anything other than the values shown for enabling high throughput, normal throughput is in effect and deduplication occurs as specified.</p>
+        /// <p>For information on throughput quotas, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a> in the <i>Amazon SQS Developer Guide</i>.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -5224,160 +4184,55 @@ pub struct SetQueueAttributesInput {
     /// <p>Queue URLs and names are case-sensitive.</p>
     pub queue_url: std::option::Option<std::string::String>,
     /// <p>A map of attributes to set.</p>
-    /// <p>The following lists the names, descriptions, and values of the special request parameters that the <code>SetQueueAttributes</code> action uses:</p>      
+    /// <p>The following lists the names, descriptions, and values of the special request parameters that the <code>SetQueueAttributes</code> action uses:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>DelaySeconds</code> – The length of time, in seconds, for which the delivery of all messages in the queue is delayed. Valid values: An integer from 0 to 900 (15 minutes). Default: 0.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MaximumMessageSize</code> – The limit of how many bytes a message can contain before Amazon SQS rejects it. Valid values: An integer from 1,024 bytes (1 KiB) up to 262,144 bytes (256 KiB). Default: 262,144 (256 KiB).
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MessageRetentionPeriod</code> – The length of time, in seconds, for which Amazon SQS retains a message. Valid values: An integer representing seconds, from 60 (1 minute) to 1,209,600 (14 days). Default: 345,600 (4 days).
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Policy</code> – The queue's policy. A valid Amazon Web Services policy. For more information about policy structure, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview of Amazon Web Services IAM Policies</a>
-    /// in the <i>Identity and Access Management User Guide</i>.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ReceiveMessageWaitTimeSeconds</code> – The length of time, in seconds, for which a <code>
-    /// <a>ReceiveMessage</a>
-    /// </code> action waits for a message to arrive. Valid values: An integer from 0 to 20 (seconds). Default: 0.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RedrivePolicy</code> – The string that includes the parameters for the dead-letter queue functionality
-    /// of the source queue as a JSON object. For more information about the redrive policy and dead-letter queues, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using Amazon SQS Dead-Letter Queues</a>
-    /// in the <i>Amazon SQS Developer Guide</i>.</p>
+    /// <li> <p> <code>DelaySeconds</code> – The length of time, in seconds, for which the delivery of all messages in the queue is delayed. Valid values: An integer from 0 to 900 (15 minutes). Default: 0. </p> </li>
+    /// <li> <p> <code>MaximumMessageSize</code> – The limit of how many bytes a message can contain before Amazon SQS rejects it. Valid values: An integer from 1,024 bytes (1 KiB) up to 262,144 bytes (256 KiB). Default: 262,144 (256 KiB). </p> </li>
+    /// <li> <p> <code>MessageRetentionPeriod</code> – The length of time, in seconds, for which Amazon SQS retains a message. Valid values: An integer representing seconds, from 60 (1 minute) to 1,209,600 (14 days). Default: 345,600 (4 days). </p> </li>
+    /// <li> <p> <code>Policy</code> – The queue's policy. A valid Amazon Web Services policy. For more information about policy structure, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview of Amazon Web Services IAM Policies</a> in the <i>Identity and Access Management User Guide</i>. </p> </li>
+    /// <li> <p> <code>ReceiveMessageWaitTimeSeconds</code> – The length of time, in seconds, for which a <code> <code>ReceiveMessage</code> </code> action waits for a message to arrive. Valid values: An integer from 0 to 20 (seconds). Default: 0. </p> </li>
+    /// <li> <p> <code>RedrivePolicy</code> – The string that includes the parameters for the dead-letter queue functionality of the source queue as a JSON object. For more information about the redrive policy and dead-letter queues, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves messages after the value of <code>maxReceiveCount</code> is exceeded.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>maxReceiveCount</code> – The number of times a message is delivered to the source queue before being moved to the dead-letter queue.
-    /// When the <code>ReceiveCount</code> for a message exceeds the <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the dead-letter-queue.</p>
-    /// </li>
-    /// </ul>
-    /// <note>
+    /// <li> <p> <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves messages after the value of <code>maxReceiveCount</code> is exceeded.</p> </li>
+    /// <li> <p> <code>maxReceiveCount</code> – The number of times a message is delivered to the source queue before being moved to the dead-letter queue. When the <code>ReceiveCount</code> for a message exceeds the <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the dead-letter-queue.</p> </li>
+    /// </ul> <note>
     /// <p>The dead-letter queue of a FIFO queue must also be a FIFO queue. Similarly, the dead-letter queue of a standard queue must also be a standard queue.</p>
-    /// </note>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>VisibilityTimeout</code> – The visibility timeout for the queue, in seconds. Valid values: An integer from 0 to 43,200 (12 hours). Default: 30. For more information about the visibility timeout,
-    /// see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p>
-    /// </li>
+    /// </note> </li>
+    /// <li> <p> <code>VisibilityTimeout</code> – The visibility timeout for the queue, in seconds. Valid values: An integer from 0 to 43,200 (12 hours). Default: 30. For more information about the visibility timeout, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li>
     /// </ul>
-    ///
-    /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>     
+    /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services managed customer master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key Terms</a>.
-    /// While the alias of the AWS-managed CMK for Amazon SQS is always <code>alias/aws/sqs</code>, the alias of a custom CMK can, for example, be <code>alias/<i>MyAlias</i>
-    /// </code>.
-    /// For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>Key Management Service API Reference</i>.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>KmsDataKeyReusePeriodSeconds</code> – The length of time, in seconds, for which Amazon SQS can reuse a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data key</a> to encrypt
-    /// or decrypt messages before calling KMS again. An integer representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24 hours). Default: 300 (5 minutes). A shorter time period provides better security
-    /// but results in more calls to KMS which might incur charges after Free Tier. For more information, see
-    /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How Does the Data Key Reuse Period Work?</a>.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SqsManagedSseEnabled</code> – Enables server-side queue encryption using SQS owned encryption keys. Only one server-side encryption option is supported per queue (e.g. <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a> or <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p>
-    /// </li>
+    /// <li> <p> <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services managed customer master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key Terms</a>. While the alias of the AWS-managed CMK for Amazon SQS is always <code>alias/aws/sqs</code>, the alias of a custom CMK can, for example, be <code>alias/<i>MyAlias</i> </code>. For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>Key Management Service API Reference</i>. </p> </li>
+    /// <li> <p> <code>KmsDataKeyReusePeriodSeconds</code> – The length of time, in seconds, for which Amazon SQS can reuse a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data key</a> to encrypt or decrypt messages before calling KMS again. An integer representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24 hours). Default: 300 (5 minutes). A shorter time period provides better security but results in more calls to KMS which might incur charges after Free Tier. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How Does the Data Key Reuse Period Work?</a>. </p> </li>
+    /// <li> <p> <code>SqsManagedSseEnabled</code> – Enables server-side queue encryption using SQS owned encryption keys. Only one server-side encryption option is supported per queue (e.g. <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a> or <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p> </li>
     /// </ul>
-    ///
-    ///
     /// <p>The following attribute applies only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO (first-in-first-out) queues</a>:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ContentBasedDeduplication</code> – Enables content-based deduplication. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">Exactly-once processing</a> in the
-    /// <i>Amazon SQS Developer Guide</i>. Note the following:
-    /// </p>
+    /// <li> <p> <code>ContentBasedDeduplication</code> – Enables content-based deduplication. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>. Note the following: </p>
     /// <ul>
-    /// <li>
-    /// <p>Every message must have a unique <code>MessageDeduplicationId</code>.</p>
+    /// <li> <p>Every message must have a unique <code>MessageDeduplicationId</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p>You may provide a <code>MessageDeduplicationId</code> explicitly.</p>
-    /// </li>
-    /// <li>
-    /// <p>If you aren't able to provide a <code>MessageDeduplicationId</code> and you enable <code>ContentBasedDeduplication</code> for your queue,
-    /// Amazon SQS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>If you don't provide a <code>MessageDeduplicationId</code> and the queue doesn't have <code>ContentBasedDeduplication</code> set,
-    /// the action fails with an error.</p>
-    /// </li>
-    /// <li>
-    /// <p>If the queue has <code>ContentBasedDeduplication</code> set, your <code>MessageDeduplicationId</code> overrides the generated one.</p>
-    /// </li>
+    /// <li> <p>You may provide a <code>MessageDeduplicationId</code> explicitly.</p> </li>
+    /// <li> <p>If you aren't able to provide a <code>MessageDeduplicationId</code> and you enable <code>ContentBasedDeduplication</code> for your queue, Amazon SQS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message). </p> </li>
+    /// <li> <p>If you don't provide a <code>MessageDeduplicationId</code> and the queue doesn't have <code>ContentBasedDeduplication</code> set, the action fails with an error.</p> </li>
+    /// <li> <p>If the queue has <code>ContentBasedDeduplication</code> set, your <code>MessageDeduplicationId</code> overrides the generated one.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the deduplication interval are treated as duplicates and only one copy of the message is delivered.</p> </li>
+    /// <li> <p>If you send one message with <code>ContentBasedDeduplication</code> enabled and then another message with a <code>MessageDeduplicationId</code> that is the same as the one generated for the first <code>MessageDeduplicationId</code>, the two messages are treated as duplicates and only one copy of the message is delivered. </p> </li>
+    /// </ul> </li>
     /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the deduplication interval are treated as duplicates
-    /// and only one copy of the message is delivered.</p>
-    /// </li>
-    /// <li>
-    /// <p>If you send one message with <code>ContentBasedDeduplication</code> enabled and then another message with a <code>MessageDeduplicationId</code> that is the same
-    /// as the one generated for the first <code>MessageDeduplicationId</code>, the two messages are treated as duplicates and only one copy of the message is delivered.
-    /// </p>
-    /// </li>
-    /// </ul>  
-    /// </li>
-    /// </ul>
-    ///
-    ///
-    /// <p>The following attributes apply only to
-    /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html">high throughput
-    /// for FIFO queues</a>:</p>
+    /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html">high throughput for FIFO queues</a>:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>DeduplicationScope</code> – Specifies whether message deduplication occurs at the
-    /// message group or queue level. Valid values are <code>messageGroup</code> and <code>queue</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FifoThroughputLimit</code> – Specifies whether the FIFO queue throughput
-    /// quota applies to the entire queue or per message group. Valid values are <code>perQueue</code> and <code>perMessageGroupId</code>.
-    /// The <code>perMessageGroupId</code> value is allowed only when the value for <code>DeduplicationScope</code> is <code>messageGroup</code>.</p>
-    /// </li>
+    /// <li> <p> <code>DeduplicationScope</code> – Specifies whether message deduplication occurs at the message group or queue level. Valid values are <code>messageGroup</code> and <code>queue</code>.</p> </li>
+    /// <li> <p> <code>FifoThroughputLimit</code> – Specifies whether the FIFO queue throughput quota applies to the entire queue or per message group. Valid values are <code>perQueue</code> and <code>perMessageGroupId</code>. The <code>perMessageGroupId</code> value is allowed only when the value for <code>DeduplicationScope</code> is <code>messageGroup</code>.</p> </li>
     /// </ul>
     /// <p>To enable high throughput for FIFO queues, do the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>Set <code>DeduplicationScope</code> to <code>messageGroup</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Set <code>FifoThroughputLimit</code> to <code>perMessageGroupId</code>.</p>
-    /// </li>
+    /// <li> <p>Set <code>DeduplicationScope</code> to <code>messageGroup</code>.</p> </li>
+    /// <li> <p>Set <code>FifoThroughputLimit</code> to <code>perMessageGroupId</code>.</p> </li>
     /// </ul>
-    /// <p>If you set these attributes to anything other than the values shown for enabling high
-    /// throughput, normal throughput is in effect and deduplication occurs as specified.</p>
-    /// <p>For information on throughput quotas,
-    /// see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a>
-    /// in the <i>Amazon SQS Developer Guide</i>.</p>
+    /// <p>If you set these attributes to anything other than the values shown for enabling high throughput, normal throughput is in effect and deduplication occurs as specified.</p>
+    /// <p>For information on throughput quotas, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     pub attributes: std::option::Option<
         std::collections::HashMap<crate::model::QueueAttributeName, std::string::String>,
     >,
@@ -5389,160 +4244,55 @@ impl SetQueueAttributesInput {
         self.queue_url.as_deref()
     }
     /// <p>A map of attributes to set.</p>
-    /// <p>The following lists the names, descriptions, and values of the special request parameters that the <code>SetQueueAttributes</code> action uses:</p>      
+    /// <p>The following lists the names, descriptions, and values of the special request parameters that the <code>SetQueueAttributes</code> action uses:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>DelaySeconds</code> – The length of time, in seconds, for which the delivery of all messages in the queue is delayed. Valid values: An integer from 0 to 900 (15 minutes). Default: 0.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MaximumMessageSize</code> – The limit of how many bytes a message can contain before Amazon SQS rejects it. Valid values: An integer from 1,024 bytes (1 KiB) up to 262,144 bytes (256 KiB). Default: 262,144 (256 KiB).
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MessageRetentionPeriod</code> – The length of time, in seconds, for which Amazon SQS retains a message. Valid values: An integer representing seconds, from 60 (1 minute) to 1,209,600 (14 days). Default: 345,600 (4 days).
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Policy</code> – The queue's policy. A valid Amazon Web Services policy. For more information about policy structure, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview of Amazon Web Services IAM Policies</a>
-    /// in the <i>Identity and Access Management User Guide</i>.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ReceiveMessageWaitTimeSeconds</code> – The length of time, in seconds, for which a <code>
-    /// <a>ReceiveMessage</a>
-    /// </code> action waits for a message to arrive. Valid values: An integer from 0 to 20 (seconds). Default: 0.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RedrivePolicy</code> – The string that includes the parameters for the dead-letter queue functionality
-    /// of the source queue as a JSON object. For more information about the redrive policy and dead-letter queues, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using Amazon SQS Dead-Letter Queues</a>
-    /// in the <i>Amazon SQS Developer Guide</i>.</p>
+    /// <li> <p> <code>DelaySeconds</code> – The length of time, in seconds, for which the delivery of all messages in the queue is delayed. Valid values: An integer from 0 to 900 (15 minutes). Default: 0. </p> </li>
+    /// <li> <p> <code>MaximumMessageSize</code> – The limit of how many bytes a message can contain before Amazon SQS rejects it. Valid values: An integer from 1,024 bytes (1 KiB) up to 262,144 bytes (256 KiB). Default: 262,144 (256 KiB). </p> </li>
+    /// <li> <p> <code>MessageRetentionPeriod</code> – The length of time, in seconds, for which Amazon SQS retains a message. Valid values: An integer representing seconds, from 60 (1 minute) to 1,209,600 (14 days). Default: 345,600 (4 days). </p> </li>
+    /// <li> <p> <code>Policy</code> – The queue's policy. A valid Amazon Web Services policy. For more information about policy structure, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview of Amazon Web Services IAM Policies</a> in the <i>Identity and Access Management User Guide</i>. </p> </li>
+    /// <li> <p> <code>ReceiveMessageWaitTimeSeconds</code> – The length of time, in seconds, for which a <code> <code>ReceiveMessage</code> </code> action waits for a message to arrive. Valid values: An integer from 0 to 20 (seconds). Default: 0. </p> </li>
+    /// <li> <p> <code>RedrivePolicy</code> – The string that includes the parameters for the dead-letter queue functionality of the source queue as a JSON object. For more information about the redrive policy and dead-letter queues, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves messages after the value of <code>maxReceiveCount</code> is exceeded.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>maxReceiveCount</code> – The number of times a message is delivered to the source queue before being moved to the dead-letter queue.
-    /// When the <code>ReceiveCount</code> for a message exceeds the <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the dead-letter-queue.</p>
-    /// </li>
-    /// </ul>
-    /// <note>
+    /// <li> <p> <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves messages after the value of <code>maxReceiveCount</code> is exceeded.</p> </li>
+    /// <li> <p> <code>maxReceiveCount</code> – The number of times a message is delivered to the source queue before being moved to the dead-letter queue. When the <code>ReceiveCount</code> for a message exceeds the <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the dead-letter-queue.</p> </li>
+    /// </ul> <note>
     /// <p>The dead-letter queue of a FIFO queue must also be a FIFO queue. Similarly, the dead-letter queue of a standard queue must also be a standard queue.</p>
-    /// </note>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>VisibilityTimeout</code> – The visibility timeout for the queue, in seconds. Valid values: An integer from 0 to 43,200 (12 hours). Default: 30. For more information about the visibility timeout,
-    /// see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p>
-    /// </li>
+    /// </note> </li>
+    /// <li> <p> <code>VisibilityTimeout</code> – The visibility timeout for the queue, in seconds. Valid values: An integer from 0 to 43,200 (12 hours). Default: 30. For more information about the visibility timeout, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li>
     /// </ul>
-    ///
-    /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>     
+    /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services managed customer master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key Terms</a>.
-    /// While the alias of the AWS-managed CMK for Amazon SQS is always <code>alias/aws/sqs</code>, the alias of a custom CMK can, for example, be <code>alias/<i>MyAlias</i>
-    /// </code>.
-    /// For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>Key Management Service API Reference</i>.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>KmsDataKeyReusePeriodSeconds</code> – The length of time, in seconds, for which Amazon SQS can reuse a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data key</a> to encrypt
-    /// or decrypt messages before calling KMS again. An integer representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24 hours). Default: 300 (5 minutes). A shorter time period provides better security
-    /// but results in more calls to KMS which might incur charges after Free Tier. For more information, see
-    /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How Does the Data Key Reuse Period Work?</a>.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SqsManagedSseEnabled</code> – Enables server-side queue encryption using SQS owned encryption keys. Only one server-side encryption option is supported per queue (e.g. <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a> or <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p>
-    /// </li>
+    /// <li> <p> <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services managed customer master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key Terms</a>. While the alias of the AWS-managed CMK for Amazon SQS is always <code>alias/aws/sqs</code>, the alias of a custom CMK can, for example, be <code>alias/<i>MyAlias</i> </code>. For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>Key Management Service API Reference</i>. </p> </li>
+    /// <li> <p> <code>KmsDataKeyReusePeriodSeconds</code> – The length of time, in seconds, for which Amazon SQS can reuse a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data key</a> to encrypt or decrypt messages before calling KMS again. An integer representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24 hours). Default: 300 (5 minutes). A shorter time period provides better security but results in more calls to KMS which might incur charges after Free Tier. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How Does the Data Key Reuse Period Work?</a>. </p> </li>
+    /// <li> <p> <code>SqsManagedSseEnabled</code> – Enables server-side queue encryption using SQS owned encryption keys. Only one server-side encryption option is supported per queue (e.g. <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a> or <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p> </li>
     /// </ul>
-    ///
-    ///
     /// <p>The following attribute applies only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO (first-in-first-out) queues</a>:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ContentBasedDeduplication</code> – Enables content-based deduplication. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">Exactly-once processing</a> in the
-    /// <i>Amazon SQS Developer Guide</i>. Note the following:
-    /// </p>
+    /// <li> <p> <code>ContentBasedDeduplication</code> – Enables content-based deduplication. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>. Note the following: </p>
     /// <ul>
-    /// <li>
-    /// <p>Every message must have a unique <code>MessageDeduplicationId</code>.</p>
+    /// <li> <p>Every message must have a unique <code>MessageDeduplicationId</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p>You may provide a <code>MessageDeduplicationId</code> explicitly.</p>
-    /// </li>
-    /// <li>
-    /// <p>If you aren't able to provide a <code>MessageDeduplicationId</code> and you enable <code>ContentBasedDeduplication</code> for your queue,
-    /// Amazon SQS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>If you don't provide a <code>MessageDeduplicationId</code> and the queue doesn't have <code>ContentBasedDeduplication</code> set,
-    /// the action fails with an error.</p>
-    /// </li>
-    /// <li>
-    /// <p>If the queue has <code>ContentBasedDeduplication</code> set, your <code>MessageDeduplicationId</code> overrides the generated one.</p>
-    /// </li>
+    /// <li> <p>You may provide a <code>MessageDeduplicationId</code> explicitly.</p> </li>
+    /// <li> <p>If you aren't able to provide a <code>MessageDeduplicationId</code> and you enable <code>ContentBasedDeduplication</code> for your queue, Amazon SQS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message). </p> </li>
+    /// <li> <p>If you don't provide a <code>MessageDeduplicationId</code> and the queue doesn't have <code>ContentBasedDeduplication</code> set, the action fails with an error.</p> </li>
+    /// <li> <p>If the queue has <code>ContentBasedDeduplication</code> set, your <code>MessageDeduplicationId</code> overrides the generated one.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the deduplication interval are treated as duplicates and only one copy of the message is delivered.</p> </li>
+    /// <li> <p>If you send one message with <code>ContentBasedDeduplication</code> enabled and then another message with a <code>MessageDeduplicationId</code> that is the same as the one generated for the first <code>MessageDeduplicationId</code>, the two messages are treated as duplicates and only one copy of the message is delivered. </p> </li>
+    /// </ul> </li>
     /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the deduplication interval are treated as duplicates
-    /// and only one copy of the message is delivered.</p>
-    /// </li>
-    /// <li>
-    /// <p>If you send one message with <code>ContentBasedDeduplication</code> enabled and then another message with a <code>MessageDeduplicationId</code> that is the same
-    /// as the one generated for the first <code>MessageDeduplicationId</code>, the two messages are treated as duplicates and only one copy of the message is delivered.
-    /// </p>
-    /// </li>
-    /// </ul>  
-    /// </li>
-    /// </ul>
-    ///
-    ///
-    /// <p>The following attributes apply only to
-    /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html">high throughput
-    /// for FIFO queues</a>:</p>
+    /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html">high throughput for FIFO queues</a>:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>DeduplicationScope</code> – Specifies whether message deduplication occurs at the
-    /// message group or queue level. Valid values are <code>messageGroup</code> and <code>queue</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FifoThroughputLimit</code> – Specifies whether the FIFO queue throughput
-    /// quota applies to the entire queue or per message group. Valid values are <code>perQueue</code> and <code>perMessageGroupId</code>.
-    /// The <code>perMessageGroupId</code> value is allowed only when the value for <code>DeduplicationScope</code> is <code>messageGroup</code>.</p>
-    /// </li>
+    /// <li> <p> <code>DeduplicationScope</code> – Specifies whether message deduplication occurs at the message group or queue level. Valid values are <code>messageGroup</code> and <code>queue</code>.</p> </li>
+    /// <li> <p> <code>FifoThroughputLimit</code> – Specifies whether the FIFO queue throughput quota applies to the entire queue or per message group. Valid values are <code>perQueue</code> and <code>perMessageGroupId</code>. The <code>perMessageGroupId</code> value is allowed only when the value for <code>DeduplicationScope</code> is <code>messageGroup</code>.</p> </li>
     /// </ul>
     /// <p>To enable high throughput for FIFO queues, do the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>Set <code>DeduplicationScope</code> to <code>messageGroup</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Set <code>FifoThroughputLimit</code> to <code>perMessageGroupId</code>.</p>
-    /// </li>
+    /// <li> <p>Set <code>DeduplicationScope</code> to <code>messageGroup</code>.</p> </li>
+    /// <li> <p>Set <code>FifoThroughputLimit</code> to <code>perMessageGroupId</code>.</p> </li>
     /// </ul>
-    /// <p>If you set these attributes to anything other than the values shown for enabling high
-    /// throughput, normal throughput is in effect and deduplication occurs as specified.</p>
-    /// <p>For information on throughput quotas,
-    /// see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a>
-    /// in the <i>Amazon SQS Developer Guide</i>.</p>
+    /// <p>If you set these attributes to anything other than the values shown for enabling high throughput, normal throughput is in effect and deduplication occurs as specified.</p>
+    /// <p>For information on throughput quotas, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     pub fn attributes(
         &self,
     ) -> std::option::Option<
@@ -5567,9 +4317,7 @@ pub struct SendMessageBatchInput {
     /// <p>The URL of the Amazon SQS queue to which batched messages are sent.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
     pub queue_url: std::option::Option<std::string::String>,
-    /// <p>A list of <code>
-    /// <a>SendMessageBatchRequestEntry</a>
-    /// </code> items.</p>
+    /// <p>A list of <code> <code>SendMessageBatchRequestEntry</code> </code> items.</p>
     pub entries: std::option::Option<std::vec::Vec<crate::model::SendMessageBatchRequestEntry>>,
 }
 impl SendMessageBatchInput {
@@ -5578,9 +4326,7 @@ impl SendMessageBatchInput {
     pub fn queue_url(&self) -> std::option::Option<&str> {
         self.queue_url.as_deref()
     }
-    /// <p>A list of <code>
-    /// <a>SendMessageBatchRequestEntry</a>
-    /// </code> items.</p>
+    /// <p>A list of <code> <code>SendMessageBatchRequestEntry</code> </code> items.</p>
     pub fn entries(&self) -> std::option::Option<&[crate::model::SendMessageBatchRequestEntry]> {
         self.entries.as_deref()
     }
@@ -5601,41 +4347,24 @@ pub struct SendMessageInput {
     /// <p>The URL of the Amazon SQS queue to which a message is sent.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
     pub queue_url: std::option::Option<std::string::String>,
-    /// <p>The message to send. The minimum size is one character. The maximum size is 256 KB.</p>
-    /// <important>
+    /// <p>The message to send. The minimum size is one character. The maximum size is 256 KB.</p> <important>
     /// <p>A message can include only XML, JSON, and unformatted text. The following Unicode characters are allowed:</p>
-    /// <p>
-    /// <code>#x9</code> | <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> | <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to <code>#x10FFFF</code>
-    /// </p>
+    /// <p> <code>#x9</code> | <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> | <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to <code>#x10FFFF</code> </p>
     /// <p>Any characters not included in this list will be rejected. For more information, see the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for characters</a>.</p>
     /// </important>
     pub message_body: std::option::Option<std::string::String>,
-    /// <p>
-    /// The length of time, in seconds, for which to delay a specific message. Valid values: 0 to 900. Maximum: 15 minutes. Messages with a positive <code>DelaySeconds</code> value become available for processing after the delay period is finished.
-    /// If you don't specify a value, the default value for the queue applies.
-    /// </p>
-    /// <note>
+    /// <p> The length of time, in seconds, for which to delay a specific message. Valid values: 0 to 900. Maximum: 15 minutes. Messages with a positive <code>DelaySeconds</code> value become available for processing after the delay period is finished. If you don't specify a value, the default value for the queue applies. </p> <note>
     /// <p>When you set <code>FifoQueue</code>, you can't set <code>DelaySeconds</code> per message. You can set this parameter only on a queue level.</p>
     /// </note>
     pub delay_seconds: i32,
-    /// <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
-    /// and <code>Value</code>. For more information, see
-    /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon SQS
-    /// message attributes</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+    /// <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon SQS message attributes</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     pub message_attributes: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::MessageAttributeValue>,
     >,
-    /// <p>The message system attribute to send. Each message system attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.</p>
-    /// <important>
+    /// <p>The message system attribute to send. Each message system attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.</p> <important>
     /// <ul>
-    /// <li>
-    /// <p>Currently, the only supported message system attribute is <code>AWSTraceHeader</code>.
-    /// Its type must be <code>String</code> and its value must be a correctly formatted
-    /// X-Ray trace header string.</p>
-    /// </li>
-    /// <li>
-    /// <p>The size of a message system attribute doesn't count towards the total size of a message.</p>
-    /// </li>
+    /// <li> <p>Currently, the only supported message system attribute is <code>AWSTraceHeader</code>. Its type must be <code>String</code> and its value must be a correctly formatted X-Ray trace header string.</p> </li>
+    /// <li> <p>The size of a message system attribute doesn't count towards the total size of a message.</p> </li>
     /// </ul>
     /// </important>
     pub message_system_attributes: std::option::Option<
@@ -5645,78 +4374,34 @@ pub struct SendMessageInput {
         >,
     >,
     /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
-    /// <p>The token used for deduplication of sent messages. If a message with a particular <code>MessageDeduplicationId</code> is sent successfully, any messages sent with the same <code>MessageDeduplicationId</code>
-    /// are accepted successfully but aren't delivered during the 5-minute deduplication interval. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">
-    /// Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+    /// <p>The token used for deduplication of sent messages. If a message with a particular <code>MessageDeduplicationId</code> is sent successfully, any messages sent with the same <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered during the 5-minute deduplication interval. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html"> Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     /// <ul>
-    /// <li>
-    /// <p>Every message must have a unique <code>MessageDeduplicationId</code>,</p>
+    /// <li> <p>Every message must have a unique <code>MessageDeduplicationId</code>,</p>
     /// <ul>
-    /// <li>
-    /// <p>You may provide a <code>MessageDeduplicationId</code> explicitly.</p>
-    /// </li>
-    /// <li>
-    /// <p>If you aren't able to provide a <code>MessageDeduplicationId</code> and you enable <code>ContentBasedDeduplication</code> for your queue,
-    /// Amazon SQS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>If you don't provide a <code>MessageDeduplicationId</code> and the queue doesn't have <code>ContentBasedDeduplication</code> set,
-    /// the action fails with an error.</p>
-    /// </li>
-    /// <li>
-    /// <p>If the queue has <code>ContentBasedDeduplication</code> set, your <code>MessageDeduplicationId</code> overrides the generated one.</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the deduplication interval are treated as duplicates
-    /// and only one copy of the message is delivered.</p>
-    /// </li>
-    /// <li>
-    /// <p>If you send one message with <code>ContentBasedDeduplication</code> enabled and then another message with a <code>MessageDeduplicationId</code> that is the same
-    /// as the one generated for the first <code>MessageDeduplicationId</code>, the two messages are treated as duplicates and only one copy of the message is delivered.
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <note>
-    /// <p>The <code>MessageDeduplicationId</code> is available to the consumer of the
-    /// message (this can be useful for troubleshooting delivery issues).</p>
-    /// <p>If a message is sent successfully but the acknowledgement is lost and the message is resent with the same
-    /// <code>MessageDeduplicationId</code> after the deduplication interval, Amazon SQS can't detect duplicate messages.</p>
+    /// <li> <p>You may provide a <code>MessageDeduplicationId</code> explicitly.</p> </li>
+    /// <li> <p>If you aren't able to provide a <code>MessageDeduplicationId</code> and you enable <code>ContentBasedDeduplication</code> for your queue, Amazon SQS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message). </p> </li>
+    /// <li> <p>If you don't provide a <code>MessageDeduplicationId</code> and the queue doesn't have <code>ContentBasedDeduplication</code> set, the action fails with an error.</p> </li>
+    /// <li> <p>If the queue has <code>ContentBasedDeduplication</code> set, your <code>MessageDeduplicationId</code> overrides the generated one.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the deduplication interval are treated as duplicates and only one copy of the message is delivered.</p> </li>
+    /// <li> <p>If you send one message with <code>ContentBasedDeduplication</code> enabled and then another message with a <code>MessageDeduplicationId</code> that is the same as the one generated for the first <code>MessageDeduplicationId</code>, the two messages are treated as duplicates and only one copy of the message is delivered. </p> </li>
+    /// </ul> <note>
+    /// <p>The <code>MessageDeduplicationId</code> is available to the consumer of the message (this can be useful for troubleshooting delivery issues).</p>
+    /// <p>If a message is sent successfully but the acknowledgement is lost and the message is resent with the same <code>MessageDeduplicationId</code> after the deduplication interval, Amazon SQS can't detect duplicate messages.</p>
     /// <p>Amazon SQS continues to keep track of the message deduplication ID even after the message is received and deleted.</p>
     /// </note>
-    /// <p>The maximum length of <code>MessageDeduplicationId</code> is 128 characters. <code>MessageDeduplicationId</code> can contain alphanumeric characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and
-    /// punctuation (<code>!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~</code>).</p>
-    /// <p>For best practices of using <code>MessageDeduplicationId</code>, see
-    /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using the MessageDeduplicationId Property</a>
-    /// in the <i>Amazon SQS Developer Guide</i>.</p>
+    /// <p>The maximum length of <code>MessageDeduplicationId</code> is 128 characters. <code>MessageDeduplicationId</code> can contain alphanumeric characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p>
+    /// <p>For best practices of using <code>MessageDeduplicationId</code>, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using the MessageDeduplicationId Property</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     pub message_deduplication_id: std::option::Option<std::string::String>,
     /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
-    /// <p>The tag that specifies that a message belongs to a specific message group. Messages
-    /// that belong to the same message group are processed in a FIFO manner (however,
-    /// messages in different message groups might be processed out of order). To interleave
-    /// multiple ordered streams within a single queue, use <code>MessageGroupId</code> values
-    /// (for example, session data for multiple users). In this scenario, multiple consumers can
-    /// process the queue, but the session data of each user is processed in a FIFO
-    /// fashion.</p>
+    /// <p>The tag that specifies that a message belongs to a specific message group. Messages that belong to the same message group are processed in a FIFO manner (however, messages in different message groups might be processed out of order). To interleave multiple ordered streams within a single queue, use <code>MessageGroupId</code> values (for example, session data for multiple users). In this scenario, multiple consumers can process the queue, but the session data of each user is processed in a FIFO fashion.</p>
     /// <ul>
-    /// <li>
-    /// <p>You must associate a non-empty <code>MessageGroupId</code> with a message. If you don't provide a <code>MessageGroupId</code>, the action fails.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ReceiveMessage</code> might return messages with multiple <code>MessageGroupId</code> values. For each <code>MessageGroupId</code>, the messages are sorted by time sent. The caller can't
-    /// specify a <code>MessageGroupId</code>.</p>
-    /// </li>
+    /// <li> <p>You must associate a non-empty <code>MessageGroupId</code> with a message. If you don't provide a <code>MessageGroupId</code>, the action fails.</p> </li>
+    /// <li> <p> <code>ReceiveMessage</code> might return messages with multiple <code>MessageGroupId</code> values. For each <code>MessageGroupId</code>, the messages are sorted by time sent. The caller can't specify a <code>MessageGroupId</code>.</p> </li>
     /// </ul>
-    /// <p>The length of <code>MessageGroupId</code> is 128 characters. Valid values: alphanumeric characters and punctuation <code>(!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)</code>.</p>
-    /// <p>For best practices of using <code>MessageGroupId</code>, see
-    /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html">Using the MessageGroupId Property</a>
-    /// in the <i>Amazon SQS Developer Guide</i>.</p>
-    /// <important>
-    /// <p>
-    /// <code>MessageGroupId</code> is required for FIFO queues. You can't use it for Standard queues.</p>
+    /// <p>The length of <code>MessageGroupId</code> is 128 characters. Valid values: alphanumeric characters and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p>
+    /// <p>For best practices of using <code>MessageGroupId</code>, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html">Using the MessageGroupId Property</a> in the <i>Amazon SQS Developer Guide</i>.</p> <important>
+    /// <p> <code>MessageGroupId</code> is required for FIFO queues. You can't use it for Standard queues.</p>
     /// </important>
     pub message_group_id: std::option::Option<std::string::String>,
 }
@@ -5726,31 +4411,21 @@ impl SendMessageInput {
     pub fn queue_url(&self) -> std::option::Option<&str> {
         self.queue_url.as_deref()
     }
-    /// <p>The message to send. The minimum size is one character. The maximum size is 256 KB.</p>
-    /// <important>
+    /// <p>The message to send. The minimum size is one character. The maximum size is 256 KB.</p> <important>
     /// <p>A message can include only XML, JSON, and unformatted text. The following Unicode characters are allowed:</p>
-    /// <p>
-    /// <code>#x9</code> | <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> | <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to <code>#x10FFFF</code>
-    /// </p>
+    /// <p> <code>#x9</code> | <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> | <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to <code>#x10FFFF</code> </p>
     /// <p>Any characters not included in this list will be rejected. For more information, see the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for characters</a>.</p>
     /// </important>
     pub fn message_body(&self) -> std::option::Option<&str> {
         self.message_body.as_deref()
     }
-    /// <p>
-    /// The length of time, in seconds, for which to delay a specific message. Valid values: 0 to 900. Maximum: 15 minutes. Messages with a positive <code>DelaySeconds</code> value become available for processing after the delay period is finished.
-    /// If you don't specify a value, the default value for the queue applies.
-    /// </p>
-    /// <note>
+    /// <p> The length of time, in seconds, for which to delay a specific message. Valid values: 0 to 900. Maximum: 15 minutes. Messages with a positive <code>DelaySeconds</code> value become available for processing after the delay period is finished. If you don't specify a value, the default value for the queue applies. </p> <note>
     /// <p>When you set <code>FifoQueue</code>, you can't set <code>DelaySeconds</code> per message. You can set this parameter only on a queue level.</p>
     /// </note>
     pub fn delay_seconds(&self) -> i32 {
         self.delay_seconds
     }
-    /// <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
-    /// and <code>Value</code>. For more information, see
-    /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon SQS
-    /// message attributes</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+    /// <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon SQS message attributes</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     pub fn message_attributes(
         &self,
     ) -> std::option::Option<
@@ -5758,17 +4433,10 @@ impl SendMessageInput {
     > {
         self.message_attributes.as_ref()
     }
-    /// <p>The message system attribute to send. Each message system attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.</p>
-    /// <important>
+    /// <p>The message system attribute to send. Each message system attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.</p> <important>
     /// <ul>
-    /// <li>
-    /// <p>Currently, the only supported message system attribute is <code>AWSTraceHeader</code>.
-    /// Its type must be <code>String</code> and its value must be a correctly formatted
-    /// X-Ray trace header string.</p>
-    /// </li>
-    /// <li>
-    /// <p>The size of a message system attribute doesn't count towards the total size of a message.</p>
-    /// </li>
+    /// <li> <p>Currently, the only supported message system attribute is <code>AWSTraceHeader</code>. Its type must be <code>String</code> and its value must be a correctly formatted X-Ray trace header string.</p> </li>
+    /// <li> <p>The size of a message system attribute doesn't count towards the total size of a message.</p> </li>
     /// </ul>
     /// </important>
     pub fn message_system_attributes(
@@ -5782,80 +4450,36 @@ impl SendMessageInput {
         self.message_system_attributes.as_ref()
     }
     /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
-    /// <p>The token used for deduplication of sent messages. If a message with a particular <code>MessageDeduplicationId</code> is sent successfully, any messages sent with the same <code>MessageDeduplicationId</code>
-    /// are accepted successfully but aren't delivered during the 5-minute deduplication interval. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">
-    /// Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+    /// <p>The token used for deduplication of sent messages. If a message with a particular <code>MessageDeduplicationId</code> is sent successfully, any messages sent with the same <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered during the 5-minute deduplication interval. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html"> Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     /// <ul>
-    /// <li>
-    /// <p>Every message must have a unique <code>MessageDeduplicationId</code>,</p>
+    /// <li> <p>Every message must have a unique <code>MessageDeduplicationId</code>,</p>
     /// <ul>
-    /// <li>
-    /// <p>You may provide a <code>MessageDeduplicationId</code> explicitly.</p>
-    /// </li>
-    /// <li>
-    /// <p>If you aren't able to provide a <code>MessageDeduplicationId</code> and you enable <code>ContentBasedDeduplication</code> for your queue,
-    /// Amazon SQS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>If you don't provide a <code>MessageDeduplicationId</code> and the queue doesn't have <code>ContentBasedDeduplication</code> set,
-    /// the action fails with an error.</p>
-    /// </li>
-    /// <li>
-    /// <p>If the queue has <code>ContentBasedDeduplication</code> set, your <code>MessageDeduplicationId</code> overrides the generated one.</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the deduplication interval are treated as duplicates
-    /// and only one copy of the message is delivered.</p>
-    /// </li>
-    /// <li>
-    /// <p>If you send one message with <code>ContentBasedDeduplication</code> enabled and then another message with a <code>MessageDeduplicationId</code> that is the same
-    /// as the one generated for the first <code>MessageDeduplicationId</code>, the two messages are treated as duplicates and only one copy of the message is delivered.
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <note>
-    /// <p>The <code>MessageDeduplicationId</code> is available to the consumer of the
-    /// message (this can be useful for troubleshooting delivery issues).</p>
-    /// <p>If a message is sent successfully but the acknowledgement is lost and the message is resent with the same
-    /// <code>MessageDeduplicationId</code> after the deduplication interval, Amazon SQS can't detect duplicate messages.</p>
+    /// <li> <p>You may provide a <code>MessageDeduplicationId</code> explicitly.</p> </li>
+    /// <li> <p>If you aren't able to provide a <code>MessageDeduplicationId</code> and you enable <code>ContentBasedDeduplication</code> for your queue, Amazon SQS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message). </p> </li>
+    /// <li> <p>If you don't provide a <code>MessageDeduplicationId</code> and the queue doesn't have <code>ContentBasedDeduplication</code> set, the action fails with an error.</p> </li>
+    /// <li> <p>If the queue has <code>ContentBasedDeduplication</code> set, your <code>MessageDeduplicationId</code> overrides the generated one.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the deduplication interval are treated as duplicates and only one copy of the message is delivered.</p> </li>
+    /// <li> <p>If you send one message with <code>ContentBasedDeduplication</code> enabled and then another message with a <code>MessageDeduplicationId</code> that is the same as the one generated for the first <code>MessageDeduplicationId</code>, the two messages are treated as duplicates and only one copy of the message is delivered. </p> </li>
+    /// </ul> <note>
+    /// <p>The <code>MessageDeduplicationId</code> is available to the consumer of the message (this can be useful for troubleshooting delivery issues).</p>
+    /// <p>If a message is sent successfully but the acknowledgement is lost and the message is resent with the same <code>MessageDeduplicationId</code> after the deduplication interval, Amazon SQS can't detect duplicate messages.</p>
     /// <p>Amazon SQS continues to keep track of the message deduplication ID even after the message is received and deleted.</p>
     /// </note>
-    /// <p>The maximum length of <code>MessageDeduplicationId</code> is 128 characters. <code>MessageDeduplicationId</code> can contain alphanumeric characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and
-    /// punctuation (<code>!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~</code>).</p>
-    /// <p>For best practices of using <code>MessageDeduplicationId</code>, see
-    /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using the MessageDeduplicationId Property</a>
-    /// in the <i>Amazon SQS Developer Guide</i>.</p>
+    /// <p>The maximum length of <code>MessageDeduplicationId</code> is 128 characters. <code>MessageDeduplicationId</code> can contain alphanumeric characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p>
+    /// <p>For best practices of using <code>MessageDeduplicationId</code>, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using the MessageDeduplicationId Property</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     pub fn message_deduplication_id(&self) -> std::option::Option<&str> {
         self.message_deduplication_id.as_deref()
     }
     /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
-    /// <p>The tag that specifies that a message belongs to a specific message group. Messages
-    /// that belong to the same message group are processed in a FIFO manner (however,
-    /// messages in different message groups might be processed out of order). To interleave
-    /// multiple ordered streams within a single queue, use <code>MessageGroupId</code> values
-    /// (for example, session data for multiple users). In this scenario, multiple consumers can
-    /// process the queue, but the session data of each user is processed in a FIFO
-    /// fashion.</p>
+    /// <p>The tag that specifies that a message belongs to a specific message group. Messages that belong to the same message group are processed in a FIFO manner (however, messages in different message groups might be processed out of order). To interleave multiple ordered streams within a single queue, use <code>MessageGroupId</code> values (for example, session data for multiple users). In this scenario, multiple consumers can process the queue, but the session data of each user is processed in a FIFO fashion.</p>
     /// <ul>
-    /// <li>
-    /// <p>You must associate a non-empty <code>MessageGroupId</code> with a message. If you don't provide a <code>MessageGroupId</code>, the action fails.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ReceiveMessage</code> might return messages with multiple <code>MessageGroupId</code> values. For each <code>MessageGroupId</code>, the messages are sorted by time sent. The caller can't
-    /// specify a <code>MessageGroupId</code>.</p>
-    /// </li>
+    /// <li> <p>You must associate a non-empty <code>MessageGroupId</code> with a message. If you don't provide a <code>MessageGroupId</code>, the action fails.</p> </li>
+    /// <li> <p> <code>ReceiveMessage</code> might return messages with multiple <code>MessageGroupId</code> values. For each <code>MessageGroupId</code>, the messages are sorted by time sent. The caller can't specify a <code>MessageGroupId</code>.</p> </li>
     /// </ul>
-    /// <p>The length of <code>MessageGroupId</code> is 128 characters. Valid values: alphanumeric characters and punctuation <code>(!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)</code>.</p>
-    /// <p>For best practices of using <code>MessageGroupId</code>, see
-    /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html">Using the MessageGroupId Property</a>
-    /// in the <i>Amazon SQS Developer Guide</i>.</p>
-    /// <important>
-    /// <p>
-    /// <code>MessageGroupId</code> is required for FIFO queues. You can't use it for Standard queues.</p>
+    /// <p>The length of <code>MessageGroupId</code> is 128 characters. Valid values: alphanumeric characters and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p>
+    /// <p>For best practices of using <code>MessageGroupId</code>, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html">Using the MessageGroupId Property</a> in the <i>Amazon SQS Developer Guide</i>.</p> <important>
+    /// <p> <code>MessageGroupId</code> is required for FIFO queues. You can't use it for Standard queues.</p>
     /// </important>
     pub fn message_group_id(&self) -> std::option::Option<&str> {
         self.message_group_id.as_deref()
@@ -5882,9 +4506,7 @@ pub struct RemovePermissionInput {
     /// <p>The URL of the Amazon SQS queue from which permissions are removed.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
     pub queue_url: std::option::Option<std::string::String>,
-    /// <p>The identification of the permission to remove. This is the label added using the <code>
-    /// <a>AddPermission</a>
-    /// </code> action.</p>
+    /// <p>The identification of the permission to remove. This is the label added using the <code> <code>AddPermission</code> </code> action.</p>
     pub label: std::option::Option<std::string::String>,
 }
 impl RemovePermissionInput {
@@ -5893,9 +4515,7 @@ impl RemovePermissionInput {
     pub fn queue_url(&self) -> std::option::Option<&str> {
         self.queue_url.as_deref()
     }
-    /// <p>The identification of the permission to remove. This is the label added using the <code>
-    /// <a>AddPermission</a>
-    /// </code> action.</p>
+    /// <p>The identification of the permission to remove. This is the label added using the <code> <code>AddPermission</code> </code> action.</p>
     pub fn label(&self) -> std::option::Option<&str> {
         self.label.as_deref()
     }
@@ -5916,148 +4536,58 @@ pub struct ReceiveMessageInput {
     /// <p>The URL of the Amazon SQS queue from which messages are received.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
     pub queue_url: std::option::Option<std::string::String>,
-    /// <p>A list of attributes that need to be returned along with each message. These attributes
-    /// include:</p>
+    /// <p>A list of attributes that need to be returned along with each message. These attributes include:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>All</code> – Returns all values.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ApproximateFirstReceiveTimestamp</code> – Returns the time the message was first received from the queue (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ApproximateReceiveCount</code> – Returns the number of times a message has been received across all queues but not deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AWSTraceHeader</code> – Returns the X-Ray trace header string.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SenderId</code>
-    /// </p>
+    /// <li> <p> <code>All</code> – Returns all values.</p> </li>
+    /// <li> <p> <code>ApproximateFirstReceiveTimestamp</code> – Returns the time the message was first received from the queue (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds).</p> </li>
+    /// <li> <p> <code>ApproximateReceiveCount</code> – Returns the number of times a message has been received across all queues but not deleted.</p> </li>
+    /// <li> <p> <code>AWSTraceHeader</code> – Returns the X-Ray trace header string. </p> </li>
+    /// <li> <p> <code>SenderId</code> </p>
     /// <ul>
-    /// <li>
-    /// <p>For an IAM user, returns the IAM user ID, for example <code>ABCDEFGHI1JKLMNOPQ23R</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>For an IAM role, returns the IAM role ID, for example <code>ABCDE1F2GH3I4JK5LMNOP:i-a123b456</code>.</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SentTimestamp</code> – Returns the time the message was sent to the queue (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SqsManagedSseEnabled</code> – Enables server-side queue encryption using SQS owned encryption keys. Only one server-side encryption option is supported per queue (e.g. <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a> or <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MessageDeduplicationId</code> – Returns the value provided by the
-    /// producer that calls the <code>
-    /// <a>SendMessage</a>
-    /// </code>
-    /// action.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MessageGroupId</code> – Returns the value provided by the producer that
-    /// calls the <code>
-    /// <a>SendMessage</a>
-    /// </code> action. Messages with the
-    /// same <code>MessageGroupId</code> are returned in sequence.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SequenceNumber</code> – Returns the value provided by Amazon SQS.</p>
-    /// </li>
+    /// <li> <p>For an IAM user, returns the IAM user ID, for example <code>ABCDEFGHI1JKLMNOPQ23R</code>.</p> </li>
+    /// <li> <p>For an IAM role, returns the IAM role ID, for example <code>ABCDE1F2GH3I4JK5LMNOP:i-a123b456</code>.</p> </li>
+    /// </ul> </li>
+    /// <li> <p> <code>SentTimestamp</code> – Returns the time the message was sent to the queue (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds).</p> </li>
+    /// <li> <p> <code>SqsManagedSseEnabled</code> – Enables server-side queue encryption using SQS owned encryption keys. Only one server-side encryption option is supported per queue (e.g. <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a> or <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p> </li>
+    /// <li> <p> <code>MessageDeduplicationId</code> – Returns the value provided by the producer that calls the <code> <code>SendMessage</code> </code> action.</p> </li>
+    /// <li> <p> <code>MessageGroupId</code> – Returns the value provided by the producer that calls the <code> <code>SendMessage</code> </code> action. Messages with the same <code>MessageGroupId</code> are returned in sequence.</p> </li>
+    /// <li> <p> <code>SequenceNumber</code> – Returns the value provided by Amazon SQS.</p> </li>
     /// </ul>
     pub attribute_names: std::option::Option<std::vec::Vec<crate::model::QueueAttributeName>>,
     /// <p>The name of the message attribute, where <i>N</i> is the index.</p>
     /// <ul>
-    /// <li>
-    /// <p>The name can contain alphanumeric characters and the underscore (<code>_</code>), hyphen (<code>-</code>), and period (<code>.</code>).</p>
-    /// </li>
-    /// <li>
-    /// <p>The name is case-sensitive and must be unique among all attribute names for the message.</p>
-    /// </li>
-    /// <li>
-    /// <p>The name must not start with AWS-reserved prefixes such as <code>AWS.</code> or <code>Amazon.</code> (or any casing variants).</p>
-    /// </li>
-    /// <li>
-    /// <p>The name must not start or end with a period (<code>.</code>), and it should not have periods in succession (<code>..</code>).</p>
-    /// </li>
-    /// <li>
-    /// <p>The name can be up to 256 characters long.</p>
-    /// </li>
+    /// <li> <p>The name can contain alphanumeric characters and the underscore (<code>_</code>), hyphen (<code>-</code>), and period (<code>.</code>).</p> </li>
+    /// <li> <p>The name is case-sensitive and must be unique among all attribute names for the message.</p> </li>
+    /// <li> <p>The name must not start with AWS-reserved prefixes such as <code>AWS.</code> or <code>Amazon.</code> (or any casing variants).</p> </li>
+    /// <li> <p>The name must not start or end with a period (<code>.</code>), and it should not have periods in succession (<code>..</code>).</p> </li>
+    /// <li> <p>The name can be up to 256 characters long.</p> </li>
     /// </ul>
-    ///
-    /// <p>When using <code>ReceiveMessage</code>, you can send a list of attribute names to receive, or you can return all of the attributes by specifying <code>All</code> or <code>.*</code> in your request.
-    /// You can also use all message attributes starting with a prefix, for example <code>bar.*</code>.</p>
+    /// <p>When using <code>ReceiveMessage</code>, you can send a list of attribute names to receive, or you can return all of the attributes by specifying <code>All</code> or <code>.*</code> in your request. You can also use all message attributes starting with a prefix, for example <code>bar.*</code>.</p>
     pub message_attribute_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The maximum number of messages to return. Amazon SQS never returns more messages than this value (however, fewer messages might be returned). Valid values: 1 to 10. Default: 1.</p>
     pub max_number_of_messages: i32,
     /// <p>The duration (in seconds) that the received messages are hidden from subsequent retrieve requests after being retrieved by a <code>ReceiveMessage</code> request.</p>
     pub visibility_timeout: i32,
-    /// <p>The duration (in seconds) for which the call waits for a message to arrive in the queue before returning. If a message is available, the call returns sooner than <code>WaitTimeSeconds</code>.
-    /// If no messages are available and the wait time expires, the call returns successfully with an empty list of messages.</p>
-    /// <important>
-    /// <p>To avoid HTTP errors, ensure that the HTTP response timeout for <code>ReceiveMessage</code>
-    /// requests is longer than the <code>WaitTimeSeconds</code> parameter. For example,
-    /// with the Java SDK, you can set HTTP transport settings using the <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/nio/netty/NettyNioAsyncHttpClient.html"> NettyNioAsyncHttpClient</a> for asynchronous clients, or the <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/apache/ApacheHttpClient.html"> ApacheHttpClient</a> for synchronous clients. </p>
+    /// <p>The duration (in seconds) for which the call waits for a message to arrive in the queue before returning. If a message is available, the call returns sooner than <code>WaitTimeSeconds</code>. If no messages are available and the wait time expires, the call returns successfully with an empty list of messages.</p> <important>
+    /// <p>To avoid HTTP errors, ensure that the HTTP response timeout for <code>ReceiveMessage</code> requests is longer than the <code>WaitTimeSeconds</code> parameter. For example, with the Java SDK, you can set HTTP transport settings using the <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/nio/netty/NettyNioAsyncHttpClient.html"> NettyNioAsyncHttpClient</a> for asynchronous clients, or the <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/apache/ApacheHttpClient.html"> ApacheHttpClient</a> for synchronous clients. </p>
     /// </important>
     pub wait_time_seconds: i32,
     /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
-    /// <p>The token used for deduplication of <code>ReceiveMessage</code> calls. If a networking issue occurs after a <code>ReceiveMessage</code> action, and instead of a response you receive a generic error,
-    /// it is possible to retry the same action with an identical <code>ReceiveRequestAttemptId</code> to retrieve the same set of messages, even if their visibility timeout has not yet expired.</p>
+    /// <p>The token used for deduplication of <code>ReceiveMessage</code> calls. If a networking issue occurs after a <code>ReceiveMessage</code> action, and instead of a response you receive a generic error, it is possible to retry the same action with an identical <code>ReceiveRequestAttemptId</code> to retrieve the same set of messages, even if their visibility timeout has not yet expired.</p>
     /// <ul>
-    /// <li>
-    /// <p>You can use <code>ReceiveRequestAttemptId</code> only for 5 minutes after a <code>ReceiveMessage</code> action.</p>
-    /// </li>
-    /// <li>
-    /// <p>When you set <code>FifoQueue</code>, a caller of the <code>ReceiveMessage</code> action can provide a <code>ReceiveRequestAttemptId</code> explicitly.</p>
-    /// </li>
-    /// <li>
-    /// <p>If a caller of the <code>ReceiveMessage</code> action doesn't provide a <code>ReceiveRequestAttemptId</code>, Amazon SQS generates a <code>ReceiveRequestAttemptId</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>It is possible to retry the <code>ReceiveMessage</code> action with the same <code>ReceiveRequestAttemptId</code> if none of the messages have been modified (deleted or had their visibility changes).</p>
-    /// </li>
-    /// <li>
-    /// <p>During a visibility timeout, subsequent calls with the same <code>ReceiveRequestAttemptId</code> return the same messages and receipt handles. If a retry occurs within the deduplication interval,
-    /// it resets the visibility timeout. For more information, see
-    /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility Timeout</a>
-    /// in the <i>Amazon SQS Developer Guide</i>.</p>
-    /// <important>
-    /// <p>If a caller of the <code>ReceiveMessage</code> action still processes
-    /// messages when the visibility timeout expires and messages become visible,
-    /// another worker consuming from the same queue can receive the same messages
-    /// and therefore process duplicates. Also, if a consumer whose message
-    /// processing time is longer than the visibility timeout tries to delete the
-    /// processed messages, the action fails with an error.</p>
+    /// <li> <p>You can use <code>ReceiveRequestAttemptId</code> only for 5 minutes after a <code>ReceiveMessage</code> action.</p> </li>
+    /// <li> <p>When you set <code>FifoQueue</code>, a caller of the <code>ReceiveMessage</code> action can provide a <code>ReceiveRequestAttemptId</code> explicitly.</p> </li>
+    /// <li> <p>If a caller of the <code>ReceiveMessage</code> action doesn't provide a <code>ReceiveRequestAttemptId</code>, Amazon SQS generates a <code>ReceiveRequestAttemptId</code>.</p> </li>
+    /// <li> <p>It is possible to retry the <code>ReceiveMessage</code> action with the same <code>ReceiveRequestAttemptId</code> if none of the messages have been modified (deleted or had their visibility changes).</p> </li>
+    /// <li> <p>During a visibility timeout, subsequent calls with the same <code>ReceiveRequestAttemptId</code> return the same messages and receipt handles. If a retry occurs within the deduplication interval, it resets the visibility timeout. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> <important>
+    /// <p>If a caller of the <code>ReceiveMessage</code> action still processes messages when the visibility timeout expires and messages become visible, another worker consuming from the same queue can receive the same messages and therefore process duplicates. Also, if a consumer whose message processing time is longer than the visibility timeout tries to delete the processed messages, the action fails with an error.</p>
     /// <p>To mitigate this effect, ensure that your application observes a safe threshold before the visibility timeout expires and extend the visibility timeout as necessary.</p>
-    /// </important>
-    /// </li>
-    /// <li>
-    /// <p>While messages with a particular <code>MessageGroupId</code> are invisible, no more messages belonging to the same <code>MessageGroupId</code> are returned until the visibility timeout expires. You can still receive
-    /// messages with another <code>MessageGroupId</code> as long as it is also visible.</p>
-    /// </li>
-    /// <li>
-    /// <p>If a caller of <code>ReceiveMessage</code> can't track the <code>ReceiveRequestAttemptId</code>, no retries work until the original visibility timeout expires. As a result, delays might occur but
-    /// the messages in the queue remain in a strict order.</p>
-    /// </li>
+    /// </important> </li>
+    /// <li> <p>While messages with a particular <code>MessageGroupId</code> are invisible, no more messages belonging to the same <code>MessageGroupId</code> are returned until the visibility timeout expires. You can still receive messages with another <code>MessageGroupId</code> as long as it is also visible.</p> </li>
+    /// <li> <p>If a caller of <code>ReceiveMessage</code> can't track the <code>ReceiveRequestAttemptId</code>, no retries work until the original visibility timeout expires. As a result, delays might occur but the messages in the queue remain in a strict order.</p> </li>
     /// </ul>
-    /// <p>The maximum length of <code>ReceiveRequestAttemptId</code> is 128 characters. <code>ReceiveRequestAttemptId</code> can contain alphanumeric characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and
-    /// punctuation (<code>!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~</code>).</p>
-    /// <p>For best practices of using <code>ReceiveRequestAttemptId</code>, see
-    /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-receiverequestattemptid-request-parameter.html">Using the ReceiveRequestAttemptId Request Parameter</a>
-    /// in the <i>Amazon SQS Developer Guide</i>.</p>
+    /// <p>The maximum length of <code>ReceiveRequestAttemptId</code> is 128 characters. <code>ReceiveRequestAttemptId</code> can contain alphanumeric characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p>
+    /// <p>For best practices of using <code>ReceiveRequestAttemptId</code>, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-receiverequestattemptid-request-parameter.html">Using the ReceiveRequestAttemptId Request Parameter</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     pub receive_request_attempt_id: std::option::Option<std::string::String>,
 }
 impl ReceiveMessageInput {
@@ -6066,92 +4596,35 @@ impl ReceiveMessageInput {
     pub fn queue_url(&self) -> std::option::Option<&str> {
         self.queue_url.as_deref()
     }
-    /// <p>A list of attributes that need to be returned along with each message. These attributes
-    /// include:</p>
+    /// <p>A list of attributes that need to be returned along with each message. These attributes include:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>All</code> – Returns all values.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ApproximateFirstReceiveTimestamp</code> – Returns the time the message was first received from the queue (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ApproximateReceiveCount</code> – Returns the number of times a message has been received across all queues but not deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AWSTraceHeader</code> – Returns the X-Ray trace header string.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SenderId</code>
-    /// </p>
+    /// <li> <p> <code>All</code> – Returns all values.</p> </li>
+    /// <li> <p> <code>ApproximateFirstReceiveTimestamp</code> – Returns the time the message was first received from the queue (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds).</p> </li>
+    /// <li> <p> <code>ApproximateReceiveCount</code> – Returns the number of times a message has been received across all queues but not deleted.</p> </li>
+    /// <li> <p> <code>AWSTraceHeader</code> – Returns the X-Ray trace header string. </p> </li>
+    /// <li> <p> <code>SenderId</code> </p>
     /// <ul>
-    /// <li>
-    /// <p>For an IAM user, returns the IAM user ID, for example <code>ABCDEFGHI1JKLMNOPQ23R</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>For an IAM role, returns the IAM role ID, for example <code>ABCDE1F2GH3I4JK5LMNOP:i-a123b456</code>.</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SentTimestamp</code> – Returns the time the message was sent to the queue (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SqsManagedSseEnabled</code> – Enables server-side queue encryption using SQS owned encryption keys. Only one server-side encryption option is supported per queue (e.g. <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a> or <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MessageDeduplicationId</code> – Returns the value provided by the
-    /// producer that calls the <code>
-    /// <a>SendMessage</a>
-    /// </code>
-    /// action.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MessageGroupId</code> – Returns the value provided by the producer that
-    /// calls the <code>
-    /// <a>SendMessage</a>
-    /// </code> action. Messages with the
-    /// same <code>MessageGroupId</code> are returned in sequence.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SequenceNumber</code> – Returns the value provided by Amazon SQS.</p>
-    /// </li>
+    /// <li> <p>For an IAM user, returns the IAM user ID, for example <code>ABCDEFGHI1JKLMNOPQ23R</code>.</p> </li>
+    /// <li> <p>For an IAM role, returns the IAM role ID, for example <code>ABCDE1F2GH3I4JK5LMNOP:i-a123b456</code>.</p> </li>
+    /// </ul> </li>
+    /// <li> <p> <code>SentTimestamp</code> – Returns the time the message was sent to the queue (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds).</p> </li>
+    /// <li> <p> <code>SqsManagedSseEnabled</code> – Enables server-side queue encryption using SQS owned encryption keys. Only one server-side encryption option is supported per queue (e.g. <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a> or <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p> </li>
+    /// <li> <p> <code>MessageDeduplicationId</code> – Returns the value provided by the producer that calls the <code> <code>SendMessage</code> </code> action.</p> </li>
+    /// <li> <p> <code>MessageGroupId</code> – Returns the value provided by the producer that calls the <code> <code>SendMessage</code> </code> action. Messages with the same <code>MessageGroupId</code> are returned in sequence.</p> </li>
+    /// <li> <p> <code>SequenceNumber</code> – Returns the value provided by Amazon SQS.</p> </li>
     /// </ul>
     pub fn attribute_names(&self) -> std::option::Option<&[crate::model::QueueAttributeName]> {
         self.attribute_names.as_deref()
     }
     /// <p>The name of the message attribute, where <i>N</i> is the index.</p>
     /// <ul>
-    /// <li>
-    /// <p>The name can contain alphanumeric characters and the underscore (<code>_</code>), hyphen (<code>-</code>), and period (<code>.</code>).</p>
-    /// </li>
-    /// <li>
-    /// <p>The name is case-sensitive and must be unique among all attribute names for the message.</p>
-    /// </li>
-    /// <li>
-    /// <p>The name must not start with AWS-reserved prefixes such as <code>AWS.</code> or <code>Amazon.</code> (or any casing variants).</p>
-    /// </li>
-    /// <li>
-    /// <p>The name must not start or end with a period (<code>.</code>), and it should not have periods in succession (<code>..</code>).</p>
-    /// </li>
-    /// <li>
-    /// <p>The name can be up to 256 characters long.</p>
-    /// </li>
+    /// <li> <p>The name can contain alphanumeric characters and the underscore (<code>_</code>), hyphen (<code>-</code>), and period (<code>.</code>).</p> </li>
+    /// <li> <p>The name is case-sensitive and must be unique among all attribute names for the message.</p> </li>
+    /// <li> <p>The name must not start with AWS-reserved prefixes such as <code>AWS.</code> or <code>Amazon.</code> (or any casing variants).</p> </li>
+    /// <li> <p>The name must not start or end with a period (<code>.</code>), and it should not have periods in succession (<code>..</code>).</p> </li>
+    /// <li> <p>The name can be up to 256 characters long.</p> </li>
     /// </ul>
-    ///
-    /// <p>When using <code>ReceiveMessage</code>, you can send a list of attribute names to receive, or you can return all of the attributes by specifying <code>All</code> or <code>.*</code> in your request.
-    /// You can also use all message attributes starting with a prefix, for example <code>bar.*</code>.</p>
+    /// <p>When using <code>ReceiveMessage</code>, you can send a list of attribute names to receive, or you can return all of the attributes by specifying <code>All</code> or <code>.*</code> in your request. You can also use all message attributes starting with a prefix, for example <code>bar.*</code>.</p>
     pub fn message_attribute_names(&self) -> std::option::Option<&[std::string::String]> {
         self.message_attribute_names.as_deref()
     }
@@ -6163,61 +4636,28 @@ impl ReceiveMessageInput {
     pub fn visibility_timeout(&self) -> i32 {
         self.visibility_timeout
     }
-    /// <p>The duration (in seconds) for which the call waits for a message to arrive in the queue before returning. If a message is available, the call returns sooner than <code>WaitTimeSeconds</code>.
-    /// If no messages are available and the wait time expires, the call returns successfully with an empty list of messages.</p>
-    /// <important>
-    /// <p>To avoid HTTP errors, ensure that the HTTP response timeout for <code>ReceiveMessage</code>
-    /// requests is longer than the <code>WaitTimeSeconds</code> parameter. For example,
-    /// with the Java SDK, you can set HTTP transport settings using the <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/nio/netty/NettyNioAsyncHttpClient.html"> NettyNioAsyncHttpClient</a> for asynchronous clients, or the <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/apache/ApacheHttpClient.html"> ApacheHttpClient</a> for synchronous clients. </p>
+    /// <p>The duration (in seconds) for which the call waits for a message to arrive in the queue before returning. If a message is available, the call returns sooner than <code>WaitTimeSeconds</code>. If no messages are available and the wait time expires, the call returns successfully with an empty list of messages.</p> <important>
+    /// <p>To avoid HTTP errors, ensure that the HTTP response timeout for <code>ReceiveMessage</code> requests is longer than the <code>WaitTimeSeconds</code> parameter. For example, with the Java SDK, you can set HTTP transport settings using the <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/nio/netty/NettyNioAsyncHttpClient.html"> NettyNioAsyncHttpClient</a> for asynchronous clients, or the <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/apache/ApacheHttpClient.html"> ApacheHttpClient</a> for synchronous clients. </p>
     /// </important>
     pub fn wait_time_seconds(&self) -> i32 {
         self.wait_time_seconds
     }
     /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
-    /// <p>The token used for deduplication of <code>ReceiveMessage</code> calls. If a networking issue occurs after a <code>ReceiveMessage</code> action, and instead of a response you receive a generic error,
-    /// it is possible to retry the same action with an identical <code>ReceiveRequestAttemptId</code> to retrieve the same set of messages, even if their visibility timeout has not yet expired.</p>
+    /// <p>The token used for deduplication of <code>ReceiveMessage</code> calls. If a networking issue occurs after a <code>ReceiveMessage</code> action, and instead of a response you receive a generic error, it is possible to retry the same action with an identical <code>ReceiveRequestAttemptId</code> to retrieve the same set of messages, even if their visibility timeout has not yet expired.</p>
     /// <ul>
-    /// <li>
-    /// <p>You can use <code>ReceiveRequestAttemptId</code> only for 5 minutes after a <code>ReceiveMessage</code> action.</p>
-    /// </li>
-    /// <li>
-    /// <p>When you set <code>FifoQueue</code>, a caller of the <code>ReceiveMessage</code> action can provide a <code>ReceiveRequestAttemptId</code> explicitly.</p>
-    /// </li>
-    /// <li>
-    /// <p>If a caller of the <code>ReceiveMessage</code> action doesn't provide a <code>ReceiveRequestAttemptId</code>, Amazon SQS generates a <code>ReceiveRequestAttemptId</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>It is possible to retry the <code>ReceiveMessage</code> action with the same <code>ReceiveRequestAttemptId</code> if none of the messages have been modified (deleted or had their visibility changes).</p>
-    /// </li>
-    /// <li>
-    /// <p>During a visibility timeout, subsequent calls with the same <code>ReceiveRequestAttemptId</code> return the same messages and receipt handles. If a retry occurs within the deduplication interval,
-    /// it resets the visibility timeout. For more information, see
-    /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility Timeout</a>
-    /// in the <i>Amazon SQS Developer Guide</i>.</p>
-    /// <important>
-    /// <p>If a caller of the <code>ReceiveMessage</code> action still processes
-    /// messages when the visibility timeout expires and messages become visible,
-    /// another worker consuming from the same queue can receive the same messages
-    /// and therefore process duplicates. Also, if a consumer whose message
-    /// processing time is longer than the visibility timeout tries to delete the
-    /// processed messages, the action fails with an error.</p>
+    /// <li> <p>You can use <code>ReceiveRequestAttemptId</code> only for 5 minutes after a <code>ReceiveMessage</code> action.</p> </li>
+    /// <li> <p>When you set <code>FifoQueue</code>, a caller of the <code>ReceiveMessage</code> action can provide a <code>ReceiveRequestAttemptId</code> explicitly.</p> </li>
+    /// <li> <p>If a caller of the <code>ReceiveMessage</code> action doesn't provide a <code>ReceiveRequestAttemptId</code>, Amazon SQS generates a <code>ReceiveRequestAttemptId</code>.</p> </li>
+    /// <li> <p>It is possible to retry the <code>ReceiveMessage</code> action with the same <code>ReceiveRequestAttemptId</code> if none of the messages have been modified (deleted or had their visibility changes).</p> </li>
+    /// <li> <p>During a visibility timeout, subsequent calls with the same <code>ReceiveRequestAttemptId</code> return the same messages and receipt handles. If a retry occurs within the deduplication interval, it resets the visibility timeout. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> <important>
+    /// <p>If a caller of the <code>ReceiveMessage</code> action still processes messages when the visibility timeout expires and messages become visible, another worker consuming from the same queue can receive the same messages and therefore process duplicates. Also, if a consumer whose message processing time is longer than the visibility timeout tries to delete the processed messages, the action fails with an error.</p>
     /// <p>To mitigate this effect, ensure that your application observes a safe threshold before the visibility timeout expires and extend the visibility timeout as necessary.</p>
-    /// </important>
-    /// </li>
-    /// <li>
-    /// <p>While messages with a particular <code>MessageGroupId</code> are invisible, no more messages belonging to the same <code>MessageGroupId</code> are returned until the visibility timeout expires. You can still receive
-    /// messages with another <code>MessageGroupId</code> as long as it is also visible.</p>
-    /// </li>
-    /// <li>
-    /// <p>If a caller of <code>ReceiveMessage</code> can't track the <code>ReceiveRequestAttemptId</code>, no retries work until the original visibility timeout expires. As a result, delays might occur but
-    /// the messages in the queue remain in a strict order.</p>
-    /// </li>
+    /// </important> </li>
+    /// <li> <p>While messages with a particular <code>MessageGroupId</code> are invisible, no more messages belonging to the same <code>MessageGroupId</code> are returned until the visibility timeout expires. You can still receive messages with another <code>MessageGroupId</code> as long as it is also visible.</p> </li>
+    /// <li> <p>If a caller of <code>ReceiveMessage</code> can't track the <code>ReceiveRequestAttemptId</code>, no retries work until the original visibility timeout expires. As a result, delays might occur but the messages in the queue remain in a strict order.</p> </li>
     /// </ul>
-    /// <p>The maximum length of <code>ReceiveRequestAttemptId</code> is 128 characters. <code>ReceiveRequestAttemptId</code> can contain alphanumeric characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and
-    /// punctuation (<code>!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~</code>).</p>
-    /// <p>For best practices of using <code>ReceiveRequestAttemptId</code>, see
-    /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-receiverequestattemptid-request-parameter.html">Using the ReceiveRequestAttemptId Request Parameter</a>
-    /// in the <i>Amazon SQS Developer Guide</i>.</p>
+    /// <p>The maximum length of <code>ReceiveRequestAttemptId</code> is 128 characters. <code>ReceiveRequestAttemptId</code> can contain alphanumeric characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p>
+    /// <p>For best practices of using <code>ReceiveRequestAttemptId</code>, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-receiverequestattemptid-request-parameter.html">Using the ReceiveRequestAttemptId Request Parameter</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     pub fn receive_request_attempt_id(&self) -> std::option::Option<&str> {
         self.receive_request_attempt_id.as_deref()
     }
@@ -6292,8 +4732,7 @@ pub struct ListQueuesInput {
     pub queue_name_prefix: std::option::Option<std::string::String>,
     /// <p>Pagination token to request the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>Maximum number of results to include in the response. Value range is 1 to 1000.
-    /// You must set <code>MaxResults</code> to receive a value for <code>NextToken</code> in the response.</p>
+    /// <p>Maximum number of results to include in the response. Value range is 1 to 1000. You must set <code>MaxResults</code> to receive a value for <code>NextToken</code> in the response.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListQueuesInput {
@@ -6306,8 +4745,7 @@ impl ListQueuesInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Maximum number of results to include in the response. Value range is 1 to 1000.
-    /// You must set <code>MaxResults</code> to receive a value for <code>NextToken</code> in the response.</p>
+    /// <p>Maximum number of results to include in the response. Value range is 1 to 1000. You must set <code>MaxResults</code> to receive a value for <code>NextToken</code> in the response.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -6331,8 +4769,7 @@ pub struct ListDeadLetterSourceQueuesInput {
     pub queue_url: std::option::Option<std::string::String>,
     /// <p>Pagination token to request the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>Maximum number of results to include in the response. Value range is 1 to 1000.
-    /// You must set <code>MaxResults</code> to receive a value for <code>NextToken</code> in the response.</p>
+    /// <p>Maximum number of results to include in the response. Value range is 1 to 1000. You must set <code>MaxResults</code> to receive a value for <code>NextToken</code> in the response.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListDeadLetterSourceQueuesInput {
@@ -6345,8 +4782,7 @@ impl ListDeadLetterSourceQueuesInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Maximum number of results to include in the response. Value range is 1 to 1000.
-    /// You must set <code>MaxResults</code> to receive a value for <code>NextToken</code> in the response.</p>
+    /// <p>Maximum number of results to include in the response. Value range is 1 to 1000. You must set <code>MaxResults</code> to receive a value for <code>NextToken</code> in the response.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -6402,175 +4838,57 @@ pub struct GetQueueAttributesInput {
     /// <p>Queue URLs and names are case-sensitive.</p>
     pub queue_url: std::option::Option<std::string::String>,
     /// <p>A list of attributes for which to retrieve information.</p>
-    /// <p>The <code>AttributeName.N</code> parameter is optional, but if you don't specify values for this parameter,
-    /// the request returns empty results.</p>
-    /// <note>
+    /// <p>The <code>AttributeName.N</code> parameter is optional, but if you don't specify values for this parameter, the request returns empty results.</p> <note>
     /// <p>In the future, new attributes might be added. If you write code that calls this action, we recommend that you structure your code so that it can handle new attributes gracefully.</p>
     /// </note>
-    /// <p>The following attributes are supported:</p>
-    /// <important>
-    /// <p>The <code>ApproximateNumberOfMessagesDelayed</code>, <code>ApproximateNumberOfMessagesNotVisible</code>,
-    /// and <code>ApproximateNumberOfMessagesVisible</code> metrics may not achieve consistency
-    /// until at least 1 minute after the producers stop sending messages. This period is required for
-    /// the queue metadata to reach eventual consistency. </p>
+    /// <p>The following attributes are supported:</p> <important>
+    /// <p>The <code>ApproximateNumberOfMessagesDelayed</code>, <code>ApproximateNumberOfMessagesNotVisible</code>, and <code>ApproximateNumberOfMessagesVisible</code> metrics may not achieve consistency until at least 1 minute after the producers stop sending messages. This period is required for the queue metadata to reach eventual consistency. </p>
     /// </important>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>All</code> – Returns all values. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ApproximateNumberOfMessages</code> – Returns the approximate number of
-    /// messages available for retrieval from the queue.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ApproximateNumberOfMessagesDelayed</code> – Returns the approximate number
-    /// of messages in the queue that are delayed and not available for reading
-    /// immediately. This can happen when the queue is configured as a delay queue or
-    /// when a message has been sent with a delay parameter.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ApproximateNumberOfMessagesNotVisible</code> – Returns the approximate
-    /// number of messages that are in flight. Messages are considered to be
-    /// <i>in flight</i> if they have been sent to a client but have
-    /// not yet been deleted or have not yet reached the end of their visibility window. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CreatedTimestamp</code> – Returns the time when the queue was created in
-    /// seconds (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch
-    /// time</a>).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DelaySeconds</code> – Returns the default delay on the queue in
-    /// seconds.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LastModifiedTimestamp</code> – Returns the time when the queue was last
-    /// changed in seconds (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch
-    /// time</a>).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MaximumMessageSize</code> – Returns the limit of how many bytes a message
-    /// can contain before Amazon SQS rejects it.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MessageRetentionPeriod</code> – Returns the length of time, in seconds,
-    /// for which Amazon SQS retains a message.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Policy</code> – Returns the policy of the queue.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>QueueArn</code> – Returns the Amazon resource name (ARN) of the
-    /// queue.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ReceiveMessageWaitTimeSeconds</code> – Returns the length of time, in
-    /// seconds, for which the <code>ReceiveMessage</code> action waits for a message to
-    /// arrive. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RedrivePolicy</code> – The string that includes the parameters for the dead-letter queue functionality
-    /// of the source queue as a JSON object. For more information about the redrive policy and dead-letter queues, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using Amazon SQS Dead-Letter Queues</a>
-    /// in the <i>Amazon SQS Developer Guide</i>.</p>
+    /// <li> <p> <code>All</code> – Returns all values. </p> </li>
+    /// <li> <p> <code>ApproximateNumberOfMessages</code> – Returns the approximate number of messages available for retrieval from the queue.</p> </li>
+    /// <li> <p> <code>ApproximateNumberOfMessagesDelayed</code> – Returns the approximate number of messages in the queue that are delayed and not available for reading immediately. This can happen when the queue is configured as a delay queue or when a message has been sent with a delay parameter.</p> </li>
+    /// <li> <p> <code>ApproximateNumberOfMessagesNotVisible</code> – Returns the approximate number of messages that are in flight. Messages are considered to be <i>in flight</i> if they have been sent to a client but have not yet been deleted or have not yet reached the end of their visibility window. </p> </li>
+    /// <li> <p> <code>CreatedTimestamp</code> – Returns the time when the queue was created in seconds (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>).</p> </li>
+    /// <li> <p> <code>DelaySeconds</code> – Returns the default delay on the queue in seconds.</p> </li>
+    /// <li> <p> <code>LastModifiedTimestamp</code> – Returns the time when the queue was last changed in seconds (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>).</p> </li>
+    /// <li> <p> <code>MaximumMessageSize</code> – Returns the limit of how many bytes a message can contain before Amazon SQS rejects it.</p> </li>
+    /// <li> <p> <code>MessageRetentionPeriod</code> – Returns the length of time, in seconds, for which Amazon SQS retains a message.</p> </li>
+    /// <li> <p> <code>Policy</code> – Returns the policy of the queue.</p> </li>
+    /// <li> <p> <code>QueueArn</code> – Returns the Amazon resource name (ARN) of the queue.</p> </li>
+    /// <li> <p> <code>ReceiveMessageWaitTimeSeconds</code> – Returns the length of time, in seconds, for which the <code>ReceiveMessage</code> action waits for a message to arrive. </p> </li>
+    /// <li> <p> <code>RedrivePolicy</code> – The string that includes the parameters for the dead-letter queue functionality of the source queue as a JSON object. For more information about the redrive policy and dead-letter queues, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves messages after the value of <code>maxReceiveCount</code> is exceeded.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>maxReceiveCount</code> – The number of times a message is delivered to the source queue before being moved to the dead-letter queue.
-    /// When the <code>ReceiveCount</code> for a message exceeds the <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the dead-letter-queue.</p>
-    /// </li>
+    /// <li> <p> <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves messages after the value of <code>maxReceiveCount</code> is exceeded.</p> </li>
+    /// <li> <p> <code>maxReceiveCount</code> – The number of times a message is delivered to the source queue before being moved to the dead-letter queue. When the <code>ReceiveCount</code> for a message exceeds the <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the dead-letter-queue.</p> </li>
+    /// </ul> </li>
+    /// <li> <p> <code>VisibilityTimeout</code> – Returns the visibility timeout for the queue. For more information about the visibility timeout, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>. </p> </li>
     /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>VisibilityTimeout</code> – Returns the visibility timeout for the queue. For more information about the visibility timeout, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
-    /// </p>
-    /// </li>
-    /// </ul>
-    ///
     /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>KmsMasterKeyId</code> – Returns the ID of an Amazon Web Services managed customer master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key Terms</a>.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>KmsDataKeyReusePeriodSeconds</code> – Returns the length of time, in seconds, for which Amazon SQS can reuse a data key to encrypt or decrypt messages before calling KMS again.
-    /// For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How Does the Data Key Reuse Period Work?</a>.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SqsManagedSseEnabled</code> – Returns information about whether the queue is using SSE-SQS encryption using SQS owned encryption keys. Only one server-side encryption option is supported per queue (e.g. <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a> or <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p>
-    /// </li>
+    /// <li> <p> <code>KmsMasterKeyId</code> – Returns the ID of an Amazon Web Services managed customer master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key Terms</a>. </p> </li>
+    /// <li> <p> <code>KmsDataKeyReusePeriodSeconds</code> – Returns the length of time, in seconds, for which Amazon SQS can reuse a data key to encrypt or decrypt messages before calling KMS again. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How Does the Data Key Reuse Period Work?</a>. </p> </li>
+    /// <li> <p> <code>SqsManagedSseEnabled</code> – Returns information about whether the queue is using SSE-SQS encryption using SQS owned encryption keys. Only one server-side encryption option is supported per queue (e.g. <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a> or <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p> </li>
     /// </ul>
-    ///
-    ///
     /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO (first-in-first-out) queues</a>:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>FifoQueue</code> – Returns information about whether the queue is FIFO. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-understanding-logic.html">FIFO queue logic</a> in the <i>Amazon SQS Developer Guide</i>.</p>
-    /// <note>
+    /// <li> <p> <code>FifoQueue</code> – Returns information about whether the queue is FIFO. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-understanding-logic.html">FIFO queue logic</a> in the <i>Amazon SQS Developer Guide</i>.</p> <note>
     /// <p>To determine whether a queue is <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO</a>, you can check whether <code>QueueName</code> ends with the <code>.fifo</code> suffix.</p>
-    /// </note>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ContentBasedDeduplication</code> – Returns whether content-based deduplication is enabled for the queue. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>.
-    /// </p>
-    /// </li>
+    /// </note> </li>
+    /// <li> <p> <code>ContentBasedDeduplication</code> – Returns whether content-based deduplication is enabled for the queue. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>. </p> </li>
     /// </ul>
-    ///
-    ///
-    /// <p>The following attributes apply only to
-    /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html">high throughput
-    /// for FIFO queues</a>:</p>
+    /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html">high throughput for FIFO queues</a>:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>DeduplicationScope</code> – Specifies whether message deduplication occurs at the
-    /// message group or queue level. Valid values are <code>messageGroup</code> and <code>queue</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FifoThroughputLimit</code> – Specifies whether the FIFO queue throughput
-    /// quota applies to the entire queue or per message group. Valid values are <code>perQueue</code> and <code>perMessageGroupId</code>.
-    /// The <code>perMessageGroupId</code> value is allowed only when the value for <code>DeduplicationScope</code> is <code>messageGroup</code>.</p>
-    /// </li>
+    /// <li> <p> <code>DeduplicationScope</code> – Specifies whether message deduplication occurs at the message group or queue level. Valid values are <code>messageGroup</code> and <code>queue</code>.</p> </li>
+    /// <li> <p> <code>FifoThroughputLimit</code> – Specifies whether the FIFO queue throughput quota applies to the entire queue or per message group. Valid values are <code>perQueue</code> and <code>perMessageGroupId</code>. The <code>perMessageGroupId</code> value is allowed only when the value for <code>DeduplicationScope</code> is <code>messageGroup</code>.</p> </li>
     /// </ul>
     /// <p>To enable high throughput for FIFO queues, do the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>Set <code>DeduplicationScope</code> to <code>messageGroup</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Set <code>FifoThroughputLimit</code> to <code>perMessageGroupId</code>.</p>
-    /// </li>
+    /// <li> <p>Set <code>DeduplicationScope</code> to <code>messageGroup</code>.</p> </li>
+    /// <li> <p>Set <code>FifoThroughputLimit</code> to <code>perMessageGroupId</code>.</p> </li>
     /// </ul>
-    /// <p>If you set these attributes to anything other than the values shown for enabling high
-    /// throughput, normal throughput is in effect and deduplication occurs as specified.</p>
-    /// <p>For information on throughput quotas,
-    /// see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a>
-    /// in the <i>Amazon SQS Developer Guide</i>.</p>
+    /// <p>If you set these attributes to anything other than the values shown for enabling high throughput, normal throughput is in effect and deduplication occurs as specified.</p>
+    /// <p>For information on throughput quotas, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     pub attribute_names: std::option::Option<std::vec::Vec<crate::model::QueueAttributeName>>,
 }
 impl GetQueueAttributesInput {
@@ -6580,175 +4898,57 @@ impl GetQueueAttributesInput {
         self.queue_url.as_deref()
     }
     /// <p>A list of attributes for which to retrieve information.</p>
-    /// <p>The <code>AttributeName.N</code> parameter is optional, but if you don't specify values for this parameter,
-    /// the request returns empty results.</p>
-    /// <note>
+    /// <p>The <code>AttributeName.N</code> parameter is optional, but if you don't specify values for this parameter, the request returns empty results.</p> <note>
     /// <p>In the future, new attributes might be added. If you write code that calls this action, we recommend that you structure your code so that it can handle new attributes gracefully.</p>
     /// </note>
-    /// <p>The following attributes are supported:</p>
-    /// <important>
-    /// <p>The <code>ApproximateNumberOfMessagesDelayed</code>, <code>ApproximateNumberOfMessagesNotVisible</code>,
-    /// and <code>ApproximateNumberOfMessagesVisible</code> metrics may not achieve consistency
-    /// until at least 1 minute after the producers stop sending messages. This period is required for
-    /// the queue metadata to reach eventual consistency. </p>
+    /// <p>The following attributes are supported:</p> <important>
+    /// <p>The <code>ApproximateNumberOfMessagesDelayed</code>, <code>ApproximateNumberOfMessagesNotVisible</code>, and <code>ApproximateNumberOfMessagesVisible</code> metrics may not achieve consistency until at least 1 minute after the producers stop sending messages. This period is required for the queue metadata to reach eventual consistency. </p>
     /// </important>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>All</code> – Returns all values. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ApproximateNumberOfMessages</code> – Returns the approximate number of
-    /// messages available for retrieval from the queue.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ApproximateNumberOfMessagesDelayed</code> – Returns the approximate number
-    /// of messages in the queue that are delayed and not available for reading
-    /// immediately. This can happen when the queue is configured as a delay queue or
-    /// when a message has been sent with a delay parameter.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ApproximateNumberOfMessagesNotVisible</code> – Returns the approximate
-    /// number of messages that are in flight. Messages are considered to be
-    /// <i>in flight</i> if they have been sent to a client but have
-    /// not yet been deleted or have not yet reached the end of their visibility window. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CreatedTimestamp</code> – Returns the time when the queue was created in
-    /// seconds (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch
-    /// time</a>).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DelaySeconds</code> – Returns the default delay on the queue in
-    /// seconds.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LastModifiedTimestamp</code> – Returns the time when the queue was last
-    /// changed in seconds (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch
-    /// time</a>).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MaximumMessageSize</code> – Returns the limit of how many bytes a message
-    /// can contain before Amazon SQS rejects it.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MessageRetentionPeriod</code> – Returns the length of time, in seconds,
-    /// for which Amazon SQS retains a message.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Policy</code> – Returns the policy of the queue.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>QueueArn</code> – Returns the Amazon resource name (ARN) of the
-    /// queue.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ReceiveMessageWaitTimeSeconds</code> – Returns the length of time, in
-    /// seconds, for which the <code>ReceiveMessage</code> action waits for a message to
-    /// arrive. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RedrivePolicy</code> – The string that includes the parameters for the dead-letter queue functionality
-    /// of the source queue as a JSON object. For more information about the redrive policy and dead-letter queues, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using Amazon SQS Dead-Letter Queues</a>
-    /// in the <i>Amazon SQS Developer Guide</i>.</p>
+    /// <li> <p> <code>All</code> – Returns all values. </p> </li>
+    /// <li> <p> <code>ApproximateNumberOfMessages</code> – Returns the approximate number of messages available for retrieval from the queue.</p> </li>
+    /// <li> <p> <code>ApproximateNumberOfMessagesDelayed</code> – Returns the approximate number of messages in the queue that are delayed and not available for reading immediately. This can happen when the queue is configured as a delay queue or when a message has been sent with a delay parameter.</p> </li>
+    /// <li> <p> <code>ApproximateNumberOfMessagesNotVisible</code> – Returns the approximate number of messages that are in flight. Messages are considered to be <i>in flight</i> if they have been sent to a client but have not yet been deleted or have not yet reached the end of their visibility window. </p> </li>
+    /// <li> <p> <code>CreatedTimestamp</code> – Returns the time when the queue was created in seconds (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>).</p> </li>
+    /// <li> <p> <code>DelaySeconds</code> – Returns the default delay on the queue in seconds.</p> </li>
+    /// <li> <p> <code>LastModifiedTimestamp</code> – Returns the time when the queue was last changed in seconds (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>).</p> </li>
+    /// <li> <p> <code>MaximumMessageSize</code> – Returns the limit of how many bytes a message can contain before Amazon SQS rejects it.</p> </li>
+    /// <li> <p> <code>MessageRetentionPeriod</code> – Returns the length of time, in seconds, for which Amazon SQS retains a message.</p> </li>
+    /// <li> <p> <code>Policy</code> – Returns the policy of the queue.</p> </li>
+    /// <li> <p> <code>QueueArn</code> – Returns the Amazon resource name (ARN) of the queue.</p> </li>
+    /// <li> <p> <code>ReceiveMessageWaitTimeSeconds</code> – Returns the length of time, in seconds, for which the <code>ReceiveMessage</code> action waits for a message to arrive. </p> </li>
+    /// <li> <p> <code>RedrivePolicy</code> – The string that includes the parameters for the dead-letter queue functionality of the source queue as a JSON object. For more information about the redrive policy and dead-letter queues, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves messages after the value of <code>maxReceiveCount</code> is exceeded.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>maxReceiveCount</code> – The number of times a message is delivered to the source queue before being moved to the dead-letter queue.
-    /// When the <code>ReceiveCount</code> for a message exceeds the <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the dead-letter-queue.</p>
-    /// </li>
+    /// <li> <p> <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves messages after the value of <code>maxReceiveCount</code> is exceeded.</p> </li>
+    /// <li> <p> <code>maxReceiveCount</code> – The number of times a message is delivered to the source queue before being moved to the dead-letter queue. When the <code>ReceiveCount</code> for a message exceeds the <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the dead-letter-queue.</p> </li>
+    /// </ul> </li>
+    /// <li> <p> <code>VisibilityTimeout</code> – Returns the visibility timeout for the queue. For more information about the visibility timeout, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>. </p> </li>
     /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>VisibilityTimeout</code> – Returns the visibility timeout for the queue. For more information about the visibility timeout, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
-    /// </p>
-    /// </li>
-    /// </ul>
-    ///
     /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>KmsMasterKeyId</code> – Returns the ID of an Amazon Web Services managed customer master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key Terms</a>.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>KmsDataKeyReusePeriodSeconds</code> – Returns the length of time, in seconds, for which Amazon SQS can reuse a data key to encrypt or decrypt messages before calling KMS again.
-    /// For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How Does the Data Key Reuse Period Work?</a>.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SqsManagedSseEnabled</code> – Returns information about whether the queue is using SSE-SQS encryption using SQS owned encryption keys. Only one server-side encryption option is supported per queue (e.g. <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a> or <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p>
-    /// </li>
+    /// <li> <p> <code>KmsMasterKeyId</code> – Returns the ID of an Amazon Web Services managed customer master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key Terms</a>. </p> </li>
+    /// <li> <p> <code>KmsDataKeyReusePeriodSeconds</code> – Returns the length of time, in seconds, for which Amazon SQS can reuse a data key to encrypt or decrypt messages before calling KMS again. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How Does the Data Key Reuse Period Work?</a>. </p> </li>
+    /// <li> <p> <code>SqsManagedSseEnabled</code> – Returns information about whether the queue is using SSE-SQS encryption using SQS owned encryption keys. Only one server-side encryption option is supported per queue (e.g. <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a> or <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p> </li>
     /// </ul>
-    ///
-    ///
     /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO (first-in-first-out) queues</a>:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>FifoQueue</code> – Returns information about whether the queue is FIFO. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-understanding-logic.html">FIFO queue logic</a> in the <i>Amazon SQS Developer Guide</i>.</p>
-    /// <note>
+    /// <li> <p> <code>FifoQueue</code> – Returns information about whether the queue is FIFO. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-understanding-logic.html">FIFO queue logic</a> in the <i>Amazon SQS Developer Guide</i>.</p> <note>
     /// <p>To determine whether a queue is <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO</a>, you can check whether <code>QueueName</code> ends with the <code>.fifo</code> suffix.</p>
-    /// </note>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ContentBasedDeduplication</code> – Returns whether content-based deduplication is enabled for the queue. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>.
-    /// </p>
-    /// </li>
+    /// </note> </li>
+    /// <li> <p> <code>ContentBasedDeduplication</code> – Returns whether content-based deduplication is enabled for the queue. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>. </p> </li>
     /// </ul>
-    ///
-    ///
-    /// <p>The following attributes apply only to
-    /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html">high throughput
-    /// for FIFO queues</a>:</p>
+    /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html">high throughput for FIFO queues</a>:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>DeduplicationScope</code> – Specifies whether message deduplication occurs at the
-    /// message group or queue level. Valid values are <code>messageGroup</code> and <code>queue</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FifoThroughputLimit</code> – Specifies whether the FIFO queue throughput
-    /// quota applies to the entire queue or per message group. Valid values are <code>perQueue</code> and <code>perMessageGroupId</code>.
-    /// The <code>perMessageGroupId</code> value is allowed only when the value for <code>DeduplicationScope</code> is <code>messageGroup</code>.</p>
-    /// </li>
+    /// <li> <p> <code>DeduplicationScope</code> – Specifies whether message deduplication occurs at the message group or queue level. Valid values are <code>messageGroup</code> and <code>queue</code>.</p> </li>
+    /// <li> <p> <code>FifoThroughputLimit</code> – Specifies whether the FIFO queue throughput quota applies to the entire queue or per message group. Valid values are <code>perQueue</code> and <code>perMessageGroupId</code>. The <code>perMessageGroupId</code> value is allowed only when the value for <code>DeduplicationScope</code> is <code>messageGroup</code>.</p> </li>
     /// </ul>
     /// <p>To enable high throughput for FIFO queues, do the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>Set <code>DeduplicationScope</code> to <code>messageGroup</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Set <code>FifoThroughputLimit</code> to <code>perMessageGroupId</code>.</p>
-    /// </li>
+    /// <li> <p>Set <code>DeduplicationScope</code> to <code>messageGroup</code>.</p> </li>
+    /// <li> <p>Set <code>FifoThroughputLimit</code> to <code>perMessageGroupId</code>.</p> </li>
     /// </ul>
-    /// <p>If you set these attributes to anything other than the values shown for enabling high
-    /// throughput, normal throughput is in effect and deduplication occurs as specified.</p>
-    /// <p>For information on throughput quotas,
-    /// see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a>
-    /// in the <i>Amazon SQS Developer Guide</i>.</p>
+    /// <p>If you set these attributes to anything other than the values shown for enabling high throughput, normal throughput is in effect and deduplication occurs as specified.</p>
+    /// <p>For information on throughput quotas, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     pub fn attribute_names(&self) -> std::option::Option<&[crate::model::QueueAttributeName]> {
         self.attribute_names.as_deref()
     }
@@ -6851,211 +5051,77 @@ impl std::fmt::Debug for DeleteMessageInput {
 pub struct CreateQueueInput {
     /// <p>The name of the new queue. The following limits apply to this name:</p>
     /// <ul>
-    /// <li>
-    /// <p>A queue name can have up to 80 characters.</p>               
-    /// </li>
-    /// <li>
-    /// <p>Valid values: alphanumeric characters, hyphens (<code>-</code>), and underscores (<code>_</code>).</p>
-    /// </li>
-    /// <li>
-    /// <p>A FIFO queue name must end with the <code>.fifo</code> suffix.</p>
-    /// </li>
+    /// <li> <p>A queue name can have up to 80 characters.</p> </li>
+    /// <li> <p>Valid values: alphanumeric characters, hyphens (<code>-</code>), and underscores (<code>_</code>).</p> </li>
+    /// <li> <p>A FIFO queue name must end with the <code>.fifo</code> suffix.</p> </li>
     /// </ul>
     /// <p>Queue URLs and names are case-sensitive.</p>
     pub queue_name: std::option::Option<std::string::String>,
-    /// <p>Add cost allocation tags to the specified Amazon SQS queue. For an overview, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html">Tagging
-    /// Your Amazon SQS Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p>
-    ///
+    /// <p>Add cost allocation tags to the specified Amazon SQS queue. For an overview, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html">Tagging Your Amazon SQS Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     /// <p>When you use queue tags, keep the following guidelines in mind:</p>
     /// <ul>
-    /// <li>
-    /// <p>Adding more than 50 tags to a queue isn't recommended.</p>
-    /// </li>
-    /// <li>
-    /// <p>Tags don't have any semantic meaning. Amazon SQS interprets tags as character strings.</p>
-    /// </li>
-    /// <li>
-    /// <p>Tags are case-sensitive.</p>
-    /// </li>
-    /// <li>
-    /// <p>A new tag with a key identical to that of an existing tag overwrites the existing tag.</p>
-    /// </li>
+    /// <li> <p>Adding more than 50 tags to a queue isn't recommended.</p> </li>
+    /// <li> <p>Tags don't have any semantic meaning. Amazon SQS interprets tags as character strings.</p> </li>
+    /// <li> <p>Tags are case-sensitive.</p> </li>
+    /// <li> <p>A new tag with a key identical to that of an existing tag overwrites the existing tag.</p> </li>
     /// </ul>
-    /// <p>For a full list of tag restrictions, see
-    /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-limits.html#limits-queues">Quotas related to queues</a>
-    /// in the <i>Amazon SQS Developer Guide</i>.</p>
-    /// <note>
-    /// <p>To be able to tag a queue on creation, you must have the
-    /// <code>sqs:CreateQueue</code> and <code>sqs:TagQueue</code> permissions.</p>
-    /// <p>Cross-account permissions don't apply to this action. For more information,
-    /// see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-    /// cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+    /// <p>For a full list of tag restrictions, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-limits.html#limits-queues">Quotas related to queues</a> in the <i>Amazon SQS Developer Guide</i>.</p> <note>
+    /// <p>To be able to tag a queue on creation, you must have the <code>sqs:CreateQueue</code> and <code>sqs:TagQueue</code> permissions.</p>
+    /// <p>Cross-account permissions don't apply to this action. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     /// </note>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A map of attributes with their corresponding values.</p>
     /// <p>The following lists the names, descriptions, and values of the special request parameters that the <code>CreateQueue</code> action uses:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>DelaySeconds</code> – The length of time, in seconds, for which the delivery of all messages in the queue is delayed. Valid values: An integer from 0 to 900 seconds (15 minutes). Default: 0.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MaximumMessageSize</code> – The limit of how many bytes a message can contain before Amazon SQS rejects it. Valid values: An integer from 1,024 bytes (1 KiB) to 262,144 bytes (256 KiB). Default: 262,144 (256 KiB).
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MessageRetentionPeriod</code> – The length of time, in seconds, for which Amazon SQS retains a message. Valid values: An integer from 60 seconds (1 minute) to 1,209,600 seconds (14 days). Default: 345,600 (4 days).
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Policy</code> – The queue's policy. A valid Amazon Web Services policy. For more information about policy structure, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview of Amazon Web Services IAM Policies</a> in the <i>Amazon IAM User Guide</i>.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ReceiveMessageWaitTimeSeconds</code> – The length of time, in seconds, for which a <code>
-    /// <a>ReceiveMessage</a>
-    /// </code> action waits for a message to arrive. Valid values: An integer from 0 to 20 (seconds). Default: 0.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RedrivePolicy</code> – The string that includes the parameters for the dead-letter queue functionality
-    /// of the source queue as a JSON object. For more information about the redrive policy and dead-letter queues, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using Amazon SQS Dead-Letter Queues</a>
-    /// in the <i>Amazon SQS Developer Guide</i>.</p>
+    /// <li> <p> <code>DelaySeconds</code> – The length of time, in seconds, for which the delivery of all messages in the queue is delayed. Valid values: An integer from 0 to 900 seconds (15 minutes). Default: 0. </p> </li>
+    /// <li> <p> <code>MaximumMessageSize</code> – The limit of how many bytes a message can contain before Amazon SQS rejects it. Valid values: An integer from 1,024 bytes (1 KiB) to 262,144 bytes (256 KiB). Default: 262,144 (256 KiB). </p> </li>
+    /// <li> <p> <code>MessageRetentionPeriod</code> – The length of time, in seconds, for which Amazon SQS retains a message. Valid values: An integer from 60 seconds (1 minute) to 1,209,600 seconds (14 days). Default: 345,600 (4 days). </p> </li>
+    /// <li> <p> <code>Policy</code> – The queue's policy. A valid Amazon Web Services policy. For more information about policy structure, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview of Amazon Web Services IAM Policies</a> in the <i>Amazon IAM User Guide</i>. </p> </li>
+    /// <li> <p> <code>ReceiveMessageWaitTimeSeconds</code> – The length of time, in seconds, for which a <code> <code>ReceiveMessage</code> </code> action waits for a message to arrive. Valid values: An integer from 0 to 20 (seconds). Default: 0. </p> </li>
+    /// <li> <p> <code>RedrivePolicy</code> – The string that includes the parameters for the dead-letter queue functionality of the source queue as a JSON object. For more information about the redrive policy and dead-letter queues, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves messages after the value of <code>maxReceiveCount</code> is exceeded.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>maxReceiveCount</code> – The number of times a message is delivered to the source queue before being moved to the dead-letter queue.
-    /// When the <code>ReceiveCount</code> for a message exceeds the <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the dead-letter-queue.</p>
-    /// </li>
-    /// </ul>
-    /// <note>
+    /// <li> <p> <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves messages after the value of <code>maxReceiveCount</code> is exceeded.</p> </li>
+    /// <li> <p> <code>maxReceiveCount</code> – The number of times a message is delivered to the source queue before being moved to the dead-letter queue. When the <code>ReceiveCount</code> for a message exceeds the <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the dead-letter-queue.</p> </li>
+    /// </ul> <note>
     /// <p>The dead-letter queue of a FIFO queue must also be a FIFO queue. Similarly, the dead-letter queue of a standard queue must also be a standard queue.</p>
-    /// </note>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>VisibilityTimeout</code> – The visibility timeout for the queue, in seconds. Valid values: An integer from 0 to 43,200 (12 hours). Default: 30. For more information about the visibility timeout, see
-    /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p>
-    /// </li>
+    /// </note> </li>
+    /// <li> <p> <code>VisibilityTimeout</code> – The visibility timeout for the queue, in seconds. Valid values: An integer from 0 to 43,200 (12 hours). Default: 30. For more information about the visibility timeout, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li>
     /// </ul>
-    ///
     /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services managed customer master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key Terms</a>.
-    /// While the alias of the Amazon Web Services managed CMK for Amazon SQS is always <code>alias/aws/sqs</code>, the alias of a custom CMK can, for example, be <code>alias/<i>MyAlias</i>
-    /// </code>.
-    /// For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>Key Management Service API Reference</i>.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>KmsDataKeyReusePeriodSeconds</code> – The length of time, in seconds, for which Amazon SQS can reuse a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data key</a> to encrypt
-    /// or decrypt messages before calling KMS again. An integer representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24 hours). Default: 300 (5 minutes). A shorter time period provides better security
-    /// but results in more calls to KMS which might incur charges after Free Tier. For more information, see
-    /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How Does the Data Key Reuse Period Work?</a>.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SqsManagedSseEnabled</code> – Enables server-side queue encryption using SQS owned encryption keys. Only one server-side encryption option is supported per queue (e.g. <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a> or <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p>
-    /// </li>
+    /// <li> <p> <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services managed customer master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key Terms</a>. While the alias of the Amazon Web Services managed CMK for Amazon SQS is always <code>alias/aws/sqs</code>, the alias of a custom CMK can, for example, be <code>alias/<i>MyAlias</i> </code>. For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>Key Management Service API Reference</i>. </p> </li>
+    /// <li> <p> <code>KmsDataKeyReusePeriodSeconds</code> – The length of time, in seconds, for which Amazon SQS can reuse a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data key</a> to encrypt or decrypt messages before calling KMS again. An integer representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24 hours). Default: 300 (5 minutes). A shorter time period provides better security but results in more calls to KMS which might incur charges after Free Tier. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How Does the Data Key Reuse Period Work?</a>. </p> </li>
+    /// <li> <p> <code>SqsManagedSseEnabled</code> – Enables server-side queue encryption using SQS owned encryption keys. Only one server-side encryption option is supported per queue (e.g. <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a> or <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p> </li>
     /// </ul>
-    ///
-    ///
     /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO (first-in-first-out) queues</a>:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>FifoQueue</code> – Designates a queue as FIFO. Valid values are <code>true</code> and <code>false</code>. If you don't specify the <code>FifoQueue</code> attribute, Amazon SQS creates a standard queue.
-    /// You can provide this attribute only during queue creation. You can't change it for an existing queue.
-    /// When you set this attribute, you must also provide the <code>MessageGroupId</code> for your messages explicitly.</p>
-    /// <p>For more information, see
-    /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-understanding-logic.html">FIFO queue logic</a>
-    /// in the <i>Amazon SQS Developer Guide</i>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ContentBasedDeduplication</code> – Enables content-based deduplication. Valid values are <code>true</code> and <code>false</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">Exactly-once processing</a> in the
-    /// <i>Amazon SQS Developer Guide</i>. Note the following:
-    /// </p>
+    /// <li> <p> <code>FifoQueue</code> – Designates a queue as FIFO. Valid values are <code>true</code> and <code>false</code>. If you don't specify the <code>FifoQueue</code> attribute, Amazon SQS creates a standard queue. You can provide this attribute only during queue creation. You can't change it for an existing queue. When you set this attribute, you must also provide the <code>MessageGroupId</code> for your messages explicitly.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-understanding-logic.html">FIFO queue logic</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li>
+    /// <li> <p> <code>ContentBasedDeduplication</code> – Enables content-based deduplication. Valid values are <code>true</code> and <code>false</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>. Note the following: </p>
     /// <ul>
-    /// <li>
-    /// <p>Every message must have a unique <code>MessageDeduplicationId</code>.</p>
+    /// <li> <p>Every message must have a unique <code>MessageDeduplicationId</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p>You may provide a <code>MessageDeduplicationId</code> explicitly.</p>
-    /// </li>
-    /// <li>
-    /// <p>If you aren't able to provide a <code>MessageDeduplicationId</code> and you enable <code>ContentBasedDeduplication</code> for your queue,
-    /// Amazon SQS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>If you don't provide a <code>MessageDeduplicationId</code> and the queue doesn't have <code>ContentBasedDeduplication</code> set,
-    /// the action fails with an error.</p>
-    /// </li>
-    /// <li>
-    /// <p>If the queue has <code>ContentBasedDeduplication</code> set, your <code>MessageDeduplicationId</code> overrides the generated one.</p>
-    /// </li>
+    /// <li> <p>You may provide a <code>MessageDeduplicationId</code> explicitly.</p> </li>
+    /// <li> <p>If you aren't able to provide a <code>MessageDeduplicationId</code> and you enable <code>ContentBasedDeduplication</code> for your queue, Amazon SQS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message). </p> </li>
+    /// <li> <p>If you don't provide a <code>MessageDeduplicationId</code> and the queue doesn't have <code>ContentBasedDeduplication</code> set, the action fails with an error.</p> </li>
+    /// <li> <p>If the queue has <code>ContentBasedDeduplication</code> set, your <code>MessageDeduplicationId</code> overrides the generated one.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the deduplication interval are treated as duplicates and only one copy of the message is delivered.</p> </li>
+    /// <li> <p>If you send one message with <code>ContentBasedDeduplication</code> enabled and then another message with a <code>MessageDeduplicationId</code> that is the same as the one generated for the first <code>MessageDeduplicationId</code>, the two messages are treated as duplicates and only one copy of the message is delivered. </p> </li>
+    /// </ul> </li>
     /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the deduplication interval are treated as duplicates
-    /// and only one copy of the message is delivered.</p>
-    /// </li>
-    /// <li>
-    /// <p>If you send one message with <code>ContentBasedDeduplication</code> enabled and then another message with a <code>MessageDeduplicationId</code> that is the same
-    /// as the one generated for the first <code>MessageDeduplicationId</code>, the two messages are treated as duplicates and only one copy of the message is delivered.
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// </ul>  
-    ///
-    ///
-    /// <p>The following attributes apply only to
-    /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html">high throughput
-    /// for FIFO queues</a>:</p>
+    /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html">high throughput for FIFO queues</a>:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>DeduplicationScope</code> – Specifies whether message deduplication occurs at the
-    /// message group or queue level. Valid values are <code>messageGroup</code> and <code>queue</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FifoThroughputLimit</code> – Specifies whether the FIFO queue throughput
-    /// quota applies to the entire queue or per message group. Valid values are <code>perQueue</code> and <code>perMessageGroupId</code>.
-    /// The <code>perMessageGroupId</code> value is allowed only when the value for <code>DeduplicationScope</code> is <code>messageGroup</code>.</p>
-    /// </li>
+    /// <li> <p> <code>DeduplicationScope</code> – Specifies whether message deduplication occurs at the message group or queue level. Valid values are <code>messageGroup</code> and <code>queue</code>.</p> </li>
+    /// <li> <p> <code>FifoThroughputLimit</code> – Specifies whether the FIFO queue throughput quota applies to the entire queue or per message group. Valid values are <code>perQueue</code> and <code>perMessageGroupId</code>. The <code>perMessageGroupId</code> value is allowed only when the value for <code>DeduplicationScope</code> is <code>messageGroup</code>.</p> </li>
     /// </ul>
     /// <p>To enable high throughput for FIFO queues, do the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>Set <code>DeduplicationScope</code> to <code>messageGroup</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Set <code>FifoThroughputLimit</code> to <code>perMessageGroupId</code>.</p>
-    /// </li>
+    /// <li> <p>Set <code>DeduplicationScope</code> to <code>messageGroup</code>.</p> </li>
+    /// <li> <p>Set <code>FifoThroughputLimit</code> to <code>perMessageGroupId</code>.</p> </li>
     /// </ul>
-    /// <p>If you set these attributes to anything other than the values shown for enabling high
-    /// throughput, normal throughput is in effect and deduplication occurs as specified.</p>
-    /// <p>For information on throughput quotas,
-    /// see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a>
-    /// in the <i>Amazon SQS Developer Guide</i>.</p>
+    /// <p>If you set these attributes to anything other than the values shown for enabling high throughput, normal throughput is in effect and deduplication occurs as specified.</p>
+    /// <p>For information on throughput quotas, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     pub attributes: std::option::Option<
         std::collections::HashMap<crate::model::QueueAttributeName, std::string::String>,
     >,
@@ -7063,47 +5129,25 @@ pub struct CreateQueueInput {
 impl CreateQueueInput {
     /// <p>The name of the new queue. The following limits apply to this name:</p>
     /// <ul>
-    /// <li>
-    /// <p>A queue name can have up to 80 characters.</p>               
-    /// </li>
-    /// <li>
-    /// <p>Valid values: alphanumeric characters, hyphens (<code>-</code>), and underscores (<code>_</code>).</p>
-    /// </li>
-    /// <li>
-    /// <p>A FIFO queue name must end with the <code>.fifo</code> suffix.</p>
-    /// </li>
+    /// <li> <p>A queue name can have up to 80 characters.</p> </li>
+    /// <li> <p>Valid values: alphanumeric characters, hyphens (<code>-</code>), and underscores (<code>_</code>).</p> </li>
+    /// <li> <p>A FIFO queue name must end with the <code>.fifo</code> suffix.</p> </li>
     /// </ul>
     /// <p>Queue URLs and names are case-sensitive.</p>
     pub fn queue_name(&self) -> std::option::Option<&str> {
         self.queue_name.as_deref()
     }
-    /// <p>Add cost allocation tags to the specified Amazon SQS queue. For an overview, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html">Tagging
-    /// Your Amazon SQS Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p>
-    ///
+    /// <p>Add cost allocation tags to the specified Amazon SQS queue. For an overview, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html">Tagging Your Amazon SQS Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     /// <p>When you use queue tags, keep the following guidelines in mind:</p>
     /// <ul>
-    /// <li>
-    /// <p>Adding more than 50 tags to a queue isn't recommended.</p>
-    /// </li>
-    /// <li>
-    /// <p>Tags don't have any semantic meaning. Amazon SQS interprets tags as character strings.</p>
-    /// </li>
-    /// <li>
-    /// <p>Tags are case-sensitive.</p>
-    /// </li>
-    /// <li>
-    /// <p>A new tag with a key identical to that of an existing tag overwrites the existing tag.</p>
-    /// </li>
+    /// <li> <p>Adding more than 50 tags to a queue isn't recommended.</p> </li>
+    /// <li> <p>Tags don't have any semantic meaning. Amazon SQS interprets tags as character strings.</p> </li>
+    /// <li> <p>Tags are case-sensitive.</p> </li>
+    /// <li> <p>A new tag with a key identical to that of an existing tag overwrites the existing tag.</p> </li>
     /// </ul>
-    /// <p>For a full list of tag restrictions, see
-    /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-limits.html#limits-queues">Quotas related to queues</a>
-    /// in the <i>Amazon SQS Developer Guide</i>.</p>
-    /// <note>
-    /// <p>To be able to tag a queue on creation, you must have the
-    /// <code>sqs:CreateQueue</code> and <code>sqs:TagQueue</code> permissions.</p>
-    /// <p>Cross-account permissions don't apply to this action. For more information,
-    /// see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-    /// cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+    /// <p>For a full list of tag restrictions, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-limits.html#limits-queues">Quotas related to queues</a> in the <i>Amazon SQS Developer Guide</i>.</p> <note>
+    /// <p>To be able to tag a queue on creation, you must have the <code>sqs:CreateQueue</code> and <code>sqs:TagQueue</code> permissions.</p>
+    /// <p>Cross-account permissions don't apply to this action. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     /// </note>
     pub fn tags(
         &self,
@@ -7114,166 +5158,54 @@ impl CreateQueueInput {
     /// <p>A map of attributes with their corresponding values.</p>
     /// <p>The following lists the names, descriptions, and values of the special request parameters that the <code>CreateQueue</code> action uses:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>DelaySeconds</code> – The length of time, in seconds, for which the delivery of all messages in the queue is delayed. Valid values: An integer from 0 to 900 seconds (15 minutes). Default: 0.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MaximumMessageSize</code> – The limit of how many bytes a message can contain before Amazon SQS rejects it. Valid values: An integer from 1,024 bytes (1 KiB) to 262,144 bytes (256 KiB). Default: 262,144 (256 KiB).
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MessageRetentionPeriod</code> – The length of time, in seconds, for which Amazon SQS retains a message. Valid values: An integer from 60 seconds (1 minute) to 1,209,600 seconds (14 days). Default: 345,600 (4 days).
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Policy</code> – The queue's policy. A valid Amazon Web Services policy. For more information about policy structure, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview of Amazon Web Services IAM Policies</a> in the <i>Amazon IAM User Guide</i>.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ReceiveMessageWaitTimeSeconds</code> – The length of time, in seconds, for which a <code>
-    /// <a>ReceiveMessage</a>
-    /// </code> action waits for a message to arrive. Valid values: An integer from 0 to 20 (seconds). Default: 0.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RedrivePolicy</code> – The string that includes the parameters for the dead-letter queue functionality
-    /// of the source queue as a JSON object. For more information about the redrive policy and dead-letter queues, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using Amazon SQS Dead-Letter Queues</a>
-    /// in the <i>Amazon SQS Developer Guide</i>.</p>
+    /// <li> <p> <code>DelaySeconds</code> – The length of time, in seconds, for which the delivery of all messages in the queue is delayed. Valid values: An integer from 0 to 900 seconds (15 minutes). Default: 0. </p> </li>
+    /// <li> <p> <code>MaximumMessageSize</code> – The limit of how many bytes a message can contain before Amazon SQS rejects it. Valid values: An integer from 1,024 bytes (1 KiB) to 262,144 bytes (256 KiB). Default: 262,144 (256 KiB). </p> </li>
+    /// <li> <p> <code>MessageRetentionPeriod</code> – The length of time, in seconds, for which Amazon SQS retains a message. Valid values: An integer from 60 seconds (1 minute) to 1,209,600 seconds (14 days). Default: 345,600 (4 days). </p> </li>
+    /// <li> <p> <code>Policy</code> – The queue's policy. A valid Amazon Web Services policy. For more information about policy structure, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview of Amazon Web Services IAM Policies</a> in the <i>Amazon IAM User Guide</i>. </p> </li>
+    /// <li> <p> <code>ReceiveMessageWaitTimeSeconds</code> – The length of time, in seconds, for which a <code> <code>ReceiveMessage</code> </code> action waits for a message to arrive. Valid values: An integer from 0 to 20 (seconds). Default: 0. </p> </li>
+    /// <li> <p> <code>RedrivePolicy</code> – The string that includes the parameters for the dead-letter queue functionality of the source queue as a JSON object. For more information about the redrive policy and dead-letter queues, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves messages after the value of <code>maxReceiveCount</code> is exceeded.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>maxReceiveCount</code> – The number of times a message is delivered to the source queue before being moved to the dead-letter queue.
-    /// When the <code>ReceiveCount</code> for a message exceeds the <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the dead-letter-queue.</p>
-    /// </li>
-    /// </ul>
-    /// <note>
+    /// <li> <p> <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves messages after the value of <code>maxReceiveCount</code> is exceeded.</p> </li>
+    /// <li> <p> <code>maxReceiveCount</code> – The number of times a message is delivered to the source queue before being moved to the dead-letter queue. When the <code>ReceiveCount</code> for a message exceeds the <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the dead-letter-queue.</p> </li>
+    /// </ul> <note>
     /// <p>The dead-letter queue of a FIFO queue must also be a FIFO queue. Similarly, the dead-letter queue of a standard queue must also be a standard queue.</p>
-    /// </note>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>VisibilityTimeout</code> – The visibility timeout for the queue, in seconds. Valid values: An integer from 0 to 43,200 (12 hours). Default: 30. For more information about the visibility timeout, see
-    /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p>
-    /// </li>
+    /// </note> </li>
+    /// <li> <p> <code>VisibilityTimeout</code> – The visibility timeout for the queue, in seconds. Valid values: An integer from 0 to 43,200 (12 hours). Default: 30. For more information about the visibility timeout, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li>
     /// </ul>
-    ///
     /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services managed customer master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key Terms</a>.
-    /// While the alias of the Amazon Web Services managed CMK for Amazon SQS is always <code>alias/aws/sqs</code>, the alias of a custom CMK can, for example, be <code>alias/<i>MyAlias</i>
-    /// </code>.
-    /// For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>Key Management Service API Reference</i>.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>KmsDataKeyReusePeriodSeconds</code> – The length of time, in seconds, for which Amazon SQS can reuse a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data key</a> to encrypt
-    /// or decrypt messages before calling KMS again. An integer representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24 hours). Default: 300 (5 minutes). A shorter time period provides better security
-    /// but results in more calls to KMS which might incur charges after Free Tier. For more information, see
-    /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How Does the Data Key Reuse Period Work?</a>.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SqsManagedSseEnabled</code> – Enables server-side queue encryption using SQS owned encryption keys. Only one server-side encryption option is supported per queue (e.g. <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a> or <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p>
-    /// </li>
+    /// <li> <p> <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services managed customer master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key Terms</a>. While the alias of the Amazon Web Services managed CMK for Amazon SQS is always <code>alias/aws/sqs</code>, the alias of a custom CMK can, for example, be <code>alias/<i>MyAlias</i> </code>. For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>Key Management Service API Reference</i>. </p> </li>
+    /// <li> <p> <code>KmsDataKeyReusePeriodSeconds</code> – The length of time, in seconds, for which Amazon SQS can reuse a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data key</a> to encrypt or decrypt messages before calling KMS again. An integer representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24 hours). Default: 300 (5 minutes). A shorter time period provides better security but results in more calls to KMS which might incur charges after Free Tier. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How Does the Data Key Reuse Period Work?</a>. </p> </li>
+    /// <li> <p> <code>SqsManagedSseEnabled</code> – Enables server-side queue encryption using SQS owned encryption keys. Only one server-side encryption option is supported per queue (e.g. <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a> or <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p> </li>
     /// </ul>
-    ///
-    ///
     /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO (first-in-first-out) queues</a>:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>FifoQueue</code> – Designates a queue as FIFO. Valid values are <code>true</code> and <code>false</code>. If you don't specify the <code>FifoQueue</code> attribute, Amazon SQS creates a standard queue.
-    /// You can provide this attribute only during queue creation. You can't change it for an existing queue.
-    /// When you set this attribute, you must also provide the <code>MessageGroupId</code> for your messages explicitly.</p>
-    /// <p>For more information, see
-    /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-understanding-logic.html">FIFO queue logic</a>
-    /// in the <i>Amazon SQS Developer Guide</i>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ContentBasedDeduplication</code> – Enables content-based deduplication. Valid values are <code>true</code> and <code>false</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">Exactly-once processing</a> in the
-    /// <i>Amazon SQS Developer Guide</i>. Note the following:
-    /// </p>
+    /// <li> <p> <code>FifoQueue</code> – Designates a queue as FIFO. Valid values are <code>true</code> and <code>false</code>. If you don't specify the <code>FifoQueue</code> attribute, Amazon SQS creates a standard queue. You can provide this attribute only during queue creation. You can't change it for an existing queue. When you set this attribute, you must also provide the <code>MessageGroupId</code> for your messages explicitly.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-understanding-logic.html">FIFO queue logic</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li>
+    /// <li> <p> <code>ContentBasedDeduplication</code> – Enables content-based deduplication. Valid values are <code>true</code> and <code>false</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>. Note the following: </p>
     /// <ul>
-    /// <li>
-    /// <p>Every message must have a unique <code>MessageDeduplicationId</code>.</p>
+    /// <li> <p>Every message must have a unique <code>MessageDeduplicationId</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p>You may provide a <code>MessageDeduplicationId</code> explicitly.</p>
-    /// </li>
-    /// <li>
-    /// <p>If you aren't able to provide a <code>MessageDeduplicationId</code> and you enable <code>ContentBasedDeduplication</code> for your queue,
-    /// Amazon SQS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>If you don't provide a <code>MessageDeduplicationId</code> and the queue doesn't have <code>ContentBasedDeduplication</code> set,
-    /// the action fails with an error.</p>
-    /// </li>
-    /// <li>
-    /// <p>If the queue has <code>ContentBasedDeduplication</code> set, your <code>MessageDeduplicationId</code> overrides the generated one.</p>
-    /// </li>
+    /// <li> <p>You may provide a <code>MessageDeduplicationId</code> explicitly.</p> </li>
+    /// <li> <p>If you aren't able to provide a <code>MessageDeduplicationId</code> and you enable <code>ContentBasedDeduplication</code> for your queue, Amazon SQS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message). </p> </li>
+    /// <li> <p>If you don't provide a <code>MessageDeduplicationId</code> and the queue doesn't have <code>ContentBasedDeduplication</code> set, the action fails with an error.</p> </li>
+    /// <li> <p>If the queue has <code>ContentBasedDeduplication</code> set, your <code>MessageDeduplicationId</code> overrides the generated one.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the deduplication interval are treated as duplicates and only one copy of the message is delivered.</p> </li>
+    /// <li> <p>If you send one message with <code>ContentBasedDeduplication</code> enabled and then another message with a <code>MessageDeduplicationId</code> that is the same as the one generated for the first <code>MessageDeduplicationId</code>, the two messages are treated as duplicates and only one copy of the message is delivered. </p> </li>
+    /// </ul> </li>
     /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the deduplication interval are treated as duplicates
-    /// and only one copy of the message is delivered.</p>
-    /// </li>
-    /// <li>
-    /// <p>If you send one message with <code>ContentBasedDeduplication</code> enabled and then another message with a <code>MessageDeduplicationId</code> that is the same
-    /// as the one generated for the first <code>MessageDeduplicationId</code>, the two messages are treated as duplicates and only one copy of the message is delivered.
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// </ul>  
-    ///
-    ///
-    /// <p>The following attributes apply only to
-    /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html">high throughput
-    /// for FIFO queues</a>:</p>
+    /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html">high throughput for FIFO queues</a>:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>DeduplicationScope</code> – Specifies whether message deduplication occurs at the
-    /// message group or queue level. Valid values are <code>messageGroup</code> and <code>queue</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FifoThroughputLimit</code> – Specifies whether the FIFO queue throughput
-    /// quota applies to the entire queue or per message group. Valid values are <code>perQueue</code> and <code>perMessageGroupId</code>.
-    /// The <code>perMessageGroupId</code> value is allowed only when the value for <code>DeduplicationScope</code> is <code>messageGroup</code>.</p>
-    /// </li>
+    /// <li> <p> <code>DeduplicationScope</code> – Specifies whether message deduplication occurs at the message group or queue level. Valid values are <code>messageGroup</code> and <code>queue</code>.</p> </li>
+    /// <li> <p> <code>FifoThroughputLimit</code> – Specifies whether the FIFO queue throughput quota applies to the entire queue or per message group. Valid values are <code>perQueue</code> and <code>perMessageGroupId</code>. The <code>perMessageGroupId</code> value is allowed only when the value for <code>DeduplicationScope</code> is <code>messageGroup</code>.</p> </li>
     /// </ul>
     /// <p>To enable high throughput for FIFO queues, do the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>Set <code>DeduplicationScope</code> to <code>messageGroup</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Set <code>FifoThroughputLimit</code> to <code>perMessageGroupId</code>.</p>
-    /// </li>
+    /// <li> <p>Set <code>DeduplicationScope</code> to <code>messageGroup</code>.</p> </li>
+    /// <li> <p>Set <code>FifoThroughputLimit</code> to <code>perMessageGroupId</code>.</p> </li>
     /// </ul>
-    /// <p>If you set these attributes to anything other than the values shown for enabling high
-    /// throughput, normal throughput is in effect and deduplication occurs as specified.</p>
-    /// <p>For information on throughput quotas,
-    /// see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a>
-    /// in the <i>Amazon SQS Developer Guide</i>.</p>
+    /// <p>If you set these attributes to anything other than the values shown for enabling high throughput, normal throughput is in effect and deduplication occurs as specified.</p>
+    /// <p>For information on throughput quotas, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     pub fn attributes(
         &self,
     ) -> std::option::Option<
@@ -7332,9 +5264,7 @@ pub struct ChangeMessageVisibilityInput {
     /// <p>The URL of the Amazon SQS queue whose message's visibility is changed.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
     pub queue_url: std::option::Option<std::string::String>,
-    /// <p>The receipt handle associated with the message whose visibility timeout is changed. This parameter is returned by the <code>
-    /// <a>ReceiveMessage</a>
-    /// </code> action.</p>
+    /// <p>The receipt handle associated with the message whose visibility timeout is changed. This parameter is returned by the <code> <code>ReceiveMessage</code> </code> action.</p>
     pub receipt_handle: std::option::Option<std::string::String>,
     /// <p>The new value for the message's visibility timeout (in seconds). Values range: <code>0</code> to <code>43200</code>. Maximum: 12 hours.</p>
     pub visibility_timeout: i32,
@@ -7345,9 +5275,7 @@ impl ChangeMessageVisibilityInput {
     pub fn queue_url(&self) -> std::option::Option<&str> {
         self.queue_url.as_deref()
     }
-    /// <p>The receipt handle associated with the message whose visibility timeout is changed. This parameter is returned by the <code>
-    /// <a>ReceiveMessage</a>
-    /// </code> action.</p>
+    /// <p>The receipt handle associated with the message whose visibility timeout is changed. This parameter is returned by the <code> <code>ReceiveMessage</code> </code> action.</p>
     pub fn receipt_handle(&self) -> std::option::Option<&str> {
         self.receipt_handle.as_deref()
     }
@@ -7375,15 +5303,11 @@ pub struct AddPermissionInput {
     pub queue_url: std::option::Option<std::string::String>,
     /// <p>The unique identification of the permission you're setting (for example, <code>AliceSendMessage</code>). Maximum 80 characters. Allowed characters include alphanumeric characters, hyphens (<code>-</code>), and underscores (<code>_</code>).</p>
     pub label: std::option::Option<std::string::String>,
-    /// <p>The Amazon Web Services account numbers of the <a href="https://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principals</a> who are to receive
-    /// permission. For information about locating the Amazon Web Services account identification, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-making-api-requests.html#sqs-api-request-authentication">Your Amazon Web Services Identifiers</a> in the <i>Amazon SQS Developer
-    /// Guide</i>.</p>
+    /// <p>The Amazon Web Services account numbers of the <a href="https://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principals</a> who are to receive permission. For information about locating the Amazon Web Services account identification, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-making-api-requests.html#sqs-api-request-authentication">Your Amazon Web Services Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     pub aws_account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The action the client wants to allow for the specified principal. Valid values: the name of any action or <code>*</code>.</p>
-    /// <p>For more information about these actions, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-overview-of-managing-access.html">Overview of Managing Access Permissions to Your Amazon Simple Queue Service Resource</a>
-    /// in the <i>Amazon SQS Developer Guide</i>.</p>
-    /// <p>Specifying <code>SendMessage</code>, <code>DeleteMessage</code>, or <code>ChangeMessageVisibility</code> for <code>ActionName.n</code> also grants permissions for the corresponding batch versions of those actions: <code>SendMessageBatch</code>,
-    /// <code>DeleteMessageBatch</code>, and <code>ChangeMessageVisibilityBatch</code>.</p>
+    /// <p>For more information about these actions, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-overview-of-managing-access.html">Overview of Managing Access Permissions to Your Amazon Simple Queue Service Resource</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+    /// <p>Specifying <code>SendMessage</code>, <code>DeleteMessage</code>, or <code>ChangeMessageVisibility</code> for <code>ActionName.n</code> also grants permissions for the corresponding batch versions of those actions: <code>SendMessageBatch</code>, <code>DeleteMessageBatch</code>, and <code>ChangeMessageVisibilityBatch</code>.</p>
     pub actions: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AddPermissionInput {
@@ -7396,17 +5320,13 @@ impl AddPermissionInput {
     pub fn label(&self) -> std::option::Option<&str> {
         self.label.as_deref()
     }
-    /// <p>The Amazon Web Services account numbers of the <a href="https://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principals</a> who are to receive
-    /// permission. For information about locating the Amazon Web Services account identification, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-making-api-requests.html#sqs-api-request-authentication">Your Amazon Web Services Identifiers</a> in the <i>Amazon SQS Developer
-    /// Guide</i>.</p>
+    /// <p>The Amazon Web Services account numbers of the <a href="https://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principals</a> who are to receive permission. For information about locating the Amazon Web Services account identification, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-making-api-requests.html#sqs-api-request-authentication">Your Amazon Web Services Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     pub fn aws_account_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.aws_account_ids.as_deref()
     }
     /// <p>The action the client wants to allow for the specified principal. Valid values: the name of any action or <code>*</code>.</p>
-    /// <p>For more information about these actions, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-overview-of-managing-access.html">Overview of Managing Access Permissions to Your Amazon Simple Queue Service Resource</a>
-    /// in the <i>Amazon SQS Developer Guide</i>.</p>
-    /// <p>Specifying <code>SendMessage</code>, <code>DeleteMessage</code>, or <code>ChangeMessageVisibility</code> for <code>ActionName.n</code> also grants permissions for the corresponding batch versions of those actions: <code>SendMessageBatch</code>,
-    /// <code>DeleteMessageBatch</code>, and <code>ChangeMessageVisibilityBatch</code>.</p>
+    /// <p>For more information about these actions, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-overview-of-managing-access.html">Overview of Managing Access Permissions to Your Amazon Simple Queue Service Resource</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+    /// <p>Specifying <code>SendMessage</code>, <code>DeleteMessage</code>, or <code>ChangeMessageVisibility</code> for <code>ActionName.n</code> also grants permissions for the corresponding batch versions of those actions: <code>SendMessageBatch</code>, <code>DeleteMessageBatch</code>, and <code>ChangeMessageVisibilityBatch</code>.</p>
     pub fn actions(&self) -> std::option::Option<&[std::string::String]> {
         self.actions.as_deref()
     }

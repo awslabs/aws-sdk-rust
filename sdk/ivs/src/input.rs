@@ -338,18 +338,12 @@ pub mod create_channel_input {
             self.name = input;
             self
         }
-        /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to
-        /// Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. (Note: In the
-        /// Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and
-        /// Standard, respectively.) Default: <code>LOW</code>.</p>
+        /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.) Default: <code>LOW</code>.</p>
         pub fn latency_mode(mut self, input: crate::model::ChannelLatencyMode) -> Self {
             self.latency_mode = Some(input);
             self
         }
-        /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to
-        /// Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. (Note: In the
-        /// Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and
-        /// Standard, respectively.) Default: <code>LOW</code>.</p>
+        /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.) Default: <code>LOW</code>.</p>
         pub fn set_latency_mode(
             mut self,
             input: std::option::Option<crate::model::ChannelLatencyMode>,
@@ -357,58 +351,30 @@ pub mod create_channel_input {
             self.latency_mode = input;
             self
         }
-        /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you
-        /// exceed the allowable resolution or bitrate, the stream probably will disconnect
-        /// immediately.</i> Default: <code>STANDARD</code>. Valid values:</p>
+        /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or bitrate, the stream probably will disconnect immediately.</i> Default: <code>STANDARD</code>. Valid values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>STANDARD</code>: Multiple qualities are generated from the original input, to
-        /// automatically give viewers the best experience for their devices and network conditions.
-        /// Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only
-        /// for renditions 360p and below; above that, audio is passed through.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s
-        /// video-quality choice is limited to the original input. Resolution can be up to 480p and
-        /// bitrate can be up to 1.5 Mbps.</p>
-        /// </li>
+        /// <li> <p> <code>STANDARD</code>: Multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through.</p> </li>
+        /// <li> <p> <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 480p and bitrate can be up to 1.5 Mbps.</p> </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::ChannelType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you
-        /// exceed the allowable resolution or bitrate, the stream probably will disconnect
-        /// immediately.</i> Default: <code>STANDARD</code>. Valid values:</p>
+        /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or bitrate, the stream probably will disconnect immediately.</i> Default: <code>STANDARD</code>. Valid values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>STANDARD</code>: Multiple qualities are generated from the original input, to
-        /// automatically give viewers the best experience for their devices and network conditions.
-        /// Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only
-        /// for renditions 360p and below; above that, audio is passed through.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s
-        /// video-quality choice is limited to the original input. Resolution can be up to 480p and
-        /// bitrate can be up to 1.5 Mbps.</p>
-        /// </li>
+        /// <li> <p> <code>STANDARD</code>: Multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through.</p> </li>
+        /// <li> <p> <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 480p and bitrate can be up to 1.5 Mbps.</p> </li>
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ChannelType>) -> Self {
             self.r#type = input;
             self
         }
-        /// <p>Whether the channel is private (enabled for playback authorization). Default:
-        /// <code>false</code>.</p>
+        /// <p>Whether the channel is private (enabled for playback authorization). Default: <code>false</code>.</p>
         pub fn authorized(mut self, input: bool) -> Self {
             self.authorized = Some(input);
             self
         }
-        /// <p>Whether the channel is private (enabled for playback authorization). Default:
-        /// <code>false</code>.</p>
+        /// <p>Whether the channel is private (enabled for playback authorization). Default: <code>false</code>.</p>
         pub fn set_authorized(mut self, input: std::option::Option<bool>) -> Self {
             self.authorized = input;
             self
@@ -612,8 +578,7 @@ pub mod create_recording_configuration_input {
             self.name = input;
             self
         }
-        /// <p>A complex type that contains a destination configuration for where recorded video will be
-        /// stored.</p>
+        /// <p>A complex type that contains a destination configuration for where recorded video will be stored.</p>
         pub fn destination_configuration(
             mut self,
             input: crate::model::DestinationConfiguration,
@@ -621,8 +586,7 @@ pub mod create_recording_configuration_input {
             self.destination_configuration = Some(input);
             self
         }
-        /// <p>A complex type that contains a destination configuration for where recorded video will be
-        /// stored.</p>
+        /// <p>A complex type that contains a destination configuration for where recorded video will be stored.</p>
         pub fn set_destination_configuration(
             mut self,
             input: std::option::Option<crate::model::DestinationConfiguration>,
@@ -2313,16 +2277,12 @@ pub mod get_stream_session_input {
             self.channel_arn = input;
             self
         }
-        /// <p>Unique identifier for a live or previously live stream in the specified channel. If no
-        /// <code>streamId</code> is provided, this returns the most recent stream session for the
-        /// channel, if it exists.</p>
+        /// <p>Unique identifier for a live or previously live stream in the specified channel. If no <code>streamId</code> is provided, this returns the most recent stream session for the channel, if it exists.</p>
         pub fn stream_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.stream_id = Some(input.into());
             self
         }
-        /// <p>Unique identifier for a live or previously live stream in the specified channel. If no
-        /// <code>streamId</code> is provided, this returns the most recent stream session for the
-        /// channel, if it exists.</p>
+        /// <p>Unique identifier for a live or previously live stream in the specified channel. If no <code>streamId</code> is provided, this returns the most recent stream session for the channel, if it exists.</p>
         pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_id = input;
             self
@@ -2694,14 +2654,12 @@ pub mod list_channels_input {
             self.filter_by_recording_configuration_arn = input;
             self
         }
-        /// <p>The first channel to retrieve. This is used for pagination; see the <code>nextToken</code>
-        /// response field.</p>
+        /// <p>The first channel to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The first channel to retrieve. This is used for pagination; see the <code>nextToken</code>
-        /// response field.</p>
+        /// <p>The first channel to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2868,14 +2826,12 @@ pub mod list_playback_key_pairs_input {
             self.next_token = input;
             self
         }
-        /// <p>The first key pair to retrieve. This is used for pagination; see the
-        /// <code>nextToken</code> response field. Default: 50.</p>
+        /// <p>The first key pair to retrieve. This is used for pagination; see the <code>nextToken</code> response field. Default: 50.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The first key pair to retrieve. This is used for pagination; see the
-        /// <code>nextToken</code> response field. Default: 50.</p>
+        /// <p>The first key pair to retrieve. This is used for pagination; see the <code>nextToken</code> response field. Default: 50.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3023,14 +2979,12 @@ pub mod list_recording_configurations_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The first recording configuration to retrieve. This is used for pagination; see the
-        /// <code>nextToken</code> response field.</p>
+        /// <p>The first recording configuration to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The first recording configuration to retrieve. This is used for pagination; see the
-        /// <code>nextToken</code> response field.</p>
+        /// <p>The first recording configuration to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3199,14 +3153,12 @@ pub mod list_stream_keys_input {
             self.channel_arn = input;
             self
         }
-        /// <p>The first stream key to retrieve. This is used for pagination; see the
-        /// <code>nextToken</code> response field.</p>
+        /// <p>The first stream key to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The first stream key to retrieve. This is used for pagination; see the
-        /// <code>nextToken</code> response field.</p>
+        /// <p>The first stream key to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3377,14 +3329,12 @@ pub mod list_streams_input {
             self.filter_by = input;
             self
         }
-        /// <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code>
-        /// response field.</p>
+        /// <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code>
-        /// response field.</p>
+        /// <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3551,14 +3501,12 @@ pub mod list_stream_sessions_input {
             self.channel_arn = input;
             self
         }
-        /// <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code>
-        /// response field.</p>
+        /// <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code>
-        /// response field.</p>
+        /// <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3866,14 +3814,12 @@ pub mod put_metadata_input {
         pub(crate) metadata: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>ARN of the channel into which metadata is inserted. This channel must have an active
-        /// stream.</p>
+        /// <p>ARN of the channel into which metadata is inserted. This channel must have an active stream.</p>
         pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.channel_arn = Some(input.into());
             self
         }
-        /// <p>ARN of the channel into which metadata is inserted. This channel must have an active
-        /// stream.</p>
+        /// <p>ARN of the channel into which metadata is inserted. This channel must have an active stream.</p>
         pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.channel_arn = input;
             self
@@ -4578,18 +4524,12 @@ pub mod update_channel_input {
             self.name = input;
             self
         }
-        /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to
-        /// Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. (Note: In the
-        /// Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and
-        /// Standard, respectively.)</p>
+        /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)</p>
         pub fn latency_mode(mut self, input: crate::model::ChannelLatencyMode) -> Self {
             self.latency_mode = Some(input);
             self
         }
-        /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to
-        /// Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. (Note: In the
-        /// Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and
-        /// Standard, respectively.)</p>
+        /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)</p>
         pub fn set_latency_mode(
             mut self,
             input: std::option::Option<crate::model::ChannelLatencyMode>,
@@ -4597,45 +4537,19 @@ pub mod update_channel_input {
             self.latency_mode = input;
             self
         }
-        /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you
-        /// exceed the allowable resolution or bitrate, the stream probably will disconnect
-        /// immediately</i>. Valid values:</p>
+        /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or bitrate, the stream probably will disconnect immediately</i>. Valid values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>STANDARD</code>: Multiple qualities are generated from the original input, to
-        /// automatically give viewers the best experience for their devices and network conditions.
-        /// Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only
-        /// for renditions 360p and below; above that, audio is passed through.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s
-        /// video-quality choice is limited to the original input. Resolution can be up to 480p and
-        /// bitrate can be up to 1.5 Mbps.</p>
-        /// </li>
+        /// <li> <p> <code>STANDARD</code>: Multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through.</p> </li>
+        /// <li> <p> <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 480p and bitrate can be up to 1.5 Mbps.</p> </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::ChannelType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you
-        /// exceed the allowable resolution or bitrate, the stream probably will disconnect
-        /// immediately</i>. Valid values:</p>
+        /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or bitrate, the stream probably will disconnect immediately</i>. Valid values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>STANDARD</code>: Multiple qualities are generated from the original input, to
-        /// automatically give viewers the best experience for their devices and network conditions.
-        /// Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only
-        /// for renditions 360p and below; above that, audio is passed through.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s
-        /// video-quality choice is limited to the original input. Resolution can be up to 480p and
-        /// bitrate can be up to 1.5 Mbps.</p>
-        /// </li>
+        /// <li> <p> <code>STANDARD</code>: Multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through.</p> </li>
+        /// <li> <p> <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 480p and bitrate can be up to 1.5 Mbps.</p> </li>
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ChannelType>) -> Self {
             self.r#type = input;
@@ -4651,8 +4565,7 @@ pub mod update_channel_input {
             self.authorized = input;
             self
         }
-        /// <p>Recording-configuration ARN. If this is set to an empty string, recording is disabled. A
-        /// value other than an empty string indicates that recording is enabled</p>
+        /// <p>Recording-configuration ARN. If this is set to an empty string, recording is disabled. A value other than an empty string indicates that recording is enabled</p>
         pub fn recording_configuration_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -4660,8 +4573,7 @@ pub mod update_channel_input {
             self.recording_configuration_arn = Some(input.into());
             self
         }
-        /// <p>Recording-configuration ARN. If this is set to an empty string, recording is disabled. A
-        /// value other than an empty string indicates that recording is enabled</p>
+        /// <p>Recording-configuration ARN. If this is set to an empty string, recording is disabled. A value other than an empty string indicates that recording is enabled</p>
         pub fn set_recording_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4811,34 +4723,17 @@ pub struct UpdateChannelInput {
     pub arn: std::option::Option<std::string::String>,
     /// <p>Channel name.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to
-    /// Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. (Note: In the
-    /// Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and
-    /// Standard, respectively.)</p>
+    /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)</p>
     pub latency_mode: std::option::Option<crate::model::ChannelLatencyMode>,
-    /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you
-    /// exceed the allowable resolution or bitrate, the stream probably will disconnect
-    /// immediately</i>. Valid values:</p>
+    /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or bitrate, the stream probably will disconnect immediately</i>. Valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>STANDARD</code>: Multiple qualities are generated from the original input, to
-    /// automatically give viewers the best experience for their devices and network conditions.
-    /// Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only
-    /// for renditions 360p and below; above that, audio is passed through.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s
-    /// video-quality choice is limited to the original input. Resolution can be up to 480p and
-    /// bitrate can be up to 1.5 Mbps.</p>
-    /// </li>
+    /// <li> <p> <code>STANDARD</code>: Multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through.</p> </li>
+    /// <li> <p> <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 480p and bitrate can be up to 1.5 Mbps.</p> </li>
     /// </ul>
     pub r#type: std::option::Option<crate::model::ChannelType>,
     /// <p>Whether the channel is private (enabled for playback authorization).</p>
     pub authorized: bool,
-    /// <p>Recording-configuration ARN. If this is set to an empty string, recording is disabled. A
-    /// value other than an empty string indicates that recording is enabled</p>
+    /// <p>Recording-configuration ARN. If this is set to an empty string, recording is disabled. A value other than an empty string indicates that recording is enabled</p>
     pub recording_configuration_arn: std::option::Option<std::string::String>,
 }
 impl UpdateChannelInput {
@@ -4850,30 +4745,14 @@ impl UpdateChannelInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to
-    /// Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. (Note: In the
-    /// Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and
-    /// Standard, respectively.)</p>
+    /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)</p>
     pub fn latency_mode(&self) -> std::option::Option<&crate::model::ChannelLatencyMode> {
         self.latency_mode.as_ref()
     }
-    /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you
-    /// exceed the allowable resolution or bitrate, the stream probably will disconnect
-    /// immediately</i>. Valid values:</p>
+    /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or bitrate, the stream probably will disconnect immediately</i>. Valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>STANDARD</code>: Multiple qualities are generated from the original input, to
-    /// automatically give viewers the best experience for their devices and network conditions.
-    /// Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only
-    /// for renditions 360p and below; above that, audio is passed through.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s
-    /// video-quality choice is limited to the original input. Resolution can be up to 480p and
-    /// bitrate can be up to 1.5 Mbps.</p>
-    /// </li>
+    /// <li> <p> <code>STANDARD</code>: Multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through.</p> </li>
+    /// <li> <p> <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 480p and bitrate can be up to 1.5 Mbps.</p> </li>
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ChannelType> {
         self.r#type.as_ref()
@@ -4882,8 +4761,7 @@ impl UpdateChannelInput {
     pub fn authorized(&self) -> bool {
         self.authorized
     }
-    /// <p>Recording-configuration ARN. If this is set to an empty string, recording is disabled. A
-    /// value other than an empty string indicates that recording is enabled</p>
+    /// <p>Recording-configuration ARN. If this is set to an empty string, recording is disabled. A value other than an empty string indicates that recording is enabled</p>
     pub fn recording_configuration_arn(&self) -> std::option::Option<&str> {
         self.recording_configuration_arn.as_deref()
     }
@@ -4989,15 +4867,13 @@ impl std::fmt::Debug for StopStreamInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutMetadataInput {
-    /// <p>ARN of the channel into which metadata is inserted. This channel must have an active
-    /// stream.</p>
+    /// <p>ARN of the channel into which metadata is inserted. This channel must have an active stream.</p>
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>Metadata to insert into the stream. Maximum: 1 KB per request.</p>
     pub metadata: std::option::Option<std::string::String>,
 }
 impl PutMetadataInput {
-    /// <p>ARN of the channel into which metadata is inserted. This channel must have an active
-    /// stream.</p>
+    /// <p>ARN of the channel into which metadata is inserted. This channel must have an active stream.</p>
     pub fn channel_arn(&self) -> std::option::Option<&str> {
         self.channel_arn.as_deref()
     }
@@ -5042,8 +4918,7 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 pub struct ListStreamSessionsInput {
     /// <p>Channel ARN used to filter the list.</p>
     pub channel_arn: std::option::Option<std::string::String>,
-    /// <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code>
-    /// response field.</p>
+    /// <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Maximum number of streams to return. Default: 50.</p>
     pub max_results: i32,
@@ -5053,8 +4928,7 @@ impl ListStreamSessionsInput {
     pub fn channel_arn(&self) -> std::option::Option<&str> {
         self.channel_arn.as_deref()
     }
-    /// <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code>
-    /// response field.</p>
+    /// <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5079,8 +4953,7 @@ impl std::fmt::Debug for ListStreamSessionsInput {
 pub struct ListStreamsInput {
     /// <p>Filters the stream list to match the specified criterion.</p>
     pub filter_by: std::option::Option<crate::model::StreamFilters>,
-    /// <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code>
-    /// response field.</p>
+    /// <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Maximum number of streams to return. Default: 50.</p>
     pub max_results: i32,
@@ -5090,8 +4963,7 @@ impl ListStreamsInput {
     pub fn filter_by(&self) -> std::option::Option<&crate::model::StreamFilters> {
         self.filter_by.as_ref()
     }
-    /// <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code>
-    /// response field.</p>
+    /// <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5116,8 +4988,7 @@ impl std::fmt::Debug for ListStreamsInput {
 pub struct ListStreamKeysInput {
     /// <p>Channel ARN used to filter the list.</p>
     pub channel_arn: std::option::Option<std::string::String>,
-    /// <p>The first stream key to retrieve. This is used for pagination; see the
-    /// <code>nextToken</code> response field.</p>
+    /// <p>The first stream key to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Maximum number of streamKeys to return. Default: 50.</p>
     pub max_results: i32,
@@ -5127,8 +4998,7 @@ impl ListStreamKeysInput {
     pub fn channel_arn(&self) -> std::option::Option<&str> {
         self.channel_arn.as_deref()
     }
-    /// <p>The first stream key to retrieve. This is used for pagination; see the
-    /// <code>nextToken</code> response field.</p>
+    /// <p>The first stream key to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5151,15 +5021,13 @@ impl std::fmt::Debug for ListStreamKeysInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRecordingConfigurationsInput {
-    /// <p>The first recording configuration to retrieve. This is used for pagination; see the
-    /// <code>nextToken</code> response field.</p>
+    /// <p>The first recording configuration to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Maximum number of recording configurations to return. Default: 50. </p>
     pub max_results: i32,
 }
 impl ListRecordingConfigurationsInput {
-    /// <p>The first recording configuration to retrieve. This is used for pagination; see the
-    /// <code>nextToken</code> response field.</p>
+    /// <p>The first recording configuration to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5183,8 +5051,7 @@ impl std::fmt::Debug for ListRecordingConfigurationsInput {
 pub struct ListPlaybackKeyPairsInput {
     /// <p>Maximum number of key pairs to return.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The first key pair to retrieve. This is used for pagination; see the
-    /// <code>nextToken</code> response field. Default: 50.</p>
+    /// <p>The first key pair to retrieve. This is used for pagination; see the <code>nextToken</code> response field. Default: 50.</p>
     pub max_results: i32,
 }
 impl ListPlaybackKeyPairsInput {
@@ -5192,8 +5059,7 @@ impl ListPlaybackKeyPairsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The first key pair to retrieve. This is used for pagination; see the
-    /// <code>nextToken</code> response field. Default: 50.</p>
+    /// <p>The first key pair to retrieve. This is used for pagination; see the <code>nextToken</code> response field. Default: 50.</p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
@@ -5215,8 +5081,7 @@ pub struct ListChannelsInput {
     pub filter_by_name: std::option::Option<std::string::String>,
     /// <p>Filters the channel list to match the specified recording-configuration ARN.</p>
     pub filter_by_recording_configuration_arn: std::option::Option<std::string::String>,
-    /// <p>The first channel to retrieve. This is used for pagination; see the <code>nextToken</code>
-    /// response field.</p>
+    /// <p>The first channel to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Maximum number of channels to return. Default: 50.</p>
     pub max_results: i32,
@@ -5230,8 +5095,7 @@ impl ListChannelsInput {
     pub fn filter_by_recording_configuration_arn(&self) -> std::option::Option<&str> {
         self.filter_by_recording_configuration_arn.as_deref()
     }
-    /// <p>The first channel to retrieve. This is used for pagination; see the <code>nextToken</code>
-    /// response field.</p>
+    /// <p>The first channel to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -5299,9 +5163,7 @@ impl std::fmt::Debug for ImportPlaybackKeyPairInput {
 pub struct GetStreamSessionInput {
     /// <p>ARN of the channel resource</p>
     pub channel_arn: std::option::Option<std::string::String>,
-    /// <p>Unique identifier for a live or previously live stream in the specified channel. If no
-    /// <code>streamId</code> is provided, this returns the most recent stream session for the
-    /// channel, if it exists.</p>
+    /// <p>Unique identifier for a live or previously live stream in the specified channel. If no <code>streamId</code> is provided, this returns the most recent stream session for the channel, if it exists.</p>
     pub stream_id: std::option::Option<std::string::String>,
 }
 impl GetStreamSessionInput {
@@ -5309,9 +5171,7 @@ impl GetStreamSessionInput {
     pub fn channel_arn(&self) -> std::option::Option<&str> {
         self.channel_arn.as_deref()
     }
-    /// <p>Unique identifier for a live or previously live stream in the specified channel. If no
-    /// <code>streamId</code> is provided, this returns the most recent stream session for the
-    /// channel, if it exists.</p>
+    /// <p>Unique identifier for a live or previously live stream in the specified channel. If no <code>streamId</code> is provided, this returns the most recent stream session for the channel, if it exists.</p>
     pub fn stream_id(&self) -> std::option::Option<&str> {
         self.stream_id.as_deref()
     }
@@ -5552,8 +5412,7 @@ impl std::fmt::Debug for CreateStreamKeyInput {
 pub struct CreateRecordingConfigurationInput {
     /// <p>Recording-configuration name. The value does not need to be unique.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>A complex type that contains a destination configuration for where recorded video will be
-    /// stored.</p>
+    /// <p>A complex type that contains a destination configuration for where recorded video will be stored.</p>
     pub destination_configuration: std::option::Option<crate::model::DestinationConfiguration>,
     /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
     pub tags:
@@ -5564,8 +5423,7 @@ impl CreateRecordingConfigurationInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>A complex type that contains a destination configuration for where recorded video will be
-    /// stored.</p>
+    /// <p>A complex type that contains a destination configuration for where recorded video will be stored.</p>
     pub fn destination_configuration(
         &self,
     ) -> std::option::Option<&crate::model::DestinationConfiguration> {
@@ -5595,32 +5453,15 @@ impl std::fmt::Debug for CreateRecordingConfigurationInput {
 pub struct CreateChannelInput {
     /// <p>Channel name.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to
-    /// Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. (Note: In the
-    /// Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and
-    /// Standard, respectively.) Default: <code>LOW</code>.</p>
+    /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.) Default: <code>LOW</code>.</p>
     pub latency_mode: std::option::Option<crate::model::ChannelLatencyMode>,
-    /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you
-    /// exceed the allowable resolution or bitrate, the stream probably will disconnect
-    /// immediately.</i> Default: <code>STANDARD</code>. Valid values:</p>
+    /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or bitrate, the stream probably will disconnect immediately.</i> Default: <code>STANDARD</code>. Valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>STANDARD</code>: Multiple qualities are generated from the original input, to
-    /// automatically give viewers the best experience for their devices and network conditions.
-    /// Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only
-    /// for renditions 360p and below; above that, audio is passed through.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s
-    /// video-quality choice is limited to the original input. Resolution can be up to 480p and
-    /// bitrate can be up to 1.5 Mbps.</p>
-    /// </li>
+    /// <li> <p> <code>STANDARD</code>: Multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through.</p> </li>
+    /// <li> <p> <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 480p and bitrate can be up to 1.5 Mbps.</p> </li>
     /// </ul>
     pub r#type: std::option::Option<crate::model::ChannelType>,
-    /// <p>Whether the channel is private (enabled for playback authorization). Default:
-    /// <code>false</code>.</p>
+    /// <p>Whether the channel is private (enabled for playback authorization). Default: <code>false</code>.</p>
     pub authorized: bool,
     /// <p>Recording-configuration ARN. Default: "" (empty string, recording is disabled).</p>
     pub recording_configuration_arn: std::option::Option<std::string::String>,
@@ -5633,36 +5474,19 @@ impl CreateChannelInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to
-    /// Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. (Note: In the
-    /// Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and
-    /// Standard, respectively.) Default: <code>LOW</code>.</p>
+    /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.) Default: <code>LOW</code>.</p>
     pub fn latency_mode(&self) -> std::option::Option<&crate::model::ChannelLatencyMode> {
         self.latency_mode.as_ref()
     }
-    /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you
-    /// exceed the allowable resolution or bitrate, the stream probably will disconnect
-    /// immediately.</i> Default: <code>STANDARD</code>. Valid values:</p>
+    /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or bitrate, the stream probably will disconnect immediately.</i> Default: <code>STANDARD</code>. Valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>STANDARD</code>: Multiple qualities are generated from the original input, to
-    /// automatically give viewers the best experience for their devices and network conditions.
-    /// Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only
-    /// for renditions 360p and below; above that, audio is passed through.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s
-    /// video-quality choice is limited to the original input. Resolution can be up to 480p and
-    /// bitrate can be up to 1.5 Mbps.</p>
-    /// </li>
+    /// <li> <p> <code>STANDARD</code>: Multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through.</p> </li>
+    /// <li> <p> <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 480p and bitrate can be up to 1.5 Mbps.</p> </li>
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ChannelType> {
         self.r#type.as_ref()
     }
-    /// <p>Whether the channel is private (enabled for playback authorization). Default:
-    /// <code>false</code>.</p>
+    /// <p>Whether the channel is private (enabled for playback authorization). Default: <code>false</code>.</p>
     pub fn authorized(&self) -> bool {
         self.authorized
     }

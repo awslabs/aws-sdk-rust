@@ -20,16 +20,12 @@ pub mod cancel_job_input {
             self.job_id = input;
             self
         }
-        /// <p>A message to attach to the job that explains the reason for canceling it. This message is returned by future
-        /// <a>DescribeJobs</a> operations on the job. This message is also recorded in the Batch activity
-        /// logs.</p>
+        /// <p>A message to attach to the job that explains the reason for canceling it. This message is returned by future <code>DescribeJobs</code> operations on the job. This message is also recorded in the Batch activity logs.</p>
         pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
             self.reason = Some(input.into());
             self
         }
-        /// <p>A message to attach to the job that explains the reason for canceling it. This message is returned by future
-        /// <a>DescribeJobs</a> operations on the job. This message is also recorded in the Batch activity
-        /// logs.</p>
+        /// <p>A message to attach to the job that explains the reason for canceling it. This message is returned by future <code>DescribeJobs</code> operations on the job. This message is also recorded in the Batch activity logs.</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.reason = input;
             self
@@ -177,14 +173,12 @@ pub mod create_compute_environment_input {
         >,
     }
     impl Builder {
-        /// <p>The name for your compute environment. It can be up to 128 letters long. It can contain uppercase and
-        /// lowercase letters, numbers, hyphens (-), and underscores (_).</p>
+        /// <p>The name for your compute environment. It can be up to 128 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
         pub fn compute_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.compute_environment_name = Some(input.into());
             self
         }
-        /// <p>The name for your compute environment. It can be up to 128 letters long. It can contain uppercase and
-        /// lowercase letters, numbers, hyphens (-), and underscores (_).</p>
+        /// <p>The name for your compute environment. It can be up to 128 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
         pub fn set_compute_environment_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -192,74 +186,50 @@ pub mod create_compute_environment_input {
             self.compute_environment_name = input;
             self
         }
-        /// <p>The type of the compute environment: <code>MANAGED</code> or <code>UNMANAGED</code>. For more information, see
-        /// <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in the
-        /// <i>Batch User Guide</i>.</p>
+        /// <p>The type of the compute environment: <code>MANAGED</code> or <code>UNMANAGED</code>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in the <i>Batch User Guide</i>.</p>
         pub fn r#type(mut self, input: crate::model::CeType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The type of the compute environment: <code>MANAGED</code> or <code>UNMANAGED</code>. For more information, see
-        /// <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in the
-        /// <i>Batch User Guide</i>.</p>
+        /// <p>The type of the compute environment: <code>MANAGED</code> or <code>UNMANAGED</code>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in the <i>Batch User Guide</i>.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::CeType>) -> Self {
             self.r#type = input;
             self
         }
-        /// <p>The state of the compute environment. If the state is <code>ENABLED</code>, then the compute environment accepts
-        /// jobs from a queue and can scale out automatically based on queues.</p>
-        /// <p>If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place jobs from an associated
-        /// job queue on the compute resources within the environment. If the compute environment is managed, then it can scale
-        /// its instances out or in automatically, based on the job queue demand.</p>
-        /// <p>If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs within the
-        /// environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally. Managed
-        /// compute environments in the <code>DISABLED</code> state don't scale out. However, they scale in to
-        /// <code>minvCpus</code> value after instances become idle.</p>
+        /// <p>The state of the compute environment. If the state is <code>ENABLED</code>, then the compute environment accepts jobs from a queue and can scale out automatically based on queues.</p>
+        /// <p>If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place jobs from an associated job queue on the compute resources within the environment. If the compute environment is managed, then it can scale its instances out or in automatically, based on the job queue demand.</p>
+        /// <p>If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs within the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally. Managed compute environments in the <code>DISABLED</code> state don't scale out. However, they scale in to <code>minvCpus</code> value after instances become idle.</p>
         pub fn state(mut self, input: crate::model::CeState) -> Self {
             self.state = Some(input);
             self
         }
-        /// <p>The state of the compute environment. If the state is <code>ENABLED</code>, then the compute environment accepts
-        /// jobs from a queue and can scale out automatically based on queues.</p>
-        /// <p>If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place jobs from an associated
-        /// job queue on the compute resources within the environment. If the compute environment is managed, then it can scale
-        /// its instances out or in automatically, based on the job queue demand.</p>
-        /// <p>If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs within the
-        /// environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally. Managed
-        /// compute environments in the <code>DISABLED</code> state don't scale out. However, they scale in to
-        /// <code>minvCpus</code> value after instances become idle.</p>
+        /// <p>The state of the compute environment. If the state is <code>ENABLED</code>, then the compute environment accepts jobs from a queue and can scale out automatically based on queues.</p>
+        /// <p>If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place jobs from an associated job queue on the compute resources within the environment. If the compute environment is managed, then it can scale its instances out or in automatically, based on the job queue demand.</p>
+        /// <p>If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs within the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally. Managed compute environments in the <code>DISABLED</code> state don't scale out. However, they scale in to <code>minvCpus</code> value after instances become idle.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::CeState>) -> Self {
             self.state = input;
             self
         }
-        /// <p>The maximum number of vCPUs for an unmanaged compute environment. This parameter is only used for fair share
-        /// scheduling to reserve vCPU capacity for new share identifiers. If this parameter isn't provided for a fair share job
-        /// queue, no vCPU capacity is reserved.</p>
-        /// <note>
+        /// <p>The maximum number of vCPUs for an unmanaged compute environment. This parameter is only used for fair share scheduling to reserve vCPU capacity for new share identifiers. If this parameter isn't provided for a fair share job queue, no vCPU capacity is reserved.</p> <note>
         /// <p>This parameter is only supported when the <code>type</code> parameter is set to <code>UNMANAGED</code>/</p>
         /// </note>
         pub fn unmanagedv_cpus(mut self, input: i32) -> Self {
             self.unmanagedv_cpus = Some(input);
             self
         }
-        /// <p>The maximum number of vCPUs for an unmanaged compute environment. This parameter is only used for fair share
-        /// scheduling to reserve vCPU capacity for new share identifiers. If this parameter isn't provided for a fair share job
-        /// queue, no vCPU capacity is reserved.</p>
-        /// <note>
+        /// <p>The maximum number of vCPUs for an unmanaged compute environment. This parameter is only used for fair share scheduling to reserve vCPU capacity for new share identifiers. If this parameter isn't provided for a fair share job queue, no vCPU capacity is reserved.</p> <note>
         /// <p>This parameter is only supported when the <code>type</code> parameter is set to <code>UNMANAGED</code>/</p>
         /// </note>
         pub fn set_unmanagedv_cpus(mut self, input: std::option::Option<i32>) -> Self {
             self.unmanagedv_cpus = input;
             self
         }
-        /// <p>Details about the compute resources managed by the compute environment. This parameter is required for managed
-        /// compute environments. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in the <i>Batch User Guide</i>.</p>
+        /// <p>Details about the compute resources managed by the compute environment. This parameter is required for managed compute environments. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in the <i>Batch User Guide</i>.</p>
         pub fn compute_resources(mut self, input: crate::model::ComputeResource) -> Self {
             self.compute_resources = Some(input);
             self
         }
-        /// <p>Details about the compute resources managed by the compute environment. This parameter is required for managed
-        /// compute environments. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in the <i>Batch User Guide</i>.</p>
+        /// <p>Details about the compute resources managed by the compute environment. This parameter is required for managed compute environments. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in the <i>Batch User Guide</i>.</p>
         pub fn set_compute_resources(
             mut self,
             input: std::option::Option<crate::model::ComputeResource>,
@@ -267,47 +237,21 @@ pub mod create_compute_environment_input {
             self.compute_resources = input;
             self
         }
-        /// <p>The full Amazon Resource Name (ARN) of the IAM role that allows Batch to make calls to other Amazon Web Services services on your behalf. For
-        /// more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">Batch service IAM
-        /// role</a> in the <i>Batch User Guide</i>.</p>
-        /// <important>
-        /// <p>If your account already created the Batch service-linked role, that role is used by default for your compute
-        /// environment unless you specify a different role here. If the Batch service-linked role doesn't exist in your
-        /// account, and no role is specified here, the service attempts to create the Batch service-linked role in your
-        /// account.</p>
+        /// <p>The full Amazon Resource Name (ARN) of the IAM role that allows Batch to make calls to other Amazon Web Services services on your behalf. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">Batch service IAM role</a> in the <i>Batch User Guide</i>.</p> <important>
+        /// <p>If your account already created the Batch service-linked role, that role is used by default for your compute environment unless you specify a different role here. If the Batch service-linked role doesn't exist in your account, and no role is specified here, the service attempts to create the Batch service-linked role in your account.</p>
         /// </important>
-        /// <p>If your specified role has a path other than <code>/</code>, then you must specify either the full role ARN
-        /// (recommended) or prefix the role name with the path. For example, if a role with the name <code>bar</code> has a path
-        /// of <code>/foo/</code> then you would specify <code>/foo/bar</code> as the role name. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly names
-        /// and paths</a> in the <i>IAM User Guide</i>.</p>
-        /// <note>
-        /// <p>Depending on how you created your Batch service role, its ARN might contain the <code>service-role</code>
-        /// path prefix. When you only specify the name of the service role, Batch assumes that your ARN doesn't use the
-        /// <code>service-role</code> path prefix. Because of this, we recommend that you specify the full ARN of your service
-        /// role when you create compute environments.</p>
+        /// <p>If your specified role has a path other than <code>/</code>, then you must specify either the full role ARN (recommended) or prefix the role name with the path. For example, if a role with the name <code>bar</code> has a path of <code>/foo/</code> then you would specify <code>/foo/bar</code> as the role name. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly names and paths</a> in the <i>IAM User Guide</i>.</p> <note>
+        /// <p>Depending on how you created your Batch service role, its ARN might contain the <code>service-role</code> path prefix. When you only specify the name of the service role, Batch assumes that your ARN doesn't use the <code>service-role</code> path prefix. Because of this, we recommend that you specify the full ARN of your service role when you create compute environments.</p>
         /// </note>
         pub fn service_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_role = Some(input.into());
             self
         }
-        /// <p>The full Amazon Resource Name (ARN) of the IAM role that allows Batch to make calls to other Amazon Web Services services on your behalf. For
-        /// more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">Batch service IAM
-        /// role</a> in the <i>Batch User Guide</i>.</p>
-        /// <important>
-        /// <p>If your account already created the Batch service-linked role, that role is used by default for your compute
-        /// environment unless you specify a different role here. If the Batch service-linked role doesn't exist in your
-        /// account, and no role is specified here, the service attempts to create the Batch service-linked role in your
-        /// account.</p>
+        /// <p>The full Amazon Resource Name (ARN) of the IAM role that allows Batch to make calls to other Amazon Web Services services on your behalf. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">Batch service IAM role</a> in the <i>Batch User Guide</i>.</p> <important>
+        /// <p>If your account already created the Batch service-linked role, that role is used by default for your compute environment unless you specify a different role here. If the Batch service-linked role doesn't exist in your account, and no role is specified here, the service attempts to create the Batch service-linked role in your account.</p>
         /// </important>
-        /// <p>If your specified role has a path other than <code>/</code>, then you must specify either the full role ARN
-        /// (recommended) or prefix the role name with the path. For example, if a role with the name <code>bar</code> has a path
-        /// of <code>/foo/</code> then you would specify <code>/foo/bar</code> as the role name. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly names
-        /// and paths</a> in the <i>IAM User Guide</i>.</p>
-        /// <note>
-        /// <p>Depending on how you created your Batch service role, its ARN might contain the <code>service-role</code>
-        /// path prefix. When you only specify the name of the service role, Batch assumes that your ARN doesn't use the
-        /// <code>service-role</code> path prefix. Because of this, we recommend that you specify the full ARN of your service
-        /// role when you create compute environments.</p>
+        /// <p>If your specified role has a path other than <code>/</code>, then you must specify either the full role ARN (recommended) or prefix the role name with the path. For example, if a role with the name <code>bar</code> has a path of <code>/foo/</code> then you would specify <code>/foo/bar</code> as the role name. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly names and paths</a> in the <i>IAM User Guide</i>.</p> <note>
+        /// <p>Depending on how you created your Batch service role, its ARN might contain the <code>service-role</code> path prefix. When you only specify the name of the service role, Batch assumes that your ARN doesn't use the <code>service-role</code> path prefix. Because of this, we recommend that you specify the full ARN of your service role when you create compute environments.</p>
         /// </note>
         pub fn set_service_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_role = input;
@@ -317,11 +261,8 @@ pub mod create_compute_environment_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags that you apply to the compute environment to help you categorize and organize your resources. Each tag
-        /// consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in <i>Amazon Web Services General
-        /// Reference</i>.</p>
-        /// <p>These tags can be updated or removed using the <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_TagResource.html">TagResource</a> and <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html">UntagResource</a> API operations. These tags don't
-        /// propagate to the underlying compute resources.</p>
+        /// <p>The tags that you apply to the compute environment to help you categorize and organize your resources. Each tag consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>These tags can be updated or removed using the <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_TagResource.html">TagResource</a> and <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html">UntagResource</a> API operations. These tags don't propagate to the underlying compute resources.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -332,11 +273,8 @@ pub mod create_compute_environment_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The tags that you apply to the compute environment to help you categorize and organize your resources. Each tag
-        /// consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in <i>Amazon Web Services General
-        /// Reference</i>.</p>
-        /// <p>These tags can be updated or removed using the <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_TagResource.html">TagResource</a> and <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html">UntagResource</a> API operations. These tags don't
-        /// propagate to the underlying compute resources.</p>
+        /// <p>The tags that you apply to the compute environment to help you categorize and organize your resources. Each tag consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>These tags can be updated or removed using the <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_TagResource.html">TagResource</a> and <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html">UntagResource</a> API operations. These tags don't propagate to the underlying compute resources.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -502,14 +440,12 @@ pub mod create_job_queue_input {
         >,
     }
     impl Builder {
-        /// <p>The name of the job queue. It can be up to 128 letters long. It can contain uppercase and lowercase letters,
-        /// numbers, hyphens (-), and underscores (_).</p>
+        /// <p>The name of the job queue. It can be up to 128 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
         pub fn job_queue_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_queue_name = Some(input.into());
             self
         }
-        /// <p>The name of the job queue. It can be up to 128 letters long. It can contain uppercase and lowercase letters,
-        /// numbers, hyphens (-), and underscores (_).</p>
+        /// <p>The name of the job queue. It can be up to 128 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
         pub fn set_job_queue_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -517,40 +453,22 @@ pub mod create_job_queue_input {
             self.job_queue_name = input;
             self
         }
-        /// <p>The state of the job queue. If the job queue state is <code>ENABLED</code>, it is able to accept jobs. If the
-        /// job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in the queue can
-        /// finish.</p>
+        /// <p>The state of the job queue. If the job queue state is <code>ENABLED</code>, it is able to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in the queue can finish.</p>
         pub fn state(mut self, input: crate::model::JqState) -> Self {
             self.state = Some(input);
             self
         }
-        /// <p>The state of the job queue. If the job queue state is <code>ENABLED</code>, it is able to accept jobs. If the
-        /// job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in the queue can
-        /// finish.</p>
+        /// <p>The state of the job queue. If the job queue state is <code>ENABLED</code>, it is able to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in the queue can finish.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::JqState>) -> Self {
             self.state = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the fair share scheduling policy. If this parameter is specified, the job queue uses a fair
-        /// share scheduling policy. If this parameter isn't specified, the job queue uses a first in, first out (FIFO)
-        /// scheduling policy. After a job queue is created, you can replace but can't remove the fair share scheduling policy.
-        /// The format is
-        /// <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
-        /// </code>.
-        /// An example is
-        /// <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the fair share scheduling policy. If this parameter is specified, the job queue uses a fair share scheduling policy. If this parameter isn't specified, the job queue uses a first in, first out (FIFO) scheduling policy. After a job queue is created, you can replace but can't remove the fair share scheduling policy. The format is <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. An example is <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
         pub fn scheduling_policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.scheduling_policy_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the fair share scheduling policy. If this parameter is specified, the job queue uses a fair
-        /// share scheduling policy. If this parameter isn't specified, the job queue uses a first in, first out (FIFO)
-        /// scheduling policy. After a job queue is created, you can replace but can't remove the fair share scheduling policy.
-        /// The format is
-        /// <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
-        /// </code>.
-        /// An example is
-        /// <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the fair share scheduling policy. If this parameter is specified, the job queue uses a fair share scheduling policy. If this parameter isn't specified, the job queue uses a first in, first out (FIFO) scheduling policy. After a job queue is created, you can replace but can't remove the fair share scheduling policy. The format is <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. An example is <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
         pub fn set_scheduling_policy_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -558,22 +476,12 @@ pub mod create_job_queue_input {
             self.scheduling_policy_arn = input;
             self
         }
-        /// <p>The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
-        /// <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority is
-        /// determined in descending order. For example, a job queue with a priority value of <code>10</code> is given scheduling
-        /// preference over a job queue with a priority value of <code>1</code>. All of the compute environments must be either
-        /// EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and
-        /// Fargate compute environments can't be mixed.</p>
+        /// <p>The priority of the job queue. Job queues with a higher priority (or a higher integer value for the <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority is determined in descending order. For example, a job queue with a priority value of <code>10</code> is given scheduling preference over a job queue with a priority value of <code>1</code>. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.</p>
         pub fn priority(mut self, input: i32) -> Self {
             self.priority = Some(input);
             self
         }
-        /// <p>The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
-        /// <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority is
-        /// determined in descending order. For example, a job queue with a priority value of <code>10</code> is given scheduling
-        /// preference over a job queue with a priority value of <code>1</code>. All of the compute environments must be either
-        /// EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and
-        /// Fargate compute environments can't be mixed.</p>
+        /// <p>The priority of the job queue. Job queues with a higher priority (or a higher integer value for the <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority is determined in descending order. For example, a job queue with a priority value of <code>10</code> is given scheduling preference over a job queue with a priority value of <code>1</code>. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.</p>
         pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
             self.priority = input;
             self
@@ -582,15 +490,8 @@ pub mod create_job_queue_input {
         ///
         /// To override the contents of this collection use [`set_compute_environment_order`](Self::set_compute_environment_order).
         ///
-        /// <p>The set of compute environments mapped to a job queue and their order relative to each other. The job scheduler
-        /// uses this parameter to determine which compute environment should run a specific job. Compute environments must be in
-        /// the <code>VALID</code> state before you can associate them with a job queue. You can associate up to three compute
-        /// environments with a job queue. All of the compute environments must be either EC2 (<code>EC2</code> or
-        /// <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute
-        /// environments can't be mixed.</p>
-        /// <note>
-        /// <p>All compute environments that are associated with a job queue must share the same architecture. Batch doesn't
-        /// support mixing compute environment architecture types in a single job queue.</p>
+        /// <p>The set of compute environments mapped to a job queue and their order relative to each other. The job scheduler uses this parameter to determine which compute environment should run a specific job. Compute environments must be in the <code>VALID</code> state before you can associate them with a job queue. You can associate up to three compute environments with a job queue. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.</p> <note>
+        /// <p>All compute environments that are associated with a job queue must share the same architecture. Batch doesn't support mixing compute environment architecture types in a single job queue.</p>
         /// </note>
         pub fn compute_environment_order(
             mut self,
@@ -601,15 +502,8 @@ pub mod create_job_queue_input {
             self.compute_environment_order = Some(v);
             self
         }
-        /// <p>The set of compute environments mapped to a job queue and their order relative to each other. The job scheduler
-        /// uses this parameter to determine which compute environment should run a specific job. Compute environments must be in
-        /// the <code>VALID</code> state before you can associate them with a job queue. You can associate up to three compute
-        /// environments with a job queue. All of the compute environments must be either EC2 (<code>EC2</code> or
-        /// <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute
-        /// environments can't be mixed.</p>
-        /// <note>
-        /// <p>All compute environments that are associated with a job queue must share the same architecture. Batch doesn't
-        /// support mixing compute environment architecture types in a single job queue.</p>
+        /// <p>The set of compute environments mapped to a job queue and their order relative to each other. The job scheduler uses this parameter to determine which compute environment should run a specific job. Compute environments must be in the <code>VALID</code> state before you can associate them with a job queue. You can associate up to three compute environments with a job queue. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.</p> <note>
+        /// <p>All compute environments that are associated with a job queue must share the same architecture. Batch doesn't support mixing compute environment architecture types in a single job queue.</p>
         /// </note>
         pub fn set_compute_environment_order(
             mut self,
@@ -622,8 +516,7 @@ pub mod create_job_queue_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags that you apply to the job queue to help you categorize and organize your resources. Each tag consists
-        /// of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your Batch resources</a> in <i>Batch User Guide</i>.</p>
+        /// <p>The tags that you apply to the job queue to help you categorize and organize your resources. Each tag consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your Batch resources</a> in <i>Batch User Guide</i>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -634,8 +527,7 @@ pub mod create_job_queue_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The tags that you apply to the job queue to help you categorize and organize your resources. Each tag consists
-        /// of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your Batch resources</a> in <i>Batch User Guide</i>.</p>
+        /// <p>The tags that you apply to the job queue to help you categorize and organize your resources. Each tag consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your Batch resources</a> in <i>Batch User Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -793,14 +685,12 @@ pub mod create_scheduling_policy_input {
         >,
     }
     impl Builder {
-        /// <p>The name of the scheduling policy. It can be up to 128 letters long. It can contain uppercase and lowercase
-        /// letters, numbers, hyphens (-), and underscores (_).</p>
+        /// <p>The name of the scheduling policy. It can be up to 128 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the scheduling policy. It can be up to 128 letters long. It can contain uppercase and lowercase
-        /// letters, numbers, hyphens (-), and underscores (_).</p>
+        /// <p>The name of the scheduling policy. It can be up to 128 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -822,9 +712,7 @@ pub mod create_scheduling_policy_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags that you apply to the scheduling policy to help you categorize and organize your resources. Each tag
-        /// consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in <i>Amazon Web Services General
-        /// Reference</i>.</p>
+        /// <p>The tags that you apply to the scheduling policy to help you categorize and organize your resources. Each tag consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in <i>Amazon Web Services General Reference</i>.</p>
         /// <p>These tags can be updated or removed using the <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_TagResource.html">TagResource</a> and <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html">UntagResource</a> API operations.</p>
         pub fn tags(
             mut self,
@@ -836,9 +724,7 @@ pub mod create_scheduling_policy_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The tags that you apply to the scheduling policy to help you categorize and organize your resources. Each tag
-        /// consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in <i>Amazon Web Services General
-        /// Reference</i>.</p>
+        /// <p>The tags that you apply to the scheduling policy to help you categorize and organize your resources. Each tag consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in <i>Amazon Web Services General Reference</i>.</p>
         /// <p>These tags can be updated or removed using the <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_TagResource.html">TagResource</a> and <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html">UntagResource</a> API operations.</p>
         pub fn set_tags(
             mut self,
@@ -1621,47 +1507,25 @@ pub mod describe_compute_environments_input {
             self.compute_environments = input;
             self
         }
-        /// <p>The maximum number of cluster results returned by <code>DescribeComputeEnvironments</code> in paginated output.
-        /// When this parameter is used, <code>DescribeComputeEnvironments</code> only returns <code>maxResults</code> results in
-        /// a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can
-        /// be seen by sending another <code>DescribeComputeEnvironments</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 100. If this parameter isn't used, then
-        /// <code>DescribeComputeEnvironments</code> returns up to 100 results and a <code>nextToken</code>
-        /// value if applicable.</p>
+        /// <p>The maximum number of cluster results returned by <code>DescribeComputeEnvironments</code> in paginated output. When this parameter is used, <code>DescribeComputeEnvironments</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeComputeEnvironments</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>DescribeComputeEnvironments</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of cluster results returned by <code>DescribeComputeEnvironments</code> in paginated output.
-        /// When this parameter is used, <code>DescribeComputeEnvironments</code> only returns <code>maxResults</code> results in
-        /// a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can
-        /// be seen by sending another <code>DescribeComputeEnvironments</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 100. If this parameter isn't used, then
-        /// <code>DescribeComputeEnvironments</code> returns up to 100 results and a <code>nextToken</code>
-        /// value if applicable.</p>
+        /// <p>The maximum number of cluster results returned by <code>DescribeComputeEnvironments</code> in paginated output. When this parameter is used, <code>DescribeComputeEnvironments</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeComputeEnvironments</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>DescribeComputeEnvironments</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeComputeEnvironments</code>
-        /// request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination
-        /// continues from the end of the previous results that returned the <code>nextToken</code> value. This value is
-        /// <code>null</code> when there are no more results to return.</p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that's only used to
-        /// retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeComputeEnvironments</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.</p> <note>
+        /// <p>This token should be treated as an opaque identifier that's only used to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeComputeEnvironments</code>
-        /// request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination
-        /// continues from the end of the previous results that returned the <code>nextToken</code> value. This value is
-        /// <code>null</code> when there are no more results to return.</p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that's only used to
-        /// retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeComputeEnvironments</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.</p> <note>
+        /// <p>This token should be treated as an opaque identifier that's only used to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
@@ -1818,18 +1682,14 @@ pub mod describe_job_definitions_input {
         ///
         /// To override the contents of this collection use [`set_job_definitions`](Self::set_job_definitions).
         ///
-        /// <p>A list of up to 100 job definitions. Each entry in the list can either be an ARN in the format
-        /// <code>arn:aws:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code> or a short version
-        /// using the form <code>${JobDefinitionName}:${Revision}</code>.</p>
+        /// <p>A list of up to 100 job definitions. Each entry in the list can either be an ARN in the format <code>arn:aws:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code> or a short version using the form <code>${JobDefinitionName}:${Revision}</code>.</p>
         pub fn job_definitions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.job_definitions.unwrap_or_default();
             v.push(input.into());
             self.job_definitions = Some(v);
             self
         }
-        /// <p>A list of up to 100 job definitions. Each entry in the list can either be an ARN in the format
-        /// <code>arn:aws:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code> or a short version
-        /// using the form <code>${JobDefinitionName}:${Revision}</code>.</p>
+        /// <p>A list of up to 100 job definitions. Each entry in the list can either be an ARN in the format <code>arn:aws:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code> or a short version using the form <code>${JobDefinitionName}:${Revision}</code>.</p>
         pub fn set_job_definitions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1837,24 +1697,12 @@ pub mod describe_job_definitions_input {
             self.job_definitions = input;
             self
         }
-        /// <p>The maximum number of results returned by <code>DescribeJobDefinitions</code> in paginated output. When this
-        /// parameter is used, <code>DescribeJobDefinitions</code> only returns <code>maxResults</code> results in a single page
-        /// and a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending
-        /// another <code>DescribeJobDefinitions</code> request with the returned <code>nextToken</code> value. This value can be
-        /// between 1 and 100. If this parameter isn't used, then
-        /// <code>DescribeJobDefinitions</code> returns up to 100 results and a <code>nextToken</code> value
-        /// if applicable.</p>
+        /// <p>The maximum number of results returned by <code>DescribeJobDefinitions</code> in paginated output. When this parameter is used, <code>DescribeJobDefinitions</code> only returns <code>maxResults</code> results in a single page and a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeJobDefinitions</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>DescribeJobDefinitions</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results returned by <code>DescribeJobDefinitions</code> in paginated output. When this
-        /// parameter is used, <code>DescribeJobDefinitions</code> only returns <code>maxResults</code> results in a single page
-        /// and a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending
-        /// another <code>DescribeJobDefinitions</code> request with the returned <code>nextToken</code> value. This value can be
-        /// between 1 and 100. If this parameter isn't used, then
-        /// <code>DescribeJobDefinitions</code> returns up to 100 results and a <code>nextToken</code> value
-        /// if applicable.</p>
+        /// <p>The maximum number of results returned by <code>DescribeJobDefinitions</code> in paginated output. When this parameter is used, <code>DescribeJobDefinitions</code> only returns <code>maxResults</code> results in a single page and a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeJobDefinitions</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>DescribeJobDefinitions</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1882,25 +1730,15 @@ pub mod describe_job_definitions_input {
             self.status = input;
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeJobDefinitions</code> request
-        /// where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues
-        /// from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code>
-        /// when there are no more results to return.</p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that's only used to
-        /// retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeJobDefinitions</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.</p> <note>
+        /// <p>This token should be treated as an opaque identifier that's only used to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeJobDefinitions</code> request
-        /// where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues
-        /// from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code>
-        /// when there are no more results to return.</p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that's only used to
-        /// retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeJobDefinitions</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.</p> <note>
+        /// <p>This token should be treated as an opaque identifier that's only used to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
@@ -2072,45 +1910,25 @@ pub mod describe_job_queues_input {
             self.job_queues = input;
             self
         }
-        /// <p>The maximum number of results returned by <code>DescribeJobQueues</code> in paginated output. When this
-        /// parameter is used, <code>DescribeJobQueues</code> only returns <code>maxResults</code> results in a single page and a
-        /// <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another
-        /// <code>DescribeJobQueues</code> request with the returned <code>nextToken</code> value. This value can be between
-        /// 1 and 100. If this parameter isn't used, then <code>DescribeJobQueues</code> returns up
-        /// to 100 results and a <code>nextToken</code> value if applicable.</p>
+        /// <p>The maximum number of results returned by <code>DescribeJobQueues</code> in paginated output. When this parameter is used, <code>DescribeJobQueues</code> only returns <code>maxResults</code> results in a single page and a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeJobQueues</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>DescribeJobQueues</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results returned by <code>DescribeJobQueues</code> in paginated output. When this
-        /// parameter is used, <code>DescribeJobQueues</code> only returns <code>maxResults</code> results in a single page and a
-        /// <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another
-        /// <code>DescribeJobQueues</code> request with the returned <code>nextToken</code> value. This value can be between
-        /// 1 and 100. If this parameter isn't used, then <code>DescribeJobQueues</code> returns up
-        /// to 100 results and a <code>nextToken</code> value if applicable.</p>
+        /// <p>The maximum number of results returned by <code>DescribeJobQueues</code> in paginated output. When this parameter is used, <code>DescribeJobQueues</code> only returns <code>maxResults</code> results in a single page and a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeJobQueues</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>DescribeJobQueues</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeJobQueues</code> request where
-        /// <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the
-        /// end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when
-        /// there are no more results to return.</p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that's only used to
-        /// retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeJobQueues</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.</p> <note>
+        /// <p>This token should be treated as an opaque identifier that's only used to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeJobQueues</code> request where
-        /// <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the
-        /// end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when
-        /// there are no more results to return.</p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that's only used to
-        /// retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeJobQueues</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.</p> <note>
+        /// <p>This token should be treated as an opaque identifier that's only used to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
@@ -2587,26 +2405,22 @@ pub mod list_jobs_input {
             self.job_queue = input;
             self
         }
-        /// <p>The job ID for an array job. Specifying an array job ID with this parameter lists all child jobs from within the
-        /// specified array.</p>
+        /// <p>The job ID for an array job. Specifying an array job ID with this parameter lists all child jobs from within the specified array.</p>
         pub fn array_job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.array_job_id = Some(input.into());
             self
         }
-        /// <p>The job ID for an array job. Specifying an array job ID with this parameter lists all child jobs from within the
-        /// specified array.</p>
+        /// <p>The job ID for an array job. Specifying an array job ID with this parameter lists all child jobs from within the specified array.</p>
         pub fn set_array_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.array_job_id = input;
             self
         }
-        /// <p>The job ID for a multi-node parallel job. Specifying a multi-node parallel job ID with this parameter lists all
-        /// nodes that are associated with the specified job.</p>
+        /// <p>The job ID for a multi-node parallel job. Specifying a multi-node parallel job ID with this parameter lists all nodes that are associated with the specified job.</p>
         pub fn multi_node_job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.multi_node_job_id = Some(input.into());
             self
         }
-        /// <p>The job ID for a multi-node parallel job. Specifying a multi-node parallel job ID with this parameter lists all
-        /// nodes that are associated with the specified job.</p>
+        /// <p>The job ID for a multi-node parallel job. Specifying a multi-node parallel job ID with this parameter lists all nodes that are associated with the specified job.</p>
         pub fn set_multi_node_job_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2614,16 +2428,12 @@ pub mod list_jobs_input {
             self.multi_node_job_id = input;
             self
         }
-        /// <p>The job status used to filter jobs in the specified queue. If the <code>filters</code> parameter is specified,
-        /// the <code>jobStatus</code> parameter is ignored and jobs with any status are returned. If you don't specify a status,
-        /// only <code>RUNNING</code> jobs are returned.</p>
+        /// <p>The job status used to filter jobs in the specified queue. If the <code>filters</code> parameter is specified, the <code>jobStatus</code> parameter is ignored and jobs with any status are returned. If you don't specify a status, only <code>RUNNING</code> jobs are returned.</p>
         pub fn job_status(mut self, input: crate::model::JobStatus) -> Self {
             self.job_status = Some(input);
             self
         }
-        /// <p>The job status used to filter jobs in the specified queue. If the <code>filters</code> parameter is specified,
-        /// the <code>jobStatus</code> parameter is ignored and jobs with any status are returned. If you don't specify a status,
-        /// only <code>RUNNING</code> jobs are returned.</p>
+        /// <p>The job status used to filter jobs in the specified queue. If the <code>filters</code> parameter is specified, the <code>jobStatus</code> parameter is ignored and jobs with any status are returned. If you don't specify a status, only <code>RUNNING</code> jobs are returned.</p>
         pub fn set_job_status(
             mut self,
             input: std::option::Option<crate::model::JobStatus>,
@@ -2631,45 +2441,25 @@ pub mod list_jobs_input {
             self.job_status = input;
             self
         }
-        /// <p>The maximum number of results returned by <code>ListJobs</code> in paginated output. When this parameter is
-        /// used, <code>ListJobs</code> only returns <code>maxResults</code> results in a single page and a
-        /// <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another
-        /// <code>ListJobs</code> request with the returned <code>nextToken</code> value. This value can be between
-        /// 1 and 100. If this parameter isn't used, then <code>ListJobs</code> returns up to
-        /// 100 results and a <code>nextToken</code> value if applicable.</p>
+        /// <p>The maximum number of results returned by <code>ListJobs</code> in paginated output. When this parameter is used, <code>ListJobs</code> only returns <code>maxResults</code> results in a single page and a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>ListJobs</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results returned by <code>ListJobs</code> in paginated output. When this parameter is
-        /// used, <code>ListJobs</code> only returns <code>maxResults</code> results in a single page and a
-        /// <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another
-        /// <code>ListJobs</code> request with the returned <code>nextToken</code> value. This value can be between
-        /// 1 and 100. If this parameter isn't used, then <code>ListJobs</code> returns up to
-        /// 100 results and a <code>nextToken</code> value if applicable.</p>
+        /// <p>The maximum number of results returned by <code>ListJobs</code> in paginated output. When this parameter is used, <code>ListJobs</code> only returns <code>maxResults</code> results in a single page and a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>ListJobs</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListJobs</code> request where
-        /// <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the
-        /// end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when
-        /// there are no more results to return.</p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that's only used to
-        /// retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListJobs</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.</p> <note>
+        /// <p>This token should be treated as an opaque identifier that's only used to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListJobs</code> request where
-        /// <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the
-        /// end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when
-        /// there are no more results to return.</p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that's only used to
-        /// retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListJobs</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.</p> <note>
+        /// <p>This token should be treated as an opaque identifier that's only used to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
@@ -2679,42 +2469,31 @@ pub mod list_jobs_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>The filter to apply to the query. Only one filter can be used at a time. When the filter is used,
-        /// <code>jobStatus</code> is ignored. The filter doesn't apply to child jobs in an array or multi-node parallel (MNP)
-        /// jobs. The results are sorted by the <code>createdAt</code> field, with the most recent jobs being first.</p>
+        /// <p>The filter to apply to the query. Only one filter can be used at a time. When the filter is used, <code>jobStatus</code> is ignored. The filter doesn't apply to child jobs in an array or multi-node parallel (MNP) jobs. The results are sorted by the <code>createdAt</code> field, with the most recent jobs being first.</p>
         /// <dl>
-        /// <dt>JOB_NAME</dt>
+        /// <dt>
+        /// JOB_NAME
+        /// </dt>
         /// <dd>
-        /// <p>The value of the filter is a case-insensitive match for the job name. If the value ends with an asterisk (*),
-        /// the filter will match any job name that begins with the string before the '*'. This corresponds to the
-        /// <code>jobName</code> value. For example, <code>test1</code> matches both <code>Test1</code> and
-        /// <code>test1</code>, and <code>test1*</code> matches both <code>test1</code> and <code>Test10</code>. When the
-        /// <code>JOB_NAME</code> filter is used, the results are grouped by the job name and version.</p>
+        /// <p>The value of the filter is a case-insensitive match for the job name. If the value ends with an asterisk (*), the filter will match any job name that begins with the string before the '*'. This corresponds to the <code>jobName</code> value. For example, <code>test1</code> matches both <code>Test1</code> and <code>test1</code>, and <code>test1*</code> matches both <code>test1</code> and <code>Test10</code>. When the <code>JOB_NAME</code> filter is used, the results are grouped by the job name and version.</p>
         /// </dd>
-        /// <dt>JOB_DEFINITION</dt>
+        /// <dt>
+        /// JOB_DEFINITION
+        /// </dt>
         /// <dd>
-        /// <p>The value for the filter is the name or Amazon Resource Name (ARN) of the job definition. This corresponds to the
-        /// <code>jobDefinition</code> value. The value is case sensitive. When the value for the filter is the job
-        /// definition name, the results include all the jobs that used any revision of that job definition name. If the value
-        /// ends with an asterisk (*), the filter will match any job definition name that begins with the string before the
-        /// '*'. For example, <code>jd1</code> matches only <code>jd1</code>, and <code>jd1*</code> matches both
-        /// <code>jd1</code> and <code>jd1A</code>. The version of the job definition that's used doesn't affect the sort
-        /// order. When the <code>JOB_DEFINITION</code> filter is used and the ARN is used (which is in the form
-        /// <code>arn:${Partition}:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code>), the
-        /// results include jobs that used the specified revision of the job definition. Asterisk (*) is not supported when
-        /// the ARN is used.</p>
+        /// <p>The value for the filter is the name or Amazon Resource Name (ARN) of the job definition. This corresponds to the <code>jobDefinition</code> value. The value is case sensitive. When the value for the filter is the job definition name, the results include all the jobs that used any revision of that job definition name. If the value ends with an asterisk (*), the filter will match any job definition name that begins with the string before the '*'. For example, <code>jd1</code> matches only <code>jd1</code>, and <code>jd1*</code> matches both <code>jd1</code> and <code>jd1A</code>. The version of the job definition that's used doesn't affect the sort order. When the <code>JOB_DEFINITION</code> filter is used and the ARN is used (which is in the form <code>arn:${Partition}:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code>), the results include jobs that used the specified revision of the job definition. Asterisk (*) is not supported when the ARN is used.</p>
         /// </dd>
-        /// <dt>BEFORE_CREATED_AT</dt>
+        /// <dt>
+        /// BEFORE_CREATED_AT
+        /// </dt>
         /// <dd>
-        /// <p>The value for the filter is the time that's before the job was created. This corresponds to the
-        /// <code>createdAt</code> value. The value is a string representation of the number of milliseconds since 00:00:00
-        /// UTC (midnight) on January 1, 1970.</p>
+        /// <p>The value for the filter is the time that's before the job was created. This corresponds to the <code>createdAt</code> value. The value is a string representation of the number of milliseconds since 00:00:00 UTC (midnight) on January 1, 1970.</p>
         /// </dd>
-        /// <dt>AFTER_CREATED_AT</dt>
+        /// <dt>
+        /// AFTER_CREATED_AT
+        /// </dt>
         /// <dd>
-        /// <p>The value for the filter is the time that's after the job was created. This corresponds to the
-        /// <code>createdAt</code> value. The value is a string representation of the number of milliseconds since 00:00:00
-        /// UTC (midnight) on January 1, 1970.</p>
+        /// <p>The value for the filter is the time that's after the job was created. This corresponds to the <code>createdAt</code> value. The value is a string representation of the number of milliseconds since 00:00:00 UTC (midnight) on January 1, 1970.</p>
         /// </dd>
         /// </dl>
         pub fn filters(mut self, input: crate::model::KeyValuesPair) -> Self {
@@ -2723,42 +2502,31 @@ pub mod list_jobs_input {
             self.filters = Some(v);
             self
         }
-        /// <p>The filter to apply to the query. Only one filter can be used at a time. When the filter is used,
-        /// <code>jobStatus</code> is ignored. The filter doesn't apply to child jobs in an array or multi-node parallel (MNP)
-        /// jobs. The results are sorted by the <code>createdAt</code> field, with the most recent jobs being first.</p>
+        /// <p>The filter to apply to the query. Only one filter can be used at a time. When the filter is used, <code>jobStatus</code> is ignored. The filter doesn't apply to child jobs in an array or multi-node parallel (MNP) jobs. The results are sorted by the <code>createdAt</code> field, with the most recent jobs being first.</p>
         /// <dl>
-        /// <dt>JOB_NAME</dt>
+        /// <dt>
+        /// JOB_NAME
+        /// </dt>
         /// <dd>
-        /// <p>The value of the filter is a case-insensitive match for the job name. If the value ends with an asterisk (*),
-        /// the filter will match any job name that begins with the string before the '*'. This corresponds to the
-        /// <code>jobName</code> value. For example, <code>test1</code> matches both <code>Test1</code> and
-        /// <code>test1</code>, and <code>test1*</code> matches both <code>test1</code> and <code>Test10</code>. When the
-        /// <code>JOB_NAME</code> filter is used, the results are grouped by the job name and version.</p>
+        /// <p>The value of the filter is a case-insensitive match for the job name. If the value ends with an asterisk (*), the filter will match any job name that begins with the string before the '*'. This corresponds to the <code>jobName</code> value. For example, <code>test1</code> matches both <code>Test1</code> and <code>test1</code>, and <code>test1*</code> matches both <code>test1</code> and <code>Test10</code>. When the <code>JOB_NAME</code> filter is used, the results are grouped by the job name and version.</p>
         /// </dd>
-        /// <dt>JOB_DEFINITION</dt>
+        /// <dt>
+        /// JOB_DEFINITION
+        /// </dt>
         /// <dd>
-        /// <p>The value for the filter is the name or Amazon Resource Name (ARN) of the job definition. This corresponds to the
-        /// <code>jobDefinition</code> value. The value is case sensitive. When the value for the filter is the job
-        /// definition name, the results include all the jobs that used any revision of that job definition name. If the value
-        /// ends with an asterisk (*), the filter will match any job definition name that begins with the string before the
-        /// '*'. For example, <code>jd1</code> matches only <code>jd1</code>, and <code>jd1*</code> matches both
-        /// <code>jd1</code> and <code>jd1A</code>. The version of the job definition that's used doesn't affect the sort
-        /// order. When the <code>JOB_DEFINITION</code> filter is used and the ARN is used (which is in the form
-        /// <code>arn:${Partition}:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code>), the
-        /// results include jobs that used the specified revision of the job definition. Asterisk (*) is not supported when
-        /// the ARN is used.</p>
+        /// <p>The value for the filter is the name or Amazon Resource Name (ARN) of the job definition. This corresponds to the <code>jobDefinition</code> value. The value is case sensitive. When the value for the filter is the job definition name, the results include all the jobs that used any revision of that job definition name. If the value ends with an asterisk (*), the filter will match any job definition name that begins with the string before the '*'. For example, <code>jd1</code> matches only <code>jd1</code>, and <code>jd1*</code> matches both <code>jd1</code> and <code>jd1A</code>. The version of the job definition that's used doesn't affect the sort order. When the <code>JOB_DEFINITION</code> filter is used and the ARN is used (which is in the form <code>arn:${Partition}:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code>), the results include jobs that used the specified revision of the job definition. Asterisk (*) is not supported when the ARN is used.</p>
         /// </dd>
-        /// <dt>BEFORE_CREATED_AT</dt>
+        /// <dt>
+        /// BEFORE_CREATED_AT
+        /// </dt>
         /// <dd>
-        /// <p>The value for the filter is the time that's before the job was created. This corresponds to the
-        /// <code>createdAt</code> value. The value is a string representation of the number of milliseconds since 00:00:00
-        /// UTC (midnight) on January 1, 1970.</p>
+        /// <p>The value for the filter is the time that's before the job was created. This corresponds to the <code>createdAt</code> value. The value is a string representation of the number of milliseconds since 00:00:00 UTC (midnight) on January 1, 1970.</p>
         /// </dd>
-        /// <dt>AFTER_CREATED_AT</dt>
+        /// <dt>
+        /// AFTER_CREATED_AT
+        /// </dt>
         /// <dd>
-        /// <p>The value for the filter is the time that's after the job was created. This corresponds to the
-        /// <code>createdAt</code> value. The value is a string representation of the number of milliseconds since 00:00:00
-        /// UTC (midnight) on January 1, 1970.</p>
+        /// <p>The value for the filter is the time that's after the job was created. This corresponds to the <code>createdAt</code> value. The value is a string representation of the number of milliseconds since 00:00:00 UTC (midnight) on January 1, 1970.</p>
         /// </dd>
         /// </dl>
         pub fn set_filters(
@@ -2908,49 +2676,25 @@ pub mod list_scheduling_policies_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The maximum number of results that's returned by <code>ListSchedulingPolicies</code> in paginated output. When
-        /// this parameter is used, <code>ListSchedulingPolicies</code> only returns <code>maxResults</code> results in a single
-        /// page and a <code>nextToken</code> response element. You can see the remaining results of the initial request by
-        /// sending another <code>ListSchedulingPolicies</code> request with the returned <code>nextToken</code> value. This
-        /// value can be between 1 and 100. If this parameter isn't used,
-        /// <code>ListSchedulingPolicies</code> returns up to 100 results and a <code>nextToken</code> value
-        /// if applicable.</p>
+        /// <p>The maximum number of results that's returned by <code>ListSchedulingPolicies</code> in paginated output. When this parameter is used, <code>ListSchedulingPolicies</code> only returns <code>maxResults</code> results in a single page and a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListSchedulingPolicies</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, <code>ListSchedulingPolicies</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results that's returned by <code>ListSchedulingPolicies</code> in paginated output. When
-        /// this parameter is used, <code>ListSchedulingPolicies</code> only returns <code>maxResults</code> results in a single
-        /// page and a <code>nextToken</code> response element. You can see the remaining results of the initial request by
-        /// sending another <code>ListSchedulingPolicies</code> request with the returned <code>nextToken</code> value. This
-        /// value can be between 1 and 100. If this parameter isn't used,
-        /// <code>ListSchedulingPolicies</code> returns up to 100 results and a <code>nextToken</code> value
-        /// if applicable.</p>
+        /// <p>The maximum number of results that's returned by <code>ListSchedulingPolicies</code> in paginated output. When this parameter is used, <code>ListSchedulingPolicies</code> only returns <code>maxResults</code> results in a single page and a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListSchedulingPolicies</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, <code>ListSchedulingPolicies</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>The <code>nextToken</code> value that's returned from a previous paginated <code>ListSchedulingPolicies</code>
-        /// request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination
-        /// continues from the end of the previous results that returned the <code>nextToken</code> value. This value is
-        /// <code>null</code> when there are no more results to
-        /// return.</p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that's only used to
-        /// retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value that's returned from a previous paginated <code>ListSchedulingPolicies</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.</p> <note>
+        /// <p>This token should be treated as an opaque identifier that's only used to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value that's returned from a previous paginated <code>ListSchedulingPolicies</code>
-        /// request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination
-        /// continues from the end of the previous results that returned the <code>nextToken</code> value. This value is
-        /// <code>null</code> when there are no more results to
-        /// return.</p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that's only used to
-        /// retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value that's returned from a previous paginated <code>ListSchedulingPolicies</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.</p> <note>
+        /// <p>This token should be treated as an opaque identifier that's only used to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
@@ -3098,14 +2842,12 @@ pub mod list_tags_for_resource_input {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) that identifies the resource that tags are listed for. Batch resources that support tags are compute environments, jobs, job definitions, job queues,
-        /// and scheduling policies. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
+        /// <p>The Amazon Resource Name (ARN) that identifies the resource that tags are listed for. Batch resources that support tags are compute environments, jobs, job definitions, job queues, and scheduling policies. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that identifies the resource that tags are listed for. Batch resources that support tags are compute environments, jobs, job definitions, job queues,
-        /// and scheduling policies. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
+        /// <p>The Amazon Resource Name (ARN) that identifies the resource that tags are listed for. Batch resources that support tags are compute environments, jobs, job definitions, job queues, and scheduling policies. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -3266,14 +3008,12 @@ pub mod register_job_definition_input {
             std::option::Option<std::vec::Vec<crate::model::PlatformCapability>>,
     }
     impl Builder {
-        /// <p>The name of the job definition to register. It can be up to 128 letters long. It can contain uppercase and
-        /// lowercase letters, numbers, hyphens (-), and underscores (_).</p>
+        /// <p>The name of the job definition to register. It can be up to 128 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
         pub fn job_definition_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_definition_name = Some(input.into());
             self
         }
-        /// <p>The name of the job definition to register. It can be up to 128 letters long. It can contain uppercase and
-        /// lowercase letters, numbers, hyphens (-), and underscores (_).</p>
+        /// <p>The name of the job definition to register. It can be up to 128 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
         pub fn set_job_definition_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3281,18 +3021,14 @@ pub mod register_job_definition_input {
             self.job_definition_name = input;
             self
         }
-        /// <p>The type of job definition. For more information about multi-node parallel jobs, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node parallel job definition</a> in the
-        /// <i>Batch User Guide</i>.</p>
-        /// <note>
+        /// <p>The type of job definition. For more information about multi-node parallel jobs, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node parallel job definition</a> in the <i>Batch User Guide</i>.</p> <note>
         /// <p>If the job is run on Fargate resources, then <code>multinode</code> isn't supported.</p>
         /// </note>
         pub fn r#type(mut self, input: crate::model::JobDefinitionType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The type of job definition. For more information about multi-node parallel jobs, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node parallel job definition</a> in the
-        /// <i>Batch User Guide</i>.</p>
-        /// <note>
+        /// <p>The type of job definition. For more information about multi-node parallel jobs, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node parallel job definition</a> in the <i>Batch User Guide</i>.</p> <note>
         /// <p>If the job is run on Fargate resources, then <code>multinode</code> isn't supported.</p>
         /// </note>
         pub fn set_type(
@@ -3306,9 +3042,7 @@ pub mod register_job_definition_input {
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
-        /// <p>Default parameter substitution placeholders to set in the job definition. Parameters are specified as a
-        /// key-value pair mapping. Parameters in a <code>SubmitJob</code> request override any corresponding parameter defaults
-        /// from the job definition.</p>
+        /// <p>Default parameter substitution placeholders to set in the job definition. Parameters are specified as a key-value pair mapping. Parameters in a <code>SubmitJob</code> request override any corresponding parameter defaults from the job definition.</p>
         pub fn parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -3319,9 +3053,7 @@ pub mod register_job_definition_input {
             self.parameters = Some(hash_map);
             self
         }
-        /// <p>Default parameter substitution placeholders to set in the job definition. Parameters are specified as a
-        /// key-value pair mapping. Parameters in a <code>SubmitJob</code> request override any corresponding parameter defaults
-        /// from the job definition.</p>
+        /// <p>Default parameter substitution placeholders to set in the job definition. Parameters are specified as a key-value pair mapping. Parameters in a <code>SubmitJob</code> request override any corresponding parameter defaults from the job definition.</p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<
@@ -3331,39 +3063,27 @@ pub mod register_job_definition_input {
             self.parameters = input;
             self
         }
-        /// <p>The scheduling priority for jobs that are submitted with this job definition. This will only affect jobs in job
-        /// queues with a fair share policy. Jobs with a higher scheduling priority will be scheduled before jobs with a lower
-        /// scheduling priority.</p>
+        /// <p>The scheduling priority for jobs that are submitted with this job definition. This will only affect jobs in job queues with a fair share policy. Jobs with a higher scheduling priority will be scheduled before jobs with a lower scheduling priority.</p>
         /// <p>The minimum supported value is 0 and the maximum supported value is 9999.</p>
         pub fn scheduling_priority(mut self, input: i32) -> Self {
             self.scheduling_priority = Some(input);
             self
         }
-        /// <p>The scheduling priority for jobs that are submitted with this job definition. This will only affect jobs in job
-        /// queues with a fair share policy. Jobs with a higher scheduling priority will be scheduled before jobs with a lower
-        /// scheduling priority.</p>
+        /// <p>The scheduling priority for jobs that are submitted with this job definition. This will only affect jobs in job queues with a fair share policy. Jobs with a higher scheduling priority will be scheduled before jobs with a lower scheduling priority.</p>
         /// <p>The minimum supported value is 0 and the maximum supported value is 9999.</p>
         pub fn set_scheduling_priority(mut self, input: std::option::Option<i32>) -> Self {
             self.scheduling_priority = input;
             self
         }
-        /// <p>An object with various properties specific to single-node container-based jobs. If the job definition's
-        /// <code>type</code> parameter is <code>container</code>, then you must specify either <code>containerProperties</code>
-        /// or <code>nodeProperties</code>.</p>
-        /// <note>
-        /// <p>If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use only
-        /// <code>containerProperties</code>.</p>
+        /// <p>An object with various properties specific to single-node container-based jobs. If the job definition's <code>type</code> parameter is <code>container</code>, then you must specify either <code>containerProperties</code> or <code>nodeProperties</code>.</p> <note>
+        /// <p>If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use only <code>containerProperties</code>.</p>
         /// </note>
         pub fn container_properties(mut self, input: crate::model::ContainerProperties) -> Self {
             self.container_properties = Some(input);
             self
         }
-        /// <p>An object with various properties specific to single-node container-based jobs. If the job definition's
-        /// <code>type</code> parameter is <code>container</code>, then you must specify either <code>containerProperties</code>
-        /// or <code>nodeProperties</code>.</p>
-        /// <note>
-        /// <p>If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use only
-        /// <code>containerProperties</code>.</p>
+        /// <p>An object with various properties specific to single-node container-based jobs. If the job definition's <code>type</code> parameter is <code>container</code>, then you must specify either <code>containerProperties</code> or <code>nodeProperties</code>.</p> <note>
+        /// <p>If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use only <code>containerProperties</code>.</p>
         /// </note>
         pub fn set_container_properties(
             mut self,
@@ -3372,27 +3092,15 @@ pub mod register_job_definition_input {
             self.container_properties = input;
             self
         }
-        /// <p>An object with various properties specific to multi-node parallel jobs. If you specify node properties for a
-        /// job, it becomes a multi-node parallel job. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node Parallel Jobs</a> in the
-        /// <i>Batch User Guide</i>. If the job definition's <code>type</code> parameter is
-        /// <code>container</code>, then you must specify either <code>containerProperties</code> or
-        /// <code>nodeProperties</code>.</p>
-        /// <note>
-        /// <p>If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use
-        /// <code>containerProperties</code> instead.</p>
+        /// <p>An object with various properties specific to multi-node parallel jobs. If you specify node properties for a job, it becomes a multi-node parallel job. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node Parallel Jobs</a> in the <i>Batch User Guide</i>. If the job definition's <code>type</code> parameter is <code>container</code>, then you must specify either <code>containerProperties</code> or <code>nodeProperties</code>.</p> <note>
+        /// <p>If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use <code>containerProperties</code> instead.</p>
         /// </note>
         pub fn node_properties(mut self, input: crate::model::NodeProperties) -> Self {
             self.node_properties = Some(input);
             self
         }
-        /// <p>An object with various properties specific to multi-node parallel jobs. If you specify node properties for a
-        /// job, it becomes a multi-node parallel job. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node Parallel Jobs</a> in the
-        /// <i>Batch User Guide</i>. If the job definition's <code>type</code> parameter is
-        /// <code>container</code>, then you must specify either <code>containerProperties</code> or
-        /// <code>nodeProperties</code>.</p>
-        /// <note>
-        /// <p>If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use
-        /// <code>containerProperties</code> instead.</p>
+        /// <p>An object with various properties specific to multi-node parallel jobs. If you specify node properties for a job, it becomes a multi-node parallel job. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node Parallel Jobs</a> in the <i>Batch User Guide</i>. If the job definition's <code>type</code> parameter is <code>container</code>, then you must specify either <code>containerProperties</code> or <code>nodeProperties</code>.</p> <note>
+        /// <p>If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use <code>containerProperties</code> instead.</p>
         /// </note>
         pub fn set_node_properties(
             mut self,
@@ -3401,16 +3109,12 @@ pub mod register_job_definition_input {
             self.node_properties = input;
             self
         }
-        /// <p>The retry strategy to use for failed jobs that are submitted with this job definition. Any retry strategy that's
-        /// specified during a <a>SubmitJob</a> operation overrides the retry strategy defined here. If a job is
-        /// terminated due to a timeout, it isn't retried.</p>
+        /// <p>The retry strategy to use for failed jobs that are submitted with this job definition. Any retry strategy that's specified during a <code>SubmitJob</code> operation overrides the retry strategy defined here. If a job is terminated due to a timeout, it isn't retried.</p>
         pub fn retry_strategy(mut self, input: crate::model::RetryStrategy) -> Self {
             self.retry_strategy = Some(input);
             self
         }
-        /// <p>The retry strategy to use for failed jobs that are submitted with this job definition. Any retry strategy that's
-        /// specified during a <a>SubmitJob</a> operation overrides the retry strategy defined here. If a job is
-        /// terminated due to a timeout, it isn't retried.</p>
+        /// <p>The retry strategy to use for failed jobs that are submitted with this job definition. Any retry strategy that's specified during a <code>SubmitJob</code> operation overrides the retry strategy defined here. If a job is terminated due to a timeout, it isn't retried.</p>
         pub fn set_retry_strategy(
             mut self,
             input: std::option::Option<crate::model::RetryStrategy>,
@@ -3418,34 +3122,22 @@ pub mod register_job_definition_input {
             self.retry_strategy = input;
             self
         }
-        /// <p>Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If no
-        /// value is specified, the tags are not propagated. Tags can only be propagated to the tasks during task creation. For
-        /// tags with the same name, job tags are given priority over job definitions tags. If the total number of combined tags
-        /// from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.</p>
+        /// <p>Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If no value is specified, the tags are not propagated. Tags can only be propagated to the tasks during task creation. For tags with the same name, job tags are given priority over job definitions tags. If the total number of combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.</p>
         pub fn propagate_tags(mut self, input: bool) -> Self {
             self.propagate_tags = Some(input);
             self
         }
-        /// <p>Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If no
-        /// value is specified, the tags are not propagated. Tags can only be propagated to the tasks during task creation. For
-        /// tags with the same name, job tags are given priority over job definitions tags. If the total number of combined tags
-        /// from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.</p>
+        /// <p>Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If no value is specified, the tags are not propagated. Tags can only be propagated to the tasks during task creation. For tags with the same name, job tags are given priority over job definitions tags. If the total number of combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.</p>
         pub fn set_propagate_tags(mut self, input: std::option::Option<bool>) -> Self {
             self.propagate_tags = input;
             self
         }
-        /// <p>The timeout configuration for jobs that are submitted with this job definition, after which Batch terminates
-        /// your jobs if they have not finished. If a job is terminated due to a timeout, it isn't retried. The minimum value for
-        /// the timeout is 60 seconds. Any timeout configuration that's specified during a <a>SubmitJob</a> operation
-        /// overrides the timeout configuration defined here. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/job_timeouts.html">Job Timeouts</a> in the <i>Batch User Guide</i>.</p>
+        /// <p>The timeout configuration for jobs that are submitted with this job definition, after which Batch terminates your jobs if they have not finished. If a job is terminated due to a timeout, it isn't retried. The minimum value for the timeout is 60 seconds. Any timeout configuration that's specified during a <code>SubmitJob</code> operation overrides the timeout configuration defined here. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/job_timeouts.html">Job Timeouts</a> in the <i>Batch User Guide</i>.</p>
         pub fn timeout(mut self, input: crate::model::JobTimeout) -> Self {
             self.timeout = Some(input);
             self
         }
-        /// <p>The timeout configuration for jobs that are submitted with this job definition, after which Batch terminates
-        /// your jobs if they have not finished. If a job is terminated due to a timeout, it isn't retried. The minimum value for
-        /// the timeout is 60 seconds. Any timeout configuration that's specified during a <a>SubmitJob</a> operation
-        /// overrides the timeout configuration defined here. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/job_timeouts.html">Job Timeouts</a> in the <i>Batch User Guide</i>.</p>
+        /// <p>The timeout configuration for jobs that are submitted with this job definition, after which Batch terminates your jobs if they have not finished. If a job is terminated due to a timeout, it isn't retried. The minimum value for the timeout is 60 seconds. Any timeout configuration that's specified during a <code>SubmitJob</code> operation overrides the timeout configuration defined here. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/job_timeouts.html">Job Timeouts</a> in the <i>Batch User Guide</i>.</p>
         pub fn set_timeout(mut self, input: std::option::Option<crate::model::JobTimeout>) -> Self {
             self.timeout = input;
             self
@@ -3454,8 +3146,7 @@ pub mod register_job_definition_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags that you apply to the job definition to help you categorize and organize your resources. Each tag
-        /// consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging Amazon Web Services Resources</a> in <i>Batch User Guide</i>.</p>
+        /// <p>The tags that you apply to the job definition to help you categorize and organize your resources. Each tag consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging Amazon Web Services Resources</a> in <i>Batch User Guide</i>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -3466,8 +3157,7 @@ pub mod register_job_definition_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The tags that you apply to the job definition to help you categorize and organize your resources. Each tag
-        /// consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging Amazon Web Services Resources</a> in <i>Batch User Guide</i>.</p>
+        /// <p>The tags that you apply to the job definition to help you categorize and organize your resources. Each tag consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging Amazon Web Services Resources</a> in <i>Batch User Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -3481,16 +3171,14 @@ pub mod register_job_definition_input {
         ///
         /// To override the contents of this collection use [`set_platform_capabilities`](Self::set_platform_capabilities).
         ///
-        /// <p>The platform capabilities required by the job definition. If no value is specified, it defaults to
-        /// <code>EC2</code>. To run the job on Fargate resources, specify <code>FARGATE</code>.</p>
+        /// <p>The platform capabilities required by the job definition. If no value is specified, it defaults to <code>EC2</code>. To run the job on Fargate resources, specify <code>FARGATE</code>.</p>
         pub fn platform_capabilities(mut self, input: crate::model::PlatformCapability) -> Self {
             let mut v = self.platform_capabilities.unwrap_or_default();
             v.push(input);
             self.platform_capabilities = Some(v);
             self
         }
-        /// <p>The platform capabilities required by the job definition. If no value is specified, it defaults to
-        /// <code>EC2</code>. To run the job on Fargate resources, specify <code>FARGATE</code>.</p>
+        /// <p>The platform capabilities required by the job definition. If no value is specified, it defaults to <code>EC2</code>. To run the job on Fargate resources, specify <code>FARGATE</code>.</p>
         pub fn set_platform_capabilities(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PlatformCapability>>,
@@ -3666,14 +3354,12 @@ pub mod submit_job_input {
         >,
     }
     impl Builder {
-        /// <p>The name of the job. It can be up to 128 letters long. The first character must be alphanumeric, can contain
-        /// uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
+        /// <p>The name of the job. It can be up to 128 letters long. The first character must be alphanumeric, can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
         pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_name = Some(input.into());
             self
         }
-        /// <p>The name of the job. It can be up to 128 letters long. The first character must be alphanumeric, can contain
-        /// uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
+        /// <p>The name of the job. It can be up to 128 letters long. The first character must be alphanumeric, can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
         pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_name = input;
             self
@@ -3701,32 +3387,24 @@ pub mod submit_job_input {
             self.share_identifier = input;
             self
         }
-        /// <p>The scheduling priority for the job. This will only affect jobs in job queues with a fair share policy. Jobs
-        /// with a higher scheduling priority will be scheduled before jobs with a lower scheduling priority. This will override
-        /// any scheduling priority in the job definition.</p>
+        /// <p>The scheduling priority for the job. This will only affect jobs in job queues with a fair share policy. Jobs with a higher scheduling priority will be scheduled before jobs with a lower scheduling priority. This will override any scheduling priority in the job definition.</p>
         /// <p>The minimum supported value is 0 and the maximum supported value is 9999.</p>
         pub fn scheduling_priority_override(mut self, input: i32) -> Self {
             self.scheduling_priority_override = Some(input);
             self
         }
-        /// <p>The scheduling priority for the job. This will only affect jobs in job queues with a fair share policy. Jobs
-        /// with a higher scheduling priority will be scheduled before jobs with a lower scheduling priority. This will override
-        /// any scheduling priority in the job definition.</p>
+        /// <p>The scheduling priority for the job. This will only affect jobs in job queues with a fair share policy. Jobs with a higher scheduling priority will be scheduled before jobs with a lower scheduling priority. This will override any scheduling priority in the job definition.</p>
         /// <p>The minimum supported value is 0 and the maximum supported value is 9999.</p>
         pub fn set_scheduling_priority_override(mut self, input: std::option::Option<i32>) -> Self {
             self.scheduling_priority_override = input;
             self
         }
-        /// <p>The array properties for the submitted job, such as the size of the array. The array size can be between 2 and
-        /// 10,000. If you specify array properties for a job, it becomes an array job. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array Jobs</a> in the
-        /// <i>Batch User Guide</i>.</p>
+        /// <p>The array properties for the submitted job, such as the size of the array. The array size can be between 2 and 10,000. If you specify array properties for a job, it becomes an array job. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array Jobs</a> in the <i>Batch User Guide</i>.</p>
         pub fn array_properties(mut self, input: crate::model::ArrayProperties) -> Self {
             self.array_properties = Some(input);
             self
         }
-        /// <p>The array properties for the submitted job, such as the size of the array. The array size can be between 2 and
-        /// 10,000. If you specify array properties for a job, it becomes an array job. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array Jobs</a> in the
-        /// <i>Batch User Guide</i>.</p>
+        /// <p>The array properties for the submitted job, such as the size of the array. The array size can be between 2 and 10,000. If you specify array properties for a job, it becomes an array job. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array Jobs</a> in the <i>Batch User Guide</i>.</p>
         pub fn set_array_properties(
             mut self,
             input: std::option::Option<crate::model::ArrayProperties>,
@@ -3738,22 +3416,14 @@ pub mod submit_job_input {
         ///
         /// To override the contents of this collection use [`set_depends_on`](Self::set_depends_on).
         ///
-        /// <p>A list of dependencies for the job. A job can depend upon a maximum of 20 jobs. You can specify a
-        /// <code>SEQUENTIAL</code> type dependency without specifying a job ID for array jobs so that each child array job
-        /// completes sequentially, starting at index 0. You can also specify an <code>N_TO_N</code> type dependency with a job
-        /// ID for array jobs. In that case, each index child of this job must wait for the corresponding index child of each
-        /// dependency to complete before it can begin.</p>
+        /// <p>A list of dependencies for the job. A job can depend upon a maximum of 20 jobs. You can specify a <code>SEQUENTIAL</code> type dependency without specifying a job ID for array jobs so that each child array job completes sequentially, starting at index 0. You can also specify an <code>N_TO_N</code> type dependency with a job ID for array jobs. In that case, each index child of this job must wait for the corresponding index child of each dependency to complete before it can begin.</p>
         pub fn depends_on(mut self, input: crate::model::JobDependency) -> Self {
             let mut v = self.depends_on.unwrap_or_default();
             v.push(input);
             self.depends_on = Some(v);
             self
         }
-        /// <p>A list of dependencies for the job. A job can depend upon a maximum of 20 jobs. You can specify a
-        /// <code>SEQUENTIAL</code> type dependency without specifying a job ID for array jobs so that each child array job
-        /// completes sequentially, starting at index 0. You can also specify an <code>N_TO_N</code> type dependency with a job
-        /// ID for array jobs. In that case, each index child of this job must wait for the corresponding index child of each
-        /// dependency to complete before it can begin.</p>
+        /// <p>A list of dependencies for the job. A job can depend upon a maximum of 20 jobs. You can specify a <code>SEQUENTIAL</code> type dependency without specifying a job ID for array jobs so that each child array job completes sequentially, starting at index 0. You can also specify an <code>N_TO_N</code> type dependency with a job ID for array jobs. In that case, each index child of this job must wait for the corresponding index child of each dependency to complete before it can begin.</p>
         pub fn set_depends_on(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::JobDependency>>,
@@ -3761,16 +3431,12 @@ pub mod submit_job_input {
             self.depends_on = input;
             self
         }
-        /// <p>The job definition used by this job. This value can be one of <code>name</code>, <code>name:revision</code>, or
-        /// the Amazon Resource Name (ARN) for the job definition. If <code>name</code> is specified without a revision then the latest active
-        /// revision is used.</p>
+        /// <p>The job definition used by this job. This value can be one of <code>name</code>, <code>name:revision</code>, or the Amazon Resource Name (ARN) for the job definition. If <code>name</code> is specified without a revision then the latest active revision is used.</p>
         pub fn job_definition(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_definition = Some(input.into());
             self
         }
-        /// <p>The job definition used by this job. This value can be one of <code>name</code>, <code>name:revision</code>, or
-        /// the Amazon Resource Name (ARN) for the job definition. If <code>name</code> is specified without a revision then the latest active
-        /// revision is used.</p>
+        /// <p>The job definition used by this job. This value can be one of <code>name</code>, <code>name:revision</code>, or the Amazon Resource Name (ARN) for the job definition. If <code>name</code> is specified without a revision then the latest active revision is used.</p>
         pub fn set_job_definition(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3782,9 +3448,7 @@ pub mod submit_job_input {
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
-        /// <p>Additional parameters passed to the job that replace parameter substitution placeholders that are set in the job
-        /// definition. Parameters are specified as a key and value pair mapping. Parameters in a <code>SubmitJob</code> request
-        /// override any corresponding parameter defaults from the job definition.</p>
+        /// <p>Additional parameters passed to the job that replace parameter substitution placeholders that are set in the job definition. Parameters are specified as a key and value pair mapping. Parameters in a <code>SubmitJob</code> request override any corresponding parameter defaults from the job definition.</p>
         pub fn parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -3795,9 +3459,7 @@ pub mod submit_job_input {
             self.parameters = Some(hash_map);
             self
         }
-        /// <p>Additional parameters passed to the job that replace parameter substitution placeholders that are set in the job
-        /// definition. Parameters are specified as a key and value pair mapping. Parameters in a <code>SubmitJob</code> request
-        /// override any corresponding parameter defaults from the job definition.</p>
+        /// <p>Additional parameters passed to the job that replace parameter substitution placeholders that are set in the job definition. Parameters are specified as a key and value pair mapping. Parameters in a <code>SubmitJob</code> request override any corresponding parameter defaults from the job definition.</p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<
@@ -3807,20 +3469,12 @@ pub mod submit_job_input {
             self.parameters = input;
             self
         }
-        /// <p>A list of container overrides in the JSON format that specify the name of a container in the specified job
-        /// definition and the overrides it should receive. You can override the default command for a container, which is
-        /// specified in the job definition or the Docker image, with a <code>command</code> override. You can also override
-        /// existing environment variables on a container or add new environment variables to it with an <code>environment</code>
-        /// override.</p>
+        /// <p>A list of container overrides in the JSON format that specify the name of a container in the specified job definition and the overrides it should receive. You can override the default command for a container, which is specified in the job definition or the Docker image, with a <code>command</code> override. You can also override existing environment variables on a container or add new environment variables to it with an <code>environment</code> override.</p>
         pub fn container_overrides(mut self, input: crate::model::ContainerOverrides) -> Self {
             self.container_overrides = Some(input);
             self
         }
-        /// <p>A list of container overrides in the JSON format that specify the name of a container in the specified job
-        /// definition and the overrides it should receive. You can override the default command for a container, which is
-        /// specified in the job definition or the Docker image, with a <code>command</code> override. You can also override
-        /// existing environment variables on a container or add new environment variables to it with an <code>environment</code>
-        /// override.</p>
+        /// <p>A list of container overrides in the JSON format that specify the name of a container in the specified job definition and the overrides it should receive. You can override the default command for a container, which is specified in the job definition or the Docker image, with a <code>command</code> override. You can also override existing environment variables on a container or add new environment variables to it with an <code>environment</code> override.</p>
         pub fn set_container_overrides(
             mut self,
             input: std::option::Option<crate::model::ContainerOverrides>,
@@ -3828,21 +3482,15 @@ pub mod submit_job_input {
             self.container_overrides = input;
             self
         }
-        /// <p>A list of node overrides in JSON format that specify the node range to target and the container overrides for
-        /// that node range.</p>
-        /// <note>
-        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources; use
-        /// <code>containerOverrides</code> instead.</p>
+        /// <p>A list of node overrides in JSON format that specify the node range to target and the container overrides for that node range.</p> <note>
+        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources; use <code>containerOverrides</code> instead.</p>
         /// </note>
         pub fn node_overrides(mut self, input: crate::model::NodeOverrides) -> Self {
             self.node_overrides = Some(input);
             self
         }
-        /// <p>A list of node overrides in JSON format that specify the node range to target and the container overrides for
-        /// that node range.</p>
-        /// <note>
-        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources; use
-        /// <code>containerOverrides</code> instead.</p>
+        /// <p>A list of node overrides in JSON format that specify the node range to target and the container overrides for that node range.</p> <note>
+        /// <p>This parameter isn't applicable to jobs that are running on Fargate resources; use <code>containerOverrides</code> instead.</p>
         /// </note>
         pub fn set_node_overrides(
             mut self,
@@ -3851,14 +3499,12 @@ pub mod submit_job_input {
             self.node_overrides = input;
             self
         }
-        /// <p>The retry strategy to use for failed jobs from this <a>SubmitJob</a> operation. When a retry strategy
-        /// is specified here, it overrides the retry strategy defined in the job definition.</p>
+        /// <p>The retry strategy to use for failed jobs from this <code>SubmitJob</code> operation. When a retry strategy is specified here, it overrides the retry strategy defined in the job definition.</p>
         pub fn retry_strategy(mut self, input: crate::model::RetryStrategy) -> Self {
             self.retry_strategy = Some(input);
             self
         }
-        /// <p>The retry strategy to use for failed jobs from this <a>SubmitJob</a> operation. When a retry strategy
-        /// is specified here, it overrides the retry strategy defined in the job definition.</p>
+        /// <p>The retry strategy to use for failed jobs from this <code>SubmitJob</code> operation. When a retry strategy is specified here, it overrides the retry strategy defined in the job definition.</p>
         pub fn set_retry_strategy(
             mut self,
             input: std::option::Option<crate::model::RetryStrategy>,
@@ -3866,40 +3512,22 @@ pub mod submit_job_input {
             self.retry_strategy = input;
             self
         }
-        /// <p>Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If no
-        /// value is specified, the tags aren't propagated. Tags can only be propagated to the tasks during task creation. For
-        /// tags with the same name, job tags are given priority over job definitions tags. If the total number of combined tags
-        /// from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state. When specified, this
-        /// overrides the tag propagation setting in the job definition.</p>
+        /// <p>Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks during task creation. For tags with the same name, job tags are given priority over job definitions tags. If the total number of combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state. When specified, this overrides the tag propagation setting in the job definition.</p>
         pub fn propagate_tags(mut self, input: bool) -> Self {
             self.propagate_tags = Some(input);
             self
         }
-        /// <p>Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If no
-        /// value is specified, the tags aren't propagated. Tags can only be propagated to the tasks during task creation. For
-        /// tags with the same name, job tags are given priority over job definitions tags. If the total number of combined tags
-        /// from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state. When specified, this
-        /// overrides the tag propagation setting in the job definition.</p>
+        /// <p>Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks during task creation. For tags with the same name, job tags are given priority over job definitions tags. If the total number of combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state. When specified, this overrides the tag propagation setting in the job definition.</p>
         pub fn set_propagate_tags(mut self, input: std::option::Option<bool>) -> Self {
             self.propagate_tags = input;
             self
         }
-        /// <p>The timeout configuration for this <a>SubmitJob</a> operation. You can specify a timeout duration
-        /// after which Batch terminates your jobs if they haven't finished. If a job is terminated due to a timeout, it isn't
-        /// retried. The minimum value for the timeout is 60 seconds. This configuration overrides any timeout configuration
-        /// specified in the job definition. For array jobs, child jobs have the same timeout configuration as the parent job.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
-        /// Timeouts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>The timeout configuration for this <code>SubmitJob</code> operation. You can specify a timeout duration after which Batch terminates your jobs if they haven't finished. If a job is terminated due to a timeout, it isn't retried. The minimum value for the timeout is 60 seconds. This configuration overrides any timeout configuration specified in the job definition. For array jobs, child jobs have the same timeout configuration as the parent job. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job Timeouts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn timeout(mut self, input: crate::model::JobTimeout) -> Self {
             self.timeout = Some(input);
             self
         }
-        /// <p>The timeout configuration for this <a>SubmitJob</a> operation. You can specify a timeout duration
-        /// after which Batch terminates your jobs if they haven't finished. If a job is terminated due to a timeout, it isn't
-        /// retried. The minimum value for the timeout is 60 seconds. This configuration overrides any timeout configuration
-        /// specified in the job definition. For array jobs, child jobs have the same timeout configuration as the parent job.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
-        /// Timeouts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>The timeout configuration for this <code>SubmitJob</code> operation. You can specify a timeout duration after which Batch terminates your jobs if they haven't finished. If a job is terminated due to a timeout, it isn't retried. The minimum value for the timeout is 60 seconds. This configuration overrides any timeout configuration specified in the job definition. For array jobs, child jobs have the same timeout configuration as the parent job. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job Timeouts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn set_timeout(mut self, input: std::option::Option<crate::model::JobTimeout>) -> Self {
             self.timeout = input;
             self
@@ -3908,9 +3536,7 @@ pub mod submit_job_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags that you apply to the job request to help you categorize and organize your resources. Each tag consists
-        /// of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in <i>Amazon Web Services General
-        /// Reference</i>.</p>
+        /// <p>The tags that you apply to the job request to help you categorize and organize your resources. Each tag consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in <i>Amazon Web Services General Reference</i>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -3921,9 +3547,7 @@ pub mod submit_job_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The tags that you apply to the job request to help you categorize and organize your resources. Each tag consists
-        /// of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in <i>Amazon Web Services General
-        /// Reference</i>.</p>
+        /// <p>The tags that you apply to the job request to help you categorize and organize your resources. Each tag consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -4083,14 +3707,12 @@ pub mod tag_resource_input {
         >,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the resource that tags are added to. Batch resources that support tags are compute environments, jobs, job definitions, job queues,
-        /// and scheduling policies. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource that tags are added to. Batch resources that support tags are compute environments, jobs, job definitions, job queues, and scheduling policies. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource that tags are added to. Batch resources that support tags are compute environments, jobs, job definitions, job queues,
-        /// and scheduling policies. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource that tags are added to. Batch resources that support tags are compute environments, jobs, job definitions, job queues, and scheduling policies. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -4099,9 +3721,7 @@ pub mod tag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags that you apply to the resource to help you categorize and organize your resources. Each tag consists of
-        /// a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in <i>Amazon Web Services General
-        /// Reference</i>.</p>
+        /// <p>The tags that you apply to the resource to help you categorize and organize your resources. Each tag consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in <i>Amazon Web Services General Reference</i>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -4112,9 +3732,7 @@ pub mod tag_resource_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The tags that you apply to the resource to help you categorize and organize your resources. Each tag consists of
-        /// a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in <i>Amazon Web Services General
-        /// Reference</i>.</p>
+        /// <p>The tags that you apply to the resource to help you categorize and organize your resources. Each tag consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -4290,16 +3908,12 @@ pub mod terminate_job_input {
             self.job_id = input;
             self
         }
-        /// <p>A message to attach to the job that explains the reason for canceling it. This message is returned by future
-        /// <a>DescribeJobs</a> operations on the job. This message is also recorded in the Batch activity
-        /// logs.</p>
+        /// <p>A message to attach to the job that explains the reason for canceling it. This message is returned by future <code>DescribeJobs</code> operations on the job. This message is also recorded in the Batch activity logs.</p>
         pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
             self.reason = Some(input.into());
             self
         }
-        /// <p>A message to attach to the job that explains the reason for canceling it. This message is returned by future
-        /// <a>DescribeJobs</a> operations on the job. This message is also recorded in the Batch activity
-        /// logs.</p>
+        /// <p>A message to attach to the job that explains the reason for canceling it. This message is returned by future <code>DescribeJobs</code> operations on the job. This message is also recorded in the Batch activity logs.</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.reason = input;
             self
@@ -4444,14 +4058,12 @@ pub mod untag_resource_input {
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the resource from which to delete tags. Batch resources that support tags are compute environments, jobs, job definitions, job queues,
-        /// and scheduling policies. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource from which to delete tags. Batch resources that support tags are compute environments, jobs, job definitions, job queues, and scheduling policies. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource from which to delete tags. Batch resources that support tags are compute environments, jobs, job definitions, job queues,
-        /// and scheduling policies. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource from which to delete tags. Batch resources that support tags are compute environments, jobs, job definitions, job queues, and scheduling policies. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -4647,58 +4259,36 @@ pub mod update_compute_environment_input {
             self.compute_environment = input;
             self
         }
-        /// <p>The state of the compute environment. Compute environments in the <code>ENABLED</code> state can accept jobs
-        /// from a queue and scale in or out automatically based on the workload demand of its associated queues.</p>
-        /// <p>If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place jobs from an associated
-        /// job queue on the compute resources within the environment. If the compute environment is managed, then it can scale
-        /// its instances out or in automatically, based on the job queue demand.</p>
-        /// <p>If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs within the
-        /// environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally. Managed
-        /// compute environments in the <code>DISABLED</code> state don't scale out. However, they scale in to
-        /// <code>minvCpus</code> value after instances become idle.</p>
+        /// <p>The state of the compute environment. Compute environments in the <code>ENABLED</code> state can accept jobs from a queue and scale in or out automatically based on the workload demand of its associated queues.</p>
+        /// <p>If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place jobs from an associated job queue on the compute resources within the environment. If the compute environment is managed, then it can scale its instances out or in automatically, based on the job queue demand.</p>
+        /// <p>If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs within the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally. Managed compute environments in the <code>DISABLED</code> state don't scale out. However, they scale in to <code>minvCpus</code> value after instances become idle.</p>
         pub fn state(mut self, input: crate::model::CeState) -> Self {
             self.state = Some(input);
             self
         }
-        /// <p>The state of the compute environment. Compute environments in the <code>ENABLED</code> state can accept jobs
-        /// from a queue and scale in or out automatically based on the workload demand of its associated queues.</p>
-        /// <p>If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place jobs from an associated
-        /// job queue on the compute resources within the environment. If the compute environment is managed, then it can scale
-        /// its instances out or in automatically, based on the job queue demand.</p>
-        /// <p>If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs within the
-        /// environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally. Managed
-        /// compute environments in the <code>DISABLED</code> state don't scale out. However, they scale in to
-        /// <code>minvCpus</code> value after instances become idle.</p>
+        /// <p>The state of the compute environment. Compute environments in the <code>ENABLED</code> state can accept jobs from a queue and scale in or out automatically based on the workload demand of its associated queues.</p>
+        /// <p>If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place jobs from an associated job queue on the compute resources within the environment. If the compute environment is managed, then it can scale its instances out or in automatically, based on the job queue demand.</p>
+        /// <p>If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs within the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally. Managed compute environments in the <code>DISABLED</code> state don't scale out. However, they scale in to <code>minvCpus</code> value after instances become idle.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::CeState>) -> Self {
             self.state = input;
             self
         }
-        /// <p>The maximum number of vCPUs expected to be used for an unmanaged compute environment. This parameter should not
-        /// be specified for a managed compute environment. This parameter is only used for fair share scheduling to reserve vCPU
-        /// capacity for new share identifiers. If this parameter is not provided for a fair share job queue, no vCPU capacity
-        /// will be reserved.</p>
+        /// <p>The maximum number of vCPUs expected to be used for an unmanaged compute environment. This parameter should not be specified for a managed compute environment. This parameter is only used for fair share scheduling to reserve vCPU capacity for new share identifiers. If this parameter is not provided for a fair share job queue, no vCPU capacity will be reserved.</p>
         pub fn unmanagedv_cpus(mut self, input: i32) -> Self {
             self.unmanagedv_cpus = Some(input);
             self
         }
-        /// <p>The maximum number of vCPUs expected to be used for an unmanaged compute environment. This parameter should not
-        /// be specified for a managed compute environment. This parameter is only used for fair share scheduling to reserve vCPU
-        /// capacity for new share identifiers. If this parameter is not provided for a fair share job queue, no vCPU capacity
-        /// will be reserved.</p>
+        /// <p>The maximum number of vCPUs expected to be used for an unmanaged compute environment. This parameter should not be specified for a managed compute environment. This parameter is only used for fair share scheduling to reserve vCPU capacity for new share identifiers. If this parameter is not provided for a fair share job queue, no vCPU capacity will be reserved.</p>
         pub fn set_unmanagedv_cpus(mut self, input: std::option::Option<i32>) -> Self {
             self.unmanagedv_cpus = input;
             self
         }
-        /// <p>Details of the compute resources managed by the compute environment. Required for a managed compute environment.
-        /// For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
-        /// Environments</a> in the <i>Batch User Guide</i>.</p>
+        /// <p>Details of the compute resources managed by the compute environment. Required for a managed compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in the <i>Batch User Guide</i>.</p>
         pub fn compute_resources(mut self, input: crate::model::ComputeResourceUpdate) -> Self {
             self.compute_resources = Some(input);
             self
         }
-        /// <p>Details of the compute resources managed by the compute environment. Required for a managed compute environment.
-        /// For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
-        /// Environments</a> in the <i>Batch User Guide</i>.</p>
+        /// <p>Details of the compute resources managed by the compute environment. Required for a managed compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in the <i>Batch User Guide</i>.</p>
         pub fn set_compute_resources(
             mut self,
             input: std::option::Option<crate::model::ComputeResourceUpdate>,
@@ -4706,41 +4296,21 @@ pub mod update_compute_environment_input {
             self.compute_resources = input;
             self
         }
-        /// <p>The full Amazon Resource Name (ARN) of the IAM role that allows Batch to make calls to other Amazon Web Services services on your behalf.
-        /// For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">Batch service IAM
-        /// role</a> in the <i>Batch User Guide</i>.</p>
-        /// <important>
-        /// <p>If the compute environment has a service-linked role, it can't be changed to use a regular IAM role.
-        /// Likewise, if the compute environment has a regular IAM role, it can't be changed to use a service-linked
-        /// role.</p>
+        /// <p>The full Amazon Resource Name (ARN) of the IAM role that allows Batch to make calls to other Amazon Web Services services on your behalf. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">Batch service IAM role</a> in the <i>Batch User Guide</i>.</p> <important>
+        /// <p>If the compute environment has a service-linked role, it can't be changed to use a regular IAM role. Likewise, if the compute environment has a regular IAM role, it can't be changed to use a service-linked role.</p>
         /// </important>
-        /// <p>If your specified role has a path other than <code>/</code>, then you must either specify the full role ARN
-        /// (this is recommended) or prefix the role name with the path.</p>
-        /// <note>
-        /// <p>Depending on how you created your Batch service role, its ARN might contain the <code>service-role</code>
-        /// path prefix. When you only specify the name of the service role, Batch assumes that your ARN doesn't use the
-        /// <code>service-role</code> path prefix. Because of this, we recommend that you specify the full ARN of your service
-        /// role when you create compute environments.</p>
+        /// <p>If your specified role has a path other than <code>/</code>, then you must either specify the full role ARN (this is recommended) or prefix the role name with the path.</p> <note>
+        /// <p>Depending on how you created your Batch service role, its ARN might contain the <code>service-role</code> path prefix. When you only specify the name of the service role, Batch assumes that your ARN doesn't use the <code>service-role</code> path prefix. Because of this, we recommend that you specify the full ARN of your service role when you create compute environments.</p>
         /// </note>
         pub fn service_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_role = Some(input.into());
             self
         }
-        /// <p>The full Amazon Resource Name (ARN) of the IAM role that allows Batch to make calls to other Amazon Web Services services on your behalf.
-        /// For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">Batch service IAM
-        /// role</a> in the <i>Batch User Guide</i>.</p>
-        /// <important>
-        /// <p>If the compute environment has a service-linked role, it can't be changed to use a regular IAM role.
-        /// Likewise, if the compute environment has a regular IAM role, it can't be changed to use a service-linked
-        /// role.</p>
+        /// <p>The full Amazon Resource Name (ARN) of the IAM role that allows Batch to make calls to other Amazon Web Services services on your behalf. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">Batch service IAM role</a> in the <i>Batch User Guide</i>.</p> <important>
+        /// <p>If the compute environment has a service-linked role, it can't be changed to use a regular IAM role. Likewise, if the compute environment has a regular IAM role, it can't be changed to use a service-linked role.</p>
         /// </important>
-        /// <p>If your specified role has a path other than <code>/</code>, then you must either specify the full role ARN
-        /// (this is recommended) or prefix the role name with the path.</p>
-        /// <note>
-        /// <p>Depending on how you created your Batch service role, its ARN might contain the <code>service-role</code>
-        /// path prefix. When you only specify the name of the service role, Batch assumes that your ARN doesn't use the
-        /// <code>service-role</code> path prefix. Because of this, we recommend that you specify the full ARN of your service
-        /// role when you create compute environments.</p>
+        /// <p>If your specified role has a path other than <code>/</code>, then you must either specify the full role ARN (this is recommended) or prefix the role name with the path.</p> <note>
+        /// <p>Depending on how you created your Batch service role, its ARN might contain the <code>service-role</code> path prefix. When you only specify the name of the service role, Batch assumes that your ARN doesn't use the <code>service-role</code> path prefix. Because of this, we recommend that you specify the full ARN of your service role when you create compute environments.</p>
         /// </note>
         pub fn set_service_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_role = input;
@@ -4907,36 +4477,22 @@ pub mod update_job_queue_input {
             self.job_queue = input;
             self
         }
-        /// <p>Describes the queue's ability to accept new jobs. If the job queue state is <code>ENABLED</code>, it can accept
-        /// jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in the
-        /// queue can finish.</p>
+        /// <p>Describes the queue's ability to accept new jobs. If the job queue state is <code>ENABLED</code>, it can accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in the queue can finish.</p>
         pub fn state(mut self, input: crate::model::JqState) -> Self {
             self.state = Some(input);
             self
         }
-        /// <p>Describes the queue's ability to accept new jobs. If the job queue state is <code>ENABLED</code>, it can accept
-        /// jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in the
-        /// queue can finish.</p>
+        /// <p>Describes the queue's ability to accept new jobs. If the job queue state is <code>ENABLED</code>, it can accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in the queue can finish.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::JqState>) -> Self {
             self.state = input;
             self
         }
-        /// <p>Amazon Resource Name (ARN) of the fair share scheduling policy. Once a job queue is created, the fair share scheduling policy can
-        /// be replaced but not removed. The format is
-        /// <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
-        /// </code>.
-        /// For example,
-        /// <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
+        /// <p>Amazon Resource Name (ARN) of the fair share scheduling policy. Once a job queue is created, the fair share scheduling policy can be replaced but not removed. The format is <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. For example, <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
         pub fn scheduling_policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.scheduling_policy_arn = Some(input.into());
             self
         }
-        /// <p>Amazon Resource Name (ARN) of the fair share scheduling policy. Once a job queue is created, the fair share scheduling policy can
-        /// be replaced but not removed. The format is
-        /// <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
-        /// </code>.
-        /// For example,
-        /// <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
+        /// <p>Amazon Resource Name (ARN) of the fair share scheduling policy. Once a job queue is created, the fair share scheduling policy can be replaced but not removed. The format is <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. For example, <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
         pub fn set_scheduling_policy_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4944,22 +4500,12 @@ pub mod update_job_queue_input {
             self.scheduling_policy_arn = input;
             self
         }
-        /// <p>The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
-        /// <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority is
-        /// determined in descending order, for example, a job queue with a priority value of <code>10</code> is given scheduling
-        /// preference over a job queue with a priority value of <code>1</code>. All of the compute environments must be either
-        /// EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and
-        /// Fargate compute environments can't be mixed.</p>
+        /// <p>The priority of the job queue. Job queues with a higher priority (or a higher integer value for the <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority is determined in descending order, for example, a job queue with a priority value of <code>10</code> is given scheduling preference over a job queue with a priority value of <code>1</code>. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be mixed.</p>
         pub fn priority(mut self, input: i32) -> Self {
             self.priority = Some(input);
             self
         }
-        /// <p>The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
-        /// <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority is
-        /// determined in descending order, for example, a job queue with a priority value of <code>10</code> is given scheduling
-        /// preference over a job queue with a priority value of <code>1</code>. All of the compute environments must be either
-        /// EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and
-        /// Fargate compute environments can't be mixed.</p>
+        /// <p>The priority of the job queue. Job queues with a higher priority (or a higher integer value for the <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority is determined in descending order, for example, a job queue with a priority value of <code>10</code> is given scheduling preference over a job queue with a priority value of <code>1</code>. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be mixed.</p>
         pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
             self.priority = input;
             self
@@ -4968,14 +4514,8 @@ pub mod update_job_queue_input {
         ///
         /// To override the contents of this collection use [`set_compute_environment_order`](Self::set_compute_environment_order).
         ///
-        /// <p>Details the set of compute environments mapped to a job queue and their order relative to each other. This is
-        /// one of the parameters used by the job scheduler to determine which compute environment should run a given job.
-        /// Compute environments must be in the <code>VALID</code> state before you can associate them with a job queue. All of
-        /// the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate
-        /// (<code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be mixed.</p>
-        /// <note>
-        /// <p>All compute environments that are associated with a job queue must share the same architecture. Batch doesn't
-        /// support mixing compute environment architecture types in a single job queue.</p>
+        /// <p>Details the set of compute environments mapped to a job queue and their order relative to each other. This is one of the parameters used by the job scheduler to determine which compute environment should run a given job. Compute environments must be in the <code>VALID</code> state before you can associate them with a job queue. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be mixed.</p> <note>
+        /// <p>All compute environments that are associated with a job queue must share the same architecture. Batch doesn't support mixing compute environment architecture types in a single job queue.</p>
         /// </note>
         pub fn compute_environment_order(
             mut self,
@@ -4986,14 +4526,8 @@ pub mod update_job_queue_input {
             self.compute_environment_order = Some(v);
             self
         }
-        /// <p>Details the set of compute environments mapped to a job queue and their order relative to each other. This is
-        /// one of the parameters used by the job scheduler to determine which compute environment should run a given job.
-        /// Compute environments must be in the <code>VALID</code> state before you can associate them with a job queue. All of
-        /// the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate
-        /// (<code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be mixed.</p>
-        /// <note>
-        /// <p>All compute environments that are associated with a job queue must share the same architecture. Batch doesn't
-        /// support mixing compute environment architecture types in a single job queue.</p>
+        /// <p>Details the set of compute environments mapped to a job queue and their order relative to each other. This is one of the parameters used by the job scheduler to determine which compute environment should run a given job. Compute environments must be in the <code>VALID</code> state before you can associate them with a job queue. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be mixed.</p> <note>
+        /// <p>All compute environments that are associated with a job queue must share the same architecture. Batch doesn't support mixing compute environment architecture types in a single job queue.</p>
         /// </note>
         pub fn set_compute_environment_order(
             mut self,
@@ -5336,32 +4870,14 @@ impl std::fmt::Debug for UpdateSchedulingPolicyInput {
 pub struct UpdateJobQueueInput {
     /// <p>The name or the Amazon Resource Name (ARN) of the job queue.</p>
     pub job_queue: std::option::Option<std::string::String>,
-    /// <p>Describes the queue's ability to accept new jobs. If the job queue state is <code>ENABLED</code>, it can accept
-    /// jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in the
-    /// queue can finish.</p>
+    /// <p>Describes the queue's ability to accept new jobs. If the job queue state is <code>ENABLED</code>, it can accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in the queue can finish.</p>
     pub state: std::option::Option<crate::model::JqState>,
-    /// <p>Amazon Resource Name (ARN) of the fair share scheduling policy. Once a job queue is created, the fair share scheduling policy can
-    /// be replaced but not removed. The format is
-    /// <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
-    /// </code>.
-    /// For example,
-    /// <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
+    /// <p>Amazon Resource Name (ARN) of the fair share scheduling policy. Once a job queue is created, the fair share scheduling policy can be replaced but not removed. The format is <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. For example, <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
     pub scheduling_policy_arn: std::option::Option<std::string::String>,
-    /// <p>The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
-    /// <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority is
-    /// determined in descending order, for example, a job queue with a priority value of <code>10</code> is given scheduling
-    /// preference over a job queue with a priority value of <code>1</code>. All of the compute environments must be either
-    /// EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and
-    /// Fargate compute environments can't be mixed.</p>
+    /// <p>The priority of the job queue. Job queues with a higher priority (or a higher integer value for the <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority is determined in descending order, for example, a job queue with a priority value of <code>10</code> is given scheduling preference over a job queue with a priority value of <code>1</code>. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be mixed.</p>
     pub priority: i32,
-    /// <p>Details the set of compute environments mapped to a job queue and their order relative to each other. This is
-    /// one of the parameters used by the job scheduler to determine which compute environment should run a given job.
-    /// Compute environments must be in the <code>VALID</code> state before you can associate them with a job queue. All of
-    /// the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate
-    /// (<code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be mixed.</p>
-    /// <note>
-    /// <p>All compute environments that are associated with a job queue must share the same architecture. Batch doesn't
-    /// support mixing compute environment architecture types in a single job queue.</p>
+    /// <p>Details the set of compute environments mapped to a job queue and their order relative to each other. This is one of the parameters used by the job scheduler to determine which compute environment should run a given job. Compute environments must be in the <code>VALID</code> state before you can associate them with a job queue. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be mixed.</p> <note>
+    /// <p>All compute environments that are associated with a job queue must share the same architecture. Batch doesn't support mixing compute environment architecture types in a single job queue.</p>
     /// </note>
     pub compute_environment_order:
         std::option::Option<std::vec::Vec<crate::model::ComputeEnvironmentOrder>>,
@@ -5371,38 +4887,20 @@ impl UpdateJobQueueInput {
     pub fn job_queue(&self) -> std::option::Option<&str> {
         self.job_queue.as_deref()
     }
-    /// <p>Describes the queue's ability to accept new jobs. If the job queue state is <code>ENABLED</code>, it can accept
-    /// jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in the
-    /// queue can finish.</p>
+    /// <p>Describes the queue's ability to accept new jobs. If the job queue state is <code>ENABLED</code>, it can accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in the queue can finish.</p>
     pub fn state(&self) -> std::option::Option<&crate::model::JqState> {
         self.state.as_ref()
     }
-    /// <p>Amazon Resource Name (ARN) of the fair share scheduling policy. Once a job queue is created, the fair share scheduling policy can
-    /// be replaced but not removed. The format is
-    /// <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
-    /// </code>.
-    /// For example,
-    /// <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
+    /// <p>Amazon Resource Name (ARN) of the fair share scheduling policy. Once a job queue is created, the fair share scheduling policy can be replaced but not removed. The format is <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. For example, <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
     pub fn scheduling_policy_arn(&self) -> std::option::Option<&str> {
         self.scheduling_policy_arn.as_deref()
     }
-    /// <p>The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
-    /// <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority is
-    /// determined in descending order, for example, a job queue with a priority value of <code>10</code> is given scheduling
-    /// preference over a job queue with a priority value of <code>1</code>. All of the compute environments must be either
-    /// EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and
-    /// Fargate compute environments can't be mixed.</p>
+    /// <p>The priority of the job queue. Job queues with a higher priority (or a higher integer value for the <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority is determined in descending order, for example, a job queue with a priority value of <code>10</code> is given scheduling preference over a job queue with a priority value of <code>1</code>. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be mixed.</p>
     pub fn priority(&self) -> i32 {
         self.priority
     }
-    /// <p>Details the set of compute environments mapped to a job queue and their order relative to each other. This is
-    /// one of the parameters used by the job scheduler to determine which compute environment should run a given job.
-    /// Compute environments must be in the <code>VALID</code> state before you can associate them with a job queue. All of
-    /// the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate
-    /// (<code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be mixed.</p>
-    /// <note>
-    /// <p>All compute environments that are associated with a job queue must share the same architecture. Batch doesn't
-    /// support mixing compute environment architecture types in a single job queue.</p>
+    /// <p>Details the set of compute environments mapped to a job queue and their order relative to each other. This is one of the parameters used by the job scheduler to determine which compute environment should run a given job. Compute environments must be in the <code>VALID</code> state before you can associate them with a job queue. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be mixed.</p> <note>
+    /// <p>All compute environments that are associated with a job queue must share the same architecture. Batch doesn't support mixing compute environment architecture types in a single job queue.</p>
     /// </note>
     pub fn compute_environment_order(
         &self,
@@ -5428,40 +4926,19 @@ impl std::fmt::Debug for UpdateJobQueueInput {
 pub struct UpdateComputeEnvironmentInput {
     /// <p>The name or full Amazon Resource Name (ARN) of the compute environment to update.</p>
     pub compute_environment: std::option::Option<std::string::String>,
-    /// <p>The state of the compute environment. Compute environments in the <code>ENABLED</code> state can accept jobs
-    /// from a queue and scale in or out automatically based on the workload demand of its associated queues.</p>
-    /// <p>If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place jobs from an associated
-    /// job queue on the compute resources within the environment. If the compute environment is managed, then it can scale
-    /// its instances out or in automatically, based on the job queue demand.</p>
-    /// <p>If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs within the
-    /// environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally. Managed
-    /// compute environments in the <code>DISABLED</code> state don't scale out. However, they scale in to
-    /// <code>minvCpus</code> value after instances become idle.</p>
+    /// <p>The state of the compute environment. Compute environments in the <code>ENABLED</code> state can accept jobs from a queue and scale in or out automatically based on the workload demand of its associated queues.</p>
+    /// <p>If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place jobs from an associated job queue on the compute resources within the environment. If the compute environment is managed, then it can scale its instances out or in automatically, based on the job queue demand.</p>
+    /// <p>If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs within the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally. Managed compute environments in the <code>DISABLED</code> state don't scale out. However, they scale in to <code>minvCpus</code> value after instances become idle.</p>
     pub state: std::option::Option<crate::model::CeState>,
-    /// <p>The maximum number of vCPUs expected to be used for an unmanaged compute environment. This parameter should not
-    /// be specified for a managed compute environment. This parameter is only used for fair share scheduling to reserve vCPU
-    /// capacity for new share identifiers. If this parameter is not provided for a fair share job queue, no vCPU capacity
-    /// will be reserved.</p>
+    /// <p>The maximum number of vCPUs expected to be used for an unmanaged compute environment. This parameter should not be specified for a managed compute environment. This parameter is only used for fair share scheduling to reserve vCPU capacity for new share identifiers. If this parameter is not provided for a fair share job queue, no vCPU capacity will be reserved.</p>
     pub unmanagedv_cpus: i32,
-    /// <p>Details of the compute resources managed by the compute environment. Required for a managed compute environment.
-    /// For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
-    /// Environments</a> in the <i>Batch User Guide</i>.</p>
+    /// <p>Details of the compute resources managed by the compute environment. Required for a managed compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in the <i>Batch User Guide</i>.</p>
     pub compute_resources: std::option::Option<crate::model::ComputeResourceUpdate>,
-    /// <p>The full Amazon Resource Name (ARN) of the IAM role that allows Batch to make calls to other Amazon Web Services services on your behalf.
-    /// For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">Batch service IAM
-    /// role</a> in the <i>Batch User Guide</i>.</p>
-    /// <important>
-    /// <p>If the compute environment has a service-linked role, it can't be changed to use a regular IAM role.
-    /// Likewise, if the compute environment has a regular IAM role, it can't be changed to use a service-linked
-    /// role.</p>
+    /// <p>The full Amazon Resource Name (ARN) of the IAM role that allows Batch to make calls to other Amazon Web Services services on your behalf. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">Batch service IAM role</a> in the <i>Batch User Guide</i>.</p> <important>
+    /// <p>If the compute environment has a service-linked role, it can't be changed to use a regular IAM role. Likewise, if the compute environment has a regular IAM role, it can't be changed to use a service-linked role.</p>
     /// </important>
-    /// <p>If your specified role has a path other than <code>/</code>, then you must either specify the full role ARN
-    /// (this is recommended) or prefix the role name with the path.</p>
-    /// <note>
-    /// <p>Depending on how you created your Batch service role, its ARN might contain the <code>service-role</code>
-    /// path prefix. When you only specify the name of the service role, Batch assumes that your ARN doesn't use the
-    /// <code>service-role</code> path prefix. Because of this, we recommend that you specify the full ARN of your service
-    /// role when you create compute environments.</p>
+    /// <p>If your specified role has a path other than <code>/</code>, then you must either specify the full role ARN (this is recommended) or prefix the role name with the path.</p> <note>
+    /// <p>Depending on how you created your Batch service role, its ARN might contain the <code>service-role</code> path prefix. When you only specify the name of the service role, Batch assumes that your ARN doesn't use the <code>service-role</code> path prefix. Because of this, we recommend that you specify the full ARN of your service role when you create compute environments.</p>
     /// </note>
     pub service_role: std::option::Option<std::string::String>,
 }
@@ -5470,46 +4947,25 @@ impl UpdateComputeEnvironmentInput {
     pub fn compute_environment(&self) -> std::option::Option<&str> {
         self.compute_environment.as_deref()
     }
-    /// <p>The state of the compute environment. Compute environments in the <code>ENABLED</code> state can accept jobs
-    /// from a queue and scale in or out automatically based on the workload demand of its associated queues.</p>
-    /// <p>If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place jobs from an associated
-    /// job queue on the compute resources within the environment. If the compute environment is managed, then it can scale
-    /// its instances out or in automatically, based on the job queue demand.</p>
-    /// <p>If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs within the
-    /// environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally. Managed
-    /// compute environments in the <code>DISABLED</code> state don't scale out. However, they scale in to
-    /// <code>minvCpus</code> value after instances become idle.</p>
+    /// <p>The state of the compute environment. Compute environments in the <code>ENABLED</code> state can accept jobs from a queue and scale in or out automatically based on the workload demand of its associated queues.</p>
+    /// <p>If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place jobs from an associated job queue on the compute resources within the environment. If the compute environment is managed, then it can scale its instances out or in automatically, based on the job queue demand.</p>
+    /// <p>If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs within the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally. Managed compute environments in the <code>DISABLED</code> state don't scale out. However, they scale in to <code>minvCpus</code> value after instances become idle.</p>
     pub fn state(&self) -> std::option::Option<&crate::model::CeState> {
         self.state.as_ref()
     }
-    /// <p>The maximum number of vCPUs expected to be used for an unmanaged compute environment. This parameter should not
-    /// be specified for a managed compute environment. This parameter is only used for fair share scheduling to reserve vCPU
-    /// capacity for new share identifiers. If this parameter is not provided for a fair share job queue, no vCPU capacity
-    /// will be reserved.</p>
+    /// <p>The maximum number of vCPUs expected to be used for an unmanaged compute environment. This parameter should not be specified for a managed compute environment. This parameter is only used for fair share scheduling to reserve vCPU capacity for new share identifiers. If this parameter is not provided for a fair share job queue, no vCPU capacity will be reserved.</p>
     pub fn unmanagedv_cpus(&self) -> i32 {
         self.unmanagedv_cpus
     }
-    /// <p>Details of the compute resources managed by the compute environment. Required for a managed compute environment.
-    /// For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
-    /// Environments</a> in the <i>Batch User Guide</i>.</p>
+    /// <p>Details of the compute resources managed by the compute environment. Required for a managed compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in the <i>Batch User Guide</i>.</p>
     pub fn compute_resources(&self) -> std::option::Option<&crate::model::ComputeResourceUpdate> {
         self.compute_resources.as_ref()
     }
-    /// <p>The full Amazon Resource Name (ARN) of the IAM role that allows Batch to make calls to other Amazon Web Services services on your behalf.
-    /// For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">Batch service IAM
-    /// role</a> in the <i>Batch User Guide</i>.</p>
-    /// <important>
-    /// <p>If the compute environment has a service-linked role, it can't be changed to use a regular IAM role.
-    /// Likewise, if the compute environment has a regular IAM role, it can't be changed to use a service-linked
-    /// role.</p>
+    /// <p>The full Amazon Resource Name (ARN) of the IAM role that allows Batch to make calls to other Amazon Web Services services on your behalf. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">Batch service IAM role</a> in the <i>Batch User Guide</i>.</p> <important>
+    /// <p>If the compute environment has a service-linked role, it can't be changed to use a regular IAM role. Likewise, if the compute environment has a regular IAM role, it can't be changed to use a service-linked role.</p>
     /// </important>
-    /// <p>If your specified role has a path other than <code>/</code>, then you must either specify the full role ARN
-    /// (this is recommended) or prefix the role name with the path.</p>
-    /// <note>
-    /// <p>Depending on how you created your Batch service role, its ARN might contain the <code>service-role</code>
-    /// path prefix. When you only specify the name of the service role, Batch assumes that your ARN doesn't use the
-    /// <code>service-role</code> path prefix. Because of this, we recommend that you specify the full ARN of your service
-    /// role when you create compute environments.</p>
+    /// <p>If your specified role has a path other than <code>/</code>, then you must either specify the full role ARN (this is recommended) or prefix the role name with the path.</p> <note>
+    /// <p>Depending on how you created your Batch service role, its ARN might contain the <code>service-role</code> path prefix. When you only specify the name of the service role, Batch assumes that your ARN doesn't use the <code>service-role</code> path prefix. Because of this, we recommend that you specify the full ARN of your service role when you create compute environments.</p>
     /// </note>
     pub fn service_role(&self) -> std::option::Option<&str> {
         self.service_role.as_deref()
@@ -5531,15 +4987,13 @@ impl std::fmt::Debug for UpdateComputeEnvironmentInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource from which to delete tags. Batch resources that support tags are compute environments, jobs, job definitions, job queues,
-    /// and scheduling policies. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource from which to delete tags. Batch resources that support tags are compute environments, jobs, job definitions, job queues, and scheduling policies. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The keys of the tags to be removed.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource from which to delete tags. Batch resources that support tags are compute environments, jobs, job definitions, job queues,
-    /// and scheduling policies. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource from which to delete tags. Batch resources that support tags are compute environments, jobs, job definitions, job queues, and scheduling policies. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -5563,9 +5017,7 @@ impl std::fmt::Debug for UntagResourceInput {
 pub struct TerminateJobInput {
     /// <p>The Batch job ID of the job to terminate.</p>
     pub job_id: std::option::Option<std::string::String>,
-    /// <p>A message to attach to the job that explains the reason for canceling it. This message is returned by future
-    /// <a>DescribeJobs</a> operations on the job. This message is also recorded in the Batch activity
-    /// logs.</p>
+    /// <p>A message to attach to the job that explains the reason for canceling it. This message is returned by future <code>DescribeJobs</code> operations on the job. This message is also recorded in the Batch activity logs.</p>
     pub reason: std::option::Option<std::string::String>,
 }
 impl TerminateJobInput {
@@ -5573,9 +5025,7 @@ impl TerminateJobInput {
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
-    /// <p>A message to attach to the job that explains the reason for canceling it. This message is returned by future
-    /// <a>DescribeJobs</a> operations on the job. This message is also recorded in the Batch activity
-    /// logs.</p>
+    /// <p>A message to attach to the job that explains the reason for canceling it. This message is returned by future <code>DescribeJobs</code> operations on the job. This message is also recorded in the Batch activity logs.</p>
     pub fn reason(&self) -> std::option::Option<&str> {
         self.reason.as_deref()
     }
@@ -5593,24 +5043,18 @@ impl std::fmt::Debug for TerminateJobInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource that tags are added to. Batch resources that support tags are compute environments, jobs, job definitions, job queues,
-    /// and scheduling policies. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource that tags are added to. Batch resources that support tags are compute environments, jobs, job definitions, job queues, and scheduling policies. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The tags that you apply to the resource to help you categorize and organize your resources. Each tag consists of
-    /// a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in <i>Amazon Web Services General
-    /// Reference</i>.</p>
+    /// <p>The tags that you apply to the resource to help you categorize and organize your resources. Each tag consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in <i>Amazon Web Services General Reference</i>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl TagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource that tags are added to. Batch resources that support tags are compute environments, jobs, job definitions, job queues,
-    /// and scheduling policies. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource that tags are added to. Batch resources that support tags are compute environments, jobs, job definitions, job queues, and scheduling policies. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The tags that you apply to the resource to help you categorize and organize your resources. Each tag consists of
-    /// a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in <i>Amazon Web Services General
-    /// Reference</i>.</p>
+    /// <p>The tags that you apply to the resource to help you categorize and organize your resources. Each tag consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in <i>Amazon Web Services General Reference</i>.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -5631,75 +5075,42 @@ impl std::fmt::Debug for TagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubmitJobInput {
-    /// <p>The name of the job. It can be up to 128 letters long. The first character must be alphanumeric, can contain
-    /// uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
+    /// <p>The name of the job. It can be up to 128 letters long. The first character must be alphanumeric, can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The job queue where the job is submitted. You can specify either the name or the Amazon Resource Name (ARN) of the queue.</p>
     pub job_queue: std::option::Option<std::string::String>,
     /// <p>The share identifier for the job.</p>
     pub share_identifier: std::option::Option<std::string::String>,
-    /// <p>The scheduling priority for the job. This will only affect jobs in job queues with a fair share policy. Jobs
-    /// with a higher scheduling priority will be scheduled before jobs with a lower scheduling priority. This will override
-    /// any scheduling priority in the job definition.</p>
+    /// <p>The scheduling priority for the job. This will only affect jobs in job queues with a fair share policy. Jobs with a higher scheduling priority will be scheduled before jobs with a lower scheduling priority. This will override any scheduling priority in the job definition.</p>
     /// <p>The minimum supported value is 0 and the maximum supported value is 9999.</p>
     pub scheduling_priority_override: i32,
-    /// <p>The array properties for the submitted job, such as the size of the array. The array size can be between 2 and
-    /// 10,000. If you specify array properties for a job, it becomes an array job. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array Jobs</a> in the
-    /// <i>Batch User Guide</i>.</p>
+    /// <p>The array properties for the submitted job, such as the size of the array. The array size can be between 2 and 10,000. If you specify array properties for a job, it becomes an array job. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array Jobs</a> in the <i>Batch User Guide</i>.</p>
     pub array_properties: std::option::Option<crate::model::ArrayProperties>,
-    /// <p>A list of dependencies for the job. A job can depend upon a maximum of 20 jobs. You can specify a
-    /// <code>SEQUENTIAL</code> type dependency without specifying a job ID for array jobs so that each child array job
-    /// completes sequentially, starting at index 0. You can also specify an <code>N_TO_N</code> type dependency with a job
-    /// ID for array jobs. In that case, each index child of this job must wait for the corresponding index child of each
-    /// dependency to complete before it can begin.</p>
+    /// <p>A list of dependencies for the job. A job can depend upon a maximum of 20 jobs. You can specify a <code>SEQUENTIAL</code> type dependency without specifying a job ID for array jobs so that each child array job completes sequentially, starting at index 0. You can also specify an <code>N_TO_N</code> type dependency with a job ID for array jobs. In that case, each index child of this job must wait for the corresponding index child of each dependency to complete before it can begin.</p>
     pub depends_on: std::option::Option<std::vec::Vec<crate::model::JobDependency>>,
-    /// <p>The job definition used by this job. This value can be one of <code>name</code>, <code>name:revision</code>, or
-    /// the Amazon Resource Name (ARN) for the job definition. If <code>name</code> is specified without a revision then the latest active
-    /// revision is used.</p>
+    /// <p>The job definition used by this job. This value can be one of <code>name</code>, <code>name:revision</code>, or the Amazon Resource Name (ARN) for the job definition. If <code>name</code> is specified without a revision then the latest active revision is used.</p>
     pub job_definition: std::option::Option<std::string::String>,
-    /// <p>Additional parameters passed to the job that replace parameter substitution placeholders that are set in the job
-    /// definition. Parameters are specified as a key and value pair mapping. Parameters in a <code>SubmitJob</code> request
-    /// override any corresponding parameter defaults from the job definition.</p>
+    /// <p>Additional parameters passed to the job that replace parameter substitution placeholders that are set in the job definition. Parameters are specified as a key and value pair mapping. Parameters in a <code>SubmitJob</code> request override any corresponding parameter defaults from the job definition.</p>
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>A list of container overrides in the JSON format that specify the name of a container in the specified job
-    /// definition and the overrides it should receive. You can override the default command for a container, which is
-    /// specified in the job definition or the Docker image, with a <code>command</code> override. You can also override
-    /// existing environment variables on a container or add new environment variables to it with an <code>environment</code>
-    /// override.</p>
+    /// <p>A list of container overrides in the JSON format that specify the name of a container in the specified job definition and the overrides it should receive. You can override the default command for a container, which is specified in the job definition or the Docker image, with a <code>command</code> override. You can also override existing environment variables on a container or add new environment variables to it with an <code>environment</code> override.</p>
     pub container_overrides: std::option::Option<crate::model::ContainerOverrides>,
-    /// <p>A list of node overrides in JSON format that specify the node range to target and the container overrides for
-    /// that node range.</p>
-    /// <note>
-    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources; use
-    /// <code>containerOverrides</code> instead.</p>
+    /// <p>A list of node overrides in JSON format that specify the node range to target and the container overrides for that node range.</p> <note>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources; use <code>containerOverrides</code> instead.</p>
     /// </note>
     pub node_overrides: std::option::Option<crate::model::NodeOverrides>,
-    /// <p>The retry strategy to use for failed jobs from this <a>SubmitJob</a> operation. When a retry strategy
-    /// is specified here, it overrides the retry strategy defined in the job definition.</p>
+    /// <p>The retry strategy to use for failed jobs from this <code>SubmitJob</code> operation. When a retry strategy is specified here, it overrides the retry strategy defined in the job definition.</p>
     pub retry_strategy: std::option::Option<crate::model::RetryStrategy>,
-    /// <p>Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If no
-    /// value is specified, the tags aren't propagated. Tags can only be propagated to the tasks during task creation. For
-    /// tags with the same name, job tags are given priority over job definitions tags. If the total number of combined tags
-    /// from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state. When specified, this
-    /// overrides the tag propagation setting in the job definition.</p>
+    /// <p>Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks during task creation. For tags with the same name, job tags are given priority over job definitions tags. If the total number of combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state. When specified, this overrides the tag propagation setting in the job definition.</p>
     pub propagate_tags: bool,
-    /// <p>The timeout configuration for this <a>SubmitJob</a> operation. You can specify a timeout duration
-    /// after which Batch terminates your jobs if they haven't finished. If a job is terminated due to a timeout, it isn't
-    /// retried. The minimum value for the timeout is 60 seconds. This configuration overrides any timeout configuration
-    /// specified in the job definition. For array jobs, child jobs have the same timeout configuration as the parent job.
-    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
-    /// Timeouts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>The timeout configuration for this <code>SubmitJob</code> operation. You can specify a timeout duration after which Batch terminates your jobs if they haven't finished. If a job is terminated due to a timeout, it isn't retried. The minimum value for the timeout is 60 seconds. This configuration overrides any timeout configuration specified in the job definition. For array jobs, child jobs have the same timeout configuration as the parent job. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job Timeouts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub timeout: std::option::Option<crate::model::JobTimeout>,
-    /// <p>The tags that you apply to the job request to help you categorize and organize your resources. Each tag consists
-    /// of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in <i>Amazon Web Services General
-    /// Reference</i>.</p>
+    /// <p>The tags that you apply to the job request to help you categorize and organize your resources. Each tag consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in <i>Amazon Web Services General Reference</i>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl SubmitJobInput {
-    /// <p>The name of the job. It can be up to 128 letters long. The first character must be alphanumeric, can contain
-    /// uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
+    /// <p>The name of the job. It can be up to 128 letters long. The first character must be alphanumeric, can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
     pub fn job_name(&self) -> std::option::Option<&str> {
         self.job_name.as_deref()
     }
@@ -5711,84 +5122,53 @@ impl SubmitJobInput {
     pub fn share_identifier(&self) -> std::option::Option<&str> {
         self.share_identifier.as_deref()
     }
-    /// <p>The scheduling priority for the job. This will only affect jobs in job queues with a fair share policy. Jobs
-    /// with a higher scheduling priority will be scheduled before jobs with a lower scheduling priority. This will override
-    /// any scheduling priority in the job definition.</p>
+    /// <p>The scheduling priority for the job. This will only affect jobs in job queues with a fair share policy. Jobs with a higher scheduling priority will be scheduled before jobs with a lower scheduling priority. This will override any scheduling priority in the job definition.</p>
     /// <p>The minimum supported value is 0 and the maximum supported value is 9999.</p>
     pub fn scheduling_priority_override(&self) -> i32 {
         self.scheduling_priority_override
     }
-    /// <p>The array properties for the submitted job, such as the size of the array. The array size can be between 2 and
-    /// 10,000. If you specify array properties for a job, it becomes an array job. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array Jobs</a> in the
-    /// <i>Batch User Guide</i>.</p>
+    /// <p>The array properties for the submitted job, such as the size of the array. The array size can be between 2 and 10,000. If you specify array properties for a job, it becomes an array job. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array Jobs</a> in the <i>Batch User Guide</i>.</p>
     pub fn array_properties(&self) -> std::option::Option<&crate::model::ArrayProperties> {
         self.array_properties.as_ref()
     }
-    /// <p>A list of dependencies for the job. A job can depend upon a maximum of 20 jobs. You can specify a
-    /// <code>SEQUENTIAL</code> type dependency without specifying a job ID for array jobs so that each child array job
-    /// completes sequentially, starting at index 0. You can also specify an <code>N_TO_N</code> type dependency with a job
-    /// ID for array jobs. In that case, each index child of this job must wait for the corresponding index child of each
-    /// dependency to complete before it can begin.</p>
+    /// <p>A list of dependencies for the job. A job can depend upon a maximum of 20 jobs. You can specify a <code>SEQUENTIAL</code> type dependency without specifying a job ID for array jobs so that each child array job completes sequentially, starting at index 0. You can also specify an <code>N_TO_N</code> type dependency with a job ID for array jobs. In that case, each index child of this job must wait for the corresponding index child of each dependency to complete before it can begin.</p>
     pub fn depends_on(&self) -> std::option::Option<&[crate::model::JobDependency]> {
         self.depends_on.as_deref()
     }
-    /// <p>The job definition used by this job. This value can be one of <code>name</code>, <code>name:revision</code>, or
-    /// the Amazon Resource Name (ARN) for the job definition. If <code>name</code> is specified without a revision then the latest active
-    /// revision is used.</p>
+    /// <p>The job definition used by this job. This value can be one of <code>name</code>, <code>name:revision</code>, or the Amazon Resource Name (ARN) for the job definition. If <code>name</code> is specified without a revision then the latest active revision is used.</p>
     pub fn job_definition(&self) -> std::option::Option<&str> {
         self.job_definition.as_deref()
     }
-    /// <p>Additional parameters passed to the job that replace parameter substitution placeholders that are set in the job
-    /// definition. Parameters are specified as a key and value pair mapping. Parameters in a <code>SubmitJob</code> request
-    /// override any corresponding parameter defaults from the job definition.</p>
+    /// <p>Additional parameters passed to the job that replace parameter substitution placeholders that are set in the job definition. Parameters are specified as a key and value pair mapping. Parameters in a <code>SubmitJob</code> request override any corresponding parameter defaults from the job definition.</p>
     pub fn parameters(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.parameters.as_ref()
     }
-    /// <p>A list of container overrides in the JSON format that specify the name of a container in the specified job
-    /// definition and the overrides it should receive. You can override the default command for a container, which is
-    /// specified in the job definition or the Docker image, with a <code>command</code> override. You can also override
-    /// existing environment variables on a container or add new environment variables to it with an <code>environment</code>
-    /// override.</p>
+    /// <p>A list of container overrides in the JSON format that specify the name of a container in the specified job definition and the overrides it should receive. You can override the default command for a container, which is specified in the job definition or the Docker image, with a <code>command</code> override. You can also override existing environment variables on a container or add new environment variables to it with an <code>environment</code> override.</p>
     pub fn container_overrides(&self) -> std::option::Option<&crate::model::ContainerOverrides> {
         self.container_overrides.as_ref()
     }
-    /// <p>A list of node overrides in JSON format that specify the node range to target and the container overrides for
-    /// that node range.</p>
-    /// <note>
-    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources; use
-    /// <code>containerOverrides</code> instead.</p>
+    /// <p>A list of node overrides in JSON format that specify the node range to target and the container overrides for that node range.</p> <note>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources; use <code>containerOverrides</code> instead.</p>
     /// </note>
     pub fn node_overrides(&self) -> std::option::Option<&crate::model::NodeOverrides> {
         self.node_overrides.as_ref()
     }
-    /// <p>The retry strategy to use for failed jobs from this <a>SubmitJob</a> operation. When a retry strategy
-    /// is specified here, it overrides the retry strategy defined in the job definition.</p>
+    /// <p>The retry strategy to use for failed jobs from this <code>SubmitJob</code> operation. When a retry strategy is specified here, it overrides the retry strategy defined in the job definition.</p>
     pub fn retry_strategy(&self) -> std::option::Option<&crate::model::RetryStrategy> {
         self.retry_strategy.as_ref()
     }
-    /// <p>Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If no
-    /// value is specified, the tags aren't propagated. Tags can only be propagated to the tasks during task creation. For
-    /// tags with the same name, job tags are given priority over job definitions tags. If the total number of combined tags
-    /// from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state. When specified, this
-    /// overrides the tag propagation setting in the job definition.</p>
+    /// <p>Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks during task creation. For tags with the same name, job tags are given priority over job definitions tags. If the total number of combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state. When specified, this overrides the tag propagation setting in the job definition.</p>
     pub fn propagate_tags(&self) -> bool {
         self.propagate_tags
     }
-    /// <p>The timeout configuration for this <a>SubmitJob</a> operation. You can specify a timeout duration
-    /// after which Batch terminates your jobs if they haven't finished. If a job is terminated due to a timeout, it isn't
-    /// retried. The minimum value for the timeout is 60 seconds. This configuration overrides any timeout configuration
-    /// specified in the job definition. For array jobs, child jobs have the same timeout configuration as the parent job.
-    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
-    /// Timeouts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>The timeout configuration for this <code>SubmitJob</code> operation. You can specify a timeout duration after which Batch terminates your jobs if they haven't finished. If a job is terminated due to a timeout, it isn't retried. The minimum value for the timeout is 60 seconds. This configuration overrides any timeout configuration specified in the job definition. For array jobs, child jobs have the same timeout configuration as the parent job. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job Timeouts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn timeout(&self) -> std::option::Option<&crate::model::JobTimeout> {
         self.timeout.as_ref()
     }
-    /// <p>The tags that you apply to the job request to help you categorize and organize your resources. Each tag consists
-    /// of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in <i>Amazon Web Services General
-    /// Reference</i>.</p>
+    /// <p>The tags that you apply to the job request to help you categorize and organize your resources. Each tag consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in <i>Amazon Web Services General Reference</i>.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -5824,147 +5204,93 @@ impl std::fmt::Debug for SubmitJobInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterJobDefinitionInput {
-    /// <p>The name of the job definition to register. It can be up to 128 letters long. It can contain uppercase and
-    /// lowercase letters, numbers, hyphens (-), and underscores (_).</p>
+    /// <p>The name of the job definition to register. It can be up to 128 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
     pub job_definition_name: std::option::Option<std::string::String>,
-    /// <p>The type of job definition. For more information about multi-node parallel jobs, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node parallel job definition</a> in the
-    /// <i>Batch User Guide</i>.</p>
-    /// <note>
+    /// <p>The type of job definition. For more information about multi-node parallel jobs, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node parallel job definition</a> in the <i>Batch User Guide</i>.</p> <note>
     /// <p>If the job is run on Fargate resources, then <code>multinode</code> isn't supported.</p>
     /// </note>
     pub r#type: std::option::Option<crate::model::JobDefinitionType>,
-    /// <p>Default parameter substitution placeholders to set in the job definition. Parameters are specified as a
-    /// key-value pair mapping. Parameters in a <code>SubmitJob</code> request override any corresponding parameter defaults
-    /// from the job definition.</p>
+    /// <p>Default parameter substitution placeholders to set in the job definition. Parameters are specified as a key-value pair mapping. Parameters in a <code>SubmitJob</code> request override any corresponding parameter defaults from the job definition.</p>
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The scheduling priority for jobs that are submitted with this job definition. This will only affect jobs in job
-    /// queues with a fair share policy. Jobs with a higher scheduling priority will be scheduled before jobs with a lower
-    /// scheduling priority.</p>
+    /// <p>The scheduling priority for jobs that are submitted with this job definition. This will only affect jobs in job queues with a fair share policy. Jobs with a higher scheduling priority will be scheduled before jobs with a lower scheduling priority.</p>
     /// <p>The minimum supported value is 0 and the maximum supported value is 9999.</p>
     pub scheduling_priority: i32,
-    /// <p>An object with various properties specific to single-node container-based jobs. If the job definition's
-    /// <code>type</code> parameter is <code>container</code>, then you must specify either <code>containerProperties</code>
-    /// or <code>nodeProperties</code>.</p>
-    /// <note>
-    /// <p>If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use only
-    /// <code>containerProperties</code>.</p>
+    /// <p>An object with various properties specific to single-node container-based jobs. If the job definition's <code>type</code> parameter is <code>container</code>, then you must specify either <code>containerProperties</code> or <code>nodeProperties</code>.</p> <note>
+    /// <p>If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use only <code>containerProperties</code>.</p>
     /// </note>
     pub container_properties: std::option::Option<crate::model::ContainerProperties>,
-    /// <p>An object with various properties specific to multi-node parallel jobs. If you specify node properties for a
-    /// job, it becomes a multi-node parallel job. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node Parallel Jobs</a> in the
-    /// <i>Batch User Guide</i>. If the job definition's <code>type</code> parameter is
-    /// <code>container</code>, then you must specify either <code>containerProperties</code> or
-    /// <code>nodeProperties</code>.</p>
-    /// <note>
-    /// <p>If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use
-    /// <code>containerProperties</code> instead.</p>
+    /// <p>An object with various properties specific to multi-node parallel jobs. If you specify node properties for a job, it becomes a multi-node parallel job. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node Parallel Jobs</a> in the <i>Batch User Guide</i>. If the job definition's <code>type</code> parameter is <code>container</code>, then you must specify either <code>containerProperties</code> or <code>nodeProperties</code>.</p> <note>
+    /// <p>If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use <code>containerProperties</code> instead.</p>
     /// </note>
     pub node_properties: std::option::Option<crate::model::NodeProperties>,
-    /// <p>The retry strategy to use for failed jobs that are submitted with this job definition. Any retry strategy that's
-    /// specified during a <a>SubmitJob</a> operation overrides the retry strategy defined here. If a job is
-    /// terminated due to a timeout, it isn't retried.</p>
+    /// <p>The retry strategy to use for failed jobs that are submitted with this job definition. Any retry strategy that's specified during a <code>SubmitJob</code> operation overrides the retry strategy defined here. If a job is terminated due to a timeout, it isn't retried.</p>
     pub retry_strategy: std::option::Option<crate::model::RetryStrategy>,
-    /// <p>Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If no
-    /// value is specified, the tags are not propagated. Tags can only be propagated to the tasks during task creation. For
-    /// tags with the same name, job tags are given priority over job definitions tags. If the total number of combined tags
-    /// from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.</p>
+    /// <p>Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If no value is specified, the tags are not propagated. Tags can only be propagated to the tasks during task creation. For tags with the same name, job tags are given priority over job definitions tags. If the total number of combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.</p>
     pub propagate_tags: bool,
-    /// <p>The timeout configuration for jobs that are submitted with this job definition, after which Batch terminates
-    /// your jobs if they have not finished. If a job is terminated due to a timeout, it isn't retried. The minimum value for
-    /// the timeout is 60 seconds. Any timeout configuration that's specified during a <a>SubmitJob</a> operation
-    /// overrides the timeout configuration defined here. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/job_timeouts.html">Job Timeouts</a> in the <i>Batch User Guide</i>.</p>
+    /// <p>The timeout configuration for jobs that are submitted with this job definition, after which Batch terminates your jobs if they have not finished. If a job is terminated due to a timeout, it isn't retried. The minimum value for the timeout is 60 seconds. Any timeout configuration that's specified during a <code>SubmitJob</code> operation overrides the timeout configuration defined here. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/job_timeouts.html">Job Timeouts</a> in the <i>Batch User Guide</i>.</p>
     pub timeout: std::option::Option<crate::model::JobTimeout>,
-    /// <p>The tags that you apply to the job definition to help you categorize and organize your resources. Each tag
-    /// consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging Amazon Web Services Resources</a> in <i>Batch User Guide</i>.</p>
+    /// <p>The tags that you apply to the job definition to help you categorize and organize your resources. Each tag consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging Amazon Web Services Resources</a> in <i>Batch User Guide</i>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The platform capabilities required by the job definition. If no value is specified, it defaults to
-    /// <code>EC2</code>. To run the job on Fargate resources, specify <code>FARGATE</code>.</p>
+    /// <p>The platform capabilities required by the job definition. If no value is specified, it defaults to <code>EC2</code>. To run the job on Fargate resources, specify <code>FARGATE</code>.</p>
     pub platform_capabilities: std::option::Option<std::vec::Vec<crate::model::PlatformCapability>>,
 }
 impl RegisterJobDefinitionInput {
-    /// <p>The name of the job definition to register. It can be up to 128 letters long. It can contain uppercase and
-    /// lowercase letters, numbers, hyphens (-), and underscores (_).</p>
+    /// <p>The name of the job definition to register. It can be up to 128 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
     pub fn job_definition_name(&self) -> std::option::Option<&str> {
         self.job_definition_name.as_deref()
     }
-    /// <p>The type of job definition. For more information about multi-node parallel jobs, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node parallel job definition</a> in the
-    /// <i>Batch User Guide</i>.</p>
-    /// <note>
+    /// <p>The type of job definition. For more information about multi-node parallel jobs, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node parallel job definition</a> in the <i>Batch User Guide</i>.</p> <note>
     /// <p>If the job is run on Fargate resources, then <code>multinode</code> isn't supported.</p>
     /// </note>
     pub fn r#type(&self) -> std::option::Option<&crate::model::JobDefinitionType> {
         self.r#type.as_ref()
     }
-    /// <p>Default parameter substitution placeholders to set in the job definition. Parameters are specified as a
-    /// key-value pair mapping. Parameters in a <code>SubmitJob</code> request override any corresponding parameter defaults
-    /// from the job definition.</p>
+    /// <p>Default parameter substitution placeholders to set in the job definition. Parameters are specified as a key-value pair mapping. Parameters in a <code>SubmitJob</code> request override any corresponding parameter defaults from the job definition.</p>
     pub fn parameters(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.parameters.as_ref()
     }
-    /// <p>The scheduling priority for jobs that are submitted with this job definition. This will only affect jobs in job
-    /// queues with a fair share policy. Jobs with a higher scheduling priority will be scheduled before jobs with a lower
-    /// scheduling priority.</p>
+    /// <p>The scheduling priority for jobs that are submitted with this job definition. This will only affect jobs in job queues with a fair share policy. Jobs with a higher scheduling priority will be scheduled before jobs with a lower scheduling priority.</p>
     /// <p>The minimum supported value is 0 and the maximum supported value is 9999.</p>
     pub fn scheduling_priority(&self) -> i32 {
         self.scheduling_priority
     }
-    /// <p>An object with various properties specific to single-node container-based jobs. If the job definition's
-    /// <code>type</code> parameter is <code>container</code>, then you must specify either <code>containerProperties</code>
-    /// or <code>nodeProperties</code>.</p>
-    /// <note>
-    /// <p>If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use only
-    /// <code>containerProperties</code>.</p>
+    /// <p>An object with various properties specific to single-node container-based jobs. If the job definition's <code>type</code> parameter is <code>container</code>, then you must specify either <code>containerProperties</code> or <code>nodeProperties</code>.</p> <note>
+    /// <p>If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use only <code>containerProperties</code>.</p>
     /// </note>
     pub fn container_properties(&self) -> std::option::Option<&crate::model::ContainerProperties> {
         self.container_properties.as_ref()
     }
-    /// <p>An object with various properties specific to multi-node parallel jobs. If you specify node properties for a
-    /// job, it becomes a multi-node parallel job. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node Parallel Jobs</a> in the
-    /// <i>Batch User Guide</i>. If the job definition's <code>type</code> parameter is
-    /// <code>container</code>, then you must specify either <code>containerProperties</code> or
-    /// <code>nodeProperties</code>.</p>
-    /// <note>
-    /// <p>If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use
-    /// <code>containerProperties</code> instead.</p>
+    /// <p>An object with various properties specific to multi-node parallel jobs. If you specify node properties for a job, it becomes a multi-node parallel job. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node Parallel Jobs</a> in the <i>Batch User Guide</i>. If the job definition's <code>type</code> parameter is <code>container</code>, then you must specify either <code>containerProperties</code> or <code>nodeProperties</code>.</p> <note>
+    /// <p>If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use <code>containerProperties</code> instead.</p>
     /// </note>
     pub fn node_properties(&self) -> std::option::Option<&crate::model::NodeProperties> {
         self.node_properties.as_ref()
     }
-    /// <p>The retry strategy to use for failed jobs that are submitted with this job definition. Any retry strategy that's
-    /// specified during a <a>SubmitJob</a> operation overrides the retry strategy defined here. If a job is
-    /// terminated due to a timeout, it isn't retried.</p>
+    /// <p>The retry strategy to use for failed jobs that are submitted with this job definition. Any retry strategy that's specified during a <code>SubmitJob</code> operation overrides the retry strategy defined here. If a job is terminated due to a timeout, it isn't retried.</p>
     pub fn retry_strategy(&self) -> std::option::Option<&crate::model::RetryStrategy> {
         self.retry_strategy.as_ref()
     }
-    /// <p>Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If no
-    /// value is specified, the tags are not propagated. Tags can only be propagated to the tasks during task creation. For
-    /// tags with the same name, job tags are given priority over job definitions tags. If the total number of combined tags
-    /// from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.</p>
+    /// <p>Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If no value is specified, the tags are not propagated. Tags can only be propagated to the tasks during task creation. For tags with the same name, job tags are given priority over job definitions tags. If the total number of combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.</p>
     pub fn propagate_tags(&self) -> bool {
         self.propagate_tags
     }
-    /// <p>The timeout configuration for jobs that are submitted with this job definition, after which Batch terminates
-    /// your jobs if they have not finished. If a job is terminated due to a timeout, it isn't retried. The minimum value for
-    /// the timeout is 60 seconds. Any timeout configuration that's specified during a <a>SubmitJob</a> operation
-    /// overrides the timeout configuration defined here. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/job_timeouts.html">Job Timeouts</a> in the <i>Batch User Guide</i>.</p>
+    /// <p>The timeout configuration for jobs that are submitted with this job definition, after which Batch terminates your jobs if they have not finished. If a job is terminated due to a timeout, it isn't retried. The minimum value for the timeout is 60 seconds. Any timeout configuration that's specified during a <code>SubmitJob</code> operation overrides the timeout configuration defined here. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/job_timeouts.html">Job Timeouts</a> in the <i>Batch User Guide</i>.</p>
     pub fn timeout(&self) -> std::option::Option<&crate::model::JobTimeout> {
         self.timeout.as_ref()
     }
-    /// <p>The tags that you apply to the job definition to help you categorize and organize your resources. Each tag
-    /// consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging Amazon Web Services Resources</a> in <i>Batch User Guide</i>.</p>
+    /// <p>The tags that you apply to the job definition to help you categorize and organize your resources. Each tag consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging Amazon Web Services Resources</a> in <i>Batch User Guide</i>.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
     }
-    /// <p>The platform capabilities required by the job definition. If no value is specified, it defaults to
-    /// <code>EC2</code>. To run the job on Fargate resources, specify <code>FARGATE</code>.</p>
+    /// <p>The platform capabilities required by the job definition. If no value is specified, it defaults to <code>EC2</code>. To run the job on Fargate resources, specify <code>FARGATE</code>.</p>
     pub fn platform_capabilities(
         &self,
     ) -> std::option::Option<&[crate::model::PlatformCapability]> {
@@ -5993,13 +5319,11 @@ impl std::fmt::Debug for RegisterJobDefinitionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
-    /// <p>The Amazon Resource Name (ARN) that identifies the resource that tags are listed for. Batch resources that support tags are compute environments, jobs, job definitions, job queues,
-    /// and scheduling policies. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
+    /// <p>The Amazon Resource Name (ARN) that identifies the resource that tags are listed for. Batch resources that support tags are compute environments, jobs, job definitions, job queues, and scheduling policies. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
-    /// <p>The Amazon Resource Name (ARN) that identifies the resource that tags are listed for. Batch resources that support tags are compute environments, jobs, job definitions, job queues,
-    /// and scheduling policies. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
+    /// <p>The Amazon Resource Name (ARN) that identifies the resource that tags are listed for. Batch resources that support tags are compute environments, jobs, job definitions, job queues, and scheduling policies. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -6016,44 +5340,20 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSchedulingPoliciesInput {
-    /// <p>The maximum number of results that's returned by <code>ListSchedulingPolicies</code> in paginated output. When
-    /// this parameter is used, <code>ListSchedulingPolicies</code> only returns <code>maxResults</code> results in a single
-    /// page and a <code>nextToken</code> response element. You can see the remaining results of the initial request by
-    /// sending another <code>ListSchedulingPolicies</code> request with the returned <code>nextToken</code> value. This
-    /// value can be between 1 and 100. If this parameter isn't used,
-    /// <code>ListSchedulingPolicies</code> returns up to 100 results and a <code>nextToken</code> value
-    /// if applicable.</p>
+    /// <p>The maximum number of results that's returned by <code>ListSchedulingPolicies</code> in paginated output. When this parameter is used, <code>ListSchedulingPolicies</code> only returns <code>maxResults</code> results in a single page and a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListSchedulingPolicies</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, <code>ListSchedulingPolicies</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
     pub max_results: i32,
-    /// <p>The <code>nextToken</code> value that's returned from a previous paginated <code>ListSchedulingPolicies</code>
-    /// request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination
-    /// continues from the end of the previous results that returned the <code>nextToken</code> value. This value is
-    /// <code>null</code> when there are no more results to
-    /// return.</p>
-    /// <note>
-    /// <p>This token should be treated as an opaque identifier that's only used to
-    /// retrieve the next items in a list and not for other programmatic purposes.</p>
+    /// <p>The <code>nextToken</code> value that's returned from a previous paginated <code>ListSchedulingPolicies</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.</p> <note>
+    /// <p>This token should be treated as an opaque identifier that's only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSchedulingPoliciesInput {
-    /// <p>The maximum number of results that's returned by <code>ListSchedulingPolicies</code> in paginated output. When
-    /// this parameter is used, <code>ListSchedulingPolicies</code> only returns <code>maxResults</code> results in a single
-    /// page and a <code>nextToken</code> response element. You can see the remaining results of the initial request by
-    /// sending another <code>ListSchedulingPolicies</code> request with the returned <code>nextToken</code> value. This
-    /// value can be between 1 and 100. If this parameter isn't used,
-    /// <code>ListSchedulingPolicies</code> returns up to 100 results and a <code>nextToken</code> value
-    /// if applicable.</p>
+    /// <p>The maximum number of results that's returned by <code>ListSchedulingPolicies</code> in paginated output. When this parameter is used, <code>ListSchedulingPolicies</code> only returns <code>maxResults</code> results in a single page and a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListSchedulingPolicies</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, <code>ListSchedulingPolicies</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// <p>The <code>nextToken</code> value that's returned from a previous paginated <code>ListSchedulingPolicies</code>
-    /// request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination
-    /// continues from the end of the previous results that returned the <code>nextToken</code> value. This value is
-    /// <code>null</code> when there are no more results to
-    /// return.</p>
-    /// <note>
-    /// <p>This token should be treated as an opaque identifier that's only used to
-    /// retrieve the next items in a list and not for other programmatic purposes.</p>
+    /// <p>The <code>nextToken</code> value that's returned from a previous paginated <code>ListSchedulingPolicies</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.</p> <note>
+    /// <p>This token should be treated as an opaque identifier that's only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
@@ -6074,68 +5374,43 @@ impl std::fmt::Debug for ListSchedulingPoliciesInput {
 pub struct ListJobsInput {
     /// <p>The name or full Amazon Resource Name (ARN) of the job queue used to list jobs.</p>
     pub job_queue: std::option::Option<std::string::String>,
-    /// <p>The job ID for an array job. Specifying an array job ID with this parameter lists all child jobs from within the
-    /// specified array.</p>
+    /// <p>The job ID for an array job. Specifying an array job ID with this parameter lists all child jobs from within the specified array.</p>
     pub array_job_id: std::option::Option<std::string::String>,
-    /// <p>The job ID for a multi-node parallel job. Specifying a multi-node parallel job ID with this parameter lists all
-    /// nodes that are associated with the specified job.</p>
+    /// <p>The job ID for a multi-node parallel job. Specifying a multi-node parallel job ID with this parameter lists all nodes that are associated with the specified job.</p>
     pub multi_node_job_id: std::option::Option<std::string::String>,
-    /// <p>The job status used to filter jobs in the specified queue. If the <code>filters</code> parameter is specified,
-    /// the <code>jobStatus</code> parameter is ignored and jobs with any status are returned. If you don't specify a status,
-    /// only <code>RUNNING</code> jobs are returned.</p>
+    /// <p>The job status used to filter jobs in the specified queue. If the <code>filters</code> parameter is specified, the <code>jobStatus</code> parameter is ignored and jobs with any status are returned. If you don't specify a status, only <code>RUNNING</code> jobs are returned.</p>
     pub job_status: std::option::Option<crate::model::JobStatus>,
-    /// <p>The maximum number of results returned by <code>ListJobs</code> in paginated output. When this parameter is
-    /// used, <code>ListJobs</code> only returns <code>maxResults</code> results in a single page and a
-    /// <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another
-    /// <code>ListJobs</code> request with the returned <code>nextToken</code> value. This value can be between
-    /// 1 and 100. If this parameter isn't used, then <code>ListJobs</code> returns up to
-    /// 100 results and a <code>nextToken</code> value if applicable.</p>
+    /// <p>The maximum number of results returned by <code>ListJobs</code> in paginated output. When this parameter is used, <code>ListJobs</code> only returns <code>maxResults</code> results in a single page and a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>ListJobs</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
     pub max_results: i32,
-    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListJobs</code> request where
-    /// <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the
-    /// end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when
-    /// there are no more results to return.</p>
-    /// <note>
-    /// <p>This token should be treated as an opaque identifier that's only used to
-    /// retrieve the next items in a list and not for other programmatic purposes.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListJobs</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.</p> <note>
+    /// <p>This token should be treated as an opaque identifier that's only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The filter to apply to the query. Only one filter can be used at a time. When the filter is used,
-    /// <code>jobStatus</code> is ignored. The filter doesn't apply to child jobs in an array or multi-node parallel (MNP)
-    /// jobs. The results are sorted by the <code>createdAt</code> field, with the most recent jobs being first.</p>
+    /// <p>The filter to apply to the query. Only one filter can be used at a time. When the filter is used, <code>jobStatus</code> is ignored. The filter doesn't apply to child jobs in an array or multi-node parallel (MNP) jobs. The results are sorted by the <code>createdAt</code> field, with the most recent jobs being first.</p>
     /// <dl>
-    /// <dt>JOB_NAME</dt>
+    /// <dt>
+    /// JOB_NAME
+    /// </dt>
     /// <dd>
-    /// <p>The value of the filter is a case-insensitive match for the job name. If the value ends with an asterisk (*),
-    /// the filter will match any job name that begins with the string before the '*'. This corresponds to the
-    /// <code>jobName</code> value. For example, <code>test1</code> matches both <code>Test1</code> and
-    /// <code>test1</code>, and <code>test1*</code> matches both <code>test1</code> and <code>Test10</code>. When the
-    /// <code>JOB_NAME</code> filter is used, the results are grouped by the job name and version.</p>
+    /// <p>The value of the filter is a case-insensitive match for the job name. If the value ends with an asterisk (*), the filter will match any job name that begins with the string before the '*'. This corresponds to the <code>jobName</code> value. For example, <code>test1</code> matches both <code>Test1</code> and <code>test1</code>, and <code>test1*</code> matches both <code>test1</code> and <code>Test10</code>. When the <code>JOB_NAME</code> filter is used, the results are grouped by the job name and version.</p>
     /// </dd>
-    /// <dt>JOB_DEFINITION</dt>
+    /// <dt>
+    /// JOB_DEFINITION
+    /// </dt>
     /// <dd>
-    /// <p>The value for the filter is the name or Amazon Resource Name (ARN) of the job definition. This corresponds to the
-    /// <code>jobDefinition</code> value. The value is case sensitive. When the value for the filter is the job
-    /// definition name, the results include all the jobs that used any revision of that job definition name. If the value
-    /// ends with an asterisk (*), the filter will match any job definition name that begins with the string before the
-    /// '*'. For example, <code>jd1</code> matches only <code>jd1</code>, and <code>jd1*</code> matches both
-    /// <code>jd1</code> and <code>jd1A</code>. The version of the job definition that's used doesn't affect the sort
-    /// order. When the <code>JOB_DEFINITION</code> filter is used and the ARN is used (which is in the form
-    /// <code>arn:${Partition}:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code>), the
-    /// results include jobs that used the specified revision of the job definition. Asterisk (*) is not supported when
-    /// the ARN is used.</p>
+    /// <p>The value for the filter is the name or Amazon Resource Name (ARN) of the job definition. This corresponds to the <code>jobDefinition</code> value. The value is case sensitive. When the value for the filter is the job definition name, the results include all the jobs that used any revision of that job definition name. If the value ends with an asterisk (*), the filter will match any job definition name that begins with the string before the '*'. For example, <code>jd1</code> matches only <code>jd1</code>, and <code>jd1*</code> matches both <code>jd1</code> and <code>jd1A</code>. The version of the job definition that's used doesn't affect the sort order. When the <code>JOB_DEFINITION</code> filter is used and the ARN is used (which is in the form <code>arn:${Partition}:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code>), the results include jobs that used the specified revision of the job definition. Asterisk (*) is not supported when the ARN is used.</p>
     /// </dd>
-    /// <dt>BEFORE_CREATED_AT</dt>
+    /// <dt>
+    /// BEFORE_CREATED_AT
+    /// </dt>
     /// <dd>
-    /// <p>The value for the filter is the time that's before the job was created. This corresponds to the
-    /// <code>createdAt</code> value. The value is a string representation of the number of milliseconds since 00:00:00
-    /// UTC (midnight) on January 1, 1970.</p>
+    /// <p>The value for the filter is the time that's before the job was created. This corresponds to the <code>createdAt</code> value. The value is a string representation of the number of milliseconds since 00:00:00 UTC (midnight) on January 1, 1970.</p>
     /// </dd>
-    /// <dt>AFTER_CREATED_AT</dt>
+    /// <dt>
+    /// AFTER_CREATED_AT
+    /// </dt>
     /// <dd>
-    /// <p>The value for the filter is the time that's after the job was created. This corresponds to the
-    /// <code>createdAt</code> value. The value is a string representation of the number of milliseconds since 00:00:00
-    /// UTC (midnight) on January 1, 1970.</p>
+    /// <p>The value for the filter is the time that's after the job was created. This corresponds to the <code>createdAt</code> value. The value is a string representation of the number of milliseconds since 00:00:00 UTC (midnight) on January 1, 1970.</p>
     /// </dd>
     /// </dl>
     pub filters: std::option::Option<std::vec::Vec<crate::model::KeyValuesPair>>,
@@ -6145,78 +5420,53 @@ impl ListJobsInput {
     pub fn job_queue(&self) -> std::option::Option<&str> {
         self.job_queue.as_deref()
     }
-    /// <p>The job ID for an array job. Specifying an array job ID with this parameter lists all child jobs from within the
-    /// specified array.</p>
+    /// <p>The job ID for an array job. Specifying an array job ID with this parameter lists all child jobs from within the specified array.</p>
     pub fn array_job_id(&self) -> std::option::Option<&str> {
         self.array_job_id.as_deref()
     }
-    /// <p>The job ID for a multi-node parallel job. Specifying a multi-node parallel job ID with this parameter lists all
-    /// nodes that are associated with the specified job.</p>
+    /// <p>The job ID for a multi-node parallel job. Specifying a multi-node parallel job ID with this parameter lists all nodes that are associated with the specified job.</p>
     pub fn multi_node_job_id(&self) -> std::option::Option<&str> {
         self.multi_node_job_id.as_deref()
     }
-    /// <p>The job status used to filter jobs in the specified queue. If the <code>filters</code> parameter is specified,
-    /// the <code>jobStatus</code> parameter is ignored and jobs with any status are returned. If you don't specify a status,
-    /// only <code>RUNNING</code> jobs are returned.</p>
+    /// <p>The job status used to filter jobs in the specified queue. If the <code>filters</code> parameter is specified, the <code>jobStatus</code> parameter is ignored and jobs with any status are returned. If you don't specify a status, only <code>RUNNING</code> jobs are returned.</p>
     pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
         self.job_status.as_ref()
     }
-    /// <p>The maximum number of results returned by <code>ListJobs</code> in paginated output. When this parameter is
-    /// used, <code>ListJobs</code> only returns <code>maxResults</code> results in a single page and a
-    /// <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another
-    /// <code>ListJobs</code> request with the returned <code>nextToken</code> value. This value can be between
-    /// 1 and 100. If this parameter isn't used, then <code>ListJobs</code> returns up to
-    /// 100 results and a <code>nextToken</code> value if applicable.</p>
+    /// <p>The maximum number of results returned by <code>ListJobs</code> in paginated output. When this parameter is used, <code>ListJobs</code> only returns <code>maxResults</code> results in a single page and a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>ListJobs</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListJobs</code> request where
-    /// <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the
-    /// end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when
-    /// there are no more results to return.</p>
-    /// <note>
-    /// <p>This token should be treated as an opaque identifier that's only used to
-    /// retrieve the next items in a list and not for other programmatic purposes.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListJobs</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.</p> <note>
+    /// <p>This token should be treated as an opaque identifier that's only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The filter to apply to the query. Only one filter can be used at a time. When the filter is used,
-    /// <code>jobStatus</code> is ignored. The filter doesn't apply to child jobs in an array or multi-node parallel (MNP)
-    /// jobs. The results are sorted by the <code>createdAt</code> field, with the most recent jobs being first.</p>
+    /// <p>The filter to apply to the query. Only one filter can be used at a time. When the filter is used, <code>jobStatus</code> is ignored. The filter doesn't apply to child jobs in an array or multi-node parallel (MNP) jobs. The results are sorted by the <code>createdAt</code> field, with the most recent jobs being first.</p>
     /// <dl>
-    /// <dt>JOB_NAME</dt>
+    /// <dt>
+    /// JOB_NAME
+    /// </dt>
     /// <dd>
-    /// <p>The value of the filter is a case-insensitive match for the job name. If the value ends with an asterisk (*),
-    /// the filter will match any job name that begins with the string before the '*'. This corresponds to the
-    /// <code>jobName</code> value. For example, <code>test1</code> matches both <code>Test1</code> and
-    /// <code>test1</code>, and <code>test1*</code> matches both <code>test1</code> and <code>Test10</code>. When the
-    /// <code>JOB_NAME</code> filter is used, the results are grouped by the job name and version.</p>
+    /// <p>The value of the filter is a case-insensitive match for the job name. If the value ends with an asterisk (*), the filter will match any job name that begins with the string before the '*'. This corresponds to the <code>jobName</code> value. For example, <code>test1</code> matches both <code>Test1</code> and <code>test1</code>, and <code>test1*</code> matches both <code>test1</code> and <code>Test10</code>. When the <code>JOB_NAME</code> filter is used, the results are grouped by the job name and version.</p>
     /// </dd>
-    /// <dt>JOB_DEFINITION</dt>
+    /// <dt>
+    /// JOB_DEFINITION
+    /// </dt>
     /// <dd>
-    /// <p>The value for the filter is the name or Amazon Resource Name (ARN) of the job definition. This corresponds to the
-    /// <code>jobDefinition</code> value. The value is case sensitive. When the value for the filter is the job
-    /// definition name, the results include all the jobs that used any revision of that job definition name. If the value
-    /// ends with an asterisk (*), the filter will match any job definition name that begins with the string before the
-    /// '*'. For example, <code>jd1</code> matches only <code>jd1</code>, and <code>jd1*</code> matches both
-    /// <code>jd1</code> and <code>jd1A</code>. The version of the job definition that's used doesn't affect the sort
-    /// order. When the <code>JOB_DEFINITION</code> filter is used and the ARN is used (which is in the form
-    /// <code>arn:${Partition}:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code>), the
-    /// results include jobs that used the specified revision of the job definition. Asterisk (*) is not supported when
-    /// the ARN is used.</p>
+    /// <p>The value for the filter is the name or Amazon Resource Name (ARN) of the job definition. This corresponds to the <code>jobDefinition</code> value. The value is case sensitive. When the value for the filter is the job definition name, the results include all the jobs that used any revision of that job definition name. If the value ends with an asterisk (*), the filter will match any job definition name that begins with the string before the '*'. For example, <code>jd1</code> matches only <code>jd1</code>, and <code>jd1*</code> matches both <code>jd1</code> and <code>jd1A</code>. The version of the job definition that's used doesn't affect the sort order. When the <code>JOB_DEFINITION</code> filter is used and the ARN is used (which is in the form <code>arn:${Partition}:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code>), the results include jobs that used the specified revision of the job definition. Asterisk (*) is not supported when the ARN is used.</p>
     /// </dd>
-    /// <dt>BEFORE_CREATED_AT</dt>
+    /// <dt>
+    /// BEFORE_CREATED_AT
+    /// </dt>
     /// <dd>
-    /// <p>The value for the filter is the time that's before the job was created. This corresponds to the
-    /// <code>createdAt</code> value. The value is a string representation of the number of milliseconds since 00:00:00
-    /// UTC (midnight) on January 1, 1970.</p>
+    /// <p>The value for the filter is the time that's before the job was created. This corresponds to the <code>createdAt</code> value. The value is a string representation of the number of milliseconds since 00:00:00 UTC (midnight) on January 1, 1970.</p>
     /// </dd>
-    /// <dt>AFTER_CREATED_AT</dt>
+    /// <dt>
+    /// AFTER_CREATED_AT
+    /// </dt>
     /// <dd>
-    /// <p>The value for the filter is the time that's after the job was created. This corresponds to the
-    /// <code>createdAt</code> value. The value is a string representation of the number of milliseconds since 00:00:00
-    /// UTC (midnight) on January 1, 1970.</p>
+    /// <p>The value for the filter is the time that's after the job was created. This corresponds to the <code>createdAt</code> value. The value is a string representation of the number of milliseconds since 00:00:00 UTC (midnight) on January 1, 1970.</p>
     /// </dd>
     /// </dl>
     pub fn filters(&self) -> std::option::Option<&[crate::model::KeyValuesPair]> {
@@ -6285,20 +5535,10 @@ impl std::fmt::Debug for DescribeJobsInput {
 pub struct DescribeJobQueuesInput {
     /// <p>A list of up to 100 queue names or full queue Amazon Resource Name (ARN) entries.</p>
     pub job_queues: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The maximum number of results returned by <code>DescribeJobQueues</code> in paginated output. When this
-    /// parameter is used, <code>DescribeJobQueues</code> only returns <code>maxResults</code> results in a single page and a
-    /// <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another
-    /// <code>DescribeJobQueues</code> request with the returned <code>nextToken</code> value. This value can be between
-    /// 1 and 100. If this parameter isn't used, then <code>DescribeJobQueues</code> returns up
-    /// to 100 results and a <code>nextToken</code> value if applicable.</p>
+    /// <p>The maximum number of results returned by <code>DescribeJobQueues</code> in paginated output. When this parameter is used, <code>DescribeJobQueues</code> only returns <code>maxResults</code> results in a single page and a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeJobQueues</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>DescribeJobQueues</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
     pub max_results: i32,
-    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeJobQueues</code> request where
-    /// <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the
-    /// end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when
-    /// there are no more results to return.</p>
-    /// <note>
-    /// <p>This token should be treated as an opaque identifier that's only used to
-    /// retrieve the next items in a list and not for other programmatic purposes.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeJobQueues</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.</p> <note>
+    /// <p>This token should be treated as an opaque identifier that's only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub next_token: std::option::Option<std::string::String>,
 }
@@ -6307,22 +5547,12 @@ impl DescribeJobQueuesInput {
     pub fn job_queues(&self) -> std::option::Option<&[std::string::String]> {
         self.job_queues.as_deref()
     }
-    /// <p>The maximum number of results returned by <code>DescribeJobQueues</code> in paginated output. When this
-    /// parameter is used, <code>DescribeJobQueues</code> only returns <code>maxResults</code> results in a single page and a
-    /// <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another
-    /// <code>DescribeJobQueues</code> request with the returned <code>nextToken</code> value. This value can be between
-    /// 1 and 100. If this parameter isn't used, then <code>DescribeJobQueues</code> returns up
-    /// to 100 results and a <code>nextToken</code> value if applicable.</p>
+    /// <p>The maximum number of results returned by <code>DescribeJobQueues</code> in paginated output. When this parameter is used, <code>DescribeJobQueues</code> only returns <code>maxResults</code> results in a single page and a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeJobQueues</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>DescribeJobQueues</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeJobQueues</code> request where
-    /// <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the
-    /// end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when
-    /// there are no more results to return.</p>
-    /// <note>
-    /// <p>This token should be treated as an opaque identifier that's only used to
-    /// retrieve the next items in a list and not for other programmatic purposes.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeJobQueues</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.</p> <note>
+    /// <p>This token should be treated as an opaque identifier that's only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
@@ -6342,46 +5572,25 @@ impl std::fmt::Debug for DescribeJobQueuesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeJobDefinitionsInput {
-    /// <p>A list of up to 100 job definitions. Each entry in the list can either be an ARN in the format
-    /// <code>arn:aws:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code> or a short version
-    /// using the form <code>${JobDefinitionName}:${Revision}</code>.</p>
+    /// <p>A list of up to 100 job definitions. Each entry in the list can either be an ARN in the format <code>arn:aws:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code> or a short version using the form <code>${JobDefinitionName}:${Revision}</code>.</p>
     pub job_definitions: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The maximum number of results returned by <code>DescribeJobDefinitions</code> in paginated output. When this
-    /// parameter is used, <code>DescribeJobDefinitions</code> only returns <code>maxResults</code> results in a single page
-    /// and a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending
-    /// another <code>DescribeJobDefinitions</code> request with the returned <code>nextToken</code> value. This value can be
-    /// between 1 and 100. If this parameter isn't used, then
-    /// <code>DescribeJobDefinitions</code> returns up to 100 results and a <code>nextToken</code> value
-    /// if applicable.</p>
+    /// <p>The maximum number of results returned by <code>DescribeJobDefinitions</code> in paginated output. When this parameter is used, <code>DescribeJobDefinitions</code> only returns <code>maxResults</code> results in a single page and a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeJobDefinitions</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>DescribeJobDefinitions</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
     pub max_results: i32,
     /// <p>The name of the job definition to describe.</p>
     pub job_definition_name: std::option::Option<std::string::String>,
     /// <p>The status used to filter job definitions.</p>
     pub status: std::option::Option<std::string::String>,
-    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeJobDefinitions</code> request
-    /// where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues
-    /// from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code>
-    /// when there are no more results to return.</p>
-    /// <note>
-    /// <p>This token should be treated as an opaque identifier that's only used to
-    /// retrieve the next items in a list and not for other programmatic purposes.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeJobDefinitions</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.</p> <note>
+    /// <p>This token should be treated as an opaque identifier that's only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeJobDefinitionsInput {
-    /// <p>A list of up to 100 job definitions. Each entry in the list can either be an ARN in the format
-    /// <code>arn:aws:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code> or a short version
-    /// using the form <code>${JobDefinitionName}:${Revision}</code>.</p>
+    /// <p>A list of up to 100 job definitions. Each entry in the list can either be an ARN in the format <code>arn:aws:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code> or a short version using the form <code>${JobDefinitionName}:${Revision}</code>.</p>
     pub fn job_definitions(&self) -> std::option::Option<&[std::string::String]> {
         self.job_definitions.as_deref()
     }
-    /// <p>The maximum number of results returned by <code>DescribeJobDefinitions</code> in paginated output. When this
-    /// parameter is used, <code>DescribeJobDefinitions</code> only returns <code>maxResults</code> results in a single page
-    /// and a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending
-    /// another <code>DescribeJobDefinitions</code> request with the returned <code>nextToken</code> value. This value can be
-    /// between 1 and 100. If this parameter isn't used, then
-    /// <code>DescribeJobDefinitions</code> returns up to 100 results and a <code>nextToken</code> value
-    /// if applicable.</p>
+    /// <p>The maximum number of results returned by <code>DescribeJobDefinitions</code> in paginated output. When this parameter is used, <code>DescribeJobDefinitions</code> only returns <code>maxResults</code> results in a single page and a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeJobDefinitions</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>DescribeJobDefinitions</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
@@ -6393,13 +5602,8 @@ impl DescribeJobDefinitionsInput {
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
     }
-    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeJobDefinitions</code> request
-    /// where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues
-    /// from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code>
-    /// when there are no more results to return.</p>
-    /// <note>
-    /// <p>This token should be treated as an opaque identifier that's only used to
-    /// retrieve the next items in a list and not for other programmatic purposes.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeJobDefinitions</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.</p> <note>
+    /// <p>This token should be treated as an opaque identifier that's only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
@@ -6423,21 +5627,10 @@ impl std::fmt::Debug for DescribeJobDefinitionsInput {
 pub struct DescribeComputeEnvironmentsInput {
     /// <p>A list of up to 100 compute environment names or full Amazon Resource Name (ARN) entries.</p>
     pub compute_environments: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The maximum number of cluster results returned by <code>DescribeComputeEnvironments</code> in paginated output.
-    /// When this parameter is used, <code>DescribeComputeEnvironments</code> only returns <code>maxResults</code> results in
-    /// a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can
-    /// be seen by sending another <code>DescribeComputeEnvironments</code> request with the returned <code>nextToken</code>
-    /// value. This value can be between 1 and 100. If this parameter isn't used, then
-    /// <code>DescribeComputeEnvironments</code> returns up to 100 results and a <code>nextToken</code>
-    /// value if applicable.</p>
+    /// <p>The maximum number of cluster results returned by <code>DescribeComputeEnvironments</code> in paginated output. When this parameter is used, <code>DescribeComputeEnvironments</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeComputeEnvironments</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>DescribeComputeEnvironments</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
     pub max_results: i32,
-    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeComputeEnvironments</code>
-    /// request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination
-    /// continues from the end of the previous results that returned the <code>nextToken</code> value. This value is
-    /// <code>null</code> when there are no more results to return.</p>
-    /// <note>
-    /// <p>This token should be treated as an opaque identifier that's only used to
-    /// retrieve the next items in a list and not for other programmatic purposes.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeComputeEnvironments</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.</p> <note>
+    /// <p>This token should be treated as an opaque identifier that's only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub next_token: std::option::Option<std::string::String>,
 }
@@ -6446,23 +5639,12 @@ impl DescribeComputeEnvironmentsInput {
     pub fn compute_environments(&self) -> std::option::Option<&[std::string::String]> {
         self.compute_environments.as_deref()
     }
-    /// <p>The maximum number of cluster results returned by <code>DescribeComputeEnvironments</code> in paginated output.
-    /// When this parameter is used, <code>DescribeComputeEnvironments</code> only returns <code>maxResults</code> results in
-    /// a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can
-    /// be seen by sending another <code>DescribeComputeEnvironments</code> request with the returned <code>nextToken</code>
-    /// value. This value can be between 1 and 100. If this parameter isn't used, then
-    /// <code>DescribeComputeEnvironments</code> returns up to 100 results and a <code>nextToken</code>
-    /// value if applicable.</p>
+    /// <p>The maximum number of cluster results returned by <code>DescribeComputeEnvironments</code> in paginated output. When this parameter is used, <code>DescribeComputeEnvironments</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeComputeEnvironments</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>DescribeComputeEnvironments</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeComputeEnvironments</code>
-    /// request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination
-    /// continues from the end of the previous results that returned the <code>nextToken</code> value. This value is
-    /// <code>null</code> when there are no more results to return.</p>
-    /// <note>
-    /// <p>This token should be treated as an opaque identifier that's only used to
-    /// retrieve the next items in a list and not for other programmatic purposes.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeComputeEnvironments</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.</p> <note>
+    /// <p>This token should be treated as an opaque identifier that's only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
@@ -6566,21 +5748,17 @@ impl std::fmt::Debug for DeleteComputeEnvironmentInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSchedulingPolicyInput {
-    /// <p>The name of the scheduling policy. It can be up to 128 letters long. It can contain uppercase and lowercase
-    /// letters, numbers, hyphens (-), and underscores (_).</p>
+    /// <p>The name of the scheduling policy. It can be up to 128 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The fair share policy of the scheduling policy.</p>
     pub fairshare_policy: std::option::Option<crate::model::FairsharePolicy>,
-    /// <p>The tags that you apply to the scheduling policy to help you categorize and organize your resources. Each tag
-    /// consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in <i>Amazon Web Services General
-    /// Reference</i>.</p>
+    /// <p>The tags that you apply to the scheduling policy to help you categorize and organize your resources. Each tag consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in <i>Amazon Web Services General Reference</i>.</p>
     /// <p>These tags can be updated or removed using the <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_TagResource.html">TagResource</a> and <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html">UntagResource</a> API operations.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateSchedulingPolicyInput {
-    /// <p>The name of the scheduling policy. It can be up to 128 letters long. It can contain uppercase and lowercase
-    /// letters, numbers, hyphens (-), and underscores (_).</p>
+    /// <p>The name of the scheduling policy. It can be up to 128 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -6588,9 +5766,7 @@ impl CreateSchedulingPolicyInput {
     pub fn fairshare_policy(&self) -> std::option::Option<&crate::model::FairsharePolicy> {
         self.fairshare_policy.as_ref()
     }
-    /// <p>The tags that you apply to the scheduling policy to help you categorize and organize your resources. Each tag
-    /// consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in <i>Amazon Web Services General
-    /// Reference</i>.</p>
+    /// <p>The tags that you apply to the scheduling policy to help you categorize and organize your resources. Each tag consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in <i>Amazon Web Services General Reference</i>.</p>
     /// <p>These tags can be updated or removed using the <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_TagResource.html">TagResource</a> and <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html">UntagResource</a> API operations.</p>
     pub fn tags(
         &self,
@@ -6613,95 +5789,49 @@ impl std::fmt::Debug for CreateSchedulingPolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateJobQueueInput {
-    /// <p>The name of the job queue. It can be up to 128 letters long. It can contain uppercase and lowercase letters,
-    /// numbers, hyphens (-), and underscores (_).</p>
+    /// <p>The name of the job queue. It can be up to 128 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
     pub job_queue_name: std::option::Option<std::string::String>,
-    /// <p>The state of the job queue. If the job queue state is <code>ENABLED</code>, it is able to accept jobs. If the
-    /// job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in the queue can
-    /// finish.</p>
+    /// <p>The state of the job queue. If the job queue state is <code>ENABLED</code>, it is able to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in the queue can finish.</p>
     pub state: std::option::Option<crate::model::JqState>,
-    /// <p>The Amazon Resource Name (ARN) of the fair share scheduling policy. If this parameter is specified, the job queue uses a fair
-    /// share scheduling policy. If this parameter isn't specified, the job queue uses a first in, first out (FIFO)
-    /// scheduling policy. After a job queue is created, you can replace but can't remove the fair share scheduling policy.
-    /// The format is
-    /// <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
-    /// </code>.
-    /// An example is
-    /// <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the fair share scheduling policy. If this parameter is specified, the job queue uses a fair share scheduling policy. If this parameter isn't specified, the job queue uses a first in, first out (FIFO) scheduling policy. After a job queue is created, you can replace but can't remove the fair share scheduling policy. The format is <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. An example is <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
     pub scheduling_policy_arn: std::option::Option<std::string::String>,
-    /// <p>The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
-    /// <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority is
-    /// determined in descending order. For example, a job queue with a priority value of <code>10</code> is given scheduling
-    /// preference over a job queue with a priority value of <code>1</code>. All of the compute environments must be either
-    /// EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and
-    /// Fargate compute environments can't be mixed.</p>
+    /// <p>The priority of the job queue. Job queues with a higher priority (or a higher integer value for the <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority is determined in descending order. For example, a job queue with a priority value of <code>10</code> is given scheduling preference over a job queue with a priority value of <code>1</code>. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.</p>
     pub priority: i32,
-    /// <p>The set of compute environments mapped to a job queue and their order relative to each other. The job scheduler
-    /// uses this parameter to determine which compute environment should run a specific job. Compute environments must be in
-    /// the <code>VALID</code> state before you can associate them with a job queue. You can associate up to three compute
-    /// environments with a job queue. All of the compute environments must be either EC2 (<code>EC2</code> or
-    /// <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute
-    /// environments can't be mixed.</p>
-    /// <note>
-    /// <p>All compute environments that are associated with a job queue must share the same architecture. Batch doesn't
-    /// support mixing compute environment architecture types in a single job queue.</p>
+    /// <p>The set of compute environments mapped to a job queue and their order relative to each other. The job scheduler uses this parameter to determine which compute environment should run a specific job. Compute environments must be in the <code>VALID</code> state before you can associate them with a job queue. You can associate up to three compute environments with a job queue. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.</p> <note>
+    /// <p>All compute environments that are associated with a job queue must share the same architecture. Batch doesn't support mixing compute environment architecture types in a single job queue.</p>
     /// </note>
     pub compute_environment_order:
         std::option::Option<std::vec::Vec<crate::model::ComputeEnvironmentOrder>>,
-    /// <p>The tags that you apply to the job queue to help you categorize and organize your resources. Each tag consists
-    /// of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your Batch resources</a> in <i>Batch User Guide</i>.</p>
+    /// <p>The tags that you apply to the job queue to help you categorize and organize your resources. Each tag consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your Batch resources</a> in <i>Batch User Guide</i>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateJobQueueInput {
-    /// <p>The name of the job queue. It can be up to 128 letters long. It can contain uppercase and lowercase letters,
-    /// numbers, hyphens (-), and underscores (_).</p>
+    /// <p>The name of the job queue. It can be up to 128 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
     pub fn job_queue_name(&self) -> std::option::Option<&str> {
         self.job_queue_name.as_deref()
     }
-    /// <p>The state of the job queue. If the job queue state is <code>ENABLED</code>, it is able to accept jobs. If the
-    /// job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in the queue can
-    /// finish.</p>
+    /// <p>The state of the job queue. If the job queue state is <code>ENABLED</code>, it is able to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in the queue can finish.</p>
     pub fn state(&self) -> std::option::Option<&crate::model::JqState> {
         self.state.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the fair share scheduling policy. If this parameter is specified, the job queue uses a fair
-    /// share scheduling policy. If this parameter isn't specified, the job queue uses a first in, first out (FIFO)
-    /// scheduling policy. After a job queue is created, you can replace but can't remove the fair share scheduling policy.
-    /// The format is
-    /// <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
-    /// </code>.
-    /// An example is
-    /// <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the fair share scheduling policy. If this parameter is specified, the job queue uses a fair share scheduling policy. If this parameter isn't specified, the job queue uses a first in, first out (FIFO) scheduling policy. After a job queue is created, you can replace but can't remove the fair share scheduling policy. The format is <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. An example is <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
     pub fn scheduling_policy_arn(&self) -> std::option::Option<&str> {
         self.scheduling_policy_arn.as_deref()
     }
-    /// <p>The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
-    /// <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority is
-    /// determined in descending order. For example, a job queue with a priority value of <code>10</code> is given scheduling
-    /// preference over a job queue with a priority value of <code>1</code>. All of the compute environments must be either
-    /// EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and
-    /// Fargate compute environments can't be mixed.</p>
+    /// <p>The priority of the job queue. Job queues with a higher priority (or a higher integer value for the <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority is determined in descending order. For example, a job queue with a priority value of <code>10</code> is given scheduling preference over a job queue with a priority value of <code>1</code>. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.</p>
     pub fn priority(&self) -> i32 {
         self.priority
     }
-    /// <p>The set of compute environments mapped to a job queue and their order relative to each other. The job scheduler
-    /// uses this parameter to determine which compute environment should run a specific job. Compute environments must be in
-    /// the <code>VALID</code> state before you can associate them with a job queue. You can associate up to three compute
-    /// environments with a job queue. All of the compute environments must be either EC2 (<code>EC2</code> or
-    /// <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute
-    /// environments can't be mixed.</p>
-    /// <note>
-    /// <p>All compute environments that are associated with a job queue must share the same architecture. Batch doesn't
-    /// support mixing compute environment architecture types in a single job queue.</p>
+    /// <p>The set of compute environments mapped to a job queue and their order relative to each other. The job scheduler uses this parameter to determine which compute environment should run a specific job. Compute environments must be in the <code>VALID</code> state before you can associate them with a job queue. You can associate up to three compute environments with a job queue. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.</p> <note>
+    /// <p>All compute environments that are associated with a job queue must share the same architecture. Batch doesn't support mixing compute environment architecture types in a single job queue.</p>
     /// </note>
     pub fn compute_environment_order(
         &self,
     ) -> std::option::Option<&[crate::model::ComputeEnvironmentOrder]> {
         self.compute_environment_order.as_deref()
     }
-    /// <p>The tags that you apply to the job queue to help you categorize and organize your resources. Each tag consists
-    /// of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your Batch resources</a> in <i>Batch User Guide</i>.</p>
+    /// <p>The tags that you apply to the job queue to help you categorize and organize your resources. Each tag consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your Batch resources</a> in <i>Batch User Guide</i>.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -6726,126 +5856,68 @@ impl std::fmt::Debug for CreateJobQueueInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateComputeEnvironmentInput {
-    /// <p>The name for your compute environment. It can be up to 128 letters long. It can contain uppercase and
-    /// lowercase letters, numbers, hyphens (-), and underscores (_).</p>
+    /// <p>The name for your compute environment. It can be up to 128 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
     pub compute_environment_name: std::option::Option<std::string::String>,
-    /// <p>The type of the compute environment: <code>MANAGED</code> or <code>UNMANAGED</code>. For more information, see
-    /// <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in the
-    /// <i>Batch User Guide</i>.</p>
+    /// <p>The type of the compute environment: <code>MANAGED</code> or <code>UNMANAGED</code>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in the <i>Batch User Guide</i>.</p>
     pub r#type: std::option::Option<crate::model::CeType>,
-    /// <p>The state of the compute environment. If the state is <code>ENABLED</code>, then the compute environment accepts
-    /// jobs from a queue and can scale out automatically based on queues.</p>
-    /// <p>If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place jobs from an associated
-    /// job queue on the compute resources within the environment. If the compute environment is managed, then it can scale
-    /// its instances out or in automatically, based on the job queue demand.</p>
-    /// <p>If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs within the
-    /// environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally. Managed
-    /// compute environments in the <code>DISABLED</code> state don't scale out. However, they scale in to
-    /// <code>minvCpus</code> value after instances become idle.</p>
+    /// <p>The state of the compute environment. If the state is <code>ENABLED</code>, then the compute environment accepts jobs from a queue and can scale out automatically based on queues.</p>
+    /// <p>If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place jobs from an associated job queue on the compute resources within the environment. If the compute environment is managed, then it can scale its instances out or in automatically, based on the job queue demand.</p>
+    /// <p>If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs within the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally. Managed compute environments in the <code>DISABLED</code> state don't scale out. However, they scale in to <code>minvCpus</code> value after instances become idle.</p>
     pub state: std::option::Option<crate::model::CeState>,
-    /// <p>The maximum number of vCPUs for an unmanaged compute environment. This parameter is only used for fair share
-    /// scheduling to reserve vCPU capacity for new share identifiers. If this parameter isn't provided for a fair share job
-    /// queue, no vCPU capacity is reserved.</p>
-    /// <note>
+    /// <p>The maximum number of vCPUs for an unmanaged compute environment. This parameter is only used for fair share scheduling to reserve vCPU capacity for new share identifiers. If this parameter isn't provided for a fair share job queue, no vCPU capacity is reserved.</p> <note>
     /// <p>This parameter is only supported when the <code>type</code> parameter is set to <code>UNMANAGED</code>/</p>
     /// </note>
     pub unmanagedv_cpus: i32,
-    /// <p>Details about the compute resources managed by the compute environment. This parameter is required for managed
-    /// compute environments. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in the <i>Batch User Guide</i>.</p>
+    /// <p>Details about the compute resources managed by the compute environment. This parameter is required for managed compute environments. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in the <i>Batch User Guide</i>.</p>
     pub compute_resources: std::option::Option<crate::model::ComputeResource>,
-    /// <p>The full Amazon Resource Name (ARN) of the IAM role that allows Batch to make calls to other Amazon Web Services services on your behalf. For
-    /// more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">Batch service IAM
-    /// role</a> in the <i>Batch User Guide</i>.</p>
-    /// <important>
-    /// <p>If your account already created the Batch service-linked role, that role is used by default for your compute
-    /// environment unless you specify a different role here. If the Batch service-linked role doesn't exist in your
-    /// account, and no role is specified here, the service attempts to create the Batch service-linked role in your
-    /// account.</p>
+    /// <p>The full Amazon Resource Name (ARN) of the IAM role that allows Batch to make calls to other Amazon Web Services services on your behalf. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">Batch service IAM role</a> in the <i>Batch User Guide</i>.</p> <important>
+    /// <p>If your account already created the Batch service-linked role, that role is used by default for your compute environment unless you specify a different role here. If the Batch service-linked role doesn't exist in your account, and no role is specified here, the service attempts to create the Batch service-linked role in your account.</p>
     /// </important>
-    /// <p>If your specified role has a path other than <code>/</code>, then you must specify either the full role ARN
-    /// (recommended) or prefix the role name with the path. For example, if a role with the name <code>bar</code> has a path
-    /// of <code>/foo/</code> then you would specify <code>/foo/bar</code> as the role name. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly names
-    /// and paths</a> in the <i>IAM User Guide</i>.</p>
-    /// <note>
-    /// <p>Depending on how you created your Batch service role, its ARN might contain the <code>service-role</code>
-    /// path prefix. When you only specify the name of the service role, Batch assumes that your ARN doesn't use the
-    /// <code>service-role</code> path prefix. Because of this, we recommend that you specify the full ARN of your service
-    /// role when you create compute environments.</p>
+    /// <p>If your specified role has a path other than <code>/</code>, then you must specify either the full role ARN (recommended) or prefix the role name with the path. For example, if a role with the name <code>bar</code> has a path of <code>/foo/</code> then you would specify <code>/foo/bar</code> as the role name. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly names and paths</a> in the <i>IAM User Guide</i>.</p> <note>
+    /// <p>Depending on how you created your Batch service role, its ARN might contain the <code>service-role</code> path prefix. When you only specify the name of the service role, Batch assumes that your ARN doesn't use the <code>service-role</code> path prefix. Because of this, we recommend that you specify the full ARN of your service role when you create compute environments.</p>
     /// </note>
     pub service_role: std::option::Option<std::string::String>,
-    /// <p>The tags that you apply to the compute environment to help you categorize and organize your resources. Each tag
-    /// consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in <i>Amazon Web Services General
-    /// Reference</i>.</p>
-    /// <p>These tags can be updated or removed using the <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_TagResource.html">TagResource</a> and <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html">UntagResource</a> API operations. These tags don't
-    /// propagate to the underlying compute resources.</p>
+    /// <p>The tags that you apply to the compute environment to help you categorize and organize your resources. Each tag consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>These tags can be updated or removed using the <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_TagResource.html">TagResource</a> and <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html">UntagResource</a> API operations. These tags don't propagate to the underlying compute resources.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateComputeEnvironmentInput {
-    /// <p>The name for your compute environment. It can be up to 128 letters long. It can contain uppercase and
-    /// lowercase letters, numbers, hyphens (-), and underscores (_).</p>
+    /// <p>The name for your compute environment. It can be up to 128 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
     pub fn compute_environment_name(&self) -> std::option::Option<&str> {
         self.compute_environment_name.as_deref()
     }
-    /// <p>The type of the compute environment: <code>MANAGED</code> or <code>UNMANAGED</code>. For more information, see
-    /// <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in the
-    /// <i>Batch User Guide</i>.</p>
+    /// <p>The type of the compute environment: <code>MANAGED</code> or <code>UNMANAGED</code>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in the <i>Batch User Guide</i>.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::CeType> {
         self.r#type.as_ref()
     }
-    /// <p>The state of the compute environment. If the state is <code>ENABLED</code>, then the compute environment accepts
-    /// jobs from a queue and can scale out automatically based on queues.</p>
-    /// <p>If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place jobs from an associated
-    /// job queue on the compute resources within the environment. If the compute environment is managed, then it can scale
-    /// its instances out or in automatically, based on the job queue demand.</p>
-    /// <p>If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs within the
-    /// environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally. Managed
-    /// compute environments in the <code>DISABLED</code> state don't scale out. However, they scale in to
-    /// <code>minvCpus</code> value after instances become idle.</p>
+    /// <p>The state of the compute environment. If the state is <code>ENABLED</code>, then the compute environment accepts jobs from a queue and can scale out automatically based on queues.</p>
+    /// <p>If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place jobs from an associated job queue on the compute resources within the environment. If the compute environment is managed, then it can scale its instances out or in automatically, based on the job queue demand.</p>
+    /// <p>If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to place jobs within the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally. Managed compute environments in the <code>DISABLED</code> state don't scale out. However, they scale in to <code>minvCpus</code> value after instances become idle.</p>
     pub fn state(&self) -> std::option::Option<&crate::model::CeState> {
         self.state.as_ref()
     }
-    /// <p>The maximum number of vCPUs for an unmanaged compute environment. This parameter is only used for fair share
-    /// scheduling to reserve vCPU capacity for new share identifiers. If this parameter isn't provided for a fair share job
-    /// queue, no vCPU capacity is reserved.</p>
-    /// <note>
+    /// <p>The maximum number of vCPUs for an unmanaged compute environment. This parameter is only used for fair share scheduling to reserve vCPU capacity for new share identifiers. If this parameter isn't provided for a fair share job queue, no vCPU capacity is reserved.</p> <note>
     /// <p>This parameter is only supported when the <code>type</code> parameter is set to <code>UNMANAGED</code>/</p>
     /// </note>
     pub fn unmanagedv_cpus(&self) -> i32 {
         self.unmanagedv_cpus
     }
-    /// <p>Details about the compute resources managed by the compute environment. This parameter is required for managed
-    /// compute environments. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in the <i>Batch User Guide</i>.</p>
+    /// <p>Details about the compute resources managed by the compute environment. This parameter is required for managed compute environments. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in the <i>Batch User Guide</i>.</p>
     pub fn compute_resources(&self) -> std::option::Option<&crate::model::ComputeResource> {
         self.compute_resources.as_ref()
     }
-    /// <p>The full Amazon Resource Name (ARN) of the IAM role that allows Batch to make calls to other Amazon Web Services services on your behalf. For
-    /// more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">Batch service IAM
-    /// role</a> in the <i>Batch User Guide</i>.</p>
-    /// <important>
-    /// <p>If your account already created the Batch service-linked role, that role is used by default for your compute
-    /// environment unless you specify a different role here. If the Batch service-linked role doesn't exist in your
-    /// account, and no role is specified here, the service attempts to create the Batch service-linked role in your
-    /// account.</p>
+    /// <p>The full Amazon Resource Name (ARN) of the IAM role that allows Batch to make calls to other Amazon Web Services services on your behalf. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">Batch service IAM role</a> in the <i>Batch User Guide</i>.</p> <important>
+    /// <p>If your account already created the Batch service-linked role, that role is used by default for your compute environment unless you specify a different role here. If the Batch service-linked role doesn't exist in your account, and no role is specified here, the service attempts to create the Batch service-linked role in your account.</p>
     /// </important>
-    /// <p>If your specified role has a path other than <code>/</code>, then you must specify either the full role ARN
-    /// (recommended) or prefix the role name with the path. For example, if a role with the name <code>bar</code> has a path
-    /// of <code>/foo/</code> then you would specify <code>/foo/bar</code> as the role name. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly names
-    /// and paths</a> in the <i>IAM User Guide</i>.</p>
-    /// <note>
-    /// <p>Depending on how you created your Batch service role, its ARN might contain the <code>service-role</code>
-    /// path prefix. When you only specify the name of the service role, Batch assumes that your ARN doesn't use the
-    /// <code>service-role</code> path prefix. Because of this, we recommend that you specify the full ARN of your service
-    /// role when you create compute environments.</p>
+    /// <p>If your specified role has a path other than <code>/</code>, then you must specify either the full role ARN (recommended) or prefix the role name with the path. For example, if a role with the name <code>bar</code> has a path of <code>/foo/</code> then you would specify <code>/foo/bar</code> as the role name. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly names and paths</a> in the <i>IAM User Guide</i>.</p> <note>
+    /// <p>Depending on how you created your Batch service role, its ARN might contain the <code>service-role</code> path prefix. When you only specify the name of the service role, Batch assumes that your ARN doesn't use the <code>service-role</code> path prefix. Because of this, we recommend that you specify the full ARN of your service role when you create compute environments.</p>
     /// </note>
     pub fn service_role(&self) -> std::option::Option<&str> {
         self.service_role.as_deref()
     }
-    /// <p>The tags that you apply to the compute environment to help you categorize and organize your resources. Each tag
-    /// consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in <i>Amazon Web Services General
-    /// Reference</i>.</p>
-    /// <p>These tags can be updated or removed using the <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_TagResource.html">TagResource</a> and <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html">UntagResource</a> API operations. These tags don't
-    /// propagate to the underlying compute resources.</p>
+    /// <p>The tags that you apply to the compute environment to help you categorize and organize your resources. Each tag consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> in <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>These tags can be updated or removed using the <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_TagResource.html">TagResource</a> and <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html">UntagResource</a> API operations. These tags don't propagate to the underlying compute resources.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -6873,9 +5945,7 @@ impl std::fmt::Debug for CreateComputeEnvironmentInput {
 pub struct CancelJobInput {
     /// <p>The Batch job ID of the job to cancel.</p>
     pub job_id: std::option::Option<std::string::String>,
-    /// <p>A message to attach to the job that explains the reason for canceling it. This message is returned by future
-    /// <a>DescribeJobs</a> operations on the job. This message is also recorded in the Batch activity
-    /// logs.</p>
+    /// <p>A message to attach to the job that explains the reason for canceling it. This message is returned by future <code>DescribeJobs</code> operations on the job. This message is also recorded in the Batch activity logs.</p>
     pub reason: std::option::Option<std::string::String>,
 }
 impl CancelJobInput {
@@ -6883,9 +5953,7 @@ impl CancelJobInput {
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
-    /// <p>A message to attach to the job that explains the reason for canceling it. This message is returned by future
-    /// <a>DescribeJobs</a> operations on the job. This message is also recorded in the Batch activity
-    /// logs.</p>
+    /// <p>A message to attach to the job that explains the reason for canceling it. This message is returned by future <code>DescribeJobs</code> operations on the job. This message is also recorded in the Batch activity logs.</p>
     pub fn reason(&self) -> std::option::Option<&str> {
         self.reason.as_deref()
     }

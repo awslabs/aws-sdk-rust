@@ -7,40 +7,21 @@ pub struct Channel {
     pub arn: std::option::Option<std::string::String>,
     /// <p>Channel name.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to
-    /// Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. Default:
-    /// <code>LOW</code>. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code>
-    /// correspond to Ultra-low and Standard, respectively.)</p>
+    /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. Default: <code>LOW</code>. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)</p>
     pub latency_mode: std::option::Option<crate::model::ChannelLatencyMode>,
-    /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you
-    /// exceed the allowable resolution or bitrate, the stream probably will disconnect
-    /// immediately.</i> Default: <code>STANDARD</code>. Valid values:</p>
+    /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or bitrate, the stream probably will disconnect immediately.</i> Default: <code>STANDARD</code>. Valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>STANDARD</code>: Multiple qualities are generated from the original input, to
-    /// automatically give viewers the best experience for their devices and network conditions.
-    /// Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only
-    /// for renditions 360p and below; above that, audio is passed through.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s
-    /// video-quality choice is limited to the original input. Resolution can be up to 480p and
-    /// bitrate can be up to 1.5 Mbps.</p>
-    /// </li>
+    /// <li> <p> <code>STANDARD</code>: Multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through.</p> </li>
+    /// <li> <p> <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 480p and bitrate can be up to 1.5 Mbps.</p> </li>
     /// </ul>
     pub r#type: std::option::Option<crate::model::ChannelType>,
-    /// <p>Recording-configuration ARN. A value other than an empty string indicates that recording
-    /// is enabled. Default: "" (empty string, recording is disabled).</p>
+    /// <p>Recording-configuration ARN. A value other than an empty string indicates that recording is enabled. Default: "" (empty string, recording is disabled).</p>
     pub recording_configuration_arn: std::option::Option<std::string::String>,
-    /// <p>Channel ingest endpoint, part of the definition of an ingest server, used when you set up
-    /// streaming software.</p>
+    /// <p>Channel ingest endpoint, part of the definition of an ingest server, used when you set up streaming software.</p>
     pub ingest_endpoint: std::option::Option<std::string::String>,
     /// <p>Channel playback URL.</p>
     pub playback_url: std::option::Option<std::string::String>,
-    /// <p>Whether the channel is private (enabled for playback authorization). Default:
-    /// <code>false</code>.</p>
+    /// <p>Whether the channel is private (enabled for playback authorization). Default: <code>false</code>.</p>
     pub authorized: bool,
     /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
     pub tags:
@@ -55,41 +36,23 @@ impl Channel {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to
-    /// Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. Default:
-    /// <code>LOW</code>. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code>
-    /// correspond to Ultra-low and Standard, respectively.)</p>
+    /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. Default: <code>LOW</code>. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)</p>
     pub fn latency_mode(&self) -> std::option::Option<&crate::model::ChannelLatencyMode> {
         self.latency_mode.as_ref()
     }
-    /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you
-    /// exceed the allowable resolution or bitrate, the stream probably will disconnect
-    /// immediately.</i> Default: <code>STANDARD</code>. Valid values:</p>
+    /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or bitrate, the stream probably will disconnect immediately.</i> Default: <code>STANDARD</code>. Valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>STANDARD</code>: Multiple qualities are generated from the original input, to
-    /// automatically give viewers the best experience for their devices and network conditions.
-    /// Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only
-    /// for renditions 360p and below; above that, audio is passed through.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s
-    /// video-quality choice is limited to the original input. Resolution can be up to 480p and
-    /// bitrate can be up to 1.5 Mbps.</p>
-    /// </li>
+    /// <li> <p> <code>STANDARD</code>: Multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through.</p> </li>
+    /// <li> <p> <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 480p and bitrate can be up to 1.5 Mbps.</p> </li>
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ChannelType> {
         self.r#type.as_ref()
     }
-    /// <p>Recording-configuration ARN. A value other than an empty string indicates that recording
-    /// is enabled. Default: "" (empty string, recording is disabled).</p>
+    /// <p>Recording-configuration ARN. A value other than an empty string indicates that recording is enabled. Default: "" (empty string, recording is disabled).</p>
     pub fn recording_configuration_arn(&self) -> std::option::Option<&str> {
         self.recording_configuration_arn.as_deref()
     }
-    /// <p>Channel ingest endpoint, part of the definition of an ingest server, used when you set up
-    /// streaming software.</p>
+    /// <p>Channel ingest endpoint, part of the definition of an ingest server, used when you set up streaming software.</p>
     pub fn ingest_endpoint(&self) -> std::option::Option<&str> {
         self.ingest_endpoint.as_deref()
     }
@@ -97,8 +60,7 @@ impl Channel {
     pub fn playback_url(&self) -> std::option::Option<&str> {
         self.playback_url.as_deref()
     }
-    /// <p>Whether the channel is private (enabled for playback authorization). Default:
-    /// <code>false</code>.</p>
+    /// <p>Whether the channel is private (enabled for playback authorization). Default: <code>false</code>.</p>
     pub fn authorized(&self) -> bool {
         self.authorized
     }
@@ -167,18 +129,12 @@ pub mod channel {
             self.name = input;
             self
         }
-        /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to
-        /// Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. Default:
-        /// <code>LOW</code>. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code>
-        /// correspond to Ultra-low and Standard, respectively.)</p>
+        /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. Default: <code>LOW</code>. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)</p>
         pub fn latency_mode(mut self, input: crate::model::ChannelLatencyMode) -> Self {
             self.latency_mode = Some(input);
             self
         }
-        /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to
-        /// Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. Default:
-        /// <code>LOW</code>. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code>
-        /// correspond to Ultra-low and Standard, respectively.)</p>
+        /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. Default: <code>LOW</code>. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)</p>
         pub fn set_latency_mode(
             mut self,
             input: std::option::Option<crate::model::ChannelLatencyMode>,
@@ -186,52 +142,25 @@ pub mod channel {
             self.latency_mode = input;
             self
         }
-        /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you
-        /// exceed the allowable resolution or bitrate, the stream probably will disconnect
-        /// immediately.</i> Default: <code>STANDARD</code>. Valid values:</p>
+        /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or bitrate, the stream probably will disconnect immediately.</i> Default: <code>STANDARD</code>. Valid values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>STANDARD</code>: Multiple qualities are generated from the original input, to
-        /// automatically give viewers the best experience for their devices and network conditions.
-        /// Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only
-        /// for renditions 360p and below; above that, audio is passed through.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s
-        /// video-quality choice is limited to the original input. Resolution can be up to 480p and
-        /// bitrate can be up to 1.5 Mbps.</p>
-        /// </li>
+        /// <li> <p> <code>STANDARD</code>: Multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through.</p> </li>
+        /// <li> <p> <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 480p and bitrate can be up to 1.5 Mbps.</p> </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::ChannelType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you
-        /// exceed the allowable resolution or bitrate, the stream probably will disconnect
-        /// immediately.</i> Default: <code>STANDARD</code>. Valid values:</p>
+        /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or bitrate, the stream probably will disconnect immediately.</i> Default: <code>STANDARD</code>. Valid values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>STANDARD</code>: Multiple qualities are generated from the original input, to
-        /// automatically give viewers the best experience for their devices and network conditions.
-        /// Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only
-        /// for renditions 360p and below; above that, audio is passed through.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s
-        /// video-quality choice is limited to the original input. Resolution can be up to 480p and
-        /// bitrate can be up to 1.5 Mbps.</p>
-        /// </li>
+        /// <li> <p> <code>STANDARD</code>: Multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through.</p> </li>
+        /// <li> <p> <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 480p and bitrate can be up to 1.5 Mbps.</p> </li>
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ChannelType>) -> Self {
             self.r#type = input;
             self
         }
-        /// <p>Recording-configuration ARN. A value other than an empty string indicates that recording
-        /// is enabled. Default: "" (empty string, recording is disabled).</p>
+        /// <p>Recording-configuration ARN. A value other than an empty string indicates that recording is enabled. Default: "" (empty string, recording is disabled).</p>
         pub fn recording_configuration_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -239,8 +168,7 @@ pub mod channel {
             self.recording_configuration_arn = Some(input.into());
             self
         }
-        /// <p>Recording-configuration ARN. A value other than an empty string indicates that recording
-        /// is enabled. Default: "" (empty string, recording is disabled).</p>
+        /// <p>Recording-configuration ARN. A value other than an empty string indicates that recording is enabled. Default: "" (empty string, recording is disabled).</p>
         pub fn set_recording_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -248,14 +176,12 @@ pub mod channel {
             self.recording_configuration_arn = input;
             self
         }
-        /// <p>Channel ingest endpoint, part of the definition of an ingest server, used when you set up
-        /// streaming software.</p>
+        /// <p>Channel ingest endpoint, part of the definition of an ingest server, used when you set up streaming software.</p>
         pub fn ingest_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
             self.ingest_endpoint = Some(input.into());
             self
         }
-        /// <p>Channel ingest endpoint, part of the definition of an ingest server, used when you set up
-        /// streaming software.</p>
+        /// <p>Channel ingest endpoint, part of the definition of an ingest server, used when you set up streaming software.</p>
         pub fn set_ingest_endpoint(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -273,14 +199,12 @@ pub mod channel {
             self.playback_url = input;
             self
         }
-        /// <p>Whether the channel is private (enabled for playback authorization). Default:
-        /// <code>false</code>.</p>
+        /// <p>Whether the channel is private (enabled for playback authorization). Default: <code>false</code>.</p>
         pub fn authorized(mut self, input: bool) -> Self {
             self.authorized = Some(input);
             self
         }
-        /// <p>Whether the channel is private (enabled for playback authorization). Default:
-        /// <code>false</code>.</p>
+        /// <p>Whether the channel is private (enabled for playback authorization). Default: <code>false</code>.</p>
         pub fn set_authorized(mut self, input: std::option::Option<bool>) -> Self {
             self.authorized = input;
             self
@@ -451,8 +375,7 @@ pub struct StreamSessionSummary {
     pub stream_id: std::option::Option<std::string::String>,
     /// <p>UTC ISO-8601 formatted timestamp of when the channel went live.</p>
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>UTC ISO-8601 formatted timestamp of when the channel went offline. For live streams, this
-    /// is <code>NULL</code>.</p>
+    /// <p>UTC ISO-8601 formatted timestamp of when the channel went offline. For live streams, this is <code>NULL</code>.</p>
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If <code>true</code>, this stream encountered a quota breach or failure.</p>
     pub has_error_event: bool,
@@ -466,8 +389,7 @@ impl StreamSessionSummary {
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>UTC ISO-8601 formatted timestamp of when the channel went offline. For live streams, this
-    /// is <code>NULL</code>.</p>
+    /// <p>UTC ISO-8601 formatted timestamp of when the channel went offline. For live streams, this is <code>NULL</code>.</p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
@@ -521,14 +443,12 @@ pub mod stream_session_summary {
             self.start_time = input;
             self
         }
-        /// <p>UTC ISO-8601 formatted timestamp of when the channel went offline. For live streams, this
-        /// is <code>NULL</code>.</p>
+        /// <p>UTC ISO-8601 formatted timestamp of when the channel went offline. For live streams, this is <code>NULL</code>.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
-        /// <p>UTC ISO-8601 formatted timestamp of when the channel went offline. For live streams, this
-        /// is <code>NULL</code>.</p>
+        /// <p>UTC ISO-8601 formatted timestamp of when the channel went offline. For live streams, this is <code>NULL</code>.</p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -576,10 +496,7 @@ pub struct StreamSummary {
     pub state: std::option::Option<crate::model::StreamState>,
     /// <p>The stream’s health.</p>
     pub health: std::option::Option<crate::model::StreamHealth>,
-    /// <p>A count of concurrent views of the stream. Typically, a new view appears in
-    /// <code>viewerCount</code> within 15 seconds of when video playback starts and a view is
-    /// removed from <code>viewerCount</code> within 1 minute of when video playback ends. A value of
-    /// -1 indicates that the request timed out; in this case, retry.</p>
+    /// <p>A count of concurrent views of the stream. Typically, a new view appears in <code>viewerCount</code> within 15 seconds of when video playback starts and a view is removed from <code>viewerCount</code> within 1 minute of when video playback ends. A value of -1 indicates that the request timed out; in this case, retry.</p>
     pub viewer_count: i64,
     /// <p>Time of the stream’s start. This is an ISO 8601 timestamp returned as a string.</p>
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -601,10 +518,7 @@ impl StreamSummary {
     pub fn health(&self) -> std::option::Option<&crate::model::StreamHealth> {
         self.health.as_ref()
     }
-    /// <p>A count of concurrent views of the stream. Typically, a new view appears in
-    /// <code>viewerCount</code> within 15 seconds of when video playback starts and a view is
-    /// removed from <code>viewerCount</code> within 1 minute of when video playback ends. A value of
-    /// -1 indicates that the request timed out; in this case, retry.</p>
+    /// <p>A count of concurrent views of the stream. Typically, a new view appears in <code>viewerCount</code> within 15 seconds of when video playback starts and a view is removed from <code>viewerCount</code> within 1 minute of when video playback ends. A value of -1 indicates that the request timed out; in this case, retry.</p>
     pub fn viewer_count(&self) -> i64 {
         self.viewer_count
     }
@@ -682,18 +596,12 @@ pub mod stream_summary {
             self.health = input;
             self
         }
-        /// <p>A count of concurrent views of the stream. Typically, a new view appears in
-        /// <code>viewerCount</code> within 15 seconds of when video playback starts and a view is
-        /// removed from <code>viewerCount</code> within 1 minute of when video playback ends. A value of
-        /// -1 indicates that the request timed out; in this case, retry.</p>
+        /// <p>A count of concurrent views of the stream. Typically, a new view appears in <code>viewerCount</code> within 15 seconds of when video playback starts and a view is removed from <code>viewerCount</code> within 1 minute of when video playback ends. A value of -1 indicates that the request timed out; in this case, retry.</p>
         pub fn viewer_count(mut self, input: i64) -> Self {
             self.viewer_count = Some(input);
             self
         }
-        /// <p>A count of concurrent views of the stream. Typically, a new view appears in
-        /// <code>viewerCount</code> within 15 seconds of when video playback starts and a view is
-        /// removed from <code>viewerCount</code> within 1 minute of when video playback ends. A value of
-        /// -1 indicates that the request timed out; in this case, retry.</p>
+        /// <p>A count of concurrent views of the stream. Typically, a new view appears in <code>viewerCount</code> within 15 seconds of when video playback starts and a view is removed from <code>viewerCount</code> within 1 minute of when video playback ends. A value of -1 indicates that the request timed out; in this case, retry.</p>
         pub fn set_viewer_count(mut self, input: std::option::Option<i64>) -> Self {
             self.viewer_count = input;
             self
@@ -1025,8 +933,7 @@ pub struct RecordingConfigurationSummary {
     pub name: std::option::Option<std::string::String>,
     /// <p>A complex type that contains information about where recorded video will be stored.</p>
     pub destination_configuration: std::option::Option<crate::model::DestinationConfiguration>,
-    /// <p>Indicates the current state of the recording configuration. When the state is
-    /// <code>ACTIVE</code>, the configuration is ready for recording a channel stream.</p>
+    /// <p>Indicates the current state of the recording configuration. When the state is <code>ACTIVE</code>, the configuration is ready for recording a channel stream.</p>
     pub state: std::option::Option<crate::model::RecordingConfigurationState>,
     /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
     pub tags:
@@ -1047,8 +954,7 @@ impl RecordingConfigurationSummary {
     ) -> std::option::Option<&crate::model::DestinationConfiguration> {
         self.destination_configuration.as_ref()
     }
-    /// <p>Indicates the current state of the recording configuration. When the state is
-    /// <code>ACTIVE</code>, the configuration is ready for recording a channel stream.</p>
+    /// <p>Indicates the current state of the recording configuration. When the state is <code>ACTIVE</code>, the configuration is ready for recording a channel stream.</p>
     pub fn state(&self) -> std::option::Option<&crate::model::RecordingConfigurationState> {
         self.state.as_ref()
     }
@@ -1123,14 +1029,12 @@ pub mod recording_configuration_summary {
             self.destination_configuration = input;
             self
         }
-        /// <p>Indicates the current state of the recording configuration. When the state is
-        /// <code>ACTIVE</code>, the configuration is ready for recording a channel stream.</p>
+        /// <p>Indicates the current state of the recording configuration. When the state is <code>ACTIVE</code>, the configuration is ready for recording a channel stream.</p>
         pub fn state(mut self, input: crate::model::RecordingConfigurationState) -> Self {
             self.state = Some(input);
             self
         }
-        /// <p>Indicates the current state of the recording configuration. When the state is
-        /// <code>ACTIVE</code>, the configuration is ready for recording a channel stream.</p>
+        /// <p>Indicates the current state of the recording configuration. When the state is <code>ACTIVE</code>, the configuration is ready for recording a channel stream.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::RecordingConfigurationState>,
@@ -1241,9 +1145,7 @@ impl AsRef<str> for RecordingConfigurationState {
     }
 }
 
-/// <p>A complex type that describes a location where recorded videos will be stored. Each member
-/// represents a type of destination configuration. For recording, you define one and only one
-/// type of destination configuration.</p>
+/// <p>A complex type that describes a location where recorded videos will be stored. Each member represents a type of destination configuration. For recording, you define one and only one type of destination configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DestinationConfiguration {
@@ -1473,16 +1375,11 @@ pub struct ChannelSummary {
     pub arn: std::option::Option<std::string::String>,
     /// <p>Channel name.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to
-    /// Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. Default:
-    /// <code>LOW</code>. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code>
-    /// correspond to Ultra-low and Standard, respectively.)</p>
+    /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. Default: <code>LOW</code>. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)</p>
     pub latency_mode: std::option::Option<crate::model::ChannelLatencyMode>,
-    /// <p>Whether the channel is private (enabled for playback authorization). Default:
-    /// <code>false</code>.</p>
+    /// <p>Whether the channel is private (enabled for playback authorization). Default: <code>false</code>.</p>
     pub authorized: bool,
-    /// <p>Recording-configuration ARN. A value other than an empty string indicates that recording
-    /// is enabled. Default: "" (empty string, recording is disabled).</p>
+    /// <p>Recording-configuration ARN. A value other than an empty string indicates that recording is enabled. Default: "" (empty string, recording is disabled).</p>
     pub recording_configuration_arn: std::option::Option<std::string::String>,
     /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
     pub tags:
@@ -1497,20 +1394,15 @@ impl ChannelSummary {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to
-    /// Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. Default:
-    /// <code>LOW</code>. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code>
-    /// correspond to Ultra-low and Standard, respectively.)</p>
+    /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. Default: <code>LOW</code>. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)</p>
     pub fn latency_mode(&self) -> std::option::Option<&crate::model::ChannelLatencyMode> {
         self.latency_mode.as_ref()
     }
-    /// <p>Whether the channel is private (enabled for playback authorization). Default:
-    /// <code>false</code>.</p>
+    /// <p>Whether the channel is private (enabled for playback authorization). Default: <code>false</code>.</p>
     pub fn authorized(&self) -> bool {
         self.authorized
     }
-    /// <p>Recording-configuration ARN. A value other than an empty string indicates that recording
-    /// is enabled. Default: "" (empty string, recording is disabled).</p>
+    /// <p>Recording-configuration ARN. A value other than an empty string indicates that recording is enabled. Default: "" (empty string, recording is disabled).</p>
     pub fn recording_configuration_arn(&self) -> std::option::Option<&str> {
         self.recording_configuration_arn.as_deref()
     }
@@ -1573,18 +1465,12 @@ pub mod channel_summary {
             self.name = input;
             self
         }
-        /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to
-        /// Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. Default:
-        /// <code>LOW</code>. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code>
-        /// correspond to Ultra-low and Standard, respectively.)</p>
+        /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. Default: <code>LOW</code>. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)</p>
         pub fn latency_mode(mut self, input: crate::model::ChannelLatencyMode) -> Self {
             self.latency_mode = Some(input);
             self
         }
-        /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to
-        /// Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. Default:
-        /// <code>LOW</code>. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code>
-        /// correspond to Ultra-low and Standard, respectively.)</p>
+        /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. Default: <code>LOW</code>. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)</p>
         pub fn set_latency_mode(
             mut self,
             input: std::option::Option<crate::model::ChannelLatencyMode>,
@@ -1592,20 +1478,17 @@ pub mod channel_summary {
             self.latency_mode = input;
             self
         }
-        /// <p>Whether the channel is private (enabled for playback authorization). Default:
-        /// <code>false</code>.</p>
+        /// <p>Whether the channel is private (enabled for playback authorization). Default: <code>false</code>.</p>
         pub fn authorized(mut self, input: bool) -> Self {
             self.authorized = Some(input);
             self
         }
-        /// <p>Whether the channel is private (enabled for playback authorization). Default:
-        /// <code>false</code>.</p>
+        /// <p>Whether the channel is private (enabled for playback authorization). Default: <code>false</code>.</p>
         pub fn set_authorized(mut self, input: std::option::Option<bool>) -> Self {
             self.authorized = input;
             self
         }
-        /// <p>Recording-configuration ARN. A value other than an empty string indicates that recording
-        /// is enabled. Default: "" (empty string, recording is disabled).</p>
+        /// <p>Recording-configuration ARN. A value other than an empty string indicates that recording is enabled. Default: "" (empty string, recording is disabled).</p>
         pub fn recording_configuration_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -1613,8 +1496,7 @@ pub mod channel_summary {
             self.recording_configuration_arn = Some(input.into());
             self
         }
-        /// <p>Recording-configuration ARN. A value other than an empty string indicates that recording
-        /// is enabled. Default: "" (empty string, recording is disabled).</p>
+        /// <p>Recording-configuration ARN. A value other than an empty string indicates that recording is enabled. Default: "" (empty string, recording is disabled).</p>
         pub fn set_recording_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1799,9 +1681,7 @@ impl PlaybackKeyPair {
     }
 }
 
-/// <p>Object that captures the Amazon IVS configuration that the customer provisioned, the
-/// ingest configurations that the broadcaster used, and the most recent Amazon IVS stream events
-/// it encountered.</p>
+/// <p>Object that captures the Amazon IVS configuration that the customer provisioned, the ingest configurations that the broadcaster used, and the most recent Amazon IVS stream events it encountered.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StreamSession {
@@ -1809,8 +1689,7 @@ pub struct StreamSession {
     pub stream_id: std::option::Option<std::string::String>,
     /// <p>UTC ISO-8601 formatted timestamp of when the channel went live.</p>
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>UTC ISO-8601 formatted timestamp of when the channel went offline. For live streams, this
-    /// is <code>NULL</code>.</p>
+    /// <p>UTC ISO-8601 formatted timestamp of when the channel went offline. For live streams, this is <code>NULL</code>.</p>
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The properties of the channel at the time of going live.</p>
     pub channel: std::option::Option<crate::model::Channel>,
@@ -1818,9 +1697,7 @@ pub struct StreamSession {
     pub ingest_configuration: std::option::Option<crate::model::IngestConfiguration>,
     /// <p>The properties of recording the live stream.</p>
     pub recording_configuration: std::option::Option<crate::model::RecordingConfiguration>,
-    /// <p>List of Amazon IVS events that the stream encountered. The list is sorted by most recent
-    /// events and contains up to 500 events. For Amazon IVS events, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/eventbridge.html">Using Amazon EventBridge with Amazon
-    /// IVS</a>.</p>
+    /// <p>List of Amazon IVS events that the stream encountered. The list is sorted by most recent events and contains up to 500 events. For Amazon IVS events, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/eventbridge.html">Using Amazon EventBridge with Amazon IVS</a>.</p>
     pub truncated_events: std::option::Option<std::vec::Vec<crate::model::StreamEvent>>,
 }
 impl StreamSession {
@@ -1832,8 +1709,7 @@ impl StreamSession {
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>UTC ISO-8601 formatted timestamp of when the channel went offline. For live streams, this
-    /// is <code>NULL</code>.</p>
+    /// <p>UTC ISO-8601 formatted timestamp of when the channel went offline. For live streams, this is <code>NULL</code>.</p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
@@ -1851,9 +1727,7 @@ impl StreamSession {
     ) -> std::option::Option<&crate::model::RecordingConfiguration> {
         self.recording_configuration.as_ref()
     }
-    /// <p>List of Amazon IVS events that the stream encountered. The list is sorted by most recent
-    /// events and contains up to 500 events. For Amazon IVS events, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/eventbridge.html">Using Amazon EventBridge with Amazon
-    /// IVS</a>.</p>
+    /// <p>List of Amazon IVS events that the stream encountered. The list is sorted by most recent events and contains up to 500 events. For Amazon IVS events, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/eventbridge.html">Using Amazon EventBridge with Amazon IVS</a>.</p>
     pub fn truncated_events(&self) -> std::option::Option<&[crate::model::StreamEvent]> {
         self.truncated_events.as_deref()
     }
@@ -1910,14 +1784,12 @@ pub mod stream_session {
             self.start_time = input;
             self
         }
-        /// <p>UTC ISO-8601 formatted timestamp of when the channel went offline. For live streams, this
-        /// is <code>NULL</code>.</p>
+        /// <p>UTC ISO-8601 formatted timestamp of when the channel went offline. For live streams, this is <code>NULL</code>.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
-        /// <p>UTC ISO-8601 formatted timestamp of when the channel went offline. For live streams, this
-        /// is <code>NULL</code>.</p>
+        /// <p>UTC ISO-8601 formatted timestamp of when the channel went offline. For live streams, this is <code>NULL</code>.</p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1968,18 +1840,14 @@ pub mod stream_session {
         ///
         /// To override the contents of this collection use [`set_truncated_events`](Self::set_truncated_events).
         ///
-        /// <p>List of Amazon IVS events that the stream encountered. The list is sorted by most recent
-        /// events and contains up to 500 events. For Amazon IVS events, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/eventbridge.html">Using Amazon EventBridge with Amazon
-        /// IVS</a>.</p>
+        /// <p>List of Amazon IVS events that the stream encountered. The list is sorted by most recent events and contains up to 500 events. For Amazon IVS events, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/eventbridge.html">Using Amazon EventBridge with Amazon IVS</a>.</p>
         pub fn truncated_events(mut self, input: crate::model::StreamEvent) -> Self {
             let mut v = self.truncated_events.unwrap_or_default();
             v.push(input);
             self.truncated_events = Some(v);
             self
         }
-        /// <p>List of Amazon IVS events that the stream encountered. The list is sorted by most recent
-        /// events and contains up to 500 events. For Amazon IVS events, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/eventbridge.html">Using Amazon EventBridge with Amazon
-        /// IVS</a>.</p>
+        /// <p>List of Amazon IVS events that the stream encountered. The list is sorted by most recent events and contains up to 500 events. For Amazon IVS events, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/eventbridge.html">Using Amazon EventBridge with Amazon IVS</a>.</p>
         pub fn set_truncated_events(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::StreamEvent>>,
@@ -2008,8 +1876,7 @@ impl StreamSession {
     }
 }
 
-/// <p>Object specifying a stream’s events. For a list of events, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/eventbridge.html">Using Amazon EventBridge with Amazon
-/// IVS</a>.</p>
+/// <p>Object specifying a stream’s events. For a list of events, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/eventbridge.html">Using Amazon EventBridge with Amazon IVS</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StreamEvent {
@@ -2114,8 +1981,7 @@ pub struct RecordingConfiguration {
     pub name: std::option::Option<std::string::String>,
     /// <p>A complex type that contains information about where recorded video will be stored.</p>
     pub destination_configuration: std::option::Option<crate::model::DestinationConfiguration>,
-    /// <p>Indicates the current state of the recording configuration. When the state is
-    /// <code>ACTIVE</code>, the configuration is ready for recording a channel stream.</p>
+    /// <p>Indicates the current state of the recording configuration. When the state is <code>ACTIVE</code>, the configuration is ready for recording a channel stream.</p>
     pub state: std::option::Option<crate::model::RecordingConfigurationState>,
     /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.</p>
     pub tags:
@@ -2136,8 +2002,7 @@ impl RecordingConfiguration {
     ) -> std::option::Option<&crate::model::DestinationConfiguration> {
         self.destination_configuration.as_ref()
     }
-    /// <p>Indicates the current state of the recording configuration. When the state is
-    /// <code>ACTIVE</code>, the configuration is ready for recording a channel stream.</p>
+    /// <p>Indicates the current state of the recording configuration. When the state is <code>ACTIVE</code>, the configuration is ready for recording a channel stream.</p>
     pub fn state(&self) -> std::option::Option<&crate::model::RecordingConfigurationState> {
         self.state.as_ref()
     }
@@ -2212,14 +2077,12 @@ pub mod recording_configuration {
             self.destination_configuration = input;
             self
         }
-        /// <p>Indicates the current state of the recording configuration. When the state is
-        /// <code>ACTIVE</code>, the configuration is ready for recording a channel stream.</p>
+        /// <p>Indicates the current state of the recording configuration. When the state is <code>ACTIVE</code>, the configuration is ready for recording a channel stream.</p>
         pub fn state(mut self, input: crate::model::RecordingConfigurationState) -> Self {
             self.state = Some(input);
             self
         }
-        /// <p>Indicates the current state of the recording configuration. When the state is
-        /// <code>ACTIVE</code>, the configuration is ready for recording a channel stream.</p>
+        /// <p>Indicates the current state of the recording configuration. When the state is <code>ACTIVE</code>, the configuration is ready for recording a channel stream.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::RecordingConfigurationState>,
@@ -2271,8 +2134,7 @@ impl RecordingConfiguration {
     }
 }
 
-/// <p>Object specifying the ingest configuration set up by the broadcaster, usually in an
-/// encoder.</p>
+/// <p>Object specifying the ingest configuration set up by the broadcaster, usually in an encoder.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IngestConfiguration {
@@ -2466,11 +2328,9 @@ impl AudioConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VideoConfiguration {
-    /// <p>Indicates to the decoder the requirements for decoding the stream. For definitions of the
-    /// valid values, see the H.264 specification.</p>
+    /// <p>Indicates to the decoder the requirements for decoding the stream. For definitions of the valid values, see the H.264 specification.</p>
     pub avc_profile: std::option::Option<std::string::String>,
-    /// <p>Indicates the degree of required decoder performance for a profile. Normally this is set
-    /// automatically by the encoder. For details, see the H.264 specification.</p>
+    /// <p>Indicates the degree of required decoder performance for a profile. Normally this is set automatically by the encoder. For details, see the H.264 specification.</p>
     pub avc_level: std::option::Option<std::string::String>,
     /// <p>Codec used for the video encoding.</p>
     pub codec: std::option::Option<std::string::String>,
@@ -2486,13 +2346,11 @@ pub struct VideoConfiguration {
     pub video_width: i64,
 }
 impl VideoConfiguration {
-    /// <p>Indicates to the decoder the requirements for decoding the stream. For definitions of the
-    /// valid values, see the H.264 specification.</p>
+    /// <p>Indicates to the decoder the requirements for decoding the stream. For definitions of the valid values, see the H.264 specification.</p>
     pub fn avc_profile(&self) -> std::option::Option<&str> {
         self.avc_profile.as_deref()
     }
-    /// <p>Indicates the degree of required decoder performance for a profile. Normally this is set
-    /// automatically by the encoder. For details, see the H.264 specification.</p>
+    /// <p>Indicates the degree of required decoder performance for a profile. Normally this is set automatically by the encoder. For details, see the H.264 specification.</p>
     pub fn avc_level(&self) -> std::option::Option<&str> {
         self.avc_level.as_deref()
     }
@@ -2551,26 +2409,22 @@ pub mod video_configuration {
         pub(crate) video_width: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>Indicates to the decoder the requirements for decoding the stream. For definitions of the
-        /// valid values, see the H.264 specification.</p>
+        /// <p>Indicates to the decoder the requirements for decoding the stream. For definitions of the valid values, see the H.264 specification.</p>
         pub fn avc_profile(mut self, input: impl Into<std::string::String>) -> Self {
             self.avc_profile = Some(input.into());
             self
         }
-        /// <p>Indicates to the decoder the requirements for decoding the stream. For definitions of the
-        /// valid values, see the H.264 specification.</p>
+        /// <p>Indicates to the decoder the requirements for decoding the stream. For definitions of the valid values, see the H.264 specification.</p>
         pub fn set_avc_profile(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.avc_profile = input;
             self
         }
-        /// <p>Indicates the degree of required decoder performance for a profile. Normally this is set
-        /// automatically by the encoder. For details, see the H.264 specification.</p>
+        /// <p>Indicates the degree of required decoder performance for a profile. Normally this is set automatically by the encoder. For details, see the H.264 specification.</p>
         pub fn avc_level(mut self, input: impl Into<std::string::String>) -> Self {
             self.avc_level = Some(input.into());
             self
         }
-        /// <p>Indicates the degree of required decoder performance for a profile. Normally this is set
-        /// automatically by the encoder. For details, see the H.264 specification.</p>
+        /// <p>Indicates the degree of required decoder performance for a profile. Normally this is set automatically by the encoder. For details, see the H.264 specification.</p>
         pub fn set_avc_level(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.avc_level = input;
             self
@@ -2805,10 +2659,7 @@ pub struct Stream {
     pub state: std::option::Option<crate::model::StreamState>,
     /// <p>The stream’s health.</p>
     pub health: std::option::Option<crate::model::StreamHealth>,
-    /// <p>A count of concurrent views of the stream. Typically, a new view appears in
-    /// <code>viewerCount</code> within 15 seconds of when video playback starts and a view is
-    /// removed from <code>viewerCount</code> within 1 minute of when video playback ends. A value of
-    /// -1 indicates that the request timed out; in this case, retry.</p>
+    /// <p>A count of concurrent views of the stream. Typically, a new view appears in <code>viewerCount</code> within 15 seconds of when video playback starts and a view is removed from <code>viewerCount</code> within 1 minute of when video playback ends. A value of -1 indicates that the request timed out; in this case, retry.</p>
     pub viewer_count: i64,
 }
 impl Stream {
@@ -2836,10 +2687,7 @@ impl Stream {
     pub fn health(&self) -> std::option::Option<&crate::model::StreamHealth> {
         self.health.as_ref()
     }
-    /// <p>A count of concurrent views of the stream. Typically, a new view appears in
-    /// <code>viewerCount</code> within 15 seconds of when video playback starts and a view is
-    /// removed from <code>viewerCount</code> within 1 minute of when video playback ends. A value of
-    /// -1 indicates that the request timed out; in this case, retry.</p>
+    /// <p>A count of concurrent views of the stream. Typically, a new view appears in <code>viewerCount</code> within 15 seconds of when video playback starts and a view is removed from <code>viewerCount</code> within 1 minute of when video playback ends. A value of -1 indicates that the request timed out; in this case, retry.</p>
     pub fn viewer_count(&self) -> i64 {
         self.viewer_count
     }
@@ -2938,18 +2786,12 @@ pub mod stream {
             self.health = input;
             self
         }
-        /// <p>A count of concurrent views of the stream. Typically, a new view appears in
-        /// <code>viewerCount</code> within 15 seconds of when video playback starts and a view is
-        /// removed from <code>viewerCount</code> within 1 minute of when video playback ends. A value of
-        /// -1 indicates that the request timed out; in this case, retry.</p>
+        /// <p>A count of concurrent views of the stream. Typically, a new view appears in <code>viewerCount</code> within 15 seconds of when video playback starts and a view is removed from <code>viewerCount</code> within 1 minute of when video playback ends. A value of -1 indicates that the request timed out; in this case, retry.</p>
         pub fn viewer_count(mut self, input: i64) -> Self {
             self.viewer_count = Some(input);
             self
         }
-        /// <p>A count of concurrent views of the stream. Typically, a new view appears in
-        /// <code>viewerCount</code> within 15 seconds of when video playback starts and a view is
-        /// removed from <code>viewerCount</code> within 1 minute of when video playback ends. A value of
-        /// -1 indicates that the request timed out; in this case, retry.</p>
+        /// <p>A count of concurrent views of the stream. Typically, a new view appears in <code>viewerCount</code> within 15 seconds of when video playback starts and a view is removed from <code>viewerCount</code> within 1 minute of when video playback ends. A value of -1 indicates that the request timed out; in this case, retry.</p>
         pub fn set_viewer_count(mut self, input: std::option::Option<i64>) -> Self {
             self.viewer_count = input;
             self

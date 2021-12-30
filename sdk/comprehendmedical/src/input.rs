@@ -9,16 +9,12 @@ pub mod describe_entities_detection_v2_job_input {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier that Amazon Comprehend Medical generated for the job. The
-        /// <code>StartEntitiesDetectionV2Job</code> operation returns this identifier in its
-        /// response.</p>
+        /// <p>The identifier that Amazon Comprehend Medical generated for the job. The <code>StartEntitiesDetectionV2Job</code> operation returns this identifier in its response.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
         }
-        /// <p>The identifier that Amazon Comprehend Medical generated for the job. The
-        /// <code>StartEntitiesDetectionV2Job</code> operation returns this identifier in its
-        /// response.</p>
+        /// <p>The identifier that Amazon Comprehend Medical generated for the job. The <code>StartEntitiesDetectionV2Job</code> operation returns this identifier in its response.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -170,14 +166,12 @@ pub mod describe_icd10_cm_inference_job_input {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier that Amazon Comprehend Medical generated for the job. <code>The
-        /// StartICD10CMInferenceJob</code> operation returns this identifier in its response.</p>
+        /// <p>The identifier that Amazon Comprehend Medical generated for the job. <code>The StartICD10CMInferenceJob</code> operation returns this identifier in its response.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
         }
-        /// <p>The identifier that Amazon Comprehend Medical generated for the job. <code>The
-        /// StartICD10CMInferenceJob</code> operation returns this identifier in its response.</p>
+        /// <p>The identifier that Amazon Comprehend Medical generated for the job. <code>The StartICD10CMInferenceJob</code> operation returns this identifier in its response.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -328,14 +322,12 @@ pub mod describe_phi_detection_job_input {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier that Amazon Comprehend Medical generated for the job. The <code>StartPHIDetectionJob</code>
-        /// operation returns this identifier in its response.</p>
+        /// <p>The identifier that Amazon Comprehend Medical generated for the job. The <code>StartPHIDetectionJob</code> operation returns this identifier in its response.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
         }
-        /// <p>The identifier that Amazon Comprehend Medical generated for the job. The <code>StartPHIDetectionJob</code>
-        /// operation returns this identifier in its response.</p>
+        /// <p>The identifier that Amazon Comprehend Medical generated for the job. The <code>StartPHIDetectionJob</code> operation returns this identifier in its response.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -487,14 +479,12 @@ pub mod describe_rx_norm_inference_job_input {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier that Amazon Comprehend Medical generated for the job. The
-        /// StartRxNormInferenceJob operation returns this identifier in its response.</p>
+        /// <p>The identifier that Amazon Comprehend Medical generated for the job. The StartRxNormInferenceJob operation returns this identifier in its response.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
         }
-        /// <p>The identifier that Amazon Comprehend Medical generated for the job. The
-        /// StartRxNormInferenceJob operation returns this identifier in its response.</p>
+        /// <p>The identifier that Amazon Comprehend Medical generated for the job. The StartRxNormInferenceJob operation returns this identifier in its response.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -645,14 +635,12 @@ pub mod detect_entities_input {
         pub(crate) text: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> A UTF-8 text string containing the clinical content being examined for entities. Each
-        /// string must contain fewer than 20,000 bytes of characters.</p>
+        /// <p> A UTF-8 text string containing the clinical content being examined for entities. Each string must contain fewer than 20,000 bytes of characters.</p>
         pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
             self.text = Some(input.into());
             self
         }
-        /// <p> A UTF-8 text string containing the clinical content being examined for entities. Each
-        /// string must contain fewer than 20,000 bytes of characters.</p>
+        /// <p> A UTF-8 text string containing the clinical content being examined for entities. Each string must contain fewer than 20,000 bytes of characters.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.text = input;
             self
@@ -799,14 +787,12 @@ pub mod detect_entities_v2_input {
         pub(crate) text: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A UTF-8 string containing the clinical content being examined for entities. Each string
-        /// must contain fewer than 20,000 bytes of characters.</p>
+        /// <p>A UTF-8 string containing the clinical content being examined for entities. Each string must contain fewer than 20,000 bytes of characters.</p>
         pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
             self.text = Some(input.into());
             self
         }
-        /// <p>A UTF-8 string containing the clinical content being examined for entities. Each string
-        /// must contain fewer than 20,000 bytes of characters.</p>
+        /// <p>A UTF-8 string containing the clinical content being examined for entities. Each string must contain fewer than 20,000 bytes of characters.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.text = input;
             self
@@ -953,14 +939,12 @@ pub mod detect_phi_input {
         pub(crate) text: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> A UTF-8 text string containing the clinical content being examined for PHI entities. Each
-        /// string must contain fewer than 20,000 bytes of characters.</p>
+        /// <p> A UTF-8 text string containing the clinical content being examined for PHI entities. Each string must contain fewer than 20,000 bytes of characters.</p>
         pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
             self.text = Some(input.into());
             self
         }
-        /// <p> A UTF-8 text string containing the clinical content being examined for PHI entities. Each
-        /// string must contain fewer than 20,000 bytes of characters.</p>
+        /// <p> A UTF-8 text string containing the clinical content being examined for PHI entities. Each string must contain fewer than 20,000 bytes of characters.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.text = input;
             self
@@ -1102,14 +1086,12 @@ pub mod infer_icd10_cm_input {
         pub(crate) text: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The input text used for analysis. The input for InferICD10CM is a string from 1 to 10000
-        /// characters.</p>
+        /// <p>The input text used for analysis. The input for InferICD10CM is a string from 1 to 10000 characters.</p>
         pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
             self.text = Some(input.into());
             self
         }
-        /// <p>The input text used for analysis. The input for InferICD10CM is a string from 1 to 10000
-        /// characters.</p>
+        /// <p>The input text used for analysis. The input for InferICD10CM is a string from 1 to 10000 characters.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.text = input;
             self
@@ -1255,14 +1237,12 @@ pub mod infer_rx_norm_input {
         pub(crate) text: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The input text used for analysis. The input for InferRxNorm is a string from 1 to 10000
-        /// characters.</p>
+        /// <p>The input text used for analysis. The input for InferRxNorm is a string from 1 to 10000 characters.</p>
         pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
             self.text = Some(input.into());
             self
         }
-        /// <p>The input text used for analysis. The input for InferRxNorm is a string from 1 to 10000
-        /// characters.</p>
+        /// <p>The input text used for analysis. The input for InferRxNorm is a string from 1 to 10000 characters.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.text = input;
             self
@@ -1410,14 +1390,12 @@ pub mod list_entities_detection_v2_jobs_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or
-        /// the date and time that they were submitted. You can only set one filter at a time.</p>
+        /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
         pub fn filter(mut self, input: crate::model::ComprehendMedicalAsyncJobFilter) -> Self {
             self.filter = Some(input);
             self
         }
-        /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or
-        /// the date and time that they were submitted. You can only set one filter at a time.</p>
+        /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::ComprehendMedicalAsyncJobFilter>,
@@ -1595,14 +1573,12 @@ pub mod list_icd10_cm_inference_jobs_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or
-        /// the date and time that they were submitted. You can only set one filter at a time.</p>
+        /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
         pub fn filter(mut self, input: crate::model::ComprehendMedicalAsyncJobFilter) -> Self {
             self.filter = Some(input);
             self
         }
-        /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or
-        /// the date and time that they were submitted. You can only set one filter at a time.</p>
+        /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::ComprehendMedicalAsyncJobFilter>,
@@ -1781,14 +1757,12 @@ pub mod list_phi_detection_jobs_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or
-        /// the date and time that they were submitted. You can only set one filter at a time.</p>
+        /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
         pub fn filter(mut self, input: crate::model::ComprehendMedicalAsyncJobFilter) -> Self {
             self.filter = Some(input);
             self
         }
-        /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or
-        /// the date and time that they were submitted. You can only set one filter at a time.</p>
+        /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::ComprehendMedicalAsyncJobFilter>,
@@ -1966,14 +1940,12 @@ pub mod list_rx_norm_inference_jobs_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or
-        /// the date and time that they were submitted. You can only set one filter at a time.</p>
+        /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
         pub fn filter(mut self, input: crate::model::ComprehendMedicalAsyncJobFilter) -> Self {
             self.filter = Some(input);
             self
         }
-        /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or
-        /// the date and time that they were submitted. You can only set one filter at a time.</p>
+        /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::ComprehendMedicalAsyncJobFilter>,
@@ -2182,14 +2154,12 @@ pub mod start_entities_detection_v2_job_input {
             self.output_data_config = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-        /// grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
         pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_access_role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-        /// grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2207,14 +2177,12 @@ pub mod start_entities_detection_v2_job_input {
             self.job_name = input;
             self
         }
-        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical
-        /// generates one.</p>
+        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical generates one.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical
-        /// generates one.</p>
+        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical generates one.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2222,14 +2190,12 @@ pub mod start_entities_detection_v2_job_input {
             self.client_request_token = input;
             self
         }
-        /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a
-        /// key, the files are written in plain text.</p>
+        /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a key, the files are written in plain text.</p>
         pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key = Some(input.into());
             self
         }
-        /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a
-        /// key, the files are written in plain text.</p>
+        /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a key, the files are written in plain text.</p>
         pub fn set_kms_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key = input;
             self
@@ -2434,14 +2400,12 @@ pub mod start_icd10_cm_inference_job_input {
             self.output_data_config = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-        /// grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
         pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_access_role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-        /// grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2459,14 +2423,12 @@ pub mod start_icd10_cm_inference_job_input {
             self.job_name = input;
             self
         }
-        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical
-        /// generates one.</p>
+        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical generates one.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical
-        /// generates one.</p>
+        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical generates one.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2474,14 +2436,12 @@ pub mod start_icd10_cm_inference_job_input {
             self.client_request_token = input;
             self
         }
-        /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a
-        /// key, the files are written in plain text.</p>
+        /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a key, the files are written in plain text.</p>
         pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key = Some(input.into());
             self
         }
-        /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a
-        /// key, the files are written in plain text.</p>
+        /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a key, the files are written in plain text.</p>
         pub fn set_kms_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key = input;
             self
@@ -2687,14 +2647,12 @@ pub mod start_phi_detection_job_input {
             self.output_data_config = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-        /// grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
         pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_access_role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-        /// grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2712,14 +2670,12 @@ pub mod start_phi_detection_job_input {
             self.job_name = input;
             self
         }
-        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical
-        /// generates one.</p>
+        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical generates one.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical
-        /// generates one.</p>
+        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical generates one.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2727,14 +2683,12 @@ pub mod start_phi_detection_job_input {
             self.client_request_token = input;
             self
         }
-        /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a
-        /// key, the files are written in plain text.</p>
+        /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a key, the files are written in plain text.</p>
         pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key = Some(input.into());
             self
         }
-        /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a
-        /// key, the files are written in plain text.</p>
+        /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a key, the files are written in plain text.</p>
         pub fn set_kms_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key = input;
             self
@@ -2939,14 +2893,12 @@ pub mod start_rx_norm_inference_job_input {
             self.output_data_config = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-        /// grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
         pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_access_role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-        /// grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2964,14 +2916,12 @@ pub mod start_rx_norm_inference_job_input {
             self.job_name = input;
             self
         }
-        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical
-        /// generates one.</p>
+        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical generates one.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical
-        /// generates one.</p>
+        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical generates one.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2979,14 +2929,12 @@ pub mod start_rx_norm_inference_job_input {
             self.client_request_token = input;
             self
         }
-        /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a
-        /// key, the files are written in plain text.</p>
+        /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a key, the files are written in plain text.</p>
         pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key = Some(input.into());
             self
         }
-        /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a
-        /// key, the files are written in plain text.</p>
+        /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a key, the files are written in plain text.</p>
         pub fn set_kms_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key = input;
             self
@@ -3868,16 +3816,13 @@ pub struct StartRxNormInferenceJobInput {
     pub input_data_config: std::option::Option<crate::model::InputDataConfig>,
     /// <p>Specifies where to send the output files.</p>
     pub output_data_config: std::option::Option<crate::model::OutputDataConfig>,
-    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-    /// grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
     pub data_access_role_arn: std::option::Option<std::string::String>,
     /// <p>The identifier of the job.</p>
     pub job_name: std::option::Option<std::string::String>,
-    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical
-    /// generates one.</p>
+    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical generates one.</p>
     pub client_request_token: std::option::Option<std::string::String>,
-    /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a
-    /// key, the files are written in plain text.</p>
+    /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a key, the files are written in plain text.</p>
     pub kms_key: std::option::Option<std::string::String>,
     /// <p>The language of the input documents. All documents must be in the same language.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
@@ -3891,8 +3836,7 @@ impl StartRxNormInferenceJobInput {
     pub fn output_data_config(&self) -> std::option::Option<&crate::model::OutputDataConfig> {
         self.output_data_config.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-    /// grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
     pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
         self.data_access_role_arn.as_deref()
     }
@@ -3900,13 +3844,11 @@ impl StartRxNormInferenceJobInput {
     pub fn job_name(&self) -> std::option::Option<&str> {
         self.job_name.as_deref()
     }
-    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical
-    /// generates one.</p>
+    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical generates one.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a
-    /// key, the files are written in plain text.</p>
+    /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a key, the files are written in plain text.</p>
     pub fn kms_key(&self) -> std::option::Option<&str> {
         self.kms_key.as_deref()
     }
@@ -3937,16 +3879,13 @@ pub struct StartPhiDetectionJobInput {
     pub input_data_config: std::option::Option<crate::model::InputDataConfig>,
     /// <p>Specifies where to send the output files.</p>
     pub output_data_config: std::option::Option<crate::model::OutputDataConfig>,
-    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-    /// grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
     pub data_access_role_arn: std::option::Option<std::string::String>,
     /// <p>The identifier of the job.</p>
     pub job_name: std::option::Option<std::string::String>,
-    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical
-    /// generates one.</p>
+    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical generates one.</p>
     pub client_request_token: std::option::Option<std::string::String>,
-    /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a
-    /// key, the files are written in plain text.</p>
+    /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a key, the files are written in plain text.</p>
     pub kms_key: std::option::Option<std::string::String>,
     /// <p>The language of the input documents. All documents must be in the same language.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
@@ -3960,8 +3899,7 @@ impl StartPhiDetectionJobInput {
     pub fn output_data_config(&self) -> std::option::Option<&crate::model::OutputDataConfig> {
         self.output_data_config.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-    /// grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
     pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
         self.data_access_role_arn.as_deref()
     }
@@ -3969,13 +3907,11 @@ impl StartPhiDetectionJobInput {
     pub fn job_name(&self) -> std::option::Option<&str> {
         self.job_name.as_deref()
     }
-    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical
-    /// generates one.</p>
+    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical generates one.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a
-    /// key, the files are written in plain text.</p>
+    /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a key, the files are written in plain text.</p>
     pub fn kms_key(&self) -> std::option::Option<&str> {
         self.kms_key.as_deref()
     }
@@ -4006,16 +3942,13 @@ pub struct StartIcd10CmInferenceJobInput {
     pub input_data_config: std::option::Option<crate::model::InputDataConfig>,
     /// <p>Specifies where to send the output files.</p>
     pub output_data_config: std::option::Option<crate::model::OutputDataConfig>,
-    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-    /// grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
     pub data_access_role_arn: std::option::Option<std::string::String>,
     /// <p>The identifier of the job.</p>
     pub job_name: std::option::Option<std::string::String>,
-    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical
-    /// generates one.</p>
+    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical generates one.</p>
     pub client_request_token: std::option::Option<std::string::String>,
-    /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a
-    /// key, the files are written in plain text.</p>
+    /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a key, the files are written in plain text.</p>
     pub kms_key: std::option::Option<std::string::String>,
     /// <p>The language of the input documents. All documents must be in the same language.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
@@ -4029,8 +3962,7 @@ impl StartIcd10CmInferenceJobInput {
     pub fn output_data_config(&self) -> std::option::Option<&crate::model::OutputDataConfig> {
         self.output_data_config.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-    /// grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
     pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
         self.data_access_role_arn.as_deref()
     }
@@ -4038,13 +3970,11 @@ impl StartIcd10CmInferenceJobInput {
     pub fn job_name(&self) -> std::option::Option<&str> {
         self.job_name.as_deref()
     }
-    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical
-    /// generates one.</p>
+    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical generates one.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a
-    /// key, the files are written in plain text.</p>
+    /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a key, the files are written in plain text.</p>
     pub fn kms_key(&self) -> std::option::Option<&str> {
         self.kms_key.as_deref()
     }
@@ -4075,16 +4005,13 @@ pub struct StartEntitiesDetectionV2JobInput {
     pub input_data_config: std::option::Option<crate::model::InputDataConfig>,
     /// <p>Specifies where to send the output files.</p>
     pub output_data_config: std::option::Option<crate::model::OutputDataConfig>,
-    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-    /// grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
     pub data_access_role_arn: std::option::Option<std::string::String>,
     /// <p>The identifier of the job.</p>
     pub job_name: std::option::Option<std::string::String>,
-    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical
-    /// generates one.</p>
+    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical generates one.</p>
     pub client_request_token: std::option::Option<std::string::String>,
-    /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a
-    /// key, the files are written in plain text.</p>
+    /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a key, the files are written in plain text.</p>
     pub kms_key: std::option::Option<std::string::String>,
     /// <p>The language of the input documents. All documents must be in the same language.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
@@ -4098,8 +4025,7 @@ impl StartEntitiesDetectionV2JobInput {
     pub fn output_data_config(&self) -> std::option::Option<&crate::model::OutputDataConfig> {
         self.output_data_config.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-    /// grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
     pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
         self.data_access_role_arn.as_deref()
     }
@@ -4107,13 +4033,11 @@ impl StartEntitiesDetectionV2JobInput {
     pub fn job_name(&self) -> std::option::Option<&str> {
         self.job_name.as_deref()
     }
-    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical
-    /// generates one.</p>
+    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical generates one.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a
-    /// key, the files are written in plain text.</p>
+    /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a key, the files are written in plain text.</p>
     pub fn kms_key(&self) -> std::option::Option<&str> {
         self.kms_key.as_deref()
     }
@@ -4140,8 +4064,7 @@ impl std::fmt::Debug for StartEntitiesDetectionV2JobInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRxNormInferenceJobsInput {
-    /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or
-    /// the date and time that they were submitted. You can only set one filter at a time.</p>
+    /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
     pub filter: std::option::Option<crate::model::ComprehendMedicalAsyncJobFilter>,
     /// <p>Identifies the next page of results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -4149,8 +4072,7 @@ pub struct ListRxNormInferenceJobsInput {
     pub max_results: std::option::Option<i32>,
 }
 impl ListRxNormInferenceJobsInput {
-    /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or
-    /// the date and time that they were submitted. You can only set one filter at a time.</p>
+    /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
     pub fn filter(&self) -> std::option::Option<&crate::model::ComprehendMedicalAsyncJobFilter> {
         self.filter.as_ref()
     }
@@ -4177,8 +4099,7 @@ impl std::fmt::Debug for ListRxNormInferenceJobsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPhiDetectionJobsInput {
-    /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or
-    /// the date and time that they were submitted. You can only set one filter at a time.</p>
+    /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
     pub filter: std::option::Option<crate::model::ComprehendMedicalAsyncJobFilter>,
     /// <p>Identifies the next page of results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -4186,8 +4107,7 @@ pub struct ListPhiDetectionJobsInput {
     pub max_results: std::option::Option<i32>,
 }
 impl ListPhiDetectionJobsInput {
-    /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or
-    /// the date and time that they were submitted. You can only set one filter at a time.</p>
+    /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
     pub fn filter(&self) -> std::option::Option<&crate::model::ComprehendMedicalAsyncJobFilter> {
         self.filter.as_ref()
     }
@@ -4214,8 +4134,7 @@ impl std::fmt::Debug for ListPhiDetectionJobsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIcd10CmInferenceJobsInput {
-    /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or
-    /// the date and time that they were submitted. You can only set one filter at a time.</p>
+    /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
     pub filter: std::option::Option<crate::model::ComprehendMedicalAsyncJobFilter>,
     /// <p>Identifies the next page of results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -4223,8 +4142,7 @@ pub struct ListIcd10CmInferenceJobsInput {
     pub max_results: std::option::Option<i32>,
 }
 impl ListIcd10CmInferenceJobsInput {
-    /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or
-    /// the date and time that they were submitted. You can only set one filter at a time.</p>
+    /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
     pub fn filter(&self) -> std::option::Option<&crate::model::ComprehendMedicalAsyncJobFilter> {
         self.filter.as_ref()
     }
@@ -4251,8 +4169,7 @@ impl std::fmt::Debug for ListIcd10CmInferenceJobsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEntitiesDetectionV2JobsInput {
-    /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or
-    /// the date and time that they were submitted. You can only set one filter at a time.</p>
+    /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
     pub filter: std::option::Option<crate::model::ComprehendMedicalAsyncJobFilter>,
     /// <p>Identifies the next page of results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -4260,8 +4177,7 @@ pub struct ListEntitiesDetectionV2JobsInput {
     pub max_results: std::option::Option<i32>,
 }
 impl ListEntitiesDetectionV2JobsInput {
-    /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or
-    /// the date and time that they were submitted. You can only set one filter at a time.</p>
+    /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
     pub fn filter(&self) -> std::option::Option<&crate::model::ComprehendMedicalAsyncJobFilter> {
         self.filter.as_ref()
     }
@@ -4288,13 +4204,11 @@ impl std::fmt::Debug for ListEntitiesDetectionV2JobsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InferRxNormInput {
-    /// <p>The input text used for analysis. The input for InferRxNorm is a string from 1 to 10000
-    /// characters.</p>
+    /// <p>The input text used for analysis. The input for InferRxNorm is a string from 1 to 10000 characters.</p>
     pub text: std::option::Option<std::string::String>,
 }
 impl InferRxNormInput {
-    /// <p>The input text used for analysis. The input for InferRxNorm is a string from 1 to 10000
-    /// characters.</p>
+    /// <p>The input text used for analysis. The input for InferRxNorm is a string from 1 to 10000 characters.</p>
     pub fn text(&self) -> std::option::Option<&str> {
         self.text.as_deref()
     }
@@ -4311,13 +4225,11 @@ impl std::fmt::Debug for InferRxNormInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InferIcd10CmInput {
-    /// <p>The input text used for analysis. The input for InferICD10CM is a string from 1 to 10000
-    /// characters.</p>
+    /// <p>The input text used for analysis. The input for InferICD10CM is a string from 1 to 10000 characters.</p>
     pub text: std::option::Option<std::string::String>,
 }
 impl InferIcd10CmInput {
-    /// <p>The input text used for analysis. The input for InferICD10CM is a string from 1 to 10000
-    /// characters.</p>
+    /// <p>The input text used for analysis. The input for InferICD10CM is a string from 1 to 10000 characters.</p>
     pub fn text(&self) -> std::option::Option<&str> {
         self.text.as_deref()
     }
@@ -4334,13 +4246,11 @@ impl std::fmt::Debug for InferIcd10CmInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectPhiInput {
-    /// <p> A UTF-8 text string containing the clinical content being examined for PHI entities. Each
-    /// string must contain fewer than 20,000 bytes of characters.</p>
+    /// <p> A UTF-8 text string containing the clinical content being examined for PHI entities. Each string must contain fewer than 20,000 bytes of characters.</p>
     pub text: std::option::Option<std::string::String>,
 }
 impl DetectPhiInput {
-    /// <p> A UTF-8 text string containing the clinical content being examined for PHI entities. Each
-    /// string must contain fewer than 20,000 bytes of characters.</p>
+    /// <p> A UTF-8 text string containing the clinical content being examined for PHI entities. Each string must contain fewer than 20,000 bytes of characters.</p>
     pub fn text(&self) -> std::option::Option<&str> {
         self.text.as_deref()
     }
@@ -4357,13 +4267,11 @@ impl std::fmt::Debug for DetectPhiInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectEntitiesV2Input {
-    /// <p>A UTF-8 string containing the clinical content being examined for entities. Each string
-    /// must contain fewer than 20,000 bytes of characters.</p>
+    /// <p>A UTF-8 string containing the clinical content being examined for entities. Each string must contain fewer than 20,000 bytes of characters.</p>
     pub text: std::option::Option<std::string::String>,
 }
 impl DetectEntitiesV2Input {
-    /// <p>A UTF-8 string containing the clinical content being examined for entities. Each string
-    /// must contain fewer than 20,000 bytes of characters.</p>
+    /// <p>A UTF-8 string containing the clinical content being examined for entities. Each string must contain fewer than 20,000 bytes of characters.</p>
     pub fn text(&self) -> std::option::Option<&str> {
         self.text.as_deref()
     }
@@ -4380,13 +4288,11 @@ impl std::fmt::Debug for DetectEntitiesV2Input {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectEntitiesInput {
-    /// <p> A UTF-8 text string containing the clinical content being examined for entities. Each
-    /// string must contain fewer than 20,000 bytes of characters.</p>
+    /// <p> A UTF-8 text string containing the clinical content being examined for entities. Each string must contain fewer than 20,000 bytes of characters.</p>
     pub text: std::option::Option<std::string::String>,
 }
 impl DetectEntitiesInput {
-    /// <p> A UTF-8 text string containing the clinical content being examined for entities. Each
-    /// string must contain fewer than 20,000 bytes of characters.</p>
+    /// <p> A UTF-8 text string containing the clinical content being examined for entities. Each string must contain fewer than 20,000 bytes of characters.</p>
     pub fn text(&self) -> std::option::Option<&str> {
         self.text.as_deref()
     }
@@ -4403,13 +4309,11 @@ impl std::fmt::Debug for DetectEntitiesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRxNormInferenceJobInput {
-    /// <p>The identifier that Amazon Comprehend Medical generated for the job. The
-    /// StartRxNormInferenceJob operation returns this identifier in its response.</p>
+    /// <p>The identifier that Amazon Comprehend Medical generated for the job. The StartRxNormInferenceJob operation returns this identifier in its response.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
 impl DescribeRxNormInferenceJobInput {
-    /// <p>The identifier that Amazon Comprehend Medical generated for the job. The
-    /// StartRxNormInferenceJob operation returns this identifier in its response.</p>
+    /// <p>The identifier that Amazon Comprehend Medical generated for the job. The StartRxNormInferenceJob operation returns this identifier in its response.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
@@ -4426,13 +4330,11 @@ impl std::fmt::Debug for DescribeRxNormInferenceJobInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePhiDetectionJobInput {
-    /// <p>The identifier that Amazon Comprehend Medical generated for the job. The <code>StartPHIDetectionJob</code>
-    /// operation returns this identifier in its response.</p>
+    /// <p>The identifier that Amazon Comprehend Medical generated for the job. The <code>StartPHIDetectionJob</code> operation returns this identifier in its response.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
 impl DescribePhiDetectionJobInput {
-    /// <p>The identifier that Amazon Comprehend Medical generated for the job. The <code>StartPHIDetectionJob</code>
-    /// operation returns this identifier in its response.</p>
+    /// <p>The identifier that Amazon Comprehend Medical generated for the job. The <code>StartPHIDetectionJob</code> operation returns this identifier in its response.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
@@ -4449,13 +4351,11 @@ impl std::fmt::Debug for DescribePhiDetectionJobInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeIcd10CmInferenceJobInput {
-    /// <p>The identifier that Amazon Comprehend Medical generated for the job. <code>The
-    /// StartICD10CMInferenceJob</code> operation returns this identifier in its response.</p>
+    /// <p>The identifier that Amazon Comprehend Medical generated for the job. <code>The StartICD10CMInferenceJob</code> operation returns this identifier in its response.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
 impl DescribeIcd10CmInferenceJobInput {
-    /// <p>The identifier that Amazon Comprehend Medical generated for the job. <code>The
-    /// StartICD10CMInferenceJob</code> operation returns this identifier in its response.</p>
+    /// <p>The identifier that Amazon Comprehend Medical generated for the job. <code>The StartICD10CMInferenceJob</code> operation returns this identifier in its response.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
@@ -4472,15 +4372,11 @@ impl std::fmt::Debug for DescribeIcd10CmInferenceJobInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEntitiesDetectionV2JobInput {
-    /// <p>The identifier that Amazon Comprehend Medical generated for the job. The
-    /// <code>StartEntitiesDetectionV2Job</code> operation returns this identifier in its
-    /// response.</p>
+    /// <p>The identifier that Amazon Comprehend Medical generated for the job. The <code>StartEntitiesDetectionV2Job</code> operation returns this identifier in its response.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
 impl DescribeEntitiesDetectionV2JobInput {
-    /// <p>The identifier that Amazon Comprehend Medical generated for the job. The
-    /// <code>StartEntitiesDetectionV2Job</code> operation returns this identifier in its
-    /// response.</p>
+    /// <p>The identifier that Amazon Comprehend Medical generated for the job. The <code>StartEntitiesDetectionV2Job</code> operation returns this identifier in its response.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }

@@ -1140,14 +1140,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_package_id(input);
             self
         }
-        /// <p>Delete the package even if it has artifacts stored in its access point.
-        /// Deletes the package's artifacts from Amazon S3.</p>
+        /// <p>Delete the package even if it has artifacts stored in its access point. Deletes the package's artifacts from Amazon S3.</p>
         pub fn force_delete(mut self, input: bool) -> Self {
             self.inner = self.inner.force_delete(input);
             self
         }
-        /// <p>Delete the package even if it has artifacts stored in its access point.
-        /// Deletes the package's artifacts from Amazon S3.</p>
+        /// <p>Delete the package even if it has artifacts stored in its access point. Deletes the package's artifacts from Amazon S3.</p>
         pub fn set_force_delete(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_force_delete(input);
             self
@@ -2885,9 +2883,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ProvisionDevice`.
     ///
-    /// <p>Creates a device and returns a configuration archive. The configuration
-    /// archive is a ZIP file that contains a provisioning certificate that is valid for 5 minutes.
-    /// Transfer the configuration archive to the device with the included USB storage device within 5 minutes.</p>
+    /// <p>Creates a device and returns a configuration archive. The configuration archive is a ZIP file that contains a provisioning certificate that is valid for 5 minutes. Transfer the configuration archive to the device with the included USB storage device within 5 minutes.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ProvisionDevice<
         C = aws_smithy_client::erase::DynConnector,

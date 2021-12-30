@@ -14,12 +14,9 @@ pub struct AddLayerVersionPermissionError {
 pub enum AddLayerVersionPermissionErrorKind {
     /// <p>One of the parameters in the request is invalid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>The permissions policy for the resource is too large. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn more</a>
-    /// </p>
+    /// <p>The permissions policy for the resource is too large. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn more</a> </p>
     PolicyLengthExceededException(crate::error::PolicyLengthExceededException),
-    /// <p>The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the
-    /// <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve the latest RevisionId for your
-    /// resource.</p>
+    /// <p>The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve the latest RevisionId for your resource.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// <p>The resource already exists, or another operation is in progress.</p>
     ResourceConflictException(crate::error::ResourceConflictException),
@@ -186,12 +183,9 @@ pub struct AddPermissionError {
 pub enum AddPermissionErrorKind {
     /// <p>One of the parameters in the request is invalid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>The permissions policy for the resource is too large. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn more</a>
-    /// </p>
+    /// <p>The permissions policy for the resource is too large. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn more</a> </p>
     PolicyLengthExceededException(crate::error::PolicyLengthExceededException),
-    /// <p>The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the
-    /// <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve the latest RevisionId for your
-    /// resource.</p>
+    /// <p>The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve the latest RevisionId for your resource.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// <p>The resource already exists, or another operation is in progress.</p>
     ResourceConflictException(crate::error::ResourceConflictException),
@@ -728,14 +722,11 @@ pub struct CreateFunctionError {
 pub enum CreateFunctionErrorKind {
     /// <p>The specified code signing configuration does not exist.</p>
     CodeSigningConfigNotFoundException(crate::error::CodeSigningConfigNotFoundException),
-    /// <p>You have exceeded your maximum total code size per account. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn more</a>
-    /// </p>
+    /// <p>You have exceeded your maximum total code size per account. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn more</a> </p>
     CodeStorageExceededException(crate::error::CodeStorageExceededException),
-    /// <p>The code signature failed one or more of the validation checks for signature mismatch or expiry, and the code signing policy
-    /// is set to ENFORCE. Lambda blocks the deployment. </p>
+    /// <p>The code signature failed one or more of the validation checks for signature mismatch or expiry, and the code signing policy is set to ENFORCE. Lambda blocks the deployment. </p>
     CodeVerificationFailedException(crate::error::CodeVerificationFailedException),
-    /// <p>The code signature failed the integrity check. Lambda always blocks deployment if the integrity check
-    /// fails, even if code signing policy is set to WARN.</p>
+    /// <p>The code signature failed the integrity check. Lambda always blocks deployment if the integrity check fails, even if code signing policy is set to WARN.</p>
     InvalidCodeSignatureException(crate::error::InvalidCodeSignatureException),
     /// <p>One of the parameters in the request is invalid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -1162,8 +1153,7 @@ pub struct DeleteEventSourceMappingError {
 pub enum DeleteEventSourceMappingErrorKind {
     /// <p>One of the parameters in the request is invalid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>The operation conflicts with the resource's availability. For example, you attempted to update an EventSource
-    /// Mapping in CREATING, or tried to delete a EventSource mapping currently in the UPDATING state.</p>
+    /// <p>The operation conflicts with the resource's availability. For example, you attempted to update an EventSource Mapping in CREATING, or tried to delete a EventSource mapping currently in the UPDATING state.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>The resource specified in the request does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3935,8 +3925,7 @@ pub struct InvokeError {
 pub enum InvokeErrorKind {
     /// <p>Need additional permissions to configure VPC settings.</p>
     Ec2AccessDeniedException(crate::error::Ec2AccessDeniedException),
-    /// <p>Lambda was throttled by Amazon EC2 during Lambda function initialization using the execution role provided
-    /// for the Lambda function.</p>
+    /// <p>Lambda was throttled by Amazon EC2 during Lambda function initialization using the execution role provided for the Lambda function.</p>
     Ec2ThrottledException(crate::error::Ec2ThrottledException),
     /// <p>Lambda received an unexpected EC2 client exception while setting up for the Lambda function.</p>
     Ec2UnexpectedException(crate::error::Ec2UnexpectedException),
@@ -3946,11 +3935,9 @@ pub enum InvokeErrorKind {
     EfsMountConnectivityException(crate::error::EfsMountConnectivityException),
     /// <p>The function couldn't mount the configured file system due to a permission or configuration issue.</p>
     EfsMountFailureException(crate::error::EfsMountFailureException),
-    /// <p>The function was able to make a network connection to the configured file system, but the mount operation
-    /// timed out.</p>
+    /// <p>The function was able to make a network connection to the configured file system, but the mount operation timed out.</p>
     EfsMountTimeoutException(crate::error::EfsMountTimeoutException),
-    /// <p>Lambda was not able to create an elastic network interface in the VPC, specified as part of Lambda
-    /// function configuration, because the limit for network interfaces has been reached.</p>
+    /// <p>Lambda was not able to create an elastic network interface in the VPC, specified as part of Lambda function configuration, because the limit for network interfaces has been reached.</p>
     EniLimitReachedException(crate::error::EniLimitReachedException),
     /// <p>One of the parameters in the request is invalid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -3964,32 +3951,25 @@ pub enum InvokeErrorKind {
     InvalidSubnetIdException(crate::error::InvalidSubnetIdException),
     /// <p>Lambda could not unzip the deployment package.</p>
     InvalidZipFileException(crate::error::InvalidZipFileException),
-    /// <p>Lambda was unable to decrypt the environment variables because KMS access was denied. Check the Lambda
-    /// function's KMS permissions.</p>
+    /// <p>Lambda was unable to decrypt the environment variables because KMS access was denied. Check the Lambda function's KMS permissions.</p>
     KmsAccessDeniedException(crate::error::KmsAccessDeniedException),
-    /// <p>Lambda was unable to decrypt the environment variables because the KMS key used is disabled. Check the Lambda
-    /// function's KMS key settings.</p>
+    /// <p>Lambda was unable to decrypt the environment variables because the KMS key used is disabled. Check the Lambda function's KMS key settings.</p>
     KmsDisabledException(crate::error::KmsDisabledException),
-    /// <p>Lambda was unable to decrypt the environment variables because the KMS key used is in an invalid state for
-    /// Decrypt. Check the function's KMS key settings.</p>
+    /// <p>Lambda was unable to decrypt the environment variables because the KMS key used is in an invalid state for Decrypt. Check the function's KMS key settings.</p>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
-    /// <p>Lambda was unable to decrypt the environment variables because the KMS key was not found. Check the function's
-    /// KMS key settings. </p>
+    /// <p>Lambda was unable to decrypt the environment variables because the KMS key was not found. Check the function's KMS key settings. </p>
     KmsNotFoundException(crate::error::KmsNotFoundException),
-    /// <p>The request payload exceeded the <code>Invoke</code> request body JSON input limit. For more information, see
-    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Limits</a>. </p>
+    /// <p>The request payload exceeded the <code>Invoke</code> request body JSON input limit. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Limits</a>. </p>
     RequestTooLargeException(crate::error::RequestTooLargeException),
     /// <p>The resource already exists, or another operation is in progress.</p>
     ResourceConflictException(crate::error::ResourceConflictException),
     /// <p>The resource specified in the request does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The function is inactive and its VPC connection is no longer available. Wait for the VPC connection to
-    /// reestablish and try again.</p>
+    /// <p>The function is inactive and its VPC connection is no longer available. Wait for the VPC connection to reestablish and try again.</p>
     ResourceNotReadyException(crate::error::ResourceNotReadyException),
     /// <p>The Lambda service encountered an internal error.</p>
     ServiceException(crate::error::ServiceException),
-    /// <p>Lambda was not able to set up VPC access for the Lambda function because one or more configured subnets
-    /// has no available IP addresses.</p>
+    /// <p>Lambda was not able to set up VPC access for the Lambda function because one or more configured subnets has no available IP addresses.</p>
     SubnetIpAddressLimitReachedException(crate::error::SubnetIpAddressLimitReachedException),
     /// <p>The request throughput limit was exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
@@ -5738,8 +5718,7 @@ pub struct PublishLayerVersionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PublishLayerVersionErrorKind {
-    /// <p>You have exceeded your maximum total code size per account. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn more</a>
-    /// </p>
+    /// <p>You have exceeded your maximum total code size per account. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn more</a> </p>
     CodeStorageExceededException(crate::error::CodeStorageExceededException),
     /// <p>One of the parameters in the request is invalid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -5876,14 +5855,11 @@ pub struct PublishVersionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PublishVersionErrorKind {
-    /// <p>You have exceeded your maximum total code size per account. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn more</a>
-    /// </p>
+    /// <p>You have exceeded your maximum total code size per account. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn more</a> </p>
     CodeStorageExceededException(crate::error::CodeStorageExceededException),
     /// <p>One of the parameters in the request is invalid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the
-    /// <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve the latest RevisionId for your
-    /// resource.</p>
+    /// <p>The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve the latest RevisionId for your resource.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// <p>The resource already exists, or another operation is in progress.</p>
     ResourceConflictException(crate::error::ResourceConflictException),
@@ -6649,9 +6625,7 @@ pub struct RemoveLayerVersionPermissionError {
 pub enum RemoveLayerVersionPermissionErrorKind {
     /// <p>One of the parameters in the request is invalid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the
-    /// <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve the latest RevisionId for your
-    /// resource.</p>
+    /// <p>The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve the latest RevisionId for your resource.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// <p>The resource specified in the request does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -6802,9 +6776,7 @@ pub struct RemovePermissionError {
 pub enum RemovePermissionErrorKind {
     /// <p>One of the parameters in the request is invalid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the
-    /// <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve the latest RevisionId for your
-    /// resource.</p>
+    /// <p>The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve the latest RevisionId for your resource.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// <p>The resource specified in the request does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -7206,9 +7178,7 @@ pub struct UpdateAliasError {
 pub enum UpdateAliasErrorKind {
     /// <p>One of the parameters in the request is invalid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the
-    /// <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve the latest RevisionId for your
-    /// resource.</p>
+    /// <p>The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve the latest RevisionId for your resource.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// <p>The resource already exists, or another operation is in progress.</p>
     ResourceConflictException(crate::error::ResourceConflictException),
@@ -7474,8 +7444,7 @@ pub enum UpdateEventSourceMappingErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The resource already exists, or another operation is in progress.</p>
     ResourceConflictException(crate::error::ResourceConflictException),
-    /// <p>The operation conflicts with the resource's availability. For example, you attempted to update an EventSource
-    /// Mapping in CREATING, or tried to delete a EventSource mapping currently in the UPDATING state.</p>
+    /// <p>The operation conflicts with the resource's availability. For example, you attempted to update an EventSource Mapping in CREATING, or tried to delete a EventSource mapping currently in the UPDATING state.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>The resource specified in the request does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -7625,20 +7594,15 @@ pub struct UpdateFunctionCodeError {
 pub enum UpdateFunctionCodeErrorKind {
     /// <p>The specified code signing configuration does not exist.</p>
     CodeSigningConfigNotFoundException(crate::error::CodeSigningConfigNotFoundException),
-    /// <p>You have exceeded your maximum total code size per account. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn more</a>
-    /// </p>
+    /// <p>You have exceeded your maximum total code size per account. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn more</a> </p>
     CodeStorageExceededException(crate::error::CodeStorageExceededException),
-    /// <p>The code signature failed one or more of the validation checks for signature mismatch or expiry, and the code signing policy
-    /// is set to ENFORCE. Lambda blocks the deployment. </p>
+    /// <p>The code signature failed one or more of the validation checks for signature mismatch or expiry, and the code signing policy is set to ENFORCE. Lambda blocks the deployment. </p>
     CodeVerificationFailedException(crate::error::CodeVerificationFailedException),
-    /// <p>The code signature failed the integrity check. Lambda always blocks deployment if the integrity check
-    /// fails, even if code signing policy is set to WARN.</p>
+    /// <p>The code signature failed the integrity check. Lambda always blocks deployment if the integrity check fails, even if code signing policy is set to WARN.</p>
     InvalidCodeSignatureException(crate::error::InvalidCodeSignatureException),
     /// <p>One of the parameters in the request is invalid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the
-    /// <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve the latest RevisionId for your
-    /// resource.</p>
+    /// <p>The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve the latest RevisionId for your resource.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// <p>The resource already exists, or another operation is in progress.</p>
     ResourceConflictException(crate::error::ResourceConflictException),
@@ -7821,17 +7785,13 @@ pub struct UpdateFunctionConfigurationError {
 pub enum UpdateFunctionConfigurationErrorKind {
     /// <p>The specified code signing configuration does not exist.</p>
     CodeSigningConfigNotFoundException(crate::error::CodeSigningConfigNotFoundException),
-    /// <p>The code signature failed one or more of the validation checks for signature mismatch or expiry, and the code signing policy
-    /// is set to ENFORCE. Lambda blocks the deployment. </p>
+    /// <p>The code signature failed one or more of the validation checks for signature mismatch or expiry, and the code signing policy is set to ENFORCE. Lambda blocks the deployment. </p>
     CodeVerificationFailedException(crate::error::CodeVerificationFailedException),
-    /// <p>The code signature failed the integrity check. Lambda always blocks deployment if the integrity check
-    /// fails, even if code signing policy is set to WARN.</p>
+    /// <p>The code signature failed the integrity check. Lambda always blocks deployment if the integrity check fails, even if code signing policy is set to WARN.</p>
     InvalidCodeSignatureException(crate::error::InvalidCodeSignatureException),
     /// <p>One of the parameters in the request is invalid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the
-    /// <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve the latest RevisionId for your
-    /// resource.</p>
+    /// <p>The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve the latest RevisionId for your resource.</p>
     PreconditionFailedException(crate::error::PreconditionFailedException),
     /// <p>The resource already exists, or another operation is in progress.</p>
     ResourceConflictException(crate::error::ResourceConflictException),
@@ -8640,9 +8600,7 @@ impl InvalidParameterValueException {
     }
 }
 
-/// <p>The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the
-/// <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve the latest RevisionId for your
-/// resource.</p>
+/// <p>The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve the latest RevisionId for your resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PreconditionFailedException {
@@ -8727,8 +8685,7 @@ impl PreconditionFailedException {
     }
 }
 
-/// <p>The code signature failed the integrity check. Lambda always blocks deployment if the integrity check
-/// fails, even if code signing policy is set to WARN.</p>
+/// <p>The code signature failed the integrity check. Lambda always blocks deployment if the integrity check fails, even if code signing policy is set to WARN.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidCodeSignatureException {
@@ -8813,8 +8770,7 @@ impl InvalidCodeSignatureException {
     }
 }
 
-/// <p>The code signature failed one or more of the validation checks for signature mismatch or expiry, and the code signing policy
-/// is set to ENFORCE. Lambda blocks the deployment. </p>
+/// <p>The code signature failed one or more of the validation checks for signature mismatch or expiry, and the code signing policy is set to ENFORCE. Lambda blocks the deployment. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CodeVerificationFailedException {
@@ -8984,8 +8940,7 @@ impl CodeSigningConfigNotFoundException {
     }
 }
 
-/// <p>You have exceeded your maximum total code size per account. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn more</a>
-/// </p>
+/// <p>You have exceeded your maximum total code size per account. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn more</a> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CodeStorageExceededException {
@@ -9070,8 +9025,7 @@ impl CodeStorageExceededException {
     }
 }
 
-/// <p>The operation conflicts with the resource's availability. For example, you attempted to update an EventSource
-/// Mapping in CREATING, or tried to delete a EventSource mapping currently in the UPDATING state.</p>
+/// <p>The operation conflicts with the resource's availability. For example, you attempted to update an EventSource Mapping in CREATING, or tried to delete a EventSource mapping currently in the UPDATING state.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceInUseException {
@@ -9411,8 +9365,7 @@ impl UnsupportedMediaTypeException {
     }
 }
 
-/// <p>Lambda was not able to set up VPC access for the Lambda function because one or more configured subnets
-/// has no available IP addresses.</p>
+/// <p>Lambda was not able to set up VPC access for the Lambda function because one or more configured subnets has no available IP addresses.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubnetIpAddressLimitReachedException {
@@ -9500,8 +9453,7 @@ impl SubnetIpAddressLimitReachedException {
     }
 }
 
-/// <p>The function is inactive and its VPC connection is no longer available. Wait for the VPC connection to
-/// reestablish and try again.</p>
+/// <p>The function is inactive and its VPC connection is no longer available. Wait for the VPC connection to reestablish and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotReadyException {
@@ -9586,8 +9538,7 @@ impl ResourceNotReadyException {
     }
 }
 
-/// <p>The request payload exceeded the <code>Invoke</code> request body JSON input limit. For more information, see
-/// <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Limits</a>. </p>
+/// <p>The request payload exceeded the <code>Invoke</code> request body JSON input limit. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Limits</a>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RequestTooLargeException {
@@ -9672,8 +9623,7 @@ impl RequestTooLargeException {
     }
 }
 
-/// <p>Lambda was unable to decrypt the environment variables because the KMS key was not found. Check the function's
-/// KMS key settings. </p>
+/// <p>Lambda was unable to decrypt the environment variables because the KMS key was not found. Check the function's KMS key settings. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsNotFoundException {
@@ -9758,8 +9708,7 @@ impl KmsNotFoundException {
     }
 }
 
-/// <p>Lambda was unable to decrypt the environment variables because the KMS key used is in an invalid state for
-/// Decrypt. Check the function's KMS key settings.</p>
+/// <p>Lambda was unable to decrypt the environment variables because the KMS key used is in an invalid state for Decrypt. Check the function's KMS key settings.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsInvalidStateException {
@@ -9844,8 +9793,7 @@ impl KmsInvalidStateException {
     }
 }
 
-/// <p>Lambda was unable to decrypt the environment variables because the KMS key used is disabled. Check the Lambda
-/// function's KMS key settings.</p>
+/// <p>Lambda was unable to decrypt the environment variables because the KMS key used is disabled. Check the Lambda function's KMS key settings.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsDisabledException {
@@ -9930,8 +9878,7 @@ impl KmsDisabledException {
     }
 }
 
-/// <p>Lambda was unable to decrypt the environment variables because KMS access was denied. Check the Lambda
-/// function's KMS permissions.</p>
+/// <p>Lambda was unable to decrypt the environment variables because KMS access was denied. Check the Lambda function's KMS permissions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsAccessDeniedException {
@@ -10274,8 +10221,7 @@ impl InvalidSecurityGroupIdException {
     }
 }
 
-/// <p>Lambda was not able to create an elastic network interface in the VPC, specified as part of Lambda
-/// function configuration, because the limit for network interfaces has been reached.</p>
+/// <p>Lambda was not able to create an elastic network interface in the VPC, specified as part of Lambda function configuration, because the limit for network interfaces has been reached.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EniLimitReachedException {
@@ -10360,8 +10306,7 @@ impl EniLimitReachedException {
     }
 }
 
-/// <p>The function was able to make a network connection to the configured file system, but the mount operation
-/// timed out.</p>
+/// <p>The function was able to make a network connection to the configured file system, but the mount operation timed out.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EfsMountTimeoutException {
@@ -10811,8 +10756,7 @@ impl Ec2UnexpectedException {
     }
 }
 
-/// <p>Lambda was throttled by Amazon EC2 during Lambda function initialization using the execution role provided
-/// for the Lambda function.</p>
+/// <p>Lambda was throttled by Amazon EC2 during Lambda function initialization using the execution role provided for the Lambda function.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Ec2ThrottledException {
@@ -11067,8 +11011,7 @@ impl ProvisionedConcurrencyConfigNotFoundException {
     }
 }
 
-/// <p>The permissions policy for the resource is too large. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn more</a>
-/// </p>
+/// <p>The permissions policy for the resource is too large. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn more</a> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PolicyLengthExceededException {

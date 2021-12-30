@@ -34,10 +34,7 @@ pub mod create_domain_input {
             self.description = input;
             self
         }
-        /// <p>The configuration, containing the KMS Key Identifier, to be used by Voice ID for
-        /// the server-side encryption of your data. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/encryption-at-rest.html#encryption-at-rest-voiceid">
-        /// Amazon Connect VoiceID encryption at rest</a> for more details on how the KMS Key is used.
-        /// </p>
+        /// <p>The configuration, containing the KMS Key Identifier, to be used by Voice ID for the server-side encryption of your data. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/encryption-at-rest.html#encryption-at-rest-voiceid"> Amazon Connect VoiceID encryption at rest</a> for more details on how the KMS Key is used. </p>
         pub fn server_side_encryption_configuration(
             mut self,
             input: crate::model::ServerSideEncryptionConfiguration,
@@ -45,10 +42,7 @@ pub mod create_domain_input {
             self.server_side_encryption_configuration = Some(input);
             self
         }
-        /// <p>The configuration, containing the KMS Key Identifier, to be used by Voice ID for
-        /// the server-side encryption of your data. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/encryption-at-rest.html#encryption-at-rest-voiceid">
-        /// Amazon Connect VoiceID encryption at rest</a> for more details on how the KMS Key is used.
-        /// </p>
+        /// <p>The configuration, containing the KMS Key Identifier, to be used by Voice ID for the server-side encryption of your data. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/encryption-at-rest.html#encryption-at-rest-voiceid"> Amazon Connect VoiceID encryption at rest</a> for more details on how the KMS Key is used. </p>
         pub fn set_server_side_encryption_configuration(
             mut self,
             input: std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
@@ -56,14 +50,12 @@ pub mod create_domain_input {
             self.server_side_encryption_configuration = input;
             self
         }
-        /// <p>The idempotency token for creating a new domain. If not provided, Amazon Web Services SDK populates
-        /// this field.</p>
+        /// <p>The idempotency token for creating a new domain. If not provided, Amazon Web Services SDK populates this field.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>The idempotency token for creating a new domain. If not provided, Amazon Web Services SDK populates
-        /// this field.</p>
+        /// <p>The idempotency token for creating a new domain. If not provided, Amazon Web Services SDK populates this field.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -1556,14 +1548,12 @@ pub mod evaluate_session_input {
             self.domain_id = input;
             self
         }
-        /// <p>The session identifier, or name of the session, that you want to evaluate. In Voice ID
-        /// integration, this is the Contact-Id.</p>
+        /// <p>The session identifier, or name of the session, that you want to evaluate. In Voice ID integration, this is the Contact-Id.</p>
         pub fn session_name_or_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.session_name_or_id = Some(input.into());
             self
         }
-        /// <p>The session identifier, or name of the session, that you want to evaluate. In Voice ID
-        /// integration, this is the Contact-Id.</p>
+        /// <p>The session identifier, or name of the session, that you want to evaluate. In Voice ID integration, this is the Contact-Id.</p>
         pub fn set_session_name_or_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1728,32 +1718,22 @@ pub mod list_domains_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain
-        /// further pages of results. The default is 100; the maximum allowed page size is also 100.
-        /// </p>
+        /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain further pages of results. The default is 100; the maximum allowed page size is also 100. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain
-        /// further pages of results. The default is 100; the maximum allowed page size is also 100.
-        /// </p>
+        /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain further pages of results. The default is 100; the maximum allowed page size is also 100. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code>
-        /// is a unique pagination token for each page. Make the call again using the returned token to retrieve the
-        /// next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.
-        /// </p>
+        /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code>
-        /// is a unique pagination token for each page. Make the call again using the returned token to retrieve the
-        /// next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.
-        /// </p>
+        /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1945,32 +1925,22 @@ pub mod list_fraudster_registration_jobs_input {
             self.job_status = input;
             self
         }
-        /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain
-        /// further pages of results. The default is 100; the maximum allowed page size is also 100.
-        /// </p>
+        /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain further pages of results. The default is 100; the maximum allowed page size is also 100. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain
-        /// further pages of results. The default is 100; the maximum allowed page size is also 100.
-        /// </p>
+        /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain further pages of results. The default is 100; the maximum allowed page size is also 100. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code>
-        /// is a unique pagination token for each page. Make the call again using the returned token to retrieve the
-        /// next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.
-        /// </p>
+        /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code>
-        /// is a unique pagination token for each page. Make the call again using the returned token to retrieve the
-        /// next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.
-        /// </p>
+        /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2171,32 +2141,22 @@ pub mod list_speaker_enrollment_jobs_input {
             self.job_status = input;
             self
         }
-        /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain
-        /// further pages of results. The default is 100; the maximum allowed page size is also 100.
-        /// </p>
+        /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain further pages of results. The default is 100; the maximum allowed page size is also 100. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain
-        /// further pages of results. The default is 100; the maximum allowed page size is also 100.
-        /// </p>
+        /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain further pages of results. The default is 100; the maximum allowed page size is also 100. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code>
-        /// is a unique pagination token for each page. Make the call again using the returned token to retrieve the
-        /// next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.
-        /// </p>
+        /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code>
-        /// is a unique pagination token for each page. Make the call again using the returned token to retrieve the
-        /// next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.
-        /// </p>
+        /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2383,32 +2343,22 @@ pub mod list_speakers_input {
             self.domain_id = input;
             self
         }
-        /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain
-        /// further pages of results. The default is 100; the maximum allowed page size is also 100.
-        /// </p>
+        /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain further pages of results. The default is 100; the maximum allowed page size is also 100. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain
-        /// further pages of results. The default is 100; the maximum allowed page size is also 100.
-        /// </p>
+        /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain further pages of results. The default is 100; the maximum allowed page size is also 100. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code>
-        /// is a unique pagination token for each page. Make the call again using the returned token to retrieve the
-        /// next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.
-        /// </p>
+        /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code>
-        /// is a unique pagination token for each page. Make the call again using the returned token to retrieve the
-        /// next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.
-        /// </p>
+        /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2903,14 +2853,12 @@ pub mod start_fraudster_registration_job_input {
         pub(crate) output_data_config: std::option::Option<crate::model::OutputDataConfig>,
     }
     impl Builder {
-        /// <p>The idempotency token for starting a new fraudster registration job. If not provided, Amazon Web Services
-        /// SDK populates this field.</p>
+        /// <p>The idempotency token for starting a new fraudster registration job. If not provided, Amazon Web Services SDK populates this field.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>The idempotency token for starting a new fraudster registration job. If not provided, Amazon Web Services
-        /// SDK populates this field.</p>
+        /// <p>The idempotency token for starting a new fraudster registration job. If not provided, Amazon Web Services SDK populates this field.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -2925,30 +2873,22 @@ pub mod start_fraudster_registration_job_input {
             self.job_name = input;
             self
         }
-        /// <p>The identifier of the domain containing the fraudster registration job and in which the fraudsters are
-        /// registered.</p>
+        /// <p>The identifier of the domain containing the fraudster registration job and in which the fraudsters are registered.</p>
         pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the domain containing the fraudster registration job and in which the fraudsters are
-        /// registered.</p>
+        /// <p>The identifier of the domain containing the fraudster registration job and in which the fraudsters are registered.</p>
         pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_id = input;
             self
         }
-        /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets
-        /// to read the input manifest file and write the Job output file. Refer to the
-        /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-fraudster-watchlist.html">Create and
-        /// edit a fraudster watchlist</a> documentation for the permissions needed in this role.</p>
+        /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the Job output file. Refer to the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-fraudster-watchlist.html">Create and edit a fraudster watchlist</a> documentation for the permissions needed in this role.</p>
         pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_access_role_arn = Some(input.into());
             self
         }
-        /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets
-        /// to read the input manifest file and write the Job output file. Refer to the
-        /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-fraudster-watchlist.html">Create and
-        /// edit a fraudster watchlist</a> documentation for the permissions needed in this role.</p>
+        /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the Job output file. Refer to the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-fraudster-watchlist.html">Create and edit a fraudster watchlist</a> documentation for the permissions needed in this role.</p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2956,14 +2896,12 @@ pub mod start_fraudster_registration_job_input {
             self.data_access_role_arn = input;
             self
         }
-        /// <p>The registration config containing details such as the action to take when a duplicate fraudster is
-        /// detected, and the similarity threshold to use for detecting a duplicate fraudster.</p>
+        /// <p>The registration config containing details such as the action to take when a duplicate fraudster is detected, and the similarity threshold to use for detecting a duplicate fraudster.</p>
         pub fn registration_config(mut self, input: crate::model::RegistrationConfig) -> Self {
             self.registration_config = Some(input);
             self
         }
-        /// <p>The registration config containing details such as the action to take when a duplicate fraudster is
-        /// detected, and the similarity threshold to use for detecting a duplicate fraudster.</p>
+        /// <p>The registration config containing details such as the action to take when a duplicate fraudster is detected, and the similarity threshold to use for detecting a duplicate fraudster.</p>
         pub fn set_registration_config(
             mut self,
             input: std::option::Option<crate::model::RegistrationConfig>,
@@ -2971,14 +2909,12 @@ pub mod start_fraudster_registration_job_input {
             self.registration_config = input;
             self
         }
-        /// <p>The input data config containing an S3 URI for the input manifest file that contains the list
-        /// of fraudster registration requests.</p>
+        /// <p>The input data config containing an S3 URI for the input manifest file that contains the list of fraudster registration requests.</p>
         pub fn input_data_config(mut self, input: crate::model::InputDataConfig) -> Self {
             self.input_data_config = Some(input);
             self
         }
-        /// <p>The input data config containing an S3 URI for the input manifest file that contains the list
-        /// of fraudster registration requests.</p>
+        /// <p>The input data config containing an S3 URI for the input manifest file that contains the list of fraudster registration requests.</p>
         pub fn set_input_data_config(
             mut self,
             input: std::option::Option<crate::model::InputDataConfig>,
@@ -2986,14 +2922,12 @@ pub mod start_fraudster_registration_job_input {
             self.input_data_config = input;
             self
         }
-        /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must
-        /// also include a KMS Key ID to encrypt the file.</p>
+        /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must also include a KMS Key ID to encrypt the file.</p>
         pub fn output_data_config(mut self, input: crate::model::OutputDataConfig) -> Self {
             self.output_data_config = Some(input);
             self
         }
-        /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must
-        /// also include a KMS Key ID to encrypt the file.</p>
+        /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must also include a KMS Key ID to encrypt the file.</p>
         pub fn set_output_data_config(
             mut self,
             input: std::option::Option<crate::model::OutputDataConfig>,
@@ -3163,14 +3097,12 @@ pub mod start_speaker_enrollment_job_input {
         pub(crate) output_data_config: std::option::Option<crate::model::OutputDataConfig>,
     }
     impl Builder {
-        /// <p>The idempotency token for starting a new speaker enrollment Job. If not provided, Amazon Web Services
-        /// SDK populates this field.</p>
+        /// <p>The idempotency token for starting a new speaker enrollment Job. If not provided, Amazon Web Services SDK populates this field.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>The idempotency token for starting a new speaker enrollment Job. If not provided, Amazon Web Services
-        /// SDK populates this field.</p>
+        /// <p>The idempotency token for starting a new speaker enrollment Job. If not provided, Amazon Web Services SDK populates this field.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -3185,30 +3117,22 @@ pub mod start_speaker_enrollment_job_input {
             self.job_name = input;
             self
         }
-        /// <p>The identifier of the domain that contains the speaker enrollment job and in which the speakers are
-        /// enrolled.
-        /// </p>
+        /// <p>The identifier of the domain that contains the speaker enrollment job and in which the speakers are enrolled. </p>
         pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the domain that contains the speaker enrollment job and in which the speakers are
-        /// enrolled.
-        /// </p>
+        /// <p>The identifier of the domain that contains the speaker enrollment job and in which the speakers are enrolled. </p>
         pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_id = input;
             self
         }
-        /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets
-        /// to read the input manifest file and write the job output file. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-batch-enrollment.html">Batch enrollment using audio data from prior
-        /// calls</a> documentation for the permissions needed in this role.</p>
+        /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the job output file. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-batch-enrollment.html">Batch enrollment using audio data from prior calls</a> documentation for the permissions needed in this role.</p>
         pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_access_role_arn = Some(input.into());
             self
         }
-        /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets
-        /// to read the input manifest file and write the job output file. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-batch-enrollment.html">Batch enrollment using audio data from prior
-        /// calls</a> documentation for the permissions needed in this role.</p>
+        /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the job output file. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-batch-enrollment.html">Batch enrollment using audio data from prior calls</a> documentation for the permissions needed in this role.</p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3216,14 +3140,12 @@ pub mod start_speaker_enrollment_job_input {
             self.data_access_role_arn = input;
             self
         }
-        /// <p>The enrollment config that contains details such as the action to take when a speaker is already
-        /// enrolled in the Voice ID system or when a speaker is identified as a fraudster.</p>
+        /// <p>The enrollment config that contains details such as the action to take when a speaker is already enrolled in the Voice ID system or when a speaker is identified as a fraudster.</p>
         pub fn enrollment_config(mut self, input: crate::model::EnrollmentConfig) -> Self {
             self.enrollment_config = Some(input);
             self
         }
-        /// <p>The enrollment config that contains details such as the action to take when a speaker is already
-        /// enrolled in the Voice ID system or when a speaker is identified as a fraudster.</p>
+        /// <p>The enrollment config that contains details such as the action to take when a speaker is already enrolled in the Voice ID system or when a speaker is identified as a fraudster.</p>
         pub fn set_enrollment_config(
             mut self,
             input: std::option::Option<crate::model::EnrollmentConfig>,
@@ -3231,14 +3153,12 @@ pub mod start_speaker_enrollment_job_input {
             self.enrollment_config = input;
             self
         }
-        /// <p>The input data config containing the S3 location for the input manifest file that contains the list of
-        /// speaker enrollment requests.</p>
+        /// <p>The input data config containing the S3 location for the input manifest file that contains the list of speaker enrollment requests.</p>
         pub fn input_data_config(mut self, input: crate::model::InputDataConfig) -> Self {
             self.input_data_config = Some(input);
             self
         }
-        /// <p>The input data config containing the S3 location for the input manifest file that contains the list of
-        /// speaker enrollment requests.</p>
+        /// <p>The input data config containing the S3 location for the input manifest file that contains the list of speaker enrollment requests.</p>
         pub fn set_input_data_config(
             mut self,
             input: std::option::Option<crate::model::InputDataConfig>,
@@ -3246,14 +3166,12 @@ pub mod start_speaker_enrollment_job_input {
             self.input_data_config = input;
             self
         }
-        /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must
-        /// also include a KMS Key ID to encrypt the file.</p>
+        /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must also include a KMS Key ID to encrypt the file.</p>
         pub fn output_data_config(mut self, input: crate::model::OutputDataConfig) -> Self {
             self.output_data_config = Some(input);
             self
         }
-        /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must
-        /// also include a KMS Key ID to encrypt the file.</p>
+        /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must also include a KMS Key ID to encrypt the file.</p>
         pub fn set_output_data_config(
             mut self,
             input: std::option::Option<crate::model::OutputDataConfig>,
@@ -3812,9 +3730,7 @@ pub mod update_domain_input {
             self.description = input;
             self
         }
-        /// <p>The configuration, containing the KMS Key Identifier, to be used by Voice ID for the server-side
-        /// encryption of your data. Note that all the existing data in the domain are still encrypted using the
-        /// existing key, only the data added to domain after updating the key is encrypted using the new key. </p>
+        /// <p>The configuration, containing the KMS Key Identifier, to be used by Voice ID for the server-side encryption of your data. Note that all the existing data in the domain are still encrypted using the existing key, only the data added to domain after updating the key is encrypted using the new key. </p>
         pub fn server_side_encryption_configuration(
             mut self,
             input: crate::model::ServerSideEncryptionConfiguration,
@@ -3822,9 +3738,7 @@ pub mod update_domain_input {
             self.server_side_encryption_configuration = Some(input);
             self
         }
-        /// <p>The configuration, containing the KMS Key Identifier, to be used by Voice ID for the server-side
-        /// encryption of your data. Note that all the existing data in the domain are still encrypted using the
-        /// existing key, only the data added to domain after updating the key is encrypted using the new key. </p>
+        /// <p>The configuration, containing the KMS Key Identifier, to be used by Voice ID for the server-side encryption of your data. Note that all the existing data in the domain are still encrypted using the existing key, only the data added to domain after updating the key is encrypted using the new key. </p>
         pub fn set_server_side_encryption_configuration(
             mut self,
             input: std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
@@ -3979,9 +3893,7 @@ pub struct UpdateDomainInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>A brief description about this domain.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The configuration, containing the KMS Key Identifier, to be used by Voice ID for the server-side
-    /// encryption of your data. Note that all the existing data in the domain are still encrypted using the
-    /// existing key, only the data added to domain after updating the key is encrypted using the new key. </p>
+    /// <p>The configuration, containing the KMS Key Identifier, to be used by Voice ID for the server-side encryption of your data. Note that all the existing data in the domain are still encrypted using the existing key, only the data added to domain after updating the key is encrypted using the new key. </p>
     pub server_side_encryption_configuration:
         std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
 }
@@ -3998,9 +3910,7 @@ impl UpdateDomainInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The configuration, containing the KMS Key Identifier, to be used by Voice ID for the server-side
-    /// encryption of your data. Note that all the existing data in the domain are still encrypted using the
-    /// existing key, only the data added to domain after updating the key is encrypted using the new key. </p>
+    /// <p>The configuration, containing the KMS Key Identifier, to be used by Voice ID for the server-side encryption of your data. Note that all the existing data in the domain are still encrypted using the existing key, only the data added to domain after updating the key is encrypted using the new key. </p>
     pub fn server_side_encryption_configuration(
         &self,
     ) -> std::option::Option<&crate::model::ServerSideEncryptionConfiguration> {
@@ -4081,32 +3991,23 @@ impl std::fmt::Debug for TagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartSpeakerEnrollmentJobInput {
-    /// <p>The idempotency token for starting a new speaker enrollment Job. If not provided, Amazon Web Services
-    /// SDK populates this field.</p>
+    /// <p>The idempotency token for starting a new speaker enrollment Job. If not provided, Amazon Web Services SDK populates this field.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>A name for your speaker enrollment job.</p>
     pub job_name: std::option::Option<std::string::String>,
-    /// <p>The identifier of the domain that contains the speaker enrollment job and in which the speakers are
-    /// enrolled.
-    /// </p>
+    /// <p>The identifier of the domain that contains the speaker enrollment job and in which the speakers are enrolled. </p>
     pub domain_id: std::option::Option<std::string::String>,
-    /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets
-    /// to read the input manifest file and write the job output file. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-batch-enrollment.html">Batch enrollment using audio data from prior
-    /// calls</a> documentation for the permissions needed in this role.</p>
+    /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the job output file. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-batch-enrollment.html">Batch enrollment using audio data from prior calls</a> documentation for the permissions needed in this role.</p>
     pub data_access_role_arn: std::option::Option<std::string::String>,
-    /// <p>The enrollment config that contains details such as the action to take when a speaker is already
-    /// enrolled in the Voice ID system or when a speaker is identified as a fraudster.</p>
+    /// <p>The enrollment config that contains details such as the action to take when a speaker is already enrolled in the Voice ID system or when a speaker is identified as a fraudster.</p>
     pub enrollment_config: std::option::Option<crate::model::EnrollmentConfig>,
-    /// <p>The input data config containing the S3 location for the input manifest file that contains the list of
-    /// speaker enrollment requests.</p>
+    /// <p>The input data config containing the S3 location for the input manifest file that contains the list of speaker enrollment requests.</p>
     pub input_data_config: std::option::Option<crate::model::InputDataConfig>,
-    /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must
-    /// also include a KMS Key ID to encrypt the file.</p>
+    /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must also include a KMS Key ID to encrypt the file.</p>
     pub output_data_config: std::option::Option<crate::model::OutputDataConfig>,
 }
 impl StartSpeakerEnrollmentJobInput {
-    /// <p>The idempotency token for starting a new speaker enrollment Job. If not provided, Amazon Web Services
-    /// SDK populates this field.</p>
+    /// <p>The idempotency token for starting a new speaker enrollment Job. If not provided, Amazon Web Services SDK populates this field.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -4114,30 +4015,23 @@ impl StartSpeakerEnrollmentJobInput {
     pub fn job_name(&self) -> std::option::Option<&str> {
         self.job_name.as_deref()
     }
-    /// <p>The identifier of the domain that contains the speaker enrollment job and in which the speakers are
-    /// enrolled.
-    /// </p>
+    /// <p>The identifier of the domain that contains the speaker enrollment job and in which the speakers are enrolled. </p>
     pub fn domain_id(&self) -> std::option::Option<&str> {
         self.domain_id.as_deref()
     }
-    /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets
-    /// to read the input manifest file and write the job output file. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-batch-enrollment.html">Batch enrollment using audio data from prior
-    /// calls</a> documentation for the permissions needed in this role.</p>
+    /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the job output file. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-batch-enrollment.html">Batch enrollment using audio data from prior calls</a> documentation for the permissions needed in this role.</p>
     pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
         self.data_access_role_arn.as_deref()
     }
-    /// <p>The enrollment config that contains details such as the action to take when a speaker is already
-    /// enrolled in the Voice ID system or when a speaker is identified as a fraudster.</p>
+    /// <p>The enrollment config that contains details such as the action to take when a speaker is already enrolled in the Voice ID system or when a speaker is identified as a fraudster.</p>
     pub fn enrollment_config(&self) -> std::option::Option<&crate::model::EnrollmentConfig> {
         self.enrollment_config.as_ref()
     }
-    /// <p>The input data config containing the S3 location for the input manifest file that contains the list of
-    /// speaker enrollment requests.</p>
+    /// <p>The input data config containing the S3 location for the input manifest file that contains the list of speaker enrollment requests.</p>
     pub fn input_data_config(&self) -> std::option::Option<&crate::model::InputDataConfig> {
         self.input_data_config.as_ref()
     }
-    /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must
-    /// also include a KMS Key ID to encrypt the file.</p>
+    /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must also include a KMS Key ID to encrypt the file.</p>
     pub fn output_data_config(&self) -> std::option::Option<&crate::model::OutputDataConfig> {
         self.output_data_config.as_ref()
     }
@@ -4160,32 +4054,23 @@ impl std::fmt::Debug for StartSpeakerEnrollmentJobInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartFraudsterRegistrationJobInput {
-    /// <p>The idempotency token for starting a new fraudster registration job. If not provided, Amazon Web Services
-    /// SDK populates this field.</p>
+    /// <p>The idempotency token for starting a new fraudster registration job. If not provided, Amazon Web Services SDK populates this field.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The name of the new fraudster registration job.</p>
     pub job_name: std::option::Option<std::string::String>,
-    /// <p>The identifier of the domain containing the fraudster registration job and in which the fraudsters are
-    /// registered.</p>
+    /// <p>The identifier of the domain containing the fraudster registration job and in which the fraudsters are registered.</p>
     pub domain_id: std::option::Option<std::string::String>,
-    /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets
-    /// to read the input manifest file and write the Job output file. Refer to the
-    /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-fraudster-watchlist.html">Create and
-    /// edit a fraudster watchlist</a> documentation for the permissions needed in this role.</p>
+    /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the Job output file. Refer to the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-fraudster-watchlist.html">Create and edit a fraudster watchlist</a> documentation for the permissions needed in this role.</p>
     pub data_access_role_arn: std::option::Option<std::string::String>,
-    /// <p>The registration config containing details such as the action to take when a duplicate fraudster is
-    /// detected, and the similarity threshold to use for detecting a duplicate fraudster.</p>
+    /// <p>The registration config containing details such as the action to take when a duplicate fraudster is detected, and the similarity threshold to use for detecting a duplicate fraudster.</p>
     pub registration_config: std::option::Option<crate::model::RegistrationConfig>,
-    /// <p>The input data config containing an S3 URI for the input manifest file that contains the list
-    /// of fraudster registration requests.</p>
+    /// <p>The input data config containing an S3 URI for the input manifest file that contains the list of fraudster registration requests.</p>
     pub input_data_config: std::option::Option<crate::model::InputDataConfig>,
-    /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must
-    /// also include a KMS Key ID to encrypt the file.</p>
+    /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must also include a KMS Key ID to encrypt the file.</p>
     pub output_data_config: std::option::Option<crate::model::OutputDataConfig>,
 }
 impl StartFraudsterRegistrationJobInput {
-    /// <p>The idempotency token for starting a new fraudster registration job. If not provided, Amazon Web Services
-    /// SDK populates this field.</p>
+    /// <p>The idempotency token for starting a new fraudster registration job. If not provided, Amazon Web Services SDK populates this field.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -4193,30 +4078,23 @@ impl StartFraudsterRegistrationJobInput {
     pub fn job_name(&self) -> std::option::Option<&str> {
         self.job_name.as_deref()
     }
-    /// <p>The identifier of the domain containing the fraudster registration job and in which the fraudsters are
-    /// registered.</p>
+    /// <p>The identifier of the domain containing the fraudster registration job and in which the fraudsters are registered.</p>
     pub fn domain_id(&self) -> std::option::Option<&str> {
         self.domain_id.as_deref()
     }
-    /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets
-    /// to read the input manifest file and write the Job output file. Refer to the
-    /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-fraudster-watchlist.html">Create and
-    /// edit a fraudster watchlist</a> documentation for the permissions needed in this role.</p>
+    /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the Job output file. Refer to the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-fraudster-watchlist.html">Create and edit a fraudster watchlist</a> documentation for the permissions needed in this role.</p>
     pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
         self.data_access_role_arn.as_deref()
     }
-    /// <p>The registration config containing details such as the action to take when a duplicate fraudster is
-    /// detected, and the similarity threshold to use for detecting a duplicate fraudster.</p>
+    /// <p>The registration config containing details such as the action to take when a duplicate fraudster is detected, and the similarity threshold to use for detecting a duplicate fraudster.</p>
     pub fn registration_config(&self) -> std::option::Option<&crate::model::RegistrationConfig> {
         self.registration_config.as_ref()
     }
-    /// <p>The input data config containing an S3 URI for the input manifest file that contains the list
-    /// of fraudster registration requests.</p>
+    /// <p>The input data config containing an S3 URI for the input manifest file that contains the list of fraudster registration requests.</p>
     pub fn input_data_config(&self) -> std::option::Option<&crate::model::InputDataConfig> {
         self.input_data_config.as_ref()
     }
-    /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must
-    /// also include a KMS Key ID to encrypt the file.</p>
+    /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must also include a KMS Key ID to encrypt the file.</p>
     pub fn output_data_config(&self) -> std::option::Option<&crate::model::OutputDataConfig> {
         self.output_data_config.as_ref()
     }
@@ -4290,14 +4168,9 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 pub struct ListSpeakersInput {
     /// <p>The identifier of the domain.</p>
     pub domain_id: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain
-    /// further pages of results. The default is 100; the maximum allowed page size is also 100.
-    /// </p>
+    /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain further pages of results. The default is 100; the maximum allowed page size is also 100. </p>
     pub max_results: std::option::Option<i32>,
-    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code>
-    /// is a unique pagination token for each page. Make the call again using the returned token to retrieve the
-    /// next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.
-    /// </p>
+    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSpeakersInput {
@@ -4305,16 +4178,11 @@ impl ListSpeakersInput {
     pub fn domain_id(&self) -> std::option::Option<&str> {
         self.domain_id.as_deref()
     }
-    /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain
-    /// further pages of results. The default is 100; the maximum allowed page size is also 100.
-    /// </p>
+    /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain further pages of results. The default is 100; the maximum allowed page size is also 100. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code>
-    /// is a unique pagination token for each page. Make the call again using the returned token to retrieve the
-    /// next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.
-    /// </p>
+    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -4337,14 +4205,9 @@ pub struct ListSpeakerEnrollmentJobsInput {
     pub domain_id: std::option::Option<std::string::String>,
     /// <p>Provides the status of your speaker enrollment Job.</p>
     pub job_status: std::option::Option<crate::model::SpeakerEnrollmentJobStatus>,
-    /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain
-    /// further pages of results. The default is 100; the maximum allowed page size is also 100.
-    /// </p>
+    /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain further pages of results. The default is 100; the maximum allowed page size is also 100. </p>
     pub max_results: std::option::Option<i32>,
-    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code>
-    /// is a unique pagination token for each page. Make the call again using the returned token to retrieve the
-    /// next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.
-    /// </p>
+    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSpeakerEnrollmentJobsInput {
@@ -4356,16 +4219,11 @@ impl ListSpeakerEnrollmentJobsInput {
     pub fn job_status(&self) -> std::option::Option<&crate::model::SpeakerEnrollmentJobStatus> {
         self.job_status.as_ref()
     }
-    /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain
-    /// further pages of results. The default is 100; the maximum allowed page size is also 100.
-    /// </p>
+    /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain further pages of results. The default is 100; the maximum allowed page size is also 100. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code>
-    /// is a unique pagination token for each page. Make the call again using the returned token to retrieve the
-    /// next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.
-    /// </p>
+    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -4389,14 +4247,9 @@ pub struct ListFraudsterRegistrationJobsInput {
     pub domain_id: std::option::Option<std::string::String>,
     /// <p>Provides the status of your fraudster registration job.</p>
     pub job_status: std::option::Option<crate::model::FraudsterRegistrationJobStatus>,
-    /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain
-    /// further pages of results. The default is 100; the maximum allowed page size is also 100.
-    /// </p>
+    /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain further pages of results. The default is 100; the maximum allowed page size is also 100. </p>
     pub max_results: std::option::Option<i32>,
-    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code>
-    /// is a unique pagination token for each page. Make the call again using the returned token to retrieve the
-    /// next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.
-    /// </p>
+    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFraudsterRegistrationJobsInput {
@@ -4408,16 +4261,11 @@ impl ListFraudsterRegistrationJobsInput {
     pub fn job_status(&self) -> std::option::Option<&crate::model::FraudsterRegistrationJobStatus> {
         self.job_status.as_ref()
     }
-    /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain
-    /// further pages of results. The default is 100; the maximum allowed page size is also 100.
-    /// </p>
+    /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain further pages of results. The default is 100; the maximum allowed page size is also 100. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code>
-    /// is a unique pagination token for each page. Make the call again using the returned token to retrieve the
-    /// next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.
-    /// </p>
+    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -4437,27 +4285,17 @@ impl std::fmt::Debug for ListFraudsterRegistrationJobsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDomainsInput {
-    /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain
-    /// further pages of results. The default is 100; the maximum allowed page size is also 100.
-    /// </p>
+    /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain further pages of results. The default is 100; the maximum allowed page size is also 100. </p>
     pub max_results: std::option::Option<i32>,
-    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code>
-    /// is a unique pagination token for each page. Make the call again using the returned token to retrieve the
-    /// next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.
-    /// </p>
+    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDomainsInput {
-    /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain
-    /// further pages of results. The default is 100; the maximum allowed page size is also 100.
-    /// </p>
+    /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain further pages of results. The default is 100; the maximum allowed page size is also 100. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code>
-    /// is a unique pagination token for each page. Make the call again using the returned token to retrieve the
-    /// next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.
-    /// </p>
+    /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -4477,8 +4315,7 @@ impl std::fmt::Debug for ListDomainsInput {
 pub struct EvaluateSessionInput {
     /// <p>The identifier of the domain where the session started.</p>
     pub domain_id: std::option::Option<std::string::String>,
-    /// <p>The session identifier, or name of the session, that you want to evaluate. In Voice ID
-    /// integration, this is the Contact-Id.</p>
+    /// <p>The session identifier, or name of the session, that you want to evaluate. In Voice ID integration, this is the Contact-Id.</p>
     pub session_name_or_id: std::option::Option<std::string::String>,
 }
 impl EvaluateSessionInput {
@@ -4486,8 +4323,7 @@ impl EvaluateSessionInput {
     pub fn domain_id(&self) -> std::option::Option<&str> {
         self.domain_id.as_deref()
     }
-    /// <p>The session identifier, or name of the session, that you want to evaluate. In Voice ID
-    /// integration, this is the Contact-Id.</p>
+    /// <p>The session identifier, or name of the session, that you want to evaluate. In Voice ID integration, this is the Contact-Id.</p>
     pub fn session_name_or_id(&self) -> std::option::Option<&str> {
         self.session_name_or_id.as_deref()
     }
@@ -4719,14 +4555,10 @@ pub struct CreateDomainInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>A brief description of this domain.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The configuration, containing the KMS Key Identifier, to be used by Voice ID for
-    /// the server-side encryption of your data. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/encryption-at-rest.html#encryption-at-rest-voiceid">
-    /// Amazon Connect VoiceID encryption at rest</a> for more details on how the KMS Key is used.
-    /// </p>
+    /// <p>The configuration, containing the KMS Key Identifier, to be used by Voice ID for the server-side encryption of your data. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/encryption-at-rest.html#encryption-at-rest-voiceid"> Amazon Connect VoiceID encryption at rest</a> for more details on how the KMS Key is used. </p>
     pub server_side_encryption_configuration:
         std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
-    /// <p>The idempotency token for creating a new domain. If not provided, Amazon Web Services SDK populates
-    /// this field.</p>
+    /// <p>The idempotency token for creating a new domain. If not provided, Amazon Web Services SDK populates this field.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>A list of tags you want added to the domain.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -4740,17 +4572,13 @@ impl CreateDomainInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The configuration, containing the KMS Key Identifier, to be used by Voice ID for
-    /// the server-side encryption of your data. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/encryption-at-rest.html#encryption-at-rest-voiceid">
-    /// Amazon Connect VoiceID encryption at rest</a> for more details on how the KMS Key is used.
-    /// </p>
+    /// <p>The configuration, containing the KMS Key Identifier, to be used by Voice ID for the server-side encryption of your data. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/encryption-at-rest.html#encryption-at-rest-voiceid"> Amazon Connect VoiceID encryption at rest</a> for more details on how the KMS Key is used. </p>
     pub fn server_side_encryption_configuration(
         &self,
     ) -> std::option::Option<&crate::model::ServerSideEncryptionConfiguration> {
         self.server_side_encryption_configuration.as_ref()
     }
-    /// <p>The idempotency token for creating a new domain. If not provided, Amazon Web Services SDK populates
-    /// this field.</p>
+    /// <p>The idempotency token for creating a new domain. If not provided, Amazon Web Services SDK populates this field.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }

@@ -675,16 +675,14 @@ pub mod batch_import_findings_input {
         ///
         /// To override the contents of this collection use [`set_findings`](Self::set_findings).
         ///
-        /// <p>A list of findings to import. To successfully import a finding, it must follow the
-        /// <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">Amazon Web Services Security Finding Format</a>. Maximum of 100 findings per request.</p>
+        /// <p>A list of findings to import. To successfully import a finding, it must follow the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">Amazon Web Services Security Finding Format</a>. Maximum of 100 findings per request.</p>
         pub fn findings(mut self, input: crate::model::AwsSecurityFinding) -> Self {
             let mut v = self.findings.unwrap_or_default();
             v.push(input);
             self.findings = Some(v);
             self
         }
-        /// <p>A list of findings to import. To successfully import a finding, it must follow the
-        /// <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">Amazon Web Services Security Finding Format</a>. Maximum of 100 findings per request.</p>
+        /// <p>A list of findings to import. To successfully import a finding, it must follow the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">Amazon Web Services Security Finding Format</a>. Maximum of 100 findings per request.</p>
         pub fn set_findings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AwsSecurityFinding>>,
@@ -848,10 +846,8 @@ pub mod batch_update_findings_input {
         ///
         /// To override the contents of this collection use [`set_finding_identifiers`](Self::set_finding_identifiers).
         ///
-        /// <p>The list of findings to update. <code>BatchUpdateFindings</code> can be used to update
-        /// up to 100 findings at a time.</p>
-        /// <p>For each finding, the list provides the finding identifier and the ARN of the finding
-        /// provider.</p>
+        /// <p>The list of findings to update. <code>BatchUpdateFindings</code> can be used to update up to 100 findings at a time.</p>
+        /// <p>For each finding, the list provides the finding identifier and the ARN of the finding provider.</p>
         pub fn finding_identifiers(
             mut self,
             input: crate::model::AwsSecurityFindingIdentifier,
@@ -861,10 +857,8 @@ pub mod batch_update_findings_input {
             self.finding_identifiers = Some(v);
             self
         }
-        /// <p>The list of findings to update. <code>BatchUpdateFindings</code> can be used to update
-        /// up to 100 findings at a time.</p>
-        /// <p>For each finding, the list provides the finding identifier and the ARN of the finding
-        /// provider.</p>
+        /// <p>The list of findings to update. <code>BatchUpdateFindings</code> can be used to update up to 100 findings at a time.</p>
+        /// <p>For each finding, the list provides the finding identifier and the ARN of the finding provider.</p>
         pub fn set_finding_identifiers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AwsSecurityFindingIdentifier>>,
@@ -896,52 +890,24 @@ pub mod batch_update_findings_input {
             self
         }
         /// <p>Indicates the veracity of a finding.</p>
-        /// <p>The available values for <code>VerificationState</code> are  as follows.</p>
+        /// <p>The available values for <code>VerificationState</code> are as follows.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>UNKNOWN</code> – The default disposition of a security finding</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TRUE_POSITIVE</code> – The security finding is confirmed</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FALSE_POSITIVE</code> – The security finding was determined to be a false
-        /// alarm</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>BENIGN_POSITIVE</code> – A special case of <code>TRUE_POSITIVE</code> where
-        /// the finding doesn't pose any threat, is expected, or both</p>
-        /// </li>
+        /// <li> <p> <code>UNKNOWN</code> – The default disposition of a security finding</p> </li>
+        /// <li> <p> <code>TRUE_POSITIVE</code> – The security finding is confirmed</p> </li>
+        /// <li> <p> <code>FALSE_POSITIVE</code> – The security finding was determined to be a false alarm</p> </li>
+        /// <li> <p> <code>BENIGN_POSITIVE</code> – A special case of <code>TRUE_POSITIVE</code> where the finding doesn't pose any threat, is expected, or both</p> </li>
         /// </ul>
         pub fn verification_state(mut self, input: crate::model::VerificationState) -> Self {
             self.verification_state = Some(input);
             self
         }
         /// <p>Indicates the veracity of a finding.</p>
-        /// <p>The available values for <code>VerificationState</code> are  as follows.</p>
+        /// <p>The available values for <code>VerificationState</code> are as follows.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>UNKNOWN</code> – The default disposition of a security finding</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TRUE_POSITIVE</code> – The security finding is confirmed</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FALSE_POSITIVE</code> – The security finding was determined to be a false
-        /// alarm</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>BENIGN_POSITIVE</code> – A special case of <code>TRUE_POSITIVE</code> where
-        /// the finding doesn't pose any threat, is expected, or both</p>
-        /// </li>
+        /// <li> <p> <code>UNKNOWN</code> – The default disposition of a security finding</p> </li>
+        /// <li> <p> <code>TRUE_POSITIVE</code> – The security finding is confirmed</p> </li>
+        /// <li> <p> <code>FALSE_POSITIVE</code> – The security finding was determined to be a false alarm</p> </li>
+        /// <li> <p> <code>BENIGN_POSITIVE</code> – A special case of <code>TRUE_POSITIVE</code> where the finding doesn't pose any threat, is expected, or both</p> </li>
         /// </ul>
         pub fn set_verification_state(
             mut self,
@@ -950,36 +916,26 @@ pub mod batch_update_findings_input {
             self.verification_state = input;
             self
         }
-        /// <p>The updated value for the finding confidence. Confidence is defined as the likelihood
-        /// that a finding accurately identifies the behavior or issue that it was intended to
-        /// identify.</p>
-        /// <p>Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent
-        /// confidence and 100 means 100 percent confidence.</p>
+        /// <p>The updated value for the finding confidence. Confidence is defined as the likelihood that a finding accurately identifies the behavior or issue that it was intended to identify.</p>
+        /// <p>Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent confidence and 100 means 100 percent confidence.</p>
         pub fn confidence(mut self, input: i32) -> Self {
             self.confidence = Some(input);
             self
         }
-        /// <p>The updated value for the finding confidence. Confidence is defined as the likelihood
-        /// that a finding accurately identifies the behavior or issue that it was intended to
-        /// identify.</p>
-        /// <p>Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent
-        /// confidence and 100 means 100 percent confidence.</p>
+        /// <p>The updated value for the finding confidence. Confidence is defined as the likelihood that a finding accurately identifies the behavior or issue that it was intended to identify.</p>
+        /// <p>Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent confidence and 100 means 100 percent confidence.</p>
         pub fn set_confidence(mut self, input: std::option::Option<i32>) -> Self {
             self.confidence = input;
             self
         }
-        /// <p>The updated value for the level of importance assigned to the resources associated with
-        /// the findings.</p>
-        /// <p>A score of 0 means that the underlying resources have no criticality, and a score of 100
-        /// is reserved for the most critical resources. </p>
+        /// <p>The updated value for the level of importance assigned to the resources associated with the findings.</p>
+        /// <p>A score of 0 means that the underlying resources have no criticality, and a score of 100 is reserved for the most critical resources. </p>
         pub fn criticality(mut self, input: i32) -> Self {
             self.criticality = Some(input);
             self
         }
-        /// <p>The updated value for the level of importance assigned to the resources associated with
-        /// the findings.</p>
-        /// <p>A score of 0 means that the underlying resources have no criticality, and a score of 100
-        /// is reserved for the most critical resources. </p>
+        /// <p>The updated value for the level of importance assigned to the resources associated with the findings.</p>
+        /// <p>A score of 0 means that the underlying resources have no criticality, and a score of 100 is reserved for the most critical resources. </p>
         pub fn set_criticality(mut self, input: std::option::Option<i32>) -> Self {
             self.criticality = input;
             self
@@ -988,25 +944,14 @@ pub mod batch_update_findings_input {
         ///
         /// To override the contents of this collection use [`set_types`](Self::set_types).
         ///
-        /// <p>One or more finding types in the format of namespace/category/classifier that classify a
-        /// finding.</p>
+        /// <p>One or more finding types in the format of namespace/category/classifier that classify a finding.</p>
         /// <p>Valid namespace values are as follows.</p>
         /// <ul>
-        /// <li>
-        /// <p>Software and Configuration Checks</p>
-        /// </li>
-        /// <li>
-        /// <p>TTPs</p>
-        /// </li>
-        /// <li>
-        /// <p>Effects</p>
-        /// </li>
-        /// <li>
-        /// <p>Unusual Behaviors</p>
-        /// </li>
-        /// <li>
-        /// <p>Sensitive Data Identifications </p>
-        /// </li>
+        /// <li> <p>Software and Configuration Checks</p> </li>
+        /// <li> <p>TTPs</p> </li>
+        /// <li> <p>Effects</p> </li>
+        /// <li> <p>Unusual Behaviors</p> </li>
+        /// <li> <p>Sensitive Data Identifications </p> </li>
         /// </ul>
         pub fn types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.types.unwrap_or_default();
@@ -1014,25 +959,14 @@ pub mod batch_update_findings_input {
             self.types = Some(v);
             self
         }
-        /// <p>One or more finding types in the format of namespace/category/classifier that classify a
-        /// finding.</p>
+        /// <p>One or more finding types in the format of namespace/category/classifier that classify a finding.</p>
         /// <p>Valid namespace values are as follows.</p>
         /// <ul>
-        /// <li>
-        /// <p>Software and Configuration Checks</p>
-        /// </li>
-        /// <li>
-        /// <p>TTPs</p>
-        /// </li>
-        /// <li>
-        /// <p>Effects</p>
-        /// </li>
-        /// <li>
-        /// <p>Unusual Behaviors</p>
-        /// </li>
-        /// <li>
-        /// <p>Sensitive Data Identifications </p>
-        /// </li>
+        /// <li> <p>Software and Configuration Checks</p> </li>
+        /// <li> <p>TTPs</p> </li>
+        /// <li> <p>Effects</p> </li>
+        /// <li> <p>Unusual Behaviors</p> </li>
+        /// <li> <p>Sensitive Data Identifications </p> </li>
         /// </ul>
         pub fn set_types(
             mut self,
@@ -1045,8 +979,7 @@ pub mod batch_update_findings_input {
         ///
         /// To override the contents of this collection use [`set_user_defined_fields`](Self::set_user_defined_fields).
         ///
-        /// <p>A list of name/value string pairs associated with the finding. These are custom,
-        /// user-defined fields added to a finding.</p>
+        /// <p>A list of name/value string pairs associated with the finding. These are custom, user-defined fields added to a finding.</p>
         pub fn user_defined_fields(
             mut self,
             k: impl Into<std::string::String>,
@@ -1057,8 +990,7 @@ pub mod batch_update_findings_input {
             self.user_defined_fields = Some(hash_map);
             self
         }
-        /// <p>A list of name/value string pairs associated with the finding. These are custom,
-        /// user-defined fields added to a finding.</p>
+        /// <p>A list of name/value string pairs associated with the finding. These are custom, user-defined fields added to a finding.</p>
         pub fn set_user_defined_fields(
             mut self,
             input: std::option::Option<
@@ -1428,21 +1360,9 @@ pub mod create_finding_aggregator_input {
         /// <p>The selected option also determines how to use the Regions provided in the Regions list.</p>
         /// <p>The options are as follows:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ALL_REGIONS</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ALL_REGIONS_EXCEPT_SPECIFIED</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled, except for the Regions listed in the <code>Regions</code> parameter. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SPECIFIED_REGIONS</code> - Indicates to aggregate findings only from the Regions listed in the <code>Regions</code> parameter. Security Hub does not automatically aggregate findings from new Regions.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>ALL_REGIONS</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them. </p> </li>
+        /// <li> <p> <code>ALL_REGIONS_EXCEPT_SPECIFIED</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled, except for the Regions listed in the <code>Regions</code> parameter. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them. </p> </li>
+        /// <li> <p> <code>SPECIFIED_REGIONS</code> - Indicates to aggregate findings only from the Regions listed in the <code>Regions</code> parameter. Security Hub does not automatically aggregate findings from new Regions. </p> </li>
         /// </ul>
         pub fn region_linking_mode(mut self, input: impl Into<std::string::String>) -> Self {
             self.region_linking_mode = Some(input.into());
@@ -1452,21 +1372,9 @@ pub mod create_finding_aggregator_input {
         /// <p>The selected option also determines how to use the Regions provided in the Regions list.</p>
         /// <p>The options are as follows:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ALL_REGIONS</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ALL_REGIONS_EXCEPT_SPECIFIED</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled, except for the Regions listed in the <code>Regions</code> parameter. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SPECIFIED_REGIONS</code> - Indicates to aggregate findings only from the Regions listed in the <code>Regions</code> parameter. Security Hub does not automatically aggregate findings from new Regions.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>ALL_REGIONS</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them. </p> </li>
+        /// <li> <p> <code>ALL_REGIONS_EXCEPT_SPECIFIED</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled, except for the Regions listed in the <code>Regions</code> parameter. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them. </p> </li>
+        /// <li> <p> <code>SPECIFIED_REGIONS</code> - Indicates to aggregate findings only from the Regions listed in the <code>Regions</code> parameter. Security Hub does not automatically aggregate findings from new Regions. </p> </li>
         /// </ul>
         pub fn set_region_linking_mode(
             mut self,
@@ -1480,8 +1388,7 @@ pub mod create_finding_aggregator_input {
         /// To override the contents of this collection use [`set_regions`](Self::set_regions).
         ///
         /// <p>If <code>RegionLinkingMode</code> is <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a comma-separated list of Regions that do not aggregate findings to the aggregation Region.</p>
-        /// <p>If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a comma-separated list of Regions that do aggregate findings to the aggregation Region.
-        /// </p>
+        /// <p>If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a comma-separated list of Regions that do aggregate findings to the aggregation Region. </p>
         pub fn regions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.regions.unwrap_or_default();
             v.push(input.into());
@@ -1489,8 +1396,7 @@ pub mod create_finding_aggregator_input {
             self
         }
         /// <p>If <code>RegionLinkingMode</code> is <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a comma-separated list of Regions that do not aggregate findings to the aggregation Region.</p>
-        /// <p>If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a comma-separated list of Regions that do aggregate findings to the aggregation Region.
-        /// </p>
+        /// <p>If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a comma-separated list of Regions that do aggregate findings to the aggregation Region. </p>
         pub fn set_regions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1653,14 +1559,12 @@ pub mod create_insight_input {
             self.name = input;
             self
         }
-        /// <p>One or more attributes used to filter the findings included in the insight. The insight
-        /// only includes findings that match the criteria defined in the filters.</p>
+        /// <p>One or more attributes used to filter the findings included in the insight. The insight only includes findings that match the criteria defined in the filters.</p>
         pub fn filters(mut self, input: crate::model::AwsSecurityFindingFilters) -> Self {
             self.filters = Some(input);
             self
         }
-        /// <p>One or more attributes used to filter the findings included in the insight. The insight
-        /// only includes findings that match the criteria defined in the filters.</p>
+        /// <p>One or more attributes used to filter the findings included in the insight. The insight only includes findings that match the criteria defined in the filters.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<crate::model::AwsSecurityFindingFilters>,
@@ -1668,18 +1572,12 @@ pub mod create_insight_input {
             self.filters = input;
             self
         }
-        /// <p>The attribute used to group the findings for the insight. The grouping attribute
-        /// identifies the type of item that the insight applies to. For example, if an insight is
-        /// grouped by resource identifier, then the insight produces a list of resource
-        /// identifiers.</p>
+        /// <p>The attribute used to group the findings for the insight. The grouping attribute identifies the type of item that the insight applies to. For example, if an insight is grouped by resource identifier, then the insight produces a list of resource identifiers.</p>
         pub fn group_by_attribute(mut self, input: impl Into<std::string::String>) -> Self {
             self.group_by_attribute = Some(input.into());
             self
         }
-        /// <p>The attribute used to group the findings for the insight. The grouping attribute
-        /// identifies the type of item that the insight applies to. For example, if an insight is
-        /// grouped by resource identifier, then the insight produces a list of resource
-        /// identifiers.</p>
+        /// <p>The attribute used to group the findings for the insight. The grouping attribute identifies the type of item that the insight applies to. For example, if an insight is grouped by resource identifier, then the insight produces a list of resource identifiers.</p>
         pub fn set_group_by_attribute(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1832,16 +1730,14 @@ pub mod create_members_input {
         ///
         /// To override the contents of this collection use [`set_account_details`](Self::set_account_details).
         ///
-        /// <p>The list of accounts to associate with the Security Hub administrator account. For each account, the
-        /// list includes the account ID and optionally the email address.</p>
+        /// <p>The list of accounts to associate with the Security Hub administrator account. For each account, the list includes the account ID and optionally the email address.</p>
         pub fn account_details(mut self, input: crate::model::AccountDetails) -> Self {
             let mut v = self.account_details.unwrap_or_default();
             v.push(input);
             self.account_details = Some(v);
             self
         }
-        /// <p>The list of accounts to associate with the Security Hub administrator account. For each account, the
-        /// list includes the account ID and optionally the email address.</p>
+        /// <p>The list of accounts to associate with the Security Hub administrator account. For each account, the list includes the account ID and optionally the email address.</p>
         pub fn set_account_details(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AccountDetails>>,
@@ -1991,16 +1887,14 @@ pub mod decline_invitations_input {
         ///
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
-        /// <p>The list of account IDs for the accounts from which to decline the invitations to
-        /// Security Hub.</p>
+        /// <p>The list of account IDs for the accounts from which to decline the invitations to Security Hub.</p>
         pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.account_ids.unwrap_or_default();
             v.push(input.into());
             self.account_ids = Some(v);
             self
         }
-        /// <p>The list of account IDs for the accounts from which to decline the invitations to
-        /// Security Hub.</p>
+        /// <p>The list of account IDs for the accounts from which to decline the invitations to Security Hub.</p>
         pub fn set_account_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2951,20 +2845,14 @@ pub mod describe_action_targets_input {
             self.action_target_arns = input;
             self
         }
-        /// <p>The token that is required for pagination. On your first call to the
-        /// <code>DescribeActionTargets</code> operation, set the value of this parameter to
-        /// <code>NULL</code>.</p>
-        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-        /// parameter to the value returned from the previous response.</p>
+        /// <p>The token that is required for pagination. On your first call to the <code>DescribeActionTargets</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token that is required for pagination. On your first call to the
-        /// <code>DescribeActionTargets</code> operation, set the value of this parameter to
-        /// <code>NULL</code>.</p>
-        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-        /// parameter to the value returned from the previous response.</p>
+        /// <p>The token that is required for pagination. On your first call to the <code>DescribeActionTargets</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3393,20 +3281,14 @@ pub mod describe_products_input {
         pub(crate) product_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The token that is required for pagination. On your first call to the
-        /// <code>DescribeProducts</code> operation, set the value of this parameter to
-        /// <code>NULL</code>.</p>
-        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-        /// parameter to the value returned from the previous response.</p>
+        /// <p>The token that is required for pagination. On your first call to the <code>DescribeProducts</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token that is required for pagination. On your first call to the
-        /// <code>DescribeProducts</code> operation, set the value of this parameter to
-        /// <code>NULL</code>.</p>
-        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-        /// parameter to the value returned from the previous response.</p>
+        /// <p>The token that is required for pagination. On your first call to the <code>DescribeProducts</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3579,20 +3461,14 @@ pub mod describe_standards_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The token that is required for pagination. On your first call to the
-        /// <code>DescribeStandards</code> operation, set the value of this parameter to
-        /// <code>NULL</code>.</p>
-        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-        /// parameter to the value returned from the previous response.</p>
+        /// <p>The token that is required for pagination. On your first call to the <code>DescribeStandards</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token that is required for pagination. On your first call to the
-        /// <code>DescribeStandards</code> operation, set the value of this parameter to
-        /// <code>NULL</code>.</p>
-        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-        /// parameter to the value returned from the previous response.</p>
+        /// <p>The token that is required for pagination. On your first call to the <code>DescribeStandards</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3752,14 +3628,12 @@ pub mod describe_standards_controls_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The ARN of a resource that represents your subscription to a supported standard. To get
-        /// the subscription ARNs of the standards you have enabled, use the <code>GetEnabledStandards</code> operation.</p>
+        /// <p>The ARN of a resource that represents your subscription to a supported standard. To get the subscription ARNs of the standards you have enabled, use the <code>GetEnabledStandards</code> operation.</p>
         pub fn standards_subscription_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.standards_subscription_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of a resource that represents your subscription to a supported standard. To get
-        /// the subscription ARNs of the standards you have enabled, use the <code>GetEnabledStandards</code> operation.</p>
+        /// <p>The ARN of a resource that represents your subscription to a supported standard. To get the subscription ARNs of the standards you have enabled, use the <code>GetEnabledStandards</code> operation.</p>
         pub fn set_standards_subscription_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3767,20 +3641,14 @@ pub mod describe_standards_controls_input {
             self.standards_subscription_arn = input;
             self
         }
-        /// <p>The token that is required for pagination. On your first call to the
-        /// <code>DescribeStandardsControls</code> operation, set the value of this parameter to
-        /// <code>NULL</code>.</p>
-        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-        /// parameter to the value returned from the previous response.</p>
+        /// <p>The token that is required for pagination. On your first call to the <code>DescribeStandardsControls</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token that is required for pagination. On your first call to the
-        /// <code>DescribeStandardsControls</code> operation, set the value of this parameter to
-        /// <code>NULL</code>.</p>
-        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-        /// parameter to the value returned from the previous response.</p>
+        /// <p>The token that is required for pagination. On your first call to the <code>DescribeStandardsControls</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4952,14 +4820,12 @@ pub mod enable_organization_admin_account_input {
         pub(crate) admin_account_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Web Services account identifier of the account to designate as the Security Hub administrator
-        /// account.</p>
+        /// <p>The Amazon Web Services account identifier of the account to designate as the Security Hub administrator account.</p>
         pub fn admin_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.admin_account_id = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services account identifier of the account to designate as the Security Hub administrator
-        /// account.</p>
+        /// <p>The Amazon Web Services account identifier of the account to designate as the Security Hub administrator account.</p>
         pub fn set_admin_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5137,18 +5003,12 @@ pub mod enable_security_hub_input {
             self.tags = input;
             self
         }
-        /// <p>Whether to enable the security standards that Security Hub has designated as automatically
-        /// enabled. If you do not provide a value for <code>EnableDefaultStandards</code>, it is set
-        /// to <code>true</code>. To not enable the automatically enabled standards, set
-        /// <code>EnableDefaultStandards</code> to <code>false</code>.</p>
+        /// <p>Whether to enable the security standards that Security Hub has designated as automatically enabled. If you do not provide a value for <code>EnableDefaultStandards</code>, it is set to <code>true</code>. To not enable the automatically enabled standards, set <code>EnableDefaultStandards</code> to <code>false</code>.</p>
         pub fn enable_default_standards(mut self, input: bool) -> Self {
             self.enable_default_standards = Some(input);
             self
         }
-        /// <p>Whether to enable the security standards that Security Hub has designated as automatically
-        /// enabled. If you do not provide a value for <code>EnableDefaultStandards</code>, it is set
-        /// to <code>true</code>. To not enable the automatically enabled standards, set
-        /// <code>EnableDefaultStandards</code> to <code>false</code>.</p>
+        /// <p>Whether to enable the security standards that Security Hub has designated as automatically enabled. If you do not provide a value for <code>EnableDefaultStandards</code>, it is set to <code>true</code>. To not enable the automatically enabled standards, set <code>EnableDefaultStandards</code> to <code>false</code>.</p>
         pub fn set_enable_default_standards(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_default_standards = input;
             self
@@ -5440,20 +5300,14 @@ pub mod get_enabled_standards_input {
             self.standards_subscription_arns = input;
             self
         }
-        /// <p>The token that is required for pagination. On your first call to the
-        /// <code>GetEnabledStandards</code> operation, set the value of this parameter to
-        /// <code>NULL</code>.</p>
-        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-        /// parameter to the value returned from the previous response.</p>
+        /// <p>The token that is required for pagination. On your first call to the <code>GetEnabledStandards</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token that is required for pagination. On your first call to the
-        /// <code>GetEnabledStandards</code> operation, set the value of this parameter to
-        /// <code>NULL</code>.</p>
-        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-        /// parameter to the value returned from the previous response.</p>
+        /// <p>The token that is required for pagination. On your first call to the <code>GetEnabledStandards</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5770,22 +5624,16 @@ pub mod get_findings_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The finding attributes used to define a condition to filter the returned
-        /// findings.</p>
-        /// <p>You can filter by up to 10 finding attributes. For each attribute, you can provide up to
-        /// 20 filter values.</p>
-        /// <p>Note that in the available filter fields, <code>WorkflowState</code> is deprecated. To
-        /// search for a finding based on its workflow status, use <code>WorkflowStatus</code>.</p>
+        /// <p>The finding attributes used to define a condition to filter the returned findings.</p>
+        /// <p>You can filter by up to 10 finding attributes. For each attribute, you can provide up to 20 filter values.</p>
+        /// <p>Note that in the available filter fields, <code>WorkflowState</code> is deprecated. To search for a finding based on its workflow status, use <code>WorkflowStatus</code>.</p>
         pub fn filters(mut self, input: crate::model::AwsSecurityFindingFilters) -> Self {
             self.filters = Some(input);
             self
         }
-        /// <p>The finding attributes used to define a condition to filter the returned
-        /// findings.</p>
-        /// <p>You can filter by up to 10 finding attributes. For each attribute, you can provide up to
-        /// 20 filter values.</p>
-        /// <p>Note that in the available filter fields, <code>WorkflowState</code> is deprecated. To
-        /// search for a finding based on its workflow status, use <code>WorkflowStatus</code>.</p>
+        /// <p>The finding attributes used to define a condition to filter the returned findings.</p>
+        /// <p>You can filter by up to 10 finding attributes. For each attribute, you can provide up to 20 filter values.</p>
+        /// <p>Note that in the available filter fields, <code>WorkflowState</code> is deprecated. To search for a finding based on its workflow status, use <code>WorkflowStatus</code>.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<crate::model::AwsSecurityFindingFilters>,
@@ -5812,20 +5660,14 @@ pub mod get_findings_input {
             self.sort_criteria = input;
             self
         }
-        /// <p>The token that is required for pagination. On your first call to the
-        /// <code>GetFindings</code> operation, set the value of this parameter to
-        /// <code>NULL</code>.</p>
-        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-        /// parameter to the value returned from the previous response.</p>
+        /// <p>The token that is required for pagination. On your first call to the <code>GetFindings</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token that is required for pagination. On your first call to the
-        /// <code>GetFindings</code> operation, set the value of this parameter to
-        /// <code>NULL</code>.</p>
-        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-        /// parameter to the value returned from the previous response.</p>
+        /// <p>The token that is required for pagination. On your first call to the <code>GetFindings</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6142,18 +5984,14 @@ pub mod get_insights_input {
         ///
         /// To override the contents of this collection use [`set_insight_arns`](Self::set_insight_arns).
         ///
-        /// <p>The ARNs of the insights to describe. If you do not provide any insight ARNs, then
-        /// <code>GetInsights</code> returns all of your custom insights. It does not return any
-        /// managed insights.</p>
+        /// <p>The ARNs of the insights to describe. If you do not provide any insight ARNs, then <code>GetInsights</code> returns all of your custom insights. It does not return any managed insights.</p>
         pub fn insight_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.insight_arns.unwrap_or_default();
             v.push(input.into());
             self.insight_arns = Some(v);
             self
         }
-        /// <p>The ARNs of the insights to describe. If you do not provide any insight ARNs, then
-        /// <code>GetInsights</code> returns all of your custom insights. It does not return any
-        /// managed insights.</p>
+        /// <p>The ARNs of the insights to describe. If you do not provide any insight ARNs, then <code>GetInsights</code> returns all of your custom insights. It does not return any managed insights.</p>
         pub fn set_insight_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6161,20 +5999,14 @@ pub mod get_insights_input {
             self.insight_arns = input;
             self
         }
-        /// <p>The token that is required for pagination. On your first call to the
-        /// <code>GetInsights</code> operation, set the value of this parameter to
-        /// <code>NULL</code>.</p>
-        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-        /// parameter to the value returned from the previous response.</p>
+        /// <p>The token that is required for pagination. On your first call to the <code>GetInsights</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token that is required for pagination. On your first call to the
-        /// <code>GetInsights</code> operation, set the value of this parameter to
-        /// <code>NULL</code>.</p>
-        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-        /// parameter to the value returned from the previous response.</p>
+        /// <p>The token that is required for pagination. On your first call to the <code>GetInsights</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6886,20 +6718,14 @@ pub mod list_enabled_products_for_import_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The token that is required for pagination. On your first call to the
-        /// <code>ListEnabledProductsForImport</code> operation, set the value of this parameter to
-        /// <code>NULL</code>.</p>
-        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-        /// parameter to the value returned from the previous response.</p>
+        /// <p>The token that is required for pagination. On your first call to the <code>ListEnabledProductsForImport</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token that is required for pagination. On your first call to the
-        /// <code>ListEnabledProductsForImport</code> operation, set the value of this parameter to
-        /// <code>NULL</code>.</p>
-        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-        /// parameter to the value returned from the previous response.</p>
+        /// <p>The token that is required for pagination. On your first call to the <code>ListEnabledProductsForImport</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7234,20 +7060,14 @@ pub mod list_invitations_input {
             self.max_results = input;
             self
         }
-        /// <p>The token that is required for pagination. On your first call to the
-        /// <code>ListInvitations</code> operation, set the value of this parameter to
-        /// <code>NULL</code>.</p>
-        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-        /// parameter to the value returned from the previous response.</p>
+        /// <p>The token that is required for pagination. On your first call to the <code>ListInvitations</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token that is required for pagination. On your first call to the
-        /// <code>ListInvitations</code> operation, set the value of this parameter to
-        /// <code>NULL</code>.</p>
-        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-        /// parameter to the value returned from the previous response.</p>
+        /// <p>The token that is required for pagination. On your first call to the <code>ListInvitations</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7397,22 +7217,16 @@ pub mod list_members_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies which member accounts to include in the response based on their relationship
-        /// status with the administrator account. The default value is <code>TRUE</code>.</p>
-        /// <p>If <code>OnlyAssociated</code> is set to <code>TRUE</code>, the response includes member
-        /// accounts whose relationship status with the administrator account is set to <code>ENABLED</code>.</p>
-        /// <p>If <code>OnlyAssociated</code> is set to <code>FALSE</code>, the response includes all
-        /// existing member accounts. </p>
+        /// <p>Specifies which member accounts to include in the response based on their relationship status with the administrator account. The default value is <code>TRUE</code>.</p>
+        /// <p>If <code>OnlyAssociated</code> is set to <code>TRUE</code>, the response includes member accounts whose relationship status with the administrator account is set to <code>ENABLED</code>.</p>
+        /// <p>If <code>OnlyAssociated</code> is set to <code>FALSE</code>, the response includes all existing member accounts. </p>
         pub fn only_associated(mut self, input: bool) -> Self {
             self.only_associated = Some(input);
             self
         }
-        /// <p>Specifies which member accounts to include in the response based on their relationship
-        /// status with the administrator account. The default value is <code>TRUE</code>.</p>
-        /// <p>If <code>OnlyAssociated</code> is set to <code>TRUE</code>, the response includes member
-        /// accounts whose relationship status with the administrator account is set to <code>ENABLED</code>.</p>
-        /// <p>If <code>OnlyAssociated</code> is set to <code>FALSE</code>, the response includes all
-        /// existing member accounts. </p>
+        /// <p>Specifies which member accounts to include in the response based on their relationship status with the administrator account. The default value is <code>TRUE</code>.</p>
+        /// <p>If <code>OnlyAssociated</code> is set to <code>TRUE</code>, the response includes member accounts whose relationship status with the administrator account is set to <code>ENABLED</code>.</p>
+        /// <p>If <code>OnlyAssociated</code> is set to <code>FALSE</code>, the response includes all existing member accounts. </p>
         pub fn set_only_associated(mut self, input: std::option::Option<bool>) -> Self {
             self.only_associated = input;
             self
@@ -7427,20 +7241,14 @@ pub mod list_members_input {
             self.max_results = input;
             self
         }
-        /// <p>The token that is required for pagination. On your first call to the
-        /// <code>ListMembers</code> operation, set the value of this parameter to
-        /// <code>NULL</code>.</p>
-        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-        /// parameter to the value returned from the previous response.</p>
+        /// <p>The token that is required for pagination. On your first call to the <code>ListMembers</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token that is required for pagination. On your first call to the
-        /// <code>ListMembers</code> operation, set the value of this parameter to
-        /// <code>NULL</code>.</p>
-        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-        /// parameter to the value returned from the previous response.</p>
+        /// <p>The token that is required for pagination. On your first call to the <code>ListMembers</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+        /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7606,18 +7414,12 @@ pub mod list_organization_admin_accounts_input {
             self.max_results = input;
             self
         }
-        /// <p>The token that is required for pagination. On your first call to the
-        /// <code>ListOrganizationAdminAccounts</code> operation, set the value of this parameter to
-        /// <code>NULL</code>. For subsequent calls to the operation, to continue listing data, set
-        /// the value of this parameter to the value returned from the previous response. </p>
+        /// <p>The token that is required for pagination. On your first call to the <code>ListOrganizationAdminAccounts</code> operation, set the value of this parameter to <code>NULL</code>. For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token that is required for pagination. On your first call to the
-        /// <code>ListOrganizationAdminAccounts</code> operation, set the value of this parameter to
-        /// <code>NULL</code>. For subsequent calls to the operation, to continue listing data, set
-        /// the value of this parameter to the value returned from the previous response. </p>
+        /// <p>The token that is required for pagination. On your first call to the <code>ListOrganizationAdminAccounts</code> operation, set the value of this parameter to <code>NULL</code>. For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8511,21 +8313,9 @@ pub mod update_finding_aggregator_input {
         /// <p>The selected option also determines how to use the Regions provided in the Regions list.</p>
         /// <p>The options are as follows:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ALL_REGIONS</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ALL_REGIONS_EXCEPT_SPECIFIED</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled, except for the Regions listed in the <code>Regions</code> parameter. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SPECIFIED_REGIONS</code> - Indicates to aggregate findings only from the Regions listed in the <code>Regions</code> parameter. Security Hub does not automatically aggregate findings from new Regions.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>ALL_REGIONS</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them. </p> </li>
+        /// <li> <p> <code>ALL_REGIONS_EXCEPT_SPECIFIED</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled, except for the Regions listed in the <code>Regions</code> parameter. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them. </p> </li>
+        /// <li> <p> <code>SPECIFIED_REGIONS</code> - Indicates to aggregate findings only from the Regions listed in the <code>Regions</code> parameter. Security Hub does not automatically aggregate findings from new Regions. </p> </li>
         /// </ul>
         pub fn region_linking_mode(mut self, input: impl Into<std::string::String>) -> Self {
             self.region_linking_mode = Some(input.into());
@@ -8535,21 +8325,9 @@ pub mod update_finding_aggregator_input {
         /// <p>The selected option also determines how to use the Regions provided in the Regions list.</p>
         /// <p>The options are as follows:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ALL_REGIONS</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ALL_REGIONS_EXCEPT_SPECIFIED</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled, except for the Regions listed in the <code>Regions</code> parameter. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SPECIFIED_REGIONS</code> - Indicates to aggregate findings only from the Regions listed in the <code>Regions</code> parameter. Security Hub does not automatically aggregate findings from new Regions.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>ALL_REGIONS</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them. </p> </li>
+        /// <li> <p> <code>ALL_REGIONS_EXCEPT_SPECIFIED</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled, except for the Regions listed in the <code>Regions</code> parameter. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them. </p> </li>
+        /// <li> <p> <code>SPECIFIED_REGIONS</code> - Indicates to aggregate findings only from the Regions listed in the <code>Regions</code> parameter. Security Hub does not automatically aggregate findings from new Regions. </p> </li>
         /// </ul>
         pub fn set_region_linking_mode(
             mut self,
@@ -9109,16 +8887,14 @@ pub mod update_organization_configuration_input {
     }
     impl Builder {
         /// <p>Whether to automatically enable Security Hub for new accounts in the organization.</p>
-        /// <p>By default, this is <code>false</code>, and new accounts are not added
-        /// automatically.</p>
+        /// <p>By default, this is <code>false</code>, and new accounts are not added automatically.</p>
         /// <p>To automatically enable Security Hub for new accounts, set this to <code>true</code>.</p>
         pub fn auto_enable(mut self, input: bool) -> Self {
             self.auto_enable = Some(input);
             self
         }
         /// <p>Whether to automatically enable Security Hub for new accounts in the organization.</p>
-        /// <p>By default, this is <code>false</code>, and new accounts are not added
-        /// automatically.</p>
+        /// <p>By default, this is <code>false</code>, and new accounts are not added automatically.</p>
         /// <p>To automatically enable Security Hub for new accounts, set this to <code>true</code>.</p>
         pub fn set_auto_enable(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_enable = input;
@@ -9266,20 +9042,14 @@ pub mod update_security_hub_configuration_input {
         pub(crate) auto_enable_controls: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>Whether to automatically enable new controls when they are added to standards that are
-        /// enabled.</p>
-        /// <p>By default, this is set to <code>true</code>, and new controls are enabled
-        /// automatically. To not automatically enable new controls, set this to <code>false</code>.
-        /// </p>
+        /// <p>Whether to automatically enable new controls when they are added to standards that are enabled.</p>
+        /// <p>By default, this is set to <code>true</code>, and new controls are enabled automatically. To not automatically enable new controls, set this to <code>false</code>. </p>
         pub fn auto_enable_controls(mut self, input: bool) -> Self {
             self.auto_enable_controls = Some(input);
             self
         }
-        /// <p>Whether to automatically enable new controls when they are added to standards that are
-        /// enabled.</p>
-        /// <p>By default, this is set to <code>true</code>, and new controls are enabled
-        /// automatically. To not automatically enable new controls, set this to <code>false</code>.
-        /// </p>
+        /// <p>Whether to automatically enable new controls when they are added to standards that are enabled.</p>
+        /// <p>By default, this is set to <code>true</code>, and new controls are enabled automatically. To not automatically enable new controls, set this to <code>false</code>. </p>
         pub fn set_auto_enable_controls(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_enable_controls = input;
             self
@@ -9454,14 +9224,12 @@ pub mod update_standards_control_input {
             self.control_status = input;
             self
         }
-        /// <p>A description of the reason why you are disabling a security standard control. If you
-        /// are disabling a control, then this is required.</p>
+        /// <p>A description of the reason why you are disabling a security standard control. If you are disabling a control, then this is required.</p>
         pub fn disabled_reason(mut self, input: impl Into<std::string::String>) -> Self {
             self.disabled_reason = Some(input.into());
             self
         }
-        /// <p>A description of the reason why you are disabling a security standard control. If you
-        /// are disabling a control, then this is required.</p>
+        /// <p>A description of the reason why you are disabling a security standard control. If you are disabling a control, then this is required.</p>
         pub fn set_disabled_reason(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9631,8 +9399,7 @@ pub struct UpdateStandardsControlInput {
     pub standards_control_arn: std::option::Option<std::string::String>,
     /// <p>The updated status of the security standard control.</p>
     pub control_status: std::option::Option<crate::model::ControlStatus>,
-    /// <p>A description of the reason why you are disabling a security standard control. If you
-    /// are disabling a control, then this is required.</p>
+    /// <p>A description of the reason why you are disabling a security standard control. If you are disabling a control, then this is required.</p>
     pub disabled_reason: std::option::Option<std::string::String>,
 }
 impl UpdateStandardsControlInput {
@@ -9644,8 +9411,7 @@ impl UpdateStandardsControlInput {
     pub fn control_status(&self) -> std::option::Option<&crate::model::ControlStatus> {
         self.control_status.as_ref()
     }
-    /// <p>A description of the reason why you are disabling a security standard control. If you
-    /// are disabling a control, then this is required.</p>
+    /// <p>A description of the reason why you are disabling a security standard control. If you are disabling a control, then this is required.</p>
     pub fn disabled_reason(&self) -> std::option::Option<&str> {
         self.disabled_reason.as_deref()
     }
@@ -9664,19 +9430,13 @@ impl std::fmt::Debug for UpdateStandardsControlInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSecurityHubConfigurationInput {
-    /// <p>Whether to automatically enable new controls when they are added to standards that are
-    /// enabled.</p>
-    /// <p>By default, this is set to <code>true</code>, and new controls are enabled
-    /// automatically. To not automatically enable new controls, set this to <code>false</code>.
-    /// </p>
+    /// <p>Whether to automatically enable new controls when they are added to standards that are enabled.</p>
+    /// <p>By default, this is set to <code>true</code>, and new controls are enabled automatically. To not automatically enable new controls, set this to <code>false</code>. </p>
     pub auto_enable_controls: bool,
 }
 impl UpdateSecurityHubConfigurationInput {
-    /// <p>Whether to automatically enable new controls when they are added to standards that are
-    /// enabled.</p>
-    /// <p>By default, this is set to <code>true</code>, and new controls are enabled
-    /// automatically. To not automatically enable new controls, set this to <code>false</code>.
-    /// </p>
+    /// <p>Whether to automatically enable new controls when they are added to standards that are enabled.</p>
+    /// <p>By default, this is set to <code>true</code>, and new controls are enabled automatically. To not automatically enable new controls, set this to <code>false</code>. </p>
     pub fn auto_enable_controls(&self) -> bool {
         self.auto_enable_controls
     }
@@ -9694,15 +9454,13 @@ impl std::fmt::Debug for UpdateSecurityHubConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateOrganizationConfigurationInput {
     /// <p>Whether to automatically enable Security Hub for new accounts in the organization.</p>
-    /// <p>By default, this is <code>false</code>, and new accounts are not added
-    /// automatically.</p>
+    /// <p>By default, this is <code>false</code>, and new accounts are not added automatically.</p>
     /// <p>To automatically enable Security Hub for new accounts, set this to <code>true</code>.</p>
     pub auto_enable: bool,
 }
 impl UpdateOrganizationConfigurationInput {
     /// <p>Whether to automatically enable Security Hub for new accounts in the organization.</p>
-    /// <p>By default, this is <code>false</code>, and new accounts are not added
-    /// automatically.</p>
+    /// <p>By default, this is <code>false</code>, and new accounts are not added automatically.</p>
     /// <p>To automatically enable Security Hub for new accounts, set this to <code>true</code>.</p>
     pub fn auto_enable(&self) -> bool {
         self.auto_enable
@@ -9803,21 +9561,9 @@ pub struct UpdateFindingAggregatorInput {
     /// <p>The selected option also determines how to use the Regions provided in the Regions list.</p>
     /// <p>The options are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ALL_REGIONS</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ALL_REGIONS_EXCEPT_SPECIFIED</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled, except for the Regions listed in the <code>Regions</code> parameter. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SPECIFIED_REGIONS</code> - Indicates to aggregate findings only from the Regions listed in the <code>Regions</code> parameter. Security Hub does not automatically aggregate findings from new Regions.
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>ALL_REGIONS</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them. </p> </li>
+    /// <li> <p> <code>ALL_REGIONS_EXCEPT_SPECIFIED</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled, except for the Regions listed in the <code>Regions</code> parameter. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them. </p> </li>
+    /// <li> <p> <code>SPECIFIED_REGIONS</code> - Indicates to aggregate findings only from the Regions listed in the <code>Regions</code> parameter. Security Hub does not automatically aggregate findings from new Regions. </p> </li>
     /// </ul>
     pub region_linking_mode: std::option::Option<std::string::String>,
     /// <p>If <code>RegionLinkingMode</code> is <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a comma-separated list of Regions that do not aggregate findings to the aggregation Region.</p>
@@ -9833,21 +9579,9 @@ impl UpdateFindingAggregatorInput {
     /// <p>The selected option also determines how to use the Regions provided in the Regions list.</p>
     /// <p>The options are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ALL_REGIONS</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ALL_REGIONS_EXCEPT_SPECIFIED</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled, except for the Regions listed in the <code>Regions</code> parameter. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SPECIFIED_REGIONS</code> - Indicates to aggregate findings only from the Regions listed in the <code>Regions</code> parameter. Security Hub does not automatically aggregate findings from new Regions.
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>ALL_REGIONS</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them. </p> </li>
+    /// <li> <p> <code>ALL_REGIONS_EXCEPT_SPECIFIED</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled, except for the Regions listed in the <code>Regions</code> parameter. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them. </p> </li>
+    /// <li> <p> <code>SPECIFIED_REGIONS</code> - Indicates to aggregate findings only from the Regions listed in the <code>Regions</code> parameter. Security Hub does not automatically aggregate findings from new Regions. </p> </li>
     /// </ul>
     pub fn region_linking_mode(&self) -> std::option::Option<&str> {
         self.region_linking_mode.as_deref()
@@ -9990,10 +9724,7 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 pub struct ListOrganizationAdminAccountsInput {
     /// <p>The maximum number of items to return in the response.</p>
     pub max_results: i32,
-    /// <p>The token that is required for pagination. On your first call to the
-    /// <code>ListOrganizationAdminAccounts</code> operation, set the value of this parameter to
-    /// <code>NULL</code>. For subsequent calls to the operation, to continue listing data, set
-    /// the value of this parameter to the value returned from the previous response. </p>
+    /// <p>The token that is required for pagination. On your first call to the <code>ListOrganizationAdminAccounts</code> operation, set the value of this parameter to <code>NULL</code>. For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListOrganizationAdminAccountsInput {
@@ -10001,10 +9732,7 @@ impl ListOrganizationAdminAccountsInput {
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// <p>The token that is required for pagination. On your first call to the
-    /// <code>ListOrganizationAdminAccounts</code> operation, set the value of this parameter to
-    /// <code>NULL</code>. For subsequent calls to the operation, to continue listing data, set
-    /// the value of this parameter to the value returned from the previous response. </p>
+    /// <p>The token that is required for pagination. On your first call to the <code>ListOrganizationAdminAccounts</code> operation, set the value of this parameter to <code>NULL</code>. For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10022,29 +9750,20 @@ impl std::fmt::Debug for ListOrganizationAdminAccountsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMembersInput {
-    /// <p>Specifies which member accounts to include in the response based on their relationship
-    /// status with the administrator account. The default value is <code>TRUE</code>.</p>
-    /// <p>If <code>OnlyAssociated</code> is set to <code>TRUE</code>, the response includes member
-    /// accounts whose relationship status with the administrator account is set to <code>ENABLED</code>.</p>
-    /// <p>If <code>OnlyAssociated</code> is set to <code>FALSE</code>, the response includes all
-    /// existing member accounts. </p>
+    /// <p>Specifies which member accounts to include in the response based on their relationship status with the administrator account. The default value is <code>TRUE</code>.</p>
+    /// <p>If <code>OnlyAssociated</code> is set to <code>TRUE</code>, the response includes member accounts whose relationship status with the administrator account is set to <code>ENABLED</code>.</p>
+    /// <p>If <code>OnlyAssociated</code> is set to <code>FALSE</code>, the response includes all existing member accounts. </p>
     pub only_associated: bool,
     /// <p>The maximum number of items to return in the response. </p>
     pub max_results: i32,
-    /// <p>The token that is required for pagination. On your first call to the
-    /// <code>ListMembers</code> operation, set the value of this parameter to
-    /// <code>NULL</code>.</p>
-    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-    /// parameter to the value returned from the previous response.</p>
+    /// <p>The token that is required for pagination. On your first call to the <code>ListMembers</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListMembersInput {
-    /// <p>Specifies which member accounts to include in the response based on their relationship
-    /// status with the administrator account. The default value is <code>TRUE</code>.</p>
-    /// <p>If <code>OnlyAssociated</code> is set to <code>TRUE</code>, the response includes member
-    /// accounts whose relationship status with the administrator account is set to <code>ENABLED</code>.</p>
-    /// <p>If <code>OnlyAssociated</code> is set to <code>FALSE</code>, the response includes all
-    /// existing member accounts. </p>
+    /// <p>Specifies which member accounts to include in the response based on their relationship status with the administrator account. The default value is <code>TRUE</code>.</p>
+    /// <p>If <code>OnlyAssociated</code> is set to <code>TRUE</code>, the response includes member accounts whose relationship status with the administrator account is set to <code>ENABLED</code>.</p>
+    /// <p>If <code>OnlyAssociated</code> is set to <code>FALSE</code>, the response includes all existing member accounts. </p>
     pub fn only_associated(&self) -> bool {
         self.only_associated
     }
@@ -10052,11 +9771,8 @@ impl ListMembersInput {
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// <p>The token that is required for pagination. On your first call to the
-    /// <code>ListMembers</code> operation, set the value of this parameter to
-    /// <code>NULL</code>.</p>
-    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-    /// parameter to the value returned from the previous response.</p>
+    /// <p>The token that is required for pagination. On your first call to the <code>ListMembers</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10077,11 +9793,8 @@ impl std::fmt::Debug for ListMembersInput {
 pub struct ListInvitationsInput {
     /// <p>The maximum number of items to return in the response. </p>
     pub max_results: i32,
-    /// <p>The token that is required for pagination. On your first call to the
-    /// <code>ListInvitations</code> operation, set the value of this parameter to
-    /// <code>NULL</code>.</p>
-    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-    /// parameter to the value returned from the previous response.</p>
+    /// <p>The token that is required for pagination. On your first call to the <code>ListInvitations</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListInvitationsInput {
@@ -10089,11 +9802,8 @@ impl ListInvitationsInput {
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// <p>The token that is required for pagination. On your first call to the
-    /// <code>ListInvitations</code> operation, set the value of this parameter to
-    /// <code>NULL</code>.</p>
-    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-    /// parameter to the value returned from the previous response.</p>
+    /// <p>The token that is required for pagination. On your first call to the <code>ListInvitations</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10139,21 +9849,15 @@ impl std::fmt::Debug for ListFindingAggregatorsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEnabledProductsForImportInput {
-    /// <p>The token that is required for pagination. On your first call to the
-    /// <code>ListEnabledProductsForImport</code> operation, set the value of this parameter to
-    /// <code>NULL</code>.</p>
-    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-    /// parameter to the value returned from the previous response.</p>
+    /// <p>The token that is required for pagination. On your first call to the <code>ListEnabledProductsForImport</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return in the response.</p>
     pub max_results: i32,
 }
 impl ListEnabledProductsForImportInput {
-    /// <p>The token that is required for pagination. On your first call to the
-    /// <code>ListEnabledProductsForImport</code> operation, set the value of this parameter to
-    /// <code>NULL</code>.</p>
-    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-    /// parameter to the value returned from the previous response.</p>
+    /// <p>The token that is required for pagination. On your first call to the <code>ListEnabledProductsForImport</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10239,31 +9943,21 @@ impl std::fmt::Debug for GetInvitationsCountInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInsightsInput {
-    /// <p>The ARNs of the insights to describe. If you do not provide any insight ARNs, then
-    /// <code>GetInsights</code> returns all of your custom insights. It does not return any
-    /// managed insights.</p>
+    /// <p>The ARNs of the insights to describe. If you do not provide any insight ARNs, then <code>GetInsights</code> returns all of your custom insights. It does not return any managed insights.</p>
     pub insight_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The token that is required for pagination. On your first call to the
-    /// <code>GetInsights</code> operation, set the value of this parameter to
-    /// <code>NULL</code>.</p>
-    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-    /// parameter to the value returned from the previous response.</p>
+    /// <p>The token that is required for pagination. On your first call to the <code>GetInsights</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to return in the response.</p>
     pub max_results: i32,
 }
 impl GetInsightsInput {
-    /// <p>The ARNs of the insights to describe. If you do not provide any insight ARNs, then
-    /// <code>GetInsights</code> returns all of your custom insights. It does not return any
-    /// managed insights.</p>
+    /// <p>The ARNs of the insights to describe. If you do not provide any insight ARNs, then <code>GetInsights</code> returns all of your custom insights. It does not return any managed insights.</p>
     pub fn insight_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.insight_arns.as_deref()
     }
-    /// <p>The token that is required for pagination. On your first call to the
-    /// <code>GetInsights</code> operation, set the value of this parameter to
-    /// <code>NULL</code>.</p>
-    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-    /// parameter to the value returned from the previous response.</p>
+    /// <p>The token that is required for pagination. On your first call to the <code>GetInsights</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10307,31 +10001,22 @@ impl std::fmt::Debug for GetInsightResultsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFindingsInput {
-    /// <p>The finding attributes used to define a condition to filter the returned
-    /// findings.</p>
-    /// <p>You can filter by up to 10 finding attributes. For each attribute, you can provide up to
-    /// 20 filter values.</p>
-    /// <p>Note that in the available filter fields, <code>WorkflowState</code> is deprecated. To
-    /// search for a finding based on its workflow status, use <code>WorkflowStatus</code>.</p>
+    /// <p>The finding attributes used to define a condition to filter the returned findings.</p>
+    /// <p>You can filter by up to 10 finding attributes. For each attribute, you can provide up to 20 filter values.</p>
+    /// <p>Note that in the available filter fields, <code>WorkflowState</code> is deprecated. To search for a finding based on its workflow status, use <code>WorkflowStatus</code>.</p>
     pub filters: std::option::Option<crate::model::AwsSecurityFindingFilters>,
     /// <p>The finding attributes used to sort the list of returned findings.</p>
     pub sort_criteria: std::option::Option<std::vec::Vec<crate::model::SortCriterion>>,
-    /// <p>The token that is required for pagination. On your first call to the
-    /// <code>GetFindings</code> operation, set the value of this parameter to
-    /// <code>NULL</code>.</p>
-    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-    /// parameter to the value returned from the previous response.</p>
+    /// <p>The token that is required for pagination. On your first call to the <code>GetFindings</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of findings to return.</p>
     pub max_results: i32,
 }
 impl GetFindingsInput {
-    /// <p>The finding attributes used to define a condition to filter the returned
-    /// findings.</p>
-    /// <p>You can filter by up to 10 finding attributes. For each attribute, you can provide up to
-    /// 20 filter values.</p>
-    /// <p>Note that in the available filter fields, <code>WorkflowState</code> is deprecated. To
-    /// search for a finding based on its workflow status, use <code>WorkflowStatus</code>.</p>
+    /// <p>The finding attributes used to define a condition to filter the returned findings.</p>
+    /// <p>You can filter by up to 10 finding attributes. For each attribute, you can provide up to 20 filter values.</p>
+    /// <p>Note that in the available filter fields, <code>WorkflowState</code> is deprecated. To search for a finding based on its workflow status, use <code>WorkflowStatus</code>.</p>
     pub fn filters(&self) -> std::option::Option<&crate::model::AwsSecurityFindingFilters> {
         self.filters.as_ref()
     }
@@ -10339,11 +10024,8 @@ impl GetFindingsInput {
     pub fn sort_criteria(&self) -> std::option::Option<&[crate::model::SortCriterion]> {
         self.sort_criteria.as_deref()
     }
-    /// <p>The token that is required for pagination. On your first call to the
-    /// <code>GetFindings</code> operation, set the value of this parameter to
-    /// <code>NULL</code>.</p>
-    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-    /// parameter to the value returned from the previous response.</p>
+    /// <p>The token that is required for pagination. On your first call to the <code>GetFindings</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10390,11 +10072,8 @@ impl std::fmt::Debug for GetFindingAggregatorInput {
 pub struct GetEnabledStandardsInput {
     /// <p>The list of the standards subscription ARNs for the standards to retrieve.</p>
     pub standards_subscription_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The token that is required for pagination. On your first call to the
-    /// <code>GetEnabledStandards</code> operation, set the value of this parameter to
-    /// <code>NULL</code>.</p>
-    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-    /// parameter to the value returned from the previous response.</p>
+    /// <p>The token that is required for pagination. On your first call to the <code>GetEnabledStandards</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in the response.</p>
     pub max_results: i32,
@@ -10404,11 +10083,8 @@ impl GetEnabledStandardsInput {
     pub fn standards_subscription_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.standards_subscription_arns.as_deref()
     }
-    /// <p>The token that is required for pagination. On your first call to the
-    /// <code>GetEnabledStandards</code> operation, set the value of this parameter to
-    /// <code>NULL</code>.</p>
-    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-    /// parameter to the value returned from the previous response.</p>
+    /// <p>The token that is required for pagination. On your first call to the <code>GetEnabledStandards</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10448,10 +10124,7 @@ pub struct EnableSecurityHubInput {
     /// <p>The tags to add to the hub resource when you enable Security Hub.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>Whether to enable the security standards that Security Hub has designated as automatically
-    /// enabled. If you do not provide a value for <code>EnableDefaultStandards</code>, it is set
-    /// to <code>true</code>. To not enable the automatically enabled standards, set
-    /// <code>EnableDefaultStandards</code> to <code>false</code>.</p>
+    /// <p>Whether to enable the security standards that Security Hub has designated as automatically enabled. If you do not provide a value for <code>EnableDefaultStandards</code>, it is set to <code>true</code>. To not enable the automatically enabled standards, set <code>EnableDefaultStandards</code> to <code>false</code>.</p>
     pub enable_default_standards: bool,
 }
 impl EnableSecurityHubInput {
@@ -10462,10 +10135,7 @@ impl EnableSecurityHubInput {
     {
         self.tags.as_ref()
     }
-    /// <p>Whether to enable the security standards that Security Hub has designated as automatically
-    /// enabled. If you do not provide a value for <code>EnableDefaultStandards</code>, it is set
-    /// to <code>true</code>. To not enable the automatically enabled standards, set
-    /// <code>EnableDefaultStandards</code> to <code>false</code>.</p>
+    /// <p>Whether to enable the security standards that Security Hub has designated as automatically enabled. If you do not provide a value for <code>EnableDefaultStandards</code>, it is set to <code>true</code>. To not enable the automatically enabled standards, set <code>EnableDefaultStandards</code> to <code>false</code>.</p>
     pub fn enable_default_standards(&self) -> bool {
         self.enable_default_standards
     }
@@ -10483,13 +10153,11 @@ impl std::fmt::Debug for EnableSecurityHubInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableOrganizationAdminAccountInput {
-    /// <p>The Amazon Web Services account identifier of the account to designate as the Security Hub administrator
-    /// account.</p>
+    /// <p>The Amazon Web Services account identifier of the account to designate as the Security Hub administrator account.</p>
     pub admin_account_id: std::option::Option<std::string::String>,
 }
 impl EnableOrganizationAdminAccountInput {
-    /// <p>The Amazon Web Services account identifier of the account to designate as the Security Hub administrator
-    /// account.</p>
+    /// <p>The Amazon Web Services account identifier of the account to designate as the Security Hub administrator account.</p>
     pub fn admin_account_id(&self) -> std::option::Option<&str> {
         self.admin_account_id.as_deref()
     }
@@ -10623,29 +10291,21 @@ impl std::fmt::Debug for DisableImportFindingsForProductInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeStandardsControlsInput {
-    /// <p>The ARN of a resource that represents your subscription to a supported standard. To get
-    /// the subscription ARNs of the standards you have enabled, use the <code>GetEnabledStandards</code> operation.</p>
+    /// <p>The ARN of a resource that represents your subscription to a supported standard. To get the subscription ARNs of the standards you have enabled, use the <code>GetEnabledStandards</code> operation.</p>
     pub standards_subscription_arn: std::option::Option<std::string::String>,
-    /// <p>The token that is required for pagination. On your first call to the
-    /// <code>DescribeStandardsControls</code> operation, set the value of this parameter to
-    /// <code>NULL</code>.</p>
-    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-    /// parameter to the value returned from the previous response.</p>
+    /// <p>The token that is required for pagination. On your first call to the <code>DescribeStandardsControls</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of security standard controls to return.</p>
     pub max_results: i32,
 }
 impl DescribeStandardsControlsInput {
-    /// <p>The ARN of a resource that represents your subscription to a supported standard. To get
-    /// the subscription ARNs of the standards you have enabled, use the <code>GetEnabledStandards</code> operation.</p>
+    /// <p>The ARN of a resource that represents your subscription to a supported standard. To get the subscription ARNs of the standards you have enabled, use the <code>GetEnabledStandards</code> operation.</p>
     pub fn standards_subscription_arn(&self) -> std::option::Option<&str> {
         self.standards_subscription_arn.as_deref()
     }
-    /// <p>The token that is required for pagination. On your first call to the
-    /// <code>DescribeStandardsControls</code> operation, set the value of this parameter to
-    /// <code>NULL</code>.</p>
-    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-    /// parameter to the value returned from the previous response.</p>
+    /// <p>The token that is required for pagination. On your first call to the <code>DescribeStandardsControls</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10671,21 +10331,15 @@ impl std::fmt::Debug for DescribeStandardsControlsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeStandardsInput {
-    /// <p>The token that is required for pagination. On your first call to the
-    /// <code>DescribeStandards</code> operation, set the value of this parameter to
-    /// <code>NULL</code>.</p>
-    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-    /// parameter to the value returned from the previous response.</p>
+    /// <p>The token that is required for pagination. On your first call to the <code>DescribeStandards</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of standards to return.</p>
     pub max_results: i32,
 }
 impl DescribeStandardsInput {
-    /// <p>The token that is required for pagination. On your first call to the
-    /// <code>DescribeStandards</code> operation, set the value of this parameter to
-    /// <code>NULL</code>.</p>
-    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-    /// parameter to the value returned from the previous response.</p>
+    /// <p>The token that is required for pagination. On your first call to the <code>DescribeStandards</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10707,11 +10361,8 @@ impl std::fmt::Debug for DescribeStandardsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProductsInput {
-    /// <p>The token that is required for pagination. On your first call to the
-    /// <code>DescribeProducts</code> operation, set the value of this parameter to
-    /// <code>NULL</code>.</p>
-    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-    /// parameter to the value returned from the previous response.</p>
+    /// <p>The token that is required for pagination. On your first call to the <code>DescribeProducts</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return.</p>
     pub max_results: i32,
@@ -10719,11 +10370,8 @@ pub struct DescribeProductsInput {
     pub product_arn: std::option::Option<std::string::String>,
 }
 impl DescribeProductsInput {
-    /// <p>The token that is required for pagination. On your first call to the
-    /// <code>DescribeProducts</code> operation, set the value of this parameter to
-    /// <code>NULL</code>.</p>
-    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-    /// parameter to the value returned from the previous response.</p>
+    /// <p>The token that is required for pagination. On your first call to the <code>DescribeProducts</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10784,11 +10432,8 @@ impl std::fmt::Debug for DescribeHubInput {
 pub struct DescribeActionTargetsInput {
     /// <p>A list of custom action target ARNs for the custom action targets to retrieve.</p>
     pub action_target_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The token that is required for pagination. On your first call to the
-    /// <code>DescribeActionTargets</code> operation, set the value of this parameter to
-    /// <code>NULL</code>.</p>
-    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-    /// parameter to the value returned from the previous response.</p>
+    /// <p>The token that is required for pagination. On your first call to the <code>DescribeActionTargets</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return.</p>
     pub max_results: i32,
@@ -10798,11 +10443,8 @@ impl DescribeActionTargetsInput {
     pub fn action_target_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.action_target_arns.as_deref()
     }
-    /// <p>The token that is required for pagination. On your first call to the
-    /// <code>DescribeActionTargets</code> operation, set the value of this parameter to
-    /// <code>NULL</code>.</p>
-    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this
-    /// parameter to the value returned from the previous response.</p>
+    /// <p>The token that is required for pagination. On your first call to the <code>DescribeActionTargets</code> operation, set the value of this parameter to <code>NULL</code>.</p>
+    /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10930,13 +10572,11 @@ impl std::fmt::Debug for DeleteActionTargetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeclineInvitationsInput {
-    /// <p>The list of account IDs for the accounts from which to decline the invitations to
-    /// Security Hub.</p>
+    /// <p>The list of account IDs for the accounts from which to decline the invitations to Security Hub.</p>
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DeclineInvitationsInput {
-    /// <p>The list of account IDs for the accounts from which to decline the invitations to
-    /// Security Hub.</p>
+    /// <p>The list of account IDs for the accounts from which to decline the invitations to Security Hub.</p>
     pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.account_ids.as_deref()
     }
@@ -10953,13 +10593,11 @@ impl std::fmt::Debug for DeclineInvitationsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMembersInput {
-    /// <p>The list of accounts to associate with the Security Hub administrator account. For each account, the
-    /// list includes the account ID and optionally the email address.</p>
+    /// <p>The list of accounts to associate with the Security Hub administrator account. For each account, the list includes the account ID and optionally the email address.</p>
     pub account_details: std::option::Option<std::vec::Vec<crate::model::AccountDetails>>,
 }
 impl CreateMembersInput {
-    /// <p>The list of accounts to associate with the Security Hub administrator account. For each account, the
-    /// list includes the account ID and optionally the email address.</p>
+    /// <p>The list of accounts to associate with the Security Hub administrator account. For each account, the list includes the account ID and optionally the email address.</p>
     pub fn account_details(&self) -> std::option::Option<&[crate::model::AccountDetails]> {
         self.account_details.as_deref()
     }
@@ -10978,13 +10616,9 @@ impl std::fmt::Debug for CreateMembersInput {
 pub struct CreateInsightInput {
     /// <p>The name of the custom insight to create.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>One or more attributes used to filter the findings included in the insight. The insight
-    /// only includes findings that match the criteria defined in the filters.</p>
+    /// <p>One or more attributes used to filter the findings included in the insight. The insight only includes findings that match the criteria defined in the filters.</p>
     pub filters: std::option::Option<crate::model::AwsSecurityFindingFilters>,
-    /// <p>The attribute used to group the findings for the insight. The grouping attribute
-    /// identifies the type of item that the insight applies to. For example, if an insight is
-    /// grouped by resource identifier, then the insight produces a list of resource
-    /// identifiers.</p>
+    /// <p>The attribute used to group the findings for the insight. The grouping attribute identifies the type of item that the insight applies to. For example, if an insight is grouped by resource identifier, then the insight produces a list of resource identifiers.</p>
     pub group_by_attribute: std::option::Option<std::string::String>,
 }
 impl CreateInsightInput {
@@ -10992,15 +10626,11 @@ impl CreateInsightInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>One or more attributes used to filter the findings included in the insight. The insight
-    /// only includes findings that match the criteria defined in the filters.</p>
+    /// <p>One or more attributes used to filter the findings included in the insight. The insight only includes findings that match the criteria defined in the filters.</p>
     pub fn filters(&self) -> std::option::Option<&crate::model::AwsSecurityFindingFilters> {
         self.filters.as_ref()
     }
-    /// <p>The attribute used to group the findings for the insight. The grouping attribute
-    /// identifies the type of item that the insight applies to. For example, if an insight is
-    /// grouped by resource identifier, then the insight produces a list of resource
-    /// identifiers.</p>
+    /// <p>The attribute used to group the findings for the insight. The grouping attribute identifies the type of item that the insight applies to. For example, if an insight is grouped by resource identifier, then the insight produces a list of resource identifiers.</p>
     pub fn group_by_attribute(&self) -> std::option::Option<&str> {
         self.group_by_attribute.as_deref()
     }
@@ -11023,26 +10653,13 @@ pub struct CreateFindingAggregatorInput {
     /// <p>The selected option also determines how to use the Regions provided in the Regions list.</p>
     /// <p>The options are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ALL_REGIONS</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ALL_REGIONS_EXCEPT_SPECIFIED</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled, except for the Regions listed in the <code>Regions</code> parameter. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SPECIFIED_REGIONS</code> - Indicates to aggregate findings only from the Regions listed in the <code>Regions</code> parameter. Security Hub does not automatically aggregate findings from new Regions.
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>ALL_REGIONS</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them. </p> </li>
+    /// <li> <p> <code>ALL_REGIONS_EXCEPT_SPECIFIED</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled, except for the Regions listed in the <code>Regions</code> parameter. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them. </p> </li>
+    /// <li> <p> <code>SPECIFIED_REGIONS</code> - Indicates to aggregate findings only from the Regions listed in the <code>Regions</code> parameter. Security Hub does not automatically aggregate findings from new Regions. </p> </li>
     /// </ul>
     pub region_linking_mode: std::option::Option<std::string::String>,
     /// <p>If <code>RegionLinkingMode</code> is <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a comma-separated list of Regions that do not aggregate findings to the aggregation Region.</p>
-    /// <p>If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a comma-separated list of Regions that do aggregate findings to the aggregation Region.
-    /// </p>
+    /// <p>If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a comma-separated list of Regions that do aggregate findings to the aggregation Region. </p>
     pub regions: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CreateFindingAggregatorInput {
@@ -11050,28 +10667,15 @@ impl CreateFindingAggregatorInput {
     /// <p>The selected option also determines how to use the Regions provided in the Regions list.</p>
     /// <p>The options are as follows:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ALL_REGIONS</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ALL_REGIONS_EXCEPT_SPECIFIED</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled, except for the Regions listed in the <code>Regions</code> parameter. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SPECIFIED_REGIONS</code> - Indicates to aggregate findings only from the Regions listed in the <code>Regions</code> parameter. Security Hub does not automatically aggregate findings from new Regions.
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>ALL_REGIONS</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them. </p> </li>
+    /// <li> <p> <code>ALL_REGIONS_EXCEPT_SPECIFIED</code> - Indicates to aggregate findings from all of the Regions where Security Hub is enabled, except for the Regions listed in the <code>Regions</code> parameter. When you choose this option, Security Hub also automatically aggregates findings from new Regions as Security Hub supports them and you opt into them. </p> </li>
+    /// <li> <p> <code>SPECIFIED_REGIONS</code> - Indicates to aggregate findings only from the Regions listed in the <code>Regions</code> parameter. Security Hub does not automatically aggregate findings from new Regions. </p> </li>
     /// </ul>
     pub fn region_linking_mode(&self) -> std::option::Option<&str> {
         self.region_linking_mode.as_deref()
     }
     /// <p>If <code>RegionLinkingMode</code> is <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a comma-separated list of Regions that do not aggregate findings to the aggregation Region.</p>
-    /// <p>If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a comma-separated list of Regions that do aggregate findings to the aggregation Region.
-    /// </p>
+    /// <p>If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a comma-separated list of Regions that do aggregate findings to the aggregation Region. </p>
     pub fn regions(&self) -> std::option::Option<&[std::string::String]> {
         self.regions.as_deref()
     }
@@ -11124,10 +10728,8 @@ impl std::fmt::Debug for CreateActionTargetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchUpdateFindingsInput {
-    /// <p>The list of findings to update. <code>BatchUpdateFindings</code> can be used to update
-    /// up to 100 findings at a time.</p>
-    /// <p>For each finding, the list provides the finding identifier and the ARN of the finding
-    /// provider.</p>
+    /// <p>The list of findings to update. <code>BatchUpdateFindings</code> can be used to update up to 100 findings at a time.</p>
+    /// <p>For each finding, the list provides the finding identifier and the ARN of the finding provider.</p>
     pub finding_identifiers:
         std::option::Option<std::vec::Vec<crate::model::AwsSecurityFindingIdentifier>>,
     /// <p>The updated note.</p>
@@ -11135,62 +10737,31 @@ pub struct BatchUpdateFindingsInput {
     /// <p>Used to update the finding severity.</p>
     pub severity: std::option::Option<crate::model::SeverityUpdate>,
     /// <p>Indicates the veracity of a finding.</p>
-    /// <p>The available values for <code>VerificationState</code> are  as follows.</p>
+    /// <p>The available values for <code>VerificationState</code> are as follows.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>UNKNOWN</code> – The default disposition of a security finding</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TRUE_POSITIVE</code> – The security finding is confirmed</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FALSE_POSITIVE</code> – The security finding was determined to be a false
-    /// alarm</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>BENIGN_POSITIVE</code> – A special case of <code>TRUE_POSITIVE</code> where
-    /// the finding doesn't pose any threat, is expected, or both</p>
-    /// </li>
+    /// <li> <p> <code>UNKNOWN</code> – The default disposition of a security finding</p> </li>
+    /// <li> <p> <code>TRUE_POSITIVE</code> – The security finding is confirmed</p> </li>
+    /// <li> <p> <code>FALSE_POSITIVE</code> – The security finding was determined to be a false alarm</p> </li>
+    /// <li> <p> <code>BENIGN_POSITIVE</code> – A special case of <code>TRUE_POSITIVE</code> where the finding doesn't pose any threat, is expected, or both</p> </li>
     /// </ul>
     pub verification_state: std::option::Option<crate::model::VerificationState>,
-    /// <p>The updated value for the finding confidence. Confidence is defined as the likelihood
-    /// that a finding accurately identifies the behavior or issue that it was intended to
-    /// identify.</p>
-    /// <p>Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent
-    /// confidence and 100 means 100 percent confidence.</p>
+    /// <p>The updated value for the finding confidence. Confidence is defined as the likelihood that a finding accurately identifies the behavior or issue that it was intended to identify.</p>
+    /// <p>Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent confidence and 100 means 100 percent confidence.</p>
     pub confidence: i32,
-    /// <p>The updated value for the level of importance assigned to the resources associated with
-    /// the findings.</p>
-    /// <p>A score of 0 means that the underlying resources have no criticality, and a score of 100
-    /// is reserved for the most critical resources. </p>
+    /// <p>The updated value for the level of importance assigned to the resources associated with the findings.</p>
+    /// <p>A score of 0 means that the underlying resources have no criticality, and a score of 100 is reserved for the most critical resources. </p>
     pub criticality: i32,
-    /// <p>One or more finding types in the format of namespace/category/classifier that classify a
-    /// finding.</p>
+    /// <p>One or more finding types in the format of namespace/category/classifier that classify a finding.</p>
     /// <p>Valid namespace values are as follows.</p>
     /// <ul>
-    /// <li>
-    /// <p>Software and Configuration Checks</p>
-    /// </li>
-    /// <li>
-    /// <p>TTPs</p>
-    /// </li>
-    /// <li>
-    /// <p>Effects</p>
-    /// </li>
-    /// <li>
-    /// <p>Unusual Behaviors</p>
-    /// </li>
-    /// <li>
-    /// <p>Sensitive Data Identifications </p>
-    /// </li>
+    /// <li> <p>Software and Configuration Checks</p> </li>
+    /// <li> <p>TTPs</p> </li>
+    /// <li> <p>Effects</p> </li>
+    /// <li> <p>Unusual Behaviors</p> </li>
+    /// <li> <p>Sensitive Data Identifications </p> </li>
     /// </ul>
     pub types: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A list of name/value string pairs associated with the finding. These are custom,
-    /// user-defined fields added to a finding.</p>
+    /// <p>A list of name/value string pairs associated with the finding. These are custom, user-defined fields added to a finding.</p>
     pub user_defined_fields:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Used to update the workflow status of a finding.</p>
@@ -11200,10 +10771,8 @@ pub struct BatchUpdateFindingsInput {
     pub related_findings: std::option::Option<std::vec::Vec<crate::model::RelatedFinding>>,
 }
 impl BatchUpdateFindingsInput {
-    /// <p>The list of findings to update. <code>BatchUpdateFindings</code> can be used to update
-    /// up to 100 findings at a time.</p>
-    /// <p>For each finding, the list provides the finding identifier and the ARN of the finding
-    /// provider.</p>
+    /// <p>The list of findings to update. <code>BatchUpdateFindings</code> can be used to update up to 100 findings at a time.</p>
+    /// <p>For each finding, the list provides the finding identifier and the ARN of the finding provider.</p>
     pub fn finding_identifiers(
         &self,
     ) -> std::option::Option<&[crate::model::AwsSecurityFindingIdentifier]> {
@@ -11218,70 +10787,39 @@ impl BatchUpdateFindingsInput {
         self.severity.as_ref()
     }
     /// <p>Indicates the veracity of a finding.</p>
-    /// <p>The available values for <code>VerificationState</code> are  as follows.</p>
+    /// <p>The available values for <code>VerificationState</code> are as follows.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>UNKNOWN</code> – The default disposition of a security finding</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TRUE_POSITIVE</code> – The security finding is confirmed</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FALSE_POSITIVE</code> – The security finding was determined to be a false
-    /// alarm</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>BENIGN_POSITIVE</code> – A special case of <code>TRUE_POSITIVE</code> where
-    /// the finding doesn't pose any threat, is expected, or both</p>
-    /// </li>
+    /// <li> <p> <code>UNKNOWN</code> – The default disposition of a security finding</p> </li>
+    /// <li> <p> <code>TRUE_POSITIVE</code> – The security finding is confirmed</p> </li>
+    /// <li> <p> <code>FALSE_POSITIVE</code> – The security finding was determined to be a false alarm</p> </li>
+    /// <li> <p> <code>BENIGN_POSITIVE</code> – A special case of <code>TRUE_POSITIVE</code> where the finding doesn't pose any threat, is expected, or both</p> </li>
     /// </ul>
     pub fn verification_state(&self) -> std::option::Option<&crate::model::VerificationState> {
         self.verification_state.as_ref()
     }
-    /// <p>The updated value for the finding confidence. Confidence is defined as the likelihood
-    /// that a finding accurately identifies the behavior or issue that it was intended to
-    /// identify.</p>
-    /// <p>Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent
-    /// confidence and 100 means 100 percent confidence.</p>
+    /// <p>The updated value for the finding confidence. Confidence is defined as the likelihood that a finding accurately identifies the behavior or issue that it was intended to identify.</p>
+    /// <p>Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent confidence and 100 means 100 percent confidence.</p>
     pub fn confidence(&self) -> i32 {
         self.confidence
     }
-    /// <p>The updated value for the level of importance assigned to the resources associated with
-    /// the findings.</p>
-    /// <p>A score of 0 means that the underlying resources have no criticality, and a score of 100
-    /// is reserved for the most critical resources. </p>
+    /// <p>The updated value for the level of importance assigned to the resources associated with the findings.</p>
+    /// <p>A score of 0 means that the underlying resources have no criticality, and a score of 100 is reserved for the most critical resources. </p>
     pub fn criticality(&self) -> i32 {
         self.criticality
     }
-    /// <p>One or more finding types in the format of namespace/category/classifier that classify a
-    /// finding.</p>
+    /// <p>One or more finding types in the format of namespace/category/classifier that classify a finding.</p>
     /// <p>Valid namespace values are as follows.</p>
     /// <ul>
-    /// <li>
-    /// <p>Software and Configuration Checks</p>
-    /// </li>
-    /// <li>
-    /// <p>TTPs</p>
-    /// </li>
-    /// <li>
-    /// <p>Effects</p>
-    /// </li>
-    /// <li>
-    /// <p>Unusual Behaviors</p>
-    /// </li>
-    /// <li>
-    /// <p>Sensitive Data Identifications </p>
-    /// </li>
+    /// <li> <p>Software and Configuration Checks</p> </li>
+    /// <li> <p>TTPs</p> </li>
+    /// <li> <p>Effects</p> </li>
+    /// <li> <p>Unusual Behaviors</p> </li>
+    /// <li> <p>Sensitive Data Identifications </p> </li>
     /// </ul>
     pub fn types(&self) -> std::option::Option<&[std::string::String]> {
         self.types.as_deref()
     }
-    /// <p>A list of name/value string pairs associated with the finding. These are custom,
-    /// user-defined fields added to a finding.</p>
+    /// <p>A list of name/value string pairs associated with the finding. These are custom, user-defined fields added to a finding.</p>
     pub fn user_defined_fields(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -11319,13 +10857,11 @@ impl std::fmt::Debug for BatchUpdateFindingsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchImportFindingsInput {
-    /// <p>A list of findings to import. To successfully import a finding, it must follow the
-    /// <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">Amazon Web Services Security Finding Format</a>. Maximum of 100 findings per request.</p>
+    /// <p>A list of findings to import. To successfully import a finding, it must follow the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">Amazon Web Services Security Finding Format</a>. Maximum of 100 findings per request.</p>
     pub findings: std::option::Option<std::vec::Vec<crate::model::AwsSecurityFinding>>,
 }
 impl BatchImportFindingsInput {
-    /// <p>A list of findings to import. To successfully import a finding, it must follow the
-    /// <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">Amazon Web Services Security Finding Format</a>. Maximum of 100 findings per request.</p>
+    /// <p>A list of findings to import. To successfully import a finding, it must follow the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">Amazon Web Services Security Finding Format</a>. Maximum of 100 findings per request.</p>
     pub fn findings(&self) -> std::option::Option<&[crate::model::AwsSecurityFinding]> {
         self.findings.as_deref()
     }

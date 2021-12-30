@@ -136,10 +136,7 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CancelChangeSet`.
     ///
-    /// <p>Used to cancel an open change request. Must be sent before the status of the request
-    /// changes to <code>APPLYING</code>, the final stage of completing your change request. You
-    /// can describe a change during the 60-day request history retention period for API
-    /// calls.</p>
+    /// <p>Used to cancel an open change request. Must be sent before the status of the request changes to <code>APPLYING</code>, the final stage of completing your change request. You can describe a change during the 60-day request history retention period for API calls.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelChangeSet<
         C = aws_smithy_client::erase::DynConnector,
@@ -196,26 +193,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Required. The catalog related to the request. Fixed value:
-        /// <code>AWSMarketplace</code>.</p>
+        /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code>.</p>
         pub fn catalog(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog(input.into());
             self
         }
-        /// <p>Required. The catalog related to the request. Fixed value:
-        /// <code>AWSMarketplace</code>.</p>
+        /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code>.</p>
         pub fn set_catalog(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog(input);
             self
         }
-        /// <p>Required. The unique identifier of the <code>StartChangeSet</code> request that you
-        /// want to cancel.</p>
+        /// <p>Required. The unique identifier of the <code>StartChangeSet</code> request that you want to cancel.</p>
         pub fn change_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.change_set_id(input.into());
             self
         }
-        /// <p>Required. The unique identifier of the <code>StartChangeSet</code> request that you
-        /// want to cancel.</p>
+        /// <p>Required. The unique identifier of the <code>StartChangeSet</code> request that you want to cancel.</p>
         pub fn set_change_set_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -283,28 +276,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Required. The catalog related to the request. Fixed value:
-        /// <code>AWSMarketplace</code>
-        /// </p>
+        /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
         pub fn catalog(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog(input.into());
             self
         }
-        /// <p>Required. The catalog related to the request. Fixed value:
-        /// <code>AWSMarketplace</code>
-        /// </p>
+        /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
         pub fn set_catalog(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog(input);
             self
         }
-        /// <p>Required. The unique identifier for the <code>StartChangeSet</code> request that you
-        /// want to describe the details for.</p>
+        /// <p>Required. The unique identifier for the <code>StartChangeSet</code> request that you want to describe the details for.</p>
         pub fn change_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.change_set_id(input.into());
             self
         }
-        /// <p>Required. The unique identifier for the <code>StartChangeSet</code> request that you
-        /// want to describe the details for.</p>
+        /// <p>Required. The unique identifier for the <code>StartChangeSet</code> request that you want to describe the details for.</p>
         pub fn set_change_set_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -372,16 +359,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Required. The catalog related to the request. Fixed value:
-        /// <code>AWSMarketplace</code>
-        /// </p>
+        /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
         pub fn catalog(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog(input.into());
             self
         }
-        /// <p>Required. The catalog related to the request. Fixed value:
-        /// <code>AWSMarketplace</code>
-        /// </p>
+        /// <p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
         pub fn set_catalog(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog(input);
             self
@@ -399,13 +382,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListChangeSets`.
     ///
-    /// <p>Returns the list of change sets owned by the account being used to make the call. You
-    /// can filter this list by providing any combination of <code>entityId</code>,
-    /// <code>ChangeSetName</code>, and status. If you provide more than one filter, the API
-    /// operation applies a logical AND between the filters.</p>
-    ///
-    /// <p>You can describe a change during the 60-day request history retention period for API
-    /// calls.</p>
+    /// <p>Returns the list of change sets owned by the account being used to make the call. You can filter this list by providing any combination of <code>entityId</code>, <code>ChangeSetName</code>, and status. If you provide more than one filter, the API operation applies a logical AND between the filters.</p>
+    /// <p>You can describe a change during the 60-day request history retention period for API calls.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListChangeSets<
         C = aws_smithy_client::erase::DynConnector,
@@ -462,14 +440,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code>
-        /// </p>
+        /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
         pub fn catalog(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog(input.into());
             self
         }
-        /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code>
-        /// </p>
+        /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
         pub fn set_catalog(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog(input);
             self
@@ -491,40 +467,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filter_list(input);
             self
         }
-        /// <p>An object that contains two attributes, <code>SortBy</code> and
-        /// <code>SortOrder</code>.</p>
+        /// <p>An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.</p>
         pub fn sort(mut self, input: crate::model::Sort) -> Self {
             self.inner = self.inner.sort(input);
             self
         }
-        /// <p>An object that contains two attributes, <code>SortBy</code> and
-        /// <code>SortOrder</code>.</p>
+        /// <p>An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.</p>
         pub fn set_sort(mut self, input: std::option::Option<crate::model::Sort>) -> Self {
             self.inner = self.inner.set_sort(input);
             self
         }
-        /// <p>The maximum number of results returned by a single call. This value must be provided
-        /// in the next call to retrieve the next set of results. By default, this value is
-        /// 20.</p>
+        /// <p>The maximum number of results returned by a single call. This value must be provided in the next call to retrieve the next set of results. By default, this value is 20.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results returned by a single call. This value must be provided
-        /// in the next call to retrieve the next set of results. By default, this value is
-        /// 20.</p>
+        /// <p>The maximum number of results returned by a single call. This value must be provided in the next call to retrieve the next set of results. By default, this value is 20.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token value retrieved from a previous call to access the next page of
-        /// results.</p>
+        /// <p>The token value retrieved from a previous call to access the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token value retrieved from a previous call to access the next page of
-        /// results.</p>
+        /// <p>The token value retrieved from a previous call to access the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -589,14 +557,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code>
-        /// </p>
+        /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
         pub fn catalog(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog(input.into());
             self
         }
-        /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code>
-        /// </p>
+        /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
         pub fn set_catalog(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog(input);
             self
@@ -615,14 +581,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filter_list`](Self::set_filter_list).
         ///
-        /// <p>An array of filter objects. Each filter object contains two attributes,
-        /// <code>filterName</code> and <code>filterValues</code>.</p>
+        /// <p>An array of filter objects. Each filter object contains two attributes, <code>filterName</code> and <code>filterValues</code>.</p>
         pub fn filter_list(mut self, input: crate::model::Filter) -> Self {
             self.inner = self.inner.filter_list(input);
             self
         }
-        /// <p>An array of filter objects. Each filter object contains two attributes,
-        /// <code>filterName</code> and <code>filterValues</code>.</p>
+        /// <p>An array of filter objects. Each filter object contains two attributes, <code>filterName</code> and <code>filterValues</code>.</p>
         pub fn set_filter_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -630,14 +594,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filter_list(input);
             self
         }
-        /// <p>An object that contains two attributes, <code>SortBy</code> and
-        /// <code>SortOrder</code>.</p>
+        /// <p>An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.</p>
         pub fn sort(mut self, input: crate::model::Sort) -> Self {
             self.inner = self.inner.sort(input);
             self
         }
-        /// <p>An object that contains two attributes, <code>SortBy</code> and
-        /// <code>SortOrder</code>.</p>
+        /// <p>An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.</p>
         pub fn set_sort(mut self, input: std::option::Option<crate::model::Sort>) -> Self {
             self.inner = self.inner.set_sort(input);
             self
@@ -652,14 +614,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>Specifies the upper limit of the elements on a single page. If a value isn't provided,
-        /// the default value is 20.</p>
+        /// <p>Specifies the upper limit of the elements on a single page. If a value isn't provided, the default value is 20.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>Specifies the upper limit of the elements on a single page. If a value isn't provided,
-        /// the default value is 20.</p>
+        /// <p>Specifies the upper limit of the elements on a single page. If a value isn't provided, the default value is 20.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -667,19 +627,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartChangeSet`.
     ///
-    /// <p>This operation allows you to request changes for your entities. Within a single
-    /// ChangeSet, you cannot start the same change type against the same entity multiple times.
-    /// Additionally, when a ChangeSet is running, all the entities targeted by the different
-    /// changes are locked until the ChangeSet has completed (either succeeded, cancelled, or failed). If
-    /// you try to start a ChangeSet containing a change against an entity that is already
-    /// locked, you will receive a <code>ResourceInUseException</code>.</p>
-    ///
-    /// <p>For example, you cannot start the ChangeSet described in the <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_StartChangeSet.html#API_StartChangeSet_Examples">example</a> later in this topic, because it contains two changes to execute the same change
-    /// type (<code>AddRevisions</code>) against the same entity
-    /// (<code>entity-id@1)</code>.</p>
-    ///
-    /// <p>For more information about working with change sets, see <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#working-with-change-sets">
-    /// Working with change sets</a>.</p>
+    /// <p>This operation allows you to request changes for your entities. Within a single ChangeSet, you cannot start the same change type against the same entity multiple times. Additionally, when a ChangeSet is running, all the entities targeted by the different changes are locked until the ChangeSet has completed (either succeeded, cancelled, or failed). If you try to start a ChangeSet containing a change against an entity that is already locked, you will receive a <code>ResourceInUseException</code>.</p>
+    /// <p>For example, you cannot start the ChangeSet described in the <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_StartChangeSet.html#API_StartChangeSet_Examples">example</a> later in this topic, because it contains two changes to execute the same change type (<code>AddRevisions</code>) against the same entity (<code>entity-id@1)</code>.</p>
+    /// <p>For more information about working with change sets, see <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#working-with-change-sets"> Working with change sets</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartChangeSet<
         C = aws_smithy_client::erase::DynConnector,
@@ -736,14 +686,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code>
-        /// </p>
+        /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
         pub fn catalog(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog(input.into());
             self
         }
-        /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code>
-        /// </p>
+        /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
         pub fn set_catalog(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog(input);
             self
@@ -765,14 +713,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_change_set(input);
             self
         }
-        /// <p>Optional case sensitive string of up to 100 ASCII characters. The change set name can
-        /// be used to filter the list of change sets. </p>
+        /// <p>Optional case sensitive string of up to 100 ASCII characters. The change set name can be used to filter the list of change sets. </p>
         pub fn change_set_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.change_set_name(input.into());
             self
         }
-        /// <p>Optional case sensitive string of up to 100 ASCII characters. The change set name can
-        /// be used to filter the list of change sets. </p>
+        /// <p>Optional case sensitive string of up to 100 ASCII characters. The change set name can be used to filter the list of change sets. </p>
         pub fn set_change_set_name(
             mut self,
             input: std::option::Option<std::string::String>,

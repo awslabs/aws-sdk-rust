@@ -13,18 +13,14 @@ pub mod batch_detect_dominant_language_input {
         ///
         /// To override the contents of this collection use [`set_text_list`](Self::set_text_list).
         ///
-        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25
-        /// documents. Each document should contain at least 20 characters and must contain fewer than
-        /// 5,000 bytes of UTF-8 encoded characters.</p>
+        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document should contain at least 20 characters and must contain fewer than 5,000 bytes of UTF-8 encoded characters.</p>
         pub fn text_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.text_list.unwrap_or_default();
             v.push(input.into());
             self.text_list = Some(v);
             self
         }
-        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25
-        /// documents. Each document should contain at least 20 characters and must contain fewer than
-        /// 5,000 bytes of UTF-8 encoded characters.</p>
+        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document should contain at least 20 characters and must contain fewer than 5,000 bytes of UTF-8 encoded characters.</p>
         pub fn set_text_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -183,18 +179,14 @@ pub mod batch_detect_entities_input {
         ///
         /// To override the contents of this collection use [`set_text_list`](Self::set_text_list).
         ///
-        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25
-        /// documents. Each document must contain fewer than 5,000 bytes of UTF-8 encoded
-        /// characters.</p>
+        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer than 5,000 bytes of UTF-8 encoded characters.</p>
         pub fn text_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.text_list.unwrap_or_default();
             v.push(input.into());
             self.text_list = Some(v);
             self
         }
-        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25
-        /// documents. Each document must contain fewer than 5,000 bytes of UTF-8 encoded
-        /// characters.</p>
+        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer than 5,000 bytes of UTF-8 encoded characters.</p>
         pub fn set_text_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -202,14 +194,12 @@ pub mod batch_detect_entities_input {
             self.text_list = input;
             self
         }
-        /// <p>The language of the input documents. You can specify any of the primary languages
-        /// supported by Amazon Comprehend. All documents must be in the same language.</p>
+        /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
             self.language_code = Some(input);
             self
         }
-        /// <p>The language of the input documents. You can specify any of the primary languages
-        /// supported by Amazon Comprehend. All documents must be in the same language.</p>
+        /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -367,18 +357,14 @@ pub mod batch_detect_key_phrases_input {
         ///
         /// To override the contents of this collection use [`set_text_list`](Self::set_text_list).
         ///
-        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25
-        /// documents. Each document must contain fewer that 5,000 bytes of UTF-8 encoded
-        /// characters.</p>
+        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
         pub fn text_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.text_list.unwrap_or_default();
             v.push(input.into());
             self.text_list = Some(v);
             self
         }
-        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25
-        /// documents. Each document must contain fewer that 5,000 bytes of UTF-8 encoded
-        /// characters.</p>
+        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
         pub fn set_text_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -386,14 +372,12 @@ pub mod batch_detect_key_phrases_input {
             self.text_list = input;
             self
         }
-        /// <p>The language of the input documents. You can specify any of the primary languages
-        /// supported by Amazon Comprehend. All documents must be in the same language.</p>
+        /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
             self.language_code = Some(input);
             self
         }
-        /// <p>The language of the input documents. You can specify any of the primary languages
-        /// supported by Amazon Comprehend. All documents must be in the same language.</p>
+        /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -553,18 +537,14 @@ pub mod batch_detect_sentiment_input {
         ///
         /// To override the contents of this collection use [`set_text_list`](Self::set_text_list).
         ///
-        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25
-        /// documents. Each document must contain fewer that 5,000 bytes of UTF-8 encoded
-        /// characters.</p>
+        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
         pub fn text_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.text_list.unwrap_or_default();
             v.push(input.into());
             self.text_list = Some(v);
             self
         }
-        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25
-        /// documents. Each document must contain fewer that 5,000 bytes of UTF-8 encoded
-        /// characters.</p>
+        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
         pub fn set_text_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -572,14 +552,12 @@ pub mod batch_detect_sentiment_input {
             self.text_list = input;
             self
         }
-        /// <p>The language of the input documents. You can specify any of the primary languages
-        /// supported by Amazon Comprehend. All documents must be in the same language.</p>
+        /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
             self.language_code = Some(input);
             self
         }
-        /// <p>The language of the input documents. You can specify any of the primary languages
-        /// supported by Amazon Comprehend. All documents must be in the same language.</p>
+        /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -739,18 +717,14 @@ pub mod batch_detect_syntax_input {
         ///
         /// To override the contents of this collection use [`set_text_list`](Self::set_text_list).
         ///
-        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25
-        /// documents. Each document must contain fewer that 5,000 bytes of UTF-8 encoded
-        /// characters.</p>
+        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
         pub fn text_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.text_list.unwrap_or_default();
             v.push(input.into());
             self.text_list = Some(v);
             self
         }
-        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25
-        /// documents. Each document must contain fewer that 5,000 bytes of UTF-8 encoded
-        /// characters.</p>
+        /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
         pub fn set_text_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -758,16 +732,12 @@ pub mod batch_detect_syntax_input {
             self.text_list = input;
             self
         }
-        /// <p>The language of the input documents. You can specify any of the following languages
-        /// supported by Amazon Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"),
-        /// Italian ("it"), or Portuguese ("pt"). All documents must be in the same language.</p>
+        /// <p>The language of the input documents. You can specify any of the following languages supported by Amazon Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt"). All documents must be in the same language.</p>
         pub fn language_code(mut self, input: crate::model::SyntaxLanguageCode) -> Self {
             self.language_code = Some(input);
             self
         }
-        /// <p>The language of the input documents. You can specify any of the following languages
-        /// supported by Amazon Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"),
-        /// Italian ("it"), or Portuguese ("pt"). All documents must be in the same language.</p>
+        /// <p>The language of the input documents. You can specify any of the following languages supported by Amazon Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt"). All documents must be in the same language.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::SyntaxLanguageCode>,
@@ -1087,14 +1057,12 @@ pub mod contains_pii_entities_input {
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
     }
     impl Builder {
-        /// <p>Creates a new document classification request to analyze a single document in real-time,
-        /// returning personally identifiable information (PII) entity labels.</p>
+        /// <p>Creates a new document classification request to analyze a single document in real-time, returning personally identifiable information (PII) entity labels.</p>
         pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
             self.text = Some(input.into());
             self
         }
-        /// <p>Creates a new document classification request to analyze a single document in real-time,
-        /// returning personally identifiable information (PII) entity labels.</p>
+        /// <p>Creates a new document classification request to analyze a single document in real-time, returning personally identifiable information (PII) entity labels.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.text = input;
             self
@@ -1283,28 +1251,22 @@ pub mod create_document_classifier_input {
             self.document_classifier_name = input;
             self
         }
-        /// <p>The version name given to the newly created classifier.
-        /// Version names can have a maximum of 256 characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed.
-        /// The version name must be unique among all models with the same classifier name in the account/AWS Region.</p>
+        /// <p>The version name given to the newly created classifier. Version names can have a maximum of 256 characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed. The version name must be unique among all models with the same classifier name in the account/AWS Region.</p>
         pub fn version_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.version_name = Some(input.into());
             self
         }
-        /// <p>The version name given to the newly created classifier.
-        /// Version names can have a maximum of 256 characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed.
-        /// The version name must be unique among all models with the same classifier name in the account/AWS Region.</p>
+        /// <p>The version name given to the newly created classifier. Version names can have a maximum of 256 characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed. The version name must be unique among all models with the same classifier name in the account/AWS Region.</p>
         pub fn set_version_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants
-        /// Amazon Comprehend read access to your input data.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants Amazon Comprehend read access to your input data.</p>
         pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_access_role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants
-        /// Amazon Comprehend read access to your input data.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants Amazon Comprehend read access to your input data.</p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1316,20 +1278,14 @@ pub mod create_document_classifier_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Tags to be associated with the document classifier being created. A tag is a key-value
-        /// pair that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with
-        /// "Sales" as the key might be added to a resource to indicate its use by the sales department.
-        /// </p>
+        /// <p>Tags to be associated with the document classifier being created. A tag is a key-value pair that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department. </p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>Tags to be associated with the document classifier being created. A tag is a key-value
-        /// pair that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with
-        /// "Sales" as the key might be added to a resource to indicate its use by the sales department.
-        /// </p>
+        /// <p>Tags to be associated with the document classifier being created. A tag is a key-value pair that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1353,8 +1309,7 @@ pub mod create_document_classifier_input {
             self.input_data_config = input;
             self
         }
-        /// <p>Enables the addition of output results configuration parameters for custom classifier
-        /// jobs.</p>
+        /// <p>Enables the addition of output results configuration parameters for custom classifier jobs.</p>
         pub fn output_data_config(
             mut self,
             input: crate::model::DocumentClassifierOutputDataConfig,
@@ -1362,8 +1317,7 @@ pub mod create_document_classifier_input {
             self.output_data_config = Some(input);
             self
         }
-        /// <p>Enables the addition of output results configuration parameters for custom classifier
-        /// jobs.</p>
+        /// <p>Enables the addition of output results configuration parameters for custom classifier jobs.</p>
         pub fn set_output_data_config(
             mut self,
             input: std::option::Option<crate::model::DocumentClassifierOutputDataConfig>,
@@ -1371,14 +1325,12 @@ pub mod create_document_classifier_input {
             self.output_data_config = input;
             self
         }
-        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon
-        /// Comprehend generates one.</p>
+        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon
-        /// Comprehend generates one.</p>
+        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1386,16 +1338,12 @@ pub mod create_document_classifier_input {
             self.client_request_token = input;
             self
         }
-        /// <p>The language of the input documents. You can specify any of the following languages
-        /// supported by Amazon Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"),
-        /// Italian ("it"), or Portuguese ("pt"). All documents must be in the same language.</p>
+        /// <p>The language of the input documents. You can specify any of the following languages supported by Amazon Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt"). All documents must be in the same language.</p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
             self.language_code = Some(input);
             self
         }
-        /// <p>The language of the input documents. You can specify any of the following languages
-        /// supported by Amazon Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"),
-        /// Italian ("it"), or Portuguese ("pt"). All documents must be in the same language.</p>
+        /// <p>The language of the input documents. You can specify any of the following languages supported by Amazon Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt"). All documents must be in the same language.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -1403,37 +1351,19 @@ pub mod create_document_classifier_input {
             self.language_code = input;
             self
         }
-        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-        /// data on the storage volume attached to the ML compute instance(s) that process the analysis
-        /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
         /// <ul>
-        /// <li>
-        /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Resource Name (ARN) of a KMS Key:
-        /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
         /// </ul>
         pub fn volume_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.volume_kms_key_id = Some(input.into());
             self
         }
-        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-        /// data on the storage volume attached to the ML compute instance(s) that process the analysis
-        /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
         /// <ul>
-        /// <li>
-        /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Resource Name (ARN) of a KMS Key:
-        /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
         /// </ul>
         pub fn set_volume_kms_key_id(
             mut self,
@@ -1442,16 +1372,12 @@ pub mod create_document_classifier_input {
             self.volume_kms_key_id = input;
             self
         }
-        /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing
-        /// the resources you are using for your custom classifier. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
-        /// VPC</a>. </p>
+        /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your custom classifier. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
         pub fn vpc_config(mut self, input: crate::model::VpcConfig) -> Self {
             self.vpc_config = Some(input);
             self
         }
-        /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing
-        /// the resources you are using for your custom classifier. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
-        /// VPC</a>. </p>
+        /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your custom classifier. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
         pub fn set_vpc_config(
             mut self,
             input: std::option::Option<crate::model::VpcConfig>,
@@ -1459,20 +1385,12 @@ pub mod create_document_classifier_input {
             self.vpc_config = input;
             self
         }
-        /// <p>Indicates the mode in which the classifier will be trained. The classifier can be trained
-        /// in multi-class mode, which identifies one and only one class for each document, or multi-label
-        /// mode, which identifies one or more labels for each document. In multi-label mode, multiple
-        /// labels for an individual document are separated by a delimiter. The default delimiter between
-        /// labels is a pipe (|).</p>
+        /// <p>Indicates the mode in which the classifier will be trained. The classifier can be trained in multi-class mode, which identifies one and only one class for each document, or multi-label mode, which identifies one or more labels for each document. In multi-label mode, multiple labels for an individual document are separated by a delimiter. The default delimiter between labels is a pipe (|).</p>
         pub fn mode(mut self, input: crate::model::DocumentClassifierMode) -> Self {
             self.mode = Some(input);
             self
         }
-        /// <p>Indicates the mode in which the classifier will be trained. The classifier can be trained
-        /// in multi-class mode, which identifies one and only one class for each document, or multi-label
-        /// mode, which identifies one or more labels for each document. In multi-label mode, multiple
-        /// labels for an individual document are separated by a delimiter. The default delimiter between
-        /// labels is a pipe (|).</p>
+        /// <p>Indicates the mode in which the classifier will be trained. The classifier can be trained in multi-class mode, which identifies one and only one class for each document, or multi-label mode, which identifies one or more labels for each document. In multi-label mode, multiple labels for an individual document are separated by a delimiter. The default delimiter between labels is a pipe (|).</p>
         pub fn set_mode(
             mut self,
             input: std::option::Option<crate::model::DocumentClassifierMode>,
@@ -1480,35 +1398,19 @@ pub mod create_document_classifier_input {
             self.mode = input;
             self
         }
-        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-        /// trained custom models. The ModelKmsKeyId can be either of the following formats:</p>
+        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either of the following formats:</p>
         /// <ul>
-        /// <li>
-        /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Resource Name (ARN) of a KMS Key:
-        /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
         /// </ul>
         pub fn model_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.model_kms_key_id = Some(input.into());
             self
         }
-        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-        /// trained custom models. The ModelKmsKeyId can be either of the following formats:</p>
+        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either of the following formats:</p>
         /// <ul>
-        /// <li>
-        /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Resource Name (ARN) of a KMS Key:
-        /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
         /// </ul>
         pub fn set_model_kms_key_id(
             mut self,
@@ -1683,14 +1585,12 @@ pub mod create_endpoint_input {
         pub(crate) data_access_role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>This is the descriptive suffix that becomes part of the <code>EndpointArn</code> used for
-        /// all subsequent requests to this resource. </p>
+        /// <p>This is the descriptive suffix that becomes part of the <code>EndpointArn</code> used for all subsequent requests to this resource. </p>
         pub fn endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.endpoint_name = Some(input.into());
             self
         }
-        /// <p>This is the descriptive suffix that becomes part of the <code>EndpointArn</code> used for
-        /// all subsequent requests to this resource. </p>
+        /// <p>This is the descriptive suffix that becomes part of the <code>EndpointArn</code> used for all subsequent requests to this resource. </p>
         pub fn set_endpoint_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1698,42 +1598,32 @@ pub mod create_endpoint_input {
             self.endpoint_name = input;
             self
         }
-        /// <p>The Amazon Resource Number (ARN) of the model to which the endpoint will be
-        /// attached.</p>
+        /// <p>The Amazon Resource Number (ARN) of the model to which the endpoint will be attached.</p>
         pub fn model_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.model_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Number (ARN) of the model to which the endpoint will be
-        /// attached.</p>
+        /// <p>The Amazon Resource Number (ARN) of the model to which the endpoint will be attached.</p>
         pub fn set_model_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.model_arn = input;
             self
         }
-        /// <p> The desired number of inference units to be used by the model using this endpoint.
-        ///
-        /// Each inference unit represents of a throughput of 100 characters per second.</p>
+        /// <p> The desired number of inference units to be used by the model using this endpoint. Each inference unit represents of a throughput of 100 characters per second.</p>
         pub fn desired_inference_units(mut self, input: i32) -> Self {
             self.desired_inference_units = Some(input);
             self
         }
-        /// <p> The desired number of inference units to be used by the model using this endpoint.
-        ///
-        /// Each inference unit represents of a throughput of 100 characters per second.</p>
+        /// <p> The desired number of inference units to be used by the model using this endpoint. Each inference unit represents of a throughput of 100 characters per second.</p>
         pub fn set_desired_inference_units(mut self, input: std::option::Option<i32>) -> Self {
             self.desired_inference_units = input;
             self
         }
-        /// <p>An idempotency token provided by the customer. If this token matches a previous endpoint
-        /// creation request, Amazon Comprehend will not return a <code>ResourceInUseException</code>.
-        /// </p>
+        /// <p>An idempotency token provided by the customer. If this token matches a previous endpoint creation request, Amazon Comprehend will not return a <code>ResourceInUseException</code>. </p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>An idempotency token provided by the customer. If this token matches a previous endpoint
-        /// creation request, Amazon Comprehend will not return a <code>ResourceInUseException</code>.
-        /// </p>
+        /// <p>An idempotency token provided by the customer. If this token matches a previous endpoint creation request, Amazon Comprehend will not return a <code>ResourceInUseException</code>. </p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1745,18 +1635,14 @@ pub mod create_endpoint_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Tags associated with the endpoint being created. A tag is a key-value pair that adds
-        /// metadata to the endpoint. For example, a tag with "Sales" as the key might be added to an
-        /// endpoint to indicate its use by the sales department. </p>
+        /// <p>Tags associated with the endpoint being created. A tag is a key-value pair that adds metadata to the endpoint. For example, a tag with "Sales" as the key might be added to an endpoint to indicate its use by the sales department. </p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>Tags associated with the endpoint being created. A tag is a key-value pair that adds
-        /// metadata to the endpoint. For example, a tag with "Sales" as the key might be added to an
-        /// endpoint to indicate its use by the sales department. </p>
+        /// <p>Tags associated with the endpoint being created. A tag is a key-value pair that adds metadata to the endpoint. For example, a tag with "Sales" as the key might be added to an endpoint to indicate its use by the sales department. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1764,16 +1650,12 @@ pub mod create_endpoint_input {
             self.tags = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS identity and Access Management (IAM) role that
-        /// grants Amazon Comprehend read access to trained custom models encrypted with a customer
-        /// managed key (ModelKmsKeyId).</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS identity and Access Management (IAM) role that grants Amazon Comprehend read access to trained custom models encrypted with a customer managed key (ModelKmsKeyId).</p>
         pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_access_role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS identity and Access Management (IAM) role that
-        /// grants Amazon Comprehend read access to trained custom models encrypted with a customer
-        /// managed key (ModelKmsKeyId).</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS identity and Access Management (IAM) role that grants Amazon Comprehend read access to trained custom models encrypted with a customer managed key (ModelKmsKeyId).</p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1943,16 +1825,12 @@ pub mod create_entity_recognizer_input {
         pub(crate) model_kms_key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name given to the newly created recognizer. Recognizer names can be a maximum of 256
-        /// characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed. The name
-        /// must be unique in the account/region.</p>
+        /// <p>The name given to the newly created recognizer. Recognizer names can be a maximum of 256 characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed. The name must be unique in the account/region.</p>
         pub fn recognizer_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.recognizer_name = Some(input.into());
             self
         }
-        /// <p>The name given to the newly created recognizer. Recognizer names can be a maximum of 256
-        /// characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed. The name
-        /// must be unique in the account/region.</p>
+        /// <p>The name given to the newly created recognizer. Recognizer names can be a maximum of 256 characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed. The name must be unique in the account/region.</p>
         pub fn set_recognizer_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1960,28 +1838,22 @@ pub mod create_entity_recognizer_input {
             self.recognizer_name = input;
             self
         }
-        /// <p>The version name given to the newly created recognizer.
-        /// Version names can be a maximum of 256 characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed.
-        /// The version name must be unique among all models with the same recognizer name in the account/ AWS Region.</p>
+        /// <p>The version name given to the newly created recognizer. Version names can be a maximum of 256 characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed. The version name must be unique among all models with the same recognizer name in the account/ AWS Region.</p>
         pub fn version_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.version_name = Some(input.into());
             self
         }
-        /// <p>The version name given to the newly created recognizer.
-        /// Version names can be a maximum of 256 characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed.
-        /// The version name must be unique among all models with the same recognizer name in the account/ AWS Region.</p>
+        /// <p>The version name given to the newly created recognizer. Version names can be a maximum of 256 characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed. The version name must be unique among all models with the same recognizer name in the account/ AWS Region.</p>
         pub fn set_version_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants
-        /// Amazon Comprehend read access to your input data.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants Amazon Comprehend read access to your input data.</p>
         pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_access_role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants
-        /// Amazon Comprehend read access to your input data.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants Amazon Comprehend read access to your input data.</p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1993,20 +1865,14 @@ pub mod create_entity_recognizer_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Tags to be associated with the entity recognizer being created. A tag is a key-value pair
-        /// that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with
-        /// "Sales" as the key might be added to a resource to indicate its use by the sales department.
-        /// </p>
+        /// <p>Tags to be associated with the entity recognizer being created. A tag is a key-value pair that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department. </p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>Tags to be associated with the entity recognizer being created. A tag is a key-value pair
-        /// that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with
-        /// "Sales" as the key might be added to a resource to indicate its use by the sales department.
-        /// </p>
+        /// <p>Tags to be associated with the entity recognizer being created. A tag is a key-value pair that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2014,8 +1880,7 @@ pub mod create_entity_recognizer_input {
             self.tags = input;
             self
         }
-        /// <p>Specifies the format and location of the input data. The S3 bucket containing the input
-        /// data must be located in the same region as the entity recognizer being created. </p>
+        /// <p>Specifies the format and location of the input data. The S3 bucket containing the input data must be located in the same region as the entity recognizer being created. </p>
         pub fn input_data_config(
             mut self,
             input: crate::model::EntityRecognizerInputDataConfig,
@@ -2023,8 +1888,7 @@ pub mod create_entity_recognizer_input {
             self.input_data_config = Some(input);
             self
         }
-        /// <p>Specifies the format and location of the input data. The S3 bucket containing the input
-        /// data must be located in the same region as the entity recognizer being created. </p>
+        /// <p>Specifies the format and location of the input data. The S3 bucket containing the input data must be located in the same region as the entity recognizer being created. </p>
         pub fn set_input_data_config(
             mut self,
             input: std::option::Option<crate::model::EntityRecognizerInputDataConfig>,
@@ -2032,14 +1896,12 @@ pub mod create_entity_recognizer_input {
             self.input_data_config = input;
             self
         }
-        /// <p> A unique identifier for the request. If you don't set the client request token, Amazon
-        /// Comprehend generates one.</p>
+        /// <p> A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p> A unique identifier for the request. If you don't set the client request token, Amazon
-        /// Comprehend generates one.</p>
+        /// <p> A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2047,16 +1909,12 @@ pub mod create_entity_recognizer_input {
             self.client_request_token = input;
             self
         }
-        /// <p> You can specify any of the following languages supported by Amazon Comprehend: English
-        /// ("en"), Spanish ("es"), French ("fr"), Italian ("it"), German ("de"), or Portuguese ("pt").
-        /// All documents must be in the same language.</p>
+        /// <p> You can specify any of the following languages supported by Amazon Comprehend: English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), German ("de"), or Portuguese ("pt"). All documents must be in the same language.</p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
             self.language_code = Some(input);
             self
         }
-        /// <p> You can specify any of the following languages supported by Amazon Comprehend: English
-        /// ("en"), Spanish ("es"), French ("fr"), Italian ("it"), German ("de"), or Portuguese ("pt").
-        /// All documents must be in the same language.</p>
+        /// <p> You can specify any of the following languages supported by Amazon Comprehend: English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), German ("de"), or Portuguese ("pt"). All documents must be in the same language.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -2064,37 +1922,19 @@ pub mod create_entity_recognizer_input {
             self.language_code = input;
             self
         }
-        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-        /// data on the storage volume attached to the ML compute instance(s) that process the analysis
-        /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
         /// <ul>
-        /// <li>
-        /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Resource Name (ARN) of a KMS Key:
-        /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
         /// </ul>
         pub fn volume_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.volume_kms_key_id = Some(input.into());
             self
         }
-        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-        /// data on the storage volume attached to the ML compute instance(s) that process the analysis
-        /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
         /// <ul>
-        /// <li>
-        /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Resource Name (ARN) of a KMS Key:
-        /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
         /// </ul>
         pub fn set_volume_kms_key_id(
             mut self,
@@ -2103,18 +1943,12 @@ pub mod create_entity_recognizer_input {
             self.volume_kms_key_id = input;
             self
         }
-        /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing
-        /// the resources you are using for your custom entity recognizer. For more information, see
-        /// <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
-        /// VPC</a>. </p>
+        /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your custom entity recognizer. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
         pub fn vpc_config(mut self, input: crate::model::VpcConfig) -> Self {
             self.vpc_config = Some(input);
             self
         }
-        /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing
-        /// the resources you are using for your custom entity recognizer. For more information, see
-        /// <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
-        /// VPC</a>. </p>
+        /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your custom entity recognizer. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
         pub fn set_vpc_config(
             mut self,
             input: std::option::Option<crate::model::VpcConfig>,
@@ -2122,35 +1956,19 @@ pub mod create_entity_recognizer_input {
             self.vpc_config = input;
             self
         }
-        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-        /// trained custom models. The ModelKmsKeyId can be either of the following formats</p>
+        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either of the following formats</p>
         /// <ul>
-        /// <li>
-        /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Resource Name (ARN) of a KMS Key:
-        /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
         /// </ul>
         pub fn model_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.model_kms_key_id = Some(input.into());
             self
         }
-        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-        /// trained custom models. The ModelKmsKeyId can be either of the following formats</p>
+        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either of the following formats</p>
         /// <ul>
-        /// <li>
-        /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Resource Name (ARN) of a KMS Key:
-        /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
         /// </ul>
         pub fn set_model_kms_key_id(
             mut self,
@@ -2790,14 +2608,12 @@ pub mod describe_document_classification_job_input {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier that Amazon Comprehend generated for the job. The  operation returns this identifier in its
-        /// response.</p>
+        /// <p>The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
         }
-        /// <p>The identifier that Amazon Comprehend generated for the job. The  operation returns this identifier in its
-        /// response.</p>
+        /// <p>The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -2949,14 +2765,12 @@ pub mod describe_document_classifier_input {
         pub(crate) document_classifier_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) that identifies the document classifier. The  operation returns this identifier in its
-        /// response.</p>
+        /// <p>The Amazon Resource Name (ARN) that identifies the document classifier. The operation returns this identifier in its response.</p>
         pub fn document_classifier_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.document_classifier_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that identifies the document classifier. The  operation returns this identifier in its
-        /// response.</p>
+        /// <p>The Amazon Resource Name (ARN) that identifies the document classifier. The operation returns this identifier in its response.</p>
         pub fn set_document_classifier_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3111,14 +2925,12 @@ pub mod describe_dominant_language_detection_job_input {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier that Amazon Comprehend generated for the job. The  operation returns this identifier in its
-        /// response.</p>
+        /// <p>The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
         }
-        /// <p>The identifier that Amazon Comprehend generated for the job. The  operation returns this identifier in its
-        /// response.</p>
+        /// <p>The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -3424,14 +3236,12 @@ pub mod describe_entities_detection_job_input {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier that Amazon Comprehend generated for the job. The  operation returns this identifier in its
-        /// response.</p>
+        /// <p>The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
         }
-        /// <p>The identifier that Amazon Comprehend generated for the job. The  operation returns this identifier in its
-        /// response.</p>
+        /// <p>The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -3899,14 +3709,12 @@ pub mod describe_key_phrases_detection_job_input {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier that Amazon Comprehend generated for the job. The  operation returns this identifier in its
-        /// response.</p>
+        /// <p>The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
         }
-        /// <p>The identifier that Amazon Comprehend generated for the job. The  operation returns this identifier in its
-        /// response.</p>
+        /// <p>The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -4058,14 +3866,12 @@ pub mod describe_pii_entities_detection_job_input {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier that Amazon Comprehend generated for the job. The  operation returns this identifier in its
-        /// response.</p>
+        /// <p>The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
         }
-        /// <p>The identifier that Amazon Comprehend generated for the job. The  operation returns this identifier in its
-        /// response.</p>
+        /// <p>The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -4217,14 +4023,12 @@ pub mod describe_sentiment_detection_job_input {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier that Amazon Comprehend generated for the job. The  operation returns this identifier in its
-        /// response.</p>
+        /// <p>The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
         }
-        /// <p>The identifier that Amazon Comprehend generated for the job. The  operation returns this identifier in its
-        /// response.</p>
+        /// <p>The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -4532,14 +4336,12 @@ pub mod detect_dominant_language_input {
         pub(crate) text: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A UTF-8 text string. Each string should contain at least 20 characters and must contain
-        /// fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+        /// <p>A UTF-8 text string. Each string should contain at least 20 characters and must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
         pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
             self.text = Some(input.into());
             self
         }
-        /// <p>A UTF-8 text string. Each string should contain at least 20 characters and must contain
-        /// fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+        /// <p>A UTF-8 text string. Each string should contain at least 20 characters and must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.text = input;
             self
@@ -4690,32 +4492,24 @@ pub mod detect_entities_input {
         pub(crate) endpoint_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded
-        /// characters.</p>
+        /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
         pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
             self.text = Some(input.into());
             self
         }
-        /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded
-        /// characters.</p>
+        /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.text = input;
             self
         }
-        /// <p>The language of the input documents. You can specify any of the primary languages
-        /// supported by Amazon Comprehend. All documents must be in the same language.</p>
-        /// <p>If your request includes the endpoint for a custom entity recognition model, Amazon
-        /// Comprehend uses the language of your custom model, and it ignores any language code that you
-        /// specify here.</p>
+        /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
+        /// <p>If your request includes the endpoint for a custom entity recognition model, Amazon Comprehend uses the language of your custom model, and it ignores any language code that you specify here.</p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
             self.language_code = Some(input);
             self
         }
-        /// <p>The language of the input documents. You can specify any of the primary languages
-        /// supported by Amazon Comprehend. All documents must be in the same language.</p>
-        /// <p>If your request includes the endpoint for a custom entity recognition model, Amazon
-        /// Comprehend uses the language of your custom model, and it ignores any language code that you
-        /// specify here.</p>
+        /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
+        /// <p>If your request includes the endpoint for a custom entity recognition model, Amazon Comprehend uses the language of your custom model, and it ignores any language code that you specify here.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -4723,20 +4517,14 @@ pub mod detect_entities_input {
             self.language_code = input;
             self
         }
-        /// <p>The Amazon Resource Name of an endpoint that is associated with a custom entity
-        /// recognition model. Provide an endpoint if you want to detect entities by using your own custom
-        /// model instead of the default model that is used by Amazon Comprehend.</p>
-        /// <p>If you specify an endpoint, Amazon Comprehend uses the language of your custom model, and
-        /// it ignores any language code that you provide in your request.</p>
+        /// <p>The Amazon Resource Name of an endpoint that is associated with a custom entity recognition model. Provide an endpoint if you want to detect entities by using your own custom model instead of the default model that is used by Amazon Comprehend.</p>
+        /// <p>If you specify an endpoint, Amazon Comprehend uses the language of your custom model, and it ignores any language code that you provide in your request.</p>
         pub fn endpoint_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.endpoint_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name of an endpoint that is associated with a custom entity
-        /// recognition model. Provide an endpoint if you want to detect entities by using your own custom
-        /// model instead of the default model that is used by Amazon Comprehend.</p>
-        /// <p>If you specify an endpoint, Amazon Comprehend uses the language of your custom model, and
-        /// it ignores any language code that you provide in your request.</p>
+        /// <p>The Amazon Resource Name of an endpoint that is associated with a custom entity recognition model. Provide an endpoint if you want to detect entities by using your own custom model instead of the default model that is used by Amazon Comprehend.</p>
+        /// <p>If you specify an endpoint, Amazon Comprehend uses the language of your custom model, and it ignores any language code that you provide in your request.</p>
         pub fn set_endpoint_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.endpoint_arn = input;
             self
@@ -4888,26 +4676,22 @@ pub mod detect_key_phrases_input {
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
     }
     impl Builder {
-        /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded
-        /// characters.</p>
+        /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
         pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
             self.text = Some(input.into());
             self
         }
-        /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded
-        /// characters.</p>
+        /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.text = input;
             self
         }
-        /// <p>The language of the input documents. You can specify any of the primary languages
-        /// supported by Amazon Comprehend. All documents must be in the same language.</p>
+        /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
             self.language_code = Some(input);
             self
         }
-        /// <p>The language of the input documents. You can specify any of the primary languages
-        /// supported by Amazon Comprehend. All documents must be in the same language.</p>
+        /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -5061,14 +4845,12 @@ pub mod detect_pii_entities_input {
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
     }
     impl Builder {
-        /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded
-        /// characters.</p>
+        /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
         pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
             self.text = Some(input.into());
             self
         }
-        /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded
-        /// characters.</p>
+        /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.text = input;
             self
@@ -5232,26 +5014,22 @@ pub mod detect_sentiment_input {
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
     }
     impl Builder {
-        /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded
-        /// characters.</p>
+        /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
         pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
             self.text = Some(input.into());
             self
         }
-        /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded
-        /// characters.</p>
+        /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.text = input;
             self
         }
-        /// <p>The language of the input documents. You can specify any of the primary languages
-        /// supported by Amazon Comprehend. All documents must be in the same language.</p>
+        /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
             self.language_code = Some(input);
             self
         }
-        /// <p>The language of the input documents. You can specify any of the primary languages
-        /// supported by Amazon Comprehend. All documents must be in the same language.</p>
+        /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -5405,28 +5183,22 @@ pub mod detect_syntax_input {
         pub(crate) language_code: std::option::Option<crate::model::SyntaxLanguageCode>,
     }
     impl Builder {
-        /// <p>A UTF-8 string. Each string must contain fewer that 5,000 bytes of UTF encoded
-        /// characters.</p>
+        /// <p>A UTF-8 string. Each string must contain fewer that 5,000 bytes of UTF encoded characters.</p>
         pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
             self.text = Some(input.into());
             self
         }
-        /// <p>A UTF-8 string. Each string must contain fewer that 5,000 bytes of UTF encoded
-        /// characters.</p>
+        /// <p>A UTF-8 string. Each string must contain fewer that 5,000 bytes of UTF encoded characters.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.text = input;
             self
         }
-        /// <p>The language code of the input documents. You can specify any of the following languages
-        /// supported by Amazon Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"),
-        /// Italian ("it"), or Portuguese ("pt").</p>
+        /// <p>The language code of the input documents. You can specify any of the following languages supported by Amazon Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt").</p>
         pub fn language_code(mut self, input: crate::model::SyntaxLanguageCode) -> Self {
             self.language_code = Some(input);
             self
         }
-        /// <p>The language code of the input documents. You can specify any of the following languages
-        /// supported by Amazon Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"),
-        /// Italian ("it"), or Portuguese ("pt").</p>
+        /// <p>The language code of the input documents. You can specify any of the following languages supported by Amazon Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt").</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::SyntaxLanguageCode>,
@@ -5580,14 +5352,12 @@ pub mod list_document_classification_jobs_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Filters the jobs that are returned. You can filter jobs on their names, status, or the
-        /// date and time that they were submitted. You can only set one filter at a time.</p>
+        /// <p>Filters the jobs that are returned. You can filter jobs on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
         pub fn filter(mut self, input: crate::model::DocumentClassificationJobFilter) -> Self {
             self.filter = Some(input);
             self
         }
-        /// <p>Filters the jobs that are returned. You can filter jobs on their names, status, or the
-        /// date and time that they were submitted. You can only set one filter at a time.</p>
+        /// <p>Filters the jobs that are returned. You can filter jobs on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::DocumentClassificationJobFilter>,
@@ -5766,14 +5536,12 @@ pub mod list_document_classifiers_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date
-        /// and time that they were submitted. You can only set one filter at a time.</p>
+        /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
         pub fn filter(mut self, input: crate::model::DocumentClassifierFilter) -> Self {
             self.filter = Some(input);
             self
         }
-        /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date
-        /// and time that they were submitted. You can only set one filter at a time.</p>
+        /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::DocumentClassifierFilter>,
@@ -6121,14 +5889,12 @@ pub mod list_dominant_language_detection_jobs_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Filters that jobs that are returned. You can filter jobs on their name, status, or the
-        /// date and time that they were submitted. You can only set one filter at a time.</p>
+        /// <p>Filters that jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
         pub fn filter(mut self, input: crate::model::DominantLanguageDetectionJobFilter) -> Self {
             self.filter = Some(input);
             self
         }
-        /// <p>Filters that jobs that are returned. You can filter jobs on their name, status, or the
-        /// date and time that they were submitted. You can only set one filter at a time.</p>
+        /// <p>Filters that jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::DominantLanguageDetectionJobFilter>,
@@ -6307,16 +6073,12 @@ pub mod list_endpoints_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Filters the endpoints that are returned. You can filter endpoints on their name, model,
-        /// status, or the date and time that they were created. You can only set one filter at a time.
-        /// </p>
+        /// <p>Filters the endpoints that are returned. You can filter endpoints on their name, model, status, or the date and time that they were created. You can only set one filter at a time. </p>
         pub fn filter(mut self, input: crate::model::EndpointFilter) -> Self {
             self.filter = Some(input);
             self
         }
-        /// <p>Filters the endpoints that are returned. You can filter endpoints on their name, model,
-        /// status, or the date and time that they were created. You can only set one filter at a time.
-        /// </p>
+        /// <p>Filters the endpoints that are returned. You can filter endpoints on their name, model, status, or the date and time that they were created. You can only set one filter at a time. </p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::EndpointFilter>,
@@ -6491,14 +6253,12 @@ pub mod list_entities_detection_jobs_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date
-        /// and time that they were submitted. You can only set one filter at a time.</p>
+        /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
         pub fn filter(mut self, input: crate::model::EntitiesDetectionJobFilter) -> Self {
             self.filter = Some(input);
             self
         }
-        /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date
-        /// and time that they were submitted. You can only set one filter at a time.</p>
+        /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::EntitiesDetectionJobFilter>,
@@ -6677,16 +6437,12 @@ pub mod list_entity_recognizers_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Filters the list of entities returned. You can filter on <code>Status</code>,
-        /// <code>SubmitTimeBefore</code>, or <code>SubmitTimeAfter</code>. You can only set one filter
-        /// at a time.</p>
+        /// <p>Filters the list of entities returned. You can filter on <code>Status</code>, <code>SubmitTimeBefore</code>, or <code>SubmitTimeAfter</code>. You can only set one filter at a time.</p>
         pub fn filter(mut self, input: crate::model::EntityRecognizerFilter) -> Self {
             self.filter = Some(input);
             self
         }
-        /// <p>Filters the list of entities returned. You can filter on <code>Status</code>,
-        /// <code>SubmitTimeBefore</code>, or <code>SubmitTimeAfter</code>. You can only set one filter
-        /// at a time.</p>
+        /// <p>Filters the list of entities returned. You can filter on <code>Status</code>, <code>SubmitTimeBefore</code>, or <code>SubmitTimeAfter</code>. You can only set one filter at a time.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::EntityRecognizerFilter>,
@@ -7033,14 +6789,12 @@ pub mod list_events_detection_jobs_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date
-        /// and time that they were submitted. You can only set one filter at a time.</p>
+        /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
         pub fn filter(mut self, input: crate::model::EventsDetectionJobFilter) -> Self {
             self.filter = Some(input);
             self
         }
-        /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date
-        /// and time that they were submitted. You can only set one filter at a time.</p>
+        /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::EventsDetectionJobFilter>,
@@ -7219,14 +6973,12 @@ pub mod list_key_phrases_detection_jobs_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date
-        /// and time that they were submitted. You can only set one filter at a time.</p>
+        /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
         pub fn filter(mut self, input: crate::model::KeyPhrasesDetectionJobFilter) -> Self {
             self.filter = Some(input);
             self
         }
-        /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date
-        /// and time that they were submitted. You can only set one filter at a time.</p>
+        /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::KeyPhrasesDetectionJobFilter>,
@@ -7404,14 +7156,12 @@ pub mod list_pii_entities_detection_jobs_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date
-        /// and time that they were submitted. You can only set one filter at a time.</p>
+        /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
         pub fn filter(mut self, input: crate::model::PiiEntitiesDetectionJobFilter) -> Self {
             self.filter = Some(input);
             self
         }
-        /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date
-        /// and time that they were submitted. You can only set one filter at a time.</p>
+        /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::PiiEntitiesDetectionJobFilter>,
@@ -7590,14 +7340,12 @@ pub mod list_sentiment_detection_jobs_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date
-        /// and time that they were submitted. You can only set one filter at a time.</p>
+        /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
         pub fn filter(mut self, input: crate::model::SentimentDetectionJobFilter) -> Self {
             self.filter = Some(input);
             self
         }
-        /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date
-        /// and time that they were submitted. You can only set one filter at a time.</p>
+        /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::SentimentDetectionJobFilter>,
@@ -7773,14 +7521,12 @@ pub mod list_tags_for_resource_input {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the given Amazon Comprehend resource you are querying.
-        /// </p>
+        /// <p>The Amazon Resource Name (ARN) of the given Amazon Comprehend resource you are querying. </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the given Amazon Comprehend resource you are querying.
-        /// </p>
+        /// <p>The Amazon Resource Name (ARN) of the given Amazon Comprehend resource you are querying. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -7933,14 +7679,12 @@ pub mod list_topics_detection_jobs_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Filters the jobs that are returned. Jobs can be filtered on their name, status, or the
-        /// date and time that they were submitted. You can set only one filter at a time.</p>
+        /// <p>Filters the jobs that are returned. Jobs can be filtered on their name, status, or the date and time that they were submitted. You can set only one filter at a time.</p>
         pub fn filter(mut self, input: crate::model::TopicsDetectionJobFilter) -> Self {
             self.filter = Some(input);
             self
         }
-        /// <p>Filters the jobs that are returned. Jobs can be filtered on their name, status, or the
-        /// date and time that they were submitted. You can set only one filter at a time.</p>
+        /// <p>Filters the jobs that are returned. Jobs can be filtered on their name, status, or the date and time that they were submitted. You can set only one filter at a time.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::TopicsDetectionJobFilter>,
@@ -8135,14 +7879,12 @@ pub mod start_document_classification_job_input {
             self.job_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the document classifier to use to process the
-        /// job.</p>
+        /// <p>The Amazon Resource Name (ARN) of the document classifier to use to process the job.</p>
         pub fn document_classifier_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.document_classifier_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the document classifier to use to process the
-        /// job.</p>
+        /// <p>The Amazon Resource Name (ARN) of the document classifier to use to process the job.</p>
         pub fn set_document_classifier_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8176,14 +7918,12 @@ pub mod start_document_classification_job_input {
             self.output_data_config = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-        /// grants Amazon Comprehend read access to your input data.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data.</p>
         pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_access_role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-        /// grants Amazon Comprehend read access to your input data.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data.</p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8191,14 +7931,12 @@ pub mod start_document_classification_job_input {
             self.data_access_role_arn = input;
             self
         }
-        /// <p>A unique identifier for the request. If you do not set the client request token, Amazon
-        /// Comprehend generates one.</p>
+        /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Comprehend generates one.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the request. If you do not set the client request token, Amazon
-        /// Comprehend generates one.</p>
+        /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Comprehend generates one.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8206,37 +7944,19 @@ pub mod start_document_classification_job_input {
             self.client_request_token = input;
             self
         }
-        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-        /// data on the storage volume attached to the ML compute instance(s) that process the analysis
-        /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
         /// <ul>
-        /// <li>
-        /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Resource Name (ARN) of a KMS Key:
-        /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
         /// </ul>
         pub fn volume_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.volume_kms_key_id = Some(input.into());
             self
         }
-        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-        /// data on the storage volume attached to the ML compute instance(s) that process the analysis
-        /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
         /// <ul>
-        /// <li>
-        /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Resource Name (ARN) of a KMS Key:
-        /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
         /// </ul>
         pub fn set_volume_kms_key_id(
             mut self,
@@ -8245,18 +7965,12 @@ pub mod start_document_classification_job_input {
             self.volume_kms_key_id = input;
             self
         }
-        /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing
-        /// the resources you are using for your document classification job. For more information, see
-        /// <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
-        /// VPC</a>. </p>
+        /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your document classification job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
         pub fn vpc_config(mut self, input: crate::model::VpcConfig) -> Self {
             self.vpc_config = Some(input);
             self
         }
-        /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing
-        /// the resources you are using for your document classification job. For more information, see
-        /// <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
-        /// VPC</a>. </p>
+        /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your document classification job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
         pub fn set_vpc_config(
             mut self,
             input: std::option::Option<crate::model::VpcConfig>,
@@ -8268,18 +7982,14 @@ pub mod start_document_classification_job_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Tags to be associated with the document classification job. A tag is a key-value pair that
-        /// adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the
-        /// key might be added to a resource to indicate its use by the sales department.</p>
+        /// <p>Tags to be associated with the document classification job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>Tags to be associated with the document classification job. A tag is a key-value pair that
-        /// adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the
-        /// key might be added to a resource to indicate its use by the sales department.</p>
+        /// <p>Tags to be associated with the document classification job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -8478,14 +8188,12 @@ pub mod start_dominant_language_detection_job_input {
             self.output_data_config = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-        /// grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
         pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_access_role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-        /// grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8503,14 +8211,12 @@ pub mod start_dominant_language_detection_job_input {
             self.job_name = input;
             self
         }
-        /// <p>A unique identifier for the request. If you do not set the client request token, Amazon
-        /// Comprehend generates one.</p>
+        /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Comprehend generates one.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the request. If you do not set the client request token, Amazon
-        /// Comprehend generates one.</p>
+        /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Comprehend generates one.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8518,37 +8224,19 @@ pub mod start_dominant_language_detection_job_input {
             self.client_request_token = input;
             self
         }
-        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-        /// data on the storage volume attached to the ML compute instance(s) that process the analysis
-        /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
         /// <ul>
-        /// <li>
-        /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Resource Name (ARN) of a KMS Key:
-        /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
         /// </ul>
         pub fn volume_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.volume_kms_key_id = Some(input.into());
             self
         }
-        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-        /// data on the storage volume attached to the ML compute instance(s) that process the analysis
-        /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
         /// <ul>
-        /// <li>
-        /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Resource Name (ARN) of a KMS Key:
-        /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
         /// </ul>
         pub fn set_volume_kms_key_id(
             mut self,
@@ -8557,16 +8245,12 @@ pub mod start_dominant_language_detection_job_input {
             self.volume_kms_key_id = input;
             self
         }
-        /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing
-        /// the resources you are using for your dominant language detection job. For more information,
-        /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
+        /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your dominant language detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
         pub fn vpc_config(mut self, input: crate::model::VpcConfig) -> Self {
             self.vpc_config = Some(input);
             self
         }
-        /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing
-        /// the resources you are using for your dominant language detection job. For more information,
-        /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
+        /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your dominant language detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
         pub fn set_vpc_config(
             mut self,
             input: std::option::Option<crate::model::VpcConfig>,
@@ -8578,18 +8262,14 @@ pub mod start_dominant_language_detection_job_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Tags to be associated with the dominant language detection job. A tag is a key-value pair
-        /// that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as
-        /// the key might be added to a resource to indicate its use by the sales department.</p>
+        /// <p>Tags to be associated with the dominant language detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>Tags to be associated with the dominant language detection job. A tag is a key-value pair
-        /// that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as
-        /// the key might be added to a resource to indicate its use by the sales department.</p>
+        /// <p>Tags to be associated with the dominant language detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -8789,14 +8469,12 @@ pub mod start_entities_detection_job_input {
             self.output_data_config = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-        /// grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
         pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_access_role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-        /// grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8814,16 +8492,12 @@ pub mod start_entities_detection_job_input {
             self.job_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that identifies the specific entity recognizer to be used
-        /// by the <code>StartEntitiesDetectionJob</code>. This ARN is optional and is only used for a
-        /// custom entity recognition job.</p>
+        /// <p>The Amazon Resource Name (ARN) that identifies the specific entity recognizer to be used by the <code>StartEntitiesDetectionJob</code>. This ARN is optional and is only used for a custom entity recognition job.</p>
         pub fn entity_recognizer_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.entity_recognizer_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that identifies the specific entity recognizer to be used
-        /// by the <code>StartEntitiesDetectionJob</code>. This ARN is optional and is only used for a
-        /// custom entity recognition job.</p>
+        /// <p>The Amazon Resource Name (ARN) that identifies the specific entity recognizer to be used by the <code>StartEntitiesDetectionJob</code>. This ARN is optional and is only used for a custom entity recognition job.</p>
         pub fn set_entity_recognizer_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8831,18 +8505,12 @@ pub mod start_entities_detection_job_input {
             self.entity_recognizer_arn = input;
             self
         }
-        /// <p>The language of the input documents. All documents must be in the same language. You can
-        /// specify any of the languages supported by Amazon Comprehend. If custom entities recognition is
-        /// used, this parameter is ignored and the language used for training the model is used
-        /// instead.</p>
+        /// <p>The language of the input documents. All documents must be in the same language. You can specify any of the languages supported by Amazon Comprehend. If custom entities recognition is used, this parameter is ignored and the language used for training the model is used instead.</p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
             self.language_code = Some(input);
             self
         }
-        /// <p>The language of the input documents. All documents must be in the same language. You can
-        /// specify any of the languages supported by Amazon Comprehend. If custom entities recognition is
-        /// used, this parameter is ignored and the language used for training the model is used
-        /// instead.</p>
+        /// <p>The language of the input documents. All documents must be in the same language. You can specify any of the languages supported by Amazon Comprehend. If custom entities recognition is used, this parameter is ignored and the language used for training the model is used instead.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -8850,14 +8518,12 @@ pub mod start_entities_detection_job_input {
             self.language_code = input;
             self
         }
-        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon
-        /// Comprehend generates one.</p>
+        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon
-        /// Comprehend generates one.</p>
+        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8865,37 +8531,19 @@ pub mod start_entities_detection_job_input {
             self.client_request_token = input;
             self
         }
-        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-        /// data on the storage volume attached to the ML compute instance(s) that process the analysis
-        /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
         /// <ul>
-        /// <li>
-        /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Resource Name (ARN) of a KMS Key:
-        /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
         /// </ul>
         pub fn volume_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.volume_kms_key_id = Some(input.into());
             self
         }
-        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-        /// data on the storage volume attached to the ML compute instance(s) that process the analysis
-        /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
         /// <ul>
-        /// <li>
-        /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Resource Name (ARN) of a KMS Key:
-        /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
         /// </ul>
         pub fn set_volume_kms_key_id(
             mut self,
@@ -8904,16 +8552,12 @@ pub mod start_entities_detection_job_input {
             self.volume_kms_key_id = input;
             self
         }
-        /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing
-        /// the resources you are using for your entity detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
-        /// VPC</a>. </p>
+        /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your entity detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
         pub fn vpc_config(mut self, input: crate::model::VpcConfig) -> Self {
             self.vpc_config = Some(input);
             self
         }
-        /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing
-        /// the resources you are using for your entity detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
-        /// VPC</a>. </p>
+        /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your entity detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
         pub fn set_vpc_config(
             mut self,
             input: std::option::Option<crate::model::VpcConfig>,
@@ -8925,18 +8569,14 @@ pub mod start_entities_detection_job_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Tags to be associated with the entities detection job. A tag is a key-value pair that adds
-        /// metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key
-        /// might be added to a resource to indicate its use by the sales department.</p>
+        /// <p>Tags to be associated with the entities detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>Tags to be associated with the entities detection job. A tag is a key-value pair that adds
-        /// metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key
-        /// might be added to a resource to indicate its use by the sales department.</p>
+        /// <p>Tags to be associated with the entities detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -9136,14 +8776,12 @@ pub mod start_events_detection_job_input {
             self.output_data_config = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-        /// grants Amazon Comprehend read access to your input data.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data.</p>
         pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_access_role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-        /// grants Amazon Comprehend read access to your input data.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data.</p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9174,14 +8812,12 @@ pub mod start_events_detection_job_input {
             self.language_code = input;
             self
         }
-        /// <p>An unique identifier for the request. If you don't set the client request token, Amazon
-        /// Comprehend generates one.</p>
+        /// <p>An unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>An unique identifier for the request. If you don't set the client request token, Amazon
-        /// Comprehend generates one.</p>
+        /// <p>An unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9212,18 +8848,14 @@ pub mod start_events_detection_job_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Tags to be associated with the events detection job. A tag is a key-value pair that adds
-        /// metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key
-        /// might be added to a resource to indicate its use by the sales department.</p>
+        /// <p>Tags to be associated with the events detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>Tags to be associated with the events detection job. A tag is a key-value pair that adds
-        /// metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key
-        /// might be added to a resource to indicate its use by the sales department.</p>
+        /// <p>Tags to be associated with the events detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -9422,14 +9054,12 @@ pub mod start_key_phrases_detection_job_input {
             self.output_data_config = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-        /// grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
         pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_access_role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-        /// grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9447,14 +9077,12 @@ pub mod start_key_phrases_detection_job_input {
             self.job_name = input;
             self
         }
-        /// <p>The language of the input documents. You can specify any of the primary languages
-        /// supported by Amazon Comprehend. All documents must be in the same language.</p>
+        /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
             self.language_code = Some(input);
             self
         }
-        /// <p>The language of the input documents. You can specify any of the primary languages
-        /// supported by Amazon Comprehend. All documents must be in the same language.</p>
+        /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -9462,14 +9090,12 @@ pub mod start_key_phrases_detection_job_input {
             self.language_code = input;
             self
         }
-        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon
-        /// Comprehend generates one.</p>
+        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon
-        /// Comprehend generates one.</p>
+        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9477,37 +9103,19 @@ pub mod start_key_phrases_detection_job_input {
             self.client_request_token = input;
             self
         }
-        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-        /// data on the storage volume attached to the ML compute instance(s) that process the analysis
-        /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
         /// <ul>
-        /// <li>
-        /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Resource Name (ARN) of a KMS Key:
-        /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
         /// </ul>
         pub fn volume_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.volume_kms_key_id = Some(input.into());
             self
         }
-        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-        /// data on the storage volume attached to the ML compute instance(s) that process the analysis
-        /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
         /// <ul>
-        /// <li>
-        /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Resource Name (ARN) of a KMS Key:
-        /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
         /// </ul>
         pub fn set_volume_kms_key_id(
             mut self,
@@ -9516,18 +9124,12 @@ pub mod start_key_phrases_detection_job_input {
             self.volume_kms_key_id = input;
             self
         }
-        /// <p> Configuration parameters for an optional private Virtual Private Cloud (VPC) containing
-        /// the resources you are using for your key phrases detection job. For more information, see
-        /// <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
-        /// VPC</a>. </p>
+        /// <p> Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your key phrases detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
         pub fn vpc_config(mut self, input: crate::model::VpcConfig) -> Self {
             self.vpc_config = Some(input);
             self
         }
-        /// <p> Configuration parameters for an optional private Virtual Private Cloud (VPC) containing
-        /// the resources you are using for your key phrases detection job. For more information, see
-        /// <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
-        /// VPC</a>. </p>
+        /// <p> Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your key phrases detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
         pub fn set_vpc_config(
             mut self,
             input: std::option::Option<crate::model::VpcConfig>,
@@ -9539,18 +9141,14 @@ pub mod start_key_phrases_detection_job_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Tags to be associated with the key phrases detection job. A tag is a key-value pair that
-        /// adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the
-        /// key might be added to a resource to indicate its use by the sales department.</p>
+        /// <p>Tags to be associated with the key phrases detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>Tags to be associated with the key phrases detection job. A tag is a key-value pair that
-        /// adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the
-        /// key might be added to a resource to indicate its use by the sales department.</p>
+        /// <p>Tags to be associated with the key phrases detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -9749,14 +9347,12 @@ pub mod start_pii_entities_detection_job_input {
             self.output_data_config = input;
             self
         }
-        /// <p>Specifies whether the output provides the locations (offsets) of PII entities or a file in
-        /// which PII entities are redacted.</p>
+        /// <p>Specifies whether the output provides the locations (offsets) of PII entities or a file in which PII entities are redacted.</p>
         pub fn mode(mut self, input: crate::model::PiiEntitiesDetectionMode) -> Self {
             self.mode = Some(input);
             self
         }
-        /// <p>Specifies whether the output provides the locations (offsets) of PII entities or a file in
-        /// which PII entities are redacted.</p>
+        /// <p>Specifies whether the output provides the locations (offsets) of PII entities or a file in which PII entities are redacted.</p>
         pub fn set_mode(
             mut self,
             input: std::option::Option<crate::model::PiiEntitiesDetectionMode>,
@@ -9765,17 +9361,13 @@ pub mod start_pii_entities_detection_job_input {
             self
         }
         /// <p>Provides configuration parameters for PII entity redaction.</p>
-        /// <p>This parameter is required if you set the <code>Mode</code> parameter to
-        /// <code>ONLY_REDACTION</code>. In that case, you must provide a <code>RedactionConfig</code>
-        /// definition that includes the <code>PiiEntityTypes</code> parameter.</p>
+        /// <p>This parameter is required if you set the <code>Mode</code> parameter to <code>ONLY_REDACTION</code>. In that case, you must provide a <code>RedactionConfig</code> definition that includes the <code>PiiEntityTypes</code> parameter.</p>
         pub fn redaction_config(mut self, input: crate::model::RedactionConfig) -> Self {
             self.redaction_config = Some(input);
             self
         }
         /// <p>Provides configuration parameters for PII entity redaction.</p>
-        /// <p>This parameter is required if you set the <code>Mode</code> parameter to
-        /// <code>ONLY_REDACTION</code>. In that case, you must provide a <code>RedactionConfig</code>
-        /// definition that includes the <code>PiiEntityTypes</code> parameter.</p>
+        /// <p>This parameter is required if you set the <code>Mode</code> parameter to <code>ONLY_REDACTION</code>. In that case, you must provide a <code>RedactionConfig</code> definition that includes the <code>PiiEntityTypes</code> parameter.</p>
         pub fn set_redaction_config(
             mut self,
             input: std::option::Option<crate::model::RedactionConfig>,
@@ -9783,14 +9375,12 @@ pub mod start_pii_entities_detection_job_input {
             self.redaction_config = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-        /// grants Amazon Comprehend read access to your input data.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data.</p>
         pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_access_role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-        /// grants Amazon Comprehend read access to your input data.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data.</p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9821,14 +9411,12 @@ pub mod start_pii_entities_detection_job_input {
             self.language_code = input;
             self
         }
-        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon
-        /// Comprehend generates one.</p>
+        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon
-        /// Comprehend generates one.</p>
+        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9840,18 +9428,14 @@ pub mod start_pii_entities_detection_job_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Tags to be associated with the PII entities detection job. A tag is a key-value pair that
-        /// adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the
-        /// key might be added to a resource to indicate its use by the sales department.</p>
+        /// <p>Tags to be associated with the PII entities detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>Tags to be associated with the PII entities detection job. A tag is a key-value pair that
-        /// adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the
-        /// key might be added to a resource to indicate its use by the sales department.</p>
+        /// <p>Tags to be associated with the PII entities detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -10051,14 +9635,12 @@ pub mod start_sentiment_detection_job_input {
             self.output_data_config = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-        /// grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
         pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_access_role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-        /// grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10076,14 +9658,12 @@ pub mod start_sentiment_detection_job_input {
             self.job_name = input;
             self
         }
-        /// <p>The language of the input documents. You can specify any of the primary languages
-        /// supported by Amazon Comprehend. All documents must be in the same language.</p>
+        /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
             self.language_code = Some(input);
             self
         }
-        /// <p>The language of the input documents. You can specify any of the primary languages
-        /// supported by Amazon Comprehend. All documents must be in the same language.</p>
+        /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -10091,14 +9671,12 @@ pub mod start_sentiment_detection_job_input {
             self.language_code = input;
             self
         }
-        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon
-        /// Comprehend generates one.</p>
+        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon
-        /// Comprehend generates one.</p>
+        /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10106,37 +9684,19 @@ pub mod start_sentiment_detection_job_input {
             self.client_request_token = input;
             self
         }
-        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-        /// data on the storage volume attached to the ML compute instance(s) that process the analysis
-        /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
         /// <ul>
-        /// <li>
-        /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Resource Name (ARN) of a KMS Key:
-        /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
         /// </ul>
         pub fn volume_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.volume_kms_key_id = Some(input.into());
             self
         }
-        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-        /// data on the storage volume attached to the ML compute instance(s) that process the analysis
-        /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
         /// <ul>
-        /// <li>
-        /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Resource Name (ARN) of a KMS Key:
-        /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
         /// </ul>
         pub fn set_volume_kms_key_id(
             mut self,
@@ -10145,16 +9705,12 @@ pub mod start_sentiment_detection_job_input {
             self.volume_kms_key_id = input;
             self
         }
-        /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing
-        /// the resources you are using for your sentiment detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
-        /// VPC</a>. </p>
+        /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your sentiment detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
         pub fn vpc_config(mut self, input: crate::model::VpcConfig) -> Self {
             self.vpc_config = Some(input);
             self
         }
-        /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing
-        /// the resources you are using for your sentiment detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
-        /// VPC</a>. </p>
+        /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your sentiment detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
         pub fn set_vpc_config(
             mut self,
             input: std::option::Option<crate::model::VpcConfig>,
@@ -10166,18 +9722,14 @@ pub mod start_sentiment_detection_job_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Tags to be associated with the sentiment detection job. A tag is a key-value pair that
-        /// adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the
-        /// key might be added to a resource to indicate its use by the sales department.</p>
+        /// <p>Tags to be associated with the sentiment detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>Tags to be associated with the sentiment detection job. A tag is a key-value pair that
-        /// adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the
-        /// key might be added to a resource to indicate its use by the sales department.</p>
+        /// <p>Tags to be associated with the sentiment detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -10363,16 +9915,12 @@ pub mod start_topics_detection_job_input {
             self.input_data_config = input;
             self
         }
-        /// <p>Specifies where to send the output files. The output is a compressed archive with two
-        /// files, <code>topic-terms.csv</code> that lists the terms associated with each topic, and
-        /// <code>doc-topics.csv</code> that lists the documents associated with each topic</p>
+        /// <p>Specifies where to send the output files. The output is a compressed archive with two files, <code>topic-terms.csv</code> that lists the terms associated with each topic, and <code>doc-topics.csv</code> that lists the documents associated with each topic</p>
         pub fn output_data_config(mut self, input: crate::model::OutputDataConfig) -> Self {
             self.output_data_config = Some(input);
             self
         }
-        /// <p>Specifies where to send the output files. The output is a compressed archive with two
-        /// files, <code>topic-terms.csv</code> that lists the terms associated with each topic, and
-        /// <code>doc-topics.csv</code> that lists the documents associated with each topic</p>
+        /// <p>Specifies where to send the output files. The output is a compressed archive with two files, <code>topic-terms.csv</code> that lists the terms associated with each topic, and <code>doc-topics.csv</code> that lists the documents associated with each topic</p>
         pub fn set_output_data_config(
             mut self,
             input: std::option::Option<crate::model::OutputDataConfig>,
@@ -10380,14 +9928,12 @@ pub mod start_topics_detection_job_input {
             self.output_data_config = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role
-        /// that grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
         pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_access_role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role
-        /// that grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10415,14 +9961,12 @@ pub mod start_topics_detection_job_input {
             self.number_of_topics = input;
             self
         }
-        /// <p>A unique identifier for the request. If you do not set the client request token, Amazon
-        /// Comprehend generates one.</p>
+        /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Comprehend generates one.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the request. If you do not set the client request token, Amazon
-        /// Comprehend generates one.</p>
+        /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Comprehend generates one.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10430,37 +9974,19 @@ pub mod start_topics_detection_job_input {
             self.client_request_token = input;
             self
         }
-        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-        /// data on the storage volume attached to the ML compute instance(s) that process the analysis
-        /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
         /// <ul>
-        /// <li>
-        /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Resource Name (ARN) of a KMS Key:
-        /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
         /// </ul>
         pub fn volume_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.volume_kms_key_id = Some(input.into());
             self
         }
-        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-        /// data on the storage volume attached to the ML compute instance(s) that process the analysis
-        /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
         /// <ul>
-        /// <li>
-        /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Amazon Resource Name (ARN) of a KMS Key:
-        /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+        /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
         /// </ul>
         pub fn set_volume_kms_key_id(
             mut self,
@@ -10469,16 +9995,12 @@ pub mod start_topics_detection_job_input {
             self.volume_kms_key_id = input;
             self
         }
-        /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing
-        /// the resources you are using for your topic detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
-        /// VPC</a>. </p>
+        /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your topic detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
         pub fn vpc_config(mut self, input: crate::model::VpcConfig) -> Self {
             self.vpc_config = Some(input);
             self
         }
-        /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing
-        /// the resources you are using for your topic detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
-        /// VPC</a>. </p>
+        /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your topic detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
         pub fn set_vpc_config(
             mut self,
             input: std::option::Option<crate::model::VpcConfig>,
@@ -10490,18 +10012,14 @@ pub mod start_topics_detection_job_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Tags to be associated with the topics detection job. A tag is a key-value pair that adds
-        /// metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key
-        /// might be added to a resource to indicate its use by the sales department.</p>
+        /// <p>Tags to be associated with the topics detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>Tags to be associated with the topics detection job. A tag is a key-value pair that adds
-        /// metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key
-        /// might be added to a resource to indicate its use by the sales department.</p>
+        /// <p>Tags to be associated with the topics detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -11606,14 +11124,12 @@ pub mod stop_training_document_classifier_input {
         pub(crate) document_classifier_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) that identifies the document classifier currently being
-        /// trained.</p>
+        /// <p>The Amazon Resource Name (ARN) that identifies the document classifier currently being trained.</p>
         pub fn document_classifier_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.document_classifier_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that identifies the document classifier currently being
-        /// trained.</p>
+        /// <p>The Amazon Resource Name (ARN) that identifies the document classifier currently being trained.</p>
         pub fn set_document_classifier_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11768,14 +11284,12 @@ pub mod stop_training_entity_recognizer_input {
         pub(crate) entity_recognizer_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer currently being
-        /// trained.</p>
+        /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer currently being trained.</p>
         pub fn entity_recognizer_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.entity_recognizer_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer currently being
-        /// trained.</p>
+        /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer currently being trained.</p>
         pub fn set_entity_recognizer_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11931,14 +11445,12 @@ pub mod tag_resource_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the given Amazon Comprehend resource to which you want
-        /// to associate the tags. </p>
+        /// <p>The Amazon Resource Name (ARN) of the given Amazon Comprehend resource to which you want to associate the tags. </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the given Amazon Comprehend resource to which you want
-        /// to associate the tags. </p>
+        /// <p>The Amazon Resource Name (ARN) of the given Amazon Comprehend resource to which you want to associate the tags. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -11947,16 +11459,14 @@ pub mod tag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Tags being associated with a specific Amazon Comprehend resource. There can be a maximum
-        /// of 50 tags (both existing and pending) associated with a specific resource. </p>
+        /// <p>Tags being associated with a specific Amazon Comprehend resource. There can be a maximum of 50 tags (both existing and pending) associated with a specific resource. </p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>Tags being associated with a specific Amazon Comprehend resource. There can be a maximum
-        /// of 50 tags (both existing and pending) associated with a specific resource. </p>
+        /// <p>Tags being associated with a specific Amazon Comprehend resource. There can be a maximum of 50 tags (both existing and pending) associated with a specific resource. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -12109,14 +11619,12 @@ pub mod untag_resource_input {
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p> The Amazon Resource Name (ARN) of the given Amazon Comprehend resource from which you
-        /// want to remove the tags. </p>
+        /// <p> The Amazon Resource Name (ARN) of the given Amazon Comprehend resource from which you want to remove the tags. </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p> The Amazon Resource Name (ARN) of the given Amazon Comprehend resource from which you
-        /// want to remove the tags. </p>
+        /// <p> The Amazon Resource Name (ARN) of the given Amazon Comprehend resource from which you want to remove the tags. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -12125,20 +11633,14 @@ pub mod untag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>The initial part of a key-value pair that forms a tag being removed from a given resource.
-        /// For example, a tag with "Sales" as the key might be added to a resource to indicate its use by
-        /// the sales department. Keys must be unique and cannot be duplicated for a particular resource.
-        /// </p>
+        /// <p>The initial part of a key-value pair that forms a tag being removed from a given resource. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department. Keys must be unique and cannot be duplicated for a particular resource. </p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
-        /// <p>The initial part of a key-value pair that forms a tag being removed from a given resource.
-        /// For example, a tag with "Sales" as the key might be added to a resource to indicate its use by
-        /// the sales department. Keys must be unique and cannot be duplicated for a particular resource.
-        /// </p>
+        /// <p>The initial part of a key-value pair that forms a tag being removed from a given resource. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department. Keys must be unique and cannot be duplicated for a particular resource. </p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -12316,16 +11818,12 @@ pub mod update_endpoint_input {
             self.desired_model_arn = input;
             self
         }
-        /// <p> The desired number of inference units to be used by the model using this endpoint.
-        ///
-        /// Each inference unit represents of a throughput of 100 characters per second.</p>
+        /// <p> The desired number of inference units to be used by the model using this endpoint. Each inference unit represents of a throughput of 100 characters per second.</p>
         pub fn desired_inference_units(mut self, input: i32) -> Self {
             self.desired_inference_units = Some(input);
             self
         }
-        /// <p> The desired number of inference units to be used by the model using this endpoint.
-        ///
-        /// Each inference unit represents of a throughput of 100 characters per second.</p>
+        /// <p> The desired number of inference units to be used by the model using this endpoint. Each inference unit represents of a throughput of 100 characters per second.</p>
         pub fn set_desired_inference_units(mut self, input: std::option::Option<i32>) -> Self {
             self.desired_inference_units = input;
             self
@@ -12492,9 +11990,7 @@ pub struct UpdateEndpointInput {
     pub endpoint_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the new model to use when updating an existing endpoint.</p>
     pub desired_model_arn: std::option::Option<std::string::String>,
-    /// <p> The desired number of inference units to be used by the model using this endpoint.
-    ///
-    /// Each inference unit represents of a throughput of 100 characters per second.</p>
+    /// <p> The desired number of inference units to be used by the model using this endpoint. Each inference unit represents of a throughput of 100 characters per second.</p>
     pub desired_inference_units: std::option::Option<i32>,
     /// <p>Data access role ARN to use in case the new model is encrypted with a customer CMK.</p>
     pub desired_data_access_role_arn: std::option::Option<std::string::String>,
@@ -12508,9 +12004,7 @@ impl UpdateEndpointInput {
     pub fn desired_model_arn(&self) -> std::option::Option<&str> {
         self.desired_model_arn.as_deref()
     }
-    /// <p> The desired number of inference units to be used by the model using this endpoint.
-    ///
-    /// Each inference unit represents of a throughput of 100 characters per second.</p>
+    /// <p> The desired number of inference units to be used by the model using this endpoint. Each inference unit represents of a throughput of 100 characters per second.</p>
     pub fn desired_inference_units(&self) -> std::option::Option<i32> {
         self.desired_inference_units
     }
@@ -12537,25 +12031,17 @@ impl std::fmt::Debug for UpdateEndpointInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
-    /// <p> The Amazon Resource Name (ARN) of the given Amazon Comprehend resource from which you
-    /// want to remove the tags. </p>
+    /// <p> The Amazon Resource Name (ARN) of the given Amazon Comprehend resource from which you want to remove the tags. </p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The initial part of a key-value pair that forms a tag being removed from a given resource.
-    /// For example, a tag with "Sales" as the key might be added to a resource to indicate its use by
-    /// the sales department. Keys must be unique and cannot be duplicated for a particular resource.
-    /// </p>
+    /// <p>The initial part of a key-value pair that forms a tag being removed from a given resource. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department. Keys must be unique and cannot be duplicated for a particular resource. </p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
-    /// <p> The Amazon Resource Name (ARN) of the given Amazon Comprehend resource from which you
-    /// want to remove the tags. </p>
+    /// <p> The Amazon Resource Name (ARN) of the given Amazon Comprehend resource from which you want to remove the tags. </p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The initial part of a key-value pair that forms a tag being removed from a given resource.
-    /// For example, a tag with "Sales" as the key might be added to a resource to indicate its use by
-    /// the sales department. Keys must be unique and cannot be duplicated for a particular resource.
-    /// </p>
+    /// <p>The initial part of a key-value pair that forms a tag being removed from a given resource. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department. Keys must be unique and cannot be duplicated for a particular resource. </p>
     pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_keys.as_deref()
     }
@@ -12573,21 +12059,17 @@ impl std::fmt::Debug for UntagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the given Amazon Comprehend resource to which you want
-    /// to associate the tags. </p>
+    /// <p>The Amazon Resource Name (ARN) of the given Amazon Comprehend resource to which you want to associate the tags. </p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>Tags being associated with a specific Amazon Comprehend resource. There can be a maximum
-    /// of 50 tags (both existing and pending) associated with a specific resource. </p>
+    /// <p>Tags being associated with a specific Amazon Comprehend resource. There can be a maximum of 50 tags (both existing and pending) associated with a specific resource. </p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the given Amazon Comprehend resource to which you want
-    /// to associate the tags. </p>
+    /// <p>The Amazon Resource Name (ARN) of the given Amazon Comprehend resource to which you want to associate the tags. </p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>Tags being associated with a specific Amazon Comprehend resource. There can be a maximum
-    /// of 50 tags (both existing and pending) associated with a specific resource. </p>
+    /// <p>Tags being associated with a specific Amazon Comprehend resource. There can be a maximum of 50 tags (both existing and pending) associated with a specific resource. </p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -12605,13 +12087,11 @@ impl std::fmt::Debug for TagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopTrainingEntityRecognizerInput {
-    /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer currently being
-    /// trained.</p>
+    /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer currently being trained.</p>
     pub entity_recognizer_arn: std::option::Option<std::string::String>,
 }
 impl StopTrainingEntityRecognizerInput {
-    /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer currently being
-    /// trained.</p>
+    /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer currently being trained.</p>
     pub fn entity_recognizer_arn(&self) -> std::option::Option<&str> {
         self.entity_recognizer_arn.as_deref()
     }
@@ -12628,13 +12108,11 @@ impl std::fmt::Debug for StopTrainingEntityRecognizerInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopTrainingDocumentClassifierInput {
-    /// <p>The Amazon Resource Name (ARN) that identifies the document classifier currently being
-    /// trained.</p>
+    /// <p>The Amazon Resource Name (ARN) that identifies the document classifier currently being trained.</p>
     pub document_classifier_arn: std::option::Option<std::string::String>,
 }
 impl StopTrainingDocumentClassifierInput {
-    /// <p>The Amazon Resource Name (ARN) that identifies the document classifier currently being
-    /// trained.</p>
+    /// <p>The Amazon Resource Name (ARN) that identifies the document classifier currently being trained.</p>
     pub fn document_classifier_arn(&self) -> std::option::Option<&str> {
         self.document_classifier_arn.as_deref()
     }
@@ -12779,42 +12257,25 @@ impl std::fmt::Debug for StopDominantLanguageDetectionJobInput {
 pub struct StartTopicsDetectionJobInput {
     /// <p>Specifies the format and location of the input data for the job.</p>
     pub input_data_config: std::option::Option<crate::model::InputDataConfig>,
-    /// <p>Specifies where to send the output files. The output is a compressed archive with two
-    /// files, <code>topic-terms.csv</code> that lists the terms associated with each topic, and
-    /// <code>doc-topics.csv</code> that lists the documents associated with each topic</p>
+    /// <p>Specifies where to send the output files. The output is a compressed archive with two files, <code>topic-terms.csv</code> that lists the terms associated with each topic, and <code>doc-topics.csv</code> that lists the documents associated with each topic</p>
     pub output_data_config: std::option::Option<crate::model::OutputDataConfig>,
-    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role
-    /// that grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
     pub data_access_role_arn: std::option::Option<std::string::String>,
     /// <p>The identifier of the job.</p>
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The number of topics to detect.</p>
     pub number_of_topics: std::option::Option<i32>,
-    /// <p>A unique identifier for the request. If you do not set the client request token, Amazon
-    /// Comprehend generates one.</p>
+    /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Comprehend generates one.</p>
     pub client_request_token: std::option::Option<std::string::String>,
-    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-    /// data on the storage volume attached to the ML compute instance(s) that process the analysis
-    /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
     /// <ul>
-    /// <li>
-    /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Resource Name (ARN) of a KMS Key:
-    /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
     pub volume_kms_key_id: std::option::Option<std::string::String>,
-    /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing
-    /// the resources you are using for your topic detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
-    /// VPC</a>. </p>
+    /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your topic detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
     pub vpc_config: std::option::Option<crate::model::VpcConfig>,
-    /// <p>Tags to be associated with the topics detection job. A tag is a key-value pair that adds
-    /// metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key
-    /// might be added to a resource to indicate its use by the sales department.</p>
+    /// <p>Tags to be associated with the topics detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl StartTopicsDetectionJobInput {
@@ -12822,14 +12283,11 @@ impl StartTopicsDetectionJobInput {
     pub fn input_data_config(&self) -> std::option::Option<&crate::model::InputDataConfig> {
         self.input_data_config.as_ref()
     }
-    /// <p>Specifies where to send the output files. The output is a compressed archive with two
-    /// files, <code>topic-terms.csv</code> that lists the terms associated with each topic, and
-    /// <code>doc-topics.csv</code> that lists the documents associated with each topic</p>
+    /// <p>Specifies where to send the output files. The output is a compressed archive with two files, <code>topic-terms.csv</code> that lists the terms associated with each topic, and <code>doc-topics.csv</code> that lists the documents associated with each topic</p>
     pub fn output_data_config(&self) -> std::option::Option<&crate::model::OutputDataConfig> {
         self.output_data_config.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role
-    /// that grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
     pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
         self.data_access_role_arn.as_deref()
     }
@@ -12841,37 +12299,23 @@ impl StartTopicsDetectionJobInput {
     pub fn number_of_topics(&self) -> std::option::Option<i32> {
         self.number_of_topics
     }
-    /// <p>A unique identifier for the request. If you do not set the client request token, Amazon
-    /// Comprehend generates one.</p>
+    /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Comprehend generates one.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-    /// data on the storage volume attached to the ML compute instance(s) that process the analysis
-    /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
     /// <ul>
-    /// <li>
-    /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Resource Name (ARN) of a KMS Key:
-    /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
     pub fn volume_kms_key_id(&self) -> std::option::Option<&str> {
         self.volume_kms_key_id.as_deref()
     }
-    /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing
-    /// the resources you are using for your topic detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
-    /// VPC</a>. </p>
+    /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your topic detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
     pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
         self.vpc_config.as_ref()
     }
-    /// <p>Tags to be associated with the topics detection job. A tag is a key-value pair that adds
-    /// metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key
-    /// might be added to a resource to indicate its use by the sales department.</p>
+    /// <p>Tags to be associated with the topics detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -12900,39 +12344,23 @@ pub struct StartSentimentDetectionJobInput {
     pub input_data_config: std::option::Option<crate::model::InputDataConfig>,
     /// <p>Specifies where to send the output files. </p>
     pub output_data_config: std::option::Option<crate::model::OutputDataConfig>,
-    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-    /// grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
     pub data_access_role_arn: std::option::Option<std::string::String>,
     /// <p>The identifier of the job.</p>
     pub job_name: std::option::Option<std::string::String>,
-    /// <p>The language of the input documents. You can specify any of the primary languages
-    /// supported by Amazon Comprehend. All documents must be in the same language.</p>
+    /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
-    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon
-    /// Comprehend generates one.</p>
+    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
     pub client_request_token: std::option::Option<std::string::String>,
-    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-    /// data on the storage volume attached to the ML compute instance(s) that process the analysis
-    /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
     /// <ul>
-    /// <li>
-    /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Resource Name (ARN) of a KMS Key:
-    /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
     pub volume_kms_key_id: std::option::Option<std::string::String>,
-    /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing
-    /// the resources you are using for your sentiment detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
-    /// VPC</a>. </p>
+    /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your sentiment detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
     pub vpc_config: std::option::Option<crate::model::VpcConfig>,
-    /// <p>Tags to be associated with the sentiment detection job. A tag is a key-value pair that
-    /// adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the
-    /// key might be added to a resource to indicate its use by the sales department.</p>
+    /// <p>Tags to be associated with the sentiment detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl StartSentimentDetectionJobInput {
@@ -12944,8 +12372,7 @@ impl StartSentimentDetectionJobInput {
     pub fn output_data_config(&self) -> std::option::Option<&crate::model::OutputDataConfig> {
         self.output_data_config.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-    /// grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
     pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
         self.data_access_role_arn.as_deref()
     }
@@ -12953,42 +12380,27 @@ impl StartSentimentDetectionJobInput {
     pub fn job_name(&self) -> std::option::Option<&str> {
         self.job_name.as_deref()
     }
-    /// <p>The language of the input documents. You can specify any of the primary languages
-    /// supported by Amazon Comprehend. All documents must be in the same language.</p>
+    /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
     pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
         self.language_code.as_ref()
     }
-    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon
-    /// Comprehend generates one.</p>
+    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-    /// data on the storage volume attached to the ML compute instance(s) that process the analysis
-    /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
     /// <ul>
-    /// <li>
-    /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Resource Name (ARN) of a KMS Key:
-    /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
     pub fn volume_kms_key_id(&self) -> std::option::Option<&str> {
         self.volume_kms_key_id.as_deref()
     }
-    /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing
-    /// the resources you are using for your sentiment detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
-    /// VPC</a>. </p>
+    /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your sentiment detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
     pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
         self.vpc_config.as_ref()
     }
-    /// <p>Tags to be associated with the sentiment detection job. A tag is a key-value pair that
-    /// adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the
-    /// key might be added to a resource to indicate its use by the sales department.</p>
+    /// <p>Tags to be associated with the sentiment detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -13017,27 +12429,20 @@ pub struct StartPiiEntitiesDetectionJobInput {
     pub input_data_config: std::option::Option<crate::model::InputDataConfig>,
     /// <p>Provides conﬁguration parameters for the output of PII entity detection jobs.</p>
     pub output_data_config: std::option::Option<crate::model::OutputDataConfig>,
-    /// <p>Specifies whether the output provides the locations (offsets) of PII entities or a file in
-    /// which PII entities are redacted.</p>
+    /// <p>Specifies whether the output provides the locations (offsets) of PII entities or a file in which PII entities are redacted.</p>
     pub mode: std::option::Option<crate::model::PiiEntitiesDetectionMode>,
     /// <p>Provides configuration parameters for PII entity redaction.</p>
-    /// <p>This parameter is required if you set the <code>Mode</code> parameter to
-    /// <code>ONLY_REDACTION</code>. In that case, you must provide a <code>RedactionConfig</code>
-    /// definition that includes the <code>PiiEntityTypes</code> parameter.</p>
+    /// <p>This parameter is required if you set the <code>Mode</code> parameter to <code>ONLY_REDACTION</code>. In that case, you must provide a <code>RedactionConfig</code> definition that includes the <code>PiiEntityTypes</code> parameter.</p>
     pub redaction_config: std::option::Option<crate::model::RedactionConfig>,
-    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-    /// grants Amazon Comprehend read access to your input data.</p>
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data.</p>
     pub data_access_role_arn: std::option::Option<std::string::String>,
     /// <p>The identifier of the job.</p>
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The language of the input documents.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
-    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon
-    /// Comprehend generates one.</p>
+    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
     pub client_request_token: std::option::Option<std::string::String>,
-    /// <p>Tags to be associated with the PII entities detection job. A tag is a key-value pair that
-    /// adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the
-    /// key might be added to a resource to indicate its use by the sales department.</p>
+    /// <p>Tags to be associated with the PII entities detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl StartPiiEntitiesDetectionJobInput {
@@ -13049,20 +12454,16 @@ impl StartPiiEntitiesDetectionJobInput {
     pub fn output_data_config(&self) -> std::option::Option<&crate::model::OutputDataConfig> {
         self.output_data_config.as_ref()
     }
-    /// <p>Specifies whether the output provides the locations (offsets) of PII entities or a file in
-    /// which PII entities are redacted.</p>
+    /// <p>Specifies whether the output provides the locations (offsets) of PII entities or a file in which PII entities are redacted.</p>
     pub fn mode(&self) -> std::option::Option<&crate::model::PiiEntitiesDetectionMode> {
         self.mode.as_ref()
     }
     /// <p>Provides configuration parameters for PII entity redaction.</p>
-    /// <p>This parameter is required if you set the <code>Mode</code> parameter to
-    /// <code>ONLY_REDACTION</code>. In that case, you must provide a <code>RedactionConfig</code>
-    /// definition that includes the <code>PiiEntityTypes</code> parameter.</p>
+    /// <p>This parameter is required if you set the <code>Mode</code> parameter to <code>ONLY_REDACTION</code>. In that case, you must provide a <code>RedactionConfig</code> definition that includes the <code>PiiEntityTypes</code> parameter.</p>
     pub fn redaction_config(&self) -> std::option::Option<&crate::model::RedactionConfig> {
         self.redaction_config.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-    /// grants Amazon Comprehend read access to your input data.</p>
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data.</p>
     pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
         self.data_access_role_arn.as_deref()
     }
@@ -13074,14 +12475,11 @@ impl StartPiiEntitiesDetectionJobInput {
     pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
         self.language_code.as_ref()
     }
-    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon
-    /// Comprehend generates one.</p>
+    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p>Tags to be associated with the PII entities detection job. A tag is a key-value pair that
-    /// adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the
-    /// key might be added to a resource to indicate its use by the sales department.</p>
+    /// <p>Tags to be associated with the PII entities detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -13110,40 +12508,23 @@ pub struct StartKeyPhrasesDetectionJobInput {
     pub input_data_config: std::option::Option<crate::model::InputDataConfig>,
     /// <p>Specifies where to send the output files.</p>
     pub output_data_config: std::option::Option<crate::model::OutputDataConfig>,
-    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-    /// grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
     pub data_access_role_arn: std::option::Option<std::string::String>,
     /// <p>The identifier of the job.</p>
     pub job_name: std::option::Option<std::string::String>,
-    /// <p>The language of the input documents. You can specify any of the primary languages
-    /// supported by Amazon Comprehend. All documents must be in the same language.</p>
+    /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
-    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon
-    /// Comprehend generates one.</p>
+    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
     pub client_request_token: std::option::Option<std::string::String>,
-    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-    /// data on the storage volume attached to the ML compute instance(s) that process the analysis
-    /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
     /// <ul>
-    /// <li>
-    /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Resource Name (ARN) of a KMS Key:
-    /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
     pub volume_kms_key_id: std::option::Option<std::string::String>,
-    /// <p> Configuration parameters for an optional private Virtual Private Cloud (VPC) containing
-    /// the resources you are using for your key phrases detection job. For more information, see
-    /// <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
-    /// VPC</a>. </p>
+    /// <p> Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your key phrases detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
     pub vpc_config: std::option::Option<crate::model::VpcConfig>,
-    /// <p>Tags to be associated with the key phrases detection job. A tag is a key-value pair that
-    /// adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the
-    /// key might be added to a resource to indicate its use by the sales department.</p>
+    /// <p>Tags to be associated with the key phrases detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl StartKeyPhrasesDetectionJobInput {
@@ -13155,8 +12536,7 @@ impl StartKeyPhrasesDetectionJobInput {
     pub fn output_data_config(&self) -> std::option::Option<&crate::model::OutputDataConfig> {
         self.output_data_config.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-    /// grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
     pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
         self.data_access_role_arn.as_deref()
     }
@@ -13164,43 +12544,27 @@ impl StartKeyPhrasesDetectionJobInput {
     pub fn job_name(&self) -> std::option::Option<&str> {
         self.job_name.as_deref()
     }
-    /// <p>The language of the input documents. You can specify any of the primary languages
-    /// supported by Amazon Comprehend. All documents must be in the same language.</p>
+    /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
     pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
         self.language_code.as_ref()
     }
-    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon
-    /// Comprehend generates one.</p>
+    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-    /// data on the storage volume attached to the ML compute instance(s) that process the analysis
-    /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
     /// <ul>
-    /// <li>
-    /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Resource Name (ARN) of a KMS Key:
-    /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
     pub fn volume_kms_key_id(&self) -> std::option::Option<&str> {
         self.volume_kms_key_id.as_deref()
     }
-    /// <p> Configuration parameters for an optional private Virtual Private Cloud (VPC) containing
-    /// the resources you are using for your key phrases detection job. For more information, see
-    /// <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
-    /// VPC</a>. </p>
+    /// <p> Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your key phrases detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
     pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
         self.vpc_config.as_ref()
     }
-    /// <p>Tags to be associated with the key phrases detection job. A tag is a key-value pair that
-    /// adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the
-    /// key might be added to a resource to indicate its use by the sales department.</p>
+    /// <p>Tags to be associated with the key phrases detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -13229,21 +12593,17 @@ pub struct StartEventsDetectionJobInput {
     pub input_data_config: std::option::Option<crate::model::InputDataConfig>,
     /// <p>Specifies where to send the output files.</p>
     pub output_data_config: std::option::Option<crate::model::OutputDataConfig>,
-    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-    /// grants Amazon Comprehend read access to your input data.</p>
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data.</p>
     pub data_access_role_arn: std::option::Option<std::string::String>,
     /// <p>The identifier of the events detection job.</p>
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The language code of the input documents.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
-    /// <p>An unique identifier for the request. If you don't set the client request token, Amazon
-    /// Comprehend generates one.</p>
+    /// <p>An unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The types of events to detect in the input documents.</p>
     pub target_event_types: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Tags to be associated with the events detection job. A tag is a key-value pair that adds
-    /// metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key
-    /// might be added to a resource to indicate its use by the sales department.</p>
+    /// <p>Tags to be associated with the events detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl StartEventsDetectionJobInput {
@@ -13255,8 +12615,7 @@ impl StartEventsDetectionJobInput {
     pub fn output_data_config(&self) -> std::option::Option<&crate::model::OutputDataConfig> {
         self.output_data_config.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-    /// grants Amazon Comprehend read access to your input data.</p>
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data.</p>
     pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
         self.data_access_role_arn.as_deref()
     }
@@ -13268,8 +12627,7 @@ impl StartEventsDetectionJobInput {
     pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
         self.language_code.as_ref()
     }
-    /// <p>An unique identifier for the request. If you don't set the client request token, Amazon
-    /// Comprehend generates one.</p>
+    /// <p>An unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
@@ -13277,9 +12635,7 @@ impl StartEventsDetectionJobInput {
     pub fn target_event_types(&self) -> std::option::Option<&[std::string::String]> {
         self.target_event_types.as_deref()
     }
-    /// <p>Tags to be associated with the events detection job. A tag is a key-value pair that adds
-    /// metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key
-    /// might be added to a resource to indicate its use by the sales department.</p>
+    /// <p>Tags to be associated with the events detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -13307,45 +12663,25 @@ pub struct StartEntitiesDetectionJobInput {
     pub input_data_config: std::option::Option<crate::model::InputDataConfig>,
     /// <p>Specifies where to send the output files.</p>
     pub output_data_config: std::option::Option<crate::model::OutputDataConfig>,
-    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-    /// grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
     pub data_access_role_arn: std::option::Option<std::string::String>,
     /// <p>The identifier of the job.</p>
     pub job_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) that identifies the specific entity recognizer to be used
-    /// by the <code>StartEntitiesDetectionJob</code>. This ARN is optional and is only used for a
-    /// custom entity recognition job.</p>
+    /// <p>The Amazon Resource Name (ARN) that identifies the specific entity recognizer to be used by the <code>StartEntitiesDetectionJob</code>. This ARN is optional and is only used for a custom entity recognition job.</p>
     pub entity_recognizer_arn: std::option::Option<std::string::String>,
-    /// <p>The language of the input documents. All documents must be in the same language. You can
-    /// specify any of the languages supported by Amazon Comprehend. If custom entities recognition is
-    /// used, this parameter is ignored and the language used for training the model is used
-    /// instead.</p>
+    /// <p>The language of the input documents. All documents must be in the same language. You can specify any of the languages supported by Amazon Comprehend. If custom entities recognition is used, this parameter is ignored and the language used for training the model is used instead.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
-    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon
-    /// Comprehend generates one.</p>
+    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
     pub client_request_token: std::option::Option<std::string::String>,
-    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-    /// data on the storage volume attached to the ML compute instance(s) that process the analysis
-    /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
     /// <ul>
-    /// <li>
-    /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Resource Name (ARN) of a KMS Key:
-    /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
     pub volume_kms_key_id: std::option::Option<std::string::String>,
-    /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing
-    /// the resources you are using for your entity detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
-    /// VPC</a>. </p>
+    /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your entity detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
     pub vpc_config: std::option::Option<crate::model::VpcConfig>,
-    /// <p>Tags to be associated with the entities detection job. A tag is a key-value pair that adds
-    /// metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key
-    /// might be added to a resource to indicate its use by the sales department.</p>
+    /// <p>Tags to be associated with the entities detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl StartEntitiesDetectionJobInput {
@@ -13357,8 +12693,7 @@ impl StartEntitiesDetectionJobInput {
     pub fn output_data_config(&self) -> std::option::Option<&crate::model::OutputDataConfig> {
         self.output_data_config.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-    /// grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
     pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
         self.data_access_role_arn.as_deref()
     }
@@ -13366,50 +12701,31 @@ impl StartEntitiesDetectionJobInput {
     pub fn job_name(&self) -> std::option::Option<&str> {
         self.job_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) that identifies the specific entity recognizer to be used
-    /// by the <code>StartEntitiesDetectionJob</code>. This ARN is optional and is only used for a
-    /// custom entity recognition job.</p>
+    /// <p>The Amazon Resource Name (ARN) that identifies the specific entity recognizer to be used by the <code>StartEntitiesDetectionJob</code>. This ARN is optional and is only used for a custom entity recognition job.</p>
     pub fn entity_recognizer_arn(&self) -> std::option::Option<&str> {
         self.entity_recognizer_arn.as_deref()
     }
-    /// <p>The language of the input documents. All documents must be in the same language. You can
-    /// specify any of the languages supported by Amazon Comprehend. If custom entities recognition is
-    /// used, this parameter is ignored and the language used for training the model is used
-    /// instead.</p>
+    /// <p>The language of the input documents. All documents must be in the same language. You can specify any of the languages supported by Amazon Comprehend. If custom entities recognition is used, this parameter is ignored and the language used for training the model is used instead.</p>
     pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
         self.language_code.as_ref()
     }
-    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon
-    /// Comprehend generates one.</p>
+    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-    /// data on the storage volume attached to the ML compute instance(s) that process the analysis
-    /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
     /// <ul>
-    /// <li>
-    /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Resource Name (ARN) of a KMS Key:
-    /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
     pub fn volume_kms_key_id(&self) -> std::option::Option<&str> {
         self.volume_kms_key_id.as_deref()
     }
-    /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing
-    /// the resources you are using for your entity detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
-    /// VPC</a>. </p>
+    /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your entity detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
     pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
         self.vpc_config.as_ref()
     }
-    /// <p>Tags to be associated with the entities detection job. A tag is a key-value pair that adds
-    /// metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key
-    /// might be added to a resource to indicate its use by the sales department.</p>
+    /// <p>Tags to be associated with the entities detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -13439,36 +12755,21 @@ pub struct StartDominantLanguageDetectionJobInput {
     pub input_data_config: std::option::Option<crate::model::InputDataConfig>,
     /// <p>Specifies where to send the output files.</p>
     pub output_data_config: std::option::Option<crate::model::OutputDataConfig>,
-    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-    /// grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
     pub data_access_role_arn: std::option::Option<std::string::String>,
     /// <p>An identifier for the job.</p>
     pub job_name: std::option::Option<std::string::String>,
-    /// <p>A unique identifier for the request. If you do not set the client request token, Amazon
-    /// Comprehend generates one.</p>
+    /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Comprehend generates one.</p>
     pub client_request_token: std::option::Option<std::string::String>,
-    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-    /// data on the storage volume attached to the ML compute instance(s) that process the analysis
-    /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
     /// <ul>
-    /// <li>
-    /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Resource Name (ARN) of a KMS Key:
-    /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
     pub volume_kms_key_id: std::option::Option<std::string::String>,
-    /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing
-    /// the resources you are using for your dominant language detection job. For more information,
-    /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
+    /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your dominant language detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
     pub vpc_config: std::option::Option<crate::model::VpcConfig>,
-    /// <p>Tags to be associated with the dominant language detection job. A tag is a key-value pair
-    /// that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as
-    /// the key might be added to a resource to indicate its use by the sales department.</p>
+    /// <p>Tags to be associated with the dominant language detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl StartDominantLanguageDetectionJobInput {
@@ -13480,8 +12781,7 @@ impl StartDominantLanguageDetectionJobInput {
     pub fn output_data_config(&self) -> std::option::Option<&crate::model::OutputDataConfig> {
         self.output_data_config.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-    /// grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
     pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
         self.data_access_role_arn.as_deref()
     }
@@ -13489,37 +12789,23 @@ impl StartDominantLanguageDetectionJobInput {
     pub fn job_name(&self) -> std::option::Option<&str> {
         self.job_name.as_deref()
     }
-    /// <p>A unique identifier for the request. If you do not set the client request token, Amazon
-    /// Comprehend generates one.</p>
+    /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Comprehend generates one.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-    /// data on the storage volume attached to the ML compute instance(s) that process the analysis
-    /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
     /// <ul>
-    /// <li>
-    /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Resource Name (ARN) of a KMS Key:
-    /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
     pub fn volume_kms_key_id(&self) -> std::option::Option<&str> {
         self.volume_kms_key_id.as_deref()
     }
-    /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing
-    /// the resources you are using for your dominant language detection job. For more information,
-    /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
+    /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your dominant language detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
     pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
         self.vpc_config.as_ref()
     }
-    /// <p>Tags to be associated with the dominant language detection job. A tag is a key-value pair
-    /// that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as
-    /// the key might be added to a resource to indicate its use by the sales department.</p>
+    /// <p>Tags to be associated with the dominant language detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -13545,42 +12831,25 @@ impl std::fmt::Debug for StartDominantLanguageDetectionJobInput {
 pub struct StartDocumentClassificationJobInput {
     /// <p>The identifier of the job.</p>
     pub job_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the document classifier to use to process the
-    /// job.</p>
+    /// <p>The Amazon Resource Name (ARN) of the document classifier to use to process the job.</p>
     pub document_classifier_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the format and location of the input data for the job.</p>
     pub input_data_config: std::option::Option<crate::model::InputDataConfig>,
     /// <p>Specifies where to send the output files.</p>
     pub output_data_config: std::option::Option<crate::model::OutputDataConfig>,
-    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-    /// grants Amazon Comprehend read access to your input data.</p>
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data.</p>
     pub data_access_role_arn: std::option::Option<std::string::String>,
-    /// <p>A unique identifier for the request. If you do not set the client request token, Amazon
-    /// Comprehend generates one.</p>
+    /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Comprehend generates one.</p>
     pub client_request_token: std::option::Option<std::string::String>,
-    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-    /// data on the storage volume attached to the ML compute instance(s) that process the analysis
-    /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
     /// <ul>
-    /// <li>
-    /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Resource Name (ARN) of a KMS Key:
-    /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
     pub volume_kms_key_id: std::option::Option<std::string::String>,
-    /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing
-    /// the resources you are using for your document classification job. For more information, see
-    /// <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
-    /// VPC</a>. </p>
+    /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your document classification job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
     pub vpc_config: std::option::Option<crate::model::VpcConfig>,
-    /// <p>Tags to be associated with the document classification job. A tag is a key-value pair that
-    /// adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the
-    /// key might be added to a resource to indicate its use by the sales department.</p>
+    /// <p>Tags to be associated with the document classification job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl StartDocumentClassificationJobInput {
@@ -13588,8 +12857,7 @@ impl StartDocumentClassificationJobInput {
     pub fn job_name(&self) -> std::option::Option<&str> {
         self.job_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the document classifier to use to process the
-    /// job.</p>
+    /// <p>The Amazon Resource Name (ARN) of the document classifier to use to process the job.</p>
     pub fn document_classifier_arn(&self) -> std::option::Option<&str> {
         self.document_classifier_arn.as_deref()
     }
@@ -13601,43 +12869,27 @@ impl StartDocumentClassificationJobInput {
     pub fn output_data_config(&self) -> std::option::Option<&crate::model::OutputDataConfig> {
         self.output_data_config.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
-    /// grants Amazon Comprehend read access to your input data.</p>
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data.</p>
     pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
         self.data_access_role_arn.as_deref()
     }
-    /// <p>A unique identifier for the request. If you do not set the client request token, Amazon
-    /// Comprehend generates one.</p>
+    /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Comprehend generates one.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-    /// data on the storage volume attached to the ML compute instance(s) that process the analysis
-    /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
     /// <ul>
-    /// <li>
-    /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Resource Name (ARN) of a KMS Key:
-    /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
     pub fn volume_kms_key_id(&self) -> std::option::Option<&str> {
         self.volume_kms_key_id.as_deref()
     }
-    /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing
-    /// the resources you are using for your document classification job. For more information, see
-    /// <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
-    /// VPC</a>. </p>
+    /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your document classification job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
     pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
         self.vpc_config.as_ref()
     }
-    /// <p>Tags to be associated with the document classification job. A tag is a key-value pair that
-    /// adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the
-    /// key might be added to a resource to indicate its use by the sales department.</p>
+    /// <p>Tags to be associated with the document classification job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -13662,8 +12914,7 @@ impl std::fmt::Debug for StartDocumentClassificationJobInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTopicsDetectionJobsInput {
-    /// <p>Filters the jobs that are returned. Jobs can be filtered on their name, status, or the
-    /// date and time that they were submitted. You can set only one filter at a time.</p>
+    /// <p>Filters the jobs that are returned. Jobs can be filtered on their name, status, or the date and time that they were submitted. You can set only one filter at a time.</p>
     pub filter: std::option::Option<crate::model::TopicsDetectionJobFilter>,
     /// <p>Identifies the next page of results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -13671,8 +12922,7 @@ pub struct ListTopicsDetectionJobsInput {
     pub max_results: std::option::Option<i32>,
 }
 impl ListTopicsDetectionJobsInput {
-    /// <p>Filters the jobs that are returned. Jobs can be filtered on their name, status, or the
-    /// date and time that they were submitted. You can set only one filter at a time.</p>
+    /// <p>Filters the jobs that are returned. Jobs can be filtered on their name, status, or the date and time that they were submitted. You can set only one filter at a time.</p>
     pub fn filter(&self) -> std::option::Option<&crate::model::TopicsDetectionJobFilter> {
         self.filter.as_ref()
     }
@@ -13699,13 +12949,11 @@ impl std::fmt::Debug for ListTopicsDetectionJobsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the given Amazon Comprehend resource you are querying.
-    /// </p>
+    /// <p>The Amazon Resource Name (ARN) of the given Amazon Comprehend resource you are querying. </p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the given Amazon Comprehend resource you are querying.
-    /// </p>
+    /// <p>The Amazon Resource Name (ARN) of the given Amazon Comprehend resource you are querying. </p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -13722,8 +12970,7 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSentimentDetectionJobsInput {
-    /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date
-    /// and time that they were submitted. You can only set one filter at a time.</p>
+    /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
     pub filter: std::option::Option<crate::model::SentimentDetectionJobFilter>,
     /// <p>Identifies the next page of results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -13731,8 +12978,7 @@ pub struct ListSentimentDetectionJobsInput {
     pub max_results: std::option::Option<i32>,
 }
 impl ListSentimentDetectionJobsInput {
-    /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date
-    /// and time that they were submitted. You can only set one filter at a time.</p>
+    /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
     pub fn filter(&self) -> std::option::Option<&crate::model::SentimentDetectionJobFilter> {
         self.filter.as_ref()
     }
@@ -13759,8 +13005,7 @@ impl std::fmt::Debug for ListSentimentDetectionJobsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPiiEntitiesDetectionJobsInput {
-    /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date
-    /// and time that they were submitted. You can only set one filter at a time.</p>
+    /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
     pub filter: std::option::Option<crate::model::PiiEntitiesDetectionJobFilter>,
     /// <p>Identifies the next page of results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -13768,8 +13013,7 @@ pub struct ListPiiEntitiesDetectionJobsInput {
     pub max_results: std::option::Option<i32>,
 }
 impl ListPiiEntitiesDetectionJobsInput {
-    /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date
-    /// and time that they were submitted. You can only set one filter at a time.</p>
+    /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
     pub fn filter(&self) -> std::option::Option<&crate::model::PiiEntitiesDetectionJobFilter> {
         self.filter.as_ref()
     }
@@ -13796,8 +13040,7 @@ impl std::fmt::Debug for ListPiiEntitiesDetectionJobsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListKeyPhrasesDetectionJobsInput {
-    /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date
-    /// and time that they were submitted. You can only set one filter at a time.</p>
+    /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
     pub filter: std::option::Option<crate::model::KeyPhrasesDetectionJobFilter>,
     /// <p>Identifies the next page of results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -13805,8 +13048,7 @@ pub struct ListKeyPhrasesDetectionJobsInput {
     pub max_results: std::option::Option<i32>,
 }
 impl ListKeyPhrasesDetectionJobsInput {
-    /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date
-    /// and time that they were submitted. You can only set one filter at a time.</p>
+    /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
     pub fn filter(&self) -> std::option::Option<&crate::model::KeyPhrasesDetectionJobFilter> {
         self.filter.as_ref()
     }
@@ -13833,8 +13075,7 @@ impl std::fmt::Debug for ListKeyPhrasesDetectionJobsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEventsDetectionJobsInput {
-    /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date
-    /// and time that they were submitted. You can only set one filter at a time.</p>
+    /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
     pub filter: std::option::Option<crate::model::EventsDetectionJobFilter>,
     /// <p>Identifies the next page of results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -13842,8 +13083,7 @@ pub struct ListEventsDetectionJobsInput {
     pub max_results: std::option::Option<i32>,
 }
 impl ListEventsDetectionJobsInput {
-    /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date
-    /// and time that they were submitted. You can only set one filter at a time.</p>
+    /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
     pub fn filter(&self) -> std::option::Option<&crate::model::EventsDetectionJobFilter> {
         self.filter.as_ref()
     }
@@ -13898,9 +13138,7 @@ impl std::fmt::Debug for ListEntityRecognizerSummariesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEntityRecognizersInput {
-    /// <p>Filters the list of entities returned. You can filter on <code>Status</code>,
-    /// <code>SubmitTimeBefore</code>, or <code>SubmitTimeAfter</code>. You can only set one filter
-    /// at a time.</p>
+    /// <p>Filters the list of entities returned. You can filter on <code>Status</code>, <code>SubmitTimeBefore</code>, or <code>SubmitTimeAfter</code>. You can only set one filter at a time.</p>
     pub filter: std::option::Option<crate::model::EntityRecognizerFilter>,
     /// <p>Identifies the next page of results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -13908,9 +13146,7 @@ pub struct ListEntityRecognizersInput {
     pub max_results: std::option::Option<i32>,
 }
 impl ListEntityRecognizersInput {
-    /// <p>Filters the list of entities returned. You can filter on <code>Status</code>,
-    /// <code>SubmitTimeBefore</code>, or <code>SubmitTimeAfter</code>. You can only set one filter
-    /// at a time.</p>
+    /// <p>Filters the list of entities returned. You can filter on <code>Status</code>, <code>SubmitTimeBefore</code>, or <code>SubmitTimeAfter</code>. You can only set one filter at a time.</p>
     pub fn filter(&self) -> std::option::Option<&crate::model::EntityRecognizerFilter> {
         self.filter.as_ref()
     }
@@ -13937,8 +13173,7 @@ impl std::fmt::Debug for ListEntityRecognizersInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEntitiesDetectionJobsInput {
-    /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date
-    /// and time that they were submitted. You can only set one filter at a time.</p>
+    /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
     pub filter: std::option::Option<crate::model::EntitiesDetectionJobFilter>,
     /// <p>Identifies the next page of results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -13946,8 +13181,7 @@ pub struct ListEntitiesDetectionJobsInput {
     pub max_results: std::option::Option<i32>,
 }
 impl ListEntitiesDetectionJobsInput {
-    /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date
-    /// and time that they were submitted. You can only set one filter at a time.</p>
+    /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
     pub fn filter(&self) -> std::option::Option<&crate::model::EntitiesDetectionJobFilter> {
         self.filter.as_ref()
     }
@@ -13974,9 +13208,7 @@ impl std::fmt::Debug for ListEntitiesDetectionJobsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEndpointsInput {
-    /// <p>Filters the endpoints that are returned. You can filter endpoints on their name, model,
-    /// status, or the date and time that they were created. You can only set one filter at a time.
-    /// </p>
+    /// <p>Filters the endpoints that are returned. You can filter endpoints on their name, model, status, or the date and time that they were created. You can only set one filter at a time. </p>
     pub filter: std::option::Option<crate::model::EndpointFilter>,
     /// <p>Identifies the next page of results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -13984,9 +13216,7 @@ pub struct ListEndpointsInput {
     pub max_results: std::option::Option<i32>,
 }
 impl ListEndpointsInput {
-    /// <p>Filters the endpoints that are returned. You can filter endpoints on their name, model,
-    /// status, or the date and time that they were created. You can only set one filter at a time.
-    /// </p>
+    /// <p>Filters the endpoints that are returned. You can filter endpoints on their name, model, status, or the date and time that they were created. You can only set one filter at a time. </p>
     pub fn filter(&self) -> std::option::Option<&crate::model::EndpointFilter> {
         self.filter.as_ref()
     }
@@ -14013,8 +13243,7 @@ impl std::fmt::Debug for ListEndpointsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDominantLanguageDetectionJobsInput {
-    /// <p>Filters that jobs that are returned. You can filter jobs on their name, status, or the
-    /// date and time that they were submitted. You can only set one filter at a time.</p>
+    /// <p>Filters that jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
     pub filter: std::option::Option<crate::model::DominantLanguageDetectionJobFilter>,
     /// <p>Identifies the next page of results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -14022,8 +13251,7 @@ pub struct ListDominantLanguageDetectionJobsInput {
     pub max_results: std::option::Option<i32>,
 }
 impl ListDominantLanguageDetectionJobsInput {
-    /// <p>Filters that jobs that are returned. You can filter jobs on their name, status, or the
-    /// date and time that they were submitted. You can only set one filter at a time.</p>
+    /// <p>Filters that jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
     pub fn filter(&self) -> std::option::Option<&crate::model::DominantLanguageDetectionJobFilter> {
         self.filter.as_ref()
     }
@@ -14078,8 +13306,7 @@ impl std::fmt::Debug for ListDocumentClassifierSummariesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDocumentClassifiersInput {
-    /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date
-    /// and time that they were submitted. You can only set one filter at a time.</p>
+    /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
     pub filter: std::option::Option<crate::model::DocumentClassifierFilter>,
     /// <p>Identifies the next page of results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -14087,8 +13314,7 @@ pub struct ListDocumentClassifiersInput {
     pub max_results: std::option::Option<i32>,
 }
 impl ListDocumentClassifiersInput {
-    /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date
-    /// and time that they were submitted. You can only set one filter at a time.</p>
+    /// <p>Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
     pub fn filter(&self) -> std::option::Option<&crate::model::DocumentClassifierFilter> {
         self.filter.as_ref()
     }
@@ -14115,8 +13341,7 @@ impl std::fmt::Debug for ListDocumentClassifiersInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDocumentClassificationJobsInput {
-    /// <p>Filters the jobs that are returned. You can filter jobs on their names, status, or the
-    /// date and time that they were submitted. You can only set one filter at a time.</p>
+    /// <p>Filters the jobs that are returned. You can filter jobs on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
     pub filter: std::option::Option<crate::model::DocumentClassificationJobFilter>,
     /// <p>Identifies the next page of results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -14124,8 +13349,7 @@ pub struct ListDocumentClassificationJobsInput {
     pub max_results: std::option::Option<i32>,
 }
 impl ListDocumentClassificationJobsInput {
-    /// <p>Filters the jobs that are returned. You can filter jobs on their names, status, or the
-    /// date and time that they were submitted. You can only set one filter at a time.</p>
+    /// <p>Filters the jobs that are returned. You can filter jobs on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
     pub fn filter(&self) -> std::option::Option<&crate::model::DocumentClassificationJobFilter> {
         self.filter.as_ref()
     }
@@ -14152,23 +13376,17 @@ impl std::fmt::Debug for ListDocumentClassificationJobsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectSyntaxInput {
-    /// <p>A UTF-8 string. Each string must contain fewer that 5,000 bytes of UTF encoded
-    /// characters.</p>
+    /// <p>A UTF-8 string. Each string must contain fewer that 5,000 bytes of UTF encoded characters.</p>
     pub text: std::option::Option<std::string::String>,
-    /// <p>The language code of the input documents. You can specify any of the following languages
-    /// supported by Amazon Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"),
-    /// Italian ("it"), or Portuguese ("pt").</p>
+    /// <p>The language code of the input documents. You can specify any of the following languages supported by Amazon Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt").</p>
     pub language_code: std::option::Option<crate::model::SyntaxLanguageCode>,
 }
 impl DetectSyntaxInput {
-    /// <p>A UTF-8 string. Each string must contain fewer that 5,000 bytes of UTF encoded
-    /// characters.</p>
+    /// <p>A UTF-8 string. Each string must contain fewer that 5,000 bytes of UTF encoded characters.</p>
     pub fn text(&self) -> std::option::Option<&str> {
         self.text.as_deref()
     }
-    /// <p>The language code of the input documents. You can specify any of the following languages
-    /// supported by Amazon Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"),
-    /// Italian ("it"), or Portuguese ("pt").</p>
+    /// <p>The language code of the input documents. You can specify any of the following languages supported by Amazon Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt").</p>
     pub fn language_code(&self) -> std::option::Option<&crate::model::SyntaxLanguageCode> {
         self.language_code.as_ref()
     }
@@ -14186,21 +13404,17 @@ impl std::fmt::Debug for DetectSyntaxInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectSentimentInput {
-    /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded
-    /// characters.</p>
+    /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
     pub text: std::option::Option<std::string::String>,
-    /// <p>The language of the input documents. You can specify any of the primary languages
-    /// supported by Amazon Comprehend. All documents must be in the same language.</p>
+    /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
 }
 impl DetectSentimentInput {
-    /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded
-    /// characters.</p>
+    /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
     pub fn text(&self) -> std::option::Option<&str> {
         self.text.as_deref()
     }
-    /// <p>The language of the input documents. You can specify any of the primary languages
-    /// supported by Amazon Comprehend. All documents must be in the same language.</p>
+    /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
     pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
         self.language_code.as_ref()
     }
@@ -14218,15 +13432,13 @@ impl std::fmt::Debug for DetectSentimentInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectPiiEntitiesInput {
-    /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded
-    /// characters.</p>
+    /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
     pub text: std::option::Option<std::string::String>,
     /// <p>The language of the input documents.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
 }
 impl DetectPiiEntitiesInput {
-    /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded
-    /// characters.</p>
+    /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
     pub fn text(&self) -> std::option::Option<&str> {
         self.text.as_deref()
     }
@@ -14248,21 +13460,17 @@ impl std::fmt::Debug for DetectPiiEntitiesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectKeyPhrasesInput {
-    /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded
-    /// characters.</p>
+    /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
     pub text: std::option::Option<std::string::String>,
-    /// <p>The language of the input documents. You can specify any of the primary languages
-    /// supported by Amazon Comprehend. All documents must be in the same language.</p>
+    /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
 }
 impl DetectKeyPhrasesInput {
-    /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded
-    /// characters.</p>
+    /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
     pub fn text(&self) -> std::option::Option<&str> {
         self.text.as_deref()
     }
-    /// <p>The language of the input documents. You can specify any of the primary languages
-    /// supported by Amazon Comprehend. All documents must be in the same language.</p>
+    /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
     pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
         self.language_code.as_ref()
     }
@@ -14280,41 +13488,27 @@ impl std::fmt::Debug for DetectKeyPhrasesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectEntitiesInput {
-    /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded
-    /// characters.</p>
+    /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
     pub text: std::option::Option<std::string::String>,
-    /// <p>The language of the input documents. You can specify any of the primary languages
-    /// supported by Amazon Comprehend. All documents must be in the same language.</p>
-    /// <p>If your request includes the endpoint for a custom entity recognition model, Amazon
-    /// Comprehend uses the language of your custom model, and it ignores any language code that you
-    /// specify here.</p>
+    /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
+    /// <p>If your request includes the endpoint for a custom entity recognition model, Amazon Comprehend uses the language of your custom model, and it ignores any language code that you specify here.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
-    /// <p>The Amazon Resource Name of an endpoint that is associated with a custom entity
-    /// recognition model. Provide an endpoint if you want to detect entities by using your own custom
-    /// model instead of the default model that is used by Amazon Comprehend.</p>
-    /// <p>If you specify an endpoint, Amazon Comprehend uses the language of your custom model, and
-    /// it ignores any language code that you provide in your request.</p>
+    /// <p>The Amazon Resource Name of an endpoint that is associated with a custom entity recognition model. Provide an endpoint if you want to detect entities by using your own custom model instead of the default model that is used by Amazon Comprehend.</p>
+    /// <p>If you specify an endpoint, Amazon Comprehend uses the language of your custom model, and it ignores any language code that you provide in your request.</p>
     pub endpoint_arn: std::option::Option<std::string::String>,
 }
 impl DetectEntitiesInput {
-    /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded
-    /// characters.</p>
+    /// <p>A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
     pub fn text(&self) -> std::option::Option<&str> {
         self.text.as_deref()
     }
-    /// <p>The language of the input documents. You can specify any of the primary languages
-    /// supported by Amazon Comprehend. All documents must be in the same language.</p>
-    /// <p>If your request includes the endpoint for a custom entity recognition model, Amazon
-    /// Comprehend uses the language of your custom model, and it ignores any language code that you
-    /// specify here.</p>
+    /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
+    /// <p>If your request includes the endpoint for a custom entity recognition model, Amazon Comprehend uses the language of your custom model, and it ignores any language code that you specify here.</p>
     pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
         self.language_code.as_ref()
     }
-    /// <p>The Amazon Resource Name of an endpoint that is associated with a custom entity
-    /// recognition model. Provide an endpoint if you want to detect entities by using your own custom
-    /// model instead of the default model that is used by Amazon Comprehend.</p>
-    /// <p>If you specify an endpoint, Amazon Comprehend uses the language of your custom model, and
-    /// it ignores any language code that you provide in your request.</p>
+    /// <p>The Amazon Resource Name of an endpoint that is associated with a custom entity recognition model. Provide an endpoint if you want to detect entities by using your own custom model instead of the default model that is used by Amazon Comprehend.</p>
+    /// <p>If you specify an endpoint, Amazon Comprehend uses the language of your custom model, and it ignores any language code that you provide in your request.</p>
     pub fn endpoint_arn(&self) -> std::option::Option<&str> {
         self.endpoint_arn.as_deref()
     }
@@ -14333,13 +13527,11 @@ impl std::fmt::Debug for DetectEntitiesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectDominantLanguageInput {
-    /// <p>A UTF-8 text string. Each string should contain at least 20 characters and must contain
-    /// fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+    /// <p>A UTF-8 text string. Each string should contain at least 20 characters and must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
     pub text: std::option::Option<std::string::String>,
 }
 impl DetectDominantLanguageInput {
-    /// <p>A UTF-8 text string. Each string should contain at least 20 characters and must contain
-    /// fewer that 5,000 bytes of UTF-8 encoded characters.</p>
+    /// <p>A UTF-8 text string. Each string should contain at least 20 characters and must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
     pub fn text(&self) -> std::option::Option<&str> {
         self.text.as_deref()
     }
@@ -14377,13 +13569,11 @@ impl std::fmt::Debug for DescribeTopicsDetectionJobInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSentimentDetectionJobInput {
-    /// <p>The identifier that Amazon Comprehend generated for the job. The  operation returns this identifier in its
-    /// response.</p>
+    /// <p>The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
 impl DescribeSentimentDetectionJobInput {
-    /// <p>The identifier that Amazon Comprehend generated for the job. The  operation returns this identifier in its
-    /// response.</p>
+    /// <p>The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
@@ -14400,13 +13590,11 @@ impl std::fmt::Debug for DescribeSentimentDetectionJobInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePiiEntitiesDetectionJobInput {
-    /// <p>The identifier that Amazon Comprehend generated for the job. The  operation returns this identifier in its
-    /// response.</p>
+    /// <p>The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
 impl DescribePiiEntitiesDetectionJobInput {
-    /// <p>The identifier that Amazon Comprehend generated for the job. The  operation returns this identifier in its
-    /// response.</p>
+    /// <p>The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
@@ -14423,13 +13611,11 @@ impl std::fmt::Debug for DescribePiiEntitiesDetectionJobInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeKeyPhrasesDetectionJobInput {
-    /// <p>The identifier that Amazon Comprehend generated for the job. The  operation returns this identifier in its
-    /// response.</p>
+    /// <p>The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
 impl DescribeKeyPhrasesDetectionJobInput {
-    /// <p>The identifier that Amazon Comprehend generated for the job. The  operation returns this identifier in its
-    /// response.</p>
+    /// <p>The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
@@ -14488,13 +13674,11 @@ impl std::fmt::Debug for DescribeEntityRecognizerInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEntitiesDetectionJobInput {
-    /// <p>The identifier that Amazon Comprehend generated for the job. The  operation returns this identifier in its
-    /// response.</p>
+    /// <p>The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
 impl DescribeEntitiesDetectionJobInput {
-    /// <p>The identifier that Amazon Comprehend generated for the job. The  operation returns this identifier in its
-    /// response.</p>
+    /// <p>The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
@@ -14532,13 +13716,11 @@ impl std::fmt::Debug for DescribeEndpointInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDominantLanguageDetectionJobInput {
-    /// <p>The identifier that Amazon Comprehend generated for the job. The  operation returns this identifier in its
-    /// response.</p>
+    /// <p>The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
 impl DescribeDominantLanguageDetectionJobInput {
-    /// <p>The identifier that Amazon Comprehend generated for the job. The  operation returns this identifier in its
-    /// response.</p>
+    /// <p>The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
@@ -14555,13 +13737,11 @@ impl std::fmt::Debug for DescribeDominantLanguageDetectionJobInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDocumentClassifierInput {
-    /// <p>The Amazon Resource Name (ARN) that identifies the document classifier. The  operation returns this identifier in its
-    /// response.</p>
+    /// <p>The Amazon Resource Name (ARN) that identifies the document classifier. The operation returns this identifier in its response.</p>
     pub document_classifier_arn: std::option::Option<std::string::String>,
 }
 impl DescribeDocumentClassifierInput {
-    /// <p>The Amazon Resource Name (ARN) that identifies the document classifier. The  operation returns this identifier in its
-    /// response.</p>
+    /// <p>The Amazon Resource Name (ARN) that identifies the document classifier. The operation returns this identifier in its response.</p>
     pub fn document_classifier_arn(&self) -> std::option::Option<&str> {
         self.document_classifier_arn.as_deref()
     }
@@ -14578,13 +13758,11 @@ impl std::fmt::Debug for DescribeDocumentClassifierInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDocumentClassificationJobInput {
-    /// <p>The identifier that Amazon Comprehend generated for the job. The  operation returns this identifier in its
-    /// response.</p>
+    /// <p>The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
 impl DescribeDocumentClassificationJobInput {
-    /// <p>The identifier that Amazon Comprehend generated for the job. The  operation returns this identifier in its
-    /// response.</p>
+    /// <p>The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
@@ -14664,146 +13842,82 @@ impl std::fmt::Debug for DeleteDocumentClassifierInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEntityRecognizerInput {
-    /// <p>The name given to the newly created recognizer. Recognizer names can be a maximum of 256
-    /// characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed. The name
-    /// must be unique in the account/region.</p>
+    /// <p>The name given to the newly created recognizer. Recognizer names can be a maximum of 256 characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed. The name must be unique in the account/region.</p>
     pub recognizer_name: std::option::Option<std::string::String>,
-    /// <p>The version name given to the newly created recognizer.
-    /// Version names can be a maximum of 256 characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed.
-    /// The version name must be unique among all models with the same recognizer name in the account/ AWS Region.</p>
+    /// <p>The version name given to the newly created recognizer. Version names can be a maximum of 256 characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed. The version name must be unique among all models with the same recognizer name in the account/ AWS Region.</p>
     pub version_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants
-    /// Amazon Comprehend read access to your input data.</p>
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants Amazon Comprehend read access to your input data.</p>
     pub data_access_role_arn: std::option::Option<std::string::String>,
-    /// <p>Tags to be associated with the entity recognizer being created. A tag is a key-value pair
-    /// that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with
-    /// "Sales" as the key might be added to a resource to indicate its use by the sales department.
-    /// </p>
+    /// <p>Tags to be associated with the entity recognizer being created. A tag is a key-value pair that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department. </p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>Specifies the format and location of the input data. The S3 bucket containing the input
-    /// data must be located in the same region as the entity recognizer being created. </p>
+    /// <p>Specifies the format and location of the input data. The S3 bucket containing the input data must be located in the same region as the entity recognizer being created. </p>
     pub input_data_config: std::option::Option<crate::model::EntityRecognizerInputDataConfig>,
-    /// <p> A unique identifier for the request. If you don't set the client request token, Amazon
-    /// Comprehend generates one.</p>
+    /// <p> A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
     pub client_request_token: std::option::Option<std::string::String>,
-    /// <p> You can specify any of the following languages supported by Amazon Comprehend: English
-    /// ("en"), Spanish ("es"), French ("fr"), Italian ("it"), German ("de"), or Portuguese ("pt").
-    /// All documents must be in the same language.</p>
+    /// <p> You can specify any of the following languages supported by Amazon Comprehend: English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), German ("de"), or Portuguese ("pt"). All documents must be in the same language.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
-    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-    /// data on the storage volume attached to the ML compute instance(s) that process the analysis
-    /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
     /// <ul>
-    /// <li>
-    /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Resource Name (ARN) of a KMS Key:
-    /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
     pub volume_kms_key_id: std::option::Option<std::string::String>,
-    /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing
-    /// the resources you are using for your custom entity recognizer. For more information, see
-    /// <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
-    /// VPC</a>. </p>
+    /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your custom entity recognizer. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
     pub vpc_config: std::option::Option<crate::model::VpcConfig>,
-    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-    /// trained custom models. The ModelKmsKeyId can be either of the following formats</p>
+    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either of the following formats</p>
     /// <ul>
-    /// <li>
-    /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Resource Name (ARN) of a KMS Key:
-    /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
     pub model_kms_key_id: std::option::Option<std::string::String>,
 }
 impl CreateEntityRecognizerInput {
-    /// <p>The name given to the newly created recognizer. Recognizer names can be a maximum of 256
-    /// characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed. The name
-    /// must be unique in the account/region.</p>
+    /// <p>The name given to the newly created recognizer. Recognizer names can be a maximum of 256 characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed. The name must be unique in the account/region.</p>
     pub fn recognizer_name(&self) -> std::option::Option<&str> {
         self.recognizer_name.as_deref()
     }
-    /// <p>The version name given to the newly created recognizer.
-    /// Version names can be a maximum of 256 characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed.
-    /// The version name must be unique among all models with the same recognizer name in the account/ AWS Region.</p>
+    /// <p>The version name given to the newly created recognizer. Version names can be a maximum of 256 characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed. The version name must be unique among all models with the same recognizer name in the account/ AWS Region.</p>
     pub fn version_name(&self) -> std::option::Option<&str> {
         self.version_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants
-    /// Amazon Comprehend read access to your input data.</p>
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants Amazon Comprehend read access to your input data.</p>
     pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
         self.data_access_role_arn.as_deref()
     }
-    /// <p>Tags to be associated with the entity recognizer being created. A tag is a key-value pair
-    /// that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with
-    /// "Sales" as the key might be added to a resource to indicate its use by the sales department.
-    /// </p>
+    /// <p>Tags to be associated with the entity recognizer being created. A tag is a key-value pair that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department. </p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>Specifies the format and location of the input data. The S3 bucket containing the input
-    /// data must be located in the same region as the entity recognizer being created. </p>
+    /// <p>Specifies the format and location of the input data. The S3 bucket containing the input data must be located in the same region as the entity recognizer being created. </p>
     pub fn input_data_config(
         &self,
     ) -> std::option::Option<&crate::model::EntityRecognizerInputDataConfig> {
         self.input_data_config.as_ref()
     }
-    /// <p> A unique identifier for the request. If you don't set the client request token, Amazon
-    /// Comprehend generates one.</p>
+    /// <p> A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p> You can specify any of the following languages supported by Amazon Comprehend: English
-    /// ("en"), Spanish ("es"), French ("fr"), Italian ("it"), German ("de"), or Portuguese ("pt").
-    /// All documents must be in the same language.</p>
+    /// <p> You can specify any of the following languages supported by Amazon Comprehend: English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), German ("de"), or Portuguese ("pt"). All documents must be in the same language.</p>
     pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
         self.language_code.as_ref()
     }
-    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-    /// data on the storage volume attached to the ML compute instance(s) that process the analysis
-    /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
     /// <ul>
-    /// <li>
-    /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Resource Name (ARN) of a KMS Key:
-    /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
     pub fn volume_kms_key_id(&self) -> std::option::Option<&str> {
         self.volume_kms_key_id.as_deref()
     }
-    /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing
-    /// the resources you are using for your custom entity recognizer. For more information, see
-    /// <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
-    /// VPC</a>. </p>
+    /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your custom entity recognizer. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
     pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
         self.vpc_config.as_ref()
     }
-    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-    /// trained custom models. The ModelKmsKeyId can be either of the following formats</p>
+    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either of the following formats</p>
     /// <ul>
-    /// <li>
-    /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Resource Name (ARN) of a KMS Key:
-    /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
     pub fn model_kms_key_id(&self) -> std::option::Option<&str> {
         self.model_kms_key_id.as_deref()
@@ -14830,61 +13944,41 @@ impl std::fmt::Debug for CreateEntityRecognizerInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEndpointInput {
-    /// <p>This is the descriptive suffix that becomes part of the <code>EndpointArn</code> used for
-    /// all subsequent requests to this resource. </p>
+    /// <p>This is the descriptive suffix that becomes part of the <code>EndpointArn</code> used for all subsequent requests to this resource. </p>
     pub endpoint_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Number (ARN) of the model to which the endpoint will be
-    /// attached.</p>
+    /// <p>The Amazon Resource Number (ARN) of the model to which the endpoint will be attached.</p>
     pub model_arn: std::option::Option<std::string::String>,
-    /// <p> The desired number of inference units to be used by the model using this endpoint.
-    ///
-    /// Each inference unit represents of a throughput of 100 characters per second.</p>
+    /// <p> The desired number of inference units to be used by the model using this endpoint. Each inference unit represents of a throughput of 100 characters per second.</p>
     pub desired_inference_units: std::option::Option<i32>,
-    /// <p>An idempotency token provided by the customer. If this token matches a previous endpoint
-    /// creation request, Amazon Comprehend will not return a <code>ResourceInUseException</code>.
-    /// </p>
+    /// <p>An idempotency token provided by the customer. If this token matches a previous endpoint creation request, Amazon Comprehend will not return a <code>ResourceInUseException</code>. </p>
     pub client_request_token: std::option::Option<std::string::String>,
-    /// <p>Tags associated with the endpoint being created. A tag is a key-value pair that adds
-    /// metadata to the endpoint. For example, a tag with "Sales" as the key might be added to an
-    /// endpoint to indicate its use by the sales department. </p>
+    /// <p>Tags associated with the endpoint being created. A tag is a key-value pair that adds metadata to the endpoint. For example, a tag with "Sales" as the key might be added to an endpoint to indicate its use by the sales department. </p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>The Amazon Resource Name (ARN) of the AWS identity and Access Management (IAM) role that
-    /// grants Amazon Comprehend read access to trained custom models encrypted with a customer
-    /// managed key (ModelKmsKeyId).</p>
+    /// <p>The Amazon Resource Name (ARN) of the AWS identity and Access Management (IAM) role that grants Amazon Comprehend read access to trained custom models encrypted with a customer managed key (ModelKmsKeyId).</p>
     pub data_access_role_arn: std::option::Option<std::string::String>,
 }
 impl CreateEndpointInput {
-    /// <p>This is the descriptive suffix that becomes part of the <code>EndpointArn</code> used for
-    /// all subsequent requests to this resource. </p>
+    /// <p>This is the descriptive suffix that becomes part of the <code>EndpointArn</code> used for all subsequent requests to this resource. </p>
     pub fn endpoint_name(&self) -> std::option::Option<&str> {
         self.endpoint_name.as_deref()
     }
-    /// <p>The Amazon Resource Number (ARN) of the model to which the endpoint will be
-    /// attached.</p>
+    /// <p>The Amazon Resource Number (ARN) of the model to which the endpoint will be attached.</p>
     pub fn model_arn(&self) -> std::option::Option<&str> {
         self.model_arn.as_deref()
     }
-    /// <p> The desired number of inference units to be used by the model using this endpoint.
-    ///
-    /// Each inference unit represents of a throughput of 100 characters per second.</p>
+    /// <p> The desired number of inference units to be used by the model using this endpoint. Each inference unit represents of a throughput of 100 characters per second.</p>
     pub fn desired_inference_units(&self) -> std::option::Option<i32> {
         self.desired_inference_units
     }
-    /// <p>An idempotency token provided by the customer. If this token matches a previous endpoint
-    /// creation request, Amazon Comprehend will not return a <code>ResourceInUseException</code>.
-    /// </p>
+    /// <p>An idempotency token provided by the customer. If this token matches a previous endpoint creation request, Amazon Comprehend will not return a <code>ResourceInUseException</code>. </p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p>Tags associated with the endpoint being created. A tag is a key-value pair that adds
-    /// metadata to the endpoint. For example, a tag with "Sales" as the key might be added to an
-    /// endpoint to indicate its use by the sales department. </p>
+    /// <p>Tags associated with the endpoint being created. A tag is a key-value pair that adds metadata to the endpoint. For example, a tag with "Sales" as the key might be added to an endpoint to indicate its use by the sales department. </p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the AWS identity and Access Management (IAM) role that
-    /// grants Amazon Comprehend read access to trained custom models encrypted with a customer
-    /// managed key (ModelKmsKeyId).</p>
+    /// <p>The Amazon Resource Name (ARN) of the AWS identity and Access Management (IAM) role that grants Amazon Comprehend read access to trained custom models encrypted with a customer managed key (ModelKmsKeyId).</p>
     pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
         self.data_access_role_arn.as_deref()
     }
@@ -14908,67 +14002,34 @@ impl std::fmt::Debug for CreateEndpointInput {
 pub struct CreateDocumentClassifierInput {
     /// <p>The name of the document classifier.</p>
     pub document_classifier_name: std::option::Option<std::string::String>,
-    /// <p>The version name given to the newly created classifier.
-    /// Version names can have a maximum of 256 characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed.
-    /// The version name must be unique among all models with the same classifier name in the account/AWS Region.</p>
+    /// <p>The version name given to the newly created classifier. Version names can have a maximum of 256 characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed. The version name must be unique among all models with the same classifier name in the account/AWS Region.</p>
     pub version_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants
-    /// Amazon Comprehend read access to your input data.</p>
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants Amazon Comprehend read access to your input data.</p>
     pub data_access_role_arn: std::option::Option<std::string::String>,
-    /// <p>Tags to be associated with the document classifier being created. A tag is a key-value
-    /// pair that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with
-    /// "Sales" as the key might be added to a resource to indicate its use by the sales department.
-    /// </p>
+    /// <p>Tags to be associated with the document classifier being created. A tag is a key-value pair that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department. </p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Specifies the format and location of the input data for the job.</p>
     pub input_data_config: std::option::Option<crate::model::DocumentClassifierInputDataConfig>,
-    /// <p>Enables the addition of output results configuration parameters for custom classifier
-    /// jobs.</p>
+    /// <p>Enables the addition of output results configuration parameters for custom classifier jobs.</p>
     pub output_data_config: std::option::Option<crate::model::DocumentClassifierOutputDataConfig>,
-    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon
-    /// Comprehend generates one.</p>
+    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
     pub client_request_token: std::option::Option<std::string::String>,
-    /// <p>The language of the input documents. You can specify any of the following languages
-    /// supported by Amazon Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"),
-    /// Italian ("it"), or Portuguese ("pt"). All documents must be in the same language.</p>
+    /// <p>The language of the input documents. You can specify any of the following languages supported by Amazon Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt"). All documents must be in the same language.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
-    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-    /// data on the storage volume attached to the ML compute instance(s) that process the analysis
-    /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
     /// <ul>
-    /// <li>
-    /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Resource Name (ARN) of a KMS Key:
-    /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
     pub volume_kms_key_id: std::option::Option<std::string::String>,
-    /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing
-    /// the resources you are using for your custom classifier. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
-    /// VPC</a>. </p>
+    /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your custom classifier. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
     pub vpc_config: std::option::Option<crate::model::VpcConfig>,
-    /// <p>Indicates the mode in which the classifier will be trained. The classifier can be trained
-    /// in multi-class mode, which identifies one and only one class for each document, or multi-label
-    /// mode, which identifies one or more labels for each document. In multi-label mode, multiple
-    /// labels for an individual document are separated by a delimiter. The default delimiter between
-    /// labels is a pipe (|).</p>
+    /// <p>Indicates the mode in which the classifier will be trained. The classifier can be trained in multi-class mode, which identifies one and only one class for each document, or multi-label mode, which identifies one or more labels for each document. In multi-label mode, multiple labels for an individual document are separated by a delimiter. The default delimiter between labels is a pipe (|).</p>
     pub mode: std::option::Option<crate::model::DocumentClassifierMode>,
-    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-    /// trained custom models. The ModelKmsKeyId can be either of the following formats:</p>
+    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either of the following formats:</p>
     /// <ul>
-    /// <li>
-    /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Resource Name (ARN) of a KMS Key:
-    /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
     pub model_kms_key_id: std::option::Option<std::string::String>,
 }
@@ -14977,21 +14038,15 @@ impl CreateDocumentClassifierInput {
     pub fn document_classifier_name(&self) -> std::option::Option<&str> {
         self.document_classifier_name.as_deref()
     }
-    /// <p>The version name given to the newly created classifier.
-    /// Version names can have a maximum of 256 characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed.
-    /// The version name must be unique among all models with the same classifier name in the account/AWS Region.</p>
+    /// <p>The version name given to the newly created classifier. Version names can have a maximum of 256 characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed. The version name must be unique among all models with the same classifier name in the account/AWS Region.</p>
     pub fn version_name(&self) -> std::option::Option<&str> {
         self.version_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants
-    /// Amazon Comprehend read access to your input data.</p>
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants Amazon Comprehend read access to your input data.</p>
     pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
         self.data_access_role_arn.as_deref()
     }
-    /// <p>Tags to be associated with the document classifier being created. A tag is a key-value
-    /// pair that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with
-    /// "Sales" as the key might be added to a resource to indicate its use by the sales department.
-    /// </p>
+    /// <p>Tags to be associated with the document classifier being created. A tag is a key-value pair that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department. </p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -15001,67 +14056,40 @@ impl CreateDocumentClassifierInput {
     ) -> std::option::Option<&crate::model::DocumentClassifierInputDataConfig> {
         self.input_data_config.as_ref()
     }
-    /// <p>Enables the addition of output results configuration parameters for custom classifier
-    /// jobs.</p>
+    /// <p>Enables the addition of output results configuration parameters for custom classifier jobs.</p>
     pub fn output_data_config(
         &self,
     ) -> std::option::Option<&crate::model::DocumentClassifierOutputDataConfig> {
         self.output_data_config.as_ref()
     }
-    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon
-    /// Comprehend generates one.</p>
+    /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p>The language of the input documents. You can specify any of the following languages
-    /// supported by Amazon Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"),
-    /// Italian ("it"), or Portuguese ("pt"). All documents must be in the same language.</p>
+    /// <p>The language of the input documents. You can specify any of the following languages supported by Amazon Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt"). All documents must be in the same language.</p>
     pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
         self.language_code.as_ref()
     }
-    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-    /// data on the storage volume attached to the ML compute instance(s) that process the analysis
-    /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
     /// <ul>
-    /// <li>
-    /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Resource Name (ARN) of a KMS Key:
-    /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
     pub fn volume_kms_key_id(&self) -> std::option::Option<&str> {
         self.volume_kms_key_id.as_deref()
     }
-    /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing
-    /// the resources you are using for your custom classifier. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
-    /// VPC</a>. </p>
+    /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your custom classifier. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
     pub fn vpc_config(&self) -> std::option::Option<&crate::model::VpcConfig> {
         self.vpc_config.as_ref()
     }
-    /// <p>Indicates the mode in which the classifier will be trained. The classifier can be trained
-    /// in multi-class mode, which identifies one and only one class for each document, or multi-label
-    /// mode, which identifies one or more labels for each document. In multi-label mode, multiple
-    /// labels for an individual document are separated by a delimiter. The default delimiter between
-    /// labels is a pipe (|).</p>
+    /// <p>Indicates the mode in which the classifier will be trained. The classifier can be trained in multi-class mode, which identifies one and only one class for each document, or multi-label mode, which identifies one or more labels for each document. In multi-label mode, multiple labels for an individual document are separated by a delimiter. The default delimiter between labels is a pipe (|).</p>
     pub fn mode(&self) -> std::option::Option<&crate::model::DocumentClassifierMode> {
         self.mode.as_ref()
     }
-    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-    /// trained custom models. The ModelKmsKeyId can be either of the following formats:</p>
+    /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either of the following formats:</p>
     /// <ul>
-    /// <li>
-    /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Amazon Resource Name (ARN) of a KMS Key:
-    /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
     /// </ul>
     pub fn model_kms_key_id(&self) -> std::option::Option<&str> {
         self.model_kms_key_id.as_deref()
@@ -15090,15 +14118,13 @@ impl std::fmt::Debug for CreateDocumentClassifierInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContainsPiiEntitiesInput {
-    /// <p>Creates a new document classification request to analyze a single document in real-time,
-    /// returning personally identifiable information (PII) entity labels.</p>
+    /// <p>Creates a new document classification request to analyze a single document in real-time, returning personally identifiable information (PII) entity labels.</p>
     pub text: std::option::Option<std::string::String>,
     /// <p>The language of the input documents.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
 }
 impl ContainsPiiEntitiesInput {
-    /// <p>Creates a new document classification request to analyze a single document in real-time,
-    /// returning personally identifiable information (PII) entity labels.</p>
+    /// <p>Creates a new document classification request to analyze a single document in real-time, returning personally identifiable information (PII) entity labels.</p>
     pub fn text(&self) -> std::option::Option<&str> {
         self.text.as_deref()
     }
@@ -15148,25 +14174,17 @@ impl std::fmt::Debug for ClassifyDocumentInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDetectSyntaxInput {
-    /// <p>A list containing the text of the input documents. The list can contain a maximum of 25
-    /// documents. Each document must contain fewer that 5,000 bytes of UTF-8 encoded
-    /// characters.</p>
+    /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
     pub text_list: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The language of the input documents. You can specify any of the following languages
-    /// supported by Amazon Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"),
-    /// Italian ("it"), or Portuguese ("pt"). All documents must be in the same language.</p>
+    /// <p>The language of the input documents. You can specify any of the following languages supported by Amazon Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt"). All documents must be in the same language.</p>
     pub language_code: std::option::Option<crate::model::SyntaxLanguageCode>,
 }
 impl BatchDetectSyntaxInput {
-    /// <p>A list containing the text of the input documents. The list can contain a maximum of 25
-    /// documents. Each document must contain fewer that 5,000 bytes of UTF-8 encoded
-    /// characters.</p>
+    /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
     pub fn text_list(&self) -> std::option::Option<&[std::string::String]> {
         self.text_list.as_deref()
     }
-    /// <p>The language of the input documents. You can specify any of the following languages
-    /// supported by Amazon Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"),
-    /// Italian ("it"), or Portuguese ("pt"). All documents must be in the same language.</p>
+    /// <p>The language of the input documents. You can specify any of the following languages supported by Amazon Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt"). All documents must be in the same language.</p>
     pub fn language_code(&self) -> std::option::Option<&crate::model::SyntaxLanguageCode> {
         self.language_code.as_ref()
     }
@@ -15184,23 +14202,17 @@ impl std::fmt::Debug for BatchDetectSyntaxInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDetectSentimentInput {
-    /// <p>A list containing the text of the input documents. The list can contain a maximum of 25
-    /// documents. Each document must contain fewer that 5,000 bytes of UTF-8 encoded
-    /// characters.</p>
+    /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
     pub text_list: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The language of the input documents. You can specify any of the primary languages
-    /// supported by Amazon Comprehend. All documents must be in the same language.</p>
+    /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
 }
 impl BatchDetectSentimentInput {
-    /// <p>A list containing the text of the input documents. The list can contain a maximum of 25
-    /// documents. Each document must contain fewer that 5,000 bytes of UTF-8 encoded
-    /// characters.</p>
+    /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
     pub fn text_list(&self) -> std::option::Option<&[std::string::String]> {
         self.text_list.as_deref()
     }
-    /// <p>The language of the input documents. You can specify any of the primary languages
-    /// supported by Amazon Comprehend. All documents must be in the same language.</p>
+    /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
     pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
         self.language_code.as_ref()
     }
@@ -15218,23 +14230,17 @@ impl std::fmt::Debug for BatchDetectSentimentInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDetectKeyPhrasesInput {
-    /// <p>A list containing the text of the input documents. The list can contain a maximum of 25
-    /// documents. Each document must contain fewer that 5,000 bytes of UTF-8 encoded
-    /// characters.</p>
+    /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
     pub text_list: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The language of the input documents. You can specify any of the primary languages
-    /// supported by Amazon Comprehend. All documents must be in the same language.</p>
+    /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
 }
 impl BatchDetectKeyPhrasesInput {
-    /// <p>A list containing the text of the input documents. The list can contain a maximum of 25
-    /// documents. Each document must contain fewer that 5,000 bytes of UTF-8 encoded
-    /// characters.</p>
+    /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer that 5,000 bytes of UTF-8 encoded characters.</p>
     pub fn text_list(&self) -> std::option::Option<&[std::string::String]> {
         self.text_list.as_deref()
     }
-    /// <p>The language of the input documents. You can specify any of the primary languages
-    /// supported by Amazon Comprehend. All documents must be in the same language.</p>
+    /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
     pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
         self.language_code.as_ref()
     }
@@ -15252,23 +14258,17 @@ impl std::fmt::Debug for BatchDetectKeyPhrasesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDetectEntitiesInput {
-    /// <p>A list containing the text of the input documents. The list can contain a maximum of 25
-    /// documents. Each document must contain fewer than 5,000 bytes of UTF-8 encoded
-    /// characters.</p>
+    /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer than 5,000 bytes of UTF-8 encoded characters.</p>
     pub text_list: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The language of the input documents. You can specify any of the primary languages
-    /// supported by Amazon Comprehend. All documents must be in the same language.</p>
+    /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
 }
 impl BatchDetectEntitiesInput {
-    /// <p>A list containing the text of the input documents. The list can contain a maximum of 25
-    /// documents. Each document must contain fewer than 5,000 bytes of UTF-8 encoded
-    /// characters.</p>
+    /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document must contain fewer than 5,000 bytes of UTF-8 encoded characters.</p>
     pub fn text_list(&self) -> std::option::Option<&[std::string::String]> {
         self.text_list.as_deref()
     }
-    /// <p>The language of the input documents. You can specify any of the primary languages
-    /// supported by Amazon Comprehend. All documents must be in the same language.</p>
+    /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
     pub fn language_code(&self) -> std::option::Option<&crate::model::LanguageCode> {
         self.language_code.as_ref()
     }
@@ -15286,15 +14286,11 @@ impl std::fmt::Debug for BatchDetectEntitiesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDetectDominantLanguageInput {
-    /// <p>A list containing the text of the input documents. The list can contain a maximum of 25
-    /// documents. Each document should contain at least 20 characters and must contain fewer than
-    /// 5,000 bytes of UTF-8 encoded characters.</p>
+    /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document should contain at least 20 characters and must contain fewer than 5,000 bytes of UTF-8 encoded characters.</p>
     pub text_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchDetectDominantLanguageInput {
-    /// <p>A list containing the text of the input documents. The list can contain a maximum of 25
-    /// documents. Each document should contain at least 20 characters and must contain fewer than
-    /// 5,000 bytes of UTF-8 encoded characters.</p>
+    /// <p>A list containing the text of the input documents. The list can contain a maximum of 25 documents. Each document should contain at least 20 characters and must contain fewer than 5,000 bytes of UTF-8 encoded characters.</p>
     pub fn text_list(&self) -> std::option::Option<&[std::string::String]> {
         self.text_list.as_deref()
     }

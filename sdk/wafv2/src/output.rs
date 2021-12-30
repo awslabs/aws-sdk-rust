@@ -542,17 +542,13 @@ impl PutLoggingConfigurationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWebAcLsOutput {
-    /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
-    /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
-    /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     pub next_marker: std::option::Option<std::string::String>,
     /// <p></p>
     pub web_ac_ls: std::option::Option<std::vec::Vec<crate::model::WebAclSummary>>,
 }
 impl ListWebAcLsOutput {
-    /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
-    /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
-    /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     pub fn next_marker(&self) -> std::option::Option<&str> {
         self.next_marker.as_deref()
     }
@@ -579,16 +575,12 @@ pub mod list_web_ac_ls_output {
         pub(crate) web_ac_ls: std::option::Option<std::vec::Vec<crate::model::WebAclSummary>>,
     }
     impl Builder {
-        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
-        /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
-        /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
         pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_marker = Some(input.into());
             self
         }
-        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
-        /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
-        /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
@@ -632,17 +624,13 @@ impl ListWebAcLsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
-    /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
-    /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
-    /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>The collection of tagging definitions for the resource. </p>
     pub tag_info_for_resource: std::option::Option<crate::model::TagInfoForResource>,
 }
 impl ListTagsForResourceOutput {
-    /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
-    /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
-    /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     pub fn next_marker(&self) -> std::option::Option<&str> {
         self.next_marker.as_deref()
     }
@@ -669,16 +657,12 @@ pub mod list_tags_for_resource_output {
         pub(crate) tag_info_for_resource: std::option::Option<crate::model::TagInfoForResource>,
     }
     impl Builder {
-        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
-        /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
-        /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
         pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_marker = Some(input.into());
             self
         }
-        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
-        /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
-        /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
@@ -716,17 +700,13 @@ impl ListTagsForResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRuleGroupsOutput {
-    /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
-    /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
-    /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     pub next_marker: std::option::Option<std::string::String>,
     /// <p></p>
     pub rule_groups: std::option::Option<std::vec::Vec<crate::model::RuleGroupSummary>>,
 }
 impl ListRuleGroupsOutput {
-    /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
-    /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
-    /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     pub fn next_marker(&self) -> std::option::Option<&str> {
         self.next_marker.as_deref()
     }
@@ -753,16 +733,12 @@ pub mod list_rule_groups_output {
         pub(crate) rule_groups: std::option::Option<std::vec::Vec<crate::model::RuleGroupSummary>>,
     }
     impl Builder {
-        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
-        /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
-        /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
         pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_marker = Some(input.into());
             self
         }
-        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
-        /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
-        /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
@@ -869,18 +845,14 @@ impl ListResourcesForWebAclOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRegexPatternSetsOutput {
-    /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
-    /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
-    /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     pub next_marker: std::option::Option<std::string::String>,
     /// <p></p>
     pub regex_pattern_sets:
         std::option::Option<std::vec::Vec<crate::model::RegexPatternSetSummary>>,
 }
 impl ListRegexPatternSetsOutput {
-    /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
-    /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
-    /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     pub fn next_marker(&self) -> std::option::Option<&str> {
         self.next_marker.as_deref()
     }
@@ -910,16 +882,12 @@ pub mod list_regex_pattern_sets_output {
             std::option::Option<std::vec::Vec<crate::model::RegexPatternSetSummary>>,
     }
     impl Builder {
-        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
-        /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
-        /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
         pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_marker = Some(input.into());
             self
         }
-        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
-        /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
-        /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
@@ -963,17 +931,13 @@ impl ListRegexPatternSetsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListManagedRuleSetsOutput {
-    /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
-    /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
-    /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>Your managed rule sets. </p>
     pub managed_rule_sets: std::option::Option<std::vec::Vec<crate::model::ManagedRuleSetSummary>>,
 }
 impl ListManagedRuleSetsOutput {
-    /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
-    /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
-    /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     pub fn next_marker(&self) -> std::option::Option<&str> {
         self.next_marker.as_deref()
     }
@@ -1001,16 +965,12 @@ pub mod list_managed_rule_sets_output {
             std::option::Option<std::vec::Vec<crate::model::ManagedRuleSetSummary>>,
     }
     impl Builder {
-        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
-        /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
-        /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
         pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_marker = Some(input.into());
             self
         }
-        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
-        /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
-        /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
@@ -1057,9 +1017,7 @@ pub struct ListLoggingConfigurationsOutput {
     /// <p></p>
     pub logging_configurations:
         std::option::Option<std::vec::Vec<crate::model::LoggingConfiguration>>,
-    /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
-    /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
-    /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     pub next_marker: std::option::Option<std::string::String>,
 }
 impl ListLoggingConfigurationsOutput {
@@ -1069,9 +1027,7 @@ impl ListLoggingConfigurationsOutput {
     ) -> std::option::Option<&[crate::model::LoggingConfiguration]> {
         self.logging_configurations.as_deref()
     }
-    /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
-    /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
-    /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     pub fn next_marker(&self) -> std::option::Option<&str> {
         self.next_marker.as_deref()
     }
@@ -1114,16 +1070,12 @@ pub mod list_logging_configurations_output {
             self.logging_configurations = input;
             self
         }
-        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
-        /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
-        /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
         pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_marker = Some(input.into());
             self
         }
-        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
-        /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
-        /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
@@ -1148,23 +1100,17 @@ impl ListLoggingConfigurationsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIpSetsOutput {
-    /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
-    /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
-    /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     pub next_marker: std::option::Option<std::string::String>,
-    /// <p>Array of IPSets. This may not be the full list of IPSets that you have defined. See the
-    /// <code>Limit</code> specification for this request.</p>
+    /// <p>Array of IPSets. This may not be the full list of IPSets that you have defined. See the <code>Limit</code> specification for this request.</p>
     pub ip_sets: std::option::Option<std::vec::Vec<crate::model::IpSetSummary>>,
 }
 impl ListIpSetsOutput {
-    /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
-    /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
-    /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     pub fn next_marker(&self) -> std::option::Option<&str> {
         self.next_marker.as_deref()
     }
-    /// <p>Array of IPSets. This may not be the full list of IPSets that you have defined. See the
-    /// <code>Limit</code> specification for this request.</p>
+    /// <p>Array of IPSets. This may not be the full list of IPSets that you have defined. See the <code>Limit</code> specification for this request.</p>
     pub fn ip_sets(&self) -> std::option::Option<&[crate::model::IpSetSummary]> {
         self.ip_sets.as_deref()
     }
@@ -1187,16 +1133,12 @@ pub mod list_ip_sets_output {
         pub(crate) ip_sets: std::option::Option<std::vec::Vec<crate::model::IpSetSummary>>,
     }
     impl Builder {
-        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
-        /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
-        /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
         pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_marker = Some(input.into());
             self
         }
-        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
-        /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
-        /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
@@ -1205,16 +1147,14 @@ pub mod list_ip_sets_output {
         ///
         /// To override the contents of this collection use [`set_ip_sets`](Self::set_ip_sets).
         ///
-        /// <p>Array of IPSets. This may not be the full list of IPSets that you have defined. See the
-        /// <code>Limit</code> specification for this request.</p>
+        /// <p>Array of IPSets. This may not be the full list of IPSets that you have defined. See the <code>Limit</code> specification for this request.</p>
         pub fn ip_sets(mut self, input: crate::model::IpSetSummary) -> Self {
             let mut v = self.ip_sets.unwrap_or_default();
             v.push(input);
             self.ip_sets = Some(v);
             self
         }
-        /// <p>Array of IPSets. This may not be the full list of IPSets that you have defined. See the
-        /// <code>Limit</code> specification for this request.</p>
+        /// <p>Array of IPSets. This may not be the full list of IPSets that you have defined. See the <code>Limit</code> specification for this request.</p>
         pub fn set_ip_sets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::IpSetSummary>>,
@@ -1242,17 +1182,13 @@ impl ListIpSetsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAvailableManagedRuleGroupVersionsOutput {
-    /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
-    /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
-    /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     pub next_marker: std::option::Option<std::string::String>,
     /// <p>The versions that are currently available for the specified managed rule group. </p>
     pub versions: std::option::Option<std::vec::Vec<crate::model::ManagedRuleGroupVersion>>,
 }
 impl ListAvailableManagedRuleGroupVersionsOutput {
-    /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
-    /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
-    /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     pub fn next_marker(&self) -> std::option::Option<&str> {
         self.next_marker.as_deref()
     }
@@ -1280,16 +1216,12 @@ pub mod list_available_managed_rule_group_versions_output {
             std::option::Option<std::vec::Vec<crate::model::ManagedRuleGroupVersion>>,
     }
     impl Builder {
-        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
-        /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
-        /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
         pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_marker = Some(input.into());
             self
         }
-        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
-        /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
-        /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
@@ -1333,18 +1265,14 @@ impl ListAvailableManagedRuleGroupVersionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAvailableManagedRuleGroupsOutput {
-    /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
-    /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
-    /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     pub next_marker: std::option::Option<std::string::String>,
     /// <p></p>
     pub managed_rule_groups:
         std::option::Option<std::vec::Vec<crate::model::ManagedRuleGroupSummary>>,
 }
 impl ListAvailableManagedRuleGroupsOutput {
-    /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
-    /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
-    /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     pub fn next_marker(&self) -> std::option::Option<&str> {
         self.next_marker.as_deref()
     }
@@ -1374,16 +1302,12 @@ pub mod list_available_managed_rule_groups_output {
             std::option::Option<std::vec::Vec<crate::model::ManagedRuleGroupSummary>>,
     }
     impl Builder {
-        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
-        /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
-        /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
         pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_marker = Some(input.into());
             self
         }
-        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
-        /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
-        /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
@@ -1427,13 +1351,11 @@ impl ListAvailableManagedRuleGroupsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetWebAclForResourceOutput {
-    /// <p>The web ACL that is associated with the resource. If there is no associated resource,
-    /// WAF returns a null web ACL.</p>
+    /// <p>The web ACL that is associated with the resource. If there is no associated resource, WAF returns a null web ACL.</p>
     pub web_acl: std::option::Option<crate::model::WebAcl>,
 }
 impl GetWebAclForResourceOutput {
-    /// <p>The web ACL that is associated with the resource. If there is no associated resource,
-    /// WAF returns a null web ACL.</p>
+    /// <p>The web ACL that is associated with the resource. If there is no associated resource, WAF returns a null web ACL.</p>
     pub fn web_acl(&self) -> std::option::Option<&crate::model::WebAcl> {
         self.web_acl.as_ref()
     }
@@ -1454,14 +1376,12 @@ pub mod get_web_acl_for_resource_output {
         pub(crate) web_acl: std::option::Option<crate::model::WebAcl>,
     }
     impl Builder {
-        /// <p>The web ACL that is associated with the resource. If there is no associated resource,
-        /// WAF returns a null web ACL.</p>
+        /// <p>The web ACL that is associated with the resource. If there is no associated resource, WAF returns a null web ACL.</p>
         pub fn web_acl(mut self, input: crate::model::WebAcl) -> Self {
             self.web_acl = Some(input);
             self
         }
-        /// <p>The web ACL that is associated with the resource. If there is no associated resource,
-        /// WAF returns a null web ACL.</p>
+        /// <p>The web ACL that is associated with the resource. If there is no associated resource, WAF returns a null web ACL.</p>
         pub fn set_web_acl(mut self, input: std::option::Option<crate::model::WebAcl>) -> Self {
             self.web_acl = input;
             self
@@ -1485,15 +1405,13 @@ impl GetWebAclForResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetWebAclOutput {
-    /// <p>The web ACL specification. You can modify the settings in this web ACL and use it to
-    /// update this web ACL or create a new one.</p>
+    /// <p>The web ACL specification. You can modify the settings in this web ACL and use it to update this web ACL or create a new one.</p>
     pub web_acl: std::option::Option<crate::model::WebAcl>,
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
     pub lock_token: std::option::Option<std::string::String>,
 }
 impl GetWebAclOutput {
-    /// <p>The web ACL specification. You can modify the settings in this web ACL and use it to
-    /// update this web ACL or create a new one.</p>
+    /// <p>The web ACL specification. You can modify the settings in this web ACL and use it to update this web ACL or create a new one.</p>
     pub fn web_acl(&self) -> std::option::Option<&crate::model::WebAcl> {
         self.web_acl.as_ref()
     }
@@ -1520,14 +1438,12 @@ pub mod get_web_acl_output {
         pub(crate) lock_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The web ACL specification. You can modify the settings in this web ACL and use it to
-        /// update this web ACL or create a new one.</p>
+        /// <p>The web ACL specification. You can modify the settings in this web ACL and use it to update this web ACL or create a new one.</p>
         pub fn web_acl(mut self, input: crate::model::WebAcl) -> Self {
             self.web_acl = Some(input);
             self
         }
-        /// <p>The web ACL specification. You can modify the settings in this web ACL and use it to
-        /// update this web ACL or create a new one.</p>
+        /// <p>The web ACL specification. You can modify the settings in this web ACL and use it to update this web ACL or create a new one.</p>
         pub fn set_web_acl(mut self, input: std::option::Option<crate::model::WebAcl>) -> Self {
             self.web_acl = input;
             self
@@ -1562,39 +1478,23 @@ impl GetWebAclOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSampledRequestsOutput {
-    /// <p>A complex type that contains detailed information about each of the requests in the
-    /// sample.</p>
+    /// <p>A complex type that contains detailed information about each of the requests in the sample.</p>
     pub sampled_requests: std::option::Option<std::vec::Vec<crate::model::SampledHttpRequest>>,
-    /// <p>The total number of requests from which <code>GetSampledRequests</code> got a sample of
-    /// <code>MaxItems</code> requests. If <code>PopulationSize</code> is less than
-    /// <code>MaxItems</code>, the sample includes every request that your Amazon Web Services resource
-    /// received during the specified time range.</p>
+    /// <p>The total number of requests from which <code>GetSampledRequests</code> got a sample of <code>MaxItems</code> requests. If <code>PopulationSize</code> is less than <code>MaxItems</code>, the sample includes every request that your Amazon Web Services resource received during the specified time range.</p>
     pub population_size: i64,
-    /// <p>Usually, <code>TimeWindow</code> is the time range that you specified in the
-    /// <code>GetSampledRequests</code> request. However, if your Amazon Web Services resource received more
-    /// than 5,000 requests during the time range that you specified in the request,
-    /// <code>GetSampledRequests</code> returns the time range for the first 5,000 requests.
-    /// Times are in Coordinated Universal Time (UTC) format.</p>
+    /// <p>Usually, <code>TimeWindow</code> is the time range that you specified in the <code>GetSampledRequests</code> request. However, if your Amazon Web Services resource received more than 5,000 requests during the time range that you specified in the request, <code>GetSampledRequests</code> returns the time range for the first 5,000 requests. Times are in Coordinated Universal Time (UTC) format.</p>
     pub time_window: std::option::Option<crate::model::TimeWindow>,
 }
 impl GetSampledRequestsOutput {
-    /// <p>A complex type that contains detailed information about each of the requests in the
-    /// sample.</p>
+    /// <p>A complex type that contains detailed information about each of the requests in the sample.</p>
     pub fn sampled_requests(&self) -> std::option::Option<&[crate::model::SampledHttpRequest]> {
         self.sampled_requests.as_deref()
     }
-    /// <p>The total number of requests from which <code>GetSampledRequests</code> got a sample of
-    /// <code>MaxItems</code> requests. If <code>PopulationSize</code> is less than
-    /// <code>MaxItems</code>, the sample includes every request that your Amazon Web Services resource
-    /// received during the specified time range.</p>
+    /// <p>The total number of requests from which <code>GetSampledRequests</code> got a sample of <code>MaxItems</code> requests. If <code>PopulationSize</code> is less than <code>MaxItems</code>, the sample includes every request that your Amazon Web Services resource received during the specified time range.</p>
     pub fn population_size(&self) -> i64 {
         self.population_size
     }
-    /// <p>Usually, <code>TimeWindow</code> is the time range that you specified in the
-    /// <code>GetSampledRequests</code> request. However, if your Amazon Web Services resource received more
-    /// than 5,000 requests during the time range that you specified in the request,
-    /// <code>GetSampledRequests</code> returns the time range for the first 5,000 requests.
-    /// Times are in Coordinated Universal Time (UTC) format.</p>
+    /// <p>Usually, <code>TimeWindow</code> is the time range that you specified in the <code>GetSampledRequests</code> request. However, if your Amazon Web Services resource received more than 5,000 requests during the time range that you specified in the request, <code>GetSampledRequests</code> returns the time range for the first 5,000 requests. Times are in Coordinated Universal Time (UTC) format.</p>
     pub fn time_window(&self) -> std::option::Option<&crate::model::TimeWindow> {
         self.time_window.as_ref()
     }
@@ -1624,16 +1524,14 @@ pub mod get_sampled_requests_output {
         ///
         /// To override the contents of this collection use [`set_sampled_requests`](Self::set_sampled_requests).
         ///
-        /// <p>A complex type that contains detailed information about each of the requests in the
-        /// sample.</p>
+        /// <p>A complex type that contains detailed information about each of the requests in the sample.</p>
         pub fn sampled_requests(mut self, input: crate::model::SampledHttpRequest) -> Self {
             let mut v = self.sampled_requests.unwrap_or_default();
             v.push(input);
             self.sampled_requests = Some(v);
             self
         }
-        /// <p>A complex type that contains detailed information about each of the requests in the
-        /// sample.</p>
+        /// <p>A complex type that contains detailed information about each of the requests in the sample.</p>
         pub fn set_sampled_requests(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SampledHttpRequest>>,
@@ -1641,36 +1539,22 @@ pub mod get_sampled_requests_output {
             self.sampled_requests = input;
             self
         }
-        /// <p>The total number of requests from which <code>GetSampledRequests</code> got a sample of
-        /// <code>MaxItems</code> requests. If <code>PopulationSize</code> is less than
-        /// <code>MaxItems</code>, the sample includes every request that your Amazon Web Services resource
-        /// received during the specified time range.</p>
+        /// <p>The total number of requests from which <code>GetSampledRequests</code> got a sample of <code>MaxItems</code> requests. If <code>PopulationSize</code> is less than <code>MaxItems</code>, the sample includes every request that your Amazon Web Services resource received during the specified time range.</p>
         pub fn population_size(mut self, input: i64) -> Self {
             self.population_size = Some(input);
             self
         }
-        /// <p>The total number of requests from which <code>GetSampledRequests</code> got a sample of
-        /// <code>MaxItems</code> requests. If <code>PopulationSize</code> is less than
-        /// <code>MaxItems</code>, the sample includes every request that your Amazon Web Services resource
-        /// received during the specified time range.</p>
+        /// <p>The total number of requests from which <code>GetSampledRequests</code> got a sample of <code>MaxItems</code> requests. If <code>PopulationSize</code> is less than <code>MaxItems</code>, the sample includes every request that your Amazon Web Services resource received during the specified time range.</p>
         pub fn set_population_size(mut self, input: std::option::Option<i64>) -> Self {
             self.population_size = input;
             self
         }
-        /// <p>Usually, <code>TimeWindow</code> is the time range that you specified in the
-        /// <code>GetSampledRequests</code> request. However, if your Amazon Web Services resource received more
-        /// than 5,000 requests during the time range that you specified in the request,
-        /// <code>GetSampledRequests</code> returns the time range for the first 5,000 requests.
-        /// Times are in Coordinated Universal Time (UTC) format.</p>
+        /// <p>Usually, <code>TimeWindow</code> is the time range that you specified in the <code>GetSampledRequests</code> request. However, if your Amazon Web Services resource received more than 5,000 requests during the time range that you specified in the request, <code>GetSampledRequests</code> returns the time range for the first 5,000 requests. Times are in Coordinated Universal Time (UTC) format.</p>
         pub fn time_window(mut self, input: crate::model::TimeWindow) -> Self {
             self.time_window = Some(input);
             self
         }
-        /// <p>Usually, <code>TimeWindow</code> is the time range that you specified in the
-        /// <code>GetSampledRequests</code> request. However, if your Amazon Web Services resource received more
-        /// than 5,000 requests during the time range that you specified in the request,
-        /// <code>GetSampledRequests</code> returns the time range for the first 5,000 requests.
-        /// Times are in Coordinated Universal Time (UTC) format.</p>
+        /// <p>Usually, <code>TimeWindow</code> is the time range that you specified in the <code>GetSampledRequests</code> request. However, if your Amazon Web Services resource received more than 5,000 requests during the time range that you specified in the request, <code>GetSampledRequests</code> returns the time range for the first 5,000 requests. Times are in Coordinated Universal Time (UTC) format.</p>
         pub fn set_time_window(
             mut self,
             input: std::option::Option<crate::model::TimeWindow>,
@@ -2072,11 +1956,11 @@ impl GetManagedRuleSetOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLoggingConfigurationOutput {
-    /// <p>The <a>LoggingConfiguration</a> for the specified web ACL.</p>
+    /// <p>The <code>LoggingConfiguration</code> for the specified web ACL.</p>
     pub logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
 }
 impl GetLoggingConfigurationOutput {
-    /// <p>The <a>LoggingConfiguration</a> for the specified web ACL.</p>
+    /// <p>The <code>LoggingConfiguration</code> for the specified web ACL.</p>
     pub fn logging_configuration(
         &self,
     ) -> std::option::Option<&crate::model::LoggingConfiguration> {
@@ -2099,12 +1983,12 @@ pub mod get_logging_configuration_output {
         pub(crate) logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
     }
     impl Builder {
-        /// <p>The <a>LoggingConfiguration</a> for the specified web ACL.</p>
+        /// <p>The <code>LoggingConfiguration</code> for the specified web ACL.</p>
         pub fn logging_configuration(mut self, input: crate::model::LoggingConfiguration) -> Self {
             self.logging_configuration = Some(input);
             self
         }
-        /// <p>The <a>LoggingConfiguration</a> for the specified web ACL.</p>
+        /// <p>The <code>LoggingConfiguration</code> for the specified web ACL.</p>
         pub fn set_logging_configuration(
             mut self,
             input: std::option::Option<crate::model::LoggingConfiguration>,
@@ -2236,39 +2120,25 @@ impl DisassociateWebAclOutput {
 pub struct DescribeManagedRuleGroupOutput {
     /// <p>The managed rule group's version. </p>
     pub version_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS topic that's used to record changes
-    /// to the managed rule group. You can subscribe to the SNS topic to receive notifications when
-    /// the managed rule group is modified, such as for new versions and for version expiration.
-    /// For more information, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple Notification Service Developer Guide</a>.</p>
+    /// <p>The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS topic that's used to record changes to the managed rule group. You can subscribe to the SNS topic to receive notifications when the managed rule group is modified, such as for new versions and for version expiration. For more information, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple Notification Service Developer Guide</a>.</p>
     pub sns_topic_arn: std::option::Option<std::string::String>,
-    /// <p>The web ACL capacity units (WCUs) required for this rule group. WAF uses web ACL
-    /// capacity units (WCU) to calculate and control the operating resources that are used to run
-    /// your rules, rule groups, and web ACLs. WAF calculates capacity differently for each rule
-    /// type, to reflect each rule's relative cost. Rule group capacity is fixed at creation, so
-    /// users can plan their web ACL WCU usage when they use a rule group. The WCU limit for web
-    /// ACLs is 1,500. </p>
+    /// <p>The web ACL capacity units (WCUs) required for this rule group. WAF uses web ACL capacity units (WCU) to calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs. WAF calculates capacity differently for each rule type, to reflect each rule's relative cost. Rule group capacity is fixed at creation, so users can plan their web ACL WCU usage when they use a rule group. The WCU limit for web ACLs is 1,500. </p>
     pub capacity: i64,
     /// <p></p>
     pub rules: std::option::Option<std::vec::Vec<crate::model::RuleSummary>>,
     /// <p>The label namespace prefix for this rule group. All labels added by rules in this rule group have this prefix. </p>
     /// <ul>
-    /// <li>
-    /// <p>The syntax for the label namespace prefix for a managed rule group is the following: </p>
-    /// <p>
-    /// <code>awswaf:managed:<vendor>:<rule group name></code>:</p>
-    /// </li>
-    /// <li>
-    /// <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon: </p>
-    /// <p>
-    /// <code><label namespace>:<label from rule></code>
-    /// </p>
-    ///
-    /// </li>
+    /// <li> <p>The syntax for the label namespace prefix for a managed rule group is the following: </p> <p> <code>awswaf:managed:
+    /// <vendor>
+    /// :
+    /// <rule group name></rule>
+    /// </vendor></code>:</p> </li>
+    /// <li> <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon: </p> <p> <code><label namespace>:<label from rule></label></label></code> </p> </li>
     /// </ul>
     pub label_namespace: std::option::Option<std::string::String>,
-    /// <p>The labels that one or more rules in this rule group add to matching web requests. These labels are defined in the <code>RuleLabels</code> for a <a>Rule</a>.</p>
+    /// <p>The labels that one or more rules in this rule group add to matching web requests. These labels are defined in the <code>RuleLabels</code> for a <code>Rule</code>.</p>
     pub available_labels: std::option::Option<std::vec::Vec<crate::model::LabelSummary>>,
-    /// <p>The labels that one or more rules in this rule group match against in label match statements. These labels are defined in a <code>LabelMatchStatement</code> specification, in the <a>Statement</a> definition of a rule.  </p>
+    /// <p>The labels that one or more rules in this rule group match against in label match statements. These labels are defined in a <code>LabelMatchStatement</code> specification, in the <code>Statement</code> definition of a rule. </p>
     pub consumed_labels: std::option::Option<std::vec::Vec<crate::model::LabelSummary>>,
 }
 impl DescribeManagedRuleGroupOutput {
@@ -2276,19 +2146,11 @@ impl DescribeManagedRuleGroupOutput {
     pub fn version_name(&self) -> std::option::Option<&str> {
         self.version_name.as_deref()
     }
-    /// <p>The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS topic that's used to record changes
-    /// to the managed rule group. You can subscribe to the SNS topic to receive notifications when
-    /// the managed rule group is modified, such as for new versions and for version expiration.
-    /// For more information, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple Notification Service Developer Guide</a>.</p>
+    /// <p>The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS topic that's used to record changes to the managed rule group. You can subscribe to the SNS topic to receive notifications when the managed rule group is modified, such as for new versions and for version expiration. For more information, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple Notification Service Developer Guide</a>.</p>
     pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
         self.sns_topic_arn.as_deref()
     }
-    /// <p>The web ACL capacity units (WCUs) required for this rule group. WAF uses web ACL
-    /// capacity units (WCU) to calculate and control the operating resources that are used to run
-    /// your rules, rule groups, and web ACLs. WAF calculates capacity differently for each rule
-    /// type, to reflect each rule's relative cost. Rule group capacity is fixed at creation, so
-    /// users can plan their web ACL WCU usage when they use a rule group. The WCU limit for web
-    /// ACLs is 1,500. </p>
+    /// <p>The web ACL capacity units (WCUs) required for this rule group. WAF uses web ACL capacity units (WCU) to calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs. WAF calculates capacity differently for each rule type, to reflect each rule's relative cost. Rule group capacity is fixed at creation, so users can plan their web ACL WCU usage when they use a rule group. The WCU limit for web ACLs is 1,500. </p>
     pub fn capacity(&self) -> i64 {
         self.capacity
     }
@@ -2298,27 +2160,21 @@ impl DescribeManagedRuleGroupOutput {
     }
     /// <p>The label namespace prefix for this rule group. All labels added by rules in this rule group have this prefix. </p>
     /// <ul>
-    /// <li>
-    /// <p>The syntax for the label namespace prefix for a managed rule group is the following: </p>
-    /// <p>
-    /// <code>awswaf:managed:<vendor>:<rule group name></code>:</p>
-    /// </li>
-    /// <li>
-    /// <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon: </p>
-    /// <p>
-    /// <code><label namespace>:<label from rule></code>
-    /// </p>
-    ///
-    /// </li>
+    /// <li> <p>The syntax for the label namespace prefix for a managed rule group is the following: </p> <p> <code>awswaf:managed:
+    /// <vendor>
+    /// :
+    /// <rule group name></rule>
+    /// </vendor></code>:</p> </li>
+    /// <li> <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon: </p> <p> <code><label namespace>:<label from rule></label></label></code> </p> </li>
     /// </ul>
     pub fn label_namespace(&self) -> std::option::Option<&str> {
         self.label_namespace.as_deref()
     }
-    /// <p>The labels that one or more rules in this rule group add to matching web requests. These labels are defined in the <code>RuleLabels</code> for a <a>Rule</a>.</p>
+    /// <p>The labels that one or more rules in this rule group add to matching web requests. These labels are defined in the <code>RuleLabels</code> for a <code>Rule</code>.</p>
     pub fn available_labels(&self) -> std::option::Option<&[crate::model::LabelSummary]> {
         self.available_labels.as_deref()
     }
-    /// <p>The labels that one or more rules in this rule group match against in label match statements. These labels are defined in a <code>LabelMatchStatement</code> specification, in the <a>Statement</a> definition of a rule.  </p>
+    /// <p>The labels that one or more rules in this rule group match against in label match statements. These labels are defined in a <code>LabelMatchStatement</code> specification, in the <code>Statement</code> definition of a rule. </p>
     pub fn consumed_labels(&self) -> std::option::Option<&[crate::model::LabelSummary]> {
         self.consumed_labels.as_deref()
     }
@@ -2361,18 +2217,12 @@ pub mod describe_managed_rule_group_output {
             self.version_name = input;
             self
         }
-        /// <p>The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS topic that's used to record changes
-        /// to the managed rule group. You can subscribe to the SNS topic to receive notifications when
-        /// the managed rule group is modified, such as for new versions and for version expiration.
-        /// For more information, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple Notification Service Developer Guide</a>.</p>
+        /// <p>The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS topic that's used to record changes to the managed rule group. You can subscribe to the SNS topic to receive notifications when the managed rule group is modified, such as for new versions and for version expiration. For more information, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple Notification Service Developer Guide</a>.</p>
         pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.sns_topic_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS topic that's used to record changes
-        /// to the managed rule group. You can subscribe to the SNS topic to receive notifications when
-        /// the managed rule group is modified, such as for new versions and for version expiration.
-        /// For more information, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple Notification Service Developer Guide</a>.</p>
+        /// <p>The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS topic that's used to record changes to the managed rule group. You can subscribe to the SNS topic to receive notifications when the managed rule group is modified, such as for new versions and for version expiration. For more information, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple Notification Service Developer Guide</a>.</p>
         pub fn set_sns_topic_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2380,22 +2230,12 @@ pub mod describe_managed_rule_group_output {
             self.sns_topic_arn = input;
             self
         }
-        /// <p>The web ACL capacity units (WCUs) required for this rule group. WAF uses web ACL
-        /// capacity units (WCU) to calculate and control the operating resources that are used to run
-        /// your rules, rule groups, and web ACLs. WAF calculates capacity differently for each rule
-        /// type, to reflect each rule's relative cost. Rule group capacity is fixed at creation, so
-        /// users can plan their web ACL WCU usage when they use a rule group. The WCU limit for web
-        /// ACLs is 1,500. </p>
+        /// <p>The web ACL capacity units (WCUs) required for this rule group. WAF uses web ACL capacity units (WCU) to calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs. WAF calculates capacity differently for each rule type, to reflect each rule's relative cost. Rule group capacity is fixed at creation, so users can plan their web ACL WCU usage when they use a rule group. The WCU limit for web ACLs is 1,500. </p>
         pub fn capacity(mut self, input: i64) -> Self {
             self.capacity = Some(input);
             self
         }
-        /// <p>The web ACL capacity units (WCUs) required for this rule group. WAF uses web ACL
-        /// capacity units (WCU) to calculate and control the operating resources that are used to run
-        /// your rules, rule groups, and web ACLs. WAF calculates capacity differently for each rule
-        /// type, to reflect each rule's relative cost. Rule group capacity is fixed at creation, so
-        /// users can plan their web ACL WCU usage when they use a rule group. The WCU limit for web
-        /// ACLs is 1,500. </p>
+        /// <p>The web ACL capacity units (WCUs) required for this rule group. WAF uses web ACL capacity units (WCU) to calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs. WAF calculates capacity differently for each rule type, to reflect each rule's relative cost. Rule group capacity is fixed at creation, so users can plan their web ACL WCU usage when they use a rule group. The WCU limit for web ACLs is 1,500. </p>
         pub fn set_capacity(mut self, input: std::option::Option<i64>) -> Self {
             self.capacity = input;
             self
@@ -2421,18 +2261,12 @@ pub mod describe_managed_rule_group_output {
         }
         /// <p>The label namespace prefix for this rule group. All labels added by rules in this rule group have this prefix. </p>
         /// <ul>
-        /// <li>
-        /// <p>The syntax for the label namespace prefix for a managed rule group is the following: </p>
-        /// <p>
-        /// <code>awswaf:managed:<vendor>:<rule group name></code>:</p>
-        /// </li>
-        /// <li>
-        /// <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon: </p>
-        /// <p>
-        /// <code><label namespace>:<label from rule></code>
-        /// </p>
-        ///
-        /// </li>
+        /// <li> <p>The syntax for the label namespace prefix for a managed rule group is the following: </p> <p> <code>awswaf:managed:
+        /// <vendor>
+        /// :
+        /// <rule group name></rule>
+        /// </vendor></code>:</p> </li>
+        /// <li> <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon: </p> <p> <code><label namespace>:<label from rule></label></label></code> </p> </li>
         /// </ul>
         pub fn label_namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.label_namespace = Some(input.into());
@@ -2440,18 +2274,12 @@ pub mod describe_managed_rule_group_output {
         }
         /// <p>The label namespace prefix for this rule group. All labels added by rules in this rule group have this prefix. </p>
         /// <ul>
-        /// <li>
-        /// <p>The syntax for the label namespace prefix for a managed rule group is the following: </p>
-        /// <p>
-        /// <code>awswaf:managed:<vendor>:<rule group name></code>:</p>
-        /// </li>
-        /// <li>
-        /// <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon: </p>
-        /// <p>
-        /// <code><label namespace>:<label from rule></code>
-        /// </p>
-        ///
-        /// </li>
+        /// <li> <p>The syntax for the label namespace prefix for a managed rule group is the following: </p> <p> <code>awswaf:managed:
+        /// <vendor>
+        /// :
+        /// <rule group name></rule>
+        /// </vendor></code>:</p> </li>
+        /// <li> <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon: </p> <p> <code><label namespace>:<label from rule></label></label></code> </p> </li>
         /// </ul>
         pub fn set_label_namespace(
             mut self,
@@ -2464,14 +2292,14 @@ pub mod describe_managed_rule_group_output {
         ///
         /// To override the contents of this collection use [`set_available_labels`](Self::set_available_labels).
         ///
-        /// <p>The labels that one or more rules in this rule group add to matching web requests. These labels are defined in the <code>RuleLabels</code> for a <a>Rule</a>.</p>
+        /// <p>The labels that one or more rules in this rule group add to matching web requests. These labels are defined in the <code>RuleLabels</code> for a <code>Rule</code>.</p>
         pub fn available_labels(mut self, input: crate::model::LabelSummary) -> Self {
             let mut v = self.available_labels.unwrap_or_default();
             v.push(input);
             self.available_labels = Some(v);
             self
         }
-        /// <p>The labels that one or more rules in this rule group add to matching web requests. These labels are defined in the <code>RuleLabels</code> for a <a>Rule</a>.</p>
+        /// <p>The labels that one or more rules in this rule group add to matching web requests. These labels are defined in the <code>RuleLabels</code> for a <code>Rule</code>.</p>
         pub fn set_available_labels(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LabelSummary>>,
@@ -2483,14 +2311,14 @@ pub mod describe_managed_rule_group_output {
         ///
         /// To override the contents of this collection use [`set_consumed_labels`](Self::set_consumed_labels).
         ///
-        /// <p>The labels that one or more rules in this rule group match against in label match statements. These labels are defined in a <code>LabelMatchStatement</code> specification, in the <a>Statement</a> definition of a rule.  </p>
+        /// <p>The labels that one or more rules in this rule group match against in label match statements. These labels are defined in a <code>LabelMatchStatement</code> specification, in the <code>Statement</code> definition of a rule. </p>
         pub fn consumed_labels(mut self, input: crate::model::LabelSummary) -> Self {
             let mut v = self.consumed_labels.unwrap_or_default();
             v.push(input);
             self.consumed_labels = Some(v);
             self
         }
-        /// <p>The labels that one or more rules in this rule group match against in label match statements. These labels are defined in a <code>LabelMatchStatement</code> specification, in the <a>Statement</a> definition of a rule.  </p>
+        /// <p>The labels that one or more rules in this rule group match against in label match statements. These labels are defined in a <code>LabelMatchStatement</code> specification, in the <code>Statement</code> definition of a rule. </p>
         pub fn set_consumed_labels(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LabelSummary>>,
@@ -2760,11 +2588,11 @@ impl DeleteFirewallManagerRuleGroupsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWebAclOutput {
-    /// <p>High-level information about a <a>WebACL</a>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>WebACL</code>, and the ARN, that you provide to operations like <a>AssociateWebACL</a>.</p>
+    /// <p>High-level information about a <code>WebACL</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>WebACL</code>, and the ARN, that you provide to operations like <code>AssociateWebACL</code>.</p>
     pub summary: std::option::Option<crate::model::WebAclSummary>,
 }
 impl CreateWebAclOutput {
-    /// <p>High-level information about a <a>WebACL</a>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>WebACL</code>, and the ARN, that you provide to operations like <a>AssociateWebACL</a>.</p>
+    /// <p>High-level information about a <code>WebACL</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>WebACL</code>, and the ARN, that you provide to operations like <code>AssociateWebACL</code>.</p>
     pub fn summary(&self) -> std::option::Option<&crate::model::WebAclSummary> {
         self.summary.as_ref()
     }
@@ -2785,12 +2613,12 @@ pub mod create_web_acl_output {
         pub(crate) summary: std::option::Option<crate::model::WebAclSummary>,
     }
     impl Builder {
-        /// <p>High-level information about a <a>WebACL</a>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>WebACL</code>, and the ARN, that you provide to operations like <a>AssociateWebACL</a>.</p>
+        /// <p>High-level information about a <code>WebACL</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>WebACL</code>, and the ARN, that you provide to operations like <code>AssociateWebACL</code>.</p>
         pub fn summary(mut self, input: crate::model::WebAclSummary) -> Self {
             self.summary = Some(input);
             self
         }
-        /// <p>High-level information about a <a>WebACL</a>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>WebACL</code>, and the ARN, that you provide to operations like <a>AssociateWebACL</a>.</p>
+        /// <p>High-level information about a <code>WebACL</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>WebACL</code>, and the ARN, that you provide to operations like <code>AssociateWebACL</code>.</p>
         pub fn set_summary(
             mut self,
             input: std::option::Option<crate::model::WebAclSummary>,
@@ -2817,11 +2645,11 @@ impl CreateWebAclOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRuleGroupOutput {
-    /// <p>High-level information about a <a>RuleGroup</a>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>RuleGroup</code>, and the ARN, that you provide to the <a>RuleGroupReferenceStatement</a> to use the rule group in a <a>Rule</a>.</p>
+    /// <p>High-level information about a <code>RuleGroup</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>RuleGroup</code>, and the ARN, that you provide to the <code>RuleGroupReferenceStatement</code> to use the rule group in a <code>Rule</code>.</p>
     pub summary: std::option::Option<crate::model::RuleGroupSummary>,
 }
 impl CreateRuleGroupOutput {
-    /// <p>High-level information about a <a>RuleGroup</a>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>RuleGroup</code>, and the ARN, that you provide to the <a>RuleGroupReferenceStatement</a> to use the rule group in a <a>Rule</a>.</p>
+    /// <p>High-level information about a <code>RuleGroup</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>RuleGroup</code>, and the ARN, that you provide to the <code>RuleGroupReferenceStatement</code> to use the rule group in a <code>Rule</code>.</p>
     pub fn summary(&self) -> std::option::Option<&crate::model::RuleGroupSummary> {
         self.summary.as_ref()
     }
@@ -2842,12 +2670,12 @@ pub mod create_rule_group_output {
         pub(crate) summary: std::option::Option<crate::model::RuleGroupSummary>,
     }
     impl Builder {
-        /// <p>High-level information about a <a>RuleGroup</a>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>RuleGroup</code>, and the ARN, that you provide to the <a>RuleGroupReferenceStatement</a> to use the rule group in a <a>Rule</a>.</p>
+        /// <p>High-level information about a <code>RuleGroup</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>RuleGroup</code>, and the ARN, that you provide to the <code>RuleGroupReferenceStatement</code> to use the rule group in a <code>Rule</code>.</p>
         pub fn summary(mut self, input: crate::model::RuleGroupSummary) -> Self {
             self.summary = Some(input);
             self
         }
-        /// <p>High-level information about a <a>RuleGroup</a>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>RuleGroup</code>, and the ARN, that you provide to the <a>RuleGroupReferenceStatement</a> to use the rule group in a <a>Rule</a>.</p>
+        /// <p>High-level information about a <code>RuleGroup</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>RuleGroup</code>, and the ARN, that you provide to the <code>RuleGroupReferenceStatement</code> to use the rule group in a <code>Rule</code>.</p>
         pub fn set_summary(
             mut self,
             input: std::option::Option<crate::model::RuleGroupSummary>,
@@ -2874,11 +2702,11 @@ impl CreateRuleGroupOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRegexPatternSetOutput {
-    /// <p>High-level information about a <a>RegexPatternSet</a>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>RegexPatternSet</code>, and the ARN, that you provide to the <a>RegexPatternSetReferenceStatement</a> to use the pattern set in a <a>Rule</a>.</p>
+    /// <p>High-level information about a <code>RegexPatternSet</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>RegexPatternSet</code>, and the ARN, that you provide to the <code>RegexPatternSetReferenceStatement</code> to use the pattern set in a <code>Rule</code>.</p>
     pub summary: std::option::Option<crate::model::RegexPatternSetSummary>,
 }
 impl CreateRegexPatternSetOutput {
-    /// <p>High-level information about a <a>RegexPatternSet</a>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>RegexPatternSet</code>, and the ARN, that you provide to the <a>RegexPatternSetReferenceStatement</a> to use the pattern set in a <a>Rule</a>.</p>
+    /// <p>High-level information about a <code>RegexPatternSet</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>RegexPatternSet</code>, and the ARN, that you provide to the <code>RegexPatternSetReferenceStatement</code> to use the pattern set in a <code>Rule</code>.</p>
     pub fn summary(&self) -> std::option::Option<&crate::model::RegexPatternSetSummary> {
         self.summary.as_ref()
     }
@@ -2899,12 +2727,12 @@ pub mod create_regex_pattern_set_output {
         pub(crate) summary: std::option::Option<crate::model::RegexPatternSetSummary>,
     }
     impl Builder {
-        /// <p>High-level information about a <a>RegexPatternSet</a>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>RegexPatternSet</code>, and the ARN, that you provide to the <a>RegexPatternSetReferenceStatement</a> to use the pattern set in a <a>Rule</a>.</p>
+        /// <p>High-level information about a <code>RegexPatternSet</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>RegexPatternSet</code>, and the ARN, that you provide to the <code>RegexPatternSetReferenceStatement</code> to use the pattern set in a <code>Rule</code>.</p>
         pub fn summary(mut self, input: crate::model::RegexPatternSetSummary) -> Self {
             self.summary = Some(input);
             self
         }
-        /// <p>High-level information about a <a>RegexPatternSet</a>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>RegexPatternSet</code>, and the ARN, that you provide to the <a>RegexPatternSetReferenceStatement</a> to use the pattern set in a <a>Rule</a>.</p>
+        /// <p>High-level information about a <code>RegexPatternSet</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>RegexPatternSet</code>, and the ARN, that you provide to the <code>RegexPatternSetReferenceStatement</code> to use the pattern set in a <code>Rule</code>.</p>
         pub fn set_summary(
             mut self,
             input: std::option::Option<crate::model::RegexPatternSetSummary>,
@@ -2931,11 +2759,11 @@ impl CreateRegexPatternSetOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateIpSetOutput {
-    /// <p>High-level information about an <a>IPSet</a>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage an <code>IPSet</code>, and the ARN, that you provide to the <a>IPSetReferenceStatement</a> to use the address set in a <a>Rule</a>.</p>
+    /// <p>High-level information about an <code>IPSet</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage an <code>IPSet</code>, and the ARN, that you provide to the <code>IPSetReferenceStatement</code> to use the address set in a <code>Rule</code>.</p>
     pub summary: std::option::Option<crate::model::IpSetSummary>,
 }
 impl CreateIpSetOutput {
-    /// <p>High-level information about an <a>IPSet</a>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage an <code>IPSet</code>, and the ARN, that you provide to the <a>IPSetReferenceStatement</a> to use the address set in a <a>Rule</a>.</p>
+    /// <p>High-level information about an <code>IPSet</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage an <code>IPSet</code>, and the ARN, that you provide to the <code>IPSetReferenceStatement</code> to use the address set in a <code>Rule</code>.</p>
     pub fn summary(&self) -> std::option::Option<&crate::model::IpSetSummary> {
         self.summary.as_ref()
     }
@@ -2956,12 +2784,12 @@ pub mod create_ip_set_output {
         pub(crate) summary: std::option::Option<crate::model::IpSetSummary>,
     }
     impl Builder {
-        /// <p>High-level information about an <a>IPSet</a>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage an <code>IPSet</code>, and the ARN, that you provide to the <a>IPSetReferenceStatement</a> to use the address set in a <a>Rule</a>.</p>
+        /// <p>High-level information about an <code>IPSet</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage an <code>IPSet</code>, and the ARN, that you provide to the <code>IPSetReferenceStatement</code> to use the address set in a <code>Rule</code>.</p>
         pub fn summary(mut self, input: crate::model::IpSetSummary) -> Self {
             self.summary = Some(input);
             self
         }
-        /// <p>High-level information about an <a>IPSet</a>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage an <code>IPSet</code>, and the ARN, that you provide to the <a>IPSetReferenceStatement</a> to use the address set in a <a>Rule</a>.</p>
+        /// <p>High-level information about an <code>IPSet</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage an <code>IPSet</code>, and the ARN, that you provide to the <code>IPSetReferenceStatement</code> to use the address set in a <code>Rule</code>.</p>
         pub fn set_summary(
             mut self,
             input: std::option::Option<crate::model::IpSetSummary>,

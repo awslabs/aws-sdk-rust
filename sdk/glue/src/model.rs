@@ -354,17 +354,13 @@ pub struct Trigger {
     pub state: std::option::Option<crate::model::TriggerState>,
     /// <p>A description of this trigger.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
-    /// Schedules for Jobs and Crawlers</a>. For example, to run
-    /// something every day at 12:15 UTC, you would specify:
-    /// <code>cron(15 12 * * ? *)</code>.</p>
+    /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
     pub schedule: std::option::Option<std::string::String>,
     /// <p>The actions initiated by this trigger.</p>
     pub actions: std::option::Option<std::vec::Vec<crate::model::Action>>,
     /// <p>The predicate of this trigger, which defines when it will fire.</p>
     pub predicate: std::option::Option<crate::model::Predicate>,
-    /// <p>Batch condition that must be met (specified number of events received or batch time window expired)
-    /// before EventBridge event trigger fires.</p>
+    /// <p>Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires.</p>
     pub event_batching_condition: std::option::Option<crate::model::EventBatchingCondition>,
 }
 impl Trigger {
@@ -392,10 +388,7 @@ impl Trigger {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
-    /// Schedules for Jobs and Crawlers</a>. For example, to run
-    /// something every day at 12:15 UTC, you would specify:
-    /// <code>cron(15 12 * * ? *)</code>.</p>
+    /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
     pub fn schedule(&self) -> std::option::Option<&str> {
         self.schedule.as_deref()
     }
@@ -407,8 +400,7 @@ impl Trigger {
     pub fn predicate(&self) -> std::option::Option<&crate::model::Predicate> {
         self.predicate.as_ref()
     }
-    /// <p>Batch condition that must be met (specified number of events received or batch time window expired)
-    /// before EventBridge event trigger fires.</p>
+    /// <p>Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires.</p>
     pub fn event_batching_condition(
         &self,
     ) -> std::option::Option<&crate::model::EventBatchingCondition> {
@@ -513,18 +505,12 @@ pub mod trigger {
             self.description = input;
             self
         }
-        /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
-        /// Schedules for Jobs and Crawlers</a>. For example, to run
-        /// something every day at 12:15 UTC, you would specify:
-        /// <code>cron(15 12 * * ? *)</code>.</p>
+        /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
         pub fn schedule(mut self, input: impl Into<std::string::String>) -> Self {
             self.schedule = Some(input.into());
             self
         }
-        /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
-        /// Schedules for Jobs and Crawlers</a>. For example, to run
-        /// something every day at 12:15 UTC, you would specify:
-        /// <code>cron(15 12 * * ? *)</code>.</p>
+        /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
         pub fn set_schedule(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.schedule = input;
             self
@@ -561,8 +547,7 @@ pub mod trigger {
             self.predicate = input;
             self
         }
-        /// <p>Batch condition that must be met (specified number of events received or batch time window expired)
-        /// before EventBridge event trigger fires.</p>
+        /// <p>Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires.</p>
         pub fn event_batching_condition(
             mut self,
             input: crate::model::EventBatchingCondition,
@@ -570,8 +555,7 @@ pub mod trigger {
             self.event_batching_condition = Some(input);
             self
         }
-        /// <p>Batch condition that must be met (specified number of events received or batch time window expired)
-        /// before EventBridge event trigger fires.</p>
+        /// <p>Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires.</p>
         pub fn set_event_batching_condition(
             mut self,
             input: std::option::Option<crate::model::EventBatchingCondition>,
@@ -603,8 +587,7 @@ impl Trigger {
     }
 }
 
-/// <p>Batch condition that must be met (specified number of events received or batch time window expired)
-/// before EventBridge event trigger fires.</p>
+/// <p>Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventBatchingCondition {
@@ -681,15 +664,13 @@ impl EventBatchingCondition {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Predicate {
-    /// <p>An optional field if only one condition is listed. If multiple conditions are listed, then
-    /// this field is required.</p>
+    /// <p>An optional field if only one condition is listed. If multiple conditions are listed, then this field is required.</p>
     pub logical: std::option::Option<crate::model::Logical>,
     /// <p>A list of the conditions that determine when the trigger will fire.</p>
     pub conditions: std::option::Option<std::vec::Vec<crate::model::Condition>>,
 }
 impl Predicate {
-    /// <p>An optional field if only one condition is listed. If multiple conditions are listed, then
-    /// this field is required.</p>
+    /// <p>An optional field if only one condition is listed. If multiple conditions are listed, then this field is required.</p>
     pub fn logical(&self) -> std::option::Option<&crate::model::Logical> {
         self.logical.as_ref()
     }
@@ -716,14 +697,12 @@ pub mod predicate {
         pub(crate) conditions: std::option::Option<std::vec::Vec<crate::model::Condition>>,
     }
     impl Builder {
-        /// <p>An optional field if only one condition is listed. If multiple conditions are listed, then
-        /// this field is required.</p>
+        /// <p>An optional field if only one condition is listed. If multiple conditions are listed, then this field is required.</p>
         pub fn logical(mut self, input: crate::model::Logical) -> Self {
             self.logical = Some(input);
             self
         }
-        /// <p>An optional field if only one condition is listed. If multiple conditions are listed, then
-        /// this field is required.</p>
+        /// <p>An optional field if only one condition is listed. If multiple conditions are listed, then this field is required.</p>
         pub fn set_logical(mut self, input: std::option::Option<crate::model::Logical>) -> Self {
             self.logical = input;
             self
@@ -769,8 +748,7 @@ impl Predicate {
 pub struct Condition {
     /// <p>A logical operator.</p>
     pub logical_operator: std::option::Option<crate::model::LogicalOperator>,
-    /// <p>The name of the job whose <code>JobRuns</code> this condition applies to, and on which
-    /// this trigger waits.</p>
+    /// <p>The name of the job whose <code>JobRuns</code> this condition applies to, and on which this trigger waits.</p>
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The condition state. Currently, the only job states that a trigger can listen for are <code>SUCCEEDED</code>, <code>STOPPED</code>, <code>FAILED</code>, and <code>TIMEOUT</code>. The only crawler states that a trigger can listen for are <code>SUCCEEDED</code>, <code>FAILED</code>, and <code>CANCELLED</code>.</p>
     pub state: std::option::Option<crate::model::JobRunState>,
@@ -784,8 +762,7 @@ impl Condition {
     pub fn logical_operator(&self) -> std::option::Option<&crate::model::LogicalOperator> {
         self.logical_operator.as_ref()
     }
-    /// <p>The name of the job whose <code>JobRuns</code> this condition applies to, and on which
-    /// this trigger waits.</p>
+    /// <p>The name of the job whose <code>JobRuns</code> this condition applies to, and on which this trigger waits.</p>
     pub fn job_name(&self) -> std::option::Option<&str> {
         self.job_name.as_deref()
     }
@@ -839,14 +816,12 @@ pub mod condition {
             self.logical_operator = input;
             self
         }
-        /// <p>The name of the job whose <code>JobRuns</code> this condition applies to, and on which
-        /// this trigger waits.</p>
+        /// <p>The name of the job whose <code>JobRuns</code> this condition applies to, and on which this trigger waits.</p>
         pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_name = Some(input.into());
             self
         }
-        /// <p>The name of the job whose <code>JobRuns</code> this condition applies to, and on which
-        /// this trigger waits.</p>
+        /// <p>The name of the job whose <code>JobRuns</code> this condition applies to, and on which this trigger waits.</p>
         pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_name = input;
             self
@@ -1166,18 +1141,14 @@ pub struct Action {
     /// <p>The name of a job to be run.</p>
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The job arguments used when this trigger fires. For this job run, they replace the default arguments set in the job definition itself.</p>
-    /// <p>You can specify arguments here that your own job-execution script
-    /// consumes, as well as arguments that Glue itself consumes.</p>
+    /// <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p>
     /// <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
     /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
     pub arguments:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can
-    /// consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default
-    /// is 2,880 minutes (48 hours). This overrides the timeout value set in the parent job.</p>
+    /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This overrides the timeout value set in the parent job.</p>
     pub timeout: std::option::Option<i32>,
-    /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this
-    /// action.</p>
+    /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this action.</p>
     pub security_configuration: std::option::Option<std::string::String>,
     /// <p>Specifies configuration properties of a job run notification.</p>
     pub notification_property: std::option::Option<crate::model::NotificationProperty>,
@@ -1190,8 +1161,7 @@ impl Action {
         self.job_name.as_deref()
     }
     /// <p>The job arguments used when this trigger fires. For this job run, they replace the default arguments set in the job definition itself.</p>
-    /// <p>You can specify arguments here that your own job-execution script
-    /// consumes, as well as arguments that Glue itself consumes.</p>
+    /// <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p>
     /// <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
     /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
     pub fn arguments(
@@ -1200,14 +1170,11 @@ impl Action {
     {
         self.arguments.as_ref()
     }
-    /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can
-    /// consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default
-    /// is 2,880 minutes (48 hours). This overrides the timeout value set in the parent job.</p>
+    /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This overrides the timeout value set in the parent job.</p>
     pub fn timeout(&self) -> std::option::Option<i32> {
         self.timeout
     }
-    /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this
-    /// action.</p>
+    /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this action.</p>
     pub fn security_configuration(&self) -> std::option::Option<&str> {
         self.security_configuration.as_deref()
     }
@@ -1265,8 +1232,7 @@ pub mod action {
         /// To override the contents of this collection use [`set_arguments`](Self::set_arguments).
         ///
         /// <p>The job arguments used when this trigger fires. For this job run, they replace the default arguments set in the job definition itself.</p>
-        /// <p>You can specify arguments here that your own job-execution script
-        /// consumes, as well as arguments that Glue itself consumes.</p>
+        /// <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p>
         /// <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
         /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
         pub fn arguments(
@@ -1280,8 +1246,7 @@ pub mod action {
             self
         }
         /// <p>The job arguments used when this trigger fires. For this job run, they replace the default arguments set in the job definition itself.</p>
-        /// <p>You can specify arguments here that your own job-execution script
-        /// consumes, as well as arguments that Glue itself consumes.</p>
+        /// <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p>
         /// <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
         /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
         pub fn set_arguments(
@@ -1293,28 +1258,22 @@ pub mod action {
             self.arguments = input;
             self
         }
-        /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can
-        /// consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default
-        /// is 2,880 minutes (48 hours). This overrides the timeout value set in the parent job.</p>
+        /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This overrides the timeout value set in the parent job.</p>
         pub fn timeout(mut self, input: i32) -> Self {
             self.timeout = Some(input);
             self
         }
-        /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can
-        /// consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default
-        /// is 2,880 minutes (48 hours). This overrides the timeout value set in the parent job.</p>
+        /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This overrides the timeout value set in the parent job.</p>
         pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
             self.timeout = input;
             self
         }
-        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this
-        /// action.</p>
+        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this action.</p>
         pub fn security_configuration(mut self, input: impl Into<std::string::String>) -> Self {
             self.security_configuration = Some(input.into());
             self
         }
-        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this
-        /// action.</p>
+        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this action.</p>
         pub fn set_security_configuration(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1369,13 +1328,11 @@ impl Action {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotificationProperty {
-    /// <p>After a job run starts, the number of minutes to wait before
-    /// sending a job run delay notification.</p>
+    /// <p>After a job run starts, the number of minutes to wait before sending a job run delay notification.</p>
     pub notify_delay_after: std::option::Option<i32>,
 }
 impl NotificationProperty {
-    /// <p>After a job run starts, the number of minutes to wait before
-    /// sending a job run delay notification.</p>
+    /// <p>After a job run starts, the number of minutes to wait before sending a job run delay notification.</p>
     pub fn notify_delay_after(&self) -> std::option::Option<i32> {
         self.notify_delay_after
     }
@@ -1396,14 +1353,12 @@ pub mod notification_property {
         pub(crate) notify_delay_after: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>After a job run starts, the number of minutes to wait before
-        /// sending a job run delay notification.</p>
+        /// <p>After a job run starts, the number of minutes to wait before sending a job run delay notification.</p>
         pub fn notify_delay_after(mut self, input: i32) -> Self {
             self.notify_delay_after = Some(input);
             self
         }
-        /// <p>After a job run starts, the number of minutes to wait before
-        /// sending a job run delay notification.</p>
+        /// <p>After a job run starts, the number of minutes to wait before sending a job run delay notification.</p>
         pub fn set_notify_delay_after(mut self, input: std::option::Option<i32>) -> Self {
             self.notify_delay_after = input;
             self
@@ -1574,8 +1529,7 @@ impl AsRef<str> for TriggerType {
     }
 }
 
-/// <p>A structure used to provide information used to update a trigger. This object updates the
-/// previous trigger definition by overwriting it completely.</p>
+/// <p>A structure used to provide information used to update a trigger. This object updates the previous trigger definition by overwriting it completely.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TriggerUpdate {
@@ -1583,17 +1537,13 @@ pub struct TriggerUpdate {
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of this trigger.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
-    /// Schedules for Jobs and Crawlers</a>. For example, to run
-    /// something every day at 12:15 UTC, you would specify:
-    /// <code>cron(15 12 * * ? *)</code>.</p>
+    /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
     pub schedule: std::option::Option<std::string::String>,
     /// <p>The actions initiated by this trigger.</p>
     pub actions: std::option::Option<std::vec::Vec<crate::model::Action>>,
     /// <p>The predicate of this trigger, which defines when it will fire.</p>
     pub predicate: std::option::Option<crate::model::Predicate>,
-    /// <p>Batch condition that must be met (specified number of events received or batch time window expired)
-    /// before EventBridge event trigger fires.</p>
+    /// <p>Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires.</p>
     pub event_batching_condition: std::option::Option<crate::model::EventBatchingCondition>,
 }
 impl TriggerUpdate {
@@ -1605,10 +1555,7 @@ impl TriggerUpdate {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
-    /// Schedules for Jobs and Crawlers</a>. For example, to run
-    /// something every day at 12:15 UTC, you would specify:
-    /// <code>cron(15 12 * * ? *)</code>.</p>
+    /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
     pub fn schedule(&self) -> std::option::Option<&str> {
         self.schedule.as_deref()
     }
@@ -1620,8 +1567,7 @@ impl TriggerUpdate {
     pub fn predicate(&self) -> std::option::Option<&crate::model::Predicate> {
         self.predicate.as_ref()
     }
-    /// <p>Batch condition that must be met (specified number of events received or batch time window expired)
-    /// before EventBridge event trigger fires.</p>
+    /// <p>Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires.</p>
     pub fn event_batching_condition(
         &self,
     ) -> std::option::Option<&crate::model::EventBatchingCondition> {
@@ -1675,18 +1621,12 @@ pub mod trigger_update {
             self.description = input;
             self
         }
-        /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
-        /// Schedules for Jobs and Crawlers</a>. For example, to run
-        /// something every day at 12:15 UTC, you would specify:
-        /// <code>cron(15 12 * * ? *)</code>.</p>
+        /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
         pub fn schedule(mut self, input: impl Into<std::string::String>) -> Self {
             self.schedule = Some(input.into());
             self
         }
-        /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
-        /// Schedules for Jobs and Crawlers</a>. For example, to run
-        /// something every day at 12:15 UTC, you would specify:
-        /// <code>cron(15 12 * * ? *)</code>.</p>
+        /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
         pub fn set_schedule(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.schedule = input;
             self
@@ -1723,8 +1663,7 @@ pub mod trigger_update {
             self.predicate = input;
             self
         }
-        /// <p>Batch condition that must be met (specified number of events received or batch time window expired)
-        /// before EventBridge event trigger fires.</p>
+        /// <p>Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires.</p>
         pub fn event_batching_condition(
             mut self,
             input: crate::model::EventBatchingCondition,
@@ -1732,8 +1671,7 @@ pub mod trigger_update {
             self.event_batching_condition = Some(input);
             self
         }
-        /// <p>Batch condition that must be met (specified number of events received or batch time window expired)
-        /// before EventBridge event trigger fires.</p>
+        /// <p>Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires.</p>
         pub fn set_event_batching_condition(
             mut self,
             input: std::option::Option<crate::model::EventBatchingCondition>,
@@ -1765,8 +1703,7 @@ impl TriggerUpdate {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TableInput {
-    /// <p>The table name. For Hive compatibility, this is folded to
-    /// lowercase when it is stored.</p>
+    /// <p>The table name. For Hive compatibility, this is folded to lowercase when it is stored.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the table.</p>
     pub description: std::option::Option<std::string::String>,
@@ -1778,17 +1715,11 @@ pub struct TableInput {
     pub last_analyzed_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The retention time for this table.</p>
     pub retention: i32,
-    /// <p>A storage descriptor containing information about the physical storage
-    /// of this table.</p>
+    /// <p>A storage descriptor containing information about the physical storage of this table.</p>
     pub storage_descriptor: std::option::Option<crate::model::StorageDescriptor>,
-    /// <p>A list of columns by which the table is partitioned. Only primitive
-    /// types are supported as partition keys.</p>
-    /// <p>When you create a table used by Amazon Athena, and you do not specify any
-    /// <code>partitionKeys</code>, you must at least set the value of <code>partitionKeys</code> to
-    /// an empty list. For example:</p>
-    /// <p>
-    /// <code>"PartitionKeys": []</code>
-    /// </p>
+    /// <p>A list of columns by which the table is partitioned. Only primitive types are supported as partition keys.</p>
+    /// <p>When you create a table used by Amazon Athena, and you do not specify any <code>partitionKeys</code>, you must at least set the value of <code>partitionKeys</code> to an empty list. For example:</p>
+    /// <p> <code>"PartitionKeys": []</code> </p>
     pub partition_keys: std::option::Option<std::vec::Vec<crate::model::Column>>,
     /// <p>If the table is a view, the original text of the view; otherwise <code>null</code>.</p>
     pub view_original_text: std::option::Option<std::string::String>,
@@ -1803,8 +1734,7 @@ pub struct TableInput {
     pub target_table: std::option::Option<crate::model::TableIdentifier>,
 }
 impl TableInput {
-    /// <p>The table name. For Hive compatibility, this is folded to
-    /// lowercase when it is stored.</p>
+    /// <p>The table name. For Hive compatibility, this is folded to lowercase when it is stored.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -1828,19 +1758,13 @@ impl TableInput {
     pub fn retention(&self) -> i32 {
         self.retention
     }
-    /// <p>A storage descriptor containing information about the physical storage
-    /// of this table.</p>
+    /// <p>A storage descriptor containing information about the physical storage of this table.</p>
     pub fn storage_descriptor(&self) -> std::option::Option<&crate::model::StorageDescriptor> {
         self.storage_descriptor.as_ref()
     }
-    /// <p>A list of columns by which the table is partitioned. Only primitive
-    /// types are supported as partition keys.</p>
-    /// <p>When you create a table used by Amazon Athena, and you do not specify any
-    /// <code>partitionKeys</code>, you must at least set the value of <code>partitionKeys</code> to
-    /// an empty list. For example:</p>
-    /// <p>
-    /// <code>"PartitionKeys": []</code>
-    /// </p>
+    /// <p>A list of columns by which the table is partitioned. Only primitive types are supported as partition keys.</p>
+    /// <p>When you create a table used by Amazon Athena, and you do not specify any <code>partitionKeys</code>, you must at least set the value of <code>partitionKeys</code> to an empty list. For example:</p>
+    /// <p> <code>"PartitionKeys": []</code> </p>
     pub fn partition_keys(&self) -> std::option::Option<&[crate::model::Column]> {
         self.partition_keys.as_deref()
     }
@@ -1910,14 +1834,12 @@ pub mod table_input {
         pub(crate) target_table: std::option::Option<crate::model::TableIdentifier>,
     }
     impl Builder {
-        /// <p>The table name. For Hive compatibility, this is folded to
-        /// lowercase when it is stored.</p>
+        /// <p>The table name. For Hive compatibility, this is folded to lowercase when it is stored.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The table name. For Hive compatibility, this is folded to
-        /// lowercase when it is stored.</p>
+        /// <p>The table name. For Hive compatibility, this is folded to lowercase when it is stored.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1978,14 +1900,12 @@ pub mod table_input {
             self.retention = input;
             self
         }
-        /// <p>A storage descriptor containing information about the physical storage
-        /// of this table.</p>
+        /// <p>A storage descriptor containing information about the physical storage of this table.</p>
         pub fn storage_descriptor(mut self, input: crate::model::StorageDescriptor) -> Self {
             self.storage_descriptor = Some(input);
             self
         }
-        /// <p>A storage descriptor containing information about the physical storage
-        /// of this table.</p>
+        /// <p>A storage descriptor containing information about the physical storage of this table.</p>
         pub fn set_storage_descriptor(
             mut self,
             input: std::option::Option<crate::model::StorageDescriptor>,
@@ -1997,28 +1917,18 @@ pub mod table_input {
         ///
         /// To override the contents of this collection use [`set_partition_keys`](Self::set_partition_keys).
         ///
-        /// <p>A list of columns by which the table is partitioned. Only primitive
-        /// types are supported as partition keys.</p>
-        /// <p>When you create a table used by Amazon Athena, and you do not specify any
-        /// <code>partitionKeys</code>, you must at least set the value of <code>partitionKeys</code> to
-        /// an empty list. For example:</p>
-        /// <p>
-        /// <code>"PartitionKeys": []</code>
-        /// </p>
+        /// <p>A list of columns by which the table is partitioned. Only primitive types are supported as partition keys.</p>
+        /// <p>When you create a table used by Amazon Athena, and you do not specify any <code>partitionKeys</code>, you must at least set the value of <code>partitionKeys</code> to an empty list. For example:</p>
+        /// <p> <code>"PartitionKeys": []</code> </p>
         pub fn partition_keys(mut self, input: crate::model::Column) -> Self {
             let mut v = self.partition_keys.unwrap_or_default();
             v.push(input);
             self.partition_keys = Some(v);
             self
         }
-        /// <p>A list of columns by which the table is partitioned. Only primitive
-        /// types are supported as partition keys.</p>
-        /// <p>When you create a table used by Amazon Athena, and you do not specify any
-        /// <code>partitionKeys</code>, you must at least set the value of <code>partitionKeys</code> to
-        /// an empty list. For example:</p>
-        /// <p>
-        /// <code>"PartitionKeys": []</code>
-        /// </p>
+        /// <p>A list of columns by which the table is partitioned. Only primitive types are supported as partition keys.</p>
+        /// <p>When you create a table used by Amazon Athena, and you do not specify any <code>partitionKeys</code>, you must at least set the value of <code>partitionKeys</code> to an empty list. For example:</p>
+        /// <p> <code>"PartitionKeys": []</code> </p>
         pub fn set_partition_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Column>>,
@@ -2360,26 +2270,19 @@ impl Column {
 pub struct StorageDescriptor {
     /// <p>A list of the <code>Columns</code> in the table.</p>
     pub columns: std::option::Option<std::vec::Vec<crate::model::Column>>,
-    /// <p>The physical location of the table. By default, this takes the form of the warehouse
-    /// location, followed by the database location in the warehouse, followed by the table
-    /// name.</p>
+    /// <p>The physical location of the table. By default, this takes the form of the warehouse location, followed by the database location in the warehouse, followed by the table name.</p>
     pub location: std::option::Option<std::string::String>,
-    /// <p>The input format: <code>SequenceFileInputFormat</code> (binary),
-    /// or <code>TextInputFormat</code>, or a custom format.</p>
+    /// <p>The input format: <code>SequenceFileInputFormat</code> (binary), or <code>TextInputFormat</code>, or a custom format.</p>
     pub input_format: std::option::Option<std::string::String>,
-    /// <p>The output format: <code>SequenceFileOutputFormat</code> (binary),
-    /// or <code>IgnoreKeyTextOutputFormat</code>, or a custom format.</p>
+    /// <p>The output format: <code>SequenceFileOutputFormat</code> (binary), or <code>IgnoreKeyTextOutputFormat</code>, or a custom format.</p>
     pub output_format: std::option::Option<std::string::String>,
-    /// <p>
-    /// <code>True</code> if the data in the table is compressed, or <code>False</code> if
-    /// not.</p>
+    /// <p> <code>True</code> if the data in the table is compressed, or <code>False</code> if not.</p>
     pub compressed: bool,
     /// <p>Must be specified if the table contains any dimension columns.</p>
     pub number_of_buckets: i32,
     /// <p>The serialization/deserialization (SerDe) information.</p>
     pub serde_info: std::option::Option<crate::model::SerDeInfo>,
-    /// <p>A list of reducer grouping columns, clustering columns, and
-    /// bucketing columns in the table.</p>
+    /// <p>A list of reducer grouping columns, clustering columns, and bucketing columns in the table.</p>
     pub bucket_columns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list specifying the sort order of each bucket in the table.</p>
     pub sort_columns: std::option::Option<std::vec::Vec<crate::model::Order>>,
@@ -2388,12 +2291,9 @@ pub struct StorageDescriptor {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The information about values that appear frequently in a column (skewed values).</p>
     pub skewed_info: std::option::Option<crate::model::SkewedInfo>,
-    /// <p>
-    /// <code>True</code> if the table data is stored in subdirectories, or <code>False</code> if
-    /// not.</p>
+    /// <p> <code>True</code> if the table data is stored in subdirectories, or <code>False</code> if not.</p>
     pub stored_as_sub_directories: bool,
     /// <p>An object that references a schema stored in the Glue Schema Registry.</p>
-    ///
     /// <p>When creating a table, you can pass an empty list of columns for the schema, and instead use a schema reference.</p>
     pub schema_reference: std::option::Option<crate::model::SchemaReference>,
 }
@@ -2402,25 +2302,19 @@ impl StorageDescriptor {
     pub fn columns(&self) -> std::option::Option<&[crate::model::Column]> {
         self.columns.as_deref()
     }
-    /// <p>The physical location of the table. By default, this takes the form of the warehouse
-    /// location, followed by the database location in the warehouse, followed by the table
-    /// name.</p>
+    /// <p>The physical location of the table. By default, this takes the form of the warehouse location, followed by the database location in the warehouse, followed by the table name.</p>
     pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
     }
-    /// <p>The input format: <code>SequenceFileInputFormat</code> (binary),
-    /// or <code>TextInputFormat</code>, or a custom format.</p>
+    /// <p>The input format: <code>SequenceFileInputFormat</code> (binary), or <code>TextInputFormat</code>, or a custom format.</p>
     pub fn input_format(&self) -> std::option::Option<&str> {
         self.input_format.as_deref()
     }
-    /// <p>The output format: <code>SequenceFileOutputFormat</code> (binary),
-    /// or <code>IgnoreKeyTextOutputFormat</code>, or a custom format.</p>
+    /// <p>The output format: <code>SequenceFileOutputFormat</code> (binary), or <code>IgnoreKeyTextOutputFormat</code>, or a custom format.</p>
     pub fn output_format(&self) -> std::option::Option<&str> {
         self.output_format.as_deref()
     }
-    /// <p>
-    /// <code>True</code> if the data in the table is compressed, or <code>False</code> if
-    /// not.</p>
+    /// <p> <code>True</code> if the data in the table is compressed, or <code>False</code> if not.</p>
     pub fn compressed(&self) -> bool {
         self.compressed
     }
@@ -2432,8 +2326,7 @@ impl StorageDescriptor {
     pub fn serde_info(&self) -> std::option::Option<&crate::model::SerDeInfo> {
         self.serde_info.as_ref()
     }
-    /// <p>A list of reducer grouping columns, clustering columns, and
-    /// bucketing columns in the table.</p>
+    /// <p>A list of reducer grouping columns, clustering columns, and bucketing columns in the table.</p>
     pub fn bucket_columns(&self) -> std::option::Option<&[std::string::String]> {
         self.bucket_columns.as_deref()
     }
@@ -2452,14 +2345,11 @@ impl StorageDescriptor {
     pub fn skewed_info(&self) -> std::option::Option<&crate::model::SkewedInfo> {
         self.skewed_info.as_ref()
     }
-    /// <p>
-    /// <code>True</code> if the table data is stored in subdirectories, or <code>False</code> if
-    /// not.</p>
+    /// <p> <code>True</code> if the table data is stored in subdirectories, or <code>False</code> if not.</p>
     pub fn stored_as_sub_directories(&self) -> bool {
         self.stored_as_sub_directories
     }
     /// <p>An object that references a schema stored in the Glue Schema Registry.</p>
-    ///
     /// <p>When creating a table, you can pass an empty list of columns for the schema, and instead use a schema reference.</p>
     pub fn schema_reference(&self) -> std::option::Option<&crate::model::SchemaReference> {
         self.schema_reference.as_ref()
@@ -2526,40 +2416,32 @@ pub mod storage_descriptor {
             self.columns = input;
             self
         }
-        /// <p>The physical location of the table. By default, this takes the form of the warehouse
-        /// location, followed by the database location in the warehouse, followed by the table
-        /// name.</p>
+        /// <p>The physical location of the table. By default, this takes the form of the warehouse location, followed by the database location in the warehouse, followed by the table name.</p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
             self.location = Some(input.into());
             self
         }
-        /// <p>The physical location of the table. By default, this takes the form of the warehouse
-        /// location, followed by the database location in the warehouse, followed by the table
-        /// name.</p>
+        /// <p>The physical location of the table. By default, this takes the form of the warehouse location, followed by the database location in the warehouse, followed by the table name.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
         }
-        /// <p>The input format: <code>SequenceFileInputFormat</code> (binary),
-        /// or <code>TextInputFormat</code>, or a custom format.</p>
+        /// <p>The input format: <code>SequenceFileInputFormat</code> (binary), or <code>TextInputFormat</code>, or a custom format.</p>
         pub fn input_format(mut self, input: impl Into<std::string::String>) -> Self {
             self.input_format = Some(input.into());
             self
         }
-        /// <p>The input format: <code>SequenceFileInputFormat</code> (binary),
-        /// or <code>TextInputFormat</code>, or a custom format.</p>
+        /// <p>The input format: <code>SequenceFileInputFormat</code> (binary), or <code>TextInputFormat</code>, or a custom format.</p>
         pub fn set_input_format(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.input_format = input;
             self
         }
-        /// <p>The output format: <code>SequenceFileOutputFormat</code> (binary),
-        /// or <code>IgnoreKeyTextOutputFormat</code>, or a custom format.</p>
+        /// <p>The output format: <code>SequenceFileOutputFormat</code> (binary), or <code>IgnoreKeyTextOutputFormat</code>, or a custom format.</p>
         pub fn output_format(mut self, input: impl Into<std::string::String>) -> Self {
             self.output_format = Some(input.into());
             self
         }
-        /// <p>The output format: <code>SequenceFileOutputFormat</code> (binary),
-        /// or <code>IgnoreKeyTextOutputFormat</code>, or a custom format.</p>
+        /// <p>The output format: <code>SequenceFileOutputFormat</code> (binary), or <code>IgnoreKeyTextOutputFormat</code>, or a custom format.</p>
         pub fn set_output_format(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2567,16 +2449,12 @@ pub mod storage_descriptor {
             self.output_format = input;
             self
         }
-        /// <p>
-        /// <code>True</code> if the data in the table is compressed, or <code>False</code> if
-        /// not.</p>
+        /// <p> <code>True</code> if the data in the table is compressed, or <code>False</code> if not.</p>
         pub fn compressed(mut self, input: bool) -> Self {
             self.compressed = Some(input);
             self
         }
-        /// <p>
-        /// <code>True</code> if the data in the table is compressed, or <code>False</code> if
-        /// not.</p>
+        /// <p> <code>True</code> if the data in the table is compressed, or <code>False</code> if not.</p>
         pub fn set_compressed(mut self, input: std::option::Option<bool>) -> Self {
             self.compressed = input;
             self
@@ -2608,16 +2486,14 @@ pub mod storage_descriptor {
         ///
         /// To override the contents of this collection use [`set_bucket_columns`](Self::set_bucket_columns).
         ///
-        /// <p>A list of reducer grouping columns, clustering columns, and
-        /// bucketing columns in the table.</p>
+        /// <p>A list of reducer grouping columns, clustering columns, and bucketing columns in the table.</p>
         pub fn bucket_columns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.bucket_columns.unwrap_or_default();
             v.push(input.into());
             self.bucket_columns = Some(v);
             self
         }
-        /// <p>A list of reducer grouping columns, clustering columns, and
-        /// bucketing columns in the table.</p>
+        /// <p>A list of reducer grouping columns, clustering columns, and bucketing columns in the table.</p>
         pub fn set_bucket_columns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2682,29 +2558,23 @@ pub mod storage_descriptor {
             self.skewed_info = input;
             self
         }
-        /// <p>
-        /// <code>True</code> if the table data is stored in subdirectories, or <code>False</code> if
-        /// not.</p>
+        /// <p> <code>True</code> if the table data is stored in subdirectories, or <code>False</code> if not.</p>
         pub fn stored_as_sub_directories(mut self, input: bool) -> Self {
             self.stored_as_sub_directories = Some(input);
             self
         }
-        /// <p>
-        /// <code>True</code> if the table data is stored in subdirectories, or <code>False</code> if
-        /// not.</p>
+        /// <p> <code>True</code> if the table data is stored in subdirectories, or <code>False</code> if not.</p>
         pub fn set_stored_as_sub_directories(mut self, input: std::option::Option<bool>) -> Self {
             self.stored_as_sub_directories = input;
             self
         }
         /// <p>An object that references a schema stored in the Glue Schema Registry.</p>
-        ///
         /// <p>When creating a table, you can pass an empty list of columns for the schema, and instead use a schema reference.</p>
         pub fn schema_reference(mut self, input: crate::model::SchemaReference) -> Self {
             self.schema_reference = Some(input);
             self
         }
         /// <p>An object that references a schema stored in the Glue Schema Registry.</p>
-        ///
         /// <p>When creating a table, you can pass an empty list of columns for the schema, and instead use a schema reference.</p>
         pub fn set_schema_reference(
             mut self,
@@ -2930,15 +2800,13 @@ impl SchemaId {
     }
 }
 
-/// <p>Specifies skewed values in a table. Skewed values are those that occur with very high
-/// frequency.</p>
+/// <p>Specifies skewed values in a table. Skewed values are those that occur with very high frequency.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SkewedInfo {
     /// <p>A list of names of columns that contain skewed values.</p>
     pub skewed_column_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A list of values that appear so frequently as to be considered
-    /// skewed.</p>
+    /// <p>A list of values that appear so frequently as to be considered skewed.</p>
     pub skewed_column_values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A mapping of skewed values to the columns that contain them.</p>
     pub skewed_column_value_location_maps:
@@ -2949,8 +2817,7 @@ impl SkewedInfo {
     pub fn skewed_column_names(&self) -> std::option::Option<&[std::string::String]> {
         self.skewed_column_names.as_deref()
     }
-    /// <p>A list of values that appear so frequently as to be considered
-    /// skewed.</p>
+    /// <p>A list of values that appear so frequently as to be considered skewed.</p>
     pub fn skewed_column_values(&self) -> std::option::Option<&[std::string::String]> {
         self.skewed_column_values.as_deref()
     }
@@ -3010,16 +2877,14 @@ pub mod skewed_info {
         ///
         /// To override the contents of this collection use [`set_skewed_column_values`](Self::set_skewed_column_values).
         ///
-        /// <p>A list of values that appear so frequently as to be considered
-        /// skewed.</p>
+        /// <p>A list of values that appear so frequently as to be considered skewed.</p>
         pub fn skewed_column_values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.skewed_column_values.unwrap_or_default();
             v.push(input.into());
             self.skewed_column_values = Some(v);
             self
         }
-        /// <p>A list of values that appear so frequently as to be considered
-        /// skewed.</p>
+        /// <p>A list of values that appear so frequently as to be considered skewed.</p>
         pub fn set_skewed_column_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3075,8 +2940,7 @@ impl SkewedInfo {
 pub struct Order {
     /// <p>The name of the column.</p>
     pub column: std::option::Option<std::string::String>,
-    /// <p>Indicates that the column is sorted in ascending order
-    /// (<code>== 1</code>), or in descending order (<code>==0</code>).</p>
+    /// <p>Indicates that the column is sorted in ascending order (<code>== 1</code>), or in descending order (<code>==0</code>).</p>
     pub sort_order: i32,
 }
 impl Order {
@@ -3084,8 +2948,7 @@ impl Order {
     pub fn column(&self) -> std::option::Option<&str> {
         self.column.as_deref()
     }
-    /// <p>Indicates that the column is sorted in ascending order
-    /// (<code>== 1</code>), or in descending order (<code>==0</code>).</p>
+    /// <p>Indicates that the column is sorted in ascending order (<code>== 1</code>), or in descending order (<code>==0</code>).</p>
     pub fn sort_order(&self) -> i32 {
         self.sort_order
     }
@@ -3118,14 +2981,12 @@ pub mod order {
             self.column = input;
             self
         }
-        /// <p>Indicates that the column is sorted in ascending order
-        /// (<code>== 1</code>), or in descending order (<code>==0</code>).</p>
+        /// <p>Indicates that the column is sorted in ascending order (<code>== 1</code>), or in descending order (<code>==0</code>).</p>
         pub fn sort_order(mut self, input: i32) -> Self {
             self.sort_order = Some(input);
             self
         }
-        /// <p>Indicates that the column is sorted in ascending order
-        /// (<code>== 1</code>), or in descending order (<code>==0</code>).</p>
+        /// <p>Indicates that the column is sorted in ascending order (<code>== 1</code>), or in descending order (<code>==0</code>).</p>
         pub fn set_sort_order(mut self, input: std::option::Option<i32>) -> Self {
             self.sort_order = input;
             self
@@ -3146,15 +3007,13 @@ impl Order {
     }
 }
 
-/// <p>Information about a serialization/deserialization program (SerDe) that serves as an
-/// extractor and loader.</p>
+/// <p>Information about a serialization/deserialization program (SerDe) that serves as an extractor and loader.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SerDeInfo {
     /// <p>Name of the SerDe.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>Usually the class that implements the SerDe. An example is
-    /// <code>org.apache.hadoop.hive.serde2.columnar.ColumnarSerDe</code>.</p>
+    /// <p>Usually the class that implements the SerDe. An example is <code>org.apache.hadoop.hive.serde2.columnar.ColumnarSerDe</code>.</p>
     pub serialization_library: std::option::Option<std::string::String>,
     /// <p>These key-value pairs define initialization parameters for the SerDe.</p>
     pub parameters:
@@ -3165,8 +3024,7 @@ impl SerDeInfo {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Usually the class that implements the SerDe. An example is
-    /// <code>org.apache.hadoop.hive.serde2.columnar.ColumnarSerDe</code>.</p>
+    /// <p>Usually the class that implements the SerDe. An example is <code>org.apache.hadoop.hive.serde2.columnar.ColumnarSerDe</code>.</p>
     pub fn serialization_library(&self) -> std::option::Option<&str> {
         self.serialization_library.as_deref()
     }
@@ -3210,14 +3068,12 @@ pub mod ser_de_info {
             self.name = input;
             self
         }
-        /// <p>Usually the class that implements the SerDe. An example is
-        /// <code>org.apache.hadoop.hive.serde2.columnar.ColumnarSerDe</code>.</p>
+        /// <p>Usually the class that implements the SerDe. An example is <code>org.apache.hadoop.hive.serde2.columnar.ColumnarSerDe</code>.</p>
         pub fn serialization_library(mut self, input: impl Into<std::string::String>) -> Self {
             self.serialization_library = Some(input.into());
             self
         }
-        /// <p>Usually the class that implements the SerDe. An example is
-        /// <code>org.apache.hadoop.hive.serde2.columnar.ColumnarSerDe</code>.</p>
+        /// <p>Usually the class that implements the SerDe. An example is <code>org.apache.hadoop.hive.serde2.columnar.ColumnarSerDe</code>.</p>
         pub fn set_serialization_library(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3509,13 +3365,11 @@ impl RegistryId {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PartitionInput {
     /// <p>The values of the partition. Although this parameter is not required by the SDK, you must specify this parameter for a valid input.</p>
-    ///
     /// <p>The values for the keys for the new partition must be passed as an array of String objects that must be ordered in the same order as the partition keys appearing in the Amazon S3 prefix. Otherwise Glue will add the values to the wrong keys.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The last time at which the partition was accessed.</p>
     pub last_access_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Provides information about the physical
-    /// location where the partition is stored.</p>
+    /// <p>Provides information about the physical location where the partition is stored.</p>
     pub storage_descriptor: std::option::Option<crate::model::StorageDescriptor>,
     /// <p>These key-value pairs define partition parameters.</p>
     pub parameters:
@@ -3525,7 +3379,6 @@ pub struct PartitionInput {
 }
 impl PartitionInput {
     /// <p>The values of the partition. Although this parameter is not required by the SDK, you must specify this parameter for a valid input.</p>
-    ///
     /// <p>The values for the keys for the new partition must be passed as an array of String objects that must be ordered in the same order as the partition keys appearing in the Amazon S3 prefix. Otherwise Glue will add the values to the wrong keys.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
@@ -3534,8 +3387,7 @@ impl PartitionInput {
     pub fn last_access_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_access_time.as_ref()
     }
-    /// <p>Provides information about the physical
-    /// location where the partition is stored.</p>
+    /// <p>Provides information about the physical location where the partition is stored.</p>
     pub fn storage_descriptor(&self) -> std::option::Option<&crate::model::StorageDescriptor> {
         self.storage_descriptor.as_ref()
     }
@@ -3582,7 +3434,6 @@ pub mod partition_input {
         /// To override the contents of this collection use [`set_values`](Self::set_values).
         ///
         /// <p>The values of the partition. Although this parameter is not required by the SDK, you must specify this parameter for a valid input.</p>
-        ///
         /// <p>The values for the keys for the new partition must be passed as an array of String objects that must be ordered in the same order as the partition keys appearing in the Amazon S3 prefix. Otherwise Glue will add the values to the wrong keys.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
@@ -3591,7 +3442,6 @@ pub mod partition_input {
             self
         }
         /// <p>The values of the partition. Although this parameter is not required by the SDK, you must specify this parameter for a valid input.</p>
-        ///
         /// <p>The values for the keys for the new partition must be passed as an array of String objects that must be ordered in the same order as the partition keys appearing in the Amazon S3 prefix. Otherwise Glue will add the values to the wrong keys.</p>
         pub fn set_values(
             mut self,
@@ -3613,14 +3463,12 @@ pub mod partition_input {
             self.last_access_time = input;
             self
         }
-        /// <p>Provides information about the physical
-        /// location where the partition is stored.</p>
+        /// <p>Provides information about the physical location where the partition is stored.</p>
         pub fn storage_descriptor(mut self, input: crate::model::StorageDescriptor) -> Self {
             self.storage_descriptor = Some(input);
             self
         }
-        /// <p>Provides information about the physical
-        /// location where the partition is stored.</p>
+        /// <p>Provides information about the physical location where the partition is stored.</p>
         pub fn set_storage_descriptor(
             mut self,
             input: std::option::Option<crate::model::StorageDescriptor>,
@@ -3744,8 +3592,7 @@ impl AsRef<str> for WorkerType {
     }
 }
 
-/// <p>The algorithm-specific parameters that are associated with the machine learning
-/// transform.</p>
+/// <p>The algorithm-specific parameters that are associated with the machine learning transform.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TransformParameters {
@@ -3840,26 +3687,13 @@ impl TransformParameters {
 pub struct FindMatchesParameters {
     /// <p>The name of a column that uniquely identifies rows in the source table. Used to help identify matching records.</p>
     pub primary_key_column_name: std::option::Option<std::string::String>,
-    /// <p>The value selected when tuning your transform for a balance between precision and recall.
-    /// A value of 0.5 means no preference; a value of 1.0 means a bias purely for precision, and a
-    /// value of 0.0 means a bias for recall. Because this is a tradeoff, choosing values close to 1.0
-    /// means very low recall, and choosing values close to 0.0 results in very low precision.</p>
-    ///
+    /// <p>The value selected when tuning your transform for a balance between precision and recall. A value of 0.5 means no preference; a value of 1.0 means a bias purely for precision, and a value of 0.0 means a bias for recall. Because this is a tradeoff, choosing values close to 1.0 means very low recall, and choosing values close to 0.0 results in very low precision.</p>
     /// <p>The precision metric indicates how often your model is correct when it predicts a match. </p>
-    ///
-    /// <p>The recall metric indicates that for an actual match, how often your model predicts the
-    /// match.</p>
+    /// <p>The recall metric indicates that for an actual match, how often your model predicts the match.</p>
     pub precision_recall_tradeoff: std::option::Option<f64>,
-    /// <p>The value that is selected when tuning your transform for a balance between accuracy and
-    /// cost. A value of 0.5 means that the system balances accuracy and cost concerns. A value of 1.0
-    /// means a bias purely for accuracy, which typically results in a higher cost, sometimes
-    /// substantially higher. A value of 0.0 means a bias purely for cost, which results in a less
-    /// accurate <code>FindMatches</code> transform, sometimes with unacceptable accuracy.</p>
-    ///
+    /// <p>The value that is selected when tuning your transform for a balance between accuracy and cost. A value of 0.5 means that the system balances accuracy and cost concerns. A value of 1.0 means a bias purely for accuracy, which typically results in a higher cost, sometimes substantially higher. A value of 0.0 means a bias purely for cost, which results in a less accurate <code>FindMatches</code> transform, sometimes with unacceptable accuracy.</p>
     /// <p>Accuracy measures how well the transform finds true positives and true negatives. Increasing accuracy requires more machine resources and cost. But it also results in increased recall. </p>
-    ///
-    /// <p>Cost measures how many compute resources, and thus money, are consumed to run the
-    /// transform.</p>
+    /// <p>Cost measures how many compute resources, and thus money, are consumed to run the transform.</p>
     pub accuracy_cost_tradeoff: std::option::Option<f64>,
     /// <p>The value to switch on or off to force the output to match the provided labels from users. If the value is <code>True</code>, the <code>find matches</code> transform forces the output to match the provided labels. The results override the normal conflation results. If the value is <code>False</code>, the <code>find matches</code> transform does not ensure all the labels provided are respected, and the results rely on the trained model.</p>
     /// <p>Note that setting this value to true may increase the conflation execution time.</p>
@@ -3870,28 +3704,15 @@ impl FindMatchesParameters {
     pub fn primary_key_column_name(&self) -> std::option::Option<&str> {
         self.primary_key_column_name.as_deref()
     }
-    /// <p>The value selected when tuning your transform for a balance between precision and recall.
-    /// A value of 0.5 means no preference; a value of 1.0 means a bias purely for precision, and a
-    /// value of 0.0 means a bias for recall. Because this is a tradeoff, choosing values close to 1.0
-    /// means very low recall, and choosing values close to 0.0 results in very low precision.</p>
-    ///
+    /// <p>The value selected when tuning your transform for a balance between precision and recall. A value of 0.5 means no preference; a value of 1.0 means a bias purely for precision, and a value of 0.0 means a bias for recall. Because this is a tradeoff, choosing values close to 1.0 means very low recall, and choosing values close to 0.0 results in very low precision.</p>
     /// <p>The precision metric indicates how often your model is correct when it predicts a match. </p>
-    ///
-    /// <p>The recall metric indicates that for an actual match, how often your model predicts the
-    /// match.</p>
+    /// <p>The recall metric indicates that for an actual match, how often your model predicts the match.</p>
     pub fn precision_recall_tradeoff(&self) -> std::option::Option<f64> {
         self.precision_recall_tradeoff
     }
-    /// <p>The value that is selected when tuning your transform for a balance between accuracy and
-    /// cost. A value of 0.5 means that the system balances accuracy and cost concerns. A value of 1.0
-    /// means a bias purely for accuracy, which typically results in a higher cost, sometimes
-    /// substantially higher. A value of 0.0 means a bias purely for cost, which results in a less
-    /// accurate <code>FindMatches</code> transform, sometimes with unacceptable accuracy.</p>
-    ///
+    /// <p>The value that is selected when tuning your transform for a balance between accuracy and cost. A value of 0.5 means that the system balances accuracy and cost concerns. A value of 1.0 means a bias purely for accuracy, which typically results in a higher cost, sometimes substantially higher. A value of 0.0 means a bias purely for cost, which results in a less accurate <code>FindMatches</code> transform, sometimes with unacceptable accuracy.</p>
     /// <p>Accuracy measures how well the transform finds true positives and true negatives. Increasing accuracy requires more machine resources and cost. But it also results in increased recall. </p>
-    ///
-    /// <p>Cost measures how many compute resources, and thus money, are consumed to run the
-    /// transform.</p>
+    /// <p>Cost measures how many compute resources, and thus money, are consumed to run the transform.</p>
     pub fn accuracy_cost_tradeoff(&self) -> std::option::Option<f64> {
         self.accuracy_cost_tradeoff
     }
@@ -3936,56 +3757,30 @@ pub mod find_matches_parameters {
             self.primary_key_column_name = input;
             self
         }
-        /// <p>The value selected when tuning your transform for a balance between precision and recall.
-        /// A value of 0.5 means no preference; a value of 1.0 means a bias purely for precision, and a
-        /// value of 0.0 means a bias for recall. Because this is a tradeoff, choosing values close to 1.0
-        /// means very low recall, and choosing values close to 0.0 results in very low precision.</p>
-        ///
+        /// <p>The value selected when tuning your transform for a balance between precision and recall. A value of 0.5 means no preference; a value of 1.0 means a bias purely for precision, and a value of 0.0 means a bias for recall. Because this is a tradeoff, choosing values close to 1.0 means very low recall, and choosing values close to 0.0 results in very low precision.</p>
         /// <p>The precision metric indicates how often your model is correct when it predicts a match. </p>
-        ///
-        /// <p>The recall metric indicates that for an actual match, how often your model predicts the
-        /// match.</p>
+        /// <p>The recall metric indicates that for an actual match, how often your model predicts the match.</p>
         pub fn precision_recall_tradeoff(mut self, input: f64) -> Self {
             self.precision_recall_tradeoff = Some(input);
             self
         }
-        /// <p>The value selected when tuning your transform for a balance between precision and recall.
-        /// A value of 0.5 means no preference; a value of 1.0 means a bias purely for precision, and a
-        /// value of 0.0 means a bias for recall. Because this is a tradeoff, choosing values close to 1.0
-        /// means very low recall, and choosing values close to 0.0 results in very low precision.</p>
-        ///
+        /// <p>The value selected when tuning your transform for a balance between precision and recall. A value of 0.5 means no preference; a value of 1.0 means a bias purely for precision, and a value of 0.0 means a bias for recall. Because this is a tradeoff, choosing values close to 1.0 means very low recall, and choosing values close to 0.0 results in very low precision.</p>
         /// <p>The precision metric indicates how often your model is correct when it predicts a match. </p>
-        ///
-        /// <p>The recall metric indicates that for an actual match, how often your model predicts the
-        /// match.</p>
+        /// <p>The recall metric indicates that for an actual match, how often your model predicts the match.</p>
         pub fn set_precision_recall_tradeoff(mut self, input: std::option::Option<f64>) -> Self {
             self.precision_recall_tradeoff = input;
             self
         }
-        /// <p>The value that is selected when tuning your transform for a balance between accuracy and
-        /// cost. A value of 0.5 means that the system balances accuracy and cost concerns. A value of 1.0
-        /// means a bias purely for accuracy, which typically results in a higher cost, sometimes
-        /// substantially higher. A value of 0.0 means a bias purely for cost, which results in a less
-        /// accurate <code>FindMatches</code> transform, sometimes with unacceptable accuracy.</p>
-        ///
+        /// <p>The value that is selected when tuning your transform for a balance between accuracy and cost. A value of 0.5 means that the system balances accuracy and cost concerns. A value of 1.0 means a bias purely for accuracy, which typically results in a higher cost, sometimes substantially higher. A value of 0.0 means a bias purely for cost, which results in a less accurate <code>FindMatches</code> transform, sometimes with unacceptable accuracy.</p>
         /// <p>Accuracy measures how well the transform finds true positives and true negatives. Increasing accuracy requires more machine resources and cost. But it also results in increased recall. </p>
-        ///
-        /// <p>Cost measures how many compute resources, and thus money, are consumed to run the
-        /// transform.</p>
+        /// <p>Cost measures how many compute resources, and thus money, are consumed to run the transform.</p>
         pub fn accuracy_cost_tradeoff(mut self, input: f64) -> Self {
             self.accuracy_cost_tradeoff = Some(input);
             self
         }
-        /// <p>The value that is selected when tuning your transform for a balance between accuracy and
-        /// cost. A value of 0.5 means that the system balances accuracy and cost concerns. A value of 1.0
-        /// means a bias purely for accuracy, which typically results in a higher cost, sometimes
-        /// substantially higher. A value of 0.0 means a bias purely for cost, which results in a less
-        /// accurate <code>FindMatches</code> transform, sometimes with unacceptable accuracy.</p>
-        ///
+        /// <p>The value that is selected when tuning your transform for a balance between accuracy and cost. A value of 0.5 means that the system balances accuracy and cost concerns. A value of 1.0 means a bias purely for accuracy, which typically results in a higher cost, sometimes substantially higher. A value of 0.0 means a bias purely for cost, which results in a less accurate <code>FindMatches</code> transform, sometimes with unacceptable accuracy.</p>
         /// <p>Accuracy measures how well the transform finds true positives and true negatives. Increasing accuracy requires more machine resources and cost. But it also results in increased recall. </p>
-        ///
-        /// <p>Cost measures how many compute resources, and thus money, are consumed to run the
-        /// transform.</p>
+        /// <p>Cost measures how many compute resources, and thus money, are consumed to run the transform.</p>
         pub fn set_accuracy_cost_tradeoff(mut self, input: std::option::Option<f64>) -> Self {
             self.accuracy_cost_tradeoff = input;
             self
@@ -4071,8 +3866,7 @@ impl AsRef<str> for TransformType {
     }
 }
 
-/// <p>Specifies information used to update an existing job definition. The previous job
-/// definition is completely overwritten by this information.</p>
+/// <p>Specifies information used to update an existing job definition. The previous job definition is completely overwritten by this information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobUpdate {
@@ -4080,17 +3874,14 @@ pub struct JobUpdate {
     pub description: std::option::Option<std::string::String>,
     /// <p>This field is reserved for future use.</p>
     pub log_uri: std::option::Option<std::string::String>,
-    /// <p>The name or Amazon Resource Name (ARN) of the IAM role associated with this job
-    /// (required).</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the IAM role associated with this job (required).</p>
     pub role: std::option::Option<std::string::String>,
-    /// <p>An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs allowed
-    /// for this job.</p>
+    /// <p>An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs allowed for this job.</p>
     pub execution_property: std::option::Option<crate::model::ExecutionProperty>,
     /// <p>The <code>JobCommand</code> that runs this job (required).</p>
     pub command: std::option::Option<crate::model::JobCommand>,
     /// <p>The default arguments for this job.</p>
-    /// <p>You can specify arguments here that your own job-execution script
-    /// consumes, as well as arguments that Glue itself consumes.</p>
+    /// <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p>
     /// <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
     /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
     pub default_arguments:
@@ -4103,62 +3894,34 @@ pub struct JobUpdate {
     /// <p>The maximum number of times to retry this job if it fails.</p>
     pub max_retries: i32,
     /// <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
-    ///
-    /// <p>The number of Glue data processing units (DPUs) to allocate to this job. You can
-    /// allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing
-    /// power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information,
-    /// see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing
-    /// page</a>.</p>
+    /// <p>The number of Glue data processing units (DPUs) to allocate to this job. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
     pub allocated_capacity: i32,
-    /// <p>The job timeout in minutes.  This is the maximum time that a job run
-    /// can consume resources before it is terminated and enters <code>TIMEOUT</code>
-    /// status. The default is 2,880 minutes (48 hours).</p>
+    /// <p>The job timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
     pub timeout: std::option::Option<i32>,
-    /// <p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure
-    /// of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
-    ///
-    /// <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>       
-    ///
-    /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are
-    /// running a Python shell job or an Apache Spark ETL job:</p>
-    ///
+    /// <p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
+    /// <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>
+    /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell job or an Apache Spark ETL job:</p>
     /// <ul>
-    /// <li>
-    /// <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can
-    /// allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p>
-    /// </li>
-    /// <li>
-    /// <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache
-    /// Spark streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs.
-    /// The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p>
-    /// </li>
-    /// </ul>    
+    /// <li> <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li>
+    /// <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li>
+    /// </ul>
     /// <p>For Glue version 2.0 jobs, you cannot instead specify a <code>Maximum capacity</code>. Instead, you should specify a <code>Worker type</code> and the <code>Number of workers</code>.</p>
     pub max_capacity: std::option::Option<f64>,
     /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.</p>
     /// <ul>
-    /// <li>
-    /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-    /// </li>
-    /// <li>
-    /// <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
-    /// </li>
-    /// <li>
-    /// <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
-    /// </li>
+    /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+    /// <li> <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
+    /// <li> <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
     /// </ul>
     pub worker_type: std::option::Option<crate::model::WorkerType>,
     /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
-    ///
     /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
     pub number_of_workers: std::option::Option<i32>,
-    /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this
-    /// job.</p>
+    /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this job.</p>
     pub security_configuration: std::option::Option<std::string::String>,
     /// <p>Specifies the configuration properties of a job notification.</p>
     pub notification_property: std::option::Option<crate::model::NotificationProperty>,
     /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for jobs of type Spark. </p>
-    ///
     /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
     pub glue_version: std::option::Option<std::string::String>,
 }
@@ -4171,13 +3934,11 @@ impl JobUpdate {
     pub fn log_uri(&self) -> std::option::Option<&str> {
         self.log_uri.as_deref()
     }
-    /// <p>The name or Amazon Resource Name (ARN) of the IAM role associated with this job
-    /// (required).</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the IAM role associated with this job (required).</p>
     pub fn role(&self) -> std::option::Option<&str> {
         self.role.as_deref()
     }
-    /// <p>An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs allowed
-    /// for this job.</p>
+    /// <p>An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs allowed for this job.</p>
     pub fn execution_property(&self) -> std::option::Option<&crate::model::ExecutionProperty> {
         self.execution_property.as_ref()
     }
@@ -4186,8 +3947,7 @@ impl JobUpdate {
         self.command.as_ref()
     }
     /// <p>The default arguments for this job.</p>
-    /// <p>You can specify arguments here that your own job-execution script
-    /// consumes, as well as arguments that Glue itself consumes.</p>
+    /// <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p>
     /// <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
     /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
     pub fn default_arguments(
@@ -4212,67 +3972,40 @@ impl JobUpdate {
         self.max_retries
     }
     /// <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
-    ///
-    /// <p>The number of Glue data processing units (DPUs) to allocate to this job. You can
-    /// allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing
-    /// power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information,
-    /// see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing
-    /// page</a>.</p>
+    /// <p>The number of Glue data processing units (DPUs) to allocate to this job. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
     pub fn allocated_capacity(&self) -> i32 {
         self.allocated_capacity
     }
-    /// <p>The job timeout in minutes.  This is the maximum time that a job run
-    /// can consume resources before it is terminated and enters <code>TIMEOUT</code>
-    /// status. The default is 2,880 minutes (48 hours).</p>
+    /// <p>The job timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
     pub fn timeout(&self) -> std::option::Option<i32> {
         self.timeout
     }
-    /// <p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure
-    /// of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
-    ///
-    /// <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>       
-    ///
-    /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are
-    /// running a Python shell job or an Apache Spark ETL job:</p>
-    ///
+    /// <p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
+    /// <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>
+    /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell job or an Apache Spark ETL job:</p>
     /// <ul>
-    /// <li>
-    /// <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can
-    /// allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p>
-    /// </li>
-    /// <li>
-    /// <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache
-    /// Spark streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs.
-    /// The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p>
-    /// </li>
-    /// </ul>    
+    /// <li> <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li>
+    /// <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li>
+    /// </ul>
     /// <p>For Glue version 2.0 jobs, you cannot instead specify a <code>Maximum capacity</code>. Instead, you should specify a <code>Worker type</code> and the <code>Number of workers</code>.</p>
     pub fn max_capacity(&self) -> std::option::Option<f64> {
         self.max_capacity
     }
     /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.</p>
     /// <ul>
-    /// <li>
-    /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-    /// </li>
-    /// <li>
-    /// <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
-    /// </li>
-    /// <li>
-    /// <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
-    /// </li>
+    /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+    /// <li> <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
+    /// <li> <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
     /// </ul>
     pub fn worker_type(&self) -> std::option::Option<&crate::model::WorkerType> {
         self.worker_type.as_ref()
     }
     /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
-    ///
     /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
     pub fn number_of_workers(&self) -> std::option::Option<i32> {
         self.number_of_workers
     }
-    /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this
-    /// job.</p>
+    /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this job.</p>
     pub fn security_configuration(&self) -> std::option::Option<&str> {
         self.security_configuration.as_deref()
     }
@@ -4283,7 +4016,6 @@ impl JobUpdate {
         self.notification_property.as_ref()
     }
     /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for jobs of type Spark. </p>
-    ///
     /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
     pub fn glue_version(&self) -> std::option::Option<&str> {
         self.glue_version.as_deref()
@@ -4361,26 +4093,22 @@ pub mod job_update {
             self.log_uri = input;
             self
         }
-        /// <p>The name or Amazon Resource Name (ARN) of the IAM role associated with this job
-        /// (required).</p>
+        /// <p>The name or Amazon Resource Name (ARN) of the IAM role associated with this job (required).</p>
         pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
             self.role = Some(input.into());
             self
         }
-        /// <p>The name or Amazon Resource Name (ARN) of the IAM role associated with this job
-        /// (required).</p>
+        /// <p>The name or Amazon Resource Name (ARN) of the IAM role associated with this job (required).</p>
         pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role = input;
             self
         }
-        /// <p>An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs allowed
-        /// for this job.</p>
+        /// <p>An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs allowed for this job.</p>
         pub fn execution_property(mut self, input: crate::model::ExecutionProperty) -> Self {
             self.execution_property = Some(input);
             self
         }
-        /// <p>An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs allowed
-        /// for this job.</p>
+        /// <p>An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs allowed for this job.</p>
         pub fn set_execution_property(
             mut self,
             input: std::option::Option<crate::model::ExecutionProperty>,
@@ -4403,8 +4131,7 @@ pub mod job_update {
         /// To override the contents of this collection use [`set_default_arguments`](Self::set_default_arguments).
         ///
         /// <p>The default arguments for this job.</p>
-        /// <p>You can specify arguments here that your own job-execution script
-        /// consumes, as well as arguments that Glue itself consumes.</p>
+        /// <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p>
         /// <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
         /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
         pub fn default_arguments(
@@ -4418,8 +4145,7 @@ pub mod job_update {
             self
         }
         /// <p>The default arguments for this job.</p>
-        /// <p>You can specify arguments here that your own job-execution script
-        /// consumes, as well as arguments that Glue itself consumes.</p>
+        /// <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p>
         /// <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
         /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
         pub fn set_default_arguments(
@@ -4480,84 +4206,46 @@ pub mod job_update {
             self
         }
         /// <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
-        ///
-        /// <p>The number of Glue data processing units (DPUs) to allocate to this job. You can
-        /// allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing
-        /// power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information,
-        /// see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing
-        /// page</a>.</p>
+        /// <p>The number of Glue data processing units (DPUs) to allocate to this job. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
         pub fn allocated_capacity(mut self, input: i32) -> Self {
             self.allocated_capacity = Some(input);
             self
         }
         /// <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
-        ///
-        /// <p>The number of Glue data processing units (DPUs) to allocate to this job. You can
-        /// allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing
-        /// power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information,
-        /// see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing
-        /// page</a>.</p>
+        /// <p>The number of Glue data processing units (DPUs) to allocate to this job. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
         pub fn set_allocated_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.allocated_capacity = input;
             self
         }
-        /// <p>The job timeout in minutes.  This is the maximum time that a job run
-        /// can consume resources before it is terminated and enters <code>TIMEOUT</code>
-        /// status. The default is 2,880 minutes (48 hours).</p>
+        /// <p>The job timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
         pub fn timeout(mut self, input: i32) -> Self {
             self.timeout = Some(input);
             self
         }
-        /// <p>The job timeout in minutes.  This is the maximum time that a job run
-        /// can consume resources before it is terminated and enters <code>TIMEOUT</code>
-        /// status. The default is 2,880 minutes (48 hours).</p>
+        /// <p>The job timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
         pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
             self.timeout = input;
             self
         }
-        /// <p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure
-        /// of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
-        ///
-        /// <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>       
-        ///
-        /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are
-        /// running a Python shell job or an Apache Spark ETL job:</p>
-        ///
+        /// <p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
+        /// <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>
+        /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell job or an Apache Spark ETL job:</p>
         /// <ul>
-        /// <li>
-        /// <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can
-        /// allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p>
-        /// </li>
-        /// <li>
-        /// <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache
-        /// Spark streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs.
-        /// The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p>
-        /// </li>
-        /// </ul>    
+        /// <li> <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li>
+        /// <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li>
+        /// </ul>
         /// <p>For Glue version 2.0 jobs, you cannot instead specify a <code>Maximum capacity</code>. Instead, you should specify a <code>Worker type</code> and the <code>Number of workers</code>.</p>
         pub fn max_capacity(mut self, input: f64) -> Self {
             self.max_capacity = Some(input);
             self
         }
-        /// <p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure
-        /// of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
-        ///
-        /// <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>       
-        ///
-        /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are
-        /// running a Python shell job or an Apache Spark ETL job:</p>
-        ///
+        /// <p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
+        /// <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>
+        /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell job or an Apache Spark ETL job:</p>
         /// <ul>
-        /// <li>
-        /// <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can
-        /// allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p>
-        /// </li>
-        /// <li>
-        /// <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache
-        /// Spark streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs.
-        /// The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p>
-        /// </li>
-        /// </ul>    
+        /// <li> <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li>
+        /// <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li>
+        /// </ul>
         /// <p>For Glue version 2.0 jobs, you cannot instead specify a <code>Maximum capacity</code>. Instead, you should specify a <code>Worker type</code> and the <code>Number of workers</code>.</p>
         pub fn set_max_capacity(mut self, input: std::option::Option<f64>) -> Self {
             self.max_capacity = input;
@@ -4565,15 +4253,9 @@ pub mod job_update {
         }
         /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.</p>
         /// <ul>
-        /// <li>
-        /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
-        /// </li>
+        /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+        /// <li> <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
+        /// <li> <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
         /// </ul>
         pub fn worker_type(mut self, input: crate::model::WorkerType) -> Self {
             self.worker_type = Some(input);
@@ -4581,15 +4263,9 @@ pub mod job_update {
         }
         /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.</p>
         /// <ul>
-        /// <li>
-        /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
-        /// </li>
+        /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+        /// <li> <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
+        /// <li> <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
         /// </ul>
         pub fn set_worker_type(
             mut self,
@@ -4599,27 +4275,23 @@ pub mod job_update {
             self
         }
         /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
-        ///
         /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
         pub fn number_of_workers(mut self, input: i32) -> Self {
             self.number_of_workers = Some(input);
             self
         }
         /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
-        ///
         /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
         pub fn set_number_of_workers(mut self, input: std::option::Option<i32>) -> Self {
             self.number_of_workers = input;
             self
         }
-        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this
-        /// job.</p>
+        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this job.</p>
         pub fn security_configuration(mut self, input: impl Into<std::string::String>) -> Self {
             self.security_configuration = Some(input.into());
             self
         }
-        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this
-        /// job.</p>
+        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this job.</p>
         pub fn set_security_configuration(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4641,14 +4313,12 @@ pub mod job_update {
             self
         }
         /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for jobs of type Spark. </p>
-        ///
         /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
         pub fn glue_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.glue_version = Some(input.into());
             self
         }
         /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for jobs of type Spark. </p>
-        ///
         /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
         pub fn set_glue_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.glue_version = input;
@@ -4752,25 +4422,19 @@ impl ConnectionsList {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobCommand {
-    /// <p>The name of the job command. For an Apache Spark ETL job, this must be
-    /// <code>glueetl</code>. For a Python shell job, it must be <code>pythonshell</code>.
-    /// For an Apache Spark streaming ETL job, this must be <code>gluestreaming</code>.</p>
+    /// <p>The name of the job command. For an Apache Spark ETL job, this must be <code>glueetl</code>. For a Python shell job, it must be <code>pythonshell</code>. For an Apache Spark streaming ETL job, this must be <code>gluestreaming</code>.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that runs a
-    /// job.</p>
+    /// <p>Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that runs a job.</p>
     pub script_location: std::option::Option<std::string::String>,
     /// <p>The Python version being used to run a Python shell job. Allowed values are 2 or 3.</p>
     pub python_version: std::option::Option<std::string::String>,
 }
 impl JobCommand {
-    /// <p>The name of the job command. For an Apache Spark ETL job, this must be
-    /// <code>glueetl</code>. For a Python shell job, it must be <code>pythonshell</code>.
-    /// For an Apache Spark streaming ETL job, this must be <code>gluestreaming</code>.</p>
+    /// <p>The name of the job command. For an Apache Spark ETL job, this must be <code>glueetl</code>. For a Python shell job, it must be <code>pythonshell</code>. For an Apache Spark streaming ETL job, this must be <code>gluestreaming</code>.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that runs a
-    /// job.</p>
+    /// <p>Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that runs a job.</p>
     pub fn script_location(&self) -> std::option::Option<&str> {
         self.script_location.as_deref()
     }
@@ -4799,28 +4463,22 @@ pub mod job_command {
         pub(crate) python_version: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the job command. For an Apache Spark ETL job, this must be
-        /// <code>glueetl</code>. For a Python shell job, it must be <code>pythonshell</code>.
-        /// For an Apache Spark streaming ETL job, this must be <code>gluestreaming</code>.</p>
+        /// <p>The name of the job command. For an Apache Spark ETL job, this must be <code>glueetl</code>. For a Python shell job, it must be <code>pythonshell</code>. For an Apache Spark streaming ETL job, this must be <code>gluestreaming</code>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the job command. For an Apache Spark ETL job, this must be
-        /// <code>glueetl</code>. For a Python shell job, it must be <code>pythonshell</code>.
-        /// For an Apache Spark streaming ETL job, this must be <code>gluestreaming</code>.</p>
+        /// <p>The name of the job command. For an Apache Spark ETL job, this must be <code>glueetl</code>. For a Python shell job, it must be <code>pythonshell</code>. For an Apache Spark streaming ETL job, this must be <code>gluestreaming</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that runs a
-        /// job.</p>
+        /// <p>Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that runs a job.</p>
         pub fn script_location(mut self, input: impl Into<std::string::String>) -> Self {
             self.script_location = Some(input.into());
             self
         }
-        /// <p>Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that runs a
-        /// job.</p>
+        /// <p>Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that runs a job.</p>
         pub fn set_script_location(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4862,15 +4520,11 @@ impl JobCommand {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExecutionProperty {
-    /// <p>The maximum number of concurrent runs allowed for the job.
-    /// The default is 1. An error is returned when this threshold is reached.
-    /// The maximum value you can specify is controlled by a service limit.</p>
+    /// <p>The maximum number of concurrent runs allowed for the job. The default is 1. An error is returned when this threshold is reached. The maximum value you can specify is controlled by a service limit.</p>
     pub max_concurrent_runs: i32,
 }
 impl ExecutionProperty {
-    /// <p>The maximum number of concurrent runs allowed for the job.
-    /// The default is 1. An error is returned when this threshold is reached.
-    /// The maximum value you can specify is controlled by a service limit.</p>
+    /// <p>The maximum number of concurrent runs allowed for the job. The default is 1. An error is returned when this threshold is reached. The maximum value you can specify is controlled by a service limit.</p>
     pub fn max_concurrent_runs(&self) -> i32 {
         self.max_concurrent_runs
     }
@@ -4891,16 +4545,12 @@ pub mod execution_property {
         pub(crate) max_concurrent_runs: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The maximum number of concurrent runs allowed for the job.
-        /// The default is 1. An error is returned when this threshold is reached.
-        /// The maximum value you can specify is controlled by a service limit.</p>
+        /// <p>The maximum number of concurrent runs allowed for the job. The default is 1. An error is returned when this threshold is reached. The maximum value you can specify is controlled by a service limit.</p>
         pub fn max_concurrent_runs(mut self, input: i32) -> Self {
             self.max_concurrent_runs = Some(input);
             self
         }
-        /// <p>The maximum number of concurrent runs allowed for the job.
-        /// The default is 1. An error is returned when this threshold is reached.
-        /// The maximum value you can specify is controlled by a service limit.</p>
+        /// <p>The maximum number of concurrent runs allowed for the job. The default is 1. An error is returned when this threshold is reached. The maximum value you can specify is controlled by a service limit.</p>
         pub fn set_max_concurrent_runs(mut self, input: std::option::Option<i32>) -> Self {
             self.max_concurrent_runs = input;
             self
@@ -4924,37 +4574,23 @@ impl ExecutionProperty {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DevEndpointCustomLibraries {
-    /// <p>The paths to one or more Python libraries in an Amazon Simple Storage Service (Amazon S3)
-    /// bucket that should be loaded in your <code>DevEndpoint</code>. Multiple values must be
-    /// complete paths separated by a comma.</p>
-    /// <note>
-    /// <p>You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries that rely on
-    /// C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data
-    /// analysis library, are not currently supported.</p>
+    /// <p>The paths to one or more Python libraries in an Amazon Simple Storage Service (Amazon S3) bucket that should be loaded in your <code>DevEndpoint</code>. Multiple values must be complete paths separated by a comma.</p> <note>
+    /// <p>You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries that rely on C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are not currently supported.</p>
     /// </note>
     pub extra_python_libs_s3_path: std::option::Option<std::string::String>,
-    /// <p>The path to one or more Java <code>.jar</code> files in an S3 bucket that should be loaded
-    /// in your <code>DevEndpoint</code>.</p>
-    /// <note>
+    /// <p>The path to one or more Java <code>.jar</code> files in an S3 bucket that should be loaded in your <code>DevEndpoint</code>.</p> <note>
     /// <p>You can only use pure Java/Scala libraries with a <code>DevEndpoint</code>.</p>
     /// </note>
     pub extra_jars_s3_path: std::option::Option<std::string::String>,
 }
 impl DevEndpointCustomLibraries {
-    /// <p>The paths to one or more Python libraries in an Amazon Simple Storage Service (Amazon S3)
-    /// bucket that should be loaded in your <code>DevEndpoint</code>. Multiple values must be
-    /// complete paths separated by a comma.</p>
-    /// <note>
-    /// <p>You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries that rely on
-    /// C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data
-    /// analysis library, are not currently supported.</p>
+    /// <p>The paths to one or more Python libraries in an Amazon Simple Storage Service (Amazon S3) bucket that should be loaded in your <code>DevEndpoint</code>. Multiple values must be complete paths separated by a comma.</p> <note>
+    /// <p>You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries that rely on C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are not currently supported.</p>
     /// </note>
     pub fn extra_python_libs_s3_path(&self) -> std::option::Option<&str> {
         self.extra_python_libs_s3_path.as_deref()
     }
-    /// <p>The path to one or more Java <code>.jar</code> files in an S3 bucket that should be loaded
-    /// in your <code>DevEndpoint</code>.</p>
-    /// <note>
+    /// <p>The path to one or more Java <code>.jar</code> files in an S3 bucket that should be loaded in your <code>DevEndpoint</code>.</p> <note>
     /// <p>You can only use pure Java/Scala libraries with a <code>DevEndpoint</code>.</p>
     /// </note>
     pub fn extra_jars_s3_path(&self) -> std::option::Option<&str> {
@@ -4979,25 +4615,15 @@ pub mod dev_endpoint_custom_libraries {
         pub(crate) extra_jars_s3_path: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The paths to one or more Python libraries in an Amazon Simple Storage Service (Amazon S3)
-        /// bucket that should be loaded in your <code>DevEndpoint</code>. Multiple values must be
-        /// complete paths separated by a comma.</p>
-        /// <note>
-        /// <p>You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries that rely on
-        /// C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data
-        /// analysis library, are not currently supported.</p>
+        /// <p>The paths to one or more Python libraries in an Amazon Simple Storage Service (Amazon S3) bucket that should be loaded in your <code>DevEndpoint</code>. Multiple values must be complete paths separated by a comma.</p> <note>
+        /// <p>You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries that rely on C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are not currently supported.</p>
         /// </note>
         pub fn extra_python_libs_s3_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.extra_python_libs_s3_path = Some(input.into());
             self
         }
-        /// <p>The paths to one or more Python libraries in an Amazon Simple Storage Service (Amazon S3)
-        /// bucket that should be loaded in your <code>DevEndpoint</code>. Multiple values must be
-        /// complete paths separated by a comma.</p>
-        /// <note>
-        /// <p>You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries that rely on
-        /// C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data
-        /// analysis library, are not currently supported.</p>
+        /// <p>The paths to one or more Python libraries in an Amazon Simple Storage Service (Amazon S3) bucket that should be loaded in your <code>DevEndpoint</code>. Multiple values must be complete paths separated by a comma.</p> <note>
+        /// <p>You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries that rely on C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are not currently supported.</p>
         /// </note>
         pub fn set_extra_python_libs_s3_path(
             mut self,
@@ -5006,18 +4632,14 @@ pub mod dev_endpoint_custom_libraries {
             self.extra_python_libs_s3_path = input;
             self
         }
-        /// <p>The path to one or more Java <code>.jar</code> files in an S3 bucket that should be loaded
-        /// in your <code>DevEndpoint</code>.</p>
-        /// <note>
+        /// <p>The path to one or more Java <code>.jar</code> files in an S3 bucket that should be loaded in your <code>DevEndpoint</code>.</p> <note>
         /// <p>You can only use pure Java/Scala libraries with a <code>DevEndpoint</code>.</p>
         /// </note>
         pub fn extra_jars_s3_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.extra_jars_s3_path = Some(input.into());
             self
         }
-        /// <p>The path to one or more Java <code>.jar</code> files in an S3 bucket that should be loaded
-        /// in your <code>DevEndpoint</code>.</p>
-        /// <note>
+        /// <p>The path to one or more Java <code>.jar</code> files in an S3 bucket that should be loaded in your <code>DevEndpoint</code>.</p> <note>
         /// <p>You can only use pure Java/Scala libraries with a <code>DevEndpoint</code>.</p>
         /// </note>
         pub fn set_extra_jars_s3_path(
@@ -5047,15 +4669,13 @@ impl DevEndpointCustomLibraries {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatabaseInput {
-    /// <p>The name of the database. For Hive compatibility, this is folded to lowercase when it is
-    /// stored.</p>
+    /// <p>The name of the database. For Hive compatibility, this is folded to lowercase when it is stored.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the database.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The location of the database (for example, an HDFS path). </p>
     pub location_uri: std::option::Option<std::string::String>,
-    /// <p>These key-value pairs define parameters and properties
-    /// of the database.</p>
+    /// <p>These key-value pairs define parameters and properties of the database.</p>
     /// <p>These key-value pairs define parameters and properties of the database.</p>
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -5066,8 +4686,7 @@ pub struct DatabaseInput {
     pub target_database: std::option::Option<crate::model::DatabaseIdentifier>,
 }
 impl DatabaseInput {
-    /// <p>The name of the database. For Hive compatibility, this is folded to lowercase when it is
-    /// stored.</p>
+    /// <p>The name of the database. For Hive compatibility, this is folded to lowercase when it is stored.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -5079,8 +4698,7 @@ impl DatabaseInput {
     pub fn location_uri(&self) -> std::option::Option<&str> {
         self.location_uri.as_deref()
     }
-    /// <p>These key-value pairs define parameters and properties
-    /// of the database.</p>
+    /// <p>These key-value pairs define parameters and properties of the database.</p>
     /// <p>These key-value pairs define parameters and properties of the database.</p>
     pub fn parameters(
         &self,
@@ -5131,14 +4749,12 @@ pub mod database_input {
         pub(crate) target_database: std::option::Option<crate::model::DatabaseIdentifier>,
     }
     impl Builder {
-        /// <p>The name of the database. For Hive compatibility, this is folded to lowercase when it is
-        /// stored.</p>
+        /// <p>The name of the database. For Hive compatibility, this is folded to lowercase when it is stored.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the database. For Hive compatibility, this is folded to lowercase when it is
-        /// stored.</p>
+        /// <p>The name of the database. For Hive compatibility, this is folded to lowercase when it is stored.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -5167,8 +4783,7 @@ pub mod database_input {
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
-        /// <p>These key-value pairs define parameters and properties
-        /// of the database.</p>
+        /// <p>These key-value pairs define parameters and properties of the database.</p>
         /// <p>These key-value pairs define parameters and properties of the database.</p>
         pub fn parameters(
             mut self,
@@ -5180,8 +4795,7 @@ pub mod database_input {
             self.parameters = Some(hash_map);
             self
         }
-        /// <p>These key-value pairs define parameters and properties
-        /// of the database.</p>
+        /// <p>These key-value pairs define parameters and properties of the database.</p>
         /// <p>These key-value pairs define parameters and properties of the database.</p>
         pub fn set_parameters(
             mut self,
@@ -5569,27 +5183,17 @@ impl DataLakePrincipal {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LineageConfiguration {
     /// <p>Specifies whether data lineage is enabled for the crawler. Valid values are:</p>
-    ///
     /// <ul>
-    /// <li>
-    /// <p>ENABLE: enables data lineage for the crawler</p>
-    /// </li>
-    /// <li>
-    /// <p>DISABLE: disables data lineage for the crawler</p>
-    /// </li>
+    /// <li> <p>ENABLE: enables data lineage for the crawler</p> </li>
+    /// <li> <p>DISABLE: disables data lineage for the crawler</p> </li>
     /// </ul>
     pub crawler_lineage_settings: std::option::Option<crate::model::CrawlerLineageSettings>,
 }
 impl LineageConfiguration {
     /// <p>Specifies whether data lineage is enabled for the crawler. Valid values are:</p>
-    ///
     /// <ul>
-    /// <li>
-    /// <p>ENABLE: enables data lineage for the crawler</p>
-    /// </li>
-    /// <li>
-    /// <p>DISABLE: disables data lineage for the crawler</p>
-    /// </li>
+    /// <li> <p>ENABLE: enables data lineage for the crawler</p> </li>
+    /// <li> <p>DISABLE: disables data lineage for the crawler</p> </li>
     /// </ul>
     pub fn crawler_lineage_settings(
         &self,
@@ -5615,14 +5219,9 @@ pub mod lineage_configuration {
     }
     impl Builder {
         /// <p>Specifies whether data lineage is enabled for the crawler. Valid values are:</p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>ENABLE: enables data lineage for the crawler</p>
-        /// </li>
-        /// <li>
-        /// <p>DISABLE: disables data lineage for the crawler</p>
-        /// </li>
+        /// <li> <p>ENABLE: enables data lineage for the crawler</p> </li>
+        /// <li> <p>DISABLE: disables data lineage for the crawler</p> </li>
         /// </ul>
         pub fn crawler_lineage_settings(
             mut self,
@@ -5632,14 +5231,9 @@ pub mod lineage_configuration {
             self
         }
         /// <p>Specifies whether data lineage is enabled for the crawler. Valid values are:</p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>ENABLE: enables data lineage for the crawler</p>
-        /// </li>
-        /// <li>
-        /// <p>DISABLE: disables data lineage for the crawler</p>
-        /// </li>
+        /// <li> <p>ENABLE: enables data lineage for the crawler</p> </li>
+        /// <li> <p>DISABLE: disables data lineage for the crawler</p> </li>
         /// </ul>
         pub fn set_crawler_lineage_settings(
             mut self,
@@ -5723,21 +5317,15 @@ impl AsRef<str> for CrawlerLineageSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecrawlPolicy {
     /// <p>Specifies whether to crawl the entire dataset again or to crawl only folders that were added since the last crawler run.</p>
-    ///
     /// <p>A value of <code>CRAWL_EVERYTHING</code> specifies crawling the entire dataset again.</p>
-    ///
     /// <p>A value of <code>CRAWL_NEW_FOLDERS_ONLY</code> specifies crawling only folders that were added since the last crawler run.</p>
-    ///
     /// <p>A value of <code>CRAWL_EVENT_MODE</code> specifies crawling only the changes identified by Amazon S3 events.</p>
     pub recrawl_behavior: std::option::Option<crate::model::RecrawlBehavior>,
 }
 impl RecrawlPolicy {
     /// <p>Specifies whether to crawl the entire dataset again or to crawl only folders that were added since the last crawler run.</p>
-    ///
     /// <p>A value of <code>CRAWL_EVERYTHING</code> specifies crawling the entire dataset again.</p>
-    ///
     /// <p>A value of <code>CRAWL_NEW_FOLDERS_ONLY</code> specifies crawling only folders that were added since the last crawler run.</p>
-    ///
     /// <p>A value of <code>CRAWL_EVENT_MODE</code> specifies crawling only the changes identified by Amazon S3 events.</p>
     pub fn recrawl_behavior(&self) -> std::option::Option<&crate::model::RecrawlBehavior> {
         self.recrawl_behavior.as_ref()
@@ -5760,22 +5348,16 @@ pub mod recrawl_policy {
     }
     impl Builder {
         /// <p>Specifies whether to crawl the entire dataset again or to crawl only folders that were added since the last crawler run.</p>
-        ///
         /// <p>A value of <code>CRAWL_EVERYTHING</code> specifies crawling the entire dataset again.</p>
-        ///
         /// <p>A value of <code>CRAWL_NEW_FOLDERS_ONLY</code> specifies crawling only folders that were added since the last crawler run.</p>
-        ///
         /// <p>A value of <code>CRAWL_EVENT_MODE</code> specifies crawling only the changes identified by Amazon S3 events.</p>
         pub fn recrawl_behavior(mut self, input: crate::model::RecrawlBehavior) -> Self {
             self.recrawl_behavior = Some(input);
             self
         }
         /// <p>Specifies whether to crawl the entire dataset again or to crawl only folders that were added since the last crawler run.</p>
-        ///
         /// <p>A value of <code>CRAWL_EVERYTHING</code> specifies crawling the entire dataset again.</p>
-        ///
         /// <p>A value of <code>CRAWL_NEW_FOLDERS_ONLY</code> specifies crawling only folders that were added since the last crawler run.</p>
-        ///
         /// <p>A value of <code>CRAWL_EVENT_MODE</code> specifies crawling only the changes identified by Amazon S3 events.</p>
         pub fn set_recrawl_behavior(
             mut self,
@@ -6324,11 +5906,9 @@ pub struct DynamoDbTarget {
     /// <p>The name of the DynamoDB table to crawl.</p>
     pub path: std::option::Option<std::string::String>,
     /// <p>Indicates whether to scan all the records, or to sample rows from the table. Scanning all the records can take a long time when the table is not a high throughput table.</p>
-    ///
     /// <p>A value of <code>true</code> means to scan all records, while a value of <code>false</code> means to sample the records. If no value is specified, the value defaults to <code>true</code>.</p>
     pub scan_all: std::option::Option<bool>,
     /// <p>The percentage of the configured read capacity units to use by the Glue crawler. Read capacity units is a term defined by DynamoDB, and is a numeric value that acts as rate limiter for the number of reads that can be performed on that table per second.</p>
-    ///
     /// <p>The valid values are null or a value between 0.1 to 1.5. A null value is used when user does not provide a value, and defaults to 0.5 of the configured Read Capacity Unit (for provisioned tables), or 0.25 of the max configured Read Capacity Unit (for tables using on-demand mode).</p>
     pub scan_rate: std::option::Option<f64>,
 }
@@ -6338,13 +5918,11 @@ impl DynamoDbTarget {
         self.path.as_deref()
     }
     /// <p>Indicates whether to scan all the records, or to sample rows from the table. Scanning all the records can take a long time when the table is not a high throughput table.</p>
-    ///
     /// <p>A value of <code>true</code> means to scan all records, while a value of <code>false</code> means to sample the records. If no value is specified, the value defaults to <code>true</code>.</p>
     pub fn scan_all(&self) -> std::option::Option<bool> {
         self.scan_all
     }
     /// <p>The percentage of the configured read capacity units to use by the Glue crawler. Read capacity units is a term defined by DynamoDB, and is a numeric value that acts as rate limiter for the number of reads that can be performed on that table per second.</p>
-    ///
     /// <p>The valid values are null or a value between 0.1 to 1.5. A null value is used when user does not provide a value, and defaults to 0.5 of the configured Read Capacity Unit (for provisioned tables), or 0.25 of the max configured Read Capacity Unit (for tables using on-demand mode).</p>
     pub fn scan_rate(&self) -> std::option::Option<f64> {
         self.scan_rate
@@ -6381,28 +5959,24 @@ pub mod dynamo_db_target {
             self
         }
         /// <p>Indicates whether to scan all the records, or to sample rows from the table. Scanning all the records can take a long time when the table is not a high throughput table.</p>
-        ///
         /// <p>A value of <code>true</code> means to scan all records, while a value of <code>false</code> means to sample the records. If no value is specified, the value defaults to <code>true</code>.</p>
         pub fn scan_all(mut self, input: bool) -> Self {
             self.scan_all = Some(input);
             self
         }
         /// <p>Indicates whether to scan all the records, or to sample rows from the table. Scanning all the records can take a long time when the table is not a high throughput table.</p>
-        ///
         /// <p>A value of <code>true</code> means to scan all records, while a value of <code>false</code> means to sample the records. If no value is specified, the value defaults to <code>true</code>.</p>
         pub fn set_scan_all(mut self, input: std::option::Option<bool>) -> Self {
             self.scan_all = input;
             self
         }
         /// <p>The percentage of the configured read capacity units to use by the Glue crawler. Read capacity units is a term defined by DynamoDB, and is a numeric value that acts as rate limiter for the number of reads that can be performed on that table per second.</p>
-        ///
         /// <p>The valid values are null or a value between 0.1 to 1.5. A null value is used when user does not provide a value, and defaults to 0.5 of the configured Read Capacity Unit (for provisioned tables), or 0.25 of the max configured Read Capacity Unit (for tables using on-demand mode).</p>
         pub fn scan_rate(mut self, input: f64) -> Self {
             self.scan_rate = Some(input);
             self
         }
         /// <p>The percentage of the configured read capacity units to use by the Glue crawler. Read capacity units is a term defined by DynamoDB, and is a numeric value that acts as rate limiter for the number of reads that can be performed on that table per second.</p>
-        ///
         /// <p>The valid values are null or a value between 0.1 to 1.5. A null value is used when user does not provide a value, and defaults to 0.5 of the configured Read Capacity Unit (for provisioned tables), or 0.25 of the max configured Read Capacity Unit (for tables using on-demand mode).</p>
         pub fn set_scan_rate(mut self, input: std::option::Option<f64>) -> Self {
             self.scan_rate = input;
@@ -6434,7 +6008,6 @@ pub struct MongoDbTarget {
     /// <p>The path of the Amazon DocumentDB or MongoDB target (database/collection).</p>
     pub path: std::option::Option<std::string::String>,
     /// <p>Indicates whether to scan all the records, or to sample rows from the table. Scanning all the records can take a long time when the table is not a high throughput table.</p>
-    ///
     /// <p>A value of <code>true</code> means to scan all records, while a value of <code>false</code> means to sample the records. If no value is specified, the value defaults to <code>true</code>.</p>
     pub scan_all: std::option::Option<bool>,
 }
@@ -6448,7 +6021,6 @@ impl MongoDbTarget {
         self.path.as_deref()
     }
     /// <p>Indicates whether to scan all the records, or to sample rows from the table. Scanning all the records can take a long time when the table is not a high throughput table.</p>
-    ///
     /// <p>A value of <code>true</code> means to scan all records, while a value of <code>false</code> means to sample the records. If no value is specified, the value defaults to <code>true</code>.</p>
     pub fn scan_all(&self) -> std::option::Option<bool> {
         self.scan_all
@@ -6498,14 +6070,12 @@ pub mod mongo_db_target {
             self
         }
         /// <p>Indicates whether to scan all the records, or to sample rows from the table. Scanning all the records can take a long time when the table is not a high throughput table.</p>
-        ///
         /// <p>A value of <code>true</code> means to scan all records, while a value of <code>false</code> means to sample the records. If no value is specified, the value defaults to <code>true</code>.</p>
         pub fn scan_all(mut self, input: bool) -> Self {
             self.scan_all = Some(input);
             self
         }
         /// <p>Indicates whether to scan all the records, or to sample rows from the table. Scanning all the records can take a long time when the table is not a high throughput table.</p>
-        ///
         /// <p>A value of <code>true</code> means to scan all records, while a value of <code>false</code> means to sample the records. If no value is specified, the value defaults to <code>true</code>.</p>
         pub fn set_scan_all(mut self, input: std::option::Option<bool>) -> Self {
             self.scan_all = input;
@@ -6536,8 +6106,7 @@ pub struct JdbcTarget {
     pub connection_name: std::option::Option<std::string::String>,
     /// <p>The path of the JDBC target.</p>
     pub path: std::option::Option<std::string::String>,
-    /// <p>A list of glob patterns used to exclude from the crawl.
-    /// For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.</p>
+    /// <p>A list of glob patterns used to exclude from the crawl. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.</p>
     pub exclusions: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl JdbcTarget {
@@ -6549,8 +6118,7 @@ impl JdbcTarget {
     pub fn path(&self) -> std::option::Option<&str> {
         self.path.as_deref()
     }
-    /// <p>A list of glob patterns used to exclude from the crawl.
-    /// For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.</p>
+    /// <p>A list of glob patterns used to exclude from the crawl. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.</p>
     pub fn exclusions(&self) -> std::option::Option<&[std::string::String]> {
         self.exclusions.as_deref()
     }
@@ -6602,16 +6170,14 @@ pub mod jdbc_target {
         ///
         /// To override the contents of this collection use [`set_exclusions`](Self::set_exclusions).
         ///
-        /// <p>A list of glob patterns used to exclude from the crawl.
-        /// For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.</p>
+        /// <p>A list of glob patterns used to exclude from the crawl. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.</p>
         pub fn exclusions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.exclusions.unwrap_or_default();
             v.push(input.into());
             self.exclusions = Some(v);
             self
         }
-        /// <p>A list of glob patterns used to exclude from the crawl.
-        /// For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.</p>
+        /// <p>A list of glob patterns used to exclude from the crawl. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.</p>
         pub fn set_exclusions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6642,8 +6208,7 @@ impl JdbcTarget {
 pub struct S3Target {
     /// <p>The path to the Amazon S3 target.</p>
     pub path: std::option::Option<std::string::String>,
-    /// <p>A list of glob patterns used to exclude from the crawl.
-    /// For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.</p>
+    /// <p>A list of glob patterns used to exclude from the crawl. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.</p>
     pub exclusions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of a connection which allows a job or crawler to access data in Amazon S3 within an Amazon Virtual Private Cloud environment (Amazon VPC).</p>
     pub connection_name: std::option::Option<std::string::String>,
@@ -6659,8 +6224,7 @@ impl S3Target {
     pub fn path(&self) -> std::option::Option<&str> {
         self.path.as_deref()
     }
-    /// <p>A list of glob patterns used to exclude from the crawl.
-    /// For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.</p>
+    /// <p>A list of glob patterns used to exclude from the crawl. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.</p>
     pub fn exclusions(&self) -> std::option::Option<&[std::string::String]> {
         self.exclusions.as_deref()
     }
@@ -6721,16 +6285,14 @@ pub mod s3_target {
         ///
         /// To override the contents of this collection use [`set_exclusions`](Self::set_exclusions).
         ///
-        /// <p>A list of glob patterns used to exclude from the crawl.
-        /// For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.</p>
+        /// <p>A list of glob patterns used to exclude from the crawl. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.</p>
         pub fn exclusions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.exclusions.unwrap_or_default();
             v.push(input.into());
             self.exclusions = Some(v);
             self
         }
-        /// <p>A list of glob patterns used to exclude from the crawl.
-        /// For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.</p>
+        /// <p>A list of glob patterns used to exclude from the crawl. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.</p>
         pub fn set_exclusions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6817,30 +6379,12 @@ pub struct ConnectionInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The type of the connection. Currently, these types are supported:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>JDBC</code> - Designates a connection to a database through Java Database Connectivity (JDBC).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>KAFKA</code> - Designates a connection to an Apache Kafka streaming platform.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MONGODB</code> - Designates a connection to a MongoDB document database.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NETWORK</code> - Designates a network connection to a data source within an Amazon Virtual Private Cloud environment (Amazon VPC).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MARKETPLACE</code> - Uses configuration settings contained in a connector purchased from Amazon Web Services Marketplace to read from and write to data stores that are not natively supported by Glue.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CUSTOM</code> - Uses configuration settings contained in a custom connector to read from and write to data stores that are not natively supported by Glue.</p>
-    /// </li>
+    /// <li> <p> <code>JDBC</code> - Designates a connection to a database through Java Database Connectivity (JDBC).</p> </li>
+    /// <li> <p> <code>KAFKA</code> - Designates a connection to an Apache Kafka streaming platform.</p> </li>
+    /// <li> <p> <code>MONGODB</code> - Designates a connection to a MongoDB document database.</p> </li>
+    /// <li> <p> <code>NETWORK</code> - Designates a network connection to a data source within an Amazon Virtual Private Cloud environment (Amazon VPC).</p> </li>
+    /// <li> <p> <code>MARKETPLACE</code> - Uses configuration settings contained in a connector purchased from Amazon Web Services Marketplace to read from and write to data stores that are not natively supported by Glue.</p> </li>
+    /// <li> <p> <code>CUSTOM</code> - Uses configuration settings contained in a custom connector to read from and write to data stores that are not natively supported by Glue.</p> </li>
     /// </ul>
     /// <p>SFTP is not supported.</p>
     pub connection_type: std::option::Option<crate::model::ConnectionType>,
@@ -6850,8 +6394,7 @@ pub struct ConnectionInput {
     pub connection_properties: std::option::Option<
         std::collections::HashMap<crate::model::ConnectionPropertyKey, std::string::String>,
     >,
-    /// <p>A map of physical connection requirements, such as virtual private cloud (VPC) and
-    /// <code>SecurityGroup</code>, that are needed to successfully make this connection.</p>
+    /// <p>A map of physical connection requirements, such as virtual private cloud (VPC) and <code>SecurityGroup</code>, that are needed to successfully make this connection.</p>
     pub physical_connection_requirements:
         std::option::Option<crate::model::PhysicalConnectionRequirements>,
 }
@@ -6866,30 +6409,12 @@ impl ConnectionInput {
     }
     /// <p>The type of the connection. Currently, these types are supported:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>JDBC</code> - Designates a connection to a database through Java Database Connectivity (JDBC).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>KAFKA</code> - Designates a connection to an Apache Kafka streaming platform.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MONGODB</code> - Designates a connection to a MongoDB document database.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NETWORK</code> - Designates a network connection to a data source within an Amazon Virtual Private Cloud environment (Amazon VPC).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MARKETPLACE</code> - Uses configuration settings contained in a connector purchased from Amazon Web Services Marketplace to read from and write to data stores that are not natively supported by Glue.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CUSTOM</code> - Uses configuration settings contained in a custom connector to read from and write to data stores that are not natively supported by Glue.</p>
-    /// </li>
+    /// <li> <p> <code>JDBC</code> - Designates a connection to a database through Java Database Connectivity (JDBC).</p> </li>
+    /// <li> <p> <code>KAFKA</code> - Designates a connection to an Apache Kafka streaming platform.</p> </li>
+    /// <li> <p> <code>MONGODB</code> - Designates a connection to a MongoDB document database.</p> </li>
+    /// <li> <p> <code>NETWORK</code> - Designates a network connection to a data source within an Amazon Virtual Private Cloud environment (Amazon VPC).</p> </li>
+    /// <li> <p> <code>MARKETPLACE</code> - Uses configuration settings contained in a connector purchased from Amazon Web Services Marketplace to read from and write to data stores that are not natively supported by Glue.</p> </li>
+    /// <li> <p> <code>CUSTOM</code> - Uses configuration settings contained in a custom connector to read from and write to data stores that are not natively supported by Glue.</p> </li>
     /// </ul>
     /// <p>SFTP is not supported.</p>
     pub fn connection_type(&self) -> std::option::Option<&crate::model::ConnectionType> {
@@ -6907,8 +6432,7 @@ impl ConnectionInput {
     > {
         self.connection_properties.as_ref()
     }
-    /// <p>A map of physical connection requirements, such as virtual private cloud (VPC) and
-    /// <code>SecurityGroup</code>, that are needed to successfully make this connection.</p>
+    /// <p>A map of physical connection requirements, such as virtual private cloud (VPC) and <code>SecurityGroup</code>, that are needed to successfully make this connection.</p>
     pub fn physical_connection_requirements(
         &self,
     ) -> std::option::Option<&crate::model::PhysicalConnectionRequirements> {
@@ -6969,30 +6493,12 @@ pub mod connection_input {
         }
         /// <p>The type of the connection. Currently, these types are supported:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>JDBC</code> - Designates a connection to a database through Java Database Connectivity (JDBC).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>KAFKA</code> - Designates a connection to an Apache Kafka streaming platform.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MONGODB</code> - Designates a connection to a MongoDB document database.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NETWORK</code> - Designates a network connection to a data source within an Amazon Virtual Private Cloud environment (Amazon VPC).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MARKETPLACE</code> - Uses configuration settings contained in a connector purchased from Amazon Web Services Marketplace to read from and write to data stores that are not natively supported by Glue.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CUSTOM</code> - Uses configuration settings contained in a custom connector to read from and write to data stores that are not natively supported by Glue.</p>
-        /// </li>
+        /// <li> <p> <code>JDBC</code> - Designates a connection to a database through Java Database Connectivity (JDBC).</p> </li>
+        /// <li> <p> <code>KAFKA</code> - Designates a connection to an Apache Kafka streaming platform.</p> </li>
+        /// <li> <p> <code>MONGODB</code> - Designates a connection to a MongoDB document database.</p> </li>
+        /// <li> <p> <code>NETWORK</code> - Designates a network connection to a data source within an Amazon Virtual Private Cloud environment (Amazon VPC).</p> </li>
+        /// <li> <p> <code>MARKETPLACE</code> - Uses configuration settings contained in a connector purchased from Amazon Web Services Marketplace to read from and write to data stores that are not natively supported by Glue.</p> </li>
+        /// <li> <p> <code>CUSTOM</code> - Uses configuration settings contained in a custom connector to read from and write to data stores that are not natively supported by Glue.</p> </li>
         /// </ul>
         /// <p>SFTP is not supported.</p>
         pub fn connection_type(mut self, input: crate::model::ConnectionType) -> Self {
@@ -7001,30 +6507,12 @@ pub mod connection_input {
         }
         /// <p>The type of the connection. Currently, these types are supported:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>JDBC</code> - Designates a connection to a database through Java Database Connectivity (JDBC).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>KAFKA</code> - Designates a connection to an Apache Kafka streaming platform.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MONGODB</code> - Designates a connection to a MongoDB document database.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NETWORK</code> - Designates a network connection to a data source within an Amazon Virtual Private Cloud environment (Amazon VPC).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MARKETPLACE</code> - Uses configuration settings contained in a connector purchased from Amazon Web Services Marketplace to read from and write to data stores that are not natively supported by Glue.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CUSTOM</code> - Uses configuration settings contained in a custom connector to read from and write to data stores that are not natively supported by Glue.</p>
-        /// </li>
+        /// <li> <p> <code>JDBC</code> - Designates a connection to a database through Java Database Connectivity (JDBC).</p> </li>
+        /// <li> <p> <code>KAFKA</code> - Designates a connection to an Apache Kafka streaming platform.</p> </li>
+        /// <li> <p> <code>MONGODB</code> - Designates a connection to a MongoDB document database.</p> </li>
+        /// <li> <p> <code>NETWORK</code> - Designates a network connection to a data source within an Amazon Virtual Private Cloud environment (Amazon VPC).</p> </li>
+        /// <li> <p> <code>MARKETPLACE</code> - Uses configuration settings contained in a connector purchased from Amazon Web Services Marketplace to read from and write to data stores that are not natively supported by Glue.</p> </li>
+        /// <li> <p> <code>CUSTOM</code> - Uses configuration settings contained in a custom connector to read from and write to data stores that are not natively supported by Glue.</p> </li>
         /// </ul>
         /// <p>SFTP is not supported.</p>
         pub fn set_connection_type(
@@ -7078,8 +6566,7 @@ pub mod connection_input {
             self.connection_properties = input;
             self
         }
-        /// <p>A map of physical connection requirements, such as virtual private cloud (VPC) and
-        /// <code>SecurityGroup</code>, that are needed to successfully make this connection.</p>
+        /// <p>A map of physical connection requirements, such as virtual private cloud (VPC) and <code>SecurityGroup</code>, that are needed to successfully make this connection.</p>
         pub fn physical_connection_requirements(
             mut self,
             input: crate::model::PhysicalConnectionRequirements,
@@ -7087,8 +6574,7 @@ pub mod connection_input {
             self.physical_connection_requirements = Some(input);
             self
         }
-        /// <p>A map of physical connection requirements, such as virtual private cloud (VPC) and
-        /// <code>SecurityGroup</code>, that are needed to successfully make this connection.</p>
+        /// <p>A map of physical connection requirements, such as virtual private cloud (VPC) and <code>SecurityGroup</code>, that are needed to successfully make this connection.</p>
         pub fn set_physical_connection_requirements(
             mut self,
             input: std::option::Option<crate::model::PhysicalConnectionRequirements>,
@@ -7124,9 +6610,7 @@ pub struct PhysicalConnectionRequirements {
     pub subnet_id: std::option::Option<std::string::String>,
     /// <p>The security group ID list used by the connection.</p>
     pub security_group_id_list: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The connection's Availability Zone. This field is redundant because the specified subnet
-    /// implies the Availability Zone to be used. Currently the field must be populated, but it will
-    /// be deprecated in the future.</p>
+    /// <p>The connection's Availability Zone. This field is redundant because the specified subnet implies the Availability Zone to be used. Currently the field must be populated, but it will be deprecated in the future.</p>
     pub availability_zone: std::option::Option<std::string::String>,
 }
 impl PhysicalConnectionRequirements {
@@ -7138,9 +6622,7 @@ impl PhysicalConnectionRequirements {
     pub fn security_group_id_list(&self) -> std::option::Option<&[std::string::String]> {
         self.security_group_id_list.as_deref()
     }
-    /// <p>The connection's Availability Zone. This field is redundant because the specified subnet
-    /// implies the Availability Zone to be used. Currently the field must be populated, but it will
-    /// be deprecated in the future.</p>
+    /// <p>The connection's Availability Zone. This field is redundant because the specified subnet implies the Availability Zone to be used. Currently the field must be populated, but it will be deprecated in the future.</p>
     pub fn availability_zone(&self) -> std::option::Option<&str> {
         self.availability_zone.as_deref()
     }
@@ -7194,16 +6676,12 @@ pub mod physical_connection_requirements {
             self.security_group_id_list = input;
             self
         }
-        /// <p>The connection's Availability Zone. This field is redundant because the specified subnet
-        /// implies the Availability Zone to be used. Currently the field must be populated, but it will
-        /// be deprecated in the future.</p>
+        /// <p>The connection's Availability Zone. This field is redundant because the specified subnet implies the Availability Zone to be used. Currently the field must be populated, but it will be deprecated in the future.</p>
         pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
             self.availability_zone = Some(input.into());
             self
         }
-        /// <p>The connection's Availability Zone. This field is redundant because the specified subnet
-        /// implies the Availability Zone to be used. Currently the field must be populated, but it will
-        /// be deprecated in the future.</p>
+        /// <p>The connection's Availability Zone. This field is redundant because the specified subnet implies the Availability Zone to be used. Currently the field must be populated, but it will be deprecated in the future.</p>
         pub fn set_availability_zone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8621,8 +8099,7 @@ impl DecimalColumnStatisticsData {
 pub struct DecimalNumber {
     /// <p>The unscaled numeric value.</p>
     pub unscaled_value: std::option::Option<aws_smithy_types::Blob>,
-    /// <p>The scale that determines where the decimal point falls in the
-    /// unscaled value.</p>
+    /// <p>The scale that determines where the decimal point falls in the unscaled value.</p>
     pub scale: i32,
 }
 impl DecimalNumber {
@@ -8630,8 +8107,7 @@ impl DecimalNumber {
     pub fn unscaled_value(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.unscaled_value.as_ref()
     }
-    /// <p>The scale that determines where the decimal point falls in the
-    /// unscaled value.</p>
+    /// <p>The scale that determines where the decimal point falls in the unscaled value.</p>
     pub fn scale(&self) -> i32 {
         self.scale
     }
@@ -8667,14 +8143,12 @@ pub mod decimal_number {
             self.unscaled_value = input;
             self
         }
-        /// <p>The scale that determines where the decimal point falls in the
-        /// unscaled value.</p>
+        /// <p>The scale that determines where the decimal point falls in the unscaled value.</p>
         pub fn scale(mut self, input: i32) -> Self {
             self.scale = Some(input);
             self
         }
-        /// <p>The scale that determines where the decimal point falls in the
-        /// unscaled value.</p>
+        /// <p>The scale that determines where the decimal point falls in the unscaled value.</p>
         pub fn set_scale(mut self, input: std::option::Option<i32>) -> Self {
             self.scale = input;
             self
@@ -8989,8 +8463,7 @@ pub struct UpdateCsvClassifierRequest {
     pub name: std::option::Option<std::string::String>,
     /// <p>A custom symbol to denote what separates each column entry in the row.</p>
     pub delimiter: std::option::Option<std::string::String>,
-    /// <p>A custom symbol to denote what combines content into a single column value. It must be
-    /// different from the column delimiter.</p>
+    /// <p>A custom symbol to denote what combines content into a single column value. It must be different from the column delimiter.</p>
     pub quote_symbol: std::option::Option<std::string::String>,
     /// <p>Indicates whether the CSV file contains a header.</p>
     pub contains_header: std::option::Option<crate::model::CsvHeaderOption>,
@@ -9010,8 +8483,7 @@ impl UpdateCsvClassifierRequest {
     pub fn delimiter(&self) -> std::option::Option<&str> {
         self.delimiter.as_deref()
     }
-    /// <p>A custom symbol to denote what combines content into a single column value. It must be
-    /// different from the column delimiter.</p>
+    /// <p>A custom symbol to denote what combines content into a single column value. It must be different from the column delimiter.</p>
     pub fn quote_symbol(&self) -> std::option::Option<&str> {
         self.quote_symbol.as_deref()
     }
@@ -9080,14 +8552,12 @@ pub mod update_csv_classifier_request {
             self.delimiter = input;
             self
         }
-        /// <p>A custom symbol to denote what combines content into a single column value. It must be
-        /// different from the column delimiter.</p>
+        /// <p>A custom symbol to denote what combines content into a single column value. It must be different from the column delimiter.</p>
         pub fn quote_symbol(mut self, input: impl Into<std::string::String>) -> Self {
             self.quote_symbol = Some(input.into());
             self
         }
-        /// <p>A custom symbol to denote what combines content into a single column value. It must be
-        /// different from the column delimiter.</p>
+        /// <p>A custom symbol to denote what combines content into a single column value. It must be different from the column delimiter.</p>
         pub fn set_quote_symbol(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.quote_symbol = input;
             self
@@ -9230,8 +8700,7 @@ impl AsRef<str> for CsvHeaderOption {
 pub struct UpdateJsonClassifierRequest {
     /// <p>The name of the classifier.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>A <code>JsonPath</code> string defining the JSON data for the classifier to classify.
-    /// Glue supports a subset of JsonPath, as described in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing JsonPath Custom Classifiers</a>.</p>
+    /// <p>A <code>JsonPath</code> string defining the JSON data for the classifier to classify. Glue supports a subset of JsonPath, as described in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing JsonPath Custom Classifiers</a>.</p>
     pub json_path: std::option::Option<std::string::String>,
 }
 impl UpdateJsonClassifierRequest {
@@ -9239,8 +8708,7 @@ impl UpdateJsonClassifierRequest {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>A <code>JsonPath</code> string defining the JSON data for the classifier to classify.
-    /// Glue supports a subset of JsonPath, as described in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing JsonPath Custom Classifiers</a>.</p>
+    /// <p>A <code>JsonPath</code> string defining the JSON data for the classifier to classify. Glue supports a subset of JsonPath, as described in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing JsonPath Custom Classifiers</a>.</p>
     pub fn json_path(&self) -> std::option::Option<&str> {
         self.json_path.as_deref()
     }
@@ -9273,14 +8741,12 @@ pub mod update_json_classifier_request {
             self.name = input;
             self
         }
-        /// <p>A <code>JsonPath</code> string defining the JSON data for the classifier to classify.
-        /// Glue supports a subset of JsonPath, as described in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing JsonPath Custom Classifiers</a>.</p>
+        /// <p>A <code>JsonPath</code> string defining the JSON data for the classifier to classify. Glue supports a subset of JsonPath, as described in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing JsonPath Custom Classifiers</a>.</p>
         pub fn json_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.json_path = Some(input.into());
             self
         }
-        /// <p>A <code>JsonPath</code> string defining the JSON data for the classifier to classify.
-        /// Glue supports a subset of JsonPath, as described in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing JsonPath Custom Classifiers</a>.</p>
+        /// <p>A <code>JsonPath</code> string defining the JSON data for the classifier to classify. Glue supports a subset of JsonPath, as described in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing JsonPath Custom Classifiers</a>.</p>
         pub fn set_json_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.json_path = input;
             self
@@ -9309,11 +8775,9 @@ pub struct UpdateXmlClassifierRequest {
     pub name: std::option::Option<std::string::String>,
     /// <p>An identifier of the data format that the classifier matches.</p>
     pub classification: std::option::Option<std::string::String>,
-    /// <p>The XML tag designating the element that contains each record in an XML document being
-    /// parsed. This cannot identify a self-closing element (closed by <code>/></code>). An empty
-    /// row element that contains only attributes can be parsed as long as it ends with a closing tag
-    /// (for example, <code><row item_a="A" item_b="B"></row></code> is okay, but
-    /// <code><row item_a="A" item_b="B" /></code> is not).</p>
+    /// <p>The XML tag designating the element that contains each record in an XML document being parsed. This cannot identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that contains only attributes can be parsed as long as it ends with a closing tag (for example, <code>
+    /// <row item_a="A" item_b="B" /></code> is okay, but <code>
+    /// <row item_a="A" item_b="B" /></code> is not).</p>
     pub row_tag: std::option::Option<std::string::String>,
 }
 impl UpdateXmlClassifierRequest {
@@ -9325,11 +8789,9 @@ impl UpdateXmlClassifierRequest {
     pub fn classification(&self) -> std::option::Option<&str> {
         self.classification.as_deref()
     }
-    /// <p>The XML tag designating the element that contains each record in an XML document being
-    /// parsed. This cannot identify a self-closing element (closed by <code>/></code>). An empty
-    /// row element that contains only attributes can be parsed as long as it ends with a closing tag
-    /// (for example, <code><row item_a="A" item_b="B"></row></code> is okay, but
-    /// <code><row item_a="A" item_b="B" /></code> is not).</p>
+    /// <p>The XML tag designating the element that contains each record in an XML document being parsed. This cannot identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that contains only attributes can be parsed as long as it ends with a closing tag (for example, <code>
+    /// <row item_a="A" item_b="B" /></code> is okay, but <code>
+    /// <row item_a="A" item_b="B" /></code> is not).</p>
     pub fn row_tag(&self) -> std::option::Option<&str> {
         self.row_tag.as_deref()
     }
@@ -9377,20 +8839,16 @@ pub mod update_xml_classifier_request {
             self.classification = input;
             self
         }
-        /// <p>The XML tag designating the element that contains each record in an XML document being
-        /// parsed. This cannot identify a self-closing element (closed by <code>/></code>). An empty
-        /// row element that contains only attributes can be parsed as long as it ends with a closing tag
-        /// (for example, <code><row item_a="A" item_b="B"></row></code> is okay, but
-        /// <code><row item_a="A" item_b="B" /></code> is not).</p>
+        /// <p>The XML tag designating the element that contains each record in an XML document being parsed. This cannot identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that contains only attributes can be parsed as long as it ends with a closing tag (for example, <code>
+        /// <row item_a="A" item_b="B" /></code> is okay, but <code>
+        /// <row item_a="A" item_b="B" /></code> is not).</p>
         pub fn row_tag(mut self, input: impl Into<std::string::String>) -> Self {
             self.row_tag = Some(input.into());
             self
         }
-        /// <p>The XML tag designating the element that contains each record in an XML document being
-        /// parsed. This cannot identify a self-closing element (closed by <code>/></code>). An empty
-        /// row element that contains only attributes can be parsed as long as it ends with a closing tag
-        /// (for example, <code><row item_a="A" item_b="B"></row></code> is okay, but
-        /// <code><row item_a="A" item_b="B" /></code> is not).</p>
+        /// <p>The XML tag designating the element that contains each record in an XML document being parsed. This cannot identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that contains only attributes can be parsed as long as it ends with a closing tag (for example, <code>
+        /// <row item_a="A" item_b="B" /></code> is okay, but <code>
+        /// <row item_a="A" item_b="B" /></code> is not).</p>
         pub fn set_row_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.row_tag = input;
             self
@@ -9412,15 +8870,13 @@ impl UpdateXmlClassifierRequest {
     }
 }
 
-/// <p>Specifies a grok classifier to update when passed to
-/// <code>UpdateClassifier</code>.</p>
+/// <p>Specifies a grok classifier to update when passed to <code>UpdateClassifier</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGrokClassifierRequest {
     /// <p>The name of the <code>GrokClassifier</code>.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs,
-    /// Amazon CloudWatch Logs, and so on.</p>
+    /// <p>An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs, Amazon CloudWatch Logs, and so on.</p>
     pub classification: std::option::Option<std::string::String>,
     /// <p>The grok pattern used by this classifier.</p>
     pub grok_pattern: std::option::Option<std::string::String>,
@@ -9432,8 +8888,7 @@ impl UpdateGrokClassifierRequest {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs,
-    /// Amazon CloudWatch Logs, and so on.</p>
+    /// <p>An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs, Amazon CloudWatch Logs, and so on.</p>
     pub fn classification(&self) -> std::option::Option<&str> {
         self.classification.as_deref()
     }
@@ -9478,14 +8933,12 @@ pub mod update_grok_classifier_request {
             self.name = input;
             self
         }
-        /// <p>An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs,
-        /// Amazon CloudWatch Logs, and so on.</p>
+        /// <p>An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs, Amazon CloudWatch Logs, and so on.</p>
         pub fn classification(mut self, input: impl Into<std::string::String>) -> Self {
             self.classification = Some(input.into());
             self
         }
-        /// <p>An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs,
-        /// Amazon CloudWatch Logs, and so on.</p>
+        /// <p>An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs, Amazon CloudWatch Logs, and so on.</p>
         pub fn set_classification(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9538,11 +8991,9 @@ impl UpdateGrokClassifierRequest {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Table {
-    /// <p>The table name. For Hive compatibility, this must be entirely
-    /// lowercase.</p>
+    /// <p>The table name. For Hive compatibility, this must be entirely lowercase.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The name of the database where the table metadata resides.
-    /// For Hive compatibility, this must be all lowercase.</p>
+    /// <p>The name of the database where the table metadata resides. For Hive compatibility, this must be all lowercase.</p>
     pub database_name: std::option::Option<std::string::String>,
     /// <p>A description of the table.</p>
     pub description: std::option::Option<std::string::String>,
@@ -9552,24 +9003,17 @@ pub struct Table {
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time that the table was updated.</p>
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The last time that the table was accessed. This is usually taken from HDFS, and might not
-    /// be reliable.</p>
+    /// <p>The last time that the table was accessed. This is usually taken from HDFS, and might not be reliable.</p>
     pub last_access_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time that column statistics were computed for this table.</p>
     pub last_analyzed_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The retention time for this table.</p>
     pub retention: i32,
-    /// <p>A storage descriptor containing information about the physical storage
-    /// of this table.</p>
+    /// <p>A storage descriptor containing information about the physical storage of this table.</p>
     pub storage_descriptor: std::option::Option<crate::model::StorageDescriptor>,
-    /// <p>A list of columns by which the table is partitioned. Only primitive
-    /// types are supported as partition keys.</p>
-    /// <p>When you create a table used by Amazon Athena, and you do not specify any
-    /// <code>partitionKeys</code>, you must at least set the value of <code>partitionKeys</code> to
-    /// an empty list. For example:</p>
-    /// <p>
-    /// <code>"PartitionKeys": []</code>
-    /// </p>
+    /// <p>A list of columns by which the table is partitioned. Only primitive types are supported as partition keys.</p>
+    /// <p>When you create a table used by Amazon Athena, and you do not specify any <code>partitionKeys</code>, you must at least set the value of <code>partitionKeys</code> to an empty list. For example:</p>
+    /// <p> <code>"PartitionKeys": []</code> </p>
     pub partition_keys: std::option::Option<std::vec::Vec<crate::model::Column>>,
     /// <p>If the table is a view, the original text of the view; otherwise <code>null</code>.</p>
     pub view_original_text: std::option::Option<std::string::String>,
@@ -9590,13 +9034,11 @@ pub struct Table {
     pub catalog_id: std::option::Option<std::string::String>,
 }
 impl Table {
-    /// <p>The table name. For Hive compatibility, this must be entirely
-    /// lowercase.</p>
+    /// <p>The table name. For Hive compatibility, this must be entirely lowercase.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The name of the database where the table metadata resides.
-    /// For Hive compatibility, this must be all lowercase.</p>
+    /// <p>The name of the database where the table metadata resides. For Hive compatibility, this must be all lowercase.</p>
     pub fn database_name(&self) -> std::option::Option<&str> {
         self.database_name.as_deref()
     }
@@ -9616,8 +9058,7 @@ impl Table {
     pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
-    /// <p>The last time that the table was accessed. This is usually taken from HDFS, and might not
-    /// be reliable.</p>
+    /// <p>The last time that the table was accessed. This is usually taken from HDFS, and might not be reliable.</p>
     pub fn last_access_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_access_time.as_ref()
     }
@@ -9629,19 +9070,13 @@ impl Table {
     pub fn retention(&self) -> i32 {
         self.retention
     }
-    /// <p>A storage descriptor containing information about the physical storage
-    /// of this table.</p>
+    /// <p>A storage descriptor containing information about the physical storage of this table.</p>
     pub fn storage_descriptor(&self) -> std::option::Option<&crate::model::StorageDescriptor> {
         self.storage_descriptor.as_ref()
     }
-    /// <p>A list of columns by which the table is partitioned. Only primitive
-    /// types are supported as partition keys.</p>
-    /// <p>When you create a table used by Amazon Athena, and you do not specify any
-    /// <code>partitionKeys</code>, you must at least set the value of <code>partitionKeys</code> to
-    /// an empty list. For example:</p>
-    /// <p>
-    /// <code>"PartitionKeys": []</code>
-    /// </p>
+    /// <p>A list of columns by which the table is partitioned. Only primitive types are supported as partition keys.</p>
+    /// <p>When you create a table used by Amazon Athena, and you do not specify any <code>partitionKeys</code>, you must at least set the value of <code>partitionKeys</code> to an empty list. For example:</p>
+    /// <p> <code>"PartitionKeys": []</code> </p>
     pub fn partition_keys(&self) -> std::option::Option<&[crate::model::Column]> {
         self.partition_keys.as_deref()
     }
@@ -9738,26 +9173,22 @@ pub mod table {
         pub(crate) catalog_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The table name. For Hive compatibility, this must be entirely
-        /// lowercase.</p>
+        /// <p>The table name. For Hive compatibility, this must be entirely lowercase.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The table name. For Hive compatibility, this must be entirely
-        /// lowercase.</p>
+        /// <p>The table name. For Hive compatibility, this must be entirely lowercase.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>The name of the database where the table metadata resides.
-        /// For Hive compatibility, this must be all lowercase.</p>
+        /// <p>The name of the database where the table metadata resides. For Hive compatibility, this must be all lowercase.</p>
         pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.database_name = Some(input.into());
             self
         }
-        /// <p>The name of the database where the table metadata resides.
-        /// For Hive compatibility, this must be all lowercase.</p>
+        /// <p>The name of the database where the table metadata resides. For Hive compatibility, this must be all lowercase.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9811,14 +9242,12 @@ pub mod table {
             self.update_time = input;
             self
         }
-        /// <p>The last time that the table was accessed. This is usually taken from HDFS, and might not
-        /// be reliable.</p>
+        /// <p>The last time that the table was accessed. This is usually taken from HDFS, and might not be reliable.</p>
         pub fn last_access_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_access_time = Some(input);
             self
         }
-        /// <p>The last time that the table was accessed. This is usually taken from HDFS, and might not
-        /// be reliable.</p>
+        /// <p>The last time that the table was accessed. This is usually taken from HDFS, and might not be reliable.</p>
         pub fn set_last_access_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -9849,14 +9278,12 @@ pub mod table {
             self.retention = input;
             self
         }
-        /// <p>A storage descriptor containing information about the physical storage
-        /// of this table.</p>
+        /// <p>A storage descriptor containing information about the physical storage of this table.</p>
         pub fn storage_descriptor(mut self, input: crate::model::StorageDescriptor) -> Self {
             self.storage_descriptor = Some(input);
             self
         }
-        /// <p>A storage descriptor containing information about the physical storage
-        /// of this table.</p>
+        /// <p>A storage descriptor containing information about the physical storage of this table.</p>
         pub fn set_storage_descriptor(
             mut self,
             input: std::option::Option<crate::model::StorageDescriptor>,
@@ -9868,28 +9295,18 @@ pub mod table {
         ///
         /// To override the contents of this collection use [`set_partition_keys`](Self::set_partition_keys).
         ///
-        /// <p>A list of columns by which the table is partitioned. Only primitive
-        /// types are supported as partition keys.</p>
-        /// <p>When you create a table used by Amazon Athena, and you do not specify any
-        /// <code>partitionKeys</code>, you must at least set the value of <code>partitionKeys</code> to
-        /// an empty list. For example:</p>
-        /// <p>
-        /// <code>"PartitionKeys": []</code>
-        /// </p>
+        /// <p>A list of columns by which the table is partitioned. Only primitive types are supported as partition keys.</p>
+        /// <p>When you create a table used by Amazon Athena, and you do not specify any <code>partitionKeys</code>, you must at least set the value of <code>partitionKeys</code> to an empty list. For example:</p>
+        /// <p> <code>"PartitionKeys": []</code> </p>
         pub fn partition_keys(mut self, input: crate::model::Column) -> Self {
             let mut v = self.partition_keys.unwrap_or_default();
             v.push(input);
             self.partition_keys = Some(v);
             self
         }
-        /// <p>A list of columns by which the table is partitioned. Only primitive
-        /// types are supported as partition keys.</p>
-        /// <p>When you create a table used by Amazon Athena, and you do not specify any
-        /// <code>partitionKeys</code>, you must at least set the value of <code>partitionKeys</code> to
-        /// an empty list. For example:</p>
-        /// <p>
-        /// <code>"PartitionKeys": []</code>
-        /// </p>
+        /// <p>A list of columns by which the table is partitioned. Only primitive types are supported as partition keys.</p>
+        /// <p>When you create a table used by Amazon Athena, and you do not specify any <code>partitionKeys</code>, you must at least set the value of <code>partitionKeys</code> to an empty list. For example:</p>
+        /// <p> <code>"PartitionKeys": []</code> </p>
         pub fn set_partition_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Column>>,
@@ -11007,11 +10424,7 @@ impl AsRef<str> for ExistCondition {
 pub struct DataCatalogEncryptionSettings {
     /// <p>Specifies the encryption-at-rest configuration for the Data Catalog.</p>
     pub encryption_at_rest: std::option::Option<crate::model::EncryptionAtRest>,
-    /// <p>When connection password protection is enabled, the Data Catalog uses a customer-provided
-    /// key to encrypt the password as part of <code>CreateConnection</code> or
-    /// <code>UpdateConnection</code> and store it in the <code>ENCRYPTED_PASSWORD</code> field in
-    /// the connection properties. You can enable catalog encryption or only password
-    /// encryption.</p>
+    /// <p>When connection password protection is enabled, the Data Catalog uses a customer-provided key to encrypt the password as part of <code>CreateConnection</code> or <code>UpdateConnection</code> and store it in the <code>ENCRYPTED_PASSWORD</code> field in the connection properties. You can enable catalog encryption or only password encryption.</p>
     pub connection_password_encryption:
         std::option::Option<crate::model::ConnectionPasswordEncryption>,
 }
@@ -11020,11 +10433,7 @@ impl DataCatalogEncryptionSettings {
     pub fn encryption_at_rest(&self) -> std::option::Option<&crate::model::EncryptionAtRest> {
         self.encryption_at_rest.as_ref()
     }
-    /// <p>When connection password protection is enabled, the Data Catalog uses a customer-provided
-    /// key to encrypt the password as part of <code>CreateConnection</code> or
-    /// <code>UpdateConnection</code> and store it in the <code>ENCRYPTED_PASSWORD</code> field in
-    /// the connection properties. You can enable catalog encryption or only password
-    /// encryption.</p>
+    /// <p>When connection password protection is enabled, the Data Catalog uses a customer-provided key to encrypt the password as part of <code>CreateConnection</code> or <code>UpdateConnection</code> and store it in the <code>ENCRYPTED_PASSWORD</code> field in the connection properties. You can enable catalog encryption or only password encryption.</p>
     pub fn connection_password_encryption(
         &self,
     ) -> std::option::Option<&crate::model::ConnectionPasswordEncryption> {
@@ -11066,11 +10475,7 @@ pub mod data_catalog_encryption_settings {
             self.encryption_at_rest = input;
             self
         }
-        /// <p>When connection password protection is enabled, the Data Catalog uses a customer-provided
-        /// key to encrypt the password as part of <code>CreateConnection</code> or
-        /// <code>UpdateConnection</code> and store it in the <code>ENCRYPTED_PASSWORD</code> field in
-        /// the connection properties. You can enable catalog encryption or only password
-        /// encryption.</p>
+        /// <p>When connection password protection is enabled, the Data Catalog uses a customer-provided key to encrypt the password as part of <code>CreateConnection</code> or <code>UpdateConnection</code> and store it in the <code>ENCRYPTED_PASSWORD</code> field in the connection properties. You can enable catalog encryption or only password encryption.</p>
         pub fn connection_password_encryption(
             mut self,
             input: crate::model::ConnectionPasswordEncryption,
@@ -11078,11 +10483,7 @@ pub mod data_catalog_encryption_settings {
             self.connection_password_encryption = Some(input);
             self
         }
-        /// <p>When connection password protection is enabled, the Data Catalog uses a customer-provided
-        /// key to encrypt the password as part of <code>CreateConnection</code> or
-        /// <code>UpdateConnection</code> and store it in the <code>ENCRYPTED_PASSWORD</code> field in
-        /// the connection properties. You can enable catalog encryption or only password
-        /// encryption.</p>
+        /// <p>When connection password protection is enabled, the Data Catalog uses a customer-provided key to encrypt the password as part of <code>CreateConnection</code> or <code>UpdateConnection</code> and store it in the <code>ENCRYPTED_PASSWORD</code> field in the connection properties. You can enable catalog encryption or only password encryption.</p>
         pub fn set_connection_password_encryption(
             mut self,
             input: std::option::Option<crate::model::ConnectionPasswordEncryption>,
@@ -11106,29 +10507,16 @@ impl DataCatalogEncryptionSettings {
     }
 }
 
-/// <p>The data structure used by the Data Catalog to encrypt the password as part of
-/// <code>CreateConnection</code> or <code>UpdateConnection</code> and store it in the
-/// <code>ENCRYPTED_PASSWORD</code> field in the connection properties. You can enable catalog
-/// encryption or only password encryption.</p>
-///
-/// <p>When a <code>CreationConnection</code> request arrives containing a password, the Data
-/// Catalog first encrypts the password using your KMS key. It then encrypts the whole
-/// connection object again if catalog encryption is also enabled.</p>
-///
-/// <p>This encryption requires that you set KMS key permissions to enable or restrict access
-/// on the password key according to your security requirements. For example, you might want only
-/// administrators to have decrypt permission on the password key.</p>
+/// <p>The data structure used by the Data Catalog to encrypt the password as part of <code>CreateConnection</code> or <code>UpdateConnection</code> and store it in the <code>ENCRYPTED_PASSWORD</code> field in the connection properties. You can enable catalog encryption or only password encryption.</p>
+/// <p>When a <code>CreationConnection</code> request arrives containing a password, the Data Catalog first encrypts the password using your KMS key. It then encrypts the whole connection object again if catalog encryption is also enabled.</p>
+/// <p>This encryption requires that you set KMS key permissions to enable or restrict access on the password key according to your security requirements. For example, you might want only administrators to have decrypt permission on the password key.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectionPasswordEncryption {
     /// <p>When the <code>ReturnConnectionPasswordEncrypted</code> flag is set to "true", passwords remain encrypted in the responses of <code>GetConnection</code> and <code>GetConnections</code>. This encryption takes effect independently from catalog encryption. </p>
     pub return_connection_password_encrypted: bool,
     /// <p>An KMS key that is used to encrypt the connection password. </p>
-    ///
-    /// <p>If connection password protection is enabled, the caller of <code>CreateConnection</code>
-    /// and <code>UpdateConnection</code> needs at least <code>kms:Encrypt</code> permission on the
-    /// specified KMS key, to encrypt passwords before storing them in the Data Catalog. </p>
-    ///
+    /// <p>If connection password protection is enabled, the caller of <code>CreateConnection</code> and <code>UpdateConnection</code> needs at least <code>kms:Encrypt</code> permission on the specified KMS key, to encrypt passwords before storing them in the Data Catalog. </p>
     /// <p>You can set the decrypt permission to enable or restrict access on the password key according to your security requirements.</p>
     pub aws_kms_key_id: std::option::Option<std::string::String>,
 }
@@ -11138,11 +10526,7 @@ impl ConnectionPasswordEncryption {
         self.return_connection_password_encrypted
     }
     /// <p>An KMS key that is used to encrypt the connection password. </p>
-    ///
-    /// <p>If connection password protection is enabled, the caller of <code>CreateConnection</code>
-    /// and <code>UpdateConnection</code> needs at least <code>kms:Encrypt</code> permission on the
-    /// specified KMS key, to encrypt passwords before storing them in the Data Catalog. </p>
-    ///
+    /// <p>If connection password protection is enabled, the caller of <code>CreateConnection</code> and <code>UpdateConnection</code> needs at least <code>kms:Encrypt</code> permission on the specified KMS key, to encrypt passwords before storing them in the Data Catalog. </p>
     /// <p>You can set the decrypt permission to enable or restrict access on the password key according to your security requirements.</p>
     pub fn aws_kms_key_id(&self) -> std::option::Option<&str> {
         self.aws_kms_key_id.as_deref()
@@ -11183,22 +10567,14 @@ pub mod connection_password_encryption {
             self
         }
         /// <p>An KMS key that is used to encrypt the connection password. </p>
-        ///
-        /// <p>If connection password protection is enabled, the caller of <code>CreateConnection</code>
-        /// and <code>UpdateConnection</code> needs at least <code>kms:Encrypt</code> permission on the
-        /// specified KMS key, to encrypt passwords before storing them in the Data Catalog. </p>
-        ///
+        /// <p>If connection password protection is enabled, the caller of <code>CreateConnection</code> and <code>UpdateConnection</code> needs at least <code>kms:Encrypt</code> permission on the specified KMS key, to encrypt passwords before storing them in the Data Catalog. </p>
         /// <p>You can set the decrypt permission to enable or restrict access on the password key according to your security requirements.</p>
         pub fn aws_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_kms_key_id = Some(input.into());
             self
         }
         /// <p>An KMS key that is used to encrypt the connection password. </p>
-        ///
-        /// <p>If connection password protection is enabled, the caller of <code>CreateConnection</code>
-        /// and <code>UpdateConnection</code> needs at least <code>kms:Encrypt</code> permission on the
-        /// specified KMS key, to encrypt passwords before storing them in the Data Catalog. </p>
-        ///
+        /// <p>If connection password protection is enabled, the caller of <code>CreateConnection</code> and <code>UpdateConnection</code> needs at least <code>kms:Encrypt</code> permission on the specified KMS key, to encrypt passwords before storing them in the Data Catalog. </p>
         /// <p>You can set the decrypt permission to enable or restrict access on the password key according to your security requirements.</p>
         pub fn set_aws_kms_key_id(
             mut self,
@@ -11948,21 +11324,17 @@ impl AsRef<str> for RegistryStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TransformSortCriteria {
-    /// <p>The column to be used in the sorting criteria that are associated with the machine
-    /// learning transform.</p>
+    /// <p>The column to be used in the sorting criteria that are associated with the machine learning transform.</p>
     pub column: std::option::Option<crate::model::TransformSortColumnType>,
-    /// <p>The sort direction to be used in the sorting criteria that are associated with the machine
-    /// learning transform.</p>
+    /// <p>The sort direction to be used in the sorting criteria that are associated with the machine learning transform.</p>
     pub sort_direction: std::option::Option<crate::model::SortDirectionType>,
 }
 impl TransformSortCriteria {
-    /// <p>The column to be used in the sorting criteria that are associated with the machine
-    /// learning transform.</p>
+    /// <p>The column to be used in the sorting criteria that are associated with the machine learning transform.</p>
     pub fn column(&self) -> std::option::Option<&crate::model::TransformSortColumnType> {
         self.column.as_ref()
     }
-    /// <p>The sort direction to be used in the sorting criteria that are associated with the machine
-    /// learning transform.</p>
+    /// <p>The sort direction to be used in the sorting criteria that are associated with the machine learning transform.</p>
     pub fn sort_direction(&self) -> std::option::Option<&crate::model::SortDirectionType> {
         self.sort_direction.as_ref()
     }
@@ -11985,14 +11357,12 @@ pub mod transform_sort_criteria {
         pub(crate) sort_direction: std::option::Option<crate::model::SortDirectionType>,
     }
     impl Builder {
-        /// <p>The column to be used in the sorting criteria that are associated with the machine
-        /// learning transform.</p>
+        /// <p>The column to be used in the sorting criteria that are associated with the machine learning transform.</p>
         pub fn column(mut self, input: crate::model::TransformSortColumnType) -> Self {
             self.column = Some(input);
             self
         }
-        /// <p>The column to be used in the sorting criteria that are associated with the machine
-        /// learning transform.</p>
+        /// <p>The column to be used in the sorting criteria that are associated with the machine learning transform.</p>
         pub fn set_column(
             mut self,
             input: std::option::Option<crate::model::TransformSortColumnType>,
@@ -12000,14 +11370,12 @@ pub mod transform_sort_criteria {
             self.column = input;
             self
         }
-        /// <p>The sort direction to be used in the sorting criteria that are associated with the machine
-        /// learning transform.</p>
+        /// <p>The sort direction to be used in the sorting criteria that are associated with the machine learning transform.</p>
         pub fn sort_direction(mut self, input: crate::model::SortDirectionType) -> Self {
             self.sort_direction = Some(input);
             self
         }
-        /// <p>The sort direction to be used in the sorting criteria that are associated with the machine
-        /// learning transform.</p>
+        /// <p>The sort direction to be used in the sorting criteria that are associated with the machine learning transform.</p>
         pub fn set_sort_direction(
             mut self,
             input: std::option::Option<crate::model::SortDirectionType>,
@@ -12165,12 +11533,11 @@ impl AsRef<str> for TransformSortColumnType {
 pub struct TransformFilterCriteria {
     /// <p>A unique transform name that is used to filter the machine learning transforms.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The type of machine learning transform that is used to filter the machine learning
-    /// transforms.</p>
+    /// <p>The type of machine learning transform that is used to filter the machine learning transforms.</p>
     pub transform_type: std::option::Option<crate::model::TransformType>,
     /// <p>Filters the list of machine learning transforms by the last known status of the transforms (to indicate whether a transform can be used or not). One of "NOT_READY", "READY", or "DELETING".</p>
     pub status: std::option::Option<crate::model::TransformStatusType>,
-    /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9.  For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
+    /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
     pub glue_version: std::option::Option<std::string::String>,
     /// <p>The time and date before which the transforms were created.</p>
     pub created_before: std::option::Option<aws_smithy_types::DateTime>,
@@ -12180,10 +11547,8 @@ pub struct TransformFilterCriteria {
     pub last_modified_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Filter on transforms last modified after this date.</p>
     pub last_modified_after: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Filters on datasets with a specific schema. The <code>Map<Column, Type></code>
-    /// object is an array of key-value pairs representing the schema this transform accepts, where
-    /// <code>Column</code> is the name of a column, and <code>Type</code> is the type of the data
-    /// such as an integer or string. Has an upper bound of 100 columns.</p>
+    /// <p>Filters on datasets with a specific schema. The <code>Map
+    /// <column, type></column,></code> object is an array of key-value pairs representing the schema this transform accepts, where <code>Column</code> is the name of a column, and <code>Type</code> is the type of the data such as an integer or string. Has an upper bound of 100 columns.</p>
     pub schema: std::option::Option<std::vec::Vec<crate::model::SchemaColumn>>,
 }
 impl TransformFilterCriteria {
@@ -12191,8 +11556,7 @@ impl TransformFilterCriteria {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The type of machine learning transform that is used to filter the machine learning
-    /// transforms.</p>
+    /// <p>The type of machine learning transform that is used to filter the machine learning transforms.</p>
     pub fn transform_type(&self) -> std::option::Option<&crate::model::TransformType> {
         self.transform_type.as_ref()
     }
@@ -12200,7 +11564,7 @@ impl TransformFilterCriteria {
     pub fn status(&self) -> std::option::Option<&crate::model::TransformStatusType> {
         self.status.as_ref()
     }
-    /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9.  For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
+    /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
     pub fn glue_version(&self) -> std::option::Option<&str> {
         self.glue_version.as_deref()
     }
@@ -12220,10 +11584,8 @@ impl TransformFilterCriteria {
     pub fn last_modified_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_after.as_ref()
     }
-    /// <p>Filters on datasets with a specific schema. The <code>Map<Column, Type></code>
-    /// object is an array of key-value pairs representing the schema this transform accepts, where
-    /// <code>Column</code> is the name of a column, and <code>Type</code> is the type of the data
-    /// such as an integer or string. Has an upper bound of 100 columns.</p>
+    /// <p>Filters on datasets with a specific schema. The <code>Map
+    /// <column, type></column,></code> object is an array of key-value pairs representing the schema this transform accepts, where <code>Column</code> is the name of a column, and <code>Type</code> is the type of the data such as an integer or string. Has an upper bound of 100 columns.</p>
     pub fn schema(&self) -> std::option::Option<&[crate::model::SchemaColumn]> {
         self.schema.as_deref()
     }
@@ -12270,14 +11632,12 @@ pub mod transform_filter_criteria {
             self.name = input;
             self
         }
-        /// <p>The type of machine learning transform that is used to filter the machine learning
-        /// transforms.</p>
+        /// <p>The type of machine learning transform that is used to filter the machine learning transforms.</p>
         pub fn transform_type(mut self, input: crate::model::TransformType) -> Self {
             self.transform_type = Some(input);
             self
         }
-        /// <p>The type of machine learning transform that is used to filter the machine learning
-        /// transforms.</p>
+        /// <p>The type of machine learning transform that is used to filter the machine learning transforms.</p>
         pub fn set_transform_type(
             mut self,
             input: std::option::Option<crate::model::TransformType>,
@@ -12298,12 +11658,12 @@ pub mod transform_filter_criteria {
             self.status = input;
             self
         }
-        /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9.  For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
+        /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
         pub fn glue_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.glue_version = Some(input.into());
             self
         }
-        /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9.  For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
+        /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
         pub fn set_glue_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.glue_version = input;
             self
@@ -12364,20 +11724,16 @@ pub mod transform_filter_criteria {
         ///
         /// To override the contents of this collection use [`set_schema`](Self::set_schema).
         ///
-        /// <p>Filters on datasets with a specific schema. The <code>Map<Column, Type></code>
-        /// object is an array of key-value pairs representing the schema this transform accepts, where
-        /// <code>Column</code> is the name of a column, and <code>Type</code> is the type of the data
-        /// such as an integer or string. Has an upper bound of 100 columns.</p>
+        /// <p>Filters on datasets with a specific schema. The <code>Map
+        /// <column, type></column,></code> object is an array of key-value pairs representing the schema this transform accepts, where <code>Column</code> is the name of a column, and <code>Type</code> is the type of the data such as an integer or string. Has an upper bound of 100 columns.</p>
         pub fn schema(mut self, input: crate::model::SchemaColumn) -> Self {
             let mut v = self.schema.unwrap_or_default();
             v.push(input);
             self.schema = Some(v);
             self
         }
-        /// <p>Filters on datasets with a specific schema. The <code>Map<Column, Type></code>
-        /// object is an array of key-value pairs representing the schema this transform accepts, where
-        /// <code>Column</code> is the name of a column, and <code>Type</code> is the type of the data
-        /// such as an integer or string. Has an upper bound of 100 columns.</p>
+        /// <p>Filters on datasets with a specific schema. The <code>Map
+        /// <column, type></column,></code> object is an array of key-value pairs representing the schema this transform accepts, where <code>Column</code> is the name of a column, and <code>Type</code> is the type of the data such as an integer or string. Has an upper bound of 100 columns.</p>
         pub fn set_schema(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SchemaColumn>>,
@@ -12408,8 +11764,7 @@ impl TransformFilterCriteria {
     }
 }
 
-/// <p>A key-value pair representing a column and data type that this transform can
-/// run against. The <code>Schema</code> parameter of the <code>MLTransform</code> may contain up to 100 of these structures.</p>
+/// <p>A key-value pair representing a column and data type that this transform can run against. The <code>Schema</code> parameter of the <code>MLTransform</code> may contain up to 100 of these structures.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SchemaColumn {
@@ -12564,8 +11919,7 @@ pub struct WorkflowRun {
     pub error_message: std::option::Option<std::string::String>,
     /// <p>The statistics of the run.</p>
     pub statistics: std::option::Option<crate::model::WorkflowRunStatistics>,
-    /// <p>The graph representing all the Glue components that belong to the workflow as nodes and directed
-    /// connections between them as edges.</p>
+    /// <p>The graph representing all the Glue components that belong to the workflow as nodes and directed connections between them as edges.</p>
     pub graph: std::option::Option<crate::model::WorkflowGraph>,
     /// <p>The batch condition that started the workflow run.</p>
     pub starting_event_batch_condition:
@@ -12611,8 +11965,7 @@ impl WorkflowRun {
     pub fn statistics(&self) -> std::option::Option<&crate::model::WorkflowRunStatistics> {
         self.statistics.as_ref()
     }
-    /// <p>The graph representing all the Glue components that belong to the workflow as nodes and directed
-    /// connections between them as edges.</p>
+    /// <p>The graph representing all the Glue components that belong to the workflow as nodes and directed connections between them as edges.</p>
     pub fn graph(&self) -> std::option::Option<&crate::model::WorkflowGraph> {
         self.graph.as_ref()
     }
@@ -12791,14 +12144,12 @@ pub mod workflow_run {
             self.statistics = input;
             self
         }
-        /// <p>The graph representing all the Glue components that belong to the workflow as nodes and directed
-        /// connections between them as edges.</p>
+        /// <p>The graph representing all the Glue components that belong to the workflow as nodes and directed connections between them as edges.</p>
         pub fn graph(mut self, input: crate::model::WorkflowGraph) -> Self {
             self.graph = Some(input);
             self
         }
-        /// <p>The graph representing all the Glue components that belong to the workflow as nodes and directed
-        /// connections between them as edges.</p>
+        /// <p>The graph representing all the Glue components that belong to the workflow as nodes and directed connections between them as edges.</p>
         pub fn set_graph(
             mut self,
             input: std::option::Option<crate::model::WorkflowGraph>,
@@ -12847,9 +12198,7 @@ impl WorkflowRun {
     }
 }
 
-/// <p>The batch condition that started the workflow run. Either the number of events in the batch size arrived,
-/// in which case the BatchSize member is non-zero, or the batch window expired, in which case the BatchWindow
-/// member is non-zero.</p>
+/// <p>The batch condition that started the workflow run. Either the number of events in the batch size arrived, in which case the BatchSize member is non-zero, or the batch window expired, in which case the BatchWindow member is non-zero.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartingEventBatchCondition {
@@ -12922,8 +12271,7 @@ impl StartingEventBatchCondition {
     }
 }
 
-/// <p>A workflow graph represents the complete workflow containing all the Glue components present in the
-/// workflow and all the directed connections between them.</p>
+/// <p>A workflow graph represents the complete workflow containing all the Glue components present in the workflow and all the directed connections between them.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkflowGraph {
@@ -13014,8 +12362,7 @@ impl WorkflowGraph {
     }
 }
 
-/// <p>An edge represents a directed connection between two components
-/// on a workflow graph.</p>
+/// <p>An edge represents a directed connection between two components on a workflow graph.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Edge {
@@ -13541,8 +12888,7 @@ pub struct JobRun {
     pub id: std::option::Option<std::string::String>,
     /// <p>The number of the attempt to run this job.</p>
     pub attempt: i32,
-    /// <p>The ID of the previous run of this job. For example, the <code>JobRunId</code> specified
-    /// in the <code>StartJobRun</code> action.</p>
+    /// <p>The ID of the previous run of this job. For example, the <code>JobRunId</code> specified in the <code>StartJobRun</code> action.</p>
     pub previous_run_id: std::option::Option<std::string::String>,
     /// <p>The name of the trigger that started this job run.</p>
     pub trigger_name: std::option::Option<std::string::String>,
@@ -13557,8 +12903,7 @@ pub struct JobRun {
     /// <p>The current state of the job run. For more information about the statuses of jobs that have terminated abnormally, see <a href="https://docs.aws.amazon.com/glue/latest/dg/job-run-statuses.html">Glue Job Run Statuses</a>.</p>
     pub job_run_state: std::option::Option<crate::model::JobRunState>,
     /// <p>The job arguments associated with this run. For this job run, they replace the default arguments set in the job definition itself.</p>
-    /// <p>You can specify arguments here that your own job-execution script
-    /// consumes, as well as arguments that Glue itself consumes.</p>
+    /// <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p>
     /// <p>For information about how to specify and consume your own job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
     /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
     pub arguments:
@@ -13568,71 +12913,38 @@ pub struct JobRun {
     /// <p>A list of predecessors to this job run.</p>
     pub predecessor_runs: std::option::Option<std::vec::Vec<crate::model::Predecessor>>,
     /// <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
-    ///
-    /// <p>The number of Glue data processing units (DPUs) allocated to this JobRun.
-    /// From 2 to 100 DPUs can be allocated; the default is 10. A DPU is a relative measure
-    /// of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.
-    /// For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue
-    /// pricing page</a>.</p>
+    /// <p>The number of Glue data processing units (DPUs) allocated to this JobRun. From 2 to 100 DPUs can be allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
     pub allocated_capacity: i32,
     /// <p>The amount of time (in seconds) that the job run consumed resources.</p>
     pub execution_time: i32,
-    /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can
-    /// consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default
-    /// is 2,880 minutes (48 hours). This overrides the timeout value set in the parent job.</p>
+    /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This overrides the timeout value set in the parent job.</p>
     pub timeout: std::option::Option<i32>,
-    /// <p>The number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure
-    /// of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.
-    /// For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue
-    /// pricing page</a>.</p>
-    ///
+    /// <p>The number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
     /// <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>
-    ///
-    /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are
-    /// running a Python shell job or an Apache Spark ETL job:</p>
+    /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell job or an Apache Spark ETL job:</p>
     /// <ul>
-    /// <li>
-    /// <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can
-    /// allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p>
-    /// </li>
-    /// <li>
-    /// <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p>
-    /// </li>
+    /// <li> <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li>
+    /// <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li>
     /// </ul>
     pub max_capacity: std::option::Option<f64>,
     /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.</p>
     /// <ul>
-    /// <li>
-    /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-    /// </li>
-    /// <li>
-    /// <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p>
-    /// </li>
-    /// <li>
-    /// <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p>
-    /// </li>
+    /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+    /// <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li>
+    /// <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li>
     /// </ul>
     pub worker_type: std::option::Option<crate::model::WorkerType>,
     /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
-    ///
     /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
     pub number_of_workers: std::option::Option<i32>,
-    /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this job
-    /// run.</p>
+    /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this job run.</p>
     pub security_configuration: std::option::Option<std::string::String>,
-    /// <p>The name of the log group for secure logging that can be server-side encrypted in Amazon
-    /// CloudWatch using KMS. This name can be <code>/aws-glue/jobs/</code>, in which case the
-    /// default encryption is <code>NONE</code>. If you add a role name and
-    /// <code>SecurityConfiguration</code> name (in other words,
-    /// <code>/aws-glue/jobs-yourRoleName-yourSecurityConfigurationName/</code>), then that security
-    /// configuration is used to encrypt the log group.</p>
+    /// <p>The name of the log group for secure logging that can be server-side encrypted in Amazon CloudWatch using KMS. This name can be <code>/aws-glue/jobs/</code>, in which case the default encryption is <code>NONE</code>. If you add a role name and <code>SecurityConfiguration</code> name (in other words, <code>/aws-glue/jobs-yourRoleName-yourSecurityConfigurationName/</code>), then that security configuration is used to encrypt the log group.</p>
     pub log_group_name: std::option::Option<std::string::String>,
     /// <p>Specifies configuration properties of a job run notification.</p>
     pub notification_property: std::option::Option<crate::model::NotificationProperty>,
     /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for jobs of type Spark. </p>
-    ///
     /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
-    ///
     /// <p>Jobs that are created without specifying a Glue version default to Glue 0.9.</p>
     pub glue_version: std::option::Option<std::string::String>,
 }
@@ -13645,8 +12957,7 @@ impl JobRun {
     pub fn attempt(&self) -> i32 {
         self.attempt
     }
-    /// <p>The ID of the previous run of this job. For example, the <code>JobRunId</code> specified
-    /// in the <code>StartJobRun</code> action.</p>
+    /// <p>The ID of the previous run of this job. For example, the <code>JobRunId</code> specified in the <code>StartJobRun</code> action.</p>
     pub fn previous_run_id(&self) -> std::option::Option<&str> {
         self.previous_run_id.as_deref()
     }
@@ -13675,8 +12986,7 @@ impl JobRun {
         self.job_run_state.as_ref()
     }
     /// <p>The job arguments associated with this run. For this job run, they replace the default arguments set in the job definition itself.</p>
-    /// <p>You can specify arguments here that your own job-execution script
-    /// consumes, as well as arguments that Glue itself consumes.</p>
+    /// <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p>
     /// <p>For information about how to specify and consume your own job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
     /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
     pub fn arguments(
@@ -13694,12 +13004,7 @@ impl JobRun {
         self.predecessor_runs.as_deref()
     }
     /// <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
-    ///
-    /// <p>The number of Glue data processing units (DPUs) allocated to this JobRun.
-    /// From 2 to 100 DPUs can be allocated; the default is 10. A DPU is a relative measure
-    /// of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.
-    /// For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue
-    /// pricing page</a>.</p>
+    /// <p>The number of Glue data processing units (DPUs) allocated to this JobRun. From 2 to 100 DPUs can be allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
     pub fn allocated_capacity(&self) -> i32 {
         self.allocated_capacity
     }
@@ -13707,65 +13012,39 @@ impl JobRun {
     pub fn execution_time(&self) -> i32 {
         self.execution_time
     }
-    /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can
-    /// consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default
-    /// is 2,880 minutes (48 hours). This overrides the timeout value set in the parent job.</p>
+    /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This overrides the timeout value set in the parent job.</p>
     pub fn timeout(&self) -> std::option::Option<i32> {
         self.timeout
     }
-    /// <p>The number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure
-    /// of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.
-    /// For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue
-    /// pricing page</a>.</p>
-    ///
+    /// <p>The number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
     /// <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>
-    ///
-    /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are
-    /// running a Python shell job or an Apache Spark ETL job:</p>
+    /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell job or an Apache Spark ETL job:</p>
     /// <ul>
-    /// <li>
-    /// <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can
-    /// allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p>
-    /// </li>
-    /// <li>
-    /// <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p>
-    /// </li>
+    /// <li> <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li>
+    /// <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li>
     /// </ul>
     pub fn max_capacity(&self) -> std::option::Option<f64> {
         self.max_capacity
     }
     /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.</p>
     /// <ul>
-    /// <li>
-    /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-    /// </li>
-    /// <li>
-    /// <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p>
-    /// </li>
-    /// <li>
-    /// <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p>
-    /// </li>
+    /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+    /// <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li>
+    /// <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li>
     /// </ul>
     pub fn worker_type(&self) -> std::option::Option<&crate::model::WorkerType> {
         self.worker_type.as_ref()
     }
     /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
-    ///
     /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
     pub fn number_of_workers(&self) -> std::option::Option<i32> {
         self.number_of_workers
     }
-    /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this job
-    /// run.</p>
+    /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this job run.</p>
     pub fn security_configuration(&self) -> std::option::Option<&str> {
         self.security_configuration.as_deref()
     }
-    /// <p>The name of the log group for secure logging that can be server-side encrypted in Amazon
-    /// CloudWatch using KMS. This name can be <code>/aws-glue/jobs/</code>, in which case the
-    /// default encryption is <code>NONE</code>. If you add a role name and
-    /// <code>SecurityConfiguration</code> name (in other words,
-    /// <code>/aws-glue/jobs-yourRoleName-yourSecurityConfigurationName/</code>), then that security
-    /// configuration is used to encrypt the log group.</p>
+    /// <p>The name of the log group for secure logging that can be server-side encrypted in Amazon CloudWatch using KMS. This name can be <code>/aws-glue/jobs/</code>, in which case the default encryption is <code>NONE</code>. If you add a role name and <code>SecurityConfiguration</code> name (in other words, <code>/aws-glue/jobs-yourRoleName-yourSecurityConfigurationName/</code>), then that security configuration is used to encrypt the log group.</p>
     pub fn log_group_name(&self) -> std::option::Option<&str> {
         self.log_group_name.as_deref()
     }
@@ -13776,9 +13055,7 @@ impl JobRun {
         self.notification_property.as_ref()
     }
     /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for jobs of type Spark. </p>
-    ///
     /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
-    ///
     /// <p>Jobs that are created without specifying a Glue version default to Glue 0.9.</p>
     pub fn glue_version(&self) -> std::option::Option<&str> {
         self.glue_version.as_deref()
@@ -13864,14 +13141,12 @@ pub mod job_run {
             self.attempt = input;
             self
         }
-        /// <p>The ID of the previous run of this job. For example, the <code>JobRunId</code> specified
-        /// in the <code>StartJobRun</code> action.</p>
+        /// <p>The ID of the previous run of this job. For example, the <code>JobRunId</code> specified in the <code>StartJobRun</code> action.</p>
         pub fn previous_run_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.previous_run_id = Some(input.into());
             self
         }
-        /// <p>The ID of the previous run of this job. For example, the <code>JobRunId</code> specified
-        /// in the <code>StartJobRun</code> action.</p>
+        /// <p>The ID of the previous run of this job. For example, the <code>JobRunId</code> specified in the <code>StartJobRun</code> action.</p>
         pub fn set_previous_run_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13956,8 +13231,7 @@ pub mod job_run {
         /// To override the contents of this collection use [`set_arguments`](Self::set_arguments).
         ///
         /// <p>The job arguments associated with this run. For this job run, they replace the default arguments set in the job definition itself.</p>
-        /// <p>You can specify arguments here that your own job-execution script
-        /// consumes, as well as arguments that Glue itself consumes.</p>
+        /// <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p>
         /// <p>For information about how to specify and consume your own job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
         /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
         pub fn arguments(
@@ -13971,8 +13245,7 @@ pub mod job_run {
             self
         }
         /// <p>The job arguments associated with this run. For this job run, they replace the default arguments set in the job definition itself.</p>
-        /// <p>You can specify arguments here that your own job-execution script
-        /// consumes, as well as arguments that Glue itself consumes.</p>
+        /// <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p>
         /// <p>For information about how to specify and consume your own job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
         /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
         pub fn set_arguments(
@@ -14017,23 +13290,13 @@ pub mod job_run {
             self
         }
         /// <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
-        ///
-        /// <p>The number of Glue data processing units (DPUs) allocated to this JobRun.
-        /// From 2 to 100 DPUs can be allocated; the default is 10. A DPU is a relative measure
-        /// of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.
-        /// For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue
-        /// pricing page</a>.</p>
+        /// <p>The number of Glue data processing units (DPUs) allocated to this JobRun. From 2 to 100 DPUs can be allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
         pub fn allocated_capacity(mut self, input: i32) -> Self {
             self.allocated_capacity = Some(input);
             self
         }
         /// <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
-        ///
-        /// <p>The number of Glue data processing units (DPUs) allocated to this JobRun.
-        /// From 2 to 100 DPUs can be allocated; the default is 10. A DPU is a relative measure
-        /// of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.
-        /// For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue
-        /// pricing page</a>.</p>
+        /// <p>The number of Glue data processing units (DPUs) allocated to this JobRun. From 2 to 100 DPUs can be allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
         pub fn set_allocated_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.allocated_capacity = input;
             self
@@ -14048,59 +13311,33 @@ pub mod job_run {
             self.execution_time = input;
             self
         }
-        /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can
-        /// consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default
-        /// is 2,880 minutes (48 hours). This overrides the timeout value set in the parent job.</p>
+        /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This overrides the timeout value set in the parent job.</p>
         pub fn timeout(mut self, input: i32) -> Self {
             self.timeout = Some(input);
             self
         }
-        /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can
-        /// consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default
-        /// is 2,880 minutes (48 hours). This overrides the timeout value set in the parent job.</p>
+        /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This overrides the timeout value set in the parent job.</p>
         pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
             self.timeout = input;
             self
         }
-        /// <p>The number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure
-        /// of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.
-        /// For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue
-        /// pricing page</a>.</p>
-        ///
+        /// <p>The number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
         /// <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>
-        ///
-        /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are
-        /// running a Python shell job or an Apache Spark ETL job:</p>
+        /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell job or an Apache Spark ETL job:</p>
         /// <ul>
-        /// <li>
-        /// <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can
-        /// allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p>
-        /// </li>
-        /// <li>
-        /// <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p>
-        /// </li>
+        /// <li> <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li>
+        /// <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li>
         /// </ul>
         pub fn max_capacity(mut self, input: f64) -> Self {
             self.max_capacity = Some(input);
             self
         }
-        /// <p>The number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure
-        /// of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.
-        /// For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue
-        /// pricing page</a>.</p>
-        ///
+        /// <p>The number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
         /// <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>
-        ///
-        /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are
-        /// running a Python shell job or an Apache Spark ETL job:</p>
+        /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell job or an Apache Spark ETL job:</p>
         /// <ul>
-        /// <li>
-        /// <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can
-        /// allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p>
-        /// </li>
-        /// <li>
-        /// <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p>
-        /// </li>
+        /// <li> <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li>
+        /// <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li>
         /// </ul>
         pub fn set_max_capacity(mut self, input: std::option::Option<f64>) -> Self {
             self.max_capacity = input;
@@ -14108,15 +13345,9 @@ pub mod job_run {
         }
         /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.</p>
         /// <ul>
-        /// <li>
-        /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p>
-        /// </li>
+        /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+        /// <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li>
+        /// <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li>
         /// </ul>
         pub fn worker_type(mut self, input: crate::model::WorkerType) -> Self {
             self.worker_type = Some(input);
@@ -14124,15 +13355,9 @@ pub mod job_run {
         }
         /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.</p>
         /// <ul>
-        /// <li>
-        /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p>
-        /// </li>
+        /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+        /// <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li>
+        /// <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li>
         /// </ul>
         pub fn set_worker_type(
             mut self,
@@ -14142,27 +13367,23 @@ pub mod job_run {
             self
         }
         /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
-        ///
         /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
         pub fn number_of_workers(mut self, input: i32) -> Self {
             self.number_of_workers = Some(input);
             self
         }
         /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
-        ///
         /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
         pub fn set_number_of_workers(mut self, input: std::option::Option<i32>) -> Self {
             self.number_of_workers = input;
             self
         }
-        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this job
-        /// run.</p>
+        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this job run.</p>
         pub fn security_configuration(mut self, input: impl Into<std::string::String>) -> Self {
             self.security_configuration = Some(input.into());
             self
         }
-        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this job
-        /// run.</p>
+        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this job run.</p>
         pub fn set_security_configuration(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14170,22 +13391,12 @@ pub mod job_run {
             self.security_configuration = input;
             self
         }
-        /// <p>The name of the log group for secure logging that can be server-side encrypted in Amazon
-        /// CloudWatch using KMS. This name can be <code>/aws-glue/jobs/</code>, in which case the
-        /// default encryption is <code>NONE</code>. If you add a role name and
-        /// <code>SecurityConfiguration</code> name (in other words,
-        /// <code>/aws-glue/jobs-yourRoleName-yourSecurityConfigurationName/</code>), then that security
-        /// configuration is used to encrypt the log group.</p>
+        /// <p>The name of the log group for secure logging that can be server-side encrypted in Amazon CloudWatch using KMS. This name can be <code>/aws-glue/jobs/</code>, in which case the default encryption is <code>NONE</code>. If you add a role name and <code>SecurityConfiguration</code> name (in other words, <code>/aws-glue/jobs-yourRoleName-yourSecurityConfigurationName/</code>), then that security configuration is used to encrypt the log group.</p>
         pub fn log_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.log_group_name = Some(input.into());
             self
         }
-        /// <p>The name of the log group for secure logging that can be server-side encrypted in Amazon
-        /// CloudWatch using KMS. This name can be <code>/aws-glue/jobs/</code>, in which case the
-        /// default encryption is <code>NONE</code>. If you add a role name and
-        /// <code>SecurityConfiguration</code> name (in other words,
-        /// <code>/aws-glue/jobs-yourRoleName-yourSecurityConfigurationName/</code>), then that security
-        /// configuration is used to encrypt the log group.</p>
+        /// <p>The name of the log group for secure logging that can be server-side encrypted in Amazon CloudWatch using KMS. This name can be <code>/aws-glue/jobs/</code>, in which case the default encryption is <code>NONE</code>. If you add a role name and <code>SecurityConfiguration</code> name (in other words, <code>/aws-glue/jobs-yourRoleName-yourSecurityConfigurationName/</code>), then that security configuration is used to encrypt the log group.</p>
         pub fn set_log_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14207,18 +13418,14 @@ pub mod job_run {
             self
         }
         /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for jobs of type Spark. </p>
-        ///
         /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
-        ///
         /// <p>Jobs that are created without specifying a Glue version default to Glue 0.9.</p>
         pub fn glue_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.glue_version = Some(input.into());
             self
         }
         /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for jobs of type Spark. </p>
-        ///
         /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
-        ///
         /// <p>Jobs that are created without specifying a Glue version default to Glue 0.9.</p>
         pub fn set_glue_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.glue_version = input;
@@ -14260,8 +13467,7 @@ impl JobRun {
     }
 }
 
-/// <p>A job run that was used in the predicate of a conditional trigger
-/// that triggered this job run.</p>
+/// <p>A job run that was used in the predicate of a conditional trigger that triggered this job run.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Predecessor {
@@ -14663,9 +13869,7 @@ impl AsRef<str> for WorkflowRunStatus {
     }
 }
 
-/// <p>A workflow is a collection of multiple dependent Glue
-/// jobs and crawlers that are run to complete a complex ETL task. A
-/// workflow manages the execution and monitoring of all its jobs and crawlers.</p>
+/// <p>A workflow is a collection of multiple dependent Glue jobs and crawlers that are run to complete a complex ETL task. A workflow manages the execution and monitoring of all its jobs and crawlers.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Workflow {
@@ -14673,9 +13877,7 @@ pub struct Workflow {
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the workflow.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>A collection of properties to be used as part of each execution of the workflow.
-    /// The run properties are made available to each job in the workflow. A job can modify
-    /// the properties for the next jobs in the flow.</p>
+    /// <p>A collection of properties to be used as part of each execution of the workflow. The run properties are made available to each job in the workflow. A job can modify the properties for the next jobs in the flow.</p>
     pub default_run_properties:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The date and time when the workflow was created.</p>
@@ -14684,8 +13886,7 @@ pub struct Workflow {
     pub last_modified_on: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The information about the last execution of the workflow.</p>
     pub last_run: std::option::Option<crate::model::WorkflowRun>,
-    /// <p>The graph representing all the Glue components that belong to the workflow as nodes and directed
-    /// connections between them as edges.</p>
+    /// <p>The graph representing all the Glue components that belong to the workflow as nodes and directed connections between them as edges.</p>
     pub graph: std::option::Option<crate::model::WorkflowGraph>,
     /// <p>You can use this parameter to prevent unwanted multiple updates to data, to control costs, or in some cases, to prevent exceeding the maximum number of concurrent runs of any of the component jobs. If you leave this parameter blank, there is no limit to the number of concurrent workflow runs.</p>
     pub max_concurrent_runs: std::option::Option<i32>,
@@ -14701,9 +13902,7 @@ impl Workflow {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>A collection of properties to be used as part of each execution of the workflow.
-    /// The run properties are made available to each job in the workflow. A job can modify
-    /// the properties for the next jobs in the flow.</p>
+    /// <p>A collection of properties to be used as part of each execution of the workflow. The run properties are made available to each job in the workflow. A job can modify the properties for the next jobs in the flow.</p>
     pub fn default_run_properties(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -14722,8 +13921,7 @@ impl Workflow {
     pub fn last_run(&self) -> std::option::Option<&crate::model::WorkflowRun> {
         self.last_run.as_ref()
     }
-    /// <p>The graph representing all the Glue components that belong to the workflow as nodes and directed
-    /// connections between them as edges.</p>
+    /// <p>The graph representing all the Glue components that belong to the workflow as nodes and directed connections between them as edges.</p>
     pub fn graph(&self) -> std::option::Option<&crate::model::WorkflowGraph> {
         self.graph.as_ref()
     }
@@ -14794,9 +13992,7 @@ pub mod workflow {
         ///
         /// To override the contents of this collection use [`set_default_run_properties`](Self::set_default_run_properties).
         ///
-        /// <p>A collection of properties to be used as part of each execution of the workflow.
-        /// The run properties are made available to each job in the workflow. A job can modify
-        /// the properties for the next jobs in the flow.</p>
+        /// <p>A collection of properties to be used as part of each execution of the workflow. The run properties are made available to each job in the workflow. A job can modify the properties for the next jobs in the flow.</p>
         pub fn default_run_properties(
             mut self,
             k: impl Into<std::string::String>,
@@ -14807,9 +14003,7 @@ pub mod workflow {
             self.default_run_properties = Some(hash_map);
             self
         }
-        /// <p>A collection of properties to be used as part of each execution of the workflow.
-        /// The run properties are made available to each job in the workflow. A job can modify
-        /// the properties for the next jobs in the flow.</p>
+        /// <p>A collection of properties to be used as part of each execution of the workflow. The run properties are made available to each job in the workflow. A job can modify the properties for the next jobs in the flow.</p>
         pub fn set_default_run_properties(
             mut self,
             input: std::option::Option<
@@ -14858,14 +14052,12 @@ pub mod workflow {
             self.last_run = input;
             self
         }
-        /// <p>The graph representing all the Glue components that belong to the workflow as nodes and directed
-        /// connections between them as edges.</p>
+        /// <p>The graph representing all the Glue components that belong to the workflow as nodes and directed connections between them as edges.</p>
         pub fn graph(mut self, input: crate::model::WorkflowGraph) -> Self {
             self.graph = Some(input);
             self
         }
-        /// <p>The graph representing all the Glue components that belong to the workflow as nodes and directed
-        /// connections between them as edges.</p>
+        /// <p>The graph representing all the Glue components that belong to the workflow as nodes and directed connections between them as edges.</p>
         pub fn set_graph(
             mut self,
             input: std::option::Option<crate::model::WorkflowGraph>,
@@ -14995,8 +14187,7 @@ impl BlueprintDetails {
     }
 }
 
-/// <p>Represents the equivalent of a Hive user-defined function
-/// (<code>UDF</code>) definition.</p>
+/// <p>Represents the equivalent of a Hive user-defined function (<code>UDF</code>) definition.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserDefinedFunction {
@@ -16643,14 +15834,12 @@ pub struct Partition {
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last time at which the partition was accessed.</p>
     pub last_access_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Provides information about the physical
-    /// location where the partition is stored.</p>
+    /// <p>Provides information about the physical location where the partition is stored.</p>
     pub storage_descriptor: std::option::Option<crate::model::StorageDescriptor>,
     /// <p>These key-value pairs define partition parameters.</p>
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The last time at which column statistics were computed for this
-    /// partition.</p>
+    /// <p>The last time at which column statistics were computed for this partition.</p>
     pub last_analyzed_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ID of the Data Catalog in which the partition resides.</p>
     pub catalog_id: std::option::Option<std::string::String>,
@@ -16676,8 +15865,7 @@ impl Partition {
     pub fn last_access_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_access_time.as_ref()
     }
-    /// <p>Provides information about the physical
-    /// location where the partition is stored.</p>
+    /// <p>Provides information about the physical location where the partition is stored.</p>
     pub fn storage_descriptor(&self) -> std::option::Option<&crate::model::StorageDescriptor> {
         self.storage_descriptor.as_ref()
     }
@@ -16688,8 +15876,7 @@ impl Partition {
     {
         self.parameters.as_ref()
     }
-    /// <p>The last time at which column statistics were computed for this
-    /// partition.</p>
+    /// <p>The last time at which column statistics were computed for this partition.</p>
     pub fn last_analyzed_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_analyzed_time.as_ref()
     }
@@ -16800,14 +15987,12 @@ pub mod partition {
             self.last_access_time = input;
             self
         }
-        /// <p>Provides information about the physical
-        /// location where the partition is stored.</p>
+        /// <p>Provides information about the physical location where the partition is stored.</p>
         pub fn storage_descriptor(mut self, input: crate::model::StorageDescriptor) -> Self {
             self.storage_descriptor = Some(input);
             self
         }
-        /// <p>Provides information about the physical
-        /// location where the partition is stored.</p>
+        /// <p>Provides information about the physical location where the partition is stored.</p>
         pub fn set_storage_descriptor(
             mut self,
             input: std::option::Option<crate::model::StorageDescriptor>,
@@ -16840,14 +16025,12 @@ pub mod partition {
             self.parameters = input;
             self
         }
-        /// <p>The last time at which column statistics were computed for this
-        /// partition.</p>
+        /// <p>The last time at which column statistics were computed for this partition.</p>
         pub fn last_analyzed_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_analyzed_time = Some(input);
             self
         }
-        /// <p>The last time at which column statistics were computed for this
-        /// partition.</p>
+        /// <p>The last time at which column statistics were computed for this partition.</p>
         pub fn set_last_analyzed_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -16888,20 +16071,17 @@ impl Partition {
     }
 }
 
-/// <p>Defines a non-overlapping region of a table's partitions, allowing
-/// multiple requests to be run in parallel.</p>
+/// <p>Defines a non-overlapping region of a table's partitions, allowing multiple requests to be run in parallel.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Segment {
-    /// <p>The zero-based index number of the segment. For example, if the total number of segments
-    /// is 4, <code>SegmentNumber</code> values range from 0 through 3.</p>
+    /// <p>The zero-based index number of the segment. For example, if the total number of segments is 4, <code>SegmentNumber</code> values range from 0 through 3.</p>
     pub segment_number: i32,
     /// <p>The total number of segments.</p>
     pub total_segments: i32,
 }
 impl Segment {
-    /// <p>The zero-based index number of the segment. For example, if the total number of segments
-    /// is 4, <code>SegmentNumber</code> values range from 0 through 3.</p>
+    /// <p>The zero-based index number of the segment. For example, if the total number of segments is 4, <code>SegmentNumber</code> values range from 0 through 3.</p>
     pub fn segment_number(&self) -> i32 {
         self.segment_number
     }
@@ -16928,14 +16108,12 @@ pub mod segment {
         pub(crate) total_segments: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The zero-based index number of the segment. For example, if the total number of segments
-        /// is 4, <code>SegmentNumber</code> values range from 0 through 3.</p>
+        /// <p>The zero-based index number of the segment. For example, if the total number of segments is 4, <code>SegmentNumber</code> values range from 0 through 3.</p>
         pub fn segment_number(mut self, input: i32) -> Self {
             self.segment_number = Some(input);
             self
         }
-        /// <p>The zero-based index number of the segment. For example, if the total number of segments
-        /// is 4, <code>SegmentNumber</code> values range from 0 through 3.</p>
+        /// <p>The zero-based index number of the segment. For example, if the total number of segments is 4, <code>SegmentNumber</code> values range from 0 through 3.</p>
         pub fn set_segment_number(mut self, input: std::option::Option<i32>) -> Self {
             self.segment_number = input;
             self
@@ -16975,21 +16153,12 @@ pub struct PartitionIndexDescriptor {
     /// <p>A list of one or more keys, as <code>KeySchemaElement</code> structures, for the partition index.</p>
     pub keys: std::option::Option<std::vec::Vec<crate::model::KeySchemaElement>>,
     /// <p>The status of the partition index. </p>
-    ///
     /// <p>The possible statuses are:</p>
     /// <ul>
-    /// <li>
-    /// <p>CREATING: The index is being created. When an index is in a CREATING state, the index or its table cannot be deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>ACTIVE: The index creation succeeds.</p>
-    /// </li>
-    /// <li>
-    /// <p>FAILED: The index creation fails. </p>
-    /// </li>
-    /// <li>
-    /// <p>DELETING: The index is deleted from the list of indexes.</p>
-    /// </li>
+    /// <li> <p>CREATING: The index is being created. When an index is in a CREATING state, the index or its table cannot be deleted.</p> </li>
+    /// <li> <p>ACTIVE: The index creation succeeds.</p> </li>
+    /// <li> <p>FAILED: The index creation fails. </p> </li>
+    /// <li> <p>DELETING: The index is deleted from the list of indexes.</p> </li>
     /// </ul>
     pub index_status: std::option::Option<crate::model::PartitionIndexStatus>,
     /// <p>A list of errors that can occur when registering partition indexes for an existing table.</p>
@@ -17005,21 +16174,12 @@ impl PartitionIndexDescriptor {
         self.keys.as_deref()
     }
     /// <p>The status of the partition index. </p>
-    ///
     /// <p>The possible statuses are:</p>
     /// <ul>
-    /// <li>
-    /// <p>CREATING: The index is being created. When an index is in a CREATING state, the index or its table cannot be deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>ACTIVE: The index creation succeeds.</p>
-    /// </li>
-    /// <li>
-    /// <p>FAILED: The index creation fails. </p>
-    /// </li>
-    /// <li>
-    /// <p>DELETING: The index is deleted from the list of indexes.</p>
-    /// </li>
+    /// <li> <p>CREATING: The index is being created. When an index is in a CREATING state, the index or its table cannot be deleted.</p> </li>
+    /// <li> <p>ACTIVE: The index creation succeeds.</p> </li>
+    /// <li> <p>FAILED: The index creation fails. </p> </li>
+    /// <li> <p>DELETING: The index is deleted from the list of indexes.</p> </li>
     /// </ul>
     pub fn index_status(&self) -> std::option::Option<&crate::model::PartitionIndexStatus> {
         self.index_status.as_ref()
@@ -17081,42 +16241,24 @@ pub mod partition_index_descriptor {
             self
         }
         /// <p>The status of the partition index. </p>
-        ///
         /// <p>The possible statuses are:</p>
         /// <ul>
-        /// <li>
-        /// <p>CREATING: The index is being created. When an index is in a CREATING state, the index or its table cannot be deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>ACTIVE: The index creation succeeds.</p>
-        /// </li>
-        /// <li>
-        /// <p>FAILED: The index creation fails. </p>
-        /// </li>
-        /// <li>
-        /// <p>DELETING: The index is deleted from the list of indexes.</p>
-        /// </li>
+        /// <li> <p>CREATING: The index is being created. When an index is in a CREATING state, the index or its table cannot be deleted.</p> </li>
+        /// <li> <p>ACTIVE: The index creation succeeds.</p> </li>
+        /// <li> <p>FAILED: The index creation fails. </p> </li>
+        /// <li> <p>DELETING: The index is deleted from the list of indexes.</p> </li>
         /// </ul>
         pub fn index_status(mut self, input: crate::model::PartitionIndexStatus) -> Self {
             self.index_status = Some(input);
             self
         }
         /// <p>The status of the partition index. </p>
-        ///
         /// <p>The possible statuses are:</p>
         /// <ul>
-        /// <li>
-        /// <p>CREATING: The index is being created. When an index is in a CREATING state, the index or its table cannot be deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>ACTIVE: The index creation succeeds.</p>
-        /// </li>
-        /// <li>
-        /// <p>FAILED: The index creation fails. </p>
-        /// </li>
-        /// <li>
-        /// <p>DELETING: The index is deleted from the list of indexes.</p>
-        /// </li>
+        /// <li> <p>CREATING: The index is being created. When an index is in a CREATING state, the index or its table cannot be deleted.</p> </li>
+        /// <li> <p>ACTIVE: The index creation succeeds.</p> </li>
+        /// <li> <p>FAILED: The index creation fails. </p> </li>
+        /// <li> <p>DELETING: The index is deleted from the list of indexes.</p> </li>
         /// </ul>
         pub fn set_index_status(
             mut self,
@@ -17163,25 +16305,13 @@ impl PartitionIndexDescriptor {
 }
 
 /// <p>A list of errors that can occur when registering partition indexes for an existing table.</p>
-///
 /// <p>These errors give the details about why an index registration failed and provide a limited number of partitions in the response, so that you can fix the partitions at fault and try registering the index again. The most common set of errors that can occur are categorized as follows:</p>
-///
 /// <ul>
-/// <li>
-/// <p>EncryptedPartitionError: The partitions are encrypted.</p>
-/// </li>
-/// <li>
-/// <p>InvalidPartitionTypeDataError: The partition value doesn't match the data type for that partition column.</p>
-/// </li>
-/// <li>
-/// <p>MissingPartitionValueError: The partitions are encrypted.</p>
-/// </li>
-/// <li>
-/// <p>UnsupportedPartitionCharacterError: Characters inside the partition value are not supported. For example: U+0000 , U+0001, U+0002.</p>
-/// </li>
-/// <li>
-/// <p>InternalError: Any error which does not belong to other error codes.</p>
-/// </li>
+/// <li> <p>EncryptedPartitionError: The partitions are encrypted.</p> </li>
+/// <li> <p>InvalidPartitionTypeDataError: The partition value doesn't match the data type for that partition column.</p> </li>
+/// <li> <p>MissingPartitionValueError: The partitions are encrypted.</p> </li>
+/// <li> <p>UnsupportedPartitionCharacterError: Characters inside the partition value are not supported. For example: U+0000 , U+0001, U+0002.</p> </li>
+/// <li> <p>InternalError: Any error which does not belong to other error codes.</p> </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -17547,14 +16677,11 @@ impl KeySchemaElement {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MlTransform {
-    /// <p>The unique transform ID that is generated for the machine learning transform. The ID is
-    /// guaranteed to be unique and does not change.</p>
+    /// <p>The unique transform ID that is generated for the machine learning transform. The ID is guaranteed to be unique and does not change.</p>
     pub transform_id: std::option::Option<std::string::String>,
-    /// <p>A user-defined name for the machine learning transform. Names are not guaranteed unique
-    /// and can be changed at any time.</p>
+    /// <p>A user-defined name for the machine learning transform. Names are not guaranteed unique and can be changed at any time.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>A user-defined, long-form description text for the machine learning transform.
-    /// Descriptions are not guaranteed to be unique and can be changed at any time.</p>
+    /// <p>A user-defined, long-form description text for the machine learning transform. Descriptions are not guaranteed to be unique and can be changed at any time.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The current status of the machine learning transform.</p>
     pub status: std::option::Option<crate::model::TransformStatusType>,
@@ -17564,111 +16691,66 @@ pub struct MlTransform {
     pub last_modified_on: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of Glue table definitions used by the transform.</p>
     pub input_record_tables: std::option::Option<std::vec::Vec<crate::model::GlueTable>>,
-    /// <p>A <code>TransformParameters</code> object. You can use parameters to tune (customize) the
-    /// behavior of the machine learning transform by specifying what data it learns from and your
-    /// preference on various tradeoffs (such as precious vs. recall, or accuracy vs. cost).</p>
+    /// <p>A <code>TransformParameters</code> object. You can use parameters to tune (customize) the behavior of the machine learning transform by specifying what data it learns from and your preference on various tradeoffs (such as precious vs. recall, or accuracy vs. cost).</p>
     pub parameters: std::option::Option<crate::model::TransformParameters>,
     /// <p>An <code>EvaluationMetrics</code> object. Evaluation metrics provide an estimate of the quality of your machine learning transform.</p>
     pub evaluation_metrics: std::option::Option<crate::model::EvaluationMetrics>,
     /// <p>A count identifier for the labeling files generated by Glue for this transform. As you create a better transform, you can iteratively download, label, and upload the labeling file.</p>
     pub label_count: i32,
-    /// <p>A map of key-value pairs representing the columns and data types that this transform can
-    /// run against. Has an upper bound of 100 columns.</p>
+    /// <p>A map of key-value pairs representing the columns and data types that this transform can run against. Has an upper bound of 100 columns.</p>
     pub schema: std::option::Option<std::vec::Vec<crate::model::SchemaColumn>>,
     /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required permissions. The required permissions include both Glue service role permissions to Glue resources, and Amazon S3 permissions required by the transform. </p>
-    ///
     /// <ul>
-    /// <li>
-    /// <p>This role needs Glue service role permissions to allow access to resources in Glue. See <a href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach a Policy to IAM Users That Access Glue</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>This role needs permission to your Amazon Simple Storage Service (Amazon S3) sources, targets, temporary directory, scripts, and any libraries used by the task run for this transform.</p>
-    /// </li>
+    /// <li> <p>This role needs Glue service role permissions to allow access to resources in Glue. See <a href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach a Policy to IAM Users That Access Glue</a>.</p> </li>
+    /// <li> <p>This role needs permission to your Amazon Simple Storage Service (Amazon S3) sources, targets, temporary directory, scripts, and any libraries used by the task run for this transform.</p> </li>
     /// </ul>
     pub role: std::option::Option<std::string::String>,
-    /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9.  For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
+    /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
     pub glue_version: std::option::Option<std::string::String>,
-    /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of
-    /// processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more
-    /// information, see the <a href="http://aws.amazon.com/glue/pricing/">Glue pricing
-    /// page</a>. </p>
-    ///
-    /// <p>
-    /// <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p>
+    /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="http://aws.amazon.com/glue/pricing/">Glue pricing page</a>. </p>
+    /// <p> <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p>If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be set.</p>
-    /// </li>
-    /// <li>
-    /// <p>If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be set.</p>
-    /// </li>
-    /// <li>
-    /// <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p>
-    /// </li>
+    /// <li> <p>If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be set.</p> </li>
+    /// <li> <p>If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be set.</p> </li>
+    /// <li> <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p> </li>
+    /// <li> <p> <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p> </li>
     /// </ul>
-    ///
     /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>
     pub max_capacity: std::option::Option<f64>,
     /// <p>The type of predefined worker that is allocated when a task of this transform runs. Accepts a value of Standard, G.1X, or G.2X.</p>
     /// <ul>
-    /// <li>
-    /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-    /// </li>
-    /// <li>
-    /// <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p>
-    /// </li>
-    /// <li>
-    /// <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p>
-    /// </li>
+    /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+    /// <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li>
+    /// <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li>
     /// </ul>
-    ///
-    /// <p>
-    /// <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p>
+    /// <p> <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p>If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be set.</p>
-    /// </li>
-    /// <li>
-    /// <p>If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be set.</p>
-    /// </li>
-    /// <li>
-    /// <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p>
-    /// </li>
+    /// <li> <p>If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be set.</p> </li>
+    /// <li> <p>If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be set.</p> </li>
+    /// <li> <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p> </li>
+    /// <li> <p> <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p> </li>
     /// </ul>
     pub worker_type: std::option::Option<crate::model::WorkerType>,
     /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a task of the transform runs.</p>
-    ///
     /// <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p>
     pub number_of_workers: std::option::Option<i32>,
     /// <p>The timeout in minutes of the machine learning transform.</p>
     pub timeout: std::option::Option<i32>,
-    /// <p>The maximum number of times to retry after an <code>MLTaskRun</code> of the machine
-    /// learning transform fails.</p>
+    /// <p>The maximum number of times to retry after an <code>MLTaskRun</code> of the machine learning transform fails.</p>
     pub max_retries: std::option::Option<i32>,
     /// <p>The encryption-at-rest settings of the transform that apply to accessing user data. Machine learning transforms can access user data encrypted in Amazon S3 using KMS.</p>
     pub transform_encryption: std::option::Option<crate::model::TransformEncryption>,
 }
 impl MlTransform {
-    /// <p>The unique transform ID that is generated for the machine learning transform. The ID is
-    /// guaranteed to be unique and does not change.</p>
+    /// <p>The unique transform ID that is generated for the machine learning transform. The ID is guaranteed to be unique and does not change.</p>
     pub fn transform_id(&self) -> std::option::Option<&str> {
         self.transform_id.as_deref()
     }
-    /// <p>A user-defined name for the machine learning transform. Names are not guaranteed unique
-    /// and can be changed at any time.</p>
+    /// <p>A user-defined name for the machine learning transform. Names are not guaranteed unique and can be changed at any time.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>A user-defined, long-form description text for the machine learning transform.
-    /// Descriptions are not guaranteed to be unique and can be changed at any time.</p>
+    /// <p>A user-defined, long-form description text for the machine learning transform. Descriptions are not guaranteed to be unique and can be changed at any time.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -17688,9 +16770,7 @@ impl MlTransform {
     pub fn input_record_tables(&self) -> std::option::Option<&[crate::model::GlueTable]> {
         self.input_record_tables.as_deref()
     }
-    /// <p>A <code>TransformParameters</code> object. You can use parameters to tune (customize) the
-    /// behavior of the machine learning transform by specifying what data it learns from and your
-    /// preference on various tradeoffs (such as precious vs. recall, or accuracy vs. cost).</p>
+    /// <p>A <code>TransformParameters</code> object. You can use parameters to tune (customize) the behavior of the machine learning transform by specifying what data it learns from and your preference on various tradeoffs (such as precious vs. recall, or accuracy vs. cost).</p>
     pub fn parameters(&self) -> std::option::Option<&crate::model::TransformParameters> {
         self.parameters.as_ref()
     }
@@ -17702,90 +16782,51 @@ impl MlTransform {
     pub fn label_count(&self) -> i32 {
         self.label_count
     }
-    /// <p>A map of key-value pairs representing the columns and data types that this transform can
-    /// run against. Has an upper bound of 100 columns.</p>
+    /// <p>A map of key-value pairs representing the columns and data types that this transform can run against. Has an upper bound of 100 columns.</p>
     pub fn schema(&self) -> std::option::Option<&[crate::model::SchemaColumn]> {
         self.schema.as_deref()
     }
     /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required permissions. The required permissions include both Glue service role permissions to Glue resources, and Amazon S3 permissions required by the transform. </p>
-    ///
     /// <ul>
-    /// <li>
-    /// <p>This role needs Glue service role permissions to allow access to resources in Glue. See <a href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach a Policy to IAM Users That Access Glue</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>This role needs permission to your Amazon Simple Storage Service (Amazon S3) sources, targets, temporary directory, scripts, and any libraries used by the task run for this transform.</p>
-    /// </li>
+    /// <li> <p>This role needs Glue service role permissions to allow access to resources in Glue. See <a href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach a Policy to IAM Users That Access Glue</a>.</p> </li>
+    /// <li> <p>This role needs permission to your Amazon Simple Storage Service (Amazon S3) sources, targets, temporary directory, scripts, and any libraries used by the task run for this transform.</p> </li>
     /// </ul>
     pub fn role(&self) -> std::option::Option<&str> {
         self.role.as_deref()
     }
-    /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9.  For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
+    /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
     pub fn glue_version(&self) -> std::option::Option<&str> {
         self.glue_version.as_deref()
     }
-    /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of
-    /// processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more
-    /// information, see the <a href="http://aws.amazon.com/glue/pricing/">Glue pricing
-    /// page</a>. </p>
-    ///
-    /// <p>
-    /// <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p>
+    /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="http://aws.amazon.com/glue/pricing/">Glue pricing page</a>. </p>
+    /// <p> <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p>If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be set.</p>
-    /// </li>
-    /// <li>
-    /// <p>If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be set.</p>
-    /// </li>
-    /// <li>
-    /// <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p>
-    /// </li>
+    /// <li> <p>If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be set.</p> </li>
+    /// <li> <p>If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be set.</p> </li>
+    /// <li> <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p> </li>
+    /// <li> <p> <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p> </li>
     /// </ul>
-    ///
     /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>
     pub fn max_capacity(&self) -> std::option::Option<f64> {
         self.max_capacity
     }
     /// <p>The type of predefined worker that is allocated when a task of this transform runs. Accepts a value of Standard, G.1X, or G.2X.</p>
     /// <ul>
-    /// <li>
-    /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-    /// </li>
-    /// <li>
-    /// <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p>
-    /// </li>
-    /// <li>
-    /// <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p>
-    /// </li>
+    /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+    /// <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li>
+    /// <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li>
     /// </ul>
-    ///
-    /// <p>
-    /// <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p>
+    /// <p> <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p>If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be set.</p>
-    /// </li>
-    /// <li>
-    /// <p>If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be set.</p>
-    /// </li>
-    /// <li>
-    /// <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p>
-    /// </li>
+    /// <li> <p>If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be set.</p> </li>
+    /// <li> <p>If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be set.</p> </li>
+    /// <li> <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p> </li>
+    /// <li> <p> <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p> </li>
     /// </ul>
     pub fn worker_type(&self) -> std::option::Option<&crate::model::WorkerType> {
         self.worker_type.as_ref()
     }
     /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a task of the transform runs.</p>
-    ///
     /// <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p>
     pub fn number_of_workers(&self) -> std::option::Option<i32> {
         self.number_of_workers
@@ -17794,8 +16835,7 @@ impl MlTransform {
     pub fn timeout(&self) -> std::option::Option<i32> {
         self.timeout
     }
-    /// <p>The maximum number of times to retry after an <code>MLTaskRun</code> of the machine
-    /// learning transform fails.</p>
+    /// <p>The maximum number of times to retry after an <code>MLTaskRun</code> of the machine learning transform fails.</p>
     pub fn max_retries(&self) -> std::option::Option<i32> {
         self.max_retries
     }
@@ -17856,38 +16896,32 @@ pub mod ml_transform {
         pub(crate) transform_encryption: std::option::Option<crate::model::TransformEncryption>,
     }
     impl Builder {
-        /// <p>The unique transform ID that is generated for the machine learning transform. The ID is
-        /// guaranteed to be unique and does not change.</p>
+        /// <p>The unique transform ID that is generated for the machine learning transform. The ID is guaranteed to be unique and does not change.</p>
         pub fn transform_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.transform_id = Some(input.into());
             self
         }
-        /// <p>The unique transform ID that is generated for the machine learning transform. The ID is
-        /// guaranteed to be unique and does not change.</p>
+        /// <p>The unique transform ID that is generated for the machine learning transform. The ID is guaranteed to be unique and does not change.</p>
         pub fn set_transform_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.transform_id = input;
             self
         }
-        /// <p>A user-defined name for the machine learning transform. Names are not guaranteed unique
-        /// and can be changed at any time.</p>
+        /// <p>A user-defined name for the machine learning transform. Names are not guaranteed unique and can be changed at any time.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>A user-defined name for the machine learning transform. Names are not guaranteed unique
-        /// and can be changed at any time.</p>
+        /// <p>A user-defined name for the machine learning transform. Names are not guaranteed unique and can be changed at any time.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>A user-defined, long-form description text for the machine learning transform.
-        /// Descriptions are not guaranteed to be unique and can be changed at any time.</p>
+        /// <p>A user-defined, long-form description text for the machine learning transform. Descriptions are not guaranteed to be unique and can be changed at any time.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>A user-defined, long-form description text for the machine learning transform.
-        /// Descriptions are not guaranteed to be unique and can be changed at any time.</p>
+        /// <p>A user-defined, long-form description text for the machine learning transform. Descriptions are not guaranteed to be unique and can be changed at any time.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -17950,16 +16984,12 @@ pub mod ml_transform {
             self.input_record_tables = input;
             self
         }
-        /// <p>A <code>TransformParameters</code> object. You can use parameters to tune (customize) the
-        /// behavior of the machine learning transform by specifying what data it learns from and your
-        /// preference on various tradeoffs (such as precious vs. recall, or accuracy vs. cost).</p>
+        /// <p>A <code>TransformParameters</code> object. You can use parameters to tune (customize) the behavior of the machine learning transform by specifying what data it learns from and your preference on various tradeoffs (such as precious vs. recall, or accuracy vs. cost).</p>
         pub fn parameters(mut self, input: crate::model::TransformParameters) -> Self {
             self.parameters = Some(input);
             self
         }
-        /// <p>A <code>TransformParameters</code> object. You can use parameters to tune (customize) the
-        /// behavior of the machine learning transform by specifying what data it learns from and your
-        /// preference on various tradeoffs (such as precious vs. recall, or accuracy vs. cost).</p>
+        /// <p>A <code>TransformParameters</code> object. You can use parameters to tune (customize) the behavior of the machine learning transform by specifying what data it learns from and your preference on various tradeoffs (such as precious vs. recall, or accuracy vs. cost).</p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<crate::model::TransformParameters>,
@@ -17994,16 +17024,14 @@ pub mod ml_transform {
         ///
         /// To override the contents of this collection use [`set_schema`](Self::set_schema).
         ///
-        /// <p>A map of key-value pairs representing the columns and data types that this transform can
-        /// run against. Has an upper bound of 100 columns.</p>
+        /// <p>A map of key-value pairs representing the columns and data types that this transform can run against. Has an upper bound of 100 columns.</p>
         pub fn schema(mut self, input: crate::model::SchemaColumn) -> Self {
             let mut v = self.schema.unwrap_or_default();
             v.push(input);
             self.schema = Some(v);
             self
         }
-        /// <p>A map of key-value pairs representing the columns and data types that this transform can
-        /// run against. Has an upper bound of 100 columns.</p>
+        /// <p>A map of key-value pairs representing the columns and data types that this transform can run against. Has an upper bound of 100 columns.</p>
         pub fn set_schema(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SchemaColumn>>,
@@ -18012,94 +17040,54 @@ pub mod ml_transform {
             self
         }
         /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required permissions. The required permissions include both Glue service role permissions to Glue resources, and Amazon S3 permissions required by the transform. </p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>This role needs Glue service role permissions to allow access to resources in Glue. See <a href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach a Policy to IAM Users That Access Glue</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>This role needs permission to your Amazon Simple Storage Service (Amazon S3) sources, targets, temporary directory, scripts, and any libraries used by the task run for this transform.</p>
-        /// </li>
+        /// <li> <p>This role needs Glue service role permissions to allow access to resources in Glue. See <a href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach a Policy to IAM Users That Access Glue</a>.</p> </li>
+        /// <li> <p>This role needs permission to your Amazon Simple Storage Service (Amazon S3) sources, targets, temporary directory, scripts, and any libraries used by the task run for this transform.</p> </li>
         /// </ul>
         pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
             self.role = Some(input.into());
             self
         }
         /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required permissions. The required permissions include both Glue service role permissions to Glue resources, and Amazon S3 permissions required by the transform. </p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>This role needs Glue service role permissions to allow access to resources in Glue. See <a href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach a Policy to IAM Users That Access Glue</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>This role needs permission to your Amazon Simple Storage Service (Amazon S3) sources, targets, temporary directory, scripts, and any libraries used by the task run for this transform.</p>
-        /// </li>
+        /// <li> <p>This role needs Glue service role permissions to allow access to resources in Glue. See <a href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach a Policy to IAM Users That Access Glue</a>.</p> </li>
+        /// <li> <p>This role needs permission to your Amazon Simple Storage Service (Amazon S3) sources, targets, temporary directory, scripts, and any libraries used by the task run for this transform.</p> </li>
         /// </ul>
         pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role = input;
             self
         }
-        /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9.  For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
+        /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
         pub fn glue_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.glue_version = Some(input.into());
             self
         }
-        /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9.  For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
+        /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
         pub fn set_glue_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.glue_version = input;
             self
         }
-        /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of
-        /// processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more
-        /// information, see the <a href="http://aws.amazon.com/glue/pricing/">Glue pricing
-        /// page</a>. </p>
-        ///
-        /// <p>
-        /// <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p>
+        /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="http://aws.amazon.com/glue/pricing/">Glue pricing page</a>. </p>
+        /// <p> <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p>
         /// <ul>
-        /// <li>
-        /// <p>If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be set.</p>
-        /// </li>
-        /// <li>
-        /// <p>If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be set.</p>
-        /// </li>
-        /// <li>
-        /// <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p>
-        /// </li>
+        /// <li> <p>If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be set.</p> </li>
+        /// <li> <p>If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be set.</p> </li>
+        /// <li> <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p> </li>
+        /// <li> <p> <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p> </li>
         /// </ul>
-        ///
         /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>
         pub fn max_capacity(mut self, input: f64) -> Self {
             self.max_capacity = Some(input);
             self
         }
-        /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of
-        /// processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more
-        /// information, see the <a href="http://aws.amazon.com/glue/pricing/">Glue pricing
-        /// page</a>. </p>
-        ///
-        /// <p>
-        /// <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p>
+        /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="http://aws.amazon.com/glue/pricing/">Glue pricing page</a>. </p>
+        /// <p> <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p>
         /// <ul>
-        /// <li>
-        /// <p>If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be set.</p>
-        /// </li>
-        /// <li>
-        /// <p>If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be set.</p>
-        /// </li>
-        /// <li>
-        /// <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p>
-        /// </li>
+        /// <li> <p>If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be set.</p> </li>
+        /// <li> <p>If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be set.</p> </li>
+        /// <li> <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p> </li>
+        /// <li> <p> <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p> </li>
         /// </ul>
-        ///
         /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>
         pub fn set_max_capacity(mut self, input: std::option::Option<f64>) -> Self {
             self.max_capacity = input;
@@ -18107,33 +17095,16 @@ pub mod ml_transform {
         }
         /// <p>The type of predefined worker that is allocated when a task of this transform runs. Accepts a value of Standard, G.1X, or G.2X.</p>
         /// <ul>
-        /// <li>
-        /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p>
-        /// </li>
+        /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+        /// <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li>
+        /// <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li>
         /// </ul>
-        ///
-        /// <p>
-        /// <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p>
+        /// <p> <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p>
         /// <ul>
-        /// <li>
-        /// <p>If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be set.</p>
-        /// </li>
-        /// <li>
-        /// <p>If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be set.</p>
-        /// </li>
-        /// <li>
-        /// <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p>
-        /// </li>
+        /// <li> <p>If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be set.</p> </li>
+        /// <li> <p>If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be set.</p> </li>
+        /// <li> <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p> </li>
+        /// <li> <p> <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p> </li>
         /// </ul>
         pub fn worker_type(mut self, input: crate::model::WorkerType) -> Self {
             self.worker_type = Some(input);
@@ -18141,33 +17112,16 @@ pub mod ml_transform {
         }
         /// <p>The type of predefined worker that is allocated when a task of this transform runs. Accepts a value of Standard, G.1X, or G.2X.</p>
         /// <ul>
-        /// <li>
-        /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p>
-        /// </li>
+        /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+        /// <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li>
+        /// <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li>
         /// </ul>
-        ///
-        /// <p>
-        /// <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p>
+        /// <p> <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p>
         /// <ul>
-        /// <li>
-        /// <p>If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be set.</p>
-        /// </li>
-        /// <li>
-        /// <p>If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be set.</p>
-        /// </li>
-        /// <li>
-        /// <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p>
-        /// </li>
+        /// <li> <p>If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be set.</p> </li>
+        /// <li> <p>If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be set.</p> </li>
+        /// <li> <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p> </li>
+        /// <li> <p> <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p> </li>
         /// </ul>
         pub fn set_worker_type(
             mut self,
@@ -18177,14 +17131,12 @@ pub mod ml_transform {
             self
         }
         /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a task of the transform runs.</p>
-        ///
         /// <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p>
         pub fn number_of_workers(mut self, input: i32) -> Self {
             self.number_of_workers = Some(input);
             self
         }
         /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a task of the transform runs.</p>
-        ///
         /// <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p>
         pub fn set_number_of_workers(mut self, input: std::option::Option<i32>) -> Self {
             self.number_of_workers = input;
@@ -18200,14 +17152,12 @@ pub mod ml_transform {
             self.timeout = input;
             self
         }
-        /// <p>The maximum number of times to retry after an <code>MLTaskRun</code> of the machine
-        /// learning transform fails.</p>
+        /// <p>The maximum number of times to retry after an <code>MLTaskRun</code> of the machine learning transform fails.</p>
         pub fn max_retries(mut self, input: i32) -> Self {
             self.max_retries = Some(input);
             self
         }
-        /// <p>The maximum number of times to retry after an <code>MLTaskRun</code> of the machine
-        /// learning transform fails.</p>
+        /// <p>The maximum number of times to retry after an <code>MLTaskRun</code> of the machine learning transform fails.</p>
         pub fn set_max_retries(mut self, input: std::option::Option<i32>) -> Self {
             self.max_retries = input;
             self
@@ -18259,7 +17209,6 @@ impl MlTransform {
 }
 
 /// <p>The encryption-at-rest settings of the transform that apply to accessing user data. Machine learning transforms can access user data encrypted in Amazon S3 using KMS.</p>
-///
 /// <p>Additionally, imported labels and trained transforms can now be encrypted using a customer provided KMS key.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -18355,14 +17304,9 @@ impl TransformEncryption {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MlUserDataEncryption {
     /// <p>The encryption mode applied to user data. Valid values are:</p>
-    ///
     /// <ul>
-    /// <li>
-    /// <p>DISABLED: encryption is disabled</p>
-    /// </li>
-    /// <li>
-    /// <p>SSEKMS: use of server-side encryption with Key Management Service (SSE-KMS) for user data stored in Amazon S3.</p>
-    /// </li>
+    /// <li> <p>DISABLED: encryption is disabled</p> </li>
+    /// <li> <p>SSEKMS: use of server-side encryption with Key Management Service (SSE-KMS) for user data stored in Amazon S3.</p> </li>
     /// </ul>
     pub ml_user_data_encryption_mode:
         std::option::Option<crate::model::MlUserDataEncryptionModeString>,
@@ -18371,14 +17315,9 @@ pub struct MlUserDataEncryption {
 }
 impl MlUserDataEncryption {
     /// <p>The encryption mode applied to user data. Valid values are:</p>
-    ///
     /// <ul>
-    /// <li>
-    /// <p>DISABLED: encryption is disabled</p>
-    /// </li>
-    /// <li>
-    /// <p>SSEKMS: use of server-side encryption with Key Management Service (SSE-KMS) for user data stored in Amazon S3.</p>
-    /// </li>
+    /// <li> <p>DISABLED: encryption is disabled</p> </li>
+    /// <li> <p>SSEKMS: use of server-side encryption with Key Management Service (SSE-KMS) for user data stored in Amazon S3.</p> </li>
     /// </ul>
     pub fn ml_user_data_encryption_mode(
         &self,
@@ -18413,14 +17352,9 @@ pub mod ml_user_data_encryption {
     }
     impl Builder {
         /// <p>The encryption mode applied to user data. Valid values are:</p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>DISABLED: encryption is disabled</p>
-        /// </li>
-        /// <li>
-        /// <p>SSEKMS: use of server-side encryption with Key Management Service (SSE-KMS) for user data stored in Amazon S3.</p>
-        /// </li>
+        /// <li> <p>DISABLED: encryption is disabled</p> </li>
+        /// <li> <p>SSEKMS: use of server-side encryption with Key Management Service (SSE-KMS) for user data stored in Amazon S3.</p> </li>
         /// </ul>
         pub fn ml_user_data_encryption_mode(
             mut self,
@@ -18430,14 +17364,9 @@ pub mod ml_user_data_encryption {
             self
         }
         /// <p>The encryption mode applied to user data. Valid values are:</p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>DISABLED: encryption is disabled</p>
-        /// </li>
-        /// <li>
-        /// <p>SSEKMS: use of server-side encryption with Key Management Service (SSE-KMS) for user data stored in Amazon S3.</p>
-        /// </li>
+        /// <li> <p>DISABLED: encryption is disabled</p> </li>
+        /// <li> <p>SSEKMS: use of server-side encryption with Key Management Service (SSE-KMS) for user data stored in Amazon S3.</p> </li>
         /// </ul>
         pub fn set_ml_user_data_encryption_mode(
             mut self,
@@ -18606,24 +17535,17 @@ impl EvaluationMetrics {
     }
 }
 
-/// <p>The evaluation metrics for the find matches algorithm. The quality of your machine
-/// learning transform is measured by getting your transform to predict some matches and comparing
-/// the results to known matches from the same dataset. The quality metrics are based on a subset
-/// of your data, so they are not precise.</p>
+/// <p>The evaluation metrics for the find matches algorithm. The quality of your machine learning transform is measured by getting your transform to predict some matches and comparing the results to known matches from the same dataset. The quality metrics are based on a subset of your data, so they are not precise.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FindMatchesMetrics {
-    /// <p>The area under the precision/recall curve (AUPRC) is a single number measuring the overall
-    /// quality of the transform, that is independent of the choice made for precision vs. recall.
-    /// Higher values indicate that you have a more attractive precision vs. recall tradeoff.</p>
+    /// <p>The area under the precision/recall curve (AUPRC) is a single number measuring the overall quality of the transform, that is independent of the choice made for precision vs. recall. Higher values indicate that you have a more attractive precision vs. recall tradeoff.</p>
     /// <p>For more information, see <a href="https://en.wikipedia.org/wiki/Precision_and_recall">Precision and recall</a> in Wikipedia.</p>
     pub area_under_pr_curve: std::option::Option<f64>,
     /// <p>The precision metric indicates when often your transform is correct when it predicts a match. Specifically, it measures how well the transform finds true positives from the total true positives possible.</p>
     /// <p>For more information, see <a href="https://en.wikipedia.org/wiki/Precision_and_recall">Precision and recall</a> in Wikipedia.</p>
     pub precision: std::option::Option<f64>,
-    /// <p>The recall metric indicates that for an actual match, how often your transform predicts
-    /// the match. Specifically, it measures how well the transform finds true positives from the
-    /// total records in the source data.</p>
+    /// <p>The recall metric indicates that for an actual match, how often your transform predicts the match. Specifically, it measures how well the transform finds true positives from the total records in the source data.</p>
     /// <p>For more information, see <a href="https://en.wikipedia.org/wiki/Precision_and_recall">Precision and recall</a> in Wikipedia.</p>
     pub recall: std::option::Option<f64>,
     /// <p>The maximum F1 metric indicates the transform's accuracy between 0 and 1, where 1 is the best accuracy.</p>
@@ -18636,9 +17558,7 @@ pub struct FindMatchesMetrics {
     pub column_importances: std::option::Option<std::vec::Vec<crate::model::ColumnImportance>>,
 }
 impl FindMatchesMetrics {
-    /// <p>The area under the precision/recall curve (AUPRC) is a single number measuring the overall
-    /// quality of the transform, that is independent of the choice made for precision vs. recall.
-    /// Higher values indicate that you have a more attractive precision vs. recall tradeoff.</p>
+    /// <p>The area under the precision/recall curve (AUPRC) is a single number measuring the overall quality of the transform, that is independent of the choice made for precision vs. recall. Higher values indicate that you have a more attractive precision vs. recall tradeoff.</p>
     /// <p>For more information, see <a href="https://en.wikipedia.org/wiki/Precision_and_recall">Precision and recall</a> in Wikipedia.</p>
     pub fn area_under_pr_curve(&self) -> std::option::Option<f64> {
         self.area_under_pr_curve
@@ -18648,9 +17568,7 @@ impl FindMatchesMetrics {
     pub fn precision(&self) -> std::option::Option<f64> {
         self.precision
     }
-    /// <p>The recall metric indicates that for an actual match, how often your transform predicts
-    /// the match. Specifically, it measures how well the transform finds true positives from the
-    /// total records in the source data.</p>
+    /// <p>The recall metric indicates that for an actual match, how often your transform predicts the match. Specifically, it measures how well the transform finds true positives from the total records in the source data.</p>
     /// <p>For more information, see <a href="https://en.wikipedia.org/wiki/Precision_and_recall">Precision and recall</a> in Wikipedia.</p>
     pub fn recall(&self) -> std::option::Option<f64> {
         self.recall
@@ -18697,17 +17615,13 @@ pub mod find_matches_metrics {
             std::option::Option<std::vec::Vec<crate::model::ColumnImportance>>,
     }
     impl Builder {
-        /// <p>The area under the precision/recall curve (AUPRC) is a single number measuring the overall
-        /// quality of the transform, that is independent of the choice made for precision vs. recall.
-        /// Higher values indicate that you have a more attractive precision vs. recall tradeoff.</p>
+        /// <p>The area under the precision/recall curve (AUPRC) is a single number measuring the overall quality of the transform, that is independent of the choice made for precision vs. recall. Higher values indicate that you have a more attractive precision vs. recall tradeoff.</p>
         /// <p>For more information, see <a href="https://en.wikipedia.org/wiki/Precision_and_recall">Precision and recall</a> in Wikipedia.</p>
         pub fn area_under_pr_curve(mut self, input: f64) -> Self {
             self.area_under_pr_curve = Some(input);
             self
         }
-        /// <p>The area under the precision/recall curve (AUPRC) is a single number measuring the overall
-        /// quality of the transform, that is independent of the choice made for precision vs. recall.
-        /// Higher values indicate that you have a more attractive precision vs. recall tradeoff.</p>
+        /// <p>The area under the precision/recall curve (AUPRC) is a single number measuring the overall quality of the transform, that is independent of the choice made for precision vs. recall. Higher values indicate that you have a more attractive precision vs. recall tradeoff.</p>
         /// <p>For more information, see <a href="https://en.wikipedia.org/wiki/Precision_and_recall">Precision and recall</a> in Wikipedia.</p>
         pub fn set_area_under_pr_curve(mut self, input: std::option::Option<f64>) -> Self {
             self.area_under_pr_curve = input;
@@ -18725,17 +17639,13 @@ pub mod find_matches_metrics {
             self.precision = input;
             self
         }
-        /// <p>The recall metric indicates that for an actual match, how often your transform predicts
-        /// the match. Specifically, it measures how well the transform finds true positives from the
-        /// total records in the source data.</p>
+        /// <p>The recall metric indicates that for an actual match, how often your transform predicts the match. Specifically, it measures how well the transform finds true positives from the total records in the source data.</p>
         /// <p>For more information, see <a href="https://en.wikipedia.org/wiki/Precision_and_recall">Precision and recall</a> in Wikipedia.</p>
         pub fn recall(mut self, input: f64) -> Self {
             self.recall = Some(input);
             self
         }
-        /// <p>The recall metric indicates that for an actual match, how often your transform predicts
-        /// the match. Specifically, it measures how well the transform finds true positives from the
-        /// total records in the source data.</p>
+        /// <p>The recall metric indicates that for an actual match, how often your transform predicts the match. Specifically, it measures how well the transform finds true positives from the total records in the source data.</p>
         /// <p>For more information, see <a href="https://en.wikipedia.org/wiki/Precision_and_recall">Precision and recall</a> in Wikipedia.</p>
         pub fn set_recall(mut self, input: std::option::Option<f64>) -> Self {
             self.recall = input;
@@ -18808,7 +17718,6 @@ impl FindMatchesMetrics {
 }
 
 /// <p>A structure containing the column name and column importance score for a column. </p>
-///
 /// <p>Column importance helps you understand how columns contribute to your model, by identifying which columns in your records are more important than others.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -18883,18 +17792,15 @@ impl ColumnImportance {
 }
 
 /// <p>The confusion matrix shows you what your transform is predicting accurately and what types of errors it is making.</p>
-///
 /// <p>For more information, see <a href="https://en.wikipedia.org/wiki/Confusion_matrix">Confusion matrix</a> in Wikipedia.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfusionMatrix {
     /// <p>The number of matches in the data that the transform correctly found, in the confusion matrix for your transform.</p>
     pub num_true_positives: std::option::Option<i64>,
-    /// <p>The number of nonmatches in the data that the transform incorrectly classified as a match,
-    /// in the confusion matrix for your transform.</p>
+    /// <p>The number of nonmatches in the data that the transform incorrectly classified as a match, in the confusion matrix for your transform.</p>
     pub num_false_positives: std::option::Option<i64>,
-    /// <p>The number of nonmatches in the data that the transform correctly rejected, in the
-    /// confusion matrix for your transform.</p>
+    /// <p>The number of nonmatches in the data that the transform correctly rejected, in the confusion matrix for your transform.</p>
     pub num_true_negatives: std::option::Option<i64>,
     /// <p>The number of matches in the data that the transform didn't find, in the confusion matrix for your transform.</p>
     pub num_false_negatives: std::option::Option<i64>,
@@ -18904,13 +17810,11 @@ impl ConfusionMatrix {
     pub fn num_true_positives(&self) -> std::option::Option<i64> {
         self.num_true_positives
     }
-    /// <p>The number of nonmatches in the data that the transform incorrectly classified as a match,
-    /// in the confusion matrix for your transform.</p>
+    /// <p>The number of nonmatches in the data that the transform incorrectly classified as a match, in the confusion matrix for your transform.</p>
     pub fn num_false_positives(&self) -> std::option::Option<i64> {
         self.num_false_positives
     }
-    /// <p>The number of nonmatches in the data that the transform correctly rejected, in the
-    /// confusion matrix for your transform.</p>
+    /// <p>The number of nonmatches in the data that the transform correctly rejected, in the confusion matrix for your transform.</p>
     pub fn num_true_negatives(&self) -> std::option::Option<i64> {
         self.num_true_negatives
     }
@@ -18951,26 +17855,22 @@ pub mod confusion_matrix {
             self.num_true_positives = input;
             self
         }
-        /// <p>The number of nonmatches in the data that the transform incorrectly classified as a match,
-        /// in the confusion matrix for your transform.</p>
+        /// <p>The number of nonmatches in the data that the transform incorrectly classified as a match, in the confusion matrix for your transform.</p>
         pub fn num_false_positives(mut self, input: i64) -> Self {
             self.num_false_positives = Some(input);
             self
         }
-        /// <p>The number of nonmatches in the data that the transform incorrectly classified as a match,
-        /// in the confusion matrix for your transform.</p>
+        /// <p>The number of nonmatches in the data that the transform incorrectly classified as a match, in the confusion matrix for your transform.</p>
         pub fn set_num_false_positives(mut self, input: std::option::Option<i64>) -> Self {
             self.num_false_positives = input;
             self
         }
-        /// <p>The number of nonmatches in the data that the transform correctly rejected, in the
-        /// confusion matrix for your transform.</p>
+        /// <p>The number of nonmatches in the data that the transform correctly rejected, in the confusion matrix for your transform.</p>
         pub fn num_true_negatives(mut self, input: i64) -> Self {
             self.num_true_negatives = Some(input);
             self
         }
-        /// <p>The number of nonmatches in the data that the transform correctly rejected, in the
-        /// confusion matrix for your transform.</p>
+        /// <p>The number of nonmatches in the data that the transform correctly rejected, in the confusion matrix for your transform.</p>
         pub fn set_num_true_negatives(mut self, input: std::option::Option<i64>) -> Self {
             self.num_true_negatives = input;
             self
@@ -19642,13 +18542,11 @@ impl FindMatchesTaskRunProperties {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LabelingSetGenerationTaskRunProperties {
-    /// <p>The Amazon Simple Storage Service (Amazon S3) path where you will generate the labeling
-    /// set.</p>
+    /// <p>The Amazon Simple Storage Service (Amazon S3) path where you will generate the labeling set.</p>
     pub output_s3_path: std::option::Option<std::string::String>,
 }
 impl LabelingSetGenerationTaskRunProperties {
-    /// <p>The Amazon Simple Storage Service (Amazon S3) path where you will generate the labeling
-    /// set.</p>
+    /// <p>The Amazon Simple Storage Service (Amazon S3) path where you will generate the labeling set.</p>
     pub fn output_s3_path(&self) -> std::option::Option<&str> {
         self.output_s3_path.as_deref()
     }
@@ -19669,14 +18567,12 @@ pub mod labeling_set_generation_task_run_properties {
         pub(crate) output_s3_path: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Simple Storage Service (Amazon S3) path where you will generate the labeling
-        /// set.</p>
+        /// <p>The Amazon Simple Storage Service (Amazon S3) path where you will generate the labeling set.</p>
         pub fn output_s3_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.output_s3_path = Some(input.into());
             self
         }
-        /// <p>The Amazon Simple Storage Service (Amazon S3) path where you will generate the labeling
-        /// set.</p>
+        /// <p>The Amazon Simple Storage Service (Amazon S3) path where you will generate the labeling set.</p>
         pub fn set_output_s3_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19703,13 +18599,11 @@ impl LabelingSetGenerationTaskRunProperties {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportLabelsTaskRunProperties {
-    /// <p>The Amazon Simple Storage Service (Amazon S3) path where you will export the
-    /// labels.</p>
+    /// <p>The Amazon Simple Storage Service (Amazon S3) path where you will export the labels.</p>
     pub output_s3_path: std::option::Option<std::string::String>,
 }
 impl ExportLabelsTaskRunProperties {
-    /// <p>The Amazon Simple Storage Service (Amazon S3) path where you will export the
-    /// labels.</p>
+    /// <p>The Amazon Simple Storage Service (Amazon S3) path where you will export the labels.</p>
     pub fn output_s3_path(&self) -> std::option::Option<&str> {
         self.output_s3_path.as_deref()
     }
@@ -19730,14 +18624,12 @@ pub mod export_labels_task_run_properties {
         pub(crate) output_s3_path: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Simple Storage Service (Amazon S3) path where you will export the
-        /// labels.</p>
+        /// <p>The Amazon Simple Storage Service (Amazon S3) path where you will export the labels.</p>
         pub fn output_s3_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.output_s3_path = Some(input.into());
             self
         }
-        /// <p>The Amazon Simple Storage Service (Amazon S3) path where you will export the
-        /// labels.</p>
+        /// <p>The Amazon Simple Storage Service (Amazon S3) path where you will export the labels.</p>
         pub fn set_output_s3_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19764,15 +18656,13 @@ impl ExportLabelsTaskRunProperties {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportLabelsTaskRunProperties {
-    /// <p>The Amazon Simple Storage Service (Amazon S3) path from where you will import the
-    /// labels.</p>
+    /// <p>The Amazon Simple Storage Service (Amazon S3) path from where you will import the labels.</p>
     pub input_s3_path: std::option::Option<std::string::String>,
     /// <p>Indicates whether to overwrite your existing labels.</p>
     pub replace: bool,
 }
 impl ImportLabelsTaskRunProperties {
-    /// <p>The Amazon Simple Storage Service (Amazon S3) path from where you will import the
-    /// labels.</p>
+    /// <p>The Amazon Simple Storage Service (Amazon S3) path from where you will import the labels.</p>
     pub fn input_s3_path(&self) -> std::option::Option<&str> {
         self.input_s3_path.as_deref()
     }
@@ -19799,14 +18689,12 @@ pub mod import_labels_task_run_properties {
         pub(crate) replace: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The Amazon Simple Storage Service (Amazon S3) path from where you will import the
-        /// labels.</p>
+        /// <p>The Amazon Simple Storage Service (Amazon S3) path from where you will import the labels.</p>
         pub fn input_s3_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.input_s3_path = Some(input.into());
             self
         }
-        /// <p>The Amazon Simple Storage Service (Amazon S3) path from where you will import the
-        /// labels.</p>
+        /// <p>The Amazon Simple Storage Service (Amazon S3) path from where you will import the labels.</p>
         pub fn set_input_s3_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19996,26 +18884,21 @@ impl AsRef<str> for TaskStatusType {
     }
 }
 
-/// <p>The sorting criteria that are used to sort the list of task runs for the machine learning
-/// transform.</p>
+/// <p>The sorting criteria that are used to sort the list of task runs for the machine learning transform.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TaskRunSortCriteria {
-    /// <p>The column to be used to sort the list of task runs for the machine learning
-    /// transform.</p>
+    /// <p>The column to be used to sort the list of task runs for the machine learning transform.</p>
     pub column: std::option::Option<crate::model::TaskRunSortColumnType>,
-    /// <p>The sort direction to be used to sort the list of task runs for the machine learning
-    /// transform.</p>
+    /// <p>The sort direction to be used to sort the list of task runs for the machine learning transform.</p>
     pub sort_direction: std::option::Option<crate::model::SortDirectionType>,
 }
 impl TaskRunSortCriteria {
-    /// <p>The column to be used to sort the list of task runs for the machine learning
-    /// transform.</p>
+    /// <p>The column to be used to sort the list of task runs for the machine learning transform.</p>
     pub fn column(&self) -> std::option::Option<&crate::model::TaskRunSortColumnType> {
         self.column.as_ref()
     }
-    /// <p>The sort direction to be used to sort the list of task runs for the machine learning
-    /// transform.</p>
+    /// <p>The sort direction to be used to sort the list of task runs for the machine learning transform.</p>
     pub fn sort_direction(&self) -> std::option::Option<&crate::model::SortDirectionType> {
         self.sort_direction.as_ref()
     }
@@ -20038,14 +18921,12 @@ pub mod task_run_sort_criteria {
         pub(crate) sort_direction: std::option::Option<crate::model::SortDirectionType>,
     }
     impl Builder {
-        /// <p>The column to be used to sort the list of task runs for the machine learning
-        /// transform.</p>
+        /// <p>The column to be used to sort the list of task runs for the machine learning transform.</p>
         pub fn column(mut self, input: crate::model::TaskRunSortColumnType) -> Self {
             self.column = Some(input);
             self
         }
-        /// <p>The column to be used to sort the list of task runs for the machine learning
-        /// transform.</p>
+        /// <p>The column to be used to sort the list of task runs for the machine learning transform.</p>
         pub fn set_column(
             mut self,
             input: std::option::Option<crate::model::TaskRunSortColumnType>,
@@ -20053,14 +18934,12 @@ pub mod task_run_sort_criteria {
             self.column = input;
             self
         }
-        /// <p>The sort direction to be used to sort the list of task runs for the machine learning
-        /// transform.</p>
+        /// <p>The sort direction to be used to sort the list of task runs for the machine learning transform.</p>
         pub fn sort_direction(mut self, input: crate::model::SortDirectionType) -> Self {
             self.sort_direction = Some(input);
             self
         }
-        /// <p>The sort direction to be used to sort the list of task runs for the machine learning
-        /// transform.</p>
+        /// <p>The sort direction to be used to sort the list of task runs for the machine learning transform.</p>
         pub fn set_sort_direction(
             mut self,
             input: std::option::Option<crate::model::SortDirectionType>,
@@ -20143,8 +19022,7 @@ impl AsRef<str> for TaskRunSortColumnType {
     }
 }
 
-/// <p>The criteria that are used to filter the task runs for the machine learning
-/// transform.</p>
+/// <p>The criteria that are used to filter the task runs for the machine learning transform.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TaskRunFilterCriteria {
@@ -20283,14 +19161,12 @@ pub struct Job {
     pub created_on: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last point in time when this job definition was modified.</p>
     pub last_modified_on: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs allowed
-    /// for this job.</p>
+    /// <p>An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs allowed for this job.</p>
     pub execution_property: std::option::Option<crate::model::ExecutionProperty>,
     /// <p>The <code>JobCommand</code> that runs this job.</p>
     pub command: std::option::Option<crate::model::JobCommand>,
     /// <p>The default arguments for this job, specified as name-value pairs.</p>
-    /// <p>You can specify arguments here that your own job-execution script
-    /// consumes, as well as arguments that Glue itself consumes.</p>
+    /// <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p>
     /// <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
     /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
     pub default_arguments:
@@ -20303,67 +19179,36 @@ pub struct Job {
     /// <p>The maximum number of times to retry this job after a JobRun fails.</p>
     pub max_retries: i32,
     /// <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
-    ///
-    /// <p>The number of Glue data processing units (DPUs) allocated to runs of this job. You can
-    /// allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing
-    /// power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information,
-    /// see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing
-    /// page</a>.</p>
+    /// <p>The number of Glue data processing units (DPUs) allocated to runs of this job. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
     /// <p></p>
     pub allocated_capacity: i32,
-    /// <p>The job timeout in minutes.  This is the maximum time that a job run
-    /// can consume resources before it is terminated and enters <code>TIMEOUT</code>
-    /// status. The default is 2,880 minutes (48 hours).</p>
+    /// <p>The job timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
     pub timeout: std::option::Option<i32>,
-    /// <p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure
-    /// of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.
-    /// For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue
-    /// pricing page</a>.</p>
-    ///
+    /// <p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
     /// <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>
-    ///
-    /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are
-    /// running a Python shell job, an Apache Spark ETL job, or an Apache Spark streaming ETL
-    /// job:</p>
+    /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell job, an Apache Spark ETL job, or an Apache Spark streaming ETL job:</p>
     /// <ul>
-    /// <li>
-    /// <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can
-    /// allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p>
-    /// </li>
-    /// <li>
-    /// <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache
-    /// Spark streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs.
-    /// The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p>
-    /// </li>
+    /// <li> <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li>
+    /// <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li>
     /// </ul>
     /// <p>For Glue version 2.0 jobs, you cannot instead specify a <code>Maximum capacity</code>. Instead, you should specify a <code>Worker type</code> and the <code>Number of workers</code>.</p>
     pub max_capacity: std::option::Option<f64>,
     /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.</p>
     /// <ul>
-    /// <li>
-    /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-    /// </li>
-    /// <li>
-    /// <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
-    /// </li>
-    /// <li>
-    /// <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
-    /// </li>
+    /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+    /// <li> <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
+    /// <li> <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
     /// </ul>
     pub worker_type: std::option::Option<crate::model::WorkerType>,
     /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
-    ///
     /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
     pub number_of_workers: std::option::Option<i32>,
-    /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this
-    /// job.</p>
+    /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this job.</p>
     pub security_configuration: std::option::Option<std::string::String>,
     /// <p>Specifies configuration properties of a job notification.</p>
     pub notification_property: std::option::Option<crate::model::NotificationProperty>,
     /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for jobs of type Spark. </p>
-    ///
     /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
-    ///
     /// <p>Jobs that are created without specifying a Glue version default to Glue 0.9.</p>
     pub glue_version: std::option::Option<std::string::String>,
 }
@@ -20392,8 +19237,7 @@ impl Job {
     pub fn last_modified_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_on.as_ref()
     }
-    /// <p>An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs allowed
-    /// for this job.</p>
+    /// <p>An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs allowed for this job.</p>
     pub fn execution_property(&self) -> std::option::Option<&crate::model::ExecutionProperty> {
         self.execution_property.as_ref()
     }
@@ -20402,8 +19246,7 @@ impl Job {
         self.command.as_ref()
     }
     /// <p>The default arguments for this job, specified as name-value pairs.</p>
-    /// <p>You can specify arguments here that your own job-execution script
-    /// consumes, as well as arguments that Glue itself consumes.</p>
+    /// <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p>
     /// <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
     /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
     pub fn default_arguments(
@@ -20428,42 +19271,21 @@ impl Job {
         self.max_retries
     }
     /// <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
-    ///
-    /// <p>The number of Glue data processing units (DPUs) allocated to runs of this job. You can
-    /// allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing
-    /// power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information,
-    /// see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing
-    /// page</a>.</p>
+    /// <p>The number of Glue data processing units (DPUs) allocated to runs of this job. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
     /// <p></p>
     pub fn allocated_capacity(&self) -> i32 {
         self.allocated_capacity
     }
-    /// <p>The job timeout in minutes.  This is the maximum time that a job run
-    /// can consume resources before it is terminated and enters <code>TIMEOUT</code>
-    /// status. The default is 2,880 minutes (48 hours).</p>
+    /// <p>The job timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
     pub fn timeout(&self) -> std::option::Option<i32> {
         self.timeout
     }
-    /// <p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure
-    /// of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.
-    /// For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue
-    /// pricing page</a>.</p>
-    ///
+    /// <p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
     /// <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>
-    ///
-    /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are
-    /// running a Python shell job, an Apache Spark ETL job, or an Apache Spark streaming ETL
-    /// job:</p>
+    /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell job, an Apache Spark ETL job, or an Apache Spark streaming ETL job:</p>
     /// <ul>
-    /// <li>
-    /// <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can
-    /// allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p>
-    /// </li>
-    /// <li>
-    /// <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache
-    /// Spark streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs.
-    /// The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p>
-    /// </li>
+    /// <li> <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li>
+    /// <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li>
     /// </ul>
     /// <p>For Glue version 2.0 jobs, you cannot instead specify a <code>Maximum capacity</code>. Instead, you should specify a <code>Worker type</code> and the <code>Number of workers</code>.</p>
     pub fn max_capacity(&self) -> std::option::Option<f64> {
@@ -20471,27 +19293,19 @@ impl Job {
     }
     /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.</p>
     /// <ul>
-    /// <li>
-    /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-    /// </li>
-    /// <li>
-    /// <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
-    /// </li>
-    /// <li>
-    /// <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
-    /// </li>
+    /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+    /// <li> <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
+    /// <li> <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
     /// </ul>
     pub fn worker_type(&self) -> std::option::Option<&crate::model::WorkerType> {
         self.worker_type.as_ref()
     }
     /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
-    ///
     /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
     pub fn number_of_workers(&self) -> std::option::Option<i32> {
         self.number_of_workers
     }
-    /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this
-    /// job.</p>
+    /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this job.</p>
     pub fn security_configuration(&self) -> std::option::Option<&str> {
         self.security_configuration.as_deref()
     }
@@ -20502,9 +19316,7 @@ impl Job {
         self.notification_property.as_ref()
     }
     /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for jobs of type Spark. </p>
-    ///
     /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
-    ///
     /// <p>Jobs that are created without specifying a Glue version default to Glue 0.9.</p>
     pub fn glue_version(&self) -> std::option::Option<&str> {
         self.glue_version.as_deref()
@@ -20634,14 +19446,12 @@ pub mod job {
             self.last_modified_on = input;
             self
         }
-        /// <p>An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs allowed
-        /// for this job.</p>
+        /// <p>An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs allowed for this job.</p>
         pub fn execution_property(mut self, input: crate::model::ExecutionProperty) -> Self {
             self.execution_property = Some(input);
             self
         }
-        /// <p>An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs allowed
-        /// for this job.</p>
+        /// <p>An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs allowed for this job.</p>
         pub fn set_execution_property(
             mut self,
             input: std::option::Option<crate::model::ExecutionProperty>,
@@ -20664,8 +19474,7 @@ pub mod job {
         /// To override the contents of this collection use [`set_default_arguments`](Self::set_default_arguments).
         ///
         /// <p>The default arguments for this job, specified as name-value pairs.</p>
-        /// <p>You can specify arguments here that your own job-execution script
-        /// consumes, as well as arguments that Glue itself consumes.</p>
+        /// <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p>
         /// <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
         /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
         pub fn default_arguments(
@@ -20679,8 +19488,7 @@ pub mod job {
             self
         }
         /// <p>The default arguments for this job, specified as name-value pairs.</p>
-        /// <p>You can specify arguments here that your own job-execution script
-        /// consumes, as well as arguments that Glue itself consumes.</p>
+        /// <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p>
         /// <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
         /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
         pub fn set_default_arguments(
@@ -20741,89 +19549,47 @@ pub mod job {
             self
         }
         /// <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
-        ///
-        /// <p>The number of Glue data processing units (DPUs) allocated to runs of this job. You can
-        /// allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing
-        /// power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information,
-        /// see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing
-        /// page</a>.</p>
+        /// <p>The number of Glue data processing units (DPUs) allocated to runs of this job. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
         /// <p></p>
         pub fn allocated_capacity(mut self, input: i32) -> Self {
             self.allocated_capacity = Some(input);
             self
         }
         /// <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
-        ///
-        /// <p>The number of Glue data processing units (DPUs) allocated to runs of this job. You can
-        /// allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing
-        /// power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information,
-        /// see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing
-        /// page</a>.</p>
+        /// <p>The number of Glue data processing units (DPUs) allocated to runs of this job. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
         /// <p></p>
         pub fn set_allocated_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.allocated_capacity = input;
             self
         }
-        /// <p>The job timeout in minutes.  This is the maximum time that a job run
-        /// can consume resources before it is terminated and enters <code>TIMEOUT</code>
-        /// status. The default is 2,880 minutes (48 hours).</p>
+        /// <p>The job timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
         pub fn timeout(mut self, input: i32) -> Self {
             self.timeout = Some(input);
             self
         }
-        /// <p>The job timeout in minutes.  This is the maximum time that a job run
-        /// can consume resources before it is terminated and enters <code>TIMEOUT</code>
-        /// status. The default is 2,880 minutes (48 hours).</p>
+        /// <p>The job timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
         pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
             self.timeout = input;
             self
         }
-        /// <p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure
-        /// of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.
-        /// For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue
-        /// pricing page</a>.</p>
-        ///
+        /// <p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
         /// <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>
-        ///
-        /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are
-        /// running a Python shell job, an Apache Spark ETL job, or an Apache Spark streaming ETL
-        /// job:</p>
+        /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell job, an Apache Spark ETL job, or an Apache Spark streaming ETL job:</p>
         /// <ul>
-        /// <li>
-        /// <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can
-        /// allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p>
-        /// </li>
-        /// <li>
-        /// <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache
-        /// Spark streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs.
-        /// The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p>
-        /// </li>
+        /// <li> <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li>
+        /// <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li>
         /// </ul>
         /// <p>For Glue version 2.0 jobs, you cannot instead specify a <code>Maximum capacity</code>. Instead, you should specify a <code>Worker type</code> and the <code>Number of workers</code>.</p>
         pub fn max_capacity(mut self, input: f64) -> Self {
             self.max_capacity = Some(input);
             self
         }
-        /// <p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure
-        /// of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.
-        /// For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue
-        /// pricing page</a>.</p>
-        ///
+        /// <p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
         /// <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>
-        ///
-        /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are
-        /// running a Python shell job, an Apache Spark ETL job, or an Apache Spark streaming ETL
-        /// job:</p>
+        /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell job, an Apache Spark ETL job, or an Apache Spark streaming ETL job:</p>
         /// <ul>
-        /// <li>
-        /// <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can
-        /// allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p>
-        /// </li>
-        /// <li>
-        /// <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache
-        /// Spark streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs.
-        /// The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p>
-        /// </li>
+        /// <li> <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li>
+        /// <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li>
         /// </ul>
         /// <p>For Glue version 2.0 jobs, you cannot instead specify a <code>Maximum capacity</code>. Instead, you should specify a <code>Worker type</code> and the <code>Number of workers</code>.</p>
         pub fn set_max_capacity(mut self, input: std::option::Option<f64>) -> Self {
@@ -20832,15 +19598,9 @@ pub mod job {
         }
         /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.</p>
         /// <ul>
-        /// <li>
-        /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
-        /// </li>
+        /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+        /// <li> <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
+        /// <li> <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
         /// </ul>
         pub fn worker_type(mut self, input: crate::model::WorkerType) -> Self {
             self.worker_type = Some(input);
@@ -20848,15 +19608,9 @@ pub mod job {
         }
         /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.</p>
         /// <ul>
-        /// <li>
-        /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
-        /// </li>
+        /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+        /// <li> <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
+        /// <li> <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
         /// </ul>
         pub fn set_worker_type(
             mut self,
@@ -20866,27 +19620,23 @@ pub mod job {
             self
         }
         /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
-        ///
         /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
         pub fn number_of_workers(mut self, input: i32) -> Self {
             self.number_of_workers = Some(input);
             self
         }
         /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
-        ///
         /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
         pub fn set_number_of_workers(mut self, input: std::option::Option<i32>) -> Self {
             self.number_of_workers = input;
             self
         }
-        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this
-        /// job.</p>
+        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this job.</p>
         pub fn security_configuration(mut self, input: impl Into<std::string::String>) -> Self {
             self.security_configuration = Some(input.into());
             self
         }
-        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this
-        /// job.</p>
+        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this job.</p>
         pub fn set_security_configuration(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -20908,18 +19658,14 @@ pub mod job {
             self
         }
         /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for jobs of type Spark. </p>
-        ///
         /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
-        ///
         /// <p>Jobs that are created without specifying a Glue version default to Glue 0.9.</p>
         pub fn glue_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.glue_version = Some(input.into());
             self
         }
         /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for jobs of type Spark. </p>
-        ///
         /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
-        ///
         /// <p>Jobs that are created without specifying a Glue version default to Glue 0.9.</p>
         pub fn set_glue_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.glue_version = input;
@@ -20959,15 +19705,13 @@ impl Job {
     }
 }
 
-/// <p>A development endpoint where a developer can remotely debug extract, transform, and load
-/// (ETL) scripts.</p>
+/// <p>A development endpoint where a developer can remotely debug extract, transform, and load (ETL) scripts.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DevEndpoint {
     /// <p>The name of the <code>DevEndpoint</code>.</p>
     pub endpoint_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the IAM role used in this
-    /// <code>DevEndpoint</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role used in this <code>DevEndpoint</code>.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>A list of security group identifiers used in this <code>DevEndpoint</code>.</p>
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -20975,66 +19719,41 @@ pub struct DevEndpoint {
     pub subnet_id: std::option::Option<std::string::String>,
     /// <p>The YARN endpoint address used by this <code>DevEndpoint</code>.</p>
     pub yarn_endpoint_address: std::option::Option<std::string::String>,
-    /// <p>A private IP address to access the <code>DevEndpoint</code> within a VPC if the
-    /// <code>DevEndpoint</code> is created within one. The <code>PrivateAddress</code> field is
-    /// present only when you create the <code>DevEndpoint</code> within your VPC.</p>
+    /// <p>A private IP address to access the <code>DevEndpoint</code> within a VPC if the <code>DevEndpoint</code> is created within one. The <code>PrivateAddress</code> field is present only when you create the <code>DevEndpoint</code> within your VPC.</p>
     pub private_address: std::option::Option<std::string::String>,
     /// <p>The Apache Zeppelin port for the remote Apache Spark interpreter.</p>
     pub zeppelin_remote_spark_interpreter_port: i32,
-    /// <p>The public IP address used by this <code>DevEndpoint</code>. The
-    /// <code>PublicAddress</code> field is present only when you create a non-virtual private cloud
-    /// (VPC) <code>DevEndpoint</code>.</p>
+    /// <p>The public IP address used by this <code>DevEndpoint</code>. The <code>PublicAddress</code> field is present only when you create a non-virtual private cloud (VPC) <code>DevEndpoint</code>.</p>
     pub public_address: std::option::Option<std::string::String>,
     /// <p>The current status of this <code>DevEndpoint</code>.</p>
     pub status: std::option::Option<std::string::String>,
     /// <p>The type of predefined worker that is allocated to the development endpoint. Accepts a value of Standard, G.1X, or G.2X.</p>
     /// <ul>
-    /// <li>
-    /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-    /// </li>
-    /// <li>
-    /// <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
-    /// </li>
-    /// <li>
-    /// <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
-    /// </li>
+    /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+    /// <li> <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
+    /// <li> <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
     /// </ul>
-    ///
-    /// <p>Known issue: when a development endpoint is created with the <code>G.2X</code>
-    /// <code>WorkerType</code> configuration, the Spark drivers for the development endpoint will run on 4 vCPU, 16 GB of memory, and a 64 GB disk. </p>
+    /// <p>Known issue: when a development endpoint is created with the <code>G.2X</code> <code>WorkerType</code> configuration, the Spark drivers for the development endpoint will run on 4 vCPU, 16 GB of memory, and a 64 GB disk. </p>
     pub worker_type: std::option::Option<crate::model::WorkerType>,
     /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for running your ETL scripts on development endpoints. </p>
-    ///
     /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
-    ///
-    /// <p>Development endpoints that are created without specifying a Glue version default to Glue 0.9.</p>  
-    ///
+    /// <p>Development endpoints that are created without specifying a Glue version default to Glue 0.9.</p>
     /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
     pub glue_version: std::option::Option<std::string::String>,
     /// <p>The number of workers of a defined <code>workerType</code> that are allocated to the development endpoint.</p>
-    ///
     /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
     pub number_of_workers: std::option::Option<i32>,
-    /// <p>The number of Glue Data Processing Units (DPUs) allocated to this
-    /// <code>DevEndpoint</code>.</p>
+    /// <p>The number of Glue Data Processing Units (DPUs) allocated to this <code>DevEndpoint</code>.</p>
     pub number_of_nodes: i32,
     /// <p>The AWS Availability Zone where this <code>DevEndpoint</code> is located.</p>
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>The ID of the virtual private cloud (VPC) used by this <code>DevEndpoint</code>.</p>
     pub vpc_id: std::option::Option<std::string::String>,
-    /// <p>The paths to one or more Python libraries in an Amazon S3 bucket that should be loaded in
-    /// your <code>DevEndpoint</code>. Multiple values must be complete paths separated by a
-    /// comma.</p>
-    ///
-    /// <note>
-    /// <p>You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries that rely on
-    /// C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data
-    /// analysis library, are not currently supported.</p>
+    /// <p>The paths to one or more Python libraries in an Amazon S3 bucket that should be loaded in your <code>DevEndpoint</code>. Multiple values must be complete paths separated by a comma.</p> <note>
+    /// <p>You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries that rely on C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are not currently supported.</p>
     /// </note>
     pub extra_python_libs_s3_path: std::option::Option<std::string::String>,
-    /// <p>The path to one or more Java <code>.jar</code> files in an S3 bucket that should be loaded
-    /// in your <code>DevEndpoint</code>.</p>
-    /// <note>
+    /// <p>The path to one or more Java <code>.jar</code> files in an S3 bucket that should be loaded in your <code>DevEndpoint</code>.</p> <note>
     /// <p>You can only use pure Java/Scala libraries with a <code>DevEndpoint</code>.</p>
     /// </note>
     pub extra_jars_s3_path: std::option::Option<std::string::String>,
@@ -21046,33 +19765,19 @@ pub struct DevEndpoint {
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The point in time at which this <code>DevEndpoint</code> was last modified.</p>
     pub last_modified_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The public key to be used by this <code>DevEndpoint</code> for authentication. This
-    /// attribute is provided for backward compatibility because the recommended attribute to use is
-    /// public keys.</p>
+    /// <p>The public key to be used by this <code>DevEndpoint</code> for authentication. This attribute is provided for backward compatibility because the recommended attribute to use is public keys.</p>
     pub public_key: std::option::Option<std::string::String>,
-    /// <p>A list of public keys to be used by the <code>DevEndpoints</code> for authentication.
-    /// Using this attribute is preferred over a single public key because the public keys allow you
-    /// to have a different private key per client.</p>
-    /// <note>
-    /// <p>If you previously created an endpoint with a public key, you must remove that key to be
-    /// able to set a list of public keys. Call the <code>UpdateDevEndpoint</code> API operation
-    /// with the public key content in the <code>deletePublicKeys</code> attribute, and the list of
-    /// new keys in the <code>addPublicKeys</code> attribute.</p>
+    /// <p>A list of public keys to be used by the <code>DevEndpoints</code> for authentication. Using this attribute is preferred over a single public key because the public keys allow you to have a different private key per client.</p> <note>
+    /// <p>If you previously created an endpoint with a public key, you must remove that key to be able to set a list of public keys. Call the <code>UpdateDevEndpoint</code> API operation with the public key content in the <code>deletePublicKeys</code> attribute, and the list of new keys in the <code>addPublicKeys</code> attribute.</p>
     /// </note>
     pub public_keys: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this
-    /// <code>DevEndpoint</code>.</p>
+    /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this <code>DevEndpoint</code>.</p>
     pub security_configuration: std::option::Option<std::string::String>,
     /// <p>A map of arguments used to configure the <code>DevEndpoint</code>.</p>
     /// <p>Valid arguments are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>"--enable-glue-datacatalog": ""</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>"--enable-glue-datacatalog": ""</code> </p> </li>
     /// </ul>
-    ///
     /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
     pub arguments:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -21082,8 +19787,7 @@ impl DevEndpoint {
     pub fn endpoint_name(&self) -> std::option::Option<&str> {
         self.endpoint_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role used in this
-    /// <code>DevEndpoint</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role used in this <code>DevEndpoint</code>.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -21099,9 +19803,7 @@ impl DevEndpoint {
     pub fn yarn_endpoint_address(&self) -> std::option::Option<&str> {
         self.yarn_endpoint_address.as_deref()
     }
-    /// <p>A private IP address to access the <code>DevEndpoint</code> within a VPC if the
-    /// <code>DevEndpoint</code> is created within one. The <code>PrivateAddress</code> field is
-    /// present only when you create the <code>DevEndpoint</code> within your VPC.</p>
+    /// <p>A private IP address to access the <code>DevEndpoint</code> within a VPC if the <code>DevEndpoint</code> is created within one. The <code>PrivateAddress</code> field is present only when you create the <code>DevEndpoint</code> within your VPC.</p>
     pub fn private_address(&self) -> std::option::Option<&str> {
         self.private_address.as_deref()
     }
@@ -21109,9 +19811,7 @@ impl DevEndpoint {
     pub fn zeppelin_remote_spark_interpreter_port(&self) -> i32 {
         self.zeppelin_remote_spark_interpreter_port
     }
-    /// <p>The public IP address used by this <code>DevEndpoint</code>. The
-    /// <code>PublicAddress</code> field is present only when you create a non-virtual private cloud
-    /// (VPC) <code>DevEndpoint</code>.</p>
+    /// <p>The public IP address used by this <code>DevEndpoint</code>. The <code>PublicAddress</code> field is present only when you create a non-virtual private cloud (VPC) <code>DevEndpoint</code>.</p>
     pub fn public_address(&self) -> std::option::Option<&str> {
         self.public_address.as_deref()
     }
@@ -21121,40 +19821,27 @@ impl DevEndpoint {
     }
     /// <p>The type of predefined worker that is allocated to the development endpoint. Accepts a value of Standard, G.1X, or G.2X.</p>
     /// <ul>
-    /// <li>
-    /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-    /// </li>
-    /// <li>
-    /// <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
-    /// </li>
-    /// <li>
-    /// <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
-    /// </li>
+    /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+    /// <li> <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
+    /// <li> <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
     /// </ul>
-    ///
-    /// <p>Known issue: when a development endpoint is created with the <code>G.2X</code>
-    /// <code>WorkerType</code> configuration, the Spark drivers for the development endpoint will run on 4 vCPU, 16 GB of memory, and a 64 GB disk. </p>
+    /// <p>Known issue: when a development endpoint is created with the <code>G.2X</code> <code>WorkerType</code> configuration, the Spark drivers for the development endpoint will run on 4 vCPU, 16 GB of memory, and a 64 GB disk. </p>
     pub fn worker_type(&self) -> std::option::Option<&crate::model::WorkerType> {
         self.worker_type.as_ref()
     }
     /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for running your ETL scripts on development endpoints. </p>
-    ///
     /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
-    ///
-    /// <p>Development endpoints that are created without specifying a Glue version default to Glue 0.9.</p>  
-    ///
+    /// <p>Development endpoints that are created without specifying a Glue version default to Glue 0.9.</p>
     /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
     pub fn glue_version(&self) -> std::option::Option<&str> {
         self.glue_version.as_deref()
     }
     /// <p>The number of workers of a defined <code>workerType</code> that are allocated to the development endpoint.</p>
-    ///
     /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
     pub fn number_of_workers(&self) -> std::option::Option<i32> {
         self.number_of_workers
     }
-    /// <p>The number of Glue Data Processing Units (DPUs) allocated to this
-    /// <code>DevEndpoint</code>.</p>
+    /// <p>The number of Glue Data Processing Units (DPUs) allocated to this <code>DevEndpoint</code>.</p>
     pub fn number_of_nodes(&self) -> i32 {
         self.number_of_nodes
     }
@@ -21166,21 +19853,13 @@ impl DevEndpoint {
     pub fn vpc_id(&self) -> std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
-    /// <p>The paths to one or more Python libraries in an Amazon S3 bucket that should be loaded in
-    /// your <code>DevEndpoint</code>. Multiple values must be complete paths separated by a
-    /// comma.</p>
-    ///
-    /// <note>
-    /// <p>You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries that rely on
-    /// C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data
-    /// analysis library, are not currently supported.</p>
+    /// <p>The paths to one or more Python libraries in an Amazon S3 bucket that should be loaded in your <code>DevEndpoint</code>. Multiple values must be complete paths separated by a comma.</p> <note>
+    /// <p>You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries that rely on C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are not currently supported.</p>
     /// </note>
     pub fn extra_python_libs_s3_path(&self) -> std::option::Option<&str> {
         self.extra_python_libs_s3_path.as_deref()
     }
-    /// <p>The path to one or more Java <code>.jar</code> files in an S3 bucket that should be loaded
-    /// in your <code>DevEndpoint</code>.</p>
-    /// <note>
+    /// <p>The path to one or more Java <code>.jar</code> files in an S3 bucket that should be loaded in your <code>DevEndpoint</code>.</p> <note>
     /// <p>You can only use pure Java/Scala libraries with a <code>DevEndpoint</code>.</p>
     /// </note>
     pub fn extra_jars_s3_path(&self) -> std::option::Option<&str> {
@@ -21202,39 +19881,25 @@ impl DevEndpoint {
     pub fn last_modified_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_timestamp.as_ref()
     }
-    /// <p>The public key to be used by this <code>DevEndpoint</code> for authentication. This
-    /// attribute is provided for backward compatibility because the recommended attribute to use is
-    /// public keys.</p>
+    /// <p>The public key to be used by this <code>DevEndpoint</code> for authentication. This attribute is provided for backward compatibility because the recommended attribute to use is public keys.</p>
     pub fn public_key(&self) -> std::option::Option<&str> {
         self.public_key.as_deref()
     }
-    /// <p>A list of public keys to be used by the <code>DevEndpoints</code> for authentication.
-    /// Using this attribute is preferred over a single public key because the public keys allow you
-    /// to have a different private key per client.</p>
-    /// <note>
-    /// <p>If you previously created an endpoint with a public key, you must remove that key to be
-    /// able to set a list of public keys. Call the <code>UpdateDevEndpoint</code> API operation
-    /// with the public key content in the <code>deletePublicKeys</code> attribute, and the list of
-    /// new keys in the <code>addPublicKeys</code> attribute.</p>
+    /// <p>A list of public keys to be used by the <code>DevEndpoints</code> for authentication. Using this attribute is preferred over a single public key because the public keys allow you to have a different private key per client.</p> <note>
+    /// <p>If you previously created an endpoint with a public key, you must remove that key to be able to set a list of public keys. Call the <code>UpdateDevEndpoint</code> API operation with the public key content in the <code>deletePublicKeys</code> attribute, and the list of new keys in the <code>addPublicKeys</code> attribute.</p>
     /// </note>
     pub fn public_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.public_keys.as_deref()
     }
-    /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this
-    /// <code>DevEndpoint</code>.</p>
+    /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this <code>DevEndpoint</code>.</p>
     pub fn security_configuration(&self) -> std::option::Option<&str> {
         self.security_configuration.as_deref()
     }
     /// <p>A map of arguments used to configure the <code>DevEndpoint</code>.</p>
     /// <p>Valid arguments are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>"--enable-glue-datacatalog": ""</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>"--enable-glue-datacatalog": ""</code> </p> </li>
     /// </ul>
-    ///
     /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
     pub fn arguments(
         &self,
@@ -21325,14 +19990,12 @@ pub mod dev_endpoint {
             self.endpoint_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role used in this
-        /// <code>DevEndpoint</code>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM role used in this <code>DevEndpoint</code>.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role used in this
-        /// <code>DevEndpoint</code>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM role used in this <code>DevEndpoint</code>.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -21379,16 +20042,12 @@ pub mod dev_endpoint {
             self.yarn_endpoint_address = input;
             self
         }
-        /// <p>A private IP address to access the <code>DevEndpoint</code> within a VPC if the
-        /// <code>DevEndpoint</code> is created within one. The <code>PrivateAddress</code> field is
-        /// present only when you create the <code>DevEndpoint</code> within your VPC.</p>
+        /// <p>A private IP address to access the <code>DevEndpoint</code> within a VPC if the <code>DevEndpoint</code> is created within one. The <code>PrivateAddress</code> field is present only when you create the <code>DevEndpoint</code> within your VPC.</p>
         pub fn private_address(mut self, input: impl Into<std::string::String>) -> Self {
             self.private_address = Some(input.into());
             self
         }
-        /// <p>A private IP address to access the <code>DevEndpoint</code> within a VPC if the
-        /// <code>DevEndpoint</code> is created within one. The <code>PrivateAddress</code> field is
-        /// present only when you create the <code>DevEndpoint</code> within your VPC.</p>
+        /// <p>A private IP address to access the <code>DevEndpoint</code> within a VPC if the <code>DevEndpoint</code> is created within one. The <code>PrivateAddress</code> field is present only when you create the <code>DevEndpoint</code> within your VPC.</p>
         pub fn set_private_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -21409,16 +20068,12 @@ pub mod dev_endpoint {
             self.zeppelin_remote_spark_interpreter_port = input;
             self
         }
-        /// <p>The public IP address used by this <code>DevEndpoint</code>. The
-        /// <code>PublicAddress</code> field is present only when you create a non-virtual private cloud
-        /// (VPC) <code>DevEndpoint</code>.</p>
+        /// <p>The public IP address used by this <code>DevEndpoint</code>. The <code>PublicAddress</code> field is present only when you create a non-virtual private cloud (VPC) <code>DevEndpoint</code>.</p>
         pub fn public_address(mut self, input: impl Into<std::string::String>) -> Self {
             self.public_address = Some(input.into());
             self
         }
-        /// <p>The public IP address used by this <code>DevEndpoint</code>. The
-        /// <code>PublicAddress</code> field is present only when you create a non-virtual private cloud
-        /// (VPC) <code>DevEndpoint</code>.</p>
+        /// <p>The public IP address used by this <code>DevEndpoint</code>. The <code>PublicAddress</code> field is present only when you create a non-virtual private cloud (VPC) <code>DevEndpoint</code>.</p>
         pub fn set_public_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -21438,38 +20093,22 @@ pub mod dev_endpoint {
         }
         /// <p>The type of predefined worker that is allocated to the development endpoint. Accepts a value of Standard, G.1X, or G.2X.</p>
         /// <ul>
-        /// <li>
-        /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
-        /// </li>
+        /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+        /// <li> <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
+        /// <li> <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
         /// </ul>
-        ///
-        /// <p>Known issue: when a development endpoint is created with the <code>G.2X</code>
-        /// <code>WorkerType</code> configuration, the Spark drivers for the development endpoint will run on 4 vCPU, 16 GB of memory, and a 64 GB disk. </p>
+        /// <p>Known issue: when a development endpoint is created with the <code>G.2X</code> <code>WorkerType</code> configuration, the Spark drivers for the development endpoint will run on 4 vCPU, 16 GB of memory, and a 64 GB disk. </p>
         pub fn worker_type(mut self, input: crate::model::WorkerType) -> Self {
             self.worker_type = Some(input);
             self
         }
         /// <p>The type of predefined worker that is allocated to the development endpoint. Accepts a value of Standard, G.1X, or G.2X.</p>
         /// <ul>
-        /// <li>
-        /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
-        /// </li>
+        /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+        /// <li> <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
+        /// <li> <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
         /// </ul>
-        ///
-        /// <p>Known issue: when a development endpoint is created with the <code>G.2X</code>
-        /// <code>WorkerType</code> configuration, the Spark drivers for the development endpoint will run on 4 vCPU, 16 GB of memory, and a 64 GB disk. </p>
+        /// <p>Known issue: when a development endpoint is created with the <code>G.2X</code> <code>WorkerType</code> configuration, the Spark drivers for the development endpoint will run on 4 vCPU, 16 GB of memory, and a 64 GB disk. </p>
         pub fn set_worker_type(
             mut self,
             input: std::option::Option<crate::model::WorkerType>,
@@ -21478,49 +20117,39 @@ pub mod dev_endpoint {
             self
         }
         /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for running your ETL scripts on development endpoints. </p>
-        ///
         /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
-        ///
-        /// <p>Development endpoints that are created without specifying a Glue version default to Glue 0.9.</p>  
-        ///
+        /// <p>Development endpoints that are created without specifying a Glue version default to Glue 0.9.</p>
         /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
         pub fn glue_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.glue_version = Some(input.into());
             self
         }
         /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for running your ETL scripts on development endpoints. </p>
-        ///
         /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
-        ///
-        /// <p>Development endpoints that are created without specifying a Glue version default to Glue 0.9.</p>  
-        ///
+        /// <p>Development endpoints that are created without specifying a Glue version default to Glue 0.9.</p>
         /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
         pub fn set_glue_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.glue_version = input;
             self
         }
         /// <p>The number of workers of a defined <code>workerType</code> that are allocated to the development endpoint.</p>
-        ///
         /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
         pub fn number_of_workers(mut self, input: i32) -> Self {
             self.number_of_workers = Some(input);
             self
         }
         /// <p>The number of workers of a defined <code>workerType</code> that are allocated to the development endpoint.</p>
-        ///
         /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
         pub fn set_number_of_workers(mut self, input: std::option::Option<i32>) -> Self {
             self.number_of_workers = input;
             self
         }
-        /// <p>The number of Glue Data Processing Units (DPUs) allocated to this
-        /// <code>DevEndpoint</code>.</p>
+        /// <p>The number of Glue Data Processing Units (DPUs) allocated to this <code>DevEndpoint</code>.</p>
         pub fn number_of_nodes(mut self, input: i32) -> Self {
             self.number_of_nodes = Some(input);
             self
         }
-        /// <p>The number of Glue Data Processing Units (DPUs) allocated to this
-        /// <code>DevEndpoint</code>.</p>
+        /// <p>The number of Glue Data Processing Units (DPUs) allocated to this <code>DevEndpoint</code>.</p>
         pub fn set_number_of_nodes(mut self, input: std::option::Option<i32>) -> Self {
             self.number_of_nodes = input;
             self
@@ -21548,27 +20177,15 @@ pub mod dev_endpoint {
             self.vpc_id = input;
             self
         }
-        /// <p>The paths to one or more Python libraries in an Amazon S3 bucket that should be loaded in
-        /// your <code>DevEndpoint</code>. Multiple values must be complete paths separated by a
-        /// comma.</p>
-        ///
-        /// <note>
-        /// <p>You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries that rely on
-        /// C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data
-        /// analysis library, are not currently supported.</p>
+        /// <p>The paths to one or more Python libraries in an Amazon S3 bucket that should be loaded in your <code>DevEndpoint</code>. Multiple values must be complete paths separated by a comma.</p> <note>
+        /// <p>You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries that rely on C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are not currently supported.</p>
         /// </note>
         pub fn extra_python_libs_s3_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.extra_python_libs_s3_path = Some(input.into());
             self
         }
-        /// <p>The paths to one or more Python libraries in an Amazon S3 bucket that should be loaded in
-        /// your <code>DevEndpoint</code>. Multiple values must be complete paths separated by a
-        /// comma.</p>
-        ///
-        /// <note>
-        /// <p>You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries that rely on
-        /// C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data
-        /// analysis library, are not currently supported.</p>
+        /// <p>The paths to one or more Python libraries in an Amazon S3 bucket that should be loaded in your <code>DevEndpoint</code>. Multiple values must be complete paths separated by a comma.</p> <note>
+        /// <p>You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries that rely on C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are not currently supported.</p>
         /// </note>
         pub fn set_extra_python_libs_s3_path(
             mut self,
@@ -21577,18 +20194,14 @@ pub mod dev_endpoint {
             self.extra_python_libs_s3_path = input;
             self
         }
-        /// <p>The path to one or more Java <code>.jar</code> files in an S3 bucket that should be loaded
-        /// in your <code>DevEndpoint</code>.</p>
-        /// <note>
+        /// <p>The path to one or more Java <code>.jar</code> files in an S3 bucket that should be loaded in your <code>DevEndpoint</code>.</p> <note>
         /// <p>You can only use pure Java/Scala libraries with a <code>DevEndpoint</code>.</p>
         /// </note>
         pub fn extra_jars_s3_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.extra_jars_s3_path = Some(input.into());
             self
         }
-        /// <p>The path to one or more Java <code>.jar</code> files in an S3 bucket that should be loaded
-        /// in your <code>DevEndpoint</code>.</p>
-        /// <note>
+        /// <p>The path to one or more Java <code>.jar</code> files in an S3 bucket that should be loaded in your <code>DevEndpoint</code>.</p> <note>
         /// <p>You can only use pure Java/Scala libraries with a <code>DevEndpoint</code>.</p>
         /// </note>
         pub fn set_extra_jars_s3_path(
@@ -21650,16 +20263,12 @@ pub mod dev_endpoint {
             self.last_modified_timestamp = input;
             self
         }
-        /// <p>The public key to be used by this <code>DevEndpoint</code> for authentication. This
-        /// attribute is provided for backward compatibility because the recommended attribute to use is
-        /// public keys.</p>
+        /// <p>The public key to be used by this <code>DevEndpoint</code> for authentication. This attribute is provided for backward compatibility because the recommended attribute to use is public keys.</p>
         pub fn public_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.public_key = Some(input.into());
             self
         }
-        /// <p>The public key to be used by this <code>DevEndpoint</code> for authentication. This
-        /// attribute is provided for backward compatibility because the recommended attribute to use is
-        /// public keys.</p>
+        /// <p>The public key to be used by this <code>DevEndpoint</code> for authentication. This attribute is provided for backward compatibility because the recommended attribute to use is public keys.</p>
         pub fn set_public_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.public_key = input;
             self
@@ -21668,14 +20277,8 @@ pub mod dev_endpoint {
         ///
         /// To override the contents of this collection use [`set_public_keys`](Self::set_public_keys).
         ///
-        /// <p>A list of public keys to be used by the <code>DevEndpoints</code> for authentication.
-        /// Using this attribute is preferred over a single public key because the public keys allow you
-        /// to have a different private key per client.</p>
-        /// <note>
-        /// <p>If you previously created an endpoint with a public key, you must remove that key to be
-        /// able to set a list of public keys. Call the <code>UpdateDevEndpoint</code> API operation
-        /// with the public key content in the <code>deletePublicKeys</code> attribute, and the list of
-        /// new keys in the <code>addPublicKeys</code> attribute.</p>
+        /// <p>A list of public keys to be used by the <code>DevEndpoints</code> for authentication. Using this attribute is preferred over a single public key because the public keys allow you to have a different private key per client.</p> <note>
+        /// <p>If you previously created an endpoint with a public key, you must remove that key to be able to set a list of public keys. Call the <code>UpdateDevEndpoint</code> API operation with the public key content in the <code>deletePublicKeys</code> attribute, and the list of new keys in the <code>addPublicKeys</code> attribute.</p>
         /// </note>
         pub fn public_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.public_keys.unwrap_or_default();
@@ -21683,14 +20286,8 @@ pub mod dev_endpoint {
             self.public_keys = Some(v);
             self
         }
-        /// <p>A list of public keys to be used by the <code>DevEndpoints</code> for authentication.
-        /// Using this attribute is preferred over a single public key because the public keys allow you
-        /// to have a different private key per client.</p>
-        /// <note>
-        /// <p>If you previously created an endpoint with a public key, you must remove that key to be
-        /// able to set a list of public keys. Call the <code>UpdateDevEndpoint</code> API operation
-        /// with the public key content in the <code>deletePublicKeys</code> attribute, and the list of
-        /// new keys in the <code>addPublicKeys</code> attribute.</p>
+        /// <p>A list of public keys to be used by the <code>DevEndpoints</code> for authentication. Using this attribute is preferred over a single public key because the public keys allow you to have a different private key per client.</p> <note>
+        /// <p>If you previously created an endpoint with a public key, you must remove that key to be able to set a list of public keys. Call the <code>UpdateDevEndpoint</code> API operation with the public key content in the <code>deletePublicKeys</code> attribute, and the list of new keys in the <code>addPublicKeys</code> attribute.</p>
         /// </note>
         pub fn set_public_keys(
             mut self,
@@ -21699,14 +20296,12 @@ pub mod dev_endpoint {
             self.public_keys = input;
             self
         }
-        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this
-        /// <code>DevEndpoint</code>.</p>
+        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this <code>DevEndpoint</code>.</p>
         pub fn security_configuration(mut self, input: impl Into<std::string::String>) -> Self {
             self.security_configuration = Some(input.into());
             self
         }
-        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this
-        /// <code>DevEndpoint</code>.</p>
+        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this <code>DevEndpoint</code>.</p>
         pub fn set_security_configuration(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -21721,13 +20316,8 @@ pub mod dev_endpoint {
         /// <p>A map of arguments used to configure the <code>DevEndpoint</code>.</p>
         /// <p>Valid arguments are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>"--enable-glue-datacatalog": ""</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>"--enable-glue-datacatalog": ""</code> </p> </li>
         /// </ul>
-        ///
         /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
         pub fn arguments(
             mut self,
@@ -21742,13 +20332,8 @@ pub mod dev_endpoint {
         /// <p>A map of arguments used to configure the <code>DevEndpoint</code>.</p>
         /// <p>Valid arguments are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>"--enable-glue-datacatalog": ""</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>"--enable-glue-datacatalog": ""</code> </p> </li>
         /// </ul>
-        ///
         /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
         pub fn set_arguments(
             mut self,
@@ -22015,20 +20600,17 @@ impl CodeGenNode {
     }
 }
 
-/// <p>The <code>Database</code> object represents a logical grouping of tables that might reside
-/// in a Hive metastore or an RDBMS.</p>
+/// <p>The <code>Database</code> object represents a logical grouping of tables that might reside in a Hive metastore or an RDBMS.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Database {
-    /// <p>The name of the database. For Hive compatibility, this is folded to lowercase when it is
-    /// stored.</p>
+    /// <p>The name of the database. For Hive compatibility, this is folded to lowercase when it is stored.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the database.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The location of the database (for example, an HDFS path).</p>
     pub location_uri: std::option::Option<std::string::String>,
-    /// <p>These key-value pairs define parameters and properties
-    /// of the database.</p>
+    /// <p>These key-value pairs define parameters and properties of the database.</p>
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The time at which the metadata database was created in the catalog.</p>
@@ -22042,8 +20624,7 @@ pub struct Database {
     pub catalog_id: std::option::Option<std::string::String>,
 }
 impl Database {
-    /// <p>The name of the database. For Hive compatibility, this is folded to lowercase when it is
-    /// stored.</p>
+    /// <p>The name of the database. For Hive compatibility, this is folded to lowercase when it is stored.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -22055,8 +20636,7 @@ impl Database {
     pub fn location_uri(&self) -> std::option::Option<&str> {
         self.location_uri.as_deref()
     }
-    /// <p>These key-value pairs define parameters and properties
-    /// of the database.</p>
+    /// <p>These key-value pairs define parameters and properties of the database.</p>
     pub fn parameters(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -22118,14 +20698,12 @@ pub mod database {
         pub(crate) catalog_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the database. For Hive compatibility, this is folded to lowercase when it is
-        /// stored.</p>
+        /// <p>The name of the database. For Hive compatibility, this is folded to lowercase when it is stored.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the database. For Hive compatibility, this is folded to lowercase when it is
-        /// stored.</p>
+        /// <p>The name of the database. For Hive compatibility, this is folded to lowercase when it is stored.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -22154,8 +20732,7 @@ pub mod database {
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
-        /// <p>These key-value pairs define parameters and properties
-        /// of the database.</p>
+        /// <p>These key-value pairs define parameters and properties of the database.</p>
         pub fn parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -22166,8 +20743,7 @@ pub mod database {
             self.parameters = Some(hash_map);
             self
         }
-        /// <p>These key-value pairs define parameters and properties
-        /// of the database.</p>
+        /// <p>These key-value pairs define parameters and properties of the database.</p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<
@@ -22257,16 +20833,13 @@ impl Database {
     }
 }
 
-/// <p>Specifies a crawler program that examines a data source and uses classifiers to try to
-/// determine its schema. If successful, the crawler records metadata concerning the data source
-/// in the Glue Data Catalog.</p>
+/// <p>Specifies a crawler program that examines a data source and uses classifiers to try to determine its schema. If successful, the crawler records metadata concerning the data source in the Glue Data Catalog.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Crawler {
     /// <p>The name of the crawler.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of an IAM role that's used to access customer resources,
-    /// such as Amazon Simple Storage Service (Amazon S3) data.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that's used to access customer resources, such as Amazon Simple Storage Service (Amazon S3) data.</p>
     pub role: std::option::Option<std::string::String>,
     /// <p>A collection of targets to crawl.</p>
     pub targets: std::option::Option<crate::model::CrawlerTargets>,
@@ -22274,8 +20847,7 @@ pub struct Crawler {
     pub database_name: std::option::Option<std::string::String>,
     /// <p>A description of the crawler.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>A list of UTF-8 strings that specify the custom classifiers that are associated
-    /// with the crawler.</p>
+    /// <p>A list of UTF-8 strings that specify the custom classifiers that are associated with the crawler.</p>
     pub classifiers: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A policy that specifies whether to crawl the entire dataset again, or to crawl only folders that were added since the last crawler run.</p>
     pub recrawl_policy: std::option::Option<crate::model::RecrawlPolicy>,
@@ -22289,24 +20861,19 @@ pub struct Crawler {
     pub table_prefix: std::option::Option<std::string::String>,
     /// <p>For scheduled crawlers, the schedule when the crawler runs.</p>
     pub schedule: std::option::Option<crate::model::Schedule>,
-    /// <p>If the crawler is running, contains the total time elapsed since the last crawl
-    /// began.</p>
+    /// <p>If the crawler is running, contains the total time elapsed since the last crawl began.</p>
     pub crawl_elapsed_time: i64,
     /// <p>The time that the crawler was created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time that the crawler was last updated.</p>
     pub last_updated: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The status of the last crawl, and potentially error information if
-    /// an error occurred.</p>
+    /// <p>The status of the last crawl, and potentially error information if an error occurred.</p>
     pub last_crawl: std::option::Option<crate::model::LastCrawlInfo>,
     /// <p>The version of the crawler.</p>
     pub version: i64,
-    /// <p>Crawler configuration information. This versioned JSON string allows users to specify
-    /// aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/define-crawler.html#crawler-data-stores-exclude">Include and Exclude
-    /// Patterns</a>.</p>
+    /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/define-crawler.html#crawler-data-stores-exclude">Include and Exclude Patterns</a>.</p>
     pub configuration: std::option::Option<std::string::String>,
-    /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this
-    /// crawler.</p>
+    /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this crawler.</p>
     pub crawler_security_configuration: std::option::Option<std::string::String>,
 }
 impl Crawler {
@@ -22314,8 +20881,7 @@ impl Crawler {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of an IAM role that's used to access customer resources,
-    /// such as Amazon Simple Storage Service (Amazon S3) data.</p>
+    /// <p>The Amazon Resource Name (ARN) of an IAM role that's used to access customer resources, such as Amazon Simple Storage Service (Amazon S3) data.</p>
     pub fn role(&self) -> std::option::Option<&str> {
         self.role.as_deref()
     }
@@ -22331,8 +20897,7 @@ impl Crawler {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>A list of UTF-8 strings that specify the custom classifiers that are associated
-    /// with the crawler.</p>
+    /// <p>A list of UTF-8 strings that specify the custom classifiers that are associated with the crawler.</p>
     pub fn classifiers(&self) -> std::option::Option<&[std::string::String]> {
         self.classifiers.as_deref()
     }
@@ -22362,8 +20927,7 @@ impl Crawler {
     pub fn schedule(&self) -> std::option::Option<&crate::model::Schedule> {
         self.schedule.as_ref()
     }
-    /// <p>If the crawler is running, contains the total time elapsed since the last crawl
-    /// began.</p>
+    /// <p>If the crawler is running, contains the total time elapsed since the last crawl began.</p>
     pub fn crawl_elapsed_time(&self) -> i64 {
         self.crawl_elapsed_time
     }
@@ -22375,8 +20939,7 @@ impl Crawler {
     pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
     }
-    /// <p>The status of the last crawl, and potentially error information if
-    /// an error occurred.</p>
+    /// <p>The status of the last crawl, and potentially error information if an error occurred.</p>
     pub fn last_crawl(&self) -> std::option::Option<&crate::model::LastCrawlInfo> {
         self.last_crawl.as_ref()
     }
@@ -22384,14 +20947,11 @@ impl Crawler {
     pub fn version(&self) -> i64 {
         self.version
     }
-    /// <p>Crawler configuration information. This versioned JSON string allows users to specify
-    /// aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/define-crawler.html#crawler-data-stores-exclude">Include and Exclude
-    /// Patterns</a>.</p>
+    /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/define-crawler.html#crawler-data-stores-exclude">Include and Exclude Patterns</a>.</p>
     pub fn configuration(&self) -> std::option::Option<&str> {
         self.configuration.as_deref()
     }
-    /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this
-    /// crawler.</p>
+    /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this crawler.</p>
     pub fn crawler_security_configuration(&self) -> std::option::Option<&str> {
         self.crawler_security_configuration.as_deref()
     }
@@ -22461,14 +21021,12 @@ pub mod crawler {
             self.name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an IAM role that's used to access customer resources,
-        /// such as Amazon Simple Storage Service (Amazon S3) data.</p>
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that's used to access customer resources, such as Amazon Simple Storage Service (Amazon S3) data.</p>
         pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
             self.role = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an IAM role that's used to access customer resources,
-        /// such as Amazon Simple Storage Service (Amazon S3) data.</p>
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that's used to access customer resources, such as Amazon Simple Storage Service (Amazon S3) data.</p>
         pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role = input;
             self
@@ -22513,16 +21071,14 @@ pub mod crawler {
         ///
         /// To override the contents of this collection use [`set_classifiers`](Self::set_classifiers).
         ///
-        /// <p>A list of UTF-8 strings that specify the custom classifiers that are associated
-        /// with the crawler.</p>
+        /// <p>A list of UTF-8 strings that specify the custom classifiers that are associated with the crawler.</p>
         pub fn classifiers(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.classifiers.unwrap_or_default();
             v.push(input.into());
             self.classifiers = Some(v);
             self
         }
-        /// <p>A list of UTF-8 strings that specify the custom classifiers that are associated
-        /// with the crawler.</p>
+        /// <p>A list of UTF-8 strings that specify the custom classifiers that are associated with the crawler.</p>
         pub fn set_classifiers(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -22599,14 +21155,12 @@ pub mod crawler {
             self.schedule = input;
             self
         }
-        /// <p>If the crawler is running, contains the total time elapsed since the last crawl
-        /// began.</p>
+        /// <p>If the crawler is running, contains the total time elapsed since the last crawl began.</p>
         pub fn crawl_elapsed_time(mut self, input: i64) -> Self {
             self.crawl_elapsed_time = Some(input);
             self
         }
-        /// <p>If the crawler is running, contains the total time elapsed since the last crawl
-        /// began.</p>
+        /// <p>If the crawler is running, contains the total time elapsed since the last crawl began.</p>
         pub fn set_crawl_elapsed_time(mut self, input: std::option::Option<i64>) -> Self {
             self.crawl_elapsed_time = input;
             self
@@ -22637,14 +21191,12 @@ pub mod crawler {
             self.last_updated = input;
             self
         }
-        /// <p>The status of the last crawl, and potentially error information if
-        /// an error occurred.</p>
+        /// <p>The status of the last crawl, and potentially error information if an error occurred.</p>
         pub fn last_crawl(mut self, input: crate::model::LastCrawlInfo) -> Self {
             self.last_crawl = Some(input);
             self
         }
-        /// <p>The status of the last crawl, and potentially error information if
-        /// an error occurred.</p>
+        /// <p>The status of the last crawl, and potentially error information if an error occurred.</p>
         pub fn set_last_crawl(
             mut self,
             input: std::option::Option<crate::model::LastCrawlInfo>,
@@ -22662,16 +21214,12 @@ pub mod crawler {
             self.version = input;
             self
         }
-        /// <p>Crawler configuration information. This versioned JSON string allows users to specify
-        /// aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/define-crawler.html#crawler-data-stores-exclude">Include and Exclude
-        /// Patterns</a>.</p>
+        /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/define-crawler.html#crawler-data-stores-exclude">Include and Exclude Patterns</a>.</p>
         pub fn configuration(mut self, input: impl Into<std::string::String>) -> Self {
             self.configuration = Some(input.into());
             self
         }
-        /// <p>Crawler configuration information. This versioned JSON string allows users to specify
-        /// aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/define-crawler.html#crawler-data-stores-exclude">Include and Exclude
-        /// Patterns</a>.</p>
+        /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/define-crawler.html#crawler-data-stores-exclude">Include and Exclude Patterns</a>.</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -22679,8 +21227,7 @@ pub mod crawler {
             self.configuration = input;
             self
         }
-        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this
-        /// crawler.</p>
+        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this crawler.</p>
         pub fn crawler_security_configuration(
             mut self,
             input: impl Into<std::string::String>,
@@ -22688,8 +21235,7 @@ pub mod crawler {
             self.crawler_security_configuration = Some(input.into());
             self
         }
-        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this
-        /// crawler.</p>
+        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this crawler.</p>
         pub fn set_crawler_security_configuration(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -22954,17 +21500,13 @@ impl AsRef<str> for LastCrawlStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Schedule {
-    /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run
-    /// something every day at 12:15 UTC, you would specify:
-    /// <code>cron(15 12 * * ? *)</code>.</p>
+    /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
     pub schedule_expression: std::option::Option<std::string::String>,
     /// <p>The state of the schedule.</p>
     pub state: std::option::Option<crate::model::ScheduleState>,
 }
 impl Schedule {
-    /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run
-    /// something every day at 12:15 UTC, you would specify:
-    /// <code>cron(15 12 * * ? *)</code>.</p>
+    /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
     pub fn schedule_expression(&self) -> std::option::Option<&str> {
         self.schedule_expression.as_deref()
     }
@@ -22991,16 +21533,12 @@ pub mod schedule {
         pub(crate) state: std::option::Option<crate::model::ScheduleState>,
     }
     impl Builder {
-        /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run
-        /// something every day at 12:15 UTC, you would specify:
-        /// <code>cron(15 12 * * ? *)</code>.</p>
+        /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
         pub fn schedule_expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.schedule_expression = Some(input.into());
             self
         }
-        /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run
-        /// something every day at 12:15 UTC, you would specify:
-        /// <code>cron(15 12 * * ? *)</code>.</p>
+        /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
         pub fn set_schedule_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -23356,141 +21894,41 @@ pub struct Connection {
     pub match_criteria: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>These key-value pairs define parameters for the connection:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>HOST</code> - The host URI: either the
-    /// fully qualified domain name (FQDN) or the IPv4 address of
-    /// the database host.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PORT</code> - The port number, between
-    /// 1024 and 65535, of the port on which the database host is
-    /// listening for database connections.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>USER_NAME</code> -  The name under which
-    /// to log in to the database. The value string for <code>USER_NAME</code> is "<code>USERNAME</code>".</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PASSWORD</code> - A password,
-    /// if one is used, for the user name.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ENCRYPTED_PASSWORD</code> - When you enable connection password protection by setting <code>ConnectionPasswordEncryption</code> in the Data Catalog encryption settings, this field stores the encrypted password.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>JDBC_DRIVER_JAR_URI</code> - The Amazon Simple Storage Service (Amazon S3) path of the
-    /// JAR file that contains the JDBC driver to use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>JDBC_ENGINE</code> - The name of the JDBC engine to use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>JDBC_ENGINE_VERSION</code> - The version of the JDBC engine to use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CONFIG_FILES</code> - (Reserved for future use.)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>INSTANCE_ID</code> - The instance ID to use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>JDBC_CONNECTION_URL</code> - The URL for connecting to a JDBC data source.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>JDBC_ENFORCE_SSL</code> - A Boolean string (true, false) specifying whether Secure
-    /// Sockets Layer (SSL) with hostname matching is enforced for the JDBC connection on the
-    /// client. The default is false.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CUSTOM_JDBC_CERT</code> - An Amazon S3 location specifying the customer's root certificate. Glue uses this root certificate to validate the customer’s certificate when connecting to the customer database. Glue only handles X.509 certificates. The certificate provided must be DER-encoded and supplied in Base64 encoding PEM format.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SKIP_CUSTOM_JDBC_CERT_VALIDATION</code> - By default, this is <code>false</code>. Glue validates the Signature algorithm and Subject Public Key Algorithm for the customer certificate. The only permitted algorithms for the Signature algorithm are SHA256withRSA, SHA384withRSA or SHA512withRSA. For the Subject Public Key Algorithm, the key length must be at least 2048. You can set the value of this property to <code>true</code> to skip Glue’s validation of the customer certificate.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CUSTOM_JDBC_CERT_STRING</code> - A custom JDBC certificate string which is used for domain match or distinguished name match to prevent a man-in-the-middle attack. In Oracle database, this is used as the <code>SSL_SERVER_CERT_DN</code>; in Microsoft SQL Server, this is used as the <code>hostNameInCertificate</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CONNECTION_URL</code> - The URL for connecting to a general (non-JDBC) data source.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>KAFKA_BOOTSTRAP_SERVERS</code> - A comma-separated list of host and port pairs that are the addresses of the Apache Kafka brokers in a Kafka cluster to which a Kafka client will connect to and bootstrap itself.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>KAFKA_SSL_ENABLED</code> - Whether to enable or disable SSL on an Apache Kafka connection. Default value is "true".</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL for the private CA cert file (.pem format). The default is an empty string.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip the validation of the CA cert file or not. Glue validates for three algorithms: SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is "false".</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SECRET_ID</code> - The secret ID used for the secret manager of credentials.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CONNECTOR_URL</code> - The connector URL for a MARKETPLACE or CUSTOM connection.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM connection.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CONNECTOR_CLASS_NAME</code> - The connector class name for a MARKETPLACE or CUSTOM connection.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client keystore file for Kafka client side authentication (Optional).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the provided keystore (Optional).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>KAFKA_CLIENT_KEY_PASSWORD</code> - A keystore can consist of multiple keys, so this is the password to access the client key to be used with the Kafka server side key (Optional).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The encrypted version of the Kafka client keystore password (if the user has the Glue encrypt passwords setting selected).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the Kafka client key password (if the user has the Glue encrypt passwords setting selected).</p>
-    /// </li>
+    /// <li> <p> <code>HOST</code> - The host URI: either the fully qualified domain name (FQDN) or the IPv4 address of the database host.</p> </li>
+    /// <li> <p> <code>PORT</code> - The port number, between 1024 and 65535, of the port on which the database host is listening for database connections.</p> </li>
+    /// <li> <p> <code>USER_NAME</code> - The name under which to log in to the database. The value string for <code>USER_NAME</code> is "<code>USERNAME</code>".</p> </li>
+    /// <li> <p> <code>PASSWORD</code> - A password, if one is used, for the user name.</p> </li>
+    /// <li> <p> <code>ENCRYPTED_PASSWORD</code> - When you enable connection password protection by setting <code>ConnectionPasswordEncryption</code> in the Data Catalog encryption settings, this field stores the encrypted password.</p> </li>
+    /// <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The Amazon Simple Storage Service (Amazon S3) path of the JAR file that contains the JDBC driver to use.</p> </li>
+    /// <li> <p> <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to use.</p> </li>
+    /// <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC engine to use.</p> </li>
+    /// <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version of the JDBC engine to use.</p> </li>
+    /// <li> <p> <code>CONFIG_FILES</code> - (Reserved for future use.)</p> </li>
+    /// <li> <p> <code>INSTANCE_ID</code> - The instance ID to use.</p> </li>
+    /// <li> <p> <code>JDBC_CONNECTION_URL</code> - The URL for connecting to a JDBC data source.</p> </li>
+    /// <li> <p> <code>JDBC_ENFORCE_SSL</code> - A Boolean string (true, false) specifying whether Secure Sockets Layer (SSL) with hostname matching is enforced for the JDBC connection on the client. The default is false.</p> </li>
+    /// <li> <p> <code>CUSTOM_JDBC_CERT</code> - An Amazon S3 location specifying the customer's root certificate. Glue uses this root certificate to validate the customer’s certificate when connecting to the customer database. Glue only handles X.509 certificates. The certificate provided must be DER-encoded and supplied in Base64 encoding PEM format.</p> </li>
+    /// <li> <p> <code>SKIP_CUSTOM_JDBC_CERT_VALIDATION</code> - By default, this is <code>false</code>. Glue validates the Signature algorithm and Subject Public Key Algorithm for the customer certificate. The only permitted algorithms for the Signature algorithm are SHA256withRSA, SHA384withRSA or SHA512withRSA. For the Subject Public Key Algorithm, the key length must be at least 2048. You can set the value of this property to <code>true</code> to skip Glue’s validation of the customer certificate.</p> </li>
+    /// <li> <p> <code>CUSTOM_JDBC_CERT_STRING</code> - A custom JDBC certificate string which is used for domain match or distinguished name match to prevent a man-in-the-middle attack. In Oracle database, this is used as the <code>SSL_SERVER_CERT_DN</code>; in Microsoft SQL Server, this is used as the <code>hostNameInCertificate</code>.</p> </li>
+    /// <li> <p> <code>CONNECTION_URL</code> - The URL for connecting to a general (non-JDBC) data source.</p> </li>
+    /// <li> <p> <code>KAFKA_BOOTSTRAP_SERVERS</code> - A comma-separated list of host and port pairs that are the addresses of the Apache Kafka brokers in a Kafka cluster to which a Kafka client will connect to and bootstrap itself.</p> </li>
+    /// <li> <p> <code>KAFKA_SSL_ENABLED</code> - Whether to enable or disable SSL on an Apache Kafka connection. Default value is "true".</p> </li>
+    /// <li> <p> <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL for the private CA cert file (.pem format). The default is an empty string.</p> </li>
+    /// <li> <p> <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip the validation of the CA cert file or not. Glue validates for three algorithms: SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is "false".</p> </li>
+    /// <li> <p> <code>SECRET_ID</code> - The secret ID used for the secret manager of credentials.</p> </li>
+    /// <li> <p> <code>CONNECTOR_URL</code> - The connector URL for a MARKETPLACE or CUSTOM connection.</p> </li>
+    /// <li> <p> <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM connection.</p> </li>
+    /// <li> <p> <code>CONNECTOR_CLASS_NAME</code> - The connector class name for a MARKETPLACE or CUSTOM connection.</p> </li>
+    /// <li> <p> <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client keystore file for Kafka client side authentication (Optional).</p> </li>
+    /// <li> <p> <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the provided keystore (Optional).</p> </li>
+    /// <li> <p> <code>KAFKA_CLIENT_KEY_PASSWORD</code> - A keystore can consist of multiple keys, so this is the password to access the client key to be used with the Kafka server side key (Optional).</p> </li>
+    /// <li> <p> <code>ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The encrypted version of the Kafka client keystore password (if the user has the Glue encrypt passwords setting selected).</p> </li>
+    /// <li> <p> <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the Kafka client key password (if the user has the Glue encrypt passwords setting selected).</p> </li>
     /// </ul>
     pub connection_properties: std::option::Option<
         std::collections::HashMap<crate::model::ConnectionPropertyKey, std::string::String>,
     >,
-    /// <p>A map of physical connection requirements, such as virtual private cloud (VPC) and
-    /// <code>SecurityGroup</code>, that are needed to make this connection successfully.</p>
+    /// <p>A map of physical connection requirements, such as virtual private cloud (VPC) and <code>SecurityGroup</code>, that are needed to make this connection successfully.</p>
     pub physical_connection_requirements:
         std::option::Option<crate::model::PhysicalConnectionRequirements>,
     /// <p>The time that this connection definition was created.</p>
@@ -23519,135 +21957,36 @@ impl Connection {
     }
     /// <p>These key-value pairs define parameters for the connection:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>HOST</code> - The host URI: either the
-    /// fully qualified domain name (FQDN) or the IPv4 address of
-    /// the database host.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PORT</code> - The port number, between
-    /// 1024 and 65535, of the port on which the database host is
-    /// listening for database connections.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>USER_NAME</code> -  The name under which
-    /// to log in to the database. The value string for <code>USER_NAME</code> is "<code>USERNAME</code>".</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PASSWORD</code> - A password,
-    /// if one is used, for the user name.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ENCRYPTED_PASSWORD</code> - When you enable connection password protection by setting <code>ConnectionPasswordEncryption</code> in the Data Catalog encryption settings, this field stores the encrypted password.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>JDBC_DRIVER_JAR_URI</code> - The Amazon Simple Storage Service (Amazon S3) path of the
-    /// JAR file that contains the JDBC driver to use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>JDBC_ENGINE</code> - The name of the JDBC engine to use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>JDBC_ENGINE_VERSION</code> - The version of the JDBC engine to use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CONFIG_FILES</code> - (Reserved for future use.)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>INSTANCE_ID</code> - The instance ID to use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>JDBC_CONNECTION_URL</code> - The URL for connecting to a JDBC data source.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>JDBC_ENFORCE_SSL</code> - A Boolean string (true, false) specifying whether Secure
-    /// Sockets Layer (SSL) with hostname matching is enforced for the JDBC connection on the
-    /// client. The default is false.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CUSTOM_JDBC_CERT</code> - An Amazon S3 location specifying the customer's root certificate. Glue uses this root certificate to validate the customer’s certificate when connecting to the customer database. Glue only handles X.509 certificates. The certificate provided must be DER-encoded and supplied in Base64 encoding PEM format.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SKIP_CUSTOM_JDBC_CERT_VALIDATION</code> - By default, this is <code>false</code>. Glue validates the Signature algorithm and Subject Public Key Algorithm for the customer certificate. The only permitted algorithms for the Signature algorithm are SHA256withRSA, SHA384withRSA or SHA512withRSA. For the Subject Public Key Algorithm, the key length must be at least 2048. You can set the value of this property to <code>true</code> to skip Glue’s validation of the customer certificate.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CUSTOM_JDBC_CERT_STRING</code> - A custom JDBC certificate string which is used for domain match or distinguished name match to prevent a man-in-the-middle attack. In Oracle database, this is used as the <code>SSL_SERVER_CERT_DN</code>; in Microsoft SQL Server, this is used as the <code>hostNameInCertificate</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CONNECTION_URL</code> - The URL for connecting to a general (non-JDBC) data source.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>KAFKA_BOOTSTRAP_SERVERS</code> - A comma-separated list of host and port pairs that are the addresses of the Apache Kafka brokers in a Kafka cluster to which a Kafka client will connect to and bootstrap itself.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>KAFKA_SSL_ENABLED</code> - Whether to enable or disable SSL on an Apache Kafka connection. Default value is "true".</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL for the private CA cert file (.pem format). The default is an empty string.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip the validation of the CA cert file or not. Glue validates for three algorithms: SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is "false".</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SECRET_ID</code> - The secret ID used for the secret manager of credentials.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CONNECTOR_URL</code> - The connector URL for a MARKETPLACE or CUSTOM connection.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM connection.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CONNECTOR_CLASS_NAME</code> - The connector class name for a MARKETPLACE or CUSTOM connection.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client keystore file for Kafka client side authentication (Optional).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the provided keystore (Optional).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>KAFKA_CLIENT_KEY_PASSWORD</code> - A keystore can consist of multiple keys, so this is the password to access the client key to be used with the Kafka server side key (Optional).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The encrypted version of the Kafka client keystore password (if the user has the Glue encrypt passwords setting selected).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the Kafka client key password (if the user has the Glue encrypt passwords setting selected).</p>
-    /// </li>
+    /// <li> <p> <code>HOST</code> - The host URI: either the fully qualified domain name (FQDN) or the IPv4 address of the database host.</p> </li>
+    /// <li> <p> <code>PORT</code> - The port number, between 1024 and 65535, of the port on which the database host is listening for database connections.</p> </li>
+    /// <li> <p> <code>USER_NAME</code> - The name under which to log in to the database. The value string for <code>USER_NAME</code> is "<code>USERNAME</code>".</p> </li>
+    /// <li> <p> <code>PASSWORD</code> - A password, if one is used, for the user name.</p> </li>
+    /// <li> <p> <code>ENCRYPTED_PASSWORD</code> - When you enable connection password protection by setting <code>ConnectionPasswordEncryption</code> in the Data Catalog encryption settings, this field stores the encrypted password.</p> </li>
+    /// <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The Amazon Simple Storage Service (Amazon S3) path of the JAR file that contains the JDBC driver to use.</p> </li>
+    /// <li> <p> <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to use.</p> </li>
+    /// <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC engine to use.</p> </li>
+    /// <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version of the JDBC engine to use.</p> </li>
+    /// <li> <p> <code>CONFIG_FILES</code> - (Reserved for future use.)</p> </li>
+    /// <li> <p> <code>INSTANCE_ID</code> - The instance ID to use.</p> </li>
+    /// <li> <p> <code>JDBC_CONNECTION_URL</code> - The URL for connecting to a JDBC data source.</p> </li>
+    /// <li> <p> <code>JDBC_ENFORCE_SSL</code> - A Boolean string (true, false) specifying whether Secure Sockets Layer (SSL) with hostname matching is enforced for the JDBC connection on the client. The default is false.</p> </li>
+    /// <li> <p> <code>CUSTOM_JDBC_CERT</code> - An Amazon S3 location specifying the customer's root certificate. Glue uses this root certificate to validate the customer’s certificate when connecting to the customer database. Glue only handles X.509 certificates. The certificate provided must be DER-encoded and supplied in Base64 encoding PEM format.</p> </li>
+    /// <li> <p> <code>SKIP_CUSTOM_JDBC_CERT_VALIDATION</code> - By default, this is <code>false</code>. Glue validates the Signature algorithm and Subject Public Key Algorithm for the customer certificate. The only permitted algorithms for the Signature algorithm are SHA256withRSA, SHA384withRSA or SHA512withRSA. For the Subject Public Key Algorithm, the key length must be at least 2048. You can set the value of this property to <code>true</code> to skip Glue’s validation of the customer certificate.</p> </li>
+    /// <li> <p> <code>CUSTOM_JDBC_CERT_STRING</code> - A custom JDBC certificate string which is used for domain match or distinguished name match to prevent a man-in-the-middle attack. In Oracle database, this is used as the <code>SSL_SERVER_CERT_DN</code>; in Microsoft SQL Server, this is used as the <code>hostNameInCertificate</code>.</p> </li>
+    /// <li> <p> <code>CONNECTION_URL</code> - The URL for connecting to a general (non-JDBC) data source.</p> </li>
+    /// <li> <p> <code>KAFKA_BOOTSTRAP_SERVERS</code> - A comma-separated list of host and port pairs that are the addresses of the Apache Kafka brokers in a Kafka cluster to which a Kafka client will connect to and bootstrap itself.</p> </li>
+    /// <li> <p> <code>KAFKA_SSL_ENABLED</code> - Whether to enable or disable SSL on an Apache Kafka connection. Default value is "true".</p> </li>
+    /// <li> <p> <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL for the private CA cert file (.pem format). The default is an empty string.</p> </li>
+    /// <li> <p> <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip the validation of the CA cert file or not. Glue validates for three algorithms: SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is "false".</p> </li>
+    /// <li> <p> <code>SECRET_ID</code> - The secret ID used for the secret manager of credentials.</p> </li>
+    /// <li> <p> <code>CONNECTOR_URL</code> - The connector URL for a MARKETPLACE or CUSTOM connection.</p> </li>
+    /// <li> <p> <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM connection.</p> </li>
+    /// <li> <p> <code>CONNECTOR_CLASS_NAME</code> - The connector class name for a MARKETPLACE or CUSTOM connection.</p> </li>
+    /// <li> <p> <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client keystore file for Kafka client side authentication (Optional).</p> </li>
+    /// <li> <p> <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the provided keystore (Optional).</p> </li>
+    /// <li> <p> <code>KAFKA_CLIENT_KEY_PASSWORD</code> - A keystore can consist of multiple keys, so this is the password to access the client key to be used with the Kafka server side key (Optional).</p> </li>
+    /// <li> <p> <code>ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The encrypted version of the Kafka client keystore password (if the user has the Glue encrypt passwords setting selected).</p> </li>
+    /// <li> <p> <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the Kafka client key password (if the user has the Glue encrypt passwords setting selected).</p> </li>
     /// </ul>
     pub fn connection_properties(
         &self,
@@ -23656,8 +21995,7 @@ impl Connection {
     > {
         self.connection_properties.as_ref()
     }
-    /// <p>A map of physical connection requirements, such as virtual private cloud (VPC) and
-    /// <code>SecurityGroup</code>, that are needed to make this connection successfully.</p>
+    /// <p>A map of physical connection requirements, such as virtual private cloud (VPC) and <code>SecurityGroup</code>, that are needed to make this connection successfully.</p>
     pub fn physical_connection_requirements(
         &self,
     ) -> std::option::Option<&crate::model::PhysicalConnectionRequirements> {
@@ -23772,135 +22110,36 @@ pub mod connection {
         ///
         /// <p>These key-value pairs define parameters for the connection:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>HOST</code> - The host URI: either the
-        /// fully qualified domain name (FQDN) or the IPv4 address of
-        /// the database host.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PORT</code> - The port number, between
-        /// 1024 and 65535, of the port on which the database host is
-        /// listening for database connections.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>USER_NAME</code> -  The name under which
-        /// to log in to the database. The value string for <code>USER_NAME</code> is "<code>USERNAME</code>".</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PASSWORD</code> - A password,
-        /// if one is used, for the user name.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ENCRYPTED_PASSWORD</code> - When you enable connection password protection by setting <code>ConnectionPasswordEncryption</code> in the Data Catalog encryption settings, this field stores the encrypted password.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>JDBC_DRIVER_JAR_URI</code> - The Amazon Simple Storage Service (Amazon S3) path of the
-        /// JAR file that contains the JDBC driver to use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>JDBC_ENGINE</code> - The name of the JDBC engine to use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>JDBC_ENGINE_VERSION</code> - The version of the JDBC engine to use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CONFIG_FILES</code> - (Reserved for future use.)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INSTANCE_ID</code> - The instance ID to use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>JDBC_CONNECTION_URL</code> - The URL for connecting to a JDBC data source.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>JDBC_ENFORCE_SSL</code> - A Boolean string (true, false) specifying whether Secure
-        /// Sockets Layer (SSL) with hostname matching is enforced for the JDBC connection on the
-        /// client. The default is false.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CUSTOM_JDBC_CERT</code> - An Amazon S3 location specifying the customer's root certificate. Glue uses this root certificate to validate the customer’s certificate when connecting to the customer database. Glue only handles X.509 certificates. The certificate provided must be DER-encoded and supplied in Base64 encoding PEM format.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SKIP_CUSTOM_JDBC_CERT_VALIDATION</code> - By default, this is <code>false</code>. Glue validates the Signature algorithm and Subject Public Key Algorithm for the customer certificate. The only permitted algorithms for the Signature algorithm are SHA256withRSA, SHA384withRSA or SHA512withRSA. For the Subject Public Key Algorithm, the key length must be at least 2048. You can set the value of this property to <code>true</code> to skip Glue’s validation of the customer certificate.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CUSTOM_JDBC_CERT_STRING</code> - A custom JDBC certificate string which is used for domain match or distinguished name match to prevent a man-in-the-middle attack. In Oracle database, this is used as the <code>SSL_SERVER_CERT_DN</code>; in Microsoft SQL Server, this is used as the <code>hostNameInCertificate</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CONNECTION_URL</code> - The URL for connecting to a general (non-JDBC) data source.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>KAFKA_BOOTSTRAP_SERVERS</code> - A comma-separated list of host and port pairs that are the addresses of the Apache Kafka brokers in a Kafka cluster to which a Kafka client will connect to and bootstrap itself.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>KAFKA_SSL_ENABLED</code> - Whether to enable or disable SSL on an Apache Kafka connection. Default value is "true".</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL for the private CA cert file (.pem format). The default is an empty string.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip the validation of the CA cert file or not. Glue validates for three algorithms: SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is "false".</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SECRET_ID</code> - The secret ID used for the secret manager of credentials.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CONNECTOR_URL</code> - The connector URL for a MARKETPLACE or CUSTOM connection.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM connection.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CONNECTOR_CLASS_NAME</code> - The connector class name for a MARKETPLACE or CUSTOM connection.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client keystore file for Kafka client side authentication (Optional).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the provided keystore (Optional).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>KAFKA_CLIENT_KEY_PASSWORD</code> - A keystore can consist of multiple keys, so this is the password to access the client key to be used with the Kafka server side key (Optional).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The encrypted version of the Kafka client keystore password (if the user has the Glue encrypt passwords setting selected).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the Kafka client key password (if the user has the Glue encrypt passwords setting selected).</p>
-        /// </li>
+        /// <li> <p> <code>HOST</code> - The host URI: either the fully qualified domain name (FQDN) or the IPv4 address of the database host.</p> </li>
+        /// <li> <p> <code>PORT</code> - The port number, between 1024 and 65535, of the port on which the database host is listening for database connections.</p> </li>
+        /// <li> <p> <code>USER_NAME</code> - The name under which to log in to the database. The value string for <code>USER_NAME</code> is "<code>USERNAME</code>".</p> </li>
+        /// <li> <p> <code>PASSWORD</code> - A password, if one is used, for the user name.</p> </li>
+        /// <li> <p> <code>ENCRYPTED_PASSWORD</code> - When you enable connection password protection by setting <code>ConnectionPasswordEncryption</code> in the Data Catalog encryption settings, this field stores the encrypted password.</p> </li>
+        /// <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The Amazon Simple Storage Service (Amazon S3) path of the JAR file that contains the JDBC driver to use.</p> </li>
+        /// <li> <p> <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to use.</p> </li>
+        /// <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC engine to use.</p> </li>
+        /// <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version of the JDBC engine to use.</p> </li>
+        /// <li> <p> <code>CONFIG_FILES</code> - (Reserved for future use.)</p> </li>
+        /// <li> <p> <code>INSTANCE_ID</code> - The instance ID to use.</p> </li>
+        /// <li> <p> <code>JDBC_CONNECTION_URL</code> - The URL for connecting to a JDBC data source.</p> </li>
+        /// <li> <p> <code>JDBC_ENFORCE_SSL</code> - A Boolean string (true, false) specifying whether Secure Sockets Layer (SSL) with hostname matching is enforced for the JDBC connection on the client. The default is false.</p> </li>
+        /// <li> <p> <code>CUSTOM_JDBC_CERT</code> - An Amazon S3 location specifying the customer's root certificate. Glue uses this root certificate to validate the customer’s certificate when connecting to the customer database. Glue only handles X.509 certificates. The certificate provided must be DER-encoded and supplied in Base64 encoding PEM format.</p> </li>
+        /// <li> <p> <code>SKIP_CUSTOM_JDBC_CERT_VALIDATION</code> - By default, this is <code>false</code>. Glue validates the Signature algorithm and Subject Public Key Algorithm for the customer certificate. The only permitted algorithms for the Signature algorithm are SHA256withRSA, SHA384withRSA or SHA512withRSA. For the Subject Public Key Algorithm, the key length must be at least 2048. You can set the value of this property to <code>true</code> to skip Glue’s validation of the customer certificate.</p> </li>
+        /// <li> <p> <code>CUSTOM_JDBC_CERT_STRING</code> - A custom JDBC certificate string which is used for domain match or distinguished name match to prevent a man-in-the-middle attack. In Oracle database, this is used as the <code>SSL_SERVER_CERT_DN</code>; in Microsoft SQL Server, this is used as the <code>hostNameInCertificate</code>.</p> </li>
+        /// <li> <p> <code>CONNECTION_URL</code> - The URL for connecting to a general (non-JDBC) data source.</p> </li>
+        /// <li> <p> <code>KAFKA_BOOTSTRAP_SERVERS</code> - A comma-separated list of host and port pairs that are the addresses of the Apache Kafka brokers in a Kafka cluster to which a Kafka client will connect to and bootstrap itself.</p> </li>
+        /// <li> <p> <code>KAFKA_SSL_ENABLED</code> - Whether to enable or disable SSL on an Apache Kafka connection. Default value is "true".</p> </li>
+        /// <li> <p> <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL for the private CA cert file (.pem format). The default is an empty string.</p> </li>
+        /// <li> <p> <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip the validation of the CA cert file or not. Glue validates for three algorithms: SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is "false".</p> </li>
+        /// <li> <p> <code>SECRET_ID</code> - The secret ID used for the secret manager of credentials.</p> </li>
+        /// <li> <p> <code>CONNECTOR_URL</code> - The connector URL for a MARKETPLACE or CUSTOM connection.</p> </li>
+        /// <li> <p> <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM connection.</p> </li>
+        /// <li> <p> <code>CONNECTOR_CLASS_NAME</code> - The connector class name for a MARKETPLACE or CUSTOM connection.</p> </li>
+        /// <li> <p> <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client keystore file for Kafka client side authentication (Optional).</p> </li>
+        /// <li> <p> <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the provided keystore (Optional).</p> </li>
+        /// <li> <p> <code>KAFKA_CLIENT_KEY_PASSWORD</code> - A keystore can consist of multiple keys, so this is the password to access the client key to be used with the Kafka server side key (Optional).</p> </li>
+        /// <li> <p> <code>ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The encrypted version of the Kafka client keystore password (if the user has the Glue encrypt passwords setting selected).</p> </li>
+        /// <li> <p> <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the Kafka client key password (if the user has the Glue encrypt passwords setting selected).</p> </li>
         /// </ul>
         pub fn connection_properties(
             mut self,
@@ -23914,135 +22153,36 @@ pub mod connection {
         }
         /// <p>These key-value pairs define parameters for the connection:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>HOST</code> - The host URI: either the
-        /// fully qualified domain name (FQDN) or the IPv4 address of
-        /// the database host.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PORT</code> - The port number, between
-        /// 1024 and 65535, of the port on which the database host is
-        /// listening for database connections.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>USER_NAME</code> -  The name under which
-        /// to log in to the database. The value string for <code>USER_NAME</code> is "<code>USERNAME</code>".</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PASSWORD</code> - A password,
-        /// if one is used, for the user name.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ENCRYPTED_PASSWORD</code> - When you enable connection password protection by setting <code>ConnectionPasswordEncryption</code> in the Data Catalog encryption settings, this field stores the encrypted password.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>JDBC_DRIVER_JAR_URI</code> - The Amazon Simple Storage Service (Amazon S3) path of the
-        /// JAR file that contains the JDBC driver to use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>JDBC_ENGINE</code> - The name of the JDBC engine to use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>JDBC_ENGINE_VERSION</code> - The version of the JDBC engine to use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CONFIG_FILES</code> - (Reserved for future use.)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INSTANCE_ID</code> - The instance ID to use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>JDBC_CONNECTION_URL</code> - The URL for connecting to a JDBC data source.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>JDBC_ENFORCE_SSL</code> - A Boolean string (true, false) specifying whether Secure
-        /// Sockets Layer (SSL) with hostname matching is enforced for the JDBC connection on the
-        /// client. The default is false.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CUSTOM_JDBC_CERT</code> - An Amazon S3 location specifying the customer's root certificate. Glue uses this root certificate to validate the customer’s certificate when connecting to the customer database. Glue only handles X.509 certificates. The certificate provided must be DER-encoded and supplied in Base64 encoding PEM format.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SKIP_CUSTOM_JDBC_CERT_VALIDATION</code> - By default, this is <code>false</code>. Glue validates the Signature algorithm and Subject Public Key Algorithm for the customer certificate. The only permitted algorithms for the Signature algorithm are SHA256withRSA, SHA384withRSA or SHA512withRSA. For the Subject Public Key Algorithm, the key length must be at least 2048. You can set the value of this property to <code>true</code> to skip Glue’s validation of the customer certificate.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CUSTOM_JDBC_CERT_STRING</code> - A custom JDBC certificate string which is used for domain match or distinguished name match to prevent a man-in-the-middle attack. In Oracle database, this is used as the <code>SSL_SERVER_CERT_DN</code>; in Microsoft SQL Server, this is used as the <code>hostNameInCertificate</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CONNECTION_URL</code> - The URL for connecting to a general (non-JDBC) data source.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>KAFKA_BOOTSTRAP_SERVERS</code> - A comma-separated list of host and port pairs that are the addresses of the Apache Kafka brokers in a Kafka cluster to which a Kafka client will connect to and bootstrap itself.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>KAFKA_SSL_ENABLED</code> - Whether to enable or disable SSL on an Apache Kafka connection. Default value is "true".</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL for the private CA cert file (.pem format). The default is an empty string.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip the validation of the CA cert file or not. Glue validates for three algorithms: SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is "false".</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SECRET_ID</code> - The secret ID used for the secret manager of credentials.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CONNECTOR_URL</code> - The connector URL for a MARKETPLACE or CUSTOM connection.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM connection.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CONNECTOR_CLASS_NAME</code> - The connector class name for a MARKETPLACE or CUSTOM connection.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client keystore file for Kafka client side authentication (Optional).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the provided keystore (Optional).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>KAFKA_CLIENT_KEY_PASSWORD</code> - A keystore can consist of multiple keys, so this is the password to access the client key to be used with the Kafka server side key (Optional).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The encrypted version of the Kafka client keystore password (if the user has the Glue encrypt passwords setting selected).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the Kafka client key password (if the user has the Glue encrypt passwords setting selected).</p>
-        /// </li>
+        /// <li> <p> <code>HOST</code> - The host URI: either the fully qualified domain name (FQDN) or the IPv4 address of the database host.</p> </li>
+        /// <li> <p> <code>PORT</code> - The port number, between 1024 and 65535, of the port on which the database host is listening for database connections.</p> </li>
+        /// <li> <p> <code>USER_NAME</code> - The name under which to log in to the database. The value string for <code>USER_NAME</code> is "<code>USERNAME</code>".</p> </li>
+        /// <li> <p> <code>PASSWORD</code> - A password, if one is used, for the user name.</p> </li>
+        /// <li> <p> <code>ENCRYPTED_PASSWORD</code> - When you enable connection password protection by setting <code>ConnectionPasswordEncryption</code> in the Data Catalog encryption settings, this field stores the encrypted password.</p> </li>
+        /// <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The Amazon Simple Storage Service (Amazon S3) path of the JAR file that contains the JDBC driver to use.</p> </li>
+        /// <li> <p> <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to use.</p> </li>
+        /// <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC engine to use.</p> </li>
+        /// <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version of the JDBC engine to use.</p> </li>
+        /// <li> <p> <code>CONFIG_FILES</code> - (Reserved for future use.)</p> </li>
+        /// <li> <p> <code>INSTANCE_ID</code> - The instance ID to use.</p> </li>
+        /// <li> <p> <code>JDBC_CONNECTION_URL</code> - The URL for connecting to a JDBC data source.</p> </li>
+        /// <li> <p> <code>JDBC_ENFORCE_SSL</code> - A Boolean string (true, false) specifying whether Secure Sockets Layer (SSL) with hostname matching is enforced for the JDBC connection on the client. The default is false.</p> </li>
+        /// <li> <p> <code>CUSTOM_JDBC_CERT</code> - An Amazon S3 location specifying the customer's root certificate. Glue uses this root certificate to validate the customer’s certificate when connecting to the customer database. Glue only handles X.509 certificates. The certificate provided must be DER-encoded and supplied in Base64 encoding PEM format.</p> </li>
+        /// <li> <p> <code>SKIP_CUSTOM_JDBC_CERT_VALIDATION</code> - By default, this is <code>false</code>. Glue validates the Signature algorithm and Subject Public Key Algorithm for the customer certificate. The only permitted algorithms for the Signature algorithm are SHA256withRSA, SHA384withRSA or SHA512withRSA. For the Subject Public Key Algorithm, the key length must be at least 2048. You can set the value of this property to <code>true</code> to skip Glue’s validation of the customer certificate.</p> </li>
+        /// <li> <p> <code>CUSTOM_JDBC_CERT_STRING</code> - A custom JDBC certificate string which is used for domain match or distinguished name match to prevent a man-in-the-middle attack. In Oracle database, this is used as the <code>SSL_SERVER_CERT_DN</code>; in Microsoft SQL Server, this is used as the <code>hostNameInCertificate</code>.</p> </li>
+        /// <li> <p> <code>CONNECTION_URL</code> - The URL for connecting to a general (non-JDBC) data source.</p> </li>
+        /// <li> <p> <code>KAFKA_BOOTSTRAP_SERVERS</code> - A comma-separated list of host and port pairs that are the addresses of the Apache Kafka brokers in a Kafka cluster to which a Kafka client will connect to and bootstrap itself.</p> </li>
+        /// <li> <p> <code>KAFKA_SSL_ENABLED</code> - Whether to enable or disable SSL on an Apache Kafka connection. Default value is "true".</p> </li>
+        /// <li> <p> <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL for the private CA cert file (.pem format). The default is an empty string.</p> </li>
+        /// <li> <p> <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip the validation of the CA cert file or not. Glue validates for three algorithms: SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is "false".</p> </li>
+        /// <li> <p> <code>SECRET_ID</code> - The secret ID used for the secret manager of credentials.</p> </li>
+        /// <li> <p> <code>CONNECTOR_URL</code> - The connector URL for a MARKETPLACE or CUSTOM connection.</p> </li>
+        /// <li> <p> <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM connection.</p> </li>
+        /// <li> <p> <code>CONNECTOR_CLASS_NAME</code> - The connector class name for a MARKETPLACE or CUSTOM connection.</p> </li>
+        /// <li> <p> <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client keystore file for Kafka client side authentication (Optional).</p> </li>
+        /// <li> <p> <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the provided keystore (Optional).</p> </li>
+        /// <li> <p> <code>KAFKA_CLIENT_KEY_PASSWORD</code> - A keystore can consist of multiple keys, so this is the password to access the client key to be used with the Kafka server side key (Optional).</p> </li>
+        /// <li> <p> <code>ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The encrypted version of the Kafka client keystore password (if the user has the Glue encrypt passwords setting selected).</p> </li>
+        /// <li> <p> <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the Kafka client key password (if the user has the Glue encrypt passwords setting selected).</p> </li>
         /// </ul>
         pub fn set_connection_properties(
             mut self,
@@ -24053,8 +22193,7 @@ pub mod connection {
             self.connection_properties = input;
             self
         }
-        /// <p>A map of physical connection requirements, such as virtual private cloud (VPC) and
-        /// <code>SecurityGroup</code>, that are needed to make this connection successfully.</p>
+        /// <p>A map of physical connection requirements, such as virtual private cloud (VPC) and <code>SecurityGroup</code>, that are needed to make this connection successfully.</p>
         pub fn physical_connection_requirements(
             mut self,
             input: crate::model::PhysicalConnectionRequirements,
@@ -24062,8 +22201,7 @@ pub mod connection {
             self.physical_connection_requirements = Some(input);
             self
         }
-        /// <p>A map of physical connection requirements, such as virtual private cloud (VPC) and
-        /// <code>SecurityGroup</code>, that are needed to make this connection successfully.</p>
+        /// <p>A map of physical connection requirements, such as virtual private cloud (VPC) and <code>SecurityGroup</code>, that are needed to make this connection successfully.</p>
         pub fn set_physical_connection_requirements(
             mut self,
             input: std::option::Option<crate::model::PhysicalConnectionRequirements>,
@@ -24133,20 +22271,17 @@ impl Connection {
     }
 }
 
-/// <p>Filters the connection definitions that are returned by the <code>GetConnections</code>
-/// API operation.</p>
+/// <p>Filters the connection definitions that are returned by the <code>GetConnections</code> API operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConnectionsFilter {
-    /// <p>A criteria string that must match the criteria recorded in the
-    /// connection definition for that connection definition to be returned.</p>
+    /// <p>A criteria string that must match the criteria recorded in the connection definition for that connection definition to be returned.</p>
     pub match_criteria: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The type of connections to return. Currently, SFTP is not supported.</p>
     pub connection_type: std::option::Option<crate::model::ConnectionType>,
 }
 impl GetConnectionsFilter {
-    /// <p>A criteria string that must match the criteria recorded in the
-    /// connection definition for that connection definition to be returned.</p>
+    /// <p>A criteria string that must match the criteria recorded in the connection definition for that connection definition to be returned.</p>
     pub fn match_criteria(&self) -> std::option::Option<&[std::string::String]> {
         self.match_criteria.as_deref()
     }
@@ -24177,16 +22312,14 @@ pub mod get_connections_filter {
         ///
         /// To override the contents of this collection use [`set_match_criteria`](Self::set_match_criteria).
         ///
-        /// <p>A criteria string that must match the criteria recorded in the
-        /// connection definition for that connection definition to be returned.</p>
+        /// <p>A criteria string that must match the criteria recorded in the connection definition for that connection definition to be returned.</p>
         pub fn match_criteria(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.match_criteria.unwrap_or_default();
             v.push(input.into());
             self.match_criteria = Some(v);
             self
         }
-        /// <p>A criteria string that must match the criteria recorded in the
-        /// connection definition for that connection definition to be returned.</p>
+        /// <p>A criteria string that must match the criteria recorded in the connection definition for that connection definition to be returned.</p>
         pub fn set_match_criteria(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -24296,14 +22429,8 @@ impl ColumnError {
     }
 }
 
-/// <p>Classifiers are triggered during a crawl task. A classifier checks whether a given file is
-/// in a format it can handle. If it is, the classifier creates a schema in the form of a
-/// <code>StructType</code> object that matches that data format.</p>
-/// <p>You can use the standard classifiers that Glue provides, or you can write your own
-/// classifiers to best categorize your data sources and specify the appropriate schemas to use
-/// for them. A classifier can be a <code>grok</code> classifier, an <code>XML</code> classifier,
-/// a <code>JSON</code> classifier, or a custom <code>CSV</code> classifier, as specified in one
-/// of the fields in the <code>Classifier</code> object.</p>
+/// <p>Classifiers are triggered during a crawl task. A classifier checks whether a given file is in a format it can handle. If it is, the classifier creates a schema in the form of a <code>StructType</code> object that matches that data format.</p>
+/// <p>You can use the standard classifiers that Glue provides, or you can write your own classifiers to best categorize your data sources and specify the appropriate schemas to use for them. A classifier can be a <code>grok</code> classifier, an <code>XML</code> classifier, a <code>JSON</code> classifier, or a custom <code>CSV</code> classifier, as specified in one of the fields in the <code>Classifier</code> object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Classifier {
@@ -24440,15 +22567,13 @@ pub struct CsvClassifier {
     pub version: i64,
     /// <p>A custom symbol to denote what separates each column entry in the row.</p>
     pub delimiter: std::option::Option<std::string::String>,
-    /// <p>A custom symbol to denote what combines content into a single column value. It must be
-    /// different from the column delimiter.</p>
+    /// <p>A custom symbol to denote what combines content into a single column value. It must be different from the column delimiter.</p>
     pub quote_symbol: std::option::Option<std::string::String>,
     /// <p>Indicates whether the CSV file contains a header.</p>
     pub contains_header: std::option::Option<crate::model::CsvHeaderOption>,
     /// <p>A list of strings representing column names.</p>
     pub header: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Specifies not to trim values before identifying the type of column values. The default
-    /// value is <code>true</code>.</p>
+    /// <p>Specifies not to trim values before identifying the type of column values. The default value is <code>true</code>.</p>
     pub disable_value_trimming: std::option::Option<bool>,
     /// <p>Enables the processing of files that contain only one column.</p>
     pub allow_single_column: std::option::Option<bool>,
@@ -24474,8 +22599,7 @@ impl CsvClassifier {
     pub fn delimiter(&self) -> std::option::Option<&str> {
         self.delimiter.as_deref()
     }
-    /// <p>A custom symbol to denote what combines content into a single column value. It must be
-    /// different from the column delimiter.</p>
+    /// <p>A custom symbol to denote what combines content into a single column value. It must be different from the column delimiter.</p>
     pub fn quote_symbol(&self) -> std::option::Option<&str> {
         self.quote_symbol.as_deref()
     }
@@ -24487,8 +22611,7 @@ impl CsvClassifier {
     pub fn header(&self) -> std::option::Option<&[std::string::String]> {
         self.header.as_deref()
     }
-    /// <p>Specifies not to trim values before identifying the type of column values. The default
-    /// value is <code>true</code>.</p>
+    /// <p>Specifies not to trim values before identifying the type of column values. The default value is <code>true</code>.</p>
     pub fn disable_value_trimming(&self) -> std::option::Option<bool> {
         self.disable_value_trimming
     }
@@ -24587,14 +22710,12 @@ pub mod csv_classifier {
             self.delimiter = input;
             self
         }
-        /// <p>A custom symbol to denote what combines content into a single column value. It must be
-        /// different from the column delimiter.</p>
+        /// <p>A custom symbol to denote what combines content into a single column value. It must be different from the column delimiter.</p>
         pub fn quote_symbol(mut self, input: impl Into<std::string::String>) -> Self {
             self.quote_symbol = Some(input.into());
             self
         }
-        /// <p>A custom symbol to denote what combines content into a single column value. It must be
-        /// different from the column delimiter.</p>
+        /// <p>A custom symbol to denote what combines content into a single column value. It must be different from the column delimiter.</p>
         pub fn set_quote_symbol(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.quote_symbol = input;
             self
@@ -24631,14 +22752,12 @@ pub mod csv_classifier {
             self.header = input;
             self
         }
-        /// <p>Specifies not to trim values before identifying the type of column values. The default
-        /// value is <code>true</code>.</p>
+        /// <p>Specifies not to trim values before identifying the type of column values. The default value is <code>true</code>.</p>
         pub fn disable_value_trimming(mut self, input: bool) -> Self {
             self.disable_value_trimming = Some(input);
             self
         }
-        /// <p>Specifies not to trim values before identifying the type of column values. The default
-        /// value is <code>true</code>.</p>
+        /// <p>Specifies not to trim values before identifying the type of column values. The default value is <code>true</code>.</p>
         pub fn set_disable_value_trimming(mut self, input: std::option::Option<bool>) -> Self {
             self.disable_value_trimming = input;
             self
@@ -24689,8 +22808,7 @@ pub struct JsonClassifier {
     pub last_updated: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The version of this classifier.</p>
     pub version: i64,
-    /// <p>A <code>JsonPath</code> string defining the JSON data for the classifier to classify.
-    /// Glue supports a subset of JsonPath, as described in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing JsonPath Custom Classifiers</a>.</p>
+    /// <p>A <code>JsonPath</code> string defining the JSON data for the classifier to classify. Glue supports a subset of JsonPath, as described in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing JsonPath Custom Classifiers</a>.</p>
     pub json_path: std::option::Option<std::string::String>,
 }
 impl JsonClassifier {
@@ -24710,8 +22828,7 @@ impl JsonClassifier {
     pub fn version(&self) -> i64 {
         self.version
     }
-    /// <p>A <code>JsonPath</code> string defining the JSON data for the classifier to classify.
-    /// Glue supports a subset of JsonPath, as described in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing JsonPath Custom Classifiers</a>.</p>
+    /// <p>A <code>JsonPath</code> string defining the JSON data for the classifier to classify. Glue supports a subset of JsonPath, as described in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing JsonPath Custom Classifiers</a>.</p>
     pub fn json_path(&self) -> std::option::Option<&str> {
         self.json_path.as_deref()
     }
@@ -24786,14 +22903,12 @@ pub mod json_classifier {
             self.version = input;
             self
         }
-        /// <p>A <code>JsonPath</code> string defining the JSON data for the classifier to classify.
-        /// Glue supports a subset of JsonPath, as described in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing JsonPath Custom Classifiers</a>.</p>
+        /// <p>A <code>JsonPath</code> string defining the JSON data for the classifier to classify. Glue supports a subset of JsonPath, as described in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing JsonPath Custom Classifiers</a>.</p>
         pub fn json_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.json_path = Some(input.into());
             self
         }
-        /// <p>A <code>JsonPath</code> string defining the JSON data for the classifier to classify.
-        /// Glue supports a subset of JsonPath, as described in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing JsonPath Custom Classifiers</a>.</p>
+        /// <p>A <code>JsonPath</code> string defining the JSON data for the classifier to classify. Glue supports a subset of JsonPath, as described in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing JsonPath Custom Classifiers</a>.</p>
         pub fn set_json_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.json_path = input;
             self
@@ -24831,11 +22946,9 @@ pub struct XmlClassifier {
     pub last_updated: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The version of this classifier.</p>
     pub version: i64,
-    /// <p>The XML tag designating the element that contains each record in an XML document being
-    /// parsed. This can't identify a self-closing element (closed by <code>/></code>). An empty
-    /// row element that contains only attributes can be parsed as long as it ends with a closing tag
-    /// (for example, <code><row item_a="A" item_b="B"></row></code> is okay, but
-    /// <code><row item_a="A" item_b="B" /></code> is not).</p>
+    /// <p>The XML tag designating the element that contains each record in an XML document being parsed. This can't identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that contains only attributes can be parsed as long as it ends with a closing tag (for example, <code>
+    /// <row item_a="A" item_b="B" /></code> is okay, but <code>
+    /// <row item_a="A" item_b="B" /></code> is not).</p>
     pub row_tag: std::option::Option<std::string::String>,
 }
 impl XmlClassifier {
@@ -24859,11 +22972,9 @@ impl XmlClassifier {
     pub fn version(&self) -> i64 {
         self.version
     }
-    /// <p>The XML tag designating the element that contains each record in an XML document being
-    /// parsed. This can't identify a self-closing element (closed by <code>/></code>). An empty
-    /// row element that contains only attributes can be parsed as long as it ends with a closing tag
-    /// (for example, <code><row item_a="A" item_b="B"></row></code> is okay, but
-    /// <code><row item_a="A" item_b="B" /></code> is not).</p>
+    /// <p>The XML tag designating the element that contains each record in an XML document being parsed. This can't identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that contains only attributes can be parsed as long as it ends with a closing tag (for example, <code>
+    /// <row item_a="A" item_b="B" /></code> is okay, but <code>
+    /// <row item_a="A" item_b="B" /></code> is not).</p>
     pub fn row_tag(&self) -> std::option::Option<&str> {
         self.row_tag.as_deref()
     }
@@ -24953,20 +23064,16 @@ pub mod xml_classifier {
             self.version = input;
             self
         }
-        /// <p>The XML tag designating the element that contains each record in an XML document being
-        /// parsed. This can't identify a self-closing element (closed by <code>/></code>). An empty
-        /// row element that contains only attributes can be parsed as long as it ends with a closing tag
-        /// (for example, <code><row item_a="A" item_b="B"></row></code> is okay, but
-        /// <code><row item_a="A" item_b="B" /></code> is not).</p>
+        /// <p>The XML tag designating the element that contains each record in an XML document being parsed. This can't identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that contains only attributes can be parsed as long as it ends with a closing tag (for example, <code>
+        /// <row item_a="A" item_b="B" /></code> is okay, but <code>
+        /// <row item_a="A" item_b="B" /></code> is not).</p>
         pub fn row_tag(mut self, input: impl Into<std::string::String>) -> Self {
             self.row_tag = Some(input.into());
             self
         }
-        /// <p>The XML tag designating the element that contains each record in an XML document being
-        /// parsed. This can't identify a self-closing element (closed by <code>/></code>). An empty
-        /// row element that contains only attributes can be parsed as long as it ends with a closing tag
-        /// (for example, <code><row item_a="A" item_b="B"></row></code> is okay, but
-        /// <code><row item_a="A" item_b="B" /></code> is not).</p>
+        /// <p>The XML tag designating the element that contains each record in an XML document being parsed. This can't identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that contains only attributes can be parsed as long as it ends with a closing tag (for example, <code>
+        /// <row item_a="A" item_b="B" /></code> is okay, but <code>
+        /// <row item_a="A" item_b="B" /></code> is not).</p>
         pub fn set_row_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.row_tag = input;
             self
@@ -24997,8 +23104,7 @@ impl XmlClassifier {
 pub struct GrokClassifier {
     /// <p>The name of the classifier.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs, and
-    /// so on.</p>
+    /// <p>An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs, and so on.</p>
     pub classification: std::option::Option<std::string::String>,
     /// <p>The time that this classifier was registered.</p>
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -25006,11 +23112,9 @@ pub struct GrokClassifier {
     pub last_updated: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The version of this classifier.</p>
     pub version: i64,
-    /// <p>The grok pattern applied to a data store by this classifier.
-    /// For more information, see built-in patterns in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifiers</a>.</p>
+    /// <p>The grok pattern applied to a data store by this classifier. For more information, see built-in patterns in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifiers</a>.</p>
     pub grok_pattern: std::option::Option<std::string::String>,
-    /// <p>Optional custom grok patterns defined by this classifier.
-    /// For more information, see custom patterns in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifiers</a>.</p>
+    /// <p>Optional custom grok patterns defined by this classifier. For more information, see custom patterns in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifiers</a>.</p>
     pub custom_patterns: std::option::Option<std::string::String>,
 }
 impl GrokClassifier {
@@ -25018,8 +23122,7 @@ impl GrokClassifier {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs, and
-    /// so on.</p>
+    /// <p>An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs, and so on.</p>
     pub fn classification(&self) -> std::option::Option<&str> {
         self.classification.as_deref()
     }
@@ -25035,13 +23138,11 @@ impl GrokClassifier {
     pub fn version(&self) -> i64 {
         self.version
     }
-    /// <p>The grok pattern applied to a data store by this classifier.
-    /// For more information, see built-in patterns in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifiers</a>.</p>
+    /// <p>The grok pattern applied to a data store by this classifier. For more information, see built-in patterns in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifiers</a>.</p>
     pub fn grok_pattern(&self) -> std::option::Option<&str> {
         self.grok_pattern.as_deref()
     }
-    /// <p>Optional custom grok patterns defined by this classifier.
-    /// For more information, see custom patterns in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifiers</a>.</p>
+    /// <p>Optional custom grok patterns defined by this classifier. For more information, see custom patterns in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifiers</a>.</p>
     pub fn custom_patterns(&self) -> std::option::Option<&str> {
         self.custom_patterns.as_deref()
     }
@@ -25084,14 +23185,12 @@ pub mod grok_classifier {
             self.name = input;
             self
         }
-        /// <p>An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs, and
-        /// so on.</p>
+        /// <p>An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs, and so on.</p>
         pub fn classification(mut self, input: impl Into<std::string::String>) -> Self {
             self.classification = Some(input.into());
             self
         }
-        /// <p>An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs, and
-        /// so on.</p>
+        /// <p>An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs, and so on.</p>
         pub fn set_classification(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -25135,26 +23234,22 @@ pub mod grok_classifier {
             self.version = input;
             self
         }
-        /// <p>The grok pattern applied to a data store by this classifier.
-        /// For more information, see built-in patterns in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifiers</a>.</p>
+        /// <p>The grok pattern applied to a data store by this classifier. For more information, see built-in patterns in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifiers</a>.</p>
         pub fn grok_pattern(mut self, input: impl Into<std::string::String>) -> Self {
             self.grok_pattern = Some(input.into());
             self
         }
-        /// <p>The grok pattern applied to a data store by this classifier.
-        /// For more information, see built-in patterns in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifiers</a>.</p>
+        /// <p>The grok pattern applied to a data store by this classifier. For more information, see built-in patterns in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifiers</a>.</p>
         pub fn set_grok_pattern(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.grok_pattern = input;
             self
         }
-        /// <p>Optional custom grok patterns defined by this classifier.
-        /// For more information, see custom patterns in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifiers</a>.</p>
+        /// <p>Optional custom grok patterns defined by this classifier. For more information, see custom patterns in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifiers</a>.</p>
         pub fn custom_patterns(mut self, input: impl Into<std::string::String>) -> Self {
             self.custom_patterns = Some(input.into());
             self
         }
-        /// <p>Optional custom grok patterns defined by this classifier.
-        /// For more information, see custom patterns in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifiers</a>.</p>
+        /// <p>Optional custom grok patterns defined by this classifier. For more information, see custom patterns in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifiers</a>.</p>
         pub fn set_custom_patterns(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -25187,8 +23282,7 @@ impl GrokClassifier {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CatalogImportStatus {
-    /// <p>
-    /// <code>True</code> if the migration has completed, or <code>False</code> otherwise.</p>
+    /// <p> <code>True</code> if the migration has completed, or <code>False</code> otherwise.</p>
     pub import_completed: bool,
     /// <p>The time that the migration was started.</p>
     pub import_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -25196,8 +23290,7 @@ pub struct CatalogImportStatus {
     pub imported_by: std::option::Option<std::string::String>,
 }
 impl CatalogImportStatus {
-    /// <p>
-    /// <code>True</code> if the migration has completed, or <code>False</code> otherwise.</p>
+    /// <p> <code>True</code> if the migration has completed, or <code>False</code> otherwise.</p>
     pub fn import_completed(&self) -> bool {
         self.import_completed
     }
@@ -25230,14 +23323,12 @@ pub mod catalog_import_status {
         pub(crate) imported_by: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// <code>True</code> if the migration has completed, or <code>False</code> otherwise.</p>
+        /// <p> <code>True</code> if the migration has completed, or <code>False</code> otherwise.</p>
         pub fn import_completed(mut self, input: bool) -> Self {
             self.import_completed = Some(input);
             self
         }
-        /// <p>
-        /// <code>True</code> if the migration has completed, or <code>False</code> otherwise.</p>
+        /// <p> <code>True</code> if the migration has completed, or <code>False</code> otherwise.</p>
         pub fn set_import_completed(mut self, input: std::option::Option<bool>) -> Self {
             self.import_completed = input;
             self
@@ -25293,20 +23384,11 @@ pub struct BlueprintRun {
     /// <p>The name of a workflow that is created as a result of a successful blueprint run. If a blueprint run has an error, there will not be a workflow created.</p>
     pub workflow_name: std::option::Option<std::string::String>,
     /// <p>The state of the blueprint run. Possible values are:</p>
-    ///
     /// <ul>
-    /// <li>
-    /// <p>Running — The blueprint run is in progress.</p>
-    /// </li>
-    /// <li>
-    /// <p>Succeeded — The blueprint run completed successfully.</p>
-    /// </li>
-    /// <li>
-    /// <p>Failed — The blueprint run failed and rollback is complete.</p>
-    /// </li>
-    /// <li>
-    /// <p>Rolling Back — The blueprint run failed and rollback is in progress.</p>
-    /// </li>
+    /// <li> <p>Running — The blueprint run is in progress.</p> </li>
+    /// <li> <p>Succeeded — The blueprint run completed successfully.</p> </li>
+    /// <li> <p>Failed — The blueprint run failed and rollback is complete.</p> </li>
+    /// <li> <p>Rolling Back — The blueprint run failed and rollback is in progress.</p> </li>
     /// </ul>
     pub state: std::option::Option<crate::model::BlueprintRunState>,
     /// <p>The date and time that the blueprint run started.</p>
@@ -25336,20 +23418,11 @@ impl BlueprintRun {
         self.workflow_name.as_deref()
     }
     /// <p>The state of the blueprint run. Possible values are:</p>
-    ///
     /// <ul>
-    /// <li>
-    /// <p>Running — The blueprint run is in progress.</p>
-    /// </li>
-    /// <li>
-    /// <p>Succeeded — The blueprint run completed successfully.</p>
-    /// </li>
-    /// <li>
-    /// <p>Failed — The blueprint run failed and rollback is complete.</p>
-    /// </li>
-    /// <li>
-    /// <p>Rolling Back — The blueprint run failed and rollback is in progress.</p>
-    /// </li>
+    /// <li> <p>Running — The blueprint run is in progress.</p> </li>
+    /// <li> <p>Succeeded — The blueprint run completed successfully.</p> </li>
+    /// <li> <p>Failed — The blueprint run failed and rollback is complete.</p> </li>
+    /// <li> <p>Rolling Back — The blueprint run failed and rollback is in progress.</p> </li>
     /// </ul>
     pub fn state(&self) -> std::option::Option<&crate::model::BlueprintRunState> {
         self.state.as_ref()
@@ -25450,40 +23523,22 @@ pub mod blueprint_run {
             self
         }
         /// <p>The state of the blueprint run. Possible values are:</p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>Running — The blueprint run is in progress.</p>
-        /// </li>
-        /// <li>
-        /// <p>Succeeded — The blueprint run completed successfully.</p>
-        /// </li>
-        /// <li>
-        /// <p>Failed — The blueprint run failed and rollback is complete.</p>
-        /// </li>
-        /// <li>
-        /// <p>Rolling Back — The blueprint run failed and rollback is in progress.</p>
-        /// </li>
+        /// <li> <p>Running — The blueprint run is in progress.</p> </li>
+        /// <li> <p>Succeeded — The blueprint run completed successfully.</p> </li>
+        /// <li> <p>Failed — The blueprint run failed and rollback is complete.</p> </li>
+        /// <li> <p>Rolling Back — The blueprint run failed and rollback is in progress.</p> </li>
         /// </ul>
         pub fn state(mut self, input: crate::model::BlueprintRunState) -> Self {
             self.state = Some(input);
             self
         }
         /// <p>The state of the blueprint run. Possible values are:</p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>Running — The blueprint run is in progress.</p>
-        /// </li>
-        /// <li>
-        /// <p>Succeeded — The blueprint run completed successfully.</p>
-        /// </li>
-        /// <li>
-        /// <p>Failed — The blueprint run failed and rollback is complete.</p>
-        /// </li>
-        /// <li>
-        /// <p>Rolling Back — The blueprint run failed and rollback is in progress.</p>
-        /// </li>
+        /// <li> <p>Running — The blueprint run is in progress.</p> </li>
+        /// <li> <p>Succeeded — The blueprint run completed successfully.</p> </li>
+        /// <li> <p>Failed — The blueprint run failed and rollback is complete.</p> </li>
+        /// <li> <p>Rolling Back — The blueprint run failed and rollback is in progress.</p> </li>
         /// </ul>
         pub fn set_state(
             mut self,
@@ -25670,20 +23725,11 @@ pub struct Blueprint {
     /// <p>Specifies a path in Amazon S3 where the blueprint is copied when you call <code>CreateBlueprint/UpdateBlueprint</code> to register the blueprint in Glue.</p>
     pub blueprint_service_location: std::option::Option<std::string::String>,
     /// <p>The status of the blueprint registration.</p>
-    ///
     /// <ul>
-    /// <li>
-    /// <p>Creating — The blueprint registration is in progress.</p>
-    /// </li>
-    /// <li>
-    /// <p>Active — The blueprint has been successfully registered.</p>
-    /// </li>
-    /// <li>
-    /// <p>Updating — An update to the blueprint registration is in progress.</p>
-    /// </li>
-    /// <li>
-    /// <p>Failed — The blueprint registration failed.</p>
-    /// </li>
+    /// <li> <p>Creating — The blueprint registration is in progress.</p> </li>
+    /// <li> <p>Active — The blueprint has been successfully registered.</p> </li>
+    /// <li> <p>Updating — An update to the blueprint registration is in progress.</p> </li>
+    /// <li> <p>Failed — The blueprint registration failed.</p> </li>
     /// </ul>
     pub status: std::option::Option<crate::model::BlueprintStatus>,
     /// <p>An error message.</p>
@@ -25721,20 +23767,11 @@ impl Blueprint {
         self.blueprint_service_location.as_deref()
     }
     /// <p>The status of the blueprint registration.</p>
-    ///
     /// <ul>
-    /// <li>
-    /// <p>Creating — The blueprint registration is in progress.</p>
-    /// </li>
-    /// <li>
-    /// <p>Active — The blueprint has been successfully registered.</p>
-    /// </li>
-    /// <li>
-    /// <p>Updating — An update to the blueprint registration is in progress.</p>
-    /// </li>
-    /// <li>
-    /// <p>Failed — The blueprint registration failed.</p>
-    /// </li>
+    /// <li> <p>Creating — The blueprint registration is in progress.</p> </li>
+    /// <li> <p>Active — The blueprint has been successfully registered.</p> </li>
+    /// <li> <p>Updating — An update to the blueprint registration is in progress.</p> </li>
+    /// <li> <p>Failed — The blueprint registration failed.</p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::BlueprintStatus> {
         self.status.as_ref()
@@ -25873,40 +23910,22 @@ pub mod blueprint {
             self
         }
         /// <p>The status of the blueprint registration.</p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>Creating — The blueprint registration is in progress.</p>
-        /// </li>
-        /// <li>
-        /// <p>Active — The blueprint has been successfully registered.</p>
-        /// </li>
-        /// <li>
-        /// <p>Updating — An update to the blueprint registration is in progress.</p>
-        /// </li>
-        /// <li>
-        /// <p>Failed — The blueprint registration failed.</p>
-        /// </li>
+        /// <li> <p>Creating — The blueprint registration is in progress.</p> </li>
+        /// <li> <p>Active — The blueprint has been successfully registered.</p> </li>
+        /// <li> <p>Updating — An update to the blueprint registration is in progress.</p> </li>
+        /// <li> <p>Failed — The blueprint registration failed.</p> </li>
         /// </ul>
         pub fn status(mut self, input: crate::model::BlueprintStatus) -> Self {
             self.status = Some(input);
             self
         }
         /// <p>The status of the blueprint registration.</p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>Creating — The blueprint registration is in progress.</p>
-        /// </li>
-        /// <li>
-        /// <p>Active — The blueprint has been successfully registered.</p>
-        /// </li>
-        /// <li>
-        /// <p>Updating — An update to the blueprint registration is in progress.</p>
-        /// </li>
-        /// <li>
-        /// <p>Failed — The blueprint registration failed.</p>
-        /// </li>
+        /// <li> <p>Creating — The blueprint registration is in progress.</p> </li>
+        /// <li> <p>Active — The blueprint has been successfully registered.</p> </li>
+        /// <li> <p>Updating — An update to the blueprint registration is in progress.</p> </li>
+        /// <li> <p>Failed — The blueprint registration failed.</p> </li>
         /// </ul>
         pub fn set_status(
             mut self,
@@ -26593,8 +24612,7 @@ impl CreateCsvClassifierRequest {
 pub struct CreateJsonClassifierRequest {
     /// <p>The name of the classifier.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>A <code>JsonPath</code> string defining the JSON data for the classifier to classify.
-    /// Glue supports a subset of JsonPath, as described in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing JsonPath Custom Classifiers</a>.</p>
+    /// <p>A <code>JsonPath</code> string defining the JSON data for the classifier to classify. Glue supports a subset of JsonPath, as described in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing JsonPath Custom Classifiers</a>.</p>
     pub json_path: std::option::Option<std::string::String>,
 }
 impl CreateJsonClassifierRequest {
@@ -26602,8 +24620,7 @@ impl CreateJsonClassifierRequest {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>A <code>JsonPath</code> string defining the JSON data for the classifier to classify.
-    /// Glue supports a subset of JsonPath, as described in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing JsonPath Custom Classifiers</a>.</p>
+    /// <p>A <code>JsonPath</code> string defining the JSON data for the classifier to classify. Glue supports a subset of JsonPath, as described in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing JsonPath Custom Classifiers</a>.</p>
     pub fn json_path(&self) -> std::option::Option<&str> {
         self.json_path.as_deref()
     }
@@ -26636,14 +24653,12 @@ pub mod create_json_classifier_request {
             self.name = input;
             self
         }
-        /// <p>A <code>JsonPath</code> string defining the JSON data for the classifier to classify.
-        /// Glue supports a subset of JsonPath, as described in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing JsonPath Custom Classifiers</a>.</p>
+        /// <p>A <code>JsonPath</code> string defining the JSON data for the classifier to classify. Glue supports a subset of JsonPath, as described in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing JsonPath Custom Classifiers</a>.</p>
         pub fn json_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.json_path = Some(input.into());
             self
         }
-        /// <p>A <code>JsonPath</code> string defining the JSON data for the classifier to classify.
-        /// Glue supports a subset of JsonPath, as described in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing JsonPath Custom Classifiers</a>.</p>
+        /// <p>A <code>JsonPath</code> string defining the JSON data for the classifier to classify. Glue supports a subset of JsonPath, as described in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing JsonPath Custom Classifiers</a>.</p>
         pub fn set_json_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.json_path = input;
             self
@@ -26672,11 +24687,9 @@ pub struct CreateXmlClassifierRequest {
     pub classification: std::option::Option<std::string::String>,
     /// <p>The name of the classifier.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The XML tag designating the element that contains each record in an XML document being
-    /// parsed. This can't identify a self-closing element (closed by <code>/></code>). An empty
-    /// row element that contains only attributes can be parsed as long as it ends with a closing tag
-    /// (for example, <code><row item_a="A" item_b="B"></row></code> is okay, but
-    /// <code><row item_a="A" item_b="B" /></code> is not).</p>
+    /// <p>The XML tag designating the element that contains each record in an XML document being parsed. This can't identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that contains only attributes can be parsed as long as it ends with a closing tag (for example, <code>
+    /// <row item_a="A" item_b="B" /></code> is okay, but <code>
+    /// <row item_a="A" item_b="B" /></code> is not).</p>
     pub row_tag: std::option::Option<std::string::String>,
 }
 impl CreateXmlClassifierRequest {
@@ -26688,11 +24701,9 @@ impl CreateXmlClassifierRequest {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The XML tag designating the element that contains each record in an XML document being
-    /// parsed. This can't identify a self-closing element (closed by <code>/></code>). An empty
-    /// row element that contains only attributes can be parsed as long as it ends with a closing tag
-    /// (for example, <code><row item_a="A" item_b="B"></row></code> is okay, but
-    /// <code><row item_a="A" item_b="B" /></code> is not).</p>
+    /// <p>The XML tag designating the element that contains each record in an XML document being parsed. This can't identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that contains only attributes can be parsed as long as it ends with a closing tag (for example, <code>
+    /// <row item_a="A" item_b="B" /></code> is okay, but <code>
+    /// <row item_a="A" item_b="B" /></code> is not).</p>
     pub fn row_tag(&self) -> std::option::Option<&str> {
         self.row_tag.as_deref()
     }
@@ -26740,20 +24751,16 @@ pub mod create_xml_classifier_request {
             self.name = input;
             self
         }
-        /// <p>The XML tag designating the element that contains each record in an XML document being
-        /// parsed. This can't identify a self-closing element (closed by <code>/></code>). An empty
-        /// row element that contains only attributes can be parsed as long as it ends with a closing tag
-        /// (for example, <code><row item_a="A" item_b="B"></row></code> is okay, but
-        /// <code><row item_a="A" item_b="B" /></code> is not).</p>
+        /// <p>The XML tag designating the element that contains each record in an XML document being parsed. This can't identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that contains only attributes can be parsed as long as it ends with a closing tag (for example, <code>
+        /// <row item_a="A" item_b="B" /></code> is okay, but <code>
+        /// <row item_a="A" item_b="B" /></code> is not).</p>
         pub fn row_tag(mut self, input: impl Into<std::string::String>) -> Self {
             self.row_tag = Some(input.into());
             self
         }
-        /// <p>The XML tag designating the element that contains each record in an XML document being
-        /// parsed. This can't identify a self-closing element (closed by <code>/></code>). An empty
-        /// row element that contains only attributes can be parsed as long as it ends with a closing tag
-        /// (for example, <code><row item_a="A" item_b="B"></row></code> is okay, but
-        /// <code><row item_a="A" item_b="B" /></code> is not).</p>
+        /// <p>The XML tag designating the element that contains each record in an XML document being parsed. This can't identify a self-closing element (closed by <code>/&gt;</code>). An empty row element that contains only attributes can be parsed as long as it ends with a closing tag (for example, <code>
+        /// <row item_a="A" item_b="B" /></code> is okay, but <code>
+        /// <row item_a="A" item_b="B" /></code> is not).</p>
         pub fn set_row_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.row_tag = input;
             self
@@ -26775,13 +24782,11 @@ impl CreateXmlClassifierRequest {
     }
 }
 
-/// <p>Specifies a <code>grok</code> classifier for <code>CreateClassifier</code>
-/// to create.</p>
+/// <p>Specifies a <code>grok</code> classifier for <code>CreateClassifier</code> to create.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGrokClassifierRequest {
-    /// <p>An identifier of the data format that the classifier matches,
-    /// such as Twitter, JSON, Omniture logs, Amazon CloudWatch Logs, and so on.</p>
+    /// <p>An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs, Amazon CloudWatch Logs, and so on.</p>
     pub classification: std::option::Option<std::string::String>,
     /// <p>The name of the new classifier.</p>
     pub name: std::option::Option<std::string::String>,
@@ -26791,8 +24796,7 @@ pub struct CreateGrokClassifierRequest {
     pub custom_patterns: std::option::Option<std::string::String>,
 }
 impl CreateGrokClassifierRequest {
-    /// <p>An identifier of the data format that the classifier matches,
-    /// such as Twitter, JSON, Omniture logs, Amazon CloudWatch Logs, and so on.</p>
+    /// <p>An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs, Amazon CloudWatch Logs, and so on.</p>
     pub fn classification(&self) -> std::option::Option<&str> {
         self.classification.as_deref()
     }
@@ -26831,14 +24835,12 @@ pub mod create_grok_classifier_request {
         pub(crate) custom_patterns: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>An identifier of the data format that the classifier matches,
-        /// such as Twitter, JSON, Omniture logs, Amazon CloudWatch Logs, and so on.</p>
+        /// <p>An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs, Amazon CloudWatch Logs, and so on.</p>
         pub fn classification(mut self, input: impl Into<std::string::String>) -> Self {
             self.classification = Some(input.into());
             self
         }
-        /// <p>An identifier of the data format that the classifier matches,
-        /// such as Twitter, JSON, Omniture logs, Amazon CloudWatch Logs, and so on.</p>
+        /// <p>An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs, Amazon CloudWatch Logs, and so on.</p>
         pub fn set_classification(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -27067,8 +25069,7 @@ impl BatchUpdatePartitionRequestEntry {
     }
 }
 
-/// <p>Records an error that occurred when attempting to stop a
-/// specified job run.</p>
+/// <p>Records an error that occurred when attempting to stop a specified job run.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchStopJobRunError {

@@ -256,25 +256,17 @@ impl ListTagsForResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProposalVotesOutput {
-    /// <p>
-    /// The list of votes.
-    /// </p>
+    /// <p> The list of votes. </p>
     pub proposal_votes: std::option::Option<std::vec::Vec<crate::model::VoteSummary>>,
-    /// <p>
-    /// The pagination token that indicates the next set of results to retrieve.
-    /// </p>
+    /// <p> The pagination token that indicates the next set of results to retrieve. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListProposalVotesOutput {
-    /// <p>
-    /// The list of votes.
-    /// </p>
+    /// <p> The list of votes. </p>
     pub fn proposal_votes(&self) -> std::option::Option<&[crate::model::VoteSummary]> {
         self.proposal_votes.as_deref()
     }
-    /// <p>
-    /// The pagination token that indicates the next set of results to retrieve.
-    /// </p>
+    /// <p> The pagination token that indicates the next set of results to retrieve. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -301,18 +293,14 @@ pub mod list_proposal_votes_output {
         ///
         /// To override the contents of this collection use [`set_proposal_votes`](Self::set_proposal_votes).
         ///
-        /// <p>
-        /// The list of votes.
-        /// </p>
+        /// <p> The list of votes. </p>
         pub fn proposal_votes(mut self, input: crate::model::VoteSummary) -> Self {
             let mut v = self.proposal_votes.unwrap_or_default();
             v.push(input);
             self.proposal_votes = Some(v);
             self
         }
-        /// <p>
-        /// The list of votes.
-        /// </p>
+        /// <p> The list of votes. </p>
         pub fn set_proposal_votes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::VoteSummary>>,
@@ -320,16 +308,12 @@ pub mod list_proposal_votes_output {
             self.proposal_votes = input;
             self
         }
-        /// <p>
-        /// The pagination token that indicates the next set of results to retrieve.
-        /// </p>
+        /// <p> The pagination token that indicates the next set of results to retrieve. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>
-        /// The pagination token that indicates the next set of results to retrieve.
-        /// </p>
+        /// <p> The pagination token that indicates the next set of results to retrieve. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self

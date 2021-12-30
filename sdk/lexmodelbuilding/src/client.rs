@@ -394,19 +394,11 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CreateBotVersion`.
     ///
-    /// <p>Creates a new version of the bot based on the <code>$LATEST</code>
-    /// version. If the <code>$LATEST</code> version of this resource hasn't
-    /// changed since you created the last version, Amazon Lex doesn't create a new
-    /// version. It returns the last created version.</p>
-    /// <note>
-    /// <p>You can update only the <code>$LATEST</code> version of the bot.
-    /// You can't update the numbered versions that you create with the
-    /// <code>CreateBotVersion</code> operation.</p>
+    /// <p>Creates a new version of the bot based on the <code>$LATEST</code> version. If the <code>$LATEST</code> version of this resource hasn't changed since you created the last version, Amazon Lex doesn't create a new version. It returns the last created version.</p> <note>
+    /// <p>You can update only the <code>$LATEST</code> version of the bot. You can't update the numbered versions that you create with the <code>CreateBotVersion</code> operation.</p>
     /// </note>
-    /// <p> When you create the first version of a bot, Amazon Lex sets the version
-    /// to 1. Subsequent versions increment by 1. For more information, see <a>versioning-intro</a>. </p>
-    /// <p> This operation requires permission for the
-    /// <code>lex:CreateBotVersion</code> action. </p>
+    /// <p> When you create the first version of a bot, Amazon Lex sets the version to 1. Subsequent versions increment by 1. For more information, see <code>versioning-intro</code>. </p>
+    /// <p> This operation requires permission for the <code>lex:CreateBotVersion</code> action. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateBotVersion<
         C = aws_smithy_client::erase::DynConnector,
@@ -463,34 +455,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the bot that you want to create a new version of. The
-        /// name is case sensitive. </p>
+        /// <p>The name of the bot that you want to create a new version of. The name is case sensitive. </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the bot that you want to create a new version of. The
-        /// name is case sensitive. </p>
+        /// <p>The name of the bot that you want to create a new version of. The name is case sensitive. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Identifies a specific revision of the <code>$LATEST</code> version
-        /// of the bot. If you specify a checksum and the <code>$LATEST</code> version
-        /// of the bot has a different checksum, a
-        /// <code>PreconditionFailedException</code> exception is returned and Amazon Lex
-        /// doesn't publish a new version. If you don't specify a checksum, Amazon Lex
-        /// publishes the <code>$LATEST</code> version.</p>
+        /// <p>Identifies a specific revision of the <code>$LATEST</code> version of the bot. If you specify a checksum and the <code>$LATEST</code> version of the bot has a different checksum, a <code>PreconditionFailedException</code> exception is returned and Amazon Lex doesn't publish a new version. If you don't specify a checksum, Amazon Lex publishes the <code>$LATEST</code> version.</p>
         pub fn checksum(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.checksum(input.into());
             self
         }
-        /// <p>Identifies a specific revision of the <code>$LATEST</code> version
-        /// of the bot. If you specify a checksum and the <code>$LATEST</code> version
-        /// of the bot has a different checksum, a
-        /// <code>PreconditionFailedException</code> exception is returned and Amazon Lex
-        /// doesn't publish a new version. If you don't specify a checksum, Amazon Lex
-        /// publishes the <code>$LATEST</code> version.</p>
+        /// <p>Identifies a specific revision of the <code>$LATEST</code> version of the bot. If you specify a checksum and the <code>$LATEST</code> version of the bot has a different checksum, a <code>PreconditionFailedException</code> exception is returned and Amazon Lex doesn't publish a new version. If you don't specify a checksum, Amazon Lex publishes the <code>$LATEST</code> version.</p>
         pub fn set_checksum(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_checksum(input);
             self
@@ -498,20 +478,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateIntentVersion`.
     ///
-    /// <p>Creates a new version of an intent based on the
-    /// <code>$LATEST</code> version of the intent. If the <code>$LATEST</code>
-    /// version of this intent hasn't changed since you last updated it, Amazon Lex
-    /// doesn't create a new version. It returns the last version you
-    /// created.</p>
-    /// <note>
-    /// <p>You can update only the <code>$LATEST</code> version of the
-    /// intent. You can't update the numbered versions that you create with the
-    /// <code>CreateIntentVersion</code> operation.</p>
+    /// <p>Creates a new version of an intent based on the <code>$LATEST</code> version of the intent. If the <code>$LATEST</code> version of this intent hasn't changed since you last updated it, Amazon Lex doesn't create a new version. It returns the last version you created.</p> <note>
+    /// <p>You can update only the <code>$LATEST</code> version of the intent. You can't update the numbered versions that you create with the <code>CreateIntentVersion</code> operation.</p>
     /// </note>
-    /// <p> When you create a version of an intent, Amazon Lex sets the version to
-    /// 1. Subsequent versions increment by 1. For more information, see <a>versioning-intro</a>. </p>
-    /// <p>This operation requires permissions to perform the
-    /// <code>lex:CreateIntentVersion</code> action. </p>
+    /// <p> When you create a version of an intent, Amazon Lex sets the version to 1. Subsequent versions increment by 1. For more information, see <code>versioning-intro</code>. </p>
+    /// <p>This operation requires permissions to perform the <code>lex:CreateIntentVersion</code> action. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateIntentVersion<
         C = aws_smithy_client::erase::DynConnector,
@@ -568,34 +539,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the intent that you want to create a new version of.
-        /// The name is case sensitive. </p>
+        /// <p>The name of the intent that you want to create a new version of. The name is case sensitive. </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the intent that you want to create a new version of.
-        /// The name is case sensitive. </p>
+        /// <p>The name of the intent that you want to create a new version of. The name is case sensitive. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Checksum of the <code>$LATEST</code> version of the intent that
-        /// should be used to create the new version. If you specify a checksum and
-        /// the <code>$LATEST</code> version of the intent has a different checksum,
-        /// Amazon Lex returns a <code>PreconditionFailedException</code> exception and
-        /// doesn't publish a new version. If you don't specify a checksum, Amazon Lex
-        /// publishes the <code>$LATEST</code> version.</p>
+        /// <p>Checksum of the <code>$LATEST</code> version of the intent that should be used to create the new version. If you specify a checksum and the <code>$LATEST</code> version of the intent has a different checksum, Amazon Lex returns a <code>PreconditionFailedException</code> exception and doesn't publish a new version. If you don't specify a checksum, Amazon Lex publishes the <code>$LATEST</code> version.</p>
         pub fn checksum(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.checksum(input.into());
             self
         }
-        /// <p>Checksum of the <code>$LATEST</code> version of the intent that
-        /// should be used to create the new version. If you specify a checksum and
-        /// the <code>$LATEST</code> version of the intent has a different checksum,
-        /// Amazon Lex returns a <code>PreconditionFailedException</code> exception and
-        /// doesn't publish a new version. If you don't specify a checksum, Amazon Lex
-        /// publishes the <code>$LATEST</code> version.</p>
+        /// <p>Checksum of the <code>$LATEST</code> version of the intent that should be used to create the new version. If you specify a checksum and the <code>$LATEST</code> version of the intent has a different checksum, Amazon Lex returns a <code>PreconditionFailedException</code> exception and doesn't publish a new version. If you don't specify a checksum, Amazon Lex publishes the <code>$LATEST</code> version.</p>
         pub fn set_checksum(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_checksum(input);
             self
@@ -603,22 +562,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateSlotTypeVersion`.
     ///
-    /// <p>Creates a new version of a slot type based on the
-    /// <code>$LATEST</code> version of the specified slot type. If the
-    /// <code>$LATEST</code> version of this resource has not changed since the
-    /// last version that you created, Amazon Lex doesn't create a new version. It
-    /// returns the last version that you created. </p>
-    /// <note>
-    /// <p>You can update only the <code>$LATEST</code> version of a slot
-    /// type. You can't update the numbered versions that you create with the
-    /// <code>CreateSlotTypeVersion</code> operation.</p>
+    /// <p>Creates a new version of a slot type based on the <code>$LATEST</code> version of the specified slot type. If the <code>$LATEST</code> version of this resource has not changed since the last version that you created, Amazon Lex doesn't create a new version. It returns the last version that you created. </p> <note>
+    /// <p>You can update only the <code>$LATEST</code> version of a slot type. You can't update the numbered versions that you create with the <code>CreateSlotTypeVersion</code> operation.</p>
     /// </note>
-    ///
-    /// <p>When you create a version of a slot type, Amazon Lex sets the version to
-    /// 1. Subsequent versions increment by 1. For more information, see <a>versioning-intro</a>. </p>
-    ///
-    /// <p>This operation requires permissions for the
-    /// <code>lex:CreateSlotTypeVersion</code> action.</p>
+    /// <p>When you create a version of a slot type, Amazon Lex sets the version to 1. Subsequent versions increment by 1. For more information, see <code>versioning-intro</code>. </p>
+    /// <p>This operation requires permissions for the <code>lex:CreateSlotTypeVersion</code> action.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSlotTypeVersion<
         C = aws_smithy_client::erase::DynConnector,
@@ -675,34 +623,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the slot type that you want to create a new version
-        /// for. The name is case sensitive. </p>
+        /// <p>The name of the slot type that you want to create a new version for. The name is case sensitive. </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the slot type that you want to create a new version
-        /// for. The name is case sensitive. </p>
+        /// <p>The name of the slot type that you want to create a new version for. The name is case sensitive. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Checksum for the <code>$LATEST</code> version of the slot type that
-        /// you want to publish. If you specify a checksum and the
-        /// <code>$LATEST</code> version of the slot type has a different checksum,
-        /// Amazon Lex returns a <code>PreconditionFailedException</code> exception and
-        /// doesn't publish the new version. If you don't specify a checksum, Amazon Lex
-        /// publishes the <code>$LATEST</code> version.</p>
+        /// <p>Checksum for the <code>$LATEST</code> version of the slot type that you want to publish. If you specify a checksum and the <code>$LATEST</code> version of the slot type has a different checksum, Amazon Lex returns a <code>PreconditionFailedException</code> exception and doesn't publish the new version. If you don't specify a checksum, Amazon Lex publishes the <code>$LATEST</code> version.</p>
         pub fn checksum(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.checksum(input.into());
             self
         }
-        /// <p>Checksum for the <code>$LATEST</code> version of the slot type that
-        /// you want to publish. If you specify a checksum and the
-        /// <code>$LATEST</code> version of the slot type has a different checksum,
-        /// Amazon Lex returns a <code>PreconditionFailedException</code> exception and
-        /// doesn't publish the new version. If you don't specify a checksum, Amazon Lex
-        /// publishes the <code>$LATEST</code> version.</p>
+        /// <p>Checksum for the <code>$LATEST</code> version of the slot type that you want to publish. If you specify a checksum and the <code>$LATEST</code> version of the slot type has a different checksum, Amazon Lex returns a <code>PreconditionFailedException</code> exception and doesn't publish the new version. If you don't specify a checksum, Amazon Lex publishes the <code>$LATEST</code> version.</p>
         pub fn set_checksum(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_checksum(input);
             self
@@ -710,23 +646,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteBot`.
     ///
-    /// <p>Deletes all versions of the bot, including the <code>$LATEST</code>
-    /// version. To delete a specific version of the bot, use the <a>DeleteBotVersion</a> operation. The <code>DeleteBot</code>
-    /// operation doesn't immediately remove the bot schema. Instead, it is marked
-    /// for deletion and removed later.</p>
-    /// <p>Amazon Lex stores utterances indefinitely for improving the ability of
-    /// your bot to respond to user inputs. These utterances are not removed when
-    /// the bot is deleted. To remove the utterances, use the <a>DeleteUtterances</a> operation.</p>
-    /// <p>If a bot has an alias, you can't delete it. Instead, the
-    /// <code>DeleteBot</code> operation returns a
-    /// <code>ResourceInUseException</code> exception that includes a reference
-    /// to the alias that refers to the bot. To remove the reference to the bot,
-    /// delete the alias. If you get the same exception again, delete the
-    /// referring alias until the <code>DeleteBot</code> operation is
-    /// successful.</p>
-    ///
-    /// <p>This operation requires permissions for the
-    /// <code>lex:DeleteBot</code> action.</p>
+    /// <p>Deletes all versions of the bot, including the <code>$LATEST</code> version. To delete a specific version of the bot, use the <code>DeleteBotVersion</code> operation. The <code>DeleteBot</code> operation doesn't immediately remove the bot schema. Instead, it is marked for deletion and removed later.</p>
+    /// <p>Amazon Lex stores utterances indefinitely for improving the ability of your bot to respond to user inputs. These utterances are not removed when the bot is deleted. To remove the utterances, use the <code>DeleteUtterances</code> operation.</p>
+    /// <p>If a bot has an alias, you can't delete it. Instead, the <code>DeleteBot</code> operation returns a <code>ResourceInUseException</code> exception that includes a reference to the alias that refers to the bot. To remove the reference to the bot, delete the alias. If you get the same exception again, delete the referring alias until the <code>DeleteBot</code> operation is successful.</p>
+    /// <p>This operation requires permissions for the <code>lex:DeleteBot</code> action.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBot<
         C = aws_smithy_client::erase::DynConnector,
@@ -797,14 +720,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteBotAlias`.
     ///
     /// <p>Deletes an alias for the specified bot. </p>
-    /// <p>You can't delete an alias that is used in the association between a
-    /// bot and a messaging channel. If an alias is used in a channel association,
-    /// the <code>DeleteBot</code> operation returns a
-    /// <code>ResourceInUseException</code> exception that includes a reference
-    /// to the channel association that refers to the bot. You can remove the
-    /// reference to the alias by deleting the channel association. If you get the
-    /// same exception again, delete the referring association until the
-    /// <code>DeleteBotAlias</code> operation is successful.</p>
+    /// <p>You can't delete an alias that is used in the association between a bot and a messaging channel. If an alias is used in a channel association, the <code>DeleteBot</code> operation returns a <code>ResourceInUseException</code> exception that includes a reference to the channel association that refers to the bot. You can remove the reference to the alias by deleting the channel association. If you get the same exception again, delete the referring association until the <code>DeleteBotAlias</code> operation is successful.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBotAlias<
         C = aws_smithy_client::erase::DynConnector,
@@ -861,14 +777,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the alias to delete. The name is case sensitive.
-        /// </p>
+        /// <p>The name of the alias to delete. The name is case sensitive. </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the alias to delete. The name is case sensitive.
-        /// </p>
+        /// <p>The name of the alias to delete. The name is case sensitive. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -886,10 +800,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteBotChannelAssociation`.
     ///
-    /// <p>Deletes the association between an Amazon Lex bot and a messaging
-    /// platform.</p>
-    /// <p>This operation requires permission for the
-    /// <code>lex:DeleteBotChannelAssociation</code> action.</p>
+    /// <p>Deletes the association between an Amazon Lex bot and a messaging platform.</p>
+    /// <p>This operation requires permission for the <code>lex:DeleteBotChannelAssociation</code> action.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBotChannelAssociation<
         C = aws_smithy_client::erase::DynConnector,
@@ -966,14 +878,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bot_name(input);
             self
         }
-        /// <p>An alias that points to the specific version of the Amazon Lex bot to
-        /// which this association is being made.</p>
+        /// <p>An alias that points to the specific version of the Amazon Lex bot to which this association is being made.</p>
         pub fn bot_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.bot_alias(input.into());
             self
         }
-        /// <p>An alias that points to the specific version of the Amazon Lex bot to
-        /// which this association is being made.</p>
+        /// <p>An alias that points to the specific version of the Amazon Lex bot to which this association is being made.</p>
         pub fn set_bot_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_bot_alias(input);
             self
@@ -981,10 +891,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteBotVersion`.
     ///
-    /// <p>Deletes a specific version of a bot. To delete all versions of a
-    /// bot, use the <a>DeleteBot</a> operation. </p>
-    /// <p>This operation requires permissions for the
-    /// <code>lex:DeleteBotVersion</code> action.</p>
+    /// <p>Deletes a specific version of a bot. To delete all versions of a bot, use the <code>DeleteBot</code> operation. </p>
+    /// <p>This operation requires permissions for the <code>lex:DeleteBotVersion</code> action.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteBotVersion<
         C = aws_smithy_client::erase::DynConnector,
@@ -1051,18 +959,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The version of the bot to delete. You cannot delete the
-        /// <code>$LATEST</code> version of the bot. To delete the
-        /// <code>$LATEST</code> version, use the <a>DeleteBot</a>
-        /// operation.</p>
+        /// <p>The version of the bot to delete. You cannot delete the <code>$LATEST</code> version of the bot. To delete the <code>$LATEST</code> version, use the <code>DeleteBot</code> operation.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.version(input.into());
             self
         }
-        /// <p>The version of the bot to delete. You cannot delete the
-        /// <code>$LATEST</code> version of the bot. To delete the
-        /// <code>$LATEST</code> version, use the <a>DeleteBot</a>
-        /// operation.</p>
+        /// <p>The version of the bot to delete. You cannot delete the <code>$LATEST</code> version of the bot. To delete the <code>$LATEST</code> version, use the <code>DeleteBot</code> operation.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_version(input);
             self
@@ -1070,24 +972,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteIntent`.
     ///
-    /// <p>Deletes all versions of the intent, including the
-    /// <code>$LATEST</code> version. To delete a specific version of the
-    /// intent, use the <a>DeleteIntentVersion</a> operation.</p>
-    /// <p> You can delete a version of an intent only if it is not
-    /// referenced. To delete an intent that is referred to in one or more bots
-    /// (see <a>how-it-works</a>), you must remove those references
-    /// first. </p>
-    /// <note>
-    /// <p> If you get the <code>ResourceInUseException</code> exception, it
-    /// provides an example reference that shows where the intent is referenced.
-    /// To remove the reference to the intent, either update the bot or delete
-    /// it. If you get the same exception when you attempt to delete the intent
-    /// again, repeat until the intent has no references and the call to
-    /// <code>DeleteIntent</code> is successful. </p>
+    /// <p>Deletes all versions of the intent, including the <code>$LATEST</code> version. To delete a specific version of the intent, use the <code>DeleteIntentVersion</code> operation.</p>
+    /// <p> You can delete a version of an intent only if it is not referenced. To delete an intent that is referred to in one or more bots (see <code>how-it-works</code>), you must remove those references first. </p> <note>
+    /// <p> If you get the <code>ResourceInUseException</code> exception, it provides an example reference that shows where the intent is referenced. To remove the reference to the intent, either update the bot or delete it. If you get the same exception when you attempt to delete the intent again, repeat until the intent has no references and the call to <code>DeleteIntent</code> is successful. </p>
     /// </note>
-    ///
-    /// <p> This operation requires permission for the
-    /// <code>lex:DeleteIntent</code> action. </p>
+    /// <p> This operation requires permission for the <code>lex:DeleteIntent</code> action. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteIntent<
         C = aws_smithy_client::erase::DynConnector,
@@ -1157,10 +1046,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteIntentVersion`.
     ///
-    /// <p>Deletes a specific version of an intent. To delete all versions of
-    /// a intent, use the <a>DeleteIntent</a> operation. </p>
-    /// <p>This operation requires permissions for the
-    /// <code>lex:DeleteIntentVersion</code> action.</p>
+    /// <p>Deletes a specific version of an intent. To delete all versions of a intent, use the <code>DeleteIntent</code> operation. </p>
+    /// <p>This operation requires permissions for the <code>lex:DeleteIntentVersion</code> action.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteIntentVersion<
         C = aws_smithy_client::erase::DynConnector,
@@ -1227,18 +1114,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The version of the intent to delete. You cannot delete the
-        /// <code>$LATEST</code> version of the intent. To delete the
-        /// <code>$LATEST</code> version, use the <a>DeleteIntent</a>
-        /// operation.</p>
+        /// <p>The version of the intent to delete. You cannot delete the <code>$LATEST</code> version of the intent. To delete the <code>$LATEST</code> version, use the <code>DeleteIntent</code> operation.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.version(input.into());
             self
         }
-        /// <p>The version of the intent to delete. You cannot delete the
-        /// <code>$LATEST</code> version of the intent. To delete the
-        /// <code>$LATEST</code> version, use the <a>DeleteIntent</a>
-        /// operation.</p>
+        /// <p>The version of the intent to delete. You cannot delete the <code>$LATEST</code> version of the intent. To delete the <code>$LATEST</code> version, use the <code>DeleteIntent</code> operation.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_version(input);
             self
@@ -1246,23 +1127,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteSlotType`.
     ///
-    /// <p>Deletes all versions of the slot type, including the
-    /// <code>$LATEST</code> version. To delete a specific version of the slot
-    /// type, use the <a>DeleteSlotTypeVersion</a> operation.</p>
-    /// <p> You can delete a version of a slot type only if it is not
-    /// referenced. To delete a slot type that is referred to in one or more
-    /// intents, you must remove those references first. </p>
-    /// <note>
-    /// <p> If you get the <code>ResourceInUseException</code> exception,
-    /// the exception provides an example reference that shows the intent where
-    /// the slot type is referenced. To remove the reference to the slot type,
-    /// either update the intent or delete it. If you get the same exception
-    /// when you attempt to delete the slot type again, repeat until the slot
-    /// type has no references and the <code>DeleteSlotType</code> call is
-    /// successful. </p>
+    /// <p>Deletes all versions of the slot type, including the <code>$LATEST</code> version. To delete a specific version of the slot type, use the <code>DeleteSlotTypeVersion</code> operation.</p>
+    /// <p> You can delete a version of a slot type only if it is not referenced. To delete a slot type that is referred to in one or more intents, you must remove those references first. </p> <note>
+    /// <p> If you get the <code>ResourceInUseException</code> exception, the exception provides an example reference that shows the intent where the slot type is referenced. To remove the reference to the slot type, either update the intent or delete it. If you get the same exception when you attempt to delete the slot type again, repeat until the slot type has no references and the <code>DeleteSlotType</code> call is successful. </p>
     /// </note>
-    /// <p>This operation requires permission for the
-    /// <code>lex:DeleteSlotType</code> action.</p>
+    /// <p>This operation requires permission for the <code>lex:DeleteSlotType</code> action.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSlotType<
         C = aws_smithy_client::erase::DynConnector,
@@ -1332,10 +1201,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteSlotTypeVersion`.
     ///
-    /// <p>Deletes a specific version of a slot type. To delete all versions
-    /// of a slot type, use the <a>DeleteSlotType</a> operation. </p>
-    /// <p>This operation requires permissions for the
-    /// <code>lex:DeleteSlotTypeVersion</code> action.</p>
+    /// <p>Deletes a specific version of a slot type. To delete all versions of a slot type, use the <code>DeleteSlotType</code> operation. </p>
+    /// <p>This operation requires permissions for the <code>lex:DeleteSlotTypeVersion</code> action.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSlotTypeVersion<
         C = aws_smithy_client::erase::DynConnector,
@@ -1402,18 +1269,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The version of the slot type to delete. You cannot delete the
-        /// <code>$LATEST</code> version of the slot type. To delete the
-        /// <code>$LATEST</code> version, use the <a>DeleteSlotType</a>
-        /// operation.</p>
+        /// <p>The version of the slot type to delete. You cannot delete the <code>$LATEST</code> version of the slot type. To delete the <code>$LATEST</code> version, use the <code>DeleteSlotType</code> operation.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.version(input.into());
             self
         }
-        /// <p>The version of the slot type to delete. You cannot delete the
-        /// <code>$LATEST</code> version of the slot type. To delete the
-        /// <code>$LATEST</code> version, use the <a>DeleteSlotType</a>
-        /// operation.</p>
+        /// <p>The version of the slot type to delete. You cannot delete the <code>$LATEST</code> version of the slot type. To delete the <code>$LATEST</code> version, use the <code>DeleteSlotType</code> operation.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_version(input);
             self
@@ -1422,17 +1283,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteUtterances`.
     ///
     /// <p>Deletes stored utterances.</p>
-    /// <p>Amazon Lex stores the utterances that users send to your bot. Utterances
-    /// are stored for 15 days for use with the <a>GetUtterancesView</a> operation, and then stored indefinitely for use in improving the
-    /// ability of your bot to respond to user input.</p>
-    /// <p>Use the <code>DeleteUtterances</code> operation to manually delete
-    /// stored utterances for a specific user. When you use the
-    /// <code>DeleteUtterances</code> operation, utterances stored for improving
-    /// your bot's ability to respond to user input are deleted immediately.
-    /// Utterances stored for use with the <code>GetUtterancesView</code>
-    /// operation are deleted after 15 days.</p>
-    /// <p>This operation requires permissions for the
-    /// <code>lex:DeleteUtterances</code> action.</p>
+    /// <p>Amazon Lex stores the utterances that users send to your bot. Utterances are stored for 15 days for use with the <code>GetUtterancesView</code> operation, and then stored indefinitely for use in improving the ability of your bot to respond to user input.</p>
+    /// <p>Use the <code>DeleteUtterances</code> operation to manually delete stored utterances for a specific user. When you use the <code>DeleteUtterances</code> operation, utterances stored for improving your bot's ability to respond to user input are deleted immediately. Utterances stored for use with the <code>GetUtterancesView</code> operation are deleted after 15 days.</p>
+    /// <p>This operation requires permissions for the <code>lex:DeleteUtterances</code> action.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteUtterances<
         C = aws_smithy_client::erase::DynConnector,
@@ -1499,16 +1352,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bot_name(input);
             self
         }
-        /// <p> The unique identifier for the user that made the utterances. This
-        /// is the user ID that was sent in the <a href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a> or <a href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> operation request that contained the
-        /// utterance.</p>
+        /// <p> The unique identifier for the user that made the utterances. This is the user ID that was sent in the <a href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a> or <a href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> operation request that contained the utterance.</p>
         pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.user_id(input.into());
             self
         }
-        /// <p> The unique identifier for the user that made the utterances. This
-        /// is the user ID that was sent in the <a href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a> or <a href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> operation request that contained the
-        /// utterance.</p>
+        /// <p> The unique identifier for the user that made the utterances. This is the user ID that was sent in the <a href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a> or <a href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> operation request that contained the utterance.</p>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_user_id(input);
             self
@@ -1516,10 +1365,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetBot`.
     ///
-    /// <p>Returns metadata information for a specific bot. You must provide
-    /// the bot name and the bot version or alias. </p>
-    /// <p> This operation requires permissions for the
-    /// <code>lex:GetBot</code> action. </p>
+    /// <p>Returns metadata information for a specific bot. You must provide the bot name and the bot version or alias. </p>
+    /// <p> This operation requires permissions for the <code>lex:GetBot</code> action. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBot<
         C = aws_smithy_client::erase::DynConnector,
@@ -1602,10 +1449,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetBotAlias`.
     ///
-    /// <p>Returns information about an Amazon Lex bot alias. For more information
-    /// about aliases, see <a>versioning-aliases</a>.</p>
-    /// <p>This operation requires permissions for the
-    /// <code>lex:GetBotAlias</code> action.</p>
+    /// <p>Returns information about an Amazon Lex bot alias. For more information about aliases, see <code>versioning-aliases</code>.</p>
+    /// <p>This operation requires permissions for the <code>lex:GetBotAlias</code> action.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBotAlias<
         C = aws_smithy_client::erase::DynConnector,
@@ -1686,8 +1531,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetBotAliases`.
     ///
     /// <p>Returns a list of aliases for a specified Amazon Lex bot.</p>
-    /// <p>This operation requires permissions for the
-    /// <code>lex:GetBotAliases</code> action.</p>
+    /// <p>This operation requires permissions for the <code>lex:GetBotAliases</code> action.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBotAliases<
         C = aws_smithy_client::erase::DynConnector,
@@ -1754,44 +1598,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bot_name(input);
             self
         }
-        /// <p>A pagination token for fetching the next page of aliases. If the
-        /// response to this call is truncated, Amazon Lex returns a pagination token in
-        /// the response. To fetch the next page of aliases, specify the pagination
-        /// token in the next request. </p>
+        /// <p>A pagination token for fetching the next page of aliases. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of aliases, specify the pagination token in the next request. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A pagination token for fetching the next page of aliases. If the
-        /// response to this call is truncated, Amazon Lex returns a pagination token in
-        /// the response. To fetch the next page of aliases, specify the pagination
-        /// token in the next request. </p>
+        /// <p>A pagination token for fetching the next page of aliases. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of aliases, specify the pagination token in the next request. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of aliases to return in the response. The
-        /// default is 50. . </p>
+        /// <p>The maximum number of aliases to return in the response. The default is 50. . </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of aliases to return in the response. The
-        /// default is 50. . </p>
+        /// <p>The maximum number of aliases to return in the response. The default is 50. . </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>Substring to match in bot alias names. An alias will be returned if
-        /// any part of its name matches the substring. For example, "xyz" matches
-        /// both "xyzabc" and "abcxyz."</p>
+        /// <p>Substring to match in bot alias names. An alias will be returned if any part of its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."</p>
         pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name_contains(input.into());
             self
         }
-        /// <p>Substring to match in bot alias names. An alias will be returned if
-        /// any part of its name matches the substring. For example, "xyz" matches
-        /// both "xyzabc" and "abcxyz."</p>
+        /// <p>Substring to match in bot alias names. An alias will be returned if any part of its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."</p>
         pub fn set_name_contains(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1802,10 +1634,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetBotChannelAssociation`.
     ///
-    /// <p>Returns information about the association between an Amazon Lex bot and
-    /// a messaging platform.</p>
-    /// <p>This operation requires permissions for the
-    /// <code>lex:GetBotChannelAssociation</code> action.</p>
+    /// <p>Returns information about the association between an Amazon Lex bot and a messaging platform.</p>
+    /// <p>This operation requires permissions for the <code>lex:GetBotChannelAssociation</code> action.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBotChannelAssociation<
         C = aws_smithy_client::erase::DynConnector,
@@ -1862,14 +1692,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the association between the bot and the channel. The
-        /// name is case sensitive. </p>
+        /// <p>The name of the association between the bot and the channel. The name is case sensitive. </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the association between the bot and the channel. The
-        /// name is case sensitive. </p>
+        /// <p>The name of the association between the bot and the channel. The name is case sensitive. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -1884,14 +1712,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bot_name(input);
             self
         }
-        /// <p>An alias pointing to the specific version of the Amazon Lex bot to which
-        /// this association is being made.</p>
+        /// <p>An alias pointing to the specific version of the Amazon Lex bot to which this association is being made.</p>
         pub fn bot_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.bot_alias(input.into());
             self
         }
-        /// <p>An alias pointing to the specific version of the Amazon Lex bot to which
-        /// this association is being made.</p>
+        /// <p>An alias pointing to the specific version of the Amazon Lex bot to which this association is being made.</p>
         pub fn set_bot_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_bot_alias(input);
             self
@@ -1899,11 +1725,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetBotChannelAssociations`.
     ///
-    /// <p> Returns a list of all of the channels associated with the
-    /// specified bot. </p>
-    /// <p>The <code>GetBotChannelAssociations</code> operation requires
-    /// permissions for the <code>lex:GetBotChannelAssociations</code>
-    /// action.</p>
+    /// <p> Returns a list of all of the channels associated with the specified bot. </p>
+    /// <p>The <code>GetBotChannelAssociations</code> operation requires permissions for the <code>lex:GetBotChannelAssociations</code> action.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBotChannelAssociations<
         C = aws_smithy_client::erase::DynConnector,
@@ -1970,60 +1793,42 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bot_name(input);
             self
         }
-        /// <p>An alias pointing to the specific version of the Amazon Lex bot to which
-        /// this association is being made.</p>
+        /// <p>An alias pointing to the specific version of the Amazon Lex bot to which this association is being made.</p>
         pub fn bot_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.bot_alias(input.into());
             self
         }
-        /// <p>An alias pointing to the specific version of the Amazon Lex bot to which
-        /// this association is being made.</p>
+        /// <p>An alias pointing to the specific version of the Amazon Lex bot to which this association is being made.</p>
         pub fn set_bot_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_bot_alias(input);
             self
         }
-        /// <p>A pagination token for fetching the next page of associations. If
-        /// the response to this call is truncated, Amazon Lex returns a pagination token
-        /// in the response. To fetch the next page of associations, specify the
-        /// pagination token in the next request. </p>
+        /// <p>A pagination token for fetching the next page of associations. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of associations, specify the pagination token in the next request. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A pagination token for fetching the next page of associations. If
-        /// the response to this call is truncated, Amazon Lex returns a pagination token
-        /// in the response. To fetch the next page of associations, specify the
-        /// pagination token in the next request. </p>
+        /// <p>A pagination token for fetching the next page of associations. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of associations, specify the pagination token in the next request. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of associations to return in the response. The
-        /// default is 50. </p>
+        /// <p>The maximum number of associations to return in the response. The default is 50. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of associations to return in the response. The
-        /// default is 50. </p>
+        /// <p>The maximum number of associations to return in the response. The default is 50. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>Substring to match in channel association names. An association
-        /// will be returned if any part of its name matches the substring. For
-        /// example, "xyz" matches both "xyzabc" and "abcxyz." To return all bot
-        /// channel associations, use a hyphen ("-") as the <code>nameContains</code>
-        /// parameter.</p>
+        /// <p>Substring to match in channel association names. An association will be returned if any part of its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz." To return all bot channel associations, use a hyphen ("-") as the <code>nameContains</code> parameter.</p>
         pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name_contains(input.into());
             self
         }
-        /// <p>Substring to match in channel association names. An association
-        /// will be returned if any part of its name matches the substring. For
-        /// example, "xyz" matches both "xyzabc" and "abcxyz." To return all bot
-        /// channel associations, use a hyphen ("-") as the <code>nameContains</code>
-        /// parameter.</p>
+        /// <p>Substring to match in channel association names. An association will be returned if any part of its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz." To return all bot channel associations, use a hyphen ("-") as the <code>nameContains</code> parameter.</p>
         pub fn set_name_contains(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2036,19 +1841,10 @@ pub mod fluent_builders {
     ///
     /// <p>Returns bot information as follows: </p>
     /// <ul>
-    /// <li>
-    /// <p>If you provide the <code>nameContains</code> field, the
-    /// response includes information for the <code>$LATEST</code> version of
-    /// all bots whose name contains the specified string.</p>
-    /// </li>
-    /// <li>
-    /// <p>If you don't specify the <code>nameContains</code> field, the
-    /// operation returns information about the <code>$LATEST</code> version
-    /// of all of your bots.</p>
-    /// </li>
+    /// <li> <p>If you provide the <code>nameContains</code> field, the response includes information for the <code>$LATEST</code> version of all bots whose name contains the specified string.</p> </li>
+    /// <li> <p>If you don't specify the <code>nameContains</code> field, the operation returns information about the <code>$LATEST</code> version of all of your bots.</p> </li>
     /// </ul>
-    /// <p>This operation requires permission for the <code>lex:GetBots</code>
-    /// action.</p>
+    /// <p>This operation requires permission for the <code>lex:GetBots</code> action.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBots<
         C = aws_smithy_client::erase::DynConnector,
@@ -2105,44 +1901,32 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A pagination token that fetches the next page of bots. If the
-        /// response to this call is truncated, Amazon Lex returns a pagination token in
-        /// the response. To fetch the next page of bots, specify the pagination token
-        /// in the next request. </p>
+        /// <p>A pagination token that fetches the next page of bots. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of bots, specify the pagination token in the next request. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A pagination token that fetches the next page of bots. If the
-        /// response to this call is truncated, Amazon Lex returns a pagination token in
-        /// the response. To fetch the next page of bots, specify the pagination token
-        /// in the next request. </p>
+        /// <p>A pagination token that fetches the next page of bots. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of bots, specify the pagination token in the next request. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of bots to return in the response that the
-        /// request will return. The default is 10.</p>
+        /// <p>The maximum number of bots to return in the response that the request will return. The default is 10.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of bots to return in the response that the
-        /// request will return. The default is 10.</p>
+        /// <p>The maximum number of bots to return in the response that the request will return. The default is 10.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>Substring to match in bot names. A bot will be returned if any part
-        /// of its name matches the substring. For example, "xyz" matches both
-        /// "xyzabc" and "abcxyz."</p>
+        /// <p>Substring to match in bot names. A bot will be returned if any part of its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."</p>
         pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name_contains(input.into());
             self
         }
-        /// <p>Substring to match in bot names. A bot will be returned if any part
-        /// of its name matches the substring. For example, "xyz" matches both
-        /// "xyzabc" and "abcxyz."</p>
+        /// <p>Substring to match in bot names. A bot will be returned if any part of its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."</p>
         pub fn set_name_contains(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2154,16 +1938,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetBotVersions`.
     ///
     /// <p>Gets information about all of the versions of a bot.</p>
-    /// <p>The <code>GetBotVersions</code> operation returns a
-    /// <code>BotMetadata</code> object for each version of a bot. For example,
-    /// if a bot has three numbered versions, the <code>GetBotVersions</code>
-    /// operation returns four <code>BotMetadata</code> objects in the response,
-    /// one for each numbered version and one for the <code>$LATEST</code>
-    /// version. </p>
-    /// <p>The <code>GetBotVersions</code> operation always returns at least
-    /// one version, the <code>$LATEST</code> version.</p>
-    /// <p>This operation requires permissions for the
-    /// <code>lex:GetBotVersions</code> action.</p>
+    /// <p>The <code>GetBotVersions</code> operation returns a <code>BotMetadata</code> object for each version of a bot. For example, if a bot has three numbered versions, the <code>GetBotVersions</code> operation returns four <code>BotMetadata</code> objects in the response, one for each numbered version and one for the <code>$LATEST</code> version. </p>
+    /// <p>The <code>GetBotVersions</code> operation always returns at least one version, the <code>$LATEST</code> version.</p>
+    /// <p>This operation requires permissions for the <code>lex:GetBotVersions</code> action.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBotVersions<
         C = aws_smithy_client::erase::DynConnector,
@@ -2220,42 +1997,32 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the bot for which versions should be
-        /// returned.</p>
+        /// <p>The name of the bot for which versions should be returned.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the bot for which versions should be
-        /// returned.</p>
+        /// <p>The name of the bot for which versions should be returned.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>A pagination token for fetching the next page of bot versions. If
-        /// the response to this call is truncated, Amazon Lex returns a pagination token
-        /// in the response. To fetch the next page of versions, specify the
-        /// pagination token in the next request. </p>
+        /// <p>A pagination token for fetching the next page of bot versions. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of versions, specify the pagination token in the next request. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A pagination token for fetching the next page of bot versions. If
-        /// the response to this call is truncated, Amazon Lex returns a pagination token
-        /// in the response. To fetch the next page of versions, specify the
-        /// pagination token in the next request. </p>
+        /// <p>A pagination token for fetching the next page of bot versions. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of versions, specify the pagination token in the next request. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of bot versions to return in the response. The
-        /// default is 10.</p>
+        /// <p>The maximum number of bot versions to return in the response. The default is 10.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of bot versions to return in the response. The
-        /// default is 10.</p>
+        /// <p>The maximum number of bot versions to return in the response. The default is 10.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2264,8 +2031,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetBuiltinIntent`.
     ///
     /// <p>Returns information about a built-in intent.</p>
-    /// <p>This operation requires permission for the
-    /// <code>lex:GetBuiltinIntent</code> action.</p>
+    /// <p>This operation requires permission for the <code>lex:GetBuiltinIntent</code> action.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBuiltinIntent<
         C = aws_smithy_client::erase::DynConnector,
@@ -2322,16 +2088,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique identifier for a built-in intent. To find the signature
-        /// for an intent, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard Built-in Intents</a> in the <i>Alexa Skills
-        /// Kit</i>.</p>
+        /// <p>The unique identifier for a built-in intent. To find the signature for an intent, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard Built-in Intents</a> in the <i>Alexa Skills Kit</i>.</p>
         pub fn signature(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.signature(input.into());
             self
         }
-        /// <p>The unique identifier for a built-in intent. To find the signature
-        /// for an intent, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard Built-in Intents</a> in the <i>Alexa Skills
-        /// Kit</i>.</p>
+        /// <p>The unique identifier for a built-in intent. To find the signature for an intent, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard Built-in Intents</a> in the <i>Alexa Skills Kit</i>.</p>
         pub fn set_signature(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_signature(input);
             self
@@ -2339,10 +2101,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetBuiltinIntents`.
     ///
-    /// <p>Gets a list of built-in intents that meet the specified
-    /// criteria.</p>
-    /// <p>This operation requires permission for the
-    /// <code>lex:GetBuiltinIntents</code> action.</p>
+    /// <p>Gets a list of built-in intents that meet the specified criteria.</p>
+    /// <p>This operation requires permission for the <code>lex:GetBuiltinIntents</code> action.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBuiltinIntents<
         C = aws_smithy_client::erase::DynConnector,
@@ -2409,20 +2169,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_locale(input);
             self
         }
-        /// <p>Substring to match in built-in intent signatures. An intent will be
-        /// returned if any part of its signature matches the substring. For example,
-        /// "xyz" matches both "xyzabc" and "abcxyz." To find the signature for an
-        /// intent, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard Built-in Intents</a> in the <i>Alexa Skills
-        /// Kit</i>.</p>
+        /// <p>Substring to match in built-in intent signatures. An intent will be returned if any part of its signature matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz." To find the signature for an intent, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard Built-in Intents</a> in the <i>Alexa Skills Kit</i>.</p>
         pub fn signature_contains(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.signature_contains(input.into());
             self
         }
-        /// <p>Substring to match in built-in intent signatures. An intent will be
-        /// returned if any part of its signature matches the substring. For example,
-        /// "xyz" matches both "xyzabc" and "abcxyz." To find the signature for an
-        /// intent, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard Built-in Intents</a> in the <i>Alexa Skills
-        /// Kit</i>.</p>
+        /// <p>Substring to match in built-in intent signatures. An intent will be returned if any part of its signature matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz." To find the signature for an intent, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard Built-in Intents</a> in the <i>Alexa Skills Kit</i>.</p>
         pub fn set_signature_contains(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2430,30 +2182,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_signature_contains(input);
             self
         }
-        /// <p>A pagination token that fetches the next page of intents. If this
-        /// API call is truncated, Amazon Lex returns a pagination token in the response.
-        /// To fetch the next page of intents, use the pagination token in the next
-        /// request.</p>
+        /// <p>A pagination token that fetches the next page of intents. If this API call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of intents, use the pagination token in the next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A pagination token that fetches the next page of intents. If this
-        /// API call is truncated, Amazon Lex returns a pagination token in the response.
-        /// To fetch the next page of intents, use the pagination token in the next
-        /// request.</p>
+        /// <p>A pagination token that fetches the next page of intents. If this API call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of intents, use the pagination token in the next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of intents to return in the response. The
-        /// default is 10.</p>
+        /// <p>The maximum number of intents to return in the response. The default is 10.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of intents to return in the response. The
-        /// default is 10.</p>
+        /// <p>The maximum number of intents to return in the response. The default is 10.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2461,13 +2205,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetBuiltinSlotTypes`.
     ///
-    /// <p>Gets a list of built-in slot types that meet the specified
-    /// criteria.</p>
-    /// <p>For a list of built-in slot types, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/slot-type-reference">Slot Type Reference</a> in the <i>Alexa Skills
-    /// Kit</i>.</p>
-    ///
-    /// <p>This operation requires permission for the
-    /// <code>lex:GetBuiltInSlotTypes</code> action.</p>
+    /// <p>Gets a list of built-in slot types that meet the specified criteria.</p>
+    /// <p>For a list of built-in slot types, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/slot-type-reference">Slot Type Reference</a> in the <i>Alexa Skills Kit</i>.</p>
+    /// <p>This operation requires permission for the <code>lex:GetBuiltInSlotTypes</code> action.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetBuiltinSlotTypes<
         C = aws_smithy_client::erase::DynConnector,
@@ -2534,16 +2274,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_locale(input);
             self
         }
-        /// <p>Substring to match in built-in slot type signatures. A slot type
-        /// will be returned if any part of its signature matches the substring. For
-        /// example, "xyz" matches both "xyzabc" and "abcxyz."</p>
+        /// <p>Substring to match in built-in slot type signatures. A slot type will be returned if any part of its signature matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."</p>
         pub fn signature_contains(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.signature_contains(input.into());
             self
         }
-        /// <p>Substring to match in built-in slot type signatures. A slot type
-        /// will be returned if any part of its signature matches the substring. For
-        /// example, "xyz" matches both "xyzabc" and "abcxyz."</p>
+        /// <p>Substring to match in built-in slot type signatures. A slot type will be returned if any part of its signature matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."</p>
         pub fn set_signature_contains(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2551,30 +2287,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_signature_contains(input);
             self
         }
-        /// <p>A pagination token that fetches the next page of slot types. If the
-        /// response to this API call is truncated, Amazon Lex returns a pagination token
-        /// in the response. To fetch the next page of slot types, specify the
-        /// pagination token in the next request.</p>
+        /// <p>A pagination token that fetches the next page of slot types. If the response to this API call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of slot types, specify the pagination token in the next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A pagination token that fetches the next page of slot types. If the
-        /// response to this API call is truncated, Amazon Lex returns a pagination token
-        /// in the response. To fetch the next page of slot types, specify the
-        /// pagination token in the next request.</p>
+        /// <p>A pagination token that fetches the next page of slot types. If the response to this API call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of slot types, specify the pagination token in the next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of slot types to return in the response. The
-        /// default is 10.</p>
+        /// <p>The maximum number of slot types to return in the response. The default is 10.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of slot types to return in the response. The
-        /// default is 10.</p>
+        /// <p>The maximum number of slot types to return in the response. The default is 10.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2582,8 +2310,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetExport`.
     ///
-    /// <p>Exports the contents of a Amazon Lex resource in a specified format.
-    /// </p>
+    /// <p>Exports the contents of a Amazon Lex resource in a specified format. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetExport<
         C = aws_smithy_client::erase::DynConnector,
@@ -2689,8 +2416,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetImport`.
     ///
-    /// <p>Gets information about an import job started with the
-    /// <code>StartImport</code> operation.</p>
+    /// <p>Gets information about an import job started with the <code>StartImport</code> operation.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetImport<
         C = aws_smithy_client::erase::DynConnector,
@@ -2760,10 +2486,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetIntent`.
     ///
-    /// <p> Returns information about an intent. In addition to the intent
-    /// name, you must specify the intent version. </p>
-    /// <p> This operation requires permissions to perform the
-    /// <code>lex:GetIntent</code> action. </p>
+    /// <p> Returns information about an intent. In addition to the intent name, you must specify the intent version. </p>
+    /// <p> This operation requires permissions to perform the <code>lex:GetIntent</code> action. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetIntent<
         C = aws_smithy_client::erase::DynConnector,
@@ -2845,19 +2569,10 @@ pub mod fluent_builders {
     ///
     /// <p>Returns intent information as follows: </p>
     /// <ul>
-    /// <li>
-    /// <p>If you specify the <code>nameContains</code> field, returns the
-    /// <code>$LATEST</code> version of all intents that contain the
-    /// specified string.</p>
-    /// </li>
-    /// <li>
-    /// <p> If you don't specify the <code>nameContains</code> field,
-    /// returns information about the <code>$LATEST</code> version of all
-    /// intents. </p>
-    /// </li>
+    /// <li> <p>If you specify the <code>nameContains</code> field, returns the <code>$LATEST</code> version of all intents that contain the specified string.</p> </li>
+    /// <li> <p> If you don't specify the <code>nameContains</code> field, returns information about the <code>$LATEST</code> version of all intents. </p> </li>
     /// </ul>
-    /// <p> The operation requires permission for the
-    /// <code>lex:GetIntents</code> action. </p>
+    /// <p> The operation requires permission for the <code>lex:GetIntents</code> action. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetIntents<
         C = aws_smithy_client::erase::DynConnector,
@@ -2914,44 +2629,32 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A pagination token that fetches the next page of intents. If the
-        /// response to this API call is truncated, Amazon Lex returns a pagination token
-        /// in the response. To fetch the next page of intents, specify the pagination
-        /// token in the next request. </p>
+        /// <p>A pagination token that fetches the next page of intents. If the response to this API call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of intents, specify the pagination token in the next request. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A pagination token that fetches the next page of intents. If the
-        /// response to this API call is truncated, Amazon Lex returns a pagination token
-        /// in the response. To fetch the next page of intents, specify the pagination
-        /// token in the next request. </p>
+        /// <p>A pagination token that fetches the next page of intents. If the response to this API call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of intents, specify the pagination token in the next request. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of intents to return in the response. The
-        /// default is 10.</p>
+        /// <p>The maximum number of intents to return in the response. The default is 10.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of intents to return in the response. The
-        /// default is 10.</p>
+        /// <p>The maximum number of intents to return in the response. The default is 10.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>Substring to match in intent names. An intent will be returned if
-        /// any part of its name matches the substring. For example, "xyz" matches
-        /// both "xyzabc" and "abcxyz."</p>
+        /// <p>Substring to match in intent names. An intent will be returned if any part of its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."</p>
         pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name_contains(input.into());
             self
         }
-        /// <p>Substring to match in intent names. An intent will be returned if
-        /// any part of its name matches the substring. For example, "xyz" matches
-        /// both "xyzabc" and "abcxyz."</p>
+        /// <p>Substring to match in intent names. An intent will be returned if any part of its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."</p>
         pub fn set_name_contains(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2963,16 +2666,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetIntentVersions`.
     ///
     /// <p>Gets information about all of the versions of an intent.</p>
-    /// <p>The <code>GetIntentVersions</code> operation returns an
-    /// <code>IntentMetadata</code> object for each version of an intent. For
-    /// example, if an intent has three numbered versions, the
-    /// <code>GetIntentVersions</code> operation returns four
-    /// <code>IntentMetadata</code> objects in the response, one for each
-    /// numbered version and one for the <code>$LATEST</code> version. </p>
-    /// <p>The <code>GetIntentVersions</code> operation always returns at
-    /// least one version, the <code>$LATEST</code> version.</p>
-    /// <p>This operation requires permissions for the
-    /// <code>lex:GetIntentVersions</code> action.</p>
+    /// <p>The <code>GetIntentVersions</code> operation returns an <code>IntentMetadata</code> object for each version of an intent. For example, if an intent has three numbered versions, the <code>GetIntentVersions</code> operation returns four <code>IntentMetadata</code> objects in the response, one for each numbered version and one for the <code>$LATEST</code> version. </p>
+    /// <p>The <code>GetIntentVersions</code> operation always returns at least one version, the <code>$LATEST</code> version.</p>
+    /// <p>This operation requires permissions for the <code>lex:GetIntentVersions</code> action.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetIntentVersions<
         C = aws_smithy_client::erase::DynConnector,
@@ -3029,42 +2725,32 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the intent for which versions should be
-        /// returned.</p>
+        /// <p>The name of the intent for which versions should be returned.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the intent for which versions should be
-        /// returned.</p>
+        /// <p>The name of the intent for which versions should be returned.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>A pagination token for fetching the next page of intent versions.
-        /// If the response to this call is truncated, Amazon Lex returns a pagination
-        /// token in the response. To fetch the next page of versions, specify the
-        /// pagination token in the next request. </p>
+        /// <p>A pagination token for fetching the next page of intent versions. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of versions, specify the pagination token in the next request. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A pagination token for fetching the next page of intent versions.
-        /// If the response to this call is truncated, Amazon Lex returns a pagination
-        /// token in the response. To fetch the next page of versions, specify the
-        /// pagination token in the next request. </p>
+        /// <p>A pagination token for fetching the next page of intent versions. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of versions, specify the pagination token in the next request. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of intent versions to return in the response.
-        /// The default is 10.</p>
+        /// <p>The maximum number of intent versions to return in the response. The default is 10.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of intent versions to return in the response.
-        /// The default is 10.</p>
+        /// <p>The maximum number of intent versions to return in the response. The default is 10.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -3072,9 +2758,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetMigration`.
     ///
-    /// <p>Provides details about an ongoing or complete migration from an
-    /// Amazon Lex V1 bot to an Amazon Lex V2 bot. Use this operation to view the migration
-    /// alerts and warnings related to the migration.</p>
+    /// <p>Provides details about an ongoing or complete migration from an Amazon Lex V1 bot to an Amazon Lex V2 bot. Use this operation to view the migration alerts and warnings related to the migration.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMigration<
         C = aws_smithy_client::erase::DynConnector,
@@ -3131,14 +2815,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique identifier of the migration to view. The
-        /// <code>migrationID</code> is returned by the  operation.</p>
+        /// <p>The unique identifier of the migration to view. The <code>migrationID</code> is returned by the operation.</p>
         pub fn migration_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.migration_id(input.into());
             self
         }
-        /// <p>The unique identifier of the migration to view. The
-        /// <code>migrationID</code> is returned by the  operation.</p>
+        /// <p>The unique identifier of the migration to view. The <code>migrationID</code> is returned by the operation.</p>
         pub fn set_migration_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_migration_id(input);
             self
@@ -3203,16 +2885,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The field to sort the list of migrations by. You can sort by the
-        /// Amazon Lex V1 bot name or the date and time that the migration was
-        /// started.</p>
+        /// <p>The field to sort the list of migrations by. You can sort by the Amazon Lex V1 bot name or the date and time that the migration was started.</p>
         pub fn sort_by_attribute(mut self, input: crate::model::MigrationSortAttribute) -> Self {
             self.inner = self.inner.sort_by_attribute(input);
             self
         }
-        /// <p>The field to sort the list of migrations by. You can sort by the
-        /// Amazon Lex V1 bot name or the date and time that the migration was
-        /// started.</p>
+        /// <p>The field to sort the list of migrations by. You can sort by the Amazon Lex V1 bot name or the date and time that the migration was started.</p>
         pub fn set_sort_by_attribute(
             mut self,
             input: std::option::Option<crate::model::MigrationSortAttribute>,
@@ -3233,14 +2911,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sort_by_order(input);
             self
         }
-        /// <p>Filters the list to contain only bots whose name contains the
-        /// specified string. The string is matched anywhere in bot name.</p>
+        /// <p>Filters the list to contain only bots whose name contains the specified string. The string is matched anywhere in bot name.</p>
         pub fn v1_bot_name_contains(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.v1_bot_name_contains(input.into());
             self
         }
-        /// <p>Filters the list to contain only bots whose name contains the
-        /// specified string. The string is matched anywhere in bot name.</p>
+        /// <p>Filters the list to contain only bots whose name contains the specified string. The string is matched anywhere in bot name.</p>
         pub fn set_v1_bot_name_contains(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3261,30 +2937,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_migration_status_equals(input);
             self
         }
-        /// <p>The maximum number of migrations to return in the response. The
-        /// default is 10.</p>
+        /// <p>The maximum number of migrations to return in the response. The default is 10.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of migrations to return in the response. The
-        /// default is 10.</p>
+        /// <p>The maximum number of migrations to return in the response. The default is 10.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A pagination token that fetches the next page of migrations. If the
-        /// response to this operation is truncated, Amazon Lex returns a pagination token
-        /// in the response. To fetch the next page of migrations, specify the
-        /// pagination token in the request.</p>
+        /// <p>A pagination token that fetches the next page of migrations. If the response to this operation is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of migrations, specify the pagination token in the request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A pagination token that fetches the next page of migrations. If the
-        /// response to this operation is truncated, Amazon Lex returns a pagination token
-        /// in the response. To fetch the next page of migrations, specify the
-        /// pagination token in the request.</p>
+        /// <p>A pagination token that fetches the next page of migrations. If the response to this operation is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of migrations, specify the pagination token in the request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3292,11 +2960,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetSlotType`.
     ///
-    /// <p>Returns information about a specific version of a slot type. In
-    /// addition to specifying the slot type name, you must specify the slot type
-    /// version.</p>
-    /// <p>This operation requires permissions for the
-    /// <code>lex:GetSlotType</code> action.</p>
+    /// <p>Returns information about a specific version of a slot type. In addition to specifying the slot type name, you must specify the slot type version.</p>
+    /// <p>This operation requires permissions for the <code>lex:GetSlotType</code> action.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSlotType<
         C = aws_smithy_client::erase::DynConnector,
@@ -3378,19 +3043,10 @@ pub mod fluent_builders {
     ///
     /// <p>Returns slot type information as follows: </p>
     /// <ul>
-    /// <li>
-    /// <p>If you specify the <code>nameContains</code> field, returns the
-    /// <code>$LATEST</code> version of all slot types that contain the
-    /// specified string.</p>
-    /// </li>
-    /// <li>
-    /// <p> If you don't specify the <code>nameContains</code> field,
-    /// returns information about the <code>$LATEST</code> version of all slot
-    /// types. </p>
-    /// </li>
+    /// <li> <p>If you specify the <code>nameContains</code> field, returns the <code>$LATEST</code> version of all slot types that contain the specified string.</p> </li>
+    /// <li> <p> If you don't specify the <code>nameContains</code> field, returns information about the <code>$LATEST</code> version of all slot types. </p> </li>
     /// </ul>
-    /// <p> The operation requires permission for the
-    /// <code>lex:GetSlotTypes</code> action. </p>
+    /// <p> The operation requires permission for the <code>lex:GetSlotTypes</code> action. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSlotTypes<
         C = aws_smithy_client::erase::DynConnector,
@@ -3447,44 +3103,32 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A pagination token that fetches the next page of slot types. If the
-        /// response to this API call is truncated, Amazon Lex returns a pagination token
-        /// in the response. To fetch next page of slot types, specify the pagination
-        /// token in the next request.</p>
+        /// <p>A pagination token that fetches the next page of slot types. If the response to this API call is truncated, Amazon Lex returns a pagination token in the response. To fetch next page of slot types, specify the pagination token in the next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A pagination token that fetches the next page of slot types. If the
-        /// response to this API call is truncated, Amazon Lex returns a pagination token
-        /// in the response. To fetch next page of slot types, specify the pagination
-        /// token in the next request.</p>
+        /// <p>A pagination token that fetches the next page of slot types. If the response to this API call is truncated, Amazon Lex returns a pagination token in the response. To fetch next page of slot types, specify the pagination token in the next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of slot types to return in the response. The
-        /// default is 10.</p>
+        /// <p>The maximum number of slot types to return in the response. The default is 10.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of slot types to return in the response. The
-        /// default is 10.</p>
+        /// <p>The maximum number of slot types to return in the response. The default is 10.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>Substring to match in slot type names. A slot type will be returned
-        /// if any part of its name matches the substring. For example, "xyz" matches
-        /// both "xyzabc" and "abcxyz."</p>
+        /// <p>Substring to match in slot type names. A slot type will be returned if any part of its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."</p>
         pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name_contains(input.into());
             self
         }
-        /// <p>Substring to match in slot type names. A slot type will be returned
-        /// if any part of its name matches the substring. For example, "xyz" matches
-        /// both "xyzabc" and "abcxyz."</p>
+        /// <p>Substring to match in slot type names. A slot type will be returned if any part of its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."</p>
         pub fn set_name_contains(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3496,16 +3140,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetSlotTypeVersions`.
     ///
     /// <p>Gets information about all versions of a slot type.</p>
-    /// <p>The <code>GetSlotTypeVersions</code> operation returns a
-    /// <code>SlotTypeMetadata</code> object for each version of a slot type.
-    /// For example, if a slot type has three numbered versions, the
-    /// <code>GetSlotTypeVersions</code> operation returns four
-    /// <code>SlotTypeMetadata</code> objects in the response, one for each
-    /// numbered version and one for the <code>$LATEST</code> version. </p>
-    /// <p>The <code>GetSlotTypeVersions</code> operation always returns at
-    /// least one version, the <code>$LATEST</code> version.</p>
-    /// <p>This operation requires permissions for the
-    /// <code>lex:GetSlotTypeVersions</code> action.</p>
+    /// <p>The <code>GetSlotTypeVersions</code> operation returns a <code>SlotTypeMetadata</code> object for each version of a slot type. For example, if a slot type has three numbered versions, the <code>GetSlotTypeVersions</code> operation returns four <code>SlotTypeMetadata</code> objects in the response, one for each numbered version and one for the <code>$LATEST</code> version. </p>
+    /// <p>The <code>GetSlotTypeVersions</code> operation always returns at least one version, the <code>$LATEST</code> version.</p>
+    /// <p>This operation requires permissions for the <code>lex:GetSlotTypeVersions</code> action.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSlotTypeVersions<
         C = aws_smithy_client::erase::DynConnector,
@@ -3562,42 +3199,32 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the slot type for which versions should be
-        /// returned.</p>
+        /// <p>The name of the slot type for which versions should be returned.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the slot type for which versions should be
-        /// returned.</p>
+        /// <p>The name of the slot type for which versions should be returned.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>A pagination token for fetching the next page of slot type
-        /// versions. If the response to this call is truncated, Amazon Lex returns a
-        /// pagination token in the response. To fetch the next page of versions,
-        /// specify the pagination token in the next request. </p>
+        /// <p>A pagination token for fetching the next page of slot type versions. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of versions, specify the pagination token in the next request. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A pagination token for fetching the next page of slot type
-        /// versions. If the response to this call is truncated, Amazon Lex returns a
-        /// pagination token in the response. To fetch the next page of versions,
-        /// specify the pagination token in the next request. </p>
+        /// <p>A pagination token for fetching the next page of slot type versions. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of versions, specify the pagination token in the next request. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of slot type versions to return in the response.
-        /// The default is 10.</p>
+        /// <p>The maximum number of slot type versions to return in the response. The default is 10.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of slot type versions to return in the response.
-        /// The default is 10.</p>
+        /// <p>The maximum number of slot type versions to return in the response. The default is 10.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -3605,30 +3232,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetUtterancesView`.
     ///
-    /// <p>Use the <code>GetUtterancesView</code> operation to get information
-    /// about the utterances that your users have made to your bot. You can use
-    /// this list to tune the utterances that your bot responds to.</p>
-    /// <p>For example, say that you have created a bot to order flowers.
-    /// After your users have used your bot for a while, use the
-    /// <code>GetUtterancesView</code> operation to see the requests that they
-    /// have made and whether they have been successful. You might find that the
-    /// utterance "I want flowers" is not being recognized. You could add this
-    /// utterance to the <code>OrderFlowers</code> intent so that your bot
-    /// recognizes that utterance.</p>
-    /// <p>After you publish a new version of a bot, you can get information
-    /// about the old version and the new so that you can compare the performance
-    /// across the two versions. </p>
-    /// <p>Utterance statistics are generated once a day. Data is available
-    /// for the last 15 days. You can request information for up to 5 versions of
-    /// your bot in each request. Amazon Lex returns the most frequent utterances
-    /// received by the bot in the last 15 days. The response contains information
-    /// about a maximum of 100 utterances for each version.</p>
-    /// <p>If you set <code>childDirected</code> field to true when you
-    /// created your bot, if you are using slot obfuscation with one or more
-    /// slots, or if you opted out of participating in improving Amazon Lex, utterances
-    /// are not available.</p>
-    /// <p>This operation requires permissions for the
-    /// <code>lex:GetUtterancesView</code> action.</p>
+    /// <p>Use the <code>GetUtterancesView</code> operation to get information about the utterances that your users have made to your bot. You can use this list to tune the utterances that your bot responds to.</p>
+    /// <p>For example, say that you have created a bot to order flowers. After your users have used your bot for a while, use the <code>GetUtterancesView</code> operation to see the requests that they have made and whether they have been successful. You might find that the utterance "I want flowers" is not being recognized. You could add this utterance to the <code>OrderFlowers</code> intent so that your bot recognizes that utterance.</p>
+    /// <p>After you publish a new version of a bot, you can get information about the old version and the new so that you can compare the performance across the two versions. </p>
+    /// <p>Utterance statistics are generated once a day. Data is available for the last 15 days. You can request information for up to 5 versions of your bot in each request. Amazon Lex returns the most frequent utterances received by the bot in the last 15 days. The response contains information about a maximum of 100 utterances for each version.</p>
+    /// <p>If you set <code>childDirected</code> field to true when you created your bot, if you are using slot obfuscation with one or more slots, or if you opted out of participating in improving Amazon Lex, utterances are not available.</p>
+    /// <p>This operation requires permissions for the <code>lex:GetUtterancesView</code> action.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetUtterancesView<
         C = aws_smithy_client::erase::DynConnector,
@@ -3685,14 +3294,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the bot for which utterance information should be
-        /// returned.</p>
+        /// <p>The name of the bot for which utterance information should be returned.</p>
         pub fn bot_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.bot_name(input.into());
             self
         }
-        /// <p>The name of the bot for which utterance information should be
-        /// returned.</p>
+        /// <p>The name of the bot for which utterance information should be returned.</p>
         pub fn set_bot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_bot_name(input);
             self
@@ -3701,14 +3308,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_bot_versions`](Self::set_bot_versions).
         ///
-        /// <p>An array of bot versions for which utterance information should be
-        /// returned. The limit is 5 versions per request.</p>
+        /// <p>An array of bot versions for which utterance information should be returned. The limit is 5 versions per request.</p>
         pub fn bot_versions(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.bot_versions(input.into());
             self
         }
-        /// <p>An array of bot versions for which utterance information should be
-        /// returned. The limit is 5 versions per request.</p>
+        /// <p>An array of bot versions for which utterance information should be returned. The limit is 5 versions per request.</p>
         pub fn set_bot_versions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3716,16 +3321,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bot_versions(input);
             self
         }
-        /// <p>To return utterances that were recognized and handled, use
-        /// <code>Detected</code>. To return utterances that were not recognized,
-        /// use <code>Missed</code>.</p>
+        /// <p>To return utterances that were recognized and handled, use <code>Detected</code>. To return utterances that were not recognized, use <code>Missed</code>.</p>
         pub fn status_type(mut self, input: crate::model::StatusType) -> Self {
             self.inner = self.inner.status_type(input);
             self
         }
-        /// <p>To return utterances that were recognized and handled, use
-        /// <code>Detected</code>. To return utterances that were not recognized,
-        /// use <code>Missed</code>.</p>
+        /// <p>To return utterances that were recognized and handled, use <code>Detected</code>. To return utterances that were not recognized, use <code>Missed</code>.</p>
         pub fn set_status_type(
             mut self,
             input: std::option::Option<crate::model::StatusType>,
@@ -3736,8 +3337,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
-    /// <p>Gets a list of tags associated with the specified resource. Only bots,
-    /// bot aliases, and bot channels can have tags associated with them.</p>
+    /// <p>Gets a list of tags associated with the specified resource. Only bots, bot aliases, and bot channels can have tags associated with them.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -3794,14 +3394,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource to get a list of tags
-        /// for.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource to get a list of tags for.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource to get a list of tags
-        /// for.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource to get a list of tags for.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -3809,24 +3407,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutBot`.
     ///
-    /// <p>Creates an Amazon Lex conversational bot or replaces an existing bot.
-    /// When you create or update a bot you are only required to specify a name, a
-    /// locale, and whether the bot is directed toward children under age 13. You
-    /// can use this to add intents later, or to remove intents from an existing
-    /// bot. When you create a bot with the minimum information, the bot is
-    /// created or updated but Amazon Lex returns the <code></code> response
-    /// <code>FAILED</code>. You can build the bot after you add one or more
-    /// intents. For more information about Amazon Lex bots, see <a>how-it-works</a>. </p>
-    /// <p>If you specify the name of an existing bot, the fields in the
-    /// request replace the existing values in the <code>$LATEST</code> version of
-    /// the bot. Amazon Lex removes any fields that you don't provide values for in the
-    /// request, except for the <code>idleTTLInSeconds</code> and
-    /// <code>privacySettings</code> fields, which are set to their default
-    /// values. If you don't specify values for required fields, Amazon Lex throws an
-    /// exception.</p>
-    ///
-    /// <p>This operation requires permissions for the <code>lex:PutBot</code>
-    /// action. For more information, see <a>security-iam</a>.</p>
+    /// <p>Creates an Amazon Lex conversational bot or replaces an existing bot. When you create or update a bot you are only required to specify a name, a locale, and whether the bot is directed toward children under age 13. You can use this to add intents later, or to remove intents from an existing bot. When you create a bot with the minimum information, the bot is created or updated but Amazon Lex returns the <code></code> response <code>FAILED</code>. You can build the bot after you add one or more intents. For more information about Amazon Lex bots, see <code>how-it-works</code>. </p>
+    /// <p>If you specify the name of an existing bot, the fields in the request replace the existing values in the <code>$LATEST</code> version of the bot. Amazon Lex removes any fields that you don't provide values for in the request, except for the <code>idleTTLInSeconds</code> and <code>privacySettings</code> fields, which are set to their default values. If you don't specify values for required fields, Amazon Lex throws an exception.</p>
+    /// <p>This operation requires permissions for the <code>lex:PutBot</code> action. For more information, see <code>security-iam</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutBot<
         C = aws_smithy_client::erase::DynConnector,
@@ -3883,14 +3466,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the bot. The name is <i>not</i> case
-        /// sensitive. </p>
+        /// <p>The name of the bot. The name is <i>not</i> case sensitive. </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the bot. The name is <i>not</i> case
-        /// sensitive. </p>
+        /// <p>The name of the bot. The name is <i>not</i> case sensitive. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -3909,16 +3490,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_intents`](Self::set_intents).
         ///
-        /// <p>An array of <code>Intent</code> objects. Each intent represents a
-        /// command that a user can express. For example, a pizza ordering bot might
-        /// support an OrderPizza intent. For more information, see <a>how-it-works</a>.</p>
+        /// <p>An array of <code>Intent</code> objects. Each intent represents a command that a user can express. For example, a pizza ordering bot might support an OrderPizza intent. For more information, see <code>how-it-works</code>.</p>
         pub fn intents(mut self, input: crate::model::Intent) -> Self {
             self.inner = self.inner.intents(input);
             self
         }
-        /// <p>An array of <code>Intent</code> objects. Each intent represents a
-        /// command that a user can express. For example, a pizza ordering bot might
-        /// support an OrderPizza intent. For more information, see <a>how-it-works</a>.</p>
+        /// <p>An array of <code>Intent</code> objects. Each intent represents a command that a user can express. For example, a pizza ordering bot might support an OrderPizza intent. For more information, see <code>how-it-works</code>.</p>
         pub fn set_intents(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Intent>>,
@@ -3926,167 +3503,71 @@ pub mod fluent_builders {
             self.inner = self.inner.set_intents(input);
             self
         }
-        /// <p>Set to <code>true</code> to enable access to natural language
-        /// understanding improvements. </p>
-        /// <p>When you set the <code>enableModelImprovements</code> parameter to
-        /// <code>true</code> you can use the
-        /// <code>nluIntentConfidenceThreshold</code> parameter to configure
-        /// confidence scores. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/confidence-scores.html">Confidence Scores</a>.</p>
-        /// <p>You can only set the <code>enableModelImprovements</code> parameter in
-        /// certain Regions. If you set the parameter to <code>true</code>, your bot
-        /// has access to accuracy improvements.</p>
-        /// <p>The Regions where you can set the <code>enableModelImprovements</code>
-        /// parameter to <code>true</code> are:</p>
+        /// <p>Set to <code>true</code> to enable access to natural language understanding improvements. </p>
+        /// <p>When you set the <code>enableModelImprovements</code> parameter to <code>true</code> you can use the <code>nluIntentConfidenceThreshold</code> parameter to configure confidence scores. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/confidence-scores.html">Confidence Scores</a>.</p>
+        /// <p>You can only set the <code>enableModelImprovements</code> parameter in certain Regions. If you set the parameter to <code>true</code>, your bot has access to accuracy improvements.</p>
+        /// <p>The Regions where you can set the <code>enableModelImprovements</code> parameter to <code>true</code> are:</p>
         /// <ul>
-        /// <li>
-        /// <p>US East (N. Virginia) (us-east-1)</p>
-        /// </li>
-        /// <li>
-        /// <p>US West (Oregon) (us-west-2)</p>
-        /// </li>
-        /// <li>
-        /// <p>Asia Pacific (Sydney) (ap-southeast-2)</p>
-        /// </li>
-        /// <li>
-        /// <p>EU (Ireland) (eu-west-1)</p>
-        /// </li>
+        /// <li> <p>US East (N. Virginia) (us-east-1)</p> </li>
+        /// <li> <p>US West (Oregon) (us-west-2)</p> </li>
+        /// <li> <p>Asia Pacific (Sydney) (ap-southeast-2)</p> </li>
+        /// <li> <p>EU (Ireland) (eu-west-1)</p> </li>
         /// </ul>
-        /// <p>In other Regions, the <code>enableModelImprovements</code> parameter
-        /// is set to <code>true</code> by default. In these Regions setting the
-        /// parameter to <code>false</code> throws a <code>ValidationException</code>
-        /// exception.</p>
+        /// <p>In other Regions, the <code>enableModelImprovements</code> parameter is set to <code>true</code> by default. In these Regions setting the parameter to <code>false</code> throws a <code>ValidationException</code> exception.</p>
         pub fn enable_model_improvements(mut self, input: bool) -> Self {
             self.inner = self.inner.enable_model_improvements(input);
             self
         }
-        /// <p>Set to <code>true</code> to enable access to natural language
-        /// understanding improvements. </p>
-        /// <p>When you set the <code>enableModelImprovements</code> parameter to
-        /// <code>true</code> you can use the
-        /// <code>nluIntentConfidenceThreshold</code> parameter to configure
-        /// confidence scores. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/confidence-scores.html">Confidence Scores</a>.</p>
-        /// <p>You can only set the <code>enableModelImprovements</code> parameter in
-        /// certain Regions. If you set the parameter to <code>true</code>, your bot
-        /// has access to accuracy improvements.</p>
-        /// <p>The Regions where you can set the <code>enableModelImprovements</code>
-        /// parameter to <code>true</code> are:</p>
+        /// <p>Set to <code>true</code> to enable access to natural language understanding improvements. </p>
+        /// <p>When you set the <code>enableModelImprovements</code> parameter to <code>true</code> you can use the <code>nluIntentConfidenceThreshold</code> parameter to configure confidence scores. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/confidence-scores.html">Confidence Scores</a>.</p>
+        /// <p>You can only set the <code>enableModelImprovements</code> parameter in certain Regions. If you set the parameter to <code>true</code>, your bot has access to accuracy improvements.</p>
+        /// <p>The Regions where you can set the <code>enableModelImprovements</code> parameter to <code>true</code> are:</p>
         /// <ul>
-        /// <li>
-        /// <p>US East (N. Virginia) (us-east-1)</p>
-        /// </li>
-        /// <li>
-        /// <p>US West (Oregon) (us-west-2)</p>
-        /// </li>
-        /// <li>
-        /// <p>Asia Pacific (Sydney) (ap-southeast-2)</p>
-        /// </li>
-        /// <li>
-        /// <p>EU (Ireland) (eu-west-1)</p>
-        /// </li>
+        /// <li> <p>US East (N. Virginia) (us-east-1)</p> </li>
+        /// <li> <p>US West (Oregon) (us-west-2)</p> </li>
+        /// <li> <p>Asia Pacific (Sydney) (ap-southeast-2)</p> </li>
+        /// <li> <p>EU (Ireland) (eu-west-1)</p> </li>
         /// </ul>
-        /// <p>In other Regions, the <code>enableModelImprovements</code> parameter
-        /// is set to <code>true</code> by default. In these Regions setting the
-        /// parameter to <code>false</code> throws a <code>ValidationException</code>
-        /// exception.</p>
+        /// <p>In other Regions, the <code>enableModelImprovements</code> parameter is set to <code>true</code> by default. In these Regions setting the parameter to <code>false</code> throws a <code>ValidationException</code> exception.</p>
         pub fn set_enable_model_improvements(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_enable_model_improvements(input);
             self
         }
-        /// <p>Determines the threshold where Amazon Lex will insert the
-        /// <code>AMAZON.FallbackIntent</code>,
-        /// <code>AMAZON.KendraSearchIntent</code>, or both when returning
-        /// alternative intents in a <a href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a> or
-        /// <a href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> response.
-        /// <code>AMAZON.FallbackIntent</code> and
-        /// <code>AMAZON.KendraSearchIntent</code> are only inserted if they are
-        /// configured for the bot.</p>
-        /// <p>You must set the <code>enableModelImprovements</code> parameter to
-        /// <code>true</code> to use confidence scores in the following
-        /// regions.</p>
+        /// <p>Determines the threshold where Amazon Lex will insert the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents in a <a href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a> or <a href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> response. <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured for the bot.</p>
+        /// <p>You must set the <code>enableModelImprovements</code> parameter to <code>true</code> to use confidence scores in the following regions.</p>
         /// <ul>
-        /// <li>
-        /// <p>US East (N. Virginia) (us-east-1)</p>
-        /// </li>
-        /// <li>
-        /// <p>US West (Oregon) (us-west-2)</p>
-        /// </li>
-        /// <li>
-        /// <p>Asia Pacific (Sydney) (ap-southeast-2)</p>
-        /// </li>
-        /// <li>
-        /// <p>EU (Ireland) (eu-west-1)</p>
-        /// </li>
+        /// <li> <p>US East (N. Virginia) (us-east-1)</p> </li>
+        /// <li> <p>US West (Oregon) (us-west-2)</p> </li>
+        /// <li> <p>Asia Pacific (Sydney) (ap-southeast-2)</p> </li>
+        /// <li> <p>EU (Ireland) (eu-west-1)</p> </li>
         /// </ul>
-        /// <p>In other Regions, the <code>enableModelImprovements</code> parameter
-        /// is set to <code>true</code> by default.</p>
-        /// <p>For example, suppose a bot is configured with the confidence threshold
-        /// of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three
-        /// alternative intents with the following confidence scores: IntentA (0.70),
-        /// IntentB (0.60), IntentC (0.50). The response from the
-        /// <code>PostText</code> operation would be:</p>
+        /// <p>In other Regions, the <code>enableModelImprovements</code> parameter is set to <code>true</code> by default.</p>
+        /// <p>For example, suppose a bot is configured with the confidence threshold of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three alternative intents with the following confidence scores: IntentA (0.70), IntentB (0.60), IntentC (0.50). The response from the <code>PostText</code> operation would be:</p>
         /// <ul>
-        /// <li>
-        /// <p>AMAZON.FallbackIntent</p>
-        /// </li>
-        /// <li>
-        /// <p>IntentA</p>
-        /// </li>
-        /// <li>
-        /// <p>IntentB</p>
-        /// </li>
-        /// <li>
-        /// <p>IntentC</p>
-        /// </li>
+        /// <li> <p>AMAZON.FallbackIntent</p> </li>
+        /// <li> <p>IntentA</p> </li>
+        /// <li> <p>IntentB</p> </li>
+        /// <li> <p>IntentC</p> </li>
         /// </ul>
         pub fn nlu_intent_confidence_threshold(mut self, input: f64) -> Self {
             self.inner = self.inner.nlu_intent_confidence_threshold(input);
             self
         }
-        /// <p>Determines the threshold where Amazon Lex will insert the
-        /// <code>AMAZON.FallbackIntent</code>,
-        /// <code>AMAZON.KendraSearchIntent</code>, or both when returning
-        /// alternative intents in a <a href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a> or
-        /// <a href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> response.
-        /// <code>AMAZON.FallbackIntent</code> and
-        /// <code>AMAZON.KendraSearchIntent</code> are only inserted if they are
-        /// configured for the bot.</p>
-        /// <p>You must set the <code>enableModelImprovements</code> parameter to
-        /// <code>true</code> to use confidence scores in the following
-        /// regions.</p>
+        /// <p>Determines the threshold where Amazon Lex will insert the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents in a <a href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a> or <a href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> response. <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured for the bot.</p>
+        /// <p>You must set the <code>enableModelImprovements</code> parameter to <code>true</code> to use confidence scores in the following regions.</p>
         /// <ul>
-        /// <li>
-        /// <p>US East (N. Virginia) (us-east-1)</p>
-        /// </li>
-        /// <li>
-        /// <p>US West (Oregon) (us-west-2)</p>
-        /// </li>
-        /// <li>
-        /// <p>Asia Pacific (Sydney) (ap-southeast-2)</p>
-        /// </li>
-        /// <li>
-        /// <p>EU (Ireland) (eu-west-1)</p>
-        /// </li>
+        /// <li> <p>US East (N. Virginia) (us-east-1)</p> </li>
+        /// <li> <p>US West (Oregon) (us-west-2)</p> </li>
+        /// <li> <p>Asia Pacific (Sydney) (ap-southeast-2)</p> </li>
+        /// <li> <p>EU (Ireland) (eu-west-1)</p> </li>
         /// </ul>
-        /// <p>In other Regions, the <code>enableModelImprovements</code> parameter
-        /// is set to <code>true</code> by default.</p>
-        /// <p>For example, suppose a bot is configured with the confidence threshold
-        /// of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three
-        /// alternative intents with the following confidence scores: IntentA (0.70),
-        /// IntentB (0.60), IntentC (0.50). The response from the
-        /// <code>PostText</code> operation would be:</p>
+        /// <p>In other Regions, the <code>enableModelImprovements</code> parameter is set to <code>true</code> by default.</p>
+        /// <p>For example, suppose a bot is configured with the confidence threshold of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three alternative intents with the following confidence scores: IntentA (0.70), IntentB (0.60), IntentC (0.50). The response from the <code>PostText</code> operation would be:</p>
         /// <ul>
-        /// <li>
-        /// <p>AMAZON.FallbackIntent</p>
-        /// </li>
-        /// <li>
-        /// <p>IntentA</p>
-        /// </li>
-        /// <li>
-        /// <p>IntentB</p>
-        /// </li>
-        /// <li>
-        /// <p>IntentC</p>
-        /// </li>
+        /// <li> <p>AMAZON.FallbackIntent</p> </li>
+        /// <li> <p>IntentA</p> </li>
+        /// <li> <p>IntentB</p> </li>
+        /// <li> <p>IntentC</p> </li>
         /// </ul>
         pub fn set_nlu_intent_confidence_threshold(
             mut self,
@@ -4095,83 +3576,27 @@ pub mod fluent_builders {
             self.inner = self.inner.set_nlu_intent_confidence_threshold(input);
             self
         }
-        /// <p>When Amazon Lex doesn't understand the user's intent, it uses this
-        /// message to get clarification. To specify how many times Amazon Lex should
-        /// repeat the clarification prompt, use the <code>maxAttempts</code> field.
-        /// If Amazon Lex still doesn't understand, it sends the message in the
-        /// <code>abortStatement</code> field. </p>
-        /// <p>When you create a clarification prompt, make sure that it suggests
-        /// the correct response from the user. for example, for a bot that orders
-        /// pizza and drinks, you might create this clarification prompt: "What would
-        /// you like to do? You can say 'Order a pizza' or 'Order a drink.'"</p>
-        /// <p>If you have defined a fallback intent, it will be invoked if the
-        /// clarification prompt is repeated the number of times defined in the
-        /// <code>maxAttempts</code> field. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/built-in-intent-fallback.html">
-        /// AMAZON.FallbackIntent</a>.</p>
-        /// <p>If you don't define a clarification prompt, at runtime Amazon Lex will
-        /// return a 400 Bad Request exception in three cases: </p>
+        /// <p>When Amazon Lex doesn't understand the user's intent, it uses this message to get clarification. To specify how many times Amazon Lex should repeat the clarification prompt, use the <code>maxAttempts</code> field. If Amazon Lex still doesn't understand, it sends the message in the <code>abortStatement</code> field. </p>
+        /// <p>When you create a clarification prompt, make sure that it suggests the correct response from the user. for example, for a bot that orders pizza and drinks, you might create this clarification prompt: "What would you like to do? You can say 'Order a pizza' or 'Order a drink.'"</p>
+        /// <p>If you have defined a fallback intent, it will be invoked if the clarification prompt is repeated the number of times defined in the <code>maxAttempts</code> field. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/built-in-intent-fallback.html"> AMAZON.FallbackIntent</a>.</p>
+        /// <p>If you don't define a clarification prompt, at runtime Amazon Lex will return a 400 Bad Request exception in three cases: </p>
         /// <ul>
-        /// <li>
-        /// <p>Follow-up prompt - When the user responds to a follow-up prompt
-        /// but does not provide an intent. For example, in response to a
-        /// follow-up prompt that says "Would you like anything else today?" the
-        /// user says "Yes." Amazon Lex will return a 400 Bad Request exception because
-        /// it does not have a clarification prompt to send to the user to get an
-        /// intent.</p>
-        /// </li>
-        /// <li>
-        /// <p>Lambda function - When using a Lambda function, you return an
-        /// <code>ElicitIntent</code> dialog type. Since Amazon Lex does not have a
-        /// clarification prompt to get an intent from the user, it returns a 400
-        /// Bad Request exception.</p>
-        /// </li>
-        /// <li>
-        /// <p>PutSession operation - When using the <code>PutSession</code>
-        /// operation, you send an <code>ElicitIntent</code> dialog type. Since
-        /// Amazon Lex does not have a clarification prompt to get an intent from the
-        /// user, it returns a 400 Bad Request exception.</p>
-        /// </li>
+        /// <li> <p>Follow-up prompt - When the user responds to a follow-up prompt but does not provide an intent. For example, in response to a follow-up prompt that says "Would you like anything else today?" the user says "Yes." Amazon Lex will return a 400 Bad Request exception because it does not have a clarification prompt to send to the user to get an intent.</p> </li>
+        /// <li> <p>Lambda function - When using a Lambda function, you return an <code>ElicitIntent</code> dialog type. Since Amazon Lex does not have a clarification prompt to get an intent from the user, it returns a 400 Bad Request exception.</p> </li>
+        /// <li> <p>PutSession operation - When using the <code>PutSession</code> operation, you send an <code>ElicitIntent</code> dialog type. Since Amazon Lex does not have a clarification prompt to get an intent from the user, it returns a 400 Bad Request exception.</p> </li>
         /// </ul>
         pub fn clarification_prompt(mut self, input: crate::model::Prompt) -> Self {
             self.inner = self.inner.clarification_prompt(input);
             self
         }
-        /// <p>When Amazon Lex doesn't understand the user's intent, it uses this
-        /// message to get clarification. To specify how many times Amazon Lex should
-        /// repeat the clarification prompt, use the <code>maxAttempts</code> field.
-        /// If Amazon Lex still doesn't understand, it sends the message in the
-        /// <code>abortStatement</code> field. </p>
-        /// <p>When you create a clarification prompt, make sure that it suggests
-        /// the correct response from the user. for example, for a bot that orders
-        /// pizza and drinks, you might create this clarification prompt: "What would
-        /// you like to do? You can say 'Order a pizza' or 'Order a drink.'"</p>
-        /// <p>If you have defined a fallback intent, it will be invoked if the
-        /// clarification prompt is repeated the number of times defined in the
-        /// <code>maxAttempts</code> field. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/built-in-intent-fallback.html">
-        /// AMAZON.FallbackIntent</a>.</p>
-        /// <p>If you don't define a clarification prompt, at runtime Amazon Lex will
-        /// return a 400 Bad Request exception in three cases: </p>
+        /// <p>When Amazon Lex doesn't understand the user's intent, it uses this message to get clarification. To specify how many times Amazon Lex should repeat the clarification prompt, use the <code>maxAttempts</code> field. If Amazon Lex still doesn't understand, it sends the message in the <code>abortStatement</code> field. </p>
+        /// <p>When you create a clarification prompt, make sure that it suggests the correct response from the user. for example, for a bot that orders pizza and drinks, you might create this clarification prompt: "What would you like to do? You can say 'Order a pizza' or 'Order a drink.'"</p>
+        /// <p>If you have defined a fallback intent, it will be invoked if the clarification prompt is repeated the number of times defined in the <code>maxAttempts</code> field. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/built-in-intent-fallback.html"> AMAZON.FallbackIntent</a>.</p>
+        /// <p>If you don't define a clarification prompt, at runtime Amazon Lex will return a 400 Bad Request exception in three cases: </p>
         /// <ul>
-        /// <li>
-        /// <p>Follow-up prompt - When the user responds to a follow-up prompt
-        /// but does not provide an intent. For example, in response to a
-        /// follow-up prompt that says "Would you like anything else today?" the
-        /// user says "Yes." Amazon Lex will return a 400 Bad Request exception because
-        /// it does not have a clarification prompt to send to the user to get an
-        /// intent.</p>
-        /// </li>
-        /// <li>
-        /// <p>Lambda function - When using a Lambda function, you return an
-        /// <code>ElicitIntent</code> dialog type. Since Amazon Lex does not have a
-        /// clarification prompt to get an intent from the user, it returns a 400
-        /// Bad Request exception.</p>
-        /// </li>
-        /// <li>
-        /// <p>PutSession operation - When using the <code>PutSession</code>
-        /// operation, you send an <code>ElicitIntent</code> dialog type. Since
-        /// Amazon Lex does not have a clarification prompt to get an intent from the
-        /// user, it returns a 400 Bad Request exception.</p>
-        /// </li>
+        /// <li> <p>Follow-up prompt - When the user responds to a follow-up prompt but does not provide an intent. For example, in response to a follow-up prompt that says "Would you like anything else today?" the user says "Yes." Amazon Lex will return a 400 Bad Request exception because it does not have a clarification prompt to send to the user to get an intent.</p> </li>
+        /// <li> <p>Lambda function - When using a Lambda function, you return an <code>ElicitIntent</code> dialog type. Since Amazon Lex does not have a clarification prompt to get an intent from the user, it returns a 400 Bad Request exception.</p> </li>
+        /// <li> <p>PutSession operation - When using the <code>PutSession</code> operation, you send an <code>ElicitIntent</code> dialog type. Since Amazon Lex does not have a clarification prompt to get an intent from the user, it returns a 400 Bad Request exception.</p> </li>
         /// </ul>
         pub fn set_clarification_prompt(
             mut self,
@@ -4180,46 +3605,18 @@ pub mod fluent_builders {
             self.inner = self.inner.set_clarification_prompt(input);
             self
         }
-        /// <p>When Amazon Lex can't understand the user's input in context, it tries
-        /// to elicit the information a few times. After that, Amazon Lex sends the message
-        /// defined in <code>abortStatement</code> to the user, and then cancels the
-        /// conversation. To set the number of retries, use the
-        /// <code>valueElicitationPrompt</code> field for the slot type. </p>
-        /// <p>For example, in a pizza ordering bot, Amazon Lex might ask a user "What
-        /// type of crust would you like?" If the user's response is not one of the
-        /// expected responses (for example, "thin crust, "deep dish," etc.), Amazon Lex
-        /// tries to elicit a correct response a few more times. </p>
-        /// <p>For example, in a pizza ordering application,
-        /// <code>OrderPizza</code> might be one of the intents. This intent might
-        /// require the <code>CrustType</code> slot. You specify the
-        /// <code>valueElicitationPrompt</code> field when you create the
-        /// <code>CrustType</code> slot.</p>
-        /// <p>If you have defined a fallback intent the cancel statement will not be
-        /// sent to the user, the fallback intent is used instead. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/built-in-intent-fallback.html">
-        /// AMAZON.FallbackIntent</a>.</p>
+        /// <p>When Amazon Lex can't understand the user's input in context, it tries to elicit the information a few times. After that, Amazon Lex sends the message defined in <code>abortStatement</code> to the user, and then cancels the conversation. To set the number of retries, use the <code>valueElicitationPrompt</code> field for the slot type. </p>
+        /// <p>For example, in a pizza ordering bot, Amazon Lex might ask a user "What type of crust would you like?" If the user's response is not one of the expected responses (for example, "thin crust, "deep dish," etc.), Amazon Lex tries to elicit a correct response a few more times. </p>
+        /// <p>For example, in a pizza ordering application, <code>OrderPizza</code> might be one of the intents. This intent might require the <code>CrustType</code> slot. You specify the <code>valueElicitationPrompt</code> field when you create the <code>CrustType</code> slot.</p>
+        /// <p>If you have defined a fallback intent the cancel statement will not be sent to the user, the fallback intent is used instead. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/built-in-intent-fallback.html"> AMAZON.FallbackIntent</a>.</p>
         pub fn abort_statement(mut self, input: crate::model::Statement) -> Self {
             self.inner = self.inner.abort_statement(input);
             self
         }
-        /// <p>When Amazon Lex can't understand the user's input in context, it tries
-        /// to elicit the information a few times. After that, Amazon Lex sends the message
-        /// defined in <code>abortStatement</code> to the user, and then cancels the
-        /// conversation. To set the number of retries, use the
-        /// <code>valueElicitationPrompt</code> field for the slot type. </p>
-        /// <p>For example, in a pizza ordering bot, Amazon Lex might ask a user "What
-        /// type of crust would you like?" If the user's response is not one of the
-        /// expected responses (for example, "thin crust, "deep dish," etc.), Amazon Lex
-        /// tries to elicit a correct response a few more times. </p>
-        /// <p>For example, in a pizza ordering application,
-        /// <code>OrderPizza</code> might be one of the intents. This intent might
-        /// require the <code>CrustType</code> slot. You specify the
-        /// <code>valueElicitationPrompt</code> field when you create the
-        /// <code>CrustType</code> slot.</p>
-        /// <p>If you have defined a fallback intent the cancel statement will not be
-        /// sent to the user, the fallback intent is used instead. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/built-in-intent-fallback.html">
-        /// AMAZON.FallbackIntent</a>.</p>
+        /// <p>When Amazon Lex can't understand the user's input in context, it tries to elicit the information a few times. After that, Amazon Lex sends the message defined in <code>abortStatement</code> to the user, and then cancels the conversation. To set the number of retries, use the <code>valueElicitationPrompt</code> field for the slot type. </p>
+        /// <p>For example, in a pizza ordering bot, Amazon Lex might ask a user "What type of crust would you like?" If the user's response is not one of the expected responses (for example, "thin crust, "deep dish," etc.), Amazon Lex tries to elicit a correct response a few more times. </p>
+        /// <p>For example, in a pizza ordering application, <code>OrderPizza</code> might be one of the intents. This intent might require the <code>CrustType</code> slot. You specify the <code>valueElicitationPrompt</code> field when you create the <code>CrustType</code> slot.</p>
+        /// <p>If you have defined a fallback intent the cancel statement will not be sent to the user, the fallback intent is used instead. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/built-in-intent-fallback.html"> AMAZON.FallbackIntent</a>.</p>
         pub fn set_abort_statement(
             mut self,
             input: std::option::Option<crate::model::Statement>,
@@ -4227,104 +3624,56 @@ pub mod fluent_builders {
             self.inner = self.inner.set_abort_statement(input);
             self
         }
-        /// <p>The maximum time in seconds that Amazon Lex retains the data gathered in
-        /// a conversation.</p>
-        /// <p>A user interaction session remains active for the amount of time
-        /// specified. If no conversation occurs during this time, the session expires
-        /// and Amazon Lex deletes any data provided before the timeout.</p>
-        /// <p>For example, suppose that a user chooses the OrderPizza intent, but
-        /// gets sidetracked halfway through placing an order. If the user doesn't
-        /// complete the order within the specified time, Amazon Lex discards the slot
-        /// information that it gathered, and the user must start over.</p>
-        /// <p>If you don't include the <code>idleSessionTTLInSeconds</code>
-        /// element in a <code>PutBot</code> operation request, Amazon Lex uses the default
-        /// value. This is also true if the request replaces an existing
-        /// bot.</p>
+        /// <p>The maximum time in seconds that Amazon Lex retains the data gathered in a conversation.</p>
+        /// <p>A user interaction session remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.</p>
+        /// <p>For example, suppose that a user chooses the OrderPizza intent, but gets sidetracked halfway through placing an order. If the user doesn't complete the order within the specified time, Amazon Lex discards the slot information that it gathered, and the user must start over.</p>
+        /// <p>If you don't include the <code>idleSessionTTLInSeconds</code> element in a <code>PutBot</code> operation request, Amazon Lex uses the default value. This is also true if the request replaces an existing bot.</p>
         /// <p>The default is 300 seconds (5 minutes).</p>
         pub fn idle_session_ttl_in_seconds(mut self, input: i32) -> Self {
             self.inner = self.inner.idle_session_ttl_in_seconds(input);
             self
         }
-        /// <p>The maximum time in seconds that Amazon Lex retains the data gathered in
-        /// a conversation.</p>
-        /// <p>A user interaction session remains active for the amount of time
-        /// specified. If no conversation occurs during this time, the session expires
-        /// and Amazon Lex deletes any data provided before the timeout.</p>
-        /// <p>For example, suppose that a user chooses the OrderPizza intent, but
-        /// gets sidetracked halfway through placing an order. If the user doesn't
-        /// complete the order within the specified time, Amazon Lex discards the slot
-        /// information that it gathered, and the user must start over.</p>
-        /// <p>If you don't include the <code>idleSessionTTLInSeconds</code>
-        /// element in a <code>PutBot</code> operation request, Amazon Lex uses the default
-        /// value. This is also true if the request replaces an existing
-        /// bot.</p>
+        /// <p>The maximum time in seconds that Amazon Lex retains the data gathered in a conversation.</p>
+        /// <p>A user interaction session remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.</p>
+        /// <p>For example, suppose that a user chooses the OrderPizza intent, but gets sidetracked halfway through placing an order. If the user doesn't complete the order within the specified time, Amazon Lex discards the slot information that it gathered, and the user must start over.</p>
+        /// <p>If you don't include the <code>idleSessionTTLInSeconds</code> element in a <code>PutBot</code> operation request, Amazon Lex uses the default value. This is also true if the request replaces an existing bot.</p>
         /// <p>The default is 300 seconds (5 minutes).</p>
         pub fn set_idle_session_ttl_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_idle_session_ttl_in_seconds(input);
             self
         }
-        /// <p>The Amazon Polly voice ID that you want Amazon Lex to use for voice
-        /// interactions with the user. The locale configured for the voice must match
-        /// the locale of the bot. For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Voices
-        /// in Amazon Polly</a> in the <i>Amazon Polly Developer
-        /// Guide</i>.</p>
+        /// <p>The Amazon Polly voice ID that you want Amazon Lex to use for voice interactions with the user. The locale configured for the voice must match the locale of the bot. For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Voices in Amazon Polly</a> in the <i>Amazon Polly Developer Guide</i>.</p>
         pub fn voice_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.voice_id(input.into());
             self
         }
-        /// <p>The Amazon Polly voice ID that you want Amazon Lex to use for voice
-        /// interactions with the user. The locale configured for the voice must match
-        /// the locale of the bot. For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Voices
-        /// in Amazon Polly</a> in the <i>Amazon Polly Developer
-        /// Guide</i>.</p>
+        /// <p>The Amazon Polly voice ID that you want Amazon Lex to use for voice interactions with the user. The locale configured for the voice must match the locale of the bot. For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Voices in Amazon Polly</a> in the <i>Amazon Polly Developer Guide</i>.</p>
         pub fn set_voice_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_voice_id(input);
             self
         }
-        /// <p>Identifies a specific revision of the <code>$LATEST</code>
-        /// version.</p>
-        /// <p>When you create a new bot, leave the <code>checksum</code> field
-        /// blank. If you specify a checksum you get a
-        /// <code>BadRequestException</code> exception.</p>
-        /// <p>When you want to update a bot, set the <code>checksum</code> field
-        /// to the checksum of the most recent revision of the <code>$LATEST</code>
-        /// version. If you don't specify the <code> checksum</code> field, or if the
-        /// checksum does not match the <code>$LATEST</code> version, you get a
-        /// <code>PreconditionFailedException</code> exception.</p>
+        /// <p>Identifies a specific revision of the <code>$LATEST</code> version.</p>
+        /// <p>When you create a new bot, leave the <code>checksum</code> field blank. If you specify a checksum you get a <code>BadRequestException</code> exception.</p>
+        /// <p>When you want to update a bot, set the <code>checksum</code> field to the checksum of the most recent revision of the <code>$LATEST</code> version. If you don't specify the <code> checksum</code> field, or if the checksum does not match the <code>$LATEST</code> version, you get a <code>PreconditionFailedException</code> exception.</p>
         pub fn checksum(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.checksum(input.into());
             self
         }
-        /// <p>Identifies a specific revision of the <code>$LATEST</code>
-        /// version.</p>
-        /// <p>When you create a new bot, leave the <code>checksum</code> field
-        /// blank. If you specify a checksum you get a
-        /// <code>BadRequestException</code> exception.</p>
-        /// <p>When you want to update a bot, set the <code>checksum</code> field
-        /// to the checksum of the most recent revision of the <code>$LATEST</code>
-        /// version. If you don't specify the <code> checksum</code> field, or if the
-        /// checksum does not match the <code>$LATEST</code> version, you get a
-        /// <code>PreconditionFailedException</code> exception.</p>
+        /// <p>Identifies a specific revision of the <code>$LATEST</code> version.</p>
+        /// <p>When you create a new bot, leave the <code>checksum</code> field blank. If you specify a checksum you get a <code>BadRequestException</code> exception.</p>
+        /// <p>When you want to update a bot, set the <code>checksum</code> field to the checksum of the most recent revision of the <code>$LATEST</code> version. If you don't specify the <code> checksum</code> field, or if the checksum does not match the <code>$LATEST</code> version, you get a <code>PreconditionFailedException</code> exception.</p>
         pub fn set_checksum(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_checksum(input);
             self
         }
-        /// <p>If you set the <code>processBehavior</code> element to
-        /// <code>BUILD</code>, Amazon Lex builds the bot so that it can be run. If you
-        /// set the element to <code>SAVE</code> Amazon Lex saves the bot, but doesn't
-        /// build it. </p>
-        /// <p>If you don't specify this value, the default value is
-        /// <code>BUILD</code>.</p>
+        /// <p>If you set the <code>processBehavior</code> element to <code>BUILD</code>, Amazon Lex builds the bot so that it can be run. If you set the element to <code>SAVE</code> Amazon Lex saves the bot, but doesn't build it. </p>
+        /// <p>If you don't specify this value, the default value is <code>BUILD</code>.</p>
         pub fn process_behavior(mut self, input: crate::model::ProcessBehavior) -> Self {
             self.inner = self.inner.process_behavior(input);
             self
         }
-        /// <p>If you set the <code>processBehavior</code> element to
-        /// <code>BUILD</code>, Amazon Lex builds the bot so that it can be run. If you
-        /// set the element to <code>SAVE</code> Amazon Lex saves the bot, but doesn't
-        /// build it. </p>
-        /// <p>If you don't specify this value, the default value is
-        /// <code>BUILD</code>.</p>
+        /// <p>If you set the <code>processBehavior</code> element to <code>BUILD</code>, Amazon Lex builds the bot so that it can be run. If you set the element to <code>SAVE</code> Amazon Lex saves the bot, but doesn't build it. </p>
+        /// <p>If you don't specify this value, the default value is <code>BUILD</code>.</p>
         pub fn set_process_behavior(
             mut self,
             input: std::option::Option<crate::model::ProcessBehavior>,
@@ -4332,108 +3681,46 @@ pub mod fluent_builders {
             self.inner = self.inner.set_process_behavior(input);
             self
         }
-        /// <p> Specifies the target locale for the bot. Any intent used in the
-        /// bot must be compatible with the locale of the bot. </p>
-        ///
+        /// <p> Specifies the target locale for the bot. Any intent used in the bot must be compatible with the locale of the bot. </p>
         /// <p>The default is <code>en-US</code>.</p>
         pub fn locale(mut self, input: crate::model::Locale) -> Self {
             self.inner = self.inner.locale(input);
             self
         }
-        /// <p> Specifies the target locale for the bot. Any intent used in the
-        /// bot must be compatible with the locale of the bot. </p>
-        ///
+        /// <p> Specifies the target locale for the bot. Any intent used in the bot must be compatible with the locale of the bot. </p>
         /// <p>The default is <code>en-US</code>.</p>
         pub fn set_locale(mut self, input: std::option::Option<crate::model::Locale>) -> Self {
             self.inner = self.inner.set_locale(input);
             self
         }
-        /// <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service,
-        /// you must specify whether your use of Amazon Lex is related to a website,
-        /// program, or other application that is directed or targeted, in whole or in
-        /// part, to children under age 13 and subject to the Children's Online
-        /// Privacy Protection Act (COPPA) by specifying <code>true</code> or
-        /// <code>false</code> in the <code>childDirected</code> field. By
-        /// specifying <code>true</code> in the <code>childDirected</code> field, you
-        /// confirm that your use of Amazon Lex <b>is</b> related
-        /// to a website, program, or other application that is directed or targeted,
-        /// in whole or in part, to children under age 13 and subject to COPPA. By
-        /// specifying <code>false</code> in the <code>childDirected</code> field, you
-        /// confirm that your use of Amazon Lex <b>is not</b>
-        /// related to a website, program, or other application that is directed or
-        /// targeted, in whole or in part, to children under age 13 and subject to
-        /// COPPA. You may not specify a default value for the
-        /// <code>childDirected</code> field that does not accurately reflect
-        /// whether your use of Amazon Lex is related to a website, program, or other
-        /// application that is directed or targeted, in whole or in part, to children
-        /// under age 13 and subject to COPPA.</p>
-        /// <p>If your use of Amazon Lex relates to a website, program, or other
-        /// application that is directed in whole or in part, to children under age
-        /// 13, you must obtain any required verifiable parental consent under COPPA.
-        /// For information regarding the use of Amazon Lex in connection with websites,
-        /// programs, or other applications that are directed or targeted, in whole or
-        /// in part, to children under age 13, see the <a href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ.</a>
-        /// </p>
+        /// <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service, you must specify whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to the Children's Online Privacy Protection Act (COPPA) by specifying <code>true</code> or <code>false</code> in the <code>childDirected</code> field. By specifying <code>true</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. By specifying <code>false</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is not</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. You may not specify a default value for the <code>childDirected</code> field that does not accurately reflect whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA.</p>
+        /// <p>If your use of Amazon Lex relates to a website, program, or other application that is directed in whole or in part, to children under age 13, you must obtain any required verifiable parental consent under COPPA. For information regarding the use of Amazon Lex in connection with websites, programs, or other applications that are directed or targeted, in whole or in part, to children under age 13, see the <a href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ.</a> </p>
         pub fn child_directed(mut self, input: bool) -> Self {
             self.inner = self.inner.child_directed(input);
             self
         }
-        /// <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service,
-        /// you must specify whether your use of Amazon Lex is related to a website,
-        /// program, or other application that is directed or targeted, in whole or in
-        /// part, to children under age 13 and subject to the Children's Online
-        /// Privacy Protection Act (COPPA) by specifying <code>true</code> or
-        /// <code>false</code> in the <code>childDirected</code> field. By
-        /// specifying <code>true</code> in the <code>childDirected</code> field, you
-        /// confirm that your use of Amazon Lex <b>is</b> related
-        /// to a website, program, or other application that is directed or targeted,
-        /// in whole or in part, to children under age 13 and subject to COPPA. By
-        /// specifying <code>false</code> in the <code>childDirected</code> field, you
-        /// confirm that your use of Amazon Lex <b>is not</b>
-        /// related to a website, program, or other application that is directed or
-        /// targeted, in whole or in part, to children under age 13 and subject to
-        /// COPPA. You may not specify a default value for the
-        /// <code>childDirected</code> field that does not accurately reflect
-        /// whether your use of Amazon Lex is related to a website, program, or other
-        /// application that is directed or targeted, in whole or in part, to children
-        /// under age 13 and subject to COPPA.</p>
-        /// <p>If your use of Amazon Lex relates to a website, program, or other
-        /// application that is directed in whole or in part, to children under age
-        /// 13, you must obtain any required verifiable parental consent under COPPA.
-        /// For information regarding the use of Amazon Lex in connection with websites,
-        /// programs, or other applications that are directed or targeted, in whole or
-        /// in part, to children under age 13, see the <a href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ.</a>
-        /// </p>
+        /// <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service, you must specify whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to the Children's Online Privacy Protection Act (COPPA) by specifying <code>true</code> or <code>false</code> in the <code>childDirected</code> field. By specifying <code>true</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. By specifying <code>false</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is not</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. You may not specify a default value for the <code>childDirected</code> field that does not accurately reflect whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA.</p>
+        /// <p>If your use of Amazon Lex relates to a website, program, or other application that is directed in whole or in part, to children under age 13, you must obtain any required verifiable parental consent under COPPA. For information regarding the use of Amazon Lex in connection with websites, programs, or other applications that are directed or targeted, in whole or in part, to children under age 13, see the <a href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ.</a> </p>
         pub fn set_child_directed(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_child_directed(input);
             self
         }
-        /// <p>When set to <code>true</code> user utterances are sent to Amazon
-        /// Comprehend for sentiment analysis. If you don't specify
-        /// <code>detectSentiment</code>, the default is <code>false</code>.</p>
+        /// <p>When set to <code>true</code> user utterances are sent to Amazon Comprehend for sentiment analysis. If you don't specify <code>detectSentiment</code>, the default is <code>false</code>.</p>
         pub fn detect_sentiment(mut self, input: bool) -> Self {
             self.inner = self.inner.detect_sentiment(input);
             self
         }
-        /// <p>When set to <code>true</code> user utterances are sent to Amazon
-        /// Comprehend for sentiment analysis. If you don't specify
-        /// <code>detectSentiment</code>, the default is <code>false</code>.</p>
+        /// <p>When set to <code>true</code> user utterances are sent to Amazon Comprehend for sentiment analysis. If you don't specify <code>detectSentiment</code>, the default is <code>false</code>.</p>
         pub fn set_detect_sentiment(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_detect_sentiment(input);
             self
         }
-        /// <p>When set to <code>true</code> a new numbered version of the bot is
-        /// created. This is the same as calling the <code>CreateBotVersion</code>
-        /// operation. If you don't specify <code>createVersion</code>, the default is
-        /// <code>false</code>.</p>
+        /// <p>When set to <code>true</code> a new numbered version of the bot is created. This is the same as calling the <code>CreateBotVersion</code> operation. If you don't specify <code>createVersion</code>, the default is <code>false</code>.</p>
         pub fn create_version(mut self, input: bool) -> Self {
             self.inner = self.inner.create_version(input);
             self
         }
-        /// <p>When set to <code>true</code> a new numbered version of the bot is
-        /// created. This is the same as calling the <code>CreateBotVersion</code>
-        /// operation. If you don't specify <code>createVersion</code>, the default is
-        /// <code>false</code>.</p>
+        /// <p>When set to <code>true</code> a new numbered version of the bot is created. This is the same as calling the <code>CreateBotVersion</code> operation. If you don't specify <code>createVersion</code>, the default is <code>false</code>.</p>
         pub fn set_create_version(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_create_version(input);
             self
@@ -4442,18 +3729,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of tags to add to the bot. You can only add tags when you
-        /// create a bot, you can't use the <code>PutBot</code> operation to update
-        /// the tags on a bot. To update tags, use the <code>TagResource</code>
-        /// operation.</p>
+        /// <p>A list of tags to add to the bot. You can only add tags when you create a bot, you can't use the <code>PutBot</code> operation to update the tags on a bot. To update tags, use the <code>TagResource</code> operation.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>A list of tags to add to the bot. You can only add tags when you
-        /// create a bot, you can't use the <code>PutBot</code> operation to update
-        /// the tags on a bot. To update tags, use the <code>TagResource</code>
-        /// operation.</p>
+        /// <p>A list of tags to add to the bot. You can only add tags when you create a bot, you can't use the <code>PutBot</code> operation to update the tags on a bot. To update tags, use the <code>TagResource</code> operation.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -4464,12 +3745,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutBotAlias`.
     ///
-    /// <p>Creates an alias for the specified version of the bot or replaces
-    /// an alias for the specified bot. To change the version of the bot that the
-    /// alias points to, replace the alias. For more information about aliases,
-    /// see <a>versioning-aliases</a>.</p>
-    /// <p>This operation requires permissions for the
-    /// <code>lex:PutBotAlias</code> action. </p>
+    /// <p>Creates an alias for the specified version of the bot or replaces an alias for the specified bot. To change the version of the bot that the alias points to, replace the alias. For more information about aliases, see <code>versioning-aliases</code>.</p>
+    /// <p>This operation requires permissions for the <code>lex:PutBotAlias</code> action. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutBotAlias<
         C = aws_smithy_client::erase::DynConnector,
@@ -4526,14 +3803,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the alias. The name is <i>not</i> case
-        /// sensitive.</p>
+        /// <p>The name of the alias. The name is <i>not</i> case sensitive.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the alias. The name is <i>not</i> case
-        /// sensitive.</p>
+        /// <p>The name of the alias. The name is <i>not</i> case sensitive.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -4568,32 +3843,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bot_name(input);
             self
         }
-        /// <p>Identifies a specific revision of the <code>$LATEST</code>
-        /// version.</p>
-        /// <p>When you create a new bot alias, leave the <code>checksum</code>
-        /// field blank. If you specify a checksum you get a
-        /// <code>BadRequestException</code> exception.</p>
-        /// <p>When you want to update a bot alias, set the <code>checksum</code>
-        /// field to the checksum of the most recent revision of the
-        /// <code>$LATEST</code> version. If you don't specify the <code>
-        /// checksum</code> field, or if the checksum does not match the
-        /// <code>$LATEST</code> version, you get a
-        /// <code>PreconditionFailedException</code> exception.</p>
+        /// <p>Identifies a specific revision of the <code>$LATEST</code> version.</p>
+        /// <p>When you create a new bot alias, leave the <code>checksum</code> field blank. If you specify a checksum you get a <code>BadRequestException</code> exception.</p>
+        /// <p>When you want to update a bot alias, set the <code>checksum</code> field to the checksum of the most recent revision of the <code>$LATEST</code> version. If you don't specify the <code> checksum</code> field, or if the checksum does not match the <code>$LATEST</code> version, you get a <code>PreconditionFailedException</code> exception.</p>
         pub fn checksum(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.checksum(input.into());
             self
         }
-        /// <p>Identifies a specific revision of the <code>$LATEST</code>
-        /// version.</p>
-        /// <p>When you create a new bot alias, leave the <code>checksum</code>
-        /// field blank. If you specify a checksum you get a
-        /// <code>BadRequestException</code> exception.</p>
-        /// <p>When you want to update a bot alias, set the <code>checksum</code>
-        /// field to the checksum of the most recent revision of the
-        /// <code>$LATEST</code> version. If you don't specify the <code>
-        /// checksum</code> field, or if the checksum does not match the
-        /// <code>$LATEST</code> version, you get a
-        /// <code>PreconditionFailedException</code> exception.</p>
+        /// <p>Identifies a specific revision of the <code>$LATEST</code> version.</p>
+        /// <p>When you create a new bot alias, leave the <code>checksum</code> field blank. If you specify a checksum you get a <code>BadRequestException</code> exception.</p>
+        /// <p>When you want to update a bot alias, set the <code>checksum</code> field to the checksum of the most recent revision of the <code>$LATEST</code> version. If you don't specify the <code> checksum</code> field, or if the checksum does not match the <code>$LATEST</code> version, you get a <code>PreconditionFailedException</code> exception.</p>
         pub fn set_checksum(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_checksum(input);
             self
@@ -4615,18 +3874,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of tags to add to the bot alias. You can only add tags when you
-        /// create an alias, you can't use the <code>PutBotAlias</code> operation to
-        /// update the tags on a bot alias. To update tags, use the
-        /// <code>TagResource</code> operation.</p>
+        /// <p>A list of tags to add to the bot alias. You can only add tags when you create an alias, you can't use the <code>PutBotAlias</code> operation to update the tags on a bot alias. To update tags, use the <code>TagResource</code> operation.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>A list of tags to add to the bot alias. You can only add tags when you
-        /// create an alias, you can't use the <code>PutBotAlias</code> operation to
-        /// update the tags on a bot alias. To update tags, use the
-        /// <code>TagResource</code> operation.</p>
+        /// <p>A list of tags to add to the bot alias. You can only add tags when you create an alias, you can't use the <code>PutBotAlias</code> operation to update the tags on a bot alias. To update tags, use the <code>TagResource</code> operation.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -4638,63 +3891,23 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutIntent`.
     ///
     /// <p>Creates an intent or replaces an existing intent.</p>
-    /// <p>To define the interaction between the user and your bot, you use
-    /// one or more intents. For a pizza ordering bot, for example, you would
-    /// create an <code>OrderPizza</code> intent. </p>
-    /// <p>To create an intent or replace an existing intent, you must provide
-    /// the following:</p>
+    /// <p>To define the interaction between the user and your bot, you use one or more intents. For a pizza ordering bot, for example, you would create an <code>OrderPizza</code> intent. </p>
+    /// <p>To create an intent or replace an existing intent, you must provide the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>Intent name. For example, <code>OrderPizza</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Sample utterances. For example, "Can I order a pizza, please."
-    /// and "I want to order a pizza."</p>
-    /// </li>
-    /// <li>
-    /// <p>Information to be gathered. You specify slot types for the
-    /// information that your bot will request from the user. You can specify
-    /// standard slot types, such as a date or a time, or custom slot types
-    /// such as the size and crust of a pizza.</p>
-    /// </li>
-    /// <li>
-    /// <p>How the intent will be fulfilled. You can provide a Lambda
-    /// function or configure the intent to return the intent information to
-    /// the client application. If you use a Lambda function, when all of the
-    /// intent information is available, Amazon Lex invokes your Lambda function.
-    /// If you configure your intent to return the intent information to the
-    /// client application. </p>
-    /// </li>
+    /// <li> <p>Intent name. For example, <code>OrderPizza</code>.</p> </li>
+    /// <li> <p>Sample utterances. For example, "Can I order a pizza, please." and "I want to order a pizza."</p> </li>
+    /// <li> <p>Information to be gathered. You specify slot types for the information that your bot will request from the user. You can specify standard slot types, such as a date or a time, or custom slot types such as the size and crust of a pizza.</p> </li>
+    /// <li> <p>How the intent will be fulfilled. You can provide a Lambda function or configure the intent to return the intent information to the client application. If you use a Lambda function, when all of the intent information is available, Amazon Lex invokes your Lambda function. If you configure your intent to return the intent information to the client application. </p> </li>
     /// </ul>
-    /// <p>You can specify other optional information in the request, such
-    /// as:</p>
-    ///
+    /// <p>You can specify other optional information in the request, such as:</p>
     /// <ul>
-    /// <li>
-    /// <p>A confirmation prompt to ask the user to confirm an intent. For
-    /// example, "Shall I order your pizza?"</p>
-    /// </li>
-    /// <li>
-    /// <p>A conclusion statement to send to the user after the intent has
-    /// been fulfilled. For example, "I placed your pizza order."</p>
-    /// </li>
-    /// <li>
-    /// <p>A follow-up prompt that asks the user for additional activity.
-    /// For example, asking "Do you want to order a drink with your
-    /// pizza?"</p>
-    /// </li>
+    /// <li> <p>A confirmation prompt to ask the user to confirm an intent. For example, "Shall I order your pizza?"</p> </li>
+    /// <li> <p>A conclusion statement to send to the user after the intent has been fulfilled. For example, "I placed your pizza order."</p> </li>
+    /// <li> <p>A follow-up prompt that asks the user for additional activity. For example, asking "Do you want to order a drink with your pizza?"</p> </li>
     /// </ul>
-    /// <p>If you specify an existing intent name to update the intent, Amazon Lex
-    /// replaces the values in the <code>$LATEST</code> version of the intent with
-    /// the values in the request. Amazon Lex removes fields that you don't provide in
-    /// the request. If you don't specify the required fields, Amazon Lex throws an
-    /// exception. When you update the <code>$LATEST</code> version of an intent,
-    /// the <code>status</code> field of any bot that uses the
-    /// <code>$LATEST</code> version of the intent is set to
-    /// <code>NOT_BUILT</code>.</p>
-    /// <p>For more information, see <a>how-it-works</a>.</p>
-    /// <p>This operation requires permissions for the
-    /// <code>lex:PutIntent</code> action.</p>
+    /// <p>If you specify an existing intent name to update the intent, Amazon Lex replaces the values in the <code>$LATEST</code> version of the intent with the values in the request. Amazon Lex removes fields that you don't provide in the request. If you don't specify the required fields, Amazon Lex throws an exception. When you update the <code>$LATEST</code> version of an intent, the <code>status</code> field of any bot that uses the <code>$LATEST</code> version of the intent is set to <code>NOT_BUILT</code>.</p>
+    /// <p>For more information, see <code>how-it-works</code>.</p>
+    /// <p>This operation requires permissions for the <code>lex:PutIntent</code> action.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutIntent<
         C = aws_smithy_client::erase::DynConnector,
@@ -4751,26 +3964,16 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the intent. The name is <i>not</i> case
-        /// sensitive. </p>
-        /// <p>The name can't match a built-in intent name, or a built-in intent
-        /// name with "AMAZON." removed. For example, because there is a built-in
-        /// intent called <code>AMAZON.HelpIntent</code>, you can't create a custom
-        /// intent called <code>HelpIntent</code>.</p>
-        /// <p>For a list of built-in intents, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard Built-in Intents</a> in the <i>Alexa Skills
-        /// Kit</i>.</p>
+        /// <p>The name of the intent. The name is <i>not</i> case sensitive. </p>
+        /// <p>The name can't match a built-in intent name, or a built-in intent name with "AMAZON." removed. For example, because there is a built-in intent called <code>AMAZON.HelpIntent</code>, you can't create a custom intent called <code>HelpIntent</code>.</p>
+        /// <p>For a list of built-in intents, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard Built-in Intents</a> in the <i>Alexa Skills Kit</i>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the intent. The name is <i>not</i> case
-        /// sensitive. </p>
-        /// <p>The name can't match a built-in intent name, or a built-in intent
-        /// name with "AMAZON." removed. For example, because there is a built-in
-        /// intent called <code>AMAZON.HelpIntent</code>, you can't create a custom
-        /// intent called <code>HelpIntent</code>.</p>
-        /// <p>For a list of built-in intents, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard Built-in Intents</a> in the <i>Alexa Skills
-        /// Kit</i>.</p>
+        /// <p>The name of the intent. The name is <i>not</i> case sensitive. </p>
+        /// <p>The name can't match a built-in intent name, or a built-in intent name with "AMAZON." removed. For example, because there is a built-in intent called <code>AMAZON.HelpIntent</code>, you can't create a custom intent called <code>HelpIntent</code>.</p>
+        /// <p>For a list of built-in intents, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard Built-in Intents</a> in the <i>Alexa Skills Kit</i>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -4789,16 +3992,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_slots`](Self::set_slots).
         ///
-        /// <p>An array of intent slots. At runtime, Amazon Lex elicits required slot
-        /// values from the user using prompts defined in the slots. For more
-        /// information, see <a>how-it-works</a>. </p>
+        /// <p>An array of intent slots. At runtime, Amazon Lex elicits required slot values from the user using prompts defined in the slots. For more information, see <code>how-it-works</code>. </p>
         pub fn slots(mut self, input: crate::model::Slot) -> Self {
             self.inner = self.inner.slots(input);
             self
         }
-        /// <p>An array of intent slots. At runtime, Amazon Lex elicits required slot
-        /// values from the user using prompts defined in the slots. For more
-        /// information, see <a>how-it-works</a>. </p>
+        /// <p>An array of intent slots. At runtime, Amazon Lex elicits required slot values from the user using prompts defined in the slots. For more information, see <code>how-it-works</code>. </p>
         pub fn set_slots(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Slot>>,
@@ -4810,22 +4009,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_sample_utterances`](Self::set_sample_utterances).
         ///
-        /// <p>An array of utterances (strings) that a user might say to signal
-        /// the intent. For example, "I want {PizzaSize} pizza", "Order {Quantity}
-        /// {PizzaSize} pizzas". </p>
-        ///
-        /// <p>In each utterance, a slot name is enclosed in curly braces.
-        /// </p>
+        /// <p>An array of utterances (strings) that a user might say to signal the intent. For example, "I want {PizzaSize} pizza", "Order {Quantity} {PizzaSize} pizzas". </p>
+        /// <p>In each utterance, a slot name is enclosed in curly braces. </p>
         pub fn sample_utterances(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.sample_utterances(input.into());
             self
         }
-        /// <p>An array of utterances (strings) that a user might say to signal
-        /// the intent. For example, "I want {PizzaSize} pizza", "Order {Quantity}
-        /// {PizzaSize} pizzas". </p>
-        ///
-        /// <p>In each utterance, a slot name is enclosed in curly braces.
-        /// </p>
+        /// <p>An array of utterances (strings) that a user might say to signal the intent. For example, "I want {PizzaSize} pizza", "Order {Quantity} {PizzaSize} pizzas". </p>
+        /// <p>In each utterance, a slot name is enclosed in curly braces. </p>
         pub fn set_sample_utterances(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4833,33 +4024,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sample_utterances(input);
             self
         }
-        /// <p>Prompts the user to confirm the intent. This question should have a
-        /// yes or no answer.</p>
-        /// <p>Amazon Lex uses this prompt to ensure that the user acknowledges that
-        /// the intent is ready for fulfillment. For example, with the
-        /// <code>OrderPizza</code> intent, you might want to confirm that the order
-        /// is correct before placing it. For other intents, such as intents that
-        /// simply respond to user questions, you might not need to ask the user for
-        /// confirmation before providing the information. </p>
-        /// <note>
-        /// <p>You you must provide both the <code>rejectionStatement</code> and
-        /// the <code>confirmationPrompt</code>, or neither.</p>
+        /// <p>Prompts the user to confirm the intent. This question should have a yes or no answer.</p>
+        /// <p>Amazon Lex uses this prompt to ensure that the user acknowledges that the intent is ready for fulfillment. For example, with the <code>OrderPizza</code> intent, you might want to confirm that the order is correct before placing it. For other intents, such as intents that simply respond to user questions, you might not need to ask the user for confirmation before providing the information. </p> <note>
+        /// <p>You you must provide both the <code>rejectionStatement</code> and the <code>confirmationPrompt</code>, or neither.</p>
         /// </note>
         pub fn confirmation_prompt(mut self, input: crate::model::Prompt) -> Self {
             self.inner = self.inner.confirmation_prompt(input);
             self
         }
-        /// <p>Prompts the user to confirm the intent. This question should have a
-        /// yes or no answer.</p>
-        /// <p>Amazon Lex uses this prompt to ensure that the user acknowledges that
-        /// the intent is ready for fulfillment. For example, with the
-        /// <code>OrderPizza</code> intent, you might want to confirm that the order
-        /// is correct before placing it. For other intents, such as intents that
-        /// simply respond to user questions, you might not need to ask the user for
-        /// confirmation before providing the information. </p>
-        /// <note>
-        /// <p>You you must provide both the <code>rejectionStatement</code> and
-        /// the <code>confirmationPrompt</code>, or neither.</p>
+        /// <p>Prompts the user to confirm the intent. This question should have a yes or no answer.</p>
+        /// <p>Amazon Lex uses this prompt to ensure that the user acknowledges that the intent is ready for fulfillment. For example, with the <code>OrderPizza</code> intent, you might want to confirm that the order is correct before placing it. For other intents, such as intents that simply respond to user questions, you might not need to ask the user for confirmation before providing the information. </p> <note>
+        /// <p>You you must provide both the <code>rejectionStatement</code> and the <code>confirmationPrompt</code>, or neither.</p>
         /// </note>
         pub fn set_confirmation_prompt(
             mut self,
@@ -4868,23 +4043,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_confirmation_prompt(input);
             self
         }
-        /// <p>When the user answers "no" to the question defined in
-        /// <code>confirmationPrompt</code>, Amazon Lex responds with this statement to
-        /// acknowledge that the intent was canceled. </p>
-        /// <note>
-        /// <p>You must provide both the <code>rejectionStatement</code> and the
-        /// <code>confirmationPrompt</code>, or neither.</p>
+        /// <p>When the user answers "no" to the question defined in <code>confirmationPrompt</code>, Amazon Lex responds with this statement to acknowledge that the intent was canceled. </p> <note>
+        /// <p>You must provide both the <code>rejectionStatement</code> and the <code>confirmationPrompt</code>, or neither.</p>
         /// </note>
         pub fn rejection_statement(mut self, input: crate::model::Statement) -> Self {
             self.inner = self.inner.rejection_statement(input);
             self
         }
-        /// <p>When the user answers "no" to the question defined in
-        /// <code>confirmationPrompt</code>, Amazon Lex responds with this statement to
-        /// acknowledge that the intent was canceled. </p>
-        /// <note>
-        /// <p>You must provide both the <code>rejectionStatement</code> and the
-        /// <code>confirmationPrompt</code>, or neither.</p>
+        /// <p>When the user answers "no" to the question defined in <code>confirmationPrompt</code>, Amazon Lex responds with this statement to acknowledge that the intent was canceled. </p> <note>
+        /// <p>You must provide both the <code>rejectionStatement</code> and the <code>confirmationPrompt</code>, or neither.</p>
         /// </note>
         pub fn set_rejection_statement(
             mut self,
@@ -4893,64 +4060,28 @@ pub mod fluent_builders {
             self.inner = self.inner.set_rejection_statement(input);
             self
         }
-        /// <p>Amazon Lex uses this prompt to solicit additional activity after
-        /// fulfilling an intent. For example, after the <code>OrderPizza</code>
-        /// intent is fulfilled, you might prompt the user to order a drink.</p>
-        /// <p>The action that Amazon Lex takes depends on the user's response, as
-        /// follows:</p>
+        /// <p>Amazon Lex uses this prompt to solicit additional activity after fulfilling an intent. For example, after the <code>OrderPizza</code> intent is fulfilled, you might prompt the user to order a drink.</p>
+        /// <p>The action that Amazon Lex takes depends on the user's response, as follows:</p>
         /// <ul>
-        /// <li>
-        /// <p>If the user says "Yes" it responds with the clarification
-        /// prompt that is configured for the bot.</p>
-        /// </li>
-        /// <li>
-        /// <p>if the user says "Yes" and continues with an utterance that
-        /// triggers an intent it starts a conversation for the intent.</p>
-        /// </li>
-        /// <li>
-        /// <p>If the user says "No" it responds with the rejection statement
-        /// configured for the the follow-up prompt.</p>
-        /// </li>
-        /// <li>
-        /// <p>If it doesn't recognize the utterance it repeats the follow-up
-        /// prompt again.</p>
-        /// </li>
+        /// <li> <p>If the user says "Yes" it responds with the clarification prompt that is configured for the bot.</p> </li>
+        /// <li> <p>if the user says "Yes" and continues with an utterance that triggers an intent it starts a conversation for the intent.</p> </li>
+        /// <li> <p>If the user says "No" it responds with the rejection statement configured for the the follow-up prompt.</p> </li>
+        /// <li> <p>If it doesn't recognize the utterance it repeats the follow-up prompt again.</p> </li>
         /// </ul>
-        ///
-        /// <p>The <code>followUpPrompt</code> field and the
-        /// <code>conclusionStatement</code> field are mutually exclusive. You can
-        /// specify only one. </p>
+        /// <p>The <code>followUpPrompt</code> field and the <code>conclusionStatement</code> field are mutually exclusive. You can specify only one. </p>
         pub fn follow_up_prompt(mut self, input: crate::model::FollowUpPrompt) -> Self {
             self.inner = self.inner.follow_up_prompt(input);
             self
         }
-        /// <p>Amazon Lex uses this prompt to solicit additional activity after
-        /// fulfilling an intent. For example, after the <code>OrderPizza</code>
-        /// intent is fulfilled, you might prompt the user to order a drink.</p>
-        /// <p>The action that Amazon Lex takes depends on the user's response, as
-        /// follows:</p>
+        /// <p>Amazon Lex uses this prompt to solicit additional activity after fulfilling an intent. For example, after the <code>OrderPizza</code> intent is fulfilled, you might prompt the user to order a drink.</p>
+        /// <p>The action that Amazon Lex takes depends on the user's response, as follows:</p>
         /// <ul>
-        /// <li>
-        /// <p>If the user says "Yes" it responds with the clarification
-        /// prompt that is configured for the bot.</p>
-        /// </li>
-        /// <li>
-        /// <p>if the user says "Yes" and continues with an utterance that
-        /// triggers an intent it starts a conversation for the intent.</p>
-        /// </li>
-        /// <li>
-        /// <p>If the user says "No" it responds with the rejection statement
-        /// configured for the the follow-up prompt.</p>
-        /// </li>
-        /// <li>
-        /// <p>If it doesn't recognize the utterance it repeats the follow-up
-        /// prompt again.</p>
-        /// </li>
+        /// <li> <p>If the user says "Yes" it responds with the clarification prompt that is configured for the bot.</p> </li>
+        /// <li> <p>if the user says "Yes" and continues with an utterance that triggers an intent it starts a conversation for the intent.</p> </li>
+        /// <li> <p>If the user says "No" it responds with the rejection statement configured for the the follow-up prompt.</p> </li>
+        /// <li> <p>If it doesn't recognize the utterance it repeats the follow-up prompt again.</p> </li>
         /// </ul>
-        ///
-        /// <p>The <code>followUpPrompt</code> field and the
-        /// <code>conclusionStatement</code> field are mutually exclusive. You can
-        /// specify only one. </p>
+        /// <p>The <code>followUpPrompt</code> field and the <code>conclusionStatement</code> field are mutually exclusive. You can specify only one. </p>
         pub fn set_follow_up_prompt(
             mut self,
             input: std::option::Option<crate::model::FollowUpPrompt>,
@@ -4958,29 +4089,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_follow_up_prompt(input);
             self
         }
-        /// <p> The statement that you want Amazon Lex to convey to the user after the
-        /// intent is successfully fulfilled by the Lambda function. </p>
-        /// <p>This element is relevant only if you provide a Lambda function in
-        /// the <code>fulfillmentActivity</code>. If you return the intent to the
-        /// client application, you can't specify this element.</p>
-        /// <note>
-        /// <p>The <code>followUpPrompt</code> and
-        /// <code>conclusionStatement</code> are mutually exclusive. You can
-        /// specify only one.</p>
+        /// <p> The statement that you want Amazon Lex to convey to the user after the intent is successfully fulfilled by the Lambda function. </p>
+        /// <p>This element is relevant only if you provide a Lambda function in the <code>fulfillmentActivity</code>. If you return the intent to the client application, you can't specify this element.</p> <note>
+        /// <p>The <code>followUpPrompt</code> and <code>conclusionStatement</code> are mutually exclusive. You can specify only one.</p>
         /// </note>
         pub fn conclusion_statement(mut self, input: crate::model::Statement) -> Self {
             self.inner = self.inner.conclusion_statement(input);
             self
         }
-        /// <p> The statement that you want Amazon Lex to convey to the user after the
-        /// intent is successfully fulfilled by the Lambda function. </p>
-        /// <p>This element is relevant only if you provide a Lambda function in
-        /// the <code>fulfillmentActivity</code>. If you return the intent to the
-        /// client application, you can't specify this element.</p>
-        /// <note>
-        /// <p>The <code>followUpPrompt</code> and
-        /// <code>conclusionStatement</code> are mutually exclusive. You can
-        /// specify only one.</p>
+        /// <p> The statement that you want Amazon Lex to convey to the user after the intent is successfully fulfilled by the Lambda function. </p>
+        /// <p>This element is relevant only if you provide a Lambda function in the <code>fulfillmentActivity</code>. If you return the intent to the client application, you can't specify this element.</p> <note>
+        /// <p>The <code>followUpPrompt</code> and <code>conclusionStatement</code> are mutually exclusive. You can specify only one.</p>
         /// </note>
         pub fn set_conclusion_statement(
             mut self,
@@ -4989,26 +4108,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_conclusion_statement(input);
             self
         }
-        /// <p> Specifies a Lambda function to invoke for each user input. You can
-        /// invoke this Lambda function to personalize user interaction. </p>
-        /// <p>For example, suppose your bot determines that the user is John.
-        /// Your Lambda function might retrieve John's information from a backend
-        /// database and prepopulate some of the values. For example, if you find that
-        /// John is gluten intolerant, you might set the corresponding intent slot,
-        /// <code>GlutenIntolerant</code>, to true. You might find John's phone
-        /// number and set the corresponding session attribute. </p>
+        /// <p> Specifies a Lambda function to invoke for each user input. You can invoke this Lambda function to personalize user interaction. </p>
+        /// <p>For example, suppose your bot determines that the user is John. Your Lambda function might retrieve John's information from a backend database and prepopulate some of the values. For example, if you find that John is gluten intolerant, you might set the corresponding intent slot, <code>GlutenIntolerant</code>, to true. You might find John's phone number and set the corresponding session attribute. </p>
         pub fn dialog_code_hook(mut self, input: crate::model::CodeHook) -> Self {
             self.inner = self.inner.dialog_code_hook(input);
             self
         }
-        /// <p> Specifies a Lambda function to invoke for each user input. You can
-        /// invoke this Lambda function to personalize user interaction. </p>
-        /// <p>For example, suppose your bot determines that the user is John.
-        /// Your Lambda function might retrieve John's information from a backend
-        /// database and prepopulate some of the values. For example, if you find that
-        /// John is gluten intolerant, you might set the corresponding intent slot,
-        /// <code>GlutenIntolerant</code>, to true. You might find John's phone
-        /// number and set the corresponding session attribute. </p>
+        /// <p> Specifies a Lambda function to invoke for each user input. You can invoke this Lambda function to personalize user interaction. </p>
+        /// <p>For example, suppose your bot determines that the user is John. Your Lambda function might retrieve John's information from a backend database and prepopulate some of the values. For example, if you find that John is gluten intolerant, you might set the corresponding intent slot, <code>GlutenIntolerant</code>, to true. You might find John's phone number and set the corresponding session attribute. </p>
         pub fn set_dialog_code_hook(
             mut self,
             input: std::option::Option<crate::model::CodeHook>,
@@ -5016,26 +4123,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dialog_code_hook(input);
             self
         }
-        /// <p>Required. Describes how the intent is fulfilled. For example, after
-        /// a user provides all of the information for a pizza order,
-        /// <code>fulfillmentActivity</code> defines how the bot places an order
-        /// with a local pizza store. </p>
-        /// <p> You might configure Amazon Lex to return all of the intent information
-        /// to the client application, or direct it to invoke a Lambda function that
-        /// can process the intent (for example, place an order with a pizzeria).
-        /// </p>
+        /// <p>Required. Describes how the intent is fulfilled. For example, after a user provides all of the information for a pizza order, <code>fulfillmentActivity</code> defines how the bot places an order with a local pizza store. </p>
+        /// <p> You might configure Amazon Lex to return all of the intent information to the client application, or direct it to invoke a Lambda function that can process the intent (for example, place an order with a pizzeria). </p>
         pub fn fulfillment_activity(mut self, input: crate::model::FulfillmentActivity) -> Self {
             self.inner = self.inner.fulfillment_activity(input);
             self
         }
-        /// <p>Required. Describes how the intent is fulfilled. For example, after
-        /// a user provides all of the information for a pizza order,
-        /// <code>fulfillmentActivity</code> defines how the bot places an order
-        /// with a local pizza store. </p>
-        /// <p> You might configure Amazon Lex to return all of the intent information
-        /// to the client application, or direct it to invoke a Lambda function that
-        /// can process the intent (for example, place an order with a pizzeria).
-        /// </p>
+        /// <p>Required. Describes how the intent is fulfilled. For example, after a user provides all of the information for a pizza order, <code>fulfillmentActivity</code> defines how the bot places an order with a local pizza store. </p>
+        /// <p> You might configure Amazon Lex to return all of the intent information to the client application, or direct it to invoke a Lambda function that can process the intent (for example, place an order with a pizzeria). </p>
         pub fn set_fulfillment_activity(
             mut self,
             input: std::option::Option<crate::model::FulfillmentActivity>,
@@ -5043,16 +4138,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_fulfillment_activity(input);
             self
         }
-        /// <p>A unique identifier for the built-in intent to base this intent on.
-        /// To find the signature for an intent, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard Built-in Intents</a> in the <i>Alexa Skills
-        /// Kit</i>.</p>
+        /// <p>A unique identifier for the built-in intent to base this intent on. To find the signature for an intent, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard Built-in Intents</a> in the <i>Alexa Skills Kit</i>.</p>
         pub fn parent_intent_signature(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.parent_intent_signature(input.into());
             self
         }
-        /// <p>A unique identifier for the built-in intent to base this intent on.
-        /// To find the signature for an intent, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard Built-in Intents</a> in the <i>Alexa Skills
-        /// Kit</i>.</p>
+        /// <p>A unique identifier for the built-in intent to base this intent on. To find the signature for an intent, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard Built-in Intents</a> in the <i>Alexa Skills Kit</i>.</p>
         pub fn set_parent_intent_signature(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5060,64 +4151,36 @@ pub mod fluent_builders {
             self.inner = self.inner.set_parent_intent_signature(input);
             self
         }
-        /// <p>Identifies a specific revision of the <code>$LATEST</code>
-        /// version.</p>
-        /// <p>When you create a new intent, leave the <code>checksum</code> field
-        /// blank. If you specify a checksum you get a
-        /// <code>BadRequestException</code> exception.</p>
-        /// <p>When you want to update a intent, set the <code>checksum</code>
-        /// field to the checksum of the most recent revision of the
-        /// <code>$LATEST</code> version. If you don't specify the <code>
-        /// checksum</code> field, or if the checksum does not match the
-        /// <code>$LATEST</code> version, you get a
-        /// <code>PreconditionFailedException</code> exception.</p>
+        /// <p>Identifies a specific revision of the <code>$LATEST</code> version.</p>
+        /// <p>When you create a new intent, leave the <code>checksum</code> field blank. If you specify a checksum you get a <code>BadRequestException</code> exception.</p>
+        /// <p>When you want to update a intent, set the <code>checksum</code> field to the checksum of the most recent revision of the <code>$LATEST</code> version. If you don't specify the <code> checksum</code> field, or if the checksum does not match the <code>$LATEST</code> version, you get a <code>PreconditionFailedException</code> exception.</p>
         pub fn checksum(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.checksum(input.into());
             self
         }
-        /// <p>Identifies a specific revision of the <code>$LATEST</code>
-        /// version.</p>
-        /// <p>When you create a new intent, leave the <code>checksum</code> field
-        /// blank. If you specify a checksum you get a
-        /// <code>BadRequestException</code> exception.</p>
-        /// <p>When you want to update a intent, set the <code>checksum</code>
-        /// field to the checksum of the most recent revision of the
-        /// <code>$LATEST</code> version. If you don't specify the <code>
-        /// checksum</code> field, or if the checksum does not match the
-        /// <code>$LATEST</code> version, you get a
-        /// <code>PreconditionFailedException</code> exception.</p>
+        /// <p>Identifies a specific revision of the <code>$LATEST</code> version.</p>
+        /// <p>When you create a new intent, leave the <code>checksum</code> field blank. If you specify a checksum you get a <code>BadRequestException</code> exception.</p>
+        /// <p>When you want to update a intent, set the <code>checksum</code> field to the checksum of the most recent revision of the <code>$LATEST</code> version. If you don't specify the <code> checksum</code> field, or if the checksum does not match the <code>$LATEST</code> version, you get a <code>PreconditionFailedException</code> exception.</p>
         pub fn set_checksum(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_checksum(input);
             self
         }
-        /// <p>When set to <code>true</code> a new numbered version of the intent
-        /// is created. This is the same as calling the
-        /// <code>CreateIntentVersion</code> operation. If you do not specify
-        /// <code>createVersion</code>, the default is <code>false</code>.</p>
+        /// <p>When set to <code>true</code> a new numbered version of the intent is created. This is the same as calling the <code>CreateIntentVersion</code> operation. If you do not specify <code>createVersion</code>, the default is <code>false</code>.</p>
         pub fn create_version(mut self, input: bool) -> Self {
             self.inner = self.inner.create_version(input);
             self
         }
-        /// <p>When set to <code>true</code> a new numbered version of the intent
-        /// is created. This is the same as calling the
-        /// <code>CreateIntentVersion</code> operation. If you do not specify
-        /// <code>createVersion</code>, the default is <code>false</code>.</p>
+        /// <p>When set to <code>true</code> a new numbered version of the intent is created. This is the same as calling the <code>CreateIntentVersion</code> operation. If you do not specify <code>createVersion</code>, the default is <code>false</code>.</p>
         pub fn set_create_version(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_create_version(input);
             self
         }
-        /// <p>Configuration information required to use the
-        /// <code>AMAZON.KendraSearchIntent</code> intent to connect to an Amazon
-        /// Kendra index. For more information, see <a href="http://docs.aws.amazon.com/lex/latest/dg/built-in-intent-kendra-search.html">
-        /// AMAZON.KendraSearchIntent</a>.</p>
+        /// <p>Configuration information required to use the <code>AMAZON.KendraSearchIntent</code> intent to connect to an Amazon Kendra index. For more information, see <a href="http://docs.aws.amazon.com/lex/latest/dg/built-in-intent-kendra-search.html"> AMAZON.KendraSearchIntent</a>.</p>
         pub fn kendra_configuration(mut self, input: crate::model::KendraConfiguration) -> Self {
             self.inner = self.inner.kendra_configuration(input);
             self
         }
-        /// <p>Configuration information required to use the
-        /// <code>AMAZON.KendraSearchIntent</code> intent to connect to an Amazon
-        /// Kendra index. For more information, see <a href="http://docs.aws.amazon.com/lex/latest/dg/built-in-intent-kendra-search.html">
-        /// AMAZON.KendraSearchIntent</a>.</p>
+        /// <p>Configuration information required to use the <code>AMAZON.KendraSearchIntent</code> intent to connect to an Amazon Kendra index. For more information, see <a href="http://docs.aws.amazon.com/lex/latest/dg/built-in-intent-kendra-search.html"> AMAZON.KendraSearchIntent</a>.</p>
         pub fn set_kendra_configuration(
             mut self,
             input: std::option::Option<crate::model::KendraConfiguration>,
@@ -5129,16 +4192,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_input_contexts`](Self::set_input_contexts).
         ///
-        /// <p>An array of <code>InputContext</code> objects that lists the contexts
-        /// that must be active for Amazon Lex to choose the intent in a conversation with
-        /// the user.</p>
+        /// <p>An array of <code>InputContext</code> objects that lists the contexts that must be active for Amazon Lex to choose the intent in a conversation with the user.</p>
         pub fn input_contexts(mut self, input: crate::model::InputContext) -> Self {
             self.inner = self.inner.input_contexts(input);
             self
         }
-        /// <p>An array of <code>InputContext</code> objects that lists the contexts
-        /// that must be active for Amazon Lex to choose the intent in a conversation with
-        /// the user.</p>
+        /// <p>An array of <code>InputContext</code> objects that lists the contexts that must be active for Amazon Lex to choose the intent in a conversation with the user.</p>
         pub fn set_input_contexts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InputContext>>,
@@ -5150,14 +4209,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_output_contexts`](Self::set_output_contexts).
         ///
-        /// <p>An array of <code>OutputContext</code> objects that lists the contexts
-        /// that the intent activates when the intent is fulfilled.</p>
+        /// <p>An array of <code>OutputContext</code> objects that lists the contexts that the intent activates when the intent is fulfilled.</p>
         pub fn output_contexts(mut self, input: crate::model::OutputContext) -> Self {
             self.inner = self.inner.output_contexts(input);
             self
         }
-        /// <p>An array of <code>OutputContext</code> objects that lists the contexts
-        /// that the intent activates when the intent is fulfilled.</p>
+        /// <p>An array of <code>OutputContext</code> objects that lists the contexts that the intent activates when the intent is fulfilled.</p>
         pub fn set_output_contexts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::OutputContext>>,
@@ -5168,22 +4225,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutSlotType`.
     ///
-    /// <p>Creates a custom slot type or replaces an existing custom slot
-    /// type.</p>
-    /// <p>To create a custom slot type, specify a name for the slot type and
-    /// a set of enumeration values, which are the values that a slot of this type
-    /// can assume. For more information, see <a>how-it-works</a>.</p>
-    /// <p>If you specify the name of an existing slot type, the fields in the
-    /// request replace the existing values in the <code>$LATEST</code> version of
-    /// the slot type. Amazon Lex removes the fields that you don't provide in the
-    /// request. If you don't specify required fields, Amazon Lex throws an exception.
-    /// When you update the <code>$LATEST</code> version of a slot type, if a bot
-    /// uses the <code>$LATEST</code> version of an intent that contains the slot
-    /// type, the bot's <code>status</code> field is set to
-    /// <code>NOT_BUILT</code>.</p>
-    ///
-    /// <p>This operation requires permissions for the
-    /// <code>lex:PutSlotType</code> action.</p>
+    /// <p>Creates a custom slot type or replaces an existing custom slot type.</p>
+    /// <p>To create a custom slot type, specify a name for the slot type and a set of enumeration values, which are the values that a slot of this type can assume. For more information, see <code>how-it-works</code>.</p>
+    /// <p>If you specify the name of an existing slot type, the fields in the request replace the existing values in the <code>$LATEST</code> version of the slot type. Amazon Lex removes the fields that you don't provide in the request. If you don't specify required fields, Amazon Lex throws an exception. When you update the <code>$LATEST</code> version of a slot type, if a bot uses the <code>$LATEST</code> version of an intent that contains the slot type, the bot's <code>status</code> field is set to <code>NOT_BUILT</code>.</p>
+    /// <p>This operation requires permissions for the <code>lex:PutSlotType</code> action.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutSlotType<
         C = aws_smithy_client::erase::DynConnector,
@@ -5240,26 +4285,16 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the slot type. The name is <i>not</i>
-        /// case sensitive. </p>
-        /// <p>The name can't match a built-in slot type name, or a built-in slot
-        /// type name with "AMAZON." removed. For example, because there is a built-in
-        /// slot type called <code>AMAZON.DATE</code>, you can't create a custom slot
-        /// type called <code>DATE</code>.</p>
-        /// <p>For a list of built-in slot types, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/slot-type-reference">Slot Type Reference</a> in the <i>Alexa Skills
-        /// Kit</i>.</p>
+        /// <p>The name of the slot type. The name is <i>not</i> case sensitive. </p>
+        /// <p>The name can't match a built-in slot type name, or a built-in slot type name with "AMAZON." removed. For example, because there is a built-in slot type called <code>AMAZON.DATE</code>, you can't create a custom slot type called <code>DATE</code>.</p>
+        /// <p>For a list of built-in slot types, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/slot-type-reference">Slot Type Reference</a> in the <i>Alexa Skills Kit</i>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the slot type. The name is <i>not</i>
-        /// case sensitive. </p>
-        /// <p>The name can't match a built-in slot type name, or a built-in slot
-        /// type name with "AMAZON." removed. For example, because there is a built-in
-        /// slot type called <code>AMAZON.DATE</code>, you can't create a custom slot
-        /// type called <code>DATE</code>.</p>
-        /// <p>For a list of built-in slot types, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/slot-type-reference">Slot Type Reference</a> in the <i>Alexa Skills
-        /// Kit</i>.</p>
+        /// <p>The name of the slot type. The name is <i>not</i> case sensitive. </p>
+        /// <p>The name can't match a built-in slot type name, or a built-in slot type name with "AMAZON." removed. For example, because there is a built-in slot type called <code>AMAZON.DATE</code>, you can't create a custom slot type called <code>DATE</code>.</p>
+        /// <p>For a list of built-in slot types, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/slot-type-reference">Slot Type Reference</a> in the <i>Alexa Skills Kit</i>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -5278,36 +4313,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_enumeration_values`](Self::set_enumeration_values).
         ///
-        /// <p>A list of <code>EnumerationValue</code> objects that defines the
-        /// values that the slot type can take. Each value can have a list of
-        /// <code>synonyms</code>, which are additional values that help train the
-        /// machine learning model about the values that it resolves for a slot. </p>
-        /// <p>A regular expression slot type doesn't require enumeration values.
-        /// All other slot types require a list of enumeration values.</p>
-        /// <p>When Amazon Lex resolves a slot value, it generates a resolution list
-        /// that contains up to five possible values for the slot. If you are using a
-        /// Lambda function, this resolution list is passed to the function. If you
-        /// are not using a Lambda function you can choose to return the value that
-        /// the user entered or the first value in the resolution list as the slot
-        /// value. The <code>valueSelectionStrategy</code> field indicates the option
-        /// to use. </p>
+        /// <p>A list of <code>EnumerationValue</code> objects that defines the values that the slot type can take. Each value can have a list of <code>synonyms</code>, which are additional values that help train the machine learning model about the values that it resolves for a slot. </p>
+        /// <p>A regular expression slot type doesn't require enumeration values. All other slot types require a list of enumeration values.</p>
+        /// <p>When Amazon Lex resolves a slot value, it generates a resolution list that contains up to five possible values for the slot. If you are using a Lambda function, this resolution list is passed to the function. If you are not using a Lambda function you can choose to return the value that the user entered or the first value in the resolution list as the slot value. The <code>valueSelectionStrategy</code> field indicates the option to use. </p>
         pub fn enumeration_values(mut self, input: crate::model::EnumerationValue) -> Self {
             self.inner = self.inner.enumeration_values(input);
             self
         }
-        /// <p>A list of <code>EnumerationValue</code> objects that defines the
-        /// values that the slot type can take. Each value can have a list of
-        /// <code>synonyms</code>, which are additional values that help train the
-        /// machine learning model about the values that it resolves for a slot. </p>
-        /// <p>A regular expression slot type doesn't require enumeration values.
-        /// All other slot types require a list of enumeration values.</p>
-        /// <p>When Amazon Lex resolves a slot value, it generates a resolution list
-        /// that contains up to five possible values for the slot. If you are using a
-        /// Lambda function, this resolution list is passed to the function. If you
-        /// are not using a Lambda function you can choose to return the value that
-        /// the user entered or the first value in the resolution list as the slot
-        /// value. The <code>valueSelectionStrategy</code> field indicates the option
-        /// to use. </p>
+        /// <p>A list of <code>EnumerationValue</code> objects that defines the values that the slot type can take. Each value can have a list of <code>synonyms</code>, which are additional values that help train the machine learning model about the values that it resolves for a slot. </p>
+        /// <p>A regular expression slot type doesn't require enumeration values. All other slot types require a list of enumeration values.</p>
+        /// <p>When Amazon Lex resolves a slot value, it generates a resolution list that contains up to five possible values for the slot. If you are using a Lambda function, this resolution list is passed to the function. If you are not using a Lambda function you can choose to return the value that the user entered or the first value in the resolution list as the slot value. The <code>valueSelectionStrategy</code> field indicates the option to use. </p>
         pub fn set_enumeration_values(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EnumerationValue>>,
@@ -5315,55 +4330,26 @@ pub mod fluent_builders {
             self.inner = self.inner.set_enumeration_values(input);
             self
         }
-        /// <p>Identifies a specific revision of the <code>$LATEST</code>
-        /// version.</p>
-        /// <p>When you create a new slot type, leave the <code>checksum</code>
-        /// field blank. If you specify a checksum you get a
-        /// <code>BadRequestException</code> exception.</p>
-        /// <p>When you want to update a slot type, set the <code>checksum</code>
-        /// field to the checksum of the most recent revision of the
-        /// <code>$LATEST</code> version. If you don't specify the <code>
-        /// checksum</code> field, or if the checksum does not match the
-        /// <code>$LATEST</code> version, you get a
-        /// <code>PreconditionFailedException</code> exception.</p>
+        /// <p>Identifies a specific revision of the <code>$LATEST</code> version.</p>
+        /// <p>When you create a new slot type, leave the <code>checksum</code> field blank. If you specify a checksum you get a <code>BadRequestException</code> exception.</p>
+        /// <p>When you want to update a slot type, set the <code>checksum</code> field to the checksum of the most recent revision of the <code>$LATEST</code> version. If you don't specify the <code> checksum</code> field, or if the checksum does not match the <code>$LATEST</code> version, you get a <code>PreconditionFailedException</code> exception.</p>
         pub fn checksum(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.checksum(input.into());
             self
         }
-        /// <p>Identifies a specific revision of the <code>$LATEST</code>
-        /// version.</p>
-        /// <p>When you create a new slot type, leave the <code>checksum</code>
-        /// field blank. If you specify a checksum you get a
-        /// <code>BadRequestException</code> exception.</p>
-        /// <p>When you want to update a slot type, set the <code>checksum</code>
-        /// field to the checksum of the most recent revision of the
-        /// <code>$LATEST</code> version. If you don't specify the <code>
-        /// checksum</code> field, or if the checksum does not match the
-        /// <code>$LATEST</code> version, you get a
-        /// <code>PreconditionFailedException</code> exception.</p>
+        /// <p>Identifies a specific revision of the <code>$LATEST</code> version.</p>
+        /// <p>When you create a new slot type, leave the <code>checksum</code> field blank. If you specify a checksum you get a <code>BadRequestException</code> exception.</p>
+        /// <p>When you want to update a slot type, set the <code>checksum</code> field to the checksum of the most recent revision of the <code>$LATEST</code> version. If you don't specify the <code> checksum</code> field, or if the checksum does not match the <code>$LATEST</code> version, you get a <code>PreconditionFailedException</code> exception.</p>
         pub fn set_checksum(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_checksum(input);
             self
         }
-        /// <p>Determines the slot resolution strategy that Amazon Lex uses to return
-        /// slot type values. The field can be set to one of the following
-        /// values:</p>
+        /// <p>Determines the slot resolution strategy that Amazon Lex uses to return slot type values. The field can be set to one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ORIGINAL_VALUE</code> - Returns the value entered by the
-        /// user, if the user value is similar to the slot value.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TOP_RESOLUTION</code> - If there is a resolution list for
-        /// the slot, return the first value in the resolution list as the slot
-        /// type value. If there is no resolution list, null is
-        /// returned.</p>
-        /// </li>
+        /// <li> <p> <code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the user value is similar to the slot value.</p> </li>
+        /// <li> <p> <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the resolution list as the slot type value. If there is no resolution list, null is returned.</p> </li>
         /// </ul>
-        /// <p>If you don't specify the <code>valueSelectionStrategy</code>, the
-        /// default is <code>ORIGINAL_VALUE</code>.</p>
+        /// <p>If you don't specify the <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.</p>
         pub fn value_selection_strategy(
             mut self,
             input: crate::model::SlotValueSelectionStrategy,
@@ -5371,25 +4357,12 @@ pub mod fluent_builders {
             self.inner = self.inner.value_selection_strategy(input);
             self
         }
-        /// <p>Determines the slot resolution strategy that Amazon Lex uses to return
-        /// slot type values. The field can be set to one of the following
-        /// values:</p>
+        /// <p>Determines the slot resolution strategy that Amazon Lex uses to return slot type values. The field can be set to one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ORIGINAL_VALUE</code> - Returns the value entered by the
-        /// user, if the user value is similar to the slot value.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TOP_RESOLUTION</code> - If there is a resolution list for
-        /// the slot, return the first value in the resolution list as the slot
-        /// type value. If there is no resolution list, null is
-        /// returned.</p>
-        /// </li>
+        /// <li> <p> <code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the user value is similar to the slot value.</p> </li>
+        /// <li> <p> <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the resolution list as the slot type value. If there is no resolution list, null is returned.</p> </li>
         /// </ul>
-        /// <p>If you don't specify the <code>valueSelectionStrategy</code>, the
-        /// default is <code>ORIGINAL_VALUE</code>.</p>
+        /// <p>If you don't specify the <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.</p>
         pub fn set_value_selection_strategy(
             mut self,
             input: std::option::Option<crate::model::SlotValueSelectionStrategy>,
@@ -5397,33 +4370,23 @@ pub mod fluent_builders {
             self.inner = self.inner.set_value_selection_strategy(input);
             self
         }
-        /// <p>When set to <code>true</code> a new numbered version of the slot
-        /// type is created. This is the same as calling the
-        /// <code>CreateSlotTypeVersion</code> operation. If you do not specify
-        /// <code>createVersion</code>, the default is <code>false</code>.</p>
+        /// <p>When set to <code>true</code> a new numbered version of the slot type is created. This is the same as calling the <code>CreateSlotTypeVersion</code> operation. If you do not specify <code>createVersion</code>, the default is <code>false</code>.</p>
         pub fn create_version(mut self, input: bool) -> Self {
             self.inner = self.inner.create_version(input);
             self
         }
-        /// <p>When set to <code>true</code> a new numbered version of the slot
-        /// type is created. This is the same as calling the
-        /// <code>CreateSlotTypeVersion</code> operation. If you do not specify
-        /// <code>createVersion</code>, the default is <code>false</code>.</p>
+        /// <p>When set to <code>true</code> a new numbered version of the slot type is created. This is the same as calling the <code>CreateSlotTypeVersion</code> operation. If you do not specify <code>createVersion</code>, the default is <code>false</code>.</p>
         pub fn set_create_version(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_create_version(input);
             self
         }
-        /// <p>The built-in slot type used as the parent of the slot type. When you
-        /// define a parent slot type, the new slot type has all of the same
-        /// configuration as the parent.</p>
+        /// <p>The built-in slot type used as the parent of the slot type. When you define a parent slot type, the new slot type has all of the same configuration as the parent.</p>
         /// <p>Only <code>AMAZON.AlphaNumeric</code> is supported.</p>
         pub fn parent_slot_type_signature(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.parent_slot_type_signature(input.into());
             self
         }
-        /// <p>The built-in slot type used as the parent of the slot type. When you
-        /// define a parent slot type, the new slot type has all of the same
-        /// configuration as the parent.</p>
+        /// <p>The built-in slot type used as the parent of the slot type. When you define a parent slot type, the new slot type has all of the same configuration as the parent.</p>
         /// <p>Only <code>AMAZON.AlphaNumeric</code> is supported.</p>
         pub fn set_parent_slot_type_signature(
             mut self,
@@ -5436,9 +4399,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_slot_type_configurations`](Self::set_slot_type_configurations).
         ///
-        /// <p>Configuration information that extends the parent built-in slot type.
-        /// The configuration is added to the settings for the parent slot
-        /// type.</p>
+        /// <p>Configuration information that extends the parent built-in slot type. The configuration is added to the settings for the parent slot type.</p>
         pub fn slot_type_configurations(
             mut self,
             input: crate::model::SlotTypeConfiguration,
@@ -5446,9 +4407,7 @@ pub mod fluent_builders {
             self.inner = self.inner.slot_type_configurations(input);
             self
         }
-        /// <p>Configuration information that extends the parent built-in slot type.
-        /// The configuration is added to the settings for the parent slot
-        /// type.</p>
+        /// <p>Configuration information that extends the parent built-in slot type. The configuration is added to the settings for the parent slot type.</p>
         pub fn set_slot_type_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SlotTypeConfiguration>>,
@@ -5516,43 +4475,29 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A zip archive in binary format. The archive should contain one file, a
-        /// JSON file containing the resource to import. The resource should match the
-        /// type specified in the <code>resourceType</code> field.</p>
+        /// <p>A zip archive in binary format. The archive should contain one file, a JSON file containing the resource to import. The resource should match the type specified in the <code>resourceType</code> field.</p>
         pub fn payload(mut self, input: aws_smithy_types::Blob) -> Self {
             self.inner = self.inner.payload(input);
             self
         }
-        /// <p>A zip archive in binary format. The archive should contain one file, a
-        /// JSON file containing the resource to import. The resource should match the
-        /// type specified in the <code>resourceType</code> field.</p>
+        /// <p>A zip archive in binary format. The archive should contain one file, a JSON file containing the resource to import. The resource should match the type specified in the <code>resourceType</code> field.</p>
         pub fn set_payload(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.inner = self.inner.set_payload(input);
             self
         }
-        /// <p>Specifies the type of resource to export. Each resource also
-        /// exports any resources that it depends on. </p>
+        /// <p>Specifies the type of resource to export. Each resource also exports any resources that it depends on. </p>
         /// <ul>
-        /// <li>
-        /// <p>A bot exports dependent intents.</p>
-        /// </li>
-        /// <li>
-        /// <p>An intent exports dependent slot types.</p>
-        /// </li>
+        /// <li> <p>A bot exports dependent intents.</p> </li>
+        /// <li> <p>An intent exports dependent slot types.</p> </li>
         /// </ul>
         pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
             self.inner = self.inner.resource_type(input);
             self
         }
-        /// <p>Specifies the type of resource to export. Each resource also
-        /// exports any resources that it depends on. </p>
+        /// <p>Specifies the type of resource to export. Each resource also exports any resources that it depends on. </p>
         /// <ul>
-        /// <li>
-        /// <p>A bot exports dependent intents.</p>
-        /// </li>
-        /// <li>
-        /// <p>An intent exports dependent slot types.</p>
-        /// </li>
+        /// <li> <p>A bot exports dependent intents.</p> </li>
+        /// <li> <p>An intent exports dependent slot types.</p> </li>
         /// </ul>
         pub fn set_resource_type(
             mut self,
@@ -5561,41 +4506,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_type(input);
             self
         }
-        /// <p>Specifies the action that the <code>StartImport</code> operation
-        /// should take when there is an existing resource with the same
-        /// name.</p>
+        /// <p>Specifies the action that the <code>StartImport</code> operation should take when there is an existing resource with the same name.</p>
         /// <ul>
-        /// <li>
-        /// <p>FAIL_ON_CONFLICT - The import operation is stopped on the first
-        /// conflict between a resource in the import file and an existing
-        /// resource. The name of the resource causing the conflict is in the
-        /// <code>failureReason</code> field of the response to the
-        /// <code>GetImport</code> operation.</p>
-        /// <p>OVERWRITE_LATEST - The import operation proceeds even if there
-        /// is a conflict with an existing resource. The $LASTEST version of the
-        /// existing resource is overwritten with the data from the import
-        /// file.</p>
-        /// </li>
+        /// <li> <p>FAIL_ON_CONFLICT - The import operation is stopped on the first conflict between a resource in the import file and an existing resource. The name of the resource causing the conflict is in the <code>failureReason</code> field of the response to the <code>GetImport</code> operation.</p> <p>OVERWRITE_LATEST - The import operation proceeds even if there is a conflict with an existing resource. The $LASTEST version of the existing resource is overwritten with the data from the import file.</p> </li>
         /// </ul>
         pub fn merge_strategy(mut self, input: crate::model::MergeStrategy) -> Self {
             self.inner = self.inner.merge_strategy(input);
             self
         }
-        /// <p>Specifies the action that the <code>StartImport</code> operation
-        /// should take when there is an existing resource with the same
-        /// name.</p>
+        /// <p>Specifies the action that the <code>StartImport</code> operation should take when there is an existing resource with the same name.</p>
         /// <ul>
-        /// <li>
-        /// <p>FAIL_ON_CONFLICT - The import operation is stopped on the first
-        /// conflict between a resource in the import file and an existing
-        /// resource. The name of the resource causing the conflict is in the
-        /// <code>failureReason</code> field of the response to the
-        /// <code>GetImport</code> operation.</p>
-        /// <p>OVERWRITE_LATEST - The import operation proceeds even if there
-        /// is a conflict with an existing resource. The $LASTEST version of the
-        /// existing resource is overwritten with the data from the import
-        /// file.</p>
-        /// </li>
+        /// <li> <p>FAIL_ON_CONFLICT - The import operation is stopped on the first conflict between a resource in the import file and an existing resource. The name of the resource causing the conflict is in the <code>failureReason</code> field of the response to the <code>GetImport</code> operation.</p> <p>OVERWRITE_LATEST - The import operation proceeds even if there is a conflict with an existing resource. The $LASTEST version of the existing resource is overwritten with the data from the import file.</p> </li>
         /// </ul>
         pub fn set_merge_strategy(
             mut self,
@@ -5608,14 +4529,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of tags to add to the imported bot. You can only add tags when
-        /// you import a bot, you can't add tags to an intent or slot type.</p>
+        /// <p>A list of tags to add to the imported bot. You can only add tags when you import a bot, you can't add tags to an intent or slot type.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>A list of tags to add to the imported bot. You can only add tags when
-        /// you import a bot, you can't add tags to an intent or slot type.</p>
+        /// <p>A list of tags to add to the imported bot. You can only add tags when you import a bot, you can't add tags to an intent or slot type.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -5626,10 +4545,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartMigration`.
     ///
-    /// <p>Starts migrating a bot from Amazon Lex V1 to Amazon Lex V2. Migrate your bot when
-    /// you want to take advantage of the new features of Amazon Lex V2.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/migrate.html">Migrating a bot</a> in the <i>Amazon Lex
-    /// developer guide</i>.</p>
+    /// <p>Starts migrating a bot from Amazon Lex V1 to Amazon Lex V2. Migrate your bot when you want to take advantage of the new features of Amazon Lex V2.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/migrate.html">Migrating a bot</a> in the <i>Amazon Lex developer guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartMigration<
         C = aws_smithy_client::erase::DynConnector,
@@ -5696,14 +4613,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_v1_bot_name(input);
             self
         }
-        /// <p>The version of the bot to migrate to Amazon Lex V2. You can migrate the
-        /// <code>$LATEST</code> version as well as any numbered version.</p>
+        /// <p>The version of the bot to migrate to Amazon Lex V2. You can migrate the <code>$LATEST</code> version as well as any numbered version.</p>
         pub fn v1_bot_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.v1_bot_version(input.into());
             self
         }
-        /// <p>The version of the bot to migrate to Amazon Lex V2. You can migrate the
-        /// <code>$LATEST</code> version as well as any numbered version.</p>
+        /// <p>The version of the bot to migrate to Amazon Lex V2. You can migrate the <code>$LATEST</code> version as well as any numbered version.</p>
         pub fn set_v1_bot_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5713,15 +4628,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the Amazon Lex V2 bot that you are migrating the Amazon Lex V1 bot to. </p>
         /// <ul>
-        /// <li>
-        /// <p>If the Amazon Lex V2 bot doesn't exist, you must use the
-        /// <code>CREATE_NEW</code> migration strategy.</p>
-        /// </li>
-        /// <li>
-        /// <p>If the Amazon Lex V2 bot exists, you must use the
-        /// <code>UPDATE_EXISTING</code> migration strategy to change the
-        /// contents of the Amazon Lex V2 bot.</p>
-        /// </li>
+        /// <li> <p>If the Amazon Lex V2 bot doesn't exist, you must use the <code>CREATE_NEW</code> migration strategy.</p> </li>
+        /// <li> <p>If the Amazon Lex V2 bot exists, you must use the <code>UPDATE_EXISTING</code> migration strategy to change the contents of the Amazon Lex V2 bot.</p> </li>
         /// </ul>
         pub fn v2_bot_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.v2_bot_name(input.into());
@@ -5729,15 +4637,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the Amazon Lex V2 bot that you are migrating the Amazon Lex V1 bot to. </p>
         /// <ul>
-        /// <li>
-        /// <p>If the Amazon Lex V2 bot doesn't exist, you must use the
-        /// <code>CREATE_NEW</code> migration strategy.</p>
-        /// </li>
-        /// <li>
-        /// <p>If the Amazon Lex V2 bot exists, you must use the
-        /// <code>UPDATE_EXISTING</code> migration strategy to change the
-        /// contents of the Amazon Lex V2 bot.</p>
-        /// </li>
+        /// <li> <p>If the Amazon Lex V2 bot doesn't exist, you must use the <code>CREATE_NEW</code> migration strategy.</p> </li>
+        /// <li> <p>If the Amazon Lex V2 bot exists, you must use the <code>UPDATE_EXISTING</code> migration strategy to change the contents of the Amazon Lex V2 bot.</p> </li>
         /// </ul>
         pub fn set_v2_bot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_v2_bot_name(input);
@@ -5755,18 +4656,8 @@ pub mod fluent_builders {
         }
         /// <p>The strategy used to conduct the migration.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_NEW</code> - Creates a new Amazon Lex V2 bot and migrates
-        /// the Amazon Lex V1 bot to the new bot.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UPDATE_EXISTING</code> - Overwrites the existing Amazon Lex V2 bot
-        /// metadata and the locale being migrated. It doesn't change any other
-        /// locales in the Amazon Lex V2 bot. If the locale doesn't exist, a new locale
-        /// is created in the Amazon Lex V2 bot.</p>
-        /// </li>
+        /// <li> <p> <code>CREATE_NEW</code> - Creates a new Amazon Lex V2 bot and migrates the Amazon Lex V1 bot to the new bot.</p> </li>
+        /// <li> <p> <code>UPDATE_EXISTING</code> - Overwrites the existing Amazon Lex V2 bot metadata and the locale being migrated. It doesn't change any other locales in the Amazon Lex V2 bot. If the locale doesn't exist, a new locale is created in the Amazon Lex V2 bot.</p> </li>
         /// </ul>
         pub fn migration_strategy(mut self, input: crate::model::MigrationStrategy) -> Self {
             self.inner = self.inner.migration_strategy(input);
@@ -5774,18 +4665,8 @@ pub mod fluent_builders {
         }
         /// <p>The strategy used to conduct the migration.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CREATE_NEW</code> - Creates a new Amazon Lex V2 bot and migrates
-        /// the Amazon Lex V1 bot to the new bot.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UPDATE_EXISTING</code> - Overwrites the existing Amazon Lex V2 bot
-        /// metadata and the locale being migrated. It doesn't change any other
-        /// locales in the Amazon Lex V2 bot. If the locale doesn't exist, a new locale
-        /// is created in the Amazon Lex V2 bot.</p>
-        /// </li>
+        /// <li> <p> <code>CREATE_NEW</code> - Creates a new Amazon Lex V2 bot and migrates the Amazon Lex V1 bot to the new bot.</p> </li>
+        /// <li> <p> <code>UPDATE_EXISTING</code> - Overwrites the existing Amazon Lex V2 bot metadata and the locale being migrated. It doesn't change any other locales in the Amazon Lex V2 bot. If the locale doesn't exist, a new locale is created in the Amazon Lex V2 bot.</p> </li>
         /// </ul>
         pub fn set_migration_strategy(
             mut self,
@@ -5797,8 +4678,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Adds the specified tags to the specified resource. If a tag key
-    /// already exists, the existing value is replaced with the new value.</p>
+    /// <p>Adds the specified tags to the specified resource. If a tag key already exists, the existing value is replaced with the new value.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -5855,14 +4735,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the bot, bot alias, or bot channel
-        /// to tag.</p>
+        /// <p>The Amazon Resource Name (ARN) of the bot, bot alias, or bot channel to tag.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the bot, bot alias, or bot channel
-        /// to tag.</p>
+        /// <p>The Amazon Resource Name (ARN) of the bot, bot alias, or bot channel to tag.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -5871,14 +4749,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of tag keys to add to the resource. If a tag key already
-        /// exists, the existing value is replaced with the new value.</p>
+        /// <p>A list of tag keys to add to the resource. If a tag key already exists, the existing value is replaced with the new value.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>A list of tag keys to add to the resource. If a tag key already
-        /// exists, the existing value is replaced with the new value.</p>
+        /// <p>A list of tag keys to add to the resource. If a tag key already exists, the existing value is replaced with the new value.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -5946,14 +4822,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource to remove the tags
-        /// from.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource to remove the tags from.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource to remove the tags
-        /// from.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource to remove the tags from.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -5962,14 +4836,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>A list of tag keys to remove from the resource. If a tag key does not
-        /// exist on the resource, it is ignored.</p>
+        /// <p>A list of tag keys to remove from the resource. If a tag key does not exist on the resource, it is ignored.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.tag_keys(input.into());
             self
         }
-        /// <p>A list of tag keys to remove from the resource. If a tag key does not
-        /// exist on the resource, it is ignored.</p>
+        /// <p>A list of tag keys to remove from the resource. If a tag key does not exist on the resource, it is ignored.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,

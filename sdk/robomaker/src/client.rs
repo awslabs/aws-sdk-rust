@@ -815,8 +815,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CancelSimulationJobBatch`.
     ///
-    /// <p>Cancels a simulation job batch. When you cancel a simulation job batch, you are also
-    /// cancelling all of the active simulation jobs created as part of the batch. </p>
+    /// <p>Cancels a simulation job batch. When you cancel a simulation job batch, you are also cancelling all of the active simulation jobs created as part of the batch. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelSimulationJobBatch<
         C = aws_smithy_client::erase::DynConnector,
@@ -1027,12 +1026,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateDeploymentJob`.
     ///
     /// <p>Deploys a specific version of a robot application to robots in a fleet.</p>
-    /// <p>The robot application must have a numbered <code>applicationVersion</code> for
-    /// consistency reasons. To create a new version, use
-    /// <code>CreateRobotApplicationVersion</code> or see <a href="https://docs.aws.amazon.com/robomaker/latest/dg/create-robot-application-version.html">Creating a Robot Application Version</a>. </p>
-    /// <note>
-    /// <p>After 90 days, deployment jobs expire and will be deleted. They will no longer be
-    /// accessible. </p>
+    /// <p>The robot application must have a numbered <code>applicationVersion</code> for consistency reasons. To create a new version, use <code>CreateRobotApplicationVersion</code> or see <a href="https://docs.aws.amazon.com/robomaker/latest/dg/create-robot-application-version.html">Creating a Robot Application Version</a>. </p> <note>
+    /// <p>After 90 days, deployment jobs expire and will be deleted. They will no longer be accessible. </p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDeploymentJob<
@@ -1103,14 +1098,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_deployment_config(input);
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1152,8 +1145,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A map that contains tag keys and tag values that are attached to the deployment
-        /// job.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the deployment job.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1162,8 +1154,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>A map that contains tag keys and tag values that are attached to the deployment
-        /// job.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the deployment job.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1489,8 +1480,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A map that contains tag keys and tag values that are attached to the robot
-        /// application.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the robot application.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1499,8 +1489,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>A map that contains tag keys and tag values that are attached to the robot
-        /// application.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the robot application.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1510,14 +1499,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>The object that contains that URI of the Docker image that you use for your robot
-        /// application.</p>
+        /// <p>The object that contains that URI of the Docker image that you use for your robot application.</p>
         pub fn environment(mut self, input: crate::model::Environment) -> Self {
             self.inner = self.inner.environment(input);
             self
         }
-        /// <p>The object that contains that URI of the Docker image that you use for your robot
-        /// application.</p>
+        /// <p>The object that contains that URI of the Docker image that you use for your robot application.</p>
         pub fn set_environment(
             mut self,
             input: std::option::Option<crate::model::Environment>,
@@ -1595,14 +1582,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_application(input);
             self
         }
-        /// <p>The current revision id for the robot application. If you provide a value and it matches
-        /// the latest revision ID, a new version will be created.</p>
+        /// <p>The current revision id for the robot application. If you provide a value and it matches the latest revision ID, a new version will be created.</p>
         pub fn current_revision_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.current_revision_id(input.into());
             self
         }
-        /// <p>The current revision id for the robot application. If you provide a value and it matches
-        /// the latest revision ID, a new version will be created.</p>
+        /// <p>The current revision id for the robot application. If you provide a value and it matches the latest revision ID, a new version will be created.</p>
         pub fn set_current_revision_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1614,14 +1599,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_s3_etags`](Self::set_s3_etags).
         ///
-        /// <p>The Amazon S3 identifier for the zip file bundle that you use for your robot
-        /// application.</p>
+        /// <p>The Amazon S3 identifier for the zip file bundle that you use for your robot application.</p>
         pub fn s3_etags(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.s3_etags(input.into());
             self
         }
-        /// <p>The Amazon S3 identifier for the zip file bundle that you use for your robot
-        /// application.</p>
+        /// <p>The Amazon S3 identifier for the zip file bundle that you use for your robot application.</p>
         pub fn set_s3_etags(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1772,8 +1755,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A map that contains tag keys and tag values that are attached to the simulation
-        /// application.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the simulation application.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1782,8 +1764,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>A map that contains tag keys and tag values that are attached to the simulation
-        /// application.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the simulation application.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1793,14 +1774,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>The object that contains the Docker image URI used to create your simulation
-        /// application.</p>
+        /// <p>The object that contains the Docker image URI used to create your simulation application.</p>
         pub fn environment(mut self, input: crate::model::Environment) -> Self {
             self.inner = self.inner.environment(input);
             self
         }
-        /// <p>The object that contains the Docker image URI used to create your simulation
-        /// application.</p>
+        /// <p>The object that contains the Docker image URI used to create your simulation application.</p>
         pub fn set_environment(
             mut self,
             input: std::option::Option<crate::model::Environment>,
@@ -1880,14 +1859,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_application(input);
             self
         }
-        /// <p>The current revision id for the simulation application. If you provide a value and it
-        /// matches the latest revision ID, a new version will be created.</p>
+        /// <p>The current revision id for the simulation application. If you provide a value and it matches the latest revision ID, a new version will be created.</p>
         pub fn current_revision_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.current_revision_id(input.into());
             self
         }
-        /// <p>The current revision id for the simulation application. If you provide a value and it
-        /// matches the latest revision ID, a new version will be created.</p>
+        /// <p>The current revision id for the simulation application. If you provide a value and it matches the latest revision ID, a new version will be created.</p>
         pub fn set_current_revision_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1899,14 +1876,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_s3_etags`](Self::set_s3_etags).
         ///
-        /// <p>The Amazon S3 eTag identifier for the zip file bundle that you use to create the
-        /// simulation application.</p>
+        /// <p>The Amazon S3 eTag identifier for the zip file bundle that you use to create the simulation application.</p>
         pub fn s3_etags(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.s3_etags(input.into());
             self
         }
-        /// <p>The Amazon S3 eTag identifier for the zip file bundle that you use to create the
-        /// simulation application.</p>
+        /// <p>The Amazon S3 eTag identifier for the zip file bundle that you use to create the simulation application.</p>
         pub fn set_s3_etags(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1914,14 +1889,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_s3_etags(input);
             self
         }
-        /// <p>The SHA256 digest used to identify the Docker image URI used to created the simulation
-        /// application.</p>
+        /// <p>The SHA256 digest used to identify the Docker image URI used to created the simulation application.</p>
         pub fn image_digest(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.image_digest(input.into());
             self
         }
-        /// <p>The SHA256 digest used to identify the Docker image URI used to created the simulation
-        /// application.</p>
+        /// <p>The SHA256 digest used to identify the Docker image URI used to created the simulation application.</p>
         pub fn set_image_digest(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_image_digest(input);
             self
@@ -1929,10 +1902,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateSimulationJob`.
     ///
-    /// <p>Creates a simulation job.</p>
-    /// <note>
-    /// <p>After 90 days, simulation jobs expire and will be deleted. They will no longer be
-    /// accessible. </p>
+    /// <p>Creates a simulation job.</p> <note>
+    /// <p>After 90 days, simulation jobs expire and will be deleted. They will no longer be accessible. </p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSimulationJob<
@@ -1990,14 +1961,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2031,42 +2000,37 @@ pub mod fluent_builders {
             self.inner = self.inner.set_logging_config(input);
             self
         }
-        /// <p>The maximum simulation job duration in seconds (up to 14 days or 1,209,600 seconds. When
-        /// <code>maxJobDurationInSeconds</code> is reached, the simulation job will status will
-        /// transition to <code>Completed</code>.</p>
+        /// <p>The maximum simulation job duration in seconds (up to 14 days or 1,209,600 seconds. When <code>maxJobDurationInSeconds</code> is reached, the simulation job will status will transition to <code>Completed</code>.</p>
         pub fn max_job_duration_in_seconds(mut self, input: i64) -> Self {
             self.inner = self.inner.max_job_duration_in_seconds(input);
             self
         }
-        /// <p>The maximum simulation job duration in seconds (up to 14 days or 1,209,600 seconds. When
-        /// <code>maxJobDurationInSeconds</code> is reached, the simulation job will status will
-        /// transition to <code>Completed</code>.</p>
+        /// <p>The maximum simulation job duration in seconds (up to 14 days or 1,209,600 seconds. When <code>maxJobDurationInSeconds</code> is reached, the simulation job will status will transition to <code>Completed</code>.</p>
         pub fn set_max_job_duration_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_max_job_duration_in_seconds(input);
             self
         }
-        /// <p>The IAM role name that allows the simulation instance to call the AWS APIs that are
-        /// specified in its associated policies on your behalf. This is how credentials are passed in
-        /// to your simulation job. </p>
+        /// <p>The IAM role name that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf. This is how credentials are passed in to your simulation job. </p>
         pub fn iam_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.iam_role(input.into());
             self
         }
-        /// <p>The IAM role name that allows the simulation instance to call the AWS APIs that are
-        /// specified in its associated policies on your behalf. This is how credentials are passed in
-        /// to your simulation job. </p>
+        /// <p>The IAM role name that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf. This is how credentials are passed in to your simulation job. </p>
         pub fn set_iam_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_iam_role(input);
             self
         }
         /// <p>The failure behavior the simulation job.</p>
         /// <dl>
-        /// <dt>Continue</dt>
+        /// <dt>
+        /// Continue
+        /// </dt>
         /// <dd>
-        /// <p>Leaves the instance running for its maximum timeout duration after a
-        /// <code>4XX</code> error code.</p>
+        /// <p>Leaves the instance running for its maximum timeout duration after a <code>4XX</code> error code.</p>
         /// </dd>
-        /// <dt>Fail</dt>
+        /// <dt>
+        /// Fail
+        /// </dt>
         /// <dd>
         /// <p>Stop the simulation job and terminate the instance.</p>
         /// </dd>
@@ -2077,12 +2041,15 @@ pub mod fluent_builders {
         }
         /// <p>The failure behavior the simulation job.</p>
         /// <dl>
-        /// <dt>Continue</dt>
+        /// <dt>
+        /// Continue
+        /// </dt>
         /// <dd>
-        /// <p>Leaves the instance running for its maximum timeout duration after a
-        /// <code>4XX</code> error code.</p>
+        /// <p>Leaves the instance running for its maximum timeout duration after a <code>4XX</code> error code.</p>
         /// </dd>
-        /// <dt>Fail</dt>
+        /// <dt>
+        /// Fail
+        /// </dt>
         /// <dd>
         /// <p>Stop the simulation job and terminate the instance.</p>
         /// </dd>
@@ -2135,21 +2102,15 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_data_sources`](Self::set_data_sources).
         ///
-        /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files
-        /// are available under <code>/opt/robomaker/datasources/data_source_name</code>. </p>
-        /// <note>
-        /// <p>There is a limit of 100 files and a combined size of 25GB for all
-        /// <code>DataSourceConfig</code> objects. </p>
+        /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files are available under <code>/opt/robomaker/datasources/data_source_name</code>. </p> <note>
+        /// <p>There is a limit of 100 files and a combined size of 25GB for all <code>DataSourceConfig</code> objects. </p>
         /// </note>
         pub fn data_sources(mut self, input: crate::model::DataSourceConfig) -> Self {
             self.inner = self.inner.data_sources(input);
             self
         }
-        /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files
-        /// are available under <code>/opt/robomaker/datasources/data_source_name</code>. </p>
-        /// <note>
-        /// <p>There is a limit of 100 files and a combined size of 25GB for all
-        /// <code>DataSourceConfig</code> objects. </p>
+        /// <p>Specify data sources to mount read-only files from S3 into your simulation. These files are available under <code>/opt/robomaker/datasources/data_source_name</code>. </p> <note>
+        /// <p>There is a limit of 100 files and a combined size of 25GB for all <code>DataSourceConfig</code> objects. </p>
         /// </note>
         pub fn set_data_sources(
             mut self,
@@ -2162,8 +2123,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A map that contains tag keys and tag values that are attached to the simulation
-        /// job.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the simulation job.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2172,8 +2132,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>A map that contains tag keys and tag values that are attached to the simulation
-        /// job.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the simulation job.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2183,16 +2142,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>If your simulation job accesses resources in a VPC, you provide this parameter
-        /// identifying the list of security group IDs and subnet IDs. These must belong to the same
-        /// VPC. You must provide at least one security group and one subnet ID. </p>
+        /// <p>If your simulation job accesses resources in a VPC, you provide this parameter identifying the list of security group IDs and subnet IDs. These must belong to the same VPC. You must provide at least one security group and one subnet ID. </p>
         pub fn vpc_config(mut self, input: crate::model::VpcConfig) -> Self {
             self.inner = self.inner.vpc_config(input);
             self
         }
-        /// <p>If your simulation job accesses resources in a VPC, you provide this parameter
-        /// identifying the list of security group IDs and subnet IDs. These must belong to the same
-        /// VPC. You must provide at least one security group and one subnet ID. </p>
+        /// <p>If your simulation job accesses resources in a VPC, you provide this parameter identifying the list of security group IDs and subnet IDs. These must belong to the same VPC. You must provide at least one security group and one subnet ID. </p>
         pub fn set_vpc_config(
             mut self,
             input: std::option::Option<crate::model::VpcConfig>,
@@ -2270,14 +2225,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2315,14 +2268,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_output_location(input);
             self
         }
-        /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put
-        /// the export.</p>
+        /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put the export.</p>
         pub fn iam_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.iam_role(input.into());
             self
         }
-        /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put
-        /// the export.</p>
+        /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put the export.</p>
         pub fn set_iam_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_iam_role(input);
             self
@@ -2331,8 +2282,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A map that contains tag keys and tag values that are attached to the world export
-        /// job.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the world export job.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2341,8 +2291,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>A map that contains tag keys and tag values that are attached to the world export
-        /// job.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the world export job.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2412,14 +2361,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2427,14 +2374,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_request_token(input);
             self
         }
-        /// <p>The Amazon Resource Name (arn) of the world template describing the worlds you want to
-        /// create.</p>
+        /// <p>The Amazon Resource Name (arn) of the world template describing the worlds you want to create.</p>
         pub fn template(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.template(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (arn) of the world template describing the worlds you want to
-        /// create.</p>
+        /// <p>The Amazon Resource Name (arn) of the world template describing the worlds you want to create.</p>
         pub fn set_template(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_template(input);
             self
@@ -2456,8 +2401,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A map that contains tag keys and tag values that are attached to the world generator
-        /// job.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the world generator job.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2466,8 +2410,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>A map that contains tag keys and tag values that are attached to the world generator
-        /// job.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the world generator job.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2481,8 +2424,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_world_tags`](Self::set_world_tags).
         ///
-        /// <p>A map that contains tag keys and tag values that are attached to the generated
-        /// worlds.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the generated worlds.</p>
         pub fn world_tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2491,8 +2433,7 @@ pub mod fluent_builders {
             self.inner = self.inner.world_tags(k.into(), v.into());
             self
         }
-        /// <p>A map that contains tag keys and tag values that are attached to the generated
-        /// worlds.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the generated worlds.</p>
         pub fn set_world_tags(
             mut self,
             input: std::option::Option<
@@ -2562,14 +2503,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2617,8 +2556,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A map that contains tag keys and tag values that are attached to the world
-        /// template.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the world template.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2627,8 +2565,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>A map that contains tag keys and tag values that are attached to the world
-        /// template.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the world template.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -3976,8 +3913,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDeploymentJobs`.
     ///
-    /// <p>Returns a list of deployment jobs for a fleet. You can optionally provide filters to
-    /// retrieve specific deployment jobs. </p>
+    /// <p>Returns a list of deployment jobs for a fleet. You can optionally provide filters to retrieve specific deployment jobs. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDeploymentJobs<
         C = aws_smithy_client::erase::DynConnector,
@@ -4039,19 +3975,13 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>Optional filters to limit results.</p>
-        /// <p>The filter names <code>status</code> and <code>fleetName</code> are supported. When
-        /// filtering, you must use the complete value of the filtered item. You can use up to three
-        /// filters, but they must be for the same named item. For example, if you are looking for
-        /// items with the status <code>InProgress</code> or the status <code>Pending</code>.</p>
+        /// <p>The filter names <code>status</code> and <code>fleetName</code> are supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters, but they must be for the same named item. For example, if you are looking for items with the status <code>InProgress</code> or the status <code>Pending</code>.</p>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             self.inner = self.inner.filters(input);
             self
         }
         /// <p>Optional filters to limit results.</p>
-        /// <p>The filter names <code>status</code> and <code>fleetName</code> are supported. When
-        /// filtering, you must use the complete value of the filtered item. You can use up to three
-        /// filters, but they must be for the same named item. For example, if you are looking for
-        /// items with the status <code>InProgress</code> or the status <code>Pending</code>.</p>
+        /// <p>The filter names <code>status</code> and <code>fleetName</code> are supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters, but they must be for the same named item. For example, if you are looking for items with the status <code>InProgress</code> or the status <code>Pending</code>.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -4059,42 +3989,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListDeploymentJobs</code> again and assign that token to
-        /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
-        /// the previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListDeploymentJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListDeploymentJobs</code> again and assign that token to
-        /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
-        /// the previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListDeploymentJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>When this parameter is used, <code>ListDeploymentJobs</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListDeploymentJobs</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 200. If this parameter is not used, then
-        /// <code>ListDeploymentJobs</code> returns up to 200 results and a <code>nextToken</code>
-        /// value if applicable. </p>
+        /// <p>When this parameter is used, <code>ListDeploymentJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListDeploymentJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 200. If this parameter is not used, then <code>ListDeploymentJobs</code> returns up to 200 results and a <code>nextToken</code> value if applicable. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>When this parameter is used, <code>ListDeploymentJobs</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListDeploymentJobs</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 200. If this parameter is not used, then
-        /// <code>ListDeploymentJobs</code> returns up to 200 results and a <code>nextToken</code>
-        /// value if applicable. </p>
+        /// <p>When this parameter is used, <code>ListDeploymentJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListDeploymentJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 200. If this parameter is not used, then <code>ListDeploymentJobs</code> returns up to 200 results and a <code>nextToken</code> value if applicable. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -4102,8 +4012,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListFleets`.
     ///
-    /// <p>Returns a list of fleets. You can optionally provide filters to retrieve specific
-    /// fleets. </p>
+    /// <p>Returns a list of fleets. You can optionally provide filters to retrieve specific fleets. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListFleets<
         C = aws_smithy_client::erase::DynConnector,
@@ -4160,50 +4069,26 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListFleets</code> again and assign that token to the
-        /// request object's <code>nextToken</code> parameter. If there are no remaining results, the
-        /// previous response object's NextToken parameter is set to null. </p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that is only used to retrieve
-        /// the next items in a list and not for other programmatic purposes.</p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListFleets</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p> <note>
+        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListFleets</code> again and assign that token to the
-        /// request object's <code>nextToken</code> parameter. If there are no remaining results, the
-        /// previous response object's NextToken parameter is set to null. </p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that is only used to retrieve
-        /// the next items in a list and not for other programmatic purposes.</p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListFleets</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p> <note>
+        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>When this parameter is used, <code>ListFleets</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListFleets</code> request with the returned <code>nextToken</code> value.
-        /// This value can be between 1 and 200. If this parameter is not used, then
-        /// <code>ListFleets</code> returns up to 200 results and a <code>nextToken</code> value if
-        /// applicable. </p>
+        /// <p>When this parameter is used, <code>ListFleets</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListFleets</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 200. If this parameter is not used, then <code>ListFleets</code> returns up to 200 results and a <code>nextToken</code> value if applicable. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>When this parameter is used, <code>ListFleets</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListFleets</code> request with the returned <code>nextToken</code> value.
-        /// This value can be between 1 and 200. If this parameter is not used, then
-        /// <code>ListFleets</code> returns up to 200 results and a <code>nextToken</code> value if
-        /// applicable. </p>
+        /// <p>When this parameter is used, <code>ListFleets</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListFleets</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 200. If this parameter is not used, then <code>ListFleets</code> returns up to 200 results and a <code>nextToken</code> value if applicable. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -4213,15 +4098,13 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>Optional filters to limit results.</p>
-        /// <p>The filter name <code>name</code> is supported. When filtering, you must use the
-        /// complete value of the filtered item. You can use up to three filters.</p>
+        /// <p>The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters.</p>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             self.inner = self.inner.filters(input);
             self
         }
         /// <p>Optional filters to limit results.</p>
-        /// <p>The filter name <code>name</code> is supported. When filtering, you must use the
-        /// complete value of the filtered item. You can use up to three filters.</p>
+        /// <p>The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -4232,8 +4115,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListRobotApplications`.
     ///
-    /// <p>Returns a list of robot application. You can optionally provide filters to retrieve
-    /// specific robot applications.</p>
+    /// <p>Returns a list of robot application. You can optionally provide filters to retrieve specific robot applications.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRobotApplications<
         C = aws_smithy_client::erase::DynConnector,
@@ -4303,42 +4185,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_version_qualifier(input);
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListRobotApplications</code> again and assign that token to
-        /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
-        /// the previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListRobotApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListRobotApplications</code> again and assign that token to
-        /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
-        /// the previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListRobotApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>When this parameter is used, <code>ListRobotApplications</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListRobotApplications</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 100. If this parameter is not used, then
-        /// <code>ListRobotApplications</code> returns up to 100 results and a
-        /// <code>nextToken</code> value if applicable. </p>
+        /// <p>When this parameter is used, <code>ListRobotApplications</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListRobotApplications</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListRobotApplications</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>When this parameter is used, <code>ListRobotApplications</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListRobotApplications</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 100. If this parameter is not used, then
-        /// <code>ListRobotApplications</code> returns up to 100 results and a
-        /// <code>nextToken</code> value if applicable. </p>
+        /// <p>When this parameter is used, <code>ListRobotApplications</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListRobotApplications</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListRobotApplications</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -4348,15 +4210,13 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>Optional filters to limit results.</p>
-        /// <p>The filter name <code>name</code> is supported. When filtering, you must use the
-        /// complete value of the filtered item. You can use up to three filters.</p>
+        /// <p>The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters.</p>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             self.inner = self.inner.filters(input);
             self
         }
         /// <p>Optional filters to limit results.</p>
-        /// <p>The filter name <code>name</code> is supported. When filtering, you must use the
-        /// complete value of the filtered item. You can use up to three filters.</p>
+        /// <p>The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -4367,8 +4227,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListRobots`.
     ///
-    /// <p>Returns a list of robots. You can optionally provide filters to retrieve specific
-    /// robots.</p>
+    /// <p>Returns a list of robots. You can optionally provide filters to retrieve specific robots.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRobots<
         C = aws_smithy_client::erase::DynConnector,
@@ -4425,42 +4284,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListRobots</code> again and assign that token to the
-        /// request object's <code>nextToken</code> parameter. If there are no remaining results, the
-        /// previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListRobots</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListRobots</code> again and assign that token to the
-        /// request object's <code>nextToken</code> parameter. If there are no remaining results, the
-        /// previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListRobots</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>When this parameter is used, <code>ListRobots</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListRobots</code> request with the returned <code>nextToken</code> value.
-        /// This value can be between 1 and 200. If this parameter is not used, then
-        /// <code>ListRobots</code> returns up to 200 results and a <code>nextToken</code> value if
-        /// applicable. </p>
+        /// <p>When this parameter is used, <code>ListRobots</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListRobots</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 200. If this parameter is not used, then <code>ListRobots</code> returns up to 200 results and a <code>nextToken</code> value if applicable. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>When this parameter is used, <code>ListRobots</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListRobots</code> request with the returned <code>nextToken</code> value.
-        /// This value can be between 1 and 200. If this parameter is not used, then
-        /// <code>ListRobots</code> returns up to 200 results and a <code>nextToken</code> value if
-        /// applicable. </p>
+        /// <p>When this parameter is used, <code>ListRobots</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListRobots</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 200. If this parameter is not used, then <code>ListRobots</code> returns up to 200 results and a <code>nextToken</code> value if applicable. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -4470,19 +4309,13 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>Optional filters to limit results.</p>
-        /// <p>The filter names <code>status</code> and <code>fleetName</code> are supported. When
-        /// filtering, you must use the complete value of the filtered item. You can use up to three
-        /// filters, but they must be for the same named item. For example, if you are looking for
-        /// items with the status <code>Registered</code> or the status <code>Available</code>.</p>
+        /// <p>The filter names <code>status</code> and <code>fleetName</code> are supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters, but they must be for the same named item. For example, if you are looking for items with the status <code>Registered</code> or the status <code>Available</code>.</p>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             self.inner = self.inner.filters(input);
             self
         }
         /// <p>Optional filters to limit results.</p>
-        /// <p>The filter names <code>status</code> and <code>fleetName</code> are supported. When
-        /// filtering, you must use the complete value of the filtered item. You can use up to three
-        /// filters, but they must be for the same named item. For example, if you are looking for
-        /// items with the status <code>Registered</code> or the status <code>Available</code>.</p>
+        /// <p>The filter names <code>status</code> and <code>fleetName</code> are supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters, but they must be for the same named item. For example, if you are looking for items with the status <code>Registered</code> or the status <code>Available</code>.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -4493,8 +4326,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListSimulationApplications`.
     ///
-    /// <p>Returns a list of simulation applications. You can optionally provide filters to
-    /// retrieve specific simulation applications. </p>
+    /// <p>Returns a list of simulation applications. You can optionally provide filters to retrieve specific simulation applications. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSimulationApplications<
         C = aws_smithy_client::erase::DynConnector,
@@ -4564,42 +4396,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_version_qualifier(input);
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListSimulationApplications</code> again and assign that
-        /// token to the request object's <code>nextToken</code> parameter. If there are no remaining
-        /// results, the previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListSimulationApplications</code> again and assign that
-        /// token to the request object's <code>nextToken</code> parameter. If there are no remaining
-        /// results, the previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>When this parameter is used, <code>ListSimulationApplications</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListSimulationApplications</code> request with the returned
-        /// <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is
-        /// not used, then <code>ListSimulationApplications</code> returns up to 100 results and a
-        /// <code>nextToken</code> value if applicable. </p>
+        /// <p>When this parameter is used, <code>ListSimulationApplications</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListSimulationApplications</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListSimulationApplications</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>When this parameter is used, <code>ListSimulationApplications</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListSimulationApplications</code> request with the returned
-        /// <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is
-        /// not used, then <code>ListSimulationApplications</code> returns up to 100 results and a
-        /// <code>nextToken</code> value if applicable. </p>
+        /// <p>When this parameter is used, <code>ListSimulationApplications</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListSimulationApplications</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListSimulationApplications</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -4609,15 +4421,13 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>Optional list of filters to limit results.</p>
-        /// <p>The filter name <code>name</code> is supported. When filtering, you must use the
-        /// complete value of the filtered item. You can use up to three filters.</p>
+        /// <p>The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters.</p>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             self.inner = self.inner.filters(input);
             self
         }
         /// <p>Optional list of filters to limit results.</p>
-        /// <p>The filter name <code>name</code> is supported. When filtering, you must use the
-        /// complete value of the filtered item. You can use up to three filters.</p>
+        /// <p>The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -4628,8 +4438,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListSimulationJobBatches`.
     ///
-    /// <p>Returns a list simulation job batches. You can optionally provide filters to retrieve
-    /// specific simulation batch jobs. </p>
+    /// <p>Returns a list simulation job batches. You can optionally provide filters to retrieve specific simulation batch jobs. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSimulationJobBatches<
         C = aws_smithy_client::erase::DynConnector,
@@ -4686,38 +4495,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListSimulationJobBatches</code> again and assign that token
-        /// to the request object's <code>nextToken</code> parameter. If there are no remaining
-        /// results, the previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationJobBatches</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListSimulationJobBatches</code> again and assign that token
-        /// to the request object's <code>nextToken</code> parameter. If there are no remaining
-        /// results, the previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationJobBatches</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>When this parameter is used, <code>ListSimulationJobBatches</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListSimulationJobBatches</code> request with the returned
-        /// <code>nextToken</code> value. </p>
+        /// <p>When this parameter is used, <code>ListSimulationJobBatches</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListSimulationJobBatches</code> request with the returned <code>nextToken</code> value. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>When this parameter is used, <code>ListSimulationJobBatches</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListSimulationJobBatches</code> request with the returned
-        /// <code>nextToken</code> value. </p>
+        /// <p>When this parameter is used, <code>ListSimulationJobBatches</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListSimulationJobBatches</code> request with the returned <code>nextToken</code> value. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -4742,8 +4535,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListSimulationJobs`.
     ///
-    /// <p>Returns a list of simulation jobs. You can optionally provide filters to retrieve
-    /// specific simulation jobs. </p>
+    /// <p>Returns a list of simulation jobs. You can optionally provide filters to retrieve specific simulation jobs. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSimulationJobs<
         C = aws_smithy_client::erase::DynConnector,
@@ -4800,42 +4592,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListSimulationJobs</code> again and assign that token to
-        /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
-        /// the previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListSimulationJobs</code> again and assign that token to
-        /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
-        /// the previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>When this parameter is used, <code>ListSimulationJobs</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListSimulationJobs</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 1000. If this parameter is not used, then
-        /// <code>ListSimulationJobs</code> returns up to 1000 results and a <code>nextToken</code>
-        /// value if applicable. </p>
+        /// <p>When this parameter is used, <code>ListSimulationJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListSimulationJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>ListSimulationJobs</code> returns up to 1000 results and a <code>nextToken</code> value if applicable. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>When this parameter is used, <code>ListSimulationJobs</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListSimulationJobs</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 1000. If this parameter is not used, then
-        /// <code>ListSimulationJobs</code> returns up to 1000 results and a <code>nextToken</code>
-        /// value if applicable. </p>
+        /// <p>When this parameter is used, <code>ListSimulationJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListSimulationJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>ListSimulationJobs</code> returns up to 1000 results and a <code>nextToken</code> value if applicable. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -4845,21 +4617,13 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>Optional filters to limit results.</p>
-        /// <p>The filter names <code>status</code> and <code>simulationApplicationName</code> and
-        /// <code>robotApplicationName</code> are supported. When filtering, you must use the
-        /// complete value of the filtered item. You can use up to three filters, but they must be for
-        /// the same named item. For example, if you are looking for items with the status
-        /// <code>Preparing</code> or the status <code>Running</code>.</p>
+        /// <p>The filter names <code>status</code> and <code>simulationApplicationName</code> and <code>robotApplicationName</code> are supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters, but they must be for the same named item. For example, if you are looking for items with the status <code>Preparing</code> or the status <code>Running</code>.</p>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             self.inner = self.inner.filters(input);
             self
         }
         /// <p>Optional filters to limit results.</p>
-        /// <p>The filter names <code>status</code> and <code>simulationApplicationName</code> and
-        /// <code>robotApplicationName</code> are supported. When filtering, you must use the
-        /// complete value of the filtered item. You can use up to three filters, but they must be for
-        /// the same named item. For example, if you are looking for items with the status
-        /// <code>Preparing</code> or the status <code>Running</code>.</p>
+        /// <p>The filter names <code>status</code> and <code>simulationApplicationName</code> and <code>robotApplicationName</code> are supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters, but they must be for the same named item. For example, if you are looking for items with the status <code>Preparing</code> or the status <code>Running</code>.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -4997,42 +4761,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListWorldExportJobs</code> again and assign that token to
-        /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
-        /// the previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldExportJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListWorldExportJobs</code> again and assign that token to
-        /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
-        /// the previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldExportJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>When this parameter is used, <code>ListWorldExportJobs</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListWorldExportJobs</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 100. If this parameter is not used, then
-        /// <code>ListWorldExportJobs</code> returns up to 100 results and a <code>nextToken</code>
-        /// value if applicable. </p>
+        /// <p>When this parameter is used, <code>ListWorldExportJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorldExportJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorldExportJobs</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>When this parameter is used, <code>ListWorldExportJobs</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListWorldExportJobs</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 100. If this parameter is not used, then
-        /// <code>ListWorldExportJobs</code> returns up to 100 results and a <code>nextToken</code>
-        /// value if applicable. </p>
+        /// <p>When this parameter is used, <code>ListWorldExportJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorldExportJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorldExportJobs</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -5041,14 +4785,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Optional filters to limit results. You can use <code>generationJobId</code> and
-        /// <code>templateId</code>.</p>
+        /// <p>Optional filters to limit results. You can use <code>generationJobId</code> and <code>templateId</code>.</p>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             self.inner = self.inner.filters(input);
             self
         }
-        /// <p>Optional filters to limit results. You can use <code>generationJobId</code> and
-        /// <code>templateId</code>.</p>
+        /// <p>Optional filters to limit results. You can use <code>generationJobId</code> and <code>templateId</code>.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -5116,42 +4858,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListWorldGenerationJobsRequest</code> again and assign that
-        /// token to the request object's <code>nextToken</code> parameter. If there are no remaining
-        /// results, the previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldGenerationJobsRequest</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListWorldGenerationJobsRequest</code> again and assign that
-        /// token to the request object's <code>nextToken</code> parameter. If there are no remaining
-        /// results, the previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldGenerationJobsRequest</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>When this parameter is used, <code>ListWorldGeneratorJobs</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListWorldGeneratorJobs</code> request with the returned
-        /// <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is
-        /// not used, then <code>ListWorldGeneratorJobs</code> returns up to 100 results and a
-        /// <code>nextToken</code> value if applicable. </p>
+        /// <p>When this parameter is used, <code>ListWorldGeneratorJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorldGeneratorJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorldGeneratorJobs</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>When this parameter is used, <code>ListWorldGeneratorJobs</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListWorldGeneratorJobs</code> request with the returned
-        /// <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is
-        /// not used, then <code>ListWorldGeneratorJobs</code> returns up to 100 results and a
-        /// <code>nextToken</code> value if applicable. </p>
+        /// <p>When this parameter is used, <code>ListWorldGeneratorJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorldGeneratorJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorldGeneratorJobs</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -5160,14 +4882,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Optional filters to limit results. You can use <code>status</code> and
-        /// <code>templateId</code>.</p>
+        /// <p>Optional filters to limit results. You can use <code>status</code> and <code>templateId</code>.</p>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             self.inner = self.inner.filters(input);
             self
         }
-        /// <p>Optional filters to limit results. You can use <code>status</code> and
-        /// <code>templateId</code>.</p>
+        /// <p>Optional filters to limit results. You can use <code>status</code> and <code>templateId</code>.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -5235,42 +4955,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListWorlds</code> again and assign that token to the
-        /// request object's <code>nextToken</code> parameter. If there are no remaining results, the
-        /// previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorlds</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListWorlds</code> again and assign that token to the
-        /// request object's <code>nextToken</code> parameter. If there are no remaining results, the
-        /// previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorlds</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>When this parameter is used, <code>ListWorlds</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListWorlds</code> request with the returned <code>nextToken</code> value.
-        /// This value can be between 1 and 100. If this parameter is not used, then
-        /// <code>ListWorlds</code> returns up to 100 results and a <code>nextToken</code> value if
-        /// applicable. </p>
+        /// <p>When this parameter is used, <code>ListWorlds</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorlds</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorlds</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>When this parameter is used, <code>ListWorlds</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListWorlds</code> request with the returned <code>nextToken</code> value.
-        /// This value can be between 1 and 100. If this parameter is not used, then
-        /// <code>ListWorlds</code> returns up to 100 results and a <code>nextToken</code> value if
-        /// applicable. </p>
+        /// <p>When this parameter is used, <code>ListWorlds</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorlds</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorlds</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -5352,42 +5052,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListWorldTemplates</code> again and assign that token to
-        /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
-        /// the previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldTemplates</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListWorldTemplates</code> again and assign that token to
-        /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
-        /// the previous response object's NextToken parameter is set to null. </p>
+        /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldTemplates</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>When this parameter is used, <code>ListWorldTemplates</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListWorldTemplates</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 100. If this parameter is not used, then
-        /// <code>ListWorldTemplates</code> returns up to 100 results and a <code>nextToken</code>
-        /// value if applicable. </p>
+        /// <p>When this parameter is used, <code>ListWorldTemplates</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorldTemplates</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorldTemplates</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>When this parameter is used, <code>ListWorldTemplates</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListWorldTemplates</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 100. If this parameter is not used, then
-        /// <code>ListWorldTemplates</code> returns up to 100 results and a <code>nextToken</code>
-        /// value if applicable. </p>
+        /// <p>When this parameter is used, <code>ListWorldTemplates</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorldTemplates</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorldTemplates</code> returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -5545,8 +5225,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartSimulationJobBatch`.
     ///
-    /// <p>Starts a new simulation job batch. The batch is defined using one or more
-    /// <code>SimulationJobRequest</code> objects. </p>
+    /// <p>Starts a new simulation job batch. The batch is defined using one or more <code>SimulationJobRequest</code> objects. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartSimulationJobBatch<
         C = aws_smithy_client::erase::DynConnector,
@@ -5603,14 +5282,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5655,8 +5332,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A map that contains tag keys and tag values that are attached to the deployment job
-        /// batch.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the deployment job batch.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -5665,8 +5341,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>A map that contains tag keys and tag values that are attached to the deployment job
-        /// batch.</p>
+        /// <p>A map that contains tag keys and tag values that are attached to the deployment job batch.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -5679,8 +5354,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SyncDeploymentJob`.
     ///
-    /// <p>Syncrhonizes robots in a fleet to the latest deployment. This is helpful if robots were
-    /// added after a deployment.</p>
+    /// <p>Syncrhonizes robots in a fleet to the latest deployment. This is helpful if robots were added after a deployment.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SyncDeploymentJob<
         C = aws_smithy_client::erase::DynConnector,
@@ -5737,14 +5411,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5766,10 +5438,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Adds or edits tags for a AWS RoboMaker resource.</p>
-    /// <p>Each tag consists of a tag key and a tag value. Tag keys and tag values are both
-    /// required, but tag values can be empty strings. </p>
-    /// <p>For information about the rules that apply to tag keys and tag values, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined Tag Restrictions</a> in the <i>AWS Billing and Cost Management
-    /// User Guide</i>. </p>
+    /// <p>Each tag consists of a tag key and a tag value. Tag keys and tag values are both required, but tag values can be empty strings. </p>
+    /// <p>For information about the rules that apply to tag keys and tag values, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined Tag Restrictions</a> in the <i>AWS Billing and Cost Management User Guide</i>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -5863,10 +5533,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Removes the specified tags from the specified AWS RoboMaker resource.</p>
-    /// <p>To remove a tag, specify the tag key. To change the tag value of an existing tag key,
-    /// use <a href="https://docs.aws.amazon.com/robomaker/latest/dg/API_TagResource.html">
-    /// <code>TagResource</code>
-    /// </a>. </p>
+    /// <p>To remove a tag, specify the tag key. To change the tag value of an existing tag key, use <a href="https://docs.aws.amazon.com/robomaker/latest/dg/API_TagResource.html"> <code>TagResource</code> </a>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -5923,14 +5590,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS RoboMaker resource you are removing
-        /// tags.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS RoboMaker resource you are removing tags.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS RoboMaker resource you are removing
-        /// tags.</p>
+        /// <p>The Amazon Resource Name (ARN) of the AWS RoboMaker resource you are removing tags.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -5939,14 +5604,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>A map that contains tag keys and tag values that will be unattached from the
-        /// resource.</p>
+        /// <p>A map that contains tag keys and tag values that will be unattached from the resource.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.tag_keys(input.into());
             self
         }
-        /// <p>A map that contains tag keys and tag values that will be unattached from the
-        /// resource.</p>
+        /// <p>A map that contains tag keys and tag values that will be unattached from the resource.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,

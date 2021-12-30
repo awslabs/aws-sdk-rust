@@ -140,21 +140,15 @@ impl AsRef<str> for MessageFormatType {
     }
 }
 
-/// <p>A context is a variable that contains information about the current
-/// state of the conversation between a user and Amazon Lex. Context can be set
-/// automatically by Amazon Lex when an intent is fulfilled, or it can be set at
-/// runtime using the <code>PutContent</code>, <code>PutText</code>, or
-/// <code>PutSession</code> operation.</p>
+/// <p>A context is a variable that contains information about the current state of the conversation between a user and Amazon Lex. Context can be set automatically by Amazon Lex when an intent is fulfilled, or it can be set at runtime using the <code>PutContent</code>, <code>PutText</code>, or <code>PutSession</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActiveContext {
     /// <p>The name of the context.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The length of time or number of turns that a context remains
-    /// active.</p>
+    /// <p>The length of time or number of turns that a context remains active.</p>
     pub time_to_live: std::option::Option<crate::model::ActiveContextTimeToLive>,
-    /// <p>State variables for the current context. You can use these values as
-    /// default values for slots in subsequent events.</p>
+    /// <p>State variables for the current context. You can use these values as default values for slots in subsequent events.</p>
     pub parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -163,13 +157,11 @@ impl ActiveContext {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The length of time or number of turns that a context remains
-    /// active.</p>
+    /// <p>The length of time or number of turns that a context remains active.</p>
     pub fn time_to_live(&self) -> std::option::Option<&crate::model::ActiveContextTimeToLive> {
         self.time_to_live.as_ref()
     }
-    /// <p>State variables for the current context. You can use these values as
-    /// default values for slots in subsequent events.</p>
+    /// <p>State variables for the current context. You can use these values as default values for slots in subsequent events.</p>
     pub fn parameters(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -209,14 +201,12 @@ pub mod active_context {
             self.name = input;
             self
         }
-        /// <p>The length of time or number of turns that a context remains
-        /// active.</p>
+        /// <p>The length of time or number of turns that a context remains active.</p>
         pub fn time_to_live(mut self, input: crate::model::ActiveContextTimeToLive) -> Self {
             self.time_to_live = Some(input);
             self
         }
-        /// <p>The length of time or number of turns that a context remains
-        /// active.</p>
+        /// <p>The length of time or number of turns that a context remains active.</p>
         pub fn set_time_to_live(
             mut self,
             input: std::option::Option<crate::model::ActiveContextTimeToLive>,
@@ -228,8 +218,7 @@ pub mod active_context {
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
-        /// <p>State variables for the current context. You can use these values as
-        /// default values for slots in subsequent events.</p>
+        /// <p>State variables for the current context. You can use these values as default values for slots in subsequent events.</p>
         pub fn parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -240,8 +229,7 @@ pub mod active_context {
             self.parameters = Some(hash_map);
             self
         }
-        /// <p>State variables for the current context. You can use these values as
-        /// default values for slots in subsequent events.</p>
+        /// <p>State variables for the current context. You can use these values as default values for slots in subsequent events.</p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<
@@ -268,32 +256,21 @@ impl ActiveContext {
     }
 }
 
-/// <p>The length of time or number of turns that a context remains
-/// active.</p>
+/// <p>The length of time or number of turns that a context remains active.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActiveContextTimeToLive {
-    /// <p>The number of seconds that the context should be active after it is
-    /// first sent in a <code>PostContent</code> or <code>PostText</code>
-    /// response. You can set the value between 5 and 86,400 seconds (24
-    /// hours).</p>
+    /// <p>The number of seconds that the context should be active after it is first sent in a <code>PostContent</code> or <code>PostText</code> response. You can set the value between 5 and 86,400 seconds (24 hours).</p>
     pub time_to_live_in_seconds: std::option::Option<i32>,
-    /// <p>The number of conversation turns that the context should be active. A
-    /// conversation turn is one <code>PostContent</code> or <code>PostText</code>
-    /// request and the corresponding response from Amazon Lex.</p>
+    /// <p>The number of conversation turns that the context should be active. A conversation turn is one <code>PostContent</code> or <code>PostText</code> request and the corresponding response from Amazon Lex.</p>
     pub turns_to_live: std::option::Option<i32>,
 }
 impl ActiveContextTimeToLive {
-    /// <p>The number of seconds that the context should be active after it is
-    /// first sent in a <code>PostContent</code> or <code>PostText</code>
-    /// response. You can set the value between 5 and 86,400 seconds (24
-    /// hours).</p>
+    /// <p>The number of seconds that the context should be active after it is first sent in a <code>PostContent</code> or <code>PostText</code> response. You can set the value between 5 and 86,400 seconds (24 hours).</p>
     pub fn time_to_live_in_seconds(&self) -> std::option::Option<i32> {
         self.time_to_live_in_seconds
     }
-    /// <p>The number of conversation turns that the context should be active. A
-    /// conversation turn is one <code>PostContent</code> or <code>PostText</code>
-    /// request and the corresponding response from Amazon Lex.</p>
+    /// <p>The number of conversation turns that the context should be active. A conversation turn is one <code>PostContent</code> or <code>PostText</code> request and the corresponding response from Amazon Lex.</p>
     pub fn turns_to_live(&self) -> std::option::Option<i32> {
         self.turns_to_live
     }
@@ -316,32 +293,22 @@ pub mod active_context_time_to_live {
         pub(crate) turns_to_live: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The number of seconds that the context should be active after it is
-        /// first sent in a <code>PostContent</code> or <code>PostText</code>
-        /// response. You can set the value between 5 and 86,400 seconds (24
-        /// hours).</p>
+        /// <p>The number of seconds that the context should be active after it is first sent in a <code>PostContent</code> or <code>PostText</code> response. You can set the value between 5 and 86,400 seconds (24 hours).</p>
         pub fn time_to_live_in_seconds(mut self, input: i32) -> Self {
             self.time_to_live_in_seconds = Some(input);
             self
         }
-        /// <p>The number of seconds that the context should be active after it is
-        /// first sent in a <code>PostContent</code> or <code>PostText</code>
-        /// response. You can set the value between 5 and 86,400 seconds (24
-        /// hours).</p>
+        /// <p>The number of seconds that the context should be active after it is first sent in a <code>PostContent</code> or <code>PostText</code> response. You can set the value between 5 and 86,400 seconds (24 hours).</p>
         pub fn set_time_to_live_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.time_to_live_in_seconds = input;
             self
         }
-        /// <p>The number of conversation turns that the context should be active. A
-        /// conversation turn is one <code>PostContent</code> or <code>PostText</code>
-        /// request and the corresponding response from Amazon Lex.</p>
+        /// <p>The number of conversation turns that the context should be active. A conversation turn is one <code>PostContent</code> or <code>PostText</code> request and the corresponding response from Amazon Lex.</p>
         pub fn turns_to_live(mut self, input: i32) -> Self {
             self.turns_to_live = Some(input);
             self
         }
-        /// <p>The number of conversation turns that the context should be active. A
-        /// conversation turn is one <code>PostContent</code> or <code>PostText</code>
-        /// request and the corresponding response from Amazon Lex.</p>
+        /// <p>The number of conversation turns that the context should be active. A conversation turn is one <code>PostContent</code> or <code>PostText</code> request and the corresponding response from Amazon Lex.</p>
         pub fn set_turns_to_live(mut self, input: std::option::Option<i32>) -> Self {
             self.turns_to_live = input;
             self
@@ -362,97 +329,41 @@ impl ActiveContextTimeToLive {
     }
 }
 
-/// <p>Provides information about the state of an intent. You can use this
-/// information to get the current state of an intent so that you can process
-/// the intent, or so that you can return the intent to its previous
-/// state.</p>
+/// <p>Provides information about the state of an intent. You can use this information to get the current state of an intent so that you can process the intent, or so that you can return the intent to its previous state.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IntentSummary {
     /// <p>The name of the intent.</p>
     pub intent_name: std::option::Option<std::string::String>,
-    /// <p>A user-defined label that identifies a particular intent. You can use
-    /// this label to return to a previous intent. </p>
-    /// <p>Use the <code>checkpointLabelFilter</code> parameter of the
-    /// <code>GetSessionRequest</code> operation to filter the intents returned
-    /// by the operation to those with only the specified label.</p>
+    /// <p>A user-defined label that identifies a particular intent. You can use this label to return to a previous intent. </p>
+    /// <p>Use the <code>checkpointLabelFilter</code> parameter of the <code>GetSessionRequest</code> operation to filter the intents returned by the operation to those with only the specified label.</p>
     pub checkpoint_label: std::option::Option<std::string::String>,
     /// <p>Map of the slots that have been gathered and their values. </p>
     pub slots:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The status of the intent after the user responds to the confirmation
-    /// prompt. If the user confirms the intent, Amazon Lex sets this field to
-    /// <code>Confirmed</code>. If the user denies the intent, Amazon Lex sets this
-    /// value to <code>Denied</code>. The possible values are:</p>
+    /// <p>The status of the intent after the user responds to the confirmation prompt. If the user confirms the intent, Amazon Lex sets this field to <code>Confirmed</code>. If the user denies the intent, Amazon Lex sets this value to <code>Denied</code>. The possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Confirmed</code> - The user has responded "Yes" to the
-    /// confirmation prompt, confirming that the intent is complete and that
-    /// it is ready to be fulfilled.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Denied</code> - The user has responded "No" to the
-    /// confirmation prompt.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>None</code> - The user has never been prompted for
-    /// confirmation; or, the user was prompted but did not confirm or deny
-    /// the prompt.</p>
-    /// </li>
+    /// <li> <p> <code>Confirmed</code> - The user has responded "Yes" to the confirmation prompt, confirming that the intent is complete and that it is ready to be fulfilled.</p> </li>
+    /// <li> <p> <code>Denied</code> - The user has responded "No" to the confirmation prompt.</p> </li>
+    /// <li> <p> <code>None</code> - The user has never been prompted for confirmation; or, the user was prompted but did not confirm or deny the prompt.</p> </li>
     /// </ul>
     pub confirmation_status: std::option::Option<crate::model::ConfirmationStatus>,
-    /// <p>The next action that the bot should take in its interaction with the
-    /// user. The possible values are:</p>
+    /// <p>The next action that the bot should take in its interaction with the user. The possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ConfirmIntent</code> - The next action is asking the user if
-    /// the intent is complete and ready to be fulfilled. This is a yes/no
-    /// question such as "Place the order?"</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Close</code> - Indicates that the there will not be a
-    /// response from the user. For example, the statement "Your order has
-    /// been placed" does not require a response.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ElicitIntent</code> - The next action is to determine the
-    /// intent that the user wants to fulfill.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ElicitSlot</code> - The next action is to elicit a slot
-    /// value from the user.</p>
-    /// </li>
+    /// <li> <p> <code>ConfirmIntent</code> - The next action is asking the user if the intent is complete and ready to be fulfilled. This is a yes/no question such as "Place the order?"</p> </li>
+    /// <li> <p> <code>Close</code> - Indicates that the there will not be a response from the user. For example, the statement "Your order has been placed" does not require a response.</p> </li>
+    /// <li> <p> <code>ElicitIntent</code> - The next action is to determine the intent that the user wants to fulfill.</p> </li>
+    /// <li> <p> <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p> </li>
     /// </ul>
     pub dialog_action_type: std::option::Option<crate::model::DialogActionType>,
     /// <p>The fulfillment state of the intent. The possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Failed</code> - The Lambda function associated with the
-    /// intent failed to fulfill the intent.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Fulfilled</code> - The intent has fulfilled by the Lambda
-    /// function associated with the intent. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ReadyForFulfillment</code> - All of the information
-    /// necessary for the intent is present and the intent ready to be
-    /// fulfilled by the client application.</p>
-    /// </li>
+    /// <li> <p> <code>Failed</code> - The Lambda function associated with the intent failed to fulfill the intent.</p> </li>
+    /// <li> <p> <code>Fulfilled</code> - The intent has fulfilled by the Lambda function associated with the intent. </p> </li>
+    /// <li> <p> <code>ReadyForFulfillment</code> - All of the information necessary for the intent is present and the intent ready to be fulfilled by the client application.</p> </li>
     /// </ul>
     pub fulfillment_state: std::option::Option<crate::model::FulfillmentState>,
-    /// <p>The next slot to elicit from the user. If there is not slot to elicit,
-    /// the field is blank.</p>
+    /// <p>The next slot to elicit from the user. If there is not slot to elicit, the field is blank.</p>
     pub slot_to_elicit: std::option::Option<std::string::String>,
 }
 impl IntentSummary {
@@ -460,11 +371,8 @@ impl IntentSummary {
     pub fn intent_name(&self) -> std::option::Option<&str> {
         self.intent_name.as_deref()
     }
-    /// <p>A user-defined label that identifies a particular intent. You can use
-    /// this label to return to a previous intent. </p>
-    /// <p>Use the <code>checkpointLabelFilter</code> parameter of the
-    /// <code>GetSessionRequest</code> operation to filter the intents returned
-    /// by the operation to those with only the specified label.</p>
+    /// <p>A user-defined label that identifies a particular intent. You can use this label to return to a previous intent. </p>
+    /// <p>Use the <code>checkpointLabelFilter</code> parameter of the <code>GetSessionRequest</code> operation to filter the intents returned by the operation to those with only the specified label.</p>
     pub fn checkpoint_label(&self) -> std::option::Option<&str> {
         self.checkpoint_label.as_deref()
     }
@@ -475,85 +383,35 @@ impl IntentSummary {
     {
         self.slots.as_ref()
     }
-    /// <p>The status of the intent after the user responds to the confirmation
-    /// prompt. If the user confirms the intent, Amazon Lex sets this field to
-    /// <code>Confirmed</code>. If the user denies the intent, Amazon Lex sets this
-    /// value to <code>Denied</code>. The possible values are:</p>
+    /// <p>The status of the intent after the user responds to the confirmation prompt. If the user confirms the intent, Amazon Lex sets this field to <code>Confirmed</code>. If the user denies the intent, Amazon Lex sets this value to <code>Denied</code>. The possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Confirmed</code> - The user has responded "Yes" to the
-    /// confirmation prompt, confirming that the intent is complete and that
-    /// it is ready to be fulfilled.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Denied</code> - The user has responded "No" to the
-    /// confirmation prompt.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>None</code> - The user has never been prompted for
-    /// confirmation; or, the user was prompted but did not confirm or deny
-    /// the prompt.</p>
-    /// </li>
+    /// <li> <p> <code>Confirmed</code> - The user has responded "Yes" to the confirmation prompt, confirming that the intent is complete and that it is ready to be fulfilled.</p> </li>
+    /// <li> <p> <code>Denied</code> - The user has responded "No" to the confirmation prompt.</p> </li>
+    /// <li> <p> <code>None</code> - The user has never been prompted for confirmation; or, the user was prompted but did not confirm or deny the prompt.</p> </li>
     /// </ul>
     pub fn confirmation_status(&self) -> std::option::Option<&crate::model::ConfirmationStatus> {
         self.confirmation_status.as_ref()
     }
-    /// <p>The next action that the bot should take in its interaction with the
-    /// user. The possible values are:</p>
+    /// <p>The next action that the bot should take in its interaction with the user. The possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ConfirmIntent</code> - The next action is asking the user if
-    /// the intent is complete and ready to be fulfilled. This is a yes/no
-    /// question such as "Place the order?"</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Close</code> - Indicates that the there will not be a
-    /// response from the user. For example, the statement "Your order has
-    /// been placed" does not require a response.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ElicitIntent</code> - The next action is to determine the
-    /// intent that the user wants to fulfill.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ElicitSlot</code> - The next action is to elicit a slot
-    /// value from the user.</p>
-    /// </li>
+    /// <li> <p> <code>ConfirmIntent</code> - The next action is asking the user if the intent is complete and ready to be fulfilled. This is a yes/no question such as "Place the order?"</p> </li>
+    /// <li> <p> <code>Close</code> - Indicates that the there will not be a response from the user. For example, the statement "Your order has been placed" does not require a response.</p> </li>
+    /// <li> <p> <code>ElicitIntent</code> - The next action is to determine the intent that the user wants to fulfill.</p> </li>
+    /// <li> <p> <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p> </li>
     /// </ul>
     pub fn dialog_action_type(&self) -> std::option::Option<&crate::model::DialogActionType> {
         self.dialog_action_type.as_ref()
     }
     /// <p>The fulfillment state of the intent. The possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Failed</code> - The Lambda function associated with the
-    /// intent failed to fulfill the intent.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Fulfilled</code> - The intent has fulfilled by the Lambda
-    /// function associated with the intent. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ReadyForFulfillment</code> - All of the information
-    /// necessary for the intent is present and the intent ready to be
-    /// fulfilled by the client application.</p>
-    /// </li>
+    /// <li> <p> <code>Failed</code> - The Lambda function associated with the intent failed to fulfill the intent.</p> </li>
+    /// <li> <p> <code>Fulfilled</code> - The intent has fulfilled by the Lambda function associated with the intent. </p> </li>
+    /// <li> <p> <code>ReadyForFulfillment</code> - All of the information necessary for the intent is present and the intent ready to be fulfilled by the client application.</p> </li>
     /// </ul>
     pub fn fulfillment_state(&self) -> std::option::Option<&crate::model::FulfillmentState> {
         self.fulfillment_state.as_ref()
     }
-    /// <p>The next slot to elicit from the user. If there is not slot to elicit,
-    /// the field is blank.</p>
+    /// <p>The next slot to elicit from the user. If there is not slot to elicit, the field is blank.</p>
     pub fn slot_to_elicit(&self) -> std::option::Option<&str> {
         self.slot_to_elicit.as_deref()
     }
@@ -598,20 +456,14 @@ pub mod intent_summary {
             self.intent_name = input;
             self
         }
-        /// <p>A user-defined label that identifies a particular intent. You can use
-        /// this label to return to a previous intent. </p>
-        /// <p>Use the <code>checkpointLabelFilter</code> parameter of the
-        /// <code>GetSessionRequest</code> operation to filter the intents returned
-        /// by the operation to those with only the specified label.</p>
+        /// <p>A user-defined label that identifies a particular intent. You can use this label to return to a previous intent. </p>
+        /// <p>Use the <code>checkpointLabelFilter</code> parameter of the <code>GetSessionRequest</code> operation to filter the intents returned by the operation to those with only the specified label.</p>
         pub fn checkpoint_label(mut self, input: impl Into<std::string::String>) -> Self {
             self.checkpoint_label = Some(input.into());
             self
         }
-        /// <p>A user-defined label that identifies a particular intent. You can use
-        /// this label to return to a previous intent. </p>
-        /// <p>Use the <code>checkpointLabelFilter</code> parameter of the
-        /// <code>GetSessionRequest</code> operation to filter the intents returned
-        /// by the operation to those with only the specified label.</p>
+        /// <p>A user-defined label that identifies a particular intent. You can use this label to return to a previous intent. </p>
+        /// <p>Use the <code>checkpointLabelFilter</code> parameter of the <code>GetSessionRequest</code> operation to filter the intents returned by the operation to those with only the specified label.</p>
         pub fn set_checkpoint_label(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -644,55 +496,21 @@ pub mod intent_summary {
             self.slots = input;
             self
         }
-        /// <p>The status of the intent after the user responds to the confirmation
-        /// prompt. If the user confirms the intent, Amazon Lex sets this field to
-        /// <code>Confirmed</code>. If the user denies the intent, Amazon Lex sets this
-        /// value to <code>Denied</code>. The possible values are:</p>
+        /// <p>The status of the intent after the user responds to the confirmation prompt. If the user confirms the intent, Amazon Lex sets this field to <code>Confirmed</code>. If the user denies the intent, Amazon Lex sets this value to <code>Denied</code>. The possible values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Confirmed</code> - The user has responded "Yes" to the
-        /// confirmation prompt, confirming that the intent is complete and that
-        /// it is ready to be fulfilled.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Denied</code> - The user has responded "No" to the
-        /// confirmation prompt.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>None</code> - The user has never been prompted for
-        /// confirmation; or, the user was prompted but did not confirm or deny
-        /// the prompt.</p>
-        /// </li>
+        /// <li> <p> <code>Confirmed</code> - The user has responded "Yes" to the confirmation prompt, confirming that the intent is complete and that it is ready to be fulfilled.</p> </li>
+        /// <li> <p> <code>Denied</code> - The user has responded "No" to the confirmation prompt.</p> </li>
+        /// <li> <p> <code>None</code> - The user has never been prompted for confirmation; or, the user was prompted but did not confirm or deny the prompt.</p> </li>
         /// </ul>
         pub fn confirmation_status(mut self, input: crate::model::ConfirmationStatus) -> Self {
             self.confirmation_status = Some(input);
             self
         }
-        /// <p>The status of the intent after the user responds to the confirmation
-        /// prompt. If the user confirms the intent, Amazon Lex sets this field to
-        /// <code>Confirmed</code>. If the user denies the intent, Amazon Lex sets this
-        /// value to <code>Denied</code>. The possible values are:</p>
+        /// <p>The status of the intent after the user responds to the confirmation prompt. If the user confirms the intent, Amazon Lex sets this field to <code>Confirmed</code>. If the user denies the intent, Amazon Lex sets this value to <code>Denied</code>. The possible values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Confirmed</code> - The user has responded "Yes" to the
-        /// confirmation prompt, confirming that the intent is complete and that
-        /// it is ready to be fulfilled.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Denied</code> - The user has responded "No" to the
-        /// confirmation prompt.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>None</code> - The user has never been prompted for
-        /// confirmation; or, the user was prompted but did not confirm or deny
-        /// the prompt.</p>
-        /// </li>
+        /// <li> <p> <code>Confirmed</code> - The user has responded "Yes" to the confirmation prompt, confirming that the intent is complete and that it is ready to be fulfilled.</p> </li>
+        /// <li> <p> <code>Denied</code> - The user has responded "No" to the confirmation prompt.</p> </li>
+        /// <li> <p> <code>None</code> - The user has never been prompted for confirmation; or, the user was prompted but did not confirm or deny the prompt.</p> </li>
         /// </ul>
         pub fn set_confirmation_status(
             mut self,
@@ -701,61 +519,23 @@ pub mod intent_summary {
             self.confirmation_status = input;
             self
         }
-        /// <p>The next action that the bot should take in its interaction with the
-        /// user. The possible values are:</p>
+        /// <p>The next action that the bot should take in its interaction with the user. The possible values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ConfirmIntent</code> - The next action is asking the user if
-        /// the intent is complete and ready to be fulfilled. This is a yes/no
-        /// question such as "Place the order?"</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Close</code> - Indicates that the there will not be a
-        /// response from the user. For example, the statement "Your order has
-        /// been placed" does not require a response.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ElicitIntent</code> - The next action is to determine the
-        /// intent that the user wants to fulfill.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ElicitSlot</code> - The next action is to elicit a slot
-        /// value from the user.</p>
-        /// </li>
+        /// <li> <p> <code>ConfirmIntent</code> - The next action is asking the user if the intent is complete and ready to be fulfilled. This is a yes/no question such as "Place the order?"</p> </li>
+        /// <li> <p> <code>Close</code> - Indicates that the there will not be a response from the user. For example, the statement "Your order has been placed" does not require a response.</p> </li>
+        /// <li> <p> <code>ElicitIntent</code> - The next action is to determine the intent that the user wants to fulfill.</p> </li>
+        /// <li> <p> <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p> </li>
         /// </ul>
         pub fn dialog_action_type(mut self, input: crate::model::DialogActionType) -> Self {
             self.dialog_action_type = Some(input);
             self
         }
-        /// <p>The next action that the bot should take in its interaction with the
-        /// user. The possible values are:</p>
+        /// <p>The next action that the bot should take in its interaction with the user. The possible values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ConfirmIntent</code> - The next action is asking the user if
-        /// the intent is complete and ready to be fulfilled. This is a yes/no
-        /// question such as "Place the order?"</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Close</code> - Indicates that the there will not be a
-        /// response from the user. For example, the statement "Your order has
-        /// been placed" does not require a response.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ElicitIntent</code> - The next action is to determine the
-        /// intent that the user wants to fulfill.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ElicitSlot</code> - The next action is to elicit a slot
-        /// value from the user.</p>
-        /// </li>
+        /// <li> <p> <code>ConfirmIntent</code> - The next action is asking the user if the intent is complete and ready to be fulfilled. This is a yes/no question such as "Place the order?"</p> </li>
+        /// <li> <p> <code>Close</code> - Indicates that the there will not be a response from the user. For example, the statement "Your order has been placed" does not require a response.</p> </li>
+        /// <li> <p> <code>ElicitIntent</code> - The next action is to determine the intent that the user wants to fulfill.</p> </li>
+        /// <li> <p> <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p> </li>
         /// </ul>
         pub fn set_dialog_action_type(
             mut self,
@@ -766,22 +546,9 @@ pub mod intent_summary {
         }
         /// <p>The fulfillment state of the intent. The possible values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Failed</code> - The Lambda function associated with the
-        /// intent failed to fulfill the intent.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Fulfilled</code> - The intent has fulfilled by the Lambda
-        /// function associated with the intent. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ReadyForFulfillment</code> - All of the information
-        /// necessary for the intent is present and the intent ready to be
-        /// fulfilled by the client application.</p>
-        /// </li>
+        /// <li> <p> <code>Failed</code> - The Lambda function associated with the intent failed to fulfill the intent.</p> </li>
+        /// <li> <p> <code>Fulfilled</code> - The intent has fulfilled by the Lambda function associated with the intent. </p> </li>
+        /// <li> <p> <code>ReadyForFulfillment</code> - All of the information necessary for the intent is present and the intent ready to be fulfilled by the client application.</p> </li>
         /// </ul>
         pub fn fulfillment_state(mut self, input: crate::model::FulfillmentState) -> Self {
             self.fulfillment_state = Some(input);
@@ -789,22 +556,9 @@ pub mod intent_summary {
         }
         /// <p>The fulfillment state of the intent. The possible values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Failed</code> - The Lambda function associated with the
-        /// intent failed to fulfill the intent.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Fulfilled</code> - The intent has fulfilled by the Lambda
-        /// function associated with the intent. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ReadyForFulfillment</code> - All of the information
-        /// necessary for the intent is present and the intent ready to be
-        /// fulfilled by the client application.</p>
-        /// </li>
+        /// <li> <p> <code>Failed</code> - The Lambda function associated with the intent failed to fulfill the intent.</p> </li>
+        /// <li> <p> <code>Fulfilled</code> - The intent has fulfilled by the Lambda function associated with the intent. </p> </li>
+        /// <li> <p> <code>ReadyForFulfillment</code> - All of the information necessary for the intent is present and the intent ready to be fulfilled by the client application.</p> </li>
         /// </ul>
         pub fn set_fulfillment_state(
             mut self,
@@ -813,14 +567,12 @@ pub mod intent_summary {
             self.fulfillment_state = input;
             self
         }
-        /// <p>The next slot to elicit from the user. If there is not slot to elicit,
-        /// the field is blank.</p>
+        /// <p>The next slot to elicit from the user. If there is not slot to elicit, the field is blank.</p>
         pub fn slot_to_elicit(mut self, input: impl Into<std::string::String>) -> Self {
             self.slot_to_elicit = Some(input.into());
             self
         }
-        /// <p>The next slot to elicit from the user. If there is not slot to elicit,
-        /// the field is blank.</p>
+        /// <p>The next slot to elicit from the user. If there is not slot to elicit, the field is blank.</p>
         pub fn set_slot_to_elicit(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1040,44 +792,17 @@ impl AsRef<str> for ConfirmationStatus {
     }
 }
 
-/// <p>Describes the next action that the bot should take in its interaction
-/// with the user and provides information about the context in which the
-/// action takes place. Use the <code>DialogAction</code> data type to set the
-/// interaction to a specific state, or to return the interaction to a
-/// previous state.</p>
+/// <p>Describes the next action that the bot should take in its interaction with the user and provides information about the context in which the action takes place. Use the <code>DialogAction</code> data type to set the interaction to a specific state, or to return the interaction to a previous state.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DialogAction {
-    /// <p>The next action that the bot should take in its interaction with the
-    /// user. The possible values are:</p>
+    /// <p>The next action that the bot should take in its interaction with the user. The possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ConfirmIntent</code> - The next action is asking the user if
-    /// the intent is complete and ready to be fulfilled. This is a yes/no
-    /// question such as "Place the order?"</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Close</code> - Indicates that the there will not be a
-    /// response from the user. For example, the statement "Your order has
-    /// been placed" does not require a response.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Delegate</code> - The next action is determined by
-    /// Amazon Lex.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ElicitIntent</code> - The next action is to determine the
-    /// intent that the user wants to fulfill.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ElicitSlot</code> - The next action is to elicit a slot
-    /// value from the user.</p>
-    /// </li>
+    /// <li> <p> <code>ConfirmIntent</code> - The next action is asking the user if the intent is complete and ready to be fulfilled. This is a yes/no question such as "Place the order?"</p> </li>
+    /// <li> <p> <code>Close</code> - Indicates that the there will not be a response from the user. For example, the statement "Your order has been placed" does not require a response.</p> </li>
+    /// <li> <p> <code>Delegate</code> - The next action is determined by Amazon Lex.</p> </li>
+    /// <li> <p> <code>ElicitIntent</code> - The next action is to determine the intent that the user wants to fulfill.</p> </li>
+    /// <li> <p> <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p> </li>
     /// </ul>
     pub r#type: std::option::Option<crate::model::DialogActionType>,
     /// <p>The name of the intent.</p>
@@ -1089,83 +814,29 @@ pub struct DialogAction {
     pub slot_to_elicit: std::option::Option<std::string::String>,
     /// <p>The fulfillment state of the intent. The possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Failed</code> - The Lambda function associated with the
-    /// intent failed to fulfill the intent.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Fulfilled</code> - The intent has fulfilled by the Lambda
-    /// function associated with the intent. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ReadyForFulfillment</code> - All of the information
-    /// necessary for the intent is present and the intent ready to be
-    /// fulfilled by the client application.</p>
-    /// </li>
+    /// <li> <p> <code>Failed</code> - The Lambda function associated with the intent failed to fulfill the intent.</p> </li>
+    /// <li> <p> <code>Fulfilled</code> - The intent has fulfilled by the Lambda function associated with the intent. </p> </li>
+    /// <li> <p> <code>ReadyForFulfillment</code> - All of the information necessary for the intent is present and the intent ready to be fulfilled by the client application.</p> </li>
     /// </ul>
     pub fulfillment_state: std::option::Option<crate::model::FulfillmentState>,
-    /// <p>The message that should be shown to the user. If you don't specify a
-    /// message, Amazon Lex will use the message configured for the intent.</p>
+    /// <p>The message that should be shown to the user. If you don't specify a message, Amazon Lex will use the message configured for the intent.</p>
     pub message: std::option::Option<std::string::String>,
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>PlainText</code> - The message contains plain UTF-8
-    /// text.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CustomPayload</code> - The message is a custom format for
-    /// the client.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SSML</code> - The message contains text formatted for voice
-    /// output.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Composite</code> - The message contains an escaped JSON
-    /// object containing one or more messages. For more information, see
-    /// <a href="https://docs.aws.amazon.com/lex/latest/dg/howitworks-manage-prompts.html">Message Groups</a>. </p>
-    /// </li>
+    /// <li> <p> <code>PlainText</code> - The message contains plain UTF-8 text.</p> </li>
+    /// <li> <p> <code>CustomPayload</code> - The message is a custom format for the client.</p> </li>
+    /// <li> <p> <code>SSML</code> - The message contains text formatted for voice output.</p> </li>
+    /// <li> <p> <code>Composite</code> - The message contains an escaped JSON object containing one or more messages. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/howitworks-manage-prompts.html">Message Groups</a>. </p> </li>
     /// </ul>
     pub message_format: std::option::Option<crate::model::MessageFormatType>,
 }
 impl DialogAction {
-    /// <p>The next action that the bot should take in its interaction with the
-    /// user. The possible values are:</p>
+    /// <p>The next action that the bot should take in its interaction with the user. The possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ConfirmIntent</code> - The next action is asking the user if
-    /// the intent is complete and ready to be fulfilled. This is a yes/no
-    /// question such as "Place the order?"</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Close</code> - Indicates that the there will not be a
-    /// response from the user. For example, the statement "Your order has
-    /// been placed" does not require a response.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Delegate</code> - The next action is determined by
-    /// Amazon Lex.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ElicitIntent</code> - The next action is to determine the
-    /// intent that the user wants to fulfill.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ElicitSlot</code> - The next action is to elicit a slot
-    /// value from the user.</p>
-    /// </li>
+    /// <li> <p> <code>ConfirmIntent</code> - The next action is asking the user if the intent is complete and ready to be fulfilled. This is a yes/no question such as "Place the order?"</p> </li>
+    /// <li> <p> <code>Close</code> - Indicates that the there will not be a response from the user. For example, the statement "Your order has been placed" does not require a response.</p> </li>
+    /// <li> <p> <code>Delegate</code> - The next action is determined by Amazon Lex.</p> </li>
+    /// <li> <p> <code>ElicitIntent</code> - The next action is to determine the intent that the user wants to fulfill.</p> </li>
+    /// <li> <p> <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p> </li>
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&crate::model::DialogActionType> {
         self.r#type.as_ref()
@@ -1187,53 +858,22 @@ impl DialogAction {
     }
     /// <p>The fulfillment state of the intent. The possible values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Failed</code> - The Lambda function associated with the
-    /// intent failed to fulfill the intent.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Fulfilled</code> - The intent has fulfilled by the Lambda
-    /// function associated with the intent. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ReadyForFulfillment</code> - All of the information
-    /// necessary for the intent is present and the intent ready to be
-    /// fulfilled by the client application.</p>
-    /// </li>
+    /// <li> <p> <code>Failed</code> - The Lambda function associated with the intent failed to fulfill the intent.</p> </li>
+    /// <li> <p> <code>Fulfilled</code> - The intent has fulfilled by the Lambda function associated with the intent. </p> </li>
+    /// <li> <p> <code>ReadyForFulfillment</code> - All of the information necessary for the intent is present and the intent ready to be fulfilled by the client application.</p> </li>
     /// </ul>
     pub fn fulfillment_state(&self) -> std::option::Option<&crate::model::FulfillmentState> {
         self.fulfillment_state.as_ref()
     }
-    /// <p>The message that should be shown to the user. If you don't specify a
-    /// message, Amazon Lex will use the message configured for the intent.</p>
+    /// <p>The message that should be shown to the user. If you don't specify a message, Amazon Lex will use the message configured for the intent.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>PlainText</code> - The message contains plain UTF-8
-    /// text.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CustomPayload</code> - The message is a custom format for
-    /// the client.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SSML</code> - The message contains text formatted for voice
-    /// output.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Composite</code> - The message contains an escaped JSON
-    /// object containing one or more messages. For more information, see
-    /// <a href="https://docs.aws.amazon.com/lex/latest/dg/howitworks-manage-prompts.html">Message Groups</a>. </p>
-    /// </li>
+    /// <li> <p> <code>PlainText</code> - The message contains plain UTF-8 text.</p> </li>
+    /// <li> <p> <code>CustomPayload</code> - The message is a custom format for the client.</p> </li>
+    /// <li> <p> <code>SSML</code> - The message contains text formatted for voice output.</p> </li>
+    /// <li> <p> <code>Composite</code> - The message contains an escaped JSON object containing one or more messages. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/howitworks-manage-prompts.html">Message Groups</a>. </p> </li>
     /// </ul>
     pub fn message_format(&self) -> std::option::Option<&crate::model::MessageFormatType> {
         self.message_format.as_ref()
@@ -1269,71 +909,25 @@ pub mod dialog_action {
         pub(crate) message_format: std::option::Option<crate::model::MessageFormatType>,
     }
     impl Builder {
-        /// <p>The next action that the bot should take in its interaction with the
-        /// user. The possible values are:</p>
+        /// <p>The next action that the bot should take in its interaction with the user. The possible values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ConfirmIntent</code> - The next action is asking the user if
-        /// the intent is complete and ready to be fulfilled. This is a yes/no
-        /// question such as "Place the order?"</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Close</code> - Indicates that the there will not be a
-        /// response from the user. For example, the statement "Your order has
-        /// been placed" does not require a response.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Delegate</code> - The next action is determined by
-        /// Amazon Lex.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ElicitIntent</code> - The next action is to determine the
-        /// intent that the user wants to fulfill.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ElicitSlot</code> - The next action is to elicit a slot
-        /// value from the user.</p>
-        /// </li>
+        /// <li> <p> <code>ConfirmIntent</code> - The next action is asking the user if the intent is complete and ready to be fulfilled. This is a yes/no question such as "Place the order?"</p> </li>
+        /// <li> <p> <code>Close</code> - Indicates that the there will not be a response from the user. For example, the statement "Your order has been placed" does not require a response.</p> </li>
+        /// <li> <p> <code>Delegate</code> - The next action is determined by Amazon Lex.</p> </li>
+        /// <li> <p> <code>ElicitIntent</code> - The next action is to determine the intent that the user wants to fulfill.</p> </li>
+        /// <li> <p> <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p> </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::DialogActionType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The next action that the bot should take in its interaction with the
-        /// user. The possible values are:</p>
+        /// <p>The next action that the bot should take in its interaction with the user. The possible values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ConfirmIntent</code> - The next action is asking the user if
-        /// the intent is complete and ready to be fulfilled. This is a yes/no
-        /// question such as "Place the order?"</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Close</code> - Indicates that the there will not be a
-        /// response from the user. For example, the statement "Your order has
-        /// been placed" does not require a response.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Delegate</code> - The next action is determined by
-        /// Amazon Lex.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ElicitIntent</code> - The next action is to determine the
-        /// intent that the user wants to fulfill.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ElicitSlot</code> - The next action is to elicit a slot
-        /// value from the user.</p>
-        /// </li>
+        /// <li> <p> <code>ConfirmIntent</code> - The next action is asking the user if the intent is complete and ready to be fulfilled. This is a yes/no question such as "Place the order?"</p> </li>
+        /// <li> <p> <code>Close</code> - Indicates that the there will not be a response from the user. For example, the statement "Your order has been placed" does not require a response.</p> </li>
+        /// <li> <p> <code>Delegate</code> - The next action is determined by Amazon Lex.</p> </li>
+        /// <li> <p> <code>ElicitIntent</code> - The next action is to determine the intent that the user wants to fulfill.</p> </li>
+        /// <li> <p> <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p> </li>
         /// </ul>
         pub fn set_type(
             mut self,
@@ -1392,22 +986,9 @@ pub mod dialog_action {
         }
         /// <p>The fulfillment state of the intent. The possible values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Failed</code> - The Lambda function associated with the
-        /// intent failed to fulfill the intent.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Fulfilled</code> - The intent has fulfilled by the Lambda
-        /// function associated with the intent. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ReadyForFulfillment</code> - All of the information
-        /// necessary for the intent is present and the intent ready to be
-        /// fulfilled by the client application.</p>
-        /// </li>
+        /// <li> <p> <code>Failed</code> - The Lambda function associated with the intent failed to fulfill the intent.</p> </li>
+        /// <li> <p> <code>Fulfilled</code> - The intent has fulfilled by the Lambda function associated with the intent. </p> </li>
+        /// <li> <p> <code>ReadyForFulfillment</code> - All of the information necessary for the intent is present and the intent ready to be fulfilled by the client application.</p> </li>
         /// </ul>
         pub fn fulfillment_state(mut self, input: crate::model::FulfillmentState) -> Self {
             self.fulfillment_state = Some(input);
@@ -1415,22 +996,9 @@ pub mod dialog_action {
         }
         /// <p>The fulfillment state of the intent. The possible values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Failed</code> - The Lambda function associated with the
-        /// intent failed to fulfill the intent.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Fulfilled</code> - The intent has fulfilled by the Lambda
-        /// function associated with the intent. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ReadyForFulfillment</code> - All of the information
-        /// necessary for the intent is present and the intent ready to be
-        /// fulfilled by the client application.</p>
-        /// </li>
+        /// <li> <p> <code>Failed</code> - The Lambda function associated with the intent failed to fulfill the intent.</p> </li>
+        /// <li> <p> <code>Fulfilled</code> - The intent has fulfilled by the Lambda function associated with the intent. </p> </li>
+        /// <li> <p> <code>ReadyForFulfillment</code> - All of the information necessary for the intent is present and the intent ready to be fulfilled by the client application.</p> </li>
         /// </ul>
         pub fn set_fulfillment_state(
             mut self,
@@ -1439,67 +1007,31 @@ pub mod dialog_action {
             self.fulfillment_state = input;
             self
         }
-        /// <p>The message that should be shown to the user. If you don't specify a
-        /// message, Amazon Lex will use the message configured for the intent.</p>
+        /// <p>The message that should be shown to the user. If you don't specify a message, Amazon Lex will use the message configured for the intent.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message that should be shown to the user. If you don't specify a
-        /// message, Amazon Lex will use the message configured for the intent.</p>
+        /// <p>The message that should be shown to the user. If you don't specify a message, Amazon Lex will use the message configured for the intent.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
         }
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PlainText</code> - The message contains plain UTF-8
-        /// text.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CustomPayload</code> - The message is a custom format for
-        /// the client.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SSML</code> - The message contains text formatted for voice
-        /// output.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Composite</code> - The message contains an escaped JSON
-        /// object containing one or more messages. For more information, see
-        /// <a href="https://docs.aws.amazon.com/lex/latest/dg/howitworks-manage-prompts.html">Message Groups</a>. </p>
-        /// </li>
+        /// <li> <p> <code>PlainText</code> - The message contains plain UTF-8 text.</p> </li>
+        /// <li> <p> <code>CustomPayload</code> - The message is a custom format for the client.</p> </li>
+        /// <li> <p> <code>SSML</code> - The message contains text formatted for voice output.</p> </li>
+        /// <li> <p> <code>Composite</code> - The message contains an escaped JSON object containing one or more messages. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/howitworks-manage-prompts.html">Message Groups</a>. </p> </li>
         /// </ul>
         pub fn message_format(mut self, input: crate::model::MessageFormatType) -> Self {
             self.message_format = Some(input);
             self
         }
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PlainText</code> - The message contains plain UTF-8
-        /// text.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CustomPayload</code> - The message is a custom format for
-        /// the client.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SSML</code> - The message contains text formatted for voice
-        /// output.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Composite</code> - The message contains an escaped JSON
-        /// object containing one or more messages. For more information, see
-        /// <a href="https://docs.aws.amazon.com/lex/latest/dg/howitworks-manage-prompts.html">Message Groups</a>. </p>
-        /// </li>
+        /// <li> <p> <code>PlainText</code> - The message contains plain UTF-8 text.</p> </li>
+        /// <li> <p> <code>CustomPayload</code> - The message is a custom format for the client.</p> </li>
+        /// <li> <p> <code>SSML</code> - The message contains text formatted for voice output.</p> </li>
+        /// <li> <p> <code>Composite</code> - The message contains an escaped JSON object containing one or more messages. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/howitworks-manage-prompts.html">Message Groups</a>. </p> </li>
         /// </ul>
         pub fn set_message_format(
             mut self,
@@ -1529,11 +1061,7 @@ impl DialogAction {
     }
 }
 
-/// <p>If you configure a response card when creating your bots, Amazon Lex
-/// substitutes the session attributes and slot values that are available, and
-/// then returns it. The response card can also come from a Lambda function (
-/// <code>dialogCodeHook</code> and <code>fulfillmentActivity</code> on an
-/// intent).</p>
+/// <p>If you configure a response card when creating your bots, Amazon Lex substitutes the session attributes and slot values that are available, and then returns it. The response card can also come from a Lambda function ( <code>dialogCodeHook</code> and <code>fulfillmentActivity</code> on an intent).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResponseCard {
@@ -1638,8 +1166,7 @@ impl ResponseCard {
     }
 }
 
-/// <p>Represents an option rendered to the user when a prompt is shown. It
-/// could be an image, a button, a link, or text. </p>
+/// <p>Represents an option rendered to the user when a prompt is shown. It could be an image, a button, a link, or text. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GenericAttachment {
@@ -1781,16 +1308,13 @@ impl GenericAttachment {
     }
 }
 
-/// <p>Represents an option to be shown on the client platform (Facebook,
-/// Slack, etc.)</p>
+/// <p>Represents an option to be shown on the client platform (Facebook, Slack, etc.)</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Button {
     /// <p>Text that is visible to the user on the button.</p>
     pub text: std::option::Option<std::string::String>,
-    /// <p>The value sent to Amazon Lex when a user chooses the button. For
-    /// example, consider button text "NYC." When the user chooses the button, the
-    /// value sent can be "New York City."</p>
+    /// <p>The value sent to Amazon Lex when a user chooses the button. For example, consider button text "NYC." When the user chooses the button, the value sent can be "New York City."</p>
     pub value: std::option::Option<std::string::String>,
 }
 impl Button {
@@ -1798,9 +1322,7 @@ impl Button {
     pub fn text(&self) -> std::option::Option<&str> {
         self.text.as_deref()
     }
-    /// <p>The value sent to Amazon Lex when a user chooses the button. For
-    /// example, consider button text "NYC." When the user chooses the button, the
-    /// value sent can be "New York City."</p>
+    /// <p>The value sent to Amazon Lex when a user chooses the button. For example, consider button text "NYC." When the user chooses the button, the value sent can be "New York City."</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
@@ -1833,16 +1355,12 @@ pub mod button {
             self.text = input;
             self
         }
-        /// <p>The value sent to Amazon Lex when a user chooses the button. For
-        /// example, consider button text "NYC." When the user chooses the button, the
-        /// value sent can be "New York City."</p>
+        /// <p>The value sent to Amazon Lex when a user chooses the button. For example, consider button text "NYC." When the user chooses the button, the value sent can be "New York City."</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             self.value = Some(input.into());
             self
         }
-        /// <p>The value sent to Amazon Lex when a user chooses the button. For
-        /// example, consider button text "NYC." When the user chooses the button, the
-        /// value sent can be "New York City."</p>
+        /// <p>The value sent to Amazon Lex when a user chooses the button. For example, consider button text "NYC." When the user chooses the button, the value sent can be "New York City."</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -1915,21 +1433,17 @@ impl AsRef<str> for ContentType {
 }
 
 /// <p>The sentiment expressed in an utterance.</p>
-/// <p>When the bot is configured to send utterances to Amazon Comprehend for
-/// sentiment analysis, this field structure contains the result of the
-/// analysis.</p>
+/// <p>When the bot is configured to send utterances to Amazon Comprehend for sentiment analysis, this field structure contains the result of the analysis.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SentimentResponse {
-    /// <p>The inferred sentiment that Amazon Comprehend has the highest
-    /// confidence in.</p>
+    /// <p>The inferred sentiment that Amazon Comprehend has the highest confidence in.</p>
     pub sentiment_label: std::option::Option<std::string::String>,
     /// <p>The likelihood that the sentiment was correctly inferred.</p>
     pub sentiment_score: std::option::Option<std::string::String>,
 }
 impl SentimentResponse {
-    /// <p>The inferred sentiment that Amazon Comprehend has the highest
-    /// confidence in.</p>
+    /// <p>The inferred sentiment that Amazon Comprehend has the highest confidence in.</p>
     pub fn sentiment_label(&self) -> std::option::Option<&str> {
         self.sentiment_label.as_deref()
     }
@@ -1956,14 +1470,12 @@ pub mod sentiment_response {
         pub(crate) sentiment_score: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The inferred sentiment that Amazon Comprehend has the highest
-        /// confidence in.</p>
+        /// <p>The inferred sentiment that Amazon Comprehend has the highest confidence in.</p>
         pub fn sentiment_label(mut self, input: impl Into<std::string::String>) -> Self {
             self.sentiment_label = Some(input.into());
             self
         }
-        /// <p>The inferred sentiment that Amazon Comprehend has the highest
-        /// confidence in.</p>
+        /// <p>The inferred sentiment that Amazon Comprehend has the highest confidence in.</p>
         pub fn set_sentiment_label(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2000,30 +1512,24 @@ impl SentimentResponse {
     }
 }
 
-/// <p>An intent that Amazon Lex suggests satisfies the user's intent. Includes
-/// the name of the intent, the confidence that Amazon Lex has that the user's
-/// intent is satisfied, and the slots defined for the intent.</p>
+/// <p>An intent that Amazon Lex suggests satisfies the user's intent. Includes the name of the intent, the confidence that Amazon Lex has that the user's intent is satisfied, and the slots defined for the intent.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PredictedIntent {
-    /// <p>The name of the intent that Amazon Lex suggests satisfies the user's
-    /// intent.</p>
+    /// <p>The name of the intent that Amazon Lex suggests satisfies the user's intent.</p>
     pub intent_name: std::option::Option<std::string::String>,
-    /// <p>Indicates how confident Amazon Lex is that an intent satisfies the user's
-    /// intent.</p>
+    /// <p>Indicates how confident Amazon Lex is that an intent satisfies the user's intent.</p>
     pub nlu_intent_confidence: std::option::Option<crate::model::IntentConfidence>,
     /// <p>The slot and slot values associated with the predicted intent.</p>
     pub slots:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl PredictedIntent {
-    /// <p>The name of the intent that Amazon Lex suggests satisfies the user's
-    /// intent.</p>
+    /// <p>The name of the intent that Amazon Lex suggests satisfies the user's intent.</p>
     pub fn intent_name(&self) -> std::option::Option<&str> {
         self.intent_name.as_deref()
     }
-    /// <p>Indicates how confident Amazon Lex is that an intent satisfies the user's
-    /// intent.</p>
+    /// <p>Indicates how confident Amazon Lex is that an intent satisfies the user's intent.</p>
     pub fn nlu_intent_confidence(&self) -> std::option::Option<&crate::model::IntentConfidence> {
         self.nlu_intent_confidence.as_ref()
     }
@@ -2057,26 +1563,22 @@ pub mod predicted_intent {
         >,
     }
     impl Builder {
-        /// <p>The name of the intent that Amazon Lex suggests satisfies the user's
-        /// intent.</p>
+        /// <p>The name of the intent that Amazon Lex suggests satisfies the user's intent.</p>
         pub fn intent_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.intent_name = Some(input.into());
             self
         }
-        /// <p>The name of the intent that Amazon Lex suggests satisfies the user's
-        /// intent.</p>
+        /// <p>The name of the intent that Amazon Lex suggests satisfies the user's intent.</p>
         pub fn set_intent_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.intent_name = input;
             self
         }
-        /// <p>Indicates how confident Amazon Lex is that an intent satisfies the user's
-        /// intent.</p>
+        /// <p>Indicates how confident Amazon Lex is that an intent satisfies the user's intent.</p>
         pub fn nlu_intent_confidence(mut self, input: crate::model::IntentConfidence) -> Self {
             self.nlu_intent_confidence = Some(input);
             self
         }
-        /// <p>Indicates how confident Amazon Lex is that an intent satisfies the user's
-        /// intent.</p>
+        /// <p>Indicates how confident Amazon Lex is that an intent satisfies the user's intent.</p>
         pub fn set_nlu_intent_confidence(
             mut self,
             input: std::option::Option<crate::model::IntentConfidence>,
@@ -2126,20 +1628,15 @@ impl PredictedIntent {
     }
 }
 
-/// <p>Provides a score that indicates the confidence that Amazon Lex has that an
-/// intent is the one that satisfies the user's intent.</p>
+/// <p>Provides a score that indicates the confidence that Amazon Lex has that an intent is the one that satisfies the user's intent.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IntentConfidence {
-    /// <p>A score that indicates how confident Amazon Lex is that an intent satisfies
-    /// the user's intent. Ranges between 0.00 and 1.00. Higher scores indicate
-    /// higher confidence.</p>
+    /// <p>A score that indicates how confident Amazon Lex is that an intent satisfies the user's intent. Ranges between 0.00 and 1.00. Higher scores indicate higher confidence.</p>
     pub score: f64,
 }
 impl IntentConfidence {
-    /// <p>A score that indicates how confident Amazon Lex is that an intent satisfies
-    /// the user's intent. Ranges between 0.00 and 1.00. Higher scores indicate
-    /// higher confidence.</p>
+    /// <p>A score that indicates how confident Amazon Lex is that an intent satisfies the user's intent. Ranges between 0.00 and 1.00. Higher scores indicate higher confidence.</p>
     pub fn score(&self) -> f64 {
         self.score
     }
@@ -2160,16 +1657,12 @@ pub mod intent_confidence {
         pub(crate) score: std::option::Option<f64>,
     }
     impl Builder {
-        /// <p>A score that indicates how confident Amazon Lex is that an intent satisfies
-        /// the user's intent. Ranges between 0.00 and 1.00. Higher scores indicate
-        /// higher confidence.</p>
+        /// <p>A score that indicates how confident Amazon Lex is that an intent satisfies the user's intent. Ranges between 0.00 and 1.00. Higher scores indicate higher confidence.</p>
         pub fn score(mut self, input: f64) -> Self {
             self.score = Some(input);
             self
         }
-        /// <p>A score that indicates how confident Amazon Lex is that an intent satisfies
-        /// the user's intent. Ranges between 0.00 and 1.00. Higher scores indicate
-        /// higher confidence.</p>
+        /// <p>A score that indicates how confident Amazon Lex is that an intent satisfies the user's intent. Ranges between 0.00 and 1.00. Higher scores indicate higher confidence.</p>
         pub fn set_score(mut self, input: std::option::Option<f64>) -> Self {
             self.score = input;
             self

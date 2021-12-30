@@ -7,16 +7,8 @@ pub struct ValidationMessage {
     pub message: std::option::Option<std::string::String>,
     /// <p>An indication of the severity of this message:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>error</code>: This message indicates that this is not a valid setting for an
-    /// option.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>warning</code>: This message is providing information you should take into
-    /// account.</p>
-    /// </li>
+    /// <li> <p> <code>error</code>: This message indicates that this is not a valid setting for an option.</p> </li>
+    /// <li> <p> <code>warning</code>: This message is providing information you should take into account.</p> </li>
     /// </ul>
     pub severity: std::option::Option<crate::model::ValidationSeverity>,
     /// <p>The namespace to which the option belongs.</p>
@@ -31,16 +23,8 @@ impl ValidationMessage {
     }
     /// <p>An indication of the severity of this message:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>error</code>: This message indicates that this is not a valid setting for an
-    /// option.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>warning</code>: This message is providing information you should take into
-    /// account.</p>
-    /// </li>
+    /// <li> <p> <code>error</code>: This message indicates that this is not a valid setting for an option.</p> </li>
+    /// <li> <p> <code>warning</code>: This message is providing information you should take into account.</p> </li>
     /// </ul>
     pub fn severity(&self) -> std::option::Option<&crate::model::ValidationSeverity> {
         self.severity.as_ref()
@@ -88,16 +72,8 @@ pub mod validation_message {
         }
         /// <p>An indication of the severity of this message:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>error</code>: This message indicates that this is not a valid setting for an
-        /// option.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>warning</code>: This message is providing information you should take into
-        /// account.</p>
-        /// </li>
+        /// <li> <p> <code>error</code>: This message indicates that this is not a valid setting for an option.</p> </li>
+        /// <li> <p> <code>warning</code>: This message is providing information you should take into account.</p> </li>
         /// </ul>
         pub fn severity(mut self, input: crate::model::ValidationSeverity) -> Self {
             self.severity = Some(input);
@@ -105,16 +81,8 @@ pub mod validation_message {
         }
         /// <p>An indication of the severity of this message:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>error</code>: This message indicates that this is not a valid setting for an
-        /// option.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>warning</code>: This message is providing information you should take into
-        /// account.</p>
-        /// </li>
+        /// <li> <p> <code>error</code>: This message indicates that this is not a valid setting for an option.</p> </li>
+        /// <li> <p> <code>warning</code>: This message is providing information you should take into account.</p> </li>
         /// </ul>
         pub fn set_severity(
             mut self,
@@ -216,9 +184,7 @@ impl AsRef<str> for ValidationSeverity {
     }
 }
 
-/// <p>A specification identifying an individual configuration option along with its current
-/// value. For a list of possible namespaces and option values, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html">Option Values</a> in the
-/// <i>AWS Elastic Beanstalk Developer Guide</i>. </p>
+/// <p>A specification identifying an individual configuration option along with its current value. For a list of possible namespaces and option values, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html">Option Values</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfigurationOptionSetting {
@@ -405,10 +371,7 @@ impl Tag {
     }
 }
 
-/// <p>A link to another environment, defined in the environment's manifest. Links provide
-/// connection information in system properties that can be used to connect to another environment
-/// in the same group. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment Manifest
-/// (env.yaml)</a> for details.</p>
+/// <p>A link to another environment, defined in the environment's manifest. Links provide connection information in system properties that can be used to connect to another environment in the same group. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment Manifest (env.yaml)</a> for details.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnvironmentLink {
@@ -491,34 +454,19 @@ pub struct EnvironmentTier {
     /// <p>The name of this environment tier.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p>For <i>Web server tier</i> – <code>WebServer</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>For <i>Worker tier</i> – <code>Worker</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>For <i>Web server tier</i> – <code>WebServer</code> </p> </li>
+    /// <li> <p>For <i>Worker tier</i> – <code>Worker</code> </p> </li>
     /// </ul>
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of this environment tier.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p>For <i>Web server tier</i> – <code>Standard</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>For <i>Worker tier</i> – <code>SQS/HTTP</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>For <i>Web server tier</i> – <code>Standard</code> </p> </li>
+    /// <li> <p>For <i>Worker tier</i> – <code>SQS/HTTP</code> </p> </li>
     /// </ul>
     pub r#type: std::option::Option<std::string::String>,
-    /// <p>The version of this environment tier. When you don't set a value to it, Elastic Beanstalk uses the
-    /// latest compatible worker tier version.</p>
-    /// <note>
-    /// <p>This member is deprecated. Any specific version that you set may become out of date.
-    /// We recommend leaving it unspecified.</p>
+    /// <p>The version of this environment tier. When you don't set a value to it, Elastic Beanstalk uses the latest compatible worker tier version.</p> <note>
+    /// <p>This member is deprecated. Any specific version that you set may become out of date. We recommend leaving it unspecified.</p>
     /// </note>
     pub version: std::option::Option<std::string::String>,
 }
@@ -526,14 +474,8 @@ impl EnvironmentTier {
     /// <p>The name of this environment tier.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p>For <i>Web server tier</i> – <code>WebServer</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>For <i>Worker tier</i> – <code>Worker</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>For <i>Web server tier</i> – <code>WebServer</code> </p> </li>
+    /// <li> <p>For <i>Worker tier</i> – <code>Worker</code> </p> </li>
     /// </ul>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
@@ -541,23 +483,14 @@ impl EnvironmentTier {
     /// <p>The type of this environment tier.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p>For <i>Web server tier</i> – <code>Standard</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>For <i>Worker tier</i> – <code>SQS/HTTP</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>For <i>Web server tier</i> – <code>Standard</code> </p> </li>
+    /// <li> <p>For <i>Worker tier</i> – <code>SQS/HTTP</code> </p> </li>
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
-    /// <p>The version of this environment tier. When you don't set a value to it, Elastic Beanstalk uses the
-    /// latest compatible worker tier version.</p>
-    /// <note>
-    /// <p>This member is deprecated. Any specific version that you set may become out of date.
-    /// We recommend leaving it unspecified.</p>
+    /// <p>The version of this environment tier. When you don't set a value to it, Elastic Beanstalk uses the latest compatible worker tier version.</p> <note>
+    /// <p>This member is deprecated. Any specific version that you set may become out of date. We recommend leaving it unspecified.</p>
     /// </note>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
@@ -586,14 +519,8 @@ pub mod environment_tier {
         /// <p>The name of this environment tier.</p>
         /// <p>Valid values:</p>
         /// <ul>
-        /// <li>
-        /// <p>For <i>Web server tier</i> – <code>WebServer</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>For <i>Worker tier</i> – <code>Worker</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>For <i>Web server tier</i> – <code>WebServer</code> </p> </li>
+        /// <li> <p>For <i>Worker tier</i> – <code>Worker</code> </p> </li>
         /// </ul>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
@@ -602,14 +529,8 @@ pub mod environment_tier {
         /// <p>The name of this environment tier.</p>
         /// <p>Valid values:</p>
         /// <ul>
-        /// <li>
-        /// <p>For <i>Web server tier</i> – <code>WebServer</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>For <i>Worker tier</i> – <code>Worker</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>For <i>Web server tier</i> – <code>WebServer</code> </p> </li>
+        /// <li> <p>For <i>Worker tier</i> – <code>Worker</code> </p> </li>
         /// </ul>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
@@ -618,14 +539,8 @@ pub mod environment_tier {
         /// <p>The type of this environment tier.</p>
         /// <p>Valid values:</p>
         /// <ul>
-        /// <li>
-        /// <p>For <i>Web server tier</i> – <code>Standard</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>For <i>Worker tier</i> – <code>SQS/HTTP</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>For <i>Web server tier</i> – <code>Standard</code> </p> </li>
+        /// <li> <p>For <i>Worker tier</i> – <code>SQS/HTTP</code> </p> </li>
         /// </ul>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.r#type = Some(input.into());
@@ -634,34 +549,22 @@ pub mod environment_tier {
         /// <p>The type of this environment tier.</p>
         /// <p>Valid values:</p>
         /// <ul>
-        /// <li>
-        /// <p>For <i>Web server tier</i> – <code>Standard</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>For <i>Worker tier</i> – <code>SQS/HTTP</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>For <i>Web server tier</i> – <code>Standard</code> </p> </li>
+        /// <li> <p>For <i>Worker tier</i> – <code>SQS/HTTP</code> </p> </li>
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
         }
-        /// <p>The version of this environment tier. When you don't set a value to it, Elastic Beanstalk uses the
-        /// latest compatible worker tier version.</p>
-        /// <note>
-        /// <p>This member is deprecated. Any specific version that you set may become out of date.
-        /// We recommend leaving it unspecified.</p>
+        /// <p>The version of this environment tier. When you don't set a value to it, Elastic Beanstalk uses the latest compatible worker tier version.</p> <note>
+        /// <p>This member is deprecated. Any specific version that you set may become out of date. We recommend leaving it unspecified.</p>
         /// </note>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
             self.version = Some(input.into());
             self
         }
-        /// <p>The version of this environment tier. When you don't set a value to it, Elastic Beanstalk uses the
-        /// latest compatible worker tier version.</p>
-        /// <note>
-        /// <p>This member is deprecated. Any specific version that you set may become out of date.
-        /// We recommend leaving it unspecified.</p>
+        /// <p>The version of this environment tier. When you don't set a value to it, Elastic Beanstalk uses the latest compatible worker tier version.</p> <note>
+        /// <p>This member is deprecated. Any specific version that you set may become out of date. We recommend leaving it unspecified.</p>
         /// </note>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
@@ -684,8 +587,7 @@ impl EnvironmentTier {
     }
 }
 
-/// <p>Describes the AWS resources in use by this environment. This data is not live
-/// data.</p>
+/// <p>Describes the AWS resources in use by this environment. This data is not live data.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnvironmentResourcesDescription {
@@ -1329,8 +1231,7 @@ pub struct ApplicationVersionDescription {
     pub description: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the application version.</p>
     pub version_label: std::option::Option<std::string::String>,
-    /// <p>If the version's source code was retrieved from AWS CodeCommit, the location of the
-    /// source code for the application version.</p>
+    /// <p>If the version's source code was retrieved from AWS CodeCommit, the location of the source code for the application version.</p>
     pub source_build_information: std::option::Option<crate::model::SourceBuildInformation>,
     /// <p>Reference to the artifact from the AWS CodeBuild build.</p>
     pub build_arn: std::option::Option<std::string::String>,
@@ -1340,35 +1241,13 @@ pub struct ApplicationVersionDescription {
     pub date_created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The last modified date of the application version.</p>
     pub date_updated: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The processing status of the application version. Reflects the state of the application
-    /// version during its creation. Many of the values are only applicable if you specified
-    /// <code>True</code> for the <code>Process</code> parameter of the
-    /// <code>CreateApplicationVersion</code> action. The following list describes the possible
-    /// values.</p>
+    /// <p>The processing status of the application version. Reflects the state of the application version during its creation. Many of the values are only applicable if you specified <code>True</code> for the <code>Process</code> parameter of the <code>CreateApplicationVersion</code> action. The following list describes the possible values.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Unprocessed</code> – Application version wasn't pre-processed or validated.
-    /// Elastic Beanstalk will validate configuration files during deployment of the application version to an
-    /// environment.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Processing</code> – Elastic Beanstalk is currently processing the application version.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Building</code> – Application version is currently undergoing an AWS CodeBuild build.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Processed</code> – Elastic Beanstalk was successfully pre-processed and validated.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Failed</code> – Either the AWS CodeBuild build failed or configuration files didn't
-    /// pass validation. This application version isn't usable.</p>
-    /// </li>
+    /// <li> <p> <code>Unprocessed</code> – Application version wasn't pre-processed or validated. Elastic Beanstalk will validate configuration files during deployment of the application version to an environment.</p> </li>
+    /// <li> <p> <code>Processing</code> – Elastic Beanstalk is currently processing the application version.</p> </li>
+    /// <li> <p> <code>Building</code> – Application version is currently undergoing an AWS CodeBuild build.</p> </li>
+    /// <li> <p> <code>Processed</code> – Elastic Beanstalk was successfully pre-processed and validated.</p> </li>
+    /// <li> <p> <code>Failed</code> – Either the AWS CodeBuild build failed or configuration files didn't pass validation. This application version isn't usable.</p> </li>
     /// </ul>
     pub status: std::option::Option<crate::model::ApplicationVersionStatus>,
 }
@@ -1389,8 +1268,7 @@ impl ApplicationVersionDescription {
     pub fn version_label(&self) -> std::option::Option<&str> {
         self.version_label.as_deref()
     }
-    /// <p>If the version's source code was retrieved from AWS CodeCommit, the location of the
-    /// source code for the application version.</p>
+    /// <p>If the version's source code was retrieved from AWS CodeCommit, the location of the source code for the application version.</p>
     pub fn source_build_information(
         &self,
     ) -> std::option::Option<&crate::model::SourceBuildInformation> {
@@ -1412,35 +1290,13 @@ impl ApplicationVersionDescription {
     pub fn date_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.date_updated.as_ref()
     }
-    /// <p>The processing status of the application version. Reflects the state of the application
-    /// version during its creation. Many of the values are only applicable if you specified
-    /// <code>True</code> for the <code>Process</code> parameter of the
-    /// <code>CreateApplicationVersion</code> action. The following list describes the possible
-    /// values.</p>
+    /// <p>The processing status of the application version. Reflects the state of the application version during its creation. Many of the values are only applicable if you specified <code>True</code> for the <code>Process</code> parameter of the <code>CreateApplicationVersion</code> action. The following list describes the possible values.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Unprocessed</code> – Application version wasn't pre-processed or validated.
-    /// Elastic Beanstalk will validate configuration files during deployment of the application version to an
-    /// environment.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Processing</code> – Elastic Beanstalk is currently processing the application version.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Building</code> – Application version is currently undergoing an AWS CodeBuild build.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Processed</code> – Elastic Beanstalk was successfully pre-processed and validated.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Failed</code> – Either the AWS CodeBuild build failed or configuration files didn't
-    /// pass validation. This application version isn't usable.</p>
-    /// </li>
+    /// <li> <p> <code>Unprocessed</code> – Application version wasn't pre-processed or validated. Elastic Beanstalk will validate configuration files during deployment of the application version to an environment.</p> </li>
+    /// <li> <p> <code>Processing</code> – Elastic Beanstalk is currently processing the application version.</p> </li>
+    /// <li> <p> <code>Building</code> – Application version is currently undergoing an AWS CodeBuild build.</p> </li>
+    /// <li> <p> <code>Processed</code> – Elastic Beanstalk was successfully pre-processed and validated.</p> </li>
+    /// <li> <p> <code>Failed</code> – Either the AWS CodeBuild build failed or configuration files didn't pass validation. This application version isn't usable.</p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::ApplicationVersionStatus> {
         self.status.as_ref()
@@ -1530,8 +1386,7 @@ pub mod application_version_description {
             self.version_label = input;
             self
         }
-        /// <p>If the version's source code was retrieved from AWS CodeCommit, the location of the
-        /// source code for the application version.</p>
+        /// <p>If the version's source code was retrieved from AWS CodeCommit, the location of the source code for the application version.</p>
         pub fn source_build_information(
             mut self,
             input: crate::model::SourceBuildInformation,
@@ -1539,8 +1394,7 @@ pub mod application_version_description {
             self.source_build_information = Some(input);
             self
         }
-        /// <p>If the version's source code was retrieved from AWS CodeCommit, the location of the
-        /// source code for the application version.</p>
+        /// <p>If the version's source code was retrieved from AWS CodeCommit, the location of the source code for the application version.</p>
         pub fn set_source_build_information(
             mut self,
             input: std::option::Option<crate::model::SourceBuildInformation>,
@@ -1597,69 +1451,25 @@ pub mod application_version_description {
             self.date_updated = input;
             self
         }
-        /// <p>The processing status of the application version. Reflects the state of the application
-        /// version during its creation. Many of the values are only applicable if you specified
-        /// <code>True</code> for the <code>Process</code> parameter of the
-        /// <code>CreateApplicationVersion</code> action. The following list describes the possible
-        /// values.</p>
+        /// <p>The processing status of the application version. Reflects the state of the application version during its creation. Many of the values are only applicable if you specified <code>True</code> for the <code>Process</code> parameter of the <code>CreateApplicationVersion</code> action. The following list describes the possible values.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Unprocessed</code> – Application version wasn't pre-processed or validated.
-        /// Elastic Beanstalk will validate configuration files during deployment of the application version to an
-        /// environment.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Processing</code> – Elastic Beanstalk is currently processing the application version.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Building</code> – Application version is currently undergoing an AWS CodeBuild build.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Processed</code> – Elastic Beanstalk was successfully pre-processed and validated.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Failed</code> – Either the AWS CodeBuild build failed or configuration files didn't
-        /// pass validation. This application version isn't usable.</p>
-        /// </li>
+        /// <li> <p> <code>Unprocessed</code> – Application version wasn't pre-processed or validated. Elastic Beanstalk will validate configuration files during deployment of the application version to an environment.</p> </li>
+        /// <li> <p> <code>Processing</code> – Elastic Beanstalk is currently processing the application version.</p> </li>
+        /// <li> <p> <code>Building</code> – Application version is currently undergoing an AWS CodeBuild build.</p> </li>
+        /// <li> <p> <code>Processed</code> – Elastic Beanstalk was successfully pre-processed and validated.</p> </li>
+        /// <li> <p> <code>Failed</code> – Either the AWS CodeBuild build failed or configuration files didn't pass validation. This application version isn't usable.</p> </li>
         /// </ul>
         pub fn status(mut self, input: crate::model::ApplicationVersionStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The processing status of the application version. Reflects the state of the application
-        /// version during its creation. Many of the values are only applicable if you specified
-        /// <code>True</code> for the <code>Process</code> parameter of the
-        /// <code>CreateApplicationVersion</code> action. The following list describes the possible
-        /// values.</p>
+        /// <p>The processing status of the application version. Reflects the state of the application version during its creation. Many of the values are only applicable if you specified <code>True</code> for the <code>Process</code> parameter of the <code>CreateApplicationVersion</code> action. The following list describes the possible values.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Unprocessed</code> – Application version wasn't pre-processed or validated.
-        /// Elastic Beanstalk will validate configuration files during deployment of the application version to an
-        /// environment.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Processing</code> – Elastic Beanstalk is currently processing the application version.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Building</code> – Application version is currently undergoing an AWS CodeBuild build.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Processed</code> – Elastic Beanstalk was successfully pre-processed and validated.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Failed</code> – Either the AWS CodeBuild build failed or configuration files didn't
-        /// pass validation. This application version isn't usable.</p>
-        /// </li>
+        /// <li> <p> <code>Unprocessed</code> – Application version wasn't pre-processed or validated. Elastic Beanstalk will validate configuration files during deployment of the application version to an environment.</p> </li>
+        /// <li> <p> <code>Processing</code> – Elastic Beanstalk is currently processing the application version.</p> </li>
+        /// <li> <p> <code>Building</code> – Application version is currently undergoing an AWS CodeBuild build.</p> </li>
+        /// <li> <p> <code>Processed</code> – Elastic Beanstalk was successfully pre-processed and validated.</p> </li>
+        /// <li> <p> <code>Failed</code> – Either the AWS CodeBuild build failed or configuration files didn't pass validation. This application version isn't usable.</p> </li>
         /// </ul>
         pub fn set_status(
             mut self,
@@ -1844,98 +1654,44 @@ impl S3Location {
 pub struct SourceBuildInformation {
     /// <p>The type of repository.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Git</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Zip</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>Git</code> </p> </li>
+    /// <li> <p> <code>Zip</code> </p> </li>
     /// </ul>
     pub source_type: std::option::Option<crate::model::SourceType>,
     /// <p>Location where the repository is stored.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CodeCommit</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>S3</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>CodeCommit</code> </p> </li>
+    /// <li> <p> <code>S3</code> </p> </li>
     /// </ul>
     pub source_repository: std::option::Option<crate::model::SourceRepository>,
-    /// <p>The location of the source code, as a formatted string, depending on the value of <code>SourceRepository</code>
-    /// </p>
+    /// <p>The location of the source code, as a formatted string, depending on the value of <code>SourceRepository</code> </p>
     /// <ul>
-    /// <li>
-    /// <p>For <code>CodeCommit</code>,
-    /// the format is the repository name and commit ID, separated by a forward slash.
-    /// For example,
-    /// <code>my-git-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>For <code>S3</code>,
-    /// the format is the S3 bucket name and object key, separated by a forward slash.
-    /// For example,
-    /// <code>my-s3-bucket/Folders/my-source-file</code>.</p>
-    /// </li>
+    /// <li> <p>For <code>CodeCommit</code>, the format is the repository name and commit ID, separated by a forward slash. For example, <code>my-git-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.</p> </li>
+    /// <li> <p>For <code>S3</code>, the format is the S3 bucket name and object key, separated by a forward slash. For example, <code>my-s3-bucket/Folders/my-source-file</code>.</p> </li>
     /// </ul>
     pub source_location: std::option::Option<std::string::String>,
 }
 impl SourceBuildInformation {
     /// <p>The type of repository.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Git</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Zip</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>Git</code> </p> </li>
+    /// <li> <p> <code>Zip</code> </p> </li>
     /// </ul>
     pub fn source_type(&self) -> std::option::Option<&crate::model::SourceType> {
         self.source_type.as_ref()
     }
     /// <p>Location where the repository is stored.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CodeCommit</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>S3</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>CodeCommit</code> </p> </li>
+    /// <li> <p> <code>S3</code> </p> </li>
     /// </ul>
     pub fn source_repository(&self) -> std::option::Option<&crate::model::SourceRepository> {
         self.source_repository.as_ref()
     }
-    /// <p>The location of the source code, as a formatted string, depending on the value of <code>SourceRepository</code>
-    /// </p>
+    /// <p>The location of the source code, as a formatted string, depending on the value of <code>SourceRepository</code> </p>
     /// <ul>
-    /// <li>
-    /// <p>For <code>CodeCommit</code>,
-    /// the format is the repository name and commit ID, separated by a forward slash.
-    /// For example,
-    /// <code>my-git-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>For <code>S3</code>,
-    /// the format is the S3 bucket name and object key, separated by a forward slash.
-    /// For example,
-    /// <code>my-s3-bucket/Folders/my-source-file</code>.</p>
-    /// </li>
+    /// <li> <p>For <code>CodeCommit</code>, the format is the repository name and commit ID, separated by a forward slash. For example, <code>my-git-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.</p> </li>
+    /// <li> <p>For <code>S3</code>, the format is the S3 bucket name and object key, separated by a forward slash. For example, <code>my-s3-bucket/Folders/my-source-file</code>.</p> </li>
     /// </ul>
     pub fn source_location(&self) -> std::option::Option<&str> {
         self.source_location.as_deref()
@@ -1963,16 +1719,8 @@ pub mod source_build_information {
     impl Builder {
         /// <p>The type of repository.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Git</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Zip</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Git</code> </p> </li>
+        /// <li> <p> <code>Zip</code> </p> </li>
         /// </ul>
         pub fn source_type(mut self, input: crate::model::SourceType) -> Self {
             self.source_type = Some(input);
@@ -1980,16 +1728,8 @@ pub mod source_build_information {
         }
         /// <p>The type of repository.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Git</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Zip</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Git</code> </p> </li>
+        /// <li> <p> <code>Zip</code> </p> </li>
         /// </ul>
         pub fn set_source_type(
             mut self,
@@ -2000,16 +1740,8 @@ pub mod source_build_information {
         }
         /// <p>Location where the repository is stored.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CodeCommit</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>S3</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>CodeCommit</code> </p> </li>
+        /// <li> <p> <code>S3</code> </p> </li>
         /// </ul>
         pub fn source_repository(mut self, input: crate::model::SourceRepository) -> Self {
             self.source_repository = Some(input);
@@ -2017,16 +1749,8 @@ pub mod source_build_information {
         }
         /// <p>Location where the repository is stored.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CodeCommit</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>S3</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>CodeCommit</code> </p> </li>
+        /// <li> <p> <code>S3</code> </p> </li>
         /// </ul>
         pub fn set_source_repository(
             mut self,
@@ -2035,41 +1759,19 @@ pub mod source_build_information {
             self.source_repository = input;
             self
         }
-        /// <p>The location of the source code, as a formatted string, depending on the value of <code>SourceRepository</code>
-        /// </p>
+        /// <p>The location of the source code, as a formatted string, depending on the value of <code>SourceRepository</code> </p>
         /// <ul>
-        /// <li>
-        /// <p>For <code>CodeCommit</code>,
-        /// the format is the repository name and commit ID, separated by a forward slash.
-        /// For example,
-        /// <code>my-git-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>For <code>S3</code>,
-        /// the format is the S3 bucket name and object key, separated by a forward slash.
-        /// For example,
-        /// <code>my-s3-bucket/Folders/my-source-file</code>.</p>
-        /// </li>
+        /// <li> <p>For <code>CodeCommit</code>, the format is the repository name and commit ID, separated by a forward slash. For example, <code>my-git-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.</p> </li>
+        /// <li> <p>For <code>S3</code>, the format is the S3 bucket name and object key, separated by a forward slash. For example, <code>my-s3-bucket/Folders/my-source-file</code>.</p> </li>
         /// </ul>
         pub fn source_location(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_location = Some(input.into());
             self
         }
-        /// <p>The location of the source code, as a formatted string, depending on the value of <code>SourceRepository</code>
-        /// </p>
+        /// <p>The location of the source code, as a formatted string, depending on the value of <code>SourceRepository</code> </p>
         /// <ul>
-        /// <li>
-        /// <p>For <code>CodeCommit</code>,
-        /// the format is the repository name and commit ID, separated by a forward slash.
-        /// For example,
-        /// <code>my-git-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>For <code>S3</code>,
-        /// the format is the S3 bucket name and object key, separated by a forward slash.
-        /// For example,
-        /// <code>my-s3-bucket/Folders/my-source-file</code>.</p>
-        /// </li>
+        /// <li> <p>For <code>CodeCommit</code>, the format is the repository name and commit ID, separated by a forward slash. For example, <code>my-git-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.</p> </li>
+        /// <li> <p>For <code>S3</code>, the format is the S3 bucket name and object key, separated by a forward slash. For example, <code>my-s3-bucket/Folders/my-source-file</code>.</p> </li>
         /// </ul>
         pub fn set_source_location(
             mut self,
@@ -2205,37 +1907,20 @@ impl AsRef<str> for SourceType {
     }
 }
 
-/// <p>The resource lifecycle configuration for an application. Defines lifecycle settings for
-/// resources that belong to the application, and the service role that AWS Elastic Beanstalk assumes
-/// in order to apply lifecycle settings. The version lifecycle configuration defines lifecycle
-/// settings for application versions.</p>
+/// <p>The resource lifecycle configuration for an application. Defines lifecycle settings for resources that belong to the application, and the service role that AWS Elastic Beanstalk assumes in order to apply lifecycle settings. The version lifecycle configuration defines lifecycle settings for application versions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplicationResourceLifecycleConfig {
-    /// <p>The ARN of an IAM service role that Elastic Beanstalk has permission to
-    /// assume.</p>
-    /// <p>The <code>ServiceRole</code> property is required the first time that you provide a
-    /// <code>VersionLifecycleConfig</code> for the application in one of the supporting calls
-    /// (<code>CreateApplication</code> or <code>UpdateApplicationResourceLifecycle</code>). After
-    /// you provide it once, in either one of the calls, Elastic Beanstalk persists the Service Role with the
-    /// application, and you don't need to specify it again in subsequent
-    /// <code>UpdateApplicationResourceLifecycle</code> calls. You can, however, specify it in
-    /// subsequent calls to change the Service Role to another value.</p>
+    /// <p>The ARN of an IAM service role that Elastic Beanstalk has permission to assume.</p>
+    /// <p>The <code>ServiceRole</code> property is required the first time that you provide a <code>VersionLifecycleConfig</code> for the application in one of the supporting calls (<code>CreateApplication</code> or <code>UpdateApplicationResourceLifecycle</code>). After you provide it once, in either one of the calls, Elastic Beanstalk persists the Service Role with the application, and you don't need to specify it again in subsequent <code>UpdateApplicationResourceLifecycle</code> calls. You can, however, specify it in subsequent calls to change the Service Role to another value.</p>
     pub service_role: std::option::Option<std::string::String>,
     /// <p>Defines lifecycle settings for application versions.</p>
     pub version_lifecycle_config:
         std::option::Option<crate::model::ApplicationVersionLifecycleConfig>,
 }
 impl ApplicationResourceLifecycleConfig {
-    /// <p>The ARN of an IAM service role that Elastic Beanstalk has permission to
-    /// assume.</p>
-    /// <p>The <code>ServiceRole</code> property is required the first time that you provide a
-    /// <code>VersionLifecycleConfig</code> for the application in one of the supporting calls
-    /// (<code>CreateApplication</code> or <code>UpdateApplicationResourceLifecycle</code>). After
-    /// you provide it once, in either one of the calls, Elastic Beanstalk persists the Service Role with the
-    /// application, and you don't need to specify it again in subsequent
-    /// <code>UpdateApplicationResourceLifecycle</code> calls. You can, however, specify it in
-    /// subsequent calls to change the Service Role to another value.</p>
+    /// <p>The ARN of an IAM service role that Elastic Beanstalk has permission to assume.</p>
+    /// <p>The <code>ServiceRole</code> property is required the first time that you provide a <code>VersionLifecycleConfig</code> for the application in one of the supporting calls (<code>CreateApplication</code> or <code>UpdateApplicationResourceLifecycle</code>). After you provide it once, in either one of the calls, Elastic Beanstalk persists the Service Role with the application, and you don't need to specify it again in subsequent <code>UpdateApplicationResourceLifecycle</code> calls. You can, however, specify it in subsequent calls to change the Service Role to another value.</p>
     pub fn service_role(&self) -> std::option::Option<&str> {
         self.service_role.as_deref()
     }
@@ -2265,28 +1950,14 @@ pub mod application_resource_lifecycle_config {
             std::option::Option<crate::model::ApplicationVersionLifecycleConfig>,
     }
     impl Builder {
-        /// <p>The ARN of an IAM service role that Elastic Beanstalk has permission to
-        /// assume.</p>
-        /// <p>The <code>ServiceRole</code> property is required the first time that you provide a
-        /// <code>VersionLifecycleConfig</code> for the application in one of the supporting calls
-        /// (<code>CreateApplication</code> or <code>UpdateApplicationResourceLifecycle</code>). After
-        /// you provide it once, in either one of the calls, Elastic Beanstalk persists the Service Role with the
-        /// application, and you don't need to specify it again in subsequent
-        /// <code>UpdateApplicationResourceLifecycle</code> calls. You can, however, specify it in
-        /// subsequent calls to change the Service Role to another value.</p>
+        /// <p>The ARN of an IAM service role that Elastic Beanstalk has permission to assume.</p>
+        /// <p>The <code>ServiceRole</code> property is required the first time that you provide a <code>VersionLifecycleConfig</code> for the application in one of the supporting calls (<code>CreateApplication</code> or <code>UpdateApplicationResourceLifecycle</code>). After you provide it once, in either one of the calls, Elastic Beanstalk persists the Service Role with the application, and you don't need to specify it again in subsequent <code>UpdateApplicationResourceLifecycle</code> calls. You can, however, specify it in subsequent calls to change the Service Role to another value.</p>
         pub fn service_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_role = Some(input.into());
             self
         }
-        /// <p>The ARN of an IAM service role that Elastic Beanstalk has permission to
-        /// assume.</p>
-        /// <p>The <code>ServiceRole</code> property is required the first time that you provide a
-        /// <code>VersionLifecycleConfig</code> for the application in one of the supporting calls
-        /// (<code>CreateApplication</code> or <code>UpdateApplicationResourceLifecycle</code>). After
-        /// you provide it once, in either one of the calls, Elastic Beanstalk persists the Service Role with the
-        /// application, and you don't need to specify it again in subsequent
-        /// <code>UpdateApplicationResourceLifecycle</code> calls. You can, however, specify it in
-        /// subsequent calls to change the Service Role to another value.</p>
+        /// <p>The ARN of an IAM service role that Elastic Beanstalk has permission to assume.</p>
+        /// <p>The <code>ServiceRole</code> property is required the first time that you provide a <code>VersionLifecycleConfig</code> for the application in one of the supporting calls (<code>CreateApplication</code> or <code>UpdateApplicationResourceLifecycle</code>). After you provide it once, in either one of the calls, Elastic Beanstalk persists the Service Role with the application, and you don't need to specify it again in subsequent <code>UpdateApplicationResourceLifecycle</code> calls. You can, however, specify it in subsequent calls to change the Service Role to another value.</p>
         pub fn set_service_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_role = input;
             self
@@ -2323,30 +1994,22 @@ impl ApplicationResourceLifecycleConfig {
     }
 }
 
-/// <p>The application version lifecycle settings for an application. Defines the rules that
-/// Elastic Beanstalk applies to an application's versions in order to avoid hitting the
-/// per-region limit for application versions.</p>
-/// <p>When Elastic Beanstalk deletes an application version from its database, you can no
-/// longer deploy that version to an environment. The source bundle remains in S3 unless you
-/// configure the rule to delete it.</p>
+/// <p>The application version lifecycle settings for an application. Defines the rules that Elastic Beanstalk applies to an application's versions in order to avoid hitting the per-region limit for application versions.</p>
+/// <p>When Elastic Beanstalk deletes an application version from its database, you can no longer deploy that version to an environment. The source bundle remains in S3 unless you configure the rule to delete it.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplicationVersionLifecycleConfig {
-    /// <p>Specify a max count rule to restrict the number of application versions that are
-    /// retained for an application.</p>
+    /// <p>Specify a max count rule to restrict the number of application versions that are retained for an application.</p>
     pub max_count_rule: std::option::Option<crate::model::MaxCountRule>,
-    /// <p>Specify a max age rule to restrict the length of time that application versions are
-    /// retained for an application.</p>
+    /// <p>Specify a max age rule to restrict the length of time that application versions are retained for an application.</p>
     pub max_age_rule: std::option::Option<crate::model::MaxAgeRule>,
 }
 impl ApplicationVersionLifecycleConfig {
-    /// <p>Specify a max count rule to restrict the number of application versions that are
-    /// retained for an application.</p>
+    /// <p>Specify a max count rule to restrict the number of application versions that are retained for an application.</p>
     pub fn max_count_rule(&self) -> std::option::Option<&crate::model::MaxCountRule> {
         self.max_count_rule.as_ref()
     }
-    /// <p>Specify a max age rule to restrict the length of time that application versions are
-    /// retained for an application.</p>
+    /// <p>Specify a max age rule to restrict the length of time that application versions are retained for an application.</p>
     pub fn max_age_rule(&self) -> std::option::Option<&crate::model::MaxAgeRule> {
         self.max_age_rule.as_ref()
     }
@@ -2369,14 +2032,12 @@ pub mod application_version_lifecycle_config {
         pub(crate) max_age_rule: std::option::Option<crate::model::MaxAgeRule>,
     }
     impl Builder {
-        /// <p>Specify a max count rule to restrict the number of application versions that are
-        /// retained for an application.</p>
+        /// <p>Specify a max count rule to restrict the number of application versions that are retained for an application.</p>
         pub fn max_count_rule(mut self, input: crate::model::MaxCountRule) -> Self {
             self.max_count_rule = Some(input);
             self
         }
-        /// <p>Specify a max count rule to restrict the number of application versions that are
-        /// retained for an application.</p>
+        /// <p>Specify a max count rule to restrict the number of application versions that are retained for an application.</p>
         pub fn set_max_count_rule(
             mut self,
             input: std::option::Option<crate::model::MaxCountRule>,
@@ -2384,14 +2045,12 @@ pub mod application_version_lifecycle_config {
             self.max_count_rule = input;
             self
         }
-        /// <p>Specify a max age rule to restrict the length of time that application versions are
-        /// retained for an application.</p>
+        /// <p>Specify a max age rule to restrict the length of time that application versions are retained for an application.</p>
         pub fn max_age_rule(mut self, input: crate::model::MaxAgeRule) -> Self {
             self.max_age_rule = Some(input);
             self
         }
-        /// <p>Specify a max age rule to restrict the length of time that application versions are
-        /// retained for an application.</p>
+        /// <p>Specify a max age rule to restrict the length of time that application versions are retained for an application.</p>
         pub fn set_max_age_rule(
             mut self,
             input: std::option::Option<crate::model::MaxAgeRule>,
@@ -2415,23 +2074,19 @@ impl ApplicationVersionLifecycleConfig {
     }
 }
 
-/// <p>A lifecycle rule that deletes application versions after the specified number of
-/// days.</p>
+/// <p>A lifecycle rule that deletes application versions after the specified number of days.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MaxAgeRule {
-    /// <p>Specify <code>true</code> to apply the rule, or <code>false</code> to disable
-    /// it.</p>
+    /// <p>Specify <code>true</code> to apply the rule, or <code>false</code> to disable it.</p>
     pub enabled: std::option::Option<bool>,
     /// <p>Specify the number of days to retain an application versions.</p>
     pub max_age_in_days: std::option::Option<i32>,
-    /// <p>Set to <code>true</code> to delete a version's source bundle from Amazon S3 when
-    /// Elastic Beanstalk deletes the application version.</p>
+    /// <p>Set to <code>true</code> to delete a version's source bundle from Amazon S3 when Elastic Beanstalk deletes the application version.</p>
     pub delete_source_from_s3: std::option::Option<bool>,
 }
 impl MaxAgeRule {
-    /// <p>Specify <code>true</code> to apply the rule, or <code>false</code> to disable
-    /// it.</p>
+    /// <p>Specify <code>true</code> to apply the rule, or <code>false</code> to disable it.</p>
     pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
     }
@@ -2439,8 +2094,7 @@ impl MaxAgeRule {
     pub fn max_age_in_days(&self) -> std::option::Option<i32> {
         self.max_age_in_days
     }
-    /// <p>Set to <code>true</code> to delete a version's source bundle from Amazon S3 when
-    /// Elastic Beanstalk deletes the application version.</p>
+    /// <p>Set to <code>true</code> to delete a version's source bundle from Amazon S3 when Elastic Beanstalk deletes the application version.</p>
     pub fn delete_source_from_s3(&self) -> std::option::Option<bool> {
         self.delete_source_from_s3
     }
@@ -2465,14 +2119,12 @@ pub mod max_age_rule {
         pub(crate) delete_source_from_s3: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>Specify <code>true</code> to apply the rule, or <code>false</code> to disable
-        /// it.</p>
+        /// <p>Specify <code>true</code> to apply the rule, or <code>false</code> to disable it.</p>
         pub fn enabled(mut self, input: bool) -> Self {
             self.enabled = Some(input);
             self
         }
-        /// <p>Specify <code>true</code> to apply the rule, or <code>false</code> to disable
-        /// it.</p>
+        /// <p>Specify <code>true</code> to apply the rule, or <code>false</code> to disable it.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -2487,14 +2139,12 @@ pub mod max_age_rule {
             self.max_age_in_days = input;
             self
         }
-        /// <p>Set to <code>true</code> to delete a version's source bundle from Amazon S3 when
-        /// Elastic Beanstalk deletes the application version.</p>
+        /// <p>Set to <code>true</code> to delete a version's source bundle from Amazon S3 when Elastic Beanstalk deletes the application version.</p>
         pub fn delete_source_from_s3(mut self, input: bool) -> Self {
             self.delete_source_from_s3 = Some(input);
             self
         }
-        /// <p>Set to <code>true</code> to delete a version's source bundle from Amazon S3 when
-        /// Elastic Beanstalk deletes the application version.</p>
+        /// <p>Set to <code>true</code> to delete a version's source bundle from Amazon S3 when Elastic Beanstalk deletes the application version.</p>
         pub fn set_delete_source_from_s3(mut self, input: std::option::Option<bool>) -> Self {
             self.delete_source_from_s3 = input;
             self
@@ -2516,23 +2166,19 @@ impl MaxAgeRule {
     }
 }
 
-/// <p>A lifecycle rule that deletes the oldest application version when the maximum count is
-/// exceeded.</p>
+/// <p>A lifecycle rule that deletes the oldest application version when the maximum count is exceeded.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MaxCountRule {
-    /// <p>Specify <code>true</code> to apply the rule, or <code>false</code> to disable
-    /// it.</p>
+    /// <p>Specify <code>true</code> to apply the rule, or <code>false</code> to disable it.</p>
     pub enabled: std::option::Option<bool>,
     /// <p>Specify the maximum number of application versions to retain.</p>
     pub max_count: std::option::Option<i32>,
-    /// <p>Set to <code>true</code> to delete a version's source bundle from Amazon S3 when
-    /// Elastic Beanstalk deletes the application version.</p>
+    /// <p>Set to <code>true</code> to delete a version's source bundle from Amazon S3 when Elastic Beanstalk deletes the application version.</p>
     pub delete_source_from_s3: std::option::Option<bool>,
 }
 impl MaxCountRule {
-    /// <p>Specify <code>true</code> to apply the rule, or <code>false</code> to disable
-    /// it.</p>
+    /// <p>Specify <code>true</code> to apply the rule, or <code>false</code> to disable it.</p>
     pub fn enabled(&self) -> std::option::Option<bool> {
         self.enabled
     }
@@ -2540,8 +2186,7 @@ impl MaxCountRule {
     pub fn max_count(&self) -> std::option::Option<i32> {
         self.max_count
     }
-    /// <p>Set to <code>true</code> to delete a version's source bundle from Amazon S3 when
-    /// Elastic Beanstalk deletes the application version.</p>
+    /// <p>Set to <code>true</code> to delete a version's source bundle from Amazon S3 when Elastic Beanstalk deletes the application version.</p>
     pub fn delete_source_from_s3(&self) -> std::option::Option<bool> {
         self.delete_source_from_s3
     }
@@ -2566,14 +2211,12 @@ pub mod max_count_rule {
         pub(crate) delete_source_from_s3: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>Specify <code>true</code> to apply the rule, or <code>false</code> to disable
-        /// it.</p>
+        /// <p>Specify <code>true</code> to apply the rule, or <code>false</code> to disable it.</p>
         pub fn enabled(mut self, input: bool) -> Self {
             self.enabled = Some(input);
             self
         }
-        /// <p>Specify <code>true</code> to apply the rule, or <code>false</code> to disable
-        /// it.</p>
+        /// <p>Specify <code>true</code> to apply the rule, or <code>false</code> to disable it.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -2588,14 +2231,12 @@ pub mod max_count_rule {
             self.max_count = input;
             self
         }
-        /// <p>Set to <code>true</code> to delete a version's source bundle from Amazon S3 when
-        /// Elastic Beanstalk deletes the application version.</p>
+        /// <p>Set to <code>true</code> to delete a version's source bundle from Amazon S3 when Elastic Beanstalk deletes the application version.</p>
         pub fn delete_source_from_s3(mut self, input: bool) -> Self {
             self.delete_source_from_s3 = Some(input);
             self
         }
-        /// <p>Set to <code>true</code> to delete a version's source bundle from Amazon S3 when
-        /// Elastic Beanstalk deletes the application version.</p>
+        /// <p>Set to <code>true</code> to delete a version's source bundle from Amazon S3 when Elastic Beanstalk deletes the application version.</p>
         pub fn set_delete_source_from_s3(mut self, input: std::option::Option<bool>) -> Self {
             self.delete_source_from_s3 = input;
             self
@@ -2854,10 +2495,8 @@ pub struct EnvironmentInfoDescription {
     pub ec2_instance_id: std::option::Option<std::string::String>,
     /// <p>The time stamp when this information was retrieved.</p>
     pub sample_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The retrieved information. Currently contains a presigned Amazon S3 URL. The files are
-    /// deleted after 15 minutes.</p>
-    /// <p>Anyone in possession of this URL can access the files before they are deleted. Make the
-    /// URL available only to trusted parties.</p>
+    /// <p>The retrieved information. Currently contains a presigned Amazon S3 URL. The files are deleted after 15 minutes.</p>
+    /// <p>Anyone in possession of this URL can access the files before they are deleted. Make the URL available only to trusted parties.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl EnvironmentInfoDescription {
@@ -2873,10 +2512,8 @@ impl EnvironmentInfoDescription {
     pub fn sample_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.sample_timestamp.as_ref()
     }
-    /// <p>The retrieved information. Currently contains a presigned Amazon S3 URL. The files are
-    /// deleted after 15 minutes.</p>
-    /// <p>Anyone in possession of this URL can access the files before they are deleted. Make the
-    /// URL available only to trusted parties.</p>
+    /// <p>The retrieved information. Currently contains a presigned Amazon S3 URL. The files are deleted after 15 minutes.</p>
+    /// <p>Anyone in possession of this URL can access the files before they are deleted. Make the URL available only to trusted parties.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
@@ -2942,18 +2579,14 @@ pub mod environment_info_description {
             self.sample_timestamp = input;
             self
         }
-        /// <p>The retrieved information. Currently contains a presigned Amazon S3 URL. The files are
-        /// deleted after 15 minutes.</p>
-        /// <p>Anyone in possession of this URL can access the files before they are deleted. Make the
-        /// URL available only to trusted parties.</p>
+        /// <p>The retrieved information. Currently contains a presigned Amazon S3 URL. The files are deleted after 15 minutes.</p>
+        /// <p>Anyone in possession of this URL can access the files before they are deleted. Make the URL available only to trusted parties.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The retrieved information. Currently contains a presigned Amazon S3 URL. The files are
-        /// deleted after 15 minutes.</p>
-        /// <p>Anyone in possession of this URL can access the files before they are deleted. Make the
-        /// URL available only to trusted parties.</p>
+        /// <p>The retrieved information. Currently contains a presigned Amazon S3 URL. The files are deleted after 15 minutes.</p>
+        /// <p>Anyone in possession of this URL can access the files before they are deleted. Make the URL available only to trusted parties.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -3039,8 +2672,7 @@ pub struct PlatformSummary {
     pub platform_arn: std::option::Option<std::string::String>,
     /// <p>The AWS account ID of the person who created the platform version.</p>
     pub platform_owner: std::option::Option<std::string::String>,
-    /// <p>The status of the platform version. You can create an environment from the platform
-    /// version once it is ready.</p>
+    /// <p>The status of the platform version. You can create an environment from the platform version once it is ready.</p>
     pub platform_status: std::option::Option<crate::model::PlatformStatus>,
     /// <p>The category of platform version.</p>
     pub platform_category: std::option::Option<std::string::String>,
@@ -3054,17 +2686,14 @@ pub struct PlatformSummary {
     pub supported_addon_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The state of the platform version in its lifecycle.</p>
     /// <p>Possible values: <code>recommended</code> | empty</p>
-    /// <p>If an empty value is returned, the platform version is supported but isn't the recommended
-    /// one for its branch.</p>
+    /// <p>If an empty value is returned, the platform version is supported but isn't the recommended one for its branch.</p>
     pub platform_lifecycle_state: std::option::Option<std::string::String>,
     /// <p>The version string of the platform version.</p>
     pub platform_version: std::option::Option<std::string::String>,
     /// <p>The platform branch to which the platform version belongs.</p>
     pub platform_branch_name: std::option::Option<std::string::String>,
     /// <p>The state of the platform version's branch in its lifecycle.</p>
-    /// <p>Possible values: <code>beta</code> | <code>supported</code> | <code>deprecated</code> |
-    /// <code>retired</code>
-    /// </p>
+    /// <p>Possible values: <code>beta</code> | <code>supported</code> | <code>deprecated</code> | <code>retired</code> </p>
     pub platform_branch_lifecycle_state: std::option::Option<std::string::String>,
 }
 impl PlatformSummary {
@@ -3076,8 +2705,7 @@ impl PlatformSummary {
     pub fn platform_owner(&self) -> std::option::Option<&str> {
         self.platform_owner.as_deref()
     }
-    /// <p>The status of the platform version. You can create an environment from the platform
-    /// version once it is ready.</p>
+    /// <p>The status of the platform version. You can create an environment from the platform version once it is ready.</p>
     pub fn platform_status(&self) -> std::option::Option<&crate::model::PlatformStatus> {
         self.platform_status.as_ref()
     }
@@ -3103,8 +2731,7 @@ impl PlatformSummary {
     }
     /// <p>The state of the platform version in its lifecycle.</p>
     /// <p>Possible values: <code>recommended</code> | empty</p>
-    /// <p>If an empty value is returned, the platform version is supported but isn't the recommended
-    /// one for its branch.</p>
+    /// <p>If an empty value is returned, the platform version is supported but isn't the recommended one for its branch.</p>
     pub fn platform_lifecycle_state(&self) -> std::option::Option<&str> {
         self.platform_lifecycle_state.as_deref()
     }
@@ -3117,9 +2744,7 @@ impl PlatformSummary {
         self.platform_branch_name.as_deref()
     }
     /// <p>The state of the platform version's branch in its lifecycle.</p>
-    /// <p>Possible values: <code>beta</code> | <code>supported</code> | <code>deprecated</code> |
-    /// <code>retired</code>
-    /// </p>
+    /// <p>Possible values: <code>beta</code> | <code>supported</code> | <code>deprecated</code> | <code>retired</code> </p>
     pub fn platform_branch_lifecycle_state(&self) -> std::option::Option<&str> {
         self.platform_branch_lifecycle_state.as_deref()
     }
@@ -3188,14 +2813,12 @@ pub mod platform_summary {
             self.platform_owner = input;
             self
         }
-        /// <p>The status of the platform version. You can create an environment from the platform
-        /// version once it is ready.</p>
+        /// <p>The status of the platform version. You can create an environment from the platform version once it is ready.</p>
         pub fn platform_status(mut self, input: crate::model::PlatformStatus) -> Self {
             self.platform_status = Some(input);
             self
         }
-        /// <p>The status of the platform version. You can create an environment from the platform
-        /// version once it is ready.</p>
+        /// <p>The status of the platform version. You can create an environment from the platform version once it is ready.</p>
         pub fn set_platform_status(
             mut self,
             input: std::option::Option<crate::model::PlatformStatus>,
@@ -3282,16 +2905,14 @@ pub mod platform_summary {
         }
         /// <p>The state of the platform version in its lifecycle.</p>
         /// <p>Possible values: <code>recommended</code> | empty</p>
-        /// <p>If an empty value is returned, the platform version is supported but isn't the recommended
-        /// one for its branch.</p>
+        /// <p>If an empty value is returned, the platform version is supported but isn't the recommended one for its branch.</p>
         pub fn platform_lifecycle_state(mut self, input: impl Into<std::string::String>) -> Self {
             self.platform_lifecycle_state = Some(input.into());
             self
         }
         /// <p>The state of the platform version in its lifecycle.</p>
         /// <p>Possible values: <code>recommended</code> | empty</p>
-        /// <p>If an empty value is returned, the platform version is supported but isn't the recommended
-        /// one for its branch.</p>
+        /// <p>If an empty value is returned, the platform version is supported but isn't the recommended one for its branch.</p>
         pub fn set_platform_lifecycle_state(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3326,9 +2947,7 @@ pub mod platform_summary {
             self
         }
         /// <p>The state of the platform version's branch in its lifecycle.</p>
-        /// <p>Possible values: <code>beta</code> | <code>supported</code> | <code>deprecated</code> |
-        /// <code>retired</code>
-        /// </p>
+        /// <p>Possible values: <code>beta</code> | <code>supported</code> | <code>deprecated</code> | <code>retired</code> </p>
         pub fn platform_branch_lifecycle_state(
             mut self,
             input: impl Into<std::string::String>,
@@ -3337,9 +2956,7 @@ pub mod platform_summary {
             self
         }
         /// <p>The state of the platform version's branch in its lifecycle.</p>
-        /// <p>Possible values: <code>beta</code> | <code>supported</code> | <code>deprecated</code> |
-        /// <code>retired</code>
-        /// </p>
+        /// <p>Possible values: <code>beta</code> | <code>supported</code> | <code>deprecated</code> | <code>retired</code> </p>
         pub fn set_platform_branch_lifecycle_state(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3441,105 +3058,44 @@ impl AsRef<str> for PlatformStatus {
 }
 
 /// <p>Describes criteria to restrict the results when listing platform versions.</p>
-/// <p>The filter is evaluated as follows: <code>Type Operator Values[1]</code>
-/// </p>
+/// <p>The filter is evaluated as follows: <code>Type Operator Values[1]</code> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PlatformFilter {
     /// <p>The platform version attribute to which the filter values are applied.</p>
-    /// <p>Valid values: <code>PlatformName</code> | <code>PlatformVersion</code> |
-    /// <code>PlatformStatus</code> | <code>PlatformBranchName</code> |
-    /// <code>PlatformLifecycleState</code> | <code>PlatformOwner</code> |
-    /// <code>SupportedTier</code> | <code>SupportedAddon</code> |
-    /// <code>ProgrammingLanguageName</code> | <code>OperatingSystemName</code>
-    /// </p>
+    /// <p>Valid values: <code>PlatformName</code> | <code>PlatformVersion</code> | <code>PlatformStatus</code> | <code>PlatformBranchName</code> | <code>PlatformLifecycleState</code> | <code>PlatformOwner</code> | <code>SupportedTier</code> | <code>SupportedAddon</code> | <code>ProgrammingLanguageName</code> | <code>OperatingSystemName</code> </p>
     pub r#type: std::option::Option<std::string::String>,
-    /// <p>The operator to apply to the <code>Type</code> with each of the
-    /// <code>Values</code>.</p>
-    /// <p>Valid values: <code>=</code> | <code>!=</code> |
-    /// <code><</code> | <code><=</code> |
-    /// <code>></code> | <code>>=</code> |
-    /// <code>contains</code> | <code>begins_with</code> | <code>ends_with</code>
-    /// </p>
+    /// <p>The operator to apply to the <code>Type</code> with each of the <code>Values</code>.</p>
+    /// <p>Valid values: <code>=</code> | <code>!=</code> | <code>&lt;</code> | <code>&lt;=</code> | <code>&gt;</code> | <code>&gt;=</code> | <code>contains</code> | <code>begins_with</code> | <code>ends_with</code> </p>
     pub operator: std::option::Option<std::string::String>,
-    /// <p>The list of values applied to the filtering platform version attribute. Only one value is supported
-    /// for all current operators.</p>
+    /// <p>The list of values applied to the filtering platform version attribute. Only one value is supported for all current operators.</p>
     /// <p>The following list shows valid filter values for some filter attributes.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>PlatformStatus</code>: <code>Creating</code> | <code>Failed</code> |
-    /// <code>Ready</code> | <code>Deleting</code> | <code>Deleted</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PlatformLifecycleState</code>: <code>recommended</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SupportedTier</code>: <code>WebServer/Standard</code> |
-    /// <code>Worker/SQS/HTTP</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SupportedAddon</code>: <code>Log/S3</code> | <code>Monitoring/Healthd</code> |
-    /// <code>WorkerDaemon/SQSD</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>PlatformStatus</code>: <code>Creating</code> | <code>Failed</code> | <code>Ready</code> | <code>Deleting</code> | <code>Deleted</code> </p> </li>
+    /// <li> <p> <code>PlatformLifecycleState</code>: <code>recommended</code> </p> </li>
+    /// <li> <p> <code>SupportedTier</code>: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code> </p> </li>
+    /// <li> <p> <code>SupportedAddon</code>: <code>Log/S3</code> | <code>Monitoring/Healthd</code> | <code>WorkerDaemon/SQSD</code> </p> </li>
     /// </ul>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl PlatformFilter {
     /// <p>The platform version attribute to which the filter values are applied.</p>
-    /// <p>Valid values: <code>PlatformName</code> | <code>PlatformVersion</code> |
-    /// <code>PlatformStatus</code> | <code>PlatformBranchName</code> |
-    /// <code>PlatformLifecycleState</code> | <code>PlatformOwner</code> |
-    /// <code>SupportedTier</code> | <code>SupportedAddon</code> |
-    /// <code>ProgrammingLanguageName</code> | <code>OperatingSystemName</code>
-    /// </p>
+    /// <p>Valid values: <code>PlatformName</code> | <code>PlatformVersion</code> | <code>PlatformStatus</code> | <code>PlatformBranchName</code> | <code>PlatformLifecycleState</code> | <code>PlatformOwner</code> | <code>SupportedTier</code> | <code>SupportedAddon</code> | <code>ProgrammingLanguageName</code> | <code>OperatingSystemName</code> </p>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
-    /// <p>The operator to apply to the <code>Type</code> with each of the
-    /// <code>Values</code>.</p>
-    /// <p>Valid values: <code>=</code> | <code>!=</code> |
-    /// <code><</code> | <code><=</code> |
-    /// <code>></code> | <code>>=</code> |
-    /// <code>contains</code> | <code>begins_with</code> | <code>ends_with</code>
-    /// </p>
+    /// <p>The operator to apply to the <code>Type</code> with each of the <code>Values</code>.</p>
+    /// <p>Valid values: <code>=</code> | <code>!=</code> | <code>&lt;</code> | <code>&lt;=</code> | <code>&gt;</code> | <code>&gt;=</code> | <code>contains</code> | <code>begins_with</code> | <code>ends_with</code> </p>
     pub fn operator(&self) -> std::option::Option<&str> {
         self.operator.as_deref()
     }
-    /// <p>The list of values applied to the filtering platform version attribute. Only one value is supported
-    /// for all current operators.</p>
+    /// <p>The list of values applied to the filtering platform version attribute. Only one value is supported for all current operators.</p>
     /// <p>The following list shows valid filter values for some filter attributes.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>PlatformStatus</code>: <code>Creating</code> | <code>Failed</code> |
-    /// <code>Ready</code> | <code>Deleting</code> | <code>Deleted</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PlatformLifecycleState</code>: <code>recommended</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SupportedTier</code>: <code>WebServer/Standard</code> |
-    /// <code>Worker/SQS/HTTP</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SupportedAddon</code>: <code>Log/S3</code> | <code>Monitoring/Healthd</code> |
-    /// <code>WorkerDaemon/SQSD</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>PlatformStatus</code>: <code>Creating</code> | <code>Failed</code> | <code>Ready</code> | <code>Deleting</code> | <code>Deleted</code> </p> </li>
+    /// <li> <p> <code>PlatformLifecycleState</code>: <code>recommended</code> </p> </li>
+    /// <li> <p> <code>SupportedTier</code>: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code> </p> </li>
+    /// <li> <p> <code>SupportedAddon</code>: <code>Log/S3</code> | <code>Monitoring/Healthd</code> | <code>WorkerDaemon/SQSD</code> </p> </li>
     /// </ul>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
@@ -3566,45 +3122,25 @@ pub mod platform_filter {
     }
     impl Builder {
         /// <p>The platform version attribute to which the filter values are applied.</p>
-        /// <p>Valid values: <code>PlatformName</code> | <code>PlatformVersion</code> |
-        /// <code>PlatformStatus</code> | <code>PlatformBranchName</code> |
-        /// <code>PlatformLifecycleState</code> | <code>PlatformOwner</code> |
-        /// <code>SupportedTier</code> | <code>SupportedAddon</code> |
-        /// <code>ProgrammingLanguageName</code> | <code>OperatingSystemName</code>
-        /// </p>
+        /// <p>Valid values: <code>PlatformName</code> | <code>PlatformVersion</code> | <code>PlatformStatus</code> | <code>PlatformBranchName</code> | <code>PlatformLifecycleState</code> | <code>PlatformOwner</code> | <code>SupportedTier</code> | <code>SupportedAddon</code> | <code>ProgrammingLanguageName</code> | <code>OperatingSystemName</code> </p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.r#type = Some(input.into());
             self
         }
         /// <p>The platform version attribute to which the filter values are applied.</p>
-        /// <p>Valid values: <code>PlatformName</code> | <code>PlatformVersion</code> |
-        /// <code>PlatformStatus</code> | <code>PlatformBranchName</code> |
-        /// <code>PlatformLifecycleState</code> | <code>PlatformOwner</code> |
-        /// <code>SupportedTier</code> | <code>SupportedAddon</code> |
-        /// <code>ProgrammingLanguageName</code> | <code>OperatingSystemName</code>
-        /// </p>
+        /// <p>Valid values: <code>PlatformName</code> | <code>PlatformVersion</code> | <code>PlatformStatus</code> | <code>PlatformBranchName</code> | <code>PlatformLifecycleState</code> | <code>PlatformOwner</code> | <code>SupportedTier</code> | <code>SupportedAddon</code> | <code>ProgrammingLanguageName</code> | <code>OperatingSystemName</code> </p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
         }
-        /// <p>The operator to apply to the <code>Type</code> with each of the
-        /// <code>Values</code>.</p>
-        /// <p>Valid values: <code>=</code> | <code>!=</code> |
-        /// <code><</code> | <code><=</code> |
-        /// <code>></code> | <code>>=</code> |
-        /// <code>contains</code> | <code>begins_with</code> | <code>ends_with</code>
-        /// </p>
+        /// <p>The operator to apply to the <code>Type</code> with each of the <code>Values</code>.</p>
+        /// <p>Valid values: <code>=</code> | <code>!=</code> | <code>&lt;</code> | <code>&lt;=</code> | <code>&gt;</code> | <code>&gt;=</code> | <code>contains</code> | <code>begins_with</code> | <code>ends_with</code> </p>
         pub fn operator(mut self, input: impl Into<std::string::String>) -> Self {
             self.operator = Some(input.into());
             self
         }
-        /// <p>The operator to apply to the <code>Type</code> with each of the
-        /// <code>Values</code>.</p>
-        /// <p>Valid values: <code>=</code> | <code>!=</code> |
-        /// <code><</code> | <code><=</code> |
-        /// <code>></code> | <code>>=</code> |
-        /// <code>contains</code> | <code>begins_with</code> | <code>ends_with</code>
-        /// </p>
+        /// <p>The operator to apply to the <code>Type</code> with each of the <code>Values</code>.</p>
+        /// <p>Valid values: <code>=</code> | <code>!=</code> | <code>&lt;</code> | <code>&lt;=</code> | <code>&gt;</code> | <code>&gt;=</code> | <code>contains</code> | <code>begins_with</code> | <code>ends_with</code> </p>
         pub fn set_operator(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.operator = input;
             self
@@ -3613,33 +3149,13 @@ pub mod platform_filter {
         ///
         /// To override the contents of this collection use [`set_values`](Self::set_values).
         ///
-        /// <p>The list of values applied to the filtering platform version attribute. Only one value is supported
-        /// for all current operators.</p>
+        /// <p>The list of values applied to the filtering platform version attribute. Only one value is supported for all current operators.</p>
         /// <p>The following list shows valid filter values for some filter attributes.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PlatformStatus</code>: <code>Creating</code> | <code>Failed</code> |
-        /// <code>Ready</code> | <code>Deleting</code> | <code>Deleted</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PlatformLifecycleState</code>: <code>recommended</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SupportedTier</code>: <code>WebServer/Standard</code> |
-        /// <code>Worker/SQS/HTTP</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SupportedAddon</code>: <code>Log/S3</code> | <code>Monitoring/Healthd</code> |
-        /// <code>WorkerDaemon/SQSD</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>PlatformStatus</code>: <code>Creating</code> | <code>Failed</code> | <code>Ready</code> | <code>Deleting</code> | <code>Deleted</code> </p> </li>
+        /// <li> <p> <code>PlatformLifecycleState</code>: <code>recommended</code> </p> </li>
+        /// <li> <p> <code>SupportedTier</code>: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code> </p> </li>
+        /// <li> <p> <code>SupportedAddon</code>: <code>Log/S3</code> | <code>Monitoring/Healthd</code> | <code>WorkerDaemon/SQSD</code> </p> </li>
         /// </ul>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
@@ -3647,33 +3163,13 @@ pub mod platform_filter {
             self.values = Some(v);
             self
         }
-        /// <p>The list of values applied to the filtering platform version attribute. Only one value is supported
-        /// for all current operators.</p>
+        /// <p>The list of values applied to the filtering platform version attribute. Only one value is supported for all current operators.</p>
         /// <p>The following list shows valid filter values for some filter attributes.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PlatformStatus</code>: <code>Creating</code> | <code>Failed</code> |
-        /// <code>Ready</code> | <code>Deleting</code> | <code>Deleted</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PlatformLifecycleState</code>: <code>recommended</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SupportedTier</code>: <code>WebServer/Standard</code> |
-        /// <code>Worker/SQS/HTTP</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SupportedAddon</code>: <code>Log/S3</code> | <code>Monitoring/Healthd</code> |
-        /// <code>WorkerDaemon/SQSD</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>PlatformStatus</code>: <code>Creating</code> | <code>Failed</code> | <code>Ready</code> | <code>Deleting</code> | <code>Deleted</code> </p> </li>
+        /// <li> <p> <code>PlatformLifecycleState</code>: <code>recommended</code> </p> </li>
+        /// <li> <p> <code>SupportedTier</code>: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code> </p> </li>
+        /// <li> <p> <code>SupportedAddon</code>: <code>Log/S3</code> | <code>Monitoring/Healthd</code> | <code>WorkerDaemon/SQSD</code> </p> </li>
         /// </ul>
         pub fn set_values(
             mut self,
@@ -3708,20 +3204,13 @@ pub struct PlatformBranchSummary {
     /// <p>The name of the platform branch.</p>
     pub branch_name: std::option::Option<std::string::String>,
     /// <p>The support life cycle state of the platform branch.</p>
-    /// <p>Possible values: <code>beta</code> | <code>supported</code> | <code>deprecated</code> |
-    /// <code>retired</code>
-    /// </p>
+    /// <p>Possible values: <code>beta</code> | <code>supported</code> | <code>deprecated</code> | <code>retired</code> </p>
     pub lifecycle_state: std::option::Option<std::string::String>,
-    /// <p>An ordinal number that designates the order in which platform branches have been added to
-    /// a platform. This can be helpful, for example, if your code calls the
-    /// <code>ListPlatformBranches</code> action and then displays a list of platform
-    /// branches.</p>
-    /// <p>A larger <code>BranchOrder</code> value designates a newer platform branch within the
-    /// platform.</p>
+    /// <p>An ordinal number that designates the order in which platform branches have been added to a platform. This can be helpful, for example, if your code calls the <code>ListPlatformBranches</code> action and then displays a list of platform branches.</p>
+    /// <p>A larger <code>BranchOrder</code> value designates a newer platform branch within the platform.</p>
     pub branch_order: i32,
     /// <p>The environment tiers that platform versions in this branch support.</p>
-    /// <p>Possible values: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code>
-    /// </p>
+    /// <p>Possible values: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code> </p>
     pub supported_tier_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl PlatformBranchSummary {
@@ -3734,24 +3223,17 @@ impl PlatformBranchSummary {
         self.branch_name.as_deref()
     }
     /// <p>The support life cycle state of the platform branch.</p>
-    /// <p>Possible values: <code>beta</code> | <code>supported</code> | <code>deprecated</code> |
-    /// <code>retired</code>
-    /// </p>
+    /// <p>Possible values: <code>beta</code> | <code>supported</code> | <code>deprecated</code> | <code>retired</code> </p>
     pub fn lifecycle_state(&self) -> std::option::Option<&str> {
         self.lifecycle_state.as_deref()
     }
-    /// <p>An ordinal number that designates the order in which platform branches have been added to
-    /// a platform. This can be helpful, for example, if your code calls the
-    /// <code>ListPlatformBranches</code> action and then displays a list of platform
-    /// branches.</p>
-    /// <p>A larger <code>BranchOrder</code> value designates a newer platform branch within the
-    /// platform.</p>
+    /// <p>An ordinal number that designates the order in which platform branches have been added to a platform. This can be helpful, for example, if your code calls the <code>ListPlatformBranches</code> action and then displays a list of platform branches.</p>
+    /// <p>A larger <code>BranchOrder</code> value designates a newer platform branch within the platform.</p>
     pub fn branch_order(&self) -> i32 {
         self.branch_order
     }
     /// <p>The environment tiers that platform versions in this branch support.</p>
-    /// <p>Possible values: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code>
-    /// </p>
+    /// <p>Possible values: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code> </p>
     pub fn supported_tier_list(&self) -> std::option::Option<&[std::string::String]> {
         self.supported_tier_list.as_deref()
     }
@@ -3804,17 +3286,13 @@ pub mod platform_branch_summary {
             self
         }
         /// <p>The support life cycle state of the platform branch.</p>
-        /// <p>Possible values: <code>beta</code> | <code>supported</code> | <code>deprecated</code> |
-        /// <code>retired</code>
-        /// </p>
+        /// <p>Possible values: <code>beta</code> | <code>supported</code> | <code>deprecated</code> | <code>retired</code> </p>
         pub fn lifecycle_state(mut self, input: impl Into<std::string::String>) -> Self {
             self.lifecycle_state = Some(input.into());
             self
         }
         /// <p>The support life cycle state of the platform branch.</p>
-        /// <p>Possible values: <code>beta</code> | <code>supported</code> | <code>deprecated</code> |
-        /// <code>retired</code>
-        /// </p>
+        /// <p>Possible values: <code>beta</code> | <code>supported</code> | <code>deprecated</code> | <code>retired</code> </p>
         pub fn set_lifecycle_state(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3822,22 +3300,14 @@ pub mod platform_branch_summary {
             self.lifecycle_state = input;
             self
         }
-        /// <p>An ordinal number that designates the order in which platform branches have been added to
-        /// a platform. This can be helpful, for example, if your code calls the
-        /// <code>ListPlatformBranches</code> action and then displays a list of platform
-        /// branches.</p>
-        /// <p>A larger <code>BranchOrder</code> value designates a newer platform branch within the
-        /// platform.</p>
+        /// <p>An ordinal number that designates the order in which platform branches have been added to a platform. This can be helpful, for example, if your code calls the <code>ListPlatformBranches</code> action and then displays a list of platform branches.</p>
+        /// <p>A larger <code>BranchOrder</code> value designates a newer platform branch within the platform.</p>
         pub fn branch_order(mut self, input: i32) -> Self {
             self.branch_order = Some(input);
             self
         }
-        /// <p>An ordinal number that designates the order in which platform branches have been added to
-        /// a platform. This can be helpful, for example, if your code calls the
-        /// <code>ListPlatformBranches</code> action and then displays a list of platform
-        /// branches.</p>
-        /// <p>A larger <code>BranchOrder</code> value designates a newer platform branch within the
-        /// platform.</p>
+        /// <p>An ordinal number that designates the order in which platform branches have been added to a platform. This can be helpful, for example, if your code calls the <code>ListPlatformBranches</code> action and then displays a list of platform branches.</p>
+        /// <p>A larger <code>BranchOrder</code> value designates a newer platform branch within the platform.</p>
         pub fn set_branch_order(mut self, input: std::option::Option<i32>) -> Self {
             self.branch_order = input;
             self
@@ -3847,8 +3317,7 @@ pub mod platform_branch_summary {
         /// To override the contents of this collection use [`set_supported_tier_list`](Self::set_supported_tier_list).
         ///
         /// <p>The environment tiers that platform versions in this branch support.</p>
-        /// <p>Possible values: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code>
-        /// </p>
+        /// <p>Possible values: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code> </p>
         pub fn supported_tier_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.supported_tier_list.unwrap_or_default();
             v.push(input.into());
@@ -3856,8 +3325,7 @@ pub mod platform_branch_summary {
             self
         }
         /// <p>The environment tiers that platform versions in this branch support.</p>
-        /// <p>Possible values: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code>
-        /// </p>
+        /// <p>Possible values: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code> </p>
         pub fn set_supported_tier_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3885,43 +3353,29 @@ impl PlatformBranchSummary {
 }
 
 /// <p>Describes criteria to restrict a list of results.</p>
-/// <p>For operators that apply a single value to the attribute, the filter is evaluated as
-/// follows: <code>Attribute Operator Values[1]</code>
-/// </p>
-/// <p>Some operators, e.g. <code>in</code>, can apply multiple values. In this case, the filter
-/// is evaluated as a logical union (OR) of applications of the operator to the attribute with
-/// each one of the values: <code>(Attribute Operator Values[1]) OR (Attribute Operator Values[2])
-/// OR ...</code>
-/// </p>
-/// <p>The valid values for attributes of <code>SearchFilter</code> depend on the API action. For
-/// valid values, see the reference page for the API action you're calling that takes a
-/// <code>SearchFilter</code> parameter.</p>
+/// <p>For operators that apply a single value to the attribute, the filter is evaluated as follows: <code>Attribute Operator Values[1]</code> </p>
+/// <p>Some operators, e.g. <code>in</code>, can apply multiple values. In this case, the filter is evaluated as a logical union (OR) of applications of the operator to the attribute with each one of the values: <code>(Attribute Operator Values[1]) OR (Attribute Operator Values[2]) OR ...</code> </p>
+/// <p>The valid values for attributes of <code>SearchFilter</code> depend on the API action. For valid values, see the reference page for the API action you're calling that takes a <code>SearchFilter</code> parameter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchFilter {
-    /// <p>The result attribute to which the filter values are applied. Valid values vary by API
-    /// action.</p>
+    /// <p>The result attribute to which the filter values are applied. Valid values vary by API action.</p>
     pub attribute: std::option::Option<std::string::String>,
-    /// <p>The operator to apply to the <code>Attribute</code> with each of the <code>Values</code>.
-    /// Valid values vary by <code>Attribute</code>.</p>
+    /// <p>The operator to apply to the <code>Attribute</code> with each of the <code>Values</code>. Valid values vary by <code>Attribute</code>.</p>
     pub operator: std::option::Option<std::string::String>,
-    /// <p>The list of values applied to the <code>Attribute</code> and <code>Operator</code>
-    /// attributes. Number of values and valid values vary by <code>Attribute</code>.</p>
+    /// <p>The list of values applied to the <code>Attribute</code> and <code>Operator</code> attributes. Number of values and valid values vary by <code>Attribute</code>.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl SearchFilter {
-    /// <p>The result attribute to which the filter values are applied. Valid values vary by API
-    /// action.</p>
+    /// <p>The result attribute to which the filter values are applied. Valid values vary by API action.</p>
     pub fn attribute(&self) -> std::option::Option<&str> {
         self.attribute.as_deref()
     }
-    /// <p>The operator to apply to the <code>Attribute</code> with each of the <code>Values</code>.
-    /// Valid values vary by <code>Attribute</code>.</p>
+    /// <p>The operator to apply to the <code>Attribute</code> with each of the <code>Values</code>. Valid values vary by <code>Attribute</code>.</p>
     pub fn operator(&self) -> std::option::Option<&str> {
         self.operator.as_deref()
     }
-    /// <p>The list of values applied to the <code>Attribute</code> and <code>Operator</code>
-    /// attributes. Number of values and valid values vary by <code>Attribute</code>.</p>
+    /// <p>The list of values applied to the <code>Attribute</code> and <code>Operator</code> attributes. Number of values and valid values vary by <code>Attribute</code>.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
     }
@@ -3946,26 +3400,22 @@ pub mod search_filter {
         pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The result attribute to which the filter values are applied. Valid values vary by API
-        /// action.</p>
+        /// <p>The result attribute to which the filter values are applied. Valid values vary by API action.</p>
         pub fn attribute(mut self, input: impl Into<std::string::String>) -> Self {
             self.attribute = Some(input.into());
             self
         }
-        /// <p>The result attribute to which the filter values are applied. Valid values vary by API
-        /// action.</p>
+        /// <p>The result attribute to which the filter values are applied. Valid values vary by API action.</p>
         pub fn set_attribute(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.attribute = input;
             self
         }
-        /// <p>The operator to apply to the <code>Attribute</code> with each of the <code>Values</code>.
-        /// Valid values vary by <code>Attribute</code>.</p>
+        /// <p>The operator to apply to the <code>Attribute</code> with each of the <code>Values</code>. Valid values vary by <code>Attribute</code>.</p>
         pub fn operator(mut self, input: impl Into<std::string::String>) -> Self {
             self.operator = Some(input.into());
             self
         }
-        /// <p>The operator to apply to the <code>Attribute</code> with each of the <code>Values</code>.
-        /// Valid values vary by <code>Attribute</code>.</p>
+        /// <p>The operator to apply to the <code>Attribute</code> with each of the <code>Values</code>. Valid values vary by <code>Attribute</code>.</p>
         pub fn set_operator(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.operator = input;
             self
@@ -3974,16 +3424,14 @@ pub mod search_filter {
         ///
         /// To override the contents of this collection use [`set_values`](Self::set_values).
         ///
-        /// <p>The list of values applied to the <code>Attribute</code> and <code>Operator</code>
-        /// attributes. Number of values and valid values vary by <code>Attribute</code>.</p>
+        /// <p>The list of values applied to the <code>Attribute</code> and <code>Operator</code> attributes. Number of values and valid values vary by <code>Attribute</code>.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
-        /// <p>The list of values applied to the <code>Attribute</code> and <code>Operator</code>
-        /// attributes. Number of values and valid values vary by <code>Attribute</code>.</p>
+        /// <p>The list of values applied to the <code>Attribute</code> and <code>Operator</code> attributes. Number of values and valid values vary by <code>Attribute</code>.</p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4135,18 +3583,13 @@ pub struct PlatformDescription {
     /// <p>The additions supported by the platform version.</p>
     pub supported_addon_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The state of the platform version in its lifecycle.</p>
-    /// <p>Possible values: <code>Recommended</code> | <code>null</code>
-    /// </p>
-    /// <p>If a null value is returned, the platform version isn't the recommended one for its
-    /// branch. Each platform branch has a single recommended platform version, typically the most
-    /// recent one.</p>
+    /// <p>Possible values: <code>Recommended</code> | <code>null</code> </p>
+    /// <p>If a null value is returned, the platform version isn't the recommended one for its branch. Each platform branch has a single recommended platform version, typically the most recent one.</p>
     pub platform_lifecycle_state: std::option::Option<std::string::String>,
     /// <p>The platform branch to which the platform version belongs.</p>
     pub platform_branch_name: std::option::Option<std::string::String>,
     /// <p>The state of the platform version's branch in its lifecycle.</p>
-    /// <p>Possible values: <code>Beta</code> | <code>Supported</code> | <code>Deprecated</code> |
-    /// <code>Retired</code>
-    /// </p>
+    /// <p>Possible values: <code>Beta</code> | <code>Supported</code> | <code>Deprecated</code> | <code>Retired</code> </p>
     pub platform_branch_lifecycle_state: std::option::Option<std::string::String>,
 }
 impl PlatformDescription {
@@ -4225,11 +3668,8 @@ impl PlatformDescription {
         self.supported_addon_list.as_deref()
     }
     /// <p>The state of the platform version in its lifecycle.</p>
-    /// <p>Possible values: <code>Recommended</code> | <code>null</code>
-    /// </p>
-    /// <p>If a null value is returned, the platform version isn't the recommended one for its
-    /// branch. Each platform branch has a single recommended platform version, typically the most
-    /// recent one.</p>
+    /// <p>Possible values: <code>Recommended</code> | <code>null</code> </p>
+    /// <p>If a null value is returned, the platform version isn't the recommended one for its branch. Each platform branch has a single recommended platform version, typically the most recent one.</p>
     pub fn platform_lifecycle_state(&self) -> std::option::Option<&str> {
         self.platform_lifecycle_state.as_deref()
     }
@@ -4238,9 +3678,7 @@ impl PlatformDescription {
         self.platform_branch_name.as_deref()
     }
     /// <p>The state of the platform version's branch in its lifecycle.</p>
-    /// <p>Possible values: <code>Beta</code> | <code>Supported</code> | <code>Deprecated</code> |
-    /// <code>Retired</code>
-    /// </p>
+    /// <p>Possible values: <code>Beta</code> | <code>Supported</code> | <code>Deprecated</code> | <code>Retired</code> </p>
     pub fn platform_branch_lifecycle_state(&self) -> std::option::Option<&str> {
         self.platform_branch_lifecycle_state.as_deref()
     }
@@ -4564,21 +4002,15 @@ pub mod platform_description {
             self
         }
         /// <p>The state of the platform version in its lifecycle.</p>
-        /// <p>Possible values: <code>Recommended</code> | <code>null</code>
-        /// </p>
-        /// <p>If a null value is returned, the platform version isn't the recommended one for its
-        /// branch. Each platform branch has a single recommended platform version, typically the most
-        /// recent one.</p>
+        /// <p>Possible values: <code>Recommended</code> | <code>null</code> </p>
+        /// <p>If a null value is returned, the platform version isn't the recommended one for its branch. Each platform branch has a single recommended platform version, typically the most recent one.</p>
         pub fn platform_lifecycle_state(mut self, input: impl Into<std::string::String>) -> Self {
             self.platform_lifecycle_state = Some(input.into());
             self
         }
         /// <p>The state of the platform version in its lifecycle.</p>
-        /// <p>Possible values: <code>Recommended</code> | <code>null</code>
-        /// </p>
-        /// <p>If a null value is returned, the platform version isn't the recommended one for its
-        /// branch. Each platform branch has a single recommended platform version, typically the most
-        /// recent one.</p>
+        /// <p>Possible values: <code>Recommended</code> | <code>null</code> </p>
+        /// <p>If a null value is returned, the platform version isn't the recommended one for its branch. Each platform branch has a single recommended platform version, typically the most recent one.</p>
         pub fn set_platform_lifecycle_state(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4600,9 +4032,7 @@ pub mod platform_description {
             self
         }
         /// <p>The state of the platform version's branch in its lifecycle.</p>
-        /// <p>Possible values: <code>Beta</code> | <code>Supported</code> | <code>Deprecated</code> |
-        /// <code>Retired</code>
-        /// </p>
+        /// <p>Possible values: <code>Beta</code> | <code>Supported</code> | <code>Deprecated</code> | <code>Retired</code> </p>
         pub fn platform_branch_lifecycle_state(
             mut self,
             input: impl Into<std::string::String>,
@@ -4611,9 +4041,7 @@ pub mod platform_description {
             self
         }
         /// <p>The state of the platform version's branch in its lifecycle.</p>
-        /// <p>Possible values: <code>Beta</code> | <code>Supported</code> | <code>Deprecated</code> |
-        /// <code>Retired</code>
-        /// </p>
+        /// <p>Possible values: <code>Beta</code> | <code>Supported</code> | <code>Deprecated</code> | <code>Retired</code> </p>
         pub fn set_platform_branch_lifecycle_state(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4878,22 +4306,17 @@ impl PlatformProgrammingLanguage {
     }
 }
 
-/// <p>Detailed health information about an Amazon EC2 instance in your Elastic Beanstalk
-/// environment.</p>
+/// <p>Detailed health information about an Amazon EC2 instance in your Elastic Beanstalk environment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SingleInstanceHealth {
     /// <p>The ID of the Amazon EC2 instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>Returns the health status of the specified instance. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
-    /// Colors and Statuses</a>.</p>
+    /// <p>Returns the health status of the specified instance. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
     pub health_status: std::option::Option<std::string::String>,
-    /// <p>Represents the color indicator that gives you information about the health of the EC2
-    /// instance. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
-    /// Statuses</a>.</p>
+    /// <p>Represents the color indicator that gives you information about the health of the EC2 instance. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
     pub color: std::option::Option<std::string::String>,
-    /// <p>Represents the causes, which provide more information about the current health
-    /// status.</p>
+    /// <p>Represents the causes, which provide more information about the current health status.</p>
     pub causes: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The time at which the EC2 instance was launched.</p>
     pub launched_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -4913,19 +4336,15 @@ impl SingleInstanceHealth {
     pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>Returns the health status of the specified instance. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
-    /// Colors and Statuses</a>.</p>
+    /// <p>Returns the health status of the specified instance. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
     pub fn health_status(&self) -> std::option::Option<&str> {
         self.health_status.as_deref()
     }
-    /// <p>Represents the color indicator that gives you information about the health of the EC2
-    /// instance. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
-    /// Statuses</a>.</p>
+    /// <p>Represents the color indicator that gives you information about the health of the EC2 instance. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
     pub fn color(&self) -> std::option::Option<&str> {
         self.color.as_deref()
     }
-    /// <p>Represents the causes, which provide more information about the current health
-    /// status.</p>
+    /// <p>Represents the causes, which provide more information about the current health status.</p>
     pub fn causes(&self) -> std::option::Option<&[std::string::String]> {
         self.causes.as_deref()
     }
@@ -4998,14 +4417,12 @@ pub mod single_instance_health {
             self.instance_id = input;
             self
         }
-        /// <p>Returns the health status of the specified instance. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
-        /// Colors and Statuses</a>.</p>
+        /// <p>Returns the health status of the specified instance. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
         pub fn health_status(mut self, input: impl Into<std::string::String>) -> Self {
             self.health_status = Some(input.into());
             self
         }
-        /// <p>Returns the health status of the specified instance. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
-        /// Colors and Statuses</a>.</p>
+        /// <p>Returns the health status of the specified instance. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
         pub fn set_health_status(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5013,16 +4430,12 @@ pub mod single_instance_health {
             self.health_status = input;
             self
         }
-        /// <p>Represents the color indicator that gives you information about the health of the EC2
-        /// instance. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
-        /// Statuses</a>.</p>
+        /// <p>Represents the color indicator that gives you information about the health of the EC2 instance. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
         pub fn color(mut self, input: impl Into<std::string::String>) -> Self {
             self.color = Some(input.into());
             self
         }
-        /// <p>Represents the color indicator that gives you information about the health of the EC2
-        /// instance. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
-        /// Statuses</a>.</p>
+        /// <p>Represents the color indicator that gives you information about the health of the EC2 instance. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
         pub fn set_color(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.color = input;
             self
@@ -5031,16 +4444,14 @@ pub mod single_instance_health {
         ///
         /// To override the contents of this collection use [`set_causes`](Self::set_causes).
         ///
-        /// <p>Represents the causes, which provide more information about the current health
-        /// status.</p>
+        /// <p>Represents the causes, which provide more information about the current health status.</p>
         pub fn causes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.causes.unwrap_or_default();
             v.push(input.into());
             self.causes = Some(v);
             self
         }
-        /// <p>Represents the causes, which provide more information about the current health
-        /// status.</p>
+        /// <p>Represents the causes, which provide more information about the current health status.</p>
         pub fn set_causes(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5156,23 +4567,13 @@ impl SingleInstanceHealth {
 pub struct Deployment {
     /// <p>The version label of the application version in the deployment.</p>
     pub version_label: std::option::Option<std::string::String>,
-    /// <p>The ID of the deployment. This number increases by one each time that you deploy source
-    /// code or change instance configuration settings.</p>
+    /// <p>The ID of the deployment. This number increases by one each time that you deploy source code or change instance configuration settings.</p>
     pub deployment_id: std::option::Option<i64>,
     /// <p>The status of the deployment:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>In Progress</code> : The deployment is in progress.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Deployed</code> : The deployment succeeded.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Failed</code> : The deployment failed.</p>
-    /// </li>
+    /// <li> <p> <code>In Progress</code> : The deployment is in progress.</p> </li>
+    /// <li> <p> <code>Deployed</code> : The deployment succeeded.</p> </li>
+    /// <li> <p> <code>Failed</code> : The deployment failed.</p> </li>
     /// </ul>
     pub status: std::option::Option<std::string::String>,
     /// <p>For in-progress deployments, the time that the deployment started.</p>
@@ -5184,25 +4585,15 @@ impl Deployment {
     pub fn version_label(&self) -> std::option::Option<&str> {
         self.version_label.as_deref()
     }
-    /// <p>The ID of the deployment. This number increases by one each time that you deploy source
-    /// code or change instance configuration settings.</p>
+    /// <p>The ID of the deployment. This number increases by one each time that you deploy source code or change instance configuration settings.</p>
     pub fn deployment_id(&self) -> std::option::Option<i64> {
         self.deployment_id
     }
     /// <p>The status of the deployment:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>In Progress</code> : The deployment is in progress.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Deployed</code> : The deployment succeeded.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Failed</code> : The deployment failed.</p>
-    /// </li>
+    /// <li> <p> <code>In Progress</code> : The deployment is in progress.</p> </li>
+    /// <li> <p> <code>Deployed</code> : The deployment succeeded.</p> </li>
+    /// <li> <p> <code>Failed</code> : The deployment failed.</p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
@@ -5248,32 +4639,21 @@ pub mod deployment {
             self.version_label = input;
             self
         }
-        /// <p>The ID of the deployment. This number increases by one each time that you deploy source
-        /// code or change instance configuration settings.</p>
+        /// <p>The ID of the deployment. This number increases by one each time that you deploy source code or change instance configuration settings.</p>
         pub fn deployment_id(mut self, input: i64) -> Self {
             self.deployment_id = Some(input);
             self
         }
-        /// <p>The ID of the deployment. This number increases by one each time that you deploy source
-        /// code or change instance configuration settings.</p>
+        /// <p>The ID of the deployment. This number increases by one each time that you deploy source code or change instance configuration settings.</p>
         pub fn set_deployment_id(mut self, input: std::option::Option<i64>) -> Self {
             self.deployment_id = input;
             self
         }
         /// <p>The status of the deployment:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>In Progress</code> : The deployment is in progress.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Deployed</code> : The deployment succeeded.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Failed</code> : The deployment failed.</p>
-        /// </li>
+        /// <li> <p> <code>In Progress</code> : The deployment is in progress.</p> </li>
+        /// <li> <p> <code>Deployed</code> : The deployment succeeded.</p> </li>
+        /// <li> <p> <code>Failed</code> : The deployment failed.</p> </li>
         /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
@@ -5281,18 +4661,9 @@ pub mod deployment {
         }
         /// <p>The status of the deployment:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>In Progress</code> : The deployment is in progress.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Deployed</code> : The deployment succeeded.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Failed</code> : The deployment failed.</p>
-        /// </li>
+        /// <li> <p> <code>In Progress</code> : The deployment is in progress.</p> </li>
+        /// <li> <p> <code>Deployed</code> : The deployment succeeded.</p> </li>
+        /// <li> <p> <code>Failed</code> : The deployment failed.</p> </li>
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
@@ -5337,9 +4708,7 @@ impl Deployment {
 pub struct SystemStatus {
     /// <p>CPU utilization metrics for the instance.</p>
     pub cpu_utilization: std::option::Option<crate::model::CpuUtilization>,
-    /// <p>Load average in the last 1-minute, 5-minute, and 15-minute periods.
-    /// For more information, see
-    /// <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-metrics.html#health-enhanced-metrics-os">Operating System Metrics</a>.</p>
+    /// <p>Load average in the last 1-minute, 5-minute, and 15-minute periods. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-metrics.html#health-enhanced-metrics-os">Operating System Metrics</a>.</p>
     pub load_average: std::option::Option<std::vec::Vec<f64>>,
 }
 impl SystemStatus {
@@ -5347,9 +4716,7 @@ impl SystemStatus {
     pub fn cpu_utilization(&self) -> std::option::Option<&crate::model::CpuUtilization> {
         self.cpu_utilization.as_ref()
     }
-    /// <p>Load average in the last 1-minute, 5-minute, and 15-minute periods.
-    /// For more information, see
-    /// <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-metrics.html#health-enhanced-metrics-os">Operating System Metrics</a>.</p>
+    /// <p>Load average in the last 1-minute, 5-minute, and 15-minute periods. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-metrics.html#health-enhanced-metrics-os">Operating System Metrics</a>.</p>
     pub fn load_average(&self) -> std::option::Option<&[f64]> {
         self.load_average.as_deref()
     }
@@ -5389,18 +4756,14 @@ pub mod system_status {
         ///
         /// To override the contents of this collection use [`set_load_average`](Self::set_load_average).
         ///
-        /// <p>Load average in the last 1-minute, 5-minute, and 15-minute periods.
-        /// For more information, see
-        /// <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-metrics.html#health-enhanced-metrics-os">Operating System Metrics</a>.</p>
+        /// <p>Load average in the last 1-minute, 5-minute, and 15-minute periods. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-metrics.html#health-enhanced-metrics-os">Operating System Metrics</a>.</p>
         pub fn load_average(mut self, input: f64) -> Self {
             let mut v = self.load_average.unwrap_or_default();
             v.push(input);
             self.load_average = Some(v);
             self
         }
-        /// <p>Load average in the last 1-minute, 5-minute, and 15-minute periods.
-        /// For more information, see
-        /// <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-metrics.html#health-enhanced-metrics-os">Operating System Metrics</a>.</p>
+        /// <p>Load average in the last 1-minute, 5-minute, and 15-minute periods. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-metrics.html#health-enhanced-metrics-os">Operating System Metrics</a>.</p>
         pub fn set_load_average(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
             self.load_average = input;
             self
@@ -5425,81 +4788,65 @@ impl SystemStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CpuUtilization {
-    /// <p>Percentage of time that the CPU has spent in the <code>User</code> state over the last
-    /// 10 seconds.</p>
+    /// <p>Percentage of time that the CPU has spent in the <code>User</code> state over the last 10 seconds.</p>
     pub user: std::option::Option<f64>,
     /// <p>Available on Linux environments only.</p>
-    /// <p>Percentage of time that the CPU has spent in the <code>Nice</code> state over the last
-    /// 10 seconds.</p>
+    /// <p>Percentage of time that the CPU has spent in the <code>Nice</code> state over the last 10 seconds.</p>
     pub nice: std::option::Option<f64>,
     /// <p>Available on Linux environments only.</p>
-    /// <p>Percentage of time that the CPU has spent in the <code>System</code> state over the
-    /// last 10 seconds.</p>
+    /// <p>Percentage of time that the CPU has spent in the <code>System</code> state over the last 10 seconds.</p>
     pub system: std::option::Option<f64>,
-    /// <p>Percentage of time that the CPU has spent in the <code>Idle</code> state over the last
-    /// 10 seconds.</p>
+    /// <p>Percentage of time that the CPU has spent in the <code>Idle</code> state over the last 10 seconds.</p>
     pub idle: std::option::Option<f64>,
     /// <p>Available on Linux environments only.</p>
-    /// <p>Percentage of time that the CPU has spent in the <code>I/O Wait</code> state over the
-    /// last 10 seconds.</p>
+    /// <p>Percentage of time that the CPU has spent in the <code>I/O Wait</code> state over the last 10 seconds.</p>
     pub io_wait: std::option::Option<f64>,
     /// <p>Available on Linux environments only.</p>
-    /// <p>Percentage of time that the CPU has spent in the <code>IRQ</code> state over the last
-    /// 10 seconds.</p>
+    /// <p>Percentage of time that the CPU has spent in the <code>IRQ</code> state over the last 10 seconds.</p>
     pub irq: std::option::Option<f64>,
     /// <p>Available on Linux environments only.</p>
-    /// <p>Percentage of time that the CPU has spent in the <code>SoftIRQ</code> state over the
-    /// last 10 seconds.</p>
+    /// <p>Percentage of time that the CPU has spent in the <code>SoftIRQ</code> state over the last 10 seconds.</p>
     pub soft_irq: std::option::Option<f64>,
     /// <p>Available on Windows environments only.</p>
-    /// <p>Percentage of time that the CPU has spent in the <code>Privileged</code> state over the
-    /// last 10 seconds.</p>
+    /// <p>Percentage of time that the CPU has spent in the <code>Privileged</code> state over the last 10 seconds.</p>
     pub privileged: std::option::Option<f64>,
 }
 impl CpuUtilization {
-    /// <p>Percentage of time that the CPU has spent in the <code>User</code> state over the last
-    /// 10 seconds.</p>
+    /// <p>Percentage of time that the CPU has spent in the <code>User</code> state over the last 10 seconds.</p>
     pub fn user(&self) -> std::option::Option<f64> {
         self.user
     }
     /// <p>Available on Linux environments only.</p>
-    /// <p>Percentage of time that the CPU has spent in the <code>Nice</code> state over the last
-    /// 10 seconds.</p>
+    /// <p>Percentage of time that the CPU has spent in the <code>Nice</code> state over the last 10 seconds.</p>
     pub fn nice(&self) -> std::option::Option<f64> {
         self.nice
     }
     /// <p>Available on Linux environments only.</p>
-    /// <p>Percentage of time that the CPU has spent in the <code>System</code> state over the
-    /// last 10 seconds.</p>
+    /// <p>Percentage of time that the CPU has spent in the <code>System</code> state over the last 10 seconds.</p>
     pub fn system(&self) -> std::option::Option<f64> {
         self.system
     }
-    /// <p>Percentage of time that the CPU has spent in the <code>Idle</code> state over the last
-    /// 10 seconds.</p>
+    /// <p>Percentage of time that the CPU has spent in the <code>Idle</code> state over the last 10 seconds.</p>
     pub fn idle(&self) -> std::option::Option<f64> {
         self.idle
     }
     /// <p>Available on Linux environments only.</p>
-    /// <p>Percentage of time that the CPU has spent in the <code>I/O Wait</code> state over the
-    /// last 10 seconds.</p>
+    /// <p>Percentage of time that the CPU has spent in the <code>I/O Wait</code> state over the last 10 seconds.</p>
     pub fn io_wait(&self) -> std::option::Option<f64> {
         self.io_wait
     }
     /// <p>Available on Linux environments only.</p>
-    /// <p>Percentage of time that the CPU has spent in the <code>IRQ</code> state over the last
-    /// 10 seconds.</p>
+    /// <p>Percentage of time that the CPU has spent in the <code>IRQ</code> state over the last 10 seconds.</p>
     pub fn irq(&self) -> std::option::Option<f64> {
         self.irq
     }
     /// <p>Available on Linux environments only.</p>
-    /// <p>Percentage of time that the CPU has spent in the <code>SoftIRQ</code> state over the
-    /// last 10 seconds.</p>
+    /// <p>Percentage of time that the CPU has spent in the <code>SoftIRQ</code> state over the last 10 seconds.</p>
     pub fn soft_irq(&self) -> std::option::Option<f64> {
         self.soft_irq
     }
     /// <p>Available on Windows environments only.</p>
-    /// <p>Percentage of time that the CPU has spent in the <code>Privileged</code> state over the
-    /// last 10 seconds.</p>
+    /// <p>Percentage of time that the CPU has spent in the <code>Privileged</code> state over the last 10 seconds.</p>
     pub fn privileged(&self) -> std::option::Option<f64> {
         self.privileged
     }
@@ -5534,110 +4881,94 @@ pub mod cpu_utilization {
         pub(crate) privileged: std::option::Option<f64>,
     }
     impl Builder {
-        /// <p>Percentage of time that the CPU has spent in the <code>User</code> state over the last
-        /// 10 seconds.</p>
+        /// <p>Percentage of time that the CPU has spent in the <code>User</code> state over the last 10 seconds.</p>
         pub fn user(mut self, input: f64) -> Self {
             self.user = Some(input);
             self
         }
-        /// <p>Percentage of time that the CPU has spent in the <code>User</code> state over the last
-        /// 10 seconds.</p>
+        /// <p>Percentage of time that the CPU has spent in the <code>User</code> state over the last 10 seconds.</p>
         pub fn set_user(mut self, input: std::option::Option<f64>) -> Self {
             self.user = input;
             self
         }
         /// <p>Available on Linux environments only.</p>
-        /// <p>Percentage of time that the CPU has spent in the <code>Nice</code> state over the last
-        /// 10 seconds.</p>
+        /// <p>Percentage of time that the CPU has spent in the <code>Nice</code> state over the last 10 seconds.</p>
         pub fn nice(mut self, input: f64) -> Self {
             self.nice = Some(input);
             self
         }
         /// <p>Available on Linux environments only.</p>
-        /// <p>Percentage of time that the CPU has spent in the <code>Nice</code> state over the last
-        /// 10 seconds.</p>
+        /// <p>Percentage of time that the CPU has spent in the <code>Nice</code> state over the last 10 seconds.</p>
         pub fn set_nice(mut self, input: std::option::Option<f64>) -> Self {
             self.nice = input;
             self
         }
         /// <p>Available on Linux environments only.</p>
-        /// <p>Percentage of time that the CPU has spent in the <code>System</code> state over the
-        /// last 10 seconds.</p>
+        /// <p>Percentage of time that the CPU has spent in the <code>System</code> state over the last 10 seconds.</p>
         pub fn system(mut self, input: f64) -> Self {
             self.system = Some(input);
             self
         }
         /// <p>Available on Linux environments only.</p>
-        /// <p>Percentage of time that the CPU has spent in the <code>System</code> state over the
-        /// last 10 seconds.</p>
+        /// <p>Percentage of time that the CPU has spent in the <code>System</code> state over the last 10 seconds.</p>
         pub fn set_system(mut self, input: std::option::Option<f64>) -> Self {
             self.system = input;
             self
         }
-        /// <p>Percentage of time that the CPU has spent in the <code>Idle</code> state over the last
-        /// 10 seconds.</p>
+        /// <p>Percentage of time that the CPU has spent in the <code>Idle</code> state over the last 10 seconds.</p>
         pub fn idle(mut self, input: f64) -> Self {
             self.idle = Some(input);
             self
         }
-        /// <p>Percentage of time that the CPU has spent in the <code>Idle</code> state over the last
-        /// 10 seconds.</p>
+        /// <p>Percentage of time that the CPU has spent in the <code>Idle</code> state over the last 10 seconds.</p>
         pub fn set_idle(mut self, input: std::option::Option<f64>) -> Self {
             self.idle = input;
             self
         }
         /// <p>Available on Linux environments only.</p>
-        /// <p>Percentage of time that the CPU has spent in the <code>I/O Wait</code> state over the
-        /// last 10 seconds.</p>
+        /// <p>Percentage of time that the CPU has spent in the <code>I/O Wait</code> state over the last 10 seconds.</p>
         pub fn io_wait(mut self, input: f64) -> Self {
             self.io_wait = Some(input);
             self
         }
         /// <p>Available on Linux environments only.</p>
-        /// <p>Percentage of time that the CPU has spent in the <code>I/O Wait</code> state over the
-        /// last 10 seconds.</p>
+        /// <p>Percentage of time that the CPU has spent in the <code>I/O Wait</code> state over the last 10 seconds.</p>
         pub fn set_io_wait(mut self, input: std::option::Option<f64>) -> Self {
             self.io_wait = input;
             self
         }
         /// <p>Available on Linux environments only.</p>
-        /// <p>Percentage of time that the CPU has spent in the <code>IRQ</code> state over the last
-        /// 10 seconds.</p>
+        /// <p>Percentage of time that the CPU has spent in the <code>IRQ</code> state over the last 10 seconds.</p>
         pub fn irq(mut self, input: f64) -> Self {
             self.irq = Some(input);
             self
         }
         /// <p>Available on Linux environments only.</p>
-        /// <p>Percentage of time that the CPU has spent in the <code>IRQ</code> state over the last
-        /// 10 seconds.</p>
+        /// <p>Percentage of time that the CPU has spent in the <code>IRQ</code> state over the last 10 seconds.</p>
         pub fn set_irq(mut self, input: std::option::Option<f64>) -> Self {
             self.irq = input;
             self
         }
         /// <p>Available on Linux environments only.</p>
-        /// <p>Percentage of time that the CPU has spent in the <code>SoftIRQ</code> state over the
-        /// last 10 seconds.</p>
+        /// <p>Percentage of time that the CPU has spent in the <code>SoftIRQ</code> state over the last 10 seconds.</p>
         pub fn soft_irq(mut self, input: f64) -> Self {
             self.soft_irq = Some(input);
             self
         }
         /// <p>Available on Linux environments only.</p>
-        /// <p>Percentage of time that the CPU has spent in the <code>SoftIRQ</code> state over the
-        /// last 10 seconds.</p>
+        /// <p>Percentage of time that the CPU has spent in the <code>SoftIRQ</code> state over the last 10 seconds.</p>
         pub fn set_soft_irq(mut self, input: std::option::Option<f64>) -> Self {
             self.soft_irq = input;
             self
         }
         /// <p>Available on Windows environments only.</p>
-        /// <p>Percentage of time that the CPU has spent in the <code>Privileged</code> state over the
-        /// last 10 seconds.</p>
+        /// <p>Percentage of time that the CPU has spent in the <code>Privileged</code> state over the last 10 seconds.</p>
         pub fn privileged(mut self, input: f64) -> Self {
             self.privileged = Some(input);
             self
         }
         /// <p>Available on Windows environments only.</p>
-        /// <p>Percentage of time that the CPU has spent in the <code>Privileged</code> state over the
-        /// last 10 seconds.</p>
+        /// <p>Percentage of time that the CPU has spent in the <code>Privileged</code> state over the last 10 seconds.</p>
         pub fn set_privileged(mut self, input: std::option::Option<f64>) -> Self {
             self.privileged = input;
             self
@@ -5668,39 +4999,29 @@ impl CpuUtilization {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplicationMetrics {
-    /// <p>The amount of time that the metrics cover (usually 10 seconds). For example, you might
-    /// have 5 requests (<code>request_count</code>) within the most recent time slice of 10 seconds
-    /// (<code>duration</code>).</p>
+    /// <p>The amount of time that the metrics cover (usually 10 seconds). For example, you might have 5 requests (<code>request_count</code>) within the most recent time slice of 10 seconds (<code>duration</code>).</p>
     pub duration: std::option::Option<i32>,
-    /// <p>Average number of requests handled by the web server per second over the last 10
-    /// seconds.</p>
+    /// <p>Average number of requests handled by the web server per second over the last 10 seconds.</p>
     pub request_count: i32,
-    /// <p>Represents the percentage of requests over the last 10 seconds that resulted in each
-    /// type of status code response.</p>
+    /// <p>Represents the percentage of requests over the last 10 seconds that resulted in each type of status code response.</p>
     pub status_codes: std::option::Option<crate::model::StatusCodes>,
-    /// <p>Represents the average latency for the slowest X percent of requests over the last 10
-    /// seconds. Latencies are in seconds with one millisecond resolution.</p>
+    /// <p>Represents the average latency for the slowest X percent of requests over the last 10 seconds. Latencies are in seconds with one millisecond resolution.</p>
     pub latency: std::option::Option<crate::model::Latency>,
 }
 impl ApplicationMetrics {
-    /// <p>The amount of time that the metrics cover (usually 10 seconds). For example, you might
-    /// have 5 requests (<code>request_count</code>) within the most recent time slice of 10 seconds
-    /// (<code>duration</code>).</p>
+    /// <p>The amount of time that the metrics cover (usually 10 seconds). For example, you might have 5 requests (<code>request_count</code>) within the most recent time slice of 10 seconds (<code>duration</code>).</p>
     pub fn duration(&self) -> std::option::Option<i32> {
         self.duration
     }
-    /// <p>Average number of requests handled by the web server per second over the last 10
-    /// seconds.</p>
+    /// <p>Average number of requests handled by the web server per second over the last 10 seconds.</p>
     pub fn request_count(&self) -> i32 {
         self.request_count
     }
-    /// <p>Represents the percentage of requests over the last 10 seconds that resulted in each
-    /// type of status code response.</p>
+    /// <p>Represents the percentage of requests over the last 10 seconds that resulted in each type of status code response.</p>
     pub fn status_codes(&self) -> std::option::Option<&crate::model::StatusCodes> {
         self.status_codes.as_ref()
     }
-    /// <p>Represents the average latency for the slowest X percent of requests over the last 10
-    /// seconds. Latencies are in seconds with one millisecond resolution.</p>
+    /// <p>Represents the average latency for the slowest X percent of requests over the last 10 seconds. Latencies are in seconds with one millisecond resolution.</p>
     pub fn latency(&self) -> std::option::Option<&crate::model::Latency> {
         self.latency.as_ref()
     }
@@ -5727,40 +5048,32 @@ pub mod application_metrics {
         pub(crate) latency: std::option::Option<crate::model::Latency>,
     }
     impl Builder {
-        /// <p>The amount of time that the metrics cover (usually 10 seconds). For example, you might
-        /// have 5 requests (<code>request_count</code>) within the most recent time slice of 10 seconds
-        /// (<code>duration</code>).</p>
+        /// <p>The amount of time that the metrics cover (usually 10 seconds). For example, you might have 5 requests (<code>request_count</code>) within the most recent time slice of 10 seconds (<code>duration</code>).</p>
         pub fn duration(mut self, input: i32) -> Self {
             self.duration = Some(input);
             self
         }
-        /// <p>The amount of time that the metrics cover (usually 10 seconds). For example, you might
-        /// have 5 requests (<code>request_count</code>) within the most recent time slice of 10 seconds
-        /// (<code>duration</code>).</p>
+        /// <p>The amount of time that the metrics cover (usually 10 seconds). For example, you might have 5 requests (<code>request_count</code>) within the most recent time slice of 10 seconds (<code>duration</code>).</p>
         pub fn set_duration(mut self, input: std::option::Option<i32>) -> Self {
             self.duration = input;
             self
         }
-        /// <p>Average number of requests handled by the web server per second over the last 10
-        /// seconds.</p>
+        /// <p>Average number of requests handled by the web server per second over the last 10 seconds.</p>
         pub fn request_count(mut self, input: i32) -> Self {
             self.request_count = Some(input);
             self
         }
-        /// <p>Average number of requests handled by the web server per second over the last 10
-        /// seconds.</p>
+        /// <p>Average number of requests handled by the web server per second over the last 10 seconds.</p>
         pub fn set_request_count(mut self, input: std::option::Option<i32>) -> Self {
             self.request_count = input;
             self
         }
-        /// <p>Represents the percentage of requests over the last 10 seconds that resulted in each
-        /// type of status code response.</p>
+        /// <p>Represents the percentage of requests over the last 10 seconds that resulted in each type of status code response.</p>
         pub fn status_codes(mut self, input: crate::model::StatusCodes) -> Self {
             self.status_codes = Some(input);
             self
         }
-        /// <p>Represents the percentage of requests over the last 10 seconds that resulted in each
-        /// type of status code response.</p>
+        /// <p>Represents the percentage of requests over the last 10 seconds that resulted in each type of status code response.</p>
         pub fn set_status_codes(
             mut self,
             input: std::option::Option<crate::model::StatusCodes>,
@@ -5768,14 +5081,12 @@ pub mod application_metrics {
             self.status_codes = input;
             self
         }
-        /// <p>Represents the average latency for the slowest X percent of requests over the last 10
-        /// seconds. Latencies are in seconds with one millisecond resolution.</p>
+        /// <p>Represents the average latency for the slowest X percent of requests over the last 10 seconds. Latencies are in seconds with one millisecond resolution.</p>
         pub fn latency(mut self, input: crate::model::Latency) -> Self {
             self.latency = Some(input);
             self
         }
-        /// <p>Represents the average latency for the slowest X percent of requests over the last 10
-        /// seconds. Latencies are in seconds with one millisecond resolution.</p>
+        /// <p>Represents the average latency for the slowest X percent of requests over the last 10 seconds. Latencies are in seconds with one millisecond resolution.</p>
         pub fn set_latency(mut self, input: std::option::Option<crate::model::Latency>) -> Self {
             self.latency = input;
             self
@@ -5798,74 +5109,57 @@ impl ApplicationMetrics {
     }
 }
 
-/// <p>Represents the average latency for the slowest X percent of requests over the last 10
-/// seconds.</p>
+/// <p>Represents the average latency for the slowest X percent of requests over the last 10 seconds.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Latency {
-    /// <p>The average latency for the slowest 0.1 percent of requests over the last 10
-    /// seconds.</p>
+    /// <p>The average latency for the slowest 0.1 percent of requests over the last 10 seconds.</p>
     pub p999: std::option::Option<f64>,
-    /// <p>The average latency for the slowest 1 percent of requests over the last 10
-    /// seconds.</p>
+    /// <p>The average latency for the slowest 1 percent of requests over the last 10 seconds.</p>
     pub p99: std::option::Option<f64>,
-    /// <p>The average latency for the slowest 5 percent of requests over the last 10
-    /// seconds.</p>
+    /// <p>The average latency for the slowest 5 percent of requests over the last 10 seconds.</p>
     pub p95: std::option::Option<f64>,
-    /// <p>The average latency for the slowest 10 percent of requests over the last 10
-    /// seconds.</p>
+    /// <p>The average latency for the slowest 10 percent of requests over the last 10 seconds.</p>
     pub p90: std::option::Option<f64>,
-    /// <p>The average latency for the slowest 15 percent of requests over the last 10
-    /// seconds.</p>
+    /// <p>The average latency for the slowest 15 percent of requests over the last 10 seconds.</p>
     pub p85: std::option::Option<f64>,
-    /// <p>The average latency for the slowest 25 percent of requests over the last 10
-    /// seconds.</p>
+    /// <p>The average latency for the slowest 25 percent of requests over the last 10 seconds.</p>
     pub p75: std::option::Option<f64>,
-    /// <p>The average latency for the slowest 50 percent of requests over the last 10
-    /// seconds.</p>
+    /// <p>The average latency for the slowest 50 percent of requests over the last 10 seconds.</p>
     pub p50: std::option::Option<f64>,
-    /// <p>The average latency for the slowest 90 percent of requests over the last 10
-    /// seconds.</p>
+    /// <p>The average latency for the slowest 90 percent of requests over the last 10 seconds.</p>
     pub p10: std::option::Option<f64>,
 }
 impl Latency {
-    /// <p>The average latency for the slowest 0.1 percent of requests over the last 10
-    /// seconds.</p>
+    /// <p>The average latency for the slowest 0.1 percent of requests over the last 10 seconds.</p>
     pub fn p999(&self) -> std::option::Option<f64> {
         self.p999
     }
-    /// <p>The average latency for the slowest 1 percent of requests over the last 10
-    /// seconds.</p>
+    /// <p>The average latency for the slowest 1 percent of requests over the last 10 seconds.</p>
     pub fn p99(&self) -> std::option::Option<f64> {
         self.p99
     }
-    /// <p>The average latency for the slowest 5 percent of requests over the last 10
-    /// seconds.</p>
+    /// <p>The average latency for the slowest 5 percent of requests over the last 10 seconds.</p>
     pub fn p95(&self) -> std::option::Option<f64> {
         self.p95
     }
-    /// <p>The average latency for the slowest 10 percent of requests over the last 10
-    /// seconds.</p>
+    /// <p>The average latency for the slowest 10 percent of requests over the last 10 seconds.</p>
     pub fn p90(&self) -> std::option::Option<f64> {
         self.p90
     }
-    /// <p>The average latency for the slowest 15 percent of requests over the last 10
-    /// seconds.</p>
+    /// <p>The average latency for the slowest 15 percent of requests over the last 10 seconds.</p>
     pub fn p85(&self) -> std::option::Option<f64> {
         self.p85
     }
-    /// <p>The average latency for the slowest 25 percent of requests over the last 10
-    /// seconds.</p>
+    /// <p>The average latency for the slowest 25 percent of requests over the last 10 seconds.</p>
     pub fn p75(&self) -> std::option::Option<f64> {
         self.p75
     }
-    /// <p>The average latency for the slowest 50 percent of requests over the last 10
-    /// seconds.</p>
+    /// <p>The average latency for the slowest 50 percent of requests over the last 10 seconds.</p>
     pub fn p50(&self) -> std::option::Option<f64> {
         self.p50
     }
-    /// <p>The average latency for the slowest 90 percent of requests over the last 10
-    /// seconds.</p>
+    /// <p>The average latency for the slowest 90 percent of requests over the last 10 seconds.</p>
     pub fn p10(&self) -> std::option::Option<f64> {
         self.p10
     }
@@ -5900,98 +5194,82 @@ pub mod latency {
         pub(crate) p10: std::option::Option<f64>,
     }
     impl Builder {
-        /// <p>The average latency for the slowest 0.1 percent of requests over the last 10
-        /// seconds.</p>
+        /// <p>The average latency for the slowest 0.1 percent of requests over the last 10 seconds.</p>
         pub fn p999(mut self, input: f64) -> Self {
             self.p999 = Some(input);
             self
         }
-        /// <p>The average latency for the slowest 0.1 percent of requests over the last 10
-        /// seconds.</p>
+        /// <p>The average latency for the slowest 0.1 percent of requests over the last 10 seconds.</p>
         pub fn set_p999(mut self, input: std::option::Option<f64>) -> Self {
             self.p999 = input;
             self
         }
-        /// <p>The average latency for the slowest 1 percent of requests over the last 10
-        /// seconds.</p>
+        /// <p>The average latency for the slowest 1 percent of requests over the last 10 seconds.</p>
         pub fn p99(mut self, input: f64) -> Self {
             self.p99 = Some(input);
             self
         }
-        /// <p>The average latency for the slowest 1 percent of requests over the last 10
-        /// seconds.</p>
+        /// <p>The average latency for the slowest 1 percent of requests over the last 10 seconds.</p>
         pub fn set_p99(mut self, input: std::option::Option<f64>) -> Self {
             self.p99 = input;
             self
         }
-        /// <p>The average latency for the slowest 5 percent of requests over the last 10
-        /// seconds.</p>
+        /// <p>The average latency for the slowest 5 percent of requests over the last 10 seconds.</p>
         pub fn p95(mut self, input: f64) -> Self {
             self.p95 = Some(input);
             self
         }
-        /// <p>The average latency for the slowest 5 percent of requests over the last 10
-        /// seconds.</p>
+        /// <p>The average latency for the slowest 5 percent of requests over the last 10 seconds.</p>
         pub fn set_p95(mut self, input: std::option::Option<f64>) -> Self {
             self.p95 = input;
             self
         }
-        /// <p>The average latency for the slowest 10 percent of requests over the last 10
-        /// seconds.</p>
+        /// <p>The average latency for the slowest 10 percent of requests over the last 10 seconds.</p>
         pub fn p90(mut self, input: f64) -> Self {
             self.p90 = Some(input);
             self
         }
-        /// <p>The average latency for the slowest 10 percent of requests over the last 10
-        /// seconds.</p>
+        /// <p>The average latency for the slowest 10 percent of requests over the last 10 seconds.</p>
         pub fn set_p90(mut self, input: std::option::Option<f64>) -> Self {
             self.p90 = input;
             self
         }
-        /// <p>The average latency for the slowest 15 percent of requests over the last 10
-        /// seconds.</p>
+        /// <p>The average latency for the slowest 15 percent of requests over the last 10 seconds.</p>
         pub fn p85(mut self, input: f64) -> Self {
             self.p85 = Some(input);
             self
         }
-        /// <p>The average latency for the slowest 15 percent of requests over the last 10
-        /// seconds.</p>
+        /// <p>The average latency for the slowest 15 percent of requests over the last 10 seconds.</p>
         pub fn set_p85(mut self, input: std::option::Option<f64>) -> Self {
             self.p85 = input;
             self
         }
-        /// <p>The average latency for the slowest 25 percent of requests over the last 10
-        /// seconds.</p>
+        /// <p>The average latency for the slowest 25 percent of requests over the last 10 seconds.</p>
         pub fn p75(mut self, input: f64) -> Self {
             self.p75 = Some(input);
             self
         }
-        /// <p>The average latency for the slowest 25 percent of requests over the last 10
-        /// seconds.</p>
+        /// <p>The average latency for the slowest 25 percent of requests over the last 10 seconds.</p>
         pub fn set_p75(mut self, input: std::option::Option<f64>) -> Self {
             self.p75 = input;
             self
         }
-        /// <p>The average latency for the slowest 50 percent of requests over the last 10
-        /// seconds.</p>
+        /// <p>The average latency for the slowest 50 percent of requests over the last 10 seconds.</p>
         pub fn p50(mut self, input: f64) -> Self {
             self.p50 = Some(input);
             self
         }
-        /// <p>The average latency for the slowest 50 percent of requests over the last 10
-        /// seconds.</p>
+        /// <p>The average latency for the slowest 50 percent of requests over the last 10 seconds.</p>
         pub fn set_p50(mut self, input: std::option::Option<f64>) -> Self {
             self.p50 = input;
             self
         }
-        /// <p>The average latency for the slowest 90 percent of requests over the last 10
-        /// seconds.</p>
+        /// <p>The average latency for the slowest 90 percent of requests over the last 10 seconds.</p>
         pub fn p10(mut self, input: f64) -> Self {
             self.p10 = Some(input);
             self
         }
-        /// <p>The average latency for the slowest 90 percent of requests over the last 10
-        /// seconds.</p>
+        /// <p>The average latency for the slowest 90 percent of requests over the last 10 seconds.</p>
         pub fn set_p10(mut self, input: std::option::Option<f64>) -> Self {
             self.p10 = input;
             self
@@ -6018,43 +5296,33 @@ impl Latency {
     }
 }
 
-/// <p>Represents the percentage of requests over the last 10 seconds that resulted in each
-/// type of status code response. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">Status Code
-/// Definitions</a>.</p>
+/// <p>Represents the percentage of requests over the last 10 seconds that resulted in each type of status code response. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">Status Code Definitions</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StatusCodes {
-    /// <p>The percentage of requests over the last 10 seconds that resulted in a 2xx (200, 201,
-    /// etc.) status code.</p>
+    /// <p>The percentage of requests over the last 10 seconds that resulted in a 2xx (200, 201, etc.) status code.</p>
     pub status2xx: std::option::Option<i32>,
-    /// <p>The percentage of requests over the last 10 seconds that resulted in a 3xx (300, 301,
-    /// etc.) status code.</p>
+    /// <p>The percentage of requests over the last 10 seconds that resulted in a 3xx (300, 301, etc.) status code.</p>
     pub status3xx: std::option::Option<i32>,
-    /// <p>The percentage of requests over the last 10 seconds that resulted in a 4xx (400, 401,
-    /// etc.) status code.</p>
+    /// <p>The percentage of requests over the last 10 seconds that resulted in a 4xx (400, 401, etc.) status code.</p>
     pub status4xx: std::option::Option<i32>,
-    /// <p>The percentage of requests over the last 10 seconds that resulted in a 5xx (500, 501,
-    /// etc.) status code.</p>
+    /// <p>The percentage of requests over the last 10 seconds that resulted in a 5xx (500, 501, etc.) status code.</p>
     pub status5xx: std::option::Option<i32>,
 }
 impl StatusCodes {
-    /// <p>The percentage of requests over the last 10 seconds that resulted in a 2xx (200, 201,
-    /// etc.) status code.</p>
+    /// <p>The percentage of requests over the last 10 seconds that resulted in a 2xx (200, 201, etc.) status code.</p>
     pub fn status2xx(&self) -> std::option::Option<i32> {
         self.status2xx
     }
-    /// <p>The percentage of requests over the last 10 seconds that resulted in a 3xx (300, 301,
-    /// etc.) status code.</p>
+    /// <p>The percentage of requests over the last 10 seconds that resulted in a 3xx (300, 301, etc.) status code.</p>
     pub fn status3xx(&self) -> std::option::Option<i32> {
         self.status3xx
     }
-    /// <p>The percentage of requests over the last 10 seconds that resulted in a 4xx (400, 401,
-    /// etc.) status code.</p>
+    /// <p>The percentage of requests over the last 10 seconds that resulted in a 4xx (400, 401, etc.) status code.</p>
     pub fn status4xx(&self) -> std::option::Option<i32> {
         self.status4xx
     }
-    /// <p>The percentage of requests over the last 10 seconds that resulted in a 5xx (500, 501,
-    /// etc.) status code.</p>
+    /// <p>The percentage of requests over the last 10 seconds that resulted in a 5xx (500, 501, etc.) status code.</p>
     pub fn status5xx(&self) -> std::option::Option<i32> {
         self.status5xx
     }
@@ -6081,50 +5349,42 @@ pub mod status_codes {
         pub(crate) status5xx: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The percentage of requests over the last 10 seconds that resulted in a 2xx (200, 201,
-        /// etc.) status code.</p>
+        /// <p>The percentage of requests over the last 10 seconds that resulted in a 2xx (200, 201, etc.) status code.</p>
         pub fn status2xx(mut self, input: i32) -> Self {
             self.status2xx = Some(input);
             self
         }
-        /// <p>The percentage of requests over the last 10 seconds that resulted in a 2xx (200, 201,
-        /// etc.) status code.</p>
+        /// <p>The percentage of requests over the last 10 seconds that resulted in a 2xx (200, 201, etc.) status code.</p>
         pub fn set_status2xx(mut self, input: std::option::Option<i32>) -> Self {
             self.status2xx = input;
             self
         }
-        /// <p>The percentage of requests over the last 10 seconds that resulted in a 3xx (300, 301,
-        /// etc.) status code.</p>
+        /// <p>The percentage of requests over the last 10 seconds that resulted in a 3xx (300, 301, etc.) status code.</p>
         pub fn status3xx(mut self, input: i32) -> Self {
             self.status3xx = Some(input);
             self
         }
-        /// <p>The percentage of requests over the last 10 seconds that resulted in a 3xx (300, 301,
-        /// etc.) status code.</p>
+        /// <p>The percentage of requests over the last 10 seconds that resulted in a 3xx (300, 301, etc.) status code.</p>
         pub fn set_status3xx(mut self, input: std::option::Option<i32>) -> Self {
             self.status3xx = input;
             self
         }
-        /// <p>The percentage of requests over the last 10 seconds that resulted in a 4xx (400, 401,
-        /// etc.) status code.</p>
+        /// <p>The percentage of requests over the last 10 seconds that resulted in a 4xx (400, 401, etc.) status code.</p>
         pub fn status4xx(mut self, input: i32) -> Self {
             self.status4xx = Some(input);
             self
         }
-        /// <p>The percentage of requests over the last 10 seconds that resulted in a 4xx (400, 401,
-        /// etc.) status code.</p>
+        /// <p>The percentage of requests over the last 10 seconds that resulted in a 4xx (400, 401, etc.) status code.</p>
         pub fn set_status4xx(mut self, input: std::option::Option<i32>) -> Self {
             self.status4xx = input;
             self
         }
-        /// <p>The percentage of requests over the last 10 seconds that resulted in a 5xx (500, 501,
-        /// etc.) status code.</p>
+        /// <p>The percentage of requests over the last 10 seconds that resulted in a 5xx (500, 501, etc.) status code.</p>
         pub fn status5xx(mut self, input: i32) -> Self {
             self.status5xx = Some(input);
             self
         }
-        /// <p>The percentage of requests over the last 10 seconds that resulted in a 5xx (500, 501,
-        /// etc.) status code.</p>
+        /// <p>The percentage of requests over the last 10 seconds that resulted in a 5xx (500, 501, etc.) status code.</p>
         pub fn set_status5xx(mut self, input: std::option::Option<i32>) -> Self {
             self.status5xx = input;
             self
@@ -6561,13 +5821,11 @@ pub struct EnvironmentDescription {
     pub solution_stack_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the platform version.</p>
     pub platform_arn: std::option::Option<std::string::String>,
-    /// <p>The name of the configuration template used to originally launch this
-    /// environment.</p>
+    /// <p>The name of the configuration template used to originally launch this environment.</p>
     pub template_name: std::option::Option<std::string::String>,
     /// <p>Describes this environment.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>For load-balanced, autoscaling environments, the URL to the LoadBalancer. For
-    /// single-instance environments, the IP address of the instance.</p>
+    /// <p>For load-balanced, autoscaling environments, the URL to the LoadBalancer. For single-instance environments, the IP address of the instance.</p>
     pub endpoint_url: std::option::Option<std::string::String>,
     /// <p>The URL to the CNAME for this environment.</p>
     pub cname: std::option::Option<std::string::String>,
@@ -6576,69 +5834,28 @@ pub struct EnvironmentDescription {
     /// <p>The last modified date for this environment.</p>
     pub date_updated: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The current operational status of the environment:</p>
-    ///
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Launching</code>: Environment is in the process of initial deployment.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Updating</code>: Environment is in the process of updating its configuration
-    /// settings or application version.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Ready</code>: Environment is available to have an action performed on it, such as
-    /// update or terminate.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Terminating</code>: Environment is in the shut-down process.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Terminated</code>: Environment is not running.</p>
-    /// </li>
+    /// <li> <p> <code>Launching</code>: Environment is in the process of initial deployment.</p> </li>
+    /// <li> <p> <code>Updating</code>: Environment is in the process of updating its configuration settings or application version.</p> </li>
+    /// <li> <p> <code>Ready</code>: Environment is available to have an action performed on it, such as update or terminate.</p> </li>
+    /// <li> <p> <code>Terminating</code>: Environment is in the shut-down process.</p> </li>
+    /// <li> <p> <code>Terminated</code>: Environment is not running.</p> </li>
     /// </ul>
     pub status: std::option::Option<crate::model::EnvironmentStatus>,
-    /// <p>Indicates if there is an in-progress environment configuration update or application
-    /// version deployment that you can cancel.</p>
-    /// <p>
-    /// <code>true:</code> There is an update in progress. </p>
-    /// <p>
-    /// <code>false:</code> There are no updates currently in progress. </p>
+    /// <p>Indicates if there is an in-progress environment configuration update or application version deployment that you can cancel.</p>
+    /// <p> <code>true:</code> There is an update in progress. </p>
+    /// <p> <code>false:</code> There are no updates currently in progress. </p>
     pub abortable_operation_in_progress: std::option::Option<bool>,
-    /// <p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the
-    /// failure levels for a running environment:</p>
+    /// <p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the failure levels for a running environment:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more
-    /// consecutive failures occur for an environment.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive
-    /// failures occur for an environment.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Green</code>: Indicates the environment is healthy and fully functional.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Grey</code>: Default health for a new environment. The environment is not fully
-    /// launched and health checks have not started or health checks are suspended during an
-    /// <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.</p>
-    /// </li>
+    /// <li> <p> <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive failures occur for an environment.</p> </li>
+    /// <li> <p> <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive failures occur for an environment.</p> </li>
+    /// <li> <p> <code>Green</code>: Indicates the environment is healthy and fully functional.</p> </li>
+    /// <li> <p> <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.</p> </li>
     /// </ul>
-    /// <p> Default: <code>Grey</code>
-    /// </p>
+    /// <p> Default: <code>Grey</code> </p>
     pub health: std::option::Option<crate::model::EnvironmentHealth>,
-    /// <p>Returns the health status of the application running in your environment. For more
-    /// information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
-    /// Statuses</a>.</p>
+    /// <p>Returns the health status of the application running in your environment. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
     pub health_status: std::option::Option<crate::model::EnvironmentHealthStatus>,
     /// <p>The description of the AWS resources used by this environment.</p>
     pub resources: std::option::Option<crate::model::EnvironmentResourcesDescription>,
@@ -6648,8 +5865,7 @@ pub struct EnvironmentDescription {
     pub environment_links: std::option::Option<std::vec::Vec<crate::model::EnvironmentLink>>,
     /// <p>The environment's Amazon Resource Name (ARN), which can be used in other API requests that require an ARN.</p>
     pub environment_arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the environment's operations role. For more information,
-    /// see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the environment's operations role. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
     pub operations_role: std::option::Option<std::string::String>,
 }
 impl EnvironmentDescription {
@@ -6677,8 +5893,7 @@ impl EnvironmentDescription {
     pub fn platform_arn(&self) -> std::option::Option<&str> {
         self.platform_arn.as_deref()
     }
-    /// <p>The name of the configuration template used to originally launch this
-    /// environment.</p>
+    /// <p>The name of the configuration template used to originally launch this environment.</p>
     pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
     }
@@ -6686,8 +5901,7 @@ impl EnvironmentDescription {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>For load-balanced, autoscaling environments, the URL to the LoadBalancer. For
-    /// single-instance environments, the IP address of the instance.</p>
+    /// <p>For load-balanced, autoscaling environments, the URL to the LoadBalancer. For single-instance environments, the IP address of the instance.</p>
     pub fn endpoint_url(&self) -> std::option::Option<&str> {
         self.endpoint_url.as_deref()
     }
@@ -6704,75 +5918,34 @@ impl EnvironmentDescription {
         self.date_updated.as_ref()
     }
     /// <p>The current operational status of the environment:</p>
-    ///
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Launching</code>: Environment is in the process of initial deployment.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Updating</code>: Environment is in the process of updating its configuration
-    /// settings or application version.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Ready</code>: Environment is available to have an action performed on it, such as
-    /// update or terminate.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Terminating</code>: Environment is in the shut-down process.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Terminated</code>: Environment is not running.</p>
-    /// </li>
+    /// <li> <p> <code>Launching</code>: Environment is in the process of initial deployment.</p> </li>
+    /// <li> <p> <code>Updating</code>: Environment is in the process of updating its configuration settings or application version.</p> </li>
+    /// <li> <p> <code>Ready</code>: Environment is available to have an action performed on it, such as update or terminate.</p> </li>
+    /// <li> <p> <code>Terminating</code>: Environment is in the shut-down process.</p> </li>
+    /// <li> <p> <code>Terminated</code>: Environment is not running.</p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::EnvironmentStatus> {
         self.status.as_ref()
     }
-    /// <p>Indicates if there is an in-progress environment configuration update or application
-    /// version deployment that you can cancel.</p>
-    /// <p>
-    /// <code>true:</code> There is an update in progress. </p>
-    /// <p>
-    /// <code>false:</code> There are no updates currently in progress. </p>
+    /// <p>Indicates if there is an in-progress environment configuration update or application version deployment that you can cancel.</p>
+    /// <p> <code>true:</code> There is an update in progress. </p>
+    /// <p> <code>false:</code> There are no updates currently in progress. </p>
     pub fn abortable_operation_in_progress(&self) -> std::option::Option<bool> {
         self.abortable_operation_in_progress
     }
-    /// <p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the
-    /// failure levels for a running environment:</p>
+    /// <p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the failure levels for a running environment:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more
-    /// consecutive failures occur for an environment.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive
-    /// failures occur for an environment.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Green</code>: Indicates the environment is healthy and fully functional.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Grey</code>: Default health for a new environment. The environment is not fully
-    /// launched and health checks have not started or health checks are suspended during an
-    /// <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.</p>
-    /// </li>
+    /// <li> <p> <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive failures occur for an environment.</p> </li>
+    /// <li> <p> <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive failures occur for an environment.</p> </li>
+    /// <li> <p> <code>Green</code>: Indicates the environment is healthy and fully functional.</p> </li>
+    /// <li> <p> <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.</p> </li>
     /// </ul>
-    /// <p> Default: <code>Grey</code>
-    /// </p>
+    /// <p> Default: <code>Grey</code> </p>
     pub fn health(&self) -> std::option::Option<&crate::model::EnvironmentHealth> {
         self.health.as_ref()
     }
-    /// <p>Returns the health status of the application running in your environment. For more
-    /// information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
-    /// Statuses</a>.</p>
+    /// <p>Returns the health status of the application running in your environment. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
     pub fn health_status(&self) -> std::option::Option<&crate::model::EnvironmentHealthStatus> {
         self.health_status.as_ref()
     }
@@ -6792,8 +5965,7 @@ impl EnvironmentDescription {
     pub fn environment_arn(&self) -> std::option::Option<&str> {
         self.environment_arn.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the environment's operations role. For more information,
-    /// see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the environment's operations role. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
     pub fn operations_role(&self) -> std::option::Option<&str> {
         self.operations_role.as_deref()
     }
@@ -6933,14 +6105,12 @@ pub mod environment_description {
             self.platform_arn = input;
             self
         }
-        /// <p>The name of the configuration template used to originally launch this
-        /// environment.</p>
+        /// <p>The name of the configuration template used to originally launch this environment.</p>
         pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_name = Some(input.into());
             self
         }
-        /// <p>The name of the configuration template used to originally launch this
-        /// environment.</p>
+        /// <p>The name of the configuration template used to originally launch this environment.</p>
         pub fn set_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6958,14 +6128,12 @@ pub mod environment_description {
             self.description = input;
             self
         }
-        /// <p>For load-balanced, autoscaling environments, the URL to the LoadBalancer. For
-        /// single-instance environments, the IP address of the instance.</p>
+        /// <p>For load-balanced, autoscaling environments, the URL to the LoadBalancer. For single-instance environments, the IP address of the instance.</p>
         pub fn endpoint_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.endpoint_url = Some(input.into());
             self
         }
-        /// <p>For load-balanced, autoscaling environments, the URL to the LoadBalancer. For
-        /// single-instance environments, the IP address of the instance.</p>
+        /// <p>For load-balanced, autoscaling environments, the URL to the LoadBalancer. For single-instance environments, the IP address of the instance.</p>
         pub fn set_endpoint_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.endpoint_url = input;
             self
@@ -7007,60 +6175,24 @@ pub mod environment_description {
             self
         }
         /// <p>The current operational status of the environment:</p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Launching</code>: Environment is in the process of initial deployment.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Updating</code>: Environment is in the process of updating its configuration
-        /// settings or application version.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Ready</code>: Environment is available to have an action performed on it, such as
-        /// update or terminate.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Terminating</code>: Environment is in the shut-down process.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Terminated</code>: Environment is not running.</p>
-        /// </li>
+        /// <li> <p> <code>Launching</code>: Environment is in the process of initial deployment.</p> </li>
+        /// <li> <p> <code>Updating</code>: Environment is in the process of updating its configuration settings or application version.</p> </li>
+        /// <li> <p> <code>Ready</code>: Environment is available to have an action performed on it, such as update or terminate.</p> </li>
+        /// <li> <p> <code>Terminating</code>: Environment is in the shut-down process.</p> </li>
+        /// <li> <p> <code>Terminated</code>: Environment is not running.</p> </li>
         /// </ul>
         pub fn status(mut self, input: crate::model::EnvironmentStatus) -> Self {
             self.status = Some(input);
             self
         }
         /// <p>The current operational status of the environment:</p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Launching</code>: Environment is in the process of initial deployment.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Updating</code>: Environment is in the process of updating its configuration
-        /// settings or application version.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Ready</code>: Environment is available to have an action performed on it, such as
-        /// update or terminate.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Terminating</code>: Environment is in the shut-down process.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Terminated</code>: Environment is not running.</p>
-        /// </li>
+        /// <li> <p> <code>Launching</code>: Environment is in the process of initial deployment.</p> </li>
+        /// <li> <p> <code>Updating</code>: Environment is in the process of updating its configuration settings or application version.</p> </li>
+        /// <li> <p> <code>Ready</code>: Environment is available to have an action performed on it, such as update or terminate.</p> </li>
+        /// <li> <p> <code>Terminating</code>: Environment is in the shut-down process.</p> </li>
+        /// <li> <p> <code>Terminated</code>: Environment is not running.</p> </li>
         /// </ul>
         pub fn set_status(
             mut self,
@@ -7069,22 +6201,16 @@ pub mod environment_description {
             self.status = input;
             self
         }
-        /// <p>Indicates if there is an in-progress environment configuration update or application
-        /// version deployment that you can cancel.</p>
-        /// <p>
-        /// <code>true:</code> There is an update in progress. </p>
-        /// <p>
-        /// <code>false:</code> There are no updates currently in progress. </p>
+        /// <p>Indicates if there is an in-progress environment configuration update or application version deployment that you can cancel.</p>
+        /// <p> <code>true:</code> There is an update in progress. </p>
+        /// <p> <code>false:</code> There are no updates currently in progress. </p>
         pub fn abortable_operation_in_progress(mut self, input: bool) -> Self {
             self.abortable_operation_in_progress = Some(input);
             self
         }
-        /// <p>Indicates if there is an in-progress environment configuration update or application
-        /// version deployment that you can cancel.</p>
-        /// <p>
-        /// <code>true:</code> There is an update in progress. </p>
-        /// <p>
-        /// <code>false:</code> There are no updates currently in progress. </p>
+        /// <p>Indicates if there is an in-progress environment configuration update or application version deployment that you can cancel.</p>
+        /// <p> <code>true:</code> There is an update in progress. </p>
+        /// <p> <code>false:</code> There are no updates currently in progress. </p>
         pub fn set_abortable_operation_in_progress(
             mut self,
             input: std::option::Option<bool>,
@@ -7092,62 +6218,26 @@ pub mod environment_description {
             self.abortable_operation_in_progress = input;
             self
         }
-        /// <p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the
-        /// failure levels for a running environment:</p>
+        /// <p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the failure levels for a running environment:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more
-        /// consecutive failures occur for an environment.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive
-        /// failures occur for an environment.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Green</code>: Indicates the environment is healthy and fully functional.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Grey</code>: Default health for a new environment. The environment is not fully
-        /// launched and health checks have not started or health checks are suspended during an
-        /// <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.</p>
-        /// </li>
+        /// <li> <p> <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive failures occur for an environment.</p> </li>
+        /// <li> <p> <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive failures occur for an environment.</p> </li>
+        /// <li> <p> <code>Green</code>: Indicates the environment is healthy and fully functional.</p> </li>
+        /// <li> <p> <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.</p> </li>
         /// </ul>
-        /// <p> Default: <code>Grey</code>
-        /// </p>
+        /// <p> Default: <code>Grey</code> </p>
         pub fn health(mut self, input: crate::model::EnvironmentHealth) -> Self {
             self.health = Some(input);
             self
         }
-        /// <p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the
-        /// failure levels for a running environment:</p>
+        /// <p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the failure levels for a running environment:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more
-        /// consecutive failures occur for an environment.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive
-        /// failures occur for an environment.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Green</code>: Indicates the environment is healthy and fully functional.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Grey</code>: Default health for a new environment. The environment is not fully
-        /// launched and health checks have not started or health checks are suspended during an
-        /// <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.</p>
-        /// </li>
+        /// <li> <p> <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive failures occur for an environment.</p> </li>
+        /// <li> <p> <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive failures occur for an environment.</p> </li>
+        /// <li> <p> <code>Green</code>: Indicates the environment is healthy and fully functional.</p> </li>
+        /// <li> <p> <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.</p> </li>
         /// </ul>
-        /// <p> Default: <code>Grey</code>
-        /// </p>
+        /// <p> Default: <code>Grey</code> </p>
         pub fn set_health(
             mut self,
             input: std::option::Option<crate::model::EnvironmentHealth>,
@@ -7155,16 +6245,12 @@ pub mod environment_description {
             self.health = input;
             self
         }
-        /// <p>Returns the health status of the application running in your environment. For more
-        /// information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
-        /// Statuses</a>.</p>
+        /// <p>Returns the health status of the application running in your environment. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
         pub fn health_status(mut self, input: crate::model::EnvironmentHealthStatus) -> Self {
             self.health_status = Some(input);
             self
         }
-        /// <p>Returns the health status of the application running in your environment. For more
-        /// information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
-        /// Statuses</a>.</p>
+        /// <p>Returns the health status of the application running in your environment. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
         pub fn set_health_status(
             mut self,
             input: std::option::Option<crate::model::EnvironmentHealthStatus>,
@@ -7230,14 +6316,12 @@ pub mod environment_description {
             self.environment_arn = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the environment's operations role. For more information,
-        /// see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the environment's operations role. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
         pub fn operations_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.operations_role = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the environment's operations role. For more information,
-        /// see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the environment's operations role. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
         pub fn set_operations_role(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7934,11 +7018,9 @@ pub struct ManagedAction {
     pub action_description: std::option::Option<std::string::String>,
     /// <p>The type of managed action.</p>
     pub action_type: std::option::Option<crate::model::ActionType>,
-    /// <p>The status of the managed action. If the action is <code>Scheduled</code>, you can
-    /// apply it immediately with <a>ApplyEnvironmentManagedAction</a>.</p>
+    /// <p>The status of the managed action. If the action is <code>Scheduled</code>, you can apply it immediately with <code>ApplyEnvironmentManagedAction</code>.</p>
     pub status: std::option::Option<crate::model::ActionStatus>,
-    /// <p>The start time of the maintenance window in which the managed action will
-    /// execute.</p>
+    /// <p>The start time of the maintenance window in which the managed action will execute.</p>
     pub window_start_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ManagedAction {
@@ -7954,13 +7036,11 @@ impl ManagedAction {
     pub fn action_type(&self) -> std::option::Option<&crate::model::ActionType> {
         self.action_type.as_ref()
     }
-    /// <p>The status of the managed action. If the action is <code>Scheduled</code>, you can
-    /// apply it immediately with <a>ApplyEnvironmentManagedAction</a>.</p>
+    /// <p>The status of the managed action. If the action is <code>Scheduled</code>, you can apply it immediately with <code>ApplyEnvironmentManagedAction</code>.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::ActionStatus> {
         self.status.as_ref()
     }
-    /// <p>The start time of the maintenance window in which the managed action will
-    /// execute.</p>
+    /// <p>The start time of the maintenance window in which the managed action will execute.</p>
     pub fn window_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.window_start_time.as_ref()
     }
@@ -8025,14 +7105,12 @@ pub mod managed_action {
             self.action_type = input;
             self
         }
-        /// <p>The status of the managed action. If the action is <code>Scheduled</code>, you can
-        /// apply it immediately with <a>ApplyEnvironmentManagedAction</a>.</p>
+        /// <p>The status of the managed action. If the action is <code>Scheduled</code>, you can apply it immediately with <code>ApplyEnvironmentManagedAction</code>.</p>
         pub fn status(mut self, input: crate::model::ActionStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the managed action. If the action is <code>Scheduled</code>, you can
-        /// apply it immediately with <a>ApplyEnvironmentManagedAction</a>.</p>
+        /// <p>The status of the managed action. If the action is <code>Scheduled</code>, you can apply it immediately with <code>ApplyEnvironmentManagedAction</code>.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ActionStatus>,
@@ -8040,14 +7118,12 @@ pub mod managed_action {
             self.status = input;
             self
         }
-        /// <p>The start time of the maintenance window in which the managed action will
-        /// execute.</p>
+        /// <p>The start time of the maintenance window in which the managed action will execute.</p>
         pub fn window_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.window_start_time = Some(input);
             self
         }
-        /// <p>The start time of the maintenance window in which the managed action will
-        /// execute.</p>
+        /// <p>The start time of the maintenance window in which the managed action will execute.</p>
         pub fn set_window_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -8546,88 +7622,57 @@ impl AsRef<str> for FailureType {
     }
 }
 
-/// <p>Represents summary information about the health of an instance. For more information,
-/// see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
+/// <p>Represents summary information about the health of an instance. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceHealthSummary {
-    /// <p>
-    /// <b>Grey.</b> AWS Elastic Beanstalk and the health agent are
-    /// reporting no data on an instance.</p>
+    /// <p> <b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting no data on an instance.</p>
     pub no_data: std::option::Option<i32>,
-    /// <p>
-    /// <b>Grey.</b> AWS Elastic Beanstalk and the health agent are
-    /// reporting an insufficient amount of data on an instance.</p>
+    /// <p> <b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting an insufficient amount of data on an instance.</p>
     pub unknown: std::option::Option<i32>,
-    /// <p>
-    /// <b>Grey.</b> An operation is in progress on an instance within the
-    /// command timeout.</p>
+    /// <p> <b>Grey.</b> An operation is in progress on an instance within the command timeout.</p>
     pub pending: std::option::Option<i32>,
-    /// <p>
-    /// <b>Green.</b> An instance is passing health checks and the health
-    /// agent is not reporting any problems.</p>
+    /// <p> <b>Green.</b> An instance is passing health checks and the health agent is not reporting any problems.</p>
     pub ok: std::option::Option<i32>,
-    /// <p>
-    /// <b>Green.</b> An operation is in progress on an instance.</p>
+    /// <p> <b>Green.</b> An operation is in progress on an instance.</p>
     pub info: std::option::Option<i32>,
-    /// <p>
-    /// <b>Yellow.</b> The health agent is reporting a moderate number of
-    /// request failures or other issues for an instance or environment.</p>
+    /// <p> <b>Yellow.</b> The health agent is reporting a moderate number of request failures or other issues for an instance or environment.</p>
     pub warning: std::option::Option<i32>,
-    /// <p>
-    /// <b>Red.</b> The health agent is reporting a high number of request
-    /// failures or other issues for an instance or environment.</p>
+    /// <p> <b>Red.</b> The health agent is reporting a high number of request failures or other issues for an instance or environment.</p>
     pub degraded: std::option::Option<i32>,
-    /// <p>
-    /// <b>Red.</b> The health agent is reporting a very high number of
-    /// request failures or other issues for an instance or environment.</p>
+    /// <p> <b>Red.</b> The health agent is reporting a very high number of request failures or other issues for an instance or environment.</p>
     pub severe: std::option::Option<i32>,
 }
 impl InstanceHealthSummary {
-    /// <p>
-    /// <b>Grey.</b> AWS Elastic Beanstalk and the health agent are
-    /// reporting no data on an instance.</p>
+    /// <p> <b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting no data on an instance.</p>
     pub fn no_data(&self) -> std::option::Option<i32> {
         self.no_data
     }
-    /// <p>
-    /// <b>Grey.</b> AWS Elastic Beanstalk and the health agent are
-    /// reporting an insufficient amount of data on an instance.</p>
+    /// <p> <b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting an insufficient amount of data on an instance.</p>
     pub fn unknown(&self) -> std::option::Option<i32> {
         self.unknown
     }
-    /// <p>
-    /// <b>Grey.</b> An operation is in progress on an instance within the
-    /// command timeout.</p>
+    /// <p> <b>Grey.</b> An operation is in progress on an instance within the command timeout.</p>
     pub fn pending(&self) -> std::option::Option<i32> {
         self.pending
     }
-    /// <p>
-    /// <b>Green.</b> An instance is passing health checks and the health
-    /// agent is not reporting any problems.</p>
+    /// <p> <b>Green.</b> An instance is passing health checks and the health agent is not reporting any problems.</p>
     pub fn ok(&self) -> std::option::Option<i32> {
         self.ok
     }
-    /// <p>
-    /// <b>Green.</b> An operation is in progress on an instance.</p>
+    /// <p> <b>Green.</b> An operation is in progress on an instance.</p>
     pub fn info(&self) -> std::option::Option<i32> {
         self.info
     }
-    /// <p>
-    /// <b>Yellow.</b> The health agent is reporting a moderate number of
-    /// request failures or other issues for an instance or environment.</p>
+    /// <p> <b>Yellow.</b> The health agent is reporting a moderate number of request failures or other issues for an instance or environment.</p>
     pub fn warning(&self) -> std::option::Option<i32> {
         self.warning
     }
-    /// <p>
-    /// <b>Red.</b> The health agent is reporting a high number of request
-    /// failures or other issues for an instance or environment.</p>
+    /// <p> <b>Red.</b> The health agent is reporting a high number of request failures or other issues for an instance or environment.</p>
     pub fn degraded(&self) -> std::option::Option<i32> {
         self.degraded
     }
-    /// <p>
-    /// <b>Red.</b> The health agent is reporting a very high number of
-    /// request failures or other issues for an instance or environment.</p>
+    /// <p> <b>Red.</b> The health agent is reporting a very high number of request failures or other issues for an instance or environment.</p>
     pub fn severe(&self) -> std::option::Option<i32> {
         self.severe
     }
@@ -8662,112 +7707,82 @@ pub mod instance_health_summary {
         pub(crate) severe: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>
-        /// <b>Grey.</b> AWS Elastic Beanstalk and the health agent are
-        /// reporting no data on an instance.</p>
+        /// <p> <b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting no data on an instance.</p>
         pub fn no_data(mut self, input: i32) -> Self {
             self.no_data = Some(input);
             self
         }
-        /// <p>
-        /// <b>Grey.</b> AWS Elastic Beanstalk and the health agent are
-        /// reporting no data on an instance.</p>
+        /// <p> <b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting no data on an instance.</p>
         pub fn set_no_data(mut self, input: std::option::Option<i32>) -> Self {
             self.no_data = input;
             self
         }
-        /// <p>
-        /// <b>Grey.</b> AWS Elastic Beanstalk and the health agent are
-        /// reporting an insufficient amount of data on an instance.</p>
+        /// <p> <b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting an insufficient amount of data on an instance.</p>
         pub fn unknown(mut self, input: i32) -> Self {
             self.unknown = Some(input);
             self
         }
-        /// <p>
-        /// <b>Grey.</b> AWS Elastic Beanstalk and the health agent are
-        /// reporting an insufficient amount of data on an instance.</p>
+        /// <p> <b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting an insufficient amount of data on an instance.</p>
         pub fn set_unknown(mut self, input: std::option::Option<i32>) -> Self {
             self.unknown = input;
             self
         }
-        /// <p>
-        /// <b>Grey.</b> An operation is in progress on an instance within the
-        /// command timeout.</p>
+        /// <p> <b>Grey.</b> An operation is in progress on an instance within the command timeout.</p>
         pub fn pending(mut self, input: i32) -> Self {
             self.pending = Some(input);
             self
         }
-        /// <p>
-        /// <b>Grey.</b> An operation is in progress on an instance within the
-        /// command timeout.</p>
+        /// <p> <b>Grey.</b> An operation is in progress on an instance within the command timeout.</p>
         pub fn set_pending(mut self, input: std::option::Option<i32>) -> Self {
             self.pending = input;
             self
         }
-        /// <p>
-        /// <b>Green.</b> An instance is passing health checks and the health
-        /// agent is not reporting any problems.</p>
+        /// <p> <b>Green.</b> An instance is passing health checks and the health agent is not reporting any problems.</p>
         pub fn ok(mut self, input: i32) -> Self {
             self.ok = Some(input);
             self
         }
-        /// <p>
-        /// <b>Green.</b> An instance is passing health checks and the health
-        /// agent is not reporting any problems.</p>
+        /// <p> <b>Green.</b> An instance is passing health checks and the health agent is not reporting any problems.</p>
         pub fn set_ok(mut self, input: std::option::Option<i32>) -> Self {
             self.ok = input;
             self
         }
-        /// <p>
-        /// <b>Green.</b> An operation is in progress on an instance.</p>
+        /// <p> <b>Green.</b> An operation is in progress on an instance.</p>
         pub fn info(mut self, input: i32) -> Self {
             self.info = Some(input);
             self
         }
-        /// <p>
-        /// <b>Green.</b> An operation is in progress on an instance.</p>
+        /// <p> <b>Green.</b> An operation is in progress on an instance.</p>
         pub fn set_info(mut self, input: std::option::Option<i32>) -> Self {
             self.info = input;
             self
         }
-        /// <p>
-        /// <b>Yellow.</b> The health agent is reporting a moderate number of
-        /// request failures or other issues for an instance or environment.</p>
+        /// <p> <b>Yellow.</b> The health agent is reporting a moderate number of request failures or other issues for an instance or environment.</p>
         pub fn warning(mut self, input: i32) -> Self {
             self.warning = Some(input);
             self
         }
-        /// <p>
-        /// <b>Yellow.</b> The health agent is reporting a moderate number of
-        /// request failures or other issues for an instance or environment.</p>
+        /// <p> <b>Yellow.</b> The health agent is reporting a moderate number of request failures or other issues for an instance or environment.</p>
         pub fn set_warning(mut self, input: std::option::Option<i32>) -> Self {
             self.warning = input;
             self
         }
-        /// <p>
-        /// <b>Red.</b> The health agent is reporting a high number of request
-        /// failures or other issues for an instance or environment.</p>
+        /// <p> <b>Red.</b> The health agent is reporting a high number of request failures or other issues for an instance or environment.</p>
         pub fn degraded(mut self, input: i32) -> Self {
             self.degraded = Some(input);
             self
         }
-        /// <p>
-        /// <b>Red.</b> The health agent is reporting a high number of request
-        /// failures or other issues for an instance or environment.</p>
+        /// <p> <b>Red.</b> The health agent is reporting a high number of request failures or other issues for an instance or environment.</p>
         pub fn set_degraded(mut self, input: std::option::Option<i32>) -> Self {
             self.degraded = input;
             self
         }
-        /// <p>
-        /// <b>Red.</b> The health agent is reporting a very high number of
-        /// request failures or other issues for an instance or environment.</p>
+        /// <p> <b>Red.</b> The health agent is reporting a very high number of request failures or other issues for an instance or environment.</p>
         pub fn severe(mut self, input: i32) -> Self {
             self.severe = Some(input);
             self
         }
-        /// <p>
-        /// <b>Red.</b> The health agent is reporting a very high number of
-        /// request failures or other issues for an instance or environment.</p>
+        /// <p> <b>Red.</b> The health agent is reporting a very high number of request failures or other issues for an instance or environment.</p>
         pub fn set_severe(mut self, input: std::option::Option<i32>) -> Self {
             self.severe = input;
             self
@@ -8892,46 +7907,25 @@ pub struct ConfigurationSettingsDescription {
     pub platform_arn: std::option::Option<std::string::String>,
     /// <p>The name of the application associated with this configuration set.</p>
     pub application_name: std::option::Option<std::string::String>,
-    /// <p> If not <code>null</code>, the name of the configuration template for this
-    /// configuration set. </p>
+    /// <p> If not <code>null</code>, the name of the configuration template for this configuration set. </p>
     pub template_name: std::option::Option<std::string::String>,
     /// <p>Describes this configuration set.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p> If not <code>null</code>, the name of the environment for this configuration set.
-    /// </p>
+    /// <p> If not <code>null</code>, the name of the environment for this configuration set. </p>
     pub environment_name: std::option::Option<std::string::String>,
-    /// <p> If this configuration set is associated with an environment, the
-    /// <code>DeploymentStatus</code> parameter indicates the deployment status of this
-    /// configuration set: </p>
+    /// <p> If this configuration set is associated with an environment, the <code>DeploymentStatus</code> parameter indicates the deployment status of this configuration set: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>null</code>: This configuration is not associated with a running
-    /// environment.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: This is a draft configuration that is not deployed to the associated
-    /// environment but is in the process of deploying.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deployed</code>: This is the configuration that is currently deployed to the
-    /// associated running environment.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>failed</code>: This is a draft configuration that failed to successfully
-    /// deploy.</p>
-    /// </li>
+    /// <li> <p> <code>null</code>: This configuration is not associated with a running environment.</p> </li>
+    /// <li> <p> <code>pending</code>: This is a draft configuration that is not deployed to the associated environment but is in the process of deploying.</p> </li>
+    /// <li> <p> <code>deployed</code>: This is the configuration that is currently deployed to the associated running environment.</p> </li>
+    /// <li> <p> <code>failed</code>: This is a draft configuration that failed to successfully deploy.</p> </li>
     /// </ul>
     pub deployment_status: std::option::Option<crate::model::ConfigurationDeploymentStatus>,
     /// <p>The date (in UTC time) when this configuration set was created.</p>
     pub date_created: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date (in UTC time) when this configuration set was last modified.</p>
     pub date_updated: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>A list of the configuration options and their values in this configuration
-    /// set.</p>
+    /// <p>A list of the configuration options and their values in this configuration set.</p>
     pub option_settings:
         std::option::Option<std::vec::Vec<crate::model::ConfigurationOptionSetting>>,
 }
@@ -8948,8 +7942,7 @@ impl ConfigurationSettingsDescription {
     pub fn application_name(&self) -> std::option::Option<&str> {
         self.application_name.as_deref()
     }
-    /// <p> If not <code>null</code>, the name of the configuration template for this
-    /// configuration set. </p>
+    /// <p> If not <code>null</code>, the name of the configuration template for this configuration set. </p>
     pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
     }
@@ -8957,35 +7950,16 @@ impl ConfigurationSettingsDescription {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p> If not <code>null</code>, the name of the environment for this configuration set.
-    /// </p>
+    /// <p> If not <code>null</code>, the name of the environment for this configuration set. </p>
     pub fn environment_name(&self) -> std::option::Option<&str> {
         self.environment_name.as_deref()
     }
-    /// <p> If this configuration set is associated with an environment, the
-    /// <code>DeploymentStatus</code> parameter indicates the deployment status of this
-    /// configuration set: </p>
+    /// <p> If this configuration set is associated with an environment, the <code>DeploymentStatus</code> parameter indicates the deployment status of this configuration set: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>null</code>: This configuration is not associated with a running
-    /// environment.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: This is a draft configuration that is not deployed to the associated
-    /// environment but is in the process of deploying.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deployed</code>: This is the configuration that is currently deployed to the
-    /// associated running environment.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>failed</code>: This is a draft configuration that failed to successfully
-    /// deploy.</p>
-    /// </li>
+    /// <li> <p> <code>null</code>: This configuration is not associated with a running environment.</p> </li>
+    /// <li> <p> <code>pending</code>: This is a draft configuration that is not deployed to the associated environment but is in the process of deploying.</p> </li>
+    /// <li> <p> <code>deployed</code>: This is the configuration that is currently deployed to the associated running environment.</p> </li>
+    /// <li> <p> <code>failed</code>: This is a draft configuration that failed to successfully deploy.</p> </li>
     /// </ul>
     pub fn deployment_status(
         &self,
@@ -9000,8 +7974,7 @@ impl ConfigurationSettingsDescription {
     pub fn date_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.date_updated.as_ref()
     }
-    /// <p>A list of the configuration options and their values in this configuration
-    /// set.</p>
+    /// <p>A list of the configuration options and their values in this configuration set.</p>
     pub fn option_settings(
         &self,
     ) -> std::option::Option<&[crate::model::ConfigurationOptionSetting]> {
@@ -9080,14 +8053,12 @@ pub mod configuration_settings_description {
             self.application_name = input;
             self
         }
-        /// <p> If not <code>null</code>, the name of the configuration template for this
-        /// configuration set. </p>
+        /// <p> If not <code>null</code>, the name of the configuration template for this configuration set. </p>
         pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_name = Some(input.into());
             self
         }
-        /// <p> If not <code>null</code>, the name of the configuration template for this
-        /// configuration set. </p>
+        /// <p> If not <code>null</code>, the name of the configuration template for this configuration set. </p>
         pub fn set_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9105,14 +8076,12 @@ pub mod configuration_settings_description {
             self.description = input;
             self
         }
-        /// <p> If not <code>null</code>, the name of the environment for this configuration set.
-        /// </p>
+        /// <p> If not <code>null</code>, the name of the environment for this configuration set. </p>
         pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.environment_name = Some(input.into());
             self
         }
-        /// <p> If not <code>null</code>, the name of the environment for this configuration set.
-        /// </p>
+        /// <p> If not <code>null</code>, the name of the environment for this configuration set. </p>
         pub fn set_environment_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9120,30 +8089,12 @@ pub mod configuration_settings_description {
             self.environment_name = input;
             self
         }
-        /// <p> If this configuration set is associated with an environment, the
-        /// <code>DeploymentStatus</code> parameter indicates the deployment status of this
-        /// configuration set: </p>
+        /// <p> If this configuration set is associated with an environment, the <code>DeploymentStatus</code> parameter indicates the deployment status of this configuration set: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>null</code>: This configuration is not associated with a running
-        /// environment.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: This is a draft configuration that is not deployed to the associated
-        /// environment but is in the process of deploying.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deployed</code>: This is the configuration that is currently deployed to the
-        /// associated running environment.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>failed</code>: This is a draft configuration that failed to successfully
-        /// deploy.</p>
-        /// </li>
+        /// <li> <p> <code>null</code>: This configuration is not associated with a running environment.</p> </li>
+        /// <li> <p> <code>pending</code>: This is a draft configuration that is not deployed to the associated environment but is in the process of deploying.</p> </li>
+        /// <li> <p> <code>deployed</code>: This is the configuration that is currently deployed to the associated running environment.</p> </li>
+        /// <li> <p> <code>failed</code>: This is a draft configuration that failed to successfully deploy.</p> </li>
         /// </ul>
         pub fn deployment_status(
             mut self,
@@ -9152,30 +8103,12 @@ pub mod configuration_settings_description {
             self.deployment_status = Some(input);
             self
         }
-        /// <p> If this configuration set is associated with an environment, the
-        /// <code>DeploymentStatus</code> parameter indicates the deployment status of this
-        /// configuration set: </p>
+        /// <p> If this configuration set is associated with an environment, the <code>DeploymentStatus</code> parameter indicates the deployment status of this configuration set: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>null</code>: This configuration is not associated with a running
-        /// environment.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: This is a draft configuration that is not deployed to the associated
-        /// environment but is in the process of deploying.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deployed</code>: This is the configuration that is currently deployed to the
-        /// associated running environment.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>failed</code>: This is a draft configuration that failed to successfully
-        /// deploy.</p>
-        /// </li>
+        /// <li> <p> <code>null</code>: This configuration is not associated with a running environment.</p> </li>
+        /// <li> <p> <code>pending</code>: This is a draft configuration that is not deployed to the associated environment but is in the process of deploying.</p> </li>
+        /// <li> <p> <code>deployed</code>: This is the configuration that is currently deployed to the associated running environment.</p> </li>
+        /// <li> <p> <code>failed</code>: This is a draft configuration that failed to successfully deploy.</p> </li>
         /// </ul>
         pub fn set_deployment_status(
             mut self,
@@ -9214,16 +8147,14 @@ pub mod configuration_settings_description {
         ///
         /// To override the contents of this collection use [`set_option_settings`](Self::set_option_settings).
         ///
-        /// <p>A list of the configuration options and their values in this configuration
-        /// set.</p>
+        /// <p>A list of the configuration options and their values in this configuration set.</p>
         pub fn option_settings(mut self, input: crate::model::ConfigurationOptionSetting) -> Self {
             let mut v = self.option_settings.unwrap_or_default();
             v.push(input);
             self.option_settings = Some(v);
             self
         }
-        /// <p>A list of the configuration options and their values in this configuration
-        /// set.</p>
+        /// <p>A list of the configuration options and their values in this configuration set.</p>
         pub fn set_option_settings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ConfigurationOptionSetting>>,
@@ -9265,85 +8196,38 @@ pub struct ConfigurationOptionDescription {
     pub name: std::option::Option<std::string::String>,
     /// <p>The default value for this configuration option.</p>
     pub default_value: std::option::Option<std::string::String>,
-    /// <p>An indication of which action is required if the value for this configuration option
-    /// changes:</p>
+    /// <p>An indication of which action is required if the value for this configuration option changes:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>NoInterruption</code> : There is no interruption to the environment or application
-    /// availability.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RestartEnvironment</code> : The environment is entirely restarted, all AWS resources
-    /// are deleted and recreated, and the environment is unavailable during the
-    /// process.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RestartApplicationServer</code> : The environment is available the entire time.
-    /// However, a short application outage occurs when the application servers on the running
-    /// Amazon EC2 instances are restarted.</p>
-    /// </li>
+    /// <li> <p> <code>NoInterruption</code> : There is no interruption to the environment or application availability.</p> </li>
+    /// <li> <p> <code>RestartEnvironment</code> : The environment is entirely restarted, all AWS resources are deleted and recreated, and the environment is unavailable during the process.</p> </li>
+    /// <li> <p> <code>RestartApplicationServer</code> : The environment is available the entire time. However, a short application outage occurs when the application servers on the running Amazon EC2 instances are restarted.</p> </li>
     /// </ul>
     pub change_severity: std::option::Option<std::string::String>,
     /// <p>An indication of whether the user defined this configuration option:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>true</code> : This configuration option was defined by the user. It is a valid
-    /// choice for specifying if this as an <code>Option to Remove</code> when updating
-    /// configuration settings. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>false</code> : This configuration was not defined by the user.</p>
-    /// </li>
+    /// <li> <p> <code>true</code> : This configuration option was defined by the user. It is a valid choice for specifying if this as an <code>Option to Remove</code> when updating configuration settings. </p> </li>
+    /// <li> <p> <code>false</code> : This configuration was not defined by the user.</p> </li>
     /// </ul>
     /// <p> Constraint: You can remove only <code>UserDefined</code> options from a configuration. </p>
-    /// <p> Valid Values: <code>true</code> | <code>false</code>
-    /// </p>
+    /// <p> Valid Values: <code>true</code> | <code>false</code> </p>
     pub user_defined: std::option::Option<bool>,
-    /// <p>An indication of which type of values this option has and whether it is allowable to
-    /// select one or more than one of the possible values:</p>
+    /// <p>An indication of which type of values this option has and whether it is allowable to select one or more than one of the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Scalar</code> : Values for this option are a single selection from the possible
-    /// values, or an unformatted string, or numeric value governed by the
-    /// <code>MIN/MAX/Regex</code> constraints.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>List</code> : Values for this option are multiple selections from the possible
-    /// values.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Boolean</code> : Values for this option are either <code>true</code> or
-    /// <code>false</code> .</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Json</code> : Values for this option are a JSON representation of a
-    /// <code>ConfigDocument</code>.</p>
-    /// </li>
+    /// <li> <p> <code>Scalar</code> : Values for this option are a single selection from the possible values, or an unformatted string, or numeric value governed by the <code>MIN/MAX/Regex</code> constraints.</p> </li>
+    /// <li> <p> <code>List</code> : Values for this option are multiple selections from the possible values.</p> </li>
+    /// <li> <p> <code>Boolean</code> : Values for this option are either <code>true</code> or <code>false</code> .</p> </li>
+    /// <li> <p> <code>Json</code> : Values for this option are a JSON representation of a <code>ConfigDocument</code>.</p> </li>
     /// </ul>
     pub value_type: std::option::Option<crate::model::ConfigurationOptionValueType>,
-    /// <p>If specified, values for the configuration option are selected from this
-    /// list.</p>
+    /// <p>If specified, values for the configuration option are selected from this list.</p>
     pub value_options: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>If specified, the configuration option must be a numeric value greater than this
-    /// value.</p>
+    /// <p>If specified, the configuration option must be a numeric value greater than this value.</p>
     pub min_value: std::option::Option<i32>,
-    /// <p>If specified, the configuration option must be a numeric value less than this
-    /// value.</p>
+    /// <p>If specified, the configuration option must be a numeric value less than this value.</p>
     pub max_value: std::option::Option<i32>,
-    /// <p>If specified, the configuration option must be a string value no longer than this
-    /// value.</p>
+    /// <p>If specified, the configuration option must be a string value no longer than this value.</p>
     pub max_length: std::option::Option<i32>,
-    /// <p>If specified, the configuration option must be a string value that satisfies this
-    /// regular expression.</p>
+    /// <p>If specified, the configuration option must be a string value that satisfies this regular expression.</p>
     pub regex: std::option::Option<crate::model::OptionRestrictionRegex>,
 }
 impl ConfigurationOptionDescription {
@@ -9359,99 +8243,52 @@ impl ConfigurationOptionDescription {
     pub fn default_value(&self) -> std::option::Option<&str> {
         self.default_value.as_deref()
     }
-    /// <p>An indication of which action is required if the value for this configuration option
-    /// changes:</p>
+    /// <p>An indication of which action is required if the value for this configuration option changes:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>NoInterruption</code> : There is no interruption to the environment or application
-    /// availability.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RestartEnvironment</code> : The environment is entirely restarted, all AWS resources
-    /// are deleted and recreated, and the environment is unavailable during the
-    /// process.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RestartApplicationServer</code> : The environment is available the entire time.
-    /// However, a short application outage occurs when the application servers on the running
-    /// Amazon EC2 instances are restarted.</p>
-    /// </li>
+    /// <li> <p> <code>NoInterruption</code> : There is no interruption to the environment or application availability.</p> </li>
+    /// <li> <p> <code>RestartEnvironment</code> : The environment is entirely restarted, all AWS resources are deleted and recreated, and the environment is unavailable during the process.</p> </li>
+    /// <li> <p> <code>RestartApplicationServer</code> : The environment is available the entire time. However, a short application outage occurs when the application servers on the running Amazon EC2 instances are restarted.</p> </li>
     /// </ul>
     pub fn change_severity(&self) -> std::option::Option<&str> {
         self.change_severity.as_deref()
     }
     /// <p>An indication of whether the user defined this configuration option:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>true</code> : This configuration option was defined by the user. It is a valid
-    /// choice for specifying if this as an <code>Option to Remove</code> when updating
-    /// configuration settings. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>false</code> : This configuration was not defined by the user.</p>
-    /// </li>
+    /// <li> <p> <code>true</code> : This configuration option was defined by the user. It is a valid choice for specifying if this as an <code>Option to Remove</code> when updating configuration settings. </p> </li>
+    /// <li> <p> <code>false</code> : This configuration was not defined by the user.</p> </li>
     /// </ul>
     /// <p> Constraint: You can remove only <code>UserDefined</code> options from a configuration. </p>
-    /// <p> Valid Values: <code>true</code> | <code>false</code>
-    /// </p>
+    /// <p> Valid Values: <code>true</code> | <code>false</code> </p>
     pub fn user_defined(&self) -> std::option::Option<bool> {
         self.user_defined
     }
-    /// <p>An indication of which type of values this option has and whether it is allowable to
-    /// select one or more than one of the possible values:</p>
+    /// <p>An indication of which type of values this option has and whether it is allowable to select one or more than one of the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Scalar</code> : Values for this option are a single selection from the possible
-    /// values, or an unformatted string, or numeric value governed by the
-    /// <code>MIN/MAX/Regex</code> constraints.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>List</code> : Values for this option are multiple selections from the possible
-    /// values.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Boolean</code> : Values for this option are either <code>true</code> or
-    /// <code>false</code> .</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Json</code> : Values for this option are a JSON representation of a
-    /// <code>ConfigDocument</code>.</p>
-    /// </li>
+    /// <li> <p> <code>Scalar</code> : Values for this option are a single selection from the possible values, or an unformatted string, or numeric value governed by the <code>MIN/MAX/Regex</code> constraints.</p> </li>
+    /// <li> <p> <code>List</code> : Values for this option are multiple selections from the possible values.</p> </li>
+    /// <li> <p> <code>Boolean</code> : Values for this option are either <code>true</code> or <code>false</code> .</p> </li>
+    /// <li> <p> <code>Json</code> : Values for this option are a JSON representation of a <code>ConfigDocument</code>.</p> </li>
     /// </ul>
     pub fn value_type(&self) -> std::option::Option<&crate::model::ConfigurationOptionValueType> {
         self.value_type.as_ref()
     }
-    /// <p>If specified, values for the configuration option are selected from this
-    /// list.</p>
+    /// <p>If specified, values for the configuration option are selected from this list.</p>
     pub fn value_options(&self) -> std::option::Option<&[std::string::String]> {
         self.value_options.as_deref()
     }
-    /// <p>If specified, the configuration option must be a numeric value greater than this
-    /// value.</p>
+    /// <p>If specified, the configuration option must be a numeric value greater than this value.</p>
     pub fn min_value(&self) -> std::option::Option<i32> {
         self.min_value
     }
-    /// <p>If specified, the configuration option must be a numeric value less than this
-    /// value.</p>
+    /// <p>If specified, the configuration option must be a numeric value less than this value.</p>
     pub fn max_value(&self) -> std::option::Option<i32> {
         self.max_value
     }
-    /// <p>If specified, the configuration option must be a string value no longer than this
-    /// value.</p>
+    /// <p>If specified, the configuration option must be a string value no longer than this value.</p>
     pub fn max_length(&self) -> std::option::Option<i32> {
         self.max_length
     }
-    /// <p>If specified, the configuration option must be a string value that satisfies this
-    /// regular expression.</p>
+    /// <p>If specified, the configuration option must be a string value that satisfies this regular expression.</p>
     pub fn regex(&self) -> std::option::Option<&crate::model::OptionRestrictionRegex> {
         self.regex.as_ref()
     }
@@ -9525,51 +8362,21 @@ pub mod configuration_option_description {
             self.default_value = input;
             self
         }
-        /// <p>An indication of which action is required if the value for this configuration option
-        /// changes:</p>
+        /// <p>An indication of which action is required if the value for this configuration option changes:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>NoInterruption</code> : There is no interruption to the environment or application
-        /// availability.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RestartEnvironment</code> : The environment is entirely restarted, all AWS resources
-        /// are deleted and recreated, and the environment is unavailable during the
-        /// process.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RestartApplicationServer</code> : The environment is available the entire time.
-        /// However, a short application outage occurs when the application servers on the running
-        /// Amazon EC2 instances are restarted.</p>
-        /// </li>
+        /// <li> <p> <code>NoInterruption</code> : There is no interruption to the environment or application availability.</p> </li>
+        /// <li> <p> <code>RestartEnvironment</code> : The environment is entirely restarted, all AWS resources are deleted and recreated, and the environment is unavailable during the process.</p> </li>
+        /// <li> <p> <code>RestartApplicationServer</code> : The environment is available the entire time. However, a short application outage occurs when the application servers on the running Amazon EC2 instances are restarted.</p> </li>
         /// </ul>
         pub fn change_severity(mut self, input: impl Into<std::string::String>) -> Self {
             self.change_severity = Some(input.into());
             self
         }
-        /// <p>An indication of which action is required if the value for this configuration option
-        /// changes:</p>
+        /// <p>An indication of which action is required if the value for this configuration option changes:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>NoInterruption</code> : There is no interruption to the environment or application
-        /// availability.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RestartEnvironment</code> : The environment is entirely restarted, all AWS resources
-        /// are deleted and recreated, and the environment is unavailable during the
-        /// process.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RestartApplicationServer</code> : The environment is available the entire time.
-        /// However, a short application outage occurs when the application servers on the running
-        /// Amazon EC2 instances are restarted.</p>
-        /// </li>
+        /// <li> <p> <code>NoInterruption</code> : There is no interruption to the environment or application availability.</p> </li>
+        /// <li> <p> <code>RestartEnvironment</code> : The environment is entirely restarted, all AWS resources are deleted and recreated, and the environment is unavailable during the process.</p> </li>
+        /// <li> <p> <code>RestartApplicationServer</code> : The environment is available the entire time. However, a short application outage occurs when the application servers on the running Amazon EC2 instances are restarted.</p> </li>
         /// </ul>
         pub fn set_change_severity(
             mut self,
@@ -9580,97 +8387,43 @@ pub mod configuration_option_description {
         }
         /// <p>An indication of whether the user defined this configuration option:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>true</code> : This configuration option was defined by the user. It is a valid
-        /// choice for specifying if this as an <code>Option to Remove</code> when updating
-        /// configuration settings. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>false</code> : This configuration was not defined by the user.</p>
-        /// </li>
+        /// <li> <p> <code>true</code> : This configuration option was defined by the user. It is a valid choice for specifying if this as an <code>Option to Remove</code> when updating configuration settings. </p> </li>
+        /// <li> <p> <code>false</code> : This configuration was not defined by the user.</p> </li>
         /// </ul>
         /// <p> Constraint: You can remove only <code>UserDefined</code> options from a configuration. </p>
-        /// <p> Valid Values: <code>true</code> | <code>false</code>
-        /// </p>
+        /// <p> Valid Values: <code>true</code> | <code>false</code> </p>
         pub fn user_defined(mut self, input: bool) -> Self {
             self.user_defined = Some(input);
             self
         }
         /// <p>An indication of whether the user defined this configuration option:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>true</code> : This configuration option was defined by the user. It is a valid
-        /// choice for specifying if this as an <code>Option to Remove</code> when updating
-        /// configuration settings. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>false</code> : This configuration was not defined by the user.</p>
-        /// </li>
+        /// <li> <p> <code>true</code> : This configuration option was defined by the user. It is a valid choice for specifying if this as an <code>Option to Remove</code> when updating configuration settings. </p> </li>
+        /// <li> <p> <code>false</code> : This configuration was not defined by the user.</p> </li>
         /// </ul>
         /// <p> Constraint: You can remove only <code>UserDefined</code> options from a configuration. </p>
-        /// <p> Valid Values: <code>true</code> | <code>false</code>
-        /// </p>
+        /// <p> Valid Values: <code>true</code> | <code>false</code> </p>
         pub fn set_user_defined(mut self, input: std::option::Option<bool>) -> Self {
             self.user_defined = input;
             self
         }
-        /// <p>An indication of which type of values this option has and whether it is allowable to
-        /// select one or more than one of the possible values:</p>
+        /// <p>An indication of which type of values this option has and whether it is allowable to select one or more than one of the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Scalar</code> : Values for this option are a single selection from the possible
-        /// values, or an unformatted string, or numeric value governed by the
-        /// <code>MIN/MAX/Regex</code> constraints.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>List</code> : Values for this option are multiple selections from the possible
-        /// values.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Boolean</code> : Values for this option are either <code>true</code> or
-        /// <code>false</code> .</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Json</code> : Values for this option are a JSON representation of a
-        /// <code>ConfigDocument</code>.</p>
-        /// </li>
+        /// <li> <p> <code>Scalar</code> : Values for this option are a single selection from the possible values, or an unformatted string, or numeric value governed by the <code>MIN/MAX/Regex</code> constraints.</p> </li>
+        /// <li> <p> <code>List</code> : Values for this option are multiple selections from the possible values.</p> </li>
+        /// <li> <p> <code>Boolean</code> : Values for this option are either <code>true</code> or <code>false</code> .</p> </li>
+        /// <li> <p> <code>Json</code> : Values for this option are a JSON representation of a <code>ConfigDocument</code>.</p> </li>
         /// </ul>
         pub fn value_type(mut self, input: crate::model::ConfigurationOptionValueType) -> Self {
             self.value_type = Some(input);
             self
         }
-        /// <p>An indication of which type of values this option has and whether it is allowable to
-        /// select one or more than one of the possible values:</p>
+        /// <p>An indication of which type of values this option has and whether it is allowable to select one or more than one of the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Scalar</code> : Values for this option are a single selection from the possible
-        /// values, or an unformatted string, or numeric value governed by the
-        /// <code>MIN/MAX/Regex</code> constraints.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>List</code> : Values for this option are multiple selections from the possible
-        /// values.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Boolean</code> : Values for this option are either <code>true</code> or
-        /// <code>false</code> .</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Json</code> : Values for this option are a JSON representation of a
-        /// <code>ConfigDocument</code>.</p>
-        /// </li>
+        /// <li> <p> <code>Scalar</code> : Values for this option are a single selection from the possible values, or an unformatted string, or numeric value governed by the <code>MIN/MAX/Regex</code> constraints.</p> </li>
+        /// <li> <p> <code>List</code> : Values for this option are multiple selections from the possible values.</p> </li>
+        /// <li> <p> <code>Boolean</code> : Values for this option are either <code>true</code> or <code>false</code> .</p> </li>
+        /// <li> <p> <code>Json</code> : Values for this option are a JSON representation of a <code>ConfigDocument</code>.</p> </li>
         /// </ul>
         pub fn set_value_type(
             mut self,
@@ -9683,16 +8436,14 @@ pub mod configuration_option_description {
         ///
         /// To override the contents of this collection use [`set_value_options`](Self::set_value_options).
         ///
-        /// <p>If specified, values for the configuration option are selected from this
-        /// list.</p>
+        /// <p>If specified, values for the configuration option are selected from this list.</p>
         pub fn value_options(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.value_options.unwrap_or_default();
             v.push(input.into());
             self.value_options = Some(v);
             self
         }
-        /// <p>If specified, values for the configuration option are selected from this
-        /// list.</p>
+        /// <p>If specified, values for the configuration option are selected from this list.</p>
         pub fn set_value_options(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9700,50 +8451,42 @@ pub mod configuration_option_description {
             self.value_options = input;
             self
         }
-        /// <p>If specified, the configuration option must be a numeric value greater than this
-        /// value.</p>
+        /// <p>If specified, the configuration option must be a numeric value greater than this value.</p>
         pub fn min_value(mut self, input: i32) -> Self {
             self.min_value = Some(input);
             self
         }
-        /// <p>If specified, the configuration option must be a numeric value greater than this
-        /// value.</p>
+        /// <p>If specified, the configuration option must be a numeric value greater than this value.</p>
         pub fn set_min_value(mut self, input: std::option::Option<i32>) -> Self {
             self.min_value = input;
             self
         }
-        /// <p>If specified, the configuration option must be a numeric value less than this
-        /// value.</p>
+        /// <p>If specified, the configuration option must be a numeric value less than this value.</p>
         pub fn max_value(mut self, input: i32) -> Self {
             self.max_value = Some(input);
             self
         }
-        /// <p>If specified, the configuration option must be a numeric value less than this
-        /// value.</p>
+        /// <p>If specified, the configuration option must be a numeric value less than this value.</p>
         pub fn set_max_value(mut self, input: std::option::Option<i32>) -> Self {
             self.max_value = input;
             self
         }
-        /// <p>If specified, the configuration option must be a string value no longer than this
-        /// value.</p>
+        /// <p>If specified, the configuration option must be a string value no longer than this value.</p>
         pub fn max_length(mut self, input: i32) -> Self {
             self.max_length = Some(input);
             self
         }
-        /// <p>If specified, the configuration option must be a string value no longer than this
-        /// value.</p>
+        /// <p>If specified, the configuration option must be a string value no longer than this value.</p>
         pub fn set_max_length(mut self, input: std::option::Option<i32>) -> Self {
             self.max_length = input;
             self
         }
-        /// <p>If specified, the configuration option must be a string value that satisfies this
-        /// regular expression.</p>
+        /// <p>If specified, the configuration option must be a string value that satisfies this regular expression.</p>
         pub fn regex(mut self, input: crate::model::OptionRestrictionRegex) -> Self {
             self.regex = Some(input);
             self
         }
-        /// <p>If specified, the configuration option must be a string value that satisfies this
-        /// regular expression.</p>
+        /// <p>If specified, the configuration option must be a string value that satisfies this regular expression.</p>
         pub fn set_regex(
             mut self,
             input: std::option::Option<crate::model::OptionRestrictionRegex>,
@@ -9776,20 +8519,17 @@ impl ConfigurationOptionDescription {
     }
 }
 
-/// <p>A regular expression representing a restriction on a string configuration option
-/// value.</p>
+/// <p>A regular expression representing a restriction on a string configuration option value.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OptionRestrictionRegex {
-    /// <p>The regular expression pattern that a string configuration option value with this
-    /// restriction must match.</p>
+    /// <p>The regular expression pattern that a string configuration option value with this restriction must match.</p>
     pub pattern: std::option::Option<std::string::String>,
     /// <p>A unique name representing this regular expression.</p>
     pub label: std::option::Option<std::string::String>,
 }
 impl OptionRestrictionRegex {
-    /// <p>The regular expression pattern that a string configuration option value with this
-    /// restriction must match.</p>
+    /// <p>The regular expression pattern that a string configuration option value with this restriction must match.</p>
     pub fn pattern(&self) -> std::option::Option<&str> {
         self.pattern.as_deref()
     }
@@ -9816,14 +8556,12 @@ pub mod option_restriction_regex {
         pub(crate) label: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The regular expression pattern that a string configuration option value with this
-        /// restriction must match.</p>
+        /// <p>The regular expression pattern that a string configuration option value with this restriction must match.</p>
         pub fn pattern(mut self, input: impl Into<std::string::String>) -> Self {
             self.pattern = Some(input.into());
             self
         }
-        /// <p>The regular expression pattern that a string configuration option value with this
-        /// restriction must match.</p>
+        /// <p>The regular expression pattern that a string configuration option value with this restriction must match.</p>
         pub fn set_pattern(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.pattern = input;
             self
@@ -9909,8 +8647,7 @@ impl AsRef<str> for ConfigurationOptionValueType {
     }
 }
 
-/// <p>A set of per-resource AWS Elastic Beanstalk quotas associated with an AWS account. They reflect
-/// Elastic Beanstalk resource limits for this account.</p>
+/// <p>A set of per-resource AWS Elastic Beanstalk quotas associated with an AWS account. They reflect Elastic Beanstalk resource limits for this account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceQuotas {
@@ -10060,18 +8797,15 @@ impl ResourceQuotas {
     }
 }
 
-/// <p>The AWS Elastic Beanstalk quota information for a single resource type in an AWS account. It
-/// reflects the resource's limits for this account.</p>
+/// <p>The AWS Elastic Beanstalk quota information for a single resource type in an AWS account. It reflects the resource's limits for this account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceQuota {
-    /// <p>The maximum number of instances of this Elastic Beanstalk resource type that an AWS account can
-    /// use.</p>
+    /// <p>The maximum number of instances of this Elastic Beanstalk resource type that an AWS account can use.</p>
     pub maximum: std::option::Option<i32>,
 }
 impl ResourceQuota {
-    /// <p>The maximum number of instances of this Elastic Beanstalk resource type that an AWS account can
-    /// use.</p>
+    /// <p>The maximum number of instances of this Elastic Beanstalk resource type that an AWS account can use.</p>
     pub fn maximum(&self) -> std::option::Option<i32> {
         self.maximum
     }
@@ -10092,14 +8826,12 @@ pub mod resource_quota {
         pub(crate) maximum: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The maximum number of instances of this Elastic Beanstalk resource type that an AWS account can
-        /// use.</p>
+        /// <p>The maximum number of instances of this Elastic Beanstalk resource type that an AWS account can use.</p>
         pub fn maximum(mut self, input: i32) -> Self {
             self.maximum = Some(input);
             self
         }
-        /// <p>The maximum number of instances of this Elastic Beanstalk resource type that an AWS account can
-        /// use.</p>
+        /// <p>The maximum number of instances of this Elastic Beanstalk resource type that an AWS account can use.</p>
         pub fn set_maximum(mut self, input: std::option::Option<i32>) -> Self {
             self.maximum = input;
             self
@@ -10254,32 +8986,15 @@ impl SourceConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BuildConfiguration {
-    /// <p>The name of the artifact of the CodeBuild build.
-    /// If provided, Elastic Beanstalk stores the build artifact in the S3 location
-    /// <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>-<i>artifact-name</i>.zip.
-    /// If not provided, Elastic Beanstalk stores the build artifact in the S3 location
-    /// <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>.zip.
-    /// </p>
+    /// <p>The name of the artifact of the CodeBuild build. If provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>-<i>artifact-name</i>.zip. If not provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>.zip. </p>
     pub artifact_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to interact with dependent AWS services on behalf of the AWS account.</p>
     pub code_build_service_role: std::option::Option<std::string::String>,
     /// <p>Information about the compute resources the build project will use.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>BUILD_GENERAL1_SMALL: Use up to 3 GB memory and 2 vCPUs for builds</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>BUILD_GENERAL1_MEDIUM: Use up to 7 GB memory and 4 vCPUs for builds</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>BUILD_GENERAL1_LARGE: Use up to 15 GB memory and 8 vCPUs for builds</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>BUILD_GENERAL1_SMALL: Use up to 3 GB memory and 2 vCPUs for builds</code> </p> </li>
+    /// <li> <p> <code>BUILD_GENERAL1_MEDIUM: Use up to 7 GB memory and 4 vCPUs for builds</code> </p> </li>
+    /// <li> <p> <code>BUILD_GENERAL1_LARGE: Use up to 15 GB memory and 8 vCPUs for builds</code> </p> </li>
     /// </ul>
     pub compute_type: std::option::Option<crate::model::ComputeType>,
     /// <p>The ID of the Docker image to use for this build project.</p>
@@ -10288,12 +9003,7 @@ pub struct BuildConfiguration {
     pub timeout_in_minutes: std::option::Option<i32>,
 }
 impl BuildConfiguration {
-    /// <p>The name of the artifact of the CodeBuild build.
-    /// If provided, Elastic Beanstalk stores the build artifact in the S3 location
-    /// <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>-<i>artifact-name</i>.zip.
-    /// If not provided, Elastic Beanstalk stores the build artifact in the S3 location
-    /// <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>.zip.
-    /// </p>
+    /// <p>The name of the artifact of the CodeBuild build. If provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>-<i>artifact-name</i>.zip. If not provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>.zip. </p>
     pub fn artifact_name(&self) -> std::option::Option<&str> {
         self.artifact_name.as_deref()
     }
@@ -10303,21 +9013,9 @@ impl BuildConfiguration {
     }
     /// <p>Information about the compute resources the build project will use.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>BUILD_GENERAL1_SMALL: Use up to 3 GB memory and 2 vCPUs for builds</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>BUILD_GENERAL1_MEDIUM: Use up to 7 GB memory and 4 vCPUs for builds</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>BUILD_GENERAL1_LARGE: Use up to 15 GB memory and 8 vCPUs for builds</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>BUILD_GENERAL1_SMALL: Use up to 3 GB memory and 2 vCPUs for builds</code> </p> </li>
+    /// <li> <p> <code>BUILD_GENERAL1_MEDIUM: Use up to 7 GB memory and 4 vCPUs for builds</code> </p> </li>
+    /// <li> <p> <code>BUILD_GENERAL1_LARGE: Use up to 15 GB memory and 8 vCPUs for builds</code> </p> </li>
     /// </ul>
     pub fn compute_type(&self) -> std::option::Option<&crate::model::ComputeType> {
         self.compute_type.as_ref()
@@ -10355,22 +9053,12 @@ pub mod build_configuration {
         pub(crate) timeout_in_minutes: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The name of the artifact of the CodeBuild build.
-        /// If provided, Elastic Beanstalk stores the build artifact in the S3 location
-        /// <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>-<i>artifact-name</i>.zip.
-        /// If not provided, Elastic Beanstalk stores the build artifact in the S3 location
-        /// <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>.zip.
-        /// </p>
+        /// <p>The name of the artifact of the CodeBuild build. If provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>-<i>artifact-name</i>.zip. If not provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>.zip. </p>
         pub fn artifact_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.artifact_name = Some(input.into());
             self
         }
-        /// <p>The name of the artifact of the CodeBuild build.
-        /// If provided, Elastic Beanstalk stores the build artifact in the S3 location
-        /// <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>-<i>artifact-name</i>.zip.
-        /// If not provided, Elastic Beanstalk stores the build artifact in the S3 location
-        /// <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>.zip.
-        /// </p>
+        /// <p>The name of the artifact of the CodeBuild build. If provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>-<i>artifact-name</i>.zip. If not provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>.zip. </p>
         pub fn set_artifact_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10393,21 +9081,9 @@ pub mod build_configuration {
         }
         /// <p>Information about the compute resources the build project will use.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>BUILD_GENERAL1_SMALL: Use up to 3 GB memory and 2 vCPUs for builds</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>BUILD_GENERAL1_MEDIUM: Use up to 7 GB memory and 4 vCPUs for builds</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>BUILD_GENERAL1_LARGE: Use up to 15 GB memory and 8 vCPUs for builds</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>BUILD_GENERAL1_SMALL: Use up to 3 GB memory and 2 vCPUs for builds</code> </p> </li>
+        /// <li> <p> <code>BUILD_GENERAL1_MEDIUM: Use up to 7 GB memory and 4 vCPUs for builds</code> </p> </li>
+        /// <li> <p> <code>BUILD_GENERAL1_LARGE: Use up to 15 GB memory and 8 vCPUs for builds</code> </p> </li>
         /// </ul>
         pub fn compute_type(mut self, input: crate::model::ComputeType) -> Self {
             self.compute_type = Some(input);
@@ -10415,21 +9091,9 @@ pub mod build_configuration {
         }
         /// <p>Information about the compute resources the build project will use.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>BUILD_GENERAL1_SMALL: Use up to 3 GB memory and 2 vCPUs for builds</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>BUILD_GENERAL1_MEDIUM: Use up to 7 GB memory and 4 vCPUs for builds</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>BUILD_GENERAL1_LARGE: Use up to 15 GB memory and 8 vCPUs for builds</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>BUILD_GENERAL1_SMALL: Use up to 3 GB memory and 2 vCPUs for builds</code> </p> </li>
+        /// <li> <p> <code>BUILD_GENERAL1_MEDIUM: Use up to 7 GB memory and 4 vCPUs for builds</code> </p> </li>
+        /// <li> <p> <code>BUILD_GENERAL1_LARGE: Use up to 15 GB memory and 8 vCPUs for builds</code> </p> </li>
         /// </ul>
         pub fn set_compute_type(
             mut self,

@@ -721,30 +721,22 @@ pub mod create_environment_input {
             self.description = input;
             self
         }
-        /// <p>A link to a YAML formatted spec file that provides inputs as defined in the environment template bundle schema file. For more information, see
-        /// <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a> in the <i>Proton Administrator
-        /// Guide</i>.</p>
+        /// <p>A link to a YAML formatted spec file that provides inputs as defined in the environment template bundle schema file. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a> in the <i>Proton Administrator Guide</i>.</p>
         pub fn spec(mut self, input: impl Into<std::string::String>) -> Self {
             self.spec = Some(input.into());
             self
         }
-        /// <p>A link to a YAML formatted spec file that provides inputs as defined in the environment template bundle schema file. For more information, see
-        /// <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a> in the <i>Proton Administrator
-        /// Guide</i>.</p>
+        /// <p>A link to a YAML formatted spec file that provides inputs as defined in the environment template bundle schema file. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a> in the <i>Proton Administrator Guide</i>.</p>
         pub fn set_spec(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.spec = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton to make calls to other services on your behalf. You must
-        /// include either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and value and omit the
-        /// <code>provisioningRepository</code> parameter when you use standard provisioning.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton to make calls to other services on your behalf. You must include either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and value and omit the <code>provisioningRepository</code> parameter when you use standard provisioning.</p>
         pub fn proton_service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.proton_service_role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton to make calls to other services on your behalf. You must
-        /// include either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and value and omit the
-        /// <code>provisioningRepository</code> parameter when you use standard provisioning.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton to make calls to other services on your behalf. You must include either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and value and omit the <code>provisioningRepository</code> parameter when you use standard provisioning.</p>
         pub fn set_proton_service_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -752,10 +744,7 @@ pub mod create_environment_input {
             self.proton_service_role_arn = input;
             self
         }
-        /// <p>The ID of the environment account connection that you provide if you're provisioning your environment infrastructure resources to an
-        /// environment account. You must include either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and
-        /// value and omit the <code>provisioningRepository</code> parameter and values. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton Administrator
-        /// guide</i>.</p>
+        /// <p>The ID of the environment account connection that you provide if you're provisioning your environment infrastructure resources to an environment account. You must include either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and value and omit the <code>provisioningRepository</code> parameter and values. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton Administrator guide</i>.</p>
         pub fn environment_account_connection_id(
             mut self,
             input: impl Into<std::string::String>,
@@ -763,10 +752,7 @@ pub mod create_environment_input {
             self.environment_account_connection_id = Some(input.into());
             self
         }
-        /// <p>The ID of the environment account connection that you provide if you're provisioning your environment infrastructure resources to an
-        /// environment account. You must include either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and
-        /// value and omit the <code>provisioningRepository</code> parameter and values. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton Administrator
-        /// guide</i>.</p>
+        /// <p>The ID of the environment account connection that you provide if you're provisioning your environment infrastructure resources to an environment account. You must include either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and value and omit the <code>provisioningRepository</code> parameter and values. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton Administrator guide</i>.</p>
         pub fn set_environment_account_connection_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -793,13 +779,8 @@ pub mod create_environment_input {
             self.tags = input;
             self
         }
-        /// <p>The repository that you provide with pull request provisioning. If you provide this parameter, you must omit the
-        /// <code>environmentAccountConnectionId</code> and <code>protonServiceRoleArn</code> parameters.</p>
-        /// <important>
-        /// <p>Provisioning by pull request is currently in feature preview and is
-        /// only usable with Terraform based Proton Templates. To learn more about
-        /// <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and
-        /// Previews.</p>
+        /// <p>The repository that you provide with pull request provisioning. If you provide this parameter, you must omit the <code>environmentAccountConnectionId</code> and <code>protonServiceRoleArn</code> parameters.</p> <important>
+        /// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
         /// </important>
         pub fn provisioning_repository(
             mut self,
@@ -808,13 +789,8 @@ pub mod create_environment_input {
             self.provisioning_repository = Some(input);
             self
         }
-        /// <p>The repository that you provide with pull request provisioning. If you provide this parameter, you must omit the
-        /// <code>environmentAccountConnectionId</code> and <code>protonServiceRoleArn</code> parameters.</p>
-        /// <important>
-        /// <p>Provisioning by pull request is currently in feature preview and is
-        /// only usable with Terraform based Proton Templates. To learn more about
-        /// <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and
-        /// Previews.</p>
+        /// <p>The repository that you provide with pull request provisioning. If you provide this parameter, you must omit the <code>environmentAccountConnectionId</code> and <code>protonServiceRoleArn</code> parameters.</p> <important>
+        /// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
         /// </important>
         pub fn set_provisioning_repository(
             mut self,
@@ -980,28 +956,22 @@ pub mod create_environment_account_connection_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>When included, if two identical requests are made with the same client token, Proton returns the environment account connection that the
-        /// first request created.</p>
+        /// <p>When included, if two identical requests are made with the same client token, Proton returns the environment account connection that the first request created.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>When included, if two identical requests are made with the same client token, Proton returns the environment account connection that the
-        /// first request created.</p>
+        /// <p>When included, if two identical requests are made with the same client token, Proton returns the environment account connection that the first request created.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
         }
-        /// <p>The ID of the management account that accepts or rejects the environment account connection. You create an manage the Proton environment in
-        /// this account. If the management account accepts the environment account connection, Proton can use the associated IAM role to provision
-        /// environment infrastructure resources in the associated environment account.</p>
+        /// <p>The ID of the management account that accepts or rejects the environment account connection. You create an manage the Proton environment in this account. If the management account accepts the environment account connection, Proton can use the associated IAM role to provision environment infrastructure resources in the associated environment account.</p>
         pub fn management_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.management_account_id = Some(input.into());
             self
         }
-        /// <p>The ID of the management account that accepts or rejects the environment account connection. You create an manage the Proton environment in
-        /// this account. If the management account accepts the environment account connection, Proton can use the associated IAM role to provision
-        /// environment infrastructure resources in the associated environment account.</p>
+        /// <p>The ID of the management account that accepts or rejects the environment account connection. You create an manage the Proton environment in this account. If the management account accepts the environment account connection, Proton can use the associated IAM role to provision environment infrastructure resources in the associated environment account.</p>
         pub fn set_management_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1009,14 +979,12 @@ pub mod create_environment_account_connection_input {
             self.management_account_id = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM service role that's created in the environment account. Proton uses this role to provision
-        /// infrastructure resources in the associated environment account.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM service role that's created in the environment account. Proton uses this role to provision infrastructure resources in the associated environment account.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM service role that's created in the environment account. Proton uses this role to provision
-        /// infrastructure resources in the associated environment account.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM service role that's created in the environment account. Proton uses this role to provision infrastructure resources in the associated environment account.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -1038,16 +1006,14 @@ pub mod create_environment_account_connection_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Tags for your environment account connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton resources and tagging</a> in the <i>Proton Administrator
-        /// Guide</i>.</p>
+        /// <p>Tags for your environment account connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton resources and tagging</a> in the <i>Proton Administrator Guide</i>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>Tags for your environment account connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton resources and tagging</a> in the <i>Proton Administrator
-        /// Guide</i>.</p>
+        /// <p>Tags for your environment account connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton resources and tagging</a> in the <i>Proton Administrator Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1446,14 +1412,12 @@ pub mod create_environment_template_version_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>When included, if two identical requests are made with the same client token, Proton returns the environment template version that the
-        /// first request created.</p>
+        /// <p>When included, if two identical requests are made with the same client token, Proton returns the environment template version that the first request created.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>When included, if two identical requests are made with the same client token, Proton returns the environment template version that the
-        /// first request created.</p>
+        /// <p>When included, if two identical requests are made with the same client token, Proton returns the environment template version that the first request created.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -1482,15 +1446,13 @@ pub mod create_environment_template_version_input {
             self
         }
         /// <p>To create a new minor version of the environment template, include a <code>major Version</code>.</p>
-        /// <p>To create a new major and minor version of the environment template, <i>exclude</i>
-        /// <code>major Version</code>.</p>
+        /// <p>To create a new major and minor version of the environment template, <i>exclude</i> <code>major Version</code>.</p>
         pub fn major_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.major_version = Some(input.into());
             self
         }
         /// <p>To create a new minor version of the environment template, include a <code>major Version</code>.</p>
-        /// <p>To create a new major and minor version of the environment template, <i>exclude</i>
-        /// <code>major Version</code>.</p>
+        /// <p>To create a new major and minor version of the environment template, <i>exclude</i> <code>major Version</code>.</p>
         pub fn set_major_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1952,36 +1914,22 @@ pub mod create_service_input {
             self.template_minor_version = input;
             self
         }
-        /// <p>A link to a spec file that provides inputs as defined in the service template bundle schema file. The spec file is in YAML format. Don’t
-        /// include pipeline inputs in the spec if your service template <i>doesn’t</i> include a service pipeline. For more information, see
-        /// <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create a service</a> in the <i>Proton
-        /// Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create a service</a> in the
-        /// <i>Proton User Guide</i>.</p>
+        /// <p>A link to a spec file that provides inputs as defined in the service template bundle schema file. The spec file is in YAML format. Don’t include pipeline inputs in the spec if your service template <i>doesn’t</i> include a service pipeline. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create a service</a> in the <i>Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create a service</a> in the <i>Proton User Guide</i>.</p>
         pub fn spec(mut self, input: impl Into<std::string::String>) -> Self {
             self.spec = Some(input.into());
             self
         }
-        /// <p>A link to a spec file that provides inputs as defined in the service template bundle schema file. The spec file is in YAML format. Don’t
-        /// include pipeline inputs in the spec if your service template <i>doesn’t</i> include a service pipeline. For more information, see
-        /// <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create a service</a> in the <i>Proton
-        /// Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create a service</a> in the
-        /// <i>Proton User Guide</i>.</p>
+        /// <p>A link to a spec file that provides inputs as defined in the service template bundle schema file. The spec file is in YAML format. Don’t include pipeline inputs in the spec if your service template <i>doesn’t</i> include a service pipeline. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create a service</a> in the <i>Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create a service</a> in the <i>Proton User Guide</i>.</p>
         pub fn set_spec(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.spec = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set up repository connection</a> in the <i>Proton
-        /// Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting up
-        /// with Proton</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this parameter if your service
-        /// template <i>doesn't</i> include a service pipeline.</p>
+        /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set up repository connection</a> in the <i>Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting up with Proton</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
         pub fn repository_connection_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.repository_connection_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set up repository connection</a> in the <i>Proton
-        /// Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting up
-        /// with Proton</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this parameter if your service
-        /// template <i>doesn't</i> include a service pipeline.</p>
+        /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set up repository connection</a> in the <i>Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting up with Proton</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
         pub fn set_repository_connection_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1989,14 +1937,12 @@ pub mod create_service_input {
             self.repository_connection_arn = input;
             self
         }
-        /// <p>The ID of the code repository. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include
-        /// a service pipeline.</p>
+        /// <p>The ID of the code repository. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
         pub fn repository_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.repository_id = Some(input.into());
             self
         }
-        /// <p>The ID of the code repository. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include
-        /// a service pipeline.</p>
+        /// <p>The ID of the code repository. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
         pub fn set_repository_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2004,14 +1950,12 @@ pub mod create_service_input {
             self.repository_id = input;
             self
         }
-        /// <p>The name of the code repository branch that holds the code that's deployed in Proton. <i>Don't</i> include this parameter if
-        /// your service template <i>doesn't</i> include a service pipeline.</p>
+        /// <p>The name of the code repository branch that holds the code that's deployed in Proton. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
         pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.branch_name = Some(input.into());
             self
         }
-        /// <p>The name of the code repository branch that holds the code that's deployed in Proton. <i>Don't</i> include this parameter if
-        /// your service template <i>doesn't</i> include a service pipeline.</p>
+        /// <p>The name of the code repository branch that holds the code that's deployed in Proton. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
         pub fn set_branch_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.branch_name = input;
             self
@@ -2235,18 +2179,12 @@ pub mod create_service_template_input {
             self.encryption_key = input;
             self
         }
-        /// <p>Proton includes a service pipeline for your service by default. When included, this parameter indicates that an Proton service pipeline
-        /// <i>won't</i> be included for your service. Once specified, this parameter <i>can't</i> be changed. For more
-        /// information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Service template bundles</a> in the
-        /// <i>Proton Administrator Guide</i>.</p>
+        /// <p>Proton includes a service pipeline for your service by default. When included, this parameter indicates that an Proton service pipeline <i>won't</i> be included for your service. Once specified, this parameter <i>can't</i> be changed. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Service template bundles</a> in the <i>Proton Administrator Guide</i>.</p>
         pub fn pipeline_provisioning(mut self, input: crate::model::Provisioning) -> Self {
             self.pipeline_provisioning = Some(input);
             self
         }
-        /// <p>Proton includes a service pipeline for your service by default. When included, this parameter indicates that an Proton service pipeline
-        /// <i>won't</i> be included for your service. Once specified, this parameter <i>can't</i> be changed. For more
-        /// information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Service template bundles</a> in the
-        /// <i>Proton Administrator Guide</i>.</p>
+        /// <p>Proton includes a service pipeline for your service by default. When included, this parameter indicates that an Proton service pipeline <i>won't</i> be included for your service. Once specified, this parameter <i>can't</i> be changed. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Service template bundles</a> in the <i>Proton Administrator Guide</i>.</p>
         pub fn set_pipeline_provisioning(
             mut self,
             input: std::option::Option<crate::model::Provisioning>,
@@ -2431,14 +2369,12 @@ pub mod create_service_template_version_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>When included, if two identical requests are made with the same client token, Proton returns the service template version that the first
-        /// request created.</p>
+        /// <p>When included, if two identical requests are made with the same client token, Proton returns the service template version that the first request created.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>When included, if two identical requests are made with the same client token, Proton returns the service template version that the first
-        /// request created.</p>
+        /// <p>When included, if two identical requests are made with the same client token, Proton returns the service template version that the first request created.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -2467,15 +2403,13 @@ pub mod create_service_template_version_input {
             self
         }
         /// <p>To create a new minor version of the service template, include a <code>major Version</code>.</p>
-        /// <p>To create a new major and minor version of the service template, <i>exclude</i>
-        /// <code>major Version</code>.</p>
+        /// <p>To create a new major and minor version of the service template, <i>exclude</i> <code>major Version</code>.</p>
         pub fn major_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.major_version = Some(input.into());
             self
         }
         /// <p>To create a new minor version of the service template, include a <code>major Version</code>.</p>
-        /// <p>To create a new major and minor version of the service template, <i>exclude</i>
-        /// <code>major Version</code>.</p>
+        /// <p>To create a new major and minor version of the service template, <i>exclude</i> <code>major Version</code>.</p>
         pub fn set_major_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2762,14 +2696,12 @@ pub mod create_template_sync_config_input {
             self.branch = input;
             self
         }
-        /// <p>A repository subdirectory path to your template bundle directory. When included, Proton limits the template bundle search to this
-        /// repository directory.</p>
+        /// <p>A repository subdirectory path to your template bundle directory. When included, Proton limits the template bundle search to this repository directory.</p>
         pub fn subdirectory(mut self, input: impl Into<std::string::String>) -> Self {
             self.subdirectory = Some(input.into());
             self
         }
-        /// <p>A repository subdirectory path to your template bundle directory. When included, Proton limits the template bundle search to this
-        /// repository directory.</p>
+        /// <p>A repository subdirectory path to your template bundle directory. When included, Proton limits the template bundle search to this repository directory.</p>
         pub fn set_subdirectory(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.subdirectory = input;
             self
@@ -6647,14 +6579,12 @@ pub mod list_environment_account_connections_input {
             self.statuses = input;
             self
         }
-        /// <p>A token to indicate the location of the next environment account connection in the array of environment account connections, after the list of
-        /// environment account connections that was previously requested.</p>
+        /// <p>A token to indicate the location of the next environment account connection in the array of environment account connections, after the list of environment account connections that was previously requested.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to indicate the location of the next environment account connection in the array of environment account connections, after the list of
-        /// environment account connections that was previously requested.</p>
+        /// <p>A token to indicate the location of the next environment account connection in the array of environment account connections, after the list of environment account connections that was previously requested.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6834,14 +6764,12 @@ pub mod list_environment_outputs_input {
             self.environment_name = input;
             self
         }
-        /// <p>A token to indicate the location of the next environment output in the array of environment outputs, after the list of environment outputs
-        /// that was previously requested.</p>
+        /// <p>A token to indicate the location of the next environment output in the array of environment outputs, after the list of environment outputs that was previously requested.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to indicate the location of the next environment output in the array of environment outputs, after the list of environment outputs
-        /// that was previously requested.</p>
+        /// <p>A token to indicate the location of the next environment output in the array of environment outputs, after the list of environment outputs that was previously requested.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7007,14 +6935,12 @@ pub mod list_environment_provisioned_resources_input {
             self.environment_name = input;
             self
         }
-        /// <p>A token to indicate the location of the next environment provisioned resource in the array of environment provisioned resources, after the
-        /// list of environment provisioned resources that was previously requested.</p>
+        /// <p>A token to indicate the location of the next environment provisioned resource in the array of environment provisioned resources, after the list of environment provisioned resources that was previously requested.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to indicate the location of the next environment provisioned resource in the array of environment provisioned resources, after the
-        /// list of environment provisioned resources that was previously requested.</p>
+        /// <p>A token to indicate the location of the next environment provisioned resource in the array of environment provisioned resources, after the list of environment provisioned resources that was previously requested.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7170,14 +7096,12 @@ pub mod list_environments_input {
             std::option::Option<std::vec::Vec<crate::model::EnvironmentTemplateFilter>>,
     }
     impl Builder {
-        /// <p>A token to indicate the location of the next environment in the array of environments, after the list of environments that was previously
-        /// requested.</p>
+        /// <p>A token to indicate the location of the next environment in the array of environments, after the list of environments that was previously requested.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to indicate the location of the next environment in the array of environments, after the list of environments that was previously
-        /// requested.</p>
+        /// <p>A token to indicate the location of the next environment in the array of environments, after the list of environments that was previously requested.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7361,14 +7285,12 @@ pub mod list_environment_templates_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>A token to indicate the location of the next environment template in the array of environment templates, after the list of environment
-        /// templates that was previously requested.</p>
+        /// <p>A token to indicate the location of the next environment template in the array of environment templates, after the list of environment templates that was previously requested.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to indicate the location of the next environment template in the array of environment templates, after the list of environment
-        /// templates that was previously requested.</p>
+        /// <p>A token to indicate the location of the next environment template in the array of environment templates, after the list of environment templates that was previously requested.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7534,14 +7456,12 @@ pub mod list_environment_template_versions_input {
         pub(crate) major_version: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of an environment template, after
-        /// the list of major or minor versions that was previously requested.</p>
+        /// <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of an environment template, after the list of major or minor versions that was previously requested.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of an environment template, after
-        /// the list of major or minor versions that was previously requested.</p>
+        /// <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of an environment template, after the list of major or minor versions that was previously requested.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7570,15 +7490,13 @@ pub mod list_environment_template_versions_input {
             self
         }
         /// <p>To view a list of minor of versions under a major version of an environment template, include <code>major Version</code>.</p>
-        /// <p>To view a list of major versions of an environment template, <i>exclude</i>
-        /// <code>major Version</code>.</p>
+        /// <p>To view a list of major versions of an environment template, <i>exclude</i> <code>major Version</code>.</p>
         pub fn major_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.major_version = Some(input.into());
             self
         }
         /// <p>To view a list of minor of versions under a major version of an environment template, include <code>major Version</code>.</p>
-        /// <p>To view a list of major versions of an environment template, <i>exclude</i>
-        /// <code>major Version</code>.</p>
+        /// <p>To view a list of major versions of an environment template, <i>exclude</i> <code>major Version</code>.</p>
         pub fn set_major_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7737,14 +7655,12 @@ pub mod list_repositories_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>A token to indicate the location of the next repository in the array of repositories, after the list of repositories previously
-        /// requested.</p>
+        /// <p>A token to indicate the location of the next repository in the array of repositories, after the list of repositories previously requested.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to indicate the location of the next repository in the array of repositories, after the list of repositories previously
-        /// requested.</p>
+        /// <p>A token to indicate the location of the next repository in the array of repositories, after the list of repositories previously requested.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7943,14 +7859,12 @@ pub mod list_repository_sync_definitions_input {
             self.sync_type = input;
             self
         }
-        /// <p>A token to indicate the location of the next repository sync definition in the array of repository sync definitions, after the list of
-        /// repository sync definitions previously requested.</p>
+        /// <p>A token to indicate the location of the next repository sync definition in the array of repository sync definitions, after the list of repository sync definitions previously requested.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to indicate the location of the next repository sync definition in the array of repository sync definitions, after the list of
-        /// repository sync definitions previously requested.</p>
+        /// <p>A token to indicate the location of the next repository sync definition in the array of repository sync definitions, after the list of repository sync definitions previously requested.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8313,14 +8227,12 @@ pub mod list_service_instance_provisioned_resources_input {
             self.service_instance_name = input;
             self
         }
-        /// <p>A token to indicate the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned
-        /// resources that was previously requested.</p>
+        /// <p>A token to indicate the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned resources that was previously requested.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to indicate the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned
-        /// resources that was previously requested.</p>
+        /// <p>A token to indicate the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned resources that was previously requested.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8486,14 +8398,12 @@ pub mod list_service_instances_input {
             self.service_name = input;
             self
         }
-        /// <p>A token to indicate the location of the next service in the array of service instances, after the list of service instances that was
-        /// previously requested.</p>
+        /// <p>A token to indicate the location of the next service in the array of service instances, after the list of service instances that was previously requested.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to indicate the location of the next service in the array of service instances, after the list of service instances that was
-        /// previously requested.</p>
+        /// <p>A token to indicate the location of the next service in the array of service instances, after the list of service instances that was previously requested.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8835,14 +8745,12 @@ pub mod list_service_pipeline_provisioned_resources_input {
             self.service_name = input;
             self
         }
-        /// <p>A token to indicate the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned
-        /// resources that was previously requested.</p>
+        /// <p>A token to indicate the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned resources that was previously requested.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to indicate the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned
-        /// resources that was previously requested.</p>
+        /// <p>A token to indicate the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned resources that was previously requested.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8996,14 +8904,12 @@ pub mod list_services_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>A token to indicate the location of the next service in the array of services, after the list of services that was previously
-        /// requested.</p>
+        /// <p>A token to indicate the location of the next service in the array of services, after the list of services that was previously requested.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to indicate the location of the next service in the array of services, after the list of services that was previously
-        /// requested.</p>
+        /// <p>A token to indicate the location of the next service in the array of services, after the list of services that was previously requested.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -9163,14 +9069,12 @@ pub mod list_service_templates_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>A token to indicate the location of the next service template in the array of service templates, after the list of service templates
-        /// previously requested.</p>
+        /// <p>A token to indicate the location of the next service template in the array of service templates, after the list of service templates previously requested.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to indicate the location of the next service template in the array of service templates, after the list of service templates
-        /// previously requested.</p>
+        /// <p>A token to indicate the location of the next service template in the array of service templates, after the list of service templates previously requested.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -9335,14 +9239,12 @@ pub mod list_service_template_versions_input {
         pub(crate) major_version: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of a service template, after the
-        /// list of major or minor versions that was previously requested.</p>
+        /// <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of a service template, after the list of major or minor versions that was previously requested.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of a service template, after the
-        /// list of major or minor versions that was previously requested.</p>
+        /// <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of a service template, after the list of major or minor versions that was previously requested.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -9371,15 +9273,13 @@ pub mod list_service_template_versions_input {
             self
         }
         /// <p>To view a list of minor of versions under a major version of a service template, include <code>major Version</code>.</p>
-        /// <p>To view a list of major versions of a service template, <i>exclude</i>
-        /// <code>major Version</code>.</p>
+        /// <p>To view a list of major versions of a service template, <i>exclude</i> <code>major Version</code>.</p>
         pub fn major_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.major_version = Some(input.into());
             self
         }
         /// <p>To view a list of minor of versions under a major version of a service template, include <code>major Version</code>.</p>
-        /// <p>To view a list of major versions of a service template, <i>exclude</i>
-        /// <code>major Version</code>.</p>
+        /// <p>To view a list of major versions of a service template, <i>exclude</i> <code>major Version</code>.</p>
         pub fn set_major_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9548,14 +9448,12 @@ pub mod list_tags_for_resource_input {
             self.resource_arn = input;
             self
         }
-        /// <p>A token to indicate the location of the next resource tag in the array of resource tags, after the list of resource tags that was previously
-        /// requested.</p>
+        /// <p>A token to indicate the location of the next resource tag in the array of resource tags, after the list of resource tags that was previously requested.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token to indicate the location of the next resource tag in the array of resource tags, after the list of resource tags that was previously
-        /// requested.</p>
+        /// <p>A token to indicate the location of the next resource tag in the array of resource tags, after the list of resource tags that was previously requested.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -10446,23 +10344,15 @@ pub mod update_account_settings_input {
             std::option::Option<crate::model::RepositoryBranchInput>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the Proton pipeline service role.</p>
-        /// <important>
-        /// <p>Provisioning by pull request is currently in feature preview and is
-        /// only usable with Terraform based Proton Templates. To learn more about
-        /// <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and
-        /// Previews.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Proton pipeline service role.</p> <important>
+        /// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
         /// </important>
         pub fn pipeline_service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.pipeline_service_role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Proton pipeline service role.</p>
-        /// <important>
-        /// <p>Provisioning by pull request is currently in feature preview and is
-        /// only usable with Terraform based Proton Templates. To learn more about
-        /// <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and
-        /// Previews.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Proton pipeline service role.</p> <important>
+        /// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
         /// </important>
         pub fn set_pipeline_service_role_arn(
             mut self,
@@ -10471,12 +10361,8 @@ pub mod update_account_settings_input {
             self.pipeline_service_role_arn = input;
             self
         }
-        /// <p>The repository that you provide with pull request provisioning.</p>
-        /// <important>
-        /// <p>Provisioning by pull request is currently in feature preview and is
-        /// only usable with Terraform based Proton Templates. To learn more about
-        /// <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and
-        /// Previews.</p>
+        /// <p>The repository that you provide with pull request provisioning.</p> <important>
+        /// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
         /// </important>
         pub fn pipeline_provisioning_repository(
             mut self,
@@ -10485,12 +10371,8 @@ pub mod update_account_settings_input {
             self.pipeline_provisioning_repository = Some(input);
             self
         }
-        /// <p>The repository that you provide with pull request provisioning.</p>
-        /// <important>
-        /// <p>Provisioning by pull request is currently in feature preview and is
-        /// only usable with Terraform based Proton Templates. To learn more about
-        /// <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and
-        /// Previews.</p>
+        /// <p>The repository that you provide with pull request provisioning.</p> <important>
+        /// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
         /// </important>
         pub fn set_pipeline_provisioning_repository(
             mut self,
@@ -10726,37 +10608,25 @@ pub mod update_environment_input {
         }
         /// <p>There are four modes for updating an environment as described in the following. The <code>deploymentType</code> field defines the mode.</p>
         /// <dl>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>NONE</code>
-        /// </p>
+        /// <p> <code>NONE</code> </p>
         /// <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated.</p>
         /// </dd>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>CURRENT_VERSION</code>
-        /// </p>
-        /// <p>In this mode, the environment is deployed and updated with the new spec that you provide. Only requested parameters are updated.
-        /// <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
+        /// <p> <code>CURRENT_VERSION</code> </p>
+        /// <p>In this mode, the environment is deployed and updated with the new spec that you provide. Only requested parameters are updated. <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
         /// </dd>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>MINOR_VERSION</code>
-        /// </p>
-        /// <p>In this mode, the environment is deployed and updated with the published, recommended (latest) minor version of the current major version
-        /// in use, by default. You can also specify a different minor version of the current major version in use.</p>
+        /// <p> <code>MINOR_VERSION</code> </p>
+        /// <p>In this mode, the environment is deployed and updated with the published, recommended (latest) minor version of the current major version in use, by default. You can also specify a different minor version of the current major version in use.</p>
         /// </dd>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>MAJOR_VERSION</code>
-        /// </p>
-        /// <p>In this mode, the environment is deployed and updated with the published, recommended (latest) major and minor version of the current
-        /// template, by default. You can also specify a different major version that is higher than the major version in use and a minor version
-        /// (optional).</p>
+        /// <p> <code>MAJOR_VERSION</code> </p>
+        /// <p>In this mode, the environment is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can also specify a different major version that is higher than the major version in use and a minor version (optional).</p>
         /// </dd>
         /// </dl>
         pub fn deployment_type(mut self, input: crate::model::DeploymentUpdateType) -> Self {
@@ -10765,37 +10635,25 @@ pub mod update_environment_input {
         }
         /// <p>There are four modes for updating an environment as described in the following. The <code>deploymentType</code> field defines the mode.</p>
         /// <dl>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>NONE</code>
-        /// </p>
+        /// <p> <code>NONE</code> </p>
         /// <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated.</p>
         /// </dd>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>CURRENT_VERSION</code>
-        /// </p>
-        /// <p>In this mode, the environment is deployed and updated with the new spec that you provide. Only requested parameters are updated.
-        /// <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
+        /// <p> <code>CURRENT_VERSION</code> </p>
+        /// <p>In this mode, the environment is deployed and updated with the new spec that you provide. Only requested parameters are updated. <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
         /// </dd>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>MINOR_VERSION</code>
-        /// </p>
-        /// <p>In this mode, the environment is deployed and updated with the published, recommended (latest) minor version of the current major version
-        /// in use, by default. You can also specify a different minor version of the current major version in use.</p>
+        /// <p> <code>MINOR_VERSION</code> </p>
+        /// <p>In this mode, the environment is deployed and updated with the published, recommended (latest) minor version of the current major version in use, by default. You can also specify a different minor version of the current major version in use.</p>
         /// </dd>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>MAJOR_VERSION</code>
-        /// </p>
-        /// <p>In this mode, the environment is deployed and updated with the published, recommended (latest) major and minor version of the current
-        /// template, by default. You can also specify a different major version that is higher than the major version in use and a minor version
-        /// (optional).</p>
+        /// <p> <code>MAJOR_VERSION</code> </p>
+        /// <p>In this mode, the environment is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can also specify a different major version that is higher than the major version in use and a minor version (optional).</p>
         /// </dd>
         /// </dl>
         pub fn set_deployment_type(
@@ -10806,8 +10664,7 @@ pub mod update_environment_input {
             self
         }
         /// <p>The ID of the environment account connection.</p>
-        /// <p>You can only update to a new environment account connection if it was created in the same environment account that the current environment
-        /// account connection was created in and is associated with the current environment.</p>
+        /// <p>You can only update to a new environment account connection if it was created in the same environment account that the current environment account connection was created in and is associated with the current environment.</p>
         pub fn environment_account_connection_id(
             mut self,
             input: impl Into<std::string::String>,
@@ -10816,8 +10673,7 @@ pub mod update_environment_input {
             self
         }
         /// <p>The ID of the environment account connection.</p>
-        /// <p>You can only update to a new environment account connection if it was created in the same environment account that the current environment
-        /// account connection was created in and is associated with the current environment.</p>
+        /// <p>You can only update to a new environment account connection if it was created in the same environment account that the current environment account connection was created in and is associated with the current environment.</p>
         pub fn set_environment_account_connection_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10825,12 +10681,8 @@ pub mod update_environment_input {
             self.environment_account_connection_id = input;
             self
         }
-        /// <p>The repository that you provide with pull request provisioning.</p>
-        /// <important>
-        /// <p>Provisioning by pull request is currently in feature preview and is
-        /// only usable with Terraform based Proton Templates. To learn more about
-        /// <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and
-        /// Previews.</p>
+        /// <p>The repository that you provide with pull request provisioning.</p> <important>
+        /// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
         /// </important>
         pub fn provisioning_repository(
             mut self,
@@ -10839,12 +10691,8 @@ pub mod update_environment_input {
             self.provisioning_repository = Some(input);
             self
         }
-        /// <p>The repository that you provide with pull request provisioning.</p>
-        /// <important>
-        /// <p>Provisioning by pull request is currently in feature preview and is
-        /// only usable with Terraform based Proton Templates. To learn more about
-        /// <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and
-        /// Previews.</p>
+        /// <p>The repository that you provide with pull request provisioning.</p> <important>
+        /// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
         /// </important>
         pub fn set_provisioning_repository(
             mut self,
@@ -11594,18 +11442,12 @@ pub mod update_service_input {
             self.description = input;
             self
         }
-        /// <p>Lists the service instances to add and the existing service instances to remain. Omit the existing service instances to delete from the list.
-        /// <i>Don't</i> include edits to the existing service instances or pipeline. For more information, see <i>Edit a
-        /// service</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-update.html">Proton Administrator Guide</a> or
-        /// the <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-update.html">Proton User Guide</a>.</p>
+        /// <p>Lists the service instances to add and the existing service instances to remain. Omit the existing service instances to delete from the list. <i>Don't</i> include edits to the existing service instances or pipeline. For more information, see <i>Edit a service</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-update.html">Proton Administrator Guide</a> or the <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-update.html">Proton User Guide</a>.</p>
         pub fn spec(mut self, input: impl Into<std::string::String>) -> Self {
             self.spec = Some(input.into());
             self
         }
-        /// <p>Lists the service instances to add and the existing service instances to remain. Omit the existing service instances to delete from the list.
-        /// <i>Don't</i> include edits to the existing service instances or pipeline. For more information, see <i>Edit a
-        /// service</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-update.html">Proton Administrator Guide</a> or
-        /// the <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-update.html">Proton User Guide</a>.</p>
+        /// <p>Lists the service instances to add and the existing service instances to remain. Omit the existing service instances to delete from the list. <i>Don't</i> include edits to the existing service instances or pipeline. For more information, see <i>Edit a service</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-update.html">Proton Administrator Guide</a> or the <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-update.html">Proton User Guide</a>.</p>
         pub fn set_spec(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.spec = input;
             self
@@ -11781,40 +11623,27 @@ pub mod update_service_instance_input {
             self
         }
         /// <p>The deployment type.</p>
-        /// <p>There are four modes for updating a service instance as described in the following. The <code>deploymentType</code> field defines the
-        /// mode.</p>
+        /// <p>There are four modes for updating a service instance as described in the following. The <code>deploymentType</code> field defines the mode.</p>
         /// <dl>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>NONE</code>
-        /// </p>
+        /// <p> <code>NONE</code> </p>
         /// <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated.</p>
         /// </dd>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>CURRENT_VERSION</code>
-        /// </p>
-        /// <p>In this mode, the service instance is deployed and updated with the new spec that you provide. Only requested parameters are updated.
-        /// <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
+        /// <p> <code>CURRENT_VERSION</code> </p>
+        /// <p>In this mode, the service instance is deployed and updated with the new spec that you provide. Only requested parameters are updated. <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
         /// </dd>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>MINOR_VERSION</code>
-        /// </p>
-        /// <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) minor version of the current major
-        /// version in use, by default. You can also specify a different minor version of the current major version in use.</p>
+        /// <p> <code>MINOR_VERSION</code> </p>
+        /// <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) minor version of the current major version in use, by default. You can also specify a different minor version of the current major version in use.</p>
         /// </dd>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>MAJOR_VERSION</code>
-        /// </p>
-        /// <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) major and minor version of the current
-        /// template, by default. You can also specify a different major version that is higher than the major version in use and a minor version
-        /// (optional).</p>
+        /// <p> <code>MAJOR_VERSION</code> </p>
+        /// <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can also specify a different major version that is higher than the major version in use and a minor version (optional).</p>
         /// </dd>
         /// </dl>
         pub fn deployment_type(mut self, input: crate::model::DeploymentUpdateType) -> Self {
@@ -11822,40 +11651,27 @@ pub mod update_service_instance_input {
             self
         }
         /// <p>The deployment type.</p>
-        /// <p>There are four modes for updating a service instance as described in the following. The <code>deploymentType</code> field defines the
-        /// mode.</p>
+        /// <p>There are four modes for updating a service instance as described in the following. The <code>deploymentType</code> field defines the mode.</p>
         /// <dl>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>NONE</code>
-        /// </p>
+        /// <p> <code>NONE</code> </p>
         /// <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated.</p>
         /// </dd>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>CURRENT_VERSION</code>
-        /// </p>
-        /// <p>In this mode, the service instance is deployed and updated with the new spec that you provide. Only requested parameters are updated.
-        /// <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
+        /// <p> <code>CURRENT_VERSION</code> </p>
+        /// <p>In this mode, the service instance is deployed and updated with the new spec that you provide. Only requested parameters are updated. <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
         /// </dd>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>MINOR_VERSION</code>
-        /// </p>
-        /// <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) minor version of the current major
-        /// version in use, by default. You can also specify a different minor version of the current major version in use.</p>
+        /// <p> <code>MINOR_VERSION</code> </p>
+        /// <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) minor version of the current major version in use, by default. You can also specify a different minor version of the current major version in use.</p>
         /// </dd>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>MAJOR_VERSION</code>
-        /// </p>
-        /// <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) major and minor version of the current
-        /// template, by default. You can also specify a different major version that is higher than the major version in use and a minor version
-        /// (optional).</p>
+        /// <p> <code>MAJOR_VERSION</code> </p>
+        /// <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can also specify a different major version that is higher than the major version in use and a minor version (optional).</p>
         /// </dd>
         /// </dl>
         pub fn set_deployment_type(
@@ -12077,40 +11893,27 @@ pub mod update_service_pipeline_input {
             self
         }
         /// <p>The deployment type.</p>
-        /// <p>There are four modes for updating a service pipeline as described in the following. The <code>deploymentType</code> field defines the
-        /// mode.</p>
+        /// <p>There are four modes for updating a service pipeline as described in the following. The <code>deploymentType</code> field defines the mode.</p>
         /// <dl>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>NONE</code>
-        /// </p>
+        /// <p> <code>NONE</code> </p>
         /// <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated.</p>
         /// </dd>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>CURRENT_VERSION</code>
-        /// </p>
-        /// <p>In this mode, the service pipeline is deployed and updated with the new spec that you provide. Only requested parameters are updated.
-        /// <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
+        /// <p> <code>CURRENT_VERSION</code> </p>
+        /// <p>In this mode, the service pipeline is deployed and updated with the new spec that you provide. Only requested parameters are updated. <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
         /// </dd>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>MINOR_VERSION</code>
-        /// </p>
-        /// <p>In this mode, the service pipeline is deployed and updated with the published, recommended (latest) minor version of the current major
-        /// version in use, by default. You can also specify a different minor version of the current major version in use.</p>
+        /// <p> <code>MINOR_VERSION</code> </p>
+        /// <p>In this mode, the service pipeline is deployed and updated with the published, recommended (latest) minor version of the current major version in use, by default. You can also specify a different minor version of the current major version in use.</p>
         /// </dd>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>MAJOR_VERSION</code>
-        /// </p>
-        /// <p>In this mode, the service pipeline is deployed and updated with the published, recommended (latest) major and minor version of the current
-        /// template, by default. You can also specify a different major version that is higher than the major version in use and a minor version
-        /// (optional).</p>
+        /// <p> <code>MAJOR_VERSION</code> </p>
+        /// <p>In this mode, the service pipeline is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can also specify a different major version that is higher than the major version in use and a minor version (optional).</p>
         /// </dd>
         /// </dl>
         pub fn deployment_type(mut self, input: crate::model::DeploymentUpdateType) -> Self {
@@ -12118,40 +11921,27 @@ pub mod update_service_pipeline_input {
             self
         }
         /// <p>The deployment type.</p>
-        /// <p>There are four modes for updating a service pipeline as described in the following. The <code>deploymentType</code> field defines the
-        /// mode.</p>
+        /// <p>There are four modes for updating a service pipeline as described in the following. The <code>deploymentType</code> field defines the mode.</p>
         /// <dl>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>NONE</code>
-        /// </p>
+        /// <p> <code>NONE</code> </p>
         /// <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated.</p>
         /// </dd>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>CURRENT_VERSION</code>
-        /// </p>
-        /// <p>In this mode, the service pipeline is deployed and updated with the new spec that you provide. Only requested parameters are updated.
-        /// <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
+        /// <p> <code>CURRENT_VERSION</code> </p>
+        /// <p>In this mode, the service pipeline is deployed and updated with the new spec that you provide. Only requested parameters are updated. <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
         /// </dd>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>MINOR_VERSION</code>
-        /// </p>
-        /// <p>In this mode, the service pipeline is deployed and updated with the published, recommended (latest) minor version of the current major
-        /// version in use, by default. You can also specify a different minor version of the current major version in use.</p>
+        /// <p> <code>MINOR_VERSION</code> </p>
+        /// <p>In this mode, the service pipeline is deployed and updated with the published, recommended (latest) minor version of the current major version in use, by default. You can also specify a different minor version of the current major version in use.</p>
         /// </dd>
-        /// <dt/>
+        /// <dt></dt>
         /// <dd>
-        /// <p>
-        /// <code>MAJOR_VERSION</code>
-        /// </p>
-        /// <p>In this mode, the service pipeline is deployed and updated with the published, recommended (latest) major and minor version of the current
-        /// template, by default. You can also specify a different major version that is higher than the major version in use and a minor version
-        /// (optional).</p>
+        /// <p> <code>MAJOR_VERSION</code> </p>
+        /// <p>In this mode, the service pipeline is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can also specify a different major version that is higher than the major version in use and a minor version (optional).</p>
         /// </dd>
         /// </dl>
         pub fn set_deployment_type(
@@ -12995,8 +12785,7 @@ pub struct CreateTemplateSyncConfigInput {
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The branch of the registered repository for your template.</p>
     pub branch: std::option::Option<std::string::String>,
-    /// <p>A repository subdirectory path to your template bundle directory. When included, Proton limits the template bundle search to this
-    /// repository directory.</p>
+    /// <p>A repository subdirectory path to your template bundle directory. When included, Proton limits the template bundle search to this repository directory.</p>
     pub subdirectory: std::option::Option<std::string::String>,
 }
 impl CreateTemplateSyncConfigInput {
@@ -13020,8 +12809,7 @@ impl CreateTemplateSyncConfigInput {
     pub fn branch(&self) -> std::option::Option<&str> {
         self.branch.as_deref()
     }
-    /// <p>A repository subdirectory path to your template bundle directory. When included, Proton limits the template bundle search to this
-    /// repository directory.</p>
+    /// <p>A repository subdirectory path to your template bundle directory. When included, Proton limits the template bundle search to this repository directory.</p>
     pub fn subdirectory(&self) -> std::option::Option<&str> {
         self.subdirectory.as_deref()
     }
@@ -13155,21 +12943,18 @@ impl std::fmt::Debug for GetTemplateSyncConfigInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServiceTemplateVersionsInput {
-    /// <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of a service template, after the
-    /// list of major or minor versions that was previously requested.</p>
+    /// <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of a service template, after the list of major or minor versions that was previously requested.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of major or minor versions of a service template to list.</p>
     pub max_results: std::option::Option<i32>,
     /// <p>The name of the service template.</p>
     pub template_name: std::option::Option<std::string::String>,
     /// <p>To view a list of minor of versions under a major version of a service template, include <code>major Version</code>.</p>
-    /// <p>To view a list of major versions of a service template, <i>exclude</i>
-    /// <code>major Version</code>.</p>
+    /// <p>To view a list of major versions of a service template, <i>exclude</i> <code>major Version</code>.</p>
     pub major_version: std::option::Option<std::string::String>,
 }
 impl ListServiceTemplateVersionsInput {
-    /// <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of a service template, after the
-    /// list of major or minor versions that was previously requested.</p>
+    /// <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of a service template, after the list of major or minor versions that was previously requested.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -13182,8 +12967,7 @@ impl ListServiceTemplateVersionsInput {
         self.template_name.as_deref()
     }
     /// <p>To view a list of minor of versions under a major version of a service template, include <code>major Version</code>.</p>
-    /// <p>To view a list of major versions of a service template, <i>exclude</i>
-    /// <code>major Version</code>.</p>
+    /// <p>To view a list of major versions of a service template, <i>exclude</i> <code>major Version</code>.</p>
     pub fn major_version(&self) -> std::option::Option<&str> {
         self.major_version.as_deref()
     }
@@ -13203,16 +12987,14 @@ impl std::fmt::Debug for ListServiceTemplateVersionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateServiceTemplateVersionInput {
-    /// <p>When included, if two identical requests are made with the same client token, Proton returns the service template version that the first
-    /// request created.</p>
+    /// <p>When included, if two identical requests are made with the same client token, Proton returns the service template version that the first request created.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The name of the service template.</p>
     pub template_name: std::option::Option<std::string::String>,
     /// <p>A description of the new version of a service template.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>To create a new minor version of the service template, include a <code>major Version</code>.</p>
-    /// <p>To create a new major and minor version of the service template, <i>exclude</i>
-    /// <code>major Version</code>.</p>
+    /// <p>To create a new major and minor version of the service template, <i>exclude</i> <code>major Version</code>.</p>
     pub major_version: std::option::Option<std::string::String>,
     /// <p>An object that includes the template bundle S3 bucket path and name for the new version of a service template.</p>
     pub source: std::option::Option<crate::model::TemplateVersionSourceInput>,
@@ -13223,8 +13005,7 @@ pub struct CreateServiceTemplateVersionInput {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateServiceTemplateVersionInput {
-    /// <p>When included, if two identical requests are made with the same client token, Proton returns the service template version that the first
-    /// request created.</p>
+    /// <p>When included, if two identical requests are made with the same client token, Proton returns the service template version that the first request created.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -13237,8 +13018,7 @@ impl CreateServiceTemplateVersionInput {
         self.description.as_deref()
     }
     /// <p>To create a new minor version of the service template, include a <code>major Version</code>.</p>
-    /// <p>To create a new major and minor version of the service template, <i>exclude</i>
-    /// <code>major Version</code>.</p>
+    /// <p>To create a new major and minor version of the service template, <i>exclude</i> <code>major Version</code>.</p>
     pub fn major_version(&self) -> std::option::Option<&str> {
         self.major_version.as_deref()
     }
@@ -13410,15 +13190,13 @@ impl std::fmt::Debug for GetServiceTemplateVersionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServiceTemplatesInput {
-    /// <p>A token to indicate the location of the next service template in the array of service templates, after the list of service templates
-    /// previously requested.</p>
+    /// <p>A token to indicate the location of the next service template in the array of service templates, after the list of service templates previously requested.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of service templates to list.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListServiceTemplatesInput {
-    /// <p>A token to indicate the location of the next service template in the array of service templates, after the list of service templates
-    /// previously requested.</p>
+    /// <p>A token to indicate the location of the next service template in the array of service templates, after the list of service templates previously requested.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -13448,10 +13226,7 @@ pub struct CreateServiceTemplateInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>A customer provided encryption key that's used to encrypt data.</p>
     pub encryption_key: std::option::Option<std::string::String>,
-    /// <p>Proton includes a service pipeline for your service by default. When included, this parameter indicates that an Proton service pipeline
-    /// <i>won't</i> be included for your service. Once specified, this parameter <i>can't</i> be changed. For more
-    /// information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Service template bundles</a> in the
-    /// <i>Proton Administrator Guide</i>.</p>
+    /// <p>Proton includes a service pipeline for your service by default. When included, this parameter indicates that an Proton service pipeline <i>won't</i> be included for your service. Once specified, this parameter <i>can't</i> be changed. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Service template bundles</a> in the <i>Proton Administrator Guide</i>.</p>
     pub pipeline_provisioning: std::option::Option<crate::model::Provisioning>,
     /// <p>Create tags for your service template. For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -13473,10 +13248,7 @@ impl CreateServiceTemplateInput {
     pub fn encryption_key(&self) -> std::option::Option<&str> {
         self.encryption_key.as_deref()
     }
-    /// <p>Proton includes a service pipeline for your service by default. When included, this parameter indicates that an Proton service pipeline
-    /// <i>won't</i> be included for your service. Once specified, this parameter <i>can't</i> be changed. For more
-    /// information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Service template bundles</a> in the
-    /// <i>Proton Administrator Guide</i>.</p>
+    /// <p>Proton includes a service pipeline for your service by default. When included, this parameter indicates that an Proton service pipeline <i>won't</i> be included for your service. Once specified, this parameter <i>can't</i> be changed. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Service template bundles</a> in the <i>Proton Administrator Guide</i>.</p>
     pub fn pipeline_provisioning(&self) -> std::option::Option<&crate::model::Provisioning> {
         self.pipeline_provisioning.as_ref()
     }
@@ -13579,15 +13351,13 @@ impl std::fmt::Debug for GetServiceTemplateInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServicesInput {
-    /// <p>A token to indicate the location of the next service in the array of services, after the list of services that was previously
-    /// requested.</p>
+    /// <p>A token to indicate the location of the next service in the array of services, after the list of services that was previously requested.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of services to list.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListServicesInput {
-    /// <p>A token to indicate the location of the next service in the array of services, after the list of services that was previously
-    /// requested.</p>
+    /// <p>A token to indicate the location of the next service in the array of services, after the list of services that was previously requested.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -13619,22 +13389,13 @@ pub struct CreateServiceInput {
     pub template_major_version: std::option::Option<std::string::String>,
     /// <p>The minor version of the service template that was used to create the service.</p>
     pub template_minor_version: std::option::Option<std::string::String>,
-    /// <p>A link to a spec file that provides inputs as defined in the service template bundle schema file. The spec file is in YAML format. Don’t
-    /// include pipeline inputs in the spec if your service template <i>doesn’t</i> include a service pipeline. For more information, see
-    /// <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create a service</a> in the <i>Proton
-    /// Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create a service</a> in the
-    /// <i>Proton User Guide</i>.</p>
+    /// <p>A link to a spec file that provides inputs as defined in the service template bundle schema file. The spec file is in YAML format. Don’t include pipeline inputs in the spec if your service template <i>doesn’t</i> include a service pipeline. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create a service</a> in the <i>Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create a service</a> in the <i>Proton User Guide</i>.</p>
     pub spec: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set up repository connection</a> in the <i>Proton
-    /// Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting up
-    /// with Proton</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this parameter if your service
-    /// template <i>doesn't</i> include a service pipeline.</p>
+    /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set up repository connection</a> in the <i>Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting up with Proton</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
     pub repository_connection_arn: std::option::Option<std::string::String>,
-    /// <p>The ID of the code repository. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include
-    /// a service pipeline.</p>
+    /// <p>The ID of the code repository. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
     pub repository_id: std::option::Option<std::string::String>,
-    /// <p>The name of the code repository branch that holds the code that's deployed in Proton. <i>Don't</i> include this parameter if
-    /// your service template <i>doesn't</i> include a service pipeline.</p>
+    /// <p>The name of the code repository branch that holds the code that's deployed in Proton. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
     pub branch_name: std::option::Option<std::string::String>,
     /// <p>Create tags for your service. For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -13660,28 +13421,19 @@ impl CreateServiceInput {
     pub fn template_minor_version(&self) -> std::option::Option<&str> {
         self.template_minor_version.as_deref()
     }
-    /// <p>A link to a spec file that provides inputs as defined in the service template bundle schema file. The spec file is in YAML format. Don’t
-    /// include pipeline inputs in the spec if your service template <i>doesn’t</i> include a service pipeline. For more information, see
-    /// <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create a service</a> in the <i>Proton
-    /// Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create a service</a> in the
-    /// <i>Proton User Guide</i>.</p>
+    /// <p>A link to a spec file that provides inputs as defined in the service template bundle schema file. The spec file is in YAML format. Don’t include pipeline inputs in the spec if your service template <i>doesn’t</i> include a service pipeline. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create a service</a> in the <i>Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create a service</a> in the <i>Proton User Guide</i>.</p>
     pub fn spec(&self) -> std::option::Option<&str> {
         self.spec.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set up repository connection</a> in the <i>Proton
-    /// Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting up
-    /// with Proton</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this parameter if your service
-    /// template <i>doesn't</i> include a service pipeline.</p>
+    /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set up repository connection</a> in the <i>Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting up with Proton</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
     pub fn repository_connection_arn(&self) -> std::option::Option<&str> {
         self.repository_connection_arn.as_deref()
     }
-    /// <p>The ID of the code repository. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include
-    /// a service pipeline.</p>
+    /// <p>The ID of the code repository. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
     pub fn repository_id(&self) -> std::option::Option<&str> {
         self.repository_id.as_deref()
     }
-    /// <p>The name of the code repository branch that holds the code that's deployed in Proton. <i>Don't</i> include this parameter if
-    /// your service template <i>doesn't</i> include a service pipeline.</p>
+    /// <p>The name of the code repository branch that holds the code that's deployed in Proton. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include a service pipeline.</p>
     pub fn branch_name(&self) -> std::option::Option<&str> {
         self.branch_name.as_deref()
     }
@@ -13736,10 +13488,7 @@ pub struct UpdateServiceInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The edited service description.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>Lists the service instances to add and the existing service instances to remain. Omit the existing service instances to delete from the list.
-    /// <i>Don't</i> include edits to the existing service instances or pipeline. For more information, see <i>Edit a
-    /// service</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-update.html">Proton Administrator Guide</a> or
-    /// the <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-update.html">Proton User Guide</a>.</p>
+    /// <p>Lists the service instances to add and the existing service instances to remain. Omit the existing service instances to delete from the list. <i>Don't</i> include edits to the existing service instances or pipeline. For more information, see <i>Edit a service</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-update.html">Proton Administrator Guide</a> or the <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-update.html">Proton User Guide</a>.</p>
     pub spec: std::option::Option<std::string::String>,
 }
 impl UpdateServiceInput {
@@ -13751,10 +13500,7 @@ impl UpdateServiceInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Lists the service instances to add and the existing service instances to remain. Omit the existing service instances to delete from the list.
-    /// <i>Don't</i> include edits to the existing service instances or pipeline. For more information, see <i>Edit a
-    /// service</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-update.html">Proton Administrator Guide</a> or
-    /// the <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-update.html">Proton User Guide</a>.</p>
+    /// <p>Lists the service instances to add and the existing service instances to remain. Omit the existing service instances to delete from the list. <i>Don't</i> include edits to the existing service instances or pipeline. For more information, see <i>Edit a service</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-update.html">Proton Administrator Guide</a> or the <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-update.html">Proton User Guide</a>.</p>
     pub fn spec(&self) -> std::option::Option<&str> {
         self.spec.as_deref()
     }
@@ -13799,40 +13545,27 @@ pub struct UpdateServicePipelineInput {
     /// <p>The spec for the service pipeline to update.</p>
     pub spec: std::option::Option<std::string::String>,
     /// <p>The deployment type.</p>
-    /// <p>There are four modes for updating a service pipeline as described in the following. The <code>deploymentType</code> field defines the
-    /// mode.</p>
+    /// <p>There are four modes for updating a service pipeline as described in the following. The <code>deploymentType</code> field defines the mode.</p>
     /// <dl>
-    /// <dt/>
+    /// <dt></dt>
     /// <dd>
-    /// <p>
-    /// <code>NONE</code>
-    /// </p>
+    /// <p> <code>NONE</code> </p>
     /// <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated.</p>
     /// </dd>
-    /// <dt/>
+    /// <dt></dt>
     /// <dd>
-    /// <p>
-    /// <code>CURRENT_VERSION</code>
-    /// </p>
-    /// <p>In this mode, the service pipeline is deployed and updated with the new spec that you provide. Only requested parameters are updated.
-    /// <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
+    /// <p> <code>CURRENT_VERSION</code> </p>
+    /// <p>In this mode, the service pipeline is deployed and updated with the new spec that you provide. Only requested parameters are updated. <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
     /// </dd>
-    /// <dt/>
+    /// <dt></dt>
     /// <dd>
-    /// <p>
-    /// <code>MINOR_VERSION</code>
-    /// </p>
-    /// <p>In this mode, the service pipeline is deployed and updated with the published, recommended (latest) minor version of the current major
-    /// version in use, by default. You can also specify a different minor version of the current major version in use.</p>
+    /// <p> <code>MINOR_VERSION</code> </p>
+    /// <p>In this mode, the service pipeline is deployed and updated with the published, recommended (latest) minor version of the current major version in use, by default. You can also specify a different minor version of the current major version in use.</p>
     /// </dd>
-    /// <dt/>
+    /// <dt></dt>
     /// <dd>
-    /// <p>
-    /// <code>MAJOR_VERSION</code>
-    /// </p>
-    /// <p>In this mode, the service pipeline is deployed and updated with the published, recommended (latest) major and minor version of the current
-    /// template, by default. You can also specify a different major version that is higher than the major version in use and a minor version
-    /// (optional).</p>
+    /// <p> <code>MAJOR_VERSION</code> </p>
+    /// <p>In this mode, the service pipeline is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can also specify a different major version that is higher than the major version in use and a minor version (optional).</p>
     /// </dd>
     /// </dl>
     pub deployment_type: std::option::Option<crate::model::DeploymentUpdateType>,
@@ -13851,40 +13584,27 @@ impl UpdateServicePipelineInput {
         self.spec.as_deref()
     }
     /// <p>The deployment type.</p>
-    /// <p>There are four modes for updating a service pipeline as described in the following. The <code>deploymentType</code> field defines the
-    /// mode.</p>
+    /// <p>There are four modes for updating a service pipeline as described in the following. The <code>deploymentType</code> field defines the mode.</p>
     /// <dl>
-    /// <dt/>
+    /// <dt></dt>
     /// <dd>
-    /// <p>
-    /// <code>NONE</code>
-    /// </p>
+    /// <p> <code>NONE</code> </p>
     /// <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated.</p>
     /// </dd>
-    /// <dt/>
+    /// <dt></dt>
     /// <dd>
-    /// <p>
-    /// <code>CURRENT_VERSION</code>
-    /// </p>
-    /// <p>In this mode, the service pipeline is deployed and updated with the new spec that you provide. Only requested parameters are updated.
-    /// <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
+    /// <p> <code>CURRENT_VERSION</code> </p>
+    /// <p>In this mode, the service pipeline is deployed and updated with the new spec that you provide. Only requested parameters are updated. <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
     /// </dd>
-    /// <dt/>
+    /// <dt></dt>
     /// <dd>
-    /// <p>
-    /// <code>MINOR_VERSION</code>
-    /// </p>
-    /// <p>In this mode, the service pipeline is deployed and updated with the published, recommended (latest) minor version of the current major
-    /// version in use, by default. You can also specify a different minor version of the current major version in use.</p>
+    /// <p> <code>MINOR_VERSION</code> </p>
+    /// <p>In this mode, the service pipeline is deployed and updated with the published, recommended (latest) minor version of the current major version in use, by default. You can also specify a different minor version of the current major version in use.</p>
     /// </dd>
-    /// <dt/>
+    /// <dt></dt>
     /// <dd>
-    /// <p>
-    /// <code>MAJOR_VERSION</code>
-    /// </p>
-    /// <p>In this mode, the service pipeline is deployed and updated with the published, recommended (latest) major and minor version of the current
-    /// template, by default. You can also specify a different major version that is higher than the major version in use and a minor version
-    /// (optional).</p>
+    /// <p> <code>MAJOR_VERSION</code> </p>
+    /// <p>In this mode, the service pipeline is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can also specify a different major version that is higher than the major version in use and a minor version (optional).</p>
     /// </dd>
     /// </dl>
     pub fn deployment_type(&self) -> std::option::Option<&crate::model::DeploymentUpdateType> {
@@ -13917,8 +13637,7 @@ impl std::fmt::Debug for UpdateServicePipelineInput {
 pub struct ListServicePipelineProvisionedResourcesInput {
     /// <p>The service name.</p>
     pub service_name: std::option::Option<std::string::String>,
-    /// <p>A token to indicate the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned
-    /// resources that was previously requested.</p>
+    /// <p>A token to indicate the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned resources that was previously requested.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListServicePipelineProvisionedResourcesInput {
@@ -13926,8 +13645,7 @@ impl ListServicePipelineProvisionedResourcesInput {
     pub fn service_name(&self) -> std::option::Option<&str> {
         self.service_name.as_deref()
     }
-    /// <p>A token to indicate the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned
-    /// resources that was previously requested.</p>
+    /// <p>A token to indicate the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned resources that was previously requested.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -13975,8 +13693,7 @@ impl std::fmt::Debug for ListServicePipelineOutputsInput {
 pub struct ListServiceInstancesInput {
     /// <p>The name of the service that the service instance belongs to.</p>
     pub service_name: std::option::Option<std::string::String>,
-    /// <p>A token to indicate the location of the next service in the array of service instances, after the list of service instances that was
-    /// previously requested.</p>
+    /// <p>A token to indicate the location of the next service in the array of service instances, after the list of service instances that was previously requested.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of service instances to list.</p>
     pub max_results: std::option::Option<i32>,
@@ -13986,8 +13703,7 @@ impl ListServiceInstancesInput {
     pub fn service_name(&self) -> std::option::Option<&str> {
         self.service_name.as_deref()
     }
-    /// <p>A token to indicate the location of the next service in the array of service instances, after the list of service instances that was
-    /// previously requested.</p>
+    /// <p>A token to indicate the location of the next service in the array of service instances, after the list of service instances that was previously requested.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -14015,40 +13731,27 @@ pub struct UpdateServiceInstanceInput {
     /// <p>The name of the service that the service instance belongs to.</p>
     pub service_name: std::option::Option<std::string::String>,
     /// <p>The deployment type.</p>
-    /// <p>There are four modes for updating a service instance as described in the following. The <code>deploymentType</code> field defines the
-    /// mode.</p>
+    /// <p>There are four modes for updating a service instance as described in the following. The <code>deploymentType</code> field defines the mode.</p>
     /// <dl>
-    /// <dt/>
+    /// <dt></dt>
     /// <dd>
-    /// <p>
-    /// <code>NONE</code>
-    /// </p>
+    /// <p> <code>NONE</code> </p>
     /// <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated.</p>
     /// </dd>
-    /// <dt/>
+    /// <dt></dt>
     /// <dd>
-    /// <p>
-    /// <code>CURRENT_VERSION</code>
-    /// </p>
-    /// <p>In this mode, the service instance is deployed and updated with the new spec that you provide. Only requested parameters are updated.
-    /// <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
+    /// <p> <code>CURRENT_VERSION</code> </p>
+    /// <p>In this mode, the service instance is deployed and updated with the new spec that you provide. Only requested parameters are updated. <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
     /// </dd>
-    /// <dt/>
+    /// <dt></dt>
     /// <dd>
-    /// <p>
-    /// <code>MINOR_VERSION</code>
-    /// </p>
-    /// <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) minor version of the current major
-    /// version in use, by default. You can also specify a different minor version of the current major version in use.</p>
+    /// <p> <code>MINOR_VERSION</code> </p>
+    /// <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) minor version of the current major version in use, by default. You can also specify a different minor version of the current major version in use.</p>
     /// </dd>
-    /// <dt/>
+    /// <dt></dt>
     /// <dd>
-    /// <p>
-    /// <code>MAJOR_VERSION</code>
-    /// </p>
-    /// <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) major and minor version of the current
-    /// template, by default. You can also specify a different major version that is higher than the major version in use and a minor version
-    /// (optional).</p>
+    /// <p> <code>MAJOR_VERSION</code> </p>
+    /// <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can also specify a different major version that is higher than the major version in use and a minor version (optional).</p>
     /// </dd>
     /// </dl>
     pub deployment_type: std::option::Option<crate::model::DeploymentUpdateType>,
@@ -14069,40 +13772,27 @@ impl UpdateServiceInstanceInput {
         self.service_name.as_deref()
     }
     /// <p>The deployment type.</p>
-    /// <p>There are four modes for updating a service instance as described in the following. The <code>deploymentType</code> field defines the
-    /// mode.</p>
+    /// <p>There are four modes for updating a service instance as described in the following. The <code>deploymentType</code> field defines the mode.</p>
     /// <dl>
-    /// <dt/>
+    /// <dt></dt>
     /// <dd>
-    /// <p>
-    /// <code>NONE</code>
-    /// </p>
+    /// <p> <code>NONE</code> </p>
     /// <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated.</p>
     /// </dd>
-    /// <dt/>
+    /// <dt></dt>
     /// <dd>
-    /// <p>
-    /// <code>CURRENT_VERSION</code>
-    /// </p>
-    /// <p>In this mode, the service instance is deployed and updated with the new spec that you provide. Only requested parameters are updated.
-    /// <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
+    /// <p> <code>CURRENT_VERSION</code> </p>
+    /// <p>In this mode, the service instance is deployed and updated with the new spec that you provide. Only requested parameters are updated. <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
     /// </dd>
-    /// <dt/>
+    /// <dt></dt>
     /// <dd>
-    /// <p>
-    /// <code>MINOR_VERSION</code>
-    /// </p>
-    /// <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) minor version of the current major
-    /// version in use, by default. You can also specify a different minor version of the current major version in use.</p>
+    /// <p> <code>MINOR_VERSION</code> </p>
+    /// <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) minor version of the current major version in use, by default. You can also specify a different minor version of the current major version in use.</p>
     /// </dd>
-    /// <dt/>
+    /// <dt></dt>
     /// <dd>
-    /// <p>
-    /// <code>MAJOR_VERSION</code>
-    /// </p>
-    /// <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) major and minor version of the current
-    /// template, by default. You can also specify a different major version that is higher than the major version in use and a minor version
-    /// (optional).</p>
+    /// <p> <code>MAJOR_VERSION</code> </p>
+    /// <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can also specify a different major version that is higher than the major version in use and a minor version (optional).</p>
     /// </dd>
     /// </dl>
     pub fn deployment_type(&self) -> std::option::Option<&crate::model::DeploymentUpdateType> {
@@ -14170,8 +13860,7 @@ pub struct ListServiceInstanceProvisionedResourcesInput {
     pub service_name: std::option::Option<std::string::String>,
     /// <p>The service instance name.</p>
     pub service_instance_name: std::option::Option<std::string::String>,
-    /// <p>A token to indicate the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned
-    /// resources that was previously requested.</p>
+    /// <p>A token to indicate the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned resources that was previously requested.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListServiceInstanceProvisionedResourcesInput {
@@ -14183,8 +13872,7 @@ impl ListServiceInstanceProvisionedResourcesInput {
     pub fn service_instance_name(&self) -> std::option::Option<&str> {
         self.service_instance_name.as_deref()
     }
-    /// <p>A token to indicate the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned
-    /// resources that was previously requested.</p>
+    /// <p>A token to indicate the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned resources that was previously requested.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -14238,15 +13926,13 @@ impl std::fmt::Debug for ListServiceInstanceOutputsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRepositoriesInput {
-    /// <p>A token to indicate the location of the next repository in the array of repositories, after the list of repositories previously
-    /// requested.</p>
+    /// <p>A token to indicate the location of the next repository in the array of repositories, after the list of repositories previously requested.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of repositories to list.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListRepositoriesInput {
-    /// <p>A token to indicate the location of the next repository in the array of repositories, after the list of repositories previously
-    /// requested.</p>
+    /// <p>A token to indicate the location of the next repository in the array of repositories, after the list of repositories previously requested.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -14366,21 +14052,18 @@ impl std::fmt::Debug for GetRepositoryInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEnvironmentTemplateVersionsInput {
-    /// <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of an environment template, after
-    /// the list of major or minor versions that was previously requested.</p>
+    /// <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of an environment template, after the list of major or minor versions that was previously requested.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of major or minor versions of an environment template to list.</p>
     pub max_results: std::option::Option<i32>,
     /// <p>The name of the environment template.</p>
     pub template_name: std::option::Option<std::string::String>,
     /// <p>To view a list of minor of versions under a major version of an environment template, include <code>major Version</code>.</p>
-    /// <p>To view a list of major versions of an environment template, <i>exclude</i>
-    /// <code>major Version</code>.</p>
+    /// <p>To view a list of major versions of an environment template, <i>exclude</i> <code>major Version</code>.</p>
     pub major_version: std::option::Option<std::string::String>,
 }
 impl ListEnvironmentTemplateVersionsInput {
-    /// <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of an environment template, after
-    /// the list of major or minor versions that was previously requested.</p>
+    /// <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of an environment template, after the list of major or minor versions that was previously requested.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -14393,8 +14076,7 @@ impl ListEnvironmentTemplateVersionsInput {
         self.template_name.as_deref()
     }
     /// <p>To view a list of minor of versions under a major version of an environment template, include <code>major Version</code>.</p>
-    /// <p>To view a list of major versions of an environment template, <i>exclude</i>
-    /// <code>major Version</code>.</p>
+    /// <p>To view a list of major versions of an environment template, <i>exclude</i> <code>major Version</code>.</p>
     pub fn major_version(&self) -> std::option::Option<&str> {
         self.major_version.as_deref()
     }
@@ -14414,16 +14096,14 @@ impl std::fmt::Debug for ListEnvironmentTemplateVersionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEnvironmentTemplateVersionInput {
-    /// <p>When included, if two identical requests are made with the same client token, Proton returns the environment template version that the
-    /// first request created.</p>
+    /// <p>When included, if two identical requests are made with the same client token, Proton returns the environment template version that the first request created.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The name of the environment template.</p>
     pub template_name: std::option::Option<std::string::String>,
     /// <p>A description of the new version of an environment template.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>To create a new minor version of the environment template, include a <code>major Version</code>.</p>
-    /// <p>To create a new major and minor version of the environment template, <i>exclude</i>
-    /// <code>major Version</code>.</p>
+    /// <p>To create a new major and minor version of the environment template, <i>exclude</i> <code>major Version</code>.</p>
     pub major_version: std::option::Option<std::string::String>,
     /// <p>An object that includes the template bundle S3 bucket path and name for the new version of an template.</p>
     pub source: std::option::Option<crate::model::TemplateVersionSourceInput>,
@@ -14431,8 +14111,7 @@ pub struct CreateEnvironmentTemplateVersionInput {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateEnvironmentTemplateVersionInput {
-    /// <p>When included, if two identical requests are made with the same client token, Proton returns the environment template version that the
-    /// first request created.</p>
+    /// <p>When included, if two identical requests are made with the same client token, Proton returns the environment template version that the first request created.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -14445,8 +14124,7 @@ impl CreateEnvironmentTemplateVersionInput {
         self.description.as_deref()
     }
     /// <p>To create a new minor version of the environment template, include a <code>major Version</code>.</p>
-    /// <p>To create a new major and minor version of the environment template, <i>exclude</i>
-    /// <code>major Version</code>.</p>
+    /// <p>To create a new major and minor version of the environment template, <i>exclude</i> <code>major Version</code>.</p>
     pub fn major_version(&self) -> std::option::Option<&str> {
         self.major_version.as_deref()
     }
@@ -14595,15 +14273,13 @@ impl std::fmt::Debug for GetEnvironmentTemplateVersionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEnvironmentTemplatesInput {
-    /// <p>A token to indicate the location of the next environment template in the array of environment templates, after the list of environment
-    /// templates that was previously requested.</p>
+    /// <p>A token to indicate the location of the next environment template in the array of environment templates, after the list of environment templates that was previously requested.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of environment templates to list.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListEnvironmentTemplatesInput {
-    /// <p>A token to indicate the location of the next environment template in the array of environment templates, after the list of environment
-    /// templates that was previously requested.</p>
+    /// <p>A token to indicate the location of the next environment template in the array of environment templates, after the list of environment templates that was previously requested.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -14758,8 +14434,7 @@ impl std::fmt::Debug for GetEnvironmentTemplateInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEnvironmentsInput {
-    /// <p>A token to indicate the location of the next environment in the array of environments, after the list of environments that was previously
-    /// requested.</p>
+    /// <p>A token to indicate the location of the next environment in the array of environments, after the list of environments that was previously requested.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of environments to list.</p>
     pub max_results: std::option::Option<i32>,
@@ -14768,8 +14443,7 @@ pub struct ListEnvironmentsInput {
         std::option::Option<std::vec::Vec<crate::model::EnvironmentTemplateFilter>>,
 }
 impl ListEnvironmentsInput {
-    /// <p>A token to indicate the location of the next environment in the array of environments, after the list of environments that was previously
-    /// requested.</p>
+    /// <p>A token to indicate the location of the next environment in the array of environments, after the list of environments that was previously requested.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -14808,28 +14482,16 @@ pub struct CreateEnvironmentInput {
     pub template_minor_version: std::option::Option<std::string::String>,
     /// <p>A description of the environment that's being created and deployed.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>A link to a YAML formatted spec file that provides inputs as defined in the environment template bundle schema file. For more information, see
-    /// <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a> in the <i>Proton Administrator
-    /// Guide</i>.</p>
+    /// <p>A link to a YAML formatted spec file that provides inputs as defined in the environment template bundle schema file. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a> in the <i>Proton Administrator Guide</i>.</p>
     pub spec: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton to make calls to other services on your behalf. You must
-    /// include either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and value and omit the
-    /// <code>provisioningRepository</code> parameter when you use standard provisioning.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton to make calls to other services on your behalf. You must include either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and value and omit the <code>provisioningRepository</code> parameter when you use standard provisioning.</p>
     pub proton_service_role_arn: std::option::Option<std::string::String>,
-    /// <p>The ID of the environment account connection that you provide if you're provisioning your environment infrastructure resources to an
-    /// environment account. You must include either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and
-    /// value and omit the <code>provisioningRepository</code> parameter and values. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton Administrator
-    /// guide</i>.</p>
+    /// <p>The ID of the environment account connection that you provide if you're provisioning your environment infrastructure resources to an environment account. You must include either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and value and omit the <code>provisioningRepository</code> parameter and values. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton Administrator guide</i>.</p>
     pub environment_account_connection_id: std::option::Option<std::string::String>,
     /// <p>Create tags for your environment. For more information, see <i>Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton User Guide</a>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>The repository that you provide with pull request provisioning. If you provide this parameter, you must omit the
-    /// <code>environmentAccountConnectionId</code> and <code>protonServiceRoleArn</code> parameters.</p>
-    /// <important>
-    /// <p>Provisioning by pull request is currently in feature preview and is
-    /// only usable with Terraform based Proton Templates. To learn more about
-    /// <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and
-    /// Previews.</p>
+    /// <p>The repository that you provide with pull request provisioning. If you provide this parameter, you must omit the <code>environmentAccountConnectionId</code> and <code>protonServiceRoleArn</code> parameters.</p> <important>
+    /// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
     /// </important>
     pub provisioning_repository: std::option::Option<crate::model::RepositoryBranchInput>,
 }
@@ -14854,22 +14516,15 @@ impl CreateEnvironmentInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>A link to a YAML formatted spec file that provides inputs as defined in the environment template bundle schema file. For more information, see
-    /// <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a> in the <i>Proton Administrator
-    /// Guide</i>.</p>
+    /// <p>A link to a YAML formatted spec file that provides inputs as defined in the environment template bundle schema file. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a> in the <i>Proton Administrator Guide</i>.</p>
     pub fn spec(&self) -> std::option::Option<&str> {
         self.spec.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton to make calls to other services on your behalf. You must
-    /// include either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and value and omit the
-    /// <code>provisioningRepository</code> parameter when you use standard provisioning.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton to make calls to other services on your behalf. You must include either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and value and omit the <code>provisioningRepository</code> parameter when you use standard provisioning.</p>
     pub fn proton_service_role_arn(&self) -> std::option::Option<&str> {
         self.proton_service_role_arn.as_deref()
     }
-    /// <p>The ID of the environment account connection that you provide if you're provisioning your environment infrastructure resources to an
-    /// environment account. You must include either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and
-    /// value and omit the <code>provisioningRepository</code> parameter and values. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton Administrator
-    /// guide</i>.</p>
+    /// <p>The ID of the environment account connection that you provide if you're provisioning your environment infrastructure resources to an environment account. You must include either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and value and omit the <code>provisioningRepository</code> parameter and values. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton Administrator guide</i>.</p>
     pub fn environment_account_connection_id(&self) -> std::option::Option<&str> {
         self.environment_account_connection_id.as_deref()
     }
@@ -14877,13 +14532,8 @@ impl CreateEnvironmentInput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>The repository that you provide with pull request provisioning. If you provide this parameter, you must omit the
-    /// <code>environmentAccountConnectionId</code> and <code>protonServiceRoleArn</code> parameters.</p>
-    /// <important>
-    /// <p>Provisioning by pull request is currently in feature preview and is
-    /// only usable with Terraform based Proton Templates. To learn more about
-    /// <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and
-    /// Previews.</p>
+    /// <p>The repository that you provide with pull request provisioning. If you provide this parameter, you must omit the <code>environmentAccountConnectionId</code> and <code>protonServiceRoleArn</code> parameters.</p> <important>
+    /// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
     /// </important>
     pub fn provisioning_repository(
         &self,
@@ -14950,50 +14600,33 @@ pub struct UpdateEnvironmentInput {
     pub proton_service_role_arn: std::option::Option<std::string::String>,
     /// <p>There are four modes for updating an environment as described in the following. The <code>deploymentType</code> field defines the mode.</p>
     /// <dl>
-    /// <dt/>
+    /// <dt></dt>
     /// <dd>
-    /// <p>
-    /// <code>NONE</code>
-    /// </p>
+    /// <p> <code>NONE</code> </p>
     /// <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated.</p>
     /// </dd>
-    /// <dt/>
+    /// <dt></dt>
     /// <dd>
-    /// <p>
-    /// <code>CURRENT_VERSION</code>
-    /// </p>
-    /// <p>In this mode, the environment is deployed and updated with the new spec that you provide. Only requested parameters are updated.
-    /// <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
+    /// <p> <code>CURRENT_VERSION</code> </p>
+    /// <p>In this mode, the environment is deployed and updated with the new spec that you provide. Only requested parameters are updated. <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
     /// </dd>
-    /// <dt/>
+    /// <dt></dt>
     /// <dd>
-    /// <p>
-    /// <code>MINOR_VERSION</code>
-    /// </p>
-    /// <p>In this mode, the environment is deployed and updated with the published, recommended (latest) minor version of the current major version
-    /// in use, by default. You can also specify a different minor version of the current major version in use.</p>
+    /// <p> <code>MINOR_VERSION</code> </p>
+    /// <p>In this mode, the environment is deployed and updated with the published, recommended (latest) minor version of the current major version in use, by default. You can also specify a different minor version of the current major version in use.</p>
     /// </dd>
-    /// <dt/>
+    /// <dt></dt>
     /// <dd>
-    /// <p>
-    /// <code>MAJOR_VERSION</code>
-    /// </p>
-    /// <p>In this mode, the environment is deployed and updated with the published, recommended (latest) major and minor version of the current
-    /// template, by default. You can also specify a different major version that is higher than the major version in use and a minor version
-    /// (optional).</p>
+    /// <p> <code>MAJOR_VERSION</code> </p>
+    /// <p>In this mode, the environment is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can also specify a different major version that is higher than the major version in use and a minor version (optional).</p>
     /// </dd>
     /// </dl>
     pub deployment_type: std::option::Option<crate::model::DeploymentUpdateType>,
     /// <p>The ID of the environment account connection.</p>
-    /// <p>You can only update to a new environment account connection if it was created in the same environment account that the current environment
-    /// account connection was created in and is associated with the current environment.</p>
+    /// <p>You can only update to a new environment account connection if it was created in the same environment account that the current environment account connection was created in and is associated with the current environment.</p>
     pub environment_account_connection_id: std::option::Option<std::string::String>,
-    /// <p>The repository that you provide with pull request provisioning.</p>
-    /// <important>
-    /// <p>Provisioning by pull request is currently in feature preview and is
-    /// only usable with Terraform based Proton Templates. To learn more about
-    /// <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and
-    /// Previews.</p>
+    /// <p>The repository that you provide with pull request provisioning.</p> <important>
+    /// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
     /// </important>
     pub provisioning_repository: std::option::Option<crate::model::RepositoryBranchInput>,
 }
@@ -15024,54 +14657,37 @@ impl UpdateEnvironmentInput {
     }
     /// <p>There are four modes for updating an environment as described in the following. The <code>deploymentType</code> field defines the mode.</p>
     /// <dl>
-    /// <dt/>
+    /// <dt></dt>
     /// <dd>
-    /// <p>
-    /// <code>NONE</code>
-    /// </p>
+    /// <p> <code>NONE</code> </p>
     /// <p>In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated.</p>
     /// </dd>
-    /// <dt/>
+    /// <dt></dt>
     /// <dd>
-    /// <p>
-    /// <code>CURRENT_VERSION</code>
-    /// </p>
-    /// <p>In this mode, the environment is deployed and updated with the new spec that you provide. Only requested parameters are updated.
-    /// <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
+    /// <p> <code>CURRENT_VERSION</code> </p>
+    /// <p>In this mode, the environment is deployed and updated with the new spec that you provide. Only requested parameters are updated. <i>Don’t</i> include minor or major version parameters when you use this <code>deployment-type</code>.</p>
     /// </dd>
-    /// <dt/>
+    /// <dt></dt>
     /// <dd>
-    /// <p>
-    /// <code>MINOR_VERSION</code>
-    /// </p>
-    /// <p>In this mode, the environment is deployed and updated with the published, recommended (latest) minor version of the current major version
-    /// in use, by default. You can also specify a different minor version of the current major version in use.</p>
+    /// <p> <code>MINOR_VERSION</code> </p>
+    /// <p>In this mode, the environment is deployed and updated with the published, recommended (latest) minor version of the current major version in use, by default. You can also specify a different minor version of the current major version in use.</p>
     /// </dd>
-    /// <dt/>
+    /// <dt></dt>
     /// <dd>
-    /// <p>
-    /// <code>MAJOR_VERSION</code>
-    /// </p>
-    /// <p>In this mode, the environment is deployed and updated with the published, recommended (latest) major and minor version of the current
-    /// template, by default. You can also specify a different major version that is higher than the major version in use and a minor version
-    /// (optional).</p>
+    /// <p> <code>MAJOR_VERSION</code> </p>
+    /// <p>In this mode, the environment is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can also specify a different major version that is higher than the major version in use and a minor version (optional).</p>
     /// </dd>
     /// </dl>
     pub fn deployment_type(&self) -> std::option::Option<&crate::model::DeploymentUpdateType> {
         self.deployment_type.as_ref()
     }
     /// <p>The ID of the environment account connection.</p>
-    /// <p>You can only update to a new environment account connection if it was created in the same environment account that the current environment
-    /// account connection was created in and is associated with the current environment.</p>
+    /// <p>You can only update to a new environment account connection if it was created in the same environment account that the current environment account connection was created in and is associated with the current environment.</p>
     pub fn environment_account_connection_id(&self) -> std::option::Option<&str> {
         self.environment_account_connection_id.as_deref()
     }
-    /// <p>The repository that you provide with pull request provisioning.</p>
-    /// <important>
-    /// <p>Provisioning by pull request is currently in feature preview and is
-    /// only usable with Terraform based Proton Templates. To learn more about
-    /// <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and
-    /// Previews.</p>
+    /// <p>The repository that you provide with pull request provisioning.</p> <important>
+    /// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
     /// </important>
     pub fn provisioning_repository(
         &self,
@@ -15125,8 +14741,7 @@ impl std::fmt::Debug for GetEnvironmentInput {
 pub struct ListEnvironmentProvisionedResourcesInput {
     /// <p>The environment name.</p>
     pub environment_name: std::option::Option<std::string::String>,
-    /// <p>A token to indicate the location of the next environment provisioned resource in the array of environment provisioned resources, after the
-    /// list of environment provisioned resources that was previously requested.</p>
+    /// <p>A token to indicate the location of the next environment provisioned resource in the array of environment provisioned resources, after the list of environment provisioned resources that was previously requested.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEnvironmentProvisionedResourcesInput {
@@ -15134,8 +14749,7 @@ impl ListEnvironmentProvisionedResourcesInput {
     pub fn environment_name(&self) -> std::option::Option<&str> {
         self.environment_name.as_deref()
     }
-    /// <p>A token to indicate the location of the next environment provisioned resource in the array of environment provisioned resources, after the
-    /// list of environment provisioned resources that was previously requested.</p>
+    /// <p>A token to indicate the location of the next environment provisioned resource in the array of environment provisioned resources, after the list of environment provisioned resources that was previously requested.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -15155,8 +14769,7 @@ impl std::fmt::Debug for ListEnvironmentProvisionedResourcesInput {
 pub struct ListEnvironmentOutputsInput {
     /// <p>The environment name.</p>
     pub environment_name: std::option::Option<std::string::String>,
-    /// <p>A token to indicate the location of the next environment output in the array of environment outputs, after the list of environment outputs
-    /// that was previously requested.</p>
+    /// <p>A token to indicate the location of the next environment output in the array of environment outputs, after the list of environment outputs that was previously requested.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEnvironmentOutputsInput {
@@ -15164,8 +14777,7 @@ impl ListEnvironmentOutputsInput {
     pub fn environment_name(&self) -> std::option::Option<&str> {
         self.environment_name.as_deref()
     }
-    /// <p>A token to indicate the location of the next environment output in the array of environment outputs, after the list of environment outputs
-    /// that was previously requested.</p>
+    /// <p>A token to indicate the location of the next environment output in the array of environment outputs, after the list of environment outputs that was previously requested.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -15233,8 +14845,7 @@ pub struct ListEnvironmentAccountConnectionsInput {
     /// <p>The status details for each listed environment account connection.</p>
     pub statuses:
         std::option::Option<std::vec::Vec<crate::model::EnvironmentAccountConnectionStatus>>,
-    /// <p>A token to indicate the location of the next environment account connection in the array of environment account connections, after the list of
-    /// environment account connections that was previously requested.</p>
+    /// <p>A token to indicate the location of the next environment account connection in the array of environment account connections, after the list of environment account connections that was previously requested.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of environment account connections to list.</p>
     pub max_results: std::option::Option<i32>,
@@ -15256,8 +14867,7 @@ impl ListEnvironmentAccountConnectionsInput {
     ) -> std::option::Option<&[crate::model::EnvironmentAccountConnectionStatus]> {
         self.statuses.as_deref()
     }
-    /// <p>A token to indicate the location of the next environment account connection in the array of environment account connections, after the list of
-    /// environment account connections that was previously requested.</p>
+    /// <p>A token to indicate the location of the next environment account connection in the array of environment account connections, after the list of environment account connections that was previously requested.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -15282,36 +14892,27 @@ impl std::fmt::Debug for ListEnvironmentAccountConnectionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEnvironmentAccountConnectionInput {
-    /// <p>When included, if two identical requests are made with the same client token, Proton returns the environment account connection that the
-    /// first request created.</p>
+    /// <p>When included, if two identical requests are made with the same client token, Proton returns the environment account connection that the first request created.</p>
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The ID of the management account that accepts or rejects the environment account connection. You create an manage the Proton environment in
-    /// this account. If the management account accepts the environment account connection, Proton can use the associated IAM role to provision
-    /// environment infrastructure resources in the associated environment account.</p>
+    /// <p>The ID of the management account that accepts or rejects the environment account connection. You create an manage the Proton environment in this account. If the management account accepts the environment account connection, Proton can use the associated IAM role to provision environment infrastructure resources in the associated environment account.</p>
     pub management_account_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the IAM service role that's created in the environment account. Proton uses this role to provision
-    /// infrastructure resources in the associated environment account.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role that's created in the environment account. Proton uses this role to provision infrastructure resources in the associated environment account.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The name of the Proton environment that's created in the associated management account.</p>
     pub environment_name: std::option::Option<std::string::String>,
-    /// <p>Tags for your environment account connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton resources and tagging</a> in the <i>Proton Administrator
-    /// Guide</i>.</p>
+    /// <p>Tags for your environment account connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton resources and tagging</a> in the <i>Proton Administrator Guide</i>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateEnvironmentAccountConnectionInput {
-    /// <p>When included, if two identical requests are made with the same client token, Proton returns the environment account connection that the
-    /// first request created.</p>
+    /// <p>When included, if two identical requests are made with the same client token, Proton returns the environment account connection that the first request created.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The ID of the management account that accepts or rejects the environment account connection. You create an manage the Proton environment in
-    /// this account. If the management account accepts the environment account connection, Proton can use the associated IAM role to provision
-    /// environment infrastructure resources in the associated environment account.</p>
+    /// <p>The ID of the management account that accepts or rejects the environment account connection. You create an manage the Proton environment in this account. If the management account accepts the environment account connection, Proton can use the associated IAM role to provision environment infrastructure resources in the associated environment account.</p>
     pub fn management_account_id(&self) -> std::option::Option<&str> {
         self.management_account_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM service role that's created in the environment account. Proton uses this role to provision
-    /// infrastructure resources in the associated environment account.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role that's created in the environment account. Proton uses this role to provision infrastructure resources in the associated environment account.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -15319,8 +14920,7 @@ impl CreateEnvironmentAccountConnectionInput {
     pub fn environment_name(&self) -> std::option::Option<&str> {
         self.environment_name.as_deref()
     }
-    /// <p>Tags for your environment account connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton resources and tagging</a> in the <i>Proton Administrator
-    /// Guide</i>.</p>
+    /// <p>Tags for your environment account connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton resources and tagging</a> in the <i>Proton Administrator Guide</i>.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -15411,40 +15011,24 @@ impl std::fmt::Debug for GetEnvironmentAccountConnectionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAccountSettingsInput {
-    /// <p>The Amazon Resource Name (ARN) of the Proton pipeline service role.</p>
-    /// <important>
-    /// <p>Provisioning by pull request is currently in feature preview and is
-    /// only usable with Terraform based Proton Templates. To learn more about
-    /// <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and
-    /// Previews.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Proton pipeline service role.</p> <important>
+    /// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
     /// </important>
     pub pipeline_service_role_arn: std::option::Option<std::string::String>,
-    /// <p>The repository that you provide with pull request provisioning.</p>
-    /// <important>
-    /// <p>Provisioning by pull request is currently in feature preview and is
-    /// only usable with Terraform based Proton Templates. To learn more about
-    /// <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and
-    /// Previews.</p>
+    /// <p>The repository that you provide with pull request provisioning.</p> <important>
+    /// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
     /// </important>
     pub pipeline_provisioning_repository: std::option::Option<crate::model::RepositoryBranchInput>,
 }
 impl UpdateAccountSettingsInput {
-    /// <p>The Amazon Resource Name (ARN) of the Proton pipeline service role.</p>
-    /// <important>
-    /// <p>Provisioning by pull request is currently in feature preview and is
-    /// only usable with Terraform based Proton Templates. To learn more about
-    /// <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and
-    /// Previews.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Proton pipeline service role.</p> <important>
+    /// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
     /// </important>
     pub fn pipeline_service_role_arn(&self) -> std::option::Option<&str> {
         self.pipeline_service_role_arn.as_deref()
     }
-    /// <p>The repository that you provide with pull request provisioning.</p>
-    /// <important>
-    /// <p>Provisioning by pull request is currently in feature preview and is
-    /// only usable with Terraform based Proton Templates. To learn more about
-    /// <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and
-    /// Previews.</p>
+    /// <p>The repository that you provide with pull request provisioning.</p> <important>
+    /// <p>Provisioning by pull request is currently in feature preview and is only usable with Terraform based Proton Templates. To learn more about <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and Previews.</p>
     /// </important>
     pub fn pipeline_provisioning_repository(
         &self,
@@ -15586,8 +15170,7 @@ impl std::fmt::Debug for NotifyResourceDeploymentStatusChangeInput {
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource for the listed tags.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>A token to indicate the location of the next resource tag in the array of resource tags, after the list of resource tags that was previously
-    /// requested.</p>
+    /// <p>A token to indicate the location of the next resource tag in the array of resource tags, after the list of resource tags that was previously requested.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of tags to list.</p>
     pub max_results: std::option::Option<i32>,
@@ -15597,8 +15180,7 @@ impl ListTagsForResourceInput {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>A token to indicate the location of the next resource tag in the array of resource tags, after the list of resource tags that was previously
-    /// requested.</p>
+    /// <p>A token to indicate the location of the next resource tag in the array of resource tags, after the list of resource tags that was previously requested.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -15627,8 +15209,7 @@ pub struct ListRepositorySyncDefinitionsInput {
     pub repository_provider: std::option::Option<crate::model::RepositoryProvider>,
     /// <p>The sync type. The only supported value is <code>TEMPLATE_SYNC</code>.</p>
     pub sync_type: std::option::Option<crate::model::SyncType>,
-    /// <p>A token to indicate the location of the next repository sync definition in the array of repository sync definitions, after the list of
-    /// repository sync definitions previously requested.</p>
+    /// <p>A token to indicate the location of the next repository sync definition in the array of repository sync definitions, after the list of repository sync definitions previously requested.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRepositorySyncDefinitionsInput {
@@ -15644,8 +15225,7 @@ impl ListRepositorySyncDefinitionsInput {
     pub fn sync_type(&self) -> std::option::Option<&crate::model::SyncType> {
         self.sync_type.as_ref()
     }
-    /// <p>A token to indicate the location of the next repository sync definition in the array of repository sync definitions, after the list of
-    /// repository sync definitions previously requested.</p>
+    /// <p>A token to indicate the location of the next repository sync definition in the array of repository sync definitions, after the list of repository sync definitions previously requested.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }

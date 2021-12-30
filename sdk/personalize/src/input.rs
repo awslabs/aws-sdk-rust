@@ -27,14 +27,12 @@ pub mod create_batch_inference_job_input {
             self.job_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the solution version that will be used to generate the
-        /// batch inference recommendations.</p>
+        /// <p>The Amazon Resource Name (ARN) of the solution version that will be used to generate the batch inference recommendations.</p>
         pub fn solution_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.solution_version_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the solution version that will be used to generate the
-        /// batch inference recommendations.</p>
+        /// <p>The Amazon Resource Name (ARN) of the solution version that will be used to generate the batch inference recommendations.</p>
         pub fn set_solution_version_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -42,16 +40,12 @@ pub mod create_batch_inference_job_input {
             self.solution_version_arn = input;
             self
         }
-        /// <p>The ARN of the filter to apply to the batch inference job. For more information on using
-        /// filters, see
-        /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering Batch Recommendations</a>..</p>
+        /// <p>The ARN of the filter to apply to the batch inference job. For more information on using filters, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering Batch Recommendations</a>..</p>
         pub fn filter_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.filter_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the filter to apply to the batch inference job. For more information on using
-        /// filters, see
-        /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering Batch Recommendations</a>..</p>
+        /// <p>The ARN of the filter to apply to the batch inference job. For more information on using filters, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering Batch Recommendations</a>..</p>
         pub fn set_filter_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.filter_arn = input;
             self
@@ -66,14 +60,12 @@ pub mod create_batch_inference_job_input {
             self.num_results = input;
             self
         }
-        /// <p>The Amazon S3 path that leads to the input file to base your recommendations on. The input
-        /// material must be in JSON format.</p>
+        /// <p>The Amazon S3 path that leads to the input file to base your recommendations on. The input material must be in JSON format.</p>
         pub fn job_input(mut self, input: crate::model::BatchInferenceJobInput) -> Self {
             self.job_input = Some(input);
             self
         }
-        /// <p>The Amazon S3 path that leads to the input file to base your recommendations on. The input
-        /// material must be in JSON format.</p>
+        /// <p>The Amazon S3 path that leads to the input file to base your recommendations on. The input material must be in JSON format.</p>
         pub fn set_job_input(
             mut self,
             input: std::option::Option<crate::model::BatchInferenceJobInput>,
@@ -94,14 +86,12 @@ pub mod create_batch_inference_job_input {
             self.job_output = input;
             self
         }
-        /// <p>The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input and output
-        /// Amazon S3 buckets respectively.</p>
+        /// <p>The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input and output Amazon S3 buckets respectively.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input and output
-        /// Amazon S3 buckets respectively.</p>
+        /// <p>The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input and output Amazon S3 buckets respectively.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -292,14 +282,12 @@ pub mod create_batch_segment_job_input {
             self.job_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the solution version you want the batch segment job to use to generate
-        /// batch segments.</p>
+        /// <p>The Amazon Resource Name (ARN) of the solution version you want the batch segment job to use to generate batch segments.</p>
         pub fn solution_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.solution_version_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the solution version you want the batch segment job to use to generate
-        /// batch segments.</p>
+        /// <p>The Amazon Resource Name (ARN) of the solution version you want the batch segment job to use to generate batch segments.</p>
         pub fn set_solution_version_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -307,14 +295,12 @@ pub mod create_batch_segment_job_input {
             self.solution_version_arn = input;
             self
         }
-        /// <p>The ARN of the filter to apply to the batch segment job. For more information on using
-        /// filters, see <a>filter-batch</a>.</p>
+        /// <p>The ARN of the filter to apply to the batch segment job. For more information on using filters, see <code>filter-batch</code>.</p>
         pub fn filter_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.filter_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the filter to apply to the batch segment job. For more information on using
-        /// filters, see <a>filter-batch</a>.</p>
+        /// <p>The ARN of the filter to apply to the batch segment job. For more information on using filters, see <code>filter-batch</code>.</p>
         pub fn set_filter_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.filter_arn = input;
             self
@@ -355,14 +341,12 @@ pub mod create_batch_segment_job_input {
             self.job_output = input;
             self
         }
-        /// <p>The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input and output
-        /// Amazon S3 buckets respectively.</p>
+        /// <p>The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input and output Amazon S3 buckets respectively.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input and output
-        /// Amazon S3 buckets respectively.</p>
+        /// <p>The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input and output Amazon S3 buckets respectively.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -545,14 +529,12 @@ pub mod create_campaign_input {
             self.solution_version_arn = input;
             self
         }
-        /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that
-        /// Amazon Personalize will support.</p>
+        /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize will support.</p>
         pub fn min_provisioned_tps(mut self, input: i32) -> Self {
             self.min_provisioned_tps = Some(input);
             self
         }
-        /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that
-        /// Amazon Personalize will support.</p>
+        /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize will support.</p>
         pub fn set_min_provisioned_tps(mut self, input: std::option::Option<i32>) -> Self {
             self.min_provisioned_tps = input;
             self
@@ -730,14 +712,12 @@ pub mod create_dataset_input {
             self.name = input;
             self
         }
-        /// <p>The ARN of the schema to associate with the dataset. The schema defines the dataset
-        /// fields.</p>
+        /// <p>The ARN of the schema to associate with the dataset. The schema defines the dataset fields.</p>
         pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.schema_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the schema to associate with the dataset. The schema defines the dataset
-        /// fields.</p>
+        /// <p>The ARN of the schema to associate with the dataset. The schema defines the dataset fields.</p>
         pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.schema_arn = input;
             self
@@ -758,15 +738,9 @@ pub mod create_dataset_input {
         /// <p>The type of dataset.</p>
         /// <p>One of the following (case insensitive) values:</p>
         /// <ul>
-        /// <li>
-        /// <p>Interactions</p>
-        /// </li>
-        /// <li>
-        /// <p>Items</p>
-        /// </li>
-        /// <li>
-        /// <p>Users</p>
-        /// </li>
+        /// <li> <p>Interactions</p> </li>
+        /// <li> <p>Items</p> </li>
+        /// <li> <p>Users</p> </li>
         /// </ul>
         pub fn dataset_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.dataset_type = Some(input.into());
@@ -775,15 +749,9 @@ pub mod create_dataset_input {
         /// <p>The type of dataset.</p>
         /// <p>One of the following (case insensitive) values:</p>
         /// <ul>
-        /// <li>
-        /// <p>Interactions</p>
-        /// </li>
-        /// <li>
-        /// <p>Items</p>
-        /// </li>
-        /// <li>
-        /// <p>Users</p>
-        /// </li>
+        /// <li> <p>Interactions</p> </li>
+        /// <li> <p>Items</p> </li>
+        /// <li> <p>Users</p> </li>
         /// </ul>
         pub fn set_dataset_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.dataset_type = input;
@@ -959,18 +927,12 @@ pub mod create_dataset_export_job_input {
             self.dataset_arn = input;
             self
         }
-        /// <p>The data to export, based on how you imported the data. You can choose to export only <code>BULK</code> data that you imported using a dataset import job,
-        /// only <code>PUT</code> data that you imported incrementally (using the console, PutEvents, PutUsers and PutItems operations), or <code>ALL</code>
-        /// for both types. The default value is <code>PUT</code>.
-        /// </p>
+        /// <p>The data to export, based on how you imported the data. You can choose to export only <code>BULK</code> data that you imported using a dataset import job, only <code>PUT</code> data that you imported incrementally (using the console, PutEvents, PutUsers and PutItems operations), or <code>ALL</code> for both types. The default value is <code>PUT</code>. </p>
         pub fn ingestion_mode(mut self, input: crate::model::IngestionMode) -> Self {
             self.ingestion_mode = Some(input);
             self
         }
-        /// <p>The data to export, based on how you imported the data. You can choose to export only <code>BULK</code> data that you imported using a dataset import job,
-        /// only <code>PUT</code> data that you imported incrementally (using the console, PutEvents, PutUsers and PutItems operations), or <code>ALL</code>
-        /// for both types. The default value is <code>PUT</code>.
-        /// </p>
+        /// <p>The data to export, based on how you imported the data. You can choose to export only <code>BULK</code> data that you imported using a dataset import job, only <code>PUT</code> data that you imported incrementally (using the console, PutEvents, PutUsers and PutItems operations), or <code>ALL</code> for both types. The default value is <code>PUT</code>. </p>
         pub fn set_ingestion_mode(
             mut self,
             input: std::option::Option<crate::model::IngestionMode>,
@@ -978,14 +940,12 @@ pub mod create_dataset_export_job_input {
             self.ingestion_mode = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your
-        /// output Amazon S3 bucket.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your output Amazon S3 bucket.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your
-        /// output Amazon S3 bucket.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your output Amazon S3 bucket.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -1166,14 +1126,12 @@ pub mod create_dataset_group_input {
             self.name = input;
             self
         }
-        /// <p>The ARN of the Identity and Access Management (IAM) role that has permissions to access the Key Management Service (KMS) key. Supplying an IAM
-        /// role is only valid when also specifying a KMS key.</p>
+        /// <p>The ARN of the Identity and Access Management (IAM) role that has permissions to access the Key Management Service (KMS) key. Supplying an IAM role is only valid when also specifying a KMS key.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the Identity and Access Management (IAM) role that has permissions to access the Key Management Service (KMS) key. Supplying an IAM
-        /// role is only valid when also specifying a KMS key.</p>
+        /// <p>The ARN of the Identity and Access Management (IAM) role that has permissions to access the Key Management Service (KMS) key. Supplying an IAM role is only valid when also specifying a KMS key.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -1188,18 +1146,12 @@ pub mod create_dataset_group_input {
             self.kms_key_arn = input;
             self
         }
-        /// <p>The domain of the dataset group. Specify a domain to create a Domain dataset group. The domain you specify
-        /// determines the default schemas for datasets and the use cases available for recommenders. If you don't specify a domain,
-        /// you create a Custom dataset group with solution versions that you deploy with a campaign.
-        /// </p>
+        /// <p>The domain of the dataset group. Specify a domain to create a Domain dataset group. The domain you specify determines the default schemas for datasets and the use cases available for recommenders. If you don't specify a domain, you create a Custom dataset group with solution versions that you deploy with a campaign. </p>
         pub fn domain(mut self, input: crate::model::Domain) -> Self {
             self.domain = Some(input);
             self
         }
-        /// <p>The domain of the dataset group. Specify a domain to create a Domain dataset group. The domain you specify
-        /// determines the default schemas for datasets and the use cases available for recommenders. If you don't specify a domain,
-        /// you create a Custom dataset group with solution versions that you deploy with a campaign.
-        /// </p>
+        /// <p>The domain of the dataset group. Specify a domain to create a Domain dataset group. The domain you specify determines the default schemas for datasets and the use cases available for recommenders. If you don't specify a domain, you create a Custom dataset group with solution versions that you deploy with a campaign. </p>
         pub fn set_domain(mut self, input: std::option::Option<crate::model::Domain>) -> Self {
             self.domain = input;
             self
@@ -1740,16 +1692,12 @@ pub mod create_filter_input {
             self.dataset_group_arn = input;
             self
         }
-        /// <p>The filter expression defines which items are included or excluded from recommendations. Filter expression must follow specific format rules.
-        /// For information about filter expression structure and syntax, see
-        /// <a>filter-expressions</a>.</p>
+        /// <p>The filter expression defines which items are included or excluded from recommendations. Filter expression must follow specific format rules. For information about filter expression structure and syntax, see <code>filter-expressions</code>.</p>
         pub fn filter_expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.filter_expression = Some(input.into());
             self
         }
-        /// <p>The filter expression defines which items are included or excluded from recommendations. Filter expression must follow specific format rules.
-        /// For information about filter expression structure and syntax, see
-        /// <a>filter-expressions</a>.</p>
+        /// <p>The filter expression defines which items are included or excluded from recommendations. Filter expression must follow specific format rules. For information about filter expression structure and syntax, see <code>filter-expressions</code>.</p>
         pub fn set_filter_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1928,16 +1876,12 @@ pub mod create_recommender_input {
             self.dataset_group_arn = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the recipe that the recommender will use. For a recommender, a recipe is a Domain dataset group
-        /// use case. Only Domain dataset group use cases can be used to create a recommender. For information about use cases see <a href="https://docs.aws.amazon.com/personalize/latest/dg/domain-use-cases.html">Choosing recommender use cases</a>.
-        /// </p>
+        /// <p>The Amazon Resource Name (ARN) of the recipe that the recommender will use. For a recommender, a recipe is a Domain dataset group use case. Only Domain dataset group use cases can be used to create a recommender. For information about use cases see <a href="https://docs.aws.amazon.com/personalize/latest/dg/domain-use-cases.html">Choosing recommender use cases</a>. </p>
         pub fn recipe_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.recipe_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the recipe that the recommender will use. For a recommender, a recipe is a Domain dataset group
-        /// use case. Only Domain dataset group use cases can be used to create a recommender. For information about use cases see <a href="https://docs.aws.amazon.com/personalize/latest/dg/domain-use-cases.html">Choosing recommender use cases</a>.
-        /// </p>
+        /// <p>The Amazon Resource Name (ARN) of the recipe that the recommender will use. For a recommender, a recipe is a Domain dataset group use case. Only Domain dataset group use cases can be used to create a recommender. For information about use cases see <a href="https://docs.aws.amazon.com/personalize/latest/dg/domain-use-cases.html">Choosing recommender use cases</a>. </p>
         pub fn set_recipe_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.recipe_arn = input;
             self
@@ -2124,14 +2068,12 @@ pub mod create_schema_input {
             self.schema = input;
             self
         }
-        /// <p>The domain for the schema. If you are creating a schema for a dataset in a Domain dataset group, specify
-        /// the domain you chose when you created the Domain dataset group.</p>
+        /// <p>The domain for the schema. If you are creating a schema for a dataset in a Domain dataset group, specify the domain you chose when you created the Domain dataset group.</p>
         pub fn domain(mut self, input: crate::model::Domain) -> Self {
             self.domain = Some(input);
             self
         }
-        /// <p>The domain for the schema. If you are creating a schema for a dataset in a Domain dataset group, specify
-        /// the domain you chose when you created the Domain dataset group.</p>
+        /// <p>The domain for the schema. If you are creating a schema for a dataset in a Domain dataset group, specify the domain you chose when you created the Domain dataset group.</p>
         pub fn set_domain(mut self, input: std::option::Option<crate::model::Domain>) -> Self {
             self.domain = input;
             self
@@ -2297,52 +2239,36 @@ pub mod create_solution_input {
             self.name = input;
             self
         }
-        /// <p>Whether to perform hyperparameter optimization (HPO) on the specified or selected recipe.
-        /// The default is <code>false</code>.</p>
-        /// <p>When performing AutoML, this parameter is always <code>true</code> and you
-        /// should not set it to <code>false</code>.</p>
+        /// <p>Whether to perform hyperparameter optimization (HPO) on the specified or selected recipe. The default is <code>false</code>.</p>
+        /// <p>When performing AutoML, this parameter is always <code>true</code> and you should not set it to <code>false</code>.</p>
         pub fn perform_hpo(mut self, input: bool) -> Self {
             self.perform_hpo = Some(input);
             self
         }
-        /// <p>Whether to perform hyperparameter optimization (HPO) on the specified or selected recipe.
-        /// The default is <code>false</code>.</p>
-        /// <p>When performing AutoML, this parameter is always <code>true</code> and you
-        /// should not set it to <code>false</code>.</p>
+        /// <p>Whether to perform hyperparameter optimization (HPO) on the specified or selected recipe. The default is <code>false</code>.</p>
+        /// <p>When performing AutoML, this parameter is always <code>true</code> and you should not set it to <code>false</code>.</p>
         pub fn set_perform_hpo(mut self, input: std::option::Option<bool>) -> Self {
             self.perform_hpo = input;
             self
         }
-        /// <p>Whether to perform automated machine learning (AutoML). The default is <code>false</code>.
-        /// For this case, you must specify <code>recipeArn</code>.</p>
-        /// <p>When set to <code>true</code>, Amazon Personalize analyzes your training data and selects
-        /// the optimal USER_PERSONALIZATION recipe and hyperparameters. In this case, you must omit
-        /// <code>recipeArn</code>. Amazon Personalize determines the optimal recipe by running tests with
-        /// different values for the hyperparameters.
-        /// AutoML lengthens the training process as compared to selecting a specific recipe.</p>
+        /// <p>Whether to perform automated machine learning (AutoML). The default is <code>false</code>. For this case, you must specify <code>recipeArn</code>.</p>
+        /// <p>When set to <code>true</code>, Amazon Personalize analyzes your training data and selects the optimal USER_PERSONALIZATION recipe and hyperparameters. In this case, you must omit <code>recipeArn</code>. Amazon Personalize determines the optimal recipe by running tests with different values for the hyperparameters. AutoML lengthens the training process as compared to selecting a specific recipe.</p>
         pub fn perform_auto_ml(mut self, input: bool) -> Self {
             self.perform_auto_ml = Some(input);
             self
         }
-        /// <p>Whether to perform automated machine learning (AutoML). The default is <code>false</code>.
-        /// For this case, you must specify <code>recipeArn</code>.</p>
-        /// <p>When set to <code>true</code>, Amazon Personalize analyzes your training data and selects
-        /// the optimal USER_PERSONALIZATION recipe and hyperparameters. In this case, you must omit
-        /// <code>recipeArn</code>. Amazon Personalize determines the optimal recipe by running tests with
-        /// different values for the hyperparameters.
-        /// AutoML lengthens the training process as compared to selecting a specific recipe.</p>
+        /// <p>Whether to perform automated machine learning (AutoML). The default is <code>false</code>. For this case, you must specify <code>recipeArn</code>.</p>
+        /// <p>When set to <code>true</code>, Amazon Personalize analyzes your training data and selects the optimal USER_PERSONALIZATION recipe and hyperparameters. In this case, you must omit <code>recipeArn</code>. Amazon Personalize determines the optimal recipe by running tests with different values for the hyperparameters. AutoML lengthens the training process as compared to selecting a specific recipe.</p>
         pub fn set_perform_auto_ml(mut self, input: std::option::Option<bool>) -> Self {
             self.perform_auto_ml = input;
             self
         }
-        /// <p>The ARN of the recipe to use for model training. Only specified when
-        /// <code>performAutoML</code> is false.</p>
+        /// <p>The ARN of the recipe to use for model training. Only specified when <code>performAutoML</code> is false.</p>
         pub fn recipe_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.recipe_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the recipe to use for model training. Only specified when
-        /// <code>performAutoML</code> is false.</p>
+        /// <p>The ARN of the recipe to use for model training. Only specified when <code>performAutoML</code> is false.</p>
         pub fn set_recipe_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.recipe_arn = input;
             self
@@ -2360,41 +2286,27 @@ pub mod create_solution_input {
             self.dataset_group_arn = input;
             self
         }
-        /// <p>When your have multiple event types (using an <code>EVENT_TYPE</code> schema field),
-        /// this parameter specifies which event type (for example, 'click' or 'like') is used for
-        /// training the model.</p>
-        /// <p>If you do not provide an <code>eventType</code>, Amazon Personalize will use all interactions for training with
-        /// equal weight regardless of type.</p>
+        /// <p>When your have multiple event types (using an <code>EVENT_TYPE</code> schema field), this parameter specifies which event type (for example, 'click' or 'like') is used for training the model.</p>
+        /// <p>If you do not provide an <code>eventType</code>, Amazon Personalize will use all interactions for training with equal weight regardless of type.</p>
         pub fn event_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.event_type = Some(input.into());
             self
         }
-        /// <p>When your have multiple event types (using an <code>EVENT_TYPE</code> schema field),
-        /// this parameter specifies which event type (for example, 'click' or 'like') is used for
-        /// training the model.</p>
-        /// <p>If you do not provide an <code>eventType</code>, Amazon Personalize will use all interactions for training with
-        /// equal weight regardless of type.</p>
+        /// <p>When your have multiple event types (using an <code>EVENT_TYPE</code> schema field), this parameter specifies which event type (for example, 'click' or 'like') is used for training the model.</p>
+        /// <p>If you do not provide an <code>eventType</code>, Amazon Personalize will use all interactions for training with equal weight regardless of type.</p>
         pub fn set_event_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.event_type = input;
             self
         }
-        /// <p>The configuration to use with the solution. When <code>performAutoML</code> is set to
-        /// true, Amazon Personalize only evaluates the <code>autoMLConfig</code> section
-        /// of the solution configuration.</p>
-        /// <note>
-        /// <p>Amazon Personalize doesn't support configuring the <code>hpoObjective</code>
-        /// at this time.</p>
+        /// <p>The configuration to use with the solution. When <code>performAutoML</code> is set to true, Amazon Personalize only evaluates the <code>autoMLConfig</code> section of the solution configuration.</p> <note>
+        /// <p>Amazon Personalize doesn't support configuring the <code>hpoObjective</code> at this time.</p>
         /// </note>
         pub fn solution_config(mut self, input: crate::model::SolutionConfig) -> Self {
             self.solution_config = Some(input);
             self
         }
-        /// <p>The configuration to use with the solution. When <code>performAutoML</code> is set to
-        /// true, Amazon Personalize only evaluates the <code>autoMLConfig</code> section
-        /// of the solution configuration.</p>
-        /// <note>
-        /// <p>Amazon Personalize doesn't support configuring the <code>hpoObjective</code>
-        /// at this time.</p>
+        /// <p>The configuration to use with the solution. When <code>performAutoML</code> is set to true, Amazon Personalize only evaluates the <code>autoMLConfig</code> section of the solution configuration.</p> <note>
+        /// <p>Amazon Personalize doesn't support configuring the <code>hpoObjective</code> at this time.</p>
         /// </note>
         pub fn set_solution_config(
             mut self,
@@ -2554,47 +2466,25 @@ pub mod create_solution_version_input {
         pub(crate) training_mode: std::option::Option<crate::model::TrainingMode>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the solution containing the training configuration
-        /// information.</p>
+        /// <p>The Amazon Resource Name (ARN) of the solution containing the training configuration information.</p>
         pub fn solution_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.solution_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the solution containing the training configuration
-        /// information.</p>
+        /// <p>The Amazon Resource Name (ARN) of the solution containing the training configuration information.</p>
         pub fn set_solution_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.solution_arn = input;
             self
         }
-        /// <p>The scope of training to be performed when creating the solution version. The
-        /// <code>FULL</code> option trains the solution version based on the entirety of the input
-        /// solution's training data, while the <code>UPDATE</code> option processes only the data that
-        /// has changed in comparison to the input solution. Choose <code>UPDATE</code> when you want to
-        /// incrementally update your solution version instead of creating an entirely new one.</p>
-        /// <important>
-        /// <p>The <code>UPDATE</code> option can only be used when you already have an active solution
-        /// version created from the input solution using the <code>FULL</code> option and the input
-        /// solution was trained with the
-        /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a>
-        /// recipe or the
-        /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a> recipe.</p>
+        /// <p>The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code> option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code> when you want to incrementally update your solution version instead of creating an entirely new one.</p> <important>
+        /// <p>The <code>UPDATE</code> option can only be used when you already have an active solution version created from the input solution using the <code>FULL</code> option and the input solution was trained with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a> recipe or the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a> recipe.</p>
         /// </important>
         pub fn training_mode(mut self, input: crate::model::TrainingMode) -> Self {
             self.training_mode = Some(input);
             self
         }
-        /// <p>The scope of training to be performed when creating the solution version. The
-        /// <code>FULL</code> option trains the solution version based on the entirety of the input
-        /// solution's training data, while the <code>UPDATE</code> option processes only the data that
-        /// has changed in comparison to the input solution. Choose <code>UPDATE</code> when you want to
-        /// incrementally update your solution version instead of creating an entirely new one.</p>
-        /// <important>
-        /// <p>The <code>UPDATE</code> option can only be used when you already have an active solution
-        /// version created from the input solution using the <code>FULL</code> option and the input
-        /// solution was trained with the
-        /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a>
-        /// recipe or the
-        /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a> recipe.</p>
+        /// <p>The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code> option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code> when you want to incrementally update your solution version instead of creating an entirely new one.</p> <important>
+        /// <p>The <code>UPDATE</code> option can only be used when you already have an active solution version created from the input solution using the <code>FULL</code> option and the input solution was trained with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a> recipe or the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a> recipe.</p>
         /// </important>
         pub fn set_training_mode(
             mut self,
@@ -6663,14 +6553,12 @@ pub mod list_batch_inference_jobs_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the solution version from which the batch inference jobs
-        /// were created.</p>
+        /// <p>The Amazon Resource Name (ARN) of the solution version from which the batch inference jobs were created.</p>
         pub fn solution_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.solution_version_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the solution version from which the batch inference jobs
-        /// were created.</p>
+        /// <p>The Amazon Resource Name (ARN) of the solution version from which the batch inference jobs were created.</p>
         pub fn set_solution_version_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6688,14 +6576,12 @@ pub mod list_batch_inference_jobs_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of batch inference job results to return in each page. The default
-        /// value is 100.</p>
+        /// <p>The maximum number of batch inference job results to return in each page. The default value is 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of batch inference job results to return in each page. The default
-        /// value is 100.</p>
+        /// <p>The maximum number of batch inference job results to return in each page. The default value is 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -6873,14 +6759,12 @@ pub mod list_batch_segment_jobs_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of batch segment job results to return in each page. The default
-        /// value is 100.</p>
+        /// <p>The maximum number of batch segment job results to return in each page. The default value is 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of batch segment job results to return in each page. The default
-        /// value is 100.</p>
+        /// <p>The maximum number of batch segment job results to return in each page. The default value is 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -7035,26 +6919,22 @@ pub mod list_campaigns_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the solution to list the campaigns for. When
-        /// a solution is not specified, all the campaigns associated with the account are listed.</p>
+        /// <p>The Amazon Resource Name (ARN) of the solution to list the campaigns for. When a solution is not specified, all the campaigns associated with the account are listed.</p>
         pub fn solution_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.solution_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the solution to list the campaigns for. When
-        /// a solution is not specified, all the campaigns associated with the account are listed.</p>
+        /// <p>The Amazon Resource Name (ARN) of the solution to list the campaigns for. When a solution is not specified, all the campaigns associated with the account are listed.</p>
         pub fn set_solution_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.solution_arn = input;
             self
         }
-        /// <p>A token returned from the previous call to <code>ListCampaigns</code> for getting
-        /// the next set of campaigns (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListCampaigns</code> for getting the next set of campaigns (if they exist).</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token returned from the previous call to <code>ListCampaigns</code> for getting
-        /// the next set of campaigns (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListCampaigns</code> for getting the next set of campaigns (if they exist).</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7226,14 +7106,12 @@ pub mod list_dataset_export_jobs_input {
             self.dataset_arn = input;
             self
         }
-        /// <p>A token returned from the previous call to <code>ListDatasetExportJobs</code> for getting
-        /// the next set of dataset export jobs (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListDatasetExportJobs</code> for getting the next set of dataset export jobs (if they exist).</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token returned from the previous call to <code>ListDatasetExportJobs</code> for getting
-        /// the next set of dataset export jobs (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListDatasetExportJobs</code> for getting the next set of dataset export jobs (if they exist).</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7397,14 +7275,12 @@ pub mod list_dataset_groups_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>A token returned from the previous call to <code>ListDatasetGroups</code> for getting the
-        /// next set of dataset groups (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListDatasetGroups</code> for getting the next set of dataset groups (if they exist).</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token returned from the previous call to <code>ListDatasetGroups</code> for getting the
-        /// next set of dataset groups (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListDatasetGroups</code> for getting the next set of dataset groups (if they exist).</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7576,14 +7452,12 @@ pub mod list_dataset_import_jobs_input {
             self.dataset_arn = input;
             self
         }
-        /// <p>A token returned from the previous call to <code>ListDatasetImportJobs</code> for getting
-        /// the next set of dataset import jobs (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListDatasetImportJobs</code> for getting the next set of dataset import jobs (if they exist).</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token returned from the previous call to <code>ListDatasetImportJobs</code> for getting
-        /// the next set of dataset import jobs (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListDatasetImportJobs</code> for getting the next set of dataset import jobs (if they exist).</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7748,14 +7622,12 @@ pub mod list_datasets_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the dataset group that contains the datasets to
-        /// list.</p>
+        /// <p>The Amazon Resource Name (ARN) of the dataset group that contains the datasets to list.</p>
         pub fn dataset_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.dataset_group_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the dataset group that contains the datasets to
-        /// list.</p>
+        /// <p>The Amazon Resource Name (ARN) of the dataset group that contains the datasets to list.</p>
         pub fn set_dataset_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7763,14 +7635,12 @@ pub mod list_datasets_input {
             self.dataset_group_arn = input;
             self
         }
-        /// <p>A token returned from the previous call to <code>ListDatasetImportJobs</code> for getting
-        /// the next set of dataset import jobs (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListDatasetImportJobs</code> for getting the next set of dataset import jobs (if they exist).</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token returned from the previous call to <code>ListDatasetImportJobs</code> for getting
-        /// the next set of dataset import jobs (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListDatasetImportJobs</code> for getting the next set of dataset import jobs (if they exist).</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7945,14 +7815,12 @@ pub mod list_event_trackers_input {
             self.dataset_group_arn = input;
             self
         }
-        /// <p>A token returned from the previous call to <code>ListEventTrackers</code> for getting
-        /// the next set of event trackers (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListEventTrackers</code> for getting the next set of event trackers (if they exist).</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token returned from the previous call to <code>ListEventTrackers</code> for getting
-        /// the next set of event trackers (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListEventTrackers</code> for getting the next set of event trackers (if they exist).</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8128,14 +7996,12 @@ pub mod list_filters_input {
             self.dataset_group_arn = input;
             self
         }
-        /// <p>A token returned from the previous call to <code>ListFilters</code> for getting the
-        /// next set of filters (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListFilters</code> for getting the next set of filters (if they exist).</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token returned from the previous call to <code>ListFilters</code> for getting the
-        /// next set of filters (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListFilters</code> for getting the next set of filters (if they exist).</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8311,14 +8177,12 @@ pub mod list_recipes_input {
             self.recipe_provider = input;
             self
         }
-        /// <p>A token returned from the previous call to <code>ListRecipes</code> for getting
-        /// the next set of recipes (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListRecipes</code> for getting the next set of recipes (if they exist).</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token returned from the previous call to <code>ListRecipes</code> for getting
-        /// the next set of recipes (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListRecipes</code> for getting the next set of recipes (if they exist).</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8333,18 +8197,12 @@ pub mod list_recipes_input {
             self.max_results = input;
             self
         }
-        /// <p>
-        /// Filters returned recipes by domain for a Domain dataset group. Only recipes (Domain dataset group use cases)
-        /// for this domain are included in the response. If you don't specify a domain, only non-domain recipes are returned.
-        /// </p>
+        /// <p> Filters returned recipes by domain for a Domain dataset group. Only recipes (Domain dataset group use cases) for this domain are included in the response. If you don't specify a domain, only non-domain recipes are returned. </p>
         pub fn domain(mut self, input: crate::model::Domain) -> Self {
             self.domain = Some(input);
             self
         }
-        /// <p>
-        /// Filters returned recipes by domain for a Domain dataset group. Only recipes (Domain dataset group use cases)
-        /// for this domain are included in the response. If you don't specify a domain, only non-domain recipes are returned.
-        /// </p>
+        /// <p> Filters returned recipes by domain for a Domain dataset group. Only recipes (Domain dataset group use cases) for this domain are included in the response. If you don't specify a domain, only non-domain recipes are returned. </p>
         pub fn set_domain(mut self, input: std::option::Option<crate::model::Domain>) -> Self {
             self.domain = input;
             self
@@ -8497,14 +8355,12 @@ pub mod list_recommenders_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the Domain dataset group to list the recommenders for. When
-        /// a Domain dataset group is not specified, all the recommenders associated with the account are listed.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Domain dataset group to list the recommenders for. When a Domain dataset group is not specified, all the recommenders associated with the account are listed.</p>
         pub fn dataset_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.dataset_group_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Domain dataset group to list the recommenders for. When
-        /// a Domain dataset group is not specified, all the recommenders associated with the account are listed.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Domain dataset group to list the recommenders for. When a Domain dataset group is not specified, all the recommenders associated with the account are listed.</p>
         pub fn set_dataset_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8512,14 +8368,12 @@ pub mod list_recommenders_input {
             self.dataset_group_arn = input;
             self
         }
-        /// <p>A token returned from the previous call to <code>ListRecommenders</code> for getting
-        /// the next set of recommenders (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListRecommenders</code> for getting the next set of recommenders (if they exist).</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token returned from the previous call to <code>ListRecommenders</code> for getting
-        /// the next set of recommenders (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListRecommenders</code> for getting the next set of recommenders (if they exist).</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8681,14 +8535,12 @@ pub mod list_schemas_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>A token returned from the previous call to <code>ListSchemas</code> for getting
-        /// the next set of schemas (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListSchemas</code> for getting the next set of schemas (if they exist).</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token returned from the previous call to <code>ListSchemas</code> for getting
-        /// the next set of schemas (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListSchemas</code> for getting the next set of schemas (if they exist).</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8862,14 +8714,12 @@ pub mod list_solutions_input {
             self.dataset_group_arn = input;
             self
         }
-        /// <p>A token returned from the previous call to <code>ListSolutions</code> for getting
-        /// the next set of solutions (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListSolutions</code> for getting the next set of solutions (if they exist).</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token returned from the previous call to <code>ListSolutions</code> for getting
-        /// the next set of solutions (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListSolutions</code> for getting the next set of solutions (if they exist).</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -9041,14 +8891,12 @@ pub mod list_solution_versions_input {
             self.solution_arn = input;
             self
         }
-        /// <p>A token returned from the previous call to <code>ListSolutionVersions</code> for getting
-        /// the next set of solution versions (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListSolutionVersions</code> for getting the next set of solution versions (if they exist).</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token returned from the previous call to <code>ListSolutionVersions</code> for getting
-        /// the next set of solution versions (if they exist).</p>
+        /// <p>A token returned from the previous call to <code>ListSolutionVersions</code> for getting the next set of solution versions (if they exist).</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -9396,14 +9244,12 @@ pub mod update_campaign_input {
             self.solution_version_arn = input;
             self
         }
-        /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that
-        /// Amazon Personalize will support.</p>
+        /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize will support.</p>
         pub fn min_provisioned_tps(mut self, input: i32) -> Self {
             self.min_provisioned_tps = Some(input);
             self
         }
-        /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that
-        /// Amazon Personalize will support.</p>
+        /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize will support.</p>
         pub fn set_min_provisioned_tps(mut self, input: std::option::Option<i32>) -> Self {
             self.min_provisioned_tps = input;
             self
@@ -9767,8 +9613,7 @@ pub struct UpdateCampaignInput {
     pub campaign_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of a new solution version to deploy.</p>
     pub solution_version_arn: std::option::Option<std::string::String>,
-    /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that
-    /// Amazon Personalize will support.</p>
+    /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize will support.</p>
     pub min_provisioned_tps: std::option::Option<i32>,
     /// <p>The configuration details of a campaign.</p>
     pub campaign_config: std::option::Option<crate::model::CampaignConfig>,
@@ -9782,8 +9627,7 @@ impl UpdateCampaignInput {
     pub fn solution_version_arn(&self) -> std::option::Option<&str> {
         self.solution_version_arn.as_deref()
     }
-    /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that
-    /// Amazon Personalize will support.</p>
+    /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize will support.</p>
     pub fn min_provisioned_tps(&self) -> std::option::Option<i32> {
         self.min_provisioned_tps
     }
@@ -9830,8 +9674,7 @@ impl std::fmt::Debug for StopSolutionVersionCreationInput {
 pub struct ListSolutionVersionsInput {
     /// <p>The Amazon Resource Name (ARN) of the solution.</p>
     pub solution_arn: std::option::Option<std::string::String>,
-    /// <p>A token returned from the previous call to <code>ListSolutionVersions</code> for getting
-    /// the next set of solution versions (if they exist).</p>
+    /// <p>A token returned from the previous call to <code>ListSolutionVersions</code> for getting the next set of solution versions (if they exist).</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of solution versions to return.</p>
     pub max_results: std::option::Option<i32>,
@@ -9841,8 +9684,7 @@ impl ListSolutionVersionsInput {
     pub fn solution_arn(&self) -> std::option::Option<&str> {
         self.solution_arn.as_deref()
     }
-    /// <p>A token returned from the previous call to <code>ListSolutionVersions</code> for getting
-    /// the next set of solution versions (if they exist).</p>
+    /// <p>A token returned from the previous call to <code>ListSolutionVersions</code> for getting the next set of solution versions (if they exist).</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -9867,8 +9709,7 @@ impl std::fmt::Debug for ListSolutionVersionsInput {
 pub struct ListSolutionsInput {
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
     pub dataset_group_arn: std::option::Option<std::string::String>,
-    /// <p>A token returned from the previous call to <code>ListSolutions</code> for getting
-    /// the next set of solutions (if they exist).</p>
+    /// <p>A token returned from the previous call to <code>ListSolutions</code> for getting the next set of solutions (if they exist).</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of solutions to return.</p>
     pub max_results: std::option::Option<i32>,
@@ -9878,8 +9719,7 @@ impl ListSolutionsInput {
     pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
         self.dataset_group_arn.as_deref()
     }
-    /// <p>A token returned from the previous call to <code>ListSolutions</code> for getting
-    /// the next set of solutions (if they exist).</p>
+    /// <p>A token returned from the previous call to <code>ListSolutions</code> for getting the next set of solutions (if they exist).</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -9902,15 +9742,13 @@ impl std::fmt::Debug for ListSolutionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSchemasInput {
-    /// <p>A token returned from the previous call to <code>ListSchemas</code> for getting
-    /// the next set of schemas (if they exist).</p>
+    /// <p>A token returned from the previous call to <code>ListSchemas</code> for getting the next set of schemas (if they exist).</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of schemas to return.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListSchemasInput {
-    /// <p>A token returned from the previous call to <code>ListSchemas</code> for getting
-    /// the next set of schemas (if they exist).</p>
+    /// <p>A token returned from the previous call to <code>ListSchemas</code> for getting the next set of schemas (if they exist).</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -9932,23 +9770,19 @@ impl std::fmt::Debug for ListSchemasInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRecommendersInput {
-    /// <p>The Amazon Resource Name (ARN) of the Domain dataset group to list the recommenders for. When
-    /// a Domain dataset group is not specified, all the recommenders associated with the account are listed.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Domain dataset group to list the recommenders for. When a Domain dataset group is not specified, all the recommenders associated with the account are listed.</p>
     pub dataset_group_arn: std::option::Option<std::string::String>,
-    /// <p>A token returned from the previous call to <code>ListRecommenders</code> for getting
-    /// the next set of recommenders (if they exist).</p>
+    /// <p>A token returned from the previous call to <code>ListRecommenders</code> for getting the next set of recommenders (if they exist).</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of recommenders to return.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListRecommendersInput {
-    /// <p>The Amazon Resource Name (ARN) of the Domain dataset group to list the recommenders for. When
-    /// a Domain dataset group is not specified, all the recommenders associated with the account are listed.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Domain dataset group to list the recommenders for. When a Domain dataset group is not specified, all the recommenders associated with the account are listed.</p>
     pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
         self.dataset_group_arn.as_deref()
     }
-    /// <p>A token returned from the previous call to <code>ListRecommenders</code> for getting
-    /// the next set of recommenders (if they exist).</p>
+    /// <p>A token returned from the previous call to <code>ListRecommenders</code> for getting the next set of recommenders (if they exist).</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -9973,15 +9807,11 @@ impl std::fmt::Debug for ListRecommendersInput {
 pub struct ListRecipesInput {
     /// <p>The default is <code>SERVICE</code>.</p>
     pub recipe_provider: std::option::Option<crate::model::RecipeProvider>,
-    /// <p>A token returned from the previous call to <code>ListRecipes</code> for getting
-    /// the next set of recipes (if they exist).</p>
+    /// <p>A token returned from the previous call to <code>ListRecipes</code> for getting the next set of recipes (if they exist).</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of recipes to return.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>
-    /// Filters returned recipes by domain for a Domain dataset group. Only recipes (Domain dataset group use cases)
-    /// for this domain are included in the response. If you don't specify a domain, only non-domain recipes are returned.
-    /// </p>
+    /// <p> Filters returned recipes by domain for a Domain dataset group. Only recipes (Domain dataset group use cases) for this domain are included in the response. If you don't specify a domain, only non-domain recipes are returned. </p>
     pub domain: std::option::Option<crate::model::Domain>,
 }
 impl ListRecipesInput {
@@ -9989,8 +9819,7 @@ impl ListRecipesInput {
     pub fn recipe_provider(&self) -> std::option::Option<&crate::model::RecipeProvider> {
         self.recipe_provider.as_ref()
     }
-    /// <p>A token returned from the previous call to <code>ListRecipes</code> for getting
-    /// the next set of recipes (if they exist).</p>
+    /// <p>A token returned from the previous call to <code>ListRecipes</code> for getting the next set of recipes (if they exist).</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -9998,10 +9827,7 @@ impl ListRecipesInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>
-    /// Filters returned recipes by domain for a Domain dataset group. Only recipes (Domain dataset group use cases)
-    /// for this domain are included in the response. If you don't specify a domain, only non-domain recipes are returned.
-    /// </p>
+    /// <p> Filters returned recipes by domain for a Domain dataset group. Only recipes (Domain dataset group use cases) for this domain are included in the response. If you don't specify a domain, only non-domain recipes are returned. </p>
     pub fn domain(&self) -> std::option::Option<&crate::model::Domain> {
         self.domain.as_ref()
     }
@@ -10023,8 +9849,7 @@ impl std::fmt::Debug for ListRecipesInput {
 pub struct ListFiltersInput {
     /// <p>The ARN of the dataset group that contains the filters.</p>
     pub dataset_group_arn: std::option::Option<std::string::String>,
-    /// <p>A token returned from the previous call to <code>ListFilters</code> for getting the
-    /// next set of filters (if they exist).</p>
+    /// <p>A token returned from the previous call to <code>ListFilters</code> for getting the next set of filters (if they exist).</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of filters to return.</p>
     pub max_results: std::option::Option<i32>,
@@ -10034,8 +9859,7 @@ impl ListFiltersInput {
     pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
         self.dataset_group_arn.as_deref()
     }
-    /// <p>A token returned from the previous call to <code>ListFilters</code> for getting the
-    /// next set of filters (if they exist).</p>
+    /// <p>A token returned from the previous call to <code>ListFilters</code> for getting the next set of filters (if they exist).</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10060,8 +9884,7 @@ impl std::fmt::Debug for ListFiltersInput {
 pub struct ListEventTrackersInput {
     /// <p>The ARN of a dataset group used to filter the response.</p>
     pub dataset_group_arn: std::option::Option<std::string::String>,
-    /// <p>A token returned from the previous call to <code>ListEventTrackers</code> for getting
-    /// the next set of event trackers (if they exist).</p>
+    /// <p>A token returned from the previous call to <code>ListEventTrackers</code> for getting the next set of event trackers (if they exist).</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of event trackers to return.</p>
     pub max_results: std::option::Option<i32>,
@@ -10071,8 +9894,7 @@ impl ListEventTrackersInput {
     pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
         self.dataset_group_arn.as_deref()
     }
-    /// <p>A token returned from the previous call to <code>ListEventTrackers</code> for getting
-    /// the next set of event trackers (if they exist).</p>
+    /// <p>A token returned from the previous call to <code>ListEventTrackers</code> for getting the next set of event trackers (if they exist).</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10095,23 +9917,19 @@ impl std::fmt::Debug for ListEventTrackersInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDatasetsInput {
-    /// <p>The Amazon Resource Name (ARN) of the dataset group that contains the datasets to
-    /// list.</p>
+    /// <p>The Amazon Resource Name (ARN) of the dataset group that contains the datasets to list.</p>
     pub dataset_group_arn: std::option::Option<std::string::String>,
-    /// <p>A token returned from the previous call to <code>ListDatasetImportJobs</code> for getting
-    /// the next set of dataset import jobs (if they exist).</p>
+    /// <p>A token returned from the previous call to <code>ListDatasetImportJobs</code> for getting the next set of dataset import jobs (if they exist).</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of datasets to return.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListDatasetsInput {
-    /// <p>The Amazon Resource Name (ARN) of the dataset group that contains the datasets to
-    /// list.</p>
+    /// <p>The Amazon Resource Name (ARN) of the dataset group that contains the datasets to list.</p>
     pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
         self.dataset_group_arn.as_deref()
     }
-    /// <p>A token returned from the previous call to <code>ListDatasetImportJobs</code> for getting
-    /// the next set of dataset import jobs (if they exist).</p>
+    /// <p>A token returned from the previous call to <code>ListDatasetImportJobs</code> for getting the next set of dataset import jobs (if they exist).</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10136,8 +9954,7 @@ impl std::fmt::Debug for ListDatasetsInput {
 pub struct ListDatasetImportJobsInput {
     /// <p>The Amazon Resource Name (ARN) of the dataset to list the dataset import jobs for.</p>
     pub dataset_arn: std::option::Option<std::string::String>,
-    /// <p>A token returned from the previous call to <code>ListDatasetImportJobs</code> for getting
-    /// the next set of dataset import jobs (if they exist).</p>
+    /// <p>A token returned from the previous call to <code>ListDatasetImportJobs</code> for getting the next set of dataset import jobs (if they exist).</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of dataset import jobs to return.</p>
     pub max_results: std::option::Option<i32>,
@@ -10147,8 +9964,7 @@ impl ListDatasetImportJobsInput {
     pub fn dataset_arn(&self) -> std::option::Option<&str> {
         self.dataset_arn.as_deref()
     }
-    /// <p>A token returned from the previous call to <code>ListDatasetImportJobs</code> for getting
-    /// the next set of dataset import jobs (if they exist).</p>
+    /// <p>A token returned from the previous call to <code>ListDatasetImportJobs</code> for getting the next set of dataset import jobs (if they exist).</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10171,15 +9987,13 @@ impl std::fmt::Debug for ListDatasetImportJobsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDatasetGroupsInput {
-    /// <p>A token returned from the previous call to <code>ListDatasetGroups</code> for getting the
-    /// next set of dataset groups (if they exist).</p>
+    /// <p>A token returned from the previous call to <code>ListDatasetGroups</code> for getting the next set of dataset groups (if they exist).</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of dataset groups to return.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListDatasetGroupsInput {
-    /// <p>A token returned from the previous call to <code>ListDatasetGroups</code> for getting the
-    /// next set of dataset groups (if they exist).</p>
+    /// <p>A token returned from the previous call to <code>ListDatasetGroups</code> for getting the next set of dataset groups (if they exist).</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10203,8 +10017,7 @@ impl std::fmt::Debug for ListDatasetGroupsInput {
 pub struct ListDatasetExportJobsInput {
     /// <p>The Amazon Resource Name (ARN) of the dataset to list the dataset export jobs for.</p>
     pub dataset_arn: std::option::Option<std::string::String>,
-    /// <p>A token returned from the previous call to <code>ListDatasetExportJobs</code> for getting
-    /// the next set of dataset export jobs (if they exist).</p>
+    /// <p>A token returned from the previous call to <code>ListDatasetExportJobs</code> for getting the next set of dataset export jobs (if they exist).</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of dataset export jobs to return.</p>
     pub max_results: std::option::Option<i32>,
@@ -10214,8 +10027,7 @@ impl ListDatasetExportJobsInput {
     pub fn dataset_arn(&self) -> std::option::Option<&str> {
         self.dataset_arn.as_deref()
     }
-    /// <p>A token returned from the previous call to <code>ListDatasetExportJobs</code> for getting
-    /// the next set of dataset export jobs (if they exist).</p>
+    /// <p>A token returned from the previous call to <code>ListDatasetExportJobs</code> for getting the next set of dataset export jobs (if they exist).</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10238,23 +10050,19 @@ impl std::fmt::Debug for ListDatasetExportJobsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCampaignsInput {
-    /// <p>The Amazon Resource Name (ARN) of the solution to list the campaigns for. When
-    /// a solution is not specified, all the campaigns associated with the account are listed.</p>
+    /// <p>The Amazon Resource Name (ARN) of the solution to list the campaigns for. When a solution is not specified, all the campaigns associated with the account are listed.</p>
     pub solution_arn: std::option::Option<std::string::String>,
-    /// <p>A token returned from the previous call to <code>ListCampaigns</code> for getting
-    /// the next set of campaigns (if they exist).</p>
+    /// <p>A token returned from the previous call to <code>ListCampaigns</code> for getting the next set of campaigns (if they exist).</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of campaigns to return.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListCampaignsInput {
-    /// <p>The Amazon Resource Name (ARN) of the solution to list the campaigns for. When
-    /// a solution is not specified, all the campaigns associated with the account are listed.</p>
+    /// <p>The Amazon Resource Name (ARN) of the solution to list the campaigns for. When a solution is not specified, all the campaigns associated with the account are listed.</p>
     pub fn solution_arn(&self) -> std::option::Option<&str> {
         self.solution_arn.as_deref()
     }
-    /// <p>A token returned from the previous call to <code>ListCampaigns</code> for getting
-    /// the next set of campaigns (if they exist).</p>
+    /// <p>A token returned from the previous call to <code>ListCampaigns</code> for getting the next set of campaigns (if they exist).</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10281,8 +10089,7 @@ pub struct ListBatchSegmentJobsInput {
     pub solution_version_arn: std::option::Option<std::string::String>,
     /// <p>The token to request the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of batch segment job results to return in each page. The default
-    /// value is 100.</p>
+    /// <p>The maximum number of batch segment job results to return in each page. The default value is 100.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListBatchSegmentJobsInput {
@@ -10294,8 +10101,7 @@ impl ListBatchSegmentJobsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of batch segment job results to return in each page. The default
-    /// value is 100.</p>
+    /// <p>The maximum number of batch segment job results to return in each page. The default value is 100.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -10314,18 +10120,15 @@ impl std::fmt::Debug for ListBatchSegmentJobsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBatchInferenceJobsInput {
-    /// <p>The Amazon Resource Name (ARN) of the solution version from which the batch inference jobs
-    /// were created.</p>
+    /// <p>The Amazon Resource Name (ARN) of the solution version from which the batch inference jobs were created.</p>
     pub solution_version_arn: std::option::Option<std::string::String>,
     /// <p>The token to request the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of batch inference job results to return in each page. The default
-    /// value is 100.</p>
+    /// <p>The maximum number of batch inference job results to return in each page. The default value is 100.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListBatchInferenceJobsInput {
-    /// <p>The Amazon Resource Name (ARN) of the solution version from which the batch inference jobs
-    /// were created.</p>
+    /// <p>The Amazon Resource Name (ARN) of the solution version from which the batch inference jobs were created.</p>
     pub fn solution_version_arn(&self) -> std::option::Option<&str> {
         self.solution_version_arn.as_deref()
     }
@@ -10333,8 +10136,7 @@ impl ListBatchInferenceJobsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of batch inference job results to return in each page. The default
-    /// value is 100.</p>
+    /// <p>The maximum number of batch inference job results to return in each page. The default value is 100.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -10881,42 +10683,20 @@ impl std::fmt::Debug for DeleteCampaignInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSolutionVersionInput {
-    /// <p>The Amazon Resource Name (ARN) of the solution containing the training configuration
-    /// information.</p>
+    /// <p>The Amazon Resource Name (ARN) of the solution containing the training configuration information.</p>
     pub solution_arn: std::option::Option<std::string::String>,
-    /// <p>The scope of training to be performed when creating the solution version. The
-    /// <code>FULL</code> option trains the solution version based on the entirety of the input
-    /// solution's training data, while the <code>UPDATE</code> option processes only the data that
-    /// has changed in comparison to the input solution. Choose <code>UPDATE</code> when you want to
-    /// incrementally update your solution version instead of creating an entirely new one.</p>
-    /// <important>
-    /// <p>The <code>UPDATE</code> option can only be used when you already have an active solution
-    /// version created from the input solution using the <code>FULL</code> option and the input
-    /// solution was trained with the
-    /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a>
-    /// recipe or the
-    /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a> recipe.</p>
+    /// <p>The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code> option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code> when you want to incrementally update your solution version instead of creating an entirely new one.</p> <important>
+    /// <p>The <code>UPDATE</code> option can only be used when you already have an active solution version created from the input solution using the <code>FULL</code> option and the input solution was trained with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a> recipe or the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a> recipe.</p>
     /// </important>
     pub training_mode: std::option::Option<crate::model::TrainingMode>,
 }
 impl CreateSolutionVersionInput {
-    /// <p>The Amazon Resource Name (ARN) of the solution containing the training configuration
-    /// information.</p>
+    /// <p>The Amazon Resource Name (ARN) of the solution containing the training configuration information.</p>
     pub fn solution_arn(&self) -> std::option::Option<&str> {
         self.solution_arn.as_deref()
     }
-    /// <p>The scope of training to be performed when creating the solution version. The
-    /// <code>FULL</code> option trains the solution version based on the entirety of the input
-    /// solution's training data, while the <code>UPDATE</code> option processes only the data that
-    /// has changed in comparison to the input solution. Choose <code>UPDATE</code> when you want to
-    /// incrementally update your solution version instead of creating an entirely new one.</p>
-    /// <important>
-    /// <p>The <code>UPDATE</code> option can only be used when you already have an active solution
-    /// version created from the input solution using the <code>FULL</code> option and the input
-    /// solution was trained with the
-    /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a>
-    /// recipe or the
-    /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a> recipe.</p>
+    /// <p>The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code> option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code> when you want to incrementally update your solution version instead of creating an entirely new one.</p> <important>
+    /// <p>The <code>UPDATE</code> option can only be used when you already have an active solution version created from the input solution using the <code>FULL</code> option and the input solution was trained with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a> recipe or the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a> recipe.</p>
     /// </important>
     pub fn training_mode(&self) -> std::option::Option<&crate::model::TrainingMode> {
         self.training_mode.as_ref()
@@ -10937,36 +10717,21 @@ impl std::fmt::Debug for CreateSolutionVersionInput {
 pub struct CreateSolutionInput {
     /// <p>The name for the solution.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>Whether to perform hyperparameter optimization (HPO) on the specified or selected recipe.
-    /// The default is <code>false</code>.</p>
-    /// <p>When performing AutoML, this parameter is always <code>true</code> and you
-    /// should not set it to <code>false</code>.</p>
+    /// <p>Whether to perform hyperparameter optimization (HPO) on the specified or selected recipe. The default is <code>false</code>.</p>
+    /// <p>When performing AutoML, this parameter is always <code>true</code> and you should not set it to <code>false</code>.</p>
     pub perform_hpo: std::option::Option<bool>,
-    /// <p>Whether to perform automated machine learning (AutoML). The default is <code>false</code>.
-    /// For this case, you must specify <code>recipeArn</code>.</p>
-    /// <p>When set to <code>true</code>, Amazon Personalize analyzes your training data and selects
-    /// the optimal USER_PERSONALIZATION recipe and hyperparameters. In this case, you must omit
-    /// <code>recipeArn</code>. Amazon Personalize determines the optimal recipe by running tests with
-    /// different values for the hyperparameters.
-    /// AutoML lengthens the training process as compared to selecting a specific recipe.</p>
+    /// <p>Whether to perform automated machine learning (AutoML). The default is <code>false</code>. For this case, you must specify <code>recipeArn</code>.</p>
+    /// <p>When set to <code>true</code>, Amazon Personalize analyzes your training data and selects the optimal USER_PERSONALIZATION recipe and hyperparameters. In this case, you must omit <code>recipeArn</code>. Amazon Personalize determines the optimal recipe by running tests with different values for the hyperparameters. AutoML lengthens the training process as compared to selecting a specific recipe.</p>
     pub perform_auto_ml: bool,
-    /// <p>The ARN of the recipe to use for model training. Only specified when
-    /// <code>performAutoML</code> is false.</p>
+    /// <p>The ARN of the recipe to use for model training. Only specified when <code>performAutoML</code> is false.</p>
     pub recipe_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset group that provides the training data.</p>
     pub dataset_group_arn: std::option::Option<std::string::String>,
-    /// <p>When your have multiple event types (using an <code>EVENT_TYPE</code> schema field),
-    /// this parameter specifies which event type (for example, 'click' or 'like') is used for
-    /// training the model.</p>
-    /// <p>If you do not provide an <code>eventType</code>, Amazon Personalize will use all interactions for training with
-    /// equal weight regardless of type.</p>
+    /// <p>When your have multiple event types (using an <code>EVENT_TYPE</code> schema field), this parameter specifies which event type (for example, 'click' or 'like') is used for training the model.</p>
+    /// <p>If you do not provide an <code>eventType</code>, Amazon Personalize will use all interactions for training with equal weight regardless of type.</p>
     pub event_type: std::option::Option<std::string::String>,
-    /// <p>The configuration to use with the solution. When <code>performAutoML</code> is set to
-    /// true, Amazon Personalize only evaluates the <code>autoMLConfig</code> section
-    /// of the solution configuration.</p>
-    /// <note>
-    /// <p>Amazon Personalize doesn't support configuring the <code>hpoObjective</code>
-    /// at this time.</p>
+    /// <p>The configuration to use with the solution. When <code>performAutoML</code> is set to true, Amazon Personalize only evaluates the <code>autoMLConfig</code> section of the solution configuration.</p> <note>
+    /// <p>Amazon Personalize doesn't support configuring the <code>hpoObjective</code> at this time.</p>
     /// </note>
     pub solution_config: std::option::Option<crate::model::SolutionConfig>,
 }
@@ -10975,25 +10740,17 @@ impl CreateSolutionInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Whether to perform hyperparameter optimization (HPO) on the specified or selected recipe.
-    /// The default is <code>false</code>.</p>
-    /// <p>When performing AutoML, this parameter is always <code>true</code> and you
-    /// should not set it to <code>false</code>.</p>
+    /// <p>Whether to perform hyperparameter optimization (HPO) on the specified or selected recipe. The default is <code>false</code>.</p>
+    /// <p>When performing AutoML, this parameter is always <code>true</code> and you should not set it to <code>false</code>.</p>
     pub fn perform_hpo(&self) -> std::option::Option<bool> {
         self.perform_hpo
     }
-    /// <p>Whether to perform automated machine learning (AutoML). The default is <code>false</code>.
-    /// For this case, you must specify <code>recipeArn</code>.</p>
-    /// <p>When set to <code>true</code>, Amazon Personalize analyzes your training data and selects
-    /// the optimal USER_PERSONALIZATION recipe and hyperparameters. In this case, you must omit
-    /// <code>recipeArn</code>. Amazon Personalize determines the optimal recipe by running tests with
-    /// different values for the hyperparameters.
-    /// AutoML lengthens the training process as compared to selecting a specific recipe.</p>
+    /// <p>Whether to perform automated machine learning (AutoML). The default is <code>false</code>. For this case, you must specify <code>recipeArn</code>.</p>
+    /// <p>When set to <code>true</code>, Amazon Personalize analyzes your training data and selects the optimal USER_PERSONALIZATION recipe and hyperparameters. In this case, you must omit <code>recipeArn</code>. Amazon Personalize determines the optimal recipe by running tests with different values for the hyperparameters. AutoML lengthens the training process as compared to selecting a specific recipe.</p>
     pub fn perform_auto_ml(&self) -> bool {
         self.perform_auto_ml
     }
-    /// <p>The ARN of the recipe to use for model training. Only specified when
-    /// <code>performAutoML</code> is false.</p>
+    /// <p>The ARN of the recipe to use for model training. Only specified when <code>performAutoML</code> is false.</p>
     pub fn recipe_arn(&self) -> std::option::Option<&str> {
         self.recipe_arn.as_deref()
     }
@@ -11001,20 +10758,13 @@ impl CreateSolutionInput {
     pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
         self.dataset_group_arn.as_deref()
     }
-    /// <p>When your have multiple event types (using an <code>EVENT_TYPE</code> schema field),
-    /// this parameter specifies which event type (for example, 'click' or 'like') is used for
-    /// training the model.</p>
-    /// <p>If you do not provide an <code>eventType</code>, Amazon Personalize will use all interactions for training with
-    /// equal weight regardless of type.</p>
+    /// <p>When your have multiple event types (using an <code>EVENT_TYPE</code> schema field), this parameter specifies which event type (for example, 'click' or 'like') is used for training the model.</p>
+    /// <p>If you do not provide an <code>eventType</code>, Amazon Personalize will use all interactions for training with equal weight regardless of type.</p>
     pub fn event_type(&self) -> std::option::Option<&str> {
         self.event_type.as_deref()
     }
-    /// <p>The configuration to use with the solution. When <code>performAutoML</code> is set to
-    /// true, Amazon Personalize only evaluates the <code>autoMLConfig</code> section
-    /// of the solution configuration.</p>
-    /// <note>
-    /// <p>Amazon Personalize doesn't support configuring the <code>hpoObjective</code>
-    /// at this time.</p>
+    /// <p>The configuration to use with the solution. When <code>performAutoML</code> is set to true, Amazon Personalize only evaluates the <code>autoMLConfig</code> section of the solution configuration.</p> <note>
+    /// <p>Amazon Personalize doesn't support configuring the <code>hpoObjective</code> at this time.</p>
     /// </note>
     pub fn solution_config(&self) -> std::option::Option<&crate::model::SolutionConfig> {
         self.solution_config.as_ref()
@@ -11042,8 +10792,7 @@ pub struct CreateSchemaInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>A schema in Avro JSON format.</p>
     pub schema: std::option::Option<std::string::String>,
-    /// <p>The domain for the schema. If you are creating a schema for a dataset in a Domain dataset group, specify
-    /// the domain you chose when you created the Domain dataset group.</p>
+    /// <p>The domain for the schema. If you are creating a schema for a dataset in a Domain dataset group, specify the domain you chose when you created the Domain dataset group.</p>
     pub domain: std::option::Option<crate::model::Domain>,
 }
 impl CreateSchemaInput {
@@ -11055,8 +10804,7 @@ impl CreateSchemaInput {
     pub fn schema(&self) -> std::option::Option<&str> {
         self.schema.as_deref()
     }
-    /// <p>The domain for the schema. If you are creating a schema for a dataset in a Domain dataset group, specify
-    /// the domain you chose when you created the Domain dataset group.</p>
+    /// <p>The domain for the schema. If you are creating a schema for a dataset in a Domain dataset group, specify the domain you chose when you created the Domain dataset group.</p>
     pub fn domain(&self) -> std::option::Option<&crate::model::Domain> {
         self.domain.as_ref()
     }
@@ -11079,9 +10827,7 @@ pub struct CreateRecommenderInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the destination domain dataset group for the recommender.</p>
     pub dataset_group_arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the recipe that the recommender will use. For a recommender, a recipe is a Domain dataset group
-    /// use case. Only Domain dataset group use cases can be used to create a recommender. For information about use cases see <a href="https://docs.aws.amazon.com/personalize/latest/dg/domain-use-cases.html">Choosing recommender use cases</a>.
-    /// </p>
+    /// <p>The Amazon Resource Name (ARN) of the recipe that the recommender will use. For a recommender, a recipe is a Domain dataset group use case. Only Domain dataset group use cases can be used to create a recommender. For information about use cases see <a href="https://docs.aws.amazon.com/personalize/latest/dg/domain-use-cases.html">Choosing recommender use cases</a>. </p>
     pub recipe_arn: std::option::Option<std::string::String>,
     /// <p>The configuration details of the recommender.</p>
     pub recommender_config: std::option::Option<crate::model::RecommenderConfig>,
@@ -11095,9 +10841,7 @@ impl CreateRecommenderInput {
     pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
         self.dataset_group_arn.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the recipe that the recommender will use. For a recommender, a recipe is a Domain dataset group
-    /// use case. Only Domain dataset group use cases can be used to create a recommender. For information about use cases see <a href="https://docs.aws.amazon.com/personalize/latest/dg/domain-use-cases.html">Choosing recommender use cases</a>.
-    /// </p>
+    /// <p>The Amazon Resource Name (ARN) of the recipe that the recommender will use. For a recommender, a recipe is a Domain dataset group use case. Only Domain dataset group use cases can be used to create a recommender. For information about use cases see <a href="https://docs.aws.amazon.com/personalize/latest/dg/domain-use-cases.html">Choosing recommender use cases</a>. </p>
     pub fn recipe_arn(&self) -> std::option::Option<&str> {
         self.recipe_arn.as_deref()
     }
@@ -11125,9 +10869,7 @@ pub struct CreateFilterInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The ARN of the dataset group that the filter will belong to.</p>
     pub dataset_group_arn: std::option::Option<std::string::String>,
-    /// <p>The filter expression defines which items are included or excluded from recommendations. Filter expression must follow specific format rules.
-    /// For information about filter expression structure and syntax, see
-    /// <a>filter-expressions</a>.</p>
+    /// <p>The filter expression defines which items are included or excluded from recommendations. Filter expression must follow specific format rules. For information about filter expression structure and syntax, see <code>filter-expressions</code>.</p>
     pub filter_expression: std::option::Option<std::string::String>,
 }
 impl CreateFilterInput {
@@ -11139,9 +10881,7 @@ impl CreateFilterInput {
     pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
         self.dataset_group_arn.as_deref()
     }
-    /// <p>The filter expression defines which items are included or excluded from recommendations. Filter expression must follow specific format rules.
-    /// For information about filter expression structure and syntax, see
-    /// <a>filter-expressions</a>.</p>
+    /// <p>The filter expression defines which items are included or excluded from recommendations. Filter expression must follow specific format rules. For information about filter expression structure and syntax, see <code>filter-expressions</code>.</p>
     pub fn filter_expression(&self) -> std::option::Option<&str> {
         self.filter_expression.as_deref()
     }
@@ -11232,15 +10972,11 @@ impl std::fmt::Debug for CreateDatasetImportJobInput {
 pub struct CreateDatasetGroupInput {
     /// <p>The name for the new dataset group.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The ARN of the Identity and Access Management (IAM) role that has permissions to access the Key Management Service (KMS) key. Supplying an IAM
-    /// role is only valid when also specifying a KMS key.</p>
+    /// <p>The ARN of the Identity and Access Management (IAM) role that has permissions to access the Key Management Service (KMS) key. Supplying an IAM role is only valid when also specifying a KMS key.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of a Key Management Service (KMS) key used to encrypt the datasets.</p>
     pub kms_key_arn: std::option::Option<std::string::String>,
-    /// <p>The domain of the dataset group. Specify a domain to create a Domain dataset group. The domain you specify
-    /// determines the default schemas for datasets and the use cases available for recommenders. If you don't specify a domain,
-    /// you create a Custom dataset group with solution versions that you deploy with a campaign.
-    /// </p>
+    /// <p>The domain of the dataset group. Specify a domain to create a Domain dataset group. The domain you specify determines the default schemas for datasets and the use cases available for recommenders. If you don't specify a domain, you create a Custom dataset group with solution versions that you deploy with a campaign. </p>
     pub domain: std::option::Option<crate::model::Domain>,
 }
 impl CreateDatasetGroupInput {
@@ -11248,8 +10984,7 @@ impl CreateDatasetGroupInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The ARN of the Identity and Access Management (IAM) role that has permissions to access the Key Management Service (KMS) key. Supplying an IAM
-    /// role is only valid when also specifying a KMS key.</p>
+    /// <p>The ARN of the Identity and Access Management (IAM) role that has permissions to access the Key Management Service (KMS) key. Supplying an IAM role is only valid when also specifying a KMS key.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -11257,10 +10992,7 @@ impl CreateDatasetGroupInput {
     pub fn kms_key_arn(&self) -> std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
-    /// <p>The domain of the dataset group. Specify a domain to create a Domain dataset group. The domain you specify
-    /// determines the default schemas for datasets and the use cases available for recommenders. If you don't specify a domain,
-    /// you create a Custom dataset group with solution versions that you deploy with a campaign.
-    /// </p>
+    /// <p>The domain of the dataset group. Specify a domain to create a Domain dataset group. The domain you specify determines the default schemas for datasets and the use cases available for recommenders. If you don't specify a domain, you create a Custom dataset group with solution versions that you deploy with a campaign. </p>
     pub fn domain(&self) -> std::option::Option<&crate::model::Domain> {
         self.domain.as_ref()
     }
@@ -11284,13 +11016,9 @@ pub struct CreateDatasetExportJobInput {
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset that contains the data to export.</p>
     pub dataset_arn: std::option::Option<std::string::String>,
-    /// <p>The data to export, based on how you imported the data. You can choose to export only <code>BULK</code> data that you imported using a dataset import job,
-    /// only <code>PUT</code> data that you imported incrementally (using the console, PutEvents, PutUsers and PutItems operations), or <code>ALL</code>
-    /// for both types. The default value is <code>PUT</code>.
-    /// </p>
+    /// <p>The data to export, based on how you imported the data. You can choose to export only <code>BULK</code> data that you imported using a dataset import job, only <code>PUT</code> data that you imported incrementally (using the console, PutEvents, PutUsers and PutItems operations), or <code>ALL</code> for both types. The default value is <code>PUT</code>. </p>
     pub ingestion_mode: std::option::Option<crate::model::IngestionMode>,
-    /// <p>The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your
-    /// output Amazon S3 bucket.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your output Amazon S3 bucket.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The path to the Amazon S3 bucket where the job's output is stored.</p>
     pub job_output: std::option::Option<crate::model::DatasetExportJobOutput>,
@@ -11304,15 +11032,11 @@ impl CreateDatasetExportJobInput {
     pub fn dataset_arn(&self) -> std::option::Option<&str> {
         self.dataset_arn.as_deref()
     }
-    /// <p>The data to export, based on how you imported the data. You can choose to export only <code>BULK</code> data that you imported using a dataset import job,
-    /// only <code>PUT</code> data that you imported incrementally (using the console, PutEvents, PutUsers and PutItems operations), or <code>ALL</code>
-    /// for both types. The default value is <code>PUT</code>.
-    /// </p>
+    /// <p>The data to export, based on how you imported the data. You can choose to export only <code>BULK</code> data that you imported using a dataset import job, only <code>PUT</code> data that you imported incrementally (using the console, PutEvents, PutUsers and PutItems operations), or <code>ALL</code> for both types. The default value is <code>PUT</code>. </p>
     pub fn ingestion_mode(&self) -> std::option::Option<&crate::model::IngestionMode> {
         self.ingestion_mode.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your
-    /// output Amazon S3 bucket.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your output Amazon S3 bucket.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -11339,23 +11063,16 @@ impl std::fmt::Debug for CreateDatasetExportJobInput {
 pub struct CreateDatasetInput {
     /// <p>The name for the dataset.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The ARN of the schema to associate with the dataset. The schema defines the dataset
-    /// fields.</p>
+    /// <p>The ARN of the schema to associate with the dataset. The schema defines the dataset fields.</p>
     pub schema_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset group to add the dataset to.</p>
     pub dataset_group_arn: std::option::Option<std::string::String>,
     /// <p>The type of dataset.</p>
     /// <p>One of the following (case insensitive) values:</p>
     /// <ul>
-    /// <li>
-    /// <p>Interactions</p>
-    /// </li>
-    /// <li>
-    /// <p>Items</p>
-    /// </li>
-    /// <li>
-    /// <p>Users</p>
-    /// </li>
+    /// <li> <p>Interactions</p> </li>
+    /// <li> <p>Items</p> </li>
+    /// <li> <p>Users</p> </li>
     /// </ul>
     pub dataset_type: std::option::Option<std::string::String>,
 }
@@ -11364,8 +11081,7 @@ impl CreateDatasetInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The ARN of the schema to associate with the dataset. The schema defines the dataset
-    /// fields.</p>
+    /// <p>The ARN of the schema to associate with the dataset. The schema defines the dataset fields.</p>
     pub fn schema_arn(&self) -> std::option::Option<&str> {
         self.schema_arn.as_deref()
     }
@@ -11376,15 +11092,9 @@ impl CreateDatasetInput {
     /// <p>The type of dataset.</p>
     /// <p>One of the following (case insensitive) values:</p>
     /// <ul>
-    /// <li>
-    /// <p>Interactions</p>
-    /// </li>
-    /// <li>
-    /// <p>Items</p>
-    /// </li>
-    /// <li>
-    /// <p>Users</p>
-    /// </li>
+    /// <li> <p>Interactions</p> </li>
+    /// <li> <p>Items</p> </li>
+    /// <li> <p>Users</p> </li>
     /// </ul>
     pub fn dataset_type(&self) -> std::option::Option<&str> {
         self.dataset_type.as_deref()
@@ -11409,8 +11119,7 @@ pub struct CreateCampaignInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the solution version to deploy.</p>
     pub solution_version_arn: std::option::Option<std::string::String>,
-    /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that
-    /// Amazon Personalize will support.</p>
+    /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize will support.</p>
     pub min_provisioned_tps: std::option::Option<i32>,
     /// <p>The configuration details of a campaign.</p>
     pub campaign_config: std::option::Option<crate::model::CampaignConfig>,
@@ -11424,8 +11133,7 @@ impl CreateCampaignInput {
     pub fn solution_version_arn(&self) -> std::option::Option<&str> {
         self.solution_version_arn.as_deref()
     }
-    /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that
-    /// Amazon Personalize will support.</p>
+    /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize will support.</p>
     pub fn min_provisioned_tps(&self) -> std::option::Option<i32> {
         self.min_provisioned_tps
     }
@@ -11451,11 +11159,9 @@ impl std::fmt::Debug for CreateCampaignInput {
 pub struct CreateBatchSegmentJobInput {
     /// <p>The name of the batch segment job to create.</p>
     pub job_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the solution version you want the batch segment job to use to generate
-    /// batch segments.</p>
+    /// <p>The Amazon Resource Name (ARN) of the solution version you want the batch segment job to use to generate batch segments.</p>
     pub solution_version_arn: std::option::Option<std::string::String>,
-    /// <p>The ARN of the filter to apply to the batch segment job. For more information on using
-    /// filters, see <a>filter-batch</a>.</p>
+    /// <p>The ARN of the filter to apply to the batch segment job. For more information on using filters, see <code>filter-batch</code>.</p>
     pub filter_arn: std::option::Option<std::string::String>,
     /// <p>The number of predicted users generated by the batch segment job for each line of input data.</p>
     pub num_results: std::option::Option<i32>,
@@ -11463,8 +11169,7 @@ pub struct CreateBatchSegmentJobInput {
     pub job_input: std::option::Option<crate::model::BatchSegmentJobInput>,
     /// <p>The Amazon S3 path for the bucket where the job's output will be stored.</p>
     pub job_output: std::option::Option<crate::model::BatchSegmentJobOutput>,
-    /// <p>The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input and output
-    /// Amazon S3 buckets respectively.</p>
+    /// <p>The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input and output Amazon S3 buckets respectively.</p>
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl CreateBatchSegmentJobInput {
@@ -11472,13 +11177,11 @@ impl CreateBatchSegmentJobInput {
     pub fn job_name(&self) -> std::option::Option<&str> {
         self.job_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the solution version you want the batch segment job to use to generate
-    /// batch segments.</p>
+    /// <p>The Amazon Resource Name (ARN) of the solution version you want the batch segment job to use to generate batch segments.</p>
     pub fn solution_version_arn(&self) -> std::option::Option<&str> {
         self.solution_version_arn.as_deref()
     }
-    /// <p>The ARN of the filter to apply to the batch segment job. For more information on using
-    /// filters, see <a>filter-batch</a>.</p>
+    /// <p>The ARN of the filter to apply to the batch segment job. For more information on using filters, see <code>filter-batch</code>.</p>
     pub fn filter_arn(&self) -> std::option::Option<&str> {
         self.filter_arn.as_deref()
     }
@@ -11494,8 +11197,7 @@ impl CreateBatchSegmentJobInput {
     pub fn job_output(&self) -> std::option::Option<&crate::model::BatchSegmentJobOutput> {
         self.job_output.as_ref()
     }
-    /// <p>The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input and output
-    /// Amazon S3 buckets respectively.</p>
+    /// <p>The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input and output Amazon S3 buckets respectively.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -11520,22 +11222,17 @@ impl std::fmt::Debug for CreateBatchSegmentJobInput {
 pub struct CreateBatchInferenceJobInput {
     /// <p>The name of the batch inference job to create.</p>
     pub job_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the solution version that will be used to generate the
-    /// batch inference recommendations.</p>
+    /// <p>The Amazon Resource Name (ARN) of the solution version that will be used to generate the batch inference recommendations.</p>
     pub solution_version_arn: std::option::Option<std::string::String>,
-    /// <p>The ARN of the filter to apply to the batch inference job. For more information on using
-    /// filters, see
-    /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering Batch Recommendations</a>..</p>
+    /// <p>The ARN of the filter to apply to the batch inference job. For more information on using filters, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering Batch Recommendations</a>..</p>
     pub filter_arn: std::option::Option<std::string::String>,
     /// <p>The number of recommendations to retreive.</p>
     pub num_results: std::option::Option<i32>,
-    /// <p>The Amazon S3 path that leads to the input file to base your recommendations on. The input
-    /// material must be in JSON format.</p>
+    /// <p>The Amazon S3 path that leads to the input file to base your recommendations on. The input material must be in JSON format.</p>
     pub job_input: std::option::Option<crate::model::BatchInferenceJobInput>,
     /// <p>The path to the Amazon S3 bucket where the job's output will be stored.</p>
     pub job_output: std::option::Option<crate::model::BatchInferenceJobOutput>,
-    /// <p>The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input and output
-    /// Amazon S3 buckets respectively.</p>
+    /// <p>The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input and output Amazon S3 buckets respectively.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The configuration details of a batch inference job.</p>
     pub batch_inference_job_config: std::option::Option<crate::model::BatchInferenceJobConfig>,
@@ -11545,14 +11242,11 @@ impl CreateBatchInferenceJobInput {
     pub fn job_name(&self) -> std::option::Option<&str> {
         self.job_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the solution version that will be used to generate the
-    /// batch inference recommendations.</p>
+    /// <p>The Amazon Resource Name (ARN) of the solution version that will be used to generate the batch inference recommendations.</p>
     pub fn solution_version_arn(&self) -> std::option::Option<&str> {
         self.solution_version_arn.as_deref()
     }
-    /// <p>The ARN of the filter to apply to the batch inference job. For more information on using
-    /// filters, see
-    /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering Batch Recommendations</a>..</p>
+    /// <p>The ARN of the filter to apply to the batch inference job. For more information on using filters, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering Batch Recommendations</a>..</p>
     pub fn filter_arn(&self) -> std::option::Option<&str> {
         self.filter_arn.as_deref()
     }
@@ -11560,8 +11254,7 @@ impl CreateBatchInferenceJobInput {
     pub fn num_results(&self) -> std::option::Option<i32> {
         self.num_results
     }
-    /// <p>The Amazon S3 path that leads to the input file to base your recommendations on. The input
-    /// material must be in JSON format.</p>
+    /// <p>The Amazon S3 path that leads to the input file to base your recommendations on. The input material must be in JSON format.</p>
     pub fn job_input(&self) -> std::option::Option<&crate::model::BatchInferenceJobInput> {
         self.job_input.as_ref()
     }
@@ -11569,8 +11262,7 @@ impl CreateBatchInferenceJobInput {
     pub fn job_output(&self) -> std::option::Option<&crate::model::BatchInferenceJobOutput> {
         self.job_output.as_ref()
     }
-    /// <p>The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input and output
-    /// Amazon S3 buckets respectively.</p>
+    /// <p>The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input and output Amazon S3 buckets respectively.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }

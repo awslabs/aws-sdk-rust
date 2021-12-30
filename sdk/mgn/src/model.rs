@@ -1607,13 +1607,13 @@ impl LifeCycleLastCutoverReverted {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LifeCycleLastCutoverInitiated {
-    /// <p/>
+    /// <p></p>
     pub api_call_date_time: std::option::Option<std::string::String>,
     /// <p>Lifecycle last Cutover initiated by Job ID.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
 impl LifeCycleLastCutoverInitiated {
-    /// <p/>
+    /// <p></p>
     pub fn api_call_date_time(&self) -> std::option::Option<&str> {
         self.api_call_date_time.as_deref()
     }
@@ -1640,12 +1640,12 @@ pub mod life_cycle_last_cutover_initiated {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p/>
+        /// <p></p>
         pub fn api_call_date_time(mut self, input: impl Into<std::string::String>) -> Self {
             self.api_call_date_time = Some(input.into());
             self
         }
-        /// <p/>
+        /// <p></p>
         pub fn set_api_call_date_time(
             mut self,
             input: std::option::Option<std::string::String>,

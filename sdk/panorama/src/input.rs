@@ -1291,14 +1291,12 @@ pub mod delete_package_input {
             self.package_id = input;
             self
         }
-        /// <p>Delete the package even if it has artifacts stored in its access point.
-        /// Deletes the package's artifacts from Amazon S3.</p>
+        /// <p>Delete the package even if it has artifacts stored in its access point. Deletes the package's artifacts from Amazon S3.</p>
         pub fn force_delete(mut self, input: bool) -> Self {
             self.force_delete = Some(input);
             self
         }
-        /// <p>Delete the package even if it has artifacts stored in its access point.
-        /// Deletes the package's artifacts from Amazon S3.</p>
+        /// <p>Delete the package even if it has artifacts stored in its access point. Deletes the package's artifacts from Amazon S3.</p>
         pub fn set_force_delete(mut self, input: std::option::Option<bool>) -> Self {
             self.force_delete = input;
             self
@@ -7067,8 +7065,7 @@ impl std::fmt::Debug for DeregisterPackageVersionInput {
 pub struct DeletePackageInput {
     /// <p>The package's ID.</p>
     pub package_id: std::option::Option<std::string::String>,
-    /// <p>Delete the package even if it has artifacts stored in its access point.
-    /// Deletes the package's artifacts from Amazon S3.</p>
+    /// <p>Delete the package even if it has artifacts stored in its access point. Deletes the package's artifacts from Amazon S3.</p>
     pub force_delete: std::option::Option<bool>,
 }
 impl DeletePackageInput {
@@ -7076,8 +7073,7 @@ impl DeletePackageInput {
     pub fn package_id(&self) -> std::option::Option<&str> {
         self.package_id.as_deref()
     }
-    /// <p>Delete the package even if it has artifacts stored in its access point.
-    /// Deletes the package's artifacts from Amazon S3.</p>
+    /// <p>Delete the package even if it has artifacts stored in its access point. Deletes the package's artifacts from Amazon S3.</p>
     pub fn force_delete(&self) -> std::option::Option<bool> {
         self.force_delete
     }

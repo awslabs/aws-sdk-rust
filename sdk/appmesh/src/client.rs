@@ -361,9 +361,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateGatewayRoute`.
     ///
     /// <p>Creates a gateway route.</p>
-    /// <p>A gateway route is attached to a virtual gateway and routes traffic to an existing
-    /// virtual service. If a route matches a request, it can distribute traffic to a target
-    /// virtual service.</p>
+    /// <p>A gateway route is attached to a virtual gateway and routes traffic to an existing virtual service. If a route matches a request, it can distribute traffic to a target virtual service.</p>
     /// <p>For more information about gateway routes, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/gateway-routes.html">Gateway routes</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateGatewayRoute<
@@ -444,16 +442,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_mesh_name(input);
             self
         }
-        /// <p>The name of the virtual gateway to associate the gateway route with. If the virtual
-        /// gateway is in a shared mesh, then you must be the owner of the virtual gateway
-        /// resource.</p>
+        /// <p>The name of the virtual gateway to associate the gateway route with. If the virtual gateway is in a shared mesh, then you must be the owner of the virtual gateway resource.</p>
         pub fn virtual_gateway_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.virtual_gateway_name(input.into());
             self
         }
-        /// <p>The name of the virtual gateway to associate the gateway route with. If the virtual
-        /// gateway is in a shared mesh, then you must be the owner of the virtual gateway
-        /// resource.</p>
+        /// <p>The name of the virtual gateway to associate the gateway route with. If the virtual gateway is in a shared mesh, then you must be the owner of the virtual gateway resource.</p>
         pub fn set_virtual_gateway_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -478,18 +472,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Optional metadata that you can apply to the gateway route to assist with categorization
-        /// and organization. Each tag consists of a key and an optional value, both of which you
-        /// define. Tag keys can have a maximum character length of 128 characters, and tag values can have
-        /// a maximum length of 256 characters.</p>
+        /// <p>Optional metadata that you can apply to the gateway route to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
         pub fn tags(mut self, input: crate::model::TagRef) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>Optional metadata that you can apply to the gateway route to assist with categorization
-        /// and organization. Each tag consists of a key and an optional value, both of which you
-        /// define. Tag keys can have a maximum character length of 128 characters, and tag values can have
-        /// a maximum length of 256 characters.</p>
+        /// <p>Optional metadata that you can apply to the gateway route to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TagRef>>,
@@ -497,28 +485,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then
-        /// the account that you specify must share the mesh with your account before you can create
-        /// the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.mesh_owner(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then
-        /// the account that you specify must share the mesh with your account before you can create
-        /// the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_mesh_owner(input);
             self
@@ -527,10 +509,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateMesh`.
     ///
     /// <p>Creates a service mesh.</p>
-    /// <p> A service mesh is a logical boundary for network traffic between services that are
-    /// represented by resources within the mesh. After you create your service mesh, you can
-    /// create virtual services, virtual nodes, virtual routers, and routes to distribute traffic
-    /// between the applications in your mesh.</p>
+    /// <p> A service mesh is a logical boundary for network traffic between services that are represented by resources within the mesh. After you create your service mesh, you can create virtual services, virtual nodes, virtual routers, and routes to distribute traffic between the applications in your mesh.</p>
     /// <p>For more information about service meshes, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/meshes.html">Service meshes</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateMesh<
@@ -612,18 +591,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Optional metadata that you can apply to the service mesh to assist with categorization
-        /// and organization. Each tag consists of a key and an optional value, both of which you
-        /// define. Tag keys can have a maximum character length of 128 characters, and tag values can have
-        /// a maximum length of 256 characters.</p>
+        /// <p>Optional metadata that you can apply to the service mesh to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
         pub fn tags(mut self, input: crate::model::TagRef) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>Optional metadata that you can apply to the service mesh to assist with categorization
-        /// and organization. Each tag consists of a key and an optional value, both of which you
-        /// define. Tag keys can have a maximum character length of 128 characters, and tag values can have
-        /// a maximum length of 256 characters.</p>
+        /// <p>Optional metadata that you can apply to the service mesh to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TagRef>>,
@@ -631,14 +604,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -647,8 +618,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateRoute`.
     ///
     /// <p>Creates a route that is associated with a virtual router.</p>
-    /// <p> You can route several different protocols and define a retry policy for a route.
-    /// Traffic can be routed to one or more virtual nodes.</p>
+    /// <p> You can route several different protocols and define a retry policy for a route. Traffic can be routed to one or more virtual nodes.</p>
     /// <p>For more information about routes, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/routes.html">Routes</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRoute<
@@ -726,14 +696,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_mesh_name(input);
             self
         }
-        /// <p>The name of the virtual router in which to create the route. If the virtual router is in
-        /// a shared mesh, then you must be the owner of the virtual router resource.</p>
+        /// <p>The name of the virtual router in which to create the route. If the virtual router is in a shared mesh, then you must be the owner of the virtual router resource.</p>
         pub fn virtual_router_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.virtual_router_name(input.into());
             self
         }
-        /// <p>The name of the virtual router in which to create the route. If the virtual router is in
-        /// a shared mesh, then you must be the owner of the virtual router resource.</p>
+        /// <p>The name of the virtual router in which to create the route. If the virtual router is in a shared mesh, then you must be the owner of the virtual router resource.</p>
         pub fn set_virtual_router_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -755,18 +723,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Optional metadata that you can apply to the route to assist with categorization and
-        /// organization. Each tag consists of a key and an optional value, both of which you define.
-        /// Tag keys can have a maximum character length of 128 characters, and tag values can have
-        /// a maximum length of 256 characters.</p>
+        /// <p>Optional metadata that you can apply to the route to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
         pub fn tags(mut self, input: crate::model::TagRef) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>Optional metadata that you can apply to the route to assist with categorization and
-        /// organization. Each tag consists of a key and an optional value, both of which you define.
-        /// Tag keys can have a maximum character length of 128 characters, and tag values can have
-        /// a maximum length of 256 characters.</p>
+        /// <p>Optional metadata that you can apply to the route to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TagRef>>,
@@ -774,28 +736,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then
-        /// the account that you specify must share the mesh with your account before you can create
-        /// the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.mesh_owner(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then
-        /// the account that you specify must share the mesh with your account before you can create
-        /// the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_mesh_owner(input);
             self
@@ -804,11 +760,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateVirtualGateway`.
     ///
     /// <p>Creates a virtual gateway.</p>
-    /// <p>A virtual gateway allows resources outside your mesh to communicate to resources that
-    /// are inside your mesh. The virtual gateway represents an Envoy proxy running in an Amazon ECS
-    /// task, in a Kubernetes service, or on an Amazon EC2 instance. Unlike a virtual node, which
-    /// represents an Envoy running with an application, a virtual gateway represents Envoy
-    /// deployed by itself.</p>
+    /// <p>A virtual gateway allows resources outside your mesh to communicate to resources that are inside your mesh. The virtual gateway represents an Envoy proxy running in an Amazon ECS task, in a Kubernetes service, or on an Amazon EC2 instance. Unlike a virtual node, which represents an Envoy running with an application, a virtual gateway represents Envoy deployed by itself.</p>
     /// <p>For more information about virtual gateways, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_gateways.html">Virtual gateways</a>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateVirtualGateway<
@@ -906,18 +858,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Optional metadata that you can apply to the virtual gateway to assist with
-        /// categorization and organization. Each tag consists of a key and an optional value, both of
-        /// which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have
-        /// a maximum length of 256 characters.</p>
+        /// <p>Optional metadata that you can apply to the virtual gateway to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
         pub fn tags(mut self, input: crate::model::TagRef) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>Optional metadata that you can apply to the virtual gateway to assist with
-        /// categorization and organization. Each tag consists of a key and an optional value, both of
-        /// which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have
-        /// a maximum length of 256 characters.</p>
+        /// <p>Optional metadata that you can apply to the virtual gateway to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TagRef>>,
@@ -925,28 +871,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then
-        /// the account that you specify must share the mesh with your account before you can create
-        /// the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.mesh_owner(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then
-        /// the account that you specify must share the mesh with your account before you can create
-        /// the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_mesh_owner(input);
             self
@@ -955,28 +895,12 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateVirtualNode`.
     ///
     /// <p>Creates a virtual node within a service mesh.</p>
-    /// <p> A virtual node acts as a logical pointer to a particular task group, such as an Amazon ECS
-    /// service or a Kubernetes deployment. When you create a virtual node, you can specify the
-    /// service discovery information for your task group, and whether the proxy running in a task
-    /// group will communicate with other proxies using Transport Layer Security (TLS).</p>
-    /// <p>You define a <code>listener</code> for any inbound traffic that your virtual node
-    /// expects. Any virtual service that your virtual node expects to communicate to is specified
-    /// as a <code>backend</code>.</p>
-    /// <p>The response metadata for your new virtual node contains the <code>arn</code> that is
-    /// associated with the virtual node. Set this value to the full ARN; for example,
-    /// <code>arn:aws:appmesh:us-west-2:123456789012:myMesh/default/virtualNode/myApp</code>)
-    /// as the <code>APPMESH_RESOURCE_ARN</code> environment variable for your task group's Envoy
-    /// proxy container in your task definition or pod spec. This is then mapped to the
-    /// <code>node.id</code> and <code>node.cluster</code> Envoy parameters.</p>
-    /// <note>
-    /// <p>By default, App Mesh uses the name of the resource you specified in
-    /// <code>APPMESH_RESOURCE_ARN</code> when Envoy is referring to itself in metrics and
-    /// traces. You can override this behavior by setting the
-    /// <code>APPMESH_RESOURCE_CLUSTER</code> environment variable with your own name.</p>
+    /// <p> A virtual node acts as a logical pointer to a particular task group, such as an Amazon ECS service or a Kubernetes deployment. When you create a virtual node, you can specify the service discovery information for your task group, and whether the proxy running in a task group will communicate with other proxies using Transport Layer Security (TLS).</p>
+    /// <p>You define a <code>listener</code> for any inbound traffic that your virtual node expects. Any virtual service that your virtual node expects to communicate to is specified as a <code>backend</code>.</p>
+    /// <p>The response metadata for your new virtual node contains the <code>arn</code> that is associated with the virtual node. Set this value to the full ARN; for example, <code>arn:aws:appmesh:us-west-2:123456789012:myMesh/default/virtualNode/myApp</code>) as the <code>APPMESH_RESOURCE_ARN</code> environment variable for your task group's Envoy proxy container in your task definition or pod spec. This is then mapped to the <code>node.id</code> and <code>node.cluster</code> Envoy parameters.</p> <note>
+    /// <p>By default, App Mesh uses the name of the resource you specified in <code>APPMESH_RESOURCE_ARN</code> when Envoy is referring to itself in metrics and traces. You can override this behavior by setting the <code>APPMESH_RESOURCE_CLUSTER</code> environment variable with your own name.</p>
     /// </note>
-    /// <p>For more information about virtual nodes, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_nodes.html">Virtual nodes</a>. You must be using <code>1.15.0</code> or later of the Envoy image when
-    /// setting these variables. For more information aboutApp Mesh Envoy variables, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/envoy.html">Envoy image</a> in
-    /// the AWS App Mesh User Guide.</p>
+    /// <p>For more information about virtual nodes, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_nodes.html">Virtual nodes</a>. You must be using <code>1.15.0</code> or later of the Envoy image when setting these variables. For more information aboutApp Mesh Envoy variables, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/envoy.html">Envoy image</a> in the AWS App Mesh User Guide.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateVirtualNode<
         C = aws_smithy_client::erase::DynConnector,
@@ -1073,18 +997,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Optional metadata that you can apply to the virtual node to assist with categorization
-        /// and organization. Each tag consists of a key and an optional value, both of which you
-        /// define. Tag keys can have a maximum character length of 128 characters, and tag values can have
-        /// a maximum length of 256 characters.</p>
+        /// <p>Optional metadata that you can apply to the virtual node to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
         pub fn tags(mut self, input: crate::model::TagRef) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>Optional metadata that you can apply to the virtual node to assist with categorization
-        /// and organization. Each tag consists of a key and an optional value, both of which you
-        /// define. Tag keys can have a maximum character length of 128 characters, and tag values can have
-        /// a maximum length of 256 characters.</p>
+        /// <p>Optional metadata that you can apply to the virtual node to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TagRef>>,
@@ -1092,28 +1010,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then
-        /// the account that you specify must share the mesh with your account before you can create
-        /// the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.mesh_owner(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then
-        /// the account that you specify must share the mesh with your account before you can create
-        /// the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_mesh_owner(input);
             self
@@ -1122,11 +1034,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateVirtualRouter`.
     ///
     /// <p>Creates a virtual router within a service mesh.</p>
-    /// <p>Specify a <code>listener</code> for any inbound traffic that your virtual router
-    /// receives. Create a virtual router for each protocol and port that you need to route.
-    /// Virtual routers handle traffic for one or more virtual services within your mesh. After you
-    /// create your virtual router, create and associate routes for your virtual router that direct
-    /// incoming requests to different virtual nodes.</p>
+    /// <p>Specify a <code>listener</code> for any inbound traffic that your virtual router receives. Create a virtual router for each protocol and port that you need to route. Virtual routers handle traffic for one or more virtual services within your mesh. After you create your virtual router, create and associate routes for your virtual router that direct incoming requests to different virtual nodes.</p>
     /// <p>For more information about virtual routers, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_routers.html">Virtual routers</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateVirtualRouter<
@@ -1224,18 +1132,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Optional metadata that you can apply to the virtual router to assist with categorization
-        /// and organization. Each tag consists of a key and an optional value, both of which you
-        /// define. Tag keys can have a maximum character length of 128 characters, and tag values can have
-        /// a maximum length of 256 characters.</p>
+        /// <p>Optional metadata that you can apply to the virtual router to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
         pub fn tags(mut self, input: crate::model::TagRef) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>Optional metadata that you can apply to the virtual router to assist with categorization
-        /// and organization. Each tag consists of a key and an optional value, both of which you
-        /// define. Tag keys can have a maximum character length of 128 characters, and tag values can have
-        /// a maximum length of 256 characters.</p>
+        /// <p>Optional metadata that you can apply to the virtual router to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TagRef>>,
@@ -1243,28 +1145,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then
-        /// the account that you specify must share the mesh with your account before you can create
-        /// the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.mesh_owner(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then
-        /// the account that you specify must share the mesh with your account before you can create
-        /// the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_mesh_owner(input);
             self
@@ -1273,11 +1169,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateVirtualService`.
     ///
     /// <p>Creates a virtual service within a service mesh.</p>
-    /// <p>A virtual service is an abstraction of a real service that is provided by a virtual node
-    /// directly or indirectly by means of a virtual router. Dependent services call your virtual
-    /// service by its <code>virtualServiceName</code>, and those requests are routed to the
-    /// virtual node or virtual router that is specified as the provider for the virtual
-    /// service.</p>
+    /// <p>A virtual service is an abstraction of a real service that is provided by a virtual node directly or indirectly by means of a virtual router. Dependent services call your virtual service by its <code>virtualServiceName</code>, and those requests are routed to the virtual node or virtual router that is specified as the provider for the virtual service.</p>
     /// <p>For more information about virtual services, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_services.html">Virtual services</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateVirtualService<
@@ -1375,18 +1267,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Optional metadata that you can apply to the virtual service to assist with
-        /// categorization and organization. Each tag consists of a key and an optional value, both of
-        /// which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have
-        /// a maximum length of 256 characters.</p>
+        /// <p>Optional metadata that you can apply to the virtual service to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
         pub fn tags(mut self, input: crate::model::TagRef) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>Optional metadata that you can apply to the virtual service to assist with
-        /// categorization and organization. Each tag consists of a key and an optional value, both of
-        /// which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have
-        /// a maximum length of 256 characters.</p>
+        /// <p>Optional metadata that you can apply to the virtual service to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TagRef>>,
@@ -1394,28 +1280,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then
-        /// the account that you specify must share the mesh with your account before you can create
-        /// the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.mesh_owner(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then
-        /// the account that you specify must share the mesh with your account before you can create
-        /// the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_mesh_owner(input);
             self
@@ -1516,14 +1396,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_virtual_gateway_name(input);
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.mesh_owner(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_mesh_owner(input);
             self
@@ -1532,8 +1410,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteMesh`.
     ///
     /// <p>Deletes an existing service mesh.</p>
-    /// <p>You must delete all resources (virtual services, routes, virtual routers, and virtual
-    /// nodes) in the service mesh before you can delete the mesh itself.</p>
+    /// <p>You must delete all resources (virtual services, routes, virtual routers, and virtual nodes) in the service mesh before you can delete the mesh itself.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteMesh<
         C = aws_smithy_client::erase::DynConnector,
@@ -1693,14 +1570,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_virtual_router_name(input);
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.mesh_owner(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_mesh_owner(input);
             self
@@ -1708,8 +1583,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteVirtualGateway`.
     ///
-    /// <p>Deletes an existing virtual gateway. You cannot delete a virtual gateway if any gateway
-    /// routes are associated to it.</p>
+    /// <p>Deletes an existing virtual gateway. You cannot delete a virtual gateway if any gateway routes are associated to it.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteVirtualGateway<
         C = aws_smithy_client::erase::DynConnector,
@@ -1789,14 +1663,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_mesh_name(input);
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.mesh_owner(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_mesh_owner(input);
             self
@@ -1805,8 +1677,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteVirtualNode`.
     ///
     /// <p>Deletes an existing virtual node.</p>
-    /// <p>You must delete any virtual services that list a virtual node as a service provider
-    /// before you can delete the virtual node itself.</p>
+    /// <p>You must delete any virtual services that list a virtual node as a service provider before you can delete the virtual node itself.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteVirtualNode<
         C = aws_smithy_client::erase::DynConnector,
@@ -1886,14 +1757,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_mesh_name(input);
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.mesh_owner(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_mesh_owner(input);
             self
@@ -1902,8 +1771,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteVirtualRouter`.
     ///
     /// <p>Deletes an existing virtual router.</p>
-    /// <p>You must delete any routes associated with the virtual router before you can delete the
-    /// router itself.</p>
+    /// <p>You must delete any routes associated with the virtual router before you can delete the router itself.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteVirtualRouter<
         C = aws_smithy_client::erase::DynConnector,
@@ -1983,14 +1851,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_mesh_name(input);
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.mesh_owner(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_mesh_owner(input);
             self
@@ -2078,14 +1944,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_mesh_name(input);
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.mesh_owner(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_mesh_owner(input);
             self
@@ -2186,14 +2050,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_virtual_gateway_name(input);
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.mesh_owner(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_mesh_owner(input);
             self
@@ -2268,14 +2130,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_mesh_name(input);
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.mesh_owner(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_mesh_owner(input);
             self
@@ -2360,14 +2220,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_mesh_name(input);
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.mesh_owner(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_mesh_owner(input);
             self
@@ -2468,14 +2326,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_mesh_name(input);
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.mesh_owner(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_mesh_owner(input);
             self
@@ -2563,14 +2419,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_mesh_name(input);
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.mesh_owner(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_mesh_owner(input);
             self
@@ -2658,14 +2512,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_mesh_name(input);
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.mesh_owner(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_mesh_owner(input);
             self
@@ -2753,14 +2605,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_mesh_name(input);
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.mesh_owner(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_mesh_owner(input);
             self
@@ -2768,8 +2618,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListGatewayRoutes`.
     ///
-    /// <p>Returns a list of existing gateway routes that are associated to a virtual
-    /// gateway.</p>
+    /// <p>Returns a list of existing gateway routes that are associated to a virtual gateway.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListGatewayRoutes<
         C = aws_smithy_client::erase::DynConnector,
@@ -2849,54 +2698,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_virtual_gateway_name(input);
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>ListGatewayRoutes</code> request where <code>limit</code> was used and the results
-        /// exceeded the value of that parameter. Pagination continues from the end of the previous
-        /// results that returned the <code>nextToken</code> value.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListGatewayRoutes</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>ListGatewayRoutes</code> request where <code>limit</code> was used and the results
-        /// exceeded the value of that parameter. Pagination continues from the end of the previous
-        /// results that returned the <code>nextToken</code> value.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListGatewayRoutes</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results returned by <code>ListGatewayRoutes</code> in paginated
-        /// output. When you use this parameter, <code>ListGatewayRoutes</code> returns only
-        /// <code>limit</code> results in a single page along with a <code>nextToken</code> response
-        /// element. You can see the remaining results of the initial request by sending another
-        /// <code>ListGatewayRoutes</code> request with the returned <code>nextToken</code> value.
-        /// This value can be between 1 and 100. If you don't use this
-        /// parameter, <code>ListGatewayRoutes</code> returns up to 100 results and a
-        /// <code>nextToken</code> value if applicable.</p>
+        /// <p>The maximum number of results returned by <code>ListGatewayRoutes</code> in paginated output. When you use this parameter, <code>ListGatewayRoutes</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListGatewayRoutes</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListGatewayRoutes</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.inner = self.inner.limit(input);
             self
         }
-        /// <p>The maximum number of results returned by <code>ListGatewayRoutes</code> in paginated
-        /// output. When you use this parameter, <code>ListGatewayRoutes</code> returns only
-        /// <code>limit</code> results in a single page along with a <code>nextToken</code> response
-        /// element. You can see the remaining results of the initial request by sending another
-        /// <code>ListGatewayRoutes</code> request with the returned <code>nextToken</code> value.
-        /// This value can be between 1 and 100. If you don't use this
-        /// parameter, <code>ListGatewayRoutes</code> returns up to 100 results and a
-        /// <code>nextToken</code> value if applicable.</p>
+        /// <p>The maximum number of results returned by <code>ListGatewayRoutes</code> in paginated output. When you use this parameter, <code>ListGatewayRoutes</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListGatewayRoutes</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListGatewayRoutes</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_limit(input);
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.mesh_owner(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_mesh_owner(input);
             self
@@ -2961,50 +2788,26 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>ListMeshes</code> request where <code>limit</code> was used and the results
-        /// exceeded the value of that parameter. Pagination continues from the end of the previous
-        /// results that returned the <code>nextToken</code> value.</p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that is used only to
-        /// retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListMeshes</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note>
+        /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>ListMeshes</code> request where <code>limit</code> was used and the results
-        /// exceeded the value of that parameter. Pagination continues from the end of the previous
-        /// results that returned the <code>nextToken</code> value.</p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that is used only to
-        /// retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListMeshes</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note>
+        /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results returned by <code>ListMeshes</code> in paginated output.
-        /// When you use this parameter, <code>ListMeshes</code> returns only <code>limit</code>
-        /// results in a single page along with a <code>nextToken</code> response element. You can see
-        /// the remaining results of the initial request by sending another <code>ListMeshes</code>
-        /// request with the returned <code>nextToken</code> value. This value can be between
-        /// 1 and 100. If you don't use this parameter,
-        /// <code>ListMeshes</code> returns up to 100 results and a
-        /// <code>nextToken</code> value if applicable.</p>
+        /// <p>The maximum number of results returned by <code>ListMeshes</code> in paginated output. When you use this parameter, <code>ListMeshes</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListMeshes</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListMeshes</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.inner = self.inner.limit(input);
             self
         }
-        /// <p>The maximum number of results returned by <code>ListMeshes</code> in paginated output.
-        /// When you use this parameter, <code>ListMeshes</code> returns only <code>limit</code>
-        /// results in a single page along with a <code>nextToken</code> response element. You can see
-        /// the remaining results of the initial request by sending another <code>ListMeshes</code>
-        /// request with the returned <code>nextToken</code> value. This value can be between
-        /// 1 and 100. If you don't use this parameter,
-        /// <code>ListMeshes</code> returns up to 100 results and a
-        /// <code>nextToken</code> value if applicable.</p>
+        /// <p>The maximum number of results returned by <code>ListMeshes</code> in paginated output. When you use this parameter, <code>ListMeshes</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListMeshes</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListMeshes</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_limit(input);
             self
@@ -3092,54 +2895,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_virtual_router_name(input);
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>ListRoutes</code> request where <code>limit</code> was used and the results
-        /// exceeded the value of that parameter. Pagination continues from the end of the previous
-        /// results that returned the <code>nextToken</code> value.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListRoutes</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>ListRoutes</code> request where <code>limit</code> was used and the results
-        /// exceeded the value of that parameter. Pagination continues from the end of the previous
-        /// results that returned the <code>nextToken</code> value.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListRoutes</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results returned by <code>ListRoutes</code> in paginated output.
-        /// When you use this parameter, <code>ListRoutes</code> returns only <code>limit</code>
-        /// results in a single page along with a <code>nextToken</code> response element. You can see
-        /// the remaining results of the initial request by sending another <code>ListRoutes</code>
-        /// request with the returned <code>nextToken</code> value. This value can be between
-        /// 1 and 100. If you don't use this parameter,
-        /// <code>ListRoutes</code> returns up to 100 results and a
-        /// <code>nextToken</code> value if applicable.</p>
+        /// <p>The maximum number of results returned by <code>ListRoutes</code> in paginated output. When you use this parameter, <code>ListRoutes</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListRoutes</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListRoutes</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.inner = self.inner.limit(input);
             self
         }
-        /// <p>The maximum number of results returned by <code>ListRoutes</code> in paginated output.
-        /// When you use this parameter, <code>ListRoutes</code> returns only <code>limit</code>
-        /// results in a single page along with a <code>nextToken</code> response element. You can see
-        /// the remaining results of the initial request by sending another <code>ListRoutes</code>
-        /// request with the returned <code>nextToken</code> value. This value can be between
-        /// 1 and 100. If you don't use this parameter,
-        /// <code>ListRoutes</code> returns up to 100 results and a
-        /// <code>nextToken</code> value if applicable.</p>
+        /// <p>The maximum number of results returned by <code>ListRoutes</code> in paginated output. When you use this parameter, <code>ListRoutes</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListRoutes</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListRoutes</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_limit(input);
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.mesh_owner(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_mesh_owner(input);
             self
@@ -3214,42 +2995,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_arn(input);
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>ListTagsForResource</code> request where <code>limit</code> was used and the
-        /// results exceeded the value of that parameter. Pagination continues from the end of the
-        /// previous results that returned the <code>nextToken</code> value.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListTagsForResource</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>ListTagsForResource</code> request where <code>limit</code> was used and the
-        /// results exceeded the value of that parameter. Pagination continues from the end of the
-        /// previous results that returned the <code>nextToken</code> value.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListTagsForResource</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of tag results returned by <code>ListTagsForResource</code> in
-        /// paginated output. When this parameter is used, <code>ListTagsForResource</code> returns
-        /// only <code>limit</code> results in a single page along with a <code>nextToken</code>
-        /// response element. You can see the remaining results of the initial request by sending
-        /// another <code>ListTagsForResource</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 100. If you don't use
-        /// this parameter, <code>ListTagsForResource</code> returns up to 100
-        /// results and a <code>nextToken</code> value if applicable.</p>
+        /// <p>The maximum number of tag results returned by <code>ListTagsForResource</code> in paginated output. When this parameter is used, <code>ListTagsForResource</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListTagsForResource</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListTagsForResource</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.inner = self.inner.limit(input);
             self
         }
-        /// <p>The maximum number of tag results returned by <code>ListTagsForResource</code> in
-        /// paginated output. When this parameter is used, <code>ListTagsForResource</code> returns
-        /// only <code>limit</code> results in a single page along with a <code>nextToken</code>
-        /// response element. You can see the remaining results of the initial request by sending
-        /// another <code>ListTagsForResource</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 100. If you don't use
-        /// this parameter, <code>ListTagsForResource</code> returns up to 100
-        /// results and a <code>nextToken</code> value if applicable.</p>
+        /// <p>The maximum number of tag results returned by <code>ListTagsForResource</code> in paginated output. When this parameter is used, <code>ListTagsForResource</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListTagsForResource</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListTagsForResource</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_limit(input);
             self
@@ -3324,54 +3085,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_mesh_name(input);
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>ListVirtualGateways</code> request where <code>limit</code> was used and the
-        /// results exceeded the value of that parameter. Pagination continues from the end of the
-        /// previous results that returned the <code>nextToken</code> value.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListVirtualGateways</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>ListVirtualGateways</code> request where <code>limit</code> was used and the
-        /// results exceeded the value of that parameter. Pagination continues from the end of the
-        /// previous results that returned the <code>nextToken</code> value.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListVirtualGateways</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results returned by <code>ListVirtualGateways</code> in paginated
-        /// output. When you use this parameter, <code>ListVirtualGateways</code> returns only
-        /// <code>limit</code> results in a single page along with a <code>nextToken</code> response
-        /// element. You can see the remaining results of the initial request by sending another
-        /// <code>ListVirtualGateways</code> request with the returned <code>nextToken</code> value.
-        /// This value can be between 1 and 100. If you don't use this
-        /// parameter, <code>ListVirtualGateways</code> returns up to 100 results and
-        /// a <code>nextToken</code> value if applicable.</p>
+        /// <p>The maximum number of results returned by <code>ListVirtualGateways</code> in paginated output. When you use this parameter, <code>ListVirtualGateways</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListVirtualGateways</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListVirtualGateways</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.inner = self.inner.limit(input);
             self
         }
-        /// <p>The maximum number of results returned by <code>ListVirtualGateways</code> in paginated
-        /// output. When you use this parameter, <code>ListVirtualGateways</code> returns only
-        /// <code>limit</code> results in a single page along with a <code>nextToken</code> response
-        /// element. You can see the remaining results of the initial request by sending another
-        /// <code>ListVirtualGateways</code> request with the returned <code>nextToken</code> value.
-        /// This value can be between 1 and 100. If you don't use this
-        /// parameter, <code>ListVirtualGateways</code> returns up to 100 results and
-        /// a <code>nextToken</code> value if applicable.</p>
+        /// <p>The maximum number of results returned by <code>ListVirtualGateways</code> in paginated output. When you use this parameter, <code>ListVirtualGateways</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListVirtualGateways</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListVirtualGateways</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_limit(input);
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.mesh_owner(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_mesh_owner(input);
             self
@@ -3446,54 +3185,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_mesh_name(input);
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>ListVirtualNodes</code> request where <code>limit</code> was used and the results
-        /// exceeded the value of that parameter. Pagination continues from the end of the previous
-        /// results that returned the <code>nextToken</code> value.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListVirtualNodes</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>ListVirtualNodes</code> request where <code>limit</code> was used and the results
-        /// exceeded the value of that parameter. Pagination continues from the end of the previous
-        /// results that returned the <code>nextToken</code> value.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListVirtualNodes</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results returned by <code>ListVirtualNodes</code> in paginated
-        /// output. When you use this parameter, <code>ListVirtualNodes</code> returns only
-        /// <code>limit</code> results in a single page along with a <code>nextToken</code> response
-        /// element. You can see the remaining results of the initial request by sending another
-        /// <code>ListVirtualNodes</code> request with the returned <code>nextToken</code> value.
-        /// This value can be between 1 and 100. If you don't use this
-        /// parameter, <code>ListVirtualNodes</code> returns up to 100 results and a
-        /// <code>nextToken</code> value if applicable.</p>
+        /// <p>The maximum number of results returned by <code>ListVirtualNodes</code> in paginated output. When you use this parameter, <code>ListVirtualNodes</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListVirtualNodes</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListVirtualNodes</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.inner = self.inner.limit(input);
             self
         }
-        /// <p>The maximum number of results returned by <code>ListVirtualNodes</code> in paginated
-        /// output. When you use this parameter, <code>ListVirtualNodes</code> returns only
-        /// <code>limit</code> results in a single page along with a <code>nextToken</code> response
-        /// element. You can see the remaining results of the initial request by sending another
-        /// <code>ListVirtualNodes</code> request with the returned <code>nextToken</code> value.
-        /// This value can be between 1 and 100. If you don't use this
-        /// parameter, <code>ListVirtualNodes</code> returns up to 100 results and a
-        /// <code>nextToken</code> value if applicable.</p>
+        /// <p>The maximum number of results returned by <code>ListVirtualNodes</code> in paginated output. When you use this parameter, <code>ListVirtualNodes</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListVirtualNodes</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListVirtualNodes</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_limit(input);
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.mesh_owner(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_mesh_owner(input);
             self
@@ -3568,54 +3285,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_mesh_name(input);
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>ListVirtualRouters</code> request where <code>limit</code> was used and the
-        /// results exceeded the value of that parameter. Pagination continues from the end of the
-        /// previous results that returned the <code>nextToken</code> value.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListVirtualRouters</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>ListVirtualRouters</code> request where <code>limit</code> was used and the
-        /// results exceeded the value of that parameter. Pagination continues from the end of the
-        /// previous results that returned the <code>nextToken</code> value.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListVirtualRouters</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results returned by <code>ListVirtualRouters</code> in paginated
-        /// output. When you use this parameter, <code>ListVirtualRouters</code> returns only
-        /// <code>limit</code> results in a single page along with a <code>nextToken</code> response
-        /// element. You can see the remaining results of the initial request by sending another
-        /// <code>ListVirtualRouters</code> request with the returned <code>nextToken</code> value.
-        /// This value can be between 1 and 100. If you don't use this
-        /// parameter, <code>ListVirtualRouters</code> returns up to 100 results and
-        /// a <code>nextToken</code> value if applicable.</p>
+        /// <p>The maximum number of results returned by <code>ListVirtualRouters</code> in paginated output. When you use this parameter, <code>ListVirtualRouters</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListVirtualRouters</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListVirtualRouters</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.inner = self.inner.limit(input);
             self
         }
-        /// <p>The maximum number of results returned by <code>ListVirtualRouters</code> in paginated
-        /// output. When you use this parameter, <code>ListVirtualRouters</code> returns only
-        /// <code>limit</code> results in a single page along with a <code>nextToken</code> response
-        /// element. You can see the remaining results of the initial request by sending another
-        /// <code>ListVirtualRouters</code> request with the returned <code>nextToken</code> value.
-        /// This value can be between 1 and 100. If you don't use this
-        /// parameter, <code>ListVirtualRouters</code> returns up to 100 results and
-        /// a <code>nextToken</code> value if applicable.</p>
+        /// <p>The maximum number of results returned by <code>ListVirtualRouters</code> in paginated output. When you use this parameter, <code>ListVirtualRouters</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListVirtualRouters</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListVirtualRouters</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_limit(input);
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.mesh_owner(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_mesh_owner(input);
             self
@@ -3690,54 +3385,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_mesh_name(input);
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>ListVirtualServices</code> request where <code>limit</code> was used and the
-        /// results exceeded the value of that parameter. Pagination continues from the end of the
-        /// previous results that returned the <code>nextToken</code> value.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListVirtualServices</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>ListVirtualServices</code> request where <code>limit</code> was used and the
-        /// results exceeded the value of that parameter. Pagination continues from the end of the
-        /// previous results that returned the <code>nextToken</code> value.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListVirtualServices</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results returned by <code>ListVirtualServices</code> in paginated
-        /// output. When you use this parameter, <code>ListVirtualServices</code> returns only
-        /// <code>limit</code> results in a single page along with a <code>nextToken</code> response
-        /// element. You can see the remaining results of the initial request by sending another
-        /// <code>ListVirtualServices</code> request with the returned <code>nextToken</code> value.
-        /// This value can be between 1 and 100. If you don't use this
-        /// parameter, <code>ListVirtualServices</code> returns up to 100 results and
-        /// a <code>nextToken</code> value if applicable.</p>
+        /// <p>The maximum number of results returned by <code>ListVirtualServices</code> in paginated output. When you use this parameter, <code>ListVirtualServices</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListVirtualServices</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListVirtualServices</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.inner = self.inner.limit(input);
             self
         }
-        /// <p>The maximum number of results returned by <code>ListVirtualServices</code> in paginated
-        /// output. When you use this parameter, <code>ListVirtualServices</code> returns only
-        /// <code>limit</code> results in a single page along with a <code>nextToken</code> response
-        /// element. You can see the remaining results of the initial request by sending another
-        /// <code>ListVirtualServices</code> request with the returned <code>nextToken</code> value.
-        /// This value can be between 1 and 100. If you don't use this
-        /// parameter, <code>ListVirtualServices</code> returns up to 100 results and
-        /// a <code>nextToken</code> value if applicable.</p>
+        /// <p>The maximum number of results returned by <code>ListVirtualServices</code> in paginated output. When you use this parameter, <code>ListVirtualServices</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListVirtualServices</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListVirtualServices</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_limit(input);
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.mesh_owner(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_mesh_owner(input);
             self
@@ -3745,10 +3418,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Associates the specified tags to a resource with the specified <code>resourceArn</code>.
-    /// If existing tags on a resource aren't specified in the request parameters, they aren't
-    /// changed. When a resource is deleted, the tags associated with that resource are also
-    /// deleted.</p>
+    /// <p>Associates the specified tags to a resource with the specified <code>resourceArn</code>. If existing tags on a resource aren't specified in the request parameters, they aren't changed. When a resource is deleted, the tags associated with that resource are also deleted.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -3819,16 +3489,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags to add to the resource. A tag is an array of key-value pairs.
-        /// Tag keys can have a maximum character length of 128 characters, and tag values can have
-        /// a maximum length of 256 characters.</p>
+        /// <p>The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
         pub fn tags(mut self, input: crate::model::TagRef) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>The tags to add to the resource. A tag is an array of key-value pairs.
-        /// Tag keys can have a maximum character length of 128 characters, and tag values can have
-        /// a maximum length of 256 characters.</p>
+        /// <p>The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TagRef>>,
@@ -3926,8 +3592,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateGatewayRoute`.
     ///
-    /// <p>Updates an existing gateway route that is associated to a specified virtual gateway in a
-    /// service mesh.</p>
+    /// <p>Updates an existing gateway route that is associated to a specified virtual gateway in a service mesh.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateGatewayRoute<
         C = aws_smithy_client::erase::DynConnector,
@@ -4033,26 +3698,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_spec(input);
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.mesh_owner(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_mesh_owner(input);
             self
@@ -4137,14 +3798,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_spec(input);
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -4252,26 +3911,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_spec(input);
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.mesh_owner(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_mesh_owner(input);
             self
@@ -4359,14 +4014,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_mesh_name(input);
             self
         }
-        /// <p>The new virtual gateway specification to apply. This overwrites the existing
-        /// data.</p>
+        /// <p>The new virtual gateway specification to apply. This overwrites the existing data.</p>
         pub fn spec(mut self, input: crate::model::VirtualGatewaySpec) -> Self {
             self.inner = self.inner.spec(input);
             self
         }
-        /// <p>The new virtual gateway specification to apply. This overwrites the existing
-        /// data.</p>
+        /// <p>The new virtual gateway specification to apply. This overwrites the existing data.</p>
         pub fn set_spec(
             mut self,
             input: std::option::Option<crate::model::VirtualGatewaySpec>,
@@ -4374,26 +4027,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_spec(input);
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.mesh_owner(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_mesh_owner(input);
             self
@@ -4494,26 +4143,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_spec(input);
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.mesh_owner(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_mesh_owner(input);
             self
@@ -4614,26 +4259,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_spec(input);
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.mesh_owner(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_mesh_owner(input);
             self
@@ -4721,14 +4362,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_mesh_name(input);
             self
         }
-        /// <p>The new virtual service specification to apply. This overwrites the existing
-        /// data.</p>
+        /// <p>The new virtual service specification to apply. This overwrites the existing data.</p>
         pub fn spec(mut self, input: crate::model::VirtualServiceSpec) -> Self {
             self.inner = self.inner.spec(input);
             self
         }
-        /// <p>The new virtual service specification to apply. This overwrites the existing
-        /// data.</p>
+        /// <p>The new virtual service specification to apply. This overwrites the existing data.</p>
         pub fn set_spec(
             mut self,
             input: std::option::Option<crate::model::VirtualServiceSpec>,
@@ -4736,26 +4375,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_spec(input);
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.mesh_owner(input.into());
             self
         }
-        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
-        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_mesh_owner(input);
             self

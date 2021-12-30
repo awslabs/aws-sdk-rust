@@ -12,11 +12,9 @@ pub struct ActivateGatewayError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ActivateGatewayErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -115,11 +113,9 @@ pub struct AddCacheError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AddCacheErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -218,11 +214,9 @@ pub struct AddTagsToResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AddTagsToResourceErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -324,11 +318,9 @@ pub struct AddUploadBufferError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AddUploadBufferErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -427,11 +419,9 @@ pub struct AddWorkingStorageError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AddWorkingStorageErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -533,11 +523,9 @@ pub struct AssignTapePoolError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AssignTapePoolErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -636,11 +624,9 @@ pub struct AssociateFileSystemError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AssociateFileSystemErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -742,11 +728,9 @@ pub struct AttachVolumeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AttachVolumeErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -845,11 +829,9 @@ pub struct CancelArchivalError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CancelArchivalErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -948,11 +930,9 @@ pub struct CancelRetrievalError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CancelRetrievalErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1051,11 +1031,9 @@ pub struct CreateCachediSCSIVolumeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateCachediSCSIVolumeErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1161,11 +1139,9 @@ pub struct CreateNFSFileShareError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateNFSFileShareErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1267,11 +1243,9 @@ pub struct CreateSMBFileShareError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateSMBFileShareErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1373,14 +1347,11 @@ pub struct CreateSnapshotError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateSnapshotErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// <p>An internal server error has occurred because the service is unavailable. For more
-    /// information, see the error and message fields.</p>
+    /// <p>An internal server error has occurred because the service is unavailable. For more information, see the error and message fields.</p>
     ServiceUnavailableError(crate::error::ServiceUnavailableError),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1488,14 +1459,11 @@ pub struct CreateSnapshotFromVolumeRecoveryPointError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateSnapshotFromVolumeRecoveryPointErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
-    /// <p>An internal server error has occurred because the service is unavailable. For more
-    /// information, see the error and message fields.</p>
+    /// <p>An internal server error has occurred because the service is unavailable. For more information, see the error and message fields.</p>
     ServiceUnavailableError(crate::error::ServiceUnavailableError),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1623,11 +1591,9 @@ pub struct CreateStorediSCSIVolumeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateStorediSCSIVolumeErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1733,11 +1699,9 @@ pub struct CreateTapePoolError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateTapePoolErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1836,11 +1800,9 @@ pub struct CreateTapesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateTapesErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1939,11 +1901,9 @@ pub struct CreateTapeWithBarcodeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateTapeWithBarcodeErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2045,11 +2005,9 @@ pub struct DeleteAutomaticTapeCreationPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteAutomaticTapeCreationPolicyErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2160,11 +2118,9 @@ pub struct DeleteBandwidthRateLimitError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteBandwidthRateLimitErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2270,11 +2226,9 @@ pub struct DeleteChapCredentialsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteChapCredentialsErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2376,11 +2330,9 @@ pub struct DeleteFileShareError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteFileShareErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2479,11 +2431,9 @@ pub struct DeleteGatewayError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteGatewayErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2582,11 +2532,9 @@ pub struct DeleteSnapshotScheduleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteSnapshotScheduleErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2690,11 +2638,9 @@ pub struct DeleteTapeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteTapeErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2793,11 +2739,9 @@ pub struct DeleteTapeArchiveError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteTapeArchiveErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2899,11 +2843,9 @@ pub struct DeleteTapePoolError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteTapePoolErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3002,11 +2944,9 @@ pub struct DeleteVolumeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteVolumeErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3105,11 +3045,9 @@ pub struct DescribeAvailabilityMonitorTestError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeAvailabilityMonitorTestErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3218,11 +3156,9 @@ pub struct DescribeBandwidthRateLimitError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeBandwidthRateLimitErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3328,11 +3264,9 @@ pub struct DescribeBandwidthRateLimitScheduleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeBandwidthRateLimitScheduleErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3445,11 +3379,9 @@ pub struct DescribeCacheError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeCacheErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3548,11 +3480,9 @@ pub struct DescribeCachediSCSIVolumesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeCachediSCSIVolumesErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3658,11 +3588,9 @@ pub struct DescribeChapCredentialsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeChapCredentialsErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3768,11 +3696,9 @@ pub struct DescribeFileSystemAssociationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeFileSystemAssociationsErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3881,11 +3807,9 @@ pub struct DescribeGatewayInformationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeGatewayInformationErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3991,11 +3915,9 @@ pub struct DescribeMaintenanceStartTimeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeMaintenanceStartTimeErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4101,11 +4023,9 @@ pub struct DescribeNFSFileSharesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeNFSFileSharesErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4207,11 +4127,9 @@ pub struct DescribeSMBFileSharesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeSMBFileSharesErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4313,11 +4231,9 @@ pub struct DescribeSMBSettingsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeSMBSettingsErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4419,11 +4335,9 @@ pub struct DescribeSnapshotScheduleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeSnapshotScheduleErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4529,11 +4443,9 @@ pub struct DescribeStorediSCSIVolumesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeStorediSCSIVolumesErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4639,11 +4551,9 @@ pub struct DescribeTapeArchivesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeTapeArchivesErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4745,11 +4655,9 @@ pub struct DescribeTapeRecoveryPointsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeTapeRecoveryPointsErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4855,11 +4763,9 @@ pub struct DescribeTapesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeTapesErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4958,11 +4864,9 @@ pub struct DescribeUploadBufferError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeUploadBufferErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5064,11 +4968,9 @@ pub struct DescribeVTLDevicesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeVTLDevicesErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5170,11 +5072,9 @@ pub struct DescribeWorkingStorageError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeWorkingStorageErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5278,11 +5178,9 @@ pub struct DetachVolumeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DetachVolumeErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5381,11 +5279,9 @@ pub struct DisableGatewayError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisableGatewayErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5484,11 +5380,9 @@ pub struct DisassociateFileSystemError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisassociateFileSystemErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5592,11 +5486,9 @@ pub struct JoinDomainError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum JoinDomainErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5695,11 +5587,9 @@ pub struct ListAutomaticTapeCreationPoliciesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAutomaticTapeCreationPoliciesErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5810,11 +5700,9 @@ pub struct ListFileSharesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListFileSharesErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5913,11 +5801,9 @@ pub struct ListFileSystemAssociationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListFileSystemAssociationsErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6023,11 +5909,9 @@ pub struct ListGatewaysError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListGatewaysErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6126,11 +6010,9 @@ pub struct ListLocalDisksError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListLocalDisksErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6229,11 +6111,9 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6335,11 +6215,9 @@ pub struct ListTapePoolsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTapePoolsErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6438,11 +6316,9 @@ pub struct ListTapesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTapesErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6541,11 +6417,9 @@ pub struct ListVolumeInitiatorsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListVolumeInitiatorsErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6647,11 +6521,9 @@ pub struct ListVolumeRecoveryPointsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListVolumeRecoveryPointsErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6757,11 +6629,9 @@ pub struct ListVolumesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListVolumesErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6860,11 +6730,9 @@ pub struct NotifyWhenUploadedError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum NotifyWhenUploadedErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6966,11 +6834,9 @@ pub struct RefreshCacheError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RefreshCacheErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7069,11 +6935,9 @@ pub struct RemoveTagsFromResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RemoveTagsFromResourceErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7177,11 +7041,9 @@ pub struct ResetCacheError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ResetCacheErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7280,11 +7142,9 @@ pub struct RetrieveTapeArchiveError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RetrieveTapeArchiveErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7386,11 +7246,9 @@ pub struct RetrieveTapeRecoveryPointError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RetrieveTapeRecoveryPointErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7496,11 +7354,9 @@ pub struct SetLocalConsolePasswordError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SetLocalConsolePasswordErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7606,11 +7462,9 @@ pub struct SetSMBGuestPasswordError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SetSMBGuestPasswordErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7712,11 +7566,9 @@ pub struct ShutdownGatewayError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ShutdownGatewayErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7815,11 +7667,9 @@ pub struct StartAvailabilityMonitorTestError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartAvailabilityMonitorTestErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7925,11 +7775,9 @@ pub struct StartGatewayError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartGatewayErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8028,11 +7876,9 @@ pub struct UpdateAutomaticTapeCreationPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateAutomaticTapeCreationPolicyErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8143,11 +7989,9 @@ pub struct UpdateBandwidthRateLimitError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateBandwidthRateLimitErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8253,11 +8097,9 @@ pub struct UpdateBandwidthRateLimitScheduleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateBandwidthRateLimitScheduleErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8366,11 +8208,9 @@ pub struct UpdateChapCredentialsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateChapCredentialsErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8472,11 +8312,9 @@ pub struct UpdateFileSystemAssociationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateFileSystemAssociationErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8582,11 +8420,9 @@ pub struct UpdateGatewayInformationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateGatewayInformationErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8692,11 +8528,9 @@ pub struct UpdateGatewaySoftwareNowError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateGatewaySoftwareNowErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8802,11 +8636,9 @@ pub struct UpdateMaintenanceStartTimeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateMaintenanceStartTimeErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8912,11 +8744,9 @@ pub struct UpdateNFSFileShareError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateNFSFileShareErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -9018,11 +8848,9 @@ pub struct UpdateSMBFileShareError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateSMBFileShareErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -9124,11 +8952,9 @@ pub struct UpdateSMBFileShareVisibilityError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateSMBFileShareVisibilityErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -9234,11 +9060,9 @@ pub struct UpdateSMBLocalGroupsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateSMBLocalGroupsErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -9340,11 +9164,9 @@ pub struct UpdateSMBSecurityStrategyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateSMBSecurityStrategyErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -9450,11 +9272,9 @@ pub struct UpdateSnapshotScheduleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateSnapshotScheduleErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -9558,11 +9378,9 @@ pub struct UpdateVTLDeviceTypeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateVTLDeviceTypeErrorKind {
-    /// <p>An internal server error has occurred during the request. For more information, see the
-    /// error and message fields.</p>
+    /// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An exception occurred because an invalid gateway request was issued to the service. For
-    /// more information, see the error and message fields.</p>
+    /// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
     InvalidGatewayRequestException(crate::error::InvalidGatewayRequestException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -9651,20 +9469,17 @@ impl std::error::Error for UpdateVTLDeviceTypeError {
     }
 }
 
-/// <p>An exception occurred because an invalid gateway request was issued to the service. For
-/// more information, see the error and message fields.</p>
+/// <p>An exception occurred because an invalid gateway request was issued to the service. For more information, see the error and message fields.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidGatewayRequestException {
     /// <p>A human-readable message describing the error that occurred.</p>
     pub message: std::option::Option<std::string::String>,
-    /// <p>A <a>StorageGatewayError</a> that provides more detail about the cause of the
-    /// error.</p>
+    /// <p>A <code>StorageGatewayError</code> that provides more detail about the cause of the error.</p>
     pub error: std::option::Option<crate::model::StorageGatewayError>,
 }
 impl InvalidGatewayRequestException {
-    /// <p>A <a>StorageGatewayError</a> that provides more detail about the cause of the
-    /// error.</p>
+    /// <p>A <code>StorageGatewayError</code> that provides more detail about the cause of the error.</p>
     pub fn error(&self) -> std::option::Option<&crate::model::StorageGatewayError> {
         self.error.as_ref()
     }
@@ -9713,14 +9528,12 @@ pub mod invalid_gateway_request_exception {
             self.message = input;
             self
         }
-        /// <p>A <a>StorageGatewayError</a> that provides more detail about the cause of the
-        /// error.</p>
+        /// <p>A <code>StorageGatewayError</code> that provides more detail about the cause of the error.</p>
         pub fn error(mut self, input: crate::model::StorageGatewayError) -> Self {
             self.error = Some(input);
             self
         }
-        /// <p>A <a>StorageGatewayError</a> that provides more detail about the cause of the
-        /// error.</p>
+        /// <p>A <code>StorageGatewayError</code> that provides more detail about the cause of the error.</p>
         pub fn set_error(
             mut self,
             input: std::option::Option<crate::model::StorageGatewayError>,
@@ -9744,20 +9557,17 @@ impl InvalidGatewayRequestException {
     }
 }
 
-/// <p>An internal server error has occurred during the request. For more information, see the
-/// error and message fields.</p>
+/// <p>An internal server error has occurred during the request. For more information, see the error and message fields.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerError {
     /// <p>A human-readable message describing the error that occurred.</p>
     pub message: std::option::Option<std::string::String>,
-    /// <p>A <a>StorageGatewayError</a> that provides more information about the cause
-    /// of the error.</p>
+    /// <p>A <code>StorageGatewayError</code> that provides more information about the cause of the error.</p>
     pub error: std::option::Option<crate::model::StorageGatewayError>,
 }
 impl InternalServerError {
-    /// <p>A <a>StorageGatewayError</a> that provides more information about the cause
-    /// of the error.</p>
+    /// <p>A <code>StorageGatewayError</code> that provides more information about the cause of the error.</p>
     pub fn error(&self) -> std::option::Option<&crate::model::StorageGatewayError> {
         self.error.as_ref()
     }
@@ -9806,14 +9616,12 @@ pub mod internal_server_error {
             self.message = input;
             self
         }
-        /// <p>A <a>StorageGatewayError</a> that provides more information about the cause
-        /// of the error.</p>
+        /// <p>A <code>StorageGatewayError</code> that provides more information about the cause of the error.</p>
         pub fn error(mut self, input: crate::model::StorageGatewayError) -> Self {
             self.error = Some(input);
             self
         }
-        /// <p>A <a>StorageGatewayError</a> that provides more information about the cause
-        /// of the error.</p>
+        /// <p>A <code>StorageGatewayError</code> that provides more information about the cause of the error.</p>
         pub fn set_error(
             mut self,
             input: std::option::Option<crate::model::StorageGatewayError>,
@@ -9837,20 +9645,17 @@ impl InternalServerError {
     }
 }
 
-/// <p>An internal server error has occurred because the service is unavailable. For more
-/// information, see the error and message fields.</p>
+/// <p>An internal server error has occurred because the service is unavailable. For more information, see the error and message fields.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceUnavailableError {
     /// <p>A human-readable message describing the error that occurred.</p>
     pub message: std::option::Option<std::string::String>,
-    /// <p>A <a>StorageGatewayError</a> that provides more information about the cause
-    /// of the error.</p>
+    /// <p>A <code>StorageGatewayError</code> that provides more information about the cause of the error.</p>
     pub error: std::option::Option<crate::model::StorageGatewayError>,
 }
 impl ServiceUnavailableError {
-    /// <p>A <a>StorageGatewayError</a> that provides more information about the cause
-    /// of the error.</p>
+    /// <p>A <code>StorageGatewayError</code> that provides more information about the cause of the error.</p>
     pub fn error(&self) -> std::option::Option<&crate::model::StorageGatewayError> {
         self.error.as_ref()
     }
@@ -9899,14 +9704,12 @@ pub mod service_unavailable_error {
             self.message = input;
             self
         }
-        /// <p>A <a>StorageGatewayError</a> that provides more information about the cause
-        /// of the error.</p>
+        /// <p>A <code>StorageGatewayError</code> that provides more information about the cause of the error.</p>
         pub fn error(mut self, input: crate::model::StorageGatewayError) -> Self {
             self.error = Some(input);
             self
         }
-        /// <p>A <a>StorageGatewayError</a> that provides more information about the cause
-        /// of the error.</p>
+        /// <p>A <code>StorageGatewayError</code> that provides more information about the cause of the error.</p>
         pub fn set_error(
             mut self,
             input: std::option::Option<crate::model::StorageGatewayError>,

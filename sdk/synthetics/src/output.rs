@@ -226,25 +226,17 @@ impl ListTagsForResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCanaryRunsOutput {
-    /// <p>An array of structures. Each structure contains the details of one of the
-    /// retrieved canary runs.</p>
+    /// <p>An array of structures. Each structure contains the details of one of the retrieved canary runs.</p>
     pub canary_runs: std::option::Option<std::vec::Vec<crate::model::CanaryRun>>,
-    /// <p>A token that indicates that there is more data
-    /// available. You can use this token in a subsequent <code>GetCanaryRuns</code>
-    /// operation to retrieve the next
-    /// set of results.</p>
+    /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>GetCanaryRuns</code> operation to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetCanaryRunsOutput {
-    /// <p>An array of structures. Each structure contains the details of one of the
-    /// retrieved canary runs.</p>
+    /// <p>An array of structures. Each structure contains the details of one of the retrieved canary runs.</p>
     pub fn canary_runs(&self) -> std::option::Option<&[crate::model::CanaryRun]> {
         self.canary_runs.as_deref()
     }
-    /// <p>A token that indicates that there is more data
-    /// available. You can use this token in a subsequent <code>GetCanaryRuns</code>
-    /// operation to retrieve the next
-    /// set of results.</p>
+    /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>GetCanaryRuns</code> operation to retrieve the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -271,16 +263,14 @@ pub mod get_canary_runs_output {
         ///
         /// To override the contents of this collection use [`set_canary_runs`](Self::set_canary_runs).
         ///
-        /// <p>An array of structures. Each structure contains the details of one of the
-        /// retrieved canary runs.</p>
+        /// <p>An array of structures. Each structure contains the details of one of the retrieved canary runs.</p>
         pub fn canary_runs(mut self, input: crate::model::CanaryRun) -> Self {
             let mut v = self.canary_runs.unwrap_or_default();
             v.push(input);
             self.canary_runs = Some(v);
             self
         }
-        /// <p>An array of structures. Each structure contains the details of one of the
-        /// retrieved canary runs.</p>
+        /// <p>An array of structures. Each structure contains the details of one of the retrieved canary runs.</p>
         pub fn set_canary_runs(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CanaryRun>>,
@@ -288,18 +278,12 @@ pub mod get_canary_runs_output {
             self.canary_runs = input;
             self
         }
-        /// <p>A token that indicates that there is more data
-        /// available. You can use this token in a subsequent <code>GetCanaryRuns</code>
-        /// operation to retrieve the next
-        /// set of results.</p>
+        /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>GetCanaryRuns</code> operation to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token that indicates that there is more data
-        /// available. You can use this token in a subsequent <code>GetCanaryRuns</code>
-        /// operation to retrieve the next
-        /// set of results.</p>
+        /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>GetCanaryRuns</code> operation to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -378,23 +362,17 @@ impl GetCanaryOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRuntimeVersionsOutput {
-    /// <p>An array of objects that display the details about each Synthetics canary runtime
-    /// version.</p>
+    /// <p>An array of objects that display the details about each Synthetics canary runtime version.</p>
     pub runtime_versions: std::option::Option<std::vec::Vec<crate::model::RuntimeVersion>>,
-    /// <p>A token that indicates that there is more data
-    /// available. You can use this token in a subsequent <code>DescribeRuntimeVersions</code> operation to retrieve the next
-    /// set of results.</p>
+    /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeRuntimeVersions</code> operation to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeRuntimeVersionsOutput {
-    /// <p>An array of objects that display the details about each Synthetics canary runtime
-    /// version.</p>
+    /// <p>An array of objects that display the details about each Synthetics canary runtime version.</p>
     pub fn runtime_versions(&self) -> std::option::Option<&[crate::model::RuntimeVersion]> {
         self.runtime_versions.as_deref()
     }
-    /// <p>A token that indicates that there is more data
-    /// available. You can use this token in a subsequent <code>DescribeRuntimeVersions</code> operation to retrieve the next
-    /// set of results.</p>
+    /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeRuntimeVersions</code> operation to retrieve the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -422,16 +400,14 @@ pub mod describe_runtime_versions_output {
         ///
         /// To override the contents of this collection use [`set_runtime_versions`](Self::set_runtime_versions).
         ///
-        /// <p>An array of objects that display the details about each Synthetics canary runtime
-        /// version.</p>
+        /// <p>An array of objects that display the details about each Synthetics canary runtime version.</p>
         pub fn runtime_versions(mut self, input: crate::model::RuntimeVersion) -> Self {
             let mut v = self.runtime_versions.unwrap_or_default();
             v.push(input);
             self.runtime_versions = Some(v);
             self
         }
-        /// <p>An array of objects that display the details about each Synthetics canary runtime
-        /// version.</p>
+        /// <p>An array of objects that display the details about each Synthetics canary runtime version.</p>
         pub fn set_runtime_versions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RuntimeVersion>>,
@@ -439,16 +415,12 @@ pub mod describe_runtime_versions_output {
             self.runtime_versions = input;
             self
         }
-        /// <p>A token that indicates that there is more data
-        /// available. You can use this token in a subsequent <code>DescribeRuntimeVersions</code> operation to retrieve the next
-        /// set of results.</p>
+        /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeRuntimeVersions</code> operation to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token that indicates that there is more data
-        /// available. You can use this token in a subsequent <code>DescribeRuntimeVersions</code> operation to retrieve the next
-        /// set of results.</p>
+        /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeRuntimeVersions</code> operation to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -473,23 +445,17 @@ impl DescribeRuntimeVersionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCanariesLastRunOutput {
-    /// <p>An array that contains the information from the most recent run of each
-    /// canary.</p>
+    /// <p>An array that contains the information from the most recent run of each canary.</p>
     pub canaries_last_run: std::option::Option<std::vec::Vec<crate::model::CanaryLastRun>>,
-    /// <p>A token that indicates that there is more data
-    /// available. You can use this token in a subsequent <code>DescribeCanariesLastRun</code> operation to retrieve the next
-    /// set of results.</p>
+    /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeCanariesLastRun</code> operation to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeCanariesLastRunOutput {
-    /// <p>An array that contains the information from the most recent run of each
-    /// canary.</p>
+    /// <p>An array that contains the information from the most recent run of each canary.</p>
     pub fn canaries_last_run(&self) -> std::option::Option<&[crate::model::CanaryLastRun]> {
         self.canaries_last_run.as_deref()
     }
-    /// <p>A token that indicates that there is more data
-    /// available. You can use this token in a subsequent <code>DescribeCanariesLastRun</code> operation to retrieve the next
-    /// set of results.</p>
+    /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeCanariesLastRun</code> operation to retrieve the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -517,16 +483,14 @@ pub mod describe_canaries_last_run_output {
         ///
         /// To override the contents of this collection use [`set_canaries_last_run`](Self::set_canaries_last_run).
         ///
-        /// <p>An array that contains the information from the most recent run of each
-        /// canary.</p>
+        /// <p>An array that contains the information from the most recent run of each canary.</p>
         pub fn canaries_last_run(mut self, input: crate::model::CanaryLastRun) -> Self {
             let mut v = self.canaries_last_run.unwrap_or_default();
             v.push(input);
             self.canaries_last_run = Some(v);
             self
         }
-        /// <p>An array that contains the information from the most recent run of each
-        /// canary.</p>
+        /// <p>An array that contains the information from the most recent run of each canary.</p>
         pub fn set_canaries_last_run(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CanaryLastRun>>,
@@ -534,16 +498,12 @@ pub mod describe_canaries_last_run_output {
             self.canaries_last_run = input;
             self
         }
-        /// <p>A token that indicates that there is more data
-        /// available. You can use this token in a subsequent <code>DescribeCanariesLastRun</code> operation to retrieve the next
-        /// set of results.</p>
+        /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeCanariesLastRun</code> operation to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token that indicates that there is more data
-        /// available. You can use this token in a subsequent <code>DescribeCanariesLastRun</code> operation to retrieve the next
-        /// set of results.</p>
+        /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeCanariesLastRun</code> operation to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -568,23 +528,17 @@ impl DescribeCanariesLastRunOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCanariesOutput {
-    /// <p>Returns an array. Each item in the array contains the full information about
-    /// one canary.</p>
+    /// <p>Returns an array. Each item in the array contains the full information about one canary.</p>
     pub canaries: std::option::Option<std::vec::Vec<crate::model::Canary>>,
-    /// <p>A token that indicates that there is more data
-    /// available. You can use this token in a subsequent <code>DescribeCanaries</code> operation to retrieve the next
-    /// set of results.</p>
+    /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeCanaries</code> operation to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeCanariesOutput {
-    /// <p>Returns an array. Each item in the array contains the full information about
-    /// one canary.</p>
+    /// <p>Returns an array. Each item in the array contains the full information about one canary.</p>
     pub fn canaries(&self) -> std::option::Option<&[crate::model::Canary]> {
         self.canaries.as_deref()
     }
-    /// <p>A token that indicates that there is more data
-    /// available. You can use this token in a subsequent <code>DescribeCanaries</code> operation to retrieve the next
-    /// set of results.</p>
+    /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeCanaries</code> operation to retrieve the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -611,16 +565,14 @@ pub mod describe_canaries_output {
         ///
         /// To override the contents of this collection use [`set_canaries`](Self::set_canaries).
         ///
-        /// <p>Returns an array. Each item in the array contains the full information about
-        /// one canary.</p>
+        /// <p>Returns an array. Each item in the array contains the full information about one canary.</p>
         pub fn canaries(mut self, input: crate::model::Canary) -> Self {
             let mut v = self.canaries.unwrap_or_default();
             v.push(input);
             self.canaries = Some(v);
             self
         }
-        /// <p>Returns an array. Each item in the array contains the full information about
-        /// one canary.</p>
+        /// <p>Returns an array. Each item in the array contains the full information about one canary.</p>
         pub fn set_canaries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Canary>>,
@@ -628,16 +580,12 @@ pub mod describe_canaries_output {
             self.canaries = input;
             self
         }
-        /// <p>A token that indicates that there is more data
-        /// available. You can use this token in a subsequent <code>DescribeCanaries</code> operation to retrieve the next
-        /// set of results.</p>
+        /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeCanaries</code> operation to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token that indicates that there is more data
-        /// available. You can use this token in a subsequent <code>DescribeCanaries</code> operation to retrieve the next
-        /// set of results.</p>
+        /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeCanaries</code> operation to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self

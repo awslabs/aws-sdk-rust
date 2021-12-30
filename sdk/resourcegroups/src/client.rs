@@ -206,21 +206,11 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CreateGroup`.
     ///
-    /// <p>Creates a resource group with the specified name and description. You can optionally
-    /// include a resource query, or a service configuration. For more information about
-    /// constructing a resource query, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create a tag-based group in Resource Groups</a>. For more
-    /// information about service configurations, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource
-    /// groups</a>.</p>
-    /// <p>
-    /// <b>Minimum permissions</b>
-    /// </p>
+    /// <p>Creates a resource group with the specified name and description. You can optionally include a resource query, or a service configuration. For more information about constructing a resource query, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create a tag-based group in Resource Groups</a>. For more information about service configurations, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource groups</a>.</p>
+    /// <p> <b>Minimum permissions</b> </p>
     /// <p>To run this command, you must have the following permissions:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>resource-groups:CreateGroup</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>resource-groups:CreateGroup</code> </p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateGroup<
@@ -278,53 +268,35 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the group, which is the identifier of the group in other operations. You
-        /// can't change the name of a resource group after you create it. A resource group name can
-        /// consist of letters, numbers, hyphens, periods, and underscores. The name cannot start
-        /// with <code>AWS</code> or <code>aws</code>; these are reserved. A resource group name
-        /// must be unique within each AWS Region in your AWS account.</p>
+        /// <p>The name of the group, which is the identifier of the group in other operations. You can't change the name of a resource group after you create it. A resource group name can consist of letters, numbers, hyphens, periods, and underscores. The name cannot start with <code>AWS</code> or <code>aws</code>; these are reserved. A resource group name must be unique within each AWS Region in your AWS account.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the group, which is the identifier of the group in other operations. You
-        /// can't change the name of a resource group after you create it. A resource group name can
-        /// consist of letters, numbers, hyphens, periods, and underscores. The name cannot start
-        /// with <code>AWS</code> or <code>aws</code>; these are reserved. A resource group name
-        /// must be unique within each AWS Region in your AWS account.</p>
+        /// <p>The name of the group, which is the identifier of the group in other operations. You can't change the name of a resource group after you create it. A resource group name can consist of letters, numbers, hyphens, periods, and underscores. The name cannot start with <code>AWS</code> or <code>aws</code>; these are reserved. A resource group name must be unique within each AWS Region in your AWS account.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The description of the resource group. Descriptions can consist of letters, numbers,
-        /// hyphens, underscores, periods, and spaces.</p>
+        /// <p>The description of the resource group. Descriptions can consist of letters, numbers, hyphens, underscores, periods, and spaces.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>The description of the resource group. Descriptions can consist of letters, numbers,
-        /// hyphens, underscores, periods, and spaces.</p>
+        /// <p>The description of the resource group. Descriptions can consist of letters, numbers, hyphens, underscores, periods, and spaces.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The resource query that determines which AWS resources are members of this group.
-        /// For more information about resource queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create
-        /// a tag-based group in Resource Groups</a>. </p>
-        /// <note>
-        /// <p>A resource group can contain either a <code>ResourceQuery</code> or a
-        /// <code>Configuration</code>, but not both.</p>
+        /// <p>The resource query that determines which AWS resources are members of this group. For more information about resource queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create a tag-based group in Resource Groups</a>. </p> <note>
+        /// <p>A resource group can contain either a <code>ResourceQuery</code> or a <code>Configuration</code>, but not both.</p>
         /// </note>
         pub fn resource_query(mut self, input: crate::model::ResourceQuery) -> Self {
             self.inner = self.inner.resource_query(input);
             self
         }
-        /// <p>The resource query that determines which AWS resources are members of this group.
-        /// For more information about resource queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create
-        /// a tag-based group in Resource Groups</a>. </p>
-        /// <note>
-        /// <p>A resource group can contain either a <code>ResourceQuery</code> or a
-        /// <code>Configuration</code>, but not both.</p>
+        /// <p>The resource query that determines which AWS resources are members of this group. For more information about resource queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create a tag-based group in Resource Groups</a>. </p> <note>
+        /// <p>A resource group can contain either a <code>ResourceQuery</code> or a <code>Configuration</code>, but not both.</p>
         /// </note>
         pub fn set_resource_query(
             mut self,
@@ -360,27 +332,15 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_configuration`](Self::set_configuration).
         ///
-        /// <p>A configuration associates the resource group with an AWS service and specifies how
-        /// the service can interact with the resources in the group. A configuration is an array of
-        /// <a>GroupConfigurationItem</a> elements. For details about the syntax of
-        /// service configurations, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource
-        /// groups</a>.</p>
-        /// <note>
-        /// <p>A resource group can contain either a <code>Configuration</code> or a
-        /// <code>ResourceQuery</code>, but not both.</p>
+        /// <p>A configuration associates the resource group with an AWS service and specifies how the service can interact with the resources in the group. A configuration is an array of <code>GroupConfigurationItem</code> elements. For details about the syntax of service configurations, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource groups</a>.</p> <note>
+        /// <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>
         /// </note>
         pub fn configuration(mut self, input: crate::model::GroupConfigurationItem) -> Self {
             self.inner = self.inner.configuration(input);
             self
         }
-        /// <p>A configuration associates the resource group with an AWS service and specifies how
-        /// the service can interact with the resources in the group. A configuration is an array of
-        /// <a>GroupConfigurationItem</a> elements. For details about the syntax of
-        /// service configurations, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource
-        /// groups</a>.</p>
-        /// <note>
-        /// <p>A resource group can contain either a <code>Configuration</code> or a
-        /// <code>ResourceQuery</code>, but not both.</p>
+        /// <p>A configuration associates the resource group with an AWS service and specifies how the service can interact with the resources in the group. A configuration is an array of <code>GroupConfigurationItem</code> elements. For details about the syntax of service configurations, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource groups</a>.</p> <note>
+        /// <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>
         /// </note>
         pub fn set_configuration(
             mut self,
@@ -392,18 +352,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteGroup`.
     ///
-    /// <p>Deletes the specified resource group. Deleting a resource group does not delete any
-    /// resources that are members of the group; it only deletes the group structure.</p>
-    /// <p>
-    /// <b>Minimum permissions</b>
-    /// </p>
+    /// <p>Deletes the specified resource group. Deleting a resource group does not delete any resources that are members of the group; it only deletes the group structure.</p>
+    /// <p> <b>Minimum permissions</b> </p>
     /// <p>To run this command, you must have the following permissions:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>resource-groups:DeleteGroup</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>resource-groups:DeleteGroup</code> </p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteGroup<
@@ -485,16 +438,10 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetGroup`.
     ///
     /// <p>Returns information about a specified resource group.</p>
-    /// <p>
-    /// <b>Minimum permissions</b>
-    /// </p>
+    /// <p> <b>Minimum permissions</b> </p>
     /// <p>To run this command, you must have the following permissions:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>resource-groups:GetGroup</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>resource-groups:GetGroup</code> </p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetGroup<
@@ -575,19 +522,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetGroupConfiguration`.
     ///
-    /// <p>Returns the service configuration associated with the specified resource group. For
-    /// details about the service configuration syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource
-    /// groups</a>.</p>
-    /// <p>
-    /// <b>Minimum permissions</b>
-    /// </p>
+    /// <p>Returns the service configuration associated with the specified resource group. For details about the service configuration syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource groups</a>.</p>
+    /// <p> <b>Minimum permissions</b> </p>
     /// <p>To run this command, you must have the following permissions:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>resource-groups:GetGroupConfiguration</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>resource-groups:GetGroupConfiguration</code> </p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetGroupConfiguration<
@@ -658,19 +597,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetGroupQuery`.
     ///
-    /// <p>Retrieves the resource query associated with the specified resource group. For more
-    /// information about resource queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create
-    /// a tag-based group in Resource Groups</a>.</p>
-    /// <p>
-    /// <b>Minimum permissions</b>
-    /// </p>
+    /// <p>Retrieves the resource query associated with the specified resource group. For more information about resource queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create a tag-based group in Resource Groups</a>.</p>
+    /// <p> <b>Minimum permissions</b> </p>
     /// <p>To run this command, you must have the following permissions:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>resource-groups:GetGroupQuery</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>resource-groups:GetGroupQuery</code> </p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetGroupQuery<
@@ -751,18 +682,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetTags`.
     ///
-    /// <p>Returns a list of tags that are associated with a resource group, specified by an
-    /// ARN.</p>
-    /// <p>
-    /// <b>Minimum permissions</b>
-    /// </p>
+    /// <p>Returns a list of tags that are associated with a resource group, specified by an ARN.</p>
+    /// <p> <b>Minimum permissions</b> </p>
     /// <p>To run this command, you must have the following permissions:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>resource-groups:GetTags</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>resource-groups:GetTags</code> </p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTags<
@@ -834,16 +758,10 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GroupResources`.
     ///
     /// <p>Adds the specified resources to the specified group.</p>
-    /// <p>
-    /// <b>Minimum permissions</b>
-    /// </p>
+    /// <p> <b>Minimum permissions</b> </p>
     /// <p>To run this command, you must have the following permissions:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>resource-groups:GroupResources</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>resource-groups:GroupResources</code> </p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GroupResources<
@@ -931,33 +849,14 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListGroupResources`.
     ///
-    /// <p>Returns a list of ARNs of the resources that are members of a specified resource
-    /// group.</p>
-    /// <p>
-    /// <b>Minimum permissions</b>
-    /// </p>
+    /// <p>Returns a list of ARNs of the resources that are members of a specified resource group.</p>
+    /// <p> <b>Minimum permissions</b> </p>
     /// <p>To run this command, you must have the following permissions:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>resource-groups:ListGroupResources</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>cloudformation:DescribeStacks</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>cloudformation:ListStackResources</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>tag:GetResources</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>resource-groups:ListGroupResources</code> </p> </li>
+    /// <li> <p> <code>cloudformation:DescribeStacks</code> </p> </li>
+    /// <li> <p> <code>cloudformation:ListStackResources</code> </p> </li>
+    /// <li> <p> <code>tag:GetResources</code> </p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListGroupResources<
@@ -1016,24 +915,14 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <important>
-        /// <p>
-        /// <i>
-        /// <b>Deprecated - don't use this parameter. Use the
-        /// <code>Group</code> request field instead.</b>
-        /// </i>
-        /// </p>
+        /// <p> <i> <b>Deprecated - don't use this parameter. Use the <code>Group</code> request field instead.</b> </i> </p>
         /// </important>
         pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.group_name(input.into());
             self
         }
         /// <important>
-        /// <p>
-        /// <i>
-        /// <b>Deprecated - don't use this parameter. Use the
-        /// <code>Group</code> request field instead.</b>
-        /// </i>
-        /// </p>
+        /// <p> <i> <b>Deprecated - don't use this parameter. Use the <code>Group</code> request field instead.</b> </i> </p>
         /// </important>
         pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_group_name(input);
@@ -1053,68 +942,24 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Filters, formatted as <a>ResourceFilter</a> objects, that you want to apply
-        /// to a <code>ListGroupResources</code> operation. Filters the results to include only
-        /// those of the specified resource types.</p>
+        /// <p>Filters, formatted as <code>ResourceFilter</code> objects, that you want to apply to a <code>ListGroupResources</code> operation. Filters the results to include only those of the specified resource types.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>resource-type</code> - Filter resources by their type. Specify up to
-        /// five resource types in the format <code>AWS::ServiceCode::ResourceType</code>.
-        /// For example, <code>AWS::EC2::Instance</code>, or <code>AWS::S3::Bucket</code>.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>resource-type</code> - Filter resources by their type. Specify up to five resource types in the format <code>AWS::ServiceCode::ResourceType</code>. For example, <code>AWS::EC2::Instance</code>, or <code>AWS::S3::Bucket</code>. </p> </li>
         /// </ul>
-        /// <p>When you specify a <code>resource-type</code> filter for
-        /// <code>ListGroupResources</code>, AWS Resource Groups validates your filter resource types
-        /// against the types that are defined in the query associated with the group. For example,
-        /// if a group contains only S3 buckets because its query specifies only that resource type,
-        /// but your <code>resource-type</code> filter includes EC2 instances, AWS Resource Groups
-        /// does not filter for EC2 instances. In this case, a <code>ListGroupResources</code>
-        /// request returns a <code>BadRequestException</code> error with a message similar to the
-        /// following:</p>
-        /// <p>
-        /// <code>The resource types specified as filters in the request are not
-        /// valid.</code>
-        /// </p>
-        /// <p>The error includes a list of resource types that failed the validation because they
-        /// are not part of the query associated with the group. This validation doesn't occur when
-        /// the group query specifies <code>AWS::AllSupported</code>, because a group based on such
-        /// a query can contain any of the allowed resource types for the query type (tag-based or
-        /// AWS CloudFormation stack-based queries).</p>
+        /// <p>When you specify a <code>resource-type</code> filter for <code>ListGroupResources</code>, AWS Resource Groups validates your filter resource types against the types that are defined in the query associated with the group. For example, if a group contains only S3 buckets because its query specifies only that resource type, but your <code>resource-type</code> filter includes EC2 instances, AWS Resource Groups does not filter for EC2 instances. In this case, a <code>ListGroupResources</code> request returns a <code>BadRequestException</code> error with a message similar to the following:</p>
+        /// <p> <code>The resource types specified as filters in the request are not valid.</code> </p>
+        /// <p>The error includes a list of resource types that failed the validation because they are not part of the query associated with the group. This validation doesn't occur when the group query specifies <code>AWS::AllSupported</code>, because a group based on such a query can contain any of the allowed resource types for the query type (tag-based or AWS CloudFormation stack-based queries).</p>
         pub fn filters(mut self, input: crate::model::ResourceFilter) -> Self {
             self.inner = self.inner.filters(input);
             self
         }
-        /// <p>Filters, formatted as <a>ResourceFilter</a> objects, that you want to apply
-        /// to a <code>ListGroupResources</code> operation. Filters the results to include only
-        /// those of the specified resource types.</p>
+        /// <p>Filters, formatted as <code>ResourceFilter</code> objects, that you want to apply to a <code>ListGroupResources</code> operation. Filters the results to include only those of the specified resource types.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>resource-type</code> - Filter resources by their type. Specify up to
-        /// five resource types in the format <code>AWS::ServiceCode::ResourceType</code>.
-        /// For example, <code>AWS::EC2::Instance</code>, or <code>AWS::S3::Bucket</code>.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>resource-type</code> - Filter resources by their type. Specify up to five resource types in the format <code>AWS::ServiceCode::ResourceType</code>. For example, <code>AWS::EC2::Instance</code>, or <code>AWS::S3::Bucket</code>. </p> </li>
         /// </ul>
-        /// <p>When you specify a <code>resource-type</code> filter for
-        /// <code>ListGroupResources</code>, AWS Resource Groups validates your filter resource types
-        /// against the types that are defined in the query associated with the group. For example,
-        /// if a group contains only S3 buckets because its query specifies only that resource type,
-        /// but your <code>resource-type</code> filter includes EC2 instances, AWS Resource Groups
-        /// does not filter for EC2 instances. In this case, a <code>ListGroupResources</code>
-        /// request returns a <code>BadRequestException</code> error with a message similar to the
-        /// following:</p>
-        /// <p>
-        /// <code>The resource types specified as filters in the request are not
-        /// valid.</code>
-        /// </p>
-        /// <p>The error includes a list of resource types that failed the validation because they
-        /// are not part of the query associated with the group. This validation doesn't occur when
-        /// the group query specifies <code>AWS::AllSupported</code>, because a group based on such
-        /// a query can contain any of the allowed resource types for the query type (tag-based or
-        /// AWS CloudFormation stack-based queries).</p>
+        /// <p>When you specify a <code>resource-type</code> filter for <code>ListGroupResources</code>, AWS Resource Groups validates your filter resource types against the types that are defined in the query associated with the group. For example, if a group contains only S3 buckets because its query specifies only that resource type, but your <code>resource-type</code> filter includes EC2 instances, AWS Resource Groups does not filter for EC2 instances. In this case, a <code>ListGroupResources</code> request returns a <code>BadRequestException</code> error with a message similar to the following:</p>
+        /// <p> <code>The resource types specified as filters in the request are not valid.</code> </p>
+        /// <p>The error includes a list of resource types that failed the validation because they are not part of the query associated with the group. This validation doesn't occur when the group query specifies <code>AWS::AllSupported</code>, because a group based on such a query can contain any of the allowed resource types for the query type (tag-based or AWS CloudFormation stack-based queries).</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourceFilter>>,
@@ -1122,42 +967,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>The total number of results that you want included on each page of the
-        /// response. If you do not include this parameter, it defaults to a value that is specific to the
-        /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
-        /// response element is present and has a value (is not null). Include that value as the
-        /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
-        /// of the results. Note that the service might return fewer results than the maximum even when there
-        /// are more results available. You should check <code>NextToken</code> after every operation to
-        /// ensure that you receive all of the results.</p>
+        /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The total number of results that you want included on each page of the
-        /// response. If you do not include this parameter, it defaults to a value that is specific to the
-        /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
-        /// response element is present and has a value (is not null). Include that value as the
-        /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
-        /// of the results. Note that the service might return fewer results than the maximum even when there
-        /// are more results available. You should check <code>NextToken</code> after every operation to
-        /// ensure that you receive all of the results.</p>
+        /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The parameter for receiving additional results if you receive a
-        /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-        /// indicates that more output is available. Set this parameter to the value provided by a previous
-        /// call's <code>NextToken</code> response to indicate where the output should continue from.</p>
+        /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value provided by a previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The parameter for receiving additional results if you receive a
-        /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-        /// indicates that more output is available. Set this parameter to the value provided by a previous
-        /// call's <code>NextToken</code> response to indicate where the output should continue from.</p>
+        /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value provided by a previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1166,16 +991,10 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListGroups`.
     ///
     /// <p>Returns a list of existing resource groups in your account.</p>
-    /// <p>
-    /// <b>Minimum permissions</b>
-    /// </p>
+    /// <p> <b>Minimum permissions</b> </p>
     /// <p>To run this command, you must have the following permissions:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>resource-groups:ListGroups</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>resource-groups:ListGroups</code> </p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListGroups<
@@ -1237,71 +1056,27 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Filters, formatted as <a>GroupFilter</a> objects, that you want to apply to
-        /// a <code>ListGroups</code> operation.</p>
+        /// <p>Filters, formatted as <code>GroupFilter</code> objects, that you want to apply to a <code>ListGroups</code> operation.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>resource-type</code> - Filter the results to include only those of the
-        /// specified resource types. Specify up to five resource types in the format
-        /// <code>AWS::<i>ServiceCode</i>::<i>ResourceType</i>
-        /// </code>.
-        /// For example, <code>AWS::EC2::Instance</code>, or
-        /// <code>AWS::S3::Bucket</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>configuration-type</code> - Filter the results to include only those
-        /// groups that have the specified configuration types attached. The current
-        /// supported values are:</p>
+        /// <li> <p> <code>resource-type</code> - Filter the results to include only those of the specified resource types. Specify up to five resource types in the format <code>AWS::<i>ServiceCode</i>::<i>ResourceType</i> </code>. For example, <code>AWS::EC2::Instance</code>, or <code>AWS::S3::Bucket</code>.</p> </li>
+        /// <li> <p> <code>configuration-type</code> - Filter the results to include only those groups that have the specified configuration types attached. The current supported values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AWS:EC2::CapacityReservationPool</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AWS:EC2::HostManagement</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p> <code>AWS:EC2::CapacityReservationPool</code> </p> </li>
+        /// <li> <p> <code>AWS:EC2::HostManagement</code> </p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn filters(mut self, input: crate::model::GroupFilter) -> Self {
             self.inner = self.inner.filters(input);
             self
         }
-        /// <p>Filters, formatted as <a>GroupFilter</a> objects, that you want to apply to
-        /// a <code>ListGroups</code> operation.</p>
+        /// <p>Filters, formatted as <code>GroupFilter</code> objects, that you want to apply to a <code>ListGroups</code> operation.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>resource-type</code> - Filter the results to include only those of the
-        /// specified resource types. Specify up to five resource types in the format
-        /// <code>AWS::<i>ServiceCode</i>::<i>ResourceType</i>
-        /// </code>.
-        /// For example, <code>AWS::EC2::Instance</code>, or
-        /// <code>AWS::S3::Bucket</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>configuration-type</code> - Filter the results to include only those
-        /// groups that have the specified configuration types attached. The current
-        /// supported values are:</p>
+        /// <li> <p> <code>resource-type</code> - Filter the results to include only those of the specified resource types. Specify up to five resource types in the format <code>AWS::<i>ServiceCode</i>::<i>ResourceType</i> </code>. For example, <code>AWS::EC2::Instance</code>, or <code>AWS::S3::Bucket</code>.</p> </li>
+        /// <li> <p> <code>configuration-type</code> - Filter the results to include only those groups that have the specified configuration types attached. The current supported values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AWS:EC2::CapacityReservationPool</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AWS:EC2::HostManagement</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p> <code>AWS:EC2::CapacityReservationPool</code> </p> </li>
+        /// <li> <p> <code>AWS:EC2::HostManagement</code> </p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn set_filters(
             mut self,
@@ -1310,42 +1085,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>The total number of results that you want included on each page of the
-        /// response. If you do not include this parameter, it defaults to a value that is specific to the
-        /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
-        /// response element is present and has a value (is not null). Include that value as the
-        /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
-        /// of the results. Note that the service might return fewer results than the maximum even when there
-        /// are more results available. You should check <code>NextToken</code> after every operation to
-        /// ensure that you receive all of the results.</p>
+        /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The total number of results that you want included on each page of the
-        /// response. If you do not include this parameter, it defaults to a value that is specific to the
-        /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
-        /// response element is present and has a value (is not null). Include that value as the
-        /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
-        /// of the results. Note that the service might return fewer results than the maximum even when there
-        /// are more results available. You should check <code>NextToken</code> after every operation to
-        /// ensure that you receive all of the results.</p>
+        /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The parameter for receiving additional results if you receive a
-        /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-        /// indicates that more output is available. Set this parameter to the value provided by a previous
-        /// call's <code>NextToken</code> response to indicate where the output should continue from.</p>
+        /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value provided by a previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The parameter for receiving additional results if you receive a
-        /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-        /// indicates that more output is available. Set this parameter to the value provided by a previous
-        /// call's <code>NextToken</code> response to indicate where the output should continue from.</p>
+        /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value provided by a previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1353,19 +1108,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutGroupConfiguration`.
     ///
-    /// <p>Attaches a service configuration to the specified group. This occurs asynchronously,
-    /// and can take time to complete. You can use <a>GetGroupConfiguration</a> to
-    /// check the status of the update.</p>
-    /// <p>
-    /// <b>Minimum permissions</b>
-    /// </p>
+    /// <p>Attaches a service configuration to the specified group. This occurs asynchronously, and can take time to complete. You can use <code>GetGroupConfiguration</code> to check the status of the update.</p>
+    /// <p> <b>Minimum permissions</b> </p>
     /// <p>To run this command, you must have the following permissions:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>resource-groups:PutGroupConfiguration</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>resource-groups:PutGroupConfiguration</code> </p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutGroupConfiguration<
@@ -1423,14 +1170,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name or ARN of the resource group with the configuration that you want to
-        /// update.</p>
+        /// <p>The name or ARN of the resource group with the configuration that you want to update.</p>
         pub fn group(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.group(input.into());
             self
         }
-        /// <p>The name or ARN of the resource group with the configuration that you want to
-        /// update.</p>
+        /// <p>The name or ARN of the resource group with the configuration that you want to update.</p>
         pub fn set_group(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_group(input);
             self
@@ -1439,27 +1184,17 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_configuration`](Self::set_configuration).
         ///
-        /// <p>The new configuration to associate with the specified group. A configuration
-        /// associates the resource group with an AWS service and specifies how the service can
-        /// interact with the resources in the group. A configuration is an array of <a>GroupConfigurationItem</a> elements.</p>
-        /// <p>For information about the syntax of a service configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for
-        /// resource groups</a>.</p>
-        /// <note>
-        /// <p>A resource group can contain either a <code>Configuration</code> or a
-        /// <code>ResourceQuery</code>, but not both.</p>
+        /// <p>The new configuration to associate with the specified group. A configuration associates the resource group with an AWS service and specifies how the service can interact with the resources in the group. A configuration is an array of <code>GroupConfigurationItem</code> elements.</p>
+        /// <p>For information about the syntax of a service configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource groups</a>.</p> <note>
+        /// <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>
         /// </note>
         pub fn configuration(mut self, input: crate::model::GroupConfigurationItem) -> Self {
             self.inner = self.inner.configuration(input);
             self
         }
-        /// <p>The new configuration to associate with the specified group. A configuration
-        /// associates the resource group with an AWS service and specifies how the service can
-        /// interact with the resources in the group. A configuration is an array of <a>GroupConfigurationItem</a> elements.</p>
-        /// <p>For information about the syntax of a service configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for
-        /// resource groups</a>.</p>
-        /// <note>
-        /// <p>A resource group can contain either a <code>Configuration</code> or a
-        /// <code>ResourceQuery</code>, but not both.</p>
+        /// <p>The new configuration to associate with the specified group. A configuration associates the resource group with an AWS service and specifies how the service can interact with the resources in the group. A configuration is an array of <code>GroupConfigurationItem</code> elements.</p>
+        /// <p>For information about the syntax of a service configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource groups</a>.</p> <note>
+        /// <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>
         /// </note>
         pub fn set_configuration(
             mut self,
@@ -1471,34 +1206,14 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SearchResources`.
     ///
-    /// <p>Returns a list of AWS resource identifiers that matches the specified query. The
-    /// query uses the same format as a resource query in a CreateGroup or UpdateGroupQuery
-    /// operation.</p>
-    /// <p>
-    /// <b>Minimum permissions</b>
-    /// </p>
+    /// <p>Returns a list of AWS resource identifiers that matches the specified query. The query uses the same format as a resource query in a CreateGroup or UpdateGroupQuery operation.</p>
+    /// <p> <b>Minimum permissions</b> </p>
     /// <p>To run this command, you must have the following permissions:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>resource-groups:SearchResources</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>cloudformation:DescribeStacks</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>cloudformation:ListStackResources</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>tag:GetResources</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>resource-groups:SearchResources</code> </p> </li>
+    /// <li> <p> <code>cloudformation:DescribeStacks</code> </p> </li>
+    /// <li> <p> <code>cloudformation:ListStackResources</code> </p> </li>
+    /// <li> <p> <code>tag:GetResources</code> </p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchResources<
@@ -1556,14 +1271,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The search query, using the same formats that are supported for resource group
-        /// definition. For more information, see <a>CreateGroup</a>.</p>
+        /// <p>The search query, using the same formats that are supported for resource group definition. For more information, see <code>CreateGroup</code>.</p>
         pub fn resource_query(mut self, input: crate::model::ResourceQuery) -> Self {
             self.inner = self.inner.resource_query(input);
             self
         }
-        /// <p>The search query, using the same formats that are supported for resource group
-        /// definition. For more information, see <a>CreateGroup</a>.</p>
+        /// <p>The search query, using the same formats that are supported for resource group definition. For more information, see <code>CreateGroup</code>.</p>
         pub fn set_resource_query(
             mut self,
             input: std::option::Option<crate::model::ResourceQuery>,
@@ -1571,42 +1284,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_query(input);
             self
         }
-        /// <p>The total number of results that you want included on each page of the
-        /// response. If you do not include this parameter, it defaults to a value that is specific to the
-        /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
-        /// response element is present and has a value (is not null). Include that value as the
-        /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
-        /// of the results. Note that the service might return fewer results than the maximum even when there
-        /// are more results available. You should check <code>NextToken</code> after every operation to
-        /// ensure that you receive all of the results.</p>
+        /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The total number of results that you want included on each page of the
-        /// response. If you do not include this parameter, it defaults to a value that is specific to the
-        /// operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code>
-        /// response element is present and has a value (is not null). Include that value as the
-        /// <code>NextToken</code> request parameter in the next call to the operation to get the next part
-        /// of the results. Note that the service might return fewer results than the maximum even when there
-        /// are more results available. You should check <code>NextToken</code> after every operation to
-        /// ensure that you receive all of the results.</p>
+        /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The parameter for receiving additional results if you receive a
-        /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-        /// indicates that more output is available. Set this parameter to the value provided by a previous
-        /// call's <code>NextToken</code> response to indicate where the output should continue from.</p>
+        /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value provided by a previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The parameter for receiving additional results if you receive a
-        /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
-        /// indicates that more output is available. Set this parameter to the value provided by a previous
-        /// call's <code>NextToken</code> response to indicate where the output should continue from.</p>
+        /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value provided by a previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1614,24 +1307,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `Tag`.
     ///
-    /// <p>Adds tags to a resource group with the specified ARN. Existing tags on a resource
-    /// group are not changed if they are not specified in the request parameters.</p>
-    /// <important>
-    /// <p>Do not store personally identifiable information (PII) or other confidential or
-    /// sensitive information in tags. We use tags to provide you with billing and
-    /// administration services. Tags are not intended to be used for private or sensitive
-    /// data.</p>
+    /// <p>Adds tags to a resource group with the specified ARN. Existing tags on a resource group are not changed if they are not specified in the request parameters.</p> <important>
+    /// <p>Do not store personally identifiable information (PII) or other confidential or sensitive information in tags. We use tags to provide you with billing and administration services. Tags are not intended to be used for private or sensitive data.</p>
     /// </important>
-    /// <p>
-    /// <b>Minimum permissions</b>
-    /// </p>
+    /// <p> <b>Minimum permissions</b> </p>
     /// <p>To run this command, you must have the following permissions:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>resource-groups:Tag</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>resource-groups:Tag</code> </p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct Tag<
@@ -1703,8 +1385,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags to add to the specified resource group. A tag is a string-to-string map of
-        /// key-value pairs.</p>
+        /// <p>The tags to add to the specified resource group. A tag is a string-to-string map of key-value pairs.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1713,8 +1394,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>The tags to add to the specified resource group. A tag is a string-to-string map of
-        /// key-value pairs.</p>
+        /// <p>The tags to add to the specified resource group. A tag is a string-to-string map of key-value pairs.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1728,16 +1408,10 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UngroupResources`.
     ///
     /// <p>Removes the specified resources from the specified group.</p>
-    /// <p>
-    /// <b>Minimum permissions</b>
-    /// </p>
+    /// <p> <b>Minimum permissions</b> </p>
     /// <p>To run this command, you must have the following permissions:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>resource-groups:UngroupResources</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>resource-groups:UngroupResources</code> </p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UngroupResources<
@@ -1826,16 +1500,10 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `Untag`.
     ///
     /// <p>Deletes tags from a specified resource group.</p>
-    /// <p>
-    /// <b>Minimum permissions</b>
-    /// </p>
+    /// <p> <b>Minimum permissions</b> </p>
     /// <p>To run this command, you must have the following permissions:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>resource-groups:Untag</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>resource-groups:Untag</code> </p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct Untag<
@@ -1893,14 +1561,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the resource group from which to remove tags. The command removed both the
-        /// specified keys and any values associated with those keys.</p>
+        /// <p>The ARN of the resource group from which to remove tags. The command removed both the specified keys and any values associated with those keys.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.arn(input.into());
             self
         }
-        /// <p>The ARN of the resource group from which to remove tags. The command removed both the
-        /// specified keys and any values associated with those keys.</p>
+        /// <p>The ARN of the resource group from which to remove tags. The command removed both the specified keys and any values associated with those keys.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_arn(input);
             self
@@ -1925,18 +1591,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateGroup`.
     ///
-    /// <p>Updates the description for an existing group. You cannot update the name of a
-    /// resource group.</p>
-    /// <p>
-    /// <b>Minimum permissions</b>
-    /// </p>
+    /// <p>Updates the description for an existing group. You cannot update the name of a resource group.</p>
+    /// <p> <b>Minimum permissions</b> </p>
     /// <p>To run this command, you must have the following permissions:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>resource-groups:UpdateGroup</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>resource-groups:UpdateGroup</code> </p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateGroup<
@@ -2014,14 +1673,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_group(input);
             self
         }
-        /// <p>The new description that you want to update the resource group with. Descriptions can
-        /// contain letters, numbers, hyphens, underscores, periods, and spaces.</p>
+        /// <p>The new description that you want to update the resource group with. Descriptions can contain letters, numbers, hyphens, underscores, periods, and spaces.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>The new description that you want to update the resource group with. Descriptions can
-        /// contain letters, numbers, hyphens, underscores, periods, and spaces.</p>
+        /// <p>The new description that you want to update the resource group with. Descriptions can contain letters, numbers, hyphens, underscores, periods, and spaces.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
@@ -2029,18 +1686,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateGroupQuery`.
     ///
-    /// <p>Updates the resource query of a group. For more information about resource queries,
-    /// see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create a tag-based group in Resource Groups</a>.</p>
-    /// <p>
-    /// <b>Minimum permissions</b>
-    /// </p>
+    /// <p>Updates the resource query of a group. For more information about resource queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create a tag-based group in Resource Groups</a>.</p>
+    /// <p> <b>Minimum permissions</b> </p>
     /// <p>To run this command, you must have the following permissions:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>resource-groups:UpdateGroupQuery</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>resource-groups:UpdateGroupQuery</code> </p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateGroupQuery<
@@ -2118,21 +1768,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_group(input);
             self
         }
-        /// <p>The resource query to determine which AWS resources are members of this resource
-        /// group.</p>
-        /// <note>
-        /// <p>A resource group can contain either a <code>Configuration</code> or a
-        /// <code>ResourceQuery</code>, but not both.</p>
+        /// <p>The resource query to determine which AWS resources are members of this resource group.</p> <note>
+        /// <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>
         /// </note>
         pub fn resource_query(mut self, input: crate::model::ResourceQuery) -> Self {
             self.inner = self.inner.resource_query(input);
             self
         }
-        /// <p>The resource query to determine which AWS resources are members of this resource
-        /// group.</p>
-        /// <note>
-        /// <p>A resource group can contain either a <code>Configuration</code> or a
-        /// <code>ResourceQuery</code>, but not both.</p>
+        /// <p>The resource query to determine which AWS resources are members of this resource group.</p> <note>
+        /// <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>
         /// </note>
         pub fn set_resource_query(
             mut self,

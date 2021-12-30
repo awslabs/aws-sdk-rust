@@ -93,24 +93,20 @@ impl NotifyApplicationStateOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProgressUpdateStreamsOutput {
-    /// <p>List of progress update streams up to the max number of results passed in the
-    /// input.</p>
+    /// <p>List of progress update streams up to the max number of results passed in the input.</p>
     pub progress_update_stream_summary_list:
         std::option::Option<std::vec::Vec<crate::model::ProgressUpdateStreamSummary>>,
-    /// <p>If there are more streams created than the max result, return the next token to be
-    /// passed to the next call as a bookmark of where to start from.</p>
+    /// <p>If there are more streams created than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListProgressUpdateStreamsOutput {
-    /// <p>List of progress update streams up to the max number of results passed in the
-    /// input.</p>
+    /// <p>List of progress update streams up to the max number of results passed in the input.</p>
     pub fn progress_update_stream_summary_list(
         &self,
     ) -> std::option::Option<&[crate::model::ProgressUpdateStreamSummary]> {
         self.progress_update_stream_summary_list.as_deref()
     }
-    /// <p>If there are more streams created than the max result, return the next token to be
-    /// passed to the next call as a bookmark of where to start from.</p>
+    /// <p>If there are more streams created than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -141,8 +137,7 @@ pub mod list_progress_update_streams_output {
         ///
         /// To override the contents of this collection use [`set_progress_update_stream_summary_list`](Self::set_progress_update_stream_summary_list).
         ///
-        /// <p>List of progress update streams up to the max number of results passed in the
-        /// input.</p>
+        /// <p>List of progress update streams up to the max number of results passed in the input.</p>
         pub fn progress_update_stream_summary_list(
             mut self,
             input: crate::model::ProgressUpdateStreamSummary,
@@ -152,8 +147,7 @@ pub mod list_progress_update_streams_output {
             self.progress_update_stream_summary_list = Some(v);
             self
         }
-        /// <p>List of progress update streams up to the max number of results passed in the
-        /// input.</p>
+        /// <p>List of progress update streams up to the max number of results passed in the input.</p>
         pub fn set_progress_update_stream_summary_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ProgressUpdateStreamSummary>>,
@@ -161,14 +155,12 @@ pub mod list_progress_update_streams_output {
             self.progress_update_stream_summary_list = input;
             self
         }
-        /// <p>If there are more streams created than the max result, return the next token to be
-        /// passed to the next call as a bookmark of where to start from.</p>
+        /// <p>If there are more streams created than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If there are more streams created than the max result, return the next token to be
-        /// passed to the next call as a bookmark of where to start from.</p>
+        /// <p>If there are more streams created than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -193,24 +185,18 @@ impl ListProgressUpdateStreamsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMigrationTasksOutput {
-    /// <p>If there are more migration tasks than the max result, return the next token to be
-    /// passed to the next call as a bookmark of where to start from.</p>
+    /// <p>If there are more migration tasks than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>Lists the migration task's summary which includes: <code>MigrationTaskName</code>,
-    /// <code>ProgressPercent</code>, <code>ProgressUpdateStream</code>, <code>Status</code>,
-    /// and the <code>UpdateDateTime</code> for each task.</p>
+    /// <p>Lists the migration task's summary which includes: <code>MigrationTaskName</code>, <code>ProgressPercent</code>, <code>ProgressUpdateStream</code>, <code>Status</code>, and the <code>UpdateDateTime</code> for each task.</p>
     pub migration_task_summary_list:
         std::option::Option<std::vec::Vec<crate::model::MigrationTaskSummary>>,
 }
 impl ListMigrationTasksOutput {
-    /// <p>If there are more migration tasks than the max result, return the next token to be
-    /// passed to the next call as a bookmark of where to start from.</p>
+    /// <p>If there are more migration tasks than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Lists the migration task's summary which includes: <code>MigrationTaskName</code>,
-    /// <code>ProgressPercent</code>, <code>ProgressUpdateStream</code>, <code>Status</code>,
-    /// and the <code>UpdateDateTime</code> for each task.</p>
+    /// <p>Lists the migration task's summary which includes: <code>MigrationTaskName</code>, <code>ProgressPercent</code>, <code>ProgressUpdateStream</code>, <code>Status</code>, and the <code>UpdateDateTime</code> for each task.</p>
     pub fn migration_task_summary_list(
         &self,
     ) -> std::option::Option<&[crate::model::MigrationTaskSummary]> {
@@ -239,14 +225,12 @@ pub mod list_migration_tasks_output {
             std::option::Option<std::vec::Vec<crate::model::MigrationTaskSummary>>,
     }
     impl Builder {
-        /// <p>If there are more migration tasks than the max result, return the next token to be
-        /// passed to the next call as a bookmark of where to start from.</p>
+        /// <p>If there are more migration tasks than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If there are more migration tasks than the max result, return the next token to be
-        /// passed to the next call as a bookmark of where to start from.</p>
+        /// <p>If there are more migration tasks than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -255,9 +239,7 @@ pub mod list_migration_tasks_output {
         ///
         /// To override the contents of this collection use [`set_migration_task_summary_list`](Self::set_migration_task_summary_list).
         ///
-        /// <p>Lists the migration task's summary which includes: <code>MigrationTaskName</code>,
-        /// <code>ProgressPercent</code>, <code>ProgressUpdateStream</code>, <code>Status</code>,
-        /// and the <code>UpdateDateTime</code> for each task.</p>
+        /// <p>Lists the migration task's summary which includes: <code>MigrationTaskName</code>, <code>ProgressPercent</code>, <code>ProgressUpdateStream</code>, <code>Status</code>, and the <code>UpdateDateTime</code> for each task.</p>
         pub fn migration_task_summary_list(
             mut self,
             input: crate::model::MigrationTaskSummary,
@@ -267,9 +249,7 @@ pub mod list_migration_tasks_output {
             self.migration_task_summary_list = Some(v);
             self
         }
-        /// <p>Lists the migration task's summary which includes: <code>MigrationTaskName</code>,
-        /// <code>ProgressPercent</code>, <code>ProgressUpdateStream</code>, <code>Status</code>,
-        /// and the <code>UpdateDateTime</code> for each task.</p>
+        /// <p>Lists the migration task's summary which includes: <code>MigrationTaskName</code>, <code>ProgressPercent</code>, <code>ProgressUpdateStream</code>, <code>Status</code>, and the <code>UpdateDateTime</code> for each task.</p>
         pub fn set_migration_task_summary_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MigrationTaskSummary>>,
@@ -297,16 +277,14 @@ impl ListMigrationTasksOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDiscoveredResourcesOutput {
-    /// <p>If there are more discovered resources than the max result, return the next token to be
-    /// passed to the next call as a bookmark of where to start from.</p>
+    /// <p>If there are more discovered resources than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Returned list of discovered resources associated with the given MigrationTask.</p>
     pub discovered_resource_list:
         std::option::Option<std::vec::Vec<crate::model::DiscoveredResource>>,
 }
 impl ListDiscoveredResourcesOutput {
-    /// <p>If there are more discovered resources than the max result, return the next token to be
-    /// passed to the next call as a bookmark of where to start from.</p>
+    /// <p>If there are more discovered resources than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -336,14 +314,12 @@ pub mod list_discovered_resources_output {
             std::option::Option<std::vec::Vec<crate::model::DiscoveredResource>>,
     }
     impl Builder {
-        /// <p>If there are more discovered resources than the max result, return the next token to be
-        /// passed to the next call as a bookmark of where to start from.</p>
+        /// <p>If there are more discovered resources than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If there are more discovered resources than the max result, return the next token to be
-        /// passed to the next call as a bookmark of where to start from.</p>
+        /// <p>If there are more discovered resources than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -387,21 +363,17 @@ impl ListDiscoveredResourcesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCreatedArtifactsOutput {
-    /// <p>If there are more created artifacts than the max result, return the next token to be
-    /// passed to the next call as a bookmark of where to start from.</p>
+    /// <p>If there are more created artifacts than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>List of created artifacts up to the maximum number of results specified in the
-    /// request.</p>
+    /// <p>List of created artifacts up to the maximum number of results specified in the request.</p>
     pub created_artifact_list: std::option::Option<std::vec::Vec<crate::model::CreatedArtifact>>,
 }
 impl ListCreatedArtifactsOutput {
-    /// <p>If there are more created artifacts than the max result, return the next token to be
-    /// passed to the next call as a bookmark of where to start from.</p>
+    /// <p>If there are more created artifacts than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>List of created artifacts up to the maximum number of results specified in the
-    /// request.</p>
+    /// <p>List of created artifacts up to the maximum number of results specified in the request.</p>
     pub fn created_artifact_list(&self) -> std::option::Option<&[crate::model::CreatedArtifact]> {
         self.created_artifact_list.as_deref()
     }
@@ -425,14 +397,12 @@ pub mod list_created_artifacts_output {
             std::option::Option<std::vec::Vec<crate::model::CreatedArtifact>>,
     }
     impl Builder {
-        /// <p>If there are more created artifacts than the max result, return the next token to be
-        /// passed to the next call as a bookmark of where to start from.</p>
+        /// <p>If there are more created artifacts than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If there are more created artifacts than the max result, return the next token to be
-        /// passed to the next call as a bookmark of where to start from.</p>
+        /// <p>If there are more created artifacts than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -441,16 +411,14 @@ pub mod list_created_artifacts_output {
         ///
         /// To override the contents of this collection use [`set_created_artifact_list`](Self::set_created_artifact_list).
         ///
-        /// <p>List of created artifacts up to the maximum number of results specified in the
-        /// request.</p>
+        /// <p>List of created artifacts up to the maximum number of results specified in the request.</p>
         pub fn created_artifact_list(mut self, input: crate::model::CreatedArtifact) -> Self {
             let mut v = self.created_artifact_list.unwrap_or_default();
             v.push(input);
             self.created_artifact_list = Some(v);
             self
         }
-        /// <p>List of created artifacts up to the maximum number of results specified in the
-        /// request.</p>
+        /// <p>List of created artifacts up to the maximum number of results specified in the request.</p>
         pub fn set_created_artifact_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CreatedArtifact>>,
@@ -480,9 +448,7 @@ impl ListCreatedArtifactsOutput {
 pub struct ListApplicationStatesOutput {
     /// <p>A list of Applications that exist in Application Discovery Service.</p>
     pub application_state_list: std::option::Option<std::vec::Vec<crate::model::ApplicationState>>,
-    /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results
-    /// available. To retrieve the next page of results, make the call again using the returned
-    /// token in <code>NextToken</code>.</p>
+    /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListApplicationStatesOutput {
@@ -490,9 +456,7 @@ impl ListApplicationStatesOutput {
     pub fn application_state_list(&self) -> std::option::Option<&[crate::model::ApplicationState]> {
         self.application_state_list.as_deref()
     }
-    /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results
-    /// available. To retrieve the next page of results, make the call again using the returned
-    /// token in <code>NextToken</code>.</p>
+    /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -535,16 +499,12 @@ pub mod list_application_states_output {
             self.application_state_list = input;
             self
         }
-        /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results
-        /// available. To retrieve the next page of results, make the call again using the returned
-        /// token in <code>NextToken</code>.</p>
+        /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results
-        /// available. To retrieve the next page of results, make the call again using the returned
-        /// token in <code>NextToken</code>.</p>
+        /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self

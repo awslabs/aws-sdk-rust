@@ -21,32 +21,24 @@ pub mod associate_custom_domain_input {
             self.service_arn = input;
             self
         }
-        /// <p>A custom domain endpoint to associate. Specify a root domain (for example, <code>example.com</code>), a subdomain (for example,
-        /// <code>login.example.com</code> or <code>admin.login.example.com</code>), or a wildcard (for example, <code>*.example.com</code>).</p>
+        /// <p>A custom domain endpoint to associate. Specify a root domain (for example, <code>example.com</code>), a subdomain (for example, <code>login.example.com</code> or <code>admin.login.example.com</code>), or a wildcard (for example, <code>*.example.com</code>).</p>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_name = Some(input.into());
             self
         }
-        /// <p>A custom domain endpoint to associate. Specify a root domain (for example, <code>example.com</code>), a subdomain (for example,
-        /// <code>login.example.com</code> or <code>admin.login.example.com</code>), or a wildcard (for example, <code>*.example.com</code>).</p>
+        /// <p>A custom domain endpoint to associate. Specify a root domain (for example, <code>example.com</code>), a subdomain (for example, <code>login.example.com</code> or <code>admin.login.example.com</code>), or a wildcard (for example, <code>*.example.com</code>).</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
         }
-        /// <p>Set to <code>true</code> to associate the subdomain <code>www.<i>DomainName</i>
-        /// </code> with the App Runner service in addition to the base
-        /// domain.</p>
-        /// <p>Default: <code>true</code>
-        /// </p>
+        /// <p>Set to <code>true</code> to associate the subdomain <code>www.<i>DomainName</i> </code> with the App Runner service in addition to the base domain.</p>
+        /// <p>Default: <code>true</code> </p>
         pub fn enable_www_subdomain(mut self, input: bool) -> Self {
             self.enable_www_subdomain = Some(input);
             self
         }
-        /// <p>Set to <code>true</code> to associate the subdomain <code>www.<i>DomainName</i>
-        /// </code> with the App Runner service in addition to the base
-        /// domain.</p>
-        /// <p>Default: <code>true</code>
-        /// </p>
+        /// <p>Set to <code>true</code> to associate the subdomain <code>www.<i>DomainName</i> </code> with the App Runner service in addition to the base domain.</p>
+        /// <p>Default: <code>true</code> </p>
         pub fn set_enable_www_subdomain(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_www_subdomain = input;
             self
@@ -203,8 +195,7 @@ pub mod create_auto_scaling_configuration_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>A name for the auto scaling configuration. When you use it for the first time in an Amazon Web Services Region, App Runner creates revision number <code>1</code> of this
-        /// name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration.</p>
+        /// <p>A name for the auto scaling configuration. When you use it for the first time in an Amazon Web Services Region, App Runner creates revision number <code>1</code> of this name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration.</p>
         pub fn auto_scaling_configuration_name(
             mut self,
             input: impl Into<std::string::String>,
@@ -212,8 +203,7 @@ pub mod create_auto_scaling_configuration_input {
             self.auto_scaling_configuration_name = Some(input.into());
             self
         }
-        /// <p>A name for the auto scaling configuration. When you use it for the first time in an Amazon Web Services Region, App Runner creates revision number <code>1</code> of this
-        /// name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration.</p>
+        /// <p>A name for the auto scaling configuration. When you use it for the first time in an Amazon Web Services Region, App Runner creates revision number <code>1</code> of this name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration.</p>
         pub fn set_auto_scaling_configuration_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -221,52 +211,40 @@ pub mod create_auto_scaling_configuration_input {
             self.auto_scaling_configuration_name = input;
             self
         }
-        /// <p>The maximum number of concurrent requests that you want an instance to process. If the number of concurrent requests exceeds this limit, App Runner scales
-        /// up your service.</p>
-        /// <p>Default: <code>100</code>
-        /// </p>
+        /// <p>The maximum number of concurrent requests that you want an instance to process. If the number of concurrent requests exceeds this limit, App Runner scales up your service.</p>
+        /// <p>Default: <code>100</code> </p>
         pub fn max_concurrency(mut self, input: i32) -> Self {
             self.max_concurrency = Some(input);
             self
         }
-        /// <p>The maximum number of concurrent requests that you want an instance to process. If the number of concurrent requests exceeds this limit, App Runner scales
-        /// up your service.</p>
-        /// <p>Default: <code>100</code>
-        /// </p>
+        /// <p>The maximum number of concurrent requests that you want an instance to process. If the number of concurrent requests exceeds this limit, App Runner scales up your service.</p>
+        /// <p>Default: <code>100</code> </p>
         pub fn set_max_concurrency(mut self, input: std::option::Option<i32>) -> Self {
             self.max_concurrency = input;
             self
         }
-        /// <p>The minimum number of instances that App Runner provisions for your service. The service always has at least <code>MinSize</code> provisioned instances.
-        /// Some of them actively serve traffic. The rest of them (provisioned and inactive instances) are a cost-effective compute capacity reserve and are ready to
-        /// be quickly activated. You pay for memory usage of all the provisioned instances. You pay for CPU usage of only the active subset.</p>
+        /// <p>The minimum number of instances that App Runner provisions for your service. The service always has at least <code>MinSize</code> provisioned instances. Some of them actively serve traffic. The rest of them (provisioned and inactive instances) are a cost-effective compute capacity reserve and are ready to be quickly activated. You pay for memory usage of all the provisioned instances. You pay for CPU usage of only the active subset.</p>
         /// <p>App Runner temporarily doubles the number of provisioned instances during deployments, to maintain the same capacity for both old and new code.</p>
-        /// <p>Default: <code>1</code>
-        /// </p>
+        /// <p>Default: <code>1</code> </p>
         pub fn min_size(mut self, input: i32) -> Self {
             self.min_size = Some(input);
             self
         }
-        /// <p>The minimum number of instances that App Runner provisions for your service. The service always has at least <code>MinSize</code> provisioned instances.
-        /// Some of them actively serve traffic. The rest of them (provisioned and inactive instances) are a cost-effective compute capacity reserve and are ready to
-        /// be quickly activated. You pay for memory usage of all the provisioned instances. You pay for CPU usage of only the active subset.</p>
+        /// <p>The minimum number of instances that App Runner provisions for your service. The service always has at least <code>MinSize</code> provisioned instances. Some of them actively serve traffic. The rest of them (provisioned and inactive instances) are a cost-effective compute capacity reserve and are ready to be quickly activated. You pay for memory usage of all the provisioned instances. You pay for CPU usage of only the active subset.</p>
         /// <p>App Runner temporarily doubles the number of provisioned instances during deployments, to maintain the same capacity for both old and new code.</p>
-        /// <p>Default: <code>1</code>
-        /// </p>
+        /// <p>Default: <code>1</code> </p>
         pub fn set_min_size(mut self, input: std::option::Option<i32>) -> Self {
             self.min_size = input;
             self
         }
         /// <p>The maximum number of instances that your service scales up to. At most <code>MaxSize</code> instances actively serve traffic for your service.</p>
-        /// <p>Default: <code>25</code>
-        /// </p>
+        /// <p>Default: <code>25</code> </p>
         pub fn max_size(mut self, input: i32) -> Self {
             self.max_size = Some(input);
             self
         }
         /// <p>The maximum number of instances that your service scales up to. At most <code>MaxSize</code> instances actively serve traffic for your service.</p>
-        /// <p>Default: <code>25</code>
-        /// </p>
+        /// <p>Default: <code>25</code> </p>
         pub fn set_max_size(mut self, input: std::option::Option<i32>) -> Self {
             self.max_size = input;
             self
@@ -700,8 +678,7 @@ pub mod create_service_input {
             self.tags = input;
             self
         }
-        /// <p>An optional custom encryption key that App Runner uses to encrypt the copy of your source repository that it maintains and your service logs. By default,
-        /// App Runner uses an Amazon Web Services managed CMK.</p>
+        /// <p>An optional custom encryption key that App Runner uses to encrypt the copy of your source repository that it maintains and your service logs. By default, App Runner uses an Amazon Web Services managed CMK.</p>
         pub fn encryption_configuration(
             mut self,
             input: crate::model::EncryptionConfiguration,
@@ -709,8 +686,7 @@ pub mod create_service_input {
             self.encryption_configuration = Some(input);
             self
         }
-        /// <p>An optional custom encryption key that App Runner uses to encrypt the copy of your source repository that it maintains and your service logs. By default,
-        /// App Runner uses an Amazon Web Services managed CMK.</p>
+        /// <p>An optional custom encryption key that App Runner uses to encrypt the copy of your source repository that it maintains and your service logs. By default, App Runner uses an Amazon Web Services managed CMK.</p>
         pub fn set_encryption_configuration(
             mut self,
             input: std::option::Option<crate::model::EncryptionConfiguration>,
@@ -734,8 +710,7 @@ pub mod create_service_input {
             self.health_check_configuration = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with your service. If not provided, App Runner
-        /// associates the latest revision of a default auto scaling configuration.</p>
+        /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with your service. If not provided, App Runner associates the latest revision of a default auto scaling configuration.</p>
         pub fn auto_scaling_configuration_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -743,8 +718,7 @@ pub mod create_service_input {
             self.auto_scaling_configuration_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with your service. If not provided, App Runner
-        /// associates the latest revision of a default auto scaling configuration.</p>
+        /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with your service. If not provided, App Runner associates the latest revision of a default auto scaling configuration.</p>
         pub fn set_auto_scaling_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -902,10 +876,7 @@ pub mod delete_auto_scaling_configuration_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the App Runner auto scaling configuration that you want to delete.</p>
-        /// <p>The ARN can be a full auto scaling configuration ARN, or a partial ARN ending with either <code>.../<i>name</i>
-        /// </code> or
-        /// <code>.../<i>name</i>/<i>revision</i>
-        /// </code>. If a revision isn't specified, the latest active revision is deleted.</p>
+        /// <p>The ARN can be a full auto scaling configuration ARN, or a partial ARN ending with either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>. If a revision isn't specified, the latest active revision is deleted.</p>
         pub fn auto_scaling_configuration_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -914,10 +885,7 @@ pub mod delete_auto_scaling_configuration_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the App Runner auto scaling configuration that you want to delete.</p>
-        /// <p>The ARN can be a full auto scaling configuration ARN, or a partial ARN ending with either <code>.../<i>name</i>
-        /// </code> or
-        /// <code>.../<i>name</i>/<i>revision</i>
-        /// </code>. If a revision isn't specified, the latest active revision is deleted.</p>
+        /// <p>The ARN can be a full auto scaling configuration ARN, or a partial ARN ending with either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>. If a revision isn't specified, the latest active revision is deleted.</p>
         pub fn set_auto_scaling_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1383,11 +1351,7 @@ pub mod describe_auto_scaling_configuration_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the App Runner auto scaling configuration that you want a description for.</p>
-        /// <p>The ARN can be a full auto scaling configuration ARN, or a partial ARN ending with either <code>.../<i>name</i>
-        /// </code> or
-        /// <code>.../<i>name</i>/<i>revision</i>
-        /// </code>. If a revision isn't specified, the latest active revision is
-        /// described.</p>
+        /// <p>The ARN can be a full auto scaling configuration ARN, or a partial ARN ending with either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>. If a revision isn't specified, the latest active revision is described.</p>
         pub fn auto_scaling_configuration_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -1396,11 +1360,7 @@ pub mod describe_auto_scaling_configuration_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the App Runner auto scaling configuration that you want a description for.</p>
-        /// <p>The ARN can be a full auto scaling configuration ARN, or a partial ARN ending with either <code>.../<i>name</i>
-        /// </code> or
-        /// <code>.../<i>name</i>/<i>revision</i>
-        /// </code>. If a revision isn't specified, the latest active revision is
-        /// described.</p>
+        /// <p>The ARN can be a full auto scaling configuration ARN, or a partial ARN ending with either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>. If a revision isn't specified, the latest active revision is described.</p>
         pub fn set_auto_scaling_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1567,15 +1527,13 @@ pub mod describe_custom_domains_input {
             self.service_arn = input;
             self
         }
-        /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be
-        /// identical to the ones that are specified in the initial request.</p>
+        /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones that are specified in the initial request.</p>
         /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be
-        /// identical to the ones that are specified in the initial request.</p>
+        /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones that are specified in the initial request.</p>
         /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
@@ -2067,8 +2025,7 @@ pub mod list_auto_scaling_configurations_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the App Runner auto scaling configuration that you want to list. If specified, App Runner lists revisions that share this name. If not specified, App Runner
-        /// returns revisions of all configurations.</p>
+        /// <p>The name of the App Runner auto scaling configuration that you want to list. If specified, App Runner lists revisions that share this name. If not specified, App Runner returns revisions of all configurations.</p>
         pub fn auto_scaling_configuration_name(
             mut self,
             input: impl Into<std::string::String>,
@@ -2076,8 +2033,7 @@ pub mod list_auto_scaling_configurations_input {
             self.auto_scaling_configuration_name = Some(input.into());
             self
         }
-        /// <p>The name of the App Runner auto scaling configuration that you want to list. If specified, App Runner lists revisions that share this name. If not specified, App Runner
-        /// returns revisions of all configurations.</p>
+        /// <p>The name of the App Runner auto scaling configuration that you want to list. If specified, App Runner lists revisions that share this name. If not specified, App Runner returns revisions of all configurations.</p>
         pub fn set_auto_scaling_configuration_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2087,16 +2043,14 @@ pub mod list_auto_scaling_configurations_input {
         }
         /// <p>Set to <code>true</code> to list only the latest revision for each requested configuration name.</p>
         /// <p>Keep as <code>false</code> to list all revisions for each requested configuration name.</p>
-        /// <p>Default: <code>false</code>
-        /// </p>
+        /// <p>Default: <code>false</code> </p>
         pub fn latest_only(mut self, input: bool) -> Self {
             self.latest_only = Some(input);
             self
         }
         /// <p>Set to <code>true</code> to list only the latest revision for each requested configuration name.</p>
         /// <p>Keep as <code>false</code> to list all revisions for each requested configuration name.</p>
-        /// <p>Default: <code>false</code>
-        /// </p>
+        /// <p>Default: <code>false</code> </p>
         pub fn set_latest_only(mut self, input: std::option::Option<bool>) -> Self {
             self.latest_only = input;
             self
@@ -2113,15 +2067,13 @@ pub mod list_auto_scaling_configurations_input {
             self.max_results = input;
             self
         }
-        /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be
-        /// identical to the ones that are specified in the initial request.</p>
+        /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones that are specified in the initial request.</p>
         /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be
-        /// identical to the ones that are specified in the initial request.</p>
+        /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones that are specified in the initial request.</p>
         /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
@@ -2304,15 +2256,13 @@ pub mod list_connections_input {
             self.max_results = input;
             self
         }
-        /// <p>A token from a previous result page. Used for a paginated request. The request retrieves the next result page. All other parameter values must be
-        /// identical to the ones specified in the initial request.</p>
+        /// <p>A token from a previous result page. Used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones specified in the initial request.</p>
         /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token from a previous result page. Used for a paginated request. The request retrieves the next result page. All other parameter values must be
-        /// identical to the ones specified in the initial request.</p>
+        /// <p>A token from a previous result page. Used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones specified in the initial request.</p>
         /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
@@ -2476,15 +2426,13 @@ pub mod list_operations_input {
             self.service_arn = input;
             self
         }
-        /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be
-        /// identical to the ones specified in the initial request.</p>
+        /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones specified in the initial request.</p>
         /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be
-        /// identical to the ones specified in the initial request.</p>
+        /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones specified in the initial request.</p>
         /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
@@ -2649,15 +2597,13 @@ pub mod list_services_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>A token from a previous result page. Used for a paginated request. The request retrieves the next result page. All other parameter values must be
-        /// identical to the ones specified in the initial request.</p>
+        /// <p>A token from a previous result page. Used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones specified in the initial request.</p>
         /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token from a previous result page. Used for a paginated request. The request retrieves the next result page. All other parameter values must be
-        /// identical to the ones specified in the initial request.</p>
+        /// <p>A token from a previous result page. Used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones specified in the initial request.</p>
         /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
@@ -3454,16 +3400,14 @@ pub mod tag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of tag key-value pairs to add or update. If a key is new to the resource, the tag is added with the provided value. If a key is already
-        /// associated with the resource, the value of the tag is updated.</p>
+        /// <p>A list of tag key-value pairs to add or update. If a key is new to the resource, the tag is added with the provided value. If a key is already associated with the resource, the value of the tag is updated.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>A list of tag key-value pairs to add or update. If a key is new to the resource, the tag is added with the provided value. If a key is already
-        /// associated with the resource, the value of the tag is updated.</p>
+        /// <p>A list of tag key-value pairs to add or update. If a key is new to the resource, the tag is added with the provided value. If a key is already associated with the resource, the value of the tag is updated.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3807,19 +3751,13 @@ pub mod update_service_input {
             self
         }
         /// <p>The source configuration to apply to the App Runner service.</p>
-        /// <p>You can change the configuration of the code or image repository that the service uses. However, you can't switch from code to image or the other way
-        /// around. This means that you must provide the same structure member of <code>SourceConfiguration</code> that you originally included when you created the
-        /// service. Specifically, you can include either <code>CodeRepository</code> or <code>ImageRepository</code>. To update the source configuration, set the
-        /// values to members of the structure that you include.</p>
+        /// <p>You can change the configuration of the code or image repository that the service uses. However, you can't switch from code to image or the other way around. This means that you must provide the same structure member of <code>SourceConfiguration</code> that you originally included when you created the service. Specifically, you can include either <code>CodeRepository</code> or <code>ImageRepository</code>. To update the source configuration, set the values to members of the structure that you include.</p>
         pub fn source_configuration(mut self, input: crate::model::SourceConfiguration) -> Self {
             self.source_configuration = Some(input);
             self
         }
         /// <p>The source configuration to apply to the App Runner service.</p>
-        /// <p>You can change the configuration of the code or image repository that the service uses. However, you can't switch from code to image or the other way
-        /// around. This means that you must provide the same structure member of <code>SourceConfiguration</code> that you originally included when you created the
-        /// service. Specifically, you can include either <code>CodeRepository</code> or <code>ImageRepository</code>. To update the source configuration, set the
-        /// values to members of the structure that you include.</p>
+        /// <p>You can change the configuration of the code or image repository that the service uses. However, you can't switch from code to image or the other way around. This means that you must provide the same structure member of <code>SourceConfiguration</code> that you originally included when you created the service. Specifically, you can include either <code>CodeRepository</code> or <code>ImageRepository</code>. To update the source configuration, set the values to members of the structure that you include.</p>
         pub fn set_source_configuration(
             mut self,
             input: std::option::Option<crate::model::SourceConfiguration>,
@@ -4020,10 +3958,7 @@ pub struct UpdateServiceInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to update.</p>
     pub service_arn: std::option::Option<std::string::String>,
     /// <p>The source configuration to apply to the App Runner service.</p>
-    /// <p>You can change the configuration of the code or image repository that the service uses. However, you can't switch from code to image or the other way
-    /// around. This means that you must provide the same structure member of <code>SourceConfiguration</code> that you originally included when you created the
-    /// service. Specifically, you can include either <code>CodeRepository</code> or <code>ImageRepository</code>. To update the source configuration, set the
-    /// values to members of the structure that you include.</p>
+    /// <p>You can change the configuration of the code or image repository that the service uses. However, you can't switch from code to image or the other way around. This means that you must provide the same structure member of <code>SourceConfiguration</code> that you originally included when you created the service. Specifically, you can include either <code>CodeRepository</code> or <code>ImageRepository</code>. To update the source configuration, set the values to members of the structure that you include.</p>
     pub source_configuration: std::option::Option<crate::model::SourceConfiguration>,
     /// <p>The runtime configuration to apply to instances (scaling units) of the App Runner service.</p>
     pub instance_configuration: std::option::Option<crate::model::InstanceConfiguration>,
@@ -4038,10 +3973,7 @@ impl UpdateServiceInput {
         self.service_arn.as_deref()
     }
     /// <p>The source configuration to apply to the App Runner service.</p>
-    /// <p>You can change the configuration of the code or image repository that the service uses. However, you can't switch from code to image or the other way
-    /// around. This means that you must provide the same structure member of <code>SourceConfiguration</code> that you originally included when you created the
-    /// service. Specifically, you can include either <code>CodeRepository</code> or <code>ImageRepository</code>. To update the source configuration, set the
-    /// values to members of the structure that you include.</p>
+    /// <p>You can change the configuration of the code or image repository that the service uses. However, you can't switch from code to image or the other way around. This means that you must provide the same structure member of <code>SourceConfiguration</code> that you originally included when you created the service. Specifically, you can include either <code>CodeRepository</code> or <code>ImageRepository</code>. To update the source configuration, set the values to members of the structure that you include.</p>
     pub fn source_configuration(&self) -> std::option::Option<&crate::model::SourceConfiguration> {
         self.source_configuration.as_ref()
     }
@@ -4117,8 +4049,7 @@ pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to update tags for.</p>
     /// <p>It must be the ARN of an App Runner resource.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>A list of tag key-value pairs to add or update. If a key is new to the resource, the tag is added with the provided value. If a key is already
-    /// associated with the resource, the value of the tag is updated.</p>
+    /// <p>A list of tag key-value pairs to add or update. If a key is new to the resource, the tag is added with the provided value. If a key is already associated with the resource, the value of the tag is updated.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -4127,8 +4058,7 @@ impl TagResourceInput {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>A list of tag key-value pairs to add or update. If a key is new to the resource, the tag is added with the provided value. If a key is already
-    /// associated with the resource, the value of the tag is updated.</p>
+    /// <p>A list of tag key-value pairs to add or update. If a key is new to the resource, the tag is added with the provided value. If a key is already associated with the resource, the value of the tag is updated.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -4232,8 +4162,7 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServicesInput {
-    /// <p>A token from a previous result page. Used for a paginated request. The request retrieves the next result page. All other parameter values must be
-    /// identical to the ones specified in the initial request.</p>
+    /// <p>A token from a previous result page. Used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones specified in the initial request.</p>
     /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p>
@@ -4241,8 +4170,7 @@ pub struct ListServicesInput {
     pub max_results: std::option::Option<i32>,
 }
 impl ListServicesInput {
-    /// <p>A token from a previous result page. Used for a paginated request. The request retrieves the next result page. All other parameter values must be
-    /// identical to the ones specified in the initial request.</p>
+    /// <p>A token from a previous result page. Used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones specified in the initial request.</p>
     /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
@@ -4268,8 +4196,7 @@ impl std::fmt::Debug for ListServicesInput {
 pub struct ListOperationsInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want a list of operations for.</p>
     pub service_arn: std::option::Option<std::string::String>,
-    /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be
-    /// identical to the ones specified in the initial request.</p>
+    /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones specified in the initial request.</p>
     /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p>
@@ -4281,8 +4208,7 @@ impl ListOperationsInput {
     pub fn service_arn(&self) -> std::option::Option<&str> {
         self.service_arn.as_deref()
     }
-    /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be
-    /// identical to the ones specified in the initial request.</p>
+    /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones specified in the initial request.</p>
     /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
@@ -4312,8 +4238,7 @@ pub struct ListConnectionsInput {
     /// <p>The maximum number of results to include in each response (result page). Used for a paginated request.</p>
     /// <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>A token from a previous result page. Used for a paginated request. The request retrieves the next result page. All other parameter values must be
-    /// identical to the ones specified in the initial request.</p>
+    /// <p>A token from a previous result page. Used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones specified in the initial request.</p>
     /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
@@ -4327,8 +4252,7 @@ impl ListConnectionsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>A token from a previous result page. Used for a paginated request. The request retrieves the next result page. All other parameter values must be
-    /// identical to the ones specified in the initial request.</p>
+    /// <p>A token from a previous result page. Used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones specified in the initial request.</p>
     /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
@@ -4348,32 +4272,27 @@ impl std::fmt::Debug for ListConnectionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAutoScalingConfigurationsInput {
-    /// <p>The name of the App Runner auto scaling configuration that you want to list. If specified, App Runner lists revisions that share this name. If not specified, App Runner
-    /// returns revisions of all configurations.</p>
+    /// <p>The name of the App Runner auto scaling configuration that you want to list. If specified, App Runner lists revisions that share this name. If not specified, App Runner returns revisions of all configurations.</p>
     pub auto_scaling_configuration_name: std::option::Option<std::string::String>,
     /// <p>Set to <code>true</code> to list only the latest revision for each requested configuration name.</p>
     /// <p>Keep as <code>false</code> to list all revisions for each requested configuration name.</p>
-    /// <p>Default: <code>false</code>
-    /// </p>
+    /// <p>Default: <code>false</code> </p>
     pub latest_only: bool,
     /// <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p>
     /// <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be
-    /// identical to the ones that are specified in the initial request.</p>
+    /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones that are specified in the initial request.</p>
     /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAutoScalingConfigurationsInput {
-    /// <p>The name of the App Runner auto scaling configuration that you want to list. If specified, App Runner lists revisions that share this name. If not specified, App Runner
-    /// returns revisions of all configurations.</p>
+    /// <p>The name of the App Runner auto scaling configuration that you want to list. If specified, App Runner lists revisions that share this name. If not specified, App Runner returns revisions of all configurations.</p>
     pub fn auto_scaling_configuration_name(&self) -> std::option::Option<&str> {
         self.auto_scaling_configuration_name.as_deref()
     }
     /// <p>Set to <code>true</code> to list only the latest revision for each requested configuration name.</p>
     /// <p>Keep as <code>false</code> to list all revisions for each requested configuration name.</p>
-    /// <p>Default: <code>false</code>
-    /// </p>
+    /// <p>Default: <code>false</code> </p>
     pub fn latest_only(&self) -> bool {
         self.latest_only
     }
@@ -4382,8 +4301,7 @@ impl ListAutoScalingConfigurationsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be
-    /// identical to the ones that are specified in the initial request.</p>
+    /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones that are specified in the initial request.</p>
     /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
@@ -4458,8 +4376,7 @@ impl std::fmt::Debug for DescribeServiceInput {
 pub struct DescribeCustomDomainsInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want associated custom domain names to be described for.</p>
     pub service_arn: std::option::Option<std::string::String>,
-    /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be
-    /// identical to the ones that are specified in the initial request.</p>
+    /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones that are specified in the initial request.</p>
     /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results that each response (result page) can include. It's used for a paginated request.</p>
@@ -4471,8 +4388,7 @@ impl DescribeCustomDomainsInput {
     pub fn service_arn(&self) -> std::option::Option<&str> {
         self.service_arn.as_deref()
     }
-    /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be
-    /// identical to the ones that are specified in the initial request.</p>
+    /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones that are specified in the initial request.</p>
     /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
@@ -4498,20 +4414,12 @@ impl std::fmt::Debug for DescribeCustomDomainsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAutoScalingConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner auto scaling configuration that you want a description for.</p>
-    /// <p>The ARN can be a full auto scaling configuration ARN, or a partial ARN ending with either <code>.../<i>name</i>
-    /// </code> or
-    /// <code>.../<i>name</i>/<i>revision</i>
-    /// </code>. If a revision isn't specified, the latest active revision is
-    /// described.</p>
+    /// <p>The ARN can be a full auto scaling configuration ARN, or a partial ARN ending with either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>. If a revision isn't specified, the latest active revision is described.</p>
     pub auto_scaling_configuration_arn: std::option::Option<std::string::String>,
 }
 impl DescribeAutoScalingConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner auto scaling configuration that you want a description for.</p>
-    /// <p>The ARN can be a full auto scaling configuration ARN, or a partial ARN ending with either <code>.../<i>name</i>
-    /// </code> or
-    /// <code>.../<i>name</i>/<i>revision</i>
-    /// </code>. If a revision isn't specified, the latest active revision is
-    /// described.</p>
+    /// <p>The ARN can be a full auto scaling configuration ARN, or a partial ARN ending with either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>. If a revision isn't specified, the latest active revision is described.</p>
     pub fn auto_scaling_configuration_arn(&self) -> std::option::Option<&str> {
         self.auto_scaling_configuration_arn.as_deref()
     }
@@ -4574,18 +4482,12 @@ impl std::fmt::Debug for DeleteConnectionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAutoScalingConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner auto scaling configuration that you want to delete.</p>
-    /// <p>The ARN can be a full auto scaling configuration ARN, or a partial ARN ending with either <code>.../<i>name</i>
-    /// </code> or
-    /// <code>.../<i>name</i>/<i>revision</i>
-    /// </code>. If a revision isn't specified, the latest active revision is deleted.</p>
+    /// <p>The ARN can be a full auto scaling configuration ARN, or a partial ARN ending with either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>. If a revision isn't specified, the latest active revision is deleted.</p>
     pub auto_scaling_configuration_arn: std::option::Option<std::string::String>,
 }
 impl DeleteAutoScalingConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner auto scaling configuration that you want to delete.</p>
-    /// <p>The ARN can be a full auto scaling configuration ARN, or a partial ARN ending with either <code>.../<i>name</i>
-    /// </code> or
-    /// <code>.../<i>name</i>/<i>revision</i>
-    /// </code>. If a revision isn't specified, the latest active revision is deleted.</p>
+    /// <p>The ARN can be a full auto scaling configuration ARN, or a partial ARN ending with either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>. If a revision isn't specified, the latest active revision is deleted.</p>
     pub fn auto_scaling_configuration_arn(&self) -> std::option::Option<&str> {
         self.auto_scaling_configuration_arn.as_deref()
     }
@@ -4613,13 +4515,11 @@ pub struct CreateServiceInput {
     pub instance_configuration: std::option::Option<crate::model::InstanceConfiguration>,
     /// <p>An optional list of metadata items that you can associate with your service resource. A tag is a key-value pair.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>An optional custom encryption key that App Runner uses to encrypt the copy of your source repository that it maintains and your service logs. By default,
-    /// App Runner uses an Amazon Web Services managed CMK.</p>
+    /// <p>An optional custom encryption key that App Runner uses to encrypt the copy of your source repository that it maintains and your service logs. By default, App Runner uses an Amazon Web Services managed CMK.</p>
     pub encryption_configuration: std::option::Option<crate::model::EncryptionConfiguration>,
     /// <p>The settings for the health check that App Runner performs to monitor the health of your service.</p>
     pub health_check_configuration: std::option::Option<crate::model::HealthCheckConfiguration>,
-    /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with your service. If not provided, App Runner
-    /// associates the latest revision of a default auto scaling configuration.</p>
+    /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with your service. If not provided, App Runner associates the latest revision of a default auto scaling configuration.</p>
     pub auto_scaling_configuration_arn: std::option::Option<std::string::String>,
 }
 impl CreateServiceInput {
@@ -4641,8 +4541,7 @@ impl CreateServiceInput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>An optional custom encryption key that App Runner uses to encrypt the copy of your source repository that it maintains and your service logs. By default,
-    /// App Runner uses an Amazon Web Services managed CMK.</p>
+    /// <p>An optional custom encryption key that App Runner uses to encrypt the copy of your source repository that it maintains and your service logs. By default, App Runner uses an Amazon Web Services managed CMK.</p>
     pub fn encryption_configuration(
         &self,
     ) -> std::option::Option<&crate::model::EncryptionConfiguration> {
@@ -4654,8 +4553,7 @@ impl CreateServiceInput {
     ) -> std::option::Option<&crate::model::HealthCheckConfiguration> {
         self.health_check_configuration.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with your service. If not provided, App Runner
-    /// associates the latest revision of a default auto scaling configuration.</p>
+    /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with your service. If not provided, App Runner associates the latest revision of a default auto scaling configuration.</p>
     pub fn auto_scaling_configuration_arn(&self) -> std::option::Option<&str> {
         self.auto_scaling_configuration_arn.as_deref()
     }
@@ -4719,53 +4617,39 @@ impl std::fmt::Debug for CreateConnectionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAutoScalingConfigurationInput {
-    /// <p>A name for the auto scaling configuration. When you use it for the first time in an Amazon Web Services Region, App Runner creates revision number <code>1</code> of this
-    /// name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration.</p>
+    /// <p>A name for the auto scaling configuration. When you use it for the first time in an Amazon Web Services Region, App Runner creates revision number <code>1</code> of this name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration.</p>
     pub auto_scaling_configuration_name: std::option::Option<std::string::String>,
-    /// <p>The maximum number of concurrent requests that you want an instance to process. If the number of concurrent requests exceeds this limit, App Runner scales
-    /// up your service.</p>
-    /// <p>Default: <code>100</code>
-    /// </p>
+    /// <p>The maximum number of concurrent requests that you want an instance to process. If the number of concurrent requests exceeds this limit, App Runner scales up your service.</p>
+    /// <p>Default: <code>100</code> </p>
     pub max_concurrency: std::option::Option<i32>,
-    /// <p>The minimum number of instances that App Runner provisions for your service. The service always has at least <code>MinSize</code> provisioned instances.
-    /// Some of them actively serve traffic. The rest of them (provisioned and inactive instances) are a cost-effective compute capacity reserve and are ready to
-    /// be quickly activated. You pay for memory usage of all the provisioned instances. You pay for CPU usage of only the active subset.</p>
+    /// <p>The minimum number of instances that App Runner provisions for your service. The service always has at least <code>MinSize</code> provisioned instances. Some of them actively serve traffic. The rest of them (provisioned and inactive instances) are a cost-effective compute capacity reserve and are ready to be quickly activated. You pay for memory usage of all the provisioned instances. You pay for CPU usage of only the active subset.</p>
     /// <p>App Runner temporarily doubles the number of provisioned instances during deployments, to maintain the same capacity for both old and new code.</p>
-    /// <p>Default: <code>1</code>
-    /// </p>
+    /// <p>Default: <code>1</code> </p>
     pub min_size: std::option::Option<i32>,
     /// <p>The maximum number of instances that your service scales up to. At most <code>MaxSize</code> instances actively serve traffic for your service.</p>
-    /// <p>Default: <code>25</code>
-    /// </p>
+    /// <p>Default: <code>25</code> </p>
     pub max_size: std::option::Option<i32>,
     /// <p>A list of metadata items that you can associate with your auto scaling configuration resource. A tag is a key-value pair.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateAutoScalingConfigurationInput {
-    /// <p>A name for the auto scaling configuration. When you use it for the first time in an Amazon Web Services Region, App Runner creates revision number <code>1</code> of this
-    /// name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration.</p>
+    /// <p>A name for the auto scaling configuration. When you use it for the first time in an Amazon Web Services Region, App Runner creates revision number <code>1</code> of this name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration.</p>
     pub fn auto_scaling_configuration_name(&self) -> std::option::Option<&str> {
         self.auto_scaling_configuration_name.as_deref()
     }
-    /// <p>The maximum number of concurrent requests that you want an instance to process. If the number of concurrent requests exceeds this limit, App Runner scales
-    /// up your service.</p>
-    /// <p>Default: <code>100</code>
-    /// </p>
+    /// <p>The maximum number of concurrent requests that you want an instance to process. If the number of concurrent requests exceeds this limit, App Runner scales up your service.</p>
+    /// <p>Default: <code>100</code> </p>
     pub fn max_concurrency(&self) -> std::option::Option<i32> {
         self.max_concurrency
     }
-    /// <p>The minimum number of instances that App Runner provisions for your service. The service always has at least <code>MinSize</code> provisioned instances.
-    /// Some of them actively serve traffic. The rest of them (provisioned and inactive instances) are a cost-effective compute capacity reserve and are ready to
-    /// be quickly activated. You pay for memory usage of all the provisioned instances. You pay for CPU usage of only the active subset.</p>
+    /// <p>The minimum number of instances that App Runner provisions for your service. The service always has at least <code>MinSize</code> provisioned instances. Some of them actively serve traffic. The rest of them (provisioned and inactive instances) are a cost-effective compute capacity reserve and are ready to be quickly activated. You pay for memory usage of all the provisioned instances. You pay for CPU usage of only the active subset.</p>
     /// <p>App Runner temporarily doubles the number of provisioned instances during deployments, to maintain the same capacity for both old and new code.</p>
-    /// <p>Default: <code>1</code>
-    /// </p>
+    /// <p>Default: <code>1</code> </p>
     pub fn min_size(&self) -> std::option::Option<i32> {
         self.min_size
     }
     /// <p>The maximum number of instances that your service scales up to. At most <code>MaxSize</code> instances actively serve traffic for your service.</p>
-    /// <p>Default: <code>25</code>
-    /// </p>
+    /// <p>Default: <code>25</code> </p>
     pub fn max_size(&self) -> std::option::Option<i32> {
         self.max_size
     }
@@ -4795,14 +4679,10 @@ impl std::fmt::Debug for CreateAutoScalingConfigurationInput {
 pub struct AssociateCustomDomainInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to associate a custom domain name with.</p>
     pub service_arn: std::option::Option<std::string::String>,
-    /// <p>A custom domain endpoint to associate. Specify a root domain (for example, <code>example.com</code>), a subdomain (for example,
-    /// <code>login.example.com</code> or <code>admin.login.example.com</code>), or a wildcard (for example, <code>*.example.com</code>).</p>
+    /// <p>A custom domain endpoint to associate. Specify a root domain (for example, <code>example.com</code>), a subdomain (for example, <code>login.example.com</code> or <code>admin.login.example.com</code>), or a wildcard (for example, <code>*.example.com</code>).</p>
     pub domain_name: std::option::Option<std::string::String>,
-    /// <p>Set to <code>true</code> to associate the subdomain <code>www.<i>DomainName</i>
-    /// </code> with the App Runner service in addition to the base
-    /// domain.</p>
-    /// <p>Default: <code>true</code>
-    /// </p>
+    /// <p>Set to <code>true</code> to associate the subdomain <code>www.<i>DomainName</i> </code> with the App Runner service in addition to the base domain.</p>
+    /// <p>Default: <code>true</code> </p>
     pub enable_www_subdomain: std::option::Option<bool>,
 }
 impl AssociateCustomDomainInput {
@@ -4810,16 +4690,12 @@ impl AssociateCustomDomainInput {
     pub fn service_arn(&self) -> std::option::Option<&str> {
         self.service_arn.as_deref()
     }
-    /// <p>A custom domain endpoint to associate. Specify a root domain (for example, <code>example.com</code>), a subdomain (for example,
-    /// <code>login.example.com</code> or <code>admin.login.example.com</code>), or a wildcard (for example, <code>*.example.com</code>).</p>
+    /// <p>A custom domain endpoint to associate. Specify a root domain (for example, <code>example.com</code>), a subdomain (for example, <code>login.example.com</code> or <code>admin.login.example.com</code>), or a wildcard (for example, <code>*.example.com</code>).</p>
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
-    /// <p>Set to <code>true</code> to associate the subdomain <code>www.<i>DomainName</i>
-    /// </code> with the App Runner service in addition to the base
-    /// domain.</p>
-    /// <p>Default: <code>true</code>
-    /// </p>
+    /// <p>Set to <code>true</code> to associate the subdomain <code>www.<i>DomainName</i> </code> with the App Runner service in addition to the base domain.</p>
+    /// <p>Default: <code>true</code> </p>
     pub fn enable_www_subdomain(&self) -> std::option::Option<bool> {
         self.enable_www_subdomain
     }

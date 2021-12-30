@@ -380,14 +380,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -464,9 +462,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateAssistantAssociation`.
     ///
-    /// <p>Creates an association between an Amazon Connect Wisdom assistant and another resource. Currently, the
-    /// only supported association is with a knowledge base. An assistant can have only a single
-    /// association.</p>
+    /// <p>Creates an association between an Amazon Connect Wisdom assistant and another resource. Currently, the only supported association is with a knowledge base. An assistant can have only a single association.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAssistantAssociation<
         C = aws_smithy_client::erase::DynConnector,
@@ -559,14 +555,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_association(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -597,8 +591,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateContent`.
     ///
-    /// <p>Creates Wisdom content. Before to calling this API, use <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a> to
-    /// upload an asset.</p>
+    /// <p>Creates Wisdom content. Before to calling this API, use <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a> to upload an asset.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateContent<
         C = aws_smithy_client::erase::DynConnector,
@@ -668,16 +661,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_knowledge_base_id(input);
             self
         }
-        /// <p>The name of the content. Each piece of content in a knowledge base must have a unique
-        /// name. You can retrieve a piece of content using only its knowledge base and its name with the
-        /// <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_SearchContent.html">SearchContent</a> API.</p>
+        /// <p>The name of the content. Each piece of content in a knowledge base must have a unique name. You can retrieve a piece of content using only its knowledge base and its name with the <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_SearchContent.html">SearchContent</a> API.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the content. Each piece of content in a knowledge base must have a unique
-        /// name. You can retrieve a piece of content using only its knowledge base and its name with the
-        /// <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_SearchContent.html">SearchContent</a> API.</p>
+        /// <p>The name of the content. Each piece of content in a knowledge base must have a unique name. You can retrieve a piece of content using only its knowledge base and its name with the <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_SearchContent.html">SearchContent</a> API.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -692,14 +681,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_title(input);
             self
         }
-        /// <p>The URI you want to use for the article. If the knowledge base has a templateUri, setting
-        /// this argument overrides it for this piece of content.</p>
+        /// <p>The URI you want to use for the article. If the knowledge base has a templateUri, setting this argument overrides it for this piece of content.</p>
         pub fn override_link_out_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.override_link_out_uri(input.into());
             self
         }
-        /// <p>The URI you want to use for the article. If the knowledge base has a templateUri, setting
-        /// this argument overrides it for this piece of content.</p>
+        /// <p>The URI you want to use for the article. If the knowledge base has a templateUri, setting this argument overrides it for this piece of content.</p>
         pub fn set_override_link_out_uri(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -711,8 +698,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
         ///
-        /// <p>A key/value map to store attributes without affecting tagging or recommendations.
-        /// For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
+        /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
         pub fn metadata(
             mut self,
             k: impl Into<std::string::String>,
@@ -721,8 +707,7 @@ pub mod fluent_builders {
             self.inner = self.inner.metadata(k.into(), v.into());
             self
         }
-        /// <p>A key/value map to store attributes without affecting tagging or recommendations.
-        /// For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
+        /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
         pub fn set_metadata(
             mut self,
             input: std::option::Option<
@@ -742,14 +727,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_upload_id(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -780,29 +763,14 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateKnowledgeBase`.
     ///
-    /// <p>Creates a knowledge base.</p>
-    /// <note>
-    /// <p>When using this API, you cannot reuse <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/Welcome.html">Amazon AppIntegrations</a>
-    /// DataIntegrations with external knowledge bases such as Salesforce and ServiceNow. If you do,
-    /// you'll get an <code>InvalidRequestException</code> error. </p>
-    ///
-    /// <p>For example, you're programmatically managing your external knowledge base, and you want
-    /// to add or remove one of the fields that is being ingested from Salesforce. Do the
-    /// following:</p>
+    /// <p>Creates a knowledge base.</p> <note>
+    /// <p>When using this API, you cannot reuse <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/Welcome.html">Amazon AppIntegrations</a> DataIntegrations with external knowledge bases such as Salesforce and ServiceNow. If you do, you'll get an <code>InvalidRequestException</code> error. </p>
+    /// <p>For example, you're programmatically managing your external knowledge base, and you want to add or remove one of the fields that is being ingested from Salesforce. Do the following:</p>
     /// <ol>
-    /// <li>
-    /// <p>Call <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_DeleteKnowledgeBase.html">DeleteKnowledgeBase</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Call <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_DeleteDataIntegration.html">DeleteDataIntegration</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Call <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html">CreateDataIntegration</a> to recreate the DataIntegration or a create different
-    /// one.</p>
-    /// </li>
-    /// <li>
-    /// <p>Call CreateKnowledgeBase.</p>
-    /// </li>
+    /// <li> <p>Call <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_DeleteKnowledgeBase.html">DeleteKnowledgeBase</a>.</p> </li>
+    /// <li> <p>Call <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_DeleteDataIntegration.html">DeleteDataIntegration</a>.</p> </li>
+    /// <li> <p>Call <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html">CreateDataIntegration</a> to recreate the DataIntegration or a create different one.</p> </li>
+    /// <li> <p>Call CreateKnowledgeBase.</p> </li>
     /// </ol>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -861,14 +829,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -883,16 +849,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The type of knowledge base. Only CUSTOM knowledge bases allow you to upload your own content.
-        /// EXTERNAL knowledge bases support integrations with third-party systems whose content is
-        /// synchronized automatically. </p>
+        /// <p>The type of knowledge base. Only CUSTOM knowledge bases allow you to upload your own content. EXTERNAL knowledge bases support integrations with third-party systems whose content is synchronized automatically. </p>
         pub fn knowledge_base_type(mut self, input: crate::model::KnowledgeBaseType) -> Self {
             self.inner = self.inner.knowledge_base_type(input);
             self
         }
-        /// <p>The type of knowledge base. Only CUSTOM knowledge bases allow you to upload your own content.
-        /// EXTERNAL knowledge bases support integrations with third-party systems whose content is
-        /// synchronized automatically. </p>
+        /// <p>The type of knowledge base. Only CUSTOM knowledge bases allow you to upload your own content. EXTERNAL knowledge bases support integrations with third-party systems whose content is synchronized automatically. </p>
         pub fn set_knowledge_base_type(
             mut self,
             input: std::option::Option<crate::model::KnowledgeBaseType>,
@@ -900,14 +862,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_knowledge_base_type(input);
             self
         }
-        /// <p>The source of the knowledge base content. Only set this argument for EXTERNAL knowledge
-        /// bases.</p>
+        /// <p>The source of the knowledge base content. Only set this argument for EXTERNAL knowledge bases.</p>
         pub fn source_configuration(mut self, input: crate::model::SourceConfiguration) -> Self {
             self.inner = self.inner.source_configuration(input);
             self
         }
-        /// <p>The source of the knowledge base content. Only set this argument for EXTERNAL knowledge
-        /// bases.</p>
+        /// <p>The source of the knowledge base content. Only set this argument for EXTERNAL knowledge bases.</p>
         pub fn set_source_configuration(
             mut self,
             input: std::option::Option<crate::model::SourceConfiguration>,
@@ -983,9 +943,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateSession`.
     ///
-    /// <p>Creates a session. A session is a contextual container used for generating
-    /// recommendations. Amazon Connect creates a new Wisdom session for each contact on which Wisdom is
-    /// enabled.</p>
+    /// <p>Creates a session. A session is a contextual container used for generating recommendations. Amazon Connect creates a new Wisdom session for each contact on which Wisdom is enabled.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSession<
         C = aws_smithy_client::erase::DynConnector,
@@ -1042,14 +1000,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -1346,13 +1302,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteKnowledgeBase`.
     ///
-    /// <p>Deletes the knowledge base.</p>
-    /// <note>
-    /// <p>When you use this API to delete an external knowledge base such as Salesforce or
-    /// ServiceNow, you must also delete the <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/Welcome.html">Amazon AppIntegrations</a> DataIntegration.
-    /// This is because you can't reuse the DataIntegration after it's been associated with an
-    /// external knowledge base. However, you can delete and recreate it. See <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_DeleteDataIntegration.html">DeleteDataIntegration</a> and <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html">CreateDataIntegration</a> in the <i>Amazon AppIntegrations API
-    /// Reference</i>.</p>
+    /// <p>Deletes the knowledge base.</p> <note>
+    /// <p>When you use this API to delete an external knowledge base such as Salesforce or ServiceNow, you must also delete the <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/Welcome.html">Amazon AppIntegrations</a> DataIntegration. This is because you can't reuse the DataIntegration after it's been associated with an external knowledge base. However, you can delete and recreate it. See <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_DeleteDataIntegration.html">DeleteDataIntegration</a> and <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html">CreateDataIntegration</a> in the <i>Amazon AppIntegrations API Reference</i>.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteKnowledgeBase<
@@ -1818,10 +1769,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetRecommendations`.
     ///
-    /// <p>Retrieves recommendations for the specified session. To avoid retrieving the same
-    /// recommendations in subsequent calls, use <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_NotifyRecommendationsReceived.html">NotifyRecommendationsReceived</a>. This API supports long-polling behavior with the
-    /// <code>waitTimeSeconds</code> parameter. Short poll is the default behavior and only returns
-    /// recommendations already available. To perform a manual query against an assistant, use <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_QueryAssistant.html">QueryAssistant</a>.</p>
+    /// <p>Retrieves recommendations for the specified session. To avoid retrieving the same recommendations in subsequent calls, use <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_NotifyRecommendationsReceived.html">NotifyRecommendationsReceived</a>. This API supports long-polling behavior with the <code>waitTimeSeconds</code> parameter. Short poll is the default behavior and only returns recommendations already available. To perform a manual query against an assistant, use <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_QueryAssistant.html">QueryAssistant</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRecommendations<
         C = aws_smithy_client::erase::DynConnector,
@@ -1908,18 +1856,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The duration (in seconds) for which the call waits for a recommendation to be made
-        /// available before returning. If a recommendation is available, the call returns sooner than
-        /// <code>WaitTimeSeconds</code>. If no messages are available and the wait time expires, the
-        /// call returns successfully with an empty list.</p>
+        /// <p>The duration (in seconds) for which the call waits for a recommendation to be made available before returning. If a recommendation is available, the call returns sooner than <code>WaitTimeSeconds</code>. If no messages are available and the wait time expires, the call returns successfully with an empty list.</p>
         pub fn wait_time_seconds(mut self, input: i32) -> Self {
             self.inner = self.inner.wait_time_seconds(input);
             self
         }
-        /// <p>The duration (in seconds) for which the call waits for a recommendation to be made
-        /// available before returning. If a recommendation is available, the call returns sooner than
-        /// <code>WaitTimeSeconds</code>. If no messages are available and the wait time expires, the
-        /// call returns successfully with an empty list.</p>
+        /// <p>The duration (in seconds) for which the call waits for a recommendation to be made available before returning. If a recommendation is available, the call returns sooner than <code>WaitTimeSeconds</code>. If no messages are available and the wait time expires, the call returns successfully with an empty list.</p>
         pub fn set_wait_time_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_wait_time_seconds(input);
             self
@@ -2064,14 +2006,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2156,14 +2096,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2238,14 +2176,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2333,14 +2269,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2428,9 +2362,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `NotifyRecommendationsReceived`.
     ///
-    /// <p>Removes the specified recommendations from the specified assistant's queue of newly
-    /// available recommendations. You can use this API in conjunction with <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetRecommendations.html">GetRecommendations</a> and a <code>waitTimeSeconds</code> input for long-polling
-    /// behavior and avoiding duplicate recommendations.</p>
+    /// <p>Removes the specified recommendations from the specified assistant's queue of newly available recommendations. You can use this API in conjunction with <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetRecommendations.html">GetRecommendations</a> and a <code>waitTimeSeconds</code> input for long-polling behavior and avoiding duplicate recommendations.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct NotifyRecommendationsReceived<
         C = aws_smithy_client::erase::DynConnector,
@@ -2527,9 +2459,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `QueryAssistant`.
     ///
-    /// <p>Performs a manual search against the specified assistant. To retrieve recommendations for
-    /// an assistant, use <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetRecommendations.html">GetRecommendations</a>.
-    /// </p>
+    /// <p>Performs a manual search against the specified assistant. To retrieve recommendations for an assistant, use <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetRecommendations.html">GetRecommendations</a>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct QueryAssistant<
         C = aws_smithy_client::erase::DynConnector,
@@ -2606,14 +2536,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_query_text(input);
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2704,8 +2632,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SearchContent`.
     ///
-    /// <p>Searches for content in a specified knowledge base. Can be used to get a specific content
-    /// resource by its name.</p>
+    /// <p>Searches for content in a specified knowledge base. Can be used to get a specific content resource by its name.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchContent<
         C = aws_smithy_client::erase::DynConnector,
@@ -2762,14 +2689,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2870,14 +2795,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2918,10 +2841,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartContentUpload`.
     ///
-    /// <p>Get a URL to upload content to a knowledge base. To upload content, first make a PUT
-    /// request to the returned URL with your file, making sure to include the required headers. Then
-    /// use <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_CreateContent.html">CreateContent</a> to finalize the content creation process or <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_UpdateContent.html">UpdateContent</a> to modify an existing resource. You can only upload content to a
-    /// knowledge base of type CUSTOM.</p>
+    /// <p>Get a URL to upload content to a knowledge base. To upload content, first make a PUT request to the returned URL with your file, making sure to include the required headers. Then use <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_CreateContent.html">CreateContent</a> to finalize the content creation process or <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_UpdateContent.html">UpdateContent</a> to modify an existing resource. You can only upload content to a knowledge base of type CUSTOM.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartContentUpload<
         C = aws_smithy_client::erase::DynConnector,
@@ -3264,20 +3184,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_content_id(input);
             self
         }
-        /// <p>The <code>revisionId</code> of the content resource to update, taken from an earlier call
-        /// to <code>GetContent</code>, <code>GetContentSummary</code>, <code>SearchContent</code>, or
-        /// <code>ListContents</code>. If included, this argument acts as an optimistic lock to ensure
-        /// content was not modified since it was last read. If it has been modified, this API throws a
-        /// <code>PreconditionFailedException</code>.</p>
+        /// <p>The <code>revisionId</code> of the content resource to update, taken from an earlier call to <code>GetContent</code>, <code>GetContentSummary</code>, <code>SearchContent</code>, or <code>ListContents</code>. If included, this argument acts as an optimistic lock to ensure content was not modified since it was last read. If it has been modified, this API throws a <code>PreconditionFailedException</code>.</p>
         pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.revision_id(input.into());
             self
         }
-        /// <p>The <code>revisionId</code> of the content resource to update, taken from an earlier call
-        /// to <code>GetContent</code>, <code>GetContentSummary</code>, <code>SearchContent</code>, or
-        /// <code>ListContents</code>. If included, this argument acts as an optimistic lock to ensure
-        /// content was not modified since it was last read. If it has been modified, this API throws a
-        /// <code>PreconditionFailedException</code>.</p>
+        /// <p>The <code>revisionId</code> of the content resource to update, taken from an earlier call to <code>GetContent</code>, <code>GetContentSummary</code>, <code>SearchContent</code>, or <code>ListContents</code>. If included, this argument acts as an optimistic lock to ensure content was not modified since it was last read. If it has been modified, this API throws a <code>PreconditionFailedException</code>.</p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_revision_id(input);
             self
@@ -3292,16 +3204,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_title(input);
             self
         }
-        /// <p>The URI for the article. If the knowledge base has a templateUri, setting this argument
-        /// overrides it for this piece of content. To remove an existing <code>overrideLinkOurUri</code>,
-        /// exclude this argument and set <code>removeOverrideLinkOutUri</code> to true.</p>
+        /// <p>The URI for the article. If the knowledge base has a templateUri, setting this argument overrides it for this piece of content. To remove an existing <code>overrideLinkOurUri</code>, exclude this argument and set <code>removeOverrideLinkOutUri</code> to true.</p>
         pub fn override_link_out_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.override_link_out_uri(input.into());
             self
         }
-        /// <p>The URI for the article. If the knowledge base has a templateUri, setting this argument
-        /// overrides it for this piece of content. To remove an existing <code>overrideLinkOurUri</code>,
-        /// exclude this argument and set <code>removeOverrideLinkOutUri</code> to true.</p>
+        /// <p>The URI for the article. If the knowledge base has a templateUri, setting this argument overrides it for this piece of content. To remove an existing <code>overrideLinkOurUri</code>, exclude this argument and set <code>removeOverrideLinkOutUri</code> to true.</p>
         pub fn set_override_link_out_uri(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3326,9 +3234,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
         ///
-        /// <p>A key/value map to store attributes without affecting tagging or recommendations. For
-        /// example, when synchronizing data between an external system and Wisdom, you can store an
-        /// external version identifier as metadata to utilize for determining drift.</p>
+        /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
         pub fn metadata(
             mut self,
             k: impl Into<std::string::String>,
@@ -3337,9 +3243,7 @@ pub mod fluent_builders {
             self.inner = self.inner.metadata(k.into(), v.into());
             self
         }
-        /// <p>A key/value map to store attributes without affecting tagging or recommendations. For
-        /// example, when synchronizing data between an external system and Wisdom, you can store an
-        /// external version identifier as metadata to utilize for determining drift.</p>
+        /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
         pub fn set_metadata(
             mut self,
             input: std::option::Option<
@@ -3349,14 +3253,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_metadata(input);
             self
         }
-        /// <p>A pointer to the uploaded asset. This value is returned by <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>.
-        /// </p>
+        /// <p>A pointer to the uploaded asset. This value is returned by <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>. </p>
         pub fn upload_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.upload_id(input.into());
             self
         }
-        /// <p>A pointer to the uploaded asset. This value is returned by <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>.
-        /// </p>
+        /// <p>A pointer to the uploaded asset. This value is returned by <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>. </p>
         pub fn set_upload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_upload_id(input);
             self
@@ -3364,12 +3266,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateKnowledgeBaseTemplateUri`.
     ///
-    /// <p>Updates the template URI of a knowledge base. This is only supported for knowledge bases
-    /// of type EXTERNAL. Include a single variable in <code>${variable}</code> format; this
-    /// interpolated by Wisdom using ingested content. For example, if you ingest a Salesforce
-    /// article, it has an <code>Id</code> value, and you can set the template URI to
-    /// <code>https://myInstanceName.lightning.force.com/lightning/r/Knowledge__kav/*${Id}*/view</code>.
-    /// </p>
+    /// <p>Updates the template URI of a knowledge base. This is only supported for knowledge bases of type EXTERNAL. Include a single variable in <code>${variable}</code> format; this interpolated by Wisdom using ingested content. For example, if you ingest a Salesforce article, it has an <code>Id</code> value, and you can set the template URI to <code>https://myInstanceName.lightning.force.com/lightning/r/Knowledge__kav/*${Id}*/view</code>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateKnowledgeBaseTemplateUri<
         C = aws_smithy_client::erase::DynConnector,

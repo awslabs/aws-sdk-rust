@@ -14,15 +14,11 @@ pub struct DescribeEntitiesDetectionV2JobError {
 pub enum DescribeEntitiesDetectionV2JobErrorKind {
     /// <p> An internal server error occurred. Retry your request. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The request that you made is invalid. Check your request to determine why it's invalid
-    /// and then retry the request.</p>
+    /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check
-    /// the ARN and try your request again.</p>
+    /// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check the ARN and try your request again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p> You have made too many requests within a short period of time. Wait for a short time and
-    /// then try your request again. Contact customer support for more information about a service
-    /// limit increase. </p>
+    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again. Contact customer support for more information about a service limit increase. </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -163,15 +159,11 @@ pub struct DescribeICD10CMInferenceJobError {
 pub enum DescribeICD10CMInferenceJobErrorKind {
     /// <p> An internal server error occurred. Retry your request. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The request that you made is invalid. Check your request to determine why it's invalid
-    /// and then retry the request.</p>
+    /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check
-    /// the ARN and try your request again.</p>
+    /// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check the ARN and try your request again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p> You have made too many requests within a short period of time. Wait for a short time and
-    /// then try your request again. Contact customer support for more information about a service
-    /// limit increase. </p>
+    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again. Contact customer support for more information about a service limit increase. </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -295,15 +287,11 @@ pub struct DescribePHIDetectionJobError {
 pub enum DescribePHIDetectionJobErrorKind {
     /// <p> An internal server error occurred. Retry your request. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The request that you made is invalid. Check your request to determine why it's invalid
-    /// and then retry the request.</p>
+    /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check
-    /// the ARN and try your request again.</p>
+    /// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check the ARN and try your request again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p> You have made too many requests within a short period of time. Wait for a short time and
-    /// then try your request again. Contact customer support for more information about a service
-    /// limit increase. </p>
+    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again. Contact customer support for more information about a service limit increase. </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -425,15 +413,11 @@ pub struct DescribeRxNormInferenceJobError {
 pub enum DescribeRxNormInferenceJobErrorKind {
     /// <p> An internal server error occurred. Retry your request. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The request that you made is invalid. Check your request to determine why it's invalid
-    /// and then retry the request.</p>
+    /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check
-    /// the ARN and try your request again.</p>
+    /// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check the ARN and try your request again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p> You have made too many requests within a short period of time. Wait for a short time and
-    /// then try your request again. Contact customer support for more information about a service
-    /// limit increase. </p>
+    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again. Contact customer support for more information about a service limit increase. </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -555,21 +539,15 @@ pub struct DetectEntitiesError {
 pub enum DetectEntitiesErrorKind {
     /// <p> An internal server error occurred. Retry your request. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The input text was not in valid UTF-8 character encoding. Check your text then retry your
-    /// request.</p>
+    /// <p> The input text was not in valid UTF-8 character encoding. Check your text then retry your request.</p>
     InvalidEncodingException(crate::error::InvalidEncodingException),
-    /// <p> The request that you made is invalid. Check your request to determine why it's invalid
-    /// and then retry the request.</p>
+    /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p> The Amazon Comprehend Medical service is temporarily unavailable. Please wait and then retry your request.
-    /// </p>
+    /// <p> The Amazon Comprehend Medical service is temporarily unavailable. Please wait and then retry your request. </p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p> The size of the text you submitted exceeds the size limit. Reduce the size of the text or
-    /// use a smaller document and then retry your request. </p>
+    /// <p> The size of the text you submitted exceeds the size limit. Reduce the size of the text or use a smaller document and then retry your request. </p>
     TextSizeLimitExceededException(crate::error::TextSizeLimitExceededException),
-    /// <p> You have made too many requests within a short period of time. Wait for a short time and
-    /// then try your request again. Contact customer support for more information about a service
-    /// limit increase. </p>
+    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again. Contact customer support for more information about a service limit increase. </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -709,21 +687,15 @@ pub struct DetectEntitiesV2Error {
 pub enum DetectEntitiesV2ErrorKind {
     /// <p> An internal server error occurred. Retry your request. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The input text was not in valid UTF-8 character encoding. Check your text then retry your
-    /// request.</p>
+    /// <p> The input text was not in valid UTF-8 character encoding. Check your text then retry your request.</p>
     InvalidEncodingException(crate::error::InvalidEncodingException),
-    /// <p> The request that you made is invalid. Check your request to determine why it's invalid
-    /// and then retry the request.</p>
+    /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p> The Amazon Comprehend Medical service is temporarily unavailable. Please wait and then retry your request.
-    /// </p>
+    /// <p> The Amazon Comprehend Medical service is temporarily unavailable. Please wait and then retry your request. </p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p> The size of the text you submitted exceeds the size limit. Reduce the size of the text or
-    /// use a smaller document and then retry your request. </p>
+    /// <p> The size of the text you submitted exceeds the size limit. Reduce the size of the text or use a smaller document and then retry your request. </p>
     TextSizeLimitExceededException(crate::error::TextSizeLimitExceededException),
-    /// <p> You have made too many requests within a short period of time. Wait for a short time and
-    /// then try your request again. Contact customer support for more information about a service
-    /// limit increase. </p>
+    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again. Contact customer support for more information about a service limit increase. </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -863,21 +835,15 @@ pub struct DetectPHIError {
 pub enum DetectPHIErrorKind {
     /// <p> An internal server error occurred. Retry your request. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The input text was not in valid UTF-8 character encoding. Check your text then retry your
-    /// request.</p>
+    /// <p> The input text was not in valid UTF-8 character encoding. Check your text then retry your request.</p>
     InvalidEncodingException(crate::error::InvalidEncodingException),
-    /// <p> The request that you made is invalid. Check your request to determine why it's invalid
-    /// and then retry the request.</p>
+    /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p> The Amazon Comprehend Medical service is temporarily unavailable. Please wait and then retry your request.
-    /// </p>
+    /// <p> The Amazon Comprehend Medical service is temporarily unavailable. Please wait and then retry your request. </p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p> The size of the text you submitted exceeds the size limit. Reduce the size of the text or
-    /// use a smaller document and then retry your request. </p>
+    /// <p> The size of the text you submitted exceeds the size limit. Reduce the size of the text or use a smaller document and then retry your request. </p>
     TextSizeLimitExceededException(crate::error::TextSizeLimitExceededException),
-    /// <p> You have made too many requests within a short period of time. Wait for a short time and
-    /// then try your request again. Contact customer support for more information about a service
-    /// limit increase. </p>
+    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again. Contact customer support for more information about a service limit increase. </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1005,21 +971,15 @@ pub struct InferICD10CMError {
 pub enum InferICD10CMErrorKind {
     /// <p> An internal server error occurred. Retry your request. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The input text was not in valid UTF-8 character encoding. Check your text then retry your
-    /// request.</p>
+    /// <p> The input text was not in valid UTF-8 character encoding. Check your text then retry your request.</p>
     InvalidEncodingException(crate::error::InvalidEncodingException),
-    /// <p> The request that you made is invalid. Check your request to determine why it's invalid
-    /// and then retry the request.</p>
+    /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p> The Amazon Comprehend Medical service is temporarily unavailable. Please wait and then retry your request.
-    /// </p>
+    /// <p> The Amazon Comprehend Medical service is temporarily unavailable. Please wait and then retry your request. </p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p> The size of the text you submitted exceeds the size limit. Reduce the size of the text or
-    /// use a smaller document and then retry your request. </p>
+    /// <p> The size of the text you submitted exceeds the size limit. Reduce the size of the text or use a smaller document and then retry your request. </p>
     TextSizeLimitExceededException(crate::error::TextSizeLimitExceededException),
-    /// <p> You have made too many requests within a short period of time. Wait for a short time and
-    /// then try your request again. Contact customer support for more information about a service
-    /// limit increase. </p>
+    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again. Contact customer support for more information about a service limit increase. </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1159,21 +1119,15 @@ pub struct InferRxNormError {
 pub enum InferRxNormErrorKind {
     /// <p> An internal server error occurred. Retry your request. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The input text was not in valid UTF-8 character encoding. Check your text then retry your
-    /// request.</p>
+    /// <p> The input text was not in valid UTF-8 character encoding. Check your text then retry your request.</p>
     InvalidEncodingException(crate::error::InvalidEncodingException),
-    /// <p> The request that you made is invalid. Check your request to determine why it's invalid
-    /// and then retry the request.</p>
+    /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p> The Amazon Comprehend Medical service is temporarily unavailable. Please wait and then retry your request.
-    /// </p>
+    /// <p> The Amazon Comprehend Medical service is temporarily unavailable. Please wait and then retry your request. </p>
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
-    /// <p> The size of the text you submitted exceeds the size limit. Reduce the size of the text or
-    /// use a smaller document and then retry your request. </p>
+    /// <p> The size of the text you submitted exceeds the size limit. Reduce the size of the text or use a smaller document and then retry your request. </p>
     TextSizeLimitExceededException(crate::error::TextSizeLimitExceededException),
-    /// <p> You have made too many requests within a short period of time. Wait for a short time and
-    /// then try your request again. Contact customer support for more information about a service
-    /// limit increase. </p>
+    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again. Contact customer support for more information about a service limit increase. </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1307,15 +1261,11 @@ pub struct ListEntitiesDetectionV2JobsError {
 pub enum ListEntitiesDetectionV2JobsErrorKind {
     /// <p> An internal server error occurred. Retry your request. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The request that you made is invalid. Check your request to determine why it's invalid
-    /// and then retry the request.</p>
+    /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p> You have made too many requests within a short period of time. Wait for a short time and
-    /// then try your request again. Contact customer support for more information about a service
-    /// limit increase. </p>
+    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again. Contact customer support for more information about a service limit increase. </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>The filter that you specified for the operation is invalid. Check the filter values that
-    /// you entered and try your request again.</p>
+    /// <p>The filter that you specified for the operation is invalid. Check the filter values that you entered and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1437,15 +1387,11 @@ pub struct ListICD10CMInferenceJobsError {
 pub enum ListICD10CMInferenceJobsErrorKind {
     /// <p> An internal server error occurred. Retry your request. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The request that you made is invalid. Check your request to determine why it's invalid
-    /// and then retry the request.</p>
+    /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p> You have made too many requests within a short period of time. Wait for a short time and
-    /// then try your request again. Contact customer support for more information about a service
-    /// limit increase. </p>
+    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again. Contact customer support for more information about a service limit increase. </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>The filter that you specified for the operation is invalid. Check the filter values that
-    /// you entered and try your request again.</p>
+    /// <p>The filter that you specified for the operation is invalid. Check the filter values that you entered and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1567,15 +1513,11 @@ pub struct ListPHIDetectionJobsError {
 pub enum ListPHIDetectionJobsErrorKind {
     /// <p> An internal server error occurred. Retry your request. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The request that you made is invalid. Check your request to determine why it's invalid
-    /// and then retry the request.</p>
+    /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p> You have made too many requests within a short period of time. Wait for a short time and
-    /// then try your request again. Contact customer support for more information about a service
-    /// limit increase. </p>
+    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again. Contact customer support for more information about a service limit increase. </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>The filter that you specified for the operation is invalid. Check the filter values that
-    /// you entered and try your request again.</p>
+    /// <p>The filter that you specified for the operation is invalid. Check the filter values that you entered and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1697,15 +1639,11 @@ pub struct ListRxNormInferenceJobsError {
 pub enum ListRxNormInferenceJobsErrorKind {
     /// <p> An internal server error occurred. Retry your request. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The request that you made is invalid. Check your request to determine why it's invalid
-    /// and then retry the request.</p>
+    /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p> You have made too many requests within a short period of time. Wait for a short time and
-    /// then try your request again. Contact customer support for more information about a service
-    /// limit increase. </p>
+    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again. Contact customer support for more information about a service limit increase. </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>The filter that you specified for the operation is invalid. Check the filter values that
-    /// you entered and try your request again.</p>
+    /// <p>The filter that you specified for the operation is invalid. Check the filter values that you entered and try your request again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1827,15 +1765,11 @@ pub struct StartEntitiesDetectionV2JobError {
 pub enum StartEntitiesDetectionV2JobErrorKind {
     /// <p> An internal server error occurred. Retry your request. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The request that you made is invalid. Check your request to determine why it's invalid
-    /// and then retry the request.</p>
+    /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check
-    /// the ARN and try your request again.</p>
+    /// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check the ARN and try your request again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p> You have made too many requests within a short period of time. Wait for a short time and
-    /// then try your request again. Contact customer support for more information about a service
-    /// limit increase. </p>
+    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again. Contact customer support for more information about a service limit increase. </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1959,15 +1893,11 @@ pub struct StartICD10CMInferenceJobError {
 pub enum StartICD10CMInferenceJobErrorKind {
     /// <p> An internal server error occurred. Retry your request. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The request that you made is invalid. Check your request to determine why it's invalid
-    /// and then retry the request.</p>
+    /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check
-    /// the ARN and try your request again.</p>
+    /// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check the ARN and try your request again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p> You have made too many requests within a short period of time. Wait for a short time and
-    /// then try your request again. Contact customer support for more information about a service
-    /// limit increase. </p>
+    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again. Contact customer support for more information about a service limit increase. </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2089,15 +2019,11 @@ pub struct StartPHIDetectionJobError {
 pub enum StartPHIDetectionJobErrorKind {
     /// <p> An internal server error occurred. Retry your request. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The request that you made is invalid. Check your request to determine why it's invalid
-    /// and then retry the request.</p>
+    /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check
-    /// the ARN and try your request again.</p>
+    /// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check the ARN and try your request again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p> You have made too many requests within a short period of time. Wait for a short time and
-    /// then try your request again. Contact customer support for more information about a service
-    /// limit increase. </p>
+    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again. Contact customer support for more information about a service limit increase. </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2219,15 +2145,11 @@ pub struct StartRxNormInferenceJobError {
 pub enum StartRxNormInferenceJobErrorKind {
     /// <p> An internal server error occurred. Retry your request. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The request that you made is invalid. Check your request to determine why it's invalid
-    /// and then retry the request.</p>
+    /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check
-    /// the ARN and try your request again.</p>
+    /// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check the ARN and try your request again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p> You have made too many requests within a short period of time. Wait for a short time and
-    /// then try your request again. Contact customer support for more information about a service
-    /// limit increase. </p>
+    /// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again. Contact customer support for more information about a service limit increase. </p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2349,11 +2271,9 @@ pub struct StopEntitiesDetectionV2JobError {
 pub enum StopEntitiesDetectionV2JobErrorKind {
     /// <p> An internal server error occurred. Retry your request. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The request that you made is invalid. Check your request to determine why it's invalid
-    /// and then retry the request.</p>
+    /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check
-    /// the ARN and try your request again.</p>
+    /// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check the ARN and try your request again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2466,11 +2386,9 @@ pub struct StopICD10CMInferenceJobError {
 pub enum StopICD10CMInferenceJobErrorKind {
     /// <p> An internal server error occurred. Retry your request. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The request that you made is invalid. Check your request to determine why it's invalid
-    /// and then retry the request.</p>
+    /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check
-    /// the ARN and try your request again.</p>
+    /// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check the ARN and try your request again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2583,11 +2501,9 @@ pub struct StopPHIDetectionJobError {
 pub enum StopPHIDetectionJobErrorKind {
     /// <p> An internal server error occurred. Retry your request. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The request that you made is invalid. Check your request to determine why it's invalid
-    /// and then retry the request.</p>
+    /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check
-    /// the ARN and try your request again.</p>
+    /// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check the ARN and try your request again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2700,11 +2616,9 @@ pub struct StopRxNormInferenceJobError {
 pub enum StopRxNormInferenceJobErrorKind {
     /// <p> An internal server error occurred. Retry your request. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The request that you made is invalid. Check your request to determine why it's invalid
-    /// and then retry the request.</p>
+    /// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check
-    /// the ARN and try your request again.</p>
+    /// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check the ARN and try your request again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2802,8 +2716,7 @@ impl std::error::Error for StopRxNormInferenceJobError {
     }
 }
 
-/// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check
-/// the ARN and try your request again.</p>
+/// <p>The resource identified by the specified Amazon Resource Name (ARN) was not found. Check the ARN and try your request again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
@@ -2867,8 +2780,7 @@ impl ResourceNotFoundException {
     }
 }
 
-/// <p> The request that you made is invalid. Check your request to determine why it's invalid
-/// and then retry the request.</p>
+/// <p> The request that you made is invalid. Check your request to determine why it's invalid and then retry the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRequestException {
@@ -2996,9 +2908,7 @@ impl InternalServerException {
     }
 }
 
-/// <p> You have made too many requests within a short period of time. Wait for a short time and
-/// then try your request again. Contact customer support for more information about a service
-/// limit increase. </p>
+/// <p> You have made too many requests within a short period of time. Wait for a short time and then try your request again. Contact customer support for more information about a service limit increase. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyRequestsException {
@@ -3062,8 +2972,7 @@ impl TooManyRequestsException {
     }
 }
 
-/// <p>The filter that you specified for the operation is invalid. Check the filter values that
-/// you entered and try your request again.</p>
+/// <p>The filter that you specified for the operation is invalid. Check the filter values that you entered and try your request again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationException {
@@ -3127,8 +3036,7 @@ impl ValidationException {
     }
 }
 
-/// <p> The size of the text you submitted exceeds the size limit. Reduce the size of the text or
-/// use a smaller document and then retry your request. </p>
+/// <p> The size of the text you submitted exceeds the size limit. Reduce the size of the text or use a smaller document and then retry your request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TextSizeLimitExceededException {
@@ -3192,8 +3100,7 @@ impl TextSizeLimitExceededException {
     }
 }
 
-/// <p> The Amazon Comprehend Medical service is temporarily unavailable. Please wait and then retry your request.
-/// </p>
+/// <p> The Amazon Comprehend Medical service is temporarily unavailable. Please wait and then retry your request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceUnavailableException {
@@ -3257,8 +3164,7 @@ impl ServiceUnavailableException {
     }
 }
 
-/// <p> The input text was not in valid UTF-8 character encoding. Check your text then retry your
-/// request.</p>
+/// <p> The input text was not in valid UTF-8 character encoding. Check your text then retry your request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidEncodingException {

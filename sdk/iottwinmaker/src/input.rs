@@ -24,16 +24,14 @@ pub mod batch_put_property_values_input {
         ///
         /// To override the contents of this collection use [`set_entries`](Self::set_entries).
         ///
-        /// <p>An object that maps strings to the property value entries to set. Each string
-        /// in the mapping must be unique to this object.</p>
+        /// <p>An object that maps strings to the property value entries to set. Each string in the mapping must be unique to this object.</p>
         pub fn entries(mut self, input: crate::model::PropertyValueEntry) -> Self {
             let mut v = self.entries.unwrap_or_default();
             v.push(input);
             self.entries = Some(v);
             self
         }
-        /// <p>An object that maps strings to the property value entries to set. Each string
-        /// in the mapping must be unique to this object.</p>
+        /// <p>An object that maps strings to the property value entries to set. Each string in the mapping must be unique to this object.</p>
         pub fn set_entries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PropertyValueEntry>>,
@@ -228,14 +226,12 @@ pub mod create_component_type_input {
             self.workspace_id = input;
             self
         }
-        /// <p>A Boolean value that specifies whether an entity can have more than one component of
-        /// this type.</p>
+        /// <p>A Boolean value that specifies whether an entity can have more than one component of this type.</p>
         pub fn is_singleton(mut self, input: bool) -> Self {
             self.is_singleton = Some(input);
             self
         }
-        /// <p>A Boolean value that specifies whether an entity can have more than one component of
-        /// this type.</p>
+        /// <p>A Boolean value that specifies whether an entity can have more than one component of this type.</p>
         pub fn set_is_singleton(mut self, input: std::option::Option<bool>) -> Self {
             self.is_singleton = input;
             self
@@ -267,8 +263,7 @@ pub mod create_component_type_input {
         ///
         /// To override the contents of this collection use [`set_property_definitions`](Self::set_property_definitions).
         ///
-        /// <p>An object that maps strings to the property definitions in the component type. Each string
-        /// in the mapping must be unique to this object.</p>
+        /// <p>An object that maps strings to the property definitions in the component type. Each string in the mapping must be unique to this object.</p>
         pub fn property_definitions(
             mut self,
             k: impl Into<std::string::String>,
@@ -279,8 +274,7 @@ pub mod create_component_type_input {
             self.property_definitions = Some(hash_map);
             self
         }
-        /// <p>An object that maps strings to the property definitions in the component type. Each string
-        /// in the mapping must be unique to this object.</p>
+        /// <p>An object that maps strings to the property definitions in the component type. Each string in the mapping must be unique to this object.</p>
         pub fn set_property_definitions(
             mut self,
             input: std::option::Option<
@@ -316,8 +310,7 @@ pub mod create_component_type_input {
         ///
         /// To override the contents of this collection use [`set_functions`](Self::set_functions).
         ///
-        /// <p>An object that maps strings to the functions in the component type. Each string in the
-        /// mapping must be unique to this object.</p>
+        /// <p>An object that maps strings to the functions in the component type. Each string in the mapping must be unique to this object.</p>
         pub fn functions(
             mut self,
             k: impl Into<std::string::String>,
@@ -328,8 +321,7 @@ pub mod create_component_type_input {
             self.functions = Some(hash_map);
             self
         }
-        /// <p>An object that maps strings to the functions in the component type. Each string in the
-        /// mapping must be unique to this object.</p>
+        /// <p>An object that maps strings to the functions in the component type. Each string in the mapping must be unique to this object.</p>
         pub fn set_functions(
             mut self,
             input: std::option::Option<
@@ -602,8 +594,7 @@ pub mod create_entity_input {
         ///
         /// To override the contents of this collection use [`set_components`](Self::set_components).
         ///
-        /// <p>An object that maps strings to the components in the entity. Each string
-        /// in the mapping must be unique to this object.</p>
+        /// <p>An object that maps strings to the components in the entity. Each string in the mapping must be unique to this object.</p>
         pub fn components(
             mut self,
             k: impl Into<std::string::String>,
@@ -614,8 +605,7 @@ pub mod create_entity_input {
             self.components = Some(hash_map);
             self
         }
-        /// <p>An object that maps strings to the components in the entity. Each string
-        /// in the mapping must be unique to this object.</p>
+        /// <p>An object that maps strings to the components in the entity. Each string in the mapping must be unique to this object.</p>
         pub fn set_components(
             mut self,
             input: std::option::Option<
@@ -4691,14 +4681,12 @@ pub mod update_component_type_input {
             self.workspace_id = input;
             self
         }
-        /// <p>A Boolean value that specifies whether an entity can have more than one component of this
-        /// type.</p>
+        /// <p>A Boolean value that specifies whether an entity can have more than one component of this type.</p>
         pub fn is_singleton(mut self, input: bool) -> Self {
             self.is_singleton = Some(input);
             self
         }
-        /// <p>A Boolean value that specifies whether an entity can have more than one component of this
-        /// type.</p>
+        /// <p>A Boolean value that specifies whether an entity can have more than one component of this type.</p>
         pub fn set_is_singleton(mut self, input: std::option::Option<bool>) -> Self {
             self.is_singleton = input;
             self
@@ -4730,8 +4718,7 @@ pub mod update_component_type_input {
         ///
         /// To override the contents of this collection use [`set_property_definitions`](Self::set_property_definitions).
         ///
-        /// <p>An object that maps strings to the property definitions in the component type. Each string
-        /// in the mapping must be unique to this object.</p>
+        /// <p>An object that maps strings to the property definitions in the component type. Each string in the mapping must be unique to this object.</p>
         pub fn property_definitions(
             mut self,
             k: impl Into<std::string::String>,
@@ -4742,8 +4729,7 @@ pub mod update_component_type_input {
             self.property_definitions = Some(hash_map);
             self
         }
-        /// <p>An object that maps strings to the property definitions in the component type. Each string
-        /// in the mapping must be unique to this object.</p>
+        /// <p>An object that maps strings to the property definitions in the component type. Each string in the mapping must be unique to this object.</p>
         pub fn set_property_definitions(
             mut self,
             input: std::option::Option<
@@ -4779,8 +4765,7 @@ pub mod update_component_type_input {
         ///
         /// To override the contents of this collection use [`set_functions`](Self::set_functions).
         ///
-        /// <p>An object that maps strings to the functions in the component type. Each string
-        /// in the mapping must be unique to this object.</p>
+        /// <p>An object that maps strings to the functions in the component type. Each string in the mapping must be unique to this object.</p>
         pub fn functions(
             mut self,
             k: impl Into<std::string::String>,
@@ -4791,8 +4776,7 @@ pub mod update_component_type_input {
             self.functions = Some(hash_map);
             self
         }
-        /// <p>An object that maps strings to the functions in the component type. Each string
-        /// in the mapping must be unique to this object.</p>
+        /// <p>An object that maps strings to the functions in the component type. Each string in the mapping must be unique to this object.</p>
         pub fn set_functions(
             mut self,
             input: std::option::Option<
@@ -5037,8 +5021,7 @@ pub mod update_entity_input {
         ///
         /// To override the contents of this collection use [`set_component_updates`](Self::set_component_updates).
         ///
-        /// <p>An object that maps strings to the component updates in the request. Each string
-        /// in the mapping must be unique to this object.</p>
+        /// <p>An object that maps strings to the component updates in the request. Each string in the mapping must be unique to this object.</p>
         pub fn component_updates(
             mut self,
             k: impl Into<std::string::String>,
@@ -5049,8 +5032,7 @@ pub mod update_entity_input {
             self.component_updates = Some(hash_map);
             self
         }
-        /// <p>An object that maps strings to the component updates in the request. Each string
-        /// in the mapping must be unique to this object.</p>
+        /// <p>An object that maps strings to the component updates in the request. Each string in the mapping must be unique to this object.</p>
         pub fn set_component_updates(
             mut self,
             input: std::option::Option<
@@ -5788,8 +5770,7 @@ pub struct UpdateEntityInput {
     pub entity_name: std::option::Option<std::string::String>,
     /// <p>The description of the entity.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>An object that maps strings to the component updates in the request. Each string
-    /// in the mapping must be unique to this object.</p>
+    /// <p>An object that maps strings to the component updates in the request. Each string in the mapping must be unique to this object.</p>
     pub component_updates: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::ComponentUpdateRequest>,
     >,
@@ -5813,8 +5794,7 @@ impl UpdateEntityInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>An object that maps strings to the component updates in the request. Each string
-    /// in the mapping must be unique to this object.</p>
+    /// <p>An object that maps strings to the component updates in the request. Each string in the mapping must be unique to this object.</p>
     pub fn component_updates(
         &self,
     ) -> std::option::Option<
@@ -5848,22 +5828,19 @@ impl std::fmt::Debug for UpdateEntityInput {
 pub struct UpdateComponentTypeInput {
     /// <p>The ID of the workspace that contains the component type.</p>
     pub workspace_id: std::option::Option<std::string::String>,
-    /// <p>A Boolean value that specifies whether an entity can have more than one component of this
-    /// type.</p>
+    /// <p>A Boolean value that specifies whether an entity can have more than one component of this type.</p>
     pub is_singleton: std::option::Option<bool>,
     /// <p>The ID of the component type.</p>
     pub component_type_id: std::option::Option<std::string::String>,
     /// <p>The description of the component type.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>An object that maps strings to the property definitions in the component type. Each string
-    /// in the mapping must be unique to this object.</p>
+    /// <p>An object that maps strings to the property definitions in the component type. Each string in the mapping must be unique to this object.</p>
     pub property_definitions: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::PropertyDefinitionRequest>,
     >,
     /// <p>Specifies the component type that this component type extends.</p>
     pub extends_from: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>An object that maps strings to the functions in the component type. Each string
-    /// in the mapping must be unique to this object.</p>
+    /// <p>An object that maps strings to the functions in the component type. Each string in the mapping must be unique to this object.</p>
     pub functions: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::FunctionRequest>,
     >,
@@ -5873,8 +5850,7 @@ impl UpdateComponentTypeInput {
     pub fn workspace_id(&self) -> std::option::Option<&str> {
         self.workspace_id.as_deref()
     }
-    /// <p>A Boolean value that specifies whether an entity can have more than one component of this
-    /// type.</p>
+    /// <p>A Boolean value that specifies whether an entity can have more than one component of this type.</p>
     pub fn is_singleton(&self) -> std::option::Option<bool> {
         self.is_singleton
     }
@@ -5886,8 +5862,7 @@ impl UpdateComponentTypeInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>An object that maps strings to the property definitions in the component type. Each string
-    /// in the mapping must be unique to this object.</p>
+    /// <p>An object that maps strings to the property definitions in the component type. Each string in the mapping must be unique to this object.</p>
     pub fn property_definitions(
         &self,
     ) -> std::option::Option<
@@ -5899,8 +5874,7 @@ impl UpdateComponentTypeInput {
     pub fn extends_from(&self) -> std::option::Option<&[std::string::String]> {
         self.extends_from.as_deref()
     }
-    /// <p>An object that maps strings to the functions in the component type. Each string
-    /// in the mapping must be unique to this object.</p>
+    /// <p>An object that maps strings to the functions in the component type. Each string in the mapping must be unique to this object.</p>
     pub fn functions(
         &self,
     ) -> std::option::Option<
@@ -6654,8 +6628,7 @@ pub struct CreateEntityInput {
     pub entity_name: std::option::Option<std::string::String>,
     /// <p>The description of the entity.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>An object that maps strings to the components in the entity. Each string
-    /// in the mapping must be unique to this object.</p>
+    /// <p>An object that maps strings to the components in the entity. Each string in the mapping must be unique to this object.</p>
     pub components: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::ComponentRequest>,
     >,
@@ -6682,8 +6655,7 @@ impl CreateEntityInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>An object that maps strings to the components in the entity. Each string
-    /// in the mapping must be unique to this object.</p>
+    /// <p>An object that maps strings to the components in the entity. Each string in the mapping must be unique to this object.</p>
     pub fn components(
         &self,
     ) -> std::option::Option<
@@ -6723,22 +6695,19 @@ impl std::fmt::Debug for CreateEntityInput {
 pub struct CreateComponentTypeInput {
     /// <p>The ID of the workspace that contains the component type.</p>
     pub workspace_id: std::option::Option<std::string::String>,
-    /// <p>A Boolean value that specifies whether an entity can have more than one component of
-    /// this type.</p>
+    /// <p>A Boolean value that specifies whether an entity can have more than one component of this type.</p>
     pub is_singleton: std::option::Option<bool>,
     /// <p>The ID of the component type.</p>
     pub component_type_id: std::option::Option<std::string::String>,
     /// <p>The description of the component type.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>An object that maps strings to the property definitions in the component type. Each string
-    /// in the mapping must be unique to this object.</p>
+    /// <p>An object that maps strings to the property definitions in the component type. Each string in the mapping must be unique to this object.</p>
     pub property_definitions: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::PropertyDefinitionRequest>,
     >,
     /// <p>Specifies the parent component type to extend.</p>
     pub extends_from: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>An object that maps strings to the functions in the component type. Each string in the
-    /// mapping must be unique to this object.</p>
+    /// <p>An object that maps strings to the functions in the component type. Each string in the mapping must be unique to this object.</p>
     pub functions: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::FunctionRequest>,
     >,
@@ -6751,8 +6720,7 @@ impl CreateComponentTypeInput {
     pub fn workspace_id(&self) -> std::option::Option<&str> {
         self.workspace_id.as_deref()
     }
-    /// <p>A Boolean value that specifies whether an entity can have more than one component of
-    /// this type.</p>
+    /// <p>A Boolean value that specifies whether an entity can have more than one component of this type.</p>
     pub fn is_singleton(&self) -> std::option::Option<bool> {
         self.is_singleton
     }
@@ -6764,8 +6732,7 @@ impl CreateComponentTypeInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>An object that maps strings to the property definitions in the component type. Each string
-    /// in the mapping must be unique to this object.</p>
+    /// <p>An object that maps strings to the property definitions in the component type. Each string in the mapping must be unique to this object.</p>
     pub fn property_definitions(
         &self,
     ) -> std::option::Option<
@@ -6777,8 +6744,7 @@ impl CreateComponentTypeInput {
     pub fn extends_from(&self) -> std::option::Option<&[std::string::String]> {
         self.extends_from.as_deref()
     }
-    /// <p>An object that maps strings to the functions in the component type. Each string in the
-    /// mapping must be unique to this object.</p>
+    /// <p>An object that maps strings to the functions in the component type. Each string in the mapping must be unique to this object.</p>
     pub fn functions(
         &self,
     ) -> std::option::Option<
@@ -6815,8 +6781,7 @@ impl std::fmt::Debug for CreateComponentTypeInput {
 pub struct BatchPutPropertyValuesInput {
     /// <p>The ID of the workspace that contains the properties to set.</p>
     pub workspace_id: std::option::Option<std::string::String>,
-    /// <p>An object that maps strings to the property value entries to set. Each string
-    /// in the mapping must be unique to this object.</p>
+    /// <p>An object that maps strings to the property value entries to set. Each string in the mapping must be unique to this object.</p>
     pub entries: std::option::Option<std::vec::Vec<crate::model::PropertyValueEntry>>,
 }
 impl BatchPutPropertyValuesInput {
@@ -6824,8 +6789,7 @@ impl BatchPutPropertyValuesInput {
     pub fn workspace_id(&self) -> std::option::Option<&str> {
         self.workspace_id.as_deref()
     }
-    /// <p>An object that maps strings to the property value entries to set. Each string
-    /// in the mapping must be unique to this object.</p>
+    /// <p>An object that maps strings to the property value entries to set. Each string in the mapping must be unique to this object.</p>
     pub fn entries(&self) -> std::option::Option<&[crate::model::PropertyValueEntry]> {
         self.entries.as_deref()
     }

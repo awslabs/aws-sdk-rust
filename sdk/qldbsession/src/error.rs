@@ -12,8 +12,7 @@ pub struct SendCommandError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SendCommandErrorKind {
-    /// <p>Returned if the request is malformed or contains an error such as an invalid parameter
-    /// value or a missing required parameter.</p>
+    /// <p>Returned if the request is malformed or contains an error such as an invalid parameter value or a missing required parameter.</p>
     BadRequestException(crate::error::BadRequestException),
     /// <p>Returned when the request exceeds the processing capacity of the ledger.</p>
     CapacityExceededException(crate::error::CapacityExceededException),
@@ -21,8 +20,7 @@ pub enum SendCommandErrorKind {
     InvalidSessionException(crate::error::InvalidSessionException),
     /// <p>Returned if a resource limit such as number of active sessions is exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>Returned when a transaction cannot be written to the journal due to a failure in the
-    /// verification phase of <i>optimistic concurrency control</i> (OCC).</p>
+    /// <p>Returned when a transaction cannot be written to the journal due to a failure in the verification phase of <i>optimistic concurrency control</i> (OCC).</p>
     OccConflictException(crate::error::OccConflictException),
     /// <p>Returned when the rate of requests exceeds the allowed throughput.</p>
     RateExceededException(crate::error::RateExceededException),
@@ -198,8 +196,7 @@ impl RateExceededException {
     }
 }
 
-/// <p>Returned when a transaction cannot be written to the journal due to a failure in the
-/// verification phase of <i>optimistic concurrency control</i> (OCC).</p>
+/// <p>Returned when a transaction cannot be written to the journal due to a failure in the verification phase of <i>optimistic concurrency control</i> (OCC).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OccConflictException {
@@ -476,8 +473,7 @@ impl CapacityExceededException {
     }
 }
 
-/// <p>Returned if the request is malformed or contains an error such as an invalid parameter
-/// value or a missing required parameter.</p>
+/// <p>Returned if the request is malformed or contains an error such as an invalid parameter value or a missing required parameter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BadRequestException {

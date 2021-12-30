@@ -110,8 +110,7 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `StartMedicalStreamTranscription`.
     ///
-    /// <p>Starts a bidirectional HTTP/2 stream where audio is streamed to Amazon Transcribe Medical and the
-    /// transcription results are streamed to your application.</p>
+    /// <p>Starts a bidirectional HTTP/2 stream where audio is streamed to Amazon Transcribe Medical and the transcription results are streamed to your application.</p>
     #[derive(std::fmt::Debug)]
     pub struct StartMedicalStreamTranscription<
         C = aws_smithy_client::erase::DynConnector,
@@ -168,14 +167,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> Indicates the source language used in the input audio stream. For Amazon Transcribe Medical, this is US
-        /// English (en-US). </p>
+        /// <p> Indicates the source language used in the input audio stream. For Amazon Transcribe Medical, this is US English (en-US). </p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
             self.inner = self.inner.language_code(input);
             self
         }
-        /// <p> Indicates the source language used in the input audio stream. For Amazon Transcribe Medical, this is US
-        /// English (en-US). </p>
+        /// <p> Indicates the source language used in the input audio stream. For Amazon Transcribe Medical, this is US English (en-US). </p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -206,14 +203,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_media_encoding(input);
             self
         }
-        /// <p>The name of the medical custom vocabulary to use when processing the real-time
-        /// stream.</p>
+        /// <p>The name of the medical custom vocabulary to use when processing the real-time stream.</p>
         pub fn vocabulary_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.vocabulary_name(input.into());
             self
         }
-        /// <p>The name of the medical custom vocabulary to use when processing the real-time
-        /// stream.</p>
+        /// <p>The name of the medical custom vocabulary to use when processing the real-time stream.</p>
         pub fn set_vocabulary_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -234,40 +229,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_specialty(input);
             self
         }
-        /// <p>The type of input audio. Choose <code>DICTATION</code> for a provider dictating
-        /// patient notes. Choose <code>CONVERSATION</code> for a dialogue between a patient and one
-        /// or more medical professionanls.</p>
+        /// <p>The type of input audio. Choose <code>DICTATION</code> for a provider dictating patient notes. Choose <code>CONVERSATION</code> for a dialogue between a patient and one or more medical professionanls.</p>
         pub fn r#type(mut self, input: crate::model::Type) -> Self {
             self.inner = self.inner.r#type(input);
             self
         }
-        /// <p>The type of input audio. Choose <code>DICTATION</code> for a provider dictating
-        /// patient notes. Choose <code>CONVERSATION</code> for a dialogue between a patient and one
-        /// or more medical professionanls.</p>
+        /// <p>The type of input audio. Choose <code>DICTATION</code> for a provider dictating patient notes. Choose <code>CONVERSATION</code> for a dialogue between a patient and one or more medical professionanls.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::Type>) -> Self {
             self.inner = self.inner.set_type(input);
             self
         }
-        /// <p>When <code>true</code>, enables speaker identification in your real-time
-        /// stream.</p>
+        /// <p>When <code>true</code>, enables speaker identification in your real-time stream.</p>
         pub fn show_speaker_label(mut self, input: bool) -> Self {
             self.inner = self.inner.show_speaker_label(input);
             self
         }
-        /// <p>When <code>true</code>, enables speaker identification in your real-time
-        /// stream.</p>
+        /// <p>When <code>true</code>, enables speaker identification in your real-time stream.</p>
         pub fn set_show_speaker_label(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_show_speaker_label(input);
             self
         }
-        /// <p> Optional. An identifier for the transcription session. If you don't provide a session
-        /// ID, Amazon Transcribe generates one for you and returns it in the response. </p>
+        /// <p> Optional. An identifier for the transcription session. If you don't provide a session ID, Amazon Transcribe generates one for you and returns it in the response. </p>
         pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.session_id(input.into());
             self
         }
-        /// <p> Optional. An identifier for the transcription session. If you don't provide a session
-        /// ID, Amazon Transcribe generates one for you and returns it in the response. </p>
+        /// <p> Optional. An identifier for the transcription session. If you don't provide a session ID, Amazon Transcribe generates one for you and returns it in the response. </p>
         pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_session_id(input);
             self
@@ -290,24 +277,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_audio_stream(input);
             self
         }
-        /// <p>When <code>true</code>, instructs Amazon Transcribe Medical to process each audio channel separately and
-        /// then merge the transcription output of each channel into a single transcription.</p>
-        /// <p>Amazon Transcribe Medical also produces a transcription of each item. An item includes the start time,
-        /// end time, and any alternative transcriptions.</p>
-        /// <p>You can't set both <code>ShowSpeakerLabel</code> and
-        /// <code>EnableChannelIdentification</code> in the same request. If you set both, your
-        /// request returns a <code>BadRequestException</code>.</p>
+        /// <p>When <code>true</code>, instructs Amazon Transcribe Medical to process each audio channel separately and then merge the transcription output of each channel into a single transcription.</p>
+        /// <p>Amazon Transcribe Medical also produces a transcription of each item. An item includes the start time, end time, and any alternative transcriptions.</p>
+        /// <p>You can't set both <code>ShowSpeakerLabel</code> and <code>EnableChannelIdentification</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>
         pub fn enable_channel_identification(mut self, input: bool) -> Self {
             self.inner = self.inner.enable_channel_identification(input);
             self
         }
-        /// <p>When <code>true</code>, instructs Amazon Transcribe Medical to process each audio channel separately and
-        /// then merge the transcription output of each channel into a single transcription.</p>
-        /// <p>Amazon Transcribe Medical also produces a transcription of each item. An item includes the start time,
-        /// end time, and any alternative transcriptions.</p>
-        /// <p>You can't set both <code>ShowSpeakerLabel</code> and
-        /// <code>EnableChannelIdentification</code> in the same request. If you set both, your
-        /// request returns a <code>BadRequestException</code>.</p>
+        /// <p>When <code>true</code>, instructs Amazon Transcribe Medical to process each audio channel separately and then merge the transcription output of each channel into a single transcription.</p>
+        /// <p>Amazon Transcribe Medical also produces a transcription of each item. An item includes the start time, end time, and any alternative transcriptions.</p>
+        /// <p>You can't set both <code>ShowSpeakerLabel</code> and <code>EnableChannelIdentification</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>
         pub fn set_enable_channel_identification(
             mut self,
             input: std::option::Option<bool>,
@@ -325,8 +304,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_number_of_channels(input);
             self
         }
-        /// <p>Set this field to <code>PHI</code> to identify personal health information in the
-        /// transcription output.</p>
+        /// <p>Set this field to <code>PHI</code> to identify personal health information in the transcription output.</p>
         pub fn content_identification_type(
             mut self,
             input: crate::model::MedicalContentIdentificationType,
@@ -334,8 +312,7 @@ pub mod fluent_builders {
             self.inner = self.inner.content_identification_type(input);
             self
         }
-        /// <p>Set this field to <code>PHI</code> to identify personal health information in the
-        /// transcription output.</p>
+        /// <p>Set this field to <code>PHI</code> to identify personal health information in the transcription output.</p>
         pub fn set_content_identification_type(
             mut self,
             input: std::option::Option<crate::model::MedicalContentIdentificationType>,
@@ -346,22 +323,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartStreamTranscription`.
     ///
-    /// <p>Starts a bidirectional HTTP/2 stream where audio is streamed to Amazon Transcribe and the transcription
-    /// results are streamed to your application.</p>
+    /// <p>Starts a bidirectional HTTP/2 stream where audio is streamed to Amazon Transcribe and the transcription results are streamed to your application.</p>
     /// <p>The following are encoded as HTTP/2 headers:</p>
     /// <ul>
-    /// <li>
-    /// <p>x-amzn-transcribe-language-code</p>
-    /// </li>
-    /// <li>
-    /// <p>x-amzn-transcribe-media-encoding</p>
-    /// </li>
-    /// <li>
-    /// <p>x-amzn-transcribe-sample-rate</p>
-    /// </li>
-    /// <li>
-    /// <p>x-amzn-transcribe-session-id</p>
-    /// </li>
+    /// <li> <p>x-amzn-transcribe-language-code</p> </li>
+    /// <li> <p>x-amzn-transcribe-media-encoding</p> </li>
+    /// <li> <p>x-amzn-transcribe-sample-rate</p> </li>
+    /// <li> <p>x-amzn-transcribe-session-id</p> </li>
     /// </ul>
     /// <p>See the <a href="https://docs.aws.amazon.com/sdk-for-go/api/service/transcribestreamingservice/#TranscribeStreamingService.StartStreamTranscription"> SDK for Go API Reference</a> for more detail.</p>
     #[derive(std::fmt::Debug)]
@@ -433,14 +401,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_language_code(input);
             self
         }
-        /// <p>The sample rate, in Hertz (Hz), of the input audio. We suggest that you use 8,000 Hz
-        /// for low quality audio and 16,000 Hz or higher for high quality audio.</p>
+        /// <p>The sample rate, in Hertz (Hz), of the input audio. We suggest that you use 8,000 Hz for low quality audio and 16,000 Hz or higher for high quality audio.</p>
         pub fn media_sample_rate_hertz(mut self, input: i32) -> Self {
             self.inner = self.inner.media_sample_rate_hertz(input);
             self
         }
-        /// <p>The sample rate, in Hertz (Hz), of the input audio. We suggest that you use 8,000 Hz
-        /// for low quality audio and 16,000 Hz or higher for high quality audio.</p>
+        /// <p>The sample rate, in Hertz (Hz), of the input audio. We suggest that you use 8,000 Hz for low quality audio and 16,000 Hz or higher for high quality audio.</p>
         pub fn set_media_sample_rate_hertz(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_media_sample_rate_hertz(input);
             self
@@ -471,22 +437,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_vocabulary_name(input);
             self
         }
-        /// <p>A identifier for the transcription session. Use this parameter when you want to retry a
-        /// session. If you don't provide a session ID, Amazon Transcribe will generate one for you and return it in
-        /// the response.</p>
+        /// <p>A identifier for the transcription session. Use this parameter when you want to retry a session. If you don't provide a session ID, Amazon Transcribe will generate one for you and return it in the response.</p>
         pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.session_id(input.into());
             self
         }
-        /// <p>A identifier for the transcription session. Use this parameter when you want to retry a
-        /// session. If you don't provide a session ID, Amazon Transcribe will generate one for you and return it in
-        /// the response.</p>
+        /// <p>A identifier for the transcription session. Use this parameter when you want to retry a session. If you don't provide a session ID, Amazon Transcribe will generate one for you and return it in the response.</p>
         pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_session_id(input);
             self
         }
-        /// <p>PCM-encoded stream of audio blobs. The audio stream is encoded as an HTTP/2 data
-        /// frame.</p>
+        /// <p>PCM-encoded stream of audio blobs. The audio stream is encoded as an HTTP/2 data frame.</p>
         pub fn audio_stream(
             mut self,
             input: aws_smithy_http::event_stream::EventStreamInput<crate::model::AudioStream>,
@@ -494,8 +455,7 @@ pub mod fluent_builders {
             self.inner = self.inner.audio_stream(input);
             self
         }
-        /// <p>PCM-encoded stream of audio blobs. The audio stream is encoded as an HTTP/2 data
-        /// frame.</p>
+        /// <p>PCM-encoded stream of audio blobs. The audio stream is encoded as an HTTP/2 data frame.</p>
         pub fn set_audio_stream(
             mut self,
             input: std::option::Option<
@@ -505,14 +465,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_audio_stream(input);
             self
         }
-        /// <p>The name of the vocabulary filter you've created that is unique to your account.
-        /// Provide the name in this field to successfully use it in a stream.</p>
+        /// <p>The name of the vocabulary filter you've created that is unique to your account. Provide the name in this field to successfully use it in a stream.</p>
         pub fn vocabulary_filter_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.vocabulary_filter_name(input.into());
             self
         }
-        /// <p>The name of the vocabulary filter you've created that is unique to your account.
-        /// Provide the name in this field to successfully use it in a stream.</p>
+        /// <p>The name of the vocabulary filter you've created that is unique to your account. Provide the name in this field to successfully use it in a stream.</p>
         pub fn set_vocabulary_filter_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -520,12 +478,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_vocabulary_filter_name(input);
             self
         }
-        /// <p>The manner in which you use your vocabulary filter to filter words in your transcript.
-        /// <code>Remove</code> removes filtered words from your transcription results.
-        /// <code>Mask</code> masks filtered words with a <code>***</code> in your transcription
-        /// results. <code>Tag</code> keeps the filtered words in your transcription results and tags
-        /// them. The tag appears as <code>VocabularyFilterMatch</code> equal to
-        /// <code>True</code>.</p>
+        /// <p>The manner in which you use your vocabulary filter to filter words in your transcript. <code>Remove</code> removes filtered words from your transcription results. <code>Mask</code> masks filtered words with a <code>***</code> in your transcription results. <code>Tag</code> keeps the filtered words in your transcription results and tags them. The tag appears as <code>VocabularyFilterMatch</code> equal to <code>True</code>.</p>
         pub fn vocabulary_filter_method(
             mut self,
             input: crate::model::VocabularyFilterMethod,
@@ -533,12 +486,7 @@ pub mod fluent_builders {
             self.inner = self.inner.vocabulary_filter_method(input);
             self
         }
-        /// <p>The manner in which you use your vocabulary filter to filter words in your transcript.
-        /// <code>Remove</code> removes filtered words from your transcription results.
-        /// <code>Mask</code> masks filtered words with a <code>***</code> in your transcription
-        /// results. <code>Tag</code> keeps the filtered words in your transcription results and tags
-        /// them. The tag appears as <code>VocabularyFilterMatch</code> equal to
-        /// <code>True</code>.</p>
+        /// <p>The manner in which you use your vocabulary filter to filter words in your transcript. <code>Remove</code> removes filtered words from your transcription results. <code>Mask</code> masks filtered words with a <code>***</code> in your transcription results. <code>Tag</code> keeps the filtered words in your transcription results and tags them. The tag appears as <code>VocabularyFilterMatch</code> equal to <code>True</code>.</p>
         pub fn set_vocabulary_filter_method(
             mut self,
             input: std::option::Option<crate::model::VocabularyFilterMethod>,
@@ -556,24 +504,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_show_speaker_label(input);
             self
         }
-        /// <p>When <code>true</code>, instructs Amazon Transcribe to process each audio channel separately,
-        /// then merges the transcription output of each channel into a single transcription.</p>
-        /// <p>Amazon Transcribe also produces a transcription of each item. An item includes the start time, end
-        /// time, and any alternative transcriptions.</p>
-        /// <p>You can't set both <code>ShowSpeakerLabel</code> and
-        /// <code>EnableChannelIdentification</code> in the same request. If you set both, your request
-        /// returns a <code>BadRequestException</code>.</p>
+        /// <p>When <code>true</code>, instructs Amazon Transcribe to process each audio channel separately, then merges the transcription output of each channel into a single transcription.</p>
+        /// <p>Amazon Transcribe also produces a transcription of each item. An item includes the start time, end time, and any alternative transcriptions.</p>
+        /// <p>You can't set both <code>ShowSpeakerLabel</code> and <code>EnableChannelIdentification</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>
         pub fn enable_channel_identification(mut self, input: bool) -> Self {
             self.inner = self.inner.enable_channel_identification(input);
             self
         }
-        /// <p>When <code>true</code>, instructs Amazon Transcribe to process each audio channel separately,
-        /// then merges the transcription output of each channel into a single transcription.</p>
-        /// <p>Amazon Transcribe also produces a transcription of each item. An item includes the start time, end
-        /// time, and any alternative transcriptions.</p>
-        /// <p>You can't set both <code>ShowSpeakerLabel</code> and
-        /// <code>EnableChannelIdentification</code> in the same request. If you set both, your request
-        /// returns a <code>BadRequestException</code>.</p>
+        /// <p>When <code>true</code>, instructs Amazon Transcribe to process each audio channel separately, then merges the transcription output of each channel into a single transcription.</p>
+        /// <p>Amazon Transcribe also produces a transcription of each item. An item includes the start time, end time, and any alternative transcriptions.</p>
+        /// <p>You can't set both <code>ShowSpeakerLabel</code> and <code>EnableChannelIdentification</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>
         pub fn set_enable_channel_identification(
             mut self,
             input: std::option::Option<bool>,
@@ -591,18 +531,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_number_of_channels(input);
             self
         }
-        /// <p>When <code>true</code>, instructs Amazon Transcribe to present transcription results that have the
-        /// partial results stabilized. Normally, any word or phrase from one partial result can change in
-        /// a subsequent partial result. With partial results stabilization enabled, only the last few
-        /// words of one partial result can change in another partial result.</p>
+        /// <p>When <code>true</code>, instructs Amazon Transcribe to present transcription results that have the partial results stabilized. Normally, any word or phrase from one partial result can change in a subsequent partial result. With partial results stabilization enabled, only the last few words of one partial result can change in another partial result.</p>
         pub fn enable_partial_results_stabilization(mut self, input: bool) -> Self {
             self.inner = self.inner.enable_partial_results_stabilization(input);
             self
         }
-        /// <p>When <code>true</code>, instructs Amazon Transcribe to present transcription results that have the
-        /// partial results stabilized. Normally, any word or phrase from one partial result can change in
-        /// a subsequent partial result. With partial results stabilization enabled, only the last few
-        /// words of one partial result can change in another partial result.</p>
+        /// <p>When <code>true</code>, instructs Amazon Transcribe to present transcription results that have the partial results stabilized. Normally, any word or phrase from one partial result can change in a subsequent partial result. With partial results stabilization enabled, only the last few words of one partial result can change in another partial result.</p>
         pub fn set_enable_partial_results_stabilization(
             mut self,
             input: std::option::Option<bool>,
@@ -610,9 +544,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_enable_partial_results_stabilization(input);
             self
         }
-        /// <p>You can use this field to set the stability level of the transcription results. A higher
-        /// stability level means that the transcription results are less likely to change. Higher
-        /// stability levels can come with lower overall transcription accuracy.</p>
+        /// <p>You can use this field to set the stability level of the transcription results. A higher stability level means that the transcription results are less likely to change. Higher stability levels can come with lower overall transcription accuracy.</p>
         pub fn partial_results_stability(
             mut self,
             input: crate::model::PartialResultsStability,
@@ -620,9 +552,7 @@ pub mod fluent_builders {
             self.inner = self.inner.partial_results_stability(input);
             self
         }
-        /// <p>You can use this field to set the stability level of the transcription results. A higher
-        /// stability level means that the transcription results are less likely to change. Higher
-        /// stability levels can come with lower overall transcription accuracy.</p>
+        /// <p>You can use this field to set the stability level of the transcription results. A higher stability level means that the transcription results are less likely to change. Higher stability levels can come with lower overall transcription accuracy.</p>
         pub fn set_partial_results_stability(
             mut self,
             input: std::option::Option<crate::model::PartialResultsStability>,
@@ -630,12 +560,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_partial_results_stability(input);
             self
         }
-        /// <p>Set this field to PII to identify personally identifiable information (PII) in the transcription
-        /// output. Content identification is performed only upon complete transcription of the audio
-        /// segments.</p>
-        /// <p>You can’t set both <code>ContentIdentificationType</code> and
-        /// <code>ContentRedactionType</code> in the same request. If you set both, your request
-        /// returns a <code>BadRequestException</code>.</p>
+        /// <p>Set this field to PII to identify personally identifiable information (PII) in the transcription output. Content identification is performed only upon complete transcription of the audio segments.</p>
+        /// <p>You can’t set both <code>ContentIdentificationType</code> and <code>ContentRedactionType</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>
         pub fn content_identification_type(
             mut self,
             input: crate::model::ContentIdentificationType,
@@ -643,12 +569,8 @@ pub mod fluent_builders {
             self.inner = self.inner.content_identification_type(input);
             self
         }
-        /// <p>Set this field to PII to identify personally identifiable information (PII) in the transcription
-        /// output. Content identification is performed only upon complete transcription of the audio
-        /// segments.</p>
-        /// <p>You can’t set both <code>ContentIdentificationType</code> and
-        /// <code>ContentRedactionType</code> in the same request. If you set both, your request
-        /// returns a <code>BadRequestException</code>.</p>
+        /// <p>Set this field to PII to identify personally identifiable information (PII) in the transcription output. Content identification is performed only upon complete transcription of the audio segments.</p>
+        /// <p>You can’t set both <code>ContentIdentificationType</code> and <code>ContentRedactionType</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>
         pub fn set_content_identification_type(
             mut self,
             input: std::option::Option<crate::model::ContentIdentificationType>,
@@ -656,22 +578,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_content_identification_type(input);
             self
         }
-        /// <p>Set this field to PII to redact personally identifiable information (PII) in the transcription
-        /// output. Content redaction is performed only upon complete transcription of the audio
-        /// segments.</p>
-        /// <p>You can’t set both <code>ContentRedactionType</code> and
-        /// <code>ContentIdentificationType</code> in the same request. If you set both, your request
-        /// returns a <code>BadRequestException</code>.</p>
+        /// <p>Set this field to PII to redact personally identifiable information (PII) in the transcription output. Content redaction is performed only upon complete transcription of the audio segments.</p>
+        /// <p>You can’t set both <code>ContentRedactionType</code> and <code>ContentIdentificationType</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>
         pub fn content_redaction_type(mut self, input: crate::model::ContentRedactionType) -> Self {
             self.inner = self.inner.content_redaction_type(input);
             self
         }
-        /// <p>Set this field to PII to redact personally identifiable information (PII) in the transcription
-        /// output. Content redaction is performed only upon complete transcription of the audio
-        /// segments.</p>
-        /// <p>You can’t set both <code>ContentRedactionType</code> and
-        /// <code>ContentIdentificationType</code> in the same request. If you set both, your request
-        /// returns a <code>BadRequestException</code>.</p>
+        /// <p>Set this field to PII to redact personally identifiable information (PII) in the transcription output. Content redaction is performed only upon complete transcription of the audio segments.</p>
+        /// <p>You can’t set both <code>ContentRedactionType</code> and <code>ContentIdentificationType</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>
         pub fn set_content_redaction_type(
             mut self,
             input: std::option::Option<crate::model::ContentRedactionType>,
@@ -679,36 +593,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_content_redaction_type(input);
             self
         }
-        /// <p>List the PII entity types you want to identify or redact. In order to specify entity types,
-        /// you must have either <code>ContentIdentificationType</code> or
-        /// <code>ContentRedactionType</code> enabled.</p>
-        /// <p>
-        /// <code>PIIEntityTypes</code> must be comma-separated; the available values are:
-        /// <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>,
-        /// <code>CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>,
-        /// <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>,
-        /// <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>,
-        /// <code>SSN</code>, and <code>ALL</code>.</p>
-        /// <p>
-        /// <code>PiiEntityTypes</code> is an optional parameter with a default value of
-        /// <code>ALL</code>.</p>
+        /// <p>List the PII entity types you want to identify or redact. In order to specify entity types, you must have either <code>ContentIdentificationType</code> or <code>ContentRedactionType</code> enabled.</p>
+        /// <p> <code>PIIEntityTypes</code> must be comma-separated; the available values are: <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>, <code>CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>, <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>, and <code>ALL</code>.</p>
+        /// <p> <code>PiiEntityTypes</code> is an optional parameter with a default value of <code>ALL</code>.</p>
         pub fn pii_entity_types(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.pii_entity_types(input.into());
             self
         }
-        /// <p>List the PII entity types you want to identify or redact. In order to specify entity types,
-        /// you must have either <code>ContentIdentificationType</code> or
-        /// <code>ContentRedactionType</code> enabled.</p>
-        /// <p>
-        /// <code>PIIEntityTypes</code> must be comma-separated; the available values are:
-        /// <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>,
-        /// <code>CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>,
-        /// <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>,
-        /// <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>,
-        /// <code>SSN</code>, and <code>ALL</code>.</p>
-        /// <p>
-        /// <code>PiiEntityTypes</code> is an optional parameter with a default value of
-        /// <code>ALL</code>.</p>
+        /// <p>List the PII entity types you want to identify or redact. In order to specify entity types, you must have either <code>ContentIdentificationType</code> or <code>ContentRedactionType</code> enabled.</p>
+        /// <p> <code>PIIEntityTypes</code> must be comma-separated; the available values are: <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>, <code>CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>, <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>, <code>SSN</code>, and <code>ALL</code>.</p>
+        /// <p> <code>PiiEntityTypes</code> is an optional parameter with a default value of <code>ALL</code>.</p>
         pub fn set_pii_entity_types(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -729,36 +623,26 @@ pub mod fluent_builders {
             self.inner = self.inner.set_language_model_name(input);
             self
         }
-        /// <p>Optional. Set this value to <code>true</code> to enable language identification for
-        /// your media stream.</p>
+        /// <p>Optional. Set this value to <code>true</code> to enable language identification for your media stream.</p>
         pub fn identify_language(mut self, input: bool) -> Self {
             self.inner = self.inner.identify_language(input);
             self
         }
-        /// <p>Optional. Set this value to <code>true</code> to enable language identification for
-        /// your media stream.</p>
+        /// <p>Optional. Set this value to <code>true</code> to enable language identification for your media stream.</p>
         pub fn set_identify_language(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_identify_language(input);
             self
         }
         /// <p>An object containing a list of languages that might be present in your audio.</p>
-        /// <p>You must provide two or more language codes to help Amazon Transcribe identify the correct
-        /// language of your media stream with the highest possible accuracy. You can only select one
-        /// variant per language; for example, you can't include both <code>en-US</code> and
-        /// <code>en-UK</code> in the same request.</p>
-        /// <p>You can only use this parameter if you've set <code>IdentifyLanguage</code> to
-        /// <code>true</code>in your request.</p>
+        /// <p>You must provide two or more language codes to help Amazon Transcribe identify the correct language of your media stream with the highest possible accuracy. You can only select one variant per language; for example, you can't include both <code>en-US</code> and <code>en-UK</code> in the same request.</p>
+        /// <p>You can only use this parameter if you've set <code>IdentifyLanguage</code> to <code>true</code>in your request.</p>
         pub fn language_options(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.language_options(input.into());
             self
         }
         /// <p>An object containing a list of languages that might be present in your audio.</p>
-        /// <p>You must provide two or more language codes to help Amazon Transcribe identify the correct
-        /// language of your media stream with the highest possible accuracy. You can only select one
-        /// variant per language; for example, you can't include both <code>en-US</code> and
-        /// <code>en-UK</code> in the same request.</p>
-        /// <p>You can only use this parameter if you've set <code>IdentifyLanguage</code> to
-        /// <code>true</code>in your request.</p>
+        /// <p>You must provide two or more language codes to help Amazon Transcribe identify the correct language of your media stream with the highest possible accuracy. You can only select one variant per language; for example, you can't include both <code>en-US</code> and <code>en-UK</code> in the same request.</p>
+        /// <p>You can only use this parameter if you've set <code>IdentifyLanguage</code> to <code>true</code>in your request.</p>
         pub fn set_language_options(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -766,20 +650,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_language_options(input);
             self
         }
-        /// <p>Optional. From the subset of languages codes you provided for
-        /// <code>LanguageOptions</code>, you can select one preferred language for your
-        /// transcription.</p>
-        /// <p>You can only use this parameter if you've set <code>IdentifyLanguage</code> to
-        /// <code>true</code>in your request.</p>
+        /// <p>Optional. From the subset of languages codes you provided for <code>LanguageOptions</code>, you can select one preferred language for your transcription.</p>
+        /// <p>You can only use this parameter if you've set <code>IdentifyLanguage</code> to <code>true</code>in your request.</p>
         pub fn preferred_language(mut self, input: crate::model::LanguageCode) -> Self {
             self.inner = self.inner.preferred_language(input);
             self
         }
-        /// <p>Optional. From the subset of languages codes you provided for
-        /// <code>LanguageOptions</code>, you can select one preferred language for your
-        /// transcription.</p>
-        /// <p>You can only use this parameter if you've set <code>IdentifyLanguage</code> to
-        /// <code>true</code>in your request.</p>
+        /// <p>Optional. From the subset of languages codes you provided for <code>LanguageOptions</code>, you can select one preferred language for your transcription.</p>
+        /// <p>You can only use this parameter if you've set <code>IdentifyLanguage</code> to <code>true</code>in your request.</p>
         pub fn set_preferred_language(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,

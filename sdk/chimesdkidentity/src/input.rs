@@ -2203,14 +2203,12 @@ pub mod list_app_instance_admins_input {
             self.max_results = input;
             self
         }
-        /// <p>The token returned from previous API requests until the number of administrators is
-        /// reached.</p>
+        /// <p>The token returned from previous API requests until the number of administrators is reached.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token returned from previous API requests until the number of administrators is
-        /// reached.</p>
+        /// <p>The token returned from previous API requests until the number of administrators is reached.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2390,14 +2388,12 @@ pub mod list_app_instances_input {
             self.max_results = input;
             self
         }
-        /// <p>The token passed by previous API requests until you reach the maximum number of
-        /// <code>AppInstances</code>.</p>
+        /// <p>The token passed by previous API requests until you reach the maximum number of <code>AppInstances</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token passed by previous API requests until you reach the maximum number of
-        /// <code>AppInstances</code>.</p>
+        /// <p>The token passed by previous API requests until you reach the maximum number of <code>AppInstances</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3302,18 +3298,9 @@ pub mod register_app_instance_user_endpoint_input {
         }
         /// <p>The type of the <code>AppInstanceUserEndpoint</code>. Supported types:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>APNS</code>: The mobile notification service for an Apple device.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>APNS_SANDBOX</code>: The sandbox environment of the mobile notification service for an Apple device.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GCM</code>: The mobile notification service for an Android device.</p>
-        /// </li>
+        /// <li> <p> <code>APNS</code>: The mobile notification service for an Apple device.</p> </li>
+        /// <li> <p> <code>APNS_SANDBOX</code>: The sandbox environment of the mobile notification service for an Apple device.</p> </li>
+        /// <li> <p> <code>GCM</code>: The mobile notification service for an Android device.</p> </li>
         /// </ul>
         /// <p>Populate the <code>ResourceArn</code> value of each type as <code>PinpointAppArn</code>.</p>
         pub fn r#type(mut self, input: crate::model::AppInstanceUserEndpointType) -> Self {
@@ -3322,18 +3309,9 @@ pub mod register_app_instance_user_endpoint_input {
         }
         /// <p>The type of the <code>AppInstanceUserEndpoint</code>. Supported types:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>APNS</code>: The mobile notification service for an Apple device.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>APNS_SANDBOX</code>: The sandbox environment of the mobile notification service for an Apple device.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GCM</code>: The mobile notification service for an Android device.</p>
-        /// </li>
+        /// <li> <p> <code>APNS</code>: The mobile notification service for an Apple device.</p> </li>
+        /// <li> <p> <code>APNS_SANDBOX</code>: The sandbox environment of the mobile notification service for an Apple device.</p> </li>
+        /// <li> <p> <code>GCM</code>: The mobile notification service for an Android device.</p> </li>
         /// </ul>
         /// <p>Populate the <code>ResourceArn</code> value of each type as <code>PinpointAppArn</code>.</p>
         pub fn set_type(
@@ -3379,14 +3357,12 @@ pub mod register_app_instance_user_endpoint_input {
             self.client_request_token = input;
             self
         }
-        /// <p>Boolean that controls whether the AppInstanceUserEndpoint is opted in to receive messages. <code>ALL</code> indicates the endpoint receives all messages.
-        /// <code>NONE</code> indicates the endpoint receives no messages.</p>
+        /// <p>Boolean that controls whether the AppInstanceUserEndpoint is opted in to receive messages. <code>ALL</code> indicates the endpoint receives all messages. <code>NONE</code> indicates the endpoint receives no messages.</p>
         pub fn allow_messages(mut self, input: crate::model::AllowMessages) -> Self {
             self.allow_messages = Some(input);
             self
         }
-        /// <p>Boolean that controls whether the AppInstanceUserEndpoint is opted in to receive messages. <code>ALL</code> indicates the endpoint receives all messages.
-        /// <code>NONE</code> indicates the endpoint receives no messages.</p>
+        /// <p>Boolean that controls whether the AppInstanceUserEndpoint is opted in to receive messages. <code>ALL</code> indicates the endpoint receives all messages. <code>NONE</code> indicates the endpoint receives no messages.</p>
         pub fn set_allow_messages(
             mut self,
             input: std::option::Option<crate::model::AllowMessages>,
@@ -4351,14 +4327,12 @@ pub mod update_app_instance_user_endpoint_input {
             self.name = input;
             self
         }
-        /// <p>Boolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages.
-        /// <code>NONE</code> indicates the endpoint will receive no messages.</p>
+        /// <p>Boolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages. <code>NONE</code> indicates the endpoint will receive no messages.</p>
         pub fn allow_messages(mut self, input: crate::model::AllowMessages) -> Self {
             self.allow_messages = Some(input);
             self
         }
-        /// <p>Boolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages.
-        /// <code>NONE</code> indicates the endpoint will receive no messages.</p>
+        /// <p>Boolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages. <code>NONE</code> indicates the endpoint will receive no messages.</p>
         pub fn set_allow_messages(
             mut self,
             input: std::option::Option<crate::model::AllowMessages>,
@@ -4548,8 +4522,7 @@ pub struct UpdateAppInstanceUserEndpointInput {
     pub endpoint_id: std::option::Option<std::string::String>,
     /// <p>The name of the <code>AppInstanceUserEndpoint</code>.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>Boolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages.
-    /// <code>NONE</code> indicates the endpoint will receive no messages.</p>
+    /// <p>Boolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages. <code>NONE</code> indicates the endpoint will receive no messages.</p>
     pub allow_messages: std::option::Option<crate::model::AllowMessages>,
 }
 impl UpdateAppInstanceUserEndpointInput {
@@ -4565,8 +4538,7 @@ impl UpdateAppInstanceUserEndpointInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Boolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages.
-    /// <code>NONE</code> indicates the endpoint will receive no messages.</p>
+    /// <p>Boolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages. <code>NONE</code> indicates the endpoint will receive no messages.</p>
     pub fn allow_messages(&self) -> std::option::Option<&crate::model::AllowMessages> {
         self.allow_messages.as_ref()
     }
@@ -4718,18 +4690,9 @@ pub struct RegisterAppInstanceUserEndpointInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of the <code>AppInstanceUserEndpoint</code>. Supported types:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>APNS</code>: The mobile notification service for an Apple device.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>APNS_SANDBOX</code>: The sandbox environment of the mobile notification service for an Apple device.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>GCM</code>: The mobile notification service for an Android device.</p>
-    /// </li>
+    /// <li> <p> <code>APNS</code>: The mobile notification service for an Apple device.</p> </li>
+    /// <li> <p> <code>APNS_SANDBOX</code>: The sandbox environment of the mobile notification service for an Apple device.</p> </li>
+    /// <li> <p> <code>GCM</code>: The mobile notification service for an Android device.</p> </li>
     /// </ul>
     /// <p>Populate the <code>ResourceArn</code> value of each type as <code>PinpointAppArn</code>.</p>
     pub r#type: std::option::Option<crate::model::AppInstanceUserEndpointType>,
@@ -4739,8 +4702,7 @@ pub struct RegisterAppInstanceUserEndpointInput {
     pub endpoint_attributes: std::option::Option<crate::model::EndpointAttributes>,
     /// <p>The idempotency token for each client request. </p>
     pub client_request_token: std::option::Option<std::string::String>,
-    /// <p>Boolean that controls whether the AppInstanceUserEndpoint is opted in to receive messages. <code>ALL</code> indicates the endpoint receives all messages.
-    /// <code>NONE</code> indicates the endpoint receives no messages.</p>
+    /// <p>Boolean that controls whether the AppInstanceUserEndpoint is opted in to receive messages. <code>ALL</code> indicates the endpoint receives all messages. <code>NONE</code> indicates the endpoint receives no messages.</p>
     pub allow_messages: std::option::Option<crate::model::AllowMessages>,
 }
 impl RegisterAppInstanceUserEndpointInput {
@@ -4754,18 +4716,9 @@ impl RegisterAppInstanceUserEndpointInput {
     }
     /// <p>The type of the <code>AppInstanceUserEndpoint</code>. Supported types:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>APNS</code>: The mobile notification service for an Apple device.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>APNS_SANDBOX</code>: The sandbox environment of the mobile notification service for an Apple device.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>GCM</code>: The mobile notification service for an Android device.</p>
-    /// </li>
+    /// <li> <p> <code>APNS</code>: The mobile notification service for an Apple device.</p> </li>
+    /// <li> <p> <code>APNS_SANDBOX</code>: The sandbox environment of the mobile notification service for an Apple device.</p> </li>
+    /// <li> <p> <code>GCM</code>: The mobile notification service for an Android device.</p> </li>
     /// </ul>
     /// <p>Populate the <code>ResourceArn</code> value of each type as <code>PinpointAppArn</code>.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::AppInstanceUserEndpointType> {
@@ -4783,8 +4736,7 @@ impl RegisterAppInstanceUserEndpointInput {
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p>Boolean that controls whether the AppInstanceUserEndpoint is opted in to receive messages. <code>ALL</code> indicates the endpoint receives all messages.
-    /// <code>NONE</code> indicates the endpoint receives no messages.</p>
+    /// <p>Boolean that controls whether the AppInstanceUserEndpoint is opted in to receive messages. <code>ALL</code> indicates the endpoint receives all messages. <code>NONE</code> indicates the endpoint receives no messages.</p>
     pub fn allow_messages(&self) -> std::option::Option<&crate::model::AllowMessages> {
         self.allow_messages.as_ref()
     }
@@ -4934,8 +4886,7 @@ impl std::fmt::Debug for ListAppInstanceUserEndpointsInput {
 pub struct ListAppInstancesInput {
     /// <p>The maximum number of <code>AppInstance</code>s that you want to return.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The token passed by previous API requests until you reach the maximum number of
-    /// <code>AppInstances</code>.</p>
+    /// <p>The token passed by previous API requests until you reach the maximum number of <code>AppInstances</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAppInstancesInput {
@@ -4943,8 +4894,7 @@ impl ListAppInstancesInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The token passed by previous API requests until you reach the maximum number of
-    /// <code>AppInstances</code>.</p>
+    /// <p>The token passed by previous API requests until you reach the maximum number of <code>AppInstances</code>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -4966,8 +4916,7 @@ pub struct ListAppInstanceAdminsInput {
     pub app_instance_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of administrators that you want to return.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The token returned from previous API requests until the number of administrators is
-    /// reached.</p>
+    /// <p>The token returned from previous API requests until the number of administrators is reached.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAppInstanceAdminsInput {
@@ -4979,8 +4928,7 @@ impl ListAppInstanceAdminsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The token returned from previous API requests until the number of administrators is
-    /// reached.</p>
+    /// <p>The token returned from previous API requests until the number of administrators is reached.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }

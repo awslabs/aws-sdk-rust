@@ -12,25 +12,15 @@ pub struct AssociateFirewallPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AssociateFirewallPolicyErrorKind {
-    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a
-    /// system problem. Retry your request. </p>
+    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem. Retry your request. </p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>The operation failed because it's not valid. For example, you might have tried to delete
-    /// a rule group or firewall policy that's in use.</p>
+    /// <p>The operation failed because it's not valid. For example, you might have tried to delete a rule group or firewall policy that's in use.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>The operation failed because of a problem with your request. Examples include: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an unsupported parameter name or value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a property with a value that isn't among the available
-    /// types.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource
-    /// that isn't valid in the context of the request.</p>
-    /// </li>
+    /// <li> <p>You specified an unsupported parameter name or value.</p> </li>
+    /// <li> <p>You tried to update a property with a value that isn't among the available types.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The token you provided is stale or isn't valid for the operation. </p>
@@ -175,28 +165,17 @@ pub struct AssociateSubnetsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AssociateSubnetsErrorKind {
-    /// <p>AWS doesn't currently have enough available capacity to fulfill your request. Try your
-    /// request later. </p>
+    /// <p>AWS doesn't currently have enough available capacity to fulfill your request. Try your request later. </p>
     InsufficientCapacityException(crate::error::InsufficientCapacityException),
-    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a
-    /// system problem. Retry your request. </p>
+    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem. Retry your request. </p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>The operation failed because it's not valid. For example, you might have tried to delete
-    /// a rule group or firewall policy that's in use.</p>
+    /// <p>The operation failed because it's not valid. For example, you might have tried to delete a rule group or firewall policy that's in use.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>The operation failed because of a problem with your request. Examples include: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an unsupported parameter name or value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a property with a value that isn't among the available
-    /// types.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource
-    /// that isn't valid in the context of the request.</p>
-    /// </li>
+    /// <li> <p>You specified an unsupported parameter name or value.</p> </li>
+    /// <li> <p>You tried to update a property with a value that isn't among the available types.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The token you provided is stale or isn't valid for the operation. </p>
@@ -350,28 +329,17 @@ pub struct CreateFirewallError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateFirewallErrorKind {
-    /// <p>AWS doesn't currently have enough available capacity to fulfill your request. Try your
-    /// request later. </p>
+    /// <p>AWS doesn't currently have enough available capacity to fulfill your request. Try your request later. </p>
     InsufficientCapacityException(crate::error::InsufficientCapacityException),
-    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a
-    /// system problem. Retry your request. </p>
+    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem. Retry your request. </p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>The operation failed because it's not valid. For example, you might have tried to delete
-    /// a rule group or firewall policy that's in use.</p>
+    /// <p>The operation failed because it's not valid. For example, you might have tried to delete a rule group or firewall policy that's in use.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>The operation failed because of a problem with your request. Examples include: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an unsupported parameter name or value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a property with a value that isn't among the available
-    /// types.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource
-    /// that isn't valid in the context of the request.</p>
-    /// </li>
+    /// <li> <p>You specified an unsupported parameter name or value.</p> </li>
+    /// <li> <p>You tried to update a property with a value that isn't among the available types.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>Unable to perform the operation because doing so would violate a limit setting. </p>
@@ -508,25 +476,15 @@ pub struct CreateFirewallPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateFirewallPolicyErrorKind {
-    /// <p>AWS doesn't currently have enough available capacity to fulfill your request. Try your
-    /// request later. </p>
+    /// <p>AWS doesn't currently have enough available capacity to fulfill your request. Try your request later. </p>
     InsufficientCapacityException(crate::error::InsufficientCapacityException),
-    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a
-    /// system problem. Retry your request. </p>
+    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem. Retry your request. </p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>The operation failed because of a problem with your request. Examples include: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an unsupported parameter name or value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a property with a value that isn't among the available
-    /// types.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource
-    /// that isn't valid in the context of the request.</p>
-    /// </li>
+    /// <li> <p>You specified an unsupported parameter name or value.</p> </li>
+    /// <li> <p>You tried to update a property with a value that isn't among the available types.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>Unable to perform the operation because doing so would violate a limit setting. </p>
@@ -660,25 +618,15 @@ pub struct CreateRuleGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateRuleGroupErrorKind {
-    /// <p>AWS doesn't currently have enough available capacity to fulfill your request. Try your
-    /// request later. </p>
+    /// <p>AWS doesn't currently have enough available capacity to fulfill your request. Try your request later. </p>
     InsufficientCapacityException(crate::error::InsufficientCapacityException),
-    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a
-    /// system problem. Retry your request. </p>
+    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem. Retry your request. </p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>The operation failed because of a problem with your request. Examples include: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an unsupported parameter name or value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a property with a value that isn't among the available
-    /// types.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource
-    /// that isn't valid in the context of the request.</p>
-    /// </li>
+    /// <li> <p>You specified an unsupported parameter name or value.</p> </li>
+    /// <li> <p>You tried to update a property with a value that isn't among the available types.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>Unable to perform the operation because doing so would violate a limit setting. </p>
@@ -806,25 +754,15 @@ pub struct DeleteFirewallError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteFirewallErrorKind {
-    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a
-    /// system problem. Retry your request. </p>
+    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem. Retry your request. </p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>The operation failed because it's not valid. For example, you might have tried to delete
-    /// a rule group or firewall policy that's in use.</p>
+    /// <p>The operation failed because it's not valid. For example, you might have tried to delete a rule group or firewall policy that's in use.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>The operation failed because of a problem with your request. Examples include: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an unsupported parameter name or value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a property with a value that isn't among the available
-    /// types.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource
-    /// that isn't valid in the context of the request.</p>
-    /// </li>
+    /// <li> <p>You specified an unsupported parameter name or value.</p> </li>
+    /// <li> <p>You tried to update a property with a value that isn't among the available types.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>Unable to locate a resource using the parameters that you provided.</p>
@@ -963,25 +901,15 @@ pub struct DeleteFirewallPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteFirewallPolicyErrorKind {
-    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a
-    /// system problem. Retry your request. </p>
+    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem. Retry your request. </p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>The operation failed because it's not valid. For example, you might have tried to delete
-    /// a rule group or firewall policy that's in use.</p>
+    /// <p>The operation failed because it's not valid. For example, you might have tried to delete a rule group or firewall policy that's in use.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>The operation failed because of a problem with your request. Examples include: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an unsupported parameter name or value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a property with a value that isn't among the available
-    /// types.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource
-    /// that isn't valid in the context of the request.</p>
-    /// </li>
+    /// <li> <p>You specified an unsupported parameter name or value.</p> </li>
+    /// <li> <p>You tried to update a property with a value that isn't among the available types.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>Unable to locate a resource using the parameters that you provided.</p>
@@ -1126,22 +1054,13 @@ pub struct DeleteResourcePolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteResourcePolicyErrorKind {
-    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a
-    /// system problem. Retry your request. </p>
+    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem. Retry your request. </p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>The operation failed because of a problem with your request. Examples include: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an unsupported parameter name or value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a property with a value that isn't among the available
-    /// types.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource
-    /// that isn't valid in the context of the request.</p>
-    /// </li>
+    /// <li> <p>You specified an unsupported parameter name or value.</p> </li>
+    /// <li> <p>You tried to update a property with a value that isn't among the available types.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The policy statement failed validation.</p>
@@ -1277,25 +1196,15 @@ pub struct DeleteRuleGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteRuleGroupErrorKind {
-    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a
-    /// system problem. Retry your request. </p>
+    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem. Retry your request. </p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>The operation failed because it's not valid. For example, you might have tried to delete
-    /// a rule group or firewall policy that's in use.</p>
+    /// <p>The operation failed because it's not valid. For example, you might have tried to delete a rule group or firewall policy that's in use.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>The operation failed because of a problem with your request. Examples include: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an unsupported parameter name or value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a property with a value that isn't among the available
-    /// types.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource
-    /// that isn't valid in the context of the request.</p>
-    /// </li>
+    /// <li> <p>You specified an unsupported parameter name or value.</p> </li>
+    /// <li> <p>You tried to update a property with a value that isn't among the available types.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>Unable to locate a resource using the parameters that you provided.</p>
@@ -1434,22 +1343,13 @@ pub struct DescribeFirewallError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeFirewallErrorKind {
-    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a
-    /// system problem. Retry your request. </p>
+    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem. Retry your request. </p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>The operation failed because of a problem with your request. Examples include: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an unsupported parameter name or value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a property with a value that isn't among the available
-    /// types.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource
-    /// that isn't valid in the context of the request.</p>
-    /// </li>
+    /// <li> <p>You specified an unsupported parameter name or value.</p> </li>
+    /// <li> <p>You tried to update a property with a value that isn't among the available types.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>Unable to locate a resource using the parameters that you provided.</p>
@@ -1574,22 +1474,13 @@ pub struct DescribeFirewallPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeFirewallPolicyErrorKind {
-    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a
-    /// system problem. Retry your request. </p>
+    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem. Retry your request. </p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>The operation failed because of a problem with your request. Examples include: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an unsupported parameter name or value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a property with a value that isn't among the available
-    /// types.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource
-    /// that isn't valid in the context of the request.</p>
-    /// </li>
+    /// <li> <p>You specified an unsupported parameter name or value.</p> </li>
+    /// <li> <p>You tried to update a property with a value that isn't among the available types.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>Unable to locate a resource using the parameters that you provided.</p>
@@ -1714,22 +1605,13 @@ pub struct DescribeLoggingConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeLoggingConfigurationErrorKind {
-    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a
-    /// system problem. Retry your request. </p>
+    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem. Retry your request. </p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>The operation failed because of a problem with your request. Examples include: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an unsupported parameter name or value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a property with a value that isn't among the available
-    /// types.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource
-    /// that isn't valid in the context of the request.</p>
-    /// </li>
+    /// <li> <p>You specified an unsupported parameter name or value.</p> </li>
+    /// <li> <p>You tried to update a property with a value that isn't among the available types.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>Unable to locate a resource using the parameters that you provided.</p>
@@ -1858,22 +1740,13 @@ pub struct DescribeResourcePolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeResourcePolicyErrorKind {
-    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a
-    /// system problem. Retry your request. </p>
+    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem. Retry your request. </p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>The operation failed because of a problem with your request. Examples include: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an unsupported parameter name or value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a property with a value that isn't among the available
-    /// types.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource
-    /// that isn't valid in the context of the request.</p>
-    /// </li>
+    /// <li> <p>You specified an unsupported parameter name or value.</p> </li>
+    /// <li> <p>You tried to update a property with a value that isn't among the available types.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>Unable to locate a resource using the parameters that you provided.</p>
@@ -1998,22 +1871,13 @@ pub struct DescribeRuleGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeRuleGroupErrorKind {
-    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a
-    /// system problem. Retry your request. </p>
+    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem. Retry your request. </p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>The operation failed because of a problem with your request. Examples include: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an unsupported parameter name or value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a property with a value that isn't among the available
-    /// types.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource
-    /// that isn't valid in the context of the request.</p>
-    /// </li>
+    /// <li> <p>You specified an unsupported parameter name or value.</p> </li>
+    /// <li> <p>You tried to update a property with a value that isn't among the available types.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>Unable to locate a resource using the parameters that you provided.</p>
@@ -2138,25 +2002,15 @@ pub struct DisassociateSubnetsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisassociateSubnetsErrorKind {
-    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a
-    /// system problem. Retry your request. </p>
+    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem. Retry your request. </p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>The operation failed because it's not valid. For example, you might have tried to delete
-    /// a rule group or firewall policy that's in use.</p>
+    /// <p>The operation failed because it's not valid. For example, you might have tried to delete a rule group or firewall policy that's in use.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>The operation failed because of a problem with your request. Examples include: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an unsupported parameter name or value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a property with a value that isn't among the available
-    /// types.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource
-    /// that isn't valid in the context of the request.</p>
-    /// </li>
+    /// <li> <p>You specified an unsupported parameter name or value.</p> </li>
+    /// <li> <p>You tried to update a property with a value that isn't among the available types.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The token you provided is stale or isn't valid for the operation. </p>
@@ -2301,22 +2155,13 @@ pub struct ListFirewallPoliciesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListFirewallPoliciesErrorKind {
-    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a
-    /// system problem. Retry your request. </p>
+    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem. Retry your request. </p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>The operation failed because of a problem with your request. Examples include: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an unsupported parameter name or value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a property with a value that isn't among the available
-    /// types.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource
-    /// that isn't valid in the context of the request.</p>
-    /// </li>
+    /// <li> <p>You specified an unsupported parameter name or value.</p> </li>
+    /// <li> <p>You tried to update a property with a value that isn't among the available types.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>Unable to process the request due to throttling limitations.</p>
@@ -2430,22 +2275,13 @@ pub struct ListFirewallsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListFirewallsErrorKind {
-    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a
-    /// system problem. Retry your request. </p>
+    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem. Retry your request. </p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>The operation failed because of a problem with your request. Examples include: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an unsupported parameter name or value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a property with a value that isn't among the available
-    /// types.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource
-    /// that isn't valid in the context of the request.</p>
-    /// </li>
+    /// <li> <p>You specified an unsupported parameter name or value.</p> </li>
+    /// <li> <p>You tried to update a property with a value that isn't among the available types.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>Unable to process the request due to throttling limitations.</p>
@@ -2553,22 +2389,13 @@ pub struct ListRuleGroupsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListRuleGroupsErrorKind {
-    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a
-    /// system problem. Retry your request. </p>
+    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem. Retry your request. </p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>The operation failed because of a problem with your request. Examples include: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an unsupported parameter name or value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a property with a value that isn't among the available
-    /// types.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource
-    /// that isn't valid in the context of the request.</p>
-    /// </li>
+    /// <li> <p>You specified an unsupported parameter name or value.</p> </li>
+    /// <li> <p>You tried to update a property with a value that isn't among the available types.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>Unable to process the request due to throttling limitations.</p>
@@ -2678,17 +2505,9 @@ pub struct ListTagsForResourceError {
 pub enum ListTagsForResourceErrorKind {
     /// <p>The operation failed because of a problem with your request. Examples include: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an unsupported parameter name or value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a property with a value that isn't among the available
-    /// types.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource
-    /// that isn't valid in the context of the request.</p>
-    /// </li>
+    /// <li> <p>You specified an unsupported parameter name or value.</p> </li>
+    /// <li> <p>You tried to update a property with a value that isn't among the available types.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>Unable to locate a resource using the parameters that you provided.</p>
@@ -2793,22 +2612,13 @@ pub struct PutResourcePolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutResourcePolicyErrorKind {
-    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a
-    /// system problem. Retry your request. </p>
+    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem. Retry your request. </p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>The operation failed because of a problem with your request. Examples include: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an unsupported parameter name or value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a property with a value that isn't among the available
-    /// types.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource
-    /// that isn't valid in the context of the request.</p>
-    /// </li>
+    /// <li> <p>You specified an unsupported parameter name or value.</p> </li>
+    /// <li> <p>You tried to update a property with a value that isn't among the available types.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The policy statement failed validation.</p>
@@ -2946,17 +2756,9 @@ pub struct TagResourceError {
 pub enum TagResourceErrorKind {
     /// <p>The operation failed because of a problem with your request. Examples include: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an unsupported parameter name or value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a property with a value that isn't among the available
-    /// types.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource
-    /// that isn't valid in the context of the request.</p>
-    /// </li>
+    /// <li> <p>You specified an unsupported parameter name or value.</p> </li>
+    /// <li> <p>You tried to update a property with a value that isn't among the available types.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>Unable to locate a resource using the parameters that you provided.</p>
@@ -3060,17 +2862,9 @@ pub struct UntagResourceError {
 pub enum UntagResourceErrorKind {
     /// <p>The operation failed because of a problem with your request. Examples include: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an unsupported parameter name or value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a property with a value that isn't among the available
-    /// types.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource
-    /// that isn't valid in the context of the request.</p>
-    /// </li>
+    /// <li> <p>You specified an unsupported parameter name or value.</p> </li>
+    /// <li> <p>You tried to update a property with a value that isn't among the available types.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>Unable to locate a resource using the parameters that you provided.</p>
@@ -3175,22 +2969,13 @@ pub struct UpdateFirewallDeleteProtectionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateFirewallDeleteProtectionErrorKind {
-    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a
-    /// system problem. Retry your request. </p>
+    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem. Retry your request. </p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>The operation failed because of a problem with your request. Examples include: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an unsupported parameter name or value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a property with a value that isn't among the available
-    /// types.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource
-    /// that isn't valid in the context of the request.</p>
-    /// </li>
+    /// <li> <p>You specified an unsupported parameter name or value.</p> </li>
+    /// <li> <p>You tried to update a property with a value that isn't among the available types.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The token you provided is stale or isn't valid for the operation. </p>
@@ -3352,22 +3137,13 @@ pub struct UpdateFirewallDescriptionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateFirewallDescriptionErrorKind {
-    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a
-    /// system problem. Retry your request. </p>
+    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem. Retry your request. </p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>The operation failed because of a problem with your request. Examples include: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an unsupported parameter name or value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a property with a value that isn't among the available
-    /// types.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource
-    /// that isn't valid in the context of the request.</p>
-    /// </li>
+    /// <li> <p>You specified an unsupported parameter name or value.</p> </li>
+    /// <li> <p>You tried to update a property with a value that isn't among the available types.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The token you provided is stale or isn't valid for the operation. </p>
@@ -3503,22 +3279,13 @@ pub struct UpdateFirewallPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateFirewallPolicyErrorKind {
-    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a
-    /// system problem. Retry your request. </p>
+    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem. Retry your request. </p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>The operation failed because of a problem with your request. Examples include: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an unsupported parameter name or value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a property with a value that isn't among the available
-    /// types.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource
-    /// that isn't valid in the context of the request.</p>
-    /// </li>
+    /// <li> <p>You specified an unsupported parameter name or value.</p> </li>
+    /// <li> <p>You tried to update a property with a value that isn't among the available types.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The token you provided is stale or isn't valid for the operation. </p>
@@ -3654,22 +3421,13 @@ pub struct UpdateFirewallPolicyChangeProtectionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateFirewallPolicyChangeProtectionErrorKind {
-    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a
-    /// system problem. Retry your request. </p>
+    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem. Retry your request. </p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>The operation failed because of a problem with your request. Examples include: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an unsupported parameter name or value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a property with a value that isn't among the available
-    /// types.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource
-    /// that isn't valid in the context of the request.</p>
-    /// </li>
+    /// <li> <p>You specified an unsupported parameter name or value.</p> </li>
+    /// <li> <p>You tried to update a property with a value that isn't among the available types.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The token you provided is stale or isn't valid for the operation. </p>
@@ -3845,22 +3603,13 @@ pub struct UpdateLoggingConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateLoggingConfigurationErrorKind {
-    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a
-    /// system problem. Retry your request. </p>
+    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem. Retry your request. </p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>The operation failed because of a problem with your request. Examples include: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an unsupported parameter name or value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a property with a value that isn't among the available
-    /// types.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource
-    /// that isn't valid in the context of the request.</p>
-    /// </li>
+    /// <li> <p>You specified an unsupported parameter name or value.</p> </li>
+    /// <li> <p>You tried to update a property with a value that isn't among the available types.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The token you provided is stale or isn't valid for the operation. </p>
@@ -4011,22 +3760,13 @@ pub struct UpdateRuleGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateRuleGroupErrorKind {
-    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a
-    /// system problem. Retry your request. </p>
+    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem. Retry your request. </p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>The operation failed because of a problem with your request. Examples include: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an unsupported parameter name or value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a property with a value that isn't among the available
-    /// types.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource
-    /// that isn't valid in the context of the request.</p>
-    /// </li>
+    /// <li> <p>You specified an unsupported parameter name or value.</p> </li>
+    /// <li> <p>You tried to update a property with a value that isn't among the available types.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The token you provided is stale or isn't valid for the operation. </p>
@@ -4156,22 +3896,13 @@ pub struct UpdateSubnetChangeProtectionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateSubnetChangeProtectionErrorKind {
-    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a
-    /// system problem. Retry your request. </p>
+    /// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem. Retry your request. </p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>The operation failed because of a problem with your request. Examples include: </p>
     /// <ul>
-    /// <li>
-    /// <p>You specified an unsupported parameter name or value.</p>
-    /// </li>
-    /// <li>
-    /// <p>You tried to update a property with a value that isn't among the available
-    /// types.</p>
-    /// </li>
-    /// <li>
-    /// <p>Your request references an ARN that is malformed, or corresponds to a resource
-    /// that isn't valid in the context of the request.</p>
-    /// </li>
+    /// <li> <p>You specified an unsupported parameter name or value.</p> </li>
+    /// <li> <p>You tried to update a property with a value that isn't among the available types.</p> </li>
+    /// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p> </li>
     /// </ul>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The token you provided is stale or isn't valid for the operation. </p>
@@ -4571,17 +4302,9 @@ impl InvalidTokenException {
 
 /// <p>The operation failed because of a problem with your request. Examples include: </p>
 /// <ul>
-/// <li>
-/// <p>You specified an unsupported parameter name or value.</p>
-/// </li>
-/// <li>
-/// <p>You tried to update a property with a value that isn't among the available
-/// types.</p>
-/// </li>
-/// <li>
-/// <p>Your request references an ARN that is malformed, or corresponds to a resource
-/// that isn't valid in the context of the request.</p>
-/// </li>
+/// <li> <p>You specified an unsupported parameter name or value.</p> </li>
+/// <li> <p>You tried to update a property with a value that isn't among the available types.</p> </li>
+/// <li> <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p> </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -4646,8 +4369,7 @@ impl InvalidRequestException {
     }
 }
 
-/// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a
-/// system problem. Retry your request. </p>
+/// <p>Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem. Retry your request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerError {
@@ -4839,8 +4561,7 @@ impl InvalidResourcePolicyException {
     }
 }
 
-/// <p>The operation failed because it's not valid. For example, you might have tried to delete
-/// a rule group or firewall policy that's in use.</p>
+/// <p>The operation failed because it's not valid. For example, you might have tried to delete a rule group or firewall policy that's in use.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidOperationException {
@@ -5032,8 +4753,7 @@ impl LimitExceededException {
     }
 }
 
-/// <p>AWS doesn't currently have enough available capacity to fulfill your request. Try your
-/// request later. </p>
+/// <p>AWS doesn't currently have enough available capacity to fulfill your request. Try your request later. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InsufficientCapacityException {

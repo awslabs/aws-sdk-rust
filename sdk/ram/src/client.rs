@@ -463,26 +463,13 @@ pub mod fluent_builders {
         ///
         /// <p>The principals to associate with the resource share. The possible values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>An Amazon Web Services account ID</p>
-        /// </li>
-        /// <li>
-        /// <p>An Amazon Resource Name (ARN) of an organization in Organizations</p>
-        /// </li>
-        /// <li>
-        /// <p>An ARN of an organizational unit (OU) in Organizations</p>
-        /// </li>
-        /// <li>
-        /// <p>An ARN of an IAM role</p>
-        /// </li>
-        /// <li>
-        /// <p>An ARN of an IAM user</p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>Not all resource types can be shared with IAM roles and IAM users. For more
-        /// information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and IAM users</a> in the <i>Resource Access Manager User
-        /// Guide</i>.</p>
+        /// <li> <p>An Amazon Web Services account ID</p> </li>
+        /// <li> <p>An Amazon Resource Name (ARN) of an organization in Organizations</p> </li>
+        /// <li> <p>An ARN of an organizational unit (OU) in Organizations</p> </li>
+        /// <li> <p>An ARN of an IAM role</p> </li>
+        /// <li> <p>An ARN of an IAM user</p> </li>
+        /// </ul> <note>
+        /// <p>Not all resource types can be shared with IAM roles and IAM users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and IAM users</a> in the <i>Resource Access Manager User Guide</i>.</p>
         /// </note>
         pub fn principals(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.principals(input.into());
@@ -490,26 +477,13 @@ pub mod fluent_builders {
         }
         /// <p>The principals to associate with the resource share. The possible values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>An Amazon Web Services account ID</p>
-        /// </li>
-        /// <li>
-        /// <p>An Amazon Resource Name (ARN) of an organization in Organizations</p>
-        /// </li>
-        /// <li>
-        /// <p>An ARN of an organizational unit (OU) in Organizations</p>
-        /// </li>
-        /// <li>
-        /// <p>An ARN of an IAM role</p>
-        /// </li>
-        /// <li>
-        /// <p>An ARN of an IAM user</p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>Not all resource types can be shared with IAM roles and IAM users. For more
-        /// information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and IAM users</a> in the <i>Resource Access Manager User
-        /// Guide</i>.</p>
+        /// <li> <p>An Amazon Web Services account ID</p> </li>
+        /// <li> <p>An Amazon Resource Name (ARN) of an organization in Organizations</p> </li>
+        /// <li> <p>An ARN of an organizational unit (OU) in Organizations</p> </li>
+        /// <li> <p>An ARN of an IAM role</p> </li>
+        /// <li> <p>An ARN of an IAM user</p> </li>
+        /// </ul> <note>
+        /// <p>Not all resource types can be shared with IAM roles and IAM users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and IAM users</a> in the <i>Resource Access Manager User Guide</i>.</p>
         /// </note>
         pub fn set_principals(
             mut self,
@@ -601,14 +575,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_share_arn(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the RAM permission to associate with the
-        /// resource share.</p>
+        /// <p>The Amazon Resource Name (ARN) of the RAM permission to associate with the resource share.</p>
         pub fn permission_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.permission_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the RAM permission to associate with the
-        /// resource share.</p>
+        /// <p>The Amazon Resource Name (ARN) of the RAM permission to associate with the resource share.</p>
         pub fn set_permission_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -616,16 +588,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_permission_arn(input);
             self
         }
-        /// <p>Indicates whether the permission should replace the permissions that are currently
-        /// associated with the resource share. Use <code>true</code> to replace the current permissions. Use
-        /// <code>false</code> to add the permission to the current permission.</p>
+        /// <p>Indicates whether the permission should replace the permissions that are currently associated with the resource share. Use <code>true</code> to replace the current permissions. Use <code>false</code> to add the permission to the current permission.</p>
         pub fn replace(mut self, input: bool) -> Self {
             self.inner = self.inner.replace(input);
             self
         }
-        /// <p>Indicates whether the permission should replace the permissions that are currently
-        /// associated with the resource share. Use <code>true</code> to replace the current permissions. Use
-        /// <code>false</code> to add the permission to the current permission.</p>
+        /// <p>Indicates whether the permission should replace the permissions that are currently associated with the resource share. Use <code>true</code> to replace the current permissions. Use <code>false</code> to add the permission to the current permission.</p>
         pub fn set_replace(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_replace(input);
             self
@@ -653,13 +621,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateResourceShare`.
     ///
-    /// <p>Creates a resource share. You must provide a list of the Amazon Resource Names (ARNs) for the
-    /// resources you want to share. You must also specify who you want to share the resources
-    /// with, and the permissions that you grant them.</p>
-    /// <note>
-    /// <p>Sharing a resource makes it available for use by principals outside of the
-    /// Amazon Web Services account that created the resource. Sharing doesn't change any permissions or
-    /// quotas that apply to the resource in the account that created it.</p>
+    /// <p>Creates a resource share. You must provide a list of the Amazon Resource Names (ARNs) for the resources you want to share. You must also specify who you want to share the resources with, and the permissions that you grant them.</p> <note>
+    /// <p>Sharing a resource makes it available for use by principals outside of the Amazon Web Services account that created the resource. Sharing doesn't change any permissions or quotas that apply to the resource in the account that created it.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateResourceShare<
@@ -750,26 +713,13 @@ pub mod fluent_builders {
         ///
         /// <p>The principals to associate with the resource share. The possible values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>An Amazon Web Services account ID</p>
-        /// </li>
-        /// <li>
-        /// <p>An Amazon Resource Name (ARN) of an organization in Organizations</p>
-        /// </li>
-        /// <li>
-        /// <p>An ARN of an organizational unit (OU) in Organizations</p>
-        /// </li>
-        /// <li>
-        /// <p>An ARN of an IAM role</p>
-        /// </li>
-        /// <li>
-        /// <p>An ARN of an IAM user</p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>Not all resource types can be shared with IAM roles and IAM users. For more
-        /// information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and IAM users</a> in the <i>Resource Access Manager User
-        /// Guide</i>.</p>
+        /// <li> <p>An Amazon Web Services account ID</p> </li>
+        /// <li> <p>An Amazon Resource Name (ARN) of an organization in Organizations</p> </li>
+        /// <li> <p>An ARN of an organizational unit (OU) in Organizations</p> </li>
+        /// <li> <p>An ARN of an IAM role</p> </li>
+        /// <li> <p>An ARN of an IAM user</p> </li>
+        /// </ul> <note>
+        /// <p>Not all resource types can be shared with IAM roles and IAM users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and IAM users</a> in the <i>Resource Access Manager User Guide</i>.</p>
         /// </note>
         pub fn principals(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.principals(input.into());
@@ -777,26 +727,13 @@ pub mod fluent_builders {
         }
         /// <p>The principals to associate with the resource share. The possible values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>An Amazon Web Services account ID</p>
-        /// </li>
-        /// <li>
-        /// <p>An Amazon Resource Name (ARN) of an organization in Organizations</p>
-        /// </li>
-        /// <li>
-        /// <p>An ARN of an organizational unit (OU) in Organizations</p>
-        /// </li>
-        /// <li>
-        /// <p>An ARN of an IAM role</p>
-        /// </li>
-        /// <li>
-        /// <p>An ARN of an IAM user</p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>Not all resource types can be shared with IAM roles and IAM users. For more
-        /// information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and IAM users</a> in the <i>Resource Access Manager User
-        /// Guide</i>.</p>
+        /// <li> <p>An Amazon Web Services account ID</p> </li>
+        /// <li> <p>An Amazon Resource Name (ARN) of an organization in Organizations</p> </li>
+        /// <li> <p>An ARN of an organizational unit (OU) in Organizations</p> </li>
+        /// <li> <p>An ARN of an IAM role</p> </li>
+        /// <li> <p>An ARN of an IAM user</p> </li>
+        /// </ul> <note>
+        /// <p>Not all resource types can be shared with IAM roles and IAM users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and IAM users</a> in the <i>Resource Access Manager User Guide</i>.</p>
         /// </note>
         pub fn set_principals(
             mut self,
@@ -822,14 +759,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>Indicates whether principals outside your organization in Organizations can be associated
-        /// with a resource share.</p>
+        /// <p>Indicates whether principals outside your organization in Organizations can be associated with a resource share.</p>
         pub fn allow_external_principals(mut self, input: bool) -> Self {
             self.inner = self.inner.allow_external_principals(input);
             self
         }
-        /// <p>Indicates whether principals outside your organization in Organizations can be associated
-        /// with a resource share.</p>
+        /// <p>Indicates whether principals outside your organization in Organizations can be associated with a resource share.</p>
         pub fn set_allow_external_principals(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_allow_external_principals(input);
             self
@@ -848,18 +783,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_permission_arns`](Self::set_permission_arns).
         ///
-        /// <p>The Amazon Resource Names (ARNs) of the permissions to associate with the resource share. If you
-        /// do not specify an ARN for the permission, RAM automatically attaches the default
-        /// version of the permission for each resource type. Only one permission can be associated
-        /// with each resource type in a resource share.</p>
+        /// <p>The Amazon Resource Names (ARNs) of the permissions to associate with the resource share. If you do not specify an ARN for the permission, RAM automatically attaches the default version of the permission for each resource type. Only one permission can be associated with each resource type in a resource share.</p>
         pub fn permission_arns(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.permission_arns(input.into());
             self
         }
-        /// <p>The Amazon Resource Names (ARNs) of the permissions to associate with the resource share. If you
-        /// do not specify an ARN for the permission, RAM automatically attaches the default
-        /// version of the permission for each resource type. Only one permission can be associated
-        /// with each resource type in a resource share.</p>
+        /// <p>The Amazon Resource Names (ARNs) of the permissions to associate with the resource share. If you do not specify an ARN for the permission, RAM automatically attaches the default version of the permission for each resource type. Only one permission can be associated with each resource type in a resource share.</p>
         pub fn set_permission_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1406,14 +1335,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -1478,9 +1405,7 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The association type. Specify <code>PRINCIPAL</code> to list the principals that are
-        /// associated with the specified resource share. Specify <code>RESOURCE</code> to list the resources
-        /// that are associated with the specified resource share.</p>
+        /// <p>The association type. Specify <code>PRINCIPAL</code> to list the principals that are associated with the specified resource share. Specify <code>RESOURCE</code> to list the resources that are associated with the specified resource share.</p>
         pub fn association_type(
             mut self,
             input: crate::model::ResourceShareAssociationType,
@@ -1488,9 +1413,7 @@ pub mod fluent_builders {
             self.inner = self.inner.association_type(input);
             self
         }
-        /// <p>The association type. Specify <code>PRINCIPAL</code> to list the principals that are
-        /// associated with the specified resource share. Specify <code>RESOURCE</code> to list the resources
-        /// that are associated with the specified resource share.</p>
+        /// <p>The association type. Specify <code>PRINCIPAL</code> to list the principals that are associated with the specified resource share. Specify <code>RESOURCE</code> to list the resources that are associated with the specified resource share.</p>
         pub fn set_association_type(
             mut self,
             input: std::option::Option<crate::model::ResourceShareAssociationType>,
@@ -1515,26 +1438,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_share_arns(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource. You cannot specify this parameter if
-        /// the association type is <code>PRINCIPAL</code>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource. You cannot specify this parameter if the association type is <code>PRINCIPAL</code>.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource. You cannot specify this parameter if
-        /// the association type is <code>PRINCIPAL</code>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource. You cannot specify this parameter if the association type is <code>PRINCIPAL</code>.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
         }
-        /// <p>The principal. You cannot specify this parameter if the association type is
-        /// <code>RESOURCE</code>.</p>
+        /// <p>The principal. You cannot specify this parameter if the association type is <code>RESOURCE</code>.</p>
         pub fn principal(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.principal(input.into());
             self
         }
-        /// <p>The principal. You cannot specify this parameter if the association type is
-        /// <code>RESOURCE</code>.</p>
+        /// <p>The principal. You cannot specify this parameter if the association type is <code>RESOURCE</code>.</p>
         pub fn set_principal(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_principal(input);
             self
@@ -1565,14 +1484,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -1684,14 +1601,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -1836,26 +1751,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the RAM permission that is associated with the
-        /// resource share.</p>
+        /// <p>The Amazon Resource Name (ARN) of the RAM permission that is associated with the resource share.</p>
         pub fn permission_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.permission_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the RAM permission that is associated with the
-        /// resource share.</p>
+        /// <p>The Amazon Resource Name (ARN) of the RAM permission that is associated with the resource share.</p>
         pub fn set_permission_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1866,8 +1777,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListPendingInvitationResources`.
     ///
-    /// <p>Lists the resources in a resource share that is shared with you but that the invitation is still
-    /// pending for.</p>
+    /// <p>Lists the resources in a resource share that is shared with you but that the invitation is still pending for.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPendingInvitationResources<
         C = aws_smithy_client::erase::DynConnector,
@@ -1950,14 +1860,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2022,14 +1930,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifies the resource type for which to list permissions. For example, to list only
-        /// permissions that apply to EC2 subnets, specify <code>ec2:Subnet</code>.</p>
+        /// <p>Specifies the resource type for which to list permissions. For example, to list only permissions that apply to EC2 subnets, specify <code>ec2:Subnet</code>.</p>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_type(input.into());
             self
         }
-        /// <p>Specifies the resource type for which to list permissions. For example, to list only
-        /// permissions that apply to EC2 subnets, specify <code>ec2:Subnet</code>.</p>
+        /// <p>Specifies the resource type for which to list permissions. For example, to list only permissions that apply to EC2 subnets, specify <code>ec2:Subnet</code>.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2047,14 +1953,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2062,8 +1966,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListPrincipals`.
     ///
-    /// <p>Lists the principals that you have shared resources with or that have shared resources
-    /// with you.</p>
+    /// <p>Lists the principals that you have shared resources with or that have shared resources with you.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListPrincipals<
         C = aws_smithy_client::erase::DynConnector,
@@ -2161,15 +2064,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The resource type.</p>
-        /// <p>Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> | <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> | <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> | <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> | <code>glue:Database</code> | <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I <code>network-firewall:FirewallPolicy</code> | <code>network-firewall:StatefulRuleGroup</code> | <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code> | <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:FirewallRuleGroup</code> |<code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code> | <code>s3-outposts:Outpost</code> | <code>ssm-contacts:Contact</code> | <code>ssm-incidents:ResponsePlan</code>
-        /// </p>
+        /// <p>Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> | <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> | <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> | <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> | <code>glue:Database</code> | <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I <code>network-firewall:FirewallPolicy</code> | <code>network-firewall:StatefulRuleGroup</code> | <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code> | <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:FirewallRuleGroup</code> |<code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code> | <code>s3-outposts:Outpost</code> | <code>ssm-contacts:Contact</code> | <code>ssm-incidents:ResponsePlan</code> </p>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_type(input.into());
             self
         }
         /// <p>The resource type.</p>
-        /// <p>Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> | <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> | <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> | <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> | <code>glue:Database</code> | <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I <code>network-firewall:FirewallPolicy</code> | <code>network-firewall:StatefulRuleGroup</code> | <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code> | <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:FirewallRuleGroup</code> |<code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code> | <code>s3-outposts:Outpost</code> | <code>ssm-contacts:Contact</code> | <code>ssm-incidents:ResponsePlan</code>
-        /// </p>
+        /// <p>Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> | <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> | <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> | <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> | <code>glue:Database</code> | <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I <code>network-firewall:FirewallPolicy</code> | <code>network-firewall:StatefulRuleGroup</code> | <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code> | <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:FirewallRuleGroup</code> |<code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code> | <code>s3-outposts:Outpost</code> | <code>ssm-contacts:Contact</code> | <code>ssm-incidents:ResponsePlan</code> </p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2204,14 +2105,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2219,8 +2118,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListResources`.
     ///
-    /// <p>Lists the resources that you added to a resource shares or the resources that are shared with
-    /// you.</p>
+    /// <p>Lists the resources that you added to a resource shares or the resources that are shared with you.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListResources<
         C = aws_smithy_client::erase::DynConnector,
@@ -2301,15 +2199,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The resource type.</p>
-        /// <p>Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> | <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> | <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> | <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> | <code>glue:Database</code> | <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I <code>network-firewall:FirewallPolicy</code> | <code>network-firewall:StatefulRuleGroup</code> | <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code> | <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:FirewallRuleGroup</code> |<code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code> | <code>s3-outposts:Outpost</code> | <code>ssm-contacts:Contact</code> | <code>ssm-incidents:ResponsePlan</code>
-        /// </p>
+        /// <p>Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> | <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> | <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> | <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> | <code>glue:Database</code> | <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I <code>network-firewall:FirewallPolicy</code> | <code>network-firewall:StatefulRuleGroup</code> | <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code> | <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:FirewallRuleGroup</code> |<code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code> | <code>s3-outposts:Outpost</code> | <code>ssm-contacts:Contact</code> | <code>ssm-incidents:ResponsePlan</code> </p>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_type(input.into());
             self
         }
         /// <p>The resource type.</p>
-        /// <p>Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> | <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> | <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> | <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> | <code>glue:Database</code> | <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I <code>network-firewall:FirewallPolicy</code> | <code>network-firewall:StatefulRuleGroup</code> | <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code> | <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:FirewallRuleGroup</code> |<code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code> | <code>s3-outposts:Outpost</code> | <code>ssm-contacts:Contact</code> | <code>ssm-incidents:ResponsePlan</code>
-        /// </p>
+        /// <p>Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> | <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> | <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> | <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> | <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> | <code>glue:Database</code> | <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I <code>network-firewall:FirewallPolicy</code> | <code>network-firewall:StatefulRuleGroup</code> | <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code> | <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:FirewallRuleGroup</code> |<code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code> | <code>s3-outposts:Outpost</code> | <code>ssm-contacts:Contact</code> | <code>ssm-incidents:ResponsePlan</code> </p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2361,14 +2257,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2456,14 +2350,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2538,14 +2430,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call.
-        /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2553,18 +2443,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PromoteResourceShareCreatedFromPolicy`.
     ///
-    /// <p>Resource shares that were created by attaching a policy to a resource are visible only
-    /// to the resource share owner, and the resource share cannot be modified in RAM.</p>
-    ///
-    /// <p>Use this API action to promote the resource share. When you promote the resource
-    /// share, it becomes:</p>
+    /// <p>Resource shares that were created by attaching a policy to a resource are visible only to the resource share owner, and the resource share cannot be modified in RAM.</p>
+    /// <p>Use this API action to promote the resource share. When you promote the resource share, it becomes:</p>
     /// <ul>
-    /// <li>
-    /// <p>Visible to all principals that it is shared with.</p>
-    /// </li>
-    /// <li>
-    /// <p>Modifiable in RAM.</p>
-    /// </li>
+    /// <li> <p>Visible to all principals that it is shared with.</p> </li>
+    /// <li> <p>Modifiable in RAM.</p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PromoteResourceShareCreatedFromPolicy<
@@ -2986,14 +2869,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Indicates whether principals outside your organization in Organizations can be associated
-        /// with a resource share.</p>
+        /// <p>Indicates whether principals outside your organization in Organizations can be associated with a resource share.</p>
         pub fn allow_external_principals(mut self, input: bool) -> Self {
             self.inner = self.inner.allow_external_principals(input);
             self
         }
-        /// <p>Indicates whether principals outside your organization in Organizations can be associated
-        /// with a resource share.</p>
+        /// <p>Indicates whether principals outside your organization in Organizations can be associated with a resource share.</p>
         pub fn set_allow_external_principals(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_allow_external_principals(input);
             self

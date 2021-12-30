@@ -22,8 +22,7 @@ pub enum ActivateAnomalyDetectorErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to too many requests being submitted at the same time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try
-    /// again.</p>
+    /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -169,8 +168,7 @@ pub enum BackTestAnomalyDetectorErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to too many requests being submitted at the same time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try
-    /// again.</p>
+    /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -311,8 +309,7 @@ pub enum CreateAlertErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request was denied due to too many requests being submitted at the same time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try
-    /// again.</p>
+    /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -457,8 +454,7 @@ pub enum CreateAnomalyDetectorErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request was denied due to too many requests being submitted at the same time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try
-    /// again.</p>
+    /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -608,8 +604,7 @@ pub enum CreateMetricSetErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request was denied due to too many requests being submitted at the same time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try
-    /// again.</p>
+    /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -758,8 +753,7 @@ pub enum DeleteAlertErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to too many requests being submitted at the same time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try
-    /// again.</p>
+    /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -889,8 +883,7 @@ pub enum DeleteAnomalyDetectorErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to too many requests being submitted at the same time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try
-    /// again.</p>
+    /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1036,8 +1029,7 @@ pub enum DescribeAlertErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to too many requests being submitted at the same time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try
-    /// again.</p>
+    /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1168,8 +1160,7 @@ pub enum DescribeAnomalyDetectionExecutionsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to too many requests being submitted at the same time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try
-    /// again.</p>
+    /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1329,8 +1320,7 @@ pub enum DescribeAnomalyDetectorErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to too many requests being submitted at the same time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try
-    /// again.</p>
+    /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1467,8 +1457,7 @@ pub enum DescribeMetricSetErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to too many requests being submitted at the same time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try
-    /// again.</p>
+    /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1605,8 +1594,7 @@ pub enum GetAnomalyGroupErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to too many requests being submitted at the same time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try
-    /// again.</p>
+    /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1740,8 +1728,7 @@ pub enum GetFeedbackErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to too many requests being submitted at the same time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try
-    /// again.</p>
+    /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1869,8 +1856,7 @@ pub enum GetSampleDataErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to too many requests being submitted at the same time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try
-    /// again.</p>
+    /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2001,8 +1987,7 @@ pub enum ListAlertsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to too many requests being submitted at the same time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try
-    /// again.</p>
+    /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2127,8 +2112,7 @@ pub enum ListAnomalyDetectorsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to too many requests being submitted at the same time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try
-    /// again.</p>
+    /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2265,8 +2249,7 @@ pub enum ListAnomalyGroupSummariesErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to too many requests being submitted at the same time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try
-    /// again.</p>
+    /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2403,8 +2386,7 @@ pub enum ListAnomalyGroupTimeSeriesErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to too many requests being submitted at the same time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try
-    /// again.</p>
+    /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2541,8 +2523,7 @@ pub enum ListMetricSetsErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to too many requests being submitted at the same time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try
-    /// again.</p>
+    /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2672,8 +2653,7 @@ pub enum ListTagsForResourceErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource cannot be found. Check the ARN of the resource and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try
-    /// again.</p>
+    /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2792,8 +2772,7 @@ pub enum PutFeedbackErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to too many requests being submitted at the same time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try
-    /// again.</p>
+    /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2917,8 +2896,7 @@ pub enum TagResourceErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource cannot be found. Check the ARN of the resource and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try
-    /// again.</p>
+    /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3027,8 +3005,7 @@ pub enum UntagResourceErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource cannot be found. Check the ARN of the resource and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try
-    /// again.</p>
+    /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3144,8 +3121,7 @@ pub enum UpdateAnomalyDetectorErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to too many requests being submitted at the same time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try
-    /// again.</p>
+    /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3282,8 +3258,7 @@ pub enum UpdateMetricSetErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to too many requests being submitted at the same time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try
-    /// again.</p>
+    /// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try again.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3396,8 +3371,7 @@ impl std::error::Error for UpdateMetricSetError {
     }
 }
 
-/// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try
-/// again.</p>
+/// <p>The input fails to satisfy the constraints specified by the AWS service. Check your input values and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationException {

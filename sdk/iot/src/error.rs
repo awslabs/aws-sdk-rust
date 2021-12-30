@@ -22,8 +22,7 @@ pub enum AcceptCertificateTransferErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The rate exceeds the limit.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>You can't revert the certificate transfer because the transfer is already
-    /// complete.</p>
+    /// <p>You can't revert the certificate transfer because the transfer is already complete.</p>
     TransferAlreadyCompletedException(crate::error::TransferAlreadyCompletedException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -886,9 +885,7 @@ pub enum AttachSecurityProfileErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The rate exceeds the limit.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>An exception thrown when the version of an entity specified with the
-    /// <code>expectedVersion</code> parameter does not match the latest version in the
-    /// system.</p>
+    /// <p>An exception thrown when the version of an entity specified with the <code>expectedVersion</code> parameter does not match the latest version in the system.</p>
     VersionConflictException(crate::error::VersionConflictException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1448,8 +1445,7 @@ pub enum CancelCertificateTransferErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The rate exceeds the limit.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>You can't revert the certificate transfer because the transfer is already
-    /// complete.</p>
+    /// <p>You can't revert the certificate transfer because the transfer is already complete.</p>
     TransferAlreadyCompletedException(crate::error::TransferAlreadyCompletedException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -1866,9 +1862,7 @@ pub struct CancelJobExecutionError {
 pub enum CancelJobExecutionErrorKind {
     /// <p>The request is not valid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>An attempt was made to change to an invalid state, for example by deleting a job or a
-    /// job execution which is "IN_PROGRESS" without setting the <code>force</code>
-    /// parameter.</p>
+    /// <p>An attempt was made to change to an invalid state, for example by deleting a job or a job execution which is "IN_PROGRESS" without setting the <code>force</code> parameter.</p>
     InvalidStateTransitionException(crate::error::InvalidStateTransitionException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1876,9 +1870,7 @@ pub enum CancelJobExecutionErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The rate exceeds the limit.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>An exception thrown when the version of an entity specified with the
-    /// <code>expectedVersion</code> parameter does not match the latest version in the
-    /// system.</p>
+    /// <p>An exception thrown when the version of an entity specified with the <code>expectedVersion</code> parameter does not match the latest version in the system.</p>
     VersionConflictException(crate::error::VersionConflictException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2164,8 +2156,7 @@ pub struct ConfirmTopicRuleDestinationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ConfirmTopicRuleDestinationErrorKind {
-    /// <p>A conflicting resource update exception. This exception is thrown when two pending
-    /// updates cause a conflict.</p>
+    /// <p>A conflicting resource update exception. This exception is thrown when two pending updates cause a conflict.</p>
     ConflictingResourceUpdateException(crate::error::ConflictingResourceUpdateException),
     /// <p>An unexpected error has occurred.</p>
     InternalException(crate::error::InternalException),
@@ -5035,8 +5026,7 @@ pub struct CreateProvisioningTemplateVersionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateProvisioningTemplateVersionErrorKind {
-    /// <p>A conflicting resource update exception. This exception is thrown when two pending
-    /// updates cause a conflict.</p>
+    /// <p>A conflicting resource update exception. This exception is thrown when two pending updates cause a conflict.</p>
     ConflictingResourceUpdateException(crate::error::ConflictingResourceUpdateException),
     /// <p>An unexpected error has occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -6225,8 +6215,7 @@ pub struct CreateTopicRuleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateTopicRuleErrorKind {
-    /// <p>A conflicting resource update exception. This exception is thrown when two pending
-    /// updates cause a conflict.</p>
+    /// <p>A conflicting resource update exception. This exception is thrown when two pending updates cause a conflict.</p>
     ConflictingResourceUpdateException(crate::error::ConflictingResourceUpdateException),
     /// <p>An unexpected error has occurred.</p>
     InternalException(crate::error::InternalException),
@@ -6368,8 +6357,7 @@ pub struct CreateTopicRuleDestinationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateTopicRuleDestinationErrorKind {
-    /// <p>A conflicting resource update exception. This exception is thrown when two pending
-    /// updates cause a conflict.</p>
+    /// <p>A conflicting resource update exception. This exception is thrown when two pending updates cause a conflict.</p>
     ConflictingResourceUpdateException(crate::error::ConflictingResourceUpdateException),
     /// <p>An unexpected error has occurred.</p>
     InternalException(crate::error::InternalException),
@@ -6774,8 +6762,7 @@ pub struct DeleteAuthorizerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteAuthorizerErrorKind {
-    /// <p>You can't delete the resource because it is attached to one or more
-    /// resources.</p>
+    /// <p>You can't delete the resource because it is attached to one or more resources.</p>
     DeleteConflictException(crate::error::DeleteConflictException),
     /// <p>An unexpected error has occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -6940,9 +6927,7 @@ pub enum DeleteBillingGroupErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The rate exceeds the limit.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>An exception thrown when the version of an entity specified with the
-    /// <code>expectedVersion</code> parameter does not match the latest version in the
-    /// system.</p>
+    /// <p>An exception thrown when the version of an entity specified with the <code>expectedVersion</code> parameter does not match the latest version in the system.</p>
     VersionConflictException(crate::error::VersionConflictException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7223,8 +7208,7 @@ pub struct DeleteCertificateError {
 pub enum DeleteCertificateErrorKind {
     /// <p>The certificate operation is not allowed.</p>
     CertificateStateException(crate::error::CertificateStateException),
-    /// <p>You can't delete the resource because it is attached to one or more
-    /// resources.</p>
+    /// <p>You can't delete the resource because it is attached to one or more resources.</p>
     DeleteConflictException(crate::error::DeleteConflictException),
     /// <p>An unexpected error has occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -7775,9 +7759,7 @@ pub enum DeleteDynamicThingGroupErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The rate exceeds the limit.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>An exception thrown when the version of an entity specified with the
-    /// <code>expectedVersion</code> parameter does not match the latest version in the
-    /// system.</p>
+    /// <p>An exception thrown when the version of an entity specified with the <code>expectedVersion</code> parameter does not match the latest version in the system.</p>
     VersionConflictException(crate::error::VersionConflictException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7907,9 +7889,7 @@ pub enum DeleteFleetMetricErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// <p>An exception thrown when the version of an entity specified with the
-    /// <code>expectedVersion</code> parameter does not match the latest version in the
-    /// system.</p>
+    /// <p>An exception thrown when the version of an entity specified with the <code>expectedVersion</code> parameter does not match the latest version in the system.</p>
     VersionConflictException(crate::error::VersionConflictException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8049,9 +8029,7 @@ pub struct DeleteJobError {
 pub enum DeleteJobErrorKind {
     /// <p>The request is not valid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>An attempt was made to change to an invalid state, for example by deleting a job or a
-    /// job execution which is "IN_PROGRESS" without setting the <code>force</code>
-    /// parameter.</p>
+    /// <p>An attempt was made to change to an invalid state, for example by deleting a job or a job execution which is "IN_PROGRESS" without setting the <code>force</code> parameter.</p>
     InvalidStateTransitionException(crate::error::InvalidStateTransitionException),
     /// <p>A limit has been exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -8187,9 +8165,7 @@ pub struct DeleteJobExecutionError {
 pub enum DeleteJobExecutionErrorKind {
     /// <p>The request is not valid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>An attempt was made to change to an invalid state, for example by deleting a job or a
-    /// job execution which is "IN_PROGRESS" without setting the <code>force</code>
-    /// parameter.</p>
+    /// <p>An attempt was made to change to an invalid state, for example by deleting a job or a job execution which is "IN_PROGRESS" without setting the <code>force</code> parameter.</p>
     InvalidStateTransitionException(crate::error::InvalidStateTransitionException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -8577,9 +8553,7 @@ pub enum DeleteOTAUpdateErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// <p>An exception thrown when the version of an entity specified with the
-    /// <code>expectedVersion</code> parameter does not match the latest version in the
-    /// system.</p>
+    /// <p>An exception thrown when the version of an entity specified with the <code>expectedVersion</code> parameter does not match the latest version in the system.</p>
     VersionConflictException(crate::error::VersionConflictException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8723,8 +8697,7 @@ pub struct DeletePolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeletePolicyErrorKind {
-    /// <p>You can't delete the resource because it is attached to one or more
-    /// resources.</p>
+    /// <p>You can't delete the resource because it is attached to one or more resources.</p>
     DeleteConflictException(crate::error::DeleteConflictException),
     /// <p>An unexpected error has occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -8877,8 +8850,7 @@ pub struct DeletePolicyVersionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeletePolicyVersionErrorKind {
-    /// <p>You can't delete the resource because it is attached to one or more
-    /// resources.</p>
+    /// <p>You can't delete the resource because it is attached to one or more resources.</p>
     DeleteConflictException(crate::error::DeleteConflictException),
     /// <p>An unexpected error has occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -9037,11 +9009,9 @@ pub struct DeleteProvisioningTemplateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteProvisioningTemplateErrorKind {
-    /// <p>A conflicting resource update exception. This exception is thrown when two pending
-    /// updates cause a conflict.</p>
+    /// <p>A conflicting resource update exception. This exception is thrown when two pending updates cause a conflict.</p>
     ConflictingResourceUpdateException(crate::error::ConflictingResourceUpdateException),
-    /// <p>You can't delete the resource because it is attached to one or more
-    /// resources.</p>
+    /// <p>You can't delete the resource because it is attached to one or more resources.</p>
     DeleteConflictException(crate::error::DeleteConflictException),
     /// <p>An unexpected error has occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -9202,11 +9172,9 @@ pub struct DeleteProvisioningTemplateVersionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteProvisioningTemplateVersionErrorKind {
-    /// <p>A conflicting resource update exception. This exception is thrown when two pending
-    /// updates cause a conflict.</p>
+    /// <p>A conflicting resource update exception. This exception is thrown when two pending updates cause a conflict.</p>
     ConflictingResourceUpdateException(crate::error::ConflictingResourceUpdateException),
-    /// <p>You can't delete the resource because it is attached to one or more
-    /// resources.</p>
+    /// <p>You can't delete the resource because it is attached to one or more resources.</p>
     DeleteConflictException(crate::error::DeleteConflictException),
     /// <p>An unexpected error has occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -9529,8 +9497,7 @@ pub struct DeleteRoleAliasError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteRoleAliasErrorKind {
-    /// <p>You can't delete the resource because it is attached to one or more
-    /// resources.</p>
+    /// <p>You can't delete the resource because it is attached to one or more resources.</p>
     DeleteConflictException(crate::error::DeleteConflictException),
     /// <p>An unexpected error has occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -9818,9 +9785,7 @@ pub enum DeleteSecurityProfileErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The rate exceeds the limit.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>An exception thrown when the version of an entity specified with the
-    /// <code>expectedVersion</code> parameter does not match the latest version in the
-    /// system.</p>
+    /// <p>An exception thrown when the version of an entity specified with the <code>expectedVersion</code> parameter does not match the latest version in the system.</p>
     VersionConflictException(crate::error::VersionConflictException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -9940,8 +9905,7 @@ pub struct DeleteStreamError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteStreamErrorKind {
-    /// <p>You can't delete the resource because it is attached to one or more
-    /// resources.</p>
+    /// <p>You can't delete the resource because it is attached to one or more resources.</p>
     DeleteConflictException(crate::error::DeleteConflictException),
     /// <p>An unexpected error has occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -10106,9 +10070,7 @@ pub enum DeleteThingErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// <p>An exception thrown when the version of an entity specified with the
-    /// <code>expectedVersion</code> parameter does not match the latest version in the
-    /// system.</p>
+    /// <p>An exception thrown when the version of an entity specified with the <code>expectedVersion</code> parameter does not match the latest version in the system.</p>
     VersionConflictException(crate::error::VersionConflictException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -10252,9 +10214,7 @@ pub enum DeleteThingGroupErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The rate exceeds the limit.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>An exception thrown when the version of an entity specified with the
-    /// <code>expectedVersion</code> parameter does not match the latest version in the
-    /// system.</p>
+    /// <p>An exception thrown when the version of an entity specified with the <code>expectedVersion</code> parameter does not match the latest version in the system.</p>
     VersionConflictException(crate::error::VersionConflictException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -10519,8 +10479,7 @@ pub struct DeleteTopicRuleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteTopicRuleErrorKind {
-    /// <p>A conflicting resource update exception. This exception is thrown when two pending
-    /// updates cause a conflict.</p>
+    /// <p>A conflicting resource update exception. This exception is thrown when two pending updates cause a conflict.</p>
     ConflictingResourceUpdateException(crate::error::ConflictingResourceUpdateException),
     /// <p>An unexpected error has occurred.</p>
     InternalException(crate::error::InternalException),
@@ -10654,8 +10613,7 @@ pub struct DeleteTopicRuleDestinationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteTopicRuleDestinationErrorKind {
-    /// <p>A conflicting resource update exception. This exception is thrown when two pending
-    /// updates cause a conflict.</p>
+    /// <p>A conflicting resource update exception. This exception is thrown when two pending updates cause a conflict.</p>
     ConflictingResourceUpdateException(crate::error::ConflictingResourceUpdateException),
     /// <p>An unexpected error has occurred.</p>
     InternalException(crate::error::InternalException),
@@ -13864,8 +13822,7 @@ pub struct DescribeManagedJobTemplateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeManagedJobTemplateErrorKind {
-    /// <p>Internal error from the service that indicates an unexpected error or that the service
-    /// is unavailable.</p>
+    /// <p>Internal error from the service that indicates an unexpected error or that the service is unavailable.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request is not valid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -16094,8 +16051,7 @@ pub struct DisableTopicRuleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisableTopicRuleErrorKind {
-    /// <p>A conflicting resource update exception. This exception is thrown when two pending
-    /// updates cause a conflict.</p>
+    /// <p>A conflicting resource update exception. This exception is thrown when two pending updates cause a conflict.</p>
     ConflictingResourceUpdateException(crate::error::ConflictingResourceUpdateException),
     /// <p>An unexpected error has occurred.</p>
     InternalException(crate::error::InternalException),
@@ -16229,8 +16185,7 @@ pub struct EnableTopicRuleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum EnableTopicRuleErrorKind {
-    /// <p>A conflicting resource update exception. This exception is thrown when two pending
-    /// updates cause a conflict.</p>
+    /// <p>A conflicting resource update exception. This exception is thrown when two pending updates cause a conflict.</p>
     ConflictingResourceUpdateException(crate::error::ConflictingResourceUpdateException),
     /// <p>An unexpected error has occurred.</p>
     InternalException(crate::error::InternalException),
@@ -21597,8 +21552,7 @@ pub struct ListManagedJobTemplatesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListManagedJobTemplatesErrorKind {
-    /// <p>Internal error from the service that indicates an unexpected error or that the service
-    /// is unavailable.</p>
+    /// <p>Internal error from the service that indicates an unexpected error or that the service is unavailable.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request is not valid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -26148,9 +26102,7 @@ pub struct RegisterCertificateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RegisterCertificateErrorKind {
-    /// <p>Unable to verify the CA certificate used to sign the device certificate you are
-    /// attempting to register. This is happens when you have registered more than one CA
-    /// certificate that has the same subject field and public key.</p>
+    /// <p>Unable to verify the CA certificate used to sign the device certificate you are attempting to register. This is happens when you have registered more than one CA certificate that has the same subject field and public key.</p>
     CertificateConflictException(crate::error::CertificateConflictException),
     /// <p>The certificate operation is not allowed.</p>
     CertificateStateException(crate::error::CertificateStateException),
@@ -26519,8 +26471,7 @@ pub struct RegisterThingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RegisterThingErrorKind {
-    /// <p>A conflicting resource update exception. This exception is thrown when two pending
-    /// updates cause a conflict.</p>
+    /// <p>A conflicting resource update exception. This exception is thrown when two pending updates cause a conflict.</p>
     ConflictingResourceUpdateException(crate::error::ConflictingResourceUpdateException),
     /// <p>An unexpected error has occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -26683,8 +26634,7 @@ pub enum RejectCertificateTransferErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The rate exceeds the limit.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>You can't revert the certificate transfer because the transfer is already
-    /// complete.</p>
+    /// <p>You can't revert the certificate transfer because the transfer is already complete.</p>
     TransferAlreadyCompletedException(crate::error::TransferAlreadyCompletedException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -27093,8 +27043,7 @@ pub struct ReplaceTopicRuleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ReplaceTopicRuleErrorKind {
-    /// <p>A conflicting resource update exception. This exception is thrown when two pending
-    /// updates cause a conflict.</p>
+    /// <p>A conflicting resource update exception. This exception is thrown when two pending updates cause a conflict.</p>
     ConflictingResourceUpdateException(crate::error::ConflictingResourceUpdateException),
     /// <p>An unexpected error has occurred.</p>
     InternalException(crate::error::InternalException),
@@ -28065,9 +28014,7 @@ pub enum StartAuditMitigationActionsTaskErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>A limit has been exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>
-    /// This exception occurs if you attempt to start a task with the same task-id as an existing task but with a different clientRequestToken.
-    /// </p>
+    /// <p> This exception occurs if you attempt to start a task with the same task-id as an existing task but with a different clientRequestToken. </p>
     TaskAlreadyExistsException(crate::error::TaskAlreadyExistsException),
     /// <p>The rate exceeds the limit.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -28223,9 +28170,7 @@ pub enum StartDetectMitigationActionsTaskErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>A limit has been exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>
-    /// This exception occurs if you attempt to start a task with the same task-id as an existing task but with a different clientRequestToken.
-    /// </p>
+    /// <p> This exception occurs if you attempt to start a task with the same task-id as an existing task but with a different clientRequestToken. </p>
     TaskAlreadyExistsException(crate::error::TaskAlreadyExistsException),
     /// <p>The rate exceeds the limit.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -29222,8 +29167,7 @@ pub enum TransferCertificateErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The rate exceeds the limit.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>You can't transfer the certificate because authorization policies are still
-    /// attached.</p>
+    /// <p>You can't transfer the certificate because authorization policies are still attached.</p>
     TransferConflictException(crate::error::TransferConflictException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -29923,9 +29867,7 @@ pub enum UpdateBillingGroupErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The rate exceeds the limit.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>An exception thrown when the version of an entity specified with the
-    /// <code>expectedVersion</code> parameter does not match the latest version in the
-    /// system.</p>
+    /// <p>An exception thrown when the version of an entity specified with the <code>expectedVersion</code> parameter does not match the latest version in the system.</p>
     VersionConflictException(crate::error::VersionConflictException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -30785,9 +30727,7 @@ pub enum UpdateDynamicThingGroupErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The rate exceeds the limit.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>An exception thrown when the version of an entity specified with the
-    /// <code>expectedVersion</code> parameter does not match the latest version in the
-    /// system.</p>
+    /// <p>An exception thrown when the version of an entity specified with the <code>expectedVersion</code> parameter does not match the latest version in the system.</p>
     VersionConflictException(crate::error::VersionConflictException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -31058,9 +30998,7 @@ pub enum UpdateFleetMetricErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// <p>An exception thrown when the version of an entity specified with the
-    /// <code>expectedVersion</code> parameter does not match the latest version in the
-    /// system.</p>
+    /// <p>An exception thrown when the version of an entity specified with the <code>expectedVersion</code> parameter does not match the latest version in the system.</p>
     VersionConflictException(crate::error::VersionConflictException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -31618,8 +31556,7 @@ pub struct UpdateProvisioningTemplateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateProvisioningTemplateErrorKind {
-    /// <p>A conflicting resource update exception. This exception is thrown when two pending
-    /// updates cause a conflict.</p>
+    /// <p>A conflicting resource update exception. This exception is thrown when two pending updates cause a conflict.</p>
     ConflictingResourceUpdateException(crate::error::ConflictingResourceUpdateException),
     /// <p>An unexpected error has occurred.</p>
     InternalFailureException(crate::error::InternalFailureException),
@@ -32039,9 +31976,7 @@ pub enum UpdateSecurityProfileErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The rate exceeds the limit.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>An exception thrown when the version of an entity specified with the
-    /// <code>expectedVersion</code> parameter does not match the latest version in the
-    /// system.</p>
+    /// <p>An exception thrown when the version of an entity specified with the <code>expectedVersion</code> parameter does not match the latest version in the system.</p>
     VersionConflictException(crate::error::VersionConflictException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -32324,9 +32259,7 @@ pub enum UpdateThingErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    /// <p>An exception thrown when the version of an entity specified with the
-    /// <code>expectedVersion</code> parameter does not match the latest version in the
-    /// system.</p>
+    /// <p>An exception thrown when the version of an entity specified with the <code>expectedVersion</code> parameter does not match the latest version in the system.</p>
     VersionConflictException(crate::error::VersionConflictException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -32472,9 +32405,7 @@ pub enum UpdateThingGroupErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The rate exceeds the limit.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>An exception thrown when the version of an entity specified with the
-    /// <code>expectedVersion</code> parameter does not match the latest version in the
-    /// system.</p>
+    /// <p>An exception thrown when the version of an entity specified with the <code>expectedVersion</code> parameter does not match the latest version in the system.</p>
     VersionConflictException(crate::error::VersionConflictException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -32729,8 +32660,7 @@ pub struct UpdateTopicRuleDestinationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateTopicRuleDestinationErrorKind {
-    /// <p>A conflicting resource update exception. This exception is thrown when two pending
-    /// updates cause a conflict.</p>
+    /// <p>A conflicting resource update exception. This exception is thrown when two pending updates cause a conflict.</p>
     ConflictingResourceUpdateException(crate::error::ConflictingResourceUpdateException),
     /// <p>An unexpected error has occurred.</p>
     InternalException(crate::error::InternalException),
@@ -33372,8 +33302,7 @@ impl InternalException {
     }
 }
 
-/// <p>A conflicting resource update exception. This exception is thrown when two pending
-/// updates cause a conflict.</p>
+/// <p>A conflicting resource update exception. This exception is thrown when two pending updates cause a conflict.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictingResourceUpdateException {
@@ -33501,9 +33430,7 @@ impl ResourceNotFoundException {
     }
 }
 
-/// <p>An exception thrown when the version of an entity specified with the
-/// <code>expectedVersion</code> parameter does not match the latest version in the
-/// system.</p>
+/// <p>An exception thrown when the version of an entity specified with the <code>expectedVersion</code> parameter does not match the latest version in the system.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VersionConflictException {
@@ -33951,8 +33878,7 @@ impl LimitExceededException {
     }
 }
 
-/// <p>You can't transfer the certificate because authorization policies are still
-/// attached.</p>
+/// <p>You can't transfer the certificate because authorization policies are still attached.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TransferConflictException {
@@ -34080,9 +34006,7 @@ impl InvalidResponseException {
     }
 }
 
-/// <p>
-/// This exception occurs if you attempt to start a task with the same task-id as an existing task but with a different clientRequestToken.
-/// </p>
+/// <p> This exception occurs if you attempt to start a task with the same task-id as an existing task but with a different clientRequestToken. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TaskAlreadyExistsException {
@@ -34378,8 +34302,7 @@ impl SqlParseException {
     }
 }
 
-/// <p>You can't revert the certificate transfer because the transfer is already
-/// complete.</p>
+/// <p>You can't revert the certificate transfer because the transfer is already complete.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TransferAlreadyCompletedException {
@@ -34507,9 +34430,7 @@ impl ResourceRegistrationFailureException {
     }
 }
 
-/// <p>Unable to verify the CA certificate used to sign the device certificate you are
-/// attempting to register. This is happens when you have registered more than one CA
-/// certificate that has the same subject field and public key.</p>
+/// <p>Unable to verify the CA certificate used to sign the device certificate you are attempting to register. This is happens when you have registered more than one CA certificate that has the same subject field and public key.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CertificateConflictException {
@@ -34637,8 +34558,7 @@ impl RegistrationCodeValidationException {
     }
 }
 
-/// <p>Internal error from the service that indicates an unexpected error or that the service
-/// is unavailable.</p>
+/// <p>Internal error from the service that indicates an unexpected error or that the service is unavailable.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerException {
@@ -34702,8 +34622,7 @@ impl InternalServerException {
     }
 }
 
-/// <p>You can't delete the resource because it is attached to one or more
-/// resources.</p>
+/// <p>You can't delete the resource because it is attached to one or more resources.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteConflictException {
@@ -34767,9 +34686,7 @@ impl DeleteConflictException {
     }
 }
 
-/// <p>An attempt was made to change to an invalid state, for example by deleting a job or a
-/// job execution which is "IN_PROGRESS" without setting the <code>force</code>
-/// parameter.</p>
+/// <p>An attempt was made to change to an invalid state, for example by deleting a job or a job execution which is "IN_PROGRESS" without setting the <code>force</code> parameter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidStateTransitionException {

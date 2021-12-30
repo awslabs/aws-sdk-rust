@@ -14,14 +14,12 @@ pub mod create_connector_profile_input {
             std::option::Option<crate::model::ConnectorProfileConfig>,
     }
     impl Builder {
-        /// <p> The name of the connector profile. The name is unique for each
-        /// <code>ConnectorProfile</code> in your Amazon Web Services account. </p>
+        /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in your Amazon Web Services account. </p>
         pub fn connector_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.connector_profile_name = Some(input.into());
             self
         }
-        /// <p> The name of the connector profile. The name is unique for each
-        /// <code>ConnectorProfile</code> in your Amazon Web Services account. </p>
+        /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in your Amazon Web Services account. </p>
         pub fn set_connector_profile_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -29,18 +27,12 @@ pub mod create_connector_profile_input {
             self.connector_profile_name = input;
             self
         }
-        /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for
-        /// encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If
-        /// you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key.
-        /// </p>
+        /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key. </p>
         pub fn kms_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_arn = Some(input.into());
             self
         }
-        /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for
-        /// encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If
-        /// you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key.
-        /// </p>
+        /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key. </p>
         pub fn set_kms_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_arn = input;
             self
@@ -58,16 +50,12 @@ pub mod create_connector_profile_input {
             self.connector_type = input;
             self
         }
-        /// <p> Indicates the connection mode and specifies whether it is public or private. Private
-        /// flows use Amazon Web Services PrivateLink to route data over Amazon Web Services infrastructure without exposing it to the
-        /// public internet. </p>
+        /// <p> Indicates the connection mode and specifies whether it is public or private. Private flows use Amazon Web Services PrivateLink to route data over Amazon Web Services infrastructure without exposing it to the public internet. </p>
         pub fn connection_mode(mut self, input: crate::model::ConnectionMode) -> Self {
             self.connection_mode = Some(input);
             self
         }
-        /// <p> Indicates the connection mode and specifies whether it is public or private. Private
-        /// flows use Amazon Web Services PrivateLink to route data over Amazon Web Services infrastructure without exposing it to the
-        /// public internet. </p>
+        /// <p> Indicates the connection mode and specifies whether it is public or private. Private flows use Amazon Web Services PrivateLink to route data over Amazon Web Services infrastructure without exposing it to the public internet. </p>
         pub fn set_connection_mode(
             mut self,
             input: std::option::Option<crate::model::ConnectionMode>,
@@ -246,14 +234,12 @@ pub mod create_flow_input {
         >,
     }
     impl Builder {
-        /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
-        /// (-) only. </p>
+        /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
         pub fn flow_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.flow_name = Some(input.into());
             self
         }
-        /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
-        /// (-) only. </p>
+        /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
         pub fn set_flow_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.flow_name = input;
             self
@@ -268,18 +254,12 @@ pub mod create_flow_input {
             self.description = input;
             self
         }
-        /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for
-        /// encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If
-        /// you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key.
-        /// </p>
+        /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key. </p>
         pub fn kms_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_arn = Some(input.into());
             self
         }
-        /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for
-        /// encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If
-        /// you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key.
-        /// </p>
+        /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key. </p>
         pub fn set_kms_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_arn = input;
             self
@@ -297,14 +277,12 @@ pub mod create_flow_input {
             self.trigger_config = input;
             self
         }
-        /// <p> The configuration that controls how Amazon AppFlow retrieves data from the source
-        /// connector. </p>
+        /// <p> The configuration that controls how Amazon AppFlow retrieves data from the source connector. </p>
         pub fn source_flow_config(mut self, input: crate::model::SourceFlowConfig) -> Self {
             self.source_flow_config = Some(input);
             self
         }
-        /// <p> The configuration that controls how Amazon AppFlow retrieves data from the source
-        /// connector. </p>
+        /// <p> The configuration that controls how Amazon AppFlow retrieves data from the source connector. </p>
         pub fn set_source_flow_config(
             mut self,
             input: std::option::Option<crate::model::SourceFlowConfig>,
@@ -316,8 +294,7 @@ pub mod create_flow_input {
         ///
         /// To override the contents of this collection use [`set_destination_flow_config_list`](Self::set_destination_flow_config_list).
         ///
-        /// <p> The configuration that controls how Amazon AppFlow places data in the destination
-        /// connector. </p>
+        /// <p> The configuration that controls how Amazon AppFlow places data in the destination connector. </p>
         pub fn destination_flow_config_list(
             mut self,
             input: crate::model::DestinationFlowConfig,
@@ -327,8 +304,7 @@ pub mod create_flow_input {
             self.destination_flow_config_list = Some(v);
             self
         }
-        /// <p> The configuration that controls how Amazon AppFlow places data in the destination
-        /// connector. </p>
+        /// <p> The configuration that controls how Amazon AppFlow places data in the destination connector. </p>
         pub fn set_destination_flow_config_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DestinationFlowConfig>>,
@@ -340,16 +316,14 @@ pub mod create_flow_input {
         ///
         /// To override the contents of this collection use [`set_tasks`](Self::set_tasks).
         ///
-        /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run.
-        /// </p>
+        /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
         pub fn tasks(mut self, input: crate::model::Task) -> Self {
             let mut v = self.tasks.unwrap_or_default();
             v.push(input);
             self.tasks = Some(v);
             self
         }
-        /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run.
-        /// </p>
+        /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
         pub fn set_tasks(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Task>>,
@@ -528,14 +502,12 @@ pub mod delete_connector_profile_input {
         pub(crate) force_delete: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p> The name of the connector profile. The name is unique for each
-        /// <code>ConnectorProfile</code> in your account. </p>
+        /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in your account. </p>
         pub fn connector_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.connector_profile_name = Some(input.into());
             self
         }
-        /// <p> The name of the connector profile. The name is unique for each
-        /// <code>ConnectorProfile</code> in your account. </p>
+        /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in your account. </p>
         pub fn set_connector_profile_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -543,14 +515,12 @@ pub mod delete_connector_profile_input {
             self.connector_profile_name = input;
             self
         }
-        /// <p> Indicates whether Amazon AppFlow should delete the profile, even if it is currently in
-        /// use in one or more flows. </p>
+        /// <p> Indicates whether Amazon AppFlow should delete the profile, even if it is currently in use in one or more flows. </p>
         pub fn force_delete(mut self, input: bool) -> Self {
             self.force_delete = Some(input);
             self
         }
-        /// <p> Indicates whether Amazon AppFlow should delete the profile, even if it is currently in
-        /// use in one or more flows. </p>
+        /// <p> Indicates whether Amazon AppFlow should delete the profile, even if it is currently in use in one or more flows. </p>
         pub fn set_force_delete(mut self, input: std::option::Option<bool>) -> Self {
             self.force_delete = input;
             self
@@ -698,26 +668,22 @@ pub mod delete_flow_input {
         pub(crate) force_delete: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
-        /// (-) only. </p>
+        /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
         pub fn flow_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.flow_name = Some(input.into());
             self
         }
-        /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
-        /// (-) only. </p>
+        /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
         pub fn set_flow_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.flow_name = input;
             self
         }
-        /// <p> Indicates whether Amazon AppFlow should delete the flow, even if it is currently in use.
-        /// </p>
+        /// <p> Indicates whether Amazon AppFlow should delete the flow, even if it is currently in use. </p>
         pub fn force_delete(mut self, input: bool) -> Self {
             self.force_delete = Some(input);
             self
         }
-        /// <p> Indicates whether Amazon AppFlow should delete the flow, even if it is currently in use.
-        /// </p>
+        /// <p> Indicates whether Amazon AppFlow should delete the flow, even if it is currently in use. </p>
         pub fn set_force_delete(mut self, input: std::option::Option<bool>) -> Self {
             self.force_delete = input;
             self
@@ -889,14 +855,12 @@ pub mod describe_connector_entity_input {
             self.connector_type = input;
             self
         }
-        /// <p> The name of the connector profile. The name is unique for each
-        /// <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
+        /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
         pub fn connector_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.connector_profile_name = Some(input.into());
             self
         }
-        /// <p> The name of the connector profile. The name is unique for each
-        /// <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
+        /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
         pub fn set_connector_profile_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1055,16 +1019,14 @@ pub mod describe_connector_profiles_input {
         ///
         /// To override the contents of this collection use [`set_connector_profile_names`](Self::set_connector_profile_names).
         ///
-        /// <p> The name of the connector profile. The name is unique for each
-        /// <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
+        /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
         pub fn connector_profile_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.connector_profile_names.unwrap_or_default();
             v.push(input.into());
             self.connector_profile_names = Some(v);
             self
         }
-        /// <p> The name of the connector profile. The name is unique for each
-        /// <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
+        /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
         pub fn set_connector_profile_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1085,14 +1047,12 @@ pub mod describe_connector_profiles_input {
             self.connector_type = input;
             self
         }
-        /// <p> Specifies the maximum number of items that should be returned in the result set. The
-        /// default for <code>maxResults</code> is 20 (for all paginated API operations). </p>
+        /// <p> Specifies the maximum number of items that should be returned in the result set. The default for <code>maxResults</code> is 20 (for all paginated API operations). </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p> Specifies the maximum number of items that should be returned in the result set. The
-        /// default for <code>maxResults</code> is 20 (for all paginated API operations). </p>
+        /// <p> Specifies the maximum number of items that should be returned in the result set. The default for <code>maxResults</code> is 20 (for all paginated API operations). </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1422,14 +1382,12 @@ pub mod describe_flow_input {
         pub(crate) flow_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
-        /// (-) only. </p>
+        /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
         pub fn flow_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.flow_name = Some(input.into());
             self
         }
-        /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
-        /// (-) only. </p>
+        /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
         pub fn set_flow_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.flow_name = input;
             self
@@ -1574,26 +1532,22 @@ pub mod describe_flow_execution_records_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
-        /// (-) only. </p>
+        /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
         pub fn flow_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.flow_name = Some(input.into());
             self
         }
-        /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
-        /// (-) only. </p>
+        /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
         pub fn set_flow_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.flow_name = input;
             self
         }
-        /// <p> Specifies the maximum number of items that should be returned in the result set. The
-        /// default for <code>maxResults</code> is 20 (for all paginated API operations). </p>
+        /// <p> Specifies the maximum number of items that should be returned in the result set. The default for <code>maxResults</code> is 20 (for all paginated API operations). </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p> Specifies the maximum number of items that should be returned in the result set. The
-        /// default for <code>maxResults</code> is 20 (for all paginated API operations). </p>
+        /// <p> Specifies the maximum number of items that should be returned in the result set. The default for <code>maxResults</code> is 20 (for all paginated API operations). </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1754,16 +1708,12 @@ pub mod list_connector_entities_input {
         pub(crate) entities_path: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> The name of the connector profile. The name is unique for each
-        /// <code>ConnectorProfile</code> in the Amazon Web Services account, and is used to query the downstream
-        /// connector. </p>
+        /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account, and is used to query the downstream connector. </p>
         pub fn connector_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.connector_profile_name = Some(input.into());
             self
         }
-        /// <p> The name of the connector profile. The name is unique for each
-        /// <code>ConnectorProfile</code> in the Amazon Web Services account, and is used to query the downstream
-        /// connector. </p>
+        /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account, and is used to query the downstream connector. </p>
         pub fn set_connector_profile_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1784,20 +1734,12 @@ pub mod list_connector_entities_input {
             self.connector_type = input;
             self
         }
-        /// <p> This optional parameter is specific to connector implementation. Some connectors support
-        /// multiple levels or categories of entities. You can find out the list of roots for such
-        /// providers by sending a request without the <code>entitiesPath</code> parameter. If the
-        /// connector supports entities at different roots, this initial request returns the list of
-        /// roots. Otherwise, this request returns all entities supported by the provider. </p>
+        /// <p> This optional parameter is specific to connector implementation. Some connectors support multiple levels or categories of entities. You can find out the list of roots for such providers by sending a request without the <code>entitiesPath</code> parameter. If the connector supports entities at different roots, this initial request returns the list of roots. Otherwise, this request returns all entities supported by the provider. </p>
         pub fn entities_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.entities_path = Some(input.into());
             self
         }
-        /// <p> This optional parameter is specific to connector implementation. Some connectors support
-        /// multiple levels or categories of entities. You can find out the list of roots for such
-        /// providers by sending a request without the <code>entitiesPath</code> parameter. If the
-        /// connector supports entities at different roots, this initial request returns the list of
-        /// roots. Otherwise, this request returns all entities supported by the provider. </p>
+        /// <p> This optional parameter is specific to connector implementation. Some connectors support multiple levels or categories of entities. You can find out the list of roots for such providers by sending a request without the <code>entitiesPath</code> parameter. If the connector supports entities at different roots, this initial request returns the list of roots. Otherwise, this request returns all entities supported by the provider. </p>
         pub fn set_entities_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2255,14 +2197,12 @@ pub mod start_flow_input {
         pub(crate) flow_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
-        /// (-) only. </p>
+        /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
         pub fn flow_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.flow_name = Some(input.into());
             self
         }
-        /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
-        /// (-) only. </p>
+        /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
         pub fn set_flow_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.flow_name = input;
             self
@@ -2401,14 +2341,12 @@ pub mod stop_flow_input {
         pub(crate) flow_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
-        /// (-) only. </p>
+        /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
         pub fn flow_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.flow_name = Some(input.into());
             self
         }
-        /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
-        /// (-) only. </p>
+        /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
         pub fn set_flow_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.flow_name = input;
             self
@@ -2927,14 +2865,12 @@ pub mod update_connector_profile_input {
             std::option::Option<crate::model::ConnectorProfileConfig>,
     }
     impl Builder {
-        /// <p> The name of the connector profile and is unique for each <code>ConnectorProfile</code> in
-        /// the Amazon Web Services account. </p>
+        /// <p> The name of the connector profile and is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
         pub fn connector_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.connector_profile_name = Some(input.into());
             self
         }
-        /// <p> The name of the connector profile and is unique for each <code>ConnectorProfile</code> in
-        /// the Amazon Web Services account. </p>
+        /// <p> The name of the connector profile and is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
         pub fn set_connector_profile_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3120,14 +3056,12 @@ pub mod update_flow_input {
         pub(crate) tasks: std::option::Option<std::vec::Vec<crate::model::Task>>,
     }
     impl Builder {
-        /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
-        /// (-) only. </p>
+        /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
         pub fn flow_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.flow_name = Some(input.into());
             self
         }
-        /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
-        /// (-) only. </p>
+        /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
         pub fn set_flow_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.flow_name = input;
             self
@@ -3155,14 +3089,12 @@ pub mod update_flow_input {
             self.trigger_config = input;
             self
         }
-        /// <p> Contains information about the configuration of the source connector used in the flow.
-        /// </p>
+        /// <p> Contains information about the configuration of the source connector used in the flow. </p>
         pub fn source_flow_config(mut self, input: crate::model::SourceFlowConfig) -> Self {
             self.source_flow_config = Some(input);
             self
         }
-        /// <p> Contains information about the configuration of the source connector used in the flow.
-        /// </p>
+        /// <p> Contains information about the configuration of the source connector used in the flow. </p>
         pub fn set_source_flow_config(
             mut self,
             input: std::option::Option<crate::model::SourceFlowConfig>,
@@ -3174,8 +3106,7 @@ pub mod update_flow_input {
         ///
         /// To override the contents of this collection use [`set_destination_flow_config_list`](Self::set_destination_flow_config_list).
         ///
-        /// <p> The configuration that controls how Amazon AppFlow transfers data to the destination
-        /// connector. </p>
+        /// <p> The configuration that controls how Amazon AppFlow transfers data to the destination connector. </p>
         pub fn destination_flow_config_list(
             mut self,
             input: crate::model::DestinationFlowConfig,
@@ -3185,8 +3116,7 @@ pub mod update_flow_input {
             self.destination_flow_config_list = Some(v);
             self
         }
-        /// <p> The configuration that controls how Amazon AppFlow transfers data to the destination
-        /// connector. </p>
+        /// <p> The configuration that controls how Amazon AppFlow transfers data to the destination connector. </p>
         pub fn set_destination_flow_config_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DestinationFlowConfig>>,
@@ -3198,16 +3128,14 @@ pub mod update_flow_input {
         ///
         /// To override the contents of this collection use [`set_tasks`](Self::set_tasks).
         ///
-        /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run.
-        /// </p>
+        /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
         pub fn tasks(mut self, input: crate::model::Task) -> Self {
             let mut v = self.tasks.unwrap_or_default();
             v.push(input);
             self.tasks = Some(v);
             self
         }
-        /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run.
-        /// </p>
+        /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
         pub fn set_tasks(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Task>>,
@@ -3353,27 +3281,22 @@ impl UpdateFlowInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFlowInput {
-    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
-    /// (-) only. </p>
+    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
     pub flow_name: std::option::Option<std::string::String>,
     /// <p> A description of the flow. </p>
     pub description: std::option::Option<std::string::String>,
     /// <p> The trigger settings that determine how and when the flow runs. </p>
     pub trigger_config: std::option::Option<crate::model::TriggerConfig>,
-    /// <p> Contains information about the configuration of the source connector used in the flow.
-    /// </p>
+    /// <p> Contains information about the configuration of the source connector used in the flow. </p>
     pub source_flow_config: std::option::Option<crate::model::SourceFlowConfig>,
-    /// <p> The configuration that controls how Amazon AppFlow transfers data to the destination
-    /// connector. </p>
+    /// <p> The configuration that controls how Amazon AppFlow transfers data to the destination connector. </p>
     pub destination_flow_config_list:
         std::option::Option<std::vec::Vec<crate::model::DestinationFlowConfig>>,
-    /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run.
-    /// </p>
+    /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
     pub tasks: std::option::Option<std::vec::Vec<crate::model::Task>>,
 }
 impl UpdateFlowInput {
-    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
-    /// (-) only. </p>
+    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
     pub fn flow_name(&self) -> std::option::Option<&str> {
         self.flow_name.as_deref()
     }
@@ -3385,20 +3308,17 @@ impl UpdateFlowInput {
     pub fn trigger_config(&self) -> std::option::Option<&crate::model::TriggerConfig> {
         self.trigger_config.as_ref()
     }
-    /// <p> Contains information about the configuration of the source connector used in the flow.
-    /// </p>
+    /// <p> Contains information about the configuration of the source connector used in the flow. </p>
     pub fn source_flow_config(&self) -> std::option::Option<&crate::model::SourceFlowConfig> {
         self.source_flow_config.as_ref()
     }
-    /// <p> The configuration that controls how Amazon AppFlow transfers data to the destination
-    /// connector. </p>
+    /// <p> The configuration that controls how Amazon AppFlow transfers data to the destination connector. </p>
     pub fn destination_flow_config_list(
         &self,
     ) -> std::option::Option<&[crate::model::DestinationFlowConfig]> {
         self.destination_flow_config_list.as_deref()
     }
-    /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run.
-    /// </p>
+    /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
     pub fn tasks(&self) -> std::option::Option<&[crate::model::Task]> {
         self.tasks.as_deref()
     }
@@ -3423,8 +3343,7 @@ impl std::fmt::Debug for UpdateFlowInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateConnectorProfileInput {
-    /// <p> The name of the connector profile and is unique for each <code>ConnectorProfile</code> in
-    /// the Amazon Web Services account. </p>
+    /// <p> The name of the connector profile and is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
     pub connector_profile_name: std::option::Option<std::string::String>,
     /// <p> Indicates the connection mode and if it is public or private. </p>
     pub connection_mode: std::option::Option<crate::model::ConnectionMode>,
@@ -3432,8 +3351,7 @@ pub struct UpdateConnectorProfileInput {
     pub connector_profile_config: std::option::Option<crate::model::ConnectorProfileConfig>,
 }
 impl UpdateConnectorProfileInput {
-    /// <p> The name of the connector profile and is unique for each <code>ConnectorProfile</code> in
-    /// the Amazon Web Services account. </p>
+    /// <p> The name of the connector profile and is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
     pub fn connector_profile_name(&self) -> std::option::Option<&str> {
         self.connector_profile_name.as_deref()
     }
@@ -3522,13 +3440,11 @@ impl std::fmt::Debug for TagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopFlowInput {
-    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
-    /// (-) only. </p>
+    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
     pub flow_name: std::option::Option<std::string::String>,
 }
 impl StopFlowInput {
-    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
-    /// (-) only. </p>
+    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
     pub fn flow_name(&self) -> std::option::Option<&str> {
         self.flow_name.as_deref()
     }
@@ -3545,13 +3461,11 @@ impl std::fmt::Debug for StopFlowInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartFlowInput {
-    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
-    /// (-) only. </p>
+    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
     pub flow_name: std::option::Option<std::string::String>,
 }
 impl StartFlowInput {
-    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
-    /// (-) only. </p>
+    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
     pub fn flow_name(&self) -> std::option::Option<&str> {
         self.flow_name.as_deref()
     }
@@ -3617,23 +3531,15 @@ impl std::fmt::Debug for ListFlowsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConnectorEntitiesInput {
-    /// <p> The name of the connector profile. The name is unique for each
-    /// <code>ConnectorProfile</code> in the Amazon Web Services account, and is used to query the downstream
-    /// connector. </p>
+    /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account, and is used to query the downstream connector. </p>
     pub connector_profile_name: std::option::Option<std::string::String>,
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
     pub connector_type: std::option::Option<crate::model::ConnectorType>,
-    /// <p> This optional parameter is specific to connector implementation. Some connectors support
-    /// multiple levels or categories of entities. You can find out the list of roots for such
-    /// providers by sending a request without the <code>entitiesPath</code> parameter. If the
-    /// connector supports entities at different roots, this initial request returns the list of
-    /// roots. Otherwise, this request returns all entities supported by the provider. </p>
+    /// <p> This optional parameter is specific to connector implementation. Some connectors support multiple levels or categories of entities. You can find out the list of roots for such providers by sending a request without the <code>entitiesPath</code> parameter. If the connector supports entities at different roots, this initial request returns the list of roots. Otherwise, this request returns all entities supported by the provider. </p>
     pub entities_path: std::option::Option<std::string::String>,
 }
 impl ListConnectorEntitiesInput {
-    /// <p> The name of the connector profile. The name is unique for each
-    /// <code>ConnectorProfile</code> in the Amazon Web Services account, and is used to query the downstream
-    /// connector. </p>
+    /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account, and is used to query the downstream connector. </p>
     pub fn connector_profile_name(&self) -> std::option::Option<&str> {
         self.connector_profile_name.as_deref()
     }
@@ -3641,11 +3547,7 @@ impl ListConnectorEntitiesInput {
     pub fn connector_type(&self) -> std::option::Option<&crate::model::ConnectorType> {
         self.connector_type.as_ref()
     }
-    /// <p> This optional parameter is specific to connector implementation. Some connectors support
-    /// multiple levels or categories of entities. You can find out the list of roots for such
-    /// providers by sending a request without the <code>entitiesPath</code> parameter. If the
-    /// connector supports entities at different roots, this initial request returns the list of
-    /// roots. Otherwise, this request returns all entities supported by the provider. </p>
+    /// <p> This optional parameter is specific to connector implementation. Some connectors support multiple levels or categories of entities. You can find out the list of roots for such providers by sending a request without the <code>entitiesPath</code> parameter. If the connector supports entities at different roots, this initial request returns the list of roots. Otherwise, this request returns all entities supported by the provider. </p>
     pub fn entities_path(&self) -> std::option::Option<&str> {
         self.entities_path.as_deref()
     }
@@ -3664,23 +3566,19 @@ impl std::fmt::Debug for ListConnectorEntitiesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFlowExecutionRecordsInput {
-    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
-    /// (-) only. </p>
+    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
     pub flow_name: std::option::Option<std::string::String>,
-    /// <p> Specifies the maximum number of items that should be returned in the result set. The
-    /// default for <code>maxResults</code> is 20 (for all paginated API operations). </p>
+    /// <p> Specifies the maximum number of items that should be returned in the result set. The default for <code>maxResults</code> is 20 (for all paginated API operations). </p>
     pub max_results: std::option::Option<i32>,
     /// <p> The pagination token for the next page of data. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeFlowExecutionRecordsInput {
-    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
-    /// (-) only. </p>
+    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
     pub fn flow_name(&self) -> std::option::Option<&str> {
         self.flow_name.as_deref()
     }
-    /// <p> Specifies the maximum number of items that should be returned in the result set. The
-    /// default for <code>maxResults</code> is 20 (for all paginated API operations). </p>
+    /// <p> Specifies the maximum number of items that should be returned in the result set. The default for <code>maxResults</code> is 20 (for all paginated API operations). </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -3703,13 +3601,11 @@ impl std::fmt::Debug for DescribeFlowExecutionRecordsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFlowInput {
-    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
-    /// (-) only. </p>
+    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
     pub flow_name: std::option::Option<std::string::String>,
 }
 impl DescribeFlowInput {
-    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
-    /// (-) only. </p>
+    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
     pub fn flow_name(&self) -> std::option::Option<&str> {
         self.flow_name.as_deref()
     }
@@ -3754,20 +3650,17 @@ impl std::fmt::Debug for DescribeConnectorsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConnectorProfilesInput {
-    /// <p> The name of the connector profile. The name is unique for each
-    /// <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
+    /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
     pub connector_profile_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
     pub connector_type: std::option::Option<crate::model::ConnectorType>,
-    /// <p> Specifies the maximum number of items that should be returned in the result set. The
-    /// default for <code>maxResults</code> is 20 (for all paginated API operations). </p>
+    /// <p> Specifies the maximum number of items that should be returned in the result set. The default for <code>maxResults</code> is 20 (for all paginated API operations). </p>
     pub max_results: std::option::Option<i32>,
     /// <p> The pagination token for the next page of data. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeConnectorProfilesInput {
-    /// <p> The name of the connector profile. The name is unique for each
-    /// <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
+    /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
     pub fn connector_profile_names(&self) -> std::option::Option<&[std::string::String]> {
         self.connector_profile_names.as_deref()
     }
@@ -3775,8 +3668,7 @@ impl DescribeConnectorProfilesInput {
     pub fn connector_type(&self) -> std::option::Option<&crate::model::ConnectorType> {
         self.connector_type.as_ref()
     }
-    /// <p> Specifies the maximum number of items that should be returned in the result set. The
-    /// default for <code>maxResults</code> is 20 (for all paginated API operations). </p>
+    /// <p> Specifies the maximum number of items that should be returned in the result set. The default for <code>maxResults</code> is 20 (for all paginated API operations). </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -3804,8 +3696,7 @@ pub struct DescribeConnectorEntityInput {
     pub connector_entity_name: std::option::Option<std::string::String>,
     /// <p> The type of connector application, such as Salesforce, Amplitude, and so on. </p>
     pub connector_type: std::option::Option<crate::model::ConnectorType>,
-    /// <p> The name of the connector profile. The name is unique for each
-    /// <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
+    /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
     pub connector_profile_name: std::option::Option<std::string::String>,
 }
 impl DescribeConnectorEntityInput {
@@ -3817,8 +3708,7 @@ impl DescribeConnectorEntityInput {
     pub fn connector_type(&self) -> std::option::Option<&crate::model::ConnectorType> {
         self.connector_type.as_ref()
     }
-    /// <p> The name of the connector profile. The name is unique for each
-    /// <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
+    /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
     pub fn connector_profile_name(&self) -> std::option::Option<&str> {
         self.connector_profile_name.as_deref()
     }
@@ -3837,21 +3727,17 @@ impl std::fmt::Debug for DescribeConnectorEntityInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFlowInput {
-    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
-    /// (-) only. </p>
+    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
     pub flow_name: std::option::Option<std::string::String>,
-    /// <p> Indicates whether Amazon AppFlow should delete the flow, even if it is currently in use.
-    /// </p>
+    /// <p> Indicates whether Amazon AppFlow should delete the flow, even if it is currently in use. </p>
     pub force_delete: bool,
 }
 impl DeleteFlowInput {
-    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
-    /// (-) only. </p>
+    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
     pub fn flow_name(&self) -> std::option::Option<&str> {
         self.flow_name.as_deref()
     }
-    /// <p> Indicates whether Amazon AppFlow should delete the flow, even if it is currently in use.
-    /// </p>
+    /// <p> Indicates whether Amazon AppFlow should delete the flow, even if it is currently in use. </p>
     pub fn force_delete(&self) -> bool {
         self.force_delete
     }
@@ -3869,21 +3755,17 @@ impl std::fmt::Debug for DeleteFlowInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteConnectorProfileInput {
-    /// <p> The name of the connector profile. The name is unique for each
-    /// <code>ConnectorProfile</code> in your account. </p>
+    /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in your account. </p>
     pub connector_profile_name: std::option::Option<std::string::String>,
-    /// <p> Indicates whether Amazon AppFlow should delete the profile, even if it is currently in
-    /// use in one or more flows. </p>
+    /// <p> Indicates whether Amazon AppFlow should delete the profile, even if it is currently in use in one or more flows. </p>
     pub force_delete: bool,
 }
 impl DeleteConnectorProfileInput {
-    /// <p> The name of the connector profile. The name is unique for each
-    /// <code>ConnectorProfile</code> in your account. </p>
+    /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in your account. </p>
     pub fn connector_profile_name(&self) -> std::option::Option<&str> {
         self.connector_profile_name.as_deref()
     }
-    /// <p> Indicates whether Amazon AppFlow should delete the profile, even if it is currently in
-    /// use in one or more flows. </p>
+    /// <p> Indicates whether Amazon AppFlow should delete the profile, even if it is currently in use in one or more flows. </p>
     pub fn force_delete(&self) -> bool {
         self.force_delete
     }
@@ -3901,35 +3783,27 @@ impl std::fmt::Debug for DeleteConnectorProfileInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFlowInput {
-    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
-    /// (-) only. </p>
+    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
     pub flow_name: std::option::Option<std::string::String>,
     /// <p> A description of the flow you want to create. </p>
     pub description: std::option::Option<std::string::String>,
-    /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for
-    /// encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If
-    /// you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key.
-    /// </p>
+    /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key. </p>
     pub kms_arn: std::option::Option<std::string::String>,
     /// <p> The trigger settings that determine how and when the flow runs. </p>
     pub trigger_config: std::option::Option<crate::model::TriggerConfig>,
-    /// <p> The configuration that controls how Amazon AppFlow retrieves data from the source
-    /// connector. </p>
+    /// <p> The configuration that controls how Amazon AppFlow retrieves data from the source connector. </p>
     pub source_flow_config: std::option::Option<crate::model::SourceFlowConfig>,
-    /// <p> The configuration that controls how Amazon AppFlow places data in the destination
-    /// connector. </p>
+    /// <p> The configuration that controls how Amazon AppFlow places data in the destination connector. </p>
     pub destination_flow_config_list:
         std::option::Option<std::vec::Vec<crate::model::DestinationFlowConfig>>,
-    /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run.
-    /// </p>
+    /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
     pub tasks: std::option::Option<std::vec::Vec<crate::model::Task>>,
     /// <p> The tags used to organize, track, or control access for your flow. </p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateFlowInput {
-    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
-    /// (-) only. </p>
+    /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
     pub fn flow_name(&self) -> std::option::Option<&str> {
         self.flow_name.as_deref()
     }
@@ -3937,10 +3811,7 @@ impl CreateFlowInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for
-    /// encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If
-    /// you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key.
-    /// </p>
+    /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key. </p>
     pub fn kms_arn(&self) -> std::option::Option<&str> {
         self.kms_arn.as_deref()
     }
@@ -3948,20 +3819,17 @@ impl CreateFlowInput {
     pub fn trigger_config(&self) -> std::option::Option<&crate::model::TriggerConfig> {
         self.trigger_config.as_ref()
     }
-    /// <p> The configuration that controls how Amazon AppFlow retrieves data from the source
-    /// connector. </p>
+    /// <p> The configuration that controls how Amazon AppFlow retrieves data from the source connector. </p>
     pub fn source_flow_config(&self) -> std::option::Option<&crate::model::SourceFlowConfig> {
         self.source_flow_config.as_ref()
     }
-    /// <p> The configuration that controls how Amazon AppFlow places data in the destination
-    /// connector. </p>
+    /// <p> The configuration that controls how Amazon AppFlow places data in the destination connector. </p>
     pub fn destination_flow_config_list(
         &self,
     ) -> std::option::Option<&[crate::model::DestinationFlowConfig]> {
         self.destination_flow_config_list.as_deref()
     }
-    /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run.
-    /// </p>
+    /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
     pub fn tasks(&self) -> std::option::Option<&[crate::model::Task]> {
         self.tasks.as_deref()
     }
@@ -3995,33 +3863,23 @@ impl std::fmt::Debug for CreateFlowInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConnectorProfileInput {
-    /// <p> The name of the connector profile. The name is unique for each
-    /// <code>ConnectorProfile</code> in your Amazon Web Services account. </p>
+    /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in your Amazon Web Services account. </p>
     pub connector_profile_name: std::option::Option<std::string::String>,
-    /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for
-    /// encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If
-    /// you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key.
-    /// </p>
+    /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key. </p>
     pub kms_arn: std::option::Option<std::string::String>,
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
     pub connector_type: std::option::Option<crate::model::ConnectorType>,
-    /// <p> Indicates the connection mode and specifies whether it is public or private. Private
-    /// flows use Amazon Web Services PrivateLink to route data over Amazon Web Services infrastructure without exposing it to the
-    /// public internet. </p>
+    /// <p> Indicates the connection mode and specifies whether it is public or private. Private flows use Amazon Web Services PrivateLink to route data over Amazon Web Services infrastructure without exposing it to the public internet. </p>
     pub connection_mode: std::option::Option<crate::model::ConnectionMode>,
     /// <p> Defines the connector-specific configuration and credentials. </p>
     pub connector_profile_config: std::option::Option<crate::model::ConnectorProfileConfig>,
 }
 impl CreateConnectorProfileInput {
-    /// <p> The name of the connector profile. The name is unique for each
-    /// <code>ConnectorProfile</code> in your Amazon Web Services account. </p>
+    /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in your Amazon Web Services account. </p>
     pub fn connector_profile_name(&self) -> std::option::Option<&str> {
         self.connector_profile_name.as_deref()
     }
-    /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for
-    /// encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If
-    /// you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key.
-    /// </p>
+    /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key. </p>
     pub fn kms_arn(&self) -> std::option::Option<&str> {
         self.kms_arn.as_deref()
     }
@@ -4029,9 +3887,7 @@ impl CreateConnectorProfileInput {
     pub fn connector_type(&self) -> std::option::Option<&crate::model::ConnectorType> {
         self.connector_type.as_ref()
     }
-    /// <p> Indicates the connection mode and specifies whether it is public or private. Private
-    /// flows use Amazon Web Services PrivateLink to route data over Amazon Web Services infrastructure without exposing it to the
-    /// public internet. </p>
+    /// <p> Indicates the connection mode and specifies whether it is public or private. Private flows use Amazon Web Services PrivateLink to route data over Amazon Web Services infrastructure without exposing it to the public internet. </p>
     pub fn connection_mode(&self) -> std::option::Option<&crate::model::ConnectionMode> {
         self.connection_mode.as_ref()
     }

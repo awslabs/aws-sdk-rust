@@ -57,13 +57,11 @@ impl UpdateWebhookOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDomainAssociationOutput {
-    /// <p> Describes a domain association, which associates a custom domain with an Amplify app.
-    /// </p>
+    /// <p> Describes a domain association, which associates a custom domain with an Amplify app. </p>
     pub domain_association: std::option::Option<crate::model::DomainAssociation>,
 }
 impl UpdateDomainAssociationOutput {
-    /// <p> Describes a domain association, which associates a custom domain with an Amplify app.
-    /// </p>
+    /// <p> Describes a domain association, which associates a custom domain with an Amplify app. </p>
     pub fn domain_association(&self) -> std::option::Option<&crate::model::DomainAssociation> {
         self.domain_association.as_ref()
     }
@@ -84,14 +82,12 @@ pub mod update_domain_association_output {
         pub(crate) domain_association: std::option::Option<crate::model::DomainAssociation>,
     }
     impl Builder {
-        /// <p> Describes a domain association, which associates a custom domain with an Amplify app.
-        /// </p>
+        /// <p> Describes a domain association, which associates a custom domain with an Amplify app. </p>
         pub fn domain_association(mut self, input: crate::model::DomainAssociation) -> Self {
             self.domain_association = Some(input);
             self
         }
-        /// <p> Describes a domain association, which associates a custom domain with an Amplify app.
-        /// </p>
+        /// <p> Describes a domain association, which associates a custom domain with an Amplify app. </p>
         pub fn set_domain_association(
             mut self,
             input: std::option::Option<crate::model::DomainAssociation>,
@@ -457,8 +453,7 @@ impl StartDeploymentOutput {
 pub struct ListWebhooksOutput {
     /// <p> A list of webhooks. </p>
     pub webhooks: std::option::Option<std::vec::Vec<crate::model::Webhook>>,
-    /// <p> A pagination token. If non-null, the pagination token is returned in a result. Pass
-    /// its value in another request to retrieve more entries. </p>
+    /// <p> A pagination token. If non-null, the pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListWebhooksOutput {
@@ -466,8 +461,7 @@ impl ListWebhooksOutput {
     pub fn webhooks(&self) -> std::option::Option<&[crate::model::Webhook]> {
         self.webhooks.as_deref()
     }
-    /// <p> A pagination token. If non-null, the pagination token is returned in a result. Pass
-    /// its value in another request to retrieve more entries. </p>
+    /// <p> A pagination token. If non-null, the pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -509,14 +503,12 @@ pub mod list_webhooks_output {
             self.webhooks = input;
             self
         }
-        /// <p> A pagination token. If non-null, the pagination token is returned in a result. Pass
-        /// its value in another request to retrieve more entries. </p>
+        /// <p> A pagination token. If non-null, the pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p> A pagination token. If non-null, the pagination token is returned in a result. Pass
-        /// its value in another request to retrieve more entries. </p>
+        /// <p> A pagination token. If non-null, the pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -616,8 +608,7 @@ impl ListTagsForResourceOutput {
 pub struct ListJobsOutput {
     /// <p> The result structure for the list job result request. </p>
     pub job_summaries: std::option::Option<std::vec::Vec<crate::model::JobSummary>>,
-    /// <p> A pagination token. If non-null the pagination token is returned in a result. Pass
-    /// its value in another request to retrieve more entries. </p>
+    /// <p> A pagination token. If non-null the pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListJobsOutput {
@@ -625,8 +616,7 @@ impl ListJobsOutput {
     pub fn job_summaries(&self) -> std::option::Option<&[crate::model::JobSummary]> {
         self.job_summaries.as_deref()
     }
-    /// <p> A pagination token. If non-null the pagination token is returned in a result. Pass
-    /// its value in another request to retrieve more entries. </p>
+    /// <p> A pagination token. If non-null the pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -668,14 +658,12 @@ pub mod list_jobs_output {
             self.job_summaries = input;
             self
         }
-        /// <p> A pagination token. If non-null the pagination token is returned in a result. Pass
-        /// its value in another request to retrieve more entries. </p>
+        /// <p> A pagination token. If non-null the pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p> A pagination token. If non-null the pagination token is returned in a result. Pass
-        /// its value in another request to retrieve more entries. </p>
+        /// <p> A pagination token. If non-null the pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -702,8 +690,7 @@ impl ListJobsOutput {
 pub struct ListDomainAssociationsOutput {
     /// <p> A list of domain associations. </p>
     pub domain_associations: std::option::Option<std::vec::Vec<crate::model::DomainAssociation>>,
-    /// <p> A pagination token. If non-null, a pagination token is returned in a result. Pass its
-    /// value in another request to retrieve more entries. </p>
+    /// <p> A pagination token. If non-null, a pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDomainAssociationsOutput {
@@ -711,8 +698,7 @@ impl ListDomainAssociationsOutput {
     pub fn domain_associations(&self) -> std::option::Option<&[crate::model::DomainAssociation]> {
         self.domain_associations.as_deref()
     }
-    /// <p> A pagination token. If non-null, a pagination token is returned in a result. Pass its
-    /// value in another request to retrieve more entries. </p>
+    /// <p> A pagination token. If non-null, a pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -755,14 +741,12 @@ pub mod list_domain_associations_output {
             self.domain_associations = input;
             self
         }
-        /// <p> A pagination token. If non-null, a pagination token is returned in a result. Pass its
-        /// value in another request to retrieve more entries. </p>
+        /// <p> A pagination token. If non-null, a pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p> A pagination token. If non-null, a pagination token is returned in a result. Pass its
-        /// value in another request to retrieve more entries. </p>
+        /// <p> A pagination token. If non-null, a pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -789,8 +773,7 @@ impl ListDomainAssociationsOutput {
 pub struct ListBranchesOutput {
     /// <p> A list of branches for an Amplify app. </p>
     pub branches: std::option::Option<std::vec::Vec<crate::model::Branch>>,
-    /// <p> A pagination token. If a non-null pagination token is returned in a result, pass its
-    /// value in another request to retrieve more entries. </p>
+    /// <p> A pagination token. If a non-null pagination token is returned in a result, pass its value in another request to retrieve more entries. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListBranchesOutput {
@@ -798,8 +781,7 @@ impl ListBranchesOutput {
     pub fn branches(&self) -> std::option::Option<&[crate::model::Branch]> {
         self.branches.as_deref()
     }
-    /// <p> A pagination token. If a non-null pagination token is returned in a result, pass its
-    /// value in another request to retrieve more entries. </p>
+    /// <p> A pagination token. If a non-null pagination token is returned in a result, pass its value in another request to retrieve more entries. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -841,14 +823,12 @@ pub mod list_branches_output {
             self.branches = input;
             self
         }
-        /// <p> A pagination token. If a non-null pagination token is returned in a result, pass its
-        /// value in another request to retrieve more entries. </p>
+        /// <p> A pagination token. If a non-null pagination token is returned in a result, pass its value in another request to retrieve more entries. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p> A pagination token. If a non-null pagination token is returned in a result, pass its
-        /// value in another request to retrieve more entries. </p>
+        /// <p> A pagination token. If a non-null pagination token is returned in a result, pass its value in another request to retrieve more entries. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -875,8 +855,7 @@ impl ListBranchesOutput {
 pub struct ListBackendEnvironmentsOutput {
     /// <p> The list of backend environments for an Amplify app. </p>
     pub backend_environments: std::option::Option<std::vec::Vec<crate::model::BackendEnvironment>>,
-    /// <p> A pagination token. If a non-null pagination token is returned in a result, pass its
-    /// value in another request to retrieve more entries. </p>
+    /// <p> A pagination token. If a non-null pagination token is returned in a result, pass its value in another request to retrieve more entries. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListBackendEnvironmentsOutput {
@@ -884,8 +863,7 @@ impl ListBackendEnvironmentsOutput {
     pub fn backend_environments(&self) -> std::option::Option<&[crate::model::BackendEnvironment]> {
         self.backend_environments.as_deref()
     }
-    /// <p> A pagination token. If a non-null pagination token is returned in a result, pass its
-    /// value in another request to retrieve more entries. </p>
+    /// <p> A pagination token. If a non-null pagination token is returned in a result, pass its value in another request to retrieve more entries. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -928,14 +906,12 @@ pub mod list_backend_environments_output {
             self.backend_environments = input;
             self
         }
-        /// <p> A pagination token. If a non-null pagination token is returned in a result, pass its
-        /// value in another request to retrieve more entries. </p>
+        /// <p> A pagination token. If a non-null pagination token is returned in a result, pass its value in another request to retrieve more entries. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p> A pagination token. If a non-null pagination token is returned in a result, pass its
-        /// value in another request to retrieve more entries. </p>
+        /// <p> A pagination token. If a non-null pagination token is returned in a result, pass its value in another request to retrieve more entries. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -962,8 +938,7 @@ impl ListBackendEnvironmentsOutput {
 pub struct ListArtifactsOutput {
     /// <p> A list of artifacts. </p>
     pub artifacts: std::option::Option<std::vec::Vec<crate::model::Artifact>>,
-    /// <p> A pagination token. If a non-null pagination token is returned in a result, pass its
-    /// value in another request to retrieve more entries. </p>
+    /// <p> A pagination token. If a non-null pagination token is returned in a result, pass its value in another request to retrieve more entries. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListArtifactsOutput {
@@ -971,8 +946,7 @@ impl ListArtifactsOutput {
     pub fn artifacts(&self) -> std::option::Option<&[crate::model::Artifact]> {
         self.artifacts.as_deref()
     }
-    /// <p> A pagination token. If a non-null pagination token is returned in a result, pass its
-    /// value in another request to retrieve more entries. </p>
+    /// <p> A pagination token. If a non-null pagination token is returned in a result, pass its value in another request to retrieve more entries. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1014,14 +988,12 @@ pub mod list_artifacts_output {
             self.artifacts = input;
             self
         }
-        /// <p> A pagination token. If a non-null pagination token is returned in a result, pass its
-        /// value in another request to retrieve more entries. </p>
+        /// <p> A pagination token. If a non-null pagination token is returned in a result, pass its value in another request to retrieve more entries. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p> A pagination token. If a non-null pagination token is returned in a result, pass its
-        /// value in another request to retrieve more entries. </p>
+        /// <p> A pagination token. If a non-null pagination token is returned in a result, pass its value in another request to retrieve more entries. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1048,9 +1020,7 @@ impl ListArtifactsOutput {
 pub struct ListAppsOutput {
     /// <p> A list of Amplify apps. </p>
     pub apps: std::option::Option<std::vec::Vec<crate::model::App>>,
-    /// <p> A pagination token. Set to null to start listing apps from start. If non-null, the
-    /// pagination token is returned in a result. Pass its value in here to list more projects.
-    /// </p>
+    /// <p> A pagination token. Set to null to start listing apps from start. If non-null, the pagination token is returned in a result. Pass its value in here to list more projects. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAppsOutput {
@@ -1058,9 +1028,7 @@ impl ListAppsOutput {
     pub fn apps(&self) -> std::option::Option<&[crate::model::App]> {
         self.apps.as_deref()
     }
-    /// <p> A pagination token. Set to null to start listing apps from start. If non-null, the
-    /// pagination token is returned in a result. Pass its value in here to list more projects.
-    /// </p>
+    /// <p> A pagination token. Set to null to start listing apps from start. If non-null, the pagination token is returned in a result. Pass its value in here to list more projects. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1102,16 +1070,12 @@ pub mod list_apps_output {
             self.apps = input;
             self
         }
-        /// <p> A pagination token. Set to null to start listing apps from start. If non-null, the
-        /// pagination token is returned in a result. Pass its value in here to list more projects.
-        /// </p>
+        /// <p> A pagination token. Set to null to start listing apps from start. If non-null, the pagination token is returned in a result. Pass its value in here to list more projects. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p> A pagination token. Set to null to start listing apps from start. If non-null, the
-        /// pagination token is returned in a result. Pass its value in here to list more projects.
-        /// </p>
+        /// <p> A pagination token. Set to null to start listing apps from start. If non-null, the pagination token is returned in a result. Pass its value in here to list more projects. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1242,13 +1206,11 @@ impl GetJobOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDomainAssociationOutput {
-    /// <p> Describes the structure of a domain association, which associates a custom domain
-    /// with an Amplify app. </p>
+    /// <p> Describes the structure of a domain association, which associates a custom domain with an Amplify app. </p>
     pub domain_association: std::option::Option<crate::model::DomainAssociation>,
 }
 impl GetDomainAssociationOutput {
-    /// <p> Describes the structure of a domain association, which associates a custom domain
-    /// with an Amplify app. </p>
+    /// <p> Describes the structure of a domain association, which associates a custom domain with an Amplify app. </p>
     pub fn domain_association(&self) -> std::option::Option<&crate::model::DomainAssociation> {
         self.domain_association.as_ref()
     }
@@ -1269,14 +1231,12 @@ pub mod get_domain_association_output {
         pub(crate) domain_association: std::option::Option<crate::model::DomainAssociation>,
     }
     impl Builder {
-        /// <p> Describes the structure of a domain association, which associates a custom domain
-        /// with an Amplify app. </p>
+        /// <p> Describes the structure of a domain association, which associates a custom domain with an Amplify app. </p>
         pub fn domain_association(mut self, input: crate::model::DomainAssociation) -> Self {
             self.domain_association = Some(input);
             self
         }
-        /// <p> Describes the structure of a domain association, which associates a custom domain
-        /// with an Amplify app. </p>
+        /// <p> Describes the structure of a domain association, which associates a custom domain with an Amplify app. </p>
         pub fn set_domain_association(
             mut self,
             input: std::option::Option<crate::model::DomainAssociation>,
@@ -1487,13 +1447,11 @@ impl GetArtifactUrlOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAppOutput {
-    /// <p> Represents the different branches of a repository for building, deploying, and
-    /// hosting an Amplify app. </p>
+    /// <p> Represents the different branches of a repository for building, deploying, and hosting an Amplify app. </p>
     pub app: std::option::Option<crate::model::App>,
 }
 impl GetAppOutput {
-    /// <p> Represents the different branches of a repository for building, deploying, and
-    /// hosting an Amplify app. </p>
+    /// <p> Represents the different branches of a repository for building, deploying, and hosting an Amplify app. </p>
     pub fn app(&self) -> std::option::Option<&crate::model::App> {
         self.app.as_ref()
     }
@@ -1514,14 +1472,12 @@ pub mod get_app_output {
         pub(crate) app: std::option::Option<crate::model::App>,
     }
     impl Builder {
-        /// <p> Represents the different branches of a repository for building, deploying, and
-        /// hosting an Amplify app. </p>
+        /// <p> Represents the different branches of a repository for building, deploying, and hosting an Amplify app. </p>
         pub fn app(mut self, input: crate::model::App) -> Self {
             self.app = Some(input);
             self
         }
-        /// <p> Represents the different branches of a repository for building, deploying, and
-        /// hosting an Amplify app. </p>
+        /// <p> Represents the different branches of a repository for building, deploying, and hosting an Amplify app. </p>
         pub fn set_app(mut self, input: std::option::Option<crate::model::App>) -> Self {
             self.app = input;
             self
@@ -1708,13 +1664,11 @@ impl DeleteJobOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDomainAssociationOutput {
-    /// <p> Describes a domain association that associates a custom domain with an Amplify app.
-    /// </p>
+    /// <p> Describes a domain association that associates a custom domain with an Amplify app. </p>
     pub domain_association: std::option::Option<crate::model::DomainAssociation>,
 }
 impl DeleteDomainAssociationOutput {
-    /// <p> Describes a domain association that associates a custom domain with an Amplify app.
-    /// </p>
+    /// <p> Describes a domain association that associates a custom domain with an Amplify app. </p>
     pub fn domain_association(&self) -> std::option::Option<&crate::model::DomainAssociation> {
         self.domain_association.as_ref()
     }
@@ -1735,14 +1689,12 @@ pub mod delete_domain_association_output {
         pub(crate) domain_association: std::option::Option<crate::model::DomainAssociation>,
     }
     impl Builder {
-        /// <p> Describes a domain association that associates a custom domain with an Amplify app.
-        /// </p>
+        /// <p> Describes a domain association that associates a custom domain with an Amplify app. </p>
         pub fn domain_association(mut self, input: crate::model::DomainAssociation) -> Self {
             self.domain_association = Some(input);
             self
         }
-        /// <p> Describes a domain association that associates a custom domain with an Amplify app.
-        /// </p>
+        /// <p> Describes a domain association that associates a custom domain with an Amplify app. </p>
         pub fn set_domain_association(
             mut self,
             input: std::option::Option<crate::model::DomainAssociation>,
@@ -1880,13 +1832,11 @@ impl DeleteBackendEnvironmentOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAppOutput {
-    /// <p> Represents the different branches of a repository for building, deploying, and
-    /// hosting an Amplify app. </p>
+    /// <p> Represents the different branches of a repository for building, deploying, and hosting an Amplify app. </p>
     pub app: std::option::Option<crate::model::App>,
 }
 impl DeleteAppOutput {
-    /// <p> Represents the different branches of a repository for building, deploying, and
-    /// hosting an Amplify app. </p>
+    /// <p> Represents the different branches of a repository for building, deploying, and hosting an Amplify app. </p>
     pub fn app(&self) -> std::option::Option<&crate::model::App> {
         self.app.as_ref()
     }
@@ -1907,14 +1857,12 @@ pub mod delete_app_output {
         pub(crate) app: std::option::Option<crate::model::App>,
     }
     impl Builder {
-        /// <p> Represents the different branches of a repository for building, deploying, and
-        /// hosting an Amplify app. </p>
+        /// <p> Represents the different branches of a repository for building, deploying, and hosting an Amplify app. </p>
         pub fn app(mut self, input: crate::model::App) -> Self {
             self.app = Some(input);
             self
         }
-        /// <p> Represents the different branches of a repository for building, deploying, and
-        /// hosting an Amplify app. </p>
+        /// <p> Represents the different branches of a repository for building, deploying, and hosting an Amplify app. </p>
         pub fn set_app(mut self, input: std::option::Option<crate::model::App>) -> Self {
             self.app = input;
             self
@@ -1990,13 +1938,11 @@ impl CreateWebhookOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDomainAssociationOutput {
-    /// <p> Describes the structure of a domain association, which associates a custom domain
-    /// with an Amplify app. </p>
+    /// <p> Describes the structure of a domain association, which associates a custom domain with an Amplify app. </p>
     pub domain_association: std::option::Option<crate::model::DomainAssociation>,
 }
 impl CreateDomainAssociationOutput {
-    /// <p> Describes the structure of a domain association, which associates a custom domain
-    /// with an Amplify app. </p>
+    /// <p> Describes the structure of a domain association, which associates a custom domain with an Amplify app. </p>
     pub fn domain_association(&self) -> std::option::Option<&crate::model::DomainAssociation> {
         self.domain_association.as_ref()
     }
@@ -2017,14 +1963,12 @@ pub mod create_domain_association_output {
         pub(crate) domain_association: std::option::Option<crate::model::DomainAssociation>,
     }
     impl Builder {
-        /// <p> Describes the structure of a domain association, which associates a custom domain
-        /// with an Amplify app. </p>
+        /// <p> Describes the structure of a domain association, which associates a custom domain with an Amplify app. </p>
         pub fn domain_association(mut self, input: crate::model::DomainAssociation) -> Self {
             self.domain_association = Some(input);
             self
         }
-        /// <p> Describes the structure of a domain association, which associates a custom domain
-        /// with an Amplify app. </p>
+        /// <p> Describes the structure of a domain association, which associates a custom domain with an Amplify app. </p>
         pub fn set_domain_association(
             mut self,
             input: std::option::Option<crate::model::DomainAssociation>,
@@ -2053,12 +1997,10 @@ impl CreateDomainAssociationOutput {
 pub struct CreateDeploymentOutput {
     /// <p> The job ID for this deployment. will supply to start deployment api. </p>
     pub job_id: std::option::Option<std::string::String>,
-    /// <p> When the <code>fileMap</code> argument is provided in the request,
-    /// <code>fileUploadUrls</code> will contain a map of file names to upload URLs. </p>
+    /// <p> When the <code>fileMap</code> argument is provided in the request, <code>fileUploadUrls</code> will contain a map of file names to upload URLs. </p>
     pub file_upload_urls:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p> When the <code>fileMap</code> argument is not provided in the request, this
-    /// <code>zipUploadUrl</code> is returned. </p>
+    /// <p> When the <code>fileMap</code> argument is not provided in the request, this <code>zipUploadUrl</code> is returned. </p>
     pub zip_upload_url: std::option::Option<std::string::String>,
 }
 impl CreateDeploymentOutput {
@@ -2066,16 +2008,14 @@ impl CreateDeploymentOutput {
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
-    /// <p> When the <code>fileMap</code> argument is provided in the request,
-    /// <code>fileUploadUrls</code> will contain a map of file names to upload URLs. </p>
+    /// <p> When the <code>fileMap</code> argument is provided in the request, <code>fileUploadUrls</code> will contain a map of file names to upload URLs. </p>
     pub fn file_upload_urls(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.file_upload_urls.as_ref()
     }
-    /// <p> When the <code>fileMap</code> argument is not provided in the request, this
-    /// <code>zipUploadUrl</code> is returned. </p>
+    /// <p> When the <code>fileMap</code> argument is not provided in the request, this <code>zipUploadUrl</code> is returned. </p>
     pub fn zip_upload_url(&self) -> std::option::Option<&str> {
         self.zip_upload_url.as_deref()
     }
@@ -2116,8 +2056,7 @@ pub mod create_deployment_output {
         ///
         /// To override the contents of this collection use [`set_file_upload_urls`](Self::set_file_upload_urls).
         ///
-        /// <p> When the <code>fileMap</code> argument is provided in the request,
-        /// <code>fileUploadUrls</code> will contain a map of file names to upload URLs. </p>
+        /// <p> When the <code>fileMap</code> argument is provided in the request, <code>fileUploadUrls</code> will contain a map of file names to upload URLs. </p>
         pub fn file_upload_urls(
             mut self,
             k: impl Into<std::string::String>,
@@ -2128,8 +2067,7 @@ pub mod create_deployment_output {
             self.file_upload_urls = Some(hash_map);
             self
         }
-        /// <p> When the <code>fileMap</code> argument is provided in the request,
-        /// <code>fileUploadUrls</code> will contain a map of file names to upload URLs. </p>
+        /// <p> When the <code>fileMap</code> argument is provided in the request, <code>fileUploadUrls</code> will contain a map of file names to upload URLs. </p>
         pub fn set_file_upload_urls(
             mut self,
             input: std::option::Option<
@@ -2139,14 +2077,12 @@ pub mod create_deployment_output {
             self.file_upload_urls = input;
             self
         }
-        /// <p> When the <code>fileMap</code> argument is not provided in the request, this
-        /// <code>zipUploadUrl</code> is returned. </p>
+        /// <p> When the <code>fileMap</code> argument is not provided in the request, this <code>zipUploadUrl</code> is returned. </p>
         pub fn zip_upload_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.zip_upload_url = Some(input.into());
             self
         }
-        /// <p> When the <code>fileMap</code> argument is not provided in the request, this
-        /// <code>zipUploadUrl</code> is returned. </p>
+        /// <p> When the <code>fileMap</code> argument is not provided in the request, this <code>zipUploadUrl</code> is returned. </p>
         pub fn set_zip_upload_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2175,13 +2111,11 @@ impl CreateDeploymentOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBranchOutput {
-    /// <p> Describes the branch for an Amplify app, which maps to a third-party repository
-    /// branch. </p>
+    /// <p> Describes the branch for an Amplify app, which maps to a third-party repository branch. </p>
     pub branch: std::option::Option<crate::model::Branch>,
 }
 impl CreateBranchOutput {
-    /// <p> Describes the branch for an Amplify app, which maps to a third-party repository
-    /// branch. </p>
+    /// <p> Describes the branch for an Amplify app, which maps to a third-party repository branch. </p>
     pub fn branch(&self) -> std::option::Option<&crate::model::Branch> {
         self.branch.as_ref()
     }
@@ -2202,14 +2136,12 @@ pub mod create_branch_output {
         pub(crate) branch: std::option::Option<crate::model::Branch>,
     }
     impl Builder {
-        /// <p> Describes the branch for an Amplify app, which maps to a third-party repository
-        /// branch. </p>
+        /// <p> Describes the branch for an Amplify app, which maps to a third-party repository branch. </p>
         pub fn branch(mut self, input: crate::model::Branch) -> Self {
             self.branch = Some(input);
             self
         }
-        /// <p> Describes the branch for an Amplify app, which maps to a third-party repository
-        /// branch. </p>
+        /// <p> Describes the branch for an Amplify app, which maps to a third-party repository branch. </p>
         pub fn set_branch(mut self, input: std::option::Option<crate::model::Branch>) -> Self {
             self.branch = input;
             self
@@ -2290,13 +2222,11 @@ impl CreateBackendEnvironmentOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAppOutput {
-    /// <p> Represents the different branches of a repository for building, deploying, and
-    /// hosting an Amplify app. </p>
+    /// <p> Represents the different branches of a repository for building, deploying, and hosting an Amplify app. </p>
     pub app: std::option::Option<crate::model::App>,
 }
 impl CreateAppOutput {
-    /// <p> Represents the different branches of a repository for building, deploying, and
-    /// hosting an Amplify app. </p>
+    /// <p> Represents the different branches of a repository for building, deploying, and hosting an Amplify app. </p>
     pub fn app(&self) -> std::option::Option<&crate::model::App> {
         self.app.as_ref()
     }
@@ -2317,14 +2247,12 @@ pub mod create_app_output {
         pub(crate) app: std::option::Option<crate::model::App>,
     }
     impl Builder {
-        /// <p> Represents the different branches of a repository for building, deploying, and
-        /// hosting an Amplify app. </p>
+        /// <p> Represents the different branches of a repository for building, deploying, and hosting an Amplify app. </p>
         pub fn app(mut self, input: crate::model::App) -> Self {
             self.app = Some(input);
             self
         }
-        /// <p> Represents the different branches of a repository for building, deploying, and
-        /// hosting an Amplify app. </p>
+        /// <p> Represents the different branches of a repository for building, deploying, and hosting an Amplify app. </p>
         pub fn set_app(mut self, input: std::option::Option<crate::model::App>) -> Self {
             self.app = input;
             self

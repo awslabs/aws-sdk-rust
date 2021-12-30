@@ -14,13 +14,11 @@ pub struct CreateEnvironmentError {
 pub enum CreateEnvironmentErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>A service limit or quota is exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p> You have exceeded your service quota. To perform the requested action,
-    /// remove some of the relevant resources, or use Service Quotas to request a service quota increase.</p>
+    /// <p> You have exceeded your service quota. To perform the requested action, remove some of the relevant resources, or use Service Quotas to request a service quota increase.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -164,8 +162,7 @@ pub struct DeleteEnvironmentError {
 pub enum DeleteEnvironmentErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>One or more resources can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -302,8 +299,7 @@ pub struct GetEnvironmentError {
 pub enum GetEnvironmentErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>One or more resources can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -424,8 +420,7 @@ pub struct ListEnvironmentsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListEnvironmentsErrorKind {
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
     ValidationException(crate::error::ValidationException),
@@ -529,8 +524,7 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request is invalid. Something is wrong with the input to the request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -645,8 +639,7 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request is invalid. Something is wrong with the input to the request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -755,8 +748,7 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request is invalid. Something is wrong with the input to the request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -873,8 +865,7 @@ pub struct UpdateEnvironmentError {
 pub enum UpdateEnvironmentErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>One or more resources can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1188,8 +1179,7 @@ impl ResourceNotFoundException {
     }
 }
 
-/// <p>The request processing has failed because of an unknown error, exception or
-/// failure.</p>
+/// <p>The request processing has failed because of an unknown error, exception or failure.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerException {
@@ -1381,8 +1371,7 @@ impl InvalidRequestException {
     }
 }
 
-/// <p> You have exceeded your service quota. To perform the requested action,
-/// remove some of the relevant resources, or use Service Quotas to request a service quota increase.</p>
+/// <p> You have exceeded your service quota. To perform the requested action, remove some of the relevant resources, or use Service Quotas to request a service quota increase.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceQuotaExceededException {

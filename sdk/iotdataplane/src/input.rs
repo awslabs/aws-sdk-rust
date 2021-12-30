@@ -704,16 +704,12 @@ pub mod list_retained_messages_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>To retrieve the next set of results, the <code>nextToken</code>
-        /// value from a previous response; otherwise <b>null</b> to receive
-        /// the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>To retrieve the next set of results, the <code>nextToken</code>
-        /// value from a previous response; otherwise <b>null</b> to receive
-        /// the first set of results.</p>
+        /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -896,34 +892,28 @@ pub mod publish_input {
         }
         /// <p>A Boolean value that determines whether to set the RETAIN flag when the message is published.</p>
         /// <p>Setting the RETAIN flag causes the message to be retained and sent to new subscribers to the topic.</p>
-        /// <p>Valid values: <code>true</code> | <code>false</code>
-        /// </p>
-        /// <p>Default value: <code>false</code>
-        /// </p>
+        /// <p>Valid values: <code>true</code> | <code>false</code> </p>
+        /// <p>Default value: <code>false</code> </p>
         pub fn retain(mut self, input: bool) -> Self {
             self.retain = Some(input);
             self
         }
         /// <p>A Boolean value that determines whether to set the RETAIN flag when the message is published.</p>
         /// <p>Setting the RETAIN flag causes the message to be retained and sent to new subscribers to the topic.</p>
-        /// <p>Valid values: <code>true</code> | <code>false</code>
-        /// </p>
-        /// <p>Default value: <code>false</code>
-        /// </p>
+        /// <p>Valid values: <code>true</code> | <code>false</code> </p>
+        /// <p>Default value: <code>false</code> </p>
         pub fn set_retain(mut self, input: std::option::Option<bool>) -> Self {
             self.retain = input;
             self
         }
         /// <p>The message body. MQTT accepts text, binary, and empty (null) message payloads.</p>
-        /// <p>Publishing an empty (null) payload with <b>retain</b> =
-        /// <code>true</code> deletes the retained message identified by <b>topic</b> from IoT Core.</p>
+        /// <p>Publishing an empty (null) payload with <b>retain</b> = <code>true</code> deletes the retained message identified by <b>topic</b> from IoT Core.</p>
         pub fn payload(mut self, input: aws_smithy_types::Blob) -> Self {
             self.payload = Some(input);
             self
         }
         /// <p>The message body. MQTT accepts text, binary, and empty (null) message payloads.</p>
-        /// <p>Publishing an empty (null) payload with <b>retain</b> =
-        /// <code>true</code> deletes the retained message identified by <b>topic</b> from IoT Core.</p>
+        /// <p>Publishing an empty (null) payload with <b>retain</b> = <code>true</code> deletes the retained message identified by <b>topic</b> from IoT Core.</p>
         pub fn set_payload(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.payload = input;
             self
@@ -1335,14 +1325,11 @@ pub struct PublishInput {
     pub qos: i32,
     /// <p>A Boolean value that determines whether to set the RETAIN flag when the message is published.</p>
     /// <p>Setting the RETAIN flag causes the message to be retained and sent to new subscribers to the topic.</p>
-    /// <p>Valid values: <code>true</code> | <code>false</code>
-    /// </p>
-    /// <p>Default value: <code>false</code>
-    /// </p>
+    /// <p>Valid values: <code>true</code> | <code>false</code> </p>
+    /// <p>Default value: <code>false</code> </p>
     pub retain: bool,
     /// <p>The message body. MQTT accepts text, binary, and empty (null) message payloads.</p>
-    /// <p>Publishing an empty (null) payload with <b>retain</b> =
-    /// <code>true</code> deletes the retained message identified by <b>topic</b> from IoT Core.</p>
+    /// <p>Publishing an empty (null) payload with <b>retain</b> = <code>true</code> deletes the retained message identified by <b>topic</b> from IoT Core.</p>
     pub payload: std::option::Option<aws_smithy_types::Blob>,
 }
 impl PublishInput {
@@ -1356,16 +1343,13 @@ impl PublishInput {
     }
     /// <p>A Boolean value that determines whether to set the RETAIN flag when the message is published.</p>
     /// <p>Setting the RETAIN flag causes the message to be retained and sent to new subscribers to the topic.</p>
-    /// <p>Valid values: <code>true</code> | <code>false</code>
-    /// </p>
-    /// <p>Default value: <code>false</code>
-    /// </p>
+    /// <p>Valid values: <code>true</code> | <code>false</code> </p>
+    /// <p>Default value: <code>false</code> </p>
     pub fn retain(&self) -> bool {
         self.retain
     }
     /// <p>The message body. MQTT accepts text, binary, and empty (null) message payloads.</p>
-    /// <p>Publishing an empty (null) payload with <b>retain</b> =
-    /// <code>true</code> deletes the retained message identified by <b>topic</b> from IoT Core.</p>
+    /// <p>Publishing an empty (null) payload with <b>retain</b> = <code>true</code> deletes the retained message identified by <b>topic</b> from IoT Core.</p>
     pub fn payload(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.payload.as_ref()
     }
@@ -1385,17 +1369,13 @@ impl std::fmt::Debug for PublishInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRetainedMessagesInput {
-    /// <p>To retrieve the next set of results, the <code>nextToken</code>
-    /// value from a previous response; otherwise <b>null</b> to receive
-    /// the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return at one time.</p>
     pub max_results: i32,
 }
 impl ListRetainedMessagesInput {
-    /// <p>To retrieve the next set of results, the <code>nextToken</code>
-    /// value from a previous response; otherwise <b>null</b> to receive
-    /// the first set of results.</p>
+    /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }

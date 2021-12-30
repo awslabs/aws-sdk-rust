@@ -141,8 +141,7 @@ impl ProximityEventConfiguration {
     }
 }
 
-/// <p> SidewalkEventNotificationConfigurations object
-/// Event configuration object for Sidewalk related event topics.</p>
+/// <p> SidewalkEventNotificationConfigurations object Event configuration object for Sidewalk related event topics.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SidewalkEventNotificationConfigurations {
@@ -264,13 +263,11 @@ impl AsRef<str> for EventNotificationTopicStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeviceRegistrationStateEventConfiguration {
-    /// <p>Device registration state event configuration object for enabling or disabling Sidewalk related event
-    /// topics.</p>
+    /// <p>Device registration state event configuration object for enabling or disabling Sidewalk related event topics.</p>
     pub sidewalk: std::option::Option<crate::model::SidewalkEventNotificationConfigurations>,
 }
 impl DeviceRegistrationStateEventConfiguration {
-    /// <p>Device registration state event configuration object for enabling or disabling Sidewalk related event
-    /// topics.</p>
+    /// <p>Device registration state event configuration object for enabling or disabling Sidewalk related event topics.</p>
     pub fn sidewalk(
         &self,
     ) -> std::option::Option<&crate::model::SidewalkEventNotificationConfigurations> {
@@ -294,8 +291,7 @@ pub mod device_registration_state_event_configuration {
             std::option::Option<crate::model::SidewalkEventNotificationConfigurations>,
     }
     impl Builder {
-        /// <p>Device registration state event configuration object for enabling or disabling Sidewalk related event
-        /// topics.</p>
+        /// <p>Device registration state event configuration object for enabling or disabling Sidewalk related event topics.</p>
         pub fn sidewalk(
             mut self,
             input: crate::model::SidewalkEventNotificationConfigurations,
@@ -303,8 +299,7 @@ pub mod device_registration_state_event_configuration {
             self.sidewalk = Some(input);
             self
         }
-        /// <p>Device registration state event configuration object for enabling or disabling Sidewalk related event
-        /// topics.</p>
+        /// <p>Device registration state event configuration object for enabling or disabling Sidewalk related event topics.</p>
         pub fn set_sidewalk(
             mut self,
             input: std::option::Option<crate::model::SidewalkEventNotificationConfigurations>,
@@ -1324,9 +1319,7 @@ impl WirelessDeviceLogOption {
 }
 
 /// <p>The log options for a wireless device event and can be used to set log levels for a specific wireless device event.</p>
-/// <p>For a LoRaWAN device, possible events for a log messsage are: <code>Join</code>, <code>Rejoin</code>,
-/// <code>Downlink_Data</code>, and <code>Uplink_Data</code>. For a Sidewalk device, possible events for a log message are
-/// <code>Registration</code>, <code>Downlink_Data</code>, and <code>Uplink_Data</code>.</p>
+/// <p>For a LoRaWAN device, possible events for a log messsage are: <code>Join</code>, <code>Rejoin</code>, <code>Downlink_Data</code>, and <code>Uplink_Data</code>. For a Sidewalk device, possible events for a log message are <code>Registration</code>, <code>Downlink_Data</code>, and <code>Uplink_Data</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WirelessDeviceEventLogOption {

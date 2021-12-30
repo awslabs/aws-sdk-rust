@@ -14,8 +14,7 @@ pub struct BatchDeleteWorldsError {
 pub enum BatchDeleteWorldsErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -130,8 +129,7 @@ pub struct BatchDescribeSimulationJobError {
 pub enum BatchDescribeSimulationJobErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -257,8 +255,7 @@ pub struct CancelDeploymentJobError {
 pub enum CancelDeploymentJobErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -384,8 +381,7 @@ pub struct CancelSimulationJobError {
 pub enum CancelSimulationJobErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -511,8 +507,7 @@ pub struct CancelSimulationJobBatchError {
 pub enum CancelSimulationJobBatchErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -638,8 +633,7 @@ pub struct CancelWorldExportJobError {
 pub enum CancelWorldExportJobErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -765,8 +759,7 @@ pub struct CancelWorldGenerationJobError {
 pub enum CancelWorldGenerationJobErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -892,16 +885,13 @@ pub struct CreateDeploymentJobError {
 pub enum CreateDeploymentJobErrorKind {
     /// <p>The failure percentage threshold percentage was met.</p>
     ConcurrentDeploymentException(crate::error::ConcurrentDeploymentException),
-    /// <p>The request uses the same client token as a previous, but non-identical request. Do not
-    /// reuse a client token with different requests, unless the requests are identical. </p>
+    /// <p>The request uses the same client token as a previous, but non-identical request. Do not reuse a client token with different requests, unless the requests are identical. </p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent
-    /// stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1058,11 +1048,9 @@ pub struct CreateFleetError {
 pub enum CreateFleetErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent
-    /// stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -1177,11 +1165,9 @@ pub struct CreateRobotError {
 pub enum CreateRobotErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent
-    /// stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource already exists.</p>
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
@@ -1305,16 +1291,13 @@ pub struct CreateRobotApplicationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateRobotApplicationErrorKind {
-    /// <p>The request uses the same client token as a previous, but non-identical request. Do not
-    /// reuse a client token with different requests, unless the requests are identical. </p>
+    /// <p>The request uses the same client token as a previous, but non-identical request. Do not reuse a client token with different requests, unless the requests are identical. </p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent
-    /// stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource already exists.</p>
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
@@ -1462,16 +1445,13 @@ pub struct CreateRobotApplicationVersionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateRobotApplicationVersionErrorKind {
-    /// <p>The request uses the same client token as a previous, but non-identical request. Do not
-    /// reuse a client token with different requests, unless the requests are identical. </p>
+    /// <p>The request uses the same client token as a previous, but non-identical request. Do not reuse a client token with different requests, unless the requests are identical. </p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent
-    /// stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -1615,16 +1595,13 @@ pub struct CreateSimulationApplicationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateSimulationApplicationErrorKind {
-    /// <p>The request uses the same client token as a previous, but non-identical request. Do not
-    /// reuse a client token with different requests, unless the requests are identical. </p>
+    /// <p>The request uses the same client token as a previous, but non-identical request. Do not reuse a client token with different requests, unless the requests are identical. </p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent
-    /// stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource already exists.</p>
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
@@ -1776,16 +1753,13 @@ pub struct CreateSimulationApplicationVersionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateSimulationApplicationVersionErrorKind {
-    /// <p>The request uses the same client token as a previous, but non-identical request. Do not
-    /// reuse a client token with different requests, unless the requests are identical. </p>
+    /// <p>The request uses the same client token as a previous, but non-identical request. Do not reuse a client token with different requests, unless the requests are identical. </p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent
-    /// stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -1939,16 +1913,13 @@ pub struct CreateSimulationJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateSimulationJobErrorKind {
-    /// <p>The request uses the same client token as a previous, but non-identical request. Do not
-    /// reuse a client token with different requests, unless the requests are identical. </p>
+    /// <p>The request uses the same client token as a previous, but non-identical request. Do not reuse a client token with different requests, unless the requests are identical. </p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent
-    /// stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2105,13 +2076,11 @@ pub struct CreateWorldExportJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateWorldExportJobErrorKind {
-    /// <p>The request uses the same client token as a previous, but non-identical request. Do not
-    /// reuse a client token with different requests, unless the requests are identical. </p>
+    /// <p>The request uses the same client token as a previous, but non-identical request. Do not reuse a client token with different requests, unless the requests are identical. </p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2259,16 +2228,13 @@ pub struct CreateWorldGenerationJobError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateWorldGenerationJobErrorKind {
-    /// <p>The request uses the same client token as a previous, but non-identical request. Do not
-    /// reuse a client token with different requests, unless the requests are identical. </p>
+    /// <p>The request uses the same client token as a previous, but non-identical request. Do not reuse a client token with different requests, unless the requests are identical. </p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent
-    /// stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2427,11 +2393,9 @@ pub struct CreateWorldTemplateError {
 pub enum CreateWorldTemplateErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent
-    /// stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource already exists.</p>
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
@@ -2577,8 +2541,7 @@ pub struct DeleteFleetError {
 pub enum DeleteFleetErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -2687,8 +2650,7 @@ pub struct DeleteRobotError {
 pub enum DeleteRobotErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -2797,8 +2759,7 @@ pub struct DeleteRobotApplicationError {
 pub enum DeleteRobotApplicationErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -2913,8 +2874,7 @@ pub struct DeleteSimulationApplicationError {
 pub enum DeleteSimulationApplicationErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -3031,8 +2991,7 @@ pub struct DeleteWorldTemplateError {
 pub enum DeleteWorldTemplateErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3158,8 +3117,7 @@ pub struct DeregisterRobotError {
 pub enum DeregisterRobotErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3282,8 +3240,7 @@ pub struct DescribeDeploymentJobError {
 pub enum DescribeDeploymentJobErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3409,8 +3366,7 @@ pub struct DescribeFleetError {
 pub enum DescribeFleetErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3533,8 +3489,7 @@ pub struct DescribeRobotError {
 pub enum DescribeRobotErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3657,8 +3612,7 @@ pub struct DescribeRobotApplicationError {
 pub enum DescribeRobotApplicationErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3784,8 +3738,7 @@ pub struct DescribeSimulationApplicationError {
 pub enum DescribeSimulationApplicationErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -3924,8 +3877,7 @@ pub struct DescribeSimulationJobError {
 pub enum DescribeSimulationJobErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -4051,8 +4003,7 @@ pub struct DescribeSimulationJobBatchError {
 pub enum DescribeSimulationJobBatchErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -4167,8 +4118,7 @@ pub struct DescribeWorldError {
 pub enum DescribeWorldErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -4291,8 +4241,7 @@ pub struct DescribeWorldExportJobError {
 pub enum DescribeWorldExportJobErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -4418,8 +4367,7 @@ pub struct DescribeWorldGenerationJobError {
 pub enum DescribeWorldGenerationJobErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -4545,8 +4493,7 @@ pub struct DescribeWorldTemplateError {
 pub enum DescribeWorldTemplateErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -4672,8 +4619,7 @@ pub struct GetWorldTemplateBodyError {
 pub enum GetWorldTemplateBodyErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -4799,8 +4745,7 @@ pub struct ListDeploymentJobsError {
 pub enum ListDeploymentJobsErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -4926,8 +4871,7 @@ pub struct ListFleetsError {
 pub enum ListFleetsErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -5047,8 +4991,7 @@ pub struct ListRobotApplicationsError {
 pub enum ListRobotApplicationsErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -5163,8 +5106,7 @@ pub struct ListRobotsError {
 pub enum ListRobotsErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -5284,8 +5226,7 @@ pub struct ListSimulationApplicationsError {
 pub enum ListSimulationApplicationsErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -5400,8 +5341,7 @@ pub struct ListSimulationJobBatchesError {
 pub enum ListSimulationJobBatchesErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5505,8 +5445,7 @@ pub struct ListSimulationJobsError {
 pub enum ListSimulationJobsErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -5621,8 +5560,7 @@ pub struct ListTagsForResourceError {
 pub enum ListTagsForResourceErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -5748,8 +5686,7 @@ pub struct ListWorldExportJobsError {
 pub enum ListWorldExportJobsErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -5864,8 +5801,7 @@ pub struct ListWorldGenerationJobsError {
 pub enum ListWorldGenerationJobsErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -5980,8 +5916,7 @@ pub struct ListWorldsError {
 pub enum ListWorldsErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -6090,8 +6025,7 @@ pub struct ListWorldTemplatesError {
 pub enum ListWorldTemplatesErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -6206,11 +6140,9 @@ pub struct RegisterRobotError {
 pub enum RegisterRobotErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent
-    /// stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -6342,11 +6274,9 @@ pub struct RestartSimulationJobError {
 pub enum RestartSimulationJobErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent
-    /// stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -6479,16 +6409,13 @@ pub struct StartSimulationJobBatchError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartSimulationJobBatchErrorKind {
-    /// <p>The request uses the same client token as a previous, but non-identical request. Do not
-    /// reuse a client token with different requests, unless the requests are identical. </p>
+    /// <p>The request uses the same client token as a previous, but non-identical request. Do not reuse a client token with different requests, unless the requests are identical. </p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent
-    /// stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>AWS RoboMaker is temporarily unable to process the request. Try your call again.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -6625,16 +6552,13 @@ pub struct SyncDeploymentJobError {
 pub enum SyncDeploymentJobErrorKind {
     /// <p>The failure percentage threshold percentage was met.</p>
     ConcurrentDeploymentException(crate::error::ConcurrentDeploymentException),
-    /// <p>The request uses the same client token as a previous, but non-identical request. Do not
-    /// reuse a client token with different requests, unless the requests are identical. </p>
+    /// <p>The request uses the same client token as a previous, but non-identical request. Do not reuse a client token with different requests, unless the requests are identical. </p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent
-    /// stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -6791,8 +6715,7 @@ pub struct TagResourceError {
 pub enum TagResourceErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -6912,8 +6835,7 @@ pub struct UntagResourceError {
 pub enum UntagResourceErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -7036,11 +6958,9 @@ pub struct UpdateRobotApplicationError {
 pub enum UpdateRobotApplicationErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent
-    /// stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -7175,11 +7095,9 @@ pub struct UpdateSimulationApplicationError {
 pub enum UpdateSimulationApplicationErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent
-    /// stream requests exceeds the maximum number allowed. </p>
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -7318,8 +7236,7 @@ pub struct UpdateWorldTemplateError {
 pub enum UpdateWorldTemplateErrorKind {
     /// <p>AWS RoboMaker experienced a service issue. Try your call again.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-    /// returned message provides an explanation of the error value.</p>
+    /// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -7558,8 +7475,7 @@ impl ResourceNotFoundException {
     }
 }
 
-/// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The
-/// returned message provides an explanation of the error value.</p>
+/// <p>A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message provides an explanation of the error value.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidParameterException {
@@ -7687,8 +7603,7 @@ impl InternalServerException {
     }
 }
 
-/// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent
-/// stream requests exceeds the maximum number allowed. </p>
+/// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {
@@ -7752,8 +7667,7 @@ impl LimitExceededException {
     }
 }
 
-/// <p>The request uses the same client token as a previous, but non-identical request. Do not
-/// reuse a client token with different requests, unless the requests are identical. </p>
+/// <p>The request uses the same client token as a previous, but non-identical request. Do not reuse a client token with different requests, unless the requests are identical. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IdempotentParameterMismatchException {

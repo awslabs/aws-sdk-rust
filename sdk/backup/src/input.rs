@@ -13,14 +13,12 @@ pub mod create_backup_plan_input {
         pub(crate) creator_request_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or
-        /// more sets of <code>Rules</code>.</p>
+        /// <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
         pub fn backup_plan(mut self, input: crate::model::BackupPlanInput) -> Self {
             self.backup_plan = Some(input);
             self
         }
-        /// <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or
-        /// more sets of <code>Rules</code>.</p>
+        /// <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
         pub fn set_backup_plan(
             mut self,
             input: std::option::Option<crate::model::BackupPlanInput>,
@@ -32,9 +30,7 @@ pub mod create_backup_plan_input {
         ///
         /// To override the contents of this collection use [`set_backup_plan_tags`](Self::set_backup_plan_tags).
         ///
-        /// <p>To help organize your resources, you can assign your own metadata to the resources that
-        /// you create. Each tag is a key-value pair. The specified tags are assigned to all backups
-        /// created with this plan.</p>
+        /// <p>To help organize your resources, you can assign your own metadata to the resources that you create. Each tag is a key-value pair. The specified tags are assigned to all backups created with this plan.</p>
         pub fn backup_plan_tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -45,9 +41,7 @@ pub mod create_backup_plan_input {
             self.backup_plan_tags = Some(hash_map);
             self
         }
-        /// <p>To help organize your resources, you can assign your own metadata to the resources that
-        /// you create. Each tag is a key-value pair. The specified tags are assigned to all backups
-        /// created with this plan.</p>
+        /// <p>To help organize your resources, you can assign your own metadata to the resources that you create. Each tag is a key-value pair. The specified tags are assigned to all backups created with this plan.</p>
         pub fn set_backup_plan_tags(
             mut self,
             input: std::option::Option<
@@ -57,17 +51,13 @@ pub mod create_backup_plan_input {
             self.backup_plan_tags = input;
             self
         }
-        /// <p>Identifies the request and allows failed requests to be retried without the risk of
-        /// running the operation twice. If the request includes a <code>CreatorRequestId</code> that
-        /// matches an existing backup plan, that plan is returned. This parameter is optional.</p>
+        /// <p>Identifies the request and allows failed requests to be retried without the risk of running the operation twice. If the request includes a <code>CreatorRequestId</code> that matches an existing backup plan, that plan is returned. This parameter is optional.</p>
         /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
         pub fn creator_request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.creator_request_id = Some(input.into());
             self
         }
-        /// <p>Identifies the request and allows failed requests to be retried without the risk of
-        /// running the operation twice. If the request includes a <code>CreatorRequestId</code> that
-        /// matches an existing backup plan, that plan is returned. This parameter is optional.</p>
+        /// <p>Identifies the request and allows failed requests to be retried without the risk of running the operation twice. If the request includes a <code>CreatorRequestId</code> that matches an existing backup plan, that plan is returned. This parameter is optional.</p>
         /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
         pub fn set_creator_request_id(
             mut self,
@@ -219,14 +209,12 @@ pub mod create_backup_selection_input {
         pub(crate) creator_request_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Uniquely identifies the backup plan to be associated with the selection of
-        /// resources.</p>
+        /// <p>Uniquely identifies the backup plan to be associated with the selection of resources.</p>
         pub fn backup_plan_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.backup_plan_id = Some(input.into());
             self
         }
-        /// <p>Uniquely identifies the backup plan to be associated with the selection of
-        /// resources.</p>
+        /// <p>Uniquely identifies the backup plan to be associated with the selection of resources.</p>
         pub fn set_backup_plan_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -247,15 +235,13 @@ pub mod create_backup_selection_input {
             self.backup_selection = input;
             self
         }
-        /// <p>A unique string that identifies the request and allows failed requests to be retried
-        /// without the risk of running the operation twice. This parameter is optional.</p>
+        /// <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice. This parameter is optional.</p>
         /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
         pub fn creator_request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.creator_request_id = Some(input.into());
             self
         }
-        /// <p>A unique string that identifies the request and allows failed requests to be retried
-        /// without the risk of running the operation twice. This parameter is optional.</p>
+        /// <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice. This parameter is optional.</p>
         /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
         pub fn set_creator_request_id(
             mut self,
@@ -432,16 +418,12 @@ pub mod create_backup_vault_input {
         pub(crate) creator_request_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the Amazon Web Services
-        /// Region where they are created. They consist of letters, numbers, and hyphens.</p>
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of letters, numbers, and hyphens.</p>
         pub fn backup_vault_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.backup_vault_name = Some(input.into());
             self
         }
-        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the Amazon Web Services
-        /// Region where they are created. They consist of letters, numbers, and hyphens.</p>
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of letters, numbers, and hyphens.</p>
         pub fn set_backup_vault_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -453,8 +435,7 @@ pub mod create_backup_vault_input {
         ///
         /// To override the contents of this collection use [`set_backup_vault_tags`](Self::set_backup_vault_tags).
         ///
-        /// <p>Metadata that you can assign to help organize the resources that you create. Each tag is
-        /// a key-value pair.</p>
+        /// <p>Metadata that you can assign to help organize the resources that you create. Each tag is a key-value pair.</p>
         pub fn backup_vault_tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -465,8 +446,7 @@ pub mod create_backup_vault_input {
             self.backup_vault_tags = Some(hash_map);
             self
         }
-        /// <p>Metadata that you can assign to help organize the resources that you create. Each tag is
-        /// a key-value pair.</p>
+        /// <p>Metadata that you can assign to help organize the resources that you create. Each tag is a key-value pair.</p>
         pub fn set_backup_vault_tags(
             mut self,
             input: std::option::Option<
@@ -476,14 +456,12 @@ pub mod create_backup_vault_input {
             self.backup_vault_tags = input;
             self
         }
-        /// <p>The server-side encryption key that is used to protect your backups; for example,
-        /// <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
+        /// <p>The server-side encryption key that is used to protect your backups; for example, <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
         pub fn encryption_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.encryption_key_arn = Some(input.into());
             self
         }
-        /// <p>The server-side encryption key that is used to protect your backups; for example,
-        /// <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
+        /// <p>The server-side encryption key that is used to protect your backups; for example, <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
         pub fn set_encryption_key_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -491,15 +469,13 @@ pub mod create_backup_vault_input {
             self.encryption_key_arn = input;
             self
         }
-        /// <p>A unique string that identifies the request and allows failed requests to be retried
-        /// without the risk of running the operation twice. This parameter is optional.</p>
+        /// <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice. This parameter is optional.</p>
         /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
         pub fn creator_request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.creator_request_id = Some(input.into());
             self
         }
-        /// <p>A unique string that identifies the request and allows failed requests to be retried
-        /// without the risk of running the operation twice. This parameter is optional.</p>
+        /// <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice. This parameter is optional.</p>
         /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
         pub fn set_creator_request_id(
             mut self,
@@ -677,16 +653,12 @@ pub mod create_framework_input {
         >,
     }
     impl Builder {
-        /// <p>The unique name of the framework. The name must be between 1 and 256 characters,
-        /// starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and
-        /// underscores (_).</p>
+        /// <p>The unique name of the framework. The name must be between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
         pub fn framework_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.framework_name = Some(input.into());
             self
         }
-        /// <p>The unique name of the framework. The name must be between 1 and 256 characters,
-        /// starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and
-        /// underscores (_).</p>
+        /// <p>The unique name of the framework. The name must be between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
         pub fn set_framework_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -711,16 +683,14 @@ pub mod create_framework_input {
         ///
         /// To override the contents of this collection use [`set_framework_controls`](Self::set_framework_controls).
         ///
-        /// <p>A list of the controls that make up the framework. Each control in the list has a name,
-        /// input parameters, and scope.</p>
+        /// <p>A list of the controls that make up the framework. Each control in the list has a name, input parameters, and scope.</p>
         pub fn framework_controls(mut self, input: crate::model::FrameworkControl) -> Self {
             let mut v = self.framework_controls.unwrap_or_default();
             v.push(input);
             self.framework_controls = Some(v);
             self
         }
-        /// <p>A list of the controls that make up the framework. Each control in the list has a name,
-        /// input parameters, and scope.</p>
+        /// <p>A list of the controls that make up the framework. Each control in the list has a name, input parameters, and scope.</p>
         pub fn set_framework_controls(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FrameworkControl>>,
@@ -728,16 +698,12 @@ pub mod create_framework_input {
             self.framework_controls = input;
             self
         }
-        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
-        /// calls to <code>CreateFrameworkInput</code>. Retrying a successful request with the same
-        /// idempotency token results in a success message with no action taken.</p>
+        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>CreateFrameworkInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.idempotency_token = Some(input.into());
             self
         }
-        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
-        /// calls to <code>CreateFrameworkInput</code>. Retrying a successful request with the same
-        /// idempotency token results in a success message with no action taken.</p>
+        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>CreateFrameworkInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -749,8 +715,7 @@ pub mod create_framework_input {
         ///
         /// To override the contents of this collection use [`set_framework_tags`](Self::set_framework_tags).
         ///
-        /// <p>Metadata that you can assign to help organize the frameworks that you create. Each tag
-        /// is a key-value pair.</p>
+        /// <p>Metadata that you can assign to help organize the frameworks that you create. Each tag is a key-value pair.</p>
         pub fn framework_tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -761,8 +726,7 @@ pub mod create_framework_input {
             self.framework_tags = Some(hash_map);
             self
         }
-        /// <p>Metadata that you can assign to help organize the frameworks that you create. Each tag
-        /// is a key-value pair.</p>
+        /// <p>Metadata that you can assign to help organize the frameworks that you create. Each tag is a key-value pair.</p>
         pub fn set_framework_tags(
             mut self,
             input: std::option::Option<
@@ -926,16 +890,12 @@ pub mod create_report_plan_input {
         pub(crate) idempotency_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique name of the report plan. The name must be between 1 and 256 characters,
-        /// starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and
-        /// underscores (_).</p>
+        /// <p>The unique name of the report plan. The name must be between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
         pub fn report_plan_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.report_plan_name = Some(input.into());
             self
         }
-        /// <p>The unique name of the report plan. The name must be between 1 and 256 characters,
-        /// starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and
-        /// underscores (_).</p>
+        /// <p>The unique name of the report plan. The name must be between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
         pub fn set_report_plan_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -956,9 +916,7 @@ pub mod create_report_plan_input {
             self.report_plan_description = input;
             self
         }
-        /// <p>A structure that contains information about where and how to deliver your reports,
-        /// specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your
-        /// reports.</p>
+        /// <p>A structure that contains information about where and how to deliver your reports, specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your reports.</p>
         pub fn report_delivery_channel(
             mut self,
             input: crate::model::ReportDeliveryChannel,
@@ -966,9 +924,7 @@ pub mod create_report_plan_input {
             self.report_delivery_channel = Some(input);
             self
         }
-        /// <p>A structure that contains information about where and how to deliver your reports,
-        /// specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your
-        /// reports.</p>
+        /// <p>A structure that contains information about where and how to deliver your reports, specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your reports.</p>
         pub fn set_report_delivery_channel(
             mut self,
             input: std::option::Option<crate::model::ReportDeliveryChannel>,
@@ -976,28 +932,16 @@ pub mod create_report_plan_input {
             self.report_delivery_channel = input;
             self
         }
-        /// <p>Identifies the report template for the report. Reports are built using a report
-        /// template. The report templates are:</p>
-        /// <p>
-        /// <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT |
-        /// COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
-        /// </p>
-        /// <p>If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or
-        /// <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the report
-        /// coverage by Amazon Web Services Regions and frameworks.</p>
+        /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p>
+        /// <p> <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
+        /// <p>If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the report coverage by Amazon Web Services Regions and frameworks.</p>
         pub fn report_setting(mut self, input: crate::model::ReportSetting) -> Self {
             self.report_setting = Some(input);
             self
         }
-        /// <p>Identifies the report template for the report. Reports are built using a report
-        /// template. The report templates are:</p>
-        /// <p>
-        /// <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT |
-        /// COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
-        /// </p>
-        /// <p>If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or
-        /// <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the report
-        /// coverage by Amazon Web Services Regions and frameworks.</p>
+        /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p>
+        /// <p> <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
+        /// <p>If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the report coverage by Amazon Web Services Regions and frameworks.</p>
         pub fn set_report_setting(
             mut self,
             input: std::option::Option<crate::model::ReportSetting>,
@@ -1009,8 +953,7 @@ pub mod create_report_plan_input {
         ///
         /// To override the contents of this collection use [`set_report_plan_tags`](Self::set_report_plan_tags).
         ///
-        /// <p>Metadata that you can assign to help organize the report plans that you create. Each tag
-        /// is a key-value pair.</p>
+        /// <p>Metadata that you can assign to help organize the report plans that you create. Each tag is a key-value pair.</p>
         pub fn report_plan_tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1021,8 +964,7 @@ pub mod create_report_plan_input {
             self.report_plan_tags = Some(hash_map);
             self
         }
-        /// <p>Metadata that you can assign to help organize the report plans that you create. Each tag
-        /// is a key-value pair.</p>
+        /// <p>Metadata that you can assign to help organize the report plans that you create. Each tag is a key-value pair.</p>
         pub fn set_report_plan_tags(
             mut self,
             input: std::option::Option<
@@ -1032,16 +974,12 @@ pub mod create_report_plan_input {
             self.report_plan_tags = input;
             self
         }
-        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
-        /// calls to <code>CreateReportPlanInput</code>. Retrying a successful request with the same
-        /// idempotency token results in a success message with no action taken.</p>
+        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>CreateReportPlanInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.idempotency_token = Some(input.into());
             self
         }
-        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
-        /// calls to <code>CreateReportPlanInput</code>. Retrying a successful request with the same
-        /// idempotency token results in a success message with no action taken.</p>
+        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>CreateReportPlanInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1368,14 +1306,12 @@ pub mod delete_backup_selection_input {
             self.backup_plan_id = input;
             self
         }
-        /// <p>Uniquely identifies the body of a request to assign a set of resources to a backup
-        /// plan.</p>
+        /// <p>Uniquely identifies the body of a request to assign a set of resources to a backup plan.</p>
         pub fn selection_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.selection_id = Some(input.into());
             self
         }
-        /// <p>Uniquely identifies the body of a request to assign a set of resources to a backup
-        /// plan.</p>
+        /// <p>Uniquely identifies the body of a request to assign a set of resources to a backup plan.</p>
         pub fn set_selection_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.selection_id = input;
             self
@@ -1542,18 +1478,12 @@ pub mod delete_backup_vault_input {
         pub(crate) backup_vault_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the Amazon Web Services
-        /// Region where they are created. They consist of lowercase letters, numbers, and
-        /// hyphens.</p>
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
         pub fn backup_vault_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.backup_vault_name = Some(input.into());
             self
         }
-        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the Amazon Web Services
-        /// Region where they are created. They consist of lowercase letters, numbers, and
-        /// hyphens.</p>
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
         pub fn set_backup_vault_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1706,18 +1636,12 @@ pub mod delete_backup_vault_access_policy_input {
         pub(crate) backup_vault_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the Amazon Web Services
-        /// Region where they are created. They consist of lowercase letters, numbers, and
-        /// hyphens.</p>
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
         pub fn backup_vault_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.backup_vault_name = Some(input.into());
             self
         }
-        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the Amazon Web Services
-        /// Region where they are created. They consist of lowercase letters, numbers, and
-        /// hyphens.</p>
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
         pub fn set_backup_vault_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2032,16 +1956,12 @@ pub mod delete_backup_vault_notifications_input {
         pub(crate) backup_vault_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the Region where they are
-        /// created. They consist of lowercase letters, numbers, and hyphens.</p>
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
         pub fn backup_vault_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.backup_vault_name = Some(input.into());
             self
         }
-        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the Region where they are
-        /// created. They consist of lowercase letters, numbers, and hyphens.</p>
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
         pub fn set_backup_vault_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2355,18 +2275,12 @@ pub mod delete_recovery_point_input {
         pub(crate) recovery_point_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the Amazon Web Services
-        /// Region where they are created. They consist of lowercase letters, numbers, and
-        /// hyphens.</p>
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
         pub fn backup_vault_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.backup_vault_name = Some(input.into());
             self
         }
-        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the Amazon Web Services
-        /// Region where they are created. They consist of lowercase letters, numbers, and
-        /// hyphens.</p>
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
         pub fn set_backup_vault_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2374,14 +2288,12 @@ pub mod delete_recovery_point_input {
             self.backup_vault_name = input;
             self
         }
-        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example,
-        /// <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
         pub fn recovery_point_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.recovery_point_arn = Some(input.into());
             self
         }
-        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example,
-        /// <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
         pub fn set_recovery_point_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2867,18 +2779,12 @@ pub mod describe_backup_vault_input {
         pub(crate) backup_vault_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the Amazon Web Services
-        /// Region where they are created. They consist of lowercase letters, numbers, and
-        /// hyphens.</p>
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
         pub fn backup_vault_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.backup_vault_name = Some(input.into());
             self
         }
-        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the Amazon Web Services
-        /// Region where they are created. They consist of lowercase letters, numbers, and
-        /// hyphens.</p>
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
         pub fn set_backup_vault_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3461,14 +3367,12 @@ pub mod describe_protected_resource_input {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN
-        /// depends on the resource type.</p>
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN
-        /// depends on the resource type.</p>
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -3620,18 +3524,12 @@ pub mod describe_recovery_point_input {
         pub(crate) recovery_point_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the Amazon Web Services
-        /// Region where they are created. They consist of lowercase letters, numbers, and
-        /// hyphens.</p>
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
         pub fn backup_vault_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.backup_vault_name = Some(input.into());
             self
         }
-        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the Amazon Web Services
-        /// Region where they are created. They consist of lowercase letters, numbers, and
-        /// hyphens.</p>
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
         pub fn set_backup_vault_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3639,14 +3537,12 @@ pub mod describe_recovery_point_input {
             self.backup_vault_name = input;
             self
         }
-        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example,
-        /// <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
         pub fn recovery_point_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.recovery_point_arn = Some(input.into());
             self
         }
-        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example,
-        /// <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
         pub fn set_recovery_point_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3937,14 +3833,12 @@ pub mod describe_report_job_input {
         pub(crate) report_job_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier of the report job. A unique, randomly generated, Unicode, UTF-8 encoded
-        /// string that is at most 1,024 bytes long. The report job ID cannot be edited.</p>
+        /// <p>The identifier of the report job. A unique, randomly generated, Unicode, UTF-8 encoded string that is at most 1,024 bytes long. The report job ID cannot be edited.</p>
         pub fn report_job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.report_job_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the report job. A unique, randomly generated, Unicode, UTF-8 encoded
-        /// string that is at most 1,024 bytes long. The report job ID cannot be edited.</p>
+        /// <p>The identifier of the report job. A unique, randomly generated, Unicode, UTF-8 encoded string that is at most 1,024 bytes long. The report job ID cannot be edited.</p>
         pub fn set_report_job_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4427,14 +4321,12 @@ pub mod disassociate_recovery_point_input {
             self.backup_vault_name = input;
             self
         }
-        /// <p>An Amazon Resource Name (ARN) that uniquely identifies an Backup recovery
-        /// point.</p>
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies an Backup recovery point.</p>
         pub fn recovery_point_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.recovery_point_arn = Some(input.into());
             self
         }
-        /// <p>An Amazon Resource Name (ARN) that uniquely identifies an Backup recovery
-        /// point.</p>
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies an Backup recovery point.</p>
         pub fn set_recovery_point_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4778,14 +4670,12 @@ pub mod get_backup_plan_input {
             self.backup_plan_id = input;
             self
         }
-        /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes
-        /// long. Version IDs cannot be edited.</p>
+        /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version IDs cannot be edited.</p>
         pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.version_id = Some(input.into());
             self
         }
-        /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes
-        /// long. Version IDs cannot be edited.</p>
+        /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version IDs cannot be edited.</p>
         pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version_id = input;
             self
@@ -5274,14 +5164,12 @@ pub mod get_backup_selection_input {
             self.backup_plan_id = input;
             self
         }
-        /// <p>Uniquely identifies the body of a request to assign a set of resources to a backup
-        /// plan.</p>
+        /// <p>Uniquely identifies the body of a request to assign a set of resources to a backup plan.</p>
         pub fn selection_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.selection_id = Some(input.into());
             self
         }
-        /// <p>Uniquely identifies the body of a request to assign a set of resources to a backup
-        /// plan.</p>
+        /// <p>Uniquely identifies the body of a request to assign a set of resources to a backup plan.</p>
         pub fn set_selection_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.selection_id = input;
             self
@@ -5448,18 +5336,12 @@ pub mod get_backup_vault_access_policy_input {
         pub(crate) backup_vault_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the Amazon Web Services
-        /// Region where they are created. They consist of lowercase letters, numbers, and
-        /// hyphens.</p>
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
         pub fn backup_vault_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.backup_vault_name = Some(input.into());
             self
         }
-        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the Amazon Web Services
-        /// Region where they are created. They consist of lowercase letters, numbers, and
-        /// hyphens.</p>
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
         pub fn set_backup_vault_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5613,18 +5495,12 @@ pub mod get_backup_vault_notifications_input {
         pub(crate) backup_vault_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the Amazon Web Services
-        /// Region where they are created. They consist of lowercase letters, numbers, and
-        /// hyphens.</p>
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
         pub fn backup_vault_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.backup_vault_name = Some(input.into());
             self
         }
-        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the Amazon Web Services
-        /// Region where they are created. They consist of lowercase letters, numbers, and
-        /// hyphens.</p>
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
         pub fn set_backup_vault_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5779,18 +5655,12 @@ pub mod get_recovery_point_restore_metadata_input {
         pub(crate) recovery_point_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the Amazon Web Services
-        /// Region where they are created. They consist of lowercase letters, numbers, and
-        /// hyphens.</p>
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
         pub fn backup_vault_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.backup_vault_name = Some(input.into());
             self
         }
-        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the Amazon Web Services
-        /// Region where they are created. They consist of lowercase letters, numbers, and
-        /// hyphens.</p>
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
         pub fn set_backup_vault_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5798,14 +5668,12 @@ pub mod get_recovery_point_restore_metadata_input {
             self.backup_vault_name = input;
             self
         }
-        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example,
-        /// <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
         pub fn recovery_point_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.recovery_point_arn = Some(input.into());
             self
         }
-        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example,
-        /// <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
         pub fn set_recovery_point_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6101,18 +5969,12 @@ pub mod list_backup_jobs_input {
         pub(crate) by_account_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The next item following a partial list of returned items. For example, if a request is
-        /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
+        /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The next item following a partial list of returned items. For example, if a request is
-        /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
+        /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6127,14 +5989,12 @@ pub mod list_backup_jobs_input {
             self.max_results = input;
             self
         }
-        /// <p>Returns only backup jobs that match the specified resource Amazon Resource Name
-        /// (ARN).</p>
+        /// <p>Returns only backup jobs that match the specified resource Amazon Resource Name (ARN).</p>
         pub fn by_resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.by_resource_arn = Some(input.into());
             self
         }
-        /// <p>Returns only backup jobs that match the specified resource Amazon Resource Name
-        /// (ARN).</p>
+        /// <p>Returns only backup jobs that match the specified resource Amazon Resource Name (ARN).</p>
         pub fn set_by_resource_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6155,18 +6015,12 @@ pub mod list_backup_jobs_input {
             self.by_state = input;
             self
         }
-        /// <p>Returns only backup jobs that will be stored in the specified backup vault. Backup
-        /// vaults are identified by names that are unique to the account used to create them and the
-        /// Amazon Web Services Region where they are created. They consist of lowercase letters,
-        /// numbers, and hyphens.</p>
+        /// <p>Returns only backup jobs that will be stored in the specified backup vault. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
         pub fn by_backup_vault_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.by_backup_vault_name = Some(input.into());
             self
         }
-        /// <p>Returns only backup jobs that will be stored in the specified backup vault. Backup
-        /// vaults are identified by names that are unique to the account used to create them and the
-        /// Amazon Web Services Region where they are created. They consist of lowercase letters,
-        /// numbers, and hyphens.</p>
+        /// <p>Returns only backup jobs that will be stored in the specified backup vault. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
         pub fn set_by_backup_vault_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6202,34 +6056,13 @@ pub mod list_backup_jobs_input {
         }
         /// <p>Returns only backup jobs for the specified resources:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DynamoDB</code> for Amazon DynamoDB</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EBS</code> for Amazon Elastic Block Store</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EC2</code> for Amazon Elastic Compute Cloud</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EFS</code> for Amazon Elastic File System</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RDS</code> for Amazon Relational Database Service</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Aurora</code> for Amazon Aurora</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Storage Gateway</code> for Storage Gateway</p>
-        /// </li>
+        /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
+        /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
+        /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
+        /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
+        /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+        /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
+        /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
         /// </ul>
         pub fn by_resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.by_resource_type = Some(input.into());
@@ -6237,34 +6070,13 @@ pub mod list_backup_jobs_input {
         }
         /// <p>Returns only backup jobs for the specified resources:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DynamoDB</code> for Amazon DynamoDB</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EBS</code> for Amazon Elastic Block Store</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EC2</code> for Amazon Elastic Compute Cloud</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EFS</code> for Amazon Elastic File System</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RDS</code> for Amazon Relational Database Service</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Aurora</code> for Amazon Aurora</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Storage Gateway</code> for Storage Gateway</p>
-        /// </li>
+        /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
+        /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
+        /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
+        /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
+        /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+        /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
+        /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
         /// </ul>
         pub fn set_by_resource_type(
             mut self,
@@ -6273,18 +6085,14 @@ pub mod list_backup_jobs_input {
             self.by_resource_type = input;
             self
         }
-        /// <p>The account ID to list the jobs from. Returns only backup jobs associated with the
-        /// specified account ID.</p>
-        /// <p>If used from an Organizations management account, passing <code>*</code> returns
-        /// all jobs across the organization.</p>
+        /// <p>The account ID to list the jobs from. Returns only backup jobs associated with the specified account ID.</p>
+        /// <p>If used from an Organizations management account, passing <code>*</code> returns all jobs across the organization.</p>
         pub fn by_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.by_account_id = Some(input.into());
             self
         }
-        /// <p>The account ID to list the jobs from. Returns only backup jobs associated with the
-        /// specified account ID.</p>
-        /// <p>If used from an Organizations management account, passing <code>*</code> returns
-        /// all jobs across the organization.</p>
+        /// <p>The account ID to list the jobs from. Returns only backup jobs associated with the specified account ID.</p>
+        /// <p>If used from an Organizations management account, passing <code>*</code> returns all jobs across the organization.</p>
         pub fn set_by_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6486,18 +6294,12 @@ pub mod list_backup_plans_input {
         pub(crate) include_deleted: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The next item following a partial list of returned items. For example, if a request is
-        /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
+        /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The next item following a partial list of returned items. For example, if a request is
-        /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
+        /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6512,14 +6314,12 @@ pub mod list_backup_plans_input {
             self.max_results = input;
             self
         }
-        /// <p>A Boolean value with a default value of <code>FALSE</code> that returns deleted backup
-        /// plans when set to <code>TRUE</code>.</p>
+        /// <p>A Boolean value with a default value of <code>FALSE</code> that returns deleted backup plans when set to <code>TRUE</code>.</p>
         pub fn include_deleted(mut self, input: bool) -> Self {
             self.include_deleted = Some(input);
             self
         }
-        /// <p>A Boolean value with a default value of <code>FALSE</code> that returns deleted backup
-        /// plans when set to <code>TRUE</code>.</p>
+        /// <p>A Boolean value with a default value of <code>FALSE</code> that returns deleted backup plans when set to <code>TRUE</code>.</p>
         pub fn set_include_deleted(mut self, input: std::option::Option<bool>) -> Self {
             self.include_deleted = input;
             self
@@ -6675,18 +6475,12 @@ pub mod list_backup_plan_templates_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The next item following a partial list of returned items. For example, if a request is
-        /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
+        /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The next item following a partial list of returned items. For example, if a request is
-        /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
+        /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6860,18 +6654,12 @@ pub mod list_backup_plan_versions_input {
             self.backup_plan_id = input;
             self
         }
-        /// <p>The next item following a partial list of returned items. For example, if a request is
-        /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
+        /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The next item following a partial list of returned items. For example, if a request is
-        /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
+        /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7065,18 +6853,12 @@ pub mod list_backup_selections_input {
             self.backup_plan_id = input;
             self
         }
-        /// <p>The next item following a partial list of returned items. For example, if a request is
-        /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
+        /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The next item following a partial list of returned items. For example, if a request is
-        /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
+        /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7256,18 +7038,12 @@ pub mod list_backup_vaults_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The next item following a partial list of returned items. For example, if a request is
-        /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
+        /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The next item following a partial list of returned items. For example, if a request is
-        /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
+        /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7433,16 +7209,12 @@ pub mod list_copy_jobs_input {
         pub(crate) by_account_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The next item following a partial list of returned items. For example, if a request is
-        /// made to return maxResults number of items, NextToken allows you to return more items in
-        /// your list starting at the location pointed to by the next token. </p>
+        /// <p>The next item following a partial list of returned items. For example, if a request is made to return maxResults number of items, NextToken allows you to return more items in your list starting at the location pointed to by the next token. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The next item following a partial list of returned items. For example, if a request is
-        /// made to return maxResults number of items, NextToken allows you to return more items in
-        /// your list starting at the location pointed to by the next token. </p>
+        /// <p>The next item following a partial list of returned items. For example, if a request is made to return maxResults number of items, NextToken allows you to return more items in your list starting at the location pointed to by the next token. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7457,14 +7229,12 @@ pub mod list_copy_jobs_input {
             self.max_results = input;
             self
         }
-        /// <p>Returns only copy jobs that match the specified resource Amazon Resource Name (ARN).
-        /// </p>
+        /// <p>Returns only copy jobs that match the specified resource Amazon Resource Name (ARN). </p>
         pub fn by_resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.by_resource_arn = Some(input.into());
             self
         }
-        /// <p>Returns only copy jobs that match the specified resource Amazon Resource Name (ARN).
-        /// </p>
+        /// <p>Returns only copy jobs that match the specified resource Amazon Resource Name (ARN). </p>
         pub fn set_by_resource_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7513,34 +7283,13 @@ pub mod list_copy_jobs_input {
         }
         /// <p>Returns only backup jobs for the specified resources:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DynamoDB</code> for Amazon DynamoDB</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EBS</code> for Amazon Elastic Block Store</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EC2</code> for Amazon Elastic Compute Cloud</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EFS</code> for Amazon Elastic File System</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RDS</code> for Amazon Relational Database Service</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Aurora</code> for Amazon Aurora</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Storage Gateway</code> for Storage Gateway</p>
-        /// </li>
+        /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
+        /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
+        /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
+        /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
+        /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+        /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
+        /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
         /// </ul>
         pub fn by_resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.by_resource_type = Some(input.into());
@@ -7548,34 +7297,13 @@ pub mod list_copy_jobs_input {
         }
         /// <p>Returns only backup jobs for the specified resources:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DynamoDB</code> for Amazon DynamoDB</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EBS</code> for Amazon Elastic Block Store</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EC2</code> for Amazon Elastic Compute Cloud</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EFS</code> for Amazon Elastic File System</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RDS</code> for Amazon Relational Database Service</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Aurora</code> for Amazon Aurora</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Storage Gateway</code> for Storage Gateway</p>
-        /// </li>
+        /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
+        /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
+        /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
+        /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
+        /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+        /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
+        /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
         /// </ul>
         pub fn set_by_resource_type(
             mut self,
@@ -7584,16 +7312,12 @@ pub mod list_copy_jobs_input {
             self.by_resource_type = input;
             self
         }
-        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a source backup vault to copy
-        /// from; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.
-        /// </p>
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a source backup vault to copy from; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>. </p>
         pub fn by_destination_vault_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.by_destination_vault_arn = Some(input.into());
             self
         }
-        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a source backup vault to copy
-        /// from; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.
-        /// </p>
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a source backup vault to copy from; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>. </p>
         pub fn set_by_destination_vault_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7601,14 +7325,12 @@ pub mod list_copy_jobs_input {
             self.by_destination_vault_arn = input;
             self
         }
-        /// <p>The account ID to list the jobs from. Returns only copy jobs associated with the
-        /// specified account ID.</p>
+        /// <p>The account ID to list the jobs from. Returns only copy jobs associated with the specified account ID.</p>
         pub fn by_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.by_account_id = Some(input.into());
             self
         }
-        /// <p>The account ID to list the jobs from. Returns only copy jobs associated with the
-        /// specified account ID.</p>
+        /// <p>The account ID to list the jobs from. Returns only copy jobs associated with the specified account ID.</p>
         pub fn set_by_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7809,26 +7531,22 @@ pub mod list_frameworks_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The number of desired results from 1 to 1000. Optional. If unspecified, the query will
-        /// return 1 MB of data.</p>
+        /// <p>The number of desired results from 1 to 1000. Optional. If unspecified, the query will return 1 MB of data.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The number of desired results from 1 to 1000. Optional. If unspecified, the query will
-        /// return 1 MB of data.</p>
+        /// <p>The number of desired results from 1 to 1000. Optional. If unspecified, the query will return 1 MB of data.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7977,18 +7695,12 @@ pub mod list_protected_resources_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The next item following a partial list of returned items. For example, if a request is
-        /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
+        /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The next item following a partial list of returned items. For example, if a request is
-        /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
+        /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8153,25 +7865,15 @@ pub mod list_recovery_points_by_backup_vault_input {
         pub(crate) by_created_after: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the Amazon Web Services
-        /// Region where they are created. They consist of lowercase letters, numbers, and
-        /// hyphens.</p>
-        /// <note>
-        /// <p>Backup vault name might not be available when a supported service creates the
-        /// backup.</p>
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p> <note>
+        /// <p>Backup vault name might not be available when a supported service creates the backup.</p>
         /// </note>
         pub fn backup_vault_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.backup_vault_name = Some(input.into());
             self
         }
-        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the Amazon Web Services
-        /// Region where they are created. They consist of lowercase letters, numbers, and
-        /// hyphens.</p>
-        /// <note>
-        /// <p>Backup vault name might not be available when a supported service creates the
-        /// backup.</p>
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p> <note>
+        /// <p>Backup vault name might not be available when a supported service creates the backup.</p>
         /// </note>
         pub fn set_backup_vault_name(
             mut self,
@@ -8180,18 +7882,12 @@ pub mod list_recovery_points_by_backup_vault_input {
             self.backup_vault_name = input;
             self
         }
-        /// <p>The next item following a partial list of returned items. For example, if a request is
-        /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
+        /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The next item following a partial list of returned items. For example, if a request is
-        /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
+        /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8206,14 +7902,12 @@ pub mod list_recovery_points_by_backup_vault_input {
             self.max_results = input;
             self
         }
-        /// <p>Returns only recovery points that match the specified resource Amazon Resource Name
-        /// (ARN).</p>
+        /// <p>Returns only recovery points that match the specified resource Amazon Resource Name (ARN).</p>
         pub fn by_resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.by_resource_arn = Some(input.into());
             self
         }
-        /// <p>Returns only recovery points that match the specified resource Amazon Resource Name
-        /// (ARN).</p>
+        /// <p>Returns only recovery points that match the specified resource Amazon Resource Name (ARN).</p>
         pub fn set_by_resource_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8482,44 +8176,34 @@ pub mod list_recovery_points_by_resource_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the
-        /// resource type.</p>
+        /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the
-        /// resource type.</p>
+        /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
-        /// <p>The next item following a partial list of returned items. For example, if a request is
-        /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
+        /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The next item following a partial list of returned items. For example, if a request is
-        /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
+        /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of items to be returned.</p>
-        /// <note>
+        /// <p>The maximum number of items to be returned.</p> <note>
         /// <p>Amazon RDS requires a value of at least 20.</p>
         /// </note>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of items to be returned.</p>
-        /// <note>
+        /// <p>The maximum number of items to be returned.</p> <note>
         /// <p>Amazon RDS requires a value of at least 20.</p>
         /// </note>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
@@ -8710,16 +8394,12 @@ pub mod list_report_jobs_input {
             self.by_report_plan_name = input;
             self
         }
-        /// <p>Returns only report jobs that were created before the date and time specified in Unix
-        /// format and Coordinated Universal Time (UTC). For example, the value 1516925490 represents
-        /// Friday, January 26, 2018 12:11:30 AM.</p>
+        /// <p>Returns only report jobs that were created before the date and time specified in Unix format and Coordinated Universal Time (UTC). For example, the value 1516925490 represents Friday, January 26, 2018 12:11:30 AM.</p>
         pub fn by_creation_before(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.by_creation_before = Some(input);
             self
         }
-        /// <p>Returns only report jobs that were created before the date and time specified in Unix
-        /// format and Coordinated Universal Time (UTC). For example, the value 1516925490 represents
-        /// Friday, January 26, 2018 12:11:30 AM.</p>
+        /// <p>Returns only report jobs that were created before the date and time specified in Unix format and Coordinated Universal Time (UTC). For example, the value 1516925490 represents Friday, January 26, 2018 12:11:30 AM.</p>
         pub fn set_by_creation_before(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -8727,16 +8407,12 @@ pub mod list_report_jobs_input {
             self.by_creation_before = input;
             self
         }
-        /// <p>Returns only report jobs that were created after the date and time specified in Unix
-        /// format and Coordinated Universal Time (UTC). For example, the value 1516925490 represents
-        /// Friday, January 26, 2018 12:11:30 AM.</p>
+        /// <p>Returns only report jobs that were created after the date and time specified in Unix format and Coordinated Universal Time (UTC). For example, the value 1516925490 represents Friday, January 26, 2018 12:11:30 AM.</p>
         pub fn by_creation_after(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.by_creation_after = Some(input);
             self
         }
-        /// <p>Returns only report jobs that were created after the date and time specified in Unix
-        /// format and Coordinated Universal Time (UTC). For example, the value 1516925490 represents
-        /// Friday, January 26, 2018 12:11:30 AM.</p>
+        /// <p>Returns only report jobs that were created after the date and time specified in Unix format and Coordinated Universal Time (UTC). For example, the value 1516925490 represents Friday, January 26, 2018 12:11:30 AM.</p>
         pub fn set_by_creation_after(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -8745,41 +8421,33 @@ pub mod list_report_jobs_input {
             self
         }
         /// <p>Returns only report jobs that are in the specified status. The statuses are:</p>
-        /// <p>
-        /// <code>CREATED | RUNNING | COMPLETED | FAILED</code>
-        /// </p>
+        /// <p> <code>CREATED | RUNNING | COMPLETED | FAILED</code> </p>
         pub fn by_status(mut self, input: impl Into<std::string::String>) -> Self {
             self.by_status = Some(input.into());
             self
         }
         /// <p>Returns only report jobs that are in the specified status. The statuses are:</p>
-        /// <p>
-        /// <code>CREATED | RUNNING | COMPLETED | FAILED</code>
-        /// </p>
+        /// <p> <code>CREATED | RUNNING | COMPLETED | FAILED</code> </p>
         pub fn set_by_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.by_status = input;
             self
         }
-        /// <p>The number of desired results from 1 to 1000. Optional. If unspecified, the query will
-        /// return 1 MB of data.</p>
+        /// <p>The number of desired results from 1 to 1000. Optional. If unspecified, the query will return 1 MB of data.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The number of desired results from 1 to 1000. Optional. If unspecified, the query will
-        /// return 1 MB of data.</p>
+        /// <p>The number of desired results from 1 to 1000. Optional. If unspecified, the query will return 1 MB of data.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8959,26 +8627,22 @@ pub mod list_report_plans_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The number of desired results from 1 to 1000. Optional. If unspecified, the query will
-        /// return 1 MB of data.</p>
+        /// <p>The number of desired results from 1 to 1000. Optional. If unspecified, the query will return 1 MB of data.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The number of desired results from 1 to 1000. Optional. If unspecified, the query will
-        /// return 1 MB of data.</p>
+        /// <p>The number of desired results from 1 to 1000. Optional. If unspecified, the query will return 1 MB of data.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -9131,18 +8795,12 @@ pub mod list_restore_jobs_input {
         pub(crate) by_status: std::option::Option<crate::model::RestoreJobStatus>,
     }
     impl Builder {
-        /// <p>The next item following a partial list of returned items. For example, if a request is
-        /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
+        /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The next item following a partial list of returned items. For example, if a request is
-        /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
+        /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -9157,14 +8815,12 @@ pub mod list_restore_jobs_input {
             self.max_results = input;
             self
         }
-        /// <p>The account ID to list the jobs from. Returns only restore jobs associated with the
-        /// specified account ID.</p>
+        /// <p>The account ID to list the jobs from. Returns only restore jobs associated with the specified account ID.</p>
         pub fn by_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.by_account_id = Some(input.into());
             self
         }
-        /// <p>The account ID to list the jobs from. Returns only restore jobs associated with the
-        /// specified account ID.</p>
+        /// <p>The account ID to list the jobs from. Returns only restore jobs associated with the specified account ID.</p>
         pub fn set_by_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9384,32 +9040,22 @@ pub mod list_tags_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN
-        /// depends on the type of resource. Valid targets for <code>ListTags</code> are recovery
-        /// points, backup plans, and backup vaults.</p>
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the type of resource. Valid targets for <code>ListTags</code> are recovery points, backup plans, and backup vaults.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN
-        /// depends on the type of resource. Valid targets for <code>ListTags</code> are recovery
-        /// points, backup plans, and backup vaults.</p>
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the type of resource. Valid targets for <code>ListTags</code> are recovery points, backup plans, and backup vaults.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
-        /// <p>The next item following a partial list of returned items. For example, if a request is
-        /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
+        /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The next item following a partial list of returned items. For example, if a request is
-        /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
-        /// to return more items in your list starting at the location pointed to by the next
-        /// token.</p>
+        /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -9580,18 +9226,12 @@ pub mod put_backup_vault_access_policy_input {
         pub(crate) policy: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the Amazon Web Services
-        /// Region where they are created. They consist of lowercase letters, numbers, and
-        /// hyphens.</p>
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
         pub fn backup_vault_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.backup_vault_name = Some(input.into());
             self
         }
-        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the Amazon Web Services
-        /// Region where they are created. They consist of lowercase letters, numbers, and
-        /// hyphens.</p>
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
         pub fn set_backup_vault_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9774,14 +9414,12 @@ pub mod put_backup_vault_lock_configuration_input {
         pub(crate) changeable_for_days: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>The Backup Vault Lock configuration that specifies the name of the backup
-        /// vault it protects.</p>
+        /// <p>The Backup Vault Lock configuration that specifies the name of the backup vault it protects.</p>
         pub fn backup_vault_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.backup_vault_name = Some(input.into());
             self
         }
-        /// <p>The Backup Vault Lock configuration that specifies the name of the backup
-        /// vault it protects.</p>
+        /// <p>The Backup Vault Lock configuration that specifies the name of the backup vault it protects.</p>
         pub fn set_backup_vault_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9789,102 +9427,46 @@ pub mod put_backup_vault_lock_configuration_input {
             self.backup_vault_name = input;
             self
         }
-        /// <p>The Backup Vault Lock configuration that specifies the minimum retention
-        /// period that the vault retains its recovery points. This setting can be useful if, for
-        /// example, your organization's policies require you to retain certain data for at least seven
-        /// years (2555 days).</p>
-        /// <p>If this parameter is not specified, Vault Lock will not enforce a minimum retention
-        /// period.</p>
-        /// <p>If this parameter is specified, any backup or copy job to the vault must have a
-        /// lifecycle policy with a retention period equal to or longer than the minimum retention
-        /// period. If the job's retention period is shorter than that minimum retention period, then
-        /// the vault fails that backup or copy job, and you should either modify your lifecycle
-        /// settings or use a different vault. Recovery points already saved in the vault prior to
-        /// Vault Lock are not affected.</p>
+        /// <p>The Backup Vault Lock configuration that specifies the minimum retention period that the vault retains its recovery points. This setting can be useful if, for example, your organization's policies require you to retain certain data for at least seven years (2555 days).</p>
+        /// <p>If this parameter is not specified, Vault Lock will not enforce a minimum retention period.</p>
+        /// <p>If this parameter is specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or longer than the minimum retention period. If the job's retention period is shorter than that minimum retention period, then the vault fails that backup or copy job, and you should either modify your lifecycle settings or use a different vault. Recovery points already saved in the vault prior to Vault Lock are not affected.</p>
         pub fn min_retention_days(mut self, input: i64) -> Self {
             self.min_retention_days = Some(input);
             self
         }
-        /// <p>The Backup Vault Lock configuration that specifies the minimum retention
-        /// period that the vault retains its recovery points. This setting can be useful if, for
-        /// example, your organization's policies require you to retain certain data for at least seven
-        /// years (2555 days).</p>
-        /// <p>If this parameter is not specified, Vault Lock will not enforce a minimum retention
-        /// period.</p>
-        /// <p>If this parameter is specified, any backup or copy job to the vault must have a
-        /// lifecycle policy with a retention period equal to or longer than the minimum retention
-        /// period. If the job's retention period is shorter than that minimum retention period, then
-        /// the vault fails that backup or copy job, and you should either modify your lifecycle
-        /// settings or use a different vault. Recovery points already saved in the vault prior to
-        /// Vault Lock are not affected.</p>
+        /// <p>The Backup Vault Lock configuration that specifies the minimum retention period that the vault retains its recovery points. This setting can be useful if, for example, your organization's policies require you to retain certain data for at least seven years (2555 days).</p>
+        /// <p>If this parameter is not specified, Vault Lock will not enforce a minimum retention period.</p>
+        /// <p>If this parameter is specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or longer than the minimum retention period. If the job's retention period is shorter than that minimum retention period, then the vault fails that backup or copy job, and you should either modify your lifecycle settings or use a different vault. Recovery points already saved in the vault prior to Vault Lock are not affected.</p>
         pub fn set_min_retention_days(mut self, input: std::option::Option<i64>) -> Self {
             self.min_retention_days = input;
             self
         }
-        /// <p>The Backup Vault Lock configuration that specifies the maximum retention
-        /// period that the vault retains its recovery points. This setting can be useful if, for
-        /// example, your organization's policies require you to destroy certain data after retaining
-        /// it for four years (1460 days).</p>
-        /// <p>If this parameter is not included, Vault Lock does not enforce a maximum retention
-        /// period on the recovery points in the vault. If this parameter is included without a value,
-        /// Vault Lock will not enforce a maximum retention period.</p>
-        /// <p>If this parameter is specified, any backup or copy job to the vault must have a
-        /// lifecycle policy with a retention period equal to or shorter than the maximum retention
-        /// period. If the job's retention period is longer than that maximum retention period, then
-        /// the vault fails the backup or copy job, and you should either modify your lifecycle
-        /// settings or use a different vault. Recovery points already saved in the vault prior to
-        /// Vault Lock are not affected.</p>
+        /// <p>The Backup Vault Lock configuration that specifies the maximum retention period that the vault retains its recovery points. This setting can be useful if, for example, your organization's policies require you to destroy certain data after retaining it for four years (1460 days).</p>
+        /// <p>If this parameter is not included, Vault Lock does not enforce a maximum retention period on the recovery points in the vault. If this parameter is included without a value, Vault Lock will not enforce a maximum retention period.</p>
+        /// <p>If this parameter is specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or shorter than the maximum retention period. If the job's retention period is longer than that maximum retention period, then the vault fails the backup or copy job, and you should either modify your lifecycle settings or use a different vault. Recovery points already saved in the vault prior to Vault Lock are not affected.</p>
         pub fn max_retention_days(mut self, input: i64) -> Self {
             self.max_retention_days = Some(input);
             self
         }
-        /// <p>The Backup Vault Lock configuration that specifies the maximum retention
-        /// period that the vault retains its recovery points. This setting can be useful if, for
-        /// example, your organization's policies require you to destroy certain data after retaining
-        /// it for four years (1460 days).</p>
-        /// <p>If this parameter is not included, Vault Lock does not enforce a maximum retention
-        /// period on the recovery points in the vault. If this parameter is included without a value,
-        /// Vault Lock will not enforce a maximum retention period.</p>
-        /// <p>If this parameter is specified, any backup or copy job to the vault must have a
-        /// lifecycle policy with a retention period equal to or shorter than the maximum retention
-        /// period. If the job's retention period is longer than that maximum retention period, then
-        /// the vault fails the backup or copy job, and you should either modify your lifecycle
-        /// settings or use a different vault. Recovery points already saved in the vault prior to
-        /// Vault Lock are not affected.</p>
+        /// <p>The Backup Vault Lock configuration that specifies the maximum retention period that the vault retains its recovery points. This setting can be useful if, for example, your organization's policies require you to destroy certain data after retaining it for four years (1460 days).</p>
+        /// <p>If this parameter is not included, Vault Lock does not enforce a maximum retention period on the recovery points in the vault. If this parameter is included without a value, Vault Lock will not enforce a maximum retention period.</p>
+        /// <p>If this parameter is specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or shorter than the maximum retention period. If the job's retention period is longer than that maximum retention period, then the vault fails the backup or copy job, and you should either modify your lifecycle settings or use a different vault. Recovery points already saved in the vault prior to Vault Lock are not affected.</p>
         pub fn set_max_retention_days(mut self, input: std::option::Option<i64>) -> Self {
             self.max_retention_days = input;
             self
         }
-        /// <p>The Backup Vault Lock configuration that specifies the number of days before
-        /// the lock date. For example, setting <code>ChangeableForDays</code> to 30 on Jan. 1, 2022 at
-        /// 8pm UTC will set the lock date to Jan. 31, 2022 at 8pm UTC.</p>
-        /// <p>Backup enforces a 72-hour cooling-off period before Vault Lock takes effect
-        /// and becomes immutable. Therefore, you must set <code>ChangeableForDays</code> to 3 or
-        /// greater.</p>
-        /// <p>Before the lock date, you can delete Vault Lock from the vault using
-        /// <code>DeleteBackupVaultLockConfiguration</code> or change the Vault Lock configuration
-        /// using <code>PutBackupVaultLockConfiguration</code>. On and after the lock date, the Vault
-        /// Lock becomes immutable and cannot be changed or deleted.</p>
-        /// <p>If this parameter is not specified, you can delete Vault Lock from the vault using
-        /// <code>DeleteBackupVaultLockConfiguration</code> or change the Vault Lock configuration
-        /// using <code>PutBackupVaultLockConfiguration</code> at any time.</p>
+        /// <p>The Backup Vault Lock configuration that specifies the number of days before the lock date. For example, setting <code>ChangeableForDays</code> to 30 on Jan. 1, 2022 at 8pm UTC will set the lock date to Jan. 31, 2022 at 8pm UTC.</p>
+        /// <p>Backup enforces a 72-hour cooling-off period before Vault Lock takes effect and becomes immutable. Therefore, you must set <code>ChangeableForDays</code> to 3 or greater.</p>
+        /// <p>Before the lock date, you can delete Vault Lock from the vault using <code>DeleteBackupVaultLockConfiguration</code> or change the Vault Lock configuration using <code>PutBackupVaultLockConfiguration</code>. On and after the lock date, the Vault Lock becomes immutable and cannot be changed or deleted.</p>
+        /// <p>If this parameter is not specified, you can delete Vault Lock from the vault using <code>DeleteBackupVaultLockConfiguration</code> or change the Vault Lock configuration using <code>PutBackupVaultLockConfiguration</code> at any time.</p>
         pub fn changeable_for_days(mut self, input: i64) -> Self {
             self.changeable_for_days = Some(input);
             self
         }
-        /// <p>The Backup Vault Lock configuration that specifies the number of days before
-        /// the lock date. For example, setting <code>ChangeableForDays</code> to 30 on Jan. 1, 2022 at
-        /// 8pm UTC will set the lock date to Jan. 31, 2022 at 8pm UTC.</p>
-        /// <p>Backup enforces a 72-hour cooling-off period before Vault Lock takes effect
-        /// and becomes immutable. Therefore, you must set <code>ChangeableForDays</code> to 3 or
-        /// greater.</p>
-        /// <p>Before the lock date, you can delete Vault Lock from the vault using
-        /// <code>DeleteBackupVaultLockConfiguration</code> or change the Vault Lock configuration
-        /// using <code>PutBackupVaultLockConfiguration</code>. On and after the lock date, the Vault
-        /// Lock becomes immutable and cannot be changed or deleted.</p>
-        /// <p>If this parameter is not specified, you can delete Vault Lock from the vault using
-        /// <code>DeleteBackupVaultLockConfiguration</code> or change the Vault Lock configuration
-        /// using <code>PutBackupVaultLockConfiguration</code> at any time.</p>
+        /// <p>The Backup Vault Lock configuration that specifies the number of days before the lock date. For example, setting <code>ChangeableForDays</code> to 30 on Jan. 1, 2022 at 8pm UTC will set the lock date to Jan. 31, 2022 at 8pm UTC.</p>
+        /// <p>Backup enforces a 72-hour cooling-off period before Vault Lock takes effect and becomes immutable. Therefore, you must set <code>ChangeableForDays</code> to 3 or greater.</p>
+        /// <p>Before the lock date, you can delete Vault Lock from the vault using <code>DeleteBackupVaultLockConfiguration</code> or change the Vault Lock configuration using <code>PutBackupVaultLockConfiguration</code>. On and after the lock date, the Vault Lock becomes immutable and cannot be changed or deleted.</p>
+        /// <p>If this parameter is not specified, you can delete Vault Lock from the vault using <code>DeleteBackupVaultLockConfiguration</code> or change the Vault Lock configuration using <code>PutBackupVaultLockConfiguration</code> at any time.</p>
         pub fn set_changeable_for_days(mut self, input: std::option::Option<i64>) -> Self {
             self.changeable_for_days = input;
             self
@@ -10057,18 +9639,12 @@ pub mod put_backup_vault_notifications_input {
             std::option::Option<std::vec::Vec<crate::model::BackupVaultEvent>>,
     }
     impl Builder {
-        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the Amazon Web Services
-        /// Region where they are created. They consist of lowercase letters, numbers, and
-        /// hyphens.</p>
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
         pub fn backup_vault_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.backup_vault_name = Some(input.into());
             self
         }
-        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the Amazon Web Services
-        /// Region where they are created. They consist of lowercase letters, numbers, and
-        /// hyphens.</p>
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
         pub fn set_backup_vault_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10076,14 +9652,12 @@ pub mod put_backup_vault_notifications_input {
             self.backup_vault_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that specifies the topic for a backup vault’s events; for
-        /// example, <code>arn:aws:sns:us-west-2:111122223333:MyVaultTopic</code>.</p>
+        /// <p>The Amazon Resource Name (ARN) that specifies the topic for a backup vault’s events; for example, <code>arn:aws:sns:us-west-2:111122223333:MyVaultTopic</code>.</p>
         pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.sns_topic_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that specifies the topic for a backup vault’s events; for
-        /// example, <code>arn:aws:sns:us-west-2:111122223333:MyVaultTopic</code>.</p>
+        /// <p>The Amazon Resource Name (ARN) that specifies the topic for a backup vault’s events; for example, <code>arn:aws:sns:us-west-2:111122223333:MyVaultTopic</code>.</p>
         pub fn set_sns_topic_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10095,33 +9669,15 @@ pub mod put_backup_vault_notifications_input {
         ///
         /// To override the contents of this collection use [`set_backup_vault_events`](Self::set_backup_vault_events).
         ///
-        /// <p>An array of events that indicate the status of jobs to back up resources to the backup
-        /// vault.</p>
-        /// <p>For common use cases and code samples, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/sns-notifications.html">Using Amazon SNS to
-        /// track Backup events</a>.</p>
+        /// <p>An array of events that indicate the status of jobs to back up resources to the backup vault.</p>
+        /// <p>For common use cases and code samples, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/sns-notifications.html">Using Amazon SNS to track Backup events</a>.</p>
         /// <p>The following events are supported:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>BACKUP_JOB_STARTED</code> | <code>BACKUP_JOB_COMPLETED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>COPY_JOB_STARTED</code> | <code>COPY_JOB_SUCCESSFUL</code> |
-        /// <code>COPY_JOB_FAILED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> |
-        /// <code>RECOVERY_POINT_MODIFIED</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>Ignore the list below because it includes deprecated events. Refer to the list
-        /// above.</p>
+        /// <li> <p> <code>BACKUP_JOB_STARTED</code> | <code>BACKUP_JOB_COMPLETED</code> </p> </li>
+        /// <li> <p> <code>COPY_JOB_STARTED</code> | <code>COPY_JOB_SUCCESSFUL</code> | <code>COPY_JOB_FAILED</code> </p> </li>
+        /// <li> <p> <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> | <code>RECOVERY_POINT_MODIFIED</code> </p> </li>
+        /// </ul> <note>
+        /// <p>Ignore the list below because it includes deprecated events. Refer to the list above.</p>
         /// </note>
         pub fn backup_vault_events(mut self, input: crate::model::BackupVaultEvent) -> Self {
             let mut v = self.backup_vault_events.unwrap_or_default();
@@ -10129,33 +9685,15 @@ pub mod put_backup_vault_notifications_input {
             self.backup_vault_events = Some(v);
             self
         }
-        /// <p>An array of events that indicate the status of jobs to back up resources to the backup
-        /// vault.</p>
-        /// <p>For common use cases and code samples, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/sns-notifications.html">Using Amazon SNS to
-        /// track Backup events</a>.</p>
+        /// <p>An array of events that indicate the status of jobs to back up resources to the backup vault.</p>
+        /// <p>For common use cases and code samples, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/sns-notifications.html">Using Amazon SNS to track Backup events</a>.</p>
         /// <p>The following events are supported:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>BACKUP_JOB_STARTED</code> | <code>BACKUP_JOB_COMPLETED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>COPY_JOB_STARTED</code> | <code>COPY_JOB_SUCCESSFUL</code> |
-        /// <code>COPY_JOB_FAILED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> |
-        /// <code>RECOVERY_POINT_MODIFIED</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>Ignore the list below because it includes deprecated events. Refer to the list
-        /// above.</p>
+        /// <li> <p> <code>BACKUP_JOB_STARTED</code> | <code>BACKUP_JOB_COMPLETED</code> </p> </li>
+        /// <li> <p> <code>COPY_JOB_STARTED</code> | <code>COPY_JOB_SUCCESSFUL</code> | <code>COPY_JOB_FAILED</code> </p> </li>
+        /// <li> <p> <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> | <code>RECOVERY_POINT_MODIFIED</code> </p> </li>
+        /// </ul> <note>
+        /// <p>Ignore the list below because it includes deprecated events. Refer to the list above.</p>
         /// </note>
         pub fn set_backup_vault_events(
             mut self,
@@ -10339,18 +9877,12 @@ pub mod start_backup_job_input {
         >,
     }
     impl Builder {
-        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the Amazon Web Services
-        /// Region where they are created. They consist of lowercase letters, numbers, and
-        /// hyphens.</p>
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
         pub fn backup_vault_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.backup_vault_name = Some(input.into());
             self
         }
-        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the Amazon Web Services
-        /// Region where they are created. They consist of lowercase letters, numbers, and
-        /// hyphens.</p>
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
         pub fn set_backup_vault_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10358,40 +9890,32 @@ pub mod start_backup_job_input {
             self.backup_vault_name = input;
             self
         }
-        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN
-        /// depends on the resource type.</p>
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN
-        /// depends on the resource type.</p>
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
-        /// <p>Specifies the IAM role ARN used to create the target recovery point; for example,
-        /// <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+        /// <p>Specifies the IAM role ARN used to create the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
         pub fn iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.iam_role_arn = Some(input.into());
             self
         }
-        /// <p>Specifies the IAM role ARN used to create the target recovery point; for example,
-        /// <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+        /// <p>Specifies the IAM role ARN used to create the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
         pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.iam_role_arn = input;
             self
         }
-        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
-        /// calls to <code>StartBackupJob</code>. Retrying a successful request with the same
-        /// idempotency token results in a success message with no action taken.</p>
+        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>StartBackupJob</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.idempotency_token = Some(input.into());
             self
         }
-        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
-        /// calls to <code>StartBackupJob</code>. Retrying a successful request with the same
-        /// idempotency token results in a success message with no action taken.</p>
+        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>StartBackupJob</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10399,53 +9923,35 @@ pub mod start_backup_job_input {
             self.idempotency_token = input;
             self
         }
-        /// <p>A value in minutes after a backup is scheduled before a job will be canceled if it
-        /// doesn't start successfully. This value is optional, and the default is 8 hours.</p>
+        /// <p>A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start successfully. This value is optional, and the default is 8 hours.</p>
         pub fn start_window_minutes(mut self, input: i64) -> Self {
             self.start_window_minutes = Some(input);
             self
         }
-        /// <p>A value in minutes after a backup is scheduled before a job will be canceled if it
-        /// doesn't start successfully. This value is optional, and the default is 8 hours.</p>
+        /// <p>A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start successfully. This value is optional, and the default is 8 hours.</p>
         pub fn set_start_window_minutes(mut self, input: std::option::Option<i64>) -> Self {
             self.start_window_minutes = input;
             self
         }
-        /// <p>A value in minutes during which a successfully started backup must complete, or else AWS
-        /// Backup will cancel the job. This value is optional. This value begins counting down from
-        /// when the backup was scheduled. It does not add additional time for
-        /// <code>StartWindowMinutes</code>, or if the backup started later than scheduled.</p>
+        /// <p>A value in minutes during which a successfully started backup must complete, or else AWS Backup will cancel the job. This value is optional. This value begins counting down from when the backup was scheduled. It does not add additional time for <code>StartWindowMinutes</code>, or if the backup started later than scheduled.</p>
         pub fn complete_window_minutes(mut self, input: i64) -> Self {
             self.complete_window_minutes = Some(input);
             self
         }
-        /// <p>A value in minutes during which a successfully started backup must complete, or else AWS
-        /// Backup will cancel the job. This value is optional. This value begins counting down from
-        /// when the backup was scheduled. It does not add additional time for
-        /// <code>StartWindowMinutes</code>, or if the backup started later than scheduled.</p>
+        /// <p>A value in minutes during which a successfully started backup must complete, or else AWS Backup will cancel the job. This value is optional. This value begins counting down from when the backup was scheduled. It does not add additional time for <code>StartWindowMinutes</code>, or if the backup started later than scheduled.</p>
         pub fn set_complete_window_minutes(mut self, input: std::option::Option<i64>) -> Self {
             self.complete_window_minutes = input;
             self
         }
-        /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when
-        /// it expires. Backup will transition and expire backups automatically according
-        /// to the lifecycle that you define. </p>
-        /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90
-        /// days. Therefore, the “expire after days” setting must be 90 days greater than the
-        /// “transition to cold after days” setting. The “transition to cold after days” setting cannot
-        /// be changed after a backup has been transitioned to cold. </p>
+        /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup will transition and expire backups automatically according to the lifecycle that you define. </p>
+        /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold. </p>
         /// <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
         pub fn lifecycle(mut self, input: crate::model::Lifecycle) -> Self {
             self.lifecycle = Some(input);
             self
         }
-        /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when
-        /// it expires. Backup will transition and expire backups automatically according
-        /// to the lifecycle that you define. </p>
-        /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90
-        /// days. Therefore, the “expire after days” setting must be 90 days greater than the
-        /// “transition to cold after days” setting. The “transition to cold after days” setting cannot
-        /// be changed after a backup has been transitioned to cold. </p>
+        /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup will transition and expire backups automatically according to the lifecycle that you define. </p>
+        /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold. </p>
         /// <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
         pub fn set_lifecycle(
             mut self,
@@ -10458,8 +9964,7 @@ pub mod start_backup_job_input {
         ///
         /// To override the contents of this collection use [`set_recovery_point_tags`](Self::set_recovery_point_tags).
         ///
-        /// <p>To help organize your resources, you can assign your own metadata to the resources that
-        /// you create. Each tag is a key-value pair.</p>
+        /// <p>To help organize your resources, you can assign your own metadata to the resources that you create. Each tag is a key-value pair.</p>
         pub fn recovery_point_tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -10470,8 +9975,7 @@ pub mod start_backup_job_input {
             self.recovery_point_tags = Some(hash_map);
             self
         }
-        /// <p>To help organize your resources, you can assign your own metadata to the resources that
-        /// you create. Each tag is a key-value pair.</p>
+        /// <p>To help organize your resources, you can assign your own metadata to the resources that you create. Each tag is a key-value pair.</p>
         pub fn set_recovery_point_tags(
             mut self,
             input: std::option::Option<
@@ -10485,12 +9989,8 @@ pub mod start_backup_job_input {
         ///
         /// To override the contents of this collection use [`set_backup_options`](Self::set_backup_options).
         ///
-        /// <p>Specifies the backup option for a selected resource. This option is only available for
-        /// Windows Volume Shadow Copy Service (VSS) backup jobs.</p>
-        /// <p>Valid values: Set to <code>"WindowsVSS":"enabled"</code> to enable the
-        /// <code>WindowsVSS</code> backup option and create a Windows VSS backup. Set to
-        /// <code>"WindowsVSS""disabled"</code> to create a regular backup. The
-        /// <code>WindowsVSS</code> option is not enabled by default.</p>
+        /// <p>Specifies the backup option for a selected resource. This option is only available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p>
+        /// <p>Valid values: Set to <code>"WindowsVSS":"enabled"</code> to enable the <code>WindowsVSS</code> backup option and create a Windows VSS backup. Set to <code>"WindowsVSS""disabled"</code> to create a regular backup. The <code>WindowsVSS</code> option is not enabled by default.</p>
         pub fn backup_options(
             mut self,
             k: impl Into<std::string::String>,
@@ -10501,12 +10001,8 @@ pub mod start_backup_job_input {
             self.backup_options = Some(hash_map);
             self
         }
-        /// <p>Specifies the backup option for a selected resource. This option is only available for
-        /// Windows Volume Shadow Copy Service (VSS) backup jobs.</p>
-        /// <p>Valid values: Set to <code>"WindowsVSS":"enabled"</code> to enable the
-        /// <code>WindowsVSS</code> backup option and create a Windows VSS backup. Set to
-        /// <code>"WindowsVSS""disabled"</code> to create a regular backup. The
-        /// <code>WindowsVSS</code> option is not enabled by default.</p>
+        /// <p>Specifies the backup option for a selected resource. This option is only available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p>
+        /// <p>Valid values: Set to <code>"WindowsVSS":"enabled"</code> to enable the <code>WindowsVSS</code> backup option and create a Windows VSS backup. Set to <code>"WindowsVSS""disabled"</code> to create a regular backup. The <code>WindowsVSS</code> option is not enabled by default.</p>
         pub fn set_backup_options(
             mut self,
             input: std::option::Option<
@@ -10668,16 +10164,12 @@ pub mod start_copy_job_input {
         pub(crate) lifecycle: std::option::Option<crate::model::Lifecycle>,
     }
     impl Builder {
-        /// <p>An ARN that uniquely identifies a recovery point to use for the copy job; for example,
-        /// arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45.
-        /// </p>
+        /// <p>An ARN that uniquely identifies a recovery point to use for the copy job; for example, arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45. </p>
         pub fn recovery_point_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.recovery_point_arn = Some(input.into());
             self
         }
-        /// <p>An ARN that uniquely identifies a recovery point to use for the copy job; for example,
-        /// arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45.
-        /// </p>
+        /// <p>An ARN that uniquely identifies a recovery point to use for the copy job; for example, arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45. </p>
         pub fn set_recovery_point_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10685,16 +10177,12 @@ pub mod start_copy_job_input {
             self.recovery_point_arn = input;
             self
         }
-        /// <p>The name of a logical source container where backups are stored. Backup vaults are
-        /// identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers,
-        /// and hyphens.</p>
+        /// <p>The name of a logical source container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
         pub fn source_backup_vault_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_backup_vault_name = Some(input.into());
             self
         }
-        /// <p>The name of a logical source container where backups are stored. Backup vaults are
-        /// identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers,
-        /// and hyphens.</p>
+        /// <p>The name of a logical source container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
         pub fn set_source_backup_vault_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10702,9 +10190,7 @@ pub mod start_copy_job_input {
             self.source_backup_vault_name = input;
             self
         }
-        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a destination backup vault to
-        /// copy to; for example,
-        /// <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a destination backup vault to copy to; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
         pub fn destination_backup_vault_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -10712,9 +10198,7 @@ pub mod start_copy_job_input {
             self.destination_backup_vault_arn = Some(input.into());
             self
         }
-        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a destination backup vault to
-        /// copy to; for example,
-        /// <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a destination backup vault to copy to; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
         pub fn set_destination_backup_vault_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10722,28 +10206,22 @@ pub mod start_copy_job_input {
             self.destination_backup_vault_arn = input;
             self
         }
-        /// <p>Specifies the IAM role ARN used to copy the target recovery point; for example,
-        /// <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+        /// <p>Specifies the IAM role ARN used to copy the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
         pub fn iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.iam_role_arn = Some(input.into());
             self
         }
-        /// <p>Specifies the IAM role ARN used to copy the target recovery point; for example,
-        /// <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+        /// <p>Specifies the IAM role ARN used to copy the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
         pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.iam_role_arn = input;
             self
         }
-        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
-        /// calls to <code>StartCopyJob</code>. Retrying a successful request with the same idempotency
-        /// token results in a success message with no action taken.</p>
+        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>StartCopyJob</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.idempotency_token = Some(input.into());
             self
         }
-        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
-        /// calls to <code>StartCopyJob</code>. Retrying a successful request with the same idempotency
-        /// token results in a success message with no action taken.</p>
+        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>StartCopyJob</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10751,23 +10229,15 @@ pub mod start_copy_job_input {
             self.idempotency_token = input;
             self
         }
-        /// <p>Contains an array of <code>Transition</code> objects specifying how long in days before
-        /// a recovery point transitions to cold storage or is deleted.</p>
-        /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90
-        /// days. Therefore, on the console, the “expire after days” setting must be 90 days greater
-        /// than the “transition to cold after days” setting. The “transition to cold after days”
-        /// setting cannot be changed after a backup has been transitioned to cold.</p>
+        /// <p>Contains an array of <code>Transition</code> objects specifying how long in days before a recovery point transitions to cold storage or is deleted.</p>
+        /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p>
         /// <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
         pub fn lifecycle(mut self, input: crate::model::Lifecycle) -> Self {
             self.lifecycle = Some(input);
             self
         }
-        /// <p>Contains an array of <code>Transition</code> objects specifying how long in days before
-        /// a recovery point transitions to cold storage or is deleted.</p>
-        /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90
-        /// days. Therefore, on the console, the “expire after days” setting must be 90 days greater
-        /// than the “transition to cold after days” setting. The “transition to cold after days”
-        /// setting cannot be changed after a backup has been transitioned to cold.</p>
+        /// <p>Contains an array of <code>Transition</code> objects specifying how long in days before a recovery point transitions to cold storage or is deleted.</p>
+        /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p>
         /// <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
         pub fn set_lifecycle(
             mut self,
@@ -10933,16 +10403,12 @@ pub mod start_report_job_input {
             self.report_plan_name = input;
             self
         }
-        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
-        /// calls to <code>StartReportJobInput</code>. Retrying a successful request with the same
-        /// idempotency token results in a success message with no action taken.</p>
+        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>StartReportJobInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.idempotency_token = Some(input.into());
             self
         }
-        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
-        /// calls to <code>StartReportJobInput</code>. Retrying a successful request with the same
-        /// idempotency token results in a success message with no action taken.</p>
+        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>StartReportJobInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11119,14 +10585,12 @@ pub mod start_restore_job_input {
         pub(crate) resource_type: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>An ARN that uniquely identifies a recovery point; for example,
-        /// <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+        /// <p>An ARN that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
         pub fn recovery_point_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.recovery_point_arn = Some(input.into());
             self
         }
-        /// <p>An ARN that uniquely identifies a recovery point; for example,
-        /// <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+        /// <p>An ARN that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
         pub fn set_recovery_point_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11138,54 +10602,17 @@ pub mod start_restore_job_input {
         ///
         /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
         ///
-        /// <p>A set of metadata key-value pairs. Contains information, such as a resource name,
-        /// required to restore a recovery point.</p>
-        /// <p> You can get configuration metadata about a resource at the time it was backed up by
-        /// calling <code>GetRecoveryPointRestoreMetadata</code>. However, values in addition to those
-        /// provided by <code>GetRecoveryPointRestoreMetadata</code> might be required to restore a
-        /// resource. For example, you might need to provide a new resource name if the original
-        /// already exists.</p>
+        /// <p>A set of metadata key-value pairs. Contains information, such as a resource name, required to restore a recovery point.</p>
+        /// <p> You can get configuration metadata about a resource at the time it was backed up by calling <code>GetRecoveryPointRestoreMetadata</code>. However, values in addition to those provided by <code>GetRecoveryPointRestoreMetadata</code> might be required to restore a resource. For example, you might need to provide a new resource name if the original already exists.</p>
         /// <p>You need to specify specific metadata to restore an Amazon Elastic File System (Amazon EFS) instance:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>file-system-id</code>: The ID of the Amazon EFS file system that is
-        /// backed up by Backup. Returned in
-        /// <code>GetRecoveryPointRestoreMetadata</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Encrypted</code>: A Boolean value that, if true, specifies that the file
-        /// system is encrypted. If <code>KmsKeyId</code> is specified, <code>Encrypted</code>
-        /// must be set to <code>true</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>KmsKeyId</code>: Specifies the Amazon Web Services KMS key that is used to
-        /// encrypt the restored file system. You can specify a key from another Amazon Web Services account provided that key it is properly shared with your account via Amazon Web Services KMS.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PerformanceMode</code>: Specifies the throughput mode of the file
-        /// system.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CreationToken</code>: A user-supplied value that ensures the uniqueness
-        /// (idempotency) of the request.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>newFileSystem</code>: A Boolean value that, if true, specifies that the
-        /// recovery point is restored to a new Amazon EFS file system.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ItemsToRestore</code>: An array of one to five strings where each string is
-        /// a file path. Use <code>ItemsToRestore</code> to restore specific files or directories
-        /// rather than the entire file system. This parameter is optional. For example,
-        /// <code>"itemsToRestore":"[\"/my.test\"]"</code>.</p>
-        /// </li>
+        /// <li> <p> <code>file-system-id</code>: The ID of the Amazon EFS file system that is backed up by Backup. Returned in <code>GetRecoveryPointRestoreMetadata</code>.</p> </li>
+        /// <li> <p> <code>Encrypted</code>: A Boolean value that, if true, specifies that the file system is encrypted. If <code>KmsKeyId</code> is specified, <code>Encrypted</code> must be set to <code>true</code>.</p> </li>
+        /// <li> <p> <code>KmsKeyId</code>: Specifies the Amazon Web Services KMS key that is used to encrypt the restored file system. You can specify a key from another Amazon Web Services account provided that key it is properly shared with your account via Amazon Web Services KMS.</p> </li>
+        /// <li> <p> <code>PerformanceMode</code>: Specifies the throughput mode of the file system.</p> </li>
+        /// <li> <p> <code>CreationToken</code>: A user-supplied value that ensures the uniqueness (idempotency) of the request.</p> </li>
+        /// <li> <p> <code>newFileSystem</code>: A Boolean value that, if true, specifies that the recovery point is restored to a new Amazon EFS file system.</p> </li>
+        /// <li> <p> <code>ItemsToRestore</code>: An array of one to five strings where each string is a file path. Use <code>ItemsToRestore</code> to restore specific files or directories rather than the entire file system. This parameter is optional. For example, <code>"itemsToRestore":"[\"/my.test\"]"</code>.</p> </li>
         /// </ul>
         pub fn metadata(
             mut self,
@@ -11197,54 +10624,17 @@ pub mod start_restore_job_input {
             self.metadata = Some(hash_map);
             self
         }
-        /// <p>A set of metadata key-value pairs. Contains information, such as a resource name,
-        /// required to restore a recovery point.</p>
-        /// <p> You can get configuration metadata about a resource at the time it was backed up by
-        /// calling <code>GetRecoveryPointRestoreMetadata</code>. However, values in addition to those
-        /// provided by <code>GetRecoveryPointRestoreMetadata</code> might be required to restore a
-        /// resource. For example, you might need to provide a new resource name if the original
-        /// already exists.</p>
+        /// <p>A set of metadata key-value pairs. Contains information, such as a resource name, required to restore a recovery point.</p>
+        /// <p> You can get configuration metadata about a resource at the time it was backed up by calling <code>GetRecoveryPointRestoreMetadata</code>. However, values in addition to those provided by <code>GetRecoveryPointRestoreMetadata</code> might be required to restore a resource. For example, you might need to provide a new resource name if the original already exists.</p>
         /// <p>You need to specify specific metadata to restore an Amazon Elastic File System (Amazon EFS) instance:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>file-system-id</code>: The ID of the Amazon EFS file system that is
-        /// backed up by Backup. Returned in
-        /// <code>GetRecoveryPointRestoreMetadata</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Encrypted</code>: A Boolean value that, if true, specifies that the file
-        /// system is encrypted. If <code>KmsKeyId</code> is specified, <code>Encrypted</code>
-        /// must be set to <code>true</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>KmsKeyId</code>: Specifies the Amazon Web Services KMS key that is used to
-        /// encrypt the restored file system. You can specify a key from another Amazon Web Services account provided that key it is properly shared with your account via Amazon Web Services KMS.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PerformanceMode</code>: Specifies the throughput mode of the file
-        /// system.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CreationToken</code>: A user-supplied value that ensures the uniqueness
-        /// (idempotency) of the request.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>newFileSystem</code>: A Boolean value that, if true, specifies that the
-        /// recovery point is restored to a new Amazon EFS file system.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ItemsToRestore</code>: An array of one to five strings where each string is
-        /// a file path. Use <code>ItemsToRestore</code> to restore specific files or directories
-        /// rather than the entire file system. This parameter is optional. For example,
-        /// <code>"itemsToRestore":"[\"/my.test\"]"</code>.</p>
-        /// </li>
+        /// <li> <p> <code>file-system-id</code>: The ID of the Amazon EFS file system that is backed up by Backup. Returned in <code>GetRecoveryPointRestoreMetadata</code>.</p> </li>
+        /// <li> <p> <code>Encrypted</code>: A Boolean value that, if true, specifies that the file system is encrypted. If <code>KmsKeyId</code> is specified, <code>Encrypted</code> must be set to <code>true</code>.</p> </li>
+        /// <li> <p> <code>KmsKeyId</code>: Specifies the Amazon Web Services KMS key that is used to encrypt the restored file system. You can specify a key from another Amazon Web Services account provided that key it is properly shared with your account via Amazon Web Services KMS.</p> </li>
+        /// <li> <p> <code>PerformanceMode</code>: Specifies the throughput mode of the file system.</p> </li>
+        /// <li> <p> <code>CreationToken</code>: A user-supplied value that ensures the uniqueness (idempotency) of the request.</p> </li>
+        /// <li> <p> <code>newFileSystem</code>: A Boolean value that, if true, specifies that the recovery point is restored to a new Amazon EFS file system.</p> </li>
+        /// <li> <p> <code>ItemsToRestore</code>: An array of one to five strings where each string is a file path. Use <code>ItemsToRestore</code> to restore specific files or directories rather than the entire file system. This parameter is optional. For example, <code>"itemsToRestore":"[\"/my.test\"]"</code>.</p> </li>
         /// </ul>
         pub fn set_metadata(
             mut self,
@@ -11255,30 +10645,22 @@ pub mod start_restore_job_input {
             self.metadata = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role that Backup uses to create
-        /// the target recovery point; for example,
-        /// <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
         pub fn iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.iam_role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role that Backup uses to create
-        /// the target recovery point; for example,
-        /// <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
         pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.iam_role_arn = input;
             self
         }
-        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
-        /// calls to <code>StartRestoreJob</code>. Retrying a successful request with the same
-        /// idempotency token results in a success message with no action taken.</p>
+        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>StartRestoreJob</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.idempotency_token = Some(input.into());
             self
         }
-        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
-        /// calls to <code>StartRestoreJob</code>. Retrying a successful request with the same
-        /// idempotency token results in a success message with no action taken.</p>
+        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>StartRestoreJob</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11288,34 +10670,13 @@ pub mod start_restore_job_input {
         }
         /// <p>Starts a job to restore a recovery point for one of the following resources:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DynamoDB</code> for Amazon DynamoDB</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EBS</code> for Amazon Elastic Block Store</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EC2</code> for Amazon Elastic Compute Cloud</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EFS</code> for Amazon Elastic File System</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RDS</code> for Amazon Relational Database Service</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Aurora</code> for Amazon Aurora</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Storage Gateway</code> for Storage Gateway</p>
-        /// </li>
+        /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
+        /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
+        /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
+        /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
+        /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+        /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
+        /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
         /// </ul>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_type = Some(input.into());
@@ -11323,34 +10684,13 @@ pub mod start_restore_job_input {
         }
         /// <p>Starts a job to restore a recovery point for one of the following resources:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DynamoDB</code> for Amazon DynamoDB</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EBS</code> for Amazon Elastic Block Store</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EC2</code> for Amazon Elastic Compute Cloud</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EFS</code> for Amazon Elastic File System</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RDS</code> for Amazon Relational Database Service</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Aurora</code> for Amazon Aurora</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Storage Gateway</code> for Storage Gateway</p>
-        /// </li>
+        /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
+        /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
+        /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
+        /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
+        /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+        /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
+        /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
         /// </ul>
         pub fn set_resource_type(
             mut self,
@@ -11663,14 +11003,12 @@ pub mod tag_resource_input {
         >,
     }
     impl Builder {
-        /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the type of
-        /// the tagged resource.</p>
+        /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the type of the tagged resource.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the type of
-        /// the tagged resource.</p>
+        /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the type of the tagged resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -11679,9 +11017,7 @@ pub mod tag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Key-value pairs that are used to help organize your resources. You can assign your own
-        /// metadata to the resources you create. For clarity, this is the structure to assign tags:
-        /// <code>[{"Key":"string","Value":"string"}]</code>.</p>
+        /// <p>Key-value pairs that are used to help organize your resources. You can assign your own metadata to the resources you create. For clarity, this is the structure to assign tags: <code>[{"Key":"string","Value":"string"}]</code>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -11692,9 +11028,7 @@ pub mod tag_resource_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>Key-value pairs that are used to help organize your resources. You can assign your own
-        /// metadata to the resources you create. For clarity, this is the structure to assign tags:
-        /// <code>[{"Key":"string","Value":"string"}]</code>.</p>
+        /// <p>Key-value pairs that are used to help organize your resources. You can assign your own metadata to the resources you create. For clarity, this is the structure to assign tags: <code>[{"Key":"string","Value":"string"}]</code>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -11860,14 +11194,12 @@ pub mod untag_resource_input {
         pub(crate) tag_key_list: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the type of
-        /// the tagged resource.</p>
+        /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the type of the tagged resource.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the type of
-        /// the tagged resource.</p>
+        /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the type of the tagged resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -12060,14 +11392,12 @@ pub mod update_backup_plan_input {
             self.backup_plan_id = input;
             self
         }
-        /// <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or
-        /// more sets of <code>Rules</code>.</p>
+        /// <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
         pub fn backup_plan(mut self, input: crate::model::BackupPlanInput) -> Self {
             self.backup_plan = Some(input);
             self
         }
-        /// <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or
-        /// more sets of <code>Rules</code>.</p>
+        /// <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
         pub fn set_backup_plan(
             mut self,
             input: std::option::Option<crate::model::BackupPlanInput>,
@@ -12239,14 +11569,12 @@ pub mod update_framework_input {
         pub(crate) idempotency_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique name of a framework. This name is between 1 and 256 characters, starting with
-        /// a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
+        /// <p>The unique name of a framework. This name is between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
         pub fn framework_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.framework_name = Some(input.into());
             self
         }
-        /// <p>The unique name of a framework. This name is between 1 and 256 characters, starting with
-        /// a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
+        /// <p>The unique name of a framework. This name is between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
         pub fn set_framework_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12271,16 +11599,14 @@ pub mod update_framework_input {
         ///
         /// To override the contents of this collection use [`set_framework_controls`](Self::set_framework_controls).
         ///
-        /// <p>A list of the controls that make up the framework. Each control in the list has a name,
-        /// input parameters, and scope.</p>
+        /// <p>A list of the controls that make up the framework. Each control in the list has a name, input parameters, and scope.</p>
         pub fn framework_controls(mut self, input: crate::model::FrameworkControl) -> Self {
             let mut v = self.framework_controls.unwrap_or_default();
             v.push(input);
             self.framework_controls = Some(v);
             self
         }
-        /// <p>A list of the controls that make up the framework. Each control in the list has a name,
-        /// input parameters, and scope.</p>
+        /// <p>A list of the controls that make up the framework. Each control in the list has a name, input parameters, and scope.</p>
         pub fn set_framework_controls(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FrameworkControl>>,
@@ -12288,16 +11614,12 @@ pub mod update_framework_input {
             self.framework_controls = input;
             self
         }
-        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
-        /// calls to <code>UpdateFrameworkInput</code>. Retrying a successful request with the same
-        /// idempotency token results in a success message with no action taken.</p>
+        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>UpdateFrameworkInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.idempotency_token = Some(input.into());
             self
         }
-        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
-        /// calls to <code>UpdateFrameworkInput</code>. Retrying a successful request with the same
-        /// idempotency token results in a success message with no action taken.</p>
+        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>UpdateFrameworkInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12476,9 +11798,7 @@ pub mod update_global_settings_input {
         ///
         /// To override the contents of this collection use [`set_global_settings`](Self::set_global_settings).
         ///
-        /// <p>A value for <code>isCrossAccountBackupEnabled</code> and a Region. Example:
-        /// <code>update-global-settings --global-settings isCrossAccountBackupEnabled=false
-        /// --region us-west-2</code>.</p>
+        /// <p>A value for <code>isCrossAccountBackupEnabled</code> and a Region. Example: <code>update-global-settings --global-settings isCrossAccountBackupEnabled=false --region us-west-2</code>.</p>
         pub fn global_settings(
             mut self,
             k: impl Into<std::string::String>,
@@ -12489,9 +11809,7 @@ pub mod update_global_settings_input {
             self.global_settings = Some(hash_map);
             self
         }
-        /// <p>A value for <code>isCrossAccountBackupEnabled</code> and a Region. Example:
-        /// <code>update-global-settings --global-settings isCrossAccountBackupEnabled=false
-        /// --region us-west-2</code>.</p>
+        /// <p>A value for <code>isCrossAccountBackupEnabled</code> and a Region. Example: <code>update-global-settings --global-settings isCrossAccountBackupEnabled=false --region us-west-2</code>.</p>
         pub fn set_global_settings(
             mut self,
             input: std::option::Option<
@@ -12644,18 +11962,12 @@ pub mod update_recovery_point_lifecycle_input {
         pub(crate) lifecycle: std::option::Option<crate::model::Lifecycle>,
     }
     impl Builder {
-        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the Amazon Web Services
-        /// Region where they are created. They consist of lowercase letters, numbers, and
-        /// hyphens.</p>
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
         pub fn backup_vault_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.backup_vault_name = Some(input.into());
             self
         }
-        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-        /// by names that are unique to the account used to create them and the Amazon Web Services
-        /// Region where they are created. They consist of lowercase letters, numbers, and
-        /// hyphens.</p>
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
         pub fn set_backup_vault_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12663,14 +11975,12 @@ pub mod update_recovery_point_lifecycle_input {
             self.backup_vault_name = input;
             self
         }
-        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example,
-        /// <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
         pub fn recovery_point_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.recovery_point_arn = Some(input.into());
             self
         }
-        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example,
-        /// <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
         pub fn set_recovery_point_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12678,24 +11988,14 @@ pub mod update_recovery_point_lifecycle_input {
             self.recovery_point_arn = input;
             self
         }
-        /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when
-        /// it expires. Backup transitions and expires backups automatically according to
-        /// the lifecycle that you define. </p>
-        /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90
-        /// days. Therefore, the “expire after days” setting must be 90 days greater than the
-        /// “transition to cold after days” setting. The “transition to cold after days” setting cannot
-        /// be changed after a backup has been transitioned to cold. </p>
+        /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define. </p>
+        /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold. </p>
         pub fn lifecycle(mut self, input: crate::model::Lifecycle) -> Self {
             self.lifecycle = Some(input);
             self
         }
-        /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when
-        /// it expires. Backup transitions and expires backups automatically according to
-        /// the lifecycle that you define. </p>
-        /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90
-        /// days. Therefore, the “expire after days” setting must be 90 days greater than the
-        /// “transition to cold after days” setting. The “transition to cold after days” setting cannot
-        /// be changed after a backup has been transitioned to cold. </p>
+        /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define. </p>
+        /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold. </p>
         pub fn set_lifecycle(
             mut self,
             input: std::option::Option<crate::model::Lifecycle>,
@@ -12913,10 +12213,7 @@ pub mod update_region_settings_input {
         ///
         /// To override the contents of this collection use [`set_resource_type_management_preference`](Self::set_resource_type_management_preference).
         ///
-        /// <p>Enables or disables
-        /// <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html">
-        /// Backup's advanced DynamoDB backup features</a> for the
-        /// Region.</p>
+        /// <p>Enables or disables <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html"> Backup's advanced DynamoDB backup features</a> for the Region.</p>
         pub fn resource_type_management_preference(
             mut self,
             k: impl Into<std::string::String>,
@@ -12927,10 +12224,7 @@ pub mod update_region_settings_input {
             self.resource_type_management_preference = Some(hash_map);
             self
         }
-        /// <p>Enables or disables
-        /// <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html">
-        /// Backup's advanced DynamoDB backup features</a> for the
-        /// Region.</p>
+        /// <p>Enables or disables <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html"> Backup's advanced DynamoDB backup features</a> for the Region.</p>
         pub fn set_resource_type_management_preference(
             mut self,
             input: std::option::Option<std::collections::HashMap<std::string::String, bool>>,
@@ -13085,16 +12379,12 @@ pub mod update_report_plan_input {
         pub(crate) idempotency_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique name of the report plan. This name is between 1 and 256 characters, starting
-        /// with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores
-        /// (_).</p>
+        /// <p>The unique name of the report plan. This name is between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
         pub fn report_plan_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.report_plan_name = Some(input.into());
             self
         }
-        /// <p>The unique name of the report plan. This name is between 1 and 256 characters, starting
-        /// with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores
-        /// (_).</p>
+        /// <p>The unique name of the report plan. This name is between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
         pub fn set_report_plan_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13115,8 +12405,7 @@ pub mod update_report_plan_input {
             self.report_plan_description = input;
             self
         }
-        /// <p>A structure that contains information about where to deliver your reports, specifically
-        /// your Amazon S3 bucket name, S3 key prefix, and the formats of your reports.</p>
+        /// <p>A structure that contains information about where to deliver your reports, specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your reports.</p>
         pub fn report_delivery_channel(
             mut self,
             input: crate::model::ReportDeliveryChannel,
@@ -13124,8 +12413,7 @@ pub mod update_report_plan_input {
             self.report_delivery_channel = Some(input);
             self
         }
-        /// <p>A structure that contains information about where to deliver your reports, specifically
-        /// your Amazon S3 bucket name, S3 key prefix, and the formats of your reports.</p>
+        /// <p>A structure that contains information about where to deliver your reports, specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your reports.</p>
         pub fn set_report_delivery_channel(
             mut self,
             input: std::option::Option<crate::model::ReportDeliveryChannel>,
@@ -13133,28 +12421,16 @@ pub mod update_report_plan_input {
             self.report_delivery_channel = input;
             self
         }
-        /// <p>Identifies the report template for the report. Reports are built using a report
-        /// template. The report templates are:</p>
-        /// <p>
-        /// <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT |
-        /// COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
-        /// </p>
-        /// <p>If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or
-        /// <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the report
-        /// coverage by Amazon Web Services Regions and frameworks.</p>
+        /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p>
+        /// <p> <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
+        /// <p>If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the report coverage by Amazon Web Services Regions and frameworks.</p>
         pub fn report_setting(mut self, input: crate::model::ReportSetting) -> Self {
             self.report_setting = Some(input);
             self
         }
-        /// <p>Identifies the report template for the report. Reports are built using a report
-        /// template. The report templates are:</p>
-        /// <p>
-        /// <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT |
-        /// COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
-        /// </p>
-        /// <p>If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or
-        /// <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the report
-        /// coverage by Amazon Web Services Regions and frameworks.</p>
+        /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p>
+        /// <p> <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
+        /// <p>If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the report coverage by Amazon Web Services Regions and frameworks.</p>
         pub fn set_report_setting(
             mut self,
             input: std::option::Option<crate::model::ReportSetting>,
@@ -13162,16 +12438,12 @@ pub mod update_report_plan_input {
             self.report_setting = input;
             self
         }
-        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
-        /// calls to <code>UpdateReportPlanInput</code>. Retrying a successful request with the same
-        /// idempotency token results in a success message with no action taken.</p>
+        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>UpdateReportPlanInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.idempotency_token = Some(input.into());
             self
         }
-        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
-        /// calls to <code>UpdateReportPlanInput</code>. Retrying a successful request with the same
-        /// idempotency token results in a success message with no action taken.</p>
+        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>UpdateReportPlanInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13340,34 +12612,21 @@ impl UpdateReportPlanInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateReportPlanInput {
-    /// <p>The unique name of the report plan. This name is between 1 and 256 characters, starting
-    /// with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores
-    /// (_).</p>
+    /// <p>The unique name of the report plan. This name is between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
     pub report_plan_name: std::option::Option<std::string::String>,
     /// <p>An optional description of the report plan with a maximum 1,024 characters.</p>
     pub report_plan_description: std::option::Option<std::string::String>,
-    /// <p>A structure that contains information about where to deliver your reports, specifically
-    /// your Amazon S3 bucket name, S3 key prefix, and the formats of your reports.</p>
+    /// <p>A structure that contains information about where to deliver your reports, specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your reports.</p>
     pub report_delivery_channel: std::option::Option<crate::model::ReportDeliveryChannel>,
-    /// <p>Identifies the report template for the report. Reports are built using a report
-    /// template. The report templates are:</p>
-    /// <p>
-    /// <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT |
-    /// COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
-    /// </p>
-    /// <p>If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or
-    /// <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the report
-    /// coverage by Amazon Web Services Regions and frameworks.</p>
+    /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p>
+    /// <p> <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
+    /// <p>If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the report coverage by Amazon Web Services Regions and frameworks.</p>
     pub report_setting: std::option::Option<crate::model::ReportSetting>,
-    /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
-    /// calls to <code>UpdateReportPlanInput</code>. Retrying a successful request with the same
-    /// idempotency token results in a success message with no action taken.</p>
+    /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>UpdateReportPlanInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
     pub idempotency_token: std::option::Option<std::string::String>,
 }
 impl UpdateReportPlanInput {
-    /// <p>The unique name of the report plan. This name is between 1 and 256 characters, starting
-    /// with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores
-    /// (_).</p>
+    /// <p>The unique name of the report plan. This name is between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
     pub fn report_plan_name(&self) -> std::option::Option<&str> {
         self.report_plan_name.as_deref()
     }
@@ -13375,28 +12634,19 @@ impl UpdateReportPlanInput {
     pub fn report_plan_description(&self) -> std::option::Option<&str> {
         self.report_plan_description.as_deref()
     }
-    /// <p>A structure that contains information about where to deliver your reports, specifically
-    /// your Amazon S3 bucket name, S3 key prefix, and the formats of your reports.</p>
+    /// <p>A structure that contains information about where to deliver your reports, specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your reports.</p>
     pub fn report_delivery_channel(
         &self,
     ) -> std::option::Option<&crate::model::ReportDeliveryChannel> {
         self.report_delivery_channel.as_ref()
     }
-    /// <p>Identifies the report template for the report. Reports are built using a report
-    /// template. The report templates are:</p>
-    /// <p>
-    /// <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT |
-    /// COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
-    /// </p>
-    /// <p>If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or
-    /// <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the report
-    /// coverage by Amazon Web Services Regions and frameworks.</p>
+    /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p>
+    /// <p> <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
+    /// <p>If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the report coverage by Amazon Web Services Regions and frameworks.</p>
     pub fn report_setting(&self) -> std::option::Option<&crate::model::ReportSetting> {
         self.report_setting.as_ref()
     }
-    /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
-    /// calls to <code>UpdateReportPlanInput</code>. Retrying a successful request with the same
-    /// idempotency token results in a success message with no action taken.</p>
+    /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>UpdateReportPlanInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
     pub fn idempotency_token(&self) -> std::option::Option<&str> {
         self.idempotency_token.as_deref()
     }
@@ -13420,10 +12670,7 @@ pub struct UpdateRegionSettingsInput {
     /// <p>Updates the list of services along with the opt-in preferences for the Region.</p>
     pub resource_type_opt_in_preference:
         std::option::Option<std::collections::HashMap<std::string::String, bool>>,
-    /// <p>Enables or disables
-    /// <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html">
-    /// Backup's advanced DynamoDB backup features</a> for the
-    /// Region.</p>
+    /// <p>Enables or disables <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html"> Backup's advanced DynamoDB backup features</a> for the Region.</p>
     pub resource_type_management_preference:
         std::option::Option<std::collections::HashMap<std::string::String, bool>>,
 }
@@ -13434,10 +12681,7 @@ impl UpdateRegionSettingsInput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, bool>> {
         self.resource_type_opt_in_preference.as_ref()
     }
-    /// <p>Enables or disables
-    /// <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html">
-    /// Backup's advanced DynamoDB backup features</a> for the
-    /// Region.</p>
+    /// <p>Enables or disables <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html"> Backup's advanced DynamoDB backup features</a> for the Region.</p>
     pub fn resource_type_management_preference(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, bool>> {
@@ -13463,43 +12707,25 @@ impl std::fmt::Debug for UpdateRegionSettingsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRecoveryPointLifecycleInput {
-    /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-    /// by names that are unique to the account used to create them and the Amazon Web Services
-    /// Region where they are created. They consist of lowercase letters, numbers, and
-    /// hyphens.</p>
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     pub backup_vault_name: std::option::Option<std::string::String>,
-    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example,
-    /// <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
     pub recovery_point_arn: std::option::Option<std::string::String>,
-    /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when
-    /// it expires. Backup transitions and expires backups automatically according to
-    /// the lifecycle that you define. </p>
-    /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90
-    /// days. Therefore, the “expire after days” setting must be 90 days greater than the
-    /// “transition to cold after days” setting. The “transition to cold after days” setting cannot
-    /// be changed after a backup has been transitioned to cold. </p>
+    /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define. </p>
+    /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold. </p>
     pub lifecycle: std::option::Option<crate::model::Lifecycle>,
 }
 impl UpdateRecoveryPointLifecycleInput {
-    /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-    /// by names that are unique to the account used to create them and the Amazon Web Services
-    /// Region where they are created. They consist of lowercase letters, numbers, and
-    /// hyphens.</p>
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     pub fn backup_vault_name(&self) -> std::option::Option<&str> {
         self.backup_vault_name.as_deref()
     }
-    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example,
-    /// <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
     pub fn recovery_point_arn(&self) -> std::option::Option<&str> {
         self.recovery_point_arn.as_deref()
     }
-    /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when
-    /// it expires. Backup transitions and expires backups automatically according to
-    /// the lifecycle that you define. </p>
-    /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90
-    /// days. Therefore, the “expire after days” setting must be 90 days greater than the
-    /// “transition to cold after days” setting. The “transition to cold after days” setting cannot
-    /// be changed after a backup has been transitioned to cold. </p>
+    /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define. </p>
+    /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold. </p>
     pub fn lifecycle(&self) -> std::option::Option<&crate::model::Lifecycle> {
         self.lifecycle.as_ref()
     }
@@ -13518,16 +12744,12 @@ impl std::fmt::Debug for UpdateRecoveryPointLifecycleInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGlobalSettingsInput {
-    /// <p>A value for <code>isCrossAccountBackupEnabled</code> and a Region. Example:
-    /// <code>update-global-settings --global-settings isCrossAccountBackupEnabled=false
-    /// --region us-west-2</code>.</p>
+    /// <p>A value for <code>isCrossAccountBackupEnabled</code> and a Region. Example: <code>update-global-settings --global-settings isCrossAccountBackupEnabled=false --region us-west-2</code>.</p>
     pub global_settings:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl UpdateGlobalSettingsInput {
-    /// <p>A value for <code>isCrossAccountBackupEnabled</code> and a Region. Example:
-    /// <code>update-global-settings --global-settings isCrossAccountBackupEnabled=false
-    /// --region us-west-2</code>.</p>
+    /// <p>A value for <code>isCrossAccountBackupEnabled</code> and a Region. Example: <code>update-global-settings --global-settings isCrossAccountBackupEnabled=false --region us-west-2</code>.</p>
     pub fn global_settings(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -13547,22 +12769,17 @@ impl std::fmt::Debug for UpdateGlobalSettingsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFrameworkInput {
-    /// <p>The unique name of a framework. This name is between 1 and 256 characters, starting with
-    /// a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
+    /// <p>The unique name of a framework. This name is between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
     pub framework_name: std::option::Option<std::string::String>,
     /// <p>An optional description of the framework with a maximum 1,024 characters.</p>
     pub framework_description: std::option::Option<std::string::String>,
-    /// <p>A list of the controls that make up the framework. Each control in the list has a name,
-    /// input parameters, and scope.</p>
+    /// <p>A list of the controls that make up the framework. Each control in the list has a name, input parameters, and scope.</p>
     pub framework_controls: std::option::Option<std::vec::Vec<crate::model::FrameworkControl>>,
-    /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
-    /// calls to <code>UpdateFrameworkInput</code>. Retrying a successful request with the same
-    /// idempotency token results in a success message with no action taken.</p>
+    /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>UpdateFrameworkInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
     pub idempotency_token: std::option::Option<std::string::String>,
 }
 impl UpdateFrameworkInput {
-    /// <p>The unique name of a framework. This name is between 1 and 256 characters, starting with
-    /// a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
+    /// <p>The unique name of a framework. This name is between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
     pub fn framework_name(&self) -> std::option::Option<&str> {
         self.framework_name.as_deref()
     }
@@ -13570,14 +12787,11 @@ impl UpdateFrameworkInput {
     pub fn framework_description(&self) -> std::option::Option<&str> {
         self.framework_description.as_deref()
     }
-    /// <p>A list of the controls that make up the framework. Each control in the list has a name,
-    /// input parameters, and scope.</p>
+    /// <p>A list of the controls that make up the framework. Each control in the list has a name, input parameters, and scope.</p>
     pub fn framework_controls(&self) -> std::option::Option<&[crate::model::FrameworkControl]> {
         self.framework_controls.as_deref()
     }
-    /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
-    /// calls to <code>UpdateFrameworkInput</code>. Retrying a successful request with the same
-    /// idempotency token results in a success message with no action taken.</p>
+    /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>UpdateFrameworkInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
     pub fn idempotency_token(&self) -> std::option::Option<&str> {
         self.idempotency_token.as_deref()
     }
@@ -13599,8 +12813,7 @@ impl std::fmt::Debug for UpdateFrameworkInput {
 pub struct UpdateBackupPlanInput {
     /// <p>Uniquely identifies a backup plan.</p>
     pub backup_plan_id: std::option::Option<std::string::String>,
-    /// <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or
-    /// more sets of <code>Rules</code>.</p>
+    /// <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
     pub backup_plan: std::option::Option<crate::model::BackupPlanInput>,
 }
 impl UpdateBackupPlanInput {
@@ -13608,8 +12821,7 @@ impl UpdateBackupPlanInput {
     pub fn backup_plan_id(&self) -> std::option::Option<&str> {
         self.backup_plan_id.as_deref()
     }
-    /// <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or
-    /// more sets of <code>Rules</code>.</p>
+    /// <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
     pub fn backup_plan(&self) -> std::option::Option<&crate::model::BackupPlanInput> {
         self.backup_plan.as_ref()
     }
@@ -13627,15 +12839,13 @@ impl std::fmt::Debug for UpdateBackupPlanInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
-    /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the type of
-    /// the tagged resource.</p>
+    /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the type of the tagged resource.</p>
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A list of keys to identify which key-value tags to remove from a resource.</p>
     pub tag_key_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
-    /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the type of
-    /// the tagged resource.</p>
+    /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the type of the tagged resource.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -13657,24 +12867,18 @@ impl std::fmt::Debug for UntagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
-    /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the type of
-    /// the tagged resource.</p>
+    /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the type of the tagged resource.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>Key-value pairs that are used to help organize your resources. You can assign your own
-    /// metadata to the resources you create. For clarity, this is the structure to assign tags:
-    /// <code>[{"Key":"string","Value":"string"}]</code>.</p>
+    /// <p>Key-value pairs that are used to help organize your resources. You can assign your own metadata to the resources you create. For clarity, this is the structure to assign tags: <code>[{"Key":"string","Value":"string"}]</code>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl TagResourceInput {
-    /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the type of
-    /// the tagged resource.</p>
+    /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the type of the tagged resource.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>Key-value pairs that are used to help organize your resources. You can assign your own
-    /// metadata to the resources you create. For clarity, this is the structure to assign tags:
-    /// <code>[{"Key":"string","Value":"string"}]</code>.</p>
+    /// <p>Key-value pairs that are used to help organize your resources. You can assign your own metadata to the resources you create. For clarity, this is the structure to assign tags: <code>[{"Key":"string","Value":"string"}]</code>.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -13716,155 +12920,54 @@ impl std::fmt::Debug for StopBackupJobInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartRestoreJobInput {
-    /// <p>An ARN that uniquely identifies a recovery point; for example,
-    /// <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+    /// <p>An ARN that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
     pub recovery_point_arn: std::option::Option<std::string::String>,
-    /// <p>A set of metadata key-value pairs. Contains information, such as a resource name,
-    /// required to restore a recovery point.</p>
-    /// <p> You can get configuration metadata about a resource at the time it was backed up by
-    /// calling <code>GetRecoveryPointRestoreMetadata</code>. However, values in addition to those
-    /// provided by <code>GetRecoveryPointRestoreMetadata</code> might be required to restore a
-    /// resource. For example, you might need to provide a new resource name if the original
-    /// already exists.</p>
+    /// <p>A set of metadata key-value pairs. Contains information, such as a resource name, required to restore a recovery point.</p>
+    /// <p> You can get configuration metadata about a resource at the time it was backed up by calling <code>GetRecoveryPointRestoreMetadata</code>. However, values in addition to those provided by <code>GetRecoveryPointRestoreMetadata</code> might be required to restore a resource. For example, you might need to provide a new resource name if the original already exists.</p>
     /// <p>You need to specify specific metadata to restore an Amazon Elastic File System (Amazon EFS) instance:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>file-system-id</code>: The ID of the Amazon EFS file system that is
-    /// backed up by Backup. Returned in
-    /// <code>GetRecoveryPointRestoreMetadata</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Encrypted</code>: A Boolean value that, if true, specifies that the file
-    /// system is encrypted. If <code>KmsKeyId</code> is specified, <code>Encrypted</code>
-    /// must be set to <code>true</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>KmsKeyId</code>: Specifies the Amazon Web Services KMS key that is used to
-    /// encrypt the restored file system. You can specify a key from another Amazon Web Services account provided that key it is properly shared with your account via Amazon Web Services KMS.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PerformanceMode</code>: Specifies the throughput mode of the file
-    /// system.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CreationToken</code>: A user-supplied value that ensures the uniqueness
-    /// (idempotency) of the request.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>newFileSystem</code>: A Boolean value that, if true, specifies that the
-    /// recovery point is restored to a new Amazon EFS file system.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ItemsToRestore</code>: An array of one to five strings where each string is
-    /// a file path. Use <code>ItemsToRestore</code> to restore specific files or directories
-    /// rather than the entire file system. This parameter is optional. For example,
-    /// <code>"itemsToRestore":"[\"/my.test\"]"</code>.</p>
-    /// </li>
+    /// <li> <p> <code>file-system-id</code>: The ID of the Amazon EFS file system that is backed up by Backup. Returned in <code>GetRecoveryPointRestoreMetadata</code>.</p> </li>
+    /// <li> <p> <code>Encrypted</code>: A Boolean value that, if true, specifies that the file system is encrypted. If <code>KmsKeyId</code> is specified, <code>Encrypted</code> must be set to <code>true</code>.</p> </li>
+    /// <li> <p> <code>KmsKeyId</code>: Specifies the Amazon Web Services KMS key that is used to encrypt the restored file system. You can specify a key from another Amazon Web Services account provided that key it is properly shared with your account via Amazon Web Services KMS.</p> </li>
+    /// <li> <p> <code>PerformanceMode</code>: Specifies the throughput mode of the file system.</p> </li>
+    /// <li> <p> <code>CreationToken</code>: A user-supplied value that ensures the uniqueness (idempotency) of the request.</p> </li>
+    /// <li> <p> <code>newFileSystem</code>: A Boolean value that, if true, specifies that the recovery point is restored to a new Amazon EFS file system.</p> </li>
+    /// <li> <p> <code>ItemsToRestore</code>: An array of one to five strings where each string is a file path. Use <code>ItemsToRestore</code> to restore specific files or directories rather than the entire file system. This parameter is optional. For example, <code>"itemsToRestore":"[\"/my.test\"]"</code>.</p> </li>
     /// </ul>
     pub metadata:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that Backup uses to create
-    /// the target recovery point; for example,
-    /// <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
     pub iam_role_arn: std::option::Option<std::string::String>,
-    /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
-    /// calls to <code>StartRestoreJob</code>. Retrying a successful request with the same
-    /// idempotency token results in a success message with no action taken.</p>
+    /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>StartRestoreJob</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
     pub idempotency_token: std::option::Option<std::string::String>,
     /// <p>Starts a job to restore a recovery point for one of the following resources:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>DynamoDB</code> for Amazon DynamoDB</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>EBS</code> for Amazon Elastic Block Store</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>EC2</code> for Amazon Elastic Compute Cloud</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>EFS</code> for Amazon Elastic File System</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RDS</code> for Amazon Relational Database Service</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Aurora</code> for Amazon Aurora</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Storage Gateway</code> for Storage Gateway</p>
-    /// </li>
+    /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
+    /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
+    /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
+    /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
+    /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+    /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
+    /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
     /// </ul>
     pub resource_type: std::option::Option<std::string::String>,
 }
 impl StartRestoreJobInput {
-    /// <p>An ARN that uniquely identifies a recovery point; for example,
-    /// <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+    /// <p>An ARN that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
     pub fn recovery_point_arn(&self) -> std::option::Option<&str> {
         self.recovery_point_arn.as_deref()
     }
-    /// <p>A set of metadata key-value pairs. Contains information, such as a resource name,
-    /// required to restore a recovery point.</p>
-    /// <p> You can get configuration metadata about a resource at the time it was backed up by
-    /// calling <code>GetRecoveryPointRestoreMetadata</code>. However, values in addition to those
-    /// provided by <code>GetRecoveryPointRestoreMetadata</code> might be required to restore a
-    /// resource. For example, you might need to provide a new resource name if the original
-    /// already exists.</p>
+    /// <p>A set of metadata key-value pairs. Contains information, such as a resource name, required to restore a recovery point.</p>
+    /// <p> You can get configuration metadata about a resource at the time it was backed up by calling <code>GetRecoveryPointRestoreMetadata</code>. However, values in addition to those provided by <code>GetRecoveryPointRestoreMetadata</code> might be required to restore a resource. For example, you might need to provide a new resource name if the original already exists.</p>
     /// <p>You need to specify specific metadata to restore an Amazon Elastic File System (Amazon EFS) instance:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>file-system-id</code>: The ID of the Amazon EFS file system that is
-    /// backed up by Backup. Returned in
-    /// <code>GetRecoveryPointRestoreMetadata</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Encrypted</code>: A Boolean value that, if true, specifies that the file
-    /// system is encrypted. If <code>KmsKeyId</code> is specified, <code>Encrypted</code>
-    /// must be set to <code>true</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>KmsKeyId</code>: Specifies the Amazon Web Services KMS key that is used to
-    /// encrypt the restored file system. You can specify a key from another Amazon Web Services account provided that key it is properly shared with your account via Amazon Web Services KMS.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PerformanceMode</code>: Specifies the throughput mode of the file
-    /// system.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CreationToken</code>: A user-supplied value that ensures the uniqueness
-    /// (idempotency) of the request.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>newFileSystem</code>: A Boolean value that, if true, specifies that the
-    /// recovery point is restored to a new Amazon EFS file system.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ItemsToRestore</code>: An array of one to five strings where each string is
-    /// a file path. Use <code>ItemsToRestore</code> to restore specific files or directories
-    /// rather than the entire file system. This parameter is optional. For example,
-    /// <code>"itemsToRestore":"[\"/my.test\"]"</code>.</p>
-    /// </li>
+    /// <li> <p> <code>file-system-id</code>: The ID of the Amazon EFS file system that is backed up by Backup. Returned in <code>GetRecoveryPointRestoreMetadata</code>.</p> </li>
+    /// <li> <p> <code>Encrypted</code>: A Boolean value that, if true, specifies that the file system is encrypted. If <code>KmsKeyId</code> is specified, <code>Encrypted</code> must be set to <code>true</code>.</p> </li>
+    /// <li> <p> <code>KmsKeyId</code>: Specifies the Amazon Web Services KMS key that is used to encrypt the restored file system. You can specify a key from another Amazon Web Services account provided that key it is properly shared with your account via Amazon Web Services KMS.</p> </li>
+    /// <li> <p> <code>PerformanceMode</code>: Specifies the throughput mode of the file system.</p> </li>
+    /// <li> <p> <code>CreationToken</code>: A user-supplied value that ensures the uniqueness (idempotency) of the request.</p> </li>
+    /// <li> <p> <code>newFileSystem</code>: A Boolean value that, if true, specifies that the recovery point is restored to a new Amazon EFS file system.</p> </li>
+    /// <li> <p> <code>ItemsToRestore</code>: An array of one to five strings where each string is a file path. Use <code>ItemsToRestore</code> to restore specific files or directories rather than the entire file system. This parameter is optional. For example, <code>"itemsToRestore":"[\"/my.test\"]"</code>.</p> </li>
     /// </ul>
     pub fn metadata(
         &self,
@@ -13872,48 +12975,23 @@ impl StartRestoreJobInput {
     {
         self.metadata.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that Backup uses to create
-    /// the target recovery point; for example,
-    /// <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
     pub fn iam_role_arn(&self) -> std::option::Option<&str> {
         self.iam_role_arn.as_deref()
     }
-    /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
-    /// calls to <code>StartRestoreJob</code>. Retrying a successful request with the same
-    /// idempotency token results in a success message with no action taken.</p>
+    /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>StartRestoreJob</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
     pub fn idempotency_token(&self) -> std::option::Option<&str> {
         self.idempotency_token.as_deref()
     }
     /// <p>Starts a job to restore a recovery point for one of the following resources:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>DynamoDB</code> for Amazon DynamoDB</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>EBS</code> for Amazon Elastic Block Store</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>EC2</code> for Amazon Elastic Compute Cloud</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>EFS</code> for Amazon Elastic File System</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RDS</code> for Amazon Relational Database Service</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Aurora</code> for Amazon Aurora</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Storage Gateway</code> for Storage Gateway</p>
-    /// </li>
+    /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
+    /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
+    /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
+    /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
+    /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+    /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
+    /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
     /// </ul>
     pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
@@ -13937,9 +13015,7 @@ impl std::fmt::Debug for StartRestoreJobInput {
 pub struct StartReportJobInput {
     /// <p>The unique name of a report plan.</p>
     pub report_plan_name: std::option::Option<std::string::String>,
-    /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
-    /// calls to <code>StartReportJobInput</code>. Retrying a successful request with the same
-    /// idempotency token results in a success message with no action taken.</p>
+    /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>StartReportJobInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
     pub idempotency_token: std::option::Option<std::string::String>,
 }
 impl StartReportJobInput {
@@ -13947,9 +13023,7 @@ impl StartReportJobInput {
     pub fn report_plan_name(&self) -> std::option::Option<&str> {
         self.report_plan_name.as_deref()
     }
-    /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
-    /// calls to <code>StartReportJobInput</code>. Retrying a successful request with the same
-    /// idempotency token results in a success message with no action taken.</p>
+    /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>StartReportJobInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
     pub fn idempotency_token(&self) -> std::option::Option<&str> {
         self.idempotency_token.as_deref()
     }
@@ -13967,70 +13041,44 @@ impl std::fmt::Debug for StartReportJobInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartCopyJobInput {
-    /// <p>An ARN that uniquely identifies a recovery point to use for the copy job; for example,
-    /// arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45.
-    /// </p>
+    /// <p>An ARN that uniquely identifies a recovery point to use for the copy job; for example, arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45. </p>
     pub recovery_point_arn: std::option::Option<std::string::String>,
-    /// <p>The name of a logical source container where backups are stored. Backup vaults are
-    /// identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers,
-    /// and hyphens.</p>
+    /// <p>The name of a logical source container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     pub source_backup_vault_name: std::option::Option<std::string::String>,
-    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a destination backup vault to
-    /// copy to; for example,
-    /// <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a destination backup vault to copy to; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
     pub destination_backup_vault_arn: std::option::Option<std::string::String>,
-    /// <p>Specifies the IAM role ARN used to copy the target recovery point; for example,
-    /// <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+    /// <p>Specifies the IAM role ARN used to copy the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
     pub iam_role_arn: std::option::Option<std::string::String>,
-    /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
-    /// calls to <code>StartCopyJob</code>. Retrying a successful request with the same idempotency
-    /// token results in a success message with no action taken.</p>
+    /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>StartCopyJob</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
     pub idempotency_token: std::option::Option<std::string::String>,
-    /// <p>Contains an array of <code>Transition</code> objects specifying how long in days before
-    /// a recovery point transitions to cold storage or is deleted.</p>
-    /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90
-    /// days. Therefore, on the console, the “expire after days” setting must be 90 days greater
-    /// than the “transition to cold after days” setting. The “transition to cold after days”
-    /// setting cannot be changed after a backup has been transitioned to cold.</p>
+    /// <p>Contains an array of <code>Transition</code> objects specifying how long in days before a recovery point transitions to cold storage or is deleted.</p>
+    /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p>
     /// <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
     pub lifecycle: std::option::Option<crate::model::Lifecycle>,
 }
 impl StartCopyJobInput {
-    /// <p>An ARN that uniquely identifies a recovery point to use for the copy job; for example,
-    /// arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45.
-    /// </p>
+    /// <p>An ARN that uniquely identifies a recovery point to use for the copy job; for example, arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45. </p>
     pub fn recovery_point_arn(&self) -> std::option::Option<&str> {
         self.recovery_point_arn.as_deref()
     }
-    /// <p>The name of a logical source container where backups are stored. Backup vaults are
-    /// identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers,
-    /// and hyphens.</p>
+    /// <p>The name of a logical source container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     pub fn source_backup_vault_name(&self) -> std::option::Option<&str> {
         self.source_backup_vault_name.as_deref()
     }
-    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a destination backup vault to
-    /// copy to; for example,
-    /// <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a destination backup vault to copy to; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
     pub fn destination_backup_vault_arn(&self) -> std::option::Option<&str> {
         self.destination_backup_vault_arn.as_deref()
     }
-    /// <p>Specifies the IAM role ARN used to copy the target recovery point; for example,
-    /// <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+    /// <p>Specifies the IAM role ARN used to copy the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
     pub fn iam_role_arn(&self) -> std::option::Option<&str> {
         self.iam_role_arn.as_deref()
     }
-    /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
-    /// calls to <code>StartCopyJob</code>. Retrying a successful request with the same idempotency
-    /// token results in a success message with no action taken.</p>
+    /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>StartCopyJob</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
     pub fn idempotency_token(&self) -> std::option::Option<&str> {
         self.idempotency_token.as_deref()
     }
-    /// <p>Contains an array of <code>Transition</code> objects specifying how long in days before
-    /// a recovery point transitions to cold storage or is deleted.</p>
-    /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90
-    /// days. Therefore, on the console, the “expire after days” setting must be 90 days greater
-    /// than the “transition to cold after days” setting. The “transition to cold after days”
-    /// setting cannot be changed after a backup has been transitioned to cold.</p>
+    /// <p>Contains an array of <code>Transition</code> objects specifying how long in days before a recovery point transitions to cold storage or is deleted.</p>
+    /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p>
     /// <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
     pub fn lifecycle(&self) -> std::option::Option<&crate::model::Lifecycle> {
         self.lifecycle.as_ref()
@@ -14056,112 +13104,70 @@ impl std::fmt::Debug for StartCopyJobInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartBackupJobInput {
-    /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-    /// by names that are unique to the account used to create them and the Amazon Web Services
-    /// Region where they are created. They consist of lowercase letters, numbers, and
-    /// hyphens.</p>
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     pub backup_vault_name: std::option::Option<std::string::String>,
-    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN
-    /// depends on the resource type.</p>
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>Specifies the IAM role ARN used to create the target recovery point; for example,
-    /// <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+    /// <p>Specifies the IAM role ARN used to create the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
     pub iam_role_arn: std::option::Option<std::string::String>,
-    /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
-    /// calls to <code>StartBackupJob</code>. Retrying a successful request with the same
-    /// idempotency token results in a success message with no action taken.</p>
+    /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>StartBackupJob</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
     pub idempotency_token: std::option::Option<std::string::String>,
-    /// <p>A value in minutes after a backup is scheduled before a job will be canceled if it
-    /// doesn't start successfully. This value is optional, and the default is 8 hours.</p>
+    /// <p>A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start successfully. This value is optional, and the default is 8 hours.</p>
     pub start_window_minutes: std::option::Option<i64>,
-    /// <p>A value in minutes during which a successfully started backup must complete, or else AWS
-    /// Backup will cancel the job. This value is optional. This value begins counting down from
-    /// when the backup was scheduled. It does not add additional time for
-    /// <code>StartWindowMinutes</code>, or if the backup started later than scheduled.</p>
+    /// <p>A value in minutes during which a successfully started backup must complete, or else AWS Backup will cancel the job. This value is optional. This value begins counting down from when the backup was scheduled. It does not add additional time for <code>StartWindowMinutes</code>, or if the backup started later than scheduled.</p>
     pub complete_window_minutes: std::option::Option<i64>,
-    /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when
-    /// it expires. Backup will transition and expire backups automatically according
-    /// to the lifecycle that you define. </p>
-    /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90
-    /// days. Therefore, the “expire after days” setting must be 90 days greater than the
-    /// “transition to cold after days” setting. The “transition to cold after days” setting cannot
-    /// be changed after a backup has been transitioned to cold. </p>
+    /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup will transition and expire backups automatically according to the lifecycle that you define. </p>
+    /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold. </p>
     /// <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
     pub lifecycle: std::option::Option<crate::model::Lifecycle>,
-    /// <p>To help organize your resources, you can assign your own metadata to the resources that
-    /// you create. Each tag is a key-value pair.</p>
+    /// <p>To help organize your resources, you can assign your own metadata to the resources that you create. Each tag is a key-value pair.</p>
     pub recovery_point_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>Specifies the backup option for a selected resource. This option is only available for
-    /// Windows Volume Shadow Copy Service (VSS) backup jobs.</p>
-    /// <p>Valid values: Set to <code>"WindowsVSS":"enabled"</code> to enable the
-    /// <code>WindowsVSS</code> backup option and create a Windows VSS backup. Set to
-    /// <code>"WindowsVSS""disabled"</code> to create a regular backup. The
-    /// <code>WindowsVSS</code> option is not enabled by default.</p>
+    /// <p>Specifies the backup option for a selected resource. This option is only available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p>
+    /// <p>Valid values: Set to <code>"WindowsVSS":"enabled"</code> to enable the <code>WindowsVSS</code> backup option and create a Windows VSS backup. Set to <code>"WindowsVSS""disabled"</code> to create a regular backup. The <code>WindowsVSS</code> option is not enabled by default.</p>
     pub backup_options:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl StartBackupJobInput {
-    /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-    /// by names that are unique to the account used to create them and the Amazon Web Services
-    /// Region where they are created. They consist of lowercase letters, numbers, and
-    /// hyphens.</p>
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     pub fn backup_vault_name(&self) -> std::option::Option<&str> {
         self.backup_vault_name.as_deref()
     }
-    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN
-    /// depends on the resource type.</p>
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>Specifies the IAM role ARN used to create the target recovery point; for example,
-    /// <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
+    /// <p>Specifies the IAM role ARN used to create the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
     pub fn iam_role_arn(&self) -> std::option::Option<&str> {
         self.iam_role_arn.as_deref()
     }
-    /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
-    /// calls to <code>StartBackupJob</code>. Retrying a successful request with the same
-    /// idempotency token results in a success message with no action taken.</p>
+    /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>StartBackupJob</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
     pub fn idempotency_token(&self) -> std::option::Option<&str> {
         self.idempotency_token.as_deref()
     }
-    /// <p>A value in minutes after a backup is scheduled before a job will be canceled if it
-    /// doesn't start successfully. This value is optional, and the default is 8 hours.</p>
+    /// <p>A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start successfully. This value is optional, and the default is 8 hours.</p>
     pub fn start_window_minutes(&self) -> std::option::Option<i64> {
         self.start_window_minutes
     }
-    /// <p>A value in minutes during which a successfully started backup must complete, or else AWS
-    /// Backup will cancel the job. This value is optional. This value begins counting down from
-    /// when the backup was scheduled. It does not add additional time for
-    /// <code>StartWindowMinutes</code>, or if the backup started later than scheduled.</p>
+    /// <p>A value in minutes during which a successfully started backup must complete, or else AWS Backup will cancel the job. This value is optional. This value begins counting down from when the backup was scheduled. It does not add additional time for <code>StartWindowMinutes</code>, or if the backup started later than scheduled.</p>
     pub fn complete_window_minutes(&self) -> std::option::Option<i64> {
         self.complete_window_minutes
     }
-    /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when
-    /// it expires. Backup will transition and expire backups automatically according
-    /// to the lifecycle that you define. </p>
-    /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90
-    /// days. Therefore, the “expire after days” setting must be 90 days greater than the
-    /// “transition to cold after days” setting. The “transition to cold after days” setting cannot
-    /// be changed after a backup has been transitioned to cold. </p>
+    /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup will transition and expire backups automatically according to the lifecycle that you define. </p>
+    /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold. </p>
     /// <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
     pub fn lifecycle(&self) -> std::option::Option<&crate::model::Lifecycle> {
         self.lifecycle.as_ref()
     }
-    /// <p>To help organize your resources, you can assign your own metadata to the resources that
-    /// you create. Each tag is a key-value pair.</p>
+    /// <p>To help organize your resources, you can assign your own metadata to the resources that you create. Each tag is a key-value pair.</p>
     pub fn recovery_point_tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.recovery_point_tags.as_ref()
     }
-    /// <p>Specifies the backup option for a selected resource. This option is only available for
-    /// Windows Volume Shadow Copy Service (VSS) backup jobs.</p>
-    /// <p>Valid values: Set to <code>"WindowsVSS":"enabled"</code> to enable the
-    /// <code>WindowsVSS</code> backup option and create a Windows VSS backup. Set to
-    /// <code>"WindowsVSS""disabled"</code> to create a regular backup. The
-    /// <code>WindowsVSS</code> option is not enabled by default.</p>
+    /// <p>Specifies the backup option for a selected resource. This option is only available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p>
+    /// <p>Valid values: Set to <code>"WindowsVSS":"enabled"</code> to enable the <code>WindowsVSS</code> backup option and create a Windows VSS backup. Set to <code>"WindowsVSS""disabled"</code> to create a regular backup. The <code>WindowsVSS</code> option is not enabled by default.</p>
     pub fn backup_options(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -14189,84 +13195,40 @@ impl std::fmt::Debug for StartBackupJobInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutBackupVaultNotificationsInput {
-    /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-    /// by names that are unique to the account used to create them and the Amazon Web Services
-    /// Region where they are created. They consist of lowercase letters, numbers, and
-    /// hyphens.</p>
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     pub backup_vault_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) that specifies the topic for a backup vault’s events; for
-    /// example, <code>arn:aws:sns:us-west-2:111122223333:MyVaultTopic</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) that specifies the topic for a backup vault’s events; for example, <code>arn:aws:sns:us-west-2:111122223333:MyVaultTopic</code>.</p>
     pub sns_topic_arn: std::option::Option<std::string::String>,
-    /// <p>An array of events that indicate the status of jobs to back up resources to the backup
-    /// vault.</p>
-    /// <p>For common use cases and code samples, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/sns-notifications.html">Using Amazon SNS to
-    /// track Backup events</a>.</p>
+    /// <p>An array of events that indicate the status of jobs to back up resources to the backup vault.</p>
+    /// <p>For common use cases and code samples, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/sns-notifications.html">Using Amazon SNS to track Backup events</a>.</p>
     /// <p>The following events are supported:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>BACKUP_JOB_STARTED</code> | <code>BACKUP_JOB_COMPLETED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>COPY_JOB_STARTED</code> | <code>COPY_JOB_SUCCESSFUL</code> |
-    /// <code>COPY_JOB_FAILED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> |
-    /// <code>RECOVERY_POINT_MODIFIED</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <note>
-    /// <p>Ignore the list below because it includes deprecated events. Refer to the list
-    /// above.</p>
+    /// <li> <p> <code>BACKUP_JOB_STARTED</code> | <code>BACKUP_JOB_COMPLETED</code> </p> </li>
+    /// <li> <p> <code>COPY_JOB_STARTED</code> | <code>COPY_JOB_SUCCESSFUL</code> | <code>COPY_JOB_FAILED</code> </p> </li>
+    /// <li> <p> <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> | <code>RECOVERY_POINT_MODIFIED</code> </p> </li>
+    /// </ul> <note>
+    /// <p>Ignore the list below because it includes deprecated events. Refer to the list above.</p>
     /// </note>
     pub backup_vault_events: std::option::Option<std::vec::Vec<crate::model::BackupVaultEvent>>,
 }
 impl PutBackupVaultNotificationsInput {
-    /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-    /// by names that are unique to the account used to create them and the Amazon Web Services
-    /// Region where they are created. They consist of lowercase letters, numbers, and
-    /// hyphens.</p>
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     pub fn backup_vault_name(&self) -> std::option::Option<&str> {
         self.backup_vault_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) that specifies the topic for a backup vault’s events; for
-    /// example, <code>arn:aws:sns:us-west-2:111122223333:MyVaultTopic</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) that specifies the topic for a backup vault’s events; for example, <code>arn:aws:sns:us-west-2:111122223333:MyVaultTopic</code>.</p>
     pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
         self.sns_topic_arn.as_deref()
     }
-    /// <p>An array of events that indicate the status of jobs to back up resources to the backup
-    /// vault.</p>
-    /// <p>For common use cases and code samples, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/sns-notifications.html">Using Amazon SNS to
-    /// track Backup events</a>.</p>
+    /// <p>An array of events that indicate the status of jobs to back up resources to the backup vault.</p>
+    /// <p>For common use cases and code samples, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/sns-notifications.html">Using Amazon SNS to track Backup events</a>.</p>
     /// <p>The following events are supported:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>BACKUP_JOB_STARTED</code> | <code>BACKUP_JOB_COMPLETED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>COPY_JOB_STARTED</code> | <code>COPY_JOB_SUCCESSFUL</code> |
-    /// <code>COPY_JOB_FAILED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> |
-    /// <code>RECOVERY_POINT_MODIFIED</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <note>
-    /// <p>Ignore the list below because it includes deprecated events. Refer to the list
-    /// above.</p>
+    /// <li> <p> <code>BACKUP_JOB_STARTED</code> | <code>BACKUP_JOB_COMPLETED</code> </p> </li>
+    /// <li> <p> <code>COPY_JOB_STARTED</code> | <code>COPY_JOB_SUCCESSFUL</code> | <code>COPY_JOB_FAILED</code> </p> </li>
+    /// <li> <p> <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> | <code>RECOVERY_POINT_MODIFIED</code> </p> </li>
+    /// </ul> <note>
+    /// <p>Ignore the list below because it includes deprecated events. Refer to the list above.</p>
     /// </note>
     pub fn backup_vault_events(&self) -> std::option::Option<&[crate::model::BackupVaultEvent]> {
         self.backup_vault_events.as_deref()
@@ -14286,101 +13248,43 @@ impl std::fmt::Debug for PutBackupVaultNotificationsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutBackupVaultLockConfigurationInput {
-    /// <p>The Backup Vault Lock configuration that specifies the name of the backup
-    /// vault it protects.</p>
+    /// <p>The Backup Vault Lock configuration that specifies the name of the backup vault it protects.</p>
     pub backup_vault_name: std::option::Option<std::string::String>,
-    /// <p>The Backup Vault Lock configuration that specifies the minimum retention
-    /// period that the vault retains its recovery points. This setting can be useful if, for
-    /// example, your organization's policies require you to retain certain data for at least seven
-    /// years (2555 days).</p>
-    /// <p>If this parameter is not specified, Vault Lock will not enforce a minimum retention
-    /// period.</p>
-    /// <p>If this parameter is specified, any backup or copy job to the vault must have a
-    /// lifecycle policy with a retention period equal to or longer than the minimum retention
-    /// period. If the job's retention period is shorter than that minimum retention period, then
-    /// the vault fails that backup or copy job, and you should either modify your lifecycle
-    /// settings or use a different vault. Recovery points already saved in the vault prior to
-    /// Vault Lock are not affected.</p>
+    /// <p>The Backup Vault Lock configuration that specifies the minimum retention period that the vault retains its recovery points. This setting can be useful if, for example, your organization's policies require you to retain certain data for at least seven years (2555 days).</p>
+    /// <p>If this parameter is not specified, Vault Lock will not enforce a minimum retention period.</p>
+    /// <p>If this parameter is specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or longer than the minimum retention period. If the job's retention period is shorter than that minimum retention period, then the vault fails that backup or copy job, and you should either modify your lifecycle settings or use a different vault. Recovery points already saved in the vault prior to Vault Lock are not affected.</p>
     pub min_retention_days: std::option::Option<i64>,
-    /// <p>The Backup Vault Lock configuration that specifies the maximum retention
-    /// period that the vault retains its recovery points. This setting can be useful if, for
-    /// example, your organization's policies require you to destroy certain data after retaining
-    /// it for four years (1460 days).</p>
-    /// <p>If this parameter is not included, Vault Lock does not enforce a maximum retention
-    /// period on the recovery points in the vault. If this parameter is included without a value,
-    /// Vault Lock will not enforce a maximum retention period.</p>
-    /// <p>If this parameter is specified, any backup or copy job to the vault must have a
-    /// lifecycle policy with a retention period equal to or shorter than the maximum retention
-    /// period. If the job's retention period is longer than that maximum retention period, then
-    /// the vault fails the backup or copy job, and you should either modify your lifecycle
-    /// settings or use a different vault. Recovery points already saved in the vault prior to
-    /// Vault Lock are not affected.</p>
+    /// <p>The Backup Vault Lock configuration that specifies the maximum retention period that the vault retains its recovery points. This setting can be useful if, for example, your organization's policies require you to destroy certain data after retaining it for four years (1460 days).</p>
+    /// <p>If this parameter is not included, Vault Lock does not enforce a maximum retention period on the recovery points in the vault. If this parameter is included without a value, Vault Lock will not enforce a maximum retention period.</p>
+    /// <p>If this parameter is specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or shorter than the maximum retention period. If the job's retention period is longer than that maximum retention period, then the vault fails the backup or copy job, and you should either modify your lifecycle settings or use a different vault. Recovery points already saved in the vault prior to Vault Lock are not affected.</p>
     pub max_retention_days: std::option::Option<i64>,
-    /// <p>The Backup Vault Lock configuration that specifies the number of days before
-    /// the lock date. For example, setting <code>ChangeableForDays</code> to 30 on Jan. 1, 2022 at
-    /// 8pm UTC will set the lock date to Jan. 31, 2022 at 8pm UTC.</p>
-    /// <p>Backup enforces a 72-hour cooling-off period before Vault Lock takes effect
-    /// and becomes immutable. Therefore, you must set <code>ChangeableForDays</code> to 3 or
-    /// greater.</p>
-    /// <p>Before the lock date, you can delete Vault Lock from the vault using
-    /// <code>DeleteBackupVaultLockConfiguration</code> or change the Vault Lock configuration
-    /// using <code>PutBackupVaultLockConfiguration</code>. On and after the lock date, the Vault
-    /// Lock becomes immutable and cannot be changed or deleted.</p>
-    /// <p>If this parameter is not specified, you can delete Vault Lock from the vault using
-    /// <code>DeleteBackupVaultLockConfiguration</code> or change the Vault Lock configuration
-    /// using <code>PutBackupVaultLockConfiguration</code> at any time.</p>
+    /// <p>The Backup Vault Lock configuration that specifies the number of days before the lock date. For example, setting <code>ChangeableForDays</code> to 30 on Jan. 1, 2022 at 8pm UTC will set the lock date to Jan. 31, 2022 at 8pm UTC.</p>
+    /// <p>Backup enforces a 72-hour cooling-off period before Vault Lock takes effect and becomes immutable. Therefore, you must set <code>ChangeableForDays</code> to 3 or greater.</p>
+    /// <p>Before the lock date, you can delete Vault Lock from the vault using <code>DeleteBackupVaultLockConfiguration</code> or change the Vault Lock configuration using <code>PutBackupVaultLockConfiguration</code>. On and after the lock date, the Vault Lock becomes immutable and cannot be changed or deleted.</p>
+    /// <p>If this parameter is not specified, you can delete Vault Lock from the vault using <code>DeleteBackupVaultLockConfiguration</code> or change the Vault Lock configuration using <code>PutBackupVaultLockConfiguration</code> at any time.</p>
     pub changeable_for_days: std::option::Option<i64>,
 }
 impl PutBackupVaultLockConfigurationInput {
-    /// <p>The Backup Vault Lock configuration that specifies the name of the backup
-    /// vault it protects.</p>
+    /// <p>The Backup Vault Lock configuration that specifies the name of the backup vault it protects.</p>
     pub fn backup_vault_name(&self) -> std::option::Option<&str> {
         self.backup_vault_name.as_deref()
     }
-    /// <p>The Backup Vault Lock configuration that specifies the minimum retention
-    /// period that the vault retains its recovery points. This setting can be useful if, for
-    /// example, your organization's policies require you to retain certain data for at least seven
-    /// years (2555 days).</p>
-    /// <p>If this parameter is not specified, Vault Lock will not enforce a minimum retention
-    /// period.</p>
-    /// <p>If this parameter is specified, any backup or copy job to the vault must have a
-    /// lifecycle policy with a retention period equal to or longer than the minimum retention
-    /// period. If the job's retention period is shorter than that minimum retention period, then
-    /// the vault fails that backup or copy job, and you should either modify your lifecycle
-    /// settings or use a different vault. Recovery points already saved in the vault prior to
-    /// Vault Lock are not affected.</p>
+    /// <p>The Backup Vault Lock configuration that specifies the minimum retention period that the vault retains its recovery points. This setting can be useful if, for example, your organization's policies require you to retain certain data for at least seven years (2555 days).</p>
+    /// <p>If this parameter is not specified, Vault Lock will not enforce a minimum retention period.</p>
+    /// <p>If this parameter is specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or longer than the minimum retention period. If the job's retention period is shorter than that minimum retention period, then the vault fails that backup or copy job, and you should either modify your lifecycle settings or use a different vault. Recovery points already saved in the vault prior to Vault Lock are not affected.</p>
     pub fn min_retention_days(&self) -> std::option::Option<i64> {
         self.min_retention_days
     }
-    /// <p>The Backup Vault Lock configuration that specifies the maximum retention
-    /// period that the vault retains its recovery points. This setting can be useful if, for
-    /// example, your organization's policies require you to destroy certain data after retaining
-    /// it for four years (1460 days).</p>
-    /// <p>If this parameter is not included, Vault Lock does not enforce a maximum retention
-    /// period on the recovery points in the vault. If this parameter is included without a value,
-    /// Vault Lock will not enforce a maximum retention period.</p>
-    /// <p>If this parameter is specified, any backup or copy job to the vault must have a
-    /// lifecycle policy with a retention period equal to or shorter than the maximum retention
-    /// period. If the job's retention period is longer than that maximum retention period, then
-    /// the vault fails the backup or copy job, and you should either modify your lifecycle
-    /// settings or use a different vault. Recovery points already saved in the vault prior to
-    /// Vault Lock are not affected.</p>
+    /// <p>The Backup Vault Lock configuration that specifies the maximum retention period that the vault retains its recovery points. This setting can be useful if, for example, your organization's policies require you to destroy certain data after retaining it for four years (1460 days).</p>
+    /// <p>If this parameter is not included, Vault Lock does not enforce a maximum retention period on the recovery points in the vault. If this parameter is included without a value, Vault Lock will not enforce a maximum retention period.</p>
+    /// <p>If this parameter is specified, any backup or copy job to the vault must have a lifecycle policy with a retention period equal to or shorter than the maximum retention period. If the job's retention period is longer than that maximum retention period, then the vault fails the backup or copy job, and you should either modify your lifecycle settings or use a different vault. Recovery points already saved in the vault prior to Vault Lock are not affected.</p>
     pub fn max_retention_days(&self) -> std::option::Option<i64> {
         self.max_retention_days
     }
-    /// <p>The Backup Vault Lock configuration that specifies the number of days before
-    /// the lock date. For example, setting <code>ChangeableForDays</code> to 30 on Jan. 1, 2022 at
-    /// 8pm UTC will set the lock date to Jan. 31, 2022 at 8pm UTC.</p>
-    /// <p>Backup enforces a 72-hour cooling-off period before Vault Lock takes effect
-    /// and becomes immutable. Therefore, you must set <code>ChangeableForDays</code> to 3 or
-    /// greater.</p>
-    /// <p>Before the lock date, you can delete Vault Lock from the vault using
-    /// <code>DeleteBackupVaultLockConfiguration</code> or change the Vault Lock configuration
-    /// using <code>PutBackupVaultLockConfiguration</code>. On and after the lock date, the Vault
-    /// Lock becomes immutable and cannot be changed or deleted.</p>
-    /// <p>If this parameter is not specified, you can delete Vault Lock from the vault using
-    /// <code>DeleteBackupVaultLockConfiguration</code> or change the Vault Lock configuration
-    /// using <code>PutBackupVaultLockConfiguration</code> at any time.</p>
+    /// <p>The Backup Vault Lock configuration that specifies the number of days before the lock date. For example, setting <code>ChangeableForDays</code> to 30 on Jan. 1, 2022 at 8pm UTC will set the lock date to Jan. 31, 2022 at 8pm UTC.</p>
+    /// <p>Backup enforces a 72-hour cooling-off period before Vault Lock takes effect and becomes immutable. Therefore, you must set <code>ChangeableForDays</code> to 3 or greater.</p>
+    /// <p>Before the lock date, you can delete Vault Lock from the vault using <code>DeleteBackupVaultLockConfiguration</code> or change the Vault Lock configuration using <code>PutBackupVaultLockConfiguration</code>. On and after the lock date, the Vault Lock becomes immutable and cannot be changed or deleted.</p>
+    /// <p>If this parameter is not specified, you can delete Vault Lock from the vault using <code>DeleteBackupVaultLockConfiguration</code> or change the Vault Lock configuration using <code>PutBackupVaultLockConfiguration</code> at any time.</p>
     pub fn changeable_for_days(&self) -> std::option::Option<i64> {
         self.changeable_for_days
     }
@@ -14400,19 +13304,13 @@ impl std::fmt::Debug for PutBackupVaultLockConfigurationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutBackupVaultAccessPolicyInput {
-    /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-    /// by names that are unique to the account used to create them and the Amazon Web Services
-    /// Region where they are created. They consist of lowercase letters, numbers, and
-    /// hyphens.</p>
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     pub backup_vault_name: std::option::Option<std::string::String>,
     /// <p>The backup vault access policy document in JSON format.</p>
     pub policy: std::option::Option<std::string::String>,
 }
 impl PutBackupVaultAccessPolicyInput {
-    /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-    /// by names that are unique to the account used to create them and the Amazon Web Services
-    /// Region where they are created. They consist of lowercase letters, numbers, and
-    /// hyphens.</p>
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     pub fn backup_vault_name(&self) -> std::option::Option<&str> {
         self.backup_vault_name.as_deref()
     }
@@ -14434,29 +13332,19 @@ impl std::fmt::Debug for PutBackupVaultAccessPolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsInput {
-    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN
-    /// depends on the type of resource. Valid targets for <code>ListTags</code> are recovery
-    /// points, backup plans, and backup vaults.</p>
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the type of resource. Valid targets for <code>ListTags</code> are recovery points, backup plans, and backup vaults.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The next item following a partial list of returned items. For example, if a request is
-    /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
-    /// to return more items in your list starting at the location pointed to by the next
-    /// token.</p>
+    /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to be returned.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListTagsInput {
-    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN
-    /// depends on the type of resource. Valid targets for <code>ListTags</code> are recovery
-    /// points, backup plans, and backup vaults.</p>
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the type of resource. Valid targets for <code>ListTags</code> are recovery points, backup plans, and backup vaults.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The next item following a partial list of returned items. For example, if a request is
-    /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
-    /// to return more items in your list starting at the location pointed to by the next
-    /// token.</p>
+    /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -14479,15 +13367,11 @@ impl std::fmt::Debug for ListTagsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRestoreJobsInput {
-    /// <p>The next item following a partial list of returned items. For example, if a request is
-    /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
-    /// to return more items in your list starting at the location pointed to by the next
-    /// token.</p>
+    /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to be returned.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The account ID to list the jobs from. Returns only restore jobs associated with the
-    /// specified account ID.</p>
+    /// <p>The account ID to list the jobs from. Returns only restore jobs associated with the specified account ID.</p>
     pub by_account_id: std::option::Option<std::string::String>,
     /// <p>Returns only restore jobs that were created before the specified date.</p>
     pub by_created_before: std::option::Option<aws_smithy_types::DateTime>,
@@ -14497,10 +13381,7 @@ pub struct ListRestoreJobsInput {
     pub by_status: std::option::Option<crate::model::RestoreJobStatus>,
 }
 impl ListRestoreJobsInput {
-    /// <p>The next item following a partial list of returned items. For example, if a request is
-    /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
-    /// to return more items in your list starting at the location pointed to by the next
-    /// token.</p>
+    /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -14508,8 +13389,7 @@ impl ListRestoreJobsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The account ID to list the jobs from. Returns only restore jobs associated with the
-    /// specified account ID.</p>
+    /// <p>The account ID to list the jobs from. Returns only restore jobs associated with the specified account ID.</p>
     pub fn by_account_id(&self) -> std::option::Option<&str> {
         self.by_account_id.as_deref()
     }
@@ -14543,21 +13423,17 @@ impl std::fmt::Debug for ListRestoreJobsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListReportPlansInput {
-    /// <p>The number of desired results from 1 to 1000. Optional. If unspecified, the query will
-    /// return 1 MB of data.</p>
+    /// <p>The number of desired results from 1 to 1000. Optional. If unspecified, the query will return 1 MB of data.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>An identifier that was returned from the previous call to this operation, which can be
-    /// used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListReportPlansInput {
-    /// <p>The number of desired results from 1 to 1000. Optional. If unspecified, the query will
-    /// return 1 MB of data.</p>
+    /// <p>The number of desired results from 1 to 1000. Optional. If unspecified, the query will return 1 MB of data.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>An identifier that was returned from the previous call to this operation, which can be
-    /// used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -14577,24 +13453,16 @@ impl std::fmt::Debug for ListReportPlansInput {
 pub struct ListReportJobsInput {
     /// <p>Returns only report jobs with the specified report plan name.</p>
     pub by_report_plan_name: std::option::Option<std::string::String>,
-    /// <p>Returns only report jobs that were created before the date and time specified in Unix
-    /// format and Coordinated Universal Time (UTC). For example, the value 1516925490 represents
-    /// Friday, January 26, 2018 12:11:30 AM.</p>
+    /// <p>Returns only report jobs that were created before the date and time specified in Unix format and Coordinated Universal Time (UTC). For example, the value 1516925490 represents Friday, January 26, 2018 12:11:30 AM.</p>
     pub by_creation_before: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Returns only report jobs that were created after the date and time specified in Unix
-    /// format and Coordinated Universal Time (UTC). For example, the value 1516925490 represents
-    /// Friday, January 26, 2018 12:11:30 AM.</p>
+    /// <p>Returns only report jobs that were created after the date and time specified in Unix format and Coordinated Universal Time (UTC). For example, the value 1516925490 represents Friday, January 26, 2018 12:11:30 AM.</p>
     pub by_creation_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Returns only report jobs that are in the specified status. The statuses are:</p>
-    /// <p>
-    /// <code>CREATED | RUNNING | COMPLETED | FAILED</code>
-    /// </p>
+    /// <p> <code>CREATED | RUNNING | COMPLETED | FAILED</code> </p>
     pub by_status: std::option::Option<std::string::String>,
-    /// <p>The number of desired results from 1 to 1000. Optional. If unspecified, the query will
-    /// return 1 MB of data.</p>
+    /// <p>The number of desired results from 1 to 1000. Optional. If unspecified, the query will return 1 MB of data.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>An identifier that was returned from the previous call to this operation, which can be
-    /// used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListReportJobsInput {
@@ -14602,32 +13470,24 @@ impl ListReportJobsInput {
     pub fn by_report_plan_name(&self) -> std::option::Option<&str> {
         self.by_report_plan_name.as_deref()
     }
-    /// <p>Returns only report jobs that were created before the date and time specified in Unix
-    /// format and Coordinated Universal Time (UTC). For example, the value 1516925490 represents
-    /// Friday, January 26, 2018 12:11:30 AM.</p>
+    /// <p>Returns only report jobs that were created before the date and time specified in Unix format and Coordinated Universal Time (UTC). For example, the value 1516925490 represents Friday, January 26, 2018 12:11:30 AM.</p>
     pub fn by_creation_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.by_creation_before.as_ref()
     }
-    /// <p>Returns only report jobs that were created after the date and time specified in Unix
-    /// format and Coordinated Universal Time (UTC). For example, the value 1516925490 represents
-    /// Friday, January 26, 2018 12:11:30 AM.</p>
+    /// <p>Returns only report jobs that were created after the date and time specified in Unix format and Coordinated Universal Time (UTC). For example, the value 1516925490 represents Friday, January 26, 2018 12:11:30 AM.</p>
     pub fn by_creation_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.by_creation_after.as_ref()
     }
     /// <p>Returns only report jobs that are in the specified status. The statuses are:</p>
-    /// <p>
-    /// <code>CREATED | RUNNING | COMPLETED | FAILED</code>
-    /// </p>
+    /// <p> <code>CREATED | RUNNING | COMPLETED | FAILED</code> </p>
     pub fn by_status(&self) -> std::option::Option<&str> {
         self.by_status.as_deref()
     }
-    /// <p>The number of desired results from 1 to 1000. Optional. If unspecified, the query will
-    /// return 1 MB of data.</p>
+    /// <p>The number of desired results from 1 to 1000. Optional. If unspecified, the query will return 1 MB of data.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>An identifier that was returned from the previous call to this operation, which can be
-    /// used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -14649,35 +13509,25 @@ impl std::fmt::Debug for ListReportJobsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRecoveryPointsByResourceInput {
-    /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the
-    /// resource type.</p>
+    /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The next item following a partial list of returned items. For example, if a request is
-    /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
-    /// to return more items in your list starting at the location pointed to by the next
-    /// token.</p>
+    /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of items to be returned.</p>
-    /// <note>
+    /// <p>The maximum number of items to be returned.</p> <note>
     /// <p>Amazon RDS requires a value of at least 20.</p>
     /// </note>
     pub max_results: std::option::Option<i32>,
 }
 impl ListRecoveryPointsByResourceInput {
-    /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the
-    /// resource type.</p>
+    /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The next item following a partial list of returned items. For example, if a request is
-    /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
-    /// to return more items in your list starting at the location pointed to by the next
-    /// token.</p>
+    /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of items to be returned.</p>
-    /// <note>
+    /// <p>The maximum number of items to be returned.</p> <note>
     /// <p>Amazon RDS requires a value of at least 20.</p>
     /// </note>
     pub fn max_results(&self) -> std::option::Option<i32> {
@@ -14698,24 +13548,15 @@ impl std::fmt::Debug for ListRecoveryPointsByResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRecoveryPointsByBackupVaultInput {
-    /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-    /// by names that are unique to the account used to create them and the Amazon Web Services
-    /// Region where they are created. They consist of lowercase letters, numbers, and
-    /// hyphens.</p>
-    /// <note>
-    /// <p>Backup vault name might not be available when a supported service creates the
-    /// backup.</p>
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p> <note>
+    /// <p>Backup vault name might not be available when a supported service creates the backup.</p>
     /// </note>
     pub backup_vault_name: std::option::Option<std::string::String>,
-    /// <p>The next item following a partial list of returned items. For example, if a request is
-    /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
-    /// to return more items in your list starting at the location pointed to by the next
-    /// token.</p>
+    /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to be returned.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>Returns only recovery points that match the specified resource Amazon Resource Name
-    /// (ARN).</p>
+    /// <p>Returns only recovery points that match the specified resource Amazon Resource Name (ARN).</p>
     pub by_resource_arn: std::option::Option<std::string::String>,
     /// <p>Returns only recovery points that match the specified resource type.</p>
     pub by_resource_type: std::option::Option<std::string::String>,
@@ -14727,21 +13568,13 @@ pub struct ListRecoveryPointsByBackupVaultInput {
     pub by_created_after: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl ListRecoveryPointsByBackupVaultInput {
-    /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-    /// by names that are unique to the account used to create them and the Amazon Web Services
-    /// Region where they are created. They consist of lowercase letters, numbers, and
-    /// hyphens.</p>
-    /// <note>
-    /// <p>Backup vault name might not be available when a supported service creates the
-    /// backup.</p>
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p> <note>
+    /// <p>Backup vault name might not be available when a supported service creates the backup.</p>
     /// </note>
     pub fn backup_vault_name(&self) -> std::option::Option<&str> {
         self.backup_vault_name.as_deref()
     }
-    /// <p>The next item following a partial list of returned items. For example, if a request is
-    /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
-    /// to return more items in your list starting at the location pointed to by the next
-    /// token.</p>
+    /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -14749,8 +13582,7 @@ impl ListRecoveryPointsByBackupVaultInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>Returns only recovery points that match the specified resource Amazon Resource Name
-    /// (ARN).</p>
+    /// <p>Returns only recovery points that match the specified resource Amazon Resource Name (ARN).</p>
     pub fn by_resource_arn(&self) -> std::option::Option<&str> {
         self.by_resource_arn.as_deref()
     }
@@ -14790,19 +13622,13 @@ impl std::fmt::Debug for ListRecoveryPointsByBackupVaultInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProtectedResourcesInput {
-    /// <p>The next item following a partial list of returned items. For example, if a request is
-    /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
-    /// to return more items in your list starting at the location pointed to by the next
-    /// token.</p>
+    /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to be returned.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListProtectedResourcesInput {
-    /// <p>The next item following a partial list of returned items. For example, if a request is
-    /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
-    /// to return more items in your list starting at the location pointed to by the next
-    /// token.</p>
+    /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -14824,21 +13650,17 @@ impl std::fmt::Debug for ListProtectedResourcesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFrameworksInput {
-    /// <p>The number of desired results from 1 to 1000. Optional. If unspecified, the query will
-    /// return 1 MB of data.</p>
+    /// <p>The number of desired results from 1 to 1000. Optional. If unspecified, the query will return 1 MB of data.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>An identifier that was returned from the previous call to this operation, which can be
-    /// used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListFrameworksInput {
-    /// <p>The number of desired results from 1 to 1000. Optional. If unspecified, the query will
-    /// return 1 MB of data.</p>
+    /// <p>The number of desired results from 1 to 1000. Optional. If unspecified, the query will return 1 MB of data.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>An identifier that was returned from the previous call to this operation, which can be
-    /// used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -14856,14 +13678,11 @@ impl std::fmt::Debug for ListFrameworksInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCopyJobsInput {
-    /// <p>The next item following a partial list of returned items. For example, if a request is
-    /// made to return maxResults number of items, NextToken allows you to return more items in
-    /// your list starting at the location pointed to by the next token. </p>
+    /// <p>The next item following a partial list of returned items. For example, if a request is made to return maxResults number of items, NextToken allows you to return more items in your list starting at the location pointed to by the next token. </p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to be returned.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>Returns only copy jobs that match the specified resource Amazon Resource Name (ARN).
-    /// </p>
+    /// <p>Returns only copy jobs that match the specified resource Amazon Resource Name (ARN). </p>
     pub by_resource_arn: std::option::Option<std::string::String>,
     /// <p>Returns only copy jobs that are in the specified state.</p>
     pub by_state: std::option::Option<crate::model::CopyJobState>,
@@ -14873,48 +13692,22 @@ pub struct ListCopyJobsInput {
     pub by_created_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Returns only backup jobs for the specified resources:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>DynamoDB</code> for Amazon DynamoDB</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>EBS</code> for Amazon Elastic Block Store</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>EC2</code> for Amazon Elastic Compute Cloud</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>EFS</code> for Amazon Elastic File System</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RDS</code> for Amazon Relational Database Service</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Aurora</code> for Amazon Aurora</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Storage Gateway</code> for Storage Gateway</p>
-    /// </li>
+    /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
+    /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
+    /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
+    /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
+    /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+    /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
+    /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
     /// </ul>
     pub by_resource_type: std::option::Option<std::string::String>,
-    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a source backup vault to copy
-    /// from; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.
-    /// </p>
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a source backup vault to copy from; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>. </p>
     pub by_destination_vault_arn: std::option::Option<std::string::String>,
-    /// <p>The account ID to list the jobs from. Returns only copy jobs associated with the
-    /// specified account ID.</p>
+    /// <p>The account ID to list the jobs from. Returns only copy jobs associated with the specified account ID.</p>
     pub by_account_id: std::option::Option<std::string::String>,
 }
 impl ListCopyJobsInput {
-    /// <p>The next item following a partial list of returned items. For example, if a request is
-    /// made to return maxResults number of items, NextToken allows you to return more items in
-    /// your list starting at the location pointed to by the next token. </p>
+    /// <p>The next item following a partial list of returned items. For example, if a request is made to return maxResults number of items, NextToken allows you to return more items in your list starting at the location pointed to by the next token. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -14922,8 +13715,7 @@ impl ListCopyJobsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>Returns only copy jobs that match the specified resource Amazon Resource Name (ARN).
-    /// </p>
+    /// <p>Returns only copy jobs that match the specified resource Amazon Resource Name (ARN). </p>
     pub fn by_resource_arn(&self) -> std::option::Option<&str> {
         self.by_resource_arn.as_deref()
     }
@@ -14941,46 +13733,22 @@ impl ListCopyJobsInput {
     }
     /// <p>Returns only backup jobs for the specified resources:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>DynamoDB</code> for Amazon DynamoDB</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>EBS</code> for Amazon Elastic Block Store</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>EC2</code> for Amazon Elastic Compute Cloud</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>EFS</code> for Amazon Elastic File System</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RDS</code> for Amazon Relational Database Service</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Aurora</code> for Amazon Aurora</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Storage Gateway</code> for Storage Gateway</p>
-    /// </li>
+    /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
+    /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
+    /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
+    /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
+    /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+    /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
+    /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
     /// </ul>
     pub fn by_resource_type(&self) -> std::option::Option<&str> {
         self.by_resource_type.as_deref()
     }
-    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a source backup vault to copy
-    /// from; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.
-    /// </p>
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a source backup vault to copy from; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>. </p>
     pub fn by_destination_vault_arn(&self) -> std::option::Option<&str> {
         self.by_destination_vault_arn.as_deref()
     }
-    /// <p>The account ID to list the jobs from. Returns only copy jobs associated with the
-    /// specified account ID.</p>
+    /// <p>The account ID to list the jobs from. Returns only copy jobs associated with the specified account ID.</p>
     pub fn by_account_id(&self) -> std::option::Option<&str> {
         self.by_account_id.as_deref()
     }
@@ -15005,19 +13773,13 @@ impl std::fmt::Debug for ListCopyJobsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBackupVaultsInput {
-    /// <p>The next item following a partial list of returned items. For example, if a request is
-    /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
-    /// to return more items in your list starting at the location pointed to by the next
-    /// token.</p>
+    /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to be returned.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListBackupVaultsInput {
-    /// <p>The next item following a partial list of returned items. For example, if a request is
-    /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
-    /// to return more items in your list starting at the location pointed to by the next
-    /// token.</p>
+    /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -15041,10 +13803,7 @@ impl std::fmt::Debug for ListBackupVaultsInput {
 pub struct ListBackupSelectionsInput {
     /// <p>Uniquely identifies a backup plan.</p>
     pub backup_plan_id: std::option::Option<std::string::String>,
-    /// <p>The next item following a partial list of returned items. For example, if a request is
-    /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
-    /// to return more items in your list starting at the location pointed to by the next
-    /// token.</p>
+    /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to be returned.</p>
     pub max_results: std::option::Option<i32>,
@@ -15054,10 +13813,7 @@ impl ListBackupSelectionsInput {
     pub fn backup_plan_id(&self) -> std::option::Option<&str> {
         self.backup_plan_id.as_deref()
     }
-    /// <p>The next item following a partial list of returned items. For example, if a request is
-    /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
-    /// to return more items in your list starting at the location pointed to by the next
-    /// token.</p>
+    /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -15082,10 +13838,7 @@ impl std::fmt::Debug for ListBackupSelectionsInput {
 pub struct ListBackupPlanVersionsInput {
     /// <p>Uniquely identifies a backup plan.</p>
     pub backup_plan_id: std::option::Option<std::string::String>,
-    /// <p>The next item following a partial list of returned items. For example, if a request is
-    /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
-    /// to return more items in your list starting at the location pointed to by the next
-    /// token.</p>
+    /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to be returned.</p>
     pub max_results: std::option::Option<i32>,
@@ -15095,10 +13848,7 @@ impl ListBackupPlanVersionsInput {
     pub fn backup_plan_id(&self) -> std::option::Option<&str> {
         self.backup_plan_id.as_deref()
     }
-    /// <p>The next item following a partial list of returned items. For example, if a request is
-    /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
-    /// to return more items in your list starting at the location pointed to by the next
-    /// token.</p>
+    /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -15121,19 +13871,13 @@ impl std::fmt::Debug for ListBackupPlanVersionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBackupPlanTemplatesInput {
-    /// <p>The next item following a partial list of returned items. For example, if a request is
-    /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
-    /// to return more items in your list starting at the location pointed to by the next
-    /// token.</p>
+    /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to be returned.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListBackupPlanTemplatesInput {
-    /// <p>The next item following a partial list of returned items. For example, if a request is
-    /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
-    /// to return more items in your list starting at the location pointed to by the next
-    /// token.</p>
+    /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -15155,22 +13899,15 @@ impl std::fmt::Debug for ListBackupPlanTemplatesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBackupPlansInput {
-    /// <p>The next item following a partial list of returned items. For example, if a request is
-    /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
-    /// to return more items in your list starting at the location pointed to by the next
-    /// token.</p>
+    /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to be returned.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>A Boolean value with a default value of <code>FALSE</code> that returns deleted backup
-    /// plans when set to <code>TRUE</code>.</p>
+    /// <p>A Boolean value with a default value of <code>FALSE</code> that returns deleted backup plans when set to <code>TRUE</code>.</p>
     pub include_deleted: std::option::Option<bool>,
 }
 impl ListBackupPlansInput {
-    /// <p>The next item following a partial list of returned items. For example, if a request is
-    /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
-    /// to return more items in your list starting at the location pointed to by the next
-    /// token.</p>
+    /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -15178,8 +13915,7 @@ impl ListBackupPlansInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>A Boolean value with a default value of <code>FALSE</code> that returns deleted backup
-    /// plans when set to <code>TRUE</code>.</p>
+    /// <p>A Boolean value with a default value of <code>FALSE</code> that returns deleted backup plans when set to <code>TRUE</code>.</p>
     pub fn include_deleted(&self) -> std::option::Option<bool> {
         self.include_deleted
     }
@@ -15198,22 +13934,15 @@ impl std::fmt::Debug for ListBackupPlansInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBackupJobsInput {
-    /// <p>The next item following a partial list of returned items. For example, if a request is
-    /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
-    /// to return more items in your list starting at the location pointed to by the next
-    /// token.</p>
+    /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items to be returned.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>Returns only backup jobs that match the specified resource Amazon Resource Name
-    /// (ARN).</p>
+    /// <p>Returns only backup jobs that match the specified resource Amazon Resource Name (ARN).</p>
     pub by_resource_arn: std::option::Option<std::string::String>,
     /// <p>Returns only backup jobs that are in the specified state.</p>
     pub by_state: std::option::Option<crate::model::BackupJobState>,
-    /// <p>Returns only backup jobs that will be stored in the specified backup vault. Backup
-    /// vaults are identified by names that are unique to the account used to create them and the
-    /// Amazon Web Services Region where they are created. They consist of lowercase letters,
-    /// numbers, and hyphens.</p>
+    /// <p>Returns only backup jobs that will be stored in the specified backup vault. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     pub by_backup_vault_name: std::option::Option<std::string::String>,
     /// <p>Returns only backup jobs that were created before the specified date.</p>
     pub by_created_before: std::option::Option<aws_smithy_types::DateTime>,
@@ -15221,47 +13950,21 @@ pub struct ListBackupJobsInput {
     pub by_created_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Returns only backup jobs for the specified resources:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>DynamoDB</code> for Amazon DynamoDB</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>EBS</code> for Amazon Elastic Block Store</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>EC2</code> for Amazon Elastic Compute Cloud</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>EFS</code> for Amazon Elastic File System</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RDS</code> for Amazon Relational Database Service</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Aurora</code> for Amazon Aurora</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Storage Gateway</code> for Storage Gateway</p>
-    /// </li>
+    /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
+    /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
+    /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
+    /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
+    /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+    /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
+    /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
     /// </ul>
     pub by_resource_type: std::option::Option<std::string::String>,
-    /// <p>The account ID to list the jobs from. Returns only backup jobs associated with the
-    /// specified account ID.</p>
-    /// <p>If used from an Organizations management account, passing <code>*</code> returns
-    /// all jobs across the organization.</p>
+    /// <p>The account ID to list the jobs from. Returns only backup jobs associated with the specified account ID.</p>
+    /// <p>If used from an Organizations management account, passing <code>*</code> returns all jobs across the organization.</p>
     pub by_account_id: std::option::Option<std::string::String>,
 }
 impl ListBackupJobsInput {
-    /// <p>The next item following a partial list of returned items. For example, if a request is
-    /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
-    /// to return more items in your list starting at the location pointed to by the next
-    /// token.</p>
+    /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -15269,8 +13972,7 @@ impl ListBackupJobsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>Returns only backup jobs that match the specified resource Amazon Resource Name
-    /// (ARN).</p>
+    /// <p>Returns only backup jobs that match the specified resource Amazon Resource Name (ARN).</p>
     pub fn by_resource_arn(&self) -> std::option::Option<&str> {
         self.by_resource_arn.as_deref()
     }
@@ -15278,10 +13980,7 @@ impl ListBackupJobsInput {
     pub fn by_state(&self) -> std::option::Option<&crate::model::BackupJobState> {
         self.by_state.as_ref()
     }
-    /// <p>Returns only backup jobs that will be stored in the specified backup vault. Backup
-    /// vaults are identified by names that are unique to the account used to create them and the
-    /// Amazon Web Services Region where they are created. They consist of lowercase letters,
-    /// numbers, and hyphens.</p>
+    /// <p>Returns only backup jobs that will be stored in the specified backup vault. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     pub fn by_backup_vault_name(&self) -> std::option::Option<&str> {
         self.by_backup_vault_name.as_deref()
     }
@@ -15295,42 +13994,19 @@ impl ListBackupJobsInput {
     }
     /// <p>Returns only backup jobs for the specified resources:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>DynamoDB</code> for Amazon DynamoDB</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>EBS</code> for Amazon Elastic Block Store</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>EC2</code> for Amazon Elastic Compute Cloud</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>EFS</code> for Amazon Elastic File System</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RDS</code> for Amazon Relational Database Service</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Aurora</code> for Amazon Aurora</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Storage Gateway</code> for Storage Gateway</p>
-    /// </li>
+    /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
+    /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
+    /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
+    /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
+    /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+    /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
+    /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
     /// </ul>
     pub fn by_resource_type(&self) -> std::option::Option<&str> {
         self.by_resource_type.as_deref()
     }
-    /// <p>The account ID to list the jobs from. Returns only backup jobs associated with the
-    /// specified account ID.</p>
-    /// <p>If used from an Organizations management account, passing <code>*</code> returns
-    /// all jobs across the organization.</p>
+    /// <p>The account ID to list the jobs from. Returns only backup jobs associated with the specified account ID.</p>
+    /// <p>If used from an Organizations management account, passing <code>*</code> returns all jobs across the organization.</p>
     pub fn by_account_id(&self) -> std::option::Option<&str> {
         self.by_account_id.as_deref()
     }
@@ -15366,25 +14042,17 @@ impl std::fmt::Debug for GetSupportedResourceTypesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRecoveryPointRestoreMetadataInput {
-    /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-    /// by names that are unique to the account used to create them and the Amazon Web Services
-    /// Region where they are created. They consist of lowercase letters, numbers, and
-    /// hyphens.</p>
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     pub backup_vault_name: std::option::Option<std::string::String>,
-    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example,
-    /// <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
     pub recovery_point_arn: std::option::Option<std::string::String>,
 }
 impl GetRecoveryPointRestoreMetadataInput {
-    /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-    /// by names that are unique to the account used to create them and the Amazon Web Services
-    /// Region where they are created. They consist of lowercase letters, numbers, and
-    /// hyphens.</p>
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     pub fn backup_vault_name(&self) -> std::option::Option<&str> {
         self.backup_vault_name.as_deref()
     }
-    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example,
-    /// <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
     pub fn recovery_point_arn(&self) -> std::option::Option<&str> {
         self.recovery_point_arn.as_deref()
     }
@@ -15402,17 +14070,11 @@ impl std::fmt::Debug for GetRecoveryPointRestoreMetadataInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBackupVaultNotificationsInput {
-    /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-    /// by names that are unique to the account used to create them and the Amazon Web Services
-    /// Region where they are created. They consist of lowercase letters, numbers, and
-    /// hyphens.</p>
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     pub backup_vault_name: std::option::Option<std::string::String>,
 }
 impl GetBackupVaultNotificationsInput {
-    /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-    /// by names that are unique to the account used to create them and the Amazon Web Services
-    /// Region where they are created. They consist of lowercase letters, numbers, and
-    /// hyphens.</p>
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     pub fn backup_vault_name(&self) -> std::option::Option<&str> {
         self.backup_vault_name.as_deref()
     }
@@ -15429,17 +14091,11 @@ impl std::fmt::Debug for GetBackupVaultNotificationsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBackupVaultAccessPolicyInput {
-    /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-    /// by names that are unique to the account used to create them and the Amazon Web Services
-    /// Region where they are created. They consist of lowercase letters, numbers, and
-    /// hyphens.</p>
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     pub backup_vault_name: std::option::Option<std::string::String>,
 }
 impl GetBackupVaultAccessPolicyInput {
-    /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-    /// by names that are unique to the account used to create them and the Amazon Web Services
-    /// Region where they are created. They consist of lowercase letters, numbers, and
-    /// hyphens.</p>
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     pub fn backup_vault_name(&self) -> std::option::Option<&str> {
         self.backup_vault_name.as_deref()
     }
@@ -15458,8 +14114,7 @@ impl std::fmt::Debug for GetBackupVaultAccessPolicyInput {
 pub struct GetBackupSelectionInput {
     /// <p>Uniquely identifies a backup plan.</p>
     pub backup_plan_id: std::option::Option<std::string::String>,
-    /// <p>Uniquely identifies the body of a request to assign a set of resources to a backup
-    /// plan.</p>
+    /// <p>Uniquely identifies the body of a request to assign a set of resources to a backup plan.</p>
     pub selection_id: std::option::Option<std::string::String>,
 }
 impl GetBackupSelectionInput {
@@ -15467,8 +14122,7 @@ impl GetBackupSelectionInput {
     pub fn backup_plan_id(&self) -> std::option::Option<&str> {
         self.backup_plan_id.as_deref()
     }
-    /// <p>Uniquely identifies the body of a request to assign a set of resources to a backup
-    /// plan.</p>
+    /// <p>Uniquely identifies the body of a request to assign a set of resources to a backup plan.</p>
     pub fn selection_id(&self) -> std::option::Option<&str> {
         self.selection_id.as_deref()
     }
@@ -15530,8 +14184,7 @@ impl std::fmt::Debug for GetBackupPlanFromJsonInput {
 pub struct GetBackupPlanInput {
     /// <p>Uniquely identifies a backup plan.</p>
     pub backup_plan_id: std::option::Option<std::string::String>,
-    /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes
-    /// long. Version IDs cannot be edited.</p>
+    /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version IDs cannot be edited.</p>
     pub version_id: std::option::Option<std::string::String>,
 }
 impl GetBackupPlanInput {
@@ -15539,8 +14192,7 @@ impl GetBackupPlanInput {
     pub fn backup_plan_id(&self) -> std::option::Option<&str> {
         self.backup_plan_id.as_deref()
     }
-    /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes
-    /// long. Version IDs cannot be edited.</p>
+    /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version IDs cannot be edited.</p>
     pub fn version_id(&self) -> std::option::Option<&str> {
         self.version_id.as_deref()
     }
@@ -15581,8 +14233,7 @@ impl std::fmt::Debug for ExportBackupPlanTemplateInput {
 pub struct DisassociateRecoveryPointInput {
     /// <p>The unique name of an Backup vault.</p>
     pub backup_vault_name: std::option::Option<std::string::String>,
-    /// <p>An Amazon Resource Name (ARN) that uniquely identifies an Backup recovery
-    /// point.</p>
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies an Backup recovery point.</p>
     pub recovery_point_arn: std::option::Option<std::string::String>,
 }
 impl DisassociateRecoveryPointInput {
@@ -15590,8 +14241,7 @@ impl DisassociateRecoveryPointInput {
     pub fn backup_vault_name(&self) -> std::option::Option<&str> {
         self.backup_vault_name.as_deref()
     }
-    /// <p>An Amazon Resource Name (ARN) that uniquely identifies an Backup recovery
-    /// point.</p>
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies an Backup recovery point.</p>
     pub fn recovery_point_arn(&self) -> std::option::Option<&str> {
         self.recovery_point_arn.as_deref()
     }
@@ -15651,13 +14301,11 @@ impl std::fmt::Debug for DescribeReportPlanInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReportJobInput {
-    /// <p>The identifier of the report job. A unique, randomly generated, Unicode, UTF-8 encoded
-    /// string that is at most 1,024 bytes long. The report job ID cannot be edited.</p>
+    /// <p>The identifier of the report job. A unique, randomly generated, Unicode, UTF-8 encoded string that is at most 1,024 bytes long. The report job ID cannot be edited.</p>
     pub report_job_id: std::option::Option<std::string::String>,
 }
 impl DescribeReportJobInput {
-    /// <p>The identifier of the report job. A unique, randomly generated, Unicode, UTF-8 encoded
-    /// string that is at most 1,024 bytes long. The report job ID cannot be edited.</p>
+    /// <p>The identifier of the report job. A unique, randomly generated, Unicode, UTF-8 encoded string that is at most 1,024 bytes long. The report job ID cannot be edited.</p>
     pub fn report_job_id(&self) -> std::option::Option<&str> {
         self.report_job_id.as_deref()
     }
@@ -15685,25 +14333,17 @@ impl std::fmt::Debug for DescribeRegionSettingsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRecoveryPointInput {
-    /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-    /// by names that are unique to the account used to create them and the Amazon Web Services
-    /// Region where they are created. They consist of lowercase letters, numbers, and
-    /// hyphens.</p>
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     pub backup_vault_name: std::option::Option<std::string::String>,
-    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example,
-    /// <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
     pub recovery_point_arn: std::option::Option<std::string::String>,
 }
 impl DescribeRecoveryPointInput {
-    /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-    /// by names that are unique to the account used to create them and the Amazon Web Services
-    /// Region where they are created. They consist of lowercase letters, numbers, and
-    /// hyphens.</p>
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     pub fn backup_vault_name(&self) -> std::option::Option<&str> {
         self.backup_vault_name.as_deref()
     }
-    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example,
-    /// <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
     pub fn recovery_point_arn(&self) -> std::option::Option<&str> {
         self.recovery_point_arn.as_deref()
     }
@@ -15721,13 +14361,11 @@ impl std::fmt::Debug for DescribeRecoveryPointInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProtectedResourceInput {
-    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN
-    /// depends on the resource type.</p>
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl DescribeProtectedResourceInput {
-    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN
-    /// depends on the resource type.</p>
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -15797,17 +14435,11 @@ impl std::fmt::Debug for DescribeCopyJobInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBackupVaultInput {
-    /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-    /// by names that are unique to the account used to create them and the Amazon Web Services
-    /// Region where they are created. They consist of lowercase letters, numbers, and
-    /// hyphens.</p>
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     pub backup_vault_name: std::option::Option<std::string::String>,
 }
 impl DescribeBackupVaultInput {
-    /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-    /// by names that are unique to the account used to create them and the Amazon Web Services
-    /// Region where they are created. They consist of lowercase letters, numbers, and
-    /// hyphens.</p>
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     pub fn backup_vault_name(&self) -> std::option::Option<&str> {
         self.backup_vault_name.as_deref()
     }
@@ -15866,25 +14498,17 @@ impl std::fmt::Debug for DeleteReportPlanInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRecoveryPointInput {
-    /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-    /// by names that are unique to the account used to create them and the Amazon Web Services
-    /// Region where they are created. They consist of lowercase letters, numbers, and
-    /// hyphens.</p>
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     pub backup_vault_name: std::option::Option<std::string::String>,
-    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example,
-    /// <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
     pub recovery_point_arn: std::option::Option<std::string::String>,
 }
 impl DeleteRecoveryPointInput {
-    /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-    /// by names that are unique to the account used to create them and the Amazon Web Services
-    /// Region where they are created. They consist of lowercase letters, numbers, and
-    /// hyphens.</p>
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     pub fn backup_vault_name(&self) -> std::option::Option<&str> {
         self.backup_vault_name.as_deref()
     }
-    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example,
-    /// <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
+    /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
     pub fn recovery_point_arn(&self) -> std::option::Option<&str> {
         self.recovery_point_arn.as_deref()
     }
@@ -15923,15 +14547,11 @@ impl std::fmt::Debug for DeleteFrameworkInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBackupVaultNotificationsInput {
-    /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-    /// by names that are unique to the account used to create them and the Region where they are
-    /// created. They consist of lowercase letters, numbers, and hyphens.</p>
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     pub backup_vault_name: std::option::Option<std::string::String>,
 }
 impl DeleteBackupVaultNotificationsInput {
-    /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-    /// by names that are unique to the account used to create them and the Region where they are
-    /// created. They consist of lowercase letters, numbers, and hyphens.</p>
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     pub fn backup_vault_name(&self) -> std::option::Option<&str> {
         self.backup_vault_name.as_deref()
     }
@@ -15969,17 +14589,11 @@ impl std::fmt::Debug for DeleteBackupVaultLockConfigurationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBackupVaultAccessPolicyInput {
-    /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-    /// by names that are unique to the account used to create them and the Amazon Web Services
-    /// Region where they are created. They consist of lowercase letters, numbers, and
-    /// hyphens.</p>
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     pub backup_vault_name: std::option::Option<std::string::String>,
 }
 impl DeleteBackupVaultAccessPolicyInput {
-    /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-    /// by names that are unique to the account used to create them and the Amazon Web Services
-    /// Region where they are created. They consist of lowercase letters, numbers, and
-    /// hyphens.</p>
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     pub fn backup_vault_name(&self) -> std::option::Option<&str> {
         self.backup_vault_name.as_deref()
     }
@@ -15996,17 +14610,11 @@ impl std::fmt::Debug for DeleteBackupVaultAccessPolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBackupVaultInput {
-    /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-    /// by names that are unique to the account used to create them and the Amazon Web Services
-    /// Region where they are created. They consist of lowercase letters, numbers, and
-    /// hyphens.</p>
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     pub backup_vault_name: std::option::Option<std::string::String>,
 }
 impl DeleteBackupVaultInput {
-    /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-    /// by names that are unique to the account used to create them and the Amazon Web Services
-    /// Region where they are created. They consist of lowercase letters, numbers, and
-    /// hyphens.</p>
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     pub fn backup_vault_name(&self) -> std::option::Option<&str> {
         self.backup_vault_name.as_deref()
     }
@@ -16025,8 +14633,7 @@ impl std::fmt::Debug for DeleteBackupVaultInput {
 pub struct DeleteBackupSelectionInput {
     /// <p>Uniquely identifies a backup plan.</p>
     pub backup_plan_id: std::option::Option<std::string::String>,
-    /// <p>Uniquely identifies the body of a request to assign a set of resources to a backup
-    /// plan.</p>
+    /// <p>Uniquely identifies the body of a request to assign a set of resources to a backup plan.</p>
     pub selection_id: std::option::Option<std::string::String>,
 }
 impl DeleteBackupSelectionInput {
@@ -16034,8 +14641,7 @@ impl DeleteBackupSelectionInput {
     pub fn backup_plan_id(&self) -> std::option::Option<&str> {
         self.backup_plan_id.as_deref()
     }
-    /// <p>Uniquely identifies the body of a request to assign a set of resources to a backup
-    /// plan.</p>
+    /// <p>Uniquely identifies the body of a request to assign a set of resources to a backup plan.</p>
     pub fn selection_id(&self) -> std::option::Option<&str> {
         self.selection_id.as_deref()
     }
@@ -16074,39 +14680,24 @@ impl std::fmt::Debug for DeleteBackupPlanInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateReportPlanInput {
-    /// <p>The unique name of the report plan. The name must be between 1 and 256 characters,
-    /// starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and
-    /// underscores (_).</p>
+    /// <p>The unique name of the report plan. The name must be between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
     pub report_plan_name: std::option::Option<std::string::String>,
     /// <p>An optional description of the report plan with a maximum of 1,024 characters.</p>
     pub report_plan_description: std::option::Option<std::string::String>,
-    /// <p>A structure that contains information about where and how to deliver your reports,
-    /// specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your
-    /// reports.</p>
+    /// <p>A structure that contains information about where and how to deliver your reports, specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your reports.</p>
     pub report_delivery_channel: std::option::Option<crate::model::ReportDeliveryChannel>,
-    /// <p>Identifies the report template for the report. Reports are built using a report
-    /// template. The report templates are:</p>
-    /// <p>
-    /// <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT |
-    /// COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
-    /// </p>
-    /// <p>If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or
-    /// <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the report
-    /// coverage by Amazon Web Services Regions and frameworks.</p>
+    /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p>
+    /// <p> <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
+    /// <p>If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the report coverage by Amazon Web Services Regions and frameworks.</p>
     pub report_setting: std::option::Option<crate::model::ReportSetting>,
-    /// <p>Metadata that you can assign to help organize the report plans that you create. Each tag
-    /// is a key-value pair.</p>
+    /// <p>Metadata that you can assign to help organize the report plans that you create. Each tag is a key-value pair.</p>
     pub report_plan_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
-    /// calls to <code>CreateReportPlanInput</code>. Retrying a successful request with the same
-    /// idempotency token results in a success message with no action taken.</p>
+    /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>CreateReportPlanInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
     pub idempotency_token: std::option::Option<std::string::String>,
 }
 impl CreateReportPlanInput {
-    /// <p>The unique name of the report plan. The name must be between 1 and 256 characters,
-    /// starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and
-    /// underscores (_).</p>
+    /// <p>The unique name of the report plan. The name must be between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
     pub fn report_plan_name(&self) -> std::option::Option<&str> {
         self.report_plan_name.as_deref()
     }
@@ -16114,37 +14705,26 @@ impl CreateReportPlanInput {
     pub fn report_plan_description(&self) -> std::option::Option<&str> {
         self.report_plan_description.as_deref()
     }
-    /// <p>A structure that contains information about where and how to deliver your reports,
-    /// specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your
-    /// reports.</p>
+    /// <p>A structure that contains information about where and how to deliver your reports, specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your reports.</p>
     pub fn report_delivery_channel(
         &self,
     ) -> std::option::Option<&crate::model::ReportDeliveryChannel> {
         self.report_delivery_channel.as_ref()
     }
-    /// <p>Identifies the report template for the report. Reports are built using a report
-    /// template. The report templates are:</p>
-    /// <p>
-    /// <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT |
-    /// COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
-    /// </p>
-    /// <p>If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or
-    /// <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the report
-    /// coverage by Amazon Web Services Regions and frameworks.</p>
+    /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p>
+    /// <p> <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
+    /// <p>If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the report coverage by Amazon Web Services Regions and frameworks.</p>
     pub fn report_setting(&self) -> std::option::Option<&crate::model::ReportSetting> {
         self.report_setting.as_ref()
     }
-    /// <p>Metadata that you can assign to help organize the report plans that you create. Each tag
-    /// is a key-value pair.</p>
+    /// <p>Metadata that you can assign to help organize the report plans that you create. Each tag is a key-value pair.</p>
     pub fn report_plan_tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.report_plan_tags.as_ref()
     }
-    /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
-    /// calls to <code>CreateReportPlanInput</code>. Retrying a successful request with the same
-    /// idempotency token results in a success message with no action taken.</p>
+    /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>CreateReportPlanInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
     pub fn idempotency_token(&self) -> std::option::Option<&str> {
         self.idempotency_token.as_deref()
     }
@@ -16166,28 +14746,20 @@ impl std::fmt::Debug for CreateReportPlanInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFrameworkInput {
-    /// <p>The unique name of the framework. The name must be between 1 and 256 characters,
-    /// starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and
-    /// underscores (_).</p>
+    /// <p>The unique name of the framework. The name must be between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
     pub framework_name: std::option::Option<std::string::String>,
     /// <p>An optional description of the framework with a maximum of 1,024 characters.</p>
     pub framework_description: std::option::Option<std::string::String>,
-    /// <p>A list of the controls that make up the framework. Each control in the list has a name,
-    /// input parameters, and scope.</p>
+    /// <p>A list of the controls that make up the framework. Each control in the list has a name, input parameters, and scope.</p>
     pub framework_controls: std::option::Option<std::vec::Vec<crate::model::FrameworkControl>>,
-    /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
-    /// calls to <code>CreateFrameworkInput</code>. Retrying a successful request with the same
-    /// idempotency token results in a success message with no action taken.</p>
+    /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>CreateFrameworkInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
     pub idempotency_token: std::option::Option<std::string::String>,
-    /// <p>Metadata that you can assign to help organize the frameworks that you create. Each tag
-    /// is a key-value pair.</p>
+    /// <p>Metadata that you can assign to help organize the frameworks that you create. Each tag is a key-value pair.</p>
     pub framework_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateFrameworkInput {
-    /// <p>The unique name of the framework. The name must be between 1 and 256 characters,
-    /// starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and
-    /// underscores (_).</p>
+    /// <p>The unique name of the framework. The name must be between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
     pub fn framework_name(&self) -> std::option::Option<&str> {
         self.framework_name.as_deref()
     }
@@ -16195,19 +14767,15 @@ impl CreateFrameworkInput {
     pub fn framework_description(&self) -> std::option::Option<&str> {
         self.framework_description.as_deref()
     }
-    /// <p>A list of the controls that make up the framework. Each control in the list has a name,
-    /// input parameters, and scope.</p>
+    /// <p>A list of the controls that make up the framework. Each control in the list has a name, input parameters, and scope.</p>
     pub fn framework_controls(&self) -> std::option::Option<&[crate::model::FrameworkControl]> {
         self.framework_controls.as_deref()
     }
-    /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
-    /// calls to <code>CreateFrameworkInput</code>. Retrying a successful request with the same
-    /// idempotency token results in a success message with no action taken.</p>
+    /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>CreateFrameworkInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
     pub fn idempotency_token(&self) -> std::option::Option<&str> {
         self.idempotency_token.as_deref()
     }
-    /// <p>Metadata that you can assign to help organize the frameworks that you create. Each tag
-    /// is a key-value pair.</p>
+    /// <p>Metadata that you can assign to help organize the frameworks that you create. Each tag is a key-value pair.</p>
     pub fn framework_tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -16231,44 +14799,34 @@ impl std::fmt::Debug for CreateFrameworkInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBackupVaultInput {
-    /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-    /// by names that are unique to the account used to create them and the Amazon Web Services
-    /// Region where they are created. They consist of letters, numbers, and hyphens.</p>
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of letters, numbers, and hyphens.</p>
     pub backup_vault_name: std::option::Option<std::string::String>,
-    /// <p>Metadata that you can assign to help organize the resources that you create. Each tag is
-    /// a key-value pair.</p>
+    /// <p>Metadata that you can assign to help organize the resources that you create. Each tag is a key-value pair.</p>
     pub backup_vault_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The server-side encryption key that is used to protect your backups; for example,
-    /// <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
+    /// <p>The server-side encryption key that is used to protect your backups; for example, <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
     pub encryption_key_arn: std::option::Option<std::string::String>,
-    /// <p>A unique string that identifies the request and allows failed requests to be retried
-    /// without the risk of running the operation twice. This parameter is optional.</p>
+    /// <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice. This parameter is optional.</p>
     /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
     pub creator_request_id: std::option::Option<std::string::String>,
 }
 impl CreateBackupVaultInput {
-    /// <p>The name of a logical container where backups are stored. Backup vaults are identified
-    /// by names that are unique to the account used to create them and the Amazon Web Services
-    /// Region where they are created. They consist of letters, numbers, and hyphens.</p>
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of letters, numbers, and hyphens.</p>
     pub fn backup_vault_name(&self) -> std::option::Option<&str> {
         self.backup_vault_name.as_deref()
     }
-    /// <p>Metadata that you can assign to help organize the resources that you create. Each tag is
-    /// a key-value pair.</p>
+    /// <p>Metadata that you can assign to help organize the resources that you create. Each tag is a key-value pair.</p>
     pub fn backup_vault_tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.backup_vault_tags.as_ref()
     }
-    /// <p>The server-side encryption key that is used to protect your backups; for example,
-    /// <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
+    /// <p>The server-side encryption key that is used to protect your backups; for example, <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
     pub fn encryption_key_arn(&self) -> std::option::Option<&str> {
         self.encryption_key_arn.as_deref()
     }
-    /// <p>A unique string that identifies the request and allows failed requests to be retried
-    /// without the risk of running the operation twice. This parameter is optional.</p>
+    /// <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice. This parameter is optional.</p>
     /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
     pub fn creator_request_id(&self) -> std::option::Option<&str> {
         self.creator_request_id.as_deref()
@@ -16289,19 +14847,16 @@ impl std::fmt::Debug for CreateBackupVaultInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBackupSelectionInput {
-    /// <p>Uniquely identifies the backup plan to be associated with the selection of
-    /// resources.</p>
+    /// <p>Uniquely identifies the backup plan to be associated with the selection of resources.</p>
     pub backup_plan_id: std::option::Option<std::string::String>,
     /// <p>Specifies the body of a request to assign a set of resources to a backup plan.</p>
     pub backup_selection: std::option::Option<crate::model::BackupSelection>,
-    /// <p>A unique string that identifies the request and allows failed requests to be retried
-    /// without the risk of running the operation twice. This parameter is optional.</p>
+    /// <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice. This parameter is optional.</p>
     /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
     pub creator_request_id: std::option::Option<std::string::String>,
 }
 impl CreateBackupSelectionInput {
-    /// <p>Uniquely identifies the backup plan to be associated with the selection of
-    /// resources.</p>
+    /// <p>Uniquely identifies the backup plan to be associated with the selection of resources.</p>
     pub fn backup_plan_id(&self) -> std::option::Option<&str> {
         self.backup_plan_id.as_deref()
     }
@@ -16309,8 +14864,7 @@ impl CreateBackupSelectionInput {
     pub fn backup_selection(&self) -> std::option::Option<&crate::model::BackupSelection> {
         self.backup_selection.as_ref()
     }
-    /// <p>A unique string that identifies the request and allows failed requests to be retried
-    /// without the risk of running the operation twice. This parameter is optional.</p>
+    /// <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice. This parameter is optional.</p>
     /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
     pub fn creator_request_id(&self) -> std::option::Option<&str> {
         self.creator_request_id.as_deref()
@@ -16330,38 +14884,28 @@ impl std::fmt::Debug for CreateBackupSelectionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBackupPlanInput {
-    /// <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or
-    /// more sets of <code>Rules</code>.</p>
+    /// <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
     pub backup_plan: std::option::Option<crate::model::BackupPlanInput>,
-    /// <p>To help organize your resources, you can assign your own metadata to the resources that
-    /// you create. Each tag is a key-value pair. The specified tags are assigned to all backups
-    /// created with this plan.</p>
+    /// <p>To help organize your resources, you can assign your own metadata to the resources that you create. Each tag is a key-value pair. The specified tags are assigned to all backups created with this plan.</p>
     pub backup_plan_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>Identifies the request and allows failed requests to be retried without the risk of
-    /// running the operation twice. If the request includes a <code>CreatorRequestId</code> that
-    /// matches an existing backup plan, that plan is returned. This parameter is optional.</p>
+    /// <p>Identifies the request and allows failed requests to be retried without the risk of running the operation twice. If the request includes a <code>CreatorRequestId</code> that matches an existing backup plan, that plan is returned. This parameter is optional.</p>
     /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
     pub creator_request_id: std::option::Option<std::string::String>,
 }
 impl CreateBackupPlanInput {
-    /// <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or
-    /// more sets of <code>Rules</code>.</p>
+    /// <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or more sets of <code>Rules</code>.</p>
     pub fn backup_plan(&self) -> std::option::Option<&crate::model::BackupPlanInput> {
         self.backup_plan.as_ref()
     }
-    /// <p>To help organize your resources, you can assign your own metadata to the resources that
-    /// you create. Each tag is a key-value pair. The specified tags are assigned to all backups
-    /// created with this plan.</p>
+    /// <p>To help organize your resources, you can assign your own metadata to the resources that you create. Each tag is a key-value pair. The specified tags are assigned to all backups created with this plan.</p>
     pub fn backup_plan_tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.backup_plan_tags.as_ref()
     }
-    /// <p>Identifies the request and allows failed requests to be retried without the risk of
-    /// running the operation twice. If the request includes a <code>CreatorRequestId</code> that
-    /// matches an existing backup plan, that plan is returned. This parameter is optional.</p>
+    /// <p>Identifies the request and allows failed requests to be retried without the risk of running the operation twice. If the request includes a <code>CreatorRequestId</code> that matches an existing backup plan, that plan is returned. This parameter is optional.</p>
     /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
     pub fn creator_request_id(&self) -> std::option::Option<&str> {
         self.creator_request_id.as_deref()

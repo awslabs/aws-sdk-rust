@@ -253,10 +253,7 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `AssociateServiceQuotaTemplate`.
     ///
-    /// <p>Associates your quota request template with your organization. When a new account is
-    /// created in your organization, the quota increase requests in the template are automatically
-    /// applied to the account. You can add a quota increase request for any adjustable quota to your
-    /// template.</p>
+    /// <p>Associates your quota request template with your organization. When a new account is created in your organization, the quota increase requests in the template are automatically applied to the account. You can add a quota increase request for any adjustable quota to your template.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateServiceQuotaTemplate<
         C = aws_smithy_client::erase::DynConnector,
@@ -316,8 +313,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteServiceQuotaIncreaseRequestFromTemplate`.
     ///
-    /// <p>Deletes the quota increase request for the specified quota from your quota request
-    /// template.</p>
+    /// <p>Deletes the quota increase request for the specified quota from your quota request template.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteServiceQuotaIncreaseRequestFromTemplate<
         C = aws_smithy_client::erase::DynConnector,
@@ -400,9 +396,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisassociateServiceQuotaTemplate`.
     ///
-    /// <p>Disables your quota request template. After a template is disabled, the quota increase
-    /// requests in the template are not applied to new accounts in your organization. Disabling a
-    /// quota request template does not apply its quota increase requests.</p>
+    /// <p>Disables your quota request template. After a template is disabled, the quota increase requests in the template are not applied to new accounts in your organization. Disabling a quota request template does not apply its quota increase requests.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateServiceQuotaTemplate<
         C = aws_smithy_client::erase::DynConnector,
@@ -524,8 +518,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetAWSDefaultServiceQuota`.
     ///
-    /// <p>Retrieves the default value for the specified quota. The default value does not reflect
-    /// any quota increases.</p>
+    /// <p>Retrieves the default value for the specified quota. The default value does not reflect any quota increases.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAWSDefaultServiceQuota<
         C = aws_smithy_client::erase::DynConnector,
@@ -675,9 +668,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetServiceQuota`.
     ///
-    /// <p>Retrieves the applied quota value for the specified quota. For some quotas, only the
-    /// default values are available. If the applied quota value is not available for a quota, the
-    /// quota is not retrieved.</p>
+    /// <p>Retrieves the applied quota value for the specified quota. For some quotas, only the default values are available. If the applied quota value is not available for a quota, the quota is not retrieved.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetServiceQuota<
         C = aws_smithy_client::erase::DynConnector,
@@ -757,8 +748,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetServiceQuotaIncreaseRequestFromTemplate`.
     ///
-    /// <p>Retrieves information about the specified quota increase request in your quota request
-    /// template.</p>
+    /// <p>Retrieves information about the specified quota increase request in your quota request template.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetServiceQuotaIncreaseRequestFromTemplate<
         C = aws_smithy_client::erase::DynConnector,
@@ -850,8 +840,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAWSDefaultServiceQuotas`.
     ///
-    /// <p>Lists the default values for the quotas for the specified AWS service. A default value
-    /// does not reflect any quota increases.</p>
+    /// <p>Lists the default values for the quotas for the specified AWS service. A default value does not reflect any quota increases.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAWSDefaultServiceQuotas<
         C = aws_smithy_client::erase::DynConnector,
@@ -928,14 +917,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, if any, make another call with the token returned from this call.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, if any, make another call with the token returned from this call.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -1035,14 +1022,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, if any, make another call with the token returned from this call.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, if any, make another call with the token returned from this call.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -1143,14 +1128,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, if any, make another call with the token returned from this call.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, if any, make another call with the token returned from this call.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -1247,14 +1230,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, if any, make another call with the token returned from this call.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, if any, make another call with the token returned from this call.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -1262,9 +1243,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListServiceQuotas`.
     ///
-    /// <p>Lists the applied quota values for the specified AWS service. For some quotas, only the
-    /// default values are available. If the applied quota value is not available for a quota, the
-    /// quota is not retrieved.</p>
+    /// <p>Lists the applied quota values for the specified AWS service. For some quotas, only the default values are available. If the applied quota value is not available for a quota, the quota is not retrieved.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListServiceQuotas<
         C = aws_smithy_client::erase::DynConnector,
@@ -1341,14 +1320,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, if any, make another call with the token returned from this call.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, if any, make another call with the token returned from this call.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -1423,14 +1400,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, if any, make another call with the token returned from this call.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, if any, make another call with the token returned from this call.</p>
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -1495,16 +1470,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) for the applied quota for which you want to list tags. You
-        /// can get this information by using the Service Quotas console, or by listing the quotas using the
-        /// <a href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html">list-service-quotas</a> AWS CLI command or the <a href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html">ListServiceQuotas</a> AWS API operation.</p>
+        /// <p>The Amazon Resource Name (ARN) for the applied quota for which you want to list tags. You can get this information by using the Service Quotas console, or by listing the quotas using the <a href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html">list-service-quotas</a> AWS CLI command or the <a href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html">ListServiceQuotas</a> AWS API operation.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the applied quota for which you want to list tags. You
-        /// can get this information by using the Service Quotas console, or by listing the quotas using the
-        /// <a href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html">list-service-quotas</a> AWS CLI command or the <a href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html">ListServiceQuotas</a> AWS API operation.</p>
+        /// <p>The Amazon Resource Name (ARN) for the applied quota for which you want to list tags. You can get this information by using the Service Quotas console, or by listing the quotas using the <a href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html">list-service-quotas</a> AWS CLI command or the <a href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html">ListServiceQuotas</a> AWS API operation.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -1704,8 +1675,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Adds tags to the specified applied quota. You can include one or more tags to add to the
-    /// quota.</p>
+    /// <p>Adds tags to the specified applied quota. You can include one or more tags to add to the quota.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -1762,14 +1732,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) for the applied quota. You can get this information by
-        /// using the Service Quotas console, or by listing the quotas using the <a href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html">list-service-quotas</a> AWS CLI command or the <a href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html">ListServiceQuotas</a> AWS API operation.</p>
+        /// <p>The Amazon Resource Name (ARN) for the applied quota. You can get this information by using the Service Quotas console, or by listing the quotas using the <a href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html">list-service-quotas</a> AWS CLI command or the <a href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html">ListServiceQuotas</a> AWS API operation.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the applied quota. You can get this information by
-        /// using the Service Quotas console, or by listing the quotas using the <a href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html">list-service-quotas</a> AWS CLI command or the <a href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html">ListServiceQuotas</a> AWS API operation.</p>
+        /// <p>The Amazon Resource Name (ARN) for the applied quota. You can get this information by using the Service Quotas console, or by listing the quotas using the <a href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html">list-service-quotas</a> AWS CLI command or the <a href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html">ListServiceQuotas</a> AWS API operation.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -1794,8 +1762,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UntagResource`.
     ///
-    /// <p>Removes tags from the specified applied quota. You can specify one or more tags to
-    /// remove.</p>
+    /// <p>Removes tags from the specified applied quota. You can specify one or more tags to remove.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -1852,14 +1819,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) for the applied quota that you want to untag. You can get
-        /// this information by using the Service Quotas console, or by listing the quotas using the <a href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html">list-service-quotas</a> AWS CLI command or the <a href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html">ListServiceQuotas</a> AWS API operation.</p>
+        /// <p>The Amazon Resource Name (ARN) for the applied quota that you want to untag. You can get this information by using the Service Quotas console, or by listing the quotas using the <a href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html">list-service-quotas</a> AWS CLI command or the <a href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html">ListServiceQuotas</a> AWS API operation.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the applied quota that you want to untag. You can get
-        /// this information by using the Service Quotas console, or by listing the quotas using the <a href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html">list-service-quotas</a> AWS CLI command or the <a href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html">ListServiceQuotas</a> AWS API operation.</p>
+        /// <p>The Amazon Resource Name (ARN) for the applied quota that you want to untag. You can get this information by using the Service Quotas console, or by listing the quotas using the <a href="https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html">list-service-quotas</a> AWS CLI command or the <a href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_ListServiceQuotas.html">ListServiceQuotas</a> AWS API operation.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self

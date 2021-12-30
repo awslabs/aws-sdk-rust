@@ -23,14 +23,12 @@ pub mod associate_kms_key_input {
             self.log_group_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. This must be a symmetric CMK.
-        /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource Names - Key Management Service</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using Symmetric and Asymmetric Keys</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. This must be a symmetric CMK. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource Names - Key Management Service</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using Symmetric and Asymmetric Keys</a>.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. This must be a symmetric CMK.
-        /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource Names - Key Management Service</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using Symmetric and Asymmetric Keys</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. This must be a symmetric CMK. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource Names - Key Management Service</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using Symmetric and Asymmetric Keys</a>.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -363,14 +361,12 @@ pub mod create_export_task_input {
             self.log_group_name = input;
             self
         }
-        /// <p>Export only log streams that match the provided prefix. If you don't
-        /// specify a value, no prefix filter is applied.</p>
+        /// <p>Export only log streams that match the provided prefix. If you don't specify a value, no prefix filter is applied.</p>
         pub fn log_stream_name_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.log_stream_name_prefix = Some(input.into());
             self
         }
-        /// <p>Export only log streams that match the provided prefix. If you don't
-        /// specify a value, no prefix filter is applied.</p>
+        /// <p>Export only log streams that match the provided prefix. If you don't specify a value, no prefix filter is applied.</p>
         pub fn set_log_stream_name_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -378,30 +374,22 @@ pub mod create_export_task_input {
             self.log_stream_name_prefix = input;
             self
         }
-        /// <p>The start time of the range for the request, expressed as the number of milliseconds
-        /// after Jan 1, 1970 00:00:00 UTC. Events with a timestamp earlier than this time are not
-        /// exported.</p>
+        /// <p>The start time of the range for the request, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp earlier than this time are not exported.</p>
         pub fn from(mut self, input: i64) -> Self {
             self.from = Some(input);
             self
         }
-        /// <p>The start time of the range for the request, expressed as the number of milliseconds
-        /// after Jan 1, 1970 00:00:00 UTC. Events with a timestamp earlier than this time are not
-        /// exported.</p>
+        /// <p>The start time of the range for the request, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp earlier than this time are not exported.</p>
         pub fn set_from(mut self, input: std::option::Option<i64>) -> Self {
             self.from = input;
             self
         }
-        /// <p>The end time of the range for the request, expreswatchlogsdocused as the number of milliseconds
-        /// after Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not
-        /// exported.</p>
+        /// <p>The end time of the range for the request, expreswatchlogsdocused as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>
         pub fn to(mut self, input: i64) -> Self {
             self.to = Some(input);
             self
         }
-        /// <p>The end time of the range for the request, expreswatchlogsdocused as the number of milliseconds
-        /// after Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not
-        /// exported.</p>
+        /// <p>The end time of the range for the request, expreswatchlogsdocused as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>
         pub fn set_to(mut self, input: std::option::Option<i64>) -> Self {
             self.to = input;
             self
@@ -416,14 +404,12 @@ pub mod create_export_task_input {
             self.destination = input;
             self
         }
-        /// <p>The prefix used as the start of the key for every object exported. If you don't
-        /// specify a value, the default is <code>exportedlogs</code>.</p>
+        /// <p>The prefix used as the start of the key for every object exported. If you don't specify a value, the default is <code>exportedlogs</code>.</p>
         pub fn destination_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.destination_prefix = Some(input.into());
             self
         }
-        /// <p>The prefix used as the start of the key for every object exported. If you don't
-        /// specify a value, the default is <code>exportedlogs</code>.</p>
+        /// <p>The prefix used as the start of the key for every object exported. If you don't specify a value, the default is <code>exportedlogs</code>.</p>
         pub fn set_destination_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -598,14 +584,12 @@ pub mod create_log_group_input {
             self.log_group_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
-        /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource Names - Key Management Service</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource Names - Key Management Service</a>.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
-        /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource Names - Key Management Service</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource Names - Key Management Service</a>.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -615,11 +599,7 @@ pub mod create_log_group_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The key-value pairs to use for the tags.</p>
-        /// <p>CloudWatch Logs doesn’t support IAM policies that prevent users from assigning specified tags to
-        /// log groups using the <code>aws:Resource/<i>key-name</i>
-        /// </code> or <code>aws:TagKeys</code> condition keys.
-        /// For more information about using tags to control access, see
-        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling access to Amazon Web Services resources using tags</a>.</p>
+        /// <p>CloudWatch Logs doesn’t support IAM policies that prevent users from assigning specified tags to log groups using the <code>aws:Resource/<i>key-name</i> </code> or <code>aws:TagKeys</code> condition keys. For more information about using tags to control access, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling access to Amazon Web Services resources using tags</a>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -631,11 +611,7 @@ pub mod create_log_group_input {
             self
         }
         /// <p>The key-value pairs to use for the tags.</p>
-        /// <p>CloudWatch Logs doesn’t support IAM policies that prevent users from assigning specified tags to
-        /// log groups using the <code>aws:Resource/<i>key-name</i>
-        /// </code> or <code>aws:TagKeys</code> condition keys.
-        /// For more information about using tags to control access, see
-        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling access to Amazon Web Services resources using tags</a>.</p>
+        /// <p>CloudWatch Logs doesn’t support IAM policies that prevent users from assigning specified tags to log groups using the <code>aws:Resource/<i>key-name</i> </code> or <code>aws:TagKeys</code> condition keys. For more information about using tags to control access, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling access to Amazon Web Services resources using tags</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1618,14 +1594,12 @@ pub mod delete_query_definition_input {
         pub(crate) query_definition_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the query definition that you want to delete. You can use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a> to retrieve the
-        /// IDs of your saved query definitions.</p>
+        /// <p>The ID of the query definition that you want to delete. You can use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a> to retrieve the IDs of your saved query definitions.</p>
         pub fn query_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.query_definition_id = Some(input.into());
             self
         }
-        /// <p>The ID of the query definition that you want to delete. You can use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a> to retrieve the
-        /// IDs of your saved query definitions.</p>
+        /// <p>The ID of the query definition that you want to delete. You can use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a> to retrieve the IDs of your saved query definitions.</p>
         pub fn set_query_definition_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2840,15 +2814,13 @@ pub mod describe_log_streams_input {
             self
         }
         /// <p>The prefix to match.</p>
-        /// <p>If <code>orderBy</code> is <code>LastEventTime</code>, you cannot specify this
-        /// parameter.</p>
+        /// <p>If <code>orderBy</code> is <code>LastEventTime</code>, you cannot specify this parameter.</p>
         pub fn log_stream_name_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.log_stream_name_prefix = Some(input.into());
             self
         }
         /// <p>The prefix to match.</p>
-        /// <p>If <code>orderBy</code> is <code>LastEventTime</code>, you cannot specify this
-        /// parameter.</p>
+        /// <p>If <code>orderBy</code> is <code>LastEventTime</code>, you cannot specify this parameter.</p>
         pub fn set_log_stream_name_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2856,44 +2828,26 @@ pub mod describe_log_streams_input {
             self.log_stream_name_prefix = input;
             self
         }
-        /// <p>If the value is <code>LogStreamName</code>, the results are ordered by log stream name.
-        /// If the value is <code>LastEventTime</code>, the results are ordered by the event time.
-        /// The default value is <code>LogStreamName</code>.</p>
+        /// <p>If the value is <code>LogStreamName</code>, the results are ordered by log stream name. If the value is <code>LastEventTime</code>, the results are ordered by the event time. The default value is <code>LogStreamName</code>.</p>
         /// <p>If you order the results by event time, you cannot specify the <code>logStreamNamePrefix</code> parameter.</p>
-        /// <p>
-        /// <code>lastEventTimestamp</code> represents the time of the most recent log event in the
-        /// log stream in CloudWatch Logs. This number is expressed as the number of milliseconds after
-        /// Jan 1, 1970 00:00:00 UTC. <code>lastEventTimestamp</code> updates on an eventual consistency
-        /// basis. It typically updates in less than an hour from ingestion, but in rare situations might
-        /// take longer.</p>
+        /// <p> <code>lastEventTimestamp</code> represents the time of the most recent log event in the log stream in CloudWatch Logs. This number is expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. <code>lastEventTimestamp</code> updates on an eventual consistency basis. It typically updates in less than an hour from ingestion, but in rare situations might take longer.</p>
         pub fn order_by(mut self, input: crate::model::OrderBy) -> Self {
             self.order_by = Some(input);
             self
         }
-        /// <p>If the value is <code>LogStreamName</code>, the results are ordered by log stream name.
-        /// If the value is <code>LastEventTime</code>, the results are ordered by the event time.
-        /// The default value is <code>LogStreamName</code>.</p>
+        /// <p>If the value is <code>LogStreamName</code>, the results are ordered by log stream name. If the value is <code>LastEventTime</code>, the results are ordered by the event time. The default value is <code>LogStreamName</code>.</p>
         /// <p>If you order the results by event time, you cannot specify the <code>logStreamNamePrefix</code> parameter.</p>
-        /// <p>
-        /// <code>lastEventTimestamp</code> represents the time of the most recent log event in the
-        /// log stream in CloudWatch Logs. This number is expressed as the number of milliseconds after
-        /// Jan 1, 1970 00:00:00 UTC. <code>lastEventTimestamp</code> updates on an eventual consistency
-        /// basis. It typically updates in less than an hour from ingestion, but in rare situations might
-        /// take longer.</p>
+        /// <p> <code>lastEventTimestamp</code> represents the time of the most recent log event in the log stream in CloudWatch Logs. This number is expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. <code>lastEventTimestamp</code> updates on an eventual consistency basis. It typically updates in less than an hour from ingestion, but in rare situations might take longer.</p>
         pub fn set_order_by(mut self, input: std::option::Option<crate::model::OrderBy>) -> Self {
             self.order_by = input;
             self
         }
-        /// <p>If the value is true, results are returned in descending order.
-        /// If the value is to false, results are returned in ascending order.
-        /// The default value is false.</p>
+        /// <p>If the value is true, results are returned in descending order. If the value is to false, results are returned in ascending order. The default value is false.</p>
         pub fn descending(mut self, input: bool) -> Self {
             self.descending = Some(input);
             self
         }
-        /// <p>If the value is true, results are returned in descending order.
-        /// If the value is to false, results are returned in ascending order.
-        /// The default value is false.</p>
+        /// <p>If the value is true, results are returned in descending order. If the value is to false, results are returned in ascending order. The default value is false.</p>
         pub fn set_descending(mut self, input: std::option::Option<bool>) -> Self {
             self.descending = input;
             self
@@ -3085,14 +3039,12 @@ pub mod describe_metric_filters_input {
             self.log_group_name = input;
             self
         }
-        /// <p>The prefix to match. CloudWatch Logs uses the value you set here
-        /// only if you also include the <code>logGroupName</code> parameter in your request.</p>
+        /// <p>The prefix to match. CloudWatch Logs uses the value you set here only if you also include the <code>logGroupName</code> parameter in your request.</p>
         pub fn filter_name_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.filter_name_prefix = Some(input.into());
             self
         }
-        /// <p>The prefix to match. CloudWatch Logs uses the value you set here
-        /// only if you also include the <code>logGroupName</code> parameter in your request.</p>
+        /// <p>The prefix to match. CloudWatch Logs uses the value you set here only if you also include the <code>logGroupName</code> parameter in your request.</p>
         pub fn set_filter_name_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3120,26 +3072,22 @@ pub mod describe_metric_filters_input {
             self.limit = input;
             self
         }
-        /// <p>Filters results to include only those with the specified metric name. If you include this parameter in your request, you
-        /// must also include the <code>metricNamespace</code> parameter.</p>
+        /// <p>Filters results to include only those with the specified metric name. If you include this parameter in your request, you must also include the <code>metricNamespace</code> parameter.</p>
         pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.metric_name = Some(input.into());
             self
         }
-        /// <p>Filters results to include only those with the specified metric name. If you include this parameter in your request, you
-        /// must also include the <code>metricNamespace</code> parameter.</p>
+        /// <p>Filters results to include only those with the specified metric name. If you include this parameter in your request, you must also include the <code>metricNamespace</code> parameter.</p>
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.metric_name = input;
             self
         }
-        /// <p>Filters results to include only those in the specified namespace. If you include this parameter in your request, you
-        /// must also include the <code>metricName</code> parameter.</p>
+        /// <p>Filters results to include only those in the specified namespace. If you include this parameter in your request, you must also include the <code>metricName</code> parameter.</p>
         pub fn metric_namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.metric_namespace = Some(input.into());
             self
         }
-        /// <p>Filters results to include only those in the specified namespace. If you include this parameter in your request, you
-        /// must also include the <code>metricName</code> parameter.</p>
+        /// <p>Filters results to include only those in the specified namespace. If you include this parameter in your request, you must also include the <code>metricName</code> parameter.</p>
         pub fn set_metric_namespace(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3314,14 +3262,12 @@ pub mod describe_queries_input {
             self.log_group_name = input;
             self
         }
-        /// <p>Limits the returned queries to only those that have the specified status. Valid values are <code>Cancelled</code>,
-        /// <code>Complete</code>, <code>Failed</code>, <code>Running</code>, and <code>Scheduled</code>.</p>
+        /// <p>Limits the returned queries to only those that have the specified status. Valid values are <code>Cancelled</code>, <code>Complete</code>, <code>Failed</code>, <code>Running</code>, and <code>Scheduled</code>.</p>
         pub fn status(mut self, input: crate::model::QueryStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>Limits the returned queries to only those that have the specified status. Valid values are <code>Cancelled</code>,
-        /// <code>Complete</code>, <code>Failed</code>, <code>Running</code>, and <code>Scheduled</code>.</p>
+        /// <p>Limits the returned queries to only those that have the specified status. Valid values are <code>Cancelled</code>, <code>Complete</code>, <code>Failed</code>, <code>Running</code>, and <code>Scheduled</code>.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::QueryStatus>) -> Self {
             self.status = input;
             self
@@ -4230,8 +4176,7 @@ pub mod filter_log_events_input {
         /// To override the contents of this collection use [`set_log_stream_names`](Self::set_log_stream_names).
         ///
         /// <p>Filters the results to only logs from the log streams in this list.</p>
-        /// <p>If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, the action
-        /// returns an <code>InvalidParameterException</code> error.</p>
+        /// <p>If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, the action returns an <code>InvalidParameterException</code> error.</p>
         pub fn log_stream_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.log_stream_names.unwrap_or_default();
             v.push(input.into());
@@ -4239,8 +4184,7 @@ pub mod filter_log_events_input {
             self
         }
         /// <p>Filters the results to only logs from the log streams in this list.</p>
-        /// <p>If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, the action
-        /// returns an <code>InvalidParameterException</code> error.</p>
+        /// <p>If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, the action returns an <code>InvalidParameterException</code> error.</p>
         pub fn set_log_stream_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4249,17 +4193,13 @@ pub mod filter_log_events_input {
             self
         }
         /// <p>Filters the results to include only events from log streams that have names starting with this prefix.</p>
-        /// <p>If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, but the value for
-        /// <code>logStreamNamePrefix</code> does not match any log stream names specified in <code>logStreamNames</code>, the action
-        /// returns an <code>InvalidParameterException</code> error.</p>
+        /// <p>If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, but the value for <code>logStreamNamePrefix</code> does not match any log stream names specified in <code>logStreamNames</code>, the action returns an <code>InvalidParameterException</code> error.</p>
         pub fn log_stream_name_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.log_stream_name_prefix = Some(input.into());
             self
         }
         /// <p>Filters the results to include only events from log streams that have names starting with this prefix.</p>
-        /// <p>If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, but the value for
-        /// <code>logStreamNamePrefix</code> does not match any log stream names specified in <code>logStreamNames</code>, the action
-        /// returns an <code>InvalidParameterException</code> error.</p>
+        /// <p>If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, but the value for <code>logStreamNamePrefix</code> does not match any log stream names specified in <code>logStreamNames</code>, the action returns an <code>InvalidParameterException</code> error.</p>
         pub fn set_log_stream_name_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4267,26 +4207,22 @@ pub mod filter_log_events_input {
             self.log_stream_name_prefix = input;
             self
         }
-        /// <p>The start of the time range, expressed as the number of milliseconds after Jan 1, 1970
-        /// 00:00:00 UTC. Events with a timestamp before this time are not returned.</p>
+        /// <p>The start of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp before this time are not returned.</p>
         pub fn start_time(mut self, input: i64) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>The start of the time range, expressed as the number of milliseconds after Jan 1, 1970
-        /// 00:00:00 UTC. Events with a timestamp before this time are not returned.</p>
+        /// <p>The start of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp before this time are not returned.</p>
         pub fn set_start_time(mut self, input: std::option::Option<i64>) -> Self {
             self.start_time = input;
             self
         }
-        /// <p>The end of the time range, expressed as the number of milliseconds after Jan 1, 1970
-        /// 00:00:00 UTC. Events with a timestamp later than this time are not returned.</p>
+        /// <p>The end of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not returned.</p>
         pub fn end_time(mut self, input: i64) -> Self {
             self.end_time = Some(input);
             self
         }
-        /// <p>The end of the time range, expressed as the number of milliseconds after Jan 1, 1970
-        /// 00:00:00 UTC. Events with a timestamp later than this time are not returned.</p>
+        /// <p>The end of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not returned.</p>
         pub fn set_end_time(mut self, input: std::option::Option<i64>) -> Self {
             self.end_time = input;
             self
@@ -4326,26 +4262,14 @@ pub mod filter_log_events_input {
             self.limit = input;
             self
         }
-        /// <p>If the value is true, the operation makes a best effort to provide responses that
-        /// contain events from multiple log streams within the log group, interleaved in a single
-        /// response. If the value is false, all the matched log events in the first log stream are
-        /// searched first, then those in the next log stream, and so on. The default is false.</p>
-        /// <p>
-        /// <b>Important:</b> Starting on June 17, 2019, this parameter
-        /// is ignored and the value is assumed to be true. The response from this operation always
-        /// interleaves events from multiple log streams within a log group.</p>
+        /// <p>If the value is true, the operation makes a best effort to provide responses that contain events from multiple log streams within the log group, interleaved in a single response. If the value is false, all the matched log events in the first log stream are searched first, then those in the next log stream, and so on. The default is false.</p>
+        /// <p> <b>Important:</b> Starting on June 17, 2019, this parameter is ignored and the value is assumed to be true. The response from this operation always interleaves events from multiple log streams within a log group.</p>
         pub fn interleaved(mut self, input: bool) -> Self {
             self.interleaved = Some(input);
             self
         }
-        /// <p>If the value is true, the operation makes a best effort to provide responses that
-        /// contain events from multiple log streams within the log group, interleaved in a single
-        /// response. If the value is false, all the matched log events in the first log stream are
-        /// searched first, then those in the next log stream, and so on. The default is false.</p>
-        /// <p>
-        /// <b>Important:</b> Starting on June 17, 2019, this parameter
-        /// is ignored and the value is assumed to be true. The response from this operation always
-        /// interleaves events from multiple log streams within a log group.</p>
+        /// <p>If the value is true, the operation makes a best effort to provide responses that contain events from multiple log streams within the log group, interleaved in a single response. If the value is false, all the matched log events in the first log stream are searched first, then those in the next log stream, and so on. The default is false.</p>
+        /// <p> <b>Important:</b> Starting on June 17, 2019, this parameter is ignored and the value is assumed to be true. The response from this operation always interleaves events from multiple log streams within a log group.</p>
         pub fn set_interleaved(mut self, input: std::option::Option<bool>) -> Self {
             self.interleaved = input;
             self
@@ -4534,30 +4458,22 @@ pub mod get_log_events_input {
             self.log_stream_name = input;
             self
         }
-        /// <p>The start of the time range, expressed as the number of milliseconds after Jan 1, 1970
-        /// 00:00:00 UTC. Events with a timestamp equal to this time or later than this time are included.
-        /// Events with a timestamp earlier than this time are not included.</p>
+        /// <p>The start of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp equal to this time or later than this time are included. Events with a timestamp earlier than this time are not included.</p>
         pub fn start_time(mut self, input: i64) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>The start of the time range, expressed as the number of milliseconds after Jan 1, 1970
-        /// 00:00:00 UTC. Events with a timestamp equal to this time or later than this time are included.
-        /// Events with a timestamp earlier than this time are not included.</p>
+        /// <p>The start of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp equal to this time or later than this time are included. Events with a timestamp earlier than this time are not included.</p>
         pub fn set_start_time(mut self, input: std::option::Option<i64>) -> Self {
             self.start_time = input;
             self
         }
-        /// <p>The end of the time range, expressed as the number of milliseconds after Jan 1, 1970
-        /// 00:00:00 UTC. Events with a timestamp equal to or later than this time are not
-        /// included.</p>
+        /// <p>The end of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp equal to or later than this time are not included.</p>
         pub fn end_time(mut self, input: i64) -> Self {
             self.end_time = Some(input);
             self
         }
-        /// <p>The end of the time range, expressed as the number of milliseconds after Jan 1, 1970
-        /// 00:00:00 UTC. Events with a timestamp equal to or later than this time are not
-        /// included.</p>
+        /// <p>The end of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp equal to or later than this time are not included.</p>
         pub fn set_end_time(mut self, input: std::option::Option<i64>) -> Self {
             self.end_time = input;
             self
@@ -4572,32 +4488,24 @@ pub mod get_log_events_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of log events returned. If you don't specify a value, the maximum is
-        /// as many log events as can fit in a response size of 1 MB, up to 10,000 log events.</p>
+        /// <p>The maximum number of log events returned. If you don't specify a value, the maximum is as many log events as can fit in a response size of 1 MB, up to 10,000 log events.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>The maximum number of log events returned. If you don't specify a value, the maximum is
-        /// as many log events as can fit in a response size of 1 MB, up to 10,000 log events.</p>
+        /// <p>The maximum number of log events returned. If you don't specify a value, the maximum is as many log events as can fit in a response size of 1 MB, up to 10,000 log events.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
         }
-        /// <p>If the value is true, the earliest log events are returned first.
-        /// If the value is false, the latest log events are returned first.
-        /// The default value is false.</p>
-        /// <p>If you are using a previous <code>nextForwardToken</code> value as the <code>nextToken</code> in this operation,
-        /// you must specify <code>true</code> for <code>startFromHead</code>.</p>
+        /// <p>If the value is true, the earliest log events are returned first. If the value is false, the latest log events are returned first. The default value is false.</p>
+        /// <p>If you are using a previous <code>nextForwardToken</code> value as the <code>nextToken</code> in this operation, you must specify <code>true</code> for <code>startFromHead</code>.</p>
         pub fn start_from_head(mut self, input: bool) -> Self {
             self.start_from_head = Some(input);
             self
         }
-        /// <p>If the value is true, the earliest log events are returned first.
-        /// If the value is false, the latest log events are returned first.
-        /// The default value is false.</p>
-        /// <p>If you are using a previous <code>nextForwardToken</code> value as the <code>nextToken</code> in this operation,
-        /// you must specify <code>true</code> for <code>startFromHead</code>.</p>
+        /// <p>If the value is true, the earliest log events are returned first. If the value is false, the latest log events are returned first. The default value is false.</p>
+        /// <p>If you are using a previous <code>nextForwardToken</code> value as the <code>nextToken</code> in this operation, you must specify <code>true</code> for <code>startFromHead</code>.</p>
         pub fn set_start_from_head(mut self, input: std::option::Option<bool>) -> Self {
             self.start_from_head = input;
             self
@@ -4765,20 +4673,14 @@ pub mod get_log_group_fields_input {
             self.log_group_name = input;
             self
         }
-        /// <p>The time to set as the center of the query. If you specify <code>time</code>, the 15 minutes
-        /// before this time are queries. If you omit <code>time</code> the 8
-        /// minutes before and 8 minutes after this time are searched.</p>
-        /// <p>The <code>time</code> value is specified as epoch time, the number of seconds since
-        /// January 1, 1970, 00:00:00 UTC.</p>
+        /// <p>The time to set as the center of the query. If you specify <code>time</code>, the 15 minutes before this time are queries. If you omit <code>time</code> the 8 minutes before and 8 minutes after this time are searched.</p>
+        /// <p>The <code>time</code> value is specified as epoch time, the number of seconds since January 1, 1970, 00:00:00 UTC.</p>
         pub fn time(mut self, input: i64) -> Self {
             self.time = Some(input);
             self
         }
-        /// <p>The time to set as the center of the query. If you specify <code>time</code>, the 15 minutes
-        /// before this time are queries. If you omit <code>time</code> the 8
-        /// minutes before and 8 minutes after this time are searched.</p>
-        /// <p>The <code>time</code> value is specified as epoch time, the number of seconds since
-        /// January 1, 1970, 00:00:00 UTC.</p>
+        /// <p>The time to set as the center of the query. If you specify <code>time</code>, the 15 minutes before this time are queries. If you omit <code>time</code> the 8 minutes before and 8 minutes after this time are searched.</p>
+        /// <p>The <code>time</code> value is specified as epoch time, the number of seconds since January 1, 1970, 00:00:00 UTC.</p>
         pub fn set_time(mut self, input: std::option::Option<i64>) -> Self {
             self.time = input;
             self
@@ -4928,18 +4830,12 @@ pub mod get_log_record_input {
         pub(crate) log_record_pointer: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The pointer corresponding to the log event record you want to retrieve. You get this from
-        /// the response of a <code>GetQueryResults</code> operation. In that response, the value of the
-        /// <code>@ptr</code> field for a log event is the value to use as <code>logRecordPointer</code>
-        /// to retrieve that complete log event record.</p>
+        /// <p>The pointer corresponding to the log event record you want to retrieve. You get this from the response of a <code>GetQueryResults</code> operation. In that response, the value of the <code>@ptr</code> field for a log event is the value to use as <code>logRecordPointer</code> to retrieve that complete log event record.</p>
         pub fn log_record_pointer(mut self, input: impl Into<std::string::String>) -> Self {
             self.log_record_pointer = Some(input.into());
             self
         }
-        /// <p>The pointer corresponding to the log event record you want to retrieve. You get this from
-        /// the response of a <code>GetQueryResults</code> operation. In that response, the value of the
-        /// <code>@ptr</code> field for a log event is the value to use as <code>logRecordPointer</code>
-        /// to retrieve that complete log event record.</p>
+        /// <p>The pointer corresponding to the log event record you want to retrieve. You get this from the response of a <code>GetQueryResults</code> operation. In that response, the value of the <code>@ptr</code> field for a log event is the value to use as <code>logRecordPointer</code> to retrieve that complete log event record.</p>
         pub fn set_log_record_pointer(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5426,14 +5322,12 @@ pub mod put_destination_input {
             self.target_arn = input;
             self
         }
-        /// <p>The ARN of an IAM role that grants CloudWatch Logs permissions to call the Amazon
-        /// Kinesis <code>PutRecord</code> operation on the destination stream.</p>
+        /// <p>The ARN of an IAM role that grants CloudWatch Logs permissions to call the Amazon Kinesis <code>PutRecord</code> operation on the destination stream.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of an IAM role that grants CloudWatch Logs permissions to call the Amazon
-        /// Kinesis <code>PutRecord</code> operation on the destination stream.</p>
+        /// <p>The ARN of an IAM role that grants CloudWatch Logs permissions to call the Amazon Kinesis <code>PutRecord</code> operation on the destination stream.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -5598,14 +5492,12 @@ pub mod put_destination_policy_input {
             self.destination_name = input;
             self
         }
-        /// <p>An IAM policy document that authorizes cross-account users to deliver their log events
-        /// to the associated destination. This can be up to 5120 bytes.</p>
+        /// <p>An IAM policy document that authorizes cross-account users to deliver their log events to the associated destination. This can be up to 5120 bytes.</p>
         pub fn access_policy(mut self, input: impl Into<std::string::String>) -> Self {
             self.access_policy = Some(input.into());
             self
         }
-        /// <p>An IAM policy document that authorizes cross-account users to deliver their log events
-        /// to the associated destination. This can be up to 5120 bytes.</p>
+        /// <p>An IAM policy document that authorizes cross-account users to deliver their log events to the associated destination. This can be up to 5120 bytes.</p>
         pub fn set_access_policy(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5808,20 +5700,12 @@ pub mod put_log_events_input {
             self.log_events = input;
             self
         }
-        /// <p>The sequence token obtained from the response of the previous <code>PutLogEvents</code>
-        /// call. An upload in a newly created log stream does not require a sequence token. You can also
-        /// get the sequence token using <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeLogStreams.html">DescribeLogStreams</a>. If you call <code>PutLogEvents</code> twice within a narrow
-        /// time period using the same value for <code>sequenceToken</code>, both calls might be
-        /// successful or one might be rejected.</p>
+        /// <p>The sequence token obtained from the response of the previous <code>PutLogEvents</code> call. An upload in a newly created log stream does not require a sequence token. You can also get the sequence token using <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeLogStreams.html">DescribeLogStreams</a>. If you call <code>PutLogEvents</code> twice within a narrow time period using the same value for <code>sequenceToken</code>, both calls might be successful or one might be rejected.</p>
         pub fn sequence_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.sequence_token = Some(input.into());
             self
         }
-        /// <p>The sequence token obtained from the response of the previous <code>PutLogEvents</code>
-        /// call. An upload in a newly created log stream does not require a sequence token. You can also
-        /// get the sequence token using <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeLogStreams.html">DescribeLogStreams</a>. If you call <code>PutLogEvents</code> twice within a narrow
-        /// time period using the same value for <code>sequenceToken</code>, both calls might be
-        /// successful or one might be rejected.</p>
+        /// <p>The sequence token obtained from the response of the previous <code>PutLogEvents</code> call. An upload in a newly created log stream does not require a sequence token. You can also get the sequence token using <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeLogStreams.html">DescribeLogStreams</a>. If you call <code>PutLogEvents</code> twice within a narrow time period using the same value for <code>sequenceToken</code>, both calls might be successful or one might be rejected.</p>
         pub fn set_sequence_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6184,36 +6068,24 @@ pub mod put_query_definition_input {
         pub(crate) query_string: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A name for the query definition. If you are saving a lot of query definitions, we
-        /// recommend that you name them so that you can easily find the ones you want by using the first
-        /// part of the name as a filter in the <code>queryDefinitionNamePrefix</code> parameter of <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a>.</p>
+        /// <p>A name for the query definition. If you are saving a lot of query definitions, we recommend that you name them so that you can easily find the ones you want by using the first part of the name as a filter in the <code>queryDefinitionNamePrefix</code> parameter of <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>A name for the query definition. If you are saving a lot of query definitions, we
-        /// recommend that you name them so that you can easily find the ones you want by using the first
-        /// part of the name as a filter in the <code>queryDefinitionNamePrefix</code> parameter of <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a>.</p>
+        /// <p>A name for the query definition. If you are saving a lot of query definitions, we recommend that you name them so that you can easily find the ones you want by using the first part of the name as a filter in the <code>queryDefinitionNamePrefix</code> parameter of <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>If you are updating a query definition, use this parameter to specify the ID of the query
-        /// definition that you want to update. You can use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a> to retrieve the IDs of your saved query
-        /// definitions.</p>
-        /// <p>If you are creating a query definition, do not specify this parameter. CloudWatch
-        /// generates a unique ID for the new query definition and include it in the response to this
-        /// operation.</p>
+        /// <p>If you are updating a query definition, use this parameter to specify the ID of the query definition that you want to update. You can use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a> to retrieve the IDs of your saved query definitions.</p>
+        /// <p>If you are creating a query definition, do not specify this parameter. CloudWatch generates a unique ID for the new query definition and include it in the response to this operation.</p>
         pub fn query_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.query_definition_id = Some(input.into());
             self
         }
-        /// <p>If you are updating a query definition, use this parameter to specify the ID of the query
-        /// definition that you want to update. You can use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a> to retrieve the IDs of your saved query
-        /// definitions.</p>
-        /// <p>If you are creating a query definition, do not specify this parameter. CloudWatch
-        /// generates a unique ID for the new query definition and include it in the response to this
-        /// operation.</p>
+        /// <p>If you are updating a query definition, use this parameter to specify the ID of the query definition that you want to update. You can use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a> to retrieve the IDs of your saved query definitions.</p>
+        /// <p>If you are creating a query definition, do not specify this parameter. CloudWatch generates a unique ID for the new query definition and include it in the response to this operation.</p>
         pub fn set_query_definition_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6226,8 +6098,7 @@ pub mod put_query_definition_input {
         /// To override the contents of this collection use [`set_log_group_names`](Self::set_log_group_names).
         ///
         /// <p>Use this parameter to include specific log groups as part of your query definition.</p>
-        /// <p>If you are updating a query definition and you omit this parameter, then the updated
-        /// definition will contain no log groups.</p>
+        /// <p>If you are updating a query definition and you omit this parameter, then the updated definition will contain no log groups.</p>
         pub fn log_group_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.log_group_names.unwrap_or_default();
             v.push(input.into());
@@ -6235,8 +6106,7 @@ pub mod put_query_definition_input {
             self
         }
         /// <p>Use this parameter to include specific log groups as part of your query definition.</p>
-        /// <p>If you are updating a query definition and you omit this parameter, then the updated
-        /// definition will contain no log groups.</p>
+        /// <p>If you are updating a query definition and you omit this parameter, then the updated definition will contain no log groups.</p>
         pub fn set_log_group_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6244,14 +6114,12 @@ pub mod put_query_definition_input {
             self.log_group_names = input;
             self
         }
-        /// <p>The query string to use for this definition.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights Query Syntax</a>.</p>
+        /// <p>The query string to use for this definition. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights Query Syntax</a>.</p>
         pub fn query_string(mut self, input: impl Into<std::string::String>) -> Self {
             self.query_string = Some(input.into());
             self
         }
-        /// <p>The query string to use for this definition.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights Query Syntax</a>.</p>
+        /// <p>The query string to use for this definition. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights Query Syntax</a>.</p>
         pub fn set_query_string(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.query_string = input;
             self
@@ -6414,88 +6282,22 @@ pub mod put_resource_policy_input {
             self.policy_name = input;
             self
         }
-        /// <p>Details of the new policy, including the identity of the principal that is enabled to put logs to this account. This is formatted as a JSON string.
-        /// This parameter is required.</p>
-        /// <p>The following example creates a resource policy enabling the Route 53 service to put
-        /// DNS query logs in to the specified log group. Replace <code>"logArn"</code> with the ARN of
-        /// your CloudWatch Logs resource, such as a log group or log stream.</p>
-        /// <p>CloudWatch Logs also supports <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourcearn">aws:SourceArn</a>
-        /// and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourceaccount">aws:SourceAccount</a>
-        /// condition context keys.</p>
-        /// <p>In the example resource policy, you would replace the value of <code>SourceArn</code> with the resource making the
-        /// call from Route 53 to CloudWatch Logs and replace the value of <code>SourceAccount</code> with
-        /// the Amazon Web Services account ID making that call.</p>
+        /// <p>Details of the new policy, including the identity of the principal that is enabled to put logs to this account. This is formatted as a JSON string. This parameter is required.</p>
+        /// <p>The following example creates a resource policy enabling the Route 53 service to put DNS query logs in to the specified log group. Replace <code>"logArn"</code> with the ARN of your CloudWatch Logs resource, such as a log group or log stream.</p>
+        /// <p>CloudWatch Logs also supports <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourcearn">aws:SourceArn</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourceaccount">aws:SourceAccount</a> condition context keys.</p>
+        /// <p>In the example resource policy, you would replace the value of <code>SourceArn</code> with the resource making the call from Route 53 to CloudWatch Logs and replace the value of <code>SourceAccount</code> with the Amazon Web Services account ID making that call.</p>
         /// <p></p>
-        /// <p>
-        /// <code>{
-        /// "Version": "2012-10-17",
-        /// "Statement": [
-        /// {
-        /// "Sid": "Route53LogsToCloudWatchLogs",
-        /// "Effect": "Allow",
-        /// "Principal": {
-        /// "Service": [
-        /// "route53.amazonaws.com"
-        /// ]
-        /// },
-        /// "Action": "logs:PutLogEvents",
-        /// "Resource": "logArn",
-        /// "Condition": {
-        /// "ArnLike": {
-        /// "aws:SourceArn": "myRoute53ResourceArn"
-        /// },
-        /// "StringEquals": {
-        /// "aws:SourceAccount": "myAwsAccountId"
-        /// }
-        /// }
-        /// }
-        /// ]
-        /// }</code>
-        ///
-        /// </p>
+        /// <p> <code>{ "Version": "2012-10-17", "Statement": [ { "Sid": "Route53LogsToCloudWatchLogs", "Effect": "Allow", "Principal": { "Service": [ "route53.amazonaws.com" ] }, "Action": "logs:PutLogEvents", "Resource": "logArn", "Condition": { "ArnLike": { "aws:SourceArn": "myRoute53ResourceArn" }, "StringEquals": { "aws:SourceAccount": "myAwsAccountId" } } } ] }</code> </p>
         pub fn policy_document(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy_document = Some(input.into());
             self
         }
-        /// <p>Details of the new policy, including the identity of the principal that is enabled to put logs to this account. This is formatted as a JSON string.
-        /// This parameter is required.</p>
-        /// <p>The following example creates a resource policy enabling the Route 53 service to put
-        /// DNS query logs in to the specified log group. Replace <code>"logArn"</code> with the ARN of
-        /// your CloudWatch Logs resource, such as a log group or log stream.</p>
-        /// <p>CloudWatch Logs also supports <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourcearn">aws:SourceArn</a>
-        /// and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourceaccount">aws:SourceAccount</a>
-        /// condition context keys.</p>
-        /// <p>In the example resource policy, you would replace the value of <code>SourceArn</code> with the resource making the
-        /// call from Route 53 to CloudWatch Logs and replace the value of <code>SourceAccount</code> with
-        /// the Amazon Web Services account ID making that call.</p>
+        /// <p>Details of the new policy, including the identity of the principal that is enabled to put logs to this account. This is formatted as a JSON string. This parameter is required.</p>
+        /// <p>The following example creates a resource policy enabling the Route 53 service to put DNS query logs in to the specified log group. Replace <code>"logArn"</code> with the ARN of your CloudWatch Logs resource, such as a log group or log stream.</p>
+        /// <p>CloudWatch Logs also supports <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourcearn">aws:SourceArn</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourceaccount">aws:SourceAccount</a> condition context keys.</p>
+        /// <p>In the example resource policy, you would replace the value of <code>SourceArn</code> with the resource making the call from Route 53 to CloudWatch Logs and replace the value of <code>SourceAccount</code> with the Amazon Web Services account ID making that call.</p>
         /// <p></p>
-        /// <p>
-        /// <code>{
-        /// "Version": "2012-10-17",
-        /// "Statement": [
-        /// {
-        /// "Sid": "Route53LogsToCloudWatchLogs",
-        /// "Effect": "Allow",
-        /// "Principal": {
-        /// "Service": [
-        /// "route53.amazonaws.com"
-        /// ]
-        /// },
-        /// "Action": "logs:PutLogEvents",
-        /// "Resource": "logArn",
-        /// "Condition": {
-        /// "ArnLike": {
-        /// "aws:SourceArn": "myRoute53ResourceArn"
-        /// },
-        /// "StringEquals": {
-        /// "aws:SourceAccount": "myAwsAccountId"
-        /// }
-        /// }
-        /// }
-        /// ]
-        /// }</code>
-        ///
-        /// </p>
+        /// <p> <code>{ "Version": "2012-10-17", "Statement": [ { "Sid": "Route53LogsToCloudWatchLogs", "Effect": "Allow", "Principal": { "Service": [ "route53.amazonaws.com" ] }, "Action": "logs:PutLogEvents", "Resource": "logArn", "Condition": { "ArnLike": { "aws:SourceArn": "myRoute53ResourceArn" }, "StringEquals": { "aws:SourceAccount": "myAwsAccountId" } } } ] }</code> </p>
         pub fn set_policy_document(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6662,20 +6464,14 @@ pub mod put_retention_policy_input {
             self.log_group_name = input;
             self
         }
-        /// <p>The number of days to retain the log events in the specified log group.
-        /// Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, and 3653.</p>
-        /// <p>To set a log group to never have log events expire, use
-        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html">DeleteRetentionPolicy</a>.
-        /// </p>
+        /// <p>The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, and 3653.</p>
+        /// <p>To set a log group to never have log events expire, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html">DeleteRetentionPolicy</a>. </p>
         pub fn retention_in_days(mut self, input: i32) -> Self {
             self.retention_in_days = Some(input);
             self
         }
-        /// <p>The number of days to retain the log events in the specified log group.
-        /// Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, and 3653.</p>
-        /// <p>To set a log group to never have log events expire, use
-        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html">DeleteRetentionPolicy</a>.
-        /// </p>
+        /// <p>The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, and 3653.</p>
+        /// <p>To set a log group to never have log events expire, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html">DeleteRetentionPolicy</a>. </p>
         pub fn set_retention_in_days(mut self, input: std::option::Option<i32>) -> Self {
             self.retention_in_days = input;
             self
@@ -6843,16 +6639,12 @@ pub mod put_subscription_filter_input {
             self.log_group_name = input;
             self
         }
-        /// <p>A name for the subscription filter. If you are updating an existing filter, you must
-        /// specify the correct name in <code>filterName</code>. To find the name of the filter currently
-        /// associated with a log group, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeSubscriptionFilters.html">DescribeSubscriptionFilters</a>.</p>
+        /// <p>A name for the subscription filter. If you are updating an existing filter, you must specify the correct name in <code>filterName</code>. To find the name of the filter currently associated with a log group, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeSubscriptionFilters.html">DescribeSubscriptionFilters</a>.</p>
         pub fn filter_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.filter_name = Some(input.into());
             self
         }
-        /// <p>A name for the subscription filter. If you are updating an existing filter, you must
-        /// specify the correct name in <code>filterName</code>. To find the name of the filter currently
-        /// associated with a log group, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeSubscriptionFilters.html">DescribeSubscriptionFilters</a>.</p>
+        /// <p>A name for the subscription filter. If you are updating an existing filter, you must specify the correct name in <code>filterName</code>. To find the name of the filter currently associated with a log group, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeSubscriptionFilters.html">DescribeSubscriptionFilters</a>.</p>
         pub fn set_filter_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.filter_name = input;
             self
@@ -6870,55 +6662,23 @@ pub mod put_subscription_filter_input {
             self.filter_pattern = input;
             self
         }
-        /// <p>The ARN of the destination to deliver matching log events to. Currently, the supported
-        /// destinations are:</p>
+        /// <p>The ARN of the destination to deliver matching log events to. Currently, the supported destinations are:</p>
         /// <ul>
-        /// <li>
-        /// <p>An Amazon Kinesis stream belonging to the same account as the subscription filter,
-        /// for same-account delivery.</p>
-        /// </li>
-        /// <li>
-        /// <p>A logical destination (specified using an ARN) belonging to a different account,
-        /// for cross-account delivery.</p>
-        /// <p>If you are setting up a cross-account subscription, the destination must have an
-        /// IAM policy associated with it that allows the sender to send logs to the destination.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html">PutDestinationPolicy</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>An Amazon Kinesis Firehose delivery stream belonging to the same account as the
-        /// subscription filter, for same-account delivery.</p>
-        /// </li>
-        /// <li>
-        /// <p>A Lambda function belonging to the same account as the subscription filter,
-        /// for same-account delivery.</p>
-        /// </li>
+        /// <li> <p>An Amazon Kinesis stream belonging to the same account as the subscription filter, for same-account delivery.</p> </li>
+        /// <li> <p>A logical destination (specified using an ARN) belonging to a different account, for cross-account delivery.</p> <p>If you are setting up a cross-account subscription, the destination must have an IAM policy associated with it that allows the sender to send logs to the destination. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html">PutDestinationPolicy</a>.</p> </li>
+        /// <li> <p>An Amazon Kinesis Firehose delivery stream belonging to the same account as the subscription filter, for same-account delivery.</p> </li>
+        /// <li> <p>A Lambda function belonging to the same account as the subscription filter, for same-account delivery.</p> </li>
         /// </ul>
         pub fn destination_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.destination_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the destination to deliver matching log events to. Currently, the supported
-        /// destinations are:</p>
+        /// <p>The ARN of the destination to deliver matching log events to. Currently, the supported destinations are:</p>
         /// <ul>
-        /// <li>
-        /// <p>An Amazon Kinesis stream belonging to the same account as the subscription filter,
-        /// for same-account delivery.</p>
-        /// </li>
-        /// <li>
-        /// <p>A logical destination (specified using an ARN) belonging to a different account,
-        /// for cross-account delivery.</p>
-        /// <p>If you are setting up a cross-account subscription, the destination must have an
-        /// IAM policy associated with it that allows the sender to send logs to the destination.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html">PutDestinationPolicy</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>An Amazon Kinesis Firehose delivery stream belonging to the same account as the
-        /// subscription filter, for same-account delivery.</p>
-        /// </li>
-        /// <li>
-        /// <p>A Lambda function belonging to the same account as the subscription filter,
-        /// for same-account delivery.</p>
-        /// </li>
+        /// <li> <p>An Amazon Kinesis stream belonging to the same account as the subscription filter, for same-account delivery.</p> </li>
+        /// <li> <p>A logical destination (specified using an ARN) belonging to a different account, for cross-account delivery.</p> <p>If you are setting up a cross-account subscription, the destination must have an IAM policy associated with it that allows the sender to send logs to the destination. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html">PutDestinationPolicy</a>.</p> </li>
+        /// <li> <p>An Amazon Kinesis Firehose delivery stream belonging to the same account as the subscription filter, for same-account delivery.</p> </li>
+        /// <li> <p>A Lambda function belonging to the same account as the subscription filter, for same-account delivery.</p> </li>
         /// </ul>
         pub fn set_destination_arn(
             mut self,
@@ -6927,30 +6687,22 @@ pub mod put_subscription_filter_input {
             self.destination_arn = input;
             self
         }
-        /// <p>The ARN of an IAM role that grants CloudWatch Logs permissions to deliver ingested log
-        /// events to the destination stream. You don't need to provide the ARN when you are working with
-        /// a logical destination for cross-account delivery.</p>
+        /// <p>The ARN of an IAM role that grants CloudWatch Logs permissions to deliver ingested log events to the destination stream. You don't need to provide the ARN when you are working with a logical destination for cross-account delivery.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of an IAM role that grants CloudWatch Logs permissions to deliver ingested log
-        /// events to the destination stream. You don't need to provide the ARN when you are working with
-        /// a logical destination for cross-account delivery.</p>
+        /// <p>The ARN of an IAM role that grants CloudWatch Logs permissions to deliver ingested log events to the destination stream. You don't need to provide the ARN when you are working with a logical destination for cross-account delivery.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
         }
-        /// <p>The method used to distribute log data to the destination. By default, log data is
-        /// grouped by log stream, but the grouping can be set to random for a more even distribution.
-        /// This property is only applicable when the destination is an Amazon Kinesis stream. </p>
+        /// <p>The method used to distribute log data to the destination. By default, log data is grouped by log stream, but the grouping can be set to random for a more even distribution. This property is only applicable when the destination is an Amazon Kinesis stream. </p>
         pub fn distribution(mut self, input: crate::model::Distribution) -> Self {
             self.distribution = Some(input);
             self
         }
-        /// <p>The method used to distribute log data to the destination. By default, log data is
-        /// grouped by log stream, but the grouping can be set to random for a more even distribution.
-        /// This property is only applicable when the destination is an Amazon Kinesis stream. </p>
+        /// <p>The method used to distribute log data to the destination. By default, log data is grouped by log stream, but the grouping can be set to random for a more even distribution. This property is only applicable when the destination is an Amazon Kinesis stream. </p>
         pub fn set_distribution(
             mut self,
             input: std::option::Option<crate::model::Distribution>,
@@ -7115,15 +6867,13 @@ pub mod start_query_input {
     }
     impl Builder {
         /// <p>The log group on which to perform the query.</p>
-        /// <p>A <code>StartQuery</code> operation must include a <code>logGroupNames</code> or a <code>logGroupName</code> parameter, but
-        /// not both.</p>
+        /// <p>A <code>StartQuery</code> operation must include a <code>logGroupNames</code> or a <code>logGroupName</code> parameter, but not both.</p>
         pub fn log_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.log_group_name = Some(input.into());
             self
         }
         /// <p>The log group on which to perform the query.</p>
-        /// <p>A <code>StartQuery</code> operation must include a <code>logGroupNames</code> or a <code>logGroupName</code> parameter, but
-        /// not both.</p>
+        /// <p>A <code>StartQuery</code> operation must include a <code>logGroupNames</code> or a <code>logGroupName</code> parameter, but not both.</p>
         pub fn set_log_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7136,8 +6886,7 @@ pub mod start_query_input {
         /// To override the contents of this collection use [`set_log_group_names`](Self::set_log_group_names).
         ///
         /// <p>The list of log groups to be queried. You can include up to 20 log groups.</p>
-        /// <p>A <code>StartQuery</code> operation must include a <code>logGroupNames</code> or a <code>logGroupName</code> parameter, but
-        /// not both.</p>
+        /// <p>A <code>StartQuery</code> operation must include a <code>logGroupNames</code> or a <code>logGroupName</code> parameter, but not both.</p>
         pub fn log_group_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.log_group_names.unwrap_or_default();
             v.push(input.into());
@@ -7145,8 +6894,7 @@ pub mod start_query_input {
             self
         }
         /// <p>The list of log groups to be queried. You can include up to 20 log groups.</p>
-        /// <p>A <code>StartQuery</code> operation must include a <code>logGroupNames</code> or a <code>logGroupName</code> parameter, but
-        /// not both.</p>
+        /// <p>A <code>StartQuery</code> operation must include a <code>logGroupNames</code> or a <code>logGroupName</code> parameter, but not both.</p>
         pub fn set_log_group_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7154,54 +6902,42 @@ pub mod start_query_input {
             self.log_group_names = input;
             self
         }
-        /// <p>The beginning of the time range to query. The range is inclusive, so the specified
-        /// start time is included in the query. Specified as epoch time, the
-        /// number of seconds since January 1, 1970, 00:00:00 UTC.</p>
+        /// <p>The beginning of the time range to query. The range is inclusive, so the specified start time is included in the query. Specified as epoch time, the number of seconds since January 1, 1970, 00:00:00 UTC.</p>
         pub fn start_time(mut self, input: i64) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>The beginning of the time range to query. The range is inclusive, so the specified
-        /// start time is included in the query. Specified as epoch time, the
-        /// number of seconds since January 1, 1970, 00:00:00 UTC.</p>
+        /// <p>The beginning of the time range to query. The range is inclusive, so the specified start time is included in the query. Specified as epoch time, the number of seconds since January 1, 1970, 00:00:00 UTC.</p>
         pub fn set_start_time(mut self, input: std::option::Option<i64>) -> Self {
             self.start_time = input;
             self
         }
-        /// <p>The end of the time range to query. The range is inclusive, so the specified
-        /// end time is included in the query. Specified as epoch
-        /// time, the number of seconds since January 1, 1970, 00:00:00 UTC.</p>
+        /// <p>The end of the time range to query. The range is inclusive, so the specified end time is included in the query. Specified as epoch time, the number of seconds since January 1, 1970, 00:00:00 UTC.</p>
         pub fn end_time(mut self, input: i64) -> Self {
             self.end_time = Some(input);
             self
         }
-        /// <p>The end of the time range to query. The range is inclusive, so the specified
-        /// end time is included in the query. Specified as epoch
-        /// time, the number of seconds since January 1, 1970, 00:00:00 UTC.</p>
+        /// <p>The end of the time range to query. The range is inclusive, so the specified end time is included in the query. Specified as epoch time, the number of seconds since January 1, 1970, 00:00:00 UTC.</p>
         pub fn set_end_time(mut self, input: std::option::Option<i64>) -> Self {
             self.end_time = input;
             self
         }
-        /// <p>The query string to use.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights Query Syntax</a>.</p>
+        /// <p>The query string to use. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights Query Syntax</a>.</p>
         pub fn query_string(mut self, input: impl Into<std::string::String>) -> Self {
             self.query_string = Some(input.into());
             self
         }
-        /// <p>The query string to use.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights Query Syntax</a>.</p>
+        /// <p>The query string to use. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights Query Syntax</a>.</p>
         pub fn set_query_string(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.query_string = input;
             self
         }
-        /// <p>The maximum number of log events to return in the query. If the query string uses the <code>fields</code> command,
-        /// only the specified fields and their values are returned. The default is 1000.</p>
+        /// <p>The maximum number of log events to return in the query. If the query string uses the <code>fields</code> command, only the specified fields and their values are returned. The default is 1000.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
             self
         }
-        /// <p>The maximum number of log events to return in the query. If the query string uses the <code>fields</code> command,
-        /// only the specified fields and their values are returned. The default is 1000.</p>
+        /// <p>The maximum number of log events to return in the query. If the query string uses the <code>fields</code> command, only the specified fields and their values are returned. The default is 1000.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -7354,14 +7090,12 @@ pub mod stop_query_input {
         pub(crate) query_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID number of the query to stop. To find this ID number, use
-        /// <code>DescribeQueries</code>.</p>
+        /// <p>The ID number of the query to stop. To find this ID number, use <code>DescribeQueries</code>.</p>
         pub fn query_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.query_id = Some(input.into());
             self
         }
-        /// <p>The ID number of the query to stop. To find this ID number, use
-        /// <code>DescribeQueries</code>.</p>
+        /// <p>The ID number of the query to stop. To find this ID number, use <code>DescribeQueries</code>.</p>
         pub fn set_query_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.query_id = input;
             self
@@ -7691,16 +7425,12 @@ pub mod test_metric_filter_input {
         pub(crate) log_event_messages: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>A symbolic description of how CloudWatch Logs should interpret the data in each log
-        /// event. For example, a log event can contain timestamps, IP addresses, strings, and so on. You
-        /// use the filter pattern to specify what to look for in the log event message.</p>
+        /// <p>A symbolic description of how CloudWatch Logs should interpret the data in each log event. For example, a log event can contain timestamps, IP addresses, strings, and so on. You use the filter pattern to specify what to look for in the log event message.</p>
         pub fn filter_pattern(mut self, input: impl Into<std::string::String>) -> Self {
             self.filter_pattern = Some(input.into());
             self
         }
-        /// <p>A symbolic description of how CloudWatch Logs should interpret the data in each log
-        /// event. For example, a log event can contain timestamps, IP addresses, strings, and so on. You
-        /// use the filter pattern to specify what to look for in the log event message.</p>
+        /// <p>A symbolic description of how CloudWatch Logs should interpret the data in each log event. For example, a log event can contain timestamps, IP addresses, strings, and so on. You use the filter pattern to specify what to look for in the log event message.</p>
         pub fn set_filter_pattern(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8073,17 +7803,13 @@ impl std::fmt::Debug for UntagLogGroupInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestMetricFilterInput {
-    /// <p>A symbolic description of how CloudWatch Logs should interpret the data in each log
-    /// event. For example, a log event can contain timestamps, IP addresses, strings, and so on. You
-    /// use the filter pattern to specify what to look for in the log event message.</p>
+    /// <p>A symbolic description of how CloudWatch Logs should interpret the data in each log event. For example, a log event can contain timestamps, IP addresses, strings, and so on. You use the filter pattern to specify what to look for in the log event message.</p>
     pub filter_pattern: std::option::Option<std::string::String>,
     /// <p>The log event messages to test.</p>
     pub log_event_messages: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl TestMetricFilterInput {
-    /// <p>A symbolic description of how CloudWatch Logs should interpret the data in each log
-    /// event. For example, a log event can contain timestamps, IP addresses, strings, and so on. You
-    /// use the filter pattern to specify what to look for in the log event message.</p>
+    /// <p>A symbolic description of how CloudWatch Logs should interpret the data in each log event. For example, a log event can contain timestamps, IP addresses, strings, and so on. You use the filter pattern to specify what to look for in the log event message.</p>
     pub fn filter_pattern(&self) -> std::option::Option<&str> {
         self.filter_pattern.as_deref()
     }
@@ -8137,13 +7863,11 @@ impl std::fmt::Debug for TagLogGroupInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopQueryInput {
-    /// <p>The ID number of the query to stop. To find this ID number, use
-    /// <code>DescribeQueries</code>.</p>
+    /// <p>The ID number of the query to stop. To find this ID number, use <code>DescribeQueries</code>.</p>
     pub query_id: std::option::Option<std::string::String>,
 }
 impl StopQueryInput {
-    /// <p>The ID number of the query to stop. To find this ID number, use
-    /// <code>DescribeQueries</code>.</p>
+    /// <p>The ID number of the query to stop. To find this ID number, use <code>DescribeQueries</code>.</p>
     pub fn query_id(&self) -> std::option::Option<&str> {
         self.query_id.as_deref()
     }
@@ -8161,60 +7885,44 @@ impl std::fmt::Debug for StopQueryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartQueryInput {
     /// <p>The log group on which to perform the query.</p>
-    /// <p>A <code>StartQuery</code> operation must include a <code>logGroupNames</code> or a <code>logGroupName</code> parameter, but
-    /// not both.</p>
+    /// <p>A <code>StartQuery</code> operation must include a <code>logGroupNames</code> or a <code>logGroupName</code> parameter, but not both.</p>
     pub log_group_name: std::option::Option<std::string::String>,
     /// <p>The list of log groups to be queried. You can include up to 20 log groups.</p>
-    /// <p>A <code>StartQuery</code> operation must include a <code>logGroupNames</code> or a <code>logGroupName</code> parameter, but
-    /// not both.</p>
+    /// <p>A <code>StartQuery</code> operation must include a <code>logGroupNames</code> or a <code>logGroupName</code> parameter, but not both.</p>
     pub log_group_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The beginning of the time range to query. The range is inclusive, so the specified
-    /// start time is included in the query. Specified as epoch time, the
-    /// number of seconds since January 1, 1970, 00:00:00 UTC.</p>
+    /// <p>The beginning of the time range to query. The range is inclusive, so the specified start time is included in the query. Specified as epoch time, the number of seconds since January 1, 1970, 00:00:00 UTC.</p>
     pub start_time: std::option::Option<i64>,
-    /// <p>The end of the time range to query. The range is inclusive, so the specified
-    /// end time is included in the query. Specified as epoch
-    /// time, the number of seconds since January 1, 1970, 00:00:00 UTC.</p>
+    /// <p>The end of the time range to query. The range is inclusive, so the specified end time is included in the query. Specified as epoch time, the number of seconds since January 1, 1970, 00:00:00 UTC.</p>
     pub end_time: std::option::Option<i64>,
-    /// <p>The query string to use.
-    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights Query Syntax</a>.</p>
+    /// <p>The query string to use. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights Query Syntax</a>.</p>
     pub query_string: std::option::Option<std::string::String>,
-    /// <p>The maximum number of log events to return in the query. If the query string uses the <code>fields</code> command,
-    /// only the specified fields and their values are returned. The default is 1000.</p>
+    /// <p>The maximum number of log events to return in the query. If the query string uses the <code>fields</code> command, only the specified fields and their values are returned. The default is 1000.</p>
     pub limit: std::option::Option<i32>,
 }
 impl StartQueryInput {
     /// <p>The log group on which to perform the query.</p>
-    /// <p>A <code>StartQuery</code> operation must include a <code>logGroupNames</code> or a <code>logGroupName</code> parameter, but
-    /// not both.</p>
+    /// <p>A <code>StartQuery</code> operation must include a <code>logGroupNames</code> or a <code>logGroupName</code> parameter, but not both.</p>
     pub fn log_group_name(&self) -> std::option::Option<&str> {
         self.log_group_name.as_deref()
     }
     /// <p>The list of log groups to be queried. You can include up to 20 log groups.</p>
-    /// <p>A <code>StartQuery</code> operation must include a <code>logGroupNames</code> or a <code>logGroupName</code> parameter, but
-    /// not both.</p>
+    /// <p>A <code>StartQuery</code> operation must include a <code>logGroupNames</code> or a <code>logGroupName</code> parameter, but not both.</p>
     pub fn log_group_names(&self) -> std::option::Option<&[std::string::String]> {
         self.log_group_names.as_deref()
     }
-    /// <p>The beginning of the time range to query. The range is inclusive, so the specified
-    /// start time is included in the query. Specified as epoch time, the
-    /// number of seconds since January 1, 1970, 00:00:00 UTC.</p>
+    /// <p>The beginning of the time range to query. The range is inclusive, so the specified start time is included in the query. Specified as epoch time, the number of seconds since January 1, 1970, 00:00:00 UTC.</p>
     pub fn start_time(&self) -> std::option::Option<i64> {
         self.start_time
     }
-    /// <p>The end of the time range to query. The range is inclusive, so the specified
-    /// end time is included in the query. Specified as epoch
-    /// time, the number of seconds since January 1, 1970, 00:00:00 UTC.</p>
+    /// <p>The end of the time range to query. The range is inclusive, so the specified end time is included in the query. Specified as epoch time, the number of seconds since January 1, 1970, 00:00:00 UTC.</p>
     pub fn end_time(&self) -> std::option::Option<i64> {
         self.end_time
     }
-    /// <p>The query string to use.
-    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights Query Syntax</a>.</p>
+    /// <p>The query string to use. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights Query Syntax</a>.</p>
     pub fn query_string(&self) -> std::option::Option<&str> {
         self.query_string.as_deref()
     }
-    /// <p>The maximum number of log events to return in the query. If the query string uses the <code>fields</code> command,
-    /// only the specified fields and their values are returned. The default is 1000.</p>
+    /// <p>The maximum number of log events to return in the query. If the query string uses the <code>fields</code> command, only the specified fields and their values are returned. The default is 1000.</p>
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
@@ -8238,43 +7946,21 @@ impl std::fmt::Debug for StartQueryInput {
 pub struct PutSubscriptionFilterInput {
     /// <p>The name of the log group.</p>
     pub log_group_name: std::option::Option<std::string::String>,
-    /// <p>A name for the subscription filter. If you are updating an existing filter, you must
-    /// specify the correct name in <code>filterName</code>. To find the name of the filter currently
-    /// associated with a log group, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeSubscriptionFilters.html">DescribeSubscriptionFilters</a>.</p>
+    /// <p>A name for the subscription filter. If you are updating an existing filter, you must specify the correct name in <code>filterName</code>. To find the name of the filter currently associated with a log group, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeSubscriptionFilters.html">DescribeSubscriptionFilters</a>.</p>
     pub filter_name: std::option::Option<std::string::String>,
     /// <p>A filter pattern for subscribing to a filtered stream of log events.</p>
     pub filter_pattern: std::option::Option<std::string::String>,
-    /// <p>The ARN of the destination to deliver matching log events to. Currently, the supported
-    /// destinations are:</p>
+    /// <p>The ARN of the destination to deliver matching log events to. Currently, the supported destinations are:</p>
     /// <ul>
-    /// <li>
-    /// <p>An Amazon Kinesis stream belonging to the same account as the subscription filter,
-    /// for same-account delivery.</p>
-    /// </li>
-    /// <li>
-    /// <p>A logical destination (specified using an ARN) belonging to a different account,
-    /// for cross-account delivery.</p>
-    /// <p>If you are setting up a cross-account subscription, the destination must have an
-    /// IAM policy associated with it that allows the sender to send logs to the destination.
-    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html">PutDestinationPolicy</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>An Amazon Kinesis Firehose delivery stream belonging to the same account as the
-    /// subscription filter, for same-account delivery.</p>
-    /// </li>
-    /// <li>
-    /// <p>A Lambda function belonging to the same account as the subscription filter,
-    /// for same-account delivery.</p>
-    /// </li>
+    /// <li> <p>An Amazon Kinesis stream belonging to the same account as the subscription filter, for same-account delivery.</p> </li>
+    /// <li> <p>A logical destination (specified using an ARN) belonging to a different account, for cross-account delivery.</p> <p>If you are setting up a cross-account subscription, the destination must have an IAM policy associated with it that allows the sender to send logs to the destination. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html">PutDestinationPolicy</a>.</p> </li>
+    /// <li> <p>An Amazon Kinesis Firehose delivery stream belonging to the same account as the subscription filter, for same-account delivery.</p> </li>
+    /// <li> <p>A Lambda function belonging to the same account as the subscription filter, for same-account delivery.</p> </li>
     /// </ul>
     pub destination_arn: std::option::Option<std::string::String>,
-    /// <p>The ARN of an IAM role that grants CloudWatch Logs permissions to deliver ingested log
-    /// events to the destination stream. You don't need to provide the ARN when you are working with
-    /// a logical destination for cross-account delivery.</p>
+    /// <p>The ARN of an IAM role that grants CloudWatch Logs permissions to deliver ingested log events to the destination stream. You don't need to provide the ARN when you are working with a logical destination for cross-account delivery.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>The method used to distribute log data to the destination. By default, log data is
-    /// grouped by log stream, but the grouping can be set to random for a more even distribution.
-    /// This property is only applicable when the destination is an Amazon Kinesis stream. </p>
+    /// <p>The method used to distribute log data to the destination. By default, log data is grouped by log stream, but the grouping can be set to random for a more even distribution. This property is only applicable when the destination is an Amazon Kinesis stream. </p>
     pub distribution: std::option::Option<crate::model::Distribution>,
 }
 impl PutSubscriptionFilterInput {
@@ -8282,9 +7968,7 @@ impl PutSubscriptionFilterInput {
     pub fn log_group_name(&self) -> std::option::Option<&str> {
         self.log_group_name.as_deref()
     }
-    /// <p>A name for the subscription filter. If you are updating an existing filter, you must
-    /// specify the correct name in <code>filterName</code>. To find the name of the filter currently
-    /// associated with a log group, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeSubscriptionFilters.html">DescribeSubscriptionFilters</a>.</p>
+    /// <p>A name for the subscription filter. If you are updating an existing filter, you must specify the correct name in <code>filterName</code>. To find the name of the filter currently associated with a log group, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeSubscriptionFilters.html">DescribeSubscriptionFilters</a>.</p>
     pub fn filter_name(&self) -> std::option::Option<&str> {
         self.filter_name.as_deref()
     }
@@ -8292,41 +7976,21 @@ impl PutSubscriptionFilterInput {
     pub fn filter_pattern(&self) -> std::option::Option<&str> {
         self.filter_pattern.as_deref()
     }
-    /// <p>The ARN of the destination to deliver matching log events to. Currently, the supported
-    /// destinations are:</p>
+    /// <p>The ARN of the destination to deliver matching log events to. Currently, the supported destinations are:</p>
     /// <ul>
-    /// <li>
-    /// <p>An Amazon Kinesis stream belonging to the same account as the subscription filter,
-    /// for same-account delivery.</p>
-    /// </li>
-    /// <li>
-    /// <p>A logical destination (specified using an ARN) belonging to a different account,
-    /// for cross-account delivery.</p>
-    /// <p>If you are setting up a cross-account subscription, the destination must have an
-    /// IAM policy associated with it that allows the sender to send logs to the destination.
-    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html">PutDestinationPolicy</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>An Amazon Kinesis Firehose delivery stream belonging to the same account as the
-    /// subscription filter, for same-account delivery.</p>
-    /// </li>
-    /// <li>
-    /// <p>A Lambda function belonging to the same account as the subscription filter,
-    /// for same-account delivery.</p>
-    /// </li>
+    /// <li> <p>An Amazon Kinesis stream belonging to the same account as the subscription filter, for same-account delivery.</p> </li>
+    /// <li> <p>A logical destination (specified using an ARN) belonging to a different account, for cross-account delivery.</p> <p>If you are setting up a cross-account subscription, the destination must have an IAM policy associated with it that allows the sender to send logs to the destination. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html">PutDestinationPolicy</a>.</p> </li>
+    /// <li> <p>An Amazon Kinesis Firehose delivery stream belonging to the same account as the subscription filter, for same-account delivery.</p> </li>
+    /// <li> <p>A Lambda function belonging to the same account as the subscription filter, for same-account delivery.</p> </li>
     /// </ul>
     pub fn destination_arn(&self) -> std::option::Option<&str> {
         self.destination_arn.as_deref()
     }
-    /// <p>The ARN of an IAM role that grants CloudWatch Logs permissions to deliver ingested log
-    /// events to the destination stream. You don't need to provide the ARN when you are working with
-    /// a logical destination for cross-account delivery.</p>
+    /// <p>The ARN of an IAM role that grants CloudWatch Logs permissions to deliver ingested log events to the destination stream. You don't need to provide the ARN when you are working with a logical destination for cross-account delivery.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>The method used to distribute log data to the destination. By default, log data is
-    /// grouped by log stream, but the grouping can be set to random for a more even distribution.
-    /// This property is only applicable when the destination is an Amazon Kinesis stream. </p>
+    /// <p>The method used to distribute log data to the destination. By default, log data is grouped by log stream, but the grouping can be set to random for a more even distribution. This property is only applicable when the destination is an Amazon Kinesis stream. </p>
     pub fn distribution(&self) -> std::option::Option<&crate::model::Distribution> {
         self.distribution.as_ref()
     }
@@ -8350,11 +8014,8 @@ impl std::fmt::Debug for PutSubscriptionFilterInput {
 pub struct PutRetentionPolicyInput {
     /// <p>The name of the log group.</p>
     pub log_group_name: std::option::Option<std::string::String>,
-    /// <p>The number of days to retain the log events in the specified log group.
-    /// Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, and 3653.</p>
-    /// <p>To set a log group to never have log events expire, use
-    /// <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html">DeleteRetentionPolicy</a>.
-    /// </p>
+    /// <p>The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, and 3653.</p>
+    /// <p>To set a log group to never have log events expire, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html">DeleteRetentionPolicy</a>. </p>
     pub retention_in_days: std::option::Option<i32>,
 }
 impl PutRetentionPolicyInput {
@@ -8362,11 +8023,8 @@ impl PutRetentionPolicyInput {
     pub fn log_group_name(&self) -> std::option::Option<&str> {
         self.log_group_name.as_deref()
     }
-    /// <p>The number of days to retain the log events in the specified log group.
-    /// Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, and 3653.</p>
-    /// <p>To set a log group to never have log events expire, use
-    /// <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html">DeleteRetentionPolicy</a>.
-    /// </p>
+    /// <p>The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, and 3653.</p>
+    /// <p>To set a log group to never have log events expire, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html">DeleteRetentionPolicy</a>. </p>
     pub fn retention_in_days(&self) -> std::option::Option<i32> {
         self.retention_in_days
     }
@@ -8386,45 +8044,12 @@ impl std::fmt::Debug for PutRetentionPolicyInput {
 pub struct PutResourcePolicyInput {
     /// <p>Name of the new policy. This parameter is required.</p>
     pub policy_name: std::option::Option<std::string::String>,
-    /// <p>Details of the new policy, including the identity of the principal that is enabled to put logs to this account. This is formatted as a JSON string.
-    /// This parameter is required.</p>
-    /// <p>The following example creates a resource policy enabling the Route 53 service to put
-    /// DNS query logs in to the specified log group. Replace <code>"logArn"</code> with the ARN of
-    /// your CloudWatch Logs resource, such as a log group or log stream.</p>
-    /// <p>CloudWatch Logs also supports <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourcearn">aws:SourceArn</a>
-    /// and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourceaccount">aws:SourceAccount</a>
-    /// condition context keys.</p>
-    /// <p>In the example resource policy, you would replace the value of <code>SourceArn</code> with the resource making the
-    /// call from Route 53 to CloudWatch Logs and replace the value of <code>SourceAccount</code> with
-    /// the Amazon Web Services account ID making that call.</p>
+    /// <p>Details of the new policy, including the identity of the principal that is enabled to put logs to this account. This is formatted as a JSON string. This parameter is required.</p>
+    /// <p>The following example creates a resource policy enabling the Route 53 service to put DNS query logs in to the specified log group. Replace <code>"logArn"</code> with the ARN of your CloudWatch Logs resource, such as a log group or log stream.</p>
+    /// <p>CloudWatch Logs also supports <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourcearn">aws:SourceArn</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourceaccount">aws:SourceAccount</a> condition context keys.</p>
+    /// <p>In the example resource policy, you would replace the value of <code>SourceArn</code> with the resource making the call from Route 53 to CloudWatch Logs and replace the value of <code>SourceAccount</code> with the Amazon Web Services account ID making that call.</p>
     /// <p></p>
-    /// <p>
-    /// <code>{
-    /// "Version": "2012-10-17",
-    /// "Statement": [
-    /// {
-    /// "Sid": "Route53LogsToCloudWatchLogs",
-    /// "Effect": "Allow",
-    /// "Principal": {
-    /// "Service": [
-    /// "route53.amazonaws.com"
-    /// ]
-    /// },
-    /// "Action": "logs:PutLogEvents",
-    /// "Resource": "logArn",
-    /// "Condition": {
-    /// "ArnLike": {
-    /// "aws:SourceArn": "myRoute53ResourceArn"
-    /// },
-    /// "StringEquals": {
-    /// "aws:SourceAccount": "myAwsAccountId"
-    /// }
-    /// }
-    /// }
-    /// ]
-    /// }</code>
-    ///
-    /// </p>
+    /// <p> <code>{ "Version": "2012-10-17", "Statement": [ { "Sid": "Route53LogsToCloudWatchLogs", "Effect": "Allow", "Principal": { "Service": [ "route53.amazonaws.com" ] }, "Action": "logs:PutLogEvents", "Resource": "logArn", "Condition": { "ArnLike": { "aws:SourceArn": "myRoute53ResourceArn" }, "StringEquals": { "aws:SourceAccount": "myAwsAccountId" } } } ] }</code> </p>
     pub policy_document: std::option::Option<std::string::String>,
 }
 impl PutResourcePolicyInput {
@@ -8432,45 +8057,12 @@ impl PutResourcePolicyInput {
     pub fn policy_name(&self) -> std::option::Option<&str> {
         self.policy_name.as_deref()
     }
-    /// <p>Details of the new policy, including the identity of the principal that is enabled to put logs to this account. This is formatted as a JSON string.
-    /// This parameter is required.</p>
-    /// <p>The following example creates a resource policy enabling the Route 53 service to put
-    /// DNS query logs in to the specified log group. Replace <code>"logArn"</code> with the ARN of
-    /// your CloudWatch Logs resource, such as a log group or log stream.</p>
-    /// <p>CloudWatch Logs also supports <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourcearn">aws:SourceArn</a>
-    /// and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourceaccount">aws:SourceAccount</a>
-    /// condition context keys.</p>
-    /// <p>In the example resource policy, you would replace the value of <code>SourceArn</code> with the resource making the
-    /// call from Route 53 to CloudWatch Logs and replace the value of <code>SourceAccount</code> with
-    /// the Amazon Web Services account ID making that call.</p>
+    /// <p>Details of the new policy, including the identity of the principal that is enabled to put logs to this account. This is formatted as a JSON string. This parameter is required.</p>
+    /// <p>The following example creates a resource policy enabling the Route 53 service to put DNS query logs in to the specified log group. Replace <code>"logArn"</code> with the ARN of your CloudWatch Logs resource, such as a log group or log stream.</p>
+    /// <p>CloudWatch Logs also supports <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourcearn">aws:SourceArn</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourceaccount">aws:SourceAccount</a> condition context keys.</p>
+    /// <p>In the example resource policy, you would replace the value of <code>SourceArn</code> with the resource making the call from Route 53 to CloudWatch Logs and replace the value of <code>SourceAccount</code> with the Amazon Web Services account ID making that call.</p>
     /// <p></p>
-    /// <p>
-    /// <code>{
-    /// "Version": "2012-10-17",
-    /// "Statement": [
-    /// {
-    /// "Sid": "Route53LogsToCloudWatchLogs",
-    /// "Effect": "Allow",
-    /// "Principal": {
-    /// "Service": [
-    /// "route53.amazonaws.com"
-    /// ]
-    /// },
-    /// "Action": "logs:PutLogEvents",
-    /// "Resource": "logArn",
-    /// "Condition": {
-    /// "ArnLike": {
-    /// "aws:SourceArn": "myRoute53ResourceArn"
-    /// },
-    /// "StringEquals": {
-    /// "aws:SourceAccount": "myAwsAccountId"
-    /// }
-    /// }
-    /// }
-    /// ]
-    /// }</code>
-    ///
-    /// </p>
+    /// <p> <code>{ "Version": "2012-10-17", "Statement": [ { "Sid": "Route53LogsToCloudWatchLogs", "Effect": "Allow", "Principal": { "Service": [ "route53.amazonaws.com" ] }, "Action": "logs:PutLogEvents", "Resource": "logArn", "Condition": { "ArnLike": { "aws:SourceArn": "myRoute53ResourceArn" }, "StringEquals": { "aws:SourceAccount": "myAwsAccountId" } } } ] }</code> </p>
     pub fn policy_document(&self) -> std::option::Option<&str> {
         self.policy_document.as_deref()
     }
@@ -8488,49 +8080,33 @@ impl std::fmt::Debug for PutResourcePolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutQueryDefinitionInput {
-    /// <p>A name for the query definition. If you are saving a lot of query definitions, we
-    /// recommend that you name them so that you can easily find the ones you want by using the first
-    /// part of the name as a filter in the <code>queryDefinitionNamePrefix</code> parameter of <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a>.</p>
+    /// <p>A name for the query definition. If you are saving a lot of query definitions, we recommend that you name them so that you can easily find the ones you want by using the first part of the name as a filter in the <code>queryDefinitionNamePrefix</code> parameter of <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a>.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>If you are updating a query definition, use this parameter to specify the ID of the query
-    /// definition that you want to update. You can use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a> to retrieve the IDs of your saved query
-    /// definitions.</p>
-    /// <p>If you are creating a query definition, do not specify this parameter. CloudWatch
-    /// generates a unique ID for the new query definition and include it in the response to this
-    /// operation.</p>
+    /// <p>If you are updating a query definition, use this parameter to specify the ID of the query definition that you want to update. You can use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a> to retrieve the IDs of your saved query definitions.</p>
+    /// <p>If you are creating a query definition, do not specify this parameter. CloudWatch generates a unique ID for the new query definition and include it in the response to this operation.</p>
     pub query_definition_id: std::option::Option<std::string::String>,
     /// <p>Use this parameter to include specific log groups as part of your query definition.</p>
-    /// <p>If you are updating a query definition and you omit this parameter, then the updated
-    /// definition will contain no log groups.</p>
+    /// <p>If you are updating a query definition and you omit this parameter, then the updated definition will contain no log groups.</p>
     pub log_group_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The query string to use for this definition.
-    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights Query Syntax</a>.</p>
+    /// <p>The query string to use for this definition. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights Query Syntax</a>.</p>
     pub query_string: std::option::Option<std::string::String>,
 }
 impl PutQueryDefinitionInput {
-    /// <p>A name for the query definition. If you are saving a lot of query definitions, we
-    /// recommend that you name them so that you can easily find the ones you want by using the first
-    /// part of the name as a filter in the <code>queryDefinitionNamePrefix</code> parameter of <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a>.</p>
+    /// <p>A name for the query definition. If you are saving a lot of query definitions, we recommend that you name them so that you can easily find the ones you want by using the first part of the name as a filter in the <code>queryDefinitionNamePrefix</code> parameter of <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a>.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>If you are updating a query definition, use this parameter to specify the ID of the query
-    /// definition that you want to update. You can use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a> to retrieve the IDs of your saved query
-    /// definitions.</p>
-    /// <p>If you are creating a query definition, do not specify this parameter. CloudWatch
-    /// generates a unique ID for the new query definition and include it in the response to this
-    /// operation.</p>
+    /// <p>If you are updating a query definition, use this parameter to specify the ID of the query definition that you want to update. You can use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a> to retrieve the IDs of your saved query definitions.</p>
+    /// <p>If you are creating a query definition, do not specify this parameter. CloudWatch generates a unique ID for the new query definition and include it in the response to this operation.</p>
     pub fn query_definition_id(&self) -> std::option::Option<&str> {
         self.query_definition_id.as_deref()
     }
     /// <p>Use this parameter to include specific log groups as part of your query definition.</p>
-    /// <p>If you are updating a query definition and you omit this parameter, then the updated
-    /// definition will contain no log groups.</p>
+    /// <p>If you are updating a query definition and you omit this parameter, then the updated definition will contain no log groups.</p>
     pub fn log_group_names(&self) -> std::option::Option<&[std::string::String]> {
         self.log_group_names.as_deref()
     }
-    /// <p>The query string to use for this definition.
-    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights Query Syntax</a>.</p>
+    /// <p>The query string to use for this definition. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights Query Syntax</a>.</p>
     pub fn query_string(&self) -> std::option::Option<&str> {
         self.query_string.as_deref()
     }
@@ -8601,11 +8177,7 @@ pub struct PutLogEventsInput {
     pub log_stream_name: std::option::Option<std::string::String>,
     /// <p>The log events.</p>
     pub log_events: std::option::Option<std::vec::Vec<crate::model::InputLogEvent>>,
-    /// <p>The sequence token obtained from the response of the previous <code>PutLogEvents</code>
-    /// call. An upload in a newly created log stream does not require a sequence token. You can also
-    /// get the sequence token using <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeLogStreams.html">DescribeLogStreams</a>. If you call <code>PutLogEvents</code> twice within a narrow
-    /// time period using the same value for <code>sequenceToken</code>, both calls might be
-    /// successful or one might be rejected.</p>
+    /// <p>The sequence token obtained from the response of the previous <code>PutLogEvents</code> call. An upload in a newly created log stream does not require a sequence token. You can also get the sequence token using <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeLogStreams.html">DescribeLogStreams</a>. If you call <code>PutLogEvents</code> twice within a narrow time period using the same value for <code>sequenceToken</code>, both calls might be successful or one might be rejected.</p>
     pub sequence_token: std::option::Option<std::string::String>,
 }
 impl PutLogEventsInput {
@@ -8621,11 +8193,7 @@ impl PutLogEventsInput {
     pub fn log_events(&self) -> std::option::Option<&[crate::model::InputLogEvent]> {
         self.log_events.as_deref()
     }
-    /// <p>The sequence token obtained from the response of the previous <code>PutLogEvents</code>
-    /// call. An upload in a newly created log stream does not require a sequence token. You can also
-    /// get the sequence token using <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeLogStreams.html">DescribeLogStreams</a>. If you call <code>PutLogEvents</code> twice within a narrow
-    /// time period using the same value for <code>sequenceToken</code>, both calls might be
-    /// successful or one might be rejected.</p>
+    /// <p>The sequence token obtained from the response of the previous <code>PutLogEvents</code> call. An upload in a newly created log stream does not require a sequence token. You can also get the sequence token using <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeLogStreams.html">DescribeLogStreams</a>. If you call <code>PutLogEvents</code> twice within a narrow time period using the same value for <code>sequenceToken</code>, both calls might be successful or one might be rejected.</p>
     pub fn sequence_token(&self) -> std::option::Option<&str> {
         self.sequence_token.as_deref()
     }
@@ -8647,8 +8215,7 @@ impl std::fmt::Debug for PutLogEventsInput {
 pub struct PutDestinationPolicyInput {
     /// <p>A name for an existing destination.</p>
     pub destination_name: std::option::Option<std::string::String>,
-    /// <p>An IAM policy document that authorizes cross-account users to deliver their log events
-    /// to the associated destination. This can be up to 5120 bytes.</p>
+    /// <p>An IAM policy document that authorizes cross-account users to deliver their log events to the associated destination. This can be up to 5120 bytes.</p>
     pub access_policy: std::option::Option<std::string::String>,
 }
 impl PutDestinationPolicyInput {
@@ -8656,8 +8223,7 @@ impl PutDestinationPolicyInput {
     pub fn destination_name(&self) -> std::option::Option<&str> {
         self.destination_name.as_deref()
     }
-    /// <p>An IAM policy document that authorizes cross-account users to deliver their log events
-    /// to the associated destination. This can be up to 5120 bytes.</p>
+    /// <p>An IAM policy document that authorizes cross-account users to deliver their log events to the associated destination. This can be up to 5120 bytes.</p>
     pub fn access_policy(&self) -> std::option::Option<&str> {
         self.access_policy.as_deref()
     }
@@ -8679,8 +8245,7 @@ pub struct PutDestinationInput {
     pub destination_name: std::option::Option<std::string::String>,
     /// <p>The ARN of an Amazon Kinesis stream to which to deliver matching log events.</p>
     pub target_arn: std::option::Option<std::string::String>,
-    /// <p>The ARN of an IAM role that grants CloudWatch Logs permissions to call the Amazon
-    /// Kinesis <code>PutRecord</code> operation on the destination stream.</p>
+    /// <p>The ARN of an IAM role that grants CloudWatch Logs permissions to call the Amazon Kinesis <code>PutRecord</code> operation on the destination stream.</p>
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl PutDestinationInput {
@@ -8692,8 +8257,7 @@ impl PutDestinationInput {
     pub fn target_arn(&self) -> std::option::Option<&str> {
         self.target_arn.as_deref()
     }
-    /// <p>The ARN of an IAM role that grants CloudWatch Logs permissions to call the Amazon
-    /// Kinesis <code>PutRecord</code> operation on the destination stream.</p>
+    /// <p>The ARN of an IAM role that grants CloudWatch Logs permissions to call the Amazon Kinesis <code>PutRecord</code> operation on the destination stream.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -8754,17 +8318,11 @@ impl std::fmt::Debug for GetQueryResultsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLogRecordInput {
-    /// <p>The pointer corresponding to the log event record you want to retrieve. You get this from
-    /// the response of a <code>GetQueryResults</code> operation. In that response, the value of the
-    /// <code>@ptr</code> field for a log event is the value to use as <code>logRecordPointer</code>
-    /// to retrieve that complete log event record.</p>
+    /// <p>The pointer corresponding to the log event record you want to retrieve. You get this from the response of a <code>GetQueryResults</code> operation. In that response, the value of the <code>@ptr</code> field for a log event is the value to use as <code>logRecordPointer</code> to retrieve that complete log event record.</p>
     pub log_record_pointer: std::option::Option<std::string::String>,
 }
 impl GetLogRecordInput {
-    /// <p>The pointer corresponding to the log event record you want to retrieve. You get this from
-    /// the response of a <code>GetQueryResults</code> operation. In that response, the value of the
-    /// <code>@ptr</code> field for a log event is the value to use as <code>logRecordPointer</code>
-    /// to retrieve that complete log event record.</p>
+    /// <p>The pointer corresponding to the log event record you want to retrieve. You get this from the response of a <code>GetQueryResults</code> operation. In that response, the value of the <code>@ptr</code> field for a log event is the value to use as <code>logRecordPointer</code> to retrieve that complete log event record.</p>
     pub fn log_record_pointer(&self) -> std::option::Option<&str> {
         self.log_record_pointer.as_deref()
     }
@@ -8783,11 +8341,8 @@ impl std::fmt::Debug for GetLogRecordInput {
 pub struct GetLogGroupFieldsInput {
     /// <p>The name of the log group to search.</p>
     pub log_group_name: std::option::Option<std::string::String>,
-    /// <p>The time to set as the center of the query. If you specify <code>time</code>, the 15 minutes
-    /// before this time are queries. If you omit <code>time</code> the 8
-    /// minutes before and 8 minutes after this time are searched.</p>
-    /// <p>The <code>time</code> value is specified as epoch time, the number of seconds since
-    /// January 1, 1970, 00:00:00 UTC.</p>
+    /// <p>The time to set as the center of the query. If you specify <code>time</code>, the 15 minutes before this time are queries. If you omit <code>time</code> the 8 minutes before and 8 minutes after this time are searched.</p>
+    /// <p>The <code>time</code> value is specified as epoch time, the number of seconds since January 1, 1970, 00:00:00 UTC.</p>
     pub time: std::option::Option<i64>,
 }
 impl GetLogGroupFieldsInput {
@@ -8795,11 +8350,8 @@ impl GetLogGroupFieldsInput {
     pub fn log_group_name(&self) -> std::option::Option<&str> {
         self.log_group_name.as_deref()
     }
-    /// <p>The time to set as the center of the query. If you specify <code>time</code>, the 15 minutes
-    /// before this time are queries. If you omit <code>time</code> the 8
-    /// minutes before and 8 minutes after this time are searched.</p>
-    /// <p>The <code>time</code> value is specified as epoch time, the number of seconds since
-    /// January 1, 1970, 00:00:00 UTC.</p>
+    /// <p>The time to set as the center of the query. If you specify <code>time</code>, the 15 minutes before this time are queries. If you omit <code>time</code> the 8 minutes before and 8 minutes after this time are searched.</p>
+    /// <p>The <code>time</code> value is specified as epoch time, the number of seconds since January 1, 1970, 00:00:00 UTC.</p>
     pub fn time(&self) -> std::option::Option<i64> {
         self.time
     }
@@ -8821,24 +8373,16 @@ pub struct GetLogEventsInput {
     pub log_group_name: std::option::Option<std::string::String>,
     /// <p>The name of the log stream.</p>
     pub log_stream_name: std::option::Option<std::string::String>,
-    /// <p>The start of the time range, expressed as the number of milliseconds after Jan 1, 1970
-    /// 00:00:00 UTC. Events with a timestamp equal to this time or later than this time are included.
-    /// Events with a timestamp earlier than this time are not included.</p>
+    /// <p>The start of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp equal to this time or later than this time are included. Events with a timestamp earlier than this time are not included.</p>
     pub start_time: std::option::Option<i64>,
-    /// <p>The end of the time range, expressed as the number of milliseconds after Jan 1, 1970
-    /// 00:00:00 UTC. Events with a timestamp equal to or later than this time are not
-    /// included.</p>
+    /// <p>The end of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp equal to or later than this time are not included.</p>
     pub end_time: std::option::Option<i64>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of log events returned. If you don't specify a value, the maximum is
-    /// as many log events as can fit in a response size of 1 MB, up to 10,000 log events.</p>
+    /// <p>The maximum number of log events returned. If you don't specify a value, the maximum is as many log events as can fit in a response size of 1 MB, up to 10,000 log events.</p>
     pub limit: std::option::Option<i32>,
-    /// <p>If the value is true, the earliest log events are returned first.
-    /// If the value is false, the latest log events are returned first.
-    /// The default value is false.</p>
-    /// <p>If you are using a previous <code>nextForwardToken</code> value as the <code>nextToken</code> in this operation,
-    /// you must specify <code>true</code> for <code>startFromHead</code>.</p>
+    /// <p>If the value is true, the earliest log events are returned first. If the value is false, the latest log events are returned first. The default value is false.</p>
+    /// <p>If you are using a previous <code>nextForwardToken</code> value as the <code>nextToken</code> in this operation, you must specify <code>true</code> for <code>startFromHead</code>.</p>
     pub start_from_head: std::option::Option<bool>,
 }
 impl GetLogEventsInput {
@@ -8850,15 +8394,11 @@ impl GetLogEventsInput {
     pub fn log_stream_name(&self) -> std::option::Option<&str> {
         self.log_stream_name.as_deref()
     }
-    /// <p>The start of the time range, expressed as the number of milliseconds after Jan 1, 1970
-    /// 00:00:00 UTC. Events with a timestamp equal to this time or later than this time are included.
-    /// Events with a timestamp earlier than this time are not included.</p>
+    /// <p>The start of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp equal to this time or later than this time are included. Events with a timestamp earlier than this time are not included.</p>
     pub fn start_time(&self) -> std::option::Option<i64> {
         self.start_time
     }
-    /// <p>The end of the time range, expressed as the number of milliseconds after Jan 1, 1970
-    /// 00:00:00 UTC. Events with a timestamp equal to or later than this time are not
-    /// included.</p>
+    /// <p>The end of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp equal to or later than this time are not included.</p>
     pub fn end_time(&self) -> std::option::Option<i64> {
         self.end_time
     }
@@ -8866,16 +8406,12 @@ impl GetLogEventsInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of log events returned. If you don't specify a value, the maximum is
-    /// as many log events as can fit in a response size of 1 MB, up to 10,000 log events.</p>
+    /// <p>The maximum number of log events returned. If you don't specify a value, the maximum is as many log events as can fit in a response size of 1 MB, up to 10,000 log events.</p>
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
-    /// <p>If the value is true, the earliest log events are returned first.
-    /// If the value is false, the latest log events are returned first.
-    /// The default value is false.</p>
-    /// <p>If you are using a previous <code>nextForwardToken</code> value as the <code>nextToken</code> in this operation,
-    /// you must specify <code>true</code> for <code>startFromHead</code>.</p>
+    /// <p>If the value is true, the earliest log events are returned first. If the value is false, the latest log events are returned first. The default value is false.</p>
+    /// <p>If you are using a previous <code>nextForwardToken</code> value as the <code>nextToken</code> in this operation, you must specify <code>true</code> for <code>startFromHead</code>.</p>
     pub fn start_from_head(&self) -> std::option::Option<bool> {
         self.start_from_head
     }
@@ -8901,19 +8437,14 @@ pub struct FilterLogEventsInput {
     /// <p>The name of the log group to search.</p>
     pub log_group_name: std::option::Option<std::string::String>,
     /// <p>Filters the results to only logs from the log streams in this list.</p>
-    /// <p>If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, the action
-    /// returns an <code>InvalidParameterException</code> error.</p>
+    /// <p>If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, the action returns an <code>InvalidParameterException</code> error.</p>
     pub log_stream_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Filters the results to include only events from log streams that have names starting with this prefix.</p>
-    /// <p>If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, but the value for
-    /// <code>logStreamNamePrefix</code> does not match any log stream names specified in <code>logStreamNames</code>, the action
-    /// returns an <code>InvalidParameterException</code> error.</p>
+    /// <p>If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, but the value for <code>logStreamNamePrefix</code> does not match any log stream names specified in <code>logStreamNames</code>, the action returns an <code>InvalidParameterException</code> error.</p>
     pub log_stream_name_prefix: std::option::Option<std::string::String>,
-    /// <p>The start of the time range, expressed as the number of milliseconds after Jan 1, 1970
-    /// 00:00:00 UTC. Events with a timestamp before this time are not returned.</p>
+    /// <p>The start of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp before this time are not returned.</p>
     pub start_time: std::option::Option<i64>,
-    /// <p>The end of the time range, expressed as the number of milliseconds after Jan 1, 1970
-    /// 00:00:00 UTC. Events with a timestamp later than this time are not returned.</p>
+    /// <p>The end of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not returned.</p>
     pub end_time: std::option::Option<i64>,
     /// <p>The filter pattern to use. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter and Pattern Syntax</a>.</p>
     /// <p>If not provided, all the events are matched.</p>
@@ -8922,14 +8453,8 @@ pub struct FilterLogEventsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of events to return. The default is 10,000 events.</p>
     pub limit: std::option::Option<i32>,
-    /// <p>If the value is true, the operation makes a best effort to provide responses that
-    /// contain events from multiple log streams within the log group, interleaved in a single
-    /// response. If the value is false, all the matched log events in the first log stream are
-    /// searched first, then those in the next log stream, and so on. The default is false.</p>
-    /// <p>
-    /// <b>Important:</b> Starting on June 17, 2019, this parameter
-    /// is ignored and the value is assumed to be true. The response from this operation always
-    /// interleaves events from multiple log streams within a log group.</p>
+    /// <p>If the value is true, the operation makes a best effort to provide responses that contain events from multiple log streams within the log group, interleaved in a single response. If the value is false, all the matched log events in the first log stream are searched first, then those in the next log stream, and so on. The default is false.</p>
+    /// <p> <b>Important:</b> Starting on June 17, 2019, this parameter is ignored and the value is assumed to be true. The response from this operation always interleaves events from multiple log streams within a log group.</p>
     pub interleaved: std::option::Option<bool>,
 }
 impl FilterLogEventsInput {
@@ -8938,25 +8463,20 @@ impl FilterLogEventsInput {
         self.log_group_name.as_deref()
     }
     /// <p>Filters the results to only logs from the log streams in this list.</p>
-    /// <p>If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, the action
-    /// returns an <code>InvalidParameterException</code> error.</p>
+    /// <p>If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, the action returns an <code>InvalidParameterException</code> error.</p>
     pub fn log_stream_names(&self) -> std::option::Option<&[std::string::String]> {
         self.log_stream_names.as_deref()
     }
     /// <p>Filters the results to include only events from log streams that have names starting with this prefix.</p>
-    /// <p>If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, but the value for
-    /// <code>logStreamNamePrefix</code> does not match any log stream names specified in <code>logStreamNames</code>, the action
-    /// returns an <code>InvalidParameterException</code> error.</p>
+    /// <p>If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, but the value for <code>logStreamNamePrefix</code> does not match any log stream names specified in <code>logStreamNames</code>, the action returns an <code>InvalidParameterException</code> error.</p>
     pub fn log_stream_name_prefix(&self) -> std::option::Option<&str> {
         self.log_stream_name_prefix.as_deref()
     }
-    /// <p>The start of the time range, expressed as the number of milliseconds after Jan 1, 1970
-    /// 00:00:00 UTC. Events with a timestamp before this time are not returned.</p>
+    /// <p>The start of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp before this time are not returned.</p>
     pub fn start_time(&self) -> std::option::Option<i64> {
         self.start_time
     }
-    /// <p>The end of the time range, expressed as the number of milliseconds after Jan 1, 1970
-    /// 00:00:00 UTC. Events with a timestamp later than this time are not returned.</p>
+    /// <p>The end of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not returned.</p>
     pub fn end_time(&self) -> std::option::Option<i64> {
         self.end_time
     }
@@ -8973,14 +8493,8 @@ impl FilterLogEventsInput {
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
-    /// <p>If the value is true, the operation makes a best effort to provide responses that
-    /// contain events from multiple log streams within the log group, interleaved in a single
-    /// response. If the value is false, all the matched log events in the first log stream are
-    /// searched first, then those in the next log stream, and so on. The default is false.</p>
-    /// <p>
-    /// <b>Important:</b> Starting on June 17, 2019, this parameter
-    /// is ignored and the value is assumed to be true. The response from this operation always
-    /// interleaves events from multiple log streams within a log group.</p>
+    /// <p>If the value is true, the operation makes a best effort to provide responses that contain events from multiple log streams within the log group, interleaved in a single response. If the value is false, all the matched log events in the first log stream are searched first, then those in the next log stream, and so on. The default is false.</p>
+    /// <p> <b>Important:</b> Starting on June 17, 2019, this parameter is ignored and the value is assumed to be true. The response from this operation always interleaves events from multiple log streams within a log group.</p>
     pub fn interleaved(&self) -> std::option::Option<bool> {
         self.interleaved
     }
@@ -9136,8 +8650,7 @@ impl std::fmt::Debug for DescribeQueryDefinitionsInput {
 pub struct DescribeQueriesInput {
     /// <p>Limits the returned queries to only those for the specified log group.</p>
     pub log_group_name: std::option::Option<std::string::String>,
-    /// <p>Limits the returned queries to only those that have the specified status. Valid values are <code>Cancelled</code>,
-    /// <code>Complete</code>, <code>Failed</code>, <code>Running</code>, and <code>Scheduled</code>.</p>
+    /// <p>Limits the returned queries to only those that have the specified status. Valid values are <code>Cancelled</code>, <code>Complete</code>, <code>Failed</code>, <code>Running</code>, and <code>Scheduled</code>.</p>
     pub status: std::option::Option<crate::model::QueryStatus>,
     /// <p>Limits the number of returned queries to the specified number.</p>
     pub max_results: std::option::Option<i32>,
@@ -9149,8 +8662,7 @@ impl DescribeQueriesInput {
     pub fn log_group_name(&self) -> std::option::Option<&str> {
         self.log_group_name.as_deref()
     }
-    /// <p>Limits the returned queries to only those that have the specified status. Valid values are <code>Cancelled</code>,
-    /// <code>Complete</code>, <code>Failed</code>, <code>Running</code>, and <code>Scheduled</code>.</p>
+    /// <p>Limits the returned queries to only those that have the specified status. Valid values are <code>Cancelled</code>, <code>Complete</code>, <code>Failed</code>, <code>Running</code>, and <code>Scheduled</code>.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::QueryStatus> {
         self.status.as_ref()
     }
@@ -9180,18 +8692,15 @@ impl std::fmt::Debug for DescribeQueriesInput {
 pub struct DescribeMetricFiltersInput {
     /// <p>The name of the log group.</p>
     pub log_group_name: std::option::Option<std::string::String>,
-    /// <p>The prefix to match. CloudWatch Logs uses the value you set here
-    /// only if you also include the <code>logGroupName</code> parameter in your request.</p>
+    /// <p>The prefix to match. CloudWatch Logs uses the value you set here only if you also include the <code>logGroupName</code> parameter in your request.</p>
     pub filter_name_prefix: std::option::Option<std::string::String>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of items returned. If you don't specify a value, the default is up to 50 items.</p>
     pub limit: std::option::Option<i32>,
-    /// <p>Filters results to include only those with the specified metric name. If you include this parameter in your request, you
-    /// must also include the <code>metricNamespace</code> parameter.</p>
+    /// <p>Filters results to include only those with the specified metric name. If you include this parameter in your request, you must also include the <code>metricNamespace</code> parameter.</p>
     pub metric_name: std::option::Option<std::string::String>,
-    /// <p>Filters results to include only those in the specified namespace. If you include this parameter in your request, you
-    /// must also include the <code>metricName</code> parameter.</p>
+    /// <p>Filters results to include only those in the specified namespace. If you include this parameter in your request, you must also include the <code>metricName</code> parameter.</p>
     pub metric_namespace: std::option::Option<std::string::String>,
 }
 impl DescribeMetricFiltersInput {
@@ -9199,8 +8708,7 @@ impl DescribeMetricFiltersInput {
     pub fn log_group_name(&self) -> std::option::Option<&str> {
         self.log_group_name.as_deref()
     }
-    /// <p>The prefix to match. CloudWatch Logs uses the value you set here
-    /// only if you also include the <code>logGroupName</code> parameter in your request.</p>
+    /// <p>The prefix to match. CloudWatch Logs uses the value you set here only if you also include the <code>logGroupName</code> parameter in your request.</p>
     pub fn filter_name_prefix(&self) -> std::option::Option<&str> {
         self.filter_name_prefix.as_deref()
     }
@@ -9212,13 +8720,11 @@ impl DescribeMetricFiltersInput {
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
-    /// <p>Filters results to include only those with the specified metric name. If you include this parameter in your request, you
-    /// must also include the <code>metricNamespace</code> parameter.</p>
+    /// <p>Filters results to include only those with the specified metric name. If you include this parameter in your request, you must also include the <code>metricNamespace</code> parameter.</p>
     pub fn metric_name(&self) -> std::option::Option<&str> {
         self.metric_name.as_deref()
     }
-    /// <p>Filters results to include only those in the specified namespace. If you include this parameter in your request, you
-    /// must also include the <code>metricName</code> parameter.</p>
+    /// <p>Filters results to include only those in the specified namespace. If you include this parameter in your request, you must also include the <code>metricName</code> parameter.</p>
     pub fn metric_namespace(&self) -> std::option::Option<&str> {
         self.metric_namespace.as_deref()
     }
@@ -9243,23 +8749,13 @@ pub struct DescribeLogStreamsInput {
     /// <p>The name of the log group.</p>
     pub log_group_name: std::option::Option<std::string::String>,
     /// <p>The prefix to match.</p>
-    /// <p>If <code>orderBy</code> is <code>LastEventTime</code>, you cannot specify this
-    /// parameter.</p>
+    /// <p>If <code>orderBy</code> is <code>LastEventTime</code>, you cannot specify this parameter.</p>
     pub log_stream_name_prefix: std::option::Option<std::string::String>,
-    /// <p>If the value is <code>LogStreamName</code>, the results are ordered by log stream name.
-    /// If the value is <code>LastEventTime</code>, the results are ordered by the event time.
-    /// The default value is <code>LogStreamName</code>.</p>
+    /// <p>If the value is <code>LogStreamName</code>, the results are ordered by log stream name. If the value is <code>LastEventTime</code>, the results are ordered by the event time. The default value is <code>LogStreamName</code>.</p>
     /// <p>If you order the results by event time, you cannot specify the <code>logStreamNamePrefix</code> parameter.</p>
-    /// <p>
-    /// <code>lastEventTimestamp</code> represents the time of the most recent log event in the
-    /// log stream in CloudWatch Logs. This number is expressed as the number of milliseconds after
-    /// Jan 1, 1970 00:00:00 UTC. <code>lastEventTimestamp</code> updates on an eventual consistency
-    /// basis. It typically updates in less than an hour from ingestion, but in rare situations might
-    /// take longer.</p>
+    /// <p> <code>lastEventTimestamp</code> represents the time of the most recent log event in the log stream in CloudWatch Logs. This number is expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. <code>lastEventTimestamp</code> updates on an eventual consistency basis. It typically updates in less than an hour from ingestion, but in rare situations might take longer.</p>
     pub order_by: std::option::Option<crate::model::OrderBy>,
-    /// <p>If the value is true, results are returned in descending order.
-    /// If the value is to false, results are returned in ascending order.
-    /// The default value is false.</p>
+    /// <p>If the value is true, results are returned in descending order. If the value is to false, results are returned in ascending order. The default value is false.</p>
     pub descending: std::option::Option<bool>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -9272,27 +8768,17 @@ impl DescribeLogStreamsInput {
         self.log_group_name.as_deref()
     }
     /// <p>The prefix to match.</p>
-    /// <p>If <code>orderBy</code> is <code>LastEventTime</code>, you cannot specify this
-    /// parameter.</p>
+    /// <p>If <code>orderBy</code> is <code>LastEventTime</code>, you cannot specify this parameter.</p>
     pub fn log_stream_name_prefix(&self) -> std::option::Option<&str> {
         self.log_stream_name_prefix.as_deref()
     }
-    /// <p>If the value is <code>LogStreamName</code>, the results are ordered by log stream name.
-    /// If the value is <code>LastEventTime</code>, the results are ordered by the event time.
-    /// The default value is <code>LogStreamName</code>.</p>
+    /// <p>If the value is <code>LogStreamName</code>, the results are ordered by log stream name. If the value is <code>LastEventTime</code>, the results are ordered by the event time. The default value is <code>LogStreamName</code>.</p>
     /// <p>If you order the results by event time, you cannot specify the <code>logStreamNamePrefix</code> parameter.</p>
-    /// <p>
-    /// <code>lastEventTimestamp</code> represents the time of the most recent log event in the
-    /// log stream in CloudWatch Logs. This number is expressed as the number of milliseconds after
-    /// Jan 1, 1970 00:00:00 UTC. <code>lastEventTimestamp</code> updates on an eventual consistency
-    /// basis. It typically updates in less than an hour from ingestion, but in rare situations might
-    /// take longer.</p>
+    /// <p> <code>lastEventTimestamp</code> represents the time of the most recent log event in the log stream in CloudWatch Logs. This number is expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. <code>lastEventTimestamp</code> updates on an eventual consistency basis. It typically updates in less than an hour from ingestion, but in rare situations might take longer.</p>
     pub fn order_by(&self) -> std::option::Option<&crate::model::OrderBy> {
         self.order_by.as_ref()
     }
-    /// <p>If the value is true, results are returned in descending order.
-    /// If the value is to false, results are returned in ascending order.
-    /// The default value is false.</p>
+    /// <p>If the value is true, results are returned in descending order. If the value is to false, results are returned in ascending order. The default value is false.</p>
     pub fn descending(&self) -> std::option::Option<bool> {
         self.descending
     }
@@ -9504,13 +8990,11 @@ impl std::fmt::Debug for DeleteResourcePolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteQueryDefinitionInput {
-    /// <p>The ID of the query definition that you want to delete. You can use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a> to retrieve the
-    /// IDs of your saved query definitions.</p>
+    /// <p>The ID of the query definition that you want to delete. You can use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a> to retrieve the IDs of your saved query definitions.</p>
     pub query_definition_id: std::option::Option<std::string::String>,
 }
 impl DeleteQueryDefinitionInput {
-    /// <p>The ID of the query definition that you want to delete. You can use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a> to retrieve the
-    /// IDs of your saved query definitions.</p>
+    /// <p>The ID of the query definition that you want to delete. You can use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a> to retrieve the IDs of your saved query definitions.</p>
     pub fn query_definition_id(&self) -> std::option::Option<&str> {
         self.query_definition_id.as_deref()
     }
@@ -9655,15 +9139,10 @@ impl std::fmt::Debug for CreateLogStreamInput {
 pub struct CreateLogGroupInput {
     /// <p>The name of the log group.</p>
     pub log_group_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
-    /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource Names - Key Management Service</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource Names - Key Management Service</a>.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The key-value pairs to use for the tags.</p>
-    /// <p>CloudWatch Logs doesn’t support IAM policies that prevent users from assigning specified tags to
-    /// log groups using the <code>aws:Resource/<i>key-name</i>
-    /// </code> or <code>aws:TagKeys</code> condition keys.
-    /// For more information about using tags to control access, see
-    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling access to Amazon Web Services resources using tags</a>.</p>
+    /// <p>CloudWatch Logs doesn’t support IAM policies that prevent users from assigning specified tags to log groups using the <code>aws:Resource/<i>key-name</i> </code> or <code>aws:TagKeys</code> condition keys. For more information about using tags to control access, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling access to Amazon Web Services resources using tags</a>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -9672,17 +9151,12 @@ impl CreateLogGroupInput {
     pub fn log_group_name(&self) -> std::option::Option<&str> {
         self.log_group_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
-    /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource Names - Key Management Service</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource Names - Key Management Service</a>.</p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The key-value pairs to use for the tags.</p>
-    /// <p>CloudWatch Logs doesn’t support IAM policies that prevent users from assigning specified tags to
-    /// log groups using the <code>aws:Resource/<i>key-name</i>
-    /// </code> or <code>aws:TagKeys</code> condition keys.
-    /// For more information about using tags to control access, see
-    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling access to Amazon Web Services resources using tags</a>.</p>
+    /// <p>CloudWatch Logs doesn’t support IAM policies that prevent users from assigning specified tags to log groups using the <code>aws:Resource/<i>key-name</i> </code> or <code>aws:TagKeys</code> condition keys. For more information about using tags to control access, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling access to Amazon Web Services resources using tags</a>.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -9708,21 +9182,15 @@ pub struct CreateExportTaskInput {
     pub task_name: std::option::Option<std::string::String>,
     /// <p>The name of the log group.</p>
     pub log_group_name: std::option::Option<std::string::String>,
-    /// <p>Export only log streams that match the provided prefix. If you don't
-    /// specify a value, no prefix filter is applied.</p>
+    /// <p>Export only log streams that match the provided prefix. If you don't specify a value, no prefix filter is applied.</p>
     pub log_stream_name_prefix: std::option::Option<std::string::String>,
-    /// <p>The start time of the range for the request, expressed as the number of milliseconds
-    /// after Jan 1, 1970 00:00:00 UTC. Events with a timestamp earlier than this time are not
-    /// exported.</p>
+    /// <p>The start time of the range for the request, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp earlier than this time are not exported.</p>
     pub from: std::option::Option<i64>,
-    /// <p>The end time of the range for the request, expreswatchlogsdocused as the number of milliseconds
-    /// after Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not
-    /// exported.</p>
+    /// <p>The end time of the range for the request, expreswatchlogsdocused as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>
     pub to: std::option::Option<i64>,
     /// <p>The name of S3 bucket for the exported log data. The bucket must be in the same Amazon Web Services region.</p>
     pub destination: std::option::Option<std::string::String>,
-    /// <p>The prefix used as the start of the key for every object exported. If you don't
-    /// specify a value, the default is <code>exportedlogs</code>.</p>
+    /// <p>The prefix used as the start of the key for every object exported. If you don't specify a value, the default is <code>exportedlogs</code>.</p>
     pub destination_prefix: std::option::Option<std::string::String>,
 }
 impl CreateExportTaskInput {
@@ -9734,20 +9202,15 @@ impl CreateExportTaskInput {
     pub fn log_group_name(&self) -> std::option::Option<&str> {
         self.log_group_name.as_deref()
     }
-    /// <p>Export only log streams that match the provided prefix. If you don't
-    /// specify a value, no prefix filter is applied.</p>
+    /// <p>Export only log streams that match the provided prefix. If you don't specify a value, no prefix filter is applied.</p>
     pub fn log_stream_name_prefix(&self) -> std::option::Option<&str> {
         self.log_stream_name_prefix.as_deref()
     }
-    /// <p>The start time of the range for the request, expressed as the number of milliseconds
-    /// after Jan 1, 1970 00:00:00 UTC. Events with a timestamp earlier than this time are not
-    /// exported.</p>
+    /// <p>The start time of the range for the request, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp earlier than this time are not exported.</p>
     pub fn from(&self) -> std::option::Option<i64> {
         self.from
     }
-    /// <p>The end time of the range for the request, expreswatchlogsdocused as the number of milliseconds
-    /// after Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not
-    /// exported.</p>
+    /// <p>The end time of the range for the request, expreswatchlogsdocused as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>
     pub fn to(&self) -> std::option::Option<i64> {
         self.to
     }
@@ -9755,8 +9218,7 @@ impl CreateExportTaskInput {
     pub fn destination(&self) -> std::option::Option<&str> {
         self.destination.as_deref()
     }
-    /// <p>The prefix used as the start of the key for every object exported. If you don't
-    /// specify a value, the default is <code>exportedlogs</code>.</p>
+    /// <p>The prefix used as the start of the key for every object exported. If you don't specify a value, the default is <code>exportedlogs</code>.</p>
     pub fn destination_prefix(&self) -> std::option::Option<&str> {
         self.destination_prefix.as_deref()
     }
@@ -9802,8 +9264,7 @@ impl std::fmt::Debug for CancelExportTaskInput {
 pub struct AssociateKmsKeyInput {
     /// <p>The name of the log group.</p>
     pub log_group_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. This must be a symmetric CMK.
-    /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource Names - Key Management Service</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using Symmetric and Asymmetric Keys</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. This must be a symmetric CMK. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource Names - Key Management Service</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using Symmetric and Asymmetric Keys</a>.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl AssociateKmsKeyInput {
@@ -9811,8 +9272,7 @@ impl AssociateKmsKeyInput {
     pub fn log_group_name(&self) -> std::option::Option<&str> {
         self.log_group_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. This must be a symmetric CMK.
-    /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource Names - Key Management Service</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using Symmetric and Asymmetric Keys</a>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. This must be a symmetric CMK. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource Names - Key Management Service</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using Symmetric and Asymmetric Keys</a>.</p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }

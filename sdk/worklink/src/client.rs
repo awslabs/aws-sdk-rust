@@ -543,14 +543,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_authorization_provider_type(input);
             self
         }
-        /// <p>The domain name of the authorization provider. This applies only to SAML-based
-        /// authorization providers.</p>
+        /// <p>The domain name of the authorization provider. This applies only to SAML-based authorization providers.</p>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain_name(input.into());
             self
         }
-        /// <p>The domain name of the authorization provider. This applies only to SAML-based
-        /// authorization providers.</p>
+        /// <p>The domain name of the authorization provider. This applies only to SAML-based authorization providers.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_domain_name(input);
             self
@@ -558,8 +556,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `AssociateWebsiteCertificateAuthority`.
     ///
-    /// <p>Imports the root certificate of a certificate authority (CA) used to obtain TLS
-    /// certificates used by associated websites within the company network.</p>
+    /// <p>Imports the root certificate of a certificate authority (CA) used to obtain TLS certificates used by associated websites within the company network.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateWebsiteCertificateAuthority<
         C = aws_smithy_client::erase::DynConnector,
@@ -651,8 +648,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateFleet`.
     ///
-    /// <p>Creates a fleet. A fleet consists of resources and the configuration that delivers
-    /// associated websites to authorized users who download and set up the Amazon WorkLink app.</p>
+    /// <p>Creates a fleet. A fleet consists of resources and the configuration that delivers associated websites to authorized users who download and set up the Amazon WorkLink app.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFleet<
         C = aws_smithy_client::erase::DynConnector,
@@ -729,14 +725,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_display_name(input);
             self
         }
-        /// <p>The option to optimize for better performance by routing traffic through the closest
-        /// AWS Region to users, which may be outside of your home Region.</p>
+        /// <p>The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region.</p>
         pub fn optimize_for_end_user_location(mut self, input: bool) -> Self {
             self.inner = self.inner.optimize_for_end_user_location(input);
             self
         }
-        /// <p>The option to optimize for better performance by routing traffic through the closest
-        /// AWS Region to users, which may be outside of your home Region.</p>
+        /// <p>The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region.</p>
         pub fn set_optimize_for_end_user_location(
             mut self,
             input: std::option::Option<bool>,
@@ -910,8 +904,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeCompanyNetworkConfiguration`.
     ///
-    /// <p>Describes the networking configuration to access the internal websites associated with
-    /// the specified fleet.</p>
+    /// <p>Describes the networking configuration to access the internal websites associated with the specified fleet.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeCompanyNetworkConfiguration<
         C = aws_smithy_client::erase::DynConnector,
@@ -1213,8 +1206,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeFleetMetadata`.
     ///
-    /// <p>Provides basic information for the specified fleet, excluding identity provider,
-    /// networking, and device configuration details.</p>
+    /// <p>Provides basic information for the specified fleet, excluding identity provider, networking, and device configuration details.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeFleetMetadata<
         C = aws_smithy_client::erase::DynConnector,
@@ -1521,9 +1513,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisassociateWebsiteAuthorizationProvider`.
     ///
-    /// <p>Disassociates a website authorization provider from a specified fleet. After the
-    /// disassociation, users can't load any associated websites that require this authorization
-    /// provider.</p>
+    /// <p>Disassociates a website authorization provider from a specified fleet. After the disassociation, users can't load any associated websites that require this authorization provider.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateWebsiteAuthorizationProvider<
         C = aws_smithy_client::erase::DynConnector,
@@ -1760,14 +1750,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_fleet_arn(input);
             self
         }
-        /// <p>The pagination token used to retrieve the next page of results for this operation. If
-        /// this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The pagination token used to retrieve the next page of results for this operation. If
-        /// this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1852,14 +1840,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_fleet_arn(input);
             self
         }
-        /// <p>The pagination token used to retrieve the next page of results for this operation. If
-        /// this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The pagination token used to retrieve the next page of results for this operation. If
-        /// this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1934,14 +1920,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The pagination token used to retrieve the next page of results for this operation. If
-        /// this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The pagination token used to retrieve the next page of results for this operation. If
-        /// this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2119,8 +2103,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListWebsiteCertificateAuthorities`.
     ///
-    /// <p>Retrieves a list of certificate authorities added for the current account and
-    /// Region.</p>
+    /// <p>Retrieves a list of certificate authorities added for the current account and Region.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListWebsiteCertificateAuthorities<
         C = aws_smithy_client::erase::DynConnector,
@@ -2197,14 +2180,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The pagination token used to retrieve the next page of results for this operation. If
-        /// this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The pagination token used to retrieve the next page of results for this operation. If
-        /// this value is null, it retrieves the first page.</p>
+        /// <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2372,8 +2353,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SignOutUser`.
     ///
-    /// <p>Signs the user out from all of their devices. The user can sign in again if they have
-    /// valid credentials.</p>
+    /// <p>Signs the user out from all of their devices. The user can sign in again if they have valid credentials.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SignOutUser<
         C = aws_smithy_client::erase::DynConnector,
@@ -3080,14 +3060,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_display_name(input);
             self
         }
-        /// <p>The option to optimize for better performance by routing traffic through the closest
-        /// AWS Region to users, which may be outside of your home Region.</p>
+        /// <p>The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region.</p>
         pub fn optimize_for_end_user_location(mut self, input: bool) -> Self {
             self.inner = self.inner.optimize_for_end_user_location(input);
             self
         }
-        /// <p>The option to optimize for better performance by routing traffic through the closest
-        /// AWS Region to users, which may be outside of your home Region.</p>
+        /// <p>The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region.</p>
         pub fn set_optimize_for_end_user_location(
             mut self,
             input: std::option::Option<bool>,
@@ -3180,8 +3158,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_identity_provider_type(input);
             self
         }
-        /// <p>The SAML metadata document provided by the customer’s identity provider. The existing
-        /// IdentityProviderSamlMetadata is unset if null is passed.</p>
+        /// <p>The SAML metadata document provided by the customer’s identity provider. The existing IdentityProviderSamlMetadata is unset if null is passed.</p>
         pub fn identity_provider_saml_metadata(
             mut self,
             input: impl Into<std::string::String>,
@@ -3189,8 +3166,7 @@ pub mod fluent_builders {
             self.inner = self.inner.identity_provider_saml_metadata(input.into());
             self
         }
-        /// <p>The SAML metadata document provided by the customer’s identity provider. The existing
-        /// IdentityProviderSamlMetadata is unset if null is passed.</p>
+        /// <p>The SAML metadata document provided by the customer’s identity provider. The existing IdentityProviderSamlMetadata is unset if null is passed.</p>
         pub fn set_identity_provider_saml_metadata(
             mut self,
             input: std::option::Option<std::string::String>,

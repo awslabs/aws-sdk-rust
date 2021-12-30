@@ -3390,23 +3390,19 @@ impl InternalServerException {
 pub struct ThrottlingException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
-    /// <p>Service quota requirement to identify originating quota. Reached throttling quota
-    /// exception. </p>
+    /// <p>Service quota requirement to identify originating quota. Reached throttling quota exception. </p>
     pub quota_code: std::option::Option<std::string::String>,
-    /// <p>Service quota requirement to identify originating service. Reached throttling quota
-    /// exception service code. </p>
+    /// <p>Service quota requirement to identify originating service. Reached throttling quota exception service code. </p>
     pub service_code: std::option::Option<std::string::String>,
     /// <p>The number of seconds to wait before retrying. </p>
     pub retry_after_seconds: i32,
 }
 impl ThrottlingException {
-    /// <p>Service quota requirement to identify originating quota. Reached throttling quota
-    /// exception. </p>
+    /// <p>Service quota requirement to identify originating quota. Reached throttling quota exception. </p>
     pub fn quota_code(&self) -> std::option::Option<&str> {
         self.quota_code.as_deref()
     }
-    /// <p>Service quota requirement to identify originating service. Reached throttling quota
-    /// exception service code. </p>
+    /// <p>Service quota requirement to identify originating service. Reached throttling quota exception service code. </p>
     pub fn service_code(&self) -> std::option::Option<&str> {
         self.service_code.as_deref()
     }
@@ -3463,26 +3459,22 @@ pub mod throttling_exception {
             self.message = input;
             self
         }
-        /// <p>Service quota requirement to identify originating quota. Reached throttling quota
-        /// exception. </p>
+        /// <p>Service quota requirement to identify originating quota. Reached throttling quota exception. </p>
         pub fn quota_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.quota_code = Some(input.into());
             self
         }
-        /// <p>Service quota requirement to identify originating quota. Reached throttling quota
-        /// exception. </p>
+        /// <p>Service quota requirement to identify originating quota. Reached throttling quota exception. </p>
         pub fn set_quota_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.quota_code = input;
             self
         }
-        /// <p>Service quota requirement to identify originating service. Reached throttling quota
-        /// exception service code. </p>
+        /// <p>Service quota requirement to identify originating service. Reached throttling quota exception service code. </p>
         pub fn service_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_code = Some(input.into());
             self
         }
-        /// <p>Service quota requirement to identify originating service. Reached throttling quota
-        /// exception service code. </p>
+        /// <p>Service quota requirement to identify originating service. Reached throttling quota exception service code. </p>
         pub fn set_service_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_code = input;
             self
@@ -3653,11 +3645,9 @@ pub struct ServiceQuotaExceededException {
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>The type of resource. </p>
     pub resource_type: std::option::Option<std::string::String>,
-    /// <p>Service quota requirement to identify originating quota. Reached throttling quota
-    /// exception. </p>
+    /// <p>Service quota requirement to identify originating quota. Reached throttling quota exception. </p>
     pub quota_code: std::option::Option<std::string::String>,
-    /// <p>Service quota requirement to identify originating service. Reached throttling quota
-    /// exception service code. </p>
+    /// <p>Service quota requirement to identify originating service. Reached throttling quota exception service code. </p>
     pub service_code: std::option::Option<std::string::String>,
 }
 impl ServiceQuotaExceededException {
@@ -3669,13 +3659,11 @@ impl ServiceQuotaExceededException {
     pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
     }
-    /// <p>Service quota requirement to identify originating quota. Reached throttling quota
-    /// exception. </p>
+    /// <p>Service quota requirement to identify originating quota. Reached throttling quota exception. </p>
     pub fn quota_code(&self) -> std::option::Option<&str> {
         self.quota_code.as_deref()
     }
-    /// <p>Service quota requirement to identify originating service. Reached throttling quota
-    /// exception service code. </p>
+    /// <p>Service quota requirement to identify originating service. Reached throttling quota exception service code. </p>
     pub fn service_code(&self) -> std::option::Option<&str> {
         self.service_code.as_deref()
     }
@@ -3753,26 +3741,22 @@ pub mod service_quota_exceeded_exception {
             self.resource_type = input;
             self
         }
-        /// <p>Service quota requirement to identify originating quota. Reached throttling quota
-        /// exception. </p>
+        /// <p>Service quota requirement to identify originating quota. Reached throttling quota exception. </p>
         pub fn quota_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.quota_code = Some(input.into());
             self
         }
-        /// <p>Service quota requirement to identify originating quota. Reached throttling quota
-        /// exception. </p>
+        /// <p>Service quota requirement to identify originating quota. Reached throttling quota exception. </p>
         pub fn set_quota_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.quota_code = input;
             self
         }
-        /// <p>Service quota requirement to identify originating service. Reached throttling quota
-        /// exception service code. </p>
+        /// <p>Service quota requirement to identify originating service. Reached throttling quota exception service code. </p>
         pub fn service_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_code = Some(input.into());
             self
         }
-        /// <p>Service quota requirement to identify originating service. Reached throttling quota
-        /// exception service code. </p>
+        /// <p>Service quota requirement to identify originating service. Reached throttling quota exception service code. </p>
         pub fn set_service_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_code = input;
             self

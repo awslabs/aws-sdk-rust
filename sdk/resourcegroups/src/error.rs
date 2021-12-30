@@ -20,8 +20,7 @@ pub enum CreateGroupErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The request uses an HTTP method that isn't allowed for the specified resource.</p>
     MethodNotAllowedException(crate::error::MethodNotAllowedException),
-    /// <p>You've exceeded throttling limits by making too many requests in a period of
-    /// time.</p>
+    /// <p>You've exceeded throttling limits by making too many requests in a period of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -154,8 +153,7 @@ pub enum DeleteGroupErrorKind {
     MethodNotAllowedException(crate::error::MethodNotAllowedException),
     /// <p>One or more of the specified resources don't exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>You've exceeded throttling limits by making too many requests in a period of
-    /// time.</p>
+    /// <p>You've exceeded throttling limits by making too many requests in a period of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -294,8 +292,7 @@ pub enum GetGroupErrorKind {
     MethodNotAllowedException(crate::error::MethodNotAllowedException),
     /// <p>One or more of the specified resources don't exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>You've exceeded throttling limits by making too many requests in a period of
-    /// time.</p>
+    /// <p>You've exceeded throttling limits by making too many requests in a period of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -428,8 +425,7 @@ pub enum GetGroupConfigurationErrorKind {
     MethodNotAllowedException(crate::error::MethodNotAllowedException),
     /// <p>One or more of the specified resources don't exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>You've exceeded throttling limits by making too many requests in a period of
-    /// time.</p>
+    /// <p>You've exceeded throttling limits by making too many requests in a period of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -577,8 +573,7 @@ pub enum GetGroupQueryErrorKind {
     MethodNotAllowedException(crate::error::MethodNotAllowedException),
     /// <p>One or more of the specified resources don't exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>You've exceeded throttling limits by making too many requests in a period of
-    /// time.</p>
+    /// <p>You've exceeded throttling limits by making too many requests in a period of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -717,8 +712,7 @@ pub enum GetTagsErrorKind {
     MethodNotAllowedException(crate::error::MethodNotAllowedException),
     /// <p>One or more of the specified resources don't exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>You've exceeded throttling limits by making too many requests in a period of
-    /// time.</p>
+    /// <p>You've exceeded throttling limits by making too many requests in a period of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -851,8 +845,7 @@ pub enum GroupResourcesErrorKind {
     MethodNotAllowedException(crate::error::MethodNotAllowedException),
     /// <p>One or more of the specified resources don't exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>You've exceeded throttling limits by making too many requests in a period of
-    /// time.</p>
+    /// <p>You've exceeded throttling limits by making too many requests in a period of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -991,11 +984,9 @@ pub enum ListGroupResourcesErrorKind {
     MethodNotAllowedException(crate::error::MethodNotAllowedException),
     /// <p>One or more of the specified resources don't exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>You've exceeded throttling limits by making too many requests in a period of
-    /// time.</p>
+    /// <p>You've exceeded throttling limits by making too many requests in a period of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>The request was rejected because it doesn't have valid credentials for the target
-    /// resource.</p>
+    /// <p>The request was rejected because it doesn't have valid credentials for the target resource.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1150,8 +1141,7 @@ pub enum ListGroupsErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The request uses an HTTP method that isn't allowed for the specified resource.</p>
     MethodNotAllowedException(crate::error::MethodNotAllowedException),
-    /// <p>You've exceeded throttling limits by making too many requests in a period of
-    /// time.</p>
+    /// <p>You've exceeded throttling limits by making too many requests in a period of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1281,8 +1271,7 @@ pub enum PutGroupConfigurationErrorKind {
     MethodNotAllowedException(crate::error::MethodNotAllowedException),
     /// <p>One or more of the specified resources don't exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>You've exceeded throttling limits by making too many requests in a period of
-    /// time.</p>
+    /// <p>You've exceeded throttling limits by making too many requests in a period of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1428,11 +1417,9 @@ pub enum SearchResourcesErrorKind {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The request uses an HTTP method that isn't allowed for the specified resource.</p>
     MethodNotAllowedException(crate::error::MethodNotAllowedException),
-    /// <p>You've exceeded throttling limits by making too many requests in a period of
-    /// time.</p>
+    /// <p>You've exceeded throttling limits by making too many requests in a period of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>The request was rejected because it doesn't have valid credentials for the target
-    /// resource.</p>
+    /// <p>The request was rejected because it doesn't have valid credentials for the target resource.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1574,8 +1561,7 @@ pub enum TagErrorKind {
     MethodNotAllowedException(crate::error::MethodNotAllowedException),
     /// <p>One or more of the specified resources don't exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>You've exceeded throttling limits by making too many requests in a period of
-    /// time.</p>
+    /// <p>You've exceeded throttling limits by making too many requests in a period of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1705,8 +1691,7 @@ pub enum UngroupResourcesErrorKind {
     MethodNotAllowedException(crate::error::MethodNotAllowedException),
     /// <p>One or more of the specified resources don't exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>You've exceeded throttling limits by making too many requests in a period of
-    /// time.</p>
+    /// <p>You've exceeded throttling limits by making too many requests in a period of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1848,8 +1833,7 @@ pub enum UntagErrorKind {
     MethodNotAllowedException(crate::error::MethodNotAllowedException),
     /// <p>One or more of the specified resources don't exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>You've exceeded throttling limits by making too many requests in a period of
-    /// time.</p>
+    /// <p>You've exceeded throttling limits by making too many requests in a period of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1979,8 +1963,7 @@ pub enum UpdateGroupErrorKind {
     MethodNotAllowedException(crate::error::MethodNotAllowedException),
     /// <p>One or more of the specified resources don't exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>You've exceeded throttling limits by making too many requests in a period of
-    /// time.</p>
+    /// <p>You've exceeded throttling limits by making too many requests in a period of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2119,8 +2102,7 @@ pub enum UpdateGroupQueryErrorKind {
     MethodNotAllowedException(crate::error::MethodNotAllowedException),
     /// <p>One or more of the specified resources don't exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>You've exceeded throttling limits by making too many requests in a period of
-    /// time.</p>
+    /// <p>You've exceeded throttling limits by making too many requests in a period of time.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2239,8 +2221,7 @@ impl std::error::Error for UpdateGroupQueryError {
     }
 }
 
-/// <p>You've exceeded throttling limits by making too many requests in a period of
-/// time.</p>
+/// <p>You've exceeded throttling limits by making too many requests in a period of time.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyRequestsException {
@@ -2624,8 +2605,7 @@ impl BadRequestException {
     }
 }
 
-/// <p>The request was rejected because it doesn't have valid credentials for the target
-/// resource.</p>
+/// <p>The request was rejected because it doesn't have valid credentials for the target resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnauthorizedException {

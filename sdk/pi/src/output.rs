@@ -3,47 +3,29 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourceMetricsOutput {
-    /// <p>The start time for the returned metrics, after alignment to a granular boundary (as
-    /// specified by <code>PeriodInSeconds</code>). <code>AlignedStartTime</code> will be less than or
-    /// equal to the value of the user-specified <code>StartTime</code>.</p>
+    /// <p>The start time for the returned metrics, after alignment to a granular boundary (as specified by <code>PeriodInSeconds</code>). <code>AlignedStartTime</code> will be less than or equal to the value of the user-specified <code>StartTime</code>.</p>
     pub aligned_start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The end time for the returned metrics, after alignment to a granular boundary (as
-    /// specified by <code>PeriodInSeconds</code>). <code>AlignedEndTime</code> will be greater than
-    /// or equal to the value of the user-specified <code>Endtime</code>.</p>
+    /// <p>The end time for the returned metrics, after alignment to a granular boundary (as specified by <code>PeriodInSeconds</code>). <code>AlignedEndTime</code> will be greater than or equal to the value of the user-specified <code>Endtime</code>.</p>
     pub aligned_end_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>An immutable, AWS Region-unique identifier for a data source. Performance Insights gathers metrics from
-    /// this data source.</p>
-    /// <p>To use a DB instance as a data source, you specify its
-    /// <code>DbiResourceId</code> value - for example:  
-    /// <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>
-    /// </p>
+    /// <p>An immutable, AWS Region-unique identifier for a data source. Performance Insights gathers metrics from this data source.</p>
+    /// <p>To use a DB instance as a data source, you specify its <code>DbiResourceId</code> value - for example: <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code> </p>
     pub identifier: std::option::Option<std::string::String>,
     /// <p>An array of metric results,, where each array element contains all of the data points for a particular dimension.</p>
     pub metric_list: std::option::Option<std::vec::Vec<crate::model::MetricKeyDataPoints>>,
-    /// <p>An optional pagination token provided by a previous request. If
-    /// this parameter is specified, the response includes only records beyond the token, up to the
-    /// value specified by <code>MaxRecords</code>.</p>
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetResourceMetricsOutput {
-    /// <p>The start time for the returned metrics, after alignment to a granular boundary (as
-    /// specified by <code>PeriodInSeconds</code>). <code>AlignedStartTime</code> will be less than or
-    /// equal to the value of the user-specified <code>StartTime</code>.</p>
+    /// <p>The start time for the returned metrics, after alignment to a granular boundary (as specified by <code>PeriodInSeconds</code>). <code>AlignedStartTime</code> will be less than or equal to the value of the user-specified <code>StartTime</code>.</p>
     pub fn aligned_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.aligned_start_time.as_ref()
     }
-    /// <p>The end time for the returned metrics, after alignment to a granular boundary (as
-    /// specified by <code>PeriodInSeconds</code>). <code>AlignedEndTime</code> will be greater than
-    /// or equal to the value of the user-specified <code>Endtime</code>.</p>
+    /// <p>The end time for the returned metrics, after alignment to a granular boundary (as specified by <code>PeriodInSeconds</code>). <code>AlignedEndTime</code> will be greater than or equal to the value of the user-specified <code>Endtime</code>.</p>
     pub fn aligned_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.aligned_end_time.as_ref()
     }
-    /// <p>An immutable, AWS Region-unique identifier for a data source. Performance Insights gathers metrics from
-    /// this data source.</p>
-    /// <p>To use a DB instance as a data source, you specify its
-    /// <code>DbiResourceId</code> value - for example:  
-    /// <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>
-    /// </p>
+    /// <p>An immutable, AWS Region-unique identifier for a data source. Performance Insights gathers metrics from this data source.</p>
+    /// <p>To use a DB instance as a data source, you specify its <code>DbiResourceId</code> value - for example: <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code> </p>
     pub fn identifier(&self) -> std::option::Option<&str> {
         self.identifier.as_deref()
     }
@@ -51,9 +33,7 @@ impl GetResourceMetricsOutput {
     pub fn metric_list(&self) -> std::option::Option<&[crate::model::MetricKeyDataPoints]> {
         self.metric_list.as_deref()
     }
-    /// <p>An optional pagination token provided by a previous request. If
-    /// this parameter is specified, the response includes only records beyond the token, up to the
-    /// value specified by <code>MaxRecords</code>.</p>
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -83,16 +63,12 @@ pub mod get_resource_metrics_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The start time for the returned metrics, after alignment to a granular boundary (as
-        /// specified by <code>PeriodInSeconds</code>). <code>AlignedStartTime</code> will be less than or
-        /// equal to the value of the user-specified <code>StartTime</code>.</p>
+        /// <p>The start time for the returned metrics, after alignment to a granular boundary (as specified by <code>PeriodInSeconds</code>). <code>AlignedStartTime</code> will be less than or equal to the value of the user-specified <code>StartTime</code>.</p>
         pub fn aligned_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.aligned_start_time = Some(input);
             self
         }
-        /// <p>The start time for the returned metrics, after alignment to a granular boundary (as
-        /// specified by <code>PeriodInSeconds</code>). <code>AlignedStartTime</code> will be less than or
-        /// equal to the value of the user-specified <code>StartTime</code>.</p>
+        /// <p>The start time for the returned metrics, after alignment to a granular boundary (as specified by <code>PeriodInSeconds</code>). <code>AlignedStartTime</code> will be less than or equal to the value of the user-specified <code>StartTime</code>.</p>
         pub fn set_aligned_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -100,16 +76,12 @@ pub mod get_resource_metrics_output {
             self.aligned_start_time = input;
             self
         }
-        /// <p>The end time for the returned metrics, after alignment to a granular boundary (as
-        /// specified by <code>PeriodInSeconds</code>). <code>AlignedEndTime</code> will be greater than
-        /// or equal to the value of the user-specified <code>Endtime</code>.</p>
+        /// <p>The end time for the returned metrics, after alignment to a granular boundary (as specified by <code>PeriodInSeconds</code>). <code>AlignedEndTime</code> will be greater than or equal to the value of the user-specified <code>Endtime</code>.</p>
         pub fn aligned_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.aligned_end_time = Some(input);
             self
         }
-        /// <p>The end time for the returned metrics, after alignment to a granular boundary (as
-        /// specified by <code>PeriodInSeconds</code>). <code>AlignedEndTime</code> will be greater than
-        /// or equal to the value of the user-specified <code>Endtime</code>.</p>
+        /// <p>The end time for the returned metrics, after alignment to a granular boundary (as specified by <code>PeriodInSeconds</code>). <code>AlignedEndTime</code> will be greater than or equal to the value of the user-specified <code>Endtime</code>.</p>
         pub fn set_aligned_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -117,22 +89,14 @@ pub mod get_resource_metrics_output {
             self.aligned_end_time = input;
             self
         }
-        /// <p>An immutable, AWS Region-unique identifier for a data source. Performance Insights gathers metrics from
-        /// this data source.</p>
-        /// <p>To use a DB instance as a data source, you specify its
-        /// <code>DbiResourceId</code> value - for example:  
-        /// <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>
-        /// </p>
+        /// <p>An immutable, AWS Region-unique identifier for a data source. Performance Insights gathers metrics from this data source.</p>
+        /// <p>To use a DB instance as a data source, you specify its <code>DbiResourceId</code> value - for example: <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code> </p>
         pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.identifier = Some(input.into());
             self
         }
-        /// <p>An immutable, AWS Region-unique identifier for a data source. Performance Insights gathers metrics from
-        /// this data source.</p>
-        /// <p>To use a DB instance as a data source, you specify its
-        /// <code>DbiResourceId</code> value - for example:  
-        /// <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>
-        /// </p>
+        /// <p>An immutable, AWS Region-unique identifier for a data source. Performance Insights gathers metrics from this data source.</p>
+        /// <p>To use a DB instance as a data source, you specify its <code>DbiResourceId</code> value - for example: <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code> </p>
         pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identifier = input;
             self
@@ -156,16 +120,12 @@ pub mod get_resource_metrics_output {
             self.metric_list = input;
             self
         }
-        /// <p>An optional pagination token provided by a previous request. If
-        /// this parameter is specified, the response includes only records beyond the token, up to the
-        /// value specified by <code>MaxRecords</code>.</p>
+        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An optional pagination token provided by a previous request. If
-        /// this parameter is specified, the response includes only records beyond the token, up to the
-        /// value specified by <code>MaxRecords</code>.</p>
+        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -256,33 +216,23 @@ impl GetDimensionKeyDetailsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDimensionKeysOutput {
-    /// <p>The start time for the returned dimension keys, after alignment to a granular boundary (as
-    /// specified by <code>PeriodInSeconds</code>). <code>AlignedStartTime</code> will be less than or
-    /// equal to the value of the user-specified <code>StartTime</code>.</p>
+    /// <p>The start time for the returned dimension keys, after alignment to a granular boundary (as specified by <code>PeriodInSeconds</code>). <code>AlignedStartTime</code> will be less than or equal to the value of the user-specified <code>StartTime</code>.</p>
     pub aligned_start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The end time for the returned dimension keys, after alignment to a granular boundary (as
-    /// specified by <code>PeriodInSeconds</code>). <code>AlignedEndTime</code> will be greater than
-    /// or equal to the value of the user-specified <code>Endtime</code>.</p>
+    /// <p>The end time for the returned dimension keys, after alignment to a granular boundary (as specified by <code>PeriodInSeconds</code>). <code>AlignedEndTime</code> will be greater than or equal to the value of the user-specified <code>Endtime</code>.</p>
     pub aligned_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>If <code>PartitionBy</code> was present in the request, <code>PartitionKeys</code> contains the breakdown of dimension keys by the specified partitions.</p>
     pub partition_keys: std::option::Option<std::vec::Vec<crate::model::ResponsePartitionKey>>,
     /// <p>The dimension keys that were requested.</p>
     pub keys: std::option::Option<std::vec::Vec<crate::model::DimensionKeyDescription>>,
-    /// <p>An optional pagination token provided by a previous request. If
-    /// this parameter is specified, the response includes only records beyond the token, up to the
-    /// value specified by <code>MaxRecords</code>.</p>
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeDimensionKeysOutput {
-    /// <p>The start time for the returned dimension keys, after alignment to a granular boundary (as
-    /// specified by <code>PeriodInSeconds</code>). <code>AlignedStartTime</code> will be less than or
-    /// equal to the value of the user-specified <code>StartTime</code>.</p>
+    /// <p>The start time for the returned dimension keys, after alignment to a granular boundary (as specified by <code>PeriodInSeconds</code>). <code>AlignedStartTime</code> will be less than or equal to the value of the user-specified <code>StartTime</code>.</p>
     pub fn aligned_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.aligned_start_time.as_ref()
     }
-    /// <p>The end time for the returned dimension keys, after alignment to a granular boundary (as
-    /// specified by <code>PeriodInSeconds</code>). <code>AlignedEndTime</code> will be greater than
-    /// or equal to the value of the user-specified <code>Endtime</code>.</p>
+    /// <p>The end time for the returned dimension keys, after alignment to a granular boundary (as specified by <code>PeriodInSeconds</code>). <code>AlignedEndTime</code> will be greater than or equal to the value of the user-specified <code>Endtime</code>.</p>
     pub fn aligned_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.aligned_end_time.as_ref()
     }
@@ -294,9 +244,7 @@ impl DescribeDimensionKeysOutput {
     pub fn keys(&self) -> std::option::Option<&[crate::model::DimensionKeyDescription]> {
         self.keys.as_deref()
     }
-    /// <p>An optional pagination token provided by a previous request. If
-    /// this parameter is specified, the response includes only records beyond the token, up to the
-    /// value specified by <code>MaxRecords</code>.</p>
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -326,16 +274,12 @@ pub mod describe_dimension_keys_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The start time for the returned dimension keys, after alignment to a granular boundary (as
-        /// specified by <code>PeriodInSeconds</code>). <code>AlignedStartTime</code> will be less than or
-        /// equal to the value of the user-specified <code>StartTime</code>.</p>
+        /// <p>The start time for the returned dimension keys, after alignment to a granular boundary (as specified by <code>PeriodInSeconds</code>). <code>AlignedStartTime</code> will be less than or equal to the value of the user-specified <code>StartTime</code>.</p>
         pub fn aligned_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.aligned_start_time = Some(input);
             self
         }
-        /// <p>The start time for the returned dimension keys, after alignment to a granular boundary (as
-        /// specified by <code>PeriodInSeconds</code>). <code>AlignedStartTime</code> will be less than or
-        /// equal to the value of the user-specified <code>StartTime</code>.</p>
+        /// <p>The start time for the returned dimension keys, after alignment to a granular boundary (as specified by <code>PeriodInSeconds</code>). <code>AlignedStartTime</code> will be less than or equal to the value of the user-specified <code>StartTime</code>.</p>
         pub fn set_aligned_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -343,16 +287,12 @@ pub mod describe_dimension_keys_output {
             self.aligned_start_time = input;
             self
         }
-        /// <p>The end time for the returned dimension keys, after alignment to a granular boundary (as
-        /// specified by <code>PeriodInSeconds</code>). <code>AlignedEndTime</code> will be greater than
-        /// or equal to the value of the user-specified <code>Endtime</code>.</p>
+        /// <p>The end time for the returned dimension keys, after alignment to a granular boundary (as specified by <code>PeriodInSeconds</code>). <code>AlignedEndTime</code> will be greater than or equal to the value of the user-specified <code>Endtime</code>.</p>
         pub fn aligned_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.aligned_end_time = Some(input);
             self
         }
-        /// <p>The end time for the returned dimension keys, after alignment to a granular boundary (as
-        /// specified by <code>PeriodInSeconds</code>). <code>AlignedEndTime</code> will be greater than
-        /// or equal to the value of the user-specified <code>Endtime</code>.</p>
+        /// <p>The end time for the returned dimension keys, after alignment to a granular boundary (as specified by <code>PeriodInSeconds</code>). <code>AlignedEndTime</code> will be greater than or equal to the value of the user-specified <code>Endtime</code>.</p>
         pub fn set_aligned_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -398,16 +338,12 @@ pub mod describe_dimension_keys_output {
             self.keys = input;
             self
         }
-        /// <p>An optional pagination token provided by a previous request. If
-        /// this parameter is specified, the response includes only records beyond the token, up to the
-        /// value specified by <code>MaxRecords</code>.</p>
+        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An optional pagination token provided by a previous request. If
-        /// this parameter is specified, the response includes only records beyond the token, up to the
-        /// value specified by <code>MaxRecords</code>.</p>
+        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self

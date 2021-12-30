@@ -136,8 +136,7 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `DeleteReportDefinition`.
     ///
-    /// <p>Deletes the specified report definition in AWS Application Cost Profiler. This stops the report from being
-    /// generated.</p>
+    /// <p>Deletes the specified report definition in AWS Application Cost Profiler. This stops the report from being generated.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteReportDefinition<
         C = aws_smithy_client::erase::DynConnector,
@@ -278,9 +277,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ImportApplicationUsage`.
     ///
     /// <p>Ingests application usage data from Amazon Simple Storage Service (Amazon S3).</p>
-    /// <p>The data must already exist in the S3 location. As part of the action, AWS Application Cost Profiler
-    /// copies the object from your S3 bucket to an S3 bucket owned by Amazon for processing
-    /// asynchronously.</p>
+    /// <p>The data must already exist in the S3 location. As part of the action, AWS Application Cost Profiler copies the object from your S3 bucket to an S3 bucket owned by Amazon for processing asynchronously.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ImportApplicationUsage<
         C = aws_smithy_client::erase::DynConnector,
@@ -491,14 +488,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Required. ID of the report. You can choose any valid string matching the pattern for the
-        /// ID.</p>
+        /// <p>Required. ID of the report. You can choose any valid string matching the pattern for the ID.</p>
         pub fn report_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.report_id(input.into());
             self
         }
-        /// <p>Required. ID of the report. You can choose any valid string matching the pattern for the
-        /// ID.</p>
+        /// <p>Required. ID of the report. You can choose any valid string matching the pattern for the ID.</p>
         pub fn set_report_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_report_id(input);
             self
@@ -539,14 +534,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_format(input);
             self
         }
-        /// <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the
-        /// report.</p>
+        /// <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the report.</p>
         pub fn destination_s3_location(mut self, input: crate::model::S3Location) -> Self {
             self.inner = self.inner.destination_s3_location(input);
             self
         }
-        /// <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the
-        /// report.</p>
+        /// <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the report.</p>
         pub fn set_destination_s3_location(
             mut self,
             input: std::option::Option<crate::model::S3Location>,
@@ -660,14 +653,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_format(input);
             self
         }
-        /// <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the
-        /// report.</p>
+        /// <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the report.</p>
         pub fn destination_s3_location(mut self, input: crate::model::S3Location) -> Self {
             self.inner = self.inner.destination_s3_location(input);
             self
         }
-        /// <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the
-        /// report.</p>
+        /// <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the report.</p>
         pub fn set_destination_s3_location(
             mut self,
             input: std::option::Option<crate::model::S3Location>,

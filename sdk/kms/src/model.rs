@@ -147,10 +147,8 @@ impl AsRef<str> for MessageType {
     }
 }
 
-/// <p>A key-value pair. A tag consists of a tag key and a tag value. Tag keys and tag values are
-/// both required, but tag values can be empty (null) strings.</p>
-/// <p>For information about the rules that apply to tag keys and tag values, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined Tag Restrictions</a> in the <i>Amazon Web Services Billing and Cost Management
-/// User Guide</i>.</p>
+/// <p>A key-value pair. A tag consists of a tag key and a tag value. Tag keys and tag values are both required, but tag values can be empty (null) strings.</p>
+/// <p>For information about the rules that apply to tag keys and tag values, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined Tag Restrictions</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
@@ -312,7 +310,7 @@ impl AsRef<str> for KeyState {
 }
 
 /// <p>Contains metadata about a KMS key.</p>
-/// <p>This data type is used as a response element for the <a>CreateKey</a> and <a>DescribeKey</a> operations.</p>
+/// <p>This data type is used as a response element for the <code>CreateKey</code> and <code>DescribeKey</code> operations.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KeyMetadata {
@@ -320,111 +318,59 @@ pub struct KeyMetadata {
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The globally unique identifier for the KMS key.</p>
     pub key_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the KMS key. For examples, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Key Management Service (KMS)</a> in the Example ARNs section of the <i>Amazon Web Services General
-    /// Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the KMS key. For examples, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Key Management Service (KMS)</a> in the Example ARNs section of the <i>Amazon Web Services General Reference</i>.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date and time when the KMS key was created.</p>
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Specifies whether the KMS key is enabled. When <code>KeyState</code> is
-    /// <code>Enabled</code> this value is true, otherwise it is false.</p>
+    /// <p>Specifies whether the KMS key is enabled. When <code>KeyState</code> is <code>Enabled</code> this value is true, otherwise it is false.</p>
     pub enabled: bool,
     /// <p>The description of the KMS key.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> for which you can use the KMS key.</p>
     pub key_usage: std::option::Option<crate::model::KeyUsageType>,
     /// <p>The current status of the KMS key.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS
-    /// key</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub key_state: std::option::Option<crate::model::KeyState>,
-    /// <p>The date and time after which KMS deletes this KMS key. This value is present only when
-    /// the KMS key is scheduled for deletion, that is, when its <code>KeyState</code> is
-    /// <code>PendingDeletion</code>.</p>
-    /// <p>When the primary key in a multi-Region key is scheduled for deletion but still has replica
-    /// keys, its key state is <code>PendingReplicaDeletion</code> and the length of its waiting
-    /// period is displayed in the <code>PendingDeletionWindowInDays</code> field.</p>
+    /// <p>The date and time after which KMS deletes this KMS key. This value is present only when the KMS key is scheduled for deletion, that is, when its <code>KeyState</code> is <code>PendingDeletion</code>.</p>
+    /// <p>When the primary key in a multi-Region key is scheduled for deletion but still has replica keys, its key state is <code>PendingReplicaDeletion</code> and the length of its waiting period is displayed in the <code>PendingDeletionWindowInDays</code> field.</p>
     pub deletion_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The time at which the imported key material expires. When the key material expires, KMS
-    /// deletes the key material and the KMS key becomes unusable. This value is present only for KMS
-    /// keys whose <code>Origin</code> is <code>EXTERNAL</code> and whose <code>ExpirationModel</code>
-    /// is <code>KEY_MATERIAL_EXPIRES</code>, otherwise this value is omitted.</p>
+    /// <p>The time at which the imported key material expires. When the key material expires, KMS deletes the key material and the KMS key becomes unusable. This value is present only for KMS keys whose <code>Origin</code> is <code>EXTERNAL</code> and whose <code>ExpirationModel</code> is <code>KEY_MATERIAL_EXPIRES</code>, otherwise this value is omitted.</p>
     pub valid_to: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The source of the key material for the KMS key. When this value is <code>AWS_KMS</code>,
-    /// KMS created the key material. When this value is <code>EXTERNAL</code>, the key material was
-    /// imported or the KMS key doesn't have any key material. When this value is
-    /// <code>AWS_CLOUDHSM</code>, the key material was created in the CloudHSM cluster associated with
-    /// a custom key store.</p>
+    /// <p>The source of the key material for the KMS key. When this value is <code>AWS_KMS</code>, KMS created the key material. When this value is <code>EXTERNAL</code>, the key material was imported or the KMS key doesn't have any key material. When this value is <code>AWS_CLOUDHSM</code>, the key material was created in the CloudHSM cluster associated with a custom key store.</p>
     pub origin: std::option::Option<crate::model::OriginType>,
-    /// <p>A unique identifier for the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a> that contains the KMS key. This value is
-    /// present only when the KMS key is created in a custom key store.</p>
+    /// <p>A unique identifier for the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a> that contains the KMS key. This value is present only when the KMS key is created in a custom key store.</p>
     pub custom_key_store_id: std::option::Option<std::string::String>,
-    /// <p>The cluster ID of the CloudHSM cluster that contains the key material for the KMS key. When
-    /// you create a KMS key in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>, KMS creates the key material for the KMS key in
-    /// the associated CloudHSM cluster. This value is present only when the KMS key is created in a
-    /// custom key store.</p>
+    /// <p>The cluster ID of the CloudHSM cluster that contains the key material for the KMS key. When you create a KMS key in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>, KMS creates the key material for the KMS key in the associated CloudHSM cluster. This value is present only when the KMS key is created in a custom key store.</p>
     pub cloud_hsm_cluster_id: std::option::Option<std::string::String>,
-    /// <p>Specifies whether the KMS key's key material expires. This value is present only when
-    /// <code>Origin</code> is <code>EXTERNAL</code>, otherwise this value is omitted.</p>
+    /// <p>Specifies whether the KMS key's key material expires. This value is present only when <code>Origin</code> is <code>EXTERNAL</code>, otherwise this value is omitted.</p>
     pub expiration_model: std::option::Option<crate::model::ExpirationModelType>,
-    /// <p>The manager of the KMS key. KMS keys in your Amazon Web Services account are either customer managed or
-    /// Amazon Web Services managed. For more information about the difference, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#kms_keys">KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>The manager of the KMS key. KMS keys in your Amazon Web Services account are either customer managed or Amazon Web Services managed. For more information about the difference, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#kms_keys">KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub key_manager: std::option::Option<crate::model::KeyManagerType>,
     /// <p>Instead, use the <code>KeySpec</code> field.</p>
-    /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same
-    /// value. We recommend that you use the <code>KeySpec</code> field in your code. However, to
-    /// avoid breaking changes, KMS will support both fields.</p>
+    /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same value. We recommend that you use the <code>KeySpec</code> field in your code. However, to avoid breaking changes, KMS will support both fields.</p>
     pub customer_master_key_spec: std::option::Option<crate::model::CustomerMasterKeySpec>,
     /// <p>Describes the type of key material in the KMS key.</p>
     pub key_spec: std::option::Option<crate::model::KeySpec>,
-    /// <p>The encryption algorithms that the KMS key supports. You cannot use the KMS key with other
-    /// encryption algorithms within KMS.</p>
-    /// <p>This value is present only when the <code>KeyUsage</code> of the KMS key is
-    /// <code>ENCRYPT_DECRYPT</code>.</p>
+    /// <p>The encryption algorithms that the KMS key supports. You cannot use the KMS key with other encryption algorithms within KMS.</p>
+    /// <p>This value is present only when the <code>KeyUsage</code> of the KMS key is <code>ENCRYPT_DECRYPT</code>.</p>
     pub encryption_algorithms:
         std::option::Option<std::vec::Vec<crate::model::EncryptionAlgorithmSpec>>,
-    /// <p>The signing algorithms that the KMS key supports. You cannot use the KMS key with other
-    /// signing algorithms within KMS.</p>
-    /// <p>This field appears only when the <code>KeyUsage</code> of the KMS key is
-    /// <code>SIGN_VERIFY</code>.</p>
+    /// <p>The signing algorithms that the KMS key supports. You cannot use the KMS key with other signing algorithms within KMS.</p>
+    /// <p>This field appears only when the <code>KeyUsage</code> of the KMS key is <code>SIGN_VERIFY</code>.</p>
     pub signing_algorithms: std::option::Option<std::vec::Vec<crate::model::SigningAlgorithmSpec>>,
-    /// <p>Indicates whether the KMS key is a multi-Region (<code>True</code>) or regional
-    /// (<code>False</code>) key. This value is <code>True</code> for multi-Region primary and
-    /// replica keys and <code>False</code> for regional KMS keys.</p>
+    /// <p>Indicates whether the KMS key is a multi-Region (<code>True</code>) or regional (<code>False</code>) key. This value is <code>True</code> for multi-Region primary and replica keys and <code>False</code> for regional KMS keys.</p>
     /// <p>For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub multi_region: std::option::Option<bool>,
-    /// <p>Lists the primary and replica keys in same multi-Region key. This field is present only
-    /// when the value of the <code>MultiRegion</code> field is <code>True</code>.</p>
-    /// <p>For more information about any listed KMS key, use the <a>DescribeKey</a>
-    /// operation.</p>
+    /// <p>Lists the primary and replica keys in same multi-Region key. This field is present only when the value of the <code>MultiRegion</code> field is <code>True</code>.</p>
+    /// <p>For more information about any listed KMS key, use the <code>DescribeKey</code> operation.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>MultiRegionKeyType</code> indicates whether the KMS key is a
-    /// <code>PRIMARY</code> or <code>REPLICA</code> key.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PrimaryKey</code> displays the key ARN and Region of the primary key. This field
-    /// displays the current KMS key if it is the primary key.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ReplicaKeys</code> displays the key ARNs and Regions of all replica keys. This
-    /// field includes the current KMS key if it is a replica key.</p>
-    /// </li>
+    /// <li> <p> <code>MultiRegionKeyType</code> indicates whether the KMS key is a <code>PRIMARY</code> or <code>REPLICA</code> key.</p> </li>
+    /// <li> <p> <code>PrimaryKey</code> displays the key ARN and Region of the primary key. This field displays the current KMS key if it is the primary key.</p> </li>
+    /// <li> <p> <code>ReplicaKeys</code> displays the key ARNs and Regions of all replica keys. This field includes the current KMS key if it is a replica key.</p> </li>
     /// </ul>
     pub multi_region_configuration: std::option::Option<crate::model::MultiRegionConfiguration>,
-    /// <p>The waiting period before the primary key in a multi-Region key is deleted. This waiting
-    /// period begins when the last of its replica keys is deleted. This value is present only when
-    /// the <code>KeyState</code> of the KMS key is <code>PendingReplicaDeletion</code>. That
-    /// indicates that the KMS key is the primary key in a multi-Region key, it is scheduled for
-    /// deletion, and it still has existing replica keys.</p>
-    /// <p>When a single-Region KMS key or a multi-Region replica key is scheduled for deletion, its
-    /// deletion date is displayed in the <code>DeletionDate</code> field. However, when the primary
-    /// key in a multi-Region key is scheduled for deletion, its waiting period doesn't begin until
-    /// all of its replica keys are deleted. This value displays that waiting period. When the last
-    /// replica key in the multi-Region key is deleted, the <code>KeyState</code> of the scheduled
-    /// primary key changes from <code>PendingReplicaDeletion</code> to <code>PendingDeletion</code>
-    /// and the deletion date appears in the <code>DeletionDate</code> field.</p>
+    /// <p>The waiting period before the primary key in a multi-Region key is deleted. This waiting period begins when the last of its replica keys is deleted. This value is present only when the <code>KeyState</code> of the KMS key is <code>PendingReplicaDeletion</code>. That indicates that the KMS key is the primary key in a multi-Region key, it is scheduled for deletion, and it still has existing replica keys.</p>
+    /// <p>When a single-Region KMS key or a multi-Region replica key is scheduled for deletion, its deletion date is displayed in the <code>DeletionDate</code> field. However, when the primary key in a multi-Region key is scheduled for deletion, its waiting period doesn't begin until all of its replica keys are deleted. This value displays that waiting period. When the last replica key in the multi-Region key is deleted, the <code>KeyState</code> of the scheduled primary key changes from <code>PendingReplicaDeletion</code> to <code>PendingDeletion</code> and the deletion date appears in the <code>DeletionDate</code> field.</p>
     pub pending_deletion_window_in_days: std::option::Option<i32>,
 }
 impl KeyMetadata {
@@ -436,8 +382,7 @@ impl KeyMetadata {
     pub fn key_id(&self) -> std::option::Option<&str> {
         self.key_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the KMS key. For examples, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Key Management Service (KMS)</a> in the Example ARNs section of the <i>Amazon Web Services General
-    /// Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the KMS key. For examples, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Key Management Service (KMS)</a> in the Example ARNs section of the <i>Amazon Web Services General Reference</i>.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -445,8 +390,7 @@ impl KeyMetadata {
     pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
-    /// <p>Specifies whether the KMS key is enabled. When <code>KeyState</code> is
-    /// <code>Enabled</code> this value is true, otherwise it is false.</p>
+    /// <p>Specifies whether the KMS key is enabled. When <code>KeyState</code> is <code>Enabled</code> this value is true, otherwise it is false.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
     }
@@ -459,61 +403,41 @@ impl KeyMetadata {
         self.key_usage.as_ref()
     }
     /// <p>The current status of the KMS key.</p>
-    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS
-    /// key</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn key_state(&self) -> std::option::Option<&crate::model::KeyState> {
         self.key_state.as_ref()
     }
-    /// <p>The date and time after which KMS deletes this KMS key. This value is present only when
-    /// the KMS key is scheduled for deletion, that is, when its <code>KeyState</code> is
-    /// <code>PendingDeletion</code>.</p>
-    /// <p>When the primary key in a multi-Region key is scheduled for deletion but still has replica
-    /// keys, its key state is <code>PendingReplicaDeletion</code> and the length of its waiting
-    /// period is displayed in the <code>PendingDeletionWindowInDays</code> field.</p>
+    /// <p>The date and time after which KMS deletes this KMS key. This value is present only when the KMS key is scheduled for deletion, that is, when its <code>KeyState</code> is <code>PendingDeletion</code>.</p>
+    /// <p>When the primary key in a multi-Region key is scheduled for deletion but still has replica keys, its key state is <code>PendingReplicaDeletion</code> and the length of its waiting period is displayed in the <code>PendingDeletionWindowInDays</code> field.</p>
     pub fn deletion_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.deletion_date.as_ref()
     }
-    /// <p>The time at which the imported key material expires. When the key material expires, KMS
-    /// deletes the key material and the KMS key becomes unusable. This value is present only for KMS
-    /// keys whose <code>Origin</code> is <code>EXTERNAL</code> and whose <code>ExpirationModel</code>
-    /// is <code>KEY_MATERIAL_EXPIRES</code>, otherwise this value is omitted.</p>
+    /// <p>The time at which the imported key material expires. When the key material expires, KMS deletes the key material and the KMS key becomes unusable. This value is present only for KMS keys whose <code>Origin</code> is <code>EXTERNAL</code> and whose <code>ExpirationModel</code> is <code>KEY_MATERIAL_EXPIRES</code>, otherwise this value is omitted.</p>
     pub fn valid_to(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.valid_to.as_ref()
     }
-    /// <p>The source of the key material for the KMS key. When this value is <code>AWS_KMS</code>,
-    /// KMS created the key material. When this value is <code>EXTERNAL</code>, the key material was
-    /// imported or the KMS key doesn't have any key material. When this value is
-    /// <code>AWS_CLOUDHSM</code>, the key material was created in the CloudHSM cluster associated with
-    /// a custom key store.</p>
+    /// <p>The source of the key material for the KMS key. When this value is <code>AWS_KMS</code>, KMS created the key material. When this value is <code>EXTERNAL</code>, the key material was imported or the KMS key doesn't have any key material. When this value is <code>AWS_CLOUDHSM</code>, the key material was created in the CloudHSM cluster associated with a custom key store.</p>
     pub fn origin(&self) -> std::option::Option<&crate::model::OriginType> {
         self.origin.as_ref()
     }
-    /// <p>A unique identifier for the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a> that contains the KMS key. This value is
-    /// present only when the KMS key is created in a custom key store.</p>
+    /// <p>A unique identifier for the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a> that contains the KMS key. This value is present only when the KMS key is created in a custom key store.</p>
     pub fn custom_key_store_id(&self) -> std::option::Option<&str> {
         self.custom_key_store_id.as_deref()
     }
-    /// <p>The cluster ID of the CloudHSM cluster that contains the key material for the KMS key. When
-    /// you create a KMS key in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>, KMS creates the key material for the KMS key in
-    /// the associated CloudHSM cluster. This value is present only when the KMS key is created in a
-    /// custom key store.</p>
+    /// <p>The cluster ID of the CloudHSM cluster that contains the key material for the KMS key. When you create a KMS key in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>, KMS creates the key material for the KMS key in the associated CloudHSM cluster. This value is present only when the KMS key is created in a custom key store.</p>
     pub fn cloud_hsm_cluster_id(&self) -> std::option::Option<&str> {
         self.cloud_hsm_cluster_id.as_deref()
     }
-    /// <p>Specifies whether the KMS key's key material expires. This value is present only when
-    /// <code>Origin</code> is <code>EXTERNAL</code>, otherwise this value is omitted.</p>
+    /// <p>Specifies whether the KMS key's key material expires. This value is present only when <code>Origin</code> is <code>EXTERNAL</code>, otherwise this value is omitted.</p>
     pub fn expiration_model(&self) -> std::option::Option<&crate::model::ExpirationModelType> {
         self.expiration_model.as_ref()
     }
-    /// <p>The manager of the KMS key. KMS keys in your Amazon Web Services account are either customer managed or
-    /// Amazon Web Services managed. For more information about the difference, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#kms_keys">KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>The manager of the KMS key. KMS keys in your Amazon Web Services account are either customer managed or Amazon Web Services managed. For more information about the difference, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#kms_keys">KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn key_manager(&self) -> std::option::Option<&crate::model::KeyManagerType> {
         self.key_manager.as_ref()
     }
     /// <p>Instead, use the <code>KeySpec</code> field.</p>
-    /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same
-    /// value. We recommend that you use the <code>KeySpec</code> field in your code. However, to
-    /// avoid breaking changes, KMS will support both fields.</p>
+    /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same value. We recommend that you use the <code>KeySpec</code> field in your code. However, to avoid breaking changes, KMS will support both fields.</p>
     pub fn customer_master_key_spec(
         &self,
     ) -> std::option::Option<&crate::model::CustomerMasterKeySpec> {
@@ -523,67 +447,37 @@ impl KeyMetadata {
     pub fn key_spec(&self) -> std::option::Option<&crate::model::KeySpec> {
         self.key_spec.as_ref()
     }
-    /// <p>The encryption algorithms that the KMS key supports. You cannot use the KMS key with other
-    /// encryption algorithms within KMS.</p>
-    /// <p>This value is present only when the <code>KeyUsage</code> of the KMS key is
-    /// <code>ENCRYPT_DECRYPT</code>.</p>
+    /// <p>The encryption algorithms that the KMS key supports. You cannot use the KMS key with other encryption algorithms within KMS.</p>
+    /// <p>This value is present only when the <code>KeyUsage</code> of the KMS key is <code>ENCRYPT_DECRYPT</code>.</p>
     pub fn encryption_algorithms(
         &self,
     ) -> std::option::Option<&[crate::model::EncryptionAlgorithmSpec]> {
         self.encryption_algorithms.as_deref()
     }
-    /// <p>The signing algorithms that the KMS key supports. You cannot use the KMS key with other
-    /// signing algorithms within KMS.</p>
-    /// <p>This field appears only when the <code>KeyUsage</code> of the KMS key is
-    /// <code>SIGN_VERIFY</code>.</p>
+    /// <p>The signing algorithms that the KMS key supports. You cannot use the KMS key with other signing algorithms within KMS.</p>
+    /// <p>This field appears only when the <code>KeyUsage</code> of the KMS key is <code>SIGN_VERIFY</code>.</p>
     pub fn signing_algorithms(&self) -> std::option::Option<&[crate::model::SigningAlgorithmSpec]> {
         self.signing_algorithms.as_deref()
     }
-    /// <p>Indicates whether the KMS key is a multi-Region (<code>True</code>) or regional
-    /// (<code>False</code>) key. This value is <code>True</code> for multi-Region primary and
-    /// replica keys and <code>False</code> for regional KMS keys.</p>
+    /// <p>Indicates whether the KMS key is a multi-Region (<code>True</code>) or regional (<code>False</code>) key. This value is <code>True</code> for multi-Region primary and replica keys and <code>False</code> for regional KMS keys.</p>
     /// <p>For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn multi_region(&self) -> std::option::Option<bool> {
         self.multi_region
     }
-    /// <p>Lists the primary and replica keys in same multi-Region key. This field is present only
-    /// when the value of the <code>MultiRegion</code> field is <code>True</code>.</p>
-    /// <p>For more information about any listed KMS key, use the <a>DescribeKey</a>
-    /// operation.</p>
+    /// <p>Lists the primary and replica keys in same multi-Region key. This field is present only when the value of the <code>MultiRegion</code> field is <code>True</code>.</p>
+    /// <p>For more information about any listed KMS key, use the <code>DescribeKey</code> operation.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>MultiRegionKeyType</code> indicates whether the KMS key is a
-    /// <code>PRIMARY</code> or <code>REPLICA</code> key.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PrimaryKey</code> displays the key ARN and Region of the primary key. This field
-    /// displays the current KMS key if it is the primary key.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ReplicaKeys</code> displays the key ARNs and Regions of all replica keys. This
-    /// field includes the current KMS key if it is a replica key.</p>
-    /// </li>
+    /// <li> <p> <code>MultiRegionKeyType</code> indicates whether the KMS key is a <code>PRIMARY</code> or <code>REPLICA</code> key.</p> </li>
+    /// <li> <p> <code>PrimaryKey</code> displays the key ARN and Region of the primary key. This field displays the current KMS key if it is the primary key.</p> </li>
+    /// <li> <p> <code>ReplicaKeys</code> displays the key ARNs and Regions of all replica keys. This field includes the current KMS key if it is a replica key.</p> </li>
     /// </ul>
     pub fn multi_region_configuration(
         &self,
     ) -> std::option::Option<&crate::model::MultiRegionConfiguration> {
         self.multi_region_configuration.as_ref()
     }
-    /// <p>The waiting period before the primary key in a multi-Region key is deleted. This waiting
-    /// period begins when the last of its replica keys is deleted. This value is present only when
-    /// the <code>KeyState</code> of the KMS key is <code>PendingReplicaDeletion</code>. That
-    /// indicates that the KMS key is the primary key in a multi-Region key, it is scheduled for
-    /// deletion, and it still has existing replica keys.</p>
-    /// <p>When a single-Region KMS key or a multi-Region replica key is scheduled for deletion, its
-    /// deletion date is displayed in the <code>DeletionDate</code> field. However, when the primary
-    /// key in a multi-Region key is scheduled for deletion, its waiting period doesn't begin until
-    /// all of its replica keys are deleted. This value displays that waiting period. When the last
-    /// replica key in the multi-Region key is deleted, the <code>KeyState</code> of the scheduled
-    /// primary key changes from <code>PendingReplicaDeletion</code> to <code>PendingDeletion</code>
-    /// and the deletion date appears in the <code>DeletionDate</code> field.</p>
+    /// <p>The waiting period before the primary key in a multi-Region key is deleted. This waiting period begins when the last of its replica keys is deleted. This value is present only when the <code>KeyState</code> of the KMS key is <code>PendingReplicaDeletion</code>. That indicates that the KMS key is the primary key in a multi-Region key, it is scheduled for deletion, and it still has existing replica keys.</p>
+    /// <p>When a single-Region KMS key or a multi-Region replica key is scheduled for deletion, its deletion date is displayed in the <code>DeletionDate</code> field. However, when the primary key in a multi-Region key is scheduled for deletion, its waiting period doesn't begin until all of its replica keys are deleted. This value displays that waiting period. When the last replica key in the multi-Region key is deleted, the <code>KeyState</code> of the scheduled primary key changes from <code>PendingReplicaDeletion</code> to <code>PendingDeletion</code> and the deletion date appears in the <code>DeletionDate</code> field.</p>
     pub fn pending_deletion_window_in_days(&self) -> std::option::Option<i32> {
         self.pending_deletion_window_in_days
     }
@@ -679,14 +573,12 @@ pub mod key_metadata {
             self.key_id = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the KMS key. For examples, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Key Management Service (KMS)</a> in the Example ARNs section of the <i>Amazon Web Services General
-        /// Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the KMS key. For examples, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Key Management Service (KMS)</a> in the Example ARNs section of the <i>Amazon Web Services General Reference</i>.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the KMS key. For examples, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Key Management Service (KMS)</a> in the Example ARNs section of the <i>Amazon Web Services General
-        /// Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the KMS key. For examples, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Key Management Service (KMS)</a> in the Example ARNs section of the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -704,14 +596,12 @@ pub mod key_metadata {
             self.creation_date = input;
             self
         }
-        /// <p>Specifies whether the KMS key is enabled. When <code>KeyState</code> is
-        /// <code>Enabled</code> this value is true, otherwise it is false.</p>
+        /// <p>Specifies whether the KMS key is enabled. When <code>KeyState</code> is <code>Enabled</code> this value is true, otherwise it is false.</p>
         pub fn enabled(mut self, input: bool) -> Self {
             self.enabled = Some(input);
             self
         }
-        /// <p>Specifies whether the KMS key is enabled. When <code>KeyState</code> is
-        /// <code>Enabled</code> this value is true, otherwise it is false.</p>
+        /// <p>Specifies whether the KMS key is enabled. When <code>KeyState</code> is <code>Enabled</code> this value is true, otherwise it is false.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -740,35 +630,25 @@ pub mod key_metadata {
             self
         }
         /// <p>The current status of the KMS key.</p>
-        /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS
-        /// key</a> in the <i>Key Management Service Developer Guide</i>.</p>
+        /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.</p>
         pub fn key_state(mut self, input: crate::model::KeyState) -> Self {
             self.key_state = Some(input);
             self
         }
         /// <p>The current status of the KMS key.</p>
-        /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS
-        /// key</a> in the <i>Key Management Service Developer Guide</i>.</p>
+        /// <p>For more information about how key state affects the use of a KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your KMS key</a> in the <i>Key Management Service Developer Guide</i>.</p>
         pub fn set_key_state(mut self, input: std::option::Option<crate::model::KeyState>) -> Self {
             self.key_state = input;
             self
         }
-        /// <p>The date and time after which KMS deletes this KMS key. This value is present only when
-        /// the KMS key is scheduled for deletion, that is, when its <code>KeyState</code> is
-        /// <code>PendingDeletion</code>.</p>
-        /// <p>When the primary key in a multi-Region key is scheduled for deletion but still has replica
-        /// keys, its key state is <code>PendingReplicaDeletion</code> and the length of its waiting
-        /// period is displayed in the <code>PendingDeletionWindowInDays</code> field.</p>
+        /// <p>The date and time after which KMS deletes this KMS key. This value is present only when the KMS key is scheduled for deletion, that is, when its <code>KeyState</code> is <code>PendingDeletion</code>.</p>
+        /// <p>When the primary key in a multi-Region key is scheduled for deletion but still has replica keys, its key state is <code>PendingReplicaDeletion</code> and the length of its waiting period is displayed in the <code>PendingDeletionWindowInDays</code> field.</p>
         pub fn deletion_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.deletion_date = Some(input);
             self
         }
-        /// <p>The date and time after which KMS deletes this KMS key. This value is present only when
-        /// the KMS key is scheduled for deletion, that is, when its <code>KeyState</code> is
-        /// <code>PendingDeletion</code>.</p>
-        /// <p>When the primary key in a multi-Region key is scheduled for deletion but still has replica
-        /// keys, its key state is <code>PendingReplicaDeletion</code> and the length of its waiting
-        /// period is displayed in the <code>PendingDeletionWindowInDays</code> field.</p>
+        /// <p>The date and time after which KMS deletes this KMS key. This value is present only when the KMS key is scheduled for deletion, that is, when its <code>KeyState</code> is <code>PendingDeletion</code>.</p>
+        /// <p>When the primary key in a multi-Region key is scheduled for deletion but still has replica keys, its key state is <code>PendingReplicaDeletion</code> and the length of its waiting period is displayed in the <code>PendingDeletionWindowInDays</code> field.</p>
         pub fn set_deletion_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -776,18 +656,12 @@ pub mod key_metadata {
             self.deletion_date = input;
             self
         }
-        /// <p>The time at which the imported key material expires. When the key material expires, KMS
-        /// deletes the key material and the KMS key becomes unusable. This value is present only for KMS
-        /// keys whose <code>Origin</code> is <code>EXTERNAL</code> and whose <code>ExpirationModel</code>
-        /// is <code>KEY_MATERIAL_EXPIRES</code>, otherwise this value is omitted.</p>
+        /// <p>The time at which the imported key material expires. When the key material expires, KMS deletes the key material and the KMS key becomes unusable. This value is present only for KMS keys whose <code>Origin</code> is <code>EXTERNAL</code> and whose <code>ExpirationModel</code> is <code>KEY_MATERIAL_EXPIRES</code>, otherwise this value is omitted.</p>
         pub fn valid_to(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.valid_to = Some(input);
             self
         }
-        /// <p>The time at which the imported key material expires. When the key material expires, KMS
-        /// deletes the key material and the KMS key becomes unusable. This value is present only for KMS
-        /// keys whose <code>Origin</code> is <code>EXTERNAL</code> and whose <code>ExpirationModel</code>
-        /// is <code>KEY_MATERIAL_EXPIRES</code>, otherwise this value is omitted.</p>
+        /// <p>The time at which the imported key material expires. When the key material expires, KMS deletes the key material and the KMS key becomes unusable. This value is present only for KMS keys whose <code>Origin</code> is <code>EXTERNAL</code> and whose <code>ExpirationModel</code> is <code>KEY_MATERIAL_EXPIRES</code>, otherwise this value is omitted.</p>
         pub fn set_valid_to(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -795,32 +669,22 @@ pub mod key_metadata {
             self.valid_to = input;
             self
         }
-        /// <p>The source of the key material for the KMS key. When this value is <code>AWS_KMS</code>,
-        /// KMS created the key material. When this value is <code>EXTERNAL</code>, the key material was
-        /// imported or the KMS key doesn't have any key material. When this value is
-        /// <code>AWS_CLOUDHSM</code>, the key material was created in the CloudHSM cluster associated with
-        /// a custom key store.</p>
+        /// <p>The source of the key material for the KMS key. When this value is <code>AWS_KMS</code>, KMS created the key material. When this value is <code>EXTERNAL</code>, the key material was imported or the KMS key doesn't have any key material. When this value is <code>AWS_CLOUDHSM</code>, the key material was created in the CloudHSM cluster associated with a custom key store.</p>
         pub fn origin(mut self, input: crate::model::OriginType) -> Self {
             self.origin = Some(input);
             self
         }
-        /// <p>The source of the key material for the KMS key. When this value is <code>AWS_KMS</code>,
-        /// KMS created the key material. When this value is <code>EXTERNAL</code>, the key material was
-        /// imported or the KMS key doesn't have any key material. When this value is
-        /// <code>AWS_CLOUDHSM</code>, the key material was created in the CloudHSM cluster associated with
-        /// a custom key store.</p>
+        /// <p>The source of the key material for the KMS key. When this value is <code>AWS_KMS</code>, KMS created the key material. When this value is <code>EXTERNAL</code>, the key material was imported or the KMS key doesn't have any key material. When this value is <code>AWS_CLOUDHSM</code>, the key material was created in the CloudHSM cluster associated with a custom key store.</p>
         pub fn set_origin(mut self, input: std::option::Option<crate::model::OriginType>) -> Self {
             self.origin = input;
             self
         }
-        /// <p>A unique identifier for the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a> that contains the KMS key. This value is
-        /// present only when the KMS key is created in a custom key store.</p>
+        /// <p>A unique identifier for the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a> that contains the KMS key. This value is present only when the KMS key is created in a custom key store.</p>
         pub fn custom_key_store_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.custom_key_store_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a> that contains the KMS key. This value is
-        /// present only when the KMS key is created in a custom key store.</p>
+        /// <p>A unique identifier for the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a> that contains the KMS key. This value is present only when the KMS key is created in a custom key store.</p>
         pub fn set_custom_key_store_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -828,18 +692,12 @@ pub mod key_metadata {
             self.custom_key_store_id = input;
             self
         }
-        /// <p>The cluster ID of the CloudHSM cluster that contains the key material for the KMS key. When
-        /// you create a KMS key in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>, KMS creates the key material for the KMS key in
-        /// the associated CloudHSM cluster. This value is present only when the KMS key is created in a
-        /// custom key store.</p>
+        /// <p>The cluster ID of the CloudHSM cluster that contains the key material for the KMS key. When you create a KMS key in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>, KMS creates the key material for the KMS key in the associated CloudHSM cluster. This value is present only when the KMS key is created in a custom key store.</p>
         pub fn cloud_hsm_cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.cloud_hsm_cluster_id = Some(input.into());
             self
         }
-        /// <p>The cluster ID of the CloudHSM cluster that contains the key material for the KMS key. When
-        /// you create a KMS key in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>, KMS creates the key material for the KMS key in
-        /// the associated CloudHSM cluster. This value is present only when the KMS key is created in a
-        /// custom key store.</p>
+        /// <p>The cluster ID of the CloudHSM cluster that contains the key material for the KMS key. When you create a KMS key in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>, KMS creates the key material for the KMS key in the associated CloudHSM cluster. This value is present only when the KMS key is created in a custom key store.</p>
         pub fn set_cloud_hsm_cluster_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -847,14 +705,12 @@ pub mod key_metadata {
             self.cloud_hsm_cluster_id = input;
             self
         }
-        /// <p>Specifies whether the KMS key's key material expires. This value is present only when
-        /// <code>Origin</code> is <code>EXTERNAL</code>, otherwise this value is omitted.</p>
+        /// <p>Specifies whether the KMS key's key material expires. This value is present only when <code>Origin</code> is <code>EXTERNAL</code>, otherwise this value is omitted.</p>
         pub fn expiration_model(mut self, input: crate::model::ExpirationModelType) -> Self {
             self.expiration_model = Some(input);
             self
         }
-        /// <p>Specifies whether the KMS key's key material expires. This value is present only when
-        /// <code>Origin</code> is <code>EXTERNAL</code>, otherwise this value is omitted.</p>
+        /// <p>Specifies whether the KMS key's key material expires. This value is present only when <code>Origin</code> is <code>EXTERNAL</code>, otherwise this value is omitted.</p>
         pub fn set_expiration_model(
             mut self,
             input: std::option::Option<crate::model::ExpirationModelType>,
@@ -862,14 +718,12 @@ pub mod key_metadata {
             self.expiration_model = input;
             self
         }
-        /// <p>The manager of the KMS key. KMS keys in your Amazon Web Services account are either customer managed or
-        /// Amazon Web Services managed. For more information about the difference, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#kms_keys">KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+        /// <p>The manager of the KMS key. KMS keys in your Amazon Web Services account are either customer managed or Amazon Web Services managed. For more information about the difference, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#kms_keys">KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
         pub fn key_manager(mut self, input: crate::model::KeyManagerType) -> Self {
             self.key_manager = Some(input);
             self
         }
-        /// <p>The manager of the KMS key. KMS keys in your Amazon Web Services account are either customer managed or
-        /// Amazon Web Services managed. For more information about the difference, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#kms_keys">KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+        /// <p>The manager of the KMS key. KMS keys in your Amazon Web Services account are either customer managed or Amazon Web Services managed. For more information about the difference, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#kms_keys">KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
         pub fn set_key_manager(
             mut self,
             input: std::option::Option<crate::model::KeyManagerType>,
@@ -878,9 +732,7 @@ pub mod key_metadata {
             self
         }
         /// <p>Instead, use the <code>KeySpec</code> field.</p>
-        /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same
-        /// value. We recommend that you use the <code>KeySpec</code> field in your code. However, to
-        /// avoid breaking changes, KMS will support both fields.</p>
+        /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same value. We recommend that you use the <code>KeySpec</code> field in your code. However, to avoid breaking changes, KMS will support both fields.</p>
         pub fn customer_master_key_spec(
             mut self,
             input: crate::model::CustomerMasterKeySpec,
@@ -889,9 +741,7 @@ pub mod key_metadata {
             self
         }
         /// <p>Instead, use the <code>KeySpec</code> field.</p>
-        /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same
-        /// value. We recommend that you use the <code>KeySpec</code> field in your code. However, to
-        /// avoid breaking changes, KMS will support both fields.</p>
+        /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same value. We recommend that you use the <code>KeySpec</code> field in your code. However, to avoid breaking changes, KMS will support both fields.</p>
         pub fn set_customer_master_key_spec(
             mut self,
             input: std::option::Option<crate::model::CustomerMasterKeySpec>,
@@ -913,10 +763,8 @@ pub mod key_metadata {
         ///
         /// To override the contents of this collection use [`set_encryption_algorithms`](Self::set_encryption_algorithms).
         ///
-        /// <p>The encryption algorithms that the KMS key supports. You cannot use the KMS key with other
-        /// encryption algorithms within KMS.</p>
-        /// <p>This value is present only when the <code>KeyUsage</code> of the KMS key is
-        /// <code>ENCRYPT_DECRYPT</code>.</p>
+        /// <p>The encryption algorithms that the KMS key supports. You cannot use the KMS key with other encryption algorithms within KMS.</p>
+        /// <p>This value is present only when the <code>KeyUsage</code> of the KMS key is <code>ENCRYPT_DECRYPT</code>.</p>
         pub fn encryption_algorithms(
             mut self,
             input: crate::model::EncryptionAlgorithmSpec,
@@ -926,10 +774,8 @@ pub mod key_metadata {
             self.encryption_algorithms = Some(v);
             self
         }
-        /// <p>The encryption algorithms that the KMS key supports. You cannot use the KMS key with other
-        /// encryption algorithms within KMS.</p>
-        /// <p>This value is present only when the <code>KeyUsage</code> of the KMS key is
-        /// <code>ENCRYPT_DECRYPT</code>.</p>
+        /// <p>The encryption algorithms that the KMS key supports. You cannot use the KMS key with other encryption algorithms within KMS.</p>
+        /// <p>This value is present only when the <code>KeyUsage</code> of the KMS key is <code>ENCRYPT_DECRYPT</code>.</p>
         pub fn set_encryption_algorithms(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EncryptionAlgorithmSpec>>,
@@ -941,20 +787,16 @@ pub mod key_metadata {
         ///
         /// To override the contents of this collection use [`set_signing_algorithms`](Self::set_signing_algorithms).
         ///
-        /// <p>The signing algorithms that the KMS key supports. You cannot use the KMS key with other
-        /// signing algorithms within KMS.</p>
-        /// <p>This field appears only when the <code>KeyUsage</code> of the KMS key is
-        /// <code>SIGN_VERIFY</code>.</p>
+        /// <p>The signing algorithms that the KMS key supports. You cannot use the KMS key with other signing algorithms within KMS.</p>
+        /// <p>This field appears only when the <code>KeyUsage</code> of the KMS key is <code>SIGN_VERIFY</code>.</p>
         pub fn signing_algorithms(mut self, input: crate::model::SigningAlgorithmSpec) -> Self {
             let mut v = self.signing_algorithms.unwrap_or_default();
             v.push(input);
             self.signing_algorithms = Some(v);
             self
         }
-        /// <p>The signing algorithms that the KMS key supports. You cannot use the KMS key with other
-        /// signing algorithms within KMS.</p>
-        /// <p>This field appears only when the <code>KeyUsage</code> of the KMS key is
-        /// <code>SIGN_VERIFY</code>.</p>
+        /// <p>The signing algorithms that the KMS key supports. You cannot use the KMS key with other signing algorithms within KMS.</p>
+        /// <p>This field appears only when the <code>KeyUsage</code> of the KMS key is <code>SIGN_VERIFY</code>.</p>
         pub fn set_signing_algorithms(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SigningAlgorithmSpec>>,
@@ -962,42 +804,24 @@ pub mod key_metadata {
             self.signing_algorithms = input;
             self
         }
-        /// <p>Indicates whether the KMS key is a multi-Region (<code>True</code>) or regional
-        /// (<code>False</code>) key. This value is <code>True</code> for multi-Region primary and
-        /// replica keys and <code>False</code> for regional KMS keys.</p>
+        /// <p>Indicates whether the KMS key is a multi-Region (<code>True</code>) or regional (<code>False</code>) key. This value is <code>True</code> for multi-Region primary and replica keys and <code>False</code> for regional KMS keys.</p>
         /// <p>For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
         pub fn multi_region(mut self, input: bool) -> Self {
             self.multi_region = Some(input);
             self
         }
-        /// <p>Indicates whether the KMS key is a multi-Region (<code>True</code>) or regional
-        /// (<code>False</code>) key. This value is <code>True</code> for multi-Region primary and
-        /// replica keys and <code>False</code> for regional KMS keys.</p>
+        /// <p>Indicates whether the KMS key is a multi-Region (<code>True</code>) or regional (<code>False</code>) key. This value is <code>True</code> for multi-Region primary and replica keys and <code>False</code> for regional KMS keys.</p>
         /// <p>For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
         pub fn set_multi_region(mut self, input: std::option::Option<bool>) -> Self {
             self.multi_region = input;
             self
         }
-        /// <p>Lists the primary and replica keys in same multi-Region key. This field is present only
-        /// when the value of the <code>MultiRegion</code> field is <code>True</code>.</p>
-        /// <p>For more information about any listed KMS key, use the <a>DescribeKey</a>
-        /// operation.</p>
+        /// <p>Lists the primary and replica keys in same multi-Region key. This field is present only when the value of the <code>MultiRegion</code> field is <code>True</code>.</p>
+        /// <p>For more information about any listed KMS key, use the <code>DescribeKey</code> operation.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>MultiRegionKeyType</code> indicates whether the KMS key is a
-        /// <code>PRIMARY</code> or <code>REPLICA</code> key.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PrimaryKey</code> displays the key ARN and Region of the primary key. This field
-        /// displays the current KMS key if it is the primary key.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ReplicaKeys</code> displays the key ARNs and Regions of all replica keys. This
-        /// field includes the current KMS key if it is a replica key.</p>
-        /// </li>
+        /// <li> <p> <code>MultiRegionKeyType</code> indicates whether the KMS key is a <code>PRIMARY</code> or <code>REPLICA</code> key.</p> </li>
+        /// <li> <p> <code>PrimaryKey</code> displays the key ARN and Region of the primary key. This field displays the current KMS key if it is the primary key.</p> </li>
+        /// <li> <p> <code>ReplicaKeys</code> displays the key ARNs and Regions of all replica keys. This field includes the current KMS key if it is a replica key.</p> </li>
         /// </ul>
         pub fn multi_region_configuration(
             mut self,
@@ -1006,26 +830,12 @@ pub mod key_metadata {
             self.multi_region_configuration = Some(input);
             self
         }
-        /// <p>Lists the primary and replica keys in same multi-Region key. This field is present only
-        /// when the value of the <code>MultiRegion</code> field is <code>True</code>.</p>
-        /// <p>For more information about any listed KMS key, use the <a>DescribeKey</a>
-        /// operation.</p>
+        /// <p>Lists the primary and replica keys in same multi-Region key. This field is present only when the value of the <code>MultiRegion</code> field is <code>True</code>.</p>
+        /// <p>For more information about any listed KMS key, use the <code>DescribeKey</code> operation.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>MultiRegionKeyType</code> indicates whether the KMS key is a
-        /// <code>PRIMARY</code> or <code>REPLICA</code> key.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PrimaryKey</code> displays the key ARN and Region of the primary key. This field
-        /// displays the current KMS key if it is the primary key.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ReplicaKeys</code> displays the key ARNs and Regions of all replica keys. This
-        /// field includes the current KMS key if it is a replica key.</p>
-        /// </li>
+        /// <li> <p> <code>MultiRegionKeyType</code> indicates whether the KMS key is a <code>PRIMARY</code> or <code>REPLICA</code> key.</p> </li>
+        /// <li> <p> <code>PrimaryKey</code> displays the key ARN and Region of the primary key. This field displays the current KMS key if it is the primary key.</p> </li>
+        /// <li> <p> <code>ReplicaKeys</code> displays the key ARNs and Regions of all replica keys. This field includes the current KMS key if it is a replica key.</p> </li>
         /// </ul>
         pub fn set_multi_region_configuration(
             mut self,
@@ -1034,34 +844,14 @@ pub mod key_metadata {
             self.multi_region_configuration = input;
             self
         }
-        /// <p>The waiting period before the primary key in a multi-Region key is deleted. This waiting
-        /// period begins when the last of its replica keys is deleted. This value is present only when
-        /// the <code>KeyState</code> of the KMS key is <code>PendingReplicaDeletion</code>. That
-        /// indicates that the KMS key is the primary key in a multi-Region key, it is scheduled for
-        /// deletion, and it still has existing replica keys.</p>
-        /// <p>When a single-Region KMS key or a multi-Region replica key is scheduled for deletion, its
-        /// deletion date is displayed in the <code>DeletionDate</code> field. However, when the primary
-        /// key in a multi-Region key is scheduled for deletion, its waiting period doesn't begin until
-        /// all of its replica keys are deleted. This value displays that waiting period. When the last
-        /// replica key in the multi-Region key is deleted, the <code>KeyState</code> of the scheduled
-        /// primary key changes from <code>PendingReplicaDeletion</code> to <code>PendingDeletion</code>
-        /// and the deletion date appears in the <code>DeletionDate</code> field.</p>
+        /// <p>The waiting period before the primary key in a multi-Region key is deleted. This waiting period begins when the last of its replica keys is deleted. This value is present only when the <code>KeyState</code> of the KMS key is <code>PendingReplicaDeletion</code>. That indicates that the KMS key is the primary key in a multi-Region key, it is scheduled for deletion, and it still has existing replica keys.</p>
+        /// <p>When a single-Region KMS key or a multi-Region replica key is scheduled for deletion, its deletion date is displayed in the <code>DeletionDate</code> field. However, when the primary key in a multi-Region key is scheduled for deletion, its waiting period doesn't begin until all of its replica keys are deleted. This value displays that waiting period. When the last replica key in the multi-Region key is deleted, the <code>KeyState</code> of the scheduled primary key changes from <code>PendingReplicaDeletion</code> to <code>PendingDeletion</code> and the deletion date appears in the <code>DeletionDate</code> field.</p>
         pub fn pending_deletion_window_in_days(mut self, input: i32) -> Self {
             self.pending_deletion_window_in_days = Some(input);
             self
         }
-        /// <p>The waiting period before the primary key in a multi-Region key is deleted. This waiting
-        /// period begins when the last of its replica keys is deleted. This value is present only when
-        /// the <code>KeyState</code> of the KMS key is <code>PendingReplicaDeletion</code>. That
-        /// indicates that the KMS key is the primary key in a multi-Region key, it is scheduled for
-        /// deletion, and it still has existing replica keys.</p>
-        /// <p>When a single-Region KMS key or a multi-Region replica key is scheduled for deletion, its
-        /// deletion date is displayed in the <code>DeletionDate</code> field. However, when the primary
-        /// key in a multi-Region key is scheduled for deletion, its waiting period doesn't begin until
-        /// all of its replica keys are deleted. This value displays that waiting period. When the last
-        /// replica key in the multi-Region key is deleted, the <code>KeyState</code> of the scheduled
-        /// primary key changes from <code>PendingReplicaDeletion</code> to <code>PendingDeletion</code>
-        /// and the deletion date appears in the <code>DeletionDate</code> field.</p>
+        /// <p>The waiting period before the primary key in a multi-Region key is deleted. This waiting period begins when the last of its replica keys is deleted. This value is present only when the <code>KeyState</code> of the KMS key is <code>PendingReplicaDeletion</code>. That indicates that the KMS key is the primary key in a multi-Region key, it is scheduled for deletion, and it still has existing replica keys.</p>
+        /// <p>When a single-Region KMS key or a multi-Region replica key is scheduled for deletion, its deletion date is displayed in the <code>DeletionDate</code> field. However, when the primary key in a multi-Region key is scheduled for deletion, its waiting period doesn't begin until all of its replica keys are deleted. This value displays that waiting period. When the last replica key in the multi-Region key is deleted, the <code>KeyState</code> of the scheduled primary key changes from <code>PendingReplicaDeletion</code> to <code>PendingDeletion</code> and the deletion date appears in the <code>DeletionDate</code> field.</p>
         pub fn set_pending_deletion_window_in_days(
             mut self,
             input: std::option::Option<i32>,
@@ -1105,36 +895,28 @@ impl KeyMetadata {
     }
 }
 
-/// <p>Describes the configuration of this multi-Region key. This field appears only when the KMS
-/// key is a primary or replica of a multi-Region key.</p>
-/// <p>For more information about any listed KMS key, use the <a>DescribeKey</a>
-/// operation.</p>
+/// <p>Describes the configuration of this multi-Region key. This field appears only when the KMS key is a primary or replica of a multi-Region key.</p>
+/// <p>For more information about any listed KMS key, use the <code>DescribeKey</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MultiRegionConfiguration {
-    /// <p>Indicates whether the KMS key is a <code>PRIMARY</code> or <code>REPLICA</code>
-    /// key.</p>
+    /// <p>Indicates whether the KMS key is a <code>PRIMARY</code> or <code>REPLICA</code> key.</p>
     pub multi_region_key_type: std::option::Option<crate::model::MultiRegionKeyType>,
-    /// <p>Displays the key ARN and Region of the primary key. This field includes the current KMS
-    /// key if it is the primary key.</p>
+    /// <p>Displays the key ARN and Region of the primary key. This field includes the current KMS key if it is the primary key.</p>
     pub primary_key: std::option::Option<crate::model::MultiRegionKey>,
-    /// <p>displays the key ARNs and Regions of all replica keys. This field includes the current KMS
-    /// key if it is a replica key.</p>
+    /// <p>displays the key ARNs and Regions of all replica keys. This field includes the current KMS key if it is a replica key.</p>
     pub replica_keys: std::option::Option<std::vec::Vec<crate::model::MultiRegionKey>>,
 }
 impl MultiRegionConfiguration {
-    /// <p>Indicates whether the KMS key is a <code>PRIMARY</code> or <code>REPLICA</code>
-    /// key.</p>
+    /// <p>Indicates whether the KMS key is a <code>PRIMARY</code> or <code>REPLICA</code> key.</p>
     pub fn multi_region_key_type(&self) -> std::option::Option<&crate::model::MultiRegionKeyType> {
         self.multi_region_key_type.as_ref()
     }
-    /// <p>Displays the key ARN and Region of the primary key. This field includes the current KMS
-    /// key if it is the primary key.</p>
+    /// <p>Displays the key ARN and Region of the primary key. This field includes the current KMS key if it is the primary key.</p>
     pub fn primary_key(&self) -> std::option::Option<&crate::model::MultiRegionKey> {
         self.primary_key.as_ref()
     }
-    /// <p>displays the key ARNs and Regions of all replica keys. This field includes the current KMS
-    /// key if it is a replica key.</p>
+    /// <p>displays the key ARNs and Regions of all replica keys. This field includes the current KMS key if it is a replica key.</p>
     pub fn replica_keys(&self) -> std::option::Option<&[crate::model::MultiRegionKey]> {
         self.replica_keys.as_deref()
     }
@@ -1159,14 +941,12 @@ pub mod multi_region_configuration {
         pub(crate) replica_keys: std::option::Option<std::vec::Vec<crate::model::MultiRegionKey>>,
     }
     impl Builder {
-        /// <p>Indicates whether the KMS key is a <code>PRIMARY</code> or <code>REPLICA</code>
-        /// key.</p>
+        /// <p>Indicates whether the KMS key is a <code>PRIMARY</code> or <code>REPLICA</code> key.</p>
         pub fn multi_region_key_type(mut self, input: crate::model::MultiRegionKeyType) -> Self {
             self.multi_region_key_type = Some(input);
             self
         }
-        /// <p>Indicates whether the KMS key is a <code>PRIMARY</code> or <code>REPLICA</code>
-        /// key.</p>
+        /// <p>Indicates whether the KMS key is a <code>PRIMARY</code> or <code>REPLICA</code> key.</p>
         pub fn set_multi_region_key_type(
             mut self,
             input: std::option::Option<crate::model::MultiRegionKeyType>,
@@ -1174,14 +954,12 @@ pub mod multi_region_configuration {
             self.multi_region_key_type = input;
             self
         }
-        /// <p>Displays the key ARN and Region of the primary key. This field includes the current KMS
-        /// key if it is the primary key.</p>
+        /// <p>Displays the key ARN and Region of the primary key. This field includes the current KMS key if it is the primary key.</p>
         pub fn primary_key(mut self, input: crate::model::MultiRegionKey) -> Self {
             self.primary_key = Some(input);
             self
         }
-        /// <p>Displays the key ARN and Region of the primary key. This field includes the current KMS
-        /// key if it is the primary key.</p>
+        /// <p>Displays the key ARN and Region of the primary key. This field includes the current KMS key if it is the primary key.</p>
         pub fn set_primary_key(
             mut self,
             input: std::option::Option<crate::model::MultiRegionKey>,
@@ -1193,16 +971,14 @@ pub mod multi_region_configuration {
         ///
         /// To override the contents of this collection use [`set_replica_keys`](Self::set_replica_keys).
         ///
-        /// <p>displays the key ARNs and Regions of all replica keys. This field includes the current KMS
-        /// key if it is a replica key.</p>
+        /// <p>displays the key ARNs and Regions of all replica keys. This field includes the current KMS key if it is a replica key.</p>
         pub fn replica_keys(mut self, input: crate::model::MultiRegionKey) -> Self {
             let mut v = self.replica_keys.unwrap_or_default();
             v.push(input);
             self.replica_keys = Some(v);
             self
         }
-        /// <p>displays the key ARNs and Regions of all replica keys. This field includes the current KMS
-        /// key if it is a replica key.</p>
+        /// <p>displays the key ARNs and Regions of all replica keys. This field includes the current KMS key if it is a replica key.</p>
         pub fn set_replica_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MultiRegionKey>>,
@@ -1826,16 +1602,12 @@ pub struct GrantListEntry {
     pub key_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the grant.</p>
     pub grant_id: std::option::Option<std::string::String>,
-    /// <p>The friendly name that identifies the grant. If a name was provided in the <a>CreateGrant</a> request, that name is returned. Otherwise this value is null.</p>
+    /// <p>The friendly name that identifies the grant. If a name was provided in the <code>CreateGrant</code> request, that name is returned. Otherwise this value is null.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The date and time when the grant was created.</p>
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The identity that gets the permissions in the grant.</p>
-    /// <p>The <code>GranteePrincipal</code> field in the <code>ListGrants</code> response usually contains the
-    /// user or role designated as the grantee principal in the grant. However, when the grantee
-    /// principal in the grant is an Amazon Web Services service, the <code>GranteePrincipal</code> field contains
-    /// the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service
-    /// principal</a>, which might represent several different grantee principals.</p>
+    /// <p>The <code>GranteePrincipal</code> field in the <code>ListGrants</code> response usually contains the user or role designated as the grantee principal in the grant. However, when the grantee principal in the grant is an Amazon Web Services service, the <code>GranteePrincipal</code> field contains the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service principal</a>, which might represent several different grantee principals.</p>
     pub grantee_principal: std::option::Option<std::string::String>,
     /// <p>The principal that can retire the grant.</p>
     pub retiring_principal: std::option::Option<std::string::String>,
@@ -1843,8 +1615,7 @@ pub struct GrantListEntry {
     pub issuing_account: std::option::Option<std::string::String>,
     /// <p>The list of operations permitted by the grant.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::GrantOperation>>,
-    /// <p>A list of key-value pairs that must be present in the encryption context of certain
-    /// subsequent operations that the grant allows.</p>
+    /// <p>A list of key-value pairs that must be present in the encryption context of certain subsequent operations that the grant allows.</p>
     pub constraints: std::option::Option<crate::model::GrantConstraints>,
 }
 impl GrantListEntry {
@@ -1856,7 +1627,7 @@ impl GrantListEntry {
     pub fn grant_id(&self) -> std::option::Option<&str> {
         self.grant_id.as_deref()
     }
-    /// <p>The friendly name that identifies the grant. If a name was provided in the <a>CreateGrant</a> request, that name is returned. Otherwise this value is null.</p>
+    /// <p>The friendly name that identifies the grant. If a name was provided in the <code>CreateGrant</code> request, that name is returned. Otherwise this value is null.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -1865,11 +1636,7 @@ impl GrantListEntry {
         self.creation_date.as_ref()
     }
     /// <p>The identity that gets the permissions in the grant.</p>
-    /// <p>The <code>GranteePrincipal</code> field in the <code>ListGrants</code> response usually contains the
-    /// user or role designated as the grantee principal in the grant. However, when the grantee
-    /// principal in the grant is an Amazon Web Services service, the <code>GranteePrincipal</code> field contains
-    /// the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service
-    /// principal</a>, which might represent several different grantee principals.</p>
+    /// <p>The <code>GranteePrincipal</code> field in the <code>ListGrants</code> response usually contains the user or role designated as the grantee principal in the grant. However, when the grantee principal in the grant is an Amazon Web Services service, the <code>GranteePrincipal</code> field contains the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service principal</a>, which might represent several different grantee principals.</p>
     pub fn grantee_principal(&self) -> std::option::Option<&str> {
         self.grantee_principal.as_deref()
     }
@@ -1885,8 +1652,7 @@ impl GrantListEntry {
     pub fn operations(&self) -> std::option::Option<&[crate::model::GrantOperation]> {
         self.operations.as_deref()
     }
-    /// <p>A list of key-value pairs that must be present in the encryption context of certain
-    /// subsequent operations that the grant allows.</p>
+    /// <p>A list of key-value pairs that must be present in the encryption context of certain subsequent operations that the grant allows.</p>
     pub fn constraints(&self) -> std::option::Option<&crate::model::GrantConstraints> {
         self.constraints.as_ref()
     }
@@ -1943,12 +1709,12 @@ pub mod grant_list_entry {
             self.grant_id = input;
             self
         }
-        /// <p>The friendly name that identifies the grant. If a name was provided in the <a>CreateGrant</a> request, that name is returned. Otherwise this value is null.</p>
+        /// <p>The friendly name that identifies the grant. If a name was provided in the <code>CreateGrant</code> request, that name is returned. Otherwise this value is null.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The friendly name that identifies the grant. If a name was provided in the <a>CreateGrant</a> request, that name is returned. Otherwise this value is null.</p>
+        /// <p>The friendly name that identifies the grant. If a name was provided in the <code>CreateGrant</code> request, that name is returned. Otherwise this value is null.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1967,21 +1733,13 @@ pub mod grant_list_entry {
             self
         }
         /// <p>The identity that gets the permissions in the grant.</p>
-        /// <p>The <code>GranteePrincipal</code> field in the <code>ListGrants</code> response usually contains the
-        /// user or role designated as the grantee principal in the grant. However, when the grantee
-        /// principal in the grant is an Amazon Web Services service, the <code>GranteePrincipal</code> field contains
-        /// the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service
-        /// principal</a>, which might represent several different grantee principals.</p>
+        /// <p>The <code>GranteePrincipal</code> field in the <code>ListGrants</code> response usually contains the user or role designated as the grantee principal in the grant. However, when the grantee principal in the grant is an Amazon Web Services service, the <code>GranteePrincipal</code> field contains the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service principal</a>, which might represent several different grantee principals.</p>
         pub fn grantee_principal(mut self, input: impl Into<std::string::String>) -> Self {
             self.grantee_principal = Some(input.into());
             self
         }
         /// <p>The identity that gets the permissions in the grant.</p>
-        /// <p>The <code>GranteePrincipal</code> field in the <code>ListGrants</code> response usually contains the
-        /// user or role designated as the grantee principal in the grant. However, when the grantee
-        /// principal in the grant is an Amazon Web Services service, the <code>GranteePrincipal</code> field contains
-        /// the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service
-        /// principal</a>, which might represent several different grantee principals.</p>
+        /// <p>The <code>GranteePrincipal</code> field in the <code>ListGrants</code> response usually contains the user or role designated as the grantee principal in the grant. However, when the grantee principal in the grant is an Amazon Web Services service, the <code>GranteePrincipal</code> field contains the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service principal</a>, which might represent several different grantee principals.</p>
         pub fn set_grantee_principal(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2034,14 +1792,12 @@ pub mod grant_list_entry {
             self.operations = input;
             self
         }
-        /// <p>A list of key-value pairs that must be present in the encryption context of certain
-        /// subsequent operations that the grant allows.</p>
+        /// <p>A list of key-value pairs that must be present in the encryption context of certain subsequent operations that the grant allows.</p>
         pub fn constraints(mut self, input: crate::model::GrantConstraints) -> Self {
             self.constraints = Some(input);
             self
         }
-        /// <p>A list of key-value pairs that must be present in the encryption context of certain
-        /// subsequent operations that the grant allows.</p>
+        /// <p>A list of key-value pairs that must be present in the encryption context of certain subsequent operations that the grant allows.</p>
         pub fn set_constraints(
             mut self,
             input: std::option::Option<crate::model::GrantConstraints>,
@@ -2072,54 +1828,31 @@ impl GrantListEntry {
     }
 }
 
-/// <p>Use this structure to allow <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> in the grant only when the operation request
-/// includes the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption context</a>. </p>
-/// <p>KMS applies the grant constraints only to cryptographic operations that support an
-/// encryption context, that is, all cryptographic operations with a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html#symmetric-cmks">symmetric KMS key</a>. Grant
-/// constraints are not applied to operations that do not support an encryption context, such as
-/// cryptographic operations with asymmetric KMS keys and management operations, such as <a>DescribeKey</a> or <a>RetireGrant</a>.</p>
-/// <important>
-/// <p>In a cryptographic operation, the encryption context in the decryption operation must be
-/// an exact, case-sensitive match for the keys and values in the encryption context of the
-/// encryption operation. Only the order of the pairs can vary.</p>
-/// <p>However, in a grant constraint, the key in each key-value pair is not case sensitive,
-/// but the value is case sensitive.</p>
-/// <p>To avoid confusion, do not use multiple encryption context pairs that differ only by
-/// case. To require a fully case-sensitive encryption context, use the
-/// <code>kms:EncryptionContext:</code> and <code>kms:EncryptionContextKeys</code> conditions
-/// in an IAM or key policy. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-context">kms:EncryptionContext:</a> in the <i>
-/// <i>Key Management Service Developer Guide</i>
-/// </i>.</p>
+/// <p>Use this structure to allow <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> in the grant only when the operation request includes the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption context</a>. </p>
+/// <p>KMS applies the grant constraints only to cryptographic operations that support an encryption context, that is, all cryptographic operations with a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html#symmetric-cmks">symmetric KMS key</a>. Grant constraints are not applied to operations that do not support an encryption context, such as cryptographic operations with asymmetric KMS keys and management operations, such as <code>DescribeKey</code> or <code>RetireGrant</code>.</p> <important>
+/// <p>In a cryptographic operation, the encryption context in the decryption operation must be an exact, case-sensitive match for the keys and values in the encryption context of the encryption operation. Only the order of the pairs can vary.</p>
+/// <p>However, in a grant constraint, the key in each key-value pair is not case sensitive, but the value is case sensitive.</p>
+/// <p>To avoid confusion, do not use multiple encryption context pairs that differ only by case. To require a fully case-sensitive encryption context, use the <code>kms:EncryptionContext:</code> and <code>kms:EncryptionContextKeys</code> conditions in an IAM or key policy. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-context">kms:EncryptionContext:</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>
 /// </important>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GrantConstraints {
-    /// <p>A list of key-value pairs that must be included in the encryption context of the
-    /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operation</a> request. The grant allows the cryptographic operation only when the encryption
-    /// context in the request includes the key-value pairs specified in this constraint, although it
-    /// can include additional key-value pairs.</p>
+    /// <p>A list of key-value pairs that must be included in the encryption context of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operation</a> request. The grant allows the cryptographic operation only when the encryption context in the request includes the key-value pairs specified in this constraint, although it can include additional key-value pairs.</p>
     pub encryption_context_subset:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>A list of key-value pairs that must match the encryption context in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operation</a>
-    /// request. The grant allows the operation only when the encryption context in the request is the
-    /// same as the encryption context specified in this constraint.</p>
+    /// <p>A list of key-value pairs that must match the encryption context in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operation</a> request. The grant allows the operation only when the encryption context in the request is the same as the encryption context specified in this constraint.</p>
     pub encryption_context_equals:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GrantConstraints {
-    /// <p>A list of key-value pairs that must be included in the encryption context of the
-    /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operation</a> request. The grant allows the cryptographic operation only when the encryption
-    /// context in the request includes the key-value pairs specified in this constraint, although it
-    /// can include additional key-value pairs.</p>
+    /// <p>A list of key-value pairs that must be included in the encryption context of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operation</a> request. The grant allows the cryptographic operation only when the encryption context in the request includes the key-value pairs specified in this constraint, although it can include additional key-value pairs.</p>
     pub fn encryption_context_subset(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.encryption_context_subset.as_ref()
     }
-    /// <p>A list of key-value pairs that must match the encryption context in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operation</a>
-    /// request. The grant allows the operation only when the encryption context in the request is the
-    /// same as the encryption context specified in this constraint.</p>
+    /// <p>A list of key-value pairs that must match the encryption context in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operation</a> request. The grant allows the operation only when the encryption context in the request is the same as the encryption context specified in this constraint.</p>
     pub fn encryption_context_equals(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -2153,10 +1886,7 @@ pub mod grant_constraints {
         ///
         /// To override the contents of this collection use [`set_encryption_context_subset`](Self::set_encryption_context_subset).
         ///
-        /// <p>A list of key-value pairs that must be included in the encryption context of the
-        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operation</a> request. The grant allows the cryptographic operation only when the encryption
-        /// context in the request includes the key-value pairs specified in this constraint, although it
-        /// can include additional key-value pairs.</p>
+        /// <p>A list of key-value pairs that must be included in the encryption context of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operation</a> request. The grant allows the cryptographic operation only when the encryption context in the request includes the key-value pairs specified in this constraint, although it can include additional key-value pairs.</p>
         pub fn encryption_context_subset(
             mut self,
             k: impl Into<std::string::String>,
@@ -2167,10 +1897,7 @@ pub mod grant_constraints {
             self.encryption_context_subset = Some(hash_map);
             self
         }
-        /// <p>A list of key-value pairs that must be included in the encryption context of the
-        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operation</a> request. The grant allows the cryptographic operation only when the encryption
-        /// context in the request includes the key-value pairs specified in this constraint, although it
-        /// can include additional key-value pairs.</p>
+        /// <p>A list of key-value pairs that must be included in the encryption context of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operation</a> request. The grant allows the cryptographic operation only when the encryption context in the request includes the key-value pairs specified in this constraint, although it can include additional key-value pairs.</p>
         pub fn set_encryption_context_subset(
             mut self,
             input: std::option::Option<
@@ -2184,9 +1911,7 @@ pub mod grant_constraints {
         ///
         /// To override the contents of this collection use [`set_encryption_context_equals`](Self::set_encryption_context_equals).
         ///
-        /// <p>A list of key-value pairs that must match the encryption context in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operation</a>
-        /// request. The grant allows the operation only when the encryption context in the request is the
-        /// same as the encryption context specified in this constraint.</p>
+        /// <p>A list of key-value pairs that must match the encryption context in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operation</a> request. The grant allows the operation only when the encryption context in the request is the same as the encryption context specified in this constraint.</p>
         pub fn encryption_context_equals(
             mut self,
             k: impl Into<std::string::String>,
@@ -2197,9 +1922,7 @@ pub mod grant_constraints {
             self.encryption_context_equals = Some(hash_map);
             self
         }
-        /// <p>A list of key-value pairs that must match the encryption context in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operation</a>
-        /// request. The grant allows the operation only when the encryption context in the request is the
-        /// same as the encryption context specified in this constraint.</p>
+        /// <p>A list of key-value pairs that must match the encryption context in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operation</a> request. The grant allows the operation only when the encryption context in the request is the same as the encryption context specified in this constraint.</p>
         pub fn set_encryption_context_equals(
             mut self,
             input: std::option::Option<
@@ -2430,11 +2153,9 @@ pub struct AliasListEntry {
     pub alias_arn: std::option::Option<std::string::String>,
     /// <p>String that contains the key identifier of the KMS key associated with the alias.</p>
     pub target_key_id: std::option::Option<std::string::String>,
-    /// <p>Date and time that the alias was most recently created in the account and Region.
-    /// Formatted as Unix time.</p>
+    /// <p>Date and time that the alias was most recently created in the account and Region. Formatted as Unix time.</p>
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Date and time that the alias was most recently associated with a KMS key in the account
-    /// and Region. Formatted as Unix time.</p>
+    /// <p>Date and time that the alias was most recently associated with a KMS key in the account and Region. Formatted as Unix time.</p>
     pub last_updated_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl AliasListEntry {
@@ -2450,13 +2171,11 @@ impl AliasListEntry {
     pub fn target_key_id(&self) -> std::option::Option<&str> {
         self.target_key_id.as_deref()
     }
-    /// <p>Date and time that the alias was most recently created in the account and Region.
-    /// Formatted as Unix time.</p>
+    /// <p>Date and time that the alias was most recently created in the account and Region. Formatted as Unix time.</p>
     pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
-    /// <p>Date and time that the alias was most recently associated with a KMS key in the account
-    /// and Region. Formatted as Unix time.</p>
+    /// <p>Date and time that the alias was most recently associated with a KMS key in the account and Region. Formatted as Unix time.</p>
     pub fn last_updated_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date.as_ref()
     }
@@ -2518,14 +2237,12 @@ pub mod alias_list_entry {
             self.target_key_id = input;
             self
         }
-        /// <p>Date and time that the alias was most recently created in the account and Region.
-        /// Formatted as Unix time.</p>
+        /// <p>Date and time that the alias was most recently created in the account and Region. Formatted as Unix time.</p>
         pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_date = Some(input);
             self
         }
-        /// <p>Date and time that the alias was most recently created in the account and Region.
-        /// Formatted as Unix time.</p>
+        /// <p>Date and time that the alias was most recently created in the account and Region. Formatted as Unix time.</p>
         pub fn set_creation_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2533,14 +2250,12 @@ pub mod alias_list_entry {
             self.creation_date = input;
             self
         }
-        /// <p>Date and time that the alias was most recently associated with a KMS key in the account
-        /// and Region. Formatted as Unix time.</p>
+        /// <p>Date and time that the alias was most recently associated with a KMS key in the account and Region. Formatted as Unix time.</p>
         pub fn last_updated_date(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.last_updated_date = Some(input);
             self
         }
-        /// <p>Date and time that the alias was most recently associated with a KMS key in the account
-        /// and Region. Formatted as Unix time.</p>
+        /// <p>Date and time that the alias was most recently associated with a KMS key in the account and Region. Formatted as Unix time.</p>
         pub fn set_last_updated_date(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2823,95 +2538,27 @@ pub struct CustomKeyStoresListEntry {
     pub custom_key_store_id: std::option::Option<std::string::String>,
     /// <p>The user-specified friendly name for the custom key store.</p>
     pub custom_key_store_name: std::option::Option<std::string::String>,
-    /// <p>A unique identifier for the CloudHSM cluster that is associated with the custom key
-    /// store.</p>
+    /// <p>A unique identifier for the CloudHSM cluster that is associated with the custom key store.</p>
     pub cloud_hsm_cluster_id: std::option::Option<std::string::String>,
-    /// <p>The trust anchor certificate of the associated CloudHSM cluster. When you <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html#sign-csr">initialize the
-    /// cluster</a>, you create this certificate and save it in the <code>customerCA.crt</code>
-    /// file.</p>
+    /// <p>The trust anchor certificate of the associated CloudHSM cluster. When you <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html#sign-csr">initialize the cluster</a>, you create this certificate and save it in the <code>customerCA.crt</code> file.</p>
     pub trust_anchor_certificate: std::option::Option<std::string::String>,
     /// <p>Indicates whether the custom key store is connected to its CloudHSM cluster.</p>
-    /// <p>You can create and use KMS keys in your custom key stores only when its connection state
-    /// is <code>CONNECTED</code>.</p>
-    /// <p>The value is <code>DISCONNECTED</code> if the key store has never been connected or you
-    /// use the <a>DisconnectCustomKeyStore</a> operation to disconnect it. If the value is
-    /// <code>CONNECTED</code> but you are having trouble using the custom key store, make sure that
-    /// its associated CloudHSM cluster is active and contains at least one active HSM.</p>
-    /// <p>A value of <code>FAILED</code> indicates that an attempt to connect was unsuccessful. The
-    /// <code>ConnectionErrorCode</code> field in the response indicates the cause of the failure.
-    /// For help resolving a connection failure, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html">Troubleshooting a Custom Key Store</a> in the
-    /// <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>You can create and use KMS keys in your custom key stores only when its connection state is <code>CONNECTED</code>.</p>
+    /// <p>The value is <code>DISCONNECTED</code> if the key store has never been connected or you use the <code>DisconnectCustomKeyStore</code> operation to disconnect it. If the value is <code>CONNECTED</code> but you are having trouble using the custom key store, make sure that its associated CloudHSM cluster is active and contains at least one active HSM.</p>
+    /// <p>A value of <code>FAILED</code> indicates that an attempt to connect was unsuccessful. The <code>ConnectionErrorCode</code> field in the response indicates the cause of the failure. For help resolving a connection failure, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html">Troubleshooting a Custom Key Store</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub connection_state: std::option::Option<crate::model::ConnectionStateType>,
-    /// <p>Describes the connection error. This field appears in the response only when the
-    /// <code>ConnectionState</code> is <code>FAILED</code>. For help resolving these errors, see
-    /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How to
-    /// Fix a Connection Failure</a> in <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>Describes the connection error. This field appears in the response only when the <code>ConnectionState</code> is <code>FAILED</code>. For help resolving these errors, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How to Fix a Connection Failure</a> in <i>Key Management Service Developer Guide</i>.</p>
     /// <p>Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CLUSTER_NOT_FOUND</code> - KMS cannot find the CloudHSM cluster with the
-    /// specified cluster ID.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>INSUFFICIENT_CLOUDHSM_HSMS</code> - The associated CloudHSM cluster does not
-    /// contain any active HSMs. To connect a custom key store to its CloudHSM cluster, the cluster
-    /// must contain at least one active HSM.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>INTERNAL_ERROR</code> - KMS could not complete the request due to an internal
-    /// error. Retry the request. For <code>ConnectCustomKeyStore</code> requests, disconnect the
-    /// custom key store before trying to connect again.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>INVALID_CREDENTIALS</code> - KMS does not have the correct password for the
-    /// <code>kmsuser</code> crypto user in the CloudHSM cluster. Before you can connect your
-    /// custom key store to its CloudHSM cluster, you must change the <code>kmsuser</code> account
-    /// password and update the key store password value for the custom key store.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NETWORK_ERRORS</code> - Network errors are preventing KMS from connecting to
-    /// the custom key store.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SUBNET_NOT_FOUND</code> - A subnet in the CloudHSM cluster configuration was
-    /// deleted. If KMS cannot find all of the subnets in the cluster configuration, attempts to
-    /// connect the custom key store to the CloudHSM cluster fail. To fix this error, create a
-    /// cluster from a recent backup and associate it with your custom key store. (This process
-    /// creates a new cluster configuration with a VPC and private subnets.) For details, see
-    /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How
-    /// to Fix a Connection Failure</a> in the <i>Key Management Service Developer Guide</i>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>USER_LOCKED_OUT</code> - The <code>kmsuser</code> CU account is locked out of
-    /// the associated CloudHSM cluster due to too many failed password attempts. Before you can
-    /// connect your custom key store to its CloudHSM cluster, you must change the
-    /// <code>kmsuser</code> account password and update the key store password value for the
-    /// custom key store.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>USER_LOGGED_IN</code> - The <code>kmsuser</code> CU account is logged into the
-    /// the associated CloudHSM cluster. This prevents KMS from rotating the <code>kmsuser</code>
-    /// account password and logging into the cluster. Before you can connect your custom key
-    /// store to its CloudHSM cluster, you must log the <code>kmsuser</code> CU out of the cluster.
-    /// If you changed the <code>kmsuser</code> password to log into the cluster, you must also
-    /// and update the key store password value for the custom key store. For help, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#login-kmsuser-2">How to Log Out
-    /// and Reconnect</a> in the <i>Key Management Service Developer Guide</i>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>USER_NOT_FOUND</code> - KMS cannot find a <code>kmsuser</code> CU account in
-    /// the associated CloudHSM cluster. Before you can connect your custom key store to its CloudHSM
-    /// cluster, you must create a <code>kmsuser</code> CU account in the cluster, and then update
-    /// the key store password value for the custom key store.</p>
-    /// </li>
+    /// <li> <p> <code>CLUSTER_NOT_FOUND</code> - KMS cannot find the CloudHSM cluster with the specified cluster ID.</p> </li>
+    /// <li> <p> <code>INSUFFICIENT_CLOUDHSM_HSMS</code> - The associated CloudHSM cluster does not contain any active HSMs. To connect a custom key store to its CloudHSM cluster, the cluster must contain at least one active HSM.</p> </li>
+    /// <li> <p> <code>INTERNAL_ERROR</code> - KMS could not complete the request due to an internal error. Retry the request. For <code>ConnectCustomKeyStore</code> requests, disconnect the custom key store before trying to connect again.</p> </li>
+    /// <li> <p> <code>INVALID_CREDENTIALS</code> - KMS does not have the correct password for the <code>kmsuser</code> crypto user in the CloudHSM cluster. Before you can connect your custom key store to its CloudHSM cluster, you must change the <code>kmsuser</code> account password and update the key store password value for the custom key store.</p> </li>
+    /// <li> <p> <code>NETWORK_ERRORS</code> - Network errors are preventing KMS from connecting to the custom key store.</p> </li>
+    /// <li> <p> <code>SUBNET_NOT_FOUND</code> - A subnet in the CloudHSM cluster configuration was deleted. If KMS cannot find all of the subnets in the cluster configuration, attempts to connect the custom key store to the CloudHSM cluster fail. To fix this error, create a cluster from a recent backup and associate it with your custom key store. (This process creates a new cluster configuration with a VPC and private subnets.) For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How to Fix a Connection Failure</a> in the <i>Key Management Service Developer Guide</i>.</p> </li>
+    /// <li> <p> <code>USER_LOCKED_OUT</code> - The <code>kmsuser</code> CU account is locked out of the associated CloudHSM cluster due to too many failed password attempts. Before you can connect your custom key store to its CloudHSM cluster, you must change the <code>kmsuser</code> account password and update the key store password value for the custom key store.</p> </li>
+    /// <li> <p> <code>USER_LOGGED_IN</code> - The <code>kmsuser</code> CU account is logged into the the associated CloudHSM cluster. This prevents KMS from rotating the <code>kmsuser</code> account password and logging into the cluster. Before you can connect your custom key store to its CloudHSM cluster, you must log the <code>kmsuser</code> CU out of the cluster. If you changed the <code>kmsuser</code> password to log into the cluster, you must also and update the key store password value for the custom key store. For help, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#login-kmsuser-2">How to Log Out and Reconnect</a> in the <i>Key Management Service Developer Guide</i>.</p> </li>
+    /// <li> <p> <code>USER_NOT_FOUND</code> - KMS cannot find a <code>kmsuser</code> CU account in the associated CloudHSM cluster. Before you can connect your custom key store to its CloudHSM cluster, you must create a <code>kmsuser</code> CU account in the cluster, and then update the key store password value for the custom key store.</p> </li>
     /// </ul>
     pub connection_error_code: std::option::Option<crate::model::ConnectionErrorCodeType>,
     /// <p>The date and time when the custom key store was created.</p>
@@ -2926,101 +2573,33 @@ impl CustomKeyStoresListEntry {
     pub fn custom_key_store_name(&self) -> std::option::Option<&str> {
         self.custom_key_store_name.as_deref()
     }
-    /// <p>A unique identifier for the CloudHSM cluster that is associated with the custom key
-    /// store.</p>
+    /// <p>A unique identifier for the CloudHSM cluster that is associated with the custom key store.</p>
     pub fn cloud_hsm_cluster_id(&self) -> std::option::Option<&str> {
         self.cloud_hsm_cluster_id.as_deref()
     }
-    /// <p>The trust anchor certificate of the associated CloudHSM cluster. When you <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html#sign-csr">initialize the
-    /// cluster</a>, you create this certificate and save it in the <code>customerCA.crt</code>
-    /// file.</p>
+    /// <p>The trust anchor certificate of the associated CloudHSM cluster. When you <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html#sign-csr">initialize the cluster</a>, you create this certificate and save it in the <code>customerCA.crt</code> file.</p>
     pub fn trust_anchor_certificate(&self) -> std::option::Option<&str> {
         self.trust_anchor_certificate.as_deref()
     }
     /// <p>Indicates whether the custom key store is connected to its CloudHSM cluster.</p>
-    /// <p>You can create and use KMS keys in your custom key stores only when its connection state
-    /// is <code>CONNECTED</code>.</p>
-    /// <p>The value is <code>DISCONNECTED</code> if the key store has never been connected or you
-    /// use the <a>DisconnectCustomKeyStore</a> operation to disconnect it. If the value is
-    /// <code>CONNECTED</code> but you are having trouble using the custom key store, make sure that
-    /// its associated CloudHSM cluster is active and contains at least one active HSM.</p>
-    /// <p>A value of <code>FAILED</code> indicates that an attempt to connect was unsuccessful. The
-    /// <code>ConnectionErrorCode</code> field in the response indicates the cause of the failure.
-    /// For help resolving a connection failure, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html">Troubleshooting a Custom Key Store</a> in the
-    /// <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>You can create and use KMS keys in your custom key stores only when its connection state is <code>CONNECTED</code>.</p>
+    /// <p>The value is <code>DISCONNECTED</code> if the key store has never been connected or you use the <code>DisconnectCustomKeyStore</code> operation to disconnect it. If the value is <code>CONNECTED</code> but you are having trouble using the custom key store, make sure that its associated CloudHSM cluster is active and contains at least one active HSM.</p>
+    /// <p>A value of <code>FAILED</code> indicates that an attempt to connect was unsuccessful. The <code>ConnectionErrorCode</code> field in the response indicates the cause of the failure. For help resolving a connection failure, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html">Troubleshooting a Custom Key Store</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn connection_state(&self) -> std::option::Option<&crate::model::ConnectionStateType> {
         self.connection_state.as_ref()
     }
-    /// <p>Describes the connection error. This field appears in the response only when the
-    /// <code>ConnectionState</code> is <code>FAILED</code>. For help resolving these errors, see
-    /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How to
-    /// Fix a Connection Failure</a> in <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>Describes the connection error. This field appears in the response only when the <code>ConnectionState</code> is <code>FAILED</code>. For help resolving these errors, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How to Fix a Connection Failure</a> in <i>Key Management Service Developer Guide</i>.</p>
     /// <p>Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>CLUSTER_NOT_FOUND</code> - KMS cannot find the CloudHSM cluster with the
-    /// specified cluster ID.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>INSUFFICIENT_CLOUDHSM_HSMS</code> - The associated CloudHSM cluster does not
-    /// contain any active HSMs. To connect a custom key store to its CloudHSM cluster, the cluster
-    /// must contain at least one active HSM.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>INTERNAL_ERROR</code> - KMS could not complete the request due to an internal
-    /// error. Retry the request. For <code>ConnectCustomKeyStore</code> requests, disconnect the
-    /// custom key store before trying to connect again.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>INVALID_CREDENTIALS</code> - KMS does not have the correct password for the
-    /// <code>kmsuser</code> crypto user in the CloudHSM cluster. Before you can connect your
-    /// custom key store to its CloudHSM cluster, you must change the <code>kmsuser</code> account
-    /// password and update the key store password value for the custom key store.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NETWORK_ERRORS</code> - Network errors are preventing KMS from connecting to
-    /// the custom key store.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SUBNET_NOT_FOUND</code> - A subnet in the CloudHSM cluster configuration was
-    /// deleted. If KMS cannot find all of the subnets in the cluster configuration, attempts to
-    /// connect the custom key store to the CloudHSM cluster fail. To fix this error, create a
-    /// cluster from a recent backup and associate it with your custom key store. (This process
-    /// creates a new cluster configuration with a VPC and private subnets.) For details, see
-    /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How
-    /// to Fix a Connection Failure</a> in the <i>Key Management Service Developer Guide</i>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>USER_LOCKED_OUT</code> - The <code>kmsuser</code> CU account is locked out of
-    /// the associated CloudHSM cluster due to too many failed password attempts. Before you can
-    /// connect your custom key store to its CloudHSM cluster, you must change the
-    /// <code>kmsuser</code> account password and update the key store password value for the
-    /// custom key store.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>USER_LOGGED_IN</code> - The <code>kmsuser</code> CU account is logged into the
-    /// the associated CloudHSM cluster. This prevents KMS from rotating the <code>kmsuser</code>
-    /// account password and logging into the cluster. Before you can connect your custom key
-    /// store to its CloudHSM cluster, you must log the <code>kmsuser</code> CU out of the cluster.
-    /// If you changed the <code>kmsuser</code> password to log into the cluster, you must also
-    /// and update the key store password value for the custom key store. For help, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#login-kmsuser-2">How to Log Out
-    /// and Reconnect</a> in the <i>Key Management Service Developer Guide</i>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>USER_NOT_FOUND</code> - KMS cannot find a <code>kmsuser</code> CU account in
-    /// the associated CloudHSM cluster. Before you can connect your custom key store to its CloudHSM
-    /// cluster, you must create a <code>kmsuser</code> CU account in the cluster, and then update
-    /// the key store password value for the custom key store.</p>
-    /// </li>
+    /// <li> <p> <code>CLUSTER_NOT_FOUND</code> - KMS cannot find the CloudHSM cluster with the specified cluster ID.</p> </li>
+    /// <li> <p> <code>INSUFFICIENT_CLOUDHSM_HSMS</code> - The associated CloudHSM cluster does not contain any active HSMs. To connect a custom key store to its CloudHSM cluster, the cluster must contain at least one active HSM.</p> </li>
+    /// <li> <p> <code>INTERNAL_ERROR</code> - KMS could not complete the request due to an internal error. Retry the request. For <code>ConnectCustomKeyStore</code> requests, disconnect the custom key store before trying to connect again.</p> </li>
+    /// <li> <p> <code>INVALID_CREDENTIALS</code> - KMS does not have the correct password for the <code>kmsuser</code> crypto user in the CloudHSM cluster. Before you can connect your custom key store to its CloudHSM cluster, you must change the <code>kmsuser</code> account password and update the key store password value for the custom key store.</p> </li>
+    /// <li> <p> <code>NETWORK_ERRORS</code> - Network errors are preventing KMS from connecting to the custom key store.</p> </li>
+    /// <li> <p> <code>SUBNET_NOT_FOUND</code> - A subnet in the CloudHSM cluster configuration was deleted. If KMS cannot find all of the subnets in the cluster configuration, attempts to connect the custom key store to the CloudHSM cluster fail. To fix this error, create a cluster from a recent backup and associate it with your custom key store. (This process creates a new cluster configuration with a VPC and private subnets.) For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How to Fix a Connection Failure</a> in the <i>Key Management Service Developer Guide</i>.</p> </li>
+    /// <li> <p> <code>USER_LOCKED_OUT</code> - The <code>kmsuser</code> CU account is locked out of the associated CloudHSM cluster due to too many failed password attempts. Before you can connect your custom key store to its CloudHSM cluster, you must change the <code>kmsuser</code> account password and update the key store password value for the custom key store.</p> </li>
+    /// <li> <p> <code>USER_LOGGED_IN</code> - The <code>kmsuser</code> CU account is logged into the the associated CloudHSM cluster. This prevents KMS from rotating the <code>kmsuser</code> account password and logging into the cluster. Before you can connect your custom key store to its CloudHSM cluster, you must log the <code>kmsuser</code> CU out of the cluster. If you changed the <code>kmsuser</code> password to log into the cluster, you must also and update the key store password value for the custom key store. For help, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#login-kmsuser-2">How to Log Out and Reconnect</a> in the <i>Key Management Service Developer Guide</i>.</p> </li>
+    /// <li> <p> <code>USER_NOT_FOUND</code> - KMS cannot find a <code>kmsuser</code> CU account in the associated CloudHSM cluster. Before you can connect your custom key store to its CloudHSM cluster, you must create a <code>kmsuser</code> CU account in the cluster, and then update the key store password value for the custom key store.</p> </li>
     /// </ul>
     pub fn connection_error_code(
         &self,
@@ -3087,14 +2666,12 @@ pub mod custom_key_stores_list_entry {
             self.custom_key_store_name = input;
             self
         }
-        /// <p>A unique identifier for the CloudHSM cluster that is associated with the custom key
-        /// store.</p>
+        /// <p>A unique identifier for the CloudHSM cluster that is associated with the custom key store.</p>
         pub fn cloud_hsm_cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.cloud_hsm_cluster_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for the CloudHSM cluster that is associated with the custom key
-        /// store.</p>
+        /// <p>A unique identifier for the CloudHSM cluster that is associated with the custom key store.</p>
         pub fn set_cloud_hsm_cluster_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3102,16 +2679,12 @@ pub mod custom_key_stores_list_entry {
             self.cloud_hsm_cluster_id = input;
             self
         }
-        /// <p>The trust anchor certificate of the associated CloudHSM cluster. When you <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html#sign-csr">initialize the
-        /// cluster</a>, you create this certificate and save it in the <code>customerCA.crt</code>
-        /// file.</p>
+        /// <p>The trust anchor certificate of the associated CloudHSM cluster. When you <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html#sign-csr">initialize the cluster</a>, you create this certificate and save it in the <code>customerCA.crt</code> file.</p>
         pub fn trust_anchor_certificate(mut self, input: impl Into<std::string::String>) -> Self {
             self.trust_anchor_certificate = Some(input.into());
             self
         }
-        /// <p>The trust anchor certificate of the associated CloudHSM cluster. When you <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html#sign-csr">initialize the
-        /// cluster</a>, you create this certificate and save it in the <code>customerCA.crt</code>
-        /// file.</p>
+        /// <p>The trust anchor certificate of the associated CloudHSM cluster. When you <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html#sign-csr">initialize the cluster</a>, you create this certificate and save it in the <code>customerCA.crt</code> file.</p>
         pub fn set_trust_anchor_certificate(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3120,31 +2693,17 @@ pub mod custom_key_stores_list_entry {
             self
         }
         /// <p>Indicates whether the custom key store is connected to its CloudHSM cluster.</p>
-        /// <p>You can create and use KMS keys in your custom key stores only when its connection state
-        /// is <code>CONNECTED</code>.</p>
-        /// <p>The value is <code>DISCONNECTED</code> if the key store has never been connected or you
-        /// use the <a>DisconnectCustomKeyStore</a> operation to disconnect it. If the value is
-        /// <code>CONNECTED</code> but you are having trouble using the custom key store, make sure that
-        /// its associated CloudHSM cluster is active and contains at least one active HSM.</p>
-        /// <p>A value of <code>FAILED</code> indicates that an attempt to connect was unsuccessful. The
-        /// <code>ConnectionErrorCode</code> field in the response indicates the cause of the failure.
-        /// For help resolving a connection failure, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html">Troubleshooting a Custom Key Store</a> in the
-        /// <i>Key Management Service Developer Guide</i>.</p>
+        /// <p>You can create and use KMS keys in your custom key stores only when its connection state is <code>CONNECTED</code>.</p>
+        /// <p>The value is <code>DISCONNECTED</code> if the key store has never been connected or you use the <code>DisconnectCustomKeyStore</code> operation to disconnect it. If the value is <code>CONNECTED</code> but you are having trouble using the custom key store, make sure that its associated CloudHSM cluster is active and contains at least one active HSM.</p>
+        /// <p>A value of <code>FAILED</code> indicates that an attempt to connect was unsuccessful. The <code>ConnectionErrorCode</code> field in the response indicates the cause of the failure. For help resolving a connection failure, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html">Troubleshooting a Custom Key Store</a> in the <i>Key Management Service Developer Guide</i>.</p>
         pub fn connection_state(mut self, input: crate::model::ConnectionStateType) -> Self {
             self.connection_state = Some(input);
             self
         }
         /// <p>Indicates whether the custom key store is connected to its CloudHSM cluster.</p>
-        /// <p>You can create and use KMS keys in your custom key stores only when its connection state
-        /// is <code>CONNECTED</code>.</p>
-        /// <p>The value is <code>DISCONNECTED</code> if the key store has never been connected or you
-        /// use the <a>DisconnectCustomKeyStore</a> operation to disconnect it. If the value is
-        /// <code>CONNECTED</code> but you are having trouble using the custom key store, make sure that
-        /// its associated CloudHSM cluster is active and contains at least one active HSM.</p>
-        /// <p>A value of <code>FAILED</code> indicates that an attempt to connect was unsuccessful. The
-        /// <code>ConnectionErrorCode</code> field in the response indicates the cause of the failure.
-        /// For help resolving a connection failure, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html">Troubleshooting a Custom Key Store</a> in the
-        /// <i>Key Management Service Developer Guide</i>.</p>
+        /// <p>You can create and use KMS keys in your custom key stores only when its connection state is <code>CONNECTED</code>.</p>
+        /// <p>The value is <code>DISCONNECTED</code> if the key store has never been connected or you use the <code>DisconnectCustomKeyStore</code> operation to disconnect it. If the value is <code>CONNECTED</code> but you are having trouble using the custom key store, make sure that its associated CloudHSM cluster is active and contains at least one active HSM.</p>
+        /// <p>A value of <code>FAILED</code> indicates that an attempt to connect was unsuccessful. The <code>ConnectionErrorCode</code> field in the response indicates the cause of the failure. For help resolving a connection failure, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html">Troubleshooting a Custom Key Store</a> in the <i>Key Management Service Developer Guide</i>.</p>
         pub fn set_connection_state(
             mut self,
             input: std::option::Option<crate::model::ConnectionStateType>,
@@ -3152,76 +2711,18 @@ pub mod custom_key_stores_list_entry {
             self.connection_state = input;
             self
         }
-        /// <p>Describes the connection error. This field appears in the response only when the
-        /// <code>ConnectionState</code> is <code>FAILED</code>. For help resolving these errors, see
-        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How to
-        /// Fix a Connection Failure</a> in <i>Key Management Service Developer Guide</i>.</p>
+        /// <p>Describes the connection error. This field appears in the response only when the <code>ConnectionState</code> is <code>FAILED</code>. For help resolving these errors, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How to Fix a Connection Failure</a> in <i>Key Management Service Developer Guide</i>.</p>
         /// <p>Valid values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CLUSTER_NOT_FOUND</code> - KMS cannot find the CloudHSM cluster with the
-        /// specified cluster ID.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INSUFFICIENT_CLOUDHSM_HSMS</code> - The associated CloudHSM cluster does not
-        /// contain any active HSMs. To connect a custom key store to its CloudHSM cluster, the cluster
-        /// must contain at least one active HSM.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INTERNAL_ERROR</code> - KMS could not complete the request due to an internal
-        /// error. Retry the request. For <code>ConnectCustomKeyStore</code> requests, disconnect the
-        /// custom key store before trying to connect again.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INVALID_CREDENTIALS</code> - KMS does not have the correct password for the
-        /// <code>kmsuser</code> crypto user in the CloudHSM cluster. Before you can connect your
-        /// custom key store to its CloudHSM cluster, you must change the <code>kmsuser</code> account
-        /// password and update the key store password value for the custom key store.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NETWORK_ERRORS</code> - Network errors are preventing KMS from connecting to
-        /// the custom key store.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SUBNET_NOT_FOUND</code> - A subnet in the CloudHSM cluster configuration was
-        /// deleted. If KMS cannot find all of the subnets in the cluster configuration, attempts to
-        /// connect the custom key store to the CloudHSM cluster fail. To fix this error, create a
-        /// cluster from a recent backup and associate it with your custom key store. (This process
-        /// creates a new cluster configuration with a VPC and private subnets.) For details, see
-        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How
-        /// to Fix a Connection Failure</a> in the <i>Key Management Service Developer Guide</i>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>USER_LOCKED_OUT</code> - The <code>kmsuser</code> CU account is locked out of
-        /// the associated CloudHSM cluster due to too many failed password attempts. Before you can
-        /// connect your custom key store to its CloudHSM cluster, you must change the
-        /// <code>kmsuser</code> account password and update the key store password value for the
-        /// custom key store.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>USER_LOGGED_IN</code> - The <code>kmsuser</code> CU account is logged into the
-        /// the associated CloudHSM cluster. This prevents KMS from rotating the <code>kmsuser</code>
-        /// account password and logging into the cluster. Before you can connect your custom key
-        /// store to its CloudHSM cluster, you must log the <code>kmsuser</code> CU out of the cluster.
-        /// If you changed the <code>kmsuser</code> password to log into the cluster, you must also
-        /// and update the key store password value for the custom key store. For help, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#login-kmsuser-2">How to Log Out
-        /// and Reconnect</a> in the <i>Key Management Service Developer Guide</i>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>USER_NOT_FOUND</code> - KMS cannot find a <code>kmsuser</code> CU account in
-        /// the associated CloudHSM cluster. Before you can connect your custom key store to its CloudHSM
-        /// cluster, you must create a <code>kmsuser</code> CU account in the cluster, and then update
-        /// the key store password value for the custom key store.</p>
-        /// </li>
+        /// <li> <p> <code>CLUSTER_NOT_FOUND</code> - KMS cannot find the CloudHSM cluster with the specified cluster ID.</p> </li>
+        /// <li> <p> <code>INSUFFICIENT_CLOUDHSM_HSMS</code> - The associated CloudHSM cluster does not contain any active HSMs. To connect a custom key store to its CloudHSM cluster, the cluster must contain at least one active HSM.</p> </li>
+        /// <li> <p> <code>INTERNAL_ERROR</code> - KMS could not complete the request due to an internal error. Retry the request. For <code>ConnectCustomKeyStore</code> requests, disconnect the custom key store before trying to connect again.</p> </li>
+        /// <li> <p> <code>INVALID_CREDENTIALS</code> - KMS does not have the correct password for the <code>kmsuser</code> crypto user in the CloudHSM cluster. Before you can connect your custom key store to its CloudHSM cluster, you must change the <code>kmsuser</code> account password and update the key store password value for the custom key store.</p> </li>
+        /// <li> <p> <code>NETWORK_ERRORS</code> - Network errors are preventing KMS from connecting to the custom key store.</p> </li>
+        /// <li> <p> <code>SUBNET_NOT_FOUND</code> - A subnet in the CloudHSM cluster configuration was deleted. If KMS cannot find all of the subnets in the cluster configuration, attempts to connect the custom key store to the CloudHSM cluster fail. To fix this error, create a cluster from a recent backup and associate it with your custom key store. (This process creates a new cluster configuration with a VPC and private subnets.) For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How to Fix a Connection Failure</a> in the <i>Key Management Service Developer Guide</i>.</p> </li>
+        /// <li> <p> <code>USER_LOCKED_OUT</code> - The <code>kmsuser</code> CU account is locked out of the associated CloudHSM cluster due to too many failed password attempts. Before you can connect your custom key store to its CloudHSM cluster, you must change the <code>kmsuser</code> account password and update the key store password value for the custom key store.</p> </li>
+        /// <li> <p> <code>USER_LOGGED_IN</code> - The <code>kmsuser</code> CU account is logged into the the associated CloudHSM cluster. This prevents KMS from rotating the <code>kmsuser</code> account password and logging into the cluster. Before you can connect your custom key store to its CloudHSM cluster, you must log the <code>kmsuser</code> CU out of the cluster. If you changed the <code>kmsuser</code> password to log into the cluster, you must also and update the key store password value for the custom key store. For help, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#login-kmsuser-2">How to Log Out and Reconnect</a> in the <i>Key Management Service Developer Guide</i>.</p> </li>
+        /// <li> <p> <code>USER_NOT_FOUND</code> - KMS cannot find a <code>kmsuser</code> CU account in the associated CloudHSM cluster. Before you can connect your custom key store to its CloudHSM cluster, you must create a <code>kmsuser</code> CU account in the cluster, and then update the key store password value for the custom key store.</p> </li>
         /// </ul>
         pub fn connection_error_code(
             mut self,
@@ -3230,76 +2731,18 @@ pub mod custom_key_stores_list_entry {
             self.connection_error_code = Some(input);
             self
         }
-        /// <p>Describes the connection error. This field appears in the response only when the
-        /// <code>ConnectionState</code> is <code>FAILED</code>. For help resolving these errors, see
-        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How to
-        /// Fix a Connection Failure</a> in <i>Key Management Service Developer Guide</i>.</p>
+        /// <p>Describes the connection error. This field appears in the response only when the <code>ConnectionState</code> is <code>FAILED</code>. For help resolving these errors, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How to Fix a Connection Failure</a> in <i>Key Management Service Developer Guide</i>.</p>
         /// <p>Valid values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CLUSTER_NOT_FOUND</code> - KMS cannot find the CloudHSM cluster with the
-        /// specified cluster ID.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INSUFFICIENT_CLOUDHSM_HSMS</code> - The associated CloudHSM cluster does not
-        /// contain any active HSMs. To connect a custom key store to its CloudHSM cluster, the cluster
-        /// must contain at least one active HSM.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INTERNAL_ERROR</code> - KMS could not complete the request due to an internal
-        /// error. Retry the request. For <code>ConnectCustomKeyStore</code> requests, disconnect the
-        /// custom key store before trying to connect again.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INVALID_CREDENTIALS</code> - KMS does not have the correct password for the
-        /// <code>kmsuser</code> crypto user in the CloudHSM cluster. Before you can connect your
-        /// custom key store to its CloudHSM cluster, you must change the <code>kmsuser</code> account
-        /// password and update the key store password value for the custom key store.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NETWORK_ERRORS</code> - Network errors are preventing KMS from connecting to
-        /// the custom key store.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SUBNET_NOT_FOUND</code> - A subnet in the CloudHSM cluster configuration was
-        /// deleted. If KMS cannot find all of the subnets in the cluster configuration, attempts to
-        /// connect the custom key store to the CloudHSM cluster fail. To fix this error, create a
-        /// cluster from a recent backup and associate it with your custom key store. (This process
-        /// creates a new cluster configuration with a VPC and private subnets.) For details, see
-        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How
-        /// to Fix a Connection Failure</a> in the <i>Key Management Service Developer Guide</i>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>USER_LOCKED_OUT</code> - The <code>kmsuser</code> CU account is locked out of
-        /// the associated CloudHSM cluster due to too many failed password attempts. Before you can
-        /// connect your custom key store to its CloudHSM cluster, you must change the
-        /// <code>kmsuser</code> account password and update the key store password value for the
-        /// custom key store.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>USER_LOGGED_IN</code> - The <code>kmsuser</code> CU account is logged into the
-        /// the associated CloudHSM cluster. This prevents KMS from rotating the <code>kmsuser</code>
-        /// account password and logging into the cluster. Before you can connect your custom key
-        /// store to its CloudHSM cluster, you must log the <code>kmsuser</code> CU out of the cluster.
-        /// If you changed the <code>kmsuser</code> password to log into the cluster, you must also
-        /// and update the key store password value for the custom key store. For help, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#login-kmsuser-2">How to Log Out
-        /// and Reconnect</a> in the <i>Key Management Service Developer Guide</i>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>USER_NOT_FOUND</code> - KMS cannot find a <code>kmsuser</code> CU account in
-        /// the associated CloudHSM cluster. Before you can connect your custom key store to its CloudHSM
-        /// cluster, you must create a <code>kmsuser</code> CU account in the cluster, and then update
-        /// the key store password value for the custom key store.</p>
-        /// </li>
+        /// <li> <p> <code>CLUSTER_NOT_FOUND</code> - KMS cannot find the CloudHSM cluster with the specified cluster ID.</p> </li>
+        /// <li> <p> <code>INSUFFICIENT_CLOUDHSM_HSMS</code> - The associated CloudHSM cluster does not contain any active HSMs. To connect a custom key store to its CloudHSM cluster, the cluster must contain at least one active HSM.</p> </li>
+        /// <li> <p> <code>INTERNAL_ERROR</code> - KMS could not complete the request due to an internal error. Retry the request. For <code>ConnectCustomKeyStore</code> requests, disconnect the custom key store before trying to connect again.</p> </li>
+        /// <li> <p> <code>INVALID_CREDENTIALS</code> - KMS does not have the correct password for the <code>kmsuser</code> crypto user in the CloudHSM cluster. Before you can connect your custom key store to its CloudHSM cluster, you must change the <code>kmsuser</code> account password and update the key store password value for the custom key store.</p> </li>
+        /// <li> <p> <code>NETWORK_ERRORS</code> - Network errors are preventing KMS from connecting to the custom key store.</p> </li>
+        /// <li> <p> <code>SUBNET_NOT_FOUND</code> - A subnet in the CloudHSM cluster configuration was deleted. If KMS cannot find all of the subnets in the cluster configuration, attempts to connect the custom key store to the CloudHSM cluster fail. To fix this error, create a cluster from a recent backup and associate it with your custom key store. (This process creates a new cluster configuration with a VPC and private subnets.) For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How to Fix a Connection Failure</a> in the <i>Key Management Service Developer Guide</i>.</p> </li>
+        /// <li> <p> <code>USER_LOCKED_OUT</code> - The <code>kmsuser</code> CU account is locked out of the associated CloudHSM cluster due to too many failed password attempts. Before you can connect your custom key store to its CloudHSM cluster, you must change the <code>kmsuser</code> account password and update the key store password value for the custom key store.</p> </li>
+        /// <li> <p> <code>USER_LOGGED_IN</code> - The <code>kmsuser</code> CU account is logged into the the associated CloudHSM cluster. This prevents KMS from rotating the <code>kmsuser</code> account password and logging into the cluster. Before you can connect your custom key store to its CloudHSM cluster, you must log the <code>kmsuser</code> CU out of the cluster. If you changed the <code>kmsuser</code> password to log into the cluster, you must also and update the key store password value for the custom key store. For help, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#login-kmsuser-2">How to Log Out and Reconnect</a> in the <i>Key Management Service Developer Guide</i>.</p> </li>
+        /// <li> <p> <code>USER_NOT_FOUND</code> - KMS cannot find a <code>kmsuser</code> CU account in the associated CloudHSM cluster. Before you can connect your custom key store to its CloudHSM cluster, you must create a <code>kmsuser</code> CU account in the cluster, and then update the key store password value for the custom key store.</p> </li>
         /// </ul>
         pub fn set_connection_error_code(
             mut self,

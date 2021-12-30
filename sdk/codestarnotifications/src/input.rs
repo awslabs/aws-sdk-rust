@@ -18,14 +18,12 @@ pub mod create_notification_rule_input {
         pub(crate) status: std::option::Option<crate::model::NotificationRuleStatus>,
     }
     impl Builder {
-        /// <p>The name for the notification rule. Notifictaion rule names must be unique in your AWS
-        /// account.</p>
+        /// <p>The name for the notification rule. Notifictaion rule names must be unique in your AWS account.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name for the notification rule. Notifictaion rule names must be unique in your AWS
-        /// account.</p>
+        /// <p>The name for the notification rule. Notifictaion rule names must be unique in your AWS account.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -34,16 +32,14 @@ pub mod create_notification_rule_input {
         ///
         /// To override the contents of this collection use [`set_event_type_ids`](Self::set_event_type_ids).
         ///
-        /// <p>A list of event types associated with this notification rule. For a list of allowed
-        /// events, see <a>EventTypeSummary</a>.</p>
+        /// <p>A list of event types associated with this notification rule. For a list of allowed events, see <code>EventTypeSummary</code>.</p>
         pub fn event_type_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.event_type_ids.unwrap_or_default();
             v.push(input.into());
             self.event_type_ids = Some(v);
             self
         }
-        /// <p>A list of event types associated with this notification rule. For a list of allowed
-        /// events, see <a>EventTypeSummary</a>.</p>
+        /// <p>A list of event types associated with this notification rule. For a list of allowed events, see <code>EventTypeSummary</code>.</p>
         pub fn set_event_type_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -51,14 +47,12 @@ pub mod create_notification_rule_input {
             self.event_type_ids = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource to associate with the notification rule. Supported resources include pipelines in AWS CodePipeline,
-        /// repositories in AWS CodeCommit, and build projects in AWS CodeBuild.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource to associate with the notification rule. Supported resources include pipelines in AWS CodePipeline, repositories in AWS CodeCommit, and build projects in AWS CodeBuild.</p>
         pub fn resource(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource to associate with the notification rule. Supported resources include pipelines in AWS CodePipeline,
-        /// repositories in AWS CodeCommit, and build projects in AWS CodeBuild.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource to associate with the notification rule. Supported resources include pipelines in AWS CodePipeline, repositories in AWS CodeCommit, and build projects in AWS CodeBuild.</p>
         pub fn set_resource(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource = input;
             self
@@ -67,16 +61,14 @@ pub mod create_notification_rule_input {
         ///
         /// To override the contents of this collection use [`set_targets`](Self::set_targets).
         ///
-        /// <p>A list of Amazon Resource Names (ARNs) of SNS topics to associate with the
-        /// notification rule.</p>
+        /// <p>A list of Amazon Resource Names (ARNs) of SNS topics to associate with the notification rule.</p>
         pub fn targets(mut self, input: crate::model::Target) -> Self {
             let mut v = self.targets.unwrap_or_default();
             v.push(input);
             self.targets = Some(v);
             self
         }
-        /// <p>A list of Amazon Resource Names (ARNs) of SNS topics to associate with the
-        /// notification rule.</p>
+        /// <p>A list of Amazon Resource Names (ARNs) of SNS topics to associate with the notification rule.</p>
         pub fn set_targets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Target>>,
@@ -84,16 +76,12 @@ pub mod create_notification_rule_input {
             self.targets = input;
             self
         }
-        /// <p>The level of detail to include in the notifications for this resource. BASIC will include only the
-        /// contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information
-        /// provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
+        /// <p>The level of detail to include in the notifications for this resource. BASIC will include only the contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
         pub fn detail_type(mut self, input: crate::model::DetailType) -> Self {
             self.detail_type = Some(input);
             self
         }
-        /// <p>The level of detail to include in the notifications for this resource. BASIC will include only the
-        /// contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information
-        /// provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
+        /// <p>The level of detail to include in the notifications for this resource. BASIC will include only the contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
         pub fn set_detail_type(
             mut self,
             input: std::option::Option<crate::model::DetailType>,
@@ -101,25 +89,15 @@ pub mod create_notification_rule_input {
             self.detail_type = input;
             self
         }
-        /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures
-        /// the request cannot be repeated with a changed parameter. If a request with the same
-        /// parameters is received and a token is included, the request returns information about
-        /// the initial request that used that token.</p>
-        /// <note>
-        /// <p>The AWS SDKs prepopulate client request tokens. If you are using an AWS SDK, an
-        /// idempotency token is created for you.</p>
+        /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request with the same parameters is received and a token is included, the request returns information about the initial request that used that token.</p> <note>
+        /// <p>The AWS SDKs prepopulate client request tokens. If you are using an AWS SDK, an idempotency token is created for you.</p>
         /// </note>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures
-        /// the request cannot be repeated with a changed parameter. If a request with the same
-        /// parameters is received and a token is included, the request returns information about
-        /// the initial request that used that token.</p>
-        /// <note>
-        /// <p>The AWS SDKs prepopulate client request tokens. If you are using an AWS SDK, an
-        /// idempotency token is created for you.</p>
+        /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request with the same parameters is received and a token is included, the request returns information about the initial request that used that token.</p> <note>
+        /// <p>The AWS SDKs prepopulate client request tokens. If you are using an AWS SDK, an idempotency token is created for you.</p>
         /// </note>
         pub fn set_client_request_token(
             mut self,
@@ -153,14 +131,12 @@ pub mod create_notification_rule_input {
             self.tags = input;
             self
         }
-        /// <p>The status of the notification rule. The default value is ENABLED. If the status is
-        /// set to DISABLED, notifications aren't sent for the notification rule.</p>
+        /// <p>The status of the notification rule. The default value is ENABLED. If the status is set to DISABLED, notifications aren't sent for the notification rule.</p>
         pub fn status(mut self, input: crate::model::NotificationRuleStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the notification rule. The default value is ENABLED. If the status is
-        /// set to DISABLED, notifications aren't sent for the notification rule.</p>
+        /// <p>The status of the notification rule. The default value is ENABLED. If the status is set to DISABLED, notifications aren't sent for the notification rule.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::NotificationRuleStatus>,
@@ -482,16 +458,12 @@ pub mod delete_target_input {
             self.target_address = input;
             self
         }
-        /// <p>A Boolean value that can be used to delete all associations with this SNS topic. The
-        /// default value is FALSE. If set to TRUE, all associations between that target and every
-        /// notification rule in your AWS account are deleted.</p>
+        /// <p>A Boolean value that can be used to delete all associations with this SNS topic. The default value is FALSE. If set to TRUE, all associations between that target and every notification rule in your AWS account are deleted.</p>
         pub fn force_unsubscribe_all(mut self, input: bool) -> Self {
             self.force_unsubscribe_all = Some(input);
             self
         }
-        /// <p>A Boolean value that can be used to delete all associations with this SNS topic. The
-        /// default value is FALSE. If set to TRUE, all associations between that target and every
-        /// notification rule in your AWS account are deleted.</p>
+        /// <p>A Boolean value that can be used to delete all associations with this SNS topic. The default value is FALSE. If set to TRUE, all associations between that target and every notification rule in your AWS account are deleted.</p>
         pub fn set_force_unsubscribe_all(mut self, input: std::option::Option<bool>) -> Self {
             self.force_unsubscribe_all = input;
             self
@@ -806,26 +778,22 @@ pub mod list_event_types_input {
             self.filters = input;
             self
         }
-        /// <p>An enumeration token that, when provided in a request, returns the next batch of the
-        /// results.</p>
+        /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An enumeration token that, when provided in a request, returns the next batch of the
-        /// results.</p>
+        /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>A non-negative integer used to limit the number of returned results. The default number is 50. The maximum number of
-        /// results that can be returned is 100.</p>
+        /// <p>A non-negative integer used to limit the number of returned results. The default number is 50. The maximum number of results that can be returned is 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>A non-negative integer used to limit the number of returned results. The default number is 50. The maximum number of
-        /// results that can be returned is 100.</p>
+        /// <p>A non-negative integer used to limit the number of returned results. The default number is 50. The maximum number of results that can be returned is 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -978,9 +946,7 @@ pub mod list_notification_rules_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>The filters to use to return information by service or resource type. For valid values,
-        /// see <a>ListNotificationRulesFilter</a>.</p>
-        /// <note>
+        /// <p>The filters to use to return information by service or resource type. For valid values, see <code>ListNotificationRulesFilter</code>.</p> <note>
         /// <p>A filter with the same name can appear more than once when used with OR statements. Filters with different names should be applied with AND statements.</p>
         /// </note>
         pub fn filters(mut self, input: crate::model::ListNotificationRulesFilter) -> Self {
@@ -989,9 +955,7 @@ pub mod list_notification_rules_input {
             self.filters = Some(v);
             self
         }
-        /// <p>The filters to use to return information by service or resource type. For valid values,
-        /// see <a>ListNotificationRulesFilter</a>.</p>
-        /// <note>
+        /// <p>The filters to use to return information by service or resource type. For valid values, see <code>ListNotificationRulesFilter</code>.</p> <note>
         /// <p>A filter with the same name can appear more than once when used with OR statements. Filters with different names should be applied with AND statements.</p>
         /// </note>
         pub fn set_filters(
@@ -1001,26 +965,22 @@ pub mod list_notification_rules_input {
             self.filters = input;
             self
         }
-        /// <p>An enumeration token that, when provided in a request, returns the next batch of the
-        /// results.</p>
+        /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An enumeration token that, when provided in a request, returns the next batch of the
-        /// results.</p>
+        /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>A non-negative integer used to limit the number of returned results. The maximum number of
-        /// results that can be returned is 100.</p>
+        /// <p>A non-negative integer used to limit the number of returned results. The maximum number of results that can be returned is 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>A non-negative integer used to limit the number of returned results. The maximum number of
-        /// results that can be returned is 100.</p>
+        /// <p>A non-negative integer used to limit the number of returned results. The maximum number of results that can be returned is 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1323,9 +1283,7 @@ pub mod list_targets_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>The filters to use to return information by service or resource type. Valid filters
-        /// include target type, target address, and target status.</p>
-        /// <note>
+        /// <p>The filters to use to return information by service or resource type. Valid filters include target type, target address, and target status.</p> <note>
         /// <p>A filter with the same name can appear more than once when used with OR statements. Filters with different names should be applied with AND statements.</p>
         /// </note>
         pub fn filters(mut self, input: crate::model::ListTargetsFilter) -> Self {
@@ -1334,9 +1292,7 @@ pub mod list_targets_input {
             self.filters = Some(v);
             self
         }
-        /// <p>The filters to use to return information by service or resource type. Valid filters
-        /// include target type, target address, and target status.</p>
-        /// <note>
+        /// <p>The filters to use to return information by service or resource type. Valid filters include target type, target address, and target status.</p> <note>
         /// <p>A filter with the same name can appear more than once when used with OR statements. Filters with different names should be applied with AND statements.</p>
         /// </note>
         pub fn set_filters(
@@ -1346,26 +1302,22 @@ pub mod list_targets_input {
             self.filters = input;
             self
         }
-        /// <p>An enumeration token that, when provided in a request, returns the next batch of the
-        /// results.</p>
+        /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An enumeration token that, when provided in a request, returns the next batch of the
-        /// results.</p>
+        /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>A non-negative integer used to limit the number of returned results. The maximum number of
-        /// results that can be returned is 100.</p>
+        /// <p>A non-negative integer used to limit the number of returned results. The maximum number of results that can be returned is 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>A non-negative integer used to limit the number of returned results. The maximum number of
-        /// results that can be returned is 100.</p>
+        /// <p>A non-negative integer used to limit the number of returned results. The maximum number of results that can be returned is 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1522,24 +1474,22 @@ pub mod subscribe_input {
             self.arn = input;
             self
         }
-        /// <p>Information about the SNS topics associated with a  notification rule.</p>
+        /// <p>Information about the SNS topics associated with a notification rule.</p>
         pub fn target(mut self, input: crate::model::Target) -> Self {
             self.target = Some(input);
             self
         }
-        /// <p>Information about the SNS topics associated with a  notification rule.</p>
+        /// <p>Information about the SNS topics associated with a notification rule.</p>
         pub fn set_target(mut self, input: std::option::Option<crate::model::Target>) -> Self {
             self.target = input;
             self
         }
-        /// <p>An enumeration token that, when provided in a request, returns the next batch of the
-        /// results.</p>
+        /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>An enumeration token that, when provided in a request, returns the next batch of the
-        /// results.</p>
+        /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2024,14 +1974,12 @@ pub mod untag_resource_input {
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the notification rule from which to remove the
-        /// tags.</p>
+        /// <p>The Amazon Resource Name (ARN) of the notification rule from which to remove the tags.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the notification rule from which to remove the
-        /// tags.</p>
+        /// <p>The Amazon Resource Name (ARN) of the notification rule from which to remove the tags.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -2219,14 +2167,12 @@ pub mod update_notification_rule_input {
             self.name = input;
             self
         }
-        /// <p>The status of the notification rule. Valid statuses include enabled (sending notifications) or
-        /// disabled (not sending notifications).</p>
+        /// <p>The status of the notification rule. Valid statuses include enabled (sending notifications) or disabled (not sending notifications).</p>
         pub fn status(mut self, input: crate::model::NotificationRuleStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the notification rule. Valid statuses include enabled (sending notifications) or
-        /// disabled (not sending notifications).</p>
+        /// <p>The status of the notification rule. Valid statuses include enabled (sending notifications) or disabled (not sending notifications).</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::NotificationRuleStatus>,
@@ -2257,16 +2203,14 @@ pub mod update_notification_rule_input {
         ///
         /// To override the contents of this collection use [`set_targets`](Self::set_targets).
         ///
-        /// <p>The address and type of the targets to receive notifications from this notification
-        /// rule.</p>
+        /// <p>The address and type of the targets to receive notifications from this notification rule.</p>
         pub fn targets(mut self, input: crate::model::Target) -> Self {
             let mut v = self.targets.unwrap_or_default();
             v.push(input);
             self.targets = Some(v);
             self
         }
-        /// <p>The address and type of the targets to receive notifications from this notification
-        /// rule.</p>
+        /// <p>The address and type of the targets to receive notifications from this notification rule.</p>
         pub fn set_targets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Target>>,
@@ -2274,16 +2218,12 @@ pub mod update_notification_rule_input {
             self.targets = input;
             self
         }
-        /// <p>The level of detail to include in the notifications for this resource. BASIC will include only the
-        /// contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information
-        /// provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
+        /// <p>The level of detail to include in the notifications for this resource. BASIC will include only the contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
         pub fn detail_type(mut self, input: crate::model::DetailType) -> Self {
             self.detail_type = Some(input);
             self
         }
-        /// <p>The level of detail to include in the notifications for this resource. BASIC will include only the
-        /// contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information
-        /// provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
+        /// <p>The level of detail to include in the notifications for this resource. BASIC will include only the contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
         pub fn set_detail_type(
             mut self,
             input: std::option::Option<crate::model::DetailType>,
@@ -2436,17 +2376,13 @@ pub struct UpdateNotificationRuleInput {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the notification rule.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The status of the notification rule. Valid statuses include enabled (sending notifications) or
-    /// disabled (not sending notifications).</p>
+    /// <p>The status of the notification rule. Valid statuses include enabled (sending notifications) or disabled (not sending notifications).</p>
     pub status: std::option::Option<crate::model::NotificationRuleStatus>,
     /// <p>A list of event types associated with this notification rule.</p>
     pub event_type_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The address and type of the targets to receive notifications from this notification
-    /// rule.</p>
+    /// <p>The address and type of the targets to receive notifications from this notification rule.</p>
     pub targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
-    /// <p>The level of detail to include in the notifications for this resource. BASIC will include only the
-    /// contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information
-    /// provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
+    /// <p>The level of detail to include in the notifications for this resource. BASIC will include only the contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
     pub detail_type: std::option::Option<crate::model::DetailType>,
 }
 impl UpdateNotificationRuleInput {
@@ -2458,8 +2394,7 @@ impl UpdateNotificationRuleInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The status of the notification rule. Valid statuses include enabled (sending notifications) or
-    /// disabled (not sending notifications).</p>
+    /// <p>The status of the notification rule. Valid statuses include enabled (sending notifications) or disabled (not sending notifications).</p>
     pub fn status(&self) -> std::option::Option<&crate::model::NotificationRuleStatus> {
         self.status.as_ref()
     }
@@ -2467,14 +2402,11 @@ impl UpdateNotificationRuleInput {
     pub fn event_type_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.event_type_ids.as_deref()
     }
-    /// <p>The address and type of the targets to receive notifications from this notification
-    /// rule.</p>
+    /// <p>The address and type of the targets to receive notifications from this notification rule.</p>
     pub fn targets(&self) -> std::option::Option<&[crate::model::Target]> {
         self.targets.as_deref()
     }
-    /// <p>The level of detail to include in the notifications for this resource. BASIC will include only the
-    /// contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information
-    /// provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
+    /// <p>The level of detail to include in the notifications for this resource. BASIC will include only the contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
     pub fn detail_type(&self) -> std::option::Option<&crate::model::DetailType> {
         self.detail_type.as_ref()
     }
@@ -2496,15 +2428,13 @@ impl std::fmt::Debug for UpdateNotificationRuleInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the notification rule from which to remove the
-    /// tags.</p>
+    /// <p>The Amazon Resource Name (ARN) of the notification rule from which to remove the tags.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The key names of the tags to remove.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the notification rule from which to remove the
-    /// tags.</p>
+    /// <p>The Amazon Resource Name (ARN) of the notification rule from which to remove the tags.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -2588,10 +2518,9 @@ impl std::fmt::Debug for TagResourceInput {
 pub struct SubscribeInput {
     /// <p>The Amazon Resource Name (ARN) of the notification rule for which you want to create the association.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>Information about the SNS topics associated with a  notification rule.</p>
+    /// <p>Information about the SNS topics associated with a notification rule.</p>
     pub target: std::option::Option<crate::model::Target>,
-    /// <p>An enumeration token that, when provided in a request, returns the next batch of the
-    /// results.</p>
+    /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl SubscribeInput {
@@ -2599,12 +2528,11 @@ impl SubscribeInput {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>Information about the SNS topics associated with a  notification rule.</p>
+    /// <p>Information about the SNS topics associated with a notification rule.</p>
     pub fn target(&self) -> std::option::Option<&crate::model::Target> {
         self.target.as_ref()
     }
-    /// <p>An enumeration token that, when provided in a request, returns the next batch of the
-    /// results.</p>
+    /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
@@ -2623,35 +2551,27 @@ impl std::fmt::Debug for SubscribeInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTargetsInput {
-    /// <p>The filters to use to return information by service or resource type. Valid filters
-    /// include target type, target address, and target status.</p>
-    /// <note>
+    /// <p>The filters to use to return information by service or resource type. Valid filters include target type, target address, and target status.</p> <note>
     /// <p>A filter with the same name can appear more than once when used with OR statements. Filters with different names should be applied with AND statements.</p>
     /// </note>
     pub filters: std::option::Option<std::vec::Vec<crate::model::ListTargetsFilter>>,
-    /// <p>An enumeration token that, when provided in a request, returns the next batch of the
-    /// results.</p>
+    /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>A non-negative integer used to limit the number of returned results. The maximum number of
-    /// results that can be returned is 100.</p>
+    /// <p>A non-negative integer used to limit the number of returned results. The maximum number of results that can be returned is 100.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListTargetsInput {
-    /// <p>The filters to use to return information by service or resource type. Valid filters
-    /// include target type, target address, and target status.</p>
-    /// <note>
+    /// <p>The filters to use to return information by service or resource type. Valid filters include target type, target address, and target status.</p> <note>
     /// <p>A filter with the same name can appear more than once when used with OR statements. Filters with different names should be applied with AND statements.</p>
     /// </note>
     pub fn filters(&self) -> std::option::Option<&[crate::model::ListTargetsFilter]> {
         self.filters.as_deref()
     }
-    /// <p>An enumeration token that, when provided in a request, returns the next batch of the
-    /// results.</p>
+    /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>A non-negative integer used to limit the number of returned results. The maximum number of
-    /// results that can be returned is 100.</p>
+    /// <p>A non-negative integer used to limit the number of returned results. The maximum number of results that can be returned is 100.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -2691,35 +2611,27 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListNotificationRulesInput {
-    /// <p>The filters to use to return information by service or resource type. For valid values,
-    /// see <a>ListNotificationRulesFilter</a>.</p>
-    /// <note>
+    /// <p>The filters to use to return information by service or resource type. For valid values, see <code>ListNotificationRulesFilter</code>.</p> <note>
     /// <p>A filter with the same name can appear more than once when used with OR statements. Filters with different names should be applied with AND statements.</p>
     /// </note>
     pub filters: std::option::Option<std::vec::Vec<crate::model::ListNotificationRulesFilter>>,
-    /// <p>An enumeration token that, when provided in a request, returns the next batch of the
-    /// results.</p>
+    /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>A non-negative integer used to limit the number of returned results. The maximum number of
-    /// results that can be returned is 100.</p>
+    /// <p>A non-negative integer used to limit the number of returned results. The maximum number of results that can be returned is 100.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListNotificationRulesInput {
-    /// <p>The filters to use to return information by service or resource type. For valid values,
-    /// see <a>ListNotificationRulesFilter</a>.</p>
-    /// <note>
+    /// <p>The filters to use to return information by service or resource type. For valid values, see <code>ListNotificationRulesFilter</code>.</p> <note>
     /// <p>A filter with the same name can appear more than once when used with OR statements. Filters with different names should be applied with AND statements.</p>
     /// </note>
     pub fn filters(&self) -> std::option::Option<&[crate::model::ListNotificationRulesFilter]> {
         self.filters.as_deref()
     }
-    /// <p>An enumeration token that, when provided in a request, returns the next batch of the
-    /// results.</p>
+    /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>A non-negative integer used to limit the number of returned results. The maximum number of
-    /// results that can be returned is 100.</p>
+    /// <p>A non-negative integer used to limit the number of returned results. The maximum number of results that can be returned is 100.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -2740,11 +2652,9 @@ impl std::fmt::Debug for ListNotificationRulesInput {
 pub struct ListEventTypesInput {
     /// <p>The filters to use to return information by service or resource type.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::ListEventTypesFilter>>,
-    /// <p>An enumeration token that, when provided in a request, returns the next batch of the
-    /// results.</p>
+    /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>A non-negative integer used to limit the number of returned results. The default number is 50. The maximum number of
-    /// results that can be returned is 100.</p>
+    /// <p>A non-negative integer used to limit the number of returned results. The default number is 50. The maximum number of results that can be returned is 100.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListEventTypesInput {
@@ -2752,13 +2662,11 @@ impl ListEventTypesInput {
     pub fn filters(&self) -> std::option::Option<&[crate::model::ListEventTypesFilter]> {
         self.filters.as_deref()
     }
-    /// <p>An enumeration token that, when provided in a request, returns the next batch of the
-    /// results.</p>
+    /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>A non-negative integer used to limit the number of returned results. The default number is 50. The maximum number of
-    /// results that can be returned is 100.</p>
+    /// <p>A non-negative integer used to limit the number of returned results. The default number is 50. The maximum number of results that can be returned is 100.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -2800,9 +2708,7 @@ impl std::fmt::Debug for DescribeNotificationRuleInput {
 pub struct DeleteTargetInput {
     /// <p>The Amazon Resource Name (ARN) of the SNS topic to delete.</p>
     pub target_address: std::option::Option<std::string::String>,
-    /// <p>A Boolean value that can be used to delete all associations with this SNS topic. The
-    /// default value is FALSE. If set to TRUE, all associations between that target and every
-    /// notification rule in your AWS account are deleted.</p>
+    /// <p>A Boolean value that can be used to delete all associations with this SNS topic. The default value is FALSE. If set to TRUE, all associations between that target and every notification rule in your AWS account are deleted.</p>
     pub force_unsubscribe_all: bool,
 }
 impl DeleteTargetInput {
@@ -2810,9 +2716,7 @@ impl DeleteTargetInput {
     pub fn target_address(&self) -> std::option::Option<&str> {
         self.target_address.as_deref()
     }
-    /// <p>A Boolean value that can be used to delete all associations with this SNS topic. The
-    /// default value is FALSE. If set to TRUE, all associations between that target and every
-    /// notification rule in your AWS account are deleted.</p>
+    /// <p>A Boolean value that can be used to delete all associations with this SNS topic. The default value is FALSE. If set to TRUE, all associations between that target and every notification rule in your AWS account are deleted.</p>
     pub fn force_unsubscribe_all(&self) -> bool {
         self.force_unsubscribe_all
     }
@@ -2851,72 +2755,49 @@ impl std::fmt::Debug for DeleteNotificationRuleInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateNotificationRuleInput {
-    /// <p>The name for the notification rule. Notifictaion rule names must be unique in your AWS
-    /// account.</p>
+    /// <p>The name for the notification rule. Notifictaion rule names must be unique in your AWS account.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>A list of event types associated with this notification rule. For a list of allowed
-    /// events, see <a>EventTypeSummary</a>.</p>
+    /// <p>A list of event types associated with this notification rule. For a list of allowed events, see <code>EventTypeSummary</code>.</p>
     pub event_type_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The Amazon Resource Name (ARN) of the resource to associate with the notification rule. Supported resources include pipelines in AWS CodePipeline,
-    /// repositories in AWS CodeCommit, and build projects in AWS CodeBuild.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource to associate with the notification rule. Supported resources include pipelines in AWS CodePipeline, repositories in AWS CodeCommit, and build projects in AWS CodeBuild.</p>
     pub resource: std::option::Option<std::string::String>,
-    /// <p>A list of Amazon Resource Names (ARNs) of SNS topics to associate with the
-    /// notification rule.</p>
+    /// <p>A list of Amazon Resource Names (ARNs) of SNS topics to associate with the notification rule.</p>
     pub targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
-    /// <p>The level of detail to include in the notifications for this resource. BASIC will include only the
-    /// contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information
-    /// provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
+    /// <p>The level of detail to include in the notifications for this resource. BASIC will include only the contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
     pub detail_type: std::option::Option<crate::model::DetailType>,
-    /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures
-    /// the request cannot be repeated with a changed parameter. If a request with the same
-    /// parameters is received and a token is included, the request returns information about
-    /// the initial request that used that token.</p>
-    /// <note>
-    /// <p>The AWS SDKs prepopulate client request tokens. If you are using an AWS SDK, an
-    /// idempotency token is created for you.</p>
+    /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request with the same parameters is received and a token is included, the request returns information about the initial request that used that token.</p> <note>
+    /// <p>The AWS SDKs prepopulate client request tokens. If you are using an AWS SDK, an idempotency token is created for you.</p>
     /// </note>
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>A list of tags to apply to this notification rule. Key names cannot start with "aws". </p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The status of the notification rule. The default value is ENABLED. If the status is
-    /// set to DISABLED, notifications aren't sent for the notification rule.</p>
+    /// <p>The status of the notification rule. The default value is ENABLED. If the status is set to DISABLED, notifications aren't sent for the notification rule.</p>
     pub status: std::option::Option<crate::model::NotificationRuleStatus>,
 }
 impl CreateNotificationRuleInput {
-    /// <p>The name for the notification rule. Notifictaion rule names must be unique in your AWS
-    /// account.</p>
+    /// <p>The name for the notification rule. Notifictaion rule names must be unique in your AWS account.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>A list of event types associated with this notification rule. For a list of allowed
-    /// events, see <a>EventTypeSummary</a>.</p>
+    /// <p>A list of event types associated with this notification rule. For a list of allowed events, see <code>EventTypeSummary</code>.</p>
     pub fn event_type_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.event_type_ids.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the resource to associate with the notification rule. Supported resources include pipelines in AWS CodePipeline,
-    /// repositories in AWS CodeCommit, and build projects in AWS CodeBuild.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource to associate with the notification rule. Supported resources include pipelines in AWS CodePipeline, repositories in AWS CodeCommit, and build projects in AWS CodeBuild.</p>
     pub fn resource(&self) -> std::option::Option<&str> {
         self.resource.as_deref()
     }
-    /// <p>A list of Amazon Resource Names (ARNs) of SNS topics to associate with the
-    /// notification rule.</p>
+    /// <p>A list of Amazon Resource Names (ARNs) of SNS topics to associate with the notification rule.</p>
     pub fn targets(&self) -> std::option::Option<&[crate::model::Target]> {
         self.targets.as_deref()
     }
-    /// <p>The level of detail to include in the notifications for this resource. BASIC will include only the
-    /// contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information
-    /// provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
+    /// <p>The level of detail to include in the notifications for this resource. BASIC will include only the contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
     pub fn detail_type(&self) -> std::option::Option<&crate::model::DetailType> {
         self.detail_type.as_ref()
     }
-    /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures
-    /// the request cannot be repeated with a changed parameter. If a request with the same
-    /// parameters is received and a token is included, the request returns information about
-    /// the initial request that used that token.</p>
-    /// <note>
-    /// <p>The AWS SDKs prepopulate client request tokens. If you are using an AWS SDK, an
-    /// idempotency token is created for you.</p>
+    /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request with the same parameters is received and a token is included, the request returns information about the initial request that used that token.</p> <note>
+    /// <p>The AWS SDKs prepopulate client request tokens. If you are using an AWS SDK, an idempotency token is created for you.</p>
     /// </note>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
@@ -2928,8 +2809,7 @@ impl CreateNotificationRuleInput {
     {
         self.tags.as_ref()
     }
-    /// <p>The status of the notification rule. The default value is ENABLED. If the status is
-    /// set to DISABLED, notifications aren't sent for the notification rule.</p>
+    /// <p>The status of the notification rule. The default value is ENABLED. If the status is set to DISABLED, notifications aren't sent for the notification rule.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::NotificationRuleStatus> {
         self.status.as_ref()
     }

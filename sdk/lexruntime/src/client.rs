@@ -129,8 +129,7 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `DeleteSession`.
     ///
-    /// <p>Removes session information for a specified bot, alias, and user ID.
-    /// </p>
+    /// <p>Removes session information for a specified bot, alias, and user ID. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSession<
         C = aws_smithy_client::erase::DynConnector,
@@ -220,8 +219,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetSession`.
     ///
-    /// <p>Returns session information for a specified bot, alias, and user
-    /// ID.</p>
+    /// <p>Returns session information for a specified bot, alias, and user ID.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetSession<
         C = aws_smithy_client::erase::DynConnector,
@@ -298,32 +296,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bot_alias(input);
             self
         }
-        /// <p>The ID of the client application user. Amazon Lex uses this to identify a
-        /// user's conversation with your bot. </p>
+        /// <p>The ID of the client application user. Amazon Lex uses this to identify a user's conversation with your bot. </p>
         pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.user_id(input.into());
             self
         }
-        /// <p>The ID of the client application user. Amazon Lex uses this to identify a
-        /// user's conversation with your bot. </p>
+        /// <p>The ID of the client application user. Amazon Lex uses this to identify a user's conversation with your bot. </p>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_user_id(input);
             self
         }
-        /// <p>A string used to filter the intents returned in the
-        /// <code>recentIntentSummaryView</code> structure. </p>
-        /// <p>When you specify a filter, only intents with their
-        /// <code>checkpointLabel</code> field set to that string are
-        /// returned.</p>
+        /// <p>A string used to filter the intents returned in the <code>recentIntentSummaryView</code> structure. </p>
+        /// <p>When you specify a filter, only intents with their <code>checkpointLabel</code> field set to that string are returned.</p>
         pub fn checkpoint_label_filter(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.checkpoint_label_filter(input.into());
             self
         }
-        /// <p>A string used to filter the intents returned in the
-        /// <code>recentIntentSummaryView</code> structure. </p>
-        /// <p>When you specify a filter, only intents with their
-        /// <code>checkpointLabel</code> field set to that string are
-        /// returned.</p>
+        /// <p>A string used to filter the intents returned in the <code>recentIntentSummaryView</code> structure. </p>
+        /// <p>When you specify a filter, only intents with their <code>checkpointLabel</code> field set to that string are returned.</p>
         pub fn set_checkpoint_label_filter(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -334,83 +324,27 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PostContent`.
     ///
-    /// <p> Sends user input (text or speech) to Amazon Lex. Clients use this API to
-    /// send text and audio requests to Amazon Lex at runtime. Amazon Lex interprets the
-    /// user input using the machine learning model that it built for the bot. </p>
-    /// <p>The <code>PostContent</code> operation supports audio input at 8kHz
-    /// and 16kHz. You can use 8kHz audio to achieve higher speech recognition
-    /// accuracy in telephone audio applications. </p>
-    /// <p> In response, Amazon Lex returns the next message to convey to the user.
-    /// Consider the following example messages: </p>
+    /// <p> Sends user input (text or speech) to Amazon Lex. Clients use this API to send text and audio requests to Amazon Lex at runtime. Amazon Lex interprets the user input using the machine learning model that it built for the bot. </p>
+    /// <p>The <code>PostContent</code> operation supports audio input at 8kHz and 16kHz. You can use 8kHz audio to achieve higher speech recognition accuracy in telephone audio applications. </p>
+    /// <p> In response, Amazon Lex returns the next message to convey to the user. Consider the following example messages: </p>
     /// <ul>
-    /// <li>
-    /// <p> For a user input "I would like a pizza," Amazon Lex might return a
-    /// response with a message eliciting slot data (for example,
-    /// <code>PizzaSize</code>): "What size pizza would you like?". </p>
-    /// </li>
-    /// <li>
-    /// <p> After the user provides all of the pizza order information, Amazon Lex
-    /// might return a response with a message to get user confirmation:
-    /// "Order the pizza?". </p>
-    /// </li>
-    /// <li>
-    /// <p> After the user replies "Yes" to the confirmation prompt, Amazon Lex
-    /// might return a conclusion statement: "Thank you, your cheese pizza has
-    /// been ordered.". </p>
-    /// </li>
+    /// <li> <p> For a user input "I would like a pizza," Amazon Lex might return a response with a message eliciting slot data (for example, <code>PizzaSize</code>): "What size pizza would you like?". </p> </li>
+    /// <li> <p> After the user provides all of the pizza order information, Amazon Lex might return a response with a message to get user confirmation: "Order the pizza?". </p> </li>
+    /// <li> <p> After the user replies "Yes" to the confirmation prompt, Amazon Lex might return a conclusion statement: "Thank you, your cheese pizza has been ordered.". </p> </li>
     /// </ul>
-    /// <p> Not all Amazon Lex messages require a response from the user. For example,
-    /// conclusion statements do not require a response. Some messages require
-    /// only a yes or no response. In addition to the <code>message</code>, Amazon Lex
-    /// provides additional context about the message in the response that you can
-    /// use to enhance client behavior, such as displaying the appropriate client
-    /// user interface. Consider the following examples: </p>
+    /// <p> Not all Amazon Lex messages require a response from the user. For example, conclusion statements do not require a response. Some messages require only a yes or no response. In addition to the <code>message</code>, Amazon Lex provides additional context about the message in the response that you can use to enhance client behavior, such as displaying the appropriate client user interface. Consider the following examples: </p>
     /// <ul>
-    /// <li>
-    /// <p> If the message is to elicit slot data, Amazon Lex returns the
-    /// following context information: </p>
+    /// <li> <p> If the message is to elicit slot data, Amazon Lex returns the following context information: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>x-amz-lex-dialog-state</code> header set to
-    /// <code>ElicitSlot</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>x-amz-lex-intent-name</code> header set to the intent name
-    /// in the current context </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>x-amz-lex-slot-to-elicit</code> header set to the slot name
-    /// for which the <code>message</code> is eliciting information
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>x-amz-lex-slots</code> header set to a map of slots
-    /// configured for the intent with their current values </p>
-    /// </li>
+    /// <li> <p> <code>x-amz-lex-dialog-state</code> header set to <code>ElicitSlot</code> </p> </li>
+    /// <li> <p> <code>x-amz-lex-intent-name</code> header set to the intent name in the current context </p> </li>
+    /// <li> <p> <code>x-amz-lex-slot-to-elicit</code> header set to the slot name for which the <code>message</code> is eliciting information </p> </li>
+    /// <li> <p> <code>x-amz-lex-slots</code> header set to a map of slots configured for the intent with their current values </p> </li>
+    /// </ul> </li>
+    /// <li> <p> If the message is a confirmation prompt, the <code>x-amz-lex-dialog-state</code> header is set to <code>Confirmation</code> and the <code>x-amz-lex-slot-to-elicit</code> header is omitted. </p> </li>
+    /// <li> <p> If the message is a clarification prompt configured for the intent, indicating that the user intent is not understood, the <code>x-amz-dialog-state</code> header is set to <code>ElicitIntent</code> and the <code>x-amz-slot-to-elicit</code> header is omitted. </p> </li>
     /// </ul>
-    /// </li>
-    /// <li>
-    /// <p> If the message is a confirmation prompt, the
-    /// <code>x-amz-lex-dialog-state</code> header is set to
-    /// <code>Confirmation</code> and the
-    /// <code>x-amz-lex-slot-to-elicit</code> header is omitted. </p>
-    /// </li>
-    /// <li>
-    /// <p> If the message is a clarification prompt configured for the
-    /// intent, indicating that the user intent is not understood, the
-    /// <code>x-amz-dialog-state</code> header is set to
-    /// <code>ElicitIntent</code> and the <code>x-amz-slot-to-elicit</code>
-    /// header is omitted. </p>
-    /// </li>
-    /// </ul>
-    /// <p> In addition, Amazon Lex also returns your application-specific
-    /// <code>sessionAttributes</code>. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html">Managing
-    /// Conversation Context</a>. </p>
+    /// <p> In addition, Amazon Lex also returns your application-specific <code>sessionAttributes</code>. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html">Managing Conversation Context</a>. </p>
     #[derive(std::fmt::Debug)]
     pub struct PostContent<
         C = aws_smithy_client::erase::DynConnector,
@@ -487,91 +421,39 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bot_alias(input);
             self
         }
-        /// <p>The ID of the client application user. Amazon Lex uses this to identify a
-        /// user's conversation with your bot. At runtime, each request must contain
-        /// the <code>userID</code> field.</p>
-        /// <p>To decide the user ID to use for your application, consider the
-        /// following factors.</p>
+        /// <p>The ID of the client application user. Amazon Lex uses this to identify a user's conversation with your bot. At runtime, each request must contain the <code>userID</code> field.</p>
+        /// <p>To decide the user ID to use for your application, consider the following factors.</p>
         /// <ul>
-        /// <li>
-        /// <p>The <code>userID</code> field must not contain any personally
-        /// identifiable information of the user, for example, name, personal
-        /// identification numbers, or other end user personal information.</p>
-        /// </li>
-        /// <li>
-        /// <p>If you want a user to start a conversation on one device and
-        /// continue on another device, use a user-specific identifier.</p>
-        /// </li>
-        /// <li>
-        /// <p>If you want the same user to be able to have two independent
-        /// conversations on two different devices, choose a device-specific
-        /// identifier.</p>
-        /// </li>
-        /// <li>
-        /// <p>A user can't have two independent conversations with two different
-        /// versions of the same bot. For example, a user can't have a
-        /// conversation with the PROD and BETA versions of the same bot. If you
-        /// anticipate that a user will need to have conversation with two
-        /// different versions, for example, while testing, include the bot alias
-        /// in the user ID to separate the two conversations.</p>
-        /// </li>
+        /// <li> <p>The <code>userID</code> field must not contain any personally identifiable information of the user, for example, name, personal identification numbers, or other end user personal information.</p> </li>
+        /// <li> <p>If you want a user to start a conversation on one device and continue on another device, use a user-specific identifier.</p> </li>
+        /// <li> <p>If you want the same user to be able to have two independent conversations on two different devices, choose a device-specific identifier.</p> </li>
+        /// <li> <p>A user can't have two independent conversations with two different versions of the same bot. For example, a user can't have a conversation with the PROD and BETA versions of the same bot. If you anticipate that a user will need to have conversation with two different versions, for example, while testing, include the bot alias in the user ID to separate the two conversations.</p> </li>
         /// </ul>
         pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.user_id(input.into());
             self
         }
-        /// <p>The ID of the client application user. Amazon Lex uses this to identify a
-        /// user's conversation with your bot. At runtime, each request must contain
-        /// the <code>userID</code> field.</p>
-        /// <p>To decide the user ID to use for your application, consider the
-        /// following factors.</p>
+        /// <p>The ID of the client application user. Amazon Lex uses this to identify a user's conversation with your bot. At runtime, each request must contain the <code>userID</code> field.</p>
+        /// <p>To decide the user ID to use for your application, consider the following factors.</p>
         /// <ul>
-        /// <li>
-        /// <p>The <code>userID</code> field must not contain any personally
-        /// identifiable information of the user, for example, name, personal
-        /// identification numbers, or other end user personal information.</p>
-        /// </li>
-        /// <li>
-        /// <p>If you want a user to start a conversation on one device and
-        /// continue on another device, use a user-specific identifier.</p>
-        /// </li>
-        /// <li>
-        /// <p>If you want the same user to be able to have two independent
-        /// conversations on two different devices, choose a device-specific
-        /// identifier.</p>
-        /// </li>
-        /// <li>
-        /// <p>A user can't have two independent conversations with two different
-        /// versions of the same bot. For example, a user can't have a
-        /// conversation with the PROD and BETA versions of the same bot. If you
-        /// anticipate that a user will need to have conversation with two
-        /// different versions, for example, while testing, include the bot alias
-        /// in the user ID to separate the two conversations.</p>
-        /// </li>
+        /// <li> <p>The <code>userID</code> field must not contain any personally identifiable information of the user, for example, name, personal identification numbers, or other end user personal information.</p> </li>
+        /// <li> <p>If you want a user to start a conversation on one device and continue on another device, use a user-specific identifier.</p> </li>
+        /// <li> <p>If you want the same user to be able to have two independent conversations on two different devices, choose a device-specific identifier.</p> </li>
+        /// <li> <p>A user can't have two independent conversations with two different versions of the same bot. For example, a user can't have a conversation with the PROD and BETA versions of the same bot. If you anticipate that a user will need to have conversation with two different versions, for example, while testing, include the bot alias in the user ID to separate the two conversations.</p> </li>
         /// </ul>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_user_id(input);
             self
         }
-        /// <p>You pass this value as the <code>x-amz-lex-session-attributes</code>
-        /// HTTP header.</p>
-        /// <p>Application-specific information passed between Amazon Lex and a client
-        /// application. The value must be a JSON serialized and base64 encoded map
-        /// with string keys and values. The total size of the
-        /// <code>sessionAttributes</code> and <code>requestAttributes</code>
-        /// headers is limited to 12 KB.</p>
+        /// <p>You pass this value as the <code>x-amz-lex-session-attributes</code> HTTP header.</p>
+        /// <p>Application-specific information passed between Amazon Lex and a client application. The value must be a JSON serialized and base64 encoded map with string keys and values. The total size of the <code>sessionAttributes</code> and <code>requestAttributes</code> headers is limited to 12 KB.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting Session Attributes</a>.</p>
         pub fn session_attributes(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.session_attributes(input.into());
             self
         }
-        /// <p>You pass this value as the <code>x-amz-lex-session-attributes</code>
-        /// HTTP header.</p>
-        /// <p>Application-specific information passed between Amazon Lex and a client
-        /// application. The value must be a JSON serialized and base64 encoded map
-        /// with string keys and values. The total size of the
-        /// <code>sessionAttributes</code> and <code>requestAttributes</code>
-        /// headers is limited to 12 KB.</p>
+        /// <p>You pass this value as the <code>x-amz-lex-session-attributes</code> HTTP header.</p>
+        /// <p>Application-specific information passed between Amazon Lex and a client application. The value must be a JSON serialized and base64 encoded map with string keys and values. The total size of the <code>sessionAttributes</code> and <code>requestAttributes</code> headers is limited to 12 KB.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting Session Attributes</a>.</p>
         pub fn set_session_attributes(
             mut self,
@@ -580,31 +462,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_session_attributes(input);
             self
         }
-        /// <p>You pass this value as the <code>x-amz-lex-request-attributes</code>
-        /// HTTP header.</p>
-        /// <p>Request-specific information passed between Amazon Lex and a client
-        /// application. The value must be a JSON serialized and base64 encoded map
-        /// with string keys and values. The total size of the
-        /// <code>requestAttributes</code> and <code>sessionAttributes</code>
-        /// headers is limited to 12 KB.</p>
-        /// <p>The namespace <code>x-amz-lex:</code> is reserved for special
-        /// attributes. Don't create any request attributes with the prefix
-        /// <code>x-amz-lex:</code>.</p>
+        /// <p>You pass this value as the <code>x-amz-lex-request-attributes</code> HTTP header.</p>
+        /// <p>Request-specific information passed between Amazon Lex and a client application. The value must be a JSON serialized and base64 encoded map with string keys and values. The total size of the <code>requestAttributes</code> and <code>sessionAttributes</code> headers is limited to 12 KB.</p>
+        /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting Request Attributes</a>.</p>
         pub fn request_attributes(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.request_attributes(input.into());
             self
         }
-        /// <p>You pass this value as the <code>x-amz-lex-request-attributes</code>
-        /// HTTP header.</p>
-        /// <p>Request-specific information passed between Amazon Lex and a client
-        /// application. The value must be a JSON serialized and base64 encoded map
-        /// with string keys and values. The total size of the
-        /// <code>requestAttributes</code> and <code>sessionAttributes</code>
-        /// headers is limited to 12 KB.</p>
-        /// <p>The namespace <code>x-amz-lex:</code> is reserved for special
-        /// attributes. Don't create any request attributes with the prefix
-        /// <code>x-amz-lex:</code>.</p>
+        /// <p>You pass this value as the <code>x-amz-lex-request-attributes</code> HTTP header.</p>
+        /// <p>Request-specific information passed between Amazon Lex and a client application. The value must be a JSON serialized and base64 encoded map with string keys and values. The total size of the <code>requestAttributes</code> and <code>sessionAttributes</code> headers is limited to 12 KB.</p>
+        /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting Request Attributes</a>.</p>
         pub fn set_request_attributes(
             mut self,
@@ -614,193 +482,95 @@ pub mod fluent_builders {
             self
         }
         /// <p> You pass this value as the <code>Content-Type</code> HTTP header. </p>
-        /// <p> Indicates the audio format or text. The header value must start with
-        /// one of the following prefixes: </p>
+        /// <p> Indicates the audio format or text. The header value must start with one of the following prefixes: </p>
         /// <ul>
-        /// <li>
-        /// <p>PCM format, audio data must be in little-endian byte order.</p>
+        /// <li> <p>PCM format, audio data must be in little-endian byte order.</p>
         /// <ul>
-        /// <li>
-        /// <p>audio/l16; rate=16000; channels=1</p>
-        /// </li>
-        /// <li>
-        /// <p>audio/x-l16; sample-rate=16000; channel-count=1</p>
-        /// </li>
-        /// <li>
-        /// <p>audio/lpcm; sample-rate=8000; sample-size-bits=16;
-        /// channel-count=1; is-big-endian=false </p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>Opus format</p>
+        /// <li> <p>audio/l16; rate=16000; channels=1</p> </li>
+        /// <li> <p>audio/x-l16; sample-rate=16000; channel-count=1</p> </li>
+        /// <li> <p>audio/lpcm; sample-rate=8000; sample-size-bits=16; channel-count=1; is-big-endian=false </p> </li>
+        /// </ul> </li>
+        /// <li> <p>Opus format</p>
         /// <ul>
-        /// <li>
-        /// <p>audio/x-cbr-opus-with-preamble; preamble-size=0;
-        /// bit-rate=256000; frame-size-milliseconds=4</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>Text format</p>
+        /// <li> <p>audio/x-cbr-opus-with-preamble; preamble-size=0; bit-rate=256000; frame-size-milliseconds=4</p> </li>
+        /// </ul> </li>
+        /// <li> <p>Text format</p>
         /// <ul>
-        /// <li>
-        /// <p>text/plain; charset=utf-8</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p>text/plain; charset=utf-8</p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.content_type(input.into());
             self
         }
         /// <p> You pass this value as the <code>Content-Type</code> HTTP header. </p>
-        /// <p> Indicates the audio format or text. The header value must start with
-        /// one of the following prefixes: </p>
+        /// <p> Indicates the audio format or text. The header value must start with one of the following prefixes: </p>
         /// <ul>
-        /// <li>
-        /// <p>PCM format, audio data must be in little-endian byte order.</p>
+        /// <li> <p>PCM format, audio data must be in little-endian byte order.</p>
         /// <ul>
-        /// <li>
-        /// <p>audio/l16; rate=16000; channels=1</p>
-        /// </li>
-        /// <li>
-        /// <p>audio/x-l16; sample-rate=16000; channel-count=1</p>
-        /// </li>
-        /// <li>
-        /// <p>audio/lpcm; sample-rate=8000; sample-size-bits=16;
-        /// channel-count=1; is-big-endian=false </p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>Opus format</p>
+        /// <li> <p>audio/l16; rate=16000; channels=1</p> </li>
+        /// <li> <p>audio/x-l16; sample-rate=16000; channel-count=1</p> </li>
+        /// <li> <p>audio/lpcm; sample-rate=8000; sample-size-bits=16; channel-count=1; is-big-endian=false </p> </li>
+        /// </ul> </li>
+        /// <li> <p>Opus format</p>
         /// <ul>
-        /// <li>
-        /// <p>audio/x-cbr-opus-with-preamble; preamble-size=0;
-        /// bit-rate=256000; frame-size-milliseconds=4</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>Text format</p>
+        /// <li> <p>audio/x-cbr-opus-with-preamble; preamble-size=0; bit-rate=256000; frame-size-milliseconds=4</p> </li>
+        /// </ul> </li>
+        /// <li> <p>Text format</p>
         /// <ul>
-        /// <li>
-        /// <p>text/plain; charset=utf-8</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p>text/plain; charset=utf-8</p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_content_type(input);
             self
         }
         /// <p> You pass this value as the <code>Accept</code> HTTP header. </p>
-        /// <p> The message Amazon Lex returns in the response can be either text or
-        /// speech based on the <code>Accept</code> HTTP header value in the request. </p>
+        /// <p> The message Amazon Lex returns in the response can be either text or speech based on the <code>Accept</code> HTTP header value in the request. </p>
         /// <ul>
-        /// <li>
-        /// <p> If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex
-        /// returns text in the response. </p>
-        /// </li>
-        /// <li>
-        /// <p> If the value begins with <code>audio/</code>, Amazon Lex returns
-        /// speech in the response. Amazon Lex uses Amazon Polly to generate the speech
-        /// (using the configuration you specified in the <code>Accept</code>
-        /// header). For example, if you specify <code>audio/mpeg</code> as the
-        /// value, Amazon Lex returns speech in the MPEG format.</p>
-        /// </li>
-        /// <li>
-        /// <p>If the value is <code>audio/pcm</code>, the speech returned is
-        /// <code>audio/pcm</code> in 16-bit, little endian format.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>The following are the accepted values:</p>
+        /// <li> <p> If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex returns text in the response. </p> </li>
+        /// <li> <p> If the value begins with <code>audio/</code>, Amazon Lex returns speech in the response. Amazon Lex uses Amazon Polly to generate the speech (using the configuration you specified in the <code>Accept</code> header). For example, if you specify <code>audio/mpeg</code> as the value, Amazon Lex returns speech in the MPEG format.</p> </li>
+        /// <li> <p>If the value is <code>audio/pcm</code>, the speech returned is <code>audio/pcm</code> in 16-bit, little endian format. </p> </li>
+        /// <li> <p>The following are the accepted values:</p>
         /// <ul>
-        /// <li>
-        /// <p>audio/mpeg</p>
-        /// </li>
-        /// <li>
-        /// <p>audio/ogg</p>
-        /// </li>
-        /// <li>
-        /// <p>audio/pcm</p>
-        /// </li>
-        /// <li>
-        /// <p>text/plain; charset=utf-8</p>
-        /// </li>
-        /// <li>
-        /// <p>audio/* (defaults to mpeg)</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p>audio/mpeg</p> </li>
+        /// <li> <p>audio/ogg</p> </li>
+        /// <li> <p>audio/pcm</p> </li>
+        /// <li> <p>text/plain; charset=utf-8</p> </li>
+        /// <li> <p>audio/* (defaults to mpeg)</p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn accept(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept(input.into());
             self
         }
         /// <p> You pass this value as the <code>Accept</code> HTTP header. </p>
-        /// <p> The message Amazon Lex returns in the response can be either text or
-        /// speech based on the <code>Accept</code> HTTP header value in the request. </p>
+        /// <p> The message Amazon Lex returns in the response can be either text or speech based on the <code>Accept</code> HTTP header value in the request. </p>
         /// <ul>
-        /// <li>
-        /// <p> If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex
-        /// returns text in the response. </p>
-        /// </li>
-        /// <li>
-        /// <p> If the value begins with <code>audio/</code>, Amazon Lex returns
-        /// speech in the response. Amazon Lex uses Amazon Polly to generate the speech
-        /// (using the configuration you specified in the <code>Accept</code>
-        /// header). For example, if you specify <code>audio/mpeg</code> as the
-        /// value, Amazon Lex returns speech in the MPEG format.</p>
-        /// </li>
-        /// <li>
-        /// <p>If the value is <code>audio/pcm</code>, the speech returned is
-        /// <code>audio/pcm</code> in 16-bit, little endian format.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>The following are the accepted values:</p>
+        /// <li> <p> If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex returns text in the response. </p> </li>
+        /// <li> <p> If the value begins with <code>audio/</code>, Amazon Lex returns speech in the response. Amazon Lex uses Amazon Polly to generate the speech (using the configuration you specified in the <code>Accept</code> header). For example, if you specify <code>audio/mpeg</code> as the value, Amazon Lex returns speech in the MPEG format.</p> </li>
+        /// <li> <p>If the value is <code>audio/pcm</code>, the speech returned is <code>audio/pcm</code> in 16-bit, little endian format. </p> </li>
+        /// <li> <p>The following are the accepted values:</p>
         /// <ul>
-        /// <li>
-        /// <p>audio/mpeg</p>
-        /// </li>
-        /// <li>
-        /// <p>audio/ogg</p>
-        /// </li>
-        /// <li>
-        /// <p>audio/pcm</p>
-        /// </li>
-        /// <li>
-        /// <p>text/plain; charset=utf-8</p>
-        /// </li>
-        /// <li>
-        /// <p>audio/* (defaults to mpeg)</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p>audio/mpeg</p> </li>
+        /// <li> <p>audio/ogg</p> </li>
+        /// <li> <p>audio/pcm</p> </li>
+        /// <li> <p>text/plain; charset=utf-8</p> </li>
+        /// <li> <p>audio/* (defaults to mpeg)</p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn set_accept(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_accept(input);
             self
         }
-        /// <p> User input in PCM or Opus audio format or text format as described in
-        /// the <code>Content-Type</code> HTTP header. </p>
-        /// <p>You can stream audio data to Amazon Lex or you can create a local buffer
-        /// that captures all of the audio data before sending. In general, you get
-        /// better performance if you stream audio data rather than buffering the data
-        /// locally.</p>
+        /// <p> User input in PCM or Opus audio format or text format as described in the <code>Content-Type</code> HTTP header. </p>
+        /// <p>You can stream audio data to Amazon Lex or you can create a local buffer that captures all of the audio data before sending. In general, you get better performance if you stream audio data rather than buffering the data locally.</p>
         pub fn input_stream(mut self, input: aws_smithy_http::byte_stream::ByteStream) -> Self {
             self.inner = self.inner.input_stream(input);
             self
         }
-        /// <p> User input in PCM or Opus audio format or text format as described in
-        /// the <code>Content-Type</code> HTTP header. </p>
-        /// <p>You can stream audio data to Amazon Lex or you can create a local buffer
-        /// that captures all of the audio data before sending. In general, you get
-        /// better performance if you stream audio data rather than buffering the data
-        /// locally.</p>
+        /// <p> User input in PCM or Opus audio format or text format as described in the <code>Content-Type</code> HTTP header. </p>
+        /// <p>You can stream audio data to Amazon Lex or you can create a local buffer that captures all of the audio data before sending. In general, you get better performance if you stream audio data rather than buffering the data locally.</p>
         pub fn set_input_stream(
             mut self,
             input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
@@ -808,22 +578,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_input_stream(input);
             self
         }
-        /// <p>A list of contexts active for the request. A context can be activated
-        /// when a previous intent is fulfilled, or by including the context in the
-        /// request,</p>
-        /// <p>If you don't specify a list of contexts, Amazon Lex will use the current
-        /// list of contexts for the session. If you specify an empty list, all
-        /// contexts for the session are cleared.</p>
+        /// <p>A list of contexts active for the request. A context can be activated when a previous intent is fulfilled, or by including the context in the request,</p>
+        /// <p>If you don't specify a list of contexts, Amazon Lex will use the current list of contexts for the session. If you specify an empty list, all contexts for the session are cleared.</p>
         pub fn active_contexts(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.active_contexts(input.into());
             self
         }
-        /// <p>A list of contexts active for the request. A context can be activated
-        /// when a previous intent is fulfilled, or by including the context in the
-        /// request,</p>
-        /// <p>If you don't specify a list of contexts, Amazon Lex will use the current
-        /// list of contexts for the session. If you specify an empty list, all
-        /// contexts for the session are cleared.</p>
+        /// <p>A list of contexts active for the request. A context can be activated when a previous intent is fulfilled, or by including the context in the request,</p>
+        /// <p>If you don't specify a list of contexts, Amazon Lex will use the current list of contexts for the session. If you specify an empty list, all contexts for the session are cleared.</p>
         pub fn set_active_contexts(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -834,82 +596,26 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PostText`.
     ///
-    /// <p>Sends user input to Amazon Lex. Client applications can use this API to
-    /// send requests to Amazon Lex at runtime. Amazon Lex then interprets the user input
-    /// using the machine learning model it built for the bot. </p>
-    /// <p> In response, Amazon Lex returns the next <code>message</code> to convey to
-    /// the user an optional <code>responseCard</code> to display. Consider the
-    /// following example messages: </p>
+    /// <p>Sends user input to Amazon Lex. Client applications can use this API to send requests to Amazon Lex at runtime. Amazon Lex then interprets the user input using the machine learning model it built for the bot. </p>
+    /// <p> In response, Amazon Lex returns the next <code>message</code> to convey to the user an optional <code>responseCard</code> to display. Consider the following example messages: </p>
     /// <ul>
-    /// <li>
-    /// <p> For a user input "I would like a pizza", Amazon Lex might return a
-    /// response with a message eliciting slot data (for example, PizzaSize):
-    /// "What size pizza would you like?" </p>
-    /// </li>
-    /// <li>
-    /// <p> After the user provides all of the pizza order information,
-    /// Amazon Lex might return a response with a message to obtain user
-    /// confirmation "Proceed with the pizza order?". </p>
-    /// </li>
-    /// <li>
-    /// <p> After the user replies to a confirmation prompt with a "yes",
-    /// Amazon Lex might return a conclusion statement: "Thank you, your cheese
-    /// pizza has been ordered.". </p>
-    /// </li>
+    /// <li> <p> For a user input "I would like a pizza", Amazon Lex might return a response with a message eliciting slot data (for example, PizzaSize): "What size pizza would you like?" </p> </li>
+    /// <li> <p> After the user provides all of the pizza order information, Amazon Lex might return a response with a message to obtain user confirmation "Proceed with the pizza order?". </p> </li>
+    /// <li> <p> After the user replies to a confirmation prompt with a "yes", Amazon Lex might return a conclusion statement: "Thank you, your cheese pizza has been ordered.". </p> </li>
     /// </ul>
-    ///
-    /// <p> Not all Amazon Lex messages require a user response. For example, a
-    /// conclusion statement does not require a response. Some messages require
-    /// only a "yes" or "no" user response. In addition to the
-    /// <code>message</code>, Amazon Lex provides additional context about the
-    /// message in the response that you might use to enhance client behavior, for
-    /// example, to display the appropriate client user interface. These are the
-    /// <code>slotToElicit</code>, <code>dialogState</code>,
-    /// <code>intentName</code>, and <code>slots</code> fields in the response.
-    /// Consider the following examples: </p>
-    ///
+    /// <p> Not all Amazon Lex messages require a user response. For example, a conclusion statement does not require a response. Some messages require only a "yes" or "no" user response. In addition to the <code>message</code>, Amazon Lex provides additional context about the message in the response that you might use to enhance client behavior, for example, to display the appropriate client user interface. These are the <code>slotToElicit</code>, <code>dialogState</code>, <code>intentName</code>, and <code>slots</code> fields in the response. Consider the following examples: </p>
     /// <ul>
-    /// <li>
-    /// <p>If the message is to elicit slot data, Amazon Lex returns the
-    /// following context information:</p>
+    /// <li> <p>If the message is to elicit slot data, Amazon Lex returns the following context information:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>dialogState</code> set to ElicitSlot </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>intentName</code> set to the intent name in the current
-    /// context </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>slotToElicit</code> set to the slot name for which the
-    /// <code>message</code> is eliciting information </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>slots</code> set to a map of slots, configured for the
-    /// intent, with currently known values </p>
-    /// </li>
+    /// <li> <p> <code>dialogState</code> set to ElicitSlot </p> </li>
+    /// <li> <p> <code>intentName</code> set to the intent name in the current context </p> </li>
+    /// <li> <p> <code>slotToElicit</code> set to the slot name for which the <code>message</code> is eliciting information </p> </li>
+    /// <li> <p> <code>slots</code> set to a map of slots, configured for the intent, with currently known values </p> </li>
+    /// </ul> </li>
+    /// <li> <p> If the message is a confirmation prompt, the <code>dialogState</code> is set to ConfirmIntent and <code>SlotToElicit</code> is set to null. </p> </li>
+    /// <li> <p>If the message is a clarification prompt (configured for the intent) that indicates that user intent is not understood, the <code>dialogState</code> is set to ElicitIntent and <code>slotToElicit</code> is set to null. </p> </li>
     /// </ul>
-    /// </li>
-    /// <li>
-    /// <p> If the message is a confirmation prompt, the
-    /// <code>dialogState</code> is set to ConfirmIntent and
-    /// <code>SlotToElicit</code> is set to null. </p>
-    /// </li>
-    /// <li>
-    /// <p>If the message is a clarification prompt (configured for the
-    /// intent) that indicates that user intent is not understood, the
-    /// <code>dialogState</code> is set to ElicitIntent and
-    /// <code>slotToElicit</code> is set to null. </p>
-    /// </li>
-    /// </ul>
-    ///
-    /// <p> In addition, Amazon Lex also returns your application-specific
-    /// <code>sessionAttributes</code>. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html">Managing
-    /// Conversation Context</a>. </p>
+    /// <p> In addition, Amazon Lex also returns your application-specific <code>sessionAttributes</code>. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html">Managing Conversation Context</a>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PostText<
         C = aws_smithy_client::erase::DynConnector,
@@ -986,67 +692,25 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bot_alias(input);
             self
         }
-        /// <p>The ID of the client application user. Amazon Lex uses this to identify a
-        /// user's conversation with your bot. At runtime, each request must contain
-        /// the <code>userID</code> field.</p>
-        /// <p>To decide the user ID to use for your application, consider the
-        /// following factors.</p>
+        /// <p>The ID of the client application user. Amazon Lex uses this to identify a user's conversation with your bot. At runtime, each request must contain the <code>userID</code> field.</p>
+        /// <p>To decide the user ID to use for your application, consider the following factors.</p>
         /// <ul>
-        /// <li>
-        /// <p>The <code>userID</code> field must not contain any personally
-        /// identifiable information of the user, for example, name, personal
-        /// identification numbers, or other end user personal information.</p>
-        /// </li>
-        /// <li>
-        /// <p>If you want a user to start a conversation on one device and
-        /// continue on another device, use a user-specific identifier.</p>
-        /// </li>
-        /// <li>
-        /// <p>If you want the same user to be able to have two independent
-        /// conversations on two different devices, choose a device-specific
-        /// identifier.</p>
-        /// </li>
-        /// <li>
-        /// <p>A user can't have two independent conversations with two different
-        /// versions of the same bot. For example, a user can't have a
-        /// conversation with the PROD and BETA versions of the same bot. If you
-        /// anticipate that a user will need to have conversation with two
-        /// different versions, for example, while testing, include the bot alias
-        /// in the user ID to separate the two conversations.</p>
-        /// </li>
+        /// <li> <p>The <code>userID</code> field must not contain any personally identifiable information of the user, for example, name, personal identification numbers, or other end user personal information.</p> </li>
+        /// <li> <p>If you want a user to start a conversation on one device and continue on another device, use a user-specific identifier.</p> </li>
+        /// <li> <p>If you want the same user to be able to have two independent conversations on two different devices, choose a device-specific identifier.</p> </li>
+        /// <li> <p>A user can't have two independent conversations with two different versions of the same bot. For example, a user can't have a conversation with the PROD and BETA versions of the same bot. If you anticipate that a user will need to have conversation with two different versions, for example, while testing, include the bot alias in the user ID to separate the two conversations.</p> </li>
         /// </ul>
         pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.user_id(input.into());
             self
         }
-        /// <p>The ID of the client application user. Amazon Lex uses this to identify a
-        /// user's conversation with your bot. At runtime, each request must contain
-        /// the <code>userID</code> field.</p>
-        /// <p>To decide the user ID to use for your application, consider the
-        /// following factors.</p>
+        /// <p>The ID of the client application user. Amazon Lex uses this to identify a user's conversation with your bot. At runtime, each request must contain the <code>userID</code> field.</p>
+        /// <p>To decide the user ID to use for your application, consider the following factors.</p>
         /// <ul>
-        /// <li>
-        /// <p>The <code>userID</code> field must not contain any personally
-        /// identifiable information of the user, for example, name, personal
-        /// identification numbers, or other end user personal information.</p>
-        /// </li>
-        /// <li>
-        /// <p>If you want a user to start a conversation on one device and
-        /// continue on another device, use a user-specific identifier.</p>
-        /// </li>
-        /// <li>
-        /// <p>If you want the same user to be able to have two independent
-        /// conversations on two different devices, choose a device-specific
-        /// identifier.</p>
-        /// </li>
-        /// <li>
-        /// <p>A user can't have two independent conversations with two different
-        /// versions of the same bot. For example, a user can't have a
-        /// conversation with the PROD and BETA versions of the same bot. If you
-        /// anticipate that a user will need to have conversation with two
-        /// different versions, for example, while testing, include the bot alias
-        /// in the user ID to separate the two conversations.</p>
-        /// </li>
+        /// <li> <p>The <code>userID</code> field must not contain any personally identifiable information of the user, for example, name, personal identification numbers, or other end user personal information.</p> </li>
+        /// <li> <p>If you want a user to start a conversation on one device and continue on another device, use a user-specific identifier.</p> </li>
+        /// <li> <p>If you want the same user to be able to have two independent conversations on two different devices, choose a device-specific identifier.</p> </li>
+        /// <li> <p>A user can't have two independent conversations with two different versions of the same bot. For example, a user can't have a conversation with the PROD and BETA versions of the same bot. If you anticipate that a user will need to have conversation with two different versions, for example, while testing, include the bot alias in the user ID to separate the two conversations.</p> </li>
         /// </ul>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_user_id(input);
@@ -1056,8 +720,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_session_attributes`](Self::set_session_attributes).
         ///
-        /// <p>Application-specific information passed between Amazon Lex and a client
-        /// application.</p>
+        /// <p>Application-specific information passed between Amazon Lex and a client application.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting Session Attributes</a>.</p>
         pub fn session_attributes(
             mut self,
@@ -1067,8 +730,7 @@ pub mod fluent_builders {
             self.inner = self.inner.session_attributes(k.into(), v.into());
             self
         }
-        /// <p>Application-specific information passed between Amazon Lex and a client
-        /// application.</p>
+        /// <p>Application-specific information passed between Amazon Lex and a client application.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting Session Attributes</a>.</p>
         pub fn set_session_attributes(
             mut self,
@@ -1083,11 +745,8 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_request_attributes`](Self::set_request_attributes).
         ///
-        /// <p>Request-specific information passed between Amazon Lex and a client
-        /// application.</p>
-        /// <p>The namespace <code>x-amz-lex:</code> is reserved for special
-        /// attributes. Don't create any request attributes with the prefix
-        /// <code>x-amz-lex:</code>.</p>
+        /// <p>Request-specific information passed between Amazon Lex and a client application.</p>
+        /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting Request Attributes</a>.</p>
         pub fn request_attributes(
             mut self,
@@ -1097,11 +756,8 @@ pub mod fluent_builders {
             self.inner = self.inner.request_attributes(k.into(), v.into());
             self
         }
-        /// <p>Request-specific information passed between Amazon Lex and a client
-        /// application.</p>
-        /// <p>The namespace <code>x-amz-lex:</code> is reserved for special
-        /// attributes. Don't create any request attributes with the prefix
-        /// <code>x-amz-lex:</code>.</p>
+        /// <p>Request-specific information passed between Amazon Lex and a client application.</p>
+        /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting Request Attributes</a>.</p>
         pub fn set_request_attributes(
             mut self,
@@ -1126,22 +782,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_active_contexts`](Self::set_active_contexts).
         ///
-        /// <p>A list of contexts active for the request. A context can be activated
-        /// when a previous intent is fulfilled, or by including the context in the
-        /// request,</p>
-        /// <p>If you don't specify a list of contexts, Amazon Lex will use the current
-        /// list of contexts for the session. If you specify an empty list, all
-        /// contexts for the session are cleared.</p>
+        /// <p>A list of contexts active for the request. A context can be activated when a previous intent is fulfilled, or by including the context in the request,</p>
+        /// <p>If you don't specify a list of contexts, Amazon Lex will use the current list of contexts for the session. If you specify an empty list, all contexts for the session are cleared.</p>
         pub fn active_contexts(mut self, input: crate::model::ActiveContext) -> Self {
             self.inner = self.inner.active_contexts(input);
             self
         }
-        /// <p>A list of contexts active for the request. A context can be activated
-        /// when a previous intent is fulfilled, or by including the context in the
-        /// request,</p>
-        /// <p>If you don't specify a list of contexts, Amazon Lex will use the current
-        /// list of contexts for the session. If you specify an empty list, all
-        /// contexts for the session are cleared.</p>
+        /// <p>A list of contexts active for the request. A context can be activated when a previous intent is fulfilled, or by including the context in the request,</p>
+        /// <p>If you don't specify a list of contexts, Amazon Lex will use the current list of contexts for the session. If you specify an empty list, all contexts for the session are cleared.</p>
         pub fn set_active_contexts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ActiveContext>>,
@@ -1152,11 +800,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutSession`.
     ///
-    /// <p>Creates a new session or modifies an existing session with an Amazon Lex
-    /// bot. Use this operation to enable your application to set the state of the
-    /// bot.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/how-session-api.html">Managing
-    /// Sessions</a>.</p>
+    /// <p>Creates a new session or modifies an existing session with an Amazon Lex bot. Use this operation to enable your application to set the state of the bot.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/how-session-api.html">Managing Sessions</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutSession<
         C = aws_smithy_client::erase::DynConnector,
@@ -1233,14 +878,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bot_alias(input);
             self
         }
-        /// <p>The ID of the client application user. Amazon Lex uses this to identify a
-        /// user's conversation with your bot. </p>
+        /// <p>The ID of the client application user. Amazon Lex uses this to identify a user's conversation with your bot. </p>
         pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.user_id(input.into());
             self
         }
-        /// <p>The ID of the client application user. Amazon Lex uses this to identify a
-        /// user's conversation with your bot. </p>
+        /// <p>The ID of the client application user. Amazon Lex uses this to identify a user's conversation with your bot. </p>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_user_id(input);
             self
@@ -1249,9 +892,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_session_attributes`](Self::set_session_attributes).
         ///
-        /// <p>Map of key/value pairs representing the session-specific context
-        /// information. It contains application information passed between Amazon Lex and
-        /// a client application.</p>
+        /// <p>Map of key/value pairs representing the session-specific context information. It contains application information passed between Amazon Lex and a client application.</p>
         pub fn session_attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -1260,9 +901,7 @@ pub mod fluent_builders {
             self.inner = self.inner.session_attributes(k.into(), v.into());
             self
         }
-        /// <p>Map of key/value pairs representing the session-specific context
-        /// information. It contains application information passed between Amazon Lex and
-        /// a client application.</p>
+        /// <p>Map of key/value pairs representing the session-specific context information. It contains application information passed between Amazon Lex and a client application.</p>
         pub fn set_session_attributes(
             mut self,
             input: std::option::Option<
@@ -1272,14 +911,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_session_attributes(input);
             self
         }
-        /// <p>Sets the next action that the bot should take to fulfill the
-        /// conversation.</p>
+        /// <p>Sets the next action that the bot should take to fulfill the conversation.</p>
         pub fn dialog_action(mut self, input: crate::model::DialogAction) -> Self {
             self.inner = self.inner.dialog_action(input);
             self
         }
-        /// <p>Sets the next action that the bot should take to fulfill the
-        /// conversation.</p>
+        /// <p>Sets the next action that the bot should take to fulfill the conversation.</p>
         pub fn set_dialog_action(
             mut self,
             input: std::option::Option<crate::model::DialogAction>,
@@ -1291,66 +928,26 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_recent_intent_summary_view`](Self::set_recent_intent_summary_view).
         ///
-        /// <p>A summary of the recent intents for the bot. You can use the intent
-        /// summary view to set a checkpoint label on an intent and modify attributes
-        /// of intents. You can also use it to remove or add intent summary objects to
-        /// the list.</p>
-        /// <p>An intent that you modify or add to the list must make sense for the
-        /// bot. For example, the intent name must be valid for the bot. You must
-        /// provide valid values for:</p>
+        /// <p>A summary of the recent intents for the bot. You can use the intent summary view to set a checkpoint label on an intent and modify attributes of intents. You can also use it to remove or add intent summary objects to the list.</p>
+        /// <p>An intent that you modify or add to the list must make sense for the bot. For example, the intent name must be valid for the bot. You must provide valid values for:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>intentName</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>slot names</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>slotToElict</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>intentName</code> </p> </li>
+        /// <li> <p>slot names</p> </li>
+        /// <li> <p> <code>slotToElict</code> </p> </li>
         /// </ul>
-        /// <p>If you send the <code>recentIntentSummaryView</code> parameter in a
-        /// <code>PutSession</code> request, the contents of the new summary view
-        /// replaces the old summary view. For example, if a <code>GetSession</code>
-        /// request returns three intents in the summary view and you call
-        /// <code>PutSession</code> with one intent in the summary view, the next
-        /// call to <code>GetSession</code> will only return one intent.</p>
+        /// <p>If you send the <code>recentIntentSummaryView</code> parameter in a <code>PutSession</code> request, the contents of the new summary view replaces the old summary view. For example, if a <code>GetSession</code> request returns three intents in the summary view and you call <code>PutSession</code> with one intent in the summary view, the next call to <code>GetSession</code> will only return one intent.</p>
         pub fn recent_intent_summary_view(mut self, input: crate::model::IntentSummary) -> Self {
             self.inner = self.inner.recent_intent_summary_view(input);
             self
         }
-        /// <p>A summary of the recent intents for the bot. You can use the intent
-        /// summary view to set a checkpoint label on an intent and modify attributes
-        /// of intents. You can also use it to remove or add intent summary objects to
-        /// the list.</p>
-        /// <p>An intent that you modify or add to the list must make sense for the
-        /// bot. For example, the intent name must be valid for the bot. You must
-        /// provide valid values for:</p>
+        /// <p>A summary of the recent intents for the bot. You can use the intent summary view to set a checkpoint label on an intent and modify attributes of intents. You can also use it to remove or add intent summary objects to the list.</p>
+        /// <p>An intent that you modify or add to the list must make sense for the bot. For example, the intent name must be valid for the bot. You must provide valid values for:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>intentName</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>slot names</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>slotToElict</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>intentName</code> </p> </li>
+        /// <li> <p>slot names</p> </li>
+        /// <li> <p> <code>slotToElict</code> </p> </li>
         /// </ul>
-        /// <p>If you send the <code>recentIntentSummaryView</code> parameter in a
-        /// <code>PutSession</code> request, the contents of the new summary view
-        /// replaces the old summary view. For example, if a <code>GetSession</code>
-        /// request returns three intents in the summary view and you call
-        /// <code>PutSession</code> with one intent in the summary view, the next
-        /// call to <code>GetSession</code> will only return one intent.</p>
+        /// <p>If you send the <code>recentIntentSummaryView</code> parameter in a <code>PutSession</code> request, the contents of the new summary view replaces the old summary view. For example, if a <code>GetSession</code> request returns three intents in the summary view and you call <code>PutSession</code> with one intent in the summary view, the next call to <code>GetSession</code> will only return one intent.</p>
         pub fn set_recent_intent_summary_view(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::IntentSummary>>,
@@ -1358,105 +955,37 @@ pub mod fluent_builders {
             self.inner = self.inner.set_recent_intent_summary_view(input);
             self
         }
-        /// <p>The message that Amazon Lex returns in the response can be either text or
-        /// speech based depending on the value of this field.</p>
+        /// <p>The message that Amazon Lex returns in the response can be either text or speech based depending on the value of this field.</p>
         /// <ul>
-        /// <li>
-        /// <p>If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex
-        /// returns text in the response.</p>
-        /// </li>
-        /// <li>
-        /// <p>If the value begins with <code>audio/</code>, Amazon Lex returns speech
-        /// in the response. Amazon Lex uses Amazon Polly to generate the speech in the
-        /// configuration that you specify. For example, if you specify
-        /// <code>audio/mpeg</code> as the value, Amazon Lex returns speech in the
-        /// MPEG format.</p>
-        /// </li>
-        /// <li>
-        /// <p>If the value is <code>audio/pcm</code>, the speech is returned as
-        /// <code>audio/pcm</code> in 16-bit, little endian format.</p>
-        /// </li>
-        /// <li>
-        /// <p>The following are the accepted values:</p>
+        /// <li> <p>If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex returns text in the response.</p> </li>
+        /// <li> <p>If the value begins with <code>audio/</code>, Amazon Lex returns speech in the response. Amazon Lex uses Amazon Polly to generate the speech in the configuration that you specify. For example, if you specify <code>audio/mpeg</code> as the value, Amazon Lex returns speech in the MPEG format.</p> </li>
+        /// <li> <p>If the value is <code>audio/pcm</code>, the speech is returned as <code>audio/pcm</code> in 16-bit, little endian format.</p> </li>
+        /// <li> <p>The following are the accepted values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>audio/mpeg</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>audio/ogg</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>audio/pcm</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>audio/*</code> (defaults to mpeg)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>text/plain; charset=utf-8</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p> <code>audio/mpeg</code> </p> </li>
+        /// <li> <p> <code>audio/ogg</code> </p> </li>
+        /// <li> <p> <code>audio/pcm</code> </p> </li>
+        /// <li> <p> <code>audio/*</code> (defaults to mpeg)</p> </li>
+        /// <li> <p> <code>text/plain; charset=utf-8</code> </p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn accept(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.accept(input.into());
             self
         }
-        /// <p>The message that Amazon Lex returns in the response can be either text or
-        /// speech based depending on the value of this field.</p>
+        /// <p>The message that Amazon Lex returns in the response can be either text or speech based depending on the value of this field.</p>
         /// <ul>
-        /// <li>
-        /// <p>If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex
-        /// returns text in the response.</p>
-        /// </li>
-        /// <li>
-        /// <p>If the value begins with <code>audio/</code>, Amazon Lex returns speech
-        /// in the response. Amazon Lex uses Amazon Polly to generate the speech in the
-        /// configuration that you specify. For example, if you specify
-        /// <code>audio/mpeg</code> as the value, Amazon Lex returns speech in the
-        /// MPEG format.</p>
-        /// </li>
-        /// <li>
-        /// <p>If the value is <code>audio/pcm</code>, the speech is returned as
-        /// <code>audio/pcm</code> in 16-bit, little endian format.</p>
-        /// </li>
-        /// <li>
-        /// <p>The following are the accepted values:</p>
+        /// <li> <p>If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex returns text in the response.</p> </li>
+        /// <li> <p>If the value begins with <code>audio/</code>, Amazon Lex returns speech in the response. Amazon Lex uses Amazon Polly to generate the speech in the configuration that you specify. For example, if you specify <code>audio/mpeg</code> as the value, Amazon Lex returns speech in the MPEG format.</p> </li>
+        /// <li> <p>If the value is <code>audio/pcm</code>, the speech is returned as <code>audio/pcm</code> in 16-bit, little endian format.</p> </li>
+        /// <li> <p>The following are the accepted values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>audio/mpeg</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>audio/ogg</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>audio/pcm</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>audio/*</code> (defaults to mpeg)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>text/plain; charset=utf-8</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p> <code>audio/mpeg</code> </p> </li>
+        /// <li> <p> <code>audio/ogg</code> </p> </li>
+        /// <li> <p> <code>audio/pcm</code> </p> </li>
+        /// <li> <p> <code>audio/*</code> (defaults to mpeg)</p> </li>
+        /// <li> <p> <code>text/plain; charset=utf-8</code> </p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn set_accept(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_accept(input);
@@ -1466,22 +995,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_active_contexts`](Self::set_active_contexts).
         ///
-        /// <p>A list of contexts active for the request. A context can be activated
-        /// when a previous intent is fulfilled, or by including the context in the
-        /// request,</p>
-        /// <p>If you don't specify a list of contexts, Amazon Lex will use the current
-        /// list of contexts for the session. If you specify an empty list, all
-        /// contexts for the session are cleared.</p>
+        /// <p>A list of contexts active for the request. A context can be activated when a previous intent is fulfilled, or by including the context in the request,</p>
+        /// <p>If you don't specify a list of contexts, Amazon Lex will use the current list of contexts for the session. If you specify an empty list, all contexts for the session are cleared.</p>
         pub fn active_contexts(mut self, input: crate::model::ActiveContext) -> Self {
             self.inner = self.inner.active_contexts(input);
             self
         }
-        /// <p>A list of contexts active for the request. A context can be activated
-        /// when a previous intent is fulfilled, or by including the context in the
-        /// request,</p>
-        /// <p>If you don't specify a list of contexts, Amazon Lex will use the current
-        /// list of contexts for the session. If you specify an empty list, all
-        /// contexts for the session are cleared.</p>
+        /// <p>A list of contexts active for the request. A context can be activated when a previous intent is fulfilled, or by including the context in the request,</p>
+        /// <p>If you don't specify a list of contexts, Amazon Lex will use the current list of contexts for the session. If you specify an empty list, all contexts for the session are cleared.</p>
         pub fn set_active_contexts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ActiveContext>>,

@@ -1928,16 +1928,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>Each resource must have a unique client request token. If you try to create a new resource with the
-        /// same token as a resource that already exists, an exception occurs. If you omit this value,
-        /// AWS SDKs will automatically generate a unique client request. </p>
+        /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(input.into());
             self
         }
-        /// <p>Each resource must have a unique client request token. If you try to create a new resource with the
-        /// same token as a resource that already exists, an exception occurs. If you omit this value,
-        /// AWS SDKs will automatically generate a unique client request. </p>
+        /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3975,8 +3971,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetLogLevelsByResourceTypes`.
     ///
-    /// <p>Returns current default log levels or log levels by resource types. Based on resource types, log levels can be
-    /// for wireless device log options or wireless gateway log options.</p>
+    /// <p>Returns current default log levels or log levels by resource types. Based on resource types, log levels can be for wireless device log options or wireless gateway log options.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetLogLevelsByResourceTypes<
         C = aws_smithy_client::erase::DynConnector,
@@ -4431,8 +4426,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetResourceLogLevel`.
     ///
-    /// <p>Fetches the log-level override, if any, for a given resource-ID and resource-type. It can be used for
-    /// a wireless device or a wireless gateway.</p>
+    /// <p>Fetches the log-level override, if any, for a given resource-ID and resource-type. It can be used for a wireless device or a wireless gateway.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResourceLogLevel<
         C = aws_smithy_client::erase::DynConnector,
@@ -4489,14 +4483,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway,
-        /// it is the wireless gateway ID.</p>
+        /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
         pub fn resource_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_identifier(input.into());
             self
         }
-        /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway,
-        /// it is the wireless gateway ID.</p>
+        /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
         pub fn set_resource_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6233,8 +6225,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutResourceLogLevel`.
     ///
-    /// <p>Sets the log-level override for a resource-ID and resource-type. This option can be specified for a wireless gateway
-    /// or a wireless device. A limit of 200 log level override can be set per account.</p>
+    /// <p>Sets the log-level override for a resource-ID and resource-type. This option can be specified for a wireless gateway or a wireless device. A limit of 200 log level override can be set per account.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutResourceLogLevel<
         C = aws_smithy_client::erase::DynConnector,
@@ -6291,14 +6282,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway,
-        /// it is the wireless gateway ID.</p>
+        /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
         pub fn resource_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_identifier(input.into());
             self
         }
-        /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway,
-        /// it is the wireless gateway ID.</p>
+        /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
         pub fn set_resource_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6392,8 +6381,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ResetResourceLogLevel`.
     ///
-    /// <p>Removes the log-level override, if any, for a specific resource-ID and resource-type. It can be used for
-    /// a wireless device or a wireless gateway.</p>
+    /// <p>Removes the log-level override, if any, for a specific resource-ID and resource-type. It can be used for a wireless device or a wireless gateway.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ResetResourceLogLevel<
         C = aws_smithy_client::erase::DynConnector,
@@ -6450,14 +6438,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway,
-        /// it is the wireless gateway ID.</p>
+        /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
         pub fn resource_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_identifier(input.into());
             self
         }
-        /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway,
-        /// it is the wireless gateway ID.</p>
+        /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
         pub fn set_resource_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7506,8 +7492,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateLogLevelsByResourceTypes`.
     ///
-    /// <p>Set default log level, or log levels by resource types. This can be for wireless device log options or
-    /// wireless gateways log options and is used to control the log messages that'll be displayed in CloudWatch.</p>
+    /// <p>Set default log level, or log levels by resource types. This can be for wireless device log options or wireless gateways log options and is used to control the log messages that'll be displayed in CloudWatch.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateLogLevelsByResourceTypes<
         C = aws_smithy_client::erase::DynConnector,

@@ -12,20 +12,15 @@ pub struct CreateNotificationRuleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateNotificationRuleErrorKind {
-    /// <p>AWS CodeStar Notifications can't create the notification rule because you do not have sufficient
-    /// permissions.</p>
+    /// <p>AWS CodeStar Notifications can't create the notification rule because you do not have sufficient permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>AWS CodeStar Notifications can't complete the request because the resource is being modified by
-    /// another process. Wait a few minutes and try again.</p>
+    /// <p>AWS CodeStar Notifications can't complete the request because the resource is being modified by another process. Wait a few minutes and try again.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>Some or all of the configuration is incomplete, missing, or not valid.</p>
     ConfigurationException(crate::error::ConfigurationException),
-    /// <p>One of the AWS CodeStar Notifications limits has been exceeded. Limits apply to
-    /// accounts, notification rules, notifications, resources, and targets. For more
-    /// information, see Limits.</p>
+    /// <p>One of the AWS CodeStar Notifications limits has been exceeded. Limits apply to accounts, notification rules, notifications, resources, and targets. For more information, see Limits.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>A resource with the same name or ID already exists. Notification rule names must be
-    /// unique in your AWS account.</p>
+    /// <p>A resource with the same name or ID already exists. Notification rule names must be unique in your AWS account.</p>
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
     /// <p>One or more parameter values are not valid.</p>
     ValidationException(crate::error::ValidationException),
@@ -171,12 +166,9 @@ pub struct DeleteNotificationRuleError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteNotificationRuleErrorKind {
-    /// <p>AWS CodeStar Notifications can't complete the request because the resource is being modified by
-    /// another process. Wait a few minutes and try again.</p>
+    /// <p>AWS CodeStar Notifications can't complete the request because the resource is being modified by another process. Wait a few minutes and try again.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
-    /// <p>One of the AWS CodeStar Notifications limits has been exceeded. Limits apply to
-    /// accounts, notification rules, notifications, resources, and targets. For more
-    /// information, see Limits.</p>
+    /// <p>One of the AWS CodeStar Notifications limits has been exceeded. Limits apply to accounts, notification rules, notifications, resources, and targets. For more information, see Limits.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>One or more parameter values are not valid.</p>
     ValidationException(crate::error::ValidationException),
@@ -995,8 +987,7 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    /// <p>AWS CodeStar Notifications can't complete the request because the resource is being modified by
-    /// another process. Wait a few minutes and try again.</p>
+    /// <p>AWS CodeStar Notifications can't complete the request because the resource is being modified by another process. Wait a few minutes and try again.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>AWS CodeStar Notifications can't find a resource that matches the provided ARN. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1198,8 +1189,7 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    /// <p>AWS CodeStar Notifications can't complete the request because the resource is being modified by
-    /// another process. Wait a few minutes and try again.</p>
+    /// <p>AWS CodeStar Notifications can't complete the request because the resource is being modified by another process. Wait a few minutes and try again.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>AWS CodeStar Notifications can't find a resource that matches the provided ARN. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1530,8 +1520,7 @@ impl ResourceNotFoundException {
     }
 }
 
-/// <p>AWS CodeStar Notifications can't complete the request because the resource is being modified by
-/// another process. Wait a few minutes and try again.</p>
+/// <p>AWS CodeStar Notifications can't complete the request because the resource is being modified by another process. Wait a few minutes and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConcurrentModificationException {
@@ -1659,9 +1648,7 @@ impl InvalidNextTokenException {
     }
 }
 
-/// <p>One of the AWS CodeStar Notifications limits has been exceeded. Limits apply to
-/// accounts, notification rules, notifications, resources, and targets. For more
-/// information, see Limits.</p>
+/// <p>One of the AWS CodeStar Notifications limits has been exceeded. Limits apply to accounts, notification rules, notifications, resources, and targets. For more information, see Limits.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {
@@ -1725,8 +1712,7 @@ impl LimitExceededException {
     }
 }
 
-/// <p>A resource with the same name or ID already exists. Notification rule names must be
-/// unique in your AWS account.</p>
+/// <p>A resource with the same name or ID already exists. Notification rule names must be unique in your AWS account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceAlreadyExistsException {
@@ -1854,8 +1840,7 @@ impl ConfigurationException {
     }
 }
 
-/// <p>AWS CodeStar Notifications can't create the notification rule because you do not have sufficient
-/// permissions.</p>
+/// <p>AWS CodeStar Notifications can't create the notification rule because you do not have sufficient permissions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedException {

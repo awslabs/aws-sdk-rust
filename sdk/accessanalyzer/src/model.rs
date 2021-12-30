@@ -148,8 +148,7 @@ pub struct AnalyzerSummary {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the analyzer.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The type of analyzer, which corresponds to the zone of trust chosen for the
-    /// analyzer.</p>
+    /// <p>The type of analyzer, which corresponds to the zone of trust chosen for the analyzer.</p>
     pub r#type: std::option::Option<crate::model::Type>,
     /// <p>A timestamp for the time at which the analyzer was created.</p>
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -160,18 +159,9 @@ pub struct AnalyzerSummary {
     /// <p>The tags added to the analyzer.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The status of the analyzer. An <code>Active</code> analyzer successfully monitors
-    /// supported resources and generates new findings. The analyzer is <code>Disabled</code> when
-    /// a user action, such as removing trusted access for Identity and Access Management Access Analyzer from Organizations, causes
-    /// the analyzer to stop generating new findings. The status is <code>Creating</code> when the
-    /// analyzer creation is in progress and <code>Failed</code> when the analyzer creation has
-    /// failed. </p>
+    /// <p>The status of the analyzer. An <code>Active</code> analyzer successfully monitors supported resources and generates new findings. The analyzer is <code>Disabled</code> when a user action, such as removing trusted access for Identity and Access Management Access Analyzer from Organizations, causes the analyzer to stop generating new findings. The status is <code>Creating</code> when the analyzer creation is in progress and <code>Failed</code> when the analyzer creation has failed. </p>
     pub status: std::option::Option<crate::model::AnalyzerStatus>,
-    /// <p>The <code>statusReason</code> provides more details about the current status of the
-    /// analyzer. For example, if the creation for the analyzer fails, a <code>Failed</code> status
-    /// is returned. For an analyzer with organization as the type, this failure can be due to an
-    /// issue with creating the service-linked roles required in the member accounts of the Amazon Web Services
-    /// organization.</p>
+    /// <p>The <code>statusReason</code> provides more details about the current status of the analyzer. For example, if the creation for the analyzer fails, a <code>Failed</code> status is returned. For an analyzer with organization as the type, this failure can be due to an issue with creating the service-linked roles required in the member accounts of the Amazon Web Services organization.</p>
     pub status_reason: std::option::Option<crate::model::StatusReason>,
 }
 impl AnalyzerSummary {
@@ -183,8 +173,7 @@ impl AnalyzerSummary {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The type of analyzer, which corresponds to the zone of trust chosen for the
-    /// analyzer.</p>
+    /// <p>The type of analyzer, which corresponds to the zone of trust chosen for the analyzer.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::Type> {
         self.r#type.as_ref()
     }
@@ -207,20 +196,11 @@ impl AnalyzerSummary {
     {
         self.tags.as_ref()
     }
-    /// <p>The status of the analyzer. An <code>Active</code> analyzer successfully monitors
-    /// supported resources and generates new findings. The analyzer is <code>Disabled</code> when
-    /// a user action, such as removing trusted access for Identity and Access Management Access Analyzer from Organizations, causes
-    /// the analyzer to stop generating new findings. The status is <code>Creating</code> when the
-    /// analyzer creation is in progress and <code>Failed</code> when the analyzer creation has
-    /// failed. </p>
+    /// <p>The status of the analyzer. An <code>Active</code> analyzer successfully monitors supported resources and generates new findings. The analyzer is <code>Disabled</code> when a user action, such as removing trusted access for Identity and Access Management Access Analyzer from Organizations, causes the analyzer to stop generating new findings. The status is <code>Creating</code> when the analyzer creation is in progress and <code>Failed</code> when the analyzer creation has failed. </p>
     pub fn status(&self) -> std::option::Option<&crate::model::AnalyzerStatus> {
         self.status.as_ref()
     }
-    /// <p>The <code>statusReason</code> provides more details about the current status of the
-    /// analyzer. For example, if the creation for the analyzer fails, a <code>Failed</code> status
-    /// is returned. For an analyzer with organization as the type, this failure can be due to an
-    /// issue with creating the service-linked roles required in the member accounts of the Amazon Web Services
-    /// organization.</p>
+    /// <p>The <code>statusReason</code> provides more details about the current status of the analyzer. For example, if the creation for the analyzer fails, a <code>Failed</code> status is returned. For an analyzer with organization as the type, this failure can be due to an issue with creating the service-linked roles required in the member accounts of the Amazon Web Services organization.</p>
     pub fn status_reason(&self) -> std::option::Option<&crate::model::StatusReason> {
         self.status_reason.as_ref()
     }
@@ -279,14 +259,12 @@ pub mod analyzer_summary {
             self.name = input;
             self
         }
-        /// <p>The type of analyzer, which corresponds to the zone of trust chosen for the
-        /// analyzer.</p>
+        /// <p>The type of analyzer, which corresponds to the zone of trust chosen for the analyzer.</p>
         pub fn r#type(mut self, input: crate::model::Type) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The type of analyzer, which corresponds to the zone of trust chosen for the
-        /// analyzer.</p>
+        /// <p>The type of analyzer, which corresponds to the zone of trust chosen for the analyzer.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::Type>) -> Self {
             self.r#type = input;
             self
@@ -355,22 +333,12 @@ pub mod analyzer_summary {
             self.tags = input;
             self
         }
-        /// <p>The status of the analyzer. An <code>Active</code> analyzer successfully monitors
-        /// supported resources and generates new findings. The analyzer is <code>Disabled</code> when
-        /// a user action, such as removing trusted access for Identity and Access Management Access Analyzer from Organizations, causes
-        /// the analyzer to stop generating new findings. The status is <code>Creating</code> when the
-        /// analyzer creation is in progress and <code>Failed</code> when the analyzer creation has
-        /// failed. </p>
+        /// <p>The status of the analyzer. An <code>Active</code> analyzer successfully monitors supported resources and generates new findings. The analyzer is <code>Disabled</code> when a user action, such as removing trusted access for Identity and Access Management Access Analyzer from Organizations, causes the analyzer to stop generating new findings. The status is <code>Creating</code> when the analyzer creation is in progress and <code>Failed</code> when the analyzer creation has failed. </p>
         pub fn status(mut self, input: crate::model::AnalyzerStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the analyzer. An <code>Active</code> analyzer successfully monitors
-        /// supported resources and generates new findings. The analyzer is <code>Disabled</code> when
-        /// a user action, such as removing trusted access for Identity and Access Management Access Analyzer from Organizations, causes
-        /// the analyzer to stop generating new findings. The status is <code>Creating</code> when the
-        /// analyzer creation is in progress and <code>Failed</code> when the analyzer creation has
-        /// failed. </p>
+        /// <p>The status of the analyzer. An <code>Active</code> analyzer successfully monitors supported resources and generates new findings. The analyzer is <code>Disabled</code> when a user action, such as removing trusted access for Identity and Access Management Access Analyzer from Organizations, causes the analyzer to stop generating new findings. The status is <code>Creating</code> when the analyzer creation is in progress and <code>Failed</code> when the analyzer creation has failed. </p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::AnalyzerStatus>,
@@ -378,20 +346,12 @@ pub mod analyzer_summary {
             self.status = input;
             self
         }
-        /// <p>The <code>statusReason</code> provides more details about the current status of the
-        /// analyzer. For example, if the creation for the analyzer fails, a <code>Failed</code> status
-        /// is returned. For an analyzer with organization as the type, this failure can be due to an
-        /// issue with creating the service-linked roles required in the member accounts of the Amazon Web Services
-        /// organization.</p>
+        /// <p>The <code>statusReason</code> provides more details about the current status of the analyzer. For example, if the creation for the analyzer fails, a <code>Failed</code> status is returned. For an analyzer with organization as the type, this failure can be due to an issue with creating the service-linked roles required in the member accounts of the Amazon Web Services organization.</p>
         pub fn status_reason(mut self, input: crate::model::StatusReason) -> Self {
             self.status_reason = Some(input);
             self
         }
-        /// <p>The <code>statusReason</code> provides more details about the current status of the
-        /// analyzer. For example, if the creation for the analyzer fails, a <code>Failed</code> status
-        /// is returned. For an analyzer with organization as the type, this failure can be due to an
-        /// issue with creating the service-linked roles required in the member accounts of the Amazon Web Services
-        /// organization.</p>
+        /// <p>The <code>statusReason</code> provides more details about the current status of the analyzer. For example, if the creation for the analyzer fails, a <code>Failed</code> status is returned. For an analyzer with organization as the type, this failure can be due to an issue with creating the service-linked roles required in the member accounts of the Amazon Web Services organization.</p>
         pub fn set_status_reason(
             mut self,
             input: std::option::Option<crate::model::StatusReason>,
@@ -422,10 +382,7 @@ impl AnalyzerSummary {
     }
 }
 
-/// <p>Provides more details about the current status of the analyzer. For example, if the
-/// creation for the analyzer fails, a <code>Failed</code> status is returned. For an analyzer
-/// with organization as the type, this failure can be due to an issue with creating the
-/// service-linked roles required in the member accounts of the Amazon Web Services organization.</p>
+/// <p>Provides more details about the current status of the analyzer. For example, if the creation for the analyzer fails, a <code>Failed</code> status is returned. For an analyzer with organization as the type, this failure can be due to an issue with creating the service-linked roles required in the member accounts of the Amazon Web Services organization.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StatusReason {
@@ -667,8 +624,7 @@ impl AsRef<str> for Type {
     }
 }
 
-/// <p>An criterion statement in an archive rule. Each archive rule may have multiple
-/// criteria.</p>
+/// <p>An criterion statement in an archive rule. Each archive rule may have multiple criteria.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InlineArchiveRule {
@@ -1040,45 +996,35 @@ impl ArchiveRuleSummary {
     }
 }
 
-/// <p>A finding in a policy. Each finding is an actionable recommendation that can be used to
-/// improve the policy.</p>
+/// <p>A finding in a policy. Each finding is an actionable recommendation that can be used to improve the policy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidatePolicyFinding {
-    /// <p>A localized message that explains the finding and provides guidance on how to address
-    /// it.</p>
+    /// <p>A localized message that explains the finding and provides guidance on how to address it.</p>
     pub finding_details: std::option::Option<std::string::String>,
     /// <p>The impact of the finding.</p>
-    /// <p>Security warnings report when the policy allows access that we consider overly
-    /// permissive.</p>
+    /// <p>Security warnings report when the policy allows access that we consider overly permissive.</p>
     /// <p>Errors report when a part of the policy is not functional.</p>
-    /// <p>Warnings report non-security issues when a policy does not conform to policy writing
-    /// best practices.</p>
-    /// <p>Suggestions recommend stylistic improvements in the policy that do not impact
-    /// access.</p>
+    /// <p>Warnings report non-security issues when a policy does not conform to policy writing best practices.</p>
+    /// <p>Suggestions recommend stylistic improvements in the policy that do not impact access.</p>
     pub finding_type: std::option::Option<crate::model::ValidatePolicyFindingType>,
     /// <p>The issue code provides an identifier of the issue associated with this finding.</p>
     pub issue_code: std::option::Option<std::string::String>,
     /// <p>A link to additional documentation about the type of finding.</p>
     pub learn_more_link: std::option::Option<std::string::String>,
-    /// <p>The list of locations in the policy document that are related to the finding. The issue
-    /// code provides a summary of an issue identified by the finding.</p>
+    /// <p>The list of locations in the policy document that are related to the finding. The issue code provides a summary of an issue identified by the finding.</p>
     pub locations: std::option::Option<std::vec::Vec<crate::model::Location>>,
 }
 impl ValidatePolicyFinding {
-    /// <p>A localized message that explains the finding and provides guidance on how to address
-    /// it.</p>
+    /// <p>A localized message that explains the finding and provides guidance on how to address it.</p>
     pub fn finding_details(&self) -> std::option::Option<&str> {
         self.finding_details.as_deref()
     }
     /// <p>The impact of the finding.</p>
-    /// <p>Security warnings report when the policy allows access that we consider overly
-    /// permissive.</p>
+    /// <p>Security warnings report when the policy allows access that we consider overly permissive.</p>
     /// <p>Errors report when a part of the policy is not functional.</p>
-    /// <p>Warnings report non-security issues when a policy does not conform to policy writing
-    /// best practices.</p>
-    /// <p>Suggestions recommend stylistic improvements in the policy that do not impact
-    /// access.</p>
+    /// <p>Warnings report non-security issues when a policy does not conform to policy writing best practices.</p>
+    /// <p>Suggestions recommend stylistic improvements in the policy that do not impact access.</p>
     pub fn finding_type(&self) -> std::option::Option<&crate::model::ValidatePolicyFindingType> {
         self.finding_type.as_ref()
     }
@@ -1090,8 +1036,7 @@ impl ValidatePolicyFinding {
     pub fn learn_more_link(&self) -> std::option::Option<&str> {
         self.learn_more_link.as_deref()
     }
-    /// <p>The list of locations in the policy document that are related to the finding. The issue
-    /// code provides a summary of an issue identified by the finding.</p>
+    /// <p>The list of locations in the policy document that are related to the finding. The issue code provides a summary of an issue identified by the finding.</p>
     pub fn locations(&self) -> std::option::Option<&[crate::model::Location]> {
         self.locations.as_deref()
     }
@@ -1120,14 +1065,12 @@ pub mod validate_policy_finding {
         pub(crate) locations: std::option::Option<std::vec::Vec<crate::model::Location>>,
     }
     impl Builder {
-        /// <p>A localized message that explains the finding and provides guidance on how to address
-        /// it.</p>
+        /// <p>A localized message that explains the finding and provides guidance on how to address it.</p>
         pub fn finding_details(mut self, input: impl Into<std::string::String>) -> Self {
             self.finding_details = Some(input.into());
             self
         }
-        /// <p>A localized message that explains the finding and provides guidance on how to address
-        /// it.</p>
+        /// <p>A localized message that explains the finding and provides guidance on how to address it.</p>
         pub fn set_finding_details(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1136,25 +1079,19 @@ pub mod validate_policy_finding {
             self
         }
         /// <p>The impact of the finding.</p>
-        /// <p>Security warnings report when the policy allows access that we consider overly
-        /// permissive.</p>
+        /// <p>Security warnings report when the policy allows access that we consider overly permissive.</p>
         /// <p>Errors report when a part of the policy is not functional.</p>
-        /// <p>Warnings report non-security issues when a policy does not conform to policy writing
-        /// best practices.</p>
-        /// <p>Suggestions recommend stylistic improvements in the policy that do not impact
-        /// access.</p>
+        /// <p>Warnings report non-security issues when a policy does not conform to policy writing best practices.</p>
+        /// <p>Suggestions recommend stylistic improvements in the policy that do not impact access.</p>
         pub fn finding_type(mut self, input: crate::model::ValidatePolicyFindingType) -> Self {
             self.finding_type = Some(input);
             self
         }
         /// <p>The impact of the finding.</p>
-        /// <p>Security warnings report when the policy allows access that we consider overly
-        /// permissive.</p>
+        /// <p>Security warnings report when the policy allows access that we consider overly permissive.</p>
         /// <p>Errors report when a part of the policy is not functional.</p>
-        /// <p>Warnings report non-security issues when a policy does not conform to policy writing
-        /// best practices.</p>
-        /// <p>Suggestions recommend stylistic improvements in the policy that do not impact
-        /// access.</p>
+        /// <p>Warnings report non-security issues when a policy does not conform to policy writing best practices.</p>
+        /// <p>Suggestions recommend stylistic improvements in the policy that do not impact access.</p>
         pub fn set_finding_type(
             mut self,
             input: std::option::Option<crate::model::ValidatePolicyFindingType>,
@@ -1189,16 +1126,14 @@ pub mod validate_policy_finding {
         ///
         /// To override the contents of this collection use [`set_locations`](Self::set_locations).
         ///
-        /// <p>The list of locations in the policy document that are related to the finding. The issue
-        /// code provides a summary of an issue identified by the finding.</p>
+        /// <p>The list of locations in the policy document that are related to the finding. The issue code provides a summary of an issue identified by the finding.</p>
         pub fn locations(mut self, input: crate::model::Location) -> Self {
             let mut v = self.locations.unwrap_or_default();
             v.push(input);
             self.locations = Some(v);
             self
         }
-        /// <p>The list of locations in the policy document that are related to the finding. The issue
-        /// code provides a summary of an issue identified by the finding.</p>
+        /// <p>The list of locations in the policy document that are related to the finding. The issue code provides a summary of an issue identified by the finding.</p>
         pub fn set_locations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Location>>,
@@ -1225,8 +1160,7 @@ impl ValidatePolicyFinding {
     }
 }
 
-/// <p>A location in a policy that is represented as a path through the JSON representation and
-/// a corresponding span.</p>
+/// <p>A location in a policy that is represented as a path through the JSON representation and a corresponding span.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Location {
@@ -1308,8 +1242,7 @@ impl Location {
     }
 }
 
-/// <p>A span in a policy. The span consists of a start position (inclusive) and end position
-/// (exclusive).</p>
+/// <p>A span in a policy. The span consists of a start position (inclusive) and end position (exclusive).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Span {
@@ -1980,15 +1913,11 @@ impl AsRef<str> for FindingStatusUpdate {
 pub struct CloudTrailDetails {
     /// <p>A <code>Trail</code> object that contains settings for a trail.</p>
     pub trails: std::option::Option<std::vec::Vec<crate::model::Trail>>,
-    /// <p>The ARN of the service role that IAM Access Analyzer uses to access your CloudTrail trail and
-    /// service last accessed information.</p>
+    /// <p>The ARN of the service role that IAM Access Analyzer uses to access your CloudTrail trail and service last accessed information.</p>
     pub access_role: std::option::Option<std::string::String>,
-    /// <p>The start of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events
-    /// with a timestamp before this time are not considered to generate a policy.</p>
+    /// <p>The start of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp before this time are not considered to generate a policy.</p>
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The end of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with
-    /// a timestamp after this time are not considered to generate a policy. If this is not
-    /// included in the request, the default value is the current time.</p>
+    /// <p>The end of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp after this time are not considered to generate a policy. If this is not included in the request, the default value is the current time.</p>
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CloudTrailDetails {
@@ -1996,19 +1925,15 @@ impl CloudTrailDetails {
     pub fn trails(&self) -> std::option::Option<&[crate::model::Trail]> {
         self.trails.as_deref()
     }
-    /// <p>The ARN of the service role that IAM Access Analyzer uses to access your CloudTrail trail and
-    /// service last accessed information.</p>
+    /// <p>The ARN of the service role that IAM Access Analyzer uses to access your CloudTrail trail and service last accessed information.</p>
     pub fn access_role(&self) -> std::option::Option<&str> {
         self.access_role.as_deref()
     }
-    /// <p>The start of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events
-    /// with a timestamp before this time are not considered to generate a policy.</p>
+    /// <p>The start of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp before this time are not considered to generate a policy.</p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>The end of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with
-    /// a timestamp after this time are not considered to generate a policy. If this is not
-    /// included in the request, the default value is the current time.</p>
+    /// <p>The end of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp after this time are not considered to generate a policy. If this is not included in the request, the default value is the current time.</p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
@@ -2054,26 +1979,22 @@ pub mod cloud_trail_details {
             self.trails = input;
             self
         }
-        /// <p>The ARN of the service role that IAM Access Analyzer uses to access your CloudTrail trail and
-        /// service last accessed information.</p>
+        /// <p>The ARN of the service role that IAM Access Analyzer uses to access your CloudTrail trail and service last accessed information.</p>
         pub fn access_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.access_role = Some(input.into());
             self
         }
-        /// <p>The ARN of the service role that IAM Access Analyzer uses to access your CloudTrail trail and
-        /// service last accessed information.</p>
+        /// <p>The ARN of the service role that IAM Access Analyzer uses to access your CloudTrail trail and service last accessed information.</p>
         pub fn set_access_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.access_role = input;
             self
         }
-        /// <p>The start of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events
-        /// with a timestamp before this time are not considered to generate a policy.</p>
+        /// <p>The start of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp before this time are not considered to generate a policy.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>The start of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events
-        /// with a timestamp before this time are not considered to generate a policy.</p>
+        /// <p>The start of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp before this time are not considered to generate a policy.</p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2081,16 +2002,12 @@ pub mod cloud_trail_details {
             self.start_time = input;
             self
         }
-        /// <p>The end of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with
-        /// a timestamp after this time are not considered to generate a policy. If this is not
-        /// included in the request, the default value is the current time.</p>
+        /// <p>The end of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp after this time are not considered to generate a policy. If this is not included in the request, the default value is the current time.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
-        /// <p>The end of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with
-        /// a timestamp after this time are not considered to generate a policy. If this is not
-        /// included in the request, the default value is the current time.</p>
+        /// <p>The end of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp after this time are not considered to generate a policy. If this is not included in the request, the default value is the current time.</p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2120,19 +2037,15 @@ impl CloudTrailDetails {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Trail {
-    /// <p>Specifies the ARN of the trail. The format of a trail ARN is
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>.</p>
+    /// <p>Specifies the ARN of the trail. The format of a trail ARN is <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>.</p>
     pub cloud_trail_arn: std::option::Option<std::string::String>,
     /// <p>A list of regions to get CloudTrail data from and analyze to generate a policy.</p>
     pub regions: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Possible values are <code>true</code> or <code>false</code>. If set to
-    /// <code>true</code>, IAM Access Analyzer retrieves CloudTrail data from all regions to analyze and
-    /// generate a policy.</p>
+    /// <p>Possible values are <code>true</code> or <code>false</code>. If set to <code>true</code>, IAM Access Analyzer retrieves CloudTrail data from all regions to analyze and generate a policy.</p>
     pub all_regions: std::option::Option<bool>,
 }
 impl Trail {
-    /// <p>Specifies the ARN of the trail. The format of a trail ARN is
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>.</p>
+    /// <p>Specifies the ARN of the trail. The format of a trail ARN is <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>.</p>
     pub fn cloud_trail_arn(&self) -> std::option::Option<&str> {
         self.cloud_trail_arn.as_deref()
     }
@@ -2140,9 +2053,7 @@ impl Trail {
     pub fn regions(&self) -> std::option::Option<&[std::string::String]> {
         self.regions.as_deref()
     }
-    /// <p>Possible values are <code>true</code> or <code>false</code>. If set to
-    /// <code>true</code>, IAM Access Analyzer retrieves CloudTrail data from all regions to analyze and
-    /// generate a policy.</p>
+    /// <p>Possible values are <code>true</code> or <code>false</code>. If set to <code>true</code>, IAM Access Analyzer retrieves CloudTrail data from all regions to analyze and generate a policy.</p>
     pub fn all_regions(&self) -> std::option::Option<bool> {
         self.all_regions
     }
@@ -2167,14 +2078,12 @@ pub mod trail {
         pub(crate) all_regions: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>Specifies the ARN of the trail. The format of a trail ARN is
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>.</p>
+        /// <p>Specifies the ARN of the trail. The format of a trail ARN is <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>.</p>
         pub fn cloud_trail_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.cloud_trail_arn = Some(input.into());
             self
         }
-        /// <p>Specifies the ARN of the trail. The format of a trail ARN is
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>.</p>
+        /// <p>Specifies the ARN of the trail. The format of a trail ARN is <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>.</p>
         pub fn set_cloud_trail_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2201,16 +2110,12 @@ pub mod trail {
             self.regions = input;
             self
         }
-        /// <p>Possible values are <code>true</code> or <code>false</code>. If set to
-        /// <code>true</code>, IAM Access Analyzer retrieves CloudTrail data from all regions to analyze and
-        /// generate a policy.</p>
+        /// <p>Possible values are <code>true</code> or <code>false</code>. If set to <code>true</code>, IAM Access Analyzer retrieves CloudTrail data from all regions to analyze and generate a policy.</p>
         pub fn all_regions(mut self, input: bool) -> Self {
             self.all_regions = Some(input);
             self
         }
-        /// <p>Possible values are <code>true</code> or <code>false</code>. If set to
-        /// <code>true</code>, IAM Access Analyzer retrieves CloudTrail data from all regions to analyze and
-        /// generate a policy.</p>
+        /// <p>Possible values are <code>true</code> or <code>false</code>. If set to <code>true</code>, IAM Access Analyzer retrieves CloudTrail data from all regions to analyze and generate a policy.</p>
         pub fn set_all_regions(mut self, input: std::option::Option<bool>) -> Self {
             self.all_regions = input;
             self
@@ -2232,8 +2137,7 @@ impl Trail {
     }
 }
 
-/// <p>Contains the ARN details about the IAM entity for which the policy is
-/// generated.</p>
+/// <p>Contains the ARN details about the IAM entity for which the policy is generated.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PolicyGenerationDetails {
@@ -2294,10 +2198,7 @@ impl PolicyGenerationDetails {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PolicyGeneration {
-    /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code>
-    /// operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to
-    /// retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel
-    /// the policy generation request.</p>
+    /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy.</p>
     pub principal_arn: std::option::Option<std::string::String>,
@@ -2309,10 +2210,7 @@ pub struct PolicyGeneration {
     pub completed_on: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl PolicyGeneration {
-    /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code>
-    /// operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to
-    /// retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel
-    /// the policy generation request.</p>
+    /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
@@ -2357,18 +2255,12 @@ pub mod policy_generation {
         pub(crate) completed_on: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code>
-        /// operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to
-        /// retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel
-        /// the policy generation request.</p>
+        /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
         }
-        /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code>
-        /// operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to
-        /// retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel
-        /// the policy generation request.</p>
+        /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -2513,13 +2405,11 @@ pub struct FindingSummary {
     /// <p>The external principal that has access to a resource within the zone of trust.</p>
     pub principal:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The action in the analyzed policy statement that an external principal has permission to
-    /// use.</p>
+    /// <p>The action in the analyzed policy statement that an external principal has permission to use.</p>
     pub action: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The resource that the external principal has access to.</p>
     pub resource: std::option::Option<std::string::String>,
-    /// <p>Indicates whether the finding reports a resource that has a policy that allows public
-    /// access.</p>
+    /// <p>Indicates whether the finding reports a resource that has a policy that allows public access.</p>
     pub is_public: std::option::Option<bool>,
     /// <p>The type of the resource that the external principal has access to.</p>
     pub resource_type: std::option::Option<crate::model::ResourceType>,
@@ -2528,8 +2418,7 @@ pub struct FindingSummary {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The time at which the finding was created.</p>
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The time at which the resource-based policy that generated the finding was
-    /// analyzed.</p>
+    /// <p>The time at which the resource-based policy that generated the finding was analyzed.</p>
     pub analyzed_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which the finding was most recently updated.</p>
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -2539,8 +2428,7 @@ pub struct FindingSummary {
     pub resource_owner_account: std::option::Option<std::string::String>,
     /// <p>The error that resulted in an Error finding.</p>
     pub error: std::option::Option<std::string::String>,
-    /// <p>The sources of the finding. This indicates how the access that generated the finding is
-    /// granted. It is populated for Amazon S3 bucket findings.</p>
+    /// <p>The sources of the finding. This indicates how the access that generated the finding is granted. It is populated for Amazon S3 bucket findings.</p>
     pub sources: std::option::Option<std::vec::Vec<crate::model::FindingSource>>,
 }
 impl FindingSummary {
@@ -2555,8 +2443,7 @@ impl FindingSummary {
     {
         self.principal.as_ref()
     }
-    /// <p>The action in the analyzed policy statement that an external principal has permission to
-    /// use.</p>
+    /// <p>The action in the analyzed policy statement that an external principal has permission to use.</p>
     pub fn action(&self) -> std::option::Option<&[std::string::String]> {
         self.action.as_deref()
     }
@@ -2564,8 +2451,7 @@ impl FindingSummary {
     pub fn resource(&self) -> std::option::Option<&str> {
         self.resource.as_deref()
     }
-    /// <p>Indicates whether the finding reports a resource that has a policy that allows public
-    /// access.</p>
+    /// <p>Indicates whether the finding reports a resource that has a policy that allows public access.</p>
     pub fn is_public(&self) -> std::option::Option<bool> {
         self.is_public
     }
@@ -2584,8 +2470,7 @@ impl FindingSummary {
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>The time at which the resource-based policy that generated the finding was
-    /// analyzed.</p>
+    /// <p>The time at which the resource-based policy that generated the finding was analyzed.</p>
     pub fn analyzed_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.analyzed_at.as_ref()
     }
@@ -2605,8 +2490,7 @@ impl FindingSummary {
     pub fn error(&self) -> std::option::Option<&str> {
         self.error.as_deref()
     }
-    /// <p>The sources of the finding. This indicates how the access that generated the finding is
-    /// granted. It is populated for Amazon S3 bucket findings.</p>
+    /// <p>The sources of the finding. This indicates how the access that generated the finding is granted. It is populated for Amazon S3 bucket findings.</p>
     pub fn sources(&self) -> std::option::Option<&[crate::model::FindingSource]> {
         self.sources.as_deref()
     }
@@ -2696,16 +2580,14 @@ pub mod finding_summary {
         ///
         /// To override the contents of this collection use [`set_action`](Self::set_action).
         ///
-        /// <p>The action in the analyzed policy statement that an external principal has permission to
-        /// use.</p>
+        /// <p>The action in the analyzed policy statement that an external principal has permission to use.</p>
         pub fn action(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.action.unwrap_or_default();
             v.push(input.into());
             self.action = Some(v);
             self
         }
-        /// <p>The action in the analyzed policy statement that an external principal has permission to
-        /// use.</p>
+        /// <p>The action in the analyzed policy statement that an external principal has permission to use.</p>
         pub fn set_action(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2723,14 +2605,12 @@ pub mod finding_summary {
             self.resource = input;
             self
         }
-        /// <p>Indicates whether the finding reports a resource that has a policy that allows public
-        /// access.</p>
+        /// <p>Indicates whether the finding reports a resource that has a policy that allows public access.</p>
         pub fn is_public(mut self, input: bool) -> Self {
             self.is_public = Some(input);
             self
         }
-        /// <p>Indicates whether the finding reports a resource that has a policy that allows public
-        /// access.</p>
+        /// <p>Indicates whether the finding reports a resource that has a policy that allows public access.</p>
         pub fn set_is_public(mut self, input: std::option::Option<bool>) -> Self {
             self.is_public = input;
             self
@@ -2786,14 +2666,12 @@ pub mod finding_summary {
             self.created_at = input;
             self
         }
-        /// <p>The time at which the resource-based policy that generated the finding was
-        /// analyzed.</p>
+        /// <p>The time at which the resource-based policy that generated the finding was analyzed.</p>
         pub fn analyzed_at(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.analyzed_at = Some(input);
             self
         }
-        /// <p>The time at which the resource-based policy that generated the finding was
-        /// analyzed.</p>
+        /// <p>The time at which the resource-based policy that generated the finding was analyzed.</p>
         pub fn set_analyzed_at(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2854,16 +2732,14 @@ pub mod finding_summary {
         ///
         /// To override the contents of this collection use [`set_sources`](Self::set_sources).
         ///
-        /// <p>The sources of the finding. This indicates how the access that generated the finding is
-        /// granted. It is populated for Amazon S3 bucket findings.</p>
+        /// <p>The sources of the finding. This indicates how the access that generated the finding is granted. It is populated for Amazon S3 bucket findings.</p>
         pub fn sources(mut self, input: crate::model::FindingSource) -> Self {
             let mut v = self.sources.unwrap_or_default();
             v.push(input);
             self.sources = Some(v);
             self
         }
-        /// <p>The sources of the finding. This indicates how the access that generated the finding is
-        /// granted. It is populated for Amazon S3 bucket findings.</p>
+        /// <p>The sources of the finding. This indicates how the access that generated the finding is granted. It is populated for Amazon S3 bucket findings.</p>
         pub fn set_sources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FindingSource>>,
@@ -2899,15 +2775,13 @@ impl FindingSummary {
     }
 }
 
-/// <p>The source of the finding. This indicates how the access that generated the finding is
-/// granted. It is populated for Amazon S3 bucket findings.</p>
+/// <p>The source of the finding. This indicates how the access that generated the finding is granted. It is populated for Amazon S3 bucket findings.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FindingSource {
     /// <p>Indicates the type of access that generated the finding.</p>
     pub r#type: std::option::Option<crate::model::FindingSourceType>,
-    /// <p>Includes details about how the access that generated the finding is granted. This is
-    /// populated for Amazon S3 bucket findings.</p>
+    /// <p>Includes details about how the access that generated the finding is granted. This is populated for Amazon S3 bucket findings.</p>
     pub detail: std::option::Option<crate::model::FindingSourceDetail>,
 }
 impl FindingSource {
@@ -2915,8 +2789,7 @@ impl FindingSource {
     pub fn r#type(&self) -> std::option::Option<&crate::model::FindingSourceType> {
         self.r#type.as_ref()
     }
-    /// <p>Includes details about how the access that generated the finding is granted. This is
-    /// populated for Amazon S3 bucket findings.</p>
+    /// <p>Includes details about how the access that generated the finding is granted. This is populated for Amazon S3 bucket findings.</p>
     pub fn detail(&self) -> std::option::Option<&crate::model::FindingSourceDetail> {
         self.detail.as_ref()
     }
@@ -2952,14 +2825,12 @@ pub mod finding_source {
             self.r#type = input;
             self
         }
-        /// <p>Includes details about how the access that generated the finding is granted. This is
-        /// populated for Amazon S3 bucket findings.</p>
+        /// <p>Includes details about how the access that generated the finding is granted. This is populated for Amazon S3 bucket findings.</p>
         pub fn detail(mut self, input: crate::model::FindingSourceDetail) -> Self {
             self.detail = Some(input);
             self
         }
-        /// <p>Includes details about how the access that generated the finding is granted. This is
-        /// populated for Amazon S3 bucket findings.</p>
+        /// <p>Includes details about how the access that generated the finding is granted. This is populated for Amazon S3 bucket findings.</p>
         pub fn set_detail(
             mut self,
             input: std::option::Option<crate::model::FindingSourceDetail>,
@@ -2983,18 +2854,15 @@ impl FindingSource {
     }
 }
 
-/// <p>Includes details about how the access that generated the finding is granted. This is
-/// populated for Amazon S3 bucket findings.</p>
+/// <p>Includes details about how the access that generated the finding is granted. This is populated for Amazon S3 bucket findings.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FindingSourceDetail {
-    /// <p>The ARN of the access point that generated the finding. The ARN format depends on
-    /// whether the ARN represents an access point or a multi-region access point.</p>
+    /// <p>The ARN of the access point that generated the finding. The ARN format depends on whether the ARN represents an access point or a multi-region access point.</p>
     pub access_point_arn: std::option::Option<std::string::String>,
 }
 impl FindingSourceDetail {
-    /// <p>The ARN of the access point that generated the finding. The ARN format depends on
-    /// whether the ARN represents an access point or a multi-region access point.</p>
+    /// <p>The ARN of the access point that generated the finding. The ARN format depends on whether the ARN represents an access point or a multi-region access point.</p>
     pub fn access_point_arn(&self) -> std::option::Option<&str> {
         self.access_point_arn.as_deref()
     }
@@ -3015,14 +2883,12 @@ pub mod finding_source_detail {
         pub(crate) access_point_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ARN of the access point that generated the finding. The ARN format depends on
-        /// whether the ARN represents an access point or a multi-region access point.</p>
+        /// <p>The ARN of the access point that generated the finding. The ARN format depends on whether the ARN represents an access point or a multi-region access point.</p>
         pub fn access_point_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.access_point_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the access point that generated the finding. The ARN format depends on
-        /// whether the ARN represents an access point or a multi-region access point.</p>
+        /// <p>The ARN of the access point that generated the finding. The ARN format depends on whether the ARN represents an access point or a multi-region access point.</p>
         pub fn set_access_point_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3487,25 +3353,12 @@ pub struct AccessPreviewSummary {
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the access preview.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Creating</code> - The access preview creation is in progress.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Completed</code> - The access preview is complete and previews the findings
-    /// for external access to the resource.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Failed</code> - The access preview creation has failed.</p>
-    /// </li>
+    /// <li> <p> <code>Creating</code> - The access preview creation is in progress.</p> </li>
+    /// <li> <p> <code>Completed</code> - The access preview is complete and previews the findings for external access to the resource.</p> </li>
+    /// <li> <p> <code>Failed</code> - The access preview creation has failed.</p> </li>
     /// </ul>
     pub status: std::option::Option<crate::model::AccessPreviewStatus>,
-    /// <p>Provides more details about the current status of the access preview. For example, if
-    /// the creation of the access preview fails, a <code>Failed</code> status is returned. This
-    /// failure can be due to an internal issue with the analysis or due to an invalid proposed
-    /// resource configuration.</p>
+    /// <p>Provides more details about the current status of the access preview. For example, if the creation of the access preview fails, a <code>Failed</code> status is returned. This failure can be due to an internal issue with the analysis or due to an invalid proposed resource configuration.</p>
     pub status_reason: std::option::Option<crate::model::AccessPreviewStatusReason>,
 }
 impl AccessPreviewSummary {
@@ -3523,27 +3376,14 @@ impl AccessPreviewSummary {
     }
     /// <p>The status of the access preview.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Creating</code> - The access preview creation is in progress.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Completed</code> - The access preview is complete and previews the findings
-    /// for external access to the resource.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Failed</code> - The access preview creation has failed.</p>
-    /// </li>
+    /// <li> <p> <code>Creating</code> - The access preview creation is in progress.</p> </li>
+    /// <li> <p> <code>Completed</code> - The access preview is complete and previews the findings for external access to the resource.</p> </li>
+    /// <li> <p> <code>Failed</code> - The access preview creation has failed.</p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::AccessPreviewStatus> {
         self.status.as_ref()
     }
-    /// <p>Provides more details about the current status of the access preview. For example, if
-    /// the creation of the access preview fails, a <code>Failed</code> status is returned. This
-    /// failure can be due to an internal issue with the analysis or due to an invalid proposed
-    /// resource configuration.</p>
+    /// <p>Provides more details about the current status of the access preview. For example, if the creation of the access preview fails, a <code>Failed</code> status is returned. This failure can be due to an internal issue with the analysis or due to an invalid proposed resource configuration.</p>
     pub fn status_reason(&self) -> std::option::Option<&crate::model::AccessPreviewStatusReason> {
         self.status_reason.as_ref()
     }
@@ -3607,19 +3447,9 @@ pub mod access_preview_summary {
         }
         /// <p>The status of the access preview.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Creating</code> - The access preview creation is in progress.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Completed</code> - The access preview is complete and previews the findings
-        /// for external access to the resource.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Failed</code> - The access preview creation has failed.</p>
-        /// </li>
+        /// <li> <p> <code>Creating</code> - The access preview creation is in progress.</p> </li>
+        /// <li> <p> <code>Completed</code> - The access preview is complete and previews the findings for external access to the resource.</p> </li>
+        /// <li> <p> <code>Failed</code> - The access preview creation has failed.</p> </li>
         /// </ul>
         pub fn status(mut self, input: crate::model::AccessPreviewStatus) -> Self {
             self.status = Some(input);
@@ -3627,19 +3457,9 @@ pub mod access_preview_summary {
         }
         /// <p>The status of the access preview.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Creating</code> - The access preview creation is in progress.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Completed</code> - The access preview is complete and previews the findings
-        /// for external access to the resource.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Failed</code> - The access preview creation has failed.</p>
-        /// </li>
+        /// <li> <p> <code>Creating</code> - The access preview creation is in progress.</p> </li>
+        /// <li> <p> <code>Completed</code> - The access preview is complete and previews the findings for external access to the resource.</p> </li>
+        /// <li> <p> <code>Failed</code> - The access preview creation has failed.</p> </li>
         /// </ul>
         pub fn set_status(
             mut self,
@@ -3648,18 +3468,12 @@ pub mod access_preview_summary {
             self.status = input;
             self
         }
-        /// <p>Provides more details about the current status of the access preview. For example, if
-        /// the creation of the access preview fails, a <code>Failed</code> status is returned. This
-        /// failure can be due to an internal issue with the analysis or due to an invalid proposed
-        /// resource configuration.</p>
+        /// <p>Provides more details about the current status of the access preview. For example, if the creation of the access preview fails, a <code>Failed</code> status is returned. This failure can be due to an internal issue with the analysis or due to an invalid proposed resource configuration.</p>
         pub fn status_reason(mut self, input: crate::model::AccessPreviewStatusReason) -> Self {
             self.status_reason = Some(input);
             self
         }
-        /// <p>Provides more details about the current status of the access preview. For example, if
-        /// the creation of the access preview fails, a <code>Failed</code> status is returned. This
-        /// failure can be due to an internal issue with the analysis or due to an invalid proposed
-        /// resource configuration.</p>
+        /// <p>Provides more details about the current status of the access preview. For example, if the creation of the access preview fails, a <code>Failed</code> status is returned. This failure can be due to an internal issue with the analysis or due to an invalid proposed resource configuration.</p>
         pub fn set_status_reason(
             mut self,
             input: std::option::Option<crate::model::AccessPreviewStatusReason>,
@@ -3686,10 +3500,7 @@ impl AccessPreviewSummary {
     }
 }
 
-/// <p>Provides more details about the current status of the access preview. For example, if
-/// the creation of the access preview fails, a <code>Failed</code> status is returned. This
-/// failure can be due to an internal issue with the analysis or due to an invalid proposed
-/// resource configuration.</p>
+/// <p>Provides more details about the current status of the access preview. For example, if the creation of the access preview fails, a <code>Failed</code> status is returned. This failure can be due to an internal issue with the analysis or due to an invalid proposed resource configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessPreviewStatusReason {
@@ -3862,80 +3673,51 @@ impl AsRef<str> for AccessPreviewStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessPreviewFinding {
-    /// <p>The ID of the access preview finding. This ID uniquely identifies the element in the
-    /// list of access preview findings and is not related to the finding ID in Access
-    /// Analyzer.</p>
+    /// <p>The ID of the access preview finding. This ID uniquely identifies the element in the list of access preview findings and is not related to the finding ID in Access Analyzer.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The existing ID of the finding in IAM Access Analyzer, provided only for existing
-    /// findings.</p>
+    /// <p>The existing ID of the finding in IAM Access Analyzer, provided only for existing findings.</p>
     pub existing_finding_id: std::option::Option<std::string::String>,
     /// <p>The existing status of the finding, provided only for existing findings.</p>
     pub existing_finding_status: std::option::Option<crate::model::FindingStatus>,
     /// <p>The external principal that has access to a resource within the zone of trust.</p>
     pub principal:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The action in the analyzed policy statement that an external principal has permission to
-    /// perform.</p>
+    /// <p>The action in the analyzed policy statement that an external principal has permission to perform.</p>
     pub action: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The condition in the analyzed policy statement that resulted in a finding.</p>
     pub condition:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The resource that an external principal has access to. This is the resource associated
-    /// with the access preview.</p>
+    /// <p>The resource that an external principal has access to. This is the resource associated with the access preview.</p>
     pub resource: std::option::Option<std::string::String>,
-    /// <p>Indicates whether the policy that generated the finding allows public access to the
-    /// resource.</p>
+    /// <p>Indicates whether the policy that generated the finding allows public access to the resource.</p>
     pub is_public: std::option::Option<bool>,
     /// <p>The type of the resource that can be accessed in the finding.</p>
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>The time at which the access preview finding was created.</p>
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Provides context on how the access preview finding compares to existing access
-    /// identified in IAM Access Analyzer.</p>
+    /// <p>Provides context on how the access preview finding compares to existing access identified in IAM Access Analyzer.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>New</code> - The finding is for newly-introduced access.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Unchanged</code> - The preview finding is an existing finding that would
-    /// remain unchanged.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Changed</code> - The preview finding is an existing finding with a change in
-    /// status.</p>
-    /// </li>
+    /// <li> <p> <code>New</code> - The finding is for newly-introduced access.</p> </li>
+    /// <li> <p> <code>Unchanged</code> - The preview finding is an existing finding that would remain unchanged.</p> </li>
+    /// <li> <p> <code>Changed</code> - The preview finding is an existing finding with a change in status.</p> </li>
     /// </ul>
-    /// <p>For example, a <code>Changed</code> finding with preview status <code>Resolved</code>
-    /// and existing status <code>Active</code> indicates the existing <code>Active</code> finding
-    /// would become <code>Resolved</code> as a result of the proposed permissions change.</p>
+    /// <p>For example, a <code>Changed</code> finding with preview status <code>Resolved</code> and existing status <code>Active</code> indicates the existing <code>Active</code> finding would become <code>Resolved</code> as a result of the proposed permissions change.</p>
     pub change_type: std::option::Option<crate::model::FindingChangeType>,
-    /// <p>The preview status of the finding. This is what the status of the finding would be after
-    /// permissions deployment. For example, a <code>Changed</code> finding with preview status
-    /// <code>Resolved</code> and existing status <code>Active</code> indicates the existing
-    /// <code>Active</code> finding would become <code>Resolved</code> as a result of the
-    /// proposed permissions change.</p>
+    /// <p>The preview status of the finding. This is what the status of the finding would be after permissions deployment. For example, a <code>Changed</code> finding with preview status <code>Resolved</code> and existing status <code>Active</code> indicates the existing <code>Active</code> finding would become <code>Resolved</code> as a result of the proposed permissions change.</p>
     pub status: std::option::Option<crate::model::FindingStatus>,
-    /// <p>The Amazon Web Services account ID that owns the resource. For most Amazon Web Services resources, the owning
-    /// account is the account in which the resource was created.</p>
+    /// <p>The Amazon Web Services account ID that owns the resource. For most Amazon Web Services resources, the owning account is the account in which the resource was created.</p>
     pub resource_owner_account: std::option::Option<std::string::String>,
     /// <p>An error.</p>
     pub error: std::option::Option<std::string::String>,
-    /// <p>The sources of the finding. This indicates how the access that generated the finding is
-    /// granted. It is populated for Amazon S3 bucket findings.</p>
+    /// <p>The sources of the finding. This indicates how the access that generated the finding is granted. It is populated for Amazon S3 bucket findings.</p>
     pub sources: std::option::Option<std::vec::Vec<crate::model::FindingSource>>,
 }
 impl AccessPreviewFinding {
-    /// <p>The ID of the access preview finding. This ID uniquely identifies the element in the
-    /// list of access preview findings and is not related to the finding ID in Access
-    /// Analyzer.</p>
+    /// <p>The ID of the access preview finding. This ID uniquely identifies the element in the list of access preview findings and is not related to the finding ID in Access Analyzer.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The existing ID of the finding in IAM Access Analyzer, provided only for existing
-    /// findings.</p>
+    /// <p>The existing ID of the finding in IAM Access Analyzer, provided only for existing findings.</p>
     pub fn existing_finding_id(&self) -> std::option::Option<&str> {
         self.existing_finding_id.as_deref()
     }
@@ -3950,8 +3732,7 @@ impl AccessPreviewFinding {
     {
         self.principal.as_ref()
     }
-    /// <p>The action in the analyzed policy statement that an external principal has permission to
-    /// perform.</p>
+    /// <p>The action in the analyzed policy statement that an external principal has permission to perform.</p>
     pub fn action(&self) -> std::option::Option<&[std::string::String]> {
         self.action.as_deref()
     }
@@ -3962,13 +3743,11 @@ impl AccessPreviewFinding {
     {
         self.condition.as_ref()
     }
-    /// <p>The resource that an external principal has access to. This is the resource associated
-    /// with the access preview.</p>
+    /// <p>The resource that an external principal has access to. This is the resource associated with the access preview.</p>
     pub fn resource(&self) -> std::option::Option<&str> {
         self.resource.as_deref()
     }
-    /// <p>Indicates whether the policy that generated the finding allows public access to the
-    /// resource.</p>
+    /// <p>Indicates whether the policy that generated the finding allows public access to the resource.</p>
     pub fn is_public(&self) -> std::option::Option<bool> {
         self.is_public
     }
@@ -3980,40 +3759,21 @@ impl AccessPreviewFinding {
     pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>Provides context on how the access preview finding compares to existing access
-    /// identified in IAM Access Analyzer.</p>
+    /// <p>Provides context on how the access preview finding compares to existing access identified in IAM Access Analyzer.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>New</code> - The finding is for newly-introduced access.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Unchanged</code> - The preview finding is an existing finding that would
-    /// remain unchanged.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Changed</code> - The preview finding is an existing finding with a change in
-    /// status.</p>
-    /// </li>
+    /// <li> <p> <code>New</code> - The finding is for newly-introduced access.</p> </li>
+    /// <li> <p> <code>Unchanged</code> - The preview finding is an existing finding that would remain unchanged.</p> </li>
+    /// <li> <p> <code>Changed</code> - The preview finding is an existing finding with a change in status.</p> </li>
     /// </ul>
-    /// <p>For example, a <code>Changed</code> finding with preview status <code>Resolved</code>
-    /// and existing status <code>Active</code> indicates the existing <code>Active</code> finding
-    /// would become <code>Resolved</code> as a result of the proposed permissions change.</p>
+    /// <p>For example, a <code>Changed</code> finding with preview status <code>Resolved</code> and existing status <code>Active</code> indicates the existing <code>Active</code> finding would become <code>Resolved</code> as a result of the proposed permissions change.</p>
     pub fn change_type(&self) -> std::option::Option<&crate::model::FindingChangeType> {
         self.change_type.as_ref()
     }
-    /// <p>The preview status of the finding. This is what the status of the finding would be after
-    /// permissions deployment. For example, a <code>Changed</code> finding with preview status
-    /// <code>Resolved</code> and existing status <code>Active</code> indicates the existing
-    /// <code>Active</code> finding would become <code>Resolved</code> as a result of the
-    /// proposed permissions change.</p>
+    /// <p>The preview status of the finding. This is what the status of the finding would be after permissions deployment. For example, a <code>Changed</code> finding with preview status <code>Resolved</code> and existing status <code>Active</code> indicates the existing <code>Active</code> finding would become <code>Resolved</code> as a result of the proposed permissions change.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::FindingStatus> {
         self.status.as_ref()
     }
-    /// <p>The Amazon Web Services account ID that owns the resource. For most Amazon Web Services resources, the owning
-    /// account is the account in which the resource was created.</p>
+    /// <p>The Amazon Web Services account ID that owns the resource. For most Amazon Web Services resources, the owning account is the account in which the resource was created.</p>
     pub fn resource_owner_account(&self) -> std::option::Option<&str> {
         self.resource_owner_account.as_deref()
     }
@@ -4021,8 +3781,7 @@ impl AccessPreviewFinding {
     pub fn error(&self) -> std::option::Option<&str> {
         self.error.as_deref()
     }
-    /// <p>The sources of the finding. This indicates how the access that generated the finding is
-    /// granted. It is populated for Amazon S3 bucket findings.</p>
+    /// <p>The sources of the finding. This indicates how the access that generated the finding is granted. It is populated for Amazon S3 bucket findings.</p>
     pub fn sources(&self) -> std::option::Option<&[crate::model::FindingSource]> {
         self.sources.as_deref()
     }
@@ -4075,28 +3834,22 @@ pub mod access_preview_finding {
         pub(crate) sources: std::option::Option<std::vec::Vec<crate::model::FindingSource>>,
     }
     impl Builder {
-        /// <p>The ID of the access preview finding. This ID uniquely identifies the element in the
-        /// list of access preview findings and is not related to the finding ID in Access
-        /// Analyzer.</p>
+        /// <p>The ID of the access preview finding. This ID uniquely identifies the element in the list of access preview findings and is not related to the finding ID in Access Analyzer.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The ID of the access preview finding. This ID uniquely identifies the element in the
-        /// list of access preview findings and is not related to the finding ID in Access
-        /// Analyzer.</p>
+        /// <p>The ID of the access preview finding. This ID uniquely identifies the element in the list of access preview findings and is not related to the finding ID in Access Analyzer.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
-        /// <p>The existing ID of the finding in IAM Access Analyzer, provided only for existing
-        /// findings.</p>
+        /// <p>The existing ID of the finding in IAM Access Analyzer, provided only for existing findings.</p>
         pub fn existing_finding_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.existing_finding_id = Some(input.into());
             self
         }
-        /// <p>The existing ID of the finding in IAM Access Analyzer, provided only for existing
-        /// findings.</p>
+        /// <p>The existing ID of the finding in IAM Access Analyzer, provided only for existing findings.</p>
         pub fn set_existing_finding_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4146,16 +3899,14 @@ pub mod access_preview_finding {
         ///
         /// To override the contents of this collection use [`set_action`](Self::set_action).
         ///
-        /// <p>The action in the analyzed policy statement that an external principal has permission to
-        /// perform.</p>
+        /// <p>The action in the analyzed policy statement that an external principal has permission to perform.</p>
         pub fn action(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.action.unwrap_or_default();
             v.push(input.into());
             self.action = Some(v);
             self
         }
-        /// <p>The action in the analyzed policy statement that an external principal has permission to
-        /// perform.</p>
+        /// <p>The action in the analyzed policy statement that an external principal has permission to perform.</p>
         pub fn set_action(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4188,26 +3939,22 @@ pub mod access_preview_finding {
             self.condition = input;
             self
         }
-        /// <p>The resource that an external principal has access to. This is the resource associated
-        /// with the access preview.</p>
+        /// <p>The resource that an external principal has access to. This is the resource associated with the access preview.</p>
         pub fn resource(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource = Some(input.into());
             self
         }
-        /// <p>The resource that an external principal has access to. This is the resource associated
-        /// with the access preview.</p>
+        /// <p>The resource that an external principal has access to. This is the resource associated with the access preview.</p>
         pub fn set_resource(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource = input;
             self
         }
-        /// <p>Indicates whether the policy that generated the finding allows public access to the
-        /// resource.</p>
+        /// <p>Indicates whether the policy that generated the finding allows public access to the resource.</p>
         pub fn is_public(mut self, input: bool) -> Self {
             self.is_public = Some(input);
             self
         }
-        /// <p>Indicates whether the policy that generated the finding allows public access to the
-        /// resource.</p>
+        /// <p>Indicates whether the policy that generated the finding allows public access to the resource.</p>
         pub fn set_is_public(mut self, input: std::option::Option<bool>) -> Self {
             self.is_public = input;
             self
@@ -4238,52 +3985,24 @@ pub mod access_preview_finding {
             self.created_at = input;
             self
         }
-        /// <p>Provides context on how the access preview finding compares to existing access
-        /// identified in IAM Access Analyzer.</p>
+        /// <p>Provides context on how the access preview finding compares to existing access identified in IAM Access Analyzer.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>New</code> - The finding is for newly-introduced access.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Unchanged</code> - The preview finding is an existing finding that would
-        /// remain unchanged.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Changed</code> - The preview finding is an existing finding with a change in
-        /// status.</p>
-        /// </li>
+        /// <li> <p> <code>New</code> - The finding is for newly-introduced access.</p> </li>
+        /// <li> <p> <code>Unchanged</code> - The preview finding is an existing finding that would remain unchanged.</p> </li>
+        /// <li> <p> <code>Changed</code> - The preview finding is an existing finding with a change in status.</p> </li>
         /// </ul>
-        /// <p>For example, a <code>Changed</code> finding with preview status <code>Resolved</code>
-        /// and existing status <code>Active</code> indicates the existing <code>Active</code> finding
-        /// would become <code>Resolved</code> as a result of the proposed permissions change.</p>
+        /// <p>For example, a <code>Changed</code> finding with preview status <code>Resolved</code> and existing status <code>Active</code> indicates the existing <code>Active</code> finding would become <code>Resolved</code> as a result of the proposed permissions change.</p>
         pub fn change_type(mut self, input: crate::model::FindingChangeType) -> Self {
             self.change_type = Some(input);
             self
         }
-        /// <p>Provides context on how the access preview finding compares to existing access
-        /// identified in IAM Access Analyzer.</p>
+        /// <p>Provides context on how the access preview finding compares to existing access identified in IAM Access Analyzer.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>New</code> - The finding is for newly-introduced access.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Unchanged</code> - The preview finding is an existing finding that would
-        /// remain unchanged.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Changed</code> - The preview finding is an existing finding with a change in
-        /// status.</p>
-        /// </li>
+        /// <li> <p> <code>New</code> - The finding is for newly-introduced access.</p> </li>
+        /// <li> <p> <code>Unchanged</code> - The preview finding is an existing finding that would remain unchanged.</p> </li>
+        /// <li> <p> <code>Changed</code> - The preview finding is an existing finding with a change in status.</p> </li>
         /// </ul>
-        /// <p>For example, a <code>Changed</code> finding with preview status <code>Resolved</code>
-        /// and existing status <code>Active</code> indicates the existing <code>Active</code> finding
-        /// would become <code>Resolved</code> as a result of the proposed permissions change.</p>
+        /// <p>For example, a <code>Changed</code> finding with preview status <code>Resolved</code> and existing status <code>Active</code> indicates the existing <code>Active</code> finding would become <code>Resolved</code> as a result of the proposed permissions change.</p>
         pub fn set_change_type(
             mut self,
             input: std::option::Option<crate::model::FindingChangeType>,
@@ -4291,20 +4010,12 @@ pub mod access_preview_finding {
             self.change_type = input;
             self
         }
-        /// <p>The preview status of the finding. This is what the status of the finding would be after
-        /// permissions deployment. For example, a <code>Changed</code> finding with preview status
-        /// <code>Resolved</code> and existing status <code>Active</code> indicates the existing
-        /// <code>Active</code> finding would become <code>Resolved</code> as a result of the
-        /// proposed permissions change.</p>
+        /// <p>The preview status of the finding. This is what the status of the finding would be after permissions deployment. For example, a <code>Changed</code> finding with preview status <code>Resolved</code> and existing status <code>Active</code> indicates the existing <code>Active</code> finding would become <code>Resolved</code> as a result of the proposed permissions change.</p>
         pub fn status(mut self, input: crate::model::FindingStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The preview status of the finding. This is what the status of the finding would be after
-        /// permissions deployment. For example, a <code>Changed</code> finding with preview status
-        /// <code>Resolved</code> and existing status <code>Active</code> indicates the existing
-        /// <code>Active</code> finding would become <code>Resolved</code> as a result of the
-        /// proposed permissions change.</p>
+        /// <p>The preview status of the finding. This is what the status of the finding would be after permissions deployment. For example, a <code>Changed</code> finding with preview status <code>Resolved</code> and existing status <code>Active</code> indicates the existing <code>Active</code> finding would become <code>Resolved</code> as a result of the proposed permissions change.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::FindingStatus>,
@@ -4312,14 +4023,12 @@ pub mod access_preview_finding {
             self.status = input;
             self
         }
-        /// <p>The Amazon Web Services account ID that owns the resource. For most Amazon Web Services resources, the owning
-        /// account is the account in which the resource was created.</p>
+        /// <p>The Amazon Web Services account ID that owns the resource. For most Amazon Web Services resources, the owning account is the account in which the resource was created.</p>
         pub fn resource_owner_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_owner_account = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID that owns the resource. For most Amazon Web Services resources, the owning
-        /// account is the account in which the resource was created.</p>
+        /// <p>The Amazon Web Services account ID that owns the resource. For most Amazon Web Services resources, the owning account is the account in which the resource was created.</p>
         pub fn set_resource_owner_account(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4341,16 +4050,14 @@ pub mod access_preview_finding {
         ///
         /// To override the contents of this collection use [`set_sources`](Self::set_sources).
         ///
-        /// <p>The sources of the finding. This indicates how the access that generated the finding is
-        /// granted. It is populated for Amazon S3 bucket findings.</p>
+        /// <p>The sources of the finding. This indicates how the access that generated the finding is granted. It is populated for Amazon S3 bucket findings.</p>
         pub fn sources(mut self, input: crate::model::FindingSource) -> Self {
             let mut v = self.sources.unwrap_or_default();
             v.push(input);
             self.sources = Some(v);
             self
         }
-        /// <p>The sources of the finding. This indicates how the access that generated the finding is
-        /// granted. It is populated for Amazon S3 bucket findings.</p>
+        /// <p>The sources of the finding. This indicates how the access that generated the finding is granted. It is populated for Amazon S3 bucket findings.</p>
         pub fn set_sources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FindingSource>>,
@@ -4450,21 +4157,17 @@ impl AsRef<str> for FindingChangeType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GeneratedPolicyResult {
-    /// <p>A <code>GeneratedPolicyProperties</code> object that contains properties of the
-    /// generated policy.</p>
+    /// <p>A <code>GeneratedPolicyProperties</code> object that contains properties of the generated policy.</p>
     pub properties: std::option::Option<crate::model::GeneratedPolicyProperties>,
-    /// <p>The text to use as the content for the new policy. The policy is created using the
-    /// <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html">CreatePolicy</a> action.</p>
+    /// <p>The text to use as the content for the new policy. The policy is created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html">CreatePolicy</a> action.</p>
     pub generated_policies: std::option::Option<std::vec::Vec<crate::model::GeneratedPolicy>>,
 }
 impl GeneratedPolicyResult {
-    /// <p>A <code>GeneratedPolicyProperties</code> object that contains properties of the
-    /// generated policy.</p>
+    /// <p>A <code>GeneratedPolicyProperties</code> object that contains properties of the generated policy.</p>
     pub fn properties(&self) -> std::option::Option<&crate::model::GeneratedPolicyProperties> {
         self.properties.as_ref()
     }
-    /// <p>The text to use as the content for the new policy. The policy is created using the
-    /// <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html">CreatePolicy</a> action.</p>
+    /// <p>The text to use as the content for the new policy. The policy is created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html">CreatePolicy</a> action.</p>
     pub fn generated_policies(&self) -> std::option::Option<&[crate::model::GeneratedPolicy]> {
         self.generated_policies.as_deref()
     }
@@ -4488,14 +4191,12 @@ pub mod generated_policy_result {
             std::option::Option<std::vec::Vec<crate::model::GeneratedPolicy>>,
     }
     impl Builder {
-        /// <p>A <code>GeneratedPolicyProperties</code> object that contains properties of the
-        /// generated policy.</p>
+        /// <p>A <code>GeneratedPolicyProperties</code> object that contains properties of the generated policy.</p>
         pub fn properties(mut self, input: crate::model::GeneratedPolicyProperties) -> Self {
             self.properties = Some(input);
             self
         }
-        /// <p>A <code>GeneratedPolicyProperties</code> object that contains properties of the
-        /// generated policy.</p>
+        /// <p>A <code>GeneratedPolicyProperties</code> object that contains properties of the generated policy.</p>
         pub fn set_properties(
             mut self,
             input: std::option::Option<crate::model::GeneratedPolicyProperties>,
@@ -4507,16 +4208,14 @@ pub mod generated_policy_result {
         ///
         /// To override the contents of this collection use [`set_generated_policies`](Self::set_generated_policies).
         ///
-        /// <p>The text to use as the content for the new policy. The policy is created using the
-        /// <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html">CreatePolicy</a> action.</p>
+        /// <p>The text to use as the content for the new policy. The policy is created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html">CreatePolicy</a> action.</p>
         pub fn generated_policies(mut self, input: crate::model::GeneratedPolicy) -> Self {
             let mut v = self.generated_policies.unwrap_or_default();
             v.push(input);
             self.generated_policies = Some(v);
             self
         }
-        /// <p>The text to use as the content for the new policy. The policy is created using the
-        /// <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html">CreatePolicy</a> action.</p>
+        /// <p>The text to use as the content for the new policy. The policy is created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html">CreatePolicy</a> action.</p>
         pub fn set_generated_policies(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GeneratedPolicy>>,
@@ -4544,13 +4243,11 @@ impl GeneratedPolicyResult {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GeneratedPolicy {
-    /// <p>The text to use as the content for the new policy. The policy is created using the
-    /// <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html">CreatePolicy</a> action.</p>
+    /// <p>The text to use as the content for the new policy. The policy is created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html">CreatePolicy</a> action.</p>
     pub policy: std::option::Option<std::string::String>,
 }
 impl GeneratedPolicy {
-    /// <p>The text to use as the content for the new policy. The policy is created using the
-    /// <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html">CreatePolicy</a> action.</p>
+    /// <p>The text to use as the content for the new policy. The policy is created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html">CreatePolicy</a> action.</p>
     pub fn policy(&self) -> std::option::Option<&str> {
         self.policy.as_deref()
     }
@@ -4571,14 +4268,12 @@ pub mod generated_policy {
         pub(crate) policy: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The text to use as the content for the new policy. The policy is created using the
-        /// <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html">CreatePolicy</a> action.</p>
+        /// <p>The text to use as the content for the new policy. The policy is created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html">CreatePolicy</a> action.</p>
         pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy = Some(input.into());
             self
         }
-        /// <p>The text to use as the content for the new policy. The policy is created using the
-        /// <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html">CreatePolicy</a> action.</p>
+        /// <p>The text to use as the content for the new policy. The policy is created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html">CreatePolicy</a> action.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy = input;
             self
@@ -4602,9 +4297,7 @@ impl GeneratedPolicy {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GeneratedPolicyProperties {
-    /// <p>This value is set to <code>true</code> if the generated policy contains all possible
-    /// actions for a service that IAM Access Analyzer identified from the CloudTrail trail that you specified,
-    /// and <code>false</code> otherwise.</p>
+    /// <p>This value is set to <code>true</code> if the generated policy contains all possible actions for a service that IAM Access Analyzer identified from the CloudTrail trail that you specified, and <code>false</code> otherwise.</p>
     pub is_complete: std::option::Option<bool>,
     /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy.</p>
     pub principal_arn: std::option::Option<std::string::String>,
@@ -4612,9 +4305,7 @@ pub struct GeneratedPolicyProperties {
     pub cloud_trail_properties: std::option::Option<crate::model::CloudTrailProperties>,
 }
 impl GeneratedPolicyProperties {
-    /// <p>This value is set to <code>true</code> if the generated policy contains all possible
-    /// actions for a service that IAM Access Analyzer identified from the CloudTrail trail that you specified,
-    /// and <code>false</code> otherwise.</p>
+    /// <p>This value is set to <code>true</code> if the generated policy contains all possible actions for a service that IAM Access Analyzer identified from the CloudTrail trail that you specified, and <code>false</code> otherwise.</p>
     pub fn is_complete(&self) -> std::option::Option<bool> {
         self.is_complete
     }
@@ -4649,16 +4340,12 @@ pub mod generated_policy_properties {
         pub(crate) cloud_trail_properties: std::option::Option<crate::model::CloudTrailProperties>,
     }
     impl Builder {
-        /// <p>This value is set to <code>true</code> if the generated policy contains all possible
-        /// actions for a service that IAM Access Analyzer identified from the CloudTrail trail that you specified,
-        /// and <code>false</code> otherwise.</p>
+        /// <p>This value is set to <code>true</code> if the generated policy contains all possible actions for a service that IAM Access Analyzer identified from the CloudTrail trail that you specified, and <code>false</code> otherwise.</p>
         pub fn is_complete(mut self, input: bool) -> Self {
             self.is_complete = Some(input);
             self
         }
-        /// <p>This value is set to <code>true</code> if the generated policy contains all possible
-        /// actions for a service that IAM Access Analyzer identified from the CloudTrail trail that you specified,
-        /// and <code>false</code> otherwise.</p>
+        /// <p>This value is set to <code>true</code> if the generated policy contains all possible actions for a service that IAM Access Analyzer identified from the CloudTrail trail that you specified, and <code>false</code> otherwise.</p>
         pub fn set_is_complete(mut self, input: std::option::Option<bool>) -> Self {
             self.is_complete = input;
             self
@@ -4710,31 +4397,23 @@ impl GeneratedPolicyProperties {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudTrailProperties {
-    /// <p>A <code>TrailProperties</code> object that contains settings for trail
-    /// properties.</p>
+    /// <p>A <code>TrailProperties</code> object that contains settings for trail properties.</p>
     pub trail_properties: std::option::Option<std::vec::Vec<crate::model::TrailProperties>>,
-    /// <p>The start of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events
-    /// with a timestamp before this time are not considered to generate a policy.</p>
+    /// <p>The start of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp before this time are not considered to generate a policy.</p>
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The end of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with
-    /// a timestamp after this time are not considered to generate a policy. If this is not
-    /// included in the request, the default value is the current time.</p>
+    /// <p>The end of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp after this time are not considered to generate a policy. If this is not included in the request, the default value is the current time.</p>
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CloudTrailProperties {
-    /// <p>A <code>TrailProperties</code> object that contains settings for trail
-    /// properties.</p>
+    /// <p>A <code>TrailProperties</code> object that contains settings for trail properties.</p>
     pub fn trail_properties(&self) -> std::option::Option<&[crate::model::TrailProperties]> {
         self.trail_properties.as_deref()
     }
-    /// <p>The start of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events
-    /// with a timestamp before this time are not considered to generate a policy.</p>
+    /// <p>The start of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp before this time are not considered to generate a policy.</p>
     pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>The end of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with
-    /// a timestamp after this time are not considered to generate a policy. If this is not
-    /// included in the request, the default value is the current time.</p>
+    /// <p>The end of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp after this time are not considered to generate a policy. If this is not included in the request, the default value is the current time.</p>
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
@@ -4764,16 +4443,14 @@ pub mod cloud_trail_properties {
         ///
         /// To override the contents of this collection use [`set_trail_properties`](Self::set_trail_properties).
         ///
-        /// <p>A <code>TrailProperties</code> object that contains settings for trail
-        /// properties.</p>
+        /// <p>A <code>TrailProperties</code> object that contains settings for trail properties.</p>
         pub fn trail_properties(mut self, input: crate::model::TrailProperties) -> Self {
             let mut v = self.trail_properties.unwrap_or_default();
             v.push(input);
             self.trail_properties = Some(v);
             self
         }
-        /// <p>A <code>TrailProperties</code> object that contains settings for trail
-        /// properties.</p>
+        /// <p>A <code>TrailProperties</code> object that contains settings for trail properties.</p>
         pub fn set_trail_properties(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TrailProperties>>,
@@ -4781,14 +4458,12 @@ pub mod cloud_trail_properties {
             self.trail_properties = input;
             self
         }
-        /// <p>The start of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events
-        /// with a timestamp before this time are not considered to generate a policy.</p>
+        /// <p>The start of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp before this time are not considered to generate a policy.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>The start of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events
-        /// with a timestamp before this time are not considered to generate a policy.</p>
+        /// <p>The start of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp before this time are not considered to generate a policy.</p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -4796,16 +4471,12 @@ pub mod cloud_trail_properties {
             self.start_time = input;
             self
         }
-        /// <p>The end of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with
-        /// a timestamp after this time are not considered to generate a policy. If this is not
-        /// included in the request, the default value is the current time.</p>
+        /// <p>The end of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp after this time are not considered to generate a policy. If this is not included in the request, the default value is the current time.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
-        /// <p>The end of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with
-        /// a timestamp after this time are not considered to generate a policy. If this is not
-        /// included in the request, the default value is the current time.</p>
+        /// <p>The end of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp after this time are not considered to generate a policy. If this is not included in the request, the default value is the current time.</p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -4834,19 +4505,15 @@ impl CloudTrailProperties {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TrailProperties {
-    /// <p>Specifies the ARN of the trail. The format of a trail ARN is
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>.</p>
+    /// <p>Specifies the ARN of the trail. The format of a trail ARN is <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>.</p>
     pub cloud_trail_arn: std::option::Option<std::string::String>,
     /// <p>A list of regions to get CloudTrail data from and analyze to generate a policy.</p>
     pub regions: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Possible values are <code>true</code> or <code>false</code>. If set to
-    /// <code>true</code>, IAM Access Analyzer retrieves CloudTrail data from all regions to analyze and
-    /// generate a policy.</p>
+    /// <p>Possible values are <code>true</code> or <code>false</code>. If set to <code>true</code>, IAM Access Analyzer retrieves CloudTrail data from all regions to analyze and generate a policy.</p>
     pub all_regions: std::option::Option<bool>,
 }
 impl TrailProperties {
-    /// <p>Specifies the ARN of the trail. The format of a trail ARN is
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>.</p>
+    /// <p>Specifies the ARN of the trail. The format of a trail ARN is <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>.</p>
     pub fn cloud_trail_arn(&self) -> std::option::Option<&str> {
         self.cloud_trail_arn.as_deref()
     }
@@ -4854,9 +4521,7 @@ impl TrailProperties {
     pub fn regions(&self) -> std::option::Option<&[std::string::String]> {
         self.regions.as_deref()
     }
-    /// <p>Possible values are <code>true</code> or <code>false</code>. If set to
-    /// <code>true</code>, IAM Access Analyzer retrieves CloudTrail data from all regions to analyze and
-    /// generate a policy.</p>
+    /// <p>Possible values are <code>true</code> or <code>false</code>. If set to <code>true</code>, IAM Access Analyzer retrieves CloudTrail data from all regions to analyze and generate a policy.</p>
     pub fn all_regions(&self) -> std::option::Option<bool> {
         self.all_regions
     }
@@ -4881,14 +4546,12 @@ pub mod trail_properties {
         pub(crate) all_regions: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>Specifies the ARN of the trail. The format of a trail ARN is
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>.</p>
+        /// <p>Specifies the ARN of the trail. The format of a trail ARN is <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>.</p>
         pub fn cloud_trail_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.cloud_trail_arn = Some(input.into());
             self
         }
-        /// <p>Specifies the ARN of the trail. The format of a trail ARN is
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>.</p>
+        /// <p>Specifies the ARN of the trail. The format of a trail ARN is <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>.</p>
         pub fn set_cloud_trail_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4915,16 +4578,12 @@ pub mod trail_properties {
             self.regions = input;
             self
         }
-        /// <p>Possible values are <code>true</code> or <code>false</code>. If set to
-        /// <code>true</code>, IAM Access Analyzer retrieves CloudTrail data from all regions to analyze and
-        /// generate a policy.</p>
+        /// <p>Possible values are <code>true</code> or <code>false</code>. If set to <code>true</code>, IAM Access Analyzer retrieves CloudTrail data from all regions to analyze and generate a policy.</p>
         pub fn all_regions(mut self, input: bool) -> Self {
             self.all_regions = Some(input);
             self
         }
-        /// <p>Possible values are <code>true</code> or <code>false</code>. If set to
-        /// <code>true</code>, IAM Access Analyzer retrieves CloudTrail data from all regions to analyze and
-        /// generate a policy.</p>
+        /// <p>Possible values are <code>true</code> or <code>false</code>. If set to <code>true</code>, IAM Access Analyzer retrieves CloudTrail data from all regions to analyze and generate a policy.</p>
         pub fn set_all_regions(mut self, input: std::option::Option<bool>) -> Self {
             self.all_regions = input;
             self
@@ -4950,10 +4609,7 @@ impl TrailProperties {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobDetails {
-    /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code>
-    /// operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to
-    /// retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel
-    /// the policy generation request.</p>
+    /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The status of the job request.</p>
     pub status: std::option::Option<crate::model::JobStatus>,
@@ -4965,10 +4621,7 @@ pub struct JobDetails {
     pub job_error: std::option::Option<crate::model::JobError>,
 }
 impl JobDetails {
-    /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code>
-    /// operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to
-    /// retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel
-    /// the policy generation request.</p>
+    /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
@@ -5013,18 +4666,12 @@ pub mod job_details {
         pub(crate) job_error: std::option::Option<crate::model::JobError>,
     }
     impl Builder {
-        /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code>
-        /// operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to
-        /// retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel
-        /// the policy generation request.</p>
+        /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
             self
         }
-        /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code>
-        /// operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to
-        /// retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel
-        /// the policy generation request.</p>
+        /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -5100,8 +4747,7 @@ impl JobDetails {
 pub struct JobError {
     /// <p>The job error code.</p>
     pub code: std::option::Option<crate::model::JobErrorCode>,
-    /// <p>Specific information about the error. For example, which service quota was exceeded or
-    /// which resource was not found.</p>
+    /// <p>Specific information about the error. For example, which service quota was exceeded or which resource was not found.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl JobError {
@@ -5109,8 +4755,7 @@ impl JobError {
     pub fn code(&self) -> std::option::Option<&crate::model::JobErrorCode> {
         self.code.as_ref()
     }
-    /// <p>Specific information about the error. For example, which service quota was exceeded or
-    /// which resource was not found.</p>
+    /// <p>Specific information about the error. For example, which service quota was exceeded or which resource was not found.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
@@ -5143,14 +4788,12 @@ pub mod job_error {
             self.code = input;
             self
         }
-        /// <p>Specific information about the error. For example, which service quota was exceeded or
-        /// which resource was not found.</p>
+        /// <p>Specific information about the error. For example, which service quota was exceeded or which resource was not found.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>Specific information about the error. For example, which service quota was exceeded or
-        /// which resource was not found.</p>
+        /// <p>Specific information about the error. For example, which service quota was exceeded or which resource was not found.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -5248,13 +4891,11 @@ pub struct Finding {
     /// <p>The external principal that access to a resource within the zone of trust.</p>
     pub principal:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The action in the analyzed policy statement that an external principal has permission to
-    /// use.</p>
+    /// <p>The action in the analyzed policy statement that an external principal has permission to use.</p>
     pub action: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The resource that an external principal has access to.</p>
     pub resource: std::option::Option<std::string::String>,
-    /// <p>Indicates whether the policy that generated the finding allows public access to the
-    /// resource.</p>
+    /// <p>Indicates whether the policy that generated the finding allows public access to the resource.</p>
     pub is_public: std::option::Option<bool>,
     /// <p>The type of the resource identified in the finding.</p>
     pub resource_type: std::option::Option<crate::model::ResourceType>,
@@ -5273,8 +4914,7 @@ pub struct Finding {
     pub resource_owner_account: std::option::Option<std::string::String>,
     /// <p>An error.</p>
     pub error: std::option::Option<std::string::String>,
-    /// <p>The sources of the finding. This indicates how the access that generated the finding is
-    /// granted. It is populated for Amazon S3 bucket findings.</p>
+    /// <p>The sources of the finding. This indicates how the access that generated the finding is granted. It is populated for Amazon S3 bucket findings.</p>
     pub sources: std::option::Option<std::vec::Vec<crate::model::FindingSource>>,
 }
 impl Finding {
@@ -5289,8 +4929,7 @@ impl Finding {
     {
         self.principal.as_ref()
     }
-    /// <p>The action in the analyzed policy statement that an external principal has permission to
-    /// use.</p>
+    /// <p>The action in the analyzed policy statement that an external principal has permission to use.</p>
     pub fn action(&self) -> std::option::Option<&[std::string::String]> {
         self.action.as_deref()
     }
@@ -5298,8 +4937,7 @@ impl Finding {
     pub fn resource(&self) -> std::option::Option<&str> {
         self.resource.as_deref()
     }
-    /// <p>Indicates whether the policy that generated the finding allows public access to the
-    /// resource.</p>
+    /// <p>Indicates whether the policy that generated the finding allows public access to the resource.</p>
     pub fn is_public(&self) -> std::option::Option<bool> {
         self.is_public
     }
@@ -5338,8 +4976,7 @@ impl Finding {
     pub fn error(&self) -> std::option::Option<&str> {
         self.error.as_deref()
     }
-    /// <p>The sources of the finding. This indicates how the access that generated the finding is
-    /// granted. It is populated for Amazon S3 bucket findings.</p>
+    /// <p>The sources of the finding. This indicates how the access that generated the finding is granted. It is populated for Amazon S3 bucket findings.</p>
     pub fn sources(&self) -> std::option::Option<&[crate::model::FindingSource]> {
         self.sources.as_deref()
     }
@@ -5429,16 +5066,14 @@ pub mod finding {
         ///
         /// To override the contents of this collection use [`set_action`](Self::set_action).
         ///
-        /// <p>The action in the analyzed policy statement that an external principal has permission to
-        /// use.</p>
+        /// <p>The action in the analyzed policy statement that an external principal has permission to use.</p>
         pub fn action(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.action.unwrap_or_default();
             v.push(input.into());
             self.action = Some(v);
             self
         }
-        /// <p>The action in the analyzed policy statement that an external principal has permission to
-        /// use.</p>
+        /// <p>The action in the analyzed policy statement that an external principal has permission to use.</p>
         pub fn set_action(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5456,14 +5091,12 @@ pub mod finding {
             self.resource = input;
             self
         }
-        /// <p>Indicates whether the policy that generated the finding allows public access to the
-        /// resource.</p>
+        /// <p>Indicates whether the policy that generated the finding allows public access to the resource.</p>
         pub fn is_public(mut self, input: bool) -> Self {
             self.is_public = Some(input);
             self
         }
-        /// <p>Indicates whether the policy that generated the finding allows public access to the
-        /// resource.</p>
+        /// <p>Indicates whether the policy that generated the finding allows public access to the resource.</p>
         pub fn set_is_public(mut self, input: std::option::Option<bool>) -> Self {
             self.is_public = input;
             self
@@ -5585,16 +5218,14 @@ pub mod finding {
         ///
         /// To override the contents of this collection use [`set_sources`](Self::set_sources).
         ///
-        /// <p>The sources of the finding. This indicates how the access that generated the finding is
-        /// granted. It is populated for Amazon S3 bucket findings.</p>
+        /// <p>The sources of the finding. This indicates how the access that generated the finding is granted. It is populated for Amazon S3 bucket findings.</p>
         pub fn sources(mut self, input: crate::model::FindingSource) -> Self {
             let mut v = self.sources.unwrap_or_default();
             v.push(input);
             self.sources = Some(v);
             self
         }
-        /// <p>The sources of the finding. This indicates how the access that generated the finding is
-        /// granted. It is populated for Amazon S3 bucket findings.</p>
+        /// <p>The sources of the finding. This indicates how the access that generated the finding is granted. It is populated for Amazon S3 bucket findings.</p>
         pub fn set_sources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FindingSource>>,
@@ -5644,14 +5275,11 @@ pub struct AnalyzedResource {
     pub analyzed_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The time at which the finding was updated.</p>
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Indicates whether the policy that generated the finding grants public access to the
-    /// resource.</p>
+    /// <p>Indicates whether the policy that generated the finding grants public access to the resource.</p>
     pub is_public: std::option::Option<bool>,
-    /// <p>The actions that an external principal is granted permission to use by the policy that
-    /// generated the finding.</p>
+    /// <p>The actions that an external principal is granted permission to use by the policy that generated the finding.</p>
     pub actions: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Indicates how the access that generated the finding is granted. This is populated for
-    /// Amazon S3 bucket findings.</p>
+    /// <p>Indicates how the access that generated the finding is granted. This is populated for Amazon S3 bucket findings.</p>
     pub shared_via: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The current status of the finding generated from the analyzed resource.</p>
     pub status: std::option::Option<crate::model::FindingStatus>,
@@ -5681,18 +5309,15 @@ impl AnalyzedResource {
     pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
-    /// <p>Indicates whether the policy that generated the finding grants public access to the
-    /// resource.</p>
+    /// <p>Indicates whether the policy that generated the finding grants public access to the resource.</p>
     pub fn is_public(&self) -> std::option::Option<bool> {
         self.is_public
     }
-    /// <p>The actions that an external principal is granted permission to use by the policy that
-    /// generated the finding.</p>
+    /// <p>The actions that an external principal is granted permission to use by the policy that generated the finding.</p>
     pub fn actions(&self) -> std::option::Option<&[std::string::String]> {
         self.actions.as_deref()
     }
-    /// <p>Indicates how the access that generated the finding is granted. This is populated for
-    /// Amazon S3 bucket findings.</p>
+    /// <p>Indicates how the access that generated the finding is granted. This is populated for Amazon S3 bucket findings.</p>
     pub fn shared_via(&self) -> std::option::Option<&[std::string::String]> {
         self.shared_via.as_deref()
     }
@@ -5807,14 +5432,12 @@ pub mod analyzed_resource {
             self.updated_at = input;
             self
         }
-        /// <p>Indicates whether the policy that generated the finding grants public access to the
-        /// resource.</p>
+        /// <p>Indicates whether the policy that generated the finding grants public access to the resource.</p>
         pub fn is_public(mut self, input: bool) -> Self {
             self.is_public = Some(input);
             self
         }
-        /// <p>Indicates whether the policy that generated the finding grants public access to the
-        /// resource.</p>
+        /// <p>Indicates whether the policy that generated the finding grants public access to the resource.</p>
         pub fn set_is_public(mut self, input: std::option::Option<bool>) -> Self {
             self.is_public = input;
             self
@@ -5823,16 +5446,14 @@ pub mod analyzed_resource {
         ///
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
-        /// <p>The actions that an external principal is granted permission to use by the policy that
-        /// generated the finding.</p>
+        /// <p>The actions that an external principal is granted permission to use by the policy that generated the finding.</p>
         pub fn actions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.actions.unwrap_or_default();
             v.push(input.into());
             self.actions = Some(v);
             self
         }
-        /// <p>The actions that an external principal is granted permission to use by the policy that
-        /// generated the finding.</p>
+        /// <p>The actions that an external principal is granted permission to use by the policy that generated the finding.</p>
         pub fn set_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5844,16 +5465,14 @@ pub mod analyzed_resource {
         ///
         /// To override the contents of this collection use [`set_shared_via`](Self::set_shared_via).
         ///
-        /// <p>Indicates how the access that generated the finding is granted. This is populated for
-        /// Amazon S3 bucket findings.</p>
+        /// <p>Indicates how the access that generated the finding is granted. This is populated for Amazon S3 bucket findings.</p>
         pub fn shared_via(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.shared_via.unwrap_or_default();
             v.push(input.into());
             self.shared_via = Some(v);
             self
         }
-        /// <p>Indicates how the access that generated the finding is granted. This is populated for
-        /// Amazon S3 bucket findings.</p>
+        /// <p>Indicates how the access that generated the finding is granted. This is populated for Amazon S3 bucket findings.</p>
         pub fn set_shared_via(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5938,25 +5557,13 @@ pub struct AccessPreview {
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The status of the access preview.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Creating</code> - The access preview creation is in progress.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Completed</code> - The access preview is complete. You can preview findings
-    /// for external access to the resource.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Failed</code> - The access preview creation has failed.</p>
-    /// </li>
+    /// <li> <p> <code>Creating</code> - The access preview creation is in progress.</p> </li>
+    /// <li> <p> <code>Completed</code> - The access preview is complete. You can preview findings for external access to the resource.</p> </li>
+    /// <li> <p> <code>Failed</code> - The access preview creation has failed.</p> </li>
     /// </ul>
     pub status: std::option::Option<crate::model::AccessPreviewStatus>,
     /// <p>Provides more details about the current status of the access preview.</p>
-    /// <p>For example, if the creation of the access preview fails, a <code>Failed</code> status
-    /// is returned. This failure can be due to an internal issue with the analysis or due to an
-    /// invalid resource configuration.</p>
+    /// <p>For example, if the creation of the access preview fails, a <code>Failed</code> status is returned. This failure can be due to an internal issue with the analysis or due to an invalid resource configuration.</p>
     pub status_reason: std::option::Option<crate::model::AccessPreviewStatusReason>,
 }
 impl AccessPreview {
@@ -5982,27 +5589,15 @@ impl AccessPreview {
     }
     /// <p>The status of the access preview.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Creating</code> - The access preview creation is in progress.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Completed</code> - The access preview is complete. You can preview findings
-    /// for external access to the resource.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Failed</code> - The access preview creation has failed.</p>
-    /// </li>
+    /// <li> <p> <code>Creating</code> - The access preview creation is in progress.</p> </li>
+    /// <li> <p> <code>Completed</code> - The access preview is complete. You can preview findings for external access to the resource.</p> </li>
+    /// <li> <p> <code>Failed</code> - The access preview creation has failed.</p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::AccessPreviewStatus> {
         self.status.as_ref()
     }
     /// <p>Provides more details about the current status of the access preview.</p>
-    /// <p>For example, if the creation of the access preview fails, a <code>Failed</code> status
-    /// is returned. This failure can be due to an internal issue with the analysis or due to an
-    /// invalid resource configuration.</p>
+    /// <p>For example, if the creation of the access preview fails, a <code>Failed</code> status is returned. This failure can be due to an internal issue with the analysis or due to an invalid resource configuration.</p>
     pub fn status_reason(&self) -> std::option::Option<&crate::model::AccessPreviewStatusReason> {
         self.status_reason.as_ref()
     }
@@ -6095,19 +5690,9 @@ pub mod access_preview {
         }
         /// <p>The status of the access preview.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Creating</code> - The access preview creation is in progress.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Completed</code> - The access preview is complete. You can preview findings
-        /// for external access to the resource.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Failed</code> - The access preview creation has failed.</p>
-        /// </li>
+        /// <li> <p> <code>Creating</code> - The access preview creation is in progress.</p> </li>
+        /// <li> <p> <code>Completed</code> - The access preview is complete. You can preview findings for external access to the resource.</p> </li>
+        /// <li> <p> <code>Failed</code> - The access preview creation has failed.</p> </li>
         /// </ul>
         pub fn status(mut self, input: crate::model::AccessPreviewStatus) -> Self {
             self.status = Some(input);
@@ -6115,19 +5700,9 @@ pub mod access_preview {
         }
         /// <p>The status of the access preview.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Creating</code> - The access preview creation is in progress.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Completed</code> - The access preview is complete. You can preview findings
-        /// for external access to the resource.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Failed</code> - The access preview creation has failed.</p>
-        /// </li>
+        /// <li> <p> <code>Creating</code> - The access preview creation is in progress.</p> </li>
+        /// <li> <p> <code>Completed</code> - The access preview is complete. You can preview findings for external access to the resource.</p> </li>
+        /// <li> <p> <code>Failed</code> - The access preview creation has failed.</p> </li>
         /// </ul>
         pub fn set_status(
             mut self,
@@ -6137,17 +5712,13 @@ pub mod access_preview {
             self
         }
         /// <p>Provides more details about the current status of the access preview.</p>
-        /// <p>For example, if the creation of the access preview fails, a <code>Failed</code> status
-        /// is returned. This failure can be due to an internal issue with the analysis or due to an
-        /// invalid resource configuration.</p>
+        /// <p>For example, if the creation of the access preview fails, a <code>Failed</code> status is returned. This failure can be due to an internal issue with the analysis or due to an invalid resource configuration.</p>
         pub fn status_reason(mut self, input: crate::model::AccessPreviewStatusReason) -> Self {
             self.status_reason = Some(input);
             self
         }
         /// <p>Provides more details about the current status of the access preview.</p>
-        /// <p>For example, if the creation of the access preview fails, a <code>Failed</code> status
-        /// is returned. This failure can be due to an internal issue with the analysis or due to an
-        /// invalid resource configuration.</p>
+        /// <p>For example, if the creation of the access preview fails, a <code>Failed</code> status is returned. This failure can be due to an internal issue with the analysis or due to an invalid resource configuration.</p>
         pub fn set_status_reason(
             mut self,
             input: std::option::Option<crate::model::AccessPreviewStatusReason>,
@@ -6175,8 +5746,7 @@ impl AccessPreview {
     }
 }
 
-/// <p>Access control configuration structures for your resource. You specify the configuration
-/// as a type-value pair. You can specify only one type of access control configuration.</p>
+/// <p>Access control configuration structures for your resource. You specify the configuration as a type-value pair. You can specify only one type of access control configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum Configuration {
@@ -6274,15 +5844,7 @@ impl Configuration {
     }
 }
 
-/// <p>The proposed access control configuration for an Amazon SQS queue. You can propose a
-/// configuration for a new Amazon SQS queue or an existing Amazon SQS queue that you own by specifying
-/// the Amazon SQS policy. If the configuration is for an existing Amazon SQS queue and you do not
-/// specify the Amazon SQS policy, the access preview uses the existing Amazon SQS policy for the queue.
-/// If the access preview is for a new resource and you do not specify the policy, the access
-/// preview assumes an Amazon SQS queue without a policy. To propose deletion of an existing Amazon SQS
-/// queue policy, you can specify an empty string for the Amazon SQS policy. For more information
-/// about Amazon SQS policy limits, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-policies.html">Quotas related
-/// to policies</a>.</p>
+/// <p>The proposed access control configuration for an Amazon SQS queue. You can propose a configuration for a new Amazon SQS queue or an existing Amazon SQS queue that you own by specifying the Amazon SQS policy. If the configuration is for an existing Amazon SQS queue and you do not specify the Amazon SQS policy, the access preview uses the existing Amazon SQS policy for the queue. If the access preview is for a new resource and you do not specify the policy, the access preview assumes an Amazon SQS queue without a policy. To propose deletion of an existing Amazon SQS queue policy, you can specify an empty string for the Amazon SQS policy. For more information about Amazon SQS policy limits, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-policies.html">Quotas related to policies</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SqsQueueConfiguration {
@@ -6336,32 +5898,19 @@ impl SqsQueueConfiguration {
     }
 }
 
-/// <p>Proposed access control configuration for an Amazon S3 bucket. You can propose a
-/// configuration for a new Amazon S3 bucket or an existing Amazon S3 bucket that you own by specifying
-/// the Amazon S3 bucket policy, bucket ACLs, bucket BPA settings, Amazon S3 access points, and
-/// multi-region access points attached to the bucket. If the configuration is for an existing
-/// Amazon S3 bucket and you do not specify the Amazon S3 bucket policy, the access preview uses the
-/// existing policy attached to the bucket. If the access preview is for a new resource and you
-/// do not specify the Amazon S3 bucket policy, the access preview assumes a bucket without a
-/// policy. To propose deletion of an existing bucket policy, you can specify an empty string.
-/// For more information about bucket policy limits, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html">Bucket Policy
-/// Examples</a>.</p>
+/// <p>Proposed access control configuration for an Amazon S3 bucket. You can propose a configuration for a new Amazon S3 bucket or an existing Amazon S3 bucket that you own by specifying the Amazon S3 bucket policy, bucket ACLs, bucket BPA settings, Amazon S3 access points, and multi-region access points attached to the bucket. If the configuration is for an existing Amazon S3 bucket and you do not specify the Amazon S3 bucket policy, the access preview uses the existing policy attached to the bucket. If the access preview is for a new resource and you do not specify the Amazon S3 bucket policy, the access preview assumes a bucket without a policy. To propose deletion of an existing bucket policy, you can specify an empty string. For more information about bucket policy limits, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html">Bucket Policy Examples</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3BucketConfiguration {
     /// <p>The proposed bucket policy for the Amazon S3 bucket.</p>
     pub bucket_policy: std::option::Option<std::string::String>,
-    /// <p>The proposed list of ACL grants for the Amazon S3 bucket. You can propose up to 100 ACL
-    /// grants per bucket. If the proposed grant configuration is for an existing bucket, the
-    /// access preview uses the proposed list of grant configurations in place of the existing
-    /// grants. Otherwise, the access preview uses the existing grants for the bucket.</p>
+    /// <p>The proposed list of ACL grants for the Amazon S3 bucket. You can propose up to 100 ACL grants per bucket. If the proposed grant configuration is for an existing bucket, the access preview uses the proposed list of grant configurations in place of the existing grants. Otherwise, the access preview uses the existing grants for the bucket.</p>
     pub bucket_acl_grants:
         std::option::Option<std::vec::Vec<crate::model::S3BucketAclGrantConfiguration>>,
     /// <p>The proposed block public access configuration for the Amazon S3 bucket.</p>
     pub bucket_public_access_block:
         std::option::Option<crate::model::S3PublicAccessBlockConfiguration>,
-    /// <p>The configuration of Amazon S3 access points or multi-region access points for the bucket.
-    /// You can propose up to 10 new access points per bucket.</p>
+    /// <p>The configuration of Amazon S3 access points or multi-region access points for the bucket. You can propose up to 10 new access points per bucket.</p>
     pub access_points: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::S3AccessPointConfiguration>,
     >,
@@ -6371,10 +5920,7 @@ impl S3BucketConfiguration {
     pub fn bucket_policy(&self) -> std::option::Option<&str> {
         self.bucket_policy.as_deref()
     }
-    /// <p>The proposed list of ACL grants for the Amazon S3 bucket. You can propose up to 100 ACL
-    /// grants per bucket. If the proposed grant configuration is for an existing bucket, the
-    /// access preview uses the proposed list of grant configurations in place of the existing
-    /// grants. Otherwise, the access preview uses the existing grants for the bucket.</p>
+    /// <p>The proposed list of ACL grants for the Amazon S3 bucket. You can propose up to 100 ACL grants per bucket. If the proposed grant configuration is for an existing bucket, the access preview uses the proposed list of grant configurations in place of the existing grants. Otherwise, the access preview uses the existing grants for the bucket.</p>
     pub fn bucket_acl_grants(
         &self,
     ) -> std::option::Option<&[crate::model::S3BucketAclGrantConfiguration]> {
@@ -6386,8 +5932,7 @@ impl S3BucketConfiguration {
     ) -> std::option::Option<&crate::model::S3PublicAccessBlockConfiguration> {
         self.bucket_public_access_block.as_ref()
     }
-    /// <p>The configuration of Amazon S3 access points or multi-region access points for the bucket.
-    /// You can propose up to 10 new access points per bucket.</p>
+    /// <p>The configuration of Amazon S3 access points or multi-region access points for the bucket. You can propose up to 10 new access points per bucket.</p>
     pub fn access_points(
         &self,
     ) -> std::option::Option<
@@ -6445,10 +5990,7 @@ pub mod s3_bucket_configuration {
         ///
         /// To override the contents of this collection use [`set_bucket_acl_grants`](Self::set_bucket_acl_grants).
         ///
-        /// <p>The proposed list of ACL grants for the Amazon S3 bucket. You can propose up to 100 ACL
-        /// grants per bucket. If the proposed grant configuration is for an existing bucket, the
-        /// access preview uses the proposed list of grant configurations in place of the existing
-        /// grants. Otherwise, the access preview uses the existing grants for the bucket.</p>
+        /// <p>The proposed list of ACL grants for the Amazon S3 bucket. You can propose up to 100 ACL grants per bucket. If the proposed grant configuration is for an existing bucket, the access preview uses the proposed list of grant configurations in place of the existing grants. Otherwise, the access preview uses the existing grants for the bucket.</p>
         pub fn bucket_acl_grants(
             mut self,
             input: crate::model::S3BucketAclGrantConfiguration,
@@ -6458,10 +6000,7 @@ pub mod s3_bucket_configuration {
             self.bucket_acl_grants = Some(v);
             self
         }
-        /// <p>The proposed list of ACL grants for the Amazon S3 bucket. You can propose up to 100 ACL
-        /// grants per bucket. If the proposed grant configuration is for an existing bucket, the
-        /// access preview uses the proposed list of grant configurations in place of the existing
-        /// grants. Otherwise, the access preview uses the existing grants for the bucket.</p>
+        /// <p>The proposed list of ACL grants for the Amazon S3 bucket. You can propose up to 100 ACL grants per bucket. If the proposed grant configuration is for an existing bucket, the access preview uses the proposed list of grant configurations in place of the existing grants. Otherwise, the access preview uses the existing grants for the bucket.</p>
         pub fn set_bucket_acl_grants(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::S3BucketAclGrantConfiguration>>,
@@ -6489,8 +6028,7 @@ pub mod s3_bucket_configuration {
         ///
         /// To override the contents of this collection use [`set_access_points`](Self::set_access_points).
         ///
-        /// <p>The configuration of Amazon S3 access points or multi-region access points for the bucket.
-        /// You can propose up to 10 new access points per bucket.</p>
+        /// <p>The configuration of Amazon S3 access points or multi-region access points for the bucket. You can propose up to 10 new access points per bucket.</p>
         pub fn access_points(
             mut self,
             k: impl Into<std::string::String>,
@@ -6501,8 +6039,7 @@ pub mod s3_bucket_configuration {
             self.access_points = Some(hash_map);
             self
         }
-        /// <p>The configuration of Amazon S3 access points or multi-region access points for the bucket.
-        /// You can propose up to 10 new access points per bucket.</p>
+        /// <p>The configuration of Amazon S3 access points or multi-region access points for the bucket. You can propose up to 10 new access points per bucket.</p>
         pub fn set_access_points(
             mut self,
             input: std::option::Option<
@@ -6533,28 +6070,15 @@ impl S3BucketConfiguration {
     }
 }
 
-/// <p>The configuration for an Amazon S3 access point or multi-region access point for the bucket.
-/// You can propose up to 10 access points or multi-region access points per bucket. If the
-/// proposed Amazon S3 access point configuration is for an existing bucket, the access preview uses
-/// the proposed access point configuration in place of the existing access points. To propose
-/// an access point without a policy, you can provide an empty string as the access point
-/// policy. For more information, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/dev/creating-access-points.html">Creating access points</a>. For more information about access point policy limits,
-/// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points-restrictions-limitations.html">Access points
-/// restrictions and limitations</a>.</p>
+/// <p>The configuration for an Amazon S3 access point or multi-region access point for the bucket. You can propose up to 10 access points or multi-region access points per bucket. If the proposed Amazon S3 access point configuration is for an existing bucket, the access preview uses the proposed access point configuration in place of the existing access points. To propose an access point without a policy, you can provide an empty string as the access point policy. For more information, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/dev/creating-access-points.html">Creating access points</a>. For more information about access point policy limits, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points-restrictions-limitations.html">Access points restrictions and limitations</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3AccessPointConfiguration {
     /// <p>The access point or multi-region access point policy.</p>
     pub access_point_policy: std::option::Option<std::string::String>,
-    /// <p>The proposed <code>S3PublicAccessBlock</code> configuration to apply to this Amazon S3 access
-    /// point or multi-region access point.</p>
+    /// <p>The proposed <code>S3PublicAccessBlock</code> configuration to apply to this Amazon S3 access point or multi-region access point.</p>
     pub public_access_block: std::option::Option<crate::model::S3PublicAccessBlockConfiguration>,
-    /// <p>The proposed <code>Internet</code> and <code>VpcConfiguration</code> to apply to this
-    /// Amazon S3 access point. <code>VpcConfiguration</code> does not apply to multi-region access
-    /// points. If the access preview is for a new resource and neither is specified, the access
-    /// preview uses <code>Internet</code> for the network origin. If the access preview is for an
-    /// existing resource and neither is specified, the access preview uses the exiting network
-    /// origin.</p>
+    /// <p>The proposed <code>Internet</code> and <code>VpcConfiguration</code> to apply to this Amazon S3 access point. <code>VpcConfiguration</code> does not apply to multi-region access points. If the access preview is for a new resource and neither is specified, the access preview uses <code>Internet</code> for the network origin. If the access preview is for an existing resource and neither is specified, the access preview uses the exiting network origin.</p>
     pub network_origin: std::option::Option<crate::model::NetworkOriginConfiguration>,
 }
 impl S3AccessPointConfiguration {
@@ -6562,19 +6086,13 @@ impl S3AccessPointConfiguration {
     pub fn access_point_policy(&self) -> std::option::Option<&str> {
         self.access_point_policy.as_deref()
     }
-    /// <p>The proposed <code>S3PublicAccessBlock</code> configuration to apply to this Amazon S3 access
-    /// point or multi-region access point.</p>
+    /// <p>The proposed <code>S3PublicAccessBlock</code> configuration to apply to this Amazon S3 access point or multi-region access point.</p>
     pub fn public_access_block(
         &self,
     ) -> std::option::Option<&crate::model::S3PublicAccessBlockConfiguration> {
         self.public_access_block.as_ref()
     }
-    /// <p>The proposed <code>Internet</code> and <code>VpcConfiguration</code> to apply to this
-    /// Amazon S3 access point. <code>VpcConfiguration</code> does not apply to multi-region access
-    /// points. If the access preview is for a new resource and neither is specified, the access
-    /// preview uses <code>Internet</code> for the network origin. If the access preview is for an
-    /// existing resource and neither is specified, the access preview uses the exiting network
-    /// origin.</p>
+    /// <p>The proposed <code>Internet</code> and <code>VpcConfiguration</code> to apply to this Amazon S3 access point. <code>VpcConfiguration</code> does not apply to multi-region access points. If the access preview is for a new resource and neither is specified, the access preview uses <code>Internet</code> for the network origin. If the access preview is for an existing resource and neither is specified, the access preview uses the exiting network origin.</p>
     pub fn network_origin(&self) -> std::option::Option<&crate::model::NetworkOriginConfiguration> {
         self.network_origin.as_ref()
     }
@@ -6613,8 +6131,7 @@ pub mod s3_access_point_configuration {
             self.access_point_policy = input;
             self
         }
-        /// <p>The proposed <code>S3PublicAccessBlock</code> configuration to apply to this Amazon S3 access
-        /// point or multi-region access point.</p>
+        /// <p>The proposed <code>S3PublicAccessBlock</code> configuration to apply to this Amazon S3 access point or multi-region access point.</p>
         pub fn public_access_block(
             mut self,
             input: crate::model::S3PublicAccessBlockConfiguration,
@@ -6622,8 +6139,7 @@ pub mod s3_access_point_configuration {
             self.public_access_block = Some(input);
             self
         }
-        /// <p>The proposed <code>S3PublicAccessBlock</code> configuration to apply to this Amazon S3 access
-        /// point or multi-region access point.</p>
+        /// <p>The proposed <code>S3PublicAccessBlock</code> configuration to apply to this Amazon S3 access point or multi-region access point.</p>
         pub fn set_public_access_block(
             mut self,
             input: std::option::Option<crate::model::S3PublicAccessBlockConfiguration>,
@@ -6631,22 +6147,12 @@ pub mod s3_access_point_configuration {
             self.public_access_block = input;
             self
         }
-        /// <p>The proposed <code>Internet</code> and <code>VpcConfiguration</code> to apply to this
-        /// Amazon S3 access point. <code>VpcConfiguration</code> does not apply to multi-region access
-        /// points. If the access preview is for a new resource and neither is specified, the access
-        /// preview uses <code>Internet</code> for the network origin. If the access preview is for an
-        /// existing resource and neither is specified, the access preview uses the exiting network
-        /// origin.</p>
+        /// <p>The proposed <code>Internet</code> and <code>VpcConfiguration</code> to apply to this Amazon S3 access point. <code>VpcConfiguration</code> does not apply to multi-region access points. If the access preview is for a new resource and neither is specified, the access preview uses <code>Internet</code> for the network origin. If the access preview is for an existing resource and neither is specified, the access preview uses the exiting network origin.</p>
         pub fn network_origin(mut self, input: crate::model::NetworkOriginConfiguration) -> Self {
             self.network_origin = Some(input);
             self
         }
-        /// <p>The proposed <code>Internet</code> and <code>VpcConfiguration</code> to apply to this
-        /// Amazon S3 access point. <code>VpcConfiguration</code> does not apply to multi-region access
-        /// points. If the access preview is for a new resource and neither is specified, the access
-        /// preview uses <code>Internet</code> for the network origin. If the access preview is for an
-        /// existing resource and neither is specified, the access preview uses the exiting network
-        /// origin.</p>
+        /// <p>The proposed <code>Internet</code> and <code>VpcConfiguration</code> to apply to this Amazon S3 access point. <code>VpcConfiguration</code> does not apply to multi-region access points. If the access preview is for a new resource and neither is specified, the access preview uses <code>Internet</code> for the network origin. If the access preview is for an existing resource and neither is specified, the access preview uses the exiting network origin.</p>
         pub fn set_network_origin(
             mut self,
             input: std::option::Option<crate::model::NetworkOriginConfiguration>,
@@ -6671,22 +6177,13 @@ impl S3AccessPointConfiguration {
     }
 }
 
-/// <p>The proposed <code>InternetConfiguration</code> or <code>VpcConfiguration</code> to
-/// apply to the Amazon S3 access point. <code>VpcConfiguration</code> does not apply to
-/// multi-region access points. You can make the access point accessible from the internet, or
-/// you can specify that all requests made through that access point must originate from a
-/// specific virtual private cloud (VPC). You can specify only one type of network
-/// configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/creating-access-points.html">Creating access
-/// points</a>.</p>
+/// <p>The proposed <code>InternetConfiguration</code> or <code>VpcConfiguration</code> to apply to the Amazon S3 access point. <code>VpcConfiguration</code> does not apply to multi-region access points. You can make the access point accessible from the internet, or you can specify that all requests made through that access point must originate from a specific virtual private cloud (VPC). You can specify only one type of network configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/creating-access-points.html">Creating access points</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum NetworkOriginConfiguration {
-    /// <p>The configuration for the Amazon S3 access point or multi-region access point with an
-    /// <code>Internet</code> origin.</p>
+    /// <p>The configuration for the Amazon S3 access point or multi-region access point with an <code>Internet</code> origin.</p>
     InternetConfiguration(crate::model::InternetConfiguration),
-    /// <p>The proposed virtual private cloud (VPC) configuration for the Amazon S3 access point. VPC
-    /// configuration does not apply to multi-region access points. For more information, see
-    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_VpcConfiguration.html">VpcConfiguration</a>. </p>
+    /// <p>The proposed virtual private cloud (VPC) configuration for the Amazon S3 access point. VPC configuration does not apply to multi-region access points. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_VpcConfiguration.html">VpcConfiguration</a>. </p>
     VpcConfiguration(crate::model::VpcConfiguration),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
@@ -6735,8 +6232,7 @@ impl NetworkOriginConfiguration {
     }
 }
 
-/// <p>This configuration sets the network origin for the Amazon S3 access point or multi-region
-/// access point to <code>Internet</code>.</p>
+/// <p>This configuration sets the network origin for the Amazon S3 access point or multi-region access point to <code>Internet</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternetConfiguration {}
@@ -6766,19 +6262,15 @@ impl InternetConfiguration {
     }
 }
 
-/// <p>The proposed virtual private cloud (VPC) configuration for the Amazon S3 access point. VPC
-/// configuration does not apply to multi-region access points. For more information, see
-/// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_VpcConfiguration.html">VpcConfiguration</a>. </p>
+/// <p>The proposed virtual private cloud (VPC) configuration for the Amazon S3 access point. VPC configuration does not apply to multi-region access points. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_VpcConfiguration.html">VpcConfiguration</a>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VpcConfiguration {
-    /// <p> If this field is specified, this access point will only allow connections from the
-    /// specified VPC ID. </p>
+    /// <p> If this field is specified, this access point will only allow connections from the specified VPC ID. </p>
     pub vpc_id: std::option::Option<std::string::String>,
 }
 impl VpcConfiguration {
-    /// <p> If this field is specified, this access point will only allow connections from the
-    /// specified VPC ID. </p>
+    /// <p> If this field is specified, this access point will only allow connections from the specified VPC ID. </p>
     pub fn vpc_id(&self) -> std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
@@ -6799,14 +6291,12 @@ pub mod vpc_configuration {
         pub(crate) vpc_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> If this field is specified, this access point will only allow connections from the
-        /// specified VPC ID. </p>
+        /// <p> If this field is specified, this access point will only allow connections from the specified VPC ID. </p>
         pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.vpc_id = Some(input.into());
             self
         }
-        /// <p> If this field is specified, this access point will only allow connections from the
-        /// specified VPC ID. </p>
+        /// <p> If this field is specified, this access point will only allow connections from the specified VPC ID. </p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.vpc_id = input;
             self
@@ -6826,25 +6316,17 @@ impl VpcConfiguration {
     }
 }
 
-/// <p>The <code>PublicAccessBlock</code> configuration to apply to this Amazon S3 bucket. If the
-/// proposed configuration is for an existing Amazon S3 bucket and the configuration is not
-/// specified, the access preview uses the existing setting. If the proposed configuration is
-/// for a new bucket and the configuration is not specified, the access preview uses
-/// <code>false</code>. If the proposed configuration is for a new access point or
-/// multi-region access point and the access point BPA configuration is not specified, the
-/// access preview uses <code>true</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-publicaccessblockconfiguration.html">PublicAccessBlockConfiguration</a>. </p>
+/// <p>The <code>PublicAccessBlock</code> configuration to apply to this Amazon S3 bucket. If the proposed configuration is for an existing Amazon S3 bucket and the configuration is not specified, the access preview uses the existing setting. If the proposed configuration is for a new bucket and the configuration is not specified, the access preview uses <code>false</code>. If the proposed configuration is for a new access point or multi-region access point and the access point BPA configuration is not specified, the access preview uses <code>true</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-publicaccessblockconfiguration.html">PublicAccessBlockConfiguration</a>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3PublicAccessBlockConfiguration {
-    /// <p> Specifies whether Amazon S3 should ignore public ACLs for this bucket and objects in this
-    /// bucket. </p>
+    /// <p> Specifies whether Amazon S3 should ignore public ACLs for this bucket and objects in this bucket. </p>
     pub ignore_public_acls: std::option::Option<bool>,
     /// <p> Specifies whether Amazon S3 should restrict public bucket policies for this bucket. </p>
     pub restrict_public_buckets: std::option::Option<bool>,
 }
 impl S3PublicAccessBlockConfiguration {
-    /// <p> Specifies whether Amazon S3 should ignore public ACLs for this bucket and objects in this
-    /// bucket. </p>
+    /// <p> Specifies whether Amazon S3 should ignore public ACLs for this bucket and objects in this bucket. </p>
     pub fn ignore_public_acls(&self) -> std::option::Option<bool> {
         self.ignore_public_acls
     }
@@ -6871,14 +6353,12 @@ pub mod s3_public_access_block_configuration {
         pub(crate) restrict_public_buckets: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p> Specifies whether Amazon S3 should ignore public ACLs for this bucket and objects in this
-        /// bucket. </p>
+        /// <p> Specifies whether Amazon S3 should ignore public ACLs for this bucket and objects in this bucket. </p>
         pub fn ignore_public_acls(mut self, input: bool) -> Self {
             self.ignore_public_acls = Some(input);
             self
         }
-        /// <p> Specifies whether Amazon S3 should ignore public ACLs for this bucket and objects in this
-        /// bucket. </p>
+        /// <p> Specifies whether Amazon S3 should ignore public ACLs for this bucket and objects in this bucket. </p>
         pub fn set_ignore_public_acls(mut self, input: std::option::Option<bool>) -> Self {
             self.ignore_public_acls = input;
             self
@@ -6909,9 +6389,7 @@ impl S3PublicAccessBlockConfiguration {
     }
 }
 
-/// <p>A proposed access control list grant configuration for an Amazon S3 bucket. For more
-/// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#setting-acls">How to Specify an
-/// ACL</a>.</p>
+/// <p>A proposed access control list grant configuration for an Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#setting-acls">How to Specify an ACL</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3BucketAclGrantConfiguration {
@@ -6987,8 +6465,7 @@ impl S3BucketAclGrantConfiguration {
     }
 }
 
-/// <p>You specify each grantee as a type-value pair using one of these types. You can specify
-/// only one type of grantee. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketAcl.html">PutBucketAcl</a>.</p>
+/// <p>You specify each grantee as a type-value pair using one of these types. You can specify only one type of grantee. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketAcl.html">PutBucketAcl</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum AclGrantee {
@@ -7107,17 +6584,7 @@ impl AsRef<str> for AclPermission {
 }
 
 /// <p>The configuration for a Secrets Manager secret. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_CreateSecret.html">CreateSecret</a>.</p>
-/// <p>You can propose a configuration for a new secret or an existing secret that you own by
-/// specifying the secret policy and optional KMS encryption key. If the configuration is for
-/// an existing secret and you do not specify the secret policy, the access preview uses the
-/// existing policy for the secret. If the access preview is for a new resource and you do not
-/// specify the policy, the access preview assumes a secret without a policy. To propose
-/// deletion of an existing policy, you can specify an empty string. If the proposed
-/// configuration is for a new secret and you do not specify the KMS key ID, the access
-/// preview uses the Amazon Web Services managed key <code>aws/secretsmanager</code>. If you specify an empty
-/// string for the KMS key ID, the access preview uses the Amazon Web Services managed key of the Amazon Web Services
-/// account. For more information about secret policy limits, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_limits.html">Quotas for
-/// Secrets Manager.</a>.</p>
+/// <p>You can propose a configuration for a new secret or an existing secret that you own by specifying the secret policy and optional KMS encryption key. If the configuration is for an existing secret and you do not specify the secret policy, the access preview uses the existing policy for the secret. If the access preview is for a new resource and you do not specify the policy, the access preview assumes a secret without a policy. To propose deletion of an existing policy, you can specify an empty string. If the proposed configuration is for a new secret and you do not specify the KMS key ID, the access preview uses the Amazon Web Services managed key <code>aws/secretsmanager</code>. If you specify an empty string for the KMS key ID, the access preview uses the Amazon Web Services managed key of the Amazon Web Services account. For more information about secret policy limits, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_limits.html">Quotas for Secrets Manager.</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SecretsManagerSecretConfiguration {
@@ -7193,44 +6660,26 @@ impl SecretsManagerSecretConfiguration {
     }
 }
 
-/// <p>Proposed access control configuration for a KMS key. You can propose a configuration
-/// for a new KMS key or an existing KMS key that you own by specifying the key policy and
-/// KMS grant configuration. If the configuration is for an existing key and you do not
-/// specify the key policy, the access preview uses the existing policy for the key. If the
-/// access preview is for a new resource and you do not specify the key policy, then the access
-/// preview uses the default key policy. The proposed key policy cannot be an empty string. For
-/// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default key
-/// policy</a>. For more information about key policy limits, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/resource-limits.html">Resource
-/// quotas</a>.</p>
-/// <p/>
+/// <p>Proposed access control configuration for a KMS key. You can propose a configuration for a new KMS key or an existing KMS key that you own by specifying the key policy and KMS grant configuration. If the configuration is for an existing key and you do not specify the key policy, the access preview uses the existing policy for the key. If the access preview is for a new resource and you do not specify the key policy, then the access preview uses the default key policy. The proposed key policy cannot be an empty string. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default key policy</a>. For more information about key policy limits, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/resource-limits.html">Resource quotas</a>.</p>
+/// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsKeyConfiguration {
-    /// <p>Resource policy configuration for the KMS key. The only valid value for the name of
-    /// the key policy is <code>default</code>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default key
-    /// policy</a>.</p>
+    /// <p>Resource policy configuration for the KMS key. The only valid value for the name of the key policy is <code>default</code>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default key policy</a>.</p>
     pub key_policies:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>A list of proposed grant configurations for the KMS key. If the proposed grant
-    /// configuration is for an existing key, the access preview uses the proposed list of grant
-    /// configurations in place of the existing grants. Otherwise, the access preview uses the
-    /// existing grants for the key.</p>
+    /// <p>A list of proposed grant configurations for the KMS key. If the proposed grant configuration is for an existing key, the access preview uses the proposed list of grant configurations in place of the existing grants. Otherwise, the access preview uses the existing grants for the key.</p>
     pub grants: std::option::Option<std::vec::Vec<crate::model::KmsGrantConfiguration>>,
 }
 impl KmsKeyConfiguration {
-    /// <p>Resource policy configuration for the KMS key. The only valid value for the name of
-    /// the key policy is <code>default</code>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default key
-    /// policy</a>.</p>
+    /// <p>Resource policy configuration for the KMS key. The only valid value for the name of the key policy is <code>default</code>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default key policy</a>.</p>
     pub fn key_policies(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.key_policies.as_ref()
     }
-    /// <p>A list of proposed grant configurations for the KMS key. If the proposed grant
-    /// configuration is for an existing key, the access preview uses the proposed list of grant
-    /// configurations in place of the existing grants. Otherwise, the access preview uses the
-    /// existing grants for the key.</p>
+    /// <p>A list of proposed grant configurations for the KMS key. If the proposed grant configuration is for an existing key, the access preview uses the proposed list of grant configurations in place of the existing grants. Otherwise, the access preview uses the existing grants for the key.</p>
     pub fn grants(&self) -> std::option::Option<&[crate::model::KmsGrantConfiguration]> {
         self.grants.as_deref()
     }
@@ -7259,9 +6708,7 @@ pub mod kms_key_configuration {
         ///
         /// To override the contents of this collection use [`set_key_policies`](Self::set_key_policies).
         ///
-        /// <p>Resource policy configuration for the KMS key. The only valid value for the name of
-        /// the key policy is <code>default</code>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default key
-        /// policy</a>.</p>
+        /// <p>Resource policy configuration for the KMS key. The only valid value for the name of the key policy is <code>default</code>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default key policy</a>.</p>
         pub fn key_policies(
             mut self,
             k: impl Into<std::string::String>,
@@ -7272,9 +6719,7 @@ pub mod kms_key_configuration {
             self.key_policies = Some(hash_map);
             self
         }
-        /// <p>Resource policy configuration for the KMS key. The only valid value for the name of
-        /// the key policy is <code>default</code>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default key
-        /// policy</a>.</p>
+        /// <p>Resource policy configuration for the KMS key. The only valid value for the name of the key policy is <code>default</code>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default key policy</a>.</p>
         pub fn set_key_policies(
             mut self,
             input: std::option::Option<
@@ -7288,20 +6733,14 @@ pub mod kms_key_configuration {
         ///
         /// To override the contents of this collection use [`set_grants`](Self::set_grants).
         ///
-        /// <p>A list of proposed grant configurations for the KMS key. If the proposed grant
-        /// configuration is for an existing key, the access preview uses the proposed list of grant
-        /// configurations in place of the existing grants. Otherwise, the access preview uses the
-        /// existing grants for the key.</p>
+        /// <p>A list of proposed grant configurations for the KMS key. If the proposed grant configuration is for an existing key, the access preview uses the proposed list of grant configurations in place of the existing grants. Otherwise, the access preview uses the existing grants for the key.</p>
         pub fn grants(mut self, input: crate::model::KmsGrantConfiguration) -> Self {
             let mut v = self.grants.unwrap_or_default();
             v.push(input);
             self.grants = Some(v);
             self
         }
-        /// <p>A list of proposed grant configurations for the KMS key. If the proposed grant
-        /// configuration is for an existing key, the access preview uses the proposed list of grant
-        /// configurations in place of the existing grants. Otherwise, the access preview uses the
-        /// existing grants for the key.</p>
+        /// <p>A list of proposed grant configurations for the KMS key. If the proposed grant configuration is for an existing key, the access preview uses the proposed list of grant configurations in place of the existing grants. Otherwise, the access preview uses the existing grants for the key.</p>
         pub fn set_grants(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::KmsGrantConfiguration>>,
@@ -7331,18 +6770,13 @@ impl KmsKeyConfiguration {
 pub struct KmsGrantConfiguration {
     /// <p>A list of operations that the grant permits.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::KmsGrantOperation>>,
-    /// <p>The principal that is given permission to perform the operations that the grant
-    /// permits.</p>
+    /// <p>The principal that is given permission to perform the operations that the grant permits.</p>
     pub grantee_principal: std::option::Option<std::string::String>,
     /// <p>The principal that is given permission to retire the grant by using <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RetireGrant.html">RetireGrant</a> operation.</p>
     pub retiring_principal: std::option::Option<std::string::String>,
-    /// <p>Use this structure to propose allowing <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
-    /// operations</a> in the grant only when the operation request includes the specified
-    /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption
-    /// context</a>.</p>
+    /// <p>Use this structure to propose allowing <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> in the grant only when the operation request includes the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption context</a>.</p>
     pub constraints: std::option::Option<crate::model::KmsGrantConstraints>,
-    /// <p> The Amazon Web Services account under which the grant was issued. The account is used to propose
-    /// KMS grants issued by accounts other than the owner of the key.</p>
+    /// <p> The Amazon Web Services account under which the grant was issued. The account is used to propose KMS grants issued by accounts other than the owner of the key.</p>
     pub issuing_account: std::option::Option<std::string::String>,
 }
 impl KmsGrantConfiguration {
@@ -7350,8 +6784,7 @@ impl KmsGrantConfiguration {
     pub fn operations(&self) -> std::option::Option<&[crate::model::KmsGrantOperation]> {
         self.operations.as_deref()
     }
-    /// <p>The principal that is given permission to perform the operations that the grant
-    /// permits.</p>
+    /// <p>The principal that is given permission to perform the operations that the grant permits.</p>
     pub fn grantee_principal(&self) -> std::option::Option<&str> {
         self.grantee_principal.as_deref()
     }
@@ -7359,15 +6792,11 @@ impl KmsGrantConfiguration {
     pub fn retiring_principal(&self) -> std::option::Option<&str> {
         self.retiring_principal.as_deref()
     }
-    /// <p>Use this structure to propose allowing <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
-    /// operations</a> in the grant only when the operation request includes the specified
-    /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption
-    /// context</a>.</p>
+    /// <p>Use this structure to propose allowing <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> in the grant only when the operation request includes the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption context</a>.</p>
     pub fn constraints(&self) -> std::option::Option<&crate::model::KmsGrantConstraints> {
         self.constraints.as_ref()
     }
-    /// <p> The Amazon Web Services account under which the grant was issued. The account is used to propose
-    /// KMS grants issued by accounts other than the owner of the key.</p>
+    /// <p> The Amazon Web Services account under which the grant was issued. The account is used to propose KMS grants issued by accounts other than the owner of the key.</p>
     pub fn issuing_account(&self) -> std::option::Option<&str> {
         self.issuing_account.as_deref()
     }
@@ -7415,14 +6844,12 @@ pub mod kms_grant_configuration {
             self.operations = input;
             self
         }
-        /// <p>The principal that is given permission to perform the operations that the grant
-        /// permits.</p>
+        /// <p>The principal that is given permission to perform the operations that the grant permits.</p>
         pub fn grantee_principal(mut self, input: impl Into<std::string::String>) -> Self {
             self.grantee_principal = Some(input.into());
             self
         }
-        /// <p>The principal that is given permission to perform the operations that the grant
-        /// permits.</p>
+        /// <p>The principal that is given permission to perform the operations that the grant permits.</p>
         pub fn set_grantee_principal(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7443,18 +6870,12 @@ pub mod kms_grant_configuration {
             self.retiring_principal = input;
             self
         }
-        /// <p>Use this structure to propose allowing <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
-        /// operations</a> in the grant only when the operation request includes the specified
-        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption
-        /// context</a>.</p>
+        /// <p>Use this structure to propose allowing <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> in the grant only when the operation request includes the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption context</a>.</p>
         pub fn constraints(mut self, input: crate::model::KmsGrantConstraints) -> Self {
             self.constraints = Some(input);
             self
         }
-        /// <p>Use this structure to propose allowing <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
-        /// operations</a> in the grant only when the operation request includes the specified
-        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption
-        /// context</a>.</p>
+        /// <p>Use this structure to propose allowing <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> in the grant only when the operation request includes the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption context</a>.</p>
         pub fn set_constraints(
             mut self,
             input: std::option::Option<crate::model::KmsGrantConstraints>,
@@ -7462,14 +6883,12 @@ pub mod kms_grant_configuration {
             self.constraints = input;
             self
         }
-        /// <p> The Amazon Web Services account under which the grant was issued. The account is used to propose
-        /// KMS grants issued by accounts other than the owner of the key.</p>
+        /// <p> The Amazon Web Services account under which the grant was issued. The account is used to propose KMS grants issued by accounts other than the owner of the key.</p>
         pub fn issuing_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.issuing_account = Some(input.into());
             self
         }
-        /// <p> The Amazon Web Services account under which the grant was issued. The account is used to propose
-        /// KMS grants issued by accounts other than the owner of the key.</p>
+        /// <p> The Amazon Web Services account under which the grant was issued. The account is used to propose KMS grants issued by accounts other than the owner of the key.</p>
         pub fn set_issuing_account(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7496,42 +6915,26 @@ impl KmsGrantConfiguration {
     }
 }
 
-/// <p>Use this structure to propose allowing <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
-/// operations</a> in the grant only when the operation request includes the specified
-/// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption
-/// context</a>. You can specify only one type of encryption context. An empty map is
-/// treated as not specified. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_GrantConstraints.html">GrantConstraints</a>.</p>
+/// <p>Use this structure to propose allowing <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> in the grant only when the operation request includes the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption context</a>. You can specify only one type of encryption context. An empty map is treated as not specified. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_GrantConstraints.html">GrantConstraints</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsGrantConstraints {
-    /// <p>A list of key-value pairs that must match the encryption context in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
-    /// operation</a> request. The grant allows the operation only when the encryption
-    /// context in the request is the same as the encryption context specified in this
-    /// constraint.</p>
+    /// <p>A list of key-value pairs that must match the encryption context in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operation</a> request. The grant allows the operation only when the encryption context in the request is the same as the encryption context specified in this constraint.</p>
     pub encryption_context_equals:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>A list of key-value pairs that must be included in the encryption context of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
-    /// operation</a> request. The grant allows the cryptographic operation only when the
-    /// encryption context in the request includes the key-value pairs specified in this
-    /// constraint, although it can include additional key-value pairs.</p>
+    /// <p>A list of key-value pairs that must be included in the encryption context of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operation</a> request. The grant allows the cryptographic operation only when the encryption context in the request includes the key-value pairs specified in this constraint, although it can include additional key-value pairs.</p>
     pub encryption_context_subset:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl KmsGrantConstraints {
-    /// <p>A list of key-value pairs that must match the encryption context in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
-    /// operation</a> request. The grant allows the operation only when the encryption
-    /// context in the request is the same as the encryption context specified in this
-    /// constraint.</p>
+    /// <p>A list of key-value pairs that must match the encryption context in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operation</a> request. The grant allows the operation only when the encryption context in the request is the same as the encryption context specified in this constraint.</p>
     pub fn encryption_context_equals(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.encryption_context_equals.as_ref()
     }
-    /// <p>A list of key-value pairs that must be included in the encryption context of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
-    /// operation</a> request. The grant allows the cryptographic operation only when the
-    /// encryption context in the request includes the key-value pairs specified in this
-    /// constraint, although it can include additional key-value pairs.</p>
+    /// <p>A list of key-value pairs that must be included in the encryption context of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operation</a> request. The grant allows the cryptographic operation only when the encryption context in the request includes the key-value pairs specified in this constraint, although it can include additional key-value pairs.</p>
     pub fn encryption_context_subset(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -7565,10 +6968,7 @@ pub mod kms_grant_constraints {
         ///
         /// To override the contents of this collection use [`set_encryption_context_equals`](Self::set_encryption_context_equals).
         ///
-        /// <p>A list of key-value pairs that must match the encryption context in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
-        /// operation</a> request. The grant allows the operation only when the encryption
-        /// context in the request is the same as the encryption context specified in this
-        /// constraint.</p>
+        /// <p>A list of key-value pairs that must match the encryption context in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operation</a> request. The grant allows the operation only when the encryption context in the request is the same as the encryption context specified in this constraint.</p>
         pub fn encryption_context_equals(
             mut self,
             k: impl Into<std::string::String>,
@@ -7579,10 +6979,7 @@ pub mod kms_grant_constraints {
             self.encryption_context_equals = Some(hash_map);
             self
         }
-        /// <p>A list of key-value pairs that must match the encryption context in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
-        /// operation</a> request. The grant allows the operation only when the encryption
-        /// context in the request is the same as the encryption context specified in this
-        /// constraint.</p>
+        /// <p>A list of key-value pairs that must match the encryption context in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operation</a> request. The grant allows the operation only when the encryption context in the request is the same as the encryption context specified in this constraint.</p>
         pub fn set_encryption_context_equals(
             mut self,
             input: std::option::Option<
@@ -7596,10 +6993,7 @@ pub mod kms_grant_constraints {
         ///
         /// To override the contents of this collection use [`set_encryption_context_subset`](Self::set_encryption_context_subset).
         ///
-        /// <p>A list of key-value pairs that must be included in the encryption context of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
-        /// operation</a> request. The grant allows the cryptographic operation only when the
-        /// encryption context in the request includes the key-value pairs specified in this
-        /// constraint, although it can include additional key-value pairs.</p>
+        /// <p>A list of key-value pairs that must be included in the encryption context of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operation</a> request. The grant allows the cryptographic operation only when the encryption context in the request includes the key-value pairs specified in this constraint, although it can include additional key-value pairs.</p>
         pub fn encryption_context_subset(
             mut self,
             k: impl Into<std::string::String>,
@@ -7610,10 +7004,7 @@ pub mod kms_grant_constraints {
             self.encryption_context_subset = Some(hash_map);
             self
         }
-        /// <p>A list of key-value pairs that must be included in the encryption context of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
-        /// operation</a> request. The grant allows the cryptographic operation only when the
-        /// encryption context in the request includes the key-value pairs specified in this
-        /// constraint, although it can include additional key-value pairs.</p>
+        /// <p>A list of key-value pairs that must be included in the encryption context of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operation</a> request. The grant allows the cryptographic operation only when the encryption context in the request includes the key-value pairs specified in this constraint, although it can include additional key-value pairs.</p>
         pub fn set_encryption_context_subset(
             mut self,
             input: std::option::Option<
@@ -7761,14 +7152,7 @@ impl AsRef<str> for KmsGrantOperation {
     }
 }
 
-/// <p>The proposed access control configuration for an IAM role. You can propose a
-/// configuration for a new IAM role or an existing IAM role that you own by specifying the
-/// trust policy. If the configuration is for a new IAM role, you must specify the trust
-/// policy. If the configuration is for an existing IAM role that you own and you do not
-/// propose the trust policy, the access preview uses the existing trust policy for the role.
-/// The proposed trust policy cannot be an empty string. For more information about role trust
-/// policy limits, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM and STS
-/// quotas</a>.</p>
+/// <p>The proposed access control configuration for an IAM role. You can propose a configuration for a new IAM role or an existing IAM role that you own by specifying the trust policy. If the configuration is for a new IAM role, you must specify the trust policy. If the configuration is for an existing IAM role that you own and you do not propose the trust policy, the access preview uses the existing trust policy for the role. The proposed trust policy cannot be an empty string. For more information about role trust policy limits, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM and STS quotas</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IamRoleConfiguration {

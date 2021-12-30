@@ -11,8 +11,7 @@ pub enum Error {
     InternalServerErrorException(crate::error::InternalServerErrorException),
     /// <p>The <code>resourceArn</code>, <code>secretArn</code>, or <code>transactionId</code> value can't be found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The service specified by the <code>resourceArn</code> parameter is not
-    /// available.</p>
+    /// <p>The service specified by the <code>resourceArn</code> parameter is not available.</p>
     ServiceUnavailableError(crate::error::ServiceUnavailableError),
     /// <p>The execution of the SQL statement timed out.</p>
     StatementTimeoutException(crate::error::StatementTimeoutException),

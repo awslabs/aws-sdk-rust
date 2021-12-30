@@ -3,28 +3,21 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>The request failed because an active instance refresh for the specified Auto Scaling group was
-    /// not found. </p>
+    /// <p>The request failed because an active instance refresh for the specified Auto Scaling group was not found. </p>
     ActiveInstanceRefreshNotFoundFault(crate::error::ActiveInstanceRefreshNotFoundFault),
     /// <p>You already have an Auto Scaling group or launch configuration with this name.</p>
     AlreadyExistsFault(crate::error::AlreadyExistsFault),
-    /// <p>The request failed because an active instance refresh operation already exists for the
-    /// specified Auto Scaling group.</p>
+    /// <p>The request failed because an active instance refresh operation already exists for the specified Auto Scaling group.</p>
     InstanceRefreshInProgressFault(crate::error::InstanceRefreshInProgressFault),
     /// <p>The <code>NextToken</code> value is not valid.</p>
     InvalidNextToken(crate::error::InvalidNextToken),
-    /// <p>You have already reached a limit for your Amazon EC2 Auto Scaling
-    /// resources (for example, Auto Scaling groups, launch configurations, or lifecycle hooks). For
-    /// more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API
-    /// Reference</i>.</p>
+    /// <p>You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example, Auto Scaling groups, launch configurations, or lifecycle hooks). For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
     LimitExceededFault(crate::error::LimitExceededFault),
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// <p>The operation can't be performed because the resource is in use.</p>
     ResourceInUseFault(crate::error::ResourceInUseFault),
-    /// <p>The operation can't be performed because there are scaling activities in
-    /// progress.</p>
+    /// <p>The operation can't be performed because there are scaling activities in progress.</p>
     ScalingActivityInProgressFault(crate::error::ScalingActivityInProgressFault),
     /// <p>The service-linked role is not yet ready for use.</p>
     ServiceLinkedRoleFailure(crate::error::ServiceLinkedRoleFailure),

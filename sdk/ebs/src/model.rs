@@ -586,19 +586,15 @@ impl Block {
     }
 }
 
-/// <p>A block of data in an Amazon Elastic Block Store snapshot that is different from another snapshot of
-/// the same volume/snapshot lineage.</p>
+/// <p>A block of data in an Amazon Elastic Block Store snapshot that is different from another snapshot of the same volume/snapshot lineage.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChangedBlock {
     /// <p>The block index.</p>
     pub block_index: std::option::Option<i32>,
-    /// <p>The block token for the block index of the <code>FirstSnapshotId</code> specified in
-    /// the <code>ListChangedBlocks</code> operation. This value is absent if the first snapshot
-    /// does not have the changed block that is on the second snapshot.</p>
+    /// <p>The block token for the block index of the <code>FirstSnapshotId</code> specified in the <code>ListChangedBlocks</code> operation. This value is absent if the first snapshot does not have the changed block that is on the second snapshot.</p>
     pub first_block_token: std::option::Option<std::string::String>,
-    /// <p>The block token for the block index of the <code>SecondSnapshotId</code> specified in
-    /// the <code>ListChangedBlocks</code> operation.</p>
+    /// <p>The block token for the block index of the <code>SecondSnapshotId</code> specified in the <code>ListChangedBlocks</code> operation.</p>
     pub second_block_token: std::option::Option<std::string::String>,
 }
 impl ChangedBlock {
@@ -606,14 +602,11 @@ impl ChangedBlock {
     pub fn block_index(&self) -> std::option::Option<i32> {
         self.block_index
     }
-    /// <p>The block token for the block index of the <code>FirstSnapshotId</code> specified in
-    /// the <code>ListChangedBlocks</code> operation. This value is absent if the first snapshot
-    /// does not have the changed block that is on the second snapshot.</p>
+    /// <p>The block token for the block index of the <code>FirstSnapshotId</code> specified in the <code>ListChangedBlocks</code> operation. This value is absent if the first snapshot does not have the changed block that is on the second snapshot.</p>
     pub fn first_block_token(&self) -> std::option::Option<&str> {
         self.first_block_token.as_deref()
     }
-    /// <p>The block token for the block index of the <code>SecondSnapshotId</code> specified in
-    /// the <code>ListChangedBlocks</code> operation.</p>
+    /// <p>The block token for the block index of the <code>SecondSnapshotId</code> specified in the <code>ListChangedBlocks</code> operation.</p>
     pub fn second_block_token(&self) -> std::option::Option<&str> {
         self.second_block_token.as_deref()
     }
@@ -648,16 +641,12 @@ pub mod changed_block {
             self.block_index = input;
             self
         }
-        /// <p>The block token for the block index of the <code>FirstSnapshotId</code> specified in
-        /// the <code>ListChangedBlocks</code> operation. This value is absent if the first snapshot
-        /// does not have the changed block that is on the second snapshot.</p>
+        /// <p>The block token for the block index of the <code>FirstSnapshotId</code> specified in the <code>ListChangedBlocks</code> operation. This value is absent if the first snapshot does not have the changed block that is on the second snapshot.</p>
         pub fn first_block_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.first_block_token = Some(input.into());
             self
         }
-        /// <p>The block token for the block index of the <code>FirstSnapshotId</code> specified in
-        /// the <code>ListChangedBlocks</code> operation. This value is absent if the first snapshot
-        /// does not have the changed block that is on the second snapshot.</p>
+        /// <p>The block token for the block index of the <code>FirstSnapshotId</code> specified in the <code>ListChangedBlocks</code> operation. This value is absent if the first snapshot does not have the changed block that is on the second snapshot.</p>
         pub fn set_first_block_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -665,14 +654,12 @@ pub mod changed_block {
             self.first_block_token = input;
             self
         }
-        /// <p>The block token for the block index of the <code>SecondSnapshotId</code> specified in
-        /// the <code>ListChangedBlocks</code> operation.</p>
+        /// <p>The block token for the block index of the <code>SecondSnapshotId</code> specified in the <code>ListChangedBlocks</code> operation.</p>
         pub fn second_block_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.second_block_token = Some(input.into());
             self
         }
-        /// <p>The block token for the block index of the <code>SecondSnapshotId</code> specified in
-        /// the <code>ListChangedBlocks</code> operation.</p>
+        /// <p>The block token for the block index of the <code>SecondSnapshotId</code> specified in the <code>ListChangedBlocks</code> operation.</p>
         pub fn set_second_block_token(
             mut self,
             input: std::option::Option<std::string::String>,

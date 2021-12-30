@@ -194,8 +194,7 @@ impl AttributeGroup {
     }
 }
 
-/// <p>Represents a Amazon Web Services Service Catalog AppRegistry application that is the top-level node in a hierarchy of related
-/// cloud resource abstractions.</p>
+/// <p>Represents a Amazon Web Services Service Catalog AppRegistry application that is the top-level node in a hierarchy of related cloud resource abstractions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Application {
@@ -889,8 +888,7 @@ pub struct Resource {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The time the resource was associated with the application.</p>
     pub association_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The service integration information about the resource.
-    /// </p>
+    /// <p>The service integration information about the resource. </p>
     pub integrations: std::option::Option<crate::model::ResourceIntegrations>,
 }
 impl Resource {
@@ -906,8 +904,7 @@ impl Resource {
     pub fn association_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.association_time.as_ref()
     }
-    /// <p>The service integration information about the resource.
-    /// </p>
+    /// <p>The service integration information about the resource. </p>
     pub fn integrations(&self) -> std::option::Option<&crate::model::ResourceIntegrations> {
         self.integrations.as_ref()
     }
@@ -967,14 +964,12 @@ pub mod resource {
             self.association_time = input;
             self
         }
-        /// <p>The service integration information about the resource.
-        /// </p>
+        /// <p>The service integration information about the resource. </p>
         pub fn integrations(mut self, input: crate::model::ResourceIntegrations) -> Self {
             self.integrations = Some(input);
             self
         }
-        /// <p>The service integration information about the resource.
-        /// </p>
+        /// <p>The service integration information about the resource. </p>
         pub fn set_integrations(
             mut self,
             input: std::option::Option<crate::model::ResourceIntegrations>,
@@ -1062,18 +1057,12 @@ impl ResourceIntegrations {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceGroup {
     /// <p>The state of the propagation process for the resource group. The states includes:</p>
-    /// <p>
-    /// <code>CREATING </code>if the resource group is in the process of being created.</p>
-    /// <p>
-    /// <code>CREATE_COMPLETE</code> if the resource group was created successfully.</p>
-    /// <p>
-    /// <code>CREATE_FAILED</code> if the resource group failed to be created.</p>
-    /// <p>
-    /// <code>UPDATING</code> if the resource group is in the process of being updated.</p>
-    /// <p>
-    /// <code>UPDATE_COMPLETE</code> if the resource group updated successfully.</p>
-    /// <p>
-    /// <code>UPDATE_FAILED</code> if the resource group could not update successfully.</p>
+    /// <p> <code>CREATING </code>if the resource group is in the process of being created.</p>
+    /// <p> <code>CREATE_COMPLETE</code> if the resource group was created successfully.</p>
+    /// <p> <code>CREATE_FAILED</code> if the resource group failed to be created.</p>
+    /// <p> <code>UPDATING</code> if the resource group is in the process of being updated.</p>
+    /// <p> <code>UPDATE_COMPLETE</code> if the resource group updated successfully.</p>
+    /// <p> <code>UPDATE_FAILED</code> if the resource group could not update successfully.</p>
     pub state: std::option::Option<crate::model::ResourceGroupState>,
     /// <p>The Amazon resource name (ARN) of the resource group.</p>
     pub arn: std::option::Option<std::string::String>,
@@ -1082,18 +1071,12 @@ pub struct ResourceGroup {
 }
 impl ResourceGroup {
     /// <p>The state of the propagation process for the resource group. The states includes:</p>
-    /// <p>
-    /// <code>CREATING </code>if the resource group is in the process of being created.</p>
-    /// <p>
-    /// <code>CREATE_COMPLETE</code> if the resource group was created successfully.</p>
-    /// <p>
-    /// <code>CREATE_FAILED</code> if the resource group failed to be created.</p>
-    /// <p>
-    /// <code>UPDATING</code> if the resource group is in the process of being updated.</p>
-    /// <p>
-    /// <code>UPDATE_COMPLETE</code> if the resource group updated successfully.</p>
-    /// <p>
-    /// <code>UPDATE_FAILED</code> if the resource group could not update successfully.</p>
+    /// <p> <code>CREATING </code>if the resource group is in the process of being created.</p>
+    /// <p> <code>CREATE_COMPLETE</code> if the resource group was created successfully.</p>
+    /// <p> <code>CREATE_FAILED</code> if the resource group failed to be created.</p>
+    /// <p> <code>UPDATING</code> if the resource group is in the process of being updated.</p>
+    /// <p> <code>UPDATE_COMPLETE</code> if the resource group updated successfully.</p>
+    /// <p> <code>UPDATE_FAILED</code> if the resource group could not update successfully.</p>
     pub fn state(&self) -> std::option::Option<&crate::model::ResourceGroupState> {
         self.state.as_ref()
     }
@@ -1127,35 +1110,23 @@ pub mod resource_group {
     }
     impl Builder {
         /// <p>The state of the propagation process for the resource group. The states includes:</p>
-        /// <p>
-        /// <code>CREATING </code>if the resource group is in the process of being created.</p>
-        /// <p>
-        /// <code>CREATE_COMPLETE</code> if the resource group was created successfully.</p>
-        /// <p>
-        /// <code>CREATE_FAILED</code> if the resource group failed to be created.</p>
-        /// <p>
-        /// <code>UPDATING</code> if the resource group is in the process of being updated.</p>
-        /// <p>
-        /// <code>UPDATE_COMPLETE</code> if the resource group updated successfully.</p>
-        /// <p>
-        /// <code>UPDATE_FAILED</code> if the resource group could not update successfully.</p>
+        /// <p> <code>CREATING </code>if the resource group is in the process of being created.</p>
+        /// <p> <code>CREATE_COMPLETE</code> if the resource group was created successfully.</p>
+        /// <p> <code>CREATE_FAILED</code> if the resource group failed to be created.</p>
+        /// <p> <code>UPDATING</code> if the resource group is in the process of being updated.</p>
+        /// <p> <code>UPDATE_COMPLETE</code> if the resource group updated successfully.</p>
+        /// <p> <code>UPDATE_FAILED</code> if the resource group could not update successfully.</p>
         pub fn state(mut self, input: crate::model::ResourceGroupState) -> Self {
             self.state = Some(input);
             self
         }
         /// <p>The state of the propagation process for the resource group. The states includes:</p>
-        /// <p>
-        /// <code>CREATING </code>if the resource group is in the process of being created.</p>
-        /// <p>
-        /// <code>CREATE_COMPLETE</code> if the resource group was created successfully.</p>
-        /// <p>
-        /// <code>CREATE_FAILED</code> if the resource group failed to be created.</p>
-        /// <p>
-        /// <code>UPDATING</code> if the resource group is in the process of being updated.</p>
-        /// <p>
-        /// <code>UPDATE_COMPLETE</code> if the resource group updated successfully.</p>
-        /// <p>
-        /// <code>UPDATE_FAILED</code> if the resource group could not update successfully.</p>
+        /// <p> <code>CREATING </code>if the resource group is in the process of being created.</p>
+        /// <p> <code>CREATE_COMPLETE</code> if the resource group was created successfully.</p>
+        /// <p> <code>CREATE_FAILED</code> if the resource group failed to be created.</p>
+        /// <p> <code>UPDATING</code> if the resource group is in the process of being updated.</p>
+        /// <p> <code>UPDATE_COMPLETE</code> if the resource group updated successfully.</p>
+        /// <p> <code>UPDATE_FAILED</code> if the resource group could not update successfully.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::ResourceGroupState>,

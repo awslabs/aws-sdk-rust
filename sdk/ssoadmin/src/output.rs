@@ -565,14 +565,14 @@ impl ListPermissionSetProvisioningStatusOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListManagedPoliciesInPermissionSetOutput {
-    /// <p>The array of the <a>AttachedManagedPolicy</a> data type object.</p>
+    /// <p>The array of the <code>AttachedManagedPolicy</code> data type object.</p>
     pub attached_managed_policies:
         std::option::Option<std::vec::Vec<crate::model::AttachedManagedPolicy>>,
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListManagedPoliciesInPermissionSetOutput {
-    /// <p>The array of the <a>AttachedManagedPolicy</a> data type object.</p>
+    /// <p>The array of the <code>AttachedManagedPolicy</code> data type object.</p>
     pub fn attached_managed_policies(
         &self,
     ) -> std::option::Option<&[crate::model::AttachedManagedPolicy]> {
@@ -606,7 +606,7 @@ pub mod list_managed_policies_in_permission_set_output {
         ///
         /// To override the contents of this collection use [`set_attached_managed_policies`](Self::set_attached_managed_policies).
         ///
-        /// <p>The array of the <a>AttachedManagedPolicy</a> data type object.</p>
+        /// <p>The array of the <code>AttachedManagedPolicy</code> data type object.</p>
         pub fn attached_managed_policies(
             mut self,
             input: crate::model::AttachedManagedPolicy,
@@ -616,7 +616,7 @@ pub mod list_managed_policies_in_permission_set_output {
             self.attached_managed_policies = Some(v);
             self
         }
-        /// <p>The array of the <a>AttachedManagedPolicy</a> data type object.</p>
+        /// <p>The array of the <code>AttachedManagedPolicy</code> data type object.</p>
         pub fn set_attached_managed_policies(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AttachedManagedPolicy>>,
@@ -1308,8 +1308,7 @@ pub struct DescribeInstanceAccessControlAttributeConfigurationOutput {
         std::option::Option<crate::model::InstanceAccessControlAttributeConfigurationStatus>,
     /// <p>Provides more details about the current status of the specified attribute.</p>
     pub status_reason: std::option::Option<std::string::String>,
-    /// <p>Gets the list of Amazon Web Services SSO identity store attributes that have been added to your ABAC
-    /// configuration.</p>
+    /// <p>Gets the list of Amazon Web Services SSO identity store attributes that have been added to your ABAC configuration.</p>
     pub instance_access_control_attribute_configuration:
         std::option::Option<crate::model::InstanceAccessControlAttributeConfiguration>,
 }
@@ -1324,8 +1323,7 @@ impl DescribeInstanceAccessControlAttributeConfigurationOutput {
     pub fn status_reason(&self) -> std::option::Option<&str> {
         self.status_reason.as_deref()
     }
-    /// <p>Gets the list of Amazon Web Services SSO identity store attributes that have been added to your ABAC
-    /// configuration.</p>
+    /// <p>Gets the list of Amazon Web Services SSO identity store attributes that have been added to your ABAC configuration.</p>
     pub fn instance_access_control_attribute_configuration(
         &self,
     ) -> std::option::Option<&crate::model::InstanceAccessControlAttributeConfiguration> {
@@ -1390,8 +1388,7 @@ pub mod describe_instance_access_control_attribute_configuration_output {
             self.status_reason = input;
             self
         }
-        /// <p>Gets the list of Amazon Web Services SSO identity store attributes that have been added to your ABAC
-        /// configuration.</p>
+        /// <p>Gets the list of Amazon Web Services SSO identity store attributes that have been added to your ABAC configuration.</p>
         pub fn instance_access_control_attribute_configuration(
             mut self,
             input: crate::model::InstanceAccessControlAttributeConfiguration,
@@ -1399,8 +1396,7 @@ pub mod describe_instance_access_control_attribute_configuration_output {
             self.instance_access_control_attribute_configuration = Some(input);
             self
         }
-        /// <p>Gets the list of Amazon Web Services SSO identity store attributes that have been added to your ABAC
-        /// configuration.</p>
+        /// <p>Gets the list of Amazon Web Services SSO identity store attributes that have been added to your ABAC configuration.</p>
         pub fn set_instance_access_control_attribute_configuration(
             mut self,
             input: std::option::Option<crate::model::InstanceAccessControlAttributeConfiguration>,

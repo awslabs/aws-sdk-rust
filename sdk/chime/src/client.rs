@@ -1936,12 +1936,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BatchCreateAttendee`.
     ///
-    /// <p>
-    /// Creates up to 100 new attendees for an active Amazon Chime SDK meeting. For more information about the Amazon Chime SDK, see
-    /// <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a>
-    /// in the
-    /// <i>Amazon Chime Developer Guide</i>.
-    /// </p>
+    /// <p> Creates up to 100 new attendees for an active Amazon Chime SDK meeting. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchCreateAttendee<
         C = aws_smithy_client::erase::DynConnector,
@@ -2095,20 +2090,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_channel_arn(input);
             self
         }
-        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
-        /// members are always returned as part of <code>ListChannelMemberships</code>. Hidden members
-        /// are only returned if the type filter in <code>ListChannelMemberships</code> equals
-        /// <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported
-        /// by moderators.</p>
+        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
         pub fn r#type(mut self, input: crate::model::ChannelMembershipType) -> Self {
             self.inner = self.inner.r#type(input);
             self
         }
-        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
-        /// members are always returned as part of <code>ListChannelMemberships</code>. Hidden members
-        /// are only returned if the type filter in <code>ListChannelMemberships</code> equals
-        /// <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported
-        /// by moderators.</p>
+        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::ChannelMembershipType>,
@@ -2243,15 +2230,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BatchDeletePhoneNumber`.
     ///
-    /// <p>
-    /// Moves phone numbers into the
-    /// <b>Deletion queue</b>. Phone numbers must be disassociated from any users or Amazon Chime Voice Connectors before they can be deleted.
-    /// </p>
-    ///
-    /// <p>
-    /// Phone numbers remain in the
-    /// <b>Deletion queue</b> for 7 days before they are deleted permanently.
-    /// </p>
+    /// <p> Moves phone numbers into the <b>Deletion queue</b>. Phone numbers must be disassociated from any users or Amazon Chime Voice Connectors before they can be deleted. </p>
+    /// <p> Phone numbers remain in the <b>Deletion queue</b> for 7 days before they are deleted permanently. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchDeletePhoneNumber<
         C = aws_smithy_client::erase::DynConnector,
@@ -2328,23 +2308,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BatchSuspendUser`.
     ///
-    /// <p>Suspends up to 50 users from a <code>Team</code> or <code>EnterpriseLWA</code> Amazon Chime
-    /// account. For more information about different account types, see <a href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing Your Amazon Chime Accounts</a> in the <i>Amazon Chime Administration
-    /// Guide</i>.</p>
-    ///
-    /// <p>Users suspended from a <code>Team</code> account are disassociated from the account,but they
-    /// can continue to use Amazon Chime as free users. To remove the suspension from suspended
-    /// <code>Team</code> account users, invite them to the <code>Team</code> account again.
-    /// You can use the <a>InviteUsers</a> action to do so.</p>
-    ///
-    /// <p>Users suspended from an <code>EnterpriseLWA</code> account are immediately signed out of
-    /// Amazon Chime and can no longer sign in. To remove the suspension from suspended <code>EnterpriseLWA</code> account users, use the <a>BatchUnsuspendUser</a> action.</p>
-    ///
-    /// <p>
-    /// To sign out users without suspending them, use the
-    /// <a>LogoutUser</a>
-    /// action.
-    /// </p>
+    /// <p>Suspends up to 50 users from a <code>Team</code> or <code>EnterpriseLWA</code> Amazon Chime account. For more information about different account types, see <a href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing Your Amazon Chime Accounts</a> in the <i>Amazon Chime Administration Guide</i>.</p>
+    /// <p>Users suspended from a <code>Team</code> account are disassociated from the account,but they can continue to use Amazon Chime as free users. To remove the suspension from suspended <code>Team</code> account users, invite them to the <code>Team</code> account again. You can use the <code>InviteUsers</code> action to do so.</p>
+    /// <p>Users suspended from an <code>EnterpriseLWA</code> account are immediately signed out of Amazon Chime and can no longer sign in. To remove the suspension from suspended <code>EnterpriseLWA</code> account users, use the <code>BatchUnsuspendUser</code> action.</p>
+    /// <p> To sign out users without suspending them, use the <code>LogoutUser</code> action. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchSuspendUser<
         C = aws_smithy_client::erase::DynConnector,
@@ -2431,19 +2398,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BatchUnsuspendUser`.
     ///
-    /// <p>Removes the suspension from up to 50 previously suspended users for the specified Amazon
-    /// Chime <code>EnterpriseLWA</code> account. Only users on <code>EnterpriseLWA</code>
-    /// accounts can be unsuspended using this action. For more information about different account types, see
-    /// <a href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">
-    /// Managing Your Amazon Chime Accounts
-    /// </a> in the account types, in the <i>Amazon Chime Administration Guide</i>.
-    /// </p>
-    ///
-    /// <p>
-    /// Previously suspended users who are unsuspended using this action are returned to
-    /// <code>Registered</code>
-    /// status. Users who are not previously suspended are ignored.
-    /// </p>
+    /// <p>Removes the suspension from up to 50 previously suspended users for the specified Amazon Chime <code>EnterpriseLWA</code> account. Only users on <code>EnterpriseLWA</code> accounts can be unsuspended using this action. For more information about different account types, see <a href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html"> Managing Your Amazon Chime Accounts </a> in the account types, in the <i>Amazon Chime Administration Guide</i>. </p>
+    /// <p> Previously suspended users who are unsuspended using this action are returned to <code>Registered</code> status. Users who are not previously suspended are ignored. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchUnsuspendUser<
         C = aws_smithy_client::erase::DynConnector,
@@ -2612,7 +2568,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BatchUpdateUser`.
     ///
-    /// <p>Updates user details within the <a>UpdateUserRequestItem</a> object for up to 20 users for the specified Amazon Chime account. Currently, only <code>LicenseType</code> updates are supported for this action.</p>
+    /// <p>Updates user details within the <code>UpdateUserRequestItem</code> object for up to 20 users for the specified Amazon Chime account. Currently, only <code>LicenseType</code> updates are supported for this action.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchUpdateUser<
         C = aws_smithy_client::erase::DynConnector,
@@ -2702,9 +2658,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateAccount`.
     ///
-    /// <p>Creates an Amazon Chime account under the administrator's AWS account. Only <code>Team</code>
-    /// account types are currently supported for this action. For more information about different account types, see
-    /// <a href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing Your Amazon Chime Accounts</a> in the <i>Amazon Chime Administration Guide</i>.</p>
+    /// <p>Creates an Amazon Chime account under the administrator's AWS account. Only <code>Team</code> account types are currently supported for this action. For more information about different account types, see <a href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing Your Amazon Chime Accounts</a> in the <i>Amazon Chime Administration Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAccount<
         C = aws_smithy_client::erase::DynConnector,
@@ -2774,8 +2728,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateAppInstance`.
     ///
-    /// <p>Creates an Amazon Chime SDK messaging <code>AppInstance</code> under an AWS account. Only SDK messaging customers use this API.
-    /// <code>CreateAppInstance</code> supports idempotency behavior as described in the AWS API Standard.</p>
+    /// <p>Creates an Amazon Chime SDK messaging <code>AppInstance</code> under an AWS account. Only SDK messaging customers use this API. <code>CreateAppInstance</code> supports idempotency behavior as described in the AWS API Standard.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAppInstance<
         C = aws_smithy_client::erase::DynConnector,
@@ -2885,20 +2838,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateAppInstanceAdmin`.
     ///
-    /// <p>Promotes an <code>AppInstanceUser</code> to an <code>AppInstanceAdmin</code>. The promoted user can perform the following actions.
-    /// </p>
-    ///
+    /// <p>Promotes an <code>AppInstanceUser</code> to an <code>AppInstanceAdmin</code>. The promoted user can perform the following actions. </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ChannelModerator</code> actions across all channels in the <code>AppInstance</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DeleteChannelMessage</code> actions.</p>
-    /// </li>
+    /// <li> <p> <code>ChannelModerator</code> actions across all channels in the <code>AppInstance</code>.</p> </li>
+    /// <li> <p> <code>DeleteChannelMessage</code> actions.</p> </li>
     /// </ul>
-    ///
     /// <p>Only an <code>AppInstanceUser</code> can be promoted to an <code>AppInstanceAdmin</code> role.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAppInstanceAdmin<
@@ -2985,8 +2929,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateAppInstanceUser`.
     ///
-    /// <p>Creates a user under an Amazon Chime <code>AppInstance</code>. The request consists of a unique <code>appInstanceUserId</code> and
-    /// <code>Name</code> for that user.</p>
+    /// <p>Creates a user under an Amazon Chime <code>AppInstance</code>. The request consists of a unique <code>appInstanceUserId</code> and <code>Name</code> for that user.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAppInstanceUser<
         C = aws_smithy_client::erase::DynConnector,
@@ -3122,12 +3065,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateAttendee`.
     ///
-    /// <p>
-    /// Creates a new attendee for an active Amazon Chime SDK meeting. For more information about the Amazon Chime SDK, see
-    /// <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a>
-    /// in the
-    /// <i>Amazon Chime Developer Guide</i>.
-    /// </p>
+    /// <p> Creates a new attendee for an active Amazon Chime SDK meeting. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAttendee<
         C = aws_smithy_client::erase::DynConnector,
@@ -3318,15 +3256,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateChannel`.
     ///
     /// <p>Creates a channel to which you can add users and send messages.</p>
-    ///
-    /// <p>
-    /// <b>Restriction</b>: You can't change a channel's
-    /// privacy.</p>
-    ///
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p> <b>Restriction</b>: You can't change a channel's privacy.</p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateChannel<
@@ -3407,30 +3338,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The channel mode: <code>UNRESTRICTED</code> or <code>RESTRICTED</code>. Administrators,
-        /// moderators, and channel members can add themselves and other members to unrestricted
-        /// channels. Only administrators and moderators can add members to restricted channels.</p>
+        /// <p>The channel mode: <code>UNRESTRICTED</code> or <code>RESTRICTED</code>. Administrators, moderators, and channel members can add themselves and other members to unrestricted channels. Only administrators and moderators can add members to restricted channels.</p>
         pub fn mode(mut self, input: crate::model::ChannelMode) -> Self {
             self.inner = self.inner.mode(input);
             self
         }
-        /// <p>The channel mode: <code>UNRESTRICTED</code> or <code>RESTRICTED</code>. Administrators,
-        /// moderators, and channel members can add themselves and other members to unrestricted
-        /// channels. Only administrators and moderators can add members to restricted channels.</p>
+        /// <p>The channel mode: <code>UNRESTRICTED</code> or <code>RESTRICTED</code>. Administrators, moderators, and channel members can add themselves and other members to unrestricted channels. Only administrators and moderators can add members to restricted channels.</p>
         pub fn set_mode(mut self, input: std::option::Option<crate::model::ChannelMode>) -> Self {
             self.inner = self.inner.set_mode(input);
             self
         }
-        /// <p>The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private
-        /// channels aren't discoverable by users outside the channel. Public channels are discoverable
-        /// by anyone in the <code>AppInstance</code>.</p>
+        /// <p>The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private channels aren't discoverable by users outside the channel. Public channels are discoverable by anyone in the <code>AppInstance</code>.</p>
         pub fn privacy(mut self, input: crate::model::ChannelPrivacy) -> Self {
             self.inner = self.inner.privacy(input);
             self
         }
-        /// <p>The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private
-        /// channels aren't discoverable by users outside the channel. Public channels are discoverable
-        /// by anyone in the <code>AppInstance</code>.</p>
+        /// <p>The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private channels aren't discoverable by users outside the channel. Public channels are discoverable by anyone in the <code>AppInstance</code>.</p>
         pub fn set_privacy(
             mut self,
             input: std::option::Option<crate::model::ChannelPrivacy>,
@@ -3491,17 +3414,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateChannelBan`.
     ///
-    /// <p>Permanently bans a member from a channel. Moderators can't add banned members to a
-    /// channel. To undo a ban, you first have to <code>DeleteChannelBan</code>, and then
-    /// <code>CreateChannelMembership</code>. Bans are cleaned up when you delete users or
-    /// channels.</p>
-    /// <p>If you ban a user who is already part of a channel, that user is automatically kicked
-    /// from the channel.</p>
-    ///
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p>Permanently bans a member from a channel. Moderators can't add banned members to a channel. To undo a ban, you first have to <code>DeleteChannelBan</code>, and then <code>CreateChannelMembership</code>. Bans are cleaned up when you delete users or channels.</p>
+    /// <p>If you ban a user who is already part of a channel, that user is automatically kicked from the channel.</p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateChannelBan<
@@ -3592,43 +3507,20 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateChannelMembership`.
     ///
-    /// <p>Adds a user to a channel. The <code>InvitedBy</code> response field is derived from the
-    /// request header. A channel member can:</p>
-    ///
+    /// <p>Adds a user to a channel. The <code>InvitedBy</code> response field is derived from the request header. A channel member can:</p>
     /// <ul>
-    /// <li>
-    /// <p>List messages</p>
-    /// </li>
-    /// <li>
-    /// <p>Send messages</p>
-    /// </li>
-    /// <li>
-    /// <p>Receive messages</p>
-    /// </li>
-    /// <li>
-    /// <p>Edit their own messages</p>
-    /// </li>
-    /// <li>
-    /// <p>Leave the channel</p>
-    /// </li>
+    /// <li> <p>List messages</p> </li>
+    /// <li> <p>Send messages</p> </li>
+    /// <li> <p>Receive messages</p> </li>
+    /// <li> <p>Edit their own messages</p> </li>
+    /// <li> <p>Leave the channel</p> </li>
     /// </ul>
-    ///
     /// <p>Privacy settings impact this action as follows:</p>
-    ///
     /// <ul>
-    /// <li>
-    /// <p>Public Channels: You do not need to be a member to list messages, but you must be
-    /// a member to send messages.</p>
-    /// </li>
-    /// <li>
-    /// <p>Private Channels: You must be a member to list or send messages.</p>
-    /// </li>
-    /// </ul>
-    ///
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <li> <p>Public Channels: You do not need to be a member to list messages, but you must be a member to send messages.</p> </li>
+    /// <li> <p>Private Channels: You must be a member to list or send messages.</p> </li>
+    /// </ul> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateChannelMembership<
@@ -3706,20 +3598,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_member_arn(input);
             self
         }
-        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
-        /// members are always returned as part of <code>ListChannelMemberships</code>. Hidden members
-        /// are only returned if the type filter in <code>ListChannelMemberships</code> equals
-        /// <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported
-        /// by moderators.</p>
+        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
         pub fn r#type(mut self, input: crate::model::ChannelMembershipType) -> Self {
             self.inner = self.inner.r#type(input);
             self
         }
-        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
-        /// members are always returned as part of <code>ListChannelMemberships</code>. Hidden members
-        /// are only returned if the type filter in <code>ListChannelMemberships</code> equals
-        /// <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported
-        /// by moderators.</p>
+        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::ChannelMembershipType>,
@@ -3741,29 +3625,14 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateChannelModerator`.
     ///
     /// <p>Creates a new <code>ChannelModerator</code>. A channel moderator can:</p>
-    ///
     /// <ul>
-    /// <li>
-    /// <p>Add and remove other members of the channel.</p>
-    /// </li>
-    /// <li>
-    /// <p>Add and remove other moderators of the channel.</p>
-    /// </li>
-    /// <li>
-    /// <p>Add and remove user bans for the channel.</p>
-    /// </li>
-    /// <li>
-    /// <p>Redact messages in the channel.</p>
-    /// </li>
-    /// <li>
-    /// <p>List messages in the channel.</p>
-    /// </li>
-    /// </ul>
-    ///
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <li> <p>Add and remove other members of the channel.</p> </li>
+    /// <li> <p>Add and remove other moderators of the channel.</p> </li>
+    /// <li> <p>Add and remove user bans for the channel.</p> </li>
+    /// <li> <p>Redact messages in the channel.</p> </li>
+    /// <li> <p>List messages in the channel.</p> </li>
+    /// </ul> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateChannelModerator<
@@ -3914,14 +3783,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Source type from which the media artifacts will be captured. A Chime SDK Meeting
-        /// is the only supported source.</p>
+        /// <p>Source type from which the media artifacts will be captured. A Chime SDK Meeting is the only supported source.</p>
         pub fn source_type(mut self, input: crate::model::MediaPipelineSourceType) -> Self {
             self.inner = self.inner.source_type(input);
             self
         }
-        /// <p>Source type from which the media artifacts will be captured. A Chime SDK Meeting
-        /// is the only supported source.</p>
+        /// <p>Source type from which the media artifacts will be captured. A Chime SDK Meeting is the only supported source.</p>
         pub fn set_source_type(
             mut self,
             input: std::option::Option<crate::model::MediaPipelineSourceType>,
@@ -3994,17 +3861,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateMeeting`.
     ///
-    /// <p>
-    /// Creates a new Amazon Chime SDK meeting in the specified media Region with no initial attendees. For more information about specifying media Regions, see
-    /// <a href="https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html">Amazon Chime SDK Media Regions</a>
-    /// in the
-    /// <i>Amazon Chime Developer Guide</i>
-    /// . For more information about the Amazon Chime SDK, see
-    /// <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a>
-    /// in the
-    /// <i>Amazon Chime Developer Guide</i>
-    /// .
-    /// </p>
+    /// <p> Creates a new Amazon Chime SDK meeting in the specified media Region with no initial attendees. For more information about specifying media Regions, see <a href="https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html">Amazon Chime SDK Media Regions</a> in the <i>Amazon Chime Developer Guide</i> . For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i> . </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateMeeting<
         C = aws_smithy_client::erase::DynConnector,
@@ -4100,96 +3957,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_meeting_host_id(input);
             self
         }
-        /// <p>
-        /// The Region in which to create the meeting. Default: <code>us-east-1</code>.
-        /// </p>
-        ///
-        /// <p>
-        /// Available values:
-        /// <code>af-south-1</code>
-        /// ,
-        /// <code>ap-northeast-1</code>
-        /// ,
-        /// <code>ap-northeast-2</code>
-        /// ,
-        /// <code>ap-south-1</code>
-        /// ,
-        /// <code>ap-southeast-1</code>
-        /// ,
-        /// <code>ap-southeast-2</code>
-        /// ,
-        /// <code>ca-central-1</code>
-        /// ,
-        /// <code>eu-central-1</code>
-        /// ,
-        /// <code>eu-north-1</code>
-        /// ,
-        /// <code>eu-south-1</code>
-        /// ,
-        /// <code>eu-west-1</code>
-        /// ,
-        /// <code>eu-west-2</code>
-        /// ,
-        /// <code>eu-west-3</code>
-        /// ,
-        /// <code>sa-east-1</code>
-        /// ,
-        /// <code>us-east-1</code>
-        /// ,
-        /// <code>us-east-2</code>
-        /// ,
-        /// <code>us-west-1</code>
-        /// ,
-        /// <code>us-west-2</code>
-        /// .
-        /// </p>
+        /// <p> The Region in which to create the meeting. Default: <code>us-east-1</code>. </p>
+        /// <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>
         pub fn media_region(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.media_region(input.into());
             self
         }
-        /// <p>
-        /// The Region in which to create the meeting. Default: <code>us-east-1</code>.
-        /// </p>
-        ///
-        /// <p>
-        /// Available values:
-        /// <code>af-south-1</code>
-        /// ,
-        /// <code>ap-northeast-1</code>
-        /// ,
-        /// <code>ap-northeast-2</code>
-        /// ,
-        /// <code>ap-south-1</code>
-        /// ,
-        /// <code>ap-southeast-1</code>
-        /// ,
-        /// <code>ap-southeast-2</code>
-        /// ,
-        /// <code>ca-central-1</code>
-        /// ,
-        /// <code>eu-central-1</code>
-        /// ,
-        /// <code>eu-north-1</code>
-        /// ,
-        /// <code>eu-south-1</code>
-        /// ,
-        /// <code>eu-west-1</code>
-        /// ,
-        /// <code>eu-west-2</code>
-        /// ,
-        /// <code>eu-west-3</code>
-        /// ,
-        /// <code>sa-east-1</code>
-        /// ,
-        /// <code>us-east-1</code>
-        /// ,
-        /// <code>us-east-2</code>
-        /// ,
-        /// <code>us-west-1</code>
-        /// ,
-        /// <code>us-west-2</code>
-        /// .
-        /// </p>
+        /// <p> The Region in which to create the meeting. Default: <code>us-east-1</code>. </p>
+        /// <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>
         pub fn set_media_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_media_region(input);
             self
@@ -4230,11 +4005,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateMeetingDialOut`.
     ///
-    /// <p>Uses the join token and call metadata in a meeting request (From number, To number, and so forth) to initiate an outbound call to a public
-    /// switched telephone network (PSTN) and join them into a Chime meeting. Also ensures that the From number belongs to the customer.</p>
-    ///
-    /// <p>To play welcome audio or implement an interactive voice response (IVR), use the
-    /// <code>CreateSipMediaApplicationCall</code> action with the corresponding SIP media application ID.</p>
+    /// <p>Uses the join token and call metadata in a meeting request (From number, To number, and so forth) to initiate an outbound call to a public switched telephone network (PSTN) and join them into a Chime meeting. Also ensures that the From number belongs to the customer.</p>
+    /// <p>To play welcome audio or implement an interactive voice response (IVR), use the <code>CreateSipMediaApplicationCall</code> action with the corresponding SIP media application ID.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateMeetingDialOut<
         C = aws_smithy_client::erase::DynConnector,
@@ -4340,17 +4112,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateMeetingWithAttendees`.
     ///
-    /// <p>
-    /// Creates a new Amazon Chime SDK meeting in the specified media Region, with attendees. For more information about specifying media Regions, see
-    /// <a href="https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html">Amazon Chime SDK Media Regions</a>
-    /// in the
-    /// <i>Amazon Chime Developer Guide</i>
-    /// . For more information about the Amazon Chime SDK, see
-    /// <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a>
-    /// in the
-    /// <i>Amazon Chime Developer Guide</i>
-    /// .
-    /// </p>
+    /// <p> Creates a new Amazon Chime SDK meeting in the specified media Region, with attendees. For more information about specifying media Regions, see <a href="https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html">Amazon Chime SDK Media Regions</a> in the <i>Amazon Chime Developer Guide</i> . For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i> . </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateMeetingWithAttendees<
         C = aws_smithy_client::erase::DynConnector,
@@ -4446,98 +4208,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_meeting_host_id(input);
             self
         }
-        /// <p>
-        /// The Region in which to create the meeting. Default: <code>us-east-1</code>
-        /// .
-        /// </p>
-        ///
-        /// <p>
-        /// Available values:
-        /// <code>af-south-1</code>
-        /// ,
-        /// <code>ap-northeast-1</code>
-        /// ,
-        /// <code>ap-northeast-2</code>
-        /// ,
-        /// <code>ap-south-1</code>
-        /// ,
-        /// <code>ap-southeast-1</code>
-        /// ,
-        /// <code>ap-southeast-2</code>
-        /// ,
-        /// <code>ca-central-1</code>
-        /// ,
-        /// <code>eu-central-1</code>
-        /// ,
-        /// <code>eu-north-1</code>
-        /// ,
-        /// <code>eu-south-1</code>
-        /// ,
-        /// <code>eu-west-1</code>
-        /// ,
-        /// <code>eu-west-2</code>
-        /// ,
-        /// <code>eu-west-3</code>
-        /// ,
-        /// <code>sa-east-1</code>
-        /// ,
-        /// <code>us-east-1</code>
-        /// ,
-        /// <code>us-east-2</code>
-        /// ,
-        /// <code>us-west-1</code>
-        /// ,
-        /// <code>us-west-2</code>
-        /// .
-        /// </p>
+        /// <p> The Region in which to create the meeting. Default: <code>us-east-1</code> . </p>
+        /// <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>
         pub fn media_region(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.media_region(input.into());
             self
         }
-        /// <p>
-        /// The Region in which to create the meeting. Default: <code>us-east-1</code>
-        /// .
-        /// </p>
-        ///
-        /// <p>
-        /// Available values:
-        /// <code>af-south-1</code>
-        /// ,
-        /// <code>ap-northeast-1</code>
-        /// ,
-        /// <code>ap-northeast-2</code>
-        /// ,
-        /// <code>ap-south-1</code>
-        /// ,
-        /// <code>ap-southeast-1</code>
-        /// ,
-        /// <code>ap-southeast-2</code>
-        /// ,
-        /// <code>ca-central-1</code>
-        /// ,
-        /// <code>eu-central-1</code>
-        /// ,
-        /// <code>eu-north-1</code>
-        /// ,
-        /// <code>eu-south-1</code>
-        /// ,
-        /// <code>eu-west-1</code>
-        /// ,
-        /// <code>eu-west-2</code>
-        /// ,
-        /// <code>eu-west-3</code>
-        /// ,
-        /// <code>sa-east-1</code>
-        /// ,
-        /// <code>us-east-1</code>
-        /// ,
-        /// <code>us-east-2</code>
-        /// ,
-        /// <code>us-west-1</code>
-        /// ,
-        /// <code>us-west-2</code>
-        /// .
-        /// </p>
+        /// <p> The Region in which to create the meeting. Default: <code>us-east-1</code> . </p>
+        /// <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>
         pub fn set_media_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_media_region(input);
             self
@@ -4559,9 +4237,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p> The resource target configurations for receiving Amazon Chime SDK meeting and attendee event
-        /// notifications. The Amazon Chime SDK supports resource targets located in the US East (N.
-        /// Virginia) AWS Region (<code>us-east-1</code>). </p>
+        /// <p> The resource target configurations for receiving Amazon Chime SDK meeting and attendee event notifications. The Amazon Chime SDK supports resource targets located in the US East (N. Virginia) AWS Region (<code>us-east-1</code>). </p>
         pub fn notifications_configuration(
             mut self,
             input: crate::model::MeetingNotificationConfiguration,
@@ -4569,9 +4245,7 @@ pub mod fluent_builders {
             self.inner = self.inner.notifications_configuration(input);
             self
         }
-        /// <p> The resource target configurations for receiving Amazon Chime SDK meeting and attendee event
-        /// notifications. The Amazon Chime SDK supports resource targets located in the US East (N.
-        /// Virginia) AWS Region (<code>us-east-1</code>). </p>
+        /// <p> The resource target configurations for receiving Amazon Chime SDK meeting and attendee event notifications. The Amazon Chime SDK supports resource targets located in the US East (N. Virginia) AWS Region (<code>us-east-1</code>). </p>
         pub fn set_notifications_configuration(
             mut self,
             input: std::option::Option<crate::model::MeetingNotificationConfiguration>,
@@ -4599,8 +4273,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreatePhoneNumberOrder`.
     ///
-    /// <p>Creates an order for phone numbers to be provisioned. For toll-free numbers, you cannot use the Amazon Chime Business Calling product type.
-    /// For numbers outside the U.S., you must use the Amazon Chime SIP Media Application Dial-In product type.</p>
+    /// <p>Creates an order for phone numbers to be provisioned. For toll-free numbers, you cannot use the Amazon Chime Business Calling product type. For numbers outside the U.S., you must use the Amazon Chime SIP Media Application Dial-In product type.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePhoneNumberOrder<
         C = aws_smithy_client::erase::DynConnector,
@@ -5152,8 +4825,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateSipMediaApplicationCall`.
     ///
-    /// <p>Creates an outbound call to a phone number from the phone number specified in the request, and it invokes the endpoint of the specified
-    /// <code>sipMediaApplicationId</code>.</p>
+    /// <p>Creates an outbound call to a phone number from the phone number specified in the request, and it invokes the endpoint of the specified <code>sipMediaApplicationId</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSipMediaApplicationCall<
         C = aws_smithy_client::erase::DynConnector,
@@ -5355,22 +5027,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_trigger_type(input);
             self
         }
-        /// <p>If <code>TriggerType</code> is <code>RequestUriHostname</code>, the value can be the outbound
-        /// host name of an Amazon Chime Voice Connector. If <code>TriggerType</code> is
-        /// <code>ToPhoneNumber</code>, the value can be a customer-owned phone number in the
-        /// E164 format. The <code>SipMediaApplication</code> specified in the <code>SipRule</code> is triggered if the request URI in an incoming SIP
-        /// request matches the <code>RequestUriHostname</code>, or if the <code>To</code> header in the incoming SIP request matches the
-        /// <code>ToPhoneNumber</code> value.</p>
+        /// <p>If <code>TriggerType</code> is <code>RequestUriHostname</code>, the value can be the outbound host name of an Amazon Chime Voice Connector. If <code>TriggerType</code> is <code>ToPhoneNumber</code>, the value can be a customer-owned phone number in the E164 format. The <code>SipMediaApplication</code> specified in the <code>SipRule</code> is triggered if the request URI in an incoming SIP request matches the <code>RequestUriHostname</code>, or if the <code>To</code> header in the incoming SIP request matches the <code>ToPhoneNumber</code> value.</p>
         pub fn trigger_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.trigger_value(input.into());
             self
         }
-        /// <p>If <code>TriggerType</code> is <code>RequestUriHostname</code>, the value can be the outbound
-        /// host name of an Amazon Chime Voice Connector. If <code>TriggerType</code> is
-        /// <code>ToPhoneNumber</code>, the value can be a customer-owned phone number in the
-        /// E164 format. The <code>SipMediaApplication</code> specified in the <code>SipRule</code> is triggered if the request URI in an incoming SIP
-        /// request matches the <code>RequestUriHostname</code>, or if the <code>To</code> header in the incoming SIP request matches the
-        /// <code>ToPhoneNumber</code> value.</p>
+        /// <p>If <code>TriggerType</code> is <code>RequestUriHostname</code>, the value can be the outbound host name of an Amazon Chime Voice Connector. If <code>TriggerType</code> is <code>ToPhoneNumber</code>, the value can be a customer-owned phone number in the E164 format. The <code>SipMediaApplication</code> specified in the <code>SipRule</code> is triggered if the request URI in an incoming SIP request matches the <code>RequestUriHostname</code>, or if the <code>To</code> header in the incoming SIP request matches the <code>ToPhoneNumber</code> value.</p>
         pub fn set_trigger_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5512,12 +5174,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateVoiceConnector`.
     ///
     /// <p>Creates an Amazon Chime Voice Connector under the administrator's AWS account. You can choose to create an Amazon Chime Voice Connector in a specific AWS Region.</p>
-    ///
-    /// <p>
-    /// Enabling
-    /// <a>CreateVoiceConnectorRequest$RequireEncryption</a>
-    /// configures your Amazon Chime Voice Connector to use TLS transport for SIP signaling and Secure RTP (SRTP) for media. Inbound calls use TLS transport, and unencrypted outbound calls are blocked.
-    /// </p>
+    /// <p> Enabling <code>CreateVoiceConnectorRequest$RequireEncryption</code> configures your Amazon Chime Voice Connector to use TLS transport for SIP signaling and Secure RTP (SRTP) for media. Inbound calls use TLS transport, and unencrypted outbound calls are blocked. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateVoiceConnector<
         C = aws_smithy_client::erase::DynConnector,
@@ -5584,20 +5241,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>
-        /// The AWS Region in which the Amazon Chime Voice Connector is created. Default value:
-        /// <code>us-east-1</code>
-        /// .
-        /// </p>
+        /// <p> The AWS Region in which the Amazon Chime Voice Connector is created. Default value: <code>us-east-1</code> . </p>
         pub fn aws_region(mut self, input: crate::model::VoiceConnectorAwsRegion) -> Self {
             self.inner = self.inner.aws_region(input);
             self
         }
-        /// <p>
-        /// The AWS Region in which the Amazon Chime Voice Connector is created. Default value:
-        /// <code>us-east-1</code>
-        /// .
-        /// </p>
+        /// <p> The AWS Region in which the Amazon Chime Voice Connector is created. Default value: <code>us-east-1</code> . </p>
         pub fn set_aws_region(
             mut self,
             input: std::option::Option<crate::model::VoiceConnectorAwsRegion>,
@@ -5618,11 +5267,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateVoiceConnectorGroup`.
     ///
-    /// <p>Creates an Amazon Chime Voice Connector group under the administrator's AWS account. You can
-    /// associate Amazon Chime Voice Connectors with the Amazon Chime Voice Connector group by
-    /// including <code>VoiceConnectorItems</code> in the request.</p>
-    /// <p>You can include Amazon Chime Voice Connectors from different AWS Regions in your group. This
-    /// creates a fault tolerant mechanism for fallback in case of availability events.</p>
+    /// <p>Creates an Amazon Chime Voice Connector group under the administrator's AWS account. You can associate Amazon Chime Voice Connectors with the Amazon Chime Voice Connector group by including <code>VoiceConnectorItems</code> in the request.</p>
+    /// <p>You can include Amazon Chime Voice Connectors from different AWS Regions in your group. This creates a fault tolerant mechanism for fallback in case of availability events.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateVoiceConnectorGroup<
         C = aws_smithy_client::erase::DynConnector,
@@ -5709,20 +5355,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteAccount`.
     ///
-    /// <p>Deletes the specified Amazon Chime account. You must suspend all users before deleting
-    /// <code>Team</code> account. You can use the <a>BatchSuspendUser</a> action
-    /// to dodo.</p>
-    ///
-    /// <p>For <code>EnterpriseLWA</code> and <code>EnterpriseAD</code> accounts, you must release the
-    /// claimed domains for your Amazon Chime account before deletion. As soon as you release
-    /// the domain, all users under that account are suspended.</p>
-    ///
-    /// <p>Deleted accounts appear in your <code>Disabled</code> accounts list for 90 days. To restore
-    /// deleted account from your <code>Disabled</code> accounts list, you must contact AWS
-    /// Support.</p>
-    ///
-    /// <p>After 90 days, deleted accounts are permanently removed from your
-    /// <code>Disabled</code> accounts list.</p>
+    /// <p>Deletes the specified Amazon Chime account. You must suspend all users before deleting <code>Team</code> account. You can use the <code>BatchSuspendUser</code> action to dodo.</p>
+    /// <p>For <code>EnterpriseLWA</code> and <code>EnterpriseAD</code> accounts, you must release the claimed domains for your Amazon Chime account before deletion. As soon as you release the domain, all users under that account are suspended.</p>
+    /// <p>Deleted accounts appear in your <code>Disabled</code> accounts list for 90 days. To restore deleted account from your <code>Disabled</code> accounts list, you must contact AWS Support.</p>
+    /// <p>After 90 days, deleted accounts are permanently removed from your <code>Disabled</code> accounts list.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAccount<
         C = aws_smithy_client::erase::DynConnector,
@@ -6099,10 +5735,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteAttendee`.
     ///
-    /// <p>Deletes an attendee from the specified Amazon Chime SDK meeting and deletes their
-    /// <code>JoinToken</code>. Attendees are automatically deleted when a Amazon Chime SDK meeting is deleted. For more information about the Amazon Chime SDK, see
-    /// <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a>
-    /// in the <i>Amazon Chime Developer Guide</i>.</p>
+    /// <p>Deletes an attendee from the specified Amazon Chime SDK meeting and deletes their <code>JoinToken</code>. Attendees are automatically deleted when a Amazon Chime SDK meeting is deleted. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAttendee<
         C = aws_smithy_client::erase::DynConnector,
@@ -6182,13 +5815,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteChannel`.
     ///
-    /// <p>Immediately makes a channel and its memberships inaccessible and marks them for
-    /// deletion. This is an irreversible process.</p>
-    ///
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p>Immediately makes a channel and its memberships inaccessible and marks them for deletion. This is an irreversible process.</p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteChannel<
@@ -6269,12 +5897,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteChannelBan`.
     ///
-    /// <p>Removes a user from a channel's ban list.</p>
-    ///
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p>Removes a user from a channel's ban list.</p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteChannelBan<
@@ -6365,12 +5989,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteChannelMembership`.
     ///
-    /// <p>Removes a member from a channel.</p>
-    ///
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p>Removes a member from a channel.</p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteChannelMembership<
@@ -6461,14 +6081,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteChannelMessage`.
     ///
-    /// <p>Deletes a channel message. Only admins can perform this action. Deletion makes messages
-    /// inaccessible immediately. A background process deletes any revisions created by
-    /// <code>UpdateChannelMessage</code>.</p>
-    ///
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p>Deletes a channel message. Only admins can perform this action. Deletion makes messages inaccessible immediately. A background process deletes any revisions created by <code>UpdateChannelMessage</code>.</p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteChannelMessage<
@@ -6559,12 +6173,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteChannelModerator`.
     ///
-    /// <p>Deletes a channel moderator.</p>
-    ///
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p>Deletes a channel moderator.</p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteChannelModerator<
@@ -6811,10 +6421,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteMeeting`.
     ///
-    /// <p>Deletes the specified Amazon Chime SDK meeting. The operation deletes all attendees, disconnects all clients, and prevents new clients from
-    /// joining the meeting. For more information about the Amazon Chime SDK, see
-    /// <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
-    /// <i>Amazon Chime Developer Guide</i>.</p>
+    /// <p>Deletes the specified Amazon Chime SDK meeting. The operation deletes all attendees, disconnects all clients, and prevents new clients from joining the meeting. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteMeeting<
         C = aws_smithy_client::erase::DynConnector,
@@ -6884,13 +6491,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeletePhoneNumber`.
     ///
-    /// <p>Moves the specified phone number into the <b>Deletion queue</b>. A
-    /// phone number must be disassociated from any users or Amazon Chime Voice Connectors
-    /// before it can be deleted.</p>
-    ///
-    /// <p>Deleted phone numbers remain in the
-    /// <b>Deletion queue</b>
-    /// for 7 days before they are deleted permanently.</p>
+    /// <p>Moves the specified phone number into the <b>Deletion queue</b>. A phone number must be disassociated from any users or Amazon Chime Voice Connectors before it can be deleted.</p>
+    /// <p>Deleted phone numbers remain in the <b>Deletion queue</b> for 7 days before they are deleted permanently.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePhoneNumber<
         C = aws_smithy_client::erase::DynConnector,
@@ -7362,9 +6964,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteVoiceConnector`.
     ///
-    /// <p>Deletes the specified Amazon Chime Voice Connector. Any phone numbers associated with the
-    /// Amazon Chime Voice Connector must be disassociated from it before it can be
-    /// deleted.</p>
+    /// <p>Deletes the specified Amazon Chime Voice Connector. Any phone numbers associated with the Amazon Chime Voice Connector must be disassociated from it before it can be deleted.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteVoiceConnector<
         C = aws_smithy_client::erase::DynConnector,
@@ -7503,9 +7103,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteVoiceConnectorGroup`.
     ///
-    /// <p>Deletes the specified Amazon Chime Voice Connector group. Any
-    /// <code>VoiceConnectorItems</code>
-    /// and phone numbers associated with the group must be removed before it can be deleted.</p>
+    /// <p>Deletes the specified Amazon Chime Voice Connector group. Any <code>VoiceConnectorItems</code> and phone numbers associated with the group must be removed before it can be deleted.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteVoiceConnectorGroup<
         C = aws_smithy_client::erase::DynConnector,
@@ -7578,9 +7176,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteVoiceConnectorOrigination`.
     ///
-    /// <p>Deletes the origination settings for the specified Amazon Chime Voice Connector.</p>
-    ///
-    /// <note>
+    /// <p>Deletes the origination settings for the specified Amazon Chime Voice Connector.</p> <note>
     /// <p>If emergency calling is configured for the Amazon Chime Voice Connector, it must be deleted prior to deleting the origination settings.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -7803,9 +7399,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteVoiceConnectorTermination`.
     ///
-    /// <p>Deletes the termination settings for the specified Amazon Chime Voice Connector.</p>
-    ///
-    /// <note>
+    /// <p>Deletes the termination settings for the specified Amazon Chime Voice Connector.</p> <note>
     /// <p>If emergency calling is configured for the Amazon Chime Voice Connector, it must be deleted prior to deleting the termination settings.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -8204,14 +7798,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeChannel`.
     ///
-    /// <p>Returns the full details of a channel in an Amazon Chime
-    /// <code>AppInstance</code>.</p>
-    ///
-    /// <note>
-    ///
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p>Returns the full details of a channel in an Amazon Chime <code>AppInstance</code>.</p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeChannel<
@@ -8292,13 +7880,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeChannelBan`.
     ///
-    /// <p>Returns the full details of a channel ban.</p>
-    ///
-    /// <note>
-    ///
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p>Returns the full details of a channel ban.</p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeChannelBan<
@@ -8389,11 +7972,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeChannelMembership`.
     ///
-    /// <p>Returns the full details of a user's channel membership.</p>
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p>Returns the full details of a user's channel membership.</p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeChannelMembership<
@@ -8484,13 +8064,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeChannelMembershipForAppInstanceUser`.
     ///
-    /// <p> Returns the details of a channel based on the membership of the specified
-    /// <code>AppInstanceUser</code>.</p>
-    ///
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p> Returns the details of a channel based on the membership of the specified <code>AppInstanceUser</code>.</p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeChannelMembershipForAppInstanceUser<
@@ -8586,13 +8161,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeChannelModeratedByAppInstanceUser`.
     ///
-    /// <p>Returns the full details of a channel moderated by the specified
-    /// <code>AppInstanceUser</code>.</p>
-    ///
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p>Returns the full details of a channel moderated by the specified <code>AppInstanceUser</code>.</p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeChannelModeratedByAppInstanceUser<
@@ -8688,11 +8258,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeChannelModerator`.
     ///
-    /// <p>Returns the full details of a single ChannelModerator.</p>
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p>Returns the full details of a single ChannelModerator.</p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeChannelModerator<
@@ -9130,8 +8697,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetAccount`.
     ///
-    /// <p>Retrieves details for the specified Amazon Chime account, such as account type and supported
-    /// licenses.</p>
+    /// <p>Retrieves details for the specified Amazon Chime account, such as account type and supported licenses.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAccount<
         C = aws_smithy_client::erase::DynConnector,
@@ -9201,10 +8767,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetAccountSettings`.
     ///
-    /// <p>Retrieves account settings for the specified Amazon Chime account ID, such as remote control
-    /// and dialout settings. For more information about these settings, see
-    /// <a href="https://docs.aws.amazon.com/chime/latest/ag/policies.html">Use the Policies Page</a> in the <i>Amazon Chime Administration Guide</i>.
-    /// </p>
+    /// <p>Retrieves account settings for the specified Amazon Chime account ID, such as remote control and dialout settings. For more information about these settings, see <a href="https://docs.aws.amazon.com/chime/latest/ag/policies.html">Use the Policies Page</a> in the <i>Amazon Chime Administration Guide</i>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAccountSettings<
         C = aws_smithy_client::erase::DynConnector,
@@ -9422,13 +8985,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetAttendee`.
     ///
-    /// <p>
-    /// Gets the Amazon Chime SDK attendee details for a specified meeting ID and attendee ID. For more information about the Amazon Chime SDK, see
-    /// <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a>
-    /// in the
-    /// <i>Amazon Chime Developer Guide</i>
-    /// .
-    /// </p>
+    /// <p> Gets the Amazon Chime SDK attendee details for a specified meeting ID and attendee ID. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i> . </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAttendee<
         C = aws_smithy_client::erase::DynConnector,
@@ -9588,12 +9145,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetChannelMessage`.
     ///
-    /// <p>Gets the full details of a channel message.</p>
-    ///
-    /// <note>
-    /// <p>The x-amz-chime-bearer request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p>Gets the full details of a channel message.</p> <note>
+    /// <p>The x-amz-chime-bearer request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetChannelMessage<
@@ -9764,8 +9317,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetGlobalSettings`.
     ///
-    /// <p>Retrieves global settings for the administrator's AWS account, such as Amazon Chime Business
-    /// Calling and Amazon Chime Voice Connector settings.</p>
+    /// <p>Retrieves global settings for the administrator's AWS account, such as Amazon Chime Business Calling and Amazon Chime Voice Connector settings.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetGlobalSettings<
         C = aws_smithy_client::erase::DynConnector,
@@ -9898,13 +9450,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetMeeting`.
     ///
-    /// <p>
-    /// Gets the Amazon Chime SDK meeting details for the specified meeting ID. For more information about the Amazon Chime SDK, see
-    /// <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a>
-    /// in the
-    /// <i>Amazon Chime Developer Guide</i>
-    /// .
-    /// </p>
+    /// <p> Gets the Amazon Chime SDK meeting details for the specified meeting ID. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i> . </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMeeting<
         C = aws_smithy_client::erase::DynConnector,
@@ -10107,8 +9653,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetPhoneNumberOrder`.
     ///
-    /// <p>Retrieves details for the specified phone number order, such as the order creation timestamp, phone
-    /// numbers in E.164 format, product type, and order status.</p>
+    /// <p>Retrieves details for the specified phone number order, such as the order creation timestamp, phone numbers in E.164 format, product type, and order status.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPhoneNumberOrder<
         C = aws_smithy_client::erase::DynConnector,
@@ -10327,10 +9872,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetRetentionSettings`.
     ///
-    /// <p>
-    /// Gets the retention settings for the specified Amazon Chime Enterprise account. For more information about retention settings, see
-    /// <a href="https://docs.aws.amazon.com/chime/latest/ag/chat-retention.html">Managing Chat Retention Policies</a> in the <i>Amazon Chime Administration Guide</i>.
-    /// </p>
+    /// <p> Gets the retention settings for the specified Amazon Chime Enterprise account. For more information about retention settings, see <a href="https://docs.aws.amazon.com/chime/latest/ag/chat-retention.html">Managing Chat Retention Policies</a> in the <i>Amazon Chime Administration Guide</i>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRetentionSettings<
         C = aws_smithy_client::erase::DynConnector,
@@ -10699,11 +10241,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetUser`.
     ///
     /// <p>Retrieves details for the specified user ID, such as primary email address, license type,and personal meeting PIN.</p>
-    ///
-    /// <p>
-    /// To retrieve user details with an email address instead of a user ID, use the
-    /// <a>ListUsers</a> action, and then filter by email address.
-    /// </p>
+    /// <p> To retrieve user details with an email address instead of a user ID, use the <code>ListUsers</code> action, and then filter by email address. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetUser<
         C = aws_smithy_client::erase::DynConnector,
@@ -11002,8 +10540,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetVoiceConnectorGroup`.
     ///
-    /// <p>
-    /// Retrieves details for the specified Amazon Chime Voice Connector group, such as timestamps,name, and associated <code>VoiceConnectorItems</code>.</p>
+    /// <p> Retrieves details for the specified Amazon Chime Voice Connector group, such as timestamps,name, and associated <code>VoiceConnectorItems</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetVoiceConnectorGroup<
         C = aws_smithy_client::erase::DynConnector,
@@ -11297,9 +10834,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetVoiceConnectorStreamingConfiguration`.
     ///
-    /// <p>Retrieves the streaming configuration details for the specified Amazon Chime Voice Connector.
-    /// Shows whether media streaming is enabled for sending to Amazon Kinesis. It also shows
-    /// the retention period, in hours, for the Amazon Kinesis data.</p>
+    /// <p>Retrieves the streaming configuration details for the specified Amazon Chime Voice Connector. Shows whether media streaming is enabled for sending to Amazon Kinesis. It also shows the retention period, in hours, for the Amazon Kinesis data.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetVoiceConnectorStreamingConfiguration<
         C = aws_smithy_client::erase::DynConnector,
@@ -11447,8 +10982,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetVoiceConnectorTerminationHealth`.
     ///
-    /// <p>Retrieves information about the last time a SIP <code>OPTIONS</code> ping was received from
-    /// your SIP infrastructure for the specified Amazon Chime Voice Connector.</p>
+    /// <p>Retrieves information about the last time a SIP <code>OPTIONS</code> ping was received from your SIP infrastructure for the specified Amazon Chime Voice Connector.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetVoiceConnectorTerminationHealth<
         C = aws_smithy_client::erase::DynConnector,
@@ -11523,9 +11057,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `InviteUsers`.
     ///
-    /// <p>Sends email to a maximum of 50 users, inviting them to the specified Amazon Chime
-    /// <code>Team</code> account. Only <code>Team</code> account types are currently
-    /// supported for this action.</p>
+    /// <p>Sends email to a maximum of 50 users, inviting them to the specified Amazon Chime <code>Team</code> account. Only <code>Team</code> account types are currently supported for this action.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct InviteUsers<
         C = aws_smithy_client::erase::DynConnector,
@@ -11622,9 +11154,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAccounts`.
     ///
-    /// <p>Lists the Amazon Chime accounts under the administrator's AWS account. You can filter accounts
-    /// by account name prefix. To find out which Amazon Chime account a user belongs to, you can
-    /// filter by the user's email address, which returns one account result.</p>
+    /// <p>Lists the Amazon Chime accounts under the administrator's AWS account. You can filter accounts by account name prefix. To find out which Amazon Chime account a user belongs to, you can filter by the user's email address, which returns one account result.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAccounts<
         C = aws_smithy_client::erase::DynConnector,
@@ -11897,9 +11427,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAppInstanceUsers`.
     ///
-    /// <p>List all <code>AppInstanceUsers</code>
-    /// created under a single <code>AppInstance</code>.
-    /// </p>
+    /// <p>List all <code>AppInstanceUsers</code> created under a single <code>AppInstance</code>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAppInstanceUsers<
         C = aws_smithy_client::erase::DynConnector,
@@ -11992,11 +11520,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAttendees`.
     ///
-    /// <p>
-    /// Lists the attendees for the specified Amazon Chime SDK meeting. For more information about the Amazon Chime SDK, see
-    /// <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a>
-    /// in the <i>Amazon Chime Developer Guide</i>.
-    /// </p>
+    /// <p> Lists the attendees for the specified Amazon Chime SDK meeting. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAttendees<
         C = aws_smithy_client::erase::DynConnector,
@@ -12256,13 +11780,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListChannelBans`.
     ///
-    /// <p>Lists all the users banned from a particular channel.</p>
-    ///
-    /// <note>
-    ///
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p>Lists all the users banned from a particular channel.</p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListChannelBans<
@@ -12363,13 +11882,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListChannelMemberships`.
     ///
-    /// <p>Lists all channel memberships in a channel.</p>
-    ///
-    /// <note>
-    ///
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p>Lists all channel memberships in a channel.</p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListChannelMemberships<
@@ -12437,18 +11951,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_channel_arn(input);
             self
         }
-        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
-        /// members are always returned as part of <code>ListChannelMemberships</code>. Hidden members
-        /// are only returned if the type filter in <code>ListChannelMemberships</code> equals
-        /// <code>HIDDEN</code>. Otherwise hidden members are not returned.</p>
+        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned.</p>
         pub fn r#type(mut self, input: crate::model::ChannelMembershipType) -> Self {
             self.inner = self.inner.r#type(input);
             self
         }
-        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
-        /// members are always returned as part of <code>ListChannelMemberships</code>. Hidden members
-        /// are only returned if the type filter in <code>ListChannelMemberships</code> equals
-        /// <code>HIDDEN</code>. Otherwise hidden members are not returned.</p>
+        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::ChannelMembershipType>,
@@ -12466,14 +11974,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token passed by previous API calls until all requested channel memberships are
-        /// returned.</p>
+        /// <p>The token passed by previous API calls until all requested channel memberships are returned.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token passed by previous API calls until all requested channel memberships are
-        /// returned.</p>
+        /// <p>The token passed by previous API calls until all requested channel memberships are returned.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -12491,13 +11997,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListChannelMembershipsForAppInstanceUser`.
     ///
-    /// <p> Lists all channels that a particular <code>AppInstanceUser</code> is a part of. Only an
-    /// <code>AppInstanceAdmin</code> can call the API with a user ARN that is not their own. </p>
-    ///
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p> Lists all channels that a particular <code>AppInstanceUser</code> is a part of. Only an <code>AppInstanceAdmin</code> can call the API with a user ARN that is not their own. </p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListChannelMembershipsForAppInstanceUser<
@@ -12603,16 +12104,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListChannelMessages`.
     ///
-    /// <p>List all the messages in a channel. Returns a paginated list of
-    /// <code>ChannelMessages</code>. By default, sorted by creation timestamp in descending
-    /// order.</p>
-    /// <note>
-    /// <p>Redacted messages appear in the results as empty, since they are only redacted, not
-    /// deleted. Deleted messages do not appear in the results. This action always returns the
-    /// latest version of an edited message.</p>
-    /// <p>Also, the x-amz-chime-bearer request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p>List all the messages in a channel. Returns a paginated list of <code>ChannelMessages</code>. By default, sorted by creation timestamp in descending order.</p> <note>
+    /// <p>Redacted messages appear in the results as empty, since they are only redacted, not deleted. Deleted messages do not appear in the results. This action always returns the latest version of an edited message.</p>
+    /// <p>Also, the x-amz-chime-bearer request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListChannelMessages<
@@ -12680,14 +12174,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_channel_arn(input);
             self
         }
-        /// <p>The order in which you want messages sorted. Default is Descending, based on time
-        /// created.</p>
+        /// <p>The order in which you want messages sorted. Default is Descending, based on time created.</p>
         pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
             self.inner = self.inner.sort_order(input);
             self
         }
-        /// <p>The order in which you want messages sorted. Default is Descending, based on time
-        /// created.</p>
+        /// <p>The order in which you want messages sorted. Default is Descending, based on time created.</p>
         pub fn set_sort_order(
             mut self,
             input: std::option::Option<crate::model::SortOrder>,
@@ -12754,11 +12246,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListChannelModerators`.
     ///
-    /// <p>Lists all the moderators for a channel.</p>
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p>Lists all the moderators for a channel.</p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListChannelModerators<
@@ -12836,14 +12325,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token passed by previous API calls until all requested moderators are
-        /// returned.</p>
+        /// <p>The token passed by previous API calls until all requested moderators are returned.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token passed by previous API calls until all requested moderators are
-        /// returned.</p>
+        /// <p>The token passed by previous API calls until all requested moderators are returned.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -12861,27 +12348,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListChannels`.
     ///
-    /// <p>Lists all Channels created under a single Chime App as a paginated list. You can specify
-    /// filters to narrow results.</p>
-    ///
-    /// <p class="title">
-    /// <b>Functionality & restrictions</b>
-    /// </p>
+    /// <p>Lists all Channels created under a single Chime App as a paginated list. You can specify filters to narrow results.</p>
+    /// <p class="title"> <b>Functionality &amp; restrictions</b> </p>
     /// <ul>
-    /// <li>
-    /// <p>Use privacy = <code>PUBLIC</code> to retrieve all public channels in the
-    /// account.</p>
-    /// </li>
-    /// <li>
-    /// <p>Only an <code>AppInstanceAdmin</code> can set privacy = <code>PRIVATE</code> to
-    /// list the private channels in an account.</p>
-    /// </li>
-    /// </ul>
-    ///
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <li> <p>Use privacy = <code>PUBLIC</code> to retrieve all public channels in the account.</p> </li>
+    /// <li> <p>Only an <code>AppInstanceAdmin</code> can set privacy = <code>PRIVATE</code> to list the private channels in an account.</p> </li>
+    /// </ul> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListChannels<
@@ -12952,16 +12425,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_app_instance_arn(input);
             self
         }
-        /// <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels.
-        /// <code>PRIVATE</code> retrieves private channels. Only an <code>AppInstanceAdmin</code>
-        /// can retrieve private channels. </p>
+        /// <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels. <code>PRIVATE</code> retrieves private channels. Only an <code>AppInstanceAdmin</code> can retrieve private channels. </p>
         pub fn privacy(mut self, input: crate::model::ChannelPrivacy) -> Self {
             self.inner = self.inner.privacy(input);
             self
         }
-        /// <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels.
-        /// <code>PRIVATE</code> retrieves private channels. Only an <code>AppInstanceAdmin</code>
-        /// can retrieve private channels. </p>
+        /// <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels. <code>PRIVATE</code> retrieves private channels. Only an <code>AppInstanceAdmin</code> can retrieve private channels. </p>
         pub fn set_privacy(
             mut self,
             input: std::option::Option<crate::model::ChannelPrivacy>,
@@ -13002,12 +12471,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListChannelsModeratedByAppInstanceUser`.
     ///
-    /// <p>A list of the channels moderated by an <code>AppInstanceUser</code>.</p>
-    ///
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p>A list of the channels moderated by an <code>AppInstanceUser</code>.</p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListChannelsModeratedByAppInstanceUser<
@@ -13090,14 +12555,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token returned from previous API requests until the number of channels moderated by
-        /// the user is reached.</p>
+        /// <p>The token returned from previous API requests until the number of channels moderated by the user is reached.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token returned from previous API requests until the number of channels moderated by
-        /// the user is reached.</p>
+        /// <p>The token returned from previous API requests until the number of channels moderated by the user is reached.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -13195,10 +12658,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListMeetings`.
     ///
-    /// <p>
-    /// Lists up to 100 active Amazon Chime SDK meetings. For more information about the Amazon Chime SDK, see
-    /// <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a>
-    /// in the <i>Amazon Chime Developer Guide</i>.</p>
+    /// <p> Lists up to 100 active Amazon Chime SDK meetings. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListMeetings<
         C = aws_smithy_client::erase::DynConnector,
@@ -13663,8 +13123,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListRoomMemberships`.
     ///
-    /// <p>Lists the membership details for the specified room in an Amazon Chime Enterprise account,
-    /// such as the members' IDs, email addresses, and names.</p>
+    /// <p>Lists the membership details for the specified room in an Amazon Chime Enterprise account, such as the members' IDs, email addresses, and names.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRoomMemberships<
         C = aws_smithy_client::erase::DynConnector,
@@ -14180,8 +13639,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListUsers`.
     ///
-    /// <p>Lists the users that belong to the specified Amazon Chime account. You can specify an email
-    /// address to list only the user that the email address belongs to.</p>
+    /// <p>Lists the users that belong to the specified Amazon Chime account. You can specify an email address to list only the user that the email address belongs to.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListUsers<
         C = aws_smithy_client::erase::DynConnector,
@@ -14792,9 +14250,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutEventsConfiguration`.
     ///
-    /// <p>Creates an events configuration that allows a bot to receive outgoing events sent by Amazon
-    /// Chime. Choose either an HTTPS endpoint or a Lambda function ARN. For more information,
-    /// see <a>Bot</a>.</p>
+    /// <p>Creates an events configuration that allows a bot to receive outgoing events sent by Amazon Chime. Choose either an HTTPS endpoint or a Lambda function ARN. For more information, see <code>Bot</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutEventsConfiguration<
         C = aws_smithy_client::erase::DynConnector,
@@ -14903,19 +14359,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutRetentionSettings`.
     ///
-    /// <p>
-    /// Puts retention settings for the specified Amazon Chime Enterprise account. We recommend using AWS CloudTrail to monitor usage of this API for your account. For more information, see
-    /// <a href="https://docs.aws.amazon.com/chime/latest/ag/cloudtrail.html">Logging Amazon Chime API Calls with AWS CloudTrail</a>
-    /// in the <i>Amazon Chime Administration Guide</i>.</p>
-    ///
-    /// <p>
-    /// To turn off existing retention settings, remove the number of days from the corresponding
-    /// <b>RetentionDays</b>
-    /// field in the
-    /// <b>RetentionSettings</b>
-    /// object. For more information about retention settings, see
-    /// <a href="https://docs.aws.amazon.com/chime/latest/ag/chat-retention.html">Managing Chat Retention Policies</a>
-    /// in the <i>Amazon Chime Administration Guide</i>.</p>
+    /// <p> Puts retention settings for the specified Amazon Chime Enterprise account. We recommend using AWS CloudTrail to monitor usage of this API for your account. For more information, see <a href="https://docs.aws.amazon.com/chime/latest/ag/cloudtrail.html">Logging Amazon Chime API Calls with AWS CloudTrail</a> in the <i>Amazon Chime Administration Guide</i>.</p>
+    /// <p> To turn off existing retention settings, remove the number of days from the corresponding <b>RetentionDays</b> field in the <b>RetentionSettings</b> object. For more information about retention settings, see <a href="https://docs.aws.amazon.com/chime/latest/ag/chat-retention.html">Managing Chat Retention Policies</a> in the <i>Amazon Chime Administration Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutRetentionSettings<
         C = aws_smithy_client::erase::DynConnector,
@@ -15093,8 +14538,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutVoiceConnectorEmergencyCallingConfiguration`.
     ///
-    /// <p>Puts emergency calling configuration details to the specified Amazon Chime Voice Connector, such as emergency phone numbers and calling countries. Origination and termination settings must be enabled for
-    /// the Amazon Chime Voice Connector before emergency calling can be configured.</p>
+    /// <p>Puts emergency calling configuration details to the specified Amazon Chime Voice Connector, such as emergency phone numbers and calling countries. Origination and termination settings must be enabled for the Amazon Chime Voice Connector before emergency calling can be configured.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutVoiceConnectorEmergencyCallingConfiguration<
         C = aws_smithy_client::erase::DynConnector,
@@ -15264,9 +14708,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutVoiceConnectorOrigination`.
     ///
-    /// <p>Adds origination settings for the specified Amazon Chime Voice Connector.</p>
-    ///
-    /// <note>
+    /// <p>Adds origination settings for the specified Amazon Chime Voice Connector.</p> <note>
     /// <p>If emergency calling is configured for the Amazon Chime Voice Connector, it must be deleted prior to turning off origination settings.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -15483,9 +14925,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutVoiceConnectorStreamingConfiguration`.
     ///
-    /// <p>Adds a streaming configuration for the specified Amazon Chime Voice Connector. The streaming
-    /// configuration specifies whether media streaming is enabled for sending to Indonesians.
-    /// It also sets the retention period, in hours, for the Amazon Kinesis data.</p>
+    /// <p>Adds a streaming configuration for the specified Amazon Chime Voice Connector. The streaming configuration specifies whether media streaming is enabled for sending to Indonesians. It also sets the retention period, in hours, for the Amazon Kinesis data.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutVoiceConnectorStreamingConfiguration<
         C = aws_smithy_client::erase::DynConnector,
@@ -15576,9 +15016,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutVoiceConnectorTermination`.
     ///
-    /// <p>Adds termination settings for the specified Amazon Chime Voice Connector.</p>
-    ///
-    /// <note>
+    /// <p>Adds termination settings for the specified Amazon Chime Voice Connector.</p> <note>
     /// <p>If emergency calling is configured for the Amazon Chime Voice Connector, it must be deleted prior to turning off termination settings.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -15758,13 +15196,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RedactChannelMessage`.
     ///
-    /// <p>Redacts message content, but not metadata. The message exists in the back end, but the
-    /// action returns null content, and the state shows as redacted.</p>
-    ///
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p>Redacts message content, but not metadata. The message exists in the back end, but the action returns null content, and the state shows as redacted.</p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RedactChannelMessage<
@@ -16118,8 +15551,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ResetPersonalPIN`.
     ///
-    /// <p>Resets the personal meeting PIN for the specified user on an Amazon Chime account. Returns
-    /// the <a>User</a> object with the updated personal meeting PIN.</p>
+    /// <p>Resets the personal meeting PIN for the specified user on an Amazon Chime account. Returns the <code>User</code> object with the updated personal meeting PIN.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ResetPersonalPIN<
         C = aws_smithy_client::erase::DynConnector,
@@ -16199,8 +15631,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RestorePhoneNumber`.
     ///
-    /// <p>Moves a phone number from the <b>Deletion queue</b> back into the
-    /// phone number <b>Inventory</b>.</p>
+    /// <p>Moves a phone number from the <b>Deletion queue</b> back into the phone number <b>Inventory</b>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RestorePhoneNumber<
         C = aws_smithy_client::erase::DynConnector,
@@ -16273,11 +15704,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SearchAvailablePhoneNumbers`.
     ///
-    /// <p>Searches for phone numbers that can be ordered. For US numbers, provide at least one of
-    /// the following search filters: <code>AreaCode</code>, <code>City</code>,
-    /// <code>State</code>, or <code>TollFreePrefix</code>. If you provide
-    /// <code>City</code>, you must also provide <code>State</code>. Numbers outside the US only
-    /// support the <code>PhoneNumberType</code> filter, which you must use.</p>
+    /// <p>Searches for phone numbers that can be ordered. For US numbers, provide at least one of the following search filters: <code>AreaCode</code>, <code>City</code>, <code>State</code>, or <code>TollFreePrefix</code>. If you provide <code>City</code>, you must also provide <code>State</code>. Numbers outside the US only support the <code>PhoneNumberType</code> filter, which you must use.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SearchAvailablePhoneNumbers<
         C = aws_smithy_client::erase::DynConnector,
@@ -16423,15 +15850,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SendChannelMessage`.
     ///
-    /// <p>Sends a message to a particular channel that the member is a part of.</p>
-    ///
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
-    ///
-    /// <p>Also, <code>STANDARD</code> messages can contain 4KB of data and the 1KB of metadata.
-    /// <code>CONTROL</code> messages can contain 30 bytes of data and no metadata.</p>
+    /// <p>Sends a message to a particular channel that the member is a part of.</p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
+    /// <p>Also, <code>STANDARD</code> messages can contain 4KB of data and the 1KB of metadata. <code>CONTROL</code> messages can contain 30 bytes of data and no metadata.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendChannelMessage<
@@ -17362,11 +16783,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateAccountSettings`.
     ///
-    /// <p>Updates the settings for the specified Amazon Chime account. You can update settings for
-    /// remote control of shared screens, or for the dial-out option. For more information about
-    /// these settings, see <a href="https://docs.aws.amazon.com/chime/latest/ag/policies.html">Use
-    /// the Policies Page</a> in the <i>Amazon Chime Administration
-    /// Guide</i>.</p>
+    /// <p>Updates the settings for the specified Amazon Chime account. You can update settings for remote control of shared screens, or for the dial-out option. For more information about these settings, see <a href="https://docs.aws.amazon.com/chime/latest/ag/policies.html">Use the Policies Page</a> in the <i>Amazon Chime Administration Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAccountSettings<
         C = aws_smithy_client::erase::DynConnector,
@@ -17726,12 +17143,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateChannel`.
     ///
     /// <p>Update a channel's attributes.</p>
-    /// <p>
-    /// <b>Restriction</b>: You can't change a channel's privacy. </p>
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p> <b>Restriction</b>: You can't change a channel's privacy. </p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateChannel<
@@ -17842,12 +17255,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateChannelMessage`.
     ///
-    /// <p>Updates the content of a message.</p>
-    ///
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p>Updates the content of a message.</p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateChannelMessage<
@@ -17958,12 +17367,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateChannelReadMarker`.
     ///
-    /// <p>The details of the time when a user last read messages in a channel.</p>
-    ///
-    /// <note>
-    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
-    /// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
-    /// the header.</p>
+    /// <p>The details of the time when a user last read messages in a channel.</p> <note>
+    /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateChannelReadMarker<
@@ -18228,9 +17633,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdatePhoneNumberSettings`.
     ///
-    /// <p>Updates the phone number settings for the administrator's AWS account, such as the default
-    /// outbound calling name. You can update the default outbound calling name once every seven
-    /// days. Outbound calling names can take up to 72 hours to update.</p>
+    /// <p>Updates the phone number settings for the administrator's AWS account, such as the default outbound calling name. You can update the default outbound calling name once every seven days. Outbound calling names can take up to 72 hours to update.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePhoneNumberSettings<
         C = aws_smithy_client::erase::DynConnector,
@@ -18503,10 +17906,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateRoomMembership`.
     ///
-    /// <p>Updates room membership details, such as the member role, for a room in an Amazon Chime
-    /// Enterprise account. The member role designates whether the member is a chat room
-    /// administrator or a general chat room member. The member role can be updated only for
-    /// user IDs.</p>
+    /// <p>Updates room membership details, such as the member role, for a room in an Amazon Chime Enterprise account. The member role designates whether the member is a chat room administrator or a general chat room member. The member role can be updated only for user IDs.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRoomMembership<
         C = aws_smithy_client::erase::DynConnector,
@@ -19005,14 +18405,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_user_id(input);
             self
         }
-        /// <p>The user license type to update. This must be a supported license type for the Amazon Chime
-        /// account that the user belongs to.</p>
+        /// <p>The user license type to update. This must be a supported license type for the Amazon Chime account that the user belongs to.</p>
         pub fn license_type(mut self, input: crate::model::License) -> Self {
             self.inner = self.inner.license_type(input);
             self
         }
-        /// <p>The user license type to update. This must be a supported license type for the Amazon Chime
-        /// account that the user belongs to.</p>
+        /// <p>The user license type to update. This must be a supported license type for the Amazon Chime account that the user belongs to.</p>
         pub fn set_license_type(
             mut self,
             input: std::option::Option<crate::model::License>,
@@ -19235,8 +18633,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateVoiceConnectorGroup`.
     ///
-    /// <p>Updates details of the specified Amazon Chime Voice Connector group, such as the name and
-    /// Amazon Chime Voice Connector priority ranking.</p>
+    /// <p>Updates details of the specified Amazon Chime Voice Connector group, such as the name and Amazon Chime Voice Connector priority ranking.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateVoiceConnectorGroup<
         C = aws_smithy_client::erase::DynConnector,

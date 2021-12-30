@@ -10,34 +10,22 @@ pub mod accept_domain_transfer_from_another_aws_account_input {
         pub(crate) password: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the domain that was specified when another AWS account submitted a
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a>
-        /// request.
-        /// </p>
+        /// <p>The name of the domain that was specified when another AWS account submitted a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a> request. </p>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_name = Some(input.into());
             self
         }
-        /// <p>The name of the domain that was specified when another AWS account submitted a
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a>
-        /// request.
-        /// </p>
+        /// <p>The name of the domain that was specified when another AWS account submitted a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a> request. </p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
         }
-        /// <p>The password that was returned by the
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a>
-        /// request.
-        /// </p>
+        /// <p>The password that was returned by the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a> request. </p>
         pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
             self.password = Some(input.into());
             self
         }
-        /// <p>The password that was returned by the
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a>
-        /// request.
-        /// </p>
+        /// <p>The password that was returned by the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a> request. </p>
         pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.password = input;
             self
@@ -351,60 +339,28 @@ pub mod check_domain_availability_input {
         pub(crate) idn_lang_code: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the domain that you want to get availability for. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports.
-        /// For a list of supported TLDs, see
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the
-        /// <i>Amazon Route 53 Developer Guide</i>.</p>
+        /// <p>The name of the domain that you want to get availability for. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
         /// <p>The domain name can contain only the following characters:</p>
         /// <ul>
-        /// <li>
-        /// <p>Letters a through z. Domain names are not case sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Numbers 0 through 9.</p>
-        /// </li>
-        /// <li>
-        /// <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p>
-        /// </li>
-        /// <li>
-        /// <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p>
-        /// </li>
+        /// <li> <p>Letters a through z. Domain names are not case sensitive.</p> </li>
+        /// <li> <p>Numbers 0 through 9.</p> </li>
+        /// <li> <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p> </li>
+        /// <li> <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p> </li>
         /// </ul>
-        /// <p>Internationalized domain names are not supported for some top-level domains. To determine whether the TLD that you want to use supports
-        /// internationalized domain names, see
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a>.
-        /// For more information, see
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html#domain-name-format-idns">Formatting Internationalized Domain Names</a>.
-        /// </p>
+        /// <p>Internationalized domain names are not supported for some top-level domains. To determine whether the TLD that you want to use supports internationalized domain names, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a>. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html#domain-name-format-idns">Formatting Internationalized Domain Names</a>. </p>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_name = Some(input.into());
             self
         }
-        /// <p>The name of the domain that you want to get availability for. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports.
-        /// For a list of supported TLDs, see
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the
-        /// <i>Amazon Route 53 Developer Guide</i>.</p>
+        /// <p>The name of the domain that you want to get availability for. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
         /// <p>The domain name can contain only the following characters:</p>
         /// <ul>
-        /// <li>
-        /// <p>Letters a through z. Domain names are not case sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Numbers 0 through 9.</p>
-        /// </li>
-        /// <li>
-        /// <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p>
-        /// </li>
-        /// <li>
-        /// <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p>
-        /// </li>
+        /// <li> <p>Letters a through z. Domain names are not case sensitive.</p> </li>
+        /// <li> <p>Numbers 0 through 9.</p> </li>
+        /// <li> <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p> </li>
+        /// <li> <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p> </li>
         /// </ul>
-        /// <p>Internationalized domain names are not supported for some top-level domains. To determine whether the TLD that you want to use supports
-        /// internationalized domain names, see
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a>.
-        /// For more information, see
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html#domain-name-format-idns">Formatting Internationalized Domain Names</a>.
-        /// </p>
+        /// <p>Internationalized domain names are not supported for some top-level domains. To determine whether the TLD that you want to use supports internationalized domain names, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a>. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html#domain-name-format-idns">Formatting Internationalized Domain Names</a>. </p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -571,60 +527,36 @@ pub mod check_domain_transferability_input {
         pub(crate) auth_code: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the domain that you want to transfer to Route 53. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports.
-        /// For a list of supported TLDs, see
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the
-        /// <i>Amazon Route 53 Developer Guide</i>.</p>
+        /// <p>The name of the domain that you want to transfer to Route 53. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
         /// <p>The domain name can contain only the following characters:</p>
         /// <ul>
-        /// <li>
-        /// <p>Letters a through z. Domain names are not case sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Numbers 0 through 9.</p>
-        /// </li>
-        /// <li>
-        /// <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p>
-        /// </li>
-        /// <li>
-        /// <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p>
-        /// </li>
+        /// <li> <p>Letters a through z. Domain names are not case sensitive.</p> </li>
+        /// <li> <p>Numbers 0 through 9.</p> </li>
+        /// <li> <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p> </li>
+        /// <li> <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p> </li>
         /// </ul>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_name = Some(input.into());
             self
         }
-        /// <p>The name of the domain that you want to transfer to Route 53. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports.
-        /// For a list of supported TLDs, see
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the
-        /// <i>Amazon Route 53 Developer Guide</i>.</p>
+        /// <p>The name of the domain that you want to transfer to Route 53. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
         /// <p>The domain name can contain only the following characters:</p>
         /// <ul>
-        /// <li>
-        /// <p>Letters a through z. Domain names are not case sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Numbers 0 through 9.</p>
-        /// </li>
-        /// <li>
-        /// <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p>
-        /// </li>
-        /// <li>
-        /// <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p>
-        /// </li>
+        /// <li> <p>Letters a through z. Domain names are not case sensitive.</p> </li>
+        /// <li> <p>Numbers 0 through 9.</p> </li>
+        /// <li> <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p> </li>
+        /// <li> <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p> </li>
         /// </ul>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
         }
-        /// <p>If the registrar for the top-level domain (TLD) requires an authorization code to transfer the domain,
-        /// the code that you got from the current registrar for the domain.</p>
+        /// <p>If the registrar for the top-level domain (TLD) requires an authorization code to transfer the domain, the code that you got from the current registrar for the domain.</p>
         pub fn auth_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.auth_code = Some(input.into());
             self
         }
-        /// <p>If the registrar for the top-level domain (TLD) requires an authorization code to transfer the domain,
-        /// the code that you got from the current registrar for the domain.</p>
+        /// <p>If the registrar for the top-level domain (TLD) requires an authorization code to transfer the domain, the code that you got from the current registrar for the domain.</p>
         pub fn set_auth_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.auth_code = input;
             self
@@ -1893,56 +1825,28 @@ pub mod get_domain_suggestions_input {
         pub(crate) only_available: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>A domain name that you want to use as the basis for a list of possible domain names. The top-level domain (TLD), such as .com,
-        /// must be a TLD that Route 53 supports. For a list of supported TLDs, see
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the
-        /// <i>Amazon Route 53 Developer Guide</i>.</p>
+        /// <p>A domain name that you want to use as the basis for a list of possible domain names. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
         /// <p>The domain name can contain only the following characters:</p>
         /// <ul>
-        /// <li>
-        /// <p>Letters a through z. Domain names are not case sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Numbers 0 through 9.</p>
-        /// </li>
-        /// <li>
-        /// <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p>
-        /// </li>
-        /// <li>
-        /// <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p>
-        /// </li>
+        /// <li> <p>Letters a through z. Domain names are not case sensitive.</p> </li>
+        /// <li> <p>Numbers 0 through 9.</p> </li>
+        /// <li> <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p> </li>
+        /// <li> <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p> </li>
         /// </ul>
-        /// <p>Internationalized domain names are not supported for some top-level domains. To determine whether the TLD that you want to use
-        /// supports internationalized domain names, see
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a>.
-        /// </p>
+        /// <p>Internationalized domain names are not supported for some top-level domains. To determine whether the TLD that you want to use supports internationalized domain names, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a>. </p>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_name = Some(input.into());
             self
         }
-        /// <p>A domain name that you want to use as the basis for a list of possible domain names. The top-level domain (TLD), such as .com,
-        /// must be a TLD that Route 53 supports. For a list of supported TLDs, see
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the
-        /// <i>Amazon Route 53 Developer Guide</i>.</p>
+        /// <p>A domain name that you want to use as the basis for a list of possible domain names. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
         /// <p>The domain name can contain only the following characters:</p>
         /// <ul>
-        /// <li>
-        /// <p>Letters a through z. Domain names are not case sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Numbers 0 through 9.</p>
-        /// </li>
-        /// <li>
-        /// <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p>
-        /// </li>
-        /// <li>
-        /// <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p>
-        /// </li>
+        /// <li> <p>Letters a through z. Domain names are not case sensitive.</p> </li>
+        /// <li> <p>Numbers 0 through 9.</p> </li>
+        /// <li> <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p> </li>
+        /// <li> <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p> </li>
         /// </ul>
-        /// <p>Internationalized domain names are not supported for some top-level domains. To determine whether the TLD that you want to use
-        /// supports internationalized domain names, see
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a>.
-        /// </p>
+        /// <p>Internationalized domain names are not supported for some top-level domains. To determine whether the TLD that you want to use supports internationalized domain names, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a>. </p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -1957,18 +1861,12 @@ pub mod get_domain_suggestions_input {
             self.suggestion_count = input;
             self
         }
-        /// <p>If <code>OnlyAvailable</code> is <code>true</code>, Route 53 returns only domain names that are available.
-        /// If <code>OnlyAvailable</code> is <code>false</code>, Route 53 returns domain names without checking whether they're
-        /// available to be registered. To determine whether the domain is available, you can call <code>checkDomainAvailability</code>
-        /// for each suggestion.</p>
+        /// <p>If <code>OnlyAvailable</code> is <code>true</code>, Route 53 returns only domain names that are available. If <code>OnlyAvailable</code> is <code>false</code>, Route 53 returns domain names without checking whether they're available to be registered. To determine whether the domain is available, you can call <code>checkDomainAvailability</code> for each suggestion.</p>
         pub fn only_available(mut self, input: bool) -> Self {
             self.only_available = Some(input);
             self
         }
-        /// <p>If <code>OnlyAvailable</code> is <code>true</code>, Route 53 returns only domain names that are available.
-        /// If <code>OnlyAvailable</code> is <code>false</code>, Route 53 returns domain names without checking whether they're
-        /// available to be registered. To determine whether the domain is available, you can call <code>checkDomainAvailability</code>
-        /// for each suggestion.</p>
+        /// <p>If <code>OnlyAvailable</code> is <code>true</code>, Route 53 returns only domain names that are available. If <code>OnlyAvailable</code> is <code>false</code>, Route 53 returns domain names without checking whether they're available to be registered. To determine whether the domain is available, you can call <code>checkDomainAvailability</code> for each suggestion.</p>
         pub fn set_only_available(mut self, input: std::option::Option<bool>) -> Self {
             self.only_available = input;
             self
@@ -2121,14 +2019,12 @@ pub mod get_operation_detail_input {
         pub(crate) operation_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier for the operation for which you want to get the status. Route 53 returned the identifier
-        /// in the response to the original request.</p>
+        /// <p>The identifier for the operation for which you want to get the status. Route 53 returned the identifier in the response to the original request.</p>
         pub fn operation_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.operation_id = Some(input.into());
             self
         }
-        /// <p>The identifier for the operation for which you want to get the status. Route 53 returned the identifier
-        /// in the response to the original request.</p>
+        /// <p>The identifier for the operation for which you want to get the status. Route 53 returned the identifier in the response to the original request.</p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.operation_id = input;
             self
@@ -2278,21 +2174,13 @@ pub mod list_domains_input {
         pub(crate) max_items: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>For an initial request for a list of domains, omit this element. If the number of domains
-        /// that are associated with the current AWS account is greater than the value that you specified for
-        /// <code>MaxItems</code>, you can use <code>Marker</code> to return additional domains. Get the value of
-        /// <code>NextPageMarker</code> from the previous response, and submit another request that includes the
-        /// value of <code>NextPageMarker</code> in the <code>Marker</code> element.</p>
+        /// <p>For an initial request for a list of domains, omit this element. If the number of domains that are associated with the current AWS account is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code> to return additional domains. Get the value of <code>NextPageMarker</code> from the previous response, and submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element.</p>
         /// <p>Constraints: The marker must match the value specified in the previous request.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>For an initial request for a list of domains, omit this element. If the number of domains
-        /// that are associated with the current AWS account is greater than the value that you specified for
-        /// <code>MaxItems</code>, you can use <code>Marker</code> to return additional domains. Get the value of
-        /// <code>NextPageMarker</code> from the previous response, and submit another request that includes the
-        /// value of <code>NextPageMarker</code> in the <code>Marker</code> element.</p>
+        /// <p>For an initial request for a list of domains, omit this element. If the number of domains that are associated with the current AWS account is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code> to return additional domains. Get the value of <code>NextPageMarker</code> from the previous response, and submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element.</p>
         /// <p>Constraints: The marker must match the value specified in the previous request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
@@ -2456,14 +2344,12 @@ pub mod list_operations_input {
         pub(crate) max_items: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>An optional parameter that lets you get information about all the operations that you submitted after a specified date and time.
-        /// Specify the date and time in Unix time format and Coordinated Universal time (UTC).</p>
+        /// <p>An optional parameter that lets you get information about all the operations that you submitted after a specified date and time. Specify the date and time in Unix time format and Coordinated Universal time (UTC).</p>
         pub fn submitted_since(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.submitted_since = Some(input);
             self
         }
-        /// <p>An optional parameter that lets you get information about all the operations that you submitted after a specified date and time.
-        /// Specify the date and time in Unix time format and Coordinated Universal time (UTC).</p>
+        /// <p>An optional parameter that lets you get information about all the operations that you submitted after a specified date and time. Specify the date and time in Unix time format and Coordinated Universal time (UTC).</p>
         pub fn set_submitted_since(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2471,18 +2357,12 @@ pub mod list_operations_input {
             self.submitted_since = input;
             self
         }
-        /// <p>For an initial request for a list of operations, omit this element. If the number of operations that are
-        /// not yet complete is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code>
-        /// to return additional operations. Get the value of <code>NextPageMarker</code> from the previous response,
-        /// and submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element.</p>
+        /// <p>For an initial request for a list of operations, omit this element. If the number of operations that are not yet complete is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code> to return additional operations. Get the value of <code>NextPageMarker</code> from the previous response, and submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>For an initial request for a list of operations, omit this element. If the number of operations that are
-        /// not yet complete is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code>
-        /// to return additional operations. Get the value of <code>NextPageMarker</code> from the previous response,
-        /// and submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element.</p>
+        /// <p>For an initial request for a list of operations, omit this element. If the number of operations that are not yet complete is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code> to return additional operations. Get the value of <code>NextPageMarker</code> from the previous response, and submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -2808,60 +2688,28 @@ pub mod register_domain_input {
         pub(crate) privacy_protect_tech_contact: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The domain name that you want to register. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports.
-        /// For a list of supported TLDs, see
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the
-        /// <i>Amazon Route 53 Developer Guide</i>.</p>
+        /// <p>The domain name that you want to register. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
         /// <p>The domain name can contain only the following characters:</p>
         /// <ul>
-        /// <li>
-        /// <p>Letters a through z. Domain names are not case sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Numbers 0 through 9.</p>
-        /// </li>
-        /// <li>
-        /// <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p>
-        /// </li>
-        /// <li>
-        /// <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p>
-        /// </li>
+        /// <li> <p>Letters a through z. Domain names are not case sensitive.</p> </li>
+        /// <li> <p>Numbers 0 through 9.</p> </li>
+        /// <li> <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p> </li>
+        /// <li> <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p> </li>
         /// </ul>
-        /// <p>Internationalized domain names are not supported for some top-level domains. To determine whether the TLD that you want to use supports
-        /// internationalized domain names, see
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a>.
-        /// For more information, see
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html#domain-name-format-idns">Formatting Internationalized Domain Names</a>.
-        /// </p>
+        /// <p>Internationalized domain names are not supported for some top-level domains. To determine whether the TLD that you want to use supports internationalized domain names, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a>. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html#domain-name-format-idns">Formatting Internationalized Domain Names</a>. </p>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_name = Some(input.into());
             self
         }
-        /// <p>The domain name that you want to register. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports.
-        /// For a list of supported TLDs, see
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the
-        /// <i>Amazon Route 53 Developer Guide</i>.</p>
+        /// <p>The domain name that you want to register. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
         /// <p>The domain name can contain only the following characters:</p>
         /// <ul>
-        /// <li>
-        /// <p>Letters a through z. Domain names are not case sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Numbers 0 through 9.</p>
-        /// </li>
-        /// <li>
-        /// <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p>
-        /// </li>
-        /// <li>
-        /// <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p>
-        /// </li>
+        /// <li> <p>Letters a through z. Domain names are not case sensitive.</p> </li>
+        /// <li> <p>Numbers 0 through 9.</p> </li>
+        /// <li> <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p> </li>
+        /// <li> <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p> </li>
         /// </ul>
-        /// <p>Internationalized domain names are not supported for some top-level domains. To determine whether the TLD that you want to use supports
-        /// internationalized domain names, see
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a>.
-        /// For more information, see
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html#domain-name-format-idns">Formatting Internationalized Domain Names</a>.
-        /// </p>
+        /// <p>Internationalized domain names are not supported for some top-level domains. To determine whether the TLD that you want to use supports internationalized domain names, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a>. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html#domain-name-format-idns">Formatting Internationalized Domain Names</a>. </p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -2879,48 +2727,36 @@ pub mod register_domain_input {
             self.idn_lang_code = input;
             self
         }
-        /// <p>The number of years that you want to register the domain for. Domains are registered for a minimum of one year.
-        /// The maximum period depends on the top-level domain. For the range of valid values for your domain, see
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the
-        /// <i>Amazon Route 53 Developer Guide</i>.</p>
+        /// <p>The number of years that you want to register the domain for. Domains are registered for a minimum of one year. The maximum period depends on the top-level domain. For the range of valid values for your domain, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
         /// <p>Default: 1</p>
         pub fn duration_in_years(mut self, input: i32) -> Self {
             self.duration_in_years = Some(input);
             self
         }
-        /// <p>The number of years that you want to register the domain for. Domains are registered for a minimum of one year.
-        /// The maximum period depends on the top-level domain. For the range of valid values for your domain, see
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the
-        /// <i>Amazon Route 53 Developer Guide</i>.</p>
+        /// <p>The number of years that you want to register the domain for. Domains are registered for a minimum of one year. The maximum period depends on the top-level domain. For the range of valid values for your domain, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
         /// <p>Default: 1</p>
         pub fn set_duration_in_years(mut self, input: std::option::Option<i32>) -> Self {
             self.duration_in_years = input;
             self
         }
-        /// <p>Indicates whether the domain will be automatically renewed (<code>true</code>) or not (<code>false</code>).
-        /// Autorenewal only takes effect after the account is charged.</p>
-        /// <p>Default: <code>true</code>
-        /// </p>
+        /// <p>Indicates whether the domain will be automatically renewed (<code>true</code>) or not (<code>false</code>). Autorenewal only takes effect after the account is charged.</p>
+        /// <p>Default: <code>true</code> </p>
         pub fn auto_renew(mut self, input: bool) -> Self {
             self.auto_renew = Some(input);
             self
         }
-        /// <p>Indicates whether the domain will be automatically renewed (<code>true</code>) or not (<code>false</code>).
-        /// Autorenewal only takes effect after the account is charged.</p>
-        /// <p>Default: <code>true</code>
-        /// </p>
+        /// <p>Indicates whether the domain will be automatically renewed (<code>true</code>) or not (<code>false</code>). Autorenewal only takes effect after the account is charged.</p>
+        /// <p>Default: <code>true</code> </p>
         pub fn set_auto_renew(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_renew = input;
             self
         }
-        /// <p>Provides detailed contact information. For information about the values that you specify for each element, see
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
+        /// <p>Provides detailed contact information. For information about the values that you specify for each element, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
         pub fn admin_contact(mut self, input: crate::model::ContactDetail) -> Self {
             self.admin_contact = Some(input);
             self
         }
-        /// <p>Provides detailed contact information. For information about the values that you specify for each element, see
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
+        /// <p>Provides detailed contact information. For information about the values that you specify for each element, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
         pub fn set_admin_contact(
             mut self,
             input: std::option::Option<crate::model::ContactDetail>,
@@ -2928,14 +2764,12 @@ pub mod register_domain_input {
             self.admin_contact = input;
             self
         }
-        /// <p>Provides detailed contact information. For information about the values that you specify for each element, see
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
+        /// <p>Provides detailed contact information. For information about the values that you specify for each element, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
         pub fn registrant_contact(mut self, input: crate::model::ContactDetail) -> Self {
             self.registrant_contact = Some(input);
             self
         }
-        /// <p>Provides detailed contact information. For information about the values that you specify for each element, see
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
+        /// <p>Provides detailed contact information. For information about the values that you specify for each element, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
         pub fn set_registrant_contact(
             mut self,
             input: std::option::Option<crate::model::ContactDetail>,
@@ -2943,14 +2777,12 @@ pub mod register_domain_input {
             self.registrant_contact = input;
             self
         }
-        /// <p>Provides detailed contact information. For information about the values that you specify for each element, see
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
+        /// <p>Provides detailed contact information. For information about the values that you specify for each element, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
         pub fn tech_contact(mut self, input: crate::model::ContactDetail) -> Self {
             self.tech_contact = Some(input);
             self
         }
-        /// <p>Provides detailed contact information. For information about the values that you specify for each element, see
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
+        /// <p>Provides detailed contact information. For information about the values that you specify for each element, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
         pub fn set_tech_contact(
             mut self,
             input: std::option::Option<crate::model::ContactDetail>,
@@ -2958,22 +2790,14 @@ pub mod register_domain_input {
             self.tech_contact = input;
             self
         }
-        /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
-        /// WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains)
-        /// or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
-        /// WHOIS queries return the information that you entered for the admin contact.</p>
-        /// <p>Default: <code>true</code>
-        /// </p>
+        /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the admin contact.</p>
+        /// <p>Default: <code>true</code> </p>
         pub fn privacy_protect_admin_contact(mut self, input: bool) -> Self {
             self.privacy_protect_admin_contact = Some(input);
             self
         }
-        /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
-        /// WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains)
-        /// or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
-        /// WHOIS queries return the information that you entered for the admin contact.</p>
-        /// <p>Default: <code>true</code>
-        /// </p>
+        /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the admin contact.</p>
+        /// <p>Default: <code>true</code> </p>
         pub fn set_privacy_protect_admin_contact(
             mut self,
             input: std::option::Option<bool>,
@@ -2981,22 +2805,14 @@ pub mod register_domain_input {
             self.privacy_protect_admin_contact = input;
             self
         }
-        /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
-        /// WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains)
-        /// or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
-        /// WHOIS queries return the information that you entered for the registrant contact (the domain owner).</p>
-        /// <p>Default: <code>true</code>
-        /// </p>
+        /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the registrant contact (the domain owner).</p>
+        /// <p>Default: <code>true</code> </p>
         pub fn privacy_protect_registrant_contact(mut self, input: bool) -> Self {
             self.privacy_protect_registrant_contact = Some(input);
             self
         }
-        /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
-        /// WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains)
-        /// or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
-        /// WHOIS queries return the information that you entered for the registrant contact (the domain owner).</p>
-        /// <p>Default: <code>true</code>
-        /// </p>
+        /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the registrant contact (the domain owner).</p>
+        /// <p>Default: <code>true</code> </p>
         pub fn set_privacy_protect_registrant_contact(
             mut self,
             input: std::option::Option<bool>,
@@ -3004,22 +2820,14 @@ pub mod register_domain_input {
             self.privacy_protect_registrant_contact = input;
             self
         }
-        /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
-        /// WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains)
-        /// or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
-        /// WHOIS queries return the information that you entered for the technical contact.</p>
-        /// <p>Default: <code>true</code>
-        /// </p>
+        /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the technical contact.</p>
+        /// <p>Default: <code>true</code> </p>
         pub fn privacy_protect_tech_contact(mut self, input: bool) -> Self {
             self.privacy_protect_tech_contact = Some(input);
             self
         }
-        /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
-        /// WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains)
-        /// or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
-        /// WHOIS queries return the information that you entered for the technical contact.</p>
-        /// <p>Default: <code>true</code>
-        /// </p>
+        /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the technical contact.</p>
+        /// <p>Default: <code>true</code> </p>
         pub fn set_privacy_protect_tech_contact(
             mut self,
             input: std::option::Option<bool>,
@@ -3180,18 +2988,12 @@ pub mod reject_domain_transfer_from_another_aws_account_input {
         pub(crate) domain_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the domain that was specified when another AWS account submitted a
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a>
-        /// request.
-        /// </p>
+        /// <p>The name of the domain that was specified when another AWS account submitted a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a> request. </p>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_name = Some(input.into());
             self
         }
-        /// <p>The name of the domain that was specified when another AWS account submitted a
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a>
-        /// request.
-        /// </p>
+        /// <p>The name of the domain that was specified when another AWS account submitted a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a> request. </p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -3358,19 +3160,13 @@ pub mod renew_domain_input {
             self.domain_name = input;
             self
         }
-        /// <p>The number of years that you want to renew the domain for. The maximum number of years depends on the top-level domain.
-        /// For the range of valid values for your domain, see
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the
-        /// <i>Amazon Route 53 Developer Guide</i>.</p>
+        /// <p>The number of years that you want to renew the domain for. The maximum number of years depends on the top-level domain. For the range of valid values for your domain, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
         /// <p>Default: 1</p>
         pub fn duration_in_years(mut self, input: i32) -> Self {
             self.duration_in_years = Some(input);
             self
         }
-        /// <p>The number of years that you want to renew the domain for. The maximum number of years depends on the top-level domain.
-        /// For the range of valid values for your domain, see
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the
-        /// <i>Amazon Route 53 Developer Guide</i>.</p>
+        /// <p>The number of years that you want to renew the domain for. The maximum number of years depends on the top-level domain. For the range of valid values for your domain, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
         /// <p>Default: 1</p>
         pub fn set_duration_in_years(mut self, input: std::option::Option<i32>) -> Self {
             self.duration_in_years = input;
@@ -3855,47 +3651,25 @@ pub mod transfer_domain_input {
         pub(crate) privacy_protect_tech_contact: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The name of the domain that you want to transfer to Route 53. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports.
-        /// For a list of supported TLDs, see
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the
-        /// <i>Amazon Route 53 Developer Guide</i>.</p>
+        /// <p>The name of the domain that you want to transfer to Route 53. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
         /// <p>The domain name can contain only the following characters:</p>
         /// <ul>
-        /// <li>
-        /// <p>Letters a through z. Domain names are not case sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Numbers 0 through 9.</p>
-        /// </li>
-        /// <li>
-        /// <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p>
-        /// </li>
-        /// <li>
-        /// <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p>
-        /// </li>
+        /// <li> <p>Letters a through z. Domain names are not case sensitive.</p> </li>
+        /// <li> <p>Numbers 0 through 9.</p> </li>
+        /// <li> <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p> </li>
+        /// <li> <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p> </li>
         /// </ul>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_name = Some(input.into());
             self
         }
-        /// <p>The name of the domain that you want to transfer to Route 53. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports.
-        /// For a list of supported TLDs, see
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the
-        /// <i>Amazon Route 53 Developer Guide</i>.</p>
+        /// <p>The name of the domain that you want to transfer to Route 53. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
         /// <p>The domain name can contain only the following characters:</p>
         /// <ul>
-        /// <li>
-        /// <p>Letters a through z. Domain names are not case sensitive.</p>
-        /// </li>
-        /// <li>
-        /// <p>Numbers 0 through 9.</p>
-        /// </li>
-        /// <li>
-        /// <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p>
-        /// </li>
-        /// <li>
-        /// <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p>
-        /// </li>
+        /// <li> <p>Letters a through z. Domain names are not case sensitive.</p> </li>
+        /// <li> <p>Numbers 0 through 9.</p> </li>
+        /// <li> <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p> </li>
+        /// <li> <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p> </li>
         /// </ul>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
@@ -3914,15 +3688,13 @@ pub mod transfer_domain_input {
             self.idn_lang_code = input;
             self
         }
-        /// <p>The number of years that you want to register the domain for. Domains are registered for a minimum of one year.
-        /// The maximum period depends on the top-level domain.</p>
+        /// <p>The number of years that you want to register the domain for. Domains are registered for a minimum of one year. The maximum period depends on the top-level domain.</p>
         /// <p>Default: 1</p>
         pub fn duration_in_years(mut self, input: i32) -> Self {
             self.duration_in_years = Some(input);
             self
         }
-        /// <p>The number of years that you want to register the domain for. Domains are registered for a minimum of one year.
-        /// The maximum period depends on the top-level domain.</p>
+        /// <p>The number of years that you want to register the domain for. Domains are registered for a minimum of one year. The maximum period depends on the top-level domain.</p>
         /// <p>Default: 1</p>
         pub fn set_duration_in_years(mut self, input: std::option::Option<i32>) -> Self {
             self.duration_in_years = input;
@@ -3957,15 +3729,13 @@ pub mod transfer_domain_input {
             self.auth_code = input;
             self
         }
-        /// <p>Indicates whether the domain will be automatically renewed (true) or not (false). Autorenewal only takes effect
-        /// after the account is charged.</p>
+        /// <p>Indicates whether the domain will be automatically renewed (true) or not (false). Autorenewal only takes effect after the account is charged.</p>
         /// <p>Default: true</p>
         pub fn auto_renew(mut self, input: bool) -> Self {
             self.auto_renew = Some(input);
             self
         }
-        /// <p>Indicates whether the domain will be automatically renewed (true) or not (false). Autorenewal only takes effect
-        /// after the account is charged.</p>
+        /// <p>Indicates whether the domain will be automatically renewed (true) or not (false). Autorenewal only takes effect after the account is charged.</p>
         /// <p>Default: true</p>
         pub fn set_auto_renew(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_renew = input;
@@ -4010,22 +3780,14 @@ pub mod transfer_domain_input {
             self.tech_contact = input;
             self
         }
-        /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
-        /// WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains)
-        /// or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
-        /// WHOIS queries return the information that you entered for the admin contact.</p>
-        /// <p>Default: <code>true</code>
-        /// </p>
+        /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the admin contact.</p>
+        /// <p>Default: <code>true</code> </p>
         pub fn privacy_protect_admin_contact(mut self, input: bool) -> Self {
             self.privacy_protect_admin_contact = Some(input);
             self
         }
-        /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
-        /// WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains)
-        /// or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
-        /// WHOIS queries return the information that you entered for the admin contact.</p>
-        /// <p>Default: <code>true</code>
-        /// </p>
+        /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the admin contact.</p>
+        /// <p>Default: <code>true</code> </p>
         pub fn set_privacy_protect_admin_contact(
             mut self,
             input: std::option::Option<bool>,
@@ -4033,22 +3795,14 @@ pub mod transfer_domain_input {
             self.privacy_protect_admin_contact = input;
             self
         }
-        /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
-        /// WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains)
-        /// or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
-        /// WHOIS queries return the information that you entered for the registrant contact (domain owner).</p>
-        /// <p>Default: <code>true</code>
-        /// </p>
+        /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the registrant contact (domain owner).</p>
+        /// <p>Default: <code>true</code> </p>
         pub fn privacy_protect_registrant_contact(mut self, input: bool) -> Self {
             self.privacy_protect_registrant_contact = Some(input);
             self
         }
-        /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
-        /// WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains)
-        /// or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
-        /// WHOIS queries return the information that you entered for the registrant contact (domain owner).</p>
-        /// <p>Default: <code>true</code>
-        /// </p>
+        /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the registrant contact (domain owner).</p>
+        /// <p>Default: <code>true</code> </p>
         pub fn set_privacy_protect_registrant_contact(
             mut self,
             input: std::option::Option<bool>,
@@ -4056,22 +3810,14 @@ pub mod transfer_domain_input {
             self.privacy_protect_registrant_contact = input;
             self
         }
-        /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
-        /// WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains)
-        /// or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
-        /// WHOIS queries return the information that you entered for the technical contact.</p>
-        /// <p>Default: <code>true</code>
-        /// </p>
+        /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the technical contact.</p>
+        /// <p>Default: <code>true</code> </p>
         pub fn privacy_protect_tech_contact(mut self, input: bool) -> Self {
             self.privacy_protect_tech_contact = Some(input);
             self
         }
-        /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
-        /// WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains)
-        /// or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
-        /// WHOIS queries return the information that you entered for the technical contact.</p>
-        /// <p>Default: <code>true</code>
-        /// </p>
+        /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the technical contact.</p>
+        /// <p>Default: <code>true</code> </p>
         pub fn set_privacy_protect_tech_contact(
             mut self,
             input: std::option::Option<bool>,
@@ -4615,50 +4361,32 @@ pub mod update_domain_contact_privacy_input {
             self.domain_name = input;
             self
         }
-        /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
-        /// WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains)
-        /// or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
-        /// WHOIS queries return the information that you entered for the admin contact.</p>
+        /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the admin contact.</p>
         pub fn admin_privacy(mut self, input: bool) -> Self {
             self.admin_privacy = Some(input);
             self
         }
-        /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
-        /// WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains)
-        /// or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
-        /// WHOIS queries return the information that you entered for the admin contact.</p>
+        /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the admin contact.</p>
         pub fn set_admin_privacy(mut self, input: std::option::Option<bool>) -> Self {
             self.admin_privacy = input;
             self
         }
-        /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
-        /// WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains)
-        /// or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
-        /// WHOIS queries return the information that you entered for the registrant contact (domain owner).</p>
+        /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the registrant contact (domain owner).</p>
         pub fn registrant_privacy(mut self, input: bool) -> Self {
             self.registrant_privacy = Some(input);
             self
         }
-        /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
-        /// WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains)
-        /// or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
-        /// WHOIS queries return the information that you entered for the registrant contact (domain owner).</p>
+        /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the registrant contact (domain owner).</p>
         pub fn set_registrant_privacy(mut self, input: std::option::Option<bool>) -> Self {
             self.registrant_privacy = input;
             self
         }
-        /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
-        /// WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains)
-        /// or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
-        /// WHOIS queries return the information that you entered for the technical contact.</p>
+        /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the technical contact.</p>
         pub fn tech_privacy(mut self, input: bool) -> Self {
             self.tech_privacy = Some(input);
             self
         }
-        /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
-        /// WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains)
-        /// or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
-        /// WHOIS queries return the information that you entered for the technical contact.</p>
+        /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the technical contact.</p>
         pub fn set_tech_privacy(mut self, input: std::option::Option<bool>) -> Self {
             self.tech_privacy = input;
             self
@@ -5017,16 +4745,14 @@ pub mod update_tags_for_domain_input {
         ///
         /// To override the contents of this collection use [`set_tags_to_update`](Self::set_tags_to_update).
         ///
-        /// <p>A list of the tag keys and values that you want to add or update. If you specify a key
-        /// that already exists, the corresponding value will be replaced.</p>
+        /// <p>A list of the tag keys and values that you want to add or update. If you specify a key that already exists, the corresponding value will be replaced.</p>
         pub fn tags_to_update(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags_to_update.unwrap_or_default();
             v.push(input);
             self.tags_to_update = Some(v);
             self
         }
-        /// <p>A list of the tag keys and values that you want to add or update. If you specify a key
-        /// that already exists, the corresponding value will be replaced.</p>
+        /// <p>A list of the tag keys and values that you want to add or update. If you specify a key that already exists, the corresponding value will be replaced.</p>
         pub fn set_tags_to_update(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -5184,47 +4910,33 @@ pub mod view_billing_input {
         pub(crate) max_items: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The beginning date and time for the time period for which you want a list of billing records. Specify the date and time
-        /// in Unix time format and Coordinated Universal time (UTC).</p>
+        /// <p>The beginning date and time for the time period for which you want a list of billing records. Specify the date and time in Unix time format and Coordinated Universal time (UTC).</p>
         pub fn start(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start = Some(input);
             self
         }
-        /// <p>The beginning date and time for the time period for which you want a list of billing records. Specify the date and time
-        /// in Unix time format and Coordinated Universal time (UTC).</p>
+        /// <p>The beginning date and time for the time period for which you want a list of billing records. Specify the date and time in Unix time format and Coordinated Universal time (UTC).</p>
         pub fn set_start(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.start = input;
             self
         }
-        /// <p>The end date and time for the time period for which you want a list of billing records. Specify the date and time
-        /// in Unix time format and Coordinated Universal time (UTC).</p>
+        /// <p>The end date and time for the time period for which you want a list of billing records. Specify the date and time in Unix time format and Coordinated Universal time (UTC).</p>
         pub fn end(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end = Some(input);
             self
         }
-        /// <p>The end date and time for the time period for which you want a list of billing records. Specify the date and time
-        /// in Unix time format and Coordinated Universal time (UTC).</p>
+        /// <p>The end date and time for the time period for which you want a list of billing records. Specify the date and time in Unix time format and Coordinated Universal time (UTC).</p>
         pub fn set_end(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
             self.end = input;
             self
         }
-        /// <p>For an initial request for a list of billing records, omit this element. If the number of billing records
-        /// that are associated with the current AWS account during the specified period is greater than the value that
-        /// you specified for <code>MaxItems</code>, you can use <code>Marker</code> to return additional billing records.
-        /// Get the value of <code>NextPageMarker</code> from the previous response, and submit another request that includes
-        /// the value of <code>NextPageMarker</code> in the <code>Marker</code> element.
-        /// </p>
+        /// <p>For an initial request for a list of billing records, omit this element. If the number of billing records that are associated with the current AWS account during the specified period is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code> to return additional billing records. Get the value of <code>NextPageMarker</code> from the previous response, and submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element. </p>
         /// <p>Constraints: The marker must match the value of <code>NextPageMarker</code> that was returned in the previous response.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>For an initial request for a list of billing records, omit this element. If the number of billing records
-        /// that are associated with the current AWS account during the specified period is greater than the value that
-        /// you specified for <code>MaxItems</code>, you can use <code>Marker</code> to return additional billing records.
-        /// Get the value of <code>NextPageMarker</code> from the previous response, and submit another request that includes
-        /// the value of <code>NextPageMarker</code> in the <code>Marker</code> element.
-        /// </p>
+        /// <p>For an initial request for a list of billing records, omit this element. If the number of billing records that are associated with the current AWS account during the specified period is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code> to return additional billing records. Get the value of <code>NextPageMarker</code> from the previous response, and submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element. </p>
         /// <p>Constraints: The marker must match the value of <code>NextPageMarker</code> that was returned in the previous response.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
@@ -5383,18 +5095,11 @@ impl ViewBillingInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ViewBillingInput {
-    /// <p>The beginning date and time for the time period for which you want a list of billing records. Specify the date and time
-    /// in Unix time format and Coordinated Universal time (UTC).</p>
+    /// <p>The beginning date and time for the time period for which you want a list of billing records. Specify the date and time in Unix time format and Coordinated Universal time (UTC).</p>
     pub start: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The end date and time for the time period for which you want a list of billing records. Specify the date and time
-    /// in Unix time format and Coordinated Universal time (UTC).</p>
+    /// <p>The end date and time for the time period for which you want a list of billing records. Specify the date and time in Unix time format and Coordinated Universal time (UTC).</p>
     pub end: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>For an initial request for a list of billing records, omit this element. If the number of billing records
-    /// that are associated with the current AWS account during the specified period is greater than the value that
-    /// you specified for <code>MaxItems</code>, you can use <code>Marker</code> to return additional billing records.
-    /// Get the value of <code>NextPageMarker</code> from the previous response, and submit another request that includes
-    /// the value of <code>NextPageMarker</code> in the <code>Marker</code> element.
-    /// </p>
+    /// <p>For an initial request for a list of billing records, omit this element. If the number of billing records that are associated with the current AWS account during the specified period is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code> to return additional billing records. Get the value of <code>NextPageMarker</code> from the previous response, and submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element. </p>
     /// <p>Constraints: The marker must match the value of <code>NextPageMarker</code> that was returned in the previous response.</p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>The number of billing records to be returned.</p>
@@ -5402,22 +5107,15 @@ pub struct ViewBillingInput {
     pub max_items: std::option::Option<i32>,
 }
 impl ViewBillingInput {
-    /// <p>The beginning date and time for the time period for which you want a list of billing records. Specify the date and time
-    /// in Unix time format and Coordinated Universal time (UTC).</p>
+    /// <p>The beginning date and time for the time period for which you want a list of billing records. Specify the date and time in Unix time format and Coordinated Universal time (UTC).</p>
     pub fn start(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start.as_ref()
     }
-    /// <p>The end date and time for the time period for which you want a list of billing records. Specify the date and time
-    /// in Unix time format and Coordinated Universal time (UTC).</p>
+    /// <p>The end date and time for the time period for which you want a list of billing records. Specify the date and time in Unix time format and Coordinated Universal time (UTC).</p>
     pub fn end(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end.as_ref()
     }
-    /// <p>For an initial request for a list of billing records, omit this element. If the number of billing records
-    /// that are associated with the current AWS account during the specified period is greater than the value that
-    /// you specified for <code>MaxItems</code>, you can use <code>Marker</code> to return additional billing records.
-    /// Get the value of <code>NextPageMarker</code> from the previous response, and submit another request that includes
-    /// the value of <code>NextPageMarker</code> in the <code>Marker</code> element.
-    /// </p>
+    /// <p>For an initial request for a list of billing records, omit this element. If the number of billing records that are associated with the current AWS account during the specified period is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code> to return additional billing records. Get the value of <code>NextPageMarker</code> from the previous response, and submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element. </p>
     /// <p>Constraints: The marker must match the value of <code>NextPageMarker</code> that was returned in the previous response.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
@@ -5445,8 +5143,7 @@ impl std::fmt::Debug for ViewBillingInput {
 pub struct UpdateTagsForDomainInput {
     /// <p>The domain for which you want to add or update tags.</p>
     pub domain_name: std::option::Option<std::string::String>,
-    /// <p>A list of the tag keys and values that you want to add or update. If you specify a key
-    /// that already exists, the corresponding value will be replaced.</p>
+    /// <p>A list of the tag keys and values that you want to add or update. If you specify a key that already exists, the corresponding value will be replaced.</p>
     pub tags_to_update: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl UpdateTagsForDomainInput {
@@ -5454,8 +5151,7 @@ impl UpdateTagsForDomainInput {
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
-    /// <p>A list of the tag keys and values that you want to add or update. If you specify a key
-    /// that already exists, the corresponding value will be replaced.</p>
+    /// <p>A list of the tag keys and values that you want to add or update. If you specify a key that already exists, the corresponding value will be replaced.</p>
     pub fn tags_to_update(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags_to_update.as_deref()
     }
@@ -5469,10 +5165,8 @@ impl std::fmt::Debug for UpdateTagsForDomainInput {
     }
 }
 
-/// <p>Replaces the current set of name servers for the domain with the specified set of name servers.
-/// If you use Amazon Route 53 as your DNS service, specify the four name servers in the delegation set for the hosted zone for the domain.</p>
-/// <p>If successful, this operation returns an operation ID that you can use to track the progress and
-/// completion of the action. If the request is not completed successfully, the domain registrant will be notified by email. </p>
+/// <p>Replaces the current set of name servers for the domain with the specified set of name servers. If you use Amazon Route 53 as your DNS service, specify the four name servers in the delegation set for the hosted zone for the domain.</p>
+/// <p>If successful, this operation returns an operation ID that you can use to track the progress and completion of the action. If the request is not completed successfully, the domain registrant will be notified by email. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDomainNameserversInput {
@@ -5513,20 +5207,11 @@ impl std::fmt::Debug for UpdateDomainNameserversInput {
 pub struct UpdateDomainContactPrivacyInput {
     /// <p>The name of the domain that you want to update the privacy setting for.</p>
     pub domain_name: std::option::Option<std::string::String>,
-    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
-    /// WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains)
-    /// or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
-    /// WHOIS queries return the information that you entered for the admin contact.</p>
+    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the admin contact.</p>
     pub admin_privacy: std::option::Option<bool>,
-    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
-    /// WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains)
-    /// or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
-    /// WHOIS queries return the information that you entered for the registrant contact (domain owner).</p>
+    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the registrant contact (domain owner).</p>
     pub registrant_privacy: std::option::Option<bool>,
-    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
-    /// WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains)
-    /// or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
-    /// WHOIS queries return the information that you entered for the technical contact.</p>
+    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the technical contact.</p>
     pub tech_privacy: std::option::Option<bool>,
 }
 impl UpdateDomainContactPrivacyInput {
@@ -5534,24 +5219,15 @@ impl UpdateDomainContactPrivacyInput {
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
-    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
-    /// WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains)
-    /// or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
-    /// WHOIS queries return the information that you entered for the admin contact.</p>
+    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the admin contact.</p>
     pub fn admin_privacy(&self) -> std::option::Option<bool> {
         self.admin_privacy
     }
-    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
-    /// WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains)
-    /// or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
-    /// WHOIS queries return the information that you entered for the registrant contact (domain owner).</p>
+    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the registrant contact (domain owner).</p>
     pub fn registrant_privacy(&self) -> std::option::Option<bool> {
         self.registrant_privacy
     }
-    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
-    /// WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains)
-    /// or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
-    /// WHOIS queries return the information that you entered for the technical contact.</p>
+    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the technical contact.</p>
     pub fn tech_privacy(&self) -> std::option::Option<bool> {
         self.tech_privacy
     }
@@ -5641,38 +5317,25 @@ impl std::fmt::Debug for TransferDomainToAnotherAwsAccountInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TransferDomainInput {
-    /// <p>The name of the domain that you want to transfer to Route 53. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports.
-    /// For a list of supported TLDs, see
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the
-    /// <i>Amazon Route 53 Developer Guide</i>.</p>
+    /// <p>The name of the domain that you want to transfer to Route 53. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     /// <p>The domain name can contain only the following characters:</p>
     /// <ul>
-    /// <li>
-    /// <p>Letters a through z. Domain names are not case sensitive.</p>
-    /// </li>
-    /// <li>
-    /// <p>Numbers 0 through 9.</p>
-    /// </li>
-    /// <li>
-    /// <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p>
-    /// </li>
-    /// <li>
-    /// <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p>
-    /// </li>
+    /// <li> <p>Letters a through z. Domain names are not case sensitive.</p> </li>
+    /// <li> <p>Numbers 0 through 9.</p> </li>
+    /// <li> <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p> </li>
+    /// <li> <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p> </li>
     /// </ul>
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>Reserved for future use.</p>
     pub idn_lang_code: std::option::Option<std::string::String>,
-    /// <p>The number of years that you want to register the domain for. Domains are registered for a minimum of one year.
-    /// The maximum period depends on the top-level domain.</p>
+    /// <p>The number of years that you want to register the domain for. Domains are registered for a minimum of one year. The maximum period depends on the top-level domain.</p>
     /// <p>Default: 1</p>
     pub duration_in_years: std::option::Option<i32>,
     /// <p>Contains details for the host and glue IP addresses.</p>
     pub nameservers: std::option::Option<std::vec::Vec<crate::model::Nameserver>>,
     /// <p>The authorization code for the domain. You get this value from the current registrar.</p>
     pub auth_code: std::option::Option<std::string::String>,
-    /// <p>Indicates whether the domain will be automatically renewed (true) or not (false). Autorenewal only takes effect
-    /// after the account is charged.</p>
+    /// <p>Indicates whether the domain will be automatically renewed (true) or not (false). Autorenewal only takes effect after the account is charged.</p>
     /// <p>Default: true</p>
     pub auto_renew: std::option::Option<bool>,
     /// <p>Provides detailed contact information.</p>
@@ -5681,47 +5344,24 @@ pub struct TransferDomainInput {
     pub registrant_contact: std::option::Option<crate::model::ContactDetail>,
     /// <p>Provides detailed contact information.</p>
     pub tech_contact: std::option::Option<crate::model::ContactDetail>,
-    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
-    /// WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains)
-    /// or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
-    /// WHOIS queries return the information that you entered for the admin contact.</p>
-    /// <p>Default: <code>true</code>
-    /// </p>
+    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the admin contact.</p>
+    /// <p>Default: <code>true</code> </p>
     pub privacy_protect_admin_contact: std::option::Option<bool>,
-    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
-    /// WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains)
-    /// or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
-    /// WHOIS queries return the information that you entered for the registrant contact (domain owner).</p>
-    /// <p>Default: <code>true</code>
-    /// </p>
+    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the registrant contact (domain owner).</p>
+    /// <p>Default: <code>true</code> </p>
     pub privacy_protect_registrant_contact: std::option::Option<bool>,
-    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
-    /// WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains)
-    /// or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
-    /// WHOIS queries return the information that you entered for the technical contact.</p>
-    /// <p>Default: <code>true</code>
-    /// </p>
+    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the technical contact.</p>
+    /// <p>Default: <code>true</code> </p>
     pub privacy_protect_tech_contact: std::option::Option<bool>,
 }
 impl TransferDomainInput {
-    /// <p>The name of the domain that you want to transfer to Route 53. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports.
-    /// For a list of supported TLDs, see
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the
-    /// <i>Amazon Route 53 Developer Guide</i>.</p>
+    /// <p>The name of the domain that you want to transfer to Route 53. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     /// <p>The domain name can contain only the following characters:</p>
     /// <ul>
-    /// <li>
-    /// <p>Letters a through z. Domain names are not case sensitive.</p>
-    /// </li>
-    /// <li>
-    /// <p>Numbers 0 through 9.</p>
-    /// </li>
-    /// <li>
-    /// <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p>
-    /// </li>
-    /// <li>
-    /// <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p>
-    /// </li>
+    /// <li> <p>Letters a through z. Domain names are not case sensitive.</p> </li>
+    /// <li> <p>Numbers 0 through 9.</p> </li>
+    /// <li> <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p> </li>
+    /// <li> <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p> </li>
     /// </ul>
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
@@ -5730,8 +5370,7 @@ impl TransferDomainInput {
     pub fn idn_lang_code(&self) -> std::option::Option<&str> {
         self.idn_lang_code.as_deref()
     }
-    /// <p>The number of years that you want to register the domain for. Domains are registered for a minimum of one year.
-    /// The maximum period depends on the top-level domain.</p>
+    /// <p>The number of years that you want to register the domain for. Domains are registered for a minimum of one year. The maximum period depends on the top-level domain.</p>
     /// <p>Default: 1</p>
     pub fn duration_in_years(&self) -> std::option::Option<i32> {
         self.duration_in_years
@@ -5744,8 +5383,7 @@ impl TransferDomainInput {
     pub fn auth_code(&self) -> std::option::Option<&str> {
         self.auth_code.as_deref()
     }
-    /// <p>Indicates whether the domain will be automatically renewed (true) or not (false). Autorenewal only takes effect
-    /// after the account is charged.</p>
+    /// <p>Indicates whether the domain will be automatically renewed (true) or not (false). Autorenewal only takes effect after the account is charged.</p>
     /// <p>Default: true</p>
     pub fn auto_renew(&self) -> std::option::Option<bool> {
         self.auto_renew
@@ -5762,30 +5400,18 @@ impl TransferDomainInput {
     pub fn tech_contact(&self) -> std::option::Option<&crate::model::ContactDetail> {
         self.tech_contact.as_ref()
     }
-    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
-    /// WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains)
-    /// or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
-    /// WHOIS queries return the information that you entered for the admin contact.</p>
-    /// <p>Default: <code>true</code>
-    /// </p>
+    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the admin contact.</p>
+    /// <p>Default: <code>true</code> </p>
     pub fn privacy_protect_admin_contact(&self) -> std::option::Option<bool> {
         self.privacy_protect_admin_contact
     }
-    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
-    /// WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains)
-    /// or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
-    /// WHOIS queries return the information that you entered for the registrant contact (domain owner).</p>
-    /// <p>Default: <code>true</code>
-    /// </p>
+    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the registrant contact (domain owner).</p>
+    /// <p>Default: <code>true</code> </p>
     pub fn privacy_protect_registrant_contact(&self) -> std::option::Option<bool> {
         self.privacy_protect_registrant_contact
     }
-    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
-    /// WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains)
-    /// or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
-    /// WHOIS queries return the information that you entered for the technical contact.</p>
-    /// <p>Default: <code>true</code>
-    /// </p>
+    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the technical contact.</p>
+    /// <p>Default: <code>true</code> </p>
     pub fn privacy_protect_tech_contact(&self) -> std::option::Option<bool> {
         self.privacy_protect_tech_contact
     }
@@ -5818,8 +5444,7 @@ impl std::fmt::Debug for TransferDomainInput {
     }
 }
 
-/// <p>A request for the authorization code for the specified domain. To transfer a domain to another registrar, you provide
-/// this value to the new registrar.</p>
+/// <p>A request for the authorization code for the specified domain. To transfer a domain to another registrar, you provide this value to the new registrar.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RetrieveDomainAuthCodeInput {
@@ -5867,10 +5492,7 @@ impl std::fmt::Debug for ResendContactReachabilityEmailInput {
 pub struct RenewDomainInput {
     /// <p>The name of the domain that you want to renew.</p>
     pub domain_name: std::option::Option<std::string::String>,
-    /// <p>The number of years that you want to renew the domain for. The maximum number of years depends on the top-level domain.
-    /// For the range of valid values for your domain, see
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the
-    /// <i>Amazon Route 53 Developer Guide</i>.</p>
+    /// <p>The number of years that you want to renew the domain for. The maximum number of years depends on the top-level domain. For the range of valid values for your domain, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     /// <p>Default: 1</p>
     pub duration_in_years: std::option::Option<i32>,
     /// <p>The year when the registration for the domain is set to expire. This value must match the current expiration date for the domain.</p>
@@ -5881,10 +5503,7 @@ impl RenewDomainInput {
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
-    /// <p>The number of years that you want to renew the domain for. The maximum number of years depends on the top-level domain.
-    /// For the range of valid values for your domain, see
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the
-    /// <i>Amazon Route 53 Developer Guide</i>.</p>
+    /// <p>The number of years that you want to renew the domain for. The maximum number of years depends on the top-level domain. For the range of valid values for your domain, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     /// <p>Default: 1</p>
     pub fn duration_in_years(&self) -> std::option::Option<i32> {
         self.duration_in_years
@@ -5908,17 +5527,11 @@ impl std::fmt::Debug for RenewDomainInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RejectDomainTransferFromAnotherAwsAccountInput {
-    /// <p>The name of the domain that was specified when another AWS account submitted a
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a>
-    /// request.
-    /// </p>
+    /// <p>The name of the domain that was specified when another AWS account submitted a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a> request. </p>
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl RejectDomainTransferFromAnotherAwsAccountInput {
-    /// <p>The name of the domain that was specified when another AWS account submitted a
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a>
-    /// request.
-    /// </p>
+    /// <p>The name of the domain that was specified when another AWS account submitted a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a> request. </p>
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
@@ -5935,102 +5548,50 @@ impl std::fmt::Debug for RejectDomainTransferFromAnotherAwsAccountInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterDomainInput {
-    /// <p>The domain name that you want to register. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports.
-    /// For a list of supported TLDs, see
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the
-    /// <i>Amazon Route 53 Developer Guide</i>.</p>
+    /// <p>The domain name that you want to register. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     /// <p>The domain name can contain only the following characters:</p>
     /// <ul>
-    /// <li>
-    /// <p>Letters a through z. Domain names are not case sensitive.</p>
-    /// </li>
-    /// <li>
-    /// <p>Numbers 0 through 9.</p>
-    /// </li>
-    /// <li>
-    /// <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p>
-    /// </li>
-    /// <li>
-    /// <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p>
-    /// </li>
+    /// <li> <p>Letters a through z. Domain names are not case sensitive.</p> </li>
+    /// <li> <p>Numbers 0 through 9.</p> </li>
+    /// <li> <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p> </li>
+    /// <li> <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p> </li>
     /// </ul>
-    /// <p>Internationalized domain names are not supported for some top-level domains. To determine whether the TLD that you want to use supports
-    /// internationalized domain names, see
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a>.
-    /// For more information, see
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html#domain-name-format-idns">Formatting Internationalized Domain Names</a>.
-    /// </p>
+    /// <p>Internationalized domain names are not supported for some top-level domains. To determine whether the TLD that you want to use supports internationalized domain names, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a>. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html#domain-name-format-idns">Formatting Internationalized Domain Names</a>. </p>
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>Reserved for future use.</p>
     pub idn_lang_code: std::option::Option<std::string::String>,
-    /// <p>The number of years that you want to register the domain for. Domains are registered for a minimum of one year.
-    /// The maximum period depends on the top-level domain. For the range of valid values for your domain, see
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the
-    /// <i>Amazon Route 53 Developer Guide</i>.</p>
+    /// <p>The number of years that you want to register the domain for. Domains are registered for a minimum of one year. The maximum period depends on the top-level domain. For the range of valid values for your domain, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     /// <p>Default: 1</p>
     pub duration_in_years: std::option::Option<i32>,
-    /// <p>Indicates whether the domain will be automatically renewed (<code>true</code>) or not (<code>false</code>).
-    /// Autorenewal only takes effect after the account is charged.</p>
-    /// <p>Default: <code>true</code>
-    /// </p>
+    /// <p>Indicates whether the domain will be automatically renewed (<code>true</code>) or not (<code>false</code>). Autorenewal only takes effect after the account is charged.</p>
+    /// <p>Default: <code>true</code> </p>
     pub auto_renew: std::option::Option<bool>,
-    /// <p>Provides detailed contact information. For information about the values that you specify for each element, see
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
+    /// <p>Provides detailed contact information. For information about the values that you specify for each element, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
     pub admin_contact: std::option::Option<crate::model::ContactDetail>,
-    /// <p>Provides detailed contact information. For information about the values that you specify for each element, see
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
+    /// <p>Provides detailed contact information. For information about the values that you specify for each element, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
     pub registrant_contact: std::option::Option<crate::model::ContactDetail>,
-    /// <p>Provides detailed contact information. For information about the values that you specify for each element, see
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
+    /// <p>Provides detailed contact information. For information about the values that you specify for each element, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
     pub tech_contact: std::option::Option<crate::model::ContactDetail>,
-    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
-    /// WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains)
-    /// or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
-    /// WHOIS queries return the information that you entered for the admin contact.</p>
-    /// <p>Default: <code>true</code>
-    /// </p>
+    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the admin contact.</p>
+    /// <p>Default: <code>true</code> </p>
     pub privacy_protect_admin_contact: std::option::Option<bool>,
-    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
-    /// WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains)
-    /// or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
-    /// WHOIS queries return the information that you entered for the registrant contact (the domain owner).</p>
-    /// <p>Default: <code>true</code>
-    /// </p>
+    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the registrant contact (the domain owner).</p>
+    /// <p>Default: <code>true</code> </p>
     pub privacy_protect_registrant_contact: std::option::Option<bool>,
-    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
-    /// WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains)
-    /// or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
-    /// WHOIS queries return the information that you entered for the technical contact.</p>
-    /// <p>Default: <code>true</code>
-    /// </p>
+    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the technical contact.</p>
+    /// <p>Default: <code>true</code> </p>
     pub privacy_protect_tech_contact: std::option::Option<bool>,
 }
 impl RegisterDomainInput {
-    /// <p>The domain name that you want to register. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports.
-    /// For a list of supported TLDs, see
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the
-    /// <i>Amazon Route 53 Developer Guide</i>.</p>
+    /// <p>The domain name that you want to register. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     /// <p>The domain name can contain only the following characters:</p>
     /// <ul>
-    /// <li>
-    /// <p>Letters a through z. Domain names are not case sensitive.</p>
-    /// </li>
-    /// <li>
-    /// <p>Numbers 0 through 9.</p>
-    /// </li>
-    /// <li>
-    /// <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p>
-    /// </li>
-    /// <li>
-    /// <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p>
-    /// </li>
+    /// <li> <p>Letters a through z. Domain names are not case sensitive.</p> </li>
+    /// <li> <p>Numbers 0 through 9.</p> </li>
+    /// <li> <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p> </li>
+    /// <li> <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p> </li>
     /// </ul>
-    /// <p>Internationalized domain names are not supported for some top-level domains. To determine whether the TLD that you want to use supports
-    /// internationalized domain names, see
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a>.
-    /// For more information, see
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html#domain-name-format-idns">Formatting Internationalized Domain Names</a>.
-    /// </p>
+    /// <p>Internationalized domain names are not supported for some top-level domains. To determine whether the TLD that you want to use supports internationalized domain names, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a>. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html#domain-name-format-idns">Formatting Internationalized Domain Names</a>. </p>
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
@@ -6038,60 +5599,40 @@ impl RegisterDomainInput {
     pub fn idn_lang_code(&self) -> std::option::Option<&str> {
         self.idn_lang_code.as_deref()
     }
-    /// <p>The number of years that you want to register the domain for. Domains are registered for a minimum of one year.
-    /// The maximum period depends on the top-level domain. For the range of valid values for your domain, see
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the
-    /// <i>Amazon Route 53 Developer Guide</i>.</p>
+    /// <p>The number of years that you want to register the domain for. Domains are registered for a minimum of one year. The maximum period depends on the top-level domain. For the range of valid values for your domain, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     /// <p>Default: 1</p>
     pub fn duration_in_years(&self) -> std::option::Option<i32> {
         self.duration_in_years
     }
-    /// <p>Indicates whether the domain will be automatically renewed (<code>true</code>) or not (<code>false</code>).
-    /// Autorenewal only takes effect after the account is charged.</p>
-    /// <p>Default: <code>true</code>
-    /// </p>
+    /// <p>Indicates whether the domain will be automatically renewed (<code>true</code>) or not (<code>false</code>). Autorenewal only takes effect after the account is charged.</p>
+    /// <p>Default: <code>true</code> </p>
     pub fn auto_renew(&self) -> std::option::Option<bool> {
         self.auto_renew
     }
-    /// <p>Provides detailed contact information. For information about the values that you specify for each element, see
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
+    /// <p>Provides detailed contact information. For information about the values that you specify for each element, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
     pub fn admin_contact(&self) -> std::option::Option<&crate::model::ContactDetail> {
         self.admin_contact.as_ref()
     }
-    /// <p>Provides detailed contact information. For information about the values that you specify for each element, see
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
+    /// <p>Provides detailed contact information. For information about the values that you specify for each element, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
     pub fn registrant_contact(&self) -> std::option::Option<&crate::model::ContactDetail> {
         self.registrant_contact.as_ref()
     }
-    /// <p>Provides detailed contact information. For information about the values that you specify for each element, see
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
+    /// <p>Provides detailed contact information. For information about the values that you specify for each element, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
     pub fn tech_contact(&self) -> std::option::Option<&crate::model::ContactDetail> {
         self.tech_contact.as_ref()
     }
-    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
-    /// WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains)
-    /// or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
-    /// WHOIS queries return the information that you entered for the admin contact.</p>
-    /// <p>Default: <code>true</code>
-    /// </p>
+    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the admin contact.</p>
+    /// <p>Default: <code>true</code> </p>
     pub fn privacy_protect_admin_contact(&self) -> std::option::Option<bool> {
         self.privacy_protect_admin_contact
     }
-    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
-    /// WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains)
-    /// or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
-    /// WHOIS queries return the information that you entered for the registrant contact (the domain owner).</p>
-    /// <p>Default: <code>true</code>
-    /// </p>
+    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the registrant contact (the domain owner).</p>
+    /// <p>Default: <code>true</code> </p>
     pub fn privacy_protect_registrant_contact(&self) -> std::option::Option<bool> {
         self.privacy_protect_registrant_contact
     }
-    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
-    /// WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains)
-    /// or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
-    /// WHOIS queries return the information that you entered for the technical contact.</p>
-    /// <p>Default: <code>true</code>
-    /// </p>
+    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the technical contact.</p>
+    /// <p>Default: <code>true</code> </p>
     pub fn privacy_protect_tech_contact(&self) -> std::option::Option<bool> {
         self.privacy_protect_tech_contact
     }
@@ -6147,28 +5688,20 @@ impl std::fmt::Debug for ListTagsForDomainInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOperationsInput {
-    /// <p>An optional parameter that lets you get information about all the operations that you submitted after a specified date and time.
-    /// Specify the date and time in Unix time format and Coordinated Universal time (UTC).</p>
+    /// <p>An optional parameter that lets you get information about all the operations that you submitted after a specified date and time. Specify the date and time in Unix time format and Coordinated Universal time (UTC).</p>
     pub submitted_since: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>For an initial request for a list of operations, omit this element. If the number of operations that are
-    /// not yet complete is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code>
-    /// to return additional operations. Get the value of <code>NextPageMarker</code> from the previous response,
-    /// and submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element.</p>
+    /// <p>For an initial request for a list of operations, omit this element. If the number of operations that are not yet complete is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code> to return additional operations. Get the value of <code>NextPageMarker</code> from the previous response, and submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element.</p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>Number of domains to be returned.</p>
     /// <p>Default: 20</p>
     pub max_items: std::option::Option<i32>,
 }
 impl ListOperationsInput {
-    /// <p>An optional parameter that lets you get information about all the operations that you submitted after a specified date and time.
-    /// Specify the date and time in Unix time format and Coordinated Universal time (UTC).</p>
+    /// <p>An optional parameter that lets you get information about all the operations that you submitted after a specified date and time. Specify the date and time in Unix time format and Coordinated Universal time (UTC).</p>
     pub fn submitted_since(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submitted_since.as_ref()
     }
-    /// <p>For an initial request for a list of operations, omit this element. If the number of operations that are
-    /// not yet complete is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code>
-    /// to return additional operations. Get the value of <code>NextPageMarker</code> from the previous response,
-    /// and submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element.</p>
+    /// <p>For an initial request for a list of operations, omit this element. If the number of operations that are not yet complete is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code> to return additional operations. Get the value of <code>NextPageMarker</code> from the previous response, and submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -6192,11 +5725,7 @@ impl std::fmt::Debug for ListOperationsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDomainsInput {
-    /// <p>For an initial request for a list of domains, omit this element. If the number of domains
-    /// that are associated with the current AWS account is greater than the value that you specified for
-    /// <code>MaxItems</code>, you can use <code>Marker</code> to return additional domains. Get the value of
-    /// <code>NextPageMarker</code> from the previous response, and submit another request that includes the
-    /// value of <code>NextPageMarker</code> in the <code>Marker</code> element.</p>
+    /// <p>For an initial request for a list of domains, omit this element. If the number of domains that are associated with the current AWS account is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code> to return additional domains. Get the value of <code>NextPageMarker</code> from the previous response, and submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element.</p>
     /// <p>Constraints: The marker must match the value specified in the previous request.</p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>Number of domains to be returned.</p>
@@ -6204,11 +5733,7 @@ pub struct ListDomainsInput {
     pub max_items: std::option::Option<i32>,
 }
 impl ListDomainsInput {
-    /// <p>For an initial request for a list of domains, omit this element. If the number of domains
-    /// that are associated with the current AWS account is greater than the value that you specified for
-    /// <code>MaxItems</code>, you can use <code>Marker</code> to return additional domains. Get the value of
-    /// <code>NextPageMarker</code> from the previous response, and submit another request that includes the
-    /// value of <code>NextPageMarker</code> in the <code>Marker</code> element.</p>
+    /// <p>For an initial request for a list of domains, omit this element. If the number of domains that are associated with the current AWS account is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code> to return additional domains. Get the value of <code>NextPageMarker</code> from the previous response, and submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element.</p>
     /// <p>Constraints: The marker must match the value specified in the previous request.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
@@ -6228,19 +5753,15 @@ impl std::fmt::Debug for ListDomainsInput {
     }
 }
 
-/// <p>The
-/// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>
-/// request includes the following element.</p>
+/// <p>The <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a> request includes the following element.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetOperationDetailInput {
-    /// <p>The identifier for the operation for which you want to get the status. Route 53 returned the identifier
-    /// in the response to the original request.</p>
+    /// <p>The identifier for the operation for which you want to get the status. Route 53 returned the identifier in the response to the original request.</p>
     pub operation_id: std::option::Option<std::string::String>,
 }
 impl GetOperationDetailInput {
-    /// <p>The identifier for the operation for which you want to get the status. Route 53 returned the identifier
-    /// in the response to the original request.</p>
+    /// <p>The identifier for the operation for which you want to get the status. Route 53 returned the identifier in the response to the original request.</p>
     pub fn operation_id(&self) -> std::option::Option<&str> {
         self.operation_id.as_deref()
     }
@@ -6257,62 +5778,31 @@ impl std::fmt::Debug for GetOperationDetailInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDomainSuggestionsInput {
-    /// <p>A domain name that you want to use as the basis for a list of possible domain names. The top-level domain (TLD), such as .com,
-    /// must be a TLD that Route 53 supports. For a list of supported TLDs, see
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the
-    /// <i>Amazon Route 53 Developer Guide</i>.</p>
+    /// <p>A domain name that you want to use as the basis for a list of possible domain names. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     /// <p>The domain name can contain only the following characters:</p>
     /// <ul>
-    /// <li>
-    /// <p>Letters a through z. Domain names are not case sensitive.</p>
-    /// </li>
-    /// <li>
-    /// <p>Numbers 0 through 9.</p>
-    /// </li>
-    /// <li>
-    /// <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p>
-    /// </li>
-    /// <li>
-    /// <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p>
-    /// </li>
+    /// <li> <p>Letters a through z. Domain names are not case sensitive.</p> </li>
+    /// <li> <p>Numbers 0 through 9.</p> </li>
+    /// <li> <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p> </li>
+    /// <li> <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p> </li>
     /// </ul>
-    /// <p>Internationalized domain names are not supported for some top-level domains. To determine whether the TLD that you want to use
-    /// supports internationalized domain names, see
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a>.
-    /// </p>
+    /// <p>Internationalized domain names are not supported for some top-level domains. To determine whether the TLD that you want to use supports internationalized domain names, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a>. </p>
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The number of suggested domain names that you want Route 53 to return. Specify a value between 1 and 50.</p>
     pub suggestion_count: i32,
-    /// <p>If <code>OnlyAvailable</code> is <code>true</code>, Route 53 returns only domain names that are available.
-    /// If <code>OnlyAvailable</code> is <code>false</code>, Route 53 returns domain names without checking whether they're
-    /// available to be registered. To determine whether the domain is available, you can call <code>checkDomainAvailability</code>
-    /// for each suggestion.</p>
+    /// <p>If <code>OnlyAvailable</code> is <code>true</code>, Route 53 returns only domain names that are available. If <code>OnlyAvailable</code> is <code>false</code>, Route 53 returns domain names without checking whether they're available to be registered. To determine whether the domain is available, you can call <code>checkDomainAvailability</code> for each suggestion.</p>
     pub only_available: std::option::Option<bool>,
 }
 impl GetDomainSuggestionsInput {
-    /// <p>A domain name that you want to use as the basis for a list of possible domain names. The top-level domain (TLD), such as .com,
-    /// must be a TLD that Route 53 supports. For a list of supported TLDs, see
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the
-    /// <i>Amazon Route 53 Developer Guide</i>.</p>
+    /// <p>A domain name that you want to use as the basis for a list of possible domain names. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     /// <p>The domain name can contain only the following characters:</p>
     /// <ul>
-    /// <li>
-    /// <p>Letters a through z. Domain names are not case sensitive.</p>
-    /// </li>
-    /// <li>
-    /// <p>Numbers 0 through 9.</p>
-    /// </li>
-    /// <li>
-    /// <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p>
-    /// </li>
-    /// <li>
-    /// <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p>
-    /// </li>
+    /// <li> <p>Letters a through z. Domain names are not case sensitive.</p> </li>
+    /// <li> <p>Numbers 0 through 9.</p> </li>
+    /// <li> <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p> </li>
+    /// <li> <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p> </li>
     /// </ul>
-    /// <p>Internationalized domain names are not supported for some top-level domains. To determine whether the TLD that you want to use
-    /// supports internationalized domain names, see
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a>.
-    /// </p>
+    /// <p>Internationalized domain names are not supported for some top-level domains. To determine whether the TLD that you want to use supports internationalized domain names, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a>. </p>
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
@@ -6320,10 +5810,7 @@ impl GetDomainSuggestionsInput {
     pub fn suggestion_count(&self) -> i32 {
         self.suggestion_count
     }
-    /// <p>If <code>OnlyAvailable</code> is <code>true</code>, Route 53 returns only domain names that are available.
-    /// If <code>OnlyAvailable</code> is <code>false</code>, Route 53 returns domain names without checking whether they're
-    /// available to be registered. To determine whether the domain is available, you can call <code>checkDomainAvailability</code>
-    /// for each suggestion.</p>
+    /// <p>If <code>OnlyAvailable</code> is <code>true</code>, Route 53 returns only domain names that are available. If <code>OnlyAvailable</code> is <code>false</code>, Route 53 returns domain names without checking whether they're available to be registered. To determine whether the domain is available, you can call <code>checkDomainAvailability</code> for each suggestion.</p>
     pub fn only_available(&self) -> std::option::Option<bool> {
         self.only_available
     }
@@ -6496,55 +5983,31 @@ impl std::fmt::Debug for DeleteTagsForDomainInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CheckDomainTransferabilityInput {
-    /// <p>The name of the domain that you want to transfer to Route 53. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports.
-    /// For a list of supported TLDs, see
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the
-    /// <i>Amazon Route 53 Developer Guide</i>.</p>
+    /// <p>The name of the domain that you want to transfer to Route 53. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     /// <p>The domain name can contain only the following characters:</p>
     /// <ul>
-    /// <li>
-    /// <p>Letters a through z. Domain names are not case sensitive.</p>
-    /// </li>
-    /// <li>
-    /// <p>Numbers 0 through 9.</p>
-    /// </li>
-    /// <li>
-    /// <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p>
-    /// </li>
-    /// <li>
-    /// <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p>
-    /// </li>
+    /// <li> <p>Letters a through z. Domain names are not case sensitive.</p> </li>
+    /// <li> <p>Numbers 0 through 9.</p> </li>
+    /// <li> <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p> </li>
+    /// <li> <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p> </li>
     /// </ul>
     pub domain_name: std::option::Option<std::string::String>,
-    /// <p>If the registrar for the top-level domain (TLD) requires an authorization code to transfer the domain,
-    /// the code that you got from the current registrar for the domain.</p>
+    /// <p>If the registrar for the top-level domain (TLD) requires an authorization code to transfer the domain, the code that you got from the current registrar for the domain.</p>
     pub auth_code: std::option::Option<std::string::String>,
 }
 impl CheckDomainTransferabilityInput {
-    /// <p>The name of the domain that you want to transfer to Route 53. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports.
-    /// For a list of supported TLDs, see
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the
-    /// <i>Amazon Route 53 Developer Guide</i>.</p>
+    /// <p>The name of the domain that you want to transfer to Route 53. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     /// <p>The domain name can contain only the following characters:</p>
     /// <ul>
-    /// <li>
-    /// <p>Letters a through z. Domain names are not case sensitive.</p>
-    /// </li>
-    /// <li>
-    /// <p>Numbers 0 through 9.</p>
-    /// </li>
-    /// <li>
-    /// <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p>
-    /// </li>
-    /// <li>
-    /// <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p>
-    /// </li>
+    /// <li> <p>Letters a through z. Domain names are not case sensitive.</p> </li>
+    /// <li> <p>Numbers 0 through 9.</p> </li>
+    /// <li> <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p> </li>
+    /// <li> <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p> </li>
     /// </ul>
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
-    /// <p>If the registrar for the top-level domain (TLD) requires an authorization code to transfer the domain,
-    /// the code that you got from the current registrar for the domain.</p>
+    /// <p>If the registrar for the top-level domain (TLD) requires an authorization code to transfer the domain, the code that you got from the current registrar for the domain.</p>
     pub fn auth_code(&self) -> std::option::Option<&str> {
         self.auth_code.as_deref()
     }
@@ -6562,61 +6025,29 @@ impl std::fmt::Debug for CheckDomainTransferabilityInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CheckDomainAvailabilityInput {
-    /// <p>The name of the domain that you want to get availability for. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports.
-    /// For a list of supported TLDs, see
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the
-    /// <i>Amazon Route 53 Developer Guide</i>.</p>
+    /// <p>The name of the domain that you want to get availability for. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     /// <p>The domain name can contain only the following characters:</p>
     /// <ul>
-    /// <li>
-    /// <p>Letters a through z. Domain names are not case sensitive.</p>
-    /// </li>
-    /// <li>
-    /// <p>Numbers 0 through 9.</p>
-    /// </li>
-    /// <li>
-    /// <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p>
-    /// </li>
-    /// <li>
-    /// <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p>
-    /// </li>
+    /// <li> <p>Letters a through z. Domain names are not case sensitive.</p> </li>
+    /// <li> <p>Numbers 0 through 9.</p> </li>
+    /// <li> <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p> </li>
+    /// <li> <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p> </li>
     /// </ul>
-    /// <p>Internationalized domain names are not supported for some top-level domains. To determine whether the TLD that you want to use supports
-    /// internationalized domain names, see
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a>.
-    /// For more information, see
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html#domain-name-format-idns">Formatting Internationalized Domain Names</a>.
-    /// </p>
+    /// <p>Internationalized domain names are not supported for some top-level domains. To determine whether the TLD that you want to use supports internationalized domain names, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a>. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html#domain-name-format-idns">Formatting Internationalized Domain Names</a>. </p>
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>Reserved for future use.</p>
     pub idn_lang_code: std::option::Option<std::string::String>,
 }
 impl CheckDomainAvailabilityInput {
-    /// <p>The name of the domain that you want to get availability for. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports.
-    /// For a list of supported TLDs, see
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the
-    /// <i>Amazon Route 53 Developer Guide</i>.</p>
+    /// <p>The name of the domain that you want to get availability for. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     /// <p>The domain name can contain only the following characters:</p>
     /// <ul>
-    /// <li>
-    /// <p>Letters a through z. Domain names are not case sensitive.</p>
-    /// </li>
-    /// <li>
-    /// <p>Numbers 0 through 9.</p>
-    /// </li>
-    /// <li>
-    /// <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p>
-    /// </li>
-    /// <li>
-    /// <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p>
-    /// </li>
+    /// <li> <p>Letters a through z. Domain names are not case sensitive.</p> </li>
+    /// <li> <p>Numbers 0 through 9.</p> </li>
+    /// <li> <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p> </li>
+    /// <li> <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p> </li>
     /// </ul>
-    /// <p>Internationalized domain names are not supported for some top-level domains. To determine whether the TLD that you want to use supports
-    /// internationalized domain names, see
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a>.
-    /// For more information, see
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html#domain-name-format-idns">Formatting Internationalized Domain Names</a>.
-    /// </p>
+    /// <p>Internationalized domain names are not supported for some top-level domains. To determine whether the TLD that you want to use supports internationalized domain names, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a>. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html#domain-name-format-idns">Formatting Internationalized Domain Names</a>. </p>
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
@@ -6659,29 +6090,17 @@ impl std::fmt::Debug for CancelDomainTransferToAnotherAwsAccountInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcceptDomainTransferFromAnotherAwsAccountInput {
-    /// <p>The name of the domain that was specified when another AWS account submitted a
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a>
-    /// request.
-    /// </p>
+    /// <p>The name of the domain that was specified when another AWS account submitted a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a> request. </p>
     pub domain_name: std::option::Option<std::string::String>,
-    /// <p>The password that was returned by the
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a>
-    /// request.
-    /// </p>
+    /// <p>The password that was returned by the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a> request. </p>
     pub password: std::option::Option<std::string::String>,
 }
 impl AcceptDomainTransferFromAnotherAwsAccountInput {
-    /// <p>The name of the domain that was specified when another AWS account submitted a
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a>
-    /// request.
-    /// </p>
+    /// <p>The name of the domain that was specified when another AWS account submitted a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a> request. </p>
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
-    /// <p>The password that was returned by the
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a>
-    /// request.
-    /// </p>
+    /// <p>The password that was returned by the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a> request. </p>
     pub fn password(&self) -> std::option::Option<&str> {
         self.password.as_deref()
     }

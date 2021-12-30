@@ -15,8 +15,7 @@ pub mod add_tags_to_on_premises_instances_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tag key-value pairs to add to the on-premises instances.</p>
-        /// <p>Keys and values are both required. Keys cannot be null or empty strings. Value-only
-        /// tags are not allowed.</p>
+        /// <p>Keys and values are both required. Keys cannot be null or empty strings. Value-only tags are not allowed.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
@@ -24,8 +23,7 @@ pub mod add_tags_to_on_premises_instances_input {
             self
         }
         /// <p>The tag key-value pairs to add to the on-premises instances.</p>
-        /// <p>Keys and values are both required. Keys cannot be null or empty strings. Value-only
-        /// tags are not allowed.</p>
+        /// <p>Keys and values are both required. Keys cannot be null or empty strings. Value-only tags are not allowed.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -201,14 +199,12 @@ pub mod batch_get_application_revisions_input {
         pub(crate) revisions: std::option::Option<std::vec::Vec<crate::model::RevisionLocation>>,
     }
     impl Builder {
-        /// <p>The name of an AWS CodeDeploy application about which to get revision
-        /// information.</p>
+        /// <p>The name of an AWS CodeDeploy application about which to get revision information.</p>
         pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.application_name = Some(input.into());
             self
         }
-        /// <p>The name of an AWS CodeDeploy application about which to get revision
-        /// information.</p>
+        /// <p>The name of an AWS CodeDeploy application about which to get revision information.</p>
         pub fn set_application_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -220,18 +216,14 @@ pub mod batch_get_application_revisions_input {
         ///
         /// To override the contents of this collection use [`set_revisions`](Self::set_revisions).
         ///
-        /// <p>An array of <code>RevisionLocation</code> objects that specify information to get
-        /// about the application revisions, including type and location. The maximum number of
-        /// <code>RevisionLocation</code> objects you can specify is 25.</p>
+        /// <p>An array of <code>RevisionLocation</code> objects that specify information to get about the application revisions, including type and location. The maximum number of <code>RevisionLocation</code> objects you can specify is 25.</p>
         pub fn revisions(mut self, input: crate::model::RevisionLocation) -> Self {
             let mut v = self.revisions.unwrap_or_default();
             v.push(input);
             self.revisions = Some(v);
             self
         }
-        /// <p>An array of <code>RevisionLocation</code> objects that specify information to get
-        /// about the application revisions, including type and location. The maximum number of
-        /// <code>RevisionLocation</code> objects you can specify is 25.</p>
+        /// <p>An array of <code>RevisionLocation</code> objects that specify information to get about the application revisions, including type and location. The maximum number of <code>RevisionLocation</code> objects you can specify is 25.</p>
         pub fn set_revisions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RevisionLocation>>,
@@ -391,16 +383,14 @@ pub mod batch_get_applications_input {
         ///
         /// To override the contents of this collection use [`set_application_names`](Self::set_application_names).
         ///
-        /// <p>A list of application names separated by spaces. The maximum number of application
-        /// names you can specify is 100.</p>
+        /// <p>A list of application names separated by spaces. The maximum number of application names you can specify is 100.</p>
         pub fn application_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.application_names.unwrap_or_default();
             v.push(input.into());
             self.application_names = Some(v);
             self
         }
-        /// <p>A list of application names separated by spaces. The maximum number of application
-        /// names you can specify is 100.</p>
+        /// <p>A list of application names separated by spaces. The maximum number of application names you can specify is 100.</p>
         pub fn set_application_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -555,14 +545,12 @@ pub mod batch_get_deployment_groups_input {
         pub(crate) deployment_group_names: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The name of an AWS CodeDeploy application associated with the applicable IAM user or
-        /// AWS account.</p>
+        /// <p>The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>
         pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.application_name = Some(input.into());
             self
         }
-        /// <p>The name of an AWS CodeDeploy application associated with the applicable IAM user or
-        /// AWS account.</p>
+        /// <p>The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>
         pub fn set_application_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -755,16 +743,14 @@ pub mod batch_get_deployment_instances_input {
         ///
         /// To override the contents of this collection use [`set_instance_ids`](Self::set_instance_ids).
         ///
-        /// <p>The unique IDs of instances used in the deployment. The maximum number of instance IDs
-        /// you can specify is 25.</p>
+        /// <p>The unique IDs of instances used in the deployment. The maximum number of instance IDs you can specify is 25.</p>
         pub fn instance_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.instance_ids.unwrap_or_default();
             v.push(input.into());
             self.instance_ids = Some(v);
             self
         }
-        /// <p>The unique IDs of instances used in the deployment. The maximum number of instance IDs
-        /// you can specify is 25.</p>
+        /// <p>The unique IDs of instances used in the deployment. The maximum number of instance IDs you can specify is 25.</p>
         pub fn set_instance_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -923,16 +909,14 @@ pub mod batch_get_deployments_input {
         ///
         /// To override the contents of this collection use [`set_deployment_ids`](Self::set_deployment_ids).
         ///
-        /// <p> A list of deployment IDs, separated by spaces. The maximum number of deployment IDs
-        /// you can specify is 25.</p>
+        /// <p> A list of deployment IDs, separated by spaces. The maximum number of deployment IDs you can specify is 25.</p>
         pub fn deployment_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.deployment_ids.unwrap_or_default();
             v.push(input.into());
             self.deployment_ids = Some(v);
             self
         }
-        /// <p> A list of deployment IDs, separated by spaces. The maximum number of deployment IDs
-        /// you can specify is 25.</p>
+        /// <p> A list of deployment IDs, separated by spaces. The maximum number of deployment IDs you can specify is 25.</p>
         pub fn set_deployment_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1102,31 +1086,16 @@ pub mod batch_get_deployment_targets_input {
         ///
         /// To override the contents of this collection use [`set_target_ids`](Self::set_target_ids).
         ///
-        /// <p> The unique IDs of the deployment targets. The compute platform of the deployment
-        /// determines the type of the targets and their formats. The maximum number of deployment
-        /// target IDs you can specify is 25.</p>
+        /// <p> The unique IDs of the deployment targets. The compute platform of the deployment determines the type of the targets and their formats. The maximum number of deployment target IDs you can specify is 25.</p>
         /// <ul>
-        /// <li>
-        /// <p> For deployments that use the EC2/On-premises compute platform, the target IDs
-        /// are EC2 or on-premises instances IDs, and their target type is
-        /// <code>instanceTarget</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p> For deployments that use the AWS Lambda compute platform, the target IDs are
-        /// the names of Lambda functions, and their target type is
-        /// <code>instanceTarget</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p> For deployments that use the Amazon ECS compute platform, the target IDs are
-        /// pairs of Amazon ECS clusters and services specified using the format
-        /// <code><clustername>:<servicename></code>. Their target type is
-        /// <code>ecsTarget</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p> For deployments that are deployed with AWS CloudFormation, the target IDs are
-        /// CloudFormation stack IDs. Their target type is
-        /// <code>cloudFormationTarget</code>. </p>
-        /// </li>
+        /// <li> <p> For deployments that use the EC2/On-premises compute platform, the target IDs are EC2 or on-premises instances IDs, and their target type is <code>instanceTarget</code>. </p> </li>
+        /// <li> <p> For deployments that use the AWS Lambda compute platform, the target IDs are the names of Lambda functions, and their target type is <code>instanceTarget</code>. </p> </li>
+        /// <li> <p> For deployments that use the Amazon ECS compute platform, the target IDs are pairs of Amazon ECS clusters and services specified using the format <code>
+        /// <clustername>
+        /// :
+        /// <servicename></servicename>
+        /// </clustername></code>. Their target type is <code>ecsTarget</code>. </p> </li>
+        /// <li> <p> For deployments that are deployed with AWS CloudFormation, the target IDs are CloudFormation stack IDs. Their target type is <code>cloudFormationTarget</code>. </p> </li>
         /// </ul>
         pub fn target_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.target_ids.unwrap_or_default();
@@ -1134,31 +1103,16 @@ pub mod batch_get_deployment_targets_input {
             self.target_ids = Some(v);
             self
         }
-        /// <p> The unique IDs of the deployment targets. The compute platform of the deployment
-        /// determines the type of the targets and their formats. The maximum number of deployment
-        /// target IDs you can specify is 25.</p>
+        /// <p> The unique IDs of the deployment targets. The compute platform of the deployment determines the type of the targets and their formats. The maximum number of deployment target IDs you can specify is 25.</p>
         /// <ul>
-        /// <li>
-        /// <p> For deployments that use the EC2/On-premises compute platform, the target IDs
-        /// are EC2 or on-premises instances IDs, and their target type is
-        /// <code>instanceTarget</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p> For deployments that use the AWS Lambda compute platform, the target IDs are
-        /// the names of Lambda functions, and their target type is
-        /// <code>instanceTarget</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p> For deployments that use the Amazon ECS compute platform, the target IDs are
-        /// pairs of Amazon ECS clusters and services specified using the format
-        /// <code><clustername>:<servicename></code>. Their target type is
-        /// <code>ecsTarget</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p> For deployments that are deployed with AWS CloudFormation, the target IDs are
-        /// CloudFormation stack IDs. Their target type is
-        /// <code>cloudFormationTarget</code>. </p>
-        /// </li>
+        /// <li> <p> For deployments that use the EC2/On-premises compute platform, the target IDs are EC2 or on-premises instances IDs, and their target type is <code>instanceTarget</code>. </p> </li>
+        /// <li> <p> For deployments that use the AWS Lambda compute platform, the target IDs are the names of Lambda functions, and their target type is <code>instanceTarget</code>. </p> </li>
+        /// <li> <p> For deployments that use the Amazon ECS compute platform, the target IDs are pairs of Amazon ECS clusters and services specified using the format <code>
+        /// <clustername>
+        /// :
+        /// <servicename></servicename>
+        /// </clustername></code>. Their target type is <code>ecsTarget</code>. </p> </li>
+        /// <li> <p> For deployments that are deployed with AWS CloudFormation, the target IDs are CloudFormation stack IDs. Their target type is <code>cloudFormationTarget</code>. </p> </li>
         /// </ul>
         pub fn set_target_ids(
             mut self,
@@ -1319,16 +1273,14 @@ pub mod batch_get_on_premises_instances_input {
         ///
         /// To override the contents of this collection use [`set_instance_names`](Self::set_instance_names).
         ///
-        /// <p>The names of the on-premises instances about which to get information. The maximum
-        /// number of instance names you can specify is 25.</p>
+        /// <p>The names of the on-premises instances about which to get information. The maximum number of instance names you can specify is 25.</p>
         pub fn instance_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.instance_names.unwrap_or_default();
             v.push(input.into());
             self.instance_names = Some(v);
             self
         }
-        /// <p>The names of the on-premises instances about which to get information. The maximum
-        /// number of instance names you can specify is 25.</p>
+        /// <p>The names of the on-premises instances about which to get information. The maximum number of instance names you can specify is 25.</p>
         pub fn set_instance_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1483,14 +1435,12 @@ pub mod continue_deployment_input {
         pub(crate) deployment_wait_type: std::option::Option<crate::model::DeploymentWaitType>,
     }
     impl Builder {
-        /// <p> The unique ID of a blue/green deployment for which you want to start rerouting
-        /// traffic to the replacement environment. </p>
+        /// <p> The unique ID of a blue/green deployment for which you want to start rerouting traffic to the replacement environment. </p>
         pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.deployment_id = Some(input.into());
             self
         }
-        /// <p> The unique ID of a blue/green deployment for which you want to start rerouting
-        /// traffic to the replacement environment. </p>
+        /// <p> The unique ID of a blue/green deployment for which you want to start rerouting traffic to the replacement environment. </p>
         pub fn set_deployment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1498,18 +1448,12 @@ pub mod continue_deployment_input {
             self.deployment_id = input;
             self
         }
-        /// <p> The status of the deployment's waiting period. <code>READY_WAIT</code> indicates that
-        /// the deployment is ready to start shifting traffic. <code>TERMINATION_WAIT</code>
-        /// indicates that the traffic is shifted, but the original target is not terminated.
-        /// </p>
+        /// <p> The status of the deployment's waiting period. <code>READY_WAIT</code> indicates that the deployment is ready to start shifting traffic. <code>TERMINATION_WAIT</code> indicates that the traffic is shifted, but the original target is not terminated. </p>
         pub fn deployment_wait_type(mut self, input: crate::model::DeploymentWaitType) -> Self {
             self.deployment_wait_type = Some(input);
             self
         }
-        /// <p> The status of the deployment's waiting period. <code>READY_WAIT</code> indicates that
-        /// the deployment is ready to start shifting traffic. <code>TERMINATION_WAIT</code>
-        /// indicates that the traffic is shifted, but the original target is not terminated.
-        /// </p>
+        /// <p> The status of the deployment's waiting period. <code>READY_WAIT</code> indicates that the deployment is ready to start shifting traffic. <code>TERMINATION_WAIT</code> indicates that the traffic is shifted, but the original target is not terminated. </p>
         pub fn set_deployment_wait_type(
             mut self,
             input: std::option::Option<crate::model::DeploymentWaitType>,
@@ -1664,14 +1608,12 @@ pub mod create_application_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The name of the application. This name must be unique with the applicable IAM user or
-        /// AWS account.</p>
+        /// <p>The name of the application. This name must be unique with the applicable IAM user or AWS account.</p>
         pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.application_name = Some(input.into());
             self
         }
-        /// <p>The name of the application. This name must be unique with the applicable IAM user or
-        /// AWS account.</p>
+        /// <p>The name of the application. This name must be unique with the applicable IAM user or AWS account.</p>
         pub fn set_application_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1679,14 +1621,12 @@ pub mod create_application_input {
             self.application_name = input;
             self
         }
-        /// <p> The destination platform type for the deployment (<code>Lambda</code>,
-        /// <code>Server</code>, or <code>ECS</code>).</p>
+        /// <p> The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).</p>
         pub fn compute_platform(mut self, input: crate::model::ComputePlatform) -> Self {
             self.compute_platform = Some(input);
             self
         }
-        /// <p> The destination platform type for the deployment (<code>Lambda</code>,
-        /// <code>Server</code>, or <code>ECS</code>).</p>
+        /// <p> The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).</p>
         pub fn set_compute_platform(
             mut self,
             input: std::option::Option<crate::model::ComputePlatform>,
@@ -1698,18 +1638,14 @@ pub mod create_application_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p> The metadata that you apply to CodeDeploy applications to help you organize and
-        /// categorize them. Each tag consists of a key and an optional value, both of which you
-        /// define. </p>
+        /// <p> The metadata that you apply to CodeDeploy applications to help you organize and categorize them. Each tag consists of a key and an optional value, both of which you define. </p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p> The metadata that you apply to CodeDeploy applications to help you organize and
-        /// categorize them. Each tag consists of a key and an optional value, both of which you
-        /// define. </p>
+        /// <p> The metadata that you apply to CodeDeploy applications to help you organize and categorize them. Each tag consists of a key and an optional value, both of which you define. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1873,14 +1809,12 @@ pub mod create_deployment_input {
         pub(crate) file_exists_behavior: std::option::Option<crate::model::FileExistsBehavior>,
     }
     impl Builder {
-        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-        /// account.</p>
+        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
         pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.application_name = Some(input.into());
             self
         }
-        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-        /// account.</p>
+        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
         pub fn set_application_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1914,20 +1848,14 @@ pub mod create_deployment_input {
             self.revision = input;
             self
         }
-        /// <p>The name of a deployment configuration associated with the IAM user or AWS
-        /// account.</p>
-        /// <p>If not specified, the value configured in the deployment group is used as the default.
-        /// If the deployment group does not have a deployment configuration associated with it,
-        /// <code>CodeDeployDefault</code>.<code>OneAtATime</code> is used by default.</p>
+        /// <p>The name of a deployment configuration associated with the IAM user or AWS account.</p>
+        /// <p>If not specified, the value configured in the deployment group is used as the default. If the deployment group does not have a deployment configuration associated with it, <code>CodeDeployDefault</code>.<code>OneAtATime</code> is used by default.</p>
         pub fn deployment_config_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.deployment_config_name = Some(input.into());
             self
         }
-        /// <p>The name of a deployment configuration associated with the IAM user or AWS
-        /// account.</p>
-        /// <p>If not specified, the value configured in the deployment group is used as the default.
-        /// If the deployment group does not have a deployment configuration associated with it,
-        /// <code>CodeDeployDefault</code>.<code>OneAtATime</code> is used by default.</p>
+        /// <p>The name of a deployment configuration associated with the IAM user or AWS account.</p>
+        /// <p>If not specified, the value configured in the deployment group is used as the default. If the deployment group does not have a deployment configuration associated with it, <code>CodeDeployDefault</code>.<code>OneAtATime</code> is used by default.</p>
         pub fn set_deployment_config_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1945,60 +1873,18 @@ pub mod create_deployment_input {
             self.description = input;
             self
         }
-        /// <p> If true, then if an <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, or
-        /// <code>AfterBlockTraffic</code> deployment lifecycle event to an instance fails, then
-        /// the deployment continues to the next deployment lifecycle event. For example, if
-        /// <code>ApplicationStop</code> fails, the deployment continues with
-        /// <code>DownloadBundle</code>. If <code>BeforeBlockTraffic</code> fails, the
-        /// deployment continues with <code>BlockTraffic</code>. If <code>AfterBlockTraffic</code>
-        /// fails, the deployment continues with <code>ApplicationStop</code>. </p>
-        ///
-        /// <p> If false or not specified, then if a lifecycle event fails during a deployment to an
-        /// instance, that deployment fails. If deployment to that instance is part of an overall
-        /// deployment and the number of healthy hosts is not less than the minimum number of
-        /// healthy hosts, then a deployment to the next instance is attempted. </p>
-        ///
-        /// <p> During a deployment, the AWS CodeDeploy agent runs the scripts specified for
-        /// <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and
-        /// <code>AfterBlockTraffic</code> in the AppSpec file from the previous successful
-        /// deployment. (All other scripts are run from the AppSpec file in the current deployment.)
-        /// If one of these scripts contains an error and does not run successfully, the deployment
-        /// can fail. </p>
-        ///
-        /// <p> If the cause of the failure is a script from the last successful deployment that will
-        /// never run successfully, create a new deployment and use
-        /// <code>ignoreApplicationStopFailures</code> to specify that the
-        /// <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and
-        /// <code>AfterBlockTraffic</code> failures should be ignored. </p>
+        /// <p> If true, then if an <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, or <code>AfterBlockTraffic</code> deployment lifecycle event to an instance fails, then the deployment continues to the next deployment lifecycle event. For example, if <code>ApplicationStop</code> fails, the deployment continues with <code>DownloadBundle</code>. If <code>BeforeBlockTraffic</code> fails, the deployment continues with <code>BlockTraffic</code>. If <code>AfterBlockTraffic</code> fails, the deployment continues with <code>ApplicationStop</code>. </p>
+        /// <p> If false or not specified, then if a lifecycle event fails during a deployment to an instance, that deployment fails. If deployment to that instance is part of an overall deployment and the number of healthy hosts is not less than the minimum number of healthy hosts, then a deployment to the next instance is attempted. </p>
+        /// <p> During a deployment, the AWS CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the AppSpec file from the previous successful deployment. (All other scripts are run from the AppSpec file in the current deployment.) If one of these scripts contains an error and does not run successfully, the deployment can fail. </p>
+        /// <p> If the cause of the failure is a script from the last successful deployment that will never run successfully, create a new deployment and use <code>ignoreApplicationStopFailures</code> to specify that the <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> failures should be ignored. </p>
         pub fn ignore_application_stop_failures(mut self, input: bool) -> Self {
             self.ignore_application_stop_failures = Some(input);
             self
         }
-        /// <p> If true, then if an <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, or
-        /// <code>AfterBlockTraffic</code> deployment lifecycle event to an instance fails, then
-        /// the deployment continues to the next deployment lifecycle event. For example, if
-        /// <code>ApplicationStop</code> fails, the deployment continues with
-        /// <code>DownloadBundle</code>. If <code>BeforeBlockTraffic</code> fails, the
-        /// deployment continues with <code>BlockTraffic</code>. If <code>AfterBlockTraffic</code>
-        /// fails, the deployment continues with <code>ApplicationStop</code>. </p>
-        ///
-        /// <p> If false or not specified, then if a lifecycle event fails during a deployment to an
-        /// instance, that deployment fails. If deployment to that instance is part of an overall
-        /// deployment and the number of healthy hosts is not less than the minimum number of
-        /// healthy hosts, then a deployment to the next instance is attempted. </p>
-        ///
-        /// <p> During a deployment, the AWS CodeDeploy agent runs the scripts specified for
-        /// <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and
-        /// <code>AfterBlockTraffic</code> in the AppSpec file from the previous successful
-        /// deployment. (All other scripts are run from the AppSpec file in the current deployment.)
-        /// If one of these scripts contains an error and does not run successfully, the deployment
-        /// can fail. </p>
-        ///
-        /// <p> If the cause of the failure is a script from the last successful deployment that will
-        /// never run successfully, create a new deployment and use
-        /// <code>ignoreApplicationStopFailures</code> to specify that the
-        /// <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and
-        /// <code>AfterBlockTraffic</code> failures should be ignored. </p>
+        /// <p> If true, then if an <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, or <code>AfterBlockTraffic</code> deployment lifecycle event to an instance fails, then the deployment continues to the next deployment lifecycle event. For example, if <code>ApplicationStop</code> fails, the deployment continues with <code>DownloadBundle</code>. If <code>BeforeBlockTraffic</code> fails, the deployment continues with <code>BlockTraffic</code>. If <code>AfterBlockTraffic</code> fails, the deployment continues with <code>ApplicationStop</code>. </p>
+        /// <p> If false or not specified, then if a lifecycle event fails during a deployment to an instance, that deployment fails. If deployment to that instance is part of an overall deployment and the number of healthy hosts is not less than the minimum number of healthy hosts, then a deployment to the next instance is attempted. </p>
+        /// <p> During a deployment, the AWS CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the AppSpec file from the previous successful deployment. (All other scripts are run from the AppSpec file in the current deployment.) If one of these scripts contains an error and does not run successfully, the deployment can fail. </p>
+        /// <p> If the cause of the failure is a script from the last successful deployment that will never run successfully, create a new deployment and use <code>ignoreApplicationStopFailures</code> to specify that the <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> failures should be ignored. </p>
         pub fn set_ignore_application_stop_failures(
             mut self,
             input: std::option::Option<bool>,
@@ -2006,14 +1892,12 @@ pub mod create_deployment_input {
             self.ignore_application_stop_failures = input;
             self
         }
-        /// <p> Information about the instances that belong to the replacement environment in a
-        /// blue/green deployment. </p>
+        /// <p> Information about the instances that belong to the replacement environment in a blue/green deployment. </p>
         pub fn target_instances(mut self, input: crate::model::TargetInstances) -> Self {
             self.target_instances = Some(input);
             self
         }
-        /// <p> Information about the instances that belong to the replacement environment in a
-        /// blue/green deployment. </p>
+        /// <p> Information about the instances that belong to the replacement environment in a blue/green deployment. </p>
         pub fn set_target_instances(
             mut self,
             input: std::option::Option<crate::model::TargetInstances>,
@@ -2021,8 +1905,7 @@ pub mod create_deployment_input {
             self.target_instances = input;
             self
         }
-        /// <p>Configuration information for an automatic rollback that is added when a deployment is
-        /// created.</p>
+        /// <p>Configuration information for an automatic rollback that is added when a deployment is created.</p>
         pub fn auto_rollback_configuration(
             mut self,
             input: crate::model::AutoRollbackConfiguration,
@@ -2030,8 +1913,7 @@ pub mod create_deployment_input {
             self.auto_rollback_configuration = Some(input);
             self
         }
-        /// <p>Configuration information for an automatic rollback that is added when a deployment is
-        /// created.</p>
+        /// <p>Configuration information for an automatic rollback that is added when a deployment is created.</p>
         pub fn set_auto_rollback_configuration(
             mut self,
             input: std::option::Option<crate::model::AutoRollbackConfiguration>,
@@ -2039,14 +1921,12 @@ pub mod create_deployment_input {
             self.auto_rollback_configuration = input;
             self
         }
-        /// <p> Indicates whether to deploy to all instances or only to instances that are not
-        /// running the latest application revision. </p>
+        /// <p> Indicates whether to deploy to all instances or only to instances that are not running the latest application revision. </p>
         pub fn update_outdated_instances_only(mut self, input: bool) -> Self {
             self.update_outdated_instances_only = Some(input);
             self
         }
-        /// <p> Indicates whether to deploy to all instances or only to instances that are not
-        /// running the latest application revision. </p>
+        /// <p> Indicates whether to deploy to all instances or only to instances that are not running the latest application revision. </p>
         pub fn set_update_outdated_instances_only(
             mut self,
             input: std::option::Option<bool>,
@@ -2054,45 +1934,23 @@ pub mod create_deployment_input {
             self.update_outdated_instances_only = input;
             self
         }
-        /// <p>Information about how AWS CodeDeploy handles files that already exist in a deployment
-        /// target location but weren't part of the previous successful deployment.</p>
-        /// <p>The <code>fileExistsBehavior</code> parameter takes any of the following
-        /// values:</p>
+        /// <p>Information about how AWS CodeDeploy handles files that already exist in a deployment target location but weren't part of the previous successful deployment.</p>
+        /// <p>The <code>fileExistsBehavior</code> parameter takes any of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>DISALLOW: The deployment fails. This is also the default behavior if no option
-        /// is specified.</p>
-        /// </li>
-        /// <li>
-        /// <p>OVERWRITE: The version of the file from the application revision currently
-        /// being deployed replaces the version already on the instance.</p>
-        /// </li>
-        /// <li>
-        /// <p>RETAIN: The version of the file already on the instance is kept and used as
-        /// part of the new deployment.</p>
-        /// </li>
+        /// <li> <p>DISALLOW: The deployment fails. This is also the default behavior if no option is specified.</p> </li>
+        /// <li> <p>OVERWRITE: The version of the file from the application revision currently being deployed replaces the version already on the instance.</p> </li>
+        /// <li> <p>RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.</p> </li>
         /// </ul>
         pub fn file_exists_behavior(mut self, input: crate::model::FileExistsBehavior) -> Self {
             self.file_exists_behavior = Some(input);
             self
         }
-        /// <p>Information about how AWS CodeDeploy handles files that already exist in a deployment
-        /// target location but weren't part of the previous successful deployment.</p>
-        /// <p>The <code>fileExistsBehavior</code> parameter takes any of the following
-        /// values:</p>
+        /// <p>Information about how AWS CodeDeploy handles files that already exist in a deployment target location but weren't part of the previous successful deployment.</p>
+        /// <p>The <code>fileExistsBehavior</code> parameter takes any of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>DISALLOW: The deployment fails. This is also the default behavior if no option
-        /// is specified.</p>
-        /// </li>
-        /// <li>
-        /// <p>OVERWRITE: The version of the file from the application revision currently
-        /// being deployed replaces the version already on the instance.</p>
-        /// </li>
-        /// <li>
-        /// <p>RETAIN: The version of the file already on the instance is kept and used as
-        /// part of the new deployment.</p>
-        /// </li>
+        /// <li> <p>DISALLOW: The deployment fails. This is also the default behavior if no option is specified.</p> </li>
+        /// <li> <p>OVERWRITE: The version of the file from the application revision currently being deployed replaces the version already on the instance.</p> </li>
+        /// <li> <p>RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.</p> </li>
         /// </ul>
         pub fn set_file_exists_behavior(
             mut self,
@@ -2274,48 +2132,26 @@ pub mod create_deployment_config_input {
             self.deployment_config_name = input;
             self
         }
-        /// <p>The minimum number of healthy instances that should be available at any time during
-        /// the deployment. There are two parameters expected in the input: type and value.</p>
+        /// <p>The minimum number of healthy instances that should be available at any time during the deployment. There are two parameters expected in the input: type and value.</p>
         /// <p>The type parameter takes either of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>HOST_COUNT: The value parameter represents the minimum number of healthy
-        /// instances as an absolute value.</p>
-        /// </li>
-        /// <li>
-        /// <p>FLEET_PERCENT: The value parameter represents the minimum number of healthy
-        /// instances as a percentage of the total number of instances in the deployment. If
-        /// you specify FLEET_PERCENT, at the start of the deployment, AWS CodeDeploy
-        /// converts the percentage to the equivalent number of instances and rounds up
-        /// fractional instances.</p>
-        /// </li>
+        /// <li> <p>HOST_COUNT: The value parameter represents the minimum number of healthy instances as an absolute value.</p> </li>
+        /// <li> <p>FLEET_PERCENT: The value parameter represents the minimum number of healthy instances as a percentage of the total number of instances in the deployment. If you specify FLEET_PERCENT, at the start of the deployment, AWS CodeDeploy converts the percentage to the equivalent number of instances and rounds up fractional instances.</p> </li>
         /// </ul>
         /// <p>The value parameter takes an integer.</p>
-        /// <p>For example, to set a minimum of 95% healthy instance, specify a type of FLEET_PERCENT
-        /// and a value of 95.</p>
+        /// <p>For example, to set a minimum of 95% healthy instance, specify a type of FLEET_PERCENT and a value of 95.</p>
         pub fn minimum_healthy_hosts(mut self, input: crate::model::MinimumHealthyHosts) -> Self {
             self.minimum_healthy_hosts = Some(input);
             self
         }
-        /// <p>The minimum number of healthy instances that should be available at any time during
-        /// the deployment. There are two parameters expected in the input: type and value.</p>
+        /// <p>The minimum number of healthy instances that should be available at any time during the deployment. There are two parameters expected in the input: type and value.</p>
         /// <p>The type parameter takes either of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>HOST_COUNT: The value parameter represents the minimum number of healthy
-        /// instances as an absolute value.</p>
-        /// </li>
-        /// <li>
-        /// <p>FLEET_PERCENT: The value parameter represents the minimum number of healthy
-        /// instances as a percentage of the total number of instances in the deployment. If
-        /// you specify FLEET_PERCENT, at the start of the deployment, AWS CodeDeploy
-        /// converts the percentage to the equivalent number of instances and rounds up
-        /// fractional instances.</p>
-        /// </li>
+        /// <li> <p>HOST_COUNT: The value parameter represents the minimum number of healthy instances as an absolute value.</p> </li>
+        /// <li> <p>FLEET_PERCENT: The value parameter represents the minimum number of healthy instances as a percentage of the total number of instances in the deployment. If you specify FLEET_PERCENT, at the start of the deployment, AWS CodeDeploy converts the percentage to the equivalent number of instances and rounds up fractional instances.</p> </li>
         /// </ul>
         /// <p>The value parameter takes an integer.</p>
-        /// <p>For example, to set a minimum of 95% healthy instance, specify a type of FLEET_PERCENT
-        /// and a value of 95.</p>
+        /// <p>For example, to set a minimum of 95% healthy instance, specify a type of FLEET_PERCENT and a value of 95.</p>
         pub fn set_minimum_healthy_hosts(
             mut self,
             input: std::option::Option<crate::model::MinimumHealthyHosts>,
@@ -2336,14 +2172,12 @@ pub mod create_deployment_config_input {
             self.traffic_routing_config = input;
             self
         }
-        /// <p>The destination platform type for the deployment (<code>Lambda</code>,
-        /// <code>Server</code>, or <code>ECS</code>).</p>
+        /// <p>The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).</p>
         pub fn compute_platform(mut self, input: crate::model::ComputePlatform) -> Self {
             self.compute_platform = Some(input);
             self
         }
-        /// <p>The destination platform type for the deployment (<code>Lambda</code>,
-        /// <code>Server</code>, or <code>ECS</code>).</p>
+        /// <p>The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).</p>
         pub fn set_compute_platform(
             mut self,
             input: std::option::Option<crate::model::ComputePlatform>,
@@ -2522,14 +2356,12 @@ pub mod create_deployment_group_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-        /// account.</p>
+        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
         pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.application_name = Some(input.into());
             self
         }
-        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-        /// account.</p>
+        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
         pub fn set_application_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2550,32 +2382,16 @@ pub mod create_deployment_group_input {
             self.deployment_group_name = input;
             self
         }
-        /// <p>If specified, the deployment configuration name can be either one of the predefined
-        /// configurations provided with AWS CodeDeploy or a custom deployment configuration that
-        /// you create by calling the create deployment configuration operation.</p>
-        /// <p>
-        /// <code>CodeDeployDefault.OneAtATime</code> is the default deployment configuration. It
-        /// is used if a configuration isn't specified for the deployment or deployment
-        /// group.</p>
-        /// <p>For more information about the predefined deployment configurations in AWS CodeDeploy,
-        /// see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working with
-        /// Deployment Configurations in CodeDeploy</a> in the <i>AWS CodeDeploy User
-        /// Guide</i>.</p>
+        /// <p>If specified, the deployment configuration name can be either one of the predefined configurations provided with AWS CodeDeploy or a custom deployment configuration that you create by calling the create deployment configuration operation.</p>
+        /// <p> <code>CodeDeployDefault.OneAtATime</code> is the default deployment configuration. It is used if a configuration isn't specified for the deployment or deployment group.</p>
+        /// <p>For more information about the predefined deployment configurations in AWS CodeDeploy, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working with Deployment Configurations in CodeDeploy</a> in the <i>AWS CodeDeploy User Guide</i>.</p>
         pub fn deployment_config_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.deployment_config_name = Some(input.into());
             self
         }
-        /// <p>If specified, the deployment configuration name can be either one of the predefined
-        /// configurations provided with AWS CodeDeploy or a custom deployment configuration that
-        /// you create by calling the create deployment configuration operation.</p>
-        /// <p>
-        /// <code>CodeDeployDefault.OneAtATime</code> is the default deployment configuration. It
-        /// is used if a configuration isn't specified for the deployment or deployment
-        /// group.</p>
-        /// <p>For more information about the predefined deployment configurations in AWS CodeDeploy,
-        /// see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working with
-        /// Deployment Configurations in CodeDeploy</a> in the <i>AWS CodeDeploy User
-        /// Guide</i>.</p>
+        /// <p>If specified, the deployment configuration name can be either one of the predefined configurations provided with AWS CodeDeploy or a custom deployment configuration that you create by calling the create deployment configuration operation.</p>
+        /// <p> <code>CodeDeployDefault.OneAtATime</code> is the default deployment configuration. It is used if a configuration isn't specified for the deployment or deployment group.</p>
+        /// <p>For more information about the predefined deployment configurations in AWS CodeDeploy, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working with Deployment Configurations in CodeDeploy</a> in the <i>AWS CodeDeploy User Guide</i>.</p>
         pub fn set_deployment_config_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2587,16 +2403,14 @@ pub mod create_deployment_group_input {
         ///
         /// To override the contents of this collection use [`set_ec2_tag_filters`](Self::set_ec2_tag_filters).
         ///
-        /// <p>The Amazon EC2 tags on which to filter. The deployment group includes EC2 instances
-        /// with any of the specified tags. Cannot be used in the same call as ec2TagSet.</p>
+        /// <p>The Amazon EC2 tags on which to filter. The deployment group includes EC2 instances with any of the specified tags. Cannot be used in the same call as ec2TagSet.</p>
         pub fn ec2_tag_filters(mut self, input: crate::model::Ec2TagFilter) -> Self {
             let mut v = self.ec2_tag_filters.unwrap_or_default();
             v.push(input);
             self.ec2_tag_filters = Some(v);
             self
         }
-        /// <p>The Amazon EC2 tags on which to filter. The deployment group includes EC2 instances
-        /// with any of the specified tags. Cannot be used in the same call as ec2TagSet.</p>
+        /// <p>The Amazon EC2 tags on which to filter. The deployment group includes EC2 instances with any of the specified tags. Cannot be used in the same call as ec2TagSet.</p>
         pub fn set_ec2_tag_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Ec2TagFilter>>,
@@ -2608,18 +2422,14 @@ pub mod create_deployment_group_input {
         ///
         /// To override the contents of this collection use [`set_on_premises_instance_tag_filters`](Self::set_on_premises_instance_tag_filters).
         ///
-        /// <p>The on-premises instance tags on which to filter. The deployment group includes
-        /// on-premises instances with any of the specified tags. Cannot be used in the same call as
-        /// <code>OnPremisesTagSet</code>.</p>
+        /// <p>The on-premises instance tags on which to filter. The deployment group includes on-premises instances with any of the specified tags. Cannot be used in the same call as <code>OnPremisesTagSet</code>.</p>
         pub fn on_premises_instance_tag_filters(mut self, input: crate::model::TagFilter) -> Self {
             let mut v = self.on_premises_instance_tag_filters.unwrap_or_default();
             v.push(input);
             self.on_premises_instance_tag_filters = Some(v);
             self
         }
-        /// <p>The on-premises instance tags on which to filter. The deployment group includes
-        /// on-premises instances with any of the specified tags. Cannot be used in the same call as
-        /// <code>OnPremisesTagSet</code>.</p>
+        /// <p>The on-premises instance tags on which to filter. The deployment group includes on-premises instances with any of the specified tags. Cannot be used in the same call as <code>OnPremisesTagSet</code>.</p>
         pub fn set_on_premises_instance_tag_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TagFilter>>,
@@ -2646,14 +2456,12 @@ pub mod create_deployment_group_input {
             self.auto_scaling_groups = input;
             self
         }
-        /// <p>A service role Amazon Resource Name (ARN) that allows AWS CodeDeploy to act on the
-        /// user's behalf when interacting with AWS services.</p>
+        /// <p>A service role Amazon Resource Name (ARN) that allows AWS CodeDeploy to act on the user's behalf when interacting with AWS services.</p>
         pub fn service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_role_arn = Some(input.into());
             self
         }
-        /// <p>A service role Amazon Resource Name (ARN) that allows AWS CodeDeploy to act on the
-        /// user's behalf when interacting with AWS services.</p>
+        /// <p>A service role Amazon Resource Name (ARN) that allows AWS CodeDeploy to act on the user's behalf when interacting with AWS services.</p>
         pub fn set_service_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2665,20 +2473,14 @@ pub mod create_deployment_group_input {
         ///
         /// To override the contents of this collection use [`set_trigger_configurations`](Self::set_trigger_configurations).
         ///
-        /// <p>Information about triggers to create when the deployment group is created. For
-        /// examples, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create a Trigger for an
-        /// AWS CodeDeploy Event</a> in the <i>AWS CodeDeploy User
-        /// Guide</i>.</p>
+        /// <p>Information about triggers to create when the deployment group is created. For examples, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create a Trigger for an AWS CodeDeploy Event</a> in the <i>AWS CodeDeploy User Guide</i>.</p>
         pub fn trigger_configurations(mut self, input: crate::model::TriggerConfig) -> Self {
             let mut v = self.trigger_configurations.unwrap_or_default();
             v.push(input);
             self.trigger_configurations = Some(v);
             self
         }
-        /// <p>Information about triggers to create when the deployment group is created. For
-        /// examples, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create a Trigger for an
-        /// AWS CodeDeploy Event</a> in the <i>AWS CodeDeploy User
-        /// Guide</i>.</p>
+        /// <p>Information about triggers to create when the deployment group is created. For examples, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create a Trigger for an AWS CodeDeploy Event</a> in the <i>AWS CodeDeploy User Guide</i>.</p>
         pub fn set_trigger_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TriggerConfig>>,
@@ -2686,14 +2488,12 @@ pub mod create_deployment_group_input {
             self.trigger_configurations = input;
             self
         }
-        /// <p>Information to add about Amazon CloudWatch alarms when the deployment group is
-        /// created.</p>
+        /// <p>Information to add about Amazon CloudWatch alarms when the deployment group is created.</p>
         pub fn alarm_configuration(mut self, input: crate::model::AlarmConfiguration) -> Self {
             self.alarm_configuration = Some(input);
             self
         }
-        /// <p>Information to add about Amazon CloudWatch alarms when the deployment group is
-        /// created.</p>
+        /// <p>Information to add about Amazon CloudWatch alarms when the deployment group is created.</p>
         pub fn set_alarm_configuration(
             mut self,
             input: std::option::Option<crate::model::AlarmConfiguration>,
@@ -2701,8 +2501,7 @@ pub mod create_deployment_group_input {
             self.alarm_configuration = input;
             self
         }
-        /// <p>Configuration information for an automatic rollback that is added when a deployment
-        /// group is created.</p>
+        /// <p>Configuration information for an automatic rollback that is added when a deployment group is created.</p>
         pub fn auto_rollback_configuration(
             mut self,
             input: crate::model::AutoRollbackConfiguration,
@@ -2710,8 +2509,7 @@ pub mod create_deployment_group_input {
             self.auto_rollback_configuration = Some(input);
             self
         }
-        /// <p>Configuration information for an automatic rollback that is added when a deployment
-        /// group is created.</p>
+        /// <p>Configuration information for an automatic rollback that is added when a deployment group is created.</p>
         pub fn set_auto_rollback_configuration(
             mut self,
             input: std::option::Option<crate::model::AutoRollbackConfiguration>,
@@ -2719,14 +2517,9 @@ pub mod create_deployment_group_input {
             self.auto_rollback_configuration = input;
             self
         }
-        /// <p>Indicates what happens when new EC2 instances are launched mid-deployment and do not
-        /// receive the deployed application revision.</p>
-        /// <p>If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates
-        /// one or more 'auto-update outdated instances' deployments to apply the deployed
-        /// application revision to the new EC2 instances.</p>
-        /// <p>If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a
-        /// deployment to update the new EC2 instances. This may result in instances having
-        /// different revisions.</p>
+        /// <p>Indicates what happens when new EC2 instances are launched mid-deployment and do not receive the deployed application revision.</p>
+        /// <p>If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more 'auto-update outdated instances' deployments to apply the deployed application revision to the new EC2 instances.</p>
+        /// <p>If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new EC2 instances. This may result in instances having different revisions.</p>
         pub fn outdated_instances_strategy(
             mut self,
             input: crate::model::OutdatedInstancesStrategy,
@@ -2734,14 +2527,9 @@ pub mod create_deployment_group_input {
             self.outdated_instances_strategy = Some(input);
             self
         }
-        /// <p>Indicates what happens when new EC2 instances are launched mid-deployment and do not
-        /// receive the deployed application revision.</p>
-        /// <p>If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates
-        /// one or more 'auto-update outdated instances' deployments to apply the deployed
-        /// application revision to the new EC2 instances.</p>
-        /// <p>If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a
-        /// deployment to update the new EC2 instances. This may result in instances having
-        /// different revisions.</p>
+        /// <p>Indicates what happens when new EC2 instances are launched mid-deployment and do not receive the deployed application revision.</p>
+        /// <p>If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more 'auto-update outdated instances' deployments to apply the deployed application revision to the new EC2 instances.</p>
+        /// <p>If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new EC2 instances. This may result in instances having different revisions.</p>
         pub fn set_outdated_instances_strategy(
             mut self,
             input: std::option::Option<crate::model::OutdatedInstancesStrategy>,
@@ -2749,14 +2537,12 @@ pub mod create_deployment_group_input {
             self.outdated_instances_strategy = input;
             self
         }
-        /// <p>Information about the type of deployment, in-place or blue/green, that you want to run
-        /// and whether to route deployment traffic behind a load balancer.</p>
+        /// <p>Information about the type of deployment, in-place or blue/green, that you want to run and whether to route deployment traffic behind a load balancer.</p>
         pub fn deployment_style(mut self, input: crate::model::DeploymentStyle) -> Self {
             self.deployment_style = Some(input);
             self
         }
-        /// <p>Information about the type of deployment, in-place or blue/green, that you want to run
-        /// and whether to route deployment traffic behind a load balancer.</p>
+        /// <p>Information about the type of deployment, in-place or blue/green, that you want to run and whether to route deployment traffic behind a load balancer.</p>
         pub fn set_deployment_style(
             mut self,
             input: std::option::Option<crate::model::DeploymentStyle>,
@@ -2793,16 +2579,12 @@ pub mod create_deployment_group_input {
             self.load_balancer_info = input;
             self
         }
-        /// <p>Information about groups of tags applied to EC2 instances. The deployment group
-        /// includes only EC2 instances identified by all the tag groups. Cannot be used in the same
-        /// call as <code>ec2TagFilters</code>.</p>
+        /// <p>Information about groups of tags applied to EC2 instances. The deployment group includes only EC2 instances identified by all the tag groups. Cannot be used in the same call as <code>ec2TagFilters</code>.</p>
         pub fn ec2_tag_set(mut self, input: crate::model::Ec2TagSet) -> Self {
             self.ec2_tag_set = Some(input);
             self
         }
-        /// <p>Information about groups of tags applied to EC2 instances. The deployment group
-        /// includes only EC2 instances identified by all the tag groups. Cannot be used in the same
-        /// call as <code>ec2TagFilters</code>.</p>
+        /// <p>Information about groups of tags applied to EC2 instances. The deployment group includes only EC2 instances identified by all the tag groups. Cannot be used in the same call as <code>ec2TagFilters</code>.</p>
         pub fn set_ec2_tag_set(
             mut self,
             input: std::option::Option<crate::model::Ec2TagSet>,
@@ -2814,20 +2596,22 @@ pub mod create_deployment_group_input {
         ///
         /// To override the contents of this collection use [`set_ecs_services`](Self::set_ecs_services).
         ///
-        /// <p> The target Amazon ECS services in the deployment group. This applies only to
-        /// deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service
-        /// is specified as an Amazon ECS cluster and service name pair using the format
-        /// <code><clustername>:<servicename></code>. </p>
+        /// <p> The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code>
+        /// <clustername>
+        /// :
+        /// <servicename></servicename>
+        /// </clustername></code>. </p>
         pub fn ecs_services(mut self, input: crate::model::EcsService) -> Self {
             let mut v = self.ecs_services.unwrap_or_default();
             v.push(input);
             self.ecs_services = Some(v);
             self
         }
-        /// <p> The target Amazon ECS services in the deployment group. This applies only to
-        /// deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service
-        /// is specified as an Amazon ECS cluster and service name pair using the format
-        /// <code><clustername>:<servicename></code>. </p>
+        /// <p> The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code>
+        /// <clustername>
+        /// :
+        /// <servicename></servicename>
+        /// </clustername></code>. </p>
         pub fn set_ecs_services(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EcsService>>,
@@ -2835,16 +2619,12 @@ pub mod create_deployment_group_input {
             self.ecs_services = input;
             self
         }
-        /// <p>Information about groups of tags applied to on-premises instances. The deployment
-        /// group includes only on-premises instances identified by all of the tag groups. Cannot be
-        /// used in the same call as <code>onPremisesInstanceTagFilters</code>.</p>
+        /// <p>Information about groups of tags applied to on-premises instances. The deployment group includes only on-premises instances identified by all of the tag groups. Cannot be used in the same call as <code>onPremisesInstanceTagFilters</code>.</p>
         pub fn on_premises_tag_set(mut self, input: crate::model::OnPremisesTagSet) -> Self {
             self.on_premises_tag_set = Some(input);
             self
         }
-        /// <p>Information about groups of tags applied to on-premises instances. The deployment
-        /// group includes only on-premises instances identified by all of the tag groups. Cannot be
-        /// used in the same call as <code>onPremisesInstanceTagFilters</code>.</p>
+        /// <p>Information about groups of tags applied to on-premises instances. The deployment group includes only on-premises instances identified by all of the tag groups. Cannot be used in the same call as <code>onPremisesInstanceTagFilters</code>.</p>
         pub fn set_on_premises_tag_set(
             mut self,
             input: std::option::Option<crate::model::OnPremisesTagSet>,
@@ -2856,18 +2636,14 @@ pub mod create_deployment_group_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p> The metadata that you apply to CodeDeploy deployment groups to help you organize and
-        /// categorize them. Each tag consists of a key and an optional value, both of which you
-        /// define. </p>
+        /// <p> The metadata that you apply to CodeDeploy deployment groups to help you organize and categorize them. Each tag consists of a key and an optional value, both of which you define. </p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p> The metadata that you apply to CodeDeploy deployment groups to help you organize and
-        /// categorize them. Each tag consists of a key and an optional value, both of which you
-        /// define. </p>
+        /// <p> The metadata that you apply to CodeDeploy deployment groups to help you organize and categorize them. Each tag consists of a key and an optional value, both of which you define. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3038,14 +2814,12 @@ pub mod delete_application_input {
         pub(crate) application_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-        /// account.</p>
+        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
         pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.application_name = Some(input.into());
             self
         }
-        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-        /// account.</p>
+        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
         pub fn set_application_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3197,14 +2971,12 @@ pub mod delete_deployment_config_input {
         pub(crate) deployment_config_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of a deployment configuration associated with the IAM user or AWS
-        /// account.</p>
+        /// <p>The name of a deployment configuration associated with the IAM user or AWS account.</p>
         pub fn deployment_config_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.deployment_config_name = Some(input.into());
             self
         }
-        /// <p>The name of a deployment configuration associated with the IAM user or AWS
-        /// account.</p>
+        /// <p>The name of a deployment configuration associated with the IAM user or AWS account.</p>
         pub fn set_deployment_config_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3359,14 +3131,12 @@ pub mod delete_deployment_group_input {
         pub(crate) deployment_group_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-        /// account.</p>
+        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
         pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.application_name = Some(input.into());
             self
         }
-        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-        /// account.</p>
+        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
         pub fn set_application_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3691,14 +3461,12 @@ pub mod delete_resources_by_external_id_input {
         pub(crate) external_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique ID of an external resource (for example, a CloudFormation stack ID) that is
-        /// linked to one or more CodeDeploy resources.</p>
+        /// <p>The unique ID of an external resource (for example, a CloudFormation stack ID) that is linked to one or more CodeDeploy resources.</p>
         pub fn external_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.external_id = Some(input.into());
             self
         }
-        /// <p>The unique ID of an external resource (for example, a CloudFormation stack ID) that is
-        /// linked to one or more CodeDeploy resources.</p>
+        /// <p>The unique ID of an external resource (for example, a CloudFormation stack ID) that is linked to one or more CodeDeploy resources.</p>
         pub fn set_external_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.external_id = input;
             self
@@ -4009,14 +3777,12 @@ pub mod get_application_input {
         pub(crate) application_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-        /// account.</p>
+        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
         pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.application_name = Some(input.into());
             self
         }
-        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-        /// account.</p>
+        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
         pub fn set_application_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4498,14 +4264,12 @@ pub mod get_deployment_config_input {
         pub(crate) deployment_config_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of a deployment configuration associated with the IAM user or AWS
-        /// account.</p>
+        /// <p>The name of a deployment configuration associated with the IAM user or AWS account.</p>
         pub fn deployment_config_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.deployment_config_name = Some(input.into());
             self
         }
-        /// <p>The name of a deployment configuration associated with the IAM user or AWS
-        /// account.</p>
+        /// <p>The name of a deployment configuration associated with the IAM user or AWS account.</p>
         pub fn set_deployment_config_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4658,14 +4422,12 @@ pub mod get_deployment_group_input {
         pub(crate) deployment_group_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-        /// account.</p>
+        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
         pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.application_name = Some(input.into());
             self
         }
-        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-        /// account.</p>
+        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
         pub fn set_application_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5336,14 +5098,12 @@ pub mod list_application_revisions_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> The name of an AWS CodeDeploy application associated with the IAM user or AWS
-        /// account. </p>
+        /// <p> The name of an AWS CodeDeploy application associated with the IAM user or AWS account. </p>
         pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.application_name = Some(input.into());
             self
         }
-        /// <p> The name of an AWS CodeDeploy application associated with the IAM user or AWS
-        /// account. </p>
+        /// <p> The name of an AWS CodeDeploy application associated with the IAM user or AWS account. </p>
         pub fn set_application_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5353,48 +5113,22 @@ pub mod list_application_revisions_input {
         }
         /// <p>The column name to use to sort the list results:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>registerTime</code>: Sort by the time the revisions were registered with
-        /// AWS CodeDeploy.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>firstUsedTime</code>: Sort by the time the revisions were first used in
-        /// a deployment.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>lastUsedTime</code>: Sort by the time the revisions were last used in a
-        /// deployment.</p>
-        /// </li>
+        /// <li> <p> <code>registerTime</code>: Sort by the time the revisions were registered with AWS CodeDeploy.</p> </li>
+        /// <li> <p> <code>firstUsedTime</code>: Sort by the time the revisions were first used in a deployment.</p> </li>
+        /// <li> <p> <code>lastUsedTime</code>: Sort by the time the revisions were last used in a deployment.</p> </li>
         /// </ul>
-        /// <p> If not specified or set to null, the results are returned in an arbitrary order.
-        /// </p>
+        /// <p> If not specified or set to null, the results are returned in an arbitrary order. </p>
         pub fn sort_by(mut self, input: crate::model::ApplicationRevisionSortBy) -> Self {
             self.sort_by = Some(input);
             self
         }
         /// <p>The column name to use to sort the list results:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>registerTime</code>: Sort by the time the revisions were registered with
-        /// AWS CodeDeploy.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>firstUsedTime</code>: Sort by the time the revisions were first used in
-        /// a deployment.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>lastUsedTime</code>: Sort by the time the revisions were last used in a
-        /// deployment.</p>
-        /// </li>
+        /// <li> <p> <code>registerTime</code>: Sort by the time the revisions were registered with AWS CodeDeploy.</p> </li>
+        /// <li> <p> <code>firstUsedTime</code>: Sort by the time the revisions were first used in a deployment.</p> </li>
+        /// <li> <p> <code>lastUsedTime</code>: Sort by the time the revisions were last used in a deployment.</p> </li>
         /// </ul>
-        /// <p> If not specified or set to null, the results are returned in an arbitrary order.
-        /// </p>
+        /// <p> If not specified or set to null, the results are returned in an arbitrary order. </p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<crate::model::ApplicationRevisionSortBy>,
@@ -5404,14 +5138,8 @@ pub mod list_application_revisions_input {
         }
         /// <p> The order in which to sort the list results: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ascending</code>: ascending order.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>descending</code>: descending order.</p>
-        /// </li>
+        /// <li> <p> <code>ascending</code>: ascending order.</p> </li>
+        /// <li> <p> <code>descending</code>: descending order.</p> </li>
         /// </ul>
         /// <p>If not specified, the results are sorted in ascending order.</p>
         /// <p>If set to null, the results are sorted in an arbitrary order.</p>
@@ -5421,14 +5149,8 @@ pub mod list_application_revisions_input {
         }
         /// <p> The order in which to sort the list results: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ascending</code>: ascending order.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>descending</code>: descending order.</p>
-        /// </li>
+        /// <li> <p> <code>ascending</code>: ascending order.</p> </li>
+        /// <li> <p> <code>descending</code>: descending order.</p> </li>
         /// </ul>
         /// <p>If not specified, the results are sorted in ascending order.</p>
         /// <p>If set to null, the results are sorted in an arbitrary order.</p>
@@ -5451,14 +5173,12 @@ pub mod list_application_revisions_input {
             self.s3_bucket = input;
             self
         }
-        /// <p> A key prefix for the set of Amazon S3 objects to limit the search for revisions.
-        /// </p>
+        /// <p> A key prefix for the set of Amazon S3 objects to limit the search for revisions. </p>
         pub fn s3_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_key_prefix = Some(input.into());
             self
         }
-        /// <p> A key prefix for the set of Amazon S3 objects to limit the search for revisions.
-        /// </p>
+        /// <p> A key prefix for the set of Amazon S3 objects to limit the search for revisions. </p>
         pub fn set_s3_key_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5466,45 +5186,21 @@ pub mod list_application_revisions_input {
             self.s3_key_prefix = input;
             self
         }
-        /// <p> Whether to list revisions based on whether the revision is the target revision of a
-        /// deployment group: </p>
+        /// <p> Whether to list revisions based on whether the revision is the target revision of a deployment group: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>include</code>: List revisions that are target revisions of a deployment
-        /// group.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>exclude</code>: Do not list revisions that are target revisions of a
-        /// deployment group.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ignore</code>: List all revisions.</p>
-        /// </li>
+        /// <li> <p> <code>include</code>: List revisions that are target revisions of a deployment group.</p> </li>
+        /// <li> <p> <code>exclude</code>: Do not list revisions that are target revisions of a deployment group.</p> </li>
+        /// <li> <p> <code>ignore</code>: List all revisions.</p> </li>
         /// </ul>
         pub fn deployed(mut self, input: crate::model::ListStateFilterAction) -> Self {
             self.deployed = Some(input);
             self
         }
-        /// <p> Whether to list revisions based on whether the revision is the target revision of a
-        /// deployment group: </p>
+        /// <p> Whether to list revisions based on whether the revision is the target revision of a deployment group: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>include</code>: List revisions that are target revisions of a deployment
-        /// group.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>exclude</code>: Do not list revisions that are target revisions of a
-        /// deployment group.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ignore</code>: List all revisions.</p>
-        /// </li>
+        /// <li> <p> <code>include</code>: List revisions that are target revisions of a deployment group.</p> </li>
+        /// <li> <p> <code>exclude</code>: Do not list revisions that are target revisions of a deployment group.</p> </li>
+        /// <li> <p> <code>ignore</code>: List all revisions.</p> </li>
         /// </ul>
         pub fn set_deployed(
             mut self,
@@ -5513,14 +5209,12 @@ pub mod list_application_revisions_input {
             self.deployed = input;
             self
         }
-        /// <p>An identifier returned from the previous <code>ListApplicationRevisions</code> call.
-        /// It can be used to return the next set of applications in the list.</p>
+        /// <p>An identifier returned from the previous <code>ListApplicationRevisions</code> call. It can be used to return the next set of applications in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier returned from the previous <code>ListApplicationRevisions</code> call.
-        /// It can be used to return the next set of applications in the list.</p>
+        /// <p>An identifier returned from the previous <code>ListApplicationRevisions</code> call. It can be used to return the next set of applications in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5678,14 +5372,12 @@ pub mod list_applications_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>An identifier returned from the previous list applications call. It can be used to
-        /// return the next set of applications in the list.</p>
+        /// <p>An identifier returned from the previous list applications call. It can be used to return the next set of applications in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier returned from the previous list applications call. It can be used to
-        /// return the next set of applications in the list.</p>
+        /// <p>An identifier returned from the previous list applications call. It can be used to return the next set of applications in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5834,14 +5526,12 @@ pub mod list_deployment_configs_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>An identifier returned from the previous <code>ListDeploymentConfigs</code> call. It
-        /// can be used to return the next set of deployment configurations in the list. </p>
+        /// <p>An identifier returned from the previous <code>ListDeploymentConfigs</code> call. It can be used to return the next set of deployment configurations in the list. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier returned from the previous <code>ListDeploymentConfigs</code> call. It
-        /// can be used to return the next set of deployment configurations in the list. </p>
+        /// <p>An identifier returned from the previous <code>ListDeploymentConfigs</code> call. It can be used to return the next set of deployment configurations in the list. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5993,14 +5683,12 @@ pub mod list_deployment_groups_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-        /// account.</p>
+        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
         pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.application_name = Some(input.into());
             self
         }
-        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-        /// account.</p>
+        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
         pub fn set_application_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6008,14 +5696,12 @@ pub mod list_deployment_groups_input {
             self.application_name = input;
             self
         }
-        /// <p>An identifier returned from the previous list deployment groups call. It can be used
-        /// to return the next set of deployment groups in the list.</p>
+        /// <p>An identifier returned from the previous list deployment groups call. It can be used to return the next set of deployment groups in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier returned from the previous list deployment groups call. It can be used
-        /// to return the next set of deployment groups in the list.</p>
+        /// <p>An identifier returned from the previous list deployment groups call. It can be used to return the next set of deployment groups in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6185,14 +5871,12 @@ pub mod list_deployment_instances_input {
             self.deployment_id = input;
             self
         }
-        /// <p>An identifier returned from the previous list deployment instances call. It can be
-        /// used to return the next set of deployment instances in the list.</p>
+        /// <p>An identifier returned from the previous list deployment instances call. It can be used to return the next set of deployment instances in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier returned from the previous list deployment instances call. It can be
-        /// used to return the next set of deployment instances in the list.</p>
+        /// <p>An identifier returned from the previous list deployment instances call. It can be used to return the next set of deployment instances in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6203,33 +5887,12 @@ pub mod list_deployment_instances_input {
         ///
         /// <p>A subset of instances to list by status:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Pending</code>: Include those instances with pending deployments.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>InProgress</code>: Include those instances where deployments are still
-        /// in progress.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Succeeded</code>: Include those instances with successful
-        /// deployments.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Failed</code>: Include those instances with failed deployments.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Skipped</code>: Include those instances with skipped deployments.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Unknown</code>: Include those instances with deployments in an unknown
-        /// state.</p>
-        /// </li>
+        /// <li> <p> <code>Pending</code>: Include those instances with pending deployments.</p> </li>
+        /// <li> <p> <code>InProgress</code>: Include those instances where deployments are still in progress.</p> </li>
+        /// <li> <p> <code>Succeeded</code>: Include those instances with successful deployments.</p> </li>
+        /// <li> <p> <code>Failed</code>: Include those instances with failed deployments.</p> </li>
+        /// <li> <p> <code>Skipped</code>: Include those instances with skipped deployments.</p> </li>
+        /// <li> <p> <code>Unknown</code>: Include those instances with deployments in an unknown state.</p> </li>
         /// </ul>
         pub fn instance_status_filter(mut self, input: crate::model::InstanceStatus) -> Self {
             let mut v = self.instance_status_filter.unwrap_or_default();
@@ -6239,33 +5902,12 @@ pub mod list_deployment_instances_input {
         }
         /// <p>A subset of instances to list by status:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Pending</code>: Include those instances with pending deployments.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>InProgress</code>: Include those instances where deployments are still
-        /// in progress.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Succeeded</code>: Include those instances with successful
-        /// deployments.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Failed</code>: Include those instances with failed deployments.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Skipped</code>: Include those instances with skipped deployments.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Unknown</code>: Include those instances with deployments in an unknown
-        /// state.</p>
-        /// </li>
+        /// <li> <p> <code>Pending</code>: Include those instances with pending deployments.</p> </li>
+        /// <li> <p> <code>InProgress</code>: Include those instances where deployments are still in progress.</p> </li>
+        /// <li> <p> <code>Succeeded</code>: Include those instances with successful deployments.</p> </li>
+        /// <li> <p> <code>Failed</code>: Include those instances with failed deployments.</p> </li>
+        /// <li> <p> <code>Skipped</code>: Include those instances with skipped deployments.</p> </li>
+        /// <li> <p> <code>Unknown</code>: Include those instances with deployments in an unknown state.</p> </li>
         /// </ul>
         pub fn set_instance_status_filter(
             mut self,
@@ -6278,18 +5920,14 @@ pub mod list_deployment_instances_input {
         ///
         /// To override the contents of this collection use [`set_instance_type_filter`](Self::set_instance_type_filter).
         ///
-        /// <p>The set of instances in a blue/green deployment, either those in the original
-        /// environment ("BLUE") or those in the replacement environment ("GREEN"), for which you
-        /// want to view instance information.</p>
+        /// <p>The set of instances in a blue/green deployment, either those in the original environment ("BLUE") or those in the replacement environment ("GREEN"), for which you want to view instance information.</p>
         pub fn instance_type_filter(mut self, input: crate::model::InstanceType) -> Self {
             let mut v = self.instance_type_filter.unwrap_or_default();
             v.push(input);
             self.instance_type_filter = Some(v);
             self
         }
-        /// <p>The set of instances in a blue/green deployment, either those in the original
-        /// environment ("BLUE") or those in the replacement environment ("GREEN"), for which you
-        /// want to view instance information.</p>
+        /// <p>The set of instances in a blue/green deployment, either those in the original environment ("BLUE") or those in the replacement environment ("GREEN"), for which you want to view instance information.</p>
         pub fn set_instance_type_filter(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InstanceType>>,
@@ -6453,23 +6091,15 @@ pub mod list_deployments_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-        /// account.</p>
-        /// <note>
-        /// <p>If <code>applicationName</code> is specified, then
-        /// <code>deploymentGroupName</code> must be specified. If it is not specified, then
-        /// <code>deploymentGroupName</code> must not be specified. </p>
+        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p> <note>
+        /// <p>If <code>applicationName</code> is specified, then <code>deploymentGroupName</code> must be specified. If it is not specified, then <code>deploymentGroupName</code> must not be specified. </p>
         /// </note>
         pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.application_name = Some(input.into());
             self
         }
-        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-        /// account.</p>
-        /// <note>
-        /// <p>If <code>applicationName</code> is specified, then
-        /// <code>deploymentGroupName</code> must be specified. If it is not specified, then
-        /// <code>deploymentGroupName</code> must not be specified. </p>
+        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p> <note>
+        /// <p>If <code>applicationName</code> is specified, then <code>deploymentGroupName</code> must be specified. If it is not specified, then <code>deploymentGroupName</code> must not be specified. </p>
         /// </note>
         pub fn set_application_name(
             mut self,
@@ -6478,21 +6108,15 @@ pub mod list_deployments_input {
             self.application_name = input;
             self
         }
-        /// <p>The name of a deployment group for the specified application.</p>
-        /// <note>
-        /// <p>If <code>deploymentGroupName</code> is specified, then
-        /// <code>applicationName</code> must be specified. If it is not specified, then
-        /// <code>applicationName</code> must not be specified. </p>
+        /// <p>The name of a deployment group for the specified application.</p> <note>
+        /// <p>If <code>deploymentGroupName</code> is specified, then <code>applicationName</code> must be specified. If it is not specified, then <code>applicationName</code> must not be specified. </p>
         /// </note>
         pub fn deployment_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.deployment_group_name = Some(input.into());
             self
         }
-        /// <p>The name of a deployment group for the specified application.</p>
-        /// <note>
-        /// <p>If <code>deploymentGroupName</code> is specified, then
-        /// <code>applicationName</code> must be specified. If it is not specified, then
-        /// <code>applicationName</code> must not be specified. </p>
+        /// <p>The name of a deployment group for the specified application.</p> <note>
+        /// <p>If <code>deploymentGroupName</code> is specified, then <code>applicationName</code> must be specified. If it is not specified, then <code>applicationName</code> must not be specified. </p>
         /// </note>
         pub fn set_deployment_group_name(
             mut self,
@@ -6501,14 +6125,12 @@ pub mod list_deployments_input {
             self.deployment_group_name = input;
             self
         }
-        /// <p>The unique ID of an external resource for returning deployments linked to the external
-        /// resource.</p>
+        /// <p>The unique ID of an external resource for returning deployments linked to the external resource.</p>
         pub fn external_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.external_id = Some(input.into());
             self
         }
-        /// <p>The unique ID of an external resource for returning deployments linked to the external
-        /// resource.</p>
+        /// <p>The unique ID of an external resource for returning deployments linked to the external resource.</p>
         pub fn set_external_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.external_id = input;
             self
@@ -6519,34 +6141,12 @@ pub mod list_deployments_input {
         ///
         /// <p>A subset of deployments to list by status:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Created</code>: Include created deployments in the resulting
-        /// list.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Queued</code>: Include queued deployments in the resulting list.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>In Progress</code>: Include in-progress deployments in the resulting
-        /// list.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Succeeded</code>: Include successful deployments in the resulting
-        /// list.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Failed</code>: Include failed deployments in the resulting list.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Stopped</code>: Include stopped deployments in the resulting
-        /// list.</p>
-        /// </li>
+        /// <li> <p> <code>Created</code>: Include created deployments in the resulting list.</p> </li>
+        /// <li> <p> <code>Queued</code>: Include queued deployments in the resulting list.</p> </li>
+        /// <li> <p> <code>In Progress</code>: Include in-progress deployments in the resulting list.</p> </li>
+        /// <li> <p> <code>Succeeded</code>: Include successful deployments in the resulting list.</p> </li>
+        /// <li> <p> <code>Failed</code>: Include failed deployments in the resulting list.</p> </li>
+        /// <li> <p> <code>Stopped</code>: Include stopped deployments in the resulting list.</p> </li>
         /// </ul>
         pub fn include_only_statuses(mut self, input: crate::model::DeploymentStatus) -> Self {
             let mut v = self.include_only_statuses.unwrap_or_default();
@@ -6556,34 +6156,12 @@ pub mod list_deployments_input {
         }
         /// <p>A subset of deployments to list by status:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Created</code>: Include created deployments in the resulting
-        /// list.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Queued</code>: Include queued deployments in the resulting list.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>In Progress</code>: Include in-progress deployments in the resulting
-        /// list.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Succeeded</code>: Include successful deployments in the resulting
-        /// list.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Failed</code>: Include failed deployments in the resulting list.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Stopped</code>: Include stopped deployments in the resulting
-        /// list.</p>
-        /// </li>
+        /// <li> <p> <code>Created</code>: Include created deployments in the resulting list.</p> </li>
+        /// <li> <p> <code>Queued</code>: Include queued deployments in the resulting list.</p> </li>
+        /// <li> <p> <code>In Progress</code>: Include in-progress deployments in the resulting list.</p> </li>
+        /// <li> <p> <code>Succeeded</code>: Include successful deployments in the resulting list.</p> </li>
+        /// <li> <p> <code>Failed</code>: Include failed deployments in the resulting list.</p> </li>
+        /// <li> <p> <code>Stopped</code>: Include stopped deployments in the resulting list.</p> </li>
         /// </ul>
         pub fn set_include_only_statuses(
             mut self,
@@ -6605,14 +6183,12 @@ pub mod list_deployments_input {
             self.create_time_range = input;
             self
         }
-        /// <p>An identifier returned from the previous list deployments call. It can be used to
-        /// return the next set of deployments in the list.</p>
+        /// <p>An identifier returned from the previous list deployments call. It can be used to return the next set of deployments in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier returned from the previous list deployments call. It can be used to
-        /// return the next set of deployments in the list.</p>
+        /// <p>An identifier returned from the previous list deployments call. It can be used to return the next set of deployments in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6786,14 +6362,12 @@ pub mod list_deployment_targets_input {
             self.deployment_id = input;
             self
         }
-        /// <p> A token identifier returned from the previous <code>ListDeploymentTargets</code>
-        /// call. It can be used to return the next set of deployment targets in the list. </p>
+        /// <p> A token identifier returned from the previous <code>ListDeploymentTargets</code> call. It can be used to return the next set of deployment targets in the list. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p> A token identifier returned from the previous <code>ListDeploymentTargets</code>
-        /// call. It can be used to return the next set of deployment targets in the list. </p>
+        /// <p> A token identifier returned from the previous <code>ListDeploymentTargets</code> call. It can be used to return the next set of deployment targets in the list. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6804,18 +6378,8 @@ pub mod list_deployment_targets_input {
         ///
         /// <p> A key used to filter the returned targets. The two valid values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>TargetStatus</code> - A <code>TargetStatus</code> filter string can be
-        /// <code>Failed</code>, <code>InProgress</code>, <code>Pending</code>,
-        /// <code>Ready</code>, <code>Skipped</code>, <code>Succeeded</code>, or
-        /// <code>Unknown</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ServerInstanceLabel</code> - A <code>ServerInstanceLabel</code> filter
-        /// string can be <code>Blue</code> or <code>Green</code>. </p>
-        /// </li>
+        /// <li> <p> <code>TargetStatus</code> - A <code>TargetStatus</code> filter string can be <code>Failed</code>, <code>InProgress</code>, <code>Pending</code>, <code>Ready</code>, <code>Skipped</code>, <code>Succeeded</code>, or <code>Unknown</code>. </p> </li>
+        /// <li> <p> <code>ServerInstanceLabel</code> - A <code>ServerInstanceLabel</code> filter string can be <code>Blue</code> or <code>Green</code>. </p> </li>
         /// </ul>
         pub fn target_filters(
             mut self,
@@ -6829,18 +6393,8 @@ pub mod list_deployment_targets_input {
         }
         /// <p> A key used to filter the returned targets. The two valid values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>TargetStatus</code> - A <code>TargetStatus</code> filter string can be
-        /// <code>Failed</code>, <code>InProgress</code>, <code>Pending</code>,
-        /// <code>Ready</code>, <code>Skipped</code>, <code>Succeeded</code>, or
-        /// <code>Unknown</code>. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ServerInstanceLabel</code> - A <code>ServerInstanceLabel</code> filter
-        /// string can be <code>Blue</code> or <code>Green</code>. </p>
-        /// </li>
+        /// <li> <p> <code>TargetStatus</code> - A <code>TargetStatus</code> filter string can be <code>Failed</code>, <code>InProgress</code>, <code>Pending</code>, <code>Ready</code>, <code>Skipped</code>, <code>Succeeded</code>, or <code>Unknown</code>. </p> </li>
+        /// <li> <p> <code>ServerInstanceLabel</code> - A <code>ServerInstanceLabel</code> filter string can be <code>Blue</code> or <code>Green</code>. </p> </li>
         /// </ul>
         pub fn set_target_filters(
             mut self,
@@ -7002,14 +6556,12 @@ pub mod list_git_hub_account_token_names_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>An identifier returned from the previous <code>ListGitHubAccountTokenNames</code>
-        /// call. It can be used to return the next set of names in the list. </p>
+        /// <p>An identifier returned from the previous <code>ListGitHubAccountTokenNames</code> call. It can be used to return the next set of names in the list. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier returned from the previous <code>ListGitHubAccountTokenNames</code>
-        /// call. It can be used to return the next set of names in the list. </p>
+        /// <p>An identifier returned from the previous <code>ListGitHubAccountTokenNames</code> call. It can be used to return the next set of names in the list. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7164,16 +6716,8 @@ pub mod list_on_premises_instances_input {
     impl Builder {
         /// <p>The registration status of the on-premises instances:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Deregistered</code>: Include deregistered on-premises instances in the
-        /// resulting list.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Registered</code>: Include registered on-premises instances in the
-        /// resulting list.</p>
-        /// </li>
+        /// <li> <p> <code>Deregistered</code>: Include deregistered on-premises instances in the resulting list.</p> </li>
+        /// <li> <p> <code>Registered</code>: Include registered on-premises instances in the resulting list.</p> </li>
         /// </ul>
         pub fn registration_status(mut self, input: crate::model::RegistrationStatus) -> Self {
             self.registration_status = Some(input);
@@ -7181,16 +6725,8 @@ pub mod list_on_premises_instances_input {
         }
         /// <p>The registration status of the on-premises instances:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Deregistered</code>: Include deregistered on-premises instances in the
-        /// resulting list.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Registered</code>: Include registered on-premises instances in the
-        /// resulting list.</p>
-        /// </li>
+        /// <li> <p> <code>Deregistered</code>: Include deregistered on-premises instances in the resulting list.</p> </li>
+        /// <li> <p> <code>Registered</code>: Include registered on-premises instances in the resulting list.</p> </li>
         /// </ul>
         pub fn set_registration_status(
             mut self,
@@ -7203,16 +6739,14 @@ pub mod list_on_premises_instances_input {
         ///
         /// To override the contents of this collection use [`set_tag_filters`](Self::set_tag_filters).
         ///
-        /// <p>The on-premises instance tags that are used to restrict the on-premises instance names
-        /// returned.</p>
+        /// <p>The on-premises instance tags that are used to restrict the on-premises instance names returned.</p>
         pub fn tag_filters(mut self, input: crate::model::TagFilter) -> Self {
             let mut v = self.tag_filters.unwrap_or_default();
             v.push(input);
             self.tag_filters = Some(v);
             self
         }
-        /// <p>The on-premises instance tags that are used to restrict the on-premises instance names
-        /// returned.</p>
+        /// <p>The on-premises instance tags that are used to restrict the on-premises instance names returned.</p>
         pub fn set_tag_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TagFilter>>,
@@ -7220,14 +6754,12 @@ pub mod list_on_premises_instances_input {
             self.tag_filters = input;
             self
         }
-        /// <p>An identifier returned from the previous list on-premises instances call. It can be
-        /// used to return the next set of on-premises instances in the list.</p>
+        /// <p>An identifier returned from the previous list on-premises instances call. It can be used to return the next set of on-premises instances in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier returned from the previous list on-premises instances call. It can be
-        /// used to return the next set of on-premises instances in the list.</p>
+        /// <p>An identifier returned from the previous list on-premises instances call. It can be used to return the next set of on-premises instances in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7382,28 +6914,22 @@ pub mod list_tags_for_resource_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> The ARN of a CodeDeploy resource. <code>ListTagsForResource</code> returns all the
-        /// tags associated with the resource that is identified by the <code>ResourceArn</code>.
-        /// </p>
+        /// <p> The ARN of a CodeDeploy resource. <code>ListTagsForResource</code> returns all the tags associated with the resource that is identified by the <code>ResourceArn</code>. </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p> The ARN of a CodeDeploy resource. <code>ListTagsForResource</code> returns all the
-        /// tags associated with the resource that is identified by the <code>ResourceArn</code>.
-        /// </p>
+        /// <p> The ARN of a CodeDeploy resource. <code>ListTagsForResource</code> returns all the tags associated with the resource that is identified by the <code>ResourceArn</code>. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
-        /// <p>An identifier returned from the previous <code>ListTagsForResource</code> call. It can
-        /// be used to return the next set of applications in the list.</p>
+        /// <p>An identifier returned from the previous <code>ListTagsForResource</code> call. It can be used to return the next set of applications in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier returned from the previous <code>ListTagsForResource</code> call. It can
-        /// be used to return the next set of applications in the list.</p>
+        /// <p>An identifier returned from the previous <code>ListTagsForResource</code> call. It can be used to return the next set of applications in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7557,14 +7083,12 @@ pub mod put_lifecycle_event_hook_execution_status_input {
         pub(crate) status: std::option::Option<crate::model::LifecycleEventStatus>,
     }
     impl Builder {
-        /// <p> The unique ID of a deployment. Pass this ID to a Lambda function that validates a
-        /// deployment lifecycle event. </p>
+        /// <p> The unique ID of a deployment. Pass this ID to a Lambda function that validates a deployment lifecycle event. </p>
         pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.deployment_id = Some(input.into());
             self
         }
-        /// <p> The unique ID of a deployment. Pass this ID to a Lambda function that validates a
-        /// deployment lifecycle event. </p>
+        /// <p> The unique ID of a deployment. Pass this ID to a Lambda function that validates a deployment lifecycle event. </p>
         pub fn set_deployment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7572,8 +7096,7 @@ pub mod put_lifecycle_event_hook_execution_status_input {
             self.deployment_id = input;
             self
         }
-        /// <p> The execution ID of a deployment's lifecycle hook. A deployment lifecycle hook is
-        /// specified in the <code>hooks</code> section of the AppSpec file. </p>
+        /// <p> The execution ID of a deployment's lifecycle hook. A deployment lifecycle hook is specified in the <code>hooks</code> section of the AppSpec file. </p>
         pub fn lifecycle_event_hook_execution_id(
             mut self,
             input: impl Into<std::string::String>,
@@ -7581,8 +7104,7 @@ pub mod put_lifecycle_event_hook_execution_status_input {
             self.lifecycle_event_hook_execution_id = Some(input.into());
             self
         }
-        /// <p> The execution ID of a deployment's lifecycle hook. A deployment lifecycle hook is
-        /// specified in the <code>hooks</code> section of the AppSpec file. </p>
+        /// <p> The execution ID of a deployment's lifecycle hook. A deployment lifecycle hook is specified in the <code>hooks</code> section of the AppSpec file. </p>
         pub fn set_lifecycle_event_hook_execution_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7590,16 +7112,12 @@ pub mod put_lifecycle_event_hook_execution_status_input {
             self.lifecycle_event_hook_execution_id = input;
             self
         }
-        /// <p>The result of a Lambda function that validates a deployment lifecycle event.
-        /// <code>Succeeded</code> and <code>Failed</code> are the only valid values for
-        /// <code>status</code>.</p>
+        /// <p>The result of a Lambda function that validates a deployment lifecycle event. <code>Succeeded</code> and <code>Failed</code> are the only valid values for <code>status</code>.</p>
         pub fn status(mut self, input: crate::model::LifecycleEventStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The result of a Lambda function that validates a deployment lifecycle event.
-        /// <code>Succeeded</code> and <code>Failed</code> are the only valid values for
-        /// <code>status</code>.</p>
+        /// <p>The result of a Lambda function that validates a deployment lifecycle event. <code>Succeeded</code> and <code>Failed</code> are the only valid values for <code>status</code>.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::LifecycleEventStatus>,
@@ -7758,14 +7276,12 @@ pub mod register_application_revision_input {
         pub(crate) revision: std::option::Option<crate::model::RevisionLocation>,
     }
     impl Builder {
-        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-        /// account.</p>
+        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
         pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.application_name = Some(input.into());
             self
         }
-        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-        /// account.</p>
+        /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
         pub fn set_application_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7783,14 +7299,12 @@ pub mod register_application_revision_input {
             self.description = input;
             self
         }
-        /// <p>Information about the application revision to register, including type and
-        /// location.</p>
+        /// <p>Information about the application revision to register, including type and location.</p>
         pub fn revision(mut self, input: crate::model::RevisionLocation) -> Self {
             self.revision = Some(input);
             self
         }
-        /// <p>Information about the application revision to register, including type and
-        /// location.</p>
+        /// <p>Information about the application revision to register, including type and location.</p>
         pub fn set_revision(
             mut self,
             input: std::option::Option<crate::model::RevisionLocation>,
@@ -8319,14 +7833,12 @@ pub mod skip_wait_time_for_instance_termination_input {
         pub(crate) deployment_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> The unique ID of a blue/green deployment for which you want to skip the instance
-        /// termination wait time. </p>
+        /// <p> The unique ID of a blue/green deployment for which you want to skip the instance termination wait time. </p>
         pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.deployment_id = Some(input.into());
             self
         }
-        /// <p> The unique ID of a blue/green deployment for which you want to skip the instance
-        /// termination wait time. </p>
+        /// <p> The unique ID of a blue/green deployment for which you want to skip the instance termination wait time. </p>
         pub fn set_deployment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8495,14 +8007,12 @@ pub mod stop_deployment_input {
             self.deployment_id = input;
             self
         }
-        /// <p> Indicates, when a deployment is stopped, whether instances that have been updated
-        /// should be rolled back to the previous version of the application revision. </p>
+        /// <p> Indicates, when a deployment is stopped, whether instances that have been updated should be rolled back to the previous version of the application revision. </p>
         pub fn auto_rollback_enabled(mut self, input: bool) -> Self {
             self.auto_rollback_enabled = Some(input);
             self
         }
-        /// <p> Indicates, when a deployment is stopped, whether instances that have been updated
-        /// should be rolled back to the previous version of the application revision. </p>
+        /// <p> Indicates, when a deployment is stopped, whether instances that have been updated should be rolled back to the previous version of the application revision. </p>
         pub fn set_auto_rollback_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_rollback_enabled = input;
             self
@@ -8667,16 +8177,14 @@ pub mod tag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p> A list of tags that <code>TagResource</code> associates with a resource. The resource
-        /// is identified by the <code>ResourceArn</code> input parameter. </p>
+        /// <p> A list of tags that <code>TagResource</code> associates with a resource. The resource is identified by the <code>ResourceArn</code> input parameter. </p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p> A list of tags that <code>TagResource</code> associates with a resource. The resource
-        /// is identified by the <code>ResourceArn</code> input parameter. </p>
+        /// <p> A list of tags that <code>TagResource</code> associates with a resource. The resource is identified by the <code>ResourceArn</code> input parameter. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -8829,14 +8337,12 @@ pub mod untag_resource_input {
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p> The Amazon Resource Name (ARN) that specifies from which resource to disassociate the
-        /// tags with the keys in the <code>TagKeys</code> input parameter. </p>
+        /// <p> The Amazon Resource Name (ARN) that specifies from which resource to disassociate the tags with the keys in the <code>TagKeys</code> input parameter. </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p> The Amazon Resource Name (ARN) that specifies from which resource to disassociate the
-        /// tags with the keys in the <code>TagKeys</code> input parameter. </p>
+        /// <p> The Amazon Resource Name (ARN) that specifies from which resource to disassociate the tags with the keys in the <code>TagKeys</code> input parameter. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -8845,18 +8351,14 @@ pub mod untag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p> A list of keys of <code>Tag</code> objects. The <code>Tag</code> objects identified
-        /// by the keys are disassociated from the resource specified by the
-        /// <code>ResourceArn</code> input parameter. </p>
+        /// <p> A list of keys of <code>Tag</code> objects. The <code>Tag</code> objects identified by the keys are disassociated from the resource specified by the <code>ResourceArn</code> input parameter. </p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
-        /// <p> A list of keys of <code>Tag</code> objects. The <code>Tag</code> objects identified
-        /// by the keys are disassociated from the resource specified by the
-        /// <code>ResourceArn</code> input parameter. </p>
+        /// <p> A list of keys of <code>Tag</code> objects. The <code>Tag</code> objects identified by the keys are disassociated from the resource specified by the <code>ResourceArn</code> input parameter. </p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9261,18 +8763,14 @@ pub mod update_deployment_group_input {
         ///
         /// To override the contents of this collection use [`set_ec2_tag_filters`](Self::set_ec2_tag_filters).
         ///
-        /// <p>The replacement set of Amazon EC2 tags on which to filter, if you want to change them.
-        /// To keep the existing tags, enter their names. To remove tags, do not enter any tag
-        /// names.</p>
+        /// <p>The replacement set of Amazon EC2 tags on which to filter, if you want to change them. To keep the existing tags, enter their names. To remove tags, do not enter any tag names.</p>
         pub fn ec2_tag_filters(mut self, input: crate::model::Ec2TagFilter) -> Self {
             let mut v = self.ec2_tag_filters.unwrap_or_default();
             v.push(input);
             self.ec2_tag_filters = Some(v);
             self
         }
-        /// <p>The replacement set of Amazon EC2 tags on which to filter, if you want to change them.
-        /// To keep the existing tags, enter their names. To remove tags, do not enter any tag
-        /// names.</p>
+        /// <p>The replacement set of Amazon EC2 tags on which to filter, if you want to change them. To keep the existing tags, enter their names. To remove tags, do not enter any tag names.</p>
         pub fn set_ec2_tag_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Ec2TagFilter>>,
@@ -9284,18 +8782,14 @@ pub mod update_deployment_group_input {
         ///
         /// To override the contents of this collection use [`set_on_premises_instance_tag_filters`](Self::set_on_premises_instance_tag_filters).
         ///
-        /// <p>The replacement set of on-premises instance tags on which to filter, if you want to
-        /// change them. To keep the existing tags, enter their names. To remove tags, do not enter
-        /// any tag names.</p>
+        /// <p>The replacement set of on-premises instance tags on which to filter, if you want to change them. To keep the existing tags, enter their names. To remove tags, do not enter any tag names.</p>
         pub fn on_premises_instance_tag_filters(mut self, input: crate::model::TagFilter) -> Self {
             let mut v = self.on_premises_instance_tag_filters.unwrap_or_default();
             v.push(input);
             self.on_premises_instance_tag_filters = Some(v);
             self
         }
-        /// <p>The replacement set of on-premises instance tags on which to filter, if you want to
-        /// change them. To keep the existing tags, enter their names. To remove tags, do not enter
-        /// any tag names.</p>
+        /// <p>The replacement set of on-premises instance tags on which to filter, if you want to change them. To keep the existing tags, enter their names. To remove tags, do not enter any tag names.</p>
         pub fn set_on_premises_instance_tag_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TagFilter>>,
@@ -9307,18 +8801,14 @@ pub mod update_deployment_group_input {
         ///
         /// To override the contents of this collection use [`set_auto_scaling_groups`](Self::set_auto_scaling_groups).
         ///
-        /// <p>The replacement list of Auto Scaling groups to be included in the deployment group, if
-        /// you want to change them. To keep the Auto Scaling groups, enter their names. To remove
-        /// Auto Scaling groups, do not enter any Auto Scaling group names.</p>
+        /// <p>The replacement list of Auto Scaling groups to be included in the deployment group, if you want to change them. To keep the Auto Scaling groups, enter their names. To remove Auto Scaling groups, do not enter any Auto Scaling group names.</p>
         pub fn auto_scaling_groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.auto_scaling_groups.unwrap_or_default();
             v.push(input.into());
             self.auto_scaling_groups = Some(v);
             self
         }
-        /// <p>The replacement list of Auto Scaling groups to be included in the deployment group, if
-        /// you want to change them. To keep the Auto Scaling groups, enter their names. To remove
-        /// Auto Scaling groups, do not enter any Auto Scaling group names.</p>
+        /// <p>The replacement list of Auto Scaling groups to be included in the deployment group, if you want to change them. To keep the Auto Scaling groups, enter their names. To remove Auto Scaling groups, do not enter any Auto Scaling group names.</p>
         pub fn set_auto_scaling_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9343,20 +8833,14 @@ pub mod update_deployment_group_input {
         ///
         /// To override the contents of this collection use [`set_trigger_configurations`](Self::set_trigger_configurations).
         ///
-        /// <p>Information about triggers to change when the deployment group is updated. For
-        /// examples, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Edit a Trigger in a
-        /// CodeDeploy Deployment Group</a> in the <i>AWS CodeDeploy User
-        /// Guide</i>.</p>
+        /// <p>Information about triggers to change when the deployment group is updated. For examples, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Edit a Trigger in a CodeDeploy Deployment Group</a> in the <i>AWS CodeDeploy User Guide</i>.</p>
         pub fn trigger_configurations(mut self, input: crate::model::TriggerConfig) -> Self {
             let mut v = self.trigger_configurations.unwrap_or_default();
             v.push(input);
             self.trigger_configurations = Some(v);
             self
         }
-        /// <p>Information about triggers to change when the deployment group is updated. For
-        /// examples, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Edit a Trigger in a
-        /// CodeDeploy Deployment Group</a> in the <i>AWS CodeDeploy User
-        /// Guide</i>.</p>
+        /// <p>Information about triggers to change when the deployment group is updated. For examples, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Edit a Trigger in a CodeDeploy Deployment Group</a> in the <i>AWS CodeDeploy User Guide</i>.</p>
         pub fn set_trigger_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TriggerConfig>>,
@@ -9364,14 +8848,12 @@ pub mod update_deployment_group_input {
             self.trigger_configurations = input;
             self
         }
-        /// <p>Information to add or change about Amazon CloudWatch alarms when the deployment group
-        /// is updated.</p>
+        /// <p>Information to add or change about Amazon CloudWatch alarms when the deployment group is updated.</p>
         pub fn alarm_configuration(mut self, input: crate::model::AlarmConfiguration) -> Self {
             self.alarm_configuration = Some(input);
             self
         }
-        /// <p>Information to add or change about Amazon CloudWatch alarms when the deployment group
-        /// is updated.</p>
+        /// <p>Information to add or change about Amazon CloudWatch alarms when the deployment group is updated.</p>
         pub fn set_alarm_configuration(
             mut self,
             input: std::option::Option<crate::model::AlarmConfiguration>,
@@ -9379,8 +8861,7 @@ pub mod update_deployment_group_input {
             self.alarm_configuration = input;
             self
         }
-        /// <p>Information for an automatic rollback configuration that is added or changed when a
-        /// deployment group is updated.</p>
+        /// <p>Information for an automatic rollback configuration that is added or changed when a deployment group is updated.</p>
         pub fn auto_rollback_configuration(
             mut self,
             input: crate::model::AutoRollbackConfiguration,
@@ -9388,8 +8869,7 @@ pub mod update_deployment_group_input {
             self.auto_rollback_configuration = Some(input);
             self
         }
-        /// <p>Information for an automatic rollback configuration that is added or changed when a
-        /// deployment group is updated.</p>
+        /// <p>Information for an automatic rollback configuration that is added or changed when a deployment group is updated.</p>
         pub fn set_auto_rollback_configuration(
             mut self,
             input: std::option::Option<crate::model::AutoRollbackConfiguration>,
@@ -9397,14 +8877,9 @@ pub mod update_deployment_group_input {
             self.auto_rollback_configuration = input;
             self
         }
-        /// <p>Indicates what happens when new EC2 instances are launched mid-deployment and do not
-        /// receive the deployed application revision.</p>
-        /// <p>If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates
-        /// one or more 'auto-update outdated instances' deployments to apply the deployed
-        /// application revision to the new EC2 instances.</p>
-        /// <p>If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a
-        /// deployment to update the new EC2 instances. This may result in instances having
-        /// different revisions.</p>
+        /// <p>Indicates what happens when new EC2 instances are launched mid-deployment and do not receive the deployed application revision.</p>
+        /// <p>If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more 'auto-update outdated instances' deployments to apply the deployed application revision to the new EC2 instances.</p>
+        /// <p>If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new EC2 instances. This may result in instances having different revisions.</p>
         pub fn outdated_instances_strategy(
             mut self,
             input: crate::model::OutdatedInstancesStrategy,
@@ -9412,14 +8887,9 @@ pub mod update_deployment_group_input {
             self.outdated_instances_strategy = Some(input);
             self
         }
-        /// <p>Indicates what happens when new EC2 instances are launched mid-deployment and do not
-        /// receive the deployed application revision.</p>
-        /// <p>If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates
-        /// one or more 'auto-update outdated instances' deployments to apply the deployed
-        /// application revision to the new EC2 instances.</p>
-        /// <p>If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a
-        /// deployment to update the new EC2 instances. This may result in instances having
-        /// different revisions.</p>
+        /// <p>Indicates what happens when new EC2 instances are launched mid-deployment and do not receive the deployed application revision.</p>
+        /// <p>If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more 'auto-update outdated instances' deployments to apply the deployed application revision to the new EC2 instances.</p>
+        /// <p>If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new EC2 instances. This may result in instances having different revisions.</p>
         pub fn set_outdated_instances_strategy(
             mut self,
             input: std::option::Option<crate::model::OutdatedInstancesStrategy>,
@@ -9427,14 +8897,12 @@ pub mod update_deployment_group_input {
             self.outdated_instances_strategy = input;
             self
         }
-        /// <p>Information about the type of deployment, either in-place or blue/green, you want to
-        /// run and whether to route deployment traffic behind a load balancer.</p>
+        /// <p>Information about the type of deployment, either in-place or blue/green, you want to run and whether to route deployment traffic behind a load balancer.</p>
         pub fn deployment_style(mut self, input: crate::model::DeploymentStyle) -> Self {
             self.deployment_style = Some(input);
             self
         }
-        /// <p>Information about the type of deployment, either in-place or blue/green, you want to
-        /// run and whether to route deployment traffic behind a load balancer.</p>
+        /// <p>Information about the type of deployment, either in-place or blue/green, you want to run and whether to route deployment traffic behind a load balancer.</p>
         pub fn set_deployment_style(
             mut self,
             input: std::option::Option<crate::model::DeploymentStyle>,
@@ -9471,14 +8939,12 @@ pub mod update_deployment_group_input {
             self.load_balancer_info = input;
             self
         }
-        /// <p>Information about groups of tags applied to on-premises instances. The deployment
-        /// group includes only EC2 instances identified by all the tag groups.</p>
+        /// <p>Information about groups of tags applied to on-premises instances. The deployment group includes only EC2 instances identified by all the tag groups.</p>
         pub fn ec2_tag_set(mut self, input: crate::model::Ec2TagSet) -> Self {
             self.ec2_tag_set = Some(input);
             self
         }
-        /// <p>Information about groups of tags applied to on-premises instances. The deployment
-        /// group includes only EC2 instances identified by all the tag groups.</p>
+        /// <p>Information about groups of tags applied to on-premises instances. The deployment group includes only EC2 instances identified by all the tag groups.</p>
         pub fn set_ec2_tag_set(
             mut self,
             input: std::option::Option<crate::model::Ec2TagSet>,
@@ -9490,20 +8956,22 @@ pub mod update_deployment_group_input {
         ///
         /// To override the contents of this collection use [`set_ecs_services`](Self::set_ecs_services).
         ///
-        /// <p> The target Amazon ECS services in the deployment group. This applies only to
-        /// deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service
-        /// is specified as an Amazon ECS cluster and service name pair using the format
-        /// <code><clustername>:<servicename></code>. </p>
+        /// <p> The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code>
+        /// <clustername>
+        /// :
+        /// <servicename></servicename>
+        /// </clustername></code>. </p>
         pub fn ecs_services(mut self, input: crate::model::EcsService) -> Self {
             let mut v = self.ecs_services.unwrap_or_default();
             v.push(input);
             self.ecs_services = Some(v);
             self
         }
-        /// <p> The target Amazon ECS services in the deployment group. This applies only to
-        /// deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service
-        /// is specified as an Amazon ECS cluster and service name pair using the format
-        /// <code><clustername>:<servicename></code>. </p>
+        /// <p> The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code>
+        /// <clustername>
+        /// :
+        /// <servicename></servicename>
+        /// </clustername></code>. </p>
         pub fn set_ecs_services(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EcsService>>,
@@ -9511,14 +8979,12 @@ pub mod update_deployment_group_input {
             self.ecs_services = input;
             self
         }
-        /// <p>Information about an on-premises instance tag set. The deployment group includes only
-        /// on-premises instances identified by all the tag groups.</p>
+        /// <p>Information about an on-premises instance tag set. The deployment group includes only on-premises instances identified by all the tag groups.</p>
         pub fn on_premises_tag_set(mut self, input: crate::model::OnPremisesTagSet) -> Self {
             self.on_premises_tag_set = Some(input);
             self
         }
-        /// <p>Information about an on-premises instance tag set. The deployment group includes only
-        /// on-premises instances identified by all the tag groups.</p>
+        /// <p>Information about an on-premises instance tag set. The deployment group includes only on-premises instances identified by all the tag groups.</p>
         pub fn set_on_premises_tag_set(
             mut self,
             input: std::option::Option<crate::model::OnPremisesTagSet>,
@@ -9692,59 +9158,41 @@ pub struct UpdateDeploymentGroupInput {
     pub new_deployment_group_name: std::option::Option<std::string::String>,
     /// <p>The replacement deployment configuration name to use, if you want to change it.</p>
     pub deployment_config_name: std::option::Option<std::string::String>,
-    /// <p>The replacement set of Amazon EC2 tags on which to filter, if you want to change them.
-    /// To keep the existing tags, enter their names. To remove tags, do not enter any tag
-    /// names.</p>
+    /// <p>The replacement set of Amazon EC2 tags on which to filter, if you want to change them. To keep the existing tags, enter their names. To remove tags, do not enter any tag names.</p>
     pub ec2_tag_filters: std::option::Option<std::vec::Vec<crate::model::Ec2TagFilter>>,
-    /// <p>The replacement set of on-premises instance tags on which to filter, if you want to
-    /// change them. To keep the existing tags, enter their names. To remove tags, do not enter
-    /// any tag names.</p>
+    /// <p>The replacement set of on-premises instance tags on which to filter, if you want to change them. To keep the existing tags, enter their names. To remove tags, do not enter any tag names.</p>
     pub on_premises_instance_tag_filters:
         std::option::Option<std::vec::Vec<crate::model::TagFilter>>,
-    /// <p>The replacement list of Auto Scaling groups to be included in the deployment group, if
-    /// you want to change them. To keep the Auto Scaling groups, enter their names. To remove
-    /// Auto Scaling groups, do not enter any Auto Scaling group names.</p>
+    /// <p>The replacement list of Auto Scaling groups to be included in the deployment group, if you want to change them. To keep the Auto Scaling groups, enter their names. To remove Auto Scaling groups, do not enter any Auto Scaling group names.</p>
     pub auto_scaling_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A replacement ARN for the service role, if you want to change it.</p>
     pub service_role_arn: std::option::Option<std::string::String>,
-    /// <p>Information about triggers to change when the deployment group is updated. For
-    /// examples, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Edit a Trigger in a
-    /// CodeDeploy Deployment Group</a> in the <i>AWS CodeDeploy User
-    /// Guide</i>.</p>
+    /// <p>Information about triggers to change when the deployment group is updated. For examples, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Edit a Trigger in a CodeDeploy Deployment Group</a> in the <i>AWS CodeDeploy User Guide</i>.</p>
     pub trigger_configurations: std::option::Option<std::vec::Vec<crate::model::TriggerConfig>>,
-    /// <p>Information to add or change about Amazon CloudWatch alarms when the deployment group
-    /// is updated.</p>
+    /// <p>Information to add or change about Amazon CloudWatch alarms when the deployment group is updated.</p>
     pub alarm_configuration: std::option::Option<crate::model::AlarmConfiguration>,
-    /// <p>Information for an automatic rollback configuration that is added or changed when a
-    /// deployment group is updated.</p>
+    /// <p>Information for an automatic rollback configuration that is added or changed when a deployment group is updated.</p>
     pub auto_rollback_configuration: std::option::Option<crate::model::AutoRollbackConfiguration>,
-    /// <p>Indicates what happens when new EC2 instances are launched mid-deployment and do not
-    /// receive the deployed application revision.</p>
-    /// <p>If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates
-    /// one or more 'auto-update outdated instances' deployments to apply the deployed
-    /// application revision to the new EC2 instances.</p>
-    /// <p>If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a
-    /// deployment to update the new EC2 instances. This may result in instances having
-    /// different revisions.</p>
+    /// <p>Indicates what happens when new EC2 instances are launched mid-deployment and do not receive the deployed application revision.</p>
+    /// <p>If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more 'auto-update outdated instances' deployments to apply the deployed application revision to the new EC2 instances.</p>
+    /// <p>If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new EC2 instances. This may result in instances having different revisions.</p>
     pub outdated_instances_strategy: std::option::Option<crate::model::OutdatedInstancesStrategy>,
-    /// <p>Information about the type of deployment, either in-place or blue/green, you want to
-    /// run and whether to route deployment traffic behind a load balancer.</p>
+    /// <p>Information about the type of deployment, either in-place or blue/green, you want to run and whether to route deployment traffic behind a load balancer.</p>
     pub deployment_style: std::option::Option<crate::model::DeploymentStyle>,
     /// <p>Information about blue/green deployment options for a deployment group.</p>
     pub blue_green_deployment_configuration:
         std::option::Option<crate::model::BlueGreenDeploymentConfiguration>,
     /// <p>Information about the load balancer used in a deployment.</p>
     pub load_balancer_info: std::option::Option<crate::model::LoadBalancerInfo>,
-    /// <p>Information about groups of tags applied to on-premises instances. The deployment
-    /// group includes only EC2 instances identified by all the tag groups.</p>
+    /// <p>Information about groups of tags applied to on-premises instances. The deployment group includes only EC2 instances identified by all the tag groups.</p>
     pub ec2_tag_set: std::option::Option<crate::model::Ec2TagSet>,
-    /// <p> The target Amazon ECS services in the deployment group. This applies only to
-    /// deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service
-    /// is specified as an Amazon ECS cluster and service name pair using the format
-    /// <code><clustername>:<servicename></code>. </p>
+    /// <p> The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code>
+    /// <clustername>
+    /// :
+    /// <servicename></servicename>
+    /// </clustername></code>. </p>
     pub ecs_services: std::option::Option<std::vec::Vec<crate::model::EcsService>>,
-    /// <p>Information about an on-premises instance tag set. The deployment group includes only
-    /// on-premises instances identified by all the tag groups.</p>
+    /// <p>Information about an on-premises instance tag set. The deployment group includes only on-premises instances identified by all the tag groups.</p>
     pub on_premises_tag_set: std::option::Option<crate::model::OnPremisesTagSet>,
 }
 impl UpdateDeploymentGroupInput {
@@ -9764,23 +9212,17 @@ impl UpdateDeploymentGroupInput {
     pub fn deployment_config_name(&self) -> std::option::Option<&str> {
         self.deployment_config_name.as_deref()
     }
-    /// <p>The replacement set of Amazon EC2 tags on which to filter, if you want to change them.
-    /// To keep the existing tags, enter their names. To remove tags, do not enter any tag
-    /// names.</p>
+    /// <p>The replacement set of Amazon EC2 tags on which to filter, if you want to change them. To keep the existing tags, enter their names. To remove tags, do not enter any tag names.</p>
     pub fn ec2_tag_filters(&self) -> std::option::Option<&[crate::model::Ec2TagFilter]> {
         self.ec2_tag_filters.as_deref()
     }
-    /// <p>The replacement set of on-premises instance tags on which to filter, if you want to
-    /// change them. To keep the existing tags, enter their names. To remove tags, do not enter
-    /// any tag names.</p>
+    /// <p>The replacement set of on-premises instance tags on which to filter, if you want to change them. To keep the existing tags, enter their names. To remove tags, do not enter any tag names.</p>
     pub fn on_premises_instance_tag_filters(
         &self,
     ) -> std::option::Option<&[crate::model::TagFilter]> {
         self.on_premises_instance_tag_filters.as_deref()
     }
-    /// <p>The replacement list of Auto Scaling groups to be included in the deployment group, if
-    /// you want to change them. To keep the Auto Scaling groups, enter their names. To remove
-    /// Auto Scaling groups, do not enter any Auto Scaling group names.</p>
+    /// <p>The replacement list of Auto Scaling groups to be included in the deployment group, if you want to change them. To keep the Auto Scaling groups, enter their names. To remove Auto Scaling groups, do not enter any Auto Scaling group names.</p>
     pub fn auto_scaling_groups(&self) -> std::option::Option<&[std::string::String]> {
         self.auto_scaling_groups.as_deref()
     }
@@ -9788,40 +9230,29 @@ impl UpdateDeploymentGroupInput {
     pub fn service_role_arn(&self) -> std::option::Option<&str> {
         self.service_role_arn.as_deref()
     }
-    /// <p>Information about triggers to change when the deployment group is updated. For
-    /// examples, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Edit a Trigger in a
-    /// CodeDeploy Deployment Group</a> in the <i>AWS CodeDeploy User
-    /// Guide</i>.</p>
+    /// <p>Information about triggers to change when the deployment group is updated. For examples, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Edit a Trigger in a CodeDeploy Deployment Group</a> in the <i>AWS CodeDeploy User Guide</i>.</p>
     pub fn trigger_configurations(&self) -> std::option::Option<&[crate::model::TriggerConfig]> {
         self.trigger_configurations.as_deref()
     }
-    /// <p>Information to add or change about Amazon CloudWatch alarms when the deployment group
-    /// is updated.</p>
+    /// <p>Information to add or change about Amazon CloudWatch alarms when the deployment group is updated.</p>
     pub fn alarm_configuration(&self) -> std::option::Option<&crate::model::AlarmConfiguration> {
         self.alarm_configuration.as_ref()
     }
-    /// <p>Information for an automatic rollback configuration that is added or changed when a
-    /// deployment group is updated.</p>
+    /// <p>Information for an automatic rollback configuration that is added or changed when a deployment group is updated.</p>
     pub fn auto_rollback_configuration(
         &self,
     ) -> std::option::Option<&crate::model::AutoRollbackConfiguration> {
         self.auto_rollback_configuration.as_ref()
     }
-    /// <p>Indicates what happens when new EC2 instances are launched mid-deployment and do not
-    /// receive the deployed application revision.</p>
-    /// <p>If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates
-    /// one or more 'auto-update outdated instances' deployments to apply the deployed
-    /// application revision to the new EC2 instances.</p>
-    /// <p>If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a
-    /// deployment to update the new EC2 instances. This may result in instances having
-    /// different revisions.</p>
+    /// <p>Indicates what happens when new EC2 instances are launched mid-deployment and do not receive the deployed application revision.</p>
+    /// <p>If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more 'auto-update outdated instances' deployments to apply the deployed application revision to the new EC2 instances.</p>
+    /// <p>If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new EC2 instances. This may result in instances having different revisions.</p>
     pub fn outdated_instances_strategy(
         &self,
     ) -> std::option::Option<&crate::model::OutdatedInstancesStrategy> {
         self.outdated_instances_strategy.as_ref()
     }
-    /// <p>Information about the type of deployment, either in-place or blue/green, you want to
-    /// run and whether to route deployment traffic behind a load balancer.</p>
+    /// <p>Information about the type of deployment, either in-place or blue/green, you want to run and whether to route deployment traffic behind a load balancer.</p>
     pub fn deployment_style(&self) -> std::option::Option<&crate::model::DeploymentStyle> {
         self.deployment_style.as_ref()
     }
@@ -9835,20 +9266,19 @@ impl UpdateDeploymentGroupInput {
     pub fn load_balancer_info(&self) -> std::option::Option<&crate::model::LoadBalancerInfo> {
         self.load_balancer_info.as_ref()
     }
-    /// <p>Information about groups of tags applied to on-premises instances. The deployment
-    /// group includes only EC2 instances identified by all the tag groups.</p>
+    /// <p>Information about groups of tags applied to on-premises instances. The deployment group includes only EC2 instances identified by all the tag groups.</p>
     pub fn ec2_tag_set(&self) -> std::option::Option<&crate::model::Ec2TagSet> {
         self.ec2_tag_set.as_ref()
     }
-    /// <p> The target Amazon ECS services in the deployment group. This applies only to
-    /// deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service
-    /// is specified as an Amazon ECS cluster and service name pair using the format
-    /// <code><clustername>:<servicename></code>. </p>
+    /// <p> The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code>
+    /// <clustername>
+    /// :
+    /// <servicename></servicename>
+    /// </clustername></code>. </p>
     pub fn ecs_services(&self) -> std::option::Option<&[crate::model::EcsService]> {
         self.ecs_services.as_deref()
     }
-    /// <p>Information about an on-premises instance tag set. The deployment group includes only
-    /// on-premises instances identified by all the tag groups.</p>
+    /// <p>Information about an on-premises instance tag set. The deployment group includes only on-premises instances identified by all the tag groups.</p>
     pub fn on_premises_tag_set(&self) -> std::option::Option<&crate::model::OnPremisesTagSet> {
         self.on_premises_tag_set.as_ref()
     }
@@ -9925,23 +9355,17 @@ impl std::fmt::Debug for UpdateApplicationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
-    /// <p> The Amazon Resource Name (ARN) that specifies from which resource to disassociate the
-    /// tags with the keys in the <code>TagKeys</code> input parameter. </p>
+    /// <p> The Amazon Resource Name (ARN) that specifies from which resource to disassociate the tags with the keys in the <code>TagKeys</code> input parameter. </p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p> A list of keys of <code>Tag</code> objects. The <code>Tag</code> objects identified
-    /// by the keys are disassociated from the resource specified by the
-    /// <code>ResourceArn</code> input parameter. </p>
+    /// <p> A list of keys of <code>Tag</code> objects. The <code>Tag</code> objects identified by the keys are disassociated from the resource specified by the <code>ResourceArn</code> input parameter. </p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
-    /// <p> The Amazon Resource Name (ARN) that specifies from which resource to disassociate the
-    /// tags with the keys in the <code>TagKeys</code> input parameter. </p>
+    /// <p> The Amazon Resource Name (ARN) that specifies from which resource to disassociate the tags with the keys in the <code>TagKeys</code> input parameter. </p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p> A list of keys of <code>Tag</code> objects. The <code>Tag</code> objects identified
-    /// by the keys are disassociated from the resource specified by the
-    /// <code>ResourceArn</code> input parameter. </p>
+    /// <p> A list of keys of <code>Tag</code> objects. The <code>Tag</code> objects identified by the keys are disassociated from the resource specified by the <code>ResourceArn</code> input parameter. </p>
     pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_keys.as_deref()
     }
@@ -9961,8 +9385,7 @@ impl std::fmt::Debug for UntagResourceInput {
 pub struct TagResourceInput {
     /// <p> The ARN of a resource, such as a CodeDeploy application or deployment group. </p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p> A list of tags that <code>TagResource</code> associates with a resource. The resource
-    /// is identified by the <code>ResourceArn</code> input parameter. </p>
+    /// <p> A list of tags that <code>TagResource</code> associates with a resource. The resource is identified by the <code>ResourceArn</code> input parameter. </p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
@@ -9970,8 +9393,7 @@ impl TagResourceInput {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p> A list of tags that <code>TagResource</code> associates with a resource. The resource
-    /// is identified by the <code>ResourceArn</code> input parameter. </p>
+    /// <p> A list of tags that <code>TagResource</code> associates with a resource. The resource is identified by the <code>ResourceArn</code> input parameter. </p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -9991,8 +9413,7 @@ impl std::fmt::Debug for TagResourceInput {
 pub struct StopDeploymentInput {
     /// <p> The unique ID of a deployment. </p>
     pub deployment_id: std::option::Option<std::string::String>,
-    /// <p> Indicates, when a deployment is stopped, whether instances that have been updated
-    /// should be rolled back to the previous version of the application revision. </p>
+    /// <p> Indicates, when a deployment is stopped, whether instances that have been updated should be rolled back to the previous version of the application revision. </p>
     pub auto_rollback_enabled: std::option::Option<bool>,
 }
 impl StopDeploymentInput {
@@ -10000,8 +9421,7 @@ impl StopDeploymentInput {
     pub fn deployment_id(&self) -> std::option::Option<&str> {
         self.deployment_id.as_deref()
     }
-    /// <p> Indicates, when a deployment is stopped, whether instances that have been updated
-    /// should be rolled back to the previous version of the application revision. </p>
+    /// <p> Indicates, when a deployment is stopped, whether instances that have been updated should be rolled back to the previous version of the application revision. </p>
     pub fn auto_rollback_enabled(&self) -> std::option::Option<bool> {
         self.auto_rollback_enabled
     }
@@ -10019,13 +9439,11 @@ impl std::fmt::Debug for StopDeploymentInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SkipWaitTimeForInstanceTerminationInput {
-    /// <p> The unique ID of a blue/green deployment for which you want to skip the instance
-    /// termination wait time. </p>
+    /// <p> The unique ID of a blue/green deployment for which you want to skip the instance termination wait time. </p>
     pub deployment_id: std::option::Option<std::string::String>,
 }
 impl SkipWaitTimeForInstanceTerminationInput {
-    /// <p> The unique ID of a blue/green deployment for which you want to skip the instance
-    /// termination wait time. </p>
+    /// <p> The unique ID of a blue/green deployment for which you want to skip the instance termination wait time. </p>
     pub fn deployment_id(&self) -> std::option::Option<&str> {
         self.deployment_id.as_deref()
     }
@@ -10038,8 +9456,7 @@ impl std::fmt::Debug for SkipWaitTimeForInstanceTerminationInput {
     }
 }
 
-/// <p>Represents the input of a <code>RemoveTagsFromOnPremisesInstances</code>
-/// operation.</p>
+/// <p>Represents the input of a <code>RemoveTagsFromOnPremisesInstances</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveTagsFromOnPremisesInstancesInput {
@@ -10106,18 +9523,15 @@ impl std::fmt::Debug for RegisterOnPremisesInstanceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterApplicationRevisionInput {
-    /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-    /// account.</p>
+    /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
     pub application_name: std::option::Option<std::string::String>,
     /// <p>A comment about the revision.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>Information about the application revision to register, including type and
-    /// location.</p>
+    /// <p>Information about the application revision to register, including type and location.</p>
     pub revision: std::option::Option<crate::model::RevisionLocation>,
 }
 impl RegisterApplicationRevisionInput {
-    /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-    /// account.</p>
+    /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
     pub fn application_name(&self) -> std::option::Option<&str> {
         self.application_name.as_deref()
     }
@@ -10125,8 +9539,7 @@ impl RegisterApplicationRevisionInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Information about the application revision to register, including type and
-    /// location.</p>
+    /// <p>Information about the application revision to register, including type and location.</p>
     pub fn revision(&self) -> std::option::Option<&crate::model::RevisionLocation> {
         self.revision.as_ref()
     }
@@ -10145,31 +9558,23 @@ impl std::fmt::Debug for RegisterApplicationRevisionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutLifecycleEventHookExecutionStatusInput {
-    /// <p> The unique ID of a deployment. Pass this ID to a Lambda function that validates a
-    /// deployment lifecycle event. </p>
+    /// <p> The unique ID of a deployment. Pass this ID to a Lambda function that validates a deployment lifecycle event. </p>
     pub deployment_id: std::option::Option<std::string::String>,
-    /// <p> The execution ID of a deployment's lifecycle hook. A deployment lifecycle hook is
-    /// specified in the <code>hooks</code> section of the AppSpec file. </p>
+    /// <p> The execution ID of a deployment's lifecycle hook. A deployment lifecycle hook is specified in the <code>hooks</code> section of the AppSpec file. </p>
     pub lifecycle_event_hook_execution_id: std::option::Option<std::string::String>,
-    /// <p>The result of a Lambda function that validates a deployment lifecycle event.
-    /// <code>Succeeded</code> and <code>Failed</code> are the only valid values for
-    /// <code>status</code>.</p>
+    /// <p>The result of a Lambda function that validates a deployment lifecycle event. <code>Succeeded</code> and <code>Failed</code> are the only valid values for <code>status</code>.</p>
     pub status: std::option::Option<crate::model::LifecycleEventStatus>,
 }
 impl PutLifecycleEventHookExecutionStatusInput {
-    /// <p> The unique ID of a deployment. Pass this ID to a Lambda function that validates a
-    /// deployment lifecycle event. </p>
+    /// <p> The unique ID of a deployment. Pass this ID to a Lambda function that validates a deployment lifecycle event. </p>
     pub fn deployment_id(&self) -> std::option::Option<&str> {
         self.deployment_id.as_deref()
     }
-    /// <p> The execution ID of a deployment's lifecycle hook. A deployment lifecycle hook is
-    /// specified in the <code>hooks</code> section of the AppSpec file. </p>
+    /// <p> The execution ID of a deployment's lifecycle hook. A deployment lifecycle hook is specified in the <code>hooks</code> section of the AppSpec file. </p>
     pub fn lifecycle_event_hook_execution_id(&self) -> std::option::Option<&str> {
         self.lifecycle_event_hook_execution_id.as_deref()
     }
-    /// <p>The result of a Lambda function that validates a deployment lifecycle event.
-    /// <code>Succeeded</code> and <code>Failed</code> are the only valid values for
-    /// <code>status</code>.</p>
+    /// <p>The result of a Lambda function that validates a deployment lifecycle event. <code>Succeeded</code> and <code>Failed</code> are the only valid values for <code>status</code>.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::LifecycleEventStatus> {
         self.status.as_ref()
     }
@@ -10191,23 +9596,17 @@ impl std::fmt::Debug for PutLifecycleEventHookExecutionStatusInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
-    /// <p> The ARN of a CodeDeploy resource. <code>ListTagsForResource</code> returns all the
-    /// tags associated with the resource that is identified by the <code>ResourceArn</code>.
-    /// </p>
+    /// <p> The ARN of a CodeDeploy resource. <code>ListTagsForResource</code> returns all the tags associated with the resource that is identified by the <code>ResourceArn</code>. </p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>An identifier returned from the previous <code>ListTagsForResource</code> call. It can
-    /// be used to return the next set of applications in the list.</p>
+    /// <p>An identifier returned from the previous <code>ListTagsForResource</code> call. It can be used to return the next set of applications in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
-    /// <p> The ARN of a CodeDeploy resource. <code>ListTagsForResource</code> returns all the
-    /// tags associated with the resource that is identified by the <code>ResourceArn</code>.
-    /// </p>
+    /// <p> The ARN of a CodeDeploy resource. <code>ListTagsForResource</code> returns all the tags associated with the resource that is identified by the <code>ResourceArn</code>. </p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>An identifier returned from the previous <code>ListTagsForResource</code> call. It can
-    /// be used to return the next set of applications in the list.</p>
+    /// <p>An identifier returned from the previous <code>ListTagsForResource</code> call. It can be used to return the next set of applications in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10227,49 +9626,29 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 pub struct ListOnPremisesInstancesInput {
     /// <p>The registration status of the on-premises instances:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Deregistered</code>: Include deregistered on-premises instances in the
-    /// resulting list.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Registered</code>: Include registered on-premises instances in the
-    /// resulting list.</p>
-    /// </li>
+    /// <li> <p> <code>Deregistered</code>: Include deregistered on-premises instances in the resulting list.</p> </li>
+    /// <li> <p> <code>Registered</code>: Include registered on-premises instances in the resulting list.</p> </li>
     /// </ul>
     pub registration_status: std::option::Option<crate::model::RegistrationStatus>,
-    /// <p>The on-premises instance tags that are used to restrict the on-premises instance names
-    /// returned.</p>
+    /// <p>The on-premises instance tags that are used to restrict the on-premises instance names returned.</p>
     pub tag_filters: std::option::Option<std::vec::Vec<crate::model::TagFilter>>,
-    /// <p>An identifier returned from the previous list on-premises instances call. It can be
-    /// used to return the next set of on-premises instances in the list.</p>
+    /// <p>An identifier returned from the previous list on-premises instances call. It can be used to return the next set of on-premises instances in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListOnPremisesInstancesInput {
     /// <p>The registration status of the on-premises instances:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Deregistered</code>: Include deregistered on-premises instances in the
-    /// resulting list.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Registered</code>: Include registered on-premises instances in the
-    /// resulting list.</p>
-    /// </li>
+    /// <li> <p> <code>Deregistered</code>: Include deregistered on-premises instances in the resulting list.</p> </li>
+    /// <li> <p> <code>Registered</code>: Include registered on-premises instances in the resulting list.</p> </li>
     /// </ul>
     pub fn registration_status(&self) -> std::option::Option<&crate::model::RegistrationStatus> {
         self.registration_status.as_ref()
     }
-    /// <p>The on-premises instance tags that are used to restrict the on-premises instance names
-    /// returned.</p>
+    /// <p>The on-premises instance tags that are used to restrict the on-premises instance names returned.</p>
     pub fn tag_filters(&self) -> std::option::Option<&[crate::model::TagFilter]> {
         self.tag_filters.as_deref()
     }
-    /// <p>An identifier returned from the previous list on-premises instances call. It can be
-    /// used to return the next set of on-premises instances in the list.</p>
+    /// <p>An identifier returned from the previous list on-premises instances call. It can be used to return the next set of on-premises instances in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10288,13 +9667,11 @@ impl std::fmt::Debug for ListOnPremisesInstancesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGitHubAccountTokenNamesInput {
-    /// <p>An identifier returned from the previous <code>ListGitHubAccountTokenNames</code>
-    /// call. It can be used to return the next set of names in the list. </p>
+    /// <p>An identifier returned from the previous <code>ListGitHubAccountTokenNames</code> call. It can be used to return the next set of names in the list. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListGitHubAccountTokenNamesInput {
-    /// <p>An identifier returned from the previous <code>ListGitHubAccountTokenNames</code>
-    /// call. It can be used to return the next set of names in the list. </p>
+    /// <p>An identifier returned from the previous <code>ListGitHubAccountTokenNames</code> call. It can be used to return the next set of names in the list. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10313,23 +9690,12 @@ impl std::fmt::Debug for ListGitHubAccountTokenNamesInput {
 pub struct ListDeploymentTargetsInput {
     /// <p> The unique ID of a deployment. </p>
     pub deployment_id: std::option::Option<std::string::String>,
-    /// <p> A token identifier returned from the previous <code>ListDeploymentTargets</code>
-    /// call. It can be used to return the next set of deployment targets in the list. </p>
+    /// <p> A token identifier returned from the previous <code>ListDeploymentTargets</code> call. It can be used to return the next set of deployment targets in the list. </p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p> A key used to filter the returned targets. The two valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>TargetStatus</code> - A <code>TargetStatus</code> filter string can be
-    /// <code>Failed</code>, <code>InProgress</code>, <code>Pending</code>,
-    /// <code>Ready</code>, <code>Skipped</code>, <code>Succeeded</code>, or
-    /// <code>Unknown</code>. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ServerInstanceLabel</code> - A <code>ServerInstanceLabel</code> filter
-    /// string can be <code>Blue</code> or <code>Green</code>. </p>
-    /// </li>
+    /// <li> <p> <code>TargetStatus</code> - A <code>TargetStatus</code> filter string can be <code>Failed</code>, <code>InProgress</code>, <code>Pending</code>, <code>Ready</code>, <code>Skipped</code>, <code>Succeeded</code>, or <code>Unknown</code>. </p> </li>
+    /// <li> <p> <code>ServerInstanceLabel</code> - A <code>ServerInstanceLabel</code> filter string can be <code>Blue</code> or <code>Green</code>. </p> </li>
     /// </ul>
     pub target_filters: std::option::Option<
         std::collections::HashMap<
@@ -10343,25 +9709,14 @@ impl ListDeploymentTargetsInput {
     pub fn deployment_id(&self) -> std::option::Option<&str> {
         self.deployment_id.as_deref()
     }
-    /// <p> A token identifier returned from the previous <code>ListDeploymentTargets</code>
-    /// call. It can be used to return the next set of deployment targets in the list. </p>
+    /// <p> A token identifier returned from the previous <code>ListDeploymentTargets</code> call. It can be used to return the next set of deployment targets in the list. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p> A key used to filter the returned targets. The two valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>TargetStatus</code> - A <code>TargetStatus</code> filter string can be
-    /// <code>Failed</code>, <code>InProgress</code>, <code>Pending</code>,
-    /// <code>Ready</code>, <code>Skipped</code>, <code>Succeeded</code>, or
-    /// <code>Unknown</code>. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ServerInstanceLabel</code> - A <code>ServerInstanceLabel</code> filter
-    /// string can be <code>Blue</code> or <code>Green</code>. </p>
-    /// </li>
+    /// <li> <p> <code>TargetStatus</code> - A <code>TargetStatus</code> filter string can be <code>Failed</code>, <code>InProgress</code>, <code>Pending</code>, <code>Ready</code>, <code>Skipped</code>, <code>Succeeded</code>, or <code>Unknown</code>. </p> </li>
+    /// <li> <p> <code>ServerInstanceLabel</code> - A <code>ServerInstanceLabel</code> filter string can be <code>Blue</code> or <code>Green</code>. </p> </li>
     /// </ul>
     pub fn target_filters(
         &self,
@@ -10388,117 +9743,56 @@ impl std::fmt::Debug for ListDeploymentTargetsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDeploymentsInput {
-    /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-    /// account.</p>
-    /// <note>
-    /// <p>If <code>applicationName</code> is specified, then
-    /// <code>deploymentGroupName</code> must be specified. If it is not specified, then
-    /// <code>deploymentGroupName</code> must not be specified. </p>
+    /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p> <note>
+    /// <p>If <code>applicationName</code> is specified, then <code>deploymentGroupName</code> must be specified. If it is not specified, then <code>deploymentGroupName</code> must not be specified. </p>
     /// </note>
     pub application_name: std::option::Option<std::string::String>,
-    /// <p>The name of a deployment group for the specified application.</p>
-    /// <note>
-    /// <p>If <code>deploymentGroupName</code> is specified, then
-    /// <code>applicationName</code> must be specified. If it is not specified, then
-    /// <code>applicationName</code> must not be specified. </p>
+    /// <p>The name of a deployment group for the specified application.</p> <note>
+    /// <p>If <code>deploymentGroupName</code> is specified, then <code>applicationName</code> must be specified. If it is not specified, then <code>applicationName</code> must not be specified. </p>
     /// </note>
     pub deployment_group_name: std::option::Option<std::string::String>,
-    /// <p>The unique ID of an external resource for returning deployments linked to the external
-    /// resource.</p>
+    /// <p>The unique ID of an external resource for returning deployments linked to the external resource.</p>
     pub external_id: std::option::Option<std::string::String>,
     /// <p>A subset of deployments to list by status:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Created</code>: Include created deployments in the resulting
-    /// list.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Queued</code>: Include queued deployments in the resulting list.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>In Progress</code>: Include in-progress deployments in the resulting
-    /// list.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Succeeded</code>: Include successful deployments in the resulting
-    /// list.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Failed</code>: Include failed deployments in the resulting list.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Stopped</code>: Include stopped deployments in the resulting
-    /// list.</p>
-    /// </li>
+    /// <li> <p> <code>Created</code>: Include created deployments in the resulting list.</p> </li>
+    /// <li> <p> <code>Queued</code>: Include queued deployments in the resulting list.</p> </li>
+    /// <li> <p> <code>In Progress</code>: Include in-progress deployments in the resulting list.</p> </li>
+    /// <li> <p> <code>Succeeded</code>: Include successful deployments in the resulting list.</p> </li>
+    /// <li> <p> <code>Failed</code>: Include failed deployments in the resulting list.</p> </li>
+    /// <li> <p> <code>Stopped</code>: Include stopped deployments in the resulting list.</p> </li>
     /// </ul>
     pub include_only_statuses: std::option::Option<std::vec::Vec<crate::model::DeploymentStatus>>,
     /// <p>A time range (start and end) for returning a subset of the list of deployments.</p>
     pub create_time_range: std::option::Option<crate::model::TimeRange>,
-    /// <p>An identifier returned from the previous list deployments call. It can be used to
-    /// return the next set of deployments in the list.</p>
+    /// <p>An identifier returned from the previous list deployments call. It can be used to return the next set of deployments in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDeploymentsInput {
-    /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-    /// account.</p>
-    /// <note>
-    /// <p>If <code>applicationName</code> is specified, then
-    /// <code>deploymentGroupName</code> must be specified. If it is not specified, then
-    /// <code>deploymentGroupName</code> must not be specified. </p>
+    /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p> <note>
+    /// <p>If <code>applicationName</code> is specified, then <code>deploymentGroupName</code> must be specified. If it is not specified, then <code>deploymentGroupName</code> must not be specified. </p>
     /// </note>
     pub fn application_name(&self) -> std::option::Option<&str> {
         self.application_name.as_deref()
     }
-    /// <p>The name of a deployment group for the specified application.</p>
-    /// <note>
-    /// <p>If <code>deploymentGroupName</code> is specified, then
-    /// <code>applicationName</code> must be specified. If it is not specified, then
-    /// <code>applicationName</code> must not be specified. </p>
+    /// <p>The name of a deployment group for the specified application.</p> <note>
+    /// <p>If <code>deploymentGroupName</code> is specified, then <code>applicationName</code> must be specified. If it is not specified, then <code>applicationName</code> must not be specified. </p>
     /// </note>
     pub fn deployment_group_name(&self) -> std::option::Option<&str> {
         self.deployment_group_name.as_deref()
     }
-    /// <p>The unique ID of an external resource for returning deployments linked to the external
-    /// resource.</p>
+    /// <p>The unique ID of an external resource for returning deployments linked to the external resource.</p>
     pub fn external_id(&self) -> std::option::Option<&str> {
         self.external_id.as_deref()
     }
     /// <p>A subset of deployments to list by status:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Created</code>: Include created deployments in the resulting
-    /// list.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Queued</code>: Include queued deployments in the resulting list.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>In Progress</code>: Include in-progress deployments in the resulting
-    /// list.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Succeeded</code>: Include successful deployments in the resulting
-    /// list.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Failed</code>: Include failed deployments in the resulting list.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Stopped</code>: Include stopped deployments in the resulting
-    /// list.</p>
-    /// </li>
+    /// <li> <p> <code>Created</code>: Include created deployments in the resulting list.</p> </li>
+    /// <li> <p> <code>Queued</code>: Include queued deployments in the resulting list.</p> </li>
+    /// <li> <p> <code>In Progress</code>: Include in-progress deployments in the resulting list.</p> </li>
+    /// <li> <p> <code>Succeeded</code>: Include successful deployments in the resulting list.</p> </li>
+    /// <li> <p> <code>Failed</code>: Include failed deployments in the resulting list.</p> </li>
+    /// <li> <p> <code>Stopped</code>: Include stopped deployments in the resulting list.</p> </li>
     /// </ul>
     pub fn include_only_statuses(&self) -> std::option::Option<&[crate::model::DeploymentStatus]> {
         self.include_only_statuses.as_deref()
@@ -10507,8 +9801,7 @@ impl ListDeploymentsInput {
     pub fn create_time_range(&self) -> std::option::Option<&crate::model::TimeRange> {
         self.create_time_range.as_ref()
     }
-    /// <p>An identifier returned from the previous list deployments call. It can be used to
-    /// return the next set of deployments in the list.</p>
+    /// <p>An identifier returned from the previous list deployments call. It can be used to return the next set of deployments in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10532,43 +9825,19 @@ impl std::fmt::Debug for ListDeploymentsInput {
 pub struct ListDeploymentInstancesInput {
     /// <p> The unique ID of a deployment. </p>
     pub deployment_id: std::option::Option<std::string::String>,
-    /// <p>An identifier returned from the previous list deployment instances call. It can be
-    /// used to return the next set of deployment instances in the list.</p>
+    /// <p>An identifier returned from the previous list deployment instances call. It can be used to return the next set of deployment instances in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A subset of instances to list by status:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Pending</code>: Include those instances with pending deployments.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>InProgress</code>: Include those instances where deployments are still
-    /// in progress.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Succeeded</code>: Include those instances with successful
-    /// deployments.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Failed</code>: Include those instances with failed deployments.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Skipped</code>: Include those instances with skipped deployments.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Unknown</code>: Include those instances with deployments in an unknown
-    /// state.</p>
-    /// </li>
+    /// <li> <p> <code>Pending</code>: Include those instances with pending deployments.</p> </li>
+    /// <li> <p> <code>InProgress</code>: Include those instances where deployments are still in progress.</p> </li>
+    /// <li> <p> <code>Succeeded</code>: Include those instances with successful deployments.</p> </li>
+    /// <li> <p> <code>Failed</code>: Include those instances with failed deployments.</p> </li>
+    /// <li> <p> <code>Skipped</code>: Include those instances with skipped deployments.</p> </li>
+    /// <li> <p> <code>Unknown</code>: Include those instances with deployments in an unknown state.</p> </li>
     /// </ul>
     pub instance_status_filter: std::option::Option<std::vec::Vec<crate::model::InstanceStatus>>,
-    /// <p>The set of instances in a blue/green deployment, either those in the original
-    /// environment ("BLUE") or those in the replacement environment ("GREEN"), for which you
-    /// want to view instance information.</p>
+    /// <p>The set of instances in a blue/green deployment, either those in the original environment ("BLUE") or those in the replacement environment ("GREEN"), for which you want to view instance information.</p>
     pub instance_type_filter: std::option::Option<std::vec::Vec<crate::model::InstanceType>>,
 }
 impl ListDeploymentInstancesInput {
@@ -10576,47 +9845,23 @@ impl ListDeploymentInstancesInput {
     pub fn deployment_id(&self) -> std::option::Option<&str> {
         self.deployment_id.as_deref()
     }
-    /// <p>An identifier returned from the previous list deployment instances call. It can be
-    /// used to return the next set of deployment instances in the list.</p>
+    /// <p>An identifier returned from the previous list deployment instances call. It can be used to return the next set of deployment instances in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>A subset of instances to list by status:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Pending</code>: Include those instances with pending deployments.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>InProgress</code>: Include those instances where deployments are still
-    /// in progress.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Succeeded</code>: Include those instances with successful
-    /// deployments.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Failed</code>: Include those instances with failed deployments.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Skipped</code>: Include those instances with skipped deployments.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Unknown</code>: Include those instances with deployments in an unknown
-    /// state.</p>
-    /// </li>
+    /// <li> <p> <code>Pending</code>: Include those instances with pending deployments.</p> </li>
+    /// <li> <p> <code>InProgress</code>: Include those instances where deployments are still in progress.</p> </li>
+    /// <li> <p> <code>Succeeded</code>: Include those instances with successful deployments.</p> </li>
+    /// <li> <p> <code>Failed</code>: Include those instances with failed deployments.</p> </li>
+    /// <li> <p> <code>Skipped</code>: Include those instances with skipped deployments.</p> </li>
+    /// <li> <p> <code>Unknown</code>: Include those instances with deployments in an unknown state.</p> </li>
     /// </ul>
     pub fn instance_status_filter(&self) -> std::option::Option<&[crate::model::InstanceStatus]> {
         self.instance_status_filter.as_deref()
     }
-    /// <p>The set of instances in a blue/green deployment, either those in the original
-    /// environment ("BLUE") or those in the replacement environment ("GREEN"), for which you
-    /// want to view instance information.</p>
+    /// <p>The set of instances in a blue/green deployment, either those in the original environment ("BLUE") or those in the replacement environment ("GREEN"), for which you want to view instance information.</p>
     pub fn instance_type_filter(&self) -> std::option::Option<&[crate::model::InstanceType]> {
         self.instance_type_filter.as_deref()
     }
@@ -10636,21 +9881,17 @@ impl std::fmt::Debug for ListDeploymentInstancesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDeploymentGroupsInput {
-    /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-    /// account.</p>
+    /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
     pub application_name: std::option::Option<std::string::String>,
-    /// <p>An identifier returned from the previous list deployment groups call. It can be used
-    /// to return the next set of deployment groups in the list.</p>
+    /// <p>An identifier returned from the previous list deployment groups call. It can be used to return the next set of deployment groups in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDeploymentGroupsInput {
-    /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-    /// account.</p>
+    /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
     pub fn application_name(&self) -> std::option::Option<&str> {
         self.application_name.as_deref()
     }
-    /// <p>An identifier returned from the previous list deployment groups call. It can be used
-    /// to return the next set of deployment groups in the list.</p>
+    /// <p>An identifier returned from the previous list deployment groups call. It can be used to return the next set of deployment groups in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10668,13 +9909,11 @@ impl std::fmt::Debug for ListDeploymentGroupsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDeploymentConfigsInput {
-    /// <p>An identifier returned from the previous <code>ListDeploymentConfigs</code> call. It
-    /// can be used to return the next set of deployment configurations in the list. </p>
+    /// <p>An identifier returned from the previous <code>ListDeploymentConfigs</code> call. It can be used to return the next set of deployment configurations in the list. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDeploymentConfigsInput {
-    /// <p>An identifier returned from the previous <code>ListDeploymentConfigs</code> call. It
-    /// can be used to return the next set of deployment configurations in the list. </p>
+    /// <p>An identifier returned from the previous <code>ListDeploymentConfigs</code> call. It can be used to return the next set of deployment configurations in the list. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10691,13 +9930,11 @@ impl std::fmt::Debug for ListDeploymentConfigsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListApplicationsInput {
-    /// <p>An identifier returned from the previous list applications call. It can be used to
-    /// return the next set of applications in the list.</p>
+    /// <p>An identifier returned from the previous list applications call. It can be used to return the next set of applications in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListApplicationsInput {
-    /// <p>An identifier returned from the previous list applications call. It can be used to
-    /// return the next set of applications in the list.</p>
+    /// <p>An identifier returned from the previous list applications call. It can be used to return the next set of applications in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10714,40 +9951,20 @@ impl std::fmt::Debug for ListApplicationsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListApplicationRevisionsInput {
-    /// <p> The name of an AWS CodeDeploy application associated with the IAM user or AWS
-    /// account. </p>
+    /// <p> The name of an AWS CodeDeploy application associated with the IAM user or AWS account. </p>
     pub application_name: std::option::Option<std::string::String>,
     /// <p>The column name to use to sort the list results:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>registerTime</code>: Sort by the time the revisions were registered with
-    /// AWS CodeDeploy.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>firstUsedTime</code>: Sort by the time the revisions were first used in
-    /// a deployment.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>lastUsedTime</code>: Sort by the time the revisions were last used in a
-    /// deployment.</p>
-    /// </li>
+    /// <li> <p> <code>registerTime</code>: Sort by the time the revisions were registered with AWS CodeDeploy.</p> </li>
+    /// <li> <p> <code>firstUsedTime</code>: Sort by the time the revisions were first used in a deployment.</p> </li>
+    /// <li> <p> <code>lastUsedTime</code>: Sort by the time the revisions were last used in a deployment.</p> </li>
     /// </ul>
-    /// <p> If not specified or set to null, the results are returned in an arbitrary order.
-    /// </p>
+    /// <p> If not specified or set to null, the results are returned in an arbitrary order. </p>
     pub sort_by: std::option::Option<crate::model::ApplicationRevisionSortBy>,
     /// <p> The order in which to sort the list results: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ascending</code>: ascending order.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>descending</code>: descending order.</p>
-    /// </li>
+    /// <li> <p> <code>ascending</code>: ascending order.</p> </li>
+    /// <li> <p> <code>descending</code>: descending order.</p> </li>
     /// </ul>
     /// <p>If not specified, the results are sorted in ascending order.</p>
     /// <p>If set to null, the results are sorted in an arbitrary order.</p>
@@ -10755,71 +9972,37 @@ pub struct ListApplicationRevisionsInput {
     /// <p> An Amazon S3 bucket name to limit the search for revisions. </p>
     /// <p> If set to null, all of the user's buckets are searched. </p>
     pub s3_bucket: std::option::Option<std::string::String>,
-    /// <p> A key prefix for the set of Amazon S3 objects to limit the search for revisions.
-    /// </p>
+    /// <p> A key prefix for the set of Amazon S3 objects to limit the search for revisions. </p>
     pub s3_key_prefix: std::option::Option<std::string::String>,
-    /// <p> Whether to list revisions based on whether the revision is the target revision of a
-    /// deployment group: </p>
+    /// <p> Whether to list revisions based on whether the revision is the target revision of a deployment group: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>include</code>: List revisions that are target revisions of a deployment
-    /// group.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>exclude</code>: Do not list revisions that are target revisions of a
-    /// deployment group.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ignore</code>: List all revisions.</p>
-    /// </li>
+    /// <li> <p> <code>include</code>: List revisions that are target revisions of a deployment group.</p> </li>
+    /// <li> <p> <code>exclude</code>: Do not list revisions that are target revisions of a deployment group.</p> </li>
+    /// <li> <p> <code>ignore</code>: List all revisions.</p> </li>
     /// </ul>
     pub deployed: std::option::Option<crate::model::ListStateFilterAction>,
-    /// <p>An identifier returned from the previous <code>ListApplicationRevisions</code> call.
-    /// It can be used to return the next set of applications in the list.</p>
+    /// <p>An identifier returned from the previous <code>ListApplicationRevisions</code> call. It can be used to return the next set of applications in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListApplicationRevisionsInput {
-    /// <p> The name of an AWS CodeDeploy application associated with the IAM user or AWS
-    /// account. </p>
+    /// <p> The name of an AWS CodeDeploy application associated with the IAM user or AWS account. </p>
     pub fn application_name(&self) -> std::option::Option<&str> {
         self.application_name.as_deref()
     }
     /// <p>The column name to use to sort the list results:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>registerTime</code>: Sort by the time the revisions were registered with
-    /// AWS CodeDeploy.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>firstUsedTime</code>: Sort by the time the revisions were first used in
-    /// a deployment.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>lastUsedTime</code>: Sort by the time the revisions were last used in a
-    /// deployment.</p>
-    /// </li>
+    /// <li> <p> <code>registerTime</code>: Sort by the time the revisions were registered with AWS CodeDeploy.</p> </li>
+    /// <li> <p> <code>firstUsedTime</code>: Sort by the time the revisions were first used in a deployment.</p> </li>
+    /// <li> <p> <code>lastUsedTime</code>: Sort by the time the revisions were last used in a deployment.</p> </li>
     /// </ul>
-    /// <p> If not specified or set to null, the results are returned in an arbitrary order.
-    /// </p>
+    /// <p> If not specified or set to null, the results are returned in an arbitrary order. </p>
     pub fn sort_by(&self) -> std::option::Option<&crate::model::ApplicationRevisionSortBy> {
         self.sort_by.as_ref()
     }
     /// <p> The order in which to sort the list results: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ascending</code>: ascending order.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>descending</code>: descending order.</p>
-    /// </li>
+    /// <li> <p> <code>ascending</code>: ascending order.</p> </li>
+    /// <li> <p> <code>descending</code>: descending order.</p> </li>
     /// </ul>
     /// <p>If not specified, the results are sorted in ascending order.</p>
     /// <p>If set to null, the results are sorted in an arbitrary order.</p>
@@ -10831,34 +10014,20 @@ impl ListApplicationRevisionsInput {
     pub fn s3_bucket(&self) -> std::option::Option<&str> {
         self.s3_bucket.as_deref()
     }
-    /// <p> A key prefix for the set of Amazon S3 objects to limit the search for revisions.
-    /// </p>
+    /// <p> A key prefix for the set of Amazon S3 objects to limit the search for revisions. </p>
     pub fn s3_key_prefix(&self) -> std::option::Option<&str> {
         self.s3_key_prefix.as_deref()
     }
-    /// <p> Whether to list revisions based on whether the revision is the target revision of a
-    /// deployment group: </p>
+    /// <p> Whether to list revisions based on whether the revision is the target revision of a deployment group: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>include</code>: List revisions that are target revisions of a deployment
-    /// group.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>exclude</code>: Do not list revisions that are target revisions of a
-    /// deployment group.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ignore</code>: List all revisions.</p>
-    /// </li>
+    /// <li> <p> <code>include</code>: List revisions that are target revisions of a deployment group.</p> </li>
+    /// <li> <p> <code>exclude</code>: Do not list revisions that are target revisions of a deployment group.</p> </li>
+    /// <li> <p> <code>ignore</code>: List all revisions.</p> </li>
     /// </ul>
     pub fn deployed(&self) -> std::option::Option<&crate::model::ListStateFilterAction> {
         self.deployed.as_ref()
     }
-    /// <p>An identifier returned from the previous <code>ListApplicationRevisions</code> call.
-    /// It can be used to return the next set of applications in the list.</p>
+    /// <p>An identifier returned from the previous <code>ListApplicationRevisions</code> call. It can be used to return the next set of applications in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -10958,15 +10127,13 @@ impl std::fmt::Debug for GetDeploymentInstanceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeploymentGroupInput {
-    /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-    /// account.</p>
+    /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
     pub application_name: std::option::Option<std::string::String>,
     /// <p>The name of a deployment group for the specified application.</p>
     pub deployment_group_name: std::option::Option<std::string::String>,
 }
 impl GetDeploymentGroupInput {
-    /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-    /// account.</p>
+    /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
     pub fn application_name(&self) -> std::option::Option<&str> {
         self.application_name.as_deref()
     }
@@ -10988,13 +10155,11 @@ impl std::fmt::Debug for GetDeploymentGroupInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeploymentConfigInput {
-    /// <p>The name of a deployment configuration associated with the IAM user or AWS
-    /// account.</p>
+    /// <p>The name of a deployment configuration associated with the IAM user or AWS account.</p>
     pub deployment_config_name: std::option::Option<std::string::String>,
 }
 impl GetDeploymentConfigInput {
-    /// <p>The name of a deployment configuration associated with the IAM user or AWS
-    /// account.</p>
+    /// <p>The name of a deployment configuration associated with the IAM user or AWS account.</p>
     pub fn deployment_config_name(&self) -> std::option::Option<&str> {
         self.deployment_config_name.as_deref()
     }
@@ -11060,13 +10225,11 @@ impl std::fmt::Debug for GetApplicationRevisionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetApplicationInput {
-    /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-    /// account.</p>
+    /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
     pub application_name: std::option::Option<std::string::String>,
 }
 impl GetApplicationInput {
-    /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-    /// account.</p>
+    /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
     pub fn application_name(&self) -> std::option::Option<&str> {
         self.application_name.as_deref()
     }
@@ -11104,13 +10267,11 @@ impl std::fmt::Debug for DeregisterOnPremisesInstanceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteResourcesByExternalIdInput {
-    /// <p>The unique ID of an external resource (for example, a CloudFormation stack ID) that is
-    /// linked to one or more CodeDeploy resources.</p>
+    /// <p>The unique ID of an external resource (for example, a CloudFormation stack ID) that is linked to one or more CodeDeploy resources.</p>
     pub external_id: std::option::Option<std::string::String>,
 }
 impl DeleteResourcesByExternalIdInput {
-    /// <p>The unique ID of an external resource (for example, a CloudFormation stack ID) that is
-    /// linked to one or more CodeDeploy resources.</p>
+    /// <p>The unique ID of an external resource (for example, a CloudFormation stack ID) that is linked to one or more CodeDeploy resources.</p>
     pub fn external_id(&self) -> std::option::Option<&str> {
         self.external_id.as_deref()
     }
@@ -11148,15 +10309,13 @@ impl std::fmt::Debug for DeleteGitHubAccountTokenInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDeploymentGroupInput {
-    /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-    /// account.</p>
+    /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
     pub application_name: std::option::Option<std::string::String>,
     /// <p>The name of a deployment group for the specified application.</p>
     pub deployment_group_name: std::option::Option<std::string::String>,
 }
 impl DeleteDeploymentGroupInput {
-    /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-    /// account.</p>
+    /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
     pub fn application_name(&self) -> std::option::Option<&str> {
         self.application_name.as_deref()
     }
@@ -11178,13 +10337,11 @@ impl std::fmt::Debug for DeleteDeploymentGroupInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDeploymentConfigInput {
-    /// <p>The name of a deployment configuration associated with the IAM user or AWS
-    /// account.</p>
+    /// <p>The name of a deployment configuration associated with the IAM user or AWS account.</p>
     pub deployment_config_name: std::option::Option<std::string::String>,
 }
 impl DeleteDeploymentConfigInput {
-    /// <p>The name of a deployment configuration associated with the IAM user or AWS
-    /// account.</p>
+    /// <p>The name of a deployment configuration associated with the IAM user or AWS account.</p>
     pub fn deployment_config_name(&self) -> std::option::Option<&str> {
         self.deployment_config_name.as_deref()
     }
@@ -11201,13 +10358,11 @@ impl std::fmt::Debug for DeleteDeploymentConfigInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteApplicationInput {
-    /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-    /// account.</p>
+    /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
     pub application_name: std::option::Option<std::string::String>,
 }
 impl DeleteApplicationInput {
-    /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-    /// account.</p>
+    /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
     pub fn application_name(&self) -> std::option::Option<&str> {
         self.application_name.as_deref()
     }
@@ -11224,85 +10379,55 @@ impl std::fmt::Debug for DeleteApplicationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDeploymentGroupInput {
-    /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-    /// account.</p>
+    /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
     pub application_name: std::option::Option<std::string::String>,
     /// <p>The name of a new deployment group for the specified application.</p>
     pub deployment_group_name: std::option::Option<std::string::String>,
-    /// <p>If specified, the deployment configuration name can be either one of the predefined
-    /// configurations provided with AWS CodeDeploy or a custom deployment configuration that
-    /// you create by calling the create deployment configuration operation.</p>
-    /// <p>
-    /// <code>CodeDeployDefault.OneAtATime</code> is the default deployment configuration. It
-    /// is used if a configuration isn't specified for the deployment or deployment
-    /// group.</p>
-    /// <p>For more information about the predefined deployment configurations in AWS CodeDeploy,
-    /// see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working with
-    /// Deployment Configurations in CodeDeploy</a> in the <i>AWS CodeDeploy User
-    /// Guide</i>.</p>
+    /// <p>If specified, the deployment configuration name can be either one of the predefined configurations provided with AWS CodeDeploy or a custom deployment configuration that you create by calling the create deployment configuration operation.</p>
+    /// <p> <code>CodeDeployDefault.OneAtATime</code> is the default deployment configuration. It is used if a configuration isn't specified for the deployment or deployment group.</p>
+    /// <p>For more information about the predefined deployment configurations in AWS CodeDeploy, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working with Deployment Configurations in CodeDeploy</a> in the <i>AWS CodeDeploy User Guide</i>.</p>
     pub deployment_config_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon EC2 tags on which to filter. The deployment group includes EC2 instances
-    /// with any of the specified tags. Cannot be used in the same call as ec2TagSet.</p>
+    /// <p>The Amazon EC2 tags on which to filter. The deployment group includes EC2 instances with any of the specified tags. Cannot be used in the same call as ec2TagSet.</p>
     pub ec2_tag_filters: std::option::Option<std::vec::Vec<crate::model::Ec2TagFilter>>,
-    /// <p>The on-premises instance tags on which to filter. The deployment group includes
-    /// on-premises instances with any of the specified tags. Cannot be used in the same call as
-    /// <code>OnPremisesTagSet</code>.</p>
+    /// <p>The on-premises instance tags on which to filter. The deployment group includes on-premises instances with any of the specified tags. Cannot be used in the same call as <code>OnPremisesTagSet</code>.</p>
     pub on_premises_instance_tag_filters:
         std::option::Option<std::vec::Vec<crate::model::TagFilter>>,
     /// <p>A list of associated Amazon EC2 Auto Scaling groups.</p>
     pub auto_scaling_groups: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A service role Amazon Resource Name (ARN) that allows AWS CodeDeploy to act on the
-    /// user's behalf when interacting with AWS services.</p>
+    /// <p>A service role Amazon Resource Name (ARN) that allows AWS CodeDeploy to act on the user's behalf when interacting with AWS services.</p>
     pub service_role_arn: std::option::Option<std::string::String>,
-    /// <p>Information about triggers to create when the deployment group is created. For
-    /// examples, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create a Trigger for an
-    /// AWS CodeDeploy Event</a> in the <i>AWS CodeDeploy User
-    /// Guide</i>.</p>
+    /// <p>Information about triggers to create when the deployment group is created. For examples, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create a Trigger for an AWS CodeDeploy Event</a> in the <i>AWS CodeDeploy User Guide</i>.</p>
     pub trigger_configurations: std::option::Option<std::vec::Vec<crate::model::TriggerConfig>>,
-    /// <p>Information to add about Amazon CloudWatch alarms when the deployment group is
-    /// created.</p>
+    /// <p>Information to add about Amazon CloudWatch alarms when the deployment group is created.</p>
     pub alarm_configuration: std::option::Option<crate::model::AlarmConfiguration>,
-    /// <p>Configuration information for an automatic rollback that is added when a deployment
-    /// group is created.</p>
+    /// <p>Configuration information for an automatic rollback that is added when a deployment group is created.</p>
     pub auto_rollback_configuration: std::option::Option<crate::model::AutoRollbackConfiguration>,
-    /// <p>Indicates what happens when new EC2 instances are launched mid-deployment and do not
-    /// receive the deployed application revision.</p>
-    /// <p>If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates
-    /// one or more 'auto-update outdated instances' deployments to apply the deployed
-    /// application revision to the new EC2 instances.</p>
-    /// <p>If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a
-    /// deployment to update the new EC2 instances. This may result in instances having
-    /// different revisions.</p>
+    /// <p>Indicates what happens when new EC2 instances are launched mid-deployment and do not receive the deployed application revision.</p>
+    /// <p>If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more 'auto-update outdated instances' deployments to apply the deployed application revision to the new EC2 instances.</p>
+    /// <p>If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new EC2 instances. This may result in instances having different revisions.</p>
     pub outdated_instances_strategy: std::option::Option<crate::model::OutdatedInstancesStrategy>,
-    /// <p>Information about the type of deployment, in-place or blue/green, that you want to run
-    /// and whether to route deployment traffic behind a load balancer.</p>
+    /// <p>Information about the type of deployment, in-place or blue/green, that you want to run and whether to route deployment traffic behind a load balancer.</p>
     pub deployment_style: std::option::Option<crate::model::DeploymentStyle>,
     /// <p>Information about blue/green deployment options for a deployment group.</p>
     pub blue_green_deployment_configuration:
         std::option::Option<crate::model::BlueGreenDeploymentConfiguration>,
     /// <p>Information about the load balancer used in a deployment.</p>
     pub load_balancer_info: std::option::Option<crate::model::LoadBalancerInfo>,
-    /// <p>Information about groups of tags applied to EC2 instances. The deployment group
-    /// includes only EC2 instances identified by all the tag groups. Cannot be used in the same
-    /// call as <code>ec2TagFilters</code>.</p>
+    /// <p>Information about groups of tags applied to EC2 instances. The deployment group includes only EC2 instances identified by all the tag groups. Cannot be used in the same call as <code>ec2TagFilters</code>.</p>
     pub ec2_tag_set: std::option::Option<crate::model::Ec2TagSet>,
-    /// <p> The target Amazon ECS services in the deployment group. This applies only to
-    /// deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service
-    /// is specified as an Amazon ECS cluster and service name pair using the format
-    /// <code><clustername>:<servicename></code>. </p>
+    /// <p> The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code>
+    /// <clustername>
+    /// :
+    /// <servicename></servicename>
+    /// </clustername></code>. </p>
     pub ecs_services: std::option::Option<std::vec::Vec<crate::model::EcsService>>,
-    /// <p>Information about groups of tags applied to on-premises instances. The deployment
-    /// group includes only on-premises instances identified by all of the tag groups. Cannot be
-    /// used in the same call as <code>onPremisesInstanceTagFilters</code>.</p>
+    /// <p>Information about groups of tags applied to on-premises instances. The deployment group includes only on-premises instances identified by all of the tag groups. Cannot be used in the same call as <code>onPremisesInstanceTagFilters</code>.</p>
     pub on_premises_tag_set: std::option::Option<crate::model::OnPremisesTagSet>,
-    /// <p> The metadata that you apply to CodeDeploy deployment groups to help you organize and
-    /// categorize them. Each tag consists of a key and an optional value, both of which you
-    /// define. </p>
+    /// <p> The metadata that you apply to CodeDeploy deployment groups to help you organize and categorize them. Each tag consists of a key and an optional value, both of which you define. </p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateDeploymentGroupInput {
-    /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-    /// account.</p>
+    /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
     pub fn application_name(&self) -> std::option::Option<&str> {
         self.application_name.as_deref()
     }
@@ -11310,28 +10435,17 @@ impl CreateDeploymentGroupInput {
     pub fn deployment_group_name(&self) -> std::option::Option<&str> {
         self.deployment_group_name.as_deref()
     }
-    /// <p>If specified, the deployment configuration name can be either one of the predefined
-    /// configurations provided with AWS CodeDeploy or a custom deployment configuration that
-    /// you create by calling the create deployment configuration operation.</p>
-    /// <p>
-    /// <code>CodeDeployDefault.OneAtATime</code> is the default deployment configuration. It
-    /// is used if a configuration isn't specified for the deployment or deployment
-    /// group.</p>
-    /// <p>For more information about the predefined deployment configurations in AWS CodeDeploy,
-    /// see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working with
-    /// Deployment Configurations in CodeDeploy</a> in the <i>AWS CodeDeploy User
-    /// Guide</i>.</p>
+    /// <p>If specified, the deployment configuration name can be either one of the predefined configurations provided with AWS CodeDeploy or a custom deployment configuration that you create by calling the create deployment configuration operation.</p>
+    /// <p> <code>CodeDeployDefault.OneAtATime</code> is the default deployment configuration. It is used if a configuration isn't specified for the deployment or deployment group.</p>
+    /// <p>For more information about the predefined deployment configurations in AWS CodeDeploy, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working with Deployment Configurations in CodeDeploy</a> in the <i>AWS CodeDeploy User Guide</i>.</p>
     pub fn deployment_config_name(&self) -> std::option::Option<&str> {
         self.deployment_config_name.as_deref()
     }
-    /// <p>The Amazon EC2 tags on which to filter. The deployment group includes EC2 instances
-    /// with any of the specified tags. Cannot be used in the same call as ec2TagSet.</p>
+    /// <p>The Amazon EC2 tags on which to filter. The deployment group includes EC2 instances with any of the specified tags. Cannot be used in the same call as ec2TagSet.</p>
     pub fn ec2_tag_filters(&self) -> std::option::Option<&[crate::model::Ec2TagFilter]> {
         self.ec2_tag_filters.as_deref()
     }
-    /// <p>The on-premises instance tags on which to filter. The deployment group includes
-    /// on-premises instances with any of the specified tags. Cannot be used in the same call as
-    /// <code>OnPremisesTagSet</code>.</p>
+    /// <p>The on-premises instance tags on which to filter. The deployment group includes on-premises instances with any of the specified tags. Cannot be used in the same call as <code>OnPremisesTagSet</code>.</p>
     pub fn on_premises_instance_tag_filters(
         &self,
     ) -> std::option::Option<&[crate::model::TagFilter]> {
@@ -11341,45 +10455,33 @@ impl CreateDeploymentGroupInput {
     pub fn auto_scaling_groups(&self) -> std::option::Option<&[std::string::String]> {
         self.auto_scaling_groups.as_deref()
     }
-    /// <p>A service role Amazon Resource Name (ARN) that allows AWS CodeDeploy to act on the
-    /// user's behalf when interacting with AWS services.</p>
+    /// <p>A service role Amazon Resource Name (ARN) that allows AWS CodeDeploy to act on the user's behalf when interacting with AWS services.</p>
     pub fn service_role_arn(&self) -> std::option::Option<&str> {
         self.service_role_arn.as_deref()
     }
-    /// <p>Information about triggers to create when the deployment group is created. For
-    /// examples, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create a Trigger for an
-    /// AWS CodeDeploy Event</a> in the <i>AWS CodeDeploy User
-    /// Guide</i>.</p>
+    /// <p>Information about triggers to create when the deployment group is created. For examples, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create a Trigger for an AWS CodeDeploy Event</a> in the <i>AWS CodeDeploy User Guide</i>.</p>
     pub fn trigger_configurations(&self) -> std::option::Option<&[crate::model::TriggerConfig]> {
         self.trigger_configurations.as_deref()
     }
-    /// <p>Information to add about Amazon CloudWatch alarms when the deployment group is
-    /// created.</p>
+    /// <p>Information to add about Amazon CloudWatch alarms when the deployment group is created.</p>
     pub fn alarm_configuration(&self) -> std::option::Option<&crate::model::AlarmConfiguration> {
         self.alarm_configuration.as_ref()
     }
-    /// <p>Configuration information for an automatic rollback that is added when a deployment
-    /// group is created.</p>
+    /// <p>Configuration information for an automatic rollback that is added when a deployment group is created.</p>
     pub fn auto_rollback_configuration(
         &self,
     ) -> std::option::Option<&crate::model::AutoRollbackConfiguration> {
         self.auto_rollback_configuration.as_ref()
     }
-    /// <p>Indicates what happens when new EC2 instances are launched mid-deployment and do not
-    /// receive the deployed application revision.</p>
-    /// <p>If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates
-    /// one or more 'auto-update outdated instances' deployments to apply the deployed
-    /// application revision to the new EC2 instances.</p>
-    /// <p>If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a
-    /// deployment to update the new EC2 instances. This may result in instances having
-    /// different revisions.</p>
+    /// <p>Indicates what happens when new EC2 instances are launched mid-deployment and do not receive the deployed application revision.</p>
+    /// <p>If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more 'auto-update outdated instances' deployments to apply the deployed application revision to the new EC2 instances.</p>
+    /// <p>If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new EC2 instances. This may result in instances having different revisions.</p>
     pub fn outdated_instances_strategy(
         &self,
     ) -> std::option::Option<&crate::model::OutdatedInstancesStrategy> {
         self.outdated_instances_strategy.as_ref()
     }
-    /// <p>Information about the type of deployment, in-place or blue/green, that you want to run
-    /// and whether to route deployment traffic behind a load balancer.</p>
+    /// <p>Information about the type of deployment, in-place or blue/green, that you want to run and whether to route deployment traffic behind a load balancer.</p>
     pub fn deployment_style(&self) -> std::option::Option<&crate::model::DeploymentStyle> {
         self.deployment_style.as_ref()
     }
@@ -11393,28 +10495,23 @@ impl CreateDeploymentGroupInput {
     pub fn load_balancer_info(&self) -> std::option::Option<&crate::model::LoadBalancerInfo> {
         self.load_balancer_info.as_ref()
     }
-    /// <p>Information about groups of tags applied to EC2 instances. The deployment group
-    /// includes only EC2 instances identified by all the tag groups. Cannot be used in the same
-    /// call as <code>ec2TagFilters</code>.</p>
+    /// <p>Information about groups of tags applied to EC2 instances. The deployment group includes only EC2 instances identified by all the tag groups. Cannot be used in the same call as <code>ec2TagFilters</code>.</p>
     pub fn ec2_tag_set(&self) -> std::option::Option<&crate::model::Ec2TagSet> {
         self.ec2_tag_set.as_ref()
     }
-    /// <p> The target Amazon ECS services in the deployment group. This applies only to
-    /// deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service
-    /// is specified as an Amazon ECS cluster and service name pair using the format
-    /// <code><clustername>:<servicename></code>. </p>
+    /// <p> The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code>
+    /// <clustername>
+    /// :
+    /// <servicename></servicename>
+    /// </clustername></code>. </p>
     pub fn ecs_services(&self) -> std::option::Option<&[crate::model::EcsService]> {
         self.ecs_services.as_deref()
     }
-    /// <p>Information about groups of tags applied to on-premises instances. The deployment
-    /// group includes only on-premises instances identified by all of the tag groups. Cannot be
-    /// used in the same call as <code>onPremisesInstanceTagFilters</code>.</p>
+    /// <p>Information about groups of tags applied to on-premises instances. The deployment group includes only on-premises instances identified by all of the tag groups. Cannot be used in the same call as <code>onPremisesInstanceTagFilters</code>.</p>
     pub fn on_premises_tag_set(&self) -> std::option::Option<&crate::model::OnPremisesTagSet> {
         self.on_premises_tag_set.as_ref()
     }
-    /// <p> The metadata that you apply to CodeDeploy deployment groups to help you organize and
-    /// categorize them. Each tag consists of a key and an optional value, both of which you
-    /// define. </p>
+    /// <p> The metadata that you apply to CodeDeploy deployment groups to help you organize and categorize them. Each tag consists of a key and an optional value, both of which you define. </p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -11462,30 +10559,18 @@ impl std::fmt::Debug for CreateDeploymentGroupInput {
 pub struct CreateDeploymentConfigInput {
     /// <p>The name of the deployment configuration to create.</p>
     pub deployment_config_name: std::option::Option<std::string::String>,
-    /// <p>The minimum number of healthy instances that should be available at any time during
-    /// the deployment. There are two parameters expected in the input: type and value.</p>
+    /// <p>The minimum number of healthy instances that should be available at any time during the deployment. There are two parameters expected in the input: type and value.</p>
     /// <p>The type parameter takes either of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>HOST_COUNT: The value parameter represents the minimum number of healthy
-    /// instances as an absolute value.</p>
-    /// </li>
-    /// <li>
-    /// <p>FLEET_PERCENT: The value parameter represents the minimum number of healthy
-    /// instances as a percentage of the total number of instances in the deployment. If
-    /// you specify FLEET_PERCENT, at the start of the deployment, AWS CodeDeploy
-    /// converts the percentage to the equivalent number of instances and rounds up
-    /// fractional instances.</p>
-    /// </li>
+    /// <li> <p>HOST_COUNT: The value parameter represents the minimum number of healthy instances as an absolute value.</p> </li>
+    /// <li> <p>FLEET_PERCENT: The value parameter represents the minimum number of healthy instances as a percentage of the total number of instances in the deployment. If you specify FLEET_PERCENT, at the start of the deployment, AWS CodeDeploy converts the percentage to the equivalent number of instances and rounds up fractional instances.</p> </li>
     /// </ul>
     /// <p>The value parameter takes an integer.</p>
-    /// <p>For example, to set a minimum of 95% healthy instance, specify a type of FLEET_PERCENT
-    /// and a value of 95.</p>
+    /// <p>For example, to set a minimum of 95% healthy instance, specify a type of FLEET_PERCENT and a value of 95.</p>
     pub minimum_healthy_hosts: std::option::Option<crate::model::MinimumHealthyHosts>,
     /// <p>The configuration that specifies how the deployment traffic is routed.</p>
     pub traffic_routing_config: std::option::Option<crate::model::TrafficRoutingConfig>,
-    /// <p>The destination platform type for the deployment (<code>Lambda</code>,
-    /// <code>Server</code>, or <code>ECS</code>).</p>
+    /// <p>The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).</p>
     pub compute_platform: std::option::Option<crate::model::ComputePlatform>,
 }
 impl CreateDeploymentConfigInput {
@@ -11493,25 +10578,14 @@ impl CreateDeploymentConfigInput {
     pub fn deployment_config_name(&self) -> std::option::Option<&str> {
         self.deployment_config_name.as_deref()
     }
-    /// <p>The minimum number of healthy instances that should be available at any time during
-    /// the deployment. There are two parameters expected in the input: type and value.</p>
+    /// <p>The minimum number of healthy instances that should be available at any time during the deployment. There are two parameters expected in the input: type and value.</p>
     /// <p>The type parameter takes either of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>HOST_COUNT: The value parameter represents the minimum number of healthy
-    /// instances as an absolute value.</p>
-    /// </li>
-    /// <li>
-    /// <p>FLEET_PERCENT: The value parameter represents the minimum number of healthy
-    /// instances as a percentage of the total number of instances in the deployment. If
-    /// you specify FLEET_PERCENT, at the start of the deployment, AWS CodeDeploy
-    /// converts the percentage to the equivalent number of instances and rounds up
-    /// fractional instances.</p>
-    /// </li>
+    /// <li> <p>HOST_COUNT: The value parameter represents the minimum number of healthy instances as an absolute value.</p> </li>
+    /// <li> <p>FLEET_PERCENT: The value parameter represents the minimum number of healthy instances as a percentage of the total number of instances in the deployment. If you specify FLEET_PERCENT, at the start of the deployment, AWS CodeDeploy converts the percentage to the equivalent number of instances and rounds up fractional instances.</p> </li>
     /// </ul>
     /// <p>The value parameter takes an integer.</p>
-    /// <p>For example, to set a minimum of 95% healthy instance, specify a type of FLEET_PERCENT
-    /// and a value of 95.</p>
+    /// <p>For example, to set a minimum of 95% healthy instance, specify a type of FLEET_PERCENT and a value of 95.</p>
     pub fn minimum_healthy_hosts(&self) -> std::option::Option<&crate::model::MinimumHealthyHosts> {
         self.minimum_healthy_hosts.as_ref()
     }
@@ -11521,8 +10595,7 @@ impl CreateDeploymentConfigInput {
     ) -> std::option::Option<&crate::model::TrafficRoutingConfig> {
         self.traffic_routing_config.as_ref()
     }
-    /// <p>The destination platform type for the deployment (<code>Lambda</code>,
-    /// <code>Server</code>, or <code>ECS</code>).</p>
+    /// <p>The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).</p>
     pub fn compute_platform(&self) -> std::option::Option<&crate::model::ComputePlatform> {
         self.compute_platform.as_ref()
     }
@@ -11542,79 +10615,39 @@ impl std::fmt::Debug for CreateDeploymentConfigInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDeploymentInput {
-    /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-    /// account.</p>
+    /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
     pub application_name: std::option::Option<std::string::String>,
     /// <p>The name of the deployment group.</p>
     pub deployment_group_name: std::option::Option<std::string::String>,
     /// <p> The type and location of the revision to deploy. </p>
     pub revision: std::option::Option<crate::model::RevisionLocation>,
-    /// <p>The name of a deployment configuration associated with the IAM user or AWS
-    /// account.</p>
-    /// <p>If not specified, the value configured in the deployment group is used as the default.
-    /// If the deployment group does not have a deployment configuration associated with it,
-    /// <code>CodeDeployDefault</code>.<code>OneAtATime</code> is used by default.</p>
+    /// <p>The name of a deployment configuration associated with the IAM user or AWS account.</p>
+    /// <p>If not specified, the value configured in the deployment group is used as the default. If the deployment group does not have a deployment configuration associated with it, <code>CodeDeployDefault</code>.<code>OneAtATime</code> is used by default.</p>
     pub deployment_config_name: std::option::Option<std::string::String>,
     /// <p>A comment about the deployment.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p> If true, then if an <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, or
-    /// <code>AfterBlockTraffic</code> deployment lifecycle event to an instance fails, then
-    /// the deployment continues to the next deployment lifecycle event. For example, if
-    /// <code>ApplicationStop</code> fails, the deployment continues with
-    /// <code>DownloadBundle</code>. If <code>BeforeBlockTraffic</code> fails, the
-    /// deployment continues with <code>BlockTraffic</code>. If <code>AfterBlockTraffic</code>
-    /// fails, the deployment continues with <code>ApplicationStop</code>. </p>
-    ///
-    /// <p> If false or not specified, then if a lifecycle event fails during a deployment to an
-    /// instance, that deployment fails. If deployment to that instance is part of an overall
-    /// deployment and the number of healthy hosts is not less than the minimum number of
-    /// healthy hosts, then a deployment to the next instance is attempted. </p>
-    ///
-    /// <p> During a deployment, the AWS CodeDeploy agent runs the scripts specified for
-    /// <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and
-    /// <code>AfterBlockTraffic</code> in the AppSpec file from the previous successful
-    /// deployment. (All other scripts are run from the AppSpec file in the current deployment.)
-    /// If one of these scripts contains an error and does not run successfully, the deployment
-    /// can fail. </p>
-    ///
-    /// <p> If the cause of the failure is a script from the last successful deployment that will
-    /// never run successfully, create a new deployment and use
-    /// <code>ignoreApplicationStopFailures</code> to specify that the
-    /// <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and
-    /// <code>AfterBlockTraffic</code> failures should be ignored. </p>
+    /// <p> If true, then if an <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, or <code>AfterBlockTraffic</code> deployment lifecycle event to an instance fails, then the deployment continues to the next deployment lifecycle event. For example, if <code>ApplicationStop</code> fails, the deployment continues with <code>DownloadBundle</code>. If <code>BeforeBlockTraffic</code> fails, the deployment continues with <code>BlockTraffic</code>. If <code>AfterBlockTraffic</code> fails, the deployment continues with <code>ApplicationStop</code>. </p>
+    /// <p> If false or not specified, then if a lifecycle event fails during a deployment to an instance, that deployment fails. If deployment to that instance is part of an overall deployment and the number of healthy hosts is not less than the minimum number of healthy hosts, then a deployment to the next instance is attempted. </p>
+    /// <p> During a deployment, the AWS CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the AppSpec file from the previous successful deployment. (All other scripts are run from the AppSpec file in the current deployment.) If one of these scripts contains an error and does not run successfully, the deployment can fail. </p>
+    /// <p> If the cause of the failure is a script from the last successful deployment that will never run successfully, create a new deployment and use <code>ignoreApplicationStopFailures</code> to specify that the <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> failures should be ignored. </p>
     pub ignore_application_stop_failures: bool,
-    /// <p> Information about the instances that belong to the replacement environment in a
-    /// blue/green deployment. </p>
+    /// <p> Information about the instances that belong to the replacement environment in a blue/green deployment. </p>
     pub target_instances: std::option::Option<crate::model::TargetInstances>,
-    /// <p>Configuration information for an automatic rollback that is added when a deployment is
-    /// created.</p>
+    /// <p>Configuration information for an automatic rollback that is added when a deployment is created.</p>
     pub auto_rollback_configuration: std::option::Option<crate::model::AutoRollbackConfiguration>,
-    /// <p> Indicates whether to deploy to all instances or only to instances that are not
-    /// running the latest application revision. </p>
+    /// <p> Indicates whether to deploy to all instances or only to instances that are not running the latest application revision. </p>
     pub update_outdated_instances_only: bool,
-    /// <p>Information about how AWS CodeDeploy handles files that already exist in a deployment
-    /// target location but weren't part of the previous successful deployment.</p>
-    /// <p>The <code>fileExistsBehavior</code> parameter takes any of the following
-    /// values:</p>
+    /// <p>Information about how AWS CodeDeploy handles files that already exist in a deployment target location but weren't part of the previous successful deployment.</p>
+    /// <p>The <code>fileExistsBehavior</code> parameter takes any of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>DISALLOW: The deployment fails. This is also the default behavior if no option
-    /// is specified.</p>
-    /// </li>
-    /// <li>
-    /// <p>OVERWRITE: The version of the file from the application revision currently
-    /// being deployed replaces the version already on the instance.</p>
-    /// </li>
-    /// <li>
-    /// <p>RETAIN: The version of the file already on the instance is kept and used as
-    /// part of the new deployment.</p>
-    /// </li>
+    /// <li> <p>DISALLOW: The deployment fails. This is also the default behavior if no option is specified.</p> </li>
+    /// <li> <p>OVERWRITE: The version of the file from the application revision currently being deployed replaces the version already on the instance.</p> </li>
+    /// <li> <p>RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.</p> </li>
     /// </ul>
     pub file_exists_behavior: std::option::Option<crate::model::FileExistsBehavior>,
 }
 impl CreateDeploymentInput {
-    /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
-    /// account.</p>
+    /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS account.</p>
     pub fn application_name(&self) -> std::option::Option<&str> {
         self.application_name.as_deref()
     }
@@ -11626,11 +10659,8 @@ impl CreateDeploymentInput {
     pub fn revision(&self) -> std::option::Option<&crate::model::RevisionLocation> {
         self.revision.as_ref()
     }
-    /// <p>The name of a deployment configuration associated with the IAM user or AWS
-    /// account.</p>
-    /// <p>If not specified, the value configured in the deployment group is used as the default.
-    /// If the deployment group does not have a deployment configuration associated with it,
-    /// <code>CodeDeployDefault</code>.<code>OneAtATime</code> is used by default.</p>
+    /// <p>The name of a deployment configuration associated with the IAM user or AWS account.</p>
+    /// <p>If not specified, the value configured in the deployment group is used as the default. If the deployment group does not have a deployment configuration associated with it, <code>CodeDeployDefault</code>.<code>OneAtATime</code> is used by default.</p>
     pub fn deployment_config_name(&self) -> std::option::Option<&str> {
         self.deployment_config_name.as_deref()
     }
@@ -11638,68 +10668,33 @@ impl CreateDeploymentInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p> If true, then if an <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, or
-    /// <code>AfterBlockTraffic</code> deployment lifecycle event to an instance fails, then
-    /// the deployment continues to the next deployment lifecycle event. For example, if
-    /// <code>ApplicationStop</code> fails, the deployment continues with
-    /// <code>DownloadBundle</code>. If <code>BeforeBlockTraffic</code> fails, the
-    /// deployment continues with <code>BlockTraffic</code>. If <code>AfterBlockTraffic</code>
-    /// fails, the deployment continues with <code>ApplicationStop</code>. </p>
-    ///
-    /// <p> If false or not specified, then if a lifecycle event fails during a deployment to an
-    /// instance, that deployment fails. If deployment to that instance is part of an overall
-    /// deployment and the number of healthy hosts is not less than the minimum number of
-    /// healthy hosts, then a deployment to the next instance is attempted. </p>
-    ///
-    /// <p> During a deployment, the AWS CodeDeploy agent runs the scripts specified for
-    /// <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and
-    /// <code>AfterBlockTraffic</code> in the AppSpec file from the previous successful
-    /// deployment. (All other scripts are run from the AppSpec file in the current deployment.)
-    /// If one of these scripts contains an error and does not run successfully, the deployment
-    /// can fail. </p>
-    ///
-    /// <p> If the cause of the failure is a script from the last successful deployment that will
-    /// never run successfully, create a new deployment and use
-    /// <code>ignoreApplicationStopFailures</code> to specify that the
-    /// <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and
-    /// <code>AfterBlockTraffic</code> failures should be ignored. </p>
+    /// <p> If true, then if an <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, or <code>AfterBlockTraffic</code> deployment lifecycle event to an instance fails, then the deployment continues to the next deployment lifecycle event. For example, if <code>ApplicationStop</code> fails, the deployment continues with <code>DownloadBundle</code>. If <code>BeforeBlockTraffic</code> fails, the deployment continues with <code>BlockTraffic</code>. If <code>AfterBlockTraffic</code> fails, the deployment continues with <code>ApplicationStop</code>. </p>
+    /// <p> If false or not specified, then if a lifecycle event fails during a deployment to an instance, that deployment fails. If deployment to that instance is part of an overall deployment and the number of healthy hosts is not less than the minimum number of healthy hosts, then a deployment to the next instance is attempted. </p>
+    /// <p> During a deployment, the AWS CodeDeploy agent runs the scripts specified for <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> in the AppSpec file from the previous successful deployment. (All other scripts are run from the AppSpec file in the current deployment.) If one of these scripts contains an error and does not run successfully, the deployment can fail. </p>
+    /// <p> If the cause of the failure is a script from the last successful deployment that will never run successfully, create a new deployment and use <code>ignoreApplicationStopFailures</code> to specify that the <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and <code>AfterBlockTraffic</code> failures should be ignored. </p>
     pub fn ignore_application_stop_failures(&self) -> bool {
         self.ignore_application_stop_failures
     }
-    /// <p> Information about the instances that belong to the replacement environment in a
-    /// blue/green deployment. </p>
+    /// <p> Information about the instances that belong to the replacement environment in a blue/green deployment. </p>
     pub fn target_instances(&self) -> std::option::Option<&crate::model::TargetInstances> {
         self.target_instances.as_ref()
     }
-    /// <p>Configuration information for an automatic rollback that is added when a deployment is
-    /// created.</p>
+    /// <p>Configuration information for an automatic rollback that is added when a deployment is created.</p>
     pub fn auto_rollback_configuration(
         &self,
     ) -> std::option::Option<&crate::model::AutoRollbackConfiguration> {
         self.auto_rollback_configuration.as_ref()
     }
-    /// <p> Indicates whether to deploy to all instances or only to instances that are not
-    /// running the latest application revision. </p>
+    /// <p> Indicates whether to deploy to all instances or only to instances that are not running the latest application revision. </p>
     pub fn update_outdated_instances_only(&self) -> bool {
         self.update_outdated_instances_only
     }
-    /// <p>Information about how AWS CodeDeploy handles files that already exist in a deployment
-    /// target location but weren't part of the previous successful deployment.</p>
-    /// <p>The <code>fileExistsBehavior</code> parameter takes any of the following
-    /// values:</p>
+    /// <p>Information about how AWS CodeDeploy handles files that already exist in a deployment target location but weren't part of the previous successful deployment.</p>
+    /// <p>The <code>fileExistsBehavior</code> parameter takes any of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>DISALLOW: The deployment fails. This is also the default behavior if no option
-    /// is specified.</p>
-    /// </li>
-    /// <li>
-    /// <p>OVERWRITE: The version of the file from the application revision currently
-    /// being deployed replaces the version already on the instance.</p>
-    /// </li>
-    /// <li>
-    /// <p>RETAIN: The version of the file already on the instance is kept and used as
-    /// part of the new deployment.</p>
-    /// </li>
+    /// <li> <p>DISALLOW: The deployment fails. This is also the default behavior if no option is specified.</p> </li>
+    /// <li> <p>OVERWRITE: The version of the file from the application revision currently being deployed replaces the version already on the instance.</p> </li>
+    /// <li> <p>RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.</p> </li>
     /// </ul>
     pub fn file_exists_behavior(&self) -> std::option::Option<&crate::model::FileExistsBehavior> {
         self.file_exists_behavior.as_ref()
@@ -11735,31 +10730,23 @@ impl std::fmt::Debug for CreateDeploymentInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateApplicationInput {
-    /// <p>The name of the application. This name must be unique with the applicable IAM user or
-    /// AWS account.</p>
+    /// <p>The name of the application. This name must be unique with the applicable IAM user or AWS account.</p>
     pub application_name: std::option::Option<std::string::String>,
-    /// <p> The destination platform type for the deployment (<code>Lambda</code>,
-    /// <code>Server</code>, or <code>ECS</code>).</p>
+    /// <p> The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).</p>
     pub compute_platform: std::option::Option<crate::model::ComputePlatform>,
-    /// <p> The metadata that you apply to CodeDeploy applications to help you organize and
-    /// categorize them. Each tag consists of a key and an optional value, both of which you
-    /// define. </p>
+    /// <p> The metadata that you apply to CodeDeploy applications to help you organize and categorize them. Each tag consists of a key and an optional value, both of which you define. </p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateApplicationInput {
-    /// <p>The name of the application. This name must be unique with the applicable IAM user or
-    /// AWS account.</p>
+    /// <p>The name of the application. This name must be unique with the applicable IAM user or AWS account.</p>
     pub fn application_name(&self) -> std::option::Option<&str> {
         self.application_name.as_deref()
     }
-    /// <p> The destination platform type for the deployment (<code>Lambda</code>,
-    /// <code>Server</code>, or <code>ECS</code>).</p>
+    /// <p> The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).</p>
     pub fn compute_platform(&self) -> std::option::Option<&crate::model::ComputePlatform> {
         self.compute_platform.as_ref()
     }
-    /// <p> The metadata that you apply to CodeDeploy applications to help you organize and
-    /// categorize them. Each tag consists of a key and an optional value, both of which you
-    /// define. </p>
+    /// <p> The metadata that you apply to CodeDeploy applications to help you organize and categorize them. Each tag consists of a key and an optional value, both of which you define. </p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -11778,25 +10765,17 @@ impl std::fmt::Debug for CreateApplicationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContinueDeploymentInput {
-    /// <p> The unique ID of a blue/green deployment for which you want to start rerouting
-    /// traffic to the replacement environment. </p>
+    /// <p> The unique ID of a blue/green deployment for which you want to start rerouting traffic to the replacement environment. </p>
     pub deployment_id: std::option::Option<std::string::String>,
-    /// <p> The status of the deployment's waiting period. <code>READY_WAIT</code> indicates that
-    /// the deployment is ready to start shifting traffic. <code>TERMINATION_WAIT</code>
-    /// indicates that the traffic is shifted, but the original target is not terminated.
-    /// </p>
+    /// <p> The status of the deployment's waiting period. <code>READY_WAIT</code> indicates that the deployment is ready to start shifting traffic. <code>TERMINATION_WAIT</code> indicates that the traffic is shifted, but the original target is not terminated. </p>
     pub deployment_wait_type: std::option::Option<crate::model::DeploymentWaitType>,
 }
 impl ContinueDeploymentInput {
-    /// <p> The unique ID of a blue/green deployment for which you want to start rerouting
-    /// traffic to the replacement environment. </p>
+    /// <p> The unique ID of a blue/green deployment for which you want to start rerouting traffic to the replacement environment. </p>
     pub fn deployment_id(&self) -> std::option::Option<&str> {
         self.deployment_id.as_deref()
     }
-    /// <p> The status of the deployment's waiting period. <code>READY_WAIT</code> indicates that
-    /// the deployment is ready to start shifting traffic. <code>TERMINATION_WAIT</code>
-    /// indicates that the traffic is shifted, but the original target is not terminated.
-    /// </p>
+    /// <p> The status of the deployment's waiting period. <code>READY_WAIT</code> indicates that the deployment is ready to start shifting traffic. <code>TERMINATION_WAIT</code> indicates that the traffic is shifted, but the original target is not terminated. </p>
     pub fn deployment_wait_type(&self) -> std::option::Option<&crate::model::DeploymentWaitType> {
         self.deployment_wait_type.as_ref()
     }
@@ -11814,13 +10793,11 @@ impl std::fmt::Debug for ContinueDeploymentInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetOnPremisesInstancesInput {
-    /// <p>The names of the on-premises instances about which to get information. The maximum
-    /// number of instance names you can specify is 25.</p>
+    /// <p>The names of the on-premises instances about which to get information. The maximum number of instance names you can specify is 25.</p>
     pub instance_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetOnPremisesInstancesInput {
-    /// <p>The names of the on-premises instances about which to get information. The maximum
-    /// number of instance names you can specify is 25.</p>
+    /// <p>The names of the on-premises instances about which to get information. The maximum number of instance names you can specify is 25.</p>
     pub fn instance_names(&self) -> std::option::Option<&[std::string::String]> {
         self.instance_names.as_deref()
     }
@@ -11839,31 +10816,16 @@ impl std::fmt::Debug for BatchGetOnPremisesInstancesInput {
 pub struct BatchGetDeploymentTargetsInput {
     /// <p> The unique ID of a deployment. </p>
     pub deployment_id: std::option::Option<std::string::String>,
-    /// <p> The unique IDs of the deployment targets. The compute platform of the deployment
-    /// determines the type of the targets and their formats. The maximum number of deployment
-    /// target IDs you can specify is 25.</p>
+    /// <p> The unique IDs of the deployment targets. The compute platform of the deployment determines the type of the targets and their formats. The maximum number of deployment target IDs you can specify is 25.</p>
     /// <ul>
-    /// <li>
-    /// <p> For deployments that use the EC2/On-premises compute platform, the target IDs
-    /// are EC2 or on-premises instances IDs, and their target type is
-    /// <code>instanceTarget</code>. </p>
-    /// </li>
-    /// <li>
-    /// <p> For deployments that use the AWS Lambda compute platform, the target IDs are
-    /// the names of Lambda functions, and their target type is
-    /// <code>instanceTarget</code>. </p>
-    /// </li>
-    /// <li>
-    /// <p> For deployments that use the Amazon ECS compute platform, the target IDs are
-    /// pairs of Amazon ECS clusters and services specified using the format
-    /// <code><clustername>:<servicename></code>. Their target type is
-    /// <code>ecsTarget</code>. </p>
-    /// </li>
-    /// <li>
-    /// <p> For deployments that are deployed with AWS CloudFormation, the target IDs are
-    /// CloudFormation stack IDs. Their target type is
-    /// <code>cloudFormationTarget</code>. </p>
-    /// </li>
+    /// <li> <p> For deployments that use the EC2/On-premises compute platform, the target IDs are EC2 or on-premises instances IDs, and their target type is <code>instanceTarget</code>. </p> </li>
+    /// <li> <p> For deployments that use the AWS Lambda compute platform, the target IDs are the names of Lambda functions, and their target type is <code>instanceTarget</code>. </p> </li>
+    /// <li> <p> For deployments that use the Amazon ECS compute platform, the target IDs are pairs of Amazon ECS clusters and services specified using the format <code>
+    /// <clustername>
+    /// :
+    /// <servicename></servicename>
+    /// </clustername></code>. Their target type is <code>ecsTarget</code>. </p> </li>
+    /// <li> <p> For deployments that are deployed with AWS CloudFormation, the target IDs are CloudFormation stack IDs. Their target type is <code>cloudFormationTarget</code>. </p> </li>
     /// </ul>
     pub target_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
@@ -11872,31 +10834,16 @@ impl BatchGetDeploymentTargetsInput {
     pub fn deployment_id(&self) -> std::option::Option<&str> {
         self.deployment_id.as_deref()
     }
-    /// <p> The unique IDs of the deployment targets. The compute platform of the deployment
-    /// determines the type of the targets and their formats. The maximum number of deployment
-    /// target IDs you can specify is 25.</p>
+    /// <p> The unique IDs of the deployment targets. The compute platform of the deployment determines the type of the targets and their formats. The maximum number of deployment target IDs you can specify is 25.</p>
     /// <ul>
-    /// <li>
-    /// <p> For deployments that use the EC2/On-premises compute platform, the target IDs
-    /// are EC2 or on-premises instances IDs, and their target type is
-    /// <code>instanceTarget</code>. </p>
-    /// </li>
-    /// <li>
-    /// <p> For deployments that use the AWS Lambda compute platform, the target IDs are
-    /// the names of Lambda functions, and their target type is
-    /// <code>instanceTarget</code>. </p>
-    /// </li>
-    /// <li>
-    /// <p> For deployments that use the Amazon ECS compute platform, the target IDs are
-    /// pairs of Amazon ECS clusters and services specified using the format
-    /// <code><clustername>:<servicename></code>. Their target type is
-    /// <code>ecsTarget</code>. </p>
-    /// </li>
-    /// <li>
-    /// <p> For deployments that are deployed with AWS CloudFormation, the target IDs are
-    /// CloudFormation stack IDs. Their target type is
-    /// <code>cloudFormationTarget</code>. </p>
-    /// </li>
+    /// <li> <p> For deployments that use the EC2/On-premises compute platform, the target IDs are EC2 or on-premises instances IDs, and their target type is <code>instanceTarget</code>. </p> </li>
+    /// <li> <p> For deployments that use the AWS Lambda compute platform, the target IDs are the names of Lambda functions, and their target type is <code>instanceTarget</code>. </p> </li>
+    /// <li> <p> For deployments that use the Amazon ECS compute platform, the target IDs are pairs of Amazon ECS clusters and services specified using the format <code>
+    /// <clustername>
+    /// :
+    /// <servicename></servicename>
+    /// </clustername></code>. Their target type is <code>ecsTarget</code>. </p> </li>
+    /// <li> <p> For deployments that are deployed with AWS CloudFormation, the target IDs are CloudFormation stack IDs. Their target type is <code>cloudFormationTarget</code>. </p> </li>
     /// </ul>
     pub fn target_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.target_ids.as_deref()
@@ -11915,13 +10862,11 @@ impl std::fmt::Debug for BatchGetDeploymentTargetsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetDeploymentsInput {
-    /// <p> A list of deployment IDs, separated by spaces. The maximum number of deployment IDs
-    /// you can specify is 25.</p>
+    /// <p> A list of deployment IDs, separated by spaces. The maximum number of deployment IDs you can specify is 25.</p>
     pub deployment_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetDeploymentsInput {
-    /// <p> A list of deployment IDs, separated by spaces. The maximum number of deployment IDs
-    /// you can specify is 25.</p>
+    /// <p> A list of deployment IDs, separated by spaces. The maximum number of deployment IDs you can specify is 25.</p>
     pub fn deployment_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.deployment_ids.as_deref()
     }
@@ -11940,8 +10885,7 @@ impl std::fmt::Debug for BatchGetDeploymentsInput {
 pub struct BatchGetDeploymentInstancesInput {
     /// <p> The unique ID of a deployment. </p>
     pub deployment_id: std::option::Option<std::string::String>,
-    /// <p>The unique IDs of instances used in the deployment. The maximum number of instance IDs
-    /// you can specify is 25.</p>
+    /// <p>The unique IDs of instances used in the deployment. The maximum number of instance IDs you can specify is 25.</p>
     pub instance_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetDeploymentInstancesInput {
@@ -11949,8 +10893,7 @@ impl BatchGetDeploymentInstancesInput {
     pub fn deployment_id(&self) -> std::option::Option<&str> {
         self.deployment_id.as_deref()
     }
-    /// <p>The unique IDs of instances used in the deployment. The maximum number of instance IDs
-    /// you can specify is 25.</p>
+    /// <p>The unique IDs of instances used in the deployment. The maximum number of instance IDs you can specify is 25.</p>
     pub fn instance_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.instance_ids.as_deref()
     }
@@ -11968,15 +10911,13 @@ impl std::fmt::Debug for BatchGetDeploymentInstancesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetDeploymentGroupsInput {
-    /// <p>The name of an AWS CodeDeploy application associated with the applicable IAM user or
-    /// AWS account.</p>
+    /// <p>The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>
     pub application_name: std::option::Option<std::string::String>,
     /// <p>The names of the deployment groups.</p>
     pub deployment_group_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetDeploymentGroupsInput {
-    /// <p>The name of an AWS CodeDeploy application associated with the applicable IAM user or
-    /// AWS account.</p>
+    /// <p>The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account.</p>
     pub fn application_name(&self) -> std::option::Option<&str> {
         self.application_name.as_deref()
     }
@@ -11998,13 +10939,11 @@ impl std::fmt::Debug for BatchGetDeploymentGroupsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetApplicationsInput {
-    /// <p>A list of application names separated by spaces. The maximum number of application
-    /// names you can specify is 100.</p>
+    /// <p>A list of application names separated by spaces. The maximum number of application names you can specify is 100.</p>
     pub application_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetApplicationsInput {
-    /// <p>A list of application names separated by spaces. The maximum number of application
-    /// names you can specify is 100.</p>
+    /// <p>A list of application names separated by spaces. The maximum number of application names you can specify is 100.</p>
     pub fn application_names(&self) -> std::option::Option<&[std::string::String]> {
         self.application_names.as_deref()
     }
@@ -12021,23 +10960,17 @@ impl std::fmt::Debug for BatchGetApplicationsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetApplicationRevisionsInput {
-    /// <p>The name of an AWS CodeDeploy application about which to get revision
-    /// information.</p>
+    /// <p>The name of an AWS CodeDeploy application about which to get revision information.</p>
     pub application_name: std::option::Option<std::string::String>,
-    /// <p>An array of <code>RevisionLocation</code> objects that specify information to get
-    /// about the application revisions, including type and location. The maximum number of
-    /// <code>RevisionLocation</code> objects you can specify is 25.</p>
+    /// <p>An array of <code>RevisionLocation</code> objects that specify information to get about the application revisions, including type and location. The maximum number of <code>RevisionLocation</code> objects you can specify is 25.</p>
     pub revisions: std::option::Option<std::vec::Vec<crate::model::RevisionLocation>>,
 }
 impl BatchGetApplicationRevisionsInput {
-    /// <p>The name of an AWS CodeDeploy application about which to get revision
-    /// information.</p>
+    /// <p>The name of an AWS CodeDeploy application about which to get revision information.</p>
     pub fn application_name(&self) -> std::option::Option<&str> {
         self.application_name.as_deref()
     }
-    /// <p>An array of <code>RevisionLocation</code> objects that specify information to get
-    /// about the application revisions, including type and location. The maximum number of
-    /// <code>RevisionLocation</code> objects you can specify is 25.</p>
+    /// <p>An array of <code>RevisionLocation</code> objects that specify information to get about the application revisions, including type and location. The maximum number of <code>RevisionLocation</code> objects you can specify is 25.</p>
     pub fn revisions(&self) -> std::option::Option<&[crate::model::RevisionLocation]> {
         self.revisions.as_deref()
     }
@@ -12056,16 +10989,14 @@ impl std::fmt::Debug for BatchGetApplicationRevisionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddTagsToOnPremisesInstancesInput {
     /// <p>The tag key-value pairs to add to the on-premises instances.</p>
-    /// <p>Keys and values are both required. Keys cannot be null or empty strings. Value-only
-    /// tags are not allowed.</p>
+    /// <p>Keys and values are both required. Keys cannot be null or empty strings. Value-only tags are not allowed.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The names of the on-premises instances to which to add tags.</p>
     pub instance_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AddTagsToOnPremisesInstancesInput {
     /// <p>The tag key-value pairs to add to the on-premises instances.</p>
-    /// <p>Keys and values are both required. Keys cannot be null or empty strings. Value-only
-    /// tags are not allowed.</p>
+    /// <p>Keys and values are both required. Keys cannot be null or empty strings. Value-only tags are not allowed.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }

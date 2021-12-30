@@ -62,22 +62,14 @@ pub mod create_device_pool_input {
             self.rules = input;
             self
         }
-        /// <p>The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are
-        /// available and meet the criteria that you assign for the <code>rules</code> parameter. Depending on how many
-        /// devices meet these constraints, your device pool might contain fewer devices than the value for this
-        /// parameter.</p>
-        /// <p>By specifying the maximum number of devices, you can control the costs that you incur
-        /// by running tests.</p>
+        /// <p>The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are available and meet the criteria that you assign for the <code>rules</code> parameter. Depending on how many devices meet these constraints, your device pool might contain fewer devices than the value for this parameter.</p>
+        /// <p>By specifying the maximum number of devices, you can control the costs that you incur by running tests.</p>
         pub fn max_devices(mut self, input: i32) -> Self {
             self.max_devices = Some(input);
             self
         }
-        /// <p>The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are
-        /// available and meet the criteria that you assign for the <code>rules</code> parameter. Depending on how many
-        /// devices meet these constraints, your device pool might contain fewer devices than the value for this
-        /// parameter.</p>
-        /// <p>By specifying the maximum number of devices, you can control the costs that you incur
-        /// by running tests.</p>
+        /// <p>The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are available and meet the criteria that you assign for the <code>rules</code> parameter. Depending on how many devices meet these constraints, your device pool might contain fewer devices than the value for this parameter.</p>
+        /// <p>By specifying the maximum number of devices, you can control the costs that you incur by running tests.</p>
         pub fn set_max_devices(mut self, input: std::option::Option<i32>) -> Self {
             self.max_devices = input;
             self
@@ -255,14 +247,12 @@ pub mod create_instance_profile_input {
             self.description = input;
             self
         }
-        /// <p>When set to <code>true</code>, Device Farm removes app packages after a test run. The default value is
-        /// <code>false</code> for private devices.</p>
+        /// <p>When set to <code>true</code>, Device Farm removes app packages after a test run. The default value is <code>false</code> for private devices.</p>
         pub fn package_cleanup(mut self, input: bool) -> Self {
             self.package_cleanup = Some(input);
             self
         }
-        /// <p>When set to <code>true</code>, Device Farm removes app packages after a test run. The default value is
-        /// <code>false</code> for private devices.</p>
+        /// <p>When set to <code>true</code>, Device Farm removes app packages after a test run. The default value is <code>false</code> for private devices.</p>
         pub fn set_package_cleanup(mut self, input: std::option::Option<bool>) -> Self {
             self.package_cleanup = input;
             self
@@ -271,10 +261,8 @@ pub mod create_instance_profile_input {
         ///
         /// To override the contents of this collection use [`set_exclude_app_packages_from_cleanup`](Self::set_exclude_app_packages_from_cleanup).
         ///
-        /// <p>An array of strings that specifies the list of app packages that should not be cleaned up from the device
-        /// after a test run.</p>
-        /// <p>The list of packages is considered only if you set <code>packageCleanup</code> to
-        /// <code>true</code>.</p>
+        /// <p>An array of strings that specifies the list of app packages that should not be cleaned up from the device after a test run.</p>
+        /// <p>The list of packages is considered only if you set <code>packageCleanup</code> to <code>true</code>.</p>
         pub fn exclude_app_packages_from_cleanup(
             mut self,
             input: impl Into<std::string::String>,
@@ -284,10 +272,8 @@ pub mod create_instance_profile_input {
             self.exclude_app_packages_from_cleanup = Some(v);
             self
         }
-        /// <p>An array of strings that specifies the list of app packages that should not be cleaned up from the device
-        /// after a test run.</p>
-        /// <p>The list of packages is considered only if you set <code>packageCleanup</code> to
-        /// <code>true</code>.</p>
+        /// <p>An array of strings that specifies the list of app packages that should not be cleaned up from the device after a test run.</p>
+        /// <p>The list of packages is considered only if you set <code>packageCleanup</code> to <code>true</code>.</p>
         pub fn set_exclude_app_packages_from_cleanup(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -295,14 +281,12 @@ pub mod create_instance_profile_input {
             self.exclude_app_packages_from_cleanup = input;
             self
         }
-        /// <p>When set to <code>true</code>, Device Farm reboots the instance after a test run. The default value is
-        /// <code>true</code>.</p>
+        /// <p>When set to <code>true</code>, Device Farm reboots the instance after a test run. The default value is <code>true</code>.</p>
         pub fn reboot_after_use(mut self, input: bool) -> Self {
             self.reboot_after_use = Some(input);
             self
         }
-        /// <p>When set to <code>true</code>, Device Farm reboots the instance after a test run. The default value is
-        /// <code>true</code>.</p>
+        /// <p>When set to <code>true</code>, Device Farm reboots the instance after a test run. The default value is <code>true</code>.</p>
         pub fn set_reboot_after_use(mut self, input: std::option::Option<bool>) -> Self {
             self.reboot_after_use = input;
             self
@@ -468,14 +452,12 @@ pub mod create_network_profile_input {
         pub(crate) downlink_loss_percent: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the project for which you want to create a
-        /// network profile.</p>
+        /// <p>The Amazon Resource Name (ARN) of the project for which you want to create a network profile.</p>
         pub fn project_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.project_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the project for which you want to create a
-        /// network profile.</p>
+        /// <p>The Amazon Resource Name (ARN) of the project for which you want to create a network profile.</p>
         pub fn set_project_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.project_arn = input;
             self
@@ -513,86 +495,72 @@ pub mod create_network_profile_input {
             self.r#type = input;
             self
         }
-        /// <p>The data throughput rate in bits per second, as an integer from 0 to
-        /// 104857600.</p>
+        /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
         pub fn uplink_bandwidth_bits(mut self, input: i64) -> Self {
             self.uplink_bandwidth_bits = Some(input);
             self
         }
-        /// <p>The data throughput rate in bits per second, as an integer from 0 to
-        /// 104857600.</p>
+        /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
         pub fn set_uplink_bandwidth_bits(mut self, input: std::option::Option<i64>) -> Self {
             self.uplink_bandwidth_bits = input;
             self
         }
-        /// <p>The data throughput rate in bits per second, as an integer from 0 to
-        /// 104857600.</p>
+        /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
         pub fn downlink_bandwidth_bits(mut self, input: i64) -> Self {
             self.downlink_bandwidth_bits = Some(input);
             self
         }
-        /// <p>The data throughput rate in bits per second, as an integer from 0 to
-        /// 104857600.</p>
+        /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
         pub fn set_downlink_bandwidth_bits(mut self, input: std::option::Option<i64>) -> Self {
             self.downlink_bandwidth_bits = input;
             self
         }
-        /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to
-        /// 2000.</p>
+        /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
         pub fn uplink_delay_ms(mut self, input: i64) -> Self {
             self.uplink_delay_ms = Some(input);
             self
         }
-        /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to
-        /// 2000.</p>
+        /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
         pub fn set_uplink_delay_ms(mut self, input: std::option::Option<i64>) -> Self {
             self.uplink_delay_ms = input;
             self
         }
-        /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to
-        /// 2000.</p>
+        /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
         pub fn downlink_delay_ms(mut self, input: i64) -> Self {
             self.downlink_delay_ms = Some(input);
             self
         }
-        /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to
-        /// 2000.</p>
+        /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
         pub fn set_downlink_delay_ms(mut self, input: std::option::Option<i64>) -> Self {
             self.downlink_delay_ms = input;
             self
         }
-        /// <p>Time variation in the delay of received packets in milliseconds as an integer from
-        /// 0 to 2000.</p>
+        /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
         pub fn uplink_jitter_ms(mut self, input: i64) -> Self {
             self.uplink_jitter_ms = Some(input);
             self
         }
-        /// <p>Time variation in the delay of received packets in milliseconds as an integer from
-        /// 0 to 2000.</p>
+        /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
         pub fn set_uplink_jitter_ms(mut self, input: std::option::Option<i64>) -> Self {
             self.uplink_jitter_ms = input;
             self
         }
-        /// <p>Time variation in the delay of received packets in milliseconds as an integer from
-        /// 0 to 2000.</p>
+        /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
         pub fn downlink_jitter_ms(mut self, input: i64) -> Self {
             self.downlink_jitter_ms = Some(input);
             self
         }
-        /// <p>Time variation in the delay of received packets in milliseconds as an integer from
-        /// 0 to 2000.</p>
+        /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
         pub fn set_downlink_jitter_ms(mut self, input: std::option::Option<i64>) -> Self {
             self.downlink_jitter_ms = input;
             self
         }
-        /// <p>Proportion of transmitted packets that fail to arrive from 0 to 100
-        /// percent.</p>
+        /// <p>Proportion of transmitted packets that fail to arrive from 0 to 100 percent.</p>
         pub fn uplink_loss_percent(mut self, input: i32) -> Self {
             self.uplink_loss_percent = Some(input);
             self
         }
-        /// <p>Proportion of transmitted packets that fail to arrive from 0 to 100
-        /// percent.</p>
+        /// <p>Proportion of transmitted packets that fail to arrive from 0 to 100 percent.</p>
         pub fn set_uplink_loss_percent(mut self, input: std::option::Option<i32>) -> Self {
             self.uplink_loss_percent = input;
             self
@@ -775,14 +743,12 @@ pub mod create_project_input {
             self.name = input;
             self
         }
-        /// <p>Sets the execution timeout value (in minutes) for a project. All test runs in this project use the
-        /// specified execution timeout value unless overridden when scheduling a run.</p>
+        /// <p>Sets the execution timeout value (in minutes) for a project. All test runs in this project use the specified execution timeout value unless overridden when scheduling a run.</p>
         pub fn default_job_timeout_minutes(mut self, input: i32) -> Self {
             self.default_job_timeout_minutes = Some(input);
             self
         }
-        /// <p>Sets the execution timeout value (in minutes) for a project. All test runs in this project use the
-        /// specified execution timeout value unless overridden when scheduling a run.</p>
+        /// <p>Sets the execution timeout value (in minutes) for a project. All test runs in this project use the specified execution timeout value unless overridden when scheduling a run.</p>
         pub fn set_default_job_timeout_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.default_job_timeout_minutes = input;
             self
@@ -943,14 +909,12 @@ pub mod create_remote_access_session_input {
         pub(crate) skip_app_resign: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the project for which you want to create a remote
-        /// access session.</p>
+        /// <p>The Amazon Resource Name (ARN) of the project for which you want to create a remote access session.</p>
         pub fn project_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.project_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the project for which you want to create a remote
-        /// access session.</p>
+        /// <p>The Amazon Resource Name (ARN) of the project for which you want to create a remote access session.</p>
         pub fn set_project_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.project_arn = input;
             self
@@ -965,32 +929,24 @@ pub mod create_remote_access_session_input {
             self.device_arn = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the device instance for which you want to create a
-        /// remote access session.</p>
+        /// <p>The Amazon Resource Name (ARN) of the device instance for which you want to create a remote access session.</p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the device instance for which you want to create a
-        /// remote access session.</p>
+        /// <p>The Amazon Resource Name (ARN) of the device instance for which you want to create a remote access session.</p>
         pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.instance_arn = input;
             self
         }
-        /// <p>Ignored. The public key of the <code>ssh</code> key pair you want to use for connecting to remote
-        /// devices in your remote debugging session. This key is required only if <code>remoteDebugEnabled</code> is
-        /// set to <code>true</code>.</p>
-        /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-        /// longer supported</a>.</p>
+        /// <p>Ignored. The public key of the <code>ssh</code> key pair you want to use for connecting to remote devices in your remote debugging session. This key is required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
+        /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
         pub fn ssh_public_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.ssh_public_key = Some(input.into());
             self
         }
-        /// <p>Ignored. The public key of the <code>ssh</code> key pair you want to use for connecting to remote
-        /// devices in your remote debugging session. This key is required only if <code>remoteDebugEnabled</code> is
-        /// set to <code>true</code>.</p>
-        /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-        /// longer supported</a>.</p>
+        /// <p>Ignored. The public key of the <code>ssh</code> key pair you want to use for connecting to remote devices in your remote debugging session. This key is required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
+        /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
         pub fn set_ssh_public_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -998,42 +954,34 @@ pub mod create_remote_access_session_input {
             self.ssh_public_key = input;
             self
         }
-        /// <p>Set to <code>true</code> if you want to access devices remotely for debugging in
-        /// your remote access session.</p>
-        /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-        /// longer supported</a>.</p>
+        /// <p>Set to <code>true</code> if you want to access devices remotely for debugging in your remote access session.</p>
+        /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
         pub fn remote_debug_enabled(mut self, input: bool) -> Self {
             self.remote_debug_enabled = Some(input);
             self
         }
-        /// <p>Set to <code>true</code> if you want to access devices remotely for debugging in
-        /// your remote access session.</p>
-        /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-        /// longer supported</a>.</p>
+        /// <p>Set to <code>true</code> if you want to access devices remotely for debugging in your remote access session.</p>
+        /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
         pub fn set_remote_debug_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.remote_debug_enabled = input;
             self
         }
-        /// <p>Set to <code>true</code> to enable remote recording for the remote access
-        /// session.</p>
+        /// <p>Set to <code>true</code> to enable remote recording for the remote access session.</p>
         pub fn remote_record_enabled(mut self, input: bool) -> Self {
             self.remote_record_enabled = Some(input);
             self
         }
-        /// <p>Set to <code>true</code> to enable remote recording for the remote access
-        /// session.</p>
+        /// <p>Set to <code>true</code> to enable remote recording for the remote access session.</p>
         pub fn set_remote_record_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.remote_record_enabled = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the app to be recorded in the remote access
-        /// session.</p>
+        /// <p>The Amazon Resource Name (ARN) for the app to be recorded in the remote access session.</p>
         pub fn remote_record_app_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.remote_record_app_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the app to be recorded in the remote access
-        /// session.</p>
+        /// <p>The Amazon Resource Name (ARN) for the app to be recorded in the remote access session.</p>
         pub fn set_remote_record_app_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1051,20 +999,14 @@ pub mod create_remote_access_session_input {
             self.name = input;
             self
         }
-        /// <p>Unique identifier for the client. If you want access to multiple devices on the same client, you should
-        /// pass the same <code>clientId</code> value in each call to <code>CreateRemoteAccessSession</code>. This
-        /// identifier is required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
-        /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-        /// longer supported</a>.</p>
+        /// <p>Unique identifier for the client. If you want access to multiple devices on the same client, you should pass the same <code>clientId</code> value in each call to <code>CreateRemoteAccessSession</code>. This identifier is required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
+        /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
         pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_id = Some(input.into());
             self
         }
-        /// <p>Unique identifier for the client. If you want access to multiple devices on the same client, you should
-        /// pass the same <code>clientId</code> value in each call to <code>CreateRemoteAccessSession</code>. This
-        /// identifier is required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
-        /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-        /// longer supported</a>.</p>
+        /// <p>Unique identifier for the client. If you want access to multiple devices on the same client, you should pass the same <code>clientId</code> value in each call to <code>CreateRemoteAccessSession</code>. This identifier is required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
+        /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
         pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_id = input;
             self
@@ -1087,20 +1029,9 @@ pub mod create_remote_access_session_input {
         }
         /// <p>The interaction mode of the remote access session. Valid values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and
-        /// rotating the screen. You cannot run XCUITest framework-based tests in this
-        /// mode.</p>
-        /// </li>
-        /// <li>
-        /// <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This
-        /// mode has the fastest test execution speed. You can run XCUITest framework-based tests in this
-        /// mode.</p>
-        /// </li>
-        /// <li>
-        /// <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest
-        /// framework-based tests and watch the screen in this mode.</p>
-        /// </li>
+        /// <li> <p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You cannot run XCUITest framework-based tests in this mode.</p> </li>
+        /// <li> <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This mode has the fastest test execution speed. You can run XCUITest framework-based tests in this mode.</p> </li>
+        /// <li> <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest framework-based tests and watch the screen in this mode.</p> </li>
         /// </ul>
         pub fn interaction_mode(mut self, input: crate::model::InteractionMode) -> Self {
             self.interaction_mode = Some(input);
@@ -1108,20 +1039,9 @@ pub mod create_remote_access_session_input {
         }
         /// <p>The interaction mode of the remote access session. Valid values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and
-        /// rotating the screen. You cannot run XCUITest framework-based tests in this
-        /// mode.</p>
-        /// </li>
-        /// <li>
-        /// <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This
-        /// mode has the fastest test execution speed. You can run XCUITest framework-based tests in this
-        /// mode.</p>
-        /// </li>
-        /// <li>
-        /// <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest
-        /// framework-based tests and watch the screen in this mode.</p>
-        /// </li>
+        /// <li> <p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You cannot run XCUITest framework-based tests in this mode.</p> </li>
+        /// <li> <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This mode has the fastest test execution speed. You can run XCUITest framework-based tests in this mode.</p> </li>
+        /// <li> <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest framework-based tests and watch the screen in this mode.</p> </li>
         /// </ul>
         pub fn set_interaction_mode(
             mut self,
@@ -1130,18 +1050,14 @@ pub mod create_remote_access_session_input {
             self.interaction_mode = input;
             self
         }
-        /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public
-        /// devices, Device Farm always signs your apps again.</p>
-        /// <p>For more information on how Device Farm modifies your uploads during tests, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a>
-        /// </p>
+        /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
+        /// <p>For more information on how Device Farm modifies your uploads during tests, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> </p>
         pub fn skip_app_resign(mut self, input: bool) -> Self {
             self.skip_app_resign = Some(input);
             self
         }
-        /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public
-        /// devices, Device Farm always signs your apps again.</p>
-        /// <p>For more information on how Device Farm modifies your uploads during tests, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a>
-        /// </p>
+        /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
+        /// <p>For more information on how Device Farm modifies your uploads during tests, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> </p>
         pub fn set_skip_app_resign(mut self, input: std::option::Option<bool>) -> Self {
             self.skip_app_resign = input;
             self
@@ -1488,14 +1404,12 @@ pub mod create_test_grid_url_input {
         pub(crate) expires_in_seconds: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>ARN (from <a>CreateTestGridProject</a> or <a>ListTestGridProjects</a>) to associate
-        /// with the short-term URL. </p>
+        /// <p>ARN (from <code>CreateTestGridProject</code> or <code>ListTestGridProjects</code>) to associate with the short-term URL. </p>
         pub fn project_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.project_arn = Some(input.into());
             self
         }
-        /// <p>ARN (from <a>CreateTestGridProject</a> or <a>ListTestGridProjects</a>) to associate
-        /// with the short-term URL. </p>
+        /// <p>ARN (from <code>CreateTestGridProject</code> or <code>ListTestGridProjects</code>) to associate with the short-term URL. </p>
         pub fn set_project_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.project_arn = input;
             self
@@ -1668,18 +1582,12 @@ pub mod create_upload_input {
             self.project_arn = input;
             self
         }
-        /// <p>The upload's file name. The name should not contain any forward slashes (<code>/</code>). If you are
-        /// uploading an iOS app, the file name must end with the <code>.ipa</code> extension. If you are uploading an
-        /// Android app, the file name must end with the <code>.apk</code> extension. For all others, the file name must
-        /// end with the <code>.zip</code> file extension.</p>
+        /// <p>The upload's file name. The name should not contain any forward slashes (<code>/</code>). If you are uploading an iOS app, the file name must end with the <code>.ipa</code> extension. If you are uploading an Android app, the file name must end with the <code>.apk</code> extension. For all others, the file name must end with the <code>.zip</code> file extension.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The upload's file name. The name should not contain any forward slashes (<code>/</code>). If you are
-        /// uploading an iOS app, the file name must end with the <code>.ipa</code> extension. If you are uploading an
-        /// Android app, the file name must end with the <code>.apk</code> extension. For all others, the file name must
-        /// end with the <code>.zip</code> file extension.</p>
+        /// <p>The upload's file name. The name should not contain any forward slashes (<code>/</code>). If you are uploading an iOS app, the file name must end with the <code>.ipa</code> extension. If you are uploading an Android app, the file name must end with the <code>.apk</code> extension. For all others, the file name must end with the <code>.zip</code> file extension.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1687,105 +1595,40 @@ pub mod create_upload_input {
         /// <p>The upload's upload type.</p>
         /// <p>Must be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>ANDROID_APP</p>
-        /// </li>
-        /// <li>
-        /// <p>IOS_APP</p>
-        /// </li>
-        /// <li>
-        /// <p>WEB_APP</p>
-        /// </li>
-        /// <li>
-        /// <p>EXTERNAL_DATA</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_PYTHON_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_NODE_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_RUBY_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_PYTHON_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_NODE_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_RUBY_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>CALABASH_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTRUMENTATION_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>UIAUTOMATION_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>UIAUTOMATOR_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST_UI_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_JUNIT_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_TESTNG_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_PYTHON_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_NODE_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_RUBY_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_PYTHON_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_NODE_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_RUBY_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTRUMENTATION_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST_UI_TEST_SPEC</p>
-        /// </li>
+        /// <li> <p>ANDROID_APP</p> </li>
+        /// <li> <p>IOS_APP</p> </li>
+        /// <li> <p>WEB_APP</p> </li>
+        /// <li> <p>EXTERNAL_DATA</p> </li>
+        /// <li> <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_PYTHON_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_NODE_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_RUBY_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_PYTHON_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_NODE_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_RUBY_TEST_PACKAGE</p> </li>
+        /// <li> <p>CALABASH_TEST_PACKAGE</p> </li>
+        /// <li> <p>INSTRUMENTATION_TEST_PACKAGE</p> </li>
+        /// <li> <p>UIAUTOMATION_TEST_PACKAGE</p> </li>
+        /// <li> <p>UIAUTOMATOR_TEST_PACKAGE</p> </li>
+        /// <li> <p>XCTEST_TEST_PACKAGE</p> </li>
+        /// <li> <p>XCTEST_UI_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_JAVA_JUNIT_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_JAVA_TESTNG_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_PYTHON_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_NODE_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_RUBY_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_PYTHON_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_NODE_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_RUBY_TEST_SPEC</p> </li>
+        /// <li> <p>INSTRUMENTATION_TEST_SPEC</p> </li>
+        /// <li> <p>XCTEST_UI_TEST_SPEC</p> </li>
         /// </ul>
-        /// <p> If you call <code>CreateUpload</code> with <code>WEB_APP</code> specified, AWS
-        /// Device Farm throws an <code>ArgumentException</code> error.</p>
+        /// <p> If you call <code>CreateUpload</code> with <code>WEB_APP</code> specified, AWS Device Farm throws an <code>ArgumentException</code> error.</p>
         pub fn r#type(mut self, input: crate::model::UploadType) -> Self {
             self.r#type = Some(input);
             self
@@ -1793,105 +1636,40 @@ pub mod create_upload_input {
         /// <p>The upload's upload type.</p>
         /// <p>Must be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>ANDROID_APP</p>
-        /// </li>
-        /// <li>
-        /// <p>IOS_APP</p>
-        /// </li>
-        /// <li>
-        /// <p>WEB_APP</p>
-        /// </li>
-        /// <li>
-        /// <p>EXTERNAL_DATA</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_PYTHON_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_NODE_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_RUBY_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_PYTHON_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_NODE_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_RUBY_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>CALABASH_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTRUMENTATION_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>UIAUTOMATION_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>UIAUTOMATOR_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST_UI_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_JUNIT_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_TESTNG_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_PYTHON_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_NODE_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_RUBY_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_PYTHON_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_NODE_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_RUBY_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTRUMENTATION_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST_UI_TEST_SPEC</p>
-        /// </li>
+        /// <li> <p>ANDROID_APP</p> </li>
+        /// <li> <p>IOS_APP</p> </li>
+        /// <li> <p>WEB_APP</p> </li>
+        /// <li> <p>EXTERNAL_DATA</p> </li>
+        /// <li> <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_PYTHON_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_NODE_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_RUBY_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_PYTHON_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_NODE_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_RUBY_TEST_PACKAGE</p> </li>
+        /// <li> <p>CALABASH_TEST_PACKAGE</p> </li>
+        /// <li> <p>INSTRUMENTATION_TEST_PACKAGE</p> </li>
+        /// <li> <p>UIAUTOMATION_TEST_PACKAGE</p> </li>
+        /// <li> <p>UIAUTOMATOR_TEST_PACKAGE</p> </li>
+        /// <li> <p>XCTEST_TEST_PACKAGE</p> </li>
+        /// <li> <p>XCTEST_UI_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_JAVA_JUNIT_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_JAVA_TESTNG_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_PYTHON_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_NODE_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_RUBY_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_PYTHON_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_NODE_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_RUBY_TEST_SPEC</p> </li>
+        /// <li> <p>INSTRUMENTATION_TEST_SPEC</p> </li>
+        /// <li> <p>XCTEST_UI_TEST_SPEC</p> </li>
         /// </ul>
-        /// <p> If you call <code>CreateUpload</code> with <code>WEB_APP</code> specified, AWS
-        /// Device Farm throws an <code>ArgumentException</code> error.</p>
+        /// <p> If you call <code>CreateUpload</code> with <code>WEB_APP</code> specified, AWS Device Farm throws an <code>ArgumentException</code> error.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::UploadType>) -> Self {
             self.r#type = input;
             self
@@ -2055,14 +1833,12 @@ pub mod create_vpce_configuration_input {
         pub(crate) vpce_configuration_description: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The friendly name you give to your VPC endpoint configuration, to manage your
-        /// configurations more easily.</p>
+        /// <p>The friendly name you give to your VPC endpoint configuration, to manage your configurations more easily.</p>
         pub fn vpce_configuration_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.vpce_configuration_name = Some(input.into());
             self
         }
-        /// <p>The friendly name you give to your VPC endpoint configuration, to manage your
-        /// configurations more easily.</p>
+        /// <p>The friendly name you give to your VPC endpoint configuration, to manage your configurations more easily.</p>
         pub fn set_vpce_configuration_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2083,14 +1859,12 @@ pub mod create_vpce_configuration_input {
             self.vpce_service_name = input;
             self
         }
-        /// <p>The DNS name of the service running in your VPC that you want Device Farm to
-        /// test.</p>
+        /// <p>The DNS name of the service running in your VPC that you want Device Farm to test.</p>
         pub fn service_dns_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_dns_name = Some(input.into());
             self
         }
-        /// <p>The DNS name of the service running in your VPC that you want Device Farm to
-        /// test.</p>
+        /// <p>The DNS name of the service running in your VPC that you want Device Farm to test.</p>
         pub fn set_service_dns_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2416,14 +2190,12 @@ pub mod delete_instance_profile_input {
         pub(crate) arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the instance profile you are requesting to
-        /// delete.</p>
+        /// <p>The Amazon Resource Name (ARN) of the instance profile you are requesting to delete.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the instance profile you are requesting to
-        /// delete.</p>
+        /// <p>The Amazon Resource Name (ARN) of the instance profile you are requesting to delete.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -2877,14 +2649,12 @@ pub mod delete_remote_access_session_input {
         pub(crate) arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the session for which you want to delete remote
-        /// access.</p>
+        /// <p>The Amazon Resource Name (ARN) of the session for which you want to delete remote access.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the session for which you want to delete remote
-        /// access.</p>
+        /// <p>The Amazon Resource Name (ARN) of the session for which you want to delete remote access.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -3181,12 +2951,12 @@ pub mod delete_test_grid_project_input {
         pub(crate) project_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ARN of the project to delete, from <a>CreateTestGridProject</a> or <a>ListTestGridProjects</a>.</p>
+        /// <p>The ARN of the project to delete, from <code>CreateTestGridProject</code> or <code>ListTestGridProjects</code>.</p>
         pub fn project_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.project_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the project to delete, from <a>CreateTestGridProject</a> or <a>ListTestGridProjects</a>.</p>
+        /// <p>The ARN of the project to delete, from <code>CreateTestGridProject</code> or <code>ListTestGridProjects</code>.</p>
         pub fn set_project_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.project_arn = input;
             self
@@ -3488,14 +3258,12 @@ pub mod delete_vpce_configuration_input {
         pub(crate) arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to
-        /// delete.</p>
+        /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to delete.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to
-        /// delete.</p>
+        /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to delete.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -3924,14 +3692,12 @@ pub mod get_device_instance_input {
         pub(crate) arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the instance you're requesting information
-        /// about.</p>
+        /// <p>The Amazon Resource Name (ARN) of the instance you're requesting information about.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the instance you're requesting information
-        /// about.</p>
+        /// <p>The Amazon Resource Name (ARN) of the instance you're requesting information about.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -4260,61 +4026,24 @@ pub mod get_device_pool_compatibility_input {
         /// <p>The test type for the specified device pool.</p>
         /// <p>Allowed values include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>BUILTIN_FUZZ.</p>
-        /// </li>
-        /// <li>
-        /// <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with
-        /// it and capturing screenshots at the same time.</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_JUNIT.</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_TESTNG.</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_PYTHON.</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_NODE.</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_RUBY.</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_JUNIT.</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_TESTNG.</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_PYTHON.</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_NODE.</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_RUBY.</p>
-        /// </li>
-        /// <li>
-        /// <p>CALABASH.</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTRUMENTATION.</p>
-        /// </li>
-        /// <li>
-        /// <p>UIAUTOMATION.</p>
-        /// </li>
-        /// <li>
-        /// <p>UIAUTOMATOR.</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST.</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST_UI.</p>
-        /// </li>
+        /// <li> <p>BUILTIN_FUZZ.</p> </li>
+        /// <li> <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p> </li>
+        /// <li> <p>APPIUM_JAVA_JUNIT.</p> </li>
+        /// <li> <p>APPIUM_JAVA_TESTNG.</p> </li>
+        /// <li> <p>APPIUM_PYTHON.</p> </li>
+        /// <li> <p>APPIUM_NODE.</p> </li>
+        /// <li> <p>APPIUM_RUBY.</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_JUNIT.</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_TESTNG.</p> </li>
+        /// <li> <p>APPIUM_WEB_PYTHON.</p> </li>
+        /// <li> <p>APPIUM_WEB_NODE.</p> </li>
+        /// <li> <p>APPIUM_WEB_RUBY.</p> </li>
+        /// <li> <p>CALABASH.</p> </li>
+        /// <li> <p>INSTRUMENTATION.</p> </li>
+        /// <li> <p>UIAUTOMATION.</p> </li>
+        /// <li> <p>UIAUTOMATOR.</p> </li>
+        /// <li> <p>XCTEST.</p> </li>
+        /// <li> <p>XCTEST_UI.</p> </li>
         /// </ul>
         pub fn test_type(mut self, input: crate::model::TestType) -> Self {
             self.test_type = Some(input);
@@ -4323,61 +4052,24 @@ pub mod get_device_pool_compatibility_input {
         /// <p>The test type for the specified device pool.</p>
         /// <p>Allowed values include the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>BUILTIN_FUZZ.</p>
-        /// </li>
-        /// <li>
-        /// <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with
-        /// it and capturing screenshots at the same time.</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_JUNIT.</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_TESTNG.</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_PYTHON.</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_NODE.</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_RUBY.</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_JUNIT.</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_TESTNG.</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_PYTHON.</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_NODE.</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_RUBY.</p>
-        /// </li>
-        /// <li>
-        /// <p>CALABASH.</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTRUMENTATION.</p>
-        /// </li>
-        /// <li>
-        /// <p>UIAUTOMATION.</p>
-        /// </li>
-        /// <li>
-        /// <p>UIAUTOMATOR.</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST.</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST_UI.</p>
-        /// </li>
+        /// <li> <p>BUILTIN_FUZZ.</p> </li>
+        /// <li> <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p> </li>
+        /// <li> <p>APPIUM_JAVA_JUNIT.</p> </li>
+        /// <li> <p>APPIUM_JAVA_TESTNG.</p> </li>
+        /// <li> <p>APPIUM_PYTHON.</p> </li>
+        /// <li> <p>APPIUM_NODE.</p> </li>
+        /// <li> <p>APPIUM_RUBY.</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_JUNIT.</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_TESTNG.</p> </li>
+        /// <li> <p>APPIUM_WEB_PYTHON.</p> </li>
+        /// <li> <p>APPIUM_WEB_NODE.</p> </li>
+        /// <li> <p>APPIUM_WEB_RUBY.</p> </li>
+        /// <li> <p>CALABASH.</p> </li>
+        /// <li> <p>INSTRUMENTATION.</p> </li>
+        /// <li> <p>UIAUTOMATION.</p> </li>
+        /// <li> <p>UIAUTOMATOR.</p> </li>
+        /// <li> <p>XCTEST.</p> </li>
+        /// <li> <p>XCTEST_UI.</p> </li>
         /// </ul>
         pub fn set_test_type(mut self, input: std::option::Option<crate::model::TestType>) -> Self {
             self.test_type = input;
@@ -5010,14 +4702,12 @@ pub mod get_offering_status_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5317,14 +5007,12 @@ pub mod get_remote_access_session_input {
         pub(crate) arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the remote access session about which you want to
-        /// get session information.</p>
+        /// <p>The Amazon Resource Name (ARN) of the remote access session about which you want to get session information.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the remote access session about which you want to
-        /// get session information.</p>
+        /// <p>The Amazon Resource Name (ARN) of the remote access session about which you want to get session information.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -5914,12 +5602,12 @@ pub mod get_test_grid_project_input {
         pub(crate) project_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ARN of the Selenium testing project, from either <a>CreateTestGridProject</a> or <a>ListTestGridProjects</a>.</p>
+        /// <p>The ARN of the Selenium testing project, from either <code>CreateTestGridProject</code> or <code>ListTestGridProjects</code>.</p>
         pub fn project_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.project_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the Selenium testing project, from either <a>CreateTestGridProject</a> or <a>ListTestGridProjects</a>.</p>
+        /// <p>The ARN of the Selenium testing project, from either <code>CreateTestGridProject</code> or <code>ListTestGridProjects</code>.</p>
         pub fn set_project_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.project_arn = input;
             self
@@ -6070,12 +5758,12 @@ pub mod get_test_grid_session_input {
         pub(crate) session_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ARN for the project that this session belongs to. See <a>CreateTestGridProject</a> and <a>ListTestGridProjects</a>.</p>
+        /// <p>The ARN for the project that this session belongs to. See <code>CreateTestGridProject</code> and <code>ListTestGridProjects</code>.</p>
         pub fn project_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.project_arn = Some(input.into());
             self
         }
-        /// <p>The ARN for the project that this session belongs to. See <a>CreateTestGridProject</a> and <a>ListTestGridProjects</a>.</p>
+        /// <p>The ARN for the project that this session belongs to. See <code>CreateTestGridProject</code> and <code>ListTestGridProjects</code>.</p>
         pub fn set_project_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.project_arn = input;
             self
@@ -6090,12 +5778,12 @@ pub mod get_test_grid_session_input {
             self.session_id = input;
             self
         }
-        /// <p>An ARN that uniquely identifies a <a>TestGridSession</a>.</p>
+        /// <p>An ARN that uniquely identifies a <code>TestGridSession</code>.</p>
         pub fn session_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.session_arn = Some(input.into());
             self
         }
-        /// <p>An ARN that uniquely identifies a <a>TestGridSession</a>.</p>
+        /// <p>An ARN that uniquely identifies a <code>TestGridSession</code>.</p>
         pub fn set_session_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.session_arn = input;
             self
@@ -6393,14 +6081,12 @@ pub mod get_vpce_configuration_input {
         pub(crate) arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to
-        /// describe.</p>
+        /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to describe.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to
-        /// describe.</p>
+        /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to describe.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -6550,14 +6236,12 @@ pub mod install_to_remote_access_session_input {
         pub(crate) app_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the remote access session about which you are
-        /// requesting information.</p>
+        /// <p>The Amazon Resource Name (ARN) of the remote access session about which you are requesting information.</p>
         pub fn remote_access_session_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.remote_access_session_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the remote access session about which you are
-        /// requesting information.</p>
+        /// <p>The Amazon Resource Name (ARN) of the remote access session about which you are requesting information.</p>
         pub fn set_remote_access_session_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6738,15 +6422,9 @@ pub mod list_artifacts_input {
         /// <p>The artifacts' type.</p>
         /// <p>Allowed values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>FILE</p>
-        /// </li>
-        /// <li>
-        /// <p>LOG</p>
-        /// </li>
-        /// <li>
-        /// <p>SCREENSHOT</p>
-        /// </li>
+        /// <li> <p>FILE</p> </li>
+        /// <li> <p>LOG</p> </li>
+        /// <li> <p>SCREENSHOT</p> </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::ArtifactCategory) -> Self {
             self.r#type = Some(input);
@@ -6755,15 +6433,9 @@ pub mod list_artifacts_input {
         /// <p>The artifacts' type.</p>
         /// <p>Allowed values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>FILE</p>
-        /// </li>
-        /// <li>
-        /// <p>LOG</p>
-        /// </li>
-        /// <li>
-        /// <p>SCREENSHOT</p>
-        /// </li>
+        /// <li> <p>FILE</p> </li>
+        /// <li> <p>LOG</p> </li>
+        /// <li> <p>SCREENSHOT</p> </li>
         /// </ul>
         pub fn set_type(
             mut self,
@@ -6772,14 +6444,12 @@ pub mod list_artifacts_input {
             self.r#type = input;
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6940,14 +6610,12 @@ pub mod list_device_instances_input {
             self.max_results = input;
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7112,14 +6780,8 @@ pub mod list_device_pools_input {
         /// <p>The device pools' type.</p>
         /// <p>Allowed values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>CURATED: A device pool that is created and managed by AWS Device
-        /// Farm.</p>
-        /// </li>
-        /// <li>
-        /// <p>PRIVATE: A device pool that is created and managed by the device pool
-        /// developer.</p>
-        /// </li>
+        /// <li> <p>CURATED: A device pool that is created and managed by AWS Device Farm.</p> </li>
+        /// <li> <p>PRIVATE: A device pool that is created and managed by the device pool developer.</p> </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::DevicePoolType) -> Self {
             self.r#type = Some(input);
@@ -7128,14 +6790,8 @@ pub mod list_device_pools_input {
         /// <p>The device pools' type.</p>
         /// <p>Allowed values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>CURATED: A device pool that is created and managed by AWS Device
-        /// Farm.</p>
-        /// </li>
-        /// <li>
-        /// <p>PRIVATE: A device pool that is created and managed by the device pool
-        /// developer.</p>
-        /// </li>
+        /// <li> <p>CURATED: A device pool that is created and managed by AWS Device Farm.</p> </li>
+        /// <li> <p>PRIVATE: A device pool that is created and managed by the device pool developer.</p> </li>
         /// </ul>
         pub fn set_type(
             mut self,
@@ -7144,14 +6800,12 @@ pub mod list_device_pools_input {
             self.r#type = input;
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7314,14 +6968,12 @@ pub mod list_devices_input {
             self.arn = input;
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7330,96 +6982,36 @@ pub mod list_devices_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>Used to select a set of devices. A filter is made up of an attribute, an operator, and
-        /// one or more values.</p>
+        /// <p>Used to select a set of devices. A filter is made up of an attribute, an operator, and one or more values.</p>
         /// <ul>
-        /// <li>
-        /// <p>Attribute: The aspect of a device such as platform or model used as the
-        /// selection criteria in a device filter.</p>
-        /// <p>Allowed values include:</p>
+        /// <li> <p>Attribute: The aspect of a device such as platform or model used as the selection criteria in a device filter.</p> <p>Allowed values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>ARN: The Amazon Resource Name (ARN) of the device (for example,
-        /// <code>arn:aws:devicefarm:us-west-2::device:12345Example</code>).</p>
-        /// </li>
-        /// <li>
-        /// <p>PLATFORM: The device platform. Valid values are ANDROID or IOS.</p>
-        /// </li>
-        /// <li>
-        /// <p>OS_VERSION: The operating system version (for example, 10.3.2).</p>
-        /// </li>
-        /// <li>
-        /// <p>MODEL: The device model (for example, iPad 5th Gen).</p>
-        /// </li>
-        /// <li>
-        /// <p>AVAILABILITY: The current availability of the device. Valid values are AVAILABLE,
-        /// HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p>
-        /// </li>
-        /// <li>
-        /// <p>FORM_FACTOR: The device form factor. Valid values are PHONE or TABLET.</p>
-        /// </li>
-        /// <li>
-        /// <p>MANUFACTURER: The device manufacturer (for example, Apple).</p>
-        /// </li>
-        /// <li>
-        /// <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access. Valid values
-        /// are TRUE or FALSE.</p>
-        /// </li>
-        /// <li>
-        /// <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values
-        /// are TRUE or FALSE. Because remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-        /// longer supported</a>, this attribute is ignored.</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device
-        /// instance.</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTANCE_LABELS: The label of the device instance.</p>
-        /// </li>
-        /// <li>
-        /// <p>FLEET_TYPE: The fleet type. Valid values are PUBLIC or PRIVATE.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>Operator: The filter operator.</p>
+        /// <li> <p>ARN: The Amazon Resource Name (ARN) of the device (for example, <code>arn:aws:devicefarm:us-west-2::device:12345Example</code>).</p> </li>
+        /// <li> <p>PLATFORM: The device platform. Valid values are ANDROID or IOS.</p> </li>
+        /// <li> <p>OS_VERSION: The operating system version (for example, 10.3.2).</p> </li>
+        /// <li> <p>MODEL: The device model (for example, iPad 5th Gen).</p> </li>
+        /// <li> <p>AVAILABILITY: The current availability of the device. Valid values are AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p> </li>
+        /// <li> <p>FORM_FACTOR: The device form factor. Valid values are PHONE or TABLET.</p> </li>
+        /// <li> <p>MANUFACTURER: The device manufacturer (for example, Apple).</p> </li>
+        /// <li> <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access. Valid values are TRUE or FALSE.</p> </li>
+        /// <li> <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values are TRUE or FALSE. Because remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>, this attribute is ignored.</p> </li>
+        /// <li> <p>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance.</p> </li>
+        /// <li> <p>INSTANCE_LABELS: The label of the device instance.</p> </li>
+        /// <li> <p>FLEET_TYPE: The fleet type. Valid values are PUBLIC or PRIVATE.</p> </li>
+        /// </ul> </li>
+        /// <li> <p>Operator: The filter operator.</p>
         /// <ul>
-        /// <li>
-        /// <p>The EQUALS operator is available for every attribute except
-        /// INSTANCE_LABELS.</p>
-        /// </li>
-        /// <li>
-        /// <p>The CONTAINS operator is available for the INSTANCE_LABELS and MODEL
-        /// attributes.</p>
-        /// </li>
-        /// <li>
-        /// <p>The IN and NOT_IN operators are available for the ARN, OS_VERSION,
-        /// MODEL, MANUFACTURER, and INSTANCE_ARN attributes.</p>
-        /// </li>
-        /// <li>
-        /// <p>The LESS_THAN, GREATER_THAN, LESS_THAN_OR_EQUALS, and
-        /// GREATER_THAN_OR_EQUALS operators are also available for the OS_VERSION
-        /// attribute.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>Values: An array of one or more filter values.</p>
+        /// <li> <p>The EQUALS operator is available for every attribute except INSTANCE_LABELS.</p> </li>
+        /// <li> <p>The CONTAINS operator is available for the INSTANCE_LABELS and MODEL attributes.</p> </li>
+        /// <li> <p>The IN and NOT_IN operators are available for the ARN, OS_VERSION, MODEL, MANUFACTURER, and INSTANCE_ARN attributes.</p> </li>
+        /// <li> <p>The LESS_THAN, GREATER_THAN, LESS_THAN_OR_EQUALS, and GREATER_THAN_OR_EQUALS operators are also available for the OS_VERSION attribute.</p> </li>
+        /// </ul> </li>
+        /// <li> <p>Values: An array of one or more filter values.</p>
         /// <ul>
-        /// <li>
-        /// <p>The IN and NOT_IN operators take a values array that has one or more
-        /// elements.</p>
-        /// </li>
-        /// <li>
-        /// <p>The other operators require an array with a single element.</p>
-        /// </li>
-        /// <li>
-        /// <p>In a request, the AVAILABILITY attribute takes the following values: AVAILABLE,
-        /// HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p>The IN and NOT_IN operators take a values array that has one or more elements.</p> </li>
+        /// <li> <p>The other operators require an array with a single element.</p> </li>
+        /// <li> <p>In a request, the AVAILABILITY attribute takes the following values: AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn filters(mut self, input: crate::model::DeviceFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
@@ -7427,96 +7019,36 @@ pub mod list_devices_input {
             self.filters = Some(v);
             self
         }
-        /// <p>Used to select a set of devices. A filter is made up of an attribute, an operator, and
-        /// one or more values.</p>
+        /// <p>Used to select a set of devices. A filter is made up of an attribute, an operator, and one or more values.</p>
         /// <ul>
-        /// <li>
-        /// <p>Attribute: The aspect of a device such as platform or model used as the
-        /// selection criteria in a device filter.</p>
-        /// <p>Allowed values include:</p>
+        /// <li> <p>Attribute: The aspect of a device such as platform or model used as the selection criteria in a device filter.</p> <p>Allowed values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>ARN: The Amazon Resource Name (ARN) of the device (for example,
-        /// <code>arn:aws:devicefarm:us-west-2::device:12345Example</code>).</p>
-        /// </li>
-        /// <li>
-        /// <p>PLATFORM: The device platform. Valid values are ANDROID or IOS.</p>
-        /// </li>
-        /// <li>
-        /// <p>OS_VERSION: The operating system version (for example, 10.3.2).</p>
-        /// </li>
-        /// <li>
-        /// <p>MODEL: The device model (for example, iPad 5th Gen).</p>
-        /// </li>
-        /// <li>
-        /// <p>AVAILABILITY: The current availability of the device. Valid values are AVAILABLE,
-        /// HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p>
-        /// </li>
-        /// <li>
-        /// <p>FORM_FACTOR: The device form factor. Valid values are PHONE or TABLET.</p>
-        /// </li>
-        /// <li>
-        /// <p>MANUFACTURER: The device manufacturer (for example, Apple).</p>
-        /// </li>
-        /// <li>
-        /// <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access. Valid values
-        /// are TRUE or FALSE.</p>
-        /// </li>
-        /// <li>
-        /// <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values
-        /// are TRUE or FALSE. Because remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-        /// longer supported</a>, this attribute is ignored.</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device
-        /// instance.</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTANCE_LABELS: The label of the device instance.</p>
-        /// </li>
-        /// <li>
-        /// <p>FLEET_TYPE: The fleet type. Valid values are PUBLIC or PRIVATE.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>Operator: The filter operator.</p>
+        /// <li> <p>ARN: The Amazon Resource Name (ARN) of the device (for example, <code>arn:aws:devicefarm:us-west-2::device:12345Example</code>).</p> </li>
+        /// <li> <p>PLATFORM: The device platform. Valid values are ANDROID or IOS.</p> </li>
+        /// <li> <p>OS_VERSION: The operating system version (for example, 10.3.2).</p> </li>
+        /// <li> <p>MODEL: The device model (for example, iPad 5th Gen).</p> </li>
+        /// <li> <p>AVAILABILITY: The current availability of the device. Valid values are AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p> </li>
+        /// <li> <p>FORM_FACTOR: The device form factor. Valid values are PHONE or TABLET.</p> </li>
+        /// <li> <p>MANUFACTURER: The device manufacturer (for example, Apple).</p> </li>
+        /// <li> <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access. Valid values are TRUE or FALSE.</p> </li>
+        /// <li> <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values are TRUE or FALSE. Because remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>, this attribute is ignored.</p> </li>
+        /// <li> <p>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance.</p> </li>
+        /// <li> <p>INSTANCE_LABELS: The label of the device instance.</p> </li>
+        /// <li> <p>FLEET_TYPE: The fleet type. Valid values are PUBLIC or PRIVATE.</p> </li>
+        /// </ul> </li>
+        /// <li> <p>Operator: The filter operator.</p>
         /// <ul>
-        /// <li>
-        /// <p>The EQUALS operator is available for every attribute except
-        /// INSTANCE_LABELS.</p>
-        /// </li>
-        /// <li>
-        /// <p>The CONTAINS operator is available for the INSTANCE_LABELS and MODEL
-        /// attributes.</p>
-        /// </li>
-        /// <li>
-        /// <p>The IN and NOT_IN operators are available for the ARN, OS_VERSION,
-        /// MODEL, MANUFACTURER, and INSTANCE_ARN attributes.</p>
-        /// </li>
-        /// <li>
-        /// <p>The LESS_THAN, GREATER_THAN, LESS_THAN_OR_EQUALS, and
-        /// GREATER_THAN_OR_EQUALS operators are also available for the OS_VERSION
-        /// attribute.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>Values: An array of one or more filter values.</p>
+        /// <li> <p>The EQUALS operator is available for every attribute except INSTANCE_LABELS.</p> </li>
+        /// <li> <p>The CONTAINS operator is available for the INSTANCE_LABELS and MODEL attributes.</p> </li>
+        /// <li> <p>The IN and NOT_IN operators are available for the ARN, OS_VERSION, MODEL, MANUFACTURER, and INSTANCE_ARN attributes.</p> </li>
+        /// <li> <p>The LESS_THAN, GREATER_THAN, LESS_THAN_OR_EQUALS, and GREATER_THAN_OR_EQUALS operators are also available for the OS_VERSION attribute.</p> </li>
+        /// </ul> </li>
+        /// <li> <p>Values: An array of one or more filter values.</p>
         /// <ul>
-        /// <li>
-        /// <p>The IN and NOT_IN operators take a values array that has one or more
-        /// elements.</p>
-        /// </li>
-        /// <li>
-        /// <p>The other operators require an array with a single element.</p>
-        /// </li>
-        /// <li>
-        /// <p>In a request, the AVAILABILITY attribute takes the following values: AVAILABLE,
-        /// HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p>The IN and NOT_IN operators take a values array that has one or more elements.</p> </li>
+        /// <li> <p>The other operators require an array with a single element.</p> </li>
+        /// <li> <p>In a request, the AVAILABILITY attribute takes the following values: AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn set_filters(
             mut self,
@@ -7681,14 +7213,12 @@ pub mod list_instance_profiles_input {
             self.max_results = input;
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7851,14 +7381,12 @@ pub mod list_jobs_input {
             self.arn = input;
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8005,14 +7533,12 @@ pub mod list_network_profiles_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the project for which you want to list network
-        /// profiles.</p>
+        /// <p>The Amazon Resource Name (ARN) of the project for which you want to list network profiles.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the project for which you want to list network
-        /// profiles.</p>
+        /// <p>The Amazon Resource Name (ARN) of the project for which you want to list network profiles.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -8030,14 +7556,12 @@ pub mod list_network_profiles_input {
             self.r#type = input;
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8188,14 +7712,12 @@ pub mod list_offering_promotions_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8346,14 +7868,12 @@ pub mod list_offerings_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8501,14 +8021,12 @@ pub mod list_offering_transactions_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8661,28 +8179,22 @@ pub mod list_projects_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Optional. If no Amazon Resource Name (ARN) is specified, then AWS Device Farm
-        /// returns a list of all projects for the AWS account. You can also specify a project
-        /// ARN.</p>
+        /// <p>Optional. If no Amazon Resource Name (ARN) is specified, then AWS Device Farm returns a list of all projects for the AWS account. You can also specify a project ARN.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>Optional. If no Amazon Resource Name (ARN) is specified, then AWS Device Farm
-        /// returns a list of all projects for the AWS account. You can also specify a project
-        /// ARN.</p>
+        /// <p>Optional. If no Amazon Resource Name (ARN) is specified, then AWS Device Farm returns a list of all projects for the AWS account. You can also specify a project ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8832,26 +8344,22 @@ pub mod list_remote_access_sessions_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the project about which you are requesting
-        /// information.</p>
+        /// <p>The Amazon Resource Name (ARN) of the project about which you are requesting information.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the project about which you are requesting
-        /// information.</p>
+        /// <p>The Amazon Resource Name (ARN) of the project about which you are requesting information.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -9005,26 +8513,22 @@ pub mod list_runs_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the project for which you want to list
-        /// runs.</p>
+        /// <p>The Amazon Resource Name (ARN) of the project for which you want to list runs.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the project for which you want to list
-        /// runs.</p>
+        /// <p>The Amazon Resource Name (ARN) of the project for which you want to list runs.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -9180,14 +8684,12 @@ pub mod list_samples_input {
             self.arn = input;
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -9347,14 +8849,12 @@ pub mod list_suites_input {
             self.arn = input;
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -9503,20 +9003,12 @@ pub mod list_tags_for_resource_input {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the resource or resources for which to list tags. You can associate tags
-        /// with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>,
-        /// <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>,
-        /// <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and
-        /// <code>VPCE_CONFIGURATION</code>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource or resources for which to list tags. You can associate tags with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>, <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>, <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and <code>VPCE_CONFIGURATION</code>.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource or resources for which to list tags. You can associate tags
-        /// with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>,
-        /// <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>,
-        /// <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and
-        /// <code>VPCE_CONFIGURATION</code>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource or resources for which to list tags. You can associate tags with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>, <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>, <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and <code>VPCE_CONFIGURATION</code>.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -10018,12 +9510,12 @@ pub mod list_test_grid_session_artifacts_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ARN of a <a>TestGridSession</a>. </p>
+        /// <p>The ARN of a <code>TestGridSession</code>. </p>
         pub fn session_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.session_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of a <a>TestGridSession</a>. </p>
+        /// <p>The ARN of a <code>TestGridSession</code>. </p>
         pub fn set_session_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.session_arn = input;
             self
@@ -10218,12 +9710,12 @@ pub mod list_test_grid_sessions_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>ARN of a <a>TestGridProject</a>.</p>
+        /// <p>ARN of a <code>TestGridProject</code>.</p>
         pub fn project_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.project_arn = Some(input.into());
             self
         }
-        /// <p>ARN of a <a>TestGridProject</a>.</p>
+        /// <p>ARN of a <code>TestGridProject</code>.</p>
         pub fn set_project_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.project_arn = input;
             self
@@ -10254,12 +9746,12 @@ pub mod list_test_grid_sessions_input {
             self.creation_time_after = input;
             self
         }
-        /// <p>Return only  sessions created before this time.</p>
+        /// <p>Return only sessions created before this time.</p>
         pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.creation_time_before = Some(input);
             self
         }
-        /// <p>Return only  sessions created before this time.</p>
+        /// <p>Return only sessions created before this time.</p>
         pub fn set_creation_time_before(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -10477,14 +9969,12 @@ pub mod list_tests_input {
             self.arn = input;
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -10640,14 +10130,12 @@ pub mod list_unique_problems_input {
             self.arn = input;
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -10799,14 +10287,12 @@ pub mod list_uploads_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the project for which you want to list
-        /// uploads.</p>
+        /// <p>The Amazon Resource Name (ARN) of the project for which you want to list uploads.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the project for which you want to list
-        /// uploads.</p>
+        /// <p>The Amazon Resource Name (ARN) of the project for which you want to list uploads.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -10814,102 +10300,38 @@ pub mod list_uploads_input {
         /// <p>The type of upload.</p>
         /// <p>Must be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>ANDROID_APP</p>
-        /// </li>
-        /// <li>
-        /// <p>IOS_APP</p>
-        /// </li>
-        /// <li>
-        /// <p>WEB_APP</p>
-        /// </li>
-        /// <li>
-        /// <p>EXTERNAL_DATA</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_PYTHON_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_NODE_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_RUBY_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_PYTHON_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_NODE_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_RUBY_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>CALABASH_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTRUMENTATION_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>UIAUTOMATION_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>UIAUTOMATOR_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST_UI_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_JUNIT_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_TESTNG_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_PYTHON_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_NODE_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p> APPIUM_RUBY_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_PYTHON_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_NODE_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_RUBY_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTRUMENTATION_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST_UI_TEST_SPEC</p>
-        /// </li>
+        /// <li> <p>ANDROID_APP</p> </li>
+        /// <li> <p>IOS_APP</p> </li>
+        /// <li> <p>WEB_APP</p> </li>
+        /// <li> <p>EXTERNAL_DATA</p> </li>
+        /// <li> <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_PYTHON_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_NODE_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_RUBY_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_PYTHON_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_NODE_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_RUBY_TEST_PACKAGE</p> </li>
+        /// <li> <p>CALABASH_TEST_PACKAGE</p> </li>
+        /// <li> <p>INSTRUMENTATION_TEST_PACKAGE</p> </li>
+        /// <li> <p>UIAUTOMATION_TEST_PACKAGE</p> </li>
+        /// <li> <p>UIAUTOMATOR_TEST_PACKAGE</p> </li>
+        /// <li> <p>XCTEST_TEST_PACKAGE</p> </li>
+        /// <li> <p>XCTEST_UI_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_JAVA_JUNIT_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_JAVA_TESTNG_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_PYTHON_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_NODE_TEST_SPEC</p> </li>
+        /// <li> <p> APPIUM_RUBY_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_PYTHON_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_NODE_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_RUBY_TEST_SPEC</p> </li>
+        /// <li> <p>INSTRUMENTATION_TEST_SPEC</p> </li>
+        /// <li> <p>XCTEST_UI_TEST_SPEC</p> </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::UploadType) -> Self {
             self.r#type = Some(input);
@@ -10918,115 +10340,49 @@ pub mod list_uploads_input {
         /// <p>The type of upload.</p>
         /// <p>Must be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>ANDROID_APP</p>
-        /// </li>
-        /// <li>
-        /// <p>IOS_APP</p>
-        /// </li>
-        /// <li>
-        /// <p>WEB_APP</p>
-        /// </li>
-        /// <li>
-        /// <p>EXTERNAL_DATA</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_PYTHON_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_NODE_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_RUBY_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_PYTHON_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_NODE_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_RUBY_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>CALABASH_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTRUMENTATION_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>UIAUTOMATION_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>UIAUTOMATOR_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST_UI_TEST_PACKAGE</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_JUNIT_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_JAVA_TESTNG_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_PYTHON_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_NODE_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p> APPIUM_RUBY_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_PYTHON_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_NODE_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>APPIUM_WEB_RUBY_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>INSTRUMENTATION_TEST_SPEC</p>
-        /// </li>
-        /// <li>
-        /// <p>XCTEST_UI_TEST_SPEC</p>
-        /// </li>
+        /// <li> <p>ANDROID_APP</p> </li>
+        /// <li> <p>IOS_APP</p> </li>
+        /// <li> <p>WEB_APP</p> </li>
+        /// <li> <p>EXTERNAL_DATA</p> </li>
+        /// <li> <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_PYTHON_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_NODE_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_RUBY_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_PYTHON_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_NODE_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_WEB_RUBY_TEST_PACKAGE</p> </li>
+        /// <li> <p>CALABASH_TEST_PACKAGE</p> </li>
+        /// <li> <p>INSTRUMENTATION_TEST_PACKAGE</p> </li>
+        /// <li> <p>UIAUTOMATION_TEST_PACKAGE</p> </li>
+        /// <li> <p>UIAUTOMATOR_TEST_PACKAGE</p> </li>
+        /// <li> <p>XCTEST_TEST_PACKAGE</p> </li>
+        /// <li> <p>XCTEST_UI_TEST_PACKAGE</p> </li>
+        /// <li> <p>APPIUM_JAVA_JUNIT_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_JAVA_TESTNG_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_PYTHON_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_NODE_TEST_SPEC</p> </li>
+        /// <li> <p> APPIUM_RUBY_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_PYTHON_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_NODE_TEST_SPEC</p> </li>
+        /// <li> <p>APPIUM_WEB_RUBY_TEST_SPEC</p> </li>
+        /// <li> <p>INSTRUMENTATION_TEST_SPEC</p> </li>
+        /// <li> <p>XCTEST_UI_TEST_SPEC</p> </li>
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<crate::model::UploadType>) -> Self {
             self.r#type = input;
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -11187,14 +10543,12 @@ pub mod list_vpce_configurations_input {
             self.max_results = input;
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>An identifier that was returned from the previous call to this operation, which can be
-        /// used to return the next set of items in the list.</p>
+        /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -11711,14 +11065,12 @@ pub mod schedule_run_input {
             self.project_arn = input;
             self
         }
-        /// <p>The ARN of an application package to run tests against, created with <a>CreateUpload</a>.
-        /// See <a>ListUploads</a>.</p>
+        /// <p>The ARN of an application package to run tests against, created with <code>CreateUpload</code>. See <code>ListUploads</code>.</p>
         pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.app_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of an application package to run tests against, created with <a>CreateUpload</a>.
-        /// See <a>ListUploads</a>.</p>
+        /// <p>The ARN of an application package to run tests against, created with <code>CreateUpload</code>. See <code>ListUploads</code>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.app_arn = input;
             self
@@ -11736,14 +11088,8 @@ pub mod schedule_run_input {
             self.device_pool_arn = input;
             self
         }
-        /// <p>The filter criteria used to dynamically select a set of devices for a test run and the maximum number of
-        /// devices to be included in the run.</p>
-        /// <p>Either <b>
-        /// <code>devicePoolArn</code>
-        /// </b> or <b>
-        /// <code>deviceSelectionConfiguration</code>
-        /// </b> is required in a
-        /// request.</p>
+        /// <p>The filter criteria used to dynamically select a set of devices for a test run and the maximum number of devices to be included in the run.</p>
+        /// <p>Either <b> <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code> </b> is required in a request.</p>
         pub fn device_selection_configuration(
             mut self,
             input: crate::model::DeviceSelectionConfiguration,
@@ -11751,14 +11097,8 @@ pub mod schedule_run_input {
             self.device_selection_configuration = Some(input);
             self
         }
-        /// <p>The filter criteria used to dynamically select a set of devices for a test run and the maximum number of
-        /// devices to be included in the run.</p>
-        /// <p>Either <b>
-        /// <code>devicePoolArn</code>
-        /// </b> or <b>
-        /// <code>deviceSelectionConfiguration</code>
-        /// </b> is required in a
-        /// request.</p>
+        /// <p>The filter criteria used to dynamically select a set of devices for a test run and the maximum number of devices to be included in the run.</p>
+        /// <p>Either <b> <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code> </b> is required in a request.</p>
         pub fn set_device_selection_configuration(
             mut self,
             input: std::option::Option<crate::model::DeviceSelectionConfiguration>,
@@ -11802,8 +11142,7 @@ pub mod schedule_run_input {
             self.configuration = input;
             self
         }
-        /// <p>Specifies configuration information about a test run, such as the execution timeout
-        /// (in minutes).</p>
+        /// <p>Specifies configuration information about a test run, such as the execution timeout (in minutes).</p>
         pub fn execution_configuration(
             mut self,
             input: crate::model::ExecutionConfiguration,
@@ -11811,8 +11150,7 @@ pub mod schedule_run_input {
             self.execution_configuration = Some(input);
             self
         }
-        /// <p>Specifies configuration information about a test run, such as the execution timeout
-        /// (in minutes).</p>
+        /// <p>Specifies configuration information about a test run, such as the execution timeout (in minutes).</p>
         pub fn set_execution_configuration(
             mut self,
             input: std::option::Option<crate::model::ExecutionConfiguration>,
@@ -12420,20 +11758,12 @@ pub mod tag_resource_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the resource or resources to which to add tags. You can associate tags
-        /// with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>,
-        /// <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>,
-        /// <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and
-        /// <code>VPCE_CONFIGURATION</code>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource or resources to which to add tags. You can associate tags with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>, <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>, <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and <code>VPCE_CONFIGURATION</code>.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource or resources to which to add tags. You can associate tags
-        /// with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>,
-        /// <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>,
-        /// <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and
-        /// <code>VPCE_CONFIGURATION</code>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource or resources to which to add tags. You can associate tags with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>, <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>, <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and <code>VPCE_CONFIGURATION</code>.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -12442,16 +11772,14 @@ pub mod tag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum
-        /// character length of 128 characters. Tag values can have a maximum length of 256 characters.</p>
+        /// <p>The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum character length of 128 characters. Tag values can have a maximum length of 256 characters.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum
-        /// character length of 128 characters. Tag values can have a maximum length of 256 characters.</p>
+        /// <p>The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum character length of 128 characters. Tag values can have a maximum length of 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -12604,20 +11932,12 @@ pub mod untag_resource_input {
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the resource or resources from which to delete tags. You can associate
-        /// tags with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>,
-        /// <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>,
-        /// <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and
-        /// <code>VPCE_CONFIGURATION</code>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource or resources from which to delete tags. You can associate tags with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>, <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>, <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and <code>VPCE_CONFIGURATION</code>.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource or resources from which to delete tags. You can associate
-        /// tags with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>,
-        /// <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>,
-        /// <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and
-        /// <code>VPCE_CONFIGURATION</code>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource or resources from which to delete tags. You can associate tags with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>, <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>, <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and <code>VPCE_CONFIGURATION</code>.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -13013,16 +12333,14 @@ pub mod update_device_pool_input {
         ///
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
-        /// <p>Represents the rules to modify for the device pool. Updating rules is optional. If you update rules for
-        /// your request, the update replaces the existing rules.</p>
+        /// <p>Represents the rules to modify for the device pool. Updating rules is optional. If you update rules for your request, the update replaces the existing rules.</p>
         pub fn rules(mut self, input: crate::model::Rule) -> Self {
             let mut v = self.rules.unwrap_or_default();
             v.push(input);
             self.rules = Some(v);
             self
         }
-        /// <p>Represents the rules to modify for the device pool. Updating rules is optional. If you update rules for
-        /// your request, the update replaces the existing rules.</p>
+        /// <p>Represents the rules to modify for the device pool. Updating rules is optional. If you update rules for your request, the update replaces the existing rules.</p>
         pub fn set_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Rule>>,
@@ -13030,46 +12348,28 @@ pub mod update_device_pool_input {
             self.rules = input;
             self
         }
-        /// <p>The number of devices that Device Farm can add to your device pool. Device Farm adds
-        /// devices that are available and that meet the criteria that you assign for the
-        /// <code>rules</code> parameter. Depending on how many devices meet these constraints,
-        /// your device pool might contain fewer devices than the value for this parameter.</p>
-        /// <p>By specifying the maximum number of devices, you can control the costs that you incur
-        /// by running tests.</p>
-        /// <p>If you use this parameter in your request, you cannot use the
-        /// <code>clearMaxDevices</code> parameter in the same request.</p>
+        /// <p>The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are available and that meet the criteria that you assign for the <code>rules</code> parameter. Depending on how many devices meet these constraints, your device pool might contain fewer devices than the value for this parameter.</p>
+        /// <p>By specifying the maximum number of devices, you can control the costs that you incur by running tests.</p>
+        /// <p>If you use this parameter in your request, you cannot use the <code>clearMaxDevices</code> parameter in the same request.</p>
         pub fn max_devices(mut self, input: i32) -> Self {
             self.max_devices = Some(input);
             self
         }
-        /// <p>The number of devices that Device Farm can add to your device pool. Device Farm adds
-        /// devices that are available and that meet the criteria that you assign for the
-        /// <code>rules</code> parameter. Depending on how many devices meet these constraints,
-        /// your device pool might contain fewer devices than the value for this parameter.</p>
-        /// <p>By specifying the maximum number of devices, you can control the costs that you incur
-        /// by running tests.</p>
-        /// <p>If you use this parameter in your request, you cannot use the
-        /// <code>clearMaxDevices</code> parameter in the same request.</p>
+        /// <p>The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are available and that meet the criteria that you assign for the <code>rules</code> parameter. Depending on how many devices meet these constraints, your device pool might contain fewer devices than the value for this parameter.</p>
+        /// <p>By specifying the maximum number of devices, you can control the costs that you incur by running tests.</p>
+        /// <p>If you use this parameter in your request, you cannot use the <code>clearMaxDevices</code> parameter in the same request.</p>
         pub fn set_max_devices(mut self, input: std::option::Option<i32>) -> Self {
             self.max_devices = input;
             self
         }
-        /// <p>Sets whether the <code>maxDevices</code> parameter applies to your device pool. If you set this parameter
-        /// to <code>true</code>, the <code>maxDevices</code> parameter does not apply, and Device Farm does not limit
-        /// the number of devices that it adds to your device pool. In this case, Device Farm adds all available devices
-        /// that meet the criteria specified in the <code>rules</code> parameter.</p>
-        /// <p>If you use this parameter in your request, you cannot use the <code>maxDevices</code>
-        /// parameter in the same request.</p>
+        /// <p>Sets whether the <code>maxDevices</code> parameter applies to your device pool. If you set this parameter to <code>true</code>, the <code>maxDevices</code> parameter does not apply, and Device Farm does not limit the number of devices that it adds to your device pool. In this case, Device Farm adds all available devices that meet the criteria specified in the <code>rules</code> parameter.</p>
+        /// <p>If you use this parameter in your request, you cannot use the <code>maxDevices</code> parameter in the same request.</p>
         pub fn clear_max_devices(mut self, input: bool) -> Self {
             self.clear_max_devices = Some(input);
             self
         }
-        /// <p>Sets whether the <code>maxDevices</code> parameter applies to your device pool. If you set this parameter
-        /// to <code>true</code>, the <code>maxDevices</code> parameter does not apply, and Device Farm does not limit
-        /// the number of devices that it adds to your device pool. In this case, Device Farm adds all available devices
-        /// that meet the criteria specified in the <code>rules</code> parameter.</p>
-        /// <p>If you use this parameter in your request, you cannot use the <code>maxDevices</code>
-        /// parameter in the same request.</p>
+        /// <p>Sets whether the <code>maxDevices</code> parameter applies to your device pool. If you set this parameter to <code>true</code>, the <code>maxDevices</code> parameter does not apply, and Device Farm does not limit the number of devices that it adds to your device pool. In this case, Device Farm adds all available devices that meet the criteria specified in the <code>rules</code> parameter.</p>
+        /// <p>If you use this parameter in your request, you cannot use the <code>maxDevices</code> parameter in the same request.</p>
         pub fn set_clear_max_devices(mut self, input: std::option::Option<bool>) -> Self {
             self.clear_max_devices = input;
             self
@@ -13259,14 +12559,12 @@ pub mod update_instance_profile_input {
             self.description = input;
             self
         }
-        /// <p>The updated choice for whether you want to specify package cleanup. The default value
-        /// is <code>false</code> for private devices.</p>
+        /// <p>The updated choice for whether you want to specify package cleanup. The default value is <code>false</code> for private devices.</p>
         pub fn package_cleanup(mut self, input: bool) -> Self {
             self.package_cleanup = Some(input);
             self
         }
-        /// <p>The updated choice for whether you want to specify package cleanup. The default value
-        /// is <code>false</code> for private devices.</p>
+        /// <p>The updated choice for whether you want to specify package cleanup. The default value is <code>false</code> for private devices.</p>
         pub fn set_package_cleanup(mut self, input: std::option::Option<bool>) -> Self {
             self.package_cleanup = input;
             self
@@ -13275,10 +12573,8 @@ pub mod update_instance_profile_input {
         ///
         /// To override the contents of this collection use [`set_exclude_app_packages_from_cleanup`](Self::set_exclude_app_packages_from_cleanup).
         ///
-        /// <p>An array of strings that specifies the list of app packages that should not be cleaned up from the device
-        /// after a test run is over.</p>
-        /// <p>The list of packages is only considered if you set <code>packageCleanup</code> to
-        /// <code>true</code>.</p>
+        /// <p>An array of strings that specifies the list of app packages that should not be cleaned up from the device after a test run is over.</p>
+        /// <p>The list of packages is only considered if you set <code>packageCleanup</code> to <code>true</code>.</p>
         pub fn exclude_app_packages_from_cleanup(
             mut self,
             input: impl Into<std::string::String>,
@@ -13288,10 +12584,8 @@ pub mod update_instance_profile_input {
             self.exclude_app_packages_from_cleanup = Some(v);
             self
         }
-        /// <p>An array of strings that specifies the list of app packages that should not be cleaned up from the device
-        /// after a test run is over.</p>
-        /// <p>The list of packages is only considered if you set <code>packageCleanup</code> to
-        /// <code>true</code>.</p>
+        /// <p>An array of strings that specifies the list of app packages that should not be cleaned up from the device after a test run is over.</p>
+        /// <p>The list of packages is only considered if you set <code>packageCleanup</code> to <code>true</code>.</p>
         pub fn set_exclude_app_packages_from_cleanup(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13299,14 +12593,12 @@ pub mod update_instance_profile_input {
             self.exclude_app_packages_from_cleanup = input;
             self
         }
-        /// <p>The updated choice for whether you want to reboot the device after use. The default
-        /// value is <code>true</code>.</p>
+        /// <p>The updated choice for whether you want to reboot the device after use. The default value is <code>true</code>.</p>
         pub fn reboot_after_use(mut self, input: bool) -> Self {
             self.reboot_after_use = Some(input);
             self
         }
-        /// <p>The updated choice for whether you want to reboot the device after use. The default
-        /// value is <code>true</code>.</p>
+        /// <p>The updated choice for whether you want to reboot the device after use. The default value is <code>true</code>.</p>
         pub fn set_reboot_after_use(mut self, input: std::option::Option<bool>) -> Self {
             self.reboot_after_use = input;
             self
@@ -13473,38 +12765,32 @@ pub mod update_network_profile_input {
         pub(crate) downlink_loss_percent: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the project for which you want to update network
-        /// profile settings.</p>
+        /// <p>The Amazon Resource Name (ARN) of the project for which you want to update network profile settings.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the project for which you want to update network
-        /// profile settings.</p>
+        /// <p>The Amazon Resource Name (ARN) of the project for which you want to update network profile settings.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
-        /// <p>The name of the network profile about which you are returning
-        /// information.</p>
+        /// <p>The name of the network profile about which you are returning information.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the network profile about which you are returning
-        /// information.</p>
+        /// <p>The name of the network profile about which you are returning information.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>The description of the network profile about which you are returning
-        /// information.</p>
+        /// <p>The description of the network profile about which you are returning information.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>The description of the network profile about which you are returning
-        /// information.</p>
+        /// <p>The description of the network profile about which you are returning information.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -13522,86 +12808,72 @@ pub mod update_network_profile_input {
             self.r#type = input;
             self
         }
-        /// <p>The data throughput rate in bits per second, as an integer from 0 to
-        /// 104857600.</p>
+        /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
         pub fn uplink_bandwidth_bits(mut self, input: i64) -> Self {
             self.uplink_bandwidth_bits = Some(input);
             self
         }
-        /// <p>The data throughput rate in bits per second, as an integer from 0 to
-        /// 104857600.</p>
+        /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
         pub fn set_uplink_bandwidth_bits(mut self, input: std::option::Option<i64>) -> Self {
             self.uplink_bandwidth_bits = input;
             self
         }
-        /// <p>The data throughput rate in bits per second, as an integer from 0 to
-        /// 104857600.</p>
+        /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
         pub fn downlink_bandwidth_bits(mut self, input: i64) -> Self {
             self.downlink_bandwidth_bits = Some(input);
             self
         }
-        /// <p>The data throughput rate in bits per second, as an integer from 0 to
-        /// 104857600.</p>
+        /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
         pub fn set_downlink_bandwidth_bits(mut self, input: std::option::Option<i64>) -> Self {
             self.downlink_bandwidth_bits = input;
             self
         }
-        /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to
-        /// 2000.</p>
+        /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
         pub fn uplink_delay_ms(mut self, input: i64) -> Self {
             self.uplink_delay_ms = Some(input);
             self
         }
-        /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to
-        /// 2000.</p>
+        /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
         pub fn set_uplink_delay_ms(mut self, input: std::option::Option<i64>) -> Self {
             self.uplink_delay_ms = input;
             self
         }
-        /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to
-        /// 2000.</p>
+        /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
         pub fn downlink_delay_ms(mut self, input: i64) -> Self {
             self.downlink_delay_ms = Some(input);
             self
         }
-        /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to
-        /// 2000.</p>
+        /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
         pub fn set_downlink_delay_ms(mut self, input: std::option::Option<i64>) -> Self {
             self.downlink_delay_ms = input;
             self
         }
-        /// <p>Time variation in the delay of received packets in milliseconds as an integer from
-        /// 0 to 2000.</p>
+        /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
         pub fn uplink_jitter_ms(mut self, input: i64) -> Self {
             self.uplink_jitter_ms = Some(input);
             self
         }
-        /// <p>Time variation in the delay of received packets in milliseconds as an integer from
-        /// 0 to 2000.</p>
+        /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
         pub fn set_uplink_jitter_ms(mut self, input: std::option::Option<i64>) -> Self {
             self.uplink_jitter_ms = input;
             self
         }
-        /// <p>Time variation in the delay of received packets in milliseconds as an integer from
-        /// 0 to 2000.</p>
+        /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
         pub fn downlink_jitter_ms(mut self, input: i64) -> Self {
             self.downlink_jitter_ms = Some(input);
             self
         }
-        /// <p>Time variation in the delay of received packets in milliseconds as an integer from
-        /// 0 to 2000.</p>
+        /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
         pub fn set_downlink_jitter_ms(mut self, input: std::option::Option<i64>) -> Self {
             self.downlink_jitter_ms = input;
             self
         }
-        /// <p>Proportion of transmitted packets that fail to arrive from 0 to 100
-        /// percent.</p>
+        /// <p>Proportion of transmitted packets that fail to arrive from 0 to 100 percent.</p>
         pub fn uplink_loss_percent(mut self, input: i32) -> Self {
             self.uplink_loss_percent = Some(input);
             self
         }
-        /// <p>Proportion of transmitted packets that fail to arrive from 0 to 100
-        /// percent.</p>
+        /// <p>Proportion of transmitted packets that fail to arrive from 0 to 100 percent.</p>
         pub fn set_uplink_loss_percent(mut self, input: std::option::Option<i32>) -> Self {
             self.uplink_loss_percent = input;
             self
@@ -14158,14 +13430,12 @@ pub mod update_upload_input {
             self.arn = input;
             self
         }
-        /// <p>The upload's test spec file name. The name must not contain any forward slashes (/). The test spec file
-        /// name must end with the <code>.yaml</code> or <code>.yml</code> file extension.</p>
+        /// <p>The upload's test spec file name. The name must not contain any forward slashes (/). The test spec file name must end with the <code>.yaml</code> or <code>.yml</code> file extension.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The upload's test spec file name. The name must not contain any forward slashes (/). The test spec file
-        /// name must end with the <code>.yaml</code> or <code>.yml</code> file extension.</p>
+        /// <p>The upload's test spec file name. The name must not contain any forward slashes (/). The test spec file name must end with the <code>.yaml</code> or <code>.yml</code> file extension.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -14340,26 +13610,22 @@ pub mod update_vpce_configuration_input {
         pub(crate) vpce_configuration_description: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to
-        /// update.</p>
+        /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to update.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to
-        /// update.</p>
+        /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to update.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
-        /// <p>The friendly name you give to your VPC endpoint configuration to manage your configurations more
-        /// easily.</p>
+        /// <p>The friendly name you give to your VPC endpoint configuration to manage your configurations more easily.</p>
         pub fn vpce_configuration_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.vpce_configuration_name = Some(input.into());
             self
         }
-        /// <p>The friendly name you give to your VPC endpoint configuration to manage your configurations more
-        /// easily.</p>
+        /// <p>The friendly name you give to your VPC endpoint configuration to manage your configurations more easily.</p>
         pub fn set_vpce_configuration_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14380,14 +13646,12 @@ pub mod update_vpce_configuration_input {
             self.vpce_service_name = input;
             self
         }
-        /// <p>The DNS (domain) name used to connect to your private service in your VPC. The DNS name must not already
-        /// be in use on the internet.</p>
+        /// <p>The DNS (domain) name used to connect to your private service in your VPC. The DNS name must not already be in use on the internet.</p>
         pub fn service_dns_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_dns_name = Some(input.into());
             self
         }
-        /// <p>The DNS (domain) name used to connect to your private service in your VPC. The DNS name must not already
-        /// be in use on the internet.</p>
+        /// <p>The DNS (domain) name used to connect to your private service in your VPC. The DNS name must not already be in use on the internet.</p>
         pub fn set_service_dns_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14557,28 +13821,23 @@ impl UpdateVpceConfigurationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateVpceConfigurationInput {
-    /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to
-    /// update.</p>
+    /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to update.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The friendly name you give to your VPC endpoint configuration to manage your configurations more
-    /// easily.</p>
+    /// <p>The friendly name you give to your VPC endpoint configuration to manage your configurations more easily.</p>
     pub vpce_configuration_name: std::option::Option<std::string::String>,
     /// <p>The name of the VPC endpoint service running in your AWS account that you want Device Farm to test.</p>
     pub vpce_service_name: std::option::Option<std::string::String>,
-    /// <p>The DNS (domain) name used to connect to your private service in your VPC. The DNS name must not already
-    /// be in use on the internet.</p>
+    /// <p>The DNS (domain) name used to connect to your private service in your VPC. The DNS name must not already be in use on the internet.</p>
     pub service_dns_name: std::option::Option<std::string::String>,
     /// <p>An optional description that provides details about your VPC endpoint configuration.</p>
     pub vpce_configuration_description: std::option::Option<std::string::String>,
 }
 impl UpdateVpceConfigurationInput {
-    /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to
-    /// update.</p>
+    /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to update.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The friendly name you give to your VPC endpoint configuration to manage your configurations more
-    /// easily.</p>
+    /// <p>The friendly name you give to your VPC endpoint configuration to manage your configurations more easily.</p>
     pub fn vpce_configuration_name(&self) -> std::option::Option<&str> {
         self.vpce_configuration_name.as_deref()
     }
@@ -14586,8 +13845,7 @@ impl UpdateVpceConfigurationInput {
     pub fn vpce_service_name(&self) -> std::option::Option<&str> {
         self.vpce_service_name.as_deref()
     }
-    /// <p>The DNS (domain) name used to connect to your private service in your VPC. The DNS name must not already
-    /// be in use on the internet.</p>
+    /// <p>The DNS (domain) name used to connect to your private service in your VPC. The DNS name must not already be in use on the internet.</p>
     pub fn service_dns_name(&self) -> std::option::Option<&str> {
         self.service_dns_name.as_deref()
     }
@@ -14617,8 +13875,7 @@ impl std::fmt::Debug for UpdateVpceConfigurationInput {
 pub struct UpdateUploadInput {
     /// <p>The Amazon Resource Name (ARN) of the uploaded test spec.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The upload's test spec file name. The name must not contain any forward slashes (/). The test spec file
-    /// name must end with the <code>.yaml</code> or <code>.yml</code> file extension.</p>
+    /// <p>The upload's test spec file name. The name must not contain any forward slashes (/). The test spec file name must end with the <code>.yaml</code> or <code>.yml</code> file extension.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The upload's content type (for example, <code>application/x-yaml</code>).</p>
     pub content_type: std::option::Option<std::string::String>,
@@ -14630,8 +13887,7 @@ impl UpdateUploadInput {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The upload's test spec file name. The name must not contain any forward slashes (/). The test spec file
-    /// name must end with the <code>.yaml</code> or <code>.yml</code> file extension.</p>
+    /// <p>The upload's test spec file name. The name must not contain any forward slashes (/). The test spec file name must end with the <code>.yaml</code> or <code>.yml</code> file extension.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -14739,54 +13995,41 @@ impl std::fmt::Debug for UpdateProjectInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateNetworkProfileInput {
-    /// <p>The Amazon Resource Name (ARN) of the project for which you want to update network
-    /// profile settings.</p>
+    /// <p>The Amazon Resource Name (ARN) of the project for which you want to update network profile settings.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The name of the network profile about which you are returning
-    /// information.</p>
+    /// <p>The name of the network profile about which you are returning information.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The description of the network profile about which you are returning
-    /// information.</p>
+    /// <p>The description of the network profile about which you are returning information.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The type of network profile to return information about. Valid values are listed here.</p>
     pub r#type: std::option::Option<crate::model::NetworkProfileType>,
-    /// <p>The data throughput rate in bits per second, as an integer from 0 to
-    /// 104857600.</p>
+    /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
     pub uplink_bandwidth_bits: std::option::Option<i64>,
-    /// <p>The data throughput rate in bits per second, as an integer from 0 to
-    /// 104857600.</p>
+    /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
     pub downlink_bandwidth_bits: std::option::Option<i64>,
-    /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to
-    /// 2000.</p>
+    /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
     pub uplink_delay_ms: std::option::Option<i64>,
-    /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to
-    /// 2000.</p>
+    /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
     pub downlink_delay_ms: std::option::Option<i64>,
-    /// <p>Time variation in the delay of received packets in milliseconds as an integer from
-    /// 0 to 2000.</p>
+    /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
     pub uplink_jitter_ms: std::option::Option<i64>,
-    /// <p>Time variation in the delay of received packets in milliseconds as an integer from
-    /// 0 to 2000.</p>
+    /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
     pub downlink_jitter_ms: std::option::Option<i64>,
-    /// <p>Proportion of transmitted packets that fail to arrive from 0 to 100
-    /// percent.</p>
+    /// <p>Proportion of transmitted packets that fail to arrive from 0 to 100 percent.</p>
     pub uplink_loss_percent: i32,
     /// <p>Proportion of received packets that fail to arrive from 0 to 100 percent.</p>
     pub downlink_loss_percent: i32,
 }
 impl UpdateNetworkProfileInput {
-    /// <p>The Amazon Resource Name (ARN) of the project for which you want to update network
-    /// profile settings.</p>
+    /// <p>The Amazon Resource Name (ARN) of the project for which you want to update network profile settings.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The name of the network profile about which you are returning
-    /// information.</p>
+    /// <p>The name of the network profile about which you are returning information.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The description of the network profile about which you are returning
-    /// information.</p>
+    /// <p>The description of the network profile about which you are returning information.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -14794,38 +14037,31 @@ impl UpdateNetworkProfileInput {
     pub fn r#type(&self) -> std::option::Option<&crate::model::NetworkProfileType> {
         self.r#type.as_ref()
     }
-    /// <p>The data throughput rate in bits per second, as an integer from 0 to
-    /// 104857600.</p>
+    /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
     pub fn uplink_bandwidth_bits(&self) -> std::option::Option<i64> {
         self.uplink_bandwidth_bits
     }
-    /// <p>The data throughput rate in bits per second, as an integer from 0 to
-    /// 104857600.</p>
+    /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
     pub fn downlink_bandwidth_bits(&self) -> std::option::Option<i64> {
         self.downlink_bandwidth_bits
     }
-    /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to
-    /// 2000.</p>
+    /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
     pub fn uplink_delay_ms(&self) -> std::option::Option<i64> {
         self.uplink_delay_ms
     }
-    /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to
-    /// 2000.</p>
+    /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
     pub fn downlink_delay_ms(&self) -> std::option::Option<i64> {
         self.downlink_delay_ms
     }
-    /// <p>Time variation in the delay of received packets in milliseconds as an integer from
-    /// 0 to 2000.</p>
+    /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
     pub fn uplink_jitter_ms(&self) -> std::option::Option<i64> {
         self.uplink_jitter_ms
     }
-    /// <p>Time variation in the delay of received packets in milliseconds as an integer from
-    /// 0 to 2000.</p>
+    /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
     pub fn downlink_jitter_ms(&self) -> std::option::Option<i64> {
         self.downlink_jitter_ms
     }
-    /// <p>Proportion of transmitted packets that fail to arrive from 0 to 100
-    /// percent.</p>
+    /// <p>Proportion of transmitted packets that fail to arrive from 0 to 100 percent.</p>
     pub fn uplink_loss_percent(&self) -> i32 {
         self.uplink_loss_percent
     }
@@ -14863,16 +14099,12 @@ pub struct UpdateInstanceProfileInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The updated description for your instance profile.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The updated choice for whether you want to specify package cleanup. The default value
-    /// is <code>false</code> for private devices.</p>
+    /// <p>The updated choice for whether you want to specify package cleanup. The default value is <code>false</code> for private devices.</p>
     pub package_cleanup: std::option::Option<bool>,
-    /// <p>An array of strings that specifies the list of app packages that should not be cleaned up from the device
-    /// after a test run is over.</p>
-    /// <p>The list of packages is only considered if you set <code>packageCleanup</code> to
-    /// <code>true</code>.</p>
+    /// <p>An array of strings that specifies the list of app packages that should not be cleaned up from the device after a test run is over.</p>
+    /// <p>The list of packages is only considered if you set <code>packageCleanup</code> to <code>true</code>.</p>
     pub exclude_app_packages_from_cleanup: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The updated choice for whether you want to reboot the device after use. The default
-    /// value is <code>true</code>.</p>
+    /// <p>The updated choice for whether you want to reboot the device after use. The default value is <code>true</code>.</p>
     pub reboot_after_use: std::option::Option<bool>,
 }
 impl UpdateInstanceProfileInput {
@@ -14888,20 +14120,16 @@ impl UpdateInstanceProfileInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The updated choice for whether you want to specify package cleanup. The default value
-    /// is <code>false</code> for private devices.</p>
+    /// <p>The updated choice for whether you want to specify package cleanup. The default value is <code>false</code> for private devices.</p>
     pub fn package_cleanup(&self) -> std::option::Option<bool> {
         self.package_cleanup
     }
-    /// <p>An array of strings that specifies the list of app packages that should not be cleaned up from the device
-    /// after a test run is over.</p>
-    /// <p>The list of packages is only considered if you set <code>packageCleanup</code> to
-    /// <code>true</code>.</p>
+    /// <p>An array of strings that specifies the list of app packages that should not be cleaned up from the device after a test run is over.</p>
+    /// <p>The list of packages is only considered if you set <code>packageCleanup</code> to <code>true</code>.</p>
     pub fn exclude_app_packages_from_cleanup(&self) -> std::option::Option<&[std::string::String]> {
         self.exclude_app_packages_from_cleanup.as_deref()
     }
-    /// <p>The updated choice for whether you want to reboot the device after use. The default
-    /// value is <code>true</code>.</p>
+    /// <p>The updated choice for whether you want to reboot the device after use. The default value is <code>true</code>.</p>
     pub fn reboot_after_use(&self) -> std::option::Option<bool> {
         self.reboot_after_use
     }
@@ -14932,24 +14160,14 @@ pub struct UpdateDevicePoolInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the device pool to update.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>Represents the rules to modify for the device pool. Updating rules is optional. If you update rules for
-    /// your request, the update replaces the existing rules.</p>
+    /// <p>Represents the rules to modify for the device pool. Updating rules is optional. If you update rules for your request, the update replaces the existing rules.</p>
     pub rules: std::option::Option<std::vec::Vec<crate::model::Rule>>,
-    /// <p>The number of devices that Device Farm can add to your device pool. Device Farm adds
-    /// devices that are available and that meet the criteria that you assign for the
-    /// <code>rules</code> parameter. Depending on how many devices meet these constraints,
-    /// your device pool might contain fewer devices than the value for this parameter.</p>
-    /// <p>By specifying the maximum number of devices, you can control the costs that you incur
-    /// by running tests.</p>
-    /// <p>If you use this parameter in your request, you cannot use the
-    /// <code>clearMaxDevices</code> parameter in the same request.</p>
+    /// <p>The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are available and that meet the criteria that you assign for the <code>rules</code> parameter. Depending on how many devices meet these constraints, your device pool might contain fewer devices than the value for this parameter.</p>
+    /// <p>By specifying the maximum number of devices, you can control the costs that you incur by running tests.</p>
+    /// <p>If you use this parameter in your request, you cannot use the <code>clearMaxDevices</code> parameter in the same request.</p>
     pub max_devices: std::option::Option<i32>,
-    /// <p>Sets whether the <code>maxDevices</code> parameter applies to your device pool. If you set this parameter
-    /// to <code>true</code>, the <code>maxDevices</code> parameter does not apply, and Device Farm does not limit
-    /// the number of devices that it adds to your device pool. In this case, Device Farm adds all available devices
-    /// that meet the criteria specified in the <code>rules</code> parameter.</p>
-    /// <p>If you use this parameter in your request, you cannot use the <code>maxDevices</code>
-    /// parameter in the same request.</p>
+    /// <p>Sets whether the <code>maxDevices</code> parameter applies to your device pool. If you set this parameter to <code>true</code>, the <code>maxDevices</code> parameter does not apply, and Device Farm does not limit the number of devices that it adds to your device pool. In this case, Device Farm adds all available devices that meet the criteria specified in the <code>rules</code> parameter.</p>
+    /// <p>If you use this parameter in your request, you cannot use the <code>maxDevices</code> parameter in the same request.</p>
     pub clear_max_devices: std::option::Option<bool>,
 }
 impl UpdateDevicePoolInput {
@@ -14965,28 +14183,18 @@ impl UpdateDevicePoolInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Represents the rules to modify for the device pool. Updating rules is optional. If you update rules for
-    /// your request, the update replaces the existing rules.</p>
+    /// <p>Represents the rules to modify for the device pool. Updating rules is optional. If you update rules for your request, the update replaces the existing rules.</p>
     pub fn rules(&self) -> std::option::Option<&[crate::model::Rule]> {
         self.rules.as_deref()
     }
-    /// <p>The number of devices that Device Farm can add to your device pool. Device Farm adds
-    /// devices that are available and that meet the criteria that you assign for the
-    /// <code>rules</code> parameter. Depending on how many devices meet these constraints,
-    /// your device pool might contain fewer devices than the value for this parameter.</p>
-    /// <p>By specifying the maximum number of devices, you can control the costs that you incur
-    /// by running tests.</p>
-    /// <p>If you use this parameter in your request, you cannot use the
-    /// <code>clearMaxDevices</code> parameter in the same request.</p>
+    /// <p>The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are available and that meet the criteria that you assign for the <code>rules</code> parameter. Depending on how many devices meet these constraints, your device pool might contain fewer devices than the value for this parameter.</p>
+    /// <p>By specifying the maximum number of devices, you can control the costs that you incur by running tests.</p>
+    /// <p>If you use this parameter in your request, you cannot use the <code>clearMaxDevices</code> parameter in the same request.</p>
     pub fn max_devices(&self) -> std::option::Option<i32> {
         self.max_devices
     }
-    /// <p>Sets whether the <code>maxDevices</code> parameter applies to your device pool. If you set this parameter
-    /// to <code>true</code>, the <code>maxDevices</code> parameter does not apply, and Device Farm does not limit
-    /// the number of devices that it adds to your device pool. In this case, Device Farm adds all available devices
-    /// that meet the criteria specified in the <code>rules</code> parameter.</p>
-    /// <p>If you use this parameter in your request, you cannot use the <code>maxDevices</code>
-    /// parameter in the same request.</p>
+    /// <p>Sets whether the <code>maxDevices</code> parameter applies to your device pool. If you set this parameter to <code>true</code>, the <code>maxDevices</code> parameter does not apply, and Device Farm does not limit the number of devices that it adds to your device pool. In this case, Device Farm adds all available devices that meet the criteria specified in the <code>rules</code> parameter.</p>
+    /// <p>If you use this parameter in your request, you cannot use the <code>maxDevices</code> parameter in the same request.</p>
     pub fn clear_max_devices(&self) -> std::option::Option<bool> {
         self.clear_max_devices
     }
@@ -15043,21 +14251,13 @@ impl std::fmt::Debug for UpdateDeviceInstanceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource or resources from which to delete tags. You can associate
-    /// tags with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>,
-    /// <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>,
-    /// <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and
-    /// <code>VPCE_CONFIGURATION</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource or resources from which to delete tags. You can associate tags with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>, <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>, <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and <code>VPCE_CONFIGURATION</code>.</p>
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The keys of the tags to be removed.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource or resources from which to delete tags. You can associate
-    /// tags with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>,
-    /// <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>,
-    /// <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and
-    /// <code>VPCE_CONFIGURATION</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource or resources from which to delete tags. You can associate tags with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>, <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>, <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and <code>VPCE_CONFIGURATION</code>.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -15079,27 +14279,17 @@ impl std::fmt::Debug for UntagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource or resources to which to add tags. You can associate tags
-    /// with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>,
-    /// <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>,
-    /// <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and
-    /// <code>VPCE_CONFIGURATION</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource or resources to which to add tags. You can associate tags with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>, <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>, <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and <code>VPCE_CONFIGURATION</code>.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum
-    /// character length of 128 characters. Tag values can have a maximum length of 256 characters.</p>
+    /// <p>The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum character length of 128 characters. Tag values can have a maximum length of 256 characters.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource or resources to which to add tags. You can associate tags
-    /// with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>,
-    /// <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>,
-    /// <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and
-    /// <code>VPCE_CONFIGURATION</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource or resources to which to add tags. You can associate tags with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>, <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>, <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and <code>VPCE_CONFIGURATION</code>.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum
-    /// character length of 128 characters. Tag values can have a maximum length of 256 characters.</p>
+    /// <p>The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum character length of 128 characters. Tag values can have a maximum length of 256 characters.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -15182,19 +14372,12 @@ impl std::fmt::Debug for StopJobInput {
 pub struct ScheduleRunInput {
     /// <p>The ARN of the project for the run to be scheduled.</p>
     pub project_arn: std::option::Option<std::string::String>,
-    /// <p>The ARN of an application package to run tests against, created with <a>CreateUpload</a>.
-    /// See <a>ListUploads</a>.</p>
+    /// <p>The ARN of an application package to run tests against, created with <code>CreateUpload</code>. See <code>ListUploads</code>.</p>
     pub app_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the device pool for the run to be scheduled.</p>
     pub device_pool_arn: std::option::Option<std::string::String>,
-    /// <p>The filter criteria used to dynamically select a set of devices for a test run and the maximum number of
-    /// devices to be included in the run.</p>
-    /// <p>Either <b>
-    /// <code>devicePoolArn</code>
-    /// </b> or <b>
-    /// <code>deviceSelectionConfiguration</code>
-    /// </b> is required in a
-    /// request.</p>
+    /// <p>The filter criteria used to dynamically select a set of devices for a test run and the maximum number of devices to be included in the run.</p>
+    /// <p>Either <b> <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code> </b> is required in a request.</p>
     pub device_selection_configuration:
         std::option::Option<crate::model::DeviceSelectionConfiguration>,
     /// <p>The name for the run to be scheduled.</p>
@@ -15203,8 +14386,7 @@ pub struct ScheduleRunInput {
     pub test: std::option::Option<crate::model::ScheduleRunTest>,
     /// <p>Information about the settings for the run to be scheduled.</p>
     pub configuration: std::option::Option<crate::model::ScheduleRunConfiguration>,
-    /// <p>Specifies configuration information about a test run, such as the execution timeout
-    /// (in minutes).</p>
+    /// <p>Specifies configuration information about a test run, such as the execution timeout (in minutes).</p>
     pub execution_configuration: std::option::Option<crate::model::ExecutionConfiguration>,
 }
 impl ScheduleRunInput {
@@ -15212,8 +14394,7 @@ impl ScheduleRunInput {
     pub fn project_arn(&self) -> std::option::Option<&str> {
         self.project_arn.as_deref()
     }
-    /// <p>The ARN of an application package to run tests against, created with <a>CreateUpload</a>.
-    /// See <a>ListUploads</a>.</p>
+    /// <p>The ARN of an application package to run tests against, created with <code>CreateUpload</code>. See <code>ListUploads</code>.</p>
     pub fn app_arn(&self) -> std::option::Option<&str> {
         self.app_arn.as_deref()
     }
@@ -15221,14 +14402,8 @@ impl ScheduleRunInput {
     pub fn device_pool_arn(&self) -> std::option::Option<&str> {
         self.device_pool_arn.as_deref()
     }
-    /// <p>The filter criteria used to dynamically select a set of devices for a test run and the maximum number of
-    /// devices to be included in the run.</p>
-    /// <p>Either <b>
-    /// <code>devicePoolArn</code>
-    /// </b> or <b>
-    /// <code>deviceSelectionConfiguration</code>
-    /// </b> is required in a
-    /// request.</p>
+    /// <p>The filter criteria used to dynamically select a set of devices for a test run and the maximum number of devices to be included in the run.</p>
+    /// <p>Either <b> <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code> </b> is required in a request.</p>
     pub fn device_selection_configuration(
         &self,
     ) -> std::option::Option<&crate::model::DeviceSelectionConfiguration> {
@@ -15246,8 +14421,7 @@ impl ScheduleRunInput {
     pub fn configuration(&self) -> std::option::Option<&crate::model::ScheduleRunConfiguration> {
         self.configuration.as_ref()
     }
-    /// <p>Specifies configuration information about a test run, such as the execution timeout
-    /// (in minutes).</p>
+    /// <p>Specifies configuration information about a test run, such as the execution timeout (in minutes).</p>
     pub fn execution_configuration(
         &self,
     ) -> std::option::Option<&crate::model::ExecutionConfiguration> {
@@ -15341,8 +14515,7 @@ impl std::fmt::Debug for PurchaseOfferingInput {
 pub struct ListVpceConfigurationsInput {
     /// <p>An integer that specifies the maximum number of items you want to return in the API response.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>An identifier that was returned from the previous call to this operation, which can be
-    /// used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListVpceConfigurationsInput {
@@ -15350,8 +14523,7 @@ impl ListVpceConfigurationsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>An identifier that was returned from the previous call to this operation, which can be
-    /// used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -15369,225 +14541,93 @@ impl std::fmt::Debug for ListVpceConfigurationsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUploadsInput {
-    /// <p>The Amazon Resource Name (ARN) of the project for which you want to list
-    /// uploads.</p>
+    /// <p>The Amazon Resource Name (ARN) of the project for which you want to list uploads.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The type of upload.</p>
     /// <p>Must be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>ANDROID_APP</p>
-    /// </li>
-    /// <li>
-    /// <p>IOS_APP</p>
-    /// </li>
-    /// <li>
-    /// <p>WEB_APP</p>
-    /// </li>
-    /// <li>
-    /// <p>EXTERNAL_DATA</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_PYTHON_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_NODE_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_RUBY_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_PYTHON_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_NODE_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_RUBY_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>CALABASH_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>INSTRUMENTATION_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>UIAUTOMATION_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>UIAUTOMATOR_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>XCTEST_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>XCTEST_UI_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_JAVA_JUNIT_TEST_SPEC</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_JAVA_TESTNG_TEST_SPEC</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_PYTHON_TEST_SPEC</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_NODE_TEST_SPEC</p>
-    /// </li>
-    /// <li>
-    /// <p> APPIUM_RUBY_TEST_SPEC</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_PYTHON_TEST_SPEC</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_NODE_TEST_SPEC</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_RUBY_TEST_SPEC</p>
-    /// </li>
-    /// <li>
-    /// <p>INSTRUMENTATION_TEST_SPEC</p>
-    /// </li>
-    /// <li>
-    /// <p>XCTEST_UI_TEST_SPEC</p>
-    /// </li>
+    /// <li> <p>ANDROID_APP</p> </li>
+    /// <li> <p>IOS_APP</p> </li>
+    /// <li> <p>WEB_APP</p> </li>
+    /// <li> <p>EXTERNAL_DATA</p> </li>
+    /// <li> <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_PYTHON_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_NODE_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_RUBY_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_WEB_PYTHON_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_WEB_NODE_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_WEB_RUBY_TEST_PACKAGE</p> </li>
+    /// <li> <p>CALABASH_TEST_PACKAGE</p> </li>
+    /// <li> <p>INSTRUMENTATION_TEST_PACKAGE</p> </li>
+    /// <li> <p>UIAUTOMATION_TEST_PACKAGE</p> </li>
+    /// <li> <p>UIAUTOMATOR_TEST_PACKAGE</p> </li>
+    /// <li> <p>XCTEST_TEST_PACKAGE</p> </li>
+    /// <li> <p>XCTEST_UI_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_JAVA_JUNIT_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_JAVA_TESTNG_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_PYTHON_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_NODE_TEST_SPEC</p> </li>
+    /// <li> <p> APPIUM_RUBY_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_WEB_PYTHON_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_WEB_NODE_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_WEB_RUBY_TEST_SPEC</p> </li>
+    /// <li> <p>INSTRUMENTATION_TEST_SPEC</p> </li>
+    /// <li> <p>XCTEST_UI_TEST_SPEC</p> </li>
     /// </ul>
     pub r#type: std::option::Option<crate::model::UploadType>,
-    /// <p>An identifier that was returned from the previous call to this operation, which can
-    /// be used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListUploadsInput {
-    /// <p>The Amazon Resource Name (ARN) of the project for which you want to list
-    /// uploads.</p>
+    /// <p>The Amazon Resource Name (ARN) of the project for which you want to list uploads.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The type of upload.</p>
     /// <p>Must be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>ANDROID_APP</p>
-    /// </li>
-    /// <li>
-    /// <p>IOS_APP</p>
-    /// </li>
-    /// <li>
-    /// <p>WEB_APP</p>
-    /// </li>
-    /// <li>
-    /// <p>EXTERNAL_DATA</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_PYTHON_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_NODE_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_RUBY_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_PYTHON_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_NODE_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_RUBY_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>CALABASH_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>INSTRUMENTATION_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>UIAUTOMATION_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>UIAUTOMATOR_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>XCTEST_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>XCTEST_UI_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_JAVA_JUNIT_TEST_SPEC</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_JAVA_TESTNG_TEST_SPEC</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_PYTHON_TEST_SPEC</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_NODE_TEST_SPEC</p>
-    /// </li>
-    /// <li>
-    /// <p> APPIUM_RUBY_TEST_SPEC</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_PYTHON_TEST_SPEC</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_NODE_TEST_SPEC</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_RUBY_TEST_SPEC</p>
-    /// </li>
-    /// <li>
-    /// <p>INSTRUMENTATION_TEST_SPEC</p>
-    /// </li>
-    /// <li>
-    /// <p>XCTEST_UI_TEST_SPEC</p>
-    /// </li>
+    /// <li> <p>ANDROID_APP</p> </li>
+    /// <li> <p>IOS_APP</p> </li>
+    /// <li> <p>WEB_APP</p> </li>
+    /// <li> <p>EXTERNAL_DATA</p> </li>
+    /// <li> <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_PYTHON_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_NODE_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_RUBY_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_WEB_PYTHON_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_WEB_NODE_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_WEB_RUBY_TEST_PACKAGE</p> </li>
+    /// <li> <p>CALABASH_TEST_PACKAGE</p> </li>
+    /// <li> <p>INSTRUMENTATION_TEST_PACKAGE</p> </li>
+    /// <li> <p>UIAUTOMATION_TEST_PACKAGE</p> </li>
+    /// <li> <p>UIAUTOMATOR_TEST_PACKAGE</p> </li>
+    /// <li> <p>XCTEST_TEST_PACKAGE</p> </li>
+    /// <li> <p>XCTEST_UI_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_JAVA_JUNIT_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_JAVA_TESTNG_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_PYTHON_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_NODE_TEST_SPEC</p> </li>
+    /// <li> <p> APPIUM_RUBY_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_WEB_PYTHON_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_WEB_NODE_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_WEB_RUBY_TEST_SPEC</p> </li>
+    /// <li> <p>INSTRUMENTATION_TEST_SPEC</p> </li>
+    /// <li> <p>XCTEST_UI_TEST_SPEC</p> </li>
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&crate::model::UploadType> {
         self.r#type.as_ref()
     }
-    /// <p>An identifier that was returned from the previous call to this operation, which can
-    /// be used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -15608,8 +14648,7 @@ impl std::fmt::Debug for ListUploadsInput {
 pub struct ListUniqueProblemsInput {
     /// <p>The unique problems' ARNs.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>An identifier that was returned from the previous call to this operation, which can
-    /// be used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListUniqueProblemsInput {
@@ -15617,8 +14656,7 @@ impl ListUniqueProblemsInput {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>An identifier that was returned from the previous call to this operation, which can
-    /// be used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -15638,8 +14676,7 @@ impl std::fmt::Debug for ListUniqueProblemsInput {
 pub struct ListTestsInput {
     /// <p>The test suite's Amazon Resource Name (ARN).</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>An identifier that was returned from the previous call to this operation, which can
-    /// be used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTestsInput {
@@ -15647,8 +14684,7 @@ impl ListTestsInput {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>An identifier that was returned from the previous call to this operation, which can
-    /// be used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -15666,13 +14702,13 @@ impl std::fmt::Debug for ListTestsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTestGridSessionsInput {
-    /// <p>ARN of a <a>TestGridProject</a>.</p>
+    /// <p>ARN of a <code>TestGridProject</code>.</p>
     pub project_arn: std::option::Option<std::string::String>,
     /// <p>Return only sessions in this state.</p>
     pub status: std::option::Option<crate::model::TestGridSessionStatus>,
     /// <p>Return only sessions created after this time.</p>
     pub creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Return only  sessions created before this time.</p>
+    /// <p>Return only sessions created before this time.</p>
     pub creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Return only sessions that ended after this time.</p>
     pub end_time_after: std::option::Option<aws_smithy_types::DateTime>,
@@ -15684,7 +14720,7 @@ pub struct ListTestGridSessionsInput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTestGridSessionsInput {
-    /// <p>ARN of a <a>TestGridProject</a>.</p>
+    /// <p>ARN of a <code>TestGridProject</code>.</p>
     pub fn project_arn(&self) -> std::option::Option<&str> {
         self.project_arn.as_deref()
     }
@@ -15696,7 +14732,7 @@ impl ListTestGridSessionsInput {
     pub fn creation_time_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time_after.as_ref()
     }
-    /// <p>Return only  sessions created before this time.</p>
+    /// <p>Return only sessions created before this time.</p>
     pub fn creation_time_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time_before.as_ref()
     }
@@ -15736,7 +14772,7 @@ impl std::fmt::Debug for ListTestGridSessionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTestGridSessionArtifactsInput {
-    /// <p>The ARN of a <a>TestGridSession</a>. </p>
+    /// <p>The ARN of a <code>TestGridSession</code>. </p>
     pub session_arn: std::option::Option<std::string::String>,
     /// <p>Limit results to a specified type of artifact.</p>
     pub r#type: std::option::Option<crate::model::TestGridSessionArtifactCategory>,
@@ -15746,7 +14782,7 @@ pub struct ListTestGridSessionArtifactsInput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTestGridSessionArtifactsInput {
-    /// <p>The ARN of a <a>TestGridSession</a>. </p>
+    /// <p>The ARN of a <code>TestGridSession</code>. </p>
     pub fn session_arn(&self) -> std::option::Option<&str> {
         self.session_arn.as_deref()
     }
@@ -15841,19 +14877,11 @@ impl std::fmt::Debug for ListTestGridProjectsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource or resources for which to list tags. You can associate tags
-    /// with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>,
-    /// <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>,
-    /// <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and
-    /// <code>VPCE_CONFIGURATION</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource or resources for which to list tags. You can associate tags with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>, <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>, <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and <code>VPCE_CONFIGURATION</code>.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource or resources for which to list tags. You can associate tags
-    /// with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>,
-    /// <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>,
-    /// <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and
-    /// <code>VPCE_CONFIGURATION</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource or resources for which to list tags. You can associate tags with the following Device Farm resources: <code>PROJECT</code>, <code>RUN</code>, <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>, <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and <code>VPCE_CONFIGURATION</code>.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -15872,8 +14900,7 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 pub struct ListSuitesInput {
     /// <p>The job's Amazon Resource Name (ARN).</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>An identifier that was returned from the previous call to this operation, which can
-    /// be used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSuitesInput {
@@ -15881,8 +14908,7 @@ impl ListSuitesInput {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>An identifier that was returned from the previous call to this operation, which can
-    /// be used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -15902,8 +14928,7 @@ impl std::fmt::Debug for ListSuitesInput {
 pub struct ListSamplesInput {
     /// <p>The Amazon Resource Name (ARN) of the job used to list samples.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>An identifier that was returned from the previous call to this operation, which can
-    /// be used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSamplesInput {
@@ -15911,8 +14936,7 @@ impl ListSamplesInput {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>An identifier that was returned from the previous call to this operation, which can
-    /// be used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -15930,21 +14954,17 @@ impl std::fmt::Debug for ListSamplesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRunsInput {
-    /// <p>The Amazon Resource Name (ARN) of the project for which you want to list
-    /// runs.</p>
+    /// <p>The Amazon Resource Name (ARN) of the project for which you want to list runs.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>An identifier that was returned from the previous call to this operation, which can
-    /// be used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRunsInput {
-    /// <p>The Amazon Resource Name (ARN) of the project for which you want to list
-    /// runs.</p>
+    /// <p>The Amazon Resource Name (ARN) of the project for which you want to list runs.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>An identifier that was returned from the previous call to this operation, which can
-    /// be used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -15958,26 +14978,21 @@ impl std::fmt::Debug for ListRunsInput {
     }
 }
 
-/// <p>Represents the request to return information about the remote access
-/// session.</p>
+/// <p>Represents the request to return information about the remote access session.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRemoteAccessSessionsInput {
-    /// <p>The Amazon Resource Name (ARN) of the project about which you are requesting
-    /// information.</p>
+    /// <p>The Amazon Resource Name (ARN) of the project about which you are requesting information.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>An identifier that was returned from the previous call to this operation, which can
-    /// be used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRemoteAccessSessionsInput {
-    /// <p>The Amazon Resource Name (ARN) of the project about which you are requesting
-    /// information.</p>
+    /// <p>The Amazon Resource Name (ARN) of the project about which you are requesting information.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>An identifier that was returned from the previous call to this operation, which can
-    /// be used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -15995,23 +15010,17 @@ impl std::fmt::Debug for ListRemoteAccessSessionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProjectsInput {
-    /// <p>Optional. If no Amazon Resource Name (ARN) is specified, then AWS Device Farm
-    /// returns a list of all projects for the AWS account. You can also specify a project
-    /// ARN.</p>
+    /// <p>Optional. If no Amazon Resource Name (ARN) is specified, then AWS Device Farm returns a list of all projects for the AWS account. You can also specify a project ARN.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>An identifier that was returned from the previous call to this operation, which can
-    /// be used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListProjectsInput {
-    /// <p>Optional. If no Amazon Resource Name (ARN) is specified, then AWS Device Farm
-    /// returns a list of all projects for the AWS account. You can also specify a project
-    /// ARN.</p>
+    /// <p>Optional. If no Amazon Resource Name (ARN) is specified, then AWS Device Farm returns a list of all projects for the AWS account. You can also specify a project ARN.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>An identifier that was returned from the previous call to this operation, which can
-    /// be used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -16029,13 +15038,11 @@ impl std::fmt::Debug for ListProjectsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOfferingTransactionsInput {
-    /// <p>An identifier that was returned from the previous call to this operation, which can
-    /// be used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListOfferingTransactionsInput {
-    /// <p>An identifier that was returned from the previous call to this operation, which can
-    /// be used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -16052,13 +15059,11 @@ impl std::fmt::Debug for ListOfferingTransactionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOfferingsInput {
-    /// <p>An identifier that was returned from the previous call to this operation, which can
-    /// be used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListOfferingsInput {
-    /// <p>An identifier that was returned from the previous call to this operation, which can
-    /// be used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -16075,13 +15080,11 @@ impl std::fmt::Debug for ListOfferingsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOfferingPromotionsInput {
-    /// <p>An identifier that was returned from the previous call to this operation, which can
-    /// be used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListOfferingPromotionsInput {
-    /// <p>An identifier that was returned from the previous call to this operation, which can
-    /// be used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -16098,18 +15101,15 @@ impl std::fmt::Debug for ListOfferingPromotionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListNetworkProfilesInput {
-    /// <p>The Amazon Resource Name (ARN) of the project for which you want to list network
-    /// profiles.</p>
+    /// <p>The Amazon Resource Name (ARN) of the project for which you want to list network profiles.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The type of network profile to return information about. Valid values are listed here.</p>
     pub r#type: std::option::Option<crate::model::NetworkProfileType>,
-    /// <p>An identifier that was returned from the previous call to this operation, which can
-    /// be used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListNetworkProfilesInput {
-    /// <p>The Amazon Resource Name (ARN) of the project for which you want to list network
-    /// profiles.</p>
+    /// <p>The Amazon Resource Name (ARN) of the project for which you want to list network profiles.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -16117,8 +15117,7 @@ impl ListNetworkProfilesInput {
     pub fn r#type(&self) -> std::option::Option<&crate::model::NetworkProfileType> {
         self.r#type.as_ref()
     }
-    /// <p>An identifier that was returned from the previous call to this operation, which can
-    /// be used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -16139,8 +15138,7 @@ impl std::fmt::Debug for ListNetworkProfilesInput {
 pub struct ListJobsInput {
     /// <p>The run's Amazon Resource Name (ARN).</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>An identifier that was returned from the previous call to this operation, which can
-    /// be used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListJobsInput {
@@ -16148,8 +15146,7 @@ impl ListJobsInput {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>An identifier that was returned from the previous call to this operation, which can
-    /// be used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -16169,8 +15166,7 @@ impl std::fmt::Debug for ListJobsInput {
 pub struct ListInstanceProfilesInput {
     /// <p>An integer that specifies the maximum number of items you want to return in the API response.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>An identifier that was returned from the previous call to this operation, which can be
-    /// used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListInstanceProfilesInput {
@@ -16178,8 +15174,7 @@ impl ListInstanceProfilesInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>An identifier that was returned from the previous call to this operation, which can be
-    /// used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -16199,99 +15194,38 @@ impl std::fmt::Debug for ListInstanceProfilesInput {
 pub struct ListDevicesInput {
     /// <p>The Amazon Resource Name (ARN) of the project.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>An identifier that was returned from the previous call to this operation, which can
-    /// be used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>Used to select a set of devices. A filter is made up of an attribute, an operator, and
-    /// one or more values.</p>
+    /// <p>Used to select a set of devices. A filter is made up of an attribute, an operator, and one or more values.</p>
     /// <ul>
-    /// <li>
-    /// <p>Attribute: The aspect of a device such as platform or model used as the
-    /// selection criteria in a device filter.</p>
-    /// <p>Allowed values include:</p>
+    /// <li> <p>Attribute: The aspect of a device such as platform or model used as the selection criteria in a device filter.</p> <p>Allowed values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>ARN: The Amazon Resource Name (ARN) of the device (for example,
-    /// <code>arn:aws:devicefarm:us-west-2::device:12345Example</code>).</p>
-    /// </li>
-    /// <li>
-    /// <p>PLATFORM: The device platform. Valid values are ANDROID or IOS.</p>
-    /// </li>
-    /// <li>
-    /// <p>OS_VERSION: The operating system version (for example, 10.3.2).</p>
-    /// </li>
-    /// <li>
-    /// <p>MODEL: The device model (for example, iPad 5th Gen).</p>
-    /// </li>
-    /// <li>
-    /// <p>AVAILABILITY: The current availability of the device. Valid values are AVAILABLE,
-    /// HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p>
-    /// </li>
-    /// <li>
-    /// <p>FORM_FACTOR: The device form factor. Valid values are PHONE or TABLET.</p>
-    /// </li>
-    /// <li>
-    /// <p>MANUFACTURER: The device manufacturer (for example, Apple).</p>
-    /// </li>
-    /// <li>
-    /// <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access. Valid values
-    /// are TRUE or FALSE.</p>
-    /// </li>
-    /// <li>
-    /// <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values
-    /// are TRUE or FALSE. Because remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-    /// longer supported</a>, this attribute is ignored.</p>
-    /// </li>
-    /// <li>
-    /// <p>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device
-    /// instance.</p>
-    /// </li>
-    /// <li>
-    /// <p>INSTANCE_LABELS: The label of the device instance.</p>
-    /// </li>
-    /// <li>
-    /// <p>FLEET_TYPE: The fleet type. Valid values are PUBLIC or PRIVATE.</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>Operator: The filter operator.</p>
+    /// <li> <p>ARN: The Amazon Resource Name (ARN) of the device (for example, <code>arn:aws:devicefarm:us-west-2::device:12345Example</code>).</p> </li>
+    /// <li> <p>PLATFORM: The device platform. Valid values are ANDROID or IOS.</p> </li>
+    /// <li> <p>OS_VERSION: The operating system version (for example, 10.3.2).</p> </li>
+    /// <li> <p>MODEL: The device model (for example, iPad 5th Gen).</p> </li>
+    /// <li> <p>AVAILABILITY: The current availability of the device. Valid values are AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p> </li>
+    /// <li> <p>FORM_FACTOR: The device form factor. Valid values are PHONE or TABLET.</p> </li>
+    /// <li> <p>MANUFACTURER: The device manufacturer (for example, Apple).</p> </li>
+    /// <li> <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access. Valid values are TRUE or FALSE.</p> </li>
+    /// <li> <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values are TRUE or FALSE. Because remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>, this attribute is ignored.</p> </li>
+    /// <li> <p>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance.</p> </li>
+    /// <li> <p>INSTANCE_LABELS: The label of the device instance.</p> </li>
+    /// <li> <p>FLEET_TYPE: The fleet type. Valid values are PUBLIC or PRIVATE.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>Operator: The filter operator.</p>
     /// <ul>
-    /// <li>
-    /// <p>The EQUALS operator is available for every attribute except
-    /// INSTANCE_LABELS.</p>
-    /// </li>
-    /// <li>
-    /// <p>The CONTAINS operator is available for the INSTANCE_LABELS and MODEL
-    /// attributes.</p>
-    /// </li>
-    /// <li>
-    /// <p>The IN and NOT_IN operators are available for the ARN, OS_VERSION,
-    /// MODEL, MANUFACTURER, and INSTANCE_ARN attributes.</p>
-    /// </li>
-    /// <li>
-    /// <p>The LESS_THAN, GREATER_THAN, LESS_THAN_OR_EQUALS, and
-    /// GREATER_THAN_OR_EQUALS operators are also available for the OS_VERSION
-    /// attribute.</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>Values: An array of one or more filter values.</p>
+    /// <li> <p>The EQUALS operator is available for every attribute except INSTANCE_LABELS.</p> </li>
+    /// <li> <p>The CONTAINS operator is available for the INSTANCE_LABELS and MODEL attributes.</p> </li>
+    /// <li> <p>The IN and NOT_IN operators are available for the ARN, OS_VERSION, MODEL, MANUFACTURER, and INSTANCE_ARN attributes.</p> </li>
+    /// <li> <p>The LESS_THAN, GREATER_THAN, LESS_THAN_OR_EQUALS, and GREATER_THAN_OR_EQUALS operators are also available for the OS_VERSION attribute.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>Values: An array of one or more filter values.</p>
     /// <ul>
-    /// <li>
-    /// <p>The IN and NOT_IN operators take a values array that has one or more
-    /// elements.</p>
-    /// </li>
-    /// <li>
-    /// <p>The other operators require an array with a single element.</p>
-    /// </li>
-    /// <li>
-    /// <p>In a request, the AVAILABILITY attribute takes the following values: AVAILABLE,
-    /// HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p>The IN and NOT_IN operators take a values array that has one or more elements.</p> </li>
+    /// <li> <p>The other operators require an array with a single element.</p> </li>
+    /// <li> <p>In a request, the AVAILABILITY attribute takes the following values: AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p> </li>
+    /// </ul> </li>
     /// </ul>
     pub filters: std::option::Option<std::vec::Vec<crate::model::DeviceFilter>>,
 }
@@ -16300,101 +15234,40 @@ impl ListDevicesInput {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>An identifier that was returned from the previous call to this operation, which can
-    /// be used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Used to select a set of devices. A filter is made up of an attribute, an operator, and
-    /// one or more values.</p>
+    /// <p>Used to select a set of devices. A filter is made up of an attribute, an operator, and one or more values.</p>
     /// <ul>
-    /// <li>
-    /// <p>Attribute: The aspect of a device such as platform or model used as the
-    /// selection criteria in a device filter.</p>
-    /// <p>Allowed values include:</p>
+    /// <li> <p>Attribute: The aspect of a device such as platform or model used as the selection criteria in a device filter.</p> <p>Allowed values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>ARN: The Amazon Resource Name (ARN) of the device (for example,
-    /// <code>arn:aws:devicefarm:us-west-2::device:12345Example</code>).</p>
-    /// </li>
-    /// <li>
-    /// <p>PLATFORM: The device platform. Valid values are ANDROID or IOS.</p>
-    /// </li>
-    /// <li>
-    /// <p>OS_VERSION: The operating system version (for example, 10.3.2).</p>
-    /// </li>
-    /// <li>
-    /// <p>MODEL: The device model (for example, iPad 5th Gen).</p>
-    /// </li>
-    /// <li>
-    /// <p>AVAILABILITY: The current availability of the device. Valid values are AVAILABLE,
-    /// HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p>
-    /// </li>
-    /// <li>
-    /// <p>FORM_FACTOR: The device form factor. Valid values are PHONE or TABLET.</p>
-    /// </li>
-    /// <li>
-    /// <p>MANUFACTURER: The device manufacturer (for example, Apple).</p>
-    /// </li>
-    /// <li>
-    /// <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access. Valid values
-    /// are TRUE or FALSE.</p>
-    /// </li>
-    /// <li>
-    /// <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values
-    /// are TRUE or FALSE. Because remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-    /// longer supported</a>, this attribute is ignored.</p>
-    /// </li>
-    /// <li>
-    /// <p>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device
-    /// instance.</p>
-    /// </li>
-    /// <li>
-    /// <p>INSTANCE_LABELS: The label of the device instance.</p>
-    /// </li>
-    /// <li>
-    /// <p>FLEET_TYPE: The fleet type. Valid values are PUBLIC or PRIVATE.</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>Operator: The filter operator.</p>
+    /// <li> <p>ARN: The Amazon Resource Name (ARN) of the device (for example, <code>arn:aws:devicefarm:us-west-2::device:12345Example</code>).</p> </li>
+    /// <li> <p>PLATFORM: The device platform. Valid values are ANDROID or IOS.</p> </li>
+    /// <li> <p>OS_VERSION: The operating system version (for example, 10.3.2).</p> </li>
+    /// <li> <p>MODEL: The device model (for example, iPad 5th Gen).</p> </li>
+    /// <li> <p>AVAILABILITY: The current availability of the device. Valid values are AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p> </li>
+    /// <li> <p>FORM_FACTOR: The device form factor. Valid values are PHONE or TABLET.</p> </li>
+    /// <li> <p>MANUFACTURER: The device manufacturer (for example, Apple).</p> </li>
+    /// <li> <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access. Valid values are TRUE or FALSE.</p> </li>
+    /// <li> <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values are TRUE or FALSE. Because remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>, this attribute is ignored.</p> </li>
+    /// <li> <p>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance.</p> </li>
+    /// <li> <p>INSTANCE_LABELS: The label of the device instance.</p> </li>
+    /// <li> <p>FLEET_TYPE: The fleet type. Valid values are PUBLIC or PRIVATE.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>Operator: The filter operator.</p>
     /// <ul>
-    /// <li>
-    /// <p>The EQUALS operator is available for every attribute except
-    /// INSTANCE_LABELS.</p>
-    /// </li>
-    /// <li>
-    /// <p>The CONTAINS operator is available for the INSTANCE_LABELS and MODEL
-    /// attributes.</p>
-    /// </li>
-    /// <li>
-    /// <p>The IN and NOT_IN operators are available for the ARN, OS_VERSION,
-    /// MODEL, MANUFACTURER, and INSTANCE_ARN attributes.</p>
-    /// </li>
-    /// <li>
-    /// <p>The LESS_THAN, GREATER_THAN, LESS_THAN_OR_EQUALS, and
-    /// GREATER_THAN_OR_EQUALS operators are also available for the OS_VERSION
-    /// attribute.</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>Values: An array of one or more filter values.</p>
+    /// <li> <p>The EQUALS operator is available for every attribute except INSTANCE_LABELS.</p> </li>
+    /// <li> <p>The CONTAINS operator is available for the INSTANCE_LABELS and MODEL attributes.</p> </li>
+    /// <li> <p>The IN and NOT_IN operators are available for the ARN, OS_VERSION, MODEL, MANUFACTURER, and INSTANCE_ARN attributes.</p> </li>
+    /// <li> <p>The LESS_THAN, GREATER_THAN, LESS_THAN_OR_EQUALS, and GREATER_THAN_OR_EQUALS operators are also available for the OS_VERSION attribute.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>Values: An array of one or more filter values.</p>
     /// <ul>
-    /// <li>
-    /// <p>The IN and NOT_IN operators take a values array that has one or more
-    /// elements.</p>
-    /// </li>
-    /// <li>
-    /// <p>The other operators require an array with a single element.</p>
-    /// </li>
-    /// <li>
-    /// <p>In a request, the AVAILABILITY attribute takes the following values: AVAILABLE,
-    /// HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p>The IN and NOT_IN operators take a values array that has one or more elements.</p> </li>
+    /// <li> <p>The other operators require an array with a single element.</p> </li>
+    /// <li> <p>In a request, the AVAILABILITY attribute takes the following values: AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p> </li>
+    /// </ul> </li>
     /// </ul>
     pub fn filters(&self) -> std::option::Option<&[crate::model::DeviceFilter]> {
         self.filters.as_deref()
@@ -16419,18 +15292,11 @@ pub struct ListDevicePoolsInput {
     /// <p>The device pools' type.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>CURATED: A device pool that is created and managed by AWS Device
-    /// Farm.</p>
-    /// </li>
-    /// <li>
-    /// <p>PRIVATE: A device pool that is created and managed by the device pool
-    /// developer.</p>
-    /// </li>
+    /// <li> <p>CURATED: A device pool that is created and managed by AWS Device Farm.</p> </li>
+    /// <li> <p>PRIVATE: A device pool that is created and managed by the device pool developer.</p> </li>
     /// </ul>
     pub r#type: std::option::Option<crate::model::DevicePoolType>,
-    /// <p>An identifier that was returned from the previous call to this operation, which can
-    /// be used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDevicePoolsInput {
@@ -16441,20 +15307,13 @@ impl ListDevicePoolsInput {
     /// <p>The device pools' type.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>CURATED: A device pool that is created and managed by AWS Device
-    /// Farm.</p>
-    /// </li>
-    /// <li>
-    /// <p>PRIVATE: A device pool that is created and managed by the device pool
-    /// developer.</p>
-    /// </li>
+    /// <li> <p>CURATED: A device pool that is created and managed by AWS Device Farm.</p> </li>
+    /// <li> <p>PRIVATE: A device pool that is created and managed by the device pool developer.</p> </li>
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&crate::model::DevicePoolType> {
         self.r#type.as_ref()
     }
-    /// <p>An identifier that was returned from the previous call to this operation, which can
-    /// be used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -16475,8 +15334,7 @@ impl std::fmt::Debug for ListDevicePoolsInput {
 pub struct ListDeviceInstancesInput {
     /// <p>An integer that specifies the maximum number of items you want to return in the API response.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>An identifier that was returned from the previous call to this operation, which can be
-    /// used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDeviceInstancesInput {
@@ -16484,8 +15342,7 @@ impl ListDeviceInstancesInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>An identifier that was returned from the previous call to this operation, which can be
-    /// used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -16508,19 +15365,12 @@ pub struct ListArtifactsInput {
     /// <p>The artifacts' type.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>FILE</p>
-    /// </li>
-    /// <li>
-    /// <p>LOG</p>
-    /// </li>
-    /// <li>
-    /// <p>SCREENSHOT</p>
-    /// </li>
+    /// <li> <p>FILE</p> </li>
+    /// <li> <p>LOG</p> </li>
+    /// <li> <p>SCREENSHOT</p> </li>
     /// </ul>
     pub r#type: std::option::Option<crate::model::ArtifactCategory>,
-    /// <p>An identifier that was returned from the previous call to this operation, which can
-    /// be used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListArtifactsInput {
@@ -16531,21 +15381,14 @@ impl ListArtifactsInput {
     /// <p>The artifacts' type.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>FILE</p>
-    /// </li>
-    /// <li>
-    /// <p>LOG</p>
-    /// </li>
-    /// <li>
-    /// <p>SCREENSHOT</p>
-    /// </li>
+    /// <li> <p>FILE</p> </li>
+    /// <li> <p>LOG</p> </li>
+    /// <li> <p>SCREENSHOT</p> </li>
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ArtifactCategory> {
         self.r#type.as_ref()
     }
-    /// <p>An identifier that was returned from the previous call to this operation, which can
-    /// be used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -16560,20 +15403,17 @@ impl std::fmt::Debug for ListArtifactsInput {
     }
 }
 
-/// <p>Represents the request to install an Android application (in .apk format) or an iOS
-/// application (in .ipa format) as part of a remote access session.</p>
+/// <p>Represents the request to install an Android application (in .apk format) or an iOS application (in .ipa format) as part of a remote access session.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstallToRemoteAccessSessionInput {
-    /// <p>The Amazon Resource Name (ARN) of the remote access session about which you are
-    /// requesting information.</p>
+    /// <p>The Amazon Resource Name (ARN) of the remote access session about which you are requesting information.</p>
     pub remote_access_session_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the app about which you are requesting information.</p>
     pub app_arn: std::option::Option<std::string::String>,
 }
 impl InstallToRemoteAccessSessionInput {
-    /// <p>The Amazon Resource Name (ARN) of the remote access session about which you are
-    /// requesting information.</p>
+    /// <p>The Amazon Resource Name (ARN) of the remote access session about which you are requesting information.</p>
     pub fn remote_access_session_arn(&self) -> std::option::Option<&str> {
         self.remote_access_session_arn.as_deref()
     }
@@ -16595,13 +15435,11 @@ impl std::fmt::Debug for InstallToRemoteAccessSessionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetVpceConfigurationInput {
-    /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to
-    /// describe.</p>
+    /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to describe.</p>
     pub arn: std::option::Option<std::string::String>,
 }
 impl GetVpceConfigurationInput {
-    /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to
-    /// describe.</p>
+    /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to describe.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -16639,15 +15477,15 @@ impl std::fmt::Debug for GetUploadInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTestGridSessionInput {
-    /// <p>The ARN for the project that this session belongs to. See <a>CreateTestGridProject</a> and <a>ListTestGridProjects</a>.</p>
+    /// <p>The ARN for the project that this session belongs to. See <code>CreateTestGridProject</code> and <code>ListTestGridProjects</code>.</p>
     pub project_arn: std::option::Option<std::string::String>,
     /// <p>An ID associated with this session.</p>
     pub session_id: std::option::Option<std::string::String>,
-    /// <p>An ARN that uniquely identifies a <a>TestGridSession</a>.</p>
+    /// <p>An ARN that uniquely identifies a <code>TestGridSession</code>.</p>
     pub session_arn: std::option::Option<std::string::String>,
 }
 impl GetTestGridSessionInput {
-    /// <p>The ARN for the project that this session belongs to. See <a>CreateTestGridProject</a> and <a>ListTestGridProjects</a>.</p>
+    /// <p>The ARN for the project that this session belongs to. See <code>CreateTestGridProject</code> and <code>ListTestGridProjects</code>.</p>
     pub fn project_arn(&self) -> std::option::Option<&str> {
         self.project_arn.as_deref()
     }
@@ -16655,7 +15493,7 @@ impl GetTestGridSessionInput {
     pub fn session_id(&self) -> std::option::Option<&str> {
         self.session_id.as_deref()
     }
-    /// <p>An ARN that uniquely identifies a <a>TestGridSession</a>.</p>
+    /// <p>An ARN that uniquely identifies a <code>TestGridSession</code>.</p>
     pub fn session_arn(&self) -> std::option::Option<&str> {
         self.session_arn.as_deref()
     }
@@ -16674,11 +15512,11 @@ impl std::fmt::Debug for GetTestGridSessionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTestGridProjectInput {
-    /// <p>The ARN of the Selenium testing project, from either <a>CreateTestGridProject</a> or <a>ListTestGridProjects</a>.</p>
+    /// <p>The ARN of the Selenium testing project, from either <code>CreateTestGridProject</code> or <code>ListTestGridProjects</code>.</p>
     pub project_arn: std::option::Option<std::string::String>,
 }
 impl GetTestGridProjectInput {
-    /// <p>The ARN of the Selenium testing project, from either <a>CreateTestGridProject</a> or <a>ListTestGridProjects</a>.</p>
+    /// <p>The ARN of the Selenium testing project, from either <code>CreateTestGridProject</code> or <code>ListTestGridProjects</code>.</p>
     pub fn project_arn(&self) -> std::option::Option<&str> {
         self.project_arn.as_deref()
     }
@@ -16754,18 +15592,15 @@ impl std::fmt::Debug for GetRunInput {
     }
 }
 
-/// <p>Represents the request to get information about the specified remote access
-/// session.</p>
+/// <p>Represents the request to get information about the specified remote access session.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRemoteAccessSessionInput {
-    /// <p>The Amazon Resource Name (ARN) of the remote access session about which you want to
-    /// get session information.</p>
+    /// <p>The Amazon Resource Name (ARN) of the remote access session about which you want to get session information.</p>
     pub arn: std::option::Option<std::string::String>,
 }
 impl GetRemoteAccessSessionInput {
-    /// <p>The Amazon Resource Name (ARN) of the remote access session about which you want to
-    /// get session information.</p>
+    /// <p>The Amazon Resource Name (ARN) of the remote access session about which you want to get session information.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -16799,18 +15634,15 @@ impl std::fmt::Debug for GetProjectInput {
     }
 }
 
-/// <p>Represents the request to retrieve the offering status for the specified customer
-/// or account.</p>
+/// <p>Represents the request to retrieve the offering status for the specified customer or account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetOfferingStatusInput {
-    /// <p>An identifier that was returned from the previous call to this operation, which can
-    /// be used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetOfferingStatusInput {
-    /// <p>An identifier that was returned from the previous call to this operation, which can
-    /// be used to return the next set of items in the list.</p>
+    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -16897,61 +15729,24 @@ pub struct GetDevicePoolCompatibilityInput {
     /// <p>The test type for the specified device pool.</p>
     /// <p>Allowed values include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>BUILTIN_FUZZ.</p>
-    /// </li>
-    /// <li>
-    /// <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with
-    /// it and capturing screenshots at the same time.</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_JAVA_JUNIT.</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_JAVA_TESTNG.</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_PYTHON.</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_NODE.</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_RUBY.</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_JUNIT.</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_TESTNG.</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_PYTHON.</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_NODE.</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_RUBY.</p>
-    /// </li>
-    /// <li>
-    /// <p>CALABASH.</p>
-    /// </li>
-    /// <li>
-    /// <p>INSTRUMENTATION.</p>
-    /// </li>
-    /// <li>
-    /// <p>UIAUTOMATION.</p>
-    /// </li>
-    /// <li>
-    /// <p>UIAUTOMATOR.</p>
-    /// </li>
-    /// <li>
-    /// <p>XCTEST.</p>
-    /// </li>
-    /// <li>
-    /// <p>XCTEST_UI.</p>
-    /// </li>
+    /// <li> <p>BUILTIN_FUZZ.</p> </li>
+    /// <li> <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p> </li>
+    /// <li> <p>APPIUM_JAVA_JUNIT.</p> </li>
+    /// <li> <p>APPIUM_JAVA_TESTNG.</p> </li>
+    /// <li> <p>APPIUM_PYTHON.</p> </li>
+    /// <li> <p>APPIUM_NODE.</p> </li>
+    /// <li> <p>APPIUM_RUBY.</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_JUNIT.</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_TESTNG.</p> </li>
+    /// <li> <p>APPIUM_WEB_PYTHON.</p> </li>
+    /// <li> <p>APPIUM_WEB_NODE.</p> </li>
+    /// <li> <p>APPIUM_WEB_RUBY.</p> </li>
+    /// <li> <p>CALABASH.</p> </li>
+    /// <li> <p>INSTRUMENTATION.</p> </li>
+    /// <li> <p>UIAUTOMATION.</p> </li>
+    /// <li> <p>UIAUTOMATOR.</p> </li>
+    /// <li> <p>XCTEST.</p> </li>
+    /// <li> <p>XCTEST_UI.</p> </li>
     /// </ul>
     pub test_type: std::option::Option<crate::model::TestType>,
     /// <p>Information about the uploaded test to be run against the device pool.</p>
@@ -16971,61 +15766,24 @@ impl GetDevicePoolCompatibilityInput {
     /// <p>The test type for the specified device pool.</p>
     /// <p>Allowed values include the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>BUILTIN_FUZZ.</p>
-    /// </li>
-    /// <li>
-    /// <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with
-    /// it and capturing screenshots at the same time.</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_JAVA_JUNIT.</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_JAVA_TESTNG.</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_PYTHON.</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_NODE.</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_RUBY.</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_JUNIT.</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_TESTNG.</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_PYTHON.</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_NODE.</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_RUBY.</p>
-    /// </li>
-    /// <li>
-    /// <p>CALABASH.</p>
-    /// </li>
-    /// <li>
-    /// <p>INSTRUMENTATION.</p>
-    /// </li>
-    /// <li>
-    /// <p>UIAUTOMATION.</p>
-    /// </li>
-    /// <li>
-    /// <p>UIAUTOMATOR.</p>
-    /// </li>
-    /// <li>
-    /// <p>XCTEST.</p>
-    /// </li>
-    /// <li>
-    /// <p>XCTEST_UI.</p>
-    /// </li>
+    /// <li> <p>BUILTIN_FUZZ.</p> </li>
+    /// <li> <p>BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p> </li>
+    /// <li> <p>APPIUM_JAVA_JUNIT.</p> </li>
+    /// <li> <p>APPIUM_JAVA_TESTNG.</p> </li>
+    /// <li> <p>APPIUM_PYTHON.</p> </li>
+    /// <li> <p>APPIUM_NODE.</p> </li>
+    /// <li> <p>APPIUM_RUBY.</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_JUNIT.</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_TESTNG.</p> </li>
+    /// <li> <p>APPIUM_WEB_PYTHON.</p> </li>
+    /// <li> <p>APPIUM_WEB_NODE.</p> </li>
+    /// <li> <p>APPIUM_WEB_RUBY.</p> </li>
+    /// <li> <p>CALABASH.</p> </li>
+    /// <li> <p>INSTRUMENTATION.</p> </li>
+    /// <li> <p>UIAUTOMATION.</p> </li>
+    /// <li> <p>UIAUTOMATOR.</p> </li>
+    /// <li> <p>XCTEST.</p> </li>
+    /// <li> <p>XCTEST_UI.</p> </li>
     /// </ul>
     pub fn test_type(&self) -> std::option::Option<&crate::model::TestType> {
         self.test_type.as_ref()
@@ -17076,13 +15834,11 @@ impl std::fmt::Debug for GetDevicePoolInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeviceInstanceInput {
-    /// <p>The Amazon Resource Name (ARN) of the instance you're requesting information
-    /// about.</p>
+    /// <p>The Amazon Resource Name (ARN) of the instance you're requesting information about.</p>
     pub arn: std::option::Option<std::string::String>,
 }
 impl GetDeviceInstanceInput {
-    /// <p>The Amazon Resource Name (ARN) of the instance you're requesting information
-    /// about.</p>
+    /// <p>The Amazon Resource Name (ARN) of the instance you're requesting information about.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -17131,13 +15887,11 @@ impl std::fmt::Debug for GetAccountSettingsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVpceConfigurationInput {
-    /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to
-    /// delete.</p>
+    /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to delete.</p>
     pub arn: std::option::Option<std::string::String>,
 }
 impl DeleteVpceConfigurationInput {
-    /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to
-    /// delete.</p>
+    /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to delete.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -17175,11 +15929,11 @@ impl std::fmt::Debug for DeleteUploadInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTestGridProjectInput {
-    /// <p>The ARN of the project to delete, from <a>CreateTestGridProject</a> or <a>ListTestGridProjects</a>.</p>
+    /// <p>The ARN of the project to delete, from <code>CreateTestGridProject</code> or <code>ListTestGridProjects</code>.</p>
     pub project_arn: std::option::Option<std::string::String>,
 }
 impl DeleteTestGridProjectInput {
-    /// <p>The ARN of the project to delete, from <a>CreateTestGridProject</a> or <a>ListTestGridProjects</a>.</p>
+    /// <p>The ARN of the project to delete, from <code>CreateTestGridProject</code> or <code>ListTestGridProjects</code>.</p>
     pub fn project_arn(&self) -> std::option::Option<&str> {
         self.project_arn.as_deref()
     }
@@ -17217,13 +15971,11 @@ impl std::fmt::Debug for DeleteRunInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRemoteAccessSessionInput {
-    /// <p>The Amazon Resource Name (ARN) of the session for which you want to delete remote
-    /// access.</p>
+    /// <p>The Amazon Resource Name (ARN) of the session for which you want to delete remote access.</p>
     pub arn: std::option::Option<std::string::String>,
 }
 impl DeleteRemoteAccessSessionInput {
-    /// <p>The Amazon Resource Name (ARN) of the session for which you want to delete remote
-    /// access.</p>
+    /// <p>The Amazon Resource Name (ARN) of the session for which you want to delete remote access.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -17282,13 +16034,11 @@ impl std::fmt::Debug for DeleteNetworkProfileInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteInstanceProfileInput {
-    /// <p>The Amazon Resource Name (ARN) of the instance profile you are requesting to
-    /// delete.</p>
+    /// <p>The Amazon Resource Name (ARN) of the instance profile you are requesting to delete.</p>
     pub arn: std::option::Option<std::string::String>,
 }
 impl DeleteInstanceProfileInput {
-    /// <p>The Amazon Resource Name (ARN) of the instance profile you are requesting to
-    /// delete.</p>
+    /// <p>The Amazon Resource Name (ARN) of the instance profile you are requesting to delete.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -17326,20 +16076,17 @@ impl std::fmt::Debug for DeleteDevicePoolInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVpceConfigurationInput {
-    /// <p>The friendly name you give to your VPC endpoint configuration, to manage your
-    /// configurations more easily.</p>
+    /// <p>The friendly name you give to your VPC endpoint configuration, to manage your configurations more easily.</p>
     pub vpce_configuration_name: std::option::Option<std::string::String>,
     /// <p>The name of the VPC endpoint service running in your AWS account that you want Device Farm to test.</p>
     pub vpce_service_name: std::option::Option<std::string::String>,
-    /// <p>The DNS name of the service running in your VPC that you want Device Farm to
-    /// test.</p>
+    /// <p>The DNS name of the service running in your VPC that you want Device Farm to test.</p>
     pub service_dns_name: std::option::Option<std::string::String>,
     /// <p>An optional description that provides details about your VPC endpoint configuration.</p>
     pub vpce_configuration_description: std::option::Option<std::string::String>,
 }
 impl CreateVpceConfigurationInput {
-    /// <p>The friendly name you give to your VPC endpoint configuration, to manage your
-    /// configurations more easily.</p>
+    /// <p>The friendly name you give to your VPC endpoint configuration, to manage your configurations more easily.</p>
     pub fn vpce_configuration_name(&self) -> std::option::Option<&str> {
         self.vpce_configuration_name.as_deref()
     }
@@ -17347,8 +16094,7 @@ impl CreateVpceConfigurationInput {
     pub fn vpce_service_name(&self) -> std::option::Option<&str> {
         self.vpce_service_name.as_deref()
     }
-    /// <p>The DNS name of the service running in your VPC that you want Device Farm to
-    /// test.</p>
+    /// <p>The DNS name of the service running in your VPC that you want Device Farm to test.</p>
     pub fn service_dns_name(&self) -> std::option::Option<&str> {
         self.service_dns_name.as_deref()
     }
@@ -17377,113 +16123,45 @@ impl std::fmt::Debug for CreateVpceConfigurationInput {
 pub struct CreateUploadInput {
     /// <p>The ARN of the project for the upload.</p>
     pub project_arn: std::option::Option<std::string::String>,
-    /// <p>The upload's file name. The name should not contain any forward slashes (<code>/</code>). If you are
-    /// uploading an iOS app, the file name must end with the <code>.ipa</code> extension. If you are uploading an
-    /// Android app, the file name must end with the <code>.apk</code> extension. For all others, the file name must
-    /// end with the <code>.zip</code> file extension.</p>
+    /// <p>The upload's file name. The name should not contain any forward slashes (<code>/</code>). If you are uploading an iOS app, the file name must end with the <code>.ipa</code> extension. If you are uploading an Android app, the file name must end with the <code>.apk</code> extension. For all others, the file name must end with the <code>.zip</code> file extension.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The upload's upload type.</p>
     /// <p>Must be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>ANDROID_APP</p>
-    /// </li>
-    /// <li>
-    /// <p>IOS_APP</p>
-    /// </li>
-    /// <li>
-    /// <p>WEB_APP</p>
-    /// </li>
-    /// <li>
-    /// <p>EXTERNAL_DATA</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_PYTHON_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_NODE_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_RUBY_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_PYTHON_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_NODE_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_RUBY_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>CALABASH_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>INSTRUMENTATION_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>UIAUTOMATION_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>UIAUTOMATOR_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>XCTEST_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>XCTEST_UI_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_JAVA_JUNIT_TEST_SPEC</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_JAVA_TESTNG_TEST_SPEC</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_PYTHON_TEST_SPEC</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_NODE_TEST_SPEC</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_RUBY_TEST_SPEC</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_PYTHON_TEST_SPEC</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_NODE_TEST_SPEC</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_RUBY_TEST_SPEC</p>
-    /// </li>
-    /// <li>
-    /// <p>INSTRUMENTATION_TEST_SPEC</p>
-    /// </li>
-    /// <li>
-    /// <p>XCTEST_UI_TEST_SPEC</p>
-    /// </li>
+    /// <li> <p>ANDROID_APP</p> </li>
+    /// <li> <p>IOS_APP</p> </li>
+    /// <li> <p>WEB_APP</p> </li>
+    /// <li> <p>EXTERNAL_DATA</p> </li>
+    /// <li> <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_PYTHON_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_NODE_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_RUBY_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_WEB_PYTHON_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_WEB_NODE_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_WEB_RUBY_TEST_PACKAGE</p> </li>
+    /// <li> <p>CALABASH_TEST_PACKAGE</p> </li>
+    /// <li> <p>INSTRUMENTATION_TEST_PACKAGE</p> </li>
+    /// <li> <p>UIAUTOMATION_TEST_PACKAGE</p> </li>
+    /// <li> <p>UIAUTOMATOR_TEST_PACKAGE</p> </li>
+    /// <li> <p>XCTEST_TEST_PACKAGE</p> </li>
+    /// <li> <p>XCTEST_UI_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_JAVA_JUNIT_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_JAVA_TESTNG_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_PYTHON_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_NODE_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_RUBY_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_WEB_PYTHON_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_WEB_NODE_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_WEB_RUBY_TEST_SPEC</p> </li>
+    /// <li> <p>INSTRUMENTATION_TEST_SPEC</p> </li>
+    /// <li> <p>XCTEST_UI_TEST_SPEC</p> </li>
     /// </ul>
-    /// <p> If you call <code>CreateUpload</code> with <code>WEB_APP</code> specified, AWS
-    /// Device Farm throws an <code>ArgumentException</code> error.</p>
+    /// <p> If you call <code>CreateUpload</code> with <code>WEB_APP</code> specified, AWS Device Farm throws an <code>ArgumentException</code> error.</p>
     pub r#type: std::option::Option<crate::model::UploadType>,
     /// <p>The upload's content type (for example, <code>application/octet-stream</code>).</p>
     pub content_type: std::option::Option<std::string::String>,
@@ -17493,115 +16171,47 @@ impl CreateUploadInput {
     pub fn project_arn(&self) -> std::option::Option<&str> {
         self.project_arn.as_deref()
     }
-    /// <p>The upload's file name. The name should not contain any forward slashes (<code>/</code>). If you are
-    /// uploading an iOS app, the file name must end with the <code>.ipa</code> extension. If you are uploading an
-    /// Android app, the file name must end with the <code>.apk</code> extension. For all others, the file name must
-    /// end with the <code>.zip</code> file extension.</p>
+    /// <p>The upload's file name. The name should not contain any forward slashes (<code>/</code>). If you are uploading an iOS app, the file name must end with the <code>.ipa</code> extension. If you are uploading an Android app, the file name must end with the <code>.apk</code> extension. For all others, the file name must end with the <code>.zip</code> file extension.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The upload's upload type.</p>
     /// <p>Must be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>ANDROID_APP</p>
-    /// </li>
-    /// <li>
-    /// <p>IOS_APP</p>
-    /// </li>
-    /// <li>
-    /// <p>WEB_APP</p>
-    /// </li>
-    /// <li>
-    /// <p>EXTERNAL_DATA</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_PYTHON_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_NODE_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_RUBY_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_PYTHON_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_NODE_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_RUBY_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>CALABASH_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>INSTRUMENTATION_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>UIAUTOMATION_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>UIAUTOMATOR_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>XCTEST_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>XCTEST_UI_TEST_PACKAGE</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_JAVA_JUNIT_TEST_SPEC</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_JAVA_TESTNG_TEST_SPEC</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_PYTHON_TEST_SPEC</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_NODE_TEST_SPEC</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_RUBY_TEST_SPEC</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_PYTHON_TEST_SPEC</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_NODE_TEST_SPEC</p>
-    /// </li>
-    /// <li>
-    /// <p>APPIUM_WEB_RUBY_TEST_SPEC</p>
-    /// </li>
-    /// <li>
-    /// <p>INSTRUMENTATION_TEST_SPEC</p>
-    /// </li>
-    /// <li>
-    /// <p>XCTEST_UI_TEST_SPEC</p>
-    /// </li>
+    /// <li> <p>ANDROID_APP</p> </li>
+    /// <li> <p>IOS_APP</p> </li>
+    /// <li> <p>WEB_APP</p> </li>
+    /// <li> <p>EXTERNAL_DATA</p> </li>
+    /// <li> <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_PYTHON_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_NODE_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_RUBY_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_WEB_PYTHON_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_WEB_NODE_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_WEB_RUBY_TEST_PACKAGE</p> </li>
+    /// <li> <p>CALABASH_TEST_PACKAGE</p> </li>
+    /// <li> <p>INSTRUMENTATION_TEST_PACKAGE</p> </li>
+    /// <li> <p>UIAUTOMATION_TEST_PACKAGE</p> </li>
+    /// <li> <p>UIAUTOMATOR_TEST_PACKAGE</p> </li>
+    /// <li> <p>XCTEST_TEST_PACKAGE</p> </li>
+    /// <li> <p>XCTEST_UI_TEST_PACKAGE</p> </li>
+    /// <li> <p>APPIUM_JAVA_JUNIT_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_JAVA_TESTNG_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_PYTHON_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_NODE_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_RUBY_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_WEB_PYTHON_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_WEB_NODE_TEST_SPEC</p> </li>
+    /// <li> <p>APPIUM_WEB_RUBY_TEST_SPEC</p> </li>
+    /// <li> <p>INSTRUMENTATION_TEST_SPEC</p> </li>
+    /// <li> <p>XCTEST_UI_TEST_SPEC</p> </li>
     /// </ul>
-    /// <p> If you call <code>CreateUpload</code> with <code>WEB_APP</code> specified, AWS
-    /// Device Farm throws an <code>ArgumentException</code> error.</p>
+    /// <p> If you call <code>CreateUpload</code> with <code>WEB_APP</code> specified, AWS Device Farm throws an <code>ArgumentException</code> error.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::UploadType> {
         self.r#type.as_ref()
     }
@@ -17625,15 +16235,13 @@ impl std::fmt::Debug for CreateUploadInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTestGridUrlInput {
-    /// <p>ARN (from <a>CreateTestGridProject</a> or <a>ListTestGridProjects</a>) to associate
-    /// with the short-term URL. </p>
+    /// <p>ARN (from <code>CreateTestGridProject</code> or <code>ListTestGridProjects</code>) to associate with the short-term URL. </p>
     pub project_arn: std::option::Option<std::string::String>,
     /// <p>Lifetime, in seconds, of the URL.</p>
     pub expires_in_seconds: std::option::Option<i32>,
 }
 impl CreateTestGridUrlInput {
-    /// <p>ARN (from <a>CreateTestGridProject</a> or <a>ListTestGridProjects</a>) to associate
-    /// with the short-term URL. </p>
+    /// <p>ARN (from <code>CreateTestGridProject</code> or <code>ListTestGridProjects</code>) to associate with the short-term URL. </p>
     pub fn project_arn(&self) -> std::option::Option<&str> {
         self.project_arn.as_deref()
     }
@@ -17690,68 +16298,42 @@ impl std::fmt::Debug for CreateTestGridProjectInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRemoteAccessSessionInput {
-    /// <p>The Amazon Resource Name (ARN) of the project for which you want to create a remote
-    /// access session.</p>
+    /// <p>The Amazon Resource Name (ARN) of the project for which you want to create a remote access session.</p>
     pub project_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the device for which you want to create a remote access session.</p>
     pub device_arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the device instance for which you want to create a
-    /// remote access session.</p>
+    /// <p>The Amazon Resource Name (ARN) of the device instance for which you want to create a remote access session.</p>
     pub instance_arn: std::option::Option<std::string::String>,
-    /// <p>Ignored. The public key of the <code>ssh</code> key pair you want to use for connecting to remote
-    /// devices in your remote debugging session. This key is required only if <code>remoteDebugEnabled</code> is
-    /// set to <code>true</code>.</p>
-    /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-    /// longer supported</a>.</p>
+    /// <p>Ignored. The public key of the <code>ssh</code> key pair you want to use for connecting to remote devices in your remote debugging session. This key is required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
+    /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
     pub ssh_public_key: std::option::Option<std::string::String>,
-    /// <p>Set to <code>true</code> if you want to access devices remotely for debugging in
-    /// your remote access session.</p>
-    /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-    /// longer supported</a>.</p>
+    /// <p>Set to <code>true</code> if you want to access devices remotely for debugging in your remote access session.</p>
+    /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
     pub remote_debug_enabled: std::option::Option<bool>,
-    /// <p>Set to <code>true</code> to enable remote recording for the remote access
-    /// session.</p>
+    /// <p>Set to <code>true</code> to enable remote recording for the remote access session.</p>
     pub remote_record_enabled: std::option::Option<bool>,
-    /// <p>The Amazon Resource Name (ARN) for the app to be recorded in the remote access
-    /// session.</p>
+    /// <p>The Amazon Resource Name (ARN) for the app to be recorded in the remote access session.</p>
     pub remote_record_app_arn: std::option::Option<std::string::String>,
     /// <p>The name of the remote access session to create.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>Unique identifier for the client. If you want access to multiple devices on the same client, you should
-    /// pass the same <code>clientId</code> value in each call to <code>CreateRemoteAccessSession</code>. This
-    /// identifier is required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
-    /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-    /// longer supported</a>.</p>
+    /// <p>Unique identifier for the client. If you want access to multiple devices on the same client, you should pass the same <code>clientId</code> value in each call to <code>CreateRemoteAccessSession</code>. This identifier is required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
+    /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
     pub client_id: std::option::Option<std::string::String>,
     /// <p>The configuration information for the remote access session request.</p>
     pub configuration: std::option::Option<crate::model::CreateRemoteAccessSessionConfiguration>,
     /// <p>The interaction mode of the remote access session. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and
-    /// rotating the screen. You cannot run XCUITest framework-based tests in this
-    /// mode.</p>
-    /// </li>
-    /// <li>
-    /// <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This
-    /// mode has the fastest test execution speed. You can run XCUITest framework-based tests in this
-    /// mode.</p>
-    /// </li>
-    /// <li>
-    /// <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest
-    /// framework-based tests and watch the screen in this mode.</p>
-    /// </li>
+    /// <li> <p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You cannot run XCUITest framework-based tests in this mode.</p> </li>
+    /// <li> <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This mode has the fastest test execution speed. You can run XCUITest framework-based tests in this mode.</p> </li>
+    /// <li> <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest framework-based tests and watch the screen in this mode.</p> </li>
     /// </ul>
     pub interaction_mode: std::option::Option<crate::model::InteractionMode>,
-    /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public
-    /// devices, Device Farm always signs your apps again.</p>
-    /// <p>For more information on how Device Farm modifies your uploads during tests, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a>
-    /// </p>
+    /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
+    /// <p>For more information on how Device Farm modifies your uploads during tests, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> </p>
     pub skip_app_resign: std::option::Option<bool>,
 }
 impl CreateRemoteAccessSessionInput {
-    /// <p>The Amazon Resource Name (ARN) of the project for which you want to create a remote
-    /// access session.</p>
+    /// <p>The Amazon Resource Name (ARN) of the project for which you want to create a remote access session.</p>
     pub fn project_arn(&self) -> std::option::Option<&str> {
         self.project_arn.as_deref()
     }
@@ -17759,33 +16341,25 @@ impl CreateRemoteAccessSessionInput {
     pub fn device_arn(&self) -> std::option::Option<&str> {
         self.device_arn.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the device instance for which you want to create a
-    /// remote access session.</p>
+    /// <p>The Amazon Resource Name (ARN) of the device instance for which you want to create a remote access session.</p>
     pub fn instance_arn(&self) -> std::option::Option<&str> {
         self.instance_arn.as_deref()
     }
-    /// <p>Ignored. The public key of the <code>ssh</code> key pair you want to use for connecting to remote
-    /// devices in your remote debugging session. This key is required only if <code>remoteDebugEnabled</code> is
-    /// set to <code>true</code>.</p>
-    /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-    /// longer supported</a>.</p>
+    /// <p>Ignored. The public key of the <code>ssh</code> key pair you want to use for connecting to remote devices in your remote debugging session. This key is required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
+    /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
     pub fn ssh_public_key(&self) -> std::option::Option<&str> {
         self.ssh_public_key.as_deref()
     }
-    /// <p>Set to <code>true</code> if you want to access devices remotely for debugging in
-    /// your remote access session.</p>
-    /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-    /// longer supported</a>.</p>
+    /// <p>Set to <code>true</code> if you want to access devices remotely for debugging in your remote access session.</p>
+    /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
     pub fn remote_debug_enabled(&self) -> std::option::Option<bool> {
         self.remote_debug_enabled
     }
-    /// <p>Set to <code>true</code> to enable remote recording for the remote access
-    /// session.</p>
+    /// <p>Set to <code>true</code> to enable remote recording for the remote access session.</p>
     pub fn remote_record_enabled(&self) -> std::option::Option<bool> {
         self.remote_record_enabled
     }
-    /// <p>The Amazon Resource Name (ARN) for the app to be recorded in the remote access
-    /// session.</p>
+    /// <p>The Amazon Resource Name (ARN) for the app to be recorded in the remote access session.</p>
     pub fn remote_record_app_arn(&self) -> std::option::Option<&str> {
         self.remote_record_app_arn.as_deref()
     }
@@ -17793,11 +16367,8 @@ impl CreateRemoteAccessSessionInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Unique identifier for the client. If you want access to multiple devices on the same client, you should
-    /// pass the same <code>clientId</code> value in each call to <code>CreateRemoteAccessSession</code>. This
-    /// identifier is required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
-    /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-    /// longer supported</a>.</p>
+    /// <p>Unique identifier for the client. If you want access to multiple devices on the same client, you should pass the same <code>clientId</code> value in each call to <code>CreateRemoteAccessSession</code>. This identifier is required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
+    /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no longer supported</a>.</p>
     pub fn client_id(&self) -> std::option::Option<&str> {
         self.client_id.as_deref()
     }
@@ -17809,28 +16380,15 @@ impl CreateRemoteAccessSessionInput {
     }
     /// <p>The interaction mode of the remote access session. Valid values are:</p>
     /// <ul>
-    /// <li>
-    /// <p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and
-    /// rotating the screen. You cannot run XCUITest framework-based tests in this
-    /// mode.</p>
-    /// </li>
-    /// <li>
-    /// <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This
-    /// mode has the fastest test execution speed. You can run XCUITest framework-based tests in this
-    /// mode.</p>
-    /// </li>
-    /// <li>
-    /// <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest
-    /// framework-based tests and watch the screen in this mode.</p>
-    /// </li>
+    /// <li> <p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You cannot run XCUITest framework-based tests in this mode.</p> </li>
+    /// <li> <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This mode has the fastest test execution speed. You can run XCUITest framework-based tests in this mode.</p> </li>
+    /// <li> <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest framework-based tests and watch the screen in this mode.</p> </li>
     /// </ul>
     pub fn interaction_mode(&self) -> std::option::Option<&crate::model::InteractionMode> {
         self.interaction_mode.as_ref()
     }
-    /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public
-    /// devices, Device Farm always signs your apps again.</p>
-    /// <p>For more information on how Device Farm modifies your uploads during tests, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a>
-    /// </p>
+    /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
+    /// <p>For more information on how Device Farm modifies your uploads during tests, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> </p>
     pub fn skip_app_resign(&self) -> std::option::Option<bool> {
         self.skip_app_resign
     }
@@ -17860,8 +16418,7 @@ impl std::fmt::Debug for CreateRemoteAccessSessionInput {
 pub struct CreateProjectInput {
     /// <p>The project's name.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>Sets the execution timeout value (in minutes) for a project. All test runs in this project use the
-    /// specified execution timeout value unless overridden when scheduling a run.</p>
+    /// <p>Sets the execution timeout value (in minutes) for a project. All test runs in this project use the specified execution timeout value unless overridden when scheduling a run.</p>
     pub default_job_timeout_minutes: std::option::Option<i32>,
 }
 impl CreateProjectInput {
@@ -17869,8 +16426,7 @@ impl CreateProjectInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Sets the execution timeout value (in minutes) for a project. All test runs in this project use the
-    /// specified execution timeout value unless overridden when scheduling a run.</p>
+    /// <p>Sets the execution timeout value (in minutes) for a project. All test runs in this project use the specified execution timeout value unless overridden when scheduling a run.</p>
     pub fn default_job_timeout_minutes(&self) -> std::option::Option<i32> {
         self.default_job_timeout_minutes
     }
@@ -17891,8 +16447,7 @@ impl std::fmt::Debug for CreateProjectInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateNetworkProfileInput {
-    /// <p>The Amazon Resource Name (ARN) of the project for which you want to create a
-    /// network profile.</p>
+    /// <p>The Amazon Resource Name (ARN) of the project for which you want to create a network profile.</p>
     pub project_arn: std::option::Option<std::string::String>,
     /// <p>The name for the new network profile.</p>
     pub name: std::option::Option<std::string::String>,
@@ -17900,33 +16455,25 @@ pub struct CreateNetworkProfileInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The type of network profile to create. Valid values are listed here.</p>
     pub r#type: std::option::Option<crate::model::NetworkProfileType>,
-    /// <p>The data throughput rate in bits per second, as an integer from 0 to
-    /// 104857600.</p>
+    /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
     pub uplink_bandwidth_bits: std::option::Option<i64>,
-    /// <p>The data throughput rate in bits per second, as an integer from 0 to
-    /// 104857600.</p>
+    /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
     pub downlink_bandwidth_bits: std::option::Option<i64>,
-    /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to
-    /// 2000.</p>
+    /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
     pub uplink_delay_ms: std::option::Option<i64>,
-    /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to
-    /// 2000.</p>
+    /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
     pub downlink_delay_ms: std::option::Option<i64>,
-    /// <p>Time variation in the delay of received packets in milliseconds as an integer from
-    /// 0 to 2000.</p>
+    /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
     pub uplink_jitter_ms: std::option::Option<i64>,
-    /// <p>Time variation in the delay of received packets in milliseconds as an integer from
-    /// 0 to 2000.</p>
+    /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
     pub downlink_jitter_ms: std::option::Option<i64>,
-    /// <p>Proportion of transmitted packets that fail to arrive from 0 to 100
-    /// percent.</p>
+    /// <p>Proportion of transmitted packets that fail to arrive from 0 to 100 percent.</p>
     pub uplink_loss_percent: i32,
     /// <p>Proportion of received packets that fail to arrive from 0 to 100 percent.</p>
     pub downlink_loss_percent: i32,
 }
 impl CreateNetworkProfileInput {
-    /// <p>The Amazon Resource Name (ARN) of the project for which you want to create a
-    /// network profile.</p>
+    /// <p>The Amazon Resource Name (ARN) of the project for which you want to create a network profile.</p>
     pub fn project_arn(&self) -> std::option::Option<&str> {
         self.project_arn.as_deref()
     }
@@ -17942,38 +16489,31 @@ impl CreateNetworkProfileInput {
     pub fn r#type(&self) -> std::option::Option<&crate::model::NetworkProfileType> {
         self.r#type.as_ref()
     }
-    /// <p>The data throughput rate in bits per second, as an integer from 0 to
-    /// 104857600.</p>
+    /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
     pub fn uplink_bandwidth_bits(&self) -> std::option::Option<i64> {
         self.uplink_bandwidth_bits
     }
-    /// <p>The data throughput rate in bits per second, as an integer from 0 to
-    /// 104857600.</p>
+    /// <p>The data throughput rate in bits per second, as an integer from 0 to 104857600.</p>
     pub fn downlink_bandwidth_bits(&self) -> std::option::Option<i64> {
         self.downlink_bandwidth_bits
     }
-    /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to
-    /// 2000.</p>
+    /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
     pub fn uplink_delay_ms(&self) -> std::option::Option<i64> {
         self.uplink_delay_ms
     }
-    /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to
-    /// 2000.</p>
+    /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to 2000.</p>
     pub fn downlink_delay_ms(&self) -> std::option::Option<i64> {
         self.downlink_delay_ms
     }
-    /// <p>Time variation in the delay of received packets in milliseconds as an integer from
-    /// 0 to 2000.</p>
+    /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
     pub fn uplink_jitter_ms(&self) -> std::option::Option<i64> {
         self.uplink_jitter_ms
     }
-    /// <p>Time variation in the delay of received packets in milliseconds as an integer from
-    /// 0 to 2000.</p>
+    /// <p>Time variation in the delay of received packets in milliseconds as an integer from 0 to 2000.</p>
     pub fn downlink_jitter_ms(&self) -> std::option::Option<i64> {
         self.downlink_jitter_ms
     }
-    /// <p>Proportion of transmitted packets that fail to arrive from 0 to 100
-    /// percent.</p>
+    /// <p>Proportion of transmitted packets that fail to arrive from 0 to 100 percent.</p>
     pub fn uplink_loss_percent(&self) -> i32 {
         self.uplink_loss_percent
     }
@@ -18009,16 +16549,12 @@ pub struct CreateInstanceProfileInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of your instance profile.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>When set to <code>true</code>, Device Farm removes app packages after a test run. The default value is
-    /// <code>false</code> for private devices.</p>
+    /// <p>When set to <code>true</code>, Device Farm removes app packages after a test run. The default value is <code>false</code> for private devices.</p>
     pub package_cleanup: std::option::Option<bool>,
-    /// <p>An array of strings that specifies the list of app packages that should not be cleaned up from the device
-    /// after a test run.</p>
-    /// <p>The list of packages is considered only if you set <code>packageCleanup</code> to
-    /// <code>true</code>.</p>
+    /// <p>An array of strings that specifies the list of app packages that should not be cleaned up from the device after a test run.</p>
+    /// <p>The list of packages is considered only if you set <code>packageCleanup</code> to <code>true</code>.</p>
     pub exclude_app_packages_from_cleanup: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>When set to <code>true</code>, Device Farm reboots the instance after a test run. The default value is
-    /// <code>true</code>.</p>
+    /// <p>When set to <code>true</code>, Device Farm reboots the instance after a test run. The default value is <code>true</code>.</p>
     pub reboot_after_use: std::option::Option<bool>,
 }
 impl CreateInstanceProfileInput {
@@ -18030,20 +16566,16 @@ impl CreateInstanceProfileInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>When set to <code>true</code>, Device Farm removes app packages after a test run. The default value is
-    /// <code>false</code> for private devices.</p>
+    /// <p>When set to <code>true</code>, Device Farm removes app packages after a test run. The default value is <code>false</code> for private devices.</p>
     pub fn package_cleanup(&self) -> std::option::Option<bool> {
         self.package_cleanup
     }
-    /// <p>An array of strings that specifies the list of app packages that should not be cleaned up from the device
-    /// after a test run.</p>
-    /// <p>The list of packages is considered only if you set <code>packageCleanup</code> to
-    /// <code>true</code>.</p>
+    /// <p>An array of strings that specifies the list of app packages that should not be cleaned up from the device after a test run.</p>
+    /// <p>The list of packages is considered only if you set <code>packageCleanup</code> to <code>true</code>.</p>
     pub fn exclude_app_packages_from_cleanup(&self) -> std::option::Option<&[std::string::String]> {
         self.exclude_app_packages_from_cleanup.as_deref()
     }
-    /// <p>When set to <code>true</code>, Device Farm reboots the instance after a test run. The default value is
-    /// <code>true</code>.</p>
+    /// <p>When set to <code>true</code>, Device Farm reboots the instance after a test run. The default value is <code>true</code>.</p>
     pub fn reboot_after_use(&self) -> std::option::Option<bool> {
         self.reboot_after_use
     }
@@ -18075,12 +16607,8 @@ pub struct CreateDevicePoolInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The device pool's rules.</p>
     pub rules: std::option::Option<std::vec::Vec<crate::model::Rule>>,
-    /// <p>The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are
-    /// available and meet the criteria that you assign for the <code>rules</code> parameter. Depending on how many
-    /// devices meet these constraints, your device pool might contain fewer devices than the value for this
-    /// parameter.</p>
-    /// <p>By specifying the maximum number of devices, you can control the costs that you incur
-    /// by running tests.</p>
+    /// <p>The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are available and meet the criteria that you assign for the <code>rules</code> parameter. Depending on how many devices meet these constraints, your device pool might contain fewer devices than the value for this parameter.</p>
+    /// <p>By specifying the maximum number of devices, you can control the costs that you incur by running tests.</p>
     pub max_devices: std::option::Option<i32>,
 }
 impl CreateDevicePoolInput {
@@ -18100,12 +16628,8 @@ impl CreateDevicePoolInput {
     pub fn rules(&self) -> std::option::Option<&[crate::model::Rule]> {
         self.rules.as_deref()
     }
-    /// <p>The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are
-    /// available and meet the criteria that you assign for the <code>rules</code> parameter. Depending on how many
-    /// devices meet these constraints, your device pool might contain fewer devices than the value for this
-    /// parameter.</p>
-    /// <p>By specifying the maximum number of devices, you can control the costs that you incur
-    /// by running tests.</p>
+    /// <p>The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are available and meet the criteria that you assign for the <code>rules</code> parameter. Depending on how many devices meet these constraints, your device pool might contain fewer devices than the value for this parameter.</p>
+    /// <p>By specifying the maximum number of devices, you can control the costs that you incur by running tests.</p>
     pub fn max_devices(&self) -> std::option::Option<i32> {
         self.max_devices
     }

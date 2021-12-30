@@ -1350,14 +1350,12 @@ pub mod create_organization_input {
             self.domains = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a customer managed master key from AWS
-        /// KMS.</p>
+        /// <p>The Amazon Resource Name (ARN) of a customer managed master key from AWS KMS.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a customer managed master key from AWS
-        /// KMS.</p>
+        /// <p>The Amazon Resource Name (ARN) of a customer managed master key from AWS KMS.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_arn = input;
             self
@@ -1526,14 +1524,12 @@ pub mod create_resource_input {
         pub(crate) r#type: std::option::Option<crate::model::ResourceType>,
     }
     impl Builder {
-        /// <p>The identifier associated with the organization for which the resource is
-        /// created.</p>
+        /// <p>The identifier associated with the organization for which the resource is created.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.organization_id = Some(input.into());
             self
         }
-        /// <p>The identifier associated with the organization for which the resource is
-        /// created.</p>
+        /// <p>The identifier associated with the organization for which the resource is created.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1551,14 +1547,12 @@ pub mod create_resource_input {
             self.name = input;
             self
         }
-        /// <p>The type of the new resource. The available types are <code>equipment</code> and
-        /// <code>room</code>.</p>
+        /// <p>The type of the new resource. The available types are <code>equipment</code> and <code>room</code>.</p>
         pub fn r#type(mut self, input: crate::model::ResourceType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The type of the new resource. The available types are <code>equipment</code> and
-        /// <code>room</code>.</p>
+        /// <p>The type of the new resource. The available types are <code>equipment</code> and <code>room</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ResourceType>) -> Self {
             self.r#type = input;
             self
@@ -2088,26 +2082,22 @@ pub mod delete_alias_input {
             self.organization_id = input;
             self
         }
-        /// <p>The identifier for the member (user or group) from which to have the aliases
-        /// removed.</p>
+        /// <p>The identifier for the member (user or group) from which to have the aliases removed.</p>
         pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.entity_id = Some(input.into());
             self
         }
-        /// <p>The identifier for the member (user or group) from which to have the aliases
-        /// removed.</p>
+        /// <p>The identifier for the member (user or group) from which to have the aliases removed.</p>
         pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.entity_id = input;
             self
         }
-        /// <p>The aliases to be removed from the user's set of aliases. Duplicate entries in the
-        /// list are collapsed into single entries (the list is transformed into a set).</p>
+        /// <p>The aliases to be removed from the user's set of aliases. Duplicate entries in the list are collapsed into single entries (the list is transformed into a set).</p>
         pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.alias = Some(input.into());
             self
         }
-        /// <p>The aliases to be removed from the user's set of aliases. Duplicate entries in the
-        /// list are collapsed into single entries (the list is transformed into a set).</p>
+        /// <p>The aliases to be removed from the user's set of aliases. Duplicate entries in the list are collapsed into single entries (the list is transformed into a set).</p>
         pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alias = input;
             self
@@ -2427,14 +2417,12 @@ pub mod delete_mailbox_permissions_input {
         pub(crate) grantee_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier of the organization under which the member (user or group)
-        /// exists.</p>
+        /// <p>The identifier of the organization under which the member (user or group) exists.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.organization_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the organization under which the member (user or group)
-        /// exists.</p>
+        /// <p>The identifier of the organization under which the member (user or group) exists.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2452,14 +2440,12 @@ pub mod delete_mailbox_permissions_input {
             self.entity_id = input;
             self
         }
-        /// <p>The identifier of the member (user or group) for which to delete granted
-        /// permissions.</p>
+        /// <p>The identifier of the member (user or group) for which to delete granted permissions.</p>
         pub fn grantee_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.grantee_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the member (user or group) for which to delete granted
-        /// permissions.</p>
+        /// <p>The identifier of the member (user or group) for which to delete granted permissions.</p>
         pub fn set_grantee_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.grantee_id = input;
             self
@@ -2630,18 +2616,9 @@ pub mod delete_mobile_device_access_override_input {
         }
         /// <p>The WorkMail user for which you want to delete the override. Accepts the following types of user identities:</p>
         /// <ul>
-        /// <li>
-        /// <p>User ID:  <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Email address: <code>user@domain.tld</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>User name: <code>user</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+        /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+        /// <li> <p>User name: <code>user</code> </p> </li>
         /// </ul>
         pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_id = Some(input.into());
@@ -2649,18 +2626,9 @@ pub mod delete_mobile_device_access_override_input {
         }
         /// <p>The WorkMail user for which you want to delete the override. Accepts the following types of user identities:</p>
         /// <ul>
-        /// <li>
-        /// <p>User ID:  <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Email address: <code>user@domain.tld</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>User name: <code>user</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+        /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+        /// <li> <p>User name: <code>user</code> </p> </li>
         /// </ul>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_id = input;
@@ -3188,14 +3156,12 @@ pub mod delete_resource_input {
         pub(crate) resource_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier associated with the organization from which the resource is
-        /// deleted.</p>
+        /// <p>The identifier associated with the organization from which the resource is deleted.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.organization_id = Some(input.into());
             self
         }
-        /// <p>The identifier associated with the organization from which the resource is
-        /// deleted.</p>
+        /// <p>The identifier associated with the organization from which the resource is deleted.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4697,14 +4663,12 @@ pub mod describe_resource_input {
         pub(crate) resource_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier associated with the organization for which the resource is
-        /// described.</p>
+        /// <p>The identifier associated with the organization for which the resource is described.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.organization_id = Some(input.into());
             self
         }
-        /// <p>The identifier associated with the organization for which the resource is
-        /// described.</p>
+        /// <p>The identifier associated with the organization for which the resource is described.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5050,26 +5014,22 @@ pub mod disassociate_delegate_from_resource_input {
             self.organization_id = input;
             self
         }
-        /// <p>The identifier of the resource from which delegates' set members are removed.
-        /// </p>
+        /// <p>The identifier of the resource from which delegates' set members are removed. </p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the resource from which delegates' set members are removed.
-        /// </p>
+        /// <p>The identifier of the resource from which delegates' set members are removed. </p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
         }
-        /// <p>The identifier for the member (user, group) to be removed from the resource's
-        /// delegates.</p>
+        /// <p>The identifier for the member (user, group) to be removed from the resource's delegates.</p>
         pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.entity_id = Some(input.into());
             self
         }
-        /// <p>The identifier for the member (user, group) to be removed from the resource's
-        /// delegates.</p>
+        /// <p>The identifier for the member (user, group) to be removed from the resource's delegates.</p>
         pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.entity_id = input;
             self
@@ -5432,16 +5392,12 @@ pub mod get_access_control_effect_input {
             self.ip_address = input;
             self
         }
-        /// <p>The access protocol action. Valid values include <code>ActiveSync</code>,
-        /// <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>,
-        /// <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
+        /// <p>The access protocol action. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
         pub fn action(mut self, input: impl Into<std::string::String>) -> Self {
             self.action = Some(input.into());
             self
         }
-        /// <p>The access protocol action. Valid values include <code>ActiveSync</code>,
-        /// <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>,
-        /// <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
+        /// <p>The access protocol action. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
         pub fn set_action(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.action = input;
             self
@@ -5766,14 +5722,12 @@ pub mod get_mailbox_details_input {
         pub(crate) user_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier for the organization that contains the user whose mailbox details are
-        /// being requested.</p>
+        /// <p>The identifier for the organization that contains the user whose mailbox details are being requested.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.organization_id = Some(input.into());
             self
         }
-        /// <p>The identifier for the organization that contains the user whose mailbox details are
-        /// being requested.</p>
+        /// <p>The identifier for the organization that contains the user whose mailbox details are being requested.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6335,18 +6289,9 @@ pub mod get_mobile_device_access_override_input {
         }
         /// <p>Identifies the WorkMail user for the override. Accepts the following types of user identities: </p>
         /// <ul>
-        /// <li>
-        /// <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Email address: <code>user@domain.tld</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>User name: <code>user</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+        /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+        /// <li> <p>User name: <code>user</code> </p> </li>
         /// </ul>
         pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_id = Some(input.into());
@@ -6354,18 +6299,9 @@ pub mod get_mobile_device_access_override_input {
         }
         /// <p>Identifies the WorkMail user for the override. Accepts the following types of user identities: </p>
         /// <ul>
-        /// <li>
-        /// <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Email address: <code>user@domain.tld</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>User name: <code>user</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+        /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+        /// <li> <p>User name: <code>user</code> </p> </li>
         /// </ul>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_id = input;
@@ -6715,14 +6651,12 @@ pub mod list_aliases_input {
             self.entity_id = input;
             self
         }
-        /// <p>The token to use to retrieve the next page of results. The first call does not
-        /// contain any tokens.</p>
+        /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. The first call does not
-        /// contain any tokens.</p>
+        /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6899,26 +6833,22 @@ pub mod list_group_members_input {
             self.organization_id = input;
             self
         }
-        /// <p>The identifier for the group to which the members (users or groups) are
-        /// associated.</p>
+        /// <p>The identifier for the group to which the members (users or groups) are associated.</p>
         pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.group_id = Some(input.into());
             self
         }
-        /// <p>The identifier for the group to which the members (users or groups) are
-        /// associated.</p>
+        /// <p>The identifier for the group to which the members (users or groups) are associated.</p>
         pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.group_id = input;
             self
         }
-        /// <p> The token to use to retrieve the next page of results. The first call does not
-        /// contain any tokens.</p>
+        /// <p> The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p> The token to use to retrieve the next page of results. The first call does not
-        /// contain any tokens.</p>
+        /// <p> The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7095,14 +7025,12 @@ pub mod list_groups_input {
             self.organization_id = input;
             self
         }
-        /// <p>The token to use to retrieve the next page of results. The first call does not
-        /// contain any tokens.</p>
+        /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. The first call does not
-        /// contain any tokens.</p>
+        /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7448,14 +7376,12 @@ pub mod list_mailbox_permissions_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The identifier of the organization under which the user, group, or resource
-        /// exists.</p>
+        /// <p>The identifier of the organization under which the user, group, or resource exists.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.organization_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the organization under which the user, group, or resource
-        /// exists.</p>
+        /// <p>The identifier of the organization under which the user, group, or resource exists.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7463,26 +7389,22 @@ pub mod list_mailbox_permissions_input {
             self.organization_id = input;
             self
         }
-        /// <p>The identifier of the user, group, or resource for which to list mailbox
-        /// permissions.</p>
+        /// <p>The identifier of the user, group, or resource for which to list mailbox permissions.</p>
         pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.entity_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the user, group, or resource for which to list mailbox
-        /// permissions.</p>
+        /// <p>The identifier of the user, group, or resource for which to list mailbox permissions.</p>
         pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.entity_id = input;
             self
         }
-        /// <p>The token to use to retrieve the next page of results. The first call does not
-        /// contain any tokens.</p>
+        /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. The first call does not
-        /// contain any tokens.</p>
+        /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7846,18 +7768,9 @@ pub mod list_mobile_device_access_overrides_input {
         }
         /// <p>The WorkMail user under which you list the mobile device access overrides. Accepts the following types of user identities:</p>
         /// <ul>
-        /// <li>
-        /// <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Email address: <code>user@domain.tld</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>User name: <code>user</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+        /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+        /// <li> <p>User name: <code>user</code> </p> </li>
         /// </ul>
         pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_id = Some(input.into());
@@ -7865,18 +7778,9 @@ pub mod list_mobile_device_access_overrides_input {
         }
         /// <p>The WorkMail user under which you list the mobile device access overrides. Accepts the following types of user identities:</p>
         /// <ul>
-        /// <li>
-        /// <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Email address: <code>user@domain.tld</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>User name: <code>user</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+        /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+        /// <li> <p>User name: <code>user</code> </p> </li>
         /// </ul>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_id = input;
@@ -8223,14 +8127,12 @@ pub mod list_organizations_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The token to use to retrieve the next page of results. The first call does not
-        /// contain any tokens.</p>
+        /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. The first call does not
-        /// contain any tokens.</p>
+        /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8393,14 +8295,12 @@ pub mod list_resource_delegates_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The identifier for the organization that contains the resource for which delegates
-        /// are listed.</p>
+        /// <p>The identifier for the organization that contains the resource for which delegates are listed.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.organization_id = Some(input.into());
             self
         }
-        /// <p>The identifier for the organization that contains the resource for which delegates
-        /// are listed.</p>
+        /// <p>The identifier for the organization that contains the resource for which delegates are listed.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8418,14 +8318,12 @@ pub mod list_resource_delegates_input {
             self.resource_id = input;
             self
         }
-        /// <p>The token used to paginate through the delegates associated with a
-        /// resource.</p>
+        /// <p>The token used to paginate through the delegates associated with a resource.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token used to paginate through the delegates associated with a
-        /// resource.</p>
+        /// <p>The token used to paginate through the delegates associated with a resource.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8604,14 +8502,12 @@ pub mod list_resources_input {
             self.organization_id = input;
             self
         }
-        /// <p>The token to use to retrieve the next page of results. The first call does not
-        /// contain any tokens.</p>
+        /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. The first call does not
-        /// contain any tokens.</p>
+        /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8942,14 +8838,12 @@ pub mod list_users_input {
             self.organization_id = input;
             self
         }
-        /// <p>The token to use to retrieve the next page of results. The first call does not
-        /// contain any tokens.</p>
+        /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. The first call does not
-        /// contain any tokens.</p>
+        /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -9189,18 +9083,14 @@ pub mod put_access_control_rule_input {
         ///
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
-        /// <p>Access protocol actions to include in the rule. Valid values include
-        /// <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>,
-        /// <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
+        /// <p>Access protocol actions to include in the rule. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
         pub fn actions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.actions.unwrap_or_default();
             v.push(input.into());
             self.actions = Some(v);
             self
         }
-        /// <p>Access protocol actions to include in the rule. Valid values include
-        /// <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>,
-        /// <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
+        /// <p>Access protocol actions to include in the rule. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
         pub fn set_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9212,18 +9102,14 @@ pub mod put_access_control_rule_input {
         ///
         /// To override the contents of this collection use [`set_not_actions`](Self::set_not_actions).
         ///
-        /// <p>Access protocol actions to exclude from the rule. Valid values include
-        /// <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>,
-        /// <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
+        /// <p>Access protocol actions to exclude from the rule. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
         pub fn not_actions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.not_actions.unwrap_or_default();
             v.push(input.into());
             self.not_actions = Some(v);
             self
         }
-        /// <p>Access protocol actions to exclude from the rule. Valid values include
-        /// <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>,
-        /// <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
+        /// <p>Access protocol actions to exclude from the rule. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
         pub fn set_not_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9613,14 +9499,12 @@ pub mod put_mailbox_permissions_input {
             std::option::Option<std::vec::Vec<crate::model::PermissionType>>,
     }
     impl Builder {
-        /// <p>The identifier of the organization under which the user, group, or resource
-        /// exists.</p>
+        /// <p>The identifier of the organization under which the user, group, or resource exists.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.organization_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the organization under which the user, group, or resource
-        /// exists.</p>
+        /// <p>The identifier of the organization under which the user, group, or resource exists.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9628,26 +9512,22 @@ pub mod put_mailbox_permissions_input {
             self.organization_id = input;
             self
         }
-        /// <p>The identifier of the user, group, or resource for which to update mailbox
-        /// permissions.</p>
+        /// <p>The identifier of the user, group, or resource for which to update mailbox permissions.</p>
         pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.entity_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the user, group, or resource for which to update mailbox
-        /// permissions.</p>
+        /// <p>The identifier of the user, group, or resource for which to update mailbox permissions.</p>
         pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.entity_id = input;
             self
         }
-        /// <p>The identifier of the user, group, or resource to which to grant the
-        /// permissions.</p>
+        /// <p>The identifier of the user, group, or resource to which to grant the permissions.</p>
         pub fn grantee_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.grantee_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the user, group, or resource to which to grant the
-        /// permissions.</p>
+        /// <p>The identifier of the user, group, or resource to which to grant the permissions.</p>
         pub fn set_grantee_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.grantee_id = input;
             self
@@ -9656,24 +9536,14 @@ pub mod put_mailbox_permissions_input {
         ///
         /// To override the contents of this collection use [`set_permission_values`](Self::set_permission_values).
         ///
-        /// <p>The permissions granted to the grantee. SEND_AS allows the grantee to send email as
-        /// the owner of the mailbox (the grantee is not mentioned on these emails). SEND_ON_BEHALF
-        /// allows the grantee to send email on behalf of the owner of the mailbox (the grantee is not
-        /// mentioned as the physical sender of these emails). FULL_ACCESS allows the grantee full
-        /// access to the mailbox, irrespective of other folder-level permissions set on the
-        /// mailbox.</p>
+        /// <p>The permissions granted to the grantee. SEND_AS allows the grantee to send email as the owner of the mailbox (the grantee is not mentioned on these emails). SEND_ON_BEHALF allows the grantee to send email on behalf of the owner of the mailbox (the grantee is not mentioned as the physical sender of these emails). FULL_ACCESS allows the grantee full access to the mailbox, irrespective of other folder-level permissions set on the mailbox.</p>
         pub fn permission_values(mut self, input: crate::model::PermissionType) -> Self {
             let mut v = self.permission_values.unwrap_or_default();
             v.push(input);
             self.permission_values = Some(v);
             self
         }
-        /// <p>The permissions granted to the grantee. SEND_AS allows the grantee to send email as
-        /// the owner of the mailbox (the grantee is not mentioned on these emails). SEND_ON_BEHALF
-        /// allows the grantee to send email on behalf of the owner of the mailbox (the grantee is not
-        /// mentioned as the physical sender of these emails). FULL_ACCESS allows the grantee full
-        /// access to the mailbox, irrespective of other folder-level permissions set on the
-        /// mailbox.</p>
+        /// <p>The permissions granted to the grantee. SEND_AS allows the grantee to send email as the owner of the mailbox (the grantee is not mentioned on these emails). SEND_ON_BEHALF allows the grantee to send email on behalf of the owner of the mailbox (the grantee is not mentioned as the physical sender of these emails). FULL_ACCESS allows the grantee full access to the mailbox, irrespective of other folder-level permissions set on the mailbox.</p>
         pub fn set_permission_values(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PermissionType>>,
@@ -9849,18 +9719,9 @@ pub mod put_mobile_device_access_override_input {
         }
         /// <p>The WorkMail user for which you create the override. Accepts the following types of user identities:</p>
         /// <ul>
-        /// <li>
-        /// <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Email address: <code>user@domain.tld</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>User name: <code>user</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+        /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+        /// <li> <p>User name: <code>user</code> </p> </li>
         /// </ul>
         pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_id = Some(input.into());
@@ -9868,18 +9729,9 @@ pub mod put_mobile_device_access_override_input {
         }
         /// <p>The WorkMail user for which you create the override. Accepts the following types of user identities:</p>
         /// <ul>
-        /// <li>
-        /// <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Email address: <code>user@domain.tld</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>User name: <code>user</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+        /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+        /// <li> <p>User name: <code>user</code> </p> </li>
         /// </ul>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_id = input;
@@ -10470,14 +10322,12 @@ pub mod register_to_work_mail_input {
         pub(crate) email: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier for the organization under which the user, group, or resource
-        /// exists.</p>
+        /// <p>The identifier for the organization under which the user, group, or resource exists.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.organization_id = Some(input.into());
             self
         }
-        /// <p>The identifier for the organization under which the user, group, or resource
-        /// exists.</p>
+        /// <p>The identifier for the organization under which the user, group, or resource exists.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10653,14 +10503,12 @@ pub mod reset_password_input {
         pub(crate) password: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier of the organization that contains the user for which the password is
-        /// reset.</p>
+        /// <p>The identifier of the organization that contains the user for which the password is reset.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.organization_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the organization that contains the user for which the password is
-        /// reset.</p>
+        /// <p>The identifier of the organization that contains the user for which the password is reset.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10883,26 +10731,22 @@ pub mod start_mailbox_export_job_input {
             self.description = input;
             self
         }
-        /// <p>The ARN of the AWS Identity and Access Management (IAM) role that grants write permission to the S3
-        /// bucket.</p>
+        /// <p>The ARN of the AWS Identity and Access Management (IAM) role that grants write permission to the S3 bucket.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the AWS Identity and Access Management (IAM) role that grants write permission to the S3
-        /// bucket.</p>
+        /// <p>The ARN of the AWS Identity and Access Management (IAM) role that grants write permission to the S3 bucket.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the symmetric AWS Key Management Service (AWS KMS)
-        /// key that encrypts the exported mailbox content.</p>
+        /// <p>The Amazon Resource Name (ARN) of the symmetric AWS Key Management Service (AWS KMS) key that encrypts the exported mailbox content.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the symmetric AWS Key Management Service (AWS KMS)
-        /// key that encrypts the exported mailbox content.</p>
+        /// <p>The Amazon Resource Name (ARN) of the symmetric AWS Key Management Service (AWS KMS) key that encrypts the exported mailbox content.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_arn = input;
             self
@@ -11608,14 +11452,12 @@ pub mod update_mailbox_quota_input {
         pub(crate) mailbox_quota: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The identifier for the organization that contains the user for whom to update the
-        /// mailbox quota.</p>
+        /// <p>The identifier for the organization that contains the user for whom to update the mailbox quota.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.organization_id = Some(input.into());
             self
         }
-        /// <p>The identifier for the organization that contains the user for whom to update the
-        /// mailbox quota.</p>
+        /// <p>The identifier for the organization that contains the user for whom to update the mailbox quota.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12366,14 +12208,12 @@ pub mod update_resource_input {
         pub(crate) booking_options: std::option::Option<crate::model::BookingOptions>,
     }
     impl Builder {
-        /// <p>The identifier associated with the organization for which the resource is
-        /// updated.</p>
+        /// <p>The identifier associated with the organization for which the resource is updated.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.organization_id = Some(input.into());
             self
         }
-        /// <p>The identifier associated with the organization for which the resource is
-        /// updated.</p>
+        /// <p>The identifier associated with the organization for which the resource is updated.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12556,8 +12396,7 @@ impl UpdateResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateResourceInput {
-    /// <p>The identifier associated with the organization for which the resource is
-    /// updated.</p>
+    /// <p>The identifier associated with the organization for which the resource is updated.</p>
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the resource to be updated.</p>
     pub resource_id: std::option::Option<std::string::String>,
@@ -12567,8 +12406,7 @@ pub struct UpdateResourceInput {
     pub booking_options: std::option::Option<crate::model::BookingOptions>,
 }
 impl UpdateResourceInput {
-    /// <p>The identifier associated with the organization for which the resource is
-    /// updated.</p>
+    /// <p>The identifier associated with the organization for which the resource is updated.</p>
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
@@ -12746,8 +12584,7 @@ impl std::fmt::Debug for UpdateMobileDeviceAccessRuleInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMailboxQuotaInput {
-    /// <p>The identifier for the organization that contains the user for whom to update the
-    /// mailbox quota.</p>
+    /// <p>The identifier for the organization that contains the user for whom to update the mailbox quota.</p>
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The identifer for the user for whom to update the mailbox quota.</p>
     pub user_id: std::option::Option<std::string::String>,
@@ -12755,8 +12592,7 @@ pub struct UpdateMailboxQuotaInput {
     pub mailbox_quota: std::option::Option<i32>,
 }
 impl UpdateMailboxQuotaInput {
-    /// <p>The identifier for the organization that contains the user for whom to update the
-    /// mailbox quota.</p>
+    /// <p>The identifier for the organization that contains the user for whom to update the mailbox quota.</p>
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
@@ -12875,11 +12711,9 @@ pub struct StartMailboxExportJobInput {
     pub entity_id: std::option::Option<std::string::String>,
     /// <p>The mailbox export job description.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The ARN of the AWS Identity and Access Management (IAM) role that grants write permission to the S3
-    /// bucket.</p>
+    /// <p>The ARN of the AWS Identity and Access Management (IAM) role that grants write permission to the S3 bucket.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the symmetric AWS Key Management Service (AWS KMS)
-    /// key that encrypts the exported mailbox content.</p>
+    /// <p>The Amazon Resource Name (ARN) of the symmetric AWS Key Management Service (AWS KMS) key that encrypts the exported mailbox content.</p>
     pub kms_key_arn: std::option::Option<std::string::String>,
     /// <p>The name of the S3 bucket.</p>
     pub s3_bucket_name: std::option::Option<std::string::String>,
@@ -12903,13 +12737,11 @@ impl StartMailboxExportJobInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The ARN of the AWS Identity and Access Management (IAM) role that grants write permission to the S3
-    /// bucket.</p>
+    /// <p>The ARN of the AWS Identity and Access Management (IAM) role that grants write permission to the S3 bucket.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the symmetric AWS Key Management Service (AWS KMS)
-    /// key that encrypts the exported mailbox content.</p>
+    /// <p>The Amazon Resource Name (ARN) of the symmetric AWS Key Management Service (AWS KMS) key that encrypts the exported mailbox content.</p>
     pub fn kms_key_arn(&self) -> std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
@@ -12941,8 +12773,7 @@ impl std::fmt::Debug for StartMailboxExportJobInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResetPasswordInput {
-    /// <p>The identifier of the organization that contains the user for which the password is
-    /// reset.</p>
+    /// <p>The identifier of the organization that contains the user for which the password is reset.</p>
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the user for whom the password is reset.</p>
     pub user_id: std::option::Option<std::string::String>,
@@ -12950,8 +12781,7 @@ pub struct ResetPasswordInput {
     pub password: std::option::Option<std::string::String>,
 }
 impl ResetPasswordInput {
-    /// <p>The identifier of the organization that contains the user for which the password is
-    /// reset.</p>
+    /// <p>The identifier of the organization that contains the user for which the password is reset.</p>
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
@@ -12978,8 +12808,7 @@ impl std::fmt::Debug for ResetPasswordInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterToWorkMailInput {
-    /// <p>The identifier for the organization under which the user, group, or resource
-    /// exists.</p>
+    /// <p>The identifier for the organization under which the user, group, or resource exists.</p>
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the user, group, or resource to be updated.</p>
     pub entity_id: std::option::Option<std::string::String>,
@@ -12987,8 +12816,7 @@ pub struct RegisterToWorkMailInput {
     pub email: std::option::Option<std::string::String>,
 }
 impl RegisterToWorkMailInput {
-    /// <p>The identifier for the organization under which the user, group, or resource
-    /// exists.</p>
+    /// <p>The identifier for the organization under which the user, group, or resource exists.</p>
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
@@ -13106,18 +12934,9 @@ pub struct PutMobileDeviceAccessOverrideInput {
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The WorkMail user for which you create the override. Accepts the following types of user identities:</p>
     /// <ul>
-    /// <li>
-    /// <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Email address: <code>user@domain.tld</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>User name: <code>user</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+    /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+    /// <li> <p>User name: <code>user</code> </p> </li>
     /// </ul>
     pub user_id: std::option::Option<std::string::String>,
     /// <p>The mobile device for which you create the override. <code>DeviceId</code> is case insensitive.</p>
@@ -13134,18 +12953,9 @@ impl PutMobileDeviceAccessOverrideInput {
     }
     /// <p>The WorkMail user for which you create the override. Accepts the following types of user identities:</p>
     /// <ul>
-    /// <li>
-    /// <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Email address: <code>user@domain.tld</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>User name: <code>user</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+    /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+    /// <li> <p>User name: <code>user</code> </p> </li>
     /// </ul>
     pub fn user_id(&self) -> std::option::Option<&str> {
         self.user_id.as_deref()
@@ -13179,45 +12989,29 @@ impl std::fmt::Debug for PutMobileDeviceAccessOverrideInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutMailboxPermissionsInput {
-    /// <p>The identifier of the organization under which the user, group, or resource
-    /// exists.</p>
+    /// <p>The identifier of the organization under which the user, group, or resource exists.</p>
     pub organization_id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the user, group, or resource for which to update mailbox
-    /// permissions.</p>
+    /// <p>The identifier of the user, group, or resource for which to update mailbox permissions.</p>
     pub entity_id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the user, group, or resource to which to grant the
-    /// permissions.</p>
+    /// <p>The identifier of the user, group, or resource to which to grant the permissions.</p>
     pub grantee_id: std::option::Option<std::string::String>,
-    /// <p>The permissions granted to the grantee. SEND_AS allows the grantee to send email as
-    /// the owner of the mailbox (the grantee is not mentioned on these emails). SEND_ON_BEHALF
-    /// allows the grantee to send email on behalf of the owner of the mailbox (the grantee is not
-    /// mentioned as the physical sender of these emails). FULL_ACCESS allows the grantee full
-    /// access to the mailbox, irrespective of other folder-level permissions set on the
-    /// mailbox.</p>
+    /// <p>The permissions granted to the grantee. SEND_AS allows the grantee to send email as the owner of the mailbox (the grantee is not mentioned on these emails). SEND_ON_BEHALF allows the grantee to send email on behalf of the owner of the mailbox (the grantee is not mentioned as the physical sender of these emails). FULL_ACCESS allows the grantee full access to the mailbox, irrespective of other folder-level permissions set on the mailbox.</p>
     pub permission_values: std::option::Option<std::vec::Vec<crate::model::PermissionType>>,
 }
 impl PutMailboxPermissionsInput {
-    /// <p>The identifier of the organization under which the user, group, or resource
-    /// exists.</p>
+    /// <p>The identifier of the organization under which the user, group, or resource exists.</p>
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
-    /// <p>The identifier of the user, group, or resource for which to update mailbox
-    /// permissions.</p>
+    /// <p>The identifier of the user, group, or resource for which to update mailbox permissions.</p>
     pub fn entity_id(&self) -> std::option::Option<&str> {
         self.entity_id.as_deref()
     }
-    /// <p>The identifier of the user, group, or resource to which to grant the
-    /// permissions.</p>
+    /// <p>The identifier of the user, group, or resource to which to grant the permissions.</p>
     pub fn grantee_id(&self) -> std::option::Option<&str> {
         self.grantee_id.as_deref()
     }
-    /// <p>The permissions granted to the grantee. SEND_AS allows the grantee to send email as
-    /// the owner of the mailbox (the grantee is not mentioned on these emails). SEND_ON_BEHALF
-    /// allows the grantee to send email on behalf of the owner of the mailbox (the grantee is not
-    /// mentioned as the physical sender of these emails). FULL_ACCESS allows the grantee full
-    /// access to the mailbox, irrespective of other folder-level permissions set on the
-    /// mailbox.</p>
+    /// <p>The permissions granted to the grantee. SEND_AS allows the grantee to send email as the owner of the mailbox (the grantee is not mentioned on these emails). SEND_ON_BEHALF allows the grantee to send email on behalf of the owner of the mailbox (the grantee is not mentioned as the physical sender of these emails). FULL_ACCESS allows the grantee full access to the mailbox, irrespective of other folder-level permissions set on the mailbox.</p>
     pub fn permission_values(&self) -> std::option::Option<&[crate::model::PermissionType]> {
         self.permission_values.as_deref()
     }
@@ -13275,13 +13069,9 @@ pub struct PutAccessControlRuleInput {
     pub ip_ranges: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>IPv4 CIDR ranges to exclude from the rule.</p>
     pub not_ip_ranges: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Access protocol actions to include in the rule. Valid values include
-    /// <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>,
-    /// <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
+    /// <p>Access protocol actions to include in the rule. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
     pub actions: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Access protocol actions to exclude from the rule. Valid values include
-    /// <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>,
-    /// <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
+    /// <p>Access protocol actions to exclude from the rule. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
     pub not_actions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>User IDs to include in the rule.</p>
     pub user_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13311,15 +13101,11 @@ impl PutAccessControlRuleInput {
     pub fn not_ip_ranges(&self) -> std::option::Option<&[std::string::String]> {
         self.not_ip_ranges.as_deref()
     }
-    /// <p>Access protocol actions to include in the rule. Valid values include
-    /// <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>,
-    /// <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
+    /// <p>Access protocol actions to include in the rule. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
     pub fn actions(&self) -> std::option::Option<&[std::string::String]> {
         self.actions.as_deref()
     }
-    /// <p>Access protocol actions to exclude from the rule. Valid values include
-    /// <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>,
-    /// <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
+    /// <p>Access protocol actions to exclude from the rule. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
     pub fn not_actions(&self) -> std::option::Option<&[std::string::String]> {
         self.not_actions.as_deref()
     }
@@ -13359,8 +13145,7 @@ impl std::fmt::Debug for PutAccessControlRuleInput {
 pub struct ListUsersInput {
     /// <p>The identifier for the organization under which the users exist.</p>
     pub organization_id: std::option::Option<std::string::String>,
-    /// <p>The token to use to retrieve the next page of results. The first call does not
-    /// contain any tokens.</p>
+    /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a single call.</p>
     pub max_results: std::option::Option<i32>,
@@ -13370,8 +13155,7 @@ impl ListUsersInput {
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
-    /// <p>The token to use to retrieve the next page of results. The first call does not
-    /// contain any tokens.</p>
+    /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -13417,8 +13201,7 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 pub struct ListResourcesInput {
     /// <p>The identifier for the organization under which the resources exist.</p>
     pub organization_id: std::option::Option<std::string::String>,
-    /// <p>The token to use to retrieve the next page of results. The first call does not
-    /// contain any tokens.</p>
+    /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a single call.</p>
     pub max_results: std::option::Option<i32>,
@@ -13428,8 +13211,7 @@ impl ListResourcesInput {
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
-    /// <p>The token to use to retrieve the next page of results. The first call does not
-    /// contain any tokens.</p>
+    /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -13452,20 +13234,17 @@ impl std::fmt::Debug for ListResourcesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResourceDelegatesInput {
-    /// <p>The identifier for the organization that contains the resource for which delegates
-    /// are listed.</p>
+    /// <p>The identifier for the organization that contains the resource for which delegates are listed.</p>
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the resource whose delegates are listed.</p>
     pub resource_id: std::option::Option<std::string::String>,
-    /// <p>The token used to paginate through the delegates associated with a
-    /// resource.</p>
+    /// <p>The token used to paginate through the delegates associated with a resource.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The number of maximum results in a page.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListResourceDelegatesInput {
-    /// <p>The identifier for the organization that contains the resource for which delegates
-    /// are listed.</p>
+    /// <p>The identifier for the organization that contains the resource for which delegates are listed.</p>
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
@@ -13473,8 +13252,7 @@ impl ListResourceDelegatesInput {
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
-    /// <p>The token used to paginate through the delegates associated with a
-    /// resource.</p>
+    /// <p>The token used to paginate through the delegates associated with a resource.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -13498,15 +13276,13 @@ impl std::fmt::Debug for ListResourceDelegatesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOrganizationsInput {
-    /// <p>The token to use to retrieve the next page of results. The first call does not
-    /// contain any tokens.</p>
+    /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a single call.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListOrganizationsInput {
-    /// <p>The token to use to retrieve the next page of results. The first call does not
-    /// contain any tokens.</p>
+    /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -13553,18 +13329,9 @@ pub struct ListMobileDeviceAccessOverridesInput {
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The WorkMail user under which you list the mobile device access overrides. Accepts the following types of user identities:</p>
     /// <ul>
-    /// <li>
-    /// <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Email address: <code>user@domain.tld</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>User name: <code>user</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+    /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+    /// <li> <p>User name: <code>user</code> </p> </li>
     /// </ul>
     pub user_id: std::option::Option<std::string::String>,
     /// <p>The mobile device to which the access override applies.</p>
@@ -13581,18 +13348,9 @@ impl ListMobileDeviceAccessOverridesInput {
     }
     /// <p>The WorkMail user under which you list the mobile device access overrides. Accepts the following types of user identities:</p>
     /// <ul>
-    /// <li>
-    /// <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Email address: <code>user@domain.tld</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>User name: <code>user</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+    /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+    /// <li> <p>User name: <code>user</code> </p> </li>
     /// </ul>
     pub fn user_id(&self) -> std::option::Option<&str> {
         self.user_id.as_deref()
@@ -13661,31 +13419,25 @@ impl std::fmt::Debug for ListMailDomainsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMailboxPermissionsInput {
-    /// <p>The identifier of the organization under which the user, group, or resource
-    /// exists.</p>
+    /// <p>The identifier of the organization under which the user, group, or resource exists.</p>
     pub organization_id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the user, group, or resource for which to list mailbox
-    /// permissions.</p>
+    /// <p>The identifier of the user, group, or resource for which to list mailbox permissions.</p>
     pub entity_id: std::option::Option<std::string::String>,
-    /// <p>The token to use to retrieve the next page of results. The first call does not
-    /// contain any tokens.</p>
+    /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a single call.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListMailboxPermissionsInput {
-    /// <p>The identifier of the organization under which the user, group, or resource
-    /// exists.</p>
+    /// <p>The identifier of the organization under which the user, group, or resource exists.</p>
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
-    /// <p>The identifier of the user, group, or resource for which to list mailbox
-    /// permissions.</p>
+    /// <p>The identifier of the user, group, or resource for which to list mailbox permissions.</p>
     pub fn entity_id(&self) -> std::option::Option<&str> {
         self.entity_id.as_deref()
     }
-    /// <p>The token to use to retrieve the next page of results. The first call does not
-    /// contain any tokens.</p>
+    /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -13746,8 +13498,7 @@ impl std::fmt::Debug for ListMailboxExportJobsInput {
 pub struct ListGroupsInput {
     /// <p>The identifier for the organization under which the groups exist.</p>
     pub organization_id: std::option::Option<std::string::String>,
-    /// <p>The token to use to retrieve the next page of results. The first call does not
-    /// contain any tokens.</p>
+    /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a single call.</p>
     pub max_results: std::option::Option<i32>,
@@ -13757,8 +13508,7 @@ impl ListGroupsInput {
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
-    /// <p>The token to use to retrieve the next page of results. The first call does not
-    /// contain any tokens.</p>
+    /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -13783,11 +13533,9 @@ impl std::fmt::Debug for ListGroupsInput {
 pub struct ListGroupMembersInput {
     /// <p>The identifier for the organization under which the group exists.</p>
     pub organization_id: std::option::Option<std::string::String>,
-    /// <p>The identifier for the group to which the members (users or groups) are
-    /// associated.</p>
+    /// <p>The identifier for the group to which the members (users or groups) are associated.</p>
     pub group_id: std::option::Option<std::string::String>,
-    /// <p> The token to use to retrieve the next page of results. The first call does not
-    /// contain any tokens.</p>
+    /// <p> The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a single call.</p>
     pub max_results: std::option::Option<i32>,
@@ -13797,13 +13545,11 @@ impl ListGroupMembersInput {
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
-    /// <p>The identifier for the group to which the members (users or groups) are
-    /// associated.</p>
+    /// <p>The identifier for the group to which the members (users or groups) are associated.</p>
     pub fn group_id(&self) -> std::option::Option<&str> {
         self.group_id.as_deref()
     }
-    /// <p> The token to use to retrieve the next page of results. The first call does not
-    /// contain any tokens.</p>
+    /// <p> The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -13831,8 +13577,7 @@ pub struct ListAliasesInput {
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the entity for which to list the aliases.</p>
     pub entity_id: std::option::Option<std::string::String>,
-    /// <p>The token to use to retrieve the next page of results. The first call does not
-    /// contain any tokens.</p>
+    /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in a single call.</p>
     pub max_results: std::option::Option<i32>,
@@ -13846,8 +13591,7 @@ impl ListAliasesInput {
     pub fn entity_id(&self) -> std::option::Option<&str> {
         self.entity_id.as_deref()
     }
-    /// <p>The token to use to retrieve the next page of results. The first call does not
-    /// contain any tokens.</p>
+    /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -13896,18 +13640,9 @@ pub struct GetMobileDeviceAccessOverrideInput {
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>Identifies the WorkMail user for the override. Accepts the following types of user identities: </p>
     /// <ul>
-    /// <li>
-    /// <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Email address: <code>user@domain.tld</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>User name: <code>user</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+    /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+    /// <li> <p>User name: <code>user</code> </p> </li>
     /// </ul>
     pub user_id: std::option::Option<std::string::String>,
     /// <p>The mobile device to which the override applies. <code>DeviceId</code> is case insensitive.</p>
@@ -13920,18 +13655,9 @@ impl GetMobileDeviceAccessOverrideInput {
     }
     /// <p>Identifies the WorkMail user for the override. Accepts the following types of user identities: </p>
     /// <ul>
-    /// <li>
-    /// <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Email address: <code>user@domain.tld</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>User name: <code>user</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+    /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+    /// <li> <p>User name: <code>user</code> </p> </li>
     /// </ul>
     pub fn user_id(&self) -> std::option::Option<&str> {
         self.user_id.as_deref()
@@ -14032,15 +13758,13 @@ impl std::fmt::Debug for GetMailDomainInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMailboxDetailsInput {
-    /// <p>The identifier for the organization that contains the user whose mailbox details are
-    /// being requested.</p>
+    /// <p>The identifier for the organization that contains the user whose mailbox details are being requested.</p>
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The identifier for the user whose mailbox details are being requested.</p>
     pub user_id: std::option::Option<std::string::String>,
 }
 impl GetMailboxDetailsInput {
-    /// <p>The identifier for the organization that contains the user whose mailbox details are
-    /// being requested.</p>
+    /// <p>The identifier for the organization that contains the user whose mailbox details are being requested.</p>
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
@@ -14087,9 +13811,7 @@ pub struct GetAccessControlEffectInput {
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The IPv4 address.</p>
     pub ip_address: std::option::Option<std::string::String>,
-    /// <p>The access protocol action. Valid values include <code>ActiveSync</code>,
-    /// <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>,
-    /// <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
+    /// <p>The access protocol action. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
     pub action: std::option::Option<std::string::String>,
     /// <p>The user ID.</p>
     pub user_id: std::option::Option<std::string::String>,
@@ -14103,9 +13825,7 @@ impl GetAccessControlEffectInput {
     pub fn ip_address(&self) -> std::option::Option<&str> {
         self.ip_address.as_deref()
     }
-    /// <p>The access protocol action. Valid values include <code>ActiveSync</code>,
-    /// <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>,
-    /// <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
+    /// <p>The access protocol action. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
     pub fn action(&self) -> std::option::Option<&str> {
         self.action.as_deref()
     }
@@ -14166,11 +13886,9 @@ impl std::fmt::Debug for DisassociateMemberFromGroupInput {
 pub struct DisassociateDelegateFromResourceInput {
     /// <p>The identifier for the organization under which the resource exists.</p>
     pub organization_id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the resource from which delegates' set members are removed.
-    /// </p>
+    /// <p>The identifier of the resource from which delegates' set members are removed. </p>
     pub resource_id: std::option::Option<std::string::String>,
-    /// <p>The identifier for the member (user, group) to be removed from the resource's
-    /// delegates.</p>
+    /// <p>The identifier for the member (user, group) to be removed from the resource's delegates.</p>
     pub entity_id: std::option::Option<std::string::String>,
 }
 impl DisassociateDelegateFromResourceInput {
@@ -14178,13 +13896,11 @@ impl DisassociateDelegateFromResourceInput {
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
-    /// <p>The identifier of the resource from which delegates' set members are removed.
-    /// </p>
+    /// <p>The identifier of the resource from which delegates' set members are removed. </p>
     pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
-    /// <p>The identifier for the member (user, group) to be removed from the resource's
-    /// delegates.</p>
+    /// <p>The identifier for the member (user, group) to be removed from the resource's delegates.</p>
     pub fn entity_id(&self) -> std::option::Option<&str> {
         self.entity_id.as_deref()
     }
@@ -14231,15 +13947,13 @@ impl std::fmt::Debug for DescribeUserInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeResourceInput {
-    /// <p>The identifier associated with the organization for which the resource is
-    /// described.</p>
+    /// <p>The identifier associated with the organization for which the resource is described.</p>
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the resource to be described.</p>
     pub resource_id: std::option::Option<std::string::String>,
 }
 impl DescribeResourceInput {
-    /// <p>The identifier associated with the organization for which the resource is
-    /// described.</p>
+    /// <p>The identifier associated with the organization for which the resource is described.</p>
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
@@ -14471,15 +14185,13 @@ impl std::fmt::Debug for DeleteRetentionPolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteResourceInput {
-    /// <p>The identifier associated with the organization from which the resource is
-    /// deleted.</p>
+    /// <p>The identifier associated with the organization from which the resource is deleted.</p>
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the resource to be deleted.</p>
     pub resource_id: std::option::Option<std::string::String>,
 }
 impl DeleteResourceInput {
-    /// <p>The identifier associated with the organization from which the resource is
-    /// deleted.</p>
+    /// <p>The identifier associated with the organization from which the resource is deleted.</p>
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
@@ -14571,18 +14283,9 @@ pub struct DeleteMobileDeviceAccessOverrideInput {
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The WorkMail user for which you want to delete the override. Accepts the following types of user identities:</p>
     /// <ul>
-    /// <li>
-    /// <p>User ID:  <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Email address: <code>user@domain.tld</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>User name: <code>user</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+    /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+    /// <li> <p>User name: <code>user</code> </p> </li>
     /// </ul>
     pub user_id: std::option::Option<std::string::String>,
     /// <p>The mobile device for which you delete the override. <code>DeviceId</code> is case insensitive.</p>
@@ -14595,18 +14298,9 @@ impl DeleteMobileDeviceAccessOverrideInput {
     }
     /// <p>The WorkMail user for which you want to delete the override. Accepts the following types of user identities:</p>
     /// <ul>
-    /// <li>
-    /// <p>User ID:  <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>Email address: <code>user@domain.tld</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>User name: <code>user</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+    /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+    /// <li> <p>User name: <code>user</code> </p> </li>
     /// </ul>
     pub fn user_id(&self) -> std::option::Option<&str> {
         self.user_id.as_deref()
@@ -14630,18 +14324,15 @@ impl std::fmt::Debug for DeleteMobileDeviceAccessOverrideInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMailboxPermissionsInput {
-    /// <p>The identifier of the organization under which the member (user or group)
-    /// exists.</p>
+    /// <p>The identifier of the organization under which the member (user or group) exists.</p>
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the member (user or group) that owns the mailbox.</p>
     pub entity_id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the member (user or group) for which to delete granted
-    /// permissions.</p>
+    /// <p>The identifier of the member (user or group) for which to delete granted permissions.</p>
     pub grantee_id: std::option::Option<std::string::String>,
 }
 impl DeleteMailboxPermissionsInput {
-    /// <p>The identifier of the organization under which the member (user or group)
-    /// exists.</p>
+    /// <p>The identifier of the organization under which the member (user or group) exists.</p>
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
@@ -14649,8 +14340,7 @@ impl DeleteMailboxPermissionsInput {
     pub fn entity_id(&self) -> std::option::Option<&str> {
         self.entity_id.as_deref()
     }
-    /// <p>The identifier of the member (user or group) for which to delete granted
-    /// permissions.</p>
+    /// <p>The identifier of the member (user or group) for which to delete granted permissions.</p>
     pub fn grantee_id(&self) -> std::option::Option<&str> {
         self.grantee_id.as_deref()
     }
@@ -14699,11 +14389,9 @@ impl std::fmt::Debug for DeleteGroupInput {
 pub struct DeleteAliasInput {
     /// <p>The identifier for the organization under which the user exists.</p>
     pub organization_id: std::option::Option<std::string::String>,
-    /// <p>The identifier for the member (user or group) from which to have the aliases
-    /// removed.</p>
+    /// <p>The identifier for the member (user or group) from which to have the aliases removed.</p>
     pub entity_id: std::option::Option<std::string::String>,
-    /// <p>The aliases to be removed from the user's set of aliases. Duplicate entries in the
-    /// list are collapsed into single entries (the list is transformed into a set).</p>
+    /// <p>The aliases to be removed from the user's set of aliases. Duplicate entries in the list are collapsed into single entries (the list is transformed into a set).</p>
     pub alias: std::option::Option<std::string::String>,
 }
 impl DeleteAliasInput {
@@ -14711,13 +14399,11 @@ impl DeleteAliasInput {
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
-    /// <p>The identifier for the member (user or group) from which to have the aliases
-    /// removed.</p>
+    /// <p>The identifier for the member (user or group) from which to have the aliases removed.</p>
     pub fn entity_id(&self) -> std::option::Option<&str> {
         self.entity_id.as_deref()
     }
-    /// <p>The aliases to be removed from the user's set of aliases. Duplicate entries in the
-    /// list are collapsed into single entries (the list is transformed into a set).</p>
+    /// <p>The aliases to be removed from the user's set of aliases. Duplicate entries in the list are collapsed into single entries (the list is transformed into a set).</p>
     pub fn alias(&self) -> std::option::Option<&str> {
         self.alias.as_deref()
     }
@@ -14806,18 +14492,15 @@ impl std::fmt::Debug for CreateUserInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateResourceInput {
-    /// <p>The identifier associated with the organization for which the resource is
-    /// created.</p>
+    /// <p>The identifier associated with the organization for which the resource is created.</p>
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The name of the new resource.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The type of the new resource. The available types are <code>equipment</code> and
-    /// <code>room</code>.</p>
+    /// <p>The type of the new resource. The available types are <code>equipment</code> and <code>room</code>.</p>
     pub r#type: std::option::Option<crate::model::ResourceType>,
 }
 impl CreateResourceInput {
-    /// <p>The identifier associated with the organization for which the resource is
-    /// created.</p>
+    /// <p>The identifier associated with the organization for which the resource is created.</p>
     pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
@@ -14825,8 +14508,7 @@ impl CreateResourceInput {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The type of the new resource. The available types are <code>equipment</code> and
-    /// <code>room</code>.</p>
+    /// <p>The type of the new resource. The available types are <code>equipment</code> and <code>room</code>.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ResourceType> {
         self.r#type.as_ref()
     }
@@ -14853,8 +14535,7 @@ pub struct CreateOrganizationInput {
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The email domains to associate with the organization.</p>
     pub domains: std::option::Option<std::vec::Vec<crate::model::Domain>>,
-    /// <p>The Amazon Resource Name (ARN) of a customer managed master key from AWS
-    /// KMS.</p>
+    /// <p>The Amazon Resource Name (ARN) of a customer managed master key from AWS KMS.</p>
     pub kms_key_arn: std::option::Option<std::string::String>,
     /// <p>When <code>true</code>, allows organization interoperability between Amazon WorkMail and Microsoft Exchange. Can only be set to <code>true</code> if an AD Connector directory ID is included in the request.</p>
     pub enable_interoperability: bool,
@@ -14876,8 +14557,7 @@ impl CreateOrganizationInput {
     pub fn domains(&self) -> std::option::Option<&[crate::model::Domain]> {
         self.domains.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of a customer managed master key from AWS
-    /// KMS.</p>
+    /// <p>The Amazon Resource Name (ARN) of a customer managed master key from AWS KMS.</p>
     pub fn kms_key_arn(&self) -> std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }

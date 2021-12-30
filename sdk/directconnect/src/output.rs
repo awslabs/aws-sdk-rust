@@ -32,42 +32,15 @@ pub struct UpdateVirtualInterfaceAttributesOutput {
     pub address_family: std::option::Option<crate::model::AddressFamily>,
     /// <p>The state of the virtual interface. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>available</code>: A virtual interface that is able to forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>down</code>: A virtual interface that is BGP down.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleting</code>: A virtual interface is in this state immediately after calling <a>DeleteVirtualInterface</a> until it can no longer forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleted</code>: A virtual interface that cannot forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>unknown</code>: The state of the virtual interface is not available.</p>
-    /// </li>
+    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
+    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
+    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
+    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
+    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
+    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
+    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
+    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
     /// </ul>
     pub virtual_interface_state: std::option::Option<crate::model::VirtualInterfaceState>,
     /// <p>The customer router configuration.</p>
@@ -88,8 +61,7 @@ pub struct UpdateVirtualInterfaceAttributesOutput {
     pub region: std::option::Option<std::string::String>,
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
     pub aws_device_v2: std::option::Option<std::string::String>,
-    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-    /// different than the device that terminates the physical connection.</p>
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
     pub aws_logical_device_id: std::option::Option<std::string::String>,
     /// <p>The tags associated with the virtual interface.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -152,42 +124,15 @@ impl UpdateVirtualInterfaceAttributesOutput {
     }
     /// <p>The state of the virtual interface. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>available</code>: A virtual interface that is able to forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>down</code>: A virtual interface that is BGP down.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleting</code>: A virtual interface is in this state immediately after calling <a>DeleteVirtualInterface</a> until it can no longer forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleted</code>: A virtual interface that cannot forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>unknown</code>: The state of the virtual interface is not available.</p>
-    /// </li>
+    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
+    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
+    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
+    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
+    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
+    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
+    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
+    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
     /// </ul>
     pub fn virtual_interface_state(
         &self,
@@ -230,8 +175,7 @@ impl UpdateVirtualInterfaceAttributesOutput {
     pub fn aws_device_v2(&self) -> std::option::Option<&str> {
         self.aws_device_v2.as_deref()
     }
-    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-    /// different than the device that terminates the physical connection.</p>
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
     pub fn aws_logical_device_id(&self) -> std::option::Option<&str> {
         self.aws_logical_device_id.as_deref()
     }
@@ -470,42 +414,15 @@ pub mod update_virtual_interface_attributes_output {
         }
         /// <p>The state of the virtual interface. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>available</code>: A virtual interface that is able to forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>down</code>: A virtual interface that is BGP down.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleting</code>: A virtual interface is in this state immediately after calling <a>DeleteVirtualInterface</a> until it can no longer forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleted</code>: A virtual interface that cannot forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>unknown</code>: The state of the virtual interface is not available.</p>
-        /// </li>
+        /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
+        /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
+        /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
+        /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
+        /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
+        /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
+        /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
+        /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
+        /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
         /// </ul>
         pub fn virtual_interface_state(
             mut self,
@@ -516,42 +433,15 @@ pub mod update_virtual_interface_attributes_output {
         }
         /// <p>The state of the virtual interface. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>available</code>: A virtual interface that is able to forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>down</code>: A virtual interface that is BGP down.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleting</code>: A virtual interface is in this state immediately after calling <a>DeleteVirtualInterface</a> until it can no longer forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleted</code>: A virtual interface that cannot forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>unknown</code>: The state of the virtual interface is not available.</p>
-        /// </li>
+        /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
+        /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
+        /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
+        /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
+        /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
+        /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
+        /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
+        /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
+        /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
         /// </ul>
         pub fn set_virtual_interface_state(
             mut self,
@@ -680,14 +570,12 @@ pub mod update_virtual_interface_attributes_output {
             self.aws_device_v2 = input;
             self
         }
-        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-        /// different than the device that terminates the physical connection.</p>
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
         pub fn aws_logical_device_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_logical_device_id = Some(input.into());
             self
         }
-        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-        /// different than the device that terminates the physical connection.</p>
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
         pub fn set_aws_logical_device_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -768,8 +656,7 @@ impl UpdateVirtualInterfaceAttributesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateLagOutput {
-    /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible
-    /// values are 1Gbps and 10Gbps. </p>
+    /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>
     pub connections_bandwidth: std::option::Option<std::string::String>,
     /// <p>The number of physical dedicated connections bundled by the LAG, up to a maximum of 10.</p>
     pub number_of_connections: i32,
@@ -781,35 +668,13 @@ pub struct UpdateLagOutput {
     pub lag_name: std::option::Option<std::string::String>,
     /// <p>The state of the LAG. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>requested</code>: The initial state of a LAG. The LAG stays in the
-    /// requested state until the Letter of Authorization (LOA) is available.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: The LAG has been approved and is being initialized.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>available</code>: The network link is established and the LAG is ready for use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>down</code>: The network link is down.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleting</code>: The LAG is being deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleted</code>: The LAG is deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>unknown</code>: The state of the LAG is not available.</p>
-    /// </li>
+    /// <li> <p> <code>requested</code>: The initial state of a LAG. The LAG stays in the requested state until the Letter of Authorization (LOA) is available.</p> </li>
+    /// <li> <p> <code>pending</code>: The LAG has been approved and is being initialized.</p> </li>
+    /// <li> <p> <code>available</code>: The network link is established and the LAG is ready for use.</p> </li>
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+    /// <li> <p> <code>deleting</code>: The LAG is being deleted.</p> </li>
+    /// <li> <p> <code>deleted</code>: The LAG is deleted.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the LAG is not available.</p> </li>
     /// </ul>
     pub lag_state: std::option::Option<crate::model::LagState>,
     /// <p>The location of the LAG.</p>
@@ -822,8 +687,7 @@ pub struct UpdateLagOutput {
     pub aws_device: std::option::Option<std::string::String>,
     /// <p>The Direct Connect endpoint that hosts the LAG.</p>
     pub aws_device_v2: std::option::Option<std::string::String>,
-    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-    /// different than the device that terminates the physical connection.</p>
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
     pub aws_logical_device_id: std::option::Option<std::string::String>,
     /// <p>The connections bundled by the LAG.</p>
     pub connections: std::option::Option<std::vec::Vec<crate::model::Connection>>,
@@ -846,8 +710,7 @@ pub struct UpdateLagOutput {
     pub mac_sec_keys: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
 }
 impl UpdateLagOutput {
-    /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible
-    /// values are 1Gbps and 10Gbps. </p>
+    /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>
     pub fn connections_bandwidth(&self) -> std::option::Option<&str> {
         self.connections_bandwidth.as_deref()
     }
@@ -869,35 +732,13 @@ impl UpdateLagOutput {
     }
     /// <p>The state of the LAG. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>requested</code>: The initial state of a LAG. The LAG stays in the
-    /// requested state until the Letter of Authorization (LOA) is available.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: The LAG has been approved and is being initialized.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>available</code>: The network link is established and the LAG is ready for use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>down</code>: The network link is down.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleting</code>: The LAG is being deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleted</code>: The LAG is deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>unknown</code>: The state of the LAG is not available.</p>
-    /// </li>
+    /// <li> <p> <code>requested</code>: The initial state of a LAG. The LAG stays in the requested state until the Letter of Authorization (LOA) is available.</p> </li>
+    /// <li> <p> <code>pending</code>: The LAG has been approved and is being initialized.</p> </li>
+    /// <li> <p> <code>available</code>: The network link is established and the LAG is ready for use.</p> </li>
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+    /// <li> <p> <code>deleting</code>: The LAG is being deleted.</p> </li>
+    /// <li> <p> <code>deleted</code>: The LAG is deleted.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the LAG is not available.</p> </li>
     /// </ul>
     pub fn lag_state(&self) -> std::option::Option<&crate::model::LagState> {
         self.lag_state.as_ref()
@@ -922,8 +763,7 @@ impl UpdateLagOutput {
     pub fn aws_device_v2(&self) -> std::option::Option<&str> {
         self.aws_device_v2.as_deref()
     }
-    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-    /// different than the device that terminates the physical connection.</p>
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
     pub fn aws_logical_device_id(&self) -> std::option::Option<&str> {
         self.aws_logical_device_id.as_deref()
     }
@@ -1023,14 +863,12 @@ pub mod update_lag_output {
         pub(crate) mac_sec_keys: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
     }
     impl Builder {
-        /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible
-        /// values are 1Gbps and 10Gbps. </p>
+        /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>
         pub fn connections_bandwidth(mut self, input: impl Into<std::string::String>) -> Self {
             self.connections_bandwidth = Some(input.into());
             self
         }
-        /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible
-        /// values are 1Gbps and 10Gbps. </p>
+        /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>
         pub fn set_connections_bandwidth(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1083,35 +921,13 @@ pub mod update_lag_output {
         }
         /// <p>The state of the LAG. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>requested</code>: The initial state of a LAG. The LAG stays in the
-        /// requested state until the Letter of Authorization (LOA) is available.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: The LAG has been approved and is being initialized.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>available</code>: The network link is established and the LAG is ready for use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>down</code>: The network link is down.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleting</code>: The LAG is being deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleted</code>: The LAG is deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>unknown</code>: The state of the LAG is not available.</p>
-        /// </li>
+        /// <li> <p> <code>requested</code>: The initial state of a LAG. The LAG stays in the requested state until the Letter of Authorization (LOA) is available.</p> </li>
+        /// <li> <p> <code>pending</code>: The LAG has been approved and is being initialized.</p> </li>
+        /// <li> <p> <code>available</code>: The network link is established and the LAG is ready for use.</p> </li>
+        /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+        /// <li> <p> <code>deleting</code>: The LAG is being deleted.</p> </li>
+        /// <li> <p> <code>deleted</code>: The LAG is deleted.</p> </li>
+        /// <li> <p> <code>unknown</code>: The state of the LAG is not available.</p> </li>
         /// </ul>
         pub fn lag_state(mut self, input: crate::model::LagState) -> Self {
             self.lag_state = Some(input);
@@ -1119,35 +935,13 @@ pub mod update_lag_output {
         }
         /// <p>The state of the LAG. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>requested</code>: The initial state of a LAG. The LAG stays in the
-        /// requested state until the Letter of Authorization (LOA) is available.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: The LAG has been approved and is being initialized.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>available</code>: The network link is established and the LAG is ready for use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>down</code>: The network link is down.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleting</code>: The LAG is being deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleted</code>: The LAG is deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>unknown</code>: The state of the LAG is not available.</p>
-        /// </li>
+        /// <li> <p> <code>requested</code>: The initial state of a LAG. The LAG stays in the requested state until the Letter of Authorization (LOA) is available.</p> </li>
+        /// <li> <p> <code>pending</code>: The LAG has been approved and is being initialized.</p> </li>
+        /// <li> <p> <code>available</code>: The network link is established and the LAG is ready for use.</p> </li>
+        /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+        /// <li> <p> <code>deleting</code>: The LAG is being deleted.</p> </li>
+        /// <li> <p> <code>deleted</code>: The LAG is deleted.</p> </li>
+        /// <li> <p> <code>unknown</code>: The state of the LAG is not available.</p> </li>
         /// </ul>
         pub fn set_lag_state(mut self, input: std::option::Option<crate::model::LagState>) -> Self {
             self.lag_state = input;
@@ -1206,14 +1000,12 @@ pub mod update_lag_output {
             self.aws_device_v2 = input;
             self
         }
-        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-        /// different than the device that terminates the physical connection.</p>
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
         pub fn aws_logical_device_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_logical_device_id = Some(input.into());
             self
         }
-        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-        /// different than the device that terminates the physical connection.</p>
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
         pub fn set_aws_logical_device_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1522,42 +1314,15 @@ pub struct UpdateConnectionOutput {
     pub connection_name: std::option::Option<std::string::String>,
     /// <p>The state of the connection. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: The connection has been approved and is being initialized.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>available</code>: The network link is up and the connection is ready for use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>down</code>: The network link is down.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleting</code>: The connection is being deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleted</code>: The connection has been deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>unknown</code>: The state of the connection is not available.</p>
-    /// </li>
+    /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
+    /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
+    /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
+    /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+    /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
+    /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
+    /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
     /// </ul>
     pub connection_state: std::option::Option<crate::model::ConnectionState>,
     /// <p>The Amazon Web Services Region where the connection is located.</p>
@@ -1570,7 +1335,7 @@ pub struct UpdateConnectionOutput {
     pub vlan: i32,
     /// <p>The name of the Direct Connect service provider associated with the connection.</p>
     pub partner_name: std::option::Option<std::string::String>,
-    /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
+    /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
     pub loa_issue_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ID of the LAG.</p>
     pub lag_id: std::option::Option<std::string::String>,
@@ -1580,8 +1345,7 @@ pub struct UpdateConnectionOutput {
     pub jumbo_frame_capable: std::option::Option<bool>,
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
     pub aws_device_v2: std::option::Option<std::string::String>,
-    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-    /// different than the device that terminates the physical connection.</p>
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
     pub aws_logical_device_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
     pub has_logical_redundancy: std::option::Option<crate::model::HasLogicalRedundancy>,
@@ -1615,42 +1379,15 @@ impl UpdateConnectionOutput {
     }
     /// <p>The state of the connection. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: The connection has been approved and is being initialized.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>available</code>: The network link is up and the connection is ready for use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>down</code>: The network link is down.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleting</code>: The connection is being deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleted</code>: The connection has been deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>unknown</code>: The state of the connection is not available.</p>
-    /// </li>
+    /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
+    /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
+    /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
+    /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+    /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
+    /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
+    /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
     /// </ul>
     pub fn connection_state(&self) -> std::option::Option<&crate::model::ConnectionState> {
         self.connection_state.as_ref()
@@ -1675,7 +1412,7 @@ impl UpdateConnectionOutput {
     pub fn partner_name(&self) -> std::option::Option<&str> {
         self.partner_name.as_deref()
     }
-    /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
+    /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
     pub fn loa_issue_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.loa_issue_time.as_ref()
     }
@@ -1695,8 +1432,7 @@ impl UpdateConnectionOutput {
     pub fn aws_device_v2(&self) -> std::option::Option<&str> {
         self.aws_device_v2.as_deref()
     }
-    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-    /// different than the device that terminates the physical connection.</p>
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
     pub fn aws_logical_device_id(&self) -> std::option::Option<&str> {
         self.aws_logical_device_id.as_deref()
     }
@@ -1832,42 +1568,15 @@ pub mod update_connection_output {
         }
         /// <p>The state of the connection. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: The connection has been approved and is being initialized.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>available</code>: The network link is up and the connection is ready for use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>down</code>: The network link is down.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleting</code>: The connection is being deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleted</code>: The connection has been deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>unknown</code>: The state of the connection is not available.</p>
-        /// </li>
+        /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
+        /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
+        /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
+        /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
+        /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+        /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
+        /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
+        /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
+        /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
         /// </ul>
         pub fn connection_state(mut self, input: crate::model::ConnectionState) -> Self {
             self.connection_state = Some(input);
@@ -1875,42 +1584,15 @@ pub mod update_connection_output {
         }
         /// <p>The state of the connection. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: The connection has been approved and is being initialized.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>available</code>: The network link is up and the connection is ready for use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>down</code>: The network link is down.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleting</code>: The connection is being deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleted</code>: The connection has been deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>unknown</code>: The state of the connection is not available.</p>
-        /// </li>
+        /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
+        /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
+        /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
+        /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
+        /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+        /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
+        /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
+        /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
+        /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
         /// </ul>
         pub fn set_connection_state(
             mut self,
@@ -1969,12 +1651,12 @@ pub mod update_connection_output {
             self.partner_name = input;
             self
         }
-        /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
+        /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
         pub fn loa_issue_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.loa_issue_time = Some(input);
             self
         }
-        /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
+        /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
         pub fn set_loa_issue_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2025,14 +1707,12 @@ pub mod update_connection_output {
             self.aws_device_v2 = input;
             self
         }
-        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-        /// different than the device that terminates the physical connection.</p>
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
         pub fn aws_logical_device_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_logical_device_id = Some(input.into());
             self
         }
-        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-        /// different than the device that terminates the physical connection.</p>
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
         pub fn set_aws_logical_device_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2555,42 +2235,15 @@ pub struct DisassociateConnectionFromLagOutput {
     pub connection_name: std::option::Option<std::string::String>,
     /// <p>The state of the connection. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: The connection has been approved and is being initialized.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>available</code>: The network link is up and the connection is ready for use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>down</code>: The network link is down.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleting</code>: The connection is being deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleted</code>: The connection has been deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>unknown</code>: The state of the connection is not available.</p>
-    /// </li>
+    /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
+    /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
+    /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
+    /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+    /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
+    /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
+    /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
     /// </ul>
     pub connection_state: std::option::Option<crate::model::ConnectionState>,
     /// <p>The Amazon Web Services Region where the connection is located.</p>
@@ -2603,7 +2256,7 @@ pub struct DisassociateConnectionFromLagOutput {
     pub vlan: i32,
     /// <p>The name of the Direct Connect service provider associated with the connection.</p>
     pub partner_name: std::option::Option<std::string::String>,
-    /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
+    /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
     pub loa_issue_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ID of the LAG.</p>
     pub lag_id: std::option::Option<std::string::String>,
@@ -2613,8 +2266,7 @@ pub struct DisassociateConnectionFromLagOutput {
     pub jumbo_frame_capable: std::option::Option<bool>,
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
     pub aws_device_v2: std::option::Option<std::string::String>,
-    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-    /// different than the device that terminates the physical connection.</p>
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
     pub aws_logical_device_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
     pub has_logical_redundancy: std::option::Option<crate::model::HasLogicalRedundancy>,
@@ -2648,42 +2300,15 @@ impl DisassociateConnectionFromLagOutput {
     }
     /// <p>The state of the connection. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: The connection has been approved and is being initialized.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>available</code>: The network link is up and the connection is ready for use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>down</code>: The network link is down.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleting</code>: The connection is being deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleted</code>: The connection has been deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>unknown</code>: The state of the connection is not available.</p>
-    /// </li>
+    /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
+    /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
+    /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
+    /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+    /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
+    /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
+    /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
     /// </ul>
     pub fn connection_state(&self) -> std::option::Option<&crate::model::ConnectionState> {
         self.connection_state.as_ref()
@@ -2708,7 +2333,7 @@ impl DisassociateConnectionFromLagOutput {
     pub fn partner_name(&self) -> std::option::Option<&str> {
         self.partner_name.as_deref()
     }
-    /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
+    /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
     pub fn loa_issue_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.loa_issue_time.as_ref()
     }
@@ -2728,8 +2353,7 @@ impl DisassociateConnectionFromLagOutput {
     pub fn aws_device_v2(&self) -> std::option::Option<&str> {
         self.aws_device_v2.as_deref()
     }
-    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-    /// different than the device that terminates the physical connection.</p>
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
     pub fn aws_logical_device_id(&self) -> std::option::Option<&str> {
         self.aws_logical_device_id.as_deref()
     }
@@ -2865,42 +2489,15 @@ pub mod disassociate_connection_from_lag_output {
         }
         /// <p>The state of the connection. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: The connection has been approved and is being initialized.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>available</code>: The network link is up and the connection is ready for use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>down</code>: The network link is down.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleting</code>: The connection is being deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleted</code>: The connection has been deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>unknown</code>: The state of the connection is not available.</p>
-        /// </li>
+        /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
+        /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
+        /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
+        /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
+        /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+        /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
+        /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
+        /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
+        /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
         /// </ul>
         pub fn connection_state(mut self, input: crate::model::ConnectionState) -> Self {
             self.connection_state = Some(input);
@@ -2908,42 +2505,15 @@ pub mod disassociate_connection_from_lag_output {
         }
         /// <p>The state of the connection. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: The connection has been approved and is being initialized.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>available</code>: The network link is up and the connection is ready for use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>down</code>: The network link is down.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleting</code>: The connection is being deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleted</code>: The connection has been deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>unknown</code>: The state of the connection is not available.</p>
-        /// </li>
+        /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
+        /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
+        /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
+        /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
+        /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+        /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
+        /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
+        /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
+        /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
         /// </ul>
         pub fn set_connection_state(
             mut self,
@@ -3002,12 +2572,12 @@ pub mod disassociate_connection_from_lag_output {
             self.partner_name = input;
             self
         }
-        /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
+        /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
         pub fn loa_issue_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.loa_issue_time = Some(input);
             self
         }
-        /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
+        /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
         pub fn set_loa_issue_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -3058,14 +2628,12 @@ pub mod disassociate_connection_from_lag_output {
             self.aws_device_v2 = input;
             self
         }
-        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-        /// different than the device that terminates the physical connection.</p>
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
         pub fn aws_logical_device_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_logical_device_id = Some(input.into());
             self
         }
-        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-        /// different than the device that terminates the physical connection.</p>
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
         pub fn set_aws_logical_device_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4291,15 +3859,9 @@ pub struct DescribeCustomerMetadataOutput {
     pub agreements: std::option::Option<std::vec::Vec<crate::model::CustomerAgreement>>,
     /// <p>The type of network-to-network interface (NNI) partner. The partner type will be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>V1: This partner can only allocate 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps subgigabit connections.</p>
-    /// </li>
-    /// <li>
-    /// <p>V2: This partner can only allocate 1GB, 2GB, 5GB, or 10GB hosted connections.</p>
-    /// </li>
-    /// <li>
-    /// <p>nonPartner: The customer is not a partner.</p>
-    /// </li>
+    /// <li> <p>V1: This partner can only allocate 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps subgigabit connections.</p> </li>
+    /// <li> <p>V2: This partner can only allocate 1GB, 2GB, 5GB, or 10GB hosted connections.</p> </li>
+    /// <li> <p>nonPartner: The customer is not a partner.</p> </li>
     /// </ul>
     pub nni_partner_type: std::option::Option<crate::model::NniPartnerType>,
 }
@@ -4310,15 +3872,9 @@ impl DescribeCustomerMetadataOutput {
     }
     /// <p>The type of network-to-network interface (NNI) partner. The partner type will be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>V1: This partner can only allocate 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps subgigabit connections.</p>
-    /// </li>
-    /// <li>
-    /// <p>V2: This partner can only allocate 1GB, 2GB, 5GB, or 10GB hosted connections.</p>
-    /// </li>
-    /// <li>
-    /// <p>nonPartner: The customer is not a partner.</p>
-    /// </li>
+    /// <li> <p>V1: This partner can only allocate 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps subgigabit connections.</p> </li>
+    /// <li> <p>V2: This partner can only allocate 1GB, 2GB, 5GB, or 10GB hosted connections.</p> </li>
+    /// <li> <p>nonPartner: The customer is not a partner.</p> </li>
     /// </ul>
     pub fn nni_partner_type(&self) -> std::option::Option<&crate::model::NniPartnerType> {
         self.nni_partner_type.as_ref()
@@ -4363,15 +3919,9 @@ pub mod describe_customer_metadata_output {
         }
         /// <p>The type of network-to-network interface (NNI) partner. The partner type will be one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>V1: This partner can only allocate 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps subgigabit connections.</p>
-        /// </li>
-        /// <li>
-        /// <p>V2: This partner can only allocate 1GB, 2GB, 5GB, or 10GB hosted connections.</p>
-        /// </li>
-        /// <li>
-        /// <p>nonPartner: The customer is not a partner.</p>
-        /// </li>
+        /// <li> <p>V1: This partner can only allocate 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps subgigabit connections.</p> </li>
+        /// <li> <p>V2: This partner can only allocate 1GB, 2GB, 5GB, or 10GB hosted connections.</p> </li>
+        /// <li> <p>nonPartner: The customer is not a partner.</p> </li>
         /// </ul>
         pub fn nni_partner_type(mut self, input: crate::model::NniPartnerType) -> Self {
             self.nni_partner_type = Some(input);
@@ -4379,15 +3929,9 @@ pub mod describe_customer_metadata_output {
         }
         /// <p>The type of network-to-network interface (NNI) partner. The partner type will be one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>V1: This partner can only allocate 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps subgigabit connections.</p>
-        /// </li>
-        /// <li>
-        /// <p>V2: This partner can only allocate 1GB, 2GB, 5GB, or 10GB hosted connections.</p>
-        /// </li>
-        /// <li>
-        /// <p>nonPartner: The customer is not a partner.</p>
-        /// </li>
+        /// <li> <p>V1: This partner can only allocate 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps subgigabit connections.</p> </li>
+        /// <li> <p>V2: This partner can only allocate 1GB, 2GB, 5GB, or 10GB hosted connections.</p> </li>
+        /// <li> <p>nonPartner: The customer is not a partner.</p> </li>
         /// </ul>
         pub fn set_nni_partner_type(
             mut self,
@@ -4596,84 +4140,30 @@ impl DescribeConnectionLoaOutput {
 pub struct DeleteVirtualInterfaceOutput {
     /// <p>The state of the virtual interface. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>available</code>: A virtual interface that is able to forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>down</code>: A virtual interface that is BGP down.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleting</code>: A virtual interface is in this state immediately after calling <a>DeleteVirtualInterface</a> until it can no longer forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleted</code>: A virtual interface that cannot forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>unknown</code>: The state of the virtual interface is not available.</p>
-    /// </li>
+    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
+    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
+    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
+    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
+    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
+    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
+    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
+    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
     /// </ul>
     pub virtual_interface_state: std::option::Option<crate::model::VirtualInterfaceState>,
 }
 impl DeleteVirtualInterfaceOutput {
     /// <p>The state of the virtual interface. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>available</code>: A virtual interface that is able to forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>down</code>: A virtual interface that is BGP down.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleting</code>: A virtual interface is in this state immediately after calling <a>DeleteVirtualInterface</a> until it can no longer forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleted</code>: A virtual interface that cannot forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>unknown</code>: The state of the virtual interface is not available.</p>
-    /// </li>
+    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
+    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
+    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
+    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
+    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
+    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
+    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
+    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
     /// </ul>
     pub fn virtual_interface_state(
         &self,
@@ -4700,42 +4190,15 @@ pub mod delete_virtual_interface_output {
     impl Builder {
         /// <p>The state of the virtual interface. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>available</code>: A virtual interface that is able to forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>down</code>: A virtual interface that is BGP down.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleting</code>: A virtual interface is in this state immediately after calling <a>DeleteVirtualInterface</a> until it can no longer forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleted</code>: A virtual interface that cannot forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>unknown</code>: The state of the virtual interface is not available.</p>
-        /// </li>
+        /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
+        /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
+        /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
+        /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
+        /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
+        /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
+        /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
+        /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
+        /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
         /// </ul>
         pub fn virtual_interface_state(
             mut self,
@@ -4746,42 +4209,15 @@ pub mod delete_virtual_interface_output {
         }
         /// <p>The state of the virtual interface. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>available</code>: A virtual interface that is able to forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>down</code>: A virtual interface that is BGP down.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleting</code>: A virtual interface is in this state immediately after calling <a>DeleteVirtualInterface</a> until it can no longer forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleted</code>: A virtual interface that cannot forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>unknown</code>: The state of the virtual interface is not available.</p>
-        /// </li>
+        /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
+        /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
+        /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
+        /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
+        /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
+        /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
+        /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
+        /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
+        /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
         /// </ul>
         pub fn set_virtual_interface_state(
             mut self,
@@ -4809,8 +4245,7 @@ impl DeleteVirtualInterfaceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLagOutput {
-    /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible
-    /// values are 1Gbps and 10Gbps. </p>
+    /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>
     pub connections_bandwidth: std::option::Option<std::string::String>,
     /// <p>The number of physical dedicated connections bundled by the LAG, up to a maximum of 10.</p>
     pub number_of_connections: i32,
@@ -4822,35 +4257,13 @@ pub struct DeleteLagOutput {
     pub lag_name: std::option::Option<std::string::String>,
     /// <p>The state of the LAG. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>requested</code>: The initial state of a LAG. The LAG stays in the
-    /// requested state until the Letter of Authorization (LOA) is available.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: The LAG has been approved and is being initialized.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>available</code>: The network link is established and the LAG is ready for use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>down</code>: The network link is down.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleting</code>: The LAG is being deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleted</code>: The LAG is deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>unknown</code>: The state of the LAG is not available.</p>
-    /// </li>
+    /// <li> <p> <code>requested</code>: The initial state of a LAG. The LAG stays in the requested state until the Letter of Authorization (LOA) is available.</p> </li>
+    /// <li> <p> <code>pending</code>: The LAG has been approved and is being initialized.</p> </li>
+    /// <li> <p> <code>available</code>: The network link is established and the LAG is ready for use.</p> </li>
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+    /// <li> <p> <code>deleting</code>: The LAG is being deleted.</p> </li>
+    /// <li> <p> <code>deleted</code>: The LAG is deleted.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the LAG is not available.</p> </li>
     /// </ul>
     pub lag_state: std::option::Option<crate::model::LagState>,
     /// <p>The location of the LAG.</p>
@@ -4863,8 +4276,7 @@ pub struct DeleteLagOutput {
     pub aws_device: std::option::Option<std::string::String>,
     /// <p>The Direct Connect endpoint that hosts the LAG.</p>
     pub aws_device_v2: std::option::Option<std::string::String>,
-    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-    /// different than the device that terminates the physical connection.</p>
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
     pub aws_logical_device_id: std::option::Option<std::string::String>,
     /// <p>The connections bundled by the LAG.</p>
     pub connections: std::option::Option<std::vec::Vec<crate::model::Connection>>,
@@ -4887,8 +4299,7 @@ pub struct DeleteLagOutput {
     pub mac_sec_keys: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
 }
 impl DeleteLagOutput {
-    /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible
-    /// values are 1Gbps and 10Gbps. </p>
+    /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>
     pub fn connections_bandwidth(&self) -> std::option::Option<&str> {
         self.connections_bandwidth.as_deref()
     }
@@ -4910,35 +4321,13 @@ impl DeleteLagOutput {
     }
     /// <p>The state of the LAG. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>requested</code>: The initial state of a LAG. The LAG stays in the
-    /// requested state until the Letter of Authorization (LOA) is available.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: The LAG has been approved and is being initialized.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>available</code>: The network link is established and the LAG is ready for use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>down</code>: The network link is down.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleting</code>: The LAG is being deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleted</code>: The LAG is deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>unknown</code>: The state of the LAG is not available.</p>
-    /// </li>
+    /// <li> <p> <code>requested</code>: The initial state of a LAG. The LAG stays in the requested state until the Letter of Authorization (LOA) is available.</p> </li>
+    /// <li> <p> <code>pending</code>: The LAG has been approved and is being initialized.</p> </li>
+    /// <li> <p> <code>available</code>: The network link is established and the LAG is ready for use.</p> </li>
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+    /// <li> <p> <code>deleting</code>: The LAG is being deleted.</p> </li>
+    /// <li> <p> <code>deleted</code>: The LAG is deleted.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the LAG is not available.</p> </li>
     /// </ul>
     pub fn lag_state(&self) -> std::option::Option<&crate::model::LagState> {
         self.lag_state.as_ref()
@@ -4963,8 +4352,7 @@ impl DeleteLagOutput {
     pub fn aws_device_v2(&self) -> std::option::Option<&str> {
         self.aws_device_v2.as_deref()
     }
-    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-    /// different than the device that terminates the physical connection.</p>
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
     pub fn aws_logical_device_id(&self) -> std::option::Option<&str> {
         self.aws_logical_device_id.as_deref()
     }
@@ -5064,14 +4452,12 @@ pub mod delete_lag_output {
         pub(crate) mac_sec_keys: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
     }
     impl Builder {
-        /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible
-        /// values are 1Gbps and 10Gbps. </p>
+        /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>
         pub fn connections_bandwidth(mut self, input: impl Into<std::string::String>) -> Self {
             self.connections_bandwidth = Some(input.into());
             self
         }
-        /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible
-        /// values are 1Gbps and 10Gbps. </p>
+        /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>
         pub fn set_connections_bandwidth(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5124,35 +4510,13 @@ pub mod delete_lag_output {
         }
         /// <p>The state of the LAG. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>requested</code>: The initial state of a LAG. The LAG stays in the
-        /// requested state until the Letter of Authorization (LOA) is available.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: The LAG has been approved and is being initialized.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>available</code>: The network link is established and the LAG is ready for use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>down</code>: The network link is down.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleting</code>: The LAG is being deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleted</code>: The LAG is deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>unknown</code>: The state of the LAG is not available.</p>
-        /// </li>
+        /// <li> <p> <code>requested</code>: The initial state of a LAG. The LAG stays in the requested state until the Letter of Authorization (LOA) is available.</p> </li>
+        /// <li> <p> <code>pending</code>: The LAG has been approved and is being initialized.</p> </li>
+        /// <li> <p> <code>available</code>: The network link is established and the LAG is ready for use.</p> </li>
+        /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+        /// <li> <p> <code>deleting</code>: The LAG is being deleted.</p> </li>
+        /// <li> <p> <code>deleted</code>: The LAG is deleted.</p> </li>
+        /// <li> <p> <code>unknown</code>: The state of the LAG is not available.</p> </li>
         /// </ul>
         pub fn lag_state(mut self, input: crate::model::LagState) -> Self {
             self.lag_state = Some(input);
@@ -5160,35 +4524,13 @@ pub mod delete_lag_output {
         }
         /// <p>The state of the LAG. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>requested</code>: The initial state of a LAG. The LAG stays in the
-        /// requested state until the Letter of Authorization (LOA) is available.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: The LAG has been approved and is being initialized.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>available</code>: The network link is established and the LAG is ready for use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>down</code>: The network link is down.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleting</code>: The LAG is being deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleted</code>: The LAG is deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>unknown</code>: The state of the LAG is not available.</p>
-        /// </li>
+        /// <li> <p> <code>requested</code>: The initial state of a LAG. The LAG stays in the requested state until the Letter of Authorization (LOA) is available.</p> </li>
+        /// <li> <p> <code>pending</code>: The LAG has been approved and is being initialized.</p> </li>
+        /// <li> <p> <code>available</code>: The network link is established and the LAG is ready for use.</p> </li>
+        /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+        /// <li> <p> <code>deleting</code>: The LAG is being deleted.</p> </li>
+        /// <li> <p> <code>deleted</code>: The LAG is deleted.</p> </li>
+        /// <li> <p> <code>unknown</code>: The state of the LAG is not available.</p> </li>
         /// </ul>
         pub fn set_lag_state(mut self, input: std::option::Option<crate::model::LagState>) -> Self {
             self.lag_state = input;
@@ -5247,14 +4589,12 @@ pub mod delete_lag_output {
             self.aws_device_v2 = input;
             self
         }
-        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-        /// different than the device that terminates the physical connection.</p>
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
         pub fn aws_logical_device_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_logical_device_id = Some(input.into());
             self
         }
-        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-        /// different than the device that terminates the physical connection.</p>
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
         pub fn set_aws_logical_device_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5431,70 +4771,26 @@ impl DeleteLagOutput {
 pub struct DeleteInterconnectOutput {
     /// <p>The state of the interconnect. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>requested</code>: The initial state of an interconnect. The interconnect stays in the
-    /// requested state until the Letter of Authorization (LOA) is sent to the customer.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: The interconnect is approved, and is being initialized.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>available</code>: The network link is up, and the interconnect is ready for use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>down</code>: The network link is down.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleting</code>: The interconnect is being deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleted</code>: The interconnect is deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>unknown</code>: The state of the interconnect is not available.</p>
-    /// </li>
+    /// <li> <p> <code>requested</code>: The initial state of an interconnect. The interconnect stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
+    /// <li> <p> <code>pending</code>: The interconnect is approved, and is being initialized.</p> </li>
+    /// <li> <p> <code>available</code>: The network link is up, and the interconnect is ready for use.</p> </li>
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+    /// <li> <p> <code>deleting</code>: The interconnect is being deleted.</p> </li>
+    /// <li> <p> <code>deleted</code>: The interconnect is deleted.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the interconnect is not available.</p> </li>
     /// </ul>
     pub interconnect_state: std::option::Option<crate::model::InterconnectState>,
 }
 impl DeleteInterconnectOutput {
     /// <p>The state of the interconnect. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>requested</code>: The initial state of an interconnect. The interconnect stays in the
-    /// requested state until the Letter of Authorization (LOA) is sent to the customer.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: The interconnect is approved, and is being initialized.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>available</code>: The network link is up, and the interconnect is ready for use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>down</code>: The network link is down.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleting</code>: The interconnect is being deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleted</code>: The interconnect is deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>unknown</code>: The state of the interconnect is not available.</p>
-    /// </li>
+    /// <li> <p> <code>requested</code>: The initial state of an interconnect. The interconnect stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
+    /// <li> <p> <code>pending</code>: The interconnect is approved, and is being initialized.</p> </li>
+    /// <li> <p> <code>available</code>: The network link is up, and the interconnect is ready for use.</p> </li>
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+    /// <li> <p> <code>deleting</code>: The interconnect is being deleted.</p> </li>
+    /// <li> <p> <code>deleted</code>: The interconnect is deleted.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the interconnect is not available.</p> </li>
     /// </ul>
     pub fn interconnect_state(&self) -> std::option::Option<&crate::model::InterconnectState> {
         self.interconnect_state.as_ref()
@@ -5518,35 +4814,13 @@ pub mod delete_interconnect_output {
     impl Builder {
         /// <p>The state of the interconnect. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>requested</code>: The initial state of an interconnect. The interconnect stays in the
-        /// requested state until the Letter of Authorization (LOA) is sent to the customer.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: The interconnect is approved, and is being initialized.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>available</code>: The network link is up, and the interconnect is ready for use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>down</code>: The network link is down.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleting</code>: The interconnect is being deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleted</code>: The interconnect is deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>unknown</code>: The state of the interconnect is not available.</p>
-        /// </li>
+        /// <li> <p> <code>requested</code>: The initial state of an interconnect. The interconnect stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
+        /// <li> <p> <code>pending</code>: The interconnect is approved, and is being initialized.</p> </li>
+        /// <li> <p> <code>available</code>: The network link is up, and the interconnect is ready for use.</p> </li>
+        /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+        /// <li> <p> <code>deleting</code>: The interconnect is being deleted.</p> </li>
+        /// <li> <p> <code>deleted</code>: The interconnect is deleted.</p> </li>
+        /// <li> <p> <code>unknown</code>: The state of the interconnect is not available.</p> </li>
         /// </ul>
         pub fn interconnect_state(mut self, input: crate::model::InterconnectState) -> Self {
             self.interconnect_state = Some(input);
@@ -5554,35 +4828,13 @@ pub mod delete_interconnect_output {
         }
         /// <p>The state of the interconnect. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>requested</code>: The initial state of an interconnect. The interconnect stays in the
-        /// requested state until the Letter of Authorization (LOA) is sent to the customer.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: The interconnect is approved, and is being initialized.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>available</code>: The network link is up, and the interconnect is ready for use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>down</code>: The network link is down.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleting</code>: The interconnect is being deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleted</code>: The interconnect is deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>unknown</code>: The state of the interconnect is not available.</p>
-        /// </li>
+        /// <li> <p> <code>requested</code>: The initial state of an interconnect. The interconnect stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
+        /// <li> <p> <code>pending</code>: The interconnect is approved, and is being initialized.</p> </li>
+        /// <li> <p> <code>available</code>: The network link is up, and the interconnect is ready for use.</p> </li>
+        /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+        /// <li> <p> <code>deleting</code>: The interconnect is being deleted.</p> </li>
+        /// <li> <p> <code>deleted</code>: The interconnect is deleted.</p> </li>
+        /// <li> <p> <code>unknown</code>: The state of the interconnect is not available.</p> </li>
         /// </ul>
         pub fn set_interconnect_state(
             mut self,
@@ -5813,42 +5065,15 @@ pub struct DeleteConnectionOutput {
     pub connection_name: std::option::Option<std::string::String>,
     /// <p>The state of the connection. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: The connection has been approved and is being initialized.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>available</code>: The network link is up and the connection is ready for use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>down</code>: The network link is down.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleting</code>: The connection is being deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleted</code>: The connection has been deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>unknown</code>: The state of the connection is not available.</p>
-    /// </li>
+    /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
+    /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
+    /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
+    /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+    /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
+    /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
+    /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
     /// </ul>
     pub connection_state: std::option::Option<crate::model::ConnectionState>,
     /// <p>The Amazon Web Services Region where the connection is located.</p>
@@ -5861,7 +5086,7 @@ pub struct DeleteConnectionOutput {
     pub vlan: i32,
     /// <p>The name of the Direct Connect service provider associated with the connection.</p>
     pub partner_name: std::option::Option<std::string::String>,
-    /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
+    /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
     pub loa_issue_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ID of the LAG.</p>
     pub lag_id: std::option::Option<std::string::String>,
@@ -5871,8 +5096,7 @@ pub struct DeleteConnectionOutput {
     pub jumbo_frame_capable: std::option::Option<bool>,
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
     pub aws_device_v2: std::option::Option<std::string::String>,
-    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-    /// different than the device that terminates the physical connection.</p>
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
     pub aws_logical_device_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
     pub has_logical_redundancy: std::option::Option<crate::model::HasLogicalRedundancy>,
@@ -5906,42 +5130,15 @@ impl DeleteConnectionOutput {
     }
     /// <p>The state of the connection. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: The connection has been approved and is being initialized.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>available</code>: The network link is up and the connection is ready for use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>down</code>: The network link is down.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleting</code>: The connection is being deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleted</code>: The connection has been deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>unknown</code>: The state of the connection is not available.</p>
-    /// </li>
+    /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
+    /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
+    /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
+    /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+    /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
+    /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
+    /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
     /// </ul>
     pub fn connection_state(&self) -> std::option::Option<&crate::model::ConnectionState> {
         self.connection_state.as_ref()
@@ -5966,7 +5163,7 @@ impl DeleteConnectionOutput {
     pub fn partner_name(&self) -> std::option::Option<&str> {
         self.partner_name.as_deref()
     }
-    /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
+    /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
     pub fn loa_issue_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.loa_issue_time.as_ref()
     }
@@ -5986,8 +5183,7 @@ impl DeleteConnectionOutput {
     pub fn aws_device_v2(&self) -> std::option::Option<&str> {
         self.aws_device_v2.as_deref()
     }
-    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-    /// different than the device that terminates the physical connection.</p>
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
     pub fn aws_logical_device_id(&self) -> std::option::Option<&str> {
         self.aws_logical_device_id.as_deref()
     }
@@ -6123,42 +5319,15 @@ pub mod delete_connection_output {
         }
         /// <p>The state of the connection. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: The connection has been approved and is being initialized.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>available</code>: The network link is up and the connection is ready for use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>down</code>: The network link is down.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleting</code>: The connection is being deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleted</code>: The connection has been deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>unknown</code>: The state of the connection is not available.</p>
-        /// </li>
+        /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
+        /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
+        /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
+        /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
+        /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+        /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
+        /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
+        /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
+        /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
         /// </ul>
         pub fn connection_state(mut self, input: crate::model::ConnectionState) -> Self {
             self.connection_state = Some(input);
@@ -6166,42 +5335,15 @@ pub mod delete_connection_output {
         }
         /// <p>The state of the connection. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: The connection has been approved and is being initialized.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>available</code>: The network link is up and the connection is ready for use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>down</code>: The network link is down.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleting</code>: The connection is being deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleted</code>: The connection has been deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>unknown</code>: The state of the connection is not available.</p>
-        /// </li>
+        /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
+        /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
+        /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
+        /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
+        /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+        /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
+        /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
+        /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
+        /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
         /// </ul>
         pub fn set_connection_state(
             mut self,
@@ -6260,12 +5402,12 @@ pub mod delete_connection_output {
             self.partner_name = input;
             self
         }
-        /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
+        /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
         pub fn loa_issue_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.loa_issue_time = Some(input);
             self
         }
-        /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
+        /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
         pub fn set_loa_issue_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -6316,14 +5458,12 @@ pub mod delete_connection_output {
             self.aws_device_v2 = input;
             self
         }
-        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-        /// different than the device that terminates the physical connection.</p>
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
         pub fn aws_logical_device_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_logical_device_id = Some(input.into());
             self
         }
-        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-        /// different than the device that terminates the physical connection.</p>
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
         pub fn set_aws_logical_device_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6618,42 +5758,15 @@ pub struct CreatePublicVirtualInterfaceOutput {
     pub address_family: std::option::Option<crate::model::AddressFamily>,
     /// <p>The state of the virtual interface. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>available</code>: A virtual interface that is able to forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>down</code>: A virtual interface that is BGP down.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleting</code>: A virtual interface is in this state immediately after calling <a>DeleteVirtualInterface</a> until it can no longer forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleted</code>: A virtual interface that cannot forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>unknown</code>: The state of the virtual interface is not available.</p>
-    /// </li>
+    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
+    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
+    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
+    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
+    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
+    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
+    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
+    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
     /// </ul>
     pub virtual_interface_state: std::option::Option<crate::model::VirtualInterfaceState>,
     /// <p>The customer router configuration.</p>
@@ -6674,8 +5787,7 @@ pub struct CreatePublicVirtualInterfaceOutput {
     pub region: std::option::Option<std::string::String>,
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
     pub aws_device_v2: std::option::Option<std::string::String>,
-    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-    /// different than the device that terminates the physical connection.</p>
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
     pub aws_logical_device_id: std::option::Option<std::string::String>,
     /// <p>The tags associated with the virtual interface.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -6738,42 +5850,15 @@ impl CreatePublicVirtualInterfaceOutput {
     }
     /// <p>The state of the virtual interface. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>available</code>: A virtual interface that is able to forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>down</code>: A virtual interface that is BGP down.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleting</code>: A virtual interface is in this state immediately after calling <a>DeleteVirtualInterface</a> until it can no longer forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleted</code>: A virtual interface that cannot forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>unknown</code>: The state of the virtual interface is not available.</p>
-    /// </li>
+    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
+    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
+    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
+    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
+    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
+    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
+    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
+    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
     /// </ul>
     pub fn virtual_interface_state(
         &self,
@@ -6816,8 +5901,7 @@ impl CreatePublicVirtualInterfaceOutput {
     pub fn aws_device_v2(&self) -> std::option::Option<&str> {
         self.aws_device_v2.as_deref()
     }
-    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-    /// different than the device that terminates the physical connection.</p>
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
     pub fn aws_logical_device_id(&self) -> std::option::Option<&str> {
         self.aws_logical_device_id.as_deref()
     }
@@ -7056,42 +6140,15 @@ pub mod create_public_virtual_interface_output {
         }
         /// <p>The state of the virtual interface. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>available</code>: A virtual interface that is able to forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>down</code>: A virtual interface that is BGP down.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleting</code>: A virtual interface is in this state immediately after calling <a>DeleteVirtualInterface</a> until it can no longer forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleted</code>: A virtual interface that cannot forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>unknown</code>: The state of the virtual interface is not available.</p>
-        /// </li>
+        /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
+        /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
+        /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
+        /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
+        /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
+        /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
+        /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
+        /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
+        /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
         /// </ul>
         pub fn virtual_interface_state(
             mut self,
@@ -7102,42 +6159,15 @@ pub mod create_public_virtual_interface_output {
         }
         /// <p>The state of the virtual interface. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>available</code>: A virtual interface that is able to forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>down</code>: A virtual interface that is BGP down.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleting</code>: A virtual interface is in this state immediately after calling <a>DeleteVirtualInterface</a> until it can no longer forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleted</code>: A virtual interface that cannot forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>unknown</code>: The state of the virtual interface is not available.</p>
-        /// </li>
+        /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
+        /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
+        /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
+        /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
+        /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
+        /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
+        /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
+        /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
+        /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
         /// </ul>
         pub fn set_virtual_interface_state(
             mut self,
@@ -7266,14 +6296,12 @@ pub mod create_public_virtual_interface_output {
             self.aws_device_v2 = input;
             self
         }
-        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-        /// different than the device that terminates the physical connection.</p>
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
         pub fn aws_logical_device_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_logical_device_id = Some(input.into());
             self
         }
-        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-        /// different than the device that terminates the physical connection.</p>
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
         pub fn set_aws_logical_device_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7383,42 +6411,15 @@ pub struct CreatePrivateVirtualInterfaceOutput {
     pub address_family: std::option::Option<crate::model::AddressFamily>,
     /// <p>The state of the virtual interface. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>available</code>: A virtual interface that is able to forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>down</code>: A virtual interface that is BGP down.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleting</code>: A virtual interface is in this state immediately after calling <a>DeleteVirtualInterface</a> until it can no longer forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleted</code>: A virtual interface that cannot forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>unknown</code>: The state of the virtual interface is not available.</p>
-    /// </li>
+    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
+    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
+    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
+    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
+    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
+    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
+    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
+    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
     /// </ul>
     pub virtual_interface_state: std::option::Option<crate::model::VirtualInterfaceState>,
     /// <p>The customer router configuration.</p>
@@ -7439,8 +6440,7 @@ pub struct CreatePrivateVirtualInterfaceOutput {
     pub region: std::option::Option<std::string::String>,
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
     pub aws_device_v2: std::option::Option<std::string::String>,
-    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-    /// different than the device that terminates the physical connection.</p>
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
     pub aws_logical_device_id: std::option::Option<std::string::String>,
     /// <p>The tags associated with the virtual interface.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -7503,42 +6503,15 @@ impl CreatePrivateVirtualInterfaceOutput {
     }
     /// <p>The state of the virtual interface. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>available</code>: A virtual interface that is able to forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>down</code>: A virtual interface that is BGP down.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleting</code>: A virtual interface is in this state immediately after calling <a>DeleteVirtualInterface</a> until it can no longer forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleted</code>: A virtual interface that cannot forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>unknown</code>: The state of the virtual interface is not available.</p>
-    /// </li>
+    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
+    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
+    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
+    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
+    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
+    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
+    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
+    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
     /// </ul>
     pub fn virtual_interface_state(
         &self,
@@ -7581,8 +6554,7 @@ impl CreatePrivateVirtualInterfaceOutput {
     pub fn aws_device_v2(&self) -> std::option::Option<&str> {
         self.aws_device_v2.as_deref()
     }
-    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-    /// different than the device that terminates the physical connection.</p>
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
     pub fn aws_logical_device_id(&self) -> std::option::Option<&str> {
         self.aws_logical_device_id.as_deref()
     }
@@ -7821,42 +6793,15 @@ pub mod create_private_virtual_interface_output {
         }
         /// <p>The state of the virtual interface. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>available</code>: A virtual interface that is able to forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>down</code>: A virtual interface that is BGP down.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleting</code>: A virtual interface is in this state immediately after calling <a>DeleteVirtualInterface</a> until it can no longer forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleted</code>: A virtual interface that cannot forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>unknown</code>: The state of the virtual interface is not available.</p>
-        /// </li>
+        /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
+        /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
+        /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
+        /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
+        /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
+        /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
+        /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
+        /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
+        /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
         /// </ul>
         pub fn virtual_interface_state(
             mut self,
@@ -7867,42 +6812,15 @@ pub mod create_private_virtual_interface_output {
         }
         /// <p>The state of the virtual interface. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>available</code>: A virtual interface that is able to forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>down</code>: A virtual interface that is BGP down.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleting</code>: A virtual interface is in this state immediately after calling <a>DeleteVirtualInterface</a> until it can no longer forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleted</code>: A virtual interface that cannot forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>unknown</code>: The state of the virtual interface is not available.</p>
-        /// </li>
+        /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
+        /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
+        /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
+        /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
+        /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
+        /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
+        /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
+        /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
+        /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
         /// </ul>
         pub fn set_virtual_interface_state(
             mut self,
@@ -8031,14 +6949,12 @@ pub mod create_private_virtual_interface_output {
             self.aws_device_v2 = input;
             self
         }
-        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-        /// different than the device that terminates the physical connection.</p>
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
         pub fn aws_logical_device_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_logical_device_id = Some(input.into());
             self
         }
-        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-        /// different than the device that terminates the physical connection.</p>
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
         pub fn set_aws_logical_device_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8119,8 +7035,7 @@ impl CreatePrivateVirtualInterfaceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLagOutput {
-    /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible
-    /// values are 1Gbps and 10Gbps. </p>
+    /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>
     pub connections_bandwidth: std::option::Option<std::string::String>,
     /// <p>The number of physical dedicated connections bundled by the LAG, up to a maximum of 10.</p>
     pub number_of_connections: i32,
@@ -8132,35 +7047,13 @@ pub struct CreateLagOutput {
     pub lag_name: std::option::Option<std::string::String>,
     /// <p>The state of the LAG. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>requested</code>: The initial state of a LAG. The LAG stays in the
-    /// requested state until the Letter of Authorization (LOA) is available.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: The LAG has been approved and is being initialized.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>available</code>: The network link is established and the LAG is ready for use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>down</code>: The network link is down.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleting</code>: The LAG is being deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleted</code>: The LAG is deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>unknown</code>: The state of the LAG is not available.</p>
-    /// </li>
+    /// <li> <p> <code>requested</code>: The initial state of a LAG. The LAG stays in the requested state until the Letter of Authorization (LOA) is available.</p> </li>
+    /// <li> <p> <code>pending</code>: The LAG has been approved and is being initialized.</p> </li>
+    /// <li> <p> <code>available</code>: The network link is established and the LAG is ready for use.</p> </li>
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+    /// <li> <p> <code>deleting</code>: The LAG is being deleted.</p> </li>
+    /// <li> <p> <code>deleted</code>: The LAG is deleted.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the LAG is not available.</p> </li>
     /// </ul>
     pub lag_state: std::option::Option<crate::model::LagState>,
     /// <p>The location of the LAG.</p>
@@ -8173,8 +7066,7 @@ pub struct CreateLagOutput {
     pub aws_device: std::option::Option<std::string::String>,
     /// <p>The Direct Connect endpoint that hosts the LAG.</p>
     pub aws_device_v2: std::option::Option<std::string::String>,
-    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-    /// different than the device that terminates the physical connection.</p>
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
     pub aws_logical_device_id: std::option::Option<std::string::String>,
     /// <p>The connections bundled by the LAG.</p>
     pub connections: std::option::Option<std::vec::Vec<crate::model::Connection>>,
@@ -8197,8 +7089,7 @@ pub struct CreateLagOutput {
     pub mac_sec_keys: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
 }
 impl CreateLagOutput {
-    /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible
-    /// values are 1Gbps and 10Gbps. </p>
+    /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>
     pub fn connections_bandwidth(&self) -> std::option::Option<&str> {
         self.connections_bandwidth.as_deref()
     }
@@ -8220,35 +7111,13 @@ impl CreateLagOutput {
     }
     /// <p>The state of the LAG. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>requested</code>: The initial state of a LAG. The LAG stays in the
-    /// requested state until the Letter of Authorization (LOA) is available.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: The LAG has been approved and is being initialized.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>available</code>: The network link is established and the LAG is ready for use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>down</code>: The network link is down.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleting</code>: The LAG is being deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleted</code>: The LAG is deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>unknown</code>: The state of the LAG is not available.</p>
-    /// </li>
+    /// <li> <p> <code>requested</code>: The initial state of a LAG. The LAG stays in the requested state until the Letter of Authorization (LOA) is available.</p> </li>
+    /// <li> <p> <code>pending</code>: The LAG has been approved and is being initialized.</p> </li>
+    /// <li> <p> <code>available</code>: The network link is established and the LAG is ready for use.</p> </li>
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+    /// <li> <p> <code>deleting</code>: The LAG is being deleted.</p> </li>
+    /// <li> <p> <code>deleted</code>: The LAG is deleted.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the LAG is not available.</p> </li>
     /// </ul>
     pub fn lag_state(&self) -> std::option::Option<&crate::model::LagState> {
         self.lag_state.as_ref()
@@ -8273,8 +7142,7 @@ impl CreateLagOutput {
     pub fn aws_device_v2(&self) -> std::option::Option<&str> {
         self.aws_device_v2.as_deref()
     }
-    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-    /// different than the device that terminates the physical connection.</p>
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
     pub fn aws_logical_device_id(&self) -> std::option::Option<&str> {
         self.aws_logical_device_id.as_deref()
     }
@@ -8374,14 +7242,12 @@ pub mod create_lag_output {
         pub(crate) mac_sec_keys: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
     }
     impl Builder {
-        /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible
-        /// values are 1Gbps and 10Gbps. </p>
+        /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>
         pub fn connections_bandwidth(mut self, input: impl Into<std::string::String>) -> Self {
             self.connections_bandwidth = Some(input.into());
             self
         }
-        /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible
-        /// values are 1Gbps and 10Gbps. </p>
+        /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>
         pub fn set_connections_bandwidth(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8434,35 +7300,13 @@ pub mod create_lag_output {
         }
         /// <p>The state of the LAG. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>requested</code>: The initial state of a LAG. The LAG stays in the
-        /// requested state until the Letter of Authorization (LOA) is available.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: The LAG has been approved and is being initialized.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>available</code>: The network link is established and the LAG is ready for use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>down</code>: The network link is down.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleting</code>: The LAG is being deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleted</code>: The LAG is deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>unknown</code>: The state of the LAG is not available.</p>
-        /// </li>
+        /// <li> <p> <code>requested</code>: The initial state of a LAG. The LAG stays in the requested state until the Letter of Authorization (LOA) is available.</p> </li>
+        /// <li> <p> <code>pending</code>: The LAG has been approved and is being initialized.</p> </li>
+        /// <li> <p> <code>available</code>: The network link is established and the LAG is ready for use.</p> </li>
+        /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+        /// <li> <p> <code>deleting</code>: The LAG is being deleted.</p> </li>
+        /// <li> <p> <code>deleted</code>: The LAG is deleted.</p> </li>
+        /// <li> <p> <code>unknown</code>: The state of the LAG is not available.</p> </li>
         /// </ul>
         pub fn lag_state(mut self, input: crate::model::LagState) -> Self {
             self.lag_state = Some(input);
@@ -8470,35 +7314,13 @@ pub mod create_lag_output {
         }
         /// <p>The state of the LAG. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>requested</code>: The initial state of a LAG. The LAG stays in the
-        /// requested state until the Letter of Authorization (LOA) is available.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: The LAG has been approved and is being initialized.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>available</code>: The network link is established and the LAG is ready for use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>down</code>: The network link is down.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleting</code>: The LAG is being deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleted</code>: The LAG is deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>unknown</code>: The state of the LAG is not available.</p>
-        /// </li>
+        /// <li> <p> <code>requested</code>: The initial state of a LAG. The LAG stays in the requested state until the Letter of Authorization (LOA) is available.</p> </li>
+        /// <li> <p> <code>pending</code>: The LAG has been approved and is being initialized.</p> </li>
+        /// <li> <p> <code>available</code>: The network link is established and the LAG is ready for use.</p> </li>
+        /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+        /// <li> <p> <code>deleting</code>: The LAG is being deleted.</p> </li>
+        /// <li> <p> <code>deleted</code>: The LAG is deleted.</p> </li>
+        /// <li> <p> <code>unknown</code>: The state of the LAG is not available.</p> </li>
         /// </ul>
         pub fn set_lag_state(mut self, input: std::option::Option<crate::model::LagState>) -> Self {
             self.lag_state = input;
@@ -8557,14 +7379,12 @@ pub mod create_lag_output {
             self.aws_device_v2 = input;
             self
         }
-        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-        /// different than the device that terminates the physical connection.</p>
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
         pub fn aws_logical_device_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_logical_device_id = Some(input.into());
             self
         }
-        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-        /// different than the device that terminates the physical connection.</p>
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
         pub fn set_aws_logical_device_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8745,35 +7565,13 @@ pub struct CreateInterconnectOutput {
     pub interconnect_name: std::option::Option<std::string::String>,
     /// <p>The state of the interconnect. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>requested</code>: The initial state of an interconnect. The interconnect stays in the
-    /// requested state until the Letter of Authorization (LOA) is sent to the customer.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: The interconnect is approved, and is being initialized.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>available</code>: The network link is up, and the interconnect is ready for use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>down</code>: The network link is down.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleting</code>: The interconnect is being deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleted</code>: The interconnect is deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>unknown</code>: The state of the interconnect is not available.</p>
-    /// </li>
+    /// <li> <p> <code>requested</code>: The initial state of an interconnect. The interconnect stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
+    /// <li> <p> <code>pending</code>: The interconnect is approved, and is being initialized.</p> </li>
+    /// <li> <p> <code>available</code>: The network link is up, and the interconnect is ready for use.</p> </li>
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+    /// <li> <p> <code>deleting</code>: The interconnect is being deleted.</p> </li>
+    /// <li> <p> <code>deleted</code>: The interconnect is deleted.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the interconnect is not available.</p> </li>
     /// </ul>
     pub interconnect_state: std::option::Option<crate::model::InterconnectState>,
     /// <p>The Amazon Web Services Region where the connection is located.</p>
@@ -8782,7 +7580,7 @@ pub struct CreateInterconnectOutput {
     pub location: std::option::Option<std::string::String>,
     /// <p>The bandwidth of the connection.</p>
     pub bandwidth: std::option::Option<std::string::String>,
-    /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
+    /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
     pub loa_issue_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ID of the LAG.</p>
     pub lag_id: std::option::Option<std::string::String>,
@@ -8792,8 +7590,7 @@ pub struct CreateInterconnectOutput {
     pub jumbo_frame_capable: std::option::Option<bool>,
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
     pub aws_device_v2: std::option::Option<std::string::String>,
-    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-    /// different than the device that terminates the physical connection.</p>
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
     pub aws_logical_device_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether the interconnect supports a secondary BGP in the same address family (IPv4/IPv6).</p>
     pub has_logical_redundancy: std::option::Option<crate::model::HasLogicalRedundancy>,
@@ -8813,35 +7610,13 @@ impl CreateInterconnectOutput {
     }
     /// <p>The state of the interconnect. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>requested</code>: The initial state of an interconnect. The interconnect stays in the
-    /// requested state until the Letter of Authorization (LOA) is sent to the customer.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: The interconnect is approved, and is being initialized.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>available</code>: The network link is up, and the interconnect is ready for use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>down</code>: The network link is down.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleting</code>: The interconnect is being deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleted</code>: The interconnect is deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>unknown</code>: The state of the interconnect is not available.</p>
-    /// </li>
+    /// <li> <p> <code>requested</code>: The initial state of an interconnect. The interconnect stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
+    /// <li> <p> <code>pending</code>: The interconnect is approved, and is being initialized.</p> </li>
+    /// <li> <p> <code>available</code>: The network link is up, and the interconnect is ready for use.</p> </li>
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+    /// <li> <p> <code>deleting</code>: The interconnect is being deleted.</p> </li>
+    /// <li> <p> <code>deleted</code>: The interconnect is deleted.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the interconnect is not available.</p> </li>
     /// </ul>
     pub fn interconnect_state(&self) -> std::option::Option<&crate::model::InterconnectState> {
         self.interconnect_state.as_ref()
@@ -8858,7 +7633,7 @@ impl CreateInterconnectOutput {
     pub fn bandwidth(&self) -> std::option::Option<&str> {
         self.bandwidth.as_deref()
     }
-    /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
+    /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
     pub fn loa_issue_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.loa_issue_time.as_ref()
     }
@@ -8878,8 +7653,7 @@ impl CreateInterconnectOutput {
     pub fn aws_device_v2(&self) -> std::option::Option<&str> {
         self.aws_device_v2.as_deref()
     }
-    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-    /// different than the device that terminates the physical connection.</p>
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
     pub fn aws_logical_device_id(&self) -> std::option::Option<&str> {
         self.aws_logical_device_id.as_deref()
     }
@@ -8970,35 +7744,13 @@ pub mod create_interconnect_output {
         }
         /// <p>The state of the interconnect. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>requested</code>: The initial state of an interconnect. The interconnect stays in the
-        /// requested state until the Letter of Authorization (LOA) is sent to the customer.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: The interconnect is approved, and is being initialized.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>available</code>: The network link is up, and the interconnect is ready for use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>down</code>: The network link is down.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleting</code>: The interconnect is being deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleted</code>: The interconnect is deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>unknown</code>: The state of the interconnect is not available.</p>
-        /// </li>
+        /// <li> <p> <code>requested</code>: The initial state of an interconnect. The interconnect stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
+        /// <li> <p> <code>pending</code>: The interconnect is approved, and is being initialized.</p> </li>
+        /// <li> <p> <code>available</code>: The network link is up, and the interconnect is ready for use.</p> </li>
+        /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+        /// <li> <p> <code>deleting</code>: The interconnect is being deleted.</p> </li>
+        /// <li> <p> <code>deleted</code>: The interconnect is deleted.</p> </li>
+        /// <li> <p> <code>unknown</code>: The state of the interconnect is not available.</p> </li>
         /// </ul>
         pub fn interconnect_state(mut self, input: crate::model::InterconnectState) -> Self {
             self.interconnect_state = Some(input);
@@ -9006,35 +7758,13 @@ pub mod create_interconnect_output {
         }
         /// <p>The state of the interconnect. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>requested</code>: The initial state of an interconnect. The interconnect stays in the
-        /// requested state until the Letter of Authorization (LOA) is sent to the customer.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: The interconnect is approved, and is being initialized.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>available</code>: The network link is up, and the interconnect is ready for use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>down</code>: The network link is down.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleting</code>: The interconnect is being deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleted</code>: The interconnect is deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>unknown</code>: The state of the interconnect is not available.</p>
-        /// </li>
+        /// <li> <p> <code>requested</code>: The initial state of an interconnect. The interconnect stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
+        /// <li> <p> <code>pending</code>: The interconnect is approved, and is being initialized.</p> </li>
+        /// <li> <p> <code>available</code>: The network link is up, and the interconnect is ready for use.</p> </li>
+        /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+        /// <li> <p> <code>deleting</code>: The interconnect is being deleted.</p> </li>
+        /// <li> <p> <code>deleted</code>: The interconnect is deleted.</p> </li>
+        /// <li> <p> <code>unknown</code>: The state of the interconnect is not available.</p> </li>
         /// </ul>
         pub fn set_interconnect_state(
             mut self,
@@ -9073,12 +7803,12 @@ pub mod create_interconnect_output {
             self.bandwidth = input;
             self
         }
-        /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
+        /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
         pub fn loa_issue_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.loa_issue_time = Some(input);
             self
         }
-        /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
+        /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
         pub fn set_loa_issue_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -9129,14 +7859,12 @@ pub mod create_interconnect_output {
             self.aws_device_v2 = input;
             self
         }
-        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-        /// different than the device that terminates the physical connection.</p>
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
         pub fn aws_logical_device_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_logical_device_id = Some(input.into());
             self
         }
-        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-        /// different than the device that terminates the physical connection.</p>
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
         pub fn set_aws_logical_device_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9425,42 +8153,15 @@ pub struct CreateConnectionOutput {
     pub connection_name: std::option::Option<std::string::String>,
     /// <p>The state of the connection. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: The connection has been approved and is being initialized.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>available</code>: The network link is up and the connection is ready for use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>down</code>: The network link is down.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleting</code>: The connection is being deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleted</code>: The connection has been deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>unknown</code>: The state of the connection is not available.</p>
-    /// </li>
+    /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
+    /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
+    /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
+    /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+    /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
+    /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
+    /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
     /// </ul>
     pub connection_state: std::option::Option<crate::model::ConnectionState>,
     /// <p>The Amazon Web Services Region where the connection is located.</p>
@@ -9473,7 +8174,7 @@ pub struct CreateConnectionOutput {
     pub vlan: i32,
     /// <p>The name of the Direct Connect service provider associated with the connection.</p>
     pub partner_name: std::option::Option<std::string::String>,
-    /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
+    /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
     pub loa_issue_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ID of the LAG.</p>
     pub lag_id: std::option::Option<std::string::String>,
@@ -9483,8 +8184,7 @@ pub struct CreateConnectionOutput {
     pub jumbo_frame_capable: std::option::Option<bool>,
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
     pub aws_device_v2: std::option::Option<std::string::String>,
-    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-    /// different than the device that terminates the physical connection.</p>
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
     pub aws_logical_device_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
     pub has_logical_redundancy: std::option::Option<crate::model::HasLogicalRedundancy>,
@@ -9518,42 +8218,15 @@ impl CreateConnectionOutput {
     }
     /// <p>The state of the connection. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: The connection has been approved and is being initialized.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>available</code>: The network link is up and the connection is ready for use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>down</code>: The network link is down.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleting</code>: The connection is being deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleted</code>: The connection has been deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>unknown</code>: The state of the connection is not available.</p>
-    /// </li>
+    /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
+    /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
+    /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
+    /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+    /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
+    /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
+    /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
     /// </ul>
     pub fn connection_state(&self) -> std::option::Option<&crate::model::ConnectionState> {
         self.connection_state.as_ref()
@@ -9578,7 +8251,7 @@ impl CreateConnectionOutput {
     pub fn partner_name(&self) -> std::option::Option<&str> {
         self.partner_name.as_deref()
     }
-    /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
+    /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
     pub fn loa_issue_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.loa_issue_time.as_ref()
     }
@@ -9598,8 +8271,7 @@ impl CreateConnectionOutput {
     pub fn aws_device_v2(&self) -> std::option::Option<&str> {
         self.aws_device_v2.as_deref()
     }
-    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-    /// different than the device that terminates the physical connection.</p>
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
     pub fn aws_logical_device_id(&self) -> std::option::Option<&str> {
         self.aws_logical_device_id.as_deref()
     }
@@ -9735,42 +8407,15 @@ pub mod create_connection_output {
         }
         /// <p>The state of the connection. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: The connection has been approved and is being initialized.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>available</code>: The network link is up and the connection is ready for use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>down</code>: The network link is down.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleting</code>: The connection is being deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleted</code>: The connection has been deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>unknown</code>: The state of the connection is not available.</p>
-        /// </li>
+        /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
+        /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
+        /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
+        /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
+        /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+        /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
+        /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
+        /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
+        /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
         /// </ul>
         pub fn connection_state(mut self, input: crate::model::ConnectionState) -> Self {
             self.connection_state = Some(input);
@@ -9778,42 +8423,15 @@ pub mod create_connection_output {
         }
         /// <p>The state of the connection. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: The connection has been approved and is being initialized.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>available</code>: The network link is up and the connection is ready for use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>down</code>: The network link is down.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleting</code>: The connection is being deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleted</code>: The connection has been deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>unknown</code>: The state of the connection is not available.</p>
-        /// </li>
+        /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
+        /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
+        /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
+        /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
+        /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+        /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
+        /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
+        /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
+        /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
         /// </ul>
         pub fn set_connection_state(
             mut self,
@@ -9872,12 +8490,12 @@ pub mod create_connection_output {
             self.partner_name = input;
             self
         }
-        /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
+        /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
         pub fn loa_issue_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.loa_issue_time = Some(input);
             self
         }
-        /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
+        /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
         pub fn set_loa_issue_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -9928,14 +8546,12 @@ pub mod create_connection_output {
             self.aws_device_v2 = input;
             self
         }
-        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-        /// different than the device that terminates the physical connection.</p>
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
         pub fn aws_logical_device_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_logical_device_id = Some(input.into());
             self
         }
-        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-        /// different than the device that terminates the physical connection.</p>
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
         pub fn set_aws_logical_device_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10146,84 +8762,30 @@ impl CreateBgpPeerOutput {
 pub struct ConfirmTransitVirtualInterfaceOutput {
     /// <p>The state of the virtual interface. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>available</code>: A virtual interface that is able to forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>down</code>: A virtual interface that is BGP down.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleting</code>: A virtual interface is in this state immediately after calling <a>DeleteVirtualInterface</a> until it can no longer forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleted</code>: A virtual interface that cannot forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>unknown</code>: The state of the virtual interface is not available.</p>
-    /// </li>
+    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
+    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
+    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
+    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
+    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
+    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
+    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
+    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
     /// </ul>
     pub virtual_interface_state: std::option::Option<crate::model::VirtualInterfaceState>,
 }
 impl ConfirmTransitVirtualInterfaceOutput {
     /// <p>The state of the virtual interface. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>available</code>: A virtual interface that is able to forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>down</code>: A virtual interface that is BGP down.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleting</code>: A virtual interface is in this state immediately after calling <a>DeleteVirtualInterface</a> until it can no longer forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleted</code>: A virtual interface that cannot forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>unknown</code>: The state of the virtual interface is not available.</p>
-    /// </li>
+    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
+    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
+    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
+    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
+    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
+    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
+    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
+    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
     /// </ul>
     pub fn virtual_interface_state(
         &self,
@@ -10250,42 +8812,15 @@ pub mod confirm_transit_virtual_interface_output {
     impl Builder {
         /// <p>The state of the virtual interface. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>available</code>: A virtual interface that is able to forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>down</code>: A virtual interface that is BGP down.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleting</code>: A virtual interface is in this state immediately after calling <a>DeleteVirtualInterface</a> until it can no longer forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleted</code>: A virtual interface that cannot forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>unknown</code>: The state of the virtual interface is not available.</p>
-        /// </li>
+        /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
+        /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
+        /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
+        /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
+        /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
+        /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
+        /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
+        /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
+        /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
         /// </ul>
         pub fn virtual_interface_state(
             mut self,
@@ -10296,42 +8831,15 @@ pub mod confirm_transit_virtual_interface_output {
         }
         /// <p>The state of the virtual interface. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>available</code>: A virtual interface that is able to forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>down</code>: A virtual interface that is BGP down.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleting</code>: A virtual interface is in this state immediately after calling <a>DeleteVirtualInterface</a> until it can no longer forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleted</code>: A virtual interface that cannot forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>unknown</code>: The state of the virtual interface is not available.</p>
-        /// </li>
+        /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
+        /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
+        /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
+        /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
+        /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
+        /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
+        /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
+        /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
+        /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
         /// </ul>
         pub fn set_virtual_interface_state(
             mut self,
@@ -10361,84 +8869,30 @@ impl ConfirmTransitVirtualInterfaceOutput {
 pub struct ConfirmPublicVirtualInterfaceOutput {
     /// <p>The state of the virtual interface. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>available</code>: A virtual interface that is able to forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>down</code>: A virtual interface that is BGP down.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleting</code>: A virtual interface is in this state immediately after calling <a>DeleteVirtualInterface</a> until it can no longer forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleted</code>: A virtual interface that cannot forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>unknown</code>: The state of the virtual interface is not available.</p>
-    /// </li>
+    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
+    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
+    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
+    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
+    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
+    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
+    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
+    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
     /// </ul>
     pub virtual_interface_state: std::option::Option<crate::model::VirtualInterfaceState>,
 }
 impl ConfirmPublicVirtualInterfaceOutput {
     /// <p>The state of the virtual interface. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>available</code>: A virtual interface that is able to forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>down</code>: A virtual interface that is BGP down.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleting</code>: A virtual interface is in this state immediately after calling <a>DeleteVirtualInterface</a> until it can no longer forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleted</code>: A virtual interface that cannot forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>unknown</code>: The state of the virtual interface is not available.</p>
-    /// </li>
+    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
+    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
+    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
+    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
+    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
+    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
+    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
+    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
     /// </ul>
     pub fn virtual_interface_state(
         &self,
@@ -10465,42 +8919,15 @@ pub mod confirm_public_virtual_interface_output {
     impl Builder {
         /// <p>The state of the virtual interface. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>available</code>: A virtual interface that is able to forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>down</code>: A virtual interface that is BGP down.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleting</code>: A virtual interface is in this state immediately after calling <a>DeleteVirtualInterface</a> until it can no longer forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleted</code>: A virtual interface that cannot forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>unknown</code>: The state of the virtual interface is not available.</p>
-        /// </li>
+        /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
+        /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
+        /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
+        /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
+        /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
+        /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
+        /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
+        /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
+        /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
         /// </ul>
         pub fn virtual_interface_state(
             mut self,
@@ -10511,42 +8938,15 @@ pub mod confirm_public_virtual_interface_output {
         }
         /// <p>The state of the virtual interface. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>available</code>: A virtual interface that is able to forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>down</code>: A virtual interface that is BGP down.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleting</code>: A virtual interface is in this state immediately after calling <a>DeleteVirtualInterface</a> until it can no longer forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleted</code>: A virtual interface that cannot forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>unknown</code>: The state of the virtual interface is not available.</p>
-        /// </li>
+        /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
+        /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
+        /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
+        /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
+        /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
+        /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
+        /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
+        /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
+        /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
         /// </ul>
         pub fn set_virtual_interface_state(
             mut self,
@@ -10576,84 +8976,30 @@ impl ConfirmPublicVirtualInterfaceOutput {
 pub struct ConfirmPrivateVirtualInterfaceOutput {
     /// <p>The state of the virtual interface. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>available</code>: A virtual interface that is able to forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>down</code>: A virtual interface that is BGP down.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleting</code>: A virtual interface is in this state immediately after calling <a>DeleteVirtualInterface</a> until it can no longer forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleted</code>: A virtual interface that cannot forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>unknown</code>: The state of the virtual interface is not available.</p>
-    /// </li>
+    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
+    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
+    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
+    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
+    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
+    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
+    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
+    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
     /// </ul>
     pub virtual_interface_state: std::option::Option<crate::model::VirtualInterfaceState>,
 }
 impl ConfirmPrivateVirtualInterfaceOutput {
     /// <p>The state of the virtual interface. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>available</code>: A virtual interface that is able to forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>down</code>: A virtual interface that is BGP down.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleting</code>: A virtual interface is in this state immediately after calling <a>DeleteVirtualInterface</a> until it can no longer forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleted</code>: A virtual interface that cannot forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>unknown</code>: The state of the virtual interface is not available.</p>
-    /// </li>
+    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
+    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
+    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
+    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
+    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
+    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
+    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
+    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
     /// </ul>
     pub fn virtual_interface_state(
         &self,
@@ -10680,42 +9026,15 @@ pub mod confirm_private_virtual_interface_output {
     impl Builder {
         /// <p>The state of the virtual interface. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>available</code>: A virtual interface that is able to forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>down</code>: A virtual interface that is BGP down.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleting</code>: A virtual interface is in this state immediately after calling <a>DeleteVirtualInterface</a> until it can no longer forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleted</code>: A virtual interface that cannot forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>unknown</code>: The state of the virtual interface is not available.</p>
-        /// </li>
+        /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
+        /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
+        /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
+        /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
+        /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
+        /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
+        /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
+        /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
+        /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
         /// </ul>
         pub fn virtual_interface_state(
             mut self,
@@ -10726,42 +9045,15 @@ pub mod confirm_private_virtual_interface_output {
         }
         /// <p>The state of the virtual interface. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>available</code>: A virtual interface that is able to forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>down</code>: A virtual interface that is BGP down.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleting</code>: A virtual interface is in this state immediately after calling <a>DeleteVirtualInterface</a> until it can no longer forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleted</code>: A virtual interface that cannot forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>unknown</code>: The state of the virtual interface is not available.</p>
-        /// </li>
+        /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
+        /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
+        /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
+        /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
+        /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
+        /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
+        /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
+        /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
+        /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
         /// </ul>
         pub fn set_virtual_interface_state(
             mut self,
@@ -10789,15 +9081,11 @@ impl ConfirmPrivateVirtualInterfaceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfirmCustomerAgreementOutput {
-    /// <p>
-    /// The status of the customer agreement when the connection was created. This will be either <code>signed</code> or <code>unsigned</code>.
-    /// </p>
+    /// <p> The status of the customer agreement when the connection was created. This will be either <code>signed</code> or <code>unsigned</code>. </p>
     pub status: std::option::Option<std::string::String>,
 }
 impl ConfirmCustomerAgreementOutput {
-    /// <p>
-    /// The status of the customer agreement when the connection was created. This will be either <code>signed</code> or <code>unsigned</code>.
-    /// </p>
+    /// <p> The status of the customer agreement when the connection was created. This will be either <code>signed</code> or <code>unsigned</code>. </p>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
     }
@@ -10818,16 +9106,12 @@ pub mod confirm_customer_agreement_output {
         pub(crate) status: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The status of the customer agreement when the connection was created. This will be either <code>signed</code> or <code>unsigned</code>.
-        /// </p>
+        /// <p> The status of the customer agreement when the connection was created. This will be either <code>signed</code> or <code>unsigned</code>. </p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
             self
         }
-        /// <p>
-        /// The status of the customer agreement when the connection was created. This will be either <code>signed</code> or <code>unsigned</code>.
-        /// </p>
+        /// <p> The status of the customer agreement when the connection was created. This will be either <code>signed</code> or <code>unsigned</code>. </p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -10853,84 +9137,30 @@ impl ConfirmCustomerAgreementOutput {
 pub struct ConfirmConnectionOutput {
     /// <p>The state of the connection. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: The connection has been approved and is being initialized.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>available</code>: The network link is up and the connection is ready for use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>down</code>: The network link is down.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleting</code>: The connection is being deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleted</code>: The connection has been deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>unknown</code>: The state of the connection is not available.</p>
-    /// </li>
+    /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
+    /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
+    /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
+    /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+    /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
+    /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
+    /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
     /// </ul>
     pub connection_state: std::option::Option<crate::model::ConnectionState>,
 }
 impl ConfirmConnectionOutput {
     /// <p>The state of the connection. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: The connection has been approved and is being initialized.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>available</code>: The network link is up and the connection is ready for use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>down</code>: The network link is down.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleting</code>: The connection is being deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleted</code>: The connection has been deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>unknown</code>: The state of the connection is not available.</p>
-    /// </li>
+    /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
+    /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
+    /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
+    /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+    /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
+    /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
+    /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
     /// </ul>
     pub fn connection_state(&self) -> std::option::Option<&crate::model::ConnectionState> {
         self.connection_state.as_ref()
@@ -10954,42 +9184,15 @@ pub mod confirm_connection_output {
     impl Builder {
         /// <p>The state of the connection. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: The connection has been approved and is being initialized.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>available</code>: The network link is up and the connection is ready for use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>down</code>: The network link is down.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleting</code>: The connection is being deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleted</code>: The connection has been deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>unknown</code>: The state of the connection is not available.</p>
-        /// </li>
+        /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
+        /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
+        /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
+        /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
+        /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+        /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
+        /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
+        /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
+        /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
         /// </ul>
         pub fn connection_state(mut self, input: crate::model::ConnectionState) -> Self {
             self.connection_state = Some(input);
@@ -10997,42 +9200,15 @@ pub mod confirm_connection_output {
         }
         /// <p>The state of the connection. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: The connection has been approved and is being initialized.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>available</code>: The network link is up and the connection is ready for use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>down</code>: The network link is down.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleting</code>: The connection is being deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleted</code>: The connection has been deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>unknown</code>: The state of the connection is not available.</p>
-        /// </li>
+        /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
+        /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
+        /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
+        /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
+        /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+        /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
+        /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
+        /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
+        /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
         /// </ul>
         pub fn set_connection_state(
             mut self,
@@ -11089,42 +9265,15 @@ pub struct AssociateVirtualInterfaceOutput {
     pub address_family: std::option::Option<crate::model::AddressFamily>,
     /// <p>The state of the virtual interface. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>available</code>: A virtual interface that is able to forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>down</code>: A virtual interface that is BGP down.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleting</code>: A virtual interface is in this state immediately after calling <a>DeleteVirtualInterface</a> until it can no longer forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleted</code>: A virtual interface that cannot forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>unknown</code>: The state of the virtual interface is not available.</p>
-    /// </li>
+    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
+    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
+    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
+    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
+    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
+    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
+    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
+    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
     /// </ul>
     pub virtual_interface_state: std::option::Option<crate::model::VirtualInterfaceState>,
     /// <p>The customer router configuration.</p>
@@ -11145,8 +9294,7 @@ pub struct AssociateVirtualInterfaceOutput {
     pub region: std::option::Option<std::string::String>,
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
     pub aws_device_v2: std::option::Option<std::string::String>,
-    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-    /// different than the device that terminates the physical connection.</p>
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
     pub aws_logical_device_id: std::option::Option<std::string::String>,
     /// <p>The tags associated with the virtual interface.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -11209,42 +9357,15 @@ impl AssociateVirtualInterfaceOutput {
     }
     /// <p>The state of the virtual interface. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>available</code>: A virtual interface that is able to forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>down</code>: A virtual interface that is BGP down.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleting</code>: A virtual interface is in this state immediately after calling <a>DeleteVirtualInterface</a> until it can no longer forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleted</code>: A virtual interface that cannot forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>unknown</code>: The state of the virtual interface is not available.</p>
-    /// </li>
+    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
+    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
+    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
+    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
+    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
+    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
+    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
+    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
     /// </ul>
     pub fn virtual_interface_state(
         &self,
@@ -11287,8 +9408,7 @@ impl AssociateVirtualInterfaceOutput {
     pub fn aws_device_v2(&self) -> std::option::Option<&str> {
         self.aws_device_v2.as_deref()
     }
-    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-    /// different than the device that terminates the physical connection.</p>
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
     pub fn aws_logical_device_id(&self) -> std::option::Option<&str> {
         self.aws_logical_device_id.as_deref()
     }
@@ -11527,42 +9647,15 @@ pub mod associate_virtual_interface_output {
         }
         /// <p>The state of the virtual interface. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>available</code>: A virtual interface that is able to forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>down</code>: A virtual interface that is BGP down.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleting</code>: A virtual interface is in this state immediately after calling <a>DeleteVirtualInterface</a> until it can no longer forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleted</code>: A virtual interface that cannot forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>unknown</code>: The state of the virtual interface is not available.</p>
-        /// </li>
+        /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
+        /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
+        /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
+        /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
+        /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
+        /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
+        /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
+        /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
+        /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
         /// </ul>
         pub fn virtual_interface_state(
             mut self,
@@ -11573,42 +9666,15 @@ pub mod associate_virtual_interface_output {
         }
         /// <p>The state of the virtual interface. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>available</code>: A virtual interface that is able to forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>down</code>: A virtual interface that is BGP down.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleting</code>: A virtual interface is in this state immediately after calling <a>DeleteVirtualInterface</a> until it can no longer forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleted</code>: A virtual interface that cannot forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>unknown</code>: The state of the virtual interface is not available.</p>
-        /// </li>
+        /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
+        /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
+        /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
+        /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
+        /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
+        /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
+        /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
+        /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
+        /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
         /// </ul>
         pub fn set_virtual_interface_state(
             mut self,
@@ -11737,14 +9803,12 @@ pub mod associate_virtual_interface_output {
             self.aws_device_v2 = input;
             self
         }
-        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-        /// different than the device that terminates the physical connection.</p>
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
         pub fn aws_logical_device_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_logical_device_id = Some(input.into());
             self
         }
-        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-        /// different than the device that terminates the physical connection.</p>
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
         pub fn set_aws_logical_device_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11918,42 +9982,15 @@ pub struct AssociateHostedConnectionOutput {
     pub connection_name: std::option::Option<std::string::String>,
     /// <p>The state of the connection. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: The connection has been approved and is being initialized.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>available</code>: The network link is up and the connection is ready for use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>down</code>: The network link is down.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleting</code>: The connection is being deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleted</code>: The connection has been deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>unknown</code>: The state of the connection is not available.</p>
-    /// </li>
+    /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
+    /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
+    /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
+    /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+    /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
+    /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
+    /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
     /// </ul>
     pub connection_state: std::option::Option<crate::model::ConnectionState>,
     /// <p>The Amazon Web Services Region where the connection is located.</p>
@@ -11966,7 +10003,7 @@ pub struct AssociateHostedConnectionOutput {
     pub vlan: i32,
     /// <p>The name of the Direct Connect service provider associated with the connection.</p>
     pub partner_name: std::option::Option<std::string::String>,
-    /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
+    /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
     pub loa_issue_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ID of the LAG.</p>
     pub lag_id: std::option::Option<std::string::String>,
@@ -11976,8 +10013,7 @@ pub struct AssociateHostedConnectionOutput {
     pub jumbo_frame_capable: std::option::Option<bool>,
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
     pub aws_device_v2: std::option::Option<std::string::String>,
-    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-    /// different than the device that terminates the physical connection.</p>
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
     pub aws_logical_device_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
     pub has_logical_redundancy: std::option::Option<crate::model::HasLogicalRedundancy>,
@@ -12011,42 +10047,15 @@ impl AssociateHostedConnectionOutput {
     }
     /// <p>The state of the connection. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: The connection has been approved and is being initialized.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>available</code>: The network link is up and the connection is ready for use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>down</code>: The network link is down.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleting</code>: The connection is being deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleted</code>: The connection has been deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>unknown</code>: The state of the connection is not available.</p>
-    /// </li>
+    /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
+    /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
+    /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
+    /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+    /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
+    /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
+    /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
     /// </ul>
     pub fn connection_state(&self) -> std::option::Option<&crate::model::ConnectionState> {
         self.connection_state.as_ref()
@@ -12071,7 +10080,7 @@ impl AssociateHostedConnectionOutput {
     pub fn partner_name(&self) -> std::option::Option<&str> {
         self.partner_name.as_deref()
     }
-    /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
+    /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
     pub fn loa_issue_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.loa_issue_time.as_ref()
     }
@@ -12091,8 +10100,7 @@ impl AssociateHostedConnectionOutput {
     pub fn aws_device_v2(&self) -> std::option::Option<&str> {
         self.aws_device_v2.as_deref()
     }
-    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-    /// different than the device that terminates the physical connection.</p>
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
     pub fn aws_logical_device_id(&self) -> std::option::Option<&str> {
         self.aws_logical_device_id.as_deref()
     }
@@ -12228,42 +10236,15 @@ pub mod associate_hosted_connection_output {
         }
         /// <p>The state of the connection. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: The connection has been approved and is being initialized.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>available</code>: The network link is up and the connection is ready for use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>down</code>: The network link is down.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleting</code>: The connection is being deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleted</code>: The connection has been deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>unknown</code>: The state of the connection is not available.</p>
-        /// </li>
+        /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
+        /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
+        /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
+        /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
+        /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+        /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
+        /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
+        /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
+        /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
         /// </ul>
         pub fn connection_state(mut self, input: crate::model::ConnectionState) -> Self {
             self.connection_state = Some(input);
@@ -12271,42 +10252,15 @@ pub mod associate_hosted_connection_output {
         }
         /// <p>The state of the connection. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: The connection has been approved and is being initialized.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>available</code>: The network link is up and the connection is ready for use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>down</code>: The network link is down.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleting</code>: The connection is being deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleted</code>: The connection has been deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>unknown</code>: The state of the connection is not available.</p>
-        /// </li>
+        /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
+        /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
+        /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
+        /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
+        /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+        /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
+        /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
+        /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
+        /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
         /// </ul>
         pub fn set_connection_state(
             mut self,
@@ -12365,12 +10319,12 @@ pub mod associate_hosted_connection_output {
             self.partner_name = input;
             self
         }
-        /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
+        /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
         pub fn loa_issue_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.loa_issue_time = Some(input);
             self
         }
-        /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
+        /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
         pub fn set_loa_issue_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -12421,14 +10375,12 @@ pub mod associate_hosted_connection_output {
             self.aws_device_v2 = input;
             self
         }
-        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-        /// different than the device that terminates the physical connection.</p>
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
         pub fn aws_logical_device_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_logical_device_id = Some(input.into());
             self
         }
-        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-        /// different than the device that terminates the physical connection.</p>
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
         pub fn set_aws_logical_device_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12588,42 +10540,15 @@ pub struct AssociateConnectionWithLagOutput {
     pub connection_name: std::option::Option<std::string::String>,
     /// <p>The state of the connection. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: The connection has been approved and is being initialized.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>available</code>: The network link is up and the connection is ready for use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>down</code>: The network link is down.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleting</code>: The connection is being deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleted</code>: The connection has been deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>unknown</code>: The state of the connection is not available.</p>
-    /// </li>
+    /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
+    /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
+    /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
+    /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+    /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
+    /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
+    /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
     /// </ul>
     pub connection_state: std::option::Option<crate::model::ConnectionState>,
     /// <p>The Amazon Web Services Region where the connection is located.</p>
@@ -12636,7 +10561,7 @@ pub struct AssociateConnectionWithLagOutput {
     pub vlan: i32,
     /// <p>The name of the Direct Connect service provider associated with the connection.</p>
     pub partner_name: std::option::Option<std::string::String>,
-    /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
+    /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
     pub loa_issue_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ID of the LAG.</p>
     pub lag_id: std::option::Option<std::string::String>,
@@ -12646,8 +10571,7 @@ pub struct AssociateConnectionWithLagOutput {
     pub jumbo_frame_capable: std::option::Option<bool>,
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
     pub aws_device_v2: std::option::Option<std::string::String>,
-    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-    /// different than the device that terminates the physical connection.</p>
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
     pub aws_logical_device_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
     pub has_logical_redundancy: std::option::Option<crate::model::HasLogicalRedundancy>,
@@ -12681,42 +10605,15 @@ impl AssociateConnectionWithLagOutput {
     }
     /// <p>The state of the connection. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: The connection has been approved and is being initialized.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>available</code>: The network link is up and the connection is ready for use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>down</code>: The network link is down.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleting</code>: The connection is being deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleted</code>: The connection has been deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>unknown</code>: The state of the connection is not available.</p>
-    /// </li>
+    /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
+    /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
+    /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
+    /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+    /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
+    /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
+    /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
     /// </ul>
     pub fn connection_state(&self) -> std::option::Option<&crate::model::ConnectionState> {
         self.connection_state.as_ref()
@@ -12741,7 +10638,7 @@ impl AssociateConnectionWithLagOutput {
     pub fn partner_name(&self) -> std::option::Option<&str> {
         self.partner_name.as_deref()
     }
-    /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
+    /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
     pub fn loa_issue_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.loa_issue_time.as_ref()
     }
@@ -12761,8 +10658,7 @@ impl AssociateConnectionWithLagOutput {
     pub fn aws_device_v2(&self) -> std::option::Option<&str> {
         self.aws_device_v2.as_deref()
     }
-    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-    /// different than the device that terminates the physical connection.</p>
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
     pub fn aws_logical_device_id(&self) -> std::option::Option<&str> {
         self.aws_logical_device_id.as_deref()
     }
@@ -12898,42 +10794,15 @@ pub mod associate_connection_with_lag_output {
         }
         /// <p>The state of the connection. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: The connection has been approved and is being initialized.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>available</code>: The network link is up and the connection is ready for use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>down</code>: The network link is down.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleting</code>: The connection is being deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleted</code>: The connection has been deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>unknown</code>: The state of the connection is not available.</p>
-        /// </li>
+        /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
+        /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
+        /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
+        /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
+        /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+        /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
+        /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
+        /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
+        /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
         /// </ul>
         pub fn connection_state(mut self, input: crate::model::ConnectionState) -> Self {
             self.connection_state = Some(input);
@@ -12941,42 +10810,15 @@ pub mod associate_connection_with_lag_output {
         }
         /// <p>The state of the connection. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: The connection has been approved and is being initialized.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>available</code>: The network link is up and the connection is ready for use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>down</code>: The network link is down.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleting</code>: The connection is being deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleted</code>: The connection has been deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>unknown</code>: The state of the connection is not available.</p>
-        /// </li>
+        /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
+        /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
+        /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
+        /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
+        /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+        /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
+        /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
+        /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
+        /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
         /// </ul>
         pub fn set_connection_state(
             mut self,
@@ -13035,12 +10877,12 @@ pub mod associate_connection_with_lag_output {
             self.partner_name = input;
             self
         }
-        /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
+        /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
         pub fn loa_issue_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.loa_issue_time = Some(input);
             self
         }
-        /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
+        /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
         pub fn set_loa_issue_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -13091,14 +10933,12 @@ pub mod associate_connection_with_lag_output {
             self.aws_device_v2 = input;
             self
         }
-        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-        /// different than the device that terminates the physical connection.</p>
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
         pub fn aws_logical_device_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_logical_device_id = Some(input.into());
             self
         }
-        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-        /// different than the device that terminates the physical connection.</p>
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
         pub fn set_aws_logical_device_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13336,42 +11176,15 @@ pub struct AllocatePublicVirtualInterfaceOutput {
     pub address_family: std::option::Option<crate::model::AddressFamily>,
     /// <p>The state of the virtual interface. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>available</code>: A virtual interface that is able to forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>down</code>: A virtual interface that is BGP down.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleting</code>: A virtual interface is in this state immediately after calling <a>DeleteVirtualInterface</a> until it can no longer forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleted</code>: A virtual interface that cannot forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>unknown</code>: The state of the virtual interface is not available.</p>
-    /// </li>
+    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
+    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
+    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
+    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
+    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
+    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
+    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
+    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
     /// </ul>
     pub virtual_interface_state: std::option::Option<crate::model::VirtualInterfaceState>,
     /// <p>The customer router configuration.</p>
@@ -13392,8 +11205,7 @@ pub struct AllocatePublicVirtualInterfaceOutput {
     pub region: std::option::Option<std::string::String>,
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
     pub aws_device_v2: std::option::Option<std::string::String>,
-    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-    /// different than the device that terminates the physical connection.</p>
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
     pub aws_logical_device_id: std::option::Option<std::string::String>,
     /// <p>The tags associated with the virtual interface.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -13456,42 +11268,15 @@ impl AllocatePublicVirtualInterfaceOutput {
     }
     /// <p>The state of the virtual interface. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>available</code>: A virtual interface that is able to forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>down</code>: A virtual interface that is BGP down.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleting</code>: A virtual interface is in this state immediately after calling <a>DeleteVirtualInterface</a> until it can no longer forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleted</code>: A virtual interface that cannot forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>unknown</code>: The state of the virtual interface is not available.</p>
-    /// </li>
+    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
+    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
+    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
+    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
+    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
+    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
+    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
+    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
     /// </ul>
     pub fn virtual_interface_state(
         &self,
@@ -13534,8 +11319,7 @@ impl AllocatePublicVirtualInterfaceOutput {
     pub fn aws_device_v2(&self) -> std::option::Option<&str> {
         self.aws_device_v2.as_deref()
     }
-    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-    /// different than the device that terminates the physical connection.</p>
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
     pub fn aws_logical_device_id(&self) -> std::option::Option<&str> {
         self.aws_logical_device_id.as_deref()
     }
@@ -13774,42 +11558,15 @@ pub mod allocate_public_virtual_interface_output {
         }
         /// <p>The state of the virtual interface. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>available</code>: A virtual interface that is able to forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>down</code>: A virtual interface that is BGP down.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleting</code>: A virtual interface is in this state immediately after calling <a>DeleteVirtualInterface</a> until it can no longer forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleted</code>: A virtual interface that cannot forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>unknown</code>: The state of the virtual interface is not available.</p>
-        /// </li>
+        /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
+        /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
+        /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
+        /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
+        /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
+        /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
+        /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
+        /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
+        /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
         /// </ul>
         pub fn virtual_interface_state(
             mut self,
@@ -13820,42 +11577,15 @@ pub mod allocate_public_virtual_interface_output {
         }
         /// <p>The state of the virtual interface. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>available</code>: A virtual interface that is able to forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>down</code>: A virtual interface that is BGP down.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleting</code>: A virtual interface is in this state immediately after calling <a>DeleteVirtualInterface</a> until it can no longer forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleted</code>: A virtual interface that cannot forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>unknown</code>: The state of the virtual interface is not available.</p>
-        /// </li>
+        /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
+        /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
+        /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
+        /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
+        /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
+        /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
+        /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
+        /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
+        /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
         /// </ul>
         pub fn set_virtual_interface_state(
             mut self,
@@ -13984,14 +11714,12 @@ pub mod allocate_public_virtual_interface_output {
             self.aws_device_v2 = input;
             self
         }
-        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-        /// different than the device that terminates the physical connection.</p>
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
         pub fn aws_logical_device_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_logical_device_id = Some(input.into());
             self
         }
-        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-        /// different than the device that terminates the physical connection.</p>
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
         pub fn set_aws_logical_device_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14101,42 +11829,15 @@ pub struct AllocatePrivateVirtualInterfaceOutput {
     pub address_family: std::option::Option<crate::model::AddressFamily>,
     /// <p>The state of the virtual interface. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>available</code>: A virtual interface that is able to forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>down</code>: A virtual interface that is BGP down.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleting</code>: A virtual interface is in this state immediately after calling <a>DeleteVirtualInterface</a> until it can no longer forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleted</code>: A virtual interface that cannot forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>unknown</code>: The state of the virtual interface is not available.</p>
-    /// </li>
+    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
+    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
+    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
+    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
+    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
+    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
+    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
+    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
     /// </ul>
     pub virtual_interface_state: std::option::Option<crate::model::VirtualInterfaceState>,
     /// <p>The customer router configuration.</p>
@@ -14157,8 +11858,7 @@ pub struct AllocatePrivateVirtualInterfaceOutput {
     pub region: std::option::Option<std::string::String>,
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
     pub aws_device_v2: std::option::Option<std::string::String>,
-    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-    /// different than the device that terminates the physical connection.</p>
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
     pub aws_logical_device_id: std::option::Option<std::string::String>,
     /// <p>The tags associated with the virtual interface.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -14221,42 +11921,15 @@ impl AllocatePrivateVirtualInterfaceOutput {
     }
     /// <p>The state of the virtual interface. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>available</code>: A virtual interface that is able to forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>down</code>: A virtual interface that is BGP down.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleting</code>: A virtual interface is in this state immediately after calling <a>DeleteVirtualInterface</a> until it can no longer forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleted</code>: A virtual interface that cannot forward traffic.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>unknown</code>: The state of the virtual interface is not available.</p>
-    /// </li>
+    /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
+    /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
+    /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
+    /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
+    /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
+    /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
+    /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
+    /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
     /// </ul>
     pub fn virtual_interface_state(
         &self,
@@ -14299,8 +11972,7 @@ impl AllocatePrivateVirtualInterfaceOutput {
     pub fn aws_device_v2(&self) -> std::option::Option<&str> {
         self.aws_device_v2.as_deref()
     }
-    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-    /// different than the device that terminates the physical connection.</p>
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
     pub fn aws_logical_device_id(&self) -> std::option::Option<&str> {
         self.aws_logical_device_id.as_deref()
     }
@@ -14539,42 +12211,15 @@ pub mod allocate_private_virtual_interface_output {
         }
         /// <p>The state of the virtual interface. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>available</code>: A virtual interface that is able to forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>down</code>: A virtual interface that is BGP down.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleting</code>: A virtual interface is in this state immediately after calling <a>DeleteVirtualInterface</a> until it can no longer forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleted</code>: A virtual interface that cannot forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>unknown</code>: The state of the virtual interface is not available.</p>
-        /// </li>
+        /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
+        /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
+        /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
+        /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
+        /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
+        /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
+        /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
+        /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
+        /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
         /// </ul>
         pub fn virtual_interface_state(
             mut self,
@@ -14585,42 +12230,15 @@ pub mod allocate_private_virtual_interface_output {
         }
         /// <p>The state of the virtual interface. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>available</code>: A virtual interface that is able to forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>down</code>: A virtual interface that is BGP down.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleting</code>: A virtual interface is in this state immediately after calling <a>DeleteVirtualInterface</a> until it can no longer forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleted</code>: A virtual interface that cannot forward traffic.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>unknown</code>: The state of the virtual interface is not available.</p>
-        /// </li>
+        /// <li> <p> <code>confirming</code>: The creation of the virtual interface is pending confirmation from the virtual interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the virtual interface will remain in this state until it is confirmed by the virtual interface owner.</p> </li>
+        /// <li> <p> <code>verifying</code>: This state only applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</p> </li>
+        /// <li> <p> <code>pending</code>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward traffic.</p> </li>
+        /// <li> <p> <code>available</code>: A virtual interface that is able to forward traffic.</p> </li>
+        /// <li> <p> <code>down</code>: A virtual interface that is BGP down.</p> </li>
+        /// <li> <p> <code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p> </li>
+        /// <li> <p> <code>deleted</code>: A virtual interface that cannot forward traffic.</p> </li>
+        /// <li> <p> <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the virtual interface enters the <code>Rejected</code> state.</p> </li>
+        /// <li> <p> <code>unknown</code>: The state of the virtual interface is not available.</p> </li>
         /// </ul>
         pub fn set_virtual_interface_state(
             mut self,
@@ -14749,14 +12367,12 @@ pub mod allocate_private_virtual_interface_output {
             self.aws_device_v2 = input;
             self
         }
-        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-        /// different than the device that terminates the physical connection.</p>
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
         pub fn aws_logical_device_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_logical_device_id = Some(input.into());
             self
         }
-        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-        /// different than the device that terminates the physical connection.</p>
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
         pub fn set_aws_logical_device_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14845,42 +12461,15 @@ pub struct AllocateHostedConnectionOutput {
     pub connection_name: std::option::Option<std::string::String>,
     /// <p>The state of the connection. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: The connection has been approved and is being initialized.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>available</code>: The network link is up and the connection is ready for use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>down</code>: The network link is down.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleting</code>: The connection is being deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleted</code>: The connection has been deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>unknown</code>: The state of the connection is not available.</p>
-    /// </li>
+    /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
+    /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
+    /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
+    /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+    /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
+    /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
+    /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
     /// </ul>
     pub connection_state: std::option::Option<crate::model::ConnectionState>,
     /// <p>The Amazon Web Services Region where the connection is located.</p>
@@ -14893,7 +12482,7 @@ pub struct AllocateHostedConnectionOutput {
     pub vlan: i32,
     /// <p>The name of the Direct Connect service provider associated with the connection.</p>
     pub partner_name: std::option::Option<std::string::String>,
-    /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
+    /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
     pub loa_issue_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ID of the LAG.</p>
     pub lag_id: std::option::Option<std::string::String>,
@@ -14903,8 +12492,7 @@ pub struct AllocateHostedConnectionOutput {
     pub jumbo_frame_capable: std::option::Option<bool>,
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
     pub aws_device_v2: std::option::Option<std::string::String>,
-    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-    /// different than the device that terminates the physical connection.</p>
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
     pub aws_logical_device_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
     pub has_logical_redundancy: std::option::Option<crate::model::HasLogicalRedundancy>,
@@ -14938,42 +12526,15 @@ impl AllocateHostedConnectionOutput {
     }
     /// <p>The state of the connection. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: The connection has been approved and is being initialized.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>available</code>: The network link is up and the connection is ready for use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>down</code>: The network link is down.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleting</code>: The connection is being deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleted</code>: The connection has been deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>unknown</code>: The state of the connection is not available.</p>
-    /// </li>
+    /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
+    /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
+    /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
+    /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+    /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
+    /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
+    /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
     /// </ul>
     pub fn connection_state(&self) -> std::option::Option<&crate::model::ConnectionState> {
         self.connection_state.as_ref()
@@ -14998,7 +12559,7 @@ impl AllocateHostedConnectionOutput {
     pub fn partner_name(&self) -> std::option::Option<&str> {
         self.partner_name.as_deref()
     }
-    /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
+    /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
     pub fn loa_issue_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.loa_issue_time.as_ref()
     }
@@ -15018,8 +12579,7 @@ impl AllocateHostedConnectionOutput {
     pub fn aws_device_v2(&self) -> std::option::Option<&str> {
         self.aws_device_v2.as_deref()
     }
-    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-    /// different than the device that terminates the physical connection.</p>
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
     pub fn aws_logical_device_id(&self) -> std::option::Option<&str> {
         self.aws_logical_device_id.as_deref()
     }
@@ -15155,42 +12715,15 @@ pub mod allocate_hosted_connection_output {
         }
         /// <p>The state of the connection. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: The connection has been approved and is being initialized.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>available</code>: The network link is up and the connection is ready for use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>down</code>: The network link is down.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleting</code>: The connection is being deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleted</code>: The connection has been deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>unknown</code>: The state of the connection is not available.</p>
-        /// </li>
+        /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
+        /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
+        /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
+        /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
+        /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+        /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
+        /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
+        /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
+        /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
         /// </ul>
         pub fn connection_state(mut self, input: crate::model::ConnectionState) -> Self {
             self.connection_state = Some(input);
@@ -15198,42 +12731,15 @@ pub mod allocate_hosted_connection_output {
         }
         /// <p>The state of the connection. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: The connection has been approved and is being initialized.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>available</code>: The network link is up and the connection is ready for use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>down</code>: The network link is down.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleting</code>: The connection is being deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleted</code>: The connection has been deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>unknown</code>: The state of the connection is not available.</p>
-        /// </li>
+        /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
+        /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
+        /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
+        /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
+        /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+        /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
+        /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
+        /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
+        /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
         /// </ul>
         pub fn set_connection_state(
             mut self,
@@ -15292,12 +12798,12 @@ pub mod allocate_hosted_connection_output {
             self.partner_name = input;
             self
         }
-        /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
+        /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
         pub fn loa_issue_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.loa_issue_time = Some(input);
             self
         }
-        /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
+        /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
         pub fn set_loa_issue_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -15348,14 +12854,12 @@ pub mod allocate_hosted_connection_output {
             self.aws_device_v2 = input;
             self
         }
-        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-        /// different than the device that terminates the physical connection.</p>
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
         pub fn aws_logical_device_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_logical_device_id = Some(input.into());
             self
         }
-        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-        /// different than the device that terminates the physical connection.</p>
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
         pub fn set_aws_logical_device_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15515,42 +13019,15 @@ pub struct AllocateConnectionOnInterconnectOutput {
     pub connection_name: std::option::Option<std::string::String>,
     /// <p>The state of the connection. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: The connection has been approved and is being initialized.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>available</code>: The network link is up and the connection is ready for use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>down</code>: The network link is down.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleting</code>: The connection is being deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleted</code>: The connection has been deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>unknown</code>: The state of the connection is not available.</p>
-    /// </li>
+    /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
+    /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
+    /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
+    /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+    /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
+    /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
+    /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
     /// </ul>
     pub connection_state: std::option::Option<crate::model::ConnectionState>,
     /// <p>The Amazon Web Services Region where the connection is located.</p>
@@ -15563,7 +13040,7 @@ pub struct AllocateConnectionOnInterconnectOutput {
     pub vlan: i32,
     /// <p>The name of the Direct Connect service provider associated with the connection.</p>
     pub partner_name: std::option::Option<std::string::String>,
-    /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
+    /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
     pub loa_issue_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The ID of the LAG.</p>
     pub lag_id: std::option::Option<std::string::String>,
@@ -15573,8 +13050,7 @@ pub struct AllocateConnectionOnInterconnectOutput {
     pub jumbo_frame_capable: std::option::Option<bool>,
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
     pub aws_device_v2: std::option::Option<std::string::String>,
-    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-    /// different than the device that terminates the physical connection.</p>
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
     pub aws_logical_device_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
     pub has_logical_redundancy: std::option::Option<crate::model::HasLogicalRedundancy>,
@@ -15608,42 +13084,15 @@ impl AllocateConnectionOnInterconnectOutput {
     }
     /// <p>The state of the connection. The following are the possible values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pending</code>: The connection has been approved and is being initialized.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>available</code>: The network link is up and the connection is ready for use.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>down</code>: The network link is down.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleting</code>: The connection is being deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleted</code>: The connection has been deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>unknown</code>: The state of the connection is not available.</p>
-    /// </li>
+    /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
+    /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
+    /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
+    /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+    /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
+    /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
+    /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
     /// </ul>
     pub fn connection_state(&self) -> std::option::Option<&crate::model::ConnectionState> {
         self.connection_state.as_ref()
@@ -15668,7 +13117,7 @@ impl AllocateConnectionOnInterconnectOutput {
     pub fn partner_name(&self) -> std::option::Option<&str> {
         self.partner_name.as_deref()
     }
-    /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
+    /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
     pub fn loa_issue_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.loa_issue_time.as_ref()
     }
@@ -15688,8 +13137,7 @@ impl AllocateConnectionOnInterconnectOutput {
     pub fn aws_device_v2(&self) -> std::option::Option<&str> {
         self.aws_device_v2.as_deref()
     }
-    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-    /// different than the device that terminates the physical connection.</p>
+    /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
     pub fn aws_logical_device_id(&self) -> std::option::Option<&str> {
         self.aws_logical_device_id.as_deref()
     }
@@ -15825,42 +13273,15 @@ pub mod allocate_connection_on_interconnect_output {
         }
         /// <p>The state of the connection. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: The connection has been approved and is being initialized.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>available</code>: The network link is up and the connection is ready for use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>down</code>: The network link is down.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleting</code>: The connection is being deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleted</code>: The connection has been deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>unknown</code>: The state of the connection is not available.</p>
-        /// </li>
+        /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
+        /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
+        /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
+        /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
+        /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+        /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
+        /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
+        /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
+        /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
         /// </ul>
         pub fn connection_state(mut self, input: crate::model::ConnectionState) -> Self {
             self.connection_state = Some(input);
@@ -15868,42 +13289,15 @@ pub mod allocate_connection_on_interconnect_output {
         }
         /// <p>The state of the connection. The following are the possible values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pending</code>: The connection has been approved and is being initialized.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>available</code>: The network link is up and the connection is ready for use.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>down</code>: The network link is down.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleting</code>: The connection is being deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleted</code>: The connection has been deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>unknown</code>: The state of the connection is not available.</p>
-        /// </li>
+        /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
+        /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
+        /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
+        /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
+        /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+        /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
+        /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
+        /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
+        /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
         /// </ul>
         pub fn set_connection_state(
             mut self,
@@ -15962,12 +13356,12 @@ pub mod allocate_connection_on_interconnect_output {
             self.partner_name = input;
             self
         }
-        /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
+        /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
         pub fn loa_issue_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.loa_issue_time = Some(input);
             self
         }
-        /// <p>The time of the most recent call to <a>DescribeLoa</a> for this connection.</p>
+        /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
         pub fn set_loa_issue_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -16018,14 +13412,12 @@ pub mod allocate_connection_on_interconnect_output {
             self.aws_device_v2 = input;
             self
         }
-        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-        /// different than the device that terminates the physical connection.</p>
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
         pub fn aws_logical_device_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_logical_device_id = Some(input.into());
             self
         }
-        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be
-        /// different than the device that terminates the physical connection.</p>
+        /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
         pub fn set_aws_logical_device_id(
             mut self,
             input: std::option::Option<std::string::String>,

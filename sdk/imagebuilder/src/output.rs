@@ -7,8 +7,7 @@ pub struct UpdateInfrastructureConfigurationOutput {
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The idempotency token used to make this request idempotent.</p>
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that was updated by
-    /// this request.</p>
+    /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that was updated by this request.</p>
     pub infrastructure_configuration_arn: std::option::Option<std::string::String>,
 }
 impl UpdateInfrastructureConfigurationOutput {
@@ -20,8 +19,7 @@ impl UpdateInfrastructureConfigurationOutput {
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that was updated by
-    /// this request.</p>
+    /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that was updated by this request.</p>
     pub fn infrastructure_configuration_arn(&self) -> std::option::Option<&str> {
         self.infrastructure_configuration_arn.as_deref()
     }
@@ -69,8 +67,7 @@ pub mod update_infrastructure_configuration_output {
             self.client_token = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that was updated by
-        /// this request.</p>
+        /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that was updated by this request.</p>
         pub fn infrastructure_configuration_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -78,8 +75,7 @@ pub mod update_infrastructure_configuration_output {
             self.infrastructure_configuration_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that was updated by
-        /// this request.</p>
+        /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that was updated by this request.</p>
         pub fn set_infrastructure_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -207,8 +203,7 @@ pub struct UpdateDistributionConfigurationOutput {
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The idempotency token used to make this request idempotent.</p>
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the distribution configuration that was updated by this
-    /// request.</p>
+    /// <p>The Amazon Resource Name (ARN) of the distribution configuration that was updated by this request.</p>
     pub distribution_configuration_arn: std::option::Option<std::string::String>,
 }
 impl UpdateDistributionConfigurationOutput {
@@ -220,8 +215,7 @@ impl UpdateDistributionConfigurationOutput {
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the distribution configuration that was updated by this
-    /// request.</p>
+    /// <p>The Amazon Resource Name (ARN) of the distribution configuration that was updated by this request.</p>
     pub fn distribution_configuration_arn(&self) -> std::option::Option<&str> {
         self.distribution_configuration_arn.as_deref()
     }
@@ -269,8 +263,7 @@ pub mod update_distribution_configuration_output {
             self.client_token = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the distribution configuration that was updated by this
-        /// request.</p>
+        /// <p>The Amazon Resource Name (ARN) of the distribution configuration that was updated by this request.</p>
         pub fn distribution_configuration_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -278,8 +271,7 @@ pub mod update_distribution_configuration_output {
             self.distribution_configuration_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the distribution configuration that was updated by this
-        /// request.</p>
+        /// <p>The Amazon Resource Name (ARN) of the distribution configuration that was updated by this request.</p>
         pub fn set_distribution_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -842,9 +834,7 @@ pub struct ListInfrastructureConfigurationsOutput {
     /// <p>The list of infrastructure configurations.</p>
     pub infrastructure_configuration_summary_list:
         std::option::Option<std::vec::Vec<crate::model::InfrastructureConfigurationSummary>>,
-    /// <p>The next token used for paginated responses. When this is not empty, there are additional
-    /// elements that the service has not included in this request. Use this token with the next
-    /// request to retrieve additional objects.</p>
+    /// <p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListInfrastructureConfigurationsOutput {
@@ -858,9 +848,7 @@ impl ListInfrastructureConfigurationsOutput {
     ) -> std::option::Option<&[crate::model::InfrastructureConfigurationSummary]> {
         self.infrastructure_configuration_summary_list.as_deref()
     }
-    /// <p>The next token used for paginated responses. When this is not empty, there are additional
-    /// elements that the service has not included in this request. Use this token with the next
-    /// request to retrieve additional objects.</p>
+    /// <p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -925,16 +913,12 @@ pub mod list_infrastructure_configurations_output {
             self.infrastructure_configuration_summary_list = input;
             self
         }
-        /// <p>The next token used for paginated responses. When this is not empty, there are additional
-        /// elements that the service has not included in this request. Use this token with the next
-        /// request to retrieve additional objects.</p>
+        /// <p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The next token used for paginated responses. When this is not empty, there are additional
-        /// elements that the service has not included in this request. Use this token with the next
-        /// request to retrieve additional objects.</p>
+        /// <p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -963,20 +947,23 @@ impl ListInfrastructureConfigurationsOutput {
 pub struct ListImagesOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
     pub request_id: std::option::Option<std::string::String>,
-    /// <p>The list of image semantic versions.</p>
-    /// <note>
-    /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
-    /// You can assign values for the first three, and can filter on all of them.</p>
-    /// <p>
-    /// <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x)
-    /// to specify the most recent versions or nodes when selecting the base image or components for your
-    /// recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be
-    /// wildcards.</p>
+    /// <p>The list of image semantic versions.</p> <note>
+    /// <p>The semantic version has four nodes: <major>
+    /// .
+    /// <minor>
+    /// .
+    /// <patch>
+    /// /
+    /// <build>
+    /// . You can assign values for the first three, and can filter on all of them.
+    /// </build>
+    /// </patch>
+    /// </minor>
+    /// </major></p>
+    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
     /// </note>
     pub image_version_list: std::option::Option<std::vec::Vec<crate::model::ImageVersion>>,
-    /// <p>The next token used for paginated responses. When this is not empty, there are additional
-    /// elements that the service has not included in this request. Use this token with the next
-    /// request to retrieve additional objects.</p>
+    /// <p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListImagesOutput {
@@ -984,22 +971,25 @@ impl ListImagesOutput {
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
     }
-    /// <p>The list of image semantic versions.</p>
-    /// <note>
-    /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
-    /// You can assign values for the first three, and can filter on all of them.</p>
-    /// <p>
-    /// <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x)
-    /// to specify the most recent versions or nodes when selecting the base image or components for your
-    /// recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be
-    /// wildcards.</p>
+    /// <p>The list of image semantic versions.</p> <note>
+    /// <p>The semantic version has four nodes: <major>
+    /// .
+    /// <minor>
+    /// .
+    /// <patch>
+    /// /
+    /// <build>
+    /// . You can assign values for the first three, and can filter on all of them.
+    /// </build>
+    /// </patch>
+    /// </minor>
+    /// </major></p>
+    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
     /// </note>
     pub fn image_version_list(&self) -> std::option::Option<&[crate::model::ImageVersion]> {
         self.image_version_list.as_deref()
     }
-    /// <p>The next token used for paginated responses. When this is not empty, there are additional
-    /// elements that the service has not included in this request. Use this token with the next
-    /// request to retrieve additional objects.</p>
+    /// <p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1039,15 +1029,20 @@ pub mod list_images_output {
         ///
         /// To override the contents of this collection use [`set_image_version_list`](Self::set_image_version_list).
         ///
-        /// <p>The list of image semantic versions.</p>
-        /// <note>
-        /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
-        /// You can assign values for the first three, and can filter on all of them.</p>
-        /// <p>
-        /// <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x)
-        /// to specify the most recent versions or nodes when selecting the base image or components for your
-        /// recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be
-        /// wildcards.</p>
+        /// <p>The list of image semantic versions.</p> <note>
+        /// <p>The semantic version has four nodes: <major>
+        /// .
+        /// <minor>
+        /// .
+        /// <patch>
+        /// /
+        /// <build>
+        /// . You can assign values for the first three, and can filter on all of them.
+        /// </build>
+        /// </patch>
+        /// </minor>
+        /// </major></p>
+        /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
         /// </note>
         pub fn image_version_list(mut self, input: crate::model::ImageVersion) -> Self {
             let mut v = self.image_version_list.unwrap_or_default();
@@ -1055,15 +1050,20 @@ pub mod list_images_output {
             self.image_version_list = Some(v);
             self
         }
-        /// <p>The list of image semantic versions.</p>
-        /// <note>
-        /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
-        /// You can assign values for the first three, and can filter on all of them.</p>
-        /// <p>
-        /// <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x)
-        /// to specify the most recent versions or nodes when selecting the base image or components for your
-        /// recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be
-        /// wildcards.</p>
+        /// <p>The list of image semantic versions.</p> <note>
+        /// <p>The semantic version has four nodes: <major>
+        /// .
+        /// <minor>
+        /// .
+        /// <patch>
+        /// /
+        /// <build>
+        /// . You can assign values for the first three, and can filter on all of them.
+        /// </build>
+        /// </patch>
+        /// </minor>
+        /// </major></p>
+        /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
         /// </note>
         pub fn set_image_version_list(
             mut self,
@@ -1072,16 +1072,12 @@ pub mod list_images_output {
             self.image_version_list = input;
             self
         }
-        /// <p>The next token used for paginated responses. When this is not empty, there are additional
-        /// elements that the service has not included in this request. Use this token with the next
-        /// request to retrieve additional objects.</p>
+        /// <p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The next token used for paginated responses. When this is not empty, there are additional
-        /// elements that the service has not included in this request. Use this token with the next
-        /// request to retrieve additional objects.</p>
+        /// <p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1112,9 +1108,7 @@ pub struct ListImageRecipesOutput {
     /// <p>The list of image pipelines.</p>
     pub image_recipe_summary_list:
         std::option::Option<std::vec::Vec<crate::model::ImageRecipeSummary>>,
-    /// <p>The next token used for paginated responses. When this is not empty, there are additional
-    /// elements that the service has not included in this request. Use this token with the next
-    /// request to retrieve additional objects.</p>
+    /// <p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListImageRecipesOutput {
@@ -1128,9 +1122,7 @@ impl ListImageRecipesOutput {
     ) -> std::option::Option<&[crate::model::ImageRecipeSummary]> {
         self.image_recipe_summary_list.as_deref()
     }
-    /// <p>The next token used for paginated responses. When this is not empty, there are additional
-    /// elements that the service has not included in this request. Use this token with the next
-    /// request to retrieve additional objects.</p>
+    /// <p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1188,16 +1180,12 @@ pub mod list_image_recipes_output {
             self.image_recipe_summary_list = input;
             self
         }
-        /// <p>The next token used for paginated responses. When this is not empty, there are additional
-        /// elements that the service has not included in this request. Use this token with the next
-        /// request to retrieve additional objects.</p>
+        /// <p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The next token used for paginated responses. When this is not empty, there are additional
-        /// elements that the service has not included in this request. Use this token with the next
-        /// request to retrieve additional objects.</p>
+        /// <p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1227,9 +1215,7 @@ pub struct ListImagePipelinesOutput {
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The list of image pipelines.</p>
     pub image_pipeline_list: std::option::Option<std::vec::Vec<crate::model::ImagePipeline>>,
-    /// <p>The next token used for paginated responses. When this is not empty, there are additional
-    /// elements that the service has not included in this request. Use this token with the next
-    /// request to retrieve additional objects.</p>
+    /// <p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListImagePipelinesOutput {
@@ -1241,9 +1227,7 @@ impl ListImagePipelinesOutput {
     pub fn image_pipeline_list(&self) -> std::option::Option<&[crate::model::ImagePipeline]> {
         self.image_pipeline_list.as_deref()
     }
-    /// <p>The next token used for paginated responses. When this is not empty, there are additional
-    /// elements that the service has not included in this request. Use this token with the next
-    /// request to retrieve additional objects.</p>
+    /// <p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1298,16 +1282,12 @@ pub mod list_image_pipelines_output {
             self.image_pipeline_list = input;
             self
         }
-        /// <p>The next token used for paginated responses. When this is not empty, there are additional
-        /// elements that the service has not included in this request. Use this token with the next
-        /// request to retrieve additional objects.</p>
+        /// <p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The next token used for paginated responses. When this is not empty, there are additional
-        /// elements that the service has not included in this request. Use this token with the next
-        /// request to retrieve additional objects.</p>
+        /// <p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1337,9 +1317,7 @@ pub struct ListImagePipelineImagesOutput {
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The list of images built by this pipeline.</p>
     pub image_summary_list: std::option::Option<std::vec::Vec<crate::model::ImageSummary>>,
-    /// <p>The next token used for paginated responses. When this is not empty, there are additional
-    /// elements that the service has not included in this request. Use this token with the next
-    /// request to retrieve additional objects.</p>
+    /// <p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListImagePipelineImagesOutput {
@@ -1351,9 +1329,7 @@ impl ListImagePipelineImagesOutput {
     pub fn image_summary_list(&self) -> std::option::Option<&[crate::model::ImageSummary]> {
         self.image_summary_list.as_deref()
     }
-    /// <p>The next token used for paginated responses. When this is not empty, there are additional
-    /// elements that the service has not included in this request. Use this token with the next
-    /// request to retrieve additional objects.</p>
+    /// <p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1408,16 +1384,12 @@ pub mod list_image_pipeline_images_output {
             self.image_summary_list = input;
             self
         }
-        /// <p>The next token used for paginated responses. When this is not empty, there are additional
-        /// elements that the service has not included in this request. Use this token with the next
-        /// request to retrieve additional objects.</p>
+        /// <p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The next token used for paginated responses. When this is not empty, there are additional
-        /// elements that the service has not included in this request. Use this token with the next
-        /// request to retrieve additional objects.</p>
+        /// <p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1549,9 +1521,7 @@ pub struct ListImageBuildVersionsOutput {
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The list of image build versions.</p>
     pub image_summary_list: std::option::Option<std::vec::Vec<crate::model::ImageSummary>>,
-    /// <p>The next token used for paginated responses. When this is not empty, there are additional
-    /// elements that the service has not included in this request. Use this token with the next
-    /// request to retrieve additional objects.</p>
+    /// <p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListImageBuildVersionsOutput {
@@ -1563,9 +1533,7 @@ impl ListImageBuildVersionsOutput {
     pub fn image_summary_list(&self) -> std::option::Option<&[crate::model::ImageSummary]> {
         self.image_summary_list.as_deref()
     }
-    /// <p>The next token used for paginated responses. When this is not empty, there are additional
-    /// elements that the service has not included in this request. Use this token with the next
-    /// request to retrieve additional objects.</p>
+    /// <p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1620,16 +1588,12 @@ pub mod list_image_build_versions_output {
             self.image_summary_list = input;
             self
         }
-        /// <p>The next token used for paginated responses. When this is not empty, there are additional
-        /// elements that the service has not included in this request. Use this token with the next
-        /// request to retrieve additional objects.</p>
+        /// <p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The next token used for paginated responses. When this is not empty, there are additional
-        /// elements that the service has not included in this request. Use this token with the next
-        /// request to retrieve additional objects.</p>
+        /// <p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1660,9 +1624,7 @@ pub struct ListDistributionConfigurationsOutput {
     /// <p>The list of distributions.</p>
     pub distribution_configuration_summary_list:
         std::option::Option<std::vec::Vec<crate::model::DistributionConfigurationSummary>>,
-    /// <p>The next token used for paginated responses. When this is not empty, there are additional
-    /// elements that the service has not included in this request. Use this token with the next
-    /// request to retrieve additional objects.</p>
+    /// <p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDistributionConfigurationsOutput {
@@ -1676,9 +1638,7 @@ impl ListDistributionConfigurationsOutput {
     ) -> std::option::Option<&[crate::model::DistributionConfigurationSummary]> {
         self.distribution_configuration_summary_list.as_deref()
     }
-    /// <p>The next token used for paginated responses. When this is not empty, there are additional
-    /// elements that the service has not included in this request. Use this token with the next
-    /// request to retrieve additional objects.</p>
+    /// <p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1743,16 +1703,12 @@ pub mod list_distribution_configurations_output {
             self.distribution_configuration_summary_list = input;
             self
         }
-        /// <p>The next token used for paginated responses. When this is not empty, there are additional
-        /// elements that the service has not included in this request. Use this token with the next
-        /// request to retrieve additional objects.</p>
+        /// <p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The next token used for paginated responses. When this is not empty, there are additional
-        /// elements that the service has not included in this request. Use this token with the next
-        /// request to retrieve additional objects.</p>
+        /// <p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1892,15 +1848,22 @@ impl ListContainerRecipesOutput {
 pub struct ListComponentsOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
     pub request_id: std::option::Option<std::string::String>,
-    /// <p>The list of component semantic versions.</p>
-    /// <note>
-    /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
-    /// You can assign values for the first three, and can filter on all of them.</p>
+    /// <p>The list of component semantic versions.</p> <note>
+    /// <p>The semantic version has four nodes: <major>
+    /// .
+    /// <minor>
+    /// .
+    /// <patch>
+    /// /
+    /// <build>
+    /// . You can assign values for the first three, and can filter on all of them.
+    /// </build>
+    /// </patch>
+    /// </minor>
+    /// </major></p>
     /// </note>
     pub component_version_list: std::option::Option<std::vec::Vec<crate::model::ComponentVersion>>,
-    /// <p>The next token used for paginated responses. When this is not empty, there are additional
-    /// elements that the service has not included in this request. Use this token with the next
-    /// request to retrieve additional objects.</p>
+    /// <p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListComponentsOutput {
@@ -1908,17 +1871,24 @@ impl ListComponentsOutput {
     pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
     }
-    /// <p>The list of component semantic versions.</p>
-    /// <note>
-    /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
-    /// You can assign values for the first three, and can filter on all of them.</p>
+    /// <p>The list of component semantic versions.</p> <note>
+    /// <p>The semantic version has four nodes: <major>
+    /// .
+    /// <minor>
+    /// .
+    /// <patch>
+    /// /
+    /// <build>
+    /// . You can assign values for the first three, and can filter on all of them.
+    /// </build>
+    /// </patch>
+    /// </minor>
+    /// </major></p>
     /// </note>
     pub fn component_version_list(&self) -> std::option::Option<&[crate::model::ComponentVersion]> {
         self.component_version_list.as_deref()
     }
-    /// <p>The next token used for paginated responses. When this is not empty, there are additional
-    /// elements that the service has not included in this request. Use this token with the next
-    /// request to retrieve additional objects.</p>
+    /// <p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1958,10 +1928,19 @@ pub mod list_components_output {
         ///
         /// To override the contents of this collection use [`set_component_version_list`](Self::set_component_version_list).
         ///
-        /// <p>The list of component semantic versions.</p>
-        /// <note>
-        /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
-        /// You can assign values for the first three, and can filter on all of them.</p>
+        /// <p>The list of component semantic versions.</p> <note>
+        /// <p>The semantic version has four nodes: <major>
+        /// .
+        /// <minor>
+        /// .
+        /// <patch>
+        /// /
+        /// <build>
+        /// . You can assign values for the first three, and can filter on all of them.
+        /// </build>
+        /// </patch>
+        /// </minor>
+        /// </major></p>
         /// </note>
         pub fn component_version_list(mut self, input: crate::model::ComponentVersion) -> Self {
             let mut v = self.component_version_list.unwrap_or_default();
@@ -1969,10 +1948,19 @@ pub mod list_components_output {
             self.component_version_list = Some(v);
             self
         }
-        /// <p>The list of component semantic versions.</p>
-        /// <note>
-        /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
-        /// You can assign values for the first three, and can filter on all of them.</p>
+        /// <p>The list of component semantic versions.</p> <note>
+        /// <p>The semantic version has four nodes: <major>
+        /// .
+        /// <minor>
+        /// .
+        /// <patch>
+        /// /
+        /// <build>
+        /// . You can assign values for the first three, and can filter on all of them.
+        /// </build>
+        /// </patch>
+        /// </minor>
+        /// </major></p>
         /// </note>
         pub fn set_component_version_list(
             mut self,
@@ -1981,16 +1969,12 @@ pub mod list_components_output {
             self.component_version_list = input;
             self
         }
-        /// <p>The next token used for paginated responses. When this is not empty, there are additional
-        /// elements that the service has not included in this request. Use this token with the next
-        /// request to retrieve additional objects.</p>
+        /// <p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The next token used for paginated responses. When this is not empty, there are additional
-        /// elements that the service has not included in this request. Use this token with the next
-        /// request to retrieve additional objects.</p>
+        /// <p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2020,9 +2004,7 @@ pub struct ListComponentBuildVersionsOutput {
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The list of component summaries for the specified semantic version.</p>
     pub component_summary_list: std::option::Option<std::vec::Vec<crate::model::ComponentSummary>>,
-    /// <p>The next token used for paginated responses. When this is not empty, there are additional
-    /// elements that the service has not included in this request. Use this token with the next
-    /// request to retrieve additional objects.</p>
+    /// <p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListComponentBuildVersionsOutput {
@@ -2034,9 +2016,7 @@ impl ListComponentBuildVersionsOutput {
     pub fn component_summary_list(&self) -> std::option::Option<&[crate::model::ComponentSummary]> {
         self.component_summary_list.as_deref()
     }
-    /// <p>The next token used for paginated responses. When this is not empty, there are additional
-    /// elements that the service has not included in this request. Use this token with the next
-    /// request to retrieve additional objects.</p>
+    /// <p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2091,16 +2071,12 @@ pub mod list_component_build_versions_output {
             self.component_summary_list = input;
             self
         }
-        /// <p>The next token used for paginated responses. When this is not empty, there are additional
-        /// elements that the service has not included in this request. Use this token with the next
-        /// request to retrieve additional objects.</p>
+        /// <p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The next token used for paginated responses. When this is not empty, there are additional
-        /// elements that the service has not included in this request. Use this token with the next
-        /// request to retrieve additional objects.</p>
+        /// <p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3621,8 +3597,7 @@ pub struct CreateInfrastructureConfigurationOutput {
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The idempotency token used to make this request idempotent.</p>
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that was created by
-    /// this request.</p>
+    /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that was created by this request.</p>
     pub infrastructure_configuration_arn: std::option::Option<std::string::String>,
 }
 impl CreateInfrastructureConfigurationOutput {
@@ -3634,8 +3609,7 @@ impl CreateInfrastructureConfigurationOutput {
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that was created by
-    /// this request.</p>
+    /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that was created by this request.</p>
     pub fn infrastructure_configuration_arn(&self) -> std::option::Option<&str> {
         self.infrastructure_configuration_arn.as_deref()
     }
@@ -3683,8 +3657,7 @@ pub mod create_infrastructure_configuration_output {
             self.client_token = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that was created by
-        /// this request.</p>
+        /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that was created by this request.</p>
         pub fn infrastructure_configuration_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -3692,8 +3665,7 @@ pub mod create_infrastructure_configuration_output {
             self.infrastructure_configuration_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that was created by
-        /// this request.</p>
+        /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that was created by this request.</p>
         pub fn set_infrastructure_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4011,8 +3983,7 @@ pub struct CreateDistributionConfigurationOutput {
     pub request_id: std::option::Option<std::string::String>,
     /// <p> The idempotency token used to make this request idempotent.</p>
     pub client_token: std::option::Option<std::string::String>,
-    /// <p> The Amazon Resource Name (ARN) of the distribution configuration that was created by this
-    /// request.</p>
+    /// <p> The Amazon Resource Name (ARN) of the distribution configuration that was created by this request.</p>
     pub distribution_configuration_arn: std::option::Option<std::string::String>,
 }
 impl CreateDistributionConfigurationOutput {
@@ -4024,8 +3995,7 @@ impl CreateDistributionConfigurationOutput {
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p> The Amazon Resource Name (ARN) of the distribution configuration that was created by this
-    /// request.</p>
+    /// <p> The Amazon Resource Name (ARN) of the distribution configuration that was created by this request.</p>
     pub fn distribution_configuration_arn(&self) -> std::option::Option<&str> {
         self.distribution_configuration_arn.as_deref()
     }
@@ -4073,8 +4043,7 @@ pub mod create_distribution_configuration_output {
             self.client_token = input;
             self
         }
-        /// <p> The Amazon Resource Name (ARN) of the distribution configuration that was created by this
-        /// request.</p>
+        /// <p> The Amazon Resource Name (ARN) of the distribution configuration that was created by this request.</p>
         pub fn distribution_configuration_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -4082,8 +4051,7 @@ pub mod create_distribution_configuration_output {
             self.distribution_configuration_arn = Some(input.into());
             self
         }
-        /// <p> The Amazon Resource Name (ARN) of the distribution configuration that was created by this
-        /// request.</p>
+        /// <p> The Amazon Resource Name (ARN) of the distribution configuration that was created by this request.</p>
         pub fn set_distribution_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,

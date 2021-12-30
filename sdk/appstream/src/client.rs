@@ -957,11 +957,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateAppBlock`.
     ///
     /// <p>Creates an app block.</p>
-    /// <p>App blocks are an Amazon AppStream 2.0 resource that stores the details about the
-    /// virtual hard disk in an S3 bucket. It also stores the setup script with details about
-    /// how to mount the virtual hard disk. The virtual hard disk includes the application
-    /// binaries and other files necessary to launch your applications. Multiple applications
-    /// can be assigned to a single app block.</p>
+    /// <p>App blocks are an Amazon AppStream 2.0 resource that stores the details about the virtual hard disk in an S3 bucket. It also stores the setup script with details about how to mount the virtual hard disk. The virtual hard disk includes the application binaries and other files necessary to launch your applications. Multiple applications can be assigned to a single app block.</p>
     /// <p>This is only supported for Elastic fleets.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAppBlock<
@@ -1102,11 +1098,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateApplication`.
     ///
     /// <p>Creates an application.</p>
-    /// <p>Applications are an Amazon AppStream 2.0 resource that stores the details about how to
-    /// launch applications on Elastic fleet streaming instances. An application consists of the
-    /// launch details, icon, and display name. Applications are associated with an app block
-    /// that contains the application binaries and other files. The applications assigned to an
-    /// Elastic fleet are the applications users can launch. </p>
+    /// <p>Applications are an Amazon AppStream 2.0 resource that stores the details about how to launch applications on Elastic fleet streaming instances. An application consists of the launch details, icon, and display name. Applications are associated with an app block that contains the application binaries and other files. The applications assigned to an Elastic fleet are the applications users can launch. </p>
     /// <p>This is only supported for Elastic fleets.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateApplication<
@@ -1516,231 +1508,91 @@ pub mod fluent_builders {
             self.inner = self.inner.set_image_arn(input);
             self
         }
-        /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p>    
+        /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p>
         /// <ul>
-        /// <li>
-        /// <p>stream.standard.small</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.standard.medium</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.standard.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.3xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.6xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.12xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-desktop.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.12xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.16xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-pro.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-pro.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-pro.16xlarge</p>
-        /// </li>
+        /// <li> <p>stream.standard.small</p> </li>
+        /// <li> <p>stream.standard.medium</p> </li>
+        /// <li> <p>stream.standard.large</p> </li>
+        /// <li> <p>stream.compute.large</p> </li>
+        /// <li> <p>stream.compute.xlarge</p> </li>
+        /// <li> <p>stream.compute.2xlarge</p> </li>
+        /// <li> <p>stream.compute.4xlarge</p> </li>
+        /// <li> <p>stream.compute.8xlarge</p> </li>
+        /// <li> <p>stream.memory.large</p> </li>
+        /// <li> <p>stream.memory.xlarge</p> </li>
+        /// <li> <p>stream.memory.2xlarge</p> </li>
+        /// <li> <p>stream.memory.4xlarge</p> </li>
+        /// <li> <p>stream.memory.8xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.large</p> </li>
+        /// <li> <p>stream.memory.z1d.xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.2xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.3xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.6xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.12xlarge</p> </li>
+        /// <li> <p>stream.graphics-design.large</p> </li>
+        /// <li> <p>stream.graphics-design.xlarge</p> </li>
+        /// <li> <p>stream.graphics-design.2xlarge</p> </li>
+        /// <li> <p>stream.graphics-design.4xlarge</p> </li>
+        /// <li> <p>stream.graphics-desktop.2xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li>
+        /// <li> <p>stream.graphics-pro.4xlarge</p> </li>
+        /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
+        /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
         /// </ul>
         /// <p>The following instance types are available for Elastic fleets:</p>
         /// <ul>
-        /// <li>
-        /// <p>stream.standard.small</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.standard.medium</p>
-        /// </li>
+        /// <li> <p>stream.standard.small</p> </li>
+        /// <li> <p>stream.standard.medium</p> </li>
         /// </ul>
         pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_type(input.into());
             self
         }
-        /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p>    
+        /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p>
         /// <ul>
-        /// <li>
-        /// <p>stream.standard.small</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.standard.medium</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.standard.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.3xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.6xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.12xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-desktop.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.12xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.16xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-pro.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-pro.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-pro.16xlarge</p>
-        /// </li>
+        /// <li> <p>stream.standard.small</p> </li>
+        /// <li> <p>stream.standard.medium</p> </li>
+        /// <li> <p>stream.standard.large</p> </li>
+        /// <li> <p>stream.compute.large</p> </li>
+        /// <li> <p>stream.compute.xlarge</p> </li>
+        /// <li> <p>stream.compute.2xlarge</p> </li>
+        /// <li> <p>stream.compute.4xlarge</p> </li>
+        /// <li> <p>stream.compute.8xlarge</p> </li>
+        /// <li> <p>stream.memory.large</p> </li>
+        /// <li> <p>stream.memory.xlarge</p> </li>
+        /// <li> <p>stream.memory.2xlarge</p> </li>
+        /// <li> <p>stream.memory.4xlarge</p> </li>
+        /// <li> <p>stream.memory.8xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.large</p> </li>
+        /// <li> <p>stream.memory.z1d.xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.2xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.3xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.6xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.12xlarge</p> </li>
+        /// <li> <p>stream.graphics-design.large</p> </li>
+        /// <li> <p>stream.graphics-design.xlarge</p> </li>
+        /// <li> <p>stream.graphics-design.2xlarge</p> </li>
+        /// <li> <p>stream.graphics-design.4xlarge</p> </li>
+        /// <li> <p>stream.graphics-desktop.2xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li>
+        /// <li> <p>stream.graphics-pro.4xlarge</p> </li>
+        /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
+        /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
         /// </ul>
         /// <p>The following instance types are available for Elastic fleets:</p>
         /// <ul>
-        /// <li>
-        /// <p>stream.standard.small</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.standard.medium</p>
-        /// </li>
+        /// <li> <p>stream.standard.small</p> </li>
+        /// <li> <p>stream.standard.medium</p> </li>
         /// </ul>
         pub fn set_instance_type(
             mut self,
@@ -1751,16 +1603,17 @@ pub mod fluent_builders {
         }
         /// <p>The fleet type.</p>
         /// <dl>
-        /// <dt>ALWAYS_ON</dt>
+        /// <dt>
+        /// ALWAYS_ON
+        /// </dt>
         /// <dd>
-        /// <p>Provides users with instant-on access to their apps.
-        /// You are charged for all running instances in your fleet, even if no users are streaming apps.</p>
+        /// <p>Provides users with instant-on access to their apps. You are charged for all running instances in your fleet, even if no users are streaming apps.</p>
         /// </dd>
-        /// <dt>ON_DEMAND</dt>
+        /// <dt>
+        /// ON_DEMAND
+        /// </dt>
         /// <dd>
-        /// <p>Provide users with access to applications after they connect, which takes one to two minutes.
-        /// You are charged for instance streaming when users are connected and a
-        /// small hourly fee for instances that are not streaming apps.</p>
+        /// <p>Provide users with access to applications after they connect, which takes one to two minutes. You are charged for instance streaming when users are connected and a small hourly fee for instances that are not streaming apps.</p>
         /// </dd>
         /// </dl>
         pub fn fleet_type(mut self, input: crate::model::FleetType) -> Self {
@@ -1769,16 +1622,17 @@ pub mod fluent_builders {
         }
         /// <p>The fleet type.</p>
         /// <dl>
-        /// <dt>ALWAYS_ON</dt>
+        /// <dt>
+        /// ALWAYS_ON
+        /// </dt>
         /// <dd>
-        /// <p>Provides users with instant-on access to their apps.
-        /// You are charged for all running instances in your fleet, even if no users are streaming apps.</p>
+        /// <p>Provides users with instant-on access to their apps. You are charged for all running instances in your fleet, even if no users are streaming apps.</p>
         /// </dd>
-        /// <dt>ON_DEMAND</dt>
+        /// <dt>
+        /// ON_DEMAND
+        /// </dt>
         /// <dd>
-        /// <p>Provide users with access to applications after they connect, which takes one to two minutes.
-        /// You are charged for instance streaming when users are connected and a
-        /// small hourly fee for instances that are not streaming apps.</p>
+        /// <p>Provide users with access to applications after they connect, which takes one to two minutes. You are charged for instance streaming when users are connected and a small hourly fee for instances that are not streaming apps.</p>
         /// </dd>
         /// </dl>
         pub fn set_fleet_type(
@@ -1892,12 +1746,9 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to associate with the fleet. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
-        ///
         /// <p>If you do not specify a value, the value is set to an empty string.</p>
-        ///
         /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
         /// <p>_ . : / = + \ - @</p>
-        ///
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
         pub fn tags(
             mut self,
@@ -1908,12 +1759,9 @@ pub mod fluent_builders {
             self
         }
         /// <p>The tags to associate with the fleet. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
-        ///
         /// <p>If you do not specify a value, the value is set to an empty string.</p>
-        ///
         /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
         /// <p>_ . : / = + \ - @</p>
-        ///
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
         pub fn set_tags(
             mut self,
@@ -1924,36 +1772,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>The amount of time that users can be idle (inactive) before they are disconnected
-        /// from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time
-        /// interval begins. Users are notified before they are disconnected due to inactivity. If
-        /// they try to reconnect to the streaming session before the time interval specified in
-        /// <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their
-        /// previous session. Users are considered idle when they stop providing keyboard or mouse
-        /// input during their streaming session. File uploads and downloads, audio in, audio out,
-        /// and pixels changing do not qualify as user activity. If users continue to be idle after
-        /// the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are
-        /// disconnected.</p>
-        /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p>
-        /// <note>
+        /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before they are disconnected due to inactivity. If they try to reconnect to the streaming session before the time interval specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their previous session. Users are considered idle when they stop providing keyboard or mouse input during their streaming session. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as user activity. If users continue to be idle after the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected.</p>
+        /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p> <note>
         /// <p>If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity. </p>
         /// </note>
         pub fn idle_disconnect_timeout_in_seconds(mut self, input: i32) -> Self {
             self.inner = self.inner.idle_disconnect_timeout_in_seconds(input);
             self
         }
-        /// <p>The amount of time that users can be idle (inactive) before they are disconnected
-        /// from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time
-        /// interval begins. Users are notified before they are disconnected due to inactivity. If
-        /// they try to reconnect to the streaming session before the time interval specified in
-        /// <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their
-        /// previous session. Users are considered idle when they stop providing keyboard or mouse
-        /// input during their streaming session. File uploads and downloads, audio in, audio out,
-        /// and pixels changing do not qualify as user activity. If users continue to be idle after
-        /// the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are
-        /// disconnected.</p>
-        /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p>
-        /// <note>
+        /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before they are disconnected due to inactivity. If they try to reconnect to the streaming session before the time interval specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their previous session. Users are considered idle when they stop providing keyboard or mouse input during their streaming session. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as user activity. If users continue to be idle after the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected.</p>
+        /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p> <note>
         /// <p>If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity. </p>
         /// </note>
         pub fn set_idle_disconnect_timeout_in_seconds(
@@ -1964,28 +1792,24 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
-        ///
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
         pub fn iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.iam_role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
-        ///
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
         pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_iam_role_arn(input);
             self
         }
         /// <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>
-        ///
         /// <p>The default value is <code>APP</code>.</p>
         pub fn stream_view(mut self, input: crate::model::StreamView) -> Self {
             self.inner = self.inner.stream_view(input);
             self
         }
         /// <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>
-        ///
         /// <p>The default value is <code>APP</code>.</p>
         pub fn set_stream_view(
             mut self,
@@ -1994,14 +1818,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_stream_view(input);
             self
         }
-        /// <p>The fleet platform. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic
-        /// fleets. </p>
+        /// <p>The fleet platform. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets. </p>
         pub fn platform(mut self, input: crate::model::PlatformType) -> Self {
             self.inner = self.inner.platform(input);
             self
         }
-        /// <p>The fleet platform. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic
-        /// fleets. </p>
+        /// <p>The fleet platform. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets. </p>
         pub fn set_platform(
             mut self,
             input: std::option::Option<crate::model::PlatformType>,
@@ -2009,14 +1831,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_platform(input);
             self
         }
-        /// <p>The maximum concurrent sessions of the Elastic fleet. This is required for Elastic
-        /// fleets, and not allowed for other fleet types.</p>
+        /// <p>The maximum concurrent sessions of the Elastic fleet. This is required for Elastic fleets, and not allowed for other fleet types.</p>
         pub fn max_concurrent_sessions(mut self, input: i32) -> Self {
             self.inner = self.inner.max_concurrent_sessions(input);
             self
         }
-        /// <p>The maximum concurrent sessions of the Elastic fleet. This is required for Elastic
-        /// fleets, and not allowed for other fleet types.</p>
+        /// <p>The maximum concurrent sessions of the Elastic fleet. This is required for Elastic fleets, and not allowed for other fleet types.</p>
         pub fn set_max_concurrent_sessions(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_concurrent_sessions(input);
             self
@@ -2129,213 +1949,81 @@ pub mod fluent_builders {
             self.inner = self.inner.set_image_arn(input);
             self
         }
-        /// <p>The instance type to use when launching the image builder. The following instance types are available:</p>   
+        /// <p>The instance type to use when launching the image builder. The following instance types are available:</p>
         /// <ul>
-        /// <li>
-        /// <p>stream.standard.small</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.standard.medium</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.standard.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.3xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.6xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.12xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-desktop.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.12xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.16xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-pro.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-pro.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-pro.16xlarge</p>
-        /// </li>
+        /// <li> <p>stream.standard.small</p> </li>
+        /// <li> <p>stream.standard.medium</p> </li>
+        /// <li> <p>stream.standard.large</p> </li>
+        /// <li> <p>stream.compute.large</p> </li>
+        /// <li> <p>stream.compute.xlarge</p> </li>
+        /// <li> <p>stream.compute.2xlarge</p> </li>
+        /// <li> <p>stream.compute.4xlarge</p> </li>
+        /// <li> <p>stream.compute.8xlarge</p> </li>
+        /// <li> <p>stream.memory.large</p> </li>
+        /// <li> <p>stream.memory.xlarge</p> </li>
+        /// <li> <p>stream.memory.2xlarge</p> </li>
+        /// <li> <p>stream.memory.4xlarge</p> </li>
+        /// <li> <p>stream.memory.8xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.large</p> </li>
+        /// <li> <p>stream.memory.z1d.xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.2xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.3xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.6xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.12xlarge</p> </li>
+        /// <li> <p>stream.graphics-design.large</p> </li>
+        /// <li> <p>stream.graphics-design.xlarge</p> </li>
+        /// <li> <p>stream.graphics-design.2xlarge</p> </li>
+        /// <li> <p>stream.graphics-design.4xlarge</p> </li>
+        /// <li> <p>stream.graphics-desktop.2xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li>
+        /// <li> <p>stream.graphics-pro.4xlarge</p> </li>
+        /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
+        /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
         /// </ul>
         pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_type(input.into());
             self
         }
-        /// <p>The instance type to use when launching the image builder. The following instance types are available:</p>   
+        /// <p>The instance type to use when launching the image builder. The following instance types are available:</p>
         /// <ul>
-        /// <li>
-        /// <p>stream.standard.small</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.standard.medium</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.standard.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.3xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.6xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.12xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-desktop.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.12xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.16xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-pro.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-pro.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-pro.16xlarge</p>
-        /// </li>
+        /// <li> <p>stream.standard.small</p> </li>
+        /// <li> <p>stream.standard.medium</p> </li>
+        /// <li> <p>stream.standard.large</p> </li>
+        /// <li> <p>stream.compute.large</p> </li>
+        /// <li> <p>stream.compute.xlarge</p> </li>
+        /// <li> <p>stream.compute.2xlarge</p> </li>
+        /// <li> <p>stream.compute.4xlarge</p> </li>
+        /// <li> <p>stream.compute.8xlarge</p> </li>
+        /// <li> <p>stream.memory.large</p> </li>
+        /// <li> <p>stream.memory.xlarge</p> </li>
+        /// <li> <p>stream.memory.2xlarge</p> </li>
+        /// <li> <p>stream.memory.4xlarge</p> </li>
+        /// <li> <p>stream.memory.8xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.large</p> </li>
+        /// <li> <p>stream.memory.z1d.xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.2xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.3xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.6xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.12xlarge</p> </li>
+        /// <li> <p>stream.graphics-design.large</p> </li>
+        /// <li> <p>stream.graphics-design.xlarge</p> </li>
+        /// <li> <p>stream.graphics-design.2xlarge</p> </li>
+        /// <li> <p>stream.graphics-design.4xlarge</p> </li>
+        /// <li> <p>stream.graphics-desktop.2xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li>
+        /// <li> <p>stream.graphics-pro.4xlarge</p> </li>
+        /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
+        /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
         /// </ul>
         pub fn set_instance_type(
             mut self,
@@ -2378,14 +2066,12 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the image builder. To assume a role, the image builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
-        ///
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
         pub fn iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.iam_role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the image builder. To assume a role, the image builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
-        ///
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
         pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_iam_role_arn(input);
@@ -2435,12 +2121,9 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to associate with the image builder. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
-        ///
         /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
         /// <p>_ . : / = + \ - @</p>
-        ///
         /// <p>If you do not specify a value, the value is set to an empty string.</p>
-        ///
         /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
         pub fn tags(
             mut self,
@@ -2451,12 +2134,9 @@ pub mod fluent_builders {
             self
         }
         /// <p>The tags to associate with the image builder. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
-        ///
         /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
         /// <p>_ . : / = + \ - @</p>
-        ///
         /// <p>If you do not specify a value, the value is set to an empty string.</p>
-        ///
         /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
         pub fn set_tags(
             mut self,
@@ -2554,14 +2234,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The time that the streaming URL will be valid, in seconds.
-        /// Specify a value between 1 and 604800 seconds. The default is 3600 seconds.</p>
+        /// <p>The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds. The default is 3600 seconds.</p>
         pub fn validity(mut self, input: i64) -> Self {
             self.inner = self.inner.validity(input);
             self
         }
-        /// <p>The time that the streaming URL will be valid, in seconds.
-        /// Specify a value between 1 and 604800 seconds. The default is 3600 seconds.</p>
+        /// <p>The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds. The default is 3600 seconds.</p>
         pub fn set_validity(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_validity(input);
             self
@@ -2728,12 +2406,9 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to associate with the stack. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
-        ///
         /// <p>If you do not specify a value, the value is set to an empty string.</p>
-        ///
         /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
         /// <p>_ . : / = + \ - @</p>
-        ///
         /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
         pub fn tags(
             mut self,
@@ -2744,12 +2419,9 @@ pub mod fluent_builders {
             self
         }
         /// <p>The tags to associate with the stack. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
-        ///
         /// <p>If you do not specify a value, the value is set to an empty string.</p>
-        ///
         /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
         /// <p>_ . : / = + \ - @</p>
-        ///
         /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
         pub fn set_tags(
             mut self,
@@ -2884,14 +2556,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_user_id(input);
             self
         }
-        /// <p>The name of the application to launch after the session starts. This is the name that you specified
-        /// as <b>Name</b> in the Image Assistant. If your fleet is enabled for the <b>Desktop</b> stream view, you can also choose to launch directly to the operating system desktop. To do so, specify <b>Desktop</b>.</p>
+        /// <p>The name of the application to launch after the session starts. This is the name that you specified as <b>Name</b> in the Image Assistant. If your fleet is enabled for the <b>Desktop</b> stream view, you can also choose to launch directly to the operating system desktop. To do so, specify <b>Desktop</b>.</p>
         pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.application_id(input.into());
             self
         }
-        /// <p>The name of the application to launch after the session starts. This is the name that you specified
-        /// as <b>Name</b> in the Image Assistant. If your fleet is enabled for the <b>Desktop</b> stream view, you can also choose to launch directly to the operating system desktop. To do so, specify <b>Desktop</b>.</p>
+        /// <p>The name of the application to launch after the session starts. This is the name that you specified as <b>Name</b> in the Image Assistant. If your fleet is enabled for the <b>Desktop</b> stream view, you can also choose to launch directly to the operating system desktop. To do so, specify <b>Desktop</b>.</p>
         pub fn set_application_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2899,14 +2569,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_application_id(input);
             self
         }
-        /// <p>The time that the streaming URL will be valid, in seconds.
-        /// Specify a value between 1 and 604800 seconds. The default is 60 seconds.</p>
+        /// <p>The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds. The default is 60 seconds.</p>
         pub fn validity(mut self, input: i64) -> Self {
             self.inner = self.inner.validity(input);
             self
         }
-        /// <p>The time that the streaming URL will be valid, in seconds.
-        /// Specify a value between 1 and 604800 seconds. The default is 60 seconds.</p>
+        /// <p>The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds. The default is 60 seconds.</p>
         pub fn set_validity(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_validity(input);
             self
@@ -2928,9 +2596,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateUpdatedImage`.
     ///
     /// <p>Creates a new image with the latest Windows operating system updates, driver updates, and AppStream 2.0 agent software.</p>
-    ///
-    /// <p>For more information, see the "Update an Image by Using
-    /// Managed AppStream 2.0 Image Updates" section in <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/administer-images.html">Administer Your AppStream 2.0 Images</a>, in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
+    /// <p>For more information, see the "Update an Image by Using Managed AppStream 2.0 Image Updates" section in <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/administer-images.html">Administer Your AppStream 2.0 Images</a>, in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateUpdatedImage<
         C = aws_smithy_client::erase::DynConnector,
@@ -3200,36 +2866,28 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The email address of the user.</p>
-        ///
-        /// <note>
+        /// <p>The email address of the user.</p> <note>
         /// <p>Users' email addresses are case-sensitive. During login, if they specify an email address that doesn't use the same capitalization as the email address specified when their user pool account was created, a "user does not exist" error message displays.</p>
         /// </note>
         pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.user_name(input.into());
             self
         }
-        /// <p>The email address of the user.</p>
-        ///
-        /// <note>
+        /// <p>The email address of the user.</p> <note>
         /// <p>Users' email addresses are case-sensitive. During login, if they specify an email address that doesn't use the same capitalization as the email address specified when their user pool account was created, a "user does not exist" error message displays.</p>
         /// </note>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_user_name(input);
             self
         }
-        /// <p>The action to take for the welcome email that is sent to a user after the user is created in the user pool. If you specify SUPPRESS, no email is sent. If you specify RESEND, do not specify the first name or last name of the user. If the value is null, the email is sent. </p>
-        ///
-        /// <note>
+        /// <p>The action to take for the welcome email that is sent to a user after the user is created in the user pool. If you specify SUPPRESS, no email is sent. If you specify RESEND, do not specify the first name or last name of the user. If the value is null, the email is sent. </p> <note>
         /// <p>The temporary password in the welcome email is valid for only 7 days. If users don’t set their passwords within 7 days, you must send them a new welcome email.</p>
         /// </note>
         pub fn message_action(mut self, input: crate::model::MessageAction) -> Self {
             self.inner = self.inner.message_action(input);
             self
         }
-        /// <p>The action to take for the welcome email that is sent to a user after the user is created in the user pool. If you specify SUPPRESS, no email is sent. If you specify RESEND, do not specify the first name or last name of the user. If the value is null, the email is sent. </p>
-        ///
-        /// <note>
+        /// <p>The action to take for the welcome email that is sent to a user after the user is created in the user pool. If you specify SUPPRESS, no email is sent. If you specify RESEND, do not specify the first name or last name of the user. If the value is null, the email is sent. </p> <note>
         /// <p>The temporary password in the welcome email is valid for only 7 days. If users don’t set their passwords within 7 days, you must send them a new welcome email.</p>
         /// </note>
         pub fn set_message_action(
@@ -3558,8 +3216,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteImage`.
     ///
-    /// <p>Deletes the specified image. You cannot delete an image when it is in use.  
-    /// After you delete an image, you cannot provision new capacity using the image.</p>
+    /// <p>Deletes the specified image. You cannot delete an image when it is in use. After you delete an image, you cannot provision new capacity using the image.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteImage<
         C = aws_smithy_client::erase::DynConnector,
@@ -3969,18 +3626,14 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The email address of the user.</p>
-        ///
-        /// <note>
+        /// <p>The email address of the user.</p> <note>
         /// <p>Users' email addresses are case-sensitive.</p>
         /// </note>
         pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.user_name(input.into());
             self
         }
-        /// <p>The email address of the user.</p>
-        ///
-        /// <note>
+        /// <p>The email address of the user.</p> <note>
         /// <p>Users' email addresses are case-sensitive.</p>
         /// </note>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -4077,14 +3730,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_arns(input);
             self
         }
-        /// <p>The pagination token used to retrieve the next page of results for this
-        /// operation.</p>
+        /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The pagination token used to retrieve the next page of results for this
-        /// operation.</p>
+        /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4194,14 +3845,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The pagination token used to retrieve the next page of results for this
-        /// operation.</p>
+        /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The pagination token used to retrieve the next page of results for this
-        /// operation.</p>
+        /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4283,14 +3932,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_arns(input);
             self
         }
-        /// <p>The pagination token used to retrieve the next page of results for this
-        /// operation.</p>
+        /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The pagination token used to retrieve the next page of results for this
-        /// operation.</p>
+        /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4308,8 +3955,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeDirectoryConfigs`.
     ///
-    /// <p>Retrieves a list that describes one or more specified Directory Config objects for AppStream 2.0, if the names for these objects are provided. Otherwise, all Directory Config objects in the account are described. These objects include the configuration information required to join fleets and image builders to Microsoft Active Directory domains.
-    /// </p>
+    /// <p>Retrieves a list that describes one or more specified Directory Config objects for AppStream 2.0, if the names for these objects are provided. Otherwise, all Directory Config objects in the account are described. These objects include the configuration information required to join fleets and image builders to Microsoft Active Directory domains. </p>
     /// <p>Although the response syntax in this topic includes the account password, this password is not returned in the actual response.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDirectoryConfigs<
@@ -4825,9 +4471,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeSessions`.
     ///
-    /// <p>Retrieves a list that describes the streaming sessions for a specified stack and fleet. If a UserId is provided for the stack and fleet,
-    /// only streaming sessions for that user are described. If an authentication type is not provided,
-    /// the default is to authenticate users using a streaming URL.</p>
+    /// <p>Retrieves a list that describes the streaming sessions for a specified stack and fleet. If a UserId is provided for the stack and fleet, only streaming sessions for that user are described. If an authentication type is not provided, the default is to authenticate users using a streaming URL.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSessions<
         C = aws_smithy_client::erase::DynConnector,
@@ -4934,16 +4578,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_limit(input);
             self
         }
-        /// <p>The authentication method. Specify <code>API</code> for a user
-        /// authenticated using a streaming URL or <code>SAML</code> for a SAML federated user.
-        /// The default is to authenticate users using a streaming URL.</p>
+        /// <p>The authentication method. Specify <code>API</code> for a user authenticated using a streaming URL or <code>SAML</code> for a SAML federated user. The default is to authenticate users using a streaming URL.</p>
         pub fn authentication_type(mut self, input: crate::model::AuthenticationType) -> Self {
             self.inner = self.inner.authentication_type(input);
             self
         }
-        /// <p>The authentication method. Specify <code>API</code> for a user
-        /// authenticated using a streaming URL or <code>SAML</code> for a SAML federated user.
-        /// The default is to authenticate users using a streaming URL.</p>
+        /// <p>The authentication method. Specify <code>API</code> for a user authenticated using a streaming URL or <code>SAML</code> for a SAML federated user. The default is to authenticate users using a streaming URL.</p>
         pub fn set_authentication_type(
             mut self,
             input: std::option::Option<crate::model::AuthenticationType>,
@@ -5216,12 +4856,8 @@ pub mod fluent_builders {
     ///
     /// <p>Retrieves a list that describes the UserStackAssociation objects. You must specify either or both of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>The stack name</p>
-    /// </li>
-    /// <li>
-    /// <p>The user name (email address of the user associated with the stack) and the authentication type for the user</p>
-    /// </li>
+    /// <li> <p>The stack name</p> </li>
+    /// <li> <p>The user name (email address of the user associated with the stack) and the authentication type for the user</p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeUserStackAssociations<
@@ -5289,18 +4925,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_stack_name(input);
             self
         }
-        /// <p>The email address of the user who is associated with the stack.</p>
-        ///
-        /// <note>
+        /// <p>The email address of the user who is associated with the stack.</p> <note>
         /// <p>Users' email addresses are case-sensitive.</p>
         /// </note>
         pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.user_name(input.into());
             self
         }
-        /// <p>The email address of the user who is associated with the stack.</p>
-        ///
-        /// <note>
+        /// <p>The email address of the user who is associated with the stack.</p> <note>
         /// <p>Users' email addresses are case-sensitive.</p>
         /// </note>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -5400,18 +5032,14 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The email address of the user.</p>
-        ///
-        /// <note>
+        /// <p>The email address of the user.</p> <note>
         /// <p>Users' email addresses are case-sensitive.</p>
         /// </note>
         pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.user_name(input.into());
             self
         }
-        /// <p>The email address of the user.</p>
-        ///
-        /// <note>
+        /// <p>The email address of the user.</p> <note>
         /// <p>Users' email addresses are case-sensitive.</p>
         /// </note>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -5654,18 +5282,14 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The email address of the user.</p>
-        ///
-        /// <note>
+        /// <p>The email address of the user.</p> <note>
         /// <p>Users' email addresses are case-sensitive. During login, if they specify an email address that doesn't use the same capitalization as the email address specified when their user pool account was created, a "user does not exist" error message displays. </p>
         /// </note>
         pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.user_name(input.into());
             self
         }
-        /// <p>The email address of the user.</p>
-        ///
-        /// <note>
+        /// <p>The email address of the user.</p> <note>
         /// <p>Users' email addresses are case-sensitive. During login, if they specify an email address that doesn't use the same capitalization as the email address specified when their user pool account was created, a "user does not exist" error message displays. </p>
         /// </note>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -6283,11 +5907,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `TagResource`.
     ///
     /// <p>Adds or overwrites one or more tags for the specified AppStream 2.0 resource. You can tag AppStream 2.0 image builders, images, fleets, and stacks.</p>
-    /// <p>Each tag consists of a key and an optional value. If a resource already has a tag with the same key,
-    /// this operation updates its value.</p>
-    ///
-    /// <p>To list the current tags for your resources, use <a>ListTagsForResource</a>.
-    /// To disassociate tags from your resources, use <a>UntagResource</a>.</p>
+    /// <p>Each tag consists of a key and an optional value. If a resource already has a tag with the same key, this operation updates its value.</p>
+    /// <p>To list the current tags for your resources, use <code>ListTagsForResource</code>. To disassociate tags from your resources, use <code>UntagResource</code>.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
@@ -6360,9 +5981,7 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags to associate. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
-        ///
         /// <p>If you do not specify a value, the value is set to an empty string.</p>
-        ///
         /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
         /// <p>_ . : / = + \ - @</p>
         pub fn tags(
@@ -6374,9 +5993,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The tags to associate. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
-        ///
         /// <p>If you do not specify a value, the value is set to an empty string.</p>
-        ///
         /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
         /// <p>_ . : / = + \ - @</p>
         pub fn set_tags(
@@ -6392,7 +6009,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UntagResource`.
     ///
     /// <p>Disassociates one or more specified tags from the specified AppStream 2.0 resource.</p>
-    /// <p>To list the current tags for your resources, use <a>ListTagsForResource</a>.</p>
+    /// <p>To list the current tags for your resources, use <code>ListTagsForResource</code>.</p>
     /// <p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
@@ -6763,25 +6380,11 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateFleet`.
     ///
     /// <p>Updates the specified fleet.</p>
-    /// <p>If the fleet is in the <code>STOPPED</code> state, you can update any attribute except
-    /// the fleet name.</p>
-    /// <p>If the fleet is in the <code>RUNNING</code> state, you can update the following based
-    /// on the fleet type:</p>
+    /// <p>If the fleet is in the <code>STOPPED</code> state, you can update any attribute except the fleet name.</p>
+    /// <p>If the fleet is in the <code>RUNNING</code> state, you can update the following based on the fleet type:</p>
     /// <ul>
-    /// <li>
-    /// <p>Always-On and On-Demand fleet types</p>
-    /// <p>You can update the  <code>DisplayName</code>, <code>ComputeCapacity</code>,
-    /// <code>ImageARN</code>, <code>ImageName</code>,
-    /// <code>IdleDisconnectTimeoutInSeconds</code>, and
-    /// <code>DisconnectTimeoutInSeconds</code> attributes.</p>
-    /// </li>
-    /// <li>
-    /// <p>Elastic fleet type</p>
-    /// <p>You can update the  <code>DisplayName</code>,
-    /// <code>IdleDisconnectTimeoutInSeconds</code>,
-    /// <code>DisconnectTimeoutInSeconds</code>, <code>MaxConcurrentSessions</code>,
-    /// and <code>UsbDeviceFilterStrings</code> attributes.</p>
-    /// </li>
+    /// <li> <p>Always-On and On-Demand fleet types</p> <p>You can update the <code>DisplayName</code>, <code>ComputeCapacity</code>, <code>ImageARN</code>, <code>ImageName</code>, <code>IdleDisconnectTimeoutInSeconds</code>, and <code>DisconnectTimeoutInSeconds</code> attributes.</p> </li>
+    /// <li> <p>Elastic fleet type</p> <p>You can update the <code>DisplayName</code>, <code>IdleDisconnectTimeoutInSeconds</code>, <code>DisconnectTimeoutInSeconds</code>, <code>MaxConcurrentSessions</code>, and <code>UsbDeviceFilterStrings</code> attributes.</p> </li>
     /// </ul>
     /// <p>If the fleet is in the <code>STARTING</code> or <code>STOPPED</code> state, you can't update it.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -6872,114 +6475,44 @@ pub mod fluent_builders {
         }
         /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p>
         /// <ul>
-        /// <li>
-        /// <p>stream.standard.small</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.standard.medium</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.standard.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.3xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.6xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.12xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-desktop.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.12xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.16xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-pro.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-pro.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-pro.16xlarge</p>
-        /// </li>
+        /// <li> <p>stream.standard.small</p> </li>
+        /// <li> <p>stream.standard.medium</p> </li>
+        /// <li> <p>stream.standard.large</p> </li>
+        /// <li> <p>stream.compute.large</p> </li>
+        /// <li> <p>stream.compute.xlarge</p> </li>
+        /// <li> <p>stream.compute.2xlarge</p> </li>
+        /// <li> <p>stream.compute.4xlarge</p> </li>
+        /// <li> <p>stream.compute.8xlarge</p> </li>
+        /// <li> <p>stream.memory.large</p> </li>
+        /// <li> <p>stream.memory.xlarge</p> </li>
+        /// <li> <p>stream.memory.2xlarge</p> </li>
+        /// <li> <p>stream.memory.4xlarge</p> </li>
+        /// <li> <p>stream.memory.8xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.large</p> </li>
+        /// <li> <p>stream.memory.z1d.xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.2xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.3xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.6xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.12xlarge</p> </li>
+        /// <li> <p>stream.graphics-design.large</p> </li>
+        /// <li> <p>stream.graphics-design.xlarge</p> </li>
+        /// <li> <p>stream.graphics-design.2xlarge</p> </li>
+        /// <li> <p>stream.graphics-design.4xlarge</p> </li>
+        /// <li> <p>stream.graphics-desktop.2xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li>
+        /// <li> <p>stream.graphics-pro.4xlarge</p> </li>
+        /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
+        /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
         /// </ul>
         /// <p>The following instance types are available for Elastic fleets:</p>
         /// <ul>
-        /// <li>
-        /// <p>stream.standard.small</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.standard.medium</p>
-        /// </li>
+        /// <li> <p>stream.standard.small</p> </li>
+        /// <li> <p>stream.standard.medium</p> </li>
         /// </ul>
         pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_type(input.into());
@@ -6987,114 +6520,44 @@ pub mod fluent_builders {
         }
         /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p>
         /// <ul>
-        /// <li>
-        /// <p>stream.standard.small</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.standard.medium</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.standard.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.compute.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.3xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.6xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.memory.z1d.12xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.large</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-design.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-desktop.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.2xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.12xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics.g4dn.16xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-pro.4xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-pro.8xlarge</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.graphics-pro.16xlarge</p>
-        /// </li>
+        /// <li> <p>stream.standard.small</p> </li>
+        /// <li> <p>stream.standard.medium</p> </li>
+        /// <li> <p>stream.standard.large</p> </li>
+        /// <li> <p>stream.compute.large</p> </li>
+        /// <li> <p>stream.compute.xlarge</p> </li>
+        /// <li> <p>stream.compute.2xlarge</p> </li>
+        /// <li> <p>stream.compute.4xlarge</p> </li>
+        /// <li> <p>stream.compute.8xlarge</p> </li>
+        /// <li> <p>stream.memory.large</p> </li>
+        /// <li> <p>stream.memory.xlarge</p> </li>
+        /// <li> <p>stream.memory.2xlarge</p> </li>
+        /// <li> <p>stream.memory.4xlarge</p> </li>
+        /// <li> <p>stream.memory.8xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.large</p> </li>
+        /// <li> <p>stream.memory.z1d.xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.2xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.3xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.6xlarge</p> </li>
+        /// <li> <p>stream.memory.z1d.12xlarge</p> </li>
+        /// <li> <p>stream.graphics-design.large</p> </li>
+        /// <li> <p>stream.graphics-design.xlarge</p> </li>
+        /// <li> <p>stream.graphics-design.2xlarge</p> </li>
+        /// <li> <p>stream.graphics-design.4xlarge</p> </li>
+        /// <li> <p>stream.graphics-desktop.2xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li>
+        /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li>
+        /// <li> <p>stream.graphics-pro.4xlarge</p> </li>
+        /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
+        /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
         /// </ul>
         /// <p>The following instance types are available for Elastic fleets:</p>
         /// <ul>
-        /// <li>
-        /// <p>stream.standard.small</p>
-        /// </li>
-        /// <li>
-        /// <p>stream.standard.medium</p>
-        /// </li>
+        /// <li> <p>stream.standard.small</p> </li>
+        /// <li> <p>stream.standard.medium</p> </li>
         /// </ul>
         pub fn set_instance_type(
             mut self,
@@ -7212,38 +6675,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain_join_info(input);
             self
         }
-        /// <p>The amount of time that users can be idle (inactive) before they are disconnected
-        /// from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time
-        /// interval begins. Users are notified before they are disconnected due to inactivity. If
-        /// users try to reconnect to the streaming session before the time interval specified in
-        /// <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their
-        /// previous session. Users are considered idle when they stop providing keyboard or mouse
-        /// input during their streaming session. File uploads and downloads, audio in, audio out,
-        /// and pixels changing do not qualify as user activity. If users continue to be idle after
-        /// the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are
-        /// disconnected. </p>
-        /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p>
-        ///
-        /// <note>
+        /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before they are disconnected due to inactivity. If users try to reconnect to the streaming session before the time interval specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their previous session. Users are considered idle when they stop providing keyboard or mouse input during their streaming session. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as user activity. If users continue to be idle after the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected. </p>
+        /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p> <note>
         /// <p>If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity. </p>
         /// </note>
         pub fn idle_disconnect_timeout_in_seconds(mut self, input: i32) -> Self {
             self.inner = self.inner.idle_disconnect_timeout_in_seconds(input);
             self
         }
-        /// <p>The amount of time that users can be idle (inactive) before they are disconnected
-        /// from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time
-        /// interval begins. Users are notified before they are disconnected due to inactivity. If
-        /// users try to reconnect to the streaming session before the time interval specified in
-        /// <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their
-        /// previous session. Users are considered idle when they stop providing keyboard or mouse
-        /// input during their streaming session. File uploads and downloads, audio in, audio out,
-        /// and pixels changing do not qualify as user activity. If users continue to be idle after
-        /// the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are
-        /// disconnected. </p>
-        /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p>
-        ///
-        /// <note>
+        /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before they are disconnected due to inactivity. If users try to reconnect to the streaming session before the time interval specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their previous session. Users are considered idle when they stop providing keyboard or mouse input during their streaming session. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as user activity. If users continue to be idle after the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected. </p>
+        /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p> <note>
         /// <p>If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity. </p>
         /// </note>
         pub fn set_idle_disconnect_timeout_in_seconds(
@@ -7271,28 +6712,24 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
-        ///
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
         pub fn iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.iam_role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
-        ///
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
         pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_iam_role_arn(input);
             self
         }
         /// <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>
-        ///
         /// <p>The default value is <code>APP</code>.</p>
         pub fn stream_view(mut self, input: crate::model::StreamView) -> Self {
             self.inner = self.inner.stream_view(input);
             self
         }
         /// <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>
-        ///
         /// <p>The default value is <code>APP</code>.</p>
         pub fn set_stream_view(
             mut self,

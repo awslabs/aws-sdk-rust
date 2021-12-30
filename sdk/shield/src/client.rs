@@ -439,9 +439,7 @@ pub mod fluent_builders {
     ///
     /// <p>Authorizes the Shield Response Team (SRT) using the specified role, to access your Amazon Web Services account to assist with DDoS attack mitigation during potential attacks. This enables the SRT to inspect your WAF configuration and create or update WAF rules and web ACLs.</p>
     /// <p>You can associate only one <code>RoleArn</code> with your subscription. If you submit an <code>AssociateDRTRole</code> request for an account that already has an associated role, the new <code>RoleArn</code> will replace the existing <code>RoleArn</code>. </p>
-    /// <p>Prior to making the <code>AssociateDRTRole</code> request, you must attach the <code>AWSShieldDRTAccessPolicy</code> managed policy to the role that you'll specify in the request. You can access this policy in the IAM console at <a href="https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSShieldDRTAccessPolicy">AWSShieldDRTAccessPolicy</a>. For more information see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html">Adding and removing IAM identity permissions</a>. The role must also trust the service principal
-    /// <code>drt.shield.amazonaws.com</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">IAM JSON policy elements: Principal</a>.</p>
-    ///
+    /// <p>Prior to making the <code>AssociateDRTRole</code> request, you must attach the <code>AWSShieldDRTAccessPolicy</code> managed policy to the role that you'll specify in the request. You can access this policy in the IAM console at <a href="https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSShieldDRTAccessPolicy">AWSShieldDRTAccessPolicy</a>. For more information see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html">Adding and removing IAM identity permissions</a>. The role must also trust the service principal <code>drt.shield.amazonaws.com</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">IAM JSON policy elements: Principal</a>.</p>
     /// <p>The SRT will have access only to your WAF and Shield resources. By submitting this request, you authorize the SRT to inspect your WAF and Shield configuration and create and update WAF rules and web ACLs on your behalf. The SRT takes these actions only if explicitly authorized by you.</p>
     /// <p>You must have the <code>iam:PassRole</code> permission to make an <code>AssociateDRTRole</code> request. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">Granting a user permissions to pass a role to an Amazon Web Services service</a>. </p>
     /// <p>To use the services of the SRT and make an <code>AssociateDRTRole</code> request, you must be subscribed to the <a href="https://docs.aws.amazon.com/premiumsupport/business-support/">Business Support plan</a> or the <a href="https://docs.aws.amazon.com/premiumsupport/enterprise-support/">Enterprise Support plan</a>.</p>
@@ -502,13 +500,13 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the role the SRT will use to access your Amazon Web Services account.</p>
-        /// <p>Prior to making the <code>AssociateDRTRole</code> request, you must attach the <a href="https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSShieldDRTAccessPolicy">AWSShieldDRTAccessPolicy</a> managed policy to this role.  For more information see <a href=" https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html">Attaching and Detaching IAM Policies</a>.</p>
+        /// <p>Prior to making the <code>AssociateDRTRole</code> request, you must attach the <a href="https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSShieldDRTAccessPolicy">AWSShieldDRTAccessPolicy</a> managed policy to this role. For more information see <a href=" https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html">Attaching and Detaching IAM Policies</a>.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the role the SRT will use to access your Amazon Web Services account.</p>
-        /// <p>Prior to making the <code>AssociateDRTRole</code> request, you must attach the <a href="https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSShieldDRTAccessPolicy">AWSShieldDRTAccessPolicy</a> managed policy to this role.  For more information see <a href=" https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html">Attaching and Detaching IAM Policies</a>.</p>
+        /// <p>Prior to making the <code>AssociateDRTRole</code> request, you must attach the <a href="https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSShieldDRTAccessPolicy">AWSShieldDRTAccessPolicy</a> managed policy to this role. For more information see <a href=" https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html">Attaching and Detaching IAM Policies</a>.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
@@ -516,8 +514,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `AssociateHealthCheck`.
     ///
-    /// <p>Adds health-based detection to the Shield Advanced protection for a resource. Shield Advanced health-based detection uses the health of your Amazon Web Services resource to improve responsiveness and accuracy in attack detection and response.  </p>
-    /// <p>You define the health check in Route 53 and then associate it with your Shield Advanced protection. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/ddos-overview.html#ddos-advanced-health-check-option">Shield Advanced Health-Based Detection</a> in the <i>WAF Developer Guide</i>. </p>
+    /// <p>Adds health-based detection to the Shield Advanced protection for a resource. Shield Advanced health-based detection uses the health of your Amazon Web Services resource to improve responsiveness and accuracy in attack detection and response. </p>
+    /// <p>You define the health check in Route&nbsp;53 and then associate it with your Shield Advanced protection. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/ddos-overview.html#ddos-advanced-health-check-option">Shield Advanced Health-Based Detection</a> in the <i>WAF Developer Guide</i>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateHealthCheck<
         C = aws_smithy_client::erase::DynConnector,
@@ -574,12 +572,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique identifier (ID) for the <a>Protection</a> object to add the health check association to. </p>
+        /// <p>The unique identifier (ID) for the <code>Protection</code> object to add the health check association to. </p>
         pub fn protection_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.protection_id(input.into());
             self
         }
-        /// <p>The unique identifier (ID) for the <a>Protection</a> object to add the health check association to. </p>
+        /// <p>The unique identifier (ID) for the <code>Protection</code> object to add the health check association to. </p>
         pub fn set_protection_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -604,10 +602,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AssociateProactiveEngagementDetails`.
     ///
     /// <p>Initializes proactive engagement and sets the list of contacts for the Shield Response Team (SRT) to use. You must provide at least one phone number in the emergency contact list. </p>
-    /// <p>After you have initialized proactive engagement using this call, to disable or enable proactive engagement, use the calls <code>DisableProactiveEngagement</code> and <code>EnableProactiveEngagement</code>.  </p>
-    /// <note>
+    /// <p>After you have initialized proactive engagement using this call, to disable or enable proactive engagement, use the calls <code>DisableProactiveEngagement</code> and <code>EnableProactiveEngagement</code>. </p> <note>
     /// <p>This call defines the list of email addresses and phone numbers that the SRT can use to contact you for escalations to the SRT and to initiate proactive customer support.</p>
-    /// <p>The contacts that you provide in the request replace any contacts that were already defined. If you already have contacts defined and want to use them, retrieve the list using <code>DescribeEmergencyContactSettings</code> and then provide it to this call.  </p>
+    /// <p>The contacts that you provide in the request replace any contacts that were already defined. If you already have contacts defined and want to use them, retrieve the list using <code>DescribeEmergencyContactSettings</code> and then provide it to this call. </p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateProactiveEngagementDetails<
@@ -672,18 +669,16 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_emergency_contact_list`](Self::set_emergency_contact_list).
         ///
         /// <p>A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you for escalations to the SRT and to initiate proactive customer support. </p>
-        /// <p>To enable proactive engagement, the contact list must include at least one phone number.</p>
-        /// <note>
-        /// <p>The contacts that you provide here replace any contacts that were already defined. If you already have contacts defined and want to use them, retrieve the list using <code>DescribeEmergencyContactSettings</code> and then provide it here.  </p>
+        /// <p>To enable proactive engagement, the contact list must include at least one phone number.</p> <note>
+        /// <p>The contacts that you provide here replace any contacts that were already defined. If you already have contacts defined and want to use them, retrieve the list using <code>DescribeEmergencyContactSettings</code> and then provide it here. </p>
         /// </note>
         pub fn emergency_contact_list(mut self, input: crate::model::EmergencyContact) -> Self {
             self.inner = self.inner.emergency_contact_list(input);
             self
         }
         /// <p>A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you for escalations to the SRT and to initiate proactive customer support. </p>
-        /// <p>To enable proactive engagement, the contact list must include at least one phone number.</p>
-        /// <note>
-        /// <p>The contacts that you provide here replace any contacts that were already defined. If you already have contacts defined and want to use them, retrieve the list using <code>DescribeEmergencyContactSettings</code> and then provide it here.  </p>
+        /// <p>To enable proactive engagement, the contact list must include at least one phone number.</p> <note>
+        /// <p>The contacts that you provide here replace any contacts that were already defined. If you already have contacts defined and want to use them, retrieve the list using <code>DescribeEmergencyContactSettings</code> and then provide it here. </p>
         /// </note>
         pub fn set_emergency_contact_list(
             mut self,
@@ -695,12 +690,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateProtection`.
     ///
-    /// <p>Enables Shield Advanced for a specific Amazon Web Services resource. The resource can be an Amazon CloudFront distribution, Elastic Load Balancing load balancer, Global Accelerator accelerator, Elastic IP Address, or an Amazon Route 53 hosted zone.</p>
-    /// <p>You can add protection to only a single resource with each <code>CreateProtection</code> request. You can add protection to multiple resources
-    /// at once through the Shield Advanced console at <a href="https://console.aws.amazon.com/wafv2/shieldv2#/">https://console.aws.amazon.com/wafv2/shieldv2#/</a>.
-    /// For more information see
-    /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/getting-started-ddos.html">Getting Started with Shield Advanced</a>
-    /// and <a href="https://docs.aws.amazon.com/waf/latest/developerguide/configure-new-protection.html">Adding Shield Advanced protection to Amazon Web Services resources</a>.</p>
+    /// <p>Enables Shield Advanced for a specific Amazon Web Services resource. The resource can be an Amazon CloudFront distribution, Elastic Load Balancing load balancer, Global Accelerator accelerator, Elastic IP Address, or an Amazon Route&nbsp;53 hosted zone.</p>
+    /// <p>You can add protection to only a single resource with each <code>CreateProtection</code> request. You can add protection to multiple resources at once through the Shield Advanced console at <a href="https://console.aws.amazon.com/wafv2/shieldv2#/">https://console.aws.amazon.com/wafv2/shieldv2#/</a>. For more information see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/getting-started-ddos.html">Getting Started with Shield Advanced</a> and <a href="https://docs.aws.amazon.com/waf/latest/developerguide/configure-new-protection.html">Adding Shield Advanced protection to Amazon Web Services resources</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateProtection<
         C = aws_smithy_client::erase::DynConnector,
@@ -770,36 +761,12 @@ pub mod fluent_builders {
         /// <p>The ARN (Amazon Resource Name) of the resource to be protected.</p>
         /// <p>The ARN should be in one of the following formats:</p>
         /// <ul>
-        /// <li>
-        /// <p>For an Application Load Balancer: <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>For an Elastic Load Balancer (Classic Load Balancer): <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/<i>load-balancer-name</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>For an Amazon CloudFront distribution: <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>For an Global Accelerator accelerator: <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>For Amazon Route 53: <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>For an Elastic IP address: <code>arn:aws:ec2:<i>region</i>:<i>account-id</i>:eip-allocation/<i>allocation-id</i>
-        /// </code>
-        /// </p>
-        /// </li>
+        /// <li> <p>For an Application Load Balancer: <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> </p> </li>
+        /// <li> <p>For an Elastic Load Balancer (Classic Load Balancer): <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/<i>load-balancer-name</i> </code> </p> </li>
+        /// <li> <p>For an Amazon CloudFront distribution: <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i> </code> </p> </li>
+        /// <li> <p>For an Global Accelerator accelerator: <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i> </code> </p> </li>
+        /// <li> <p>For Amazon Route&nbsp;53: <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code> </p> </li>
+        /// <li> <p>For an Elastic IP address: <code>arn:aws:ec2:<i>region</i>:<i>account-id</i>:eip-allocation/<i>allocation-id</i> </code> </p> </li>
         /// </ul>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
@@ -808,36 +775,12 @@ pub mod fluent_builders {
         /// <p>The ARN (Amazon Resource Name) of the resource to be protected.</p>
         /// <p>The ARN should be in one of the following formats:</p>
         /// <ul>
-        /// <li>
-        /// <p>For an Application Load Balancer: <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>For an Elastic Load Balancer (Classic Load Balancer): <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/<i>load-balancer-name</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>For an Amazon CloudFront distribution: <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>For an Global Accelerator accelerator: <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>For Amazon Route 53: <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i>
-        /// </code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>For an Elastic IP address: <code>arn:aws:ec2:<i>region</i>:<i>account-id</i>:eip-allocation/<i>allocation-id</i>
-        /// </code>
-        /// </p>
-        /// </li>
+        /// <li> <p>For an Application Load Balancer: <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> </p> </li>
+        /// <li> <p>For an Elastic Load Balancer (Classic Load Balancer): <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/<i>load-balancer-name</i> </code> </p> </li>
+        /// <li> <p>For an Amazon CloudFront distribution: <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i> </code> </p> </li>
+        /// <li> <p>For an Global Accelerator accelerator: <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i> </code> </p> </li>
+        /// <li> <p>For Amazon Route&nbsp;53: <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code> </p> </li>
+        /// <li> <p>For an Elastic IP address: <code>arn:aws:ec2:<i>region</i>:<i>account-id</i>:eip-allocation/<i>allocation-id</i> </code> </p> </li>
         /// </ul>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
@@ -847,12 +790,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>One or more tag key-value pairs for the <a>Protection</a> object that is created.</p>
+        /// <p>One or more tag key-value pairs for the <code>Protection</code> object that is created.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>One or more tag key-value pairs for the <a>Protection</a> object that is created.</p>
+        /// <p>One or more tag key-value pairs for the <code>Protection</code> object that is created.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -935,15 +878,9 @@ pub mod fluent_builders {
         }
         /// <p>Defines how Shield combines resource data for the group in order to detect, mitigate, and report events.</p>
         /// <ul>
-        /// <li>
-        /// <p>Sum - Use the total traffic across the group. This is a good choice for most cases. Examples include Elastic IP addresses for EC2 instances that scale manually or automatically.</p>
-        /// </li>
-        /// <li>
-        /// <p>Mean - Use the average of the traffic across the group. This is a good choice for resources that share traffic uniformly. Examples include accelerators and load balancers.</p>
-        /// </li>
-        /// <li>
-        /// <p>Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront and origin resources for CloudFront distributions.</p>
-        /// </li>
+        /// <li> <p>Sum - Use the total traffic across the group. This is a good choice for most cases. Examples include Elastic IP addresses for EC2 instances that scale manually or automatically.</p> </li>
+        /// <li> <p>Mean - Use the average of the traffic across the group. This is a good choice for resources that share traffic uniformly. Examples include accelerators and load balancers.</p> </li>
+        /// <li> <p>Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront and origin resources for CloudFront distributions.</p> </li>
         /// </ul>
         pub fn aggregation(mut self, input: crate::model::ProtectionGroupAggregation) -> Self {
             self.inner = self.inner.aggregation(input);
@@ -951,15 +888,9 @@ pub mod fluent_builders {
         }
         /// <p>Defines how Shield combines resource data for the group in order to detect, mitigate, and report events.</p>
         /// <ul>
-        /// <li>
-        /// <p>Sum - Use the total traffic across the group. This is a good choice for most cases. Examples include Elastic IP addresses for EC2 instances that scale manually or automatically.</p>
-        /// </li>
-        /// <li>
-        /// <p>Mean - Use the average of the traffic across the group. This is a good choice for resources that share traffic uniformly. Examples include accelerators and load balancers.</p>
-        /// </li>
-        /// <li>
-        /// <p>Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront and origin resources for CloudFront distributions.</p>
-        /// </li>
+        /// <li> <p>Sum - Use the total traffic across the group. This is a good choice for most cases. Examples include Elastic IP addresses for EC2 instances that scale manually or automatically.</p> </li>
+        /// <li> <p>Mean - Use the average of the traffic across the group. This is a good choice for resources that share traffic uniformly. Examples include accelerators and load balancers.</p> </li>
+        /// <li> <p>Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront and origin resources for CloudFront distributions.</p> </li>
         /// </ul>
         pub fn set_aggregation(
             mut self,
@@ -981,14 +912,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_pattern(input);
             self
         }
-        /// <p>The resource type to include in the protection group. All protected resources of this type are included in the protection group. Newly protected resources of this type are automatically added to the group.
-        /// You must set this when you set <code>Pattern</code> to <code>BY_RESOURCE_TYPE</code> and you must not set it for any other <code>Pattern</code> setting. </p>
+        /// <p>The resource type to include in the protection group. All protected resources of this type are included in the protection group. Newly protected resources of this type are automatically added to the group. You must set this when you set <code>Pattern</code> to <code>BY_RESOURCE_TYPE</code> and you must not set it for any other <code>Pattern</code> setting. </p>
         pub fn resource_type(mut self, input: crate::model::ProtectedResourceType) -> Self {
             self.inner = self.inner.resource_type(input);
             self
         }
-        /// <p>The resource type to include in the protection group. All protected resources of this type are included in the protection group. Newly protected resources of this type are automatically added to the group.
-        /// You must set this when you set <code>Pattern</code> to <code>BY_RESOURCE_TYPE</code> and you must not set it for any other <code>Pattern</code> setting. </p>
+        /// <p>The resource type to include in the protection group. All protected resources of this type are included in the protection group. Newly protected resources of this type are automatically added to the group. You must set this when you set <code>Pattern</code> to <code>BY_RESOURCE_TYPE</code> and you must not set it for any other <code>Pattern</code> setting. </p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ProtectedResourceType>,
@@ -1034,8 +963,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateSubscription`.
     ///
     /// <p>Activates Shield Advanced for an account.</p>
-    ///
-    /// <p>When you initally create a subscription, your subscription is set to be automatically renewed at the end of the existing subscription period.  You can change this by submitting an <code>UpdateSubscription</code> request. </p>
+    /// <p>When you initally create a subscription, your subscription is set to be automatically renewed at the end of the existing subscription period. You can change this by submitting an <code>UpdateSubscription</code> request. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSubscription<
         C = aws_smithy_client::erase::DynConnector,
@@ -1095,7 +1023,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteProtection`.
     ///
-    /// <p>Deletes an Shield Advanced <a>Protection</a>.</p>
+    /// <p>Deletes an Shield Advanced <code>Protection</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteProtection<
         C = aws_smithy_client::erase::DynConnector,
@@ -1152,14 +1080,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique identifier (ID) for the <a>Protection</a> object to be
-        /// deleted.</p>
+        /// <p>The unique identifier (ID) for the <code>Protection</code> object to be deleted.</p>
         pub fn protection_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.protection_id(input.into());
             self
         }
-        /// <p>The unique identifier (ID) for the <a>Protection</a> object to be
-        /// deleted.</p>
+        /// <p>The unique identifier (ID) for the <code>Protection</code> object to be deleted.</p>
         pub fn set_protection_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1555,7 +1481,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeProtection`.
     ///
-    /// <p>Lists the details of a <a>Protection</a> object.</p>
+    /// <p>Lists the details of a <code>Protection</code> object.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeProtection<
         C = aws_smithy_client::erase::DynConnector,
@@ -1612,14 +1538,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique identifier (ID) for the <a>Protection</a> object that is
-        /// described. When submitting the <code>DescribeProtection</code> request you must provide either the <code>ResourceArn</code> or the <code>ProtectionID</code>, but not both.</p>
+        /// <p>The unique identifier (ID) for the <code>Protection</code> object that is described. When submitting the <code>DescribeProtection</code> request you must provide either the <code>ResourceArn</code> or the <code>ProtectionID</code>, but not both.</p>
         pub fn protection_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.protection_id(input.into());
             self
         }
-        /// <p>The unique identifier (ID) for the <a>Protection</a> object that is
-        /// described. When submitting the <code>DescribeProtection</code> request you must provide either the <code>ResourceArn</code> or the <code>ProtectionID</code>, but not both.</p>
+        /// <p>The unique identifier (ID) for the <code>Protection</code> object that is described. When submitting the <code>DescribeProtection</code> request you must provide either the <code>ResourceArn</code> or the <code>ProtectionID</code>, but not both.</p>
         pub fn set_protection_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1627,14 +1551,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_protection_id(input);
             self
         }
-        /// <p>The ARN (Amazon Resource Name) of the Amazon Web Services resource for the <a>Protection</a> object that is
-        /// described. When submitting the <code>DescribeProtection</code> request you must provide either the <code>ResourceArn</code> or the <code>ProtectionID</code>, but not both.</p>
+        /// <p>The ARN (Amazon Resource Name) of the Amazon Web Services resource for the <code>Protection</code> object that is described. When submitting the <code>DescribeProtection</code> request you must provide either the <code>ResourceArn</code> or the <code>ProtectionID</code>, but not both.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The ARN (Amazon Resource Name) of the Amazon Web Services resource for the <a>Protection</a> object that is
-        /// described. When submitting the <code>DescribeProtection</code> request you must provide either the <code>ResourceArn</code> or the <code>ProtectionID</code>, but not both.</p>
+        /// <p>The ARN (Amazon Resource Name) of the Amazon Web Services resource for the <code>Protection</code> object that is described. When submitting the <code>DescribeProtection</code> request you must provide either the <code>ResourceArn</code> or the <code>ProtectionID</code>, but not both.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -1775,8 +1697,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisableApplicationLayerAutomaticResponse`.
     ///
-    /// <p>Disable the Shield Advanced automatic application layer DDoS mitigation feature for the resource. This
-    /// stops Shield Advanced from creating, verifying, and applying WAF rules for attacks that it detects for the resource. </p>
+    /// <p>Disable the Shield Advanced automatic application layer DDoS mitigation feature for the resource. This stops Shield Advanced from creating, verifying, and applying WAF rules for attacks that it detects for the resource. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisableApplicationLayerAutomaticResponse<
         C = aws_smithy_client::erase::DynConnector,
@@ -2039,7 +1960,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateHealthCheck`.
     ///
     /// <p>Removes health-based detection from the Shield Advanced protection for a resource. Shield Advanced health-based detection uses the health of your Amazon Web Services resource to improve responsiveness and accuracy in attack detection and response. </p>
-    /// <p>You define the health check in Route 53 and then associate or disassociate it with your Shield Advanced protection. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/ddos-overview.html#ddos-advanced-health-check-option">Shield Advanced Health-Based Detection</a> in the <i>WAF Developer Guide</i>. </p>
+    /// <p>You define the health check in Route&nbsp;53 and then associate or disassociate it with your Shield Advanced protection. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/ddos-overview.html#ddos-advanced-health-check-option">Shield Advanced Health-Based Detection</a> in the <i>WAF Developer Guide</i>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateHealthCheck<
         C = aws_smithy_client::erase::DynConnector,
@@ -2096,12 +2017,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique identifier (ID) for the <a>Protection</a> object to remove the health check association from. </p>
+        /// <p>The unique identifier (ID) for the <code>Protection</code> object to remove the health check association from. </p>
         pub fn protection_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.protection_id(input.into());
             self
         }
-        /// <p>The unique identifier (ID) for the <a>Protection</a> object to remove the health check association from. </p>
+        /// <p>The unique identifier (ID) for the <code>Protection</code> object to remove the health check association from. </p>
         pub fn set_protection_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2125,20 +2046,13 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `EnableApplicationLayerAutomaticResponse`.
     ///
-    /// <p>Enable the Shield Advanced automatic application layer DDoS mitigation for the resource. </p>
-    /// <note>
+    /// <p>Enable the Shield Advanced automatic application layer DDoS mitigation for the resource. </p> <note>
     /// <p>This feature is available for Amazon CloudFront distributions only.</p>
     /// </note>
-    /// <p>This causes Shield Advanced to create, verify, and apply WAF rules for DDoS attacks that it detects for the
-    /// resource. Shield Advanced applies the rules in a Shield rule group inside the web ACL that you've associated
-    /// with the resource. For information about how automatic mitigation works and the requirements for using it, see
-    /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/ddos-advanced-automatic-app-layer-response.html">Shield Advanced automatic application layer DDoS mitigation</a>.</p>
-    /// <p>Don't use this action to make changes to automatic mitigation settings when it's already enabled for a resource. Instead, use <a>UpdateApplicationLayerAutomaticResponse</a>.</p>
-    /// <p>To use this feature, you must associate a web ACL with the protected resource. The web ACL must be created using the latest version of WAF (v2). You can associate the web ACL through the Shield Advanced console
-    /// at <a href="https://console.aws.amazon.com/wafv2/shieldv2#/">https://console.aws.amazon.com/wafv2/shieldv2#/</a>. For more information,
-    /// see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/getting-started-ddos.html">Getting Started with Shield Advanced</a>.</p>
-    /// <p>You can also do this through the WAF console or the WAF API, but you must manage Shield Advanced automatic mitigation through Shield Advanced. For information about WAF, see
-    /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">WAF Developer Guide</a>.</p>
+    /// <p>This causes Shield Advanced to create, verify, and apply WAF rules for DDoS attacks that it detects for the resource. Shield Advanced applies the rules in a Shield rule group inside the web ACL that you've associated with the resource. For information about how automatic mitigation works and the requirements for using it, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/ddos-advanced-automatic-app-layer-response.html">Shield Advanced automatic application layer DDoS mitigation</a>.</p>
+    /// <p>Don't use this action to make changes to automatic mitigation settings when it's already enabled for a resource. Instead, use <code>UpdateApplicationLayerAutomaticResponse</code>.</p>
+    /// <p>To use this feature, you must associate a web ACL with the protected resource. The web ACL must be created using the latest version of WAF (v2). You can associate the web ACL through the Shield Advanced console at <a href="https://console.aws.amazon.com/wafv2/shieldv2#/">https://console.aws.amazon.com/wafv2/shieldv2#/</a>. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/getting-started-ddos.html">Getting Started with Shield Advanced</a>.</p>
+    /// <p>You can also do this through the WAF console or the WAF API, but you must manage Shield Advanced automatic mitigation through Shield Advanced. For information about WAF, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">WAF Developer Guide</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableApplicationLayerAutomaticResponse<
         C = aws_smithy_client::erase::DynConnector,
@@ -2207,16 +2121,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_arn(input);
             self
         }
-        /// <p>Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the
-        /// protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature,
-        /// when you enable or update automatic mitigation. Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource. </p>
+        /// <p>Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature, when you enable or update automatic mitigation. Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource. </p>
         pub fn action(mut self, input: crate::model::ResponseAction) -> Self {
             self.inner = self.inner.action(input);
             self
         }
-        /// <p>Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the
-        /// protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature,
-        /// when you enable or update automatic mitigation. Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource. </p>
+        /// <p>Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature, when you enable or update automatic mitigation. Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource. </p>
         pub fn set_action(
             mut self,
             input: std::option::Option<crate::model::ResponseAction>,
@@ -2347,8 +2257,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAttacks`.
     ///
-    /// <p>Returns all ongoing DDoS attacks or all DDoS attacks during a specified time
-    /// period.</p>
+    /// <p>Returns all ongoing DDoS attacks or all DDoS attacks during a specified time period.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAttacks<
         C = aws_smithy_client::erase::DynConnector,
@@ -2409,14 +2318,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
         ///
-        /// <p>The ARNs (Amazon Resource Names) of the resources that were attacked. If you leave this
-        /// blank, all applicable resources for this account will be included.</p>
+        /// <p>The ARNs (Amazon Resource Names) of the resources that were attacked. If you leave this blank, all applicable resources for this account will be included.</p>
         pub fn resource_arns(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arns(input.into());
             self
         }
-        /// <p>The ARNs (Amazon Resource Names) of the resources that were attacked. If you leave this
-        /// blank, all applicable resources for this account will be included.</p>
+        /// <p>The ARNs (Amazon Resource Names) of the resources that were attacked. If you leave this blank, all applicable resources for this account will be included.</p>
         pub fn set_resource_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2424,14 +2331,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_arns(input);
             self
         }
-        /// <p>The start of the time period for the attacks. This is a <code>timestamp</code> type. The request syntax listing for this call indicates a <code>number</code> type,
-        /// but you can provide the time in any valid <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">timestamp format</a> setting.  </p>
+        /// <p>The start of the time period for the attacks. This is a <code>timestamp</code> type. The request syntax listing for this call indicates a <code>number</code> type, but you can provide the time in any valid <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">timestamp format</a> setting. </p>
         pub fn start_time(mut self, input: crate::model::TimeRange) -> Self {
             self.inner = self.inner.start_time(input);
             self
         }
-        /// <p>The start of the time period for the attacks. This is a <code>timestamp</code> type. The request syntax listing for this call indicates a <code>number</code> type,
-        /// but you can provide the time in any valid <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">timestamp format</a> setting.  </p>
+        /// <p>The start of the time period for the attacks. This is a <code>timestamp</code> type. The request syntax listing for this call indicates a <code>number</code> type, but you can provide the time in any valid <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">timestamp format</a> setting. </p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<crate::model::TimeRange>,
@@ -2439,51 +2344,39 @@ pub mod fluent_builders {
             self.inner = self.inner.set_start_time(input);
             self
         }
-        /// <p>The end of the time period for the attacks. This is a <code>timestamp</code> type. The request syntax listing for this call indicates a <code>number</code> type,
-        /// but you can provide the time in any valid <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">timestamp format</a> setting.  </p>
+        /// <p>The end of the time period for the attacks. This is a <code>timestamp</code> type. The request syntax listing for this call indicates a <code>number</code> type, but you can provide the time in any valid <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">timestamp format</a> setting. </p>
         pub fn end_time(mut self, input: crate::model::TimeRange) -> Self {
             self.inner = self.inner.end_time(input);
             self
         }
-        /// <p>The end of the time period for the attacks. This is a <code>timestamp</code> type. The request syntax listing for this call indicates a <code>number</code> type,
-        /// but you can provide the time in any valid <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">timestamp format</a> setting.  </p>
+        /// <p>The end of the time period for the attacks. This is a <code>timestamp</code> type. The request syntax listing for this call indicates a <code>number</code> type, but you can provide the time in any valid <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">timestamp format</a> setting. </p>
         pub fn set_end_time(mut self, input: std::option::Option<crate::model::TimeRange>) -> Self {
             self.inner = self.inner.set_end_time(input);
             self
         }
-        /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects,
-        /// Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and
-        /// providing the token that was returned by the prior call in your request. </p>
-        /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code>
-        /// setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
+        /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p>
+        /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
         /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
         /// <p>On your first call to a list operation, leave this setting empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects,
-        /// Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and
-        /// providing the token that was returned by the prior call in your request. </p>
-        /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code>
-        /// setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
+        /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p>
+        /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
         /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
         /// <p>On your first call to a list operation, leave this setting empty.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The greatest number of objects that you want Shield Advanced to return to the list request. Shield Advanced might return fewer objects
-        /// than you indicate in this setting, even if more objects are available. If there are more objects remaining, Shield Advanced will always also return a <code>NextToken</code> value
-        /// in the response.</p>
+        /// <p>The greatest number of objects that you want Shield Advanced to return to the list request. Shield Advanced might return fewer objects than you indicate in this setting, even if more objects are available. If there are more objects remaining, Shield Advanced will always also return a <code>NextToken</code> value in the response.</p>
         /// <p>The default setting is 20.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The greatest number of objects that you want Shield Advanced to return to the list request. Shield Advanced might return fewer objects
-        /// than you indicate in this setting, even if more objects are available. If there are more objects remaining, Shield Advanced will always also return a <code>NextToken</code> value
-        /// in the response.</p>
+        /// <p>The greatest number of objects that you want Shield Advanced to return to the list request. Shield Advanced might return fewer objects than you indicate in this setting, even if more objects are available. If there are more objects remaining, Shield Advanced will always also return a <code>NextToken</code> value in the response.</p>
         /// <p>The default setting is 20.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
@@ -2492,7 +2385,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListProtectionGroups`.
     ///
-    /// <p>Retrieves the <a>ProtectionGroup</a> objects for the account.</p>
+    /// <p>Retrieves the <code>ProtectionGroup</code> objects for the account.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListProtectionGroups<
         C = aws_smithy_client::erase::DynConnector,
@@ -2549,39 +2442,29 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects,
-        /// Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and
-        /// providing the token that was returned by the prior call in your request. </p>
-        /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code>
-        /// setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
+        /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p>
+        /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
         /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
         /// <p>On your first call to a list operation, leave this setting empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects,
-        /// Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and
-        /// providing the token that was returned by the prior call in your request. </p>
-        /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code>
-        /// setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
+        /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p>
+        /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
         /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
         /// <p>On your first call to a list operation, leave this setting empty.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The greatest number of objects that you want Shield Advanced to return to the list request. Shield Advanced might return fewer objects
-        /// than you indicate in this setting, even if more objects are available. If there are more objects remaining, Shield Advanced will always also return a <code>NextToken</code> value
-        /// in the response.</p>
+        /// <p>The greatest number of objects that you want Shield Advanced to return to the list request. Shield Advanced might return fewer objects than you indicate in this setting, even if more objects are available. If there are more objects remaining, Shield Advanced will always also return a <code>NextToken</code> value in the response.</p>
         /// <p>The default setting is 20.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The greatest number of objects that you want Shield Advanced to return to the list request. Shield Advanced might return fewer objects
-        /// than you indicate in this setting, even if more objects are available. If there are more objects remaining, Shield Advanced will always also return a <code>NextToken</code> value
-        /// in the response.</p>
+        /// <p>The greatest number of objects that you want Shield Advanced to return to the list request. Shield Advanced might return fewer objects than you indicate in this setting, even if more objects are available. If there are more objects remaining, Shield Advanced will always also return a <code>NextToken</code> value in the response.</p>
         /// <p>The default setting is 20.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
@@ -2590,7 +2473,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListProtections`.
     ///
-    /// <p>Lists all <a>Protection</a> objects for the account.</p>
+    /// <p>Lists all <code>Protection</code> objects for the account.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListProtections<
         C = aws_smithy_client::erase::DynConnector,
@@ -2647,39 +2530,29 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects,
-        /// Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and
-        /// providing the token that was returned by the prior call in your request. </p>
-        /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code>
-        /// setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
+        /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p>
+        /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
         /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
         /// <p>On your first call to a list operation, leave this setting empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects,
-        /// Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and
-        /// providing the token that was returned by the prior call in your request. </p>
-        /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code>
-        /// setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
+        /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p>
+        /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
         /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
         /// <p>On your first call to a list operation, leave this setting empty.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The greatest number of objects that you want Shield Advanced to return to the list request. Shield Advanced might return fewer objects
-        /// than you indicate in this setting, even if more objects are available. If there are more objects remaining, Shield Advanced will always also return a <code>NextToken</code> value
-        /// in the response.</p>
+        /// <p>The greatest number of objects that you want Shield Advanced to return to the list request. Shield Advanced might return fewer objects than you indicate in this setting, even if more objects are available. If there are more objects remaining, Shield Advanced will always also return a <code>NextToken</code> value in the response.</p>
         /// <p>The default setting is 20.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The greatest number of objects that you want Shield Advanced to return to the list request. Shield Advanced might return fewer objects
-        /// than you indicate in this setting, even if more objects are available. If there are more objects remaining, Shield Advanced will always also return a <code>NextToken</code> value
-        /// in the response.</p>
+        /// <p>The greatest number of objects that you want Shield Advanced to return to the list request. Shield Advanced might return fewer objects than you indicate in this setting, even if more objects are available. If there are more objects remaining, Shield Advanced will always also return a <code>NextToken</code> value in the response.</p>
         /// <p>The default setting is 20.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
@@ -2758,39 +2631,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_protection_group_id(input);
             self
         }
-        /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects,
-        /// Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and
-        /// providing the token that was returned by the prior call in your request. </p>
-        /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code>
-        /// setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
+        /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p>
+        /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
         /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
         /// <p>On your first call to a list operation, leave this setting empty.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects,
-        /// Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and
-        /// providing the token that was returned by the prior call in your request. </p>
-        /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code>
-        /// setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
+        /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p>
+        /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
         /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
         /// <p>On your first call to a list operation, leave this setting empty.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The greatest number of objects that you want Shield Advanced to return to the list request. Shield Advanced might return fewer objects
-        /// than you indicate in this setting, even if more objects are available. If there are more objects remaining, Shield Advanced will always also return a <code>NextToken</code> value
-        /// in the response.</p>
+        /// <p>The greatest number of objects that you want Shield Advanced to return to the list request. Shield Advanced might return fewer objects than you indicate in this setting, even if more objects are available. If there are more objects remaining, Shield Advanced will always also return a <code>NextToken</code> value in the response.</p>
         /// <p>The default setting is 20.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The greatest number of objects that you want Shield Advanced to return to the list request. Shield Advanced might return fewer objects
-        /// than you indicate in this setting, even if more objects are available. If there are more objects remaining, Shield Advanced will always also return a <code>NextToken</code> value
-        /// in the response.</p>
+        /// <p>The greatest number of objects that you want Shield Advanced to return to the list request. Shield Advanced might return fewer objects than you indicate in this setting, even if more objects are available. If there are more objects remaining, Shield Advanced will always also return a <code>NextToken</code> value in the response.</p>
         /// <p>The default setting is 20.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
@@ -3112,16 +2975,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_arn(input);
             self
         }
-        /// <p>Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the
-        /// protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature,
-        /// when you enable or update automatic mitigation. Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource. </p>
+        /// <p>Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature, when you enable or update automatic mitigation. Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource. </p>
         pub fn action(mut self, input: crate::model::ResponseAction) -> Self {
             self.inner = self.inner.action(input);
             self
         }
-        /// <p>Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the
-        /// protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature,
-        /// when you enable or update automatic mitigation. Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource. </p>
+        /// <p>Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature, when you enable or update automatic mitigation. Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource. </p>
         pub fn set_action(
             mut self,
             input: std::option::Option<crate::model::ResponseAction>,
@@ -3283,15 +3142,9 @@ pub mod fluent_builders {
         }
         /// <p>Defines how Shield combines resource data for the group in order to detect, mitigate, and report events.</p>
         /// <ul>
-        /// <li>
-        /// <p>Sum - Use the total traffic across the group. This is a good choice for most cases. Examples include Elastic IP addresses for EC2 instances that scale manually or automatically.</p>
-        /// </li>
-        /// <li>
-        /// <p>Mean - Use the average of the traffic across the group. This is a good choice for resources that share traffic uniformly. Examples include accelerators and load balancers.</p>
-        /// </li>
-        /// <li>
-        /// <p>Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront distributions and origin resources for CloudFront distributions.</p>
-        /// </li>
+        /// <li> <p>Sum - Use the total traffic across the group. This is a good choice for most cases. Examples include Elastic IP addresses for EC2 instances that scale manually or automatically.</p> </li>
+        /// <li> <p>Mean - Use the average of the traffic across the group. This is a good choice for resources that share traffic uniformly. Examples include accelerators and load balancers.</p> </li>
+        /// <li> <p>Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront distributions and origin resources for CloudFront distributions.</p> </li>
         /// </ul>
         pub fn aggregation(mut self, input: crate::model::ProtectionGroupAggregation) -> Self {
             self.inner = self.inner.aggregation(input);
@@ -3299,15 +3152,9 @@ pub mod fluent_builders {
         }
         /// <p>Defines how Shield combines resource data for the group in order to detect, mitigate, and report events.</p>
         /// <ul>
-        /// <li>
-        /// <p>Sum - Use the total traffic across the group. This is a good choice for most cases. Examples include Elastic IP addresses for EC2 instances that scale manually or automatically.</p>
-        /// </li>
-        /// <li>
-        /// <p>Mean - Use the average of the traffic across the group. This is a good choice for resources that share traffic uniformly. Examples include accelerators and load balancers.</p>
-        /// </li>
-        /// <li>
-        /// <p>Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront distributions and origin resources for CloudFront distributions.</p>
-        /// </li>
+        /// <li> <p>Sum - Use the total traffic across the group. This is a good choice for most cases. Examples include Elastic IP addresses for EC2 instances that scale manually or automatically.</p> </li>
+        /// <li> <p>Mean - Use the average of the traffic across the group. This is a good choice for resources that share traffic uniformly. Examples include accelerators and load balancers.</p> </li>
+        /// <li> <p>Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront distributions and origin resources for CloudFront distributions.</p> </li>
         /// </ul>
         pub fn set_aggregation(
             mut self,
@@ -3329,14 +3176,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_pattern(input);
             self
         }
-        /// <p>The resource type to include in the protection group. All protected resources of this type are included in the protection group.
-        /// You must set this when you set <code>Pattern</code> to <code>BY_RESOURCE_TYPE</code> and you must not set it for any other <code>Pattern</code> setting. </p>
+        /// <p>The resource type to include in the protection group. All protected resources of this type are included in the protection group. You must set this when you set <code>Pattern</code> to <code>BY_RESOURCE_TYPE</code> and you must not set it for any other <code>Pattern</code> setting. </p>
         pub fn resource_type(mut self, input: crate::model::ProtectedResourceType) -> Self {
             self.inner = self.inner.resource_type(input);
             self
         }
-        /// <p>The resource type to include in the protection group. All protected resources of this type are included in the protection group.
-        /// You must set this when you set <code>Pattern</code> to <code>BY_RESOURCE_TYPE</code> and you must not set it for any other <code>Pattern</code> setting. </p>
+        /// <p>The resource type to include in the protection group. All protected resources of this type are included in the protection group. You must set this when you set <code>Pattern</code> to <code>BY_RESOURCE_TYPE</code> and you must not set it for any other <code>Pattern</code> setting. </p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ProtectedResourceType>,

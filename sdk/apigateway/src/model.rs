@@ -62,22 +62,21 @@ impl AsRef<str> for VpcLinkStatus {
     }
 }
 
-/// A single patch operation to apply to the specified resource. Please refer to
-/// http://tools.ietf.org/html/rfc6902#section-4 for an explanation of how each operation is used.
+/// A single patch operation to apply to the specified resource. Please refer to http://tools.ietf.org/html/rfc6902#section-4 for an explanation of how each operation is used.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PatchOperation {
-    /// <p> An update operation to be performed with this PATCH request. The valid value can be <code>add</code>, <code>remove</code>,  <code>replace</code> or <code>copy</code>. Not all valid operations are supported for a given resource. Support of the operations depends on specific operational contexts. Attempts to apply an unsupported operation on a resource will return an error message.</p>
+    /// <p> An update operation to be performed with this PATCH request. The valid value can be <code>add</code>, <code>remove</code>, <code>replace</code> or <code>copy</code>. Not all valid operations are supported for a given resource. Support of the operations depends on specific operational contexts. Attempts to apply an unsupported operation on a resource will return an error message.</p>
     pub op: std::option::Option<crate::model::Op>,
     /// <p>The <code>op</code> operation's target, as identified by a <a href="https://tools.ietf.org/html/draft-ietf-appsawg-json-pointer-08">JSON Pointer</a> value that references a location within the targeted resource. For example, if the target resource has an updateable property of <code>{"name":"value"}</code>, the path for this property is <code>/name</code>. If the <code>name</code> property value is a JSON object (e.g., <code>{"name": {"child/name": "child-value"}}</code>), the path for the <code>child/name</code> property will be <code>/name/child~1name</code>. Any slash ("/") character appearing in path names must be escaped with "~1", as shown in the example above. Each <code>op</code> operation can have only one <code>path</code> associated with it.</p>
     pub path: std::option::Option<std::string::String>,
     /// <p>The new target value of the update operation. It is applicable for the <code>add</code> or <code>replace</code> operation. When using AWS CLI to update a property of a JSON value, enclose the JSON object with a pair of single quotes in a Linux shell, e.g., '{"a": ...}'. In a Windows shell, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for Parameters</a>.</p>
     pub value: std::option::Option<std::string::String>,
-    /// <p>The <code>copy</code> update operation's source as identified by a <code>JSON-Pointer</code> value referencing the location within the targeted resource to copy the value from. For example, to promote a canary deployment, you copy the canary deployment ID to the affiliated deployment ID by calling a PATCH request on a <a>Stage</a> resource with <code>"op":"copy"</code>, <code>"from":"/canarySettings/deploymentId"</code> and <code>"path":"/deploymentId"</code>.</p>
+    /// <p>The <code>copy</code> update operation's source as identified by a <code>JSON-Pointer</code> value referencing the location within the targeted resource to copy the value from. For example, to promote a canary deployment, you copy the canary deployment ID to the affiliated deployment ID by calling a PATCH request on a <code>Stage</code> resource with <code>"op":"copy"</code>, <code>"from":"/canarySettings/deploymentId"</code> and <code>"path":"/deploymentId"</code>.</p>
     pub from: std::option::Option<std::string::String>,
 }
 impl PatchOperation {
-    /// <p> An update operation to be performed with this PATCH request. The valid value can be <code>add</code>, <code>remove</code>,  <code>replace</code> or <code>copy</code>. Not all valid operations are supported for a given resource. Support of the operations depends on specific operational contexts. Attempts to apply an unsupported operation on a resource will return an error message.</p>
+    /// <p> An update operation to be performed with this PATCH request. The valid value can be <code>add</code>, <code>remove</code>, <code>replace</code> or <code>copy</code>. Not all valid operations are supported for a given resource. Support of the operations depends on specific operational contexts. Attempts to apply an unsupported operation on a resource will return an error message.</p>
     pub fn op(&self) -> std::option::Option<&crate::model::Op> {
         self.op.as_ref()
     }
@@ -89,7 +88,7 @@ impl PatchOperation {
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
-    /// <p>The <code>copy</code> update operation's source as identified by a <code>JSON-Pointer</code> value referencing the location within the targeted resource to copy the value from. For example, to promote a canary deployment, you copy the canary deployment ID to the affiliated deployment ID by calling a PATCH request on a <a>Stage</a> resource with <code>"op":"copy"</code>, <code>"from":"/canarySettings/deploymentId"</code> and <code>"path":"/deploymentId"</code>.</p>
+    /// <p>The <code>copy</code> update operation's source as identified by a <code>JSON-Pointer</code> value referencing the location within the targeted resource to copy the value from. For example, to promote a canary deployment, you copy the canary deployment ID to the affiliated deployment ID by calling a PATCH request on a <code>Stage</code> resource with <code>"op":"copy"</code>, <code>"from":"/canarySettings/deploymentId"</code> and <code>"path":"/deploymentId"</code>.</p>
     pub fn from(&self) -> std::option::Option<&str> {
         self.from.as_deref()
     }
@@ -116,12 +115,12 @@ pub mod patch_operation {
         pub(crate) from: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> An update operation to be performed with this PATCH request. The valid value can be <code>add</code>, <code>remove</code>,  <code>replace</code> or <code>copy</code>. Not all valid operations are supported for a given resource. Support of the operations depends on specific operational contexts. Attempts to apply an unsupported operation on a resource will return an error message.</p>
+        /// <p> An update operation to be performed with this PATCH request. The valid value can be <code>add</code>, <code>remove</code>, <code>replace</code> or <code>copy</code>. Not all valid operations are supported for a given resource. Support of the operations depends on specific operational contexts. Attempts to apply an unsupported operation on a resource will return an error message.</p>
         pub fn op(mut self, input: crate::model::Op) -> Self {
             self.op = Some(input);
             self
         }
-        /// <p> An update operation to be performed with this PATCH request. The valid value can be <code>add</code>, <code>remove</code>,  <code>replace</code> or <code>copy</code>. Not all valid operations are supported for a given resource. Support of the operations depends on specific operational contexts. Attempts to apply an unsupported operation on a resource will return an error message.</p>
+        /// <p> An update operation to be performed with this PATCH request. The valid value can be <code>add</code>, <code>remove</code>, <code>replace</code> or <code>copy</code>. Not all valid operations are supported for a given resource. Support of the operations depends on specific operational contexts. Attempts to apply an unsupported operation on a resource will return an error message.</p>
         pub fn set_op(mut self, input: std::option::Option<crate::model::Op>) -> Self {
             self.op = input;
             self
@@ -146,12 +145,12 @@ pub mod patch_operation {
             self.value = input;
             self
         }
-        /// <p>The <code>copy</code> update operation's source as identified by a <code>JSON-Pointer</code> value referencing the location within the targeted resource to copy the value from. For example, to promote a canary deployment, you copy the canary deployment ID to the affiliated deployment ID by calling a PATCH request on a <a>Stage</a> resource with <code>"op":"copy"</code>, <code>"from":"/canarySettings/deploymentId"</code> and <code>"path":"/deploymentId"</code>.</p>
+        /// <p>The <code>copy</code> update operation's source as identified by a <code>JSON-Pointer</code> value referencing the location within the targeted resource to copy the value from. For example, to promote a canary deployment, you copy the canary deployment ID to the affiliated deployment ID by calling a PATCH request on a <code>Stage</code> resource with <code>"op":"copy"</code>, <code>"from":"/canarySettings/deploymentId"</code> and <code>"path":"/deploymentId"</code>.</p>
         pub fn from(mut self, input: impl Into<std::string::String>) -> Self {
             self.from = Some(input.into());
             self
         }
-        /// <p>The <code>copy</code> update operation's source as identified by a <code>JSON-Pointer</code> value referencing the location within the targeted resource to copy the value from. For example, to promote a canary deployment, you copy the canary deployment ID to the affiliated deployment ID by calling a PATCH request on a <a>Stage</a> resource with <code>"op":"copy"</code>, <code>"from":"/canarySettings/deploymentId"</code> and <code>"path":"/deploymentId"</code>.</p>
+        /// <p>The <code>copy</code> update operation's source as identified by a <code>JSON-Pointer</code> value referencing the location within the targeted resource to copy the value from. For example, to promote a canary deployment, you copy the canary deployment ID to the affiliated deployment ID by calling a PATCH request on a <code>Stage</code> resource with <code>"op":"copy"</code>, <code>"from":"/canarySettings/deploymentId"</code> and <code>"path":"/deploymentId"</code>.</p>
         pub fn set_from(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.from = input;
             self
@@ -1271,21 +1270,21 @@ impl AsRef<str> for CacheClusterSize {
     }
 }
 
-/// <p>The endpoint configuration to indicate the types of endpoints an API (<a>RestApi</a>) or its custom domain name (<a>DomainName</a>) has. </p>
+/// <p>The endpoint configuration to indicate the types of endpoints an API (<code>RestApi</code>) or its custom domain name (<code>DomainName</code>) has. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EndpointConfiguration {
-    /// <p>A list of endpoint types of an API (<a>RestApi</a>) or its custom domain name (<a>DomainName</a>). For an edge-optimized API and its custom domain name, the endpoint type is <code>"EDGE"</code>. For a regional API and its custom domain name, the endpoint type is <code>REGIONAL</code>. For a private API, the endpoint type is <code>PRIVATE</code>.</p>
+    /// <p>A list of endpoint types of an API (<code>RestApi</code>) or its custom domain name (<code>DomainName</code>). For an edge-optimized API and its custom domain name, the endpoint type is <code>"EDGE"</code>. For a regional API and its custom domain name, the endpoint type is <code>REGIONAL</code>. For a private API, the endpoint type is <code>PRIVATE</code>.</p>
     pub types: std::option::Option<std::vec::Vec<crate::model::EndpointType>>,
-    /// <p>A list of VpcEndpointIds of an API (<a>RestApi</a>) against which to create Route53 ALIASes. It is only supported for <code>PRIVATE</code> endpoint type.</p>
+    /// <p>A list of VpcEndpointIds of an API (<code>RestApi</code>) against which to create Route53 ALIASes. It is only supported for <code>PRIVATE</code> endpoint type.</p>
     pub vpc_endpoint_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl EndpointConfiguration {
-    /// <p>A list of endpoint types of an API (<a>RestApi</a>) or its custom domain name (<a>DomainName</a>). For an edge-optimized API and its custom domain name, the endpoint type is <code>"EDGE"</code>. For a regional API and its custom domain name, the endpoint type is <code>REGIONAL</code>. For a private API, the endpoint type is <code>PRIVATE</code>.</p>
+    /// <p>A list of endpoint types of an API (<code>RestApi</code>) or its custom domain name (<code>DomainName</code>). For an edge-optimized API and its custom domain name, the endpoint type is <code>"EDGE"</code>. For a regional API and its custom domain name, the endpoint type is <code>REGIONAL</code>. For a private API, the endpoint type is <code>PRIVATE</code>.</p>
     pub fn types(&self) -> std::option::Option<&[crate::model::EndpointType]> {
         self.types.as_deref()
     }
-    /// <p>A list of VpcEndpointIds of an API (<a>RestApi</a>) against which to create Route53 ALIASes. It is only supported for <code>PRIVATE</code> endpoint type.</p>
+    /// <p>A list of VpcEndpointIds of an API (<code>RestApi</code>) against which to create Route53 ALIASes. It is only supported for <code>PRIVATE</code> endpoint type.</p>
     pub fn vpc_endpoint_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.vpc_endpoint_ids.as_deref()
     }
@@ -1312,14 +1311,14 @@ pub mod endpoint_configuration {
         ///
         /// To override the contents of this collection use [`set_types`](Self::set_types).
         ///
-        /// <p>A list of endpoint types of an API (<a>RestApi</a>) or its custom domain name (<a>DomainName</a>). For an edge-optimized API and its custom domain name, the endpoint type is <code>"EDGE"</code>. For a regional API and its custom domain name, the endpoint type is <code>REGIONAL</code>. For a private API, the endpoint type is <code>PRIVATE</code>.</p>
+        /// <p>A list of endpoint types of an API (<code>RestApi</code>) or its custom domain name (<code>DomainName</code>). For an edge-optimized API and its custom domain name, the endpoint type is <code>"EDGE"</code>. For a regional API and its custom domain name, the endpoint type is <code>REGIONAL</code>. For a private API, the endpoint type is <code>PRIVATE</code>.</p>
         pub fn types(mut self, input: crate::model::EndpointType) -> Self {
             let mut v = self.types.unwrap_or_default();
             v.push(input);
             self.types = Some(v);
             self
         }
-        /// <p>A list of endpoint types of an API (<a>RestApi</a>) or its custom domain name (<a>DomainName</a>). For an edge-optimized API and its custom domain name, the endpoint type is <code>"EDGE"</code>. For a regional API and its custom domain name, the endpoint type is <code>REGIONAL</code>. For a private API, the endpoint type is <code>PRIVATE</code>.</p>
+        /// <p>A list of endpoint types of an API (<code>RestApi</code>) or its custom domain name (<code>DomainName</code>). For an edge-optimized API and its custom domain name, the endpoint type is <code>"EDGE"</code>. For a regional API and its custom domain name, the endpoint type is <code>REGIONAL</code>. For a private API, the endpoint type is <code>PRIVATE</code>.</p>
         pub fn set_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EndpointType>>,
@@ -1331,14 +1330,14 @@ pub mod endpoint_configuration {
         ///
         /// To override the contents of this collection use [`set_vpc_endpoint_ids`](Self::set_vpc_endpoint_ids).
         ///
-        /// <p>A list of VpcEndpointIds of an API (<a>RestApi</a>) against which to create Route53 ALIASes. It is only supported for <code>PRIVATE</code> endpoint type.</p>
+        /// <p>A list of VpcEndpointIds of an API (<code>RestApi</code>) against which to create Route53 ALIASes. It is only supported for <code>PRIVATE</code> endpoint type.</p>
         pub fn vpc_endpoint_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.vpc_endpoint_ids.unwrap_or_default();
             v.push(input.into());
             self.vpc_endpoint_ids = Some(v);
             self
         }
-        /// <p>A list of VpcEndpointIds of an API (<a>RestApi</a>) against which to create Route53 ALIASes. It is only supported for <code>PRIVATE</code> endpoint type.</p>
+        /// <p>A list of VpcEndpointIds of an API (<code>RestApi</code>) against which to create Route53 ALIASes. It is only supported for <code>PRIVATE</code> endpoint type.</p>
         pub fn set_vpc_endpoint_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1476,14 +1475,7 @@ impl AsRef<str> for ApiKeySourceType {
     }
 }
 
-/// <p>
-/// Represents a client-facing interface by which the client calls the API to access back-end resources. A <b>Method</b> resource is
-/// integrated with an <a>Integration</a> resource. Both consist of a request and one or more responses. The method request takes
-/// the client input that is passed to the back end through the integration request. A method response returns the output from
-/// the back end to the client through an integration response. A method request is embodied in a <b>Method</b> resource, whereas
-/// an integration request is embodied in an <a>Integration</a> resource.  On the other hand, a method response is represented
-/// by a <a>MethodResponse</a> resource, whereas an integration response is represented by an <a>IntegrationResponse</a> resource.
-/// </p>
+/// <p> Represents a client-facing interface by which the client calls the API to access back-end resources. A <b>Method</b> resource is integrated with an <code>Integration</code> resource. Both consist of a request and one or more responses. The method request takes the client input that is passed to the back end through the integration request. A method response returns the output from the back end to the client through an integration response. A method request is embodied in a <b>Method</b> resource, whereas an integration request is embodied in an <code>Integration</code> resource. On the other hand, a method response is represented by a <code>MethodResponse</code> resource, whereas an integration response is represented by an <code>IntegrationResponse</code> resource. </p>
 /// <div class="remarks">
 /// <p></p>
 /// <h4>Example: Retrive the GET method on a specified resource</h4>
@@ -1636,9 +1628,7 @@ impl AsRef<str> for ApiKeySourceType {
 /// }</code></pre>
 /// <p>In the example above, the response template for the <code>200 OK</code> response maps the JSON output from the <code>ListStreams</code> action in the back end to an XML output. The mapping template is URL-encoded as <code>%3CkinesisStreams%3E%23foreach(%24stream%20in%20%24input.path(%27%24.StreamNames%27))%3Cstream%3E%3Cname%3E%24stream%3C%2Fname%3E%3C%2Fstream%3E%23end%3C%2FkinesisStreams%3E</code> and the output is decoded using the <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html#util-templat-reference">$util.urlDecode()</a> helper function.</p>
 /// </div>
-/// <div class="seeAlso">
-/// <a>MethodResponse</a>, <a>Integration</a>, <a>IntegrationResponse</a>, <a>Resource</a>,
-/// <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-method-settings.html">Set up an API's method</a>
+/// <div class="seeAlso"> <code>MethodResponse</code>, <code>Integration</code>, <code>IntegrationResponse</code>, <code>Resource</code>, <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-method-settings.html">Set up an API's method</a>
 /// </div>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -1647,23 +1637,23 @@ pub struct Method {
     pub http_method: std::option::Option<std::string::String>,
     /// <p>The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a Cognito user pool.</p>
     pub authorization_type: std::option::Option<std::string::String>,
-    /// <p>The identifier of an <a>Authorizer</a> to use on this method. The <code>authorizationType</code> must be <code>CUSTOM</code>.</p>
+    /// <p>The identifier of an <code>Authorizer</code> to use on this method. The <code>authorizationType</code> must be <code>CUSTOM</code>.</p>
     pub authorizer_id: std::option::Option<std::string::String>,
-    /// <p>A boolean flag specifying whether a valid <a>ApiKey</a> is required to invoke this method.</p>
+    /// <p>A boolean flag specifying whether a valid <code>ApiKey</code> is required to invoke this method.</p>
     pub api_key_required: std::option::Option<bool>,
-    /// <p>The identifier of a <a>RequestValidator</a> for request validation.</p>
+    /// <p>The identifier of a <code>RequestValidator</code> for request validation.</p>
     pub request_validator_id: std::option::Option<std::string::String>,
     /// <p>A human-friendly operation identifier for the method. For example, you can assign the <code>operationName</code> of <code>ListPets</code> for the <code>GET /pets</code> method in the <code>PetStore</code> example.</p>
     pub operation_name: std::option::Option<std::string::String>,
-    /// <p>A key-value map defining required or optional method request parameters that can be accepted by API Gateway. A key is a method request parameter name matching the pattern of  <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The value associated with the key is a Boolean flag indicating whether the parameter is required (<code>true</code>) or optional (<code>false</code>).  The method request parameter names defined here are available in <a>Integration</a> to be mapped to integration request parameters or templates.</p>
+    /// <p>A key-value map defining required or optional method request parameters that can be accepted by API Gateway. A key is a method request parameter name matching the pattern of <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The value associated with the key is a Boolean flag indicating whether the parameter is required (<code>true</code>) or optional (<code>false</code>). The method request parameter names defined here are available in <code>Integration</code> to be mapped to integration request parameters or templates.</p>
     pub request_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, bool>>,
-    /// <p>A key-value map specifying data schemas, represented by <a>Model</a> resources, (as the mapped value) of the request payloads of given content types (as the mapping key).</p>
+    /// <p>A key-value map specifying data schemas, represented by <code>Model</code> resources, (as the mapped value) of the request payloads of given content types (as the mapping key).</p>
     pub request_models:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Gets a method response associated with a given HTTP status code. </p>
     /// <div class="remarks">
-    /// <p>The collection of method responses are encapsulated in a key-value map, where the key is a response's HTTP status code and the value is a <a>MethodResponse</a> resource that specifies the response returned to the caller from the back end through the integration response.</p>
+    /// <p>The collection of method responses are encapsulated in a key-value map, where the key is a response's HTTP status code and the value is a <code>MethodResponse</code> resource that specifies the response returned to the caller from the back end through the integration response.</p>
     /// <h4>Example: Get a 200 OK response of a GET method</h4>
     /// <h5>Request</h5>
     /// <p></p>
@@ -1705,8 +1695,7 @@ pub struct Method {
     /// }</code></pre>
     /// <p></p>
     /// </div>
-    /// <div class="seeAlso">
-    /// <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-method-response.html">AWS CLI</a>
+    /// <div class="seeAlso"> <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-method-response.html">AWS CLI</a>
     /// </div>
     pub method_responses: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::MethodResponse>,
@@ -1789,7 +1778,7 @@ pub struct Method {
     /// "method.response.header.operand_1": "integration.response.body.a"
     /// },
     /// "responseTemplates": {
-    /// "application/json": "#set($res = $input.path('$'))\n{\n    \"result\": \"$res.a, $res.b, $res.op => $res.c\",\n  \"a\" : \"$res.a\",\n  \"b\" : \"$res.b\",\n  \"op\" : \"$res.op\",\n  \"c\" : \"$res.c\"\n}"
+    /// "application/json": "#set($res = $input.path('$'))\n{\n    \"result\": \"$res.a, $res.b, $res.op =&gt; $res.c\",\n  \"a\" : \"$res.a\",\n  \"b\" : \"$res.b\",\n  \"op\" : \"$res.op\",\n  \"c\" : \"$res.c\"\n}"
     /// },
     /// "selectionPattern": "",
     /// "statusCode": "200"
@@ -1798,8 +1787,7 @@ pub struct Method {
     /// }</code></pre>
     /// <p></p>
     /// </div>
-    /// <div class="seeAlso">
-    /// <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-integration.html">AWS CLI</a>
+    /// <div class="seeAlso"> <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-integration.html">AWS CLI</a>
     /// </div>
     pub method_integration: std::option::Option<crate::model::Integration>,
     /// <p>A list of authorization scopes configured on the method. The scopes are used with a <code>COGNITO_USER_POOLS</code> authorizer to authorize the method invocation. The authorization works by matching the method scopes against the scopes parsed from the access token in the incoming request. The method invocation is authorized if any method scopes matches a claimed scope in the access token. Otherwise, the invocation is not authorized. When the method scope is configured, the client must provide an access token instead of an identity token for authorization purposes.</p>
@@ -1814,15 +1802,15 @@ impl Method {
     pub fn authorization_type(&self) -> std::option::Option<&str> {
         self.authorization_type.as_deref()
     }
-    /// <p>The identifier of an <a>Authorizer</a> to use on this method. The <code>authorizationType</code> must be <code>CUSTOM</code>.</p>
+    /// <p>The identifier of an <code>Authorizer</code> to use on this method. The <code>authorizationType</code> must be <code>CUSTOM</code>.</p>
     pub fn authorizer_id(&self) -> std::option::Option<&str> {
         self.authorizer_id.as_deref()
     }
-    /// <p>A boolean flag specifying whether a valid <a>ApiKey</a> is required to invoke this method.</p>
+    /// <p>A boolean flag specifying whether a valid <code>ApiKey</code> is required to invoke this method.</p>
     pub fn api_key_required(&self) -> std::option::Option<bool> {
         self.api_key_required
     }
-    /// <p>The identifier of a <a>RequestValidator</a> for request validation.</p>
+    /// <p>The identifier of a <code>RequestValidator</code> for request validation.</p>
     pub fn request_validator_id(&self) -> std::option::Option<&str> {
         self.request_validator_id.as_deref()
     }
@@ -1830,13 +1818,13 @@ impl Method {
     pub fn operation_name(&self) -> std::option::Option<&str> {
         self.operation_name.as_deref()
     }
-    /// <p>A key-value map defining required or optional method request parameters that can be accepted by API Gateway. A key is a method request parameter name matching the pattern of  <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The value associated with the key is a Boolean flag indicating whether the parameter is required (<code>true</code>) or optional (<code>false</code>).  The method request parameter names defined here are available in <a>Integration</a> to be mapped to integration request parameters or templates.</p>
+    /// <p>A key-value map defining required or optional method request parameters that can be accepted by API Gateway. A key is a method request parameter name matching the pattern of <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The value associated with the key is a Boolean flag indicating whether the parameter is required (<code>true</code>) or optional (<code>false</code>). The method request parameter names defined here are available in <code>Integration</code> to be mapped to integration request parameters or templates.</p>
     pub fn request_parameters(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, bool>> {
         self.request_parameters.as_ref()
     }
-    /// <p>A key-value map specifying data schemas, represented by <a>Model</a> resources, (as the mapped value) of the request payloads of given content types (as the mapping key).</p>
+    /// <p>A key-value map specifying data schemas, represented by <code>Model</code> resources, (as the mapped value) of the request payloads of given content types (as the mapping key).</p>
     pub fn request_models(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -1845,7 +1833,7 @@ impl Method {
     }
     /// <p>Gets a method response associated with a given HTTP status code. </p>
     /// <div class="remarks">
-    /// <p>The collection of method responses are encapsulated in a key-value map, where the key is a response's HTTP status code and the value is a <a>MethodResponse</a> resource that specifies the response returned to the caller from the back end through the integration response.</p>
+    /// <p>The collection of method responses are encapsulated in a key-value map, where the key is a response's HTTP status code and the value is a <code>MethodResponse</code> resource that specifies the response returned to the caller from the back end through the integration response.</p>
     /// <h4>Example: Get a 200 OK response of a GET method</h4>
     /// <h5>Request</h5>
     /// <p></p>
@@ -1887,8 +1875,7 @@ impl Method {
     /// }</code></pre>
     /// <p></p>
     /// </div>
-    /// <div class="seeAlso">
-    /// <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-method-response.html">AWS CLI</a>
+    /// <div class="seeAlso"> <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-method-response.html">AWS CLI</a>
     /// </div>
     pub fn method_responses(
         &self,
@@ -1975,7 +1962,7 @@ impl Method {
     /// "method.response.header.operand_1": "integration.response.body.a"
     /// },
     /// "responseTemplates": {
-    /// "application/json": "#set($res = $input.path('$'))\n{\n    \"result\": \"$res.a, $res.b, $res.op => $res.c\",\n  \"a\" : \"$res.a\",\n  \"b\" : \"$res.b\",\n  \"op\" : \"$res.op\",\n  \"c\" : \"$res.c\"\n}"
+    /// "application/json": "#set($res = $input.path('$'))\n{\n    \"result\": \"$res.a, $res.b, $res.op =&gt; $res.c\",\n  \"a\" : \"$res.a\",\n  \"b\" : \"$res.b\",\n  \"op\" : \"$res.op\",\n  \"c\" : \"$res.c\"\n}"
     /// },
     /// "selectionPattern": "",
     /// "statusCode": "200"
@@ -1984,8 +1971,7 @@ impl Method {
     /// }</code></pre>
     /// <p></p>
     /// </div>
-    /// <div class="seeAlso">
-    /// <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-integration.html">AWS CLI</a>
+    /// <div class="seeAlso"> <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-integration.html">AWS CLI</a>
     /// </div>
     pub fn method_integration(&self) -> std::option::Option<&crate::model::Integration> {
         self.method_integration.as_ref()
@@ -2059,12 +2045,12 @@ pub mod method {
             self.authorization_type = input;
             self
         }
-        /// <p>The identifier of an <a>Authorizer</a> to use on this method. The <code>authorizationType</code> must be <code>CUSTOM</code>.</p>
+        /// <p>The identifier of an <code>Authorizer</code> to use on this method. The <code>authorizationType</code> must be <code>CUSTOM</code>.</p>
         pub fn authorizer_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.authorizer_id = Some(input.into());
             self
         }
-        /// <p>The identifier of an <a>Authorizer</a> to use on this method. The <code>authorizationType</code> must be <code>CUSTOM</code>.</p>
+        /// <p>The identifier of an <code>Authorizer</code> to use on this method. The <code>authorizationType</code> must be <code>CUSTOM</code>.</p>
         pub fn set_authorizer_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2072,22 +2058,22 @@ pub mod method {
             self.authorizer_id = input;
             self
         }
-        /// <p>A boolean flag specifying whether a valid <a>ApiKey</a> is required to invoke this method.</p>
+        /// <p>A boolean flag specifying whether a valid <code>ApiKey</code> is required to invoke this method.</p>
         pub fn api_key_required(mut self, input: bool) -> Self {
             self.api_key_required = Some(input);
             self
         }
-        /// <p>A boolean flag specifying whether a valid <a>ApiKey</a> is required to invoke this method.</p>
+        /// <p>A boolean flag specifying whether a valid <code>ApiKey</code> is required to invoke this method.</p>
         pub fn set_api_key_required(mut self, input: std::option::Option<bool>) -> Self {
             self.api_key_required = input;
             self
         }
-        /// <p>The identifier of a <a>RequestValidator</a> for request validation.</p>
+        /// <p>The identifier of a <code>RequestValidator</code> for request validation.</p>
         pub fn request_validator_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_validator_id = Some(input.into());
             self
         }
-        /// <p>The identifier of a <a>RequestValidator</a> for request validation.</p>
+        /// <p>The identifier of a <code>RequestValidator</code> for request validation.</p>
         pub fn set_request_validator_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2112,14 +2098,14 @@ pub mod method {
         ///
         /// To override the contents of this collection use [`set_request_parameters`](Self::set_request_parameters).
         ///
-        /// <p>A key-value map defining required or optional method request parameters that can be accepted by API Gateway. A key is a method request parameter name matching the pattern of  <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The value associated with the key is a Boolean flag indicating whether the parameter is required (<code>true</code>) or optional (<code>false</code>).  The method request parameter names defined here are available in <a>Integration</a> to be mapped to integration request parameters or templates.</p>
+        /// <p>A key-value map defining required or optional method request parameters that can be accepted by API Gateway. A key is a method request parameter name matching the pattern of <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The value associated with the key is a Boolean flag indicating whether the parameter is required (<code>true</code>) or optional (<code>false</code>). The method request parameter names defined here are available in <code>Integration</code> to be mapped to integration request parameters or templates.</p>
         pub fn request_parameters(mut self, k: impl Into<std::string::String>, v: bool) -> Self {
             let mut hash_map = self.request_parameters.unwrap_or_default();
             hash_map.insert(k.into(), v);
             self.request_parameters = Some(hash_map);
             self
         }
-        /// <p>A key-value map defining required or optional method request parameters that can be accepted by API Gateway. A key is a method request parameter name matching the pattern of  <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The value associated with the key is a Boolean flag indicating whether the parameter is required (<code>true</code>) or optional (<code>false</code>).  The method request parameter names defined here are available in <a>Integration</a> to be mapped to integration request parameters or templates.</p>
+        /// <p>A key-value map defining required or optional method request parameters that can be accepted by API Gateway. A key is a method request parameter name matching the pattern of <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The value associated with the key is a Boolean flag indicating whether the parameter is required (<code>true</code>) or optional (<code>false</code>). The method request parameter names defined here are available in <code>Integration</code> to be mapped to integration request parameters or templates.</p>
         pub fn set_request_parameters(
             mut self,
             input: std::option::Option<std::collections::HashMap<std::string::String, bool>>,
@@ -2131,7 +2117,7 @@ pub mod method {
         ///
         /// To override the contents of this collection use [`set_request_models`](Self::set_request_models).
         ///
-        /// <p>A key-value map specifying data schemas, represented by <a>Model</a> resources, (as the mapped value) of the request payloads of given content types (as the mapping key).</p>
+        /// <p>A key-value map specifying data schemas, represented by <code>Model</code> resources, (as the mapped value) of the request payloads of given content types (as the mapping key).</p>
         pub fn request_models(
             mut self,
             k: impl Into<std::string::String>,
@@ -2142,7 +2128,7 @@ pub mod method {
             self.request_models = Some(hash_map);
             self
         }
-        /// <p>A key-value map specifying data schemas, represented by <a>Model</a> resources, (as the mapped value) of the request payloads of given content types (as the mapping key).</p>
+        /// <p>A key-value map specifying data schemas, represented by <code>Model</code> resources, (as the mapped value) of the request payloads of given content types (as the mapping key).</p>
         pub fn set_request_models(
             mut self,
             input: std::option::Option<
@@ -2158,7 +2144,7 @@ pub mod method {
         ///
         /// <p>Gets a method response associated with a given HTTP status code. </p>
         /// <div class="remarks">
-        /// <p>The collection of method responses are encapsulated in a key-value map, where the key is a response's HTTP status code and the value is a <a>MethodResponse</a> resource that specifies the response returned to the caller from the back end through the integration response.</p>
+        /// <p>The collection of method responses are encapsulated in a key-value map, where the key is a response's HTTP status code and the value is a <code>MethodResponse</code> resource that specifies the response returned to the caller from the back end through the integration response.</p>
         /// <h4>Example: Get a 200 OK response of a GET method</h4>
         /// <h5>Request</h5>
         /// <p></p>
@@ -2200,8 +2186,7 @@ pub mod method {
         /// }</code></pre>
         /// <p></p>
         /// </div>
-        /// <div class="seeAlso">
-        /// <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-method-response.html">AWS CLI</a>
+        /// <div class="seeAlso"> <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-method-response.html">AWS CLI</a>
         /// </div>
         pub fn method_responses(
             mut self,
@@ -2215,7 +2200,7 @@ pub mod method {
         }
         /// <p>Gets a method response associated with a given HTTP status code. </p>
         /// <div class="remarks">
-        /// <p>The collection of method responses are encapsulated in a key-value map, where the key is a response's HTTP status code and the value is a <a>MethodResponse</a> resource that specifies the response returned to the caller from the back end through the integration response.</p>
+        /// <p>The collection of method responses are encapsulated in a key-value map, where the key is a response's HTTP status code and the value is a <code>MethodResponse</code> resource that specifies the response returned to the caller from the back end through the integration response.</p>
         /// <h4>Example: Get a 200 OK response of a GET method</h4>
         /// <h5>Request</h5>
         /// <p></p>
@@ -2257,8 +2242,7 @@ pub mod method {
         /// }</code></pre>
         /// <p></p>
         /// </div>
-        /// <div class="seeAlso">
-        /// <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-method-response.html">AWS CLI</a>
+        /// <div class="seeAlso"> <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-method-response.html">AWS CLI</a>
         /// </div>
         pub fn set_method_responses(
             mut self,
@@ -2347,7 +2331,7 @@ pub mod method {
         /// "method.response.header.operand_1": "integration.response.body.a"
         /// },
         /// "responseTemplates": {
-        /// "application/json": "#set($res = $input.path('$'))\n{\n    \"result\": \"$res.a, $res.b, $res.op => $res.c\",\n  \"a\" : \"$res.a\",\n  \"b\" : \"$res.b\",\n  \"op\" : \"$res.op\",\n  \"c\" : \"$res.c\"\n}"
+        /// "application/json": "#set($res = $input.path('$'))\n{\n    \"result\": \"$res.a, $res.b, $res.op =&gt; $res.c\",\n  \"a\" : \"$res.a\",\n  \"b\" : \"$res.b\",\n  \"op\" : \"$res.op\",\n  \"c\" : \"$res.c\"\n}"
         /// },
         /// "selectionPattern": "",
         /// "statusCode": "200"
@@ -2356,8 +2340,7 @@ pub mod method {
         /// }</code></pre>
         /// <p></p>
         /// </div>
-        /// <div class="seeAlso">
-        /// <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-integration.html">AWS CLI</a>
+        /// <div class="seeAlso"> <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-integration.html">AWS CLI</a>
         /// </div>
         pub fn method_integration(mut self, input: crate::model::Integration) -> Self {
             self.method_integration = Some(input);
@@ -2441,7 +2424,7 @@ pub mod method {
         /// "method.response.header.operand_1": "integration.response.body.a"
         /// },
         /// "responseTemplates": {
-        /// "application/json": "#set($res = $input.path('$'))\n{\n    \"result\": \"$res.a, $res.b, $res.op => $res.c\",\n  \"a\" : \"$res.a\",\n  \"b\" : \"$res.b\",\n  \"op\" : \"$res.op\",\n  \"c\" : \"$res.c\"\n}"
+        /// "application/json": "#set($res = $input.path('$'))\n{\n    \"result\": \"$res.a, $res.b, $res.op =&gt; $res.c\",\n  \"a\" : \"$res.a\",\n  \"b\" : \"$res.b\",\n  \"op\" : \"$res.op\",\n  \"c\" : \"$res.c\"\n}"
         /// },
         /// "selectionPattern": "",
         /// "statusCode": "200"
@@ -2450,8 +2433,7 @@ pub mod method {
         /// }</code></pre>
         /// <p></p>
         /// </div>
-        /// <div class="seeAlso">
-        /// <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-integration.html">AWS CLI</a>
+        /// <div class="seeAlso"> <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-integration.html">AWS CLI</a>
         /// </div>
         pub fn set_method_integration(
             mut self,
@@ -2505,9 +2487,10 @@ impl Method {
 }
 
 /// <p>Represents an HTTP, HTTP_PROXY, AWS, AWS_PROXY, or Mock integration.</p>
-/// <div class="remarks">In the API Gateway console, the built-in Lambda integration is an AWS integration.</div>
-/// <div class="seeAlso">
-/// <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating an API</a>
+/// <div class="remarks">
+/// In the API Gateway console, the built-in Lambda integration is an AWS integration.
+/// </div>
+/// <div class="seeAlso"> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating an API</a>
 /// </div>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -2520,51 +2503,34 @@ pub struct Integration {
     /// <li><code>HTTP_PROXY</code>: for integrating the API method request with an HTTP endpoint, including a private HTTP endpoint within a VPC, with the client request passed through as-is. This is also referred to as the HTTP proxy integration.</li>
     /// <li><code>MOCK</code>: for integrating the API method request with API Gateway as a "loop-back" endpoint without invoking any backend.</li>
     /// </ul>
-    /// <p>For the HTTP and HTTP proxy integrations, each integration can specify a protocol (<code>http/https</code>), port and path. Standard 80 and 443 ports are supported as well as custom ports above 1024. An HTTP or HTTP proxy integration with a <code>connectionType</code> of <code>VPC_LINK</code> is referred to as a private integration and uses a <a>VpcLink</a> to connect API Gateway to a network load balancer of a VPC.</p>
+    /// <p>For the HTTP and HTTP proxy integrations, each integration can specify a protocol (<code>http/https</code>), port and path. Standard 80 and 443 ports are supported as well as custom ports above 1024. An HTTP or HTTP proxy integration with a <code>connectionType</code> of <code>VPC_LINK</code> is referred to as a private integration and uses a <code>VpcLink</code> to connect API Gateway to a network load balancer of a VPC.</p>
     pub r#type: std::option::Option<crate::model::IntegrationType>,
     /// <p>Specifies the integration's HTTP method type.</p>
     pub http_method: std::option::Option<std::string::String>,
     /// <p>Specifies Uniform Resource Identifier (URI) of the integration endpoint.</p>
     /// <ul>
-    /// <li><p> For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the URI must be a fully formed, encoded HTTP(S) URL according to the <a target="_blank" href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986 specification</a>, for either standard integration, where <code>connectionType</code> is not <code>VPC_LINK</code>, or private integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a private HTTP integration, the URI is not used for routing. </p>
-    /// </li>
-    /// <li><p> For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the form <code>arn:aws:apigateway:{region}:{subdomain.service|service}:path|action/{service_api}</code>. Here, <code>{Region}</code> is the API Gateway region (e.g., <code>us-east-1</code>); <code>{service}</code> is the name of the integrated AWS service (e.g., <code>s3</code>); and <code>{subdomain}</code> is a designated subdomain supported by certain AWS service for fast host-name lookup. <code>action</code> can be used for an AWS service action-based API, using an <code>Action={name}&{p1}={v1}&p2={v2}...</code> query string. The ensuing <code>{service_api}</code> refers to a supported action <code>{name}</code> plus any required input parameters. Alternatively, <code>path</code> can be used for an AWS service path-based API. The ensuing  <code>service_api</code> refers to the path to an AWS service resource, including the region of the integrated AWS service, if applicable. For example, for integration with the S3 API of <code><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>, the <code>uri</code> can be either <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&Bucket={bucket}&Key={key}</code> or  <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code></p>
-    /// </li></ul>
+    /// <li><p> For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the URI must be a fully formed, encoded HTTP(S) URL according to the <a target="_blank" href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986 specification</a>, for either standard integration, where <code>connectionType</code> is not <code>VPC_LINK</code>, or private integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a private HTTP integration, the URI is not used for routing. </p> </li>
+    /// <li><p> For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the form <code>arn:aws:apigateway:{region}:{subdomain.service|service}:path|action/{service_api}</code>. Here, <code>{Region}</code> is the API Gateway region (e.g., <code>us-east-1</code>); <code>{service}</code> is the name of the integrated AWS service (e.g., <code>s3</code>); and <code>{subdomain}</code> is a designated subdomain supported by certain AWS service for fast host-name lookup. <code>action</code> can be used for an AWS service action-based API, using an <code>Action={name}&amp;{p1}={v1}&amp;p2={v2}...</code> query string. The ensuing <code>{service_api}</code> refers to a supported action <code>{name}</code> plus any required input parameters. Alternatively, <code>path</code> can be used for an AWS service path-based API. The ensuing <code>service_api</code> refers to the path to an AWS service resource, including the region of the integrated AWS service, if applicable. For example, for integration with the S3 API of <code><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>, the <code>uri</code> can be either <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&amp;Bucket={bucket}&amp;Key={key}</code> or <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code></p> </li>
+    /// </ul>
     pub uri: std::option::Option<std::string::String>,
     /// <p>The type of the network connection to the integration endpoint. The valid value is <code>INTERNET</code> for connections through the public routable internet or <code>VPC_LINK</code> for private connections between API Gateway and a network load balancer in a VPC. The default value is <code>INTERNET</code>.</p>
     pub connection_type: std::option::Option<crate::model::ConnectionType>,
-    /// <p>The (<a href="https://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>) of the <a>VpcLink</a> used for the integration when <code>connectionType=VPC_LINK</code> and undefined, otherwise.</p>
+    /// <p>The (<a href="https://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>) of the <code>VpcLink</code> used for the integration when <code>connectionType=VPC_LINK</code> and undefined, otherwise.</p>
     pub connection_id: std::option::Option<std::string::String>,
     /// <p>Specifies the credentials required for the integration, if any. For AWS integrations, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify the string <code>arn:aws:iam::\*:user/\*</code>. To use resource-based permissions on supported AWS services, specify null.</p>
     pub credentials: std::option::Option<std::string::String>,
-    /// <p>A key-value map specifying request parameters that are passed from the method request to the back end. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the back end. The method request parameter value must match the pattern of  <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> must be a valid and unique method request parameter name.</p>
+    /// <p>A key-value map specifying request parameters that are passed from the method request to the back end. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the back end. The method request parameter value must match the pattern of <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> must be a valid and unique method request parameter name.</p>
     pub request_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Represents a map of Velocity templates that are applied on the request payload based on the value of the Content-Type header sent by the client. The content type value is the key in this map, and the template (as a String) is the value.</p>
     pub request_templates:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <div>
-    /// <p>
-    /// Specifies how the method request body of an unmapped content type will be passed through the integration request
-    /// to the back end without transformation. A content type is unmapped if no mapping template is defined in the integration
-    /// or the content type does not match any of the mapped content types, as specified in <code>requestTemplates</code>.
-    /// The valid value is one of the following:
-    /// </p>
+    /// <p> Specifies how the method request body of an unmapped content type will be passed through the integration request to the back end without transformation. A content type is unmapped if no mapping template is defined in the integration or the content type does not match any of the mapped content types, as specified in <code>requestTemplates</code>. The valid value is one of the following: </p>
     /// <ul>
-    /// <li>
-    /// <code>WHEN_NO_MATCH</code>: passes the method request body through the integration request to the back end without transformation
-    /// when the method request content type does not match any content type associated with the mapping templates defined in the integration request.
-    /// </li>
-    /// <li>
-    /// <code>WHEN_NO_TEMPLATES</code>: passes the method request body through the integration request to the back end without transformation
-    /// when no mapping template is defined in the integration request. If a template is defined when this option is selected, the method request
-    /// of an unmapped content-type will be rejected with an HTTP <code>415 Unsupported Media Type</code> response.
-    /// </li>
-    /// <li>
-    /// <code>NEVER</code>: rejects the method request with an HTTP <code>415 Unsupported Media Type</code> response when either the method
-    /// request content type does not match any content type associated with the mapping templates defined in the integration request or
-    /// no mapping template is defined in the integration request.
-    /// </li>
+    /// <li> <code>WHEN_NO_MATCH</code>: passes the method request body through the integration request to the back end without transformation when the method request content type does not match any content type associated with the mapping templates defined in the integration request. </li>
+    /// <li> <code>WHEN_NO_TEMPLATES</code>: passes the method request body through the integration request to the back end without transformation when no mapping template is defined in the integration request. If a template is defined when this option is selected, the method request of an unmapped content-type will be rejected with an HTTP <code>415 Unsupported Media Type</code> response. </li>
+    /// <li> <code>NEVER</code>: rejects the method request with an HTTP <code>415 Unsupported Media Type</code> response when either the method request content type does not match any content type associated with the mapping templates defined in the integration request or no mapping template is defined in the integration request. </li>
     /// </ul>
     /// </div>
     pub passthrough_behavior: std::option::Option<std::string::String>,
@@ -2579,7 +2545,7 @@ pub struct Integration {
     pub timeout_in_millis: i32,
     /// <p>Specifies a group of related cached parameters. By default, API Gateway uses the resource ID as the <code>cacheNamespace</code>. You can specify the same <code>cacheNamespace</code> across resources to return the same cached data for requests to different resources.</p>
     pub cache_namespace: std::option::Option<std::string::String>,
-    /// <p>A list of request parameters whose values API Gateway caches. To be valid values for <code>cacheKeyParameters</code>, these parameters must also be specified for <a>Method</a> <code>requestParameters</code>.</p>
+    /// <p>A list of request parameters whose values API Gateway caches. To be valid values for <code>cacheKeyParameters</code>, these parameters must also be specified for <code>Method</code> <code>requestParameters</code>.</p>
     pub cache_key_parameters: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies the integration's responses.</p>
     /// <div class="remarks">
@@ -2623,8 +2589,7 @@ pub struct Integration {
     /// }</code></pre>
     /// <p></p>
     /// </div>
-    /// <div class="seeAlso">
-    /// <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating an API</a>
+    /// <div class="seeAlso"> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating an API</a>
     /// </div>
     pub integration_responses: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::IntegrationResponse>,
@@ -2641,7 +2606,7 @@ impl Integration {
     /// <li><code>HTTP_PROXY</code>: for integrating the API method request with an HTTP endpoint, including a private HTTP endpoint within a VPC, with the client request passed through as-is. This is also referred to as the HTTP proxy integration.</li>
     /// <li><code>MOCK</code>: for integrating the API method request with API Gateway as a "loop-back" endpoint without invoking any backend.</li>
     /// </ul>
-    /// <p>For the HTTP and HTTP proxy integrations, each integration can specify a protocol (<code>http/https</code>), port and path. Standard 80 and 443 ports are supported as well as custom ports above 1024. An HTTP or HTTP proxy integration with a <code>connectionType</code> of <code>VPC_LINK</code> is referred to as a private integration and uses a <a>VpcLink</a> to connect API Gateway to a network load balancer of a VPC.</p>
+    /// <p>For the HTTP and HTTP proxy integrations, each integration can specify a protocol (<code>http/https</code>), port and path. Standard 80 and 443 ports are supported as well as custom ports above 1024. An HTTP or HTTP proxy integration with a <code>connectionType</code> of <code>VPC_LINK</code> is referred to as a private integration and uses a <code>VpcLink</code> to connect API Gateway to a network load balancer of a VPC.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::IntegrationType> {
         self.r#type.as_ref()
     }
@@ -2651,10 +2616,9 @@ impl Integration {
     }
     /// <p>Specifies Uniform Resource Identifier (URI) of the integration endpoint.</p>
     /// <ul>
-    /// <li><p> For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the URI must be a fully formed, encoded HTTP(S) URL according to the <a target="_blank" href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986 specification</a>, for either standard integration, where <code>connectionType</code> is not <code>VPC_LINK</code>, or private integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a private HTTP integration, the URI is not used for routing. </p>
-    /// </li>
-    /// <li><p> For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the form <code>arn:aws:apigateway:{region}:{subdomain.service|service}:path|action/{service_api}</code>. Here, <code>{Region}</code> is the API Gateway region (e.g., <code>us-east-1</code>); <code>{service}</code> is the name of the integrated AWS service (e.g., <code>s3</code>); and <code>{subdomain}</code> is a designated subdomain supported by certain AWS service for fast host-name lookup. <code>action</code> can be used for an AWS service action-based API, using an <code>Action={name}&{p1}={v1}&p2={v2}...</code> query string. The ensuing <code>{service_api}</code> refers to a supported action <code>{name}</code> plus any required input parameters. Alternatively, <code>path</code> can be used for an AWS service path-based API. The ensuing  <code>service_api</code> refers to the path to an AWS service resource, including the region of the integrated AWS service, if applicable. For example, for integration with the S3 API of <code><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>, the <code>uri</code> can be either <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&Bucket={bucket}&Key={key}</code> or  <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code></p>
-    /// </li></ul>
+    /// <li><p> For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the URI must be a fully formed, encoded HTTP(S) URL according to the <a target="_blank" href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986 specification</a>, for either standard integration, where <code>connectionType</code> is not <code>VPC_LINK</code>, or private integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a private HTTP integration, the URI is not used for routing. </p> </li>
+    /// <li><p> For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the form <code>arn:aws:apigateway:{region}:{subdomain.service|service}:path|action/{service_api}</code>. Here, <code>{Region}</code> is the API Gateway region (e.g., <code>us-east-1</code>); <code>{service}</code> is the name of the integrated AWS service (e.g., <code>s3</code>); and <code>{subdomain}</code> is a designated subdomain supported by certain AWS service for fast host-name lookup. <code>action</code> can be used for an AWS service action-based API, using an <code>Action={name}&amp;{p1}={v1}&amp;p2={v2}...</code> query string. The ensuing <code>{service_api}</code> refers to a supported action <code>{name}</code> plus any required input parameters. Alternatively, <code>path</code> can be used for an AWS service path-based API. The ensuing <code>service_api</code> refers to the path to an AWS service resource, including the region of the integrated AWS service, if applicable. For example, for integration with the S3 API of <code><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>, the <code>uri</code> can be either <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&amp;Bucket={bucket}&amp;Key={key}</code> or <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code></p> </li>
+    /// </ul>
     pub fn uri(&self) -> std::option::Option<&str> {
         self.uri.as_deref()
     }
@@ -2662,7 +2626,7 @@ impl Integration {
     pub fn connection_type(&self) -> std::option::Option<&crate::model::ConnectionType> {
         self.connection_type.as_ref()
     }
-    /// <p>The (<a href="https://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>) of the <a>VpcLink</a> used for the integration when <code>connectionType=VPC_LINK</code> and undefined, otherwise.</p>
+    /// <p>The (<a href="https://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>) of the <code>VpcLink</code> used for the integration when <code>connectionType=VPC_LINK</code> and undefined, otherwise.</p>
     pub fn connection_id(&self) -> std::option::Option<&str> {
         self.connection_id.as_deref()
     }
@@ -2670,7 +2634,7 @@ impl Integration {
     pub fn credentials(&self) -> std::option::Option<&str> {
         self.credentials.as_deref()
     }
-    /// <p>A key-value map specifying request parameters that are passed from the method request to the back end. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the back end. The method request parameter value must match the pattern of  <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> must be a valid and unique method request parameter name.</p>
+    /// <p>A key-value map specifying request parameters that are passed from the method request to the back end. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the back end. The method request parameter value must match the pattern of <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> must be a valid and unique method request parameter name.</p>
     pub fn request_parameters(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -2685,27 +2649,11 @@ impl Integration {
         self.request_templates.as_ref()
     }
     /// <div>
-    /// <p>
-    /// Specifies how the method request body of an unmapped content type will be passed through the integration request
-    /// to the back end without transformation. A content type is unmapped if no mapping template is defined in the integration
-    /// or the content type does not match any of the mapped content types, as specified in <code>requestTemplates</code>.
-    /// The valid value is one of the following:
-    /// </p>
+    /// <p> Specifies how the method request body of an unmapped content type will be passed through the integration request to the back end without transformation. A content type is unmapped if no mapping template is defined in the integration or the content type does not match any of the mapped content types, as specified in <code>requestTemplates</code>. The valid value is one of the following: </p>
     /// <ul>
-    /// <li>
-    /// <code>WHEN_NO_MATCH</code>: passes the method request body through the integration request to the back end without transformation
-    /// when the method request content type does not match any content type associated with the mapping templates defined in the integration request.
-    /// </li>
-    /// <li>
-    /// <code>WHEN_NO_TEMPLATES</code>: passes the method request body through the integration request to the back end without transformation
-    /// when no mapping template is defined in the integration request. If a template is defined when this option is selected, the method request
-    /// of an unmapped content-type will be rejected with an HTTP <code>415 Unsupported Media Type</code> response.
-    /// </li>
-    /// <li>
-    /// <code>NEVER</code>: rejects the method request with an HTTP <code>415 Unsupported Media Type</code> response when either the method
-    /// request content type does not match any content type associated with the mapping templates defined in the integration request or
-    /// no mapping template is defined in the integration request.
-    /// </li>
+    /// <li> <code>WHEN_NO_MATCH</code>: passes the method request body through the integration request to the back end without transformation when the method request content type does not match any content type associated with the mapping templates defined in the integration request. </li>
+    /// <li> <code>WHEN_NO_TEMPLATES</code>: passes the method request body through the integration request to the back end without transformation when no mapping template is defined in the integration request. If a template is defined when this option is selected, the method request of an unmapped content-type will be rejected with an HTTP <code>415 Unsupported Media Type</code> response. </li>
+    /// <li> <code>NEVER</code>: rejects the method request with an HTTP <code>415 Unsupported Media Type</code> response when either the method request content type does not match any content type associated with the mapping templates defined in the integration request or no mapping template is defined in the integration request. </li>
     /// </ul>
     /// </div>
     pub fn passthrough_behavior(&self) -> std::option::Option<&str> {
@@ -2728,7 +2676,7 @@ impl Integration {
     pub fn cache_namespace(&self) -> std::option::Option<&str> {
         self.cache_namespace.as_deref()
     }
-    /// <p>A list of request parameters whose values API Gateway caches. To be valid values for <code>cacheKeyParameters</code>, these parameters must also be specified for <a>Method</a> <code>requestParameters</code>.</p>
+    /// <p>A list of request parameters whose values API Gateway caches. To be valid values for <code>cacheKeyParameters</code>, these parameters must also be specified for <code>Method</code> <code>requestParameters</code>.</p>
     pub fn cache_key_parameters(&self) -> std::option::Option<&[std::string::String]> {
         self.cache_key_parameters.as_deref()
     }
@@ -2774,8 +2722,7 @@ impl Integration {
     /// }</code></pre>
     /// <p></p>
     /// </div>
-    /// <div class="seeAlso">
-    /// <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating an API</a>
+    /// <div class="seeAlso"> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating an API</a>
     /// </div>
     pub fn integration_responses(
         &self,
@@ -2847,7 +2794,7 @@ pub mod integration {
         /// <li><code>HTTP_PROXY</code>: for integrating the API method request with an HTTP endpoint, including a private HTTP endpoint within a VPC, with the client request passed through as-is. This is also referred to as the HTTP proxy integration.</li>
         /// <li><code>MOCK</code>: for integrating the API method request with API Gateway as a "loop-back" endpoint without invoking any backend.</li>
         /// </ul>
-        /// <p>For the HTTP and HTTP proxy integrations, each integration can specify a protocol (<code>http/https</code>), port and path. Standard 80 and 443 ports are supported as well as custom ports above 1024. An HTTP or HTTP proxy integration with a <code>connectionType</code> of <code>VPC_LINK</code> is referred to as a private integration and uses a <a>VpcLink</a> to connect API Gateway to a network load balancer of a VPC.</p>
+        /// <p>For the HTTP and HTTP proxy integrations, each integration can specify a protocol (<code>http/https</code>), port and path. Standard 80 and 443 ports are supported as well as custom ports above 1024. An HTTP or HTTP proxy integration with a <code>connectionType</code> of <code>VPC_LINK</code> is referred to as a private integration and uses a <code>VpcLink</code> to connect API Gateway to a network load balancer of a VPC.</p>
         pub fn r#type(mut self, input: crate::model::IntegrationType) -> Self {
             self.r#type = Some(input);
             self
@@ -2860,7 +2807,7 @@ pub mod integration {
         /// <li><code>HTTP_PROXY</code>: for integrating the API method request with an HTTP endpoint, including a private HTTP endpoint within a VPC, with the client request passed through as-is. This is also referred to as the HTTP proxy integration.</li>
         /// <li><code>MOCK</code>: for integrating the API method request with API Gateway as a "loop-back" endpoint without invoking any backend.</li>
         /// </ul>
-        /// <p>For the HTTP and HTTP proxy integrations, each integration can specify a protocol (<code>http/https</code>), port and path. Standard 80 and 443 ports are supported as well as custom ports above 1024. An HTTP or HTTP proxy integration with a <code>connectionType</code> of <code>VPC_LINK</code> is referred to as a private integration and uses a <a>VpcLink</a> to connect API Gateway to a network load balancer of a VPC.</p>
+        /// <p>For the HTTP and HTTP proxy integrations, each integration can specify a protocol (<code>http/https</code>), port and path. Standard 80 and 443 ports are supported as well as custom ports above 1024. An HTTP or HTTP proxy integration with a <code>connectionType</code> of <code>VPC_LINK</code> is referred to as a private integration and uses a <code>VpcLink</code> to connect API Gateway to a network load balancer of a VPC.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::IntegrationType>,
@@ -2880,20 +2827,18 @@ pub mod integration {
         }
         /// <p>Specifies Uniform Resource Identifier (URI) of the integration endpoint.</p>
         /// <ul>
-        /// <li><p> For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the URI must be a fully formed, encoded HTTP(S) URL according to the <a target="_blank" href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986 specification</a>, for either standard integration, where <code>connectionType</code> is not <code>VPC_LINK</code>, or private integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a private HTTP integration, the URI is not used for routing. </p>
-        /// </li>
-        /// <li><p> For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the form <code>arn:aws:apigateway:{region}:{subdomain.service|service}:path|action/{service_api}</code>. Here, <code>{Region}</code> is the API Gateway region (e.g., <code>us-east-1</code>); <code>{service}</code> is the name of the integrated AWS service (e.g., <code>s3</code>); and <code>{subdomain}</code> is a designated subdomain supported by certain AWS service for fast host-name lookup. <code>action</code> can be used for an AWS service action-based API, using an <code>Action={name}&{p1}={v1}&p2={v2}...</code> query string. The ensuing <code>{service_api}</code> refers to a supported action <code>{name}</code> plus any required input parameters. Alternatively, <code>path</code> can be used for an AWS service path-based API. The ensuing  <code>service_api</code> refers to the path to an AWS service resource, including the region of the integrated AWS service, if applicable. For example, for integration with the S3 API of <code><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>, the <code>uri</code> can be either <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&Bucket={bucket}&Key={key}</code> or  <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code></p>
-        /// </li></ul>
+        /// <li><p> For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the URI must be a fully formed, encoded HTTP(S) URL according to the <a target="_blank" href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986 specification</a>, for either standard integration, where <code>connectionType</code> is not <code>VPC_LINK</code>, or private integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a private HTTP integration, the URI is not used for routing. </p> </li>
+        /// <li><p> For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the form <code>arn:aws:apigateway:{region}:{subdomain.service|service}:path|action/{service_api}</code>. Here, <code>{Region}</code> is the API Gateway region (e.g., <code>us-east-1</code>); <code>{service}</code> is the name of the integrated AWS service (e.g., <code>s3</code>); and <code>{subdomain}</code> is a designated subdomain supported by certain AWS service for fast host-name lookup. <code>action</code> can be used for an AWS service action-based API, using an <code>Action={name}&amp;{p1}={v1}&amp;p2={v2}...</code> query string. The ensuing <code>{service_api}</code> refers to a supported action <code>{name}</code> plus any required input parameters. Alternatively, <code>path</code> can be used for an AWS service path-based API. The ensuing <code>service_api</code> refers to the path to an AWS service resource, including the region of the integrated AWS service, if applicable. For example, for integration with the S3 API of <code><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>, the <code>uri</code> can be either <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&amp;Bucket={bucket}&amp;Key={key}</code> or <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code></p> </li>
+        /// </ul>
         pub fn uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.uri = Some(input.into());
             self
         }
         /// <p>Specifies Uniform Resource Identifier (URI) of the integration endpoint.</p>
         /// <ul>
-        /// <li><p> For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the URI must be a fully formed, encoded HTTP(S) URL according to the <a target="_blank" href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986 specification</a>, for either standard integration, where <code>connectionType</code> is not <code>VPC_LINK</code>, or private integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a private HTTP integration, the URI is not used for routing. </p>
-        /// </li>
-        /// <li><p> For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the form <code>arn:aws:apigateway:{region}:{subdomain.service|service}:path|action/{service_api}</code>. Here, <code>{Region}</code> is the API Gateway region (e.g., <code>us-east-1</code>); <code>{service}</code> is the name of the integrated AWS service (e.g., <code>s3</code>); and <code>{subdomain}</code> is a designated subdomain supported by certain AWS service for fast host-name lookup. <code>action</code> can be used for an AWS service action-based API, using an <code>Action={name}&{p1}={v1}&p2={v2}...</code> query string. The ensuing <code>{service_api}</code> refers to a supported action <code>{name}</code> plus any required input parameters. Alternatively, <code>path</code> can be used for an AWS service path-based API. The ensuing  <code>service_api</code> refers to the path to an AWS service resource, including the region of the integrated AWS service, if applicable. For example, for integration with the S3 API of <code><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>, the <code>uri</code> can be either <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&Bucket={bucket}&Key={key}</code> or  <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code></p>
-        /// </li></ul>
+        /// <li><p> For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the URI must be a fully formed, encoded HTTP(S) URL according to the <a target="_blank" href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986 specification</a>, for either standard integration, where <code>connectionType</code> is not <code>VPC_LINK</code>, or private integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a private HTTP integration, the URI is not used for routing. </p> </li>
+        /// <li><p> For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the form <code>arn:aws:apigateway:{region}:{subdomain.service|service}:path|action/{service_api}</code>. Here, <code>{Region}</code> is the API Gateway region (e.g., <code>us-east-1</code>); <code>{service}</code> is the name of the integrated AWS service (e.g., <code>s3</code>); and <code>{subdomain}</code> is a designated subdomain supported by certain AWS service for fast host-name lookup. <code>action</code> can be used for an AWS service action-based API, using an <code>Action={name}&amp;{p1}={v1}&amp;p2={v2}...</code> query string. The ensuing <code>{service_api}</code> refers to a supported action <code>{name}</code> plus any required input parameters. Alternatively, <code>path</code> can be used for an AWS service path-based API. The ensuing <code>service_api</code> refers to the path to an AWS service resource, including the region of the integrated AWS service, if applicable. For example, for integration with the S3 API of <code><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>, the <code>uri</code> can be either <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&amp;Bucket={bucket}&amp;Key={key}</code> or <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code></p> </li>
+        /// </ul>
         pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.uri = input;
             self
@@ -2911,12 +2856,12 @@ pub mod integration {
             self.connection_type = input;
             self
         }
-        /// <p>The (<a href="https://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>) of the <a>VpcLink</a> used for the integration when <code>connectionType=VPC_LINK</code> and undefined, otherwise.</p>
+        /// <p>The (<a href="https://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>) of the <code>VpcLink</code> used for the integration when <code>connectionType=VPC_LINK</code> and undefined, otherwise.</p>
         pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.connection_id = Some(input.into());
             self
         }
-        /// <p>The (<a href="https://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>) of the <a>VpcLink</a> used for the integration when <code>connectionType=VPC_LINK</code> and undefined, otherwise.</p>
+        /// <p>The (<a href="https://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>) of the <code>VpcLink</code> used for the integration when <code>connectionType=VPC_LINK</code> and undefined, otherwise.</p>
         pub fn set_connection_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2938,7 +2883,7 @@ pub mod integration {
         ///
         /// To override the contents of this collection use [`set_request_parameters`](Self::set_request_parameters).
         ///
-        /// <p>A key-value map specifying request parameters that are passed from the method request to the back end. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the back end. The method request parameter value must match the pattern of  <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> must be a valid and unique method request parameter name.</p>
+        /// <p>A key-value map specifying request parameters that are passed from the method request to the back end. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the back end. The method request parameter value must match the pattern of <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> must be a valid and unique method request parameter name.</p>
         pub fn request_parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -2949,7 +2894,7 @@ pub mod integration {
             self.request_parameters = Some(hash_map);
             self
         }
-        /// <p>A key-value map specifying request parameters that are passed from the method request to the back end. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the back end. The method request parameter value must match the pattern of  <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> must be a valid and unique method request parameter name.</p>
+        /// <p>A key-value map specifying request parameters that are passed from the method request to the back end. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the back end. The method request parameter value must match the pattern of <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> must be a valid and unique method request parameter name.</p>
         pub fn set_request_parameters(
             mut self,
             input: std::option::Option<
@@ -2985,27 +2930,11 @@ pub mod integration {
             self
         }
         /// <div>
-        /// <p>
-        /// Specifies how the method request body of an unmapped content type will be passed through the integration request
-        /// to the back end without transformation. A content type is unmapped if no mapping template is defined in the integration
-        /// or the content type does not match any of the mapped content types, as specified in <code>requestTemplates</code>.
-        /// The valid value is one of the following:
-        /// </p>
+        /// <p> Specifies how the method request body of an unmapped content type will be passed through the integration request to the back end without transformation. A content type is unmapped if no mapping template is defined in the integration or the content type does not match any of the mapped content types, as specified in <code>requestTemplates</code>. The valid value is one of the following: </p>
         /// <ul>
-        /// <li>
-        /// <code>WHEN_NO_MATCH</code>: passes the method request body through the integration request to the back end without transformation
-        /// when the method request content type does not match any content type associated with the mapping templates defined in the integration request.
-        /// </li>
-        /// <li>
-        /// <code>WHEN_NO_TEMPLATES</code>: passes the method request body through the integration request to the back end without transformation
-        /// when no mapping template is defined in the integration request. If a template is defined when this option is selected, the method request
-        /// of an unmapped content-type will be rejected with an HTTP <code>415 Unsupported Media Type</code> response.
-        /// </li>
-        /// <li>
-        /// <code>NEVER</code>: rejects the method request with an HTTP <code>415 Unsupported Media Type</code> response when either the method
-        /// request content type does not match any content type associated with the mapping templates defined in the integration request or
-        /// no mapping template is defined in the integration request.
-        /// </li>
+        /// <li> <code>WHEN_NO_MATCH</code>: passes the method request body through the integration request to the back end without transformation when the method request content type does not match any content type associated with the mapping templates defined in the integration request. </li>
+        /// <li> <code>WHEN_NO_TEMPLATES</code>: passes the method request body through the integration request to the back end without transformation when no mapping template is defined in the integration request. If a template is defined when this option is selected, the method request of an unmapped content-type will be rejected with an HTTP <code>415 Unsupported Media Type</code> response. </li>
+        /// <li> <code>NEVER</code>: rejects the method request with an HTTP <code>415 Unsupported Media Type</code> response when either the method request content type does not match any content type associated with the mapping templates defined in the integration request or no mapping template is defined in the integration request. </li>
         /// </ul>
         /// </div>
         pub fn passthrough_behavior(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3013,27 +2942,11 @@ pub mod integration {
             self
         }
         /// <div>
-        /// <p>
-        /// Specifies how the method request body of an unmapped content type will be passed through the integration request
-        /// to the back end without transformation. A content type is unmapped if no mapping template is defined in the integration
-        /// or the content type does not match any of the mapped content types, as specified in <code>requestTemplates</code>.
-        /// The valid value is one of the following:
-        /// </p>
+        /// <p> Specifies how the method request body of an unmapped content type will be passed through the integration request to the back end without transformation. A content type is unmapped if no mapping template is defined in the integration or the content type does not match any of the mapped content types, as specified in <code>requestTemplates</code>. The valid value is one of the following: </p>
         /// <ul>
-        /// <li>
-        /// <code>WHEN_NO_MATCH</code>: passes the method request body through the integration request to the back end without transformation
-        /// when the method request content type does not match any content type associated with the mapping templates defined in the integration request.
-        /// </li>
-        /// <li>
-        /// <code>WHEN_NO_TEMPLATES</code>: passes the method request body through the integration request to the back end without transformation
-        /// when no mapping template is defined in the integration request. If a template is defined when this option is selected, the method request
-        /// of an unmapped content-type will be rejected with an HTTP <code>415 Unsupported Media Type</code> response.
-        /// </li>
-        /// <li>
-        /// <code>NEVER</code>: rejects the method request with an HTTP <code>415 Unsupported Media Type</code> response when either the method
-        /// request content type does not match any content type associated with the mapping templates defined in the integration request or
-        /// no mapping template is defined in the integration request.
-        /// </li>
+        /// <li> <code>WHEN_NO_MATCH</code>: passes the method request body through the integration request to the back end without transformation when the method request content type does not match any content type associated with the mapping templates defined in the integration request. </li>
+        /// <li> <code>WHEN_NO_TEMPLATES</code>: passes the method request body through the integration request to the back end without transformation when no mapping template is defined in the integration request. If a template is defined when this option is selected, the method request of an unmapped content-type will be rejected with an HTTP <code>415 Unsupported Media Type</code> response. </li>
+        /// <li> <code>NEVER</code>: rejects the method request with an HTTP <code>415 Unsupported Media Type</code> response when either the method request content type does not match any content type associated with the mapping templates defined in the integration request or no mapping template is defined in the integration request. </li>
         /// </ul>
         /// </div>
         pub fn set_passthrough_behavior(
@@ -3093,14 +3006,14 @@ pub mod integration {
         ///
         /// To override the contents of this collection use [`set_cache_key_parameters`](Self::set_cache_key_parameters).
         ///
-        /// <p>A list of request parameters whose values API Gateway caches. To be valid values for <code>cacheKeyParameters</code>, these parameters must also be specified for <a>Method</a> <code>requestParameters</code>.</p>
+        /// <p>A list of request parameters whose values API Gateway caches. To be valid values for <code>cacheKeyParameters</code>, these parameters must also be specified for <code>Method</code> <code>requestParameters</code>.</p>
         pub fn cache_key_parameters(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.cache_key_parameters.unwrap_or_default();
             v.push(input.into());
             self.cache_key_parameters = Some(v);
             self
         }
-        /// <p>A list of request parameters whose values API Gateway caches. To be valid values for <code>cacheKeyParameters</code>, these parameters must also be specified for <a>Method</a> <code>requestParameters</code>.</p>
+        /// <p>A list of request parameters whose values API Gateway caches. To be valid values for <code>cacheKeyParameters</code>, these parameters must also be specified for <code>Method</code> <code>requestParameters</code>.</p>
         pub fn set_cache_key_parameters(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3154,8 +3067,7 @@ pub mod integration {
         /// }</code></pre>
         /// <p></p>
         /// </div>
-        /// <div class="seeAlso">
-        /// <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating an API</a>
+        /// <div class="seeAlso"> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating an API</a>
         /// </div>
         pub fn integration_responses(
             mut self,
@@ -3209,8 +3121,7 @@ pub mod integration {
         /// }</code></pre>
         /// <p></p>
         /// </div>
-        /// <div class="seeAlso">
-        /// <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating an API</a>
+        /// <div class="seeAlso"> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating an API</a>
         /// </div>
         pub fn set_integration_responses(
             mut self,
@@ -3267,23 +3178,11 @@ impl Integration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TlsConfig {
-    /// <p>Specifies whether or not API Gateway skips verification that the certificate for an integration endpoint is
-    /// issued by a <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-supported-certificate-authorities-for-http-endpoints.html">supported certificate authority</a>. This isn’t recommended, but it enables you to
-    /// use certificates that are signed by private certificate authorities, or certificates
-    /// that are self-signed. If enabled, API Gateway still performs basic certificate
-    /// validation, which includes checking the certificate's expiration date, hostname, and
-    /// presence of a root certificate authority. Supported only for <code>HTTP</code> and
-    /// <code>HTTP_PROXY</code> integrations.</p>
+    /// <p>Specifies whether or not API Gateway skips verification that the certificate for an integration endpoint is issued by a <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-supported-certificate-authorities-for-http-endpoints.html">supported certificate authority</a>. This isn’t recommended, but it enables you to use certificates that are signed by private certificate authorities, or certificates that are self-signed. If enabled, API Gateway still performs basic certificate validation, which includes checking the certificate's expiration date, hostname, and presence of a root certificate authority. Supported only for <code>HTTP</code> and <code>HTTP_PROXY</code> integrations.</p>
     pub insecure_skip_verification: bool,
 }
 impl TlsConfig {
-    /// <p>Specifies whether or not API Gateway skips verification that the certificate for an integration endpoint is
-    /// issued by a <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-supported-certificate-authorities-for-http-endpoints.html">supported certificate authority</a>. This isn’t recommended, but it enables you to
-    /// use certificates that are signed by private certificate authorities, or certificates
-    /// that are self-signed. If enabled, API Gateway still performs basic certificate
-    /// validation, which includes checking the certificate's expiration date, hostname, and
-    /// presence of a root certificate authority. Supported only for <code>HTTP</code> and
-    /// <code>HTTP_PROXY</code> integrations.</p>
+    /// <p>Specifies whether or not API Gateway skips verification that the certificate for an integration endpoint is issued by a <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-supported-certificate-authorities-for-http-endpoints.html">supported certificate authority</a>. This isn’t recommended, but it enables you to use certificates that are signed by private certificate authorities, or certificates that are self-signed. If enabled, API Gateway still performs basic certificate validation, which includes checking the certificate's expiration date, hostname, and presence of a root certificate authority. Supported only for <code>HTTP</code> and <code>HTTP_PROXY</code> integrations.</p>
     pub fn insecure_skip_verification(&self) -> bool {
         self.insecure_skip_verification
     }
@@ -3307,24 +3206,12 @@ pub mod tls_config {
         pub(crate) insecure_skip_verification: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>Specifies whether or not API Gateway skips verification that the certificate for an integration endpoint is
-        /// issued by a <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-supported-certificate-authorities-for-http-endpoints.html">supported certificate authority</a>. This isn’t recommended, but it enables you to
-        /// use certificates that are signed by private certificate authorities, or certificates
-        /// that are self-signed. If enabled, API Gateway still performs basic certificate
-        /// validation, which includes checking the certificate's expiration date, hostname, and
-        /// presence of a root certificate authority. Supported only for <code>HTTP</code> and
-        /// <code>HTTP_PROXY</code> integrations.</p>
+        /// <p>Specifies whether or not API Gateway skips verification that the certificate for an integration endpoint is issued by a <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-supported-certificate-authorities-for-http-endpoints.html">supported certificate authority</a>. This isn’t recommended, but it enables you to use certificates that are signed by private certificate authorities, or certificates that are self-signed. If enabled, API Gateway still performs basic certificate validation, which includes checking the certificate's expiration date, hostname, and presence of a root certificate authority. Supported only for <code>HTTP</code> and <code>HTTP_PROXY</code> integrations.</p>
         pub fn insecure_skip_verification(mut self, input: bool) -> Self {
             self.insecure_skip_verification = Some(input);
             self
         }
-        /// <p>Specifies whether or not API Gateway skips verification that the certificate for an integration endpoint is
-        /// issued by a <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-supported-certificate-authorities-for-http-endpoints.html">supported certificate authority</a>. This isn’t recommended, but it enables you to
-        /// use certificates that are signed by private certificate authorities, or certificates
-        /// that are self-signed. If enabled, API Gateway still performs basic certificate
-        /// validation, which includes checking the certificate's expiration date, hostname, and
-        /// presence of a root certificate authority. Supported only for <code>HTTP</code> and
-        /// <code>HTTP_PROXY</code> integrations.</p>
+        /// <p>Specifies whether or not API Gateway skips verification that the certificate for an integration endpoint is issued by a <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-supported-certificate-authorities-for-http-endpoints.html">supported certificate authority</a>. This isn’t recommended, but it enables you to use certificates that are signed by private certificate authorities, or certificates that are self-signed. If enabled, API Gateway still performs basic certificate validation, which includes checking the certificate's expiration date, hostname, and presence of a root certificate authority. Supported only for <code>HTTP</code> and <code>HTTP_PROXY</code> integrations.</p>
         pub fn set_insecure_skip_verification(mut self, input: std::option::Option<bool>) -> Self {
             self.insecure_skip_verification = input;
             self
@@ -3344,19 +3231,17 @@ impl TlsConfig {
     }
 }
 
-/// <p>Represents an integration response. The status code must map to an existing <a>MethodResponse</a>, and parameters and templates can be used to transform the back-end response.</p>
-/// <div class="seeAlso">
-/// <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating an API</a>
+/// <p>Represents an integration response. The status code must map to an existing <code>MethodResponse</code>, and parameters and templates can be used to transform the back-end response.</p>
+/// <div class="seeAlso"> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating an API</a>
 /// </div>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IntegrationResponse {
-    /// <p>Specifies the status code that is used to map the integration response to an existing <a>MethodResponse</a>.</p>
+    /// <p>Specifies the status code that is used to map the integration response to an existing <code>MethodResponse</code>.</p>
     pub status_code: std::option::Option<std::string::String>,
     /// <p>Specifies the regular expression (regex) pattern used to choose an integration response based on the response from the back end. For example, if the success response returns nothing and the error response returns some string, you could use the <code>.+</code> regex to match error response. However, make sure that the error response does not contain any newline (<code>\n</code>) character in such cases. If the back end is an AWS Lambda function, the AWS Lambda function error header is matched. For all other HTTP and AWS back ends, the HTTP status code is matched.</p>
     pub selection_pattern: std::option::Option<std::string::String>,
-    /// <p>A key-value map specifying response parameters that are passed to the method response from the back end.
-    /// The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. The mapped non-static value must match the pattern of <code>integration.response.header.{name}</code> or <code>integration.response.body.{JSON-expression}</code>, where <code>name</code> is a valid and unique response header name and <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.</p>
+    /// <p>A key-value map specifying response parameters that are passed to the method response from the back end. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. The mapped non-static value must match the pattern of <code>integration.response.header.{name}</code> or <code>integration.response.body.{JSON-expression}</code>, where <code>name</code> is a valid and unique response header name and <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.</p>
     pub response_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Specifies the templates used to transform the integration response body. Response templates are represented as a key/value map, with a content-type as the key and a template as the value.</p>
@@ -3371,7 +3256,7 @@ pub struct IntegrationResponse {
     pub content_handling: std::option::Option<crate::model::ContentHandlingStrategy>,
 }
 impl IntegrationResponse {
-    /// <p>Specifies the status code that is used to map the integration response to an existing <a>MethodResponse</a>.</p>
+    /// <p>Specifies the status code that is used to map the integration response to an existing <code>MethodResponse</code>.</p>
     pub fn status_code(&self) -> std::option::Option<&str> {
         self.status_code.as_deref()
     }
@@ -3379,8 +3264,7 @@ impl IntegrationResponse {
     pub fn selection_pattern(&self) -> std::option::Option<&str> {
         self.selection_pattern.as_deref()
     }
-    /// <p>A key-value map specifying response parameters that are passed to the method response from the back end.
-    /// The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. The mapped non-static value must match the pattern of <code>integration.response.header.{name}</code> or <code>integration.response.body.{JSON-expression}</code>, where <code>name</code> is a valid and unique response header name and <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.</p>
+    /// <p>A key-value map specifying response parameters that are passed to the method response from the back end. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. The mapped non-static value must match the pattern of <code>integration.response.header.{name}</code> or <code>integration.response.body.{JSON-expression}</code>, where <code>name</code> is a valid and unique response header name and <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.</p>
     pub fn response_parameters(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -3432,12 +3316,12 @@ pub mod integration_response {
         pub(crate) content_handling: std::option::Option<crate::model::ContentHandlingStrategy>,
     }
     impl Builder {
-        /// <p>Specifies the status code that is used to map the integration response to an existing <a>MethodResponse</a>.</p>
+        /// <p>Specifies the status code that is used to map the integration response to an existing <code>MethodResponse</code>.</p>
         pub fn status_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.status_code = Some(input.into());
             self
         }
-        /// <p>Specifies the status code that is used to map the integration response to an existing <a>MethodResponse</a>.</p>
+        /// <p>Specifies the status code that is used to map the integration response to an existing <code>MethodResponse</code>.</p>
         pub fn set_status_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status_code = input;
             self
@@ -3459,8 +3343,7 @@ pub mod integration_response {
         ///
         /// To override the contents of this collection use [`set_response_parameters`](Self::set_response_parameters).
         ///
-        /// <p>A key-value map specifying response parameters that are passed to the method response from the back end.
-        /// The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. The mapped non-static value must match the pattern of <code>integration.response.header.{name}</code> or <code>integration.response.body.{JSON-expression}</code>, where <code>name</code> is a valid and unique response header name and <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.</p>
+        /// <p>A key-value map specifying response parameters that are passed to the method response from the back end. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. The mapped non-static value must match the pattern of <code>integration.response.header.{name}</code> or <code>integration.response.body.{JSON-expression}</code>, where <code>name</code> is a valid and unique response header name and <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.</p>
         pub fn response_parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -3471,8 +3354,7 @@ pub mod integration_response {
             self.response_parameters = Some(hash_map);
             self
         }
-        /// <p>A key-value map specifying response parameters that are passed to the method response from the back end.
-        /// The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. The mapped non-static value must match the pattern of <code>integration.response.header.{name}</code> or <code>integration.response.body.{JSON-expression}</code>, where <code>name</code> is a valid and unique response header name and <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.</p>
+        /// <p>A key-value map specifying response parameters that are passed to the method response from the back end. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. The mapped non-static value must match the pattern of <code>integration.response.header.{name}</code> or <code>integration.response.body.{JSON-expression}</code>, where <code>name</code> is a valid and unique response header name and <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.</p>
         pub fn set_response_parameters(
             mut self,
             input: std::option::Option<
@@ -3767,19 +3649,17 @@ impl AsRef<str> for IntegrationType {
 /// }</code></pre>
 /// <p></p>
 /// </div>
-/// <div class="seeAlso">
-/// <a>Method</a>, <a>IntegrationResponse</a>, <a>Integration</a>
-/// <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating an API</a>
+/// <div class="seeAlso"> <code>Method</code>, <code>IntegrationResponse</code>, <code>Integration</code> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating an API</a>
 /// </div>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MethodResponse {
     /// <p>The method response's status code.</p>
     pub status_code: std::option::Option<std::string::String>,
-    /// <p>A key-value map specifying required or optional response parameters that API Gateway can send back to the caller. A key defines a method response header and the value specifies whether the associated method response header is required or not. The expression of the key must match the pattern <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. API Gateway passes certain integration response data to the method response headers specified here according to the mapping you prescribe in the API's <a>IntegrationResponse</a>. The integration response data that can be mapped include an integration response header expressed in <code>integration.response.header.{name}</code>, a static value enclosed within a pair of single quotes (e.g., <code>'application/json'</code>), or a JSON expression from the back-end response payload in the form of <code>integration.response.body.{JSON-expression}</code>, where <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.)</p>
+    /// <p>A key-value map specifying required or optional response parameters that API Gateway can send back to the caller. A key defines a method response header and the value specifies whether the associated method response header is required or not. The expression of the key must match the pattern <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. API Gateway passes certain integration response data to the method response headers specified here according to the mapping you prescribe in the API's <code>IntegrationResponse</code>. The integration response data that can be mapped include an integration response header expressed in <code>integration.response.header.{name}</code>, a static value enclosed within a pair of single quotes (e.g., <code>'application/json'</code>), or a JSON expression from the back-end response payload in the form of <code>integration.response.body.{JSON-expression}</code>, where <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.)</p>
     pub response_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, bool>>,
-    /// <p>Specifies the <a>Model</a> resources used for the response's content-type. Response models are represented as a key/value map, with a content-type as the key and a <a>Model</a> name as the value.</p>
+    /// <p>Specifies the <code>Model</code> resources used for the response's content-type. Response models are represented as a key/value map, with a content-type as the key and a <code>Model</code> name as the value.</p>
     pub response_models:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -3788,13 +3668,13 @@ impl MethodResponse {
     pub fn status_code(&self) -> std::option::Option<&str> {
         self.status_code.as_deref()
     }
-    /// <p>A key-value map specifying required or optional response parameters that API Gateway can send back to the caller. A key defines a method response header and the value specifies whether the associated method response header is required or not. The expression of the key must match the pattern <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. API Gateway passes certain integration response data to the method response headers specified here according to the mapping you prescribe in the API's <a>IntegrationResponse</a>. The integration response data that can be mapped include an integration response header expressed in <code>integration.response.header.{name}</code>, a static value enclosed within a pair of single quotes (e.g., <code>'application/json'</code>), or a JSON expression from the back-end response payload in the form of <code>integration.response.body.{JSON-expression}</code>, where <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.)</p>
+    /// <p>A key-value map specifying required or optional response parameters that API Gateway can send back to the caller. A key defines a method response header and the value specifies whether the associated method response header is required or not. The expression of the key must match the pattern <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. API Gateway passes certain integration response data to the method response headers specified here according to the mapping you prescribe in the API's <code>IntegrationResponse</code>. The integration response data that can be mapped include an integration response header expressed in <code>integration.response.header.{name}</code>, a static value enclosed within a pair of single quotes (e.g., <code>'application/json'</code>), or a JSON expression from the back-end response payload in the form of <code>integration.response.body.{JSON-expression}</code>, where <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.)</p>
     pub fn response_parameters(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, bool>> {
         self.response_parameters.as_ref()
     }
-    /// <p>Specifies the <a>Model</a> resources used for the response's content-type. Response models are represented as a key/value map, with a content-type as the key and a <a>Model</a> name as the value.</p>
+    /// <p>Specifies the <code>Model</code> resources used for the response's content-type. Response models are represented as a key/value map, with a content-type as the key and a <code>Model</code> name as the value.</p>
     pub fn response_models(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -3839,14 +3719,14 @@ pub mod method_response {
         ///
         /// To override the contents of this collection use [`set_response_parameters`](Self::set_response_parameters).
         ///
-        /// <p>A key-value map specifying required or optional response parameters that API Gateway can send back to the caller. A key defines a method response header and the value specifies whether the associated method response header is required or not. The expression of the key must match the pattern <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. API Gateway passes certain integration response data to the method response headers specified here according to the mapping you prescribe in the API's <a>IntegrationResponse</a>. The integration response data that can be mapped include an integration response header expressed in <code>integration.response.header.{name}</code>, a static value enclosed within a pair of single quotes (e.g., <code>'application/json'</code>), or a JSON expression from the back-end response payload in the form of <code>integration.response.body.{JSON-expression}</code>, where <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.)</p>
+        /// <p>A key-value map specifying required or optional response parameters that API Gateway can send back to the caller. A key defines a method response header and the value specifies whether the associated method response header is required or not. The expression of the key must match the pattern <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. API Gateway passes certain integration response data to the method response headers specified here according to the mapping you prescribe in the API's <code>IntegrationResponse</code>. The integration response data that can be mapped include an integration response header expressed in <code>integration.response.header.{name}</code>, a static value enclosed within a pair of single quotes (e.g., <code>'application/json'</code>), or a JSON expression from the back-end response payload in the form of <code>integration.response.body.{JSON-expression}</code>, where <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.)</p>
         pub fn response_parameters(mut self, k: impl Into<std::string::String>, v: bool) -> Self {
             let mut hash_map = self.response_parameters.unwrap_or_default();
             hash_map.insert(k.into(), v);
             self.response_parameters = Some(hash_map);
             self
         }
-        /// <p>A key-value map specifying required or optional response parameters that API Gateway can send back to the caller. A key defines a method response header and the value specifies whether the associated method response header is required or not. The expression of the key must match the pattern <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. API Gateway passes certain integration response data to the method response headers specified here according to the mapping you prescribe in the API's <a>IntegrationResponse</a>. The integration response data that can be mapped include an integration response header expressed in <code>integration.response.header.{name}</code>, a static value enclosed within a pair of single quotes (e.g., <code>'application/json'</code>), or a JSON expression from the back-end response payload in the form of <code>integration.response.body.{JSON-expression}</code>, where <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.)</p>
+        /// <p>A key-value map specifying required or optional response parameters that API Gateway can send back to the caller. A key defines a method response header and the value specifies whether the associated method response header is required or not. The expression of the key must match the pattern <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. API Gateway passes certain integration response data to the method response headers specified here according to the mapping you prescribe in the API's <code>IntegrationResponse</code>. The integration response data that can be mapped include an integration response header expressed in <code>integration.response.header.{name}</code>, a static value enclosed within a pair of single quotes (e.g., <code>'application/json'</code>), or a JSON expression from the back-end response payload in the form of <code>integration.response.body.{JSON-expression}</code>, where <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.)</p>
         pub fn set_response_parameters(
             mut self,
             input: std::option::Option<std::collections::HashMap<std::string::String, bool>>,
@@ -3858,7 +3738,7 @@ pub mod method_response {
         ///
         /// To override the contents of this collection use [`set_response_models`](Self::set_response_models).
         ///
-        /// <p>Specifies the <a>Model</a> resources used for the response's content-type. Response models are represented as a key/value map, with a content-type as the key and a <a>Model</a> name as the value.</p>
+        /// <p>Specifies the <code>Model</code> resources used for the response's content-type. Response models are represented as a key/value map, with a content-type as the key and a <code>Model</code> name as the value.</p>
         pub fn response_models(
             mut self,
             k: impl Into<std::string::String>,
@@ -3869,7 +3749,7 @@ pub mod method_response {
             self.response_models = Some(hash_map);
             self
         }
-        /// <p>Specifies the <a>Model</a> resources used for the response's content-type. Response models are represented as a key/value map, with a content-type as the key and a <a>Model</a> name as the value.</p>
+        /// <p>Specifies the <code>Model</code> resources used for the response's content-type. Response models are represented as a key/value map, with a content-type as the key and a <code>Model</code> name as the value.</p>
         pub fn set_response_models(
             mut self,
             input: std::option::Option<
@@ -4053,41 +3933,23 @@ impl AsRef<str> for GatewayResponseType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MutualTlsAuthentication {
-    /// <p>An Amazon S3 URL that specifies the truststore for mutual TLS authentication,
-    /// for example <code>s3://bucket-name/key-name</code>.
-    /// The truststore can contain certificates from public or private certificate authorities.
-    /// To update the truststore, upload a new version to S3, and then update your custom domain
-    /// name to use the new version. To update the truststore, you must have permissions to
-    /// access the S3 object.</p>
+    /// <p>An Amazon S3 URL that specifies the truststore for mutual TLS authentication, for example <code>s3://bucket-name/key-name</code>. The truststore can contain certificates from public or private certificate authorities. To update the truststore, upload a new version to S3, and then update your custom domain name to use the new version. To update the truststore, you must have permissions to access the S3 object.</p>
     pub truststore_uri: std::option::Option<std::string::String>,
-    /// <p>The version of the S3 object that contains your truststore. To
-    /// specify a version, you must have versioning enabled for the S3 bucket.</p>
+    /// <p>The version of the S3 object that contains your truststore. To specify a version, you must have versioning enabled for the S3 bucket.</p>
     pub truststore_version: std::option::Option<std::string::String>,
-    /// <p>A list of warnings that API Gateway returns while processing your truststore. Invalid
-    /// certificates produce warnings. Mutual TLS is still enabled, but some clients might not
-    /// be able to access your API. To resolve warnings, upload a new truststore to S3, and then
-    /// update you domain name to use the new version.</p>
+    /// <p>A list of warnings that API Gateway returns while processing your truststore. Invalid certificates produce warnings. Mutual TLS is still enabled, but some clients might not be able to access your API. To resolve warnings, upload a new truststore to S3, and then update you domain name to use the new version.</p>
     pub truststore_warnings: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl MutualTlsAuthentication {
-    /// <p>An Amazon S3 URL that specifies the truststore for mutual TLS authentication,
-    /// for example <code>s3://bucket-name/key-name</code>.
-    /// The truststore can contain certificates from public or private certificate authorities.
-    /// To update the truststore, upload a new version to S3, and then update your custom domain
-    /// name to use the new version. To update the truststore, you must have permissions to
-    /// access the S3 object.</p>
+    /// <p>An Amazon S3 URL that specifies the truststore for mutual TLS authentication, for example <code>s3://bucket-name/key-name</code>. The truststore can contain certificates from public or private certificate authorities. To update the truststore, upload a new version to S3, and then update your custom domain name to use the new version. To update the truststore, you must have permissions to access the S3 object.</p>
     pub fn truststore_uri(&self) -> std::option::Option<&str> {
         self.truststore_uri.as_deref()
     }
-    /// <p>The version of the S3 object that contains your truststore. To
-    /// specify a version, you must have versioning enabled for the S3 bucket.</p>
+    /// <p>The version of the S3 object that contains your truststore. To specify a version, you must have versioning enabled for the S3 bucket.</p>
     pub fn truststore_version(&self) -> std::option::Option<&str> {
         self.truststore_version.as_deref()
     }
-    /// <p>A list of warnings that API Gateway returns while processing your truststore. Invalid
-    /// certificates produce warnings. Mutual TLS is still enabled, but some clients might not
-    /// be able to access your API. To resolve warnings, upload a new truststore to S3, and then
-    /// update you domain name to use the new version.</p>
+    /// <p>A list of warnings that API Gateway returns while processing your truststore. Invalid certificates produce warnings. Mutual TLS is still enabled, but some clients might not be able to access your API. To resolve warnings, upload a new truststore to S3, and then update you domain name to use the new version.</p>
     pub fn truststore_warnings(&self) -> std::option::Option<&[std::string::String]> {
         self.truststore_warnings.as_deref()
     }
@@ -4112,22 +3974,12 @@ pub mod mutual_tls_authentication {
         pub(crate) truststore_warnings: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>An Amazon S3 URL that specifies the truststore for mutual TLS authentication,
-        /// for example <code>s3://bucket-name/key-name</code>.
-        /// The truststore can contain certificates from public or private certificate authorities.
-        /// To update the truststore, upload a new version to S3, and then update your custom domain
-        /// name to use the new version. To update the truststore, you must have permissions to
-        /// access the S3 object.</p>
+        /// <p>An Amazon S3 URL that specifies the truststore for mutual TLS authentication, for example <code>s3://bucket-name/key-name</code>. The truststore can contain certificates from public or private certificate authorities. To update the truststore, upload a new version to S3, and then update your custom domain name to use the new version. To update the truststore, you must have permissions to access the S3 object.</p>
         pub fn truststore_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.truststore_uri = Some(input.into());
             self
         }
-        /// <p>An Amazon S3 URL that specifies the truststore for mutual TLS authentication,
-        /// for example <code>s3://bucket-name/key-name</code>.
-        /// The truststore can contain certificates from public or private certificate authorities.
-        /// To update the truststore, upload a new version to S3, and then update your custom domain
-        /// name to use the new version. To update the truststore, you must have permissions to
-        /// access the S3 object.</p>
+        /// <p>An Amazon S3 URL that specifies the truststore for mutual TLS authentication, for example <code>s3://bucket-name/key-name</code>. The truststore can contain certificates from public or private certificate authorities. To update the truststore, upload a new version to S3, and then update your custom domain name to use the new version. To update the truststore, you must have permissions to access the S3 object.</p>
         pub fn set_truststore_uri(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4135,14 +3987,12 @@ pub mod mutual_tls_authentication {
             self.truststore_uri = input;
             self
         }
-        /// <p>The version of the S3 object that contains your truststore. To
-        /// specify a version, you must have versioning enabled for the S3 bucket.</p>
+        /// <p>The version of the S3 object that contains your truststore. To specify a version, you must have versioning enabled for the S3 bucket.</p>
         pub fn truststore_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.truststore_version = Some(input.into());
             self
         }
-        /// <p>The version of the S3 object that contains your truststore. To
-        /// specify a version, you must have versioning enabled for the S3 bucket.</p>
+        /// <p>The version of the S3 object that contains your truststore. To specify a version, you must have versioning enabled for the S3 bucket.</p>
         pub fn set_truststore_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4154,20 +4004,14 @@ pub mod mutual_tls_authentication {
         ///
         /// To override the contents of this collection use [`set_truststore_warnings`](Self::set_truststore_warnings).
         ///
-        /// <p>A list of warnings that API Gateway returns while processing your truststore. Invalid
-        /// certificates produce warnings. Mutual TLS is still enabled, but some clients might not
-        /// be able to access your API. To resolve warnings, upload a new truststore to S3, and then
-        /// update you domain name to use the new version.</p>
+        /// <p>A list of warnings that API Gateway returns while processing your truststore. Invalid certificates produce warnings. Mutual TLS is still enabled, but some clients might not be able to access your API. To resolve warnings, upload a new truststore to S3, and then update you domain name to use the new version.</p>
         pub fn truststore_warnings(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.truststore_warnings.unwrap_or_default();
             v.push(input.into());
             self.truststore_warnings = Some(v);
             self
         }
-        /// <p>A list of warnings that API Gateway returns while processing your truststore. Invalid
-        /// certificates produce warnings. Mutual TLS is still enabled, but some clients might not
-        /// be able to access your API. To resolve warnings, upload a new truststore to S3, and then
-        /// update you domain name to use the new version.</p>
+        /// <p>A list of warnings that API Gateway returns while processing your truststore. Invalid certificates produce warnings. Mutual TLS is still enabled, but some clients might not be able to access your API. To resolve warnings, upload a new truststore to S3, and then update you domain name to use the new version.</p>
         pub fn set_truststore_warnings(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4324,31 +4168,31 @@ impl AsRef<str> for DomainNameStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DocumentationPartLocation {
-    /// <p>[Required] The type of API entity to which the documentation content applies. Valid values are <code>API</code>, <code>AUTHORIZER</code>, <code>MODEL</code>, <code>RESOURCE</code>, <code>METHOD</code>, <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>,  <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>. Content inheritance does not apply to any entity of the <code>API</code>, <code>AUTHORIZER</code>, <code>METHOD</code>,  <code>MODEL</code>, <code>REQUEST_BODY</code>, or <code>RESOURCE</code> type.</p>
+    /// <p>[Required] The type of API entity to which the documentation content applies. Valid values are <code>API</code>, <code>AUTHORIZER</code>, <code>MODEL</code>, <code>RESOURCE</code>, <code>METHOD</code>, <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>, <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>. Content inheritance does not apply to any entity of the <code>API</code>, <code>AUTHORIZER</code>, <code>METHOD</code>, <code>MODEL</code>, <code>REQUEST_BODY</code>, or <code>RESOURCE</code> type.</p>
     pub r#type: std::option::Option<crate::model::DocumentationPartType>,
-    /// <p>The URL path of the target. It is a valid field for the API entity types of <code>RESOURCE</code>, <code>METHOD</code>, <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>, <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>. The default value is <code>/</code> for the root resource. When an applicable child entity inherits the content of another entity of the same type with more general specifications of the other <code>location</code> attributes,  the child entity's <code>path</code> attribute must match that of the parent entity as a prefix.</p>
+    /// <p>The URL path of the target. It is a valid field for the API entity types of <code>RESOURCE</code>, <code>METHOD</code>, <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>, <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>. The default value is <code>/</code> for the root resource. When an applicable child entity inherits the content of another entity of the same type with more general specifications of the other <code>location</code> attributes, the child entity's <code>path</code> attribute must match that of the parent entity as a prefix.</p>
     pub path: std::option::Option<std::string::String>,
-    /// <p>The HTTP verb of a method. It is a valid field for the API entity types of  <code>METHOD</code>, <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>,  <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>. The default value is <code>*</code> for any method.  When an applicable child entity inherits the content of an entity of the same type with more general specifications of the other <code>location</code> attributes,  the child entity's <code>method</code> attribute must match that of the parent entity exactly.</p>
+    /// <p>The HTTP verb of a method. It is a valid field for the API entity types of <code>METHOD</code>, <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>, <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>. The default value is <code>*</code> for any method. When an applicable child entity inherits the content of an entity of the same type with more general specifications of the other <code>location</code> attributes, the child entity's <code>method</code> attribute must match that of the parent entity exactly.</p>
     pub method: std::option::Option<std::string::String>,
-    /// <p>The HTTP status code of a response. It is a valid field for the API entity types of <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>. The default value is <code>*</code> for any status code. When an applicable child  entity inherits the content of an entity of the same type with more general specifications of the other <code>location</code> attributes, the child entity's <code>statusCode</code> attribute must match that of the parent entity exactly.</p>
+    /// <p>The HTTP status code of a response. It is a valid field for the API entity types of <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>. The default value is <code>*</code> for any status code. When an applicable child entity inherits the content of an entity of the same type with more general specifications of the other <code>location</code> attributes, the child entity's <code>statusCode</code> attribute must match that of the parent entity exactly.</p>
     pub status_code: std::option::Option<std::string::String>,
     /// <p>The name of the targeted API entity. It is a valid and required field for the API entity types of <code>AUTHORIZER</code>, <code>MODEL</code>, <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>, <code>REQUEST_BODY</code> and <code>RESPONSE_HEADER</code>. It is an invalid field for any other entity type.</p>
     pub name: std::option::Option<std::string::String>,
 }
 impl DocumentationPartLocation {
-    /// <p>[Required] The type of API entity to which the documentation content applies. Valid values are <code>API</code>, <code>AUTHORIZER</code>, <code>MODEL</code>, <code>RESOURCE</code>, <code>METHOD</code>, <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>,  <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>. Content inheritance does not apply to any entity of the <code>API</code>, <code>AUTHORIZER</code>, <code>METHOD</code>,  <code>MODEL</code>, <code>REQUEST_BODY</code>, or <code>RESOURCE</code> type.</p>
+    /// <p>[Required] The type of API entity to which the documentation content applies. Valid values are <code>API</code>, <code>AUTHORIZER</code>, <code>MODEL</code>, <code>RESOURCE</code>, <code>METHOD</code>, <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>, <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>. Content inheritance does not apply to any entity of the <code>API</code>, <code>AUTHORIZER</code>, <code>METHOD</code>, <code>MODEL</code>, <code>REQUEST_BODY</code>, or <code>RESOURCE</code> type.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::DocumentationPartType> {
         self.r#type.as_ref()
     }
-    /// <p>The URL path of the target. It is a valid field for the API entity types of <code>RESOURCE</code>, <code>METHOD</code>, <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>, <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>. The default value is <code>/</code> for the root resource. When an applicable child entity inherits the content of another entity of the same type with more general specifications of the other <code>location</code> attributes,  the child entity's <code>path</code> attribute must match that of the parent entity as a prefix.</p>
+    /// <p>The URL path of the target. It is a valid field for the API entity types of <code>RESOURCE</code>, <code>METHOD</code>, <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>, <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>. The default value is <code>/</code> for the root resource. When an applicable child entity inherits the content of another entity of the same type with more general specifications of the other <code>location</code> attributes, the child entity's <code>path</code> attribute must match that of the parent entity as a prefix.</p>
     pub fn path(&self) -> std::option::Option<&str> {
         self.path.as_deref()
     }
-    /// <p>The HTTP verb of a method. It is a valid field for the API entity types of  <code>METHOD</code>, <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>,  <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>. The default value is <code>*</code> for any method.  When an applicable child entity inherits the content of an entity of the same type with more general specifications of the other <code>location</code> attributes,  the child entity's <code>method</code> attribute must match that of the parent entity exactly.</p>
+    /// <p>The HTTP verb of a method. It is a valid field for the API entity types of <code>METHOD</code>, <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>, <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>. The default value is <code>*</code> for any method. When an applicable child entity inherits the content of an entity of the same type with more general specifications of the other <code>location</code> attributes, the child entity's <code>method</code> attribute must match that of the parent entity exactly.</p>
     pub fn method(&self) -> std::option::Option<&str> {
         self.method.as_deref()
     }
-    /// <p>The HTTP status code of a response. It is a valid field for the API entity types of <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>. The default value is <code>*</code> for any status code. When an applicable child  entity inherits the content of an entity of the same type with more general specifications of the other <code>location</code> attributes, the child entity's <code>statusCode</code> attribute must match that of the parent entity exactly.</p>
+    /// <p>The HTTP status code of a response. It is a valid field for the API entity types of <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>. The default value is <code>*</code> for any status code. When an applicable child entity inherits the content of an entity of the same type with more general specifications of the other <code>location</code> attributes, the child entity's <code>statusCode</code> attribute must match that of the parent entity exactly.</p>
     pub fn status_code(&self) -> std::option::Option<&str> {
         self.status_code.as_deref()
     }
@@ -4381,12 +4225,12 @@ pub mod documentation_part_location {
         pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>[Required] The type of API entity to which the documentation content applies. Valid values are <code>API</code>, <code>AUTHORIZER</code>, <code>MODEL</code>, <code>RESOURCE</code>, <code>METHOD</code>, <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>,  <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>. Content inheritance does not apply to any entity of the <code>API</code>, <code>AUTHORIZER</code>, <code>METHOD</code>,  <code>MODEL</code>, <code>REQUEST_BODY</code>, or <code>RESOURCE</code> type.</p>
+        /// <p>[Required] The type of API entity to which the documentation content applies. Valid values are <code>API</code>, <code>AUTHORIZER</code>, <code>MODEL</code>, <code>RESOURCE</code>, <code>METHOD</code>, <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>, <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>. Content inheritance does not apply to any entity of the <code>API</code>, <code>AUTHORIZER</code>, <code>METHOD</code>, <code>MODEL</code>, <code>REQUEST_BODY</code>, or <code>RESOURCE</code> type.</p>
         pub fn r#type(mut self, input: crate::model::DocumentationPartType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>[Required] The type of API entity to which the documentation content applies. Valid values are <code>API</code>, <code>AUTHORIZER</code>, <code>MODEL</code>, <code>RESOURCE</code>, <code>METHOD</code>, <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>,  <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>. Content inheritance does not apply to any entity of the <code>API</code>, <code>AUTHORIZER</code>, <code>METHOD</code>,  <code>MODEL</code>, <code>REQUEST_BODY</code>, or <code>RESOURCE</code> type.</p>
+        /// <p>[Required] The type of API entity to which the documentation content applies. Valid values are <code>API</code>, <code>AUTHORIZER</code>, <code>MODEL</code>, <code>RESOURCE</code>, <code>METHOD</code>, <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>, <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>. Content inheritance does not apply to any entity of the <code>API</code>, <code>AUTHORIZER</code>, <code>METHOD</code>, <code>MODEL</code>, <code>REQUEST_BODY</code>, or <code>RESOURCE</code> type.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::DocumentationPartType>,
@@ -4394,32 +4238,32 @@ pub mod documentation_part_location {
             self.r#type = input;
             self
         }
-        /// <p>The URL path of the target. It is a valid field for the API entity types of <code>RESOURCE</code>, <code>METHOD</code>, <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>, <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>. The default value is <code>/</code> for the root resource. When an applicable child entity inherits the content of another entity of the same type with more general specifications of the other <code>location</code> attributes,  the child entity's <code>path</code> attribute must match that of the parent entity as a prefix.</p>
+        /// <p>The URL path of the target. It is a valid field for the API entity types of <code>RESOURCE</code>, <code>METHOD</code>, <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>, <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>. The default value is <code>/</code> for the root resource. When an applicable child entity inherits the content of another entity of the same type with more general specifications of the other <code>location</code> attributes, the child entity's <code>path</code> attribute must match that of the parent entity as a prefix.</p>
         pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
             self.path = Some(input.into());
             self
         }
-        /// <p>The URL path of the target. It is a valid field for the API entity types of <code>RESOURCE</code>, <code>METHOD</code>, <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>, <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>. The default value is <code>/</code> for the root resource. When an applicable child entity inherits the content of another entity of the same type with more general specifications of the other <code>location</code> attributes,  the child entity's <code>path</code> attribute must match that of the parent entity as a prefix.</p>
+        /// <p>The URL path of the target. It is a valid field for the API entity types of <code>RESOURCE</code>, <code>METHOD</code>, <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>, <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>. The default value is <code>/</code> for the root resource. When an applicable child entity inherits the content of another entity of the same type with more general specifications of the other <code>location</code> attributes, the child entity's <code>path</code> attribute must match that of the parent entity as a prefix.</p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path = input;
             self
         }
-        /// <p>The HTTP verb of a method. It is a valid field for the API entity types of  <code>METHOD</code>, <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>,  <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>. The default value is <code>*</code> for any method.  When an applicable child entity inherits the content of an entity of the same type with more general specifications of the other <code>location</code> attributes,  the child entity's <code>method</code> attribute must match that of the parent entity exactly.</p>
+        /// <p>The HTTP verb of a method. It is a valid field for the API entity types of <code>METHOD</code>, <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>, <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>. The default value is <code>*</code> for any method. When an applicable child entity inherits the content of an entity of the same type with more general specifications of the other <code>location</code> attributes, the child entity's <code>method</code> attribute must match that of the parent entity exactly.</p>
         pub fn method(mut self, input: impl Into<std::string::String>) -> Self {
             self.method = Some(input.into());
             self
         }
-        /// <p>The HTTP verb of a method. It is a valid field for the API entity types of  <code>METHOD</code>, <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>,  <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>. The default value is <code>*</code> for any method.  When an applicable child entity inherits the content of an entity of the same type with more general specifications of the other <code>location</code> attributes,  the child entity's <code>method</code> attribute must match that of the parent entity exactly.</p>
+        /// <p>The HTTP verb of a method. It is a valid field for the API entity types of <code>METHOD</code>, <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>, <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>. The default value is <code>*</code> for any method. When an applicable child entity inherits the content of an entity of the same type with more general specifications of the other <code>location</code> attributes, the child entity's <code>method</code> attribute must match that of the parent entity exactly.</p>
         pub fn set_method(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.method = input;
             self
         }
-        /// <p>The HTTP status code of a response. It is a valid field for the API entity types of <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>. The default value is <code>*</code> for any status code. When an applicable child  entity inherits the content of an entity of the same type with more general specifications of the other <code>location</code> attributes, the child entity's <code>statusCode</code> attribute must match that of the parent entity exactly.</p>
+        /// <p>The HTTP status code of a response. It is a valid field for the API entity types of <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>. The default value is <code>*</code> for any status code. When an applicable child entity inherits the content of an entity of the same type with more general specifications of the other <code>location</code> attributes, the child entity's <code>statusCode</code> attribute must match that of the parent entity exactly.</p>
         pub fn status_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.status_code = Some(input.into());
             self
         }
-        /// <p>The HTTP status code of a response. It is a valid field for the API entity types of <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>. The default value is <code>*</code> for any status code. When an applicable child  entity inherits the content of an entity of the same type with more general specifications of the other <code>location</code> attributes, the child entity's <code>statusCode</code> attribute must match that of the parent entity exactly.</p>
+        /// <p>The HTTP status code of a response. It is a valid field for the API entity types of <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>. The default value is <code>*</code> for any status code. When an applicable child entity inherits the content of an entity of the same type with more general specifications of the other <code>location</code> attributes, the child entity's <code>statusCode</code> attribute must match that of the parent entity exactly.</p>
         pub fn set_status_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status_code = input;
             self
@@ -4561,13 +4405,13 @@ impl AsRef<str> for DocumentationPartType {
     }
 }
 
-/// <p>Represents a summary of a <a>Method</a> resource, given a particular date and time.</p>
+/// <p>Represents a summary of a <code>Method</code> resource, given a particular date and time.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MethodSnapshot {
     /// <p>The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a Cognito user pool.</p>
     pub authorization_type: std::option::Option<std::string::String>,
-    /// <p>Specifies whether the method requires a valid <a>ApiKey</a>.</p>
+    /// <p>Specifies whether the method requires a valid <code>ApiKey</code>.</p>
     pub api_key_required: bool,
 }
 impl MethodSnapshot {
@@ -4575,7 +4419,7 @@ impl MethodSnapshot {
     pub fn authorization_type(&self) -> std::option::Option<&str> {
         self.authorization_type.as_deref()
     }
-    /// <p>Specifies whether the method requires a valid <a>ApiKey</a>.</p>
+    /// <p>Specifies whether the method requires a valid <code>ApiKey</code>.</p>
     pub fn api_key_required(&self) -> bool {
         self.api_key_required
     }
@@ -4611,12 +4455,12 @@ pub mod method_snapshot {
             self.authorization_type = input;
             self
         }
-        /// <p>Specifies whether the method requires a valid <a>ApiKey</a>.</p>
+        /// <p>Specifies whether the method requires a valid <code>ApiKey</code>.</p>
         pub fn api_key_required(mut self, input: bool) -> Self {
             self.api_key_required = Some(input);
             self
         }
-        /// <p>Specifies whether the method requires a valid <a>ApiKey</a>.</p>
+        /// <p>Specifies whether the method requires a valid <code>ApiKey</code>.</p>
         pub fn set_api_key_required(mut self, input: std::option::Option<bool>) -> Self {
             self.api_key_required = input;
             self
@@ -4802,14 +4646,16 @@ impl AsRef<str> for ApiKeysFormat {
     }
 }
 
-/// <p>An API Gateway VPC link for a <a>RestApi</a> to access resources in an Amazon Virtual Private Cloud (VPC).</p>
+/// <p>An API Gateway VPC link for a <code>RestApi</code> to access resources in an Amazon Virtual Private Cloud (VPC).</p>
 /// <div class="remarks">
-/// <p><p>To enable access to a resource in an Amazon Virtual Private Cloud through Amazon API Gateway, you, as an API developer, create a <a>VpcLink</a> resource targeted for one or more network load balancers of the VPC and then integrate an API method with a private integration that uses the <a>VpcLink</a>. The private integration has an integration type of <code>HTTP</code> or <code>HTTP_PROXY</code> and has a connection type of <code>VPC_LINK</code>. The integration uses the <code>connectionId</code> property to identify the <a>VpcLink</a> used.</p></p>
+/// <p></p>
+/// <p>To enable access to a resource in an Amazon Virtual Private Cloud through Amazon API Gateway, you, as an API developer, create a <code>VpcLink</code> resource targeted for one or more network load balancers of the VPC and then integrate an API method with a private integration that uses the <code>VpcLink</code>. The private integration has an integration type of <code>HTTP</code> or <code>HTTP_PROXY</code> and has a connection type of <code>VPC_LINK</code>. The integration uses the <code>connectionId</code> property to identify the <code>VpcLink</code> used.</p>
+/// <p></p>
 /// </div>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VpcLink {
-    /// <p>The identifier of the  <a>VpcLink</a>. It is used in an <a>Integration</a> to reference this <a>VpcLink</a>.</p>
+    /// <p>The identifier of the <code>VpcLink</code>. It is used in an <code>Integration</code> to reference this <code>VpcLink</code>.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The name used to label and identify the VPC link.</p>
     pub name: std::option::Option<std::string::String>,
@@ -4826,7 +4672,7 @@ pub struct VpcLink {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl VpcLink {
-    /// <p>The identifier of the  <a>VpcLink</a>. It is used in an <a>Integration</a> to reference this <a>VpcLink</a>.</p>
+    /// <p>The identifier of the <code>VpcLink</code>. It is used in an <code>Integration</code> to reference this <code>VpcLink</code>.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -4888,12 +4734,12 @@ pub mod vpc_link {
         >,
     }
     impl Builder {
-        /// <p>The identifier of the  <a>VpcLink</a>. It is used in an <a>Integration</a> to reference this <a>VpcLink</a>.</p>
+        /// <p>The identifier of the <code>VpcLink</code>. It is used in an <code>Integration</code> to reference this <code>VpcLink</code>.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The identifier of the  <a>VpcLink</a>. It is used in an <a>Integration</a> to reference this <a>VpcLink</a>.</p>
+        /// <p>The identifier of the <code>VpcLink</code>. It is used in an <code>Integration</code> to reference this <code>VpcLink</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -5013,13 +4859,12 @@ impl VpcLink {
 /// <div class="remarks">
 /// <p>In a usage plan, you associate an API by specifying the API's Id and a stage name of the specified API. You add plan customers by adding API keys to the plan. </p>
 /// </div>
-/// <div class="seeAlso">
-/// <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html">Create and Use Usage Plans</a>
+/// <div class="seeAlso"> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html">Create and Use Usage Plans</a>
 /// </div>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UsagePlan {
-    /// <p>The identifier of a <a>UsagePlan</a> resource.</p>
+    /// <p>The identifier of a <code>UsagePlan</code> resource.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of a usage plan.</p>
     pub name: std::option::Option<std::string::String>,
@@ -5038,7 +4883,7 @@ pub struct UsagePlan {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl UsagePlan {
-    /// <p>The identifier of a <a>UsagePlan</a> resource.</p>
+    /// <p>The identifier of a <code>UsagePlan</code> resource.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -5106,12 +4951,12 @@ pub mod usage_plan {
         >,
     }
     impl Builder {
-        /// <p>The identifier of a <a>UsagePlan</a> resource.</p>
+        /// <p>The identifier of a <code>UsagePlan</code> resource.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The identifier of a <a>UsagePlan</a> resource.</p>
+        /// <p>The identifier of a <code>UsagePlan</code> resource.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -5240,10 +5085,9 @@ impl UsagePlan {
 
 /// <p>Represents a usage plan key to identify a plan customer.</p>
 /// <div class="remarks">
-/// <p>To associate an API stage with a selected API key in a usage plan, you must create a UsagePlanKey resource to represent the selected <a>ApiKey</a>.</p>
+/// <p>To associate an API stage with a selected API key in a usage plan, you must create a UsagePlanKey resource to represent the selected <code>ApiKey</code>.</p>
 /// </div>"
-/// <div class="seeAlso">
-/// <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html">Create and Use Usage Plans</a>
+/// <div class="seeAlso"> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html">Create and Use Usage Plans</a>
 /// </div>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -5355,14 +5199,13 @@ impl UsagePlanKey {
     }
 }
 
-/// <p>Represents a unique identifier for a version of a deployed <a>RestApi</a> that is callable by users.</p>
-/// <div class="seeAlso">
-/// <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-deploy-api.html">Deploy an API</a>
+/// <p>Represents a unique identifier for a version of a deployed <code>RestApi</code> that is callable by users.</p>
+/// <div class="seeAlso"> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-deploy-api.html">Deploy an API</a>
 /// </div>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Stage {
-    /// <p>The identifier of the <a>Deployment</a> that the stage points to.</p>
+    /// <p>The identifier of the <code>Deployment</code> that the stage points to.</p>
     pub deployment_id: std::option::Option<std::string::String>,
     /// <p>The identifier of a client certificate for an API stage.</p>
     pub client_certificate_id: std::option::Option<std::string::String>,
@@ -5376,12 +5219,11 @@ pub struct Stage {
     pub cache_cluster_size: std::option::Option<crate::model::CacheClusterSize>,
     /// <p>The status of the cache cluster for the stage, if enabled.</p>
     pub cache_cluster_status: std::option::Option<crate::model::CacheClusterStatus>,
-    /// <p>A map that defines the method settings for a <a>Stage</a> resource. Keys (designated as <code>/{method_setting_key</code> below) are method paths defined as <code>{resource_path}/{http_method}</code> for an individual method override, or <code>/\*/\*</code> for overriding all methods in the stage.  <!-- Any forward slash ("/") characters in the <code>resource_path</code> part must be encoded as "~1" as in, for example, <code>~1resource~1sub-resource/GET</code>.--></p>
+    /// <p>A map that defines the method settings for a <code>Stage</code> resource. Keys (designated as <code>/{method_setting_key</code> below) are method paths defined as <code>{resource_path}/{http_method}</code> for an individual method override, or <code>/\*/\*</code> for overriding all methods in the stage. <!-- Any forward slash ("/") characters in the <code>resource_path</code> part must be encoded as "~1" as in, for example, <code>~1resource~1sub-resource/GET</code>.--></p>
     pub method_settings: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::MethodSetting>,
     >,
-    /// <p>A map that defines the stage variables for a <a>Stage</a> resource. Variable names can
-    /// have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&=,]+</code>.</p>
+    /// <p>A map that defines the stage variables for a <code>Stage</code> resource. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
     pub variables:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The version of the associated API documentation.</p>
@@ -5390,9 +5232,9 @@ pub struct Stage {
     pub access_log_settings: std::option::Option<crate::model::AccessLogSettings>,
     /// <p>Settings for the canary deployment in this stage.</p>
     pub canary_settings: std::option::Option<crate::model::CanarySettings>,
-    /// <p>Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.</p>
+    /// <p>Specifies whether active tracing with X-ray is enabled for the <code>Stage</code>.</p>
     pub tracing_enabled: bool,
-    /// <p>The ARN of the WebAcl associated with the <a>Stage</a>.</p>
+    /// <p>The ARN of the WebAcl associated with the <code>Stage</code>.</p>
     pub web_acl_arn: std::option::Option<std::string::String>,
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
     pub tags:
@@ -5403,7 +5245,7 @@ pub struct Stage {
     pub last_updated_date: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Stage {
-    /// <p>The identifier of the <a>Deployment</a> that the stage points to.</p>
+    /// <p>The identifier of the <code>Deployment</code> that the stage points to.</p>
     pub fn deployment_id(&self) -> std::option::Option<&str> {
         self.deployment_id.as_deref()
     }
@@ -5431,7 +5273,7 @@ impl Stage {
     pub fn cache_cluster_status(&self) -> std::option::Option<&crate::model::CacheClusterStatus> {
         self.cache_cluster_status.as_ref()
     }
-    /// <p>A map that defines the method settings for a <a>Stage</a> resource. Keys (designated as <code>/{method_setting_key</code> below) are method paths defined as <code>{resource_path}/{http_method}</code> for an individual method override, or <code>/\*/\*</code> for overriding all methods in the stage.  <!-- Any forward slash ("/") characters in the <code>resource_path</code> part must be encoded as "~1" as in, for example, <code>~1resource~1sub-resource/GET</code>.--></p>
+    /// <p>A map that defines the method settings for a <code>Stage</code> resource. Keys (designated as <code>/{method_setting_key</code> below) are method paths defined as <code>{resource_path}/{http_method}</code> for an individual method override, or <code>/\*/\*</code> for overriding all methods in the stage. <!-- Any forward slash ("/") characters in the <code>resource_path</code> part must be encoded as "~1" as in, for example, <code>~1resource~1sub-resource/GET</code>.--></p>
     pub fn method_settings(
         &self,
     ) -> std::option::Option<
@@ -5439,8 +5281,7 @@ impl Stage {
     > {
         self.method_settings.as_ref()
     }
-    /// <p>A map that defines the stage variables for a <a>Stage</a> resource. Variable names can
-    /// have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&=,]+</code>.</p>
+    /// <p>A map that defines the stage variables for a <code>Stage</code> resource. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
     pub fn variables(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -5459,11 +5300,11 @@ impl Stage {
     pub fn canary_settings(&self) -> std::option::Option<&crate::model::CanarySettings> {
         self.canary_settings.as_ref()
     }
-    /// <p>Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.</p>
+    /// <p>Specifies whether active tracing with X-ray is enabled for the <code>Stage</code>.</p>
     pub fn tracing_enabled(&self) -> bool {
         self.tracing_enabled
     }
-    /// <p>The ARN of the WebAcl associated with the <a>Stage</a>.</p>
+    /// <p>The ARN of the WebAcl associated with the <code>Stage</code>.</p>
     pub fn web_acl_arn(&self) -> std::option::Option<&str> {
         self.web_acl_arn.as_deref()
     }
@@ -5537,12 +5378,12 @@ pub mod stage {
         pub(crate) last_updated_date: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>The identifier of the <a>Deployment</a> that the stage points to.</p>
+        /// <p>The identifier of the <code>Deployment</code> that the stage points to.</p>
         pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.deployment_id = Some(input.into());
             self
         }
-        /// <p>The identifier of the <a>Deployment</a> that the stage points to.</p>
+        /// <p>The identifier of the <code>Deployment</code> that the stage points to.</p>
         pub fn set_deployment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5623,7 +5464,7 @@ pub mod stage {
         ///
         /// To override the contents of this collection use [`set_method_settings`](Self::set_method_settings).
         ///
-        /// <p>A map that defines the method settings for a <a>Stage</a> resource. Keys (designated as <code>/{method_setting_key</code> below) are method paths defined as <code>{resource_path}/{http_method}</code> for an individual method override, or <code>/\*/\*</code> for overriding all methods in the stage.  <!-- Any forward slash ("/") characters in the <code>resource_path</code> part must be encoded as "~1" as in, for example, <code>~1resource~1sub-resource/GET</code>.--></p>
+        /// <p>A map that defines the method settings for a <code>Stage</code> resource. Keys (designated as <code>/{method_setting_key</code> below) are method paths defined as <code>{resource_path}/{http_method}</code> for an individual method override, or <code>/\*/\*</code> for overriding all methods in the stage. <!-- Any forward slash ("/") characters in the <code>resource_path</code> part must be encoded as "~1" as in, for example, <code>~1resource~1sub-resource/GET</code>.--></p>
         pub fn method_settings(
             mut self,
             k: impl Into<std::string::String>,
@@ -5634,7 +5475,7 @@ pub mod stage {
             self.method_settings = Some(hash_map);
             self
         }
-        /// <p>A map that defines the method settings for a <a>Stage</a> resource. Keys (designated as <code>/{method_setting_key</code> below) are method paths defined as <code>{resource_path}/{http_method}</code> for an individual method override, or <code>/\*/\*</code> for overriding all methods in the stage.  <!-- Any forward slash ("/") characters in the <code>resource_path</code> part must be encoded as "~1" as in, for example, <code>~1resource~1sub-resource/GET</code>.--></p>
+        /// <p>A map that defines the method settings for a <code>Stage</code> resource. Keys (designated as <code>/{method_setting_key</code> below) are method paths defined as <code>{resource_path}/{http_method}</code> for an individual method override, or <code>/\*/\*</code> for overriding all methods in the stage. <!-- Any forward slash ("/") characters in the <code>resource_path</code> part must be encoded as "~1" as in, for example, <code>~1resource~1sub-resource/GET</code>.--></p>
         pub fn set_method_settings(
             mut self,
             input: std::option::Option<
@@ -5648,8 +5489,7 @@ pub mod stage {
         ///
         /// To override the contents of this collection use [`set_variables`](Self::set_variables).
         ///
-        /// <p>A map that defines the stage variables for a <a>Stage</a> resource. Variable names can
-        /// have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&=,]+</code>.</p>
+        /// <p>A map that defines the stage variables for a <code>Stage</code> resource. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
         pub fn variables(
             mut self,
             k: impl Into<std::string::String>,
@@ -5660,8 +5500,7 @@ pub mod stage {
             self.variables = Some(hash_map);
             self
         }
-        /// <p>A map that defines the stage variables for a <a>Stage</a> resource. Variable names can
-        /// have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&=,]+</code>.</p>
+        /// <p>A map that defines the stage variables for a <code>Stage</code> resource. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
         pub fn set_variables(
             mut self,
             input: std::option::Option<
@@ -5710,22 +5549,22 @@ pub mod stage {
             self.canary_settings = input;
             self
         }
-        /// <p>Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.</p>
+        /// <p>Specifies whether active tracing with X-ray is enabled for the <code>Stage</code>.</p>
         pub fn tracing_enabled(mut self, input: bool) -> Self {
             self.tracing_enabled = Some(input);
             self
         }
-        /// <p>Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.</p>
+        /// <p>Specifies whether active tracing with X-ray is enabled for the <code>Stage</code>.</p>
         pub fn set_tracing_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.tracing_enabled = input;
             self
         }
-        /// <p>The ARN of the WebAcl associated with the <a>Stage</a>.</p>
+        /// <p>The ARN of the WebAcl associated with the <code>Stage</code>.</p>
         pub fn web_acl_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.web_acl_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the WebAcl associated with the <a>Stage</a>.</p>
+        /// <p>The ARN of the WebAcl associated with the <code>Stage</code>.</p>
         pub fn set_web_acl_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.web_acl_arn = input;
             self
@@ -5816,30 +5655,30 @@ impl Stage {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SdkType {
-    /// <p>The identifier of an <a>SdkType</a> instance.</p>
+    /// <p>The identifier of an <code>SdkType</code> instance.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The user-friendly name of an <a>SdkType</a> instance.</p>
+    /// <p>The user-friendly name of an <code>SdkType</code> instance.</p>
     pub friendly_name: std::option::Option<std::string::String>,
-    /// <p>The description of an <a>SdkType</a>.</p>
+    /// <p>The description of an <code>SdkType</code>.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>A list of configuration properties of an <a>SdkType</a>.</p>
+    /// <p>A list of configuration properties of an <code>SdkType</code>.</p>
     pub configuration_properties:
         std::option::Option<std::vec::Vec<crate::model::SdkConfigurationProperty>>,
 }
 impl SdkType {
-    /// <p>The identifier of an <a>SdkType</a> instance.</p>
+    /// <p>The identifier of an <code>SdkType</code> instance.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The user-friendly name of an <a>SdkType</a> instance.</p>
+    /// <p>The user-friendly name of an <code>SdkType</code> instance.</p>
     pub fn friendly_name(&self) -> std::option::Option<&str> {
         self.friendly_name.as_deref()
     }
-    /// <p>The description of an <a>SdkType</a>.</p>
+    /// <p>The description of an <code>SdkType</code>.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>A list of configuration properties of an <a>SdkType</a>.</p>
+    /// <p>A list of configuration properties of an <code>SdkType</code>.</p>
     pub fn configuration_properties(
         &self,
     ) -> std::option::Option<&[crate::model::SdkConfigurationProperty]> {
@@ -5869,22 +5708,22 @@ pub mod sdk_type {
             std::option::Option<std::vec::Vec<crate::model::SdkConfigurationProperty>>,
     }
     impl Builder {
-        /// <p>The identifier of an <a>SdkType</a> instance.</p>
+        /// <p>The identifier of an <code>SdkType</code> instance.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The identifier of an <a>SdkType</a> instance.</p>
+        /// <p>The identifier of an <code>SdkType</code> instance.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
-        /// <p>The user-friendly name of an <a>SdkType</a> instance.</p>
+        /// <p>The user-friendly name of an <code>SdkType</code> instance.</p>
         pub fn friendly_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.friendly_name = Some(input.into());
             self
         }
-        /// <p>The user-friendly name of an <a>SdkType</a> instance.</p>
+        /// <p>The user-friendly name of an <code>SdkType</code> instance.</p>
         pub fn set_friendly_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5892,12 +5731,12 @@ pub mod sdk_type {
             self.friendly_name = input;
             self
         }
-        /// <p>The description of an <a>SdkType</a>.</p>
+        /// <p>The description of an <code>SdkType</code>.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>The description of an <a>SdkType</a>.</p>
+        /// <p>The description of an <code>SdkType</code>.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -5906,7 +5745,7 @@ pub mod sdk_type {
         ///
         /// To override the contents of this collection use [`set_configuration_properties`](Self::set_configuration_properties).
         ///
-        /// <p>A list of configuration properties of an <a>SdkType</a>.</p>
+        /// <p>A list of configuration properties of an <code>SdkType</code>.</p>
         pub fn configuration_properties(
             mut self,
             input: crate::model::SdkConfigurationProperty,
@@ -5916,7 +5755,7 @@ pub mod sdk_type {
             self.configuration_properties = Some(v);
             self
         }
-        /// <p>A list of configuration properties of an <a>SdkType</a>.</p>
+        /// <p>A list of configuration properties of an <code>SdkType</code>.</p>
         pub fn set_configuration_properties(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SdkConfigurationProperty>>,
@@ -5946,35 +5785,35 @@ impl SdkType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SdkConfigurationProperty {
-    /// <p>The name of a an <a>SdkType</a> configuration property.</p>
+    /// <p>The name of a an <code>SdkType</code> configuration property.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The user-friendly name of an <a>SdkType</a> configuration property.</p>
+    /// <p>The user-friendly name of an <code>SdkType</code> configuration property.</p>
     pub friendly_name: std::option::Option<std::string::String>,
-    /// <p>The description of an <a>SdkType</a> configuration property.</p>
+    /// <p>The description of an <code>SdkType</code> configuration property.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>A boolean flag of an <a>SdkType</a> configuration property to indicate if the associated SDK configuration property is required (<code>true</code>) or not (<code>false</code>).</p>
+    /// <p>A boolean flag of an <code>SdkType</code> configuration property to indicate if the associated SDK configuration property is required (<code>true</code>) or not (<code>false</code>).</p>
     pub required: bool,
-    /// <p>The default value of an <a>SdkType</a> configuration property.</p>
+    /// <p>The default value of an <code>SdkType</code> configuration property.</p>
     pub default_value: std::option::Option<std::string::String>,
 }
 impl SdkConfigurationProperty {
-    /// <p>The name of a an <a>SdkType</a> configuration property.</p>
+    /// <p>The name of a an <code>SdkType</code> configuration property.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The user-friendly name of an <a>SdkType</a> configuration property.</p>
+    /// <p>The user-friendly name of an <code>SdkType</code> configuration property.</p>
     pub fn friendly_name(&self) -> std::option::Option<&str> {
         self.friendly_name.as_deref()
     }
-    /// <p>The description of an <a>SdkType</a> configuration property.</p>
+    /// <p>The description of an <code>SdkType</code> configuration property.</p>
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>A boolean flag of an <a>SdkType</a> configuration property to indicate if the associated SDK configuration property is required (<code>true</code>) or not (<code>false</code>).</p>
+    /// <p>A boolean flag of an <code>SdkType</code> configuration property to indicate if the associated SDK configuration property is required (<code>true</code>) or not (<code>false</code>).</p>
     pub fn required(&self) -> bool {
         self.required
     }
-    /// <p>The default value of an <a>SdkType</a> configuration property.</p>
+    /// <p>The default value of an <code>SdkType</code> configuration property.</p>
     pub fn default_value(&self) -> std::option::Option<&str> {
         self.default_value.as_deref()
     }
@@ -6003,22 +5842,22 @@ pub mod sdk_configuration_property {
         pub(crate) default_value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of a an <a>SdkType</a> configuration property.</p>
+        /// <p>The name of a an <code>SdkType</code> configuration property.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of a an <a>SdkType</a> configuration property.</p>
+        /// <p>The name of a an <code>SdkType</code> configuration property.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>The user-friendly name of an <a>SdkType</a> configuration property.</p>
+        /// <p>The user-friendly name of an <code>SdkType</code> configuration property.</p>
         pub fn friendly_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.friendly_name = Some(input.into());
             self
         }
-        /// <p>The user-friendly name of an <a>SdkType</a> configuration property.</p>
+        /// <p>The user-friendly name of an <code>SdkType</code> configuration property.</p>
         pub fn set_friendly_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6026,32 +5865,32 @@ pub mod sdk_configuration_property {
             self.friendly_name = input;
             self
         }
-        /// <p>The description of an <a>SdkType</a> configuration property.</p>
+        /// <p>The description of an <code>SdkType</code> configuration property.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
         }
-        /// <p>The description of an <a>SdkType</a> configuration property.</p>
+        /// <p>The description of an <code>SdkType</code> configuration property.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
-        /// <p>A boolean flag of an <a>SdkType</a> configuration property to indicate if the associated SDK configuration property is required (<code>true</code>) or not (<code>false</code>).</p>
+        /// <p>A boolean flag of an <code>SdkType</code> configuration property to indicate if the associated SDK configuration property is required (<code>true</code>) or not (<code>false</code>).</p>
         pub fn required(mut self, input: bool) -> Self {
             self.required = Some(input);
             self
         }
-        /// <p>A boolean flag of an <a>SdkType</a> configuration property to indicate if the associated SDK configuration property is required (<code>true</code>) or not (<code>false</code>).</p>
+        /// <p>A boolean flag of an <code>SdkType</code> configuration property to indicate if the associated SDK configuration property is required (<code>true</code>) or not (<code>false</code>).</p>
         pub fn set_required(mut self, input: std::option::Option<bool>) -> Self {
             self.required = input;
             self
         }
-        /// <p>The default value of an <a>SdkType</a> configuration property.</p>
+        /// <p>The default value of an <code>SdkType</code> configuration property.</p>
         pub fn default_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_value = Some(input.into());
             self
         }
-        /// <p>The default value of an <a>SdkType</a> configuration property.</p>
+        /// <p>The default value of an <code>SdkType</code> configuration property.</p>
         pub fn set_default_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6079,8 +5918,7 @@ impl SdkConfigurationProperty {
 }
 
 /// <p>Represents a REST API.</p>
-/// <div class="seeAlso">
-/// <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Create an API</a>
+/// <div class="seeAlso"> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Create an API</a>
 /// </div>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -6097,15 +5935,20 @@ pub struct RestApi {
     pub version: std::option::Option<std::string::String>,
     /// <p>The warning messages reported when <code>failonwarnings</code> is turned on during API import.</p>
     pub warnings: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The list of binary media types supported by the <a>RestApi</a>. By default, the <a>RestApi</a> supports only UTF-8-encoded text payloads.</p>
+    /// <p>The list of binary media types supported by the <code>RestApi</code>. By default, the <code>RestApi</code> supports only UTF-8-encoded text payloads.</p>
     pub binary_media_types: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A nullable integer that is used to enable compression (with non-negative between 0 and 10485760 (10M) bytes, inclusive) or disable compression (with a null value) on an API. When compression is enabled, compression or decompression is not applied on the payload if the payload size is smaller than this value. Setting it to zero allows compression for any payload size.</p>
     pub minimum_compression_size: std::option::Option<i32>,
-    /// <p>The source of the API key for metering requests according to a usage plan. Valid values are: <ul><li><code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request. </li><li><code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</li></ul></p>
+    /// <p>The source of the API key for metering requests according to a usage plan. Valid values are: </p>
+    /// <ul>
+    /// <li><code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request. </li>
+    /// <li><code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</li>
+    /// </ul>
+    /// <p></p>
     pub api_key_source: std::option::Option<crate::model::ApiKeySourceType>,
-    /// <p>The endpoint configuration of this <a>RestApi</a> showing the endpoint types of the API.</p>
+    /// <p>The endpoint configuration of this <code>RestApi</code> showing the endpoint types of the API.</p>
     pub endpoint_configuration: std::option::Option<crate::model::EndpointConfiguration>,
-    /// <p>A stringified JSON policy document that applies to this RestApi regardless of the caller and <a>Method</a> configuration.</p>
+    /// <p>A stringified JSON policy document that applies to this RestApi regardless of the caller and <code>Method</code> configuration.</p>
     pub policy: std::option::Option<std::string::String>,
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
     pub tags:
@@ -6138,7 +5981,7 @@ impl RestApi {
     pub fn warnings(&self) -> std::option::Option<&[std::string::String]> {
         self.warnings.as_deref()
     }
-    /// <p>The list of binary media types supported by the <a>RestApi</a>. By default, the <a>RestApi</a> supports only UTF-8-encoded text payloads.</p>
+    /// <p>The list of binary media types supported by the <code>RestApi</code>. By default, the <code>RestApi</code> supports only UTF-8-encoded text payloads.</p>
     pub fn binary_media_types(&self) -> std::option::Option<&[std::string::String]> {
         self.binary_media_types.as_deref()
     }
@@ -6146,17 +5989,22 @@ impl RestApi {
     pub fn minimum_compression_size(&self) -> std::option::Option<i32> {
         self.minimum_compression_size
     }
-    /// <p>The source of the API key for metering requests according to a usage plan. Valid values are: <ul><li><code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request. </li><li><code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</li></ul></p>
+    /// <p>The source of the API key for metering requests according to a usage plan. Valid values are: </p>
+    /// <ul>
+    /// <li><code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request. </li>
+    /// <li><code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</li>
+    /// </ul>
+    /// <p></p>
     pub fn api_key_source(&self) -> std::option::Option<&crate::model::ApiKeySourceType> {
         self.api_key_source.as_ref()
     }
-    /// <p>The endpoint configuration of this <a>RestApi</a> showing the endpoint types of the API.</p>
+    /// <p>The endpoint configuration of this <code>RestApi</code> showing the endpoint types of the API.</p>
     pub fn endpoint_configuration(
         &self,
     ) -> std::option::Option<&crate::model::EndpointConfiguration> {
         self.endpoint_configuration.as_ref()
     }
-    /// <p>A stringified JSON policy document that applies to this RestApi regardless of the caller and <a>Method</a> configuration.</p>
+    /// <p>A stringified JSON policy document that applies to this RestApi regardless of the caller and <code>Method</code> configuration.</p>
     pub fn policy(&self) -> std::option::Option<&str> {
         self.policy.as_deref()
     }
@@ -6293,14 +6141,14 @@ pub mod rest_api {
         ///
         /// To override the contents of this collection use [`set_binary_media_types`](Self::set_binary_media_types).
         ///
-        /// <p>The list of binary media types supported by the <a>RestApi</a>. By default, the <a>RestApi</a> supports only UTF-8-encoded text payloads.</p>
+        /// <p>The list of binary media types supported by the <code>RestApi</code>. By default, the <code>RestApi</code> supports only UTF-8-encoded text payloads.</p>
         pub fn binary_media_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.binary_media_types.unwrap_or_default();
             v.push(input.into());
             self.binary_media_types = Some(v);
             self
         }
-        /// <p>The list of binary media types supported by the <a>RestApi</a>. By default, the <a>RestApi</a> supports only UTF-8-encoded text payloads.</p>
+        /// <p>The list of binary media types supported by the <code>RestApi</code>. By default, the <code>RestApi</code> supports only UTF-8-encoded text payloads.</p>
         pub fn set_binary_media_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6318,12 +6166,22 @@ pub mod rest_api {
             self.minimum_compression_size = input;
             self
         }
-        /// <p>The source of the API key for metering requests according to a usage plan. Valid values are: <ul><li><code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request. </li><li><code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</li></ul></p>
+        /// <p>The source of the API key for metering requests according to a usage plan. Valid values are: </p>
+        /// <ul>
+        /// <li><code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request. </li>
+        /// <li><code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</li>
+        /// </ul>
+        /// <p></p>
         pub fn api_key_source(mut self, input: crate::model::ApiKeySourceType) -> Self {
             self.api_key_source = Some(input);
             self
         }
-        /// <p>The source of the API key for metering requests according to a usage plan. Valid values are: <ul><li><code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request. </li><li><code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</li></ul></p>
+        /// <p>The source of the API key for metering requests according to a usage plan. Valid values are: </p>
+        /// <ul>
+        /// <li><code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request. </li>
+        /// <li><code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</li>
+        /// </ul>
+        /// <p></p>
         pub fn set_api_key_source(
             mut self,
             input: std::option::Option<crate::model::ApiKeySourceType>,
@@ -6331,7 +6189,7 @@ pub mod rest_api {
             self.api_key_source = input;
             self
         }
-        /// <p>The endpoint configuration of this <a>RestApi</a> showing the endpoint types of the API.</p>
+        /// <p>The endpoint configuration of this <code>RestApi</code> showing the endpoint types of the API.</p>
         pub fn endpoint_configuration(
             mut self,
             input: crate::model::EndpointConfiguration,
@@ -6339,7 +6197,7 @@ pub mod rest_api {
             self.endpoint_configuration = Some(input);
             self
         }
-        /// <p>The endpoint configuration of this <a>RestApi</a> showing the endpoint types of the API.</p>
+        /// <p>The endpoint configuration of this <code>RestApi</code> showing the endpoint types of the API.</p>
         pub fn set_endpoint_configuration(
             mut self,
             input: std::option::Option<crate::model::EndpointConfiguration>,
@@ -6347,12 +6205,12 @@ pub mod rest_api {
             self.endpoint_configuration = input;
             self
         }
-        /// <p>A stringified JSON policy document that applies to this RestApi regardless of the caller and <a>Method</a> configuration.</p>
+        /// <p>A stringified JSON policy document that applies to this RestApi regardless of the caller and <code>Method</code> configuration.</p>
         pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy = Some(input.into());
             self
         }
-        /// <p>A stringified JSON policy document that applies to this RestApi regardless of the caller and <a>Method</a> configuration.</p>
+        /// <p>A stringified JSON policy document that applies to this RestApi regardless of the caller and <code>Method</code> configuration.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy = input;
             self
@@ -6423,8 +6281,7 @@ impl RestApi {
 }
 
 /// <p>Represents an API resource.</p>
-/// <div class="seeAlso">
-/// <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Create an API</a>
+/// <div class="seeAlso"> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Create an API</a>
 /// </div>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -7184,33 +7041,35 @@ impl Resource {
     }
 }
 
-/// <p>A set of validation rules for incoming <a>Method</a> requests.</p>
+/// <p>A set of validation rules for incoming <code>Method</code> requests.</p>
 /// <div class="remarks">
-/// <p>In OpenAPI, a <a>RequestValidator</a> of an API is defined by the <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions.html#api-gateway-swagger-extensions-request-validators.requestValidator.html">x-amazon-apigateway-request-validators.requestValidator</a> object. It the referenced using the <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions.html#api-gateway-swagger-extensions-request-validator">x-amazon-apigateway-request-validator</a> property.</p>
+/// <p>In OpenAPI, a <code>RequestValidator</code> of an API is defined by the <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions.html#api-gateway-swagger-extensions-request-validators.requestValidator.html">x-amazon-apigateway-request-validators.requestValidator</a> object. It the referenced using the <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions.html#api-gateway-swagger-extensions-request-validator">x-amazon-apigateway-request-validator</a> property.</p>
 /// </div>
-/// <div class="seeAlso"><a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-method-request-validation.html">Enable Basic Request Validation in API Gateway</a></div>
+/// <div class="seeAlso">
+/// <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-method-request-validation.html">Enable Basic Request Validation in API Gateway</a>
+/// </div>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RequestValidator {
-    /// <p>The identifier of this <a>RequestValidator</a>.</p>
+    /// <p>The identifier of this <code>RequestValidator</code>.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The name of this <a>RequestValidator</a></p>
+    /// <p>The name of this <code>RequestValidator</code></p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>A Boolean flag to indicate whether to validate a request body according to the configured <a>Model</a> schema.</p>
+    /// <p>A Boolean flag to indicate whether to validate a request body according to the configured <code>Model</code> schema.</p>
     pub validate_request_body: bool,
     /// <p>A Boolean flag to indicate whether to validate request parameters (<code>true</code>) or not (<code>false</code>).</p>
     pub validate_request_parameters: bool,
 }
 impl RequestValidator {
-    /// <p>The identifier of this <a>RequestValidator</a>.</p>
+    /// <p>The identifier of this <code>RequestValidator</code>.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The name of this <a>RequestValidator</a></p>
+    /// <p>The name of this <code>RequestValidator</code></p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>A Boolean flag to indicate whether to validate a request body according to the configured <a>Model</a> schema.</p>
+    /// <p>A Boolean flag to indicate whether to validate a request body according to the configured <code>Model</code> schema.</p>
     pub fn validate_request_body(&self) -> bool {
         self.validate_request_body
     }
@@ -7244,32 +7103,32 @@ pub mod request_validator {
         pub(crate) validate_request_parameters: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The identifier of this <a>RequestValidator</a>.</p>
+        /// <p>The identifier of this <code>RequestValidator</code>.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The identifier of this <a>RequestValidator</a>.</p>
+        /// <p>The identifier of this <code>RequestValidator</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
-        /// <p>The name of this <a>RequestValidator</a></p>
+        /// <p>The name of this <code>RequestValidator</code></p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of this <a>RequestValidator</a></p>
+        /// <p>The name of this <code>RequestValidator</code></p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>A Boolean flag to indicate whether to validate a request body according to the configured <a>Model</a> schema.</p>
+        /// <p>A Boolean flag to indicate whether to validate a request body according to the configured <code>Model</code> schema.</p>
         pub fn validate_request_body(mut self, input: bool) -> Self {
             self.validate_request_body = Some(input);
             self
         }
-        /// <p>A Boolean flag to indicate whether to validate a request body according to the configured <a>Model</a> schema.</p>
+        /// <p>A Boolean flag to indicate whether to validate a request body according to the configured <code>Model</code> schema.</p>
         pub fn set_validate_request_body(mut self, input: std::option::Option<bool>) -> Self {
             self.validate_request_body = input;
             self
@@ -7307,8 +7166,7 @@ impl RequestValidator {
 /// <p>A request model defines the data structure of the client-supplied request payload. A response model defines the data structure of the response payload returned by the back end. Although not required, models are useful for mapping payloads between the front end and back end.</p>
 /// <p>A model is used for generating an API's SDK, validating the input request body, and creating a skeletal mapping template.</p>
 /// </div>
-/// <div class="seeAlso">
-/// <a>Method</a>, <a>MethodResponse</a>, <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/models-mappings.html">Models and Mappings</a>
+/// <div class="seeAlso"> <code>Method</code>, <code>MethodResponse</code>, <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/models-mappings.html">Models and Mappings</a>
 /// </div>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -7494,49 +7352,48 @@ impl Model {
 /// <p></p>
 /// </div>
 /// </div>
-/// <div class="seeAlso">
-/// <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/customize-gateway-responses.html">Customize Gateway Responses</a>
+/// <div class="seeAlso"> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/customize-gateway-responses.html">Customize Gateway Responses</a>
 /// </div>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GatewayResponse {
-    /// <p>The response type of the associated <a>GatewayResponse</a>.</p>
+    /// <p>The response type of the associated <code>GatewayResponse</code>.</p>
     pub response_type: std::option::Option<crate::model::GatewayResponseType>,
-    /// <p>The HTTP status code for this <a>GatewayResponse</a>.</p>
+    /// <p>The HTTP status code for this <code>GatewayResponse</code>.</p>
     pub status_code: std::option::Option<std::string::String>,
-    /// <p>Response parameters (paths, query strings and headers) of the <a>GatewayResponse</a> as a string-to-string map of key-value  pairs.</p>
+    /// <p>Response parameters (paths, query strings and headers) of the <code>GatewayResponse</code> as a string-to-string map of key-value pairs.</p>
     pub response_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>Response templates of the <a>GatewayResponse</a> as a string-to-string map of key-value pairs.</p>
+    /// <p>Response templates of the <code>GatewayResponse</code> as a string-to-string map of key-value pairs.</p>
     pub response_templates:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>A Boolean flag to indicate whether this <a>GatewayResponse</a> is the default gateway response (<code>true</code>) or not (<code>false</code>). A default gateway response is one generated by API Gateway without any customization by an API developer. </p>
+    /// <p>A Boolean flag to indicate whether this <code>GatewayResponse</code> is the default gateway response (<code>true</code>) or not (<code>false</code>). A default gateway response is one generated by API Gateway without any customization by an API developer. </p>
     pub default_response: bool,
 }
 impl GatewayResponse {
-    /// <p>The response type of the associated <a>GatewayResponse</a>.</p>
+    /// <p>The response type of the associated <code>GatewayResponse</code>.</p>
     pub fn response_type(&self) -> std::option::Option<&crate::model::GatewayResponseType> {
         self.response_type.as_ref()
     }
-    /// <p>The HTTP status code for this <a>GatewayResponse</a>.</p>
+    /// <p>The HTTP status code for this <code>GatewayResponse</code>.</p>
     pub fn status_code(&self) -> std::option::Option<&str> {
         self.status_code.as_deref()
     }
-    /// <p>Response parameters (paths, query strings and headers) of the <a>GatewayResponse</a> as a string-to-string map of key-value  pairs.</p>
+    /// <p>Response parameters (paths, query strings and headers) of the <code>GatewayResponse</code> as a string-to-string map of key-value pairs.</p>
     pub fn response_parameters(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.response_parameters.as_ref()
     }
-    /// <p>Response templates of the <a>GatewayResponse</a> as a string-to-string map of key-value pairs.</p>
+    /// <p>Response templates of the <code>GatewayResponse</code> as a string-to-string map of key-value pairs.</p>
     pub fn response_templates(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.response_templates.as_ref()
     }
-    /// <p>A Boolean flag to indicate whether this <a>GatewayResponse</a> is the default gateway response (<code>true</code>) or not (<code>false</code>). A default gateway response is one generated by API Gateway without any customization by an API developer. </p>
+    /// <p>A Boolean flag to indicate whether this <code>GatewayResponse</code> is the default gateway response (<code>true</code>) or not (<code>false</code>). A default gateway response is one generated by API Gateway without any customization by an API developer. </p>
     pub fn default_response(&self) -> bool {
         self.default_response
     }
@@ -7569,12 +7426,12 @@ pub mod gateway_response {
         pub(crate) default_response: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The response type of the associated <a>GatewayResponse</a>.</p>
+        /// <p>The response type of the associated <code>GatewayResponse</code>.</p>
         pub fn response_type(mut self, input: crate::model::GatewayResponseType) -> Self {
             self.response_type = Some(input);
             self
         }
-        /// <p>The response type of the associated <a>GatewayResponse</a>.</p>
+        /// <p>The response type of the associated <code>GatewayResponse</code>.</p>
         pub fn set_response_type(
             mut self,
             input: std::option::Option<crate::model::GatewayResponseType>,
@@ -7582,12 +7439,12 @@ pub mod gateway_response {
             self.response_type = input;
             self
         }
-        /// <p>The HTTP status code for this <a>GatewayResponse</a>.</p>
+        /// <p>The HTTP status code for this <code>GatewayResponse</code>.</p>
         pub fn status_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.status_code = Some(input.into());
             self
         }
-        /// <p>The HTTP status code for this <a>GatewayResponse</a>.</p>
+        /// <p>The HTTP status code for this <code>GatewayResponse</code>.</p>
         pub fn set_status_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status_code = input;
             self
@@ -7596,7 +7453,7 @@ pub mod gateway_response {
         ///
         /// To override the contents of this collection use [`set_response_parameters`](Self::set_response_parameters).
         ///
-        /// <p>Response parameters (paths, query strings and headers) of the <a>GatewayResponse</a> as a string-to-string map of key-value  pairs.</p>
+        /// <p>Response parameters (paths, query strings and headers) of the <code>GatewayResponse</code> as a string-to-string map of key-value pairs.</p>
         pub fn response_parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -7607,7 +7464,7 @@ pub mod gateway_response {
             self.response_parameters = Some(hash_map);
             self
         }
-        /// <p>Response parameters (paths, query strings and headers) of the <a>GatewayResponse</a> as a string-to-string map of key-value  pairs.</p>
+        /// <p>Response parameters (paths, query strings and headers) of the <code>GatewayResponse</code> as a string-to-string map of key-value pairs.</p>
         pub fn set_response_parameters(
             mut self,
             input: std::option::Option<
@@ -7621,7 +7478,7 @@ pub mod gateway_response {
         ///
         /// To override the contents of this collection use [`set_response_templates`](Self::set_response_templates).
         ///
-        /// <p>Response templates of the <a>GatewayResponse</a> as a string-to-string map of key-value pairs.</p>
+        /// <p>Response templates of the <code>GatewayResponse</code> as a string-to-string map of key-value pairs.</p>
         pub fn response_templates(
             mut self,
             k: impl Into<std::string::String>,
@@ -7632,7 +7489,7 @@ pub mod gateway_response {
             self.response_templates = Some(hash_map);
             self
         }
-        /// <p>Response templates of the <a>GatewayResponse</a> as a string-to-string map of key-value pairs.</p>
+        /// <p>Response templates of the <code>GatewayResponse</code> as a string-to-string map of key-value pairs.</p>
         pub fn set_response_templates(
             mut self,
             input: std::option::Option<
@@ -7642,12 +7499,12 @@ pub mod gateway_response {
             self.response_templates = input;
             self
         }
-        /// <p>A Boolean flag to indicate whether this <a>GatewayResponse</a> is the default gateway response (<code>true</code>) or not (<code>false</code>). A default gateway response is one generated by API Gateway without any customization by an API developer. </p>
+        /// <p>A Boolean flag to indicate whether this <code>GatewayResponse</code> is the default gateway response (<code>true</code>) or not (<code>false</code>). A default gateway response is one generated by API Gateway without any customization by an API developer. </p>
         pub fn default_response(mut self, input: bool) -> Self {
             self.default_response = Some(input);
             self
         }
-        /// <p>A Boolean flag to indicate whether this <a>GatewayResponse</a> is the default gateway response (<code>true</code>) or not (<code>false</code>). A default gateway response is one generated by API Gateway without any customization by an API developer. </p>
+        /// <p>A Boolean flag to indicate whether this <code>GatewayResponse</code> is the default gateway response (<code>true</code>) or not (<code>false</code>). A default gateway response is one generated by API Gateway without any customization by an API developer. </p>
         pub fn set_default_response(mut self, input: std::option::Option<bool>) -> Self {
             self.default_response = input;
             self
@@ -7671,13 +7528,11 @@ impl GatewayResponse {
     }
 }
 
-/// <p>Represents a custom domain name as a user-friendly host name of an API (<a>RestApi</a>).</p>
+/// <p>Represents a custom domain name as a user-friendly host name of an API (<code>RestApi</code>).</p>
 /// <div class="Remarks">
-/// <p>When you deploy an API, API Gateway creates a default host name for the API. This default API host name is of the <code>{restapi-id}.execute-api.{region}.amazonaws.com</code> format. With the default host name, you can access the API's root resource with the URL of <code>https://{restapi-id}.execute-api.{region}.amazonaws.com/{stage}/</code>. When you set up a custom domain name of <code>apis.example.com</code> for this API, you can then access the same resource using the URL of the <code>https://apis.examples.com/myApi</code>, where <code>myApi</code> is the base path mapping (<a>BasePathMapping</a>) of your API under the custom domain name.
-/// </p>
+/// <p>When you deploy an API, API Gateway creates a default host name for the API. This default API host name is of the <code>{restapi-id}.execute-api.{region}.amazonaws.com</code> format. With the default host name, you can access the API's root resource with the URL of <code>https://{restapi-id}.execute-api.{region}.amazonaws.com/{stage}/</code>. When you set up a custom domain name of <code>apis.example.com</code> for this API, you can then access the same resource using the URL of the <code>https://apis.examples.com/myApi</code>, where <code>myApi</code> is the base path mapping (<code>BasePathMapping</code>) of your API under the custom domain name. </p>
 /// </div>
-/// <div class="seeAlso">
-/// <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html">Set a Custom Host Name for an API</a>
+/// <div class="seeAlso"> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html">Set a Custom Host Name for an API</a>
 /// </div>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -7692,7 +7547,7 @@ pub struct DomainName {
     pub certificate_upload_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The domain name associated with the regional endpoint for this custom domain name. You set up this association by adding a DNS record that points the custom domain name to this regional domain name. The regional domain name is returned by API Gateway when you create a regional endpoint.</p>
     pub regional_domain_name: std::option::Option<std::string::String>,
-    /// <p>The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set up a Regional Custom Domain Name</a> and  <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API Gateway</a>.</p>
+    /// <p>The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set up a Regional Custom Domain Name</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API Gateway</a>.</p>
     pub regional_hosted_zone_id: std::option::Option<std::string::String>,
     /// <p>The name of the certificate that will be used for validating the regional domain name.</p>
     pub regional_certificate_name: std::option::Option<std::string::String>,
@@ -7702,13 +7557,13 @@ pub struct DomainName {
     pub distribution_domain_name: std::option::Option<std::string::String>,
     /// <p>The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized endpoint. The valid value is <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set up a Regional Custom Domain Name</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API Gateway</a>.</p>
     pub distribution_hosted_zone_id: std::option::Option<std::string::String>,
-    /// <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint types of the domain name.</p>
+    /// <p>The endpoint configuration of this <code>DomainName</code> showing the endpoint types of the domain name.</p>
     pub endpoint_configuration: std::option::Option<crate::model::EndpointConfiguration>,
-    /// <p>The status of the <a>DomainName</a> migration. The valid values are <code>AVAILABLE</code>, <code>UPDATING</code>, <code>PENDING_CERTIFICATE_REIMPORT</code>, and <code>PENDING_OWNERSHIP_VERIFICATION</code>. If the status is <code>UPDATING</code>, the domain cannot be modified further until the existing operation is complete. If it is <code>AVAILABLE</code>, the domain can be updated.</p>
+    /// <p>The status of the <code>DomainName</code> migration. The valid values are <code>AVAILABLE</code>, <code>UPDATING</code>, <code>PENDING_CERTIFICATE_REIMPORT</code>, and <code>PENDING_OWNERSHIP_VERIFICATION</code>. If the status is <code>UPDATING</code>, the domain cannot be modified further until the existing operation is complete. If it is <code>AVAILABLE</code>, the domain can be updated.</p>
     pub domain_name_status: std::option::Option<crate::model::DomainNameStatus>,
-    /// <p>An optional text message containing detailed information about status of the <a>DomainName</a> migration.</p>
+    /// <p>An optional text message containing detailed information about status of the <code>DomainName</code> migration.</p>
     pub domain_name_status_message: std::option::Option<std::string::String>,
-    /// <p>The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>. The valid values are <code>TLS_1_0</code> and <code>TLS_1_2</code>.</p>
+    /// <p>The Transport Layer Security (TLS) version + cipher suite for this <code>DomainName</code>. The valid values are <code>TLS_1_0</code> and <code>TLS_1_2</code>.</p>
     pub security_policy: std::option::Option<crate::model::SecurityPolicy>,
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
     pub tags:
@@ -7739,7 +7594,7 @@ impl DomainName {
     pub fn regional_domain_name(&self) -> std::option::Option<&str> {
         self.regional_domain_name.as_deref()
     }
-    /// <p>The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set up a Regional Custom Domain Name</a> and  <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API Gateway</a>.</p>
+    /// <p>The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set up a Regional Custom Domain Name</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API Gateway</a>.</p>
     pub fn regional_hosted_zone_id(&self) -> std::option::Option<&str> {
         self.regional_hosted_zone_id.as_deref()
     }
@@ -7759,21 +7614,21 @@ impl DomainName {
     pub fn distribution_hosted_zone_id(&self) -> std::option::Option<&str> {
         self.distribution_hosted_zone_id.as_deref()
     }
-    /// <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint types of the domain name.</p>
+    /// <p>The endpoint configuration of this <code>DomainName</code> showing the endpoint types of the domain name.</p>
     pub fn endpoint_configuration(
         &self,
     ) -> std::option::Option<&crate::model::EndpointConfiguration> {
         self.endpoint_configuration.as_ref()
     }
-    /// <p>The status of the <a>DomainName</a> migration. The valid values are <code>AVAILABLE</code>, <code>UPDATING</code>, <code>PENDING_CERTIFICATE_REIMPORT</code>, and <code>PENDING_OWNERSHIP_VERIFICATION</code>. If the status is <code>UPDATING</code>, the domain cannot be modified further until the existing operation is complete. If it is <code>AVAILABLE</code>, the domain can be updated.</p>
+    /// <p>The status of the <code>DomainName</code> migration. The valid values are <code>AVAILABLE</code>, <code>UPDATING</code>, <code>PENDING_CERTIFICATE_REIMPORT</code>, and <code>PENDING_OWNERSHIP_VERIFICATION</code>. If the status is <code>UPDATING</code>, the domain cannot be modified further until the existing operation is complete. If it is <code>AVAILABLE</code>, the domain can be updated.</p>
     pub fn domain_name_status(&self) -> std::option::Option<&crate::model::DomainNameStatus> {
         self.domain_name_status.as_ref()
     }
-    /// <p>An optional text message containing detailed information about status of the <a>DomainName</a> migration.</p>
+    /// <p>An optional text message containing detailed information about status of the <code>DomainName</code> migration.</p>
     pub fn domain_name_status_message(&self) -> std::option::Option<&str> {
         self.domain_name_status_message.as_deref()
     }
-    /// <p>The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>. The valid values are <code>TLS_1_0</code> and <code>TLS_1_2</code>.</p>
+    /// <p>The Transport Layer Security (TLS) version + cipher suite for this <code>DomainName</code>. The valid values are <code>TLS_1_0</code> and <code>TLS_1_2</code>.</p>
     pub fn security_policy(&self) -> std::option::Option<&crate::model::SecurityPolicy> {
         self.security_policy.as_ref()
     }
@@ -7917,12 +7772,12 @@ pub mod domain_name {
             self.regional_domain_name = input;
             self
         }
-        /// <p>The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set up a Regional Custom Domain Name</a> and  <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API Gateway</a>.</p>
+        /// <p>The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set up a Regional Custom Domain Name</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API Gateway</a>.</p>
         pub fn regional_hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.regional_hosted_zone_id = Some(input.into());
             self
         }
-        /// <p>The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set up a Regional Custom Domain Name</a> and  <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API Gateway</a>.</p>
+        /// <p>The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set up a Regional Custom Domain Name</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API Gateway</a>.</p>
         pub fn set_regional_hosted_zone_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7985,7 +7840,7 @@ pub mod domain_name {
             self.distribution_hosted_zone_id = input;
             self
         }
-        /// <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint types of the domain name.</p>
+        /// <p>The endpoint configuration of this <code>DomainName</code> showing the endpoint types of the domain name.</p>
         pub fn endpoint_configuration(
             mut self,
             input: crate::model::EndpointConfiguration,
@@ -7993,7 +7848,7 @@ pub mod domain_name {
             self.endpoint_configuration = Some(input);
             self
         }
-        /// <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint types of the domain name.</p>
+        /// <p>The endpoint configuration of this <code>DomainName</code> showing the endpoint types of the domain name.</p>
         pub fn set_endpoint_configuration(
             mut self,
             input: std::option::Option<crate::model::EndpointConfiguration>,
@@ -8001,12 +7856,12 @@ pub mod domain_name {
             self.endpoint_configuration = input;
             self
         }
-        /// <p>The status of the <a>DomainName</a> migration. The valid values are <code>AVAILABLE</code>, <code>UPDATING</code>, <code>PENDING_CERTIFICATE_REIMPORT</code>, and <code>PENDING_OWNERSHIP_VERIFICATION</code>. If the status is <code>UPDATING</code>, the domain cannot be modified further until the existing operation is complete. If it is <code>AVAILABLE</code>, the domain can be updated.</p>
+        /// <p>The status of the <code>DomainName</code> migration. The valid values are <code>AVAILABLE</code>, <code>UPDATING</code>, <code>PENDING_CERTIFICATE_REIMPORT</code>, and <code>PENDING_OWNERSHIP_VERIFICATION</code>. If the status is <code>UPDATING</code>, the domain cannot be modified further until the existing operation is complete. If it is <code>AVAILABLE</code>, the domain can be updated.</p>
         pub fn domain_name_status(mut self, input: crate::model::DomainNameStatus) -> Self {
             self.domain_name_status = Some(input);
             self
         }
-        /// <p>The status of the <a>DomainName</a> migration. The valid values are <code>AVAILABLE</code>, <code>UPDATING</code>, <code>PENDING_CERTIFICATE_REIMPORT</code>, and <code>PENDING_OWNERSHIP_VERIFICATION</code>. If the status is <code>UPDATING</code>, the domain cannot be modified further until the existing operation is complete. If it is <code>AVAILABLE</code>, the domain can be updated.</p>
+        /// <p>The status of the <code>DomainName</code> migration. The valid values are <code>AVAILABLE</code>, <code>UPDATING</code>, <code>PENDING_CERTIFICATE_REIMPORT</code>, and <code>PENDING_OWNERSHIP_VERIFICATION</code>. If the status is <code>UPDATING</code>, the domain cannot be modified further until the existing operation is complete. If it is <code>AVAILABLE</code>, the domain can be updated.</p>
         pub fn set_domain_name_status(
             mut self,
             input: std::option::Option<crate::model::DomainNameStatus>,
@@ -8014,12 +7869,12 @@ pub mod domain_name {
             self.domain_name_status = input;
             self
         }
-        /// <p>An optional text message containing detailed information about status of the <a>DomainName</a> migration.</p>
+        /// <p>An optional text message containing detailed information about status of the <code>DomainName</code> migration.</p>
         pub fn domain_name_status_message(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_name_status_message = Some(input.into());
             self
         }
-        /// <p>An optional text message containing detailed information about status of the <a>DomainName</a> migration.</p>
+        /// <p>An optional text message containing detailed information about status of the <code>DomainName</code> migration.</p>
         pub fn set_domain_name_status_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8027,12 +7882,12 @@ pub mod domain_name {
             self.domain_name_status_message = input;
             self
         }
-        /// <p>The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>. The valid values are <code>TLS_1_0</code> and <code>TLS_1_2</code>.</p>
+        /// <p>The Transport Layer Security (TLS) version + cipher suite for this <code>DomainName</code>. The valid values are <code>TLS_1_0</code> and <code>TLS_1_2</code>.</p>
         pub fn security_policy(mut self, input: crate::model::SecurityPolicy) -> Self {
             self.security_policy = Some(input);
             self
         }
-        /// <p>The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>. The valid values are <code>TLS_1_0</code> and <code>TLS_1_2</code>.</p>
+        /// <p>The Transport Layer Security (TLS) version + cipher suite for this <code>DomainName</code>. The valid values are <code>TLS_1_0</code> and <code>TLS_1_2</code>.</p>
         pub fn set_security_policy(
             mut self,
             input: std::option::Option<crate::model::SecurityPolicy>,
@@ -8129,9 +7984,10 @@ impl DomainName {
 }
 
 /// <p>A snapshot of the documentation of an API.</p>
-/// <div class="remarks"><p>Publishing API documentation involves creating a documentation version associated with an API stage and exporting the versioned documentation to an external (e.g., OpenAPI) file.</p></div>
-/// <div class="seeAlso">
-/// <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-documenting-api.html">Documenting an API</a>, <a>DocumentationPart</a>, <a>DocumentationVersions</a>
+/// <div class="remarks">
+/// <p>Publishing API documentation involves creating a documentation version associated with an API stage and exporting the versioned documentation to an external (e.g., OpenAPI) file.</p>
+/// </div>
+/// <div class="seeAlso"> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-documenting-api.html">Documenting an API</a>, <code>DocumentationPart</code>, <code>DocumentationVersions</code>
 /// </div>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -8230,22 +8086,24 @@ impl DocumentationVersion {
 /// <p>A documentation part for a targeted API entity.</p>
 /// <div class="remarks">
 /// <p>A documentation part consists of a content map (<code>properties</code>) and a target (<code>location</code>). The target specifies an API entity to which the documentation content applies. The supported API entity types are <code>API</code>, <code>AUTHORIZER</code>, <code>MODEL</code>, <code>RESOURCE</code>, <code>METHOD</code>, <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>, <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>. Valid <code>location</code> fields depend on the API entity type. All valid fields are not required.</p>
-/// <p>The content map is a JSON string of API-specific key-value pairs. Although an API can use any shape for the content map, only the OpenAPI-compliant documentation fields will be injected into the associated API entity definition in the exported OpenAPI definition file.</p></div>
-/// <div class="seeAlso">
-/// <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-documenting-api.html">Documenting an API</a>, <a>DocumentationParts</a>
+/// <p>The content map is a JSON string of API-specific key-value pairs. Although an API can use any shape for the content map, only the OpenAPI-compliant documentation fields will be injected into the associated API entity definition in the exported OpenAPI definition file.</p>
+/// </div>
+/// <div class="seeAlso"> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-documenting-api.html">Documenting an API</a>, <code>DocumentationParts</code>
 /// </div>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DocumentationPart {
-    /// <p>The <a>DocumentationPart</a> identifier, generated by API Gateway when the <code>DocumentationPart</code> is created.</p>
+    /// <p>The <code>DocumentationPart</code> identifier, generated by API Gateway when the <code>DocumentationPart</code> is created.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The location of the API entity to which the documentation applies. Valid fields depend on the targeted API entity type. All the valid location fields are not required. If not explicitly specified, a valid location field is treated as a wildcard and associated documentation content may be inherited by matching entities, unless overridden.</p>
     pub location: std::option::Option<crate::model::DocumentationPartLocation>,
-    /// <p>A content map of API-specific key-value pairs describing the targeted API entity. The map must be encoded as a JSON string, e.g., <code>"{ \"description\": \"The API does ...\" }"</code>.  Only OpenAPI-compliant documentation-related fields from the <literal>properties</literal> map are exported and, hence, published as part of the API entity definitions, while the original documentation parts are exported in a OpenAPI extension of <code>x-amazon-apigateway-documentation</code>.</p>
+    /// <p>A content map of API-specific key-value pairs describing the targeted API entity. The map must be encoded as a JSON string, e.g., <code>"{ \"description\": \"The API does ...\" }"</code>. Only OpenAPI-compliant documentation-related fields from the <literal>
+    /// properties
+    /// </literal> map are exported and, hence, published as part of the API entity definitions, while the original documentation parts are exported in a OpenAPI extension of <code>x-amazon-apigateway-documentation</code>.</p>
     pub properties: std::option::Option<std::string::String>,
 }
 impl DocumentationPart {
-    /// <p>The <a>DocumentationPart</a> identifier, generated by API Gateway when the <code>DocumentationPart</code> is created.</p>
+    /// <p>The <code>DocumentationPart</code> identifier, generated by API Gateway when the <code>DocumentationPart</code> is created.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -8253,7 +8111,9 @@ impl DocumentationPart {
     pub fn location(&self) -> std::option::Option<&crate::model::DocumentationPartLocation> {
         self.location.as_ref()
     }
-    /// <p>A content map of API-specific key-value pairs describing the targeted API entity. The map must be encoded as a JSON string, e.g., <code>"{ \"description\": \"The API does ...\" }"</code>.  Only OpenAPI-compliant documentation-related fields from the <literal>properties</literal> map are exported and, hence, published as part of the API entity definitions, while the original documentation parts are exported in a OpenAPI extension of <code>x-amazon-apigateway-documentation</code>.</p>
+    /// <p>A content map of API-specific key-value pairs describing the targeted API entity. The map must be encoded as a JSON string, e.g., <code>"{ \"description\": \"The API does ...\" }"</code>. Only OpenAPI-compliant documentation-related fields from the <literal>
+    /// properties
+    /// </literal> map are exported and, hence, published as part of the API entity definitions, while the original documentation parts are exported in a OpenAPI extension of <code>x-amazon-apigateway-documentation</code>.</p>
     pub fn properties(&self) -> std::option::Option<&str> {
         self.properties.as_deref()
     }
@@ -8278,12 +8138,12 @@ pub mod documentation_part {
         pub(crate) properties: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <a>DocumentationPart</a> identifier, generated by API Gateway when the <code>DocumentationPart</code> is created.</p>
+        /// <p>The <code>DocumentationPart</code> identifier, generated by API Gateway when the <code>DocumentationPart</code> is created.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The <a>DocumentationPart</a> identifier, generated by API Gateway when the <code>DocumentationPart</code> is created.</p>
+        /// <p>The <code>DocumentationPart</code> identifier, generated by API Gateway when the <code>DocumentationPart</code> is created.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -8301,12 +8161,16 @@ pub mod documentation_part {
             self.location = input;
             self
         }
-        /// <p>A content map of API-specific key-value pairs describing the targeted API entity. The map must be encoded as a JSON string, e.g., <code>"{ \"description\": \"The API does ...\" }"</code>.  Only OpenAPI-compliant documentation-related fields from the <literal>properties</literal> map are exported and, hence, published as part of the API entity definitions, while the original documentation parts are exported in a OpenAPI extension of <code>x-amazon-apigateway-documentation</code>.</p>
+        /// <p>A content map of API-specific key-value pairs describing the targeted API entity. The map must be encoded as a JSON string, e.g., <code>"{ \"description\": \"The API does ...\" }"</code>. Only OpenAPI-compliant documentation-related fields from the <literal>
+        /// properties
+        /// </literal> map are exported and, hence, published as part of the API entity definitions, while the original documentation parts are exported in a OpenAPI extension of <code>x-amazon-apigateway-documentation</code>.</p>
         pub fn properties(mut self, input: impl Into<std::string::String>) -> Self {
             self.properties = Some(input.into());
             self
         }
-        /// <p>A content map of API-specific key-value pairs describing the targeted API entity. The map must be encoded as a JSON string, e.g., <code>"{ \"description\": \"The API does ...\" }"</code>.  Only OpenAPI-compliant documentation-related fields from the <literal>properties</literal> map are exported and, hence, published as part of the API entity definitions, while the original documentation parts are exported in a OpenAPI extension of <code>x-amazon-apigateway-documentation</code>.</p>
+        /// <p>A content map of API-specific key-value pairs describing the targeted API entity. The map must be encoded as a JSON string, e.g., <code>"{ \"description\": \"The API does ...\" }"</code>. Only OpenAPI-compliant documentation-related fields from the <literal>
+        /// properties
+        /// </literal> map are exported and, hence, published as part of the API entity definitions, while the original documentation parts are exported in a OpenAPI extension of <code>x-amazon-apigateway-documentation</code>.</p>
         pub fn set_properties(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.properties = input;
             self
@@ -8383,12 +8247,12 @@ impl AsRef<str> for LocationStatusType {
     }
 }
 
-/// <p>An immutable representation of a <a>RestApi</a> resource that can be called by users using <a>Stages</a>. A deployment must be associated with a <a>Stage</a> for it to be callable over the Internet.</p>
-/// <div class="remarks">To create a deployment, call <code>POST</code> on the <a>Deployments</a> resource of a <a>RestApi</a>.
-/// To view, update, or delete a deployment, call <code>GET</code>, <code>PATCH</code>, or <code>DELETE</code> on the specified deployment resource (<code>/restapis/{restapi_id}/deployments/{deployment_id}</code>).</div>
-/// <div class="seeAlso"><a>RestApi</a>, <a>Deployments</a>, <a>Stage</a>,
-/// <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-deployment.html">AWS CLI</a>,
-/// <a href="https://aws.amazon.com/tools/">AWS SDKs</a>
+/// <p>An immutable representation of a <code>RestApi</code> resource that can be called by users using <code>Stages</code>. A deployment must be associated with a <code>Stage</code> for it to be callable over the Internet.</p>
+/// <div class="remarks">
+/// To create a deployment, call <code>POST</code> on the <code>Deployments</code> resource of a <code>RestApi</code>. To view, update, or delete a deployment, call <code>GET</code>, <code>PATCH</code>, or <code>DELETE</code> on the specified deployment resource (<code>/restapis/{restapi_id}/deployments/{deployment_id}</code>).
+/// </div>
+/// <div class="seeAlso">
+/// <code>RestApi</code>, <code>Deployments</code>, <code>Stage</code>, <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-deployment.html">AWS CLI</a>, <a href="https://aws.amazon.com/tools/">AWS SDKs</a>
 /// </div>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -8399,7 +8263,7 @@ pub struct Deployment {
     pub description: std::option::Option<std::string::String>,
     /// <p>The date and time that the deployment resource was created.</p>
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>A summary of the <a>RestApi</a> at the date and time that the deployment resource was created.</p>
+    /// <p>A summary of the <code>RestApi</code> at the date and time that the deployment resource was created.</p>
     pub api_summary: std::option::Option<
         std::collections::HashMap<
             std::string::String,
@@ -8420,7 +8284,7 @@ impl Deployment {
     pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
-    /// <p>A summary of the <a>RestApi</a> at the date and time that the deployment resource was created.</p>
+    /// <p>A summary of the <code>RestApi</code> at the date and time that the deployment resource was created.</p>
     pub fn api_summary(
         &self,
     ) -> std::option::Option<
@@ -8496,7 +8360,7 @@ pub mod deployment {
         ///
         /// To override the contents of this collection use [`set_api_summary`](Self::set_api_summary).
         ///
-        /// <p>A summary of the <a>RestApi</a> at the date and time that the deployment resource was created.</p>
+        /// <p>A summary of the <code>RestApi</code> at the date and time that the deployment resource was created.</p>
         pub fn api_summary(
             mut self,
             k: impl Into<std::string::String>,
@@ -8507,7 +8371,7 @@ pub mod deployment {
             self.api_summary = Some(hash_map);
             self
         }
-        /// <p>A summary of the <a>RestApi</a> at the date and time that the deployment resource was created.</p>
+        /// <p>A summary of the <code>RestApi</code> at the date and time that the deployment resource was created.</p>
         pub fn set_api_summary(
             mut self,
             input: std::option::Option<
@@ -8539,9 +8403,10 @@ impl Deployment {
 }
 
 /// <p>Represents a client certificate used to configure client-side SSL authentication while sending requests to the integration endpoint.</p>
-/// <div class="remarks">Client certificates are used to authenticate an API by the backend server. To authenticate an API client (or user), use IAM roles and policies, a custom <a>Authorizer</a> or an Amazon Cognito user pool.</div>
-/// <div class="seeAlso">
-/// <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/getting-started-client-side-ssl-authentication.html">Use Client-Side Certificate</a>
+/// <div class="remarks">
+/// Client certificates are used to authenticate an API by the backend server. To authenticate an API client (or user), use IAM roles and policies, a custom <code>Authorizer</code> or an Amazon Cognito user pool.
+/// </div>
+/// <div class="seeAlso"> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/getting-started-client-side-ssl-authentication.html">Use Client-Side Certificate</a>
 /// </div>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -8725,16 +8590,17 @@ impl ClientCertificate {
 }
 
 /// <p>Represents the base path that callers of the API must provide as part of the URL after the domain name.</p>
-/// <div class="remarks">A custom domain name plus a <code>BasePathMapping</code> specification identifies a deployed <a>RestApi</a> in a given stage of the owner <a>Account</a>.</div>
-/// <div class="seeAlso">
-/// <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html">Use Custom Domain Names</a>
+/// <div class="remarks">
+/// A custom domain name plus a <code>BasePathMapping</code> specification identifies a deployed <code>RestApi</code> in a given stage of the owner <code>Account</code>.
+/// </div>
+/// <div class="seeAlso"> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html">Use Custom Domain Names</a>
 /// </div>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BasePathMapping {
     /// <p>The base path name that callers of the API must provide as part of the URL after the domain name.</p>
     pub base_path: std::option::Option<std::string::String>,
-    /// <p>The string identifier of the associated <a>RestApi</a>.</p>
+    /// <p>The string identifier of the associated <code>RestApi</code>.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The name of the associated stage.</p>
     pub stage: std::option::Option<std::string::String>,
@@ -8744,7 +8610,7 @@ impl BasePathMapping {
     pub fn base_path(&self) -> std::option::Option<&str> {
         self.base_path.as_deref()
     }
-    /// <p>The string identifier of the associated <a>RestApi</a>.</p>
+    /// <p>The string identifier of the associated <code>RestApi</code>.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
@@ -8783,12 +8649,12 @@ pub mod base_path_mapping {
             self.base_path = input;
             self
         }
-        /// <p>The string identifier of the associated <a>RestApi</a>.</p>
+        /// <p>The string identifier of the associated <code>RestApi</code>.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>The string identifier of the associated <a>RestApi</a>.</p>
+        /// <p>The string identifier of the associated <code>RestApi</code>.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
@@ -8821,9 +8687,7 @@ impl BasePathMapping {
 }
 
 /// <p>Represents an authorization layer for methods. If enabled on a method, API Gateway will activate the authorizer when a client calls the method.</p>
-/// <div class="seeAlso">
-/// <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-use-lambda-authorizer.html">Use Lambda Function as Authorizer</a>
-/// <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-integrate-with-cognito.html">Use Cognito User Pool as Authorizer</a>
+/// <div class="seeAlso"> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-use-lambda-authorizer.html">Use Lambda Function as Authorizer</a> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-integrate-with-cognito.html">Use Cognito User Pool as Authorizer</a>
 /// </div>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -8838,11 +8702,16 @@ pub struct Authorizer {
     pub provider_ar_ns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Optional customer-defined field, used in OpenAPI imports and exports without functional impact.</p>
     pub auth_type: std::option::Option<std::string::String>,
-    /// <p>Specifies the authorizer's Uniform Resource Identifier (URI). For <code>TOKEN</code> or <code>REQUEST</code> authorizers, this must be a well-formed Lambda function URI, for example, <code>arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:{account_id}:function:{lambda_function_name}/invocations</code>. In general, the URI has this form  <code>arn:aws:apigateway:{region}:lambda:path/{service_api}</code>, where <code>{region}</code> is the same as the region hosting the Lambda function, <code>path</code> indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial <code>/</code>. For Lambda functions, this is usually of the form <code>/2015-03-31/functions/[FunctionARN]/invocations</code>.</p>
+    /// <p>Specifies the authorizer's Uniform Resource Identifier (URI). For <code>TOKEN</code> or <code>REQUEST</code> authorizers, this must be a well-formed Lambda function URI, for example, <code>arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:{account_id}:function:{lambda_function_name}/invocations</code>. In general, the URI has this form <code>arn:aws:apigateway:{region}:lambda:path/{service_api}</code>, where <code>{region}</code> is the same as the region hosting the Lambda function, <code>path</code> indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial <code>/</code>. For Lambda functions, this is usually of the form <code>/2015-03-31/functions/[FunctionARN]/invocations</code>.</p>
     pub authorizer_uri: std::option::Option<std::string::String>,
     /// <p>Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an IAM role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based permissions on the Lambda function, specify null.</p>
     pub authorizer_credentials: std::option::Option<std::string::String>,
-    /// <p>The identity source for which authorization is requested. <ul><li>For a <code>TOKEN</code> or <code>COGNITO_USER_POOLS</code> authorizer, this is required and specifies the request header mapping expression for the custom header holding the authorization token submitted by the client. For example, if the token header name is <code>Auth</code>, the header mapping expression is  <code>method.request.header.Auth</code>.</li><li>For the <code>REQUEST</code> authorizer, this is required when authorization caching is enabled. The value is a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if an <code>Auth</code> header, a <code>Name</code> query string parameter are defined as identity sources, this value is <code>method.request.header.Auth, method.request.querystring.Name</code>.  These parameters will be used to derive the authorization caching key and to perform runtime validation of the <code>REQUEST</code> authorizer by verifying all of the identity-related request parameters are present, not null and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions of the specified request parameters. When the authorization caching is not enabled, this property is optional.</li></ul></p>
+    /// <p>The identity source for which authorization is requested. </p>
+    /// <ul>
+    /// <li>For a <code>TOKEN</code> or <code>COGNITO_USER_POOLS</code> authorizer, this is required and specifies the request header mapping expression for the custom header holding the authorization token submitted by the client. For example, if the token header name is <code>Auth</code>, the header mapping expression is <code>method.request.header.Auth</code>.</li>
+    /// <li>For the <code>REQUEST</code> authorizer, this is required when authorization caching is enabled. The value is a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if an <code>Auth</code> header, a <code>Name</code> query string parameter are defined as identity sources, this value is <code>method.request.header.Auth, method.request.querystring.Name</code>. These parameters will be used to derive the authorization caching key and to perform runtime validation of the <code>REQUEST</code> authorizer by verifying all of the identity-related request parameters are present, not null and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions of the specified request parameters. When the authorization caching is not enabled, this property is optional.</li>
+    /// </ul>
+    /// <p></p>
     pub identity_source: std::option::Option<std::string::String>,
     /// <p>A validation expression for the incoming identity token. For <code>TOKEN</code> authorizers, this value is a regular expression. For <code>COGNITO_USER_POOLS</code> authorizers, API Gateway will match the <code>aud</code> field of the incoming token from the client against the specified regular expression. It will invoke the authorizer's Lambda function when there is a match. Otherwise, it will return a 401 Unauthorized response without calling the Lambda function. The validation expression does not apply to the <code>REQUEST</code> authorizer.</p>
     pub identity_validation_expression: std::option::Option<std::string::String>,
@@ -8870,7 +8739,7 @@ impl Authorizer {
     pub fn auth_type(&self) -> std::option::Option<&str> {
         self.auth_type.as_deref()
     }
-    /// <p>Specifies the authorizer's Uniform Resource Identifier (URI). For <code>TOKEN</code> or <code>REQUEST</code> authorizers, this must be a well-formed Lambda function URI, for example, <code>arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:{account_id}:function:{lambda_function_name}/invocations</code>. In general, the URI has this form  <code>arn:aws:apigateway:{region}:lambda:path/{service_api}</code>, where <code>{region}</code> is the same as the region hosting the Lambda function, <code>path</code> indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial <code>/</code>. For Lambda functions, this is usually of the form <code>/2015-03-31/functions/[FunctionARN]/invocations</code>.</p>
+    /// <p>Specifies the authorizer's Uniform Resource Identifier (URI). For <code>TOKEN</code> or <code>REQUEST</code> authorizers, this must be a well-formed Lambda function URI, for example, <code>arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:{account_id}:function:{lambda_function_name}/invocations</code>. In general, the URI has this form <code>arn:aws:apigateway:{region}:lambda:path/{service_api}</code>, where <code>{region}</code> is the same as the region hosting the Lambda function, <code>path</code> indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial <code>/</code>. For Lambda functions, this is usually of the form <code>/2015-03-31/functions/[FunctionARN]/invocations</code>.</p>
     pub fn authorizer_uri(&self) -> std::option::Option<&str> {
         self.authorizer_uri.as_deref()
     }
@@ -8878,7 +8747,12 @@ impl Authorizer {
     pub fn authorizer_credentials(&self) -> std::option::Option<&str> {
         self.authorizer_credentials.as_deref()
     }
-    /// <p>The identity source for which authorization is requested. <ul><li>For a <code>TOKEN</code> or <code>COGNITO_USER_POOLS</code> authorizer, this is required and specifies the request header mapping expression for the custom header holding the authorization token submitted by the client. For example, if the token header name is <code>Auth</code>, the header mapping expression is  <code>method.request.header.Auth</code>.</li><li>For the <code>REQUEST</code> authorizer, this is required when authorization caching is enabled. The value is a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if an <code>Auth</code> header, a <code>Name</code> query string parameter are defined as identity sources, this value is <code>method.request.header.Auth, method.request.querystring.Name</code>.  These parameters will be used to derive the authorization caching key and to perform runtime validation of the <code>REQUEST</code> authorizer by verifying all of the identity-related request parameters are present, not null and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions of the specified request parameters. When the authorization caching is not enabled, this property is optional.</li></ul></p>
+    /// <p>The identity source for which authorization is requested. </p>
+    /// <ul>
+    /// <li>For a <code>TOKEN</code> or <code>COGNITO_USER_POOLS</code> authorizer, this is required and specifies the request header mapping expression for the custom header holding the authorization token submitted by the client. For example, if the token header name is <code>Auth</code>, the header mapping expression is <code>method.request.header.Auth</code>.</li>
+    /// <li>For the <code>REQUEST</code> authorizer, this is required when authorization caching is enabled. The value is a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if an <code>Auth</code> header, a <code>Name</code> query string parameter are defined as identity sources, this value is <code>method.request.header.Auth, method.request.querystring.Name</code>. These parameters will be used to derive the authorization caching key and to perform runtime validation of the <code>REQUEST</code> authorizer by verifying all of the identity-related request parameters are present, not null and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions of the specified request parameters. When the authorization caching is not enabled, this property is optional.</li>
+    /// </ul>
+    /// <p></p>
     pub fn identity_source(&self) -> std::option::Option<&str> {
         self.identity_source.as_deref()
     }
@@ -8993,12 +8867,12 @@ pub mod authorizer {
             self.auth_type = input;
             self
         }
-        /// <p>Specifies the authorizer's Uniform Resource Identifier (URI). For <code>TOKEN</code> or <code>REQUEST</code> authorizers, this must be a well-formed Lambda function URI, for example, <code>arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:{account_id}:function:{lambda_function_name}/invocations</code>. In general, the URI has this form  <code>arn:aws:apigateway:{region}:lambda:path/{service_api}</code>, where <code>{region}</code> is the same as the region hosting the Lambda function, <code>path</code> indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial <code>/</code>. For Lambda functions, this is usually of the form <code>/2015-03-31/functions/[FunctionARN]/invocations</code>.</p>
+        /// <p>Specifies the authorizer's Uniform Resource Identifier (URI). For <code>TOKEN</code> or <code>REQUEST</code> authorizers, this must be a well-formed Lambda function URI, for example, <code>arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:{account_id}:function:{lambda_function_name}/invocations</code>. In general, the URI has this form <code>arn:aws:apigateway:{region}:lambda:path/{service_api}</code>, where <code>{region}</code> is the same as the region hosting the Lambda function, <code>path</code> indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial <code>/</code>. For Lambda functions, this is usually of the form <code>/2015-03-31/functions/[FunctionARN]/invocations</code>.</p>
         pub fn authorizer_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.authorizer_uri = Some(input.into());
             self
         }
-        /// <p>Specifies the authorizer's Uniform Resource Identifier (URI). For <code>TOKEN</code> or <code>REQUEST</code> authorizers, this must be a well-formed Lambda function URI, for example, <code>arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:{account_id}:function:{lambda_function_name}/invocations</code>. In general, the URI has this form  <code>arn:aws:apigateway:{region}:lambda:path/{service_api}</code>, where <code>{region}</code> is the same as the region hosting the Lambda function, <code>path</code> indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial <code>/</code>. For Lambda functions, this is usually of the form <code>/2015-03-31/functions/[FunctionARN]/invocations</code>.</p>
+        /// <p>Specifies the authorizer's Uniform Resource Identifier (URI). For <code>TOKEN</code> or <code>REQUEST</code> authorizers, this must be a well-formed Lambda function URI, for example, <code>arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:{account_id}:function:{lambda_function_name}/invocations</code>. In general, the URI has this form <code>arn:aws:apigateway:{region}:lambda:path/{service_api}</code>, where <code>{region}</code> is the same as the region hosting the Lambda function, <code>path</code> indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial <code>/</code>. For Lambda functions, this is usually of the form <code>/2015-03-31/functions/[FunctionARN]/invocations</code>.</p>
         pub fn set_authorizer_uri(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9019,12 +8893,22 @@ pub mod authorizer {
             self.authorizer_credentials = input;
             self
         }
-        /// <p>The identity source for which authorization is requested. <ul><li>For a <code>TOKEN</code> or <code>COGNITO_USER_POOLS</code> authorizer, this is required and specifies the request header mapping expression for the custom header holding the authorization token submitted by the client. For example, if the token header name is <code>Auth</code>, the header mapping expression is  <code>method.request.header.Auth</code>.</li><li>For the <code>REQUEST</code> authorizer, this is required when authorization caching is enabled. The value is a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if an <code>Auth</code> header, a <code>Name</code> query string parameter are defined as identity sources, this value is <code>method.request.header.Auth, method.request.querystring.Name</code>.  These parameters will be used to derive the authorization caching key and to perform runtime validation of the <code>REQUEST</code> authorizer by verifying all of the identity-related request parameters are present, not null and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions of the specified request parameters. When the authorization caching is not enabled, this property is optional.</li></ul></p>
+        /// <p>The identity source for which authorization is requested. </p>
+        /// <ul>
+        /// <li>For a <code>TOKEN</code> or <code>COGNITO_USER_POOLS</code> authorizer, this is required and specifies the request header mapping expression for the custom header holding the authorization token submitted by the client. For example, if the token header name is <code>Auth</code>, the header mapping expression is <code>method.request.header.Auth</code>.</li>
+        /// <li>For the <code>REQUEST</code> authorizer, this is required when authorization caching is enabled. The value is a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if an <code>Auth</code> header, a <code>Name</code> query string parameter are defined as identity sources, this value is <code>method.request.header.Auth, method.request.querystring.Name</code>. These parameters will be used to derive the authorization caching key and to perform runtime validation of the <code>REQUEST</code> authorizer by verifying all of the identity-related request parameters are present, not null and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions of the specified request parameters. When the authorization caching is not enabled, this property is optional.</li>
+        /// </ul>
+        /// <p></p>
         pub fn identity_source(mut self, input: impl Into<std::string::String>) -> Self {
             self.identity_source = Some(input.into());
             self
         }
-        /// <p>The identity source for which authorization is requested. <ul><li>For a <code>TOKEN</code> or <code>COGNITO_USER_POOLS</code> authorizer, this is required and specifies the request header mapping expression for the custom header holding the authorization token submitted by the client. For example, if the token header name is <code>Auth</code>, the header mapping expression is  <code>method.request.header.Auth</code>.</li><li>For the <code>REQUEST</code> authorizer, this is required when authorization caching is enabled. The value is a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if an <code>Auth</code> header, a <code>Name</code> query string parameter are defined as identity sources, this value is <code>method.request.header.Auth, method.request.querystring.Name</code>.  These parameters will be used to derive the authorization caching key and to perform runtime validation of the <code>REQUEST</code> authorizer by verifying all of the identity-related request parameters are present, not null and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions of the specified request parameters. When the authorization caching is not enabled, this property is optional.</li></ul></p>
+        /// <p>The identity source for which authorization is requested. </p>
+        /// <ul>
+        /// <li>For a <code>TOKEN</code> or <code>COGNITO_USER_POOLS</code> authorizer, this is required and specifies the request header mapping expression for the custom header holding the authorization token submitted by the client. For example, if the token header name is <code>Auth</code>, the header mapping expression is <code>method.request.header.Auth</code>.</li>
+        /// <li>For the <code>REQUEST</code> authorizer, this is required when authorization caching is enabled. The value is a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if an <code>Auth</code> header, a <code>Name</code> query string parameter are defined as identity sources, this value is <code>method.request.header.Auth, method.request.querystring.Name</code>. These parameters will be used to derive the authorization caching key and to perform runtime validation of the <code>REQUEST</code> authorizer by verifying all of the identity-related request parameters are present, not null and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions of the specified request parameters. When the authorization caching is not enabled, this property is optional.</li>
+        /// </ul>
+        /// <p></p>
         pub fn set_identity_source(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9085,9 +8969,8 @@ impl Authorizer {
     }
 }
 
-/// <p>A resource that can be distributed to callers for executing <a>Method</a> resources that require an API key. API keys can be mapped to any <a>Stage</a> on any <a>RestApi</a>, which indicates that the callers with the API key can make requests to that stage.</p>
-/// <div class="seeAlso">
-/// <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-api-keys.html">Use API Keys</a>
+/// <p>A resource that can be distributed to callers for executing <code>Method</code> resources that require an API key. API keys can be mapped to any <code>Stage</code> on any <code>RestApi</code>, which indicates that the callers with the API key can make requests to that stage.</p>
+/// <div class="seeAlso"> <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-api-keys.html">Use API Keys</a>
 /// </div>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -9108,7 +8991,7 @@ pub struct ApiKey {
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The timestamp when the API Key was last updated.</p>
     pub last_updated_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a> resource.</p>
+    /// <p>A list of <code>Stage</code> resources that are associated with the <code>ApiKey</code> resource.</p>
     pub stage_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
     pub tags:
@@ -9147,7 +9030,7 @@ impl ApiKey {
     pub fn last_updated_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date.as_ref()
     }
-    /// <p>A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a> resource.</p>
+    /// <p>A list of <code>Stage</code> resources that are associated with the <code>ApiKey</code> resource.</p>
     pub fn stage_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.stage_keys.as_deref()
     }
@@ -9285,14 +9168,14 @@ pub mod api_key {
         ///
         /// To override the contents of this collection use [`set_stage_keys`](Self::set_stage_keys).
         ///
-        /// <p>A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a> resource.</p>
+        /// <p>A list of <code>Stage</code> resources that are associated with the <code>ApiKey</code> resource.</p>
         pub fn stage_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.stage_keys.unwrap_or_default();
             v.push(input.into());
             self.stage_keys = Some(v);
             self
         }
-        /// <p>A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a> resource.</p>
+        /// <p>A list of <code>Stage</code> resources that are associated with the <code>ApiKey</code> resource.</p>
         pub fn set_stage_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9353,31 +9236,17 @@ impl ApiKey {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MutualTlsAuthenticationInput {
-    /// <p>An Amazon S3 resource ARN that specifies the truststore for mutual TLS authentication,
-    /// for example,
-    /// <code>s3://bucket-name/key-name</code>.
-    /// The truststore can contain certificates from public or private certificate authorities.
-    /// To update the truststore, upload a new version to S3, and then update your custom domain
-    /// name to use the new version. To update the truststore, you must have permissions to
-    /// access the S3 object.</p>
+    /// <p>An Amazon S3 resource ARN that specifies the truststore for mutual TLS authentication, for example, <code>s3://bucket-name/key-name</code>. The truststore can contain certificates from public or private certificate authorities. To update the truststore, upload a new version to S3, and then update your custom domain name to use the new version. To update the truststore, you must have permissions to access the S3 object.</p>
     pub truststore_uri: std::option::Option<std::string::String>,
-    /// <p>The version of the S3 object that contains your truststore. To
-    /// specify a version, you must have versioning enabled for the S3 bucket.</p>
+    /// <p>The version of the S3 object that contains your truststore. To specify a version, you must have versioning enabled for the S3 bucket.</p>
     pub truststore_version: std::option::Option<std::string::String>,
 }
 impl MutualTlsAuthenticationInput {
-    /// <p>An Amazon S3 resource ARN that specifies the truststore for mutual TLS authentication,
-    /// for example,
-    /// <code>s3://bucket-name/key-name</code>.
-    /// The truststore can contain certificates from public or private certificate authorities.
-    /// To update the truststore, upload a new version to S3, and then update your custom domain
-    /// name to use the new version. To update the truststore, you must have permissions to
-    /// access the S3 object.</p>
+    /// <p>An Amazon S3 resource ARN that specifies the truststore for mutual TLS authentication, for example, <code>s3://bucket-name/key-name</code>. The truststore can contain certificates from public or private certificate authorities. To update the truststore, upload a new version to S3, and then update your custom domain name to use the new version. To update the truststore, you must have permissions to access the S3 object.</p>
     pub fn truststore_uri(&self) -> std::option::Option<&str> {
         self.truststore_uri.as_deref()
     }
-    /// <p>The version of the S3 object that contains your truststore. To
-    /// specify a version, you must have versioning enabled for the S3 bucket.</p>
+    /// <p>The version of the S3 object that contains your truststore. To specify a version, you must have versioning enabled for the S3 bucket.</p>
     pub fn truststore_version(&self) -> std::option::Option<&str> {
         self.truststore_version.as_deref()
     }
@@ -9400,24 +9269,12 @@ pub mod mutual_tls_authentication_input {
         pub(crate) truststore_version: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>An Amazon S3 resource ARN that specifies the truststore for mutual TLS authentication,
-        /// for example,
-        /// <code>s3://bucket-name/key-name</code>.
-        /// The truststore can contain certificates from public or private certificate authorities.
-        /// To update the truststore, upload a new version to S3, and then update your custom domain
-        /// name to use the new version. To update the truststore, you must have permissions to
-        /// access the S3 object.</p>
+        /// <p>An Amazon S3 resource ARN that specifies the truststore for mutual TLS authentication, for example, <code>s3://bucket-name/key-name</code>. The truststore can contain certificates from public or private certificate authorities. To update the truststore, upload a new version to S3, and then update your custom domain name to use the new version. To update the truststore, you must have permissions to access the S3 object.</p>
         pub fn truststore_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.truststore_uri = Some(input.into());
             self
         }
-        /// <p>An Amazon S3 resource ARN that specifies the truststore for mutual TLS authentication,
-        /// for example,
-        /// <code>s3://bucket-name/key-name</code>.
-        /// The truststore can contain certificates from public or private certificate authorities.
-        /// To update the truststore, upload a new version to S3, and then update your custom domain
-        /// name to use the new version. To update the truststore, you must have permissions to
-        /// access the S3 object.</p>
+        /// <p>An Amazon S3 resource ARN that specifies the truststore for mutual TLS authentication, for example, <code>s3://bucket-name/key-name</code>. The truststore can contain certificates from public or private certificate authorities. To update the truststore, upload a new version to S3, and then update your custom domain name to use the new version. To update the truststore, you must have permissions to access the S3 object.</p>
         pub fn set_truststore_uri(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9425,14 +9282,12 @@ pub mod mutual_tls_authentication_input {
             self.truststore_uri = input;
             self
         }
-        /// <p>The version of the S3 object that contains your truststore. To
-        /// specify a version, you must have versioning enabled for the S3 bucket.</p>
+        /// <p>The version of the S3 object that contains your truststore. To specify a version, you must have versioning enabled for the S3 bucket.</p>
         pub fn truststore_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.truststore_version = Some(input.into());
             self
         }
-        /// <p>The version of the S3 object that contains your truststore. To
-        /// specify a version, you must have versioning enabled for the S3 bucket.</p>
+        /// <p>The version of the S3 object that contains your truststore. To specify a version, you must have versioning enabled for the S3 bucket.</p>
         pub fn set_truststore_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9573,13 +9428,13 @@ impl DeploymentCanarySettings {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StageKey {
-    /// <p>The string identifier of the associated <a>RestApi</a>.</p>
+    /// <p>The string identifier of the associated <code>RestApi</code>.</p>
     pub rest_api_id: std::option::Option<std::string::String>,
     /// <p>The stage name associated with the stage key.</p>
     pub stage_name: std::option::Option<std::string::String>,
 }
 impl StageKey {
-    /// <p>The string identifier of the associated <a>RestApi</a>.</p>
+    /// <p>The string identifier of the associated <code>RestApi</code>.</p>
     pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
@@ -9606,12 +9461,12 @@ pub mod stage_key {
         pub(crate) stage_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The string identifier of the associated <a>RestApi</a>.</p>
+        /// <p>The string identifier of the associated <code>RestApi</code>.</p>
         pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rest_api_id = Some(input.into());
             self
         }
-        /// <p>The string identifier of the associated <a>RestApi</a>.</p>
+        /// <p>The string identifier of the associated <code>RestApi</code>.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self

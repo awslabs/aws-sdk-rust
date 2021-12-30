@@ -3,13 +3,11 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateServiceOutput {
-    /// <p>A value that you can use to determine whether the request completed successfully.
-    /// To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+    /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
     pub operation_id: std::option::Option<std::string::String>,
 }
 impl UpdateServiceOutput {
-    /// <p>A value that you can use to determine whether the request completed successfully.
-    /// To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+    /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
     pub fn operation_id(&self) -> std::option::Option<&str> {
         self.operation_id.as_deref()
     }
@@ -30,14 +28,12 @@ pub mod update_service_output {
         pub(crate) operation_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A value that you can use to determine whether the request completed successfully.
-        /// To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+        /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
         pub fn operation_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.operation_id = Some(input.into());
             self
         }
-        /// <p>A value that you can use to determine whether the request completed successfully.
-        /// To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+        /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.operation_id = input;
             self
@@ -61,13 +57,11 @@ impl UpdateServiceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePublicDnsNamespaceOutput {
-    /// <p>A value that you can use to determine whether the request completed successfully.
-    /// To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+    /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
     pub operation_id: std::option::Option<std::string::String>,
 }
 impl UpdatePublicDnsNamespaceOutput {
-    /// <p>A value that you can use to determine whether the request completed successfully.
-    /// To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+    /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
     pub fn operation_id(&self) -> std::option::Option<&str> {
         self.operation_id.as_deref()
     }
@@ -88,14 +82,12 @@ pub mod update_public_dns_namespace_output {
         pub(crate) operation_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A value that you can use to determine whether the request completed successfully.
-        /// To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+        /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
         pub fn operation_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.operation_id = Some(input.into());
             self
         }
-        /// <p>A value that you can use to determine whether the request completed successfully.
-        /// To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+        /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.operation_id = input;
             self
@@ -119,13 +111,11 @@ impl UpdatePublicDnsNamespaceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePrivateDnsNamespaceOutput {
-    /// <p>A value that you can use to determine whether the request completed successfully.
-    /// To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+    /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
     pub operation_id: std::option::Option<std::string::String>,
 }
 impl UpdatePrivateDnsNamespaceOutput {
-    /// <p>A value that you can use to determine whether the request completed successfully.
-    /// To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+    /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
     pub fn operation_id(&self) -> std::option::Option<&str> {
         self.operation_id.as_deref()
     }
@@ -146,14 +136,12 @@ pub mod update_private_dns_namespace_output {
         pub(crate) operation_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A value that you can use to determine whether the request completed successfully.
-        /// To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+        /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
         pub fn operation_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.operation_id = Some(input.into());
             self
         }
-        /// <p>A value that you can use to determine whether the request completed successfully.
-        /// To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+        /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.operation_id = input;
             self
@@ -207,13 +195,11 @@ impl UpdateInstanceCustomHealthStatusOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateHttpNamespaceOutput {
-    /// <p>A value that you can use to determine whether the request completed successfully.
-    /// To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+    /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
     pub operation_id: std::option::Option<std::string::String>,
 }
 impl UpdateHttpNamespaceOutput {
-    /// <p>A value that you can use to determine whether the request completed successfully.
-    /// To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+    /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
     pub fn operation_id(&self) -> std::option::Option<&str> {
         self.operation_id.as_deref()
     }
@@ -234,14 +220,12 @@ pub mod update_http_namespace_output {
         pub(crate) operation_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A value that you can use to determine whether the request completed successfully.
-        /// To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+        /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
         pub fn operation_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.operation_id = Some(input.into());
             self
         }
-        /// <p>A value that you can use to determine whether the request completed successfully.
-        /// To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+        /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.operation_id = input;
             self
@@ -325,13 +309,11 @@ impl TagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterInstanceOutput {
-    /// <p>A value that you can use to determine whether the request completed successfully.
-    /// To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+    /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
     pub operation_id: std::option::Option<std::string::String>,
 }
 impl RegisterInstanceOutput {
-    /// <p>A value that you can use to determine whether the request completed successfully.
-    /// To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+    /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
     pub fn operation_id(&self) -> std::option::Option<&str> {
         self.operation_id.as_deref()
     }
@@ -352,14 +334,12 @@ pub mod register_instance_output {
         pub(crate) operation_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A value that you can use to determine whether the request completed successfully.
-        /// To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+        /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
         pub fn operation_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.operation_id = Some(input.into());
             self
         }
-        /// <p>A value that you can use to determine whether the request completed successfully.
-        /// To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+        /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.operation_id = input;
             self
@@ -444,32 +424,20 @@ impl ListTagsForResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServicesOutput {
-    /// <p>An array that contains one <code>ServiceSummary</code> object for each service that matches the specified filter
-    /// criteria.</p>
+    /// <p>An array that contains one <code>ServiceSummary</code> object for each service that matches the specified filter criteria.</p>
     pub services: std::option::Option<std::vec::Vec<crate::model::ServiceSummary>>,
-    /// <p>If the response contains <code>NextToken</code>, submit another <code>ListServices</code> request to get the
-    /// next group of results. Specify the value of <code>NextToken</code> from the previous response in the next
-    /// request.</p>
-    /// <note>
-    /// <p>Cloud Map gets <code>MaxResults</code> services and then filters them based on the specified criteria. It's
-    /// possible that no services in the first <code>MaxResults</code> services matched the specified criteria but that
-    /// subsequent groups of <code>MaxResults</code> services do contain services that match the criteria.</p>
+    /// <p>If the response contains <code>NextToken</code>, submit another <code>ListServices</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note>
+    /// <p>Cloud Map gets <code>MaxResults</code> services and then filters them based on the specified criteria. It's possible that no services in the first <code>MaxResults</code> services matched the specified criteria but that subsequent groups of <code>MaxResults</code> services do contain services that match the criteria.</p>
     /// </note>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListServicesOutput {
-    /// <p>An array that contains one <code>ServiceSummary</code> object for each service that matches the specified filter
-    /// criteria.</p>
+    /// <p>An array that contains one <code>ServiceSummary</code> object for each service that matches the specified filter criteria.</p>
     pub fn services(&self) -> std::option::Option<&[crate::model::ServiceSummary]> {
         self.services.as_deref()
     }
-    /// <p>If the response contains <code>NextToken</code>, submit another <code>ListServices</code> request to get the
-    /// next group of results. Specify the value of <code>NextToken</code> from the previous response in the next
-    /// request.</p>
-    /// <note>
-    /// <p>Cloud Map gets <code>MaxResults</code> services and then filters them based on the specified criteria. It's
-    /// possible that no services in the first <code>MaxResults</code> services matched the specified criteria but that
-    /// subsequent groups of <code>MaxResults</code> services do contain services that match the criteria.</p>
+    /// <p>If the response contains <code>NextToken</code>, submit another <code>ListServices</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note>
+    /// <p>Cloud Map gets <code>MaxResults</code> services and then filters them based on the specified criteria. It's possible that no services in the first <code>MaxResults</code> services matched the specified criteria but that subsequent groups of <code>MaxResults</code> services do contain services that match the criteria.</p>
     /// </note>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
@@ -497,16 +465,14 @@ pub mod list_services_output {
         ///
         /// To override the contents of this collection use [`set_services`](Self::set_services).
         ///
-        /// <p>An array that contains one <code>ServiceSummary</code> object for each service that matches the specified filter
-        /// criteria.</p>
+        /// <p>An array that contains one <code>ServiceSummary</code> object for each service that matches the specified filter criteria.</p>
         pub fn services(mut self, input: crate::model::ServiceSummary) -> Self {
             let mut v = self.services.unwrap_or_default();
             v.push(input);
             self.services = Some(v);
             self
         }
-        /// <p>An array that contains one <code>ServiceSummary</code> object for each service that matches the specified filter
-        /// criteria.</p>
+        /// <p>An array that contains one <code>ServiceSummary</code> object for each service that matches the specified filter criteria.</p>
         pub fn set_services(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ServiceSummary>>,
@@ -514,25 +480,15 @@ pub mod list_services_output {
             self.services = input;
             self
         }
-        /// <p>If the response contains <code>NextToken</code>, submit another <code>ListServices</code> request to get the
-        /// next group of results. Specify the value of <code>NextToken</code> from the previous response in the next
-        /// request.</p>
-        /// <note>
-        /// <p>Cloud Map gets <code>MaxResults</code> services and then filters them based on the specified criteria. It's
-        /// possible that no services in the first <code>MaxResults</code> services matched the specified criteria but that
-        /// subsequent groups of <code>MaxResults</code> services do contain services that match the criteria.</p>
+        /// <p>If the response contains <code>NextToken</code>, submit another <code>ListServices</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note>
+        /// <p>Cloud Map gets <code>MaxResults</code> services and then filters them based on the specified criteria. It's possible that no services in the first <code>MaxResults</code> services matched the specified criteria but that subsequent groups of <code>MaxResults</code> services do contain services that match the criteria.</p>
         /// </note>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the response contains <code>NextToken</code>, submit another <code>ListServices</code> request to get the
-        /// next group of results. Specify the value of <code>NextToken</code> from the previous response in the next
-        /// request.</p>
-        /// <note>
-        /// <p>Cloud Map gets <code>MaxResults</code> services and then filters them based on the specified criteria. It's
-        /// possible that no services in the first <code>MaxResults</code> services matched the specified criteria but that
-        /// subsequent groups of <code>MaxResults</code> services do contain services that match the criteria.</p>
+        /// <p>If the response contains <code>NextToken</code>, submit another <code>ListServices</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note>
+        /// <p>Cloud Map gets <code>MaxResults</code> services and then filters them based on the specified criteria. It's possible that no services in the first <code>MaxResults</code> services matched the specified criteria but that subsequent groups of <code>MaxResults</code> services do contain services that match the criteria.</p>
         /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
@@ -560,13 +516,8 @@ impl ListServicesOutput {
 pub struct ListOperationsOutput {
     /// <p>Summary information about the operations that match the specified criteria.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::OperationSummary>>,
-    /// <p>If the response contains <code>NextToken</code>, submit another <code>ListOperations</code> request to get the
-    /// next group of results. Specify the value of <code>NextToken</code> from the previous response in the next
-    /// request.</p>
-    /// <note>
-    /// <p>Cloud Map gets <code>MaxResults</code> operations and then filters them based on the specified criteria. It's
-    /// possible that no operations in the first <code>MaxResults</code> operations matched the specified criteria but that
-    /// subsequent groups of <code>MaxResults</code> operations do contain operations that match the criteria.</p>
+    /// <p>If the response contains <code>NextToken</code>, submit another <code>ListOperations</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note>
+    /// <p>Cloud Map gets <code>MaxResults</code> operations and then filters them based on the specified criteria. It's possible that no operations in the first <code>MaxResults</code> operations matched the specified criteria but that subsequent groups of <code>MaxResults</code> operations do contain operations that match the criteria.</p>
     /// </note>
     pub next_token: std::option::Option<std::string::String>,
 }
@@ -575,13 +526,8 @@ impl ListOperationsOutput {
     pub fn operations(&self) -> std::option::Option<&[crate::model::OperationSummary]> {
         self.operations.as_deref()
     }
-    /// <p>If the response contains <code>NextToken</code>, submit another <code>ListOperations</code> request to get the
-    /// next group of results. Specify the value of <code>NextToken</code> from the previous response in the next
-    /// request.</p>
-    /// <note>
-    /// <p>Cloud Map gets <code>MaxResults</code> operations and then filters them based on the specified criteria. It's
-    /// possible that no operations in the first <code>MaxResults</code> operations matched the specified criteria but that
-    /// subsequent groups of <code>MaxResults</code> operations do contain operations that match the criteria.</p>
+    /// <p>If the response contains <code>NextToken</code>, submit another <code>ListOperations</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note>
+    /// <p>Cloud Map gets <code>MaxResults</code> operations and then filters them based on the specified criteria. It's possible that no operations in the first <code>MaxResults</code> operations matched the specified criteria but that subsequent groups of <code>MaxResults</code> operations do contain operations that match the criteria.</p>
     /// </note>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
@@ -624,25 +570,15 @@ pub mod list_operations_output {
             self.operations = input;
             self
         }
-        /// <p>If the response contains <code>NextToken</code>, submit another <code>ListOperations</code> request to get the
-        /// next group of results. Specify the value of <code>NextToken</code> from the previous response in the next
-        /// request.</p>
-        /// <note>
-        /// <p>Cloud Map gets <code>MaxResults</code> operations and then filters them based on the specified criteria. It's
-        /// possible that no operations in the first <code>MaxResults</code> operations matched the specified criteria but that
-        /// subsequent groups of <code>MaxResults</code> operations do contain operations that match the criteria.</p>
+        /// <p>If the response contains <code>NextToken</code>, submit another <code>ListOperations</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note>
+        /// <p>Cloud Map gets <code>MaxResults</code> operations and then filters them based on the specified criteria. It's possible that no operations in the first <code>MaxResults</code> operations matched the specified criteria but that subsequent groups of <code>MaxResults</code> operations do contain operations that match the criteria.</p>
         /// </note>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the response contains <code>NextToken</code>, submit another <code>ListOperations</code> request to get the
-        /// next group of results. Specify the value of <code>NextToken</code> from the previous response in the next
-        /// request.</p>
-        /// <note>
-        /// <p>Cloud Map gets <code>MaxResults</code> operations and then filters them based on the specified criteria. It's
-        /// possible that no operations in the first <code>MaxResults</code> operations matched the specified criteria but that
-        /// subsequent groups of <code>MaxResults</code> operations do contain operations that match the criteria.</p>
+        /// <p>If the response contains <code>NextToken</code>, submit another <code>ListOperations</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note>
+        /// <p>Cloud Map gets <code>MaxResults</code> operations and then filters them based on the specified criteria. It's possible that no operations in the first <code>MaxResults</code> operations matched the specified criteria but that subsequent groups of <code>MaxResults</code> operations do contain operations that match the criteria.</p>
         /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
@@ -668,32 +604,20 @@ impl ListOperationsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListNamespacesOutput {
-    /// <p>An array that contains one <code>NamespaceSummary</code> object for each namespace that matches the specified
-    /// filter criteria.</p>
+    /// <p>An array that contains one <code>NamespaceSummary</code> object for each namespace that matches the specified filter criteria.</p>
     pub namespaces: std::option::Option<std::vec::Vec<crate::model::NamespaceSummary>>,
-    /// <p>If the response contains <code>NextToken</code>, submit another <code>ListNamespaces</code> request to get the
-    /// next group of results. Specify the value of <code>NextToken</code> from the previous response in the next
-    /// request.</p>
-    /// <note>
-    /// <p>Cloud Map gets <code>MaxResults</code> namespaces and then filters them based on the specified criteria. It's
-    /// possible that no namespaces in the first <code>MaxResults</code> namespaces matched the specified criteria but that
-    /// subsequent groups of <code>MaxResults</code> namespaces do contain namespaces that match the criteria.</p>
+    /// <p>If the response contains <code>NextToken</code>, submit another <code>ListNamespaces</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note>
+    /// <p>Cloud Map gets <code>MaxResults</code> namespaces and then filters them based on the specified criteria. It's possible that no namespaces in the first <code>MaxResults</code> namespaces matched the specified criteria but that subsequent groups of <code>MaxResults</code> namespaces do contain namespaces that match the criteria.</p>
     /// </note>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListNamespacesOutput {
-    /// <p>An array that contains one <code>NamespaceSummary</code> object for each namespace that matches the specified
-    /// filter criteria.</p>
+    /// <p>An array that contains one <code>NamespaceSummary</code> object for each namespace that matches the specified filter criteria.</p>
     pub fn namespaces(&self) -> std::option::Option<&[crate::model::NamespaceSummary]> {
         self.namespaces.as_deref()
     }
-    /// <p>If the response contains <code>NextToken</code>, submit another <code>ListNamespaces</code> request to get the
-    /// next group of results. Specify the value of <code>NextToken</code> from the previous response in the next
-    /// request.</p>
-    /// <note>
-    /// <p>Cloud Map gets <code>MaxResults</code> namespaces and then filters them based on the specified criteria. It's
-    /// possible that no namespaces in the first <code>MaxResults</code> namespaces matched the specified criteria but that
-    /// subsequent groups of <code>MaxResults</code> namespaces do contain namespaces that match the criteria.</p>
+    /// <p>If the response contains <code>NextToken</code>, submit another <code>ListNamespaces</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note>
+    /// <p>Cloud Map gets <code>MaxResults</code> namespaces and then filters them based on the specified criteria. It's possible that no namespaces in the first <code>MaxResults</code> namespaces matched the specified criteria but that subsequent groups of <code>MaxResults</code> namespaces do contain namespaces that match the criteria.</p>
     /// </note>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
@@ -721,16 +645,14 @@ pub mod list_namespaces_output {
         ///
         /// To override the contents of this collection use [`set_namespaces`](Self::set_namespaces).
         ///
-        /// <p>An array that contains one <code>NamespaceSummary</code> object for each namespace that matches the specified
-        /// filter criteria.</p>
+        /// <p>An array that contains one <code>NamespaceSummary</code> object for each namespace that matches the specified filter criteria.</p>
         pub fn namespaces(mut self, input: crate::model::NamespaceSummary) -> Self {
             let mut v = self.namespaces.unwrap_or_default();
             v.push(input);
             self.namespaces = Some(v);
             self
         }
-        /// <p>An array that contains one <code>NamespaceSummary</code> object for each namespace that matches the specified
-        /// filter criteria.</p>
+        /// <p>An array that contains one <code>NamespaceSummary</code> object for each namespace that matches the specified filter criteria.</p>
         pub fn set_namespaces(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::NamespaceSummary>>,
@@ -738,25 +660,15 @@ pub mod list_namespaces_output {
             self.namespaces = input;
             self
         }
-        /// <p>If the response contains <code>NextToken</code>, submit another <code>ListNamespaces</code> request to get the
-        /// next group of results. Specify the value of <code>NextToken</code> from the previous response in the next
-        /// request.</p>
-        /// <note>
-        /// <p>Cloud Map gets <code>MaxResults</code> namespaces and then filters them based on the specified criteria. It's
-        /// possible that no namespaces in the first <code>MaxResults</code> namespaces matched the specified criteria but that
-        /// subsequent groups of <code>MaxResults</code> namespaces do contain namespaces that match the criteria.</p>
+        /// <p>If the response contains <code>NextToken</code>, submit another <code>ListNamespaces</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note>
+        /// <p>Cloud Map gets <code>MaxResults</code> namespaces and then filters them based on the specified criteria. It's possible that no namespaces in the first <code>MaxResults</code> namespaces matched the specified criteria but that subsequent groups of <code>MaxResults</code> namespaces do contain namespaces that match the criteria.</p>
         /// </note>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the response contains <code>NextToken</code>, submit another <code>ListNamespaces</code> request to get the
-        /// next group of results. Specify the value of <code>NextToken</code> from the previous response in the next
-        /// request.</p>
-        /// <note>
-        /// <p>Cloud Map gets <code>MaxResults</code> namespaces and then filters them based on the specified criteria. It's
-        /// possible that no namespaces in the first <code>MaxResults</code> namespaces matched the specified criteria but that
-        /// subsequent groups of <code>MaxResults</code> namespaces do contain namespaces that match the criteria.</p>
+        /// <p>If the response contains <code>NextToken</code>, submit another <code>ListNamespaces</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note>
+        /// <p>Cloud Map gets <code>MaxResults</code> namespaces and then filters them based on the specified criteria. It's possible that no namespaces in the first <code>MaxResults</code> namespaces matched the specified criteria but that subsequent groups of <code>MaxResults</code> namespaces do contain namespaces that match the criteria.</p>
         /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
@@ -784,9 +696,7 @@ impl ListNamespacesOutput {
 pub struct ListInstancesOutput {
     /// <p>Summary information about the instances that are associated with the specified service.</p>
     pub instances: std::option::Option<std::vec::Vec<crate::model::InstanceSummary>>,
-    /// <p>If more than <code>MaxResults</code> instances match the specified criteria, you can submit another
-    /// <code>ListInstances</code> request to get the next group of results. Specify the value of <code>NextToken</code>
-    /// from the previous response in the next request.</p>
+    /// <p>If more than <code>MaxResults</code> instances match the specified criteria, you can submit another <code>ListInstances</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListInstancesOutput {
@@ -794,9 +704,7 @@ impl ListInstancesOutput {
     pub fn instances(&self) -> std::option::Option<&[crate::model::InstanceSummary]> {
         self.instances.as_deref()
     }
-    /// <p>If more than <code>MaxResults</code> instances match the specified criteria, you can submit another
-    /// <code>ListInstances</code> request to get the next group of results. Specify the value of <code>NextToken</code>
-    /// from the previous response in the next request.</p>
+    /// <p>If more than <code>MaxResults</code> instances match the specified criteria, you can submit another <code>ListInstances</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -838,16 +746,12 @@ pub mod list_instances_output {
             self.instances = input;
             self
         }
-        /// <p>If more than <code>MaxResults</code> instances match the specified criteria, you can submit another
-        /// <code>ListInstances</code> request to get the next group of results. Specify the value of <code>NextToken</code>
-        /// from the previous response in the next request.</p>
+        /// <p>If more than <code>MaxResults</code> instances match the specified criteria, you can submit another <code>ListInstances</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If more than <code>MaxResults</code> instances match the specified criteria, you can submit another
-        /// <code>ListInstances</code> request to get the next group of results. Specify the value of <code>NextToken</code>
-        /// from the previous response in the next request.</p>
+        /// <p>If more than <code>MaxResults</code> instances match the specified criteria, you can submit another <code>ListInstances</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1040,19 +944,15 @@ impl GetNamespaceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInstancesHealthStatusOutput {
-    /// <p>A complex type that contains the IDs and the health status of the instances that you specified in the
-    /// <code>GetInstancesHealthStatus</code> request.</p>
+    /// <p>A complex type that contains the IDs and the health status of the instances that you specified in the <code>GetInstancesHealthStatus</code> request.</p>
     pub status: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::HealthStatus>,
     >,
-    /// <p>If more than <code>MaxResults</code> instances match the specified criteria, you can submit another
-    /// <code>GetInstancesHealthStatus</code> request to get the next group of results. Specify the value of
-    /// <code>NextToken</code> from the previous response in the next request.</p>
+    /// <p>If more than <code>MaxResults</code> instances match the specified criteria, you can submit another <code>GetInstancesHealthStatus</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetInstancesHealthStatusOutput {
-    /// <p>A complex type that contains the IDs and the health status of the instances that you specified in the
-    /// <code>GetInstancesHealthStatus</code> request.</p>
+    /// <p>A complex type that contains the IDs and the health status of the instances that you specified in the <code>GetInstancesHealthStatus</code> request.</p>
     pub fn status(
         &self,
     ) -> std::option::Option<
@@ -1060,9 +960,7 @@ impl GetInstancesHealthStatusOutput {
     > {
         self.status.as_ref()
     }
-    /// <p>If more than <code>MaxResults</code> instances match the specified criteria, you can submit another
-    /// <code>GetInstancesHealthStatus</code> request to get the next group of results. Specify the value of
-    /// <code>NextToken</code> from the previous response in the next request.</p>
+    /// <p>If more than <code>MaxResults</code> instances match the specified criteria, you can submit another <code>GetInstancesHealthStatus</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1091,8 +989,7 @@ pub mod get_instances_health_status_output {
         ///
         /// To override the contents of this collection use [`set_status`](Self::set_status).
         ///
-        /// <p>A complex type that contains the IDs and the health status of the instances that you specified in the
-        /// <code>GetInstancesHealthStatus</code> request.</p>
+        /// <p>A complex type that contains the IDs and the health status of the instances that you specified in the <code>GetInstancesHealthStatus</code> request.</p>
         pub fn status(
             mut self,
             k: impl Into<std::string::String>,
@@ -1103,8 +1000,7 @@ pub mod get_instances_health_status_output {
             self.status = Some(hash_map);
             self
         }
-        /// <p>A complex type that contains the IDs and the health status of the instances that you specified in the
-        /// <code>GetInstancesHealthStatus</code> request.</p>
+        /// <p>A complex type that contains the IDs and the health status of the instances that you specified in the <code>GetInstancesHealthStatus</code> request.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<
@@ -1114,16 +1010,12 @@ pub mod get_instances_health_status_output {
             self.status = input;
             self
         }
-        /// <p>If more than <code>MaxResults</code> instances match the specified criteria, you can submit another
-        /// <code>GetInstancesHealthStatus</code> request to get the next group of results. Specify the value of
-        /// <code>NextToken</code> from the previous response in the next request.</p>
+        /// <p>If more than <code>MaxResults</code> instances match the specified criteria, you can submit another <code>GetInstancesHealthStatus</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If more than <code>MaxResults</code> instances match the specified criteria, you can submit another
-        /// <code>GetInstancesHealthStatus</code> request to get the next group of results. Specify the value of
-        /// <code>NextToken</code> from the previous response in the next request.</p>
+        /// <p>If more than <code>MaxResults</code> instances match the specified criteria, you can submit another <code>GetInstancesHealthStatus</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1265,13 +1157,11 @@ impl DiscoverInstancesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterInstanceOutput {
-    /// <p>A value that you can use to determine whether the request completed successfully.
-    /// To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+    /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
     pub operation_id: std::option::Option<std::string::String>,
 }
 impl DeregisterInstanceOutput {
-    /// <p>A value that you can use to determine whether the request completed successfully.
-    /// To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+    /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
     pub fn operation_id(&self) -> std::option::Option<&str> {
         self.operation_id.as_deref()
     }
@@ -1292,14 +1182,12 @@ pub mod deregister_instance_output {
         pub(crate) operation_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A value that you can use to determine whether the request completed successfully.
-        /// To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+        /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
         pub fn operation_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.operation_id = Some(input.into());
             self
         }
-        /// <p>A value that you can use to determine whether the request completed successfully.
-        /// To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+        /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.operation_id = input;
             self
@@ -1353,13 +1241,11 @@ impl DeleteServiceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteNamespaceOutput {
-    /// <p>A value that you can use to determine whether the request completed successfully.
-    /// To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+    /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
     pub operation_id: std::option::Option<std::string::String>,
 }
 impl DeleteNamespaceOutput {
-    /// <p>A value that you can use to determine whether the request completed successfully.
-    /// To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+    /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
     pub fn operation_id(&self) -> std::option::Option<&str> {
         self.operation_id.as_deref()
     }
@@ -1380,14 +1266,12 @@ pub mod delete_namespace_output {
         pub(crate) operation_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A value that you can use to determine whether the request completed successfully.
-        /// To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+        /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
         pub fn operation_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.operation_id = Some(input.into());
             self
         }
-        /// <p>A value that you can use to determine whether the request completed successfully.
-        /// To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+        /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.operation_id = input;
             self
@@ -1465,13 +1349,11 @@ impl CreateServiceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePublicDnsNamespaceOutput {
-    /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the
-    /// operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+    /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
     pub operation_id: std::option::Option<std::string::String>,
 }
 impl CreatePublicDnsNamespaceOutput {
-    /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the
-    /// operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+    /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
     pub fn operation_id(&self) -> std::option::Option<&str> {
         self.operation_id.as_deref()
     }
@@ -1492,14 +1374,12 @@ pub mod create_public_dns_namespace_output {
         pub(crate) operation_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the
-        /// operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+        /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
         pub fn operation_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.operation_id = Some(input.into());
             self
         }
-        /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the
-        /// operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+        /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.operation_id = input;
             self
@@ -1523,13 +1403,11 @@ impl CreatePublicDnsNamespaceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePrivateDnsNamespaceOutput {
-    /// <p>A value that you can use to determine whether the request completed successfully.
-    /// To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+    /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
     pub operation_id: std::option::Option<std::string::String>,
 }
 impl CreatePrivateDnsNamespaceOutput {
-    /// <p>A value that you can use to determine whether the request completed successfully.
-    /// To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+    /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
     pub fn operation_id(&self) -> std::option::Option<&str> {
         self.operation_id.as_deref()
     }
@@ -1550,14 +1428,12 @@ pub mod create_private_dns_namespace_output {
         pub(crate) operation_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A value that you can use to determine whether the request completed successfully.
-        /// To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+        /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
         pub fn operation_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.operation_id = Some(input.into());
             self
         }
-        /// <p>A value that you can use to determine whether the request completed successfully.
-        /// To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+        /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.operation_id = input;
             self
@@ -1581,13 +1457,11 @@ impl CreatePrivateDnsNamespaceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateHttpNamespaceOutput {
-    /// <p>A value that you can use to determine whether the request completed successfully.
-    /// To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+    /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
     pub operation_id: std::option::Option<std::string::String>,
 }
 impl CreateHttpNamespaceOutput {
-    /// <p>A value that you can use to determine whether the request completed successfully.
-    /// To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+    /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
     pub fn operation_id(&self) -> std::option::Option<&str> {
         self.operation_id.as_deref()
     }
@@ -1608,14 +1482,12 @@ pub mod create_http_namespace_output {
         pub(crate) operation_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A value that you can use to determine whether the request completed successfully.
-        /// To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+        /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
         pub fn operation_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.operation_id = Some(input.into());
             self
         }
-        /// <p>A value that you can use to determine whether the request completed successfully.
-        /// To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
+        /// <p>A value that you can use to determine whether the request completed successfully. To get the status of the operation, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.operation_id = input;
             self

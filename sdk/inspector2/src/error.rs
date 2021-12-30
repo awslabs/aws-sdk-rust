@@ -18,8 +18,7 @@ pub enum AssociateMemberErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request has failed validation due to missing required fields or having invalid
-    /// inputs.</p>
+    /// <p>The request has failed validation due to missing required fields or having invalid inputs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -146,8 +145,7 @@ pub enum BatchGetAccountStatusErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request has failed validation due to missing required fields or having invalid
-    /// inputs.</p>
+    /// <p>The request has failed validation due to missing required fields or having invalid inputs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -287,8 +285,7 @@ pub enum BatchGetFreeTrialInfoErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request has failed validation due to missing required fields or having invalid
-    /// inputs.</p>
+    /// <p>The request has failed validation due to missing required fields or having invalid inputs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -421,8 +418,7 @@ pub enum CancelFindingsReportErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request has failed validation due to missing required fields or having invalid
-    /// inputs.</p>
+    /// <p>The request has failed validation due to missing required fields or having invalid inputs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -562,13 +558,11 @@ pub enum CreateFilterErrorKind {
     BadRequestException(crate::error::BadRequestException),
     /// <p>The request has failed due to an internal failure of the Amazon Inspector service.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>You have exceeded your service quota. To perform the requested action, remove some of
-    /// the relevant resources, or use Service Quotas to request a service quota increase.</p>
+    /// <p>You have exceeded your service quota. To perform the requested action, remove some of the relevant resources, or use Service Quotas to request a service quota increase.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request has failed validation due to missing required fields or having invalid
-    /// inputs.</p>
+    /// <p>The request has failed validation due to missing required fields or having invalid inputs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -707,8 +701,7 @@ pub enum CreateFindingsReportErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request has failed validation due to missing required fields or having invalid
-    /// inputs.</p>
+    /// <p>The request has failed validation due to missing required fields or having invalid inputs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -850,8 +843,7 @@ pub enum DeleteFilterErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request has failed validation due to missing required fields or having invalid
-    /// inputs.</p>
+    /// <p>The request has failed validation due to missing required fields or having invalid inputs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -982,8 +974,7 @@ pub enum DescribeOrganizationConfigurationErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request has failed validation due to missing required fields or having invalid
-    /// inputs.</p>
+    /// <p>The request has failed validation due to missing required fields or having invalid inputs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1131,8 +1122,7 @@ pub enum DisableErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request has failed validation due to missing required fields or having invalid
-    /// inputs.</p>
+    /// <p>The request has failed validation due to missing required fields or having invalid inputs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1259,8 +1249,7 @@ pub enum DisableDelegatedAdminAccountErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request has failed validation due to missing required fields or having invalid
-    /// inputs.</p>
+    /// <p>The request has failed validation due to missing required fields or having invalid inputs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1413,8 +1402,7 @@ pub enum DisassociateMemberErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request has failed validation due to missing required fields or having invalid
-    /// inputs.</p>
+    /// <p>The request has failed validation due to missing required fields or having invalid inputs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1547,8 +1535,7 @@ pub enum EnableErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request has failed validation due to missing required fields or having invalid
-    /// inputs.</p>
+    /// <p>The request has failed validation due to missing required fields or having invalid inputs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1675,8 +1662,7 @@ pub enum EnableDelegatedAdminAccountErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request has failed validation due to missing required fields or having invalid
-    /// inputs.</p>
+    /// <p>The request has failed validation due to missing required fields or having invalid inputs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1829,8 +1815,7 @@ pub enum GetDelegatedAdminAccountErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request has failed validation due to missing required fields or having invalid
-    /// inputs.</p>
+    /// <p>The request has failed validation due to missing required fields or having invalid inputs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1972,8 +1957,7 @@ pub enum GetFindingsReportStatusErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request has failed validation due to missing required fields or having invalid
-    /// inputs.</p>
+    /// <p>The request has failed validation due to missing required fields or having invalid inputs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2115,8 +2099,7 @@ pub enum GetMemberErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request has failed validation due to missing required fields or having invalid
-    /// inputs.</p>
+    /// <p>The request has failed validation due to missing required fields or having invalid inputs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2241,8 +2224,7 @@ pub enum ListAccountPermissionsErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request has failed validation due to missing required fields or having invalid
-    /// inputs.</p>
+    /// <p>The request has failed validation due to missing required fields or having invalid inputs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2371,8 +2353,7 @@ pub enum ListCoverageErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request has failed validation due to missing required fields or having invalid
-    /// inputs.</p>
+    /// <p>The request has failed validation due to missing required fields or having invalid inputs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2486,8 +2467,7 @@ pub enum ListCoverageStatisticsErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request has failed validation due to missing required fields or having invalid
-    /// inputs.</p>
+    /// <p>The request has failed validation due to missing required fields or having invalid inputs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2609,8 +2589,7 @@ pub enum ListDelegatedAdminAccountsErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request has failed validation due to missing required fields or having invalid
-    /// inputs.</p>
+    /// <p>The request has failed validation due to missing required fields or having invalid inputs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2741,8 +2720,7 @@ pub enum ListFiltersErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request has failed validation due to missing required fields or having invalid
-    /// inputs.</p>
+    /// <p>The request has failed validation due to missing required fields or having invalid inputs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2859,8 +2837,7 @@ pub enum ListFindingAggregationsErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request has failed validation due to missing required fields or having invalid
-    /// inputs.</p>
+    /// <p>The request has failed validation due to missing required fields or having invalid inputs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2980,8 +2957,7 @@ pub enum ListFindingsErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request has failed validation due to missing required fields or having invalid
-    /// inputs.</p>
+    /// <p>The request has failed validation due to missing required fields or having invalid inputs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3097,8 +3073,7 @@ pub enum ListMembersErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request has failed validation due to missing required fields or having invalid
-    /// inputs.</p>
+    /// <p>The request has failed validation due to missing required fields or having invalid inputs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3217,8 +3192,7 @@ pub enum ListTagsForResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request has failed validation due to missing required fields or having invalid
-    /// inputs.</p>
+    /// <p>The request has failed validation due to missing required fields or having invalid inputs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3349,8 +3323,7 @@ pub enum ListUsageTotalsErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request has failed validation due to missing required fields or having invalid
-    /// inputs.</p>
+    /// <p>The request has failed validation due to missing required fields or having invalid inputs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3477,8 +3450,7 @@ pub enum TagResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request has failed validation due to missing required fields or having invalid
-    /// inputs.</p>
+    /// <p>The request has failed validation due to missing required fields or having invalid inputs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3606,8 +3578,7 @@ pub enum UntagResourceErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request has failed validation due to missing required fields or having invalid
-    /// inputs.</p>
+    /// <p>The request has failed validation due to missing required fields or having invalid inputs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3734,8 +3705,7 @@ pub enum UpdateFilterErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request has failed validation due to missing required fields or having invalid
-    /// inputs.</p>
+    /// <p>The request has failed validation due to missing required fields or having invalid inputs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3866,8 +3836,7 @@ pub enum UpdateOrganizationConfigurationErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The request has failed validation due to missing required fields or having invalid
-    /// inputs.</p>
+    /// <p>The request has failed validation due to missing required fields or having invalid inputs.</p>
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3988,8 +3957,7 @@ impl std::error::Error for UpdateOrganizationConfigurationError {
     }
 }
 
-/// <p>The request has failed validation due to missing required fields or having invalid
-/// inputs.</p>
+/// <p>The request has failed validation due to missing required fields or having invalid inputs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ValidationException {
@@ -4558,8 +4526,7 @@ impl ConflictException {
     }
 }
 
-/// <p>You have exceeded your service quota. To perform the requested action, remove some of
-/// the relevant resources, or use Service Quotas to request a service quota increase.</p>
+/// <p>You have exceeded your service quota. To perform the requested action, remove some of the relevant resources, or use Service Quotas to request a service quota increase.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceQuotaExceededException {

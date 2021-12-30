@@ -265,29 +265,21 @@ pub enum CopyBackupErrorKind {
     BackupNotFound(crate::error::BackupNotFound),
     /// <p>A generic error indicating a failure with a client request.</p>
     BadRequest(crate::error::BadRequest),
-    /// <p>The error returned when a second request is received with the same client request
-    /// token but different parameters settings. A client request token should always uniquely
-    /// identify a single request.</p>
+    /// <p>The error returned when a second request is received with the same client request token but different parameters settings. A client request token should always uniquely identify a single request.</p>
     IncompatibleParameterError(crate::error::IncompatibleParameterError),
-    /// <p>Amazon FSx doesn't support Multi-AZ Windows File Server copy backup in the
-    /// destination Region, so the copied backup can't be restored.</p>
+    /// <p>Amazon FSx doesn't support Multi-AZ Windows File Server copy backup in the destination Region, so the copied backup can't be restored.</p>
     IncompatibleRegionForMultiAz(crate::error::IncompatibleRegionForMultiAz),
     /// <p>A generic error indicating a server-side failure.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>The Key Management Service (KMS) key of the destination backup is not
-    /// valid.</p>
+    /// <p>The Key Management Service (KMS) key of the destination backup is not valid.</p>
     InvalidDestinationKmsKey(crate::error::InvalidDestinationKmsKey),
-    /// <p>The Region provided for <code>SourceRegion</code> is not valid or is in a different
-    /// Amazon Web Services partition.</p>
+    /// <p>The Region provided for <code>SourceRegion</code> is not valid or is in a different Amazon Web Services partition.</p>
     InvalidRegion(crate::error::InvalidRegion),
-    /// <p>The Key Management Service (KMS) key of the source backup is not
-    /// valid.</p>
+    /// <p>The Key Management Service (KMS) key of the source backup is not valid.</p>
     InvalidSourceKmsKey(crate::error::InvalidSourceKmsKey),
-    /// <p>An error indicating that a particular service limit was exceeded. You can increase
-    /// some service limits by contacting Amazon Web Services Support.</p>
+    /// <p>An error indicating that a particular service limit was exceeded. You can increase some service limits by contacting Amazon Web Services Support.</p>
     ServiceLimitExceeded(crate::error::ServiceLimitExceeded),
-    /// <p>The request was rejected because the lifecycle status of the source backup isn't
-    /// <code>AVAILABLE</code>.</p>
+    /// <p>The request was rejected because the lifecycle status of the source backup isn't <code>AVAILABLE</code>.</p>
     SourceBackupUnavailable(crate::error::SourceBackupUnavailable),
     /// <p>The requested operation is not supported for this resource or API.</p>
     UnsupportedOperation(crate::error::UnsupportedOperation),
@@ -445,21 +437,17 @@ pub struct CreateBackupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateBackupErrorKind {
-    /// <p>Another backup is already under way. Wait for completion before initiating
-    /// additional backups of this file system.</p>
+    /// <p>Another backup is already under way. Wait for completion before initiating additional backups of this file system.</p>
     BackupInProgress(crate::error::BackupInProgress),
     /// <p>A generic error indicating a failure with a client request.</p>
     BadRequest(crate::error::BadRequest),
     /// <p>No Amazon FSx file systems were found based upon supplied parameters.</p>
     FileSystemNotFound(crate::error::FileSystemNotFound),
-    /// <p>The error returned when a second request is received with the same client request
-    /// token but different parameters settings. A client request token should always uniquely
-    /// identify a single request.</p>
+    /// <p>The error returned when a second request is received with the same client request token but different parameters settings. A client request token should always uniquely identify a single request.</p>
     IncompatibleParameterError(crate::error::IncompatibleParameterError),
     /// <p>A generic error indicating a server-side failure.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An error indicating that a particular service limit was exceeded. You can increase
-    /// some service limits by contacting Amazon Web Services Support.</p>
+    /// <p>An error indicating that a particular service limit was exceeded. You can increase some service limits by contacting Amazon Web Services Support.</p>
     ServiceLimitExceeded(crate::error::ServiceLimitExceeded),
     /// <p>The requested operation is not supported for this resource or API.</p>
     UnsupportedOperation(crate::error::UnsupportedOperation),
@@ -602,14 +590,11 @@ pub enum CreateDataRepositoryAssociationErrorKind {
     BadRequest(crate::error::BadRequest),
     /// <p>No Amazon FSx file systems were found based upon supplied parameters.</p>
     FileSystemNotFound(crate::error::FileSystemNotFound),
-    /// <p>The error returned when a second request is received with the same client request
-    /// token but different parameters settings. A client request token should always uniquely
-    /// identify a single request.</p>
+    /// <p>The error returned when a second request is received with the same client request token but different parameters settings. A client request token should always uniquely identify a single request.</p>
     IncompatibleParameterError(crate::error::IncompatibleParameterError),
     /// <p>A generic error indicating a server-side failure.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An error indicating that a particular service limit was exceeded. You can increase
-    /// some service limits by contacting Amazon Web Services Support.</p>
+    /// <p>An error indicating that a particular service limit was exceeded. You can increase some service limits by contacting Amazon Web Services Support.</p>
     ServiceLimitExceeded(crate::error::ServiceLimitExceeded),
     /// <p>The requested operation is not supported for this resource or API.</p>
     UnsupportedOperation(crate::error::UnsupportedOperation),
@@ -758,19 +743,15 @@ pub struct CreateDataRepositoryTaskError {
 pub enum CreateDataRepositoryTaskErrorKind {
     /// <p>A generic error indicating a failure with a client request.</p>
     BadRequest(crate::error::BadRequest),
-    /// <p>An existing data repository task is currently executing on the file system.  
-    /// Wait until the existing task has completed, then create the new task.</p>
+    /// <p>An existing data repository task is currently executing on the file system. Wait until the existing task has completed, then create the new task.</p>
     DataRepositoryTaskExecuting(crate::error::DataRepositoryTaskExecuting),
     /// <p>No Amazon FSx file systems were found based upon supplied parameters.</p>
     FileSystemNotFound(crate::error::FileSystemNotFound),
-    /// <p>The error returned when a second request is received with the same client request
-    /// token but different parameters settings. A client request token should always uniquely
-    /// identify a single request.</p>
+    /// <p>The error returned when a second request is received with the same client request token but different parameters settings. A client request token should always uniquely identify a single request.</p>
     IncompatibleParameterError(crate::error::IncompatibleParameterError),
     /// <p>A generic error indicating a server-side failure.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An error indicating that a particular service limit was exceeded. You can increase
-    /// some service limits by contacting Amazon Web Services Support.</p>
+    /// <p>An error indicating that a particular service limit was exceeded. You can increase some service limits by contacting Amazon Web Services Support.</p>
     ServiceLimitExceeded(crate::error::ServiceLimitExceeded),
     /// <p>The requested operation is not supported for this resource or API.</p>
     UnsupportedOperation(crate::error::UnsupportedOperation),
@@ -920,9 +901,7 @@ pub enum CreateFileSystemErrorKind {
     ActiveDirectoryError(crate::error::ActiveDirectoryError),
     /// <p>A generic error indicating a failure with a client request.</p>
     BadRequest(crate::error::BadRequest),
-    /// <p>The error returned when a second request is received with the same client request
-    /// token but different parameters settings. A client request token should always uniquely
-    /// identify a single request.</p>
+    /// <p>The error returned when a second request is received with the same client request token but different parameters settings. A client request token should always uniquely identify a single request.</p>
     IncompatibleParameterError(crate::error::IncompatibleParameterError),
     /// <p>A generic error indicating a server-side failure.</p>
     InternalServerError(crate::error::InternalServerError),
@@ -936,8 +915,7 @@ pub enum CreateFileSystemErrorKind {
     InvalidPerUnitStorageThroughput(crate::error::InvalidPerUnitStorageThroughput),
     /// <p>A file system configuration is required for this operation.</p>
     MissingFileSystemConfiguration(crate::error::MissingFileSystemConfiguration),
-    /// <p>An error indicating that a particular service limit was exceeded. You can increase
-    /// some service limits by contacting Amazon Web Services Support.</p>
+    /// <p>An error indicating that a particular service limit was exceeded. You can increase some service limits by contacting Amazon Web Services Support.</p>
     ServiceLimitExceeded(crate::error::ServiceLimitExceeded),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1108,9 +1086,7 @@ pub enum CreateFileSystemFromBackupErrorKind {
     BackupNotFound(crate::error::BackupNotFound),
     /// <p>A generic error indicating a failure with a client request.</p>
     BadRequest(crate::error::BadRequest),
-    /// <p>The error returned when a second request is received with the same client request
-    /// token but different parameters settings. A client request token should always uniquely
-    /// identify a single request.</p>
+    /// <p>The error returned when a second request is received with the same client request token but different parameters settings. A client request token should always uniquely identify a single request.</p>
     IncompatibleParameterError(crate::error::IncompatibleParameterError),
     /// <p>A generic error indicating a server-side failure.</p>
     InternalServerError(crate::error::InternalServerError),
@@ -1120,8 +1096,7 @@ pub enum CreateFileSystemFromBackupErrorKind {
     InvalidPerUnitStorageThroughput(crate::error::InvalidPerUnitStorageThroughput),
     /// <p>A file system configuration is required for this operation.</p>
     MissingFileSystemConfiguration(crate::error::MissingFileSystemConfiguration),
-    /// <p>An error indicating that a particular service limit was exceeded. You can increase
-    /// some service limits by contacting Amazon Web Services Support.</p>
+    /// <p>An error indicating that a particular service limit was exceeded. You can increase some service limits by contacting Amazon Web Services Support.</p>
     ServiceLimitExceeded(crate::error::ServiceLimitExceeded),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1300,8 +1275,7 @@ pub enum CreateSnapshotErrorKind {
     BadRequest(crate::error::BadRequest),
     /// <p>A generic error indicating a server-side failure.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An error indicating that a particular service limit was exceeded. You can increase
-    /// some service limits by contacting Amazon Web Services Support.</p>
+    /// <p>An error indicating that a particular service limit was exceeded. You can increase some service limits by contacting Amazon Web Services Support.</p>
     ServiceLimitExceeded(crate::error::ServiceLimitExceeded),
     /// <p>No Amazon FSx for NetApp ONTAP volumes were found based upon the supplied parameters.</p>
     VolumeNotFound(crate::error::VolumeNotFound),
@@ -1417,14 +1391,11 @@ pub enum CreateStorageVirtualMachineErrorKind {
     BadRequest(crate::error::BadRequest),
     /// <p>No Amazon FSx file systems were found based upon supplied parameters.</p>
     FileSystemNotFound(crate::error::FileSystemNotFound),
-    /// <p>The error returned when a second request is received with the same client request
-    /// token but different parameters settings. A client request token should always uniquely
-    /// identify a single request.</p>
+    /// <p>The error returned when a second request is received with the same client request token but different parameters settings. A client request token should always uniquely identify a single request.</p>
     IncompatibleParameterError(crate::error::IncompatibleParameterError),
     /// <p>A generic error indicating a server-side failure.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An error indicating that a particular service limit was exceeded. You can increase
-    /// some service limits by contacting Amazon Web Services Support.</p>
+    /// <p>An error indicating that a particular service limit was exceeded. You can increase some service limits by contacting Amazon Web Services Support.</p>
     ServiceLimitExceeded(crate::error::ServiceLimitExceeded),
     /// <p>The requested operation is not supported for this resource or API.</p>
     UnsupportedOperation(crate::error::UnsupportedOperation),
@@ -1581,16 +1552,13 @@ pub enum CreateVolumeErrorKind {
     BadRequest(crate::error::BadRequest),
     /// <p>No Amazon FSx file systems were found based upon supplied parameters.</p>
     FileSystemNotFound(crate::error::FileSystemNotFound),
-    /// <p>The error returned when a second request is received with the same client request
-    /// token but different parameters settings. A client request token should always uniquely
-    /// identify a single request.</p>
+    /// <p>The error returned when a second request is received with the same client request token but different parameters settings. A client request token should always uniquely identify a single request.</p>
     IncompatibleParameterError(crate::error::IncompatibleParameterError),
     /// <p>A generic error indicating a server-side failure.</p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>A volume configuration is required for this operation.</p>
     MissingVolumeConfiguration(crate::error::MissingVolumeConfiguration),
-    /// <p>An error indicating that a particular service limit was exceeded. You can increase
-    /// some service limits by contacting Amazon Web Services Support.</p>
+    /// <p>An error indicating that a particular service limit was exceeded. You can increase some service limits by contacting Amazon Web Services Support.</p>
     ServiceLimitExceeded(crate::error::ServiceLimitExceeded),
     /// <p>No Amazon FSx for NetApp ONTAP SVMs were found based upon the supplied parameters.</p>
     StorageVirtualMachineNotFound(crate::error::StorageVirtualMachineNotFound),
@@ -1741,16 +1709,13 @@ pub enum CreateVolumeFromBackupErrorKind {
     BadRequest(crate::error::BadRequest),
     /// <p>No Amazon FSx file systems were found based upon supplied parameters.</p>
     FileSystemNotFound(crate::error::FileSystemNotFound),
-    /// <p>The error returned when a second request is received with the same client request
-    /// token but different parameters settings. A client request token should always uniquely
-    /// identify a single request.</p>
+    /// <p>The error returned when a second request is received with the same client request token but different parameters settings. A client request token should always uniquely identify a single request.</p>
     IncompatibleParameterError(crate::error::IncompatibleParameterError),
     /// <p>A generic error indicating a server-side failure.</p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>A volume configuration is required for this operation.</p>
     MissingVolumeConfiguration(crate::error::MissingVolumeConfiguration),
-    /// <p>An error indicating that a particular service limit was exceeded. You can increase
-    /// some service limits by contacting Amazon Web Services Support.</p>
+    /// <p>An error indicating that a particular service limit was exceeded. You can increase some service limits by contacting Amazon Web Services Support.</p>
     ServiceLimitExceeded(crate::error::ServiceLimitExceeded),
     /// <p>No Amazon FSx for NetApp ONTAP SVMs were found based upon the supplied parameters.</p>
     StorageVirtualMachineNotFound(crate::error::StorageVirtualMachineNotFound),
@@ -1907,19 +1872,15 @@ pub struct DeleteBackupError {
 pub enum DeleteBackupErrorKind {
     /// <p>You can't delete a backup while it's being copied.</p>
     BackupBeingCopied(crate::error::BackupBeingCopied),
-    /// <p>Another backup is already under way. Wait for completion before initiating
-    /// additional backups of this file system.</p>
+    /// <p>Another backup is already under way. Wait for completion before initiating additional backups of this file system.</p>
     BackupInProgress(crate::error::BackupInProgress),
     /// <p>No Amazon FSx backups were found based upon the supplied parameters.</p>
     BackupNotFound(crate::error::BackupNotFound),
-    /// <p>You can't delete a backup while it's being used to restore a file
-    /// system.</p>
+    /// <p>You can't delete a backup while it's being used to restore a file system.</p>
     BackupRestoring(crate::error::BackupRestoring),
     /// <p>A generic error indicating a failure with a client request.</p>
     BadRequest(crate::error::BadRequest),
-    /// <p>The error returned when a second request is received with the same client request
-    /// token but different parameters settings. A client request token should always uniquely
-    /// identify a single request.</p>
+    /// <p>The error returned when a second request is received with the same client request token but different parameters settings. A client request token should always uniquely identify a single request.</p>
     IncompatibleParameterError(crate::error::IncompatibleParameterError),
     /// <p>A generic error indicating a server-side failure.</p>
     InternalServerError(crate::error::InternalServerError),
@@ -2054,14 +2015,11 @@ pub enum DeleteDataRepositoryAssociationErrorKind {
     BadRequest(crate::error::BadRequest),
     /// <p>No data repository associations were found based upon the supplied parameters.</p>
     DataRepositoryAssociationNotFound(crate::error::DataRepositoryAssociationNotFound),
-    /// <p>The error returned when a second request is received with the same client request
-    /// token but different parameters settings. A client request token should always uniquely
-    /// identify a single request.</p>
+    /// <p>The error returned when a second request is received with the same client request token but different parameters settings. A client request token should always uniquely identify a single request.</p>
     IncompatibleParameterError(crate::error::IncompatibleParameterError),
     /// <p>A generic error indicating a server-side failure.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An error indicating that a particular service limit was exceeded. You can increase
-    /// some service limits by contacting Amazon Web Services Support.</p>
+    /// <p>An error indicating that a particular service limit was exceeded. You can increase some service limits by contacting Amazon Web Services Support.</p>
     ServiceLimitExceeded(crate::error::ServiceLimitExceeded),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2205,14 +2163,11 @@ pub enum DeleteFileSystemErrorKind {
     BadRequest(crate::error::BadRequest),
     /// <p>No Amazon FSx file systems were found based upon supplied parameters.</p>
     FileSystemNotFound(crate::error::FileSystemNotFound),
-    /// <p>The error returned when a second request is received with the same client request
-    /// token but different parameters settings. A client request token should always uniquely
-    /// identify a single request.</p>
+    /// <p>The error returned when a second request is received with the same client request token but different parameters settings. A client request token should always uniquely identify a single request.</p>
     IncompatibleParameterError(crate::error::IncompatibleParameterError),
     /// <p>A generic error indicating a server-side failure.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An error indicating that a particular service limit was exceeded. You can increase
-    /// some service limits by contacting Amazon Web Services Support.</p>
+    /// <p>An error indicating that a particular service limit was exceeded. You can increase some service limits by contacting Amazon Web Services Support.</p>
     ServiceLimitExceeded(crate::error::ServiceLimitExceeded),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2443,9 +2398,7 @@ pub struct DeleteStorageVirtualMachineError {
 pub enum DeleteStorageVirtualMachineErrorKind {
     /// <p>A generic error indicating a failure with a client request.</p>
     BadRequest(crate::error::BadRequest),
-    /// <p>The error returned when a second request is received with the same client request
-    /// token but different parameters settings. A client request token should always uniquely
-    /// identify a single request.</p>
+    /// <p>The error returned when a second request is received with the same client request token but different parameters settings. A client request token should always uniquely identify a single request.</p>
     IncompatibleParameterError(crate::error::IncompatibleParameterError),
     /// <p>A generic error indicating a server-side failure.</p>
     InternalServerError(crate::error::InternalServerError),
@@ -2579,9 +2532,7 @@ pub struct DeleteVolumeError {
 pub enum DeleteVolumeErrorKind {
     /// <p>A generic error indicating a failure with a client request.</p>
     BadRequest(crate::error::BadRequest),
-    /// <p>The error returned when a second request is received with the same client request
-    /// token but different parameters settings. A client request token should always uniquely
-    /// identify a single request.</p>
+    /// <p>The error returned when a second request is received with the same client request token but different parameters settings. A client request token should always uniquely identify a single request.</p>
     IncompatibleParameterError(crate::error::IncompatibleParameterError),
     /// <p>A generic error indicating a server-side failure.</p>
     InternalServerError(crate::error::InternalServerError),
@@ -3788,8 +3739,7 @@ pub enum ListTagsForResourceErrorKind {
     BadRequest(crate::error::BadRequest),
     /// <p>A generic error indicating a server-side failure.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>The resource specified for the tagging operation is not a resource type owned by
-    /// Amazon FSx. Use the API of the relevant service to perform the operation. </p>
+    /// <p>The resource specified for the tagging operation is not a resource type owned by Amazon FSx. Use the API of the relevant service to perform the operation. </p>
     NotServiceResourceError(crate::error::NotServiceResourceError),
     /// <p>The resource specified does not support tagging. </p>
     ResourceDoesNotSupportTagging(crate::error::ResourceDoesNotSupportTagging),
@@ -3923,14 +3873,11 @@ pub enum ReleaseFileSystemNfsV3LocksErrorKind {
     BadRequest(crate::error::BadRequest),
     /// <p>No Amazon FSx file systems were found based upon supplied parameters.</p>
     FileSystemNotFound(crate::error::FileSystemNotFound),
-    /// <p>The error returned when a second request is received with the same client request
-    /// token but different parameters settings. A client request token should always uniquely
-    /// identify a single request.</p>
+    /// <p>The error returned when a second request is received with the same client request token but different parameters settings. A client request token should always uniquely identify a single request.</p>
     IncompatibleParameterError(crate::error::IncompatibleParameterError),
     /// <p>A generic error indicating a server-side failure.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An error indicating that a particular service limit was exceeded. You can increase
-    /// some service limits by contacting Amazon Web Services Support.</p>
+    /// <p>An error indicating that a particular service limit was exceeded. You can increase some service limits by contacting Amazon Web Services Support.</p>
     ServiceLimitExceeded(crate::error::ServiceLimitExceeded),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4182,8 +4129,7 @@ pub enum TagResourceErrorKind {
     BadRequest(crate::error::BadRequest),
     /// <p>A generic error indicating a server-side failure.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>The resource specified for the tagging operation is not a resource type owned by
-    /// Amazon FSx. Use the API of the relevant service to perform the operation. </p>
+    /// <p>The resource specified for the tagging operation is not a resource type owned by Amazon FSx. Use the API of the relevant service to perform the operation. </p>
     NotServiceResourceError(crate::error::NotServiceResourceError),
     /// <p>The resource specified does not support tagging. </p>
     ResourceDoesNotSupportTagging(crate::error::ResourceDoesNotSupportTagging),
@@ -4308,8 +4254,7 @@ pub enum UntagResourceErrorKind {
     BadRequest(crate::error::BadRequest),
     /// <p>A generic error indicating a server-side failure.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>The resource specified for the tagging operation is not a resource type owned by
-    /// Amazon FSx. Use the API of the relevant service to perform the operation. </p>
+    /// <p>The resource specified for the tagging operation is not a resource type owned by Amazon FSx. Use the API of the relevant service to perform the operation. </p>
     NotServiceResourceError(crate::error::NotServiceResourceError),
     /// <p>The resource specified does not support tagging. </p>
     ResourceDoesNotSupportTagging(crate::error::ResourceDoesNotSupportTagging),
@@ -4437,14 +4382,11 @@ pub enum UpdateDataRepositoryAssociationErrorKind {
     BadRequest(crate::error::BadRequest),
     /// <p>No data repository associations were found based upon the supplied parameters.</p>
     DataRepositoryAssociationNotFound(crate::error::DataRepositoryAssociationNotFound),
-    /// <p>The error returned when a second request is received with the same client request
-    /// token but different parameters settings. A client request token should always uniquely
-    /// identify a single request.</p>
+    /// <p>The error returned when a second request is received with the same client request token but different parameters settings. A client request token should always uniquely identify a single request.</p>
     IncompatibleParameterError(crate::error::IncompatibleParameterError),
     /// <p>A generic error indicating a server-side failure.</p>
     InternalServerError(crate::error::InternalServerError),
-    /// <p>An error indicating that a particular service limit was exceeded. You can increase
-    /// some service limits by contacting Amazon Web Services Support.</p>
+    /// <p>An error indicating that a particular service limit was exceeded. You can increase some service limits by contacting Amazon Web Services Support.</p>
     ServiceLimitExceeded(crate::error::ServiceLimitExceeded),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4588,16 +4530,13 @@ pub enum UpdateFileSystemErrorKind {
     BadRequest(crate::error::BadRequest),
     /// <p>No Amazon FSx file systems were found based upon supplied parameters.</p>
     FileSystemNotFound(crate::error::FileSystemNotFound),
-    /// <p>The error returned when a second request is received with the same client request
-    /// token but different parameters settings. A client request token should always uniquely
-    /// identify a single request.</p>
+    /// <p>The error returned when a second request is received with the same client request token but different parameters settings. A client request token should always uniquely identify a single request.</p>
     IncompatibleParameterError(crate::error::IncompatibleParameterError),
     /// <p>A generic error indicating a server-side failure.</p>
     InternalServerError(crate::error::InternalServerError),
     /// <p>A file system configuration is required for this operation.</p>
     MissingFileSystemConfiguration(crate::error::MissingFileSystemConfiguration),
-    /// <p>An error indicating that a particular service limit was exceeded. You can increase
-    /// some service limits by contacting Amazon Web Services Support.</p>
+    /// <p>An error indicating that a particular service limit was exceeded. You can increase some service limits by contacting Amazon Web Services Support.</p>
     ServiceLimitExceeded(crate::error::ServiceLimitExceeded),
     /// <p>The requested operation is not supported for this resource or API.</p>
     UnsupportedOperation(crate::error::UnsupportedOperation),
@@ -4848,9 +4787,7 @@ pub struct UpdateStorageVirtualMachineError {
 pub enum UpdateStorageVirtualMachineErrorKind {
     /// <p>A generic error indicating a failure with a client request.</p>
     BadRequest(crate::error::BadRequest),
-    /// <p>The error returned when a second request is received with the same client request
-    /// token but different parameters settings. A client request token should always uniquely
-    /// identify a single request.</p>
+    /// <p>The error returned when a second request is received with the same client request token but different parameters settings. A client request token should always uniquely identify a single request.</p>
     IncompatibleParameterError(crate::error::IncompatibleParameterError),
     /// <p>A generic error indicating a server-side failure.</p>
     InternalServerError(crate::error::InternalServerError),
@@ -4995,9 +4932,7 @@ pub struct UpdateVolumeError {
 pub enum UpdateVolumeErrorKind {
     /// <p>A generic error indicating a failure with a client request.</p>
     BadRequest(crate::error::BadRequest),
-    /// <p>The error returned when a second request is received with the same client request
-    /// token but different parameters settings. A client request token should always uniquely
-    /// identify a single request.</p>
+    /// <p>The error returned when a second request is received with the same client request token but different parameters settings. A client request token should always uniquely identify a single request.</p>
     IncompatibleParameterError(crate::error::IncompatibleParameterError),
     /// <p>A generic error indicating a server-side failure.</p>
     InternalServerError(crate::error::InternalServerError),
@@ -5302,9 +5237,7 @@ impl InternalServerError {
     }
 }
 
-/// <p>The error returned when a second request is received with the same client request
-/// token but different parameters settings. A client request token should always uniquely
-/// identify a single request.</p>
+/// <p>The error returned when a second request is received with the same client request token but different parameters settings. A client request token should always uniquely identify a single request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IncompatibleParameterError {
@@ -5645,8 +5578,7 @@ impl SnapshotNotFound {
     }
 }
 
-/// <p>An error indicating that a particular service limit was exceeded. You can increase
-/// some service limits by contacting Amazon Web Services Support.</p>
+/// <p>An error indicating that a particular service limit was exceeded. You can increase some service limits by contacting Amazon Web Services Support.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceLimitExceeded {
@@ -6012,15 +5944,13 @@ impl ResourceNotFound {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceDoesNotSupportTagging {
-    /// <p>The Amazon Resource Name (ARN) of the resource that doesn't support
-    /// tagging.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource that doesn't support tagging.</p>
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A detailed error message.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl ResourceDoesNotSupportTagging {
-    /// <p>The Amazon Resource Name (ARN) of the resource that doesn't support
-    /// tagging.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource that doesn't support tagging.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -6059,14 +5989,12 @@ pub mod resource_does_not_support_tagging {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the resource that doesn't support
-        /// tagging.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource that doesn't support tagging.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource that doesn't support
-        /// tagging.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource that doesn't support tagging.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -6097,8 +6025,7 @@ impl ResourceDoesNotSupportTagging {
     }
 }
 
-/// <p>The resource specified for the tagging operation is not a resource type owned by
-/// Amazon FSx. Use the API of the relevant service to perform the operation. </p>
+/// <p>The resource specified for the tagging operation is not a resource type owned by Amazon FSx. Use the API of the relevant service to perform the operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotServiceResourceError {
@@ -6375,8 +6302,7 @@ impl BackupNotFound {
     }
 }
 
-/// <p>You can't delete a backup while it's being used to restore a file
-/// system.</p>
+/// <p>You can't delete a backup while it's being used to restore a file system.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BackupRestoring {
@@ -6464,8 +6390,7 @@ impl BackupRestoring {
     }
 }
 
-/// <p>Another backup is already under way. Wait for completion before initiating
-/// additional backups of this file system.</p>
+/// <p>Another backup is already under way. Wait for completion before initiating additional backups of this file system.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BackupInProgress {
@@ -7048,8 +6973,7 @@ impl InvalidExportPath {
     }
 }
 
-/// <p>An existing data repository task is currently executing on the file system.  
-/// Wait until the existing task has completed, then create the new task.</p>
+/// <p>An existing data repository task is currently executing on the file system. Wait until the existing task has completed, then create the new task.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataRepositoryTaskExecuting {
@@ -7113,8 +7037,7 @@ impl DataRepositoryTaskExecuting {
     }
 }
 
-/// <p>The request was rejected because the lifecycle status of the source backup isn't
-/// <code>AVAILABLE</code>.</p>
+/// <p>The request was rejected because the lifecycle status of the source backup isn't <code>AVAILABLE</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SourceBackupUnavailable {
@@ -7199,8 +7122,7 @@ impl SourceBackupUnavailable {
     }
 }
 
-/// <p>The Key Management Service (KMS) key of the source backup is not
-/// valid.</p>
+/// <p>The Key Management Service (KMS) key of the source backup is not valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidSourceKmsKey {
@@ -7264,8 +7186,7 @@ impl InvalidSourceKmsKey {
     }
 }
 
-/// <p>The Region provided for <code>SourceRegion</code> is not valid or is in a different
-/// Amazon Web Services partition.</p>
+/// <p>The Region provided for <code>SourceRegion</code> is not valid or is in a different Amazon Web Services partition.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRegion {
@@ -7329,8 +7250,7 @@ impl InvalidRegion {
     }
 }
 
-/// <p>The Key Management Service (KMS) key of the destination backup is not
-/// valid.</p>
+/// <p>The Key Management Service (KMS) key of the destination backup is not valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidDestinationKmsKey {
@@ -7394,8 +7314,7 @@ impl InvalidDestinationKmsKey {
     }
 }
 
-/// <p>Amazon FSx doesn't support Multi-AZ Windows File Server copy backup in the
-/// destination Region, so the copied backup can't be restored.</p>
+/// <p>Amazon FSx doesn't support Multi-AZ Windows File Server copy backup in the destination Region, so the copied backup can't be restored.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IncompatibleRegionForMultiAz {

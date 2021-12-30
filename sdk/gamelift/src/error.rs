@@ -12,15 +12,11 @@ pub struct AcceptMatchError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AcceptMatchErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The requested operation is not supported in the Region specified.</p>
     UnsupportedRegionException(crate::error::UnsupportedRegionException),
@@ -136,25 +132,15 @@ pub struct ClaimGameServerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ClaimGameServerErrorKind {
-    /// <p>The requested operation would cause a conflict with the current state of a service
-    /// resource associated with the request. Resolve the conflict before retrying this
-    /// request.</p>
+    /// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The specified game server group has no available game servers to fulfill a
-    /// <code>ClaimGameServer</code> request. Clients can retry such requests immediately
-    /// or after a waiting period.
-    ///
-    /// </p>
+    /// <p>The specified game server group has no available game servers to fulfill a <code>ClaimGameServer</code> request. Clients can retry such requests immediately or after a waiting period. </p>
     OutOfCapacityException(crate::error::OutOfCapacityException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -288,24 +274,15 @@ pub struct CreateAliasError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateAliasErrorKind {
-    /// <p>The requested operation would cause a conflict with the current state of a service
-    /// resource associated with the request. Resolve the conflict before retrying this
-    /// request.</p>
+    /// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The requested operation would cause the resource to exceed the allowed service
-    /// limit. Resolve the issue before retrying.</p>
+    /// <p>The requested operation would cause the resource to exceed the allowed service limit. Resolve the issue before retrying.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>
-    /// The requested tagging operation did not succeed. This may be due to invalid tag format
-    /// or the maximum tag limit may have been exceeded. Resolve the issue before retrying.
-    /// </p>
+    /// <p> The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying. </p>
     TaggingFailedException(crate::error::TaggingFailedException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -430,21 +407,13 @@ pub struct CreateBuildError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateBuildErrorKind {
-    /// <p>The requested operation would cause a conflict with the current state of a service
-    /// resource associated with the request. Resolve the conflict before retrying this
-    /// request.</p>
+    /// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>
-    /// The requested tagging operation did not succeed. This may be due to invalid tag format
-    /// or the maximum tag limit may have been exceeded. Resolve the issue before retrying.
-    /// </p>
+    /// <p> The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying. </p>
     TaggingFailedException(crate::error::TaggingFailedException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -563,27 +532,17 @@ pub struct CreateFleetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateFleetErrorKind {
-    /// <p>The requested operation would cause a conflict with the current state of a service
-    /// resource associated with the request. Resolve the conflict before retrying this
-    /// request.</p>
+    /// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The requested operation would cause the resource to exceed the allowed service
-    /// limit. Resolve the issue before retrying.</p>
+    /// <p>The requested operation would cause the resource to exceed the allowed service limit. Resolve the issue before retrying.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>
-    /// The requested tagging operation did not succeed. This may be due to invalid tag format
-    /// or the maximum tag limit may have been exceeded. Resolve the issue before retrying.
-    /// </p>
+    /// <p> The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying. </p>
     TaggingFailedException(crate::error::TaggingFailedException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -725,19 +684,13 @@ pub struct CreateFleetLocationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateFleetLocationsErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>The requested operation would cause a conflict with the current state of a resource
-    /// associated with the request and/or the fleet. Resolve the conflict before
-    /// retrying.</p>
+    /// <p>The requested operation would cause a conflict with the current state of a resource associated with the request and/or the fleet. Resolve the conflict before retrying.</p>
     InvalidFleetStatusException(crate::error::InvalidFleetStatusException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -879,19 +832,13 @@ pub struct CreateGameServerGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateGameServerGroupErrorKind {
-    /// <p>The requested operation would cause a conflict with the current state of a service
-    /// resource associated with the request. Resolve the conflict before retrying this
-    /// request.</p>
+    /// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The requested operation would cause the resource to exceed the allowed service
-    /// limit. Resolve the issue before retrying.</p>
+    /// <p>The requested operation would cause the resource to exceed the allowed service limit. Resolve the issue before retrying.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -1022,39 +969,23 @@ pub struct CreateGameSessionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateGameSessionErrorKind {
-    /// <p>The requested operation would cause a conflict with the current state of a service
-    /// resource associated with the request. Resolve the conflict before retrying this
-    /// request.</p>
+    /// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The specified fleet has no available instances to fulfill a
-    /// <code>CreateGameSession</code> request. Clients can retry such requests immediately
-    /// or after a waiting period.</p>
+    /// <p>The specified fleet has no available instances to fulfill a <code>CreateGameSession</code> request. Clients can retry such requests immediately or after a waiting period.</p>
     FleetCapacityExceededException(crate::error::FleetCapacityExceededException),
-    /// <p>A game session with this custom ID string already exists in this fleet. Resolve
-    /// this conflict before retrying this request.</p>
+    /// <p>A game session with this custom ID string already exists in this fleet. Resolve this conflict before retrying this request.</p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>The requested operation would cause a conflict with the current state of a resource
-    /// associated with the request and/or the fleet. Resolve the conflict before
-    /// retrying.</p>
+    /// <p>The requested operation would cause a conflict with the current state of a resource associated with the request and/or the fleet. Resolve the conflict before retrying.</p>
     InvalidFleetStatusException(crate::error::InvalidFleetStatusException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The requested operation would cause the resource to exceed the allowed service
-    /// limit. Resolve the issue before retrying.</p>
+    /// <p>The requested operation would cause the resource to exceed the allowed service limit. Resolve the issue before retrying.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The service is unable to resolve the routing for a particular alias because it has
-    /// a terminal <a>RoutingStrategy</a> associated with it. The message returned in
-    /// this exception is the message defined in the routing strategy itself. Such requests
-    /// should only be retried if the routing strategy for the specified alias is modified.
-    /// </p>
+    /// <p>The service is unable to resolve the routing for a particular alias because it has a terminal <code>RoutingStrategy</code> associated with it. The message returned in this exception is the message defined in the routing strategy itself. Such requests should only be retried if the routing strategy for the specified alias is modified. </p>
     TerminalRoutingStrategyException(crate::error::TerminalRoutingStrategyException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -1239,23 +1170,15 @@ pub struct CreateGameSessionQueueError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateGameSessionQueueErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The requested operation would cause the resource to exceed the allowed service
-    /// limit. Resolve the issue before retrying.</p>
+    /// <p>The requested operation would cause the resource to exceed the allowed service limit. Resolve the issue before retrying.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>
-    /// The requested tagging operation did not succeed. This may be due to invalid tag format
-    /// or the maximum tag limit may have been exceeded. Resolve the issue before retrying.
-    /// </p>
+    /// <p> The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying. </p>
     TaggingFailedException(crate::error::TaggingFailedException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -1395,23 +1318,15 @@ pub struct CreateMatchmakingConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateMatchmakingConfigurationErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The requested operation would cause the resource to exceed the allowed service
-    /// limit. Resolve the issue before retrying.</p>
+    /// <p>The requested operation would cause the resource to exceed the allowed service limit. Resolve the issue before retrying.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>
-    /// The requested tagging operation did not succeed. This may be due to invalid tag format
-    /// or the maximum tag limit may have been exceeded. Resolve the issue before retrying.
-    /// </p>
+    /// <p> The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying. </p>
     TaggingFailedException(crate::error::TaggingFailedException),
     /// <p>The requested operation is not supported in the Region specified.</p>
     UnsupportedRegionException(crate::error::UnsupportedRegionException),
@@ -1570,17 +1485,11 @@ pub struct CreateMatchmakingRuleSetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateMatchmakingRuleSetErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>
-    /// The requested tagging operation did not succeed. This may be due to invalid tag format
-    /// or the maximum tag limit may have been exceeded. Resolve the issue before retrying.
-    /// </p>
+    /// <p> The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying. </p>
     TaggingFailedException(crate::error::TaggingFailedException),
     /// <p>The requested operation is not supported in the Region specified.</p>
     UnsupportedRegionException(crate::error::UnsupportedRegionException),
@@ -1702,28 +1611,17 @@ pub struct CreatePlayerSessionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreatePlayerSessionErrorKind {
-    /// <p>The game instance is currently full and cannot allow the requested player(s) to
-    /// join. Clients can retry such requests immediately or after a waiting period.</p>
+    /// <p>The game instance is currently full and cannot allow the requested player(s) to join. Clients can retry such requests immediately or after a waiting period.</p>
     GameSessionFullException(crate::error::GameSessionFullException),
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>The requested operation would cause a conflict with the current state of a resource
-    /// associated with the request and/or the game instance. Resolve the conflict before
-    /// retrying.</p>
+    /// <p>The requested operation would cause a conflict with the current state of a resource associated with the request and/or the game instance. Resolve the conflict before retrying.</p>
     InvalidGameSessionStatusException(crate::error::InvalidGameSessionStatusException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The service is unable to resolve the routing for a particular alias because it has
-    /// a terminal <a>RoutingStrategy</a> associated with it. The message returned in
-    /// this exception is the message defined in the routing strategy itself. Such requests
-    /// should only be retried if the routing strategy for the specified alias is modified.
-    /// </p>
+    /// <p>The service is unable to resolve the routing for a particular alias because it has a terminal <code>RoutingStrategy</code> associated with it. The message returned in this exception is the message defined in the routing strategy itself. Such requests should only be retried if the routing strategy for the specified alias is modified. </p>
     TerminalRoutingStrategyException(crate::error::TerminalRoutingStrategyException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -1874,28 +1772,17 @@ pub struct CreatePlayerSessionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreatePlayerSessionsErrorKind {
-    /// <p>The game instance is currently full and cannot allow the requested player(s) to
-    /// join. Clients can retry such requests immediately or after a waiting period.</p>
+    /// <p>The game instance is currently full and cannot allow the requested player(s) to join. Clients can retry such requests immediately or after a waiting period.</p>
     GameSessionFullException(crate::error::GameSessionFullException),
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>The requested operation would cause a conflict with the current state of a resource
-    /// associated with the request and/or the game instance. Resolve the conflict before
-    /// retrying.</p>
+    /// <p>The requested operation would cause a conflict with the current state of a resource associated with the request and/or the game instance. Resolve the conflict before retrying.</p>
     InvalidGameSessionStatusException(crate::error::InvalidGameSessionStatusException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The service is unable to resolve the routing for a particular alias because it has
-    /// a terminal <a>RoutingStrategy</a> associated with it. The message returned in
-    /// this exception is the message defined in the routing strategy itself. Such requests
-    /// should only be retried if the routing strategy for the specified alias is modified.
-    /// </p>
+    /// <p>The service is unable to resolve the routing for a particular alias because it has a terminal <code>RoutingStrategy</code> associated with it. The message returned in this exception is the message defined in the routing strategy itself. Such requests should only be retried if the routing strategy for the specified alias is modified. </p>
     TerminalRoutingStrategyException(crate::error::TerminalRoutingStrategyException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -2050,21 +1937,13 @@ pub struct CreateScriptError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateScriptErrorKind {
-    /// <p>The requested operation would cause a conflict with the current state of a service
-    /// resource associated with the request. Resolve the conflict before retrying this
-    /// request.</p>
+    /// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>
-    /// The requested tagging operation did not succeed. This may be due to invalid tag format
-    /// or the maximum tag limit may have been exceeded. Resolve the issue before retrying.
-    /// </p>
+    /// <p> The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying. </p>
     TaggingFailedException(crate::error::TaggingFailedException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -2186,15 +2065,11 @@ pub struct CreateVpcPeeringAuthorizationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateVpcPeeringAuthorizationErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -2325,15 +2200,11 @@ pub struct CreateVpcPeeringConnectionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateVpcPeeringConnectionErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -2455,20 +2326,13 @@ pub struct DeleteAliasError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteAliasErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>
-    /// The requested tagging operation did not succeed. This may be due to invalid tag format
-    /// or the maximum tag limit may have been exceeded. Resolve the issue before retrying.
-    /// </p>
+    /// <p> The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying. </p>
     TaggingFailedException(crate::error::TaggingFailedException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -2587,20 +2451,13 @@ pub struct DeleteBuildError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteBuildErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>
-    /// The requested tagging operation did not succeed. This may be due to invalid tag format
-    /// or the maximum tag limit may have been exceeded. Resolve the issue before retrying.
-    /// </p>
+    /// <p> The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying. </p>
     TaggingFailedException(crate::error::TaggingFailedException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -2719,24 +2576,15 @@ pub struct DeleteFleetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteFleetErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>The requested operation would cause a conflict with the current state of a resource
-    /// associated with the request and/or the fleet. Resolve the conflict before
-    /// retrying.</p>
+    /// <p>The requested operation would cause a conflict with the current state of a resource associated with the request and/or the fleet. Resolve the conflict before retrying.</p>
     InvalidFleetStatusException(crate::error::InvalidFleetStatusException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>
-    /// The requested tagging operation did not succeed. This may be due to invalid tag format
-    /// or the maximum tag limit may have been exceeded. Resolve the issue before retrying.
-    /// </p>
+    /// <p> The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying. </p>
     TaggingFailedException(crate::error::TaggingFailedException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -2864,15 +2712,11 @@ pub struct DeleteFleetLocationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteFleetLocationsErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -3005,15 +2849,11 @@ pub struct DeleteGameServerGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteGameServerGroupErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -3135,20 +2975,13 @@ pub struct DeleteGameSessionQueueError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteGameSessionQueueErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>
-    /// The requested tagging operation did not succeed. This may be due to invalid tag format
-    /// or the maximum tag limit may have been exceeded. Resolve the issue before retrying.
-    /// </p>
+    /// <p> The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying. </p>
     TaggingFailedException(crate::error::TaggingFailedException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -3279,20 +3112,13 @@ pub struct DeleteMatchmakingConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteMatchmakingConfigurationErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>
-    /// The requested tagging operation did not succeed. This may be due to invalid tag format
-    /// or the maximum tag limit may have been exceeded. Resolve the issue before retrying.
-    /// </p>
+    /// <p> The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying. </p>
     TaggingFailedException(crate::error::TaggingFailedException),
     /// <p>The requested operation is not supported in the Region specified.</p>
     UnsupportedRegionException(crate::error::UnsupportedRegionException),
@@ -3440,20 +3266,13 @@ pub struct DeleteMatchmakingRuleSetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteMatchmakingRuleSetErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>
-    /// The requested tagging operation did not succeed. This may be due to invalid tag format
-    /// or the maximum tag limit may have been exceeded. Resolve the issue before retrying.
-    /// </p>
+    /// <p> The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying. </p>
     TaggingFailedException(crate::error::TaggingFailedException),
     /// <p>The requested operation is not supported in the Region specified.</p>
     UnsupportedRegionException(crate::error::UnsupportedRegionException),
@@ -3584,15 +3403,11 @@ pub struct DeleteScalingPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteScalingPolicyErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -3714,20 +3529,13 @@ pub struct DeleteScriptError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteScriptErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>
-    /// The requested tagging operation did not succeed. This may be due to invalid tag format
-    /// or the maximum tag limit may have been exceeded. Resolve the issue before retrying.
-    /// </p>
+    /// <p> The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying. </p>
     TaggingFailedException(crate::error::TaggingFailedException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -3849,15 +3657,11 @@ pub struct DeleteVpcPeeringAuthorizationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteVpcPeeringAuthorizationErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -3988,15 +3792,11 @@ pub struct DeleteVpcPeeringConnectionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteVpcPeeringConnectionErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -4118,15 +3918,11 @@ pub struct DeregisterGameServerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeregisterGameServerErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -4248,15 +4044,11 @@ pub struct DescribeAliasError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeAliasErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -4372,15 +4164,11 @@ pub struct DescribeBuildError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeBuildErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -4496,12 +4284,9 @@ pub struct DescribeEC2InstanceLimitsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeEC2InstanceLimitsErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -4625,15 +4410,11 @@ pub struct DescribeFleetAttributesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeFleetAttributesErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -4755,15 +4536,11 @@ pub struct DescribeFleetCapacityError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeFleetCapacityErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -4885,15 +4662,11 @@ pub struct DescribeFleetEventsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeFleetEventsErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -5015,15 +4788,11 @@ pub struct DescribeFleetLocationAttributesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeFleetLocationAttributesErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -5173,15 +4942,11 @@ pub struct DescribeFleetLocationCapacityError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeFleetLocationCapacityErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -5327,15 +5092,11 @@ pub struct DescribeFleetLocationUtilizationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeFleetLocationUtilizationErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -5487,15 +5248,11 @@ pub struct DescribeFleetPortSettingsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeFleetPortSettingsErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -5617,15 +5374,11 @@ pub struct DescribeFleetUtilizationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeFleetUtilizationErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -5747,15 +5500,11 @@ pub struct DescribeGameServerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeGameServerErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -5877,15 +5626,11 @@ pub struct DescribeGameServerGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeGameServerGroupErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -6007,15 +5752,11 @@ pub struct DescribeGameServerInstancesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeGameServerInstancesErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -6137,21 +5878,13 @@ pub struct DescribeGameSessionDetailsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeGameSessionDetailsErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The service is unable to resolve the routing for a particular alias because it has
-    /// a terminal <a>RoutingStrategy</a> associated with it. The message returned in
-    /// this exception is the message defined in the routing strategy itself. Such requests
-    /// should only be retried if the routing strategy for the specified alias is modified.
-    /// </p>
+    /// <p>The service is unable to resolve the routing for a particular alias because it has a terminal <code>RoutingStrategy</code> associated with it. The message returned in this exception is the message defined in the routing strategy itself. Such requests should only be retried if the routing strategy for the specified alias is modified. </p>
     TerminalRoutingStrategyException(crate::error::TerminalRoutingStrategyException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -6299,15 +6032,11 @@ pub struct DescribeGameSessionPlacementError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeGameSessionPlacementErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -6431,15 +6160,11 @@ pub struct DescribeGameSessionQueuesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeGameSessionQueuesErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -6561,21 +6286,13 @@ pub struct DescribeGameSessionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeGameSessionsErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The service is unable to resolve the routing for a particular alias because it has
-    /// a terminal <a>RoutingStrategy</a> associated with it. The message returned in
-    /// this exception is the message defined in the routing strategy itself. Such requests
-    /// should only be retried if the routing strategy for the specified alias is modified.
-    /// </p>
+    /// <p>The service is unable to resolve the routing for a particular alias because it has a terminal <code>RoutingStrategy</code> associated with it. The message returned in this exception is the message defined in the routing strategy itself. Such requests should only be retried if the routing strategy for the specified alias is modified. </p>
     TerminalRoutingStrategyException(crate::error::TerminalRoutingStrategyException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -6719,15 +6436,11 @@ pub struct DescribeInstancesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeInstancesErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -6857,12 +6570,9 @@ pub struct DescribeMatchmakingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeMatchmakingErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The requested operation is not supported in the Region specified.</p>
     UnsupportedRegionException(crate::error::UnsupportedRegionException),
@@ -6975,12 +6685,9 @@ pub struct DescribeMatchmakingConfigurationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeMatchmakingConfigurationsErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The requested operation is not supported in the Region specified.</p>
     UnsupportedRegionException(crate::error::UnsupportedRegionException),
@@ -7108,15 +6815,11 @@ pub struct DescribeMatchmakingRuleSetsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeMatchmakingRuleSetsErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The requested operation is not supported in the Region specified.</p>
     UnsupportedRegionException(crate::error::UnsupportedRegionException),
@@ -7242,15 +6945,11 @@ pub struct DescribePlayerSessionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribePlayerSessionsErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -7372,15 +7071,11 @@ pub struct DescribeRuntimeConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeRuntimeConfigurationErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -7504,15 +7199,11 @@ pub struct DescribeScalingPoliciesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeScalingPoliciesErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -7645,15 +7336,11 @@ pub struct DescribeScriptError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeScriptErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -7772,12 +7459,9 @@ pub struct DescribeVpcPeeringAuthorizationsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeVpcPeeringAuthorizationsErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -7905,15 +7589,11 @@ pub struct DescribeVpcPeeringConnectionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeVpcPeeringConnectionsErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -8044,15 +7724,11 @@ pub struct GetGameSessionLogUrlError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetGameSessionLogUrlErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -8174,15 +7850,11 @@ pub struct GetInstanceAccessError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetInstanceAccessErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -8301,12 +7973,9 @@ pub struct ListAliasesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListAliasesErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -8413,12 +8082,9 @@ pub struct ListBuildsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListBuildsErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -8522,15 +8188,11 @@ pub struct ListFleetsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListFleetsErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -8640,12 +8302,9 @@ pub struct ListGameServerGroupsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListGameServerGroupsErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -8758,12 +8417,9 @@ pub struct ListGameServersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListGameServersErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -8876,12 +8532,9 @@ pub struct ListScriptsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListScriptsErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -8988,20 +8641,13 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>
-    /// The requested tagging operation did not succeed. This may be due to invalid tag format
-    /// or the maximum tag limit may have been exceeded. Resolve the issue before retrying.
-    /// </p>
+    /// <p> The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying. </p>
     TaggingFailedException(crate::error::TaggingFailedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -9121,15 +8767,11 @@ pub struct PutScalingPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutScalingPolicyErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -9248,19 +8890,13 @@ pub struct RegisterGameServerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RegisterGameServerErrorKind {
-    /// <p>The requested operation would cause a conflict with the current state of a service
-    /// resource associated with the request. Resolve the conflict before retrying this
-    /// request.</p>
+    /// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The requested operation would cause the resource to exceed the allowed service
-    /// limit. Resolve the issue before retrying.</p>
+    /// <p>The requested operation would cause the resource to exceed the allowed service limit. Resolve the issue before retrying.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -9391,15 +9027,11 @@ pub struct RequestUploadCredentialsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RequestUploadCredentialsErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -9521,21 +9153,13 @@ pub struct ResolveAliasError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ResolveAliasErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The service is unable to resolve the routing for a particular alias because it has
-    /// a terminal <a>RoutingStrategy</a> associated with it. The message returned in
-    /// this exception is the message defined in the routing strategy itself. Such requests
-    /// should only be retried if the routing strategy for the specified alias is modified.
-    /// </p>
+    /// <p>The service is unable to resolve the routing for a particular alias because it has a terminal <code>RoutingStrategy</code> associated with it. The message returned in this exception is the message defined in the routing strategy itself. Such requests should only be retried if the routing strategy for the specified alias is modified. </p>
     TerminalRoutingStrategyException(crate::error::TerminalRoutingStrategyException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -9660,15 +9284,11 @@ pub struct ResumeGameServerGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ResumeGameServerGroupErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -9790,21 +9410,13 @@ pub struct SearchGameSessionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SearchGameSessionsErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The service is unable to resolve the routing for a particular alias because it has
-    /// a terminal <a>RoutingStrategy</a> associated with it. The message returned in
-    /// this exception is the message defined in the routing strategy itself. Such requests
-    /// should only be retried if the routing strategy for the specified alias is modified.
-    /// </p>
+    /// <p>The service is unable to resolve the routing for a particular alias because it has a terminal <code>RoutingStrategy</code> associated with it. The message returned in this exception is the message defined in the routing strategy itself. Such requests should only be retried if the routing strategy for the specified alias is modified. </p>
     TerminalRoutingStrategyException(crate::error::TerminalRoutingStrategyException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -9946,15 +9558,11 @@ pub struct StartFleetActionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartFleetActionsErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -10084,15 +9692,11 @@ pub struct StartGameSessionPlacementError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartGameSessionPlacementErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -10214,15 +9818,11 @@ pub struct StartMatchBackfillError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartMatchBackfillErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The requested operation is not supported in the Region specified.</p>
     UnsupportedRegionException(crate::error::UnsupportedRegionException),
@@ -10344,15 +9944,11 @@ pub struct StartMatchmakingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartMatchmakingErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The requested operation is not supported in the Region specified.</p>
     UnsupportedRegionException(crate::error::UnsupportedRegionException),
@@ -10471,15 +10067,11 @@ pub struct StopFleetActionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StopFleetActionsErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -10609,15 +10201,11 @@ pub struct StopGameSessionPlacementError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StopGameSessionPlacementErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -10739,15 +10327,11 @@ pub struct StopMatchmakingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StopMatchmakingErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The requested operation is not supported in the Region specified.</p>
     UnsupportedRegionException(crate::error::UnsupportedRegionException),
@@ -10866,15 +10450,11 @@ pub struct SuspendGameServerGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SuspendGameServerGroupErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -10996,20 +10576,13 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>
-    /// The requested tagging operation did not succeed. This may be due to invalid tag format
-    /// or the maximum tag limit may have been exceeded. Resolve the issue before retrying.
-    /// </p>
+    /// <p> The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying. </p>
     TaggingFailedException(crate::error::TaggingFailedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -11120,20 +10693,13 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>
-    /// The requested tagging operation did not succeed. This may be due to invalid tag format
-    /// or the maximum tag limit may have been exceeded. Resolve the issue before retrying.
-    /// </p>
+    /// <p> The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying. </p>
     TaggingFailedException(crate::error::TaggingFailedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -11250,15 +10816,11 @@ pub struct UpdateAliasError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateAliasErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -11371,15 +10933,11 @@ pub struct UpdateBuildError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateBuildErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -11492,26 +11050,17 @@ pub struct UpdateFleetAttributesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateFleetAttributesErrorKind {
-    /// <p>The requested operation would cause a conflict with the current state of a service
-    /// resource associated with the request. Resolve the conflict before retrying this
-    /// request.</p>
+    /// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>The requested operation would cause a conflict with the current state of a resource
-    /// associated with the request and/or the fleet. Resolve the conflict before
-    /// retrying.</p>
+    /// <p>The requested operation would cause a conflict with the current state of a resource associated with the request and/or the fleet. Resolve the conflict before retrying.</p>
     InvalidFleetStatusException(crate::error::InvalidFleetStatusException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The requested operation would cause the resource to exceed the allowed service
-    /// limit. Resolve the issue before retrying.</p>
+    /// <p>The requested operation would cause the resource to exceed the allowed service limit. Resolve the issue before retrying.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -11660,26 +11209,17 @@ pub struct UpdateFleetCapacityError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateFleetCapacityErrorKind {
-    /// <p>The requested operation would cause a conflict with the current state of a service
-    /// resource associated with the request. Resolve the conflict before retrying this
-    /// request.</p>
+    /// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>The requested operation would cause a conflict with the current state of a resource
-    /// associated with the request and/or the fleet. Resolve the conflict before
-    /// retrying.</p>
+    /// <p>The requested operation would cause a conflict with the current state of a resource associated with the request and/or the fleet. Resolve the conflict before retrying.</p>
     InvalidFleetStatusException(crate::error::InvalidFleetStatusException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The requested operation would cause the resource to exceed the allowed service
-    /// limit. Resolve the issue before retrying.</p>
+    /// <p>The requested operation would cause the resource to exceed the allowed service limit. Resolve the issue before retrying.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -11839,26 +11379,17 @@ pub struct UpdateFleetPortSettingsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateFleetPortSettingsErrorKind {
-    /// <p>The requested operation would cause a conflict with the current state of a service
-    /// resource associated with the request. Resolve the conflict before retrying this
-    /// request.</p>
+    /// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>The requested operation would cause a conflict with the current state of a resource
-    /// associated with the request and/or the fleet. Resolve the conflict before
-    /// retrying.</p>
+    /// <p>The requested operation would cause a conflict with the current state of a resource associated with the request and/or the fleet. Resolve the conflict before retrying.</p>
     InvalidFleetStatusException(crate::error::InvalidFleetStatusException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The requested operation would cause the resource to exceed the allowed service
-    /// limit. Resolve the issue before retrying.</p>
+    /// <p>The requested operation would cause the resource to exceed the allowed service limit. Resolve the issue before retrying.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -12007,15 +11538,11 @@ pub struct UpdateGameServerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateGameServerErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -12134,15 +11661,11 @@ pub struct UpdateGameServerGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateGameServerGroupErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -12264,23 +11787,15 @@ pub struct UpdateGameSessionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateGameSessionErrorKind {
-    /// <p>The requested operation would cause a conflict with the current state of a service
-    /// resource associated with the request. Resolve the conflict before retrying this
-    /// request.</p>
+    /// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>The requested operation would cause a conflict with the current state of a resource
-    /// associated with the request and/or the game instance. Resolve the conflict before
-    /// retrying.</p>
+    /// <p>The requested operation would cause a conflict with the current state of a resource associated with the request and/or the game instance. Resolve the conflict before retrying.</p>
     InvalidGameSessionStatusException(crate::error::InvalidGameSessionStatusException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -12414,15 +11929,11 @@ pub struct UpdateGameSessionQueueError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateGameSessionQueueErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -12544,15 +12055,11 @@ pub struct UpdateMatchmakingConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateMatchmakingConfigurationErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The requested operation is not supported in the Region specified.</p>
     UnsupportedRegionException(crate::error::UnsupportedRegionException),
@@ -12689,19 +12196,13 @@ pub struct UpdateRuntimeConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateRuntimeConfigurationErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>The requested operation would cause a conflict with the current state of a resource
-    /// associated with the request and/or the fleet. Resolve the conflict before
-    /// retrying.</p>
+    /// <p>The requested operation would cause a conflict with the current state of a resource associated with the request and/or the fleet. Resolve the conflict before retrying.</p>
     InvalidFleetStatusException(crate::error::InvalidFleetStatusException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -12836,15 +12337,11 @@ pub struct UpdateScriptError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateScriptErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>A service resource associated with the request could not be found. Clients should
-    /// not retry such requests.</p>
+    /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The client failed authentication. Clients should not retry such requests.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -12960,12 +12457,9 @@ pub struct ValidateMatchmakingRuleSetError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ValidateMatchmakingRuleSetErrorKind {
-    /// <p>The service encountered an unrecoverable internal failure while processing the
-    /// request. Clients can retry such requests immediately or after a waiting
-    /// period.</p>
+    /// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
     InternalServiceException(crate::error::InternalServiceException),
-    /// <p>One or more parameter values in the request are invalid. Correct the invalid
-    /// parameter values before retrying.</p>
+    /// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The requested operation is not supported in the Region specified.</p>
     UnsupportedRegionException(crate::error::UnsupportedRegionException),
@@ -13131,8 +12625,7 @@ impl UnsupportedRegionException {
     }
 }
 
-/// <p>One or more parameter values in the request are invalid. Correct the invalid
-/// parameter values before retrying.</p>
+/// <p>One or more parameter values in the request are invalid. Correct the invalid parameter values before retrying.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRequestException {
@@ -13196,9 +12689,7 @@ impl InvalidRequestException {
     }
 }
 
-/// <p>The service encountered an unrecoverable internal failure while processing the
-/// request. Clients can retry such requests immediately or after a waiting
-/// period.</p>
+/// <p>The service encountered an unrecoverable internal failure while processing the request. Clients can retry such requests immediately or after a waiting period.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServiceException {
@@ -13326,8 +12817,7 @@ impl UnauthorizedException {
     }
 }
 
-/// <p>A service resource associated with the request could not be found. Clients should
-/// not retry such requests.</p>
+/// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotFoundException {
@@ -13391,9 +12881,7 @@ impl NotFoundException {
     }
 }
 
-/// <p>The requested operation would cause a conflict with the current state of a resource
-/// associated with the request and/or the fleet. Resolve the conflict before
-/// retrying.</p>
+/// <p>The requested operation would cause a conflict with the current state of a resource associated with the request and/or the fleet. Resolve the conflict before retrying.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidFleetStatusException {
@@ -13457,9 +12945,7 @@ impl InvalidFleetStatusException {
     }
 }
 
-/// <p>The requested operation would cause a conflict with the current state of a resource
-/// associated with the request and/or the game instance. Resolve the conflict before
-/// retrying.</p>
+/// <p>The requested operation would cause a conflict with the current state of a resource associated with the request and/or the game instance. Resolve the conflict before retrying.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidGameSessionStatusException {
@@ -13523,9 +13009,7 @@ impl InvalidGameSessionStatusException {
     }
 }
 
-/// <p>The requested operation would cause a conflict with the current state of a service
-/// resource associated with the request. Resolve the conflict before retrying this
-/// request.</p>
+/// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {
@@ -13589,8 +13073,7 @@ impl ConflictException {
     }
 }
 
-/// <p>The requested operation would cause the resource to exceed the allowed service
-/// limit. Resolve the issue before retrying.</p>
+/// <p>The requested operation would cause the resource to exceed the allowed service limit. Resolve the issue before retrying.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {
@@ -13654,10 +13137,7 @@ impl LimitExceededException {
     }
 }
 
-/// <p>
-/// The requested tagging operation did not succeed. This may be due to invalid tag format
-/// or the maximum tag limit may have been exceeded. Resolve the issue before retrying.
-/// </p>
+/// <p> The requested tagging operation did not succeed. This may be due to invalid tag format or the maximum tag limit may have been exceeded. Resolve the issue before retrying. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TaggingFailedException {
@@ -13721,11 +13201,7 @@ impl TaggingFailedException {
     }
 }
 
-/// <p>The service is unable to resolve the routing for a particular alias because it has
-/// a terminal <a>RoutingStrategy</a> associated with it. The message returned in
-/// this exception is the message defined in the routing strategy itself. Such requests
-/// should only be retried if the routing strategy for the specified alias is modified.
-/// </p>
+/// <p>The service is unable to resolve the routing for a particular alias because it has a terminal <code>RoutingStrategy</code> associated with it. The message returned in this exception is the message defined in the routing strategy itself. Such requests should only be retried if the routing strategy for the specified alias is modified. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TerminalRoutingStrategyException {
@@ -13789,8 +13265,7 @@ impl TerminalRoutingStrategyException {
     }
 }
 
-/// <p>The game instance is currently full and cannot allow the requested player(s) to
-/// join. Clients can retry such requests immediately or after a waiting period.</p>
+/// <p>The game instance is currently full and cannot allow the requested player(s) to join. Clients can retry such requests immediately or after a waiting period.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GameSessionFullException {
@@ -13854,8 +13329,7 @@ impl GameSessionFullException {
     }
 }
 
-/// <p>A game session with this custom ID string already exists in this fleet. Resolve
-/// this conflict before retrying this request.</p>
+/// <p>A game session with this custom ID string already exists in this fleet. Resolve this conflict before retrying this request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IdempotentParameterMismatchException {
@@ -13919,9 +13393,7 @@ impl IdempotentParameterMismatchException {
     }
 }
 
-/// <p>The specified fleet has no available instances to fulfill a
-/// <code>CreateGameSession</code> request. Clients can retry such requests immediately
-/// or after a waiting period.</p>
+/// <p>The specified fleet has no available instances to fulfill a <code>CreateGameSession</code> request. Clients can retry such requests immediately or after a waiting period.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FleetCapacityExceededException {
@@ -13985,11 +13457,7 @@ impl FleetCapacityExceededException {
     }
 }
 
-/// <p>The specified game server group has no available game servers to fulfill a
-/// <code>ClaimGameServer</code> request. Clients can retry such requests immediately
-/// or after a waiting period.
-///
-/// </p>
+/// <p>The specified game server group has no available game servers to fulfill a <code>ClaimGameServer</code> request. Clients can retry such requests immediately or after a waiting period. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OutOfCapacityException {

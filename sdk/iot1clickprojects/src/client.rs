@@ -290,16 +290,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_placement_name(input);
             self
         }
-        /// <p>The ID of the physical device to be associated with the given placement in the project.
-        /// Note that a mandatory 4 character prefix is required for all <code>deviceId</code>
-        /// values.</p>
+        /// <p>The ID of the physical device to be associated with the given placement in the project. Note that a mandatory 4 character prefix is required for all <code>deviceId</code> values.</p>
         pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.device_id(input.into());
             self
         }
-        /// <p>The ID of the physical device to be associated with the given placement in the project.
-        /// Note that a mandatory 4 character prefix is required for all <code>deviceId</code>
-        /// values.</p>
+        /// <p>The ID of the physical device to be associated with the given placement in the project. Note that a mandatory 4 character prefix is required for all <code>deviceId</code> values.</p>
         pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_device_id(input);
             self
@@ -404,8 +400,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
-        /// <p>Optional user-defined key/value pairs providing contextual data (such as location or
-        /// function) for the placement.</p>
+        /// <p>Optional user-defined key/value pairs providing contextual data (such as location or function) for the placement.</p>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -414,8 +409,7 @@ pub mod fluent_builders {
             self.inner = self.inner.attributes(k.into(), v.into());
             self
         }
-        /// <p>Optional user-defined key/value pairs providing contextual data (such as location or
-        /// function) for the placement.</p>
+        /// <p>Optional user-defined key/value pairs providing contextual data (such as location or function) for the placement.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -428,8 +422,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateProject`.
     ///
-    /// <p>Creates an empty project with a placement template. A project contains zero or more
-    /// placements that adhere to the placement template defined in the project.</p>
+    /// <p>Creates an empty project with a placement template. A project contains zero or more placements that adhere to the placement template defined in the project.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateProject<
         C = aws_smithy_client::erase::DynConnector,
@@ -506,18 +499,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The schema defining the placement to be created. A placement template defines placement
-        /// default attributes and device templates. You cannot add or remove device templates after the
-        /// project has been created. However, you can update <code>callbackOverrides</code> for the
-        /// device templates using the <code>UpdateProject</code> API.</p>
+        /// <p>The schema defining the placement to be created. A placement template defines placement default attributes and device templates. You cannot add or remove device templates after the project has been created. However, you can update <code>callbackOverrides</code> for the device templates using the <code>UpdateProject</code> API.</p>
         pub fn placement_template(mut self, input: crate::model::PlacementTemplate) -> Self {
             self.inner = self.inner.placement_template(input);
             self
         }
-        /// <p>The schema defining the placement to be created. A placement template defines placement
-        /// default attributes and device templates. You cannot add or remove device templates after the
-        /// project has been created. However, you can update <code>callbackOverrides</code> for the
-        /// device templates using the <code>UpdateProject</code> API.</p>
+        /// <p>The schema defining the placement to be created. A placement template defines placement default attributes and device templates. You cannot add or remove device templates after the project has been created. However, you can update <code>callbackOverrides</code> for the device templates using the <code>UpdateProject</code> API.</p>
         pub fn set_placement_template(
             mut self,
             input: std::option::Option<crate::model::PlacementTemplate>,
@@ -529,9 +516,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Optional tags (metadata key/value pairs) to be associated with the project. For example,
-        /// <code>{ {"key1": "value1", "key2": "value2"} }</code>. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging
-        /// Strategies</a>.</p>
+        /// <p>Optional tags (metadata key/value pairs) to be associated with the project. For example, <code>{ {"key1": "value1", "key2": "value2"} }</code>. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -540,9 +525,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>Optional tags (metadata key/value pairs) to be associated with the project. For example,
-        /// <code>{ {"key1": "value1", "key2": "value2"} }</code>. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging
-        /// Strategies</a>.</p>
+        /// <p>Optional tags (metadata key/value pairs) to be associated with the project. For example, <code>{ {"key1": "value1", "key2": "value2"} }</code>. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -555,9 +538,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeletePlacement`.
     ///
-    /// <p>Deletes a placement. To delete a placement, it must not have any devices associated with
-    /// it.</p>
-    /// <note>
+    /// <p>Deletes a placement. To delete a placement, it must not have any devices associated with it.</p> <note>
     /// <p>When you delete a placement, all associated data becomes irretrievable.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -642,9 +623,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteProject`.
     ///
-    /// <p>Deletes a project. To delete a project, it must not have any placements associated with
-    /// it.</p>
-    /// <note>
+    /// <p>Deletes a project. To delete a project, it must not have any placements associated with it.</p> <note>
     /// <p>When you delete a project, all associated data becomes irretrievable.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -1125,14 +1104,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return per request. If not set, a default value of 100 is
-        /// used.</p>
+        /// <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return per request. If not set, a default value of 100 is
-        /// used.</p>
+        /// <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -1207,14 +1184,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return per request. If not set, a default value of 100 is
-        /// used.</p>
+        /// <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return per request. If not set, a default value of 100 is
-        /// used.</p>
+        /// <p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -1292,9 +1267,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Creates or modifies tags for a resource. Tags are key/value pairs (metadata) that can be
-    /// used to manage a resource. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging
-    /// Strategies</a>.</p>
+    /// <p>Creates or modifies tags for a resource. Tags are key/value pairs (metadata) that can be used to manage a resource. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -1365,8 +1338,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The new or modifying tag(s) for the resource. See <a href="https://docs.aws.amazon.com/iot-1-click/latest/developerguide/1click-appendix.html#1click-limits">AWS IoT 1-Click Service Limits</a> for the maximum number of tags allowed per
-        /// resource.</p>
+        /// <p>The new or modifying tag(s) for the resource. See <a href="https://docs.aws.amazon.com/iot-1-click/latest/developerguide/1click-appendix.html#1click-limits">AWS IoT 1-Click Service Limits</a> for the maximum number of tags allowed per resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1375,8 +1347,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>The new or modifying tag(s) for the resource. See <a href="https://docs.aws.amazon.com/iot-1-click/latest/developerguide/1click-appendix.html#1click-limits">AWS IoT 1-Click Service Limits</a> for the maximum number of tags allowed per
-        /// resource.</p>
+        /// <p>The new or modifying tag(s) for the resource. See <a href="https://docs.aws.amazon.com/iot-1-click/latest/developerguide/1click-appendix.html#1click-limits">AWS IoT 1-Click Service Limits</a> for the maximum number of tags allowed per resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1476,8 +1447,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdatePlacement`.
     ///
-    /// <p>Updates a placement with the given attributes. To clear an attribute, pass an empty value
-    /// (i.e., "").</p>
+    /// <p>Updates a placement with the given attributes. To clear an attribute, pass an empty value (i.e., "").</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePlacement<
         C = aws_smithy_client::erase::DynConnector,
@@ -1561,8 +1531,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
-        /// <p>The user-defined object of attributes used to update the placement. The maximum number of
-        /// key/value pairs is 50.</p>
+        /// <p>The user-defined object of attributes used to update the placement. The maximum number of key/value pairs is 50.</p>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -1571,8 +1540,7 @@ pub mod fluent_builders {
             self.inner = self.inner.attributes(k.into(), v.into());
             self
         }
-        /// <p>The user-defined object of attributes used to update the placement. The maximum number of
-        /// key/value pairs is 50.</p>
+        /// <p>The user-defined object of attributes used to update the placement. The maximum number of key/value pairs is 50.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -1585,10 +1553,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateProject`.
     ///
-    /// <p>Updates a project associated with your AWS account and region. With the exception of
-    /// device template names, you can pass just the values that need to be updated because the update
-    /// request will change only the values that are provided. To clear a value, pass the empty string
-    /// (i.e., <code>""</code>).</p>
+    /// <p>Updates a project associated with your AWS account and region. With the exception of device template names, you can pass just the values that need to be updated because the update request will change only the values that are provided. To clear a value, pass the empty string (i.e., <code>""</code>).</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateProject<
         C = aws_smithy_client::erase::DynConnector,
@@ -1665,18 +1630,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>An object defining the project update. Once a project has been created, you cannot add
-        /// device template names to the project. However, for a given <code>placementTemplate</code>, you
-        /// can update the associated <code>callbackOverrides</code> for the device definition using this
-        /// API.</p>
+        /// <p>An object defining the project update. Once a project has been created, you cannot add device template names to the project. However, for a given <code>placementTemplate</code>, you can update the associated <code>callbackOverrides</code> for the device definition using this API.</p>
         pub fn placement_template(mut self, input: crate::model::PlacementTemplate) -> Self {
             self.inner = self.inner.placement_template(input);
             self
         }
-        /// <p>An object defining the project update. Once a project has been created, you cannot add
-        /// device template names to the project. However, for a given <code>placementTemplate</code>, you
-        /// can update the associated <code>callbackOverrides</code> for the device definition using this
-        /// API.</p>
+        /// <p>An object defining the project update. Once a project has been created, you cannot add device template names to the project. However, for a given <code>placementTemplate</code>, you can update the associated <code>callbackOverrides</code> for the device definition using this API.</p>
         pub fn set_placement_template(
             mut self,
             input: std::option::Option<crate::model::PlacementTemplate>,

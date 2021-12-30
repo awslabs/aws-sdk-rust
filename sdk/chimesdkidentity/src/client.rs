@@ -278,9 +278,7 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CreateAppInstance`.
     ///
-    /// <p>Creates an Amazon Chime SDK messaging <code>AppInstance</code> under an AWS account.
-    /// Only SDK messaging customers use this API. <code>CreateAppInstance</code> supports
-    /// idempotency behavior as described in the AWS API Standard.</p>
+    /// <p>Creates an Amazon Chime SDK messaging <code>AppInstance</code> under an AWS account. Only SDK messaging customers use this API. <code>CreateAppInstance</code> supports idempotency behavior as described in the AWS API Standard.</p>
     /// <p>identity</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAppInstance<
@@ -391,23 +389,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateAppInstanceAdmin`.
     ///
-    /// <p>Promotes an <code>AppInstanceUser</code> to an <code>AppInstanceAdmin</code>. The
-    /// promoted user can perform the following actions. </p>
-    ///
+    /// <p>Promotes an <code>AppInstanceUser</code> to an <code>AppInstanceAdmin</code>. The promoted user can perform the following actions. </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ChannelModerator</code> actions across all channels in the
-    /// <code>AppInstance</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DeleteChannelMessage</code> actions.</p>
-    /// </li>
+    /// <li> <p> <code>ChannelModerator</code> actions across all channels in the <code>AppInstance</code>.</p> </li>
+    /// <li> <p> <code>DeleteChannelMessage</code> actions.</p> </li>
     /// </ul>
-    ///
-    /// <p>Only an <code>AppInstanceUser</code> can be promoted to an <code>AppInstanceAdmin</code>
-    /// role.</p>
+    /// <p>Only an <code>AppInstanceUser</code> can be promoted to an <code>AppInstanceAdmin</code> role.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAppInstanceAdmin<
         C = aws_smithy_client::erase::DynConnector,
@@ -493,8 +480,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateAppInstanceUser`.
     ///
-    /// <p>Creates a user under an Amazon Chime <code>AppInstance</code>. The request consists of a
-    /// unique <code>appInstanceUserId</code> and <code>Name</code> for that user.</p>
+    /// <p>Creates a user under an Amazon Chime <code>AppInstance</code>. The request consists of a unique <code>appInstanceUserId</code> and <code>Name</code> for that user.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAppInstanceUser<
         C = aws_smithy_client::erase::DynConnector,
@@ -703,8 +689,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteAppInstanceAdmin`.
     ///
-    /// <p>Demotes an <code>AppInstanceAdmin</code> to an <code>AppInstanceUser</code>. This action
-    /// does not delete the user.</p>
+    /// <p>Demotes an <code>AppInstanceAdmin</code> to an <code>AppInstanceUser</code>. This action does not delete the user.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAppInstanceAdmin<
         C = aws_smithy_client::erase::DynConnector,
@@ -1414,14 +1399,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token returned from previous API requests until the number of administrators is
-        /// reached.</p>
+        /// <p>The token returned from previous API requests until the number of administrators is reached.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token returned from previous API requests until the number of administrators is
-        /// reached.</p>
+        /// <p>The token returned from previous API requests until the number of administrators is reached.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1429,8 +1412,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAppInstances`.
     ///
-    /// <p>Lists all Amazon Chime <code>AppInstance</code>s created under a single AWS
-    /// account.</p>
+    /// <p>Lists all Amazon Chime <code>AppInstance</code>s created under a single AWS account.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAppInstances<
         C = aws_smithy_client::erase::DynConnector,
@@ -1497,14 +1479,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token passed by previous API requests until you reach the maximum number of
-        /// <code>AppInstances</code>.</p>
+        /// <p>The token passed by previous API requests until you reach the maximum number of <code>AppInstances</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token passed by previous API requests until you reach the maximum number of
-        /// <code>AppInstances</code>.</p>
+        /// <p>The token passed by previous API requests until you reach the maximum number of <code>AppInstances</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1605,8 +1585,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAppInstanceUsers`.
     ///
-    /// <p>List all <code>AppInstanceUsers</code> created under a single
-    /// <code>AppInstance</code>.</p>
+    /// <p>List all <code>AppInstanceUsers</code> created under a single <code>AppInstance</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAppInstanceUsers<
         C = aws_smithy_client::erase::DynConnector,
@@ -1769,8 +1748,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutAppInstanceRetentionSettings`.
     ///
-    /// <p>Sets the amount of time in days that a given <code>AppInstance</code> retains
-    /// data.</p>
+    /// <p>Sets the amount of time in days that a given <code>AppInstance</code> retains data.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutAppInstanceRetentionSettings<
         C = aws_smithy_client::erase::DynConnector,
@@ -1941,18 +1919,9 @@ pub mod fluent_builders {
         }
         /// <p>The type of the <code>AppInstanceUserEndpoint</code>. Supported types:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>APNS</code>: The mobile notification service for an Apple device.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>APNS_SANDBOX</code>: The sandbox environment of the mobile notification service for an Apple device.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GCM</code>: The mobile notification service for an Android device.</p>
-        /// </li>
+        /// <li> <p> <code>APNS</code>: The mobile notification service for an Apple device.</p> </li>
+        /// <li> <p> <code>APNS_SANDBOX</code>: The sandbox environment of the mobile notification service for an Apple device.</p> </li>
+        /// <li> <p> <code>GCM</code>: The mobile notification service for an Android device.</p> </li>
         /// </ul>
         /// <p>Populate the <code>ResourceArn</code> value of each type as <code>PinpointAppArn</code>.</p>
         pub fn r#type(mut self, input: crate::model::AppInstanceUserEndpointType) -> Self {
@@ -1961,18 +1930,9 @@ pub mod fluent_builders {
         }
         /// <p>The type of the <code>AppInstanceUserEndpoint</code>. Supported types:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>APNS</code>: The mobile notification service for an Apple device.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>APNS_SANDBOX</code>: The sandbox environment of the mobile notification service for an Apple device.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GCM</code>: The mobile notification service for an Android device.</p>
-        /// </li>
+        /// <li> <p> <code>APNS</code>: The mobile notification service for an Apple device.</p> </li>
+        /// <li> <p> <code>APNS_SANDBOX</code>: The sandbox environment of the mobile notification service for an Apple device.</p> </li>
+        /// <li> <p> <code>GCM</code>: The mobile notification service for an Android device.</p> </li>
         /// </ul>
         /// <p>Populate the <code>ResourceArn</code> value of each type as <code>PinpointAppArn</code>.</p>
         pub fn set_type(
@@ -2018,14 +1978,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_request_token(input);
             self
         }
-        /// <p>Boolean that controls whether the AppInstanceUserEndpoint is opted in to receive messages. <code>ALL</code> indicates the endpoint receives all messages.
-        /// <code>NONE</code> indicates the endpoint receives no messages.</p>
+        /// <p>Boolean that controls whether the AppInstanceUserEndpoint is opted in to receive messages. <code>ALL</code> indicates the endpoint receives all messages. <code>NONE</code> indicates the endpoint receives no messages.</p>
         pub fn allow_messages(mut self, input: crate::model::AllowMessages) -> Self {
             self.inner = self.inner.allow_messages(input);
             self
         }
-        /// <p>Boolean that controls whether the AppInstanceUserEndpoint is opted in to receive messages. <code>ALL</code> indicates the endpoint receives all messages.
-        /// <code>NONE</code> indicates the endpoint receives no messages.</p>
+        /// <p>Boolean that controls whether the AppInstanceUserEndpoint is opted in to receive messages. <code>ALL</code> indicates the endpoint receives all messages. <code>NONE</code> indicates the endpoint receives no messages.</p>
         pub fn set_allow_messages(
             mut self,
             input: std::option::Option<crate::model::AllowMessages>,
@@ -2303,8 +2261,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateAppInstanceUser`.
     ///
-    /// <p>Updates the details of an <code>AppInstanceUser</code>. You can update names and
-    /// metadata.</p>
+    /// <p>Updates the details of an <code>AppInstanceUser</code>. You can update names and metadata.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAppInstanceUser<
         C = aws_smithy_client::erase::DynConnector,
@@ -2487,14 +2444,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Boolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages.
-        /// <code>NONE</code> indicates the endpoint will receive no messages.</p>
+        /// <p>Boolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages. <code>NONE</code> indicates the endpoint will receive no messages.</p>
         pub fn allow_messages(mut self, input: crate::model::AllowMessages) -> Self {
             self.inner = self.inner.allow_messages(input);
             self
         }
-        /// <p>Boolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages.
-        /// <code>NONE</code> indicates the endpoint will receive no messages.</p>
+        /// <p>Boolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages. <code>NONE</code> indicates the endpoint will receive no messages.</p>
         pub fn set_allow_messages(
             mut self,
             input: std::option::Option<crate::model::AllowMessages>,

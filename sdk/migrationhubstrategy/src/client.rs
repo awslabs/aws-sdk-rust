@@ -319,8 +319,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetApplicationComponentStrategies`.
     ///
-    /// <p> Retrieves a list of all the recommended strategies and tools for an application component
-    /// running on a server. </p>
+    /// <p> Retrieves a list of all the recommended strategies and tools for an application component running on a server. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetApplicationComponentStrategies<
         C = aws_smithy_client::erase::DynConnector,
@@ -450,12 +449,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> The <code>assessmentid</code> returned by <a>StartAssessment</a>.</p>
+        /// <p> The <code>assessmentid</code> returned by <code>StartAssessment</code>.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
-        /// <p> The <code>assessmentid</code> returned by <a>StartAssessment</a>.</p>
+        /// <p> The <code>assessmentid</code> returned by <code>StartAssessment</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
@@ -520,14 +519,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> The ID of the import file task. This ID is returned in the response of
-        /// <a>StartImportFileTask</a>. </p>
+        /// <p> The ID of the import file task. This ID is returned in the response of <code>StartImportFileTask</code>. </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
-        /// <p> The ID of the import file task. This ID is returned in the response of
-        /// <a>StartImportFileTask</a>. </p>
+        /// <p> The ID of the import file task. This ID is returned in the response of <code>StartImportFileTask</code>. </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
@@ -595,8 +592,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetPortfolioSummary`.
     ///
-    /// <p> Retrieves overall summary including the number of servers to rehost and the overall
-    /// number of anti-patterns. </p>
+    /// <p> Retrieves overall summary including the number of servers to rehost and the overall number of anti-patterns. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPortfolioSummary<
         C = aws_smithy_client::erase::DynConnector,
@@ -713,14 +709,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> The recommendation report generation task <code>id</code> returned by
-        /// <a>StartRecommendationReportGeneration</a>. </p>
+        /// <p> The recommendation report generation task <code>id</code> returned by <code>StartRecommendationReportGeneration</code>. </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.id(input.into());
             self
         }
-        /// <p> The recommendation report generation task <code>id</code> returned by
-        /// <a>StartRecommendationReportGeneration</a>. </p>
+        /// <p> The recommendation report generation task <code>id</code> returned by <code>StartRecommendationReportGeneration</code>. </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
             self
@@ -795,16 +789,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_server_id(input);
             self
         }
-        /// <p> The token from a previous call that you use to retrieve the next set of results. For example,
-        /// if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along
-        /// with a token. You then use the returned token to retrieve the next set of 10. </p>
+        /// <p> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p> The token from a previous call that you use to retrieve the next set of results. For example,
-        /// if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along
-        /// with a token. You then use the returned token to retrieve the next set of 10. </p>
+        /// <p> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -965,30 +955,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_application_component_criteria(input);
             self
         }
-        /// <p> Specify the value based on the application component criteria type. For example, if
-        /// <code>applicationComponentCriteria</code> is set to <code>SERVER_ID</code> and
-        /// <code>filterValue</code> is set to <code>server1</code>, then <a>ListApplicationComponents</a> returns all the application components running on
-        /// server1. </p>
+        /// <p> Specify the value based on the application component criteria type. For example, if <code>applicationComponentCriteria</code> is set to <code>SERVER_ID</code> and <code>filterValue</code> is set to <code>server1</code>, then <code>ListApplicationComponents</code> returns all the application components running on server1. </p>
         pub fn filter_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.filter_value(input.into());
             self
         }
-        /// <p> Specify the value based on the application component criteria type. For example, if
-        /// <code>applicationComponentCriteria</code> is set to <code>SERVER_ID</code> and
-        /// <code>filterValue</code> is set to <code>server1</code>, then <a>ListApplicationComponents</a> returns all the application components running on
-        /// server1. </p>
+        /// <p> Specify the value based on the application component criteria type. For example, if <code>applicationComponentCriteria</code> is set to <code>SERVER_ID</code> and <code>filterValue</code> is set to <code>server1</code>, then <code>ListApplicationComponents</code> returns all the application components running on server1. </p>
         pub fn set_filter_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_filter_value(input);
             self
         }
-        /// <p> Specifies whether to sort by ascending (<code>ASC</code>) or descending
-        /// (<code>DESC</code>) order. </p>
+        /// <p> Specifies whether to sort by ascending (<code>ASC</code>) or descending (<code>DESC</code>) order. </p>
         pub fn sort(mut self, input: crate::model::SortOrder) -> Self {
             self.inner = self.inner.sort(input);
             self
         }
-        /// <p> Specifies whether to sort by ascending (<code>ASC</code>) or descending
-        /// (<code>DESC</code>) order. </p>
+        /// <p> Specifies whether to sort by ascending (<code>ASC</code>) or descending (<code>DESC</code>) order. </p>
         pub fn set_sort(mut self, input: std::option::Option<crate::model::SortOrder>) -> Self {
             self.inner = self.inner.set_sort(input);
             self
@@ -1010,16 +992,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_group_id_filter(input);
             self
         }
-        /// <p> The token from a previous call that you use to retrieve the next set of results. For example,
-        /// if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along
-        /// with a token. You then use the returned token to retrieve the next set of 10. </p>
+        /// <p> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p> The token from a previous call that you use to retrieve the next set of results. For example,
-        /// if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along
-        /// with a token. You then use the returned token to retrieve the next set of 10. </p>
+        /// <p> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1094,16 +1072,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> The token from a previous call that you use to retrieve the next set of results. For example,
-        /// if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along
-        /// with a token. You then use the returned token to retrieve the next set of 10. </p>
+        /// <p> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p> The token from a previous call that you use to retrieve the next set of results. For example,
-        /// if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along
-        /// with a token. You then use the returned token to retrieve the next set of 10. </p>
+        /// <p> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1178,16 +1152,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> The token from a previous call that you use to retrieve the next set of results. For example,
-        /// if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along
-        /// with a token. You then use the returned token to retrieve the next set of 10. </p>
+        /// <p> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p> The token from a previous call that you use to retrieve the next set of results. For example,
-        /// if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along
-        /// with a token. You then use the returned token to retrieve the next set of 10. </p>
+        /// <p> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1275,30 +1245,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_server_criteria(input);
             self
         }
-        /// <p> Specifies the filter value, which is based on the type of server criteria. For example,
-        /// if <code>serverCriteria</code> is <code>OS_NAME</code>, and the <code>filterValue</code> is
-        /// equal to <code>WindowsServer</code>, then <code>ListServers</code> returns all of the servers
-        /// matching the OS name <code>WindowsServer</code>. </p>
+        /// <p> Specifies the filter value, which is based on the type of server criteria. For example, if <code>serverCriteria</code> is <code>OS_NAME</code>, and the <code>filterValue</code> is equal to <code>WindowsServer</code>, then <code>ListServers</code> returns all of the servers matching the OS name <code>WindowsServer</code>. </p>
         pub fn filter_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.filter_value(input.into());
             self
         }
-        /// <p> Specifies the filter value, which is based on the type of server criteria. For example,
-        /// if <code>serverCriteria</code> is <code>OS_NAME</code>, and the <code>filterValue</code> is
-        /// equal to <code>WindowsServer</code>, then <code>ListServers</code> returns all of the servers
-        /// matching the OS name <code>WindowsServer</code>. </p>
+        /// <p> Specifies the filter value, which is based on the type of server criteria. For example, if <code>serverCriteria</code> is <code>OS_NAME</code>, and the <code>filterValue</code> is equal to <code>WindowsServer</code>, then <code>ListServers</code> returns all of the servers matching the OS name <code>WindowsServer</code>. </p>
         pub fn set_filter_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_filter_value(input);
             self
         }
-        /// <p> Specifies whether to sort by ascending (<code>ASC</code>) or descending
-        /// (<code>DESC</code>) order. </p>
+        /// <p> Specifies whether to sort by ascending (<code>ASC</code>) or descending (<code>DESC</code>) order. </p>
         pub fn sort(mut self, input: crate::model::SortOrder) -> Self {
             self.inner = self.inner.sort(input);
             self
         }
-        /// <p> Specifies whether to sort by ascending (<code>ASC</code>) or descending
-        /// (<code>DESC</code>) order. </p>
+        /// <p> Specifies whether to sort by ascending (<code>ASC</code>) or descending (<code>DESC</code>) order. </p>
         pub fn set_sort(mut self, input: std::option::Option<crate::model::SortOrder>) -> Self {
             self.inner = self.inner.set_sort(input);
             self
@@ -1320,16 +1282,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_group_id_filter(input);
             self
         }
-        /// <p> The token from a previous call that you use to retrieve the next set of results. For example,
-        /// if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along
-        /// with a token. You then use the returned token to retrieve the next set of 10. </p>
+        /// <p> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p> The token from a previous call that you use to retrieve the next set of results. For example,
-        /// if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along
-        /// with a token. You then use the returned token to retrieve the next set of 10. </p>
+        /// <p> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1509,18 +1467,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The S3 bucket used by the collectors to send analysis data to the service.
-        /// The bucket name must begin with <code>migrationhub-strategy-</code>.
-        /// </p>
+        /// <p> The S3 bucket used by the collectors to send analysis data to the service. The bucket name must begin with <code>migrationhub-strategy-</code>. </p>
         pub fn s3bucket_for_analysis_data(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.s3bucket_for_analysis_data(input.into());
             self
         }
-        /// <p>
-        /// The S3 bucket used by the collectors to send analysis data to the service.
-        /// The bucket name must begin with <code>migrationhub-strategy-</code>.
-        /// </p>
+        /// <p> The S3 bucket used by the collectors to send analysis data to the service. The bucket name must begin with <code>migrationhub-strategy-</code>. </p>
         pub fn set_s3bucket_for_analysis_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1528,18 +1480,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_s3bucket_for_analysis_data(input);
             self
         }
-        /// <p>
-        /// The S3 bucket where all the reports generated by the service are stored.
-        /// The bucket name must begin with <code>migrationhub-strategy-</code>.
-        /// </p>
+        /// <p> The S3 bucket where all the reports generated by the service are stored. The bucket name must begin with <code>migrationhub-strategy-</code>. </p>
         pub fn s3bucket_for_report_data(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.s3bucket_for_report_data(input.into());
             self
         }
-        /// <p>
-        /// The S3 bucket where all the reports generated by the service are stored.
-        /// The bucket name must begin with <code>migrationhub-strategy-</code>.
-        /// </p>
+        /// <p> The S3 bucket where all the reports generated by the service are stored. The bucket name must begin with <code>migrationhub-strategy-</code>. </p>
         pub fn set_s3bucket_for_report_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1617,14 +1563,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p> The S3 bucket where the import file is located. The bucket name is required to begin with
-        /// <code>migrationhub-strategy-</code>.</p>
+        /// <p> The S3 bucket where the import file is located. The bucket name is required to begin with <code>migrationhub-strategy-</code>.</p>
         pub fn s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.s3_bucket(input.into());
             self
         }
-        /// <p> The S3 bucket where the import file is located. The bucket name is required to begin with
-        /// <code>migrationhub-strategy-</code>.</p>
+        /// <p> The S3 bucket where the import file is located. The bucket name is required to begin with <code>migrationhub-strategy-</code>.</p>
         pub fn set_s3_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_s3_bucket(input);
             self
@@ -1639,14 +1583,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_s3key(input);
             self
         }
-        /// <p>Specifies the source that the servers are coming from. By default, Strategy Recommendations assumes that
-        /// the servers specified in the import file are available in AWS Application Discovery Service. </p>
+        /// <p>Specifies the source that the servers are coming from. By default, Strategy Recommendations assumes that the servers specified in the import file are available in AWS Application Discovery Service. </p>
         pub fn data_source_type(mut self, input: crate::model::DataSourceType) -> Self {
             self.inner = self.inner.data_source_type(input);
             self
         }
-        /// <p>Specifies the source that the servers are coming from. By default, Strategy Recommendations assumes that
-        /// the servers specified in the import file are available in AWS Application Discovery Service. </p>
+        /// <p>Specifies the source that the servers are coming from. By default, Strategy Recommendations assumes that the servers specified in the import file are available in AWS Application Discovery Service. </p>
         pub fn set_data_source_type(
             mut self,
             input: std::option::Option<crate::model::DataSourceType>,
@@ -1658,14 +1600,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_group_id`](Self::set_group_id).
         ///
-        /// <p>Groups the resources in the import file together with a unique name. This ID can be as
-        /// filter in <code>ListApplicationComponents</code> and <code>ListServers</code>. </p>
+        /// <p>Groups the resources in the import file together with a unique name. This ID can be as filter in <code>ListApplicationComponents</code> and <code>ListServers</code>. </p>
         pub fn group_id(mut self, input: crate::model::Group) -> Self {
             self.inner = self.inner.group_id(input);
             self
         }
-        /// <p>Groups the resources in the import file together with a unique name. This ID can be as
-        /// filter in <code>ListApplicationComponents</code> and <code>ListServers</code>. </p>
+        /// <p>Groups the resources in the import file together with a unique name. This ID can be as filter in <code>ListApplicationComponents</code> and <code>ListServers</code>. </p>
         pub fn set_group_id(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Group>>,
@@ -1673,14 +1613,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_group_id(input);
             self
         }
-        /// <p> The S3 bucket where Strategy Recommendations uploads import results. The bucket name is required to
-        /// begin with migrationhub-strategy-. </p>
+        /// <p> The S3 bucket where Strategy Recommendations uploads import results. The bucket name is required to begin with migrationhub-strategy-. </p>
         pub fn s3bucket_for_report_data(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.s3bucket_for_report_data(input.into());
             self
         }
-        /// <p> The S3 bucket where Strategy Recommendations uploads import results. The bucket name is required to
-        /// begin with migrationhub-strategy-. </p>
+        /// <p> The S3 bucket where Strategy Recommendations uploads import results. The bucket name is required to begin with migrationhub-strategy-. </p>
         pub fn set_s3bucket_for_report_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1840,12 +1778,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> The <code>assessmentId</code> returned by <a>StartAssessment</a>. </p>
+        /// <p> The <code>assessmentId</code> returned by <code>StartAssessment</code>. </p>
         pub fn assessment_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.assessment_id(input.into());
             self
         }
-        /// <p> The <code>assessmentId</code> returned by <a>StartAssessment</a>. </p>
+        /// <p> The <code>assessmentId</code> returned by <code>StartAssessment</code>. </p>
         pub fn set_assessment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1926,14 +1864,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_application_component_id(input);
             self
         }
-        /// <p> Indicates whether the application component has been included for server recommendation
-        /// or not. </p>
+        /// <p> Indicates whether the application component has been included for server recommendation or not. </p>
         pub fn inclusion_status(mut self, input: crate::model::InclusionStatus) -> Self {
             self.inner = self.inner.inclusion_status(input);
             self
         }
-        /// <p> Indicates whether the application component has been included for server recommendation
-        /// or not. </p>
+        /// <p> Indicates whether the application component has been included for server recommendation or not. </p>
         pub fn set_inclusion_status(
             mut self,
             input: std::option::Option<crate::model::InclusionStatus>,
@@ -1941,12 +1877,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_inclusion_status(input);
             self
         }
-        /// <p> The preferred strategy options for the application component. Use values from the <a>GetApplicationComponentStrategies</a> response. </p>
+        /// <p> The preferred strategy options for the application component. Use values from the <code>GetApplicationComponentStrategies</code> response. </p>
         pub fn strategy_option(mut self, input: crate::model::StrategyOption) -> Self {
             self.inner = self.inner.strategy_option(input);
             self
         }
-        /// <p> The preferred strategy options for the application component. Use values from the <a>GetApplicationComponentStrategies</a> response. </p>
+        /// <p> The preferred strategy options for the application component. Use values from the <code>GetApplicationComponentStrategies</code> response. </p>
         pub fn set_strategy_option(
             mut self,
             input: std::option::Option<crate::model::StrategyOption>,
@@ -2054,12 +1990,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_server_id(input);
             self
         }
-        /// <p> The preferred strategy options for the application component. See the response from <a>GetServerStrategies</a>.</p>
+        /// <p> The preferred strategy options for the application component. See the response from <code>GetServerStrategies</code>.</p>
         pub fn strategy_option(mut self, input: crate::model::StrategyOption) -> Self {
             self.inner = self.inner.strategy_option(input);
             self
         }
-        /// <p> The preferred strategy options for the application component. See the response from <a>GetServerStrategies</a>.</p>
+        /// <p> The preferred strategy options for the application component. See the response from <code>GetServerStrategies</code>.</p>
         pub fn set_strategy_option(
             mut self,
             input: std::option::Option<crate::model::StrategyOption>,

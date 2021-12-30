@@ -12,19 +12,13 @@ pub struct AddNotificationChannelsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AddNotificationChannelsErrorKind {
-    /// <p>The requested operation would cause a conflict with the current state
-    /// of a service resource associated with the request. Resolve the conflict
-    /// before retrying this request.
-    /// </p>
+    /// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request. </p>
     ConflictException(crate::error::ConflictException),
     /// <p>The server encountered an internal error and is unable to complete the request.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The resource specified in the request does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>You have exceeded your service quota. To perform the requested action,
-    /// remove some of the relevant resources, or use <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/intro.html">Service Quotas</a> to request a
-    /// service quota increase.
-    /// </p>
+    /// <p>You have exceeded your service quota. To perform the requested action, remove some of the relevant resources, or use <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/intro.html">Service Quotas</a> to request a service quota increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -441,17 +435,11 @@ pub struct CreateProfilingGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateProfilingGroupErrorKind {
-    /// <p>The requested operation would cause a conflict with the current state
-    /// of a service resource associated with the request. Resolve the conflict
-    /// before retrying this request.
-    /// </p>
+    /// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request. </p>
     ConflictException(crate::error::ConflictException),
     /// <p>The server encountered an internal error and is unable to complete the request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>You have exceeded your service quota. To perform the requested action,
-    /// remove some of the relevant resources, or use <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/intro.html">Service Quotas</a> to request a
-    /// service quota increase.
-    /// </p>
+    /// <p>You have exceeded your service quota. To perform the requested action, remove some of the relevant resources, or use <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/intro.html">Service Quotas</a> to request a service quota increase. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -595,10 +583,7 @@ pub struct DeleteProfilingGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteProfilingGroupErrorKind {
-    /// <p>The requested operation would cause a conflict with the current state
-    /// of a service resource associated with the request. Resolve the conflict
-    /// before retrying this request.
-    /// </p>
+    /// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request. </p>
     ConflictException(crate::error::ConflictException),
     /// <p>The server encountered an internal error and is unable to complete the request.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -2148,10 +2133,7 @@ pub struct PutPermissionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutPermissionErrorKind {
-    /// <p>The requested operation would cause a conflict with the current state
-    /// of a service resource associated with the request. Resolve the conflict
-    /// before retrying this request.
-    /// </p>
+    /// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request. </p>
     ConflictException(crate::error::ConflictException),
     /// <p>The server encountered an internal error and is unable to complete the request.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -2421,10 +2403,7 @@ pub struct RemovePermissionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RemovePermissionErrorKind {
-    /// <p>The requested operation would cause a conflict with the current state
-    /// of a service resource associated with the request. Resolve the conflict
-    /// before retrying this request.
-    /// </p>
+    /// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request. </p>
     ConflictException(crate::error::ConflictException),
     /// <p>The server encountered an internal error and is unable to complete the request.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -2925,10 +2904,7 @@ pub struct UpdateProfilingGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateProfilingGroupErrorKind {
-    /// <p>The requested operation would cause a conflict with the current state
-    /// of a service resource associated with the request. Resolve the conflict
-    /// before retrying this request.
-    /// </p>
+    /// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request. </p>
     ConflictException(crate::error::ConflictException),
     /// <p>The server encountered an internal error and is unable to complete the request.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -3324,10 +3300,7 @@ impl InternalServerException {
     }
 }
 
-/// <p>The requested operation would cause a conflict with the current state
-/// of a service resource associated with the request. Resolve the conflict
-/// before retrying this request.
-/// </p>
+/// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {
@@ -3391,10 +3364,7 @@ impl ConflictException {
     }
 }
 
-/// <p>You have exceeded your service quota. To perform the requested action,
-/// remove some of the relevant resources, or use <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/intro.html">Service Quotas</a> to request a
-/// service quota increase.
-/// </p>
+/// <p>You have exceeded your service quota. To perform the requested action, remove some of the relevant resources, or use <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/intro.html">Service Quotas</a> to request a service quota increase. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceQuotaExceededException {

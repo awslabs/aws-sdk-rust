@@ -59,28 +59,17 @@ impl VerifyEmailAddressOutput {
     }
 }
 
-/// <p>Returns a TXT record that you must publish to the DNS server of your domain to
-/// complete domain verification with Amazon SES.</p>
+/// <p>Returns a TXT record that you must publish to the DNS server of your domain to complete domain verification with Amazon SES.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VerifyDomainIdentityOutput {
-    /// <p>A TXT record that you must place in the DNS settings of the domain to complete domain
-    /// verification with Amazon SES.</p>
-    /// <p>As Amazon SES searches for the TXT record, the domain's verification status is "Pending".
-    /// When Amazon SES detects the record, the domain's verification status changes to "Success". If
-    /// Amazon SES is unable to detect the record within 72 hours, the domain's verification status
-    /// changes to "Failed." In that case, if you still want to verify the domain, you must
-    /// restart the verification process from the beginning.</p>
+    /// <p>A TXT record that you must place in the DNS settings of the domain to complete domain verification with Amazon SES.</p>
+    /// <p>As Amazon SES searches for the TXT record, the domain's verification status is "Pending". When Amazon SES detects the record, the domain's verification status changes to "Success". If Amazon SES is unable to detect the record within 72 hours, the domain's verification status changes to "Failed." In that case, if you still want to verify the domain, you must restart the verification process from the beginning.</p>
     pub verification_token: std::option::Option<std::string::String>,
 }
 impl VerifyDomainIdentityOutput {
-    /// <p>A TXT record that you must place in the DNS settings of the domain to complete domain
-    /// verification with Amazon SES.</p>
-    /// <p>As Amazon SES searches for the TXT record, the domain's verification status is "Pending".
-    /// When Amazon SES detects the record, the domain's verification status changes to "Success". If
-    /// Amazon SES is unable to detect the record within 72 hours, the domain's verification status
-    /// changes to "Failed." In that case, if you still want to verify the domain, you must
-    /// restart the verification process from the beginning.</p>
+    /// <p>A TXT record that you must place in the DNS settings of the domain to complete domain verification with Amazon SES.</p>
+    /// <p>As Amazon SES searches for the TXT record, the domain's verification status is "Pending". When Amazon SES detects the record, the domain's verification status changes to "Success". If Amazon SES is unable to detect the record within 72 hours, the domain's verification status changes to "Failed." In that case, if you still want to verify the domain, you must restart the verification process from the beginning.</p>
     pub fn verification_token(&self) -> std::option::Option<&str> {
         self.verification_token.as_deref()
     }
@@ -101,24 +90,14 @@ pub mod verify_domain_identity_output {
         pub(crate) verification_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A TXT record that you must place in the DNS settings of the domain to complete domain
-        /// verification with Amazon SES.</p>
-        /// <p>As Amazon SES searches for the TXT record, the domain's verification status is "Pending".
-        /// When Amazon SES detects the record, the domain's verification status changes to "Success". If
-        /// Amazon SES is unable to detect the record within 72 hours, the domain's verification status
-        /// changes to "Failed." In that case, if you still want to verify the domain, you must
-        /// restart the verification process from the beginning.</p>
+        /// <p>A TXT record that you must place in the DNS settings of the domain to complete domain verification with Amazon SES.</p>
+        /// <p>As Amazon SES searches for the TXT record, the domain's verification status is "Pending". When Amazon SES detects the record, the domain's verification status changes to "Success". If Amazon SES is unable to detect the record within 72 hours, the domain's verification status changes to "Failed." In that case, if you still want to verify the domain, you must restart the verification process from the beginning.</p>
         pub fn verification_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.verification_token = Some(input.into());
             self
         }
-        /// <p>A TXT record that you must place in the DNS settings of the domain to complete domain
-        /// verification with Amazon SES.</p>
-        /// <p>As Amazon SES searches for the TXT record, the domain's verification status is "Pending".
-        /// When Amazon SES detects the record, the domain's verification status changes to "Success". If
-        /// Amazon SES is unable to detect the record within 72 hours, the domain's verification status
-        /// changes to "Failed." In that case, if you still want to verify the domain, you must
-        /// restart the verification process from the beginning.</p>
+        /// <p>A TXT record that you must place in the DNS settings of the domain to complete domain verification with Amazon SES.</p>
+        /// <p>As Amazon SES searches for the TXT record, the domain's verification status is "Pending". When Amazon SES detects the record, the domain's verification status changes to "Success". If Amazon SES is unable to detect the record within 72 hours, the domain's verification status changes to "Failed." In that case, if you still want to verify the domain, you must restart the verification process from the beginning.</p>
         pub fn set_verification_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -141,32 +120,19 @@ impl VerifyDomainIdentityOutput {
     }
 }
 
-/// <p>Returns CNAME records that you must publish to the DNS server of your domain to set up
-/// Easy DKIM with Amazon SES.</p>
+/// <p>Returns CNAME records that you must publish to the DNS server of your domain to set up Easy DKIM with Amazon SES.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VerifyDomainDkimOutput {
-    /// <p>A set of character strings that represent the domain's identity. If the identity is an
-    /// email address, the tokens represent the domain of that address.</p>
-    /// <p>Using these tokens, you need to create DNS CNAME records that point to DKIM public
-    /// keys that are hosted by Amazon SES. Amazon Web Services eventually detects that you've updated your DNS
-    /// records. This detection process might take up to 72 hours. After successful detection,
-    /// Amazon SES is able to DKIM-sign email originating from that domain. (This only applies to
-    /// domain identities, not email address identities.)</p>
-    /// <p>For more information about creating DNS records using DKIM tokens, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon SES Developer
-    /// Guide</a>.</p>
+    /// <p>A set of character strings that represent the domain's identity. If the identity is an email address, the tokens represent the domain of that address.</p>
+    /// <p>Using these tokens, you need to create DNS CNAME records that point to DKIM public keys that are hosted by Amazon SES. Amazon Web Services eventually detects that you've updated your DNS records. This detection process might take up to 72 hours. After successful detection, Amazon SES is able to DKIM-sign email originating from that domain. (This only applies to domain identities, not email address identities.)</p>
+    /// <p>For more information about creating DNS records using DKIM tokens, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon SES Developer Guide</a>.</p>
     pub dkim_tokens: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl VerifyDomainDkimOutput {
-    /// <p>A set of character strings that represent the domain's identity. If the identity is an
-    /// email address, the tokens represent the domain of that address.</p>
-    /// <p>Using these tokens, you need to create DNS CNAME records that point to DKIM public
-    /// keys that are hosted by Amazon SES. Amazon Web Services eventually detects that you've updated your DNS
-    /// records. This detection process might take up to 72 hours. After successful detection,
-    /// Amazon SES is able to DKIM-sign email originating from that domain. (This only applies to
-    /// domain identities, not email address identities.)</p>
-    /// <p>For more information about creating DNS records using DKIM tokens, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon SES Developer
-    /// Guide</a>.</p>
+    /// <p>A set of character strings that represent the domain's identity. If the identity is an email address, the tokens represent the domain of that address.</p>
+    /// <p>Using these tokens, you need to create DNS CNAME records that point to DKIM public keys that are hosted by Amazon SES. Amazon Web Services eventually detects that you've updated your DNS records. This detection process might take up to 72 hours. After successful detection, Amazon SES is able to DKIM-sign email originating from that domain. (This only applies to domain identities, not email address identities.)</p>
+    /// <p>For more information about creating DNS records using DKIM tokens, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon SES Developer Guide</a>.</p>
     pub fn dkim_tokens(&self) -> std::option::Option<&[std::string::String]> {
         self.dkim_tokens.as_deref()
     }
@@ -191,30 +157,18 @@ pub mod verify_domain_dkim_output {
         ///
         /// To override the contents of this collection use [`set_dkim_tokens`](Self::set_dkim_tokens).
         ///
-        /// <p>A set of character strings that represent the domain's identity. If the identity is an
-        /// email address, the tokens represent the domain of that address.</p>
-        /// <p>Using these tokens, you need to create DNS CNAME records that point to DKIM public
-        /// keys that are hosted by Amazon SES. Amazon Web Services eventually detects that you've updated your DNS
-        /// records. This detection process might take up to 72 hours. After successful detection,
-        /// Amazon SES is able to DKIM-sign email originating from that domain. (This only applies to
-        /// domain identities, not email address identities.)</p>
-        /// <p>For more information about creating DNS records using DKIM tokens, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon SES Developer
-        /// Guide</a>.</p>
+        /// <p>A set of character strings that represent the domain's identity. If the identity is an email address, the tokens represent the domain of that address.</p>
+        /// <p>Using these tokens, you need to create DNS CNAME records that point to DKIM public keys that are hosted by Amazon SES. Amazon Web Services eventually detects that you've updated your DNS records. This detection process might take up to 72 hours. After successful detection, Amazon SES is able to DKIM-sign email originating from that domain. (This only applies to domain identities, not email address identities.)</p>
+        /// <p>For more information about creating DNS records using DKIM tokens, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon SES Developer Guide</a>.</p>
         pub fn dkim_tokens(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.dkim_tokens.unwrap_or_default();
             v.push(input.into());
             self.dkim_tokens = Some(v);
             self
         }
-        /// <p>A set of character strings that represent the domain's identity. If the identity is an
-        /// email address, the tokens represent the domain of that address.</p>
-        /// <p>Using these tokens, you need to create DNS CNAME records that point to DKIM public
-        /// keys that are hosted by Amazon SES. Amazon Web Services eventually detects that you've updated your DNS
-        /// records. This detection process might take up to 72 hours. After successful detection,
-        /// Amazon SES is able to DKIM-sign email originating from that domain. (This only applies to
-        /// domain identities, not email address identities.)</p>
-        /// <p>For more information about creating DNS records using DKIM tokens, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon SES Developer
-        /// Guide</a>.</p>
+        /// <p>A set of character strings that represent the domain's identity. If the identity is an email address, the tokens represent the domain of that address.</p>
+        /// <p>Using these tokens, you need to create DNS CNAME records that point to DKIM public keys that are hosted by Amazon SES. Amazon Web Services eventually detects that you've updated your DNS records. This detection process might take up to 72 hours. After successful detection, Amazon SES is able to DKIM-sign email originating from that domain. (This only applies to domain identities, not email address identities.)</p>
+        /// <p>For more information about creating DNS records using DKIM tokens, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon SES Developer Guide</a>.</p>
         pub fn set_dkim_tokens(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -483,13 +437,11 @@ impl UpdateAccountSendingEnabledOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestRenderTemplateOutput {
-    /// <p>The complete MIME message rendered by applying the data in the TemplateData parameter
-    /// to the template specified in the TemplateName parameter.</p>
+    /// <p>The complete MIME message rendered by applying the data in the TemplateData parameter to the template specified in the TemplateName parameter.</p>
     pub rendered_template: std::option::Option<std::string::String>,
 }
 impl TestRenderTemplateOutput {
-    /// <p>The complete MIME message rendered by applying the data in the TemplateData parameter
-    /// to the template specified in the TemplateName parameter.</p>
+    /// <p>The complete MIME message rendered by applying the data in the TemplateData parameter to the template specified in the TemplateName parameter.</p>
     pub fn rendered_template(&self) -> std::option::Option<&str> {
         self.rendered_template.as_deref()
     }
@@ -510,14 +462,12 @@ pub mod test_render_template_output {
         pub(crate) rendered_template: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The complete MIME message rendered by applying the data in the TemplateData parameter
-        /// to the template specified in the TemplateName parameter.</p>
+        /// <p>The complete MIME message rendered by applying the data in the TemplateData parameter to the template specified in the TemplateName parameter.</p>
         pub fn rendered_template(mut self, input: impl Into<std::string::String>) -> Self {
             self.rendered_template = Some(input.into());
             self
         }
-        /// <p>The complete MIME message rendered by applying the data in the TemplateData parameter
-        /// to the template specified in the TemplateName parameter.</p>
+        /// <p>The complete MIME message rendered by applying the data in the TemplateData parameter to the template specified in the TemplateName parameter.</p>
         pub fn set_rendered_template(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -755,13 +705,11 @@ impl SetActiveReceiptRuleSetOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendTemplatedEmailOutput {
-    /// <p>The unique message identifier returned from the <code>SendTemplatedEmail</code>
-    /// action. </p>
+    /// <p>The unique message identifier returned from the <code>SendTemplatedEmail</code> action. </p>
     pub message_id: std::option::Option<std::string::String>,
 }
 impl SendTemplatedEmailOutput {
-    /// <p>The unique message identifier returned from the <code>SendTemplatedEmail</code>
-    /// action. </p>
+    /// <p>The unique message identifier returned from the <code>SendTemplatedEmail</code> action. </p>
     pub fn message_id(&self) -> std::option::Option<&str> {
         self.message_id.as_deref()
     }
@@ -782,14 +730,12 @@ pub mod send_templated_email_output {
         pub(crate) message_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique message identifier returned from the <code>SendTemplatedEmail</code>
-        /// action. </p>
+        /// <p>The unique message identifier returned from the <code>SendTemplatedEmail</code> action. </p>
         pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.message_id = Some(input.into());
             self
         }
-        /// <p>The unique message identifier returned from the <code>SendTemplatedEmail</code>
-        /// action. </p>
+        /// <p>The unique message identifier returned from the <code>SendTemplatedEmail</code> action. </p>
         pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message_id = input;
             self
@@ -813,13 +759,11 @@ impl SendTemplatedEmailOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendRawEmailOutput {
-    /// <p>The unique message identifier returned from the <code>SendRawEmail</code> action.
-    /// </p>
+    /// <p>The unique message identifier returned from the <code>SendRawEmail</code> action. </p>
     pub message_id: std::option::Option<std::string::String>,
 }
 impl SendRawEmailOutput {
-    /// <p>The unique message identifier returned from the <code>SendRawEmail</code> action.
-    /// </p>
+    /// <p>The unique message identifier returned from the <code>SendRawEmail</code> action. </p>
     pub fn message_id(&self) -> std::option::Option<&str> {
         self.message_id.as_deref()
     }
@@ -840,14 +784,12 @@ pub mod send_raw_email_output {
         pub(crate) message_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique message identifier returned from the <code>SendRawEmail</code> action.
-        /// </p>
+        /// <p>The unique message identifier returned from the <code>SendRawEmail</code> action. </p>
         pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.message_id = Some(input.into());
             self
         }
-        /// <p>The unique message identifier returned from the <code>SendRawEmail</code> action.
-        /// </p>
+        /// <p>The unique message identifier returned from the <code>SendRawEmail</code> action. </p>
         pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message_id = input;
             self
@@ -925,13 +867,11 @@ impl SendEmailOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendCustomVerificationEmailOutput {
-    /// <p>The unique message identifier returned from the
-    /// <code>SendCustomVerificationEmail</code> operation.</p>
+    /// <p>The unique message identifier returned from the <code>SendCustomVerificationEmail</code> operation.</p>
     pub message_id: std::option::Option<std::string::String>,
 }
 impl SendCustomVerificationEmailOutput {
-    /// <p>The unique message identifier returned from the
-    /// <code>SendCustomVerificationEmail</code> operation.</p>
+    /// <p>The unique message identifier returned from the <code>SendCustomVerificationEmail</code> operation.</p>
     pub fn message_id(&self) -> std::option::Option<&str> {
         self.message_id.as_deref()
     }
@@ -952,14 +892,12 @@ pub mod send_custom_verification_email_output {
         pub(crate) message_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique message identifier returned from the
-        /// <code>SendCustomVerificationEmail</code> operation.</p>
+        /// <p>The unique message identifier returned from the <code>SendCustomVerificationEmail</code> operation.</p>
         pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.message_id = Some(input.into());
             self
         }
-        /// <p>The unique message identifier returned from the
-        /// <code>SendCustomVerificationEmail</code> operation.</p>
+        /// <p>The unique message identifier returned from the <code>SendCustomVerificationEmail</code> operation.</p>
         pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message_id = input;
             self
@@ -983,13 +921,11 @@ impl SendCustomVerificationEmailOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendBulkTemplatedEmailOutput {
-    /// <p>The unique message identifier returned from the <code>SendBulkTemplatedEmail</code>
-    /// action.</p>
+    /// <p>The unique message identifier returned from the <code>SendBulkTemplatedEmail</code> action.</p>
     pub status: std::option::Option<std::vec::Vec<crate::model::BulkEmailDestinationStatus>>,
 }
 impl SendBulkTemplatedEmailOutput {
-    /// <p>The unique message identifier returned from the <code>SendBulkTemplatedEmail</code>
-    /// action.</p>
+    /// <p>The unique message identifier returned from the <code>SendBulkTemplatedEmail</code> action.</p>
     pub fn status(&self) -> std::option::Option<&[crate::model::BulkEmailDestinationStatus]> {
         self.status.as_deref()
     }
@@ -1015,16 +951,14 @@ pub mod send_bulk_templated_email_output {
         ///
         /// To override the contents of this collection use [`set_status`](Self::set_status).
         ///
-        /// <p>The unique message identifier returned from the <code>SendBulkTemplatedEmail</code>
-        /// action.</p>
+        /// <p>The unique message identifier returned from the <code>SendBulkTemplatedEmail</code> action.</p>
         pub fn status(mut self, input: crate::model::BulkEmailDestinationStatus) -> Self {
             let mut v = self.status.unwrap_or_default();
             v.push(input);
             self.status = Some(v);
             self
         }
-        /// <p>The unique message identifier returned from the <code>SendBulkTemplatedEmail</code>
-        /// action.</p>
+        /// <p>The unique message identifier returned from the <code>SendBulkTemplatedEmail</code> action.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BulkEmailDestinationStatus>>,
@@ -1161,8 +1095,7 @@ impl PutIdentityPolicyOutput {
     }
 }
 
-/// <p>An HTTP 200 response if the request succeeds, or an error message if the request
-/// fails.</p>
+/// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutConfigurationSetDeliveryOptionsOutput {}
@@ -1192,8 +1125,7 @@ impl PutConfigurationSetDeliveryOptionsOutput {
     }
 }
 
-/// <p>A list of email addresses that you have verified with Amazon SES under your AWS
-/// account.</p>
+/// <p>A list of email addresses that you have verified with Amazon SES under your AWS account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListVerifiedEmailAddressesOutput {
@@ -1261,23 +1193,17 @@ impl ListVerifiedEmailAddressesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTemplatesOutput {
-    /// <p>An array the contains the name and creation time stamp for each template in your Amazon SES
-    /// account.</p>
+    /// <p>An array the contains the name and creation time stamp for each template in your Amazon SES account.</p>
     pub templates_metadata: std::option::Option<std::vec::Vec<crate::model::TemplateMetadata>>,
-    /// <p>A token indicating that there are additional email templates available to be listed.
-    /// Pass this token to a subsequent call to <code>ListTemplates</code> to retrieve the next
-    /// 50 email templates.</p>
+    /// <p>A token indicating that there are additional email templates available to be listed. Pass this token to a subsequent call to <code>ListTemplates</code> to retrieve the next 50 email templates.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTemplatesOutput {
-    /// <p>An array the contains the name and creation time stamp for each template in your Amazon SES
-    /// account.</p>
+    /// <p>An array the contains the name and creation time stamp for each template in your Amazon SES account.</p>
     pub fn templates_metadata(&self) -> std::option::Option<&[crate::model::TemplateMetadata]> {
         self.templates_metadata.as_deref()
     }
-    /// <p>A token indicating that there are additional email templates available to be listed.
-    /// Pass this token to a subsequent call to <code>ListTemplates</code> to retrieve the next
-    /// 50 email templates.</p>
+    /// <p>A token indicating that there are additional email templates available to be listed. Pass this token to a subsequent call to <code>ListTemplates</code> to retrieve the next 50 email templates.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1305,16 +1231,14 @@ pub mod list_templates_output {
         ///
         /// To override the contents of this collection use [`set_templates_metadata`](Self::set_templates_metadata).
         ///
-        /// <p>An array the contains the name and creation time stamp for each template in your Amazon SES
-        /// account.</p>
+        /// <p>An array the contains the name and creation time stamp for each template in your Amazon SES account.</p>
         pub fn templates_metadata(mut self, input: crate::model::TemplateMetadata) -> Self {
             let mut v = self.templates_metadata.unwrap_or_default();
             v.push(input);
             self.templates_metadata = Some(v);
             self
         }
-        /// <p>An array the contains the name and creation time stamp for each template in your Amazon SES
-        /// account.</p>
+        /// <p>An array the contains the name and creation time stamp for each template in your Amazon SES account.</p>
         pub fn set_templates_metadata(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TemplateMetadata>>,
@@ -1322,16 +1246,12 @@ pub mod list_templates_output {
             self.templates_metadata = input;
             self
         }
-        /// <p>A token indicating that there are additional email templates available to be listed.
-        /// Pass this token to a subsequent call to <code>ListTemplates</code> to retrieve the next
-        /// 50 email templates.</p>
+        /// <p>A token indicating that there are additional email templates available to be listed. Pass this token to a subsequent call to <code>ListTemplates</code> to retrieve the next 50 email templates.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token indicating that there are additional email templates available to be listed.
-        /// Pass this token to a subsequent call to <code>ListTemplates</code> to retrieve the next
-        /// 50 email templates.</p>
+        /// <p>A token indicating that there are additional email templates available to be listed. Pass this token to a subsequent call to <code>ListTemplates</code> to retrieve the next 50 email templates.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1356,23 +1276,17 @@ impl ListTemplatesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListReceiptRuleSetsOutput {
-    /// <p>The metadata for the currently active receipt rule set. The metadata consists of the
-    /// rule set name and the timestamp of when the rule set was created.</p>
+    /// <p>The metadata for the currently active receipt rule set. The metadata consists of the rule set name and the timestamp of when the rule set was created.</p>
     pub rule_sets: std::option::Option<std::vec::Vec<crate::model::ReceiptRuleSetMetadata>>,
-    /// <p>A token indicating that there are additional receipt rule sets available to be listed.
-    /// Pass this token to successive calls of <code>ListReceiptRuleSets</code> to retrieve up
-    /// to 100 receipt rule sets at a time.</p>
+    /// <p>A token indicating that there are additional receipt rule sets available to be listed. Pass this token to successive calls of <code>ListReceiptRuleSets</code> to retrieve up to 100 receipt rule sets at a time.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListReceiptRuleSetsOutput {
-    /// <p>The metadata for the currently active receipt rule set. The metadata consists of the
-    /// rule set name and the timestamp of when the rule set was created.</p>
+    /// <p>The metadata for the currently active receipt rule set. The metadata consists of the rule set name and the timestamp of when the rule set was created.</p>
     pub fn rule_sets(&self) -> std::option::Option<&[crate::model::ReceiptRuleSetMetadata]> {
         self.rule_sets.as_deref()
     }
-    /// <p>A token indicating that there are additional receipt rule sets available to be listed.
-    /// Pass this token to successive calls of <code>ListReceiptRuleSets</code> to retrieve up
-    /// to 100 receipt rule sets at a time.</p>
+    /// <p>A token indicating that there are additional receipt rule sets available to be listed. Pass this token to successive calls of <code>ListReceiptRuleSets</code> to retrieve up to 100 receipt rule sets at a time.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1400,16 +1314,14 @@ pub mod list_receipt_rule_sets_output {
         ///
         /// To override the contents of this collection use [`set_rule_sets`](Self::set_rule_sets).
         ///
-        /// <p>The metadata for the currently active receipt rule set. The metadata consists of the
-        /// rule set name and the timestamp of when the rule set was created.</p>
+        /// <p>The metadata for the currently active receipt rule set. The metadata consists of the rule set name and the timestamp of when the rule set was created.</p>
         pub fn rule_sets(mut self, input: crate::model::ReceiptRuleSetMetadata) -> Self {
             let mut v = self.rule_sets.unwrap_or_default();
             v.push(input);
             self.rule_sets = Some(v);
             self
         }
-        /// <p>The metadata for the currently active receipt rule set. The metadata consists of the
-        /// rule set name and the timestamp of when the rule set was created.</p>
+        /// <p>The metadata for the currently active receipt rule set. The metadata consists of the rule set name and the timestamp of when the rule set was created.</p>
         pub fn set_rule_sets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ReceiptRuleSetMetadata>>,
@@ -1417,16 +1329,12 @@ pub mod list_receipt_rule_sets_output {
             self.rule_sets = input;
             self
         }
-        /// <p>A token indicating that there are additional receipt rule sets available to be listed.
-        /// Pass this token to successive calls of <code>ListReceiptRuleSets</code> to retrieve up
-        /// to 100 receipt rule sets at a time.</p>
+        /// <p>A token indicating that there are additional receipt rule sets available to be listed. Pass this token to successive calls of <code>ListReceiptRuleSets</code> to retrieve up to 100 receipt rule sets at a time.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token indicating that there are additional receipt rule sets available to be listed.
-        /// Pass this token to successive calls of <code>ListReceiptRuleSets</code> to retrieve up
-        /// to 100 receipt rule sets at a time.</p>
+        /// <p>A token indicating that there are additional receipt rule sets available to be listed. Pass this token to successive calls of <code>ListReceiptRuleSets</code> to retrieve up to 100 receipt rule sets at a time.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1451,13 +1359,11 @@ impl ListReceiptRuleSetsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListReceiptFiltersOutput {
-    /// <p>A list of IP address filter data structures, which each consist of a name, an IP
-    /// address range, and whether to allow or block mail from it.</p>
+    /// <p>A list of IP address filter data structures, which each consist of a name, an IP address range, and whether to allow or block mail from it.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::ReceiptFilter>>,
 }
 impl ListReceiptFiltersOutput {
-    /// <p>A list of IP address filter data structures, which each consist of a name, an IP
-    /// address range, and whether to allow or block mail from it.</p>
+    /// <p>A list of IP address filter data structures, which each consist of a name, an IP address range, and whether to allow or block mail from it.</p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::ReceiptFilter]> {
         self.filters.as_deref()
     }
@@ -1482,16 +1388,14 @@ pub mod list_receipt_filters_output {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>A list of IP address filter data structures, which each consist of a name, an IP
-        /// address range, and whether to allow or block mail from it.</p>
+        /// <p>A list of IP address filter data structures, which each consist of a name, an IP address range, and whether to allow or block mail from it.</p>
         pub fn filters(mut self, input: crate::model::ReceiptFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input);
             self.filters = Some(v);
             self
         }
-        /// <p>A list of IP address filter data structures, which each consist of a name, an IP
-        /// address range, and whether to allow or block mail from it.</p>
+        /// <p>A list of IP address filter data structures, which each consist of a name, an IP address range, and whether to allow or block mail from it.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ReceiptFilter>>,
@@ -1577,8 +1481,7 @@ impl ListIdentityPoliciesOutput {
     }
 }
 
-/// <p>A list of all identities that you have attempted to verify under your AWS account,
-/// regardless of verification status.</p>
+/// <p>A list of all identities that you have attempted to verify under your AWS account, regardless of verification status.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIdentitiesOutput {
@@ -1667,10 +1570,7 @@ pub struct ListCustomVerificationEmailTemplatesOutput {
     /// <p>A list of the custom verification email templates that exist in your account.</p>
     pub custom_verification_email_templates:
         std::option::Option<std::vec::Vec<crate::model::CustomVerificationEmailTemplate>>,
-    /// <p>A token indicating that there are additional custom verification email templates
-    /// available to be listed. Pass this token to a subsequent call to
-    /// <code>ListTemplates</code> to retrieve the next 50 custom verification email
-    /// templates.</p>
+    /// <p>A token indicating that there are additional custom verification email templates available to be listed. Pass this token to a subsequent call to <code>ListTemplates</code> to retrieve the next 50 custom verification email templates.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCustomVerificationEmailTemplatesOutput {
@@ -1680,10 +1580,7 @@ impl ListCustomVerificationEmailTemplatesOutput {
     ) -> std::option::Option<&[crate::model::CustomVerificationEmailTemplate]> {
         self.custom_verification_email_templates.as_deref()
     }
-    /// <p>A token indicating that there are additional custom verification email templates
-    /// available to be listed. Pass this token to a subsequent call to
-    /// <code>ListTemplates</code> to retrieve the next 50 custom verification email
-    /// templates.</p>
+    /// <p>A token indicating that there are additional custom verification email templates available to be listed. Pass this token to a subsequent call to <code>ListTemplates</code> to retrieve the next 50 custom verification email templates.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1734,18 +1631,12 @@ pub mod list_custom_verification_email_templates_output {
             self.custom_verification_email_templates = input;
             self
         }
-        /// <p>A token indicating that there are additional custom verification email templates
-        /// available to be listed. Pass this token to a subsequent call to
-        /// <code>ListTemplates</code> to retrieve the next 50 custom verification email
-        /// templates.</p>
+        /// <p>A token indicating that there are additional custom verification email templates available to be listed. Pass this token to a subsequent call to <code>ListTemplates</code> to retrieve the next 50 custom verification email templates.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token indicating that there are additional custom verification email templates
-        /// available to be listed. Pass this token to a subsequent call to
-        /// <code>ListTemplates</code> to retrieve the next 50 custom verification email
-        /// templates.</p>
+        /// <p>A token indicating that there are additional custom verification email templates available to be listed. Pass this token to a subsequent call to <code>ListTemplates</code> to retrieve the next 50 custom verification email templates.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1766,18 +1657,13 @@ impl ListCustomVerificationEmailTemplatesOutput {
     }
 }
 
-/// <p>A list of configuration sets associated with your AWS account. Configuration sets
-/// enable you to publish email sending events. For information about using configuration
-/// sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer
-/// Guide</a>.</p>
+/// <p>A list of configuration sets associated with your AWS account. Configuration sets enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConfigurationSetsOutput {
     /// <p>A list of configuration sets.</p>
     pub configuration_sets: std::option::Option<std::vec::Vec<crate::model::ConfigurationSet>>,
-    /// <p>A token indicating that there are additional configuration sets available to be
-    /// listed. Pass this token to successive calls of <code>ListConfigurationSets</code>.
-    /// </p>
+    /// <p>A token indicating that there are additional configuration sets available to be listed. Pass this token to successive calls of <code>ListConfigurationSets</code>. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListConfigurationSetsOutput {
@@ -1785,9 +1671,7 @@ impl ListConfigurationSetsOutput {
     pub fn configuration_sets(&self) -> std::option::Option<&[crate::model::ConfigurationSet]> {
         self.configuration_sets.as_deref()
     }
-    /// <p>A token indicating that there are additional configuration sets available to be
-    /// listed. Pass this token to successive calls of <code>ListConfigurationSets</code>.
-    /// </p>
+    /// <p>A token indicating that there are additional configuration sets available to be listed. Pass this token to successive calls of <code>ListConfigurationSets</code>. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1830,16 +1714,12 @@ pub mod list_configuration_sets_output {
             self.configuration_sets = input;
             self
         }
-        /// <p>A token indicating that there are additional configuration sets available to be
-        /// listed. Pass this token to successive calls of <code>ListConfigurationSets</code>.
-        /// </p>
+        /// <p>A token indicating that there are additional configuration sets available to be listed. Pass this token to successive calls of <code>ListConfigurationSets</code>. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token indicating that there are additional configuration sets available to be
-        /// listed. Pass this token to successive calls of <code>ListConfigurationSets</code>.
-        /// </p>
+        /// <p>A token indicating that there are additional configuration sets available to be listed. Pass this token to successive calls of <code>ListConfigurationSets</code>. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1864,13 +1744,11 @@ impl ListConfigurationSetsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTemplateOutput {
-    /// <p>The content of the email, composed of a subject line, an HTML part, and a text-only
-    /// part.</p>
+    /// <p>The content of the email, composed of a subject line, an HTML part, and a text-only part.</p>
     pub template: std::option::Option<crate::model::Template>,
 }
 impl GetTemplateOutput {
-    /// <p>The content of the email, composed of a subject line, an HTML part, and a text-only
-    /// part.</p>
+    /// <p>The content of the email, composed of a subject line, an HTML part, and a text-only part.</p>
     pub fn template(&self) -> std::option::Option<&crate::model::Template> {
         self.template.as_ref()
     }
@@ -1891,14 +1769,12 @@ pub mod get_template_output {
         pub(crate) template: std::option::Option<crate::model::Template>,
     }
     impl Builder {
-        /// <p>The content of the email, composed of a subject line, an HTML part, and a text-only
-        /// part.</p>
+        /// <p>The content of the email, composed of a subject line, an HTML part, and a text-only part.</p>
         pub fn template(mut self, input: crate::model::Template) -> Self {
             self.template = Some(input);
             self
         }
-        /// <p>The content of the email, composed of a subject line, an HTML part, and a text-only
-        /// part.</p>
+        /// <p>The content of the email, composed of a subject line, an HTML part, and a text-only part.</p>
         pub fn set_template(mut self, input: std::option::Option<crate::model::Template>) -> Self {
             self.template = input;
             self
@@ -1918,8 +1794,7 @@ impl GetTemplateOutput {
     }
 }
 
-/// <p>Represents a list of data points. This list contains aggregated data from the previous
-/// two weeks of your sending activity with Amazon SES.</p>
+/// <p>Represents a list of data points. This list contains aggregated data from the previous two weeks of your sending activity with Amazon SES.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSendStatisticsOutput {
@@ -1983,35 +1858,26 @@ impl GetSendStatisticsOutput {
     }
 }
 
-/// <p>Represents your Amazon SES daily sending quota, maximum send rate, and the number of emails
-/// you have sent in the last 24 hours.</p>
+/// <p>Represents your Amazon SES daily sending quota, maximum send rate, and the number of emails you have sent in the last 24 hours.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSendQuotaOutput {
-    /// <p>The maximum number of emails the user is allowed to send in a 24-hour interval. A
-    /// value of -1 signifies an unlimited quota.</p>
+    /// <p>The maximum number of emails the user is allowed to send in a 24-hour interval. A value of -1 signifies an unlimited quota.</p>
     pub max24_hour_send: f64,
-    /// <p>The maximum number of emails that Amazon SES can accept from the user's account per
-    /// second.</p>
-    /// <note>
-    /// <p>The rate at which Amazon SES accepts the user's messages might be less than the maximum
-    /// send rate.</p>
+    /// <p>The maximum number of emails that Amazon SES can accept from the user's account per second.</p> <note>
+    /// <p>The rate at which Amazon SES accepts the user's messages might be less than the maximum send rate.</p>
     /// </note>
     pub max_send_rate: f64,
     /// <p>The number of emails sent during the previous 24 hours.</p>
     pub sent_last24_hours: f64,
 }
 impl GetSendQuotaOutput {
-    /// <p>The maximum number of emails the user is allowed to send in a 24-hour interval. A
-    /// value of -1 signifies an unlimited quota.</p>
+    /// <p>The maximum number of emails the user is allowed to send in a 24-hour interval. A value of -1 signifies an unlimited quota.</p>
     pub fn max24_hour_send(&self) -> f64 {
         self.max24_hour_send
     }
-    /// <p>The maximum number of emails that Amazon SES can accept from the user's account per
-    /// second.</p>
-    /// <note>
-    /// <p>The rate at which Amazon SES accepts the user's messages might be less than the maximum
-    /// send rate.</p>
+    /// <p>The maximum number of emails that Amazon SES can accept from the user's account per second.</p> <note>
+    /// <p>The rate at which Amazon SES accepts the user's messages might be less than the maximum send rate.</p>
     /// </note>
     pub fn max_send_rate(&self) -> f64 {
         self.max_send_rate
@@ -2041,33 +1907,25 @@ pub mod get_send_quota_output {
         pub(crate) sent_last24_hours: std::option::Option<f64>,
     }
     impl Builder {
-        /// <p>The maximum number of emails the user is allowed to send in a 24-hour interval. A
-        /// value of -1 signifies an unlimited quota.</p>
+        /// <p>The maximum number of emails the user is allowed to send in a 24-hour interval. A value of -1 signifies an unlimited quota.</p>
         pub fn max24_hour_send(mut self, input: f64) -> Self {
             self.max24_hour_send = Some(input);
             self
         }
-        /// <p>The maximum number of emails the user is allowed to send in a 24-hour interval. A
-        /// value of -1 signifies an unlimited quota.</p>
+        /// <p>The maximum number of emails the user is allowed to send in a 24-hour interval. A value of -1 signifies an unlimited quota.</p>
         pub fn set_max24_hour_send(mut self, input: std::option::Option<f64>) -> Self {
             self.max24_hour_send = input;
             self
         }
-        /// <p>The maximum number of emails that Amazon SES can accept from the user's account per
-        /// second.</p>
-        /// <note>
-        /// <p>The rate at which Amazon SES accepts the user's messages might be less than the maximum
-        /// send rate.</p>
+        /// <p>The maximum number of emails that Amazon SES can accept from the user's account per second.</p> <note>
+        /// <p>The rate at which Amazon SES accepts the user's messages might be less than the maximum send rate.</p>
         /// </note>
         pub fn max_send_rate(mut self, input: f64) -> Self {
             self.max_send_rate = Some(input);
             self
         }
-        /// <p>The maximum number of emails that Amazon SES can accept from the user's account per
-        /// second.</p>
-        /// <note>
-        /// <p>The rate at which Amazon SES accepts the user's messages might be less than the maximum
-        /// send rate.</p>
+        /// <p>The maximum number of emails that Amazon SES can accept from the user's account per second.</p> <note>
+        /// <p>The rate at which Amazon SES accepts the user's messages might be less than the maximum send rate.</p>
         /// </note>
         pub fn set_max_send_rate(mut self, input: std::option::Option<f64>) -> Self {
             self.max_send_rate = input;
@@ -2100,8 +1958,7 @@ impl GetSendQuotaOutput {
     }
 }
 
-/// <p>The Amazon SES verification status of a list of identities. For domain identities, this
-/// response also contains the verification token.</p>
+/// <p>The Amazon SES verification status of a list of identities. For domain identities, this response also contains the verification token.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIdentityVerificationAttributesOutput {
@@ -2446,10 +2303,7 @@ impl GetIdentityMailFromDomainAttributesOutput {
     }
 }
 
-/// <p>Represents the status of Amazon SES Easy DKIM signing for an identity. For domain
-/// identities, this response also contains the DKIM tokens that are required for Easy DKIM
-/// signing, and whether Amazon SES successfully verified that these tokens were
-/// published.</p>
+/// <p>Represents the status of Amazon SES Easy DKIM signing for an identity. For domain identities, this response also contains the DKIM tokens that are required for Easy DKIM signing, and whether Amazon SES successfully verified that these tokens were published.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIdentityDkimAttributesOutput {
@@ -2541,11 +2395,9 @@ pub struct GetCustomVerificationEmailTemplateOutput {
     pub template_subject: std::option::Option<std::string::String>,
     /// <p>The content of the custom verification email.</p>
     pub template_content: std::option::Option<std::string::String>,
-    /// <p>The URL that the recipient of the verification email is sent to if his or her address
-    /// is successfully verified.</p>
+    /// <p>The URL that the recipient of the verification email is sent to if his or her address is successfully verified.</p>
     pub success_redirection_url: std::option::Option<std::string::String>,
-    /// <p>The URL that the recipient of the verification email is sent to if his or her address
-    /// is not successfully verified.</p>
+    /// <p>The URL that the recipient of the verification email is sent to if his or her address is not successfully verified.</p>
     pub failure_redirection_url: std::option::Option<std::string::String>,
 }
 impl GetCustomVerificationEmailTemplateOutput {
@@ -2565,13 +2417,11 @@ impl GetCustomVerificationEmailTemplateOutput {
     pub fn template_content(&self) -> std::option::Option<&str> {
         self.template_content.as_deref()
     }
-    /// <p>The URL that the recipient of the verification email is sent to if his or her address
-    /// is successfully verified.</p>
+    /// <p>The URL that the recipient of the verification email is sent to if his or her address is successfully verified.</p>
     pub fn success_redirection_url(&self) -> std::option::Option<&str> {
         self.success_redirection_url.as_deref()
     }
-    /// <p>The URL that the recipient of the verification email is sent to if his or her address
-    /// is not successfully verified.</p>
+    /// <p>The URL that the recipient of the verification email is sent to if his or her address is not successfully verified.</p>
     pub fn failure_redirection_url(&self) -> std::option::Option<&str> {
         self.failure_redirection_url.as_deref()
     }
@@ -2654,14 +2504,12 @@ pub mod get_custom_verification_email_template_output {
             self.template_content = input;
             self
         }
-        /// <p>The URL that the recipient of the verification email is sent to if his or her address
-        /// is successfully verified.</p>
+        /// <p>The URL that the recipient of the verification email is sent to if his or her address is successfully verified.</p>
         pub fn success_redirection_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.success_redirection_url = Some(input.into());
             self
         }
-        /// <p>The URL that the recipient of the verification email is sent to if his or her address
-        /// is successfully verified.</p>
+        /// <p>The URL that the recipient of the verification email is sent to if his or her address is successfully verified.</p>
         pub fn set_success_redirection_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2669,14 +2517,12 @@ pub mod get_custom_verification_email_template_output {
             self.success_redirection_url = input;
             self
         }
-        /// <p>The URL that the recipient of the verification email is sent to if his or her address
-        /// is not successfully verified.</p>
+        /// <p>The URL that the recipient of the verification email is sent to if his or her address is not successfully verified.</p>
         pub fn failure_redirection_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.failure_redirection_url = Some(input.into());
             self
         }
-        /// <p>The URL that the recipient of the verification email is sent to if his or her address
-        /// is not successfully verified.</p>
+        /// <p>The URL that the recipient of the verification email is sent to if his or her address is not successfully verified.</p>
         pub fn set_failure_redirection_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2704,18 +2550,15 @@ impl GetCustomVerificationEmailTemplateOutput {
     }
 }
 
-/// <p>Represents a request to return the email sending status for your Amazon SES account in the
-/// current AWS Region.</p>
+/// <p>Represents a request to return the email sending status for your Amazon SES account in the current AWS Region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAccountSendingEnabledOutput {
-    /// <p>Describes whether email sending is enabled or disabled for your Amazon SES account in the
-    /// current AWS Region.</p>
+    /// <p>Describes whether email sending is enabled or disabled for your Amazon SES account in the current AWS Region.</p>
     pub enabled: bool,
 }
 impl GetAccountSendingEnabledOutput {
-    /// <p>Describes whether email sending is enabled or disabled for your Amazon SES account in the
-    /// current AWS Region.</p>
+    /// <p>Describes whether email sending is enabled or disabled for your Amazon SES account in the current AWS Region.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
     }
@@ -2736,14 +2579,12 @@ pub mod get_account_sending_enabled_output {
         pub(crate) enabled: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>Describes whether email sending is enabled or disabled for your Amazon SES account in the
-        /// current AWS Region.</p>
+        /// <p>Describes whether email sending is enabled or disabled for your Amazon SES account in the current AWS Region.</p>
         pub fn enabled(mut self, input: bool) -> Self {
             self.enabled = Some(input);
             self
         }
-        /// <p>Describes whether email sending is enabled or disabled for your Amazon SES account in the
-        /// current AWS Region.</p>
+        /// <p>Describes whether email sending is enabled or disabled for your Amazon SES account in the current AWS Region.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -2767,15 +2608,13 @@ impl GetAccountSendingEnabledOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReceiptRuleSetOutput {
-    /// <p>The metadata for the receipt rule set, which consists of the rule set name and the
-    /// timestamp of when the rule set was created.</p>
+    /// <p>The metadata for the receipt rule set, which consists of the rule set name and the timestamp of when the rule set was created.</p>
     pub metadata: std::option::Option<crate::model::ReceiptRuleSetMetadata>,
     /// <p>A list of the receipt rules that belong to the specified receipt rule set.</p>
     pub rules: std::option::Option<std::vec::Vec<crate::model::ReceiptRule>>,
 }
 impl DescribeReceiptRuleSetOutput {
-    /// <p>The metadata for the receipt rule set, which consists of the rule set name and the
-    /// timestamp of when the rule set was created.</p>
+    /// <p>The metadata for the receipt rule set, which consists of the rule set name and the timestamp of when the rule set was created.</p>
     pub fn metadata(&self) -> std::option::Option<&crate::model::ReceiptRuleSetMetadata> {
         self.metadata.as_ref()
     }
@@ -2802,14 +2641,12 @@ pub mod describe_receipt_rule_set_output {
         pub(crate) rules: std::option::Option<std::vec::Vec<crate::model::ReceiptRule>>,
     }
     impl Builder {
-        /// <p>The metadata for the receipt rule set, which consists of the rule set name and the
-        /// timestamp of when the rule set was created.</p>
+        /// <p>The metadata for the receipt rule set, which consists of the rule set name and the timestamp of when the rule set was created.</p>
         pub fn metadata(mut self, input: crate::model::ReceiptRuleSetMetadata) -> Self {
             self.metadata = Some(input);
             self
         }
-        /// <p>The metadata for the receipt rule set, which consists of the rule set name and the
-        /// timestamp of when the rule set was created.</p>
+        /// <p>The metadata for the receipt rule set, which consists of the rule set name and the timestamp of when the rule set was created.</p>
         pub fn set_metadata(
             mut self,
             input: std::option::Option<crate::model::ReceiptRuleSetMetadata>,
@@ -2856,13 +2693,11 @@ impl DescribeReceiptRuleSetOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReceiptRuleOutput {
-    /// <p>A data structure that contains the specified receipt rule's name, actions, recipients,
-    /// domains, enabled status, scan status, and Transport Layer Security (TLS) policy.</p>
+    /// <p>A data structure that contains the specified receipt rule's name, actions, recipients, domains, enabled status, scan status, and Transport Layer Security (TLS) policy.</p>
     pub rule: std::option::Option<crate::model::ReceiptRule>,
 }
 impl DescribeReceiptRuleOutput {
-    /// <p>A data structure that contains the specified receipt rule's name, actions, recipients,
-    /// domains, enabled status, scan status, and Transport Layer Security (TLS) policy.</p>
+    /// <p>A data structure that contains the specified receipt rule's name, actions, recipients, domains, enabled status, scan status, and Transport Layer Security (TLS) policy.</p>
     pub fn rule(&self) -> std::option::Option<&crate::model::ReceiptRule> {
         self.rule.as_ref()
     }
@@ -2883,14 +2718,12 @@ pub mod describe_receipt_rule_output {
         pub(crate) rule: std::option::Option<crate::model::ReceiptRule>,
     }
     impl Builder {
-        /// <p>A data structure that contains the specified receipt rule's name, actions, recipients,
-        /// domains, enabled status, scan status, and Transport Layer Security (TLS) policy.</p>
+        /// <p>A data structure that contains the specified receipt rule's name, actions, recipients, domains, enabled status, scan status, and Transport Layer Security (TLS) policy.</p>
         pub fn rule(mut self, input: crate::model::ReceiptRule) -> Self {
             self.rule = Some(input);
             self
         }
-        /// <p>A data structure that contains the specified receipt rule's name, actions, recipients,
-        /// domains, enabled status, scan status, and Transport Layer Security (TLS) policy.</p>
+        /// <p>A data structure that contains the specified receipt rule's name, actions, recipients, domains, enabled status, scan status, and Transport Layer Security (TLS) policy.</p>
         pub fn set_rule(mut self, input: std::option::Option<crate::model::ReceiptRule>) -> Self {
             self.rule = input;
             self
@@ -2908,10 +2741,7 @@ impl DescribeReceiptRuleOutput {
     }
 }
 
-/// <p>Represents the details of a configuration set. Configuration sets enable you to
-/// publish email sending events. For information about using configuration sets, see the
-/// <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer
-/// Guide</a>.</p>
+/// <p>Represents the details of a configuration set. Configuration sets enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConfigurationSetOutput {
@@ -2919,11 +2749,9 @@ pub struct DescribeConfigurationSetOutput {
     pub configuration_set: std::option::Option<crate::model::ConfigurationSet>,
     /// <p>A list of event destinations associated with the configuration set. </p>
     pub event_destinations: std::option::Option<std::vec::Vec<crate::model::EventDestination>>,
-    /// <p>The name of the custom open and click tracking domain associated with the
-    /// configuration set.</p>
+    /// <p>The name of the custom open and click tracking domain associated with the configuration set.</p>
     pub tracking_options: std::option::Option<crate::model::TrackingOptions>,
-    /// <p>Specifies whether messages that use the configuration set are required to use
-    /// Transport Layer Security (TLS).</p>
+    /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS).</p>
     pub delivery_options: std::option::Option<crate::model::DeliveryOptions>,
     /// <p>An object that represents the reputation settings for the configuration set. </p>
     pub reputation_options: std::option::Option<crate::model::ReputationOptions>,
@@ -2937,13 +2765,11 @@ impl DescribeConfigurationSetOutput {
     pub fn event_destinations(&self) -> std::option::Option<&[crate::model::EventDestination]> {
         self.event_destinations.as_deref()
     }
-    /// <p>The name of the custom open and click tracking domain associated with the
-    /// configuration set.</p>
+    /// <p>The name of the custom open and click tracking domain associated with the configuration set.</p>
     pub fn tracking_options(&self) -> std::option::Option<&crate::model::TrackingOptions> {
         self.tracking_options.as_ref()
     }
-    /// <p>Specifies whether messages that use the configuration set are required to use
-    /// Transport Layer Security (TLS).</p>
+    /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS).</p>
     pub fn delivery_options(&self) -> std::option::Option<&crate::model::DeliveryOptions> {
         self.delivery_options.as_ref()
     }
@@ -3009,14 +2835,12 @@ pub mod describe_configuration_set_output {
             self.event_destinations = input;
             self
         }
-        /// <p>The name of the custom open and click tracking domain associated with the
-        /// configuration set.</p>
+        /// <p>The name of the custom open and click tracking domain associated with the configuration set.</p>
         pub fn tracking_options(mut self, input: crate::model::TrackingOptions) -> Self {
             self.tracking_options = Some(input);
             self
         }
-        /// <p>The name of the custom open and click tracking domain associated with the
-        /// configuration set.</p>
+        /// <p>The name of the custom open and click tracking domain associated with the configuration set.</p>
         pub fn set_tracking_options(
             mut self,
             input: std::option::Option<crate::model::TrackingOptions>,
@@ -3024,14 +2848,12 @@ pub mod describe_configuration_set_output {
             self.tracking_options = input;
             self
         }
-        /// <p>Specifies whether messages that use the configuration set are required to use
-        /// Transport Layer Security (TLS).</p>
+        /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS).</p>
         pub fn delivery_options(mut self, input: crate::model::DeliveryOptions) -> Self {
             self.delivery_options = Some(input);
             self
         }
-        /// <p>Specifies whether messages that use the configuration set are required to use
-        /// Transport Layer Security (TLS).</p>
+        /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS).</p>
         pub fn set_delivery_options(
             mut self,
             input: std::option::Option<crate::model::DeliveryOptions>,
@@ -3071,20 +2893,17 @@ impl DescribeConfigurationSetOutput {
     }
 }
 
-/// <p>Represents the metadata and receipt rules for the receipt rule set that is currently
-/// active.</p>
+/// <p>Represents the metadata and receipt rules for the receipt rule set that is currently active.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeActiveReceiptRuleSetOutput {
-    /// <p>The metadata for the currently active receipt rule set. The metadata consists of the
-    /// rule set name and a timestamp of when the rule set was created.</p>
+    /// <p>The metadata for the currently active receipt rule set. The metadata consists of the rule set name and a timestamp of when the rule set was created.</p>
     pub metadata: std::option::Option<crate::model::ReceiptRuleSetMetadata>,
     /// <p>The receipt rules that belong to the active rule set.</p>
     pub rules: std::option::Option<std::vec::Vec<crate::model::ReceiptRule>>,
 }
 impl DescribeActiveReceiptRuleSetOutput {
-    /// <p>The metadata for the currently active receipt rule set. The metadata consists of the
-    /// rule set name and a timestamp of when the rule set was created.</p>
+    /// <p>The metadata for the currently active receipt rule set. The metadata consists of the rule set name and a timestamp of when the rule set was created.</p>
     pub fn metadata(&self) -> std::option::Option<&crate::model::ReceiptRuleSetMetadata> {
         self.metadata.as_ref()
     }
@@ -3111,14 +2930,12 @@ pub mod describe_active_receipt_rule_set_output {
         pub(crate) rules: std::option::Option<std::vec::Vec<crate::model::ReceiptRule>>,
     }
     impl Builder {
-        /// <p>The metadata for the currently active receipt rule set. The metadata consists of the
-        /// rule set name and a timestamp of when the rule set was created.</p>
+        /// <p>The metadata for the currently active receipt rule set. The metadata consists of the rule set name and a timestamp of when the rule set was created.</p>
         pub fn metadata(mut self, input: crate::model::ReceiptRuleSetMetadata) -> Self {
             self.metadata = Some(input);
             self
         }
-        /// <p>The metadata for the currently active receipt rule set. The metadata consists of the
-        /// rule set name and a timestamp of when the rule set was created.</p>
+        /// <p>The metadata for the currently active receipt rule set. The metadata consists of the rule set name and a timestamp of when the rule set was created.</p>
         pub fn set_metadata(
             mut self,
             input: std::option::Option<crate::model::ReceiptRuleSetMetadata>,

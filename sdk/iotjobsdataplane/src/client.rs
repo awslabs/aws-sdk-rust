@@ -211,14 +211,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_include_job_document(input);
             self
         }
-        /// <p>Optional. A number that identifies a particular job execution on a particular device. If not specified,
-        /// the latest job execution is returned.</p>
+        /// <p>Optional. A number that identifies a particular job execution on a particular device. If not specified, the latest job execution is returned.</p>
         pub fn execution_number(mut self, input: i64) -> Self {
             self.inner = self.inner.execution_number(input);
             self
         }
-        /// <p>Optional. A number that identifies a particular job execution on a particular device. If not specified,
-        /// the latest job execution is returned.</p>
+        /// <p>Optional. A number that identifies a particular job execution on a particular device. If not specified, the latest job execution is returned.</p>
         pub fn set_execution_number(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_execution_number(input);
             self
@@ -367,8 +365,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_status_details`](Self::set_status_details).
         ///
-        /// <p>A collection of name/value pairs that describe the status of the job execution. If not specified, the
-        /// statusDetails are unchanged.</p>
+        /// <p>A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>
         pub fn status_details(
             mut self,
             k: impl Into<std::string::String>,
@@ -377,8 +374,7 @@ pub mod fluent_builders {
             self.inner = self.inner.status_details(k.into(), v.into());
             self
         }
-        /// <p>A collection of name/value pairs that describe the status of the job execution. If not specified, the
-        /// statusDetails are unchanged.</p>
+        /// <p>A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>
         pub fn set_status_details(
             mut self,
             input: std::option::Option<
@@ -388,24 +384,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_status_details(input);
             self
         }
-        /// <p>Specifies the amount of time this device has to finish execution of this job. If the job
-        /// execution status is not set to a terminal state before this timer expires, or before the
-        /// timer is reset (by calling <code>UpdateJobExecution</code>, setting the status to
-        /// <code>IN_PROGRESS</code> and specifying a new timeout value in field <code>stepTimeoutInMinutes</code>)
-        /// the job execution status will be automatically set to <code>TIMED_OUT</code>.  Note that setting
-        /// this timeout has no effect on that job execution timeout which may have been specified when
-        /// the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).</p>
+        /// <p>Specifies the amount of time this device has to finish execution of this job. If the job execution status is not set to a terminal state before this timer expires, or before the timer is reset (by calling <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new timeout value in field <code>stepTimeoutInMinutes</code>) the job execution status will be automatically set to <code>TIMED_OUT</code>. Note that setting this timeout has no effect on that job execution timeout which may have been specified when the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).</p>
         pub fn step_timeout_in_minutes(mut self, input: i64) -> Self {
             self.inner = self.inner.step_timeout_in_minutes(input);
             self
         }
-        /// <p>Specifies the amount of time this device has to finish execution of this job. If the job
-        /// execution status is not set to a terminal state before this timer expires, or before the
-        /// timer is reset (by calling <code>UpdateJobExecution</code>, setting the status to
-        /// <code>IN_PROGRESS</code> and specifying a new timeout value in field <code>stepTimeoutInMinutes</code>)
-        /// the job execution status will be automatically set to <code>TIMED_OUT</code>.  Note that setting
-        /// this timeout has no effect on that job execution timeout which may have been specified when
-        /// the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).</p>
+        /// <p>Specifies the amount of time this device has to finish execution of this job. If the job execution status is not set to a terminal state before this timer expires, or before the timer is reset (by calling <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new timeout value in field <code>stepTimeoutInMinutes</code>) the job execution status will be automatically set to <code>TIMED_OUT</code>. Note that setting this timeout has no effect on that job execution timeout which may have been specified when the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).</p>
         pub fn set_step_timeout_in_minutes(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_step_timeout_in_minutes(input);
             self
@@ -490,14 +474,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_thing_name(input);
             self
         }
-        /// <p>The new status for the job execution (IN_PROGRESS, FAILED, SUCCESS, or REJECTED). This must be specified
-        /// on every update.</p>
+        /// <p>The new status for the job execution (IN_PROGRESS, FAILED, SUCCESS, or REJECTED). This must be specified on every update.</p>
         pub fn status(mut self, input: crate::model::JobExecutionStatus) -> Self {
             self.inner = self.inner.status(input);
             self
         }
-        /// <p>The new status for the job execution (IN_PROGRESS, FAILED, SUCCESS, or REJECTED). This must be specified
-        /// on every update.</p>
+        /// <p>The new status for the job execution (IN_PROGRESS, FAILED, SUCCESS, or REJECTED). This must be specified on every update.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::JobExecutionStatus>,
@@ -509,8 +491,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_status_details`](Self::set_status_details).
         ///
-        /// <p> Optional. A collection of name/value pairs that describe the status of the job execution. If not
-        /// specified, the statusDetails are unchanged.</p>
+        /// <p> Optional. A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>
         pub fn status_details(
             mut self,
             k: impl Into<std::string::String>,
@@ -519,8 +500,7 @@ pub mod fluent_builders {
             self.inner = self.inner.status_details(k.into(), v.into());
             self
         }
-        /// <p> Optional. A collection of name/value pairs that describe the status of the job execution. If not
-        /// specified, the statusDetails are unchanged.</p>
+        /// <p> Optional. A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>
         pub fn set_status_details(
             mut self,
             input: std::option::Option<
@@ -530,54 +510,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_status_details(input);
             self
         }
-        /// <p>Specifies the amount of time this device has to finish execution of this job. If the job
-        /// execution status is not set to a terminal state before this timer expires, or before the
-        /// timer is reset (by again calling <code>UpdateJobExecution</code>, setting the status to
-        /// <code>IN_PROGRESS</code> and specifying a new timeout value in this field) the job execution
-        /// status will be automatically set to <code>TIMED_OUT</code>.  Note that setting or resetting
-        /// this timeout has no effect on that job execution timeout which may have been specified when
-        /// the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).</p>
+        /// <p>Specifies the amount of time this device has to finish execution of this job. If the job execution status is not set to a terminal state before this timer expires, or before the timer is reset (by again calling <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new timeout value in this field) the job execution status will be automatically set to <code>TIMED_OUT</code>. Note that setting or resetting this timeout has no effect on that job execution timeout which may have been specified when the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).</p>
         pub fn step_timeout_in_minutes(mut self, input: i64) -> Self {
             self.inner = self.inner.step_timeout_in_minutes(input);
             self
         }
-        /// <p>Specifies the amount of time this device has to finish execution of this job. If the job
-        /// execution status is not set to a terminal state before this timer expires, or before the
-        /// timer is reset (by again calling <code>UpdateJobExecution</code>, setting the status to
-        /// <code>IN_PROGRESS</code> and specifying a new timeout value in this field) the job execution
-        /// status will be automatically set to <code>TIMED_OUT</code>.  Note that setting or resetting
-        /// this timeout has no effect on that job execution timeout which may have been specified when
-        /// the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).</p>
+        /// <p>Specifies the amount of time this device has to finish execution of this job. If the job execution status is not set to a terminal state before this timer expires, or before the timer is reset (by again calling <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new timeout value in this field) the job execution status will be automatically set to <code>TIMED_OUT</code>. Note that setting or resetting this timeout has no effect on that job execution timeout which may have been specified when the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).</p>
         pub fn set_step_timeout_in_minutes(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_step_timeout_in_minutes(input);
             self
         }
-        /// <p>Optional. The expected current version of the job execution. Each time you update the job execution, its
-        /// version is incremented. If the version of the job execution stored in Jobs does not match, the update is
-        /// rejected with a VersionMismatch error, and an ErrorResponse that contains the current job execution status data
-        /// is returned. (This makes it unnecessary to perform a separate DescribeJobExecution request in order to obtain
-        /// the job execution status data.)</p>
+        /// <p>Optional. The expected current version of the job execution. Each time you update the job execution, its version is incremented. If the version of the job execution stored in Jobs does not match, the update is rejected with a VersionMismatch error, and an ErrorResponse that contains the current job execution status data is returned. (This makes it unnecessary to perform a separate DescribeJobExecution request in order to obtain the job execution status data.)</p>
         pub fn expected_version(mut self, input: i64) -> Self {
             self.inner = self.inner.expected_version(input);
             self
         }
-        /// <p>Optional. The expected current version of the job execution. Each time you update the job execution, its
-        /// version is incremented. If the version of the job execution stored in Jobs does not match, the update is
-        /// rejected with a VersionMismatch error, and an ErrorResponse that contains the current job execution status data
-        /// is returned. (This makes it unnecessary to perform a separate DescribeJobExecution request in order to obtain
-        /// the job execution status data.)</p>
+        /// <p>Optional. The expected current version of the job execution. Each time you update the job execution, its version is incremented. If the version of the job execution stored in Jobs does not match, the update is rejected with a VersionMismatch error, and an ErrorResponse that contains the current job execution status data is returned. (This makes it unnecessary to perform a separate DescribeJobExecution request in order to obtain the job execution status data.)</p>
         pub fn set_expected_version(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_expected_version(input);
             self
         }
-        /// <p>Optional. When included and set to true, the response contains the JobExecutionState data. The default is
-        /// false.</p>
+        /// <p>Optional. When included and set to true, the response contains the JobExecutionState data. The default is false.</p>
         pub fn include_job_execution_state(mut self, input: bool) -> Self {
             self.inner = self.inner.include_job_execution_state(input);
             self
         }
-        /// <p>Optional. When included and set to true, the response contains the JobExecutionState data. The default is
-        /// false.</p>
+        /// <p>Optional. When included and set to true, the response contains the JobExecutionState data. The default is false.</p>
         pub fn set_include_job_execution_state(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_include_job_execution_state(input);
             self

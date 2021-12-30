@@ -767,10 +767,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CancelMailboxExportJob`.
     ///
-    /// <p>Cancels a mailbox export job.</p>
-    /// <note>
-    /// <p>If the mailbox export job is near completion, it might not be possible to cancel
-    /// it.</p>
+    /// <p>Cancels a mailbox export job.</p> <note>
+    /// <p>If the mailbox export job is near completion, it might not be possible to cancel it.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelMailboxExportJob<
@@ -957,7 +955,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateGroup`.
     ///
-    /// <p>Creates a group that can be used in Amazon WorkMail by calling the <a>RegisterToWorkMail</a> operation.</p>
+    /// <p>Creates a group that can be used in Amazon WorkMail by calling the <code>RegisterToWorkMail</code> operation.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateGroup<
         C = aws_smithy_client::erase::DynConnector,
@@ -1297,9 +1295,7 @@ pub mod fluent_builders {
     ///
     /// <p>Creates a new Amazon WorkMail organization. Optionally, you can choose to associate an existing AWS Directory Service directory with your organization. If an AWS Directory Service directory ID is specified, the organization alias must match the directory alias. If you choose not to associate an existing directory with your organization, then we create a new Amazon WorkMail directory for you. For more information, see <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/add_new_organization.html">Adding an organization</a> in the <i>Amazon WorkMail Administrator Guide</i>.</p>
     /// <p>You can associate multiple email domains with an organization, then set your default email domain from the Amazon WorkMail console. You can also associate a domain that is managed in an Amazon Route 53 public hosted zone. For more information, see <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/add_domain.html">Adding a domain</a> and <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/default_domain.html">Choosing the default domain</a> in the <i>Amazon WorkMail Administrator Guide</i>.</p>
-    /// <p>Optionally, you can use a customer managed master key from AWS Key Management Service
-    /// (AWS KMS) to encrypt email for your organization. If you don't associate an AWS KMS key, Amazon WorkMail creates a
-    /// default AWS managed master key for you.</p>
+    /// <p>Optionally, you can use a customer managed master key from AWS Key Management Service (AWS KMS) to encrypt email for your organization. If you don't associate an AWS KMS key, Amazon WorkMail creates a default AWS managed master key for you.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateOrganization<
         C = aws_smithy_client::erase::DynConnector,
@@ -1403,14 +1399,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domains(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a customer managed master key from AWS
-        /// KMS.</p>
+        /// <p>The Amazon Resource Name (ARN) of a customer managed master key from AWS KMS.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_key_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a customer managed master key from AWS
-        /// KMS.</p>
+        /// <p>The Amazon Resource Name (ARN) of a customer managed master key from AWS KMS.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_kms_key_arn(input);
             self
@@ -1485,14 +1479,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier associated with the organization for which the resource is
-        /// created.</p>
+        /// <p>The identifier associated with the organization for which the resource is created.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.organization_id(input.into());
             self
         }
-        /// <p>The identifier associated with the organization for which the resource is
-        /// created.</p>
+        /// <p>The identifier associated with the organization for which the resource is created.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1510,14 +1502,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The type of the new resource. The available types are <code>equipment</code> and
-        /// <code>room</code>.</p>
+        /// <p>The type of the new resource. The available types are <code>equipment</code> and <code>room</code>.</p>
         pub fn r#type(mut self, input: crate::model::ResourceType) -> Self {
             self.inner = self.inner.r#type(input);
             self
         }
-        /// <p>The type of the new resource. The available types are <code>equipment</code> and
-        /// <code>room</code>.</p>
+        /// <p>The type of the new resource. The available types are <code>equipment</code> and <code>room</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ResourceType>) -> Self {
             self.inner = self.inner.set_type(input);
             self
@@ -1525,7 +1515,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateUser`.
     ///
-    /// <p>Creates a user who can be used in Amazon WorkMail by calling the <a>RegisterToWorkMail</a> operation.</p>
+    /// <p>Creates a user who can be used in Amazon WorkMail by calling the <code>RegisterToWorkMail</code> operation.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateUser<
         C = aws_smithy_client::erase::DynConnector,
@@ -1628,8 +1618,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteAccessControlRule`.
     ///
-    /// <p>Deletes an access control rule for the specified WorkMail organization.</p>
-    /// <note>
+    /// <p>Deletes an access control rule for the specified WorkMail organization.</p> <note>
     /// <p>Deleting already deleted and non-existing rules does not produce an error. In those cases, the service sends back an HTTP 200 response with an empty HTTP body.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -1714,8 +1703,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteAlias`.
     ///
-    /// <p>Remove one or more specified aliases from a set of aliases for a given
-    /// user.</p>
+    /// <p>Remove one or more specified aliases from a set of aliases for a given user.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAlias<
         C = aws_smithy_client::erase::DynConnector,
@@ -1785,26 +1773,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_organization_id(input);
             self
         }
-        /// <p>The identifier for the member (user or group) from which to have the aliases
-        /// removed.</p>
+        /// <p>The identifier for the member (user or group) from which to have the aliases removed.</p>
         pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.entity_id(input.into());
             self
         }
-        /// <p>The identifier for the member (user or group) from which to have the aliases
-        /// removed.</p>
+        /// <p>The identifier for the member (user or group) from which to have the aliases removed.</p>
         pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_entity_id(input);
             self
         }
-        /// <p>The aliases to be removed from the user's set of aliases. Duplicate entries in the
-        /// list are collapsed into single entries (the list is transformed into a set).</p>
+        /// <p>The aliases to be removed from the user's set of aliases. Duplicate entries in the list are collapsed into single entries (the list is transformed into a set).</p>
         pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.alias(input.into());
             self
         }
-        /// <p>The aliases to be removed from the user's set of aliases. Duplicate entries in the
-        /// list are collapsed into single entries (the list is transformed into a set).</p>
+        /// <p>The aliases to be removed from the user's set of aliases. Duplicate entries in the list are collapsed into single entries (the list is transformed into a set).</p>
         pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_alias(input);
             self
@@ -1952,14 +1936,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier of the organization under which the member (user or group)
-        /// exists.</p>
+        /// <p>The identifier of the organization under which the member (user or group) exists.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.organization_id(input.into());
             self
         }
-        /// <p>The identifier of the organization under which the member (user or group)
-        /// exists.</p>
+        /// <p>The identifier of the organization under which the member (user or group) exists.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1977,14 +1959,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_entity_id(input);
             self
         }
-        /// <p>The identifier of the member (user or group) for which to delete granted
-        /// permissions.</p>
+        /// <p>The identifier of the member (user or group) for which to delete granted permissions.</p>
         pub fn grantee_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.grantee_id(input.into());
             self
         }
-        /// <p>The identifier of the member (user or group) for which to delete granted
-        /// permissions.</p>
+        /// <p>The identifier of the member (user or group) for which to delete granted permissions.</p>
         pub fn set_grantee_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_grantee_id(input);
             self
@@ -1992,8 +1972,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteMobileDeviceAccessOverride`.
     ///
-    /// <p>Deletes the mobile device access override for the given WorkMail organization, user, and device.</p>
-    /// <note>
+    /// <p>Deletes the mobile device access override for the given WorkMail organization, user, and device.</p> <note>
     /// <p>Deleting already deleted and non-existing overrides does not produce an error. In those cases, the service sends back an HTTP 200 response with an empty HTTP body.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -2067,18 +2046,9 @@ pub mod fluent_builders {
         }
         /// <p>The WorkMail user for which you want to delete the override. Accepts the following types of user identities:</p>
         /// <ul>
-        /// <li>
-        /// <p>User ID:  <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Email address: <code>user@domain.tld</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>User name: <code>user</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+        /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+        /// <li> <p>User name: <code>user</code> </p> </li>
         /// </ul>
         pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.user_id(input.into());
@@ -2086,18 +2056,9 @@ pub mod fluent_builders {
         }
         /// <p>The WorkMail user for which you want to delete the override. Accepts the following types of user identities:</p>
         /// <ul>
-        /// <li>
-        /// <p>User ID:  <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Email address: <code>user@domain.tld</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>User name: <code>user</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+        /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+        /// <li> <p>User name: <code>user</code> </p> </li>
         /// </ul>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_user_id(input);
@@ -2116,8 +2077,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteMobileDeviceAccessRule`.
     ///
-    /// <p>Deletes a mobile device access rule for the specified Amazon WorkMail organization.</p>
-    /// <note>
+    /// <p>Deletes a mobile device access rule for the specified Amazon WorkMail organization.</p> <note>
     /// <p>Deleting already deleted and non-existing rules does not produce an error. In those cases, the service sends back an HTTP 200 response with an empty HTTP body.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -2358,14 +2318,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier associated with the organization from which the resource is
-        /// deleted.</p>
+        /// <p>The identifier associated with the organization from which the resource is deleted.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.organization_id(input.into());
             self
         }
-        /// <p>The identifier associated with the organization from which the resource is
-        /// deleted.</p>
+        /// <p>The identifier associated with the organization from which the resource is deleted.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2469,11 +2427,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteUser`.
     ///
-    /// <p>Deletes a user from Amazon WorkMail and all subsequent systems. Before you can delete a
-    /// user, the user state must be <code>DISABLED</code>. Use the <a>DescribeUser</a>
-    /// action to confirm the user state.</p>
-    /// <p>Deleting a user is permanent and cannot be undone. WorkMail archives user mailboxes for
-    /// 30 days before they are permanently removed.</p>
+    /// <p>Deletes a user from Amazon WorkMail and all subsequent systems. Before you can delete a user, the user state must be <code>DISABLED</code>. Use the <code>DescribeUser</code> action to confirm the user state.</p>
+    /// <p>Deleting a user is permanent and cannot be undone. WorkMail archives user mailboxes for 30 days before they are permanently removed.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteUser<
         C = aws_smithy_client::erase::DynConnector,
@@ -2556,10 +2511,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeregisterFromWorkMail`.
     ///
-    /// <p>Mark a user, group, or resource as no longer used in Amazon WorkMail. This action
-    /// disassociates the mailbox and schedules it for clean-up. WorkMail keeps mailboxes for 30 days
-    /// before they are permanently removed. The functionality in the console is
-    /// <i>Disable</i>.</p>
+    /// <p>Mark a user, group, or resource as no longer used in Amazon WorkMail. This action disassociates the mailbox and schedules it for clean-up. WorkMail keeps mailboxes for 30 days before they are permanently removed. The functionality in the console is <i>Disable</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterFromWorkMail<
         C = aws_smithy_client::erase::DynConnector,
@@ -2642,8 +2594,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeregisterMailDomain`.
     ///
-    /// <p>Removes a domain from Amazon WorkMail, stops email routing to WorkMail, and removes the authorization allowing WorkMail use. SES keeps the domain because other applications may use it. You must first
-    /// remove any email address used by WorkMail entities before you remove the domain.</p>
+    /// <p>Removes a domain from Amazon WorkMail, stops email routing to WorkMail, and removes the authorization allowing WorkMail use. SES keeps the domain because other applications may use it. You must first remove any email address used by WorkMail entities before you remove the domain.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeregisterMailDomain<
         C = aws_smithy_client::erase::DynConnector,
@@ -2965,8 +2916,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeOrganization`.
     ///
-    /// <p>Provides more information regarding a given organization based on its
-    /// identifier.</p>
+    /// <p>Provides more information regarding a given organization based on its identifier.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeOrganization<
         C = aws_smithy_client::erase::DynConnector,
@@ -3096,14 +3046,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier associated with the organization for which the resource is
-        /// described.</p>
+        /// <p>The identifier associated with the organization for which the resource is described.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.organization_id(input.into());
             self
         }
-        /// <p>The identifier associated with the organization for which the resource is
-        /// described.</p>
+        /// <p>The identifier associated with the organization for which the resource is described.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3277,26 +3225,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_organization_id(input);
             self
         }
-        /// <p>The identifier of the resource from which delegates' set members are removed.
-        /// </p>
+        /// <p>The identifier of the resource from which delegates' set members are removed. </p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_id(input.into());
             self
         }
-        /// <p>The identifier of the resource from which delegates' set members are removed.
-        /// </p>
+        /// <p>The identifier of the resource from which delegates' set members are removed. </p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_id(input);
             self
         }
-        /// <p>The identifier for the member (user, group) to be removed from the resource's
-        /// delegates.</p>
+        /// <p>The identifier for the member (user, group) to be removed from the resource's delegates.</p>
         pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.entity_id(input.into());
             self
         }
-        /// <p>The identifier for the member (user, group) to be removed from the resource's
-        /// delegates.</p>
+        /// <p>The identifier for the member (user, group) to be removed from the resource's delegates.</p>
         pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_entity_id(input);
             self
@@ -3397,8 +3341,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetAccessControlEffect`.
     ///
-    /// <p>Gets the effects of an organization's access control rules as they apply to a
-    /// specified IPv4 address, access protocol action, or user ID. </p>
+    /// <p>Gets the effects of an organization's access control rules as they apply to a specified IPv4 address, access protocol action, or user ID. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAccessControlEffect<
         C = aws_smithy_client::erase::DynConnector,
@@ -3478,16 +3421,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ip_address(input);
             self
         }
-        /// <p>The access protocol action. Valid values include <code>ActiveSync</code>,
-        /// <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>,
-        /// <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
+        /// <p>The access protocol action. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
         pub fn action(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.action(input.into());
             self
         }
-        /// <p>The access protocol action. Valid values include <code>ActiveSync</code>,
-        /// <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>,
-        /// <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
+        /// <p>The access protocol action. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
         pub fn set_action(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_action(input);
             self
@@ -3635,14 +3574,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier for the organization that contains the user whose mailbox details are
-        /// being requested.</p>
+        /// <p>The identifier for the organization that contains the user whose mailbox details are being requested.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.organization_id(input.into());
             self
         }
-        /// <p>The identifier for the organization that contains the user whose mailbox details are
-        /// being requested.</p>
+        /// <p>The identifier for the organization that contains the user whose mailbox details are being requested.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3746,8 +3683,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetMobileDeviceAccessEffect`.
     ///
-    /// <p>Simulates the effect of the mobile device access rules for the given attributes of a sample access event. Use this method to test the effects of the current set of mobile device access
-    /// rules for the Amazon WorkMail organization for a particular user's attributes.</p>
+    /// <p>Simulates the effect of the mobile device access rules for the given attributes of a sample access event. Use this method to test the effects of the current set of mobile device access rules for the Amazon WorkMail organization for a particular user's attributes.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMobileDeviceAccessEffect<
         C = aws_smithy_client::erase::DynConnector,
@@ -3938,18 +3874,9 @@ pub mod fluent_builders {
         }
         /// <p>Identifies the WorkMail user for the override. Accepts the following types of user identities: </p>
         /// <ul>
-        /// <li>
-        /// <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Email address: <code>user@domain.tld</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>User name: <code>user</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+        /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+        /// <li> <p>User name: <code>user</code> </p> </li>
         /// </ul>
         pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.user_id(input.into());
@@ -3957,18 +3884,9 @@ pub mod fluent_builders {
         }
         /// <p>Identifies the WorkMail user for the override. Accepts the following types of user identities: </p>
         /// <ul>
-        /// <li>
-        /// <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Email address: <code>user@domain.tld</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>User name: <code>user</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+        /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+        /// <li> <p>User name: <code>user</code> </p> </li>
         /// </ul>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_user_id(input);
@@ -4060,8 +3978,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAliases`.
     ///
-    /// <p>Creates a paginated call to list the aliases associated with a given
-    /// entity.</p>
+    /// <p>Creates a paginated call to list the aliases associated with a given entity.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAliases<
         C = aws_smithy_client::erase::DynConnector,
@@ -4141,14 +4058,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_entity_id(input);
             self
         }
-        /// <p>The token to use to retrieve the next page of results. The first call does not
-        /// contain any tokens.</p>
+        /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. The first call does not
-        /// contain any tokens.</p>
+        /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4166,8 +4081,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListGroupMembers`.
     ///
-    /// <p>Returns an overview of the members of a group. Users and groups can be members of a
-    /// group.</p>
+    /// <p>Returns an overview of the members of a group. Users and groups can be members of a group.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListGroupMembers<
         C = aws_smithy_client::erase::DynConnector,
@@ -4237,26 +4151,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_organization_id(input);
             self
         }
-        /// <p>The identifier for the group to which the members (users or groups) are
-        /// associated.</p>
+        /// <p>The identifier for the group to which the members (users or groups) are associated.</p>
         pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.group_id(input.into());
             self
         }
-        /// <p>The identifier for the group to which the members (users or groups) are
-        /// associated.</p>
+        /// <p>The identifier for the group to which the members (users or groups) are associated.</p>
         pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_group_id(input);
             self
         }
-        /// <p> The token to use to retrieve the next page of results. The first call does not
-        /// contain any tokens.</p>
+        /// <p> The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p> The token to use to retrieve the next page of results. The first call does not
-        /// contain any tokens.</p>
+        /// <p> The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4344,14 +4254,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_organization_id(input);
             self
         }
-        /// <p>The token to use to retrieve the next page of results. The first call does not
-        /// contain any tokens.</p>
+        /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. The first call does not
-        /// contain any tokens.</p>
+        /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4369,8 +4277,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListMailboxExportJobs`.
     ///
-    /// <p>Lists the mailbox export jobs started for the specified organization within the last
-    /// seven days.</p>
+    /// <p>Lists the mailbox export jobs started for the specified organization within the last seven days.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListMailboxExportJobs<
         C = aws_smithy_client::erase::DynConnector,
@@ -4463,8 +4370,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListMailboxPermissions`.
     ///
-    /// <p>Lists the mailbox permissions associated with a user, group, or resource
-    /// mailbox.</p>
+    /// <p>Lists the mailbox permissions associated with a user, group, or resource mailbox.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListMailboxPermissions<
         C = aws_smithy_client::erase::DynConnector,
@@ -4521,14 +4427,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier of the organization under which the user, group, or resource
-        /// exists.</p>
+        /// <p>The identifier of the organization under which the user, group, or resource exists.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.organization_id(input.into());
             self
         }
-        /// <p>The identifier of the organization under which the user, group, or resource
-        /// exists.</p>
+        /// <p>The identifier of the organization under which the user, group, or resource exists.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4536,26 +4440,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_organization_id(input);
             self
         }
-        /// <p>The identifier of the user, group, or resource for which to list mailbox
-        /// permissions.</p>
+        /// <p>The identifier of the user, group, or resource for which to list mailbox permissions.</p>
         pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.entity_id(input.into());
             self
         }
-        /// <p>The identifier of the user, group, or resource for which to list mailbox
-        /// permissions.</p>
+        /// <p>The identifier of the user, group, or resource for which to list mailbox permissions.</p>
         pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_entity_id(input);
             self
         }
-        /// <p>The token to use to retrieve the next page of results. The first call does not
-        /// contain any tokens.</p>
+        /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. The first call does not
-        /// contain any tokens.</p>
+        /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4738,18 +4638,9 @@ pub mod fluent_builders {
         }
         /// <p>The WorkMail user under which you list the mobile device access overrides. Accepts the following types of user identities:</p>
         /// <ul>
-        /// <li>
-        /// <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Email address: <code>user@domain.tld</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>User name: <code>user</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+        /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+        /// <li> <p>User name: <code>user</code> </p> </li>
         /// </ul>
         pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.user_id(input.into());
@@ -4757,18 +4648,9 @@ pub mod fluent_builders {
         }
         /// <p>The WorkMail user under which you list the mobile device access overrides. Accepts the following types of user identities:</p>
         /// <ul>
-        /// <li>
-        /// <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Email address: <code>user@domain.tld</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>User name: <code>user</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+        /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+        /// <li> <p>User name: <code>user</code> </p> </li>
         /// </ul>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_user_id(input);
@@ -4937,14 +4819,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The token to use to retrieve the next page of results. The first call does not
-        /// contain any tokens.</p>
+        /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. The first call does not
-        /// contain any tokens.</p>
+        /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4962,8 +4842,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListResourceDelegates`.
     ///
-    /// <p>Lists the delegates associated with a resource. Users and groups can be resource
-    /// delegates and answer requests on behalf of the resource.</p>
+    /// <p>Lists the delegates associated with a resource. Users and groups can be resource delegates and answer requests on behalf of the resource.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListResourceDelegates<
         C = aws_smithy_client::erase::DynConnector,
@@ -5020,14 +4899,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier for the organization that contains the resource for which delegates
-        /// are listed.</p>
+        /// <p>The identifier for the organization that contains the resource for which delegates are listed.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.organization_id(input.into());
             self
         }
-        /// <p>The identifier for the organization that contains the resource for which delegates
-        /// are listed.</p>
+        /// <p>The identifier for the organization that contains the resource for which delegates are listed.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5045,14 +4922,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_id(input);
             self
         }
-        /// <p>The token used to paginate through the delegates associated with a
-        /// resource.</p>
+        /// <p>The token used to paginate through the delegates associated with a resource.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token used to paginate through the delegates associated with a
-        /// resource.</p>
+        /// <p>The token used to paginate through the delegates associated with a resource.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5140,14 +5015,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_organization_id(input);
             self
         }
-        /// <p>The token to use to retrieve the next page of results. The first call does not
-        /// contain any tokens.</p>
+        /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. The first call does not
-        /// contain any tokens.</p>
+        /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5305,14 +5178,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_organization_id(input);
             self
         }
-        /// <p>The token to use to retrieve the next page of results. The first call does not
-        /// contain any tokens.</p>
+        /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token to use to retrieve the next page of results. The first call does not
-        /// contain any tokens.</p>
+        /// <p>The token to use to retrieve the next page of results. The first call does not contain any tokens.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5330,10 +5201,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutAccessControlRule`.
     ///
-    /// <p>Adds a new access control rule for the specified organization. The rule allows or
-    /// denies access to the organization for the specified IPv4 addresses, access protocol
-    /// actions, and user IDs. Adding a new rule with the same name as an existing rule replaces
-    /// the older rule.</p>
+    /// <p>Adds a new access control rule for the specified organization. The rule allows or denies access to the organization for the specified IPv4 addresses, access protocol actions, and user IDs. Adding a new rule with the same name as an existing rule replaces the older rule.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutAccessControlRule<
         C = aws_smithy_client::erase::DynConnector,
@@ -5461,16 +5329,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
-        /// <p>Access protocol actions to include in the rule. Valid values include
-        /// <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>,
-        /// <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
+        /// <p>Access protocol actions to include in the rule. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
         pub fn actions(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.actions(input.into());
             self
         }
-        /// <p>Access protocol actions to include in the rule. Valid values include
-        /// <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>,
-        /// <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
+        /// <p>Access protocol actions to include in the rule. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
         pub fn set_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5482,16 +5346,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_not_actions`](Self::set_not_actions).
         ///
-        /// <p>Access protocol actions to exclude from the rule. Valid values include
-        /// <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>,
-        /// <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
+        /// <p>Access protocol actions to exclude from the rule. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
         pub fn not_actions(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.not_actions(input.into());
             self
         }
-        /// <p>Access protocol actions to exclude from the rule. Valid values include
-        /// <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>,
-        /// <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
+        /// <p>Access protocol actions to exclude from the rule. Valid values include <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
         pub fn set_not_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5632,8 +5492,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutMailboxPermissions`.
     ///
-    /// <p>Sets permissions for a user, group, or resource. This replaces any pre-existing
-    /// permissions.</p>
+    /// <p>Sets permissions for a user, group, or resource. This replaces any pre-existing permissions.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutMailboxPermissions<
         C = aws_smithy_client::erase::DynConnector,
@@ -5690,14 +5549,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier of the organization under which the user, group, or resource
-        /// exists.</p>
+        /// <p>The identifier of the organization under which the user, group, or resource exists.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.organization_id(input.into());
             self
         }
-        /// <p>The identifier of the organization under which the user, group, or resource
-        /// exists.</p>
+        /// <p>The identifier of the organization under which the user, group, or resource exists.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5705,26 +5562,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_organization_id(input);
             self
         }
-        /// <p>The identifier of the user, group, or resource for which to update mailbox
-        /// permissions.</p>
+        /// <p>The identifier of the user, group, or resource for which to update mailbox permissions.</p>
         pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.entity_id(input.into());
             self
         }
-        /// <p>The identifier of the user, group, or resource for which to update mailbox
-        /// permissions.</p>
+        /// <p>The identifier of the user, group, or resource for which to update mailbox permissions.</p>
         pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_entity_id(input);
             self
         }
-        /// <p>The identifier of the user, group, or resource to which to grant the
-        /// permissions.</p>
+        /// <p>The identifier of the user, group, or resource to which to grant the permissions.</p>
         pub fn grantee_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.grantee_id(input.into());
             self
         }
-        /// <p>The identifier of the user, group, or resource to which to grant the
-        /// permissions.</p>
+        /// <p>The identifier of the user, group, or resource to which to grant the permissions.</p>
         pub fn set_grantee_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_grantee_id(input);
             self
@@ -5733,22 +5586,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_permission_values`](Self::set_permission_values).
         ///
-        /// <p>The permissions granted to the grantee. SEND_AS allows the grantee to send email as
-        /// the owner of the mailbox (the grantee is not mentioned on these emails). SEND_ON_BEHALF
-        /// allows the grantee to send email on behalf of the owner of the mailbox (the grantee is not
-        /// mentioned as the physical sender of these emails). FULL_ACCESS allows the grantee full
-        /// access to the mailbox, irrespective of other folder-level permissions set on the
-        /// mailbox.</p>
+        /// <p>The permissions granted to the grantee. SEND_AS allows the grantee to send email as the owner of the mailbox (the grantee is not mentioned on these emails). SEND_ON_BEHALF allows the grantee to send email on behalf of the owner of the mailbox (the grantee is not mentioned as the physical sender of these emails). FULL_ACCESS allows the grantee full access to the mailbox, irrespective of other folder-level permissions set on the mailbox.</p>
         pub fn permission_values(mut self, input: crate::model::PermissionType) -> Self {
             self.inner = self.inner.permission_values(input);
             self
         }
-        /// <p>The permissions granted to the grantee. SEND_AS allows the grantee to send email as
-        /// the owner of the mailbox (the grantee is not mentioned on these emails). SEND_ON_BEHALF
-        /// allows the grantee to send email on behalf of the owner of the mailbox (the grantee is not
-        /// mentioned as the physical sender of these emails). FULL_ACCESS allows the grantee full
-        /// access to the mailbox, irrespective of other folder-level permissions set on the
-        /// mailbox.</p>
+        /// <p>The permissions granted to the grantee. SEND_AS allows the grantee to send email as the owner of the mailbox (the grantee is not mentioned on these emails). SEND_ON_BEHALF allows the grantee to send email on behalf of the owner of the mailbox (the grantee is not mentioned as the physical sender of these emails). FULL_ACCESS allows the grantee full access to the mailbox, irrespective of other folder-level permissions set on the mailbox.</p>
         pub fn set_permission_values(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PermissionType>>,
@@ -5831,18 +5674,9 @@ pub mod fluent_builders {
         }
         /// <p>The WorkMail user for which you create the override. Accepts the following types of user identities:</p>
         /// <ul>
-        /// <li>
-        /// <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Email address: <code>user@domain.tld</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>User name: <code>user</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+        /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+        /// <li> <p>User name: <code>user</code> </p> </li>
         /// </ul>
         pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.user_id(input.into());
@@ -5850,18 +5684,9 @@ pub mod fluent_builders {
         }
         /// <p>The WorkMail user for which you create the override. Accepts the following types of user identities:</p>
         /// <ul>
-        /// <li>
-        /// <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>Email address: <code>user@domain.tld</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>User name: <code>user</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+        /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+        /// <li> <p>User name: <code>user</code> </p> </li>
         /// </ul>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_user_id(input);
@@ -6023,8 +5848,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RegisterMailDomain`.
     ///
-    /// <p>Registers a new domain in Amazon WorkMail and SES, and configures it for use by WorkMail. Emails received by SES for this domain are routed to the specified WorkMail organization, and WorkMail has
-    /// permanent permission to use the specified domain for sending your users' emails.</p>
+    /// <p>Registers a new domain in Amazon WorkMail and SES, and configures it for use by WorkMail. Emails received by SES for this domain are routed to the specified WorkMail organization, and WorkMail has permanent permission to use the specified domain for sending your users' emails.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterMailDomain<
         C = aws_smithy_client::erase::DynConnector,
@@ -6117,13 +5941,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RegisterToWorkMail`.
     ///
-    /// <p>Registers an existing and disabled user, group, or resource for Amazon WorkMail use by
-    /// associating a mailbox and calendaring capabilities. It performs no change if the user,
-    /// group, or resource is enabled and fails if the user, group, or resource is deleted. This
-    /// operation results in the accumulation of costs. For more information, see <a href="https://aws.amazon.com/workmail/pricing">Pricing</a>. The equivalent console
-    /// functionality for this operation is <i>Enable</i>. </p>
-    /// <p>Users can either be created by calling the <a>CreateUser</a> API operation
-    /// or they can be synchronized from your directory. For more information, see <a>DeregisterFromWorkMail</a>.</p>
+    /// <p>Registers an existing and disabled user, group, or resource for Amazon WorkMail use by associating a mailbox and calendaring capabilities. It performs no change if the user, group, or resource is enabled and fails if the user, group, or resource is deleted. This operation results in the accumulation of costs. For more information, see <a href="https://aws.amazon.com/workmail/pricing">Pricing</a>. The equivalent console functionality for this operation is <i>Enable</i>. </p>
+    /// <p>Users can either be created by calling the <code>CreateUser</code> API operation or they can be synchronized from your directory. For more information, see <code>DeregisterFromWorkMail</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RegisterToWorkMail<
         C = aws_smithy_client::erase::DynConnector,
@@ -6180,14 +5999,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier for the organization under which the user, group, or resource
-        /// exists.</p>
+        /// <p>The identifier for the organization under which the user, group, or resource exists.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.organization_id(input.into());
             self
         }
-        /// <p>The identifier for the organization under which the user, group, or resource
-        /// exists.</p>
+        /// <p>The identifier for the organization under which the user, group, or resource exists.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6275,14 +6092,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier of the organization that contains the user for which the password is
-        /// reset.</p>
+        /// <p>The identifier of the organization that contains the user for which the password is reset.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.organization_id(input.into());
             self
         }
-        /// <p>The identifier of the organization that contains the user for which the password is
-        /// reset.</p>
+        /// <p>The identifier of the organization that contains the user for which the password is reset.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6313,10 +6128,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartMailboxExportJob`.
     ///
-    /// <p>Starts a mailbox export job to export MIME-format email messages and calendar items
-    /// from the specified mailbox to the specified Amazon Simple Storage Service (Amazon S3)
-    /// bucket. For more information, see <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/mail-export.html">Exporting mailbox content</a> in
-    /// the <i>Amazon WorkMail Administrator Guide</i>.</p>
+    /// <p>Starts a mailbox export job to export MIME-format email messages and calendar items from the specified mailbox to the specified Amazon Simple Storage Service (Amazon S3) bucket. For more information, see <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/mail-export.html">Exporting mailbox content</a> in the <i>Amazon WorkMail Administrator Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartMailboxExportJob<
         C = aws_smithy_client::erase::DynConnector,
@@ -6416,26 +6228,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The ARN of the AWS Identity and Access Management (IAM) role that grants write permission to the S3
-        /// bucket.</p>
+        /// <p>The ARN of the AWS Identity and Access Management (IAM) role that grants write permission to the S3 bucket.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The ARN of the AWS Identity and Access Management (IAM) role that grants write permission to the S3
-        /// bucket.</p>
+        /// <p>The ARN of the AWS Identity and Access Management (IAM) role that grants write permission to the S3 bucket.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the symmetric AWS Key Management Service (AWS KMS)
-        /// key that encrypts the exported mailbox content.</p>
+        /// <p>The Amazon Resource Name (ARN) of the symmetric AWS Key Management Service (AWS KMS) key that encrypts the exported mailbox content.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_key_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the symmetric AWS Key Management Service (AWS KMS)
-        /// key that encrypts the exported mailbox content.</p>
+        /// <p>The Amazon Resource Name (ARN) of the symmetric AWS Key Management Service (AWS KMS) key that encrypts the exported mailbox content.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_kms_key_arn(input);
             self
@@ -6466,8 +6274,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Applies the specified tags to the specified Amazon WorkMail organization
-    /// resource.</p>
+    /// <p>Applies the specified tags to the specified Amazon WorkMail organization resource.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -6554,8 +6361,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UntagResource`.
     ///
-    /// <p>Untags the specified tags from the specified Amazon WorkMail organization
-    /// resource.</p>
+    /// <p>Untags the specified tags from the specified Amazon WorkMail organization resource.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -6725,8 +6531,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateMailboxQuota`.
     ///
-    /// <p>Updates a user's current mailbox quota for a specified organization and
-    /// user.</p>
+    /// <p>Updates a user's current mailbox quota for a specified organization and user.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateMailboxQuota<
         C = aws_smithy_client::erase::DynConnector,
@@ -6783,14 +6588,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier for the organization that contains the user for whom to update the
-        /// mailbox quota.</p>
+        /// <p>The identifier for the organization that contains the user for whom to update the mailbox quota.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.organization_id(input.into());
             self
         }
-        /// <p>The identifier for the organization that contains the user for whom to update the
-        /// mailbox quota.</p>
+        /// <p>The identifier for the organization that contains the user for whom to update the mailbox quota.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7082,9 +6885,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdatePrimaryEmailAddress`.
     ///
-    /// <p>Updates the primary email for a user, group, or resource. The current email is moved
-    /// into the list of aliases (or swapped between an existing alias and the current primary
-    /// email), and the email provided in the input is promoted as the primary.</p>
+    /// <p>Updates the primary email for a user, group, or resource. The current email is moved into the list of aliases (or swapped between an existing alias and the current primary email), and the email provided in the input is promoted as the primary.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdatePrimaryEmailAddress<
         C = aws_smithy_client::erase::DynConnector,
@@ -7177,9 +6978,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateResource`.
     ///
-    /// <p>Updates data for the resource. To have the latest information, it must be preceded by
-    /// a <a>DescribeResource</a> call. The dataset in the request should be the one
-    /// expected when performing another <code>DescribeResource</code> call.</p>
+    /// <p>Updates data for the resource. To have the latest information, it must be preceded by a <code>DescribeResource</code> call. The dataset in the request should be the one expected when performing another <code>DescribeResource</code> call.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -7236,14 +7035,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier associated with the organization for which the resource is
-        /// updated.</p>
+        /// <p>The identifier associated with the organization for which the resource is updated.</p>
         pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.organization_id(input.into());
             self
         }
-        /// <p>The identifier associated with the organization for which the resource is
-        /// updated.</p>
+        /// <p>The identifier associated with the organization for which the resource is updated.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,

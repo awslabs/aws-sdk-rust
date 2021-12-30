@@ -11,16 +11,12 @@ pub mod accept_eulas_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -253,16 +249,12 @@ pub mod create_launch_profile_input {
         >,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -281,16 +273,14 @@ pub mod create_launch_profile_input {
         ///
         /// To override the contents of this collection use [`set_ec2_subnet_ids`](Self::set_ec2_subnet_ids).
         ///
-        /// <p>Specifies the IDs of the EC2 subnets where streaming sessions will be accessible from.
-        /// These subnets must support the specified instance types. </p>
+        /// <p>Specifies the IDs of the EC2 subnets where streaming sessions will be accessible from. These subnets must support the specified instance types. </p>
         pub fn ec2_subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ec2_subnet_ids.unwrap_or_default();
             v.push(input.into());
             self.ec2_subnet_ids = Some(v);
             self
         }
-        /// <p>Specifies the IDs of the EC2 subnets where streaming sessions will be accessible from.
-        /// These subnets must support the specified instance types. </p>
+        /// <p>Specifies the IDs of the EC2 subnets where streaming sessions will be accessible from. These subnets must support the specified instance types. </p>
         pub fn set_ec2_subnet_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -302,8 +292,7 @@ pub mod create_launch_profile_input {
         ///
         /// To override the contents of this collection use [`set_launch_profile_protocol_versions`](Self::set_launch_profile_protocol_versions).
         ///
-        /// <p>The version number of the protocol that is used by the launch profile. The only valid
-        /// version is "2021-03-31".</p>
+        /// <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
         pub fn launch_profile_protocol_versions(
             mut self,
             input: impl Into<std::string::String>,
@@ -313,8 +302,7 @@ pub mod create_launch_profile_input {
             self.launch_profile_protocol_versions = Some(v);
             self
         }
-        /// <p>The version number of the protocol that is used by the launch profile. The only valid
-        /// version is "2021-03-31".</p>
+        /// <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
         pub fn set_launch_profile_protocol_versions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -352,16 +340,14 @@ pub mod create_launch_profile_input {
         ///
         /// To override the contents of this collection use [`set_studio_component_ids`](Self::set_studio_component_ids).
         ///
-        /// <p>Unique identifiers for a collection of studio components that can be used with this
-        /// launch profile.</p>
+        /// <p>Unique identifiers for a collection of studio components that can be used with this launch profile.</p>
         pub fn studio_component_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.studio_component_ids.unwrap_or_default();
             v.push(input.into());
             self.studio_component_ids = Some(v);
             self
         }
-        /// <p>Unique identifiers for a collection of studio components that can be used with this
-        /// launch profile.</p>
+        /// <p>Unique identifiers for a collection of studio components that can be used with this launch profile.</p>
         pub fn set_studio_component_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -383,8 +369,7 @@ pub mod create_launch_profile_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this
-        /// resource.</p>
+        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -395,8 +380,7 @@ pub mod create_launch_profile_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this
-        /// resource.</p>
+        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -607,16 +591,12 @@ pub mod create_streaming_image_input {
         >,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -665,8 +645,7 @@ pub mod create_streaming_image_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this
-        /// resource.</p>
+        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -677,8 +656,7 @@ pub mod create_streaming_image_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this
-        /// resource.</p>
+        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -889,16 +867,12 @@ pub mod create_streaming_session_input {
         >,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -966,8 +940,7 @@ pub mod create_streaming_session_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this
-        /// resource.</p>
+        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -978,8 +951,7 @@ pub mod create_streaming_session_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this
-        /// resource.</p>
+        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1186,16 +1158,12 @@ pub mod create_streaming_session_stream_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -1447,14 +1415,12 @@ pub mod create_studio_input {
         pub(crate) user_role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio
-        /// portal.</p>
+        /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio portal.</p>
         pub fn admin_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.admin_role_arn = Some(input.into());
             self
         }
-        /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio
-        /// portal.</p>
+        /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio portal.</p>
         pub fn set_admin_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1462,16 +1428,12 @@ pub mod create_studio_input {
             self.admin_role_arn = input;
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -1502,14 +1464,12 @@ pub mod create_studio_input {
             self.studio_encryption_configuration = input;
             self
         }
-        /// <p>The studio name that is used in the URL of the Nimble Studio portal when accessed
-        /// by Nimble Studio users.</p>
+        /// <p>The studio name that is used in the URL of the Nimble Studio portal when accessed by Nimble Studio users.</p>
         pub fn studio_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.studio_name = Some(input.into());
             self
         }
-        /// <p>The studio name that is used in the URL of the Nimble Studio portal when accessed
-        /// by Nimble Studio users.</p>
+        /// <p>The studio name that is used in the URL of the Nimble Studio portal when accessed by Nimble Studio users.</p>
         pub fn set_studio_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.studio_name = input;
             self
@@ -1518,8 +1478,7 @@ pub mod create_studio_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this
-        /// resource.</p>
+        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1530,8 +1489,7 @@ pub mod create_studio_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this
-        /// resource.</p>
+        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1541,14 +1499,12 @@ pub mod create_studio_input {
             self.tags = input;
             self
         }
-        /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio
-        /// portal.</p>
+        /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio portal.</p>
         pub fn user_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_role_arn = Some(input.into());
             self
         }
-        /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio
-        /// portal.</p>
+        /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio portal.</p>
         pub fn set_user_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1741,16 +1697,12 @@ pub mod create_studio_component_input {
         pub(crate) r#type: std::option::Option<crate::model::StudioComponentType>,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -1877,8 +1829,7 @@ pub mod create_studio_component_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this
-        /// resource.</p>
+        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1889,8 +1840,7 @@ pub mod create_studio_component_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this
-        /// resource.</p>
+        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2113,16 +2063,12 @@ pub mod delete_launch_profile_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -2343,16 +2289,12 @@ pub mod delete_launch_profile_member_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -2593,16 +2535,12 @@ pub mod delete_streaming_image_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -2822,16 +2760,12 @@ pub mod delete_streaming_session_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -3047,16 +2981,12 @@ pub mod delete_studio_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -3246,16 +3176,12 @@ pub mod delete_studio_component_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -3475,16 +3401,12 @@ pub mod delete_studio_member_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -7797,16 +7719,12 @@ pub mod put_launch_profile_members_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -8078,16 +7996,12 @@ pub mod put_studio_members_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -8325,16 +8239,12 @@ pub mod start_streaming_session_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -8550,16 +8460,12 @@ pub mod start_studio_sso_configuration_repair_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -8751,16 +8657,12 @@ pub mod stop_streaming_session_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -8992,8 +8894,7 @@ pub mod tag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this
-        /// resource.</p>
+        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -9004,8 +8905,7 @@ pub mod tag_resource_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this
-        /// resource.</p>
+        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -9372,16 +9272,12 @@ pub mod update_launch_profile_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -9413,8 +9309,7 @@ pub mod update_launch_profile_input {
         ///
         /// To override the contents of this collection use [`set_launch_profile_protocol_versions`](Self::set_launch_profile_protocol_versions).
         ///
-        /// <p>The version number of the protocol that is used by the launch profile. The only valid
-        /// version is "2021-03-31".</p>
+        /// <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
         pub fn launch_profile_protocol_versions(
             mut self,
             input: impl Into<std::string::String>,
@@ -9424,8 +9319,7 @@ pub mod update_launch_profile_input {
             self.launch_profile_protocol_versions = Some(v);
             self
         }
-        /// <p>The version number of the protocol that is used by the launch profile. The only valid
-        /// version is "2021-03-31".</p>
+        /// <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
         pub fn set_launch_profile_protocol_versions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9463,16 +9357,14 @@ pub mod update_launch_profile_input {
         ///
         /// To override the contents of this collection use [`set_studio_component_ids`](Self::set_studio_component_ids).
         ///
-        /// <p>Unique identifiers for a collection of studio components that can be used with this
-        /// launch profile.</p>
+        /// <p>Unique identifiers for a collection of studio components that can be used with this launch profile.</p>
         pub fn studio_component_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.studio_component_ids.unwrap_or_default();
             v.push(input.into());
             self.studio_component_ids = Some(v);
             self
         }
-        /// <p>Unique identifiers for a collection of studio components that can be used with this
-        /// launch profile.</p>
+        /// <p>Unique identifiers for a collection of studio components that can be used with this launch profile.</p>
         pub fn set_studio_component_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9703,16 +9595,12 @@ pub mod update_launch_profile_member_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -9985,16 +9873,12 @@ pub mod update_streaming_image_input {
         pub(crate) studio_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -10254,14 +10138,12 @@ pub mod update_studio_input {
         pub(crate) user_role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio
-        /// portal.</p>
+        /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio portal.</p>
         pub fn admin_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.admin_role_arn = Some(input.into());
             self
         }
-        /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio
-        /// portal.</p>
+        /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio portal.</p>
         pub fn set_admin_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10269,16 +10151,12 @@ pub mod update_studio_input {
             self.admin_role_arn = input;
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -10303,14 +10181,12 @@ pub mod update_studio_input {
             self.studio_id = input;
             self
         }
-        /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio
-        /// portal.</p>
+        /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio portal.</p>
         pub fn user_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_role_arn = Some(input.into());
             self
         }
-        /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio
-        /// portal.</p>
+        /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio portal.</p>
         pub fn set_user_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10519,16 +10395,12 @@ pub mod update_studio_component_input {
         pub(crate) r#type: std::option::Option<crate::model::StudioComponentType>,
     }
     impl Builder {
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-        /// client token and uses it for the request to ensure idempotency.</p>
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -10886,17 +10758,13 @@ impl UpdateStudioComponentInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartStudioSsoConfigurationRepairInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl StartStudioSsoConfigurationRepairInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -10918,9 +10786,7 @@ impl std::fmt::Debug for StartStudioSsoConfigurationRepairInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutStudioMembersInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The ID of the identity store.</p>
     pub identity_store_id: std::option::Option<std::string::String>,
@@ -10930,9 +10796,7 @@ pub struct PutStudioMembersInput {
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl PutStudioMembersInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -11027,9 +10891,7 @@ impl std::fmt::Debug for GetStudioMemberInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteStudioMemberInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The principal ID. This currently supports a Amazon Web Services SSO UserId. </p>
     pub principal_id: std::option::Option<std::string::String>,
@@ -11037,9 +10899,7 @@ pub struct DeleteStudioMemberInput {
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl DeleteStudioMemberInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -11087,38 +10947,29 @@ impl std::fmt::Debug for ListStudiosInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStudioInput {
-    /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio
-    /// portal.</p>
+    /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio portal.</p>
     pub admin_role_arn: std::option::Option<std::string::String>,
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>A friendly name for the studio.</p>
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The studio encryption configuration.</p>
     pub studio_encryption_configuration:
         std::option::Option<crate::model::StudioEncryptionConfiguration>,
-    /// <p>The studio name that is used in the URL of the Nimble Studio portal when accessed
-    /// by Nimble Studio users.</p>
+    /// <p>The studio name that is used in the URL of the Nimble Studio portal when accessed by Nimble Studio users.</p>
     pub studio_name: std::option::Option<std::string::String>,
-    /// <p>A collection of labels, in the form of key:value pairs, that apply to this
-    /// resource.</p>
+    /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio
-    /// portal.</p>
+    /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio portal.</p>
     pub user_role_arn: std::option::Option<std::string::String>,
 }
 impl CreateStudioInput {
-    /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio
-    /// portal.</p>
+    /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio portal.</p>
     pub fn admin_role_arn(&self) -> std::option::Option<&str> {
         self.admin_role_arn.as_deref()
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -11132,21 +10983,18 @@ impl CreateStudioInput {
     ) -> std::option::Option<&crate::model::StudioEncryptionConfiguration> {
         self.studio_encryption_configuration.as_ref()
     }
-    /// <p>The studio name that is used in the URL of the Nimble Studio portal when accessed
-    /// by Nimble Studio users.</p>
+    /// <p>The studio name that is used in the URL of the Nimble Studio portal when accessed by Nimble Studio users.</p>
     pub fn studio_name(&self) -> std::option::Option<&str> {
         self.studio_name.as_deref()
     }
-    /// <p>A collection of labels, in the form of key:value pairs, that apply to this
-    /// resource.</p>
+    /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
     }
-    /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio
-    /// portal.</p>
+    /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio portal.</p>
     pub fn user_role_arn(&self) -> std::option::Option<&str> {
         self.user_role_arn.as_deref()
     }
@@ -11172,17 +11020,13 @@ impl std::fmt::Debug for CreateStudioInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteStudioInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl DeleteStudioInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -11204,30 +11048,23 @@ impl std::fmt::Debug for DeleteStudioInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateStudioInput {
-    /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio
-    /// portal.</p>
+    /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio portal.</p>
     pub admin_role_arn: std::option::Option<std::string::String>,
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>A friendly name for the studio.</p>
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
     pub studio_id: std::option::Option<std::string::String>,
-    /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio
-    /// portal.</p>
+    /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio portal.</p>
     pub user_role_arn: std::option::Option<std::string::String>,
 }
 impl UpdateStudioInput {
-    /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio
-    /// portal.</p>
+    /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio portal.</p>
     pub fn admin_role_arn(&self) -> std::option::Option<&str> {
         self.admin_role_arn.as_deref()
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -11239,8 +11076,7 @@ impl UpdateStudioInput {
     pub fn studio_id(&self) -> std::option::Option<&str> {
         self.studio_id.as_deref()
     }
-    /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio
-    /// portal.</p>
+    /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio portal.</p>
     pub fn user_role_arn(&self) -> std::option::Option<&str> {
         self.user_role_arn.as_deref()
     }
@@ -11331,9 +11167,7 @@ impl std::fmt::Debug for ListStudioComponentsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStudioComponentInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The configuration of the studio component, based on component type.</p>
     pub configuration: std::option::Option<crate::model::StudioComponentConfiguration>,
@@ -11353,17 +11187,14 @@ pub struct CreateStudioComponentInput {
     pub studio_id: std::option::Option<std::string::String>,
     /// <p>The specific subtype of a studio component.</p>
     pub subtype: std::option::Option<crate::model::StudioComponentSubtype>,
-    /// <p>A collection of labels, in the form of key:value pairs, that apply to this
-    /// resource.</p>
+    /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The type of the studio component.</p>
     pub r#type: std::option::Option<crate::model::StudioComponentType>,
 }
 impl CreateStudioComponentInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -11405,8 +11236,7 @@ impl CreateStudioComponentInput {
     pub fn subtype(&self) -> std::option::Option<&crate::model::StudioComponentSubtype> {
         self.subtype.as_ref()
     }
-    /// <p>A collection of labels, in the form of key:value pairs, that apply to this
-    /// resource.</p>
+    /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -11440,9 +11270,7 @@ impl std::fmt::Debug for CreateStudioComponentInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteStudioComponentInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The studio component ID.</p>
     pub studio_component_id: std::option::Option<std::string::String>,
@@ -11450,9 +11278,7 @@ pub struct DeleteStudioComponentInput {
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl DeleteStudioComponentInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -11479,9 +11305,7 @@ impl std::fmt::Debug for DeleteStudioComponentInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateStudioComponentInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The configuration of the studio component, based on component type.</p>
     pub configuration: std::option::Option<crate::model::StudioComponentConfiguration>,
@@ -11507,9 +11331,7 @@ pub struct UpdateStudioComponentInput {
     pub r#type: std::option::Option<crate::model::StudioComponentType>,
 }
 impl UpdateStudioComponentInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -11610,9 +11432,7 @@ impl std::fmt::Debug for GetStudioComponentInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopStreamingSessionInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The streaming session ID for the StopStreamingSessionRequest.</p>
     pub session_id: std::option::Option<std::string::String>,
@@ -11620,9 +11440,7 @@ pub struct StopStreamingSessionInput {
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl StopStreamingSessionInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -11649,9 +11467,7 @@ impl std::fmt::Debug for StopStreamingSessionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartStreamingSessionInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The streaming session ID for the StartStreamingSessionRequest.</p>
     pub session_id: std::option::Option<std::string::String>,
@@ -11659,9 +11475,7 @@ pub struct StartStreamingSessionInput {
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl StartStreamingSessionInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -11723,9 +11537,7 @@ impl std::fmt::Debug for GetStreamingSessionStreamInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStreamingSessionStreamInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The expiration time in seconds.</p>
     pub expiration_in_seconds: i32,
@@ -11735,9 +11547,7 @@ pub struct CreateStreamingSessionStreamInput {
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl CreateStreamingSessionStreamInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -11818,9 +11628,7 @@ impl std::fmt::Debug for ListStreamingSessionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStreamingSessionInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The EC2 Instance type used for the streaming session.</p>
     pub ec2_instance_type: std::option::Option<crate::model::StreamingInstanceType>,
@@ -11832,15 +11640,12 @@ pub struct CreateStreamingSessionInput {
     pub streaming_image_id: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
     pub studio_id: std::option::Option<std::string::String>,
-    /// <p>A collection of labels, in the form of key:value pairs, that apply to this
-    /// resource.</p>
+    /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateStreamingSessionInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -11864,8 +11669,7 @@ impl CreateStreamingSessionInput {
     pub fn studio_id(&self) -> std::option::Option<&str> {
         self.studio_id.as_deref()
     }
-    /// <p>A collection of labels, in the form of key:value pairs, that apply to this
-    /// resource.</p>
+    /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -11891,9 +11695,7 @@ impl std::fmt::Debug for CreateStreamingSessionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteStreamingSessionInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The streaming session ID.</p>
     pub session_id: std::option::Option<std::string::String>,
@@ -11901,9 +11703,7 @@ pub struct DeleteStreamingSessionInput {
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl DeleteStreamingSessionInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -11993,9 +11793,7 @@ impl std::fmt::Debug for ListStreamingImagesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStreamingImageInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>A human-readable description of the streaming image.</p>
     pub description: std::option::Option<std::string::String>,
@@ -12005,15 +11803,12 @@ pub struct CreateStreamingImageInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The studio ID. </p>
     pub studio_id: std::option::Option<std::string::String>,
-    /// <p>A collection of labels, in the form of key:value pairs, that apply to this
-    /// resource.</p>
+    /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateStreamingImageInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -12033,8 +11828,7 @@ impl CreateStreamingImageInput {
     pub fn studio_id(&self) -> std::option::Option<&str> {
         self.studio_id.as_deref()
     }
-    /// <p>A collection of labels, in the form of key:value pairs, that apply to this
-    /// resource.</p>
+    /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -12059,9 +11853,7 @@ impl std::fmt::Debug for CreateStreamingImageInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteStreamingImageInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The streaming image ID.</p>
     pub streaming_image_id: std::option::Option<std::string::String>,
@@ -12069,9 +11861,7 @@ pub struct DeleteStreamingImageInput {
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl DeleteStreamingImageInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -12098,9 +11888,7 @@ impl std::fmt::Debug for DeleteStreamingImageInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateStreamingImageInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The description.</p>
     pub description: std::option::Option<std::string::String>,
@@ -12112,9 +11900,7 @@ pub struct UpdateStreamingImageInput {
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl UpdateStreamingImageInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -12175,13 +11961,11 @@ impl std::fmt::Debug for GetStreamingImageInput {
     }
 }
 
-/// <p/>
+/// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateLaunchProfileMemberInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The Launch Profile ID.</p>
     pub launch_profile_id: std::option::Option<std::string::String>,
@@ -12193,9 +11977,7 @@ pub struct UpdateLaunchProfileMemberInput {
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl UpdateLaunchProfileMemberInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -12232,9 +12014,7 @@ impl std::fmt::Debug for UpdateLaunchProfileMemberInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutLaunchProfileMembersInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The ID of the identity store.</p>
     pub identity_store_id: std::option::Option<std::string::String>,
@@ -12246,9 +12026,7 @@ pub struct PutLaunchProfileMembersInput {
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl PutLaunchProfileMembersInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -12442,9 +12220,7 @@ impl std::fmt::Debug for GetLaunchProfileDetailsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLaunchProfileMemberInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The Launch Profile ID.</p>
     pub launch_profile_id: std::option::Option<std::string::String>,
@@ -12454,9 +12230,7 @@ pub struct DeleteLaunchProfileMemberInput {
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl DeleteLaunchProfileMemberInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -12537,36 +12311,28 @@ impl std::fmt::Debug for ListLaunchProfilesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLaunchProfileInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The description.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>Specifies the IDs of the EC2 subnets where streaming sessions will be accessible from.
-    /// These subnets must support the specified instance types. </p>
+    /// <p>Specifies the IDs of the EC2 subnets where streaming sessions will be accessible from. These subnets must support the specified instance types. </p>
     pub ec2_subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The version number of the protocol that is used by the launch profile. The only valid
-    /// version is "2021-03-31".</p>
+    /// <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
     pub launch_profile_protocol_versions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name for the launch profile.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>A configuration for a streaming session.</p>
     pub stream_configuration: std::option::Option<crate::model::StreamConfigurationCreate>,
-    /// <p>Unique identifiers for a collection of studio components that can be used with this
-    /// launch profile.</p>
+    /// <p>Unique identifiers for a collection of studio components that can be used with this launch profile.</p>
     pub studio_component_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The studio ID. </p>
     pub studio_id: std::option::Option<std::string::String>,
-    /// <p>A collection of labels, in the form of key:value pairs, that apply to this
-    /// resource.</p>
+    /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateLaunchProfileInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -12574,13 +12340,11 @@ impl CreateLaunchProfileInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Specifies the IDs of the EC2 subnets where streaming sessions will be accessible from.
-    /// These subnets must support the specified instance types. </p>
+    /// <p>Specifies the IDs of the EC2 subnets where streaming sessions will be accessible from. These subnets must support the specified instance types. </p>
     pub fn ec2_subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.ec2_subnet_ids.as_deref()
     }
-    /// <p>The version number of the protocol that is used by the launch profile. The only valid
-    /// version is "2021-03-31".</p>
+    /// <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
     pub fn launch_profile_protocol_versions(&self) -> std::option::Option<&[std::string::String]> {
         self.launch_profile_protocol_versions.as_deref()
     }
@@ -12594,8 +12358,7 @@ impl CreateLaunchProfileInput {
     ) -> std::option::Option<&crate::model::StreamConfigurationCreate> {
         self.stream_configuration.as_ref()
     }
-    /// <p>Unique identifiers for a collection of studio components that can be used with this
-    /// launch profile.</p>
+    /// <p>Unique identifiers for a collection of studio components that can be used with this launch profile.</p>
     pub fn studio_component_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.studio_component_ids.as_deref()
     }
@@ -12603,8 +12366,7 @@ impl CreateLaunchProfileInput {
     pub fn studio_id(&self) -> std::option::Option<&str> {
         self.studio_id.as_deref()
     }
-    /// <p>A collection of labels, in the form of key:value pairs, that apply to this
-    /// resource.</p>
+    /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -12635,9 +12397,7 @@ impl std::fmt::Debug for CreateLaunchProfileInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLaunchProfileInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The Launch Profile ID.</p>
     pub launch_profile_id: std::option::Option<std::string::String>,
@@ -12645,9 +12405,7 @@ pub struct DeleteLaunchProfileInput {
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl DeleteLaunchProfileInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -12674,31 +12432,25 @@ impl std::fmt::Debug for DeleteLaunchProfileInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateLaunchProfileInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The description.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The Launch Profile ID.</p>
     pub launch_profile_id: std::option::Option<std::string::String>,
-    /// <p>The version number of the protocol that is used by the launch profile. The only valid
-    /// version is "2021-03-31".</p>
+    /// <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
     pub launch_profile_protocol_versions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name for the launch profile.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>A configuration for a streaming session.</p>
     pub stream_configuration: std::option::Option<crate::model::StreamConfigurationCreate>,
-    /// <p>Unique identifiers for a collection of studio components that can be used with this
-    /// launch profile.</p>
+    /// <p>Unique identifiers for a collection of studio components that can be used with this launch profile.</p>
     pub studio_component_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The studio ID. </p>
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl UpdateLaunchProfileInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -12710,8 +12462,7 @@ impl UpdateLaunchProfileInput {
     pub fn launch_profile_id(&self) -> std::option::Option<&str> {
         self.launch_profile_id.as_deref()
     }
-    /// <p>The version number of the protocol that is used by the launch profile. The only valid
-    /// version is "2021-03-31".</p>
+    /// <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
     pub fn launch_profile_protocol_versions(&self) -> std::option::Option<&[std::string::String]> {
         self.launch_profile_protocol_versions.as_deref()
     }
@@ -12725,8 +12476,7 @@ impl UpdateLaunchProfileInput {
     ) -> std::option::Option<&crate::model::StreamConfigurationCreate> {
         self.stream_configuration.as_ref()
     }
-    /// <p>Unique identifiers for a collection of studio components that can be used with this
-    /// launch profile.</p>
+    /// <p>Unique identifiers for a collection of studio components that can be used with this launch profile.</p>
     pub fn studio_component_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.studio_component_ids.as_deref()
     }
@@ -12869,9 +12619,7 @@ impl std::fmt::Debug for ListEulaAcceptancesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcceptEulasInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The EULA ID.</p>
     pub eula_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -12879,9 +12627,7 @@ pub struct AcceptEulasInput {
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl AcceptEulasInput {
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request. If you don’t specify a client token, the AWS SDK automatically generates a
-    /// client token and uses it for the request to ensure idempotency.</p>
+    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -12932,14 +12678,13 @@ impl std::fmt::Debug for UntagResourceInput {
     }
 }
 
-/// <p/>
+/// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p> The Amazon Resource Name (ARN) of the resource you want to add tags to. </p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>A collection of labels, in the form of key:value pairs, that apply to this
-    /// resource.</p>
+    /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -12948,8 +12693,7 @@ impl TagResourceInput {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>A collection of labels, in the form of key:value pairs, that apply to this
-    /// resource.</p>
+    /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>

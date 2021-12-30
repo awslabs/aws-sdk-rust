@@ -16,8 +16,7 @@ pub enum AddPermissionErrorKind {
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>Indicates an internal service error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>Indicates that a request parameter does not comply with the associated
-    /// constraints.</p>
+    /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -140,8 +139,7 @@ pub enum CheckIfPhoneNumberIsOptedOutErrorKind {
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>Indicates an internal service error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>Indicates that a request parameter does not comply with the associated
-    /// constraints.</p>
+    /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Indicates that the rate at which requests have been submitted for this action exceeds the limit for your Amazon Web Services account.</p>
     ThrottledException(crate::error::ThrottledException),
@@ -273,19 +271,15 @@ pub struct ConfirmSubscriptionError {
 pub enum ConfirmSubscriptionErrorKind {
     /// <p>Indicates that the user has been denied access to the requested resource.</p>
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
-    /// <p>Indicates that the number of filter polices in your Amazon Web Services account exceeds the limit. To
-    /// add more filter polices, submit an Amazon SNS Limit Increase case in the Amazon Web Services Support
-    /// Center.</p>
+    /// <p>Indicates that the number of filter polices in your Amazon Web Services account exceeds the limit. To add more filter polices, submit an Amazon SNS Limit Increase case in the Amazon Web Services Support Center.</p>
     FilterPolicyLimitExceededException(crate::error::FilterPolicyLimitExceededException),
     /// <p>Indicates an internal service error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>Indicates that a request parameter does not comply with the associated
-    /// constraints.</p>
+    /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>Indicates that the customer already owns the maximum allowed number of
-    /// subscriptions.</p>
+    /// <p>Indicates that the customer already owns the maximum allowed number of subscriptions.</p>
     SubscriptionLimitExceededException(crate::error::SubscriptionLimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -435,8 +429,7 @@ pub enum CreatePlatformApplicationErrorKind {
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>Indicates an internal service error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>Indicates that a request parameter does not comply with the associated
-    /// constraints.</p>
+    /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -553,8 +546,7 @@ pub enum CreatePlatformEndpointErrorKind {
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>Indicates an internal service error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>Indicates that a request parameter does not comply with the associated
-    /// constraints.</p>
+    /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -680,16 +672,13 @@ pub enum CreateSMSSandboxPhoneNumberErrorKind {
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>Indicates an internal service error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>Indicates that a request parameter does not comply with the associated
-    /// constraints.</p>
+    /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>Indicates that the specified phone number opted out of receiving SMS messages from
-    /// your Amazon Web Services account. You can't send SMS messages to phone numbers that opt out.</p>
+    /// <p>Indicates that the specified phone number opted out of receiving SMS messages from your Amazon Web Services account. You can't send SMS messages to phone numbers that opt out.</p>
     OptedOutException(crate::error::OptedOutException),
     /// <p>Indicates that the rate at which requests have been submitted for this action exceeds the limit for your Amazon Web Services account.</p>
     ThrottledException(crate::error::ThrottledException),
-    /// <p>Indicates that a request parameter does not comply with the associated
-    /// constraints.</p>
+    /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
     UserErrorException(crate::error::UserErrorException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -835,24 +824,19 @@ pub struct CreateTopicError {
 pub enum CreateTopicErrorKind {
     /// <p>Indicates that the user has been denied access to the requested resource.</p>
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
-    /// <p>Can't perform multiple operations on a tag simultaneously. Perform the operations
-    /// sequentially.</p>
+    /// <p>Can't perform multiple operations on a tag simultaneously. Perform the operations sequentially.</p>
     ConcurrentAccessException(crate::error::ConcurrentAccessException),
     /// <p>Indicates an internal service error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>Indicates that a request parameter does not comply with the associated
-    /// constraints.</p>
+    /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The credential signature isn't valid. You must use an HTTPS endpoint and sign your
-    /// request using Signature Version 4.</p>
+    /// <p>The credential signature isn't valid. You must use an HTTPS endpoint and sign your request using Signature Version 4.</p>
     InvalidSecurityException(crate::error::InvalidSecurityException),
-    /// <p>A tag has been added to a resource with the same ARN as a deleted resource. Wait a
-    /// short while and then retry the operation.</p>
+    /// <p>A tag has been added to a resource with the same ARN as a deleted resource. Wait a short while and then retry the operation.</p>
     StaleTagException(crate::error::StaleTagException),
     /// <p>Can't add more than 50 tags to a topic.</p>
     TagLimitExceededException(crate::error::TagLimitExceededException),
-    /// <p>The request doesn't comply with the IAM tag policy. Correct your request and then
-    /// retry it.</p>
+    /// <p>The request doesn't comply with the IAM tag policy. Correct your request and then retry it.</p>
     TagPolicyException(crate::error::TagPolicyException),
     /// <p>Indicates that the customer already owns the maximum allowed number of topics.</p>
     TopicLimitExceededException(crate::error::TopicLimitExceededException),
@@ -1014,8 +998,7 @@ pub enum DeleteEndpointErrorKind {
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>Indicates an internal service error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>Indicates that a request parameter does not comply with the associated
-    /// constraints.</p>
+    /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1130,8 +1113,7 @@ pub enum DeletePlatformApplicationErrorKind {
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>Indicates an internal service error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>Indicates that a request parameter does not comply with the associated
-    /// constraints.</p>
+    /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1248,16 +1230,13 @@ pub enum DeleteSMSSandboxPhoneNumberErrorKind {
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>Indicates an internal service error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>Indicates that a request parameter does not comply with the associated
-    /// constraints.</p>
+    /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>Can’t perform the action on the specified resource. Make sure that the resource
-    /// exists.</p>
+    /// <p>Can’t perform the action on the specified resource. Make sure that the resource exists.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that the rate at which requests have been submitted for this action exceeds the limit for your Amazon Web Services account.</p>
     ThrottledException(crate::error::ThrottledException),
-    /// <p>Indicates that a request parameter does not comply with the associated
-    /// constraints.</p>
+    /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
     UserErrorException(crate::error::UserErrorException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1405,21 +1384,17 @@ pub struct DeleteTopicError {
 pub enum DeleteTopicErrorKind {
     /// <p>Indicates that the user has been denied access to the requested resource.</p>
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
-    /// <p>Can't perform multiple operations on a tag simultaneously. Perform the operations
-    /// sequentially.</p>
+    /// <p>Can't perform multiple operations on a tag simultaneously. Perform the operations sequentially.</p>
     ConcurrentAccessException(crate::error::ConcurrentAccessException),
     /// <p>Indicates an internal service error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>Indicates that a request parameter does not comply with the associated
-    /// constraints.</p>
+    /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>A tag has been added to a resource with the same ARN as a deleted resource. Wait a
-    /// short while and then retry the operation.</p>
+    /// <p>A tag has been added to a resource with the same ARN as a deleted resource. Wait a short while and then retry the operation.</p>
     StaleTagException(crate::error::StaleTagException),
-    /// <p>The request doesn't comply with the IAM tag policy. Correct your request and then
-    /// retry it.</p>
+    /// <p>The request doesn't comply with the IAM tag policy. Correct your request and then retry it.</p>
     TagPolicyException(crate::error::TagPolicyException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1558,8 +1533,7 @@ pub enum GetEndpointAttributesErrorKind {
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>Indicates an internal service error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>Indicates that a request parameter does not comply with the associated
-    /// constraints.</p>
+    /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -1685,8 +1659,7 @@ pub enum GetPlatformApplicationAttributesErrorKind {
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>Indicates an internal service error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>Indicates that a request parameter does not comply with the associated
-    /// constraints.</p>
+    /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -1827,8 +1800,7 @@ pub enum GetSMSAttributesErrorKind {
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>Indicates an internal service error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>Indicates that a request parameter does not comply with the associated
-    /// constraints.</p>
+    /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Indicates that the rate at which requests have been submitted for this action exceeds the limit for your Amazon Web Services account.</p>
     ThrottledException(crate::error::ThrottledException),
@@ -2070,8 +2042,7 @@ pub enum GetSubscriptionAttributesErrorKind {
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>Indicates an internal service error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>Indicates that a request parameter does not comply with the associated
-    /// constraints.</p>
+    /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -2199,11 +2170,9 @@ pub enum GetTopicAttributesErrorKind {
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>Indicates an internal service error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>Indicates that a request parameter does not comply with the associated
-    /// constraints.</p>
+    /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The credential signature isn't valid. You must use an HTTPS endpoint and sign your
-    /// request using Signature Version 4.</p>
+    /// <p>The credential signature isn't valid. You must use an HTTPS endpoint and sign your request using Signature Version 4.</p>
     InvalidSecurityException(crate::error::InvalidSecurityException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -2338,8 +2307,7 @@ pub enum ListEndpointsByPlatformApplicationErrorKind {
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>Indicates an internal service error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>Indicates that a request parameter does not comply with the associated
-    /// constraints.</p>
+    /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -2480,8 +2448,7 @@ pub enum ListOriginationNumbersErrorKind {
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>Indicates an internal service error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>Indicates that a request parameter does not comply with the associated
-    /// constraints.</p>
+    /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Indicates that the rate at which requests have been submitted for this action exceeds the limit for your Amazon Web Services account.</p>
     ThrottledException(crate::error::ThrottledException),
@@ -2618,8 +2585,7 @@ pub enum ListPhoneNumbersOptedOutErrorKind {
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>Indicates an internal service error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>Indicates that a request parameter does not comply with the associated
-    /// constraints.</p>
+    /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Indicates that the rate at which requests have been submitted for this action exceeds the limit for your Amazon Web Services account.</p>
     ThrottledException(crate::error::ThrottledException),
@@ -2745,8 +2711,7 @@ pub enum ListPlatformApplicationsErrorKind {
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>Indicates an internal service error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>Indicates that a request parameter does not comply with the associated
-    /// constraints.</p>
+    /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2861,11 +2826,9 @@ pub enum ListSMSSandboxPhoneNumbersErrorKind {
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>Indicates an internal service error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>Indicates that a request parameter does not comply with the associated
-    /// constraints.</p>
+    /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>Can’t perform the action on the specified resource. Make sure that the resource
-    /// exists.</p>
+    /// <p>Can’t perform the action on the specified resource. Make sure that the resource exists.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that the rate at which requests have been submitted for this action exceeds the limit for your Amazon Web Services account.</p>
     ThrottledException(crate::error::ThrottledException),
@@ -3004,8 +2967,7 @@ pub enum ListSubscriptionsErrorKind {
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>Indicates an internal service error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>Indicates that a request parameter does not comply with the associated
-    /// constraints.</p>
+    /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3120,8 +3082,7 @@ pub enum ListSubscriptionsByTopicErrorKind {
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>Indicates an internal service error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>Indicates that a request parameter does not comply with the associated
-    /// constraints.</p>
+    /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -3245,17 +3206,13 @@ pub struct ListTagsForResourceError {
 pub enum ListTagsForResourceErrorKind {
     /// <p>Indicates that the user has been denied access to the requested resource.</p>
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
-    /// <p>Can't perform multiple operations on a tag simultaneously. Perform the operations
-    /// sequentially.</p>
+    /// <p>Can't perform multiple operations on a tag simultaneously. Perform the operations sequentially.</p>
     ConcurrentAccessException(crate::error::ConcurrentAccessException),
-    /// <p>Indicates that a request parameter does not comply with the associated
-    /// constraints.</p>
+    /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>Can’t perform the action on the specified resource. Make sure that the resource
-    /// exists.</p>
+    /// <p>Can’t perform the action on the specified resource. Make sure that the resource exists.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The request doesn't comply with the IAM tag policy. Correct your request and then
-    /// retry it.</p>
+    /// <p>The request doesn't comply with the IAM tag policy. Correct your request and then retry it.</p>
     TagPolicyException(crate::error::TagPolicyException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3388,8 +3345,7 @@ pub enum ListTopicsErrorKind {
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>Indicates an internal service error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>Indicates that a request parameter does not comply with the associated
-    /// constraints.</p>
+    /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3501,8 +3457,7 @@ pub enum OptInPhoneNumberErrorKind {
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>Indicates an internal service error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>Indicates that a request parameter does not comply with the associated
-    /// constraints.</p>
+    /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Indicates that the rate at which requests have been submitted for this action exceeds the limit for your Amazon Web Services account.</p>
     ThrottledException(crate::error::ThrottledException),
@@ -3627,34 +3582,23 @@ pub enum PublishErrorKind {
     EndpointDisabledException(crate::error::EndpointDisabledException),
     /// <p>Indicates an internal service error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>Indicates that a request parameter does not comply with the associated
-    /// constraints.</p>
+    /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>The credential signature isn't valid. You must use an HTTPS endpoint and sign your
-    /// request using Signature Version 4.</p>
+    /// <p>The credential signature isn't valid. You must use an HTTPS endpoint and sign your request using Signature Version 4.</p>
     InvalidSecurityException(crate::error::InvalidSecurityException),
-    /// <p>The ciphertext references a key that doesn't exist or that you don't have access
-    /// to.</p>
+    /// <p>The ciphertext references a key that doesn't exist or that you don't have access to.</p>
     KmsAccessDeniedException(crate::error::KmsAccessDeniedException),
-    /// <p>The request was rejected because the specified customer master key (CMK) isn't
-    /// enabled.</p>
+    /// <p>The request was rejected because the specified customer master key (CMK) isn't enabled.</p>
     KmsDisabledException(crate::error::KmsDisabledException),
-    /// <p>The request was rejected because the state of the specified resource isn't valid for
-    /// this request. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects Use of a
-    /// Customer Master Key</a> in the <i>Key Management Service Developer
-    /// Guide</i>.</p>
+    /// <p>The request was rejected because the state of the specified resource isn't valid for this request. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects Use of a Customer Master Key</a> in the <i>Key Management Service Developer Guide</i>.</p>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
-    /// <p>The request was rejected because the specified entity or resource can't be
-    /// found.</p>
+    /// <p>The request was rejected because the specified entity or resource can't be found.</p>
     KmsNotFoundException(crate::error::KmsNotFoundException),
     /// <p>The Amazon Web Services access key ID needs a subscription for the service.</p>
     KmsOptInRequired(crate::error::KmsOptInRequired),
-    /// <p>The request was denied due to request throttling. For more information about
-    /// throttling, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a> in
-    /// the <i>Key Management Service Developer Guide.</i>
-    /// </p>
+    /// <p>The request was denied due to request throttling. For more information about throttling, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a> in the <i>Key Management Service Developer Guide.</i> </p>
     KmsThrottlingException(crate::error::KmsThrottlingException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -3846,34 +3790,23 @@ pub enum PublishBatchErrorKind {
     InternalErrorException(crate::error::InternalErrorException),
     /// <p>The <code>Id</code> of a batch entry in a batch request doesn't abide by the specification. </p>
     InvalidBatchEntryIdException(crate::error::InvalidBatchEntryIdException),
-    /// <p>Indicates that a request parameter does not comply with the associated
-    /// constraints.</p>
+    /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>The credential signature isn't valid. You must use an HTTPS endpoint and sign your
-    /// request using Signature Version 4.</p>
+    /// <p>The credential signature isn't valid. You must use an HTTPS endpoint and sign your request using Signature Version 4.</p>
     InvalidSecurityException(crate::error::InvalidSecurityException),
-    /// <p>The ciphertext references a key that doesn't exist or that you don't have access
-    /// to.</p>
+    /// <p>The ciphertext references a key that doesn't exist or that you don't have access to.</p>
     KmsAccessDeniedException(crate::error::KmsAccessDeniedException),
-    /// <p>The request was rejected because the specified customer master key (CMK) isn't
-    /// enabled.</p>
+    /// <p>The request was rejected because the specified customer master key (CMK) isn't enabled.</p>
     KmsDisabledException(crate::error::KmsDisabledException),
-    /// <p>The request was rejected because the state of the specified resource isn't valid for
-    /// this request. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects Use of a
-    /// Customer Master Key</a> in the <i>Key Management Service Developer
-    /// Guide</i>.</p>
+    /// <p>The request was rejected because the state of the specified resource isn't valid for this request. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects Use of a Customer Master Key</a> in the <i>Key Management Service Developer Guide</i>.</p>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
-    /// <p>The request was rejected because the specified entity or resource can't be
-    /// found.</p>
+    /// <p>The request was rejected because the specified entity or resource can't be found.</p>
     KmsNotFoundException(crate::error::KmsNotFoundException),
     /// <p>The Amazon Web Services access key ID needs a subscription for the service.</p>
     KmsOptInRequired(crate::error::KmsOptInRequired),
-    /// <p>The request was denied due to request throttling. For more information about
-    /// throttling, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a> in
-    /// the <i>Key Management Service Developer Guide.</i>
-    /// </p>
+    /// <p>The request was denied due to request throttling. For more information about throttling, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a> in the <i>Key Management Service Developer Guide.</i> </p>
     KmsThrottlingException(crate::error::KmsThrottlingException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -4120,8 +4053,7 @@ pub enum RemovePermissionErrorKind {
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>Indicates an internal service error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>Indicates that a request parameter does not comply with the associated
-    /// constraints.</p>
+    /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -4244,8 +4176,7 @@ pub enum SetEndpointAttributesErrorKind {
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>Indicates an internal service error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>Indicates that a request parameter does not comply with the associated
-    /// constraints.</p>
+    /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -4371,8 +4302,7 @@ pub enum SetPlatformApplicationAttributesErrorKind {
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>Indicates an internal service error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>Indicates that a request parameter does not comply with the associated
-    /// constraints.</p>
+    /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -4513,8 +4443,7 @@ pub enum SetSMSAttributesErrorKind {
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>Indicates an internal service error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>Indicates that a request parameter does not comply with the associated
-    /// constraints.</p>
+    /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Indicates that the rate at which requests have been submitted for this action exceeds the limit for your Amazon Web Services account.</p>
     ThrottledException(crate::error::ThrottledException),
@@ -4635,14 +4564,11 @@ pub struct SetSubscriptionAttributesError {
 pub enum SetSubscriptionAttributesErrorKind {
     /// <p>Indicates that the user has been denied access to the requested resource.</p>
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
-    /// <p>Indicates that the number of filter polices in your Amazon Web Services account exceeds the limit. To
-    /// add more filter polices, submit an Amazon SNS Limit Increase case in the Amazon Web Services Support
-    /// Center.</p>
+    /// <p>Indicates that the number of filter polices in your Amazon Web Services account exceeds the limit. To add more filter polices, submit an Amazon SNS Limit Increase case in the Amazon Web Services Support Center.</p>
     FilterPolicyLimitExceededException(crate::error::FilterPolicyLimitExceededException),
     /// <p>Indicates an internal service error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>Indicates that a request parameter does not comply with the associated
-    /// constraints.</p>
+    /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -4783,11 +4709,9 @@ pub enum SetTopicAttributesErrorKind {
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>Indicates an internal service error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>Indicates that a request parameter does not comply with the associated
-    /// constraints.</p>
+    /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The credential signature isn't valid. You must use an HTTPS endpoint and sign your
-    /// request using Signature Version 4.</p>
+    /// <p>The credential signature isn't valid. You must use an HTTPS endpoint and sign your request using Signature Version 4.</p>
     InvalidSecurityException(crate::error::InvalidSecurityException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -4920,22 +4844,17 @@ pub struct SubscribeError {
 pub enum SubscribeErrorKind {
     /// <p>Indicates that the user has been denied access to the requested resource.</p>
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
-    /// <p>Indicates that the number of filter polices in your Amazon Web Services account exceeds the limit. To
-    /// add more filter polices, submit an Amazon SNS Limit Increase case in the Amazon Web Services Support
-    /// Center.</p>
+    /// <p>Indicates that the number of filter polices in your Amazon Web Services account exceeds the limit. To add more filter polices, submit an Amazon SNS Limit Increase case in the Amazon Web Services Support Center.</p>
     FilterPolicyLimitExceededException(crate::error::FilterPolicyLimitExceededException),
     /// <p>Indicates an internal service error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>Indicates that a request parameter does not comply with the associated
-    /// constraints.</p>
+    /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The credential signature isn't valid. You must use an HTTPS endpoint and sign your
-    /// request using Signature Version 4.</p>
+    /// <p>The credential signature isn't valid. You must use an HTTPS endpoint and sign your request using Signature Version 4.</p>
     InvalidSecurityException(crate::error::InvalidSecurityException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>Indicates that the customer already owns the maximum allowed number of
-    /// subscriptions.</p>
+    /// <p>Indicates that the customer already owns the maximum allowed number of subscriptions.</p>
     SubscriptionLimitExceededException(crate::error::SubscriptionLimitExceededException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5072,22 +4991,17 @@ pub struct TagResourceError {
 pub enum TagResourceErrorKind {
     /// <p>Indicates that the user has been denied access to the requested resource.</p>
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
-    /// <p>Can't perform multiple operations on a tag simultaneously. Perform the operations
-    /// sequentially.</p>
+    /// <p>Can't perform multiple operations on a tag simultaneously. Perform the operations sequentially.</p>
     ConcurrentAccessException(crate::error::ConcurrentAccessException),
-    /// <p>Indicates that a request parameter does not comply with the associated
-    /// constraints.</p>
+    /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>Can’t perform the action on the specified resource. Make sure that the resource
-    /// exists.</p>
+    /// <p>Can’t perform the action on the specified resource. Make sure that the resource exists.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>A tag has been added to a resource with the same ARN as a deleted resource. Wait a
-    /// short while and then retry the operation.</p>
+    /// <p>A tag has been added to a resource with the same ARN as a deleted resource. Wait a short while and then retry the operation.</p>
     StaleTagException(crate::error::StaleTagException),
     /// <p>Can't add more than 50 tags to a topic.</p>
     TagLimitExceededException(crate::error::TagLimitExceededException),
-    /// <p>The request doesn't comply with the IAM tag policy. Correct your request and then
-    /// retry it.</p>
+    /// <p>The request doesn't comply with the IAM tag policy. Correct your request and then retry it.</p>
     TagPolicyException(crate::error::TagPolicyException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5232,11 +5146,9 @@ pub enum UnsubscribeErrorKind {
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>Indicates an internal service error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>Indicates that a request parameter does not comply with the associated
-    /// constraints.</p>
+    /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>The credential signature isn't valid. You must use an HTTPS endpoint and sign your
-    /// request using Signature Version 4.</p>
+    /// <p>The credential signature isn't valid. You must use an HTTPS endpoint and sign your request using Signature Version 4.</p>
     InvalidSecurityException(crate::error::InvalidSecurityException),
     /// <p>Indicates that the requested resource does not exist.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -5363,22 +5275,17 @@ pub struct UntagResourceError {
 pub enum UntagResourceErrorKind {
     /// <p>Indicates that the user has been denied access to the requested resource.</p>
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
-    /// <p>Can't perform multiple operations on a tag simultaneously. Perform the operations
-    /// sequentially.</p>
+    /// <p>Can't perform multiple operations on a tag simultaneously. Perform the operations sequentially.</p>
     ConcurrentAccessException(crate::error::ConcurrentAccessException),
-    /// <p>Indicates that a request parameter does not comply with the associated
-    /// constraints.</p>
+    /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>Can’t perform the action on the specified resource. Make sure that the resource
-    /// exists.</p>
+    /// <p>Can’t perform the action on the specified resource. Make sure that the resource exists.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>A tag has been added to a resource with the same ARN as a deleted resource. Wait a
-    /// short while and then retry the operation.</p>
+    /// <p>A tag has been added to a resource with the same ARN as a deleted resource. Wait a short while and then retry the operation.</p>
     StaleTagException(crate::error::StaleTagException),
     /// <p>Can't add more than 50 tags to a topic.</p>
     TagLimitExceededException(crate::error::TagLimitExceededException),
-    /// <p>The request doesn't comply with the IAM tag policy. Correct your request and then
-    /// retry it.</p>
+    /// <p>The request doesn't comply with the IAM tag policy. Correct your request and then retry it.</p>
     TagPolicyException(crate::error::TagPolicyException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5523,11 +5430,9 @@ pub enum VerifySMSSandboxPhoneNumberErrorKind {
     AuthorizationErrorException(crate::error::AuthorizationErrorException),
     /// <p>Indicates an internal service error.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>Indicates that a request parameter does not comply with the associated
-    /// constraints.</p>
+    /// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
     InvalidParameterException(crate::error::InvalidParameterException),
-    /// <p>Can’t perform the action on the specified resource. Make sure that the resource
-    /// exists.</p>
+    /// <p>Can’t perform the action on the specified resource. Make sure that the resource exists.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Indicates that the rate at which requests have been submitted for this action exceeds the limit for your Amazon Web Services account.</p>
     ThrottledException(crate::error::ThrottledException),
@@ -5813,8 +5718,7 @@ impl ThrottledException {
     }
 }
 
-/// <p>Can’t perform the action on the specified resource. Make sure that the resource
-/// exists.</p>
+/// <p>Can’t perform the action on the specified resource. Make sure that the resource exists.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
@@ -5878,8 +5782,7 @@ impl ResourceNotFoundException {
     }
 }
 
-/// <p>Indicates that a request parameter does not comply with the associated
-/// constraints.</p>
+/// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidParameterException {
@@ -6071,8 +5974,7 @@ impl AuthorizationErrorException {
     }
 }
 
-/// <p>The request doesn't comply with the IAM tag policy. Correct your request and then
-/// retry it.</p>
+/// <p>The request doesn't comply with the IAM tag policy. Correct your request and then retry it.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagPolicyException {
@@ -6200,8 +6102,7 @@ impl TagLimitExceededException {
     }
 }
 
-/// <p>A tag has been added to a resource with the same ARN as a deleted resource. Wait a
-/// short while and then retry the operation.</p>
+/// <p>A tag has been added to a resource with the same ARN as a deleted resource. Wait a short while and then retry the operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StaleTagException {
@@ -6265,8 +6166,7 @@ impl StaleTagException {
     }
 }
 
-/// <p>Can't perform multiple operations on a tag simultaneously. Perform the operations
-/// sequentially.</p>
+/// <p>Can't perform multiple operations on a tag simultaneously. Perform the operations sequentially.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConcurrentAccessException {
@@ -6394,8 +6294,7 @@ impl NotFoundException {
     }
 }
 
-/// <p>The credential signature isn't valid. You must use an HTTPS endpoint and sign your
-/// request using Signature Version 4.</p>
+/// <p>The credential signature isn't valid. You must use an HTTPS endpoint and sign your request using Signature Version 4.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidSecurityException {
@@ -6459,8 +6358,7 @@ impl InvalidSecurityException {
     }
 }
 
-/// <p>Indicates that the customer already owns the maximum allowed number of
-/// subscriptions.</p>
+/// <p>Indicates that the customer already owns the maximum allowed number of subscriptions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubscriptionLimitExceededException {
@@ -6524,9 +6422,7 @@ impl SubscriptionLimitExceededException {
     }
 }
 
-/// <p>Indicates that the number of filter polices in your Amazon Web Services account exceeds the limit. To
-/// add more filter polices, submit an Amazon SNS Limit Increase case in the Amazon Web Services Support
-/// Center.</p>
+/// <p>Indicates that the number of filter polices in your Amazon Web Services account exceeds the limit. To add more filter polices, submit an Amazon SNS Limit Increase case in the Amazon Web Services Support Center.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FilterPolicyLimitExceededException {
@@ -6718,10 +6614,7 @@ impl PlatformApplicationDisabledException {
     }
 }
 
-/// <p>The request was denied due to request throttling. For more information about
-/// throttling, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a> in
-/// the <i>Key Management Service Developer Guide.</i>
-/// </p>
+/// <p>The request was denied due to request throttling. For more information about throttling, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a> in the <i>Key Management Service Developer Guide.</i> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsThrottlingException {
@@ -6849,8 +6742,7 @@ impl KmsOptInRequired {
     }
 }
 
-/// <p>The request was rejected because the specified entity or resource can't be
-/// found.</p>
+/// <p>The request was rejected because the specified entity or resource can't be found.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsNotFoundException {
@@ -6914,10 +6806,7 @@ impl KmsNotFoundException {
     }
 }
 
-/// <p>The request was rejected because the state of the specified resource isn't valid for
-/// this request. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects Use of a
-/// Customer Master Key</a> in the <i>Key Management Service Developer
-/// Guide</i>.</p>
+/// <p>The request was rejected because the state of the specified resource isn't valid for this request. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects Use of a Customer Master Key</a> in the <i>Key Management Service Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsInvalidStateException {
@@ -6981,8 +6870,7 @@ impl KmsInvalidStateException {
     }
 }
 
-/// <p>The request was rejected because the specified customer master key (CMK) isn't
-/// enabled.</p>
+/// <p>The request was rejected because the specified customer master key (CMK) isn't enabled.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsDisabledException {
@@ -7046,8 +6934,7 @@ impl KmsDisabledException {
     }
 }
 
-/// <p>The ciphertext references a key that doesn't exist or that you don't have access
-/// to.</p>
+/// <p>The ciphertext references a key that doesn't exist or that you don't have access to.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsAccessDeniedException {
@@ -7559,8 +7446,7 @@ impl ValidationException {
     }
 }
 
-/// <p>Indicates that a request parameter does not comply with the associated
-/// constraints.</p>
+/// <p>Indicates that a request parameter does not comply with the associated constraints.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserErrorException {
@@ -7688,8 +7574,7 @@ impl TopicLimitExceededException {
     }
 }
 
-/// <p>Indicates that the specified phone number opted out of receiving SMS messages from
-/// your Amazon Web Services account. You can't send SMS messages to phone numbers that opt out.</p>
+/// <p>Indicates that the specified phone number opted out of receiving SMS messages from your Amazon Web Services account. You can't send SMS messages to phone numbers that opt out.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OptedOutException {

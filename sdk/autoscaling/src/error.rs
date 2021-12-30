@@ -12,8 +12,7 @@ pub struct AttachInstancesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AttachInstancesErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// <p>The service-linked role is not yet ready for use.</p>
     ServiceLinkedRoleFailure(crate::error::ServiceLinkedRoleFailure),
@@ -117,8 +116,7 @@ pub struct AttachLoadBalancersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AttachLoadBalancersErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// <p>The service-linked role is not yet ready for use.</p>
     ServiceLinkedRoleFailure(crate::error::ServiceLinkedRoleFailure),
@@ -222,8 +220,7 @@ pub struct AttachLoadBalancerTargetGroupsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AttachLoadBalancerTargetGroupsErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// <p>The service-linked role is not yet ready for use.</p>
     ServiceLinkedRoleFailure(crate::error::ServiceLinkedRoleFailure),
@@ -338,8 +335,7 @@ pub struct BatchDeleteScheduledActionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchDeleteScheduledActionErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -434,13 +430,9 @@ pub struct BatchPutScheduledUpdateGroupActionError {
 pub enum BatchPutScheduledUpdateGroupActionErrorKind {
     /// <p>You already have an Auto Scaling group or launch configuration with this name.</p>
     AlreadyExistsFault(crate::error::AlreadyExistsFault),
-    /// <p>You have already reached a limit for your Amazon EC2 Auto Scaling
-    /// resources (for example, Auto Scaling groups, launch configurations, or lifecycle hooks). For
-    /// more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API
-    /// Reference</i>.</p>
+    /// <p>You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example, Auto Scaling groups, launch configurations, or lifecycle hooks). For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
     LimitExceededFault(crate::error::LimitExceededFault),
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -562,16 +554,11 @@ pub struct CancelInstanceRefreshError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CancelInstanceRefreshErrorKind {
-    /// <p>The request failed because an active instance refresh for the specified Auto Scaling group was
-    /// not found. </p>
+    /// <p>The request failed because an active instance refresh for the specified Auto Scaling group was not found. </p>
     ActiveInstanceRefreshNotFoundFault(crate::error::ActiveInstanceRefreshNotFoundFault),
-    /// <p>You have already reached a limit for your Amazon EC2 Auto Scaling
-    /// resources (for example, Auto Scaling groups, launch configurations, or lifecycle hooks). For
-    /// more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API
-    /// Reference</i>.</p>
+    /// <p>You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example, Auto Scaling groups, launch configurations, or lifecycle hooks). For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
     LimitExceededFault(crate::error::LimitExceededFault),
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -686,8 +673,7 @@ pub struct CompleteLifecycleActionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CompleteLifecycleActionErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -782,13 +768,9 @@ pub struct CreateAutoScalingGroupError {
 pub enum CreateAutoScalingGroupErrorKind {
     /// <p>You already have an Auto Scaling group or launch configuration with this name.</p>
     AlreadyExistsFault(crate::error::AlreadyExistsFault),
-    /// <p>You have already reached a limit for your Amazon EC2 Auto Scaling
-    /// resources (for example, Auto Scaling groups, launch configurations, or lifecycle hooks). For
-    /// more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API
-    /// Reference</i>.</p>
+    /// <p>You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example, Auto Scaling groups, launch configurations, or lifecycle hooks). For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
     LimitExceededFault(crate::error::LimitExceededFault),
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// <p>The service-linked role is not yet ready for use.</p>
     ServiceLinkedRoleFailure(crate::error::ServiceLinkedRoleFailure),
@@ -912,13 +894,9 @@ pub struct CreateLaunchConfigurationError {
 pub enum CreateLaunchConfigurationErrorKind {
     /// <p>You already have an Auto Scaling group or launch configuration with this name.</p>
     AlreadyExistsFault(crate::error::AlreadyExistsFault),
-    /// <p>You have already reached a limit for your Amazon EC2 Auto Scaling
-    /// resources (for example, Auto Scaling groups, launch configurations, or lifecycle hooks). For
-    /// more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API
-    /// Reference</i>.</p>
+    /// <p>You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example, Auto Scaling groups, launch configurations, or lifecycle hooks). For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
     LimitExceededFault(crate::error::LimitExceededFault),
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1031,13 +1009,9 @@ pub struct CreateOrUpdateTagsError {
 pub enum CreateOrUpdateTagsErrorKind {
     /// <p>You already have an Auto Scaling group or launch configuration with this name.</p>
     AlreadyExistsFault(crate::error::AlreadyExistsFault),
-    /// <p>You have already reached a limit for your Amazon EC2 Auto Scaling
-    /// resources (for example, Auto Scaling groups, launch configurations, or lifecycle hooks). For
-    /// more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API
-    /// Reference</i>.</p>
+    /// <p>You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example, Auto Scaling groups, launch configurations, or lifecycle hooks). For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
     LimitExceededFault(crate::error::LimitExceededFault),
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// <p>The operation can't be performed because the resource is in use.</p>
     ResourceInUseFault(crate::error::ResourceInUseFault),
@@ -1159,13 +1133,11 @@ pub struct DeleteAutoScalingGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteAutoScalingGroupErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// <p>The operation can't be performed because the resource is in use.</p>
     ResourceInUseFault(crate::error::ResourceInUseFault),
-    /// <p>The operation can't be performed because there are scaling activities in
-    /// progress.</p>
+    /// <p>The operation can't be performed because there are scaling activities in progress.</p>
     ScalingActivityInProgressFault(crate::error::ScalingActivityInProgressFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1278,8 +1250,7 @@ pub struct DeleteLaunchConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteLaunchConfigurationErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// <p>The operation can't be performed because the resource is in use.</p>
     ResourceInUseFault(crate::error::ResourceInUseFault),
@@ -1383,8 +1354,7 @@ pub struct DeleteLifecycleHookError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteLifecycleHookErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1477,8 +1447,7 @@ pub struct DeleteNotificationConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteNotificationConfigurationErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1578,8 +1547,7 @@ pub struct DeletePolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeletePolicyErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// <p>The service-linked role is not yet ready for use.</p>
     ServiceLinkedRoleFailure(crate::error::ServiceLinkedRoleFailure),
@@ -1683,8 +1651,7 @@ pub struct DeleteScheduledActionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteScheduledActionErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1777,8 +1744,7 @@ pub struct DeleteTagsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteTagsErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// <p>The operation can't be performed because the resource is in use.</p>
     ResourceInUseFault(crate::error::ResourceInUseFault),
@@ -1876,18 +1842,13 @@ pub struct DeleteWarmPoolError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteWarmPoolErrorKind {
-    /// <p>You have already reached a limit for your Amazon EC2 Auto Scaling
-    /// resources (for example, Auto Scaling groups, launch configurations, or lifecycle hooks). For
-    /// more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API
-    /// Reference</i>.</p>
+    /// <p>You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example, Auto Scaling groups, launch configurations, or lifecycle hooks). For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
     LimitExceededFault(crate::error::LimitExceededFault),
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// <p>The operation can't be performed because the resource is in use.</p>
     ResourceInUseFault(crate::error::ResourceInUseFault),
-    /// <p>The operation can't be performed because there are scaling activities in
-    /// progress.</p>
+    /// <p>The operation can't be performed because there are scaling activities in progress.</p>
     ScalingActivityInProgressFault(crate::error::ScalingActivityInProgressFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2001,8 +1962,7 @@ pub struct DescribeAccountLimitsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeAccountLimitsErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2095,8 +2055,7 @@ pub struct DescribeAdjustmentTypesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeAdjustmentTypesErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2191,8 +2150,7 @@ pub struct DescribeAutoScalingGroupsError {
 pub enum DescribeAutoScalingGroupsErrorKind {
     /// <p>The <code>NextToken</code> value is not valid.</p>
     InvalidNextToken(crate::error::InvalidNextToken),
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2296,8 +2254,7 @@ pub struct DescribeAutoScalingInstancesError {
 pub enum DescribeAutoScalingInstancesErrorKind {
     /// <p>The <code>NextToken</code> value is not valid.</p>
     InvalidNextToken(crate::error::InvalidNextToken),
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2399,8 +2356,7 @@ pub struct DescribeAutoScalingNotificationTypesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeAutoScalingNotificationTypesErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2504,8 +2460,7 @@ pub struct DescribeInstanceRefreshesError {
 pub enum DescribeInstanceRefreshesErrorKind {
     /// <p>The <code>NextToken</code> value is not valid.</p>
     InvalidNextToken(crate::error::InvalidNextToken),
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2609,8 +2564,7 @@ pub struct DescribeLaunchConfigurationsError {
 pub enum DescribeLaunchConfigurationsErrorKind {
     /// <p>The <code>NextToken</code> value is not valid.</p>
     InvalidNextToken(crate::error::InvalidNextToken),
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2712,8 +2666,7 @@ pub struct DescribeLifecycleHooksError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeLifecycleHooksErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2806,8 +2759,7 @@ pub struct DescribeLifecycleHookTypesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeLifecycleHookTypesErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2902,8 +2854,7 @@ pub struct DescribeLoadBalancersError {
 pub enum DescribeLoadBalancersErrorKind {
     /// <p>The <code>NextToken</code> value is not valid.</p>
     InvalidNextToken(crate::error::InvalidNextToken),
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3007,8 +2958,7 @@ pub struct DescribeLoadBalancerTargetGroupsError {
 pub enum DescribeLoadBalancerTargetGroupsErrorKind {
     /// <p>The <code>NextToken</code> value is not valid.</p>
     InvalidNextToken(crate::error::InvalidNextToken),
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3117,8 +3067,7 @@ pub struct DescribeMetricCollectionTypesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeMetricCollectionTypesErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3218,8 +3167,7 @@ pub struct DescribeNotificationConfigurationsError {
 pub enum DescribeNotificationConfigurationsErrorKind {
     /// <p>The <code>NextToken</code> value is not valid.</p>
     InvalidNextToken(crate::error::InvalidNextToken),
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3330,8 +3278,7 @@ pub struct DescribePoliciesError {
 pub enum DescribePoliciesErrorKind {
     /// <p>The <code>NextToken</code> value is not valid.</p>
     InvalidNextToken(crate::error::InvalidNextToken),
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// <p>The service-linked role is not yet ready for use.</p>
     ServiceLinkedRoleFailure(crate::error::ServiceLinkedRoleFailure),
@@ -3443,8 +3390,7 @@ pub struct DescribeScalingActivitiesError {
 pub enum DescribeScalingActivitiesErrorKind {
     /// <p>The <code>NextToken</code> value is not valid.</p>
     InvalidNextToken(crate::error::InvalidNextToken),
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3546,8 +3492,7 @@ pub struct DescribeScalingProcessTypesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeScalingProcessTypesErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3642,8 +3587,7 @@ pub struct DescribeScheduledActionsError {
 pub enum DescribeScheduledActionsErrorKind {
     /// <p>The <code>NextToken</code> value is not valid.</p>
     InvalidNextToken(crate::error::InvalidNextToken),
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3747,8 +3691,7 @@ pub struct DescribeTagsError {
 pub enum DescribeTagsErrorKind {
     /// <p>The <code>NextToken</code> value is not valid.</p>
     InvalidNextToken(crate::error::InvalidNextToken),
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3847,8 +3790,7 @@ pub struct DescribeTerminationPolicyTypesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeTerminationPolicyTypesErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3950,13 +3892,9 @@ pub struct DescribeWarmPoolError {
 pub enum DescribeWarmPoolErrorKind {
     /// <p>The <code>NextToken</code> value is not valid.</p>
     InvalidNextToken(crate::error::InvalidNextToken),
-    /// <p>You have already reached a limit for your Amazon EC2 Auto Scaling
-    /// resources (for example, Auto Scaling groups, launch configurations, or lifecycle hooks). For
-    /// more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API
-    /// Reference</i>.</p>
+    /// <p>You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example, Auto Scaling groups, launch configurations, or lifecycle hooks). For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
     LimitExceededFault(crate::error::LimitExceededFault),
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4061,8 +3999,7 @@ pub struct DetachInstancesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DetachInstancesErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4155,8 +4092,7 @@ pub struct DetachLoadBalancersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DetachLoadBalancersErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4249,8 +4185,7 @@ pub struct DetachLoadBalancerTargetGroupsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DetachLoadBalancerTargetGroupsErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4350,8 +4285,7 @@ pub struct DisableMetricsCollectionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisableMetricsCollectionErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4444,8 +4378,7 @@ pub struct EnableMetricsCollectionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum EnableMetricsCollectionErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4538,8 +4471,7 @@ pub struct EnterStandbyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum EnterStandbyErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4632,11 +4564,9 @@ pub struct ExecutePolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ExecutePolicyErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
-    /// <p>The operation can't be performed because there are scaling activities in
-    /// progress.</p>
+    /// <p>The operation can't be performed because there are scaling activities in progress.</p>
     ScalingActivityInProgressFault(crate::error::ScalingActivityInProgressFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4738,8 +4668,7 @@ pub struct ExitStandbyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ExitStandbyErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4829,8 +4758,7 @@ pub struct GetPredictiveScalingForecastError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetPredictiveScalingForecastErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4923,13 +4851,9 @@ pub struct PutLifecycleHookError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutLifecycleHookErrorKind {
-    /// <p>You have already reached a limit for your Amazon EC2 Auto Scaling
-    /// resources (for example, Auto Scaling groups, launch configurations, or lifecycle hooks). For
-    /// more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API
-    /// Reference</i>.</p>
+    /// <p>You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example, Auto Scaling groups, launch configurations, or lifecycle hooks). For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
     LimitExceededFault(crate::error::LimitExceededFault),
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5028,13 +4952,9 @@ pub struct PutNotificationConfigurationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutNotificationConfigurationErrorKind {
-    /// <p>You have already reached a limit for your Amazon EC2 Auto Scaling
-    /// resources (for example, Auto Scaling groups, launch configurations, or lifecycle hooks). For
-    /// more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API
-    /// Reference</i>.</p>
+    /// <p>You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example, Auto Scaling groups, launch configurations, or lifecycle hooks). For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
     LimitExceededFault(crate::error::LimitExceededFault),
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// <p>The service-linked role is not yet ready for use.</p>
     ServiceLinkedRoleFailure(crate::error::ServiceLinkedRoleFailure),
@@ -5149,13 +5069,9 @@ pub struct PutScalingPolicyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutScalingPolicyErrorKind {
-    /// <p>You have already reached a limit for your Amazon EC2 Auto Scaling
-    /// resources (for example, Auto Scaling groups, launch configurations, or lifecycle hooks). For
-    /// more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API
-    /// Reference</i>.</p>
+    /// <p>You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example, Auto Scaling groups, launch configurations, or lifecycle hooks). For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
     LimitExceededFault(crate::error::LimitExceededFault),
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// <p>The service-linked role is not yet ready for use.</p>
     ServiceLinkedRoleFailure(crate::error::ServiceLinkedRoleFailure),
@@ -5267,13 +5183,9 @@ pub struct PutScheduledUpdateGroupActionError {
 pub enum PutScheduledUpdateGroupActionErrorKind {
     /// <p>You already have an Auto Scaling group or launch configuration with this name.</p>
     AlreadyExistsFault(crate::error::AlreadyExistsFault),
-    /// <p>You have already reached a limit for your Amazon EC2 Auto Scaling
-    /// resources (for example, Auto Scaling groups, launch configurations, or lifecycle hooks). For
-    /// more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API
-    /// Reference</i>.</p>
+    /// <p>You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example, Auto Scaling groups, launch configurations, or lifecycle hooks). For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
     LimitExceededFault(crate::error::LimitExceededFault),
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5389,13 +5301,9 @@ pub struct PutWarmPoolError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutWarmPoolErrorKind {
-    /// <p>You have already reached a limit for your Amazon EC2 Auto Scaling
-    /// resources (for example, Auto Scaling groups, launch configurations, or lifecycle hooks). For
-    /// more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API
-    /// Reference</i>.</p>
+    /// <p>You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example, Auto Scaling groups, launch configurations, or lifecycle hooks). For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
     LimitExceededFault(crate::error::LimitExceededFault),
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5491,8 +5399,7 @@ pub struct RecordLifecycleActionHeartbeatError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RecordLifecycleActionHeartbeatErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5592,8 +5499,7 @@ pub struct ResumeProcessesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ResumeProcessesErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// <p>The operation can't be performed because the resource is in use.</p>
     ResourceInUseFault(crate::error::ResourceInUseFault),
@@ -5694,11 +5600,9 @@ pub struct SetDesiredCapacityError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SetDesiredCapacityErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
-    /// <p>The operation can't be performed because there are scaling activities in
-    /// progress.</p>
+    /// <p>The operation can't be performed because there are scaling activities in progress.</p>
     ScalingActivityInProgressFault(crate::error::ScalingActivityInProgressFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5800,8 +5704,7 @@ pub struct SetInstanceHealthError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SetInstanceHealthErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -5894,13 +5797,9 @@ pub struct SetInstanceProtectionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SetInstanceProtectionErrorKind {
-    /// <p>You have already reached a limit for your Amazon EC2 Auto Scaling
-    /// resources (for example, Auto Scaling groups, launch configurations, or lifecycle hooks). For
-    /// more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API
-    /// Reference</i>.</p>
+    /// <p>You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example, Auto Scaling groups, launch configurations, or lifecycle hooks). For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
     LimitExceededFault(crate::error::LimitExceededFault),
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6002,16 +5901,11 @@ pub struct StartInstanceRefreshError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartInstanceRefreshErrorKind {
-    /// <p>The request failed because an active instance refresh operation already exists for the
-    /// specified Auto Scaling group.</p>
+    /// <p>The request failed because an active instance refresh operation already exists for the specified Auto Scaling group.</p>
     InstanceRefreshInProgressFault(crate::error::InstanceRefreshInProgressFault),
-    /// <p>You have already reached a limit for your Amazon EC2 Auto Scaling
-    /// resources (for example, Auto Scaling groups, launch configurations, or lifecycle hooks). For
-    /// more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API
-    /// Reference</i>.</p>
+    /// <p>You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example, Auto Scaling groups, launch configurations, or lifecycle hooks). For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
     LimitExceededFault(crate::error::LimitExceededFault),
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6122,8 +6016,7 @@ pub struct SuspendProcessesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SuspendProcessesErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
     /// <p>The operation can't be performed because the resource is in use.</p>
     ResourceInUseFault(crate::error::ResourceInUseFault),
@@ -6224,11 +6117,9 @@ pub struct TerminateInstanceInAutoScalingGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TerminateInstanceInAutoScalingGroupErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
-    /// <p>The operation can't be performed because there are scaling activities in
-    /// progress.</p>
+    /// <p>The operation can't be performed because there are scaling activities in progress.</p>
     ScalingActivityInProgressFault(crate::error::ScalingActivityInProgressFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6343,11 +6234,9 @@ pub struct UpdateAutoScalingGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateAutoScalingGroupErrorKind {
-    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-    /// instance, or load balancer).</p>
+    /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
     ResourceContentionFault(crate::error::ResourceContentionFault),
-    /// <p>The operation can't be performed because there are scaling activities in
-    /// progress.</p>
+    /// <p>The operation can't be performed because there are scaling activities in progress.</p>
     ScalingActivityInProgressFault(crate::error::ScalingActivityInProgressFault),
     /// <p>The service-linked role is not yet ready for use.</p>
     ServiceLinkedRoleFailure(crate::error::ServiceLinkedRoleFailure),
@@ -6513,8 +6402,7 @@ impl ServiceLinkedRoleFailure {
     }
 }
 
-/// <p>The operation can't be performed because there are scaling activities in
-/// progress.</p>
+/// <p>The operation can't be performed because there are scaling activities in progress.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScalingActivityInProgressFault {
@@ -6578,8 +6466,7 @@ impl ScalingActivityInProgressFault {
     }
 }
 
-/// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group,
-/// instance, or load balancer).</p>
+/// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceContentionFault {
@@ -6707,10 +6594,7 @@ impl ResourceInUseFault {
     }
 }
 
-/// <p>You have already reached a limit for your Amazon EC2 Auto Scaling
-/// resources (for example, Auto Scaling groups, launch configurations, or lifecycle hooks). For
-/// more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API
-/// Reference</i>.</p>
+/// <p>You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example, Auto Scaling groups, launch configurations, or lifecycle hooks). For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededFault {
@@ -6774,8 +6658,7 @@ impl LimitExceededFault {
     }
 }
 
-/// <p>The request failed because an active instance refresh operation already exists for the
-/// specified Auto Scaling group.</p>
+/// <p>The request failed because an active instance refresh operation already exists for the specified Auto Scaling group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceRefreshInProgressFault {
@@ -6967,8 +6850,7 @@ impl InvalidNextToken {
     }
 }
 
-/// <p>The request failed because an active instance refresh for the specified Auto Scaling group was
-/// not found. </p>
+/// <p>The request failed because an active instance refresh for the specified Auto Scaling group was not found. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActiveInstanceRefreshNotFoundFault {

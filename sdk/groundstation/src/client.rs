@@ -455,10 +455,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateDataflowEndpointGroup`.
     ///
     /// <p>Creates a <code>DataflowEndpoint</code> group containing the specified list of <code>DataflowEndpoint</code> objects.</p>
-    /// <p>The <code>name</code> field in each endpoint is used in your mission profile <code>DataflowEndpointConfig</code>
-    /// to specify which endpoints to use during a contact.</p>
-    /// <p>When a contact uses multiple <code>DataflowEndpointConfig</code> objects, each <code>Config</code>
-    /// must match a <code>DataflowEndpoint</code> in the same group.</p>
+    /// <p>The <code>name</code> field in each endpoint is used in your mission profile <code>DataflowEndpointConfig</code> to specify which endpoints to use during a contact.</p>
+    /// <p>When a contact uses multiple <code>DataflowEndpointConfig</code> objects, each <code>Config</code> must match a <code>DataflowEndpoint</code> in the same group.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDataflowEndpointGroup<
         C = aws_smithy_client::erase::DynConnector,
@@ -559,9 +557,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateMissionProfile`.
     ///
     /// <p>Creates a mission profile.</p>
-    /// <p>
-    /// <code>dataflowEdges</code> is a list of lists of strings. Each lower level list of strings
-    /// has two elements: a <i>from</i> ARN and a <i>to</i> ARN.</p>
+    /// <p> <code>dataflowEdges</code> is a list of lists of strings. Each lower level list of strings has two elements: a <i>from</i> ARN and a <i>to</i> ARN.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateMissionProfile<
         C = aws_smithy_client::erase::DynConnector,
@@ -673,16 +669,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_dataflow_edges`](Self::set_dataflow_edges).
         ///
-        /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i>
-        /// <code>Config</code> and a <i>to</i>
-        /// <code>Config</code>.</p>
+        /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code> and a <i>to</i> <code>Config</code>.</p>
         pub fn dataflow_edges(mut self, input: std::vec::Vec<std::string::String>) -> Self {
             self.inner = self.inner.dataflow_edges(input);
             self
         }
-        /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i>
-        /// <code>Config</code> and a <i>to</i>
-        /// <code>Config</code>.</p>
+        /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code> and a <i>to</i> <code>Config</code>.</p>
         pub fn set_dataflow_edges(
             mut self,
             input: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
@@ -1489,9 +1481,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListContacts`.
     ///
     /// <p>Returns a list of contacts.</p>
-    /// <p>If <code>statusList</code> contains AVAILABLE, the request must include
-    /// <code>groundStation</code>, <code>missionprofileArn</code>, and <code>satelliteArn</code>.
-    /// </p>
+    /// <p>If <code>statusList</code> contains AVAILABLE, the request must include <code>groundStation</code>, <code>missionprofileArn</code>, and <code>satelliteArn</code>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListContacts<
         C = aws_smithy_client::erase::DynConnector,
@@ -2382,8 +2372,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateConfig`.
     ///
     /// <p>Updates the <code>Config</code> used when scheduling contacts.</p>
-    /// <p>Updating a <code>Config</code> will not update the execution parameters
-    /// for existing future contacts scheduled with this <code>Config</code>.</p>
+    /// <p>Updating a <code>Config</code> will not update the execution parameters for existing future contacts scheduled with this <code>Config</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateConfig<
         C = aws_smithy_client::erase::DynConnector,
@@ -2490,8 +2479,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateMissionProfile`.
     ///
     /// <p>Updates a mission profile.</p>
-    /// <p>Updating a mission profile will not update the execution parameters
-    /// for existing future contacts.</p>
+    /// <p>Updating a mission profile will not update the execution parameters for existing future contacts.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateMissionProfile<
         C = aws_smithy_client::erase::DynConnector,
@@ -2616,16 +2604,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_dataflow_edges`](Self::set_dataflow_edges).
         ///
-        /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i>
-        /// <code>Config</code> and a <i>to</i>
-        /// <code>Config</code>.</p>
+        /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code> and a <i>to</i> <code>Config</code>.</p>
         pub fn dataflow_edges(mut self, input: std::vec::Vec<std::string::String>) -> Self {
             self.inner = self.inner.dataflow_edges(input);
             self
         }
-        /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i>
-        /// <code>Config</code> and a <i>to</i>
-        /// <code>Config</code>.</p>
+        /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code> and a <i>to</i> <code>Config</code>.</p>
         pub fn set_dataflow_edges(
             mut self,
             input: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,

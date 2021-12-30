@@ -12,14 +12,12 @@ pub mod create_connection_input {
         pub(crate) host_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the external provider where your third-party code repository is
-        /// configured.</p>
+        /// <p>The name of the external provider where your third-party code repository is configured.</p>
         pub fn provider_type(mut self, input: crate::model::ProviderType) -> Self {
             self.provider_type = Some(input);
             self
         }
-        /// <p>The name of the external provider where your third-party code repository is
-        /// configured.</p>
+        /// <p>The name of the external provider where your third-party code repository is configured.</p>
         pub fn set_provider_type(
             mut self,
             input: std::option::Option<crate::model::ProviderType>,
@@ -27,14 +25,12 @@ pub mod create_connection_input {
             self.provider_type = input;
             self
         }
-        /// <p>The name of the connection to be created. The name must be unique in the calling AWS
-        /// account.</p>
+        /// <p>The name of the connection to be created. The name must be unique in the calling AWS account.</p>
         pub fn connection_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.connection_name = Some(input.into());
             self
         }
-        /// <p>The name of the connection to be created. The name must be unique in the calling AWS
-        /// account.</p>
+        /// <p>The name of the connection to be created. The name must be unique in the calling AWS account.</p>
         pub fn set_connection_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -222,28 +218,22 @@ pub mod create_host_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The name of the host to be created. The name must be unique in the calling AWS
-        /// account.</p>
+        /// <p>The name of the host to be created. The name must be unique in the calling AWS account.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the host to be created. The name must be unique in the calling AWS
-        /// account.</p>
+        /// <p>The name of the host to be created. The name must be unique in the calling AWS account.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
-        /// <p>The name of the installed provider to be associated with your connection. The host
-        /// resource represents the infrastructure where your provider type is installed. The valid
-        /// provider type is GitHub Enterprise Server.</p>
+        /// <p>The name of the installed provider to be associated with your connection. The host resource represents the infrastructure where your provider type is installed. The valid provider type is GitHub Enterprise Server.</p>
         pub fn provider_type(mut self, input: crate::model::ProviderType) -> Self {
             self.provider_type = Some(input);
             self
         }
-        /// <p>The name of the installed provider to be associated with your connection. The host
-        /// resource represents the infrastructure where your provider type is installed. The valid
-        /// provider type is GitHub Enterprise Server.</p>
+        /// <p>The name of the installed provider to be associated with your connection. The host resource represents the infrastructure where your provider type is installed. The valid provider type is GitHub Enterprise Server.</p>
         pub fn set_provider_type(
             mut self,
             input: std::option::Option<crate::model::ProviderType>,
@@ -251,14 +241,12 @@ pub mod create_host_input {
             self.provider_type = input;
             self
         }
-        /// <p>The endpoint of the infrastructure to be represented by the host after it is
-        /// created.</p>
+        /// <p>The endpoint of the infrastructure to be represented by the host after it is created.</p>
         pub fn provider_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
             self.provider_endpoint = Some(input.into());
             self
         }
-        /// <p>The endpoint of the infrastructure to be represented by the host after it is
-        /// created.</p>
+        /// <p>The endpoint of the infrastructure to be represented by the host after it is created.</p>
         pub fn set_provider_endpoint(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -266,14 +254,12 @@ pub mod create_host_input {
             self.provider_endpoint = input;
             self
         }
-        /// <p>The VPC configuration to be provisioned for the host. A VPC must be configured and the
-        /// infrastructure to be represented by the host must already be connected to the VPC.</p>
+        /// <p>The VPC configuration to be provisioned for the host. A VPC must be configured and the infrastructure to be represented by the host must already be connected to the VPC.</p>
         pub fn vpc_configuration(mut self, input: crate::model::VpcConfiguration) -> Self {
             self.vpc_configuration = Some(input);
             self
         }
-        /// <p>The VPC configuration to be provisioned for the host. A VPC must be configured and the
-        /// infrastructure to be represented by the host must already be connected to the VPC.</p>
+        /// <p>The VPC configuration to be provisioned for the host. A VPC must be configured and the infrastructure to be represented by the host must already be connected to the VPC.</p>
         pub fn set_vpc_configuration(
             mut self,
             input: std::option::Option<crate::model::VpcConfiguration>,
@@ -446,16 +432,14 @@ pub mod delete_connection_input {
         pub(crate) connection_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the connection to be deleted.</p>
-        /// <note>
+        /// <p>The Amazon Resource Name (ARN) of the connection to be deleted.</p> <note>
         /// <p>The ARN is never reused if the connection is deleted.</p>
         /// </note>
         pub fn connection_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.connection_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the connection to be deleted.</p>
-        /// <note>
+        /// <p>The Amazon Resource Name (ARN) of the connection to be deleted.</p> <note>
         /// <p>The ARN is never reused if the connection is deleted.</p>
         /// </note>
         pub fn set_connection_arn(
@@ -1070,14 +1054,12 @@ pub mod list_connections_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Filters the list of connections to those associated with a specified provider, such as
-        /// Bitbucket.</p>
+        /// <p>Filters the list of connections to those associated with a specified provider, such as Bitbucket.</p>
         pub fn provider_type_filter(mut self, input: crate::model::ProviderType) -> Self {
             self.provider_type_filter = Some(input);
             self
         }
-        /// <p>Filters the list of connections to those associated with a specified provider, such as
-        /// Bitbucket.</p>
+        /// <p>Filters the list of connections to those associated with a specified provider, such as Bitbucket.</p>
         pub fn set_provider_type_filter(
             mut self,
             input: std::option::Option<crate::model::ProviderType>,
@@ -1098,26 +1080,22 @@ pub mod list_connections_input {
             self.host_arn_filter = input;
             self
         }
-        /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>The token that was returned from the previous <code>ListConnections</code> call, which
-        /// can be used to return the next set of connections in the list.</p>
+        /// <p>The token that was returned from the previous <code>ListConnections</code> call, which can be used to return the next set of connections in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token that was returned from the previous <code>ListConnections</code> call, which
-        /// can be used to return the next set of connections in the list.</p>
+        /// <p>The token that was returned from the previous <code>ListConnections</code> call, which can be used to return the next set of connections in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1270,26 +1248,22 @@ pub mod list_hosts_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.</p>
+        /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>The token that was returned from the previous <code>ListHosts</code> call, which can be
-        /// used to return the next set of hosts in the list.</p>
+        /// <p>The token that was returned from the previous <code>ListHosts</code> call, which can be used to return the next set of hosts in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token that was returned from the previous <code>ListHosts</code> call, which can be
-        /// used to return the next set of hosts in the list.</p>
+        /// <p>The token that was returned from the previous <code>ListHosts</code> call, which can be used to return the next set of hosts in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1963,14 +1937,12 @@ pub mod update_host_input {
             self.provider_endpoint = input;
             self
         }
-        /// <p>The VPC configuration of the host to be updated. A VPC must be configured and the
-        /// infrastructure to be represented by the host must already be connected to the VPC.</p>
+        /// <p>The VPC configuration of the host to be updated. A VPC must be configured and the infrastructure to be represented by the host must already be connected to the VPC.</p>
         pub fn vpc_configuration(mut self, input: crate::model::VpcConfiguration) -> Self {
             self.vpc_configuration = Some(input);
             self
         }
-        /// <p>The VPC configuration of the host to be updated. A VPC must be configured and the
-        /// infrastructure to be represented by the host must already be connected to the VPC.</p>
+        /// <p>The VPC configuration of the host to be updated. A VPC must be configured and the infrastructure to be represented by the host must already be connected to the VPC.</p>
         pub fn set_vpc_configuration(
             mut self,
             input: std::option::Option<crate::model::VpcConfiguration>,
@@ -2122,8 +2094,7 @@ pub struct UpdateHostInput {
     pub host_arn: std::option::Option<std::string::String>,
     /// <p>The URL or endpoint of the host to be updated.</p>
     pub provider_endpoint: std::option::Option<std::string::String>,
-    /// <p>The VPC configuration of the host to be updated. A VPC must be configured and the
-    /// infrastructure to be represented by the host must already be connected to the VPC.</p>
+    /// <p>The VPC configuration of the host to be updated. A VPC must be configured and the infrastructure to be represented by the host must already be connected to the VPC.</p>
     pub vpc_configuration: std::option::Option<crate::model::VpcConfiguration>,
 }
 impl UpdateHostInput {
@@ -2135,8 +2106,7 @@ impl UpdateHostInput {
     pub fn provider_endpoint(&self) -> std::option::Option<&str> {
         self.provider_endpoint.as_deref()
     }
-    /// <p>The VPC configuration of the host to be updated. A VPC must be configured and the
-    /// infrastructure to be represented by the host must already be connected to the VPC.</p>
+    /// <p>The VPC configuration of the host to be updated. A VPC must be configured and the infrastructure to be represented by the host must already be connected to the VPC.</p>
     pub fn vpc_configuration(&self) -> std::option::Option<&crate::model::VpcConfiguration> {
         self.vpc_configuration.as_ref()
     }
@@ -2232,21 +2202,17 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListHostsInput {
-    /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-    /// results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub max_results: i32,
-    /// <p>The token that was returned from the previous <code>ListHosts</code> call, which can be
-    /// used to return the next set of hosts in the list.</p>
+    /// <p>The token that was returned from the previous <code>ListHosts</code> call, which can be used to return the next set of hosts in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListHostsInput {
-    /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-    /// results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// <p>The token that was returned from the previous <code>ListHosts</code> call, which can be
-    /// used to return the next set of hosts in the list.</p>
+    /// <p>The token that was returned from the previous <code>ListHosts</code> call, which can be used to return the next set of hosts in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2264,21 +2230,17 @@ impl std::fmt::Debug for ListHostsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConnectionsInput {
-    /// <p>Filters the list of connections to those associated with a specified provider, such as
-    /// Bitbucket.</p>
+    /// <p>Filters the list of connections to those associated with a specified provider, such as Bitbucket.</p>
     pub provider_type_filter: std::option::Option<crate::model::ProviderType>,
     /// <p>Filters the list of connections to those associated with a specified host.</p>
     pub host_arn_filter: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-    /// results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub max_results: i32,
-    /// <p>The token that was returned from the previous <code>ListConnections</code> call, which
-    /// can be used to return the next set of connections in the list.</p>
+    /// <p>The token that was returned from the previous <code>ListConnections</code> call, which can be used to return the next set of connections in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListConnectionsInput {
-    /// <p>Filters the list of connections to those associated with a specified provider, such as
-    /// Bitbucket.</p>
+    /// <p>Filters the list of connections to those associated with a specified provider, such as Bitbucket.</p>
     pub fn provider_type_filter(&self) -> std::option::Option<&crate::model::ProviderType> {
         self.provider_type_filter.as_ref()
     }
@@ -2286,13 +2248,11 @@ impl ListConnectionsInput {
     pub fn host_arn_filter(&self) -> std::option::Option<&str> {
         self.host_arn_filter.as_deref()
     }
-    /// <p>The maximum number of results to return in a single call. To retrieve the remaining
-    /// results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// <p>The token that was returned from the previous <code>ListConnections</code> call, which
-    /// can be used to return the next set of connections in the list.</p>
+    /// <p>The token that was returned from the previous <code>ListConnections</code> call, which can be used to return the next set of connections in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -2375,15 +2335,13 @@ impl std::fmt::Debug for DeleteHostInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteConnectionInput {
-    /// <p>The Amazon Resource Name (ARN) of the connection to be deleted.</p>
-    /// <note>
+    /// <p>The Amazon Resource Name (ARN) of the connection to be deleted.</p> <note>
     /// <p>The ARN is never reused if the connection is deleted.</p>
     /// </note>
     pub connection_arn: std::option::Option<std::string::String>,
 }
 impl DeleteConnectionInput {
-    /// <p>The Amazon Resource Name (ARN) of the connection to be deleted.</p>
-    /// <note>
+    /// <p>The Amazon Resource Name (ARN) of the connection to be deleted.</p> <note>
     /// <p>The ARN is never reused if the connection is deleted.</p>
     /// </note>
     pub fn connection_arn(&self) -> std::option::Option<&str> {
@@ -2402,41 +2360,31 @@ impl std::fmt::Debug for DeleteConnectionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateHostInput {
-    /// <p>The name of the host to be created. The name must be unique in the calling AWS
-    /// account.</p>
+    /// <p>The name of the host to be created. The name must be unique in the calling AWS account.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The name of the installed provider to be associated with your connection. The host
-    /// resource represents the infrastructure where your provider type is installed. The valid
-    /// provider type is GitHub Enterprise Server.</p>
+    /// <p>The name of the installed provider to be associated with your connection. The host resource represents the infrastructure where your provider type is installed. The valid provider type is GitHub Enterprise Server.</p>
     pub provider_type: std::option::Option<crate::model::ProviderType>,
-    /// <p>The endpoint of the infrastructure to be represented by the host after it is
-    /// created.</p>
+    /// <p>The endpoint of the infrastructure to be represented by the host after it is created.</p>
     pub provider_endpoint: std::option::Option<std::string::String>,
-    /// <p>The VPC configuration to be provisioned for the host. A VPC must be configured and the
-    /// infrastructure to be represented by the host must already be connected to the VPC.</p>
+    /// <p>The VPC configuration to be provisioned for the host. A VPC must be configured and the infrastructure to be represented by the host must already be connected to the VPC.</p>
     pub vpc_configuration: std::option::Option<crate::model::VpcConfiguration>,
     #[allow(missing_docs)] // documentation missing in model
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateHostInput {
-    /// <p>The name of the host to be created. The name must be unique in the calling AWS
-    /// account.</p>
+    /// <p>The name of the host to be created. The name must be unique in the calling AWS account.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The name of the installed provider to be associated with your connection. The host
-    /// resource represents the infrastructure where your provider type is installed. The valid
-    /// provider type is GitHub Enterprise Server.</p>
+    /// <p>The name of the installed provider to be associated with your connection. The host resource represents the infrastructure where your provider type is installed. The valid provider type is GitHub Enterprise Server.</p>
     pub fn provider_type(&self) -> std::option::Option<&crate::model::ProviderType> {
         self.provider_type.as_ref()
     }
-    /// <p>The endpoint of the infrastructure to be represented by the host after it is
-    /// created.</p>
+    /// <p>The endpoint of the infrastructure to be represented by the host after it is created.</p>
     pub fn provider_endpoint(&self) -> std::option::Option<&str> {
         self.provider_endpoint.as_deref()
     }
-    /// <p>The VPC configuration to be provisioned for the host. A VPC must be configured and the
-    /// infrastructure to be represented by the host must already be connected to the VPC.</p>
+    /// <p>The VPC configuration to be provisioned for the host. A VPC must be configured and the infrastructure to be represented by the host must already be connected to the VPC.</p>
     pub fn vpc_configuration(&self) -> std::option::Option<&crate::model::VpcConfiguration> {
         self.vpc_configuration.as_ref()
     }
@@ -2461,11 +2409,9 @@ impl std::fmt::Debug for CreateHostInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConnectionInput {
-    /// <p>The name of the external provider where your third-party code repository is
-    /// configured.</p>
+    /// <p>The name of the external provider where your third-party code repository is configured.</p>
     pub provider_type: std::option::Option<crate::model::ProviderType>,
-    /// <p>The name of the connection to be created. The name must be unique in the calling AWS
-    /// account.</p>
+    /// <p>The name of the connection to be created. The name must be unique in the calling AWS account.</p>
     pub connection_name: std::option::Option<std::string::String>,
     /// <p>The key-value pair to use when tagging the resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2473,13 +2419,11 @@ pub struct CreateConnectionInput {
     pub host_arn: std::option::Option<std::string::String>,
 }
 impl CreateConnectionInput {
-    /// <p>The name of the external provider where your third-party code repository is
-    /// configured.</p>
+    /// <p>The name of the external provider where your third-party code repository is configured.</p>
     pub fn provider_type(&self) -> std::option::Option<&crate::model::ProviderType> {
         self.provider_type.as_ref()
     }
-    /// <p>The name of the connection to be created. The name must be unique in the calling AWS
-    /// account.</p>
+    /// <p>The name of the connection to be created. The name must be unique in the calling AWS account.</p>
     pub fn connection_name(&self) -> std::option::Option<&str> {
         self.connection_name.as_deref()
     }

@@ -14,8 +14,7 @@ pub struct AcceptGrantError {
 pub enum AcceptGrantErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -162,8 +161,7 @@ pub struct CheckInLicenseError {
 pub enum CheckInLicenseErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>There was a conflict processing the request. Try your request again.</p>
     ConflictException(crate::error::ConflictException),
@@ -327,8 +325,7 @@ pub struct CheckoutBorrowLicenseError {
 pub enum CheckoutBorrowLicenseErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>The entitlement is not allowed.</p>
     EntitlementNotAllowedException(crate::error::EntitlementNotAllowedException),
@@ -537,8 +534,7 @@ pub struct CheckoutLicenseError {
 pub enum CheckoutLicenseErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -730,8 +726,7 @@ pub struct CreateGrantError {
 pub enum CreateGrantErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -878,8 +873,7 @@ pub struct CreateGrantVersionError {
 pub enum CreateGrantVersionErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -1038,8 +1032,7 @@ pub struct CreateLicenseError {
 pub enum CreateLicenseErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -1189,8 +1182,7 @@ pub struct CreateLicenseConfigurationError {
 pub enum CreateLicenseConfigurationErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -1348,8 +1340,7 @@ pub struct CreateLicenseConversionTaskForResourceError {
 pub enum CreateLicenseConversionTaskForResourceErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -1526,8 +1517,7 @@ pub struct CreateLicenseManagerReportGeneratorError {
 pub enum CreateLicenseManagerReportGeneratorErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -1734,8 +1724,7 @@ pub struct CreateLicenseVersionError {
 pub enum CreateLicenseVersionErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>There was a conflict processing the request. Try your request again.</p>
     ConflictException(crate::error::ConflictException),
@@ -1905,8 +1894,7 @@ pub struct CreateTokenError {
 pub enum CreateTokenErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>Too many requests have been submitted. Try again after a brief wait.</p>
     RateLimitExceededException(crate::error::RateLimitExceededException),
@@ -2061,8 +2049,7 @@ pub struct DeleteGrantError {
 pub enum DeleteGrantErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -2209,8 +2196,7 @@ pub struct DeleteLicenseError {
 pub enum DeleteLicenseErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>There was a conflict processing the request. Try your request again.</p>
     ConflictException(crate::error::ConflictException),
@@ -2368,8 +2354,7 @@ pub struct DeleteLicenseConfigurationError {
 pub enum DeleteLicenseConfigurationErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -2512,8 +2497,7 @@ pub struct DeleteLicenseManagerReportGeneratorError {
 pub enum DeleteLicenseManagerReportGeneratorErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -2720,8 +2704,7 @@ pub struct DeleteTokenError {
 pub enum DeleteTokenErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>Too many requests have been submitted. Try again after a brief wait.</p>
     RateLimitExceededException(crate::error::RateLimitExceededException),
@@ -2865,8 +2848,7 @@ pub struct ExtendLicenseConsumptionError {
 pub enum ExtendLicenseConsumptionErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -3029,8 +3011,7 @@ pub struct GetAccessTokenError {
 pub enum GetAccessTokenErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>Too many requests have been submitted. Try again after a brief wait.</p>
     RateLimitExceededException(crate::error::RateLimitExceededException),
@@ -3164,8 +3145,7 @@ pub struct GetGrantError {
 pub enum GetGrantErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -3309,8 +3289,7 @@ pub struct GetLicenseError {
 pub enum GetLicenseErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -3446,8 +3425,7 @@ pub struct GetLicenseConfigurationError {
 pub enum GetLicenseConfigurationErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -3588,8 +3566,7 @@ pub struct GetLicenseConversionTaskError {
 pub enum GetLicenseConversionTaskErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -3730,8 +3707,7 @@ pub struct GetLicenseManagerReportGeneratorError {
 pub enum GetLicenseManagerReportGeneratorErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -3932,8 +3908,7 @@ pub struct GetLicenseUsageError {
 pub enum GetLicenseUsageErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -4078,8 +4053,7 @@ pub struct GetServiceSettingsError {
 pub enum GetServiceSettingsErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>Too many requests have been submitted. Try again after a brief wait.</p>
     RateLimitExceededException(crate::error::RateLimitExceededException),
@@ -4205,8 +4179,7 @@ pub struct ListAssociationsForLicenseConfigurationError {
 pub enum ListAssociationsForLicenseConfigurationErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>The request uses too many filters or too many filter values.</p>
     FilterLimitExceededException(crate::error::FilterLimitExceededException),
@@ -4383,8 +4356,7 @@ pub struct ListDistributedGrantsError {
 pub enum ListDistributedGrantsErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -4543,8 +4515,7 @@ pub struct ListFailuresForLicenseConfigurationOperationsError {
 pub enum ListFailuresForLicenseConfigurationOperationsErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -4712,8 +4683,7 @@ pub struct ListLicenseConfigurationsError {
 pub enum ListLicenseConfigurationsErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>The request uses too many filters or too many filter values.</p>
     FilterLimitExceededException(crate::error::FilterLimitExceededException),
@@ -4869,8 +4839,7 @@ pub struct ListLicenseConversionTasksError {
 pub enum ListLicenseConversionTasksErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -5013,8 +4982,7 @@ pub struct ListLicenseManagerReportGeneratorsError {
 pub enum ListLicenseManagerReportGeneratorsErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -5219,8 +5187,7 @@ pub struct ListLicensesError {
 pub enum ListLicensesErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -5359,8 +5326,7 @@ pub struct ListLicenseSpecificationsForResourceError {
 pub enum ListLicenseSpecificationsForResourceErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -5522,8 +5488,7 @@ pub struct ListLicenseVersionsError {
 pub enum ListLicenseVersionsErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -5660,8 +5625,7 @@ pub struct ListReceivedGrantsError {
 pub enum ListReceivedGrantsErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -5820,8 +5784,7 @@ pub struct ListReceivedLicensesError {
 pub enum ListReceivedLicensesErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -5980,8 +5943,7 @@ pub struct ListResourceInventoryError {
 pub enum ListResourceInventoryErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>A dependency required to run the API is missing.</p>
     FailedDependencyException(crate::error::FailedDependencyException),
@@ -6140,8 +6102,7 @@ pub struct ListTagsForResourceError {
 pub enum ListTagsForResourceErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -6278,8 +6239,7 @@ pub struct ListTokensError {
 pub enum ListTokensErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>Too many requests have been submitted. Try again after a brief wait.</p>
     RateLimitExceededException(crate::error::RateLimitExceededException),
@@ -6404,8 +6364,7 @@ pub struct ListUsageForLicenseConfigurationError {
 pub enum ListUsageForLicenseConfigurationErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>The request uses too many filters or too many filter values.</p>
     FilterLimitExceededException(crate::error::FilterLimitExceededException),
@@ -6580,8 +6539,7 @@ pub struct RejectGrantError {
 pub enum RejectGrantErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -6728,8 +6686,7 @@ pub struct TagResourceError {
 pub enum TagResourceErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -6857,8 +6814,7 @@ pub struct UntagResourceError {
 pub enum UntagResourceErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -6992,8 +6948,7 @@ pub struct UpdateLicenseConfigurationError {
 pub enum UpdateLicenseConfigurationErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -7151,8 +7106,7 @@ pub struct UpdateLicenseManagerReportGeneratorError {
 pub enum UpdateLicenseManagerReportGeneratorErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -7359,14 +7313,12 @@ pub struct UpdateLicenseSpecificationsForResourceError {
 pub enum UpdateLicenseSpecificationsForResourceErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>License Manager cannot allocate a license to a resource because of its state. </p>
-    /// <p>For example, you cannot allocate a license to an instance in the process of shutting
-    /// down.</p>
+    /// <p>For example, you cannot allocate a license to an instance in the process of shutting down.</p>
     InvalidResourceStateException(crate::error::InvalidResourceStateException),
     /// <p>You do not have enough licenses available to support a new resource launch.</p>
     LicenseUsageException(crate::error::LicenseUsageException),
@@ -7554,8 +7506,7 @@ pub struct UpdateServiceSettingsError {
 pub enum UpdateServiceSettingsErrorKind {
     /// <p>Access to resource denied.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-    /// policy associated with this account.</p>
+    /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
@@ -7869,8 +7820,7 @@ impl InvalidParameterValueException {
     }
 }
 
-/// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM
-/// policy associated with this account.</p>
+/// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuthorizationException {
@@ -8063,8 +8013,7 @@ impl LicenseUsageException {
 }
 
 /// <p>License Manager cannot allocate a license to a resource because of its state. </p>
-/// <p>For example, you cannot allocate a license to an instance in the process of shutting
-/// down.</p>
+/// <p>For example, you cannot allocate a license to an instance in the process of shutting down.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidResourceStateException {

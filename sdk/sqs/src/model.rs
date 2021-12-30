@@ -165,8 +165,7 @@ impl AsRef<str> for QueueAttributeName {
     }
 }
 
-/// <p>Gives a detailed description of the result of an action on each entry in the
-/// request.</p>
+/// <p>Gives a detailed description of the result of an action on each entry in the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchResultErrorEntry {
@@ -277,9 +276,7 @@ impl BatchResultErrorEntry {
     }
 }
 
-/// <p>Encloses a <code>MessageId</code> for a successfully-enqueued message in a <code>
-/// <a>SendMessageBatch</a>.</code>
-/// </p>
+/// <p>Encloses a <code>MessageId</code> for a successfully-enqueued message in a <code> <code>SendMessageBatch</code>.</code> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendMessageBatchResultEntry {
@@ -291,8 +288,7 @@ pub struct SendMessageBatchResultEntry {
     pub md5_of_message_body: std::option::Option<std::string::String>,
     /// <p>An MD5 digest of the non-URL-encoded message attribute string. You can use this attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest. For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
     pub md5_of_message_attributes: std::option::Option<std::string::String>,
-    /// <p>An MD5 digest of the non-URL-encoded message system attribute string. You can use this
-    /// attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest. For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
+    /// <p>An MD5 digest of the non-URL-encoded message system attribute string. You can use this attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest. For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
     pub md5_of_message_system_attributes: std::option::Option<std::string::String>,
     /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
     /// <p>The large, non-consecutive number that Amazon SQS assigns to each message.</p>
@@ -316,8 +312,7 @@ impl SendMessageBatchResultEntry {
     pub fn md5_of_message_attributes(&self) -> std::option::Option<&str> {
         self.md5_of_message_attributes.as_deref()
     }
-    /// <p>An MD5 digest of the non-URL-encoded message system attribute string. You can use this
-    /// attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest. For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
+    /// <p>An MD5 digest of the non-URL-encoded message system attribute string. You can use this attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest. For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
     pub fn md5_of_message_system_attributes(&self) -> std::option::Option<&str> {
         self.md5_of_message_system_attributes.as_deref()
     }
@@ -403,8 +398,7 @@ pub mod send_message_batch_result_entry {
             self.md5_of_message_attributes = input;
             self
         }
-        /// <p>An MD5 digest of the non-URL-encoded message system attribute string. You can use this
-        /// attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest. For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
+        /// <p>An MD5 digest of the non-URL-encoded message system attribute string. You can use this attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest. For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
         pub fn md5_of_message_system_attributes(
             mut self,
             input: impl Into<std::string::String>,
@@ -412,8 +406,7 @@ pub mod send_message_batch_result_entry {
             self.md5_of_message_system_attributes = Some(input.into());
             self
         }
-        /// <p>An MD5 digest of the non-URL-encoded message system attribute string. You can use this
-        /// attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest. For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
+        /// <p>An MD5 digest of the non-URL-encoded message system attribute string. You can use this attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest. For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
         pub fn set_md5_of_message_system_attributes(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -462,39 +455,25 @@ impl SendMessageBatchResultEntry {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendMessageBatchRequestEntry {
-    /// <p>An identifier for a message in this batch used to communicate the result.</p>
-    /// <note>
+    /// <p>An identifier for a message in this batch used to communicate the result.</p> <note>
     /// <p>The <code>Id</code>s of a batch request need to be unique within a request.</p>
     /// <p>This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters, hyphens(-), and underscores (_).</p>
     /// </note>
     pub id: std::option::Option<std::string::String>,
     /// <p>The body of the message.</p>
     pub message_body: std::option::Option<std::string::String>,
-    /// <p>The length of time, in seconds, for which a specific message is delayed. Valid values: 0 to 900. Maximum: 15 minutes. Messages with a positive <code>DelaySeconds</code> value become available for processing after the delay period is finished.
-    /// If you don't specify a value, the default value for the queue is applied.
-    /// </p>      
-    /// <note>
+    /// <p>The length of time, in seconds, for which a specific message is delayed. Valid values: 0 to 900. Maximum: 15 minutes. Messages with a positive <code>DelaySeconds</code> value become available for processing after the delay period is finished. If you don't specify a value, the default value for the queue is applied. </p> <note>
     /// <p>When you set <code>FifoQueue</code>, you can't set <code>DelaySeconds</code> per message. You can set this parameter only on a queue level.</p>
     /// </note>
     pub delay_seconds: i32,
-    /// <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
-    /// and <code>Value</code>. For more information, see
-    /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon SQS
-    /// message attributes</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+    /// <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon SQS message attributes</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     pub message_attributes: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::MessageAttributeValue>,
     >,
-    /// <p>The message system attribute to send Each message system attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.</p>
-    /// <important>
+    /// <p>The message system attribute to send Each message system attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.</p> <important>
     /// <ul>
-    /// <li>
-    /// <p>Currently, the only supported message system attribute is <code>AWSTraceHeader</code>.
-    /// Its type must be <code>String</code> and its value must be a correctly formatted
-    /// X-Ray trace header string.</p>
-    /// </li>
-    /// <li>
-    /// <p>The size of a message system attribute doesn't count towards the total size of a message.</p>
-    /// </li>
+    /// <li> <p>Currently, the only supported message system attribute is <code>AWSTraceHeader</code>. Its type must be <code>String</code> and its value must be a correctly formatted X-Ray trace header string.</p> </li>
+    /// <li> <p>The size of a message system attribute doesn't count towards the total size of a message.</p> </li>
     /// </ul>
     /// </important>
     pub message_system_attributes: std::option::Option<
@@ -504,85 +483,39 @@ pub struct SendMessageBatchRequestEntry {
         >,
     >,
     /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
-    /// <p>The token used for deduplication of messages within a 5-minute minimum deduplication interval. If a message with a particular
-    /// <code>MessageDeduplicationId</code> is sent successfully, subsequent messages with the same <code>MessageDeduplicationId</code> are
-    /// accepted successfully but aren't delivered. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">
-    /// Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+    /// <p>The token used for deduplication of messages within a 5-minute minimum deduplication interval. If a message with a particular <code>MessageDeduplicationId</code> is sent successfully, subsequent messages with the same <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html"> Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     /// <ul>
-    /// <li>
-    /// <p>Every message must have a unique <code>MessageDeduplicationId</code>,</p>
+    /// <li> <p>Every message must have a unique <code>MessageDeduplicationId</code>,</p>
     /// <ul>
-    /// <li>
-    /// <p>You may provide a <code>MessageDeduplicationId</code> explicitly.</p>
-    /// </li>
-    /// <li>
-    /// <p>If you aren't able to provide a <code>MessageDeduplicationId</code> and you enable <code>ContentBasedDeduplication</code> for your queue,
-    /// Amazon SQS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>If you don't provide a <code>MessageDeduplicationId</code> and the queue doesn't have <code>ContentBasedDeduplication</code> set,
-    /// the action fails with an error.</p>
-    /// </li>
-    /// <li>
-    /// <p>If the queue has <code>ContentBasedDeduplication</code> set, your <code>MessageDeduplicationId</code> overrides the generated one.</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the deduplication interval are treated as duplicates
-    /// and only one copy of the message is delivered.</p>
-    /// </li>
-    /// <li>
-    /// <p>If you send one message with <code>ContentBasedDeduplication</code> enabled and then another message with a <code>MessageDeduplicationId</code> that is the same
-    /// as the one generated for the first <code>MessageDeduplicationId</code>, the two messages are treated as duplicates and only one copy of the message is delivered.
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <note>
-    /// <p>The <code>MessageDeduplicationId</code> is available to the consumer of the
-    /// message (this can be useful for troubleshooting delivery issues).</p>
-    /// <p>If a message is sent successfully but the acknowledgement is lost and the message is resent with the same
-    /// <code>MessageDeduplicationId</code> after the deduplication interval, Amazon SQS can't detect duplicate messages.</p>
+    /// <li> <p>You may provide a <code>MessageDeduplicationId</code> explicitly.</p> </li>
+    /// <li> <p>If you aren't able to provide a <code>MessageDeduplicationId</code> and you enable <code>ContentBasedDeduplication</code> for your queue, Amazon SQS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message). </p> </li>
+    /// <li> <p>If you don't provide a <code>MessageDeduplicationId</code> and the queue doesn't have <code>ContentBasedDeduplication</code> set, the action fails with an error.</p> </li>
+    /// <li> <p>If the queue has <code>ContentBasedDeduplication</code> set, your <code>MessageDeduplicationId</code> overrides the generated one.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the deduplication interval are treated as duplicates and only one copy of the message is delivered.</p> </li>
+    /// <li> <p>If you send one message with <code>ContentBasedDeduplication</code> enabled and then another message with a <code>MessageDeduplicationId</code> that is the same as the one generated for the first <code>MessageDeduplicationId</code>, the two messages are treated as duplicates and only one copy of the message is delivered. </p> </li>
+    /// </ul> <note>
+    /// <p>The <code>MessageDeduplicationId</code> is available to the consumer of the message (this can be useful for troubleshooting delivery issues).</p>
+    /// <p>If a message is sent successfully but the acknowledgement is lost and the message is resent with the same <code>MessageDeduplicationId</code> after the deduplication interval, Amazon SQS can't detect duplicate messages.</p>
     /// <p>Amazon SQS continues to keep track of the message deduplication ID even after the message is received and deleted.</p>
     /// </note>
-    /// <p>The length of <code>MessageDeduplicationId</code> is 128 characters. <code>MessageDeduplicationId</code> can contain alphanumeric characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and
-    /// punctuation (<code>!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~</code>).</p>
-    /// <p>For best practices of using <code>MessageDeduplicationId</code>, see
-    /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using the MessageDeduplicationId Property</a>
-    /// in the <i>Amazon SQS Developer Guide</i>.</p>
+    /// <p>The length of <code>MessageDeduplicationId</code> is 128 characters. <code>MessageDeduplicationId</code> can contain alphanumeric characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p>
+    /// <p>For best practices of using <code>MessageDeduplicationId</code>, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using the MessageDeduplicationId Property</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     pub message_deduplication_id: std::option::Option<std::string::String>,
     /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
-    /// <p>The tag that specifies that a message belongs to a specific message group. Messages
-    /// that belong to the same message group are processed in a FIFO manner (however,
-    /// messages in different message groups might be processed out of order). To interleave
-    /// multiple ordered streams within a single queue, use <code>MessageGroupId</code> values
-    /// (for example, session data for multiple users). In this scenario, multiple consumers can
-    /// process the queue, but the session data of each user is processed in a FIFO
-    /// fashion.</p>
+    /// <p>The tag that specifies that a message belongs to a specific message group. Messages that belong to the same message group are processed in a FIFO manner (however, messages in different message groups might be processed out of order). To interleave multiple ordered streams within a single queue, use <code>MessageGroupId</code> values (for example, session data for multiple users). In this scenario, multiple consumers can process the queue, but the session data of each user is processed in a FIFO fashion.</p>
     /// <ul>
-    /// <li>
-    /// <p>You must associate a non-empty <code>MessageGroupId</code> with a message. If you don't provide a <code>MessageGroupId</code>, the action fails.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ReceiveMessage</code> might return messages with multiple <code>MessageGroupId</code> values. For each <code>MessageGroupId</code>, the messages are sorted by time sent. The caller can't
-    /// specify a <code>MessageGroupId</code>.</p>
-    /// </li>
+    /// <li> <p>You must associate a non-empty <code>MessageGroupId</code> with a message. If you don't provide a <code>MessageGroupId</code>, the action fails.</p> </li>
+    /// <li> <p> <code>ReceiveMessage</code> might return messages with multiple <code>MessageGroupId</code> values. For each <code>MessageGroupId</code>, the messages are sorted by time sent. The caller can't specify a <code>MessageGroupId</code>.</p> </li>
     /// </ul>
-    /// <p>The length of <code>MessageGroupId</code> is 128 characters. Valid values: alphanumeric characters and punctuation <code>(!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)</code>.</p>
-    /// <p>For best practices of using <code>MessageGroupId</code>, see
-    /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html">Using the MessageGroupId Property</a>
-    /// in the <i>Amazon SQS Developer Guide</i>.</p>
-    /// <important>
-    /// <p>
-    /// <code>MessageGroupId</code> is required for FIFO queues. You can't use it for Standard queues.</p>
+    /// <p>The length of <code>MessageGroupId</code> is 128 characters. Valid values: alphanumeric characters and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p>
+    /// <p>For best practices of using <code>MessageGroupId</code>, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html">Using the MessageGroupId Property</a> in the <i>Amazon SQS Developer Guide</i>.</p> <important>
+    /// <p> <code>MessageGroupId</code> is required for FIFO queues. You can't use it for Standard queues.</p>
     /// </important>
     pub message_group_id: std::option::Option<std::string::String>,
 }
 impl SendMessageBatchRequestEntry {
-    /// <p>An identifier for a message in this batch used to communicate the result.</p>
-    /// <note>
+    /// <p>An identifier for a message in this batch used to communicate the result.</p> <note>
     /// <p>The <code>Id</code>s of a batch request need to be unique within a request.</p>
     /// <p>This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters, hyphens(-), and underscores (_).</p>
     /// </note>
@@ -593,19 +526,13 @@ impl SendMessageBatchRequestEntry {
     pub fn message_body(&self) -> std::option::Option<&str> {
         self.message_body.as_deref()
     }
-    /// <p>The length of time, in seconds, for which a specific message is delayed. Valid values: 0 to 900. Maximum: 15 minutes. Messages with a positive <code>DelaySeconds</code> value become available for processing after the delay period is finished.
-    /// If you don't specify a value, the default value for the queue is applied.
-    /// </p>      
-    /// <note>
+    /// <p>The length of time, in seconds, for which a specific message is delayed. Valid values: 0 to 900. Maximum: 15 minutes. Messages with a positive <code>DelaySeconds</code> value become available for processing after the delay period is finished. If you don't specify a value, the default value for the queue is applied. </p> <note>
     /// <p>When you set <code>FifoQueue</code>, you can't set <code>DelaySeconds</code> per message. You can set this parameter only on a queue level.</p>
     /// </note>
     pub fn delay_seconds(&self) -> i32 {
         self.delay_seconds
     }
-    /// <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
-    /// and <code>Value</code>. For more information, see
-    /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon SQS
-    /// message attributes</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+    /// <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon SQS message attributes</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     pub fn message_attributes(
         &self,
     ) -> std::option::Option<
@@ -613,17 +540,10 @@ impl SendMessageBatchRequestEntry {
     > {
         self.message_attributes.as_ref()
     }
-    /// <p>The message system attribute to send Each message system attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.</p>
-    /// <important>
+    /// <p>The message system attribute to send Each message system attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.</p> <important>
     /// <ul>
-    /// <li>
-    /// <p>Currently, the only supported message system attribute is <code>AWSTraceHeader</code>.
-    /// Its type must be <code>String</code> and its value must be a correctly formatted
-    /// X-Ray trace header string.</p>
-    /// </li>
-    /// <li>
-    /// <p>The size of a message system attribute doesn't count towards the total size of a message.</p>
-    /// </li>
+    /// <li> <p>Currently, the only supported message system attribute is <code>AWSTraceHeader</code>. Its type must be <code>String</code> and its value must be a correctly formatted X-Ray trace header string.</p> </li>
+    /// <li> <p>The size of a message system attribute doesn't count towards the total size of a message.</p> </li>
     /// </ul>
     /// </important>
     pub fn message_system_attributes(
@@ -637,81 +557,36 @@ impl SendMessageBatchRequestEntry {
         self.message_system_attributes.as_ref()
     }
     /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
-    /// <p>The token used for deduplication of messages within a 5-minute minimum deduplication interval. If a message with a particular
-    /// <code>MessageDeduplicationId</code> is sent successfully, subsequent messages with the same <code>MessageDeduplicationId</code> are
-    /// accepted successfully but aren't delivered. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">
-    /// Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+    /// <p>The token used for deduplication of messages within a 5-minute minimum deduplication interval. If a message with a particular <code>MessageDeduplicationId</code> is sent successfully, subsequent messages with the same <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html"> Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     /// <ul>
-    /// <li>
-    /// <p>Every message must have a unique <code>MessageDeduplicationId</code>,</p>
+    /// <li> <p>Every message must have a unique <code>MessageDeduplicationId</code>,</p>
     /// <ul>
-    /// <li>
-    /// <p>You may provide a <code>MessageDeduplicationId</code> explicitly.</p>
-    /// </li>
-    /// <li>
-    /// <p>If you aren't able to provide a <code>MessageDeduplicationId</code> and you enable <code>ContentBasedDeduplication</code> for your queue,
-    /// Amazon SQS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>If you don't provide a <code>MessageDeduplicationId</code> and the queue doesn't have <code>ContentBasedDeduplication</code> set,
-    /// the action fails with an error.</p>
-    /// </li>
-    /// <li>
-    /// <p>If the queue has <code>ContentBasedDeduplication</code> set, your <code>MessageDeduplicationId</code> overrides the generated one.</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the deduplication interval are treated as duplicates
-    /// and only one copy of the message is delivered.</p>
-    /// </li>
-    /// <li>
-    /// <p>If you send one message with <code>ContentBasedDeduplication</code> enabled and then another message with a <code>MessageDeduplicationId</code> that is the same
-    /// as the one generated for the first <code>MessageDeduplicationId</code>, the two messages are treated as duplicates and only one copy of the message is delivered.
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <note>
-    /// <p>The <code>MessageDeduplicationId</code> is available to the consumer of the
-    /// message (this can be useful for troubleshooting delivery issues).</p>
-    /// <p>If a message is sent successfully but the acknowledgement is lost and the message is resent with the same
-    /// <code>MessageDeduplicationId</code> after the deduplication interval, Amazon SQS can't detect duplicate messages.</p>
+    /// <li> <p>You may provide a <code>MessageDeduplicationId</code> explicitly.</p> </li>
+    /// <li> <p>If you aren't able to provide a <code>MessageDeduplicationId</code> and you enable <code>ContentBasedDeduplication</code> for your queue, Amazon SQS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message). </p> </li>
+    /// <li> <p>If you don't provide a <code>MessageDeduplicationId</code> and the queue doesn't have <code>ContentBasedDeduplication</code> set, the action fails with an error.</p> </li>
+    /// <li> <p>If the queue has <code>ContentBasedDeduplication</code> set, your <code>MessageDeduplicationId</code> overrides the generated one.</p> </li>
+    /// </ul> </li>
+    /// <li> <p>When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the deduplication interval are treated as duplicates and only one copy of the message is delivered.</p> </li>
+    /// <li> <p>If you send one message with <code>ContentBasedDeduplication</code> enabled and then another message with a <code>MessageDeduplicationId</code> that is the same as the one generated for the first <code>MessageDeduplicationId</code>, the two messages are treated as duplicates and only one copy of the message is delivered. </p> </li>
+    /// </ul> <note>
+    /// <p>The <code>MessageDeduplicationId</code> is available to the consumer of the message (this can be useful for troubleshooting delivery issues).</p>
+    /// <p>If a message is sent successfully but the acknowledgement is lost and the message is resent with the same <code>MessageDeduplicationId</code> after the deduplication interval, Amazon SQS can't detect duplicate messages.</p>
     /// <p>Amazon SQS continues to keep track of the message deduplication ID even after the message is received and deleted.</p>
     /// </note>
-    /// <p>The length of <code>MessageDeduplicationId</code> is 128 characters. <code>MessageDeduplicationId</code> can contain alphanumeric characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and
-    /// punctuation (<code>!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~</code>).</p>
-    /// <p>For best practices of using <code>MessageDeduplicationId</code>, see
-    /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using the MessageDeduplicationId Property</a>
-    /// in the <i>Amazon SQS Developer Guide</i>.</p>
+    /// <p>The length of <code>MessageDeduplicationId</code> is 128 characters. <code>MessageDeduplicationId</code> can contain alphanumeric characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p>
+    /// <p>For best practices of using <code>MessageDeduplicationId</code>, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using the MessageDeduplicationId Property</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     pub fn message_deduplication_id(&self) -> std::option::Option<&str> {
         self.message_deduplication_id.as_deref()
     }
     /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
-    /// <p>The tag that specifies that a message belongs to a specific message group. Messages
-    /// that belong to the same message group are processed in a FIFO manner (however,
-    /// messages in different message groups might be processed out of order). To interleave
-    /// multiple ordered streams within a single queue, use <code>MessageGroupId</code> values
-    /// (for example, session data for multiple users). In this scenario, multiple consumers can
-    /// process the queue, but the session data of each user is processed in a FIFO
-    /// fashion.</p>
+    /// <p>The tag that specifies that a message belongs to a specific message group. Messages that belong to the same message group are processed in a FIFO manner (however, messages in different message groups might be processed out of order). To interleave multiple ordered streams within a single queue, use <code>MessageGroupId</code> values (for example, session data for multiple users). In this scenario, multiple consumers can process the queue, but the session data of each user is processed in a FIFO fashion.</p>
     /// <ul>
-    /// <li>
-    /// <p>You must associate a non-empty <code>MessageGroupId</code> with a message. If you don't provide a <code>MessageGroupId</code>, the action fails.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ReceiveMessage</code> might return messages with multiple <code>MessageGroupId</code> values. For each <code>MessageGroupId</code>, the messages are sorted by time sent. The caller can't
-    /// specify a <code>MessageGroupId</code>.</p>
-    /// </li>
+    /// <li> <p>You must associate a non-empty <code>MessageGroupId</code> with a message. If you don't provide a <code>MessageGroupId</code>, the action fails.</p> </li>
+    /// <li> <p> <code>ReceiveMessage</code> might return messages with multiple <code>MessageGroupId</code> values. For each <code>MessageGroupId</code>, the messages are sorted by time sent. The caller can't specify a <code>MessageGroupId</code>.</p> </li>
     /// </ul>
-    /// <p>The length of <code>MessageGroupId</code> is 128 characters. Valid values: alphanumeric characters and punctuation <code>(!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)</code>.</p>
-    /// <p>For best practices of using <code>MessageGroupId</code>, see
-    /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html">Using the MessageGroupId Property</a>
-    /// in the <i>Amazon SQS Developer Guide</i>.</p>
-    /// <important>
-    /// <p>
-    /// <code>MessageGroupId</code> is required for FIFO queues. You can't use it for Standard queues.</p>
+    /// <p>The length of <code>MessageGroupId</code> is 128 characters. Valid values: alphanumeric characters and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p>
+    /// <p>For best practices of using <code>MessageGroupId</code>, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html">Using the MessageGroupId Property</a> in the <i>Amazon SQS Developer Guide</i>.</p> <important>
+    /// <p> <code>MessageGroupId</code> is required for FIFO queues. You can't use it for Standard queues.</p>
     /// </important>
     pub fn message_group_id(&self) -> std::option::Option<&str> {
         self.message_group_id.as_deref()
@@ -752,8 +627,7 @@ pub mod send_message_batch_request_entry {
         pub(crate) message_group_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>An identifier for a message in this batch used to communicate the result.</p>
-        /// <note>
+        /// <p>An identifier for a message in this batch used to communicate the result.</p> <note>
         /// <p>The <code>Id</code>s of a batch request need to be unique within a request.</p>
         /// <p>This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters, hyphens(-), and underscores (_).</p>
         /// </note>
@@ -761,8 +635,7 @@ pub mod send_message_batch_request_entry {
             self.id = Some(input.into());
             self
         }
-        /// <p>An identifier for a message in this batch used to communicate the result.</p>
-        /// <note>
+        /// <p>An identifier for a message in this batch used to communicate the result.</p> <note>
         /// <p>The <code>Id</code>s of a batch request need to be unique within a request.</p>
         /// <p>This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters, hyphens(-), and underscores (_).</p>
         /// </note>
@@ -780,20 +653,14 @@ pub mod send_message_batch_request_entry {
             self.message_body = input;
             self
         }
-        /// <p>The length of time, in seconds, for which a specific message is delayed. Valid values: 0 to 900. Maximum: 15 minutes. Messages with a positive <code>DelaySeconds</code> value become available for processing after the delay period is finished.
-        /// If you don't specify a value, the default value for the queue is applied.
-        /// </p>      
-        /// <note>
+        /// <p>The length of time, in seconds, for which a specific message is delayed. Valid values: 0 to 900. Maximum: 15 minutes. Messages with a positive <code>DelaySeconds</code> value become available for processing after the delay period is finished. If you don't specify a value, the default value for the queue is applied. </p> <note>
         /// <p>When you set <code>FifoQueue</code>, you can't set <code>DelaySeconds</code> per message. You can set this parameter only on a queue level.</p>
         /// </note>
         pub fn delay_seconds(mut self, input: i32) -> Self {
             self.delay_seconds = Some(input);
             self
         }
-        /// <p>The length of time, in seconds, for which a specific message is delayed. Valid values: 0 to 900. Maximum: 15 minutes. Messages with a positive <code>DelaySeconds</code> value become available for processing after the delay period is finished.
-        /// If you don't specify a value, the default value for the queue is applied.
-        /// </p>      
-        /// <note>
+        /// <p>The length of time, in seconds, for which a specific message is delayed. Valid values: 0 to 900. Maximum: 15 minutes. Messages with a positive <code>DelaySeconds</code> value become available for processing after the delay period is finished. If you don't specify a value, the default value for the queue is applied. </p> <note>
         /// <p>When you set <code>FifoQueue</code>, you can't set <code>DelaySeconds</code> per message. You can set this parameter only on a queue level.</p>
         /// </note>
         pub fn set_delay_seconds(mut self, input: std::option::Option<i32>) -> Self {
@@ -804,10 +671,7 @@ pub mod send_message_batch_request_entry {
         ///
         /// To override the contents of this collection use [`set_message_attributes`](Self::set_message_attributes).
         ///
-        /// <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
-        /// and <code>Value</code>. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon SQS
-        /// message attributes</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+        /// <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon SQS message attributes</a> in the <i>Amazon SQS Developer Guide</i>.</p>
         pub fn message_attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -818,10 +682,7 @@ pub mod send_message_batch_request_entry {
             self.message_attributes = Some(hash_map);
             self
         }
-        /// <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
-        /// and <code>Value</code>. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon SQS
-        /// message attributes</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+        /// <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon SQS message attributes</a> in the <i>Amazon SQS Developer Guide</i>.</p>
         pub fn set_message_attributes(
             mut self,
             input: std::option::Option<
@@ -835,17 +696,10 @@ pub mod send_message_batch_request_entry {
         ///
         /// To override the contents of this collection use [`set_message_system_attributes`](Self::set_message_system_attributes).
         ///
-        /// <p>The message system attribute to send Each message system attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.</p>
-        /// <important>
+        /// <p>The message system attribute to send Each message system attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.</p> <important>
         /// <ul>
-        /// <li>
-        /// <p>Currently, the only supported message system attribute is <code>AWSTraceHeader</code>.
-        /// Its type must be <code>String</code> and its value must be a correctly formatted
-        /// X-Ray trace header string.</p>
-        /// </li>
-        /// <li>
-        /// <p>The size of a message system attribute doesn't count towards the total size of a message.</p>
-        /// </li>
+        /// <li> <p>Currently, the only supported message system attribute is <code>AWSTraceHeader</code>. Its type must be <code>String</code> and its value must be a correctly formatted X-Ray trace header string.</p> </li>
+        /// <li> <p>The size of a message system attribute doesn't count towards the total size of a message.</p> </li>
         /// </ul>
         /// </important>
         pub fn message_system_attributes(
@@ -858,17 +712,10 @@ pub mod send_message_batch_request_entry {
             self.message_system_attributes = Some(hash_map);
             self
         }
-        /// <p>The message system attribute to send Each message system attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.</p>
-        /// <important>
+        /// <p>The message system attribute to send Each message system attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.</p> <important>
         /// <ul>
-        /// <li>
-        /// <p>Currently, the only supported message system attribute is <code>AWSTraceHeader</code>.
-        /// Its type must be <code>String</code> and its value must be a correctly formatted
-        /// X-Ray trace header string.</p>
-        /// </li>
-        /// <li>
-        /// <p>The size of a message system attribute doesn't count towards the total size of a message.</p>
-        /// </li>
+        /// <li> <p>Currently, the only supported message system attribute is <code>AWSTraceHeader</code>. Its type must be <code>String</code> and its value must be a correctly formatted X-Ray trace header string.</p> </li>
+        /// <li> <p>The size of a message system attribute doesn't count towards the total size of a message.</p> </li>
         /// </ul>
         /// </important>
         pub fn set_message_system_attributes(
@@ -884,105 +731,47 @@ pub mod send_message_batch_request_entry {
             self
         }
         /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
-        /// <p>The token used for deduplication of messages within a 5-minute minimum deduplication interval. If a message with a particular
-        /// <code>MessageDeduplicationId</code> is sent successfully, subsequent messages with the same <code>MessageDeduplicationId</code> are
-        /// accepted successfully but aren't delivered. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">
-        /// Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+        /// <p>The token used for deduplication of messages within a 5-minute minimum deduplication interval. If a message with a particular <code>MessageDeduplicationId</code> is sent successfully, subsequent messages with the same <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html"> Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>.</p>
         /// <ul>
-        /// <li>
-        /// <p>Every message must have a unique <code>MessageDeduplicationId</code>,</p>
+        /// <li> <p>Every message must have a unique <code>MessageDeduplicationId</code>,</p>
         /// <ul>
-        /// <li>
-        /// <p>You may provide a <code>MessageDeduplicationId</code> explicitly.</p>
-        /// </li>
-        /// <li>
-        /// <p>If you aren't able to provide a <code>MessageDeduplicationId</code> and you enable <code>ContentBasedDeduplication</code> for your queue,
-        /// Amazon SQS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>If you don't provide a <code>MessageDeduplicationId</code> and the queue doesn't have <code>ContentBasedDeduplication</code> set,
-        /// the action fails with an error.</p>
-        /// </li>
-        /// <li>
-        /// <p>If the queue has <code>ContentBasedDeduplication</code> set, your <code>MessageDeduplicationId</code> overrides the generated one.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the deduplication interval are treated as duplicates
-        /// and only one copy of the message is delivered.</p>
-        /// </li>
-        /// <li>
-        /// <p>If you send one message with <code>ContentBasedDeduplication</code> enabled and then another message with a <code>MessageDeduplicationId</code> that is the same
-        /// as the one generated for the first <code>MessageDeduplicationId</code>, the two messages are treated as duplicates and only one copy of the message is delivered.
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>The <code>MessageDeduplicationId</code> is available to the consumer of the
-        /// message (this can be useful for troubleshooting delivery issues).</p>
-        /// <p>If a message is sent successfully but the acknowledgement is lost and the message is resent with the same
-        /// <code>MessageDeduplicationId</code> after the deduplication interval, Amazon SQS can't detect duplicate messages.</p>
+        /// <li> <p>You may provide a <code>MessageDeduplicationId</code> explicitly.</p> </li>
+        /// <li> <p>If you aren't able to provide a <code>MessageDeduplicationId</code> and you enable <code>ContentBasedDeduplication</code> for your queue, Amazon SQS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message). </p> </li>
+        /// <li> <p>If you don't provide a <code>MessageDeduplicationId</code> and the queue doesn't have <code>ContentBasedDeduplication</code> set, the action fails with an error.</p> </li>
+        /// <li> <p>If the queue has <code>ContentBasedDeduplication</code> set, your <code>MessageDeduplicationId</code> overrides the generated one.</p> </li>
+        /// </ul> </li>
+        /// <li> <p>When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the deduplication interval are treated as duplicates and only one copy of the message is delivered.</p> </li>
+        /// <li> <p>If you send one message with <code>ContentBasedDeduplication</code> enabled and then another message with a <code>MessageDeduplicationId</code> that is the same as the one generated for the first <code>MessageDeduplicationId</code>, the two messages are treated as duplicates and only one copy of the message is delivered. </p> </li>
+        /// </ul> <note>
+        /// <p>The <code>MessageDeduplicationId</code> is available to the consumer of the message (this can be useful for troubleshooting delivery issues).</p>
+        /// <p>If a message is sent successfully but the acknowledgement is lost and the message is resent with the same <code>MessageDeduplicationId</code> after the deduplication interval, Amazon SQS can't detect duplicate messages.</p>
         /// <p>Amazon SQS continues to keep track of the message deduplication ID even after the message is received and deleted.</p>
         /// </note>
-        /// <p>The length of <code>MessageDeduplicationId</code> is 128 characters. <code>MessageDeduplicationId</code> can contain alphanumeric characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and
-        /// punctuation (<code>!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~</code>).</p>
-        /// <p>For best practices of using <code>MessageDeduplicationId</code>, see
-        /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using the MessageDeduplicationId Property</a>
-        /// in the <i>Amazon SQS Developer Guide</i>.</p>
+        /// <p>The length of <code>MessageDeduplicationId</code> is 128 characters. <code>MessageDeduplicationId</code> can contain alphanumeric characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p>
+        /// <p>For best practices of using <code>MessageDeduplicationId</code>, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using the MessageDeduplicationId Property</a> in the <i>Amazon SQS Developer Guide</i>.</p>
         pub fn message_deduplication_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.message_deduplication_id = Some(input.into());
             self
         }
         /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
-        /// <p>The token used for deduplication of messages within a 5-minute minimum deduplication interval. If a message with a particular
-        /// <code>MessageDeduplicationId</code> is sent successfully, subsequent messages with the same <code>MessageDeduplicationId</code> are
-        /// accepted successfully but aren't delivered. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">
-        /// Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+        /// <p>The token used for deduplication of messages within a 5-minute minimum deduplication interval. If a message with a particular <code>MessageDeduplicationId</code> is sent successfully, subsequent messages with the same <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html"> Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>.</p>
         /// <ul>
-        /// <li>
-        /// <p>Every message must have a unique <code>MessageDeduplicationId</code>,</p>
+        /// <li> <p>Every message must have a unique <code>MessageDeduplicationId</code>,</p>
         /// <ul>
-        /// <li>
-        /// <p>You may provide a <code>MessageDeduplicationId</code> explicitly.</p>
-        /// </li>
-        /// <li>
-        /// <p>If you aren't able to provide a <code>MessageDeduplicationId</code> and you enable <code>ContentBasedDeduplication</code> for your queue,
-        /// Amazon SQS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>If you don't provide a <code>MessageDeduplicationId</code> and the queue doesn't have <code>ContentBasedDeduplication</code> set,
-        /// the action fails with an error.</p>
-        /// </li>
-        /// <li>
-        /// <p>If the queue has <code>ContentBasedDeduplication</code> set, your <code>MessageDeduplicationId</code> overrides the generated one.</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the deduplication interval are treated as duplicates
-        /// and only one copy of the message is delivered.</p>
-        /// </li>
-        /// <li>
-        /// <p>If you send one message with <code>ContentBasedDeduplication</code> enabled and then another message with a <code>MessageDeduplicationId</code> that is the same
-        /// as the one generated for the first <code>MessageDeduplicationId</code>, the two messages are treated as duplicates and only one copy of the message is delivered.
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>The <code>MessageDeduplicationId</code> is available to the consumer of the
-        /// message (this can be useful for troubleshooting delivery issues).</p>
-        /// <p>If a message is sent successfully but the acknowledgement is lost and the message is resent with the same
-        /// <code>MessageDeduplicationId</code> after the deduplication interval, Amazon SQS can't detect duplicate messages.</p>
+        /// <li> <p>You may provide a <code>MessageDeduplicationId</code> explicitly.</p> </li>
+        /// <li> <p>If you aren't able to provide a <code>MessageDeduplicationId</code> and you enable <code>ContentBasedDeduplication</code> for your queue, Amazon SQS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message). </p> </li>
+        /// <li> <p>If you don't provide a <code>MessageDeduplicationId</code> and the queue doesn't have <code>ContentBasedDeduplication</code> set, the action fails with an error.</p> </li>
+        /// <li> <p>If the queue has <code>ContentBasedDeduplication</code> set, your <code>MessageDeduplicationId</code> overrides the generated one.</p> </li>
+        /// </ul> </li>
+        /// <li> <p>When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the deduplication interval are treated as duplicates and only one copy of the message is delivered.</p> </li>
+        /// <li> <p>If you send one message with <code>ContentBasedDeduplication</code> enabled and then another message with a <code>MessageDeduplicationId</code> that is the same as the one generated for the first <code>MessageDeduplicationId</code>, the two messages are treated as duplicates and only one copy of the message is delivered. </p> </li>
+        /// </ul> <note>
+        /// <p>The <code>MessageDeduplicationId</code> is available to the consumer of the message (this can be useful for troubleshooting delivery issues).</p>
+        /// <p>If a message is sent successfully but the acknowledgement is lost and the message is resent with the same <code>MessageDeduplicationId</code> after the deduplication interval, Amazon SQS can't detect duplicate messages.</p>
         /// <p>Amazon SQS continues to keep track of the message deduplication ID even after the message is received and deleted.</p>
         /// </note>
-        /// <p>The length of <code>MessageDeduplicationId</code> is 128 characters. <code>MessageDeduplicationId</code> can contain alphanumeric characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and
-        /// punctuation (<code>!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~</code>).</p>
-        /// <p>For best practices of using <code>MessageDeduplicationId</code>, see
-        /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using the MessageDeduplicationId Property</a>
-        /// in the <i>Amazon SQS Developer Guide</i>.</p>
+        /// <p>The length of <code>MessageDeduplicationId</code> is 128 characters. <code>MessageDeduplicationId</code> can contain alphanumeric characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p>
+        /// <p>For best practices of using <code>MessageDeduplicationId</code>, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using the MessageDeduplicationId Property</a> in the <i>Amazon SQS Developer Guide</i>.</p>
         pub fn set_message_deduplication_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -991,60 +780,28 @@ pub mod send_message_batch_request_entry {
             self
         }
         /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
-        /// <p>The tag that specifies that a message belongs to a specific message group. Messages
-        /// that belong to the same message group are processed in a FIFO manner (however,
-        /// messages in different message groups might be processed out of order). To interleave
-        /// multiple ordered streams within a single queue, use <code>MessageGroupId</code> values
-        /// (for example, session data for multiple users). In this scenario, multiple consumers can
-        /// process the queue, but the session data of each user is processed in a FIFO
-        /// fashion.</p>
+        /// <p>The tag that specifies that a message belongs to a specific message group. Messages that belong to the same message group are processed in a FIFO manner (however, messages in different message groups might be processed out of order). To interleave multiple ordered streams within a single queue, use <code>MessageGroupId</code> values (for example, session data for multiple users). In this scenario, multiple consumers can process the queue, but the session data of each user is processed in a FIFO fashion.</p>
         /// <ul>
-        /// <li>
-        /// <p>You must associate a non-empty <code>MessageGroupId</code> with a message. If you don't provide a <code>MessageGroupId</code>, the action fails.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ReceiveMessage</code> might return messages with multiple <code>MessageGroupId</code> values. For each <code>MessageGroupId</code>, the messages are sorted by time sent. The caller can't
-        /// specify a <code>MessageGroupId</code>.</p>
-        /// </li>
+        /// <li> <p>You must associate a non-empty <code>MessageGroupId</code> with a message. If you don't provide a <code>MessageGroupId</code>, the action fails.</p> </li>
+        /// <li> <p> <code>ReceiveMessage</code> might return messages with multiple <code>MessageGroupId</code> values. For each <code>MessageGroupId</code>, the messages are sorted by time sent. The caller can't specify a <code>MessageGroupId</code>.</p> </li>
         /// </ul>
-        /// <p>The length of <code>MessageGroupId</code> is 128 characters. Valid values: alphanumeric characters and punctuation <code>(!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)</code>.</p>
-        /// <p>For best practices of using <code>MessageGroupId</code>, see
-        /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html">Using the MessageGroupId Property</a>
-        /// in the <i>Amazon SQS Developer Guide</i>.</p>
-        /// <important>
-        /// <p>
-        /// <code>MessageGroupId</code> is required for FIFO queues. You can't use it for Standard queues.</p>
+        /// <p>The length of <code>MessageGroupId</code> is 128 characters. Valid values: alphanumeric characters and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p>
+        /// <p>For best practices of using <code>MessageGroupId</code>, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html">Using the MessageGroupId Property</a> in the <i>Amazon SQS Developer Guide</i>.</p> <important>
+        /// <p> <code>MessageGroupId</code> is required for FIFO queues. You can't use it for Standard queues.</p>
         /// </important>
         pub fn message_group_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.message_group_id = Some(input.into());
             self
         }
         /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
-        /// <p>The tag that specifies that a message belongs to a specific message group. Messages
-        /// that belong to the same message group are processed in a FIFO manner (however,
-        /// messages in different message groups might be processed out of order). To interleave
-        /// multiple ordered streams within a single queue, use <code>MessageGroupId</code> values
-        /// (for example, session data for multiple users). In this scenario, multiple consumers can
-        /// process the queue, but the session data of each user is processed in a FIFO
-        /// fashion.</p>
+        /// <p>The tag that specifies that a message belongs to a specific message group. Messages that belong to the same message group are processed in a FIFO manner (however, messages in different message groups might be processed out of order). To interleave multiple ordered streams within a single queue, use <code>MessageGroupId</code> values (for example, session data for multiple users). In this scenario, multiple consumers can process the queue, but the session data of each user is processed in a FIFO fashion.</p>
         /// <ul>
-        /// <li>
-        /// <p>You must associate a non-empty <code>MessageGroupId</code> with a message. If you don't provide a <code>MessageGroupId</code>, the action fails.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ReceiveMessage</code> might return messages with multiple <code>MessageGroupId</code> values. For each <code>MessageGroupId</code>, the messages are sorted by time sent. The caller can't
-        /// specify a <code>MessageGroupId</code>.</p>
-        /// </li>
+        /// <li> <p>You must associate a non-empty <code>MessageGroupId</code> with a message. If you don't provide a <code>MessageGroupId</code>, the action fails.</p> </li>
+        /// <li> <p> <code>ReceiveMessage</code> might return messages with multiple <code>MessageGroupId</code> values. For each <code>MessageGroupId</code>, the messages are sorted by time sent. The caller can't specify a <code>MessageGroupId</code>.</p> </li>
         /// </ul>
-        /// <p>The length of <code>MessageGroupId</code> is 128 characters. Valid values: alphanumeric characters and punctuation <code>(!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)</code>.</p>
-        /// <p>For best practices of using <code>MessageGroupId</code>, see
-        /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html">Using the MessageGroupId Property</a>
-        /// in the <i>Amazon SQS Developer Guide</i>.</p>
-        /// <important>
-        /// <p>
-        /// <code>MessageGroupId</code> is required for FIFO queues. You can't use it for Standard queues.</p>
+        /// <p>The length of <code>MessageGroupId</code> is 128 characters. Valid values: alphanumeric characters and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p>
+        /// <p>For best practices of using <code>MessageGroupId</code>, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagegroupid-property.html">Using the MessageGroupId Property</a> in the <i>Amazon SQS Developer Guide</i>.</p> <important>
+        /// <p> <code>MessageGroupId</code> is required for FIFO queues. You can't use it for Standard queues.</p>
         /// </important>
         pub fn set_message_group_id(
             mut self,
@@ -1074,11 +831,8 @@ impl SendMessageBatchRequestEntry {
     }
 }
 
-/// <p>The user-specified message system attribute value. For string data types, the <code>Value</code> attribute has the same restrictions on the content as the message body. For more information, see <code>
-/// <a>SendMessage</a>.</code>
-/// </p>    
-/// <p>
-/// <code>Name</code>, <code>type</code>, <code>value</code> and the message body must not be empty or null.</p>
+/// <p>The user-specified message system attribute value. For string data types, the <code>Value</code> attribute has the same restrictions on the content as the message body. For more information, see <code> <code>SendMessage</code>.</code> </p>
+/// <p> <code>Name</code>, <code>type</code>, <code>value</code> and the message body must not be empty or null.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MessageSystemAttributeValue {
@@ -1284,11 +1038,8 @@ impl AsRef<str> for MessageSystemAttributeNameForSends {
     }
 }
 
-/// <p>The user-specified message attribute value. For string data types, the <code>Value</code> attribute has the same restrictions on the content as the message body. For more information, see <code>
-/// <a>SendMessage</a>.</code>
-/// </p>    
-/// <p>
-/// <code>Name</code>, <code>type</code>, <code>value</code> and the message body must not be empty or null. All parts of the message attribute, including <code>Name</code>, <code>Type</code>, and <code>Value</code>, are part of the message size restriction (256 KB or 262,144 bytes).</p>
+/// <p>The user-specified message attribute value. For string data types, the <code>Value</code> attribute has the same restrictions on the content as the message body. For more information, see <code> <code>SendMessage</code>.</code> </p>
+/// <p> <code>Name</code>, <code>type</code>, <code>value</code> and the message body must not be empty or null. All parts of the message attribute, including <code>Name</code>, <code>Type</code>, and <code>Value</code>, are part of the message size restriction (256 KB or 262,144 bytes).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MessageAttributeValue {
@@ -1455,59 +1206,23 @@ pub struct Message {
     pub md5_of_body: std::option::Option<std::string::String>,
     /// <p>The message's contents (not URL-encoded).</p>
     pub body: std::option::Option<std::string::String>,
-    /// <p>A map of the attributes requested in <code>
-    /// <a>ReceiveMessage</a>
-    /// </code> to their respective values.
-    /// Supported attributes:</p>
+    /// <p>A map of the attributes requested in <code> <code>ReceiveMessage</code> </code> to their respective values. Supported attributes:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ApproximateReceiveCount</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ApproximateFirstReceiveTimestamp</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MessageDeduplicationId</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MessageGroupId</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SenderId</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SentTimestamp</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SequenceNumber</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>ApproximateReceiveCount</code> </p> </li>
+    /// <li> <p> <code>ApproximateFirstReceiveTimestamp</code> </p> </li>
+    /// <li> <p> <code>MessageDeduplicationId</code> </p> </li>
+    /// <li> <p> <code>MessageGroupId</code> </p> </li>
+    /// <li> <p> <code>SenderId</code> </p> </li>
+    /// <li> <p> <code>SentTimestamp</code> </p> </li>
+    /// <li> <p> <code>SequenceNumber</code> </p> </li>
     /// </ul>
-    /// <p>
-    /// <code>ApproximateFirstReceiveTimestamp</code> and <code>SentTimestamp</code> are each returned as an integer representing the
-    /// <a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds.</p>
+    /// <p> <code>ApproximateFirstReceiveTimestamp</code> and <code>SentTimestamp</code> are each returned as an integer representing the <a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds.</p>
     pub attributes: std::option::Option<
         std::collections::HashMap<crate::model::MessageSystemAttributeName, std::string::String>,
     >,
     /// <p>An MD5 digest of the non-URL-encoded message attribute string. You can use this attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest. For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
     pub md5_of_message_attributes: std::option::Option<std::string::String>,
-    /// <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
-    /// and <code>Value</code>. For more information, see
-    /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon SQS
-    /// message attributes</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+    /// <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon SQS message attributes</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     pub message_attributes: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::MessageAttributeValue>,
     >,
@@ -1529,50 +1244,17 @@ impl Message {
     pub fn body(&self) -> std::option::Option<&str> {
         self.body.as_deref()
     }
-    /// <p>A map of the attributes requested in <code>
-    /// <a>ReceiveMessage</a>
-    /// </code> to their respective values.
-    /// Supported attributes:</p>
+    /// <p>A map of the attributes requested in <code> <code>ReceiveMessage</code> </code> to their respective values. Supported attributes:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ApproximateReceiveCount</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ApproximateFirstReceiveTimestamp</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MessageDeduplicationId</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MessageGroupId</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SenderId</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SentTimestamp</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SequenceNumber</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>ApproximateReceiveCount</code> </p> </li>
+    /// <li> <p> <code>ApproximateFirstReceiveTimestamp</code> </p> </li>
+    /// <li> <p> <code>MessageDeduplicationId</code> </p> </li>
+    /// <li> <p> <code>MessageGroupId</code> </p> </li>
+    /// <li> <p> <code>SenderId</code> </p> </li>
+    /// <li> <p> <code>SentTimestamp</code> </p> </li>
+    /// <li> <p> <code>SequenceNumber</code> </p> </li>
     /// </ul>
-    /// <p>
-    /// <code>ApproximateFirstReceiveTimestamp</code> and <code>SentTimestamp</code> are each returned as an integer representing the
-    /// <a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds.</p>
+    /// <p> <code>ApproximateFirstReceiveTimestamp</code> and <code>SentTimestamp</code> are each returned as an integer representing the <a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds.</p>
     pub fn attributes(
         &self,
     ) -> std::option::Option<
@@ -1584,10 +1266,7 @@ impl Message {
     pub fn md5_of_message_attributes(&self) -> std::option::Option<&str> {
         self.md5_of_message_attributes.as_deref()
     }
-    /// <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
-    /// and <code>Value</code>. For more information, see
-    /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon SQS
-    /// message attributes</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+    /// <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon SQS message attributes</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     pub fn message_attributes(
         &self,
     ) -> std::option::Option<
@@ -1678,50 +1357,17 @@ pub mod message {
         ///
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
-        /// <p>A map of the attributes requested in <code>
-        /// <a>ReceiveMessage</a>
-        /// </code> to their respective values.
-        /// Supported attributes:</p>
+        /// <p>A map of the attributes requested in <code> <code>ReceiveMessage</code> </code> to their respective values. Supported attributes:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ApproximateReceiveCount</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ApproximateFirstReceiveTimestamp</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MessageDeduplicationId</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MessageGroupId</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SenderId</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SentTimestamp</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SequenceNumber</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>ApproximateReceiveCount</code> </p> </li>
+        /// <li> <p> <code>ApproximateFirstReceiveTimestamp</code> </p> </li>
+        /// <li> <p> <code>MessageDeduplicationId</code> </p> </li>
+        /// <li> <p> <code>MessageGroupId</code> </p> </li>
+        /// <li> <p> <code>SenderId</code> </p> </li>
+        /// <li> <p> <code>SentTimestamp</code> </p> </li>
+        /// <li> <p> <code>SequenceNumber</code> </p> </li>
         /// </ul>
-        /// <p>
-        /// <code>ApproximateFirstReceiveTimestamp</code> and <code>SentTimestamp</code> are each returned as an integer representing the
-        /// <a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds.</p>
+        /// <p> <code>ApproximateFirstReceiveTimestamp</code> and <code>SentTimestamp</code> are each returned as an integer representing the <a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds.</p>
         pub fn attributes(
             mut self,
             k: crate::model::MessageSystemAttributeName,
@@ -1732,50 +1378,17 @@ pub mod message {
             self.attributes = Some(hash_map);
             self
         }
-        /// <p>A map of the attributes requested in <code>
-        /// <a>ReceiveMessage</a>
-        /// </code> to their respective values.
-        /// Supported attributes:</p>
+        /// <p>A map of the attributes requested in <code> <code>ReceiveMessage</code> </code> to their respective values. Supported attributes:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ApproximateReceiveCount</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ApproximateFirstReceiveTimestamp</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MessageDeduplicationId</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MessageGroupId</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SenderId</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SentTimestamp</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SequenceNumber</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>ApproximateReceiveCount</code> </p> </li>
+        /// <li> <p> <code>ApproximateFirstReceiveTimestamp</code> </p> </li>
+        /// <li> <p> <code>MessageDeduplicationId</code> </p> </li>
+        /// <li> <p> <code>MessageGroupId</code> </p> </li>
+        /// <li> <p> <code>SenderId</code> </p> </li>
+        /// <li> <p> <code>SentTimestamp</code> </p> </li>
+        /// <li> <p> <code>SequenceNumber</code> </p> </li>
         /// </ul>
-        /// <p>
-        /// <code>ApproximateFirstReceiveTimestamp</code> and <code>SentTimestamp</code> are each returned as an integer representing the
-        /// <a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds.</p>
+        /// <p> <code>ApproximateFirstReceiveTimestamp</code> and <code>SentTimestamp</code> are each returned as an integer representing the <a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -1805,10 +1418,7 @@ pub mod message {
         ///
         /// To override the contents of this collection use [`set_message_attributes`](Self::set_message_attributes).
         ///
-        /// <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
-        /// and <code>Value</code>. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon SQS
-        /// message attributes</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+        /// <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon SQS message attributes</a> in the <i>Amazon SQS Developer Guide</i>.</p>
         pub fn message_attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -1819,10 +1429,7 @@ pub mod message {
             self.message_attributes = Some(hash_map);
             self
         }
-        /// <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
-        /// and <code>Value</code>. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon SQS
-        /// message attributes</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+        /// <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon SQS message attributes</a> in the <i>Amazon SQS Developer Guide</i>.</p>
         pub fn set_message_attributes(
             mut self,
             input: std::option::Option<
@@ -1945,9 +1552,7 @@ impl AsRef<str> for MessageSystemAttributeName {
     }
 }
 
-/// <p>Encloses the <code>Id</code> of an entry in <code>
-/// <a>DeleteMessageBatch</a>.</code>
-/// </p>
+/// <p>Encloses the <code>Id</code> of an entry in <code> <code>DeleteMessageBatch</code>.</code> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMessageBatchResultEntry {
@@ -2003,8 +1608,7 @@ impl DeleteMessageBatchResultEntry {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMessageBatchRequestEntry {
-    /// <p>An identifier for this particular receipt handle. This is used to communicate the result.</p>
-    /// <note>
+    /// <p>An identifier for this particular receipt handle. This is used to communicate the result.</p> <note>
     /// <p>The <code>Id</code>s of a batch request need to be unique within a request.</p>
     /// <p>This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters, hyphens(-), and underscores (_).</p>
     /// </note>
@@ -2013,8 +1617,7 @@ pub struct DeleteMessageBatchRequestEntry {
     pub receipt_handle: std::option::Option<std::string::String>,
 }
 impl DeleteMessageBatchRequestEntry {
-    /// <p>An identifier for this particular receipt handle. This is used to communicate the result.</p>
-    /// <note>
+    /// <p>An identifier for this particular receipt handle. This is used to communicate the result.</p> <note>
     /// <p>The <code>Id</code>s of a batch request need to be unique within a request.</p>
     /// <p>This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters, hyphens(-), and underscores (_).</p>
     /// </note>
@@ -2044,8 +1647,7 @@ pub mod delete_message_batch_request_entry {
         pub(crate) receipt_handle: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>An identifier for this particular receipt handle. This is used to communicate the result.</p>
-        /// <note>
+        /// <p>An identifier for this particular receipt handle. This is used to communicate the result.</p> <note>
         /// <p>The <code>Id</code>s of a batch request need to be unique within a request.</p>
         /// <p>This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters, hyphens(-), and underscores (_).</p>
         /// </note>
@@ -2053,8 +1655,7 @@ pub mod delete_message_batch_request_entry {
             self.id = Some(input.into());
             self
         }
-        /// <p>An identifier for this particular receipt handle. This is used to communicate the result.</p>
-        /// <note>
+        /// <p>An identifier for this particular receipt handle. This is used to communicate the result.</p> <note>
         /// <p>The <code>Id</code>s of a batch request need to be unique within a request.</p>
         /// <p>This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters, hyphens(-), and underscores (_).</p>
         /// </note>
@@ -2091,9 +1692,7 @@ impl DeleteMessageBatchRequestEntry {
     }
 }
 
-/// <p>Encloses the <code>Id</code> of an entry in <code>
-/// <a>ChangeMessageVisibilityBatch</a>.</code>
-/// </p>
+/// <p>Encloses the <code>Id</code> of an entry in <code> <code>ChangeMessageVisibilityBatch</code>.</code> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChangeMessageVisibilityBatchResultEntry {
@@ -2145,26 +1744,16 @@ impl ChangeMessageVisibilityBatchResultEntry {
     }
 }
 
-/// <p>Encloses a receipt handle and an entry id for each message in <code>
-/// <a>ChangeMessageVisibilityBatch</a>.</code>
-/// </p>
-/// <important>
-/// <p>All of the following list parameters must be prefixed with <code>ChangeMessageVisibilityBatchRequestEntry.n</code>, where <code>n</code> is an integer value starting with <code>1</code>. For example, a parameter list for this action might look like this:</p>           
+/// <p>Encloses a receipt handle and an entry id for each message in <code> <code>ChangeMessageVisibilityBatch</code>.</code> </p> <important>
+/// <p>All of the following list parameters must be prefixed with <code>ChangeMessageVisibilityBatchRequestEntry.n</code>, where <code>n</code> is an integer value starting with <code>1</code>. For example, a parameter list for this action might look like this:</p>
 /// </important>
-/// <p>
-/// <code>&ChangeMessageVisibilityBatchRequestEntry.1.Id=change_visibility_msg_2</code>
-/// </p>
-/// <p>
-/// <code>&ChangeMessageVisibilityBatchRequestEntry.1.ReceiptHandle=your_receipt_handle</code>
-/// </p>
-/// <p>
-/// <code>&ChangeMessageVisibilityBatchRequestEntry.1.VisibilityTimeout=45</code>
-/// </p>
+/// <p> <code>&amp;ChangeMessageVisibilityBatchRequestEntry.1.Id=change_visibility_msg_2</code> </p>
+/// <p> <code>&amp;ChangeMessageVisibilityBatchRequestEntry.1.ReceiptHandle=your_receipt_handle</code> </p>
+/// <p> <code>&amp;ChangeMessageVisibilityBatchRequestEntry.1.VisibilityTimeout=45</code> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChangeMessageVisibilityBatchRequestEntry {
-    /// <p>An identifier for this particular receipt handle used to communicate the result.</p>
-    /// <note>
+    /// <p>An identifier for this particular receipt handle used to communicate the result.</p> <note>
     /// <p>The <code>Id</code>s of a batch request need to be unique within a request.</p>
     /// <p>This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters, hyphens(-), and underscores (_).</p>
     /// </note>
@@ -2175,8 +1764,7 @@ pub struct ChangeMessageVisibilityBatchRequestEntry {
     pub visibility_timeout: i32,
 }
 impl ChangeMessageVisibilityBatchRequestEntry {
-    /// <p>An identifier for this particular receipt handle used to communicate the result.</p>
-    /// <note>
+    /// <p>An identifier for this particular receipt handle used to communicate the result.</p> <note>
     /// <p>The <code>Id</code>s of a batch request need to be unique within a request.</p>
     /// <p>This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters, hyphens(-), and underscores (_).</p>
     /// </note>
@@ -2212,8 +1800,7 @@ pub mod change_message_visibility_batch_request_entry {
         pub(crate) visibility_timeout: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>An identifier for this particular receipt handle used to communicate the result.</p>
-        /// <note>
+        /// <p>An identifier for this particular receipt handle used to communicate the result.</p> <note>
         /// <p>The <code>Id</code>s of a batch request need to be unique within a request.</p>
         /// <p>This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters, hyphens(-), and underscores (_).</p>
         /// </note>
@@ -2221,8 +1808,7 @@ pub mod change_message_visibility_batch_request_entry {
             self.id = Some(input.into());
             self
         }
-        /// <p>An identifier for this particular receipt handle used to communicate the result.</p>
-        /// <note>
+        /// <p>An identifier for this particular receipt handle used to communicate the result.</p> <note>
         /// <p>The <code>Id</code>s of a batch request need to be unique within a request.</p>
         /// <p>This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters, hyphens(-), and underscores (_).</p>
         /// </note>

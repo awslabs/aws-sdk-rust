@@ -1087,8 +1087,7 @@ pub mod create_load_balancer_input {
         /// To override the contents of this collection use [`set_listeners`](Self::set_listeners).
         ///
         /// <p>The listeners.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners for Your Classic Load Balancer</a>
-        /// in the <i>Classic Load Balancers Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
         pub fn listeners(mut self, input: crate::model::Listener) -> Self {
             let mut v = self.listeners.unwrap_or_default();
             v.push(input);
@@ -1096,8 +1095,7 @@ pub mod create_load_balancer_input {
             self
         }
         /// <p>The listeners.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners for Your Classic Load Balancer</a>
-        /// in the <i>Classic Load Balancers Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
         pub fn set_listeners(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Listener>>,
@@ -1111,8 +1109,7 @@ pub mod create_load_balancer_input {
         ///
         /// <p>One or more Availability Zones from the same region as the load balancer.</p>
         /// <p>You must specify at least one Availability Zone.</p>
-        /// <p>You can add more Availability Zones after you create the load balancer using
-        /// <a>EnableAvailabilityZonesForLoadBalancer</a>.</p>
+        /// <p>You can add more Availability Zones after you create the load balancer using <code>EnableAvailabilityZonesForLoadBalancer</code>.</p>
         pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.availability_zones.unwrap_or_default();
             v.push(input.into());
@@ -1121,8 +1118,7 @@ pub mod create_load_balancer_input {
         }
         /// <p>One or more Availability Zones from the same region as the load balancer.</p>
         /// <p>You must specify at least one Availability Zone.</p>
-        /// <p>You can add more Availability Zones after you create the load balancer using
-        /// <a>EnableAvailabilityZonesForLoadBalancer</a>.</p>
+        /// <p>You can add more Availability Zones after you create the load balancer using <code>EnableAvailabilityZonesForLoadBalancer</code>.</p>
         pub fn set_availability_zones(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1134,16 +1130,14 @@ pub mod create_load_balancer_input {
         ///
         /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
         ///
-        /// <p>The IDs of the subnets in your VPC to attach to the load balancer.
-        /// Specify one subnet per Availability Zone specified in <code>AvailabilityZones</code>.</p>
+        /// <p>The IDs of the subnets in your VPC to attach to the load balancer. Specify one subnet per Availability Zone specified in <code>AvailabilityZones</code>.</p>
         pub fn subnets(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnets.unwrap_or_default();
             v.push(input.into());
             self.subnets = Some(v);
             self
         }
-        /// <p>The IDs of the subnets in your VPC to attach to the load balancer.
-        /// Specify one subnet per Availability Zone specified in <code>AvailabilityZones</code>.</p>
+        /// <p>The IDs of the subnets in your VPC to attach to the load balancer. Specify one subnet per Availability Zone specified in <code>AvailabilityZones</code>.</p>
         pub fn set_subnets(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1170,19 +1164,15 @@ pub mod create_load_balancer_input {
             self.security_groups = input;
             self
         }
-        /// <p>The type of a load balancer. Valid only for load balancers in a VPC.</p>          
-        /// <p>By default, Elastic Load Balancing creates an Internet-facing load balancer with a DNS name that resolves to public IP addresses.
-        /// For more information about Internet-facing and Internal load balancers, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#load-balancer-scheme">Load Balancer Scheme</a>
-        /// in the <i>Elastic Load Balancing User Guide</i>.</p>
+        /// <p>The type of a load balancer. Valid only for load balancers in a VPC.</p>
+        /// <p>By default, Elastic Load Balancing creates an Internet-facing load balancer with a DNS name that resolves to public IP addresses. For more information about Internet-facing and Internal load balancers, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#load-balancer-scheme">Load Balancer Scheme</a> in the <i>Elastic Load Balancing User Guide</i>.</p>
         /// <p>Specify <code>internal</code> to create a load balancer with a DNS name that resolves to private IP addresses.</p>
         pub fn scheme(mut self, input: impl Into<std::string::String>) -> Self {
             self.scheme = Some(input.into());
             self
         }
-        /// <p>The type of a load balancer. Valid only for load balancers in a VPC.</p>          
-        /// <p>By default, Elastic Load Balancing creates an Internet-facing load balancer with a DNS name that resolves to public IP addresses.
-        /// For more information about Internet-facing and Internal load balancers, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#load-balancer-scheme">Load Balancer Scheme</a>
-        /// in the <i>Elastic Load Balancing User Guide</i>.</p>
+        /// <p>The type of a load balancer. Valid only for load balancers in a VPC.</p>
+        /// <p>By default, Elastic Load Balancing creates an Internet-facing load balancer with a DNS name that resolves to public IP addresses. For more information about Internet-facing and Internal load balancers, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#load-balancer-scheme">Load Balancer Scheme</a> in the <i>Elastic Load Balancing User Guide</i>.</p>
         /// <p>Specify <code>internal</code> to create a load balancer with a DNS name that resolves to private IP addresses.</p>
         pub fn set_scheme(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.scheme = input;
@@ -1193,8 +1183,7 @@ pub mod create_load_balancer_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A list of tags to assign to the load balancer.</p>
-        /// <p>For more information about tagging your load balancer, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag Your Classic Load Balancer</a>
-        /// in the <i>Classic Load Balancers Guide</i>.</p>
+        /// <p>For more information about tagging your load balancer, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
@@ -1202,8 +1191,7 @@ pub mod create_load_balancer_input {
             self
         }
         /// <p>A list of tags to assign to the load balancer.</p>
-        /// <p>For more information about tagging your load balancer, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag Your Classic Load Balancer</a>
-        /// in the <i>Classic Load Balancers Guide</i>.</p>
+        /// <p>For more information about tagging your load balancer, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1558,14 +1546,12 @@ pub mod create_load_balancer_policy_input {
             self.policy_name = input;
             self
         }
-        /// <p>The name of the base policy type.
-        /// To get the list of policy types, use <a>DescribeLoadBalancerPolicyTypes</a>.</p>
+        /// <p>The name of the base policy type. To get the list of policy types, use <code>DescribeLoadBalancerPolicyTypes</code>.</p>
         pub fn policy_type_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy_type_name = Some(input.into());
             self
         }
-        /// <p>The name of the base policy type.
-        /// To get the list of policy types, use <a>DescribeLoadBalancerPolicyTypes</a>.</p>
+        /// <p>The name of the base policy type. To get the list of policy types, use <code>DescribeLoadBalancerPolicyTypes</code>.</p>
         pub fn set_policy_type_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5753,8 +5739,7 @@ pub struct CreateLoadBalancerPolicyInput {
     pub load_balancer_name: std::option::Option<std::string::String>,
     /// <p>The name of the load balancer policy to be created. This name must be unique within the set of policies for this load balancer.</p>
     pub policy_name: std::option::Option<std::string::String>,
-    /// <p>The name of the base policy type.
-    /// To get the list of policy types, use <a>DescribeLoadBalancerPolicyTypes</a>.</p>
+    /// <p>The name of the base policy type. To get the list of policy types, use <code>DescribeLoadBalancerPolicyTypes</code>.</p>
     pub policy_type_name: std::option::Option<std::string::String>,
     /// <p>The policy attributes.</p>
     pub policy_attributes: std::option::Option<std::vec::Vec<crate::model::PolicyAttribute>>,
@@ -5768,8 +5753,7 @@ impl CreateLoadBalancerPolicyInput {
     pub fn policy_name(&self) -> std::option::Option<&str> {
         self.policy_name.as_deref()
     }
-    /// <p>The name of the base policy type.
-    /// To get the list of policy types, use <a>DescribeLoadBalancerPolicyTypes</a>.</p>
+    /// <p>The name of the base policy type. To get the list of policy types, use <code>DescribeLoadBalancerPolicyTypes</code>.</p>
     pub fn policy_type_name(&self) -> std::option::Option<&str> {
         self.policy_type_name.as_deref()
     }
@@ -5825,28 +5809,22 @@ pub struct CreateLoadBalancerInput {
     /// <p>This name must be unique within your set of load balancers for the region, must have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, and cannot begin or end with a hyphen.</p>
     pub load_balancer_name: std::option::Option<std::string::String>,
     /// <p>The listeners.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners for Your Classic Load Balancer</a>
-    /// in the <i>Classic Load Balancers Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
     pub listeners: std::option::Option<std::vec::Vec<crate::model::Listener>>,
     /// <p>One or more Availability Zones from the same region as the load balancer.</p>
     /// <p>You must specify at least one Availability Zone.</p>
-    /// <p>You can add more Availability Zones after you create the load balancer using
-    /// <a>EnableAvailabilityZonesForLoadBalancer</a>.</p>
+    /// <p>You can add more Availability Zones after you create the load balancer using <code>EnableAvailabilityZonesForLoadBalancer</code>.</p>
     pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The IDs of the subnets in your VPC to attach to the load balancer.
-    /// Specify one subnet per Availability Zone specified in <code>AvailabilityZones</code>.</p>
+    /// <p>The IDs of the subnets in your VPC to attach to the load balancer. Specify one subnet per Availability Zone specified in <code>AvailabilityZones</code>.</p>
     pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The IDs of the security groups to assign to the load balancer.</p>
     pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The type of a load balancer. Valid only for load balancers in a VPC.</p>          
-    /// <p>By default, Elastic Load Balancing creates an Internet-facing load balancer with a DNS name that resolves to public IP addresses.
-    /// For more information about Internet-facing and Internal load balancers, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#load-balancer-scheme">Load Balancer Scheme</a>
-    /// in the <i>Elastic Load Balancing User Guide</i>.</p>
+    /// <p>The type of a load balancer. Valid only for load balancers in a VPC.</p>
+    /// <p>By default, Elastic Load Balancing creates an Internet-facing load balancer with a DNS name that resolves to public IP addresses. For more information about Internet-facing and Internal load balancers, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#load-balancer-scheme">Load Balancer Scheme</a> in the <i>Elastic Load Balancing User Guide</i>.</p>
     /// <p>Specify <code>internal</code> to create a load balancer with a DNS name that resolves to private IP addresses.</p>
     pub scheme: std::option::Option<std::string::String>,
     /// <p>A list of tags to assign to the load balancer.</p>
-    /// <p>For more information about tagging your load balancer, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag Your Classic Load Balancer</a>
-    /// in the <i>Classic Load Balancers Guide</i>.</p>
+    /// <p>For more information about tagging your load balancer, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateLoadBalancerInput {
@@ -5856,20 +5834,17 @@ impl CreateLoadBalancerInput {
         self.load_balancer_name.as_deref()
     }
     /// <p>The listeners.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners for Your Classic Load Balancer</a>
-    /// in the <i>Classic Load Balancers Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
     pub fn listeners(&self) -> std::option::Option<&[crate::model::Listener]> {
         self.listeners.as_deref()
     }
     /// <p>One or more Availability Zones from the same region as the load balancer.</p>
     /// <p>You must specify at least one Availability Zone.</p>
-    /// <p>You can add more Availability Zones after you create the load balancer using
-    /// <a>EnableAvailabilityZonesForLoadBalancer</a>.</p>
+    /// <p>You can add more Availability Zones after you create the load balancer using <code>EnableAvailabilityZonesForLoadBalancer</code>.</p>
     pub fn availability_zones(&self) -> std::option::Option<&[std::string::String]> {
         self.availability_zones.as_deref()
     }
-    /// <p>The IDs of the subnets in your VPC to attach to the load balancer.
-    /// Specify one subnet per Availability Zone specified in <code>AvailabilityZones</code>.</p>
+    /// <p>The IDs of the subnets in your VPC to attach to the load balancer. Specify one subnet per Availability Zone specified in <code>AvailabilityZones</code>.</p>
     pub fn subnets(&self) -> std::option::Option<&[std::string::String]> {
         self.subnets.as_deref()
     }
@@ -5877,17 +5852,14 @@ impl CreateLoadBalancerInput {
     pub fn security_groups(&self) -> std::option::Option<&[std::string::String]> {
         self.security_groups.as_deref()
     }
-    /// <p>The type of a load balancer. Valid only for load balancers in a VPC.</p>          
-    /// <p>By default, Elastic Load Balancing creates an Internet-facing load balancer with a DNS name that resolves to public IP addresses.
-    /// For more information about Internet-facing and Internal load balancers, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#load-balancer-scheme">Load Balancer Scheme</a>
-    /// in the <i>Elastic Load Balancing User Guide</i>.</p>
+    /// <p>The type of a load balancer. Valid only for load balancers in a VPC.</p>
+    /// <p>By default, Elastic Load Balancing creates an Internet-facing load balancer with a DNS name that resolves to public IP addresses. For more information about Internet-facing and Internal load balancers, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#load-balancer-scheme">Load Balancer Scheme</a> in the <i>Elastic Load Balancing User Guide</i>.</p>
     /// <p>Specify <code>internal</code> to create a load balancer with a DNS name that resolves to private IP addresses.</p>
     pub fn scheme(&self) -> std::option::Option<&str> {
         self.scheme.as_deref()
     }
     /// <p>A list of tags to assign to the load balancer.</p>
-    /// <p>For more information about tagging your load balancer, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag Your Classic Load Balancer</a>
-    /// in the <i>Classic Load Balancers Guide</i>.</p>
+    /// <p>For more information about tagging your load balancer, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }

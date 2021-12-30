@@ -153,23 +153,16 @@ impl StartDeliveryStreamEncryptionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutRecordBatchOutput {
-    /// <p>The number of records that might have failed processing. This number might be greater
-    /// than 0 even if the <a>PutRecordBatch</a> call succeeds. Check
-    /// <code>FailedPutCount</code> to determine whether there are records that you need to
-    /// resend.</p>
+    /// <p>The number of records that might have failed processing. This number might be greater than 0 even if the <code>PutRecordBatch</code> call succeeds. Check <code>FailedPutCount</code> to determine whether there are records that you need to resend.</p>
     pub failed_put_count: std::option::Option<i32>,
     /// <p>Indicates whether server-side encryption (SSE) was enabled during this operation.</p>
     pub encrypted: std::option::Option<bool>,
-    /// <p>The results array. For each record, the index of the response element is the same as
-    /// the index used in the request array.</p>
+    /// <p>The results array. For each record, the index of the response element is the same as the index used in the request array.</p>
     pub request_responses:
         std::option::Option<std::vec::Vec<crate::model::PutRecordBatchResponseEntry>>,
 }
 impl PutRecordBatchOutput {
-    /// <p>The number of records that might have failed processing. This number might be greater
-    /// than 0 even if the <a>PutRecordBatch</a> call succeeds. Check
-    /// <code>FailedPutCount</code> to determine whether there are records that you need to
-    /// resend.</p>
+    /// <p>The number of records that might have failed processing. This number might be greater than 0 even if the <code>PutRecordBatch</code> call succeeds. Check <code>FailedPutCount</code> to determine whether there are records that you need to resend.</p>
     pub fn failed_put_count(&self) -> std::option::Option<i32> {
         self.failed_put_count
     }
@@ -177,8 +170,7 @@ impl PutRecordBatchOutput {
     pub fn encrypted(&self) -> std::option::Option<bool> {
         self.encrypted
     }
-    /// <p>The results array. For each record, the index of the response element is the same as
-    /// the index used in the request array.</p>
+    /// <p>The results array. For each record, the index of the response element is the same as the index used in the request array.</p>
     pub fn request_responses(
         &self,
     ) -> std::option::Option<&[crate::model::PutRecordBatchResponseEntry]> {
@@ -206,18 +198,12 @@ pub mod put_record_batch_output {
             std::option::Option<std::vec::Vec<crate::model::PutRecordBatchResponseEntry>>,
     }
     impl Builder {
-        /// <p>The number of records that might have failed processing. This number might be greater
-        /// than 0 even if the <a>PutRecordBatch</a> call succeeds. Check
-        /// <code>FailedPutCount</code> to determine whether there are records that you need to
-        /// resend.</p>
+        /// <p>The number of records that might have failed processing. This number might be greater than 0 even if the <code>PutRecordBatch</code> call succeeds. Check <code>FailedPutCount</code> to determine whether there are records that you need to resend.</p>
         pub fn failed_put_count(mut self, input: i32) -> Self {
             self.failed_put_count = Some(input);
             self
         }
-        /// <p>The number of records that might have failed processing. This number might be greater
-        /// than 0 even if the <a>PutRecordBatch</a> call succeeds. Check
-        /// <code>FailedPutCount</code> to determine whether there are records that you need to
-        /// resend.</p>
+        /// <p>The number of records that might have failed processing. This number might be greater than 0 even if the <code>PutRecordBatch</code> call succeeds. Check <code>FailedPutCount</code> to determine whether there are records that you need to resend.</p>
         pub fn set_failed_put_count(mut self, input: std::option::Option<i32>) -> Self {
             self.failed_put_count = input;
             self
@@ -236,8 +222,7 @@ pub mod put_record_batch_output {
         ///
         /// To override the contents of this collection use [`set_request_responses`](Self::set_request_responses).
         ///
-        /// <p>The results array. For each record, the index of the response element is the same as
-        /// the index used in the request array.</p>
+        /// <p>The results array. For each record, the index of the response element is the same as the index used in the request array.</p>
         pub fn request_responses(
             mut self,
             input: crate::model::PutRecordBatchResponseEntry,
@@ -247,8 +232,7 @@ pub mod put_record_batch_output {
             self.request_responses = Some(v);
             self
         }
-        /// <p>The results array. For each record, the index of the response element is the same as
-        /// the index used in the request array.</p>
+        /// <p>The results array. For each record, the index of the response element is the same as the index used in the request array.</p>
         pub fn set_request_responses(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PutRecordBatchResponseEntry>>,
@@ -350,25 +334,17 @@ impl PutRecordOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForDeliveryStreamOutput {
-    /// <p>A list of tags associated with <code>DeliveryStreamName</code>, starting with the
-    /// first tag after <code>ExclusiveStartTagKey</code> and up to the specified
-    /// <code>Limit</code>.</p>
+    /// <p>A list of tags associated with <code>DeliveryStreamName</code>, starting with the first tag after <code>ExclusiveStartTagKey</code> and up to the specified <code>Limit</code>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>If this is <code>true</code> in the response, more tags are available. To list the
-    /// remaining tags, set <code>ExclusiveStartTagKey</code> to the key of the last tag returned
-    /// and call <code>ListTagsForDeliveryStream</code> again.</p>
+    /// <p>If this is <code>true</code> in the response, more tags are available. To list the remaining tags, set <code>ExclusiveStartTagKey</code> to the key of the last tag returned and call <code>ListTagsForDeliveryStream</code> again.</p>
     pub has_more_tags: std::option::Option<bool>,
 }
 impl ListTagsForDeliveryStreamOutput {
-    /// <p>A list of tags associated with <code>DeliveryStreamName</code>, starting with the
-    /// first tag after <code>ExclusiveStartTagKey</code> and up to the specified
-    /// <code>Limit</code>.</p>
+    /// <p>A list of tags associated with <code>DeliveryStreamName</code>, starting with the first tag after <code>ExclusiveStartTagKey</code> and up to the specified <code>Limit</code>.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>If this is <code>true</code> in the response, more tags are available. To list the
-    /// remaining tags, set <code>ExclusiveStartTagKey</code> to the key of the last tag returned
-    /// and call <code>ListTagsForDeliveryStream</code> again.</p>
+    /// <p>If this is <code>true</code> in the response, more tags are available. To list the remaining tags, set <code>ExclusiveStartTagKey</code> to the key of the last tag returned and call <code>ListTagsForDeliveryStream</code> again.</p>
     pub fn has_more_tags(&self) -> std::option::Option<bool> {
         self.has_more_tags
     }
@@ -395,18 +371,14 @@ pub mod list_tags_for_delivery_stream_output {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of tags associated with <code>DeliveryStreamName</code>, starting with the
-        /// first tag after <code>ExclusiveStartTagKey</code> and up to the specified
-        /// <code>Limit</code>.</p>
+        /// <p>A list of tags associated with <code>DeliveryStreamName</code>, starting with the first tag after <code>ExclusiveStartTagKey</code> and up to the specified <code>Limit</code>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>A list of tags associated with <code>DeliveryStreamName</code>, starting with the
-        /// first tag after <code>ExclusiveStartTagKey</code> and up to the specified
-        /// <code>Limit</code>.</p>
+        /// <p>A list of tags associated with <code>DeliveryStreamName</code>, starting with the first tag after <code>ExclusiveStartTagKey</code> and up to the specified <code>Limit</code>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -414,16 +386,12 @@ pub mod list_tags_for_delivery_stream_output {
             self.tags = input;
             self
         }
-        /// <p>If this is <code>true</code> in the response, more tags are available. To list the
-        /// remaining tags, set <code>ExclusiveStartTagKey</code> to the key of the last tag returned
-        /// and call <code>ListTagsForDeliveryStream</code> again.</p>
+        /// <p>If this is <code>true</code> in the response, more tags are available. To list the remaining tags, set <code>ExclusiveStartTagKey</code> to the key of the last tag returned and call <code>ListTagsForDeliveryStream</code> again.</p>
         pub fn has_more_tags(mut self, input: bool) -> Self {
             self.has_more_tags = Some(input);
             self
         }
-        /// <p>If this is <code>true</code> in the response, more tags are available. To list the
-        /// remaining tags, set <code>ExclusiveStartTagKey</code> to the key of the last tag returned
-        /// and call <code>ListTagsForDeliveryStream</code> again.</p>
+        /// <p>If this is <code>true</code> in the response, more tags are available. To list the remaining tags, set <code>ExclusiveStartTagKey</code> to the key of the last tag returned and call <code>ListTagsForDeliveryStream</code> again.</p>
         pub fn set_has_more_tags(mut self, input: std::option::Option<bool>) -> Self {
             self.has_more_tags = input;
             self

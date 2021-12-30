@@ -12,8 +12,7 @@ pub struct BatchDetectDominantLanguageError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchDetectDominantLanguageErrorKind {
-    /// <p>The number of documents in the request exceeds the limit of 25. Try your request again
-    /// with fewer documents.</p>
+    /// <p>The number of documents in the request exceeds the limit of 25. Try your request again with fewer documents.</p>
     BatchSizeLimitExceededException(crate::error::BatchSizeLimitExceededException),
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -147,8 +146,7 @@ pub struct BatchDetectEntitiesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchDetectEntitiesErrorKind {
-    /// <p>The number of documents in the request exceeds the limit of 25. Try your request again
-    /// with fewer documents.</p>
+    /// <p>The number of documents in the request exceeds the limit of 25. Try your request again with fewer documents.</p>
     BatchSizeLimitExceededException(crate::error::BatchSizeLimitExceededException),
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -156,9 +154,7 @@ pub enum BatchDetectEntitiesErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The size of the input text exceeds the limit. Use a smaller document.</p>
     TextSizeLimitExceededException(crate::error::TextSizeLimitExceededException),
-    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity
-    /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted.
-    /// For a list of supported languages, see <a>supported-languages</a>. </p>
+    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, see <code>supported-languages</code>. </p>
     UnsupportedLanguageException(crate::error::UnsupportedLanguageException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -287,8 +283,7 @@ pub struct BatchDetectKeyPhrasesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchDetectKeyPhrasesErrorKind {
-    /// <p>The number of documents in the request exceeds the limit of 25. Try your request again
-    /// with fewer documents.</p>
+    /// <p>The number of documents in the request exceeds the limit of 25. Try your request again with fewer documents.</p>
     BatchSizeLimitExceededException(crate::error::BatchSizeLimitExceededException),
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -296,9 +291,7 @@ pub enum BatchDetectKeyPhrasesErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The size of the input text exceeds the limit. Use a smaller document.</p>
     TextSizeLimitExceededException(crate::error::TextSizeLimitExceededException),
-    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity
-    /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted.
-    /// For a list of supported languages, see <a>supported-languages</a>. </p>
+    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, see <code>supported-languages</code>. </p>
     UnsupportedLanguageException(crate::error::UnsupportedLanguageException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -429,8 +422,7 @@ pub struct BatchDetectSentimentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchDetectSentimentErrorKind {
-    /// <p>The number of documents in the request exceeds the limit of 25. Try your request again
-    /// with fewer documents.</p>
+    /// <p>The number of documents in the request exceeds the limit of 25. Try your request again with fewer documents.</p>
     BatchSizeLimitExceededException(crate::error::BatchSizeLimitExceededException),
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -438,9 +430,7 @@ pub enum BatchDetectSentimentErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The size of the input text exceeds the limit. Use a smaller document.</p>
     TextSizeLimitExceededException(crate::error::TextSizeLimitExceededException),
-    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity
-    /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted.
-    /// For a list of supported languages, see <a>supported-languages</a>. </p>
+    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, see <code>supported-languages</code>. </p>
     UnsupportedLanguageException(crate::error::UnsupportedLanguageException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -569,8 +559,7 @@ pub struct BatchDetectSyntaxError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchDetectSyntaxErrorKind {
-    /// <p>The number of documents in the request exceeds the limit of 25. Try your request again
-    /// with fewer documents.</p>
+    /// <p>The number of documents in the request exceeds the limit of 25. Try your request again with fewer documents.</p>
     BatchSizeLimitExceededException(crate::error::BatchSizeLimitExceededException),
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -578,9 +567,7 @@ pub enum BatchDetectSyntaxErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The size of the input text exceeds the limit. Use a smaller document.</p>
     TextSizeLimitExceededException(crate::error::TextSizeLimitExceededException),
-    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity
-    /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted.
-    /// For a list of supported languages, see <a>supported-languages</a>. </p>
+    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, see <code>supported-languages</code>. </p>
     UnsupportedLanguageException(crate::error::UnsupportedLanguageException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -713,8 +700,7 @@ pub enum ClassifyDocumentErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request is invalid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The specified resource is not available. Check the resource and try your request
-    /// again.</p>
+    /// <p>The specified resource is not available. Check the resource and try your request again.</p>
     ResourceUnavailableException(crate::error::ResourceUnavailableException),
     /// <p>The size of the input text exceeds the limit. Use a smaller document.</p>
     TextSizeLimitExceededException(crate::error::TextSizeLimitExceededException),
@@ -842,9 +828,7 @@ pub enum ContainsPiiEntitiesErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The size of the input text exceeds the limit. Use a smaller document.</p>
     TextSizeLimitExceededException(crate::error::TextSizeLimitExceededException),
-    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity
-    /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted.
-    /// For a list of supported languages, see <a>supported-languages</a>. </p>
+    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, see <code>supported-languages</code>. </p>
     UnsupportedLanguageException(crate::error::UnsupportedLanguageException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -968,24 +952,17 @@ pub enum CreateDocumentClassifierErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request is invalid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The KMS customer managed key (CMK) entered cannot be validated. Verify the key and
-    /// re-enter it.</p>
+    /// <p>The KMS customer managed key (CMK) entered cannot be validated. Verify the key and re-enter it.</p>
     KmsKeyValidationException(crate::error::KmsKeyValidationException),
-    /// <p>The specified resource name is already in use. Use a different name and try your request
-    /// again.</p>
+    /// <p>The specified resource name is already in use. Use a different name and try your request again.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>The maximum number of resources per account has been exceeded. Review the resources, and
-    /// then try your request again.</p>
+    /// <p>The maximum number of resources per account has been exceeded. Review the resources, and then try your request again.</p>
     ResourceLimitExceededException(crate::error::ResourceLimitExceededException),
     /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>The request contains more tags than can be associated with a resource (50 tags per
-    /// resource). The maximum number of tags includes both existing tags and those included in your
-    /// current request. </p>
+    /// <p>The request contains more tags than can be associated with a resource (50 tags per resource). The maximum number of tags includes both existing tags and those included in your current request. </p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity
-    /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted.
-    /// For a list of supported languages, see <a>supported-languages</a>. </p>
+    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, see <code>supported-languages</code>. </p>
     UnsupportedLanguageException(crate::error::UnsupportedLanguageException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1151,22 +1128,17 @@ pub enum CreateEndpointErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request is invalid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The specified resource name is already in use. Use a different name and try your request
-    /// again.</p>
+    /// <p>The specified resource name is already in use. Use a different name and try your request again.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>The maximum number of resources per account has been exceeded. Review the resources, and
-    /// then try your request again.</p>
+    /// <p>The maximum number of resources per account has been exceeded. Review the resources, and then try your request again.</p>
     ResourceLimitExceededException(crate::error::ResourceLimitExceededException),
     /// <p>The specified resource ARN was not found. Check the ARN and try your request again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The specified resource is not available. Check the resource and try your request
-    /// again.</p>
+    /// <p>The specified resource is not available. Check the resource and try your request again.</p>
     ResourceUnavailableException(crate::error::ResourceUnavailableException),
     /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>The request contains more tags than can be associated with a resource (50 tags per
-    /// resource). The maximum number of tags includes both existing tags and those included in your
-    /// current request. </p>
+    /// <p>The request contains more tags than can be associated with a resource (50 tags per resource). The maximum number of tags includes both existing tags and those included in your current request. </p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1323,24 +1295,17 @@ pub enum CreateEntityRecognizerErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request is invalid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The KMS customer managed key (CMK) entered cannot be validated. Verify the key and
-    /// re-enter it.</p>
+    /// <p>The KMS customer managed key (CMK) entered cannot be validated. Verify the key and re-enter it.</p>
     KmsKeyValidationException(crate::error::KmsKeyValidationException),
-    /// <p>The specified resource name is already in use. Use a different name and try your request
-    /// again.</p>
+    /// <p>The specified resource name is already in use. Use a different name and try your request again.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>The maximum number of resources per account has been exceeded. Review the resources, and
-    /// then try your request again.</p>
+    /// <p>The maximum number of resources per account has been exceeded. Review the resources, and then try your request again.</p>
     ResourceLimitExceededException(crate::error::ResourceLimitExceededException),
     /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>The request contains more tags than can be associated with a resource (50 tags per
-    /// resource). The maximum number of tags includes both existing tags and those included in your
-    /// current request. </p>
+    /// <p>The request contains more tags than can be associated with a resource (50 tags per resource). The maximum number of tags includes both existing tags and those included in your current request. </p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity
-    /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted.
-    /// For a list of supported languages, see <a>supported-languages</a>. </p>
+    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, see <code>supported-languages</code>. </p>
     UnsupportedLanguageException(crate::error::UnsupportedLanguageException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1502,13 +1467,11 @@ pub enum DeleteDocumentClassifierErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request is invalid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The specified resource name is already in use. Use a different name and try your request
-    /// again.</p>
+    /// <p>The specified resource name is already in use. Use a different name and try your request again.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>The specified resource ARN was not found. Check the ARN and try your request again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The specified resource is not available. Check the resource and try your request
-    /// again.</p>
+    /// <p>The specified resource is not available. Check the resource and try your request again.</p>
     ResourceUnavailableException(crate::error::ResourceUnavailableException),
     /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
@@ -1654,8 +1617,7 @@ pub enum DeleteEndpointErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request is invalid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The specified resource name is already in use. Use a different name and try your request
-    /// again.</p>
+    /// <p>The specified resource name is already in use. Use a different name and try your request again.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>The specified resource ARN was not found. Check the ARN and try your request again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1792,13 +1754,11 @@ pub enum DeleteEntityRecognizerErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request is invalid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The specified resource name is already in use. Use a different name and try your request
-    /// again.</p>
+    /// <p>The specified resource name is already in use. Use a different name and try your request again.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>The specified resource ARN was not found. Check the ARN and try your request again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The specified resource is not available. Check the resource and try your request
-    /// again.</p>
+    /// <p>The specified resource is not available. Check the resource and try your request again.</p>
     ResourceUnavailableException(crate::error::ResourceUnavailableException),
     /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
@@ -3528,14 +3488,11 @@ pub enum DetectEntitiesErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request is invalid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The specified resource is not available. Check the resource and try your request
-    /// again.</p>
+    /// <p>The specified resource is not available. Check the resource and try your request again.</p>
     ResourceUnavailableException(crate::error::ResourceUnavailableException),
     /// <p>The size of the input text exceeds the limit. Use a smaller document.</p>
     TextSizeLimitExceededException(crate::error::TextSizeLimitExceededException),
-    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity
-    /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted.
-    /// For a list of supported languages, see <a>supported-languages</a>. </p>
+    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, see <code>supported-languages</code>. </p>
     UnsupportedLanguageException(crate::error::UnsupportedLanguageException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3670,9 +3627,7 @@ pub enum DetectKeyPhrasesErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The size of the input text exceeds the limit. Use a smaller document.</p>
     TextSizeLimitExceededException(crate::error::TextSizeLimitExceededException),
-    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity
-    /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted.
-    /// For a list of supported languages, see <a>supported-languages</a>. </p>
+    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, see <code>supported-languages</code>. </p>
     UnsupportedLanguageException(crate::error::UnsupportedLanguageException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3798,9 +3753,7 @@ pub enum DetectPiiEntitiesErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The size of the input text exceeds the limit. Use a smaller document.</p>
     TextSizeLimitExceededException(crate::error::TextSizeLimitExceededException),
-    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity
-    /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted.
-    /// For a list of supported languages, see <a>supported-languages</a>. </p>
+    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, see <code>supported-languages</code>. </p>
     UnsupportedLanguageException(crate::error::UnsupportedLanguageException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3926,9 +3879,7 @@ pub enum DetectSentimentErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The size of the input text exceeds the limit. Use a smaller document.</p>
     TextSizeLimitExceededException(crate::error::TextSizeLimitExceededException),
-    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity
-    /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted.
-    /// For a list of supported languages, see <a>supported-languages</a>. </p>
+    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, see <code>supported-languages</code>. </p>
     UnsupportedLanguageException(crate::error::UnsupportedLanguageException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4054,9 +4005,7 @@ pub enum DetectSyntaxErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The size of the input text exceeds the limit. Use a smaller document.</p>
     TextSizeLimitExceededException(crate::error::TextSizeLimitExceededException),
-    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity
-    /// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted.
-    /// For a list of supported languages, see <a>supported-languages</a>. </p>
+    /// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, see <code>supported-languages</code>. </p>
     UnsupportedLanguageException(crate::error::UnsupportedLanguageException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -4178,8 +4127,7 @@ pub struct ListDocumentClassificationJobsError {
 pub enum ListDocumentClassificationJobsErrorKind {
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The filter specified for the operation is invalid. Specify a different
-    /// filter.</p>
+    /// <p>The filter specified for the operation is invalid. Specify a different filter.</p>
     InvalidFilterException(crate::error::InvalidFilterException),
     /// <p>The request is invalid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -4322,8 +4270,7 @@ pub struct ListDocumentClassifiersError {
 pub enum ListDocumentClassifiersErrorKind {
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The filter specified for the operation is invalid. Specify a different
-    /// filter.</p>
+    /// <p>The filter specified for the operation is invalid. Specify a different filter.</p>
     InvalidFilterException(crate::error::InvalidFilterException),
     /// <p>The request is invalid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -4579,8 +4526,7 @@ pub struct ListDominantLanguageDetectionJobsError {
 pub enum ListDominantLanguageDetectionJobsErrorKind {
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The filter specified for the operation is invalid. Specify a different
-    /// filter.</p>
+    /// <p>The filter specified for the operation is invalid. Specify a different filter.</p>
     InvalidFilterException(crate::error::InvalidFilterException),
     /// <p>The request is invalid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -4840,8 +4786,7 @@ pub struct ListEntitiesDetectionJobsError {
 pub enum ListEntitiesDetectionJobsErrorKind {
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The filter specified for the operation is invalid. Specify a different
-    /// filter.</p>
+    /// <p>The filter specified for the operation is invalid. Specify a different filter.</p>
     InvalidFilterException(crate::error::InvalidFilterException),
     /// <p>The request is invalid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -4967,8 +4912,7 @@ pub struct ListEntityRecognizersError {
 pub enum ListEntityRecognizersErrorKind {
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The filter specified for the operation is invalid. Specify a different
-    /// filter.</p>
+    /// <p>The filter specified for the operation is invalid. Specify a different filter.</p>
     InvalidFilterException(crate::error::InvalidFilterException),
     /// <p>The request is invalid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -5220,8 +5164,7 @@ pub struct ListEventsDetectionJobsError {
 pub enum ListEventsDetectionJobsErrorKind {
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The filter specified for the operation is invalid. Specify a different
-    /// filter.</p>
+    /// <p>The filter specified for the operation is invalid. Specify a different filter.</p>
     InvalidFilterException(crate::error::InvalidFilterException),
     /// <p>The request is invalid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -5347,8 +5290,7 @@ pub struct ListKeyPhrasesDetectionJobsError {
 pub enum ListKeyPhrasesDetectionJobsErrorKind {
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The filter specified for the operation is invalid. Specify a different
-    /// filter.</p>
+    /// <p>The filter specified for the operation is invalid. Specify a different filter.</p>
     InvalidFilterException(crate::error::InvalidFilterException),
     /// <p>The request is invalid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -5474,8 +5416,7 @@ pub struct ListPiiEntitiesDetectionJobsError {
 pub enum ListPiiEntitiesDetectionJobsErrorKind {
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The filter specified for the operation is invalid. Specify a different
-    /// filter.</p>
+    /// <p>The filter specified for the operation is invalid. Specify a different filter.</p>
     InvalidFilterException(crate::error::InvalidFilterException),
     /// <p>The request is invalid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -5603,8 +5544,7 @@ pub struct ListSentimentDetectionJobsError {
 pub enum ListSentimentDetectionJobsErrorKind {
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The filter specified for the operation is invalid. Specify a different
-    /// filter.</p>
+    /// <p>The filter specified for the operation is invalid. Specify a different filter.</p>
     InvalidFilterException(crate::error::InvalidFilterException),
     /// <p>The request is invalid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -5845,8 +5785,7 @@ pub struct ListTopicsDetectionJobsError {
 pub enum ListTopicsDetectionJobsErrorKind {
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The filter specified for the operation is invalid. Specify a different
-    /// filter.</p>
+    /// <p>The filter specified for the operation is invalid. Specify a different filter.</p>
     InvalidFilterException(crate::error::InvalidFilterException),
     /// <p>The request is invalid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
@@ -5974,19 +5913,15 @@ pub enum StartDocumentClassificationJobErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request is invalid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The KMS customer managed key (CMK) entered cannot be validated. Verify the key and
-    /// re-enter it.</p>
+    /// <p>The KMS customer managed key (CMK) entered cannot be validated. Verify the key and re-enter it.</p>
     KmsKeyValidationException(crate::error::KmsKeyValidationException),
     /// <p>The specified resource ARN was not found. Check the ARN and try your request again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The specified resource is not available. Check the resource and try your request
-    /// again.</p>
+    /// <p>The specified resource is not available. Check the resource and try your request again.</p>
     ResourceUnavailableException(crate::error::ResourceUnavailableException),
     /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>The request contains more tags than can be associated with a resource (50 tags per
-    /// resource). The maximum number of tags includes both existing tags and those included in your
-    /// current request. </p>
+    /// <p>The request contains more tags than can be associated with a resource (50 tags per resource). The maximum number of tags includes both existing tags and those included in your current request. </p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6164,14 +6099,11 @@ pub enum StartDominantLanguageDetectionJobErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request is invalid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The KMS customer managed key (CMK) entered cannot be validated. Verify the key and
-    /// re-enter it.</p>
+    /// <p>The KMS customer managed key (CMK) entered cannot be validated. Verify the key and re-enter it.</p>
     KmsKeyValidationException(crate::error::KmsKeyValidationException),
     /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>The request contains more tags than can be associated with a resource (50 tags per
-    /// resource). The maximum number of tags includes both existing tags and those included in your
-    /// current request. </p>
+    /// <p>The request contains more tags than can be associated with a resource (50 tags per resource). The maximum number of tags includes both existing tags and those included in your current request. </p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6327,19 +6259,15 @@ pub enum StartEntitiesDetectionJobErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request is invalid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The KMS customer managed key (CMK) entered cannot be validated. Verify the key and
-    /// re-enter it.</p>
+    /// <p>The KMS customer managed key (CMK) entered cannot be validated. Verify the key and re-enter it.</p>
     KmsKeyValidationException(crate::error::KmsKeyValidationException),
     /// <p>The specified resource ARN was not found. Check the ARN and try your request again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The specified resource is not available. Check the resource and try your request
-    /// again.</p>
+    /// <p>The specified resource is not available. Check the resource and try your request again.</p>
     ResourceUnavailableException(crate::error::ResourceUnavailableException),
     /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>The request contains more tags than can be associated with a resource (50 tags per
-    /// resource). The maximum number of tags includes both existing tags and those included in your
-    /// current request. </p>
+    /// <p>The request contains more tags than can be associated with a resource (50 tags per resource). The maximum number of tags includes both existing tags and those included in your current request. </p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6494,14 +6422,11 @@ pub enum StartEventsDetectionJobErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request is invalid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The KMS customer managed key (CMK) entered cannot be validated. Verify the key and
-    /// re-enter it.</p>
+    /// <p>The KMS customer managed key (CMK) entered cannot be validated. Verify the key and re-enter it.</p>
     KmsKeyValidationException(crate::error::KmsKeyValidationException),
     /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>The request contains more tags than can be associated with a resource (50 tags per
-    /// resource). The maximum number of tags includes both existing tags and those included in your
-    /// current request. </p>
+    /// <p>The request contains more tags than can be associated with a resource (50 tags per resource). The maximum number of tags includes both existing tags and those included in your current request. </p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6634,14 +6559,11 @@ pub enum StartKeyPhrasesDetectionJobErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request is invalid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The KMS customer managed key (CMK) entered cannot be validated. Verify the key and
-    /// re-enter it.</p>
+    /// <p>The KMS customer managed key (CMK) entered cannot be validated. Verify the key and re-enter it.</p>
     KmsKeyValidationException(crate::error::KmsKeyValidationException),
     /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>The request contains more tags than can be associated with a resource (50 tags per
-    /// resource). The maximum number of tags includes both existing tags and those included in your
-    /// current request. </p>
+    /// <p>The request contains more tags than can be associated with a resource (50 tags per resource). The maximum number of tags includes both existing tags and those included in your current request. </p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6776,14 +6698,11 @@ pub enum StartPiiEntitiesDetectionJobErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request is invalid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The KMS customer managed key (CMK) entered cannot be validated. Verify the key and
-    /// re-enter it.</p>
+    /// <p>The KMS customer managed key (CMK) entered cannot be validated. Verify the key and re-enter it.</p>
     KmsKeyValidationException(crate::error::KmsKeyValidationException),
     /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>The request contains more tags than can be associated with a resource (50 tags per
-    /// resource). The maximum number of tags includes both existing tags and those included in your
-    /// current request. </p>
+    /// <p>The request contains more tags than can be associated with a resource (50 tags per resource). The maximum number of tags includes both existing tags and those included in your current request. </p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6922,14 +6841,11 @@ pub enum StartSentimentDetectionJobErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request is invalid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The KMS customer managed key (CMK) entered cannot be validated. Verify the key and
-    /// re-enter it.</p>
+    /// <p>The KMS customer managed key (CMK) entered cannot be validated. Verify the key and re-enter it.</p>
     KmsKeyValidationException(crate::error::KmsKeyValidationException),
     /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>The request contains more tags than can be associated with a resource (50 tags per
-    /// resource). The maximum number of tags includes both existing tags and those included in your
-    /// current request. </p>
+    /// <p>The request contains more tags than can be associated with a resource (50 tags per resource). The maximum number of tags includes both existing tags and those included in your current request. </p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -7062,14 +6978,11 @@ pub enum StartTopicsDetectionJobErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request is invalid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The KMS customer managed key (CMK) entered cannot be validated. Verify the key and
-    /// re-enter it.</p>
+    /// <p>The KMS customer managed key (CMK) entered cannot be validated. Verify the key and re-enter it.</p>
     KmsKeyValidationException(crate::error::KmsKeyValidationException),
     /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    /// <p>The request contains more tags than can be associated with a resource (50 tags per
-    /// resource). The maximum number of tags includes both existing tags and those included in your
-    /// current request. </p>
+    /// <p>The request contains more tags than can be associated with a resource (50 tags per resource). The maximum number of tags includes both existing tags and those included in your current request. </p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8178,8 +8091,7 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    /// <p>Concurrent modification of the tags associated with an Amazon Comprehend resource is not
-    /// supported. </p>
+    /// <p>Concurrent modification of the tags associated with an Amazon Comprehend resource is not supported. </p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -8187,9 +8099,7 @@ pub enum TagResourceErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The specified resource ARN was not found. Check the ARN and try your request again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The request contains more tags than can be associated with a resource (50 tags per
-    /// resource). The maximum number of tags includes both existing tags and those included in your
-    /// current request. </p>
+    /// <p>The request contains more tags than can be associated with a resource (50 tags per resource). The maximum number of tags includes both existing tags and those included in your current request. </p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8309,8 +8219,7 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    /// <p>Concurrent modification of the tags associated with an Amazon Comprehend resource is not
-    /// supported. </p>
+    /// <p>Concurrent modification of the tags associated with an Amazon Comprehend resource is not supported. </p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>An internal server error occurred. Retry your request.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -8318,8 +8227,7 @@ pub enum UntagResourceErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The specified resource ARN was not found. Check the ARN and try your request again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The request contains more tag keys than can be associated with a resource (50 tag keys per
-    /// resource).</p>
+    /// <p>The request contains more tag keys than can be associated with a resource (50 tag keys per resource).</p>
     TooManyTagKeysException(crate::error::TooManyTagKeysException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8452,16 +8360,13 @@ pub enum UpdateEndpointErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request is invalid.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    /// <p>The specified resource name is already in use. Use a different name and try your request
-    /// again.</p>
+    /// <p>The specified resource name is already in use. Use a different name and try your request again.</p>
     ResourceInUseException(crate::error::ResourceInUseException),
-    /// <p>The maximum number of resources per account has been exceeded. Review the resources, and
-    /// then try your request again.</p>
+    /// <p>The maximum number of resources per account has been exceeded. Review the resources, and then try your request again.</p>
     ResourceLimitExceededException(crate::error::ResourceLimitExceededException),
     /// <p>The specified resource ARN was not found. Check the ARN and try your request again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The specified resource is not available. Check the resource and try your request
-    /// again.</p>
+    /// <p>The specified resource is not available. Check the resource and try your request again.</p>
     ResourceUnavailableException(crate::error::ResourceUnavailableException),
     /// <p>The number of requests exceeds the limit. Resubmit your request later.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
@@ -8661,8 +8566,7 @@ impl TooManyRequestsException {
     }
 }
 
-/// <p>The specified resource is not available. Check the resource and try your request
-/// again.</p>
+/// <p>The specified resource is not available. Check the resource and try your request again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceUnavailableException {
@@ -8790,8 +8694,7 @@ impl ResourceNotFoundException {
     }
 }
 
-/// <p>The maximum number of resources per account has been exceeded. Review the resources, and
-/// then try your request again.</p>
+/// <p>The maximum number of resources per account has been exceeded. Review the resources, and then try your request again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceLimitExceededException {
@@ -8855,8 +8758,7 @@ impl ResourceLimitExceededException {
     }
 }
 
-/// <p>The specified resource name is already in use. Use a different name and try your request
-/// again.</p>
+/// <p>The specified resource name is already in use. Use a different name and try your request again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceInUseException {
@@ -9048,8 +8950,7 @@ impl InternalServerException {
     }
 }
 
-/// <p>The request contains more tag keys than can be associated with a resource (50 tag keys per
-/// resource).</p>
+/// <p>The request contains more tag keys than can be associated with a resource (50 tag keys per resource).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyTagKeysException {
@@ -9113,8 +9014,7 @@ impl TooManyTagKeysException {
     }
 }
 
-/// <p>Concurrent modification of the tags associated with an Amazon Comprehend resource is not
-/// supported. </p>
+/// <p>Concurrent modification of the tags associated with an Amazon Comprehend resource is not supported. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConcurrentModificationException {
@@ -9178,9 +9078,7 @@ impl ConcurrentModificationException {
     }
 }
 
-/// <p>The request contains more tags than can be associated with a resource (50 tags per
-/// resource). The maximum number of tags includes both existing tags and those included in your
-/// current request. </p>
+/// <p>The request contains more tags than can be associated with a resource (50 tags per resource). The maximum number of tags includes both existing tags and those included in your current request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyTagsException {
@@ -9308,8 +9206,7 @@ impl JobNotFoundException {
     }
 }
 
-/// <p>The KMS customer managed key (CMK) entered cannot be validated. Verify the key and
-/// re-enter it.</p>
+/// <p>The KMS customer managed key (CMK) entered cannot be validated. Verify the key and re-enter it.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsKeyValidationException {
@@ -9373,8 +9270,7 @@ impl KmsKeyValidationException {
     }
 }
 
-/// <p>The filter specified for the operation is invalid. Specify a different
-/// filter.</p>
+/// <p>The filter specified for the operation is invalid. Specify a different filter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidFilterException {
@@ -9438,9 +9334,7 @@ impl InvalidFilterException {
     }
 }
 
-/// <p>Amazon Comprehend can't process the language of the input text. For custom entity
-/// recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted.
-/// For a list of supported languages, see <a>supported-languages</a>. </p>
+/// <p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, see <code>supported-languages</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedLanguageException {
@@ -9568,8 +9462,7 @@ impl TextSizeLimitExceededException {
     }
 }
 
-/// <p>The number of documents in the request exceeds the limit of 25. Try your request again
-/// with fewer documents.</p>
+/// <p>The number of documents in the request exceeds the limit of 25. Try your request again with fewer documents.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchSizeLimitExceededException {

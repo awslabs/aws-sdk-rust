@@ -970,9 +970,7 @@ pub struct DescribeTableStatisticsOutput {
     pub replication_task_arn: std::option::Option<std::string::String>,
     /// <p>The table statistics.</p>
     pub table_statistics: std::option::Option<std::vec::Vec<crate::model::TableStatistics>>,
-    /// <p> An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified
-    /// by <code>MaxRecords</code>. </p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeTableStatisticsOutput {
@@ -984,9 +982,7 @@ impl DescribeTableStatisticsOutput {
     pub fn table_statistics(&self) -> std::option::Option<&[crate::model::TableStatistics]> {
         self.table_statistics.as_deref()
     }
-    /// <p> An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified
-    /// by <code>MaxRecords</code>. </p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -1044,16 +1040,12 @@ pub mod describe_table_statistics_output {
             self.table_statistics = input;
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -1079,17 +1071,13 @@ impl DescribeTableStatisticsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSchemasOutput {
-    /// <p> An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified
-    /// by <code>MaxRecords</code>. </p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>The described schema.</p>
     pub schemas: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeSchemasOutput {
-    /// <p> An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified
-    /// by <code>MaxRecords</code>. </p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -1116,16 +1104,12 @@ pub mod describe_schemas_output {
         pub(crate) schemas: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -1169,17 +1153,13 @@ impl DescribeSchemasOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReplicationTasksOutput {
-    /// <p> An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified
-    /// by <code>MaxRecords</code>. </p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>A description of the replication tasks.</p>
     pub replication_tasks: std::option::Option<std::vec::Vec<crate::model::ReplicationTask>>,
 }
 impl DescribeReplicationTasksOutput {
-    /// <p> An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified
-    /// by <code>MaxRecords</code>. </p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -1207,16 +1187,12 @@ pub mod describe_replication_tasks_output {
             std::option::Option<std::vec::Vec<crate::model::ReplicationTask>>,
     }
     impl Builder {
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -1260,20 +1236,14 @@ impl DescribeReplicationTasksOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReplicationTaskIndividualAssessmentsOutput {
-    /// <p>A pagination token returned for you to pass to a subsequent request. If you pass this
-    /// token as the <code>Marker</code> value in a subsequent request, the response includes only
-    /// records beyond the marker, up to the value specified in the request by
-    /// <code>MaxRecords</code>.</p>
+    /// <p>A pagination token returned for you to pass to a subsequent request. If you pass this token as the <code>Marker</code> value in a subsequent request, the response includes only records beyond the marker, up to the value specified in the request by <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>One or more individual assessments as specified by <code>Filters</code>.</p>
     pub replication_task_individual_assessments:
         std::option::Option<std::vec::Vec<crate::model::ReplicationTaskIndividualAssessment>>,
 }
 impl DescribeReplicationTaskIndividualAssessmentsOutput {
-    /// <p>A pagination token returned for you to pass to a subsequent request. If you pass this
-    /// token as the <code>Marker</code> value in a subsequent request, the response includes only
-    /// records beyond the marker, up to the value specified in the request by
-    /// <code>MaxRecords</code>.</p>
+    /// <p>A pagination token returned for you to pass to a subsequent request. If you pass this token as the <code>Marker</code> value in a subsequent request, the response includes only records beyond the marker, up to the value specified in the request by <code>MaxRecords</code>.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -1306,18 +1276,12 @@ pub mod describe_replication_task_individual_assessments_output {
             std::option::Option<std::vec::Vec<crate::model::ReplicationTaskIndividualAssessment>>,
     }
     impl Builder {
-        /// <p>A pagination token returned for you to pass to a subsequent request. If you pass this
-        /// token as the <code>Marker</code> value in a subsequent request, the response includes only
-        /// records beyond the marker, up to the value specified in the request by
-        /// <code>MaxRecords</code>.</p>
+        /// <p>A pagination token returned for you to pass to a subsequent request. If you pass this token as the <code>Marker</code> value in a subsequent request, the response includes only records beyond the marker, up to the value specified in the request by <code>MaxRecords</code>.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>A pagination token returned for you to pass to a subsequent request. If you pass this
-        /// token as the <code>Marker</code> value in a subsequent request, the response includes only
-        /// records beyond the marker, up to the value specified in the request by
-        /// <code>MaxRecords</code>.</p>
+        /// <p>A pagination token returned for you to pass to a subsequent request. If you pass this token as the <code>Marker</code> value in a subsequent request, the response includes only records beyond the marker, up to the value specified in the request by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -1370,20 +1334,14 @@ impl DescribeReplicationTaskIndividualAssessmentsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReplicationTaskAssessmentRunsOutput {
-    /// <p>A pagination token returned for you to pass to a subsequent request. If you pass this
-    /// token as the <code>Marker</code> value in a subsequent request, the response includes only
-    /// records beyond the marker, up to the value specified in the request by
-    /// <code>MaxRecords</code>.</p>
+    /// <p>A pagination token returned for you to pass to a subsequent request. If you pass this token as the <code>Marker</code> value in a subsequent request, the response includes only records beyond the marker, up to the value specified in the request by <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>One or more premigration assessment runs as specified by <code>Filters</code>.</p>
     pub replication_task_assessment_runs:
         std::option::Option<std::vec::Vec<crate::model::ReplicationTaskAssessmentRun>>,
 }
 impl DescribeReplicationTaskAssessmentRunsOutput {
-    /// <p>A pagination token returned for you to pass to a subsequent request. If you pass this
-    /// token as the <code>Marker</code> value in a subsequent request, the response includes only
-    /// records beyond the marker, up to the value specified in the request by
-    /// <code>MaxRecords</code>.</p>
+    /// <p>A pagination token returned for you to pass to a subsequent request. If you pass this token as the <code>Marker</code> value in a subsequent request, the response includes only records beyond the marker, up to the value specified in the request by <code>MaxRecords</code>.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -1416,18 +1374,12 @@ pub mod describe_replication_task_assessment_runs_output {
             std::option::Option<std::vec::Vec<crate::model::ReplicationTaskAssessmentRun>>,
     }
     impl Builder {
-        /// <p>A pagination token returned for you to pass to a subsequent request. If you pass this
-        /// token as the <code>Marker</code> value in a subsequent request, the response includes only
-        /// records beyond the marker, up to the value specified in the request by
-        /// <code>MaxRecords</code>.</p>
+        /// <p>A pagination token returned for you to pass to a subsequent request. If you pass this token as the <code>Marker</code> value in a subsequent request, the response includes only records beyond the marker, up to the value specified in the request by <code>MaxRecords</code>.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>A pagination token returned for you to pass to a subsequent request. If you pass this
-        /// token as the <code>Marker</code> value in a subsequent request, the response includes only
-        /// records beyond the marker, up to the value specified in the request by
-        /// <code>MaxRecords</code>.</p>
+        /// <p>A pagination token returned for you to pass to a subsequent request. If you pass this token as the <code>Marker</code> value in a subsequent request, the response includes only records beyond the marker, up to the value specified in the request by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -1474,9 +1426,7 @@ impl DescribeReplicationTaskAssessmentRunsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReplicationTaskAssessmentResultsOutput {
-    /// <p> An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified
-    /// by <code>MaxRecords</code>. </p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>- The Amazon S3 bucket where the task assessment report is located. </p>
     pub bucket_name: std::option::Option<std::string::String>,
@@ -1485,9 +1435,7 @@ pub struct DescribeReplicationTaskAssessmentResultsOutput {
         std::option::Option<std::vec::Vec<crate::model::ReplicationTaskAssessmentResult>>,
 }
 impl DescribeReplicationTaskAssessmentResultsOutput {
-    /// <p> An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified
-    /// by <code>MaxRecords</code>. </p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -1526,16 +1474,12 @@ pub mod describe_replication_task_assessment_results_output {
             std::option::Option<std::vec::Vec<crate::model::ReplicationTaskAssessmentResult>>,
     }
     impl Builder {
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -1596,18 +1540,14 @@ impl DescribeReplicationTaskAssessmentResultsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReplicationSubnetGroupsOutput {
-    /// <p> An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified
-    /// by <code>MaxRecords</code>. </p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>A description of the replication subnet groups.</p>
     pub replication_subnet_groups:
         std::option::Option<std::vec::Vec<crate::model::ReplicationSubnetGroup>>,
 }
 impl DescribeReplicationSubnetGroupsOutput {
-    /// <p> An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified
-    /// by <code>MaxRecords</code>. </p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -1637,16 +1577,12 @@ pub mod describe_replication_subnet_groups_output {
             std::option::Option<std::vec::Vec<crate::model::ReplicationSubnetGroup>>,
     }
     impl Builder {
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -1695,13 +1631,10 @@ impl DescribeReplicationSubnetGroupsOutput {
 pub struct DescribeReplicationInstanceTaskLogsOutput {
     /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
     pub replication_instance_arn: std::option::Option<std::string::String>,
-    /// <p>An array of replication task log metadata. Each member of the array contains the
-    /// replication task name, ARN, and task log size (in bytes). </p>
+    /// <p>An array of replication task log metadata. Each member of the array contains the replication task name, ARN, and task log size (in bytes). </p>
     pub replication_instance_task_logs:
         std::option::Option<std::vec::Vec<crate::model::ReplicationInstanceTaskLog>>,
-    /// <p> An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified
-    /// by <code>MaxRecords</code>.</p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeReplicationInstanceTaskLogsOutput {
@@ -1709,16 +1642,13 @@ impl DescribeReplicationInstanceTaskLogsOutput {
     pub fn replication_instance_arn(&self) -> std::option::Option<&str> {
         self.replication_instance_arn.as_deref()
     }
-    /// <p>An array of replication task log metadata. Each member of the array contains the
-    /// replication task name, ARN, and task log size (in bytes). </p>
+    /// <p>An array of replication task log metadata. Each member of the array contains the replication task name, ARN, and task log size (in bytes). </p>
     pub fn replication_instance_task_logs(
         &self,
     ) -> std::option::Option<&[crate::model::ReplicationInstanceTaskLog]> {
         self.replication_instance_task_logs.as_deref()
     }
-    /// <p> An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified
-    /// by <code>MaxRecords</code>.</p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -1764,8 +1694,7 @@ pub mod describe_replication_instance_task_logs_output {
         ///
         /// To override the contents of this collection use [`set_replication_instance_task_logs`](Self::set_replication_instance_task_logs).
         ///
-        /// <p>An array of replication task log metadata. Each member of the array contains the
-        /// replication task name, ARN, and task log size (in bytes). </p>
+        /// <p>An array of replication task log metadata. Each member of the array contains the replication task name, ARN, and task log size (in bytes). </p>
         pub fn replication_instance_task_logs(
             mut self,
             input: crate::model::ReplicationInstanceTaskLog,
@@ -1775,8 +1704,7 @@ pub mod describe_replication_instance_task_logs_output {
             self.replication_instance_task_logs = Some(v);
             self
         }
-        /// <p>An array of replication task log metadata. Each member of the array contains the
-        /// replication task name, ARN, and task log size (in bytes). </p>
+        /// <p>An array of replication task log metadata. Each member of the array contains the replication task name, ARN, and task log size (in bytes). </p>
         pub fn set_replication_instance_task_logs(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ReplicationInstanceTaskLog>>,
@@ -1784,16 +1712,12 @@ pub mod describe_replication_instance_task_logs_output {
             self.replication_instance_task_logs = input;
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>.</p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>.</p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -1819,18 +1743,14 @@ impl DescribeReplicationInstanceTaskLogsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReplicationInstancesOutput {
-    /// <p> An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified
-    /// by <code>MaxRecords</code>. </p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>The replication instances described.</p>
     pub replication_instances:
         std::option::Option<std::vec::Vec<crate::model::ReplicationInstance>>,
 }
 impl DescribeReplicationInstancesOutput {
-    /// <p> An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified
-    /// by <code>MaxRecords</code>. </p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -1860,16 +1780,12 @@ pub mod describe_replication_instances_output {
             std::option::Option<std::vec::Vec<crate::model::ReplicationInstance>>,
     }
     impl Builder {
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -1975,9 +1891,7 @@ pub struct DescribePendingMaintenanceActionsOutput {
     /// <p>The pending maintenance action.</p>
     pub pending_maintenance_actions:
         std::option::Option<std::vec::Vec<crate::model::ResourcePendingMaintenanceActions>>,
-    /// <p> An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified
-    /// by <code>MaxRecords</code>. </p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribePendingMaintenanceActionsOutput {
@@ -1987,9 +1901,7 @@ impl DescribePendingMaintenanceActionsOutput {
     ) -> std::option::Option<&[crate::model::ResourcePendingMaintenanceActions]> {
         self.pending_maintenance_actions.as_deref()
     }
-    /// <p> An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified
-    /// by <code>MaxRecords</code>. </p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -2040,16 +1952,12 @@ pub mod describe_pending_maintenance_actions_output {
             self.pending_maintenance_actions = input;
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -2077,9 +1985,7 @@ pub struct DescribeOrderableReplicationInstancesOutput {
     /// <p>The order-able replication instances available.</p>
     pub orderable_replication_instances:
         std::option::Option<std::vec::Vec<crate::model::OrderableReplicationInstance>>,
-    /// <p> An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified
-    /// by <code>MaxRecords</code>. </p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeOrderableReplicationInstancesOutput {
@@ -2089,9 +1995,7 @@ impl DescribeOrderableReplicationInstancesOutput {
     ) -> std::option::Option<&[crate::model::OrderableReplicationInstance]> {
         self.orderable_replication_instances.as_deref()
     }
-    /// <p> An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified
-    /// by <code>MaxRecords</code>. </p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -2140,16 +2044,12 @@ pub mod describe_orderable_replication_instances_output {
             self.orderable_replication_instances = input;
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -2174,18 +2074,14 @@ impl DescribeOrderableReplicationInstancesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventSubscriptionsOutput {
-    /// <p> An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified
-    /// by <code>MaxRecords</code>. </p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of event subscriptions.</p>
     pub event_subscriptions_list:
         std::option::Option<std::vec::Vec<crate::model::EventSubscription>>,
 }
 impl DescribeEventSubscriptionsOutput {
-    /// <p> An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified
-    /// by <code>MaxRecords</code>. </p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -2215,16 +2111,12 @@ pub mod describe_event_subscriptions_output {
             std::option::Option<std::vec::Vec<crate::model::EventSubscription>>,
     }
     impl Builder {
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -2268,17 +2160,13 @@ impl DescribeEventSubscriptionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventsOutput {
-    /// <p> An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified
-    /// by <code>MaxRecords</code>. </p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>The events described.</p>
     pub events: std::option::Option<std::vec::Vec<crate::model::Event>>,
 }
 impl DescribeEventsOutput {
-    /// <p> An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified
-    /// by <code>MaxRecords</code>. </p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -2305,16 +2193,12 @@ pub mod describe_events_output {
         pub(crate) events: std::option::Option<std::vec::Vec<crate::model::Event>>,
     }
     impl Builder {
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -2428,18 +2312,14 @@ impl DescribeEventCategoriesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEndpointTypesOutput {
-    /// <p> An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified
-    /// by <code>MaxRecords</code>. </p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>The types of endpoints that are supported.</p>
     pub supported_endpoint_types:
         std::option::Option<std::vec::Vec<crate::model::SupportedEndpointType>>,
 }
 impl DescribeEndpointTypesOutput {
-    /// <p> An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified
-    /// by <code>MaxRecords</code>. </p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -2469,16 +2349,12 @@ pub mod describe_endpoint_types_output {
             std::option::Option<std::vec::Vec<crate::model::SupportedEndpointType>>,
     }
     impl Builder {
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -2525,15 +2401,13 @@ impl DescribeEndpointTypesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEndpointSettingsOutput {
-    /// <p>An optional pagination token provided by a previous request. If this parameter is specified,
-    /// the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>Descriptions of the endpoint settings available for your source or target database engine.</p>
     pub endpoint_settings: std::option::Option<std::vec::Vec<crate::model::EndpointSetting>>,
 }
 impl DescribeEndpointSettingsOutput {
-    /// <p>An optional pagination token provided by a previous request. If this parameter is specified,
-    /// the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+    /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -2561,14 +2435,12 @@ pub mod describe_endpoint_settings_output {
             std::option::Option<std::vec::Vec<crate::model::EndpointSetting>>,
     }
     impl Builder {
-        /// <p>An optional pagination token provided by a previous request. If this parameter is specified,
-        /// the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>An optional pagination token provided by a previous request. If this parameter is specified,
-        /// the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
+        /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -2612,17 +2484,13 @@ impl DescribeEndpointSettingsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEndpointsOutput {
-    /// <p> An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified
-    /// by <code>MaxRecords</code>. </p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>Endpoint description.</p>
     pub endpoints: std::option::Option<std::vec::Vec<crate::model::Endpoint>>,
 }
 impl DescribeEndpointsOutput {
-    /// <p> An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified
-    /// by <code>MaxRecords</code>. </p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -2649,16 +2517,12 @@ pub mod describe_endpoints_output {
         pub(crate) endpoints: std::option::Option<std::vec::Vec<crate::model::Endpoint>>,
     }
     impl Builder {
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -2702,17 +2566,13 @@ impl DescribeEndpointsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeConnectionsOutput {
-    /// <p> An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified
-    /// by <code>MaxRecords</code>. </p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub marker: std::option::Option<std::string::String>,
     /// <p>A description of the connections.</p>
     pub connections: std::option::Option<std::vec::Vec<crate::model::Connection>>,
 }
 impl DescribeConnectionsOutput {
-    /// <p> An optional pagination token provided by a previous request. If this parameter is
-    /// specified, the response includes only records beyond the marker, up to the value specified
-    /// by <code>MaxRecords</code>. </p>
+    /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -2739,16 +2599,12 @@ pub mod describe_connections_output {
         pub(crate) connections: std::option::Option<std::vec::Vec<crate::model::Connection>>,
     }
     impl Builder {
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p> An optional pagination token provided by a previous request. If this parameter is
-        /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. </p>
+        /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -2794,8 +2650,7 @@ impl DescribeConnectionsOutput {
 pub struct DescribeCertificatesOutput {
     /// <p>The pagination token.</p>
     pub marker: std::option::Option<std::string::String>,
-    /// <p>The Secure Sockets Layer (SSL) certificates associated with the replication
-    /// instance.</p>
+    /// <p>The Secure Sockets Layer (SSL) certificates associated with the replication instance.</p>
     pub certificates: std::option::Option<std::vec::Vec<crate::model::Certificate>>,
 }
 impl DescribeCertificatesOutput {
@@ -2803,8 +2658,7 @@ impl DescribeCertificatesOutput {
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
-    /// <p>The Secure Sockets Layer (SSL) certificates associated with the replication
-    /// instance.</p>
+    /// <p>The Secure Sockets Layer (SSL) certificates associated with the replication instance.</p>
     pub fn certificates(&self) -> std::option::Option<&[crate::model::Certificate]> {
         self.certificates.as_deref()
     }
@@ -2841,16 +2695,14 @@ pub mod describe_certificates_output {
         ///
         /// To override the contents of this collection use [`set_certificates`](Self::set_certificates).
         ///
-        /// <p>The Secure Sockets Layer (SSL) certificates associated with the replication
-        /// instance.</p>
+        /// <p>The Secure Sockets Layer (SSL) certificates associated with the replication instance.</p>
         pub fn certificates(mut self, input: crate::model::Certificate) -> Self {
             let mut v = self.certificates.unwrap_or_default();
             v.push(input);
             self.certificates = Some(v);
             self
         }
-        /// <p>The Secure Sockets Layer (SSL) certificates associated with the replication
-        /// instance.</p>
+        /// <p>The Secure Sockets Layer (SSL) certificates associated with the replication instance.</p>
         pub fn set_certificates(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Certificate>>,
@@ -2878,33 +2730,17 @@ impl DescribeCertificatesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeApplicableIndividualAssessmentsOutput {
-    /// <p>List of names for the individual assessments supported by the premigration assessment
-    /// run that you start based on the specified request parameters. For more information on the
-    /// available individual assessments, including compatibility with different migration task
-    /// configurations, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Working with premigration assessment runs</a> in the
-    /// <i>Database Migration Service User Guide.</i>
-    /// </p>
+    /// <p>List of names for the individual assessments supported by the premigration assessment run that you start based on the specified request parameters. For more information on the available individual assessments, including compatibility with different migration task configurations, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Working with premigration assessment runs</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub individual_assessment_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Pagination token returned for you to pass to a subsequent request. If you pass this
-    /// token as the <code>Marker</code> value in a subsequent request, the response includes only
-    /// records beyond the marker, up to the value specified in the request by
-    /// <code>MaxRecords</code>.</p>
+    /// <p>Pagination token returned for you to pass to a subsequent request. If you pass this token as the <code>Marker</code> value in a subsequent request, the response includes only records beyond the marker, up to the value specified in the request by <code>MaxRecords</code>.</p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeApplicableIndividualAssessmentsOutput {
-    /// <p>List of names for the individual assessments supported by the premigration assessment
-    /// run that you start based on the specified request parameters. For more information on the
-    /// available individual assessments, including compatibility with different migration task
-    /// configurations, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Working with premigration assessment runs</a> in the
-    /// <i>Database Migration Service User Guide.</i>
-    /// </p>
+    /// <p>List of names for the individual assessments supported by the premigration assessment run that you start based on the specified request parameters. For more information on the available individual assessments, including compatibility with different migration task configurations, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Working with premigration assessment runs</a> in the <i>Database Migration Service User Guide.</i> </p>
     pub fn individual_assessment_names(&self) -> std::option::Option<&[std::string::String]> {
         self.individual_assessment_names.as_deref()
     }
-    /// <p>Pagination token returned for you to pass to a subsequent request. If you pass this
-    /// token as the <code>Marker</code> value in a subsequent request, the response includes only
-    /// records beyond the marker, up to the value specified in the request by
-    /// <code>MaxRecords</code>.</p>
+    /// <p>Pagination token returned for you to pass to a subsequent request. If you pass this token as the <code>Marker</code> value in a subsequent request, the response includes only records beyond the marker, up to the value specified in the request by <code>MaxRecords</code>.</p>
     pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
@@ -2935,12 +2771,7 @@ pub mod describe_applicable_individual_assessments_output {
         ///
         /// To override the contents of this collection use [`set_individual_assessment_names`](Self::set_individual_assessment_names).
         ///
-        /// <p>List of names for the individual assessments supported by the premigration assessment
-        /// run that you start based on the specified request parameters. For more information on the
-        /// available individual assessments, including compatibility with different migration task
-        /// configurations, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Working with premigration assessment runs</a> in the
-        /// <i>Database Migration Service User Guide.</i>
-        /// </p>
+        /// <p>List of names for the individual assessments supported by the premigration assessment run that you start based on the specified request parameters. For more information on the available individual assessments, including compatibility with different migration task configurations, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Working with premigration assessment runs</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn individual_assessment_names(
             mut self,
             input: impl Into<std::string::String>,
@@ -2950,12 +2781,7 @@ pub mod describe_applicable_individual_assessments_output {
             self.individual_assessment_names = Some(v);
             self
         }
-        /// <p>List of names for the individual assessments supported by the premigration assessment
-        /// run that you start based on the specified request parameters. For more information on the
-        /// available individual assessments, including compatibility with different migration task
-        /// configurations, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Working with premigration assessment runs</a> in the
-        /// <i>Database Migration Service User Guide.</i>
-        /// </p>
+        /// <p>List of names for the individual assessments supported by the premigration assessment run that you start based on the specified request parameters. For more information on the available individual assessments, including compatibility with different migration task configurations, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Working with premigration assessment runs</a> in the <i>Database Migration Service User Guide.</i> </p>
         pub fn set_individual_assessment_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2963,18 +2789,12 @@ pub mod describe_applicable_individual_assessments_output {
             self.individual_assessment_names = input;
             self
         }
-        /// <p>Pagination token returned for you to pass to a subsequent request. If you pass this
-        /// token as the <code>Marker</code> value in a subsequent request, the response includes only
-        /// records beyond the marker, up to the value specified in the request by
-        /// <code>MaxRecords</code>.</p>
+        /// <p>Pagination token returned for you to pass to a subsequent request. If you pass this token as the <code>Marker</code> value in a subsequent request, the response includes only records beyond the marker, up to the value specified in the request by <code>MaxRecords</code>.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
         }
-        /// <p>Pagination token returned for you to pass to a subsequent request. If you pass this
-        /// token as the <code>Marker</code> value in a subsequent request, the response includes only
-        /// records beyond the marker, up to the value specified in the request by
-        /// <code>MaxRecords</code>.</p>
+        /// <p>Pagination token returned for you to pass to a subsequent request. If you pass this token as the <code>Marker</code> value in a subsequent request, the response includes only records beyond the marker, up to the value specified in the request by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -3001,17 +2821,8 @@ impl DescribeApplicableIndividualAssessmentsOutput {
 pub struct DescribeAccountAttributesOutput {
     /// <p>Account quota information.</p>
     pub account_quotas: std::option::Option<std::vec::Vec<crate::model::AccountQuota>>,
-    /// <p>A unique DMS identifier for an account in a particular Amazon Web Services Region. The value of this
-    /// identifier has the following format: <code>c99999999999</code>. DMS uses this identifier to
-    /// name artifacts. For example, DMS uses this identifier to name the default Amazon S3 bucket
-    /// for storing task assessment reports in a given Amazon Web Services Region. The format of this S3 bucket
-    /// name is the following:
-    /// <code>dms-<i>AccountNumber</i>-<i>UniqueAccountIdentifier</i>.</code>
-    /// Here is an example name for this default S3 bucket:
-    /// <code>dms-111122223333-c44445555666</code>.</p>
-    /// <note>
-    /// <p>DMS supports the <code>UniqueAccountIdentifier</code> parameter in
-    /// versions 3.1.4 and later.</p>
+    /// <p>A unique DMS identifier for an account in a particular Amazon Web Services Region. The value of this identifier has the following format: <code>c99999999999</code>. DMS uses this identifier to name artifacts. For example, DMS uses this identifier to name the default Amazon S3 bucket for storing task assessment reports in a given Amazon Web Services Region. The format of this S3 bucket name is the following: <code>dms-<i>AccountNumber</i>-<i>UniqueAccountIdentifier</i>.</code> Here is an example name for this default S3 bucket: <code>dms-111122223333-c44445555666</code>.</p> <note>
+    /// <p>DMS supports the <code>UniqueAccountIdentifier</code> parameter in versions 3.1.4 and later.</p>
     /// </note>
     pub unique_account_identifier: std::option::Option<std::string::String>,
 }
@@ -3020,17 +2831,8 @@ impl DescribeAccountAttributesOutput {
     pub fn account_quotas(&self) -> std::option::Option<&[crate::model::AccountQuota]> {
         self.account_quotas.as_deref()
     }
-    /// <p>A unique DMS identifier for an account in a particular Amazon Web Services Region. The value of this
-    /// identifier has the following format: <code>c99999999999</code>. DMS uses this identifier to
-    /// name artifacts. For example, DMS uses this identifier to name the default Amazon S3 bucket
-    /// for storing task assessment reports in a given Amazon Web Services Region. The format of this S3 bucket
-    /// name is the following:
-    /// <code>dms-<i>AccountNumber</i>-<i>UniqueAccountIdentifier</i>.</code>
-    /// Here is an example name for this default S3 bucket:
-    /// <code>dms-111122223333-c44445555666</code>.</p>
-    /// <note>
-    /// <p>DMS supports the <code>UniqueAccountIdentifier</code> parameter in
-    /// versions 3.1.4 and later.</p>
+    /// <p>A unique DMS identifier for an account in a particular Amazon Web Services Region. The value of this identifier has the following format: <code>c99999999999</code>. DMS uses this identifier to name artifacts. For example, DMS uses this identifier to name the default Amazon S3 bucket for storing task assessment reports in a given Amazon Web Services Region. The format of this S3 bucket name is the following: <code>dms-<i>AccountNumber</i>-<i>UniqueAccountIdentifier</i>.</code> Here is an example name for this default S3 bucket: <code>dms-111122223333-c44445555666</code>.</p> <note>
+    /// <p>DMS supports the <code>UniqueAccountIdentifier</code> parameter in versions 3.1.4 and later.</p>
     /// </note>
     pub fn unique_account_identifier(&self) -> std::option::Option<&str> {
         self.unique_account_identifier.as_deref()
@@ -3073,33 +2875,15 @@ pub mod describe_account_attributes_output {
             self.account_quotas = input;
             self
         }
-        /// <p>A unique DMS identifier for an account in a particular Amazon Web Services Region. The value of this
-        /// identifier has the following format: <code>c99999999999</code>. DMS uses this identifier to
-        /// name artifacts. For example, DMS uses this identifier to name the default Amazon S3 bucket
-        /// for storing task assessment reports in a given Amazon Web Services Region. The format of this S3 bucket
-        /// name is the following:
-        /// <code>dms-<i>AccountNumber</i>-<i>UniqueAccountIdentifier</i>.</code>
-        /// Here is an example name for this default S3 bucket:
-        /// <code>dms-111122223333-c44445555666</code>.</p>
-        /// <note>
-        /// <p>DMS supports the <code>UniqueAccountIdentifier</code> parameter in
-        /// versions 3.1.4 and later.</p>
+        /// <p>A unique DMS identifier for an account in a particular Amazon Web Services Region. The value of this identifier has the following format: <code>c99999999999</code>. DMS uses this identifier to name artifacts. For example, DMS uses this identifier to name the default Amazon S3 bucket for storing task assessment reports in a given Amazon Web Services Region. The format of this S3 bucket name is the following: <code>dms-<i>AccountNumber</i>-<i>UniqueAccountIdentifier</i>.</code> Here is an example name for this default S3 bucket: <code>dms-111122223333-c44445555666</code>.</p> <note>
+        /// <p>DMS supports the <code>UniqueAccountIdentifier</code> parameter in versions 3.1.4 and later.</p>
         /// </note>
         pub fn unique_account_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.unique_account_identifier = Some(input.into());
             self
         }
-        /// <p>A unique DMS identifier for an account in a particular Amazon Web Services Region. The value of this
-        /// identifier has the following format: <code>c99999999999</code>. DMS uses this identifier to
-        /// name artifacts. For example, DMS uses this identifier to name the default Amazon S3 bucket
-        /// for storing task assessment reports in a given Amazon Web Services Region. The format of this S3 bucket
-        /// name is the following:
-        /// <code>dms-<i>AccountNumber</i>-<i>UniqueAccountIdentifier</i>.</code>
-        /// Here is an example name for this default S3 bucket:
-        /// <code>dms-111122223333-c44445555666</code>.</p>
-        /// <note>
-        /// <p>DMS supports the <code>UniqueAccountIdentifier</code> parameter in
-        /// versions 3.1.4 and later.</p>
+        /// <p>A unique DMS identifier for an account in a particular Amazon Web Services Region. The value of this identifier has the following format: <code>c99999999999</code>. DMS uses this identifier to name artifacts. For example, DMS uses this identifier to name the default Amazon S3 bucket for storing task assessment reports in a given Amazon Web Services Region. The format of this S3 bucket name is the following: <code>dms-<i>AccountNumber</i>-<i>UniqueAccountIdentifier</i>.</code> Here is an example name for this default S3 bucket: <code>dms-111122223333-c44445555666</code>.</p> <note>
+        /// <p>DMS supports the <code>UniqueAccountIdentifier</code> parameter in versions 3.1.4 and later.</p>
         /// </note>
         pub fn set_unique_account_identifier(
             mut self,
@@ -3128,14 +2912,12 @@ impl DescribeAccountAttributesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteReplicationTaskAssessmentRunOutput {
-    /// <p>The <code>ReplicationTaskAssessmentRun</code> object for the deleted assessment
-    /// run.</p>
+    /// <p>The <code>ReplicationTaskAssessmentRun</code> object for the deleted assessment run.</p>
     pub replication_task_assessment_run:
         std::option::Option<crate::model::ReplicationTaskAssessmentRun>,
 }
 impl DeleteReplicationTaskAssessmentRunOutput {
-    /// <p>The <code>ReplicationTaskAssessmentRun</code> object for the deleted assessment
-    /// run.</p>
+    /// <p>The <code>ReplicationTaskAssessmentRun</code> object for the deleted assessment run.</p>
     pub fn replication_task_assessment_run(
         &self,
     ) -> std::option::Option<&crate::model::ReplicationTaskAssessmentRun> {
@@ -3162,8 +2944,7 @@ pub mod delete_replication_task_assessment_run_output {
             std::option::Option<crate::model::ReplicationTaskAssessmentRun>,
     }
     impl Builder {
-        /// <p>The <code>ReplicationTaskAssessmentRun</code> object for the deleted assessment
-        /// run.</p>
+        /// <p>The <code>ReplicationTaskAssessmentRun</code> object for the deleted assessment run.</p>
         pub fn replication_task_assessment_run(
             mut self,
             input: crate::model::ReplicationTaskAssessmentRun,
@@ -3171,8 +2952,7 @@ pub mod delete_replication_task_assessment_run_output {
             self.replication_task_assessment_run = Some(input);
             self
         }
-        /// <p>The <code>ReplicationTaskAssessmentRun</code> object for the deleted assessment
-        /// run.</p>
+        /// <p>The <code>ReplicationTaskAssessmentRun</code> object for the deleted assessment run.</p>
         pub fn set_replication_task_assessment_run(
             mut self,
             input: std::option::Option<crate::model::ReplicationTaskAssessmentRun>,
@@ -3856,14 +3636,12 @@ impl CreateEndpointOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelReplicationTaskAssessmentRunOutput {
-    /// <p>The <code>ReplicationTaskAssessmentRun</code> object for the canceled assessment
-    /// run.</p>
+    /// <p>The <code>ReplicationTaskAssessmentRun</code> object for the canceled assessment run.</p>
     pub replication_task_assessment_run:
         std::option::Option<crate::model::ReplicationTaskAssessmentRun>,
 }
 impl CancelReplicationTaskAssessmentRunOutput {
-    /// <p>The <code>ReplicationTaskAssessmentRun</code> object for the canceled assessment
-    /// run.</p>
+    /// <p>The <code>ReplicationTaskAssessmentRun</code> object for the canceled assessment run.</p>
     pub fn replication_task_assessment_run(
         &self,
     ) -> std::option::Option<&crate::model::ReplicationTaskAssessmentRun> {
@@ -3890,8 +3668,7 @@ pub mod cancel_replication_task_assessment_run_output {
             std::option::Option<crate::model::ReplicationTaskAssessmentRun>,
     }
     impl Builder {
-        /// <p>The <code>ReplicationTaskAssessmentRun</code> object for the canceled assessment
-        /// run.</p>
+        /// <p>The <code>ReplicationTaskAssessmentRun</code> object for the canceled assessment run.</p>
         pub fn replication_task_assessment_run(
             mut self,
             input: crate::model::ReplicationTaskAssessmentRun,
@@ -3899,8 +3676,7 @@ pub mod cancel_replication_task_assessment_run_output {
             self.replication_task_assessment_run = Some(input);
             self
         }
-        /// <p>The <code>ReplicationTaskAssessmentRun</code> object for the canceled assessment
-        /// run.</p>
+        /// <p>The <code>ReplicationTaskAssessmentRun</code> object for the canceled assessment run.</p>
         pub fn set_replication_task_assessment_run(
             mut self,
             input: std::option::Option<crate::model::ReplicationTaskAssessmentRun>,

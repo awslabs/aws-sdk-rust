@@ -11,14 +11,12 @@ pub mod batch_check_layer_availability_input {
         pub(crate) layer_digests: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the image layers to
-        /// check. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the image layers to check. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the image layers to
-        /// check. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the image layers to check. If you do not specify a registry, the default registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.registry_id = input;
             self
@@ -205,14 +203,12 @@ pub mod batch_delete_image_input {
         pub(crate) image_ids: std::option::Option<std::vec::Vec<crate::model::ImageIdentifier>>,
     }
     impl Builder {
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the image to delete.
-        /// If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the image to delete. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the image to delete.
-        /// If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the image to delete. If you do not specify a registry, the default registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.registry_id = input;
             self
@@ -234,18 +230,14 @@ pub mod batch_delete_image_input {
         ///
         /// To override the contents of this collection use [`set_image_ids`](Self::set_image_ids).
         ///
-        /// <p>A list of image ID references that correspond to images to delete. The format of the
-        /// <code>imageIds</code> reference is <code>imageTag=tag</code> or
-        /// <code>imageDigest=digest</code>.</p>
+        /// <p>A list of image ID references that correspond to images to delete. The format of the <code>imageIds</code> reference is <code>imageTag=tag</code> or <code>imageDigest=digest</code>.</p>
         pub fn image_ids(mut self, input: crate::model::ImageIdentifier) -> Self {
             let mut v = self.image_ids.unwrap_or_default();
             v.push(input);
             self.image_ids = Some(v);
             self
         }
-        /// <p>A list of image ID references that correspond to images to delete. The format of the
-        /// <code>imageIds</code> reference is <code>imageTag=tag</code> or
-        /// <code>imageDigest=digest</code>.</p>
+        /// <p>A list of image ID references that correspond to images to delete. The format of the <code>imageIds</code> reference is <code>imageTag=tag</code> or <code>imageDigest=digest</code>.</p>
         pub fn set_image_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ImageIdentifier>>,
@@ -402,14 +394,12 @@ pub mod batch_get_image_input {
         pub(crate) accepted_media_types: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the images to
-        /// describe. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the images to describe. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the images to
-        /// describe. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the images to describe. If you do not specify a registry, the default registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.registry_id = input;
             self
@@ -431,18 +421,14 @@ pub mod batch_get_image_input {
         ///
         /// To override the contents of this collection use [`set_image_ids`](Self::set_image_ids).
         ///
-        /// <p>A list of image ID references that correspond to images to describe. The format of the
-        /// <code>imageIds</code> reference is <code>imageTag=tag</code> or
-        /// <code>imageDigest=digest</code>.</p>
+        /// <p>A list of image ID references that correspond to images to describe. The format of the <code>imageIds</code> reference is <code>imageTag=tag</code> or <code>imageDigest=digest</code>.</p>
         pub fn image_ids(mut self, input: crate::model::ImageIdentifier) -> Self {
             let mut v = self.image_ids.unwrap_or_default();
             v.push(input);
             self.image_ids = Some(v);
             self
         }
-        /// <p>A list of image ID references that correspond to images to describe. The format of the
-        /// <code>imageIds</code> reference is <code>imageTag=tag</code> or
-        /// <code>imageDigest=digest</code>.</p>
+        /// <p>A list of image ID references that correspond to images to describe. The format of the <code>imageIds</code> reference is <code>imageTag=tag</code> or <code>imageDigest=digest</code>.</p>
         pub fn set_image_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ImageIdentifier>>,
@@ -455,10 +441,7 @@ pub mod batch_get_image_input {
         /// To override the contents of this collection use [`set_accepted_media_types`](Self::set_accepted_media_types).
         ///
         /// <p>The accepted media types for the request.</p>
-        /// <p>Valid values: <code>application/vnd.docker.distribution.manifest.v1+json</code> |
-        /// <code>application/vnd.docker.distribution.manifest.v2+json</code> |
-        /// <code>application/vnd.oci.image.manifest.v1+json</code>
-        /// </p>
+        /// <p>Valid values: <code>application/vnd.docker.distribution.manifest.v1+json</code> | <code>application/vnd.docker.distribution.manifest.v2+json</code> | <code>application/vnd.oci.image.manifest.v1+json</code> </p>
         pub fn accepted_media_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.accepted_media_types.unwrap_or_default();
             v.push(input.into());
@@ -466,10 +449,7 @@ pub mod batch_get_image_input {
             self
         }
         /// <p>The accepted media types for the request.</p>
-        /// <p>Valid values: <code>application/vnd.docker.distribution.manifest.v1+json</code> |
-        /// <code>application/vnd.docker.distribution.manifest.v2+json</code> |
-        /// <code>application/vnd.oci.image.manifest.v1+json</code>
-        /// </p>
+        /// <p>Valid values: <code>application/vnd.docker.distribution.manifest.v1+json</code> | <code>application/vnd.docker.distribution.manifest.v2+json</code> | <code>application/vnd.oci.image.manifest.v1+json</code> </p>
         pub fn set_accepted_media_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -793,14 +773,12 @@ pub mod complete_layer_upload_input {
         pub(crate) layer_digests: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The Amazon Web Services account ID associated with the registry to which to upload layers.
-        /// If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry to which to upload layers. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID associated with the registry to which to upload layers.
-        /// If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry to which to upload layers. If you do not specify a registry, the default registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.registry_id = input;
             self
@@ -818,14 +796,12 @@ pub mod complete_layer_upload_input {
             self.repository_name = input;
             self
         }
-        /// <p>The upload ID from a previous <a>InitiateLayerUpload</a> operation to
-        /// associate with the image layer.</p>
+        /// <p>The upload ID from a previous <code>InitiateLayerUpload</code> operation to associate with the image layer.</p>
         pub fn upload_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.upload_id = Some(input.into());
             self
         }
-        /// <p>The upload ID from a previous <a>InitiateLayerUpload</a> operation to
-        /// associate with the image layer.</p>
+        /// <p>The upload ID from a previous <code>InitiateLayerUpload</code> operation to associate with the image layer.</p>
         pub fn set_upload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.upload_id = input;
             self
@@ -1011,14 +987,12 @@ pub mod create_pull_through_cache_rule_input {
             self.ecr_repository_prefix = input;
             self
         }
-        /// <p>The registry URL of the upstream public registry to use as the source for the pull
-        /// through cache rule.</p>
+        /// <p>The registry URL of the upstream public registry to use as the source for the pull through cache rule.</p>
         pub fn upstream_registry_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.upstream_registry_url = Some(input.into());
             self
         }
-        /// <p>The registry URL of the upstream public registry to use as the source for the pull
-        /// through cache rule.</p>
+        /// <p>The registry URL of the upstream public registry to use as the source for the pull through cache rule.</p>
         pub fn set_upstream_registry_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1026,14 +1000,12 @@ pub mod create_pull_through_cache_rule_input {
             self.upstream_registry_url = input;
             self
         }
-        /// <p>The Amazon Web Services account ID associated with the registry to create the pull through cache
-        /// rule for. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry to create the pull through cache rule for. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID associated with the registry to create the pull through cache
-        /// rule for. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry to create the pull through cache rule for. If you do not specify a registry, the default registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.registry_id = input;
             self
@@ -1193,28 +1165,22 @@ pub mod create_repository_input {
             std::option::Option<crate::model::EncryptionConfiguration>,
     }
     impl Builder {
-        /// <p>The Amazon Web Services account ID associated with the registry to create the repository.
-        /// If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry to create the repository. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID associated with the registry to create the repository.
-        /// If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry to create the repository. If you do not specify a registry, the default registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.registry_id = input;
             self
         }
-        /// <p>The name to use for the repository. The repository name may be specified on its own
-        /// (such as <code>nginx-web-app</code>) or it can be prepended with a namespace to group
-        /// the repository into a category (such as <code>project-a/nginx-web-app</code>).</p>
+        /// <p>The name to use for the repository. The repository name may be specified on its own (such as <code>nginx-web-app</code>) or it can be prepended with a namespace to group the repository into a category (such as <code>project-a/nginx-web-app</code>).</p>
         pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.repository_name = Some(input.into());
             self
         }
-        /// <p>The name to use for the repository. The repository name may be specified on its own
-        /// (such as <code>nginx-web-app</code>) or it can be prepended with a namespace to group
-        /// the repository into a category (such as <code>project-a/nginx-web-app</code>).</p>
+        /// <p>The name to use for the repository. The repository name may be specified on its own (such as <code>nginx-web-app</code>) or it can be prepended with a namespace to group the repository into a category (such as <code>project-a/nginx-web-app</code>).</p>
         pub fn set_repository_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1226,20 +1192,14 @@ pub mod create_repository_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The metadata that you apply to the repository to help you categorize and organize
-        /// them. Each tag consists of a key and an optional value, both of which you define.
-        /// Tag keys can have a maximum character length of 128 characters, and tag values can have
-        /// a maximum length of 256 characters.</p>
+        /// <p>The metadata that you apply to the repository to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>The metadata that you apply to the repository to help you categorize and organize
-        /// them. Each tag consists of a key and an optional value, both of which you define.
-        /// Tag keys can have a maximum character length of 128 characters, and tag values can have
-        /// a maximum length of 256 characters.</p>
+        /// <p>The metadata that you apply to the repository to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1247,18 +1207,12 @@ pub mod create_repository_input {
             self.tags = input;
             self
         }
-        /// <p>The tag mutability setting for the repository. If this parameter is omitted, the
-        /// default setting of <code>MUTABLE</code> will be used which will allow image tags to be
-        /// overwritten. If <code>IMMUTABLE</code> is specified, all image tags within the
-        /// repository will be immutable which will prevent them from being overwritten.</p>
+        /// <p>The tag mutability setting for the repository. If this parameter is omitted, the default setting of <code>MUTABLE</code> will be used which will allow image tags to be overwritten. If <code>IMMUTABLE</code> is specified, all image tags within the repository will be immutable which will prevent them from being overwritten.</p>
         pub fn image_tag_mutability(mut self, input: crate::model::ImageTagMutability) -> Self {
             self.image_tag_mutability = Some(input);
             self
         }
-        /// <p>The tag mutability setting for the repository. If this parameter is omitted, the
-        /// default setting of <code>MUTABLE</code> will be used which will allow image tags to be
-        /// overwritten. If <code>IMMUTABLE</code> is specified, all image tags within the
-        /// repository will be immutable which will prevent them from being overwritten.</p>
+        /// <p>The tag mutability setting for the repository. If this parameter is omitted, the default setting of <code>MUTABLE</code> will be used which will allow image tags to be overwritten. If <code>IMMUTABLE</code> is specified, all image tags within the repository will be immutable which will prevent them from being overwritten.</p>
         pub fn set_image_tag_mutability(
             mut self,
             input: std::option::Option<crate::model::ImageTagMutability>,
@@ -1266,8 +1220,7 @@ pub mod create_repository_input {
             self.image_tag_mutability = input;
             self
         }
-        /// <p>The image scanning configuration for the repository. This determines whether images
-        /// are scanned for known vulnerabilities after being pushed to the repository.</p>
+        /// <p>The image scanning configuration for the repository. This determines whether images are scanned for known vulnerabilities after being pushed to the repository.</p>
         pub fn image_scanning_configuration(
             mut self,
             input: crate::model::ImageScanningConfiguration,
@@ -1275,8 +1228,7 @@ pub mod create_repository_input {
             self.image_scanning_configuration = Some(input);
             self
         }
-        /// <p>The image scanning configuration for the repository. This determines whether images
-        /// are scanned for known vulnerabilities after being pushed to the repository.</p>
+        /// <p>The image scanning configuration for the repository. This determines whether images are scanned for known vulnerabilities after being pushed to the repository.</p>
         pub fn set_image_scanning_configuration(
             mut self,
             input: std::option::Option<crate::model::ImageScanningConfiguration>,
@@ -1284,8 +1236,7 @@ pub mod create_repository_input {
             self.image_scanning_configuration = input;
             self
         }
-        /// <p>The encryption configuration for the repository. This determines how the contents of
-        /// your repository are encrypted at rest.</p>
+        /// <p>The encryption configuration for the repository. This determines how the contents of your repository are encrypted at rest.</p>
         pub fn encryption_configuration(
             mut self,
             input: crate::model::EncryptionConfiguration,
@@ -1293,8 +1244,7 @@ pub mod create_repository_input {
             self.encryption_configuration = Some(input);
             self
         }
-        /// <p>The encryption configuration for the repository. This determines how the contents of
-        /// your repository are encrypted at rest.</p>
+        /// <p>The encryption configuration for the repository. This determines how the contents of your repository are encrypted at rest.</p>
         pub fn set_encryption_configuration(
             mut self,
             input: std::option::Option<crate::model::EncryptionConfiguration>,
@@ -1452,14 +1402,12 @@ pub mod delete_lifecycle_policy_input {
         pub(crate) repository_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
-        /// If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
-        /// If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.registry_id = input;
             self
@@ -1625,14 +1573,12 @@ pub mod delete_pull_through_cache_rule_input {
         pub(crate) registry_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon ECR repository prefix associated with the pull through cache rule to
-        /// delete.</p>
+        /// <p>The Amazon ECR repository prefix associated with the pull through cache rule to delete.</p>
         pub fn ecr_repository_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.ecr_repository_prefix = Some(input.into());
             self
         }
-        /// <p>The Amazon ECR repository prefix associated with the pull through cache rule to
-        /// delete.</p>
+        /// <p>The Amazon ECR repository prefix associated with the pull through cache rule to delete.</p>
         pub fn set_ecr_repository_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1640,14 +1586,12 @@ pub mod delete_pull_through_cache_rule_input {
             self.ecr_repository_prefix = input;
             self
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the pull through cache
-        /// rule. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the pull through cache rule. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the pull through cache
-        /// rule. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the pull through cache rule. If you do not specify a registry, the default registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.registry_id = input;
             self
@@ -1935,14 +1879,12 @@ pub mod delete_repository_input {
         pub(crate) force: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository to
-        /// delete. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository to delete. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository to
-        /// delete. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository to delete. If you do not specify a registry, the default registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.registry_id = input;
             self
@@ -2117,26 +2059,22 @@ pub mod delete_repository_policy_input {
         pub(crate) repository_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository policy
-        /// to delete. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository policy to delete. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository policy
-        /// to delete. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository policy to delete. If you do not specify a registry, the default registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.registry_id = input;
             self
         }
-        /// <p>The name of the repository that is associated with the repository policy to
-        /// delete.</p>
+        /// <p>The name of the repository that is associated with the repository policy to delete.</p>
         pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.repository_name = Some(input.into());
             self
         }
-        /// <p>The name of the repository that is associated with the repository policy to
-        /// delete.</p>
+        /// <p>The name of the repository that is associated with the repository policy to delete.</p>
         pub fn set_repository_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2483,14 +2421,12 @@ pub mod describe_images_input {
         pub(crate) filter: std::option::Option<crate::model::DescribeImagesFilter>,
     }
     impl Builder {
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
-        /// which to describe images. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to describe images. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
-        /// which to describe images. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to describe images. If you do not specify a registry, the default registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.registry_id = input;
             self
@@ -2527,60 +2463,32 @@ pub mod describe_images_input {
             self.image_ids = input;
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>DescribeImages</code> request where <code>maxResults</code> was used and the
-        /// results exceeded the value of that parameter. Pagination continues from the end of the
-        /// previous results that returned the <code>nextToken</code> value. This value is
-        /// <code>null</code> when there are no more results to return. This option cannot be
-        /// used when you specify images with <code>imageIds</code>.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeImages</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return. This option cannot be used when you specify images with <code>imageIds</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>DescribeImages</code> request where <code>maxResults</code> was used and the
-        /// results exceeded the value of that parameter. Pagination continues from the end of the
-        /// previous results that returned the <code>nextToken</code> value. This value is
-        /// <code>null</code> when there are no more results to return. This option cannot be
-        /// used when you specify images with <code>imageIds</code>.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeImages</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return. This option cannot be used when you specify images with <code>imageIds</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of repository results returned by <code>DescribeImages</code> in
-        /// paginated output. When this parameter is used, <code>DescribeImages</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>DescribeImages</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 1000. If this
-        /// parameter is not used, then <code>DescribeImages</code> returns up to
-        /// 100 results and a <code>nextToken</code> value, if applicable. This
-        /// option cannot be used when you specify images with <code>imageIds</code>.</p>
+        /// <p>The maximum number of repository results returned by <code>DescribeImages</code> in paginated output. When this parameter is used, <code>DescribeImages</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeImages</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>DescribeImages</code> returns up to 100 results and a <code>nextToken</code> value, if applicable. This option cannot be used when you specify images with <code>imageIds</code>.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of repository results returned by <code>DescribeImages</code> in
-        /// paginated output. When this parameter is used, <code>DescribeImages</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>DescribeImages</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 1000. If this
-        /// parameter is not used, then <code>DescribeImages</code> returns up to
-        /// 100 results and a <code>nextToken</code> value, if applicable. This
-        /// option cannot be used when you specify images with <code>imageIds</code>.</p>
+        /// <p>The maximum number of repository results returned by <code>DescribeImages</code> in paginated output. When this parameter is used, <code>DescribeImages</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeImages</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>DescribeImages</code> returns up to 100 results and a <code>nextToken</code> value, if applicable. This option cannot be used when you specify images with <code>imageIds</code>.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>The filter key and value with which to filter your <code>DescribeImages</code>
-        /// results.</p>
+        /// <p>The filter key and value with which to filter your <code>DescribeImages</code> results.</p>
         pub fn filter(mut self, input: crate::model::DescribeImagesFilter) -> Self {
             self.filter = Some(input);
             self
         }
-        /// <p>The filter key and value with which to filter your <code>DescribeImages</code>
-        /// results.</p>
+        /// <p>The filter key and value with which to filter your <code>DescribeImages</code> results.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::DescribeImagesFilter>,
@@ -2741,14 +2649,12 @@ pub mod describe_image_scan_findings_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
-        /// which to describe the image scan findings for. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to describe the image scan findings for. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
-        /// which to describe the image scan findings for. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to describe the image scan findings for. If you do not specify a registry, the default registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.registry_id = input;
             self
@@ -2779,46 +2685,22 @@ pub mod describe_image_scan_findings_input {
             self.image_id = input;
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>DescribeImageScanFindings</code> request where <code>maxResults</code> was
-        /// used and the results exceeded the value of that parameter. Pagination continues from the
-        /// end of the previous results that returned the <code>nextToken</code> value. This value
-        /// is null when there are no more results to return.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeImageScanFindings</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is null when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>DescribeImageScanFindings</code> request where <code>maxResults</code> was
-        /// used and the results exceeded the value of that parameter. Pagination continues from the
-        /// end of the previous results that returned the <code>nextToken</code> value. This value
-        /// is null when there are no more results to return.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeImageScanFindings</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is null when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of image scan results returned by
-        /// <code>DescribeImageScanFindings</code> in paginated output. When this parameter is
-        /// used, <code>DescribeImageScanFindings</code> only returns <code>maxResults</code>
-        /// results in a single page along with a <code>nextToken</code> response element. The
-        /// remaining results of the initial request can be seen by sending another
-        /// <code>DescribeImageScanFindings</code> request with the returned
-        /// <code>nextToken</code> value. This value can be between 1 and 1000. If this
-        /// parameter is not used, then <code>DescribeImageScanFindings</code> returns up to 100
-        /// results and a <code>nextToken</code> value, if applicable.</p>
+        /// <p>The maximum number of image scan results returned by <code>DescribeImageScanFindings</code> in paginated output. When this parameter is used, <code>DescribeImageScanFindings</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeImageScanFindings</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>DescribeImageScanFindings</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of image scan results returned by
-        /// <code>DescribeImageScanFindings</code> in paginated output. When this parameter is
-        /// used, <code>DescribeImageScanFindings</code> only returns <code>maxResults</code>
-        /// results in a single page along with a <code>nextToken</code> response element. The
-        /// remaining results of the initial request can be seen by sending another
-        /// <code>DescribeImageScanFindings</code> request with the returned
-        /// <code>nextToken</code> value. This value can be between 1 and 1000. If this
-        /// parameter is not used, then <code>DescribeImageScanFindings</code> returns up to 100
-        /// results and a <code>nextToken</code> value, if applicable.</p>
+        /// <p>The maximum number of image scan results returned by <code>DescribeImageScanFindings</code> in paginated output. When this parameter is used, <code>DescribeImageScanFindings</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeImageScanFindings</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>DescribeImageScanFindings</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2977,14 +2859,12 @@ pub mod describe_pull_through_cache_rules_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The Amazon Web Services account ID associated with the registry to return the pull through cache
-        /// rules for. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry to return the pull through cache rules for. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID associated with the registry to return the pull through cache
-        /// rules for. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry to return the pull through cache rules for. If you do not specify a registry, the default registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.registry_id = input;
             self
@@ -2993,18 +2873,14 @@ pub mod describe_pull_through_cache_rules_input {
         ///
         /// To override the contents of this collection use [`set_ecr_repository_prefixes`](Self::set_ecr_repository_prefixes).
         ///
-        /// <p>The Amazon ECR repository prefixes associated with the pull through cache rules to return.
-        /// If no repository prefix value is specified, all pull through cache rules are
-        /// returned.</p>
+        /// <p>The Amazon ECR repository prefixes associated with the pull through cache rules to return. If no repository prefix value is specified, all pull through cache rules are returned.</p>
         pub fn ecr_repository_prefixes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ecr_repository_prefixes.unwrap_or_default();
             v.push(input.into());
             self.ecr_repository_prefixes = Some(v);
             self
         }
-        /// <p>The Amazon ECR repository prefixes associated with the pull through cache rules to return.
-        /// If no repository prefix value is specified, all pull through cache rules are
-        /// returned.</p>
+        /// <p>The Amazon ECR repository prefixes associated with the pull through cache rules to return. If no repository prefix value is specified, all pull through cache rules are returned.</p>
         pub fn set_ecr_repository_prefixes(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3012,48 +2888,22 @@ pub mod describe_pull_through_cache_rules_input {
             self.ecr_repository_prefixes = input;
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>DescribePullThroughCacheRulesRequest</code> request where
-        /// <code>maxResults</code> was used and the results exceeded the value of that
-        /// parameter. Pagination continues from the end of the previous results that returned the
-        /// <code>nextToken</code> value. This value is null when there are no more results to
-        /// return.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribePullThroughCacheRulesRequest</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is null when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>DescribePullThroughCacheRulesRequest</code> request where
-        /// <code>maxResults</code> was used and the results exceeded the value of that
-        /// parameter. Pagination continues from the end of the previous results that returned the
-        /// <code>nextToken</code> value. This value is null when there are no more results to
-        /// return.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribePullThroughCacheRulesRequest</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is null when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of pull through cache rules returned by
-        /// <code>DescribePullThroughCacheRulesRequest</code> in paginated output. When this
-        /// parameter is used, <code>DescribePullThroughCacheRulesRequest</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>DescribePullThroughCacheRulesRequest</code> request with the returned
-        /// <code>nextToken</code> value. This value can be between 1 and 1000. If this
-        /// parameter is not used, then <code>DescribePullThroughCacheRulesRequest</code> returns up
-        /// to 100 results and a <code>nextToken</code> value, if applicable.</p>
+        /// <p>The maximum number of pull through cache rules returned by <code>DescribePullThroughCacheRulesRequest</code> in paginated output. When this parameter is used, <code>DescribePullThroughCacheRulesRequest</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribePullThroughCacheRulesRequest</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>DescribePullThroughCacheRulesRequest</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of pull through cache rules returned by
-        /// <code>DescribePullThroughCacheRulesRequest</code> in paginated output. When this
-        /// parameter is used, <code>DescribePullThroughCacheRulesRequest</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>DescribePullThroughCacheRulesRequest</code> request with the returned
-        /// <code>nextToken</code> value. This value can be between 1 and 1000. If this
-        /// parameter is not used, then <code>DescribePullThroughCacheRulesRequest</code> returns up
-        /// to 100 results and a <code>nextToken</code> value, if applicable.</p>
+        /// <p>The maximum number of pull through cache rules returned by <code>DescribePullThroughCacheRulesRequest</code> in paginated output. When this parameter is used, <code>DescribePullThroughCacheRulesRequest</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribePullThroughCacheRulesRequest</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>DescribePullThroughCacheRulesRequest</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3343,14 +3193,12 @@ pub mod describe_repositories_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repositories to be
-        /// described. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repositories to be described. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repositories to be
-        /// described. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repositories to be described. If you do not specify a registry, the default registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.registry_id = input;
             self
@@ -3359,16 +3207,14 @@ pub mod describe_repositories_input {
         ///
         /// To override the contents of this collection use [`set_repository_names`](Self::set_repository_names).
         ///
-        /// <p>A list of repositories to describe. If this parameter is omitted, then all
-        /// repositories in a registry are described.</p>
+        /// <p>A list of repositories to describe. If this parameter is omitted, then all repositories in a registry are described.</p>
         pub fn repository_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.repository_names.unwrap_or_default();
             v.push(input.into());
             self.repository_names = Some(v);
             self
         }
-        /// <p>A list of repositories to describe. If this parameter is omitted, then all
-        /// repositories in a registry are described.</p>
+        /// <p>A list of repositories to describe. If this parameter is omitted, then all repositories in a registry are described.</p>
         pub fn set_repository_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3376,58 +3222,26 @@ pub mod describe_repositories_input {
             self.repository_names = input;
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>DescribeRepositories</code> request where <code>maxResults</code> was used and
-        /// the results exceeded the value of that parameter. Pagination continues from the end of
-        /// the previous results that returned the <code>nextToken</code> value. This value is
-        /// <code>null</code> when there are no more results to return. This option cannot be
-        /// used when you specify repositories with <code>repositoryNames</code>.</p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that is only used to
-        /// retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeRepositories</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return. This option cannot be used when you specify repositories with <code>repositoryNames</code>.</p> <note>
+        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>DescribeRepositories</code> request where <code>maxResults</code> was used and
-        /// the results exceeded the value of that parameter. Pagination continues from the end of
-        /// the previous results that returned the <code>nextToken</code> value. This value is
-        /// <code>null</code> when there are no more results to return. This option cannot be
-        /// used when you specify repositories with <code>repositoryNames</code>.</p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that is only used to
-        /// retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeRepositories</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return. This option cannot be used when you specify repositories with <code>repositoryNames</code>.</p> <note>
+        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of repository results returned by <code>DescribeRepositories</code>
-        /// in paginated output. When this parameter is used, <code>DescribeRepositories</code> only
-        /// returns <code>maxResults</code> results in a single page along with a
-        /// <code>nextToken</code> response element. The remaining results of the initial
-        /// request can be seen by sending another <code>DescribeRepositories</code> request with
-        /// the returned <code>nextToken</code> value. This value can be between 1
-        /// and 1000. If this parameter is not used, then
-        /// <code>DescribeRepositories</code> returns up to 100 results and a
-        /// <code>nextToken</code> value, if applicable. This option cannot be used when you
-        /// specify repositories with <code>repositoryNames</code>.</p>
+        /// <p>The maximum number of repository results returned by <code>DescribeRepositories</code> in paginated output. When this parameter is used, <code>DescribeRepositories</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeRepositories</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>DescribeRepositories</code> returns up to 100 results and a <code>nextToken</code> value, if applicable. This option cannot be used when you specify repositories with <code>repositoryNames</code>.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of repository results returned by <code>DescribeRepositories</code>
-        /// in paginated output. When this parameter is used, <code>DescribeRepositories</code> only
-        /// returns <code>maxResults</code> results in a single page along with a
-        /// <code>nextToken</code> response element. The remaining results of the initial
-        /// request can be seen by sending another <code>DescribeRepositories</code> request with
-        /// the returned <code>nextToken</code> value. This value can be between 1
-        /// and 1000. If this parameter is not used, then
-        /// <code>DescribeRepositories</code> returns up to 100 results and a
-        /// <code>nextToken</code> value, if applicable. This option cannot be used when you
-        /// specify repositories with <code>repositoryNames</code>.</p>
+        /// <p>The maximum number of repository results returned by <code>DescribeRepositories</code> in paginated output. When this parameter is used, <code>DescribeRepositories</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeRepositories</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>DescribeRepositories</code> returns up to 100 results and a <code>nextToken</code> value, if applicable. This option cannot be used when you specify repositories with <code>repositoryNames</code>.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3583,16 +3397,14 @@ pub mod get_authorization_token_input {
         ///
         /// To override the contents of this collection use [`set_registry_ids`](Self::set_registry_ids).
         ///
-        /// <p>A list of Amazon Web Services account IDs that are associated with the registries for which to get
-        /// AuthorizationData objects. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>A list of Amazon Web Services account IDs that are associated with the registries for which to get AuthorizationData objects. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.registry_ids.unwrap_or_default();
             v.push(input.into());
             self.registry_ids = Some(v);
             self
         }
-        /// <p>A list of Amazon Web Services account IDs that are associated with the registries for which to get
-        /// AuthorizationData objects. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>A list of Amazon Web Services account IDs that are associated with the registries for which to get AuthorizationData objects. If you do not specify a registry, the default registry is assumed.</p>
         pub fn set_registry_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3748,14 +3560,12 @@ pub mod get_download_url_for_layer_input {
         pub(crate) layer_digest: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the image layer to
-        /// download. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the image layer to download. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the image layer to
-        /// download. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the image layer to download. If you do not specify a registry, the default registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.registry_id = input;
             self
@@ -3932,14 +3742,12 @@ pub mod get_lifecycle_policy_input {
         pub(crate) repository_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
-        /// If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
-        /// If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.registry_id = input;
             self
@@ -4107,14 +3915,12 @@ pub mod get_lifecycle_policy_preview_input {
         pub(crate) filter: std::option::Option<crate::model::LifecyclePolicyPreviewFilter>,
     }
     impl Builder {
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
-        /// If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
-        /// If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.registry_id = input;
             self
@@ -4151,64 +3957,32 @@ pub mod get_lifecycle_policy_preview_input {
             self.image_ids = input;
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>GetLifecyclePolicyPreviewRequest</code> request where <code>maxResults</code>
-        /// was used and the  results exceeded the value of that parameter. Pagination continues
-        /// from the end of the  previous results that returned the <code>nextToken</code> value.
-        /// This value is  <code>null</code> when there are no more results to return. This option
-        /// cannot be used when you specify images with <code>imageIds</code>.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated  <code>GetLifecyclePolicyPreviewRequest</code> request where <code>maxResults</code> was used and the  results exceeded the value of that parameter. Pagination continues from the end of the  previous results that returned the <code>nextToken</code> value. This value is  <code>null</code> when there are no more results to return. This option cannot be used when you specify images with <code>imageIds</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>GetLifecyclePolicyPreviewRequest</code> request where <code>maxResults</code>
-        /// was used and the  results exceeded the value of that parameter. Pagination continues
-        /// from the end of the  previous results that returned the <code>nextToken</code> value.
-        /// This value is  <code>null</code> when there are no more results to return. This option
-        /// cannot be used when you specify images with <code>imageIds</code>.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated  <code>GetLifecyclePolicyPreviewRequest</code> request where <code>maxResults</code> was used and the  results exceeded the value of that parameter. Pagination continues from the end of the  previous results that returned the <code>nextToken</code> value. This value is  <code>null</code> when there are no more results to return. This option cannot be used when you specify images with <code>imageIds</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of repository results returned by
-        /// <code>GetLifecyclePolicyPreviewRequest</code> in  paginated output. When this
-        /// parameter is used, <code>GetLifecyclePolicyPreviewRequest</code> only returns
-        /// <code>maxResults</code> results in a single page along with a
-        /// <code>nextToken</code>  response element. The remaining results of the initial request
-        /// can be seen by sending  another <code>GetLifecyclePolicyPreviewRequest</code> request
-        /// with the returned <code>nextToken</code>  value. This value can be between
-        /// 1 and 1000. If this  parameter is not used, then
-        /// <code>GetLifecyclePolicyPreviewRequest</code> returns up to  100
-        /// results and a <code>nextToken</code> value, if  applicable. This option cannot be used
-        /// when you specify images with <code>imageIds</code>.</p>
+        /// <p>The maximum number of repository results returned by <code>GetLifecyclePolicyPreviewRequest</code> in  paginated output. When this parameter is used, <code>GetLifecyclePolicyPreviewRequest</code> only returns  <code>maxResults</code> results in a single page along with a <code>nextToken</code>  response element. The remaining results of the initial request can be seen by sending  another <code>GetLifecyclePolicyPreviewRequest</code> request with the returned <code>nextToken</code>  value. This value can be between 1 and 1000. If this  parameter is not used, then <code>GetLifecyclePolicyPreviewRequest</code> returns up to  100 results and a <code>nextToken</code> value, if  applicable. This option cannot be used when you specify images with <code>imageIds</code>.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of repository results returned by
-        /// <code>GetLifecyclePolicyPreviewRequest</code> in  paginated output. When this
-        /// parameter is used, <code>GetLifecyclePolicyPreviewRequest</code> only returns
-        /// <code>maxResults</code> results in a single page along with a
-        /// <code>nextToken</code>  response element. The remaining results of the initial request
-        /// can be seen by sending  another <code>GetLifecyclePolicyPreviewRequest</code> request
-        /// with the returned <code>nextToken</code>  value. This value can be between
-        /// 1 and 1000. If this  parameter is not used, then
-        /// <code>GetLifecyclePolicyPreviewRequest</code> returns up to  100
-        /// results and a <code>nextToken</code> value, if  applicable. This option cannot be used
-        /// when you specify images with <code>imageIds</code>.</p>
+        /// <p>The maximum number of repository results returned by <code>GetLifecyclePolicyPreviewRequest</code> in  paginated output. When this parameter is used, <code>GetLifecyclePolicyPreviewRequest</code> only returns  <code>maxResults</code> results in a single page along with a <code>nextToken</code>  response element. The remaining results of the initial request can be seen by sending  another <code>GetLifecyclePolicyPreviewRequest</code> request with the returned <code>nextToken</code>  value. This value can be between 1 and 1000. If this  parameter is not used, then <code>GetLifecyclePolicyPreviewRequest</code> returns up to  100 results and a <code>nextToken</code> value, if  applicable. This option cannot be used when you specify images with <code>imageIds</code>.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>An optional parameter that filters results based on image tag status and all tags, if
-        /// tagged.</p>
+        /// <p>An optional parameter that filters results based on image tag status and all tags, if tagged.</p>
         pub fn filter(mut self, input: crate::model::LifecyclePolicyPreviewFilter) -> Self {
             self.filter = Some(input);
             self
         }
-        /// <p>An optional parameter that filters results based on image tag status and all tags, if
-        /// tagged.</p>
+        /// <p>An optional parameter that filters results based on image tag status and all tags, if tagged.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::LifecyclePolicyPreviewFilter>,
@@ -4636,14 +4410,12 @@ pub mod get_repository_policy_input {
         pub(crate) repository_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
-        /// If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
-        /// If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.registry_id = input;
             self
@@ -4807,14 +4579,12 @@ pub mod initiate_layer_upload_input {
         pub(crate) repository_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Web Services account ID associated with the registry to which you intend to upload
-        /// layers. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry to which you intend to upload layers. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID associated with the registry to which you intend to upload
-        /// layers. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry to which you intend to upload layers. If you do not specify a registry, the default registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.registry_id = input;
             self
@@ -4981,14 +4751,12 @@ pub mod list_images_input {
         pub(crate) filter: std::option::Option<crate::model::ListImagesFilter>,
     }
     impl Builder {
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
-        /// which to list images. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to list images. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
-        /// which to list images. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to list images. If you do not specify a registry, the default registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.registry_id = input;
             self
@@ -5006,64 +4774,36 @@ pub mod list_images_input {
             self.repository_name = input;
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>ListImages</code> request where <code>maxResults</code> was used and the
-        /// results exceeded the value of that parameter. Pagination continues from the end of the
-        /// previous results that returned the <code>nextToken</code> value. This value is
-        /// <code>null</code> when there are no more results to return.</p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that is only used to
-        /// retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListImages</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.</p> <note>
+        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>nextToken</code> value returned from a previous paginated
-        /// <code>ListImages</code> request where <code>maxResults</code> was used and the
-        /// results exceeded the value of that parameter. Pagination continues from the end of the
-        /// previous results that returned the <code>nextToken</code> value. This value is
-        /// <code>null</code> when there are no more results to return.</p>
-        /// <note>
-        /// <p>This token should be treated as an opaque identifier that is only used to
-        /// retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListImages</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.</p> <note>
+        /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of image results returned by <code>ListImages</code> in paginated
-        /// output. When this parameter is used, <code>ListImages</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListImages</code> request with the returned <code>nextToken</code> value.
-        /// This value can be between 1 and 1000. If this parameter is
-        /// not used, then <code>ListImages</code> returns up to 100 results and a
-        /// <code>nextToken</code> value, if applicable.</p>
+        /// <p>The maximum number of image results returned by <code>ListImages</code> in paginated output. When this parameter is used, <code>ListImages</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListImages</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>ListImages</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of image results returned by <code>ListImages</code> in paginated
-        /// output. When this parameter is used, <code>ListImages</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListImages</code> request with the returned <code>nextToken</code> value.
-        /// This value can be between 1 and 1000. If this parameter is
-        /// not used, then <code>ListImages</code> returns up to 100 results and a
-        /// <code>nextToken</code> value, if applicable.</p>
+        /// <p>The maximum number of image results returned by <code>ListImages</code> in paginated output. When this parameter is used, <code>ListImages</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListImages</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>ListImages</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>The filter key and value with which to filter your <code>ListImages</code>
-        /// results.</p>
+        /// <p>The filter key and value with which to filter your <code>ListImages</code> results.</p>
         pub fn filter(mut self, input: crate::model::ListImagesFilter) -> Self {
             self.filter = Some(input);
             self
         }
-        /// <p>The filter key and value with which to filter your <code>ListImages</code>
-        /// results.</p>
+        /// <p>The filter key and value with which to filter your <code>ListImages</code> results.</p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::ListImagesFilter>,
@@ -5218,14 +4958,12 @@ pub mod list_tags_for_resource_input {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the
-        /// only supported resource is an Amazon ECR repository.</p>
+        /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the only supported resource is an Amazon ECR repository.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the
-        /// only supported resource is an Amazon ECR repository.</p>
+        /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the only supported resource is an Amazon ECR repository.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -5381,14 +5119,12 @@ pub mod put_image_input {
         pub(crate) image_digest: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
-        /// which to put the image. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to put the image. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
-        /// which to put the image. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to put the image. If you do not specify a registry, the default registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.registry_id = input;
             self
@@ -5419,16 +5155,12 @@ pub mod put_image_input {
             self.image_manifest = input;
             self
         }
-        /// <p>The media type of the image manifest. If you push an image manifest that does not
-        /// contain the <code>mediaType</code> field, you must specify the
-        /// <code>imageManifestMediaType</code> in the request.</p>
+        /// <p>The media type of the image manifest. If you push an image manifest that does not contain the <code>mediaType</code> field, you must specify the <code>imageManifestMediaType</code> in the request.</p>
         pub fn image_manifest_media_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.image_manifest_media_type = Some(input.into());
             self
         }
-        /// <p>The media type of the image manifest. If you push an image manifest that does not
-        /// contain the <code>mediaType</code> field, you must specify the
-        /// <code>imageManifestMediaType</code> in the request.</p>
+        /// <p>The media type of the image manifest. If you push an image manifest that does not contain the <code>mediaType</code> field, you must specify the <code>imageManifestMediaType</code> in the request.</p>
         pub fn set_image_manifest_media_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5436,14 +5168,12 @@ pub mod put_image_input {
             self.image_manifest_media_type = input;
             self
         }
-        /// <p>The tag to associate with the image. This parameter is required for images that use
-        /// the Docker Image Manifest V2 Schema 2 or Open Container Initiative (OCI) formats.</p>
+        /// <p>The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2 Schema 2 or Open Container Initiative (OCI) formats.</p>
         pub fn image_tag(mut self, input: impl Into<std::string::String>) -> Self {
             self.image_tag = Some(input.into());
             self
         }
-        /// <p>The tag to associate with the image. This parameter is required for images that use
-        /// the Docker Image Manifest V2 Schema 2 or Open Container Initiative (OCI) formats.</p>
+        /// <p>The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2 Schema 2 or Open Container Initiative (OCI) formats.</p>
         pub fn set_image_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.image_tag = input;
             self
@@ -5602,28 +5332,22 @@ pub mod put_image_scanning_configuration_input {
             std::option::Option<crate::model::ImageScanningConfiguration>,
     }
     impl Builder {
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
-        /// which to update the image scanning configuration setting.
-        /// If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to update the image scanning configuration setting. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
-        /// which to update the image scanning configuration setting.
-        /// If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to update the image scanning configuration setting. If you do not specify a registry, the default registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.registry_id = input;
             self
         }
-        /// <p>The name of the repository in which to update the image scanning configuration
-        /// setting.</p>
+        /// <p>The name of the repository in which to update the image scanning configuration setting.</p>
         pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.repository_name = Some(input.into());
             self
         }
-        /// <p>The name of the repository in which to update the image scanning configuration
-        /// setting.</p>
+        /// <p>The name of the repository in which to update the image scanning configuration setting.</p>
         pub fn set_repository_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5631,9 +5355,7 @@ pub mod put_image_scanning_configuration_input {
             self.repository_name = input;
             self
         }
-        /// <p>The image scanning configuration for the repository. This setting determines whether
-        /// images are scanned for known vulnerabilities after being pushed to the
-        /// repository.</p>
+        /// <p>The image scanning configuration for the repository. This setting determines whether images are scanned for known vulnerabilities after being pushed to the repository.</p>
         pub fn image_scanning_configuration(
             mut self,
             input: crate::model::ImageScanningConfiguration,
@@ -5641,9 +5363,7 @@ pub mod put_image_scanning_configuration_input {
             self.image_scanning_configuration = Some(input);
             self
         }
-        /// <p>The image scanning configuration for the repository. This setting determines whether
-        /// images are scanned for known vulnerabilities after being pushed to the
-        /// repository.</p>
+        /// <p>The image scanning configuration for the repository. This setting determines whether images are scanned for known vulnerabilities after being pushed to the repository.</p>
         pub fn set_image_scanning_configuration(
             mut self,
             input: std::option::Option<crate::model::ImageScanningConfiguration>,
@@ -5802,26 +5522,22 @@ pub mod put_image_tag_mutability_input {
         pub(crate) image_tag_mutability: std::option::Option<crate::model::ImageTagMutability>,
     }
     impl Builder {
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
-        /// which to update the image tag mutability settings. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to update the image tag mutability settings. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
-        /// which to update the image tag mutability settings. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to update the image tag mutability settings. If you do not specify a registry, the default registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.registry_id = input;
             self
         }
-        /// <p>The name of the repository in which to update the image tag mutability
-        /// settings.</p>
+        /// <p>The name of the repository in which to update the image tag mutability settings.</p>
         pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.repository_name = Some(input.into());
             self
         }
-        /// <p>The name of the repository in which to update the image tag mutability
-        /// settings.</p>
+        /// <p>The name of the repository in which to update the image tag mutability settings.</p>
         pub fn set_repository_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5829,18 +5545,12 @@ pub mod put_image_tag_mutability_input {
             self.repository_name = input;
             self
         }
-        /// <p>The tag mutability setting for the repository. If <code>MUTABLE</code> is specified,
-        /// image tags can be overwritten. If <code>IMMUTABLE</code> is specified, all image tags
-        /// within the repository will be immutable which will prevent them from being
-        /// overwritten.</p>
+        /// <p>The tag mutability setting for the repository. If <code>MUTABLE</code> is specified, image tags can be overwritten. If <code>IMMUTABLE</code> is specified, all image tags within the repository will be immutable which will prevent them from being overwritten.</p>
         pub fn image_tag_mutability(mut self, input: crate::model::ImageTagMutability) -> Self {
             self.image_tag_mutability = Some(input);
             self
         }
-        /// <p>The tag mutability setting for the repository. If <code>MUTABLE</code> is specified,
-        /// image tags can be overwritten. If <code>IMMUTABLE</code> is specified, all image tags
-        /// within the repository will be immutable which will prevent them from being
-        /// overwritten.</p>
+        /// <p>The tag mutability setting for the repository. If <code>MUTABLE</code> is specified, image tags can be overwritten. If <code>IMMUTABLE</code> is specified, all image tags within the repository will be immutable which will prevent them from being overwritten.</p>
         pub fn set_image_tag_mutability(
             mut self,
             input: std::option::Option<crate::model::ImageTagMutability>,
@@ -5998,14 +5708,12 @@ pub mod put_lifecycle_policy_input {
         pub(crate) lifecycle_policy_text: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you
-        /// do  not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do  not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you
-        /// do  not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do  not specify a registry, the default registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.registry_id = input;
             self
@@ -6182,16 +5890,12 @@ pub mod put_registry_policy_input {
         pub(crate) policy_text: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The JSON policy text to apply to your registry. The policy text follows the same
-        /// format as IAM policy text. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry-permissions.html">Registry
-        /// permissions</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
+        /// <p>The JSON policy text to apply to your registry. The policy text follows the same format as IAM policy text. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry-permissions.html">Registry permissions</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
         pub fn policy_text(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy_text = Some(input.into());
             self
         }
-        /// <p>The JSON policy text to apply to your registry. The policy text follows the same
-        /// format as IAM policy text. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry-permissions.html">Registry
-        /// permissions</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
+        /// <p>The JSON policy text to apply to your registry. The policy text follows the same format as IAM policy text. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry-permissions.html">Registry permissions</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
         pub fn set_policy_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_text = input;
             self
@@ -6342,23 +6046,15 @@ pub mod put_registry_scanning_configuration_input {
     }
     impl Builder {
         /// <p>The scanning type to set for the registry.</p>
-        /// <p>By default, the <code>BASIC</code> scan type is used. When basic scanning is set, you
-        /// may specify filters to determine which individual repositories, or all repositories, are
-        /// scanned when new images are pushed. Alternatively, you can do manual scans of images
-        /// with basic scanning.</p>
-        /// <p>When the <code>ENHANCED</code> scan type is set, Amazon Inspector provides automated, continuous
-        /// scanning of all repositories in your registry.</p>
+        /// <p>By default, the <code>BASIC</code> scan type is used. When basic scanning is set, you may specify filters to determine which individual repositories, or all repositories, are scanned when new images are pushed. Alternatively, you can do manual scans of images with basic scanning.</p>
+        /// <p>When the <code>ENHANCED</code> scan type is set, Amazon Inspector provides automated, continuous scanning of all repositories in your registry.</p>
         pub fn scan_type(mut self, input: crate::model::ScanType) -> Self {
             self.scan_type = Some(input);
             self
         }
         /// <p>The scanning type to set for the registry.</p>
-        /// <p>By default, the <code>BASIC</code> scan type is used. When basic scanning is set, you
-        /// may specify filters to determine which individual repositories, or all repositories, are
-        /// scanned when new images are pushed. Alternatively, you can do manual scans of images
-        /// with basic scanning.</p>
-        /// <p>When the <code>ENHANCED</code> scan type is set, Amazon Inspector provides automated, continuous
-        /// scanning of all repositories in your registry.</p>
+        /// <p>By default, the <code>BASIC</code> scan type is used. When basic scanning is set, you may specify filters to determine which individual repositories, or all repositories, are scanned when new images are pushed. Alternatively, you can do manual scans of images with basic scanning.</p>
+        /// <p>When the <code>ENHANCED</code> scan type is set, Amazon Inspector provides automated, continuous scanning of all repositories in your registry.</p>
         pub fn set_scan_type(mut self, input: std::option::Option<crate::model::ScanType>) -> Self {
             self.scan_type = input;
             self
@@ -6367,16 +6063,14 @@ pub mod put_registry_scanning_configuration_input {
         ///
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
-        /// <p>The scanning rules to use for the registry. A scanning rule is used to determine which
-        /// repository filters are used and at what frequency scanning will occur.</p>
+        /// <p>The scanning rules to use for the registry. A scanning rule is used to determine which repository filters are used and at what frequency scanning will occur.</p>
         pub fn rules(mut self, input: crate::model::RegistryScanningRule) -> Self {
             let mut v = self.rules.unwrap_or_default();
             v.push(input);
             self.rules = Some(v);
             self
         }
-        /// <p>The scanning rules to use for the registry. A scanning rule is used to determine which
-        /// repository filters are used and at what frequency scanning will occur.</p>
+        /// <p>The scanning rules to use for the registry. A scanning rule is used to determine which repository filters are used and at what frequency scanning will occur.</p>
         pub fn set_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RegistryScanningRule>>,
@@ -6698,14 +6392,12 @@ pub mod set_repository_policy_input {
         pub(crate) force: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
-        /// If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
-        /// If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.registry_id = input;
             self
@@ -6723,30 +6415,22 @@ pub mod set_repository_policy_input {
             self.repository_name = input;
             self
         }
-        /// <p>The JSON repository policy text to apply to the repository. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Amazon ECR repository
-        /// policies</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
+        /// <p>The JSON repository policy text to apply to the repository. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Amazon ECR repository policies</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
         pub fn policy_text(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy_text = Some(input.into());
             self
         }
-        /// <p>The JSON repository policy text to apply to the repository. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Amazon ECR repository
-        /// policies</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
+        /// <p>The JSON repository policy text to apply to the repository. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Amazon ECR repository policies</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
         pub fn set_policy_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_text = input;
             self
         }
-        /// <p>If the policy you are attempting to set on a repository policy would prevent you from
-        /// setting another policy in the future, you must force the <a>SetRepositoryPolicy</a> operation. This is intended to prevent accidental
-        /// repository lock outs.</p>
+        /// <p>If the policy you are attempting to set on a repository policy would prevent you from setting another policy in the future, you must force the <code>SetRepositoryPolicy</code> operation. This is intended to prevent accidental repository lock outs.</p>
         pub fn force(mut self, input: bool) -> Self {
             self.force = Some(input);
             self
         }
-        /// <p>If the policy you are attempting to set on a repository policy would prevent you from
-        /// setting another policy in the future, you must force the <a>SetRepositoryPolicy</a> operation. This is intended to prevent accidental
-        /// repository lock outs.</p>
+        /// <p>If the policy you are attempting to set on a repository policy would prevent you from setting another policy in the future, you must force the <code>SetRepositoryPolicy</code> operation. This is intended to prevent accidental repository lock outs.</p>
         pub fn set_force(mut self, input: std::option::Option<bool>) -> Self {
             self.force = input;
             self
@@ -6900,14 +6584,12 @@ pub mod start_image_scan_input {
         pub(crate) image_id: std::option::Option<crate::model::ImageIdentifier>,
     }
     impl Builder {
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
-        /// which to start an image scan request. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to start an image scan request. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
-        /// which to start an image scan request. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to start an image scan request. If you do not specify a registry, the default registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.registry_id = input;
             self
@@ -7086,14 +6768,12 @@ pub mod start_lifecycle_policy_preview_input {
         pub(crate) lifecycle_policy_text: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
-        /// If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
-        /// If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.registry_id = input;
             self
@@ -7111,14 +6791,12 @@ pub mod start_lifecycle_policy_preview_input {
             self.repository_name = input;
             self
         }
-        /// <p>The policy to be evaluated against. If you do not specify a policy, the current policy
-        /// for the repository is used.</p>
+        /// <p>The policy to be evaluated against. If you do not specify a policy, the current policy for the repository is used.</p>
         pub fn lifecycle_policy_text(mut self, input: impl Into<std::string::String>) -> Self {
             self.lifecycle_policy_text = Some(input.into());
             self
         }
-        /// <p>The policy to be evaluated against. If you do not specify a policy, the current policy
-        /// for the repository is used.</p>
+        /// <p>The policy to be evaluated against. If you do not specify a policy, the current policy for the repository is used.</p>
         pub fn set_lifecycle_policy_text(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7275,14 +6953,12 @@ pub mod tag_resource_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the the resource to which to add tags. Currently, the only supported
-        /// resource is an Amazon ECR repository.</p>
+        /// <p>The Amazon Resource Name (ARN) of the the resource to which to add tags. Currently, the only supported resource is an Amazon ECR repository.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the the resource to which to add tags. Currently, the only supported
-        /// resource is an Amazon ECR repository.</p>
+        /// <p>The Amazon Resource Name (ARN) of the the resource to which to add tags. Currently, the only supported resource is an Amazon ECR repository.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -7291,18 +6967,14 @@ pub mod tag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags to add to the resource. A tag is an array of key-value pairs.
-        /// Tag keys can have a maximum character length of 128 characters, and tag values can have
-        /// a maximum length of 256 characters.</p>
+        /// <p>The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>The tags to add to the resource. A tag is an array of key-value pairs.
-        /// Tag keys can have a maximum character length of 128 characters, and tag values can have
-        /// a maximum length of 256 characters.</p>
+        /// <p>The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -7455,14 +7127,12 @@ pub mod untag_resource_input {
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the resource from which to remove tags. Currently, the only supported
-        /// resource is an Amazon ECR repository.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource from which to remove tags. Currently, the only supported resource is an Amazon ECR repository.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource from which to remove tags. Currently, the only supported
-        /// resource is an Amazon ECR repository.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource from which to remove tags. Currently, the only supported resource is an Amazon ECR repository.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -7635,14 +7305,12 @@ pub mod upload_layer_part_input {
         pub(crate) layer_part_blob: std::option::Option<aws_smithy_types::Blob>,
     }
     impl Builder {
-        /// <p>The Amazon Web Services account ID associated with the registry to which you are uploading layer
-        /// parts. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry to which you are uploading layer parts. If you do not specify a registry, the default registry is assumed.</p>
         pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.registry_id = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services account ID associated with the registry to which you are uploading layer
-        /// parts. If you do not specify a registry, the default registry is assumed.</p>
+        /// <p>The Amazon Web Services account ID associated with the registry to which you are uploading layer parts. If you do not specify a registry, the default registry is assumed.</p>
         pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.registry_id = input;
             self
@@ -7660,14 +7328,12 @@ pub mod upload_layer_part_input {
             self.repository_name = input;
             self
         }
-        /// <p>The upload ID from a previous <a>InitiateLayerUpload</a> operation to
-        /// associate with the layer part upload.</p>
+        /// <p>The upload ID from a previous <code>InitiateLayerUpload</code> operation to associate with the layer part upload.</p>
         pub fn upload_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.upload_id = Some(input.into());
             self
         }
-        /// <p>The upload ID from a previous <a>InitiateLayerUpload</a> operation to
-        /// associate with the layer part upload.</p>
+        /// <p>The upload ID from a previous <code>InitiateLayerUpload</code> operation to associate with the layer part upload.</p>
         pub fn set_upload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.upload_id = input;
             self
@@ -7849,13 +7515,11 @@ impl UploadLayerPartInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UploadLayerPartInput {
-    /// <p>The Amazon Web Services account ID associated with the registry to which you are uploading layer
-    /// parts. If you do not specify a registry, the default registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry to which you are uploading layer parts. If you do not specify a registry, the default registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The name of the repository to which you are uploading layer parts.</p>
     pub repository_name: std::option::Option<std::string::String>,
-    /// <p>The upload ID from a previous <a>InitiateLayerUpload</a> operation to
-    /// associate with the layer part upload.</p>
+    /// <p>The upload ID from a previous <code>InitiateLayerUpload</code> operation to associate with the layer part upload.</p>
     pub upload_id: std::option::Option<std::string::String>,
     /// <p>The position of the first byte of the layer part witin the overall image layer.</p>
     pub part_first_byte: std::option::Option<i64>,
@@ -7865,8 +7529,7 @@ pub struct UploadLayerPartInput {
     pub layer_part_blob: std::option::Option<aws_smithy_types::Blob>,
 }
 impl UploadLayerPartInput {
-    /// <p>The Amazon Web Services account ID associated with the registry to which you are uploading layer
-    /// parts. If you do not specify a registry, the default registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry to which you are uploading layer parts. If you do not specify a registry, the default registry is assumed.</p>
     pub fn registry_id(&self) -> std::option::Option<&str> {
         self.registry_id.as_deref()
     }
@@ -7874,8 +7537,7 @@ impl UploadLayerPartInput {
     pub fn repository_name(&self) -> std::option::Option<&str> {
         self.repository_name.as_deref()
     }
-    /// <p>The upload ID from a previous <a>InitiateLayerUpload</a> operation to
-    /// associate with the layer part upload.</p>
+    /// <p>The upload ID from a previous <code>InitiateLayerUpload</code> operation to associate with the layer part upload.</p>
     pub fn upload_id(&self) -> std::option::Option<&str> {
         self.upload_id.as_deref()
     }
@@ -7909,15 +7571,13 @@ impl std::fmt::Debug for UploadLayerPartInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource from which to remove tags. Currently, the only supported
-    /// resource is an Amazon ECR repository.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource from which to remove tags. Currently, the only supported resource is an Amazon ECR repository.</p>
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The keys of the tags to be removed.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource from which to remove tags. Currently, the only supported
-    /// resource is an Amazon ECR repository.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource from which to remove tags. Currently, the only supported resource is an Amazon ECR repository.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -7939,23 +7599,17 @@ impl std::fmt::Debug for UntagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the the resource to which to add tags. Currently, the only supported
-    /// resource is an Amazon ECR repository.</p>
+    /// <p>The Amazon Resource Name (ARN) of the the resource to which to add tags. Currently, the only supported resource is an Amazon ECR repository.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The tags to add to the resource. A tag is an array of key-value pairs.
-    /// Tag keys can have a maximum character length of 128 characters, and tag values can have
-    /// a maximum length of 256 characters.</p>
+    /// <p>The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the the resource to which to add tags. Currently, the only supported
-    /// resource is an Amazon ECR repository.</p>
+    /// <p>The Amazon Resource Name (ARN) of the the resource to which to add tags. Currently, the only supported resource is an Amazon ECR repository.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The tags to add to the resource. A tag is an array of key-value pairs.
-    /// Tag keys can have a maximum character length of 128 characters, and tag values can have
-    /// a maximum length of 256 characters.</p>
+    /// <p>The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -7973,18 +7627,15 @@ impl std::fmt::Debug for TagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartLifecyclePolicyPreviewInput {
-    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
-    /// If you do not specify a registry, the default registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The name of the repository to be evaluated.</p>
     pub repository_name: std::option::Option<std::string::String>,
-    /// <p>The policy to be evaluated against. If you do not specify a policy, the current policy
-    /// for the repository is used.</p>
+    /// <p>The policy to be evaluated against. If you do not specify a policy, the current policy for the repository is used.</p>
     pub lifecycle_policy_text: std::option::Option<std::string::String>,
 }
 impl StartLifecyclePolicyPreviewInput {
-    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
-    /// If you do not specify a registry, the default registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.</p>
     pub fn registry_id(&self) -> std::option::Option<&str> {
         self.registry_id.as_deref()
     }
@@ -7992,8 +7643,7 @@ impl StartLifecyclePolicyPreviewInput {
     pub fn repository_name(&self) -> std::option::Option<&str> {
         self.repository_name.as_deref()
     }
-    /// <p>The policy to be evaluated against. If you do not specify a policy, the current policy
-    /// for the repository is used.</p>
+    /// <p>The policy to be evaluated against. If you do not specify a policy, the current policy for the repository is used.</p>
     pub fn lifecycle_policy_text(&self) -> std::option::Option<&str> {
         self.lifecycle_policy_text.as_deref()
     }
@@ -8012,8 +7662,7 @@ impl std::fmt::Debug for StartLifecyclePolicyPreviewInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartImageScanInput {
-    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
-    /// which to start an image scan request. If you do not specify a registry, the default registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to start an image scan request. If you do not specify a registry, the default registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The name of the repository that contains the images to scan.</p>
     pub repository_name: std::option::Option<std::string::String>,
@@ -8021,8 +7670,7 @@ pub struct StartImageScanInput {
     pub image_id: std::option::Option<crate::model::ImageIdentifier>,
 }
 impl StartImageScanInput {
-    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
-    /// which to start an image scan request. If you do not specify a registry, the default registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to start an image scan request. If you do not specify a registry, the default registry is assumed.</p>
     pub fn registry_id(&self) -> std::option::Option<&str> {
         self.registry_id.as_deref()
     }
@@ -8049,23 +7697,17 @@ impl std::fmt::Debug for StartImageScanInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetRepositoryPolicyInput {
-    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
-    /// If you do not specify a registry, the default registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The name of the repository to receive the policy.</p>
     pub repository_name: std::option::Option<std::string::String>,
-    /// <p>The JSON repository policy text to apply to the repository. For more information, see
-    /// <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Amazon ECR repository
-    /// policies</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
+    /// <p>The JSON repository policy text to apply to the repository. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Amazon ECR repository policies</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
     pub policy_text: std::option::Option<std::string::String>,
-    /// <p>If the policy you are attempting to set on a repository policy would prevent you from
-    /// setting another policy in the future, you must force the <a>SetRepositoryPolicy</a> operation. This is intended to prevent accidental
-    /// repository lock outs.</p>
+    /// <p>If the policy you are attempting to set on a repository policy would prevent you from setting another policy in the future, you must force the <code>SetRepositoryPolicy</code> operation. This is intended to prevent accidental repository lock outs.</p>
     pub force: bool,
 }
 impl SetRepositoryPolicyInput {
-    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
-    /// If you do not specify a registry, the default registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.</p>
     pub fn registry_id(&self) -> std::option::Option<&str> {
         self.registry_id.as_deref()
     }
@@ -8073,15 +7715,11 @@ impl SetRepositoryPolicyInput {
     pub fn repository_name(&self) -> std::option::Option<&str> {
         self.repository_name.as_deref()
     }
-    /// <p>The JSON repository policy text to apply to the repository. For more information, see
-    /// <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Amazon ECR repository
-    /// policies</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
+    /// <p>The JSON repository policy text to apply to the repository. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Amazon ECR repository policies</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
     pub fn policy_text(&self) -> std::option::Option<&str> {
         self.policy_text.as_deref()
     }
-    /// <p>If the policy you are attempting to set on a repository policy would prevent you from
-    /// setting another policy in the future, you must force the <a>SetRepositoryPolicy</a> operation. This is intended to prevent accidental
-    /// repository lock outs.</p>
+    /// <p>If the policy you are attempting to set on a repository policy would prevent you from setting another policy in the future, you must force the <code>SetRepositoryPolicy</code> operation. This is intended to prevent accidental repository lock outs.</p>
     pub fn force(&self) -> bool {
         self.force
     }
@@ -8125,30 +7763,20 @@ impl std::fmt::Debug for PutReplicationConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutRegistryScanningConfigurationInput {
     /// <p>The scanning type to set for the registry.</p>
-    /// <p>By default, the <code>BASIC</code> scan type is used. When basic scanning is set, you
-    /// may specify filters to determine which individual repositories, or all repositories, are
-    /// scanned when new images are pushed. Alternatively, you can do manual scans of images
-    /// with basic scanning.</p>
-    /// <p>When the <code>ENHANCED</code> scan type is set, Amazon Inspector provides automated, continuous
-    /// scanning of all repositories in your registry.</p>
+    /// <p>By default, the <code>BASIC</code> scan type is used. When basic scanning is set, you may specify filters to determine which individual repositories, or all repositories, are scanned when new images are pushed. Alternatively, you can do manual scans of images with basic scanning.</p>
+    /// <p>When the <code>ENHANCED</code> scan type is set, Amazon Inspector provides automated, continuous scanning of all repositories in your registry.</p>
     pub scan_type: std::option::Option<crate::model::ScanType>,
-    /// <p>The scanning rules to use for the registry. A scanning rule is used to determine which
-    /// repository filters are used and at what frequency scanning will occur.</p>
+    /// <p>The scanning rules to use for the registry. A scanning rule is used to determine which repository filters are used and at what frequency scanning will occur.</p>
     pub rules: std::option::Option<std::vec::Vec<crate::model::RegistryScanningRule>>,
 }
 impl PutRegistryScanningConfigurationInput {
     /// <p>The scanning type to set for the registry.</p>
-    /// <p>By default, the <code>BASIC</code> scan type is used. When basic scanning is set, you
-    /// may specify filters to determine which individual repositories, or all repositories, are
-    /// scanned when new images are pushed. Alternatively, you can do manual scans of images
-    /// with basic scanning.</p>
-    /// <p>When the <code>ENHANCED</code> scan type is set, Amazon Inspector provides automated, continuous
-    /// scanning of all repositories in your registry.</p>
+    /// <p>By default, the <code>BASIC</code> scan type is used. When basic scanning is set, you may specify filters to determine which individual repositories, or all repositories, are scanned when new images are pushed. Alternatively, you can do manual scans of images with basic scanning.</p>
+    /// <p>When the <code>ENHANCED</code> scan type is set, Amazon Inspector provides automated, continuous scanning of all repositories in your registry.</p>
     pub fn scan_type(&self) -> std::option::Option<&crate::model::ScanType> {
         self.scan_type.as_ref()
     }
-    /// <p>The scanning rules to use for the registry. A scanning rule is used to determine which
-    /// repository filters are used and at what frequency scanning will occur.</p>
+    /// <p>The scanning rules to use for the registry. A scanning rule is used to determine which repository filters are used and at what frequency scanning will occur.</p>
     pub fn rules(&self) -> std::option::Option<&[crate::model::RegistryScanningRule]> {
         self.rules.as_deref()
     }
@@ -8166,15 +7794,11 @@ impl std::fmt::Debug for PutRegistryScanningConfigurationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutRegistryPolicyInput {
-    /// <p>The JSON policy text to apply to your registry. The policy text follows the same
-    /// format as IAM policy text. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry-permissions.html">Registry
-    /// permissions</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
+    /// <p>The JSON policy text to apply to your registry. The policy text follows the same format as IAM policy text. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry-permissions.html">Registry permissions</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
     pub policy_text: std::option::Option<std::string::String>,
 }
 impl PutRegistryPolicyInput {
-    /// <p>The JSON policy text to apply to your registry. The policy text follows the same
-    /// format as IAM policy text. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry-permissions.html">Registry
-    /// permissions</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
+    /// <p>The JSON policy text to apply to your registry. The policy text follows the same format as IAM policy text. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry-permissions.html">Registry permissions</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
     pub fn policy_text(&self) -> std::option::Option<&str> {
         self.policy_text.as_deref()
     }
@@ -8191,8 +7815,7 @@ impl std::fmt::Debug for PutRegistryPolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutLifecyclePolicyInput {
-    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you
-    /// do  not specify a registry, the default registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do  not specify a registry, the default registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The name of the repository to receive the policy.</p>
     pub repository_name: std::option::Option<std::string::String>,
@@ -8200,8 +7823,7 @@ pub struct PutLifecyclePolicyInput {
     pub lifecycle_policy_text: std::option::Option<std::string::String>,
 }
 impl PutLifecyclePolicyInput {
-    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you
-    /// do  not specify a registry, the default registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do  not specify a registry, the default registry is assumed.</p>
     pub fn registry_id(&self) -> std::option::Option<&str> {
         self.registry_id.as_deref()
     }
@@ -8228,33 +7850,23 @@ impl std::fmt::Debug for PutLifecyclePolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutImageTagMutabilityInput {
-    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
-    /// which to update the image tag mutability settings. If you do not specify a registry, the default registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to update the image tag mutability settings. If you do not specify a registry, the default registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
-    /// <p>The name of the repository in which to update the image tag mutability
-    /// settings.</p>
+    /// <p>The name of the repository in which to update the image tag mutability settings.</p>
     pub repository_name: std::option::Option<std::string::String>,
-    /// <p>The tag mutability setting for the repository. If <code>MUTABLE</code> is specified,
-    /// image tags can be overwritten. If <code>IMMUTABLE</code> is specified, all image tags
-    /// within the repository will be immutable which will prevent them from being
-    /// overwritten.</p>
+    /// <p>The tag mutability setting for the repository. If <code>MUTABLE</code> is specified, image tags can be overwritten. If <code>IMMUTABLE</code> is specified, all image tags within the repository will be immutable which will prevent them from being overwritten.</p>
     pub image_tag_mutability: std::option::Option<crate::model::ImageTagMutability>,
 }
 impl PutImageTagMutabilityInput {
-    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
-    /// which to update the image tag mutability settings. If you do not specify a registry, the default registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to update the image tag mutability settings. If you do not specify a registry, the default registry is assumed.</p>
     pub fn registry_id(&self) -> std::option::Option<&str> {
         self.registry_id.as_deref()
     }
-    /// <p>The name of the repository in which to update the image tag mutability
-    /// settings.</p>
+    /// <p>The name of the repository in which to update the image tag mutability settings.</p>
     pub fn repository_name(&self) -> std::option::Option<&str> {
         self.repository_name.as_deref()
     }
-    /// <p>The tag mutability setting for the repository. If <code>MUTABLE</code> is specified,
-    /// image tags can be overwritten. If <code>IMMUTABLE</code> is specified, all image tags
-    /// within the repository will be immutable which will prevent them from being
-    /// overwritten.</p>
+    /// <p>The tag mutability setting for the repository. If <code>MUTABLE</code> is specified, image tags can be overwritten. If <code>IMMUTABLE</code> is specified, all image tags within the repository will be immutable which will prevent them from being overwritten.</p>
     pub fn image_tag_mutability(&self) -> std::option::Option<&crate::model::ImageTagMutability> {
         self.image_tag_mutability.as_ref()
     }
@@ -8273,33 +7885,23 @@ impl std::fmt::Debug for PutImageTagMutabilityInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutImageScanningConfigurationInput {
-    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
-    /// which to update the image scanning configuration setting.
-    /// If you do not specify a registry, the default registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to update the image scanning configuration setting. If you do not specify a registry, the default registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
-    /// <p>The name of the repository in which to update the image scanning configuration
-    /// setting.</p>
+    /// <p>The name of the repository in which to update the image scanning configuration setting.</p>
     pub repository_name: std::option::Option<std::string::String>,
-    /// <p>The image scanning configuration for the repository. This setting determines whether
-    /// images are scanned for known vulnerabilities after being pushed to the
-    /// repository.</p>
+    /// <p>The image scanning configuration for the repository. This setting determines whether images are scanned for known vulnerabilities after being pushed to the repository.</p>
     pub image_scanning_configuration: std::option::Option<crate::model::ImageScanningConfiguration>,
 }
 impl PutImageScanningConfigurationInput {
-    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
-    /// which to update the image scanning configuration setting.
-    /// If you do not specify a registry, the default registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to update the image scanning configuration setting. If you do not specify a registry, the default registry is assumed.</p>
     pub fn registry_id(&self) -> std::option::Option<&str> {
         self.registry_id.as_deref()
     }
-    /// <p>The name of the repository in which to update the image scanning configuration
-    /// setting.</p>
+    /// <p>The name of the repository in which to update the image scanning configuration setting.</p>
     pub fn repository_name(&self) -> std::option::Option<&str> {
         self.repository_name.as_deref()
     }
-    /// <p>The image scanning configuration for the repository. This setting determines whether
-    /// images are scanned for known vulnerabilities after being pushed to the
-    /// repository.</p>
+    /// <p>The image scanning configuration for the repository. This setting determines whether images are scanned for known vulnerabilities after being pushed to the repository.</p>
     pub fn image_scanning_configuration(
         &self,
     ) -> std::option::Option<&crate::model::ImageScanningConfiguration> {
@@ -8323,26 +7925,21 @@ impl std::fmt::Debug for PutImageScanningConfigurationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutImageInput {
-    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
-    /// which to put the image. If you do not specify a registry, the default registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to put the image. If you do not specify a registry, the default registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The name of the repository in which to put the image.</p>
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The image manifest corresponding to the image to be uploaded.</p>
     pub image_manifest: std::option::Option<std::string::String>,
-    /// <p>The media type of the image manifest. If you push an image manifest that does not
-    /// contain the <code>mediaType</code> field, you must specify the
-    /// <code>imageManifestMediaType</code> in the request.</p>
+    /// <p>The media type of the image manifest. If you push an image manifest that does not contain the <code>mediaType</code> field, you must specify the <code>imageManifestMediaType</code> in the request.</p>
     pub image_manifest_media_type: std::option::Option<std::string::String>,
-    /// <p>The tag to associate with the image. This parameter is required for images that use
-    /// the Docker Image Manifest V2 Schema 2 or Open Container Initiative (OCI) formats.</p>
+    /// <p>The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2 Schema 2 or Open Container Initiative (OCI) formats.</p>
     pub image_tag: std::option::Option<std::string::String>,
     /// <p>The image digest of the image manifest corresponding to the image.</p>
     pub image_digest: std::option::Option<std::string::String>,
 }
 impl PutImageInput {
-    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
-    /// which to put the image. If you do not specify a registry, the default registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to put the image. If you do not specify a registry, the default registry is assumed.</p>
     pub fn registry_id(&self) -> std::option::Option<&str> {
         self.registry_id.as_deref()
     }
@@ -8354,14 +7951,11 @@ impl PutImageInput {
     pub fn image_manifest(&self) -> std::option::Option<&str> {
         self.image_manifest.as_deref()
     }
-    /// <p>The media type of the image manifest. If you push an image manifest that does not
-    /// contain the <code>mediaType</code> field, you must specify the
-    /// <code>imageManifestMediaType</code> in the request.</p>
+    /// <p>The media type of the image manifest. If you push an image manifest that does not contain the <code>mediaType</code> field, you must specify the <code>imageManifestMediaType</code> in the request.</p>
     pub fn image_manifest_media_type(&self) -> std::option::Option<&str> {
         self.image_manifest_media_type.as_deref()
     }
-    /// <p>The tag to associate with the image. This parameter is required for images that use
-    /// the Docker Image Manifest V2 Schema 2 or Open Container Initiative (OCI) formats.</p>
+    /// <p>The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2 Schema 2 or Open Container Initiative (OCI) formats.</p>
     pub fn image_tag(&self) -> std::option::Option<&str> {
         self.image_tag.as_deref()
     }
@@ -8387,13 +7981,11 @@ impl std::fmt::Debug for PutImageInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
-    /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the
-    /// only supported resource is an Amazon ECR repository.</p>
+    /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the only supported resource is an Amazon ECR repository.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
-    /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the
-    /// only supported resource is an Amazon ECR repository.</p>
+    /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the only supported resource is an Amazon ECR repository.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -8410,37 +8002,21 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListImagesInput {
-    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
-    /// which to list images. If you do not specify a registry, the default registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to list images. If you do not specify a registry, the default registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The repository with image IDs to be listed.</p>
     pub repository_name: std::option::Option<std::string::String>,
-    /// <p>The <code>nextToken</code> value returned from a previous paginated
-    /// <code>ListImages</code> request where <code>maxResults</code> was used and the
-    /// results exceeded the value of that parameter. Pagination continues from the end of the
-    /// previous results that returned the <code>nextToken</code> value. This value is
-    /// <code>null</code> when there are no more results to return.</p>
-    /// <note>
-    /// <p>This token should be treated as an opaque identifier that is only used to
-    /// retrieve the next items in a list and not for other programmatic purposes.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListImages</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.</p> <note>
+    /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of image results returned by <code>ListImages</code> in paginated
-    /// output. When this parameter is used, <code>ListImages</code> only returns
-    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-    /// response element. The remaining results of the initial request can be seen by sending
-    /// another <code>ListImages</code> request with the returned <code>nextToken</code> value.
-    /// This value can be between 1 and 1000. If this parameter is
-    /// not used, then <code>ListImages</code> returns up to 100 results and a
-    /// <code>nextToken</code> value, if applicable.</p>
+    /// <p>The maximum number of image results returned by <code>ListImages</code> in paginated output. When this parameter is used, <code>ListImages</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListImages</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>ListImages</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The filter key and value with which to filter your <code>ListImages</code>
-    /// results.</p>
+    /// <p>The filter key and value with which to filter your <code>ListImages</code> results.</p>
     pub filter: std::option::Option<crate::model::ListImagesFilter>,
 }
 impl ListImagesInput {
-    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
-    /// which to list images. If you do not specify a registry, the default registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to list images. If you do not specify a registry, the default registry is assumed.</p>
     pub fn registry_id(&self) -> std::option::Option<&str> {
         self.registry_id.as_deref()
     }
@@ -8448,31 +8024,17 @@ impl ListImagesInput {
     pub fn repository_name(&self) -> std::option::Option<&str> {
         self.repository_name.as_deref()
     }
-    /// <p>The <code>nextToken</code> value returned from a previous paginated
-    /// <code>ListImages</code> request where <code>maxResults</code> was used and the
-    /// results exceeded the value of that parameter. Pagination continues from the end of the
-    /// previous results that returned the <code>nextToken</code> value. This value is
-    /// <code>null</code> when there are no more results to return.</p>
-    /// <note>
-    /// <p>This token should be treated as an opaque identifier that is only used to
-    /// retrieve the next items in a list and not for other programmatic purposes.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListImages</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return.</p> <note>
+    /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of image results returned by <code>ListImages</code> in paginated
-    /// output. When this parameter is used, <code>ListImages</code> only returns
-    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-    /// response element. The remaining results of the initial request can be seen by sending
-    /// another <code>ListImages</code> request with the returned <code>nextToken</code> value.
-    /// This value can be between 1 and 1000. If this parameter is
-    /// not used, then <code>ListImages</code> returns up to 100 results and a
-    /// <code>nextToken</code> value, if applicable.</p>
+    /// <p>The maximum number of image results returned by <code>ListImages</code> in paginated output. When this parameter is used, <code>ListImages</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListImages</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>ListImages</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The filter key and value with which to filter your <code>ListImages</code>
-    /// results.</p>
+    /// <p>The filter key and value with which to filter your <code>ListImages</code> results.</p>
     pub fn filter(&self) -> std::option::Option<&crate::model::ListImagesFilter> {
         self.filter.as_ref()
     }
@@ -8493,15 +8055,13 @@ impl std::fmt::Debug for ListImagesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InitiateLayerUploadInput {
-    /// <p>The Amazon Web Services account ID associated with the registry to which you intend to upload
-    /// layers. If you do not specify a registry, the default registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry to which you intend to upload layers. If you do not specify a registry, the default registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The name of the repository to which you intend to upload layers.</p>
     pub repository_name: std::option::Option<std::string::String>,
 }
 impl InitiateLayerUploadInput {
-    /// <p>The Amazon Web Services account ID associated with the registry to which you intend to upload
-    /// layers. If you do not specify a registry, the default registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry to which you intend to upload layers. If you do not specify a registry, the default registry is assumed.</p>
     pub fn registry_id(&self) -> std::option::Option<&str> {
         self.registry_id.as_deref()
     }
@@ -8523,15 +8083,13 @@ impl std::fmt::Debug for InitiateLayerUploadInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRepositoryPolicyInput {
-    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
-    /// If you do not specify a registry, the default registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The name of the repository with the policy to retrieve.</p>
     pub repository_name: std::option::Option<std::string::String>,
 }
 impl GetRepositoryPolicyInput {
-    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
-    /// If you do not specify a registry, the default registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.</p>
     pub fn registry_id(&self) -> std::option::Option<&str> {
         self.registry_id.as_deref()
     }
@@ -8575,39 +8133,21 @@ impl std::fmt::Debug for GetRegistryPolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLifecyclePolicyPreviewInput {
-    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
-    /// If you do not specify a registry, the default registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The name of the repository.</p>
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The list of imageIDs to be included.</p>
     pub image_ids: std::option::Option<std::vec::Vec<crate::model::ImageIdentifier>>,
-    /// <p>The <code>nextToken</code> value returned from a previous paginated
-    /// <code>GetLifecyclePolicyPreviewRequest</code> request where <code>maxResults</code>
-    /// was used and the  results exceeded the value of that parameter. Pagination continues
-    /// from the end of the  previous results that returned the <code>nextToken</code> value.
-    /// This value is  <code>null</code> when there are no more results to return. This option
-    /// cannot be used when you specify images with <code>imageIds</code>.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated  <code>GetLifecyclePolicyPreviewRequest</code> request where <code>maxResults</code> was used and the  results exceeded the value of that parameter. Pagination continues from the end of the  previous results that returned the <code>nextToken</code> value. This value is  <code>null</code> when there are no more results to return. This option cannot be used when you specify images with <code>imageIds</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of repository results returned by
-    /// <code>GetLifecyclePolicyPreviewRequest</code> in  paginated output. When this
-    /// parameter is used, <code>GetLifecyclePolicyPreviewRequest</code> only returns
-    /// <code>maxResults</code> results in a single page along with a
-    /// <code>nextToken</code>  response element. The remaining results of the initial request
-    /// can be seen by sending  another <code>GetLifecyclePolicyPreviewRequest</code> request
-    /// with the returned <code>nextToken</code>  value. This value can be between
-    /// 1 and 1000. If this  parameter is not used, then
-    /// <code>GetLifecyclePolicyPreviewRequest</code> returns up to  100
-    /// results and a <code>nextToken</code> value, if  applicable. This option cannot be used
-    /// when you specify images with <code>imageIds</code>.</p>
+    /// <p>The maximum number of repository results returned by <code>GetLifecyclePolicyPreviewRequest</code> in  paginated output. When this parameter is used, <code>GetLifecyclePolicyPreviewRequest</code> only returns  <code>maxResults</code> results in a single page along with a <code>nextToken</code>  response element. The remaining results of the initial request can be seen by sending  another <code>GetLifecyclePolicyPreviewRequest</code> request with the returned <code>nextToken</code>  value. This value can be between 1 and 1000. If this  parameter is not used, then <code>GetLifecyclePolicyPreviewRequest</code> returns up to  100 results and a <code>nextToken</code> value, if  applicable. This option cannot be used when you specify images with <code>imageIds</code>.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>An optional parameter that filters results based on image tag status and all tags, if
-    /// tagged.</p>
+    /// <p>An optional parameter that filters results based on image tag status and all tags, if tagged.</p>
     pub filter: std::option::Option<crate::model::LifecyclePolicyPreviewFilter>,
 }
 impl GetLifecyclePolicyPreviewInput {
-    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
-    /// If you do not specify a registry, the default registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.</p>
     pub fn registry_id(&self) -> std::option::Option<&str> {
         self.registry_id.as_deref()
     }
@@ -8619,31 +8159,15 @@ impl GetLifecyclePolicyPreviewInput {
     pub fn image_ids(&self) -> std::option::Option<&[crate::model::ImageIdentifier]> {
         self.image_ids.as_deref()
     }
-    /// <p>The <code>nextToken</code> value returned from a previous paginated
-    /// <code>GetLifecyclePolicyPreviewRequest</code> request where <code>maxResults</code>
-    /// was used and the  results exceeded the value of that parameter. Pagination continues
-    /// from the end of the  previous results that returned the <code>nextToken</code> value.
-    /// This value is  <code>null</code> when there are no more results to return. This option
-    /// cannot be used when you specify images with <code>imageIds</code>.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated  <code>GetLifecyclePolicyPreviewRequest</code> request where <code>maxResults</code> was used and the  results exceeded the value of that parameter. Pagination continues from the end of the  previous results that returned the <code>nextToken</code> value. This value is  <code>null</code> when there are no more results to return. This option cannot be used when you specify images with <code>imageIds</code>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of repository results returned by
-    /// <code>GetLifecyclePolicyPreviewRequest</code> in  paginated output. When this
-    /// parameter is used, <code>GetLifecyclePolicyPreviewRequest</code> only returns
-    /// <code>maxResults</code> results in a single page along with a
-    /// <code>nextToken</code>  response element. The remaining results of the initial request
-    /// can be seen by sending  another <code>GetLifecyclePolicyPreviewRequest</code> request
-    /// with the returned <code>nextToken</code>  value. This value can be between
-    /// 1 and 1000. If this  parameter is not used, then
-    /// <code>GetLifecyclePolicyPreviewRequest</code> returns up to  100
-    /// results and a <code>nextToken</code> value, if  applicable. This option cannot be used
-    /// when you specify images with <code>imageIds</code>.</p>
+    /// <p>The maximum number of repository results returned by <code>GetLifecyclePolicyPreviewRequest</code> in  paginated output. When this parameter is used, <code>GetLifecyclePolicyPreviewRequest</code> only returns  <code>maxResults</code> results in a single page along with a <code>nextToken</code>  response element. The remaining results of the initial request can be seen by sending  another <code>GetLifecyclePolicyPreviewRequest</code> request with the returned <code>nextToken</code>  value. This value can be between 1 and 1000. If this  parameter is not used, then <code>GetLifecyclePolicyPreviewRequest</code> returns up to  100 results and a <code>nextToken</code> value, if  applicable. This option cannot be used when you specify images with <code>imageIds</code>.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>An optional parameter that filters results based on image tag status and all tags, if
-    /// tagged.</p>
+    /// <p>An optional parameter that filters results based on image tag status and all tags, if tagged.</p>
     pub fn filter(&self) -> std::option::Option<&crate::model::LifecyclePolicyPreviewFilter> {
         self.filter.as_ref()
     }
@@ -8665,15 +8189,13 @@ impl std::fmt::Debug for GetLifecyclePolicyPreviewInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLifecyclePolicyInput {
-    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
-    /// If you do not specify a registry, the default registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The name of the repository.</p>
     pub repository_name: std::option::Option<std::string::String>,
 }
 impl GetLifecyclePolicyInput {
-    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
-    /// If you do not specify a registry, the default registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.</p>
     pub fn registry_id(&self) -> std::option::Option<&str> {
         self.registry_id.as_deref()
     }
@@ -8695,8 +8217,7 @@ impl std::fmt::Debug for GetLifecyclePolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDownloadUrlForLayerInput {
-    /// <p>The Amazon Web Services account ID associated with the registry that contains the image layer to
-    /// download. If you do not specify a registry, the default registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the image layer to download. If you do not specify a registry, the default registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The name of the repository that is associated with the image layer to download.</p>
     pub repository_name: std::option::Option<std::string::String>,
@@ -8704,8 +8225,7 @@ pub struct GetDownloadUrlForLayerInput {
     pub layer_digest: std::option::Option<std::string::String>,
 }
 impl GetDownloadUrlForLayerInput {
-    /// <p>The Amazon Web Services account ID associated with the registry that contains the image layer to
-    /// download. If you do not specify a registry, the default registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the image layer to download. If you do not specify a registry, the default registry is assumed.</p>
     pub fn registry_id(&self) -> std::option::Option<&str> {
         self.registry_id.as_deref()
     }
@@ -8732,13 +8252,11 @@ impl std::fmt::Debug for GetDownloadUrlForLayerInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAuthorizationTokenInput {
-    /// <p>A list of Amazon Web Services account IDs that are associated with the registries for which to get
-    /// AuthorizationData objects. If you do not specify a registry, the default registry is assumed.</p>
+    /// <p>A list of Amazon Web Services account IDs that are associated with the registries for which to get AuthorizationData objects. If you do not specify a registry, the default registry is assumed.</p>
     pub registry_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetAuthorizationTokenInput {
-    /// <p>A list of Amazon Web Services account IDs that are associated with the registries for which to get
-    /// AuthorizationData objects. If you do not specify a registry, the default registry is assumed.</p>
+    /// <p>A list of Amazon Web Services account IDs that are associated with the registries for which to get AuthorizationData objects. If you do not specify a registry, the default registry is assumed.</p>
     pub fn registry_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.registry_ids.as_deref()
     }
@@ -8755,69 +8273,33 @@ impl std::fmt::Debug for GetAuthorizationTokenInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRepositoriesInput {
-    /// <p>The Amazon Web Services account ID associated with the registry that contains the repositories to be
-    /// described. If you do not specify a registry, the default registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the repositories to be described. If you do not specify a registry, the default registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
-    /// <p>A list of repositories to describe. If this parameter is omitted, then all
-    /// repositories in a registry are described.</p>
+    /// <p>A list of repositories to describe. If this parameter is omitted, then all repositories in a registry are described.</p>
     pub repository_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The <code>nextToken</code> value returned from a previous paginated
-    /// <code>DescribeRepositories</code> request where <code>maxResults</code> was used and
-    /// the results exceeded the value of that parameter. Pagination continues from the end of
-    /// the previous results that returned the <code>nextToken</code> value. This value is
-    /// <code>null</code> when there are no more results to return. This option cannot be
-    /// used when you specify repositories with <code>repositoryNames</code>.</p>
-    /// <note>
-    /// <p>This token should be treated as an opaque identifier that is only used to
-    /// retrieve the next items in a list and not for other programmatic purposes.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeRepositories</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return. This option cannot be used when you specify repositories with <code>repositoryNames</code>.</p> <note>
+    /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of repository results returned by <code>DescribeRepositories</code>
-    /// in paginated output. When this parameter is used, <code>DescribeRepositories</code> only
-    /// returns <code>maxResults</code> results in a single page along with a
-    /// <code>nextToken</code> response element. The remaining results of the initial
-    /// request can be seen by sending another <code>DescribeRepositories</code> request with
-    /// the returned <code>nextToken</code> value. This value can be between 1
-    /// and 1000. If this parameter is not used, then
-    /// <code>DescribeRepositories</code> returns up to 100 results and a
-    /// <code>nextToken</code> value, if applicable. This option cannot be used when you
-    /// specify repositories with <code>repositoryNames</code>.</p>
+    /// <p>The maximum number of repository results returned by <code>DescribeRepositories</code> in paginated output. When this parameter is used, <code>DescribeRepositories</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeRepositories</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>DescribeRepositories</code> returns up to 100 results and a <code>nextToken</code> value, if applicable. This option cannot be used when you specify repositories with <code>repositoryNames</code>.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl DescribeRepositoriesInput {
-    /// <p>The Amazon Web Services account ID associated with the registry that contains the repositories to be
-    /// described. If you do not specify a registry, the default registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the repositories to be described. If you do not specify a registry, the default registry is assumed.</p>
     pub fn registry_id(&self) -> std::option::Option<&str> {
         self.registry_id.as_deref()
     }
-    /// <p>A list of repositories to describe. If this parameter is omitted, then all
-    /// repositories in a registry are described.</p>
+    /// <p>A list of repositories to describe. If this parameter is omitted, then all repositories in a registry are described.</p>
     pub fn repository_names(&self) -> std::option::Option<&[std::string::String]> {
         self.repository_names.as_deref()
     }
-    /// <p>The <code>nextToken</code> value returned from a previous paginated
-    /// <code>DescribeRepositories</code> request where <code>maxResults</code> was used and
-    /// the results exceeded the value of that parameter. Pagination continues from the end of
-    /// the previous results that returned the <code>nextToken</code> value. This value is
-    /// <code>null</code> when there are no more results to return. This option cannot be
-    /// used when you specify repositories with <code>repositoryNames</code>.</p>
-    /// <note>
-    /// <p>This token should be treated as an opaque identifier that is only used to
-    /// retrieve the next items in a list and not for other programmatic purposes.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeRepositories</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return. This option cannot be used when you specify repositories with <code>repositoryNames</code>.</p> <note>
+    /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of repository results returned by <code>DescribeRepositories</code>
-    /// in paginated output. When this parameter is used, <code>DescribeRepositories</code> only
-    /// returns <code>maxResults</code> results in a single page along with a
-    /// <code>nextToken</code> response element. The remaining results of the initial
-    /// request can be seen by sending another <code>DescribeRepositories</code> request with
-    /// the returned <code>nextToken</code> value. This value can be between 1
-    /// and 1000. If this parameter is not used, then
-    /// <code>DescribeRepositories</code> returns up to 100 results and a
-    /// <code>nextToken</code> value, if applicable. This option cannot be used when you
-    /// specify repositories with <code>repositoryNames</code>.</p>
+    /// <p>The maximum number of repository results returned by <code>DescribeRepositories</code> in paginated output. When this parameter is used, <code>DescribeRepositories</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeRepositories</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>DescribeRepositories</code> returns up to 100 results and a <code>nextToken</code> value, if applicable. This option cannot be used when you specify repositories with <code>repositoryNames</code>.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -8848,61 +8330,29 @@ impl std::fmt::Debug for DescribeRegistryInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePullThroughCacheRulesInput {
-    /// <p>The Amazon Web Services account ID associated with the registry to return the pull through cache
-    /// rules for. If you do not specify a registry, the default registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry to return the pull through cache rules for. If you do not specify a registry, the default registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon ECR repository prefixes associated with the pull through cache rules to return.
-    /// If no repository prefix value is specified, all pull through cache rules are
-    /// returned.</p>
+    /// <p>The Amazon ECR repository prefixes associated with the pull through cache rules to return. If no repository prefix value is specified, all pull through cache rules are returned.</p>
     pub ecr_repository_prefixes: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The <code>nextToken</code> value returned from a previous paginated
-    /// <code>DescribePullThroughCacheRulesRequest</code> request where
-    /// <code>maxResults</code> was used and the results exceeded the value of that
-    /// parameter. Pagination continues from the end of the previous results that returned the
-    /// <code>nextToken</code> value. This value is null when there are no more results to
-    /// return.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribePullThroughCacheRulesRequest</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is null when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of pull through cache rules returned by
-    /// <code>DescribePullThroughCacheRulesRequest</code> in paginated output. When this
-    /// parameter is used, <code>DescribePullThroughCacheRulesRequest</code> only returns
-    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-    /// response element. The remaining results of the initial request can be seen by sending
-    /// another <code>DescribePullThroughCacheRulesRequest</code> request with the returned
-    /// <code>nextToken</code> value. This value can be between 1 and 1000. If this
-    /// parameter is not used, then <code>DescribePullThroughCacheRulesRequest</code> returns up
-    /// to 100 results and a <code>nextToken</code> value, if applicable.</p>
+    /// <p>The maximum number of pull through cache rules returned by <code>DescribePullThroughCacheRulesRequest</code> in paginated output. When this parameter is used, <code>DescribePullThroughCacheRulesRequest</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribePullThroughCacheRulesRequest</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>DescribePullThroughCacheRulesRequest</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl DescribePullThroughCacheRulesInput {
-    /// <p>The Amazon Web Services account ID associated with the registry to return the pull through cache
-    /// rules for. If you do not specify a registry, the default registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry to return the pull through cache rules for. If you do not specify a registry, the default registry is assumed.</p>
     pub fn registry_id(&self) -> std::option::Option<&str> {
         self.registry_id.as_deref()
     }
-    /// <p>The Amazon ECR repository prefixes associated with the pull through cache rules to return.
-    /// If no repository prefix value is specified, all pull through cache rules are
-    /// returned.</p>
+    /// <p>The Amazon ECR repository prefixes associated with the pull through cache rules to return. If no repository prefix value is specified, all pull through cache rules are returned.</p>
     pub fn ecr_repository_prefixes(&self) -> std::option::Option<&[std::string::String]> {
         self.ecr_repository_prefixes.as_deref()
     }
-    /// <p>The <code>nextToken</code> value returned from a previous paginated
-    /// <code>DescribePullThroughCacheRulesRequest</code> request where
-    /// <code>maxResults</code> was used and the results exceeded the value of that
-    /// parameter. Pagination continues from the end of the previous results that returned the
-    /// <code>nextToken</code> value. This value is null when there are no more results to
-    /// return.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribePullThroughCacheRulesRequest</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is null when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of pull through cache rules returned by
-    /// <code>DescribePullThroughCacheRulesRequest</code> in paginated output. When this
-    /// parameter is used, <code>DescribePullThroughCacheRulesRequest</code> only returns
-    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-    /// response element. The remaining results of the initial request can be seen by sending
-    /// another <code>DescribePullThroughCacheRulesRequest</code> request with the returned
-    /// <code>nextToken</code> value. This value can be between 1 and 1000. If this
-    /// parameter is not used, then <code>DescribePullThroughCacheRulesRequest</code> returns up
-    /// to 100 results and a <code>nextToken</code> value, if applicable.</p>
+    /// <p>The maximum number of pull through cache rules returned by <code>DescribePullThroughCacheRulesRequest</code> in paginated output. When this parameter is used, <code>DescribePullThroughCacheRulesRequest</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribePullThroughCacheRulesRequest</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>DescribePullThroughCacheRulesRequest</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -8922,33 +8372,19 @@ impl std::fmt::Debug for DescribePullThroughCacheRulesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeImageScanFindingsInput {
-    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
-    /// which to describe the image scan findings for. If you do not specify a registry, the default registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to describe the image scan findings for. If you do not specify a registry, the default registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The repository for the image for which to describe the scan findings.</p>
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
     pub image_id: std::option::Option<crate::model::ImageIdentifier>,
-    /// <p>The <code>nextToken</code> value returned from a previous paginated
-    /// <code>DescribeImageScanFindings</code> request where <code>maxResults</code> was
-    /// used and the results exceeded the value of that parameter. Pagination continues from the
-    /// end of the previous results that returned the <code>nextToken</code> value. This value
-    /// is null when there are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeImageScanFindings</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is null when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of image scan results returned by
-    /// <code>DescribeImageScanFindings</code> in paginated output. When this parameter is
-    /// used, <code>DescribeImageScanFindings</code> only returns <code>maxResults</code>
-    /// results in a single page along with a <code>nextToken</code> response element. The
-    /// remaining results of the initial request can be seen by sending another
-    /// <code>DescribeImageScanFindings</code> request with the returned
-    /// <code>nextToken</code> value. This value can be between 1 and 1000. If this
-    /// parameter is not used, then <code>DescribeImageScanFindings</code> returns up to 100
-    /// results and a <code>nextToken</code> value, if applicable.</p>
+    /// <p>The maximum number of image scan results returned by <code>DescribeImageScanFindings</code> in paginated output. When this parameter is used, <code>DescribeImageScanFindings</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeImageScanFindings</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>DescribeImageScanFindings</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl DescribeImageScanFindingsInput {
-    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
-    /// which to describe the image scan findings for. If you do not specify a registry, the default registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to describe the image scan findings for. If you do not specify a registry, the default registry is assumed.</p>
     pub fn registry_id(&self) -> std::option::Option<&str> {
         self.registry_id.as_deref()
     }
@@ -8960,23 +8396,11 @@ impl DescribeImageScanFindingsInput {
     pub fn image_id(&self) -> std::option::Option<&crate::model::ImageIdentifier> {
         self.image_id.as_ref()
     }
-    /// <p>The <code>nextToken</code> value returned from a previous paginated
-    /// <code>DescribeImageScanFindings</code> request where <code>maxResults</code> was
-    /// used and the results exceeded the value of that parameter. Pagination continues from the
-    /// end of the previous results that returned the <code>nextToken</code> value. This value
-    /// is null when there are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeImageScanFindings</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is null when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of image scan results returned by
-    /// <code>DescribeImageScanFindings</code> in paginated output. When this parameter is
-    /// used, <code>DescribeImageScanFindings</code> only returns <code>maxResults</code>
-    /// results in a single page along with a <code>nextToken</code> response element. The
-    /// remaining results of the initial request can be seen by sending another
-    /// <code>DescribeImageScanFindings</code> request with the returned
-    /// <code>nextToken</code> value. This value can be between 1 and 1000. If this
-    /// parameter is not used, then <code>DescribeImageScanFindings</code> returns up to 100
-    /// results and a <code>nextToken</code> value, if applicable.</p>
+    /// <p>The maximum number of image scan results returned by <code>DescribeImageScanFindings</code> in paginated output. When this parameter is used, <code>DescribeImageScanFindings</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeImageScanFindings</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>DescribeImageScanFindings</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -8997,37 +8421,21 @@ impl std::fmt::Debug for DescribeImageScanFindingsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeImagesInput {
-    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
-    /// which to describe images. If you do not specify a registry, the default registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to describe images. If you do not specify a registry, the default registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The repository that contains the images to describe.</p>
     pub repository_name: std::option::Option<std::string::String>,
     /// <p>The list of image IDs for the requested repository.</p>
     pub image_ids: std::option::Option<std::vec::Vec<crate::model::ImageIdentifier>>,
-    /// <p>The <code>nextToken</code> value returned from a previous paginated
-    /// <code>DescribeImages</code> request where <code>maxResults</code> was used and the
-    /// results exceeded the value of that parameter. Pagination continues from the end of the
-    /// previous results that returned the <code>nextToken</code> value. This value is
-    /// <code>null</code> when there are no more results to return. This option cannot be
-    /// used when you specify images with <code>imageIds</code>.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeImages</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return. This option cannot be used when you specify images with <code>imageIds</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of repository results returned by <code>DescribeImages</code> in
-    /// paginated output. When this parameter is used, <code>DescribeImages</code> only returns
-    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-    /// response element. The remaining results of the initial request can be seen by sending
-    /// another <code>DescribeImages</code> request with the returned <code>nextToken</code>
-    /// value. This value can be between 1 and 1000. If this
-    /// parameter is not used, then <code>DescribeImages</code> returns up to
-    /// 100 results and a <code>nextToken</code> value, if applicable. This
-    /// option cannot be used when you specify images with <code>imageIds</code>.</p>
+    /// <p>The maximum number of repository results returned by <code>DescribeImages</code> in paginated output. When this parameter is used, <code>DescribeImages</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeImages</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>DescribeImages</code> returns up to 100 results and a <code>nextToken</code> value, if applicable. This option cannot be used when you specify images with <code>imageIds</code>.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The filter key and value with which to filter your <code>DescribeImages</code>
-    /// results.</p>
+    /// <p>The filter key and value with which to filter your <code>DescribeImages</code> results.</p>
     pub filter: std::option::Option<crate::model::DescribeImagesFilter>,
 }
 impl DescribeImagesInput {
-    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in
-    /// which to describe images. If you do not specify a registry, the default registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to describe images. If you do not specify a registry, the default registry is assumed.</p>
     pub fn registry_id(&self) -> std::option::Option<&str> {
         self.registry_id.as_deref()
     }
@@ -9039,29 +8447,15 @@ impl DescribeImagesInput {
     pub fn image_ids(&self) -> std::option::Option<&[crate::model::ImageIdentifier]> {
         self.image_ids.as_deref()
     }
-    /// <p>The <code>nextToken</code> value returned from a previous paginated
-    /// <code>DescribeImages</code> request where <code>maxResults</code> was used and the
-    /// results exceeded the value of that parameter. Pagination continues from the end of the
-    /// previous results that returned the <code>nextToken</code> value. This value is
-    /// <code>null</code> when there are no more results to return. This option cannot be
-    /// used when you specify images with <code>imageIds</code>.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeImages</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is <code>null</code> when there are no more results to return. This option cannot be used when you specify images with <code>imageIds</code>.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of repository results returned by <code>DescribeImages</code> in
-    /// paginated output. When this parameter is used, <code>DescribeImages</code> only returns
-    /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-    /// response element. The remaining results of the initial request can be seen by sending
-    /// another <code>DescribeImages</code> request with the returned <code>nextToken</code>
-    /// value. This value can be between 1 and 1000. If this
-    /// parameter is not used, then <code>DescribeImages</code> returns up to
-    /// 100 results and a <code>nextToken</code> value, if applicable. This
-    /// option cannot be used when you specify images with <code>imageIds</code>.</p>
+    /// <p>The maximum number of repository results returned by <code>DescribeImages</code> in paginated output. When this parameter is used, <code>DescribeImages</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>DescribeImages</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>DescribeImages</code> returns up to 100 results and a <code>nextToken</code> value, if applicable. This option cannot be used when you specify images with <code>imageIds</code>.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The filter key and value with which to filter your <code>DescribeImages</code>
-    /// results.</p>
+    /// <p>The filter key and value with which to filter your <code>DescribeImages</code> results.</p>
     pub fn filter(&self) -> std::option::Option<&crate::model::DescribeImagesFilter> {
         self.filter.as_ref()
     }
@@ -9118,21 +8512,17 @@ impl std::fmt::Debug for DescribeImageReplicationStatusInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRepositoryPolicyInput {
-    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository policy
-    /// to delete. If you do not specify a registry, the default registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository policy to delete. If you do not specify a registry, the default registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
-    /// <p>The name of the repository that is associated with the repository policy to
-    /// delete.</p>
+    /// <p>The name of the repository that is associated with the repository policy to delete.</p>
     pub repository_name: std::option::Option<std::string::String>,
 }
 impl DeleteRepositoryPolicyInput {
-    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository policy
-    /// to delete. If you do not specify a registry, the default registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository policy to delete. If you do not specify a registry, the default registry is assumed.</p>
     pub fn registry_id(&self) -> std::option::Option<&str> {
         self.registry_id.as_deref()
     }
-    /// <p>The name of the repository that is associated with the repository policy to
-    /// delete.</p>
+    /// <p>The name of the repository that is associated with the repository policy to delete.</p>
     pub fn repository_name(&self) -> std::option::Option<&str> {
         self.repository_name.as_deref()
     }
@@ -9150,8 +8540,7 @@ impl std::fmt::Debug for DeleteRepositoryPolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRepositoryInput {
-    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository to
-    /// delete. If you do not specify a registry, the default registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository to delete. If you do not specify a registry, the default registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The name of the repository to delete.</p>
     pub repository_name: std::option::Option<std::string::String>,
@@ -9159,8 +8548,7 @@ pub struct DeleteRepositoryInput {
     pub force: bool,
 }
 impl DeleteRepositoryInput {
-    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository to
-    /// delete. If you do not specify a registry, the default registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository to delete. If you do not specify a registry, the default registry is assumed.</p>
     pub fn registry_id(&self) -> std::option::Option<&str> {
         self.registry_id.as_deref()
     }
@@ -9198,21 +8586,17 @@ impl std::fmt::Debug for DeleteRegistryPolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePullThroughCacheRuleInput {
-    /// <p>The Amazon ECR repository prefix associated with the pull through cache rule to
-    /// delete.</p>
+    /// <p>The Amazon ECR repository prefix associated with the pull through cache rule to delete.</p>
     pub ecr_repository_prefix: std::option::Option<std::string::String>,
-    /// <p>The Amazon Web Services account ID associated with the registry that contains the pull through cache
-    /// rule. If you do not specify a registry, the default registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the pull through cache rule. If you do not specify a registry, the default registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
 }
 impl DeletePullThroughCacheRuleInput {
-    /// <p>The Amazon ECR repository prefix associated with the pull through cache rule to
-    /// delete.</p>
+    /// <p>The Amazon ECR repository prefix associated with the pull through cache rule to delete.</p>
     pub fn ecr_repository_prefix(&self) -> std::option::Option<&str> {
         self.ecr_repository_prefix.as_deref()
     }
-    /// <p>The Amazon Web Services account ID associated with the registry that contains the pull through cache
-    /// rule. If you do not specify a registry, the default registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the pull through cache rule. If you do not specify a registry, the default registry is assumed.</p>
     pub fn registry_id(&self) -> std::option::Option<&str> {
         self.registry_id.as_deref()
     }
@@ -9230,15 +8614,13 @@ impl std::fmt::Debug for DeletePullThroughCacheRuleInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLifecyclePolicyInput {
-    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
-    /// If you do not specify a registry, the default registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The name of the repository.</p>
     pub repository_name: std::option::Option<std::string::String>,
 }
 impl DeleteLifecyclePolicyInput {
-    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository.
-    /// If you do not specify a registry, the default registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.</p>
     pub fn registry_id(&self) -> std::option::Option<&str> {
         self.registry_id.as_deref()
     }
@@ -9260,65 +8642,43 @@ impl std::fmt::Debug for DeleteLifecyclePolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRepositoryInput {
-    /// <p>The Amazon Web Services account ID associated with the registry to create the repository.
-    /// If you do not specify a registry, the default registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry to create the repository. If you do not specify a registry, the default registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
-    /// <p>The name to use for the repository. The repository name may be specified on its own
-    /// (such as <code>nginx-web-app</code>) or it can be prepended with a namespace to group
-    /// the repository into a category (such as <code>project-a/nginx-web-app</code>).</p>
+    /// <p>The name to use for the repository. The repository name may be specified on its own (such as <code>nginx-web-app</code>) or it can be prepended with a namespace to group the repository into a category (such as <code>project-a/nginx-web-app</code>).</p>
     pub repository_name: std::option::Option<std::string::String>,
-    /// <p>The metadata that you apply to the repository to help you categorize and organize
-    /// them. Each tag consists of a key and an optional value, both of which you define.
-    /// Tag keys can have a maximum character length of 128 characters, and tag values can have
-    /// a maximum length of 256 characters.</p>
+    /// <p>The metadata that you apply to the repository to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>The tag mutability setting for the repository. If this parameter is omitted, the
-    /// default setting of <code>MUTABLE</code> will be used which will allow image tags to be
-    /// overwritten. If <code>IMMUTABLE</code> is specified, all image tags within the
-    /// repository will be immutable which will prevent them from being overwritten.</p>
+    /// <p>The tag mutability setting for the repository. If this parameter is omitted, the default setting of <code>MUTABLE</code> will be used which will allow image tags to be overwritten. If <code>IMMUTABLE</code> is specified, all image tags within the repository will be immutable which will prevent them from being overwritten.</p>
     pub image_tag_mutability: std::option::Option<crate::model::ImageTagMutability>,
-    /// <p>The image scanning configuration for the repository. This determines whether images
-    /// are scanned for known vulnerabilities after being pushed to the repository.</p>
+    /// <p>The image scanning configuration for the repository. This determines whether images are scanned for known vulnerabilities after being pushed to the repository.</p>
     pub image_scanning_configuration: std::option::Option<crate::model::ImageScanningConfiguration>,
-    /// <p>The encryption configuration for the repository. This determines how the contents of
-    /// your repository are encrypted at rest.</p>
+    /// <p>The encryption configuration for the repository. This determines how the contents of your repository are encrypted at rest.</p>
     pub encryption_configuration: std::option::Option<crate::model::EncryptionConfiguration>,
 }
 impl CreateRepositoryInput {
-    /// <p>The Amazon Web Services account ID associated with the registry to create the repository.
-    /// If you do not specify a registry, the default registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry to create the repository. If you do not specify a registry, the default registry is assumed.</p>
     pub fn registry_id(&self) -> std::option::Option<&str> {
         self.registry_id.as_deref()
     }
-    /// <p>The name to use for the repository. The repository name may be specified on its own
-    /// (such as <code>nginx-web-app</code>) or it can be prepended with a namespace to group
-    /// the repository into a category (such as <code>project-a/nginx-web-app</code>).</p>
+    /// <p>The name to use for the repository. The repository name may be specified on its own (such as <code>nginx-web-app</code>) or it can be prepended with a namespace to group the repository into a category (such as <code>project-a/nginx-web-app</code>).</p>
     pub fn repository_name(&self) -> std::option::Option<&str> {
         self.repository_name.as_deref()
     }
-    /// <p>The metadata that you apply to the repository to help you categorize and organize
-    /// them. Each tag consists of a key and an optional value, both of which you define.
-    /// Tag keys can have a maximum character length of 128 characters, and tag values can have
-    /// a maximum length of 256 characters.</p>
+    /// <p>The metadata that you apply to the repository to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>The tag mutability setting for the repository. If this parameter is omitted, the
-    /// default setting of <code>MUTABLE</code> will be used which will allow image tags to be
-    /// overwritten. If <code>IMMUTABLE</code> is specified, all image tags within the
-    /// repository will be immutable which will prevent them from being overwritten.</p>
+    /// <p>The tag mutability setting for the repository. If this parameter is omitted, the default setting of <code>MUTABLE</code> will be used which will allow image tags to be overwritten. If <code>IMMUTABLE</code> is specified, all image tags within the repository will be immutable which will prevent them from being overwritten.</p>
     pub fn image_tag_mutability(&self) -> std::option::Option<&crate::model::ImageTagMutability> {
         self.image_tag_mutability.as_ref()
     }
-    /// <p>The image scanning configuration for the repository. This determines whether images
-    /// are scanned for known vulnerabilities after being pushed to the repository.</p>
+    /// <p>The image scanning configuration for the repository. This determines whether images are scanned for known vulnerabilities after being pushed to the repository.</p>
     pub fn image_scanning_configuration(
         &self,
     ) -> std::option::Option<&crate::model::ImageScanningConfiguration> {
         self.image_scanning_configuration.as_ref()
     }
-    /// <p>The encryption configuration for the repository. This determines how the contents of
-    /// your repository are encrypted at rest.</p>
+    /// <p>The encryption configuration for the repository. This determines how the contents of your repository are encrypted at rest.</p>
     pub fn encryption_configuration(
         &self,
     ) -> std::option::Option<&crate::model::EncryptionConfiguration> {
@@ -9347,11 +8707,9 @@ impl std::fmt::Debug for CreateRepositoryInput {
 pub struct CreatePullThroughCacheRuleInput {
     /// <p>The repository name prefix to use when caching images from the source registry.</p>
     pub ecr_repository_prefix: std::option::Option<std::string::String>,
-    /// <p>The registry URL of the upstream public registry to use as the source for the pull
-    /// through cache rule.</p>
+    /// <p>The registry URL of the upstream public registry to use as the source for the pull through cache rule.</p>
     pub upstream_registry_url: std::option::Option<std::string::String>,
-    /// <p>The Amazon Web Services account ID associated with the registry to create the pull through cache
-    /// rule for. If you do not specify a registry, the default registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry to create the pull through cache rule for. If you do not specify a registry, the default registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
 }
 impl CreatePullThroughCacheRuleInput {
@@ -9359,13 +8717,11 @@ impl CreatePullThroughCacheRuleInput {
     pub fn ecr_repository_prefix(&self) -> std::option::Option<&str> {
         self.ecr_repository_prefix.as_deref()
     }
-    /// <p>The registry URL of the upstream public registry to use as the source for the pull
-    /// through cache rule.</p>
+    /// <p>The registry URL of the upstream public registry to use as the source for the pull through cache rule.</p>
     pub fn upstream_registry_url(&self) -> std::option::Option<&str> {
         self.upstream_registry_url.as_deref()
     }
-    /// <p>The Amazon Web Services account ID associated with the registry to create the pull through cache
-    /// rule for. If you do not specify a registry, the default registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry to create the pull through cache rule for. If you do not specify a registry, the default registry is assumed.</p>
     pub fn registry_id(&self) -> std::option::Option<&str> {
         self.registry_id.as_deref()
     }
@@ -9384,20 +8740,17 @@ impl std::fmt::Debug for CreatePullThroughCacheRuleInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CompleteLayerUploadInput {
-    /// <p>The Amazon Web Services account ID associated with the registry to which to upload layers.
-    /// If you do not specify a registry, the default registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry to which to upload layers. If you do not specify a registry, the default registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The name of the repository to associate with the image layer.</p>
     pub repository_name: std::option::Option<std::string::String>,
-    /// <p>The upload ID from a previous <a>InitiateLayerUpload</a> operation to
-    /// associate with the image layer.</p>
+    /// <p>The upload ID from a previous <code>InitiateLayerUpload</code> operation to associate with the image layer.</p>
     pub upload_id: std::option::Option<std::string::String>,
     /// <p>The <code>sha256</code> digest of the image layer.</p>
     pub layer_digests: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CompleteLayerUploadInput {
-    /// <p>The Amazon Web Services account ID associated with the registry to which to upload layers.
-    /// If you do not specify a registry, the default registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry to which to upload layers. If you do not specify a registry, the default registry is assumed.</p>
     pub fn registry_id(&self) -> std::option::Option<&str> {
         self.registry_id.as_deref()
     }
@@ -9405,8 +8758,7 @@ impl CompleteLayerUploadInput {
     pub fn repository_name(&self) -> std::option::Option<&str> {
         self.repository_name.as_deref()
     }
-    /// <p>The upload ID from a previous <a>InitiateLayerUpload</a> operation to
-    /// associate with the image layer.</p>
+    /// <p>The upload ID from a previous <code>InitiateLayerUpload</code> operation to associate with the image layer.</p>
     pub fn upload_id(&self) -> std::option::Option<&str> {
         self.upload_id.as_deref()
     }
@@ -9451,25 +8803,18 @@ impl std::fmt::Debug for BatchGetRepositoryScanningConfigurationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetImageInput {
-    /// <p>The Amazon Web Services account ID associated with the registry that contains the images to
-    /// describe. If you do not specify a registry, the default registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the images to describe. If you do not specify a registry, the default registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The repository that contains the images to describe.</p>
     pub repository_name: std::option::Option<std::string::String>,
-    /// <p>A list of image ID references that correspond to images to describe. The format of the
-    /// <code>imageIds</code> reference is <code>imageTag=tag</code> or
-    /// <code>imageDigest=digest</code>.</p>
+    /// <p>A list of image ID references that correspond to images to describe. The format of the <code>imageIds</code> reference is <code>imageTag=tag</code> or <code>imageDigest=digest</code>.</p>
     pub image_ids: std::option::Option<std::vec::Vec<crate::model::ImageIdentifier>>,
     /// <p>The accepted media types for the request.</p>
-    /// <p>Valid values: <code>application/vnd.docker.distribution.manifest.v1+json</code> |
-    /// <code>application/vnd.docker.distribution.manifest.v2+json</code> |
-    /// <code>application/vnd.oci.image.manifest.v1+json</code>
-    /// </p>
+    /// <p>Valid values: <code>application/vnd.docker.distribution.manifest.v1+json</code> | <code>application/vnd.docker.distribution.manifest.v2+json</code> | <code>application/vnd.oci.image.manifest.v1+json</code> </p>
     pub accepted_media_types: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetImageInput {
-    /// <p>The Amazon Web Services account ID associated with the registry that contains the images to
-    /// describe. If you do not specify a registry, the default registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the images to describe. If you do not specify a registry, the default registry is assumed.</p>
     pub fn registry_id(&self) -> std::option::Option<&str> {
         self.registry_id.as_deref()
     }
@@ -9477,17 +8822,12 @@ impl BatchGetImageInput {
     pub fn repository_name(&self) -> std::option::Option<&str> {
         self.repository_name.as_deref()
     }
-    /// <p>A list of image ID references that correspond to images to describe. The format of the
-    /// <code>imageIds</code> reference is <code>imageTag=tag</code> or
-    /// <code>imageDigest=digest</code>.</p>
+    /// <p>A list of image ID references that correspond to images to describe. The format of the <code>imageIds</code> reference is <code>imageTag=tag</code> or <code>imageDigest=digest</code>.</p>
     pub fn image_ids(&self) -> std::option::Option<&[crate::model::ImageIdentifier]> {
         self.image_ids.as_deref()
     }
     /// <p>The accepted media types for the request.</p>
-    /// <p>Valid values: <code>application/vnd.docker.distribution.manifest.v1+json</code> |
-    /// <code>application/vnd.docker.distribution.manifest.v2+json</code> |
-    /// <code>application/vnd.oci.image.manifest.v1+json</code>
-    /// </p>
+    /// <p>Valid values: <code>application/vnd.docker.distribution.manifest.v1+json</code> | <code>application/vnd.docker.distribution.manifest.v2+json</code> | <code>application/vnd.oci.image.manifest.v1+json</code> </p>
     pub fn accepted_media_types(&self) -> std::option::Option<&[std::string::String]> {
         self.accepted_media_types.as_deref()
     }
@@ -9503,24 +8843,19 @@ impl std::fmt::Debug for BatchGetImageInput {
     }
 }
 
-/// <p>Deletes specified images within a specified repository. Images are specified with
-/// either the <code>imageTag</code> or <code>imageDigest</code>.</p>
+/// <p>Deletes specified images within a specified repository. Images are specified with either the <code>imageTag</code> or <code>imageDigest</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDeleteImageInput {
-    /// <p>The Amazon Web Services account ID associated with the registry that contains the image to delete.
-    /// If you do not specify a registry, the default registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the image to delete. If you do not specify a registry, the default registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The repository that contains the image to delete.</p>
     pub repository_name: std::option::Option<std::string::String>,
-    /// <p>A list of image ID references that correspond to images to delete. The format of the
-    /// <code>imageIds</code> reference is <code>imageTag=tag</code> or
-    /// <code>imageDigest=digest</code>.</p>
+    /// <p>A list of image ID references that correspond to images to delete. The format of the <code>imageIds</code> reference is <code>imageTag=tag</code> or <code>imageDigest=digest</code>.</p>
     pub image_ids: std::option::Option<std::vec::Vec<crate::model::ImageIdentifier>>,
 }
 impl BatchDeleteImageInput {
-    /// <p>The Amazon Web Services account ID associated with the registry that contains the image to delete.
-    /// If you do not specify a registry, the default registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the image to delete. If you do not specify a registry, the default registry is assumed.</p>
     pub fn registry_id(&self) -> std::option::Option<&str> {
         self.registry_id.as_deref()
     }
@@ -9528,9 +8863,7 @@ impl BatchDeleteImageInput {
     pub fn repository_name(&self) -> std::option::Option<&str> {
         self.repository_name.as_deref()
     }
-    /// <p>A list of image ID references that correspond to images to delete. The format of the
-    /// <code>imageIds</code> reference is <code>imageTag=tag</code> or
-    /// <code>imageDigest=digest</code>.</p>
+    /// <p>A list of image ID references that correspond to images to delete. The format of the <code>imageIds</code> reference is <code>imageTag=tag</code> or <code>imageDigest=digest</code>.</p>
     pub fn image_ids(&self) -> std::option::Option<&[crate::model::ImageIdentifier]> {
         self.image_ids.as_deref()
     }
@@ -9549,8 +8882,7 @@ impl std::fmt::Debug for BatchDeleteImageInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchCheckLayerAvailabilityInput {
-    /// <p>The Amazon Web Services account ID associated with the registry that contains the image layers to
-    /// check. If you do not specify a registry, the default registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the image layers to check. If you do not specify a registry, the default registry is assumed.</p>
     pub registry_id: std::option::Option<std::string::String>,
     /// <p>The name of the repository that is associated with the image layers to check.</p>
     pub repository_name: std::option::Option<std::string::String>,
@@ -9558,8 +8890,7 @@ pub struct BatchCheckLayerAvailabilityInput {
     pub layer_digests: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchCheckLayerAvailabilityInput {
-    /// <p>The Amazon Web Services account ID associated with the registry that contains the image layers to
-    /// check. If you do not specify a registry, the default registry is assumed.</p>
+    /// <p>The Amazon Web Services account ID associated with the registry that contains the image layers to check. If you do not specify a registry, the default registry is assumed.</p>
     pub fn registry_id(&self) -> std::option::Option<&str> {
         self.registry_id.as_deref()
     }

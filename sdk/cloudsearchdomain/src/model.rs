@@ -640,13 +640,13 @@ impl BucketInfo {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Bucket {
-    /// <p>The  facet value being counted.</p>
+    /// <p>The facet value being counted.</p>
     pub value: std::option::Option<std::string::String>,
     /// <p>The number of hits that contain the facet value in the specified facet field.</p>
     pub count: i64,
 }
 impl Bucket {
-    /// <p>The  facet value being counted.</p>
+    /// <p>The facet value being counted.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
@@ -673,12 +673,12 @@ pub mod bucket {
         pub(crate) count: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>The  facet value being counted.</p>
+        /// <p>The facet value being counted.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             self.value = Some(input.into());
             self
         }
-        /// <p>The  facet value being counted.</p>
+        /// <p>The facet value being counted.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self

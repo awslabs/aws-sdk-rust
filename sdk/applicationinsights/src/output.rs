@@ -259,15 +259,11 @@ impl TagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
-    /// <p>An array that lists all the tags that are associated with the application. Each tag
-    /// consists of a required tag key (<code>Key</code>) and an associated tag value
-    /// (<code>Value</code>).</p>
+    /// <p>An array that lists all the tags that are associated with the application. Each tag consists of a required tag key (<code>Key</code>) and an associated tag value (<code>Value</code>).</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
-    /// <p>An array that lists all the tags that are associated with the application. Each tag
-    /// consists of a required tag key (<code>Key</code>) and an associated tag value
-    /// (<code>Value</code>).</p>
+    /// <p>An array that lists all the tags that are associated with the application. Each tag consists of a required tag key (<code>Key</code>) and an associated tag value (<code>Value</code>).</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -292,18 +288,14 @@ pub mod list_tags_for_resource_output {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>An array that lists all the tags that are associated with the application. Each tag
-        /// consists of a required tag key (<code>Key</code>) and an associated tag value
-        /// (<code>Value</code>).</p>
+        /// <p>An array that lists all the tags that are associated with the application. Each tag consists of a required tag key (<code>Key</code>) and an associated tag value (<code>Value</code>).</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>An array that lists all the tags that are associated with the application. Each tag
-        /// consists of a required tag key (<code>Key</code>) and an associated tag value
-        /// (<code>Value</code>).</p>
+        /// <p>An array that lists all the tags that are associated with the application. Each tag consists of a required tag key (<code>Key</code>) and an associated tag value (<code>Value</code>).</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -330,8 +322,7 @@ impl ListTagsForResourceOutput {
 pub struct ListProblemsOutput {
     /// <p>The list of problems. </p>
     pub problem_list: std::option::Option<std::vec::Vec<crate::model::Problem>>,
-    /// <p>The token used to retrieve the next page of results. This value is <code>null</code>
-    /// when there are no more results to return. </p>
+    /// <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
     pub next_token: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     pub resource_group_name: std::option::Option<std::string::String>,
@@ -341,8 +332,7 @@ impl ListProblemsOutput {
     pub fn problem_list(&self) -> std::option::Option<&[crate::model::Problem]> {
         self.problem_list.as_deref()
     }
-    /// <p>The token used to retrieve the next page of results. This value is <code>null</code>
-    /// when there are no more results to return. </p>
+    /// <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -390,14 +380,12 @@ pub mod list_problems_output {
             self.problem_list = input;
             self
         }
-        /// <p>The token used to retrieve the next page of results. This value is <code>null</code>
-        /// when there are no more results to return. </p>
+        /// <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token used to retrieve the next page of results. This value is <code>null</code>
-        /// when there are no more results to return. </p>
+        /// <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -440,8 +428,7 @@ pub struct ListLogPatternSetsOutput {
     pub resource_group_name: std::option::Option<std::string::String>,
     /// <p>The list of log pattern sets.</p>
     pub log_pattern_sets: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The token used to retrieve the next page of results. This value is <code>null</code>
-    /// when there are no more results to return. </p>
+    /// <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListLogPatternSetsOutput {
@@ -453,8 +440,7 @@ impl ListLogPatternSetsOutput {
     pub fn log_pattern_sets(&self) -> std::option::Option<&[std::string::String]> {
         self.log_pattern_sets.as_deref()
     }
-    /// <p>The token used to retrieve the next page of results. This value is <code>null</code>
-    /// when there are no more results to return. </p>
+    /// <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -511,14 +497,12 @@ pub mod list_log_pattern_sets_output {
             self.log_pattern_sets = input;
             self
         }
-        /// <p>The token used to retrieve the next page of results. This value is <code>null</code>
-        /// when there are no more results to return. </p>
+        /// <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token used to retrieve the next page of results. This value is <code>null</code>
-        /// when there are no more results to return. </p>
+        /// <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -548,8 +532,7 @@ pub struct ListLogPatternsOutput {
     pub resource_group_name: std::option::Option<std::string::String>,
     /// <p>The list of log patterns.</p>
     pub log_patterns: std::option::Option<std::vec::Vec<crate::model::LogPattern>>,
-    /// <p>The token used to retrieve the next page of results. This value is <code>null</code>
-    /// when there are no more results to return. </p>
+    /// <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListLogPatternsOutput {
@@ -561,8 +544,7 @@ impl ListLogPatternsOutput {
     pub fn log_patterns(&self) -> std::option::Option<&[crate::model::LogPattern]> {
         self.log_patterns.as_deref()
     }
-    /// <p>The token used to retrieve the next page of results. This value is <code>null</code>
-    /// when there are no more results to return. </p>
+    /// <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -619,14 +601,12 @@ pub mod list_log_patterns_output {
             self.log_patterns = input;
             self
         }
-        /// <p>The token used to retrieve the next page of results. This value is <code>null</code>
-        /// when there are no more results to return. </p>
+        /// <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token used to retrieve the next page of results. This value is <code>null</code>
-        /// when there are no more results to return. </p>
+        /// <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -654,11 +634,7 @@ impl ListLogPatternsOutput {
 pub struct ListConfigurationHistoryOutput {
     /// <p> The list of configuration events and their corresponding details. </p>
     pub event_list: std::option::Option<std::vec::Vec<crate::model::ConfigurationEvent>>,
-    /// <p>The <code>NextToken</code> value to include in a future
-    /// <code>ListConfigurationHistory</code> request. When the results of a
-    /// <code>ListConfigurationHistory</code> request exceed <code>MaxResults</code>, this value
-    /// can be used to retrieve the next page of results. This value is <code>null</code> when
-    /// there are no more results to return.</p>
+    /// <p>The <code>NextToken</code> value to include in a future <code>ListConfigurationHistory</code> request. When the results of a <code>ListConfigurationHistory</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListConfigurationHistoryOutput {
@@ -666,11 +642,7 @@ impl ListConfigurationHistoryOutput {
     pub fn event_list(&self) -> std::option::Option<&[crate::model::ConfigurationEvent]> {
         self.event_list.as_deref()
     }
-    /// <p>The <code>NextToken</code> value to include in a future
-    /// <code>ListConfigurationHistory</code> request. When the results of a
-    /// <code>ListConfigurationHistory</code> request exceed <code>MaxResults</code>, this value
-    /// can be used to retrieve the next page of results. This value is <code>null</code> when
-    /// there are no more results to return.</p>
+    /// <p>The <code>NextToken</code> value to include in a future <code>ListConfigurationHistory</code> request. When the results of a <code>ListConfigurationHistory</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -712,20 +684,12 @@ pub mod list_configuration_history_output {
             self.event_list = input;
             self
         }
-        /// <p>The <code>NextToken</code> value to include in a future
-        /// <code>ListConfigurationHistory</code> request. When the results of a
-        /// <code>ListConfigurationHistory</code> request exceed <code>MaxResults</code>, this value
-        /// can be used to retrieve the next page of results. This value is <code>null</code> when
-        /// there are no more results to return.</p>
+        /// <p>The <code>NextToken</code> value to include in a future <code>ListConfigurationHistory</code> request. When the results of a <code>ListConfigurationHistory</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The <code>NextToken</code> value to include in a future
-        /// <code>ListConfigurationHistory</code> request. When the results of a
-        /// <code>ListConfigurationHistory</code> request exceed <code>MaxResults</code>, this value
-        /// can be used to retrieve the next page of results. This value is <code>null</code> when
-        /// there are no more results to return.</p>
+        /// <p>The <code>NextToken</code> value to include in a future <code>ListConfigurationHistory</code> request. When the results of a <code>ListConfigurationHistory</code> request exceed <code>MaxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -844,8 +808,7 @@ impl ListComponentsOutput {
 pub struct ListApplicationsOutput {
     /// <p>The list of applications.</p>
     pub application_info_list: std::option::Option<std::vec::Vec<crate::model::ApplicationInfo>>,
-    /// <p>The token used to retrieve the next page of results. This value is <code>null</code>
-    /// when there are no more results to return. </p>
+    /// <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListApplicationsOutput {
@@ -853,8 +816,7 @@ impl ListApplicationsOutput {
     pub fn application_info_list(&self) -> std::option::Option<&[crate::model::ApplicationInfo]> {
         self.application_info_list.as_deref()
     }
-    /// <p>The token used to retrieve the next page of results. This value is <code>null</code>
-    /// when there are no more results to return. </p>
+    /// <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -897,14 +859,12 @@ pub mod list_applications_output {
             self.application_info_list = input;
             self
         }
-        /// <p>The token used to retrieve the next page of results. This value is <code>null</code>
-        /// when there are no more results to return. </p>
+        /// <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token used to retrieve the next page of results. This value is <code>null</code>
-        /// when there are no more results to return. </p>
+        /// <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1236,10 +1196,7 @@ impl DescribeComponentConfigurationRecommendationOutput {
 pub struct DescribeComponentConfigurationOutput {
     /// <p>Indicates whether the application component is monitored.</p>
     pub monitor: std::option::Option<bool>,
-    /// <p>The tier of the application component. Supported tiers include
-    /// <code>DOT_NET_CORE</code>, <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>,
-    /// <code>SQL_SERVER</code>, and <code>DEFAULT</code>
-    /// </p>
+    /// <p>The tier of the application component. Supported tiers include <code>DOT_NET_CORE</code>, <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code> </p>
     pub tier: std::option::Option<crate::model::Tier>,
     /// <p>The configuration settings of the component. The value is the escaped JSON of the configuration.</p>
     pub component_configuration: std::option::Option<std::string::String>,
@@ -1249,10 +1206,7 @@ impl DescribeComponentConfigurationOutput {
     pub fn monitor(&self) -> std::option::Option<bool> {
         self.monitor
     }
-    /// <p>The tier of the application component. Supported tiers include
-    /// <code>DOT_NET_CORE</code>, <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>,
-    /// <code>SQL_SERVER</code>, and <code>DEFAULT</code>
-    /// </p>
+    /// <p>The tier of the application component. Supported tiers include <code>DOT_NET_CORE</code>, <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code> </p>
     pub fn tier(&self) -> std::option::Option<&crate::model::Tier> {
         self.tier.as_ref()
     }
@@ -1291,18 +1245,12 @@ pub mod describe_component_configuration_output {
             self.monitor = input;
             self
         }
-        /// <p>The tier of the application component. Supported tiers include
-        /// <code>DOT_NET_CORE</code>, <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>,
-        /// <code>SQL_SERVER</code>, and <code>DEFAULT</code>
-        /// </p>
+        /// <p>The tier of the application component. Supported tiers include <code>DOT_NET_CORE</code>, <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code> </p>
         pub fn tier(mut self, input: crate::model::Tier) -> Self {
             self.tier = Some(input);
             self
         }
-        /// <p>The tier of the application component. Supported tiers include
-        /// <code>DOT_NET_CORE</code>, <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>,
-        /// <code>SQL_SERVER</code>, and <code>DEFAULT</code>
-        /// </p>
+        /// <p>The tier of the application component. Supported tiers include <code>DOT_NET_CORE</code>, <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code> </p>
         pub fn set_tier(mut self, input: std::option::Option<crate::model::Tier>) -> Self {
             self.tier = input;
             self
@@ -1341,15 +1289,13 @@ impl DescribeComponentConfigurationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeComponentOutput {
-    /// <p>Describes a standalone resource or similarly grouped resources that the application is made
-    /// up of.</p>
+    /// <p>Describes a standalone resource or similarly grouped resources that the application is made up of.</p>
     pub application_component: std::option::Option<crate::model::ApplicationComponent>,
     /// <p>The list of resource ARNs that belong to the component.</p>
     pub resource_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeComponentOutput {
-    /// <p>Describes a standalone resource or similarly grouped resources that the application is made
-    /// up of.</p>
+    /// <p>Describes a standalone resource or similarly grouped resources that the application is made up of.</p>
     pub fn application_component(
         &self,
     ) -> std::option::Option<&crate::model::ApplicationComponent> {
@@ -1378,14 +1324,12 @@ pub mod describe_component_output {
         pub(crate) resource_list: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>Describes a standalone resource or similarly grouped resources that the application is made
-        /// up of.</p>
+        /// <p>Describes a standalone resource or similarly grouped resources that the application is made up of.</p>
         pub fn application_component(mut self, input: crate::model::ApplicationComponent) -> Self {
             self.application_component = Some(input);
             self
         }
-        /// <p>Describes a standalone resource or similarly grouped resources that the application is made
-        /// up of.</p>
+        /// <p>Describes a standalone resource or similarly grouped resources that the application is made up of.</p>
         pub fn set_application_component(
             mut self,
             input: std::option::Option<crate::model::ApplicationComponent>,

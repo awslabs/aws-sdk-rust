@@ -211,17 +211,13 @@ impl ListTagsForResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEnvironmentsOutput {
-    /// <p>If there are more than 25 items in the list, only the first 25 items are returned, along
-    /// with a unique string called a <i>next token</i>. To get the next batch of items
-    /// in the list, call this operation again, adding the next token to the call.</p>
+    /// <p>If there are more than 25 items in the list, only the first 25 items are returned, along with a unique string called a <i>next token</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The list of environment identifiers.</p>
     pub environment_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ListEnvironmentsOutput {
-    /// <p>If there are more than 25 items in the list, only the first 25 items are returned, along
-    /// with a unique string called a <i>next token</i>. To get the next batch of items
-    /// in the list, call this operation again, adding the next token to the call.</p>
+    /// <p>If there are more than 25 items in the list, only the first 25 items are returned, along with a unique string called a <i>next token</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -248,16 +244,12 @@ pub mod list_environments_output {
         pub(crate) environment_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>If there are more than 25 items in the list, only the first 25 items are returned, along
-        /// with a unique string called a <i>next token</i>. To get the next batch of items
-        /// in the list, call this operation again, adding the next token to the call.</p>
+        /// <p>If there are more than 25 items in the list, only the first 25 items are returned, along with a unique string called a <i>next token</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If there are more than 25 items in the list, only the first 25 items are returned, along
-        /// with a unique string called a <i>next token</i>. To get the next batch of items
-        /// in the list, call this operation again, adding the next token to the call.</p>
+        /// <p>If there are more than 25 items in the list, only the first 25 items are returned, along with a unique string called a <i>next token</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -303,34 +295,13 @@ impl ListEnvironmentsOutput {
 pub struct DescribeEnvironmentStatusOutput {
     /// <p>The status of the environment. Available values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>connecting</code>: The environment is connecting.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>creating</code>: The environment is being created.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleting</code>: The environment is being deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>error</code>: The environment is in an error state.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ready</code>: The environment is ready.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>stopped</code>: The environment is stopped.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>stopping</code>: The environment is stopping.</p>
-    /// </li>
+    /// <li> <p> <code>connecting</code>: The environment is connecting.</p> </li>
+    /// <li> <p> <code>creating</code>: The environment is being created.</p> </li>
+    /// <li> <p> <code>deleting</code>: The environment is being deleted.</p> </li>
+    /// <li> <p> <code>error</code>: The environment is in an error state.</p> </li>
+    /// <li> <p> <code>ready</code>: The environment is ready.</p> </li>
+    /// <li> <p> <code>stopped</code>: The environment is stopped.</p> </li>
+    /// <li> <p> <code>stopping</code>: The environment is stopping.</p> </li>
     /// </ul>
     pub status: std::option::Option<crate::model::EnvironmentStatus>,
     /// <p>Any informational message about the status of the environment.</p>
@@ -339,34 +310,13 @@ pub struct DescribeEnvironmentStatusOutput {
 impl DescribeEnvironmentStatusOutput {
     /// <p>The status of the environment. Available values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>connecting</code>: The environment is connecting.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>creating</code>: The environment is being created.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>deleting</code>: The environment is being deleted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>error</code>: The environment is in an error state.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ready</code>: The environment is ready.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>stopped</code>: The environment is stopped.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>stopping</code>: The environment is stopping.</p>
-    /// </li>
+    /// <li> <p> <code>connecting</code>: The environment is connecting.</p> </li>
+    /// <li> <p> <code>creating</code>: The environment is being created.</p> </li>
+    /// <li> <p> <code>deleting</code>: The environment is being deleted.</p> </li>
+    /// <li> <p> <code>error</code>: The environment is in an error state.</p> </li>
+    /// <li> <p> <code>ready</code>: The environment is ready.</p> </li>
+    /// <li> <p> <code>stopped</code>: The environment is stopped.</p> </li>
+    /// <li> <p> <code>stopping</code>: The environment is stopping.</p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::EnvironmentStatus> {
         self.status.as_ref()
@@ -396,34 +346,13 @@ pub mod describe_environment_status_output {
     impl Builder {
         /// <p>The status of the environment. Available values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>connecting</code>: The environment is connecting.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>creating</code>: The environment is being created.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleting</code>: The environment is being deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>error</code>: The environment is in an error state.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ready</code>: The environment is ready.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>stopped</code>: The environment is stopped.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>stopping</code>: The environment is stopping.</p>
-        /// </li>
+        /// <li> <p> <code>connecting</code>: The environment is connecting.</p> </li>
+        /// <li> <p> <code>creating</code>: The environment is being created.</p> </li>
+        /// <li> <p> <code>deleting</code>: The environment is being deleted.</p> </li>
+        /// <li> <p> <code>error</code>: The environment is in an error state.</p> </li>
+        /// <li> <p> <code>ready</code>: The environment is ready.</p> </li>
+        /// <li> <p> <code>stopped</code>: The environment is stopped.</p> </li>
+        /// <li> <p> <code>stopping</code>: The environment is stopping.</p> </li>
         /// </ul>
         pub fn status(mut self, input: crate::model::EnvironmentStatus) -> Self {
             self.status = Some(input);
@@ -431,34 +360,13 @@ pub mod describe_environment_status_output {
         }
         /// <p>The status of the environment. Available values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>connecting</code>: The environment is connecting.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>creating</code>: The environment is being created.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>deleting</code>: The environment is being deleted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>error</code>: The environment is in an error state.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ready</code>: The environment is ready.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>stopped</code>: The environment is stopped.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>stopping</code>: The environment is stopping.</p>
-        /// </li>
+        /// <li> <p> <code>connecting</code>: The environment is connecting.</p> </li>
+        /// <li> <p> <code>creating</code>: The environment is being created.</p> </li>
+        /// <li> <p> <code>deleting</code>: The environment is being deleted.</p> </li>
+        /// <li> <p> <code>error</code>: The environment is in an error state.</p> </li>
+        /// <li> <p> <code>ready</code>: The environment is ready.</p> </li>
+        /// <li> <p> <code>stopped</code>: The environment is stopped.</p> </li>
+        /// <li> <p> <code>stopping</code>: The environment is stopping.</p> </li>
         /// </ul>
         pub fn set_status(
             mut self,
@@ -562,9 +470,7 @@ impl DescribeEnvironmentsOutput {
 pub struct DescribeEnvironmentMembershipsOutput {
     /// <p>Information about the environment members for the environment.</p>
     pub memberships: std::option::Option<std::vec::Vec<crate::model::EnvironmentMember>>,
-    /// <p>If there are more than 25 items in the list, only the first 25 items are returned, along
-    /// with a unique string called a <i>next token</i>. To get the next batch of items
-    /// in the list, call this operation again, adding the next token to the call.</p>
+    /// <p>If there are more than 25 items in the list, only the first 25 items are returned, along with a unique string called a <i>next token</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeEnvironmentMembershipsOutput {
@@ -572,9 +478,7 @@ impl DescribeEnvironmentMembershipsOutput {
     pub fn memberships(&self) -> std::option::Option<&[crate::model::EnvironmentMember]> {
         self.memberships.as_deref()
     }
-    /// <p>If there are more than 25 items in the list, only the first 25 items are returned, along
-    /// with a unique string called a <i>next token</i>. To get the next batch of items
-    /// in the list, call this operation again, adding the next token to the call.</p>
+    /// <p>If there are more than 25 items in the list, only the first 25 items are returned, along with a unique string called a <i>next token</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -616,16 +520,12 @@ pub mod describe_environment_memberships_output {
             self.memberships = input;
             self
         }
-        /// <p>If there are more than 25 items in the list, only the first 25 items are returned, along
-        /// with a unique string called a <i>next token</i>. To get the next batch of items
-        /// in the list, call this operation again, adding the next token to the call.</p>
+        /// <p>If there are more than 25 items in the list, only the first 25 items are returned, along with a unique string called a <i>next token</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If there are more than 25 items in the list, only the first 25 items are returned, along
-        /// with a unique string called a <i>next token</i>. To get the next batch of items
-        /// in the list, call this operation again, adding the next token to the call.</p>
+        /// <p>If there are more than 25 items in the list, only the first 25 items are returned, along with a unique string called a <i>next token</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self

@@ -2159,16 +2159,12 @@ pub mod create_multicast_group_input {
             self.description = input;
             self
         }
-        /// <p>Each resource must have a unique client request token. If you try to create a new resource with the
-        /// same token as a resource that already exists, an exception occurs. If you omit this value,
-        /// AWS SDKs will automatically generate a unique client request. </p>
+        /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
         }
-        /// <p>Each resource must have a unique client request token. If you try to create a new resource with the
-        /// same token as a resource that already exists, an exception occurs. If you omit this value,
-        /// AWS SDKs will automatically generate a unique client request. </p>
+        /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7398,14 +7394,12 @@ pub mod get_resource_log_level_input {
         pub(crate) resource_type: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway,
-        /// it is the wireless gateway ID.</p>
+        /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
         pub fn resource_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_identifier = Some(input.into());
             self
         }
-        /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway,
-        /// it is the wireless gateway ID.</p>
+        /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
         pub fn set_resource_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11154,14 +11148,12 @@ pub mod put_resource_log_level_input {
         pub(crate) log_level: std::option::Option<crate::model::LogLevel>,
     }
     impl Builder {
-        /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway,
-        /// it is the wireless gateway ID.</p>
+        /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
         pub fn resource_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_identifier = Some(input.into());
             self
         }
-        /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway,
-        /// it is the wireless gateway ID.</p>
+        /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
         pub fn set_resource_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11492,14 +11484,12 @@ pub mod reset_resource_log_level_input {
         pub(crate) resource_type: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway,
-        /// it is the wireless gateway ID.</p>
+        /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
         pub fn resource_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_identifier = Some(input.into());
             self
         }
-        /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway,
-        /// it is the wireless gateway ID.</p>
+        /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
         pub fn set_resource_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16145,15 +16135,13 @@ impl std::fmt::Debug for SendDataToMulticastGroupInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResetResourceLogLevelInput {
-    /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway,
-    /// it is the wireless gateway ID.</p>
+    /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
     pub resource_identifier: std::option::Option<std::string::String>,
     /// <p>The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</p>
     pub resource_type: std::option::Option<std::string::String>,
 }
 impl ResetResourceLogLevelInput {
-    /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway,
-    /// it is the wireless gateway ID.</p>
+    /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
     pub fn resource_identifier(&self) -> std::option::Option<&str> {
         self.resource_identifier.as_deref()
     }
@@ -16186,8 +16174,7 @@ impl std::fmt::Debug for ResetAllResourceLogLevelsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutResourceLogLevelInput {
-    /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway,
-    /// it is the wireless gateway ID.</p>
+    /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
     pub resource_identifier: std::option::Option<std::string::String>,
     /// <p>The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</p>
     pub resource_type: std::option::Option<std::string::String>,
@@ -16195,8 +16182,7 @@ pub struct PutResourceLogLevelInput {
     pub log_level: std::option::Option<crate::model::LogLevel>,
 }
 impl PutResourceLogLevelInput {
-    /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway,
-    /// it is the wireless gateway ID.</p>
+    /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
     pub fn resource_identifier(&self) -> std::option::Option<&str> {
         self.resource_identifier.as_deref()
     }
@@ -16806,15 +16792,13 @@ impl std::fmt::Debug for GetServiceEndpointInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourceLogLevelInput {
-    /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway,
-    /// it is the wireless gateway ID.</p>
+    /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
     pub resource_identifier: std::option::Option<std::string::String>,
     /// <p>The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</p>
     pub resource_type: std::option::Option<std::string::String>,
 }
 impl GetResourceLogLevelInput {
-    /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway,
-    /// it is the wireless gateway ID.</p>
+    /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
     pub fn resource_identifier(&self) -> std::option::Option<&str> {
         self.resource_identifier.as_deref()
     }
@@ -17638,9 +17622,7 @@ pub struct CreateMulticastGroupInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the multicast group.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>Each resource must have a unique client request token. If you try to create a new resource with the
-    /// same token as a resource that already exists, an exception occurs. If you omit this value,
-    /// AWS SDKs will automatically generate a unique client request. </p>
+    /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The LoRaWAN information that is to be used with the multicast group.</p>
     pub lo_ra_wan: std::option::Option<crate::model::LoRaWanMulticast>,
@@ -17656,9 +17638,7 @@ impl CreateMulticastGroupInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Each resource must have a unique client request token. If you try to create a new resource with the
-    /// same token as a resource that already exists, an exception occurs. If you omit this value,
-    /// AWS SDKs will automatically generate a unique client request. </p>
+    /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }

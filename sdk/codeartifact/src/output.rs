@@ -3,15 +3,11 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRepositoryOutput {
-    /// <p>
-    /// The updated repository.
-    /// </p>
+    /// <p> The updated repository. </p>
     pub repository: std::option::Option<crate::model::RepositoryDescription>,
 }
 impl UpdateRepositoryOutput {
-    /// <p>
-    /// The updated repository.
-    /// </p>
+    /// <p> The updated repository. </p>
     pub fn repository(&self) -> std::option::Option<&crate::model::RepositoryDescription> {
         self.repository.as_ref()
     }
@@ -32,16 +28,12 @@ pub mod update_repository_output {
         pub(crate) repository: std::option::Option<crate::model::RepositoryDescription>,
     }
     impl Builder {
-        /// <p>
-        /// The updated repository.
-        /// </p>
+        /// <p> The updated repository. </p>
         pub fn repository(mut self, input: crate::model::RepositoryDescription) -> Self {
             self.repository = Some(input);
             self
         }
-        /// <p>
-        /// The updated repository.
-        /// </p>
+        /// <p> The updated repository. </p>
         pub fn set_repository(
             mut self,
             input: std::option::Option<crate::model::RepositoryDescription>,
@@ -68,24 +60,17 @@ impl UpdateRepositoryOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePackageVersionsStatusOutput {
-    /// <p>
-    /// A list of <code>PackageVersionError</code> objects, one for each package version with
-    /// a status that failed to update.
-    /// </p>
+    /// <p> A list of <code>PackageVersionError</code> objects, one for each package version with a status that failed to update. </p>
     pub successful_versions: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::SuccessfulPackageVersionInfo>,
     >,
-    /// <p> A list of <code>SuccessfulPackageVersionInfo</code> objects, one for each package version
-    /// with a status that successfully updated. </p>
+    /// <p> A list of <code>SuccessfulPackageVersionInfo</code> objects, one for each package version with a status that successfully updated. </p>
     pub failed_versions: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::PackageVersionError>,
     >,
 }
 impl UpdatePackageVersionsStatusOutput {
-    /// <p>
-    /// A list of <code>PackageVersionError</code> objects, one for each package version with
-    /// a status that failed to update.
-    /// </p>
+    /// <p> A list of <code>PackageVersionError</code> objects, one for each package version with a status that failed to update. </p>
     pub fn successful_versions(
         &self,
     ) -> std::option::Option<
@@ -93,8 +78,7 @@ impl UpdatePackageVersionsStatusOutput {
     > {
         self.successful_versions.as_ref()
     }
-    /// <p> A list of <code>SuccessfulPackageVersionInfo</code> objects, one for each package version
-    /// with a status that successfully updated. </p>
+    /// <p> A list of <code>SuccessfulPackageVersionInfo</code> objects, one for each package version with a status that successfully updated. </p>
     pub fn failed_versions(
         &self,
     ) -> std::option::Option<
@@ -132,10 +116,7 @@ pub mod update_package_versions_status_output {
         ///
         /// To override the contents of this collection use [`set_successful_versions`](Self::set_successful_versions).
         ///
-        /// <p>
-        /// A list of <code>PackageVersionError</code> objects, one for each package version with
-        /// a status that failed to update.
-        /// </p>
+        /// <p> A list of <code>PackageVersionError</code> objects, one for each package version with a status that failed to update. </p>
         pub fn successful_versions(
             mut self,
             k: impl Into<std::string::String>,
@@ -146,10 +127,7 @@ pub mod update_package_versions_status_output {
             self.successful_versions = Some(hash_map);
             self
         }
-        /// <p>
-        /// A list of <code>PackageVersionError</code> objects, one for each package version with
-        /// a status that failed to update.
-        /// </p>
+        /// <p> A list of <code>PackageVersionError</code> objects, one for each package version with a status that failed to update. </p>
         pub fn set_successful_versions(
             mut self,
             input: std::option::Option<
@@ -166,8 +144,7 @@ pub mod update_package_versions_status_output {
         ///
         /// To override the contents of this collection use [`set_failed_versions`](Self::set_failed_versions).
         ///
-        /// <p> A list of <code>SuccessfulPackageVersionInfo</code> objects, one for each package version
-        /// with a status that successfully updated. </p>
+        /// <p> A list of <code>SuccessfulPackageVersionInfo</code> objects, one for each package version with a status that successfully updated. </p>
         pub fn failed_versions(
             mut self,
             k: impl Into<std::string::String>,
@@ -178,8 +155,7 @@ pub mod update_package_versions_status_output {
             self.failed_versions = Some(hash_map);
             self
         }
-        /// <p> A list of <code>SuccessfulPackageVersionInfo</code> objects, one for each package version
-        /// with a status that successfully updated. </p>
+        /// <p> A list of <code>SuccessfulPackageVersionInfo</code> objects, one for each package version with a status that successfully updated. </p>
         pub fn set_failed_versions(
             mut self,
             input: std::option::Option<
@@ -444,25 +420,17 @@ impl ListTagsForResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRepositoriesInDomainOutput {
-    /// <p>
-    /// The returned list of repositories.
-    /// </p>
+    /// <p> The returned list of repositories. </p>
     pub repositories: std::option::Option<std::vec::Vec<crate::model::RepositorySummary>>,
-    /// <p>
-    /// If there are additional results, this is the token for the next set of results.
-    /// </p>
+    /// <p> If there are additional results, this is the token for the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRepositoriesInDomainOutput {
-    /// <p>
-    /// The returned list of repositories.
-    /// </p>
+    /// <p> The returned list of repositories. </p>
     pub fn repositories(&self) -> std::option::Option<&[crate::model::RepositorySummary]> {
         self.repositories.as_deref()
     }
-    /// <p>
-    /// If there are additional results, this is the token for the next set of results.
-    /// </p>
+    /// <p> If there are additional results, this is the token for the next set of results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -490,18 +458,14 @@ pub mod list_repositories_in_domain_output {
         ///
         /// To override the contents of this collection use [`set_repositories`](Self::set_repositories).
         ///
-        /// <p>
-        /// The returned list of repositories.
-        /// </p>
+        /// <p> The returned list of repositories. </p>
         pub fn repositories(mut self, input: crate::model::RepositorySummary) -> Self {
             let mut v = self.repositories.unwrap_or_default();
             v.push(input);
             self.repositories = Some(v);
             self
         }
-        /// <p>
-        /// The returned list of repositories.
-        /// </p>
+        /// <p> The returned list of repositories. </p>
         pub fn set_repositories(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RepositorySummary>>,
@@ -509,16 +473,12 @@ pub mod list_repositories_in_domain_output {
             self.repositories = input;
             self
         }
-        /// <p>
-        /// If there are additional results, this is the token for the next set of results.
-        /// </p>
+        /// <p> If there are additional results, this is the token for the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>
-        /// If there are additional results, this is the token for the next set of results.
-        /// </p>
+        /// <p> If there are additional results, this is the token for the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -543,27 +503,17 @@ impl ListRepositoriesInDomainOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRepositoriesOutput {
-    /// <p>
-    /// The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">RepositorySummary</a>
-    /// objects.
-    /// </p>
+    /// <p> The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">RepositorySummary</a> objects. </p>
     pub repositories: std::option::Option<std::vec::Vec<crate::model::RepositorySummary>>,
-    /// <p>
-    /// If there are additional results, this is the token for the next set of results.
-    /// </p>
+    /// <p> If there are additional results, this is the token for the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRepositoriesOutput {
-    /// <p>
-    /// The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">RepositorySummary</a>
-    /// objects.
-    /// </p>
+    /// <p> The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">RepositorySummary</a> objects. </p>
     pub fn repositories(&self) -> std::option::Option<&[crate::model::RepositorySummary]> {
         self.repositories.as_deref()
     }
-    /// <p>
-    /// If there are additional results, this is the token for the next set of results.
-    /// </p>
+    /// <p> If there are additional results, this is the token for the next set of results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -591,20 +541,14 @@ pub mod list_repositories_output {
         ///
         /// To override the contents of this collection use [`set_repositories`](Self::set_repositories).
         ///
-        /// <p>
-        /// The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">RepositorySummary</a>
-        /// objects.
-        /// </p>
+        /// <p> The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">RepositorySummary</a> objects. </p>
         pub fn repositories(mut self, input: crate::model::RepositorySummary) -> Self {
             let mut v = self.repositories.unwrap_or_default();
             v.push(input);
             self.repositories = Some(v);
             self
         }
-        /// <p>
-        /// The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">RepositorySummary</a>
-        /// objects.
-        /// </p>
+        /// <p> The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">RepositorySummary</a> objects. </p>
         pub fn set_repositories(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RepositorySummary>>,
@@ -612,16 +556,12 @@ pub mod list_repositories_output {
             self.repositories = input;
             self
         }
-        /// <p>
-        /// If there are additional results, this is the token for the next set of results.
-        /// </p>
+        /// <p> If there are additional results, this is the token for the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>
-        /// If there are additional results, this is the token for the next set of results.
-        /// </p>
+        /// <p> If there are additional results, this is the token for the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -646,167 +586,69 @@ impl ListRepositoriesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPackageVersionsOutput {
-    /// <p>
-    /// The default package version to display. This depends on the package format:
-    /// </p>
+    /// <p> The default package version to display. This depends on the package format: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// For Maven and PyPI packages, it's the most recently published package version.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// For npm packages, it's the version referenced by the
-    /// <code>latest</code> tag. If the  <code>latest</code> tag is not set, it's the most recently published package version.
-    /// </p>
-    /// </li>
+    /// <li> <p> For Maven and PyPI packages, it's the most recently published package version. </p> </li>
+    /// <li> <p> For npm packages, it's the version referenced by the <code>latest</code> tag. If the <code>latest</code> tag is not set, it's the most recently published package version. </p> </li>
     /// </ul>
     pub default_display_version: std::option::Option<std::string::String>,
-    /// <p>
-    /// A format of the package. Valid package format values are:
-    /// </p>
+    /// <p> A format of the package. Valid package format values are: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>npm</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pypi</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>maven</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>npm</code> </p> </li>
+    /// <li> <p> <code>pypi</code> </p> </li>
+    /// <li> <p> <code>maven</code> </p> </li>
     /// </ul>
     pub format: std::option::Option<crate::model::PackageFormat>,
-    /// <p>
-    /// The namespace of the package. The package component that specifies its
-    /// namespace depends on its type. For example:
-    /// </p>
+    /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// The namespace of a Maven package is its <code>groupId</code>.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// The namespace of an npm package is its <code>scope</code>.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// A Python package does not contain a corresponding component, so
-    /// Python packages do not have a namespace.
-    /// </p>
-    /// </li>
+    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+    /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
     /// </ul>
     pub namespace: std::option::Option<std::string::String>,
-    /// <p>
-    /// The name of the package.
-    /// </p>
+    /// <p> The name of the package. </p>
     pub package: std::option::Option<std::string::String>,
-    /// <p>
-    /// The returned list of
-    /// <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">PackageVersionSummary</a>
-    /// objects.
-    /// </p>
+    /// <p> The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">PackageVersionSummary</a> objects. </p>
     pub versions: std::option::Option<std::vec::Vec<crate::model::PackageVersionSummary>>,
-    /// <p>
-    /// If there are additional results, this is the token for the next set of results.
-    /// </p>
+    /// <p> If there are additional results, this is the token for the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPackageVersionsOutput {
-    /// <p>
-    /// The default package version to display. This depends on the package format:
-    /// </p>
+    /// <p> The default package version to display. This depends on the package format: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// For Maven and PyPI packages, it's the most recently published package version.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// For npm packages, it's the version referenced by the
-    /// <code>latest</code> tag. If the  <code>latest</code> tag is not set, it's the most recently published package version.
-    /// </p>
-    /// </li>
+    /// <li> <p> For Maven and PyPI packages, it's the most recently published package version. </p> </li>
+    /// <li> <p> For npm packages, it's the version referenced by the <code>latest</code> tag. If the <code>latest</code> tag is not set, it's the most recently published package version. </p> </li>
     /// </ul>
     pub fn default_display_version(&self) -> std::option::Option<&str> {
         self.default_display_version.as_deref()
     }
-    /// <p>
-    /// A format of the package. Valid package format values are:
-    /// </p>
+    /// <p> A format of the package. Valid package format values are: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>npm</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pypi</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>maven</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>npm</code> </p> </li>
+    /// <li> <p> <code>pypi</code> </p> </li>
+    /// <li> <p> <code>maven</code> </p> </li>
     /// </ul>
     pub fn format(&self) -> std::option::Option<&crate::model::PackageFormat> {
         self.format.as_ref()
     }
-    /// <p>
-    /// The namespace of the package. The package component that specifies its
-    /// namespace depends on its type. For example:
-    /// </p>
+    /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// The namespace of a Maven package is its <code>groupId</code>.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// The namespace of an npm package is its <code>scope</code>.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// A Python package does not contain a corresponding component, so
-    /// Python packages do not have a namespace.
-    /// </p>
-    /// </li>
+    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+    /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
     /// </ul>
     pub fn namespace(&self) -> std::option::Option<&str> {
         self.namespace.as_deref()
     }
-    /// <p>
-    /// The name of the package.
-    /// </p>
+    /// <p> The name of the package. </p>
     pub fn package(&self) -> std::option::Option<&str> {
         self.package.as_deref()
     }
-    /// <p>
-    /// The returned list of
-    /// <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">PackageVersionSummary</a>
-    /// objects.
-    /// </p>
+    /// <p> The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">PackageVersionSummary</a> objects. </p>
     pub fn versions(&self) -> std::option::Option<&[crate::model::PackageVersionSummary]> {
         self.versions.as_deref()
     }
-    /// <p>
-    /// If there are additional results, this is the token for the next set of results.
-    /// </p>
+    /// <p> If there are additional results, this is the token for the next set of results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -838,41 +680,19 @@ pub mod list_package_versions_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The default package version to display. This depends on the package format:
-        /// </p>
+        /// <p> The default package version to display. This depends on the package format: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// For Maven and PyPI packages, it's the most recently published package version.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// For npm packages, it's the version referenced by the
-        /// <code>latest</code> tag. If the  <code>latest</code> tag is not set, it's the most recently published package version.
-        /// </p>
-        /// </li>
+        /// <li> <p> For Maven and PyPI packages, it's the most recently published package version. </p> </li>
+        /// <li> <p> For npm packages, it's the version referenced by the <code>latest</code> tag. If the <code>latest</code> tag is not set, it's the most recently published package version. </p> </li>
         /// </ul>
         pub fn default_display_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_display_version = Some(input.into());
             self
         }
-        /// <p>
-        /// The default package version to display. This depends on the package format:
-        /// </p>
+        /// <p> The default package version to display. This depends on the package format: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// For Maven and PyPI packages, it's the most recently published package version.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// For npm packages, it's the version referenced by the
-        /// <code>latest</code> tag. If the  <code>latest</code> tag is not set, it's the most recently published package version.
-        /// </p>
-        /// </li>
+        /// <li> <p> For Maven and PyPI packages, it's the most recently published package version. </p> </li>
+        /// <li> <p> For npm packages, it's the version referenced by the <code>latest</code> tag. If the <code>latest</code> tag is not set, it's the most recently published package version. </p> </li>
         /// </ul>
         pub fn set_default_display_version(
             mut self,
@@ -881,49 +701,21 @@ pub mod list_package_versions_output {
             self.default_display_version = input;
             self
         }
-        /// <p>
-        /// A format of the package. Valid package format values are:
-        /// </p>
+        /// <p> A format of the package. Valid package format values are: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>npm</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pypi</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>maven</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>npm</code> </p> </li>
+        /// <li> <p> <code>pypi</code> </p> </li>
+        /// <li> <p> <code>maven</code> </p> </li>
         /// </ul>
         pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
             self.format = Some(input);
             self
         }
-        /// <p>
-        /// A format of the package. Valid package format values are:
-        /// </p>
+        /// <p> A format of the package. Valid package format values are: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>npm</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pypi</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>maven</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>npm</code> </p> </li>
+        /// <li> <p> <code>pypi</code> </p> </li>
+        /// <li> <p> <code>maven</code> </p> </li>
         /// </ul>
         pub fn set_format(
             mut self,
@@ -932,68 +724,32 @@ pub mod list_package_versions_output {
             self.format = input;
             self
         }
-        /// <p>
-        /// The namespace of the package. The package component that specifies its
-        /// namespace depends on its type. For example:
-        /// </p>
+        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// The namespace of a Maven package is its <code>groupId</code>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// The namespace of an npm package is its <code>scope</code>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// A Python package does not contain a corresponding component, so
-        /// Python packages do not have a namespace.
-        /// </p>
-        /// </li>
+        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
         /// </ul>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.namespace = Some(input.into());
             self
         }
-        /// <p>
-        /// The namespace of the package. The package component that specifies its
-        /// namespace depends on its type. For example:
-        /// </p>
+        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// The namespace of a Maven package is its <code>groupId</code>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// The namespace of an npm package is its <code>scope</code>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// A Python package does not contain a corresponding component, so
-        /// Python packages do not have a namespace.
-        /// </p>
-        /// </li>
+        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
         /// </ul>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.namespace = input;
             self
         }
-        /// <p>
-        /// The name of the package.
-        /// </p>
+        /// <p> The name of the package. </p>
         pub fn package(mut self, input: impl Into<std::string::String>) -> Self {
             self.package = Some(input.into());
             self
         }
-        /// <p>
-        /// The name of the package.
-        /// </p>
+        /// <p> The name of the package. </p>
         pub fn set_package(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.package = input;
             self
@@ -1002,22 +758,14 @@ pub mod list_package_versions_output {
         ///
         /// To override the contents of this collection use [`set_versions`](Self::set_versions).
         ///
-        /// <p>
-        /// The returned list of
-        /// <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">PackageVersionSummary</a>
-        /// objects.
-        /// </p>
+        /// <p> The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">PackageVersionSummary</a> objects. </p>
         pub fn versions(mut self, input: crate::model::PackageVersionSummary) -> Self {
             let mut v = self.versions.unwrap_or_default();
             v.push(input);
             self.versions = Some(v);
             self
         }
-        /// <p>
-        /// The returned list of
-        /// <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">PackageVersionSummary</a>
-        /// objects.
-        /// </p>
+        /// <p> The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">PackageVersionSummary</a> objects. </p>
         pub fn set_versions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PackageVersionSummary>>,
@@ -1025,16 +773,12 @@ pub mod list_package_versions_output {
             self.versions = input;
             self
         }
-        /// <p>
-        /// If there are additional results, this is the token for the next set of results.
-        /// </p>
+        /// <p> If there are additional results, this is the token for the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>
-        /// If there are additional results, this is the token for the next set of results.
-        /// </p>
+        /// <p> If there are additional results, this is the token for the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1063,147 +807,67 @@ impl ListPackageVersionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPackageVersionDependenciesOutput {
-    /// <p>
-    /// A format that specifies the type of the package that contains the returned dependencies. The valid values are:
-    /// </p>
+    /// <p> A format that specifies the type of the package that contains the returned dependencies. The valid values are: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>npm</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pypi</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>maven</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>npm</code> </p> </li>
+    /// <li> <p> <code>pypi</code> </p> </li>
+    /// <li> <p> <code>maven</code> </p> </li>
     /// </ul>
     pub format: std::option::Option<crate::model::PackageFormat>,
-    /// <p>
-    /// The namespace of the package. The package component that specifies its
-    /// namespace depends on its type. For example:
-    /// </p>
+    /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// The namespace of a Maven package is its <code>groupId</code>.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// The namespace of an npm package is its <code>scope</code>.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// A Python package does not contain a corresponding component, so
-    /// Python packages do not have a namespace.
-    /// </p>
-    /// </li>
+    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+    /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
     /// </ul>
     pub namespace: std::option::Option<std::string::String>,
-    /// <p>
-    /// The name of the package that contains the returned package versions dependencies.
-    /// </p>
+    /// <p> The name of the package that contains the returned package versions dependencies. </p>
     pub package: std::option::Option<std::string::String>,
-    /// <p>
-    /// The version of the package that is specified in the request.
-    /// </p>
+    /// <p> The version of the package that is specified in the request. </p>
     pub version: std::option::Option<std::string::String>,
-    /// <p>
-    /// The current revision associated with the package version.
-    /// </p>
+    /// <p> The current revision associated with the package version. </p>
     pub version_revision: std::option::Option<std::string::String>,
-    /// <p>
-    /// The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-    /// </p>
+    /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>
-    /// The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">PackageDependency</a> objects.
-    /// </p>
+    /// <p> The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">PackageDependency</a> objects. </p>
     pub dependencies: std::option::Option<std::vec::Vec<crate::model::PackageDependency>>,
 }
 impl ListPackageVersionDependenciesOutput {
-    /// <p>
-    /// A format that specifies the type of the package that contains the returned dependencies. The valid values are:
-    /// </p>
+    /// <p> A format that specifies the type of the package that contains the returned dependencies. The valid values are: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>npm</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pypi</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>maven</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>npm</code> </p> </li>
+    /// <li> <p> <code>pypi</code> </p> </li>
+    /// <li> <p> <code>maven</code> </p> </li>
     /// </ul>
     pub fn format(&self) -> std::option::Option<&crate::model::PackageFormat> {
         self.format.as_ref()
     }
-    /// <p>
-    /// The namespace of the package. The package component that specifies its
-    /// namespace depends on its type. For example:
-    /// </p>
+    /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// The namespace of a Maven package is its <code>groupId</code>.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// The namespace of an npm package is its <code>scope</code>.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// A Python package does not contain a corresponding component, so
-    /// Python packages do not have a namespace.
-    /// </p>
-    /// </li>
+    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+    /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
     /// </ul>
     pub fn namespace(&self) -> std::option::Option<&str> {
         self.namespace.as_deref()
     }
-    /// <p>
-    /// The name of the package that contains the returned package versions dependencies.
-    /// </p>
+    /// <p> The name of the package that contains the returned package versions dependencies. </p>
     pub fn package(&self) -> std::option::Option<&str> {
         self.package.as_deref()
     }
-    /// <p>
-    /// The version of the package that is specified in the request.
-    /// </p>
+    /// <p> The version of the package that is specified in the request. </p>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
-    /// <p>
-    /// The current revision associated with the package version.
-    /// </p>
+    /// <p> The current revision associated with the package version. </p>
     pub fn version_revision(&self) -> std::option::Option<&str> {
         self.version_revision.as_deref()
     }
-    /// <p>
-    /// The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-    /// </p>
+    /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>
-    /// The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">PackageDependency</a> objects.
-    /// </p>
+    /// <p> The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">PackageDependency</a> objects. </p>
     pub fn dependencies(&self) -> std::option::Option<&[crate::model::PackageDependency]> {
         self.dependencies.as_deref()
     }
@@ -1237,49 +901,21 @@ pub mod list_package_version_dependencies_output {
             std::option::Option<std::vec::Vec<crate::model::PackageDependency>>,
     }
     impl Builder {
-        /// <p>
-        /// A format that specifies the type of the package that contains the returned dependencies. The valid values are:
-        /// </p>
+        /// <p> A format that specifies the type of the package that contains the returned dependencies. The valid values are: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>npm</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pypi</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>maven</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>npm</code> </p> </li>
+        /// <li> <p> <code>pypi</code> </p> </li>
+        /// <li> <p> <code>maven</code> </p> </li>
         /// </ul>
         pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
             self.format = Some(input);
             self
         }
-        /// <p>
-        /// A format that specifies the type of the package that contains the returned dependencies. The valid values are:
-        /// </p>
+        /// <p> A format that specifies the type of the package that contains the returned dependencies. The valid values are: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>npm</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pypi</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>maven</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>npm</code> </p> </li>
+        /// <li> <p> <code>pypi</code> </p> </li>
+        /// <li> <p> <code>maven</code> </p> </li>
         /// </ul>
         pub fn set_format(
             mut self,
@@ -1288,96 +924,52 @@ pub mod list_package_version_dependencies_output {
             self.format = input;
             self
         }
-        /// <p>
-        /// The namespace of the package. The package component that specifies its
-        /// namespace depends on its type. For example:
-        /// </p>
+        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// The namespace of a Maven package is its <code>groupId</code>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// The namespace of an npm package is its <code>scope</code>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// A Python package does not contain a corresponding component, so
-        /// Python packages do not have a namespace.
-        /// </p>
-        /// </li>
+        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
         /// </ul>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.namespace = Some(input.into());
             self
         }
-        /// <p>
-        /// The namespace of the package. The package component that specifies its
-        /// namespace depends on its type. For example:
-        /// </p>
+        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// The namespace of a Maven package is its <code>groupId</code>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// The namespace of an npm package is its <code>scope</code>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// A Python package does not contain a corresponding component, so
-        /// Python packages do not have a namespace.
-        /// </p>
-        /// </li>
+        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
         /// </ul>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.namespace = input;
             self
         }
-        /// <p>
-        /// The name of the package that contains the returned package versions dependencies.
-        /// </p>
+        /// <p> The name of the package that contains the returned package versions dependencies. </p>
         pub fn package(mut self, input: impl Into<std::string::String>) -> Self {
             self.package = Some(input.into());
             self
         }
-        /// <p>
-        /// The name of the package that contains the returned package versions dependencies.
-        /// </p>
+        /// <p> The name of the package that contains the returned package versions dependencies. </p>
         pub fn set_package(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.package = input;
             self
         }
-        /// <p>
-        /// The version of the package that is specified in the request.
-        /// </p>
+        /// <p> The version of the package that is specified in the request. </p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
             self.version = Some(input.into());
             self
         }
-        /// <p>
-        /// The version of the package that is specified in the request.
-        /// </p>
+        /// <p> The version of the package that is specified in the request. </p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
         }
-        /// <p>
-        /// The current revision associated with the package version.
-        /// </p>
+        /// <p> The current revision associated with the package version. </p>
         pub fn version_revision(mut self, input: impl Into<std::string::String>) -> Self {
             self.version_revision = Some(input.into());
             self
         }
-        /// <p>
-        /// The current revision associated with the package version.
-        /// </p>
+        /// <p> The current revision associated with the package version. </p>
         pub fn set_version_revision(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1385,16 +977,12 @@ pub mod list_package_version_dependencies_output {
             self.version_revision = input;
             self
         }
-        /// <p>
-        /// The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-        /// </p>
+        /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>
-        /// The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-        /// </p>
+        /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1403,18 +991,14 @@ pub mod list_package_version_dependencies_output {
         ///
         /// To override the contents of this collection use [`set_dependencies`](Self::set_dependencies).
         ///
-        /// <p>
-        /// The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">PackageDependency</a> objects.
-        /// </p>
+        /// <p> The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">PackageDependency</a> objects. </p>
         pub fn dependencies(mut self, input: crate::model::PackageDependency) -> Self {
             let mut v = self.dependencies.unwrap_or_default();
             v.push(input);
             self.dependencies = Some(v);
             self
         }
-        /// <p>
-        /// The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">PackageDependency</a> objects.
-        /// </p>
+        /// <p> The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">PackageDependency</a> objects. </p>
         pub fn set_dependencies(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PackageDependency>>,
@@ -1447,113 +1031,57 @@ impl ListPackageVersionDependenciesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPackageVersionAssetsOutput {
-    /// <p>
-    /// The format of the package that contains the returned package version assets.
-    /// </p>
+    /// <p> The format of the package that contains the returned package version assets. </p>
     pub format: std::option::Option<crate::model::PackageFormat>,
-    /// <p>
-    /// The namespace of the package. The package component that specifies its
-    /// namespace depends on its type. For example:
-    /// </p>
+    /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// The namespace of a Maven package is its <code>groupId</code>.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// The namespace of an npm package is its <code>scope</code>.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// A Python package does not contain a corresponding component, so
-    /// Python packages do not have a namespace.
-    /// </p>
-    /// </li>
+    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+    /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
     /// </ul>
     pub namespace: std::option::Option<std::string::String>,
-    /// <p>
-    /// The name of the package that contains the returned package version assets.
-    /// </p>
+    /// <p> The name of the package that contains the returned package version assets. </p>
     pub package: std::option::Option<std::string::String>,
-    /// <p>
-    /// The version of the package associated with the returned assets.
-    /// </p>
+    /// <p> The version of the package associated with the returned assets. </p>
     pub version: std::option::Option<std::string::String>,
-    /// <p>
-    /// The current revision associated with the package version.
-    /// </p>
+    /// <p> The current revision associated with the package version. </p>
     pub version_revision: std::option::Option<std::string::String>,
-    /// <p>
-    /// If there are additional results, this is the token for the next set of results.
-    /// </p>
+    /// <p> If there are additional results, this is the token for the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>
-    /// The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">AssetSummary</a> objects.
-    /// </p>
+    /// <p> The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">AssetSummary</a> objects. </p>
     pub assets: std::option::Option<std::vec::Vec<crate::model::AssetSummary>>,
 }
 impl ListPackageVersionAssetsOutput {
-    /// <p>
-    /// The format of the package that contains the returned package version assets.
-    /// </p>
+    /// <p> The format of the package that contains the returned package version assets. </p>
     pub fn format(&self) -> std::option::Option<&crate::model::PackageFormat> {
         self.format.as_ref()
     }
-    /// <p>
-    /// The namespace of the package. The package component that specifies its
-    /// namespace depends on its type. For example:
-    /// </p>
+    /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// The namespace of a Maven package is its <code>groupId</code>.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// The namespace of an npm package is its <code>scope</code>.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// A Python package does not contain a corresponding component, so
-    /// Python packages do not have a namespace.
-    /// </p>
-    /// </li>
+    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+    /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
     /// </ul>
     pub fn namespace(&self) -> std::option::Option<&str> {
         self.namespace.as_deref()
     }
-    /// <p>
-    /// The name of the package that contains the returned package version assets.
-    /// </p>
+    /// <p> The name of the package that contains the returned package version assets. </p>
     pub fn package(&self) -> std::option::Option<&str> {
         self.package.as_deref()
     }
-    /// <p>
-    /// The version of the package associated with the returned assets.
-    /// </p>
+    /// <p> The version of the package associated with the returned assets. </p>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
-    /// <p>
-    /// The current revision associated with the package version.
-    /// </p>
+    /// <p> The current revision associated with the package version. </p>
     pub fn version_revision(&self) -> std::option::Option<&str> {
         self.version_revision.as_deref()
     }
-    /// <p>
-    /// If there are additional results, this is the token for the next set of results.
-    /// </p>
+    /// <p> If there are additional results, this is the token for the next set of results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>
-    /// The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">AssetSummary</a> objects.
-    /// </p>
+    /// <p> The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">AssetSummary</a> objects. </p>
     pub fn assets(&self) -> std::option::Option<&[crate::model::AssetSummary]> {
         self.assets.as_deref()
     }
@@ -1586,16 +1114,12 @@ pub mod list_package_version_assets_output {
         pub(crate) assets: std::option::Option<std::vec::Vec<crate::model::AssetSummary>>,
     }
     impl Builder {
-        /// <p>
-        /// The format of the package that contains the returned package version assets.
-        /// </p>
+        /// <p> The format of the package that contains the returned package version assets. </p>
         pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
             self.format = Some(input);
             self
         }
-        /// <p>
-        /// The format of the package that contains the returned package version assets.
-        /// </p>
+        /// <p> The format of the package that contains the returned package version assets. </p>
         pub fn set_format(
             mut self,
             input: std::option::Option<crate::model::PackageFormat>,
@@ -1603,96 +1127,52 @@ pub mod list_package_version_assets_output {
             self.format = input;
             self
         }
-        /// <p>
-        /// The namespace of the package. The package component that specifies its
-        /// namespace depends on its type. For example:
-        /// </p>
+        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// The namespace of a Maven package is its <code>groupId</code>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// The namespace of an npm package is its <code>scope</code>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// A Python package does not contain a corresponding component, so
-        /// Python packages do not have a namespace.
-        /// </p>
-        /// </li>
+        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
         /// </ul>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.namespace = Some(input.into());
             self
         }
-        /// <p>
-        /// The namespace of the package. The package component that specifies its
-        /// namespace depends on its type. For example:
-        /// </p>
+        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// The namespace of a Maven package is its <code>groupId</code>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// The namespace of an npm package is its <code>scope</code>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// A Python package does not contain a corresponding component, so
-        /// Python packages do not have a namespace.
-        /// </p>
-        /// </li>
+        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
         /// </ul>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.namespace = input;
             self
         }
-        /// <p>
-        /// The name of the package that contains the returned package version assets.
-        /// </p>
+        /// <p> The name of the package that contains the returned package version assets. </p>
         pub fn package(mut self, input: impl Into<std::string::String>) -> Self {
             self.package = Some(input.into());
             self
         }
-        /// <p>
-        /// The name of the package that contains the returned package version assets.
-        /// </p>
+        /// <p> The name of the package that contains the returned package version assets. </p>
         pub fn set_package(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.package = input;
             self
         }
-        /// <p>
-        /// The version of the package associated with the returned assets.
-        /// </p>
+        /// <p> The version of the package associated with the returned assets. </p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
             self.version = Some(input.into());
             self
         }
-        /// <p>
-        /// The version of the package associated with the returned assets.
-        /// </p>
+        /// <p> The version of the package associated with the returned assets. </p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
         }
-        /// <p>
-        /// The current revision associated with the package version.
-        /// </p>
+        /// <p> The current revision associated with the package version. </p>
         pub fn version_revision(mut self, input: impl Into<std::string::String>) -> Self {
             self.version_revision = Some(input.into());
             self
         }
-        /// <p>
-        /// The current revision associated with the package version.
-        /// </p>
+        /// <p> The current revision associated with the package version. </p>
         pub fn set_version_revision(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1700,16 +1180,12 @@ pub mod list_package_version_assets_output {
             self.version_revision = input;
             self
         }
-        /// <p>
-        /// If there are additional results, this is the token for the next set of results.
-        /// </p>
+        /// <p> If there are additional results, this is the token for the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>
-        /// If there are additional results, this is the token for the next set of results.
-        /// </p>
+        /// <p> If there are additional results, this is the token for the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1718,18 +1194,14 @@ pub mod list_package_version_assets_output {
         ///
         /// To override the contents of this collection use [`set_assets`](Self::set_assets).
         ///
-        /// <p>
-        /// The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">AssetSummary</a> objects.
-        /// </p>
+        /// <p> The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">AssetSummary</a> objects. </p>
         pub fn assets(mut self, input: crate::model::AssetSummary) -> Self {
             let mut v = self.assets.unwrap_or_default();
             v.push(input);
             self.assets = Some(v);
             self
         }
-        /// <p>
-        /// The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">AssetSummary</a> objects.
-        /// </p>
+        /// <p> The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">AssetSummary</a> objects. </p>
         pub fn set_assets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AssetSummary>>,
@@ -1762,27 +1234,17 @@ impl ListPackageVersionAssetsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPackagesOutput {
-    /// <p>
-    /// The list of returned <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">PackageSummary</a>
-    /// objects.
-    /// </p>
+    /// <p> The list of returned <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">PackageSummary</a> objects. </p>
     pub packages: std::option::Option<std::vec::Vec<crate::model::PackageSummary>>,
-    /// <p>
-    /// If there are additional results, this is the token for the next set of results.
-    /// </p>
+    /// <p> If there are additional results, this is the token for the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPackagesOutput {
-    /// <p>
-    /// The list of returned <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">PackageSummary</a>
-    /// objects.
-    /// </p>
+    /// <p> The list of returned <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">PackageSummary</a> objects. </p>
     pub fn packages(&self) -> std::option::Option<&[crate::model::PackageSummary]> {
         self.packages.as_deref()
     }
-    /// <p>
-    /// If there are additional results, this is the token for the next set of results.
-    /// </p>
+    /// <p> If there are additional results, this is the token for the next set of results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1809,20 +1271,14 @@ pub mod list_packages_output {
         ///
         /// To override the contents of this collection use [`set_packages`](Self::set_packages).
         ///
-        /// <p>
-        /// The list of returned <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">PackageSummary</a>
-        /// objects.
-        /// </p>
+        /// <p> The list of returned <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">PackageSummary</a> objects. </p>
         pub fn packages(mut self, input: crate::model::PackageSummary) -> Self {
             let mut v = self.packages.unwrap_or_default();
             v.push(input);
             self.packages = Some(v);
             self
         }
-        /// <p>
-        /// The list of returned <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">PackageSummary</a>
-        /// objects.
-        /// </p>
+        /// <p> The list of returned <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">PackageSummary</a> objects. </p>
         pub fn set_packages(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PackageSummary>>,
@@ -1830,16 +1286,12 @@ pub mod list_packages_output {
             self.packages = input;
             self
         }
-        /// <p>
-        /// If there are additional results, this is the token for the next set of results.
-        /// </p>
+        /// <p> If there are additional results, this is the token for the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>
-        /// If there are additional results, this is the token for the next set of results.
-        /// </p>
+        /// <p> If there are additional results, this is the token for the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1864,25 +1316,17 @@ impl ListPackagesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDomainsOutput {
-    /// <p>
-    /// The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainSummary.html">DomainSummary</a> objects.
-    /// </p>
+    /// <p> The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainSummary.html">DomainSummary</a> objects. </p>
     pub domains: std::option::Option<std::vec::Vec<crate::model::DomainSummary>>,
-    /// <p>
-    /// The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-    /// </p>
+    /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDomainsOutput {
-    /// <p>
-    /// The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainSummary.html">DomainSummary</a> objects.
-    /// </p>
+    /// <p> The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainSummary.html">DomainSummary</a> objects. </p>
     pub fn domains(&self) -> std::option::Option<&[crate::model::DomainSummary]> {
         self.domains.as_deref()
     }
-    /// <p>
-    /// The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-    /// </p>
+    /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1909,18 +1353,14 @@ pub mod list_domains_output {
         ///
         /// To override the contents of this collection use [`set_domains`](Self::set_domains).
         ///
-        /// <p>
-        /// The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainSummary.html">DomainSummary</a> objects.
-        /// </p>
+        /// <p> The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainSummary.html">DomainSummary</a> objects. </p>
         pub fn domains(mut self, input: crate::model::DomainSummary) -> Self {
             let mut v = self.domains.unwrap_or_default();
             v.push(input);
             self.domains = Some(v);
             self
         }
-        /// <p>
-        /// The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainSummary.html">DomainSummary</a> objects.
-        /// </p>
+        /// <p> The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainSummary.html">DomainSummary</a> objects. </p>
         pub fn set_domains(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DomainSummary>>,
@@ -1928,16 +1368,12 @@ pub mod list_domains_output {
             self.domains = input;
             self
         }
-        /// <p>
-        /// The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-        /// </p>
+        /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>
-        /// The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-        /// </p>
+        /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1962,15 +1398,11 @@ impl ListDomainsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRepositoryPermissionsPolicyOutput {
-    /// <p>
-    /// The returned resource policy.
-    /// </p>
+    /// <p> The returned resource policy. </p>
     pub policy: std::option::Option<crate::model::ResourcePolicy>,
 }
 impl GetRepositoryPermissionsPolicyOutput {
-    /// <p>
-    /// The returned resource policy.
-    /// </p>
+    /// <p> The returned resource policy. </p>
     pub fn policy(&self) -> std::option::Option<&crate::model::ResourcePolicy> {
         self.policy.as_ref()
     }
@@ -1991,16 +1423,12 @@ pub mod get_repository_permissions_policy_output {
         pub(crate) policy: std::option::Option<crate::model::ResourcePolicy>,
     }
     impl Builder {
-        /// <p>
-        /// The returned resource policy.
-        /// </p>
+        /// <p> The returned resource policy. </p>
         pub fn policy(mut self, input: crate::model::ResourcePolicy) -> Self {
             self.policy = Some(input);
             self
         }
-        /// <p>
-        /// The returned resource policy.
-        /// </p>
+        /// <p> The returned resource policy. </p>
         pub fn set_policy(
             mut self,
             input: std::option::Option<crate::model::ResourcePolicy>,
@@ -2027,15 +1455,11 @@ impl GetRepositoryPermissionsPolicyOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRepositoryEndpointOutput {
-    /// <p>
-    /// A string that specifies the URL of the returned endpoint.
-    /// </p>
+    /// <p> A string that specifies the URL of the returned endpoint. </p>
     pub repository_endpoint: std::option::Option<std::string::String>,
 }
 impl GetRepositoryEndpointOutput {
-    /// <p>
-    /// A string that specifies the URL of the returned endpoint.
-    /// </p>
+    /// <p> A string that specifies the URL of the returned endpoint. </p>
     pub fn repository_endpoint(&self) -> std::option::Option<&str> {
         self.repository_endpoint.as_deref()
     }
@@ -2056,16 +1480,12 @@ pub mod get_repository_endpoint_output {
         pub(crate) repository_endpoint: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// A string that specifies the URL of the returned endpoint.
-        /// </p>
+        /// <p> A string that specifies the URL of the returned endpoint. </p>
         pub fn repository_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
             self.repository_endpoint = Some(input.into());
             self
         }
-        /// <p>
-        /// A string that specifies the URL of the returned endpoint.
-        /// </p>
+        /// <p> A string that specifies the URL of the returned endpoint. </p>
         pub fn set_repository_endpoint(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2092,137 +1512,61 @@ impl GetRepositoryEndpointOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPackageVersionReadmeOutput {
-    /// <p>
-    /// The format of the package with the requested readme file. Valid format types are:
-    /// </p>
+    /// <p> The format of the package with the requested readme file. Valid format types are: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>npm</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pypi</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>maven</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>npm</code> </p> </li>
+    /// <li> <p> <code>pypi</code> </p> </li>
+    /// <li> <p> <code>maven</code> </p> </li>
     /// </ul>
     pub format: std::option::Option<crate::model::PackageFormat>,
-    /// <p>
-    /// The namespace of the package. The package component that specifies its
-    /// namespace depends on its type. For example:
-    /// </p>
+    /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// The namespace of a Maven package is its <code>groupId</code>.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// The namespace of an npm package is its <code>scope</code>.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// A Python package does not contain a corresponding component, so
-    /// Python packages do not have a namespace.
-    /// </p>
-    /// </li>
+    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+    /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
     /// </ul>
     pub namespace: std::option::Option<std::string::String>,
-    /// <p>
-    /// The name of the package that contains the returned readme file.
-    /// </p>
+    /// <p> The name of the package that contains the returned readme file. </p>
     pub package: std::option::Option<std::string::String>,
-    /// <p>
-    /// The version of the package with the requested readme file.
-    /// </p>
+    /// <p> The version of the package with the requested readme file. </p>
     pub version: std::option::Option<std::string::String>,
-    /// <p>
-    /// The current revision associated with the package version.
-    /// </p>
+    /// <p> The current revision associated with the package version. </p>
     pub version_revision: std::option::Option<std::string::String>,
-    /// <p>
-    /// The text of the returned readme file.
-    /// </p>
+    /// <p> The text of the returned readme file. </p>
     pub readme: std::option::Option<std::string::String>,
 }
 impl GetPackageVersionReadmeOutput {
-    /// <p>
-    /// The format of the package with the requested readme file. Valid format types are:
-    /// </p>
+    /// <p> The format of the package with the requested readme file. Valid format types are: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>npm</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>pypi</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>maven</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>npm</code> </p> </li>
+    /// <li> <p> <code>pypi</code> </p> </li>
+    /// <li> <p> <code>maven</code> </p> </li>
     /// </ul>
     pub fn format(&self) -> std::option::Option<&crate::model::PackageFormat> {
         self.format.as_ref()
     }
-    /// <p>
-    /// The namespace of the package. The package component that specifies its
-    /// namespace depends on its type. For example:
-    /// </p>
+    /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// The namespace of a Maven package is its <code>groupId</code>.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// The namespace of an npm package is its <code>scope</code>.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// A Python package does not contain a corresponding component, so
-    /// Python packages do not have a namespace.
-    /// </p>
-    /// </li>
+    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+    /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
     /// </ul>
     pub fn namespace(&self) -> std::option::Option<&str> {
         self.namespace.as_deref()
     }
-    /// <p>
-    /// The name of the package that contains the returned readme file.
-    /// </p>
+    /// <p> The name of the package that contains the returned readme file. </p>
     pub fn package(&self) -> std::option::Option<&str> {
         self.package.as_deref()
     }
-    /// <p>
-    /// The version of the package with the requested readme file.
-    /// </p>
+    /// <p> The version of the package with the requested readme file. </p>
     pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
-    /// <p>
-    /// The current revision associated with the package version.
-    /// </p>
+    /// <p> The current revision associated with the package version. </p>
     pub fn version_revision(&self) -> std::option::Option<&str> {
         self.version_revision.as_deref()
     }
-    /// <p>
-    /// The text of the returned readme file.
-    /// </p>
+    /// <p> The text of the returned readme file. </p>
     pub fn readme(&self) -> std::option::Option<&str> {
         self.readme.as_deref()
     }
@@ -2253,49 +1597,21 @@ pub mod get_package_version_readme_output {
         pub(crate) readme: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The format of the package with the requested readme file. Valid format types are:
-        /// </p>
+        /// <p> The format of the package with the requested readme file. Valid format types are: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>npm</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pypi</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>maven</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>npm</code> </p> </li>
+        /// <li> <p> <code>pypi</code> </p> </li>
+        /// <li> <p> <code>maven</code> </p> </li>
         /// </ul>
         pub fn format(mut self, input: crate::model::PackageFormat) -> Self {
             self.format = Some(input);
             self
         }
-        /// <p>
-        /// The format of the package with the requested readme file. Valid format types are:
-        /// </p>
+        /// <p> The format of the package with the requested readme file. Valid format types are: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>npm</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>pypi</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>maven</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>npm</code> </p> </li>
+        /// <li> <p> <code>pypi</code> </p> </li>
+        /// <li> <p> <code>maven</code> </p> </li>
         /// </ul>
         pub fn set_format(
             mut self,
@@ -2304,96 +1620,52 @@ pub mod get_package_version_readme_output {
             self.format = input;
             self
         }
-        /// <p>
-        /// The namespace of the package. The package component that specifies its
-        /// namespace depends on its type. For example:
-        /// </p>
+        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// The namespace of a Maven package is its <code>groupId</code>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// The namespace of an npm package is its <code>scope</code>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// A Python package does not contain a corresponding component, so
-        /// Python packages do not have a namespace.
-        /// </p>
-        /// </li>
+        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
         /// </ul>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.namespace = Some(input.into());
             self
         }
-        /// <p>
-        /// The namespace of the package. The package component that specifies its
-        /// namespace depends on its type. For example:
-        /// </p>
+        /// <p> The namespace of the package. The package component that specifies its namespace depends on its type. For example: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// The namespace of a Maven package is its <code>groupId</code>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// The namespace of an npm package is its <code>scope</code>.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// A Python package does not contain a corresponding component, so
-        /// Python packages do not have a namespace.
-        /// </p>
-        /// </li>
+        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+        /// <li> <p> A Python package does not contain a corresponding component, so Python packages do not have a namespace. </p> </li>
         /// </ul>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.namespace = input;
             self
         }
-        /// <p>
-        /// The name of the package that contains the returned readme file.
-        /// </p>
+        /// <p> The name of the package that contains the returned readme file. </p>
         pub fn package(mut self, input: impl Into<std::string::String>) -> Self {
             self.package = Some(input.into());
             self
         }
-        /// <p>
-        /// The name of the package that contains the returned readme file.
-        /// </p>
+        /// <p> The name of the package that contains the returned readme file. </p>
         pub fn set_package(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.package = input;
             self
         }
-        /// <p>
-        /// The version of the package with the requested readme file.
-        /// </p>
+        /// <p> The version of the package with the requested readme file. </p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
             self.version = Some(input.into());
             self
         }
-        /// <p>
-        /// The version of the package with the requested readme file.
-        /// </p>
+        /// <p> The version of the package with the requested readme file. </p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
         }
-        /// <p>
-        /// The current revision associated with the package version.
-        /// </p>
+        /// <p> The current revision associated with the package version. </p>
         pub fn version_revision(mut self, input: impl Into<std::string::String>) -> Self {
             self.version_revision = Some(input.into());
             self
         }
-        /// <p>
-        /// The current revision associated with the package version.
-        /// </p>
+        /// <p> The current revision associated with the package version. </p>
         pub fn set_version_revision(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2401,16 +1673,12 @@ pub mod get_package_version_readme_output {
             self.version_revision = input;
             self
         }
-        /// <p>
-        /// The text of the returned readme file.
-        /// </p>
+        /// <p> The text of the returned readme file. </p>
         pub fn readme(mut self, input: impl Into<std::string::String>) -> Self {
             self.readme = Some(input.into());
             self
         }
-        /// <p>
-        /// The text of the returned readme file.
-        /// </p>
+        /// <p> The text of the returned readme file. </p>
         pub fn set_readme(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.readme = input;
             self
@@ -2440,17 +1708,11 @@ impl GetPackageVersionReadmeOutput {
 pub struct GetPackageVersionAssetOutput {
     /// <p> The binary file, or asset, that is downloaded.</p>
     pub asset: aws_smithy_http::byte_stream::ByteStream,
-    /// <p>
-    /// The name of the asset that is downloaded.
-    /// </p>
+    /// <p> The name of the asset that is downloaded. </p>
     pub asset_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// A string that contains the package version (for example, <code>3.5.2</code>).
-    /// </p>
+    /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
     pub package_version: std::option::Option<std::string::String>,
-    /// <p>
-    /// The name of the package version revision that contains the downloaded asset.
-    /// </p>
+    /// <p> The name of the package version revision that contains the downloaded asset. </p>
     pub package_version_revision: std::option::Option<std::string::String>,
 }
 impl GetPackageVersionAssetOutput {
@@ -2458,21 +1720,15 @@ impl GetPackageVersionAssetOutput {
     pub fn asset(&self) -> &aws_smithy_http::byte_stream::ByteStream {
         &self.asset
     }
-    /// <p>
-    /// The name of the asset that is downloaded.
-    /// </p>
+    /// <p> The name of the asset that is downloaded. </p>
     pub fn asset_name(&self) -> std::option::Option<&str> {
         self.asset_name.as_deref()
     }
-    /// <p>
-    /// A string that contains the package version (for example, <code>3.5.2</code>).
-    /// </p>
+    /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
     pub fn package_version(&self) -> std::option::Option<&str> {
         self.package_version.as_deref()
     }
-    /// <p>
-    /// The name of the package version revision that contains the downloaded asset.
-    /// </p>
+    /// <p> The name of the package version revision that contains the downloaded asset. </p>
     pub fn package_version_revision(&self) -> std::option::Option<&str> {
         self.package_version_revision.as_deref()
     }
@@ -2512,30 +1768,22 @@ pub mod get_package_version_asset_output {
             self.asset = input;
             self
         }
-        /// <p>
-        /// The name of the asset that is downloaded.
-        /// </p>
+        /// <p> The name of the asset that is downloaded. </p>
         pub fn asset_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.asset_name = Some(input.into());
             self
         }
-        /// <p>
-        /// The name of the asset that is downloaded.
-        /// </p>
+        /// <p> The name of the asset that is downloaded. </p>
         pub fn set_asset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.asset_name = input;
             self
         }
-        /// <p>
-        /// A string that contains the package version (for example, <code>3.5.2</code>).
-        /// </p>
+        /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
         pub fn package_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.package_version = Some(input.into());
             self
         }
-        /// <p>
-        /// A string that contains the package version (for example, <code>3.5.2</code>).
-        /// </p>
+        /// <p> A string that contains the package version (for example, <code>3.5.2</code>). </p>
         pub fn set_package_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2543,16 +1791,12 @@ pub mod get_package_version_asset_output {
             self.package_version = input;
             self
         }
-        /// <p>
-        /// The name of the package version revision that contains the downloaded asset.
-        /// </p>
+        /// <p> The name of the package version revision that contains the downloaded asset. </p>
         pub fn package_version_revision(mut self, input: impl Into<std::string::String>) -> Self {
             self.package_version_revision = Some(input.into());
             self
         }
-        /// <p>
-        /// The name of the package version revision that contains the downloaded asset.
-        /// </p>
+        /// <p> The name of the package version revision that contains the downloaded asset. </p>
         pub fn set_package_version_revision(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2582,15 +1826,11 @@ impl GetPackageVersionAssetOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDomainPermissionsPolicyOutput {
-    /// <p>
-    /// The returned resource policy.
-    /// </p>
+    /// <p> The returned resource policy. </p>
     pub policy: std::option::Option<crate::model::ResourcePolicy>,
 }
 impl GetDomainPermissionsPolicyOutput {
-    /// <p>
-    /// The returned resource policy.
-    /// </p>
+    /// <p> The returned resource policy. </p>
     pub fn policy(&self) -> std::option::Option<&crate::model::ResourcePolicy> {
         self.policy.as_ref()
     }
@@ -2611,16 +1851,12 @@ pub mod get_domain_permissions_policy_output {
         pub(crate) policy: std::option::Option<crate::model::ResourcePolicy>,
     }
     impl Builder {
-        /// <p>
-        /// The returned resource policy.
-        /// </p>
+        /// <p> The returned resource policy. </p>
         pub fn policy(mut self, input: crate::model::ResourcePolicy) -> Self {
             self.policy = Some(input);
             self
         }
-        /// <p>
-        /// The returned resource policy.
-        /// </p>
+        /// <p> The returned resource policy. </p>
         pub fn set_policy(
             mut self,
             input: std::option::Option<crate::model::ResourcePolicy>,
@@ -2647,25 +1883,17 @@ impl GetDomainPermissionsPolicyOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAuthorizationTokenOutput {
-    /// <p>
-    /// The returned authentication token.
-    /// </p>
+    /// <p> The returned authentication token. </p>
     pub authorization_token: std::option::Option<std::string::String>,
-    /// <p>
-    /// A timestamp that specifies the date and time the authorization token expires.
-    /// </p>
+    /// <p> A timestamp that specifies the date and time the authorization token expires. </p>
     pub expiration: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetAuthorizationTokenOutput {
-    /// <p>
-    /// The returned authentication token.
-    /// </p>
+    /// <p> The returned authentication token. </p>
     pub fn authorization_token(&self) -> std::option::Option<&str> {
         self.authorization_token.as_deref()
     }
-    /// <p>
-    /// A timestamp that specifies the date and time the authorization token expires.
-    /// </p>
+    /// <p> A timestamp that specifies the date and time the authorization token expires. </p>
     pub fn expiration(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expiration.as_ref()
     }
@@ -2688,16 +1916,12 @@ pub mod get_authorization_token_output {
         pub(crate) expiration: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>
-        /// The returned authentication token.
-        /// </p>
+        /// <p> The returned authentication token. </p>
         pub fn authorization_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.authorization_token = Some(input.into());
             self
         }
-        /// <p>
-        /// The returned authentication token.
-        /// </p>
+        /// <p> The returned authentication token. </p>
         pub fn set_authorization_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2705,16 +1929,12 @@ pub mod get_authorization_token_output {
             self.authorization_token = input;
             self
         }
-        /// <p>
-        /// A timestamp that specifies the date and time the authorization token expires.
-        /// </p>
+        /// <p> A timestamp that specifies the date and time the authorization token expires. </p>
         pub fn expiration(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.expiration = Some(input);
             self
         }
-        /// <p>
-        /// A timestamp that specifies the date and time the authorization token expires.
-        /// </p>
+        /// <p> A timestamp that specifies the date and time the authorization token expires. </p>
         pub fn set_expiration(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -2742,56 +1962,25 @@ impl GetAuthorizationTokenOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisposePackageVersionsOutput {
-    /// <p>
-    /// A list of the package versions that were successfully disposed.
-    /// </p>
+    /// <p> A list of the package versions that were successfully disposed. </p>
     pub successful_versions: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::SuccessfulPackageVersionInfo>,
     >,
-    /// <p>
-    /// A <code>PackageVersionError</code> object that contains a map of errors codes for the
-    /// disposed package versions that failed. The possible error codes are:
-    /// </p>
+    /// <p> A <code>PackageVersionError</code> object that contains a map of errors codes for the disposed package versions that failed. The possible error codes are: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ALREADY_EXISTS</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MISMATCHED_REVISION</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MISMATCHED_STATUS</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NOT_ALLOWED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NOT_FOUND</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SKIPPED</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>ALREADY_EXISTS</code> </p> </li>
+    /// <li> <p> <code>MISMATCHED_REVISION</code> </p> </li>
+    /// <li> <p> <code>MISMATCHED_STATUS</code> </p> </li>
+    /// <li> <p> <code>NOT_ALLOWED</code> </p> </li>
+    /// <li> <p> <code>NOT_FOUND</code> </p> </li>
+    /// <li> <p> <code>SKIPPED</code> </p> </li>
     /// </ul>
     pub failed_versions: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::PackageVersionError>,
     >,
 }
 impl DisposePackageVersionsOutput {
-    /// <p>
-    /// A list of the package versions that were successfully disposed.
-    /// </p>
+    /// <p> A list of the package versions that were successfully disposed. </p>
     pub fn successful_versions(
         &self,
     ) -> std::option::Option<
@@ -2799,41 +1988,14 @@ impl DisposePackageVersionsOutput {
     > {
         self.successful_versions.as_ref()
     }
-    /// <p>
-    /// A <code>PackageVersionError</code> object that contains a map of errors codes for the
-    /// disposed package versions that failed. The possible error codes are:
-    /// </p>
+    /// <p> A <code>PackageVersionError</code> object that contains a map of errors codes for the disposed package versions that failed. The possible error codes are: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ALREADY_EXISTS</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MISMATCHED_REVISION</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MISMATCHED_STATUS</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NOT_ALLOWED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NOT_FOUND</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SKIPPED</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>ALREADY_EXISTS</code> </p> </li>
+    /// <li> <p> <code>MISMATCHED_REVISION</code> </p> </li>
+    /// <li> <p> <code>MISMATCHED_STATUS</code> </p> </li>
+    /// <li> <p> <code>NOT_ALLOWED</code> </p> </li>
+    /// <li> <p> <code>NOT_FOUND</code> </p> </li>
+    /// <li> <p> <code>SKIPPED</code> </p> </li>
     /// </ul>
     pub fn failed_versions(
         &self,
@@ -2872,9 +2034,7 @@ pub mod dispose_package_versions_output {
         ///
         /// To override the contents of this collection use [`set_successful_versions`](Self::set_successful_versions).
         ///
-        /// <p>
-        /// A list of the package versions that were successfully disposed.
-        /// </p>
+        /// <p> A list of the package versions that were successfully disposed. </p>
         pub fn successful_versions(
             mut self,
             k: impl Into<std::string::String>,
@@ -2885,9 +2045,7 @@ pub mod dispose_package_versions_output {
             self.successful_versions = Some(hash_map);
             self
         }
-        /// <p>
-        /// A list of the package versions that were successfully disposed.
-        /// </p>
+        /// <p> A list of the package versions that were successfully disposed. </p>
         pub fn set_successful_versions(
             mut self,
             input: std::option::Option<
@@ -2904,41 +2062,14 @@ pub mod dispose_package_versions_output {
         ///
         /// To override the contents of this collection use [`set_failed_versions`](Self::set_failed_versions).
         ///
-        /// <p>
-        /// A <code>PackageVersionError</code> object that contains a map of errors codes for the
-        /// disposed package versions that failed. The possible error codes are:
-        /// </p>
+        /// <p> A <code>PackageVersionError</code> object that contains a map of errors codes for the disposed package versions that failed. The possible error codes are: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ALREADY_EXISTS</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MISMATCHED_REVISION</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MISMATCHED_STATUS</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NOT_ALLOWED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NOT_FOUND</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SKIPPED</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>ALREADY_EXISTS</code> </p> </li>
+        /// <li> <p> <code>MISMATCHED_REVISION</code> </p> </li>
+        /// <li> <p> <code>MISMATCHED_STATUS</code> </p> </li>
+        /// <li> <p> <code>NOT_ALLOWED</code> </p> </li>
+        /// <li> <p> <code>NOT_FOUND</code> </p> </li>
+        /// <li> <p> <code>SKIPPED</code> </p> </li>
         /// </ul>
         pub fn failed_versions(
             mut self,
@@ -2950,41 +2081,14 @@ pub mod dispose_package_versions_output {
             self.failed_versions = Some(hash_map);
             self
         }
-        /// <p>
-        /// A <code>PackageVersionError</code> object that contains a map of errors codes for the
-        /// disposed package versions that failed. The possible error codes are:
-        /// </p>
+        /// <p> A <code>PackageVersionError</code> object that contains a map of errors codes for the disposed package versions that failed. The possible error codes are: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ALREADY_EXISTS</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MISMATCHED_REVISION</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MISMATCHED_STATUS</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NOT_ALLOWED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NOT_FOUND</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SKIPPED</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>ALREADY_EXISTS</code> </p> </li>
+        /// <li> <p> <code>MISMATCHED_REVISION</code> </p> </li>
+        /// <li> <p> <code>MISMATCHED_STATUS</code> </p> </li>
+        /// <li> <p> <code>NOT_ALLOWED</code> </p> </li>
+        /// <li> <p> <code>NOT_FOUND</code> </p> </li>
+        /// <li> <p> <code>SKIPPED</code> </p> </li>
         /// </ul>
         pub fn set_failed_versions(
             mut self,
@@ -3015,15 +2119,11 @@ impl DisposePackageVersionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateExternalConnectionOutput {
-    /// <p>
-    /// The repository associated with the removed external connection.
-    /// </p>
+    /// <p> The repository associated with the removed external connection. </p>
     pub repository: std::option::Option<crate::model::RepositoryDescription>,
 }
 impl DisassociateExternalConnectionOutput {
-    /// <p>
-    /// The repository associated with the removed external connection.
-    /// </p>
+    /// <p> The repository associated with the removed external connection. </p>
     pub fn repository(&self) -> std::option::Option<&crate::model::RepositoryDescription> {
         self.repository.as_ref()
     }
@@ -3044,16 +2144,12 @@ pub mod disassociate_external_connection_output {
         pub(crate) repository: std::option::Option<crate::model::RepositoryDescription>,
     }
     impl Builder {
-        /// <p>
-        /// The repository associated with the removed external connection.
-        /// </p>
+        /// <p> The repository associated with the removed external connection. </p>
         pub fn repository(mut self, input: crate::model::RepositoryDescription) -> Self {
             self.repository = Some(input);
             self
         }
-        /// <p>
-        /// The repository associated with the removed external connection.
-        /// </p>
+        /// <p> The repository associated with the removed external connection. </p>
         pub fn set_repository(
             mut self,
             input: std::option::Option<crate::model::RepositoryDescription>,
@@ -3080,15 +2176,11 @@ impl DisassociateExternalConnectionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRepositoryOutput {
-    /// <p>
-    /// A <code>RepositoryDescription</code> object that contains the requested repository information.
-    /// </p>
+    /// <p> A <code>RepositoryDescription</code> object that contains the requested repository information. </p>
     pub repository: std::option::Option<crate::model::RepositoryDescription>,
 }
 impl DescribeRepositoryOutput {
-    /// <p>
-    /// A <code>RepositoryDescription</code> object that contains the requested repository information.
-    /// </p>
+    /// <p> A <code>RepositoryDescription</code> object that contains the requested repository information. </p>
     pub fn repository(&self) -> std::option::Option<&crate::model::RepositoryDescription> {
         self.repository.as_ref()
     }
@@ -3109,16 +2201,12 @@ pub mod describe_repository_output {
         pub(crate) repository: std::option::Option<crate::model::RepositoryDescription>,
     }
     impl Builder {
-        /// <p>
-        /// A <code>RepositoryDescription</code> object that contains the requested repository information.
-        /// </p>
+        /// <p> A <code>RepositoryDescription</code> object that contains the requested repository information. </p>
         pub fn repository(mut self, input: crate::model::RepositoryDescription) -> Self {
             self.repository = Some(input);
             self
         }
-        /// <p>
-        /// A <code>RepositoryDescription</code> object that contains the requested repository information.
-        /// </p>
+        /// <p> A <code>RepositoryDescription</code> object that contains the requested repository information. </p>
         pub fn set_repository(
             mut self,
             input: std::option::Option<crate::model::RepositoryDescription>,
@@ -3145,17 +2233,11 @@ impl DescribeRepositoryOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePackageVersionOutput {
-    /// <p>
-    /// A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">PackageVersionDescription</a>
-    /// object that contains information about the requested package version.
-    /// </p>
+    /// <p> A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">PackageVersionDescription</a> object that contains information about the requested package version. </p>
     pub package_version: std::option::Option<crate::model::PackageVersionDescription>,
 }
 impl DescribePackageVersionOutput {
-    /// <p>
-    /// A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">PackageVersionDescription</a>
-    /// object that contains information about the requested package version.
-    /// </p>
+    /// <p> A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">PackageVersionDescription</a> object that contains information about the requested package version. </p>
     pub fn package_version(&self) -> std::option::Option<&crate::model::PackageVersionDescription> {
         self.package_version.as_ref()
     }
@@ -3176,18 +2258,12 @@ pub mod describe_package_version_output {
         pub(crate) package_version: std::option::Option<crate::model::PackageVersionDescription>,
     }
     impl Builder {
-        /// <p>
-        /// A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">PackageVersionDescription</a>
-        /// object that contains information about the requested package version.
-        /// </p>
+        /// <p> A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">PackageVersionDescription</a> object that contains information about the requested package version. </p>
         pub fn package_version(mut self, input: crate::model::PackageVersionDescription) -> Self {
             self.package_version = Some(input);
             self
         }
-        /// <p>
-        /// A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">PackageVersionDescription</a>
-        /// object that contains information about the requested package version.
-        /// </p>
+        /// <p> A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">PackageVersionDescription</a> object that contains information about the requested package version. </p>
         pub fn set_package_version(
             mut self,
             input: std::option::Option<crate::model::PackageVersionDescription>,
@@ -3214,17 +2290,11 @@ impl DescribePackageVersionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDomainOutput {
-    /// <p>
-    /// Information about a domain. A domain is a container for repositories. When you create a domain, it is empty until you
-    /// add one or more repositories.
-    /// </p>
+    /// <p> Information about a domain. A domain is a container for repositories. When you create a domain, it is empty until you add one or more repositories. </p>
     pub domain: std::option::Option<crate::model::DomainDescription>,
 }
 impl DescribeDomainOutput {
-    /// <p>
-    /// Information about a domain. A domain is a container for repositories. When you create a domain, it is empty until you
-    /// add one or more repositories.
-    /// </p>
+    /// <p> Information about a domain. A domain is a container for repositories. When you create a domain, it is empty until you add one or more repositories. </p>
     pub fn domain(&self) -> std::option::Option<&crate::model::DomainDescription> {
         self.domain.as_ref()
     }
@@ -3245,18 +2315,12 @@ pub mod describe_domain_output {
         pub(crate) domain: std::option::Option<crate::model::DomainDescription>,
     }
     impl Builder {
-        /// <p>
-        /// Information about a domain. A domain is a container for repositories. When you create a domain, it is empty until you
-        /// add one or more repositories.
-        /// </p>
+        /// <p> Information about a domain. A domain is a container for repositories. When you create a domain, it is empty until you add one or more repositories. </p>
         pub fn domain(mut self, input: crate::model::DomainDescription) -> Self {
             self.domain = Some(input);
             self
         }
-        /// <p>
-        /// Information about a domain. A domain is a container for repositories. When you create a domain, it is empty until you
-        /// add one or more repositories.
-        /// </p>
+        /// <p> Information about a domain. A domain is a container for repositories. When you create a domain, it is empty until you add one or more repositories. </p>
         pub fn set_domain(
             mut self,
             input: std::option::Option<crate::model::DomainDescription>,
@@ -3283,15 +2347,11 @@ impl DescribeDomainOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRepositoryPermissionsPolicyOutput {
-    /// <p>
-    /// Information about the deleted policy after processing the request.
-    /// </p>
+    /// <p> Information about the deleted policy after processing the request. </p>
     pub policy: std::option::Option<crate::model::ResourcePolicy>,
 }
 impl DeleteRepositoryPermissionsPolicyOutput {
-    /// <p>
-    /// Information about the deleted policy after processing the request.
-    /// </p>
+    /// <p> Information about the deleted policy after processing the request. </p>
     pub fn policy(&self) -> std::option::Option<&crate::model::ResourcePolicy> {
         self.policy.as_ref()
     }
@@ -3312,16 +2372,12 @@ pub mod delete_repository_permissions_policy_output {
         pub(crate) policy: std::option::Option<crate::model::ResourcePolicy>,
     }
     impl Builder {
-        /// <p>
-        /// Information about the deleted policy after processing the request.
-        /// </p>
+        /// <p> Information about the deleted policy after processing the request. </p>
         pub fn policy(mut self, input: crate::model::ResourcePolicy) -> Self {
             self.policy = Some(input);
             self
         }
-        /// <p>
-        /// Information about the deleted policy after processing the request.
-        /// </p>
+        /// <p> Information about the deleted policy after processing the request. </p>
         pub fn set_policy(
             mut self,
             input: std::option::Option<crate::model::ResourcePolicy>,
@@ -3348,15 +2404,11 @@ impl DeleteRepositoryPermissionsPolicyOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRepositoryOutput {
-    /// <p>
-    /// Information about the deleted repository after processing the request.
-    /// </p>
+    /// <p> Information about the deleted repository after processing the request. </p>
     pub repository: std::option::Option<crate::model::RepositoryDescription>,
 }
 impl DeleteRepositoryOutput {
-    /// <p>
-    /// Information about the deleted repository after processing the request.
-    /// </p>
+    /// <p> Information about the deleted repository after processing the request. </p>
     pub fn repository(&self) -> std::option::Option<&crate::model::RepositoryDescription> {
         self.repository.as_ref()
     }
@@ -3377,16 +2429,12 @@ pub mod delete_repository_output {
         pub(crate) repository: std::option::Option<crate::model::RepositoryDescription>,
     }
     impl Builder {
-        /// <p>
-        /// Information about the deleted repository after processing the request.
-        /// </p>
+        /// <p> Information about the deleted repository after processing the request. </p>
         pub fn repository(mut self, input: crate::model::RepositoryDescription) -> Self {
             self.repository = Some(input);
             self
         }
-        /// <p>
-        /// Information about the deleted repository after processing the request.
-        /// </p>
+        /// <p> Information about the deleted repository after processing the request. </p>
         pub fn set_repository(
             mut self,
             input: std::option::Option<crate::model::RepositoryDescription>,
@@ -3413,56 +2461,25 @@ impl DeleteRepositoryOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePackageVersionsOutput {
-    /// <p>
-    /// A list of the package versions that were successfully deleted.
-    /// </p>
+    /// <p> A list of the package versions that were successfully deleted. </p>
     pub successful_versions: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::SuccessfulPackageVersionInfo>,
     >,
-    /// <p>
-    /// A <code>PackageVersionError</code> object that contains a map of errors codes for the
-    /// deleted package that failed. The possible error codes are:
-    /// </p>
+    /// <p> A <code>PackageVersionError</code> object that contains a map of errors codes for the deleted package that failed. The possible error codes are: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ALREADY_EXISTS</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MISMATCHED_REVISION</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MISMATCHED_STATUS</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NOT_ALLOWED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NOT_FOUND</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SKIPPED</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>ALREADY_EXISTS</code> </p> </li>
+    /// <li> <p> <code>MISMATCHED_REVISION</code> </p> </li>
+    /// <li> <p> <code>MISMATCHED_STATUS</code> </p> </li>
+    /// <li> <p> <code>NOT_ALLOWED</code> </p> </li>
+    /// <li> <p> <code>NOT_FOUND</code> </p> </li>
+    /// <li> <p> <code>SKIPPED</code> </p> </li>
     /// </ul>
     pub failed_versions: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::PackageVersionError>,
     >,
 }
 impl DeletePackageVersionsOutput {
-    /// <p>
-    /// A list of the package versions that were successfully deleted.
-    /// </p>
+    /// <p> A list of the package versions that were successfully deleted. </p>
     pub fn successful_versions(
         &self,
     ) -> std::option::Option<
@@ -3470,41 +2487,14 @@ impl DeletePackageVersionsOutput {
     > {
         self.successful_versions.as_ref()
     }
-    /// <p>
-    /// A <code>PackageVersionError</code> object that contains a map of errors codes for the
-    /// deleted package that failed. The possible error codes are:
-    /// </p>
+    /// <p> A <code>PackageVersionError</code> object that contains a map of errors codes for the deleted package that failed. The possible error codes are: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ALREADY_EXISTS</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MISMATCHED_REVISION</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MISMATCHED_STATUS</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NOT_ALLOWED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NOT_FOUND</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SKIPPED</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>ALREADY_EXISTS</code> </p> </li>
+    /// <li> <p> <code>MISMATCHED_REVISION</code> </p> </li>
+    /// <li> <p> <code>MISMATCHED_STATUS</code> </p> </li>
+    /// <li> <p> <code>NOT_ALLOWED</code> </p> </li>
+    /// <li> <p> <code>NOT_FOUND</code> </p> </li>
+    /// <li> <p> <code>SKIPPED</code> </p> </li>
     /// </ul>
     pub fn failed_versions(
         &self,
@@ -3543,9 +2533,7 @@ pub mod delete_package_versions_output {
         ///
         /// To override the contents of this collection use [`set_successful_versions`](Self::set_successful_versions).
         ///
-        /// <p>
-        /// A list of the package versions that were successfully deleted.
-        /// </p>
+        /// <p> A list of the package versions that were successfully deleted. </p>
         pub fn successful_versions(
             mut self,
             k: impl Into<std::string::String>,
@@ -3556,9 +2544,7 @@ pub mod delete_package_versions_output {
             self.successful_versions = Some(hash_map);
             self
         }
-        /// <p>
-        /// A list of the package versions that were successfully deleted.
-        /// </p>
+        /// <p> A list of the package versions that were successfully deleted. </p>
         pub fn set_successful_versions(
             mut self,
             input: std::option::Option<
@@ -3575,41 +2561,14 @@ pub mod delete_package_versions_output {
         ///
         /// To override the contents of this collection use [`set_failed_versions`](Self::set_failed_versions).
         ///
-        /// <p>
-        /// A <code>PackageVersionError</code> object that contains a map of errors codes for the
-        /// deleted package that failed. The possible error codes are:
-        /// </p>
+        /// <p> A <code>PackageVersionError</code> object that contains a map of errors codes for the deleted package that failed. The possible error codes are: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ALREADY_EXISTS</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MISMATCHED_REVISION</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MISMATCHED_STATUS</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NOT_ALLOWED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NOT_FOUND</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SKIPPED</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>ALREADY_EXISTS</code> </p> </li>
+        /// <li> <p> <code>MISMATCHED_REVISION</code> </p> </li>
+        /// <li> <p> <code>MISMATCHED_STATUS</code> </p> </li>
+        /// <li> <p> <code>NOT_ALLOWED</code> </p> </li>
+        /// <li> <p> <code>NOT_FOUND</code> </p> </li>
+        /// <li> <p> <code>SKIPPED</code> </p> </li>
         /// </ul>
         pub fn failed_versions(
             mut self,
@@ -3621,41 +2580,14 @@ pub mod delete_package_versions_output {
             self.failed_versions = Some(hash_map);
             self
         }
-        /// <p>
-        /// A <code>PackageVersionError</code> object that contains a map of errors codes for the
-        /// deleted package that failed. The possible error codes are:
-        /// </p>
+        /// <p> A <code>PackageVersionError</code> object that contains a map of errors codes for the deleted package that failed. The possible error codes are: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ALREADY_EXISTS</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MISMATCHED_REVISION</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MISMATCHED_STATUS</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NOT_ALLOWED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NOT_FOUND</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SKIPPED</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>ALREADY_EXISTS</code> </p> </li>
+        /// <li> <p> <code>MISMATCHED_REVISION</code> </p> </li>
+        /// <li> <p> <code>MISMATCHED_STATUS</code> </p> </li>
+        /// <li> <p> <code>NOT_ALLOWED</code> </p> </li>
+        /// <li> <p> <code>NOT_FOUND</code> </p> </li>
+        /// <li> <p> <code>SKIPPED</code> </p> </li>
         /// </ul>
         pub fn set_failed_versions(
             mut self,
@@ -3686,15 +2618,11 @@ impl DeletePackageVersionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDomainPermissionsPolicyOutput {
-    /// <p>
-    /// Information about the deleted resource policy after processing the request.
-    /// </p>
+    /// <p> Information about the deleted resource policy after processing the request. </p>
     pub policy: std::option::Option<crate::model::ResourcePolicy>,
 }
 impl DeleteDomainPermissionsPolicyOutput {
-    /// <p>
-    /// Information about the deleted resource policy after processing the request.
-    /// </p>
+    /// <p> Information about the deleted resource policy after processing the request. </p>
     pub fn policy(&self) -> std::option::Option<&crate::model::ResourcePolicy> {
         self.policy.as_ref()
     }
@@ -3715,16 +2643,12 @@ pub mod delete_domain_permissions_policy_output {
         pub(crate) policy: std::option::Option<crate::model::ResourcePolicy>,
     }
     impl Builder {
-        /// <p>
-        /// Information about the deleted resource policy after processing the request.
-        /// </p>
+        /// <p> Information about the deleted resource policy after processing the request. </p>
         pub fn policy(mut self, input: crate::model::ResourcePolicy) -> Self {
             self.policy = Some(input);
             self
         }
-        /// <p>
-        /// Information about the deleted resource policy after processing the request.
-        /// </p>
+        /// <p> Information about the deleted resource policy after processing the request. </p>
         pub fn set_policy(
             mut self,
             input: std::option::Option<crate::model::ResourcePolicy>,
@@ -3751,15 +2675,11 @@ impl DeleteDomainPermissionsPolicyOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDomainOutput {
-    /// <p>
-    /// Contains information about the deleted domain after processing the request.
-    /// </p>
+    /// <p> Contains information about the deleted domain after processing the request. </p>
     pub domain: std::option::Option<crate::model::DomainDescription>,
 }
 impl DeleteDomainOutput {
-    /// <p>
-    /// Contains information about the deleted domain after processing the request.
-    /// </p>
+    /// <p> Contains information about the deleted domain after processing the request. </p>
     pub fn domain(&self) -> std::option::Option<&crate::model::DomainDescription> {
         self.domain.as_ref()
     }
@@ -3780,16 +2700,12 @@ pub mod delete_domain_output {
         pub(crate) domain: std::option::Option<crate::model::DomainDescription>,
     }
     impl Builder {
-        /// <p>
-        /// Contains information about the deleted domain after processing the request.
-        /// </p>
+        /// <p> Contains information about the deleted domain after processing the request. </p>
         pub fn domain(mut self, input: crate::model::DomainDescription) -> Self {
             self.domain = Some(input);
             self
         }
-        /// <p>
-        /// Contains information about the deleted domain after processing the request.
-        /// </p>
+        /// <p> Contains information about the deleted domain after processing the request. </p>
         pub fn set_domain(
             mut self,
             input: std::option::Option<crate::model::DomainDescription>,
@@ -3816,15 +2732,11 @@ impl DeleteDomainOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRepositoryOutput {
-    /// <p>
-    /// Information about the created repository after processing the request.
-    /// </p>
+    /// <p> Information about the created repository after processing the request. </p>
     pub repository: std::option::Option<crate::model::RepositoryDescription>,
 }
 impl CreateRepositoryOutput {
-    /// <p>
-    /// Information about the created repository after processing the request.
-    /// </p>
+    /// <p> Information about the created repository after processing the request. </p>
     pub fn repository(&self) -> std::option::Option<&crate::model::RepositoryDescription> {
         self.repository.as_ref()
     }
@@ -3845,16 +2757,12 @@ pub mod create_repository_output {
         pub(crate) repository: std::option::Option<crate::model::RepositoryDescription>,
     }
     impl Builder {
-        /// <p>
-        /// Information about the created repository after processing the request.
-        /// </p>
+        /// <p> Information about the created repository after processing the request. </p>
         pub fn repository(mut self, input: crate::model::RepositoryDescription) -> Self {
             self.repository = Some(input);
             self
         }
-        /// <p>
-        /// Information about the created repository after processing the request.
-        /// </p>
+        /// <p> Information about the created repository after processing the request. </p>
         pub fn set_repository(
             mut self,
             input: std::option::Option<crate::model::RepositoryDescription>,
@@ -3881,15 +2789,11 @@ impl CreateRepositoryOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDomainOutput {
-    /// <p>
-    /// Contains information about the created domain after processing the request.
-    /// </p>
+    /// <p> Contains information about the created domain after processing the request. </p>
     pub domain: std::option::Option<crate::model::DomainDescription>,
 }
 impl CreateDomainOutput {
-    /// <p>
-    /// Contains information about the created domain after processing the request.
-    /// </p>
+    /// <p> Contains information about the created domain after processing the request. </p>
     pub fn domain(&self) -> std::option::Option<&crate::model::DomainDescription> {
         self.domain.as_ref()
     }
@@ -3910,16 +2814,12 @@ pub mod create_domain_output {
         pub(crate) domain: std::option::Option<crate::model::DomainDescription>,
     }
     impl Builder {
-        /// <p>
-        /// Contains information about the created domain after processing the request.
-        /// </p>
+        /// <p> Contains information about the created domain after processing the request. </p>
         pub fn domain(mut self, input: crate::model::DomainDescription) -> Self {
             self.domain = Some(input);
             self
         }
-        /// <p>
-        /// Contains information about the created domain after processing the request.
-        /// </p>
+        /// <p> Contains information about the created domain after processing the request. </p>
         pub fn set_domain(
             mut self,
             input: std::option::Option<crate::model::DomainDescription>,
@@ -3946,56 +2846,25 @@ impl CreateDomainOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CopyPackageVersionsOutput {
-    /// <p>
-    /// A list of the package versions that were successfully copied to your repository.
-    /// </p>
+    /// <p> A list of the package versions that were successfully copied to your repository. </p>
     pub successful_versions: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::SuccessfulPackageVersionInfo>,
     >,
-    /// <p>
-    /// A map of package versions that failed to copy and their error codes. The possible error codes are in
-    /// the <code>PackageVersionError</code> data type. They are:
-    /// </p>
+    /// <p> A map of package versions that failed to copy and their error codes. The possible error codes are in the <code>PackageVersionError</code> data type. They are: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ALREADY_EXISTS</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MISMATCHED_REVISION</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MISMATCHED_STATUS</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NOT_ALLOWED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NOT_FOUND</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SKIPPED</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>ALREADY_EXISTS</code> </p> </li>
+    /// <li> <p> <code>MISMATCHED_REVISION</code> </p> </li>
+    /// <li> <p> <code>MISMATCHED_STATUS</code> </p> </li>
+    /// <li> <p> <code>NOT_ALLOWED</code> </p> </li>
+    /// <li> <p> <code>NOT_FOUND</code> </p> </li>
+    /// <li> <p> <code>SKIPPED</code> </p> </li>
     /// </ul>
     pub failed_versions: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::PackageVersionError>,
     >,
 }
 impl CopyPackageVersionsOutput {
-    /// <p>
-    /// A list of the package versions that were successfully copied to your repository.
-    /// </p>
+    /// <p> A list of the package versions that were successfully copied to your repository. </p>
     pub fn successful_versions(
         &self,
     ) -> std::option::Option<
@@ -4003,41 +2872,14 @@ impl CopyPackageVersionsOutput {
     > {
         self.successful_versions.as_ref()
     }
-    /// <p>
-    /// A map of package versions that failed to copy and their error codes. The possible error codes are in
-    /// the <code>PackageVersionError</code> data type. They are:
-    /// </p>
+    /// <p> A map of package versions that failed to copy and their error codes. The possible error codes are in the <code>PackageVersionError</code> data type. They are: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ALREADY_EXISTS</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MISMATCHED_REVISION</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MISMATCHED_STATUS</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NOT_ALLOWED</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NOT_FOUND</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SKIPPED</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>ALREADY_EXISTS</code> </p> </li>
+    /// <li> <p> <code>MISMATCHED_REVISION</code> </p> </li>
+    /// <li> <p> <code>MISMATCHED_STATUS</code> </p> </li>
+    /// <li> <p> <code>NOT_ALLOWED</code> </p> </li>
+    /// <li> <p> <code>NOT_FOUND</code> </p> </li>
+    /// <li> <p> <code>SKIPPED</code> </p> </li>
     /// </ul>
     pub fn failed_versions(
         &self,
@@ -4076,9 +2918,7 @@ pub mod copy_package_versions_output {
         ///
         /// To override the contents of this collection use [`set_successful_versions`](Self::set_successful_versions).
         ///
-        /// <p>
-        /// A list of the package versions that were successfully copied to your repository.
-        /// </p>
+        /// <p> A list of the package versions that were successfully copied to your repository. </p>
         pub fn successful_versions(
             mut self,
             k: impl Into<std::string::String>,
@@ -4089,9 +2929,7 @@ pub mod copy_package_versions_output {
             self.successful_versions = Some(hash_map);
             self
         }
-        /// <p>
-        /// A list of the package versions that were successfully copied to your repository.
-        /// </p>
+        /// <p> A list of the package versions that were successfully copied to your repository. </p>
         pub fn set_successful_versions(
             mut self,
             input: std::option::Option<
@@ -4108,41 +2946,14 @@ pub mod copy_package_versions_output {
         ///
         /// To override the contents of this collection use [`set_failed_versions`](Self::set_failed_versions).
         ///
-        /// <p>
-        /// A map of package versions that failed to copy and their error codes. The possible error codes are in
-        /// the <code>PackageVersionError</code> data type. They are:
-        /// </p>
+        /// <p> A map of package versions that failed to copy and their error codes. The possible error codes are in the <code>PackageVersionError</code> data type. They are: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ALREADY_EXISTS</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MISMATCHED_REVISION</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MISMATCHED_STATUS</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NOT_ALLOWED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NOT_FOUND</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SKIPPED</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>ALREADY_EXISTS</code> </p> </li>
+        /// <li> <p> <code>MISMATCHED_REVISION</code> </p> </li>
+        /// <li> <p> <code>MISMATCHED_STATUS</code> </p> </li>
+        /// <li> <p> <code>NOT_ALLOWED</code> </p> </li>
+        /// <li> <p> <code>NOT_FOUND</code> </p> </li>
+        /// <li> <p> <code>SKIPPED</code> </p> </li>
         /// </ul>
         pub fn failed_versions(
             mut self,
@@ -4154,41 +2965,14 @@ pub mod copy_package_versions_output {
             self.failed_versions = Some(hash_map);
             self
         }
-        /// <p>
-        /// A map of package versions that failed to copy and their error codes. The possible error codes are in
-        /// the <code>PackageVersionError</code> data type. They are:
-        /// </p>
+        /// <p> A map of package versions that failed to copy and their error codes. The possible error codes are in the <code>PackageVersionError</code> data type. They are: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ALREADY_EXISTS</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MISMATCHED_REVISION</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MISMATCHED_STATUS</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NOT_ALLOWED</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NOT_FOUND</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SKIPPED</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>ALREADY_EXISTS</code> </p> </li>
+        /// <li> <p> <code>MISMATCHED_REVISION</code> </p> </li>
+        /// <li> <p> <code>MISMATCHED_STATUS</code> </p> </li>
+        /// <li> <p> <code>NOT_ALLOWED</code> </p> </li>
+        /// <li> <p> <code>NOT_FOUND</code> </p> </li>
+        /// <li> <p> <code>SKIPPED</code> </p> </li>
         /// </ul>
         pub fn set_failed_versions(
             mut self,
@@ -4219,15 +3003,11 @@ impl CopyPackageVersionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateExternalConnectionOutput {
-    /// <p>
-    /// Information about the connected repository after processing the request.
-    /// </p>
+    /// <p> Information about the connected repository after processing the request. </p>
     pub repository: std::option::Option<crate::model::RepositoryDescription>,
 }
 impl AssociateExternalConnectionOutput {
-    /// <p>
-    /// Information about the connected repository after processing the request.
-    /// </p>
+    /// <p> Information about the connected repository after processing the request. </p>
     pub fn repository(&self) -> std::option::Option<&crate::model::RepositoryDescription> {
         self.repository.as_ref()
     }
@@ -4248,16 +3028,12 @@ pub mod associate_external_connection_output {
         pub(crate) repository: std::option::Option<crate::model::RepositoryDescription>,
     }
     impl Builder {
-        /// <p>
-        /// Information about the connected repository after processing the request.
-        /// </p>
+        /// <p> Information about the connected repository after processing the request. </p>
         pub fn repository(mut self, input: crate::model::RepositoryDescription) -> Self {
             self.repository = Some(input);
             self
         }
-        /// <p>
-        /// Information about the connected repository after processing the request.
-        /// </p>
+        /// <p> Information about the connected repository after processing the request. </p>
         pub fn set_repository(
             mut self,
             input: std::option::Option<crate::model::RepositoryDescription>,

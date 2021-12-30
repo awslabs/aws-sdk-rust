@@ -87,15 +87,13 @@ impl PublishOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRetainedMessagesOutput {
-    /// <p>A summary list the account's retained messages. The information returned doesn't include
-    /// the message payloads of the retained messages.</p>
+    /// <p>A summary list the account's retained messages. The information returned doesn't include the message payloads of the retained messages.</p>
     pub retained_topics: std::option::Option<std::vec::Vec<crate::model::RetainedMessageSummary>>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRetainedMessagesOutput {
-    /// <p>A summary list the account's retained messages. The information returned doesn't include
-    /// the message payloads of the retained messages.</p>
+    /// <p>A summary list the account's retained messages. The information returned doesn't include the message payloads of the retained messages.</p>
     pub fn retained_topics(&self) -> std::option::Option<&[crate::model::RetainedMessageSummary]> {
         self.retained_topics.as_deref()
     }
@@ -127,16 +125,14 @@ pub mod list_retained_messages_output {
         ///
         /// To override the contents of this collection use [`set_retained_topics`](Self::set_retained_topics).
         ///
-        /// <p>A summary list the account's retained messages. The information returned doesn't include
-        /// the message payloads of the retained messages.</p>
+        /// <p>A summary list the account's retained messages. The information returned doesn't include the message payloads of the retained messages.</p>
         pub fn retained_topics(mut self, input: crate::model::RetainedMessageSummary) -> Self {
             let mut v = self.retained_topics.unwrap_or_default();
             v.push(input);
             self.retained_topics = Some(v);
             self
         }
-        /// <p>A summary list the account's retained messages. The information returned doesn't include
-        /// the message payloads of the retained messages.</p>
+        /// <p>A summary list the account's retained messages. The information returned doesn't include the message payloads of the retained messages.</p>
         pub fn set_retained_topics(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RetainedMessageSummary>>,

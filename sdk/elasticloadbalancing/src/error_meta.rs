@@ -5,9 +5,7 @@
 pub enum Error {
     /// <p>The specified load balancer does not exist.</p>
     AccessPointNotFoundException(crate::error::AccessPointNotFoundException),
-    /// <p>The specified ARN does not refer to a valid SSL certificate in AWS Identity and Access Management (IAM)
-    /// or AWS Certificate Manager (ACM). Note that if you recently uploaded the certificate to IAM, this error might
-    /// indicate that the certificate is not fully available yet.</p>
+    /// <p>The specified ARN does not refer to a valid SSL certificate in AWS Identity and Access Management (IAM) or AWS Certificate Manager (ACM). Note that if you recently uploaded the certificate to IAM, this error might indicate that the certificate is not fully available yet.</p>
     CertificateNotFoundException(crate::error::CertificateNotFoundException),
     /// <p>A request made by Elastic Load Balancing to another service exceeds the maximum request rate permitted for your account.</p>
     DependencyThrottleException(crate::error::DependencyThrottleException),

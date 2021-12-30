@@ -9,15 +9,13 @@ pub mod accept_invitation_input {
         pub(crate) graph_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ARN of the behavior graph that the member account is accepting the invitation
-        /// for.</p>
+        /// <p>The ARN of the behavior graph that the member account is accepting the invitation for.</p>
         /// <p>The member account status in the behavior graph must be <code>INVITED</code>.</p>
         pub fn graph_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.graph_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the behavior graph that the member account is accepting the invitation
-        /// for.</p>
+        /// <p>The ARN of the behavior graph that the member account is accepting the invitation for.</p>
         /// <p>The member account status in the behavior graph must be <code>INVITED</code>.</p>
         pub fn set_graph_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.graph_arn = input;
@@ -168,9 +166,7 @@ pub mod create_graph_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags to assign to the new behavior graph. You can add up to 50 tags. For each tag,
-        /// you provide the tag key and the tag value. Each tag key can contain up to 128 characters.
-        /// Each tag value can contain up to 256 characters.</p>
+        /// <p>The tags to assign to the new behavior graph. You can add up to 50 tags. For each tag, you provide the tag key and the tag value. Each tag key can contain up to 128 characters. Each tag value can contain up to 256 characters.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -181,9 +177,7 @@ pub mod create_graph_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The tags to assign to the new behavior graph. You can add up to 50 tags. For each tag,
-        /// you provide the tag key and the tag value. Each tag key can contain up to 128 characters.
-        /// Each tag value can contain up to 256 characters.</p>
+        /// <p>The tags to assign to the new behavior graph. You can add up to 50 tags. For each tag, you provide the tag key and the tag value. Each tag key can contain up to 128 characters. Each tag value can contain up to 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -332,40 +326,32 @@ pub mod create_members_input {
         pub(crate) accounts: std::option::Option<std::vec::Vec<crate::model::Account>>,
     }
     impl Builder {
-        /// <p>The ARN of the behavior graph to invite the member accounts to contribute their data
-        /// to.</p>
+        /// <p>The ARN of the behavior graph to invite the member accounts to contribute their data to.</p>
         pub fn graph_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.graph_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the behavior graph to invite the member accounts to contribute their data
-        /// to.</p>
+        /// <p>The ARN of the behavior graph to invite the member accounts to contribute their data to.</p>
         pub fn set_graph_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.graph_arn = input;
             self
         }
-        /// <p>Customized message text to include in the invitation email message to the invited member
-        /// accounts.</p>
+        /// <p>Customized message text to include in the invitation email message to the invited member accounts.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>Customized message text to include in the invitation email message to the invited member
-        /// accounts.</p>
+        /// <p>Customized message text to include in the invitation email message to the invited member accounts.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
         }
-        /// <p>if set to <code>true</code>, then the member accounts do not receive email
-        /// notifications. By default, this is set to <code>false</code>, and the member accounts
-        /// receive email notifications.</p>
+        /// <p>if set to <code>true</code>, then the member accounts do not receive email notifications. By default, this is set to <code>false</code>, and the member accounts receive email notifications.</p>
         pub fn disable_email_notification(mut self, input: bool) -> Self {
             self.disable_email_notification = Some(input);
             self
         }
-        /// <p>if set to <code>true</code>, then the member accounts do not receive email
-        /// notifications. By default, this is set to <code>false</code>, and the member accounts
-        /// receive email notifications.</p>
+        /// <p>if set to <code>true</code>, then the member accounts do not receive email notifications. By default, this is set to <code>false</code>, and the member accounts receive email notifications.</p>
         pub fn set_disable_email_notification(mut self, input: std::option::Option<bool>) -> Self {
             self.disable_email_notification = input;
             self
@@ -374,18 +360,14 @@ pub mod create_members_input {
         ///
         /// To override the contents of this collection use [`set_accounts`](Self::set_accounts).
         ///
-        /// <p>The list of AWS accounts to invite to become member accounts in the behavior graph.
-        /// You can invite up to 50 accounts at a time. For each invited account, the account list
-        /// contains the account identifier and the AWS account root user email address.</p>
+        /// <p>The list of AWS accounts to invite to become member accounts in the behavior graph. You can invite up to 50 accounts at a time. For each invited account, the account list contains the account identifier and the AWS account root user email address.</p>
         pub fn accounts(mut self, input: crate::model::Account) -> Self {
             let mut v = self.accounts.unwrap_or_default();
             v.push(input);
             self.accounts = Some(v);
             self
         }
-        /// <p>The list of AWS accounts to invite to become member accounts in the behavior graph.
-        /// You can invite up to 50 accounts at a time. For each invited account, the account list
-        /// contains the account identifier and the AWS account root user email address.</p>
+        /// <p>The list of AWS accounts to invite to become member accounts in the behavior graph. You can invite up to 50 accounts at a time. For each invited account, the account list contains the account identifier and the AWS account root user email address.</p>
         pub fn set_accounts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Account>>,
@@ -697,16 +679,14 @@ pub mod delete_members_input {
         ///
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
-        /// <p>The list of AWS account identifiers for the member accounts to delete from the
-        /// behavior graph. You can delete up to 50 member accounts at a time.</p>
+        /// <p>The list of AWS account identifiers for the member accounts to delete from the behavior graph. You can delete up to 50 member accounts at a time.</p>
         pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.account_ids.unwrap_or_default();
             v.push(input.into());
             self.account_ids = Some(v);
             self
         }
-        /// <p>The list of AWS account identifiers for the member accounts to delete from the
-        /// behavior graph. You can delete up to 50 member accounts at a time.</p>
+        /// <p>The list of AWS account identifiers for the member accounts to delete from the behavior graph. You can delete up to 50 member accounts at a time.</p>
         pub fn set_account_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -854,15 +834,13 @@ pub mod disassociate_membership_input {
     }
     impl Builder {
         /// <p>The ARN of the behavior graph to remove the member account from.</p>
-        /// <p>The member account's member status in the behavior graph must be
-        /// <code>ENABLED</code>.</p>
+        /// <p>The member account's member status in the behavior graph must be <code>ENABLED</code>.</p>
         pub fn graph_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.graph_arn = Some(input.into());
             self
         }
         /// <p>The ARN of the behavior graph to remove the member account from.</p>
-        /// <p>The member account's member status in the behavior graph must be
-        /// <code>ENABLED</code>.</p>
+        /// <p>The member account's member status in the behavior graph must be <code>ENABLED</code>.</p>
         pub fn set_graph_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.graph_arn = input;
             self
@@ -1023,20 +1001,16 @@ pub mod get_members_input {
         ///
         /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
         ///
-        /// <p>The list of AWS account identifiers for the member account for which to return member
-        /// details. You can request details for up to 50 member accounts at a time.</p>
-        /// <p>You cannot use <code>GetMembers</code> to retrieve information about member accounts
-        /// that were removed from the behavior graph.</p>
+        /// <p>The list of AWS account identifiers for the member account for which to return member details. You can request details for up to 50 member accounts at a time.</p>
+        /// <p>You cannot use <code>GetMembers</code> to retrieve information about member accounts that were removed from the behavior graph.</p>
         pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.account_ids.unwrap_or_default();
             v.push(input.into());
             self.account_ids = Some(v);
             self
         }
-        /// <p>The list of AWS account identifiers for the member account for which to return member
-        /// details. You can request details for up to 50 member accounts at a time.</p>
-        /// <p>You cannot use <code>GetMembers</code> to retrieve information about member accounts
-        /// that were removed from the behavior graph.</p>
+        /// <p>The list of AWS account identifiers for the member account for which to return member details. You can request details for up to 50 member accounts at a time.</p>
+        /// <p>You cannot use <code>GetMembers</code> to retrieve information about member accounts that were removed from the behavior graph.</p>
         pub fn set_account_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1184,28 +1158,22 @@ pub mod list_graphs_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>For requests to get the next page of results, the pagination token that was returned
-        /// with the previous set of results. The initial request does not include a pagination
-        /// token.</p>
+        /// <p>For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>For requests to get the next page of results, the pagination token that was returned
-        /// with the previous set of results. The initial request does not include a pagination
-        /// token.</p>
+        /// <p>For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of graphs to return at a time. The total must be less than the
-        /// overall limit on the number of results to return, which is currently 200.</p>
+        /// <p>The maximum number of graphs to return at a time. The total must be less than the overall limit on the number of results to return, which is currently 200.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of graphs to return at a time. The total must be less than the
-        /// overall limit on the number of results to return, which is currently 200.</p>
+        /// <p>The maximum number of graphs to return at a time. The total must be less than the overall limit on the number of results to return, which is currently 200.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1350,30 +1318,22 @@ pub mod list_invitations_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>For requests to retrieve the next page of results, the pagination token that was
-        /// returned with the previous page of results. The initial request does not include a
-        /// pagination token.</p>
+        /// <p>For requests to retrieve the next page of results, the pagination token that was returned with the previous page of results. The initial request does not include a pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>For requests to retrieve the next page of results, the pagination token that was
-        /// returned with the previous page of results. The initial request does not include a
-        /// pagination token.</p>
+        /// <p>For requests to retrieve the next page of results, the pagination token that was returned with the previous page of results. The initial request does not include a pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of behavior graph invitations to return in the response. The total
-        /// must be less than the overall limit on the number of results to return, which is currently
-        /// 200.</p>
+        /// <p>The maximum number of behavior graph invitations to return in the response. The total must be less than the overall limit on the number of results to return, which is currently 200.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of behavior graph invitations to return in the response. The total
-        /// must be less than the overall limit on the number of results to return, which is currently
-        /// 200.</p>
+        /// <p>The maximum number of behavior graph invitations to return in the response. The total must be less than the overall limit on the number of results to return, which is currently 200.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1530,28 +1490,22 @@ pub mod list_members_input {
             self.graph_arn = input;
             self
         }
-        /// <p>For requests to retrieve the next page of member account results, the pagination token
-        /// that was returned with the previous page of results. The initial request does not include a
-        /// pagination token.</p>
+        /// <p>For requests to retrieve the next page of member account results, the pagination token that was returned with the previous page of results. The initial request does not include a pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>For requests to retrieve the next page of member account results, the pagination token
-        /// that was returned with the previous page of results. The initial request does not include a
-        /// pagination token.</p>
+        /// <p>For requests to retrieve the next page of member account results, the pagination token that was returned with the previous page of results. The initial request does not include a pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of member accounts to include in the response. The total must be less
-        /// than the overall limit on the number of results to return, which is currently 200.</p>
+        /// <p>The maximum number of member accounts to include in the response. The total must be less than the overall limit on the number of results to return, which is currently 200.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of member accounts to include in the response. The total must be less
-        /// than the overall limit on the number of results to return, which is currently 200.</p>
+        /// <p>The maximum number of member accounts to include in the response. The total must be less than the overall limit on the number of results to return, which is currently 200.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1848,15 +1802,13 @@ pub mod reject_invitation_input {
     }
     impl Builder {
         /// <p>The ARN of the behavior graph to reject the invitation to.</p>
-        /// <p>The member account's current member status in the behavior graph must be
-        /// <code>INVITED</code>.</p>
+        /// <p>The member account's current member status in the behavior graph must be <code>INVITED</code>.</p>
         pub fn graph_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.graph_arn = Some(input.into());
             self
         }
         /// <p>The ARN of the behavior graph to reject the invitation to.</p>
-        /// <p>The member account's current member status in the behavior graph must be
-        /// <code>INVITED</code>.</p>
+        /// <p>The member account's current member status in the behavior graph must be <code>INVITED</code>.</p>
         pub fn set_graph_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.graph_arn = input;
             self
@@ -2012,15 +1964,13 @@ pub mod start_monitoring_member_input {
             self
         }
         /// <p>The account ID of the member account to try to enable.</p>
-        /// <p>The account must be an invited member account with a status of
-        /// <code>ACCEPTED_BUT_DISABLED</code>. </p>
+        /// <p>The account must be an invited member account with a status of <code>ACCEPTED_BUT_DISABLED</code>. </p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
         }
         /// <p>The account ID of the member account to try to enable.</p>
-        /// <p>The account must be an invited member account with a status of
-        /// <code>ACCEPTED_BUT_DISABLED</code>. </p>
+        /// <p>The account must be an invited member account with a status of <code>ACCEPTED_BUT_DISABLED</code>. </p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -2184,9 +2134,7 @@ pub mod tag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags to assign to the behavior graph. You can add up to 50 tags. For each tag, you
-        /// provide the tag key and the tag value. Each tag key can contain up to 128 characters. Each
-        /// tag value can contain up to 256 characters.</p>
+        /// <p>The tags to assign to the behavior graph. You can add up to 50 tags. For each tag, you provide the tag key and the tag value. Each tag key can contain up to 128 characters. Each tag value can contain up to 256 characters.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2197,9 +2145,7 @@ pub mod tag_resource_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The tags to assign to the behavior graph. You can add up to 50 tags. For each tag, you
-        /// provide the tag key and the tag value. Each tag key can contain up to 128 characters. Each
-        /// tag value can contain up to 256 characters.</p>
+        /// <p>The tags to assign to the behavior graph. You can add up to 50 tags. For each tag, you provide the tag key and the tag value. Each tag key can contain up to 128 characters. Each tag value can contain up to 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2379,16 +2325,14 @@ pub mod untag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
         ///
-        /// <p>The tag keys of the tags to remove from the behavior graph. You can remove up to 50 tags
-        /// at a time.</p>
+        /// <p>The tag keys of the tags to remove from the behavior graph. You can remove up to 50 tags at a time.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
-        /// <p>The tag keys of the tags to remove from the behavior graph. You can remove up to 50 tags
-        /// at a time.</p>
+        /// <p>The tag keys of the tags to remove from the behavior graph. You can remove up to 50 tags at a time.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2548,8 +2492,7 @@ impl UntagResourceInput {
 pub struct UntagResourceInput {
     /// <p>The ARN of the behavior graph to remove the tags from.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The tag keys of the tags to remove from the behavior graph. You can remove up to 50 tags
-    /// at a time.</p>
+    /// <p>The tag keys of the tags to remove from the behavior graph. You can remove up to 50 tags at a time.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
@@ -2557,8 +2500,7 @@ impl UntagResourceInput {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The tag keys of the tags to remove from the behavior graph. You can remove up to 50 tags
-    /// at a time.</p>
+    /// <p>The tag keys of the tags to remove from the behavior graph. You can remove up to 50 tags at a time.</p>
     pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_keys.as_deref()
     }
@@ -2578,9 +2520,7 @@ impl std::fmt::Debug for UntagResourceInput {
 pub struct TagResourceInput {
     /// <p>The ARN of the behavior graph to assign the tags to.</p>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The tags to assign to the behavior graph. You can add up to 50 tags. For each tag, you
-    /// provide the tag key and the tag value. Each tag key can contain up to 128 characters. Each
-    /// tag value can contain up to 256 characters.</p>
+    /// <p>The tags to assign to the behavior graph. You can add up to 50 tags. For each tag, you provide the tag key and the tag value. Each tag key can contain up to 128 characters. Each tag value can contain up to 256 characters.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2589,9 +2529,7 @@ impl TagResourceInput {
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The tags to assign to the behavior graph. You can add up to 50 tags. For each tag, you
-    /// provide the tag key and the tag value. Each tag key can contain up to 128 characters. Each
-    /// tag value can contain up to 256 characters.</p>
+    /// <p>The tags to assign to the behavior graph. You can add up to 50 tags. For each tag, you provide the tag key and the tag value. Each tag key can contain up to 128 characters. Each tag value can contain up to 256 characters.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -2615,8 +2553,7 @@ pub struct StartMonitoringMemberInput {
     /// <p>The ARN of the behavior graph.</p>
     pub graph_arn: std::option::Option<std::string::String>,
     /// <p>The account ID of the member account to try to enable.</p>
-    /// <p>The account must be an invited member account with a status of
-    /// <code>ACCEPTED_BUT_DISABLED</code>. </p>
+    /// <p>The account must be an invited member account with a status of <code>ACCEPTED_BUT_DISABLED</code>. </p>
     pub account_id: std::option::Option<std::string::String>,
 }
 impl StartMonitoringMemberInput {
@@ -2625,8 +2562,7 @@ impl StartMonitoringMemberInput {
         self.graph_arn.as_deref()
     }
     /// <p>The account ID of the member account to try to enable.</p>
-    /// <p>The account must be an invited member account with a status of
-    /// <code>ACCEPTED_BUT_DISABLED</code>. </p>
+    /// <p>The account must be an invited member account with a status of <code>ACCEPTED_BUT_DISABLED</code>. </p>
     pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
@@ -2645,14 +2581,12 @@ impl std::fmt::Debug for StartMonitoringMemberInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RejectInvitationInput {
     /// <p>The ARN of the behavior graph to reject the invitation to.</p>
-    /// <p>The member account's current member status in the behavior graph must be
-    /// <code>INVITED</code>.</p>
+    /// <p>The member account's current member status in the behavior graph must be <code>INVITED</code>.</p>
     pub graph_arn: std::option::Option<std::string::String>,
 }
 impl RejectInvitationInput {
     /// <p>The ARN of the behavior graph to reject the invitation to.</p>
-    /// <p>The member account's current member status in the behavior graph must be
-    /// <code>INVITED</code>.</p>
+    /// <p>The member account's current member status in the behavior graph must be <code>INVITED</code>.</p>
     pub fn graph_arn(&self) -> std::option::Option<&str> {
         self.graph_arn.as_deref()
     }
@@ -2692,12 +2626,9 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 pub struct ListMembersInput {
     /// <p>The ARN of the behavior graph for which to retrieve the list of member accounts.</p>
     pub graph_arn: std::option::Option<std::string::String>,
-    /// <p>For requests to retrieve the next page of member account results, the pagination token
-    /// that was returned with the previous page of results. The initial request does not include a
-    /// pagination token.</p>
+    /// <p>For requests to retrieve the next page of member account results, the pagination token that was returned with the previous page of results. The initial request does not include a pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of member accounts to include in the response. The total must be less
-    /// than the overall limit on the number of results to return, which is currently 200.</p>
+    /// <p>The maximum number of member accounts to include in the response. The total must be less than the overall limit on the number of results to return, which is currently 200.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListMembersInput {
@@ -2705,14 +2636,11 @@ impl ListMembersInput {
     pub fn graph_arn(&self) -> std::option::Option<&str> {
         self.graph_arn.as_deref()
     }
-    /// <p>For requests to retrieve the next page of member account results, the pagination token
-    /// that was returned with the previous page of results. The initial request does not include a
-    /// pagination token.</p>
+    /// <p>For requests to retrieve the next page of member account results, the pagination token that was returned with the previous page of results. The initial request does not include a pagination token.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of member accounts to include in the response. The total must be less
-    /// than the overall limit on the number of results to return, which is currently 200.</p>
+    /// <p>The maximum number of member accounts to include in the response. The total must be less than the overall limit on the number of results to return, which is currently 200.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -2731,25 +2659,17 @@ impl std::fmt::Debug for ListMembersInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInvitationsInput {
-    /// <p>For requests to retrieve the next page of results, the pagination token that was
-    /// returned with the previous page of results. The initial request does not include a
-    /// pagination token.</p>
+    /// <p>For requests to retrieve the next page of results, the pagination token that was returned with the previous page of results. The initial request does not include a pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of behavior graph invitations to return in the response. The total
-    /// must be less than the overall limit on the number of results to return, which is currently
-    /// 200.</p>
+    /// <p>The maximum number of behavior graph invitations to return in the response. The total must be less than the overall limit on the number of results to return, which is currently 200.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListInvitationsInput {
-    /// <p>For requests to retrieve the next page of results, the pagination token that was
-    /// returned with the previous page of results. The initial request does not include a
-    /// pagination token.</p>
+    /// <p>For requests to retrieve the next page of results, the pagination token that was returned with the previous page of results. The initial request does not include a pagination token.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of behavior graph invitations to return in the response. The total
-    /// must be less than the overall limit on the number of results to return, which is currently
-    /// 200.</p>
+    /// <p>The maximum number of behavior graph invitations to return in the response. The total must be less than the overall limit on the number of results to return, which is currently 200.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -2767,23 +2687,17 @@ impl std::fmt::Debug for ListInvitationsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGraphsInput {
-    /// <p>For requests to get the next page of results, the pagination token that was returned
-    /// with the previous set of results. The initial request does not include a pagination
-    /// token.</p>
+    /// <p>For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of graphs to return at a time. The total must be less than the
-    /// overall limit on the number of results to return, which is currently 200.</p>
+    /// <p>The maximum number of graphs to return at a time. The total must be less than the overall limit on the number of results to return, which is currently 200.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListGraphsInput {
-    /// <p>For requests to get the next page of results, the pagination token that was returned
-    /// with the previous set of results. The initial request does not include a pagination
-    /// token.</p>
+    /// <p>For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of graphs to return at a time. The total must be less than the
-    /// overall limit on the number of results to return, which is currently 200.</p>
+    /// <p>The maximum number of graphs to return at a time. The total must be less than the overall limit on the number of results to return, which is currently 200.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -2803,10 +2717,8 @@ impl std::fmt::Debug for ListGraphsInput {
 pub struct GetMembersInput {
     /// <p>The ARN of the behavior graph for which to request the member details.</p>
     pub graph_arn: std::option::Option<std::string::String>,
-    /// <p>The list of AWS account identifiers for the member account for which to return member
-    /// details. You can request details for up to 50 member accounts at a time.</p>
-    /// <p>You cannot use <code>GetMembers</code> to retrieve information about member accounts
-    /// that were removed from the behavior graph.</p>
+    /// <p>The list of AWS account identifiers for the member account for which to return member details. You can request details for up to 50 member accounts at a time.</p>
+    /// <p>You cannot use <code>GetMembers</code> to retrieve information about member accounts that were removed from the behavior graph.</p>
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl GetMembersInput {
@@ -2814,10 +2726,8 @@ impl GetMembersInput {
     pub fn graph_arn(&self) -> std::option::Option<&str> {
         self.graph_arn.as_deref()
     }
-    /// <p>The list of AWS account identifiers for the member account for which to return member
-    /// details. You can request details for up to 50 member accounts at a time.</p>
-    /// <p>You cannot use <code>GetMembers</code> to retrieve information about member accounts
-    /// that were removed from the behavior graph.</p>
+    /// <p>The list of AWS account identifiers for the member account for which to return member details. You can request details for up to 50 member accounts at a time.</p>
+    /// <p>You cannot use <code>GetMembers</code> to retrieve information about member accounts that were removed from the behavior graph.</p>
     pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.account_ids.as_deref()
     }
@@ -2836,14 +2746,12 @@ impl std::fmt::Debug for GetMembersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateMembershipInput {
     /// <p>The ARN of the behavior graph to remove the member account from.</p>
-    /// <p>The member account's member status in the behavior graph must be
-    /// <code>ENABLED</code>.</p>
+    /// <p>The member account's member status in the behavior graph must be <code>ENABLED</code>.</p>
     pub graph_arn: std::option::Option<std::string::String>,
 }
 impl DisassociateMembershipInput {
     /// <p>The ARN of the behavior graph to remove the member account from.</p>
-    /// <p>The member account's member status in the behavior graph must be
-    /// <code>ENABLED</code>.</p>
+    /// <p>The member account's member status in the behavior graph must be <code>ENABLED</code>.</p>
     pub fn graph_arn(&self) -> std::option::Option<&str> {
         self.graph_arn.as_deref()
     }
@@ -2862,8 +2770,7 @@ impl std::fmt::Debug for DisassociateMembershipInput {
 pub struct DeleteMembersInput {
     /// <p>The ARN of the behavior graph to delete members from.</p>
     pub graph_arn: std::option::Option<std::string::String>,
-    /// <p>The list of AWS account identifiers for the member accounts to delete from the
-    /// behavior graph. You can delete up to 50 member accounts at a time.</p>
+    /// <p>The list of AWS account identifiers for the member accounts to delete from the behavior graph. You can delete up to 50 member accounts at a time.</p>
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DeleteMembersInput {
@@ -2871,8 +2778,7 @@ impl DeleteMembersInput {
     pub fn graph_arn(&self) -> std::option::Option<&str> {
         self.graph_arn.as_deref()
     }
-    /// <p>The list of AWS account identifiers for the member accounts to delete from the
-    /// behavior graph. You can delete up to 50 member accounts at a time.</p>
+    /// <p>The list of AWS account identifiers for the member accounts to delete from the behavior graph. You can delete up to 50 member accounts at a time.</p>
     pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.account_ids.as_deref()
     }
@@ -2911,41 +2817,29 @@ impl std::fmt::Debug for DeleteGraphInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMembersInput {
-    /// <p>The ARN of the behavior graph to invite the member accounts to contribute their data
-    /// to.</p>
+    /// <p>The ARN of the behavior graph to invite the member accounts to contribute their data to.</p>
     pub graph_arn: std::option::Option<std::string::String>,
-    /// <p>Customized message text to include in the invitation email message to the invited member
-    /// accounts.</p>
+    /// <p>Customized message text to include in the invitation email message to the invited member accounts.</p>
     pub message: std::option::Option<std::string::String>,
-    /// <p>if set to <code>true</code>, then the member accounts do not receive email
-    /// notifications. By default, this is set to <code>false</code>, and the member accounts
-    /// receive email notifications.</p>
+    /// <p>if set to <code>true</code>, then the member accounts do not receive email notifications. By default, this is set to <code>false</code>, and the member accounts receive email notifications.</p>
     pub disable_email_notification: bool,
-    /// <p>The list of AWS accounts to invite to become member accounts in the behavior graph.
-    /// You can invite up to 50 accounts at a time. For each invited account, the account list
-    /// contains the account identifier and the AWS account root user email address.</p>
+    /// <p>The list of AWS accounts to invite to become member accounts in the behavior graph. You can invite up to 50 accounts at a time. For each invited account, the account list contains the account identifier and the AWS account root user email address.</p>
     pub accounts: std::option::Option<std::vec::Vec<crate::model::Account>>,
 }
 impl CreateMembersInput {
-    /// <p>The ARN of the behavior graph to invite the member accounts to contribute their data
-    /// to.</p>
+    /// <p>The ARN of the behavior graph to invite the member accounts to contribute their data to.</p>
     pub fn graph_arn(&self) -> std::option::Option<&str> {
         self.graph_arn.as_deref()
     }
-    /// <p>Customized message text to include in the invitation email message to the invited member
-    /// accounts.</p>
+    /// <p>Customized message text to include in the invitation email message to the invited member accounts.</p>
     pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
-    /// <p>if set to <code>true</code>, then the member accounts do not receive email
-    /// notifications. By default, this is set to <code>false</code>, and the member accounts
-    /// receive email notifications.</p>
+    /// <p>if set to <code>true</code>, then the member accounts do not receive email notifications. By default, this is set to <code>false</code>, and the member accounts receive email notifications.</p>
     pub fn disable_email_notification(&self) -> bool {
         self.disable_email_notification
     }
-    /// <p>The list of AWS accounts to invite to become member accounts in the behavior graph.
-    /// You can invite up to 50 accounts at a time. For each invited account, the account list
-    /// contains the account identifier and the AWS account root user email address.</p>
+    /// <p>The list of AWS accounts to invite to become member accounts in the behavior graph. You can invite up to 50 accounts at a time. For each invited account, the account list contains the account identifier and the AWS account root user email address.</p>
     pub fn accounts(&self) -> std::option::Option<&[crate::model::Account]> {
         self.accounts.as_deref()
     }
@@ -2968,16 +2862,12 @@ impl std::fmt::Debug for CreateMembersInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGraphInput {
-    /// <p>The tags to assign to the new behavior graph. You can add up to 50 tags. For each tag,
-    /// you provide the tag key and the tag value. Each tag key can contain up to 128 characters.
-    /// Each tag value can contain up to 256 characters.</p>
+    /// <p>The tags to assign to the new behavior graph. You can add up to 50 tags. For each tag, you provide the tag key and the tag value. Each tag key can contain up to 128 characters. Each tag value can contain up to 256 characters.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateGraphInput {
-    /// <p>The tags to assign to the new behavior graph. You can add up to 50 tags. For each tag,
-    /// you provide the tag key and the tag value. Each tag key can contain up to 128 characters.
-    /// Each tag value can contain up to 256 characters.</p>
+    /// <p>The tags to assign to the new behavior graph. You can add up to 50 tags. For each tag, you provide the tag key and the tag value. Each tag key can contain up to 128 characters. Each tag value can contain up to 256 characters.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -2997,14 +2887,12 @@ impl std::fmt::Debug for CreateGraphInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcceptInvitationInput {
-    /// <p>The ARN of the behavior graph that the member account is accepting the invitation
-    /// for.</p>
+    /// <p>The ARN of the behavior graph that the member account is accepting the invitation for.</p>
     /// <p>The member account status in the behavior graph must be <code>INVITED</code>.</p>
     pub graph_arn: std::option::Option<std::string::String>,
 }
 impl AcceptInvitationInput {
-    /// <p>The ARN of the behavior graph that the member account is accepting the invitation
-    /// for.</p>
+    /// <p>The ARN of the behavior graph that the member account is accepting the invitation for.</p>
     /// <p>The member account status in the behavior graph must be <code>INVITED</code>.</p>
     pub fn graph_arn(&self) -> std::option::Option<&str> {
         self.graph_arn.as_deref()

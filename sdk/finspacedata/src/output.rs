@@ -568,38 +568,14 @@ pub struct GetDataViewOutput {
     pub destination_type_params: std::option::Option<crate::model::DataViewDestinationTypeParams>,
     /// <p>The status of a Dataview creation.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>RUNNING</code> - Dataview creation is running.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>STARTING</code> - Dataview creation is starting.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FAILED</code> - Dataview creation has failed.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CANCELLED</code> - Dataview creation has been cancelled.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TIMEOUT</code> - Dataview creation has timed out.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SUCCESS</code> - Dataview creation has succeeded.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PENDING</code> - Dataview creation is pending.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FAILED_CLEANUP_FAILED</code> - Dataview creation failed and resource cleanup failed.</p>
-    /// </li>
+    /// <li> <p> <code>RUNNING</code> - Dataview creation is running.</p> </li>
+    /// <li> <p> <code>STARTING</code> - Dataview creation is starting.</p> </li>
+    /// <li> <p> <code>FAILED</code> - Dataview creation has failed.</p> </li>
+    /// <li> <p> <code>CANCELLED</code> - Dataview creation has been cancelled.</p> </li>
+    /// <li> <p> <code>TIMEOUT</code> - Dataview creation has timed out.</p> </li>
+    /// <li> <p> <code>SUCCESS</code> - Dataview creation has succeeded.</p> </li>
+    /// <li> <p> <code>PENDING</code> - Dataview creation is pending.</p> </li>
+    /// <li> <p> <code>FAILED_CLEANUP_FAILED</code> - Dataview creation failed and resource cleanup failed.</p> </li>
     /// </ul>
     pub status: std::option::Option<crate::model::DataViewStatus>,
 }
@@ -652,38 +628,14 @@ impl GetDataViewOutput {
     }
     /// <p>The status of a Dataview creation.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>RUNNING</code> - Dataview creation is running.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>STARTING</code> - Dataview creation is starting.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FAILED</code> - Dataview creation has failed.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>CANCELLED</code> - Dataview creation has been cancelled.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>TIMEOUT</code> - Dataview creation has timed out.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SUCCESS</code> - Dataview creation has succeeded.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PENDING</code> - Dataview creation is pending.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FAILED_CLEANUP_FAILED</code> - Dataview creation failed and resource cleanup failed.</p>
-    /// </li>
+    /// <li> <p> <code>RUNNING</code> - Dataview creation is running.</p> </li>
+    /// <li> <p> <code>STARTING</code> - Dataview creation is starting.</p> </li>
+    /// <li> <p> <code>FAILED</code> - Dataview creation has failed.</p> </li>
+    /// <li> <p> <code>CANCELLED</code> - Dataview creation has been cancelled.</p> </li>
+    /// <li> <p> <code>TIMEOUT</code> - Dataview creation has timed out.</p> </li>
+    /// <li> <p> <code>SUCCESS</code> - Dataview creation has succeeded.</p> </li>
+    /// <li> <p> <code>PENDING</code> - Dataview creation is pending.</p> </li>
+    /// <li> <p> <code>FAILED_CLEANUP_FAILED</code> - Dataview creation failed and resource cleanup failed.</p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::DataViewStatus> {
         self.status.as_ref()
@@ -870,38 +822,14 @@ pub mod get_data_view_output {
         }
         /// <p>The status of a Dataview creation.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>RUNNING</code> - Dataview creation is running.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>STARTING</code> - Dataview creation is starting.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FAILED</code> - Dataview creation has failed.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CANCELLED</code> - Dataview creation has been cancelled.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TIMEOUT</code> - Dataview creation has timed out.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SUCCESS</code> - Dataview creation has succeeded.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PENDING</code> - Dataview creation is pending.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FAILED_CLEANUP_FAILED</code> - Dataview creation failed and resource cleanup failed.</p>
-        /// </li>
+        /// <li> <p> <code>RUNNING</code> - Dataview creation is running.</p> </li>
+        /// <li> <p> <code>STARTING</code> - Dataview creation is starting.</p> </li>
+        /// <li> <p> <code>FAILED</code> - Dataview creation has failed.</p> </li>
+        /// <li> <p> <code>CANCELLED</code> - Dataview creation has been cancelled.</p> </li>
+        /// <li> <p> <code>TIMEOUT</code> - Dataview creation has timed out.</p> </li>
+        /// <li> <p> <code>SUCCESS</code> - Dataview creation has succeeded.</p> </li>
+        /// <li> <p> <code>PENDING</code> - Dataview creation is pending.</p> </li>
+        /// <li> <p> <code>FAILED_CLEANUP_FAILED</code> - Dataview creation failed and resource cleanup failed.</p> </li>
         /// </ul>
         pub fn status(mut self, input: crate::model::DataViewStatus) -> Self {
             self.status = Some(input);
@@ -909,38 +837,14 @@ pub mod get_data_view_output {
         }
         /// <p>The status of a Dataview creation.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>RUNNING</code> - Dataview creation is running.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>STARTING</code> - Dataview creation is starting.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FAILED</code> - Dataview creation has failed.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CANCELLED</code> - Dataview creation has been cancelled.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TIMEOUT</code> - Dataview creation has timed out.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SUCCESS</code> - Dataview creation has succeeded.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PENDING</code> - Dataview creation is pending.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FAILED_CLEANUP_FAILED</code> - Dataview creation failed and resource cleanup failed.</p>
-        /// </li>
+        /// <li> <p> <code>RUNNING</code> - Dataview creation is running.</p> </li>
+        /// <li> <p> <code>STARTING</code> - Dataview creation is starting.</p> </li>
+        /// <li> <p> <code>FAILED</code> - Dataview creation has failed.</p> </li>
+        /// <li> <p> <code>CANCELLED</code> - Dataview creation has been cancelled.</p> </li>
+        /// <li> <p> <code>TIMEOUT</code> - Dataview creation has timed out.</p> </li>
+        /// <li> <p> <code>SUCCESS</code> - Dataview creation has succeeded.</p> </li>
+        /// <li> <p> <code>PENDING</code> - Dataview creation is pending.</p> </li>
+        /// <li> <p> <code>FAILED_CLEANUP_FAILED</code> - Dataview creation failed and resource cleanup failed.</p> </li>
         /// </ul>
         pub fn set_status(
             mut self,
@@ -987,14 +891,8 @@ pub struct GetDatasetOutput {
     pub dataset_title: std::option::Option<std::string::String>,
     /// <p>The format in which Dataset data is structured.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>TABULAR</code> - Data is structured in a tabular format.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p>
-    /// </li>
+    /// <li> <p> <code>TABULAR</code> - Data is structured in a tabular format.</p> </li>
+    /// <li> <p> <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p> </li>
     /// </ul>
     pub kind: std::option::Option<crate::model::DatasetKind>,
     /// <p>A description of the Dataset.</p>
@@ -1009,22 +907,10 @@ pub struct GetDatasetOutput {
     pub alias: std::option::Option<std::string::String>,
     /// <p>Status of the Dataset creation.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>PENDING</code> - Dataset is pending creation.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FAILED</code> - Dataset creation has failed.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SUCCESS</code> - Dataset creation has succeeded.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RUNNING</code> - Dataset creation is running.</p>
-    /// </li>
+    /// <li> <p> <code>PENDING</code> - Dataset is pending creation.</p> </li>
+    /// <li> <p> <code>FAILED</code> - Dataset creation has failed.</p> </li>
+    /// <li> <p> <code>SUCCESS</code> - Dataset creation has succeeded.</p> </li>
+    /// <li> <p> <code>RUNNING</code> - Dataset creation is running.</p> </li>
     /// </ul>
     pub status: std::option::Option<crate::model::DatasetStatus>,
 }
@@ -1043,14 +929,8 @@ impl GetDatasetOutput {
     }
     /// <p>The format in which Dataset data is structured.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>TABULAR</code> - Data is structured in a tabular format.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p>
-    /// </li>
+    /// <li> <p> <code>TABULAR</code> - Data is structured in a tabular format.</p> </li>
+    /// <li> <p> <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p> </li>
     /// </ul>
     pub fn kind(&self) -> std::option::Option<&crate::model::DatasetKind> {
         self.kind.as_ref()
@@ -1077,22 +957,10 @@ impl GetDatasetOutput {
     }
     /// <p>Status of the Dataset creation.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>PENDING</code> - Dataset is pending creation.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FAILED</code> - Dataset creation has failed.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SUCCESS</code> - Dataset creation has succeeded.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RUNNING</code> - Dataset creation is running.</p>
-    /// </li>
+    /// <li> <p> <code>PENDING</code> - Dataset is pending creation.</p> </li>
+    /// <li> <p> <code>FAILED</code> - Dataset creation has failed.</p> </li>
+    /// <li> <p> <code>SUCCESS</code> - Dataset creation has succeeded.</p> </li>
+    /// <li> <p> <code>RUNNING</code> - Dataset creation is running.</p> </li>
     /// </ul>
     pub fn status(&self) -> std::option::Option<&crate::model::DatasetStatus> {
         self.status.as_ref()
@@ -1167,14 +1035,8 @@ pub mod get_dataset_output {
         }
         /// <p>The format in which Dataset data is structured.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>TABULAR</code> - Data is structured in a tabular format.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p>
-        /// </li>
+        /// <li> <p> <code>TABULAR</code> - Data is structured in a tabular format.</p> </li>
+        /// <li> <p> <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p> </li>
         /// </ul>
         pub fn kind(mut self, input: crate::model::DatasetKind) -> Self {
             self.kind = Some(input);
@@ -1182,14 +1044,8 @@ pub mod get_dataset_output {
         }
         /// <p>The format in which Dataset data is structured.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>TABULAR</code> - Data is structured in a tabular format.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p>
-        /// </li>
+        /// <li> <p> <code>TABULAR</code> - Data is structured in a tabular format.</p> </li>
+        /// <li> <p> <code>NON_TABULAR</code> - Data is structured in a non-tabular format.</p> </li>
         /// </ul>
         pub fn set_kind(mut self, input: std::option::Option<crate::model::DatasetKind>) -> Self {
             self.kind = input;
@@ -1253,22 +1109,10 @@ pub mod get_dataset_output {
         }
         /// <p>Status of the Dataset creation.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PENDING</code> - Dataset is pending creation.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FAILED</code> - Dataset creation has failed.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SUCCESS</code> - Dataset creation has succeeded.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RUNNING</code> - Dataset creation is running.</p>
-        /// </li>
+        /// <li> <p> <code>PENDING</code> - Dataset is pending creation.</p> </li>
+        /// <li> <p> <code>FAILED</code> - Dataset creation has failed.</p> </li>
+        /// <li> <p> <code>SUCCESS</code> - Dataset creation has succeeded.</p> </li>
+        /// <li> <p> <code>RUNNING</code> - Dataset creation is running.</p> </li>
         /// </ul>
         pub fn status(mut self, input: crate::model::DatasetStatus) -> Self {
             self.status = Some(input);
@@ -1276,22 +1120,10 @@ pub mod get_dataset_output {
         }
         /// <p>Status of the Dataset creation.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PENDING</code> - Dataset is pending creation.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FAILED</code> - Dataset creation has failed.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SUCCESS</code> - Dataset creation has succeeded.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RUNNING</code> - Dataset creation is running.</p>
-        /// </li>
+        /// <li> <p> <code>PENDING</code> - Dataset is pending creation.</p> </li>
+        /// <li> <p> <code>FAILED</code> - Dataset creation has failed.</p> </li>
+        /// <li> <p> <code>SUCCESS</code> - Dataset creation has succeeded.</p> </li>
+        /// <li> <p> <code>RUNNING</code> - Dataset creation is running.</p> </li>
         /// </ul>
         pub fn set_status(
             mut self,
@@ -1336,18 +1168,9 @@ pub struct GetChangesetOutput {
     pub dataset_id: std::option::Option<std::string::String>,
     /// <p>Type that indicates how a Changeset is applied to a Dataset.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>REPLACE</code> - Changeset is considered as a replacement to all prior loaded Changesets.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>APPEND</code> - Changeset is considered as an addition to the end of all prior loaded Changesets.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MODIFY</code> - Changeset is considered as a replacement to a specific prior ingested Changeset.</p>
-    /// </li>
+    /// <li> <p> <code>REPLACE</code> - Changeset is considered as a replacement to all prior loaded Changesets.</p> </li>
+    /// <li> <p> <code>APPEND</code> - Changeset is considered as an addition to the end of all prior loaded Changesets.</p> </li>
+    /// <li> <p> <code>MODIFY</code> - Changeset is considered as a replacement to a specific prior ingested Changeset.</p> </li>
     /// </ul>
     pub change_type: std::option::Option<crate::model::ChangeType>,
     /// <p>Options that define the location of the data being ingested.</p>
@@ -1384,18 +1207,9 @@ impl GetChangesetOutput {
     }
     /// <p>Type that indicates how a Changeset is applied to a Dataset.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>REPLACE</code> - Changeset is considered as a replacement to all prior loaded Changesets.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>APPEND</code> - Changeset is considered as an addition to the end of all prior loaded Changesets.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>MODIFY</code> - Changeset is considered as a replacement to a specific prior ingested Changeset.</p>
-    /// </li>
+    /// <li> <p> <code>REPLACE</code> - Changeset is considered as a replacement to all prior loaded Changesets.</p> </li>
+    /// <li> <p> <code>APPEND</code> - Changeset is considered as an addition to the end of all prior loaded Changesets.</p> </li>
+    /// <li> <p> <code>MODIFY</code> - Changeset is considered as a replacement to a specific prior ingested Changeset.</p> </li>
     /// </ul>
     pub fn change_type(&self) -> std::option::Option<&crate::model::ChangeType> {
         self.change_type.as_ref()
@@ -1516,18 +1330,9 @@ pub mod get_changeset_output {
         }
         /// <p>Type that indicates how a Changeset is applied to a Dataset.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>REPLACE</code> - Changeset is considered as a replacement to all prior loaded Changesets.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>APPEND</code> - Changeset is considered as an addition to the end of all prior loaded Changesets.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MODIFY</code> - Changeset is considered as a replacement to a specific prior ingested Changeset.</p>
-        /// </li>
+        /// <li> <p> <code>REPLACE</code> - Changeset is considered as a replacement to all prior loaded Changesets.</p> </li>
+        /// <li> <p> <code>APPEND</code> - Changeset is considered as an addition to the end of all prior loaded Changesets.</p> </li>
+        /// <li> <p> <code>MODIFY</code> - Changeset is considered as a replacement to a specific prior ingested Changeset.</p> </li>
         /// </ul>
         pub fn change_type(mut self, input: crate::model::ChangeType) -> Self {
             self.change_type = Some(input);
@@ -1535,18 +1340,9 @@ pub mod get_changeset_output {
         }
         /// <p>Type that indicates how a Changeset is applied to a Dataset.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>REPLACE</code> - Changeset is considered as a replacement to all prior loaded Changesets.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>APPEND</code> - Changeset is considered as an addition to the end of all prior loaded Changesets.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MODIFY</code> - Changeset is considered as a replacement to a specific prior ingested Changeset.</p>
-        /// </li>
+        /// <li> <p> <code>REPLACE</code> - Changeset is considered as a replacement to all prior loaded Changesets.</p> </li>
+        /// <li> <p> <code>APPEND</code> - Changeset is considered as an addition to the end of all prior loaded Changesets.</p> </li>
+        /// <li> <p> <code>MODIFY</code> - Changeset is considered as a replacement to a specific prior ingested Changeset.</p> </li>
         /// </ul>
         pub fn set_change_type(
             mut self,

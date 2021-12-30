@@ -562,7 +562,7 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `AddFacetToObject`.
     ///
-    /// <p>Adds a new <a>Facet</a> to an object. An object can have more than one facet applied on it.</p>
+    /// <p>Adds a new <code>Facet</code> to an object. An object can have more than one facet applied on it.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AddFacetToObject<
         C = aws_smithy_client::erase::DynConnector,
@@ -619,14 +619,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where the object resides. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
         pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.directory_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where the object resides. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -634,12 +632,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_directory_arn(input);
             self
         }
-        /// <p>Identifiers for the facet that you are adding to the object. See <a>SchemaFacet</a> for details.</p>
+        /// <p>Identifiers for the facet that you are adding to the object. See <code>SchemaFacet</code> for details.</p>
         pub fn schema_facet(mut self, input: crate::model::SchemaFacet) -> Self {
             self.inner = self.inner.schema_facet(input);
             self
         }
-        /// <p>Identifiers for the facet that you are adding to the object. See <a>SchemaFacet</a> for details.</p>
+        /// <p>Identifiers for the facet that you are adding to the object. See <code>SchemaFacet</code> for details.</p>
         pub fn set_schema_facet(
             mut self,
             input: std::option::Option<crate::model::SchemaFacet>,
@@ -680,8 +678,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ApplySchema`.
     ///
-    /// <p>Copies the input published schema, at the specified version, into the <a>Directory</a> with the same
-    /// name and version as that of the published schema.</p>
+    /// <p>Copies the input published schema, at the specified version, into the <code>Directory</code> with the same name and version as that of the published schema.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ApplySchema<
         C = aws_smithy_client::erase::DynConnector,
@@ -738,14 +735,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Published schema Amazon Resource Name (ARN) that needs to be copied. For more
-        /// information, see <a>arns</a>.</p>
+        /// <p>Published schema Amazon Resource Name (ARN) that needs to be copied. For more information, see <code>arns</code>.</p>
         pub fn published_schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.published_schema_arn(input.into());
             self
         }
-        /// <p>Published schema Amazon Resource Name (ARN) that needs to be copied. For more
-        /// information, see <a>arns</a>.</p>
+        /// <p>Published schema Amazon Resource Name (ARN) that needs to be copied. For more information, see <code>arns</code>.</p>
         pub fn set_published_schema_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -753,14 +748,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_published_schema_arn(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// into which the schema is copied. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> into which the schema is copied. For more information, see <code>arns</code>.</p>
         pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.directory_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// into which the schema is copied. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> into which the schema is copied. For more information, see <code>arns</code>.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -771,16 +764,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `AttachObject`.
     ///
-    /// <p>Attaches an existing object to another object. An object can be accessed in two
-    /// ways:</p>
+    /// <p>Attaches an existing object to another object. An object can be accessed in two ways:</p>
     /// <ol>
-    /// <li>
-    /// <p>Using the path</p>
-    /// </li>
-    /// <li>
-    /// <p>Using <code>ObjectIdentifier</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Using the path</p> </li>
+    /// <li> <p>Using <code>ObjectIdentifier</code> </p> </li>
     /// </ol>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AttachObject<
@@ -838,14 +825,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where both objects reside. For more information, see <a>arns</a>.</p>
+        /// <p>Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where both objects reside. For more information, see <code>arns</code>.</p>
         pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.directory_arn(input.into());
             self
         }
-        /// <p>Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where both objects reside. For more information, see <a>arns</a>.</p>
+        /// <p>Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where both objects reside. For more information, see <code>arns</code>.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -892,8 +877,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `AttachPolicy`.
     ///
-    /// <p>Attaches a policy object to a regular object. An object can have a limited number of attached
-    /// policies.</p>
+    /// <p>Attaches a policy object to a regular object. An object can have a limited number of attached policies.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AttachPolicy<
         C = aws_smithy_client::erase::DynConnector,
@@ -950,14 +934,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where both objects reside. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where both objects reside. For more information, see <code>arns</code>.</p>
         pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.directory_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where both objects reside. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where both objects reside. For more information, see <code>arns</code>.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -978,14 +960,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_policy_reference(input);
             self
         }
-        /// <p>The reference that identifies the object to which the policy will be
-        /// attached.</p>
+        /// <p>The reference that identifies the object to which the policy will be attached.</p>
         pub fn object_reference(mut self, input: crate::model::ObjectReference) -> Self {
             self.inner = self.inner.object_reference(input);
             self
         }
-        /// <p>The reference that identifies the object to which the policy will be
-        /// attached.</p>
+        /// <p>The reference that identifies the object to which the policy will be attached.</p>
         pub fn set_object_reference(
             mut self,
             input: std::option::Option<crate::model::ObjectReference>,
@@ -1053,14 +1033,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the directory where the object and index
-        /// exist.</p>
+        /// <p>The Amazon Resource Name (ARN) of the directory where the object and index exist.</p>
         pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.directory_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the directory where the object and index
-        /// exist.</p>
+        /// <p>The Amazon Resource Name (ARN) of the directory where the object and index exist.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1154,14 +1132,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the directory where you want to attach the typed
-        /// link.</p>
+        /// <p>The Amazon Resource Name (ARN) of the directory where you want to attach the typed link.</p>
         pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.directory_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the directory where you want to attach the typed
-        /// link.</p>
+        /// <p>The Amazon Resource Name (ARN) of the directory where you want to attach the typed link.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1288,14 +1264,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>.
-        /// For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
         pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.directory_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>.
-        /// For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1320,14 +1294,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_operations(input);
             self
         }
-        /// <p>Represents the manner and timing in which the successful write or update of an object
-        /// is reflected in a subsequent read operation of that same object.</p>
+        /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
         pub fn consistency_level(mut self, input: crate::model::ConsistencyLevel) -> Self {
             self.inner = self.inner.consistency_level(input);
             self
         }
-        /// <p>Represents the manner and timing in which the successful write or update of an object
-        /// is reflected in a subsequent read operation of that same object.</p>
+        /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
         pub fn set_consistency_level(
             mut self,
             input: std::option::Option<crate::model::ConsistencyLevel>,
@@ -1338,8 +1310,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BatchWrite`.
     ///
-    /// <p>Performs all the write operations in a batch. Either all the operations succeed or
-    /// none.</p>
+    /// <p>Performs all the write operations in a batch. Either all the operations succeed or none.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchWrite<
         C = aws_smithy_client::erase::DynConnector,
@@ -1396,14 +1367,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>.
-        /// For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
         pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.directory_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>.
-        /// For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1431,10 +1400,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateDirectory`.
     ///
-    /// <p>Creates a <a>Directory</a> by copying the published schema into the
-    /// directory. A directory cannot be created without a schema.</p>
-    /// <p>You can also quickly create a directory using a managed schema, called the
-    /// <code>QuickStartSchema</code>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_managed.html">Managed Schema</a> in the <i>Amazon Cloud Directory Developer Guide</i>.</p>
+    /// <p>Creates a <code>Directory</code> by copying the published schema into the directory. A directory cannot be created without a schema.</p>
+    /// <p>You can also quickly create a directory using a managed schema, called the <code>QuickStartSchema</code>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_managed.html">Managed Schema</a> in the <i>Amazon Cloud Directory Developer Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateDirectory<
         C = aws_smithy_client::erase::DynConnector,
@@ -1491,26 +1458,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the <a>Directory</a>. Should be unique per account, per
-        /// region.</p>
+        /// <p>The name of the <code>Directory</code>. Should be unique per account, per region.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the <a>Directory</a>. Should be unique per account, per
-        /// region.</p>
+        /// <p>The name of the <code>Directory</code>. Should be unique per account, per region.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the published schema that will be copied into the
-        /// data <a>Directory</a>. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the published schema that will be copied into the data <code>Directory</code>. For more information, see <code>arns</code>.</p>
         pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.schema_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the published schema that will be copied into the
-        /// data <a>Directory</a>. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the published schema that will be copied into the data <code>Directory</code>. For more information, see <code>arns</code>.</p>
         pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_schema_arn(input);
             self
@@ -1518,8 +1481,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateFacet`.
     ///
-    /// <p>Creates a new <a>Facet</a> in a schema. Facet creation is allowed only
-    /// in development or applied schemas.</p>
+    /// <p>Creates a new <code>Facet</code> in a schema. Facet creation is allowed only in development or applied schemas.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateFacet<
         C = aws_smithy_client::erase::DynConnector,
@@ -1576,24 +1538,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The schema ARN in which the new <a>Facet</a> will be created. For more
-        /// information, see <a>arns</a>.</p>
+        /// <p>The schema ARN in which the new <code>Facet</code> will be created. For more information, see <code>arns</code>.</p>
         pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.schema_arn(input.into());
             self
         }
-        /// <p>The schema ARN in which the new <a>Facet</a> will be created. For more
-        /// information, see <a>arns</a>.</p>
+        /// <p>The schema ARN in which the new <code>Facet</code> will be created. For more information, see <code>arns</code>.</p>
         pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_schema_arn(input);
             self
         }
-        /// <p>The name of the <a>Facet</a>, which is unique for a given schema.</p>
+        /// <p>The name of the <code>Facet</code>, which is unique for a given schema.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the <a>Facet</a>, which is unique for a given schema.</p>
+        /// <p>The name of the <code>Facet</code>, which is unique for a given schema.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -1602,12 +1562,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
-        /// <p>The attributes that are associated with the <a>Facet</a>.</p>
+        /// <p>The attributes that are associated with the <code>Facet</code>.</p>
         pub fn attributes(mut self, input: crate::model::FacetAttribute) -> Self {
             self.inner = self.inner.attributes(input);
             self
         }
-        /// <p>The attributes that are associated with the <a>Facet</a>.</p>
+        /// <p>The attributes that are associated with the <code>Facet</code>.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FacetAttribute>>,
@@ -1615,55 +1575,35 @@ pub mod fluent_builders {
             self.inner = self.inner.set_attributes(input);
             self
         }
-        /// <p>Specifies whether a given object created from this facet is of type node, leaf node,
-        /// policy or index.</p>
+        /// <p>Specifies whether a given object created from this facet is of type node, leaf node, policy or index.</p>
         /// <ul>
-        /// <li>
-        /// <p>Node: Can have multiple children but one parent.</p>
-        /// </li>
+        /// <li> <p>Node: Can have multiple children but one parent.</p> </li>
         /// </ul>
         /// <ul>
-        /// <li>
-        /// <p>Leaf node: Cannot have children but can have multiple parents.</p>
-        /// </li>
+        /// <li> <p>Leaf node: Cannot have children but can have multiple parents.</p> </li>
         /// </ul>
         /// <ul>
-        /// <li>
-        /// <p>Policy: Allows you to store a policy document and policy type. For more
-        /// information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
-        /// </li>
+        /// <li> <p>Policy: Allows you to store a policy document and policy type. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p> </li>
         /// </ul>
         /// <ul>
-        /// <li>
-        /// <p>Index: Can be created with the Index API.</p>
-        /// </li>
+        /// <li> <p>Index: Can be created with the Index API.</p> </li>
         /// </ul>
         pub fn object_type(mut self, input: crate::model::ObjectType) -> Self {
             self.inner = self.inner.object_type(input);
             self
         }
-        /// <p>Specifies whether a given object created from this facet is of type node, leaf node,
-        /// policy or index.</p>
+        /// <p>Specifies whether a given object created from this facet is of type node, leaf node, policy or index.</p>
         /// <ul>
-        /// <li>
-        /// <p>Node: Can have multiple children but one parent.</p>
-        /// </li>
+        /// <li> <p>Node: Can have multiple children but one parent.</p> </li>
         /// </ul>
         /// <ul>
-        /// <li>
-        /// <p>Leaf node: Cannot have children but can have multiple parents.</p>
-        /// </li>
+        /// <li> <p>Leaf node: Cannot have children but can have multiple parents.</p> </li>
         /// </ul>
         /// <ul>
-        /// <li>
-        /// <p>Policy: Allows you to store a policy document and policy type. For more
-        /// information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
-        /// </li>
+        /// <li> <p>Policy: Allows you to store a policy document and policy type. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p> </li>
         /// </ul>
         /// <ul>
-        /// <li>
-        /// <p>Index: Can be created with the Index API.</p>
-        /// </li>
+        /// <li> <p>Index: Can be created with the Index API.</p> </li>
         /// </ul>
         pub fn set_object_type(
             mut self,
@@ -1762,14 +1702,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_ordered_indexed_attribute_list`](Self::set_ordered_indexed_attribute_list).
         ///
-        /// <p>Specifies the attributes that should be indexed on. Currently only a single attribute
-        /// is supported.</p>
+        /// <p>Specifies the attributes that should be indexed on. Currently only a single attribute is supported.</p>
         pub fn ordered_indexed_attribute_list(mut self, input: crate::model::AttributeKey) -> Self {
             self.inner = self.inner.ordered_indexed_attribute_list(input);
             self
         }
-        /// <p>Specifies the attributes that should be indexed on. Currently only a single attribute
-        /// is supported.</p>
+        /// <p>Specifies the attributes that should be indexed on. Currently only a single attribute is supported.</p>
         pub fn set_ordered_indexed_attribute_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AttributeKey>>,
@@ -1777,14 +1715,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ordered_indexed_attribute_list(input);
             self
         }
-        /// <p>Indicates whether the attribute that is being indexed has unique values or
-        /// not.</p>
+        /// <p>Indicates whether the attribute that is being indexed has unique values or not.</p>
         pub fn is_unique(mut self, input: bool) -> Self {
             self.inner = self.inner.is_unique(input);
             self
         }
-        /// <p>Indicates whether the attribute that is being indexed has unique values or
-        /// not.</p>
+        /// <p>Indicates whether the attribute that is being indexed has unique values or not.</p>
         pub fn set_is_unique(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_is_unique(input);
             self
@@ -1815,10 +1751,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateObject`.
     ///
-    /// <p>Creates an object in a <a>Directory</a>. Additionally attaches the object to
-    /// a parent, if a parent reference and <code>LinkName</code> is specified. An object is simply a
-    /// collection of <a>Facet</a> attributes. You can also use this API call to create a
-    /// policy object, if the facet from which you create the object is a policy facet. </p>
+    /// <p>Creates an object in a <code>Directory</code>. Additionally attaches the object to a parent, if a parent reference and <code>LinkName</code> is specified. An object is simply a collection of <code>Facet</code> attributes. You can also use this API call to create a policy object, if the facet from which you create the object is a policy facet. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateObject<
         C = aws_smithy_client::erase::DynConnector,
@@ -1875,14 +1808,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// in which the object will be created. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> in which the object will be created. For more information, see <code>arns</code>.</p>
         pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.directory_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// in which the object will be created. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> in which the object will be created. For more information, see <code>arns</code>.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1894,12 +1825,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_schema_facets`](Self::set_schema_facets).
         ///
-        /// <p>A list of schema facets to be associated with the object. Do not provide minor version components. See <a>SchemaFacet</a> for details.</p>
+        /// <p>A list of schema facets to be associated with the object. Do not provide minor version components. See <code>SchemaFacet</code> for details.</p>
         pub fn schema_facets(mut self, input: crate::model::SchemaFacet) -> Self {
             self.inner = self.inner.schema_facets(input);
             self
         }
-        /// <p>A list of schema facets to be associated with the object. Do not provide minor version components. See <a>SchemaFacet</a> for details.</p>
+        /// <p>A list of schema facets to be associated with the object. Do not provide minor version components. See <code>SchemaFacet</code> for details.</p>
         pub fn set_schema_facets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SchemaFacet>>,
@@ -1911,14 +1842,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_object_attribute_list`](Self::set_object_attribute_list).
         ///
-        /// <p>The attribute map whose attribute ARN contains the key and attribute value as the map
-        /// value.</p>
+        /// <p>The attribute map whose attribute ARN contains the key and attribute value as the map value.</p>
         pub fn object_attribute_list(mut self, input: crate::model::AttributeKeyAndValue) -> Self {
             self.inner = self.inner.object_attribute_list(input);
             self
         }
-        /// <p>The attribute map whose attribute ARN contains the key and attribute value as the map
-        /// value.</p>
+        /// <p>The attribute map whose attribute ARN contains the key and attribute value as the map value.</p>
         pub fn set_object_attribute_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
@@ -1952,26 +1881,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateSchema`.
     ///
-    /// <p>Creates a new schema in a development state. A schema can exist in three
-    /// phases:</p>
+    /// <p>Creates a new schema in a development state. A schema can exist in three phases:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <i>Development:</i> This is a mutable phase of the schema. All new
-    /// schemas are in the development phase. Once the schema is finalized, it can be
-    /// published.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Published:</i> Published schemas are immutable and have a version
-    /// associated with them.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <i>Applied:</i> Applied schemas are mutable in a way that allows you
-    /// to add new schema facets. You can also add new, nonrequired attributes to existing schema
-    /// facets. You can apply only published schemas to directories. </p>
-    /// </li>
+    /// <li> <p> <i>Development:</i> This is a mutable phase of the schema. All new schemas are in the development phase. Once the schema is finalized, it can be published.</p> </li>
+    /// <li> <p> <i>Published:</i> Published schemas are immutable and have a version associated with them.</p> </li>
+    /// <li> <p> <i>Applied:</i> Applied schemas are mutable in a way that allows you to add new schema facets. You can also add new, nonrequired attributes to existing schema facets. You can apply only published schemas to directories. </p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSchema<
@@ -2029,14 +1943,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name that is associated with the schema. This is unique to each account and in each
-        /// region.</p>
+        /// <p>The name that is associated with the schema. This is unique to each account and in each region.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name that is associated with the schema. This is unique to each account and in each
-        /// region.</p>
+        /// <p>The name that is associated with the schema. This is unique to each account and in each region.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -2044,7 +1956,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateTypedLinkFacet`.
     ///
-    /// <p>Creates a <a>TypedLinkFacet</a>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+    /// <p>Creates a <code>TypedLinkFacet</code>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTypedLinkFacet<
         C = aws_smithy_client::erase::DynConnector,
@@ -2101,28 +2013,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
-        /// information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
         pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.schema_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
-        /// information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
         pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_schema_arn(input);
             self
         }
-        /// <p>
-        /// <a>Facet</a> structure that is associated with the typed link
-        /// facet.</p>
+        /// <p> <code>Facet</code> structure that is associated with the typed link facet.</p>
         pub fn facet(mut self, input: crate::model::TypedLinkFacet) -> Self {
             self.inner = self.inner.facet(input);
             self
         }
-        /// <p>
-        /// <a>Facet</a> structure that is associated with the typed link
-        /// facet.</p>
+        /// <p> <code>Facet</code> structure that is associated with the typed link facet.</p>
         pub fn set_facet(
             mut self,
             input: std::option::Option<crate::model::TypedLinkFacet>,
@@ -2133,9 +2039,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteDirectory`.
     ///
-    /// <p>Deletes a directory. Only disabled directories can be deleted. A deleted directory cannot be undone. Exercise extreme
-    /// caution
-    /// when deleting directories.</p>
+    /// <p>Deletes a directory. Only disabled directories can be deleted. A deleted directory cannot be undone. Exercise extreme caution when deleting directories.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDirectory<
         C = aws_smithy_client::erase::DynConnector,
@@ -2208,9 +2112,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteFacet`.
     ///
-    /// <p>Deletes a given <a>Facet</a>. All attributes and <a>Rule</a>s
-    /// that are associated with the facet will be deleted. Only development schema facets are allowed
-    /// deletion.</p>
+    /// <p>Deletes a given <code>Facet</code>. All attributes and <code>Rule</code>s that are associated with the facet will be deleted. Only development schema facets are allowed deletion.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteFacet<
         C = aws_smithy_client::erase::DynConnector,
@@ -2267,14 +2169,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Facet</a>.
-        /// For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Facet</code>. For more information, see <code>arns</code>.</p>
         pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.schema_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Facet</a>.
-        /// For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Facet</code>. For more information, see <code>arns</code>.</p>
         pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_schema_arn(input);
             self
@@ -2292,8 +2192,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteObject`.
     ///
-    /// <p>Deletes an object and its associated attributes. Only objects with no children and no
-    /// parents can be deleted. The maximum number of attributes that can be deleted during an object deletion is 30. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Amazon Cloud Directory Limits</a>.</p>
+    /// <p>Deletes an object and its associated attributes. Only objects with no children and no parents can be deleted. The maximum number of attributes that can be deleted during an object deletion is 30. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Amazon Cloud Directory Limits</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteObject<
         C = aws_smithy_client::erase::DynConnector,
@@ -2350,14 +2249,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where the object resides. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
         pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.directory_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where the object resides. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2438,14 +2335,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the development schema. For more information, see
-        /// <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the development schema. For more information, see <code>arns</code>.</p>
         pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.schema_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the development schema. For more information, see
-        /// <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the development schema. For more information, see <code>arns</code>.</p>
         pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_schema_arn(input);
             self
@@ -2453,7 +2348,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteTypedLinkFacet`.
     ///
-    /// <p>Deletes a <a>TypedLinkFacet</a>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+    /// <p>Deletes a <code>TypedLinkFacet</code>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTypedLinkFacet<
         C = aws_smithy_client::erase::DynConnector,
@@ -2510,14 +2405,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
-        /// information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
         pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.schema_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
-        /// information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
         pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_schema_arn(input);
             self
@@ -2592,14 +2485,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the directory the index and object exist
-        /// in.</p>
+        /// <p>The Amazon Resource Name (ARN) of the directory the index and object exist in.</p>
         pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.directory_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the directory the index and object exist
-        /// in.</p>
+        /// <p>The Amazon Resource Name (ARN) of the directory the index and object exist in.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2636,8 +2527,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DetachObject`.
     ///
-    /// <p>Detaches a given object from the parent object. The object that is to be detached from the
-    /// parent is specified by the link name.</p>
+    /// <p>Detaches a given object from the parent object. The object that is to be detached from the parent is specified by the link name.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetachObject<
         C = aws_smithy_client::erase::DynConnector,
@@ -2694,14 +2584,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where objects reside. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where objects reside. For more information, see <code>arns</code>.</p>
         pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.directory_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where objects reside. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where objects reside. For more information, see <code>arns</code>.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2709,14 +2597,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_directory_arn(input);
             self
         }
-        /// <p>The parent reference from which the object with the specified link name is
-        /// detached.</p>
+        /// <p>The parent reference from which the object with the specified link name is detached.</p>
         pub fn parent_reference(mut self, input: crate::model::ObjectReference) -> Self {
             self.inner = self.inner.parent_reference(input);
             self
         }
-        /// <p>The parent reference from which the object with the specified link name is
-        /// detached.</p>
+        /// <p>The parent reference from which the object with the specified link name is detached.</p>
         pub fn set_parent_reference(
             mut self,
             input: std::option::Option<crate::model::ObjectReference>,
@@ -2794,14 +2680,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where both objects reside. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where both objects reside. For more information, see <code>arns</code>.</p>
         pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.directory_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where both objects reside. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where both objects reside. For more information, see <code>arns</code>.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2895,14 +2779,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the directory where you want to detach the typed
-        /// link.</p>
+        /// <p>The Amazon Resource Name (ARN) of the directory where you want to detach the typed link.</p>
         pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.directory_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the directory where you want to detach the typed
-        /// link.</p>
+        /// <p>The Amazon Resource Name (ARN) of the directory where you want to detach the typed link.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2926,8 +2808,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisableDirectory`.
     ///
-    /// <p>Disables the specified directory. Disabled directories cannot be read or written to.
-    /// Only enabled directories can be disabled. Disabled directories may be reenabled.</p>
+    /// <p>Disables the specified directory. Disabled directories cannot be read or written to. Only enabled directories can be disabled. Disabled directories may be reenabled.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisableDirectory<
         C = aws_smithy_client::erase::DynConnector,
@@ -3000,8 +2881,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `EnableDirectory`.
     ///
-    /// <p>Enables the specified directory. Only disabled directories can be enabled. Once
-    /// enabled, the directory can then be read and written to.</p>
+    /// <p>Enables the specified directory. Only disabled directories can be enabled. Once enabled, the directory can then be read and written to.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableDirectory<
         C = aws_smithy_client::erase::DynConnector,
@@ -3217,8 +3097,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetFacet`.
     ///
-    /// <p>Gets details of the <a>Facet</a>, such as facet name, attributes, <a>Rule</a>s, or <code>ObjectType</code>. You can call this on all kinds of schema
-    /// facets -- published, development, or applied.</p>
+    /// <p>Gets details of the <code>Facet</code>, such as facet name, attributes, <code>Rule</code>s, or <code>ObjectType</code>. You can call this on all kinds of schema facets -- published, development, or applied.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetFacet<
         C = aws_smithy_client::erase::DynConnector,
@@ -3275,14 +3154,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Facet</a>.
-        /// For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Facet</code>. For more information, see <code>arns</code>.</p>
         pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.schema_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Facet</a>.
-        /// For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Facet</code>. For more information, see <code>arns</code>.</p>
         pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_schema_arn(input);
             self
@@ -3357,12 +3234,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the Directory where the typed link resides. For more information, see <a>arns</a> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the Directory where the typed link resides. For more information, see <code>arns</code> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
         pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.directory_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the Directory where the typed link resides. For more information, see <a>arns</a> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the Directory where the typed link resides. For more information, see <code>arns</code> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3473,12 +3350,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where the object resides.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides.</p>
         pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.directory_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where the object resides.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3512,12 +3389,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_consistency_level(input);
             self
         }
-        /// <p>Identifier for the facet whose attributes will be retrieved. See <a>SchemaFacet</a> for details.</p>
+        /// <p>Identifier for the facet whose attributes will be retrieved. See <code>SchemaFacet</code> for details.</p>
         pub fn schema_facet(mut self, input: crate::model::SchemaFacet) -> Self {
             self.inner = self.inner.schema_facet(input);
             self
         }
-        /// <p>Identifier for the facet whose attributes will be retrieved. See <a>SchemaFacet</a> for details.</p>
+        /// <p>Identifier for the facet whose attributes will be retrieved. See <code>SchemaFacet</code> for details.</p>
         pub fn set_schema_facet(
             mut self,
             input: std::option::Option<crate::model::SchemaFacet>,
@@ -3714,7 +3591,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetTypedLinkFacetInformation`.
     ///
-    /// <p>Returns the identity attribute order for a specific <a>TypedLinkFacet</a>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+    /// <p>Returns the identity attribute order for a specific <code>TypedLinkFacet</code>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTypedLinkFacetInformation<
         C = aws_smithy_client::erase::DynConnector,
@@ -3771,14 +3648,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
-        /// information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
         pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.schema_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
-        /// information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
         pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_schema_arn(input);
             self
@@ -4018,8 +3893,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDevelopmentSchemaArns`.
     ///
-    /// <p>Retrieves each Amazon Resource Name (ARN) of schemas in the development
-    /// state.</p>
+    /// <p>Retrieves each Amazon Resource Name (ARN) of schemas in the development state.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDevelopmentSchemaArns<
         C = aws_smithy_client::erase::DynConnector,
@@ -4176,14 +4050,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The state of the directories in the list. Can be either Enabled, Disabled, or
-        /// Deleted.</p>
+        /// <p>The state of the directories in the list. Can be either Enabled, Disabled, or Deleted.</p>
         pub fn state(mut self, input: crate::model::DirectoryState) -> Self {
             self.inner = self.inner.state(input);
             self
         }
-        /// <p>The state of the directories in the list. Can be either Enabled, Disabled, or
-        /// Deleted.</p>
+        /// <p>The state of the directories in the list. Can be either Enabled, Disabled, or Deleted.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::DirectoryState>,
@@ -4384,9 +4256,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListIncomingTypedLinks`.
     ///
-    /// <p>Returns a paginated list of all the incoming <a>TypedLinkSpecifier</a>
-    /// information for an object. It also supports filtering by typed link facet and identity
-    /// attributes. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+    /// <p>Returns a paginated list of all the incoming <code>TypedLinkSpecifier</code> information for an object. It also supports filtering by typed link facet and identity attributes. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListIncomingTypedLinks<
         C = aws_smithy_client::erase::DynConnector,
@@ -4443,14 +4313,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the directory where you want to list the typed
-        /// links.</p>
+        /// <p>The Amazon Resource Name (ARN) of the directory where you want to list the typed links.</p>
         pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.directory_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the directory where you want to list the typed
-        /// links.</p>
+        /// <p>The Amazon Resource Name (ARN) of the directory where you want to list the typed links.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4475,9 +4343,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filter_attribute_ranges`](Self::set_filter_attribute_ranges).
         ///
-        /// <p>Provides range filters for multiple attributes. When providing ranges to typed link
-        /// selection, any inexact ranges must be specified at the end. Any attributes that do not have a
-        /// range specified are presumed to match the entire range.</p>
+        /// <p>Provides range filters for multiple attributes. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range.</p>
         pub fn filter_attribute_ranges(
             mut self,
             input: crate::model::TypedLinkAttributeRange,
@@ -4485,9 +4351,7 @@ pub mod fluent_builders {
             self.inner = self.inner.filter_attribute_ranges(input);
             self
         }
-        /// <p>Provides range filters for multiple attributes. When providing ranges to typed link
-        /// selection, any inexact ranges must be specified at the end. Any attributes that do not have a
-        /// range specified are presumed to match the entire range.</p>
+        /// <p>Provides range filters for multiple attributes. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range.</p>
         pub fn set_filter_attribute_ranges(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TypedLinkAttributeRange>>,
@@ -4495,8 +4359,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filter_attribute_ranges(input);
             self
         }
-        /// <p>Filters are interpreted in the order of the attributes on the typed link facet, not the
-        /// order in which they are supplied to any API calls.</p>
+        /// <p>Filters are interpreted in the order of the attributes on the typed link facet, not the order in which they are supplied to any API calls.</p>
         pub fn filter_typed_link(
             mut self,
             input: crate::model::TypedLinkSchemaAndFacetName,
@@ -4504,8 +4367,7 @@ pub mod fluent_builders {
             self.inner = self.inner.filter_typed_link(input);
             self
         }
-        /// <p>Filters are interpreted in the order of the attributes on the typed link facet, not the
-        /// order in which they are supplied to any API calls.</p>
+        /// <p>Filters are interpreted in the order of the attributes on the typed link facet, not the order in which they are supplied to any API calls.</p>
         pub fn set_filter_typed_link(
             mut self,
             input: std::option::Option<crate::model::TypedLinkSchemaAndFacetName>,
@@ -4778,8 +4640,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListObjectAttributes`.
     ///
-    /// <p>Lists all attributes that are associated with an object.
-    /// </p>
+    /// <p>Lists all attributes that are associated with an object. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListObjectAttributes<
         C = aws_smithy_client::erase::DynConnector,
@@ -4836,14 +4697,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where the object resides. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
         pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.directory_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where the object resides. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4874,26 +4733,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
-        /// number.</p>
+        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
-        /// number.</p>
+        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>Represents the manner and timing in which the successful write or update of an object
-        /// is reflected in a subsequent read operation of that same object.</p>
+        /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
         pub fn consistency_level(mut self, input: crate::model::ConsistencyLevel) -> Self {
             self.inner = self.inner.consistency_level(input);
             self
         }
-        /// <p>Represents the manner and timing in which the successful write or update of an object
-        /// is reflected in a subsequent read operation of that same object.</p>
+        /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
         pub fn set_consistency_level(
             mut self,
             input: std::option::Option<crate::model::ConsistencyLevel>,
@@ -4901,14 +4756,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_consistency_level(input);
             self
         }
-        /// <p>Used to filter the list of object attributes that are associated with a certain
-        /// facet.</p>
+        /// <p>Used to filter the list of object attributes that are associated with a certain facet.</p>
         pub fn facet_filter(mut self, input: crate::model::SchemaFacet) -> Self {
             self.inner = self.inner.facet_filter(input);
             self
         }
-        /// <p>Used to filter the list of object attributes that are associated with a certain
-        /// facet.</p>
+        /// <p>Used to filter the list of object attributes that are associated with a certain facet.</p>
         pub fn set_facet_filter(
             mut self,
             input: std::option::Option<crate::model::SchemaFacet>,
@@ -4919,8 +4772,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListObjectChildren`.
     ///
-    /// <p>Returns a paginated list of child objects that are associated with a given
-    /// object.</p>
+    /// <p>Returns a paginated list of child objects that are associated with a given object.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListObjectChildren<
         C = aws_smithy_client::erase::DynConnector,
@@ -4977,14 +4829,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where the object resides. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
         pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.directory_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where the object resides. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4992,14 +4842,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_directory_arn(input);
             self
         }
-        /// <p>The reference that identifies the object for which child objects are being
-        /// listed.</p>
+        /// <p>The reference that identifies the object for which child objects are being listed.</p>
         pub fn object_reference(mut self, input: crate::model::ObjectReference) -> Self {
             self.inner = self.inner.object_reference(input);
             self
         }
-        /// <p>The reference that identifies the object for which child objects are being
-        /// listed.</p>
+        /// <p>The reference that identifies the object for which child objects are being listed.</p>
         pub fn set_object_reference(
             mut self,
             input: std::option::Option<crate::model::ObjectReference>,
@@ -5017,26 +4865,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
-        /// number.</p>
+        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
-        /// number.</p>
+        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>Represents the manner and timing in which the successful write or update of an object
-        /// is reflected in a subsequent read operation of that same object.</p>
+        /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
         pub fn consistency_level(mut self, input: crate::model::ConsistencyLevel) -> Self {
             self.inner = self.inner.consistency_level(input);
             self
         }
-        /// <p>Represents the manner and timing in which the successful write or update of an object
-        /// is reflected in a subsequent read operation of that same object.</p>
+        /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
         pub fn set_consistency_level(
             mut self,
             input: std::option::Option<crate::model::ConsistencyLevel>,
@@ -5047,14 +4891,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListObjectParentPaths`.
     ///
-    /// <p>Retrieves all available parent paths for any object type such as node, leaf node,
-    /// policy node, and index node objects. For more information about objects, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directorystructure.html">Directory Structure</a>.</p>
-    /// <p>Use this API to evaluate all parents for an object. The call returns all objects from
-    /// the root of the directory up to the requested object. The API returns the number of paths
-    /// based on user-defined <code>MaxResults</code>, in case there are multiple paths to the parent.
-    /// The order of the paths and nodes returned is consistent among multiple API calls unless the
-    /// objects are deleted or moved. Paths not leading to the directory root are ignored from the
-    /// target object.</p>
+    /// <p>Retrieves all available parent paths for any object type such as node, leaf node, policy node, and index node objects. For more information about objects, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directorystructure.html">Directory Structure</a>.</p>
+    /// <p>Use this API to evaluate all parents for an object. The call returns all objects from the root of the directory up to the requested object. The API returns the number of paths based on user-defined <code>MaxResults</code>, in case there are multiple paths to the parent. The order of the paths and nodes returned is consistent among multiple API calls unless the objects are deleted or moved. Paths not leading to the directory root are ignored from the target object.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListObjectParentPaths<
         C = aws_smithy_client::erase::DynConnector,
@@ -5147,14 +4985,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
-        /// number.</p>
+        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
-        /// number.</p>
+        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -5162,8 +4998,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListObjectParents`.
     ///
-    /// <p>Lists parent objects that are associated with a given object in pagination
-    /// fashion.</p>
+    /// <p>Lists parent objects that are associated with a given object in pagination fashion.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListObjectParents<
         C = aws_smithy_client::erase::DynConnector,
@@ -5220,14 +5055,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where the object resides. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
         pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.directory_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where the object resides. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5235,14 +5068,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_directory_arn(input);
             self
         }
-        /// <p>The reference that identifies the object for which parent objects are being
-        /// listed.</p>
+        /// <p>The reference that identifies the object for which parent objects are being listed.</p>
         pub fn object_reference(mut self, input: crate::model::ObjectReference) -> Self {
             self.inner = self.inner.object_reference(input);
             self
         }
-        /// <p>The reference that identifies the object for which parent objects are being
-        /// listed.</p>
+        /// <p>The reference that identifies the object for which parent objects are being listed.</p>
         pub fn set_object_reference(
             mut self,
             input: std::option::Option<crate::model::ObjectReference>,
@@ -5260,26 +5091,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
-        /// number.</p>
+        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
-        /// number.</p>
+        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>Represents the manner and timing in which the successful write or update of an object
-        /// is reflected in a subsequent read operation of that same object.</p>
+        /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
         pub fn consistency_level(mut self, input: crate::model::ConsistencyLevel) -> Self {
             self.inner = self.inner.consistency_level(input);
             self
         }
-        /// <p>Represents the manner and timing in which the successful write or update of an object
-        /// is reflected in a subsequent read operation of that same object.</p>
+        /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
         pub fn set_consistency_level(
             mut self,
             input: std::option::Option<crate::model::ConsistencyLevel>,
@@ -5287,12 +5114,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_consistency_level(input);
             self
         }
-        /// <p>When set to True, returns all <a>ListObjectParentsResponse$ParentLinks</a>. There could be multiple links between a parent-child pair.</p>
+        /// <p>When set to True, returns all <code>ListObjectParentsResponse$ParentLinks</code>. There could be multiple links between a parent-child pair.</p>
         pub fn include_all_links_to_each_parent(mut self, input: bool) -> Self {
             self.inner = self.inner.include_all_links_to_each_parent(input);
             self
         }
-        /// <p>When set to True, returns all <a>ListObjectParentsResponse$ParentLinks</a>. There could be multiple links between a parent-child pair.</p>
+        /// <p>When set to True, returns all <code>ListObjectParentsResponse$ParentLinks</code>. There could be multiple links between a parent-child pair.</p>
         pub fn set_include_all_links_to_each_parent(
             mut self,
             input: std::option::Option<bool>,
@@ -5360,14 +5187,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where objects reside. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where objects reside. For more information, see <code>arns</code>.</p>
         pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.directory_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where objects reside. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where objects reside. For more information, see <code>arns</code>.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5398,26 +5223,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
-        /// number.</p>
+        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
-        /// number.</p>
+        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>Represents the manner and timing in which the successful write or update of an object
-        /// is reflected in a subsequent read operation of that same object.</p>
+        /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
         pub fn consistency_level(mut self, input: crate::model::ConsistencyLevel) -> Self {
             self.inner = self.inner.consistency_level(input);
             self
         }
-        /// <p>Represents the manner and timing in which the successful write or update of an object
-        /// is reflected in a subsequent read operation of that same object.</p>
+        /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
         pub fn set_consistency_level(
             mut self,
             input: std::option::Option<crate::model::ConsistencyLevel>,
@@ -5428,9 +5249,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListOutgoingTypedLinks`.
     ///
-    /// <p>Returns a paginated list of all the outgoing <a>TypedLinkSpecifier</a>
-    /// information for an object. It also supports filtering by typed link facet and identity
-    /// attributes. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+    /// <p>Returns a paginated list of all the outgoing <code>TypedLinkSpecifier</code> information for an object. It also supports filtering by typed link facet and identity attributes. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListOutgoingTypedLinks<
         C = aws_smithy_client::erase::DynConnector,
@@ -5487,14 +5306,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the directory where you want to list the typed
-        /// links.</p>
+        /// <p>The Amazon Resource Name (ARN) of the directory where you want to list the typed links.</p>
         pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.directory_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the directory where you want to list the typed
-        /// links.</p>
+        /// <p>The Amazon Resource Name (ARN) of the directory where you want to list the typed links.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5519,9 +5336,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filter_attribute_ranges`](Self::set_filter_attribute_ranges).
         ///
-        /// <p>Provides range filters for multiple attributes. When providing ranges to typed link
-        /// selection, any inexact ranges must be specified at the end. Any attributes that do not have a
-        /// range specified are presumed to match the entire range.</p>
+        /// <p>Provides range filters for multiple attributes. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range.</p>
         pub fn filter_attribute_ranges(
             mut self,
             input: crate::model::TypedLinkAttributeRange,
@@ -5529,9 +5344,7 @@ pub mod fluent_builders {
             self.inner = self.inner.filter_attribute_ranges(input);
             self
         }
-        /// <p>Provides range filters for multiple attributes. When providing ranges to typed link
-        /// selection, any inexact ranges must be specified at the end. Any attributes that do not have a
-        /// range specified are presumed to match the entire range.</p>
+        /// <p>Provides range filters for multiple attributes. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range.</p>
         pub fn set_filter_attribute_ranges(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TypedLinkAttributeRange>>,
@@ -5539,8 +5352,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filter_attribute_ranges(input);
             self
         }
-        /// <p>Filters are interpreted in the order of the attributes defined on the typed link facet,
-        /// not the order they are supplied to any API calls.</p>
+        /// <p>Filters are interpreted in the order of the attributes defined on the typed link facet, not the order they are supplied to any API calls.</p>
         pub fn filter_typed_link(
             mut self,
             input: crate::model::TypedLinkSchemaAndFacetName,
@@ -5548,8 +5360,7 @@ pub mod fluent_builders {
             self.inner = self.inner.filter_typed_link(input);
             self
         }
-        /// <p>Filters are interpreted in the order of the attributes defined on the typed link facet,
-        /// not the order they are supplied to any API calls.</p>
+        /// <p>Filters are interpreted in the order of the attributes defined on the typed link facet, not the order they are supplied to any API calls.</p>
         pub fn set_filter_typed_link(
             mut self,
             input: std::option::Option<crate::model::TypedLinkSchemaAndFacetName>,
@@ -5650,14 +5461,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where objects reside. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where objects reside. For more information, see <code>arns</code>.</p>
         pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.directory_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where objects reside. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where objects reside. For more information, see <code>arns</code>.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5688,26 +5497,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
-        /// number.</p>
+        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
-        /// number.</p>
+        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>Represents the manner and timing in which the successful write or update of an object
-        /// is reflected in a subsequent read operation of that same object.</p>
+        /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
         pub fn consistency_level(mut self, input: crate::model::ConsistencyLevel) -> Self {
             self.inner = self.inner.consistency_level(input);
             self
         }
-        /// <p>Represents the manner and timing in which the successful write or update of an object
-        /// is reflected in a subsequent read operation of that same object.</p>
+        /// <p>Represents the manner and timing in which the successful write or update of an object is reflected in a subsequent read operation of that same object.</p>
         pub fn set_consistency_level(
             mut self,
             input: std::option::Option<crate::model::ConsistencyLevel>,
@@ -5808,9 +5613,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTagsForResource`.
     ///
-    /// <p>Returns tags for a resource. Tagging is currently supported only for directories with a
-    /// limit of 50 tags per directory. All 50 tags are returned for a given directory with this API
-    /// call.</p>
+    /// <p>Returns tags for a resource. Tagging is currently supported only for directories with a limit of 50 tags per directory. All 50 tags are returned for a given directory with this API call.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTagsForResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -5867,38 +5670,32 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for
-        /// directories.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for
-        /// directories.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
         }
-        /// <p>The pagination token. This is for future use. Currently pagination is not supported for
-        /// tagging.</p>
+        /// <p>The pagination token. This is for future use. Currently pagination is not supported for tagging.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The pagination token. This is for future use. Currently pagination is not supported for
-        /// tagging.</p>
+        /// <p>The pagination token. This is for future use. Currently pagination is not supported for tagging.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The <code>MaxResults</code> parameter sets the maximum number of results returned in a
-        /// single page. This is for future use and is not supported currently.</p>
+        /// <p>The <code>MaxResults</code> parameter sets the maximum number of results returned in a single page. This is for future use and is not supported currently.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The <code>MaxResults</code> parameter sets the maximum number of results returned in a
-        /// single page. This is for future use and is not supported currently.</p>
+        /// <p>The <code>MaxResults</code> parameter sets the maximum number of results returned in a single page. This is for future use and is not supported currently.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -5906,7 +5703,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTypedLinkFacetAttributes`.
     ///
-    /// <p>Returns a paginated list of all attribute definitions for a particular <a>TypedLinkFacet</a>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+    /// <p>Returns a paginated list of all attribute definitions for a particular <code>TypedLinkFacet</code>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTypedLinkFacetAttributes<
         C = aws_smithy_client::erase::DynConnector,
@@ -5963,14 +5760,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
-        /// information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
         pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.schema_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
-        /// information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
         pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_schema_arn(input);
             self
@@ -6008,8 +5803,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTypedLinkFacetNames`.
     ///
-    /// <p>Returns a paginated list of <code>TypedLink</code> facet names for a particular schema.
-    /// For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+    /// <p>Returns a paginated list of <code>TypedLink</code> facet names for a particular schema. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTypedLinkFacetNames<
         C = aws_smithy_client::erase::DynConnector,
@@ -6066,14 +5860,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
-        /// information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
         pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.schema_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
-        /// information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
         pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_schema_arn(input);
             self
@@ -6101,12 +5893,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `LookupPolicy`.
     ///
-    /// <p>Lists all policies from the root of the <a>Directory</a> to the object
-    /// specified. If there are no policies present, an empty list is returned. If policies are
-    /// present, and if some objects don't have the policies attached, it returns the <code>ObjectIdentifier</code>
-    /// for such objects. If policies are present, it returns <code>ObjectIdentifier</code>, <code>policyId</code>, and
-    /// <code>policyType</code>. Paths that don't lead to the root from the target object are ignored. For more
-    /// information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
+    /// <p>Lists all policies from the root of the <code>Directory</code> to the object specified. If there are no policies present, an empty list is returned. If policies are present, and if some objects don't have the policies attached, it returns the <code>ObjectIdentifier</code> for such objects. If policies are present, it returns <code>ObjectIdentifier</code>, <code>policyId</code>, and <code>policyType</code>. Paths that don't lead to the root from the target object are ignored. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct LookupPolicy<
         C = aws_smithy_client::erase::DynConnector,
@@ -6163,14 +5950,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>.
-        /// For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
         pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.directory_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>.
-        /// For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6201,14 +5986,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
-        /// number.</p>
+        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
-        /// number.</p>
+        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -6273,14 +6056,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the development schema. For
-        /// more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the development schema. For more information, see <code>arns</code>.</p>
         pub fn development_schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.development_schema_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the development schema. For
-        /// more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the development schema. For more information, see <code>arns</code>.</p>
         pub fn set_development_schema_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6311,14 +6092,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_minor_version(input);
             self
         }
-        /// <p>The new name under which the schema will be published. If this is not provided, the
-        /// development schema is considered.</p>
+        /// <p>The new name under which the schema will be published. If this is not provided, the development schema is considered.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The new name under which the schema will be published. If this is not provided, the
-        /// development schema is considered.</p>
+        /// <p>The new name under which the schema will be published. If this is not provided, the development schema is considered.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -6476,12 +6255,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_directory_arn(input);
             self
         }
-        /// <p>The facet to remove. See <a>SchemaFacet</a> for details.</p>
+        /// <p>The facet to remove. See <code>SchemaFacet</code> for details.</p>
         pub fn schema_facet(mut self, input: crate::model::SchemaFacet) -> Self {
             self.inner = self.inner.schema_facet(input);
             self
         }
-        /// <p>The facet to remove. See <a>SchemaFacet</a> for details.</p>
+        /// <p>The facet to remove. See <code>SchemaFacet</code> for details.</p>
         pub fn set_schema_facet(
             mut self,
             input: std::option::Option<crate::model::SchemaFacet>,
@@ -6562,14 +6341,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for
-        /// directories.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for
-        /// directories.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -6651,14 +6428,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for
-        /// directories.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for
-        /// directories.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -6685,15 +6460,9 @@ pub mod fluent_builders {
     ///
     /// <p>Does the following:</p>
     /// <ol>
-    /// <li>
-    /// <p>Adds new <code>Attributes</code>, <code>Rules</code>, or <code>ObjectTypes</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Updates existing <code>Attributes</code>, <code>Rules</code>, or <code>ObjectTypes</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>Deletes existing <code>Attributes</code>, <code>Rules</code>, or <code>ObjectTypes</code>.</p>
-    /// </li>
+    /// <li> <p>Adds new <code>Attributes</code>, <code>Rules</code>, or <code>ObjectTypes</code>.</p> </li>
+    /// <li> <p>Updates existing <code>Attributes</code>, <code>Rules</code>, or <code>ObjectTypes</code>.</p> </li>
+    /// <li> <p>Deletes existing <code>Attributes</code>, <code>Rules</code>, or <code>ObjectTypes</code>.</p> </li>
     /// </ol>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateFacet<
@@ -6751,14 +6520,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Facet</a>.
-        /// For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Facet</code>. For more information, see <code>arns</code>.</p>
         pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.schema_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Facet</a>.
-        /// For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Facet</code>. For more information, see <code>arns</code>.</p>
         pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_schema_arn(input);
             self
@@ -6777,16 +6544,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_attribute_updates`](Self::set_attribute_updates).
         ///
-        /// <p>List of attributes that need to be updated in a given schema <a>Facet</a>.
-        /// Each attribute is followed by <code>AttributeAction</code>, which specifies the type of update
-        /// operation to perform. </p>
+        /// <p>List of attributes that need to be updated in a given schema <code>Facet</code>. Each attribute is followed by <code>AttributeAction</code>, which specifies the type of update operation to perform. </p>
         pub fn attribute_updates(mut self, input: crate::model::FacetAttributeUpdate) -> Self {
             self.inner = self.inner.attribute_updates(input);
             self
         }
-        /// <p>List of attributes that need to be updated in a given schema <a>Facet</a>.
-        /// Each attribute is followed by <code>AttributeAction</code>, which specifies the type of update
-        /// operation to perform. </p>
+        /// <p>List of attributes that need to be updated in a given schema <code>Facet</code>. Each attribute is followed by <code>AttributeAction</code>, which specifies the type of update operation to perform. </p>
         pub fn set_attribute_updates(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FacetAttributeUpdate>>,
@@ -6794,12 +6557,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_attribute_updates(input);
             self
         }
-        /// <p>The object type that is associated with the facet. See <a>CreateFacetRequest$ObjectType</a> for more details.</p>
+        /// <p>The object type that is associated with the facet. See <code>CreateFacetRequest$ObjectType</code> for more details.</p>
         pub fn object_type(mut self, input: crate::model::ObjectType) -> Self {
             self.inner = self.inner.object_type(input);
             self
         }
-        /// <p>The object type that is associated with the facet. See <a>CreateFacetRequest$ObjectType</a> for more details.</p>
+        /// <p>The object type that is associated with the facet. See <code>CreateFacetRequest$ObjectType</code> for more details.</p>
         pub fn set_object_type(
             mut self,
             input: std::option::Option<crate::model::ObjectType>,
@@ -6867,12 +6630,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the Directory where the updated typed link resides. For more information, see <a>arns</a> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the Directory where the updated typed link resides. For more information, see <code>arns</code> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
         pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.directory_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the Directory where the updated typed link resides. For more information, see <a>arns</a> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the Directory where the updated typed link resides. For more information, see <code>arns</code> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6970,14 +6733,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where the object resides. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
         pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.directory_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
-        /// where the object resides. For more information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
         pub fn set_directory_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7018,8 +6779,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateSchema`.
     ///
-    /// <p>Updates the schema name with a new name. Only development schema names can be
-    /// updated.</p>
+    /// <p>Updates the schema name with a new name. Only development schema names can be updated.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateSchema<
         C = aws_smithy_client::erase::DynConnector,
@@ -7076,14 +6836,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the development schema. For more information, see
-        /// <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the development schema. For more information, see <code>arns</code>.</p>
         pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.schema_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the development schema. For more information, see
-        /// <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the development schema. For more information, see <code>arns</code>.</p>
         pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_schema_arn(input);
             self
@@ -7101,7 +6859,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateTypedLinkFacet`.
     ///
-    /// <p>Updates a <a>TypedLinkFacet</a>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+    /// <p>Updates a <code>TypedLinkFacet</code>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateTypedLinkFacet<
         C = aws_smithy_client::erase::DynConnector,
@@ -7158,14 +6916,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
-        /// information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
         pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.schema_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
-        /// information, see <a>arns</a>.</p>
+        /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
         pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_schema_arn(input);
             self
@@ -7204,22 +6960,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_identity_attribute_order`](Self::set_identity_attribute_order).
         ///
-        /// <p>The order of identity attributes for the facet, from most significant to least significant. The ability to filter typed
-        /// links considers the order that the attributes are defined on the typed link facet.  When
-        /// providing ranges to a typed link selection, any inexact ranges must be specified at the end.
-        /// Any attributes that do not have a range specified are presumed to match the entire range.
-        /// Filters are interpreted in the order of the attributes on the typed link facet, not the order
-        /// in which they are supplied to any API calls. For more information about identity attributes, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+        /// <p>The order of identity attributes for the facet, from most significant to least significant. The ability to filter typed links considers the order that the attributes are defined on the typed link facet. When providing ranges to a typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range. Filters are interpreted in the order of the attributes on the typed link facet, not the order in which they are supplied to any API calls. For more information about identity attributes, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
         pub fn identity_attribute_order(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.identity_attribute_order(input.into());
             self
         }
-        /// <p>The order of identity attributes for the facet, from most significant to least significant. The ability to filter typed
-        /// links considers the order that the attributes are defined on the typed link facet.  When
-        /// providing ranges to a typed link selection, any inexact ranges must be specified at the end.
-        /// Any attributes that do not have a range specified are presumed to match the entire range.
-        /// Filters are interpreted in the order of the attributes on the typed link facet, not the order
-        /// in which they are supplied to any API calls. For more information about identity attributes, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+        /// <p>The order of identity attributes for the facet, from most significant to least significant. The ability to filter typed links considers the order that the attributes are defined on the typed link facet. When providing ranges to a typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range. Filters are interpreted in the order of the attributes on the typed link facet, not the order in which they are supplied to any API calls. For more information about identity attributes, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
         pub fn set_identity_attribute_order(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,

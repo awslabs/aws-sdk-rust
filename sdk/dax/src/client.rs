@@ -304,45 +304,23 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The cluster identifier. This parameter is stored as a lowercase
-        /// string.</p>
-        /// <p>
-        /// <b>Constraints:</b>
-        /// </p>
+        /// <p>The cluster identifier. This parameter is stored as a lowercase string.</p>
+        /// <p> <b>Constraints:</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>A name must contain from 1 to 20 alphanumeric characters or
-        /// hyphens.</p>
-        /// </li>
-        /// <li>
-        /// <p>The first character must be a letter.</p>
-        /// </li>
-        /// <li>
-        /// <p>A name cannot end with a hyphen or contain two consecutive
-        /// hyphens.</p>
-        /// </li>
+        /// <li> <p>A name must contain from 1 to 20 alphanumeric characters or hyphens.</p> </li>
+        /// <li> <p>The first character must be a letter.</p> </li>
+        /// <li> <p>A name cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
         /// </ul>
         pub fn cluster_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.cluster_name(input.into());
             self
         }
-        /// <p>The cluster identifier. This parameter is stored as a lowercase
-        /// string.</p>
-        /// <p>
-        /// <b>Constraints:</b>
-        /// </p>
+        /// <p>The cluster identifier. This parameter is stored as a lowercase string.</p>
+        /// <p> <b>Constraints:</b> </p>
         /// <ul>
-        /// <li>
-        /// <p>A name must contain from 1 to 20 alphanumeric characters or
-        /// hyphens.</p>
-        /// </li>
-        /// <li>
-        /// <p>The first character must be a letter.</p>
-        /// </li>
-        /// <li>
-        /// <p>A name cannot end with a hyphen or contain two consecutive
-        /// hyphens.</p>
-        /// </li>
+        /// <li> <p>A name must contain from 1 to 20 alphanumeric characters or hyphens.</p> </li>
+        /// <li> <p>The first character must be a letter.</p> </li>
+        /// <li> <p>A name cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
         /// </ul>
         pub fn set_cluster_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_cluster_name(input);
@@ -368,24 +346,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The number of nodes in the DAX cluster. A replication factor of 1 will
-        /// create a single-node cluster, without any read replicas. For additional fault tolerance,
-        /// you can create a multiple node cluster with one or more read replicas. To do this, set
-        /// <code>ReplicationFactor</code> to a number between 3 (one primary and two read replicas) and 10 (one primary and nine read replicas).
-        /// <code>If the AvailabilityZones</code> parameter is provided, its length must equal the <code>ReplicationFactor</code>.</p>
-        /// <note>
+        /// <p>The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <code>ReplicationFactor</code> to a number between 3 (one primary and two read replicas) and 10 (one primary and nine read replicas). <code>If the AvailabilityZones</code> parameter is provided, its length must equal the <code>ReplicationFactor</code>.</p> <note>
         /// <p>AWS recommends that you have at least two read replicas per cluster.</p>
         /// </note>
         pub fn replication_factor(mut self, input: i32) -> Self {
             self.inner = self.inner.replication_factor(input);
             self
         }
-        /// <p>The number of nodes in the DAX cluster. A replication factor of 1 will
-        /// create a single-node cluster, without any read replicas. For additional fault tolerance,
-        /// you can create a multiple node cluster with one or more read replicas. To do this, set
-        /// <code>ReplicationFactor</code> to a number between 3 (one primary and two read replicas) and 10 (one primary and nine read replicas).
-        /// <code>If the AvailabilityZones</code> parameter is provided, its length must equal the <code>ReplicationFactor</code>.</p>
-        /// <note>
+        /// <p>The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <code>ReplicationFactor</code> to a number between 3 (one primary and two read replicas) and 10 (one primary and nine read replicas). <code>If the AvailabilityZones</code> parameter is provided, its length must equal the <code>ReplicationFactor</code>.</p> <note>
         /// <p>AWS recommends that you have at least two read replicas per cluster.</p>
         /// </note>
         pub fn set_replication_factor(mut self, input: std::option::Option<i32>) -> Self {
@@ -396,16 +364,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
         ///
-        /// <p>The Availability Zones (AZs) in which the cluster nodes will reside after the cluster
-        /// has been created or updated. If provided, the length of this list must equal the <code>ReplicationFactor</code> parameter.
-        /// If you omit this parameter, DAX will spread the nodes across Availability Zones for the highest availability.</p>
+        /// <p>The Availability Zones (AZs) in which the cluster nodes will reside after the cluster has been created or updated. If provided, the length of this list must equal the <code>ReplicationFactor</code> parameter. If you omit this parameter, DAX will spread the nodes across Availability Zones for the highest availability.</p>
         pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.availability_zones(input.into());
             self
         }
-        /// <p>The Availability Zones (AZs) in which the cluster nodes will reside after the cluster
-        /// has been created or updated. If provided, the length of this list must equal the <code>ReplicationFactor</code> parameter.
-        /// If you omit this parameter, DAX will spread the nodes across Availability Zones for the highest availability.</p>
+        /// <p>The Availability Zones (AZs) in which the cluster nodes will reside after the cluster has been created or updated. If provided, the length of this list must equal the <code>ReplicationFactor</code> parameter. If you omit this parameter, DAX will spread the nodes across Availability Zones for the highest availability.</p>
         pub fn set_availability_zones(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -413,19 +377,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_availability_zones(input);
             self
         }
-        /// <p>The name of the subnet group to be used for the replication group.</p>
-        /// <important>
-        /// <p>DAX clusters can only run in an Amazon VPC environment. All of the subnets
-        /// that you specify in a subnet group must exist in the same VPC.</p>
+        /// <p>The name of the subnet group to be used for the replication group.</p> <important>
+        /// <p>DAX clusters can only run in an Amazon VPC environment. All of the subnets that you specify in a subnet group must exist in the same VPC.</p>
         /// </important>
         pub fn subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.subnet_group_name(input.into());
             self
         }
-        /// <p>The name of the subnet group to be used for the replication group.</p>
-        /// <important>
-        /// <p>DAX clusters can only run in an Amazon VPC environment. All of the subnets
-        /// that you specify in a subnet group must exist in the same VPC.</p>
+        /// <p>The name of the subnet group to be used for the replication group.</p> <important>
+        /// <p>DAX clusters can only run in an Amazon VPC environment. All of the subnets that you specify in a subnet group must exist in the same VPC.</p>
         /// </important>
         pub fn set_subnet_group_name(
             mut self,
@@ -438,18 +398,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
         ///
-        /// <p>A list of security group IDs to be assigned to each node in the DAX cluster. (Each of the
-        /// security group ID is system-generated.)</p>
-        /// <p>If this parameter is not specified, DAX assigns the default VPC security group to
-        /// each node.</p>
+        /// <p>A list of security group IDs to be assigned to each node in the DAX cluster. (Each of the security group ID is system-generated.)</p>
+        /// <p>If this parameter is not specified, DAX assigns the default VPC security group to each node.</p>
         pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.security_group_ids(input.into());
             self
         }
-        /// <p>A list of security group IDs to be assigned to each node in the DAX cluster. (Each of the
-        /// security group ID is system-generated.)</p>
-        /// <p>If this parameter is not specified, DAX assigns the default VPC security group to
-        /// each node.</p>
+        /// <p>A list of security group IDs to be assigned to each node in the DAX cluster. (Each of the security group ID is system-generated.)</p>
+        /// <p>If this parameter is not specified, DAX assigns the default VPC security group to each node.</p>
         pub fn set_security_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -457,53 +413,18 @@ pub mod fluent_builders {
             self.inner = self.inner.set_security_group_ids(input);
             self
         }
-        /// <p>Specifies the weekly time range during which maintenance on the DAX cluster is
-        /// performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock
-        /// UTC). The minimum maintenance window is a 60 minute period. Valid values for
-        /// <code>ddd</code> are:</p>
+        /// <p>Specifies the weekly time range during which maintenance on the DAX cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period. Valid values for <code>ddd</code> are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>sun</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>mon</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>tue</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>wed</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>thu</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>fri</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>sat</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>sun</code> </p> </li>
+        /// <li> <p> <code>mon</code> </p> </li>
+        /// <li> <p> <code>tue</code> </p> </li>
+        /// <li> <p> <code>wed</code> </p> </li>
+        /// <li> <p> <code>thu</code> </p> </li>
+        /// <li> <p> <code>fri</code> </p> </li>
+        /// <li> <p> <code>sat</code> </p> </li>
         /// </ul>
-        /// <p>Example: <code>sun:05:00-sun:09:00</code>
-        /// </p>
-        /// <note>
-        /// <p>If you don't specify a preferred maintenance window when you create or modify a
-        /// cache cluster, DAX assigns a 60-minute maintenance window on a randomly selected day
-        /// of the week.</p>
+        /// <p>Example: <code>sun:05:00-sun:09:00</code> </p> <note>
+        /// <p>If you don't specify a preferred maintenance window when you create or modify a cache cluster, DAX assigns a 60-minute maintenance window on a randomly selected day of the week.</p>
         /// </note>
         pub fn preferred_maintenance_window(
             mut self,
@@ -512,53 +433,18 @@ pub mod fluent_builders {
             self.inner = self.inner.preferred_maintenance_window(input.into());
             self
         }
-        /// <p>Specifies the weekly time range during which maintenance on the DAX cluster is
-        /// performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock
-        /// UTC). The minimum maintenance window is a 60 minute period. Valid values for
-        /// <code>ddd</code> are:</p>
+        /// <p>Specifies the weekly time range during which maintenance on the DAX cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period. Valid values for <code>ddd</code> are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>sun</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>mon</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>tue</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>wed</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>thu</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>fri</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>sat</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>sun</code> </p> </li>
+        /// <li> <p> <code>mon</code> </p> </li>
+        /// <li> <p> <code>tue</code> </p> </li>
+        /// <li> <p> <code>wed</code> </p> </li>
+        /// <li> <p> <code>thu</code> </p> </li>
+        /// <li> <p> <code>fri</code> </p> </li>
+        /// <li> <p> <code>sat</code> </p> </li>
         /// </ul>
-        /// <p>Example: <code>sun:05:00-sun:09:00</code>
-        /// </p>
-        /// <note>
-        /// <p>If you don't specify a preferred maintenance window when you create or modify a
-        /// cache cluster, DAX assigns a 60-minute maintenance window on a randomly selected day
-        /// of the week.</p>
+        /// <p>Example: <code>sun:05:00-sun:09:00</code> </p> <note>
+        /// <p>If you don't specify a preferred maintenance window when you create or modify a cache cluster, DAX assigns a 60-minute maintenance window on a randomly selected day of the week.</p>
         /// </note>
         pub fn set_preferred_maintenance_window(
             mut self,
@@ -567,18 +453,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_preferred_maintenance_window(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications will
-        /// be sent.</p>
-        /// <note>
+        /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications will be sent.</p> <note>
         /// <p>The Amazon SNS topic owner must be same as the DAX cluster owner.</p>
         /// </note>
         pub fn notification_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.notification_topic_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications will
-        /// be sent.</p>
-        /// <note>
+        /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications will be sent.</p> <note>
         /// <p>The Amazon SNS topic owner must be same as the DAX cluster owner.</p>
         /// </note>
         pub fn set_notification_topic_arn(
@@ -588,16 +470,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_notification_topic_arn(input);
             self
         }
-        /// <p>A valid Amazon Resource Name (ARN) that identifies an IAM role. At runtime, DAX
-        /// will assume this role and use the role's permissions to access DynamoDB on your
-        /// behalf.</p>
+        /// <p>A valid Amazon Resource Name (ARN) that identifies an IAM role. At runtime, DAX will assume this role and use the role's permissions to access DynamoDB on your behalf.</p>
         pub fn iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.iam_role_arn(input.into());
             self
         }
-        /// <p>A valid Amazon Resource Name (ARN) that identifies an IAM role. At runtime, DAX
-        /// will assume this role and use the role's permissions to access DynamoDB on your
-        /// behalf.</p>
+        /// <p>A valid Amazon Resource Name (ARN) that identifies an IAM role. At runtime, DAX will assume this role and use the role's permissions to access DynamoDB on your behalf.</p>
         pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_iam_role_arn(input);
             self
@@ -619,12 +497,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A set of tags to associate with the DAX cluster.  </p>
+        /// <p>A set of tags to associate with the DAX cluster. </p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>A set of tags to associate with the DAX cluster.  </p>
+        /// <p>A set of tags to associate with the DAX cluster. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -647,14 +525,8 @@ pub mod fluent_builders {
         }
         /// <p>The type of encryption the cluster's endpoint should support. Values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>NONE</code> for no encryption</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TLS</code> for Transport Layer Security</p>
-        /// </li>
+        /// <li> <p> <code>NONE</code> for no encryption</p> </li>
+        /// <li> <p> <code>TLS</code> for Transport Layer Security</p> </li>
         /// </ul>
         pub fn cluster_endpoint_encryption_type(
             mut self,
@@ -665,14 +537,8 @@ pub mod fluent_builders {
         }
         /// <p>The type of encryption the cluster's endpoint should support. Values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>NONE</code> for no encryption</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TLS</code> for Transport Layer Security</p>
-        /// </li>
+        /// <li> <p> <code>NONE</code> for no encryption</p> </li>
+        /// <li> <p> <code>TLS</code> for Transport Layer Security</p> </li>
         /// </ul>
         pub fn set_cluster_endpoint_encryption_type(
             mut self,
@@ -684,8 +550,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateParameterGroup`.
     ///
-    /// <p>Creates a new parameter group. A parameter group is a collection of parameters that
-    /// you apply to all of the nodes in a DAX cluster.</p>
+    /// <p>Creates a new parameter group. A parameter group is a collection of parameters that you apply to all of the nodes in a DAX cluster.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateParameterGroup<
         C = aws_smithy_client::erase::DynConnector,
@@ -742,14 +607,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the parameter group to apply to all of the clusters in this replication
-        /// group.</p>
+        /// <p>The name of the parameter group to apply to all of the clusters in this replication group.</p>
         pub fn parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.parameter_group_name(input.into());
             self
         }
-        /// <p>The name of the parameter group to apply to all of the clusters in this replication
-        /// group.</p>
+        /// <p>The name of the parameter group to apply to all of the clusters in this replication group.</p>
         pub fn set_parameter_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -870,8 +733,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DecreaseReplicationFactor`.
     ///
-    /// <p>Removes one or more nodes from a DAX cluster.</p>
-    /// <note>
+    /// <p>Removes one or more nodes from a DAX cluster.</p> <note>
     /// <p>You cannot use <code>DecreaseReplicationFactor</code> to remove the last node in a DAX cluster. If you need to do this, use <code>DeleteCluster</code> instead.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -987,11 +849,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteCluster`.
     ///
-    /// <p>Deletes a previously provisioned DAX cluster.
-    /// <i>DeleteCluster</i> deletes all associated nodes, node endpoints
-    /// and the DAX cluster itself. When you receive a successful response from this action,
-    /// DAX immediately begins deleting the cluster; you cannot cancel or revert this
-    /// action.</p>
+    /// <p>Deletes a previously provisioned DAX cluster. <i>DeleteCluster</i> deletes all associated nodes, node endpoints and the DAX cluster itself. When you receive a successful response from this action, DAX immediately begins deleting the cluster; you cannot cancel or revert this action.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCluster<
         C = aws_smithy_client::erase::DynConnector,
@@ -1061,8 +919,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteParameterGroup`.
     ///
-    /// <p>Deletes the specified parameter group. You cannot delete a parameter group if it is
-    /// associated with any DAX clusters.</p>
+    /// <p>Deletes the specified parameter group. You cannot delete a parameter group if it is associated with any DAX clusters.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteParameterGroup<
         C = aws_smithy_client::erase::DynConnector,
@@ -1135,10 +992,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteSubnetGroup`.
     ///
-    /// <p>Deletes a subnet group.</p>
-    /// <note>
-    /// <p>You cannot delete a subnet group if it is associated with any DAX
-    /// clusters.</p>
+    /// <p>Deletes a subnet group.</p> <note>
+    /// <p>You cannot delete a subnet group if it is associated with any DAX clusters.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteSubnetGroup<
@@ -1212,19 +1067,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeClusters`.
     ///
-    /// <p>Returns information about all provisioned DAX clusters if no cluster identifier
-    /// is specified, or about a specific DAX cluster if a cluster identifier is
-    /// supplied.</p>
-    /// <p>If the cluster is in the CREATING state, only cluster level information will be
-    /// displayed until all of the nodes are successfully provisioned.</p>
-    /// <p>If the cluster is in the DELETING state, only cluster level information will be
-    /// displayed.</p>
-    /// <p>If nodes are currently being added to the DAX cluster, node endpoint information
-    /// and creation time for the additional nodes will not be displayed until they are
-    /// completely provisioned. When the DAX cluster state is <i>available</i>,
-    /// the cluster is ready for use.</p>
-    /// <p>If nodes are currently being removed from the DAX cluster, no endpoint
-    /// information for the removed nodes is displayed.</p>
+    /// <p>Returns information about all provisioned DAX clusters if no cluster identifier is specified, or about a specific DAX cluster if a cluster identifier is supplied.</p>
+    /// <p>If the cluster is in the CREATING state, only cluster level information will be displayed until all of the nodes are successfully provisioned.</p>
+    /// <p>If the cluster is in the DELETING state, only cluster level information will be displayed.</p>
+    /// <p>If nodes are currently being added to the DAX cluster, node endpoint information and creation time for the additional nodes will not be displayed until they are completely provisioned. When the DAX cluster state is <i>available</i>, the cluster is ready for use.</p>
+    /// <p>If nodes are currently being removed from the DAX cluster, no endpoint information for the removed nodes is displayed.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeClusters<
         C = aws_smithy_client::erase::DynConnector,
@@ -1298,34 +1145,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_cluster_names(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist
-        /// than the specified <code>MaxResults</code> value, a token is included in the response so
-        /// that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist
-        /// than the specified <code>MaxResults</code> value, a token is included in the response so
-        /// that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by
-        /// <code>MaxResults</code>.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by
-        /// <code>MaxResults</code>.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1333,8 +1170,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeDefaultParameters`.
     ///
-    /// <p>Returns the default system parameter information for the DAX caching
-    /// software.</p>
+    /// <p>Returns the default system parameter information for the DAX caching software.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDefaultParameters<
         C = aws_smithy_client::erase::DynConnector,
@@ -1391,34 +1227,24 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The maximum number of results to include in the response. If more results exist
-        /// than the specified <code>MaxResults</code> value, a token is included in the response so
-        /// that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist
-        /// than the specified <code>MaxResults</code> value, a token is included in the response so
-        /// that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by
-        /// <code>MaxResults</code>.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by
-        /// <code>MaxResults</code>.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1426,11 +1252,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeEvents`.
     ///
-    /// <p>Returns events related to DAX clusters and parameter groups. You can obtain
-    /// events specific to a particular DAX cluster or parameter group by providing the name
-    /// as a parameter.</p>
-    /// <p>By default, only the events occurring within the last 24 hours are returned; however,
-    /// you can retrieve up to 14 days' worth of events if necessary.</p>
+    /// <p>Returns events related to DAX clusters and parameter groups. You can obtain events specific to a particular DAX cluster or parameter group by providing the name as a parameter.</p>
+    /// <p>By default, only the events occurring within the last 24 hours are returned; however, you can retrieve up to 14 days' worth of events if necessary.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEvents<
         C = aws_smithy_client::erase::DynConnector,
@@ -1487,26 +1310,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier of the event source for which events will be returned. If not
-        /// specified, then all sources are included in the response.</p>
+        /// <p>The identifier of the event source for which events will be returned. If not specified, then all sources are included in the response.</p>
         pub fn source_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.source_name(input.into());
             self
         }
-        /// <p>The identifier of the event source for which events will be returned. If not
-        /// specified, then all sources are included in the response.</p>
+        /// <p>The identifier of the event source for which events will be returned. If not specified, then all sources are included in the response.</p>
         pub fn set_source_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_source_name(input);
             self
         }
-        /// <p>The event source to retrieve events for. If no value is specified, all events are
-        /// returned.</p>
+        /// <p>The event source to retrieve events for. If no value is specified, all events are returned.</p>
         pub fn source_type(mut self, input: crate::model::SourceType) -> Self {
             self.inner = self.inner.source_type(input);
             self
         }
-        /// <p>The event source to retrieve events for. If no value is specified, all events are
-        /// returned.</p>
+        /// <p>The event source to retrieve events for. If no value is specified, all events are returned.</p>
         pub fn set_source_type(
             mut self,
             input: std::option::Option<crate::model::SourceType>,
@@ -1514,14 +1333,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_source_type(input);
             self
         }
-        /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601
-        /// format.</p>
+        /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.start_time(input);
             self
         }
-        /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601
-        /// format.</p>
+        /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format.</p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1529,14 +1346,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_start_time(input);
             self
         }
-        /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601
-        /// format.</p>
+        /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.end_time(input);
             self
         }
-        /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601
-        /// format.</p>
+        /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format.</p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1554,34 +1369,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_duration(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist
-        /// than the specified <code>MaxResults</code> value, a token is included in the response so
-        /// that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist
-        /// than the specified <code>MaxResults</code> value, a token is included in the response so
-        /// that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by
-        /// <code>MaxResults</code>.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by
-        /// <code>MaxResults</code>.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1589,8 +1394,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeParameterGroups`.
     ///
-    /// <p>Returns a list of parameter group descriptions. If a parameter group name is
-    /// specified, the list will contain only the descriptions for that group.</p>
+    /// <p>Returns a list of parameter group descriptions. If a parameter group name is specified, the list will contain only the descriptions for that group.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeParameterGroups<
         C = aws_smithy_client::erase::DynConnector,
@@ -1664,34 +1468,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_parameter_group_names(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist
-        /// than the specified <code>MaxResults</code> value, a token is included in the response so
-        /// that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist
-        /// than the specified <code>MaxResults</code> value, a token is included in the response so
-        /// that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by
-        /// <code>MaxResults</code>.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by
-        /// <code>MaxResults</code>.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1769,46 +1563,34 @@ pub mod fluent_builders {
             self.inner = self.inner.set_parameter_group_name(input);
             self
         }
-        /// <p>How the parameter is defined. For example, <code>system</code> denotes a
-        /// system-defined parameter.</p>
+        /// <p>How the parameter is defined. For example, <code>system</code> denotes a system-defined parameter.</p>
         pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.source(input.into());
             self
         }
-        /// <p>How the parameter is defined. For example, <code>system</code> denotes a
-        /// system-defined parameter.</p>
+        /// <p>How the parameter is defined. For example, <code>system</code> denotes a system-defined parameter.</p>
         pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_source(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist
-        /// than the specified <code>MaxResults</code> value, a token is included in the response so
-        /// that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist
-        /// than the specified <code>MaxResults</code> value, a token is included in the response so
-        /// that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by
-        /// <code>MaxResults</code>.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by
-        /// <code>MaxResults</code>.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -1816,8 +1598,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeSubnetGroups`.
     ///
-    /// <p>Returns a list of subnet group descriptions. If a subnet group name is specified,
-    /// the list will contain only the description of that group.</p>
+    /// <p>Returns a list of subnet group descriptions. If a subnet group name is specified, the list will contain only the description of that group.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeSubnetGroups<
         C = aws_smithy_client::erase::DynConnector,
@@ -1891,34 +1672,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_subnet_group_names(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist
-        /// than the specified <code>MaxResults</code> value, a token is included in the response so
-        /// that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to include in the response. If more results exist
-        /// than the specified <code>MaxResults</code> value, a token is included in the response so
-        /// that the remaining results can be retrieved.</p>
+        /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
         /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by
-        /// <code>MaxResults</code>.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by
-        /// <code>MaxResults</code>.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2007,16 +1778,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
         ///
-        /// <p>The Availability Zones (AZs) in which the cluster nodes will be created. All nodes
-        /// belonging to the cluster are placed in these Availability Zones. Use this parameter if you want
-        /// to distribute the nodes across multiple AZs.</p>
+        /// <p>The Availability Zones (AZs) in which the cluster nodes will be created. All nodes belonging to the cluster are placed in these Availability Zones. Use this parameter if you want to distribute the nodes across multiple AZs.</p>
         pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.availability_zones(input.into());
             self
         }
-        /// <p>The Availability Zones (AZs) in which the cluster nodes will be created. All nodes
-        /// belonging to the cluster are placed in these Availability Zones. Use this parameter if you want
-        /// to distribute the nodes across multiple AZs.</p>
+        /// <p>The Availability Zones (AZs) in which the cluster nodes will be created. All nodes belonging to the cluster are placed in these Availability Zones. Use this parameter if you want to distribute the nodes across multiple AZs.</p>
         pub fn set_availability_zones(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2027,8 +1794,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListTags`.
     ///
-    /// <p>List all of the tags for a DAX cluster. You can call <code>ListTags</code> up to
-    /// 10 times per second, per account.</p>
+    /// <p>List all of the tags for a DAX cluster. You can call <code>ListTags</code> up to 10 times per second, per account.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTags<
         C = aws_smithy_client::erase::DynConnector,
@@ -2098,16 +1864,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_name(input);
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An optional token returned from a prior request. Use this token for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token.</p>
+        /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -2115,12 +1877,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RebootNode`.
     ///
-    /// <p>Reboots a single node of a DAX cluster. The reboot action takes place
-    /// as soon as possible. During the
-    /// reboot, the node status is set to REBOOTING.</p>
-    /// <note>
-    /// <p>
-    /// <code>RebootNode</code> restarts the DAX engine process and does not remove the contents of the cache.  </p>
+    /// <p>Reboots a single node of a DAX cluster. The reboot action takes place as soon as possible. During the reboot, the node status is set to REBOOTING.</p> <note>
+    /// <p> <code>RebootNode</code> restarts the DAX engine process and does not remove the contents of the cache. </p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RebootNode<
@@ -2201,8 +1959,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Associates a set of tags with a DAX resource.  You can call <code>TagResource</code> up to 5 times per second, per
-    /// account. </p>
+    /// <p>Associates a set of tags with a DAX resource. You can call <code>TagResource</code> up to 5 times per second, per account. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -2292,8 +2049,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UntagResource`.
     ///
-    /// <p>Removes the association of tags from a DAX resource. You can call
-    /// <code>UntagResource</code> up to 5 times per second, per account. </p>
+    /// <p>Removes the association of tags from a DAX resource. You can call <code>UntagResource</code> up to 5 times per second, per account. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UntagResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -2383,9 +2139,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateCluster`.
     ///
-    /// <p>Modifies the settings for a DAX cluster. You can use this action to change one or
-    /// more cluster configuration parameters by specifying the parameters and the new
-    /// values.</p>
+    /// <p>Modifies the settings for a DAX cluster. You can use this action to change one or more cluster configuration parameters by specifying the parameters and the new values.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateCluster<
         C = aws_smithy_client::erase::DynConnector,
@@ -2462,9 +2216,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>A range of time when maintenance of DAX cluster software will be performed. For
-        /// example: <code>sun:01:00-sun:09:00</code>. Cluster maintenance normally takes less than
-        /// 30 minutes, and is performed automatically within the maintenance window.</p>
+        /// <p>A range of time when maintenance of DAX cluster software will be performed. For example: <code>sun:01:00-sun:09:00</code>. Cluster maintenance normally takes less than 30 minutes, and is performed automatically within the maintenance window.</p>
         pub fn preferred_maintenance_window(
             mut self,
             input: impl Into<std::string::String>,
@@ -2472,9 +2224,7 @@ pub mod fluent_builders {
             self.inner = self.inner.preferred_maintenance_window(input.into());
             self
         }
-        /// <p>A range of time when maintenance of DAX cluster software will be performed. For
-        /// example: <code>sun:01:00-sun:09:00</code>. Cluster maintenance normally takes less than
-        /// 30 minutes, and is performed automatically within the maintenance window.</p>
+        /// <p>A range of time when maintenance of DAX cluster software will be performed. For example: <code>sun:01:00-sun:09:00</code>. Cluster maintenance normally takes less than 30 minutes, and is performed automatically within the maintenance window.</p>
         pub fn set_preferred_maintenance_window(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2495,16 +2245,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_notification_topic_arn(input);
             self
         }
-        /// <p>The current state of the topic. A value of “active” means that notifications will
-        /// be sent to the topic. A value of “inactive” means that notifications will not be sent to the
-        /// topic.</p>
+        /// <p>The current state of the topic. A value of “active” means that notifications will be sent to the topic. A value of “inactive” means that notifications will not be sent to the topic.</p>
         pub fn notification_topic_status(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.notification_topic_status(input.into());
             self
         }
-        /// <p>The current state of the topic. A value of “active” means that notifications will
-        /// be sent to the topic. A value of “inactive” means that notifications will not be sent to the
-        /// topic.</p>
+        /// <p>The current state of the topic. A value of “active” means that notifications will be sent to the topic. A value of “inactive” means that notifications will not be sent to the topic.</p>
         pub fn set_notification_topic_status(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2529,14 +2275,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
         ///
-        /// <p>A list of user-specified security group IDs to be assigned to each node in the DAX cluster.  If this parameter is not
-        /// specified, DAX assigns the default VPC security group to each node.</p>
+        /// <p>A list of user-specified security group IDs to be assigned to each node in the DAX cluster. If this parameter is not specified, DAX assigns the default VPC security group to each node.</p>
         pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.security_group_ids(input.into());
             self
         }
-        /// <p>A list of user-specified security group IDs to be assigned to each node in the DAX cluster.  If this parameter is not
-        /// specified, DAX assigns the default VPC security group to each node.</p>
+        /// <p>A list of user-specified security group IDs to be assigned to each node in the DAX cluster. If this parameter is not specified, DAX assigns the default VPC security group to each node.</p>
         pub fn set_security_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2547,9 +2291,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateParameterGroup`.
     ///
-    /// <p>Modifies the parameters of a parameter group. You can modify up to 20
-    /// parameters in a single request by submitting a list parameter name and value
-    /// pairs.</p>
+    /// <p>Modifies the parameters of a parameter group. You can modify up to 20 parameters in a single request by submitting a list parameter name and value pairs.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateParameterGroup<
         C = aws_smithy_client::erase::DynConnector,
@@ -2623,21 +2365,15 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_parameter_name_values`](Self::set_parameter_name_values).
         ///
-        /// <p>An array of name-value pairs for the parameters in the group. Each element in the
-        /// array represents a single parameter.</p>
-        /// <note>
-        /// <p>
-        /// <code>record-ttl-millis</code> and <code>query-ttl-millis</code> are the only supported parameter names. For more details, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.cluster-management.html#DAX.cluster-management.custom-settings.ttl">Configuring TTL Settings</a>.</p>
+        /// <p>An array of name-value pairs for the parameters in the group. Each element in the array represents a single parameter.</p> <note>
+        /// <p> <code>record-ttl-millis</code> and <code>query-ttl-millis</code> are the only supported parameter names. For more details, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.cluster-management.html#DAX.cluster-management.custom-settings.ttl">Configuring TTL Settings</a>.</p>
         /// </note>
         pub fn parameter_name_values(mut self, input: crate::model::ParameterNameValue) -> Self {
             self.inner = self.inner.parameter_name_values(input);
             self
         }
-        /// <p>An array of name-value pairs for the parameters in the group. Each element in the
-        /// array represents a single parameter.</p>
-        /// <note>
-        /// <p>
-        /// <code>record-ttl-millis</code> and <code>query-ttl-millis</code> are the only supported parameter names. For more details, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.cluster-management.html#DAX.cluster-management.custom-settings.ttl">Configuring TTL Settings</a>.</p>
+        /// <p>An array of name-value pairs for the parameters in the group. Each element in the array represents a single parameter.</p> <note>
+        /// <p> <code>record-ttl-millis</code> and <code>query-ttl-millis</code> are the only supported parameter names. For more details, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.cluster-management.html#DAX.cluster-management.custom-settings.ttl">Configuring TTL Settings</a>.</p>
         /// </note>
         pub fn set_parameter_name_values(
             mut self,

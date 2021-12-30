@@ -3,21 +3,15 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResiliencyPolicy {
-    /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub policy_arn: std::option::Option<std::string::String>,
     /// <p>The name of the policy</p>
     pub policy_name: std::option::Option<std::string::String>,
     /// <p>The description for the policy.</p>
     pub policy_description: std::option::Option<std::string::String>,
-    /// <p>Specifies a high-level geographical location constraint for where your resilience policy
-    /// data can be stored.</p>
+    /// <p>Specifies a high-level geographical location constraint for where your resilience policy data can be stored.</p>
     pub data_location_constraint: std::option::Option<crate::model::DataLocationConstraint>,
-    /// <p>The tier for this resiliency policy, ranging from the highest severity
-    /// (<code>MissionCritical</code>) to lowest (<code>NonCritical</code>).</p>
+    /// <p>The tier for this resiliency policy, ranging from the highest severity (<code>MissionCritical</code>) to lowest (<code>NonCritical</code>).</p>
     pub tier: std::option::Option<crate::model::ResiliencyPolicyTier>,
     /// <p>Specifies the estimated cost tier of the resiliency policy.</p>
     pub estimated_cost_tier: std::option::Option<crate::model::EstimatedCostTier>,
@@ -27,17 +21,12 @@ pub struct ResiliencyPolicy {
     >,
     /// <p>The timestamp for when the resiliency policy was created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource.
-    /// Each tag consists of a key/value pair.</p>
+    /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ResiliencyPolicy {
-    /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn policy_arn(&self) -> std::option::Option<&str> {
         self.policy_arn.as_deref()
     }
@@ -49,15 +38,13 @@ impl ResiliencyPolicy {
     pub fn policy_description(&self) -> std::option::Option<&str> {
         self.policy_description.as_deref()
     }
-    /// <p>Specifies a high-level geographical location constraint for where your resilience policy
-    /// data can be stored.</p>
+    /// <p>Specifies a high-level geographical location constraint for where your resilience policy data can be stored.</p>
     pub fn data_location_constraint(
         &self,
     ) -> std::option::Option<&crate::model::DataLocationConstraint> {
         self.data_location_constraint.as_ref()
     }
-    /// <p>The tier for this resiliency policy, ranging from the highest severity
-    /// (<code>MissionCritical</code>) to lowest (<code>NonCritical</code>).</p>
+    /// <p>The tier for this resiliency policy, ranging from the highest severity (<code>MissionCritical</code>) to lowest (<code>NonCritical</code>).</p>
     pub fn tier(&self) -> std::option::Option<&crate::model::ResiliencyPolicyTier> {
         self.tier.as_ref()
     }
@@ -77,8 +64,7 @@ impl ResiliencyPolicy {
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource.
-    /// Each tag consists of a key/value pair.</p>
+    /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -123,20 +109,12 @@ pub mod resiliency_policy {
         >,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_arn = input;
             self
@@ -164,8 +142,7 @@ pub mod resiliency_policy {
             self.policy_description = input;
             self
         }
-        /// <p>Specifies a high-level geographical location constraint for where your resilience policy
-        /// data can be stored.</p>
+        /// <p>Specifies a high-level geographical location constraint for where your resilience policy data can be stored.</p>
         pub fn data_location_constraint(
             mut self,
             input: crate::model::DataLocationConstraint,
@@ -173,8 +150,7 @@ pub mod resiliency_policy {
             self.data_location_constraint = Some(input);
             self
         }
-        /// <p>Specifies a high-level geographical location constraint for where your resilience policy
-        /// data can be stored.</p>
+        /// <p>Specifies a high-level geographical location constraint for where your resilience policy data can be stored.</p>
         pub fn set_data_location_constraint(
             mut self,
             input: std::option::Option<crate::model::DataLocationConstraint>,
@@ -182,14 +158,12 @@ pub mod resiliency_policy {
             self.data_location_constraint = input;
             self
         }
-        /// <p>The tier for this resiliency policy, ranging from the highest severity
-        /// (<code>MissionCritical</code>) to lowest (<code>NonCritical</code>).</p>
+        /// <p>The tier for this resiliency policy, ranging from the highest severity (<code>MissionCritical</code>) to lowest (<code>NonCritical</code>).</p>
         pub fn tier(mut self, input: crate::model::ResiliencyPolicyTier) -> Self {
             self.tier = Some(input);
             self
         }
-        /// <p>The tier for this resiliency policy, ranging from the highest severity
-        /// (<code>MissionCritical</code>) to lowest (<code>NonCritical</code>).</p>
+        /// <p>The tier for this resiliency policy, ranging from the highest severity (<code>MissionCritical</code>) to lowest (<code>NonCritical</code>).</p>
         pub fn set_tier(
             mut self,
             input: std::option::Option<crate::model::ResiliencyPolicyTier>,
@@ -255,8 +229,7 @@ pub mod resiliency_policy {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource.
-        /// Each tag consists of a key/value pair.</p>
+        /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -267,8 +240,7 @@ pub mod resiliency_policy {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource.
-        /// Each tag consists of a key/value pair.</p>
+        /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -636,21 +608,13 @@ impl AsRef<str> for DataLocationConstraint {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct App {
-    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub app_arn: std::option::Option<std::string::String>,
     /// <p>The name for the application.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The optional description for an app.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub policy_arn: std::option::Option<std::string::String>,
     /// <p>The timestamp for when the app was created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -664,17 +628,12 @@ pub struct App {
     pub resiliency_score: f64,
     /// <p>The timestamp for the most recent resiliency score evaluation.</p>
     pub last_resiliency_score_evaluation_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource.
-    /// Each tag consists of a key/value pair.</p>
+    /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl App {
-    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn app_arn(&self) -> std::option::Option<&str> {
         self.app_arn.as_deref()
     }
@@ -686,11 +645,7 @@ impl App {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn policy_arn(&self) -> std::option::Option<&str> {
         self.policy_arn.as_deref()
     }
@@ -722,8 +677,7 @@ impl App {
     ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_resiliency_score_evaluation_time.as_ref()
     }
-    /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource.
-    /// Each tag consists of a key/value pair.</p>
+    /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -777,20 +731,12 @@ pub mod app {
         >,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.app_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.app_arn = input;
             self
@@ -815,20 +761,12 @@ pub mod app {
             self.description = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_arn = input;
             self
@@ -918,8 +856,7 @@ pub mod app {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource.
-        /// Each tag consists of a key/value pair.</p>
+        /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -930,8 +867,7 @@ pub mod app {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource.
-        /// Each tag consists of a key/value pair.</p>
+        /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1093,11 +1029,7 @@ impl AsRef<str> for AppStatusType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AppAssessment {
-    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub app_arn: std::option::Option<std::string::String>,
     /// <p>The version of the application.</p>
     pub app_version: std::option::Option<std::string::String>,
@@ -1123,25 +1055,16 @@ pub struct AppAssessment {
     pub message: std::option::Option<std::string::String>,
     /// <p>The name of the assessment.</p>
     pub assessment_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub assessment_arn: std::option::Option<std::string::String>,
     /// <p>The resiliency policy.</p>
     pub policy: std::option::Option<crate::model::ResiliencyPolicy>,
-    /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource.
-    /// Each tag consists of a key/value pair.</p>
+    /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl AppAssessment {
-    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn app_arn(&self) -> std::option::Option<&str> {
         self.app_arn.as_deref()
     }
@@ -1196,11 +1119,7 @@ impl AppAssessment {
     pub fn assessment_name(&self) -> std::option::Option<&str> {
         self.assessment_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn assessment_arn(&self) -> std::option::Option<&str> {
         self.assessment_arn.as_deref()
     }
@@ -1208,8 +1127,7 @@ impl AppAssessment {
     pub fn policy(&self) -> std::option::Option<&crate::model::ResiliencyPolicy> {
         self.policy.as_ref()
     }
-    /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource.
-    /// Each tag consists of a key/value pair.</p>
+    /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -1268,20 +1186,12 @@ pub mod app_assessment {
         >,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.app_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.app_arn = input;
             self
@@ -1435,20 +1345,12 @@ pub mod app_assessment {
             self.assessment_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn assessment_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.assessment_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_assessment_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1473,8 +1375,7 @@ pub mod app_assessment {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource.
-        /// Each tag consists of a key/value pair.</p>
+        /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1485,8 +1386,7 @@ pub mod app_assessment {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource.
-        /// Each tag consists of a key/value pair.</p>
+        /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1883,8 +1783,7 @@ impl DisruptionCompliance {
     }
 }
 
-/// <p>The overall resiliency score, returned as an object that includes the disruption score and
-/// outage score.</p>
+/// <p>The overall resiliency score, returned as an object that includes the disruption score and outage score.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResiliencyScore {
@@ -2357,11 +2256,15 @@ pub struct PhysicalResourceId {
     pub identifier: std::option::Option<std::string::String>,
     /// <p>Specifies the type of physical resource identifier.</p>
     /// <dl>
-    /// <dt>Arn</dt>
+    /// <dt>
+    /// Arn
+    /// </dt>
     /// <dd>
     /// <p>The resource identifier is an Amazon Resource Name (ARN) .</p>
     /// </dd>
-    /// <dt>Native</dt>
+    /// <dt>
+    /// Native
+    /// </dt>
     /// <dd>
     /// <p>The resource identifier is a Resilience Hub-native identifier.</p>
     /// </dd>
@@ -2379,11 +2282,15 @@ impl PhysicalResourceId {
     }
     /// <p>Specifies the type of physical resource identifier.</p>
     /// <dl>
-    /// <dt>Arn</dt>
+    /// <dt>
+    /// Arn
+    /// </dt>
     /// <dd>
     /// <p>The resource identifier is an Amazon Resource Name (ARN) .</p>
     /// </dd>
-    /// <dt>Native</dt>
+    /// <dt>
+    /// Native
+    /// </dt>
     /// <dd>
     /// <p>The resource identifier is a Resilience Hub-native identifier.</p>
     /// </dd>
@@ -2434,11 +2341,15 @@ pub mod physical_resource_id {
         }
         /// <p>Specifies the type of physical resource identifier.</p>
         /// <dl>
-        /// <dt>Arn</dt>
+        /// <dt>
+        /// Arn
+        /// </dt>
         /// <dd>
         /// <p>The resource identifier is an Amazon Resource Name (ARN) .</p>
         /// </dd>
-        /// <dt>Native</dt>
+        /// <dt>
+        /// Native
+        /// </dt>
         /// <dd>
         /// <p>The resource identifier is a Resilience Hub-native identifier.</p>
         /// </dd>
@@ -2449,11 +2360,15 @@ pub mod physical_resource_id {
         }
         /// <p>Specifies the type of physical resource identifier.</p>
         /// <dl>
-        /// <dt>Arn</dt>
+        /// <dt>
+        /// Arn
+        /// </dt>
         /// <dd>
         /// <p>The resource identifier is an Amazon Resource Name (ARN) .</p>
         /// </dd>
-        /// <dt>Native</dt>
+        /// <dt>
+        /// Native
+        /// </dt>
         /// <dd>
         /// <p>The resource identifier is a Resilience Hub-native identifier.</p>
         /// </dd>
@@ -3394,50 +3309,52 @@ impl AsRef<str> for SopServiceType {
     }
 }
 
-/// <p>Defines a recommendation template created with the <a>CreateRecommendationTemplate</a> action.</p>
+/// <p>Defines a recommendation template created with the <code>CreateRecommendationTemplate</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecommendationTemplate {
     /// <p>The file location of the template.</p>
     pub templates_location: std::option::Option<crate::model::S3Location>,
-    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub assessment_arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub app_arn: std::option::Option<std::string::String>,
     /// <p>Identifiers for the recommendations used in the recommendation template.</p>
     pub recommendation_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array of strings that specify the recommendation template type or types.</p>
     /// <dl>
-    /// <dt>Alarm</dt>
+    /// <dt>
+    /// Alarm
+    /// </dt>
     /// <dd>
-    /// <p>The template is an <a>AlarmRecommendation</a> template.</p>
+    /// <p>The template is an <code>AlarmRecommendation</code> template.</p>
     /// </dd>
-    /// <dt>Sop</dt>
+    /// <dt>
+    /// Sop
+    /// </dt>
     /// <dd>
-    /// <p>The template is a <a>SopRecommendation</a> template.</p>
+    /// <p>The template is a <code>SopRecommendation</code> template.</p>
     /// </dd>
-    /// <dt>Test</dt>
+    /// <dt>
+    /// Test
+    /// </dt>
     /// <dd>
-    /// <p>The template is a <a>TestRecommendation</a> template.</p>
+    /// <p>The template is a <code>TestRecommendation</code> template.</p>
     /// </dd>
     /// </dl>
     pub recommendation_types:
         std::option::Option<std::vec::Vec<crate::model::RenderRecommendationType>>,
     /// <p>The format of the recommendation template.</p>
     /// <dl>
-    /// <dt>CfnJson</dt>
+    /// <dt>
+    /// CfnJson
+    /// </dt>
     /// <dd>
     /// <p>The template is CloudFormation JSON.</p>
     /// </dd>
-    /// <dt>CfnYaml</dt>
+    /// <dt>
+    /// CfnYaml
+    /// </dt>
     /// <dd>
     /// <p>The template is CloudFormation YAML.</p>
     /// </dd>
@@ -3455,8 +3372,7 @@ pub struct RecommendationTemplate {
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The end time for the action.</p>
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource.
-    /// Each tag consists of a key/value pair.</p>
+    /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Indicates if replacements are needed.</p>
@@ -3467,19 +3383,11 @@ impl RecommendationTemplate {
     pub fn templates_location(&self) -> std::option::Option<&crate::model::S3Location> {
         self.templates_location.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn assessment_arn(&self) -> std::option::Option<&str> {
         self.assessment_arn.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn app_arn(&self) -> std::option::Option<&str> {
         self.app_arn.as_deref()
     }
@@ -3489,17 +3397,23 @@ impl RecommendationTemplate {
     }
     /// <p>An array of strings that specify the recommendation template type or types.</p>
     /// <dl>
-    /// <dt>Alarm</dt>
+    /// <dt>
+    /// Alarm
+    /// </dt>
     /// <dd>
-    /// <p>The template is an <a>AlarmRecommendation</a> template.</p>
+    /// <p>The template is an <code>AlarmRecommendation</code> template.</p>
     /// </dd>
-    /// <dt>Sop</dt>
+    /// <dt>
+    /// Sop
+    /// </dt>
     /// <dd>
-    /// <p>The template is a <a>SopRecommendation</a> template.</p>
+    /// <p>The template is a <code>SopRecommendation</code> template.</p>
     /// </dd>
-    /// <dt>Test</dt>
+    /// <dt>
+    /// Test
+    /// </dt>
     /// <dd>
-    /// <p>The template is a <a>TestRecommendation</a> template.</p>
+    /// <p>The template is a <code>TestRecommendation</code> template.</p>
     /// </dd>
     /// </dl>
     pub fn recommendation_types(
@@ -3509,11 +3423,15 @@ impl RecommendationTemplate {
     }
     /// <p>The format of the recommendation template.</p>
     /// <dl>
-    /// <dt>CfnJson</dt>
+    /// <dt>
+    /// CfnJson
+    /// </dt>
     /// <dd>
     /// <p>The template is CloudFormation JSON.</p>
     /// </dd>
-    /// <dt>CfnYaml</dt>
+    /// <dt>
+    /// CfnYaml
+    /// </dt>
     /// <dd>
     /// <p>The template is CloudFormation YAML.</p>
     /// </dd>
@@ -3545,8 +3463,7 @@ impl RecommendationTemplate {
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
-    /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource.
-    /// Each tag consists of a key/value pair.</p>
+    /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -3619,20 +3536,12 @@ pub mod recommendation_template {
             self.templates_location = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn assessment_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.assessment_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_assessment_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3640,20 +3549,12 @@ pub mod recommendation_template {
             self.assessment_arn = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.app_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.app_arn = input;
             self
@@ -3683,17 +3584,23 @@ pub mod recommendation_template {
         ///
         /// <p>An array of strings that specify the recommendation template type or types.</p>
         /// <dl>
-        /// <dt>Alarm</dt>
+        /// <dt>
+        /// Alarm
+        /// </dt>
         /// <dd>
-        /// <p>The template is an <a>AlarmRecommendation</a> template.</p>
+        /// <p>The template is an <code>AlarmRecommendation</code> template.</p>
         /// </dd>
-        /// <dt>Sop</dt>
+        /// <dt>
+        /// Sop
+        /// </dt>
         /// <dd>
-        /// <p>The template is a <a>SopRecommendation</a> template.</p>
+        /// <p>The template is a <code>SopRecommendation</code> template.</p>
         /// </dd>
-        /// <dt>Test</dt>
+        /// <dt>
+        /// Test
+        /// </dt>
         /// <dd>
-        /// <p>The template is a <a>TestRecommendation</a> template.</p>
+        /// <p>The template is a <code>TestRecommendation</code> template.</p>
         /// </dd>
         /// </dl>
         pub fn recommendation_types(
@@ -3707,17 +3614,23 @@ pub mod recommendation_template {
         }
         /// <p>An array of strings that specify the recommendation template type or types.</p>
         /// <dl>
-        /// <dt>Alarm</dt>
+        /// <dt>
+        /// Alarm
+        /// </dt>
         /// <dd>
-        /// <p>The template is an <a>AlarmRecommendation</a> template.</p>
+        /// <p>The template is an <code>AlarmRecommendation</code> template.</p>
         /// </dd>
-        /// <dt>Sop</dt>
+        /// <dt>
+        /// Sop
+        /// </dt>
         /// <dd>
-        /// <p>The template is a <a>SopRecommendation</a> template.</p>
+        /// <p>The template is a <code>SopRecommendation</code> template.</p>
         /// </dd>
-        /// <dt>Test</dt>
+        /// <dt>
+        /// Test
+        /// </dt>
         /// <dd>
-        /// <p>The template is a <a>TestRecommendation</a> template.</p>
+        /// <p>The template is a <code>TestRecommendation</code> template.</p>
         /// </dd>
         /// </dl>
         pub fn set_recommendation_types(
@@ -3729,11 +3642,15 @@ pub mod recommendation_template {
         }
         /// <p>The format of the recommendation template.</p>
         /// <dl>
-        /// <dt>CfnJson</dt>
+        /// <dt>
+        /// CfnJson
+        /// </dt>
         /// <dd>
         /// <p>The template is CloudFormation JSON.</p>
         /// </dd>
-        /// <dt>CfnYaml</dt>
+        /// <dt>
+        /// CfnYaml
+        /// </dt>
         /// <dd>
         /// <p>The template is CloudFormation YAML.</p>
         /// </dd>
@@ -3744,11 +3661,15 @@ pub mod recommendation_template {
         }
         /// <p>The format of the recommendation template.</p>
         /// <dl>
-        /// <dt>CfnJson</dt>
+        /// <dt>
+        /// CfnJson
+        /// </dt>
         /// <dd>
         /// <p>The template is CloudFormation JSON.</p>
         /// </dd>
-        /// <dt>CfnYaml</dt>
+        /// <dt>
+        /// CfnYaml
+        /// </dt>
         /// <dd>
         /// <p>The template is CloudFormation YAML.</p>
         /// </dd>
@@ -3839,8 +3760,7 @@ pub mod recommendation_template {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource.
-        /// Each tag consists of a key/value pair.</p>
+        /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -3851,8 +3771,7 @@ pub mod recommendation_template {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource.
-        /// Each tag consists of a key/value pair.</p>
+        /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -4204,9 +4123,7 @@ impl AppVersionSummary {
     }
 }
 
-/// <p>Defines a physical resource. A physical resource is a resource that exists in your
-/// account. It can be identified using an Amazon Resource Name (ARN) or a Resilience Hub-native
-/// identifier. </p>
+/// <p>Defines a physical resource. A physical resource is a resource that exists in your account. It can be identified using an Amazon Resource Name (ARN) or a Resilience Hub-native identifier. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PhysicalResource {
@@ -4444,25 +4361,29 @@ pub struct ResourceMapping {
     pub resource_group_name: std::option::Option<std::string::String>,
     /// <p>Specifies the type of resource mapping.</p>
     /// <dl>
-    /// <dt>AppRegistryApp</dt>
+    /// <dt>
+    /// AppRegistryApp
+    /// </dt>
     /// <dd>
-    /// <p>The resource is mapped to another application. The name of the application is
-    /// contained in the <code>appRegistryAppName</code> property.</p>
+    /// <p>The resource is mapped to another application. The name of the application is contained in the <code>appRegistryAppName</code> property.</p>
     /// </dd>
-    /// <dt>CfnStack</dt>
+    /// <dt>
+    /// CfnStack
+    /// </dt>
     /// <dd>
-    /// <p>The resource is mapped to a CloudFormation stack. The name of the CloudFormation stack is contained in
-    /// the <code>logicalStackName</code> property.</p>
+    /// <p>The resource is mapped to a CloudFormation stack. The name of the CloudFormation stack is contained in the <code>logicalStackName</code> property.</p>
     /// </dd>
-    /// <dt>Resource</dt>
+    /// <dt>
+    /// Resource
+    /// </dt>
     /// <dd>
-    /// <p>The resource is mapped to another resource. The name of the resource is contained in
-    /// the <code>resourceName</code> property.</p>
+    /// <p>The resource is mapped to another resource. The name of the resource is contained in the <code>resourceName</code> property.</p>
     /// </dd>
-    /// <dt>ResourceGroup</dt>
+    /// <dt>
+    /// ResourceGroup
+    /// </dt>
     /// <dd>
-    /// <p>The resource is mapped to a resource group. The name of the resource group is
-    /// contained in the <code>resourceGroupName</code> property.</p>
+    /// <p>The resource is mapped to a resource group. The name of the resource group is contained in the <code>resourceGroupName</code> property.</p>
     /// </dd>
     /// </dl>
     pub mapping_type: std::option::Option<crate::model::ResourceMappingType>,
@@ -4488,25 +4409,29 @@ impl ResourceMapping {
     }
     /// <p>Specifies the type of resource mapping.</p>
     /// <dl>
-    /// <dt>AppRegistryApp</dt>
+    /// <dt>
+    /// AppRegistryApp
+    /// </dt>
     /// <dd>
-    /// <p>The resource is mapped to another application. The name of the application is
-    /// contained in the <code>appRegistryAppName</code> property.</p>
+    /// <p>The resource is mapped to another application. The name of the application is contained in the <code>appRegistryAppName</code> property.</p>
     /// </dd>
-    /// <dt>CfnStack</dt>
+    /// <dt>
+    /// CfnStack
+    /// </dt>
     /// <dd>
-    /// <p>The resource is mapped to a CloudFormation stack. The name of the CloudFormation stack is contained in
-    /// the <code>logicalStackName</code> property.</p>
+    /// <p>The resource is mapped to a CloudFormation stack. The name of the CloudFormation stack is contained in the <code>logicalStackName</code> property.</p>
     /// </dd>
-    /// <dt>Resource</dt>
+    /// <dt>
+    /// Resource
+    /// </dt>
     /// <dd>
-    /// <p>The resource is mapped to another resource. The name of the resource is contained in
-    /// the <code>resourceName</code> property.</p>
+    /// <p>The resource is mapped to another resource. The name of the resource is contained in the <code>resourceName</code> property.</p>
     /// </dd>
-    /// <dt>ResourceGroup</dt>
+    /// <dt>
+    /// ResourceGroup
+    /// </dt>
     /// <dd>
-    /// <p>The resource is mapped to a resource group. The name of the resource group is
-    /// contained in the <code>resourceGroupName</code> property.</p>
+    /// <p>The resource is mapped to a resource group. The name of the resource group is contained in the <code>resourceGroupName</code> property.</p>
     /// </dd>
     /// </dl>
     pub fn mapping_type(&self) -> std::option::Option<&crate::model::ResourceMappingType> {
@@ -4597,25 +4522,29 @@ pub mod resource_mapping {
         }
         /// <p>Specifies the type of resource mapping.</p>
         /// <dl>
-        /// <dt>AppRegistryApp</dt>
+        /// <dt>
+        /// AppRegistryApp
+        /// </dt>
         /// <dd>
-        /// <p>The resource is mapped to another application. The name of the application is
-        /// contained in the <code>appRegistryAppName</code> property.</p>
+        /// <p>The resource is mapped to another application. The name of the application is contained in the <code>appRegistryAppName</code> property.</p>
         /// </dd>
-        /// <dt>CfnStack</dt>
+        /// <dt>
+        /// CfnStack
+        /// </dt>
         /// <dd>
-        /// <p>The resource is mapped to a CloudFormation stack. The name of the CloudFormation stack is contained in
-        /// the <code>logicalStackName</code> property.</p>
+        /// <p>The resource is mapped to a CloudFormation stack. The name of the CloudFormation stack is contained in the <code>logicalStackName</code> property.</p>
         /// </dd>
-        /// <dt>Resource</dt>
+        /// <dt>
+        /// Resource
+        /// </dt>
         /// <dd>
-        /// <p>The resource is mapped to another resource. The name of the resource is contained in
-        /// the <code>resourceName</code> property.</p>
+        /// <p>The resource is mapped to another resource. The name of the resource is contained in the <code>resourceName</code> property.</p>
         /// </dd>
-        /// <dt>ResourceGroup</dt>
+        /// <dt>
+        /// ResourceGroup
+        /// </dt>
         /// <dd>
-        /// <p>The resource is mapped to a resource group. The name of the resource group is
-        /// contained in the <code>resourceGroupName</code> property.</p>
+        /// <p>The resource is mapped to a resource group. The name of the resource group is contained in the <code>resourceGroupName</code> property.</p>
         /// </dd>
         /// </dl>
         pub fn mapping_type(mut self, input: crate::model::ResourceMappingType) -> Self {
@@ -4624,25 +4553,29 @@ pub mod resource_mapping {
         }
         /// <p>Specifies the type of resource mapping.</p>
         /// <dl>
-        /// <dt>AppRegistryApp</dt>
+        /// <dt>
+        /// AppRegistryApp
+        /// </dt>
         /// <dd>
-        /// <p>The resource is mapped to another application. The name of the application is
-        /// contained in the <code>appRegistryAppName</code> property.</p>
+        /// <p>The resource is mapped to another application. The name of the application is contained in the <code>appRegistryAppName</code> property.</p>
         /// </dd>
-        /// <dt>CfnStack</dt>
+        /// <dt>
+        /// CfnStack
+        /// </dt>
         /// <dd>
-        /// <p>The resource is mapped to a CloudFormation stack. The name of the CloudFormation stack is contained in
-        /// the <code>logicalStackName</code> property.</p>
+        /// <p>The resource is mapped to a CloudFormation stack. The name of the CloudFormation stack is contained in the <code>logicalStackName</code> property.</p>
         /// </dd>
-        /// <dt>Resource</dt>
+        /// <dt>
+        /// Resource
+        /// </dt>
         /// <dd>
-        /// <p>The resource is mapped to another resource. The name of the resource is contained in
-        /// the <code>resourceName</code> property.</p>
+        /// <p>The resource is mapped to another resource. The name of the resource is contained in the <code>resourceName</code> property.</p>
         /// </dd>
-        /// <dt>ResourceGroup</dt>
+        /// <dt>
+        /// ResourceGroup
+        /// </dt>
         /// <dd>
-        /// <p>The resource is mapped to a resource group. The name of the resource group is
-        /// contained in the <code>resourceGroupName</code> property.</p>
+        /// <p>The resource is mapped to a resource group. The name of the resource group is contained in the <code>resourceGroupName</code> property.</p>
         /// </dd>
         /// </dl>
         pub fn set_mapping_type(
@@ -4752,11 +4685,7 @@ impl AsRef<str> for ResourceMappingType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AppSummary {
-    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub app_arn: std::option::Option<std::string::String>,
     /// <p>The name of the application.</p>
     pub name: std::option::Option<std::string::String>,
@@ -4770,11 +4699,7 @@ pub struct AppSummary {
     pub resiliency_score: f64,
 }
 impl AppSummary {
-    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn app_arn(&self) -> std::option::Option<&str> {
         self.app_arn.as_deref()
     }
@@ -4825,20 +4750,12 @@ pub mod app_summary {
         pub(crate) resiliency_score: std::option::Option<f64>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.app_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.app_arn = input;
             self
@@ -4919,9 +4836,7 @@ impl AppSummary {
     }
 }
 
-/// <p>Defines recommendations for a Resilience Hub application component, returned as an object. This
-/// object contains component names, configuration recommendations, and recommendation
-/// statuses.</p>
+/// <p>Defines recommendations for a Resilience Hub application component, returned as an object. This object contains component names, configuration recommendations, and recommendation statuses.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ComponentRecommendation {
@@ -5046,13 +4961,11 @@ pub struct ConfigRecommendation {
     pub cost: std::option::Option<crate::model::Cost>,
     /// <p>The application component name.</p>
     pub app_component_name: std::option::Option<std::string::String>,
-    /// <p>The current compliance against the resiliency policy before applying the configuration
-    /// change.</p>
+    /// <p>The current compliance against the resiliency policy before applying the configuration change.</p>
     pub compliance: std::option::Option<
         std::collections::HashMap<crate::model::DisruptionType, crate::model::DisruptionCompliance>,
     >,
-    /// <p>The expected compliance against the resiliency policy after applying the configuration
-    /// change.</p>
+    /// <p>The expected compliance against the resiliency policy after applying the configuration change.</p>
     pub recommendation_compliance: std::option::Option<
         std::collections::HashMap<
             crate::model::DisruptionType,
@@ -5081,8 +4994,7 @@ impl ConfigRecommendation {
     pub fn app_component_name(&self) -> std::option::Option<&str> {
         self.app_component_name.as_deref()
     }
-    /// <p>The current compliance against the resiliency policy before applying the configuration
-    /// change.</p>
+    /// <p>The current compliance against the resiliency policy before applying the configuration change.</p>
     pub fn compliance(
         &self,
     ) -> std::option::Option<
@@ -5093,8 +5005,7 @@ impl ConfigRecommendation {
     > {
         self.compliance.as_ref()
     }
-    /// <p>The expected compliance against the resiliency policy after applying the configuration
-    /// change.</p>
+    /// <p>The expected compliance against the resiliency policy after applying the configuration change.</p>
     pub fn recommendation_compliance(
         &self,
     ) -> std::option::Option<
@@ -5204,8 +5115,7 @@ pub mod config_recommendation {
         ///
         /// To override the contents of this collection use [`set_compliance`](Self::set_compliance).
         ///
-        /// <p>The current compliance against the resiliency policy before applying the configuration
-        /// change.</p>
+        /// <p>The current compliance against the resiliency policy before applying the configuration change.</p>
         pub fn compliance(
             mut self,
             k: crate::model::DisruptionType,
@@ -5216,8 +5126,7 @@ pub mod config_recommendation {
             self.compliance = Some(hash_map);
             self
         }
-        /// <p>The current compliance against the resiliency policy before applying the configuration
-        /// change.</p>
+        /// <p>The current compliance against the resiliency policy before applying the configuration change.</p>
         pub fn set_compliance(
             mut self,
             input: std::option::Option<
@@ -5234,8 +5143,7 @@ pub mod config_recommendation {
         ///
         /// To override the contents of this collection use [`set_recommendation_compliance`](Self::set_recommendation_compliance).
         ///
-        /// <p>The expected compliance against the resiliency policy after applying the configuration
-        /// change.</p>
+        /// <p>The expected compliance against the resiliency policy after applying the configuration change.</p>
         pub fn recommendation_compliance(
             mut self,
             k: crate::model::DisruptionType,
@@ -5246,8 +5154,7 @@ pub mod config_recommendation {
             self.recommendation_compliance = Some(hash_map);
             self
         }
-        /// <p>The expected compliance against the resiliency policy after applying the configuration
-        /// change.</p>
+        /// <p>The expected compliance against the resiliency policy after applying the configuration change.</p>
         pub fn set_recommendation_compliance(
             mut self,
             input: std::option::Option<
@@ -5516,13 +5423,11 @@ pub struct RecommendationDisruptionCompliance {
     pub expected_compliance_status: std::option::Option<crate::model::ComplianceStatus>,
     /// <p>The expected RTO after applying the recommended configuration change.</p>
     pub expected_rto_in_secs: i32,
-    /// <p>The expected Recovery Time Objective (RTO) description after applying the recommended
-    /// configuration change.</p>
+    /// <p>The expected Recovery Time Objective (RTO) description after applying the recommended configuration change.</p>
     pub expected_rto_description: std::option::Option<std::string::String>,
     /// <p>The expected RPO after applying the recommended configuration change.</p>
     pub expected_rpo_in_secs: i32,
-    /// <p>The expected Recovery Point Objective (RPO) description after applying the recommended
-    /// configuration change.</p>
+    /// <p>The expected Recovery Point Objective (RPO) description after applying the recommended configuration change.</p>
     pub expected_rpo_description: std::option::Option<std::string::String>,
 }
 impl RecommendationDisruptionCompliance {
@@ -5536,8 +5441,7 @@ impl RecommendationDisruptionCompliance {
     pub fn expected_rto_in_secs(&self) -> i32 {
         self.expected_rto_in_secs
     }
-    /// <p>The expected Recovery Time Objective (RTO) description after applying the recommended
-    /// configuration change.</p>
+    /// <p>The expected Recovery Time Objective (RTO) description after applying the recommended configuration change.</p>
     pub fn expected_rto_description(&self) -> std::option::Option<&str> {
         self.expected_rto_description.as_deref()
     }
@@ -5545,8 +5449,7 @@ impl RecommendationDisruptionCompliance {
     pub fn expected_rpo_in_secs(&self) -> i32 {
         self.expected_rpo_in_secs
     }
-    /// <p>The expected Recovery Point Objective (RPO) description after applying the recommended
-    /// configuration change.</p>
+    /// <p>The expected Recovery Point Objective (RPO) description after applying the recommended configuration change.</p>
     pub fn expected_rpo_description(&self) -> std::option::Option<&str> {
         self.expected_rpo_description.as_deref()
     }
@@ -5601,14 +5504,12 @@ pub mod recommendation_disruption_compliance {
             self.expected_rto_in_secs = input;
             self
         }
-        /// <p>The expected Recovery Time Objective (RTO) description after applying the recommended
-        /// configuration change.</p>
+        /// <p>The expected Recovery Time Objective (RTO) description after applying the recommended configuration change.</p>
         pub fn expected_rto_description(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_rto_description = Some(input.into());
             self
         }
-        /// <p>The expected Recovery Time Objective (RTO) description after applying the recommended
-        /// configuration change.</p>
+        /// <p>The expected Recovery Time Objective (RTO) description after applying the recommended configuration change.</p>
         pub fn set_expected_rto_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5626,14 +5527,12 @@ pub mod recommendation_disruption_compliance {
             self.expected_rpo_in_secs = input;
             self
         }
-        /// <p>The expected Recovery Point Objective (RPO) description after applying the recommended
-        /// configuration change.</p>
+        /// <p>The expected Recovery Point Objective (RPO) description after applying the recommended configuration change.</p>
         pub fn expected_rpo_description(mut self, input: impl Into<std::string::String>) -> Self {
             self.expected_rpo_description = Some(input.into());
             self
         }
-        /// <p>The expected Recovery Point Objective (RPO) description after applying the recommended
-        /// configuration change.</p>
+        /// <p>The expected Recovery Point Objective (RPO) description after applying the recommended configuration change.</p>
         pub fn set_expected_rpo_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5913,11 +5812,7 @@ impl AppComponentCompliance {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AppAssessmentSummary {
-    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub app_arn: std::option::Option<std::string::String>,
     /// <p>The version of the application.</p>
     pub app_version: std::option::Option<std::string::String>,
@@ -5933,11 +5828,7 @@ pub struct AppAssessmentSummary {
     pub message: std::option::Option<std::string::String>,
     /// <p>The name of the assessment.</p>
     pub assessment_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub assessment_arn: std::option::Option<std::string::String>,
     /// <p>The current status of compliance for the resiliency policy.</p>
     pub compliance_status: std::option::Option<crate::model::ComplianceStatus>,
@@ -5947,11 +5838,7 @@ pub struct AppAssessmentSummary {
     pub resiliency_score: f64,
 }
 impl AppAssessmentSummary {
-    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn app_arn(&self) -> std::option::Option<&str> {
         self.app_arn.as_deref()
     }
@@ -5983,11 +5870,7 @@ impl AppAssessmentSummary {
     pub fn assessment_name(&self) -> std::option::Option<&str> {
         self.assessment_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-    /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-    /// Amazon Resource Names (ARNs)</a> in the
-    /// <i>AWS General Reference</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub fn assessment_arn(&self) -> std::option::Option<&str> {
         self.assessment_arn.as_deref()
     }
@@ -6042,20 +5925,12 @@ pub mod app_assessment_summary {
         pub(crate) resiliency_score: std::option::Option<f64>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.app_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.app_arn = input;
             self
@@ -6145,20 +6020,12 @@ pub mod app_assessment_summary {
             self.assessment_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn assessment_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.assessment_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
-        /// arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the
-        /// <i>AWS General Reference</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:dcps:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_assessment_arn(
             mut self,
             input: std::option::Option<std::string::String>,

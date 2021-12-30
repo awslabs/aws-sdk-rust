@@ -7,16 +7,13 @@ pub enum Error {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The API key exceeded a limit. Try your request again.</p>
     ApiKeyLimitExceededException(crate::error::ApiKeyLimitExceededException),
-    /// <p>The API key expiration must be set to a value between 1 and 365 days from creation (for
-    /// <code>CreateApiKey</code>) or from update (for <code>UpdateApiKey</code>).</p>
+    /// <p>The API key expiration must be set to a value between 1 and 365 days from creation (for <code>CreateApiKey</code>) or from update (for <code>UpdateApiKey</code>).</p>
     ApiKeyValidityOutOfBoundsException(crate::error::ApiKeyValidityOutOfBoundsException),
     /// <p>The GraphQL API exceeded a limit. Try your request again.</p>
     ApiLimitExceededException(crate::error::ApiLimitExceededException),
-    /// <p>The request is not well formed. For example, a value is invalid or a required field is
-    /// missing. Check the field values, and then try again. </p>
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and then try again. </p>
     BadRequestException(crate::error::BadRequestException),
-    /// <p>Another modification is in progress at this time and it must complete before you can
-    /// make your change. </p>
+    /// <p>Another modification is in progress at this time and it must complete before you can make your change. </p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>The GraphQL schema is not valid.</p>
     GraphQlSchemaException(crate::error::GraphQlSchemaException),
@@ -24,8 +21,7 @@ pub enum Error {
     InternalFailureException(crate::error::InternalFailureException),
     /// <p>The request exceeded a limit. Try your request again.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The resource specified in the request was not found. Check the resource, and then try
-    /// again.</p>
+    /// <p>The resource specified in the request was not found. Check the resource, and then try again.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>You are not authorized to perform this operation.</p>
     UnauthorizedException(crate::error::UnauthorizedException),

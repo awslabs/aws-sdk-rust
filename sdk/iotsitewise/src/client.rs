@@ -575,9 +575,7 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `AssociateAssets`.
     ///
-    /// <p>Associates a child asset with the given parent asset through a hierarchy defined in the
-    /// parent asset's model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/add-associated-assets.html">Associating assets</a> in the
-    /// <i>IoT SiteWise User Guide</i>.</p>
+    /// <p>Associates a child asset with the given parent asset through a hierarchy defined in the parent asset's model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/add-associated-assets.html">Associating assets</a> in the <i>IoT SiteWise User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AssociateAssets<
         C = aws_smithy_client::erase::DynConnector,
@@ -644,16 +642,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_asset_id(input);
             self
         }
-        /// <p>The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings
-        /// of assets to be formed that all come from the same asset model. For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings of assets to be formed that all come from the same asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn hierarchy_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.hierarchy_id(input.into());
             self
         }
-        /// <p>The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings
-        /// of assets to be formed that all come from the same asset model. For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings of assets to be formed that all come from the same asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_hierarchy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_hierarchy_id(input);
             self
@@ -980,31 +974,16 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BatchPutAssetPropertyValue`.
     ///
-    /// <p>Sends a list of asset property values to IoT SiteWise. Each value is a timestamp-quality-value
-    /// (TQV) data point. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/ingest-api.html">Ingesting data using the API</a> in the
-    /// <i>IoT SiteWise User Guide</i>.</p>
+    /// <p>Sends a list of asset property values to IoT SiteWise. Each value is a timestamp-quality-value (TQV) data point. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/ingest-api.html">Ingesting data using the API</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>To identify an asset property, you must specify one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>The <code>assetId</code> and <code>propertyId</code> of an asset property.</p>
-    /// </li>
-    /// <li>
-    /// <p>A <code>propertyAlias</code>, which is a data stream alias (for example,
-    /// <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
-    /// </li>
-    /// </ul>
-    /// <important>
-    /// <p>With respect to Unix epoch time, IoT SiteWise accepts only TQVs that have a timestamp of no more
-    /// than 7 days in the past and no more than 10 minutes in the future. IoT SiteWise rejects timestamps
-    /// outside of the inclusive range of [-7 days, +10 minutes] and returns a
-    /// <code>TimestampOutOfRangeException</code> error.</p>
-    /// <p>For each asset property, IoT SiteWise overwrites TQVs with duplicate timestamps unless the newer
-    /// TQV has a different quality. For example, if you store a TQV <code>{T1, GOOD, V1}</code>,
-    /// then storing <code>{T1, GOOD, V2}</code> replaces the existing TQV.</p>
+    /// <li> <p>The <code>assetId</code> and <code>propertyId</code> of an asset property.</p> </li>
+    /// <li> <p>A <code>propertyAlias</code>, which is a data stream alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p> </li>
+    /// </ul> <important>
+    /// <p>With respect to Unix epoch time, IoT SiteWise accepts only TQVs that have a timestamp of no more than 7 days in the past and no more than 10 minutes in the future. IoT SiteWise rejects timestamps outside of the inclusive range of [-7 days, +10 minutes] and returns a <code>TimestampOutOfRangeException</code> error.</p>
+    /// <p>For each asset property, IoT SiteWise overwrites TQVs with duplicate timestamps unless the newer TQV has a different quality. For example, if you store a TQV <code>{T1, GOOD, V1}</code>, then storing <code>{T1, GOOD, V2}</code> replaces the existing TQV.</p>
     /// </important>
-    /// <p>IoT SiteWise authorizes access to each <code>BatchPutAssetPropertyValue</code> entry individually.
-    /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-batchputassetpropertyvalue-action">BatchPutAssetPropertyValue authorization</a> in the
-    /// <i>IoT SiteWise User Guide</i>.</p>
+    /// <p>IoT SiteWise authorizes access to each <code>BatchPutAssetPropertyValue</code> entry individually. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-batchputassetpropertyvalue-action">BatchPutAssetPropertyValue authorization</a> in the <i>IoT SiteWise User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchPutAssetPropertyValue<
         C = aws_smithy_client::erase::DynConnector,
@@ -1065,14 +1044,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_entries`](Self::set_entries).
         ///
-        /// <p>The list of asset property value entries for the batch put request. You can specify up to
-        /// 10 entries per request.</p>
+        /// <p>The list of asset property value entries for the batch put request. You can specify up to 10 entries per request.</p>
         pub fn entries(mut self, input: crate::model::PutAssetPropertyValueEntry) -> Self {
             self.inner = self.inner.entries(input);
             self
         }
-        /// <p>The list of asset property value entries for the batch put request. You can specify up to
-        /// 10 entries per request.</p>
+        /// <p>The list of asset property value entries for the batch put request. You can specify up to 10 entries per request.</p>
         pub fn set_entries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PutAssetPropertyValueEntry>>,
@@ -1083,8 +1060,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateAccessPolicy`.
     ///
-    /// <p>Creates an access policy that grants the specified identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or
-    /// IAM user) access to the specified IoT SiteWise Monitor portal or project resource.</p>
+    /// <p>Creates an access policy that grants the specified identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user) access to the specified IoT SiteWise Monitor portal or project resource.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAccessPolicy<
         C = aws_smithy_client::erase::DynConnector,
@@ -1194,9 +1170,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of key-value pairs that contain metadata for the access policy. For more
-        /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your
-        /// IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>A list of key-value pairs that contain metadata for the access policy. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1205,9 +1179,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>A list of key-value pairs that contain metadata for the access policy. For more
-        /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your
-        /// IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>A list of key-value pairs that contain metadata for the access policy. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1220,8 +1192,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateAsset`.
     ///
-    /// <p>Creates an asset from an existing asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-assets.html">Creating assets</a> in the
-    /// <i>IoT SiteWise User Guide</i>.</p>
+    /// <p>Creates an asset from an existing asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-assets.html">Creating assets</a> in the <i>IoT SiteWise User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAsset<
         C = aws_smithy_client::erase::DynConnector,
@@ -1315,9 +1286,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of key-value pairs that contain metadata for the asset. For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise
-        /// resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>A list of key-value pairs that contain metadata for the asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1326,9 +1295,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>A list of key-value pairs that contain metadata for the asset. For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise
-        /// resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>A list of key-value pairs that contain metadata for the asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1341,11 +1308,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateAssetModel`.
     ///
-    /// <p>Creates an asset model from specified property and hierarchy definitions. You create
-    /// assets from asset models. With asset models, you can easily create assets of the same type
-    /// that have standardized definitions. Each asset created from a model inherits the asset model's
-    /// property and hierarchy definitions. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/define-models.html">Defining asset models</a> in the
-    /// <i>IoT SiteWise User Guide</i>.</p>
+    /// <p>Creates an asset model from specified property and hierarchy definitions. You create assets from asset models. With asset models, you can easily create assets of the same type that have standardized definitions. Each asset created from a model inherits the asset model's property and hierarchy definitions. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/define-models.html">Defining asset models</a> in the <i>IoT SiteWise User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAssetModel<
         C = aws_smithy_client::erase::DynConnector,
@@ -1432,10 +1395,8 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_asset_model_properties`](Self::set_asset_model_properties).
         ///
-        /// <p>The property definitions of the asset model. For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
-        /// <p>You can specify up to 200 properties per asset model. For more
-        /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The property definitions of the asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>You can specify up to 200 properties per asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn asset_model_properties(
             mut self,
             input: crate::model::AssetModelPropertyDefinition,
@@ -1443,10 +1404,8 @@ pub mod fluent_builders {
             self.inner = self.inner.asset_model_properties(input);
             self
         }
-        /// <p>The property definitions of the asset model. For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
-        /// <p>You can specify up to 200 properties per asset model. For more
-        /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The property definitions of the asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>You can specify up to 200 properties per asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_asset_model_properties(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AssetModelPropertyDefinition>>,
@@ -1458,11 +1417,8 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_asset_model_hierarchies`](Self::set_asset_model_hierarchies).
         ///
-        /// <p>The hierarchy definitions of the asset model. Each hierarchy specifies an asset model
-        /// whose assets can be children of any other assets created from this asset model. For more
-        /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
-        /// <p>You can specify up to 10 hierarchies per asset model. For more
-        /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The hierarchy definitions of the asset model. Each hierarchy specifies an asset model whose assets can be children of any other assets created from this asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>You can specify up to 10 hierarchies per asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn asset_model_hierarchies(
             mut self,
             input: crate::model::AssetModelHierarchyDefinition,
@@ -1470,11 +1426,8 @@ pub mod fluent_builders {
             self.inner = self.inner.asset_model_hierarchies(input);
             self
         }
-        /// <p>The hierarchy definitions of the asset model. Each hierarchy specifies an asset model
-        /// whose assets can be children of any other assets created from this asset model. For more
-        /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
-        /// <p>You can specify up to 10 hierarchies per asset model. For more
-        /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The hierarchy definitions of the asset model. Each hierarchy specifies an asset model whose assets can be children of any other assets created from this asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>You can specify up to 10 hierarchies per asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_asset_model_hierarchies(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AssetModelHierarchyDefinition>>,
@@ -1486,10 +1439,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_asset_model_composite_models`](Self::set_asset_model_composite_models).
         ///
-        /// <p>The composite asset models that are part of this asset model.
-        /// Composite asset models are asset models that contain specific properties. Each composite model
-        /// has a type that defines the properties that the composite model supports. Use composite asset
-        /// models to define alarms on this asset model.</p>
+        /// <p>The composite asset models that are part of this asset model. Composite asset models are asset models that contain specific properties. Each composite model has a type that defines the properties that the composite model supports. Use composite asset models to define alarms on this asset model.</p>
         pub fn asset_model_composite_models(
             mut self,
             input: crate::model::AssetModelCompositeModelDefinition,
@@ -1497,10 +1447,7 @@ pub mod fluent_builders {
             self.inner = self.inner.asset_model_composite_models(input);
             self
         }
-        /// <p>The composite asset models that are part of this asset model.
-        /// Composite asset models are asset models that contain specific properties. Each composite model
-        /// has a type that defines the properties that the composite model supports. Use composite asset
-        /// models to define alarms on this asset model.</p>
+        /// <p>The composite asset models that are part of this asset model. Composite asset models are asset models that contain specific properties. Each composite model has a type that defines the properties that the composite model supports. Use composite asset models to define alarms on this asset model.</p>
         pub fn set_asset_model_composite_models(
             mut self,
             input: std::option::Option<
@@ -1524,9 +1471,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of key-value pairs that contain metadata for the asset model. For more information,
-        /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise
-        /// resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>A list of key-value pairs that contain metadata for the asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1535,9 +1480,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>A list of key-value pairs that contain metadata for the asset model. For more information,
-        /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise
-        /// resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>A list of key-value pairs that contain metadata for the asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1643,14 +1586,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dashboard_description(input);
             self
         }
-        /// <p>The dashboard definition specified in a JSON literal. For detailed information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The dashboard definition specified in a JSON literal. For detailed information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn dashboard_definition(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.dashboard_definition(input.into());
             self
         }
-        /// <p>The dashboard definition specified in a JSON literal. For detailed information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The dashboard definition specified in a JSON literal. For detailed information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_dashboard_definition(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1672,9 +1613,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of key-value pairs that contain metadata for the dashboard. For more information,
-        /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise
-        /// resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>A list of key-value pairs that contain metadata for the dashboard. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1683,9 +1622,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>A list of key-value pairs that contain metadata for the dashboard. For more information,
-        /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise
-        /// resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>A list of key-value pairs that contain metadata for the dashboard. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1698,9 +1635,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateGateway`.
     ///
-    /// <p>Creates a gateway, which is a virtual or edge device that delivers industrial data streams
-    /// from local servers to IoT SiteWise. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/gateway-connector.html">Ingesting data using a gateway</a> in the
-    /// <i>IoT SiteWise User Guide</i>.</p>
+    /// <p>Creates a gateway, which is a virtual or edge device that delivers industrial data streams from local servers to IoT SiteWise. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/gateway-connector.html">Ingesting data using a gateway</a> in the <i>IoT SiteWise User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateGateway<
         C = aws_smithy_client::erase::DynConnector,
@@ -1784,9 +1719,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of key-value pairs that contain metadata for the gateway. For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise
-        /// resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>A list of key-value pairs that contain metadata for the gateway. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1795,9 +1728,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>A list of key-value pairs that contain metadata for the gateway. For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise
-        /// resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>A list of key-value pairs that contain metadata for the gateway. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1810,12 +1741,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreatePortal`.
     ///
-    /// <p>Creates a portal, which can contain projects and dashboards. IoT SiteWise Monitor uses Amazon Web Services SSO or IAM
-    /// to authenticate portal users and manage user permissions.</p>
-    /// <note>
-    /// <p>Before you can sign in to a new portal, you must add at least one identity to that
-    /// portal. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/administer-portals.html#portal-change-admins">Adding or removing portal
-    /// administrators</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    /// <p>Creates a portal, which can contain projects and dashboards. IoT SiteWise Monitor uses Amazon Web Services SSO or IAM to authenticate portal users and manage user permissions.</p> <note>
+    /// <p>Before you can sign in to a new portal, you must add at least one identity to that portal. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/administer-portals.html#portal-change-admins">Adding or removing portal administrators</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreatePortal<
@@ -1919,14 +1846,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_client_token(input);
             self
         }
-        /// <p>A logo image to display in the portal. Upload a square, high-resolution image. The
-        /// image is displayed on a dark background.</p>
+        /// <p>A logo image to display in the portal. Upload a square, high-resolution image. The image is displayed on a dark background.</p>
         pub fn portal_logo_image_file(mut self, input: crate::model::ImageFile) -> Self {
             self.inner = self.inner.portal_logo_image_file(input);
             self
         }
-        /// <p>A logo image to display in the portal. Upload a square, high-resolution image. The
-        /// image is displayed on a dark background.</p>
+        /// <p>A logo image to display in the portal. Upload a square, high-resolution image. The image is displayed on a dark background.</p>
         pub fn set_portal_logo_image_file(
             mut self,
             input: std::option::Option<crate::model::ImageFile>,
@@ -1934,16 +1859,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_portal_logo_image_file(input);
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your IoT SiteWise
-        /// resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the
-        /// <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your IoT SiteWise
-        /// resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the
-        /// <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
@@ -1952,9 +1873,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of key-value pairs that contain metadata for the portal. For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise
-        /// resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>A list of key-value pairs that contain metadata for the portal. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1963,9 +1882,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>A list of key-value pairs that contain metadata for the portal. For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise
-        /// resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>A list of key-value pairs that contain metadata for the portal. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1975,50 +1892,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>The service to use to authenticate users to the portal. Choose from the following
-        /// options:</p>
+        /// <p>The service to use to authenticate users to the portal. Choose from the following options:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SSO</code> – The portal uses Amazon Web Services Single Sign On to authenticate users and manage
-        /// user permissions. Before you can create a portal that uses Amazon Web Services SSO, you must enable Amazon Web Services SSO.
-        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling Amazon Web Services SSO</a> in the
-        /// <i>IoT SiteWise User Guide</i>. This option is only available in Amazon Web Services Regions other than
-        /// the China Regions.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IAM</code> – The portal uses Identity and Access Management to authenticate users and manage
-        /// user permissions.</p>
-        /// </li>
+        /// <li> <p> <code>SSO</code> – The portal uses Amazon Web Services Single Sign On to authenticate users and manage user permissions. Before you can create a portal that uses Amazon Web Services SSO, you must enable Amazon Web Services SSO. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling Amazon Web Services SSO</a> in the <i>IoT SiteWise User Guide</i>. This option is only available in Amazon Web Services Regions other than the China Regions.</p> </li>
+        /// <li> <p> <code>IAM</code> – The portal uses Identity and Access Management to authenticate users and manage user permissions.</p> </li>
         /// </ul>
         /// <p>You can't change this value after you create a portal.</p>
-        /// <p>Default: <code>SSO</code>
-        /// </p>
+        /// <p>Default: <code>SSO</code> </p>
         pub fn portal_auth_mode(mut self, input: crate::model::AuthMode) -> Self {
             self.inner = self.inner.portal_auth_mode(input);
             self
         }
-        /// <p>The service to use to authenticate users to the portal. Choose from the following
-        /// options:</p>
+        /// <p>The service to use to authenticate users to the portal. Choose from the following options:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SSO</code> – The portal uses Amazon Web Services Single Sign On to authenticate users and manage
-        /// user permissions. Before you can create a portal that uses Amazon Web Services SSO, you must enable Amazon Web Services SSO.
-        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling Amazon Web Services SSO</a> in the
-        /// <i>IoT SiteWise User Guide</i>. This option is only available in Amazon Web Services Regions other than
-        /// the China Regions.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IAM</code> – The portal uses Identity and Access Management to authenticate users and manage
-        /// user permissions.</p>
-        /// </li>
+        /// <li> <p> <code>SSO</code> – The portal uses Amazon Web Services Single Sign On to authenticate users and manage user permissions. Before you can create a portal that uses Amazon Web Services SSO, you must enable Amazon Web Services SSO. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling Amazon Web Services SSO</a> in the <i>IoT SiteWise User Guide</i>. This option is only available in Amazon Web Services Regions other than the China Regions.</p> </li>
+        /// <li> <p> <code>IAM</code> – The portal uses Identity and Access Management to authenticate users and manage user permissions.</p> </li>
         /// </ul>
         /// <p>You can't change this value after you create a portal.</p>
-        /// <p>Default: <code>SSO</code>
-        /// </p>
+        /// <p>Default: <code>SSO</code> </p>
         pub fn set_portal_auth_mode(
             mut self,
             input: std::option::Option<crate::model::AuthMode>,
@@ -2026,21 +1917,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_portal_auth_mode(input);
             self
         }
-        /// <p>The email address that sends alarm notifications.</p>
-        /// <important>
-        /// <p>If you use the <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">IoT Events managed Lambda
-        /// function</a> to manage your emails, you must <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify the sender email
-        /// address in Amazon SES</a>.</p>
+        /// <p>The email address that sends alarm notifications.</p> <important>
+        /// <p>If you use the <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">IoT Events managed Lambda function</a> to manage your emails, you must <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify the sender email address in Amazon SES</a>.</p>
         /// </important>
         pub fn notification_sender_email(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.notification_sender_email(input.into());
             self
         }
-        /// <p>The email address that sends alarm notifications.</p>
-        /// <important>
-        /// <p>If you use the <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">IoT Events managed Lambda
-        /// function</a> to manage your emails, you must <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify the sender email
-        /// address in Amazon SES</a>.</p>
+        /// <p>The email address that sends alarm notifications.</p> <important>
+        /// <p>If you use the <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">IoT Events managed Lambda function</a> to manage your emails, you must <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify the sender email address in Amazon SES</a>.</p>
         /// </important>
         pub fn set_notification_sender_email(
             mut self,
@@ -2049,16 +1934,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_notification_sender_email(input);
             self
         }
-        /// <p>Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal.
-        /// You can use the alarm to monitor an asset property and get notified when the asset property value is outside a specified range.
-        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>
+        /// <p>Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal. You can use the alarm to monitor an asset property and get notified when the asset property value is outside a specified range. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>
         pub fn alarms(mut self, input: crate::model::Alarms) -> Self {
             self.inner = self.inner.alarms(input);
             self
         }
-        /// <p>Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal.
-        /// You can use the alarm to monitor an asset property and get notified when the asset property value is outside a specified range.
-        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>
+        /// <p>Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal. You can use the alarm to monitor an asset property and get notified when the asset property value is outside a specified range. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>
         pub fn set_alarms(mut self, input: std::option::Option<crate::model::Alarms>) -> Self {
             self.inner = self.inner.set_alarms(input);
             self
@@ -2066,10 +1947,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateProject`.
     ///
-    /// <p>Creates a project in the specified portal.</p>
-    /// <note>
-    /// <p>Make sure that the project name and description don't contain confidential
-    /// information.</p>
+    /// <p>Creates a project in the specified portal.</p> <note>
+    /// <p>Make sure that the project name and description don't contain confidential information.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateProject<
@@ -2174,9 +2053,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of key-value pairs that contain metadata for the project. For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise
-        /// resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>A list of key-value pairs that contain metadata for the project. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2185,9 +2062,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>A list of key-value pairs that contain metadata for the project. For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise
-        /// resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>A list of key-value pairs that contain metadata for the project. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2200,9 +2075,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteAccessPolicy`.
     ///
-    /// <p>Deletes an access policy that grants the specified identity access to the specified
-    /// IoT SiteWise Monitor resource. You can use this operation to revoke access to an IoT SiteWise Monitor
-    /// resource.</p>
+    /// <p>Deletes an access policy that grants the specified identity access to the specified IoT SiteWise Monitor resource. You can use this operation to revoke access to an IoT SiteWise Monitor resource.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAccessPolicy<
         C = aws_smithy_client::erase::DynConnector,
@@ -2285,11 +2158,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteAsset`.
     ///
-    /// <p>Deletes an asset. This action can't be undone. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/delete-assets-and-models.html">Deleting assets and
-    /// models</a> in the <i>IoT SiteWise User Guide</i>. </p>
-    /// <note>
-    /// <p>You can't delete an asset that's associated to another asset. For more information, see
-    /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DisassociateAssets.html">DisassociateAssets</a>.</p>
+    /// <p>Deletes an asset. This action can't be undone. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/delete-assets-and-models.html">Deleting assets and models</a> in the <i>IoT SiteWise User Guide</i>. </p> <note>
+    /// <p>You can't delete an asset that's associated to another asset. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DisassociateAssets.html">DisassociateAssets</a>.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAsset<
@@ -2370,11 +2240,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteAssetModel`.
     ///
-    /// <p>Deletes an asset model. This action can't be undone. You must delete all assets created
-    /// from an asset model before you can delete the model. Also, you can't delete an asset model if
-    /// a parent asset model exists that contains a property formula expression that depends on the
-    /// asset model that you want to delete. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/delete-assets-and-models.html">Deleting assets and models</a> in the
-    /// <i>IoT SiteWise User Guide</i>.</p>
+    /// <p>Deletes an asset model. This action can't be undone. You must delete all assets created from an asset model before you can delete the model. Also, you can't delete an asset model if a parent asset model exists that contains a property formula expression that depends on the asset model that you want to delete. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/delete-assets-and-models.html">Deleting assets and models</a> in the <i>IoT SiteWise User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAssetModel<
         C = aws_smithy_client::erase::DynConnector,
@@ -2537,8 +2403,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteGateway`.
     ///
-    /// <p>Deletes a gateway from IoT SiteWise. When you delete a gateway, some of the gateway's files remain
-    /// in your gateway's file system.</p>
+    /// <p>Deletes a gateway from IoT SiteWise. When you delete a gateway, some of the gateway's files remain in your gateway's file system.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteGateway<
         C = aws_smithy_client::erase::DynConnector,
@@ -2768,27 +2633,15 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteTimeSeries`.
     ///
-    /// <p>Deletes a time series (data stream). If you delete a time series that's associated with an
-    /// asset property, the asset property still exists, but the time series will no longer be
-    /// associated with this asset property.</p>
+    /// <p>Deletes a time series (data stream). If you delete a time series that's associated with an asset property, the asset property still exists, but the time series will no longer be associated with this asset property.</p>
     /// <p>To identify a time series, do one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>If the time series isn't associated with an asset property,
-    /// specify the <code>alias</code> of the time series.</p>
-    /// </li>
-    /// <li>
-    /// <p>If the time series is associated with an asset property,
-    /// specify one of the following: </p>
+    /// <li> <p>If the time series isn't associated with an asset property, specify the <code>alias</code> of the time series.</p> </li>
+    /// <li> <p>If the time series is associated with an asset property, specify one of the following: </p>
     /// <ul>
-    /// <li>
-    /// <p>The <code>alias</code> of the time series.</p>
-    /// </li>
-    /// <li>
-    /// <p>The <code>assetId</code> and <code>propertyId</code> that identifies the asset property.</p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p>The <code>alias</code> of the time series.</p> </li>
+    /// <li> <p>The <code>assetId</code> and <code>propertyId</code> that identifies the asset property.</p> </li>
+    /// </ul> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTimeSeries<
@@ -2889,8 +2742,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeAccessPolicy`.
     ///
-    /// <p>Describes an access policy, which specifies an identity's access to an IoT SiteWise Monitor portal or
-    /// project.</p>
+    /// <p>Describes an access policy, which specifies an identity's access to an IoT SiteWise Monitor portal or project.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAccessPolicy<
         C = aws_smithy_client::erase::DynConnector,
@@ -3106,14 +2958,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeAssetProperty`.
     ///
-    /// <p>Retrieves information about an asset property.</p>
-    /// <note>
-    /// <p>When you call this operation for an attribute property, this response includes the
-    /// default attribute value that you define in the asset model. If you update the default value
-    /// in the model, this operation's response includes the new default value.</p>
+    /// <p>Retrieves information about an asset property.</p> <note>
+    /// <p>When you call this operation for an attribute property, this response includes the default attribute value that you define in the asset model. If you update the default value in the model, this operation's response includes the new default value.</p>
     /// </note>
-    /// <p>This operation doesn't return the value of the asset property. To get the value of an
-    /// asset property, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_GetAssetPropertyValue.html">GetAssetPropertyValue</a>.</p>
+    /// <p>This operation doesn't return the value of the asset property. To get the value of an asset property, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_GetAssetPropertyValue.html">GetAssetPropertyValue</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAssetProperty<
         C = aws_smithy_client::erase::DynConnector,
@@ -3263,9 +3111,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeDefaultEncryptionConfiguration`.
     ///
-    /// <p>Retrieves information about the default encryption configuration for the Amazon Web Services account in
-    /// the default or specified Region. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/key-management.html">Key management</a> in the
-    /// <i>IoT SiteWise User Guide</i>.</p>
+    /// <p>Retrieves information about the default encryption configuration for the Amazon Web Services account in the default or specified Region. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/key-management.html">Key management</a> in the <i>IoT SiteWise User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeDefaultEncryptionConfiguration<
         C = aws_smithy_client::erase::DynConnector,
@@ -3397,11 +3243,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeGatewayCapabilityConfiguration`.
     ///
-    /// <p>Retrieves information about a gateway capability configuration.
-    /// Each gateway capability defines data sources for a gateway. A capability configuration
-    /// can contain multiple data source configurations. If you define OPC-UA sources for a gateway in
-    /// the IoT SiteWise console, all of your OPC-UA sources are stored in one capability configuration. To
-    /// list all capability configurations for a gateway, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGateway.html">DescribeGateway</a>.</p>
+    /// <p>Retrieves information about a gateway capability configuration. Each gateway capability defines data sources for a gateway. A capability configuration can contain multiple data source configurations. If you define OPC-UA sources for a gateway in the IoT SiteWise console, all of your OPC-UA sources are stored in one capability configuration. To list all capability configurations for a gateway, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGateway.html">DescribeGateway</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeGatewayCapabilityConfiguration<
         C = aws_smithy_client::erase::DynConnector,
@@ -3470,20 +3312,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_gateway_id(input);
             self
         }
-        /// <p>The namespace of the capability configuration.
-        /// For example, if you configure OPC-UA
-        /// sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace
-        /// <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as
-        /// <code>1</code>.</p>
+        /// <p>The namespace of the capability configuration. For example, if you configure OPC-UA sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.</p>
         pub fn capability_namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.capability_namespace(input.into());
             self
         }
-        /// <p>The namespace of the capability configuration.
-        /// For example, if you configure OPC-UA
-        /// sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace
-        /// <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as
-        /// <code>1</code>.</p>
+        /// <p>The namespace of the capability configuration. For example, if you configure OPC-UA sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.</p>
         pub fn set_capability_namespace(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3757,22 +3591,12 @@ pub mod fluent_builders {
     /// <p>Retrieves information about a time series (data stream).</p>
     /// <p>To identify a time series, do one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>If the time series isn't associated with an asset property,
-    /// specify the <code>alias</code> of the time series.</p>
-    /// </li>
-    /// <li>
-    /// <p>If the time series is associated with an asset property,
-    /// specify one of the following: </p>
+    /// <li> <p>If the time series isn't associated with an asset property, specify the <code>alias</code> of the time series.</p> </li>
+    /// <li> <p>If the time series is associated with an asset property, specify one of the following: </p>
     /// <ul>
-    /// <li>
-    /// <p>The <code>alias</code> of the time series.</p>
-    /// </li>
-    /// <li>
-    /// <p>The <code>assetId</code> and <code>propertyId</code> that identifies the asset property.</p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p>The <code>alias</code> of the time series.</p> </li>
+    /// <li> <p>The <code>assetId</code> and <code>propertyId</code> that identifies the asset property.</p> </li>
+    /// </ul> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTimeSeries<
@@ -3863,8 +3687,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DisassociateAssets`.
     ///
-    /// <p>Disassociates a child asset from the given parent asset through a hierarchy defined in the
-    /// parent asset's model.</p>
+    /// <p>Disassociates a child asset from the given parent asset through a hierarchy defined in the parent asset's model.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateAssets<
         C = aws_smithy_client::erase::DynConnector,
@@ -3931,18 +3754,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_asset_id(input);
             self
         }
-        /// <p>The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings
-        /// of assets to be formed that all come from the same asset model. You can use the hierarchy ID
-        /// to identify the correct asset to disassociate. For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings of assets to be formed that all come from the same asset model. You can use the hierarchy ID to identify the correct asset to disassociate. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn hierarchy_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.hierarchy_id(input.into());
             self
         }
-        /// <p>The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings
-        /// of assets to be formed that all come from the same asset model. You can use the hierarchy ID
-        /// to identify the correct asset to disassociate. For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings of assets to be formed that all come from the same asset model. You can use the hierarchy ID to identify the correct asset to disassociate. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_hierarchy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_hierarchy_id(input);
             self
@@ -4075,17 +3892,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetAssetPropertyAggregates`.
     ///
-    /// <p>Gets aggregated values for an asset property. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#aggregates">Querying
-    /// aggregates</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    /// <p>Gets aggregated values for an asset property. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#aggregates">Querying aggregates</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>To identify an asset property, you must specify one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>The <code>assetId</code> and <code>propertyId</code> of an asset property.</p>
-    /// </li>
-    /// <li>
-    /// <p>A <code>propertyAlias</code>, which is a data stream alias (for example,
-    /// <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
-    /// </li>
+    /// <li> <p>The <code>assetId</code> and <code>propertyId</code> of an asset property.</p> </li>
+    /// <li> <p>A <code>propertyAlias</code>, which is a data stream alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAssetPropertyAggregates<
@@ -4163,18 +3974,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_property_id(input);
             self
         }
-        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path
-        /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
-        /// <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn property_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.property_alias(input.into());
             self
         }
-        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path
-        /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
-        /// <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_property_alias(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4253,15 +4058,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The chronological sorting order of the requested information.</p>
-        /// <p>Default: <code>ASCENDING</code>
-        /// </p>
+        /// <p>Default: <code>ASCENDING</code> </p>
         pub fn time_ordering(mut self, input: crate::model::TimeOrdering) -> Self {
             self.inner = self.inner.time_ordering(input);
             self
         }
         /// <p>The chronological sorting order of the requested information.</p>
-        /// <p>Default: <code>ASCENDING</code>
-        /// </p>
+        /// <p>Default: <code>ASCENDING</code> </p>
         pub fn set_time_ordering(
             mut self,
             input: std::option::Option<crate::model::TimeOrdering>,
@@ -4294,17 +4097,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetAssetPropertyValue`.
     ///
-    /// <p>Gets an asset property's current value. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#current-values">Querying
-    /// current values</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    /// <p>Gets an asset property's current value. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#current-values">Querying current values</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>To identify an asset property, you must specify one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>The <code>assetId</code> and <code>propertyId</code> of an asset property.</p>
-    /// </li>
-    /// <li>
-    /// <p>A <code>propertyAlias</code>, which is a data stream alias (for example,
-    /// <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
-    /// </li>
+    /// <li> <p>The <code>assetId</code> and <code>propertyId</code> of an asset property.</p> </li>
+    /// <li> <p>A <code>propertyAlias</code>, which is a data stream alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAssetPropertyValue<
@@ -4382,18 +4179,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_property_id(input);
             self
         }
-        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path
-        /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
-        /// <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn property_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.property_alias(input.into());
             self
         }
-        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path
-        /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
-        /// <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_property_alias(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4404,17 +4195,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetAssetPropertyValueHistory`.
     ///
-    /// <p>Gets the history of an asset property's values. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#historical-values">Querying
-    /// historical values</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    /// <p>Gets the history of an asset property's values. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#historical-values">Querying historical values</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>To identify an asset property, you must specify one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>The <code>assetId</code> and <code>propertyId</code> of an asset property.</p>
-    /// </li>
-    /// <li>
-    /// <p>A <code>propertyAlias</code>, which is a data stream alias (for example,
-    /// <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
-    /// </li>
+    /// <li> <p>The <code>assetId</code> and <code>propertyId</code> of an asset property.</p> </li>
+    /// <li> <p>A <code>propertyAlias</code>, which is a data stream alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAssetPropertyValueHistory<
@@ -4492,18 +4277,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_property_id(input);
             self
         }
-        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path
-        /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
-        /// <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn property_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.property_alias(input.into());
             self
         }
-        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path
-        /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
-        /// <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_property_alias(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4555,15 +4334,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The chronological sorting order of the requested information.</p>
-        /// <p>Default: <code>ASCENDING</code>
-        /// </p>
+        /// <p>Default: <code>ASCENDING</code> </p>
         pub fn time_ordering(mut self, input: crate::model::TimeOrdering) -> Self {
             self.inner = self.inner.time_ordering(input);
             self
         }
         /// <p>The chronological sorting order of the requested information.</p>
-        /// <p>Default: <code>ASCENDING</code>
-        /// </p>
+        /// <p>Default: <code>ASCENDING</code> </p>
         pub fn set_time_ordering(
             mut self,
             input: std::option::Option<crate::model::TimeOrdering>,
@@ -4596,20 +4373,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetInterpolatedAssetPropertyValues`.
     ///
-    /// <p>Get interpolated values for an asset property for a specified time interval, during a
-    /// period of time. If your time series is missing data points during the specified time interval,
-    /// you can use interpolation to estimate the missing data.</p>
-    /// <p>For example, you can use this operation to return the interpolated temperature values for
-    /// a wind turbine every 24 hours over a duration of 7 days.</p>
+    /// <p>Get interpolated values for an asset property for a specified time interval, during a period of time. If your time series is missing data points during the specified time interval, you can use interpolation to estimate the missing data.</p>
+    /// <p>For example, you can use this operation to return the interpolated temperature values for a wind turbine every 24 hours over a duration of 7 days.</p>
     /// <p>To identify an asset property, you must specify one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>The <code>assetId</code> and <code>propertyId</code> of an asset property.</p>
-    /// </li>
-    /// <li>
-    /// <p>A <code>propertyAlias</code>, which is a data stream alias (for example,
-    /// <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
-    /// </li>
+    /// <li> <p>The <code>assetId</code> and <code>propertyId</code> of an asset property.</p> </li>
+    /// <li> <p>A <code>propertyAlias</code>, which is a data stream alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetInterpolatedAssetPropertyValues<
@@ -4689,18 +4458,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_property_id(input);
             self
         }
-        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path
-        /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
-        /// <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn property_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.property_alias(input.into());
             self
         }
-        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path
-        /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
-        /// <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_property_alias(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4708,14 +4471,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_property_alias(input);
             self
         }
-        /// <p>The exclusive start of the range from which to interpolate data, expressed in seconds in
-        /// Unix epoch time.</p>
+        /// <p>The exclusive start of the range from which to interpolate data, expressed in seconds in Unix epoch time.</p>
         pub fn start_time_in_seconds(mut self, input: i64) -> Self {
             self.inner = self.inner.start_time_in_seconds(input);
             self
         }
-        /// <p>The exclusive start of the range from which to interpolate data, expressed in seconds in
-        /// Unix epoch time.</p>
+        /// <p>The exclusive start of the range from which to interpolate data, expressed in seconds in Unix epoch time.</p>
         pub fn set_start_time_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_start_time_in_seconds(input);
             self
@@ -4730,14 +4491,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_start_time_offset_in_nanos(input);
             self
         }
-        /// <p>The inclusive end of the range from which to interpolate data, expressed in seconds in
-        /// Unix epoch time.</p>
+        /// <p>The inclusive end of the range from which to interpolate data, expressed in seconds in Unix epoch time.</p>
         pub fn end_time_in_seconds(mut self, input: i64) -> Self {
             self.inner = self.inner.end_time_in_seconds(input);
             self
         }
-        /// <p>The inclusive end of the range from which to interpolate data, expressed in seconds in
-        /// Unix epoch time.</p>
+        /// <p>The inclusive end of the range from which to interpolate data, expressed in seconds in Unix epoch time.</p>
         pub fn set_end_time_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_end_time_in_seconds(input);
             self
@@ -4752,26 +4511,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_end_time_offset_in_nanos(input);
             self
         }
-        /// <p>The quality of the asset property value. You can use this parameter as a filter to choose
-        /// only the asset property values that have a specific quality.</p>
+        /// <p>The quality of the asset property value. You can use this parameter as a filter to choose only the asset property values that have a specific quality.</p>
         pub fn quality(mut self, input: crate::model::Quality) -> Self {
             self.inner = self.inner.quality(input);
             self
         }
-        /// <p>The quality of the asset property value. You can use this parameter as a filter to choose
-        /// only the asset property values that have a specific quality.</p>
+        /// <p>The quality of the asset property value. You can use this parameter as a filter to choose only the asset property values that have a specific quality.</p>
         pub fn set_quality(mut self, input: std::option::Option<crate::model::Quality>) -> Self {
             self.inner = self.inner.set_quality(input);
             self
         }
-        /// <p>The time interval in seconds over which to interpolate data. Each interval starts when the
-        /// previous one ends.</p>
+        /// <p>The time interval in seconds over which to interpolate data. Each interval starts when the previous one ends.</p>
         pub fn interval_in_seconds(mut self, input: i64) -> Self {
             self.inner = self.inner.interval_in_seconds(input);
             self
         }
-        /// <p>The time interval in seconds over which to interpolate data. Each interval starts when the
-        /// previous one ends.</p>
+        /// <p>The time interval in seconds over which to interpolate data. Each interval starts when the previous one ends.</p>
         pub fn set_interval_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_interval_in_seconds(input);
             self
@@ -4797,119 +4552,43 @@ pub mod fluent_builders {
             self
         }
         /// <p>The interpolation type.</p>
-        /// <p>Valid values: <code>LINEAR_INTERPOLATION | LOCF_INTERPOLATION</code>
-        /// </p>
+        /// <p>Valid values: <code>LINEAR_INTERPOLATION | LOCF_INTERPOLATION</code> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>LINEAR_INTERPOLATION</code> – Estimates missing data using <a href="https://en.wikipedia.org/wiki/Linear_interpolation">linear
-        /// interpolation</a>.</p>
-        /// <p>For example, you can use this operation to return the interpolated temperature values
-        /// for a wind turbine every 24 hours over a duration of 7 days. If the interpolation starts
-        /// July 1, 2021, at 9 AM, IoT SiteWise returns the first interpolated value on July 2, 2021, at 9 AM,
-        /// the second interpolated value on July 3, 2021, at 9 AM, and so on.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LOCF_INTERPOLATION</code> – Estimates missing data using last observation
-        /// carried forward interpolation</p>
-        /// <p>If no data point is found for an interval, IoT SiteWise returns the last observed data point
-        /// for the previous interval and carries forward this interpolated value until a new data
-        /// point is found.</p>
-        /// <p>For example, you can get the state of an on-off valve every 24 hours over a duration
-        /// of 7 days. If the interpolation starts July 1, 2021, at 9 AM, IoT SiteWise returns the last
-        /// observed data point between July 1, 2021, at 9 AM and July 2, 2021, at 9 AM as the first
-        /// interpolated value. If a data point isn't found after 9 AM on July 2, 2021, IoT SiteWise uses the
-        /// same interpolated value for the rest of the days.</p>
-        /// </li>
+        /// <li> <p> <code>LINEAR_INTERPOLATION</code> – Estimates missing data using <a href="https://en.wikipedia.org/wiki/Linear_interpolation">linear interpolation</a>.</p> <p>For example, you can use this operation to return the interpolated temperature values for a wind turbine every 24 hours over a duration of 7 days. If the interpolation starts July 1, 2021, at 9 AM, IoT SiteWise returns the first interpolated value on July 2, 2021, at 9 AM, the second interpolated value on July 3, 2021, at 9 AM, and so on.</p> </li>
+        /// <li> <p> <code>LOCF_INTERPOLATION</code> – Estimates missing data using last observation carried forward interpolation</p> <p>If no data point is found for an interval, IoT SiteWise returns the last observed data point for the previous interval and carries forward this interpolated value until a new data point is found.</p> <p>For example, you can get the state of an on-off valve every 24 hours over a duration of 7 days. If the interpolation starts July 1, 2021, at 9 AM, IoT SiteWise returns the last observed data point between July 1, 2021, at 9 AM and July 2, 2021, at 9 AM as the first interpolated value. If a data point isn't found after 9 AM on July 2, 2021, IoT SiteWise uses the same interpolated value for the rest of the days.</p> </li>
         /// </ul>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.r#type(input.into());
             self
         }
         /// <p>The interpolation type.</p>
-        /// <p>Valid values: <code>LINEAR_INTERPOLATION | LOCF_INTERPOLATION</code>
-        /// </p>
+        /// <p>Valid values: <code>LINEAR_INTERPOLATION | LOCF_INTERPOLATION</code> </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>LINEAR_INTERPOLATION</code> – Estimates missing data using <a href="https://en.wikipedia.org/wiki/Linear_interpolation">linear
-        /// interpolation</a>.</p>
-        /// <p>For example, you can use this operation to return the interpolated temperature values
-        /// for a wind turbine every 24 hours over a duration of 7 days. If the interpolation starts
-        /// July 1, 2021, at 9 AM, IoT SiteWise returns the first interpolated value on July 2, 2021, at 9 AM,
-        /// the second interpolated value on July 3, 2021, at 9 AM, and so on.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LOCF_INTERPOLATION</code> – Estimates missing data using last observation
-        /// carried forward interpolation</p>
-        /// <p>If no data point is found for an interval, IoT SiteWise returns the last observed data point
-        /// for the previous interval and carries forward this interpolated value until a new data
-        /// point is found.</p>
-        /// <p>For example, you can get the state of an on-off valve every 24 hours over a duration
-        /// of 7 days. If the interpolation starts July 1, 2021, at 9 AM, IoT SiteWise returns the last
-        /// observed data point between July 1, 2021, at 9 AM and July 2, 2021, at 9 AM as the first
-        /// interpolated value. If a data point isn't found after 9 AM on July 2, 2021, IoT SiteWise uses the
-        /// same interpolated value for the rest of the days.</p>
-        /// </li>
+        /// <li> <p> <code>LINEAR_INTERPOLATION</code> – Estimates missing data using <a href="https://en.wikipedia.org/wiki/Linear_interpolation">linear interpolation</a>.</p> <p>For example, you can use this operation to return the interpolated temperature values for a wind turbine every 24 hours over a duration of 7 days. If the interpolation starts July 1, 2021, at 9 AM, IoT SiteWise returns the first interpolated value on July 2, 2021, at 9 AM, the second interpolated value on July 3, 2021, at 9 AM, and so on.</p> </li>
+        /// <li> <p> <code>LOCF_INTERPOLATION</code> – Estimates missing data using last observation carried forward interpolation</p> <p>If no data point is found for an interval, IoT SiteWise returns the last observed data point for the previous interval and carries forward this interpolated value until a new data point is found.</p> <p>For example, you can get the state of an on-off valve every 24 hours over a duration of 7 days. If the interpolation starts July 1, 2021, at 9 AM, IoT SiteWise returns the last observed data point between July 1, 2021, at 9 AM and July 2, 2021, at 9 AM as the first interpolated value. If a data point isn't found after 9 AM on July 2, 2021, IoT SiteWise uses the same interpolated value for the rest of the days.</p> </li>
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_type(input);
             self
         }
-        /// <p>The query interval for the window, in seconds. IoT SiteWise computes each interpolated value by
-        /// using data points from the timestamp of each interval, minus the window to the timestamp of
-        /// each interval plus the window. If not specified, the window ranges between the start time
-        /// minus the interval and the end time plus the interval.</p>
-        /// <note>
+        /// <p>The query interval for the window, in seconds. IoT SiteWise computes each interpolated value by using data points from the timestamp of each interval, minus the window to the timestamp of each interval plus the window. If not specified, the window ranges between the start time minus the interval and the end time plus the interval.</p> <note>
         /// <ul>
-        /// <li>
-        /// <p>If you specify a value for the <code>intervalWindowInSeconds</code> parameter, the
-        /// value for the <code>type</code> parameter must be
-        /// <code>LINEAR_INTERPOLATION</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>If a data point isn't found during the specified query window, IoT SiteWise won't return an
-        /// interpolated value for the interval. This indicates that there's a gap in the ingested
-        /// data points.</p>
-        /// </li>
+        /// <li> <p>If you specify a value for the <code>intervalWindowInSeconds</code> parameter, the value for the <code>type</code> parameter must be <code>LINEAR_INTERPOLATION</code>.</p> </li>
+        /// <li> <p>If a data point isn't found during the specified query window, IoT SiteWise won't return an interpolated value for the interval. This indicates that there's a gap in the ingested data points.</p> </li>
         /// </ul>
         /// </note>
-        /// <p>For example, you can get the interpolated temperature values for a wind turbine every 24
-        /// hours over a duration of 7 days. If the interpolation starts on July 1, 2021, at 9 AM with a
-        /// window of 2 hours, IoT SiteWise uses the data points from 7 AM (9 AM minus 2 hours) to 11 AM (9 AM
-        /// plus 2 hours) on July 2, 2021 to compute the first interpolated value. Next, IoT SiteWise uses the
-        /// data points from 7 AM (9 AM minus 2 hours) to 11 AM (9 AM plus 2 hours) on July 3, 2021 to
-        /// compute the second interpolated value, and so on. </p>
+        /// <p>For example, you can get the interpolated temperature values for a wind turbine every 24 hours over a duration of 7 days. If the interpolation starts on July 1, 2021, at 9 AM with a window of 2 hours, IoT SiteWise uses the data points from 7 AM (9 AM minus 2 hours) to 11 AM (9 AM plus 2 hours) on July 2, 2021 to compute the first interpolated value. Next, IoT SiteWise uses the data points from 7 AM (9 AM minus 2 hours) to 11 AM (9 AM plus 2 hours) on July 3, 2021 to compute the second interpolated value, and so on. </p>
         pub fn interval_window_in_seconds(mut self, input: i64) -> Self {
             self.inner = self.inner.interval_window_in_seconds(input);
             self
         }
-        /// <p>The query interval for the window, in seconds. IoT SiteWise computes each interpolated value by
-        /// using data points from the timestamp of each interval, minus the window to the timestamp of
-        /// each interval plus the window. If not specified, the window ranges between the start time
-        /// minus the interval and the end time plus the interval.</p>
-        /// <note>
+        /// <p>The query interval for the window, in seconds. IoT SiteWise computes each interpolated value by using data points from the timestamp of each interval, minus the window to the timestamp of each interval plus the window. If not specified, the window ranges between the start time minus the interval and the end time plus the interval.</p> <note>
         /// <ul>
-        /// <li>
-        /// <p>If you specify a value for the <code>intervalWindowInSeconds</code> parameter, the
-        /// value for the <code>type</code> parameter must be
-        /// <code>LINEAR_INTERPOLATION</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>If a data point isn't found during the specified query window, IoT SiteWise won't return an
-        /// interpolated value for the interval. This indicates that there's a gap in the ingested
-        /// data points.</p>
-        /// </li>
+        /// <li> <p>If you specify a value for the <code>intervalWindowInSeconds</code> parameter, the value for the <code>type</code> parameter must be <code>LINEAR_INTERPOLATION</code>.</p> </li>
+        /// <li> <p>If a data point isn't found during the specified query window, IoT SiteWise won't return an interpolated value for the interval. This indicates that there's a gap in the ingested data points.</p> </li>
         /// </ul>
         /// </note>
-        /// <p>For example, you can get the interpolated temperature values for a wind turbine every 24
-        /// hours over a duration of 7 days. If the interpolation starts on July 1, 2021, at 9 AM with a
-        /// window of 2 hours, IoT SiteWise uses the data points from 7 AM (9 AM minus 2 hours) to 11 AM (9 AM
-        /// plus 2 hours) on July 2, 2021 to compute the first interpolated value. Next, IoT SiteWise uses the
-        /// data points from 7 AM (9 AM minus 2 hours) to 11 AM (9 AM plus 2 hours) on July 3, 2021 to
-        /// compute the second interpolated value, and so on. </p>
+        /// <p>For example, you can get the interpolated temperature values for a wind turbine every 24 hours over a duration of 7 days. If the interpolation starts on July 1, 2021, at 9 AM with a window of 2 hours, IoT SiteWise uses the data points from 7 AM (9 AM minus 2 hours) to 11 AM (9 AM plus 2 hours) on July 2, 2021 to compute the first interpolated value. Next, IoT SiteWise uses the data points from 7 AM (9 AM minus 2 hours) to 11 AM (9 AM plus 2 hours) on July 3, 2021 to compute the second interpolated value, and so on. </p>
         pub fn set_interval_window_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
             self.inner = self.inner.set_interval_window_in_seconds(input);
             self
@@ -4917,8 +4596,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAccessPolicies`.
     ///
-    /// <p>Retrieves a paginated list of access policies for an identity (an Amazon Web Services SSO user, an Amazon Web Services SSO
-    /// group, or an IAM user) or an IoT SiteWise Monitor resource (a portal or project).</p>
+    /// <p>Retrieves a paginated list of access policies for an identity (an Amazon Web Services SSO user, an Amazon Web Services SSO group, or an IAM user) or an IoT SiteWise Monitor resource (a portal or project).</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAccessPolicies<
         C = aws_smithy_client::erase::DynConnector,
@@ -4975,14 +4653,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The type of identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user). This parameter is required
-        /// if you specify <code>identityId</code>.</p>
+        /// <p>The type of identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user). This parameter is required if you specify <code>identityId</code>.</p>
         pub fn identity_type(mut self, input: crate::model::IdentityType) -> Self {
             self.inner = self.inner.identity_type(input);
             self
         }
-        /// <p>The type of identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user). This parameter is required
-        /// if you specify <code>identityId</code>.</p>
+        /// <p>The type of identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user). This parameter is required if you specify <code>identityId</code>.</p>
         pub fn set_identity_type(
             mut self,
             input: std::option::Option<crate::model::IdentityType>,
@@ -4990,26 +4666,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_identity_type(input);
             self
         }
-        /// <p>The ID of the identity. This parameter is required if you specify <code>USER</code> or
-        /// <code>GROUP</code> for <code>identityType</code>.</p>
+        /// <p>The ID of the identity. This parameter is required if you specify <code>USER</code> or <code>GROUP</code> for <code>identityType</code>.</p>
         pub fn identity_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.identity_id(input.into());
             self
         }
-        /// <p>The ID of the identity. This parameter is required if you specify <code>USER</code> or
-        /// <code>GROUP</code> for <code>identityType</code>.</p>
+        /// <p>The ID of the identity. This parameter is required if you specify <code>USER</code> or <code>GROUP</code> for <code>identityType</code>.</p>
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_identity_id(input);
             self
         }
-        /// <p>The type of resource (portal or project). This parameter is required if you specify
-        /// <code>resourceId</code>.</p>
+        /// <p>The type of resource (portal or project). This parameter is required if you specify <code>resourceId</code>.</p>
         pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
             self.inner = self.inner.resource_type(input);
             self
         }
-        /// <p>The type of resource (portal or project). This parameter is required if you specify
-        /// <code>resourceId</code>.</p>
+        /// <p>The type of resource (portal or project). This parameter is required if you specify <code>resourceId</code>.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,
@@ -5017,28 +4689,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_type(input);
             self
         }
-        /// <p>The ID of the resource. This parameter is required if you specify
-        /// <code>resourceType</code>.</p>
+        /// <p>The ID of the resource. This parameter is required if you specify <code>resourceType</code>.</p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_id(input.into());
             self
         }
-        /// <p>The ID of the resource. This parameter is required if you specify
-        /// <code>resourceType</code>.</p>
+        /// <p>The ID of the resource. This parameter is required if you specify <code>resourceType</code>.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_id(input);
             self
         }
-        /// <p>The ARN of the IAM user. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the
-        /// <i>IAM User Guide</i>. This parameter is required if you specify
-        /// <code>IAM</code> for <code>identityType</code>.</p>
+        /// <p>The ARN of the IAM user. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the <i>IAM User Guide</i>. This parameter is required if you specify <code>IAM</code> for <code>identityType</code>.</p>
         pub fn iam_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.iam_arn(input.into());
             self
         }
-        /// <p>The ARN of the IAM user. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the
-        /// <i>IAM User Guide</i>. This parameter is required if you specify
-        /// <code>IAM</code> for <code>identityType</code>.</p>
+        /// <p>The ARN of the IAM user. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the <i>IAM User Guide</i>. This parameter is required if you specify <code>IAM</code> for <code>identityType</code>.</p>
         pub fn set_iam_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_iam_arn(input);
             self
@@ -5150,9 +4816,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAssetRelationships`.
     ///
-    /// <p>Retrieves a paginated list of asset relationships for an asset. You can use this operation
-    /// to identify an asset's root asset and all associated assets between that asset and its
-    /// root.</p>
+    /// <p>Retrieves a paginated list of asset relationships for an asset. You can use this operation to identify an asset's root asset and all associated assets between that asset and its root.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAssetRelationships<
         C = aws_smithy_client::erase::DynConnector,
@@ -5219,29 +4883,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_asset_id(input);
             self
         }
-        /// <p>The type of traversal to use to identify asset relationships. Choose the following
-        /// option:</p>
+        /// <p>The type of traversal to use to identify asset relationships. Choose the following option:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PATH_TO_ROOT</code> – Identify the asset's parent assets up to the root
-        /// asset. The asset that you specify in <code>assetId</code> is the first result in the list
-        /// of <code>assetRelationshipSummaries</code>, and the root asset is the last result.</p>
-        /// </li>
+        /// <li> <p> <code>PATH_TO_ROOT</code> – Identify the asset's parent assets up to the root asset. The asset that you specify in <code>assetId</code> is the first result in the list of <code>assetRelationshipSummaries</code>, and the root asset is the last result.</p> </li>
         /// </ul>
         pub fn traversal_type(mut self, input: crate::model::TraversalType) -> Self {
             self.inner = self.inner.traversal_type(input);
             self
         }
-        /// <p>The type of traversal to use to identify asset relationships. Choose the following
-        /// option:</p>
+        /// <p>The type of traversal to use to identify asset relationships. Choose the following option:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>PATH_TO_ROOT</code> – Identify the asset's parent assets up to the root
-        /// asset. The asset that you specify in <code>assetId</code> is the first result in the list
-        /// of <code>assetRelationshipSummaries</code>, and the root asset is the last result.</p>
-        /// </li>
+        /// <li> <p> <code>PATH_TO_ROOT</code> – Identify the asset's parent assets up to the root asset. The asset that you specify in <code>assetId</code> is the first result in the list of <code>assetRelationshipSummaries</code>, and the root asset is the last result.</p> </li>
         /// </ul>
         pub fn set_traversal_type(
             mut self,
@@ -5276,16 +4928,10 @@ pub mod fluent_builders {
     /// <p>Retrieves a paginated list of asset summaries.</p>
     /// <p>You can use this operation to do the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>List assets based on a specific asset model.</p>
-    /// </li>
-    /// <li>
-    /// <p>List top-level assets.</p>
-    /// </li>
+    /// <li> <p>List assets based on a specific asset model.</p> </li>
+    /// <li> <p>List top-level assets.</p> </li>
     /// </ul>
-    /// <p>You can't use this operation to list all assets. To retrieve summaries for all of your
-    /// assets, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListAssetModels.html">ListAssetModels</a> to get all of your asset model IDs. Then, use ListAssets to get all
-    /// assets for each asset model.</p>
+    /// <p>You can't use this operation to list all assets. To retrieve summaries for all of your assets, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListAssetModels.html">ListAssetModels</a> to get all of your asset model IDs. Then, use ListAssets to get all assets for each asset model.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAssets<
         C = aws_smithy_client::erase::DynConnector,
@@ -5364,14 +5010,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The ID of the asset model by which to filter the list of assets. This parameter is
-        /// required if you choose <code>ALL</code> for <code>filter</code>.</p>
+        /// <p>The ID of the asset model by which to filter the list of assets. This parameter is required if you choose <code>ALL</code> for <code>filter</code>.</p>
         pub fn asset_model_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.asset_model_id(input.into());
             self
         }
-        /// <p>The ID of the asset model by which to filter the list of assets. This parameter is
-        /// required if you choose <code>ALL</code> for <code>filter</code>.</p>
+        /// <p>The ID of the asset model by which to filter the list of assets. This parameter is required if you choose <code>ALL</code> for <code>filter</code>.</p>
         pub fn set_asset_model_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5381,40 +5025,20 @@ pub mod fluent_builders {
         }
         /// <p>The filter for the requested list of assets. Choose one of the following options:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ALL</code> – The list includes all assets for a given asset model ID. The
-        /// <code>assetModelId</code> parameter is required if you filter by
-        /// <code>ALL</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TOP_LEVEL</code> – The list includes only top-level assets in the asset
-        /// hierarchy tree.</p>
-        /// </li>
+        /// <li> <p> <code>ALL</code> – The list includes all assets for a given asset model ID. The <code>assetModelId</code> parameter is required if you filter by <code>ALL</code>.</p> </li>
+        /// <li> <p> <code>TOP_LEVEL</code> – The list includes only top-level assets in the asset hierarchy tree.</p> </li>
         /// </ul>
-        /// <p>Default: <code>ALL</code>
-        /// </p>
+        /// <p>Default: <code>ALL</code> </p>
         pub fn filter(mut self, input: crate::model::ListAssetsFilter) -> Self {
             self.inner = self.inner.filter(input);
             self
         }
         /// <p>The filter for the requested list of assets. Choose one of the following options:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ALL</code> – The list includes all assets for a given asset model ID. The
-        /// <code>assetModelId</code> parameter is required if you filter by
-        /// <code>ALL</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>TOP_LEVEL</code> – The list includes only top-level assets in the asset
-        /// hierarchy tree.</p>
-        /// </li>
+        /// <li> <p> <code>ALL</code> – The list includes all assets for a given asset model ID. The <code>assetModelId</code> parameter is required if you filter by <code>ALL</code>.</p> </li>
+        /// <li> <p> <code>TOP_LEVEL</code> – The list includes only top-level assets in the asset hierarchy tree.</p> </li>
         /// </ul>
-        /// <p>Default: <code>ALL</code>
-        /// </p>
+        /// <p>Default: <code>ALL</code> </p>
         pub fn set_filter(
             mut self,
             input: std::option::Option<crate::model::ListAssetsFilter>,
@@ -5428,12 +5052,8 @@ pub mod fluent_builders {
     /// <p>Retrieves a paginated list of associated assets.</p>
     /// <p>You can use this operation to do the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>List child assets associated to a parent asset by a hierarchy that you specify.</p>
-    /// </li>
-    /// <li>
-    /// <p>List an asset's parent asset.</p>
-    /// </li>
+    /// <li> <p>List child assets associated to a parent asset by a hierarchy that you specify.</p> </li>
+    /// <li> <p>List an asset's parent asset.</p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAssociatedAssets<
@@ -5501,19 +5121,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_asset_id(input);
             self
         }
-        /// <p>The ID of the hierarchy by which child assets are associated to the asset. To find a
-        /// hierarchy ID, use the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAsset.html">DescribeAsset</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html">DescribeAssetModel</a> operations. This
-        /// parameter is required if you choose <code>CHILD</code> for
-        /// <code>traversalDirection</code>.</p>
+        /// <p>The ID of the hierarchy by which child assets are associated to the asset. To find a hierarchy ID, use the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAsset.html">DescribeAsset</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html">DescribeAssetModel</a> operations. This parameter is required if you choose <code>CHILD</code> for <code>traversalDirection</code>.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn hierarchy_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.hierarchy_id(input.into());
             self
         }
-        /// <p>The ID of the hierarchy by which child assets are associated to the asset. To find a
-        /// hierarchy ID, use the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAsset.html">DescribeAsset</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html">DescribeAssetModel</a> operations. This
-        /// parameter is required if you choose <code>CHILD</code> for
-        /// <code>traversalDirection</code>.</p>
+        /// <p>The ID of the hierarchy by which child assets are associated to the asset. To find a hierarchy ID, use the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAsset.html">DescribeAsset</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html">DescribeAssetModel</a> operations. This parameter is required if you choose <code>CHILD</code> for <code>traversalDirection</code>.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_hierarchy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_hierarchy_id(input);
@@ -5521,38 +5135,20 @@ pub mod fluent_builders {
         }
         /// <p>The direction to list associated assets. Choose one of the following options:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CHILD</code> – The list includes all child assets associated to the
-        /// asset. The <code>hierarchyId</code> parameter is required if you choose
-        /// <code>CHILD</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PARENT</code> – The list includes the asset's parent asset.</p>
-        /// </li>
+        /// <li> <p> <code>CHILD</code> – The list includes all child assets associated to the asset. The <code>hierarchyId</code> parameter is required if you choose <code>CHILD</code>.</p> </li>
+        /// <li> <p> <code>PARENT</code> – The list includes the asset's parent asset.</p> </li>
         /// </ul>
-        /// <p>Default: <code>CHILD</code>
-        /// </p>
+        /// <p>Default: <code>CHILD</code> </p>
         pub fn traversal_direction(mut self, input: crate::model::TraversalDirection) -> Self {
             self.inner = self.inner.traversal_direction(input);
             self
         }
         /// <p>The direction to list associated assets. Choose one of the following options:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>CHILD</code> – The list includes all child assets associated to the
-        /// asset. The <code>hierarchyId</code> parameter is required if you choose
-        /// <code>CHILD</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PARENT</code> – The list includes the asset's parent asset.</p>
-        /// </li>
+        /// <li> <p> <code>CHILD</code> – The list includes all child assets associated to the asset. The <code>hierarchyId</code> parameter is required if you choose <code>CHILD</code>.</p> </li>
+        /// <li> <p> <code>PARENT</code> – The list includes the asset's parent asset.</p> </li>
         /// </ul>
-        /// <p>Default: <code>CHILD</code>
-        /// </p>
+        /// <p>Default: <code>CHILD</code> </p>
         pub fn set_traversal_direction(
             mut self,
             input: std::option::Option<crate::model::TraversalDirection>,
@@ -6192,37 +5788,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_alias_prefix(input);
             self
         }
-        /// <p>The type of the time series. The time series type can be one of the following
-        /// values:</p>
+        /// <p>The type of the time series. The time series type can be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ASSOCIATED</code> – The time series is associated with an asset
-        /// property.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DISASSOCIATED</code> – The time series isn't associated with any asset
-        /// property.</p>
-        /// </li>
+        /// <li> <p> <code>ASSOCIATED</code> – The time series is associated with an asset property.</p> </li>
+        /// <li> <p> <code>DISASSOCIATED</code> – The time series isn't associated with any asset property.</p> </li>
         /// </ul>
         pub fn time_series_type(mut self, input: crate::model::ListTimeSeriesType) -> Self {
             self.inner = self.inner.time_series_type(input);
             self
         }
-        /// <p>The type of the time series. The time series type can be one of the following
-        /// values:</p>
+        /// <p>The type of the time series. The time series type can be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ASSOCIATED</code> – The time series is associated with an asset
-        /// property.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DISASSOCIATED</code> – The time series isn't associated with any asset
-        /// property.</p>
-        /// </li>
+        /// <li> <p> <code>ASSOCIATED</code> – The time series is associated with an asset property.</p> </li>
+        /// <li> <p> <code>DISASSOCIATED</code> – The time series isn't associated with any asset property.</p> </li>
         /// </ul>
         pub fn set_time_series_type(
             mut self,
@@ -6234,9 +5812,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutDefaultEncryptionConfiguration`.
     ///
-    /// <p>Sets the default encryption configuration for the Amazon Web Services account. For more information, see
-    /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/key-management.html">Key management</a> in
-    /// the <i>IoT SiteWise User Guide</i>.</p>
+    /// <p>Sets the default encryption configuration for the Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/key-management.html">Key management</a> in the <i>IoT SiteWise User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutDefaultEncryptionConfiguration<
         C = aws_smithy_client::erase::DynConnector,
@@ -6306,14 +5882,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_encryption_type(input);
             self
         }
-        /// <p>The Key ID of the customer managed key used for KMS encryption. This is required if you
-        /// use <code>KMS_BASED_ENCRYPTION</code>.</p>
+        /// <p>The Key ID of the customer managed key used for KMS encryption. This is required if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_key_id(input.into());
             self
         }
-        /// <p>The Key ID of the customer managed key used for KMS encryption. This is required if you
-        /// use <code>KMS_BASED_ENCRYPTION</code>.</p>
+        /// <p>The Key ID of the customer managed key used for KMS encryption. This is required if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_kms_key_id(input);
             self
@@ -6451,37 +6025,19 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The storage tier that you specified for your data.
-        /// The <code>storageType</code> parameter can be one of the following values:</p>
+        /// <p>The storage tier that you specified for your data. The <code>storageType</code> parameter can be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier.
-        /// The hot tier is a service-managed database.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the cold tier.
-        /// The cold tier is a customer-managed Amazon S3 bucket.</p>
-        /// </li>
+        /// <li> <p> <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.</p> </li>
+        /// <li> <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the cold tier. The cold tier is a customer-managed Amazon S3 bucket.</p> </li>
         /// </ul>
         pub fn storage_type(mut self, input: crate::model::StorageType) -> Self {
             self.inner = self.inner.storage_type(input);
             self
         }
-        /// <p>The storage tier that you specified for your data.
-        /// The <code>storageType</code> parameter can be one of the following values:</p>
+        /// <p>The storage tier that you specified for your data. The <code>storageType</code> parameter can be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier.
-        /// The hot tier is a service-managed database.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the cold tier.
-        /// The cold tier is a customer-managed Amazon S3 bucket.</p>
-        /// </li>
+        /// <li> <p> <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.</p> </li>
+        /// <li> <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the cold tier. The cold tier is a customer-managed Amazon S3 bucket.</p> </li>
         /// </ul>
         pub fn set_storage_type(
             mut self,
@@ -6490,14 +6046,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_storage_type(input);
             self
         }
-        /// <p>Identifies a storage destination. If you specified <code>MULTI_LAYER_STORAGE</code> for the storage type,
-        /// you must specify a <code>MultiLayerStorage</code> object.</p>
+        /// <p>Identifies a storage destination. If you specified <code>MULTI_LAYER_STORAGE</code> for the storage type, you must specify a <code>MultiLayerStorage</code> object.</p>
         pub fn multi_layer_storage(mut self, input: crate::model::MultiLayerStorage) -> Self {
             self.inner = self.inner.multi_layer_storage(input);
             self
         }
-        /// <p>Identifies a storage destination. If you specified <code>MULTI_LAYER_STORAGE</code> for the storage type,
-        /// you must specify a <code>MultiLayerStorage</code> object.</p>
+        /// <p>Identifies a storage destination. If you specified <code>MULTI_LAYER_STORAGE</code> for the storage type, you must specify a <code>MultiLayerStorage</code> object.</p>
         pub fn set_multi_layer_storage(
             mut self,
             input: std::option::Option<crate::model::MultiLayerStorage>,
@@ -6505,23 +6059,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_multi_layer_storage(input);
             self
         }
-        /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties.
-        /// The <code>disassociatedDataStorage</code> can be one of the following values:</p>
+        /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties. The <code>disassociatedDataStorage</code> can be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p>
-        /// <important>
+        /// <li> <p> <code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p> <important>
         /// <p>After the <code>disassociatedDataStorage</code> is enabled, you can't disable it.</p>
-        /// </important>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p>
-        /// </li>
+        /// </important> </li>
+        /// <li> <p> <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p> </li>
         /// </ul>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a>
-        /// in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn disassociated_data_storage(
             mut self,
             input: crate::model::DisassociatedDataStorageState,
@@ -6529,23 +6074,14 @@ pub mod fluent_builders {
             self.inner = self.inner.disassociated_data_storage(input);
             self
         }
-        /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties.
-        /// The <code>disassociatedDataStorage</code> can be one of the following values:</p>
+        /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties. The <code>disassociatedDataStorage</code> can be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p>
-        /// <important>
+        /// <li> <p> <code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p> <important>
         /// <p>After the <code>disassociatedDataStorage</code> is enabled, you can't disable it.</p>
-        /// </important>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p>
-        /// </li>
+        /// </important> </li>
+        /// <li> <p> <code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p> </li>
         /// </ul>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a>
-        /// in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_disassociated_data_storage(
             mut self,
             input: std::option::Option<crate::model::DisassociatedDataStorageState>,
@@ -6569,8 +6105,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Adds tags to an IoT SiteWise resource. If a tag already exists for the resource, this operation
-    /// updates the tag's value.</p>
+    /// <p>Adds tags to an IoT SiteWise resource. If a tag already exists for the resource, this operation updates the tag's value.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -6641,9 +6176,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of key-value pairs that contain metadata for the resource. For more information,
-        /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise
-        /// resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -6652,9 +6185,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>A list of key-value pairs that contain metadata for the resource. For more information,
-        /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise
-        /// resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -6754,8 +6285,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateAccessPolicy`.
     ///
-    /// <p>Updates an existing access policy that specifies an identity's access to an IoT SiteWise Monitor
-    /// portal or project resource.</p>
+    /// <p>Updates an existing access policy that specifies an identity's access to an IoT SiteWise Monitor portal or project resource.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAccessPolicy<
         C = aws_smithy_client::erase::DynConnector,
@@ -6877,8 +6407,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateAsset`.
     ///
-    /// <p>Updates an asset's name. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-assets-and-models.html">Updating assets and models</a> in the
-    /// <i>IoT SiteWise User Guide</i>.</p>
+    /// <p>Updates an asset's name. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-assets-and-models.html">Updating assets and models</a> in the <i>IoT SiteWise User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAsset<
         C = aws_smithy_client::erase::DynConnector,
@@ -6968,18 +6497,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateAssetModel`.
     ///
-    /// <p>Updates an asset model and all of the assets that were created from the model. Each asset
-    /// created from the model inherits the updated asset model's property and hierarchy definitions.
-    /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-assets-and-models.html">Updating assets and models</a> in the
-    /// <i>IoT SiteWise User Guide</i>.</p>
-    /// <important>
-    /// <p>This operation overwrites the existing model with the provided model. To avoid deleting
-    /// your asset model's properties or hierarchies, you must include their IDs and definitions in
-    /// the updated asset model payload. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html">DescribeAssetModel</a>.</p>
-    /// <p>If you remove a property from an asset model, IoT SiteWise deletes all previous data for that
-    /// property. If you remove a hierarchy definition from an asset model, IoT SiteWise disassociates every
-    /// asset associated with that hierarchy. You can't change the type or data type of an existing
-    /// property.</p>
+    /// <p>Updates an asset model and all of the assets that were created from the model. Each asset created from the model inherits the updated asset model's property and hierarchy definitions. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-assets-and-models.html">Updating assets and models</a> in the <i>IoT SiteWise User Guide</i>.</p> <important>
+    /// <p>This operation overwrites the existing model with the provided model. To avoid deleting your asset model's properties or hierarchies, you must include their IDs and definitions in the updated asset model payload. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html">DescribeAssetModel</a>.</p>
+    /// <p>If you remove a property from an asset model, IoT SiteWise deletes all previous data for that property. If you remove a hierarchy definition from an asset model, IoT SiteWise disassociates every asset associated with that hierarchy. You can't change the type or data type of an existing property.</p>
     /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAssetModel<
@@ -7080,18 +6600,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_asset_model_properties`](Self::set_asset_model_properties).
         ///
-        /// <p>The updated property definitions of the asset model. For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
-        /// <p>You can specify up to 200 properties per asset model. For more
-        /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The updated property definitions of the asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>You can specify up to 200 properties per asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn asset_model_properties(mut self, input: crate::model::AssetModelProperty) -> Self {
             self.inner = self.inner.asset_model_properties(input);
             self
         }
-        /// <p>The updated property definitions of the asset model. For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
-        /// <p>You can specify up to 200 properties per asset model. For more
-        /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The updated property definitions of the asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>You can specify up to 200 properties per asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_asset_model_properties(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AssetModelProperty>>,
@@ -7103,20 +6619,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_asset_model_hierarchies`](Self::set_asset_model_hierarchies).
         ///
-        /// <p>The updated hierarchy definitions of the asset model. Each hierarchy specifies an asset
-        /// model whose assets can be children of any other assets created from this asset model. For more
-        /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
-        /// <p>You can specify up to 10 hierarchies per asset model. For more
-        /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The updated hierarchy definitions of the asset model. Each hierarchy specifies an asset model whose assets can be children of any other assets created from this asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>You can specify up to 10 hierarchies per asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn asset_model_hierarchies(mut self, input: crate::model::AssetModelHierarchy) -> Self {
             self.inner = self.inner.asset_model_hierarchies(input);
             self
         }
-        /// <p>The updated hierarchy definitions of the asset model. Each hierarchy specifies an asset
-        /// model whose assets can be children of any other assets created from this asset model. For more
-        /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
-        /// <p>You can specify up to 10 hierarchies per asset model. For more
-        /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The updated hierarchy definitions of the asset model. Each hierarchy specifies an asset model whose assets can be children of any other assets created from this asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>You can specify up to 10 hierarchies per asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_asset_model_hierarchies(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AssetModelHierarchy>>,
@@ -7128,10 +6638,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_asset_model_composite_models`](Self::set_asset_model_composite_models).
         ///
-        /// <p>The composite asset models that are part of this asset model.
-        /// Composite asset models are asset models that contain specific properties. Each composite model
-        /// has a type that defines the properties that the composite model supports. Use composite asset
-        /// models to define alarms on this asset model.</p>
+        /// <p>The composite asset models that are part of this asset model. Composite asset models are asset models that contain specific properties. Each composite model has a type that defines the properties that the composite model supports. Use composite asset models to define alarms on this asset model.</p>
         pub fn asset_model_composite_models(
             mut self,
             input: crate::model::AssetModelCompositeModel,
@@ -7139,10 +6646,7 @@ pub mod fluent_builders {
             self.inner = self.inner.asset_model_composite_models(input);
             self
         }
-        /// <p>The composite asset models that are part of this asset model.
-        /// Composite asset models are asset models that contain specific properties. Each composite model
-        /// has a type that defines the properties that the composite model supports. Use composite asset
-        /// models to define alarms on this asset model.</p>
+        /// <p>The composite asset models that are part of this asset model. Composite asset models are asset models that contain specific properties. Each composite model has a type that defines the properties that the composite model supports. Use composite asset models to define alarms on this asset model.</p>
         pub fn set_asset_model_composite_models(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AssetModelCompositeModel>>,
@@ -7163,11 +6667,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateAssetProperty`.
     ///
-    /// <p>Updates an asset property's alias and notification state.</p>
-    /// <important>
-    /// <p>This operation overwrites the property's existing alias and notification state. To keep
-    /// your existing property's alias or notification state, you must include the existing values
-    /// in the UpdateAssetProperty request. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetProperty.html">DescribeAssetProperty</a>.</p>
+    /// <p>Updates an asset property's alias and notification state.</p> <important>
+    /// <p>This operation overwrites the property's existing alias and notification state. To keep your existing property's alias or notification state, you must include the existing values in the UpdateAssetProperty request. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetProperty.html">DescribeAssetProperty</a>.</p>
     /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAssetProperty<
@@ -7245,19 +6746,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_property_id(input);
             self
         }
-        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path
-        /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
-        /// <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
         /// <p>If you omit this parameter, the alias is removed from the property.</p>
         pub fn property_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.property_alias(input.into());
             self
         }
-        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path
-        /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
-        /// <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
         /// <p>If you omit this parameter, the alias is removed from the property.</p>
         pub fn set_property_alias(
             mut self,
@@ -7266,9 +6761,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_property_alias(input);
             self
         }
-        /// <p>The MQTT notification state (enabled or disabled) for this asset property.
-        /// When the notification state is enabled, IoT SiteWise publishes property value
-        /// updates to a unique MQTT topic. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting with other services</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The MQTT notification state (enabled or disabled) for this asset property. When the notification state is enabled, IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting with other services</a> in the <i>IoT SiteWise User Guide</i>.</p>
         /// <p>If you omit this parameter, the notification state is set to <code>DISABLED</code>.</p>
         pub fn property_notification_state(
             mut self,
@@ -7277,9 +6770,7 @@ pub mod fluent_builders {
             self.inner = self.inner.property_notification_state(input);
             self
         }
-        /// <p>The MQTT notification state (enabled or disabled) for this asset property.
-        /// When the notification state is enabled, IoT SiteWise publishes property value
-        /// updates to a unique MQTT topic. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting with other services</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The MQTT notification state (enabled or disabled) for this asset property. When the notification state is enabled, IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting with other services</a> in the <i>IoT SiteWise User Guide</i>.</p>
         /// <p>If you omit this parameter, the notification state is set to <code>DISABLED</code>.</p>
         pub fn set_property_notification_state(
             mut self,
@@ -7394,14 +6885,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dashboard_description(input);
             self
         }
-        /// <p>The new dashboard definition, as specified in a JSON literal. For detailed information,
-        /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The new dashboard definition, as specified in a JSON literal. For detailed information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn dashboard_definition(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.dashboard_definition(input.into());
             self
         }
-        /// <p>The new dashboard definition, as specified in a JSON literal. For detailed information,
-        /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The new dashboard definition, as specified in a JSON literal. For detailed information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_dashboard_definition(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7502,11 +6991,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateGatewayCapabilityConfiguration`.
     ///
-    /// <p>Updates a gateway capability configuration or defines a new capability configuration.
-    /// Each gateway capability defines data sources for a gateway. A capability configuration
-    /// can contain multiple data source configurations. If you define OPC-UA sources for a gateway in
-    /// the IoT SiteWise console, all of your OPC-UA sources are stored in one capability configuration. To
-    /// list all capability configurations for a gateway, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGateway.html">DescribeGateway</a>.</p>
+    /// <p>Updates a gateway capability configuration or defines a new capability configuration. Each gateway capability defines data sources for a gateway. A capability configuration can contain multiple data source configurations. If you define OPC-UA sources for a gateway in the IoT SiteWise console, all of your OPC-UA sources are stored in one capability configuration. To list all capability configurations for a gateway, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGateway.html">DescribeGateway</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateGatewayCapabilityConfiguration<
         C = aws_smithy_client::erase::DynConnector,
@@ -7575,20 +7060,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_gateway_id(input);
             self
         }
-        /// <p>The namespace of the gateway capability configuration to be updated.
-        /// For example, if you configure OPC-UA
-        /// sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace
-        /// <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as
-        /// <code>1</code>.</p>
+        /// <p>The namespace of the gateway capability configuration to be updated. For example, if you configure OPC-UA sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.</p>
         pub fn capability_namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.capability_namespace(input.into());
             self
         }
-        /// <p>The namespace of the gateway capability configuration to be updated.
-        /// For example, if you configure OPC-UA
-        /// sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace
-        /// <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as
-        /// <code>1</code>.</p>
+        /// <p>The namespace of the gateway capability configuration to be updated. For example, if you configure OPC-UA sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.</p>
         pub fn set_capability_namespace(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7596,14 +7073,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_capability_namespace(input);
             self
         }
-        /// <p>The JSON document that defines the configuration for the gateway capability. For more
-        /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli">Configuring data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The JSON document that defines the configuration for the gateway capability. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli">Configuring data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn capability_configuration(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.capability_configuration(input.into());
             self
         }
-        /// <p>The JSON document that defines the configuration for the gateway capability. For more
-        /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli">Configuring data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The JSON document that defines the configuration for the gateway capability. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli">Configuring data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_capability_configuration(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7719,12 +7194,8 @@ pub mod fluent_builders {
         }
         /// <p>Contains an image that is one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>An image file. Choose this option to upload a new image.</p>
-        /// </li>
-        /// <li>
-        /// <p>The ID of an existing image. Choose this option to keep an existing image.</p>
-        /// </li>
+        /// <li> <p>An image file. Choose this option to upload a new image.</p> </li>
+        /// <li> <p>The ID of an existing image. Choose this option to keep an existing image.</p> </li>
         /// </ul>
         pub fn portal_logo_image(mut self, input: crate::model::Image) -> Self {
             self.inner = self.inner.portal_logo_image(input);
@@ -7732,12 +7203,8 @@ pub mod fluent_builders {
         }
         /// <p>Contains an image that is one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>An image file. Choose this option to upload a new image.</p>
-        /// </li>
-        /// <li>
-        /// <p>The ID of an existing image. Choose this option to keep an existing image.</p>
-        /// </li>
+        /// <li> <p>An image file. Choose this option to upload a new image.</p> </li>
+        /// <li> <p>The ID of an existing image. Choose this option to keep an existing image.</p> </li>
         /// </ul>
         pub fn set_portal_logo_image(
             mut self,
@@ -7746,16 +7213,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_portal_logo_image(input);
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your IoT SiteWise
-        /// resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the
-        /// <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your IoT SiteWise
-        /// resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the
-        /// <i>IoT SiteWise User Guide</i>.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
@@ -7783,16 +7246,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_notification_sender_email(input);
             self
         }
-        /// <p>Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal.
-        /// You can use the alarm to monitor an asset property and get notified when the asset property value is outside a specified range.
-        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>
+        /// <p>Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal. You can use the alarm to monitor an asset property and get notified when the asset property value is outside a specified range. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>
         pub fn alarms(mut self, input: crate::model::Alarms) -> Self {
             self.inner = self.inner.alarms(input);
             self
         }
-        /// <p>Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal.
-        /// You can use the alarm to monitor an asset property and get notified when the asset property value is outside a specified range.
-        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>
+        /// <p>Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal. You can use the alarm to monitor an asset property and get notified when the asset property value is outside a specified range. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>
         pub fn set_alarms(mut self, input: std::option::Option<crate::model::Alarms>) -> Self {
             self.inner = self.inner.set_alarms(input);
             self

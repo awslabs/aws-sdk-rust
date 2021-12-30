@@ -363,8 +363,7 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `CreateApp`.
     ///
-    /// <p>Creates an application. An application consists of one or more server groups. Each
-    /// server group contain one or more servers.</p>
+    /// <p>Creates an application. An application consists of one or more server groups. Each server group contain one or more servers.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateApp<
         C = aws_smithy_client::erase::DynConnector,
@@ -451,14 +450,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_role_name(input);
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of
-        /// application creation.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of application creation.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_token(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of
-        /// application creation.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of application creation.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_client_token(input);
             self
@@ -500,9 +497,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateReplicationJob`.
     ///
-    /// <p>Creates a replication job. The replication job schedules periodic replication runs
-    /// to replicate your server to AWS. Each replication run creates an Amazon Machine Image
-    /// (AMI).</p>
+    /// <p>Creates a replication job. The replication job schedules periodic replication runs to replicate your server to AWS. Each replication run creates an Amazon Machine Image (AMI).</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateReplicationJob<
         C = aws_smithy_client::erase::DynConnector,
@@ -602,14 +597,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_run_once(input);
             self
         }
-        /// <p>The license type to be used for the AMI created by a successful replication
-        /// run.</p>
+        /// <p>The license type to be used for the AMI created by a successful replication run.</p>
         pub fn license_type(mut self, input: crate::model::LicenseType) -> Self {
             self.inner = self.inner.license_type(input);
             self
         }
-        /// <p>The license type to be used for the AMI created by a successful replication
-        /// run.</p>
+        /// <p>The license type to be used for the AMI created by a successful replication run.</p>
         pub fn set_license_type(
             mut self,
             input: std::option::Option<crate::model::LicenseType>,
@@ -637,14 +630,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The maximum number of SMS-created AMIs to retain. The oldest is deleted after the
-        /// maximum number is reached and a new AMI is created.</p>
+        /// <p>The maximum number of SMS-created AMIs to retain. The oldest is deleted after the maximum number is reached and a new AMI is created.</p>
         pub fn number_of_recent_amis_to_keep(mut self, input: i32) -> Self {
             self.inner = self.inner.number_of_recent_amis_to_keep(input);
             self
         }
-        /// <p>The maximum number of SMS-created AMIs to retain. The oldest is deleted after the
-        /// maximum number is reached and a new AMI is created.</p>
+        /// <p>The maximum number of SMS-created AMIs to retain. The oldest is deleted after the maximum number is reached and a new AMI is created.</p>
         pub fn set_number_of_recent_amis_to_keep(
             mut self,
             input: std::option::Option<i32>,
@@ -662,46 +653,26 @@ pub mod fluent_builders {
             self.inner = self.inner.set_encrypted(input);
             self
         }
-        /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs.
-        /// This value can be any of the following:</p>
+        /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>KMS key ID</p>
-        /// </li>
-        /// <li>
-        /// <p>KMS key alias</p>
-        /// </li>
-        /// <li>
-        /// <p>ARN referring to the KMS key ID</p>
-        /// </li>
-        /// <li>
-        /// <p>ARN referring to the KMS key alias</p>
-        /// </li>
+        /// <li> <p>KMS key ID</p> </li>
+        /// <li> <p>KMS key alias</p> </li>
+        /// <li> <p>ARN referring to the KMS key ID</p> </li>
+        /// <li> <p>ARN referring to the KMS key alias</p> </li>
         /// </ul>
-        /// <p> If encrypted is <i>true</i> but a KMS key ID is not specified, the
-        /// customer's default KMS key for Amazon EBS is used. </p>
+        /// <p> If encrypted is <i>true</i> but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used. </p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_key_id(input.into());
             self
         }
-        /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs.
-        /// This value can be any of the following:</p>
+        /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>KMS key ID</p>
-        /// </li>
-        /// <li>
-        /// <p>KMS key alias</p>
-        /// </li>
-        /// <li>
-        /// <p>ARN referring to the KMS key ID</p>
-        /// </li>
-        /// <li>
-        /// <p>ARN referring to the KMS key alias</p>
-        /// </li>
+        /// <li> <p>KMS key ID</p> </li>
+        /// <li> <p>KMS key alias</p> </li>
+        /// <li> <p>ARN referring to the KMS key ID</p> </li>
+        /// <li> <p>ARN referring to the KMS key alias</p> </li>
         /// </ul>
-        /// <p> If encrypted is <i>true</i> but a KMS key ID is not specified, the
-        /// customer's default KMS key for Amazon EBS is used. </p>
+        /// <p> If encrypted is <i>true</i> but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used. </p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_kms_key_id(input);
             self
@@ -709,8 +680,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteApp`.
     ///
-    /// <p>Deletes the specified application. Optionally deletes the launched stack associated with
-    /// the application and all AWS SMS replication jobs for servers in the application.</p>
+    /// <p>Deletes the specified application. Optionally deletes the launched stack associated with the application and all AWS SMS replication jobs for servers in the application.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteApp<
         C = aws_smithy_client::erase::DynConnector,
@@ -777,26 +747,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_app_id(input);
             self
         }
-        /// <p>Indicates whether to stop all replication jobs corresponding to the servers
-        /// in the application while deleting the application.</p>
+        /// <p>Indicates whether to stop all replication jobs corresponding to the servers in the application while deleting the application.</p>
         pub fn force_stop_app_replication(mut self, input: bool) -> Self {
             self.inner = self.inner.force_stop_app_replication(input);
             self
         }
-        /// <p>Indicates whether to stop all replication jobs corresponding to the servers
-        /// in the application while deleting the application.</p>
+        /// <p>Indicates whether to stop all replication jobs corresponding to the servers in the application while deleting the application.</p>
         pub fn set_force_stop_app_replication(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_force_stop_app_replication(input);
             self
         }
-        /// <p>Indicates whether to terminate the stack corresponding to the
-        /// application while deleting the application.</p>
+        /// <p>Indicates whether to terminate the stack corresponding to the application while deleting the application.</p>
         pub fn force_terminate_app(mut self, input: bool) -> Self {
             self.inner = self.inner.force_terminate_app(input);
             self
         }
-        /// <p>Indicates whether to terminate the stack corresponding to the
-        /// application while deleting the application.</p>
+        /// <p>Indicates whether to terminate the stack corresponding to the application while deleting the application.</p>
         pub fn set_force_terminate_app(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_force_terminate_app(input);
             self
@@ -1015,9 +981,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteReplicationJob`.
     ///
     /// <p>Deletes the specified replication job.</p>
-    /// <p>After you delete a replication job, there are no further replication runs. AWS
-    /// deletes the contents of the Amazon S3 bucket used to store AWS SMS artifacts. The AMIs created
-    /// by the replication runs are not deleted.</p>
+    /// <p>After you delete a replication job, there are no further replication runs. AWS deletes the contents of the Amazon S3 bucket used to store AWS SMS artifacts. The AMIs created by the replication runs are not deleted.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteReplicationJob<
         C = aws_smithy_client::erase::DynConnector,
@@ -1151,8 +1115,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DisassociateConnector`.
     ///
     /// <p>Disassociates the specified connector from AWS SMS.</p>
-    /// <p>After you disassociate a connector, it is no longer available to support
-    /// replication jobs.</p>
+    /// <p>After you disassociate a connector, it is no longer available to support replication jobs.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DisassociateConnector<
         C = aws_smithy_client::erase::DynConnector,
@@ -1222,8 +1185,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GenerateChangeSet`.
     ///
-    /// <p>Generates a target change set for a currently launched stack and writes it to an Amazon S3
-    /// object in the customer’s Amazon S3 bucket.</p>
+    /// <p>Generates a target change set for a currently launched stack and writes it to an Amazon S3 object in the customer’s Amazon S3 bucket.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GenerateChangeSet<
         C = aws_smithy_client::erase::DynConnector,
@@ -1306,8 +1268,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GenerateTemplate`.
     ///
-    /// <p>Generates an AWS CloudFormation template based on the current launch configuration and writes it to
-    /// an Amazon S3 object in the customer’s Amazon S3 bucket.</p>
+    /// <p>Generates an AWS CloudFormation template based on the current launch configuration and writes it to an Amazon S3 object in the customer’s Amazon S3 bucket.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GenerateTemplate<
         C = aws_smithy_client::erase::DynConnector,
@@ -1530,8 +1491,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetAppReplicationConfiguration`.
     ///
-    /// <p>Retrieves the application replication configuration associated with the specified
-    /// application.</p>
+    /// <p>Retrieves the application replication configuration associated with the specified application.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetAppReplicationConfiguration<
         C = aws_smithy_client::erase::DynConnector,
@@ -1808,16 +1768,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return in a single call. The default value is 50.
-        /// To retrieve the remaining results, make another call with the returned
-        /// <code>NextToken</code> value.</p>
+        /// <p>The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return in a single call. The default value is 50.
-        /// To retrieve the remaining results, make another call with the returned
-        /// <code>NextToken</code> value.</p>
+        /// <p>The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -1905,16 +1861,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return in a single call. The default value is 50.
-        /// To retrieve the remaining results, make another call with the returned
-        /// <code>NextToken</code> value.</p>
+        /// <p>The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return in a single call. The default value is 50.
-        /// To retrieve the remaining results, make another call with the returned
-        /// <code>NextToken</code> value.</p>
+        /// <p>The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2002,16 +1954,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return in a single call. The default value is 50.
-        /// To retrieve the remaining results, make another call with the returned
-        /// <code>NextToken</code> value.</p>
+        /// <p>The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return in a single call. The default value is 50.
-        /// To retrieve the remaining results, make another call with the returned
-        /// <code>NextToken</code> value.</p>
+        /// <p>The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2020,7 +1968,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetServers`.
     ///
     /// <p>Describes the servers in your server catalog.</p>
-    /// <p>Before you can describe your servers, you must import them using <a>ImportServerCatalog</a>.</p>
+    /// <p>Before you can describe your servers, you must import them using <code>ImportServerCatalog</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetServers<
         C = aws_smithy_client::erase::DynConnector,
@@ -2087,16 +2035,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return in a single call. The default value is 50.
-        /// To retrieve the remaining results, make another call with the returned
-        /// <code>NextToken</code> value.</p>
+        /// <p>The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return in a single call. The default value is 50.
-        /// To retrieve the remaining results, make another call with the returned
-        /// <code>NextToken</code> value.</p>
+        /// <p>The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2178,16 +2122,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the service role. If you omit this parameter, we create a service-linked role
-        /// for AWS Migration Hub in your account. Otherwise, the role that you provide must have the <a href="https://docs.aws.amazon.com/migrationhub/latest/ug/new-customer-setup.html#sms-managed">policy
-        /// and trust policy</a> described in the <i>AWS Migration Hub User Guide</i>.</p>
+        /// <p>The name of the service role. If you omit this parameter, we create a service-linked role for AWS Migration Hub in your account. Otherwise, the role that you provide must have the <a href="https://docs.aws.amazon.com/migrationhub/latest/ug/new-customer-setup.html#sms-managed">policy and trust policy</a> described in the <i>AWS Migration Hub User Guide</i>.</p>
         pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_name(input.into());
             self
         }
-        /// <p>The name of the service role. If you omit this parameter, we create a service-linked role
-        /// for AWS Migration Hub in your account. Otherwise, the role that you provide must have the <a href="https://docs.aws.amazon.com/migrationhub/latest/ug/new-customer-setup.html#sms-managed">policy
-        /// and trust policy</a> described in the <i>AWS Migration Hub User Guide</i>.</p>
+        /// <p>The name of the service role. If you omit this parameter, we create a service-linked role for AWS Migration Hub in your account. Otherwise, the role that you provide must have the <a href="https://docs.aws.amazon.com/migrationhub/latest/ug/new-customer-setup.html#sms-managed">policy and trust policy</a> described in the <i>AWS Migration Hub User Guide</i>.</p>
         pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_name(input);
             self
@@ -2195,10 +2135,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ImportServerCatalog`.
     ///
-    /// <p>Gathers a complete list of on-premises servers. Connectors must be installed and
-    /// monitoring all servers to import.</p>
-    /// <p>This call returns immediately, but might take additional time to retrieve all the
-    /// servers.</p>
+    /// <p>Gathers a complete list of on-premises servers. Connectors must be installed and monitoring all servers to import.</p>
+    /// <p>This call returns immediately, but might take additional time to retrieve all the servers.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ImportServerCatalog<
         C = aws_smithy_client::erase::DynConnector,
@@ -2412,16 +2350,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of results to return in a single call. The default value is 100. To
-        /// retrieve the remaining results, make another call with the returned
-        /// <code>NextToken</code> value. </p>
+        /// <p>The maximum number of results to return in a single call. The default value is 100. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return in a single call. The default value is 100. To
-        /// retrieve the remaining results, make another call with the returned
-        /// <code>NextToken</code> value. </p>
+        /// <p>The maximum number of results to return in a single call. The default value is 100. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2579,14 +2513,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_app_id(input);
             self
         }
-        /// <p>The name of service role in the customer's account that AWS CloudFormation uses to launch the
-        /// application.</p>
+        /// <p>The name of service role in the customer's account that AWS CloudFormation uses to launch the application.</p>
         pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_name(input.into());
             self
         }
-        /// <p>The name of service role in the customer's account that AWS CloudFormation uses to launch the
-        /// application.</p>
+        /// <p>The name of service role in the customer's account that AWS CloudFormation uses to launch the application.</p>
         pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_name(input);
             self
@@ -2830,8 +2762,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartAppReplication`.
     ///
-    /// <p>Starts replicating the specified application by creating replication jobs for each server in the
-    /// application.</p>
+    /// <p>Starts replicating the specified application by creating replication jobs for each server in the application.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartAppReplication<
         C = aws_smithy_client::erase::DynConnector,
@@ -2981,11 +2912,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartOnDemandReplicationRun`.
     ///
-    /// <p>Starts an on-demand replication run for the specified replication job. This
-    /// replication run starts immediately. This replication run is in addition to the ones
-    /// already scheduled.</p>
-    /// <p>There is a limit on the number of on-demand replications runs that you can request
-    /// in a 24-hour period.</p>
+    /// <p>Starts an on-demand replication run for the specified replication job. This replication run starts immediately. This replication run is in addition to the ones already scheduled.</p>
+    /// <p>There is a limit on the number of on-demand replications runs that you can request in a 24-hour period.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartOnDemandReplicationRun<
         C = aws_smithy_client::erase::DynConnector,
@@ -3068,8 +2996,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StopAppReplication`.
     ///
-    /// <p>Stops replicating the specified application by deleting the replication job for each server in
-    /// the application.</p>
+    /// <p>Stops replicating the specified application by deleting the replication job for each server in the application.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopAppReplication<
         C = aws_smithy_client::erase::DynConnector,
@@ -3439,14 +3366,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_replication_run_start_time(input);
             self
         }
-        /// <p>The license type to be used for the AMI created by a successful replication
-        /// run.</p>
+        /// <p>The license type to be used for the AMI created by a successful replication run.</p>
         pub fn license_type(mut self, input: crate::model::LicenseType) -> Self {
             self.inner = self.inner.license_type(input);
             self
         }
-        /// <p>The license type to be used for the AMI created by a successful replication
-        /// run.</p>
+        /// <p>The license type to be used for the AMI created by a successful replication run.</p>
         pub fn set_license_type(
             mut self,
             input: std::option::Option<crate::model::LicenseType>,
@@ -3474,14 +3399,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The maximum number of SMS-created AMIs to retain. The oldest is deleted after the
-        /// maximum number is reached and a new AMI is created.</p>
+        /// <p>The maximum number of SMS-created AMIs to retain. The oldest is deleted after the maximum number is reached and a new AMI is created.</p>
         pub fn number_of_recent_amis_to_keep(mut self, input: i32) -> Self {
             self.inner = self.inner.number_of_recent_amis_to_keep(input);
             self
         }
-        /// <p>The maximum number of SMS-created AMIs to retain. The oldest is deleted after the
-        /// maximum number is reached and a new AMI is created.</p>
+        /// <p>The maximum number of SMS-created AMIs to retain. The oldest is deleted after the maximum number is reached and a new AMI is created.</p>
         pub fn set_number_of_recent_amis_to_keep(
             mut self,
             input: std::option::Option<i32>,
@@ -3489,58 +3412,36 @@ pub mod fluent_builders {
             self.inner = self.inner.set_number_of_recent_amis_to_keep(input);
             self
         }
-        /// <p>When true, the replication job produces encrypted AMIs. For more information,
-        /// <code>KmsKeyId</code>.</p>
+        /// <p>When true, the replication job produces encrypted AMIs. For more information, <code>KmsKeyId</code>.</p>
         pub fn encrypted(mut self, input: bool) -> Self {
             self.inner = self.inner.encrypted(input);
             self
         }
-        /// <p>When true, the replication job produces encrypted AMIs. For more information,
-        /// <code>KmsKeyId</code>.</p>
+        /// <p>When true, the replication job produces encrypted AMIs. For more information, <code>KmsKeyId</code>.</p>
         pub fn set_encrypted(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_encrypted(input);
             self
         }
-        /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs.
-        /// This value can be any of the following:</p>
+        /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>KMS key ID</p>
-        /// </li>
-        /// <li>
-        /// <p>KMS key alias</p>
-        /// </li>
-        /// <li>
-        /// <p>ARN referring to the KMS key ID</p>
-        /// </li>
-        /// <li>
-        /// <p>ARN referring to the KMS key alias</p>
-        /// </li>
+        /// <li> <p>KMS key ID</p> </li>
+        /// <li> <p>KMS key alias</p> </li>
+        /// <li> <p>ARN referring to the KMS key ID</p> </li>
+        /// <li> <p>ARN referring to the KMS key alias</p> </li>
         /// </ul>
-        /// <p>If encrypted is enabled but a KMS key ID is not specified, the
-        /// customer's default KMS key for Amazon EBS is used.</p>
+        /// <p>If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_key_id(input.into());
             self
         }
-        /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs.
-        /// This value can be any of the following:</p>
+        /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>KMS key ID</p>
-        /// </li>
-        /// <li>
-        /// <p>KMS key alias</p>
-        /// </li>
-        /// <li>
-        /// <p>ARN referring to the KMS key ID</p>
-        /// </li>
-        /// <li>
-        /// <p>ARN referring to the KMS key alias</p>
-        /// </li>
+        /// <li> <p>KMS key ID</p> </li>
+        /// <li> <p>KMS key alias</p> </li>
+        /// <li> <p>ARN referring to the KMS key ID</p> </li>
+        /// <li> <p>ARN referring to the KMS key alias</p> </li>
         /// </ul>
-        /// <p>If encrypted is enabled but a KMS key ID is not specified, the
-        /// customer's default KMS key for Amazon EBS is used.</p>
+        /// <p>If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_kms_key_id(input);
             self

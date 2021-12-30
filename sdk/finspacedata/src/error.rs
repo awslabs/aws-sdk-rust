@@ -16,8 +16,7 @@ pub enum CreateChangesetErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request conflicts with an existing resource.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>A limit has exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -167,8 +166,7 @@ pub enum CreateDatasetErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request conflicts with an existing resource.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>A limit has exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -313,8 +311,7 @@ pub struct CreateDataViewError {
 pub enum CreateDataViewErrorKind {
     /// <p>The request conflicts with an existing resource.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>A limit has exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -455,8 +452,7 @@ pub enum DeleteDatasetErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request conflicts with an existing resource.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>A limit has exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -603,8 +599,7 @@ pub enum GetChangesetErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request conflicts with an existing resource.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>One or more resources can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -740,8 +735,7 @@ pub enum GetDatasetErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request conflicts with an existing resource.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>One or more resources can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -872,8 +866,7 @@ pub struct GetDataViewError {
 pub enum GetDataViewErrorKind {
     /// <p>The request conflicts with an existing resource.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>One or more resources can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -998,8 +991,7 @@ pub struct GetProgrammaticAccessCredentialsError {
 pub enum GetProgrammaticAccessCredentialsErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -1136,8 +1128,7 @@ pub struct GetWorkingLocationError {
 pub enum GetWorkingLocationErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -1265,8 +1256,7 @@ pub enum ListChangesetsErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request conflicts with an existing resource.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>One or more resources can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1403,8 +1393,7 @@ pub struct ListDatasetsError {
 pub enum ListDatasetsErrorKind {
     /// <p>The request conflicts with an existing resource.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>One or more resources can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1532,8 +1521,7 @@ pub struct ListDataViewsError {
 pub enum ListDataViewsErrorKind {
     /// <p>The request conflicts with an existing resource.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>One or more resources can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1663,8 +1651,7 @@ pub enum UpdateChangesetErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request conflicts with an existing resource.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>One or more resources can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1803,8 +1790,7 @@ pub enum UpdateDatasetErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request conflicts with an existing resource.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>The request processing has failed because of an unknown error, exception or
-    /// failure.</p>
+    /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>One or more resources can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -2115,8 +2101,7 @@ impl ResourceNotFoundException {
     }
 }
 
-/// <p>The request processing has failed because of an unknown error, exception or
-/// failure.</p>
+/// <p>The request processing has failed because of an unknown error, exception or failure.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerException {

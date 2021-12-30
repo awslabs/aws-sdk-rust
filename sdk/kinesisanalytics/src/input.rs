@@ -38,9 +38,7 @@ pub mod add_application_cloud_watch_logging_option_input {
             self.current_application_version_id = input;
             self
         }
-        /// <p>Provides the CloudWatch log stream Amazon Resource Name (ARN) and the IAM role ARN.
-        /// Note: To write application messages to CloudWatch, the IAM role that is used must have
-        /// the <code>PutLogEvents</code> policy action enabled.</p>
+        /// <p>Provides the CloudWatch log stream Amazon Resource Name (ARN) and the IAM role ARN. Note: To write application messages to CloudWatch, the IAM role that is used must have the <code>PutLogEvents</code> policy action enabled.</p>
         pub fn cloud_watch_logging_option(
             mut self,
             input: crate::model::CloudWatchLoggingOption,
@@ -48,9 +46,7 @@ pub mod add_application_cloud_watch_logging_option_input {
             self.cloud_watch_logging_option = Some(input);
             self
         }
-        /// <p>Provides the CloudWatch log stream Amazon Resource Name (ARN) and the IAM role ARN.
-        /// Note: To write application messages to CloudWatch, the IAM role that is used must have
-        /// the <code>PutLogEvents</code> policy action enabled.</p>
+        /// <p>Provides the CloudWatch log stream Amazon Resource Name (ARN) and the IAM role ARN. Note: To write application messages to CloudWatch, the IAM role that is used must have the <code>PutLogEvents</code> policy action enabled.</p>
         pub fn set_cloud_watch_logging_option(
             mut self,
             input: std::option::Option<crate::model::CloudWatchLoggingOption>,
@@ -222,14 +218,12 @@ pub mod add_application_input_input {
             self.application_name = input;
             self
         }
-        /// <p>Current version of your Amazon Kinesis Analytics application. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation
-        /// to find the current application version.</p>
+        /// <p>Current version of your Amazon Kinesis Analytics application. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to find the current application version.</p>
         pub fn current_application_version_id(mut self, input: i64) -> Self {
             self.current_application_version_id = Some(input);
             self
         }
-        /// <p>Current version of your Amazon Kinesis Analytics application. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation
-        /// to find the current application version.</p>
+        /// <p>Current version of your Amazon Kinesis Analytics application. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to find the current application version.</p>
         pub fn set_current_application_version_id(
             mut self,
             input: std::option::Option<i64>,
@@ -410,16 +404,12 @@ pub mod add_application_input_processing_configuration_input {
             self.application_name = input;
             self
         }
-        /// <p>Version of the application to which you want to add the input processing configuration. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
-        /// operation to get the current application version.  If the version specified is not the current version, the
-        /// <code>ConcurrentModificationException</code> is returned.</p>
+        /// <p>Version of the application to which you want to add the input processing configuration. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
         pub fn current_application_version_id(mut self, input: i64) -> Self {
             self.current_application_version_id = Some(input);
             self
         }
-        /// <p>Version of the application to which you want to add the input processing configuration. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
-        /// operation to get the current application version.  If the version specified is not the current version, the
-        /// <code>ConcurrentModificationException</code> is returned.</p>
+        /// <p>Version of the application to which you want to add the input processing configuration. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
         pub fn set_current_application_version_id(
             mut self,
             input: std::option::Option<i64>,
@@ -427,14 +417,12 @@ pub mod add_application_input_processing_configuration_input {
             self.current_application_version_id = input;
             self
         }
-        /// <p>The ID of the input configuration to add the input processing configuration to. You
-        /// can get a list of the input IDs for an application using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation.</p>
+        /// <p>The ID of the input configuration to add the input processing configuration to. You can get a list of the input IDs for an application using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation.</p>
         pub fn input_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.input_id = Some(input.into());
             self
         }
-        /// <p>The ID of the input configuration to add the input processing configuration to. You
-        /// can get a list of the input IDs for an application using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation.</p>
+        /// <p>The ID of the input configuration to add the input processing configuration to. You can get a list of the input IDs for an application using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation.</p>
         pub fn set_input_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.input_id = input;
             self
@@ -623,18 +611,12 @@ pub mod add_application_output_input {
             self.application_name = input;
             self
         }
-        /// <p>Version of the application to which you want to add the output configuration. You
-        /// can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current
-        /// application version. If the version specified is not the current version, the
-        /// <code>ConcurrentModificationException</code> is returned. </p>
+        /// <p>Version of the application to which you want to add the output configuration. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned. </p>
         pub fn current_application_version_id(mut self, input: i64) -> Self {
             self.current_application_version_id = Some(input);
             self
         }
-        /// <p>Version of the application to which you want to add the output configuration. You
-        /// can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current
-        /// application version. If the version specified is not the current version, the
-        /// <code>ConcurrentModificationException</code> is returned. </p>
+        /// <p>Version of the application to which you want to add the output configuration. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned. </p>
         pub fn set_current_application_version_id(
             mut self,
             input: std::option::Option<i64>,
@@ -642,18 +624,12 @@ pub mod add_application_output_input {
             self.current_application_version_id = input;
             self
         }
-        /// <p>An array of objects, each describing one output configuration. In the output
-        /// configuration, you specify the name of an in-application stream, a destination (that is,
-        /// an Amazon Kinesis stream, an Amazon Kinesis Firehose delivery stream, or an AWS Lambda
-        /// function), and record the formation to use when writing to the destination.</p>
+        /// <p>An array of objects, each describing one output configuration. In the output configuration, you specify the name of an in-application stream, a destination (that is, an Amazon Kinesis stream, an Amazon Kinesis Firehose delivery stream, or an AWS Lambda function), and record the formation to use when writing to the destination.</p>
         pub fn output(mut self, input: crate::model::Output) -> Self {
             self.output = Some(input);
             self
         }
-        /// <p>An array of objects, each describing one output configuration. In the output
-        /// configuration, you specify the name of an in-application stream, a destination (that is,
-        /// an Amazon Kinesis stream, an Amazon Kinesis Firehose delivery stream, or an AWS Lambda
-        /// function), and record the formation to use when writing to the destination.</p>
+        /// <p>An array of objects, each describing one output configuration. In the output configuration, you specify the name of an in-application stream, a destination (that is, an Amazon Kinesis stream, an Amazon Kinesis Firehose delivery stream, or an AWS Lambda function), and record the formation to use when writing to the destination.</p>
         pub fn set_output(mut self, input: std::option::Option<crate::model::Output>) -> Self {
             self.output = input;
             self
@@ -821,18 +797,12 @@ pub mod add_application_reference_data_source_input {
             self.application_name = input;
             self
         }
-        /// <p>Version of the application for which you are adding the reference data source.
-        /// You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current application version.
-        /// If the version specified is not the current version, the
-        /// <code>ConcurrentModificationException</code> is returned.</p>
+        /// <p>Version of the application for which you are adding the reference data source. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
         pub fn current_application_version_id(mut self, input: i64) -> Self {
             self.current_application_version_id = Some(input);
             self
         }
-        /// <p>Version of the application for which you are adding the reference data source.
-        /// You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current application version.
-        /// If the version specified is not the current version, the
-        /// <code>ConcurrentModificationException</code> is returned.</p>
+        /// <p>Version of the application for which you are adding the reference data source. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
         pub fn set_current_application_version_id(
             mut self,
             input: std::option::Option<i64>,
@@ -1041,9 +1011,7 @@ pub mod create_application_input {
         ///
         /// <p>Use this parameter to configure the application input.</p>
         /// <p>You can configure your application to receive input from a single streaming source. In this configuration, you map this streaming source to an in-application stream that is created. Your application code can then query the in-application stream like a table (you can think of it as a constantly updating table).</p>
-        /// <p>For the streaming source, you provide its Amazon Resource Name (ARN) and format of
-        /// data on the stream (for example, JSON, CSV, etc.). You also must provide an IAM role
-        /// that Amazon Kinesis Analytics can assume to read this stream on your behalf.</p>
+        /// <p>For the streaming source, you provide its Amazon Resource Name (ARN) and format of data on the stream (for example, JSON, CSV, etc.). You also must provide an IAM role that Amazon Kinesis Analytics can assume to read this stream on your behalf.</p>
         /// <p>To create the in-application stream, you need to specify a schema to transform your data into a schematized version used in SQL. In the schema, you provide the necessary mapping of the data elements in the streaming source to record columns in the in-app stream.</p>
         pub fn inputs(mut self, input: crate::model::Input) -> Self {
             let mut v = self.inputs.unwrap_or_default();
@@ -1053,9 +1021,7 @@ pub mod create_application_input {
         }
         /// <p>Use this parameter to configure the application input.</p>
         /// <p>You can configure your application to receive input from a single streaming source. In this configuration, you map this streaming source to an in-application stream that is created. Your application code can then query the in-application stream like a table (you can think of it as a constantly updating table).</p>
-        /// <p>For the streaming source, you provide its Amazon Resource Name (ARN) and format of
-        /// data on the stream (for example, JSON, CSV, etc.). You also must provide an IAM role
-        /// that Amazon Kinesis Analytics can assume to read this stream on your behalf.</p>
+        /// <p>For the streaming source, you provide its Amazon Resource Name (ARN) and format of data on the stream (for example, JSON, CSV, etc.). You also must provide an IAM role that Amazon Kinesis Analytics can assume to read this stream on your behalf.</p>
         /// <p>To create the in-application stream, you need to specify a schema to transform your data into a schematized version used in SQL. In the schema, you provide the necessary mapping of the data elements in the streaming source to record columns in the in-app stream.</p>
         pub fn set_inputs(
             mut self,
@@ -1069,13 +1035,9 @@ pub mod create_application_input {
         /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
         ///
         /// <p>You can configure application output to write data from any of the in-application streams to up to three destinations.</p>
-        /// <p>These destinations can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery
-        /// streams, AWS Lambda destinations, or any combination of the three.</p>
-        /// <p>In the configuration, you specify the in-application stream name, the destination stream or Lambda function Amazon Resource Name (ARN), and the format to use when writing data. You must also provide an IAM role that Amazon Kinesis Analytics can assume to write to the
-        /// destination stream or Lambda function on your behalf.</p>
-        /// <p>In the output configuration, you also provide the output stream or Lambda function ARN. For stream destinations, you provide the format
-        /// of data in the stream (for example, JSON, CSV). You also must provide an IAM role that
-        /// Amazon Kinesis Analytics can assume to write to the stream or Lambda function on your behalf.</p>
+        /// <p>These destinations can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery streams, AWS Lambda destinations, or any combination of the three.</p>
+        /// <p>In the configuration, you specify the in-application stream name, the destination stream or Lambda function Amazon Resource Name (ARN), and the format to use when writing data. You must also provide an IAM role that Amazon Kinesis Analytics can assume to write to the destination stream or Lambda function on your behalf.</p>
+        /// <p>In the output configuration, you also provide the output stream or Lambda function ARN. For stream destinations, you provide the format of data in the stream (for example, JSON, CSV). You also must provide an IAM role that Amazon Kinesis Analytics can assume to write to the stream or Lambda function on your behalf.</p>
         pub fn outputs(mut self, input: crate::model::Output) -> Self {
             let mut v = self.outputs.unwrap_or_default();
             v.push(input);
@@ -1083,13 +1045,9 @@ pub mod create_application_input {
             self
         }
         /// <p>You can configure application output to write data from any of the in-application streams to up to three destinations.</p>
-        /// <p>These destinations can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery
-        /// streams, AWS Lambda destinations, or any combination of the three.</p>
-        /// <p>In the configuration, you specify the in-application stream name, the destination stream or Lambda function Amazon Resource Name (ARN), and the format to use when writing data. You must also provide an IAM role that Amazon Kinesis Analytics can assume to write to the
-        /// destination stream or Lambda function on your behalf.</p>
-        /// <p>In the output configuration, you also provide the output stream or Lambda function ARN. For stream destinations, you provide the format
-        /// of data in the stream (for example, JSON, CSV). You also must provide an IAM role that
-        /// Amazon Kinesis Analytics can assume to write to the stream or Lambda function on your behalf.</p>
+        /// <p>These destinations can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery streams, AWS Lambda destinations, or any combination of the three.</p>
+        /// <p>In the configuration, you specify the in-application stream name, the destination stream or Lambda function Amazon Resource Name (ARN), and the format to use when writing data. You must also provide an IAM role that Amazon Kinesis Analytics can assume to write to the destination stream or Lambda function on your behalf.</p>
+        /// <p>In the output configuration, you also provide the output stream or Lambda function ARN. For stream destinations, you provide the format of data in the stream (for example, JSON, CSV). You also must provide an IAM role that Amazon Kinesis Analytics can assume to write to the stream or Lambda function on your behalf.</p>
         pub fn set_outputs(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Output>>,
@@ -1101,9 +1059,7 @@ pub mod create_application_input {
         ///
         /// To override the contents of this collection use [`set_cloud_watch_logging_options`](Self::set_cloud_watch_logging_options).
         ///
-        /// <p>Use this parameter to configure a CloudWatch log stream to monitor application
-        /// configuration errors. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon
-        /// CloudWatch Logs</a>.</p>
+        /// <p>Use this parameter to configure a CloudWatch log stream to monitor application configuration errors. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon CloudWatch Logs</a>.</p>
         pub fn cloud_watch_logging_options(
             mut self,
             input: crate::model::CloudWatchLoggingOption,
@@ -1113,9 +1069,7 @@ pub mod create_application_input {
             self.cloud_watch_logging_options = Some(v);
             self
         }
-        /// <p>Use this parameter to configure a CloudWatch log stream to monitor application
-        /// configuration errors. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon
-        /// CloudWatch Logs</a>.</p>
+        /// <p>Use this parameter to configure a CloudWatch log stream to monitor application configuration errors. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon CloudWatch Logs</a>.</p>
         pub fn set_cloud_watch_logging_options(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CloudWatchLoggingOption>>,
@@ -1123,44 +1077,16 @@ pub mod create_application_input {
             self.cloud_watch_logging_options = input;
             self
         }
-        /// <p>One or more SQL statements that read input data, transform it, and generate output.
-        /// For example, you can write a SQL statement that reads data from one in-application
-        /// stream, generates a running average of the number of advertisement clicks by vendor, and
-        /// insert resulting rows in another in-application stream using pumps. For more information
-        /// about the typical pattern, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-app-code.html">Application
-        /// Code</a>. </p>
-        ///
-        /// <p>You can provide such series of SQL statements,
-        /// where output of one statement can be
-        /// used as the input for the next statement. You store
-        /// intermediate results by creating in-application streams and pumps.</p>
-        ///
-        /// <p>Note that the application code must create the streams with names
-        /// specified in the <code>Outputs</code>. For example,
-        /// if your <code>Outputs</code> defines output streams named
-        /// <code>ExampleOutputStream1</code> and <code>ExampleOutputStream2</code>,
-        /// then your application code must create these streams. </p>
+        /// <p>One or more SQL statements that read input data, transform it, and generate output. For example, you can write a SQL statement that reads data from one in-application stream, generates a running average of the number of advertisement clicks by vendor, and insert resulting rows in another in-application stream using pumps. For more information about the typical pattern, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-app-code.html">Application Code</a>. </p>
+        /// <p>You can provide such series of SQL statements, where output of one statement can be used as the input for the next statement. You store intermediate results by creating in-application streams and pumps.</p>
+        /// <p>Note that the application code must create the streams with names specified in the <code>Outputs</code>. For example, if your <code>Outputs</code> defines output streams named <code>ExampleOutputStream1</code> and <code>ExampleOutputStream2</code>, then your application code must create these streams. </p>
         pub fn application_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.application_code = Some(input.into());
             self
         }
-        /// <p>One or more SQL statements that read input data, transform it, and generate output.
-        /// For example, you can write a SQL statement that reads data from one in-application
-        /// stream, generates a running average of the number of advertisement clicks by vendor, and
-        /// insert resulting rows in another in-application stream using pumps. For more information
-        /// about the typical pattern, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-app-code.html">Application
-        /// Code</a>. </p>
-        ///
-        /// <p>You can provide such series of SQL statements,
-        /// where output of one statement can be
-        /// used as the input for the next statement. You store
-        /// intermediate results by creating in-application streams and pumps.</p>
-        ///
-        /// <p>Note that the application code must create the streams with names
-        /// specified in the <code>Outputs</code>. For example,
-        /// if your <code>Outputs</code> defines output streams named
-        /// <code>ExampleOutputStream1</code> and <code>ExampleOutputStream2</code>,
-        /// then your application code must create these streams. </p>
+        /// <p>One or more SQL statements that read input data, transform it, and generate output. For example, you can write a SQL statement that reads data from one in-application stream, generates a running average of the number of advertisement clicks by vendor, and insert resulting rows in another in-application stream using pumps. For more information about the typical pattern, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-app-code.html">Application Code</a>. </p>
+        /// <p>You can provide such series of SQL statements, where output of one statement can be used as the input for the next statement. You store intermediate results by creating in-application streams and pumps.</p>
+        /// <p>Note that the application code must create the streams with names specified in the <code>Outputs</code>. For example, if your <code>Outputs</code> defines output streams named <code>ExampleOutputStream1</code> and <code>ExampleOutputStream2</code>, then your application code must create these streams. </p>
         pub fn set_application_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1172,16 +1098,14 @@ pub mod create_application_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an application. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50.
-        /// For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-tagging.html">Using Tagging</a>.</p>
+        /// <p>A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an application. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-tagging.html">Using Tagging</a>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an application. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50.
-        /// For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-tagging.html">Using Tagging</a>.</p>
+        /// <p>A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an application. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-tagging.html">Using Tagging</a>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1353,16 +1277,12 @@ pub mod delete_application_input {
             self.application_name = input;
             self
         }
-        /// <p>
-        /// You can use the <code>DescribeApplication</code> operation to get this value.
-        /// </p>
+        /// <p> You can use the <code>DescribeApplication</code> operation to get this value. </p>
         pub fn create_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_timestamp = Some(input);
             self
         }
-        /// <p>
-        /// You can use the <code>DescribeApplication</code> operation to get this value.
-        /// </p>
+        /// <p> You can use the <code>DescribeApplication</code> operation to get this value. </p>
         pub fn set_create_timestamp(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -1543,8 +1463,7 @@ pub mod delete_application_cloud_watch_logging_option_input {
             self.current_application_version_id = input;
             self
         }
-        /// <p>The <code>CloudWatchLoggingOptionId</code> of the CloudWatch logging option to
-        /// delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation. </p>
+        /// <p>The <code>CloudWatchLoggingOptionId</code> of the CloudWatch logging option to delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation. </p>
         pub fn cloud_watch_logging_option_id(
             mut self,
             input: impl Into<std::string::String>,
@@ -1552,8 +1471,7 @@ pub mod delete_application_cloud_watch_logging_option_input {
             self.cloud_watch_logging_option_id = Some(input.into());
             self
         }
-        /// <p>The <code>CloudWatchLoggingOptionId</code> of the CloudWatch logging option to
-        /// delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation. </p>
+        /// <p>The <code>CloudWatchLoggingOptionId</code> of the CloudWatch logging option to delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation. </p>
         pub fn set_cloud_watch_logging_option_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1740,14 +1658,12 @@ pub mod delete_application_input_processing_configuration_input {
             self.current_application_version_id = input;
             self
         }
-        /// <p>The ID of the input configuration from which to delete the input processing
-        /// configuration. You can get a list of the input IDs for an application by using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation.</p>
+        /// <p>The ID of the input configuration from which to delete the input processing configuration. You can get a list of the input IDs for an application by using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation.</p>
         pub fn input_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.input_id = Some(input.into());
             self
         }
-        /// <p>The ID of the input configuration from which to delete the input processing
-        /// configuration. You can get a list of the input IDs for an application by using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation.</p>
+        /// <p>The ID of the input configuration from which to delete the input processing configuration. You can get a list of the input IDs for an application by using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation.</p>
         pub fn set_input_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.input_id = input;
             self
@@ -1919,20 +1835,12 @@ pub mod delete_application_output_input {
             self.application_name = input;
             self
         }
-        /// <p>Amazon Kinesis Analytics application version.
-        /// You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current application version.
-        /// If the version specified is not the current version, the
-        /// <code>ConcurrentModificationException</code> is returned.
-        /// </p>
+        /// <p>Amazon Kinesis Analytics application version. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned. </p>
         pub fn current_application_version_id(mut self, input: i64) -> Self {
             self.current_application_version_id = Some(input);
             self
         }
-        /// <p>Amazon Kinesis Analytics application version.
-        /// You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current application version.
-        /// If the version specified is not the current version, the
-        /// <code>ConcurrentModificationException</code> is returned.
-        /// </p>
+        /// <p>Amazon Kinesis Analytics application version. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned. </p>
         pub fn set_current_application_version_id(
             mut self,
             input: std::option::Option<i64>,
@@ -1940,26 +1848,12 @@ pub mod delete_application_output_input {
             self.current_application_version_id = input;
             self
         }
-        /// <p>The ID of the configuration to delete.
-        /// Each output configuration that is added to the application, either when the application is
-        /// created or later using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationOutput.html">AddApplicationOutput</a> operation, has a unique ID.
-        /// You need to provide the ID to uniquely identify the output configuration that you want to
-        /// delete from the application configuration.
-        /// You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the specific
-        /// <code>OutputId</code>.
-        /// </p>
+        /// <p>The ID of the configuration to delete. Each output configuration that is added to the application, either when the application is created or later using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationOutput.html">AddApplicationOutput</a> operation, has a unique ID. You need to provide the ID to uniquely identify the output configuration that you want to delete from the application configuration. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the specific <code>OutputId</code>. </p>
         pub fn output_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.output_id = Some(input.into());
             self
         }
-        /// <p>The ID of the configuration to delete.
-        /// Each output configuration that is added to the application, either when the application is
-        /// created or later using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationOutput.html">AddApplicationOutput</a> operation, has a unique ID.
-        /// You need to provide the ID to uniquely identify the output configuration that you want to
-        /// delete from the application configuration.
-        /// You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the specific
-        /// <code>OutputId</code>.
-        /// </p>
+        /// <p>The ID of the configuration to delete. Each output configuration that is added to the application, either when the application is created or later using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationOutput.html">AddApplicationOutput</a> operation, has a unique ID. You need to provide the ID to uniquely identify the output configuration that you want to delete from the application configuration. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the specific <code>OutputId</code>. </p>
         pub fn set_output_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.output_id = input;
             self
@@ -2128,18 +2022,12 @@ pub mod delete_application_reference_data_source_input {
             self.application_name = input;
             self
         }
-        /// <p>Version of the application.  
-        /// You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current application version.
-        /// If the version specified
-        /// is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
+        /// <p>Version of the application. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
         pub fn current_application_version_id(mut self, input: i64) -> Self {
             self.current_application_version_id = Some(input);
             self
         }
-        /// <p>Version of the application.  
-        /// You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current application version.
-        /// If the version specified
-        /// is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
+        /// <p>Version of the application. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
         pub fn set_current_application_version_id(
             mut self,
             input: std::option::Option<i64>,
@@ -2147,20 +2035,12 @@ pub mod delete_application_reference_data_source_input {
             self.current_application_version_id = input;
             self
         }
-        /// <p>ID of the reference data source. When you add a reference data source to your
-        /// application using the
-        /// <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html">AddApplicationReferenceDataSource</a>, Amazon Kinesis Analytics assigns an ID.
-        /// You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the reference ID.
-        /// </p>
+        /// <p>ID of the reference data source. When you add a reference data source to your application using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html">AddApplicationReferenceDataSource</a>, Amazon Kinesis Analytics assigns an ID. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the reference ID. </p>
         pub fn reference_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.reference_id = Some(input.into());
             self
         }
-        /// <p>ID of the reference data source. When you add a reference data source to your
-        /// application using the
-        /// <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html">AddApplicationReferenceDataSource</a>, Amazon Kinesis Analytics assigns an ID.
-        /// You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the reference ID.
-        /// </p>
+        /// <p>ID of the reference data source. When you add a reference data source to your application using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html">AddApplicationReferenceDataSource</a>, Amazon Kinesis Analytics assigns an ID. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the reference ID. </p>
         pub fn set_reference_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.reference_id = input;
             self
@@ -2513,14 +2393,12 @@ pub mod discover_input_schema_input {
             self.input_starting_position_configuration = input;
             self
         }
-        /// <p>Specify this parameter to discover a schema from data in an Amazon S3
-        /// object.</p>
+        /// <p>Specify this parameter to discover a schema from data in an Amazon S3 object.</p>
         pub fn s3_configuration(mut self, input: crate::model::S3Configuration) -> Self {
             self.s3_configuration = Some(input);
             self
         }
-        /// <p>Specify this parameter to discover a schema from data in an Amazon S3
-        /// object.</p>
+        /// <p>Specify this parameter to discover a schema from data in an Amazon S3 object.</p>
         pub fn set_s3_configuration(
             mut self,
             input: std::option::Option<crate::model::S3Configuration>,
@@ -3719,14 +3597,12 @@ pub mod update_application_input {
             self.application_name = input;
             self
         }
-        /// <p>The current application version ID. You can use the
-        /// <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get this value.</p>
+        /// <p>The current application version ID. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get this value.</p>
         pub fn current_application_version_id(mut self, input: i64) -> Self {
             self.current_application_version_id = Some(input);
             self
         }
-        /// <p>The current application version ID. You can use the
-        /// <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get this value.</p>
+        /// <p>The current application version ID. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get this value.</p>
         pub fn set_current_application_version_id(
             mut self,
             input: std::option::Option<i64>,
@@ -3890,8 +3766,7 @@ impl UpdateApplicationInput {
 pub struct UpdateApplicationInput {
     /// <p>Name of the Amazon Kinesis Analytics application to update.</p>
     pub application_name: std::option::Option<std::string::String>,
-    /// <p>The current application version ID. You can use the
-    /// <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get this value.</p>
+    /// <p>The current application version ID. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get this value.</p>
     pub current_application_version_id: std::option::Option<i64>,
     /// <p>Describes application updates.</p>
     pub application_update: std::option::Option<crate::model::ApplicationUpdate>,
@@ -3901,8 +3776,7 @@ impl UpdateApplicationInput {
     pub fn application_name(&self) -> std::option::Option<&str> {
         self.application_name.as_deref()
     }
-    /// <p>The current application version ID. You can use the
-    /// <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get this value.</p>
+    /// <p>The current application version ID. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get this value.</p>
     pub fn current_application_version_id(&self) -> std::option::Option<i64> {
         self.current_application_version_id
     }
@@ -4092,8 +3966,7 @@ pub struct DiscoverInputSchemaInput {
     /// <p>Point at which you want Amazon Kinesis Analytics to start reading records from the specified streaming source discovery purposes.</p>
     pub input_starting_position_configuration:
         std::option::Option<crate::model::InputStartingPositionConfiguration>,
-    /// <p>Specify this parameter to discover a schema from data in an Amazon S3
-    /// object.</p>
+    /// <p>Specify this parameter to discover a schema from data in an Amazon S3 object.</p>
     pub s3_configuration: std::option::Option<crate::model::S3Configuration>,
     /// <p>The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a> to use to preprocess the records before discovering the schema of the records.</p>
     pub input_processing_configuration:
@@ -4114,8 +3987,7 @@ impl DiscoverInputSchemaInput {
     ) -> std::option::Option<&crate::model::InputStartingPositionConfiguration> {
         self.input_starting_position_configuration.as_ref()
     }
-    /// <p>Specify this parameter to discover a schema from data in an Amazon S3
-    /// object.</p>
+    /// <p>Specify this parameter to discover a schema from data in an Amazon S3 object.</p>
     pub fn s3_configuration(&self) -> std::option::Option<&crate::model::S3Configuration> {
         self.s3_configuration.as_ref()
     }
@@ -4171,16 +4043,9 @@ impl std::fmt::Debug for DescribeApplicationInput {
 pub struct DeleteApplicationReferenceDataSourceInput {
     /// <p>Name of an existing application.</p>
     pub application_name: std::option::Option<std::string::String>,
-    /// <p>Version of the application.  
-    /// You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current application version.
-    /// If the version specified
-    /// is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
+    /// <p>Version of the application. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
     pub current_application_version_id: std::option::Option<i64>,
-    /// <p>ID of the reference data source. When you add a reference data source to your
-    /// application using the
-    /// <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html">AddApplicationReferenceDataSource</a>, Amazon Kinesis Analytics assigns an ID.
-    /// You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the reference ID.
-    /// </p>
+    /// <p>ID of the reference data source. When you add a reference data source to your application using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html">AddApplicationReferenceDataSource</a>, Amazon Kinesis Analytics assigns an ID. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the reference ID. </p>
     pub reference_id: std::option::Option<std::string::String>,
 }
 impl DeleteApplicationReferenceDataSourceInput {
@@ -4188,18 +4053,11 @@ impl DeleteApplicationReferenceDataSourceInput {
     pub fn application_name(&self) -> std::option::Option<&str> {
         self.application_name.as_deref()
     }
-    /// <p>Version of the application.  
-    /// You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current application version.
-    /// If the version specified
-    /// is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
+    /// <p>Version of the application. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
     pub fn current_application_version_id(&self) -> std::option::Option<i64> {
         self.current_application_version_id
     }
-    /// <p>ID of the reference data source. When you add a reference data source to your
-    /// application using the
-    /// <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html">AddApplicationReferenceDataSource</a>, Amazon Kinesis Analytics assigns an ID.
-    /// You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the reference ID.
-    /// </p>
+    /// <p>ID of the reference data source. When you add a reference data source to your application using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html">AddApplicationReferenceDataSource</a>, Amazon Kinesis Analytics assigns an ID. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the reference ID. </p>
     pub fn reference_id(&self) -> std::option::Option<&str> {
         self.reference_id.as_deref()
     }
@@ -4223,20 +4081,9 @@ impl std::fmt::Debug for DeleteApplicationReferenceDataSourceInput {
 pub struct DeleteApplicationOutputInput {
     /// <p>Amazon Kinesis Analytics application name.</p>
     pub application_name: std::option::Option<std::string::String>,
-    /// <p>Amazon Kinesis Analytics application version.
-    /// You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current application version.
-    /// If the version specified is not the current version, the
-    /// <code>ConcurrentModificationException</code> is returned.
-    /// </p>
+    /// <p>Amazon Kinesis Analytics application version. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned. </p>
     pub current_application_version_id: std::option::Option<i64>,
-    /// <p>The ID of the configuration to delete.
-    /// Each output configuration that is added to the application, either when the application is
-    /// created or later using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationOutput.html">AddApplicationOutput</a> operation, has a unique ID.
-    /// You need to provide the ID to uniquely identify the output configuration that you want to
-    /// delete from the application configuration.
-    /// You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the specific
-    /// <code>OutputId</code>.
-    /// </p>
+    /// <p>The ID of the configuration to delete. Each output configuration that is added to the application, either when the application is created or later using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationOutput.html">AddApplicationOutput</a> operation, has a unique ID. You need to provide the ID to uniquely identify the output configuration that you want to delete from the application configuration. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the specific <code>OutputId</code>. </p>
     pub output_id: std::option::Option<std::string::String>,
 }
 impl DeleteApplicationOutputInput {
@@ -4244,22 +4091,11 @@ impl DeleteApplicationOutputInput {
     pub fn application_name(&self) -> std::option::Option<&str> {
         self.application_name.as_deref()
     }
-    /// <p>Amazon Kinesis Analytics application version.
-    /// You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current application version.
-    /// If the version specified is not the current version, the
-    /// <code>ConcurrentModificationException</code> is returned.
-    /// </p>
+    /// <p>Amazon Kinesis Analytics application version. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned. </p>
     pub fn current_application_version_id(&self) -> std::option::Option<i64> {
         self.current_application_version_id
     }
-    /// <p>The ID of the configuration to delete.
-    /// Each output configuration that is added to the application, either when the application is
-    /// created or later using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationOutput.html">AddApplicationOutput</a> operation, has a unique ID.
-    /// You need to provide the ID to uniquely identify the output configuration that you want to
-    /// delete from the application configuration.
-    /// You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the specific
-    /// <code>OutputId</code>.
-    /// </p>
+    /// <p>The ID of the configuration to delete. Each output configuration that is added to the application, either when the application is created or later using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationOutput.html">AddApplicationOutput</a> operation, has a unique ID. You need to provide the ID to uniquely identify the output configuration that you want to delete from the application configuration. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the specific <code>OutputId</code>. </p>
     pub fn output_id(&self) -> std::option::Option<&str> {
         self.output_id.as_deref()
     }
@@ -4285,8 +4121,7 @@ pub struct DeleteApplicationInputProcessingConfigurationInput {
     pub application_name: std::option::Option<std::string::String>,
     /// <p>The version ID of the Kinesis Analytics application.</p>
     pub current_application_version_id: std::option::Option<i64>,
-    /// <p>The ID of the input configuration from which to delete the input processing
-    /// configuration. You can get a list of the input IDs for an application by using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation.</p>
+    /// <p>The ID of the input configuration from which to delete the input processing configuration. You can get a list of the input IDs for an application by using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation.</p>
     pub input_id: std::option::Option<std::string::String>,
 }
 impl DeleteApplicationInputProcessingConfigurationInput {
@@ -4298,8 +4133,7 @@ impl DeleteApplicationInputProcessingConfigurationInput {
     pub fn current_application_version_id(&self) -> std::option::Option<i64> {
         self.current_application_version_id
     }
-    /// <p>The ID of the input configuration from which to delete the input processing
-    /// configuration. You can get a list of the input IDs for an application by using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation.</p>
+    /// <p>The ID of the input configuration from which to delete the input processing configuration. You can get a list of the input IDs for an application by using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation.</p>
     pub fn input_id(&self) -> std::option::Option<&str> {
         self.input_id.as_deref()
     }
@@ -4325,8 +4159,7 @@ pub struct DeleteApplicationCloudWatchLoggingOptionInput {
     pub application_name: std::option::Option<std::string::String>,
     /// <p>The version ID of the Kinesis Analytics application.</p>
     pub current_application_version_id: std::option::Option<i64>,
-    /// <p>The <code>CloudWatchLoggingOptionId</code> of the CloudWatch logging option to
-    /// delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation. </p>
+    /// <p>The <code>CloudWatchLoggingOptionId</code> of the CloudWatch logging option to delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation. </p>
     pub cloud_watch_logging_option_id: std::option::Option<std::string::String>,
 }
 impl DeleteApplicationCloudWatchLoggingOptionInput {
@@ -4338,8 +4171,7 @@ impl DeleteApplicationCloudWatchLoggingOptionInput {
     pub fn current_application_version_id(&self) -> std::option::Option<i64> {
         self.current_application_version_id
     }
-    /// <p>The <code>CloudWatchLoggingOptionId</code> of the CloudWatch logging option to
-    /// delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation. </p>
+    /// <p>The <code>CloudWatchLoggingOptionId</code> of the CloudWatch logging option to delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation. </p>
     pub fn cloud_watch_logging_option_id(&self) -> std::option::Option<&str> {
         self.cloud_watch_logging_option_id.as_deref()
     }
@@ -4366,9 +4198,7 @@ impl std::fmt::Debug for DeleteApplicationCloudWatchLoggingOptionInput {
 pub struct DeleteApplicationInput {
     /// <p>Name of the Amazon Kinesis Analytics application to delete.</p>
     pub application_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// You can use the <code>DescribeApplication</code> operation to get this value.
-    /// </p>
+    /// <p> You can use the <code>DescribeApplication</code> operation to get this value. </p>
     pub create_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl DeleteApplicationInput {
@@ -4376,9 +4206,7 @@ impl DeleteApplicationInput {
     pub fn application_name(&self) -> std::option::Option<&str> {
         self.application_name.as_deref()
     }
-    /// <p>
-    /// You can use the <code>DescribeApplication</code> operation to get this value.
-    /// </p>
+    /// <p> You can use the <code>DescribeApplication</code> operation to get this value. </p>
     pub fn create_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_timestamp.as_ref()
     }
@@ -4402,45 +4230,22 @@ pub struct CreateApplicationInput {
     pub application_description: std::option::Option<std::string::String>,
     /// <p>Use this parameter to configure the application input.</p>
     /// <p>You can configure your application to receive input from a single streaming source. In this configuration, you map this streaming source to an in-application stream that is created. Your application code can then query the in-application stream like a table (you can think of it as a constantly updating table).</p>
-    /// <p>For the streaming source, you provide its Amazon Resource Name (ARN) and format of
-    /// data on the stream (for example, JSON, CSV, etc.). You also must provide an IAM role
-    /// that Amazon Kinesis Analytics can assume to read this stream on your behalf.</p>
+    /// <p>For the streaming source, you provide its Amazon Resource Name (ARN) and format of data on the stream (for example, JSON, CSV, etc.). You also must provide an IAM role that Amazon Kinesis Analytics can assume to read this stream on your behalf.</p>
     /// <p>To create the in-application stream, you need to specify a schema to transform your data into a schematized version used in SQL. In the schema, you provide the necessary mapping of the data elements in the streaming source to record columns in the in-app stream.</p>
     pub inputs: std::option::Option<std::vec::Vec<crate::model::Input>>,
     /// <p>You can configure application output to write data from any of the in-application streams to up to three destinations.</p>
-    /// <p>These destinations can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery
-    /// streams, AWS Lambda destinations, or any combination of the three.</p>
-    /// <p>In the configuration, you specify the in-application stream name, the destination stream or Lambda function Amazon Resource Name (ARN), and the format to use when writing data. You must also provide an IAM role that Amazon Kinesis Analytics can assume to write to the
-    /// destination stream or Lambda function on your behalf.</p>
-    /// <p>In the output configuration, you also provide the output stream or Lambda function ARN. For stream destinations, you provide the format
-    /// of data in the stream (for example, JSON, CSV). You also must provide an IAM role that
-    /// Amazon Kinesis Analytics can assume to write to the stream or Lambda function on your behalf.</p>
+    /// <p>These destinations can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery streams, AWS Lambda destinations, or any combination of the three.</p>
+    /// <p>In the configuration, you specify the in-application stream name, the destination stream or Lambda function Amazon Resource Name (ARN), and the format to use when writing data. You must also provide an IAM role that Amazon Kinesis Analytics can assume to write to the destination stream or Lambda function on your behalf.</p>
+    /// <p>In the output configuration, you also provide the output stream or Lambda function ARN. For stream destinations, you provide the format of data in the stream (for example, JSON, CSV). You also must provide an IAM role that Amazon Kinesis Analytics can assume to write to the stream or Lambda function on your behalf.</p>
     pub outputs: std::option::Option<std::vec::Vec<crate::model::Output>>,
-    /// <p>Use this parameter to configure a CloudWatch log stream to monitor application
-    /// configuration errors. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon
-    /// CloudWatch Logs</a>.</p>
+    /// <p>Use this parameter to configure a CloudWatch log stream to monitor application configuration errors. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon CloudWatch Logs</a>.</p>
     pub cloud_watch_logging_options:
         std::option::Option<std::vec::Vec<crate::model::CloudWatchLoggingOption>>,
-    /// <p>One or more SQL statements that read input data, transform it, and generate output.
-    /// For example, you can write a SQL statement that reads data from one in-application
-    /// stream, generates a running average of the number of advertisement clicks by vendor, and
-    /// insert resulting rows in another in-application stream using pumps. For more information
-    /// about the typical pattern, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-app-code.html">Application
-    /// Code</a>. </p>
-    ///
-    /// <p>You can provide such series of SQL statements,
-    /// where output of one statement can be
-    /// used as the input for the next statement. You store
-    /// intermediate results by creating in-application streams and pumps.</p>
-    ///
-    /// <p>Note that the application code must create the streams with names
-    /// specified in the <code>Outputs</code>. For example,
-    /// if your <code>Outputs</code> defines output streams named
-    /// <code>ExampleOutputStream1</code> and <code>ExampleOutputStream2</code>,
-    /// then your application code must create these streams. </p>
+    /// <p>One or more SQL statements that read input data, transform it, and generate output. For example, you can write a SQL statement that reads data from one in-application stream, generates a running average of the number of advertisement clicks by vendor, and insert resulting rows in another in-application stream using pumps. For more information about the typical pattern, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-app-code.html">Application Code</a>. </p>
+    /// <p>You can provide such series of SQL statements, where output of one statement can be used as the input for the next statement. You store intermediate results by creating in-application streams and pumps.</p>
+    /// <p>Note that the application code must create the streams with names specified in the <code>Outputs</code>. For example, if your <code>Outputs</code> defines output streams named <code>ExampleOutputStream1</code> and <code>ExampleOutputStream2</code>, then your application code must create these streams. </p>
     pub application_code: std::option::Option<std::string::String>,
-    /// <p>A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an application. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50.
-    /// For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-tagging.html">Using Tagging</a>.</p>
+    /// <p>A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an application. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-tagging.html">Using Tagging</a>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateApplicationInput {
@@ -4454,54 +4259,31 @@ impl CreateApplicationInput {
     }
     /// <p>Use this parameter to configure the application input.</p>
     /// <p>You can configure your application to receive input from a single streaming source. In this configuration, you map this streaming source to an in-application stream that is created. Your application code can then query the in-application stream like a table (you can think of it as a constantly updating table).</p>
-    /// <p>For the streaming source, you provide its Amazon Resource Name (ARN) and format of
-    /// data on the stream (for example, JSON, CSV, etc.). You also must provide an IAM role
-    /// that Amazon Kinesis Analytics can assume to read this stream on your behalf.</p>
+    /// <p>For the streaming source, you provide its Amazon Resource Name (ARN) and format of data on the stream (for example, JSON, CSV, etc.). You also must provide an IAM role that Amazon Kinesis Analytics can assume to read this stream on your behalf.</p>
     /// <p>To create the in-application stream, you need to specify a schema to transform your data into a schematized version used in SQL. In the schema, you provide the necessary mapping of the data elements in the streaming source to record columns in the in-app stream.</p>
     pub fn inputs(&self) -> std::option::Option<&[crate::model::Input]> {
         self.inputs.as_deref()
     }
     /// <p>You can configure application output to write data from any of the in-application streams to up to three destinations.</p>
-    /// <p>These destinations can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery
-    /// streams, AWS Lambda destinations, or any combination of the three.</p>
-    /// <p>In the configuration, you specify the in-application stream name, the destination stream or Lambda function Amazon Resource Name (ARN), and the format to use when writing data. You must also provide an IAM role that Amazon Kinesis Analytics can assume to write to the
-    /// destination stream or Lambda function on your behalf.</p>
-    /// <p>In the output configuration, you also provide the output stream or Lambda function ARN. For stream destinations, you provide the format
-    /// of data in the stream (for example, JSON, CSV). You also must provide an IAM role that
-    /// Amazon Kinesis Analytics can assume to write to the stream or Lambda function on your behalf.</p>
+    /// <p>These destinations can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery streams, AWS Lambda destinations, or any combination of the three.</p>
+    /// <p>In the configuration, you specify the in-application stream name, the destination stream or Lambda function Amazon Resource Name (ARN), and the format to use when writing data. You must also provide an IAM role that Amazon Kinesis Analytics can assume to write to the destination stream or Lambda function on your behalf.</p>
+    /// <p>In the output configuration, you also provide the output stream or Lambda function ARN. For stream destinations, you provide the format of data in the stream (for example, JSON, CSV). You also must provide an IAM role that Amazon Kinesis Analytics can assume to write to the stream or Lambda function on your behalf.</p>
     pub fn outputs(&self) -> std::option::Option<&[crate::model::Output]> {
         self.outputs.as_deref()
     }
-    /// <p>Use this parameter to configure a CloudWatch log stream to monitor application
-    /// configuration errors. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon
-    /// CloudWatch Logs</a>.</p>
+    /// <p>Use this parameter to configure a CloudWatch log stream to monitor application configuration errors. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon CloudWatch Logs</a>.</p>
     pub fn cloud_watch_logging_options(
         &self,
     ) -> std::option::Option<&[crate::model::CloudWatchLoggingOption]> {
         self.cloud_watch_logging_options.as_deref()
     }
-    /// <p>One or more SQL statements that read input data, transform it, and generate output.
-    /// For example, you can write a SQL statement that reads data from one in-application
-    /// stream, generates a running average of the number of advertisement clicks by vendor, and
-    /// insert resulting rows in another in-application stream using pumps. For more information
-    /// about the typical pattern, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-app-code.html">Application
-    /// Code</a>. </p>
-    ///
-    /// <p>You can provide such series of SQL statements,
-    /// where output of one statement can be
-    /// used as the input for the next statement. You store
-    /// intermediate results by creating in-application streams and pumps.</p>
-    ///
-    /// <p>Note that the application code must create the streams with names
-    /// specified in the <code>Outputs</code>. For example,
-    /// if your <code>Outputs</code> defines output streams named
-    /// <code>ExampleOutputStream1</code> and <code>ExampleOutputStream2</code>,
-    /// then your application code must create these streams. </p>
+    /// <p>One or more SQL statements that read input data, transform it, and generate output. For example, you can write a SQL statement that reads data from one in-application stream, generates a running average of the number of advertisement clicks by vendor, and insert resulting rows in another in-application stream using pumps. For more information about the typical pattern, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-app-code.html">Application Code</a>. </p>
+    /// <p>You can provide such series of SQL statements, where output of one statement can be used as the input for the next statement. You store intermediate results by creating in-application streams and pumps.</p>
+    /// <p>Note that the application code must create the streams with names specified in the <code>Outputs</code>. For example, if your <code>Outputs</code> defines output streams named <code>ExampleOutputStream1</code> and <code>ExampleOutputStream2</code>, then your application code must create these streams. </p>
     pub fn application_code(&self) -> std::option::Option<&str> {
         self.application_code.as_deref()
     }
-    /// <p>A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an application. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50.
-    /// For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-tagging.html">Using Tagging</a>.</p>
+    /// <p>A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an application. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-tagging.html">Using Tagging</a>.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -4529,10 +4311,7 @@ impl std::fmt::Debug for CreateApplicationInput {
 pub struct AddApplicationReferenceDataSourceInput {
     /// <p>Name of an existing application.</p>
     pub application_name: std::option::Option<std::string::String>,
-    /// <p>Version of the application for which you are adding the reference data source.
-    /// You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current application version.
-    /// If the version specified is not the current version, the
-    /// <code>ConcurrentModificationException</code> is returned.</p>
+    /// <p>Version of the application for which you are adding the reference data source. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
     pub current_application_version_id: std::option::Option<i64>,
     /// <p>The reference data source can be an object in your Amazon S3 bucket. Amazon Kinesis Analytics reads the object and copies the data into the in-application table that is created. You provide an S3 bucket, object key name, and the resulting in-application table that is created. You must also provide an IAM role with the necessary permissions that Amazon Kinesis Analytics can assume to read the object from your S3 bucket on your behalf.</p>
     pub reference_data_source: std::option::Option<crate::model::ReferenceDataSource>,
@@ -4542,10 +4321,7 @@ impl AddApplicationReferenceDataSourceInput {
     pub fn application_name(&self) -> std::option::Option<&str> {
         self.application_name.as_deref()
     }
-    /// <p>Version of the application for which you are adding the reference data source.
-    /// You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current application version.
-    /// If the version specified is not the current version, the
-    /// <code>ConcurrentModificationException</code> is returned.</p>
+    /// <p>Version of the application for which you are adding the reference data source. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
     pub fn current_application_version_id(&self) -> std::option::Option<i64> {
         self.current_application_version_id
     }
@@ -4573,15 +4349,9 @@ impl std::fmt::Debug for AddApplicationReferenceDataSourceInput {
 pub struct AddApplicationOutputInput {
     /// <p>Name of the application to which you want to add the output configuration.</p>
     pub application_name: std::option::Option<std::string::String>,
-    /// <p>Version of the application to which you want to add the output configuration. You
-    /// can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current
-    /// application version. If the version specified is not the current version, the
-    /// <code>ConcurrentModificationException</code> is returned. </p>
+    /// <p>Version of the application to which you want to add the output configuration. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned. </p>
     pub current_application_version_id: std::option::Option<i64>,
-    /// <p>An array of objects, each describing one output configuration. In the output
-    /// configuration, you specify the name of an in-application stream, a destination (that is,
-    /// an Amazon Kinesis stream, an Amazon Kinesis Firehose delivery stream, or an AWS Lambda
-    /// function), and record the formation to use when writing to the destination.</p>
+    /// <p>An array of objects, each describing one output configuration. In the output configuration, you specify the name of an in-application stream, a destination (that is, an Amazon Kinesis stream, an Amazon Kinesis Firehose delivery stream, or an AWS Lambda function), and record the formation to use when writing to the destination.</p>
     pub output: std::option::Option<crate::model::Output>,
 }
 impl AddApplicationOutputInput {
@@ -4589,17 +4359,11 @@ impl AddApplicationOutputInput {
     pub fn application_name(&self) -> std::option::Option<&str> {
         self.application_name.as_deref()
     }
-    /// <p>Version of the application to which you want to add the output configuration. You
-    /// can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current
-    /// application version. If the version specified is not the current version, the
-    /// <code>ConcurrentModificationException</code> is returned. </p>
+    /// <p>Version of the application to which you want to add the output configuration. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned. </p>
     pub fn current_application_version_id(&self) -> std::option::Option<i64> {
         self.current_application_version_id
     }
-    /// <p>An array of objects, each describing one output configuration. In the output
-    /// configuration, you specify the name of an in-application stream, a destination (that is,
-    /// an Amazon Kinesis stream, an Amazon Kinesis Firehose delivery stream, or an AWS Lambda
-    /// function), and record the formation to use when writing to the destination.</p>
+    /// <p>An array of objects, each describing one output configuration. In the output configuration, you specify the name of an in-application stream, a destination (that is, an Amazon Kinesis stream, an Amazon Kinesis Firehose delivery stream, or an AWS Lambda function), and record the formation to use when writing to the destination.</p>
     pub fn output(&self) -> std::option::Option<&crate::model::Output> {
         self.output.as_ref()
     }
@@ -4623,12 +4387,9 @@ impl std::fmt::Debug for AddApplicationOutputInput {
 pub struct AddApplicationInputProcessingConfigurationInput {
     /// <p>Name of the application to which you want to add the input processing configuration.</p>
     pub application_name: std::option::Option<std::string::String>,
-    /// <p>Version of the application to which you want to add the input processing configuration. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
-    /// operation to get the current application version.  If the version specified is not the current version, the
-    /// <code>ConcurrentModificationException</code> is returned.</p>
+    /// <p>Version of the application to which you want to add the input processing configuration. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
     pub current_application_version_id: std::option::Option<i64>,
-    /// <p>The ID of the input configuration to add the input processing configuration to. You
-    /// can get a list of the input IDs for an application using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation.</p>
+    /// <p>The ID of the input configuration to add the input processing configuration to. You can get a list of the input IDs for an application using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation.</p>
     pub input_id: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a> to add to the application.</p>
     pub input_processing_configuration:
@@ -4639,14 +4400,11 @@ impl AddApplicationInputProcessingConfigurationInput {
     pub fn application_name(&self) -> std::option::Option<&str> {
         self.application_name.as_deref()
     }
-    /// <p>Version of the application to which you want to add the input processing configuration. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
-    /// operation to get the current application version.  If the version specified is not the current version, the
-    /// <code>ConcurrentModificationException</code> is returned.</p>
+    /// <p>Version of the application to which you want to add the input processing configuration. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current application version. If the version specified is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
     pub fn current_application_version_id(&self) -> std::option::Option<i64> {
         self.current_application_version_id
     }
-    /// <p>The ID of the input configuration to add the input processing configuration to. You
-    /// can get a list of the input IDs for an application using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation.</p>
+    /// <p>The ID of the input configuration to add the input processing configuration to. You can get a list of the input IDs for an application using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation.</p>
     pub fn input_id(&self) -> std::option::Option<&str> {
         self.input_id.as_deref()
     }
@@ -4680,8 +4438,7 @@ impl std::fmt::Debug for AddApplicationInputProcessingConfigurationInput {
 pub struct AddApplicationInputInput {
     /// <p>Name of your existing Amazon Kinesis Analytics application to which you want to add the streaming source.</p>
     pub application_name: std::option::Option<std::string::String>,
-    /// <p>Current version of your Amazon Kinesis Analytics application. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation
-    /// to find the current application version.</p>
+    /// <p>Current version of your Amazon Kinesis Analytics application. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to find the current application version.</p>
     pub current_application_version_id: std::option::Option<i64>,
     /// <p>The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_Input.html">Input</a> to add.</p>
     pub input: std::option::Option<crate::model::Input>,
@@ -4691,8 +4448,7 @@ impl AddApplicationInputInput {
     pub fn application_name(&self) -> std::option::Option<&str> {
         self.application_name.as_deref()
     }
-    /// <p>Current version of your Amazon Kinesis Analytics application. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation
-    /// to find the current application version.</p>
+    /// <p>Current version of your Amazon Kinesis Analytics application. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to find the current application version.</p>
     pub fn current_application_version_id(&self) -> std::option::Option<i64> {
         self.current_application_version_id
     }
@@ -4722,9 +4478,7 @@ pub struct AddApplicationCloudWatchLoggingOptionInput {
     pub application_name: std::option::Option<std::string::String>,
     /// <p>The version ID of the Kinesis Analytics application.</p>
     pub current_application_version_id: std::option::Option<i64>,
-    /// <p>Provides the CloudWatch log stream Amazon Resource Name (ARN) and the IAM role ARN.
-    /// Note: To write application messages to CloudWatch, the IAM role that is used must have
-    /// the <code>PutLogEvents</code> policy action enabled.</p>
+    /// <p>Provides the CloudWatch log stream Amazon Resource Name (ARN) and the IAM role ARN. Note: To write application messages to CloudWatch, the IAM role that is used must have the <code>PutLogEvents</code> policy action enabled.</p>
     pub cloud_watch_logging_option: std::option::Option<crate::model::CloudWatchLoggingOption>,
 }
 impl AddApplicationCloudWatchLoggingOptionInput {
@@ -4736,9 +4490,7 @@ impl AddApplicationCloudWatchLoggingOptionInput {
     pub fn current_application_version_id(&self) -> std::option::Option<i64> {
         self.current_application_version_id
     }
-    /// <p>Provides the CloudWatch log stream Amazon Resource Name (ARN) and the IAM role ARN.
-    /// Note: To write application messages to CloudWatch, the IAM role that is used must have
-    /// the <code>PutLogEvents</code> policy action enabled.</p>
+    /// <p>Provides the CloudWatch log stream Amazon Resource Name (ARN) and the IAM role ARN. Note: To write application messages to CloudWatch, the IAM role that is used must have the <code>PutLogEvents</code> policy action enabled.</p>
     pub fn cloud_watch_logging_option(
         &self,
     ) -> std::option::Option<&crate::model::CloudWatchLoggingOption> {

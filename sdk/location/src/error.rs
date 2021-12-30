@@ -12,8 +12,7 @@ pub struct AssociateTrackerConsumerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AssociateTrackerConsumerErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request was unsuccessful because of a conflict.</p>
     ConflictException(crate::error::ConflictException),
@@ -21,8 +20,7 @@ pub enum AssociateTrackerConsumerErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The resource that you've entered was not found in your AWS account.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The operation was denied because the request would exceed the maximum <a href="https://docs.aws.amazon.com/location/latest/developerguide/location-quotas.html">quota</a>
-    /// set for Amazon Location Service.</p>
+    /// <p>The operation was denied because the request would exceed the maximum <a href="https://docs.aws.amazon.com/location/latest/developerguide/location-quotas.html">quota</a> set for Amazon Location Service.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The request was denied because of request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -185,8 +183,7 @@ pub struct BatchDeleteDevicePositionHistoryError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchDeleteDevicePositionHistoryErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -346,8 +343,7 @@ pub struct BatchDeleteGeofenceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchDeleteGeofenceErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -492,8 +488,7 @@ pub struct BatchEvaluateGeofencesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchEvaluateGeofencesErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -638,8 +633,7 @@ pub struct BatchGetDevicePositionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchGetDevicePositionErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -784,8 +778,7 @@ pub struct BatchPutGeofenceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchPutGeofenceErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -930,8 +923,7 @@ pub struct BatchUpdateDevicePositionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum BatchUpdateDevicePositionErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -1076,8 +1068,7 @@ pub struct CalculateRouteError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CalculateRouteErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -1216,8 +1207,7 @@ pub struct CreateGeofenceCollectionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateGeofenceCollectionErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request was unsuccessful because of a conflict.</p>
     ConflictException(crate::error::ConflictException),
@@ -1362,8 +1352,7 @@ pub struct CreateMapError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateMapErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request was unsuccessful because of a conflict.</p>
     ConflictException(crate::error::ConflictException),
@@ -1491,8 +1480,7 @@ pub struct CreatePlaceIndexError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreatePlaceIndexErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request was unsuccessful because of a conflict.</p>
     ConflictException(crate::error::ConflictException),
@@ -1634,8 +1622,7 @@ pub struct CreateRouteCalculatorError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateRouteCalculatorErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request was unsuccessful because of a conflict.</p>
     ConflictException(crate::error::ConflictException),
@@ -1780,8 +1767,7 @@ pub struct CreateTrackerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateTrackerErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request was unsuccessful because of a conflict.</p>
     ConflictException(crate::error::ConflictException),
@@ -1914,8 +1900,7 @@ pub struct DeleteGeofenceCollectionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteGeofenceCollectionErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -2060,8 +2045,7 @@ pub struct DeleteMapError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteMapErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -2189,8 +2173,7 @@ pub struct DeletePlaceIndexError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeletePlaceIndexErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -2335,8 +2318,7 @@ pub struct DeleteRouteCalculatorError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteRouteCalculatorErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -2481,8 +2463,7 @@ pub struct DeleteTrackerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteTrackerErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -2618,8 +2599,7 @@ pub struct DescribeGeofenceCollectionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeGeofenceCollectionErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -2764,8 +2744,7 @@ pub struct DescribeMapError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeMapErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -2896,8 +2875,7 @@ pub struct DescribePlaceIndexError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribePlaceIndexErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -3042,8 +3020,7 @@ pub struct DescribeRouteCalculatorError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeRouteCalculatorErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -3188,8 +3165,7 @@ pub struct DescribeTrackerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeTrackerErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -3328,8 +3304,7 @@ pub struct DisassociateTrackerConsumerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisassociateTrackerConsumerErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -3476,8 +3451,7 @@ pub struct GetDevicePositionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDevicePositionErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -3622,8 +3596,7 @@ pub struct GetDevicePositionHistoryError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDevicePositionHistoryErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -3768,8 +3741,7 @@ pub struct GetGeofenceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetGeofenceErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -3900,8 +3872,7 @@ pub struct GetMapGlyphsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetMapGlyphsErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -4035,8 +4006,7 @@ pub struct GetMapSpritesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetMapSpritesErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -4172,8 +4142,7 @@ pub struct GetMapStyleDescriptorError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetMapStyleDescriptorErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -4318,8 +4287,7 @@ pub struct GetMapTileError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetMapTileErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -4450,8 +4418,7 @@ pub struct ListDevicePositionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListDevicePositionsErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -4585,8 +4552,7 @@ pub struct ListGeofenceCollectionsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListGeofenceCollectionsErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -4720,8 +4686,7 @@ pub struct ListGeofencesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListGeofencesErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -4857,8 +4822,7 @@ pub struct ListMapsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListMapsErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -4976,8 +4940,7 @@ pub struct ListPlaceIndexesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListPlaceIndexesErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -5111,8 +5074,7 @@ pub struct ListRouteCalculatorsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListRouteCalculatorsErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -5246,8 +5208,7 @@ pub struct ListTagsForResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsForResourceErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -5392,8 +5353,7 @@ pub struct ListTrackerConsumersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTrackerConsumersErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -5538,8 +5498,7 @@ pub struct ListTrackersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTrackersErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -5662,8 +5621,7 @@ pub struct PutGeofenceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutGeofenceErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request was unsuccessful because of a conflict.</p>
     ConflictException(crate::error::ConflictException),
@@ -5802,8 +5760,7 @@ pub struct SearchPlaceIndexForPositionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SearchPlaceIndexForPositionErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -5950,8 +5907,7 @@ pub struct SearchPlaceIndexForTextError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum SearchPlaceIndexForTextErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -6096,8 +6052,7 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -6228,8 +6183,7 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -6365,8 +6319,7 @@ pub struct UpdateGeofenceCollectionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateGeofenceCollectionErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -6511,8 +6464,7 @@ pub struct UpdateMapError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateMapErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -6640,8 +6592,7 @@ pub struct UpdatePlaceIndexError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdatePlaceIndexErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -6786,8 +6737,7 @@ pub struct UpdateRouteCalculatorError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateRouteCalculatorErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -6932,8 +6882,7 @@ pub struct UpdateTrackerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateTrackerErrorKind {
-    /// <p>The request was denied because of insufficient access or permissions. Check with an
-    /// administrator to verify your permissions.</p>
+    /// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>The request has failed to process because of an unknown server error, exception, or failure.</p>
     InternalServerException(crate::error::InternalServerException),
@@ -7373,8 +7322,7 @@ impl InternalServerException {
     }
 }
 
-/// <p>The request was denied because of insufficient access or permissions. Check with an
-/// administrator to verify your permissions.</p>
+/// <p>The request was denied because of insufficient access or permissions. Check with an administrator to verify your permissions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedException {
@@ -7438,8 +7386,7 @@ impl AccessDeniedException {
     }
 }
 
-/// <p>The operation was denied because the request would exceed the maximum <a href="https://docs.aws.amazon.com/location/latest/developerguide/location-quotas.html">quota</a>
-/// set for Amazon Location Service.</p>
+/// <p>The operation was denied because the request would exceed the maximum <a href="https://docs.aws.amazon.com/location/latest/developerguide/location-quotas.html">quota</a> set for Amazon Location Service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceQuotaExceededException {

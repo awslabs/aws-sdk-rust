@@ -14,8 +14,7 @@ pub struct CreateLifecyclePolicyError {
 pub enum CreateLifecyclePolicyErrorKind {
     /// <p>The service failed in an unexpected way.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Bad request. The request is missing required parameters or has invalid
-    /// parameters.</p>
+    /// <p>Bad request. The request is missing required parameters or has invalid parameters.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The request failed because a limit was exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -245,8 +244,7 @@ pub struct GetLifecyclePoliciesError {
 pub enum GetLifecyclePoliciesErrorKind {
     /// <p>The service failed in an unexpected way.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Bad request. The request is missing required parameters or has invalid
-    /// parameters.</p>
+    /// <p>Bad request. The request is missing required parameters or has invalid parameters.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The request failed because a limit was exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -487,8 +485,7 @@ pub struct ListTagsForResourceError {
 pub enum ListTagsForResourceErrorKind {
     /// <p>The service failed in an unexpected way.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Bad request. The request is missing required parameters or has invalid
-    /// parameters.</p>
+    /// <p>Bad request. The request is missing required parameters or has invalid parameters.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>A requested resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -603,8 +600,7 @@ pub struct TagResourceError {
 pub enum TagResourceErrorKind {
     /// <p>The service failed in an unexpected way.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Bad request. The request is missing required parameters or has invalid
-    /// parameters.</p>
+    /// <p>Bad request. The request is missing required parameters or has invalid parameters.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>A requested resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -713,8 +709,7 @@ pub struct UntagResourceError {
 pub enum UntagResourceErrorKind {
     /// <p>The service failed in an unexpected way.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Bad request. The request is missing required parameters or has invalid
-    /// parameters.</p>
+    /// <p>Bad request. The request is missing required parameters or has invalid parameters.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>A requested resource was not found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -829,8 +824,7 @@ pub struct UpdateLifecyclePolicyError {
 pub enum UpdateLifecyclePolicyErrorKind {
     /// <p>The service failed in an unexpected way.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>Bad request. The request is missing required parameters or has invalid
-    /// parameters.</p>
+    /// <p>Bad request. The request is missing required parameters or has invalid parameters.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
     /// <p>The request failed because a limit was exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -1183,8 +1177,7 @@ impl LimitExceededException {
     }
 }
 
-/// <p>Bad request. The request is missing required parameters or has invalid
-/// parameters.</p>
+/// <p>Bad request. The request is missing required parameters or has invalid parameters.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidRequestException {

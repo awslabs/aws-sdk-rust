@@ -1741,8 +1741,7 @@ impl DescribeDirectoryConfigsOutput {
 pub struct DescribeApplicationsOutput {
     /// <p>The applications in the list.</p>
     pub applications: std::option::Option<std::vec::Vec<crate::model::Application>>,
-    /// <p>The pagination token used to retrieve the next page of results for this
-    /// operation.</p>
+    /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeApplicationsOutput {
@@ -1750,8 +1749,7 @@ impl DescribeApplicationsOutput {
     pub fn applications(&self) -> std::option::Option<&[crate::model::Application]> {
         self.applications.as_deref()
     }
-    /// <p>The pagination token used to retrieve the next page of results for this
-    /// operation.</p>
+    /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1793,14 +1791,12 @@ pub mod describe_applications_output {
             self.applications = input;
             self
         }
-        /// <p>The pagination token used to retrieve the next page of results for this
-        /// operation.</p>
+        /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token used to retrieve the next page of results for this
-        /// operation.</p>
+        /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1828,8 +1824,7 @@ pub struct DescribeApplicationFleetAssociationsOutput {
     /// <p>The application fleet associations in the list.</p>
     pub application_fleet_associations:
         std::option::Option<std::vec::Vec<crate::model::ApplicationFleetAssociation>>,
-    /// <p>The pagination token used to retrieve the next page of results for this
-    /// operation.</p>
+    /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeApplicationFleetAssociationsOutput {
@@ -1839,8 +1834,7 @@ impl DescribeApplicationFleetAssociationsOutput {
     ) -> std::option::Option<&[crate::model::ApplicationFleetAssociation]> {
         self.application_fleet_associations.as_deref()
     }
-    /// <p>The pagination token used to retrieve the next page of results for this
-    /// operation.</p>
+    /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1889,14 +1883,12 @@ pub mod describe_application_fleet_associations_output {
             self.application_fleet_associations = input;
             self
         }
-        /// <p>The pagination token used to retrieve the next page of results for this
-        /// operation.</p>
+        /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token used to retrieve the next page of results for this
-        /// operation.</p>
+        /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1923,8 +1915,7 @@ impl DescribeApplicationFleetAssociationsOutput {
 pub struct DescribeAppBlocksOutput {
     /// <p>The app blocks in the list.</p>
     pub app_blocks: std::option::Option<std::vec::Vec<crate::model::AppBlock>>,
-    /// <p>The pagination token used to retrieve the next page of results for this
-    /// operation.</p>
+    /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAppBlocksOutput {
@@ -1932,8 +1923,7 @@ impl DescribeAppBlocksOutput {
     pub fn app_blocks(&self) -> std::option::Option<&[crate::model::AppBlock]> {
         self.app_blocks.as_deref()
     }
-    /// <p>The pagination token used to retrieve the next page of results for this
-    /// operation.</p>
+    /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1975,14 +1965,12 @@ pub mod describe_app_blocks_output {
             self.app_blocks = input;
             self
         }
-        /// <p>The pagination token used to retrieve the next page of results for this
-        /// operation.</p>
+        /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token used to retrieve the next page of results for this
-        /// operation.</p>
+        /// <p>The pagination token used to retrieve the next page of results for this operation.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2387,24 +2375,14 @@ impl CreateUserOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUsageReportSubscriptionOutput {
     /// <p>The Amazon S3 bucket where generated reports are stored.</p>
-    ///
-    /// <p>If you enabled on-instance session scripts and Amazon S3 logging for your session script
-    /// configuration, AppStream 2.0 created an S3 bucket to store the script output. The bucket is
-    /// unique to your account and Region. When you enable usage reporting in this case, AppStream 2.0
-    /// uses the same bucket to store your usage reports. If you haven't already enabled on-instance session scripts,
-    /// when you enable usage reports, AppStream 2.0 creates a new S3 bucket.</p>
+    /// <p>If you enabled on-instance session scripts and Amazon S3 logging for your session script configuration, AppStream 2.0 created an S3 bucket to store the script output. The bucket is unique to your account and Region. When you enable usage reporting in this case, AppStream 2.0 uses the same bucket to store your usage reports. If you haven't already enabled on-instance session scripts, when you enable usage reports, AppStream 2.0 creates a new S3 bucket.</p>
     pub s3_bucket_name: std::option::Option<std::string::String>,
     /// <p>The schedule for generating usage reports.</p>
     pub schedule: std::option::Option<crate::model::UsageReportSchedule>,
 }
 impl CreateUsageReportSubscriptionOutput {
     /// <p>The Amazon S3 bucket where generated reports are stored.</p>
-    ///
-    /// <p>If you enabled on-instance session scripts and Amazon S3 logging for your session script
-    /// configuration, AppStream 2.0 created an S3 bucket to store the script output. The bucket is
-    /// unique to your account and Region. When you enable usage reporting in this case, AppStream 2.0
-    /// uses the same bucket to store your usage reports. If you haven't already enabled on-instance session scripts,
-    /// when you enable usage reports, AppStream 2.0 creates a new S3 bucket.</p>
+    /// <p>If you enabled on-instance session scripts and Amazon S3 logging for your session script configuration, AppStream 2.0 created an S3 bucket to store the script output. The bucket is unique to your account and Region. When you enable usage reporting in this case, AppStream 2.0 uses the same bucket to store your usage reports. If you haven't already enabled on-instance session scripts, when you enable usage reports, AppStream 2.0 creates a new S3 bucket.</p>
     pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
         self.s3_bucket_name.as_deref()
     }
@@ -2432,23 +2410,13 @@ pub mod create_usage_report_subscription_output {
     }
     impl Builder {
         /// <p>The Amazon S3 bucket where generated reports are stored.</p>
-        ///
-        /// <p>If you enabled on-instance session scripts and Amazon S3 logging for your session script
-        /// configuration, AppStream 2.0 created an S3 bucket to store the script output. The bucket is
-        /// unique to your account and Region. When you enable usage reporting in this case, AppStream 2.0
-        /// uses the same bucket to store your usage reports. If you haven't already enabled on-instance session scripts,
-        /// when you enable usage reports, AppStream 2.0 creates a new S3 bucket.</p>
+        /// <p>If you enabled on-instance session scripts and Amazon S3 logging for your session script configuration, AppStream 2.0 created an S3 bucket to store the script output. The bucket is unique to your account and Region. When you enable usage reporting in this case, AppStream 2.0 uses the same bucket to store your usage reports. If you haven't already enabled on-instance session scripts, when you enable usage reports, AppStream 2.0 creates a new S3 bucket.</p>
         pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_bucket_name = Some(input.into());
             self
         }
         /// <p>The Amazon S3 bucket where generated reports are stored.</p>
-        ///
-        /// <p>If you enabled on-instance session scripts and Amazon S3 logging for your session script
-        /// configuration, AppStream 2.0 created an S3 bucket to store the script output. The bucket is
-        /// unique to your account and Region. When you enable usage reporting in this case, AppStream 2.0
-        /// uses the same bucket to store your usage reports. If you haven't already enabled on-instance session scripts,
-        /// when you enable usage reports, AppStream 2.0 creates a new S3 bucket.</p>
+        /// <p>If you enabled on-instance session scripts and Amazon S3 logging for your session script configuration, AppStream 2.0 created an S3 bucket to store the script output. The bucket is unique to your account and Region. When you enable usage reporting in this case, AppStream 2.0 uses the same bucket to store your usage reports. If you haven't already enabled on-instance session scripts, when you enable usage reports, AppStream 2.0 creates a new S3 bucket.</p>
         pub fn set_s3_bucket_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3264,16 +3232,12 @@ impl AssociateFleetOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateApplicationFleetOutput {
-    /// <p>If fleet name is specified, this returns the list of applications that are associated
-    /// to it. If application ARN is specified, this returns the list of fleets to which it is
-    /// associated.</p>
+    /// <p>If fleet name is specified, this returns the list of applications that are associated to it. If application ARN is specified, this returns the list of fleets to which it is associated.</p>
     pub application_fleet_association:
         std::option::Option<crate::model::ApplicationFleetAssociation>,
 }
 impl AssociateApplicationFleetOutput {
-    /// <p>If fleet name is specified, this returns the list of applications that are associated
-    /// to it. If application ARN is specified, this returns the list of fleets to which it is
-    /// associated.</p>
+    /// <p>If fleet name is specified, this returns the list of applications that are associated to it. If application ARN is specified, this returns the list of fleets to which it is associated.</p>
     pub fn application_fleet_association(
         &self,
     ) -> std::option::Option<&crate::model::ApplicationFleetAssociation> {
@@ -3300,9 +3264,7 @@ pub mod associate_application_fleet_output {
             std::option::Option<crate::model::ApplicationFleetAssociation>,
     }
     impl Builder {
-        /// <p>If fleet name is specified, this returns the list of applications that are associated
-        /// to it. If application ARN is specified, this returns the list of fleets to which it is
-        /// associated.</p>
+        /// <p>If fleet name is specified, this returns the list of applications that are associated to it. If application ARN is specified, this returns the list of fleets to which it is associated.</p>
         pub fn application_fleet_association(
             mut self,
             input: crate::model::ApplicationFleetAssociation,
@@ -3310,9 +3272,7 @@ pub mod associate_application_fleet_output {
             self.application_fleet_association = Some(input);
             self
         }
-        /// <p>If fleet name is specified, this returns the list of applications that are associated
-        /// to it. If application ARN is specified, this returns the list of fleets to which it is
-        /// associated.</p>
+        /// <p>If fleet name is specified, this returns the list of applications that are associated to it. If application ARN is specified, this returns the list of fleets to which it is associated.</p>
         pub fn set_application_fleet_association(
             mut self,
             input: std::option::Option<crate::model::ApplicationFleetAssociation>,

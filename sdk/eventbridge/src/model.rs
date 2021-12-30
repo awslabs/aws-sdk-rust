@@ -86,46 +86,38 @@ impl AsRef<str> for ConnectionState {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateConnectionAuthRequestParameters {
-    /// <p>A <code>UpdateConnectionBasicAuthRequestParameters</code> object that contains the
-    /// authorization parameters for Basic authorization.</p>
+    /// <p>A <code>UpdateConnectionBasicAuthRequestParameters</code> object that contains the authorization parameters for Basic authorization.</p>
     pub basic_auth_parameters:
         std::option::Option<crate::model::UpdateConnectionBasicAuthRequestParameters>,
-    /// <p>A <code>UpdateConnectionOAuthRequestParameters</code> object that contains the
-    /// authorization parameters for OAuth authorization.</p>
+    /// <p>A <code>UpdateConnectionOAuthRequestParameters</code> object that contains the authorization parameters for OAuth authorization.</p>
     pub o_auth_parameters:
         std::option::Option<crate::model::UpdateConnectionOAuthRequestParameters>,
-    /// <p>A <code>UpdateConnectionApiKeyAuthRequestParameters</code> object that contains the
-    /// authorization parameters for API key authorization.</p>
+    /// <p>A <code>UpdateConnectionApiKeyAuthRequestParameters</code> object that contains the authorization parameters for API key authorization.</p>
     pub api_key_auth_parameters:
         std::option::Option<crate::model::UpdateConnectionApiKeyAuthRequestParameters>,
-    /// <p>A <code>ConnectionHttpParameters</code> object that contains the additional parameters to
-    /// use for the connection.</p>
+    /// <p>A <code>ConnectionHttpParameters</code> object that contains the additional parameters to use for the connection.</p>
     pub invocation_http_parameters: std::option::Option<crate::model::ConnectionHttpParameters>,
 }
 impl UpdateConnectionAuthRequestParameters {
-    /// <p>A <code>UpdateConnectionBasicAuthRequestParameters</code> object that contains the
-    /// authorization parameters for Basic authorization.</p>
+    /// <p>A <code>UpdateConnectionBasicAuthRequestParameters</code> object that contains the authorization parameters for Basic authorization.</p>
     pub fn basic_auth_parameters(
         &self,
     ) -> std::option::Option<&crate::model::UpdateConnectionBasicAuthRequestParameters> {
         self.basic_auth_parameters.as_ref()
     }
-    /// <p>A <code>UpdateConnectionOAuthRequestParameters</code> object that contains the
-    /// authorization parameters for OAuth authorization.</p>
+    /// <p>A <code>UpdateConnectionOAuthRequestParameters</code> object that contains the authorization parameters for OAuth authorization.</p>
     pub fn o_auth_parameters(
         &self,
     ) -> std::option::Option<&crate::model::UpdateConnectionOAuthRequestParameters> {
         self.o_auth_parameters.as_ref()
     }
-    /// <p>A <code>UpdateConnectionApiKeyAuthRequestParameters</code> object that contains the
-    /// authorization parameters for API key authorization.</p>
+    /// <p>A <code>UpdateConnectionApiKeyAuthRequestParameters</code> object that contains the authorization parameters for API key authorization.</p>
     pub fn api_key_auth_parameters(
         &self,
     ) -> std::option::Option<&crate::model::UpdateConnectionApiKeyAuthRequestParameters> {
         self.api_key_auth_parameters.as_ref()
     }
-    /// <p>A <code>ConnectionHttpParameters</code> object that contains the additional parameters to
-    /// use for the connection.</p>
+    /// <p>A <code>ConnectionHttpParameters</code> object that contains the additional parameters to use for the connection.</p>
     pub fn invocation_http_parameters(
         &self,
     ) -> std::option::Option<&crate::model::ConnectionHttpParameters> {
@@ -161,8 +153,7 @@ pub mod update_connection_auth_request_parameters {
             std::option::Option<crate::model::ConnectionHttpParameters>,
     }
     impl Builder {
-        /// <p>A <code>UpdateConnectionBasicAuthRequestParameters</code> object that contains the
-        /// authorization parameters for Basic authorization.</p>
+        /// <p>A <code>UpdateConnectionBasicAuthRequestParameters</code> object that contains the authorization parameters for Basic authorization.</p>
         pub fn basic_auth_parameters(
             mut self,
             input: crate::model::UpdateConnectionBasicAuthRequestParameters,
@@ -170,8 +161,7 @@ pub mod update_connection_auth_request_parameters {
             self.basic_auth_parameters = Some(input);
             self
         }
-        /// <p>A <code>UpdateConnectionBasicAuthRequestParameters</code> object that contains the
-        /// authorization parameters for Basic authorization.</p>
+        /// <p>A <code>UpdateConnectionBasicAuthRequestParameters</code> object that contains the authorization parameters for Basic authorization.</p>
         pub fn set_basic_auth_parameters(
             mut self,
             input: std::option::Option<crate::model::UpdateConnectionBasicAuthRequestParameters>,
@@ -179,8 +169,7 @@ pub mod update_connection_auth_request_parameters {
             self.basic_auth_parameters = input;
             self
         }
-        /// <p>A <code>UpdateConnectionOAuthRequestParameters</code> object that contains the
-        /// authorization parameters for OAuth authorization.</p>
+        /// <p>A <code>UpdateConnectionOAuthRequestParameters</code> object that contains the authorization parameters for OAuth authorization.</p>
         pub fn o_auth_parameters(
             mut self,
             input: crate::model::UpdateConnectionOAuthRequestParameters,
@@ -188,8 +177,7 @@ pub mod update_connection_auth_request_parameters {
             self.o_auth_parameters = Some(input);
             self
         }
-        /// <p>A <code>UpdateConnectionOAuthRequestParameters</code> object that contains the
-        /// authorization parameters for OAuth authorization.</p>
+        /// <p>A <code>UpdateConnectionOAuthRequestParameters</code> object that contains the authorization parameters for OAuth authorization.</p>
         pub fn set_o_auth_parameters(
             mut self,
             input: std::option::Option<crate::model::UpdateConnectionOAuthRequestParameters>,
@@ -197,8 +185,7 @@ pub mod update_connection_auth_request_parameters {
             self.o_auth_parameters = input;
             self
         }
-        /// <p>A <code>UpdateConnectionApiKeyAuthRequestParameters</code> object that contains the
-        /// authorization parameters for API key authorization.</p>
+        /// <p>A <code>UpdateConnectionApiKeyAuthRequestParameters</code> object that contains the authorization parameters for API key authorization.</p>
         pub fn api_key_auth_parameters(
             mut self,
             input: crate::model::UpdateConnectionApiKeyAuthRequestParameters,
@@ -206,8 +193,7 @@ pub mod update_connection_auth_request_parameters {
             self.api_key_auth_parameters = Some(input);
             self
         }
-        /// <p>A <code>UpdateConnectionApiKeyAuthRequestParameters</code> object that contains the
-        /// authorization parameters for API key authorization.</p>
+        /// <p>A <code>UpdateConnectionApiKeyAuthRequestParameters</code> object that contains the authorization parameters for API key authorization.</p>
         pub fn set_api_key_auth_parameters(
             mut self,
             input: std::option::Option<crate::model::UpdateConnectionApiKeyAuthRequestParameters>,
@@ -215,8 +201,7 @@ pub mod update_connection_auth_request_parameters {
             self.api_key_auth_parameters = input;
             self
         }
-        /// <p>A <code>ConnectionHttpParameters</code> object that contains the additional parameters to
-        /// use for the connection.</p>
+        /// <p>A <code>ConnectionHttpParameters</code> object that contains the additional parameters to use for the connection.</p>
         pub fn invocation_http_parameters(
             mut self,
             input: crate::model::ConnectionHttpParameters,
@@ -224,8 +209,7 @@ pub mod update_connection_auth_request_parameters {
             self.invocation_http_parameters = Some(input);
             self
         }
-        /// <p>A <code>ConnectionHttpParameters</code> object that contains the additional parameters to
-        /// use for the connection.</p>
+        /// <p>A <code>ConnectionHttpParameters</code> object that contains the additional parameters to use for the connection.</p>
         pub fn set_invocation_http_parameters(
             mut self,
             input: std::option::Option<crate::model::ConnectionHttpParameters>,
@@ -382,8 +366,7 @@ impl ConnectionHttpParameters {
     }
 }
 
-/// <p>Additional parameter included in the body. You can include up to 100 additional body
-/// parameters per request. An event payload cannot exceed 64 KB.</p>
+/// <p>Additional parameter included in the body. You can include up to 100 additional body parameters per request. An event payload cannot exceed 64 KB.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectionBodyParameter {
@@ -475,9 +458,7 @@ impl ConnectionBodyParameter {
     }
 }
 
-/// <p>Additional query string parameter for the connection. You can include up to 100 additional
-/// query string parameters per request. Each additional parameter counts towards the event
-/// payload size, which cannot exceed 64 KB.</p>
+/// <p>Additional query string parameter for the connection. You can include up to 100 additional query string parameters per request. Each additional parameter counts towards the event payload size, which cannot exceed 64 KB.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectionQueryStringParameter {
@@ -569,8 +550,7 @@ impl ConnectionQueryStringParameter {
     }
 }
 
-/// <p>Additional parameter included in the header. You can include up to 100 additional header
-/// parameters per request. An event payload cannot exceed 64 KB.</p>
+/// <p>Additional parameter included in the header. You can include up to 100 additional header parameters per request. An event payload cannot exceed 64 KB.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectionHeaderParameter {
@@ -742,13 +722,10 @@ impl UpdateConnectionApiKeyAuthRequestParameters {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateConnectionOAuthRequestParameters {
-    /// <p>A <code>UpdateConnectionOAuthClientRequestParameters</code> object that contains the
-    /// client parameters to use for the connection when OAuth is specified as the authorization
-    /// type.</p>
+    /// <p>A <code>UpdateConnectionOAuthClientRequestParameters</code> object that contains the client parameters to use for the connection when OAuth is specified as the authorization type.</p>
     pub client_parameters:
         std::option::Option<crate::model::UpdateConnectionOAuthClientRequestParameters>,
-    /// <p>The URL to the authorization endpoint when OAuth is specified as the authorization
-    /// type.</p>
+    /// <p>The URL to the authorization endpoint when OAuth is specified as the authorization type.</p>
     pub authorization_endpoint: std::option::Option<std::string::String>,
     /// <p>The method used to connect to the HTTP endpoint.</p>
     pub http_method: std::option::Option<crate::model::ConnectionOAuthHttpMethod>,
@@ -756,16 +733,13 @@ pub struct UpdateConnectionOAuthRequestParameters {
     pub o_auth_http_parameters: std::option::Option<crate::model::ConnectionHttpParameters>,
 }
 impl UpdateConnectionOAuthRequestParameters {
-    /// <p>A <code>UpdateConnectionOAuthClientRequestParameters</code> object that contains the
-    /// client parameters to use for the connection when OAuth is specified as the authorization
-    /// type.</p>
+    /// <p>A <code>UpdateConnectionOAuthClientRequestParameters</code> object that contains the client parameters to use for the connection when OAuth is specified as the authorization type.</p>
     pub fn client_parameters(
         &self,
     ) -> std::option::Option<&crate::model::UpdateConnectionOAuthClientRequestParameters> {
         self.client_parameters.as_ref()
     }
-    /// <p>The URL to the authorization endpoint when OAuth is specified as the authorization
-    /// type.</p>
+    /// <p>The URL to the authorization endpoint when OAuth is specified as the authorization type.</p>
     pub fn authorization_endpoint(&self) -> std::option::Option<&str> {
         self.authorization_endpoint.as_deref()
     }
@@ -804,9 +778,7 @@ pub mod update_connection_o_auth_request_parameters {
             std::option::Option<crate::model::ConnectionHttpParameters>,
     }
     impl Builder {
-        /// <p>A <code>UpdateConnectionOAuthClientRequestParameters</code> object that contains the
-        /// client parameters to use for the connection when OAuth is specified as the authorization
-        /// type.</p>
+        /// <p>A <code>UpdateConnectionOAuthClientRequestParameters</code> object that contains the client parameters to use for the connection when OAuth is specified as the authorization type.</p>
         pub fn client_parameters(
             mut self,
             input: crate::model::UpdateConnectionOAuthClientRequestParameters,
@@ -814,9 +786,7 @@ pub mod update_connection_o_auth_request_parameters {
             self.client_parameters = Some(input);
             self
         }
-        /// <p>A <code>UpdateConnectionOAuthClientRequestParameters</code> object that contains the
-        /// client parameters to use for the connection when OAuth is specified as the authorization
-        /// type.</p>
+        /// <p>A <code>UpdateConnectionOAuthClientRequestParameters</code> object that contains the client parameters to use for the connection when OAuth is specified as the authorization type.</p>
         pub fn set_client_parameters(
             mut self,
             input: std::option::Option<crate::model::UpdateConnectionOAuthClientRequestParameters>,
@@ -824,14 +794,12 @@ pub mod update_connection_o_auth_request_parameters {
             self.client_parameters = input;
             self
         }
-        /// <p>The URL to the authorization endpoint when OAuth is specified as the authorization
-        /// type.</p>
+        /// <p>The URL to the authorization endpoint when OAuth is specified as the authorization type.</p>
         pub fn authorization_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
             self.authorization_endpoint = Some(input.into());
             self
         }
-        /// <p>The URL to the authorization endpoint when OAuth is specified as the authorization
-        /// type.</p>
+        /// <p>The URL to the authorization endpoint when OAuth is specified as the authorization type.</p>
         pub fn set_authorization_endpoint(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1361,20 +1329,17 @@ impl AsRef<str> for ApiDestinationHttpMethod {
     }
 }
 
-/// <p>A key-value pair associated with an Amazon Web Services resource. In EventBridge, rules and event buses
-/// support tagging.</p>
+/// <p>A key-value pair associated with an Amazon Web Services resource. In EventBridge, rules and event buses support tagging.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
-    /// <p>A string you can use to assign a value. The combination of tag keys and values can help
-    /// you organize and categorize your resources.</p>
+    /// <p>A string you can use to assign a value. The combination of tag keys and values can help you organize and categorize your resources.</p>
     pub key: std::option::Option<std::string::String>,
     /// <p>The value for the specified tag key.</p>
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
-    /// <p>A string you can use to assign a value. The combination of tag keys and values can help
-    /// you organize and categorize your resources.</p>
+    /// <p>A string you can use to assign a value. The combination of tag keys and values can help you organize and categorize your resources.</p>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
@@ -1401,14 +1366,12 @@ pub mod tag {
         pub(crate) value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A string you can use to assign a value. The combination of tag keys and values can help
-        /// you organize and categorize your resources.</p>
+        /// <p>A string you can use to assign a value. The combination of tag keys and values can help you organize and categorize your resources.</p>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
             self
         }
-        /// <p>A string you can use to assign a value. The combination of tag keys and values can help
-        /// you organize and categorize your resources.</p>
+        /// <p>A string you can use to assign a value. The combination of tag keys and values can help you organize and categorize your resources.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -1521,15 +1484,13 @@ impl AsRef<str> for ReplayState {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplayDestination {
-    /// <p>The ARN of the event bus to replay event to. You can replay events only to the event bus
-    /// specified to create the archive.</p>
+    /// <p>The ARN of the event bus to replay event to. You can replay events only to the event bus specified to create the archive.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>A list of ARNs for rules to replay events to.</p>
     pub filter_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ReplayDestination {
-    /// <p>The ARN of the event bus to replay event to. You can replay events only to the event bus
-    /// specified to create the archive.</p>
+    /// <p>The ARN of the event bus to replay event to. You can replay events only to the event bus specified to create the archive.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -1556,14 +1517,12 @@ pub mod replay_destination {
         pub(crate) filter_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The ARN of the event bus to replay event to. You can replay events only to the event bus
-        /// specified to create the archive.</p>
+        /// <p>The ARN of the event bus to replay event to. You can replay events only to the event bus specified to create the archive.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the event bus to replay event to. You can replay events only to the event bus
-        /// specified to create the archive.</p>
+        /// <p>The ARN of the event bus to replay event to. You can replay events only to the event bus specified to create the archive.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -1609,9 +1568,7 @@ impl ReplayDestination {
 pub struct RemoveTargetsResultEntry {
     /// <p>The ID of the target.</p>
     pub target_id: std::option::Option<std::string::String>,
-    /// <p>The error code that indicates why the target removal failed. If the value is
-    /// <code>ConcurrentModificationException</code>, too many requests were made at the same
-    /// time.</p>
+    /// <p>The error code that indicates why the target removal failed. If the value is <code>ConcurrentModificationException</code>, too many requests were made at the same time.</p>
     pub error_code: std::option::Option<std::string::String>,
     /// <p>The error message that explains why the target removal failed.</p>
     pub error_message: std::option::Option<std::string::String>,
@@ -1621,9 +1578,7 @@ impl RemoveTargetsResultEntry {
     pub fn target_id(&self) -> std::option::Option<&str> {
         self.target_id.as_deref()
     }
-    /// <p>The error code that indicates why the target removal failed. If the value is
-    /// <code>ConcurrentModificationException</code>, too many requests were made at the same
-    /// time.</p>
+    /// <p>The error code that indicates why the target removal failed. If the value is <code>ConcurrentModificationException</code>, too many requests were made at the same time.</p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
     }
@@ -1662,16 +1617,12 @@ pub mod remove_targets_result_entry {
             self.target_id = input;
             self
         }
-        /// <p>The error code that indicates why the target removal failed. If the value is
-        /// <code>ConcurrentModificationException</code>, too many requests were made at the same
-        /// time.</p>
+        /// <p>The error code that indicates why the target removal failed. If the value is <code>ConcurrentModificationException</code>, too many requests were made at the same time.</p>
         pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_code = Some(input.into());
             self
         }
-        /// <p>The error code that indicates why the target removal failed. If the value is
-        /// <code>ConcurrentModificationException</code>, too many requests were made at the same
-        /// time.</p>
+        /// <p>The error code that indicates why the target removal failed. If the value is <code>ConcurrentModificationException</code>, too many requests were made at the same time.</p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
@@ -1712,9 +1663,7 @@ impl RemoveTargetsResultEntry {
 pub struct PutTargetsResultEntry {
     /// <p>The ID of the target.</p>
     pub target_id: std::option::Option<std::string::String>,
-    /// <p>The error code that indicates why the target addition failed. If the value is
-    /// <code>ConcurrentModificationException</code>, too many requests were made at the same
-    /// time.</p>
+    /// <p>The error code that indicates why the target addition failed. If the value is <code>ConcurrentModificationException</code>, too many requests were made at the same time.</p>
     pub error_code: std::option::Option<std::string::String>,
     /// <p>The error message that explains why the target addition failed.</p>
     pub error_message: std::option::Option<std::string::String>,
@@ -1724,9 +1673,7 @@ impl PutTargetsResultEntry {
     pub fn target_id(&self) -> std::option::Option<&str> {
         self.target_id.as_deref()
     }
-    /// <p>The error code that indicates why the target addition failed. If the value is
-    /// <code>ConcurrentModificationException</code>, too many requests were made at the same
-    /// time.</p>
+    /// <p>The error code that indicates why the target addition failed. If the value is <code>ConcurrentModificationException</code>, too many requests were made at the same time.</p>
     pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
     }
@@ -1765,16 +1712,12 @@ pub mod put_targets_result_entry {
             self.target_id = input;
             self
         }
-        /// <p>The error code that indicates why the target addition failed. If the value is
-        /// <code>ConcurrentModificationException</code>, too many requests were made at the same
-        /// time.</p>
+        /// <p>The error code that indicates why the target addition failed. If the value is <code>ConcurrentModificationException</code>, too many requests were made at the same time.</p>
         pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_code = Some(input.into());
             self
         }
-        /// <p>The error code that indicates why the target addition failed. If the value is
-        /// <code>ConcurrentModificationException</code>, too many requests were made at the same
-        /// time.</p>
+        /// <p>The error code that indicates why the target addition failed. If the value is <code>ConcurrentModificationException</code>, too many requests were made at the same time.</p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
@@ -1809,15 +1752,8 @@ impl PutTargetsResultEntry {
     }
 }
 
-/// <p>Targets are the resources to be invoked when a rule is triggered. For a complete list of
-/// services and resources that can be set as a target, see <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutTargets.html">PutTargets</a>.</p>
-///
-/// <p>If you are setting the event bus of another account as the target, and that account
-/// granted permission to your account through an organization instead of directly by the account
-/// ID, then you must specify a <code>RoleArn</code> with proper permissions in the
-/// <code>Target</code> structure. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-cross-account-event-delivery.html">Sending and
-/// Receiving Events Between Amazon Web Services Accounts</a> in the <i>Amazon EventBridge User
-/// Guide</i>.</p>
+/// <p>Targets are the resources to be invoked when a rule is triggered. For a complete list of services and resources that can be set as a target, see <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutTargets.html">PutTargets</a>.</p>
+/// <p>If you are setting the event bus of another account as the target, and that account granted permission to your account through an organization instead of directly by the account ID, then you must specify a <code>RoleArn</code> with proper permissions in the <code>Target</code> structure. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-cross-account-event-delivery.html">Sending and Receiving Events Between Amazon Web Services Accounts</a> in the <i>Amazon EventBridge User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Target {
@@ -1825,65 +1761,38 @@ pub struct Target {
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the target.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the IAM role to be used for this target when the rule is
-    /// triggered. If one rule triggers multiple targets, you can use a different IAM role for each
-    /// target.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to be used for this target when the rule is triggered. If one rule triggers multiple targets, you can use a different IAM role for each target.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>Valid JSON text passed to the target. In this case, nothing from the event itself is
-    /// passed to the target. For more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON) Data
-    /// Interchange Format</a>.</p>
+    /// <p>Valid JSON text passed to the target. In this case, nothing from the event itself is passed to the target. For more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON) Data Interchange Format</a>.</p>
     pub input: std::option::Option<std::string::String>,
-    /// <p>The value of the JSONPath that is used for extracting part of the matched event when
-    /// passing it to the target. You must use JSON dot notation, not bracket notation. For more
-    /// information about JSON paths, see <a href="http://goessner.net/articles/JsonPath/">JSONPath</a>.</p>
+    /// <p>The value of the JSONPath that is used for extracting part of the matched event when passing it to the target. You must use JSON dot notation, not bracket notation. For more information about JSON paths, see <a href="http://goessner.net/articles/JsonPath/">JSONPath</a>.</p>
     pub input_path: std::option::Option<std::string::String>,
-    /// <p>Settings to enable you to provide custom input to a target based on certain event data.
-    /// You can extract one or more key-value pairs from the event and then use that data to send
-    /// customized input to the target.</p>
+    /// <p>Settings to enable you to provide custom input to a target based on certain event data. You can extract one or more key-value pairs from the event and then use that data to send customized input to the target.</p>
     pub input_transformer: std::option::Option<crate::model::InputTransformer>,
-    /// <p>The custom parameter you can use to control the shard assignment, when the target is a
-    /// Kinesis data stream. If you do not include this parameter, the default is to use the
-    /// <code>eventId</code> as the partition key.</p>
+    /// <p>The custom parameter you can use to control the shard assignment, when the target is a Kinesis data stream. If you do not include this parameter, the default is to use the <code>eventId</code> as the partition key.</p>
     pub kinesis_parameters: std::option::Option<crate::model::KinesisParameters>,
     /// <p>Parameters used when you are using the rule to invoke Amazon EC2 Run Command.</p>
     pub run_command_parameters: std::option::Option<crate::model::RunCommandParameters>,
-    /// <p>Contains the Amazon ECS task definition and task count to be used, if the event target is
-    /// an Amazon ECS task. For more information about Amazon ECS tasks, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task
-    /// Definitions </a> in the <i>Amazon EC2 Container Service Developer
-    /// Guide</i>.</p>
+    /// <p>Contains the Amazon ECS task definition and task count to be used, if the event target is an Amazon ECS task. For more information about Amazon ECS tasks, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task Definitions </a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
     pub ecs_parameters: std::option::Option<crate::model::EcsParameters>,
-    /// <p>If the event target is an Batch job, this contains the job definition, job name, and
-    /// other parameters. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in the <i>Batch User
-    /// Guide</i>.</p>
+    /// <p>If the event target is an Batch job, this contains the job definition, job name, and other parameters. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in the <i>Batch User Guide</i>.</p>
     pub batch_parameters: std::option::Option<crate::model::BatchParameters>,
     /// <p>Contains the message group ID to use when the target is a FIFO queue.</p>
-    /// <p>If you specify an SQS FIFO queue as a target, the queue must have content-based
-    /// deduplication enabled.</p>
+    /// <p>If you specify an SQS FIFO queue as a target, the queue must have content-based deduplication enabled.</p>
     pub sqs_parameters: std::option::Option<crate::model::SqsParameters>,
-    /// <p>Contains the HTTP parameters to use when the target is a API Gateway REST endpoint or
-    /// EventBridge ApiDestination.</p>
-    /// <p>If you specify an API Gateway REST API or EventBridge ApiDestination as a target, you can
-    /// use this parameter to specify headers, path parameters, and query string keys/values as part
-    /// of your target invoking request. If you're using ApiDestinations, the corresponding Connection
-    /// can also have these values configured. In case of any conflicting keys, values from the
-    /// Connection take precedence.</p>
+    /// <p>Contains the HTTP parameters to use when the target is a API Gateway REST endpoint or EventBridge ApiDestination.</p>
+    /// <p>If you specify an API Gateway REST API or EventBridge ApiDestination as a target, you can use this parameter to specify headers, path parameters, and query string keys/values as part of your target invoking request. If you're using ApiDestinations, the corresponding Connection can also have these values configured. In case of any conflicting keys, values from the Connection take precedence.</p>
     pub http_parameters: std::option::Option<crate::model::HttpParameters>,
-    /// <p>Contains the Amazon Redshift Data API parameters to use when the target is a Amazon Redshift
-    /// cluster.</p>
-    /// <p>If you specify a Amazon Redshift Cluster as a Target, you can use this to specify parameters to
-    /// invoke the Amazon Redshift Data API ExecuteStatement based on EventBridge events.</p>
+    /// <p>Contains the Amazon Redshift Data API parameters to use when the target is a Amazon Redshift cluster.</p>
+    /// <p>If you specify a Amazon Redshift Cluster as a Target, you can use this to specify parameters to invoke the Amazon Redshift Data API ExecuteStatement based on EventBridge events.</p>
     pub redshift_data_parameters: std::option::Option<crate::model::RedshiftDataParameters>,
-    /// <p>Contains the SageMaker Model Building Pipeline parameters to start execution of a
-    /// SageMaker Model Building Pipeline.</p>
-    /// <p>If you specify a SageMaker Model Building Pipeline as a target, you can use this to
-    /// specify parameters to start a pipeline execution based on EventBridge events.</p>
+    /// <p>Contains the SageMaker Model Building Pipeline parameters to start execution of a SageMaker Model Building Pipeline.</p>
+    /// <p>If you specify a SageMaker Model Building Pipeline as a target, you can use this to specify parameters to start a pipeline execution based on EventBridge events.</p>
     pub sage_maker_pipeline_parameters:
         std::option::Option<crate::model::SageMakerPipelineParameters>,
-    /// <p>The <code>DeadLetterConfig</code> that defines the target queue to send dead-letter queue
-    /// events to.</p>
+    /// <p>The <code>DeadLetterConfig</code> that defines the target queue to send dead-letter queue events to.</p>
     pub dead_letter_config: std::option::Option<crate::model::DeadLetterConfig>,
-    /// <p>The <code>RetryPolicy</code> object that contains the retry policy configuration to use
-    /// for the dead-letter queue.</p>
+    /// <p>The <code>RetryPolicy</code> object that contains the retry policy configuration to use for the dead-letter queue.</p>
     pub retry_policy: std::option::Option<crate::model::RetryPolicy>,
 }
 impl Target {
@@ -1895,33 +1804,23 @@ impl Target {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role to be used for this target when the rule is
-    /// triggered. If one rule triggers multiple targets, you can use a different IAM role for each
-    /// target.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to be used for this target when the rule is triggered. If one rule triggers multiple targets, you can use a different IAM role for each target.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>Valid JSON text passed to the target. In this case, nothing from the event itself is
-    /// passed to the target. For more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON) Data
-    /// Interchange Format</a>.</p>
+    /// <p>Valid JSON text passed to the target. In this case, nothing from the event itself is passed to the target. For more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON) Data Interchange Format</a>.</p>
     pub fn input(&self) -> std::option::Option<&str> {
         self.input.as_deref()
     }
-    /// <p>The value of the JSONPath that is used for extracting part of the matched event when
-    /// passing it to the target. You must use JSON dot notation, not bracket notation. For more
-    /// information about JSON paths, see <a href="http://goessner.net/articles/JsonPath/">JSONPath</a>.</p>
+    /// <p>The value of the JSONPath that is used for extracting part of the matched event when passing it to the target. You must use JSON dot notation, not bracket notation. For more information about JSON paths, see <a href="http://goessner.net/articles/JsonPath/">JSONPath</a>.</p>
     pub fn input_path(&self) -> std::option::Option<&str> {
         self.input_path.as_deref()
     }
-    /// <p>Settings to enable you to provide custom input to a target based on certain event data.
-    /// You can extract one or more key-value pairs from the event and then use that data to send
-    /// customized input to the target.</p>
+    /// <p>Settings to enable you to provide custom input to a target based on certain event data. You can extract one or more key-value pairs from the event and then use that data to send customized input to the target.</p>
     pub fn input_transformer(&self) -> std::option::Option<&crate::model::InputTransformer> {
         self.input_transformer.as_ref()
     }
-    /// <p>The custom parameter you can use to control the shard assignment, when the target is a
-    /// Kinesis data stream. If you do not include this parameter, the default is to use the
-    /// <code>eventId</code> as the partition key.</p>
+    /// <p>The custom parameter you can use to control the shard assignment, when the target is a Kinesis data stream. If you do not include this parameter, the default is to use the <code>eventId</code> as the partition key.</p>
     pub fn kinesis_parameters(&self) -> std::option::Option<&crate::model::KinesisParameters> {
         self.kinesis_parameters.as_ref()
     }
@@ -1931,60 +1830,43 @@ impl Target {
     ) -> std::option::Option<&crate::model::RunCommandParameters> {
         self.run_command_parameters.as_ref()
     }
-    /// <p>Contains the Amazon ECS task definition and task count to be used, if the event target is
-    /// an Amazon ECS task. For more information about Amazon ECS tasks, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task
-    /// Definitions </a> in the <i>Amazon EC2 Container Service Developer
-    /// Guide</i>.</p>
+    /// <p>Contains the Amazon ECS task definition and task count to be used, if the event target is an Amazon ECS task. For more information about Amazon ECS tasks, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task Definitions </a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
     pub fn ecs_parameters(&self) -> std::option::Option<&crate::model::EcsParameters> {
         self.ecs_parameters.as_ref()
     }
-    /// <p>If the event target is an Batch job, this contains the job definition, job name, and
-    /// other parameters. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in the <i>Batch User
-    /// Guide</i>.</p>
+    /// <p>If the event target is an Batch job, this contains the job definition, job name, and other parameters. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in the <i>Batch User Guide</i>.</p>
     pub fn batch_parameters(&self) -> std::option::Option<&crate::model::BatchParameters> {
         self.batch_parameters.as_ref()
     }
     /// <p>Contains the message group ID to use when the target is a FIFO queue.</p>
-    /// <p>If you specify an SQS FIFO queue as a target, the queue must have content-based
-    /// deduplication enabled.</p>
+    /// <p>If you specify an SQS FIFO queue as a target, the queue must have content-based deduplication enabled.</p>
     pub fn sqs_parameters(&self) -> std::option::Option<&crate::model::SqsParameters> {
         self.sqs_parameters.as_ref()
     }
-    /// <p>Contains the HTTP parameters to use when the target is a API Gateway REST endpoint or
-    /// EventBridge ApiDestination.</p>
-    /// <p>If you specify an API Gateway REST API or EventBridge ApiDestination as a target, you can
-    /// use this parameter to specify headers, path parameters, and query string keys/values as part
-    /// of your target invoking request. If you're using ApiDestinations, the corresponding Connection
-    /// can also have these values configured. In case of any conflicting keys, values from the
-    /// Connection take precedence.</p>
+    /// <p>Contains the HTTP parameters to use when the target is a API Gateway REST endpoint or EventBridge ApiDestination.</p>
+    /// <p>If you specify an API Gateway REST API or EventBridge ApiDestination as a target, you can use this parameter to specify headers, path parameters, and query string keys/values as part of your target invoking request. If you're using ApiDestinations, the corresponding Connection can also have these values configured. In case of any conflicting keys, values from the Connection take precedence.</p>
     pub fn http_parameters(&self) -> std::option::Option<&crate::model::HttpParameters> {
         self.http_parameters.as_ref()
     }
-    /// <p>Contains the Amazon Redshift Data API parameters to use when the target is a Amazon Redshift
-    /// cluster.</p>
-    /// <p>If you specify a Amazon Redshift Cluster as a Target, you can use this to specify parameters to
-    /// invoke the Amazon Redshift Data API ExecuteStatement based on EventBridge events.</p>
+    /// <p>Contains the Amazon Redshift Data API parameters to use when the target is a Amazon Redshift cluster.</p>
+    /// <p>If you specify a Amazon Redshift Cluster as a Target, you can use this to specify parameters to invoke the Amazon Redshift Data API ExecuteStatement based on EventBridge events.</p>
     pub fn redshift_data_parameters(
         &self,
     ) -> std::option::Option<&crate::model::RedshiftDataParameters> {
         self.redshift_data_parameters.as_ref()
     }
-    /// <p>Contains the SageMaker Model Building Pipeline parameters to start execution of a
-    /// SageMaker Model Building Pipeline.</p>
-    /// <p>If you specify a SageMaker Model Building Pipeline as a target, you can use this to
-    /// specify parameters to start a pipeline execution based on EventBridge events.</p>
+    /// <p>Contains the SageMaker Model Building Pipeline parameters to start execution of a SageMaker Model Building Pipeline.</p>
+    /// <p>If you specify a SageMaker Model Building Pipeline as a target, you can use this to specify parameters to start a pipeline execution based on EventBridge events.</p>
     pub fn sage_maker_pipeline_parameters(
         &self,
     ) -> std::option::Option<&crate::model::SageMakerPipelineParameters> {
         self.sage_maker_pipeline_parameters.as_ref()
     }
-    /// <p>The <code>DeadLetterConfig</code> that defines the target queue to send dead-letter queue
-    /// events to.</p>
+    /// <p>The <code>DeadLetterConfig</code> that defines the target queue to send dead-letter queue events to.</p>
     pub fn dead_letter_config(&self) -> std::option::Option<&crate::model::DeadLetterConfig> {
         self.dead_letter_config.as_ref()
     }
-    /// <p>The <code>RetryPolicy</code> object that contains the retry policy configuration to use
-    /// for the dead-letter queue.</p>
+    /// <p>The <code>RetryPolicy</code> object that contains the retry policy configuration to use for the dead-letter queue.</p>
     pub fn retry_policy(&self) -> std::option::Option<&crate::model::RetryPolicy> {
         self.retry_policy.as_ref()
     }
@@ -2060,58 +1942,42 @@ pub mod target {
             self.arn = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role to be used for this target when the rule is
-        /// triggered. If one rule triggers multiple targets, you can use a different IAM role for each
-        /// target.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM role to be used for this target when the rule is triggered. If one rule triggers multiple targets, you can use a different IAM role for each target.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role to be used for this target when the rule is
-        /// triggered. If one rule triggers multiple targets, you can use a different IAM role for each
-        /// target.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM role to be used for this target when the rule is triggered. If one rule triggers multiple targets, you can use a different IAM role for each target.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
         }
-        /// <p>Valid JSON text passed to the target. In this case, nothing from the event itself is
-        /// passed to the target. For more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON) Data
-        /// Interchange Format</a>.</p>
+        /// <p>Valid JSON text passed to the target. In this case, nothing from the event itself is passed to the target. For more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON) Data Interchange Format</a>.</p>
         pub fn input(mut self, input: impl Into<std::string::String>) -> Self {
             self.input = Some(input.into());
             self
         }
-        /// <p>Valid JSON text passed to the target. In this case, nothing from the event itself is
-        /// passed to the target. For more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON) Data
-        /// Interchange Format</a>.</p>
+        /// <p>Valid JSON text passed to the target. In this case, nothing from the event itself is passed to the target. For more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON) Data Interchange Format</a>.</p>
         pub fn set_input(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.input = input;
             self
         }
-        /// <p>The value of the JSONPath that is used for extracting part of the matched event when
-        /// passing it to the target. You must use JSON dot notation, not bracket notation. For more
-        /// information about JSON paths, see <a href="http://goessner.net/articles/JsonPath/">JSONPath</a>.</p>
+        /// <p>The value of the JSONPath that is used for extracting part of the matched event when passing it to the target. You must use JSON dot notation, not bracket notation. For more information about JSON paths, see <a href="http://goessner.net/articles/JsonPath/">JSONPath</a>.</p>
         pub fn input_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.input_path = Some(input.into());
             self
         }
-        /// <p>The value of the JSONPath that is used for extracting part of the matched event when
-        /// passing it to the target. You must use JSON dot notation, not bracket notation. For more
-        /// information about JSON paths, see <a href="http://goessner.net/articles/JsonPath/">JSONPath</a>.</p>
+        /// <p>The value of the JSONPath that is used for extracting part of the matched event when passing it to the target. You must use JSON dot notation, not bracket notation. For more information about JSON paths, see <a href="http://goessner.net/articles/JsonPath/">JSONPath</a>.</p>
         pub fn set_input_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.input_path = input;
             self
         }
-        /// <p>Settings to enable you to provide custom input to a target based on certain event data.
-        /// You can extract one or more key-value pairs from the event and then use that data to send
-        /// customized input to the target.</p>
+        /// <p>Settings to enable you to provide custom input to a target based on certain event data. You can extract one or more key-value pairs from the event and then use that data to send customized input to the target.</p>
         pub fn input_transformer(mut self, input: crate::model::InputTransformer) -> Self {
             self.input_transformer = Some(input);
             self
         }
-        /// <p>Settings to enable you to provide custom input to a target based on certain event data.
-        /// You can extract one or more key-value pairs from the event and then use that data to send
-        /// customized input to the target.</p>
+        /// <p>Settings to enable you to provide custom input to a target based on certain event data. You can extract one or more key-value pairs from the event and then use that data to send customized input to the target.</p>
         pub fn set_input_transformer(
             mut self,
             input: std::option::Option<crate::model::InputTransformer>,
@@ -2119,16 +1985,12 @@ pub mod target {
             self.input_transformer = input;
             self
         }
-        /// <p>The custom parameter you can use to control the shard assignment, when the target is a
-        /// Kinesis data stream. If you do not include this parameter, the default is to use the
-        /// <code>eventId</code> as the partition key.</p>
+        /// <p>The custom parameter you can use to control the shard assignment, when the target is a Kinesis data stream. If you do not include this parameter, the default is to use the <code>eventId</code> as the partition key.</p>
         pub fn kinesis_parameters(mut self, input: crate::model::KinesisParameters) -> Self {
             self.kinesis_parameters = Some(input);
             self
         }
-        /// <p>The custom parameter you can use to control the shard assignment, when the target is a
-        /// Kinesis data stream. If you do not include this parameter, the default is to use the
-        /// <code>eventId</code> as the partition key.</p>
+        /// <p>The custom parameter you can use to control the shard assignment, when the target is a Kinesis data stream. If you do not include this parameter, the default is to use the <code>eventId</code> as the partition key.</p>
         pub fn set_kinesis_parameters(
             mut self,
             input: std::option::Option<crate::model::KinesisParameters>,
@@ -2149,18 +2011,12 @@ pub mod target {
             self.run_command_parameters = input;
             self
         }
-        /// <p>Contains the Amazon ECS task definition and task count to be used, if the event target is
-        /// an Amazon ECS task. For more information about Amazon ECS tasks, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task
-        /// Definitions </a> in the <i>Amazon EC2 Container Service Developer
-        /// Guide</i>.</p>
+        /// <p>Contains the Amazon ECS task definition and task count to be used, if the event target is an Amazon ECS task. For more information about Amazon ECS tasks, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task Definitions </a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
         pub fn ecs_parameters(mut self, input: crate::model::EcsParameters) -> Self {
             self.ecs_parameters = Some(input);
             self
         }
-        /// <p>Contains the Amazon ECS task definition and task count to be used, if the event target is
-        /// an Amazon ECS task. For more information about Amazon ECS tasks, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task
-        /// Definitions </a> in the <i>Amazon EC2 Container Service Developer
-        /// Guide</i>.</p>
+        /// <p>Contains the Amazon ECS task definition and task count to be used, if the event target is an Amazon ECS task. For more information about Amazon ECS tasks, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task Definitions </a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
         pub fn set_ecs_parameters(
             mut self,
             input: std::option::Option<crate::model::EcsParameters>,
@@ -2168,16 +2024,12 @@ pub mod target {
             self.ecs_parameters = input;
             self
         }
-        /// <p>If the event target is an Batch job, this contains the job definition, job name, and
-        /// other parameters. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in the <i>Batch User
-        /// Guide</i>.</p>
+        /// <p>If the event target is an Batch job, this contains the job definition, job name, and other parameters. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in the <i>Batch User Guide</i>.</p>
         pub fn batch_parameters(mut self, input: crate::model::BatchParameters) -> Self {
             self.batch_parameters = Some(input);
             self
         }
-        /// <p>If the event target is an Batch job, this contains the job definition, job name, and
-        /// other parameters. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in the <i>Batch User
-        /// Guide</i>.</p>
+        /// <p>If the event target is an Batch job, this contains the job definition, job name, and other parameters. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in the <i>Batch User Guide</i>.</p>
         pub fn set_batch_parameters(
             mut self,
             input: std::option::Option<crate::model::BatchParameters>,
@@ -2186,15 +2038,13 @@ pub mod target {
             self
         }
         /// <p>Contains the message group ID to use when the target is a FIFO queue.</p>
-        /// <p>If you specify an SQS FIFO queue as a target, the queue must have content-based
-        /// deduplication enabled.</p>
+        /// <p>If you specify an SQS FIFO queue as a target, the queue must have content-based deduplication enabled.</p>
         pub fn sqs_parameters(mut self, input: crate::model::SqsParameters) -> Self {
             self.sqs_parameters = Some(input);
             self
         }
         /// <p>Contains the message group ID to use when the target is a FIFO queue.</p>
-        /// <p>If you specify an SQS FIFO queue as a target, the queue must have content-based
-        /// deduplication enabled.</p>
+        /// <p>If you specify an SQS FIFO queue as a target, the queue must have content-based deduplication enabled.</p>
         pub fn set_sqs_parameters(
             mut self,
             input: std::option::Option<crate::model::SqsParameters>,
@@ -2202,24 +2052,14 @@ pub mod target {
             self.sqs_parameters = input;
             self
         }
-        /// <p>Contains the HTTP parameters to use when the target is a API Gateway REST endpoint or
-        /// EventBridge ApiDestination.</p>
-        /// <p>If you specify an API Gateway REST API or EventBridge ApiDestination as a target, you can
-        /// use this parameter to specify headers, path parameters, and query string keys/values as part
-        /// of your target invoking request. If you're using ApiDestinations, the corresponding Connection
-        /// can also have these values configured. In case of any conflicting keys, values from the
-        /// Connection take precedence.</p>
+        /// <p>Contains the HTTP parameters to use when the target is a API Gateway REST endpoint or EventBridge ApiDestination.</p>
+        /// <p>If you specify an API Gateway REST API or EventBridge ApiDestination as a target, you can use this parameter to specify headers, path parameters, and query string keys/values as part of your target invoking request. If you're using ApiDestinations, the corresponding Connection can also have these values configured. In case of any conflicting keys, values from the Connection take precedence.</p>
         pub fn http_parameters(mut self, input: crate::model::HttpParameters) -> Self {
             self.http_parameters = Some(input);
             self
         }
-        /// <p>Contains the HTTP parameters to use when the target is a API Gateway REST endpoint or
-        /// EventBridge ApiDestination.</p>
-        /// <p>If you specify an API Gateway REST API or EventBridge ApiDestination as a target, you can
-        /// use this parameter to specify headers, path parameters, and query string keys/values as part
-        /// of your target invoking request. If you're using ApiDestinations, the corresponding Connection
-        /// can also have these values configured. In case of any conflicting keys, values from the
-        /// Connection take precedence.</p>
+        /// <p>Contains the HTTP parameters to use when the target is a API Gateway REST endpoint or EventBridge ApiDestination.</p>
+        /// <p>If you specify an API Gateway REST API or EventBridge ApiDestination as a target, you can use this parameter to specify headers, path parameters, and query string keys/values as part of your target invoking request. If you're using ApiDestinations, the corresponding Connection can also have these values configured. In case of any conflicting keys, values from the Connection take precedence.</p>
         pub fn set_http_parameters(
             mut self,
             input: std::option::Option<crate::model::HttpParameters>,
@@ -2227,10 +2067,8 @@ pub mod target {
             self.http_parameters = input;
             self
         }
-        /// <p>Contains the Amazon Redshift Data API parameters to use when the target is a Amazon Redshift
-        /// cluster.</p>
-        /// <p>If you specify a Amazon Redshift Cluster as a Target, you can use this to specify parameters to
-        /// invoke the Amazon Redshift Data API ExecuteStatement based on EventBridge events.</p>
+        /// <p>Contains the Amazon Redshift Data API parameters to use when the target is a Amazon Redshift cluster.</p>
+        /// <p>If you specify a Amazon Redshift Cluster as a Target, you can use this to specify parameters to invoke the Amazon Redshift Data API ExecuteStatement based on EventBridge events.</p>
         pub fn redshift_data_parameters(
             mut self,
             input: crate::model::RedshiftDataParameters,
@@ -2238,10 +2076,8 @@ pub mod target {
             self.redshift_data_parameters = Some(input);
             self
         }
-        /// <p>Contains the Amazon Redshift Data API parameters to use when the target is a Amazon Redshift
-        /// cluster.</p>
-        /// <p>If you specify a Amazon Redshift Cluster as a Target, you can use this to specify parameters to
-        /// invoke the Amazon Redshift Data API ExecuteStatement based on EventBridge events.</p>
+        /// <p>Contains the Amazon Redshift Data API parameters to use when the target is a Amazon Redshift cluster.</p>
+        /// <p>If you specify a Amazon Redshift Cluster as a Target, you can use this to specify parameters to invoke the Amazon Redshift Data API ExecuteStatement based on EventBridge events.</p>
         pub fn set_redshift_data_parameters(
             mut self,
             input: std::option::Option<crate::model::RedshiftDataParameters>,
@@ -2249,10 +2085,8 @@ pub mod target {
             self.redshift_data_parameters = input;
             self
         }
-        /// <p>Contains the SageMaker Model Building Pipeline parameters to start execution of a
-        /// SageMaker Model Building Pipeline.</p>
-        /// <p>If you specify a SageMaker Model Building Pipeline as a target, you can use this to
-        /// specify parameters to start a pipeline execution based on EventBridge events.</p>
+        /// <p>Contains the SageMaker Model Building Pipeline parameters to start execution of a SageMaker Model Building Pipeline.</p>
+        /// <p>If you specify a SageMaker Model Building Pipeline as a target, you can use this to specify parameters to start a pipeline execution based on EventBridge events.</p>
         pub fn sage_maker_pipeline_parameters(
             mut self,
             input: crate::model::SageMakerPipelineParameters,
@@ -2260,10 +2094,8 @@ pub mod target {
             self.sage_maker_pipeline_parameters = Some(input);
             self
         }
-        /// <p>Contains the SageMaker Model Building Pipeline parameters to start execution of a
-        /// SageMaker Model Building Pipeline.</p>
-        /// <p>If you specify a SageMaker Model Building Pipeline as a target, you can use this to
-        /// specify parameters to start a pipeline execution based on EventBridge events.</p>
+        /// <p>Contains the SageMaker Model Building Pipeline parameters to start execution of a SageMaker Model Building Pipeline.</p>
+        /// <p>If you specify a SageMaker Model Building Pipeline as a target, you can use this to specify parameters to start a pipeline execution based on EventBridge events.</p>
         pub fn set_sage_maker_pipeline_parameters(
             mut self,
             input: std::option::Option<crate::model::SageMakerPipelineParameters>,
@@ -2271,14 +2103,12 @@ pub mod target {
             self.sage_maker_pipeline_parameters = input;
             self
         }
-        /// <p>The <code>DeadLetterConfig</code> that defines the target queue to send dead-letter queue
-        /// events to.</p>
+        /// <p>The <code>DeadLetterConfig</code> that defines the target queue to send dead-letter queue events to.</p>
         pub fn dead_letter_config(mut self, input: crate::model::DeadLetterConfig) -> Self {
             self.dead_letter_config = Some(input);
             self
         }
-        /// <p>The <code>DeadLetterConfig</code> that defines the target queue to send dead-letter queue
-        /// events to.</p>
+        /// <p>The <code>DeadLetterConfig</code> that defines the target queue to send dead-letter queue events to.</p>
         pub fn set_dead_letter_config(
             mut self,
             input: std::option::Option<crate::model::DeadLetterConfig>,
@@ -2286,14 +2116,12 @@ pub mod target {
             self.dead_letter_config = input;
             self
         }
-        /// <p>The <code>RetryPolicy</code> object that contains the retry policy configuration to use
-        /// for the dead-letter queue.</p>
+        /// <p>The <code>RetryPolicy</code> object that contains the retry policy configuration to use for the dead-letter queue.</p>
         pub fn retry_policy(mut self, input: crate::model::RetryPolicy) -> Self {
             self.retry_policy = Some(input);
             self
         }
-        /// <p>The <code>RetryPolicy</code> object that contains the retry policy configuration to use
-        /// for the dead-letter queue.</p>
+        /// <p>The <code>RetryPolicy</code> object that contains the retry policy configuration to use for the dead-letter queue.</p>
         pub fn set_retry_policy(
             mut self,
             input: std::option::Option<crate::model::RetryPolicy>,
@@ -2331,22 +2159,17 @@ impl Target {
     }
 }
 
-/// <p>A <code>RetryPolicy</code> object that includes information about the retry policy
-/// settings.</p>
+/// <p>A <code>RetryPolicy</code> object that includes information about the retry policy settings.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RetryPolicy {
-    /// <p>The maximum number of retry attempts to make before the request fails. Retry attempts
-    /// continue until either the maximum number of attempts is made or until the duration of the
-    /// <code>MaximumEventAgeInSeconds</code> is met.</p>
+    /// <p>The maximum number of retry attempts to make before the request fails. Retry attempts continue until either the maximum number of attempts is made or until the duration of the <code>MaximumEventAgeInSeconds</code> is met.</p>
     pub maximum_retry_attempts: std::option::Option<i32>,
     /// <p>The maximum amount of time, in seconds, to continue to make retry attempts.</p>
     pub maximum_event_age_in_seconds: std::option::Option<i32>,
 }
 impl RetryPolicy {
-    /// <p>The maximum number of retry attempts to make before the request fails. Retry attempts
-    /// continue until either the maximum number of attempts is made or until the duration of the
-    /// <code>MaximumEventAgeInSeconds</code> is met.</p>
+    /// <p>The maximum number of retry attempts to make before the request fails. Retry attempts continue until either the maximum number of attempts is made or until the duration of the <code>MaximumEventAgeInSeconds</code> is met.</p>
     pub fn maximum_retry_attempts(&self) -> std::option::Option<i32> {
         self.maximum_retry_attempts
     }
@@ -2376,16 +2199,12 @@ pub mod retry_policy {
         pub(crate) maximum_event_age_in_seconds: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The maximum number of retry attempts to make before the request fails. Retry attempts
-        /// continue until either the maximum number of attempts is made or until the duration of the
-        /// <code>MaximumEventAgeInSeconds</code> is met.</p>
+        /// <p>The maximum number of retry attempts to make before the request fails. Retry attempts continue until either the maximum number of attempts is made or until the duration of the <code>MaximumEventAgeInSeconds</code> is met.</p>
         pub fn maximum_retry_attempts(mut self, input: i32) -> Self {
             self.maximum_retry_attempts = Some(input);
             self
         }
-        /// <p>The maximum number of retry attempts to make before the request fails. Retry attempts
-        /// continue until either the maximum number of attempts is made or until the duration of the
-        /// <code>MaximumEventAgeInSeconds</code> is met.</p>
+        /// <p>The maximum number of retry attempts to make before the request fails. Retry attempts continue until either the maximum number of attempts is made or until the duration of the <code>MaximumEventAgeInSeconds</code> is met.</p>
         pub fn set_maximum_retry_attempts(mut self, input: std::option::Option<i32>) -> Self {
             self.maximum_retry_attempts = input;
             self
@@ -2416,8 +2235,7 @@ impl RetryPolicy {
     }
 }
 
-/// <p>A <code>DeadLetterConfig</code> object that contains information about a dead-letter queue
-/// configuration.</p>
+/// <p>A <code>DeadLetterConfig</code> object that contains information about a dead-letter queue configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeadLetterConfig {
@@ -2469,8 +2287,7 @@ impl DeadLetterConfig {
     }
 }
 
-/// <p>These are custom parameters to use when the target is a SageMaker Model Building Pipeline
-/// that starts based on EventBridge events.</p>
+/// <p>These are custom parameters to use when the target is a SageMaker Model Building Pipeline that starts based on EventBridge events.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SageMakerPipelineParameters {
@@ -2540,8 +2357,7 @@ impl SageMakerPipelineParameters {
     }
 }
 
-/// <p>Name/Value pair of a parameter to start execution of a SageMaker Model Building
-/// Pipeline.</p>
+/// <p>Name/Value pair of a parameter to start execution of a SageMaker Model Building Pipeline.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SageMakerPipelineParameter {
@@ -2614,13 +2430,11 @@ impl SageMakerPipelineParameter {
     }
 }
 
-/// <p>These are custom parameters to be used when the target is a Amazon Redshift cluster to invoke the
-/// Amazon Redshift Data API ExecuteStatement based on EventBridge events.</p>
+/// <p>These are custom parameters to be used when the target is a Amazon Redshift cluster to invoke the Amazon Redshift Data API ExecuteStatement based on EventBridge events.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RedshiftDataParameters {
-    /// <p>The name or ARN of the secret that enables access to the database. Required when
-    /// authenticating using Amazon Web Services Secrets Manager.</p>
+    /// <p>The name or ARN of the secret that enables access to the database. Required when authenticating using Amazon Web Services Secrets Manager.</p>
     pub secret_manager_arn: std::option::Option<std::string::String>,
     /// <p>The name of the database. Required when authenticating using temporary credentials.</p>
     pub database: std::option::Option<std::string::String>,
@@ -2628,16 +2442,13 @@ pub struct RedshiftDataParameters {
     pub db_user: std::option::Option<std::string::String>,
     /// <p>The SQL statement text to run.</p>
     pub sql: std::option::Option<std::string::String>,
-    /// <p>The name of the SQL statement. You can name the SQL statement when you create it to
-    /// identify the query.</p>
+    /// <p>The name of the SQL statement. You can name the SQL statement when you create it to identify the query.</p>
     pub statement_name: std::option::Option<std::string::String>,
-    /// <p>Indicates whether to send an event back to EventBridge after the SQL statement
-    /// runs.</p>
+    /// <p>Indicates whether to send an event back to EventBridge after the SQL statement runs.</p>
     pub with_event: bool,
 }
 impl RedshiftDataParameters {
-    /// <p>The name or ARN of the secret that enables access to the database. Required when
-    /// authenticating using Amazon Web Services Secrets Manager.</p>
+    /// <p>The name or ARN of the secret that enables access to the database. Required when authenticating using Amazon Web Services Secrets Manager.</p>
     pub fn secret_manager_arn(&self) -> std::option::Option<&str> {
         self.secret_manager_arn.as_deref()
     }
@@ -2653,13 +2464,11 @@ impl RedshiftDataParameters {
     pub fn sql(&self) -> std::option::Option<&str> {
         self.sql.as_deref()
     }
-    /// <p>The name of the SQL statement. You can name the SQL statement when you create it to
-    /// identify the query.</p>
+    /// <p>The name of the SQL statement. You can name the SQL statement when you create it to identify the query.</p>
     pub fn statement_name(&self) -> std::option::Option<&str> {
         self.statement_name.as_deref()
     }
-    /// <p>Indicates whether to send an event back to EventBridge after the SQL statement
-    /// runs.</p>
+    /// <p>Indicates whether to send an event back to EventBridge after the SQL statement runs.</p>
     pub fn with_event(&self) -> bool {
         self.with_event
     }
@@ -2690,14 +2499,12 @@ pub mod redshift_data_parameters {
         pub(crate) with_event: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The name or ARN of the secret that enables access to the database. Required when
-        /// authenticating using Amazon Web Services Secrets Manager.</p>
+        /// <p>The name or ARN of the secret that enables access to the database. Required when authenticating using Amazon Web Services Secrets Manager.</p>
         pub fn secret_manager_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_manager_arn = Some(input.into());
             self
         }
-        /// <p>The name or ARN of the secret that enables access to the database. Required when
-        /// authenticating using Amazon Web Services Secrets Manager.</p>
+        /// <p>The name or ARN of the secret that enables access to the database. Required when authenticating using Amazon Web Services Secrets Manager.</p>
         pub fn set_secret_manager_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2735,14 +2542,12 @@ pub mod redshift_data_parameters {
             self.sql = input;
             self
         }
-        /// <p>The name of the SQL statement. You can name the SQL statement when you create it to
-        /// identify the query.</p>
+        /// <p>The name of the SQL statement. You can name the SQL statement when you create it to identify the query.</p>
         pub fn statement_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.statement_name = Some(input.into());
             self
         }
-        /// <p>The name of the SQL statement. You can name the SQL statement when you create it to
-        /// identify the query.</p>
+        /// <p>The name of the SQL statement. You can name the SQL statement when you create it to identify the query.</p>
         pub fn set_statement_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2750,14 +2555,12 @@ pub mod redshift_data_parameters {
             self.statement_name = input;
             self
         }
-        /// <p>Indicates whether to send an event back to EventBridge after the SQL statement
-        /// runs.</p>
+        /// <p>Indicates whether to send an event back to EventBridge after the SQL statement runs.</p>
         pub fn with_event(mut self, input: bool) -> Self {
             self.with_event = Some(input);
             self
         }
-        /// <p>Indicates whether to send an event back to EventBridge after the SQL statement
-        /// runs.</p>
+        /// <p>Indicates whether to send an event back to EventBridge after the SQL statement runs.</p>
         pub fn set_with_event(mut self, input: std::option::Option<bool>) -> Self {
             self.with_event = input;
             self
@@ -2782,41 +2585,32 @@ impl RedshiftDataParameters {
     }
 }
 
-/// <p>These are custom parameter to be used when the target is an API Gateway REST APIs or
-/// EventBridge ApiDestinations. In the latter case, these are merged with any
-/// InvocationParameters specified on the Connection, with any values from the Connection taking
-/// precedence.</p>
+/// <p>These are custom parameter to be used when the target is an API Gateway REST APIs or EventBridge ApiDestinations. In the latter case, these are merged with any InvocationParameters specified on the Connection, with any values from the Connection taking precedence.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HttpParameters {
-    /// <p>The path parameter values to be used to populate API Gateway REST API or EventBridge
-    /// ApiDestination path wildcards ("*").</p>
+    /// <p>The path parameter values to be used to populate API Gateway REST API or EventBridge ApiDestination path wildcards ("*").</p>
     pub path_parameter_values: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The headers that need to be sent as part of request invoking the API Gateway REST API or
-    /// EventBridge ApiDestination.</p>
+    /// <p>The headers that need to be sent as part of request invoking the API Gateway REST API or EventBridge ApiDestination.</p>
     pub header_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The query string keys/values that need to be sent as part of request invoking the API Gateway
-    /// REST API or EventBridge ApiDestination.</p>
+    /// <p>The query string keys/values that need to be sent as part of request invoking the API Gateway REST API or EventBridge ApiDestination.</p>
     pub query_string_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl HttpParameters {
-    /// <p>The path parameter values to be used to populate API Gateway REST API or EventBridge
-    /// ApiDestination path wildcards ("*").</p>
+    /// <p>The path parameter values to be used to populate API Gateway REST API or EventBridge ApiDestination path wildcards ("*").</p>
     pub fn path_parameter_values(&self) -> std::option::Option<&[std::string::String]> {
         self.path_parameter_values.as_deref()
     }
-    /// <p>The headers that need to be sent as part of request invoking the API Gateway REST API or
-    /// EventBridge ApiDestination.</p>
+    /// <p>The headers that need to be sent as part of request invoking the API Gateway REST API or EventBridge ApiDestination.</p>
     pub fn header_parameters(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.header_parameters.as_ref()
     }
-    /// <p>The query string keys/values that need to be sent as part of request invoking the API Gateway
-    /// REST API or EventBridge ApiDestination.</p>
+    /// <p>The query string keys/values that need to be sent as part of request invoking the API Gateway REST API or EventBridge ApiDestination.</p>
     pub fn query_string_parameters(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -2852,16 +2646,14 @@ pub mod http_parameters {
         ///
         /// To override the contents of this collection use [`set_path_parameter_values`](Self::set_path_parameter_values).
         ///
-        /// <p>The path parameter values to be used to populate API Gateway REST API or EventBridge
-        /// ApiDestination path wildcards ("*").</p>
+        /// <p>The path parameter values to be used to populate API Gateway REST API or EventBridge ApiDestination path wildcards ("*").</p>
         pub fn path_parameter_values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.path_parameter_values.unwrap_or_default();
             v.push(input.into());
             self.path_parameter_values = Some(v);
             self
         }
-        /// <p>The path parameter values to be used to populate API Gateway REST API or EventBridge
-        /// ApiDestination path wildcards ("*").</p>
+        /// <p>The path parameter values to be used to populate API Gateway REST API or EventBridge ApiDestination path wildcards ("*").</p>
         pub fn set_path_parameter_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2873,8 +2665,7 @@ pub mod http_parameters {
         ///
         /// To override the contents of this collection use [`set_header_parameters`](Self::set_header_parameters).
         ///
-        /// <p>The headers that need to be sent as part of request invoking the API Gateway REST API or
-        /// EventBridge ApiDestination.</p>
+        /// <p>The headers that need to be sent as part of request invoking the API Gateway REST API or EventBridge ApiDestination.</p>
         pub fn header_parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -2885,8 +2676,7 @@ pub mod http_parameters {
             self.header_parameters = Some(hash_map);
             self
         }
-        /// <p>The headers that need to be sent as part of request invoking the API Gateway REST API or
-        /// EventBridge ApiDestination.</p>
+        /// <p>The headers that need to be sent as part of request invoking the API Gateway REST API or EventBridge ApiDestination.</p>
         pub fn set_header_parameters(
             mut self,
             input: std::option::Option<
@@ -2900,8 +2690,7 @@ pub mod http_parameters {
         ///
         /// To override the contents of this collection use [`set_query_string_parameters`](Self::set_query_string_parameters).
         ///
-        /// <p>The query string keys/values that need to be sent as part of request invoking the API Gateway
-        /// REST API or EventBridge ApiDestination.</p>
+        /// <p>The query string keys/values that need to be sent as part of request invoking the API Gateway REST API or EventBridge ApiDestination.</p>
         pub fn query_string_parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -2912,8 +2701,7 @@ pub mod http_parameters {
             self.query_string_parameters = Some(hash_map);
             self
         }
-        /// <p>The query string keys/values that need to be sent as part of request invoking the API Gateway
-        /// REST API or EventBridge ApiDestination.</p>
+        /// <p>The query string keys/values that need to be sent as part of request invoking the API Gateway REST API or EventBridge ApiDestination.</p>
         pub fn set_query_string_parameters(
             mut self,
             input: std::option::Option<
@@ -2940,8 +2728,7 @@ impl HttpParameters {
     }
 }
 
-/// <p>This structure includes the custom parameter to be used when the target is an SQS FIFO
-/// queue.</p>
+/// <p>This structure includes the custom parameter to be used when the target is an SQS FIFO queue.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SqsParameters {
@@ -3002,24 +2789,17 @@ impl SqsParameters {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchParameters {
-    /// <p>The ARN or name of the job definition to use if the event target is an Batch job. This
-    /// job definition must already exist.</p>
+    /// <p>The ARN or name of the job definition to use if the event target is an Batch job. This job definition must already exist.</p>
     pub job_definition: std::option::Option<std::string::String>,
     /// <p>The name to use for this execution of the job, if the target is an Batch job.</p>
     pub job_name: std::option::Option<std::string::String>,
-    /// <p>The array properties for the submitted job, such as the size of the array. The array size
-    /// can be between 2 and 10,000. If you specify array properties for a job, it becomes an array
-    /// job. This parameter is used only if the target is an Batch job.</p>
+    /// <p>The array properties for the submitted job, such as the size of the array. The array size can be between 2 and 10,000. If you specify array properties for a job, it becomes an array job. This parameter is used only if the target is an Batch job.</p>
     pub array_properties: std::option::Option<crate::model::BatchArrayProperties>,
-    /// <p>The retry strategy to use for failed jobs, if the target is an Batch job. The retry
-    /// strategy is the number of times to retry the failed job execution. Valid values are 1–10. When
-    /// you specify a retry strategy here, it overrides the retry strategy defined in the job
-    /// definition.</p>
+    /// <p>The retry strategy to use for failed jobs, if the target is an Batch job. The retry strategy is the number of times to retry the failed job execution. Valid values are 1–10. When you specify a retry strategy here, it overrides the retry strategy defined in the job definition.</p>
     pub retry_strategy: std::option::Option<crate::model::BatchRetryStrategy>,
 }
 impl BatchParameters {
-    /// <p>The ARN or name of the job definition to use if the event target is an Batch job. This
-    /// job definition must already exist.</p>
+    /// <p>The ARN or name of the job definition to use if the event target is an Batch job. This job definition must already exist.</p>
     pub fn job_definition(&self) -> std::option::Option<&str> {
         self.job_definition.as_deref()
     }
@@ -3027,16 +2807,11 @@ impl BatchParameters {
     pub fn job_name(&self) -> std::option::Option<&str> {
         self.job_name.as_deref()
     }
-    /// <p>The array properties for the submitted job, such as the size of the array. The array size
-    /// can be between 2 and 10,000. If you specify array properties for a job, it becomes an array
-    /// job. This parameter is used only if the target is an Batch job.</p>
+    /// <p>The array properties for the submitted job, such as the size of the array. The array size can be between 2 and 10,000. If you specify array properties for a job, it becomes an array job. This parameter is used only if the target is an Batch job.</p>
     pub fn array_properties(&self) -> std::option::Option<&crate::model::BatchArrayProperties> {
         self.array_properties.as_ref()
     }
-    /// <p>The retry strategy to use for failed jobs, if the target is an Batch job. The retry
-    /// strategy is the number of times to retry the failed job execution. Valid values are 1–10. When
-    /// you specify a retry strategy here, it overrides the retry strategy defined in the job
-    /// definition.</p>
+    /// <p>The retry strategy to use for failed jobs, if the target is an Batch job. The retry strategy is the number of times to retry the failed job execution. Valid values are 1–10. When you specify a retry strategy here, it overrides the retry strategy defined in the job definition.</p>
     pub fn retry_strategy(&self) -> std::option::Option<&crate::model::BatchRetryStrategy> {
         self.retry_strategy.as_ref()
     }
@@ -3063,14 +2838,12 @@ pub mod batch_parameters {
         pub(crate) retry_strategy: std::option::Option<crate::model::BatchRetryStrategy>,
     }
     impl Builder {
-        /// <p>The ARN or name of the job definition to use if the event target is an Batch job. This
-        /// job definition must already exist.</p>
+        /// <p>The ARN or name of the job definition to use if the event target is an Batch job. This job definition must already exist.</p>
         pub fn job_definition(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_definition = Some(input.into());
             self
         }
-        /// <p>The ARN or name of the job definition to use if the event target is an Batch job. This
-        /// job definition must already exist.</p>
+        /// <p>The ARN or name of the job definition to use if the event target is an Batch job. This job definition must already exist.</p>
         pub fn set_job_definition(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3088,16 +2861,12 @@ pub mod batch_parameters {
             self.job_name = input;
             self
         }
-        /// <p>The array properties for the submitted job, such as the size of the array. The array size
-        /// can be between 2 and 10,000. If you specify array properties for a job, it becomes an array
-        /// job. This parameter is used only if the target is an Batch job.</p>
+        /// <p>The array properties for the submitted job, such as the size of the array. The array size can be between 2 and 10,000. If you specify array properties for a job, it becomes an array job. This parameter is used only if the target is an Batch job.</p>
         pub fn array_properties(mut self, input: crate::model::BatchArrayProperties) -> Self {
             self.array_properties = Some(input);
             self
         }
-        /// <p>The array properties for the submitted job, such as the size of the array. The array size
-        /// can be between 2 and 10,000. If you specify array properties for a job, it becomes an array
-        /// job. This parameter is used only if the target is an Batch job.</p>
+        /// <p>The array properties for the submitted job, such as the size of the array. The array size can be between 2 and 10,000. If you specify array properties for a job, it becomes an array job. This parameter is used only if the target is an Batch job.</p>
         pub fn set_array_properties(
             mut self,
             input: std::option::Option<crate::model::BatchArrayProperties>,
@@ -3105,18 +2874,12 @@ pub mod batch_parameters {
             self.array_properties = input;
             self
         }
-        /// <p>The retry strategy to use for failed jobs, if the target is an Batch job. The retry
-        /// strategy is the number of times to retry the failed job execution. Valid values are 1–10. When
-        /// you specify a retry strategy here, it overrides the retry strategy defined in the job
-        /// definition.</p>
+        /// <p>The retry strategy to use for failed jobs, if the target is an Batch job. The retry strategy is the number of times to retry the failed job execution. Valid values are 1–10. When you specify a retry strategy here, it overrides the retry strategy defined in the job definition.</p>
         pub fn retry_strategy(mut self, input: crate::model::BatchRetryStrategy) -> Self {
             self.retry_strategy = Some(input);
             self
         }
-        /// <p>The retry strategy to use for failed jobs, if the target is an Batch job. The retry
-        /// strategy is the number of times to retry the failed job execution. Valid values are 1–10. When
-        /// you specify a retry strategy here, it overrides the retry strategy defined in the job
-        /// definition.</p>
+        /// <p>The retry strategy to use for failed jobs, if the target is an Batch job. The retry strategy is the number of times to retry the failed job execution. Valid values are 1–10. When you specify a retry strategy here, it overrides the retry strategy defined in the job definition.</p>
         pub fn set_retry_strategy(
             mut self,
             input: std::option::Option<crate::model::BatchRetryStrategy>,
@@ -3142,9 +2905,7 @@ impl BatchParameters {
     }
 }
 
-/// <p>The retry strategy to use for failed jobs, if the target is an Batch job. If you
-/// specify a retry strategy here, it overrides the retry strategy defined in the job
-/// definition.</p>
+/// <p>The retry strategy to use for failed jobs, if the target is an Batch job. If you specify a retry strategy here, it overrides the retry strategy defined in the job definition.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchRetryStrategy {
@@ -3198,19 +2959,15 @@ impl BatchRetryStrategy {
     }
 }
 
-/// <p>The array properties for the submitted job, such as the size of the array. The array size
-/// can be between 2 and 10,000. If you specify array properties for a job, it becomes an array
-/// job. This parameter is used only if the target is an Batch job.</p>
+/// <p>The array properties for the submitted job, such as the size of the array. The array size can be between 2 and 10,000. If you specify array properties for a job, it becomes an array job. This parameter is used only if the target is an Batch job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchArrayProperties {
-    /// <p>The size of the array, if this is an array batch job. Valid values are integers between 2
-    /// and 10,000.</p>
+    /// <p>The size of the array, if this is an array batch job. Valid values are integers between 2 and 10,000.</p>
     pub size: i32,
 }
 impl BatchArrayProperties {
-    /// <p>The size of the array, if this is an array batch job. Valid values are integers between 2
-    /// and 10,000.</p>
+    /// <p>The size of the array, if this is an array batch job. Valid values are integers between 2 and 10,000.</p>
     pub fn size(&self) -> i32 {
         self.size
     }
@@ -3231,14 +2988,12 @@ pub mod batch_array_properties {
         pub(crate) size: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The size of the array, if this is an array batch job. Valid values are integers between 2
-        /// and 10,000.</p>
+        /// <p>The size of the array, if this is an array batch job. Valid values are integers between 2 and 10,000.</p>
         pub fn size(mut self, input: i32) -> Self {
             self.size = Some(input);
             self
         }
-        /// <p>The size of the array, if this is an array batch job. Valid values are integers between 2
-        /// and 10,000.</p>
+        /// <p>The size of the array, if this is an array batch job. Valid values are integers between 2 and 10,000.</p>
         pub fn set_size(mut self, input: std::option::Option<i32>) -> Self {
             self.size = input;
             self
@@ -3264,62 +3019,36 @@ impl BatchArrayProperties {
 pub struct EcsParameters {
     /// <p>The ARN of the task definition to use if the event target is an Amazon ECS task. </p>
     pub task_definition_arn: std::option::Option<std::string::String>,
-    /// <p>The number of tasks to create based on <code>TaskDefinition</code>. The default is
-    /// 1.</p>
+    /// <p>The number of tasks to create based on <code>TaskDefinition</code>. The default is 1.</p>
     pub task_count: std::option::Option<i32>,
-    /// <p>Specifies the launch type on which your task is running. The launch type that you specify
-    /// here must match one of the launch type (compatibilities) of the target task. The
-    /// <code>FARGATE</code> value is supported only in the Regions where Fargate witt Amazon ECS
-    /// is supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS-Fargate.html">Fargate on Amazon ECS</a> in
-    /// the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>Specifies the launch type on which your task is running. The launch type that you specify here must match one of the launch type (compatibilities) of the target task. The <code>FARGATE</code> value is supported only in the Regions where Fargate witt Amazon ECS is supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS-Fargate.html">Fargate on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub launch_type: std::option::Option<crate::model::LaunchType>,
-    /// <p>Use this structure if the Amazon ECS task uses the <code>awsvpc</code> network mode. This
-    /// structure specifies the VPC subnets and security groups associated with the task, and whether
-    /// a public IP address is to be used. This structure is required if <code>LaunchType</code> is
-    /// <code>FARGATE</code> because the <code>awsvpc</code> mode is required for Fargate
-    /// tasks.</p>
-    /// <p>If you specify <code>NetworkConfiguration</code> when the target ECS task does not use the
-    /// <code>awsvpc</code> network mode, the task fails.</p>
+    /// <p>Use this structure if the Amazon ECS task uses the <code>awsvpc</code> network mode. This structure specifies the VPC subnets and security groups associated with the task, and whether a public IP address is to be used. This structure is required if <code>LaunchType</code> is <code>FARGATE</code> because the <code>awsvpc</code> mode is required for Fargate tasks.</p>
+    /// <p>If you specify <code>NetworkConfiguration</code> when the target ECS task does not use the <code>awsvpc</code> network mode, the task fails.</p>
     pub network_configuration: std::option::Option<crate::model::NetworkConfiguration>,
-    /// <p>Specifies the platform version for the task. Specify only the numeric portion of the
-    /// platform version, such as <code>1.1.0</code>.</p>
-    /// <p>This structure is used only if <code>LaunchType</code> is <code>FARGATE</code>. For more
-    /// information about valid platform versions, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform
-    /// Versions</a> in the <i>Amazon Elastic Container Service Developer
-    /// Guide</i>.</p>
+    /// <p>Specifies the platform version for the task. Specify only the numeric portion of the platform version, such as <code>1.1.0</code>.</p>
+    /// <p>This structure is used only if <code>LaunchType</code> is <code>FARGATE</code>. For more information about valid platform versions, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub platform_version: std::option::Option<std::string::String>,
     /// <p>Specifies an ECS task group for the task. The maximum length is 255 characters.</p>
     pub group: std::option::Option<std::string::String>,
     /// <p>The capacity provider strategy to use for the task.</p>
-    /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code>
-    /// parameter must be omitted. If no <code>capacityProviderStrategy</code> or launchType is
-    /// specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is used. </p>
+    /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code> parameter must be omitted. If no <code>capacityProviderStrategy</code> or launchType is specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is used. </p>
     pub capacity_provider_strategy:
         std::option::Option<std::vec::Vec<crate::model::CapacityProviderStrategyItem>>,
-    /// <p>Specifies whether to enable Amazon ECS managed tags for the task. For more information,
-    /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the Amazon Elastic Container Service Developer
-    /// Guide. </p>
+    /// <p>Specifies whether to enable Amazon ECS managed tags for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the Amazon Elastic Container Service Developer Guide. </p>
     pub enable_ecs_managed_tags: bool,
-    /// <p>Whether or not to enable the execute command functionality for the containers in this
-    /// task. If true, this enables execute command functionality on all containers in the
-    /// task.</p>
+    /// <p>Whether or not to enable the execute command functionality for the containers in this task. If true, this enables execute command functionality on all containers in the task.</p>
     pub enable_execute_command: bool,
-    /// <p>An array of placement constraint objects to use for the task. You can specify up to 10
-    /// constraints per task (including constraints in the task definition and those specified at
-    /// runtime).</p>
+    /// <p>An array of placement constraint objects to use for the task. You can specify up to 10 constraints per task (including constraints in the task definition and those specified at runtime).</p>
     pub placement_constraints:
         std::option::Option<std::vec::Vec<crate::model::PlacementConstraint>>,
-    /// <p>The placement strategy objects to use for the task. You can specify a maximum of five
-    /// strategy rules per task. </p>
+    /// <p>The placement strategy objects to use for the task. You can specify a maximum of five strategy rules per task. </p>
     pub placement_strategy: std::option::Option<std::vec::Vec<crate::model::PlacementStrategy>>,
-    /// <p>Specifies whether to propagate the tags from the task definition to the task. If no value
-    /// is specified, the tags are not propagated. Tags can only be propagated to the task during task
-    /// creation. To add tags to a task after task creation, use the TagResource API action. </p>
+    /// <p>Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags are not propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task creation, use the TagResource API action. </p>
     pub propagate_tags: std::option::Option<crate::model::PropagateTags>,
     /// <p>The reference ID to use for the task.</p>
     pub reference_id: std::option::Option<std::string::String>,
-    /// <p>The metadata that you apply to the task to help you categorize and organize them. Each tag
-    /// consists of a key and an optional value, both of which you define. To learn more, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html#ECS-RunTask-request-tags">RunTask</a> in the Amazon ECS API Reference.</p>
+    /// <p>The metadata that you apply to the task to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. To learn more, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html#ECS-RunTask-request-tags">RunTask</a> in the Amazon ECS API Reference.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl EcsParameters {
@@ -3327,37 +3056,23 @@ impl EcsParameters {
     pub fn task_definition_arn(&self) -> std::option::Option<&str> {
         self.task_definition_arn.as_deref()
     }
-    /// <p>The number of tasks to create based on <code>TaskDefinition</code>. The default is
-    /// 1.</p>
+    /// <p>The number of tasks to create based on <code>TaskDefinition</code>. The default is 1.</p>
     pub fn task_count(&self) -> std::option::Option<i32> {
         self.task_count
     }
-    /// <p>Specifies the launch type on which your task is running. The launch type that you specify
-    /// here must match one of the launch type (compatibilities) of the target task. The
-    /// <code>FARGATE</code> value is supported only in the Regions where Fargate witt Amazon ECS
-    /// is supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS-Fargate.html">Fargate on Amazon ECS</a> in
-    /// the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>Specifies the launch type on which your task is running. The launch type that you specify here must match one of the launch type (compatibilities) of the target task. The <code>FARGATE</code> value is supported only in the Regions where Fargate witt Amazon ECS is supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS-Fargate.html">Fargate on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn launch_type(&self) -> std::option::Option<&crate::model::LaunchType> {
         self.launch_type.as_ref()
     }
-    /// <p>Use this structure if the Amazon ECS task uses the <code>awsvpc</code> network mode. This
-    /// structure specifies the VPC subnets and security groups associated with the task, and whether
-    /// a public IP address is to be used. This structure is required if <code>LaunchType</code> is
-    /// <code>FARGATE</code> because the <code>awsvpc</code> mode is required for Fargate
-    /// tasks.</p>
-    /// <p>If you specify <code>NetworkConfiguration</code> when the target ECS task does not use the
-    /// <code>awsvpc</code> network mode, the task fails.</p>
+    /// <p>Use this structure if the Amazon ECS task uses the <code>awsvpc</code> network mode. This structure specifies the VPC subnets and security groups associated with the task, and whether a public IP address is to be used. This structure is required if <code>LaunchType</code> is <code>FARGATE</code> because the <code>awsvpc</code> mode is required for Fargate tasks.</p>
+    /// <p>If you specify <code>NetworkConfiguration</code> when the target ECS task does not use the <code>awsvpc</code> network mode, the task fails.</p>
     pub fn network_configuration(
         &self,
     ) -> std::option::Option<&crate::model::NetworkConfiguration> {
         self.network_configuration.as_ref()
     }
-    /// <p>Specifies the platform version for the task. Specify only the numeric portion of the
-    /// platform version, such as <code>1.1.0</code>.</p>
-    /// <p>This structure is used only if <code>LaunchType</code> is <code>FARGATE</code>. For more
-    /// information about valid platform versions, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform
-    /// Versions</a> in the <i>Amazon Elastic Container Service Developer
-    /// Guide</i>.</p>
+    /// <p>Specifies the platform version for the task. Specify only the numeric portion of the platform version, such as <code>1.1.0</code>.</p>
+    /// <p>This structure is used only if <code>LaunchType</code> is <code>FARGATE</code>. For more information about valid platform versions, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn platform_version(&self) -> std::option::Option<&str> {
         self.platform_version.as_deref()
     }
@@ -3366,42 +3081,31 @@ impl EcsParameters {
         self.group.as_deref()
     }
     /// <p>The capacity provider strategy to use for the task.</p>
-    /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code>
-    /// parameter must be omitted. If no <code>capacityProviderStrategy</code> or launchType is
-    /// specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is used. </p>
+    /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code> parameter must be omitted. If no <code>capacityProviderStrategy</code> or launchType is specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is used. </p>
     pub fn capacity_provider_strategy(
         &self,
     ) -> std::option::Option<&[crate::model::CapacityProviderStrategyItem]> {
         self.capacity_provider_strategy.as_deref()
     }
-    /// <p>Specifies whether to enable Amazon ECS managed tags for the task. For more information,
-    /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the Amazon Elastic Container Service Developer
-    /// Guide. </p>
+    /// <p>Specifies whether to enable Amazon ECS managed tags for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the Amazon Elastic Container Service Developer Guide. </p>
     pub fn enable_ecs_managed_tags(&self) -> bool {
         self.enable_ecs_managed_tags
     }
-    /// <p>Whether or not to enable the execute command functionality for the containers in this
-    /// task. If true, this enables execute command functionality on all containers in the
-    /// task.</p>
+    /// <p>Whether or not to enable the execute command functionality for the containers in this task. If true, this enables execute command functionality on all containers in the task.</p>
     pub fn enable_execute_command(&self) -> bool {
         self.enable_execute_command
     }
-    /// <p>An array of placement constraint objects to use for the task. You can specify up to 10
-    /// constraints per task (including constraints in the task definition and those specified at
-    /// runtime).</p>
+    /// <p>An array of placement constraint objects to use for the task. You can specify up to 10 constraints per task (including constraints in the task definition and those specified at runtime).</p>
     pub fn placement_constraints(
         &self,
     ) -> std::option::Option<&[crate::model::PlacementConstraint]> {
         self.placement_constraints.as_deref()
     }
-    /// <p>The placement strategy objects to use for the task. You can specify a maximum of five
-    /// strategy rules per task. </p>
+    /// <p>The placement strategy objects to use for the task. You can specify a maximum of five strategy rules per task. </p>
     pub fn placement_strategy(&self) -> std::option::Option<&[crate::model::PlacementStrategy]> {
         self.placement_strategy.as_deref()
     }
-    /// <p>Specifies whether to propagate the tags from the task definition to the task. If no value
-    /// is specified, the tags are not propagated. Tags can only be propagated to the task during task
-    /// creation. To add tags to a task after task creation, use the TagResource API action. </p>
+    /// <p>Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags are not propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task creation, use the TagResource API action. </p>
     pub fn propagate_tags(&self) -> std::option::Option<&crate::model::PropagateTags> {
         self.propagate_tags.as_ref()
     }
@@ -3409,8 +3113,7 @@ impl EcsParameters {
     pub fn reference_id(&self) -> std::option::Option<&str> {
         self.reference_id.as_deref()
     }
-    /// <p>The metadata that you apply to the task to help you categorize and organize them. Each tag
-    /// consists of a key and an optional value, both of which you define. To learn more, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html#ECS-RunTask-request-tags">RunTask</a> in the Amazon ECS API Reference.</p>
+    /// <p>The metadata that you apply to the task to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. To learn more, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html#ECS-RunTask-request-tags">RunTask</a> in the Amazon ECS API Reference.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
@@ -3476,32 +3179,22 @@ pub mod ecs_parameters {
             self.task_definition_arn = input;
             self
         }
-        /// <p>The number of tasks to create based on <code>TaskDefinition</code>. The default is
-        /// 1.</p>
+        /// <p>The number of tasks to create based on <code>TaskDefinition</code>. The default is 1.</p>
         pub fn task_count(mut self, input: i32) -> Self {
             self.task_count = Some(input);
             self
         }
-        /// <p>The number of tasks to create based on <code>TaskDefinition</code>. The default is
-        /// 1.</p>
+        /// <p>The number of tasks to create based on <code>TaskDefinition</code>. The default is 1.</p>
         pub fn set_task_count(mut self, input: std::option::Option<i32>) -> Self {
             self.task_count = input;
             self
         }
-        /// <p>Specifies the launch type on which your task is running. The launch type that you specify
-        /// here must match one of the launch type (compatibilities) of the target task. The
-        /// <code>FARGATE</code> value is supported only in the Regions where Fargate witt Amazon ECS
-        /// is supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS-Fargate.html">Fargate on Amazon ECS</a> in
-        /// the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>Specifies the launch type on which your task is running. The launch type that you specify here must match one of the launch type (compatibilities) of the target task. The <code>FARGATE</code> value is supported only in the Regions where Fargate witt Amazon ECS is supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS-Fargate.html">Fargate on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn launch_type(mut self, input: crate::model::LaunchType) -> Self {
             self.launch_type = Some(input);
             self
         }
-        /// <p>Specifies the launch type on which your task is running. The launch type that you specify
-        /// here must match one of the launch type (compatibilities) of the target task. The
-        /// <code>FARGATE</code> value is supported only in the Regions where Fargate witt Amazon ECS
-        /// is supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS-Fargate.html">Fargate on Amazon ECS</a> in
-        /// the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>Specifies the launch type on which your task is running. The launch type that you specify here must match one of the launch type (compatibilities) of the target task. The <code>FARGATE</code> value is supported only in the Regions where Fargate witt Amazon ECS is supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS-Fargate.html">Fargate on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn set_launch_type(
             mut self,
             input: std::option::Option<crate::model::LaunchType>,
@@ -3509,24 +3202,14 @@ pub mod ecs_parameters {
             self.launch_type = input;
             self
         }
-        /// <p>Use this structure if the Amazon ECS task uses the <code>awsvpc</code> network mode. This
-        /// structure specifies the VPC subnets and security groups associated with the task, and whether
-        /// a public IP address is to be used. This structure is required if <code>LaunchType</code> is
-        /// <code>FARGATE</code> because the <code>awsvpc</code> mode is required for Fargate
-        /// tasks.</p>
-        /// <p>If you specify <code>NetworkConfiguration</code> when the target ECS task does not use the
-        /// <code>awsvpc</code> network mode, the task fails.</p>
+        /// <p>Use this structure if the Amazon ECS task uses the <code>awsvpc</code> network mode. This structure specifies the VPC subnets and security groups associated with the task, and whether a public IP address is to be used. This structure is required if <code>LaunchType</code> is <code>FARGATE</code> because the <code>awsvpc</code> mode is required for Fargate tasks.</p>
+        /// <p>If you specify <code>NetworkConfiguration</code> when the target ECS task does not use the <code>awsvpc</code> network mode, the task fails.</p>
         pub fn network_configuration(mut self, input: crate::model::NetworkConfiguration) -> Self {
             self.network_configuration = Some(input);
             self
         }
-        /// <p>Use this structure if the Amazon ECS task uses the <code>awsvpc</code> network mode. This
-        /// structure specifies the VPC subnets and security groups associated with the task, and whether
-        /// a public IP address is to be used. This structure is required if <code>LaunchType</code> is
-        /// <code>FARGATE</code> because the <code>awsvpc</code> mode is required for Fargate
-        /// tasks.</p>
-        /// <p>If you specify <code>NetworkConfiguration</code> when the target ECS task does not use the
-        /// <code>awsvpc</code> network mode, the task fails.</p>
+        /// <p>Use this structure if the Amazon ECS task uses the <code>awsvpc</code> network mode. This structure specifies the VPC subnets and security groups associated with the task, and whether a public IP address is to be used. This structure is required if <code>LaunchType</code> is <code>FARGATE</code> because the <code>awsvpc</code> mode is required for Fargate tasks.</p>
+        /// <p>If you specify <code>NetworkConfiguration</code> when the target ECS task does not use the <code>awsvpc</code> network mode, the task fails.</p>
         pub fn set_network_configuration(
             mut self,
             input: std::option::Option<crate::model::NetworkConfiguration>,
@@ -3534,22 +3217,14 @@ pub mod ecs_parameters {
             self.network_configuration = input;
             self
         }
-        /// <p>Specifies the platform version for the task. Specify only the numeric portion of the
-        /// platform version, such as <code>1.1.0</code>.</p>
-        /// <p>This structure is used only if <code>LaunchType</code> is <code>FARGATE</code>. For more
-        /// information about valid platform versions, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform
-        /// Versions</a> in the <i>Amazon Elastic Container Service Developer
-        /// Guide</i>.</p>
+        /// <p>Specifies the platform version for the task. Specify only the numeric portion of the platform version, such as <code>1.1.0</code>.</p>
+        /// <p>This structure is used only if <code>LaunchType</code> is <code>FARGATE</code>. For more information about valid platform versions, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn platform_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.platform_version = Some(input.into());
             self
         }
-        /// <p>Specifies the platform version for the task. Specify only the numeric portion of the
-        /// platform version, such as <code>1.1.0</code>.</p>
-        /// <p>This structure is used only if <code>LaunchType</code> is <code>FARGATE</code>. For more
-        /// information about valid platform versions, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform
-        /// Versions</a> in the <i>Amazon Elastic Container Service Developer
-        /// Guide</i>.</p>
+        /// <p>Specifies the platform version for the task. Specify only the numeric portion of the platform version, such as <code>1.1.0</code>.</p>
+        /// <p>This structure is used only if <code>LaunchType</code> is <code>FARGATE</code>. For more information about valid platform versions, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn set_platform_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3572,9 +3247,7 @@ pub mod ecs_parameters {
         /// To override the contents of this collection use [`set_capacity_provider_strategy`](Self::set_capacity_provider_strategy).
         ///
         /// <p>The capacity provider strategy to use for the task.</p>
-        /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code>
-        /// parameter must be omitted. If no <code>capacityProviderStrategy</code> or launchType is
-        /// specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is used. </p>
+        /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code> parameter must be omitted. If no <code>capacityProviderStrategy</code> or launchType is specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is used. </p>
         pub fn capacity_provider_strategy(
             mut self,
             input: crate::model::CapacityProviderStrategyItem,
@@ -3585,9 +3258,7 @@ pub mod ecs_parameters {
             self
         }
         /// <p>The capacity provider strategy to use for the task.</p>
-        /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code>
-        /// parameter must be omitted. If no <code>capacityProviderStrategy</code> or launchType is
-        /// specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is used. </p>
+        /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code> parameter must be omitted. If no <code>capacityProviderStrategy</code> or launchType is specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is used. </p>
         pub fn set_capacity_provider_strategy(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CapacityProviderStrategyItem>>,
@@ -3595,30 +3266,22 @@ pub mod ecs_parameters {
             self.capacity_provider_strategy = input;
             self
         }
-        /// <p>Specifies whether to enable Amazon ECS managed tags for the task. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the Amazon Elastic Container Service Developer
-        /// Guide. </p>
+        /// <p>Specifies whether to enable Amazon ECS managed tags for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the Amazon Elastic Container Service Developer Guide. </p>
         pub fn enable_ecs_managed_tags(mut self, input: bool) -> Self {
             self.enable_ecs_managed_tags = Some(input);
             self
         }
-        /// <p>Specifies whether to enable Amazon ECS managed tags for the task. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the Amazon Elastic Container Service Developer
-        /// Guide. </p>
+        /// <p>Specifies whether to enable Amazon ECS managed tags for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the Amazon Elastic Container Service Developer Guide. </p>
         pub fn set_enable_ecs_managed_tags(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_ecs_managed_tags = input;
             self
         }
-        /// <p>Whether or not to enable the execute command functionality for the containers in this
-        /// task. If true, this enables execute command functionality on all containers in the
-        /// task.</p>
+        /// <p>Whether or not to enable the execute command functionality for the containers in this task. If true, this enables execute command functionality on all containers in the task.</p>
         pub fn enable_execute_command(mut self, input: bool) -> Self {
             self.enable_execute_command = Some(input);
             self
         }
-        /// <p>Whether or not to enable the execute command functionality for the containers in this
-        /// task. If true, this enables execute command functionality on all containers in the
-        /// task.</p>
+        /// <p>Whether or not to enable the execute command functionality for the containers in this task. If true, this enables execute command functionality on all containers in the task.</p>
         pub fn set_enable_execute_command(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_execute_command = input;
             self
@@ -3627,18 +3290,14 @@ pub mod ecs_parameters {
         ///
         /// To override the contents of this collection use [`set_placement_constraints`](Self::set_placement_constraints).
         ///
-        /// <p>An array of placement constraint objects to use for the task. You can specify up to 10
-        /// constraints per task (including constraints in the task definition and those specified at
-        /// runtime).</p>
+        /// <p>An array of placement constraint objects to use for the task. You can specify up to 10 constraints per task (including constraints in the task definition and those specified at runtime).</p>
         pub fn placement_constraints(mut self, input: crate::model::PlacementConstraint) -> Self {
             let mut v = self.placement_constraints.unwrap_or_default();
             v.push(input);
             self.placement_constraints = Some(v);
             self
         }
-        /// <p>An array of placement constraint objects to use for the task. You can specify up to 10
-        /// constraints per task (including constraints in the task definition and those specified at
-        /// runtime).</p>
+        /// <p>An array of placement constraint objects to use for the task. You can specify up to 10 constraints per task (including constraints in the task definition and those specified at runtime).</p>
         pub fn set_placement_constraints(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PlacementConstraint>>,
@@ -3650,16 +3309,14 @@ pub mod ecs_parameters {
         ///
         /// To override the contents of this collection use [`set_placement_strategy`](Self::set_placement_strategy).
         ///
-        /// <p>The placement strategy objects to use for the task. You can specify a maximum of five
-        /// strategy rules per task. </p>
+        /// <p>The placement strategy objects to use for the task. You can specify a maximum of five strategy rules per task. </p>
         pub fn placement_strategy(mut self, input: crate::model::PlacementStrategy) -> Self {
             let mut v = self.placement_strategy.unwrap_or_default();
             v.push(input);
             self.placement_strategy = Some(v);
             self
         }
-        /// <p>The placement strategy objects to use for the task. You can specify a maximum of five
-        /// strategy rules per task. </p>
+        /// <p>The placement strategy objects to use for the task. You can specify a maximum of five strategy rules per task. </p>
         pub fn set_placement_strategy(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PlacementStrategy>>,
@@ -3667,16 +3324,12 @@ pub mod ecs_parameters {
             self.placement_strategy = input;
             self
         }
-        /// <p>Specifies whether to propagate the tags from the task definition to the task. If no value
-        /// is specified, the tags are not propagated. Tags can only be propagated to the task during task
-        /// creation. To add tags to a task after task creation, use the TagResource API action. </p>
+        /// <p>Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags are not propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task creation, use the TagResource API action. </p>
         pub fn propagate_tags(mut self, input: crate::model::PropagateTags) -> Self {
             self.propagate_tags = Some(input);
             self
         }
-        /// <p>Specifies whether to propagate the tags from the task definition to the task. If no value
-        /// is specified, the tags are not propagated. Tags can only be propagated to the task during task
-        /// creation. To add tags to a task after task creation, use the TagResource API action. </p>
+        /// <p>Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags are not propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task creation, use the TagResource API action. </p>
         pub fn set_propagate_tags(
             mut self,
             input: std::option::Option<crate::model::PropagateTags>,
@@ -3698,16 +3351,14 @@ pub mod ecs_parameters {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The metadata that you apply to the task to help you categorize and organize them. Each tag
-        /// consists of a key and an optional value, both of which you define. To learn more, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html#ECS-RunTask-request-tags">RunTask</a> in the Amazon ECS API Reference.</p>
+        /// <p>The metadata that you apply to the task to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. To learn more, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html#ECS-RunTask-request-tags">RunTask</a> in the Amazon ECS API Reference.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>The metadata that you apply to the task to help you categorize and organize them. Each tag
-        /// consists of a key and an optional value, both of which you define. To learn more, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html#ECS-RunTask-request-tags">RunTask</a> in the Amazon ECS API Reference.</p>
+        /// <p>The metadata that you apply to the task to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. To learn more, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html#ECS-RunTask-request-tags">RunTask</a> in the Amazon ECS API Reference.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3794,40 +3445,21 @@ impl AsRef<str> for PropagateTags {
     }
 }
 
-/// <p>The task placement strategy for a task or service. To learn more, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-strategies.html">Task Placement Strategies</a> in the Amazon Elastic Container Service Service Developer
-/// Guide.</p>
+/// <p>The task placement strategy for a task or service. To learn more, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-strategies.html">Task Placement Strategies</a> in the Amazon Elastic Container Service Service Developer Guide.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PlacementStrategy {
-    /// <p>The type of placement strategy. The random placement strategy randomly places tasks on
-    /// available candidates. The spread placement strategy spreads placement across available
-    /// candidates evenly based on the field parameter. The binpack strategy places tasks on available
-    /// candidates that have the least available amount of the resource that is specified with the
-    /// field parameter. For example, if you binpack on memory, a task is placed on the instance with
-    /// the least amount of remaining memory (but still enough to run the task). </p>
+    /// <p>The type of placement strategy. The random placement strategy randomly places tasks on available candidates. The spread placement strategy spreads placement across available candidates evenly based on the field parameter. The binpack strategy places tasks on available candidates that have the least available amount of the resource that is specified with the field parameter. For example, if you binpack on memory, a task is placed on the instance with the least amount of remaining memory (but still enough to run the task). </p>
     pub r#type: std::option::Option<crate::model::PlacementStrategyType>,
-    /// <p>The field to apply the placement strategy against. For the spread placement strategy,
-    /// valid values are instanceId (or host, which has the same effect), or any platform or custom
-    /// attribute that is applied to a container instance, such as attribute:ecs.availability-zone.
-    /// For the binpack placement strategy, valid values are cpu and memory. For the random placement
-    /// strategy, this field is not used. </p>
+    /// <p>The field to apply the placement strategy against. For the spread placement strategy, valid values are instanceId (or host, which has the same effect), or any platform or custom attribute that is applied to a container instance, such as attribute:ecs.availability-zone. For the binpack placement strategy, valid values are cpu and memory. For the random placement strategy, this field is not used. </p>
     pub field: std::option::Option<std::string::String>,
 }
 impl PlacementStrategy {
-    /// <p>The type of placement strategy. The random placement strategy randomly places tasks on
-    /// available candidates. The spread placement strategy spreads placement across available
-    /// candidates evenly based on the field parameter. The binpack strategy places tasks on available
-    /// candidates that have the least available amount of the resource that is specified with the
-    /// field parameter. For example, if you binpack on memory, a task is placed on the instance with
-    /// the least amount of remaining memory (but still enough to run the task). </p>
+    /// <p>The type of placement strategy. The random placement strategy randomly places tasks on available candidates. The spread placement strategy spreads placement across available candidates evenly based on the field parameter. The binpack strategy places tasks on available candidates that have the least available amount of the resource that is specified with the field parameter. For example, if you binpack on memory, a task is placed on the instance with the least amount of remaining memory (but still enough to run the task). </p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::PlacementStrategyType> {
         self.r#type.as_ref()
     }
-    /// <p>The field to apply the placement strategy against. For the spread placement strategy,
-    /// valid values are instanceId (or host, which has the same effect), or any platform or custom
-    /// attribute that is applied to a container instance, such as attribute:ecs.availability-zone.
-    /// For the binpack placement strategy, valid values are cpu and memory. For the random placement
-    /// strategy, this field is not used. </p>
+    /// <p>The field to apply the placement strategy against. For the spread placement strategy, valid values are instanceId (or host, which has the same effect), or any platform or custom attribute that is applied to a container instance, such as attribute:ecs.availability-zone. For the binpack placement strategy, valid values are cpu and memory. For the random placement strategy, this field is not used. </p>
     pub fn field(&self) -> std::option::Option<&str> {
         self.field.as_deref()
     }
@@ -3850,22 +3482,12 @@ pub mod placement_strategy {
         pub(crate) field: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The type of placement strategy. The random placement strategy randomly places tasks on
-        /// available candidates. The spread placement strategy spreads placement across available
-        /// candidates evenly based on the field parameter. The binpack strategy places tasks on available
-        /// candidates that have the least available amount of the resource that is specified with the
-        /// field parameter. For example, if you binpack on memory, a task is placed on the instance with
-        /// the least amount of remaining memory (but still enough to run the task). </p>
+        /// <p>The type of placement strategy. The random placement strategy randomly places tasks on available candidates. The spread placement strategy spreads placement across available candidates evenly based on the field parameter. The binpack strategy places tasks on available candidates that have the least available amount of the resource that is specified with the field parameter. For example, if you binpack on memory, a task is placed on the instance with the least amount of remaining memory (but still enough to run the task). </p>
         pub fn r#type(mut self, input: crate::model::PlacementStrategyType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The type of placement strategy. The random placement strategy randomly places tasks on
-        /// available candidates. The spread placement strategy spreads placement across available
-        /// candidates evenly based on the field parameter. The binpack strategy places tasks on available
-        /// candidates that have the least available amount of the resource that is specified with the
-        /// field parameter. For example, if you binpack on memory, a task is placed on the instance with
-        /// the least amount of remaining memory (but still enough to run the task). </p>
+        /// <p>The type of placement strategy. The random placement strategy randomly places tasks on available candidates. The spread placement strategy spreads placement across available candidates evenly based on the field parameter. The binpack strategy places tasks on available candidates that have the least available amount of the resource that is specified with the field parameter. For example, if you binpack on memory, a task is placed on the instance with the least amount of remaining memory (but still enough to run the task). </p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::PlacementStrategyType>,
@@ -3873,20 +3495,12 @@ pub mod placement_strategy {
             self.r#type = input;
             self
         }
-        /// <p>The field to apply the placement strategy against. For the spread placement strategy,
-        /// valid values are instanceId (or host, which has the same effect), or any platform or custom
-        /// attribute that is applied to a container instance, such as attribute:ecs.availability-zone.
-        /// For the binpack placement strategy, valid values are cpu and memory. For the random placement
-        /// strategy, this field is not used. </p>
+        /// <p>The field to apply the placement strategy against. For the spread placement strategy, valid values are instanceId (or host, which has the same effect), or any platform or custom attribute that is applied to a container instance, such as attribute:ecs.availability-zone. For the binpack placement strategy, valid values are cpu and memory. For the random placement strategy, this field is not used. </p>
         pub fn field(mut self, input: impl Into<std::string::String>) -> Self {
             self.field = Some(input.into());
             self
         }
-        /// <p>The field to apply the placement strategy against. For the spread placement strategy,
-        /// valid values are instanceId (or host, which has the same effect), or any platform or custom
-        /// attribute that is applied to a container instance, such as attribute:ecs.availability-zone.
-        /// For the binpack placement strategy, valid values are cpu and memory. For the random placement
-        /// strategy, this field is not used. </p>
+        /// <p>The field to apply the placement strategy against. For the spread placement strategy, valid values are instanceId (or host, which has the same effect), or any platform or custom attribute that is applied to a container instance, such as attribute:ecs.availability-zone. For the binpack placement strategy, valid values are cpu and memory. For the random placement strategy, this field is not used. </p>
         pub fn set_field(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.field = input;
             self
@@ -3966,30 +3580,21 @@ impl AsRef<str> for PlacementStrategyType {
     }
 }
 
-/// <p>An object representing a constraint on task placement. To learn more, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html">Task Placement Constraints</a> in the Amazon Elastic Container Service Developer
-/// Guide.</p>
+/// <p>An object representing a constraint on task placement. To learn more, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html">Task Placement Constraints</a> in the Amazon Elastic Container Service Developer Guide.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PlacementConstraint {
-    /// <p>The type of constraint. Use distinctInstance to ensure that each task in a particular
-    /// group is running on a different container instance. Use memberOf to restrict the selection to
-    /// a group of valid candidates. </p>
+    /// <p>The type of constraint. Use distinctInstance to ensure that each task in a particular group is running on a different container instance. Use memberOf to restrict the selection to a group of valid candidates. </p>
     pub r#type: std::option::Option<crate::model::PlacementConstraintType>,
-    /// <p>A cluster query language expression to apply to the constraint. You cannot specify an
-    /// expression if the constraint type is <code>distinctInstance</code>. To learn more, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query Language</a> in the Amazon Elastic Container Service Developer Guide.
-    /// </p>
+    /// <p>A cluster query language expression to apply to the constraint. You cannot specify an expression if the constraint type is <code>distinctInstance</code>. To learn more, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query Language</a> in the Amazon Elastic Container Service Developer Guide. </p>
     pub expression: std::option::Option<std::string::String>,
 }
 impl PlacementConstraint {
-    /// <p>The type of constraint. Use distinctInstance to ensure that each task in a particular
-    /// group is running on a different container instance. Use memberOf to restrict the selection to
-    /// a group of valid candidates. </p>
+    /// <p>The type of constraint. Use distinctInstance to ensure that each task in a particular group is running on a different container instance. Use memberOf to restrict the selection to a group of valid candidates. </p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::PlacementConstraintType> {
         self.r#type.as_ref()
     }
-    /// <p>A cluster query language expression to apply to the constraint. You cannot specify an
-    /// expression if the constraint type is <code>distinctInstance</code>. To learn more, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query Language</a> in the Amazon Elastic Container Service Developer Guide.
-    /// </p>
+    /// <p>A cluster query language expression to apply to the constraint. You cannot specify an expression if the constraint type is <code>distinctInstance</code>. To learn more, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query Language</a> in the Amazon Elastic Container Service Developer Guide. </p>
     pub fn expression(&self) -> std::option::Option<&str> {
         self.expression.as_deref()
     }
@@ -4012,16 +3617,12 @@ pub mod placement_constraint {
         pub(crate) expression: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The type of constraint. Use distinctInstance to ensure that each task in a particular
-        /// group is running on a different container instance. Use memberOf to restrict the selection to
-        /// a group of valid candidates. </p>
+        /// <p>The type of constraint. Use distinctInstance to ensure that each task in a particular group is running on a different container instance. Use memberOf to restrict the selection to a group of valid candidates. </p>
         pub fn r#type(mut self, input: crate::model::PlacementConstraintType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The type of constraint. Use distinctInstance to ensure that each task in a particular
-        /// group is running on a different container instance. Use memberOf to restrict the selection to
-        /// a group of valid candidates. </p>
+        /// <p>The type of constraint. Use distinctInstance to ensure that each task in a particular group is running on a different container instance. Use memberOf to restrict the selection to a group of valid candidates. </p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::PlacementConstraintType>,
@@ -4029,16 +3630,12 @@ pub mod placement_constraint {
             self.r#type = input;
             self
         }
-        /// <p>A cluster query language expression to apply to the constraint. You cannot specify an
-        /// expression if the constraint type is <code>distinctInstance</code>. To learn more, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query Language</a> in the Amazon Elastic Container Service Developer Guide.
-        /// </p>
+        /// <p>A cluster query language expression to apply to the constraint. You cannot specify an expression if the constraint type is <code>distinctInstance</code>. To learn more, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query Language</a> in the Amazon Elastic Container Service Developer Guide. </p>
         pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.expression = Some(input.into());
             self
         }
-        /// <p>A cluster query language expression to apply to the constraint. You cannot specify an
-        /// expression if the constraint type is <code>distinctInstance</code>. To learn more, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query Language</a> in the Amazon Elastic Container Service Developer Guide.
-        /// </p>
+        /// <p>A cluster query language expression to apply to the constraint. You cannot specify an expression if the constraint type is <code>distinctInstance</code>. To learn more, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query Language</a> in the Amazon Elastic Container Service Developer Guide. </p>
         pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.expression = input;
             self
@@ -4120,13 +3717,9 @@ impl AsRef<str> for PlacementConstraintType {
 pub struct CapacityProviderStrategyItem {
     /// <p>The short name of the capacity provider.</p>
     pub capacity_provider: std::option::Option<std::string::String>,
-    /// <p>The weight value designates the relative percentage of the total number of tasks launched
-    /// that should use the specified capacity provider. The weight value is taken into consideration
-    /// after the base value, if defined, is satisfied.</p>
+    /// <p>The weight value designates the relative percentage of the total number of tasks launched that should use the specified capacity provider. The weight value is taken into consideration after the base value, if defined, is satisfied.</p>
     pub weight: i32,
-    /// <p>The base value designates how many tasks, at a minimum, to run on the specified capacity
-    /// provider. Only one capacity provider in a capacity provider strategy can have a base defined.
-    /// If no value is specified, the default value of 0 is used. </p>
+    /// <p>The base value designates how many tasks, at a minimum, to run on the specified capacity provider. Only one capacity provider in a capacity provider strategy can have a base defined. If no value is specified, the default value of 0 is used. </p>
     pub base: i32,
 }
 impl CapacityProviderStrategyItem {
@@ -4134,15 +3727,11 @@ impl CapacityProviderStrategyItem {
     pub fn capacity_provider(&self) -> std::option::Option<&str> {
         self.capacity_provider.as_deref()
     }
-    /// <p>The weight value designates the relative percentage of the total number of tasks launched
-    /// that should use the specified capacity provider. The weight value is taken into consideration
-    /// after the base value, if defined, is satisfied.</p>
+    /// <p>The weight value designates the relative percentage of the total number of tasks launched that should use the specified capacity provider. The weight value is taken into consideration after the base value, if defined, is satisfied.</p>
     pub fn weight(&self) -> i32 {
         self.weight
     }
-    /// <p>The base value designates how many tasks, at a minimum, to run on the specified capacity
-    /// provider. Only one capacity provider in a capacity provider strategy can have a base defined.
-    /// If no value is specified, the default value of 0 is used. </p>
+    /// <p>The base value designates how many tasks, at a minimum, to run on the specified capacity provider. Only one capacity provider in a capacity provider strategy can have a base defined. If no value is specified, the default value of 0 is used. </p>
     pub fn base(&self) -> i32 {
         self.base
     }
@@ -4180,30 +3769,22 @@ pub mod capacity_provider_strategy_item {
             self.capacity_provider = input;
             self
         }
-        /// <p>The weight value designates the relative percentage of the total number of tasks launched
-        /// that should use the specified capacity provider. The weight value is taken into consideration
-        /// after the base value, if defined, is satisfied.</p>
+        /// <p>The weight value designates the relative percentage of the total number of tasks launched that should use the specified capacity provider. The weight value is taken into consideration after the base value, if defined, is satisfied.</p>
         pub fn weight(mut self, input: i32) -> Self {
             self.weight = Some(input);
             self
         }
-        /// <p>The weight value designates the relative percentage of the total number of tasks launched
-        /// that should use the specified capacity provider. The weight value is taken into consideration
-        /// after the base value, if defined, is satisfied.</p>
+        /// <p>The weight value designates the relative percentage of the total number of tasks launched that should use the specified capacity provider. The weight value is taken into consideration after the base value, if defined, is satisfied.</p>
         pub fn set_weight(mut self, input: std::option::Option<i32>) -> Self {
             self.weight = input;
             self
         }
-        /// <p>The base value designates how many tasks, at a minimum, to run on the specified capacity
-        /// provider. Only one capacity provider in a capacity provider strategy can have a base defined.
-        /// If no value is specified, the default value of 0 is used. </p>
+        /// <p>The base value designates how many tasks, at a minimum, to run on the specified capacity provider. Only one capacity provider in a capacity provider strategy can have a base defined. If no value is specified, the default value of 0 is used. </p>
         pub fn base(mut self, input: i32) -> Self {
             self.base = Some(input);
             self
         }
-        /// <p>The base value designates how many tasks, at a minimum, to run on the specified capacity
-        /// provider. Only one capacity provider in a capacity provider strategy can have a base defined.
-        /// If no value is specified, the default value of 0 is used. </p>
+        /// <p>The base value designates how many tasks, at a minimum, to run on the specified capacity provider. Only one capacity provider in a capacity provider strategy can have a base defined. If no value is specified, the default value of 0 is used. </p>
         pub fn set_base(mut self, input: std::option::Option<i32>) -> Self {
             self.base = input;
             self
@@ -4229,15 +3810,11 @@ impl CapacityProviderStrategyItem {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NetworkConfiguration {
-    /// <p>Use this structure to specify the VPC subnets and security groups for the task, and
-    /// whether a public IP address is to be used. This structure is relevant only for ECS tasks that
-    /// use the <code>awsvpc</code> network mode.</p>
+    /// <p>Use this structure to specify the VPC subnets and security groups for the task, and whether a public IP address is to be used. This structure is relevant only for ECS tasks that use the <code>awsvpc</code> network mode.</p>
     pub awsvpc_configuration: std::option::Option<crate::model::AwsVpcConfiguration>,
 }
 impl NetworkConfiguration {
-    /// <p>Use this structure to specify the VPC subnets and security groups for the task, and
-    /// whether a public IP address is to be used. This structure is relevant only for ECS tasks that
-    /// use the <code>awsvpc</code> network mode.</p>
+    /// <p>Use this structure to specify the VPC subnets and security groups for the task, and whether a public IP address is to be used. This structure is relevant only for ECS tasks that use the <code>awsvpc</code> network mode.</p>
     pub fn awsvpc_configuration(&self) -> std::option::Option<&crate::model::AwsVpcConfiguration> {
         self.awsvpc_configuration.as_ref()
     }
@@ -4258,16 +3835,12 @@ pub mod network_configuration {
         pub(crate) awsvpc_configuration: std::option::Option<crate::model::AwsVpcConfiguration>,
     }
     impl Builder {
-        /// <p>Use this structure to specify the VPC subnets and security groups for the task, and
-        /// whether a public IP address is to be used. This structure is relevant only for ECS tasks that
-        /// use the <code>awsvpc</code> network mode.</p>
+        /// <p>Use this structure to specify the VPC subnets and security groups for the task, and whether a public IP address is to be used. This structure is relevant only for ECS tasks that use the <code>awsvpc</code> network mode.</p>
         pub fn awsvpc_configuration(mut self, input: crate::model::AwsVpcConfiguration) -> Self {
             self.awsvpc_configuration = Some(input);
             self
         }
-        /// <p>Use this structure to specify the VPC subnets and security groups for the task, and
-        /// whether a public IP address is to be used. This structure is relevant only for ECS tasks that
-        /// use the <code>awsvpc</code> network mode.</p>
+        /// <p>Use this structure to specify the VPC subnets and security groups for the task, and whether a public IP address is to be used. This structure is relevant only for ECS tasks that use the <code>awsvpc</code> network mode.</p>
         pub fn set_awsvpc_configuration(
             mut self,
             input: std::option::Option<crate::model::AwsVpcConfiguration>,
@@ -4290,39 +3863,27 @@ impl NetworkConfiguration {
     }
 }
 
-/// <p>This structure specifies the VPC subnets and security groups for the task, and whether a
-/// public IP address is to be used. This structure is relevant only for ECS tasks that use the
-/// <code>awsvpc</code> network mode.</p>
+/// <p>This structure specifies the VPC subnets and security groups for the task, and whether a public IP address is to be used. This structure is relevant only for ECS tasks that use the <code>awsvpc</code> network mode.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsVpcConfiguration {
-    /// <p>Specifies the subnets associated with the task. These subnets must all be in the same VPC.
-    /// You can specify as many as 16 subnets.</p>
+    /// <p>Specifies the subnets associated with the task. These subnets must all be in the same VPC. You can specify as many as 16 subnets.</p>
     pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Specifies the security groups associated with the task. These security groups must all be
-    /// in the same VPC. You can specify as many as five security groups. If you do not specify a
-    /// security group, the default security group for the VPC is used.</p>
+    /// <p>Specifies the security groups associated with the task. These security groups must all be in the same VPC. You can specify as many as five security groups. If you do not specify a security group, the default security group for the VPC is used.</p>
     pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Specifies whether the task's elastic network interface receives a public IP address. You
-    /// can specify <code>ENABLED</code> only when <code>LaunchType</code> in
-    /// <code>EcsParameters</code> is set to <code>FARGATE</code>.</p>
+    /// <p>Specifies whether the task's elastic network interface receives a public IP address. You can specify <code>ENABLED</code> only when <code>LaunchType</code> in <code>EcsParameters</code> is set to <code>FARGATE</code>.</p>
     pub assign_public_ip: std::option::Option<crate::model::AssignPublicIp>,
 }
 impl AwsVpcConfiguration {
-    /// <p>Specifies the subnets associated with the task. These subnets must all be in the same VPC.
-    /// You can specify as many as 16 subnets.</p>
+    /// <p>Specifies the subnets associated with the task. These subnets must all be in the same VPC. You can specify as many as 16 subnets.</p>
     pub fn subnets(&self) -> std::option::Option<&[std::string::String]> {
         self.subnets.as_deref()
     }
-    /// <p>Specifies the security groups associated with the task. These security groups must all be
-    /// in the same VPC. You can specify as many as five security groups. If you do not specify a
-    /// security group, the default security group for the VPC is used.</p>
+    /// <p>Specifies the security groups associated with the task. These security groups must all be in the same VPC. You can specify as many as five security groups. If you do not specify a security group, the default security group for the VPC is used.</p>
     pub fn security_groups(&self) -> std::option::Option<&[std::string::String]> {
         self.security_groups.as_deref()
     }
-    /// <p>Specifies whether the task's elastic network interface receives a public IP address. You
-    /// can specify <code>ENABLED</code> only when <code>LaunchType</code> in
-    /// <code>EcsParameters</code> is set to <code>FARGATE</code>.</p>
+    /// <p>Specifies whether the task's elastic network interface receives a public IP address. You can specify <code>ENABLED</code> only when <code>LaunchType</code> in <code>EcsParameters</code> is set to <code>FARGATE</code>.</p>
     pub fn assign_public_ip(&self) -> std::option::Option<&crate::model::AssignPublicIp> {
         self.assign_public_ip.as_ref()
     }
@@ -4351,16 +3912,14 @@ pub mod aws_vpc_configuration {
         ///
         /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
         ///
-        /// <p>Specifies the subnets associated with the task. These subnets must all be in the same VPC.
-        /// You can specify as many as 16 subnets.</p>
+        /// <p>Specifies the subnets associated with the task. These subnets must all be in the same VPC. You can specify as many as 16 subnets.</p>
         pub fn subnets(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnets.unwrap_or_default();
             v.push(input.into());
             self.subnets = Some(v);
             self
         }
-        /// <p>Specifies the subnets associated with the task. These subnets must all be in the same VPC.
-        /// You can specify as many as 16 subnets.</p>
+        /// <p>Specifies the subnets associated with the task. These subnets must all be in the same VPC. You can specify as many as 16 subnets.</p>
         pub fn set_subnets(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4372,18 +3931,14 @@ pub mod aws_vpc_configuration {
         ///
         /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
         ///
-        /// <p>Specifies the security groups associated with the task. These security groups must all be
-        /// in the same VPC. You can specify as many as five security groups. If you do not specify a
-        /// security group, the default security group for the VPC is used.</p>
+        /// <p>Specifies the security groups associated with the task. These security groups must all be in the same VPC. You can specify as many as five security groups. If you do not specify a security group, the default security group for the VPC is used.</p>
         pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_groups.unwrap_or_default();
             v.push(input.into());
             self.security_groups = Some(v);
             self
         }
-        /// <p>Specifies the security groups associated with the task. These security groups must all be
-        /// in the same VPC. You can specify as many as five security groups. If you do not specify a
-        /// security group, the default security group for the VPC is used.</p>
+        /// <p>Specifies the security groups associated with the task. These security groups must all be in the same VPC. You can specify as many as five security groups. If you do not specify a security group, the default security group for the VPC is used.</p>
         pub fn set_security_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4391,16 +3946,12 @@ pub mod aws_vpc_configuration {
             self.security_groups = input;
             self
         }
-        /// <p>Specifies whether the task's elastic network interface receives a public IP address. You
-        /// can specify <code>ENABLED</code> only when <code>LaunchType</code> in
-        /// <code>EcsParameters</code> is set to <code>FARGATE</code>.</p>
+        /// <p>Specifies whether the task's elastic network interface receives a public IP address. You can specify <code>ENABLED</code> only when <code>LaunchType</code> in <code>EcsParameters</code> is set to <code>FARGATE</code>.</p>
         pub fn assign_public_ip(mut self, input: crate::model::AssignPublicIp) -> Self {
             self.assign_public_ip = Some(input);
             self
         }
-        /// <p>Specifies whether the task's elastic network interface receives a public IP address. You
-        /// can specify <code>ENABLED</code> only when <code>LaunchType</code> in
-        /// <code>EcsParameters</code> is set to <code>FARGATE</code>.</p>
+        /// <p>Specifies whether the task's elastic network interface receives a public IP address. You can specify <code>ENABLED</code> only when <code>LaunchType</code> in <code>EcsParameters</code> is set to <code>FARGATE</code>.</p>
         pub fn set_assign_public_ip(
             mut self,
             input: std::option::Option<crate::model::AssignPublicIp>,
@@ -4539,18 +4090,15 @@ impl AsRef<str> for LaunchType {
     }
 }
 
-/// <p>This parameter contains the criteria (either InstanceIds or a tag) used to specify which
-/// EC2 instances are to be sent the command. </p>
+/// <p>This parameter contains the criteria (either InstanceIds or a tag) used to specify which EC2 instances are to be sent the command. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RunCommandParameters {
-    /// <p>Currently, we support including only one RunCommandTarget block, which specifies either an
-    /// array of InstanceIds or a tag.</p>
+    /// <p>Currently, we support including only one RunCommandTarget block, which specifies either an array of InstanceIds or a tag.</p>
     pub run_command_targets: std::option::Option<std::vec::Vec<crate::model::RunCommandTarget>>,
 }
 impl RunCommandParameters {
-    /// <p>Currently, we support including only one RunCommandTarget block, which specifies either an
-    /// array of InstanceIds or a tag.</p>
+    /// <p>Currently, we support including only one RunCommandTarget block, which specifies either an array of InstanceIds or a tag.</p>
     pub fn run_command_targets(&self) -> std::option::Option<&[crate::model::RunCommandTarget]> {
         self.run_command_targets.as_deref()
     }
@@ -4576,16 +4124,14 @@ pub mod run_command_parameters {
         ///
         /// To override the contents of this collection use [`set_run_command_targets`](Self::set_run_command_targets).
         ///
-        /// <p>Currently, we support including only one RunCommandTarget block, which specifies either an
-        /// array of InstanceIds or a tag.</p>
+        /// <p>Currently, we support including only one RunCommandTarget block, which specifies either an array of InstanceIds or a tag.</p>
         pub fn run_command_targets(mut self, input: crate::model::RunCommandTarget) -> Self {
             let mut v = self.run_command_targets.unwrap_or_default();
             v.push(input);
             self.run_command_targets = Some(v);
             self
         }
-        /// <p>Currently, we support including only one RunCommandTarget block, which specifies either an
-        /// array of InstanceIds or a tag.</p>
+        /// <p>Currently, we support including only one RunCommandTarget block, which specifies either an array of InstanceIds or a tag.</p>
         pub fn set_run_command_targets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RunCommandTarget>>,
@@ -4608,33 +4154,21 @@ impl RunCommandParameters {
     }
 }
 
-/// <p>Information about the EC2 instances that are to be sent the command, specified as
-/// key-value pairs. Each <code>RunCommandTarget</code> block can include only one key, but this
-/// key may specify multiple values.</p>
+/// <p>Information about the EC2 instances that are to be sent the command, specified as key-value pairs. Each <code>RunCommandTarget</code> block can include only one key, but this key may specify multiple values.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RunCommandTarget {
-    /// <p>Can be either <code>tag:</code>
-    /// <i>tag-key</i> or
-    /// <code>InstanceIds</code>.</p>
+    /// <p>Can be either <code>tag:</code> <i>tag-key</i> or <code>InstanceIds</code>.</p>
     pub key: std::option::Option<std::string::String>,
-    /// <p>If <code>Key</code> is <code>tag:</code>
-    /// <i>tag-key</i>, <code>Values</code>
-    /// is a list of tag values. If <code>Key</code> is <code>InstanceIds</code>, <code>Values</code>
-    /// is a list of Amazon EC2 instance IDs.</p>
+    /// <p>If <code>Key</code> is <code>tag:</code> <i>tag-key</i>, <code>Values</code> is a list of tag values. If <code>Key</code> is <code>InstanceIds</code>, <code>Values</code> is a list of Amazon EC2 instance IDs.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl RunCommandTarget {
-    /// <p>Can be either <code>tag:</code>
-    /// <i>tag-key</i> or
-    /// <code>InstanceIds</code>.</p>
+    /// <p>Can be either <code>tag:</code> <i>tag-key</i> or <code>InstanceIds</code>.</p>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
-    /// <p>If <code>Key</code> is <code>tag:</code>
-    /// <i>tag-key</i>, <code>Values</code>
-    /// is a list of tag values. If <code>Key</code> is <code>InstanceIds</code>, <code>Values</code>
-    /// is a list of Amazon EC2 instance IDs.</p>
+    /// <p>If <code>Key</code> is <code>tag:</code> <i>tag-key</i>, <code>Values</code> is a list of tag values. If <code>Key</code> is <code>InstanceIds</code>, <code>Values</code> is a list of Amazon EC2 instance IDs.</p>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
     }
@@ -4657,16 +4191,12 @@ pub mod run_command_target {
         pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>Can be either <code>tag:</code>
-        /// <i>tag-key</i> or
-        /// <code>InstanceIds</code>.</p>
+        /// <p>Can be either <code>tag:</code> <i>tag-key</i> or <code>InstanceIds</code>.</p>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
             self
         }
-        /// <p>Can be either <code>tag:</code>
-        /// <i>tag-key</i> or
-        /// <code>InstanceIds</code>.</p>
+        /// <p>Can be either <code>tag:</code> <i>tag-key</i> or <code>InstanceIds</code>.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -4675,20 +4205,14 @@ pub mod run_command_target {
         ///
         /// To override the contents of this collection use [`set_values`](Self::set_values).
         ///
-        /// <p>If <code>Key</code> is <code>tag:</code>
-        /// <i>tag-key</i>, <code>Values</code>
-        /// is a list of tag values. If <code>Key</code> is <code>InstanceIds</code>, <code>Values</code>
-        /// is a list of Amazon EC2 instance IDs.</p>
+        /// <p>If <code>Key</code> is <code>tag:</code> <i>tag-key</i>, <code>Values</code> is a list of tag values. If <code>Key</code> is <code>InstanceIds</code>, <code>Values</code> is a list of Amazon EC2 instance IDs.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
-        /// <p>If <code>Key</code> is <code>tag:</code>
-        /// <i>tag-key</i>, <code>Values</code>
-        /// is a list of tag values. If <code>Key</code> is <code>InstanceIds</code>, <code>Values</code>
-        /// is a list of Amazon EC2 instance IDs.</p>
+        /// <p>If <code>Key</code> is <code>tag:</code> <i>tag-key</i>, <code>Values</code> is a list of tag values. If <code>Key</code> is <code>InstanceIds</code>, <code>Values</code> is a list of Amazon EC2 instance IDs.</p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4712,22 +4236,15 @@ impl RunCommandTarget {
     }
 }
 
-/// <p>This object enables you to specify a JSON path to extract from the event and use as the
-/// partition key for the Amazon Kinesis data stream, so that you can control the shard to which
-/// the event goes. If you do not include this parameter, the default is to use the
-/// <code>eventId</code> as the partition key.</p>
+/// <p>This object enables you to specify a JSON path to extract from the event and use as the partition key for the Amazon Kinesis data stream, so that you can control the shard to which the event goes. If you do not include this parameter, the default is to use the <code>eventId</code> as the partition key.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KinesisParameters {
-    /// <p>The JSON path to be extracted from the event and used as the partition key. For more
-    /// information, see <a href="https://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#partition-key">Amazon Kinesis Streams Key
-    /// Concepts</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.</p>
+    /// <p>The JSON path to be extracted from the event and used as the partition key. For more information, see <a href="https://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#partition-key">Amazon Kinesis Streams Key Concepts</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.</p>
     pub partition_key_path: std::option::Option<std::string::String>,
 }
 impl KinesisParameters {
-    /// <p>The JSON path to be extracted from the event and used as the partition key. For more
-    /// information, see <a href="https://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#partition-key">Amazon Kinesis Streams Key
-    /// Concepts</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.</p>
+    /// <p>The JSON path to be extracted from the event and used as the partition key. For more information, see <a href="https://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#partition-key">Amazon Kinesis Streams Key Concepts</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.</p>
     pub fn partition_key_path(&self) -> std::option::Option<&str> {
         self.partition_key_path.as_deref()
     }
@@ -4748,16 +4265,12 @@ pub mod kinesis_parameters {
         pub(crate) partition_key_path: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The JSON path to be extracted from the event and used as the partition key. For more
-        /// information, see <a href="https://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#partition-key">Amazon Kinesis Streams Key
-        /// Concepts</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.</p>
+        /// <p>The JSON path to be extracted from the event and used as the partition key. For more information, see <a href="https://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#partition-key">Amazon Kinesis Streams Key Concepts</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.</p>
         pub fn partition_key_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.partition_key_path = Some(input.into());
             self
         }
-        /// <p>The JSON path to be extracted from the event and used as the partition key. For more
-        /// information, see <a href="https://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#partition-key">Amazon Kinesis Streams Key
-        /// Concepts</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.</p>
+        /// <p>The JSON path to be extracted from the event and used as the partition key. For more information, see <a href="https://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#partition-key">Amazon Kinesis Streams Key Concepts</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.</p>
         pub fn set_partition_key_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4780,98 +4293,64 @@ impl KinesisParameters {
     }
 }
 
-/// <p>Contains the parameters needed for you to provide custom input to a target based on one or
-/// more pieces of data extracted from the event.</p>
+/// <p>Contains the parameters needed for you to provide custom input to a target based on one or more pieces of data extracted from the event.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InputTransformer {
-    /// <p>Map of JSON paths to be extracted from the event. You can then insert these in the
-    /// template in <code>InputTemplate</code> to produce the output you want to be sent to the
-    /// target.</p>
-    /// <p>
-    /// <code>InputPathsMap</code> is an array key-value pairs, where each value is a valid JSON
-    /// path. You can have as many as 100 key-value pairs. You must use JSON dot notation, not bracket
-    /// notation.</p>
+    /// <p>Map of JSON paths to be extracted from the event. You can then insert these in the template in <code>InputTemplate</code> to produce the output you want to be sent to the target.</p>
+    /// <p> <code>InputPathsMap</code> is an array key-value pairs, where each value is a valid JSON path. You can have as many as 100 key-value pairs. You must use JSON dot notation, not bracket notation.</p>
     /// <p>The keys cannot start with "Amazon Web Services." </p>
     pub input_paths_map:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>Input template where you specify placeholders that will be filled with the values of the
-    /// keys from <code>InputPathsMap</code> to customize the data sent to the target. Enclose each
-    /// <code>InputPathsMaps</code> value in brackets: <<i>value</i>> The
-    /// InputTemplate must be valid JSON.</p>
-    ///
-    /// <p>If <code>InputTemplate</code> is a JSON object (surrounded by curly braces), the following
-    /// restrictions apply:</p>
+    /// <p>Input template where you specify placeholders that will be filled with the values of the keys from <code>InputPathsMap</code> to customize the data sent to the target. Enclose each <code>InputPathsMaps</code> value in brackets: &lt;<i>value</i>&gt; The InputTemplate must be valid JSON.</p>
+    /// <p>If <code>InputTemplate</code> is a JSON object (surrounded by curly braces), the following restrictions apply:</p>
     /// <ul>
-    /// <li>
-    /// <p>The placeholder cannot be used as an object key.</p>
-    /// </li>
+    /// <li> <p>The placeholder cannot be used as an object key.</p> </li>
     /// </ul>
-    /// <p>The following example shows the syntax for using <code>InputPathsMap</code> and
-    /// <code>InputTemplate</code>.</p>
-    /// <p>
-    /// <code> "InputTransformer":</code>
-    /// </p>
-    /// <p>
-    /// <code>{</code>
-    /// </p>
-    /// <p>
-    /// <code>"InputPathsMap": {"instance": "$.detail.instance","status":
-    /// "$.detail.status"},</code>
-    /// </p>
-    /// <p>
-    /// <code>"InputTemplate": "<instance> is in state <status>"</code>
-    /// </p>
-    /// <p>
-    /// <code>}</code>
-    /// </p>
-    /// <p>To have the <code>InputTemplate</code> include quote marks within a JSON string, escape
-    /// each quote marks with a slash, as in the following example:</p>
-    /// <p>
-    /// <code> "InputTransformer":</code>
-    /// </p>
-    /// <p>
-    /// <code>{</code>
-    /// </p>
-    /// <p>
-    /// <code>"InputPathsMap": {"instance": "$.detail.instance","status":
-    /// "$.detail.status"},</code>
-    /// </p>
-    /// <p>
-    /// <code>"InputTemplate": "<instance> is in state \"<status>\""</code>
-    /// </p>
-    /// <p>
-    /// <code>}</code>
-    /// </p>
-    /// <p>The <code>InputTemplate</code> can also be valid JSON with varibles in quotes or out, as
-    /// in the following example:</p>
-    /// <p>
-    /// <code> "InputTransformer":</code>
-    /// </p>
-    /// <p>
-    /// <code>{</code>
-    /// </p>
-    /// <p>
-    /// <code>"InputPathsMap": {"instance": "$.detail.instance","status":
-    /// "$.detail.status"},</code>
-    /// </p>
-    /// <p>
-    /// <code>"InputTemplate": '{"myInstance": <instance>,"myStatus": "<instance> is
-    /// in state \"<status>\""}'</code>
-    /// </p>
-    /// <p>
-    /// <code>}</code>
-    /// </p>
+    /// <p>The following example shows the syntax for using <code>InputPathsMap</code> and <code>InputTemplate</code>.</p>
+    /// <p> <code> "InputTransformer":</code> </p>
+    /// <p> <code>{</code> </p>
+    /// <p> <code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code> </p>
+    /// <p> <code>"InputTemplate": "
+    /// <instance>
+    /// is in state
+    /// <status>
+    /// "
+    /// </status>
+    /// </instance></code> </p>
+    /// <p> <code>}</code> </p>
+    /// <p>To have the <code>InputTemplate</code> include quote marks within a JSON string, escape each quote marks with a slash, as in the following example:</p>
+    /// <p> <code> "InputTransformer":</code> </p>
+    /// <p> <code>{</code> </p>
+    /// <p> <code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code> </p>
+    /// <p> <code>"InputTemplate": "
+    /// <instance>
+    /// is in state \"
+    /// <status>
+    /// \""
+    /// </status>
+    /// </instance></code> </p>
+    /// <p> <code>}</code> </p>
+    /// <p>The <code>InputTemplate</code> can also be valid JSON with varibles in quotes or out, as in the following example:</p>
+    /// <p> <code> "InputTransformer":</code> </p>
+    /// <p> <code>{</code> </p>
+    /// <p> <code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code> </p>
+    /// <p> <code>"InputTemplate": '{"myInstance":
+    /// <instance>
+    /// ,"myStatus": "
+    /// <instance>
+    /// is in state \"
+    /// <status>
+    /// \""}'
+    /// </status>
+    /// </instance>
+    /// </instance></code> </p>
+    /// <p> <code>}</code> </p>
     pub input_template: std::option::Option<std::string::String>,
 }
 impl InputTransformer {
-    /// <p>Map of JSON paths to be extracted from the event. You can then insert these in the
-    /// template in <code>InputTemplate</code> to produce the output you want to be sent to the
-    /// target.</p>
-    /// <p>
-    /// <code>InputPathsMap</code> is an array key-value pairs, where each value is a valid JSON
-    /// path. You can have as many as 100 key-value pairs. You must use JSON dot notation, not bracket
-    /// notation.</p>
+    /// <p>Map of JSON paths to be extracted from the event. You can then insert these in the template in <code>InputTemplate</code> to produce the output you want to be sent to the target.</p>
+    /// <p> <code>InputPathsMap</code> is an array key-value pairs, where each value is a valid JSON path. You can have as many as 100 key-value pairs. You must use JSON dot notation, not bracket notation.</p>
     /// <p>The keys cannot start with "Amazon Web Services." </p>
     pub fn input_paths_map(
         &self,
@@ -4879,73 +4358,50 @@ impl InputTransformer {
     {
         self.input_paths_map.as_ref()
     }
-    /// <p>Input template where you specify placeholders that will be filled with the values of the
-    /// keys from <code>InputPathsMap</code> to customize the data sent to the target. Enclose each
-    /// <code>InputPathsMaps</code> value in brackets: <<i>value</i>> The
-    /// InputTemplate must be valid JSON.</p>
-    ///
-    /// <p>If <code>InputTemplate</code> is a JSON object (surrounded by curly braces), the following
-    /// restrictions apply:</p>
+    /// <p>Input template where you specify placeholders that will be filled with the values of the keys from <code>InputPathsMap</code> to customize the data sent to the target. Enclose each <code>InputPathsMaps</code> value in brackets: &lt;<i>value</i>&gt; The InputTemplate must be valid JSON.</p>
+    /// <p>If <code>InputTemplate</code> is a JSON object (surrounded by curly braces), the following restrictions apply:</p>
     /// <ul>
-    /// <li>
-    /// <p>The placeholder cannot be used as an object key.</p>
-    /// </li>
+    /// <li> <p>The placeholder cannot be used as an object key.</p> </li>
     /// </ul>
-    /// <p>The following example shows the syntax for using <code>InputPathsMap</code> and
-    /// <code>InputTemplate</code>.</p>
-    /// <p>
-    /// <code> "InputTransformer":</code>
-    /// </p>
-    /// <p>
-    /// <code>{</code>
-    /// </p>
-    /// <p>
-    /// <code>"InputPathsMap": {"instance": "$.detail.instance","status":
-    /// "$.detail.status"},</code>
-    /// </p>
-    /// <p>
-    /// <code>"InputTemplate": "<instance> is in state <status>"</code>
-    /// </p>
-    /// <p>
-    /// <code>}</code>
-    /// </p>
-    /// <p>To have the <code>InputTemplate</code> include quote marks within a JSON string, escape
-    /// each quote marks with a slash, as in the following example:</p>
-    /// <p>
-    /// <code> "InputTransformer":</code>
-    /// </p>
-    /// <p>
-    /// <code>{</code>
-    /// </p>
-    /// <p>
-    /// <code>"InputPathsMap": {"instance": "$.detail.instance","status":
-    /// "$.detail.status"},</code>
-    /// </p>
-    /// <p>
-    /// <code>"InputTemplate": "<instance> is in state \"<status>\""</code>
-    /// </p>
-    /// <p>
-    /// <code>}</code>
-    /// </p>
-    /// <p>The <code>InputTemplate</code> can also be valid JSON with varibles in quotes or out, as
-    /// in the following example:</p>
-    /// <p>
-    /// <code> "InputTransformer":</code>
-    /// </p>
-    /// <p>
-    /// <code>{</code>
-    /// </p>
-    /// <p>
-    /// <code>"InputPathsMap": {"instance": "$.detail.instance","status":
-    /// "$.detail.status"},</code>
-    /// </p>
-    /// <p>
-    /// <code>"InputTemplate": '{"myInstance": <instance>,"myStatus": "<instance> is
-    /// in state \"<status>\""}'</code>
-    /// </p>
-    /// <p>
-    /// <code>}</code>
-    /// </p>
+    /// <p>The following example shows the syntax for using <code>InputPathsMap</code> and <code>InputTemplate</code>.</p>
+    /// <p> <code> "InputTransformer":</code> </p>
+    /// <p> <code>{</code> </p>
+    /// <p> <code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code> </p>
+    /// <p> <code>"InputTemplate": "
+    /// <instance>
+    /// is in state
+    /// <status>
+    /// "
+    /// </status>
+    /// </instance></code> </p>
+    /// <p> <code>}</code> </p>
+    /// <p>To have the <code>InputTemplate</code> include quote marks within a JSON string, escape each quote marks with a slash, as in the following example:</p>
+    /// <p> <code> "InputTransformer":</code> </p>
+    /// <p> <code>{</code> </p>
+    /// <p> <code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code> </p>
+    /// <p> <code>"InputTemplate": "
+    /// <instance>
+    /// is in state \"
+    /// <status>
+    /// \""
+    /// </status>
+    /// </instance></code> </p>
+    /// <p> <code>}</code> </p>
+    /// <p>The <code>InputTemplate</code> can also be valid JSON with varibles in quotes or out, as in the following example:</p>
+    /// <p> <code> "InputTransformer":</code> </p>
+    /// <p> <code>{</code> </p>
+    /// <p> <code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code> </p>
+    /// <p> <code>"InputTemplate": '{"myInstance":
+    /// <instance>
+    /// ,"myStatus": "
+    /// <instance>
+    /// is in state \"
+    /// <status>
+    /// \""}'
+    /// </status>
+    /// </instance>
+    /// </instance></code> </p>
+    /// <p> <code>}</code> </p>
     pub fn input_template(&self) -> std::option::Option<&str> {
         self.input_template.as_deref()
     }
@@ -4974,13 +4430,8 @@ pub mod input_transformer {
         ///
         /// To override the contents of this collection use [`set_input_paths_map`](Self::set_input_paths_map).
         ///
-        /// <p>Map of JSON paths to be extracted from the event. You can then insert these in the
-        /// template in <code>InputTemplate</code> to produce the output you want to be sent to the
-        /// target.</p>
-        /// <p>
-        /// <code>InputPathsMap</code> is an array key-value pairs, where each value is a valid JSON
-        /// path. You can have as many as 100 key-value pairs. You must use JSON dot notation, not bracket
-        /// notation.</p>
+        /// <p>Map of JSON paths to be extracted from the event. You can then insert these in the template in <code>InputTemplate</code> to produce the output you want to be sent to the target.</p>
+        /// <p> <code>InputPathsMap</code> is an array key-value pairs, where each value is a valid JSON path. You can have as many as 100 key-value pairs. You must use JSON dot notation, not bracket notation.</p>
         /// <p>The keys cannot start with "Amazon Web Services." </p>
         pub fn input_paths_map(
             mut self,
@@ -4992,13 +4443,8 @@ pub mod input_transformer {
             self.input_paths_map = Some(hash_map);
             self
         }
-        /// <p>Map of JSON paths to be extracted from the event. You can then insert these in the
-        /// template in <code>InputTemplate</code> to produce the output you want to be sent to the
-        /// target.</p>
-        /// <p>
-        /// <code>InputPathsMap</code> is an array key-value pairs, where each value is a valid JSON
-        /// path. You can have as many as 100 key-value pairs. You must use JSON dot notation, not bracket
-        /// notation.</p>
+        /// <p>Map of JSON paths to be extracted from the event. You can then insert these in the template in <code>InputTemplate</code> to produce the output you want to be sent to the target.</p>
+        /// <p> <code>InputPathsMap</code> is an array key-value pairs, where each value is a valid JSON path. You can have as many as 100 key-value pairs. You must use JSON dot notation, not bracket notation.</p>
         /// <p>The keys cannot start with "Amazon Web Services." </p>
         pub fn set_input_paths_map(
             mut self,
@@ -5009,144 +4455,98 @@ pub mod input_transformer {
             self.input_paths_map = input;
             self
         }
-        /// <p>Input template where you specify placeholders that will be filled with the values of the
-        /// keys from <code>InputPathsMap</code> to customize the data sent to the target. Enclose each
-        /// <code>InputPathsMaps</code> value in brackets: <<i>value</i>> The
-        /// InputTemplate must be valid JSON.</p>
-        ///
-        /// <p>If <code>InputTemplate</code> is a JSON object (surrounded by curly braces), the following
-        /// restrictions apply:</p>
+        /// <p>Input template where you specify placeholders that will be filled with the values of the keys from <code>InputPathsMap</code> to customize the data sent to the target. Enclose each <code>InputPathsMaps</code> value in brackets: &lt;<i>value</i>&gt; The InputTemplate must be valid JSON.</p>
+        /// <p>If <code>InputTemplate</code> is a JSON object (surrounded by curly braces), the following restrictions apply:</p>
         /// <ul>
-        /// <li>
-        /// <p>The placeholder cannot be used as an object key.</p>
-        /// </li>
+        /// <li> <p>The placeholder cannot be used as an object key.</p> </li>
         /// </ul>
-        /// <p>The following example shows the syntax for using <code>InputPathsMap</code> and
-        /// <code>InputTemplate</code>.</p>
-        /// <p>
-        /// <code> "InputTransformer":</code>
-        /// </p>
-        /// <p>
-        /// <code>{</code>
-        /// </p>
-        /// <p>
-        /// <code>"InputPathsMap": {"instance": "$.detail.instance","status":
-        /// "$.detail.status"},</code>
-        /// </p>
-        /// <p>
-        /// <code>"InputTemplate": "<instance> is in state <status>"</code>
-        /// </p>
-        /// <p>
-        /// <code>}</code>
-        /// </p>
-        /// <p>To have the <code>InputTemplate</code> include quote marks within a JSON string, escape
-        /// each quote marks with a slash, as in the following example:</p>
-        /// <p>
-        /// <code> "InputTransformer":</code>
-        /// </p>
-        /// <p>
-        /// <code>{</code>
-        /// </p>
-        /// <p>
-        /// <code>"InputPathsMap": {"instance": "$.detail.instance","status":
-        /// "$.detail.status"},</code>
-        /// </p>
-        /// <p>
-        /// <code>"InputTemplate": "<instance> is in state \"<status>\""</code>
-        /// </p>
-        /// <p>
-        /// <code>}</code>
-        /// </p>
-        /// <p>The <code>InputTemplate</code> can also be valid JSON with varibles in quotes or out, as
-        /// in the following example:</p>
-        /// <p>
-        /// <code> "InputTransformer":</code>
-        /// </p>
-        /// <p>
-        /// <code>{</code>
-        /// </p>
-        /// <p>
-        /// <code>"InputPathsMap": {"instance": "$.detail.instance","status":
-        /// "$.detail.status"},</code>
-        /// </p>
-        /// <p>
-        /// <code>"InputTemplate": '{"myInstance": <instance>,"myStatus": "<instance> is
-        /// in state \"<status>\""}'</code>
-        /// </p>
-        /// <p>
-        /// <code>}</code>
-        /// </p>
+        /// <p>The following example shows the syntax for using <code>InputPathsMap</code> and <code>InputTemplate</code>.</p>
+        /// <p> <code> "InputTransformer":</code> </p>
+        /// <p> <code>{</code> </p>
+        /// <p> <code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code> </p>
+        /// <p> <code>"InputTemplate": "
+        /// <instance>
+        /// is in state
+        /// <status>
+        /// "
+        /// </status>
+        /// </instance></code> </p>
+        /// <p> <code>}</code> </p>
+        /// <p>To have the <code>InputTemplate</code> include quote marks within a JSON string, escape each quote marks with a slash, as in the following example:</p>
+        /// <p> <code> "InputTransformer":</code> </p>
+        /// <p> <code>{</code> </p>
+        /// <p> <code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code> </p>
+        /// <p> <code>"InputTemplate": "
+        /// <instance>
+        /// is in state \"
+        /// <status>
+        /// \""
+        /// </status>
+        /// </instance></code> </p>
+        /// <p> <code>}</code> </p>
+        /// <p>The <code>InputTemplate</code> can also be valid JSON with varibles in quotes or out, as in the following example:</p>
+        /// <p> <code> "InputTransformer":</code> </p>
+        /// <p> <code>{</code> </p>
+        /// <p> <code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code> </p>
+        /// <p> <code>"InputTemplate": '{"myInstance":
+        /// <instance>
+        /// ,"myStatus": "
+        /// <instance>
+        /// is in state \"
+        /// <status>
+        /// \""}'
+        /// </status>
+        /// </instance>
+        /// </instance></code> </p>
+        /// <p> <code>}</code> </p>
         pub fn input_template(mut self, input: impl Into<std::string::String>) -> Self {
             self.input_template = Some(input.into());
             self
         }
-        /// <p>Input template where you specify placeholders that will be filled with the values of the
-        /// keys from <code>InputPathsMap</code> to customize the data sent to the target. Enclose each
-        /// <code>InputPathsMaps</code> value in brackets: <<i>value</i>> The
-        /// InputTemplate must be valid JSON.</p>
-        ///
-        /// <p>If <code>InputTemplate</code> is a JSON object (surrounded by curly braces), the following
-        /// restrictions apply:</p>
+        /// <p>Input template where you specify placeholders that will be filled with the values of the keys from <code>InputPathsMap</code> to customize the data sent to the target. Enclose each <code>InputPathsMaps</code> value in brackets: &lt;<i>value</i>&gt; The InputTemplate must be valid JSON.</p>
+        /// <p>If <code>InputTemplate</code> is a JSON object (surrounded by curly braces), the following restrictions apply:</p>
         /// <ul>
-        /// <li>
-        /// <p>The placeholder cannot be used as an object key.</p>
-        /// </li>
+        /// <li> <p>The placeholder cannot be used as an object key.</p> </li>
         /// </ul>
-        /// <p>The following example shows the syntax for using <code>InputPathsMap</code> and
-        /// <code>InputTemplate</code>.</p>
-        /// <p>
-        /// <code> "InputTransformer":</code>
-        /// </p>
-        /// <p>
-        /// <code>{</code>
-        /// </p>
-        /// <p>
-        /// <code>"InputPathsMap": {"instance": "$.detail.instance","status":
-        /// "$.detail.status"},</code>
-        /// </p>
-        /// <p>
-        /// <code>"InputTemplate": "<instance> is in state <status>"</code>
-        /// </p>
-        /// <p>
-        /// <code>}</code>
-        /// </p>
-        /// <p>To have the <code>InputTemplate</code> include quote marks within a JSON string, escape
-        /// each quote marks with a slash, as in the following example:</p>
-        /// <p>
-        /// <code> "InputTransformer":</code>
-        /// </p>
-        /// <p>
-        /// <code>{</code>
-        /// </p>
-        /// <p>
-        /// <code>"InputPathsMap": {"instance": "$.detail.instance","status":
-        /// "$.detail.status"},</code>
-        /// </p>
-        /// <p>
-        /// <code>"InputTemplate": "<instance> is in state \"<status>\""</code>
-        /// </p>
-        /// <p>
-        /// <code>}</code>
-        /// </p>
-        /// <p>The <code>InputTemplate</code> can also be valid JSON with varibles in quotes or out, as
-        /// in the following example:</p>
-        /// <p>
-        /// <code> "InputTransformer":</code>
-        /// </p>
-        /// <p>
-        /// <code>{</code>
-        /// </p>
-        /// <p>
-        /// <code>"InputPathsMap": {"instance": "$.detail.instance","status":
-        /// "$.detail.status"},</code>
-        /// </p>
-        /// <p>
-        /// <code>"InputTemplate": '{"myInstance": <instance>,"myStatus": "<instance> is
-        /// in state \"<status>\""}'</code>
-        /// </p>
-        /// <p>
-        /// <code>}</code>
-        /// </p>
+        /// <p>The following example shows the syntax for using <code>InputPathsMap</code> and <code>InputTemplate</code>.</p>
+        /// <p> <code> "InputTransformer":</code> </p>
+        /// <p> <code>{</code> </p>
+        /// <p> <code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code> </p>
+        /// <p> <code>"InputTemplate": "
+        /// <instance>
+        /// is in state
+        /// <status>
+        /// "
+        /// </status>
+        /// </instance></code> </p>
+        /// <p> <code>}</code> </p>
+        /// <p>To have the <code>InputTemplate</code> include quote marks within a JSON string, escape each quote marks with a slash, as in the following example:</p>
+        /// <p> <code> "InputTransformer":</code> </p>
+        /// <p> <code>{</code> </p>
+        /// <p> <code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code> </p>
+        /// <p> <code>"InputTemplate": "
+        /// <instance>
+        /// is in state \"
+        /// <status>
+        /// \""
+        /// </status>
+        /// </instance></code> </p>
+        /// <p> <code>}</code> </p>
+        /// <p>The <code>InputTemplate</code> can also be valid JSON with varibles in quotes or out, as in the following example:</p>
+        /// <p> <code> "InputTransformer":</code> </p>
+        /// <p> <code>{</code> </p>
+        /// <p> <code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code> </p>
+        /// <p> <code>"InputTemplate": '{"myInstance":
+        /// <instance>
+        /// ,"myStatus": "
+        /// <instance>
+        /// is in state \"
+        /// <status>
+        /// \""}'
+        /// </status>
+        /// </instance>
+        /// </instance></code> </p>
+        /// <p> <code>}</code> </p>
         pub fn set_input_template(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5225,41 +4625,28 @@ impl AsRef<str> for RuleState {
     }
 }
 
-/// <p>A JSON string which you can use to limit the event bus permissions you are granting to
-/// only accounts that fulfill the condition. Currently, the only supported condition is
-/// membership in a certain Amazon Web Services organization. The string must contain <code>Type</code>,
-/// <code>Key</code>, and <code>Value</code> fields. The <code>Value</code> field specifies the
-/// ID of the Amazon Web Services organization. Following is an example value for <code>Condition</code>:</p>
-/// <p>
-/// <code>'{"Type" : "StringEquals", "Key": "aws:PrincipalOrgID", "Value":
-/// "o-1234567890"}'</code>
-/// </p>
+/// <p>A JSON string which you can use to limit the event bus permissions you are granting to only accounts that fulfill the condition. Currently, the only supported condition is membership in a certain Amazon Web Services organization. The string must contain <code>Type</code>, <code>Key</code>, and <code>Value</code> fields. The <code>Value</code> field specifies the ID of the Amazon Web Services organization. Following is an example value for <code>Condition</code>:</p>
+/// <p> <code>'{"Type" : "StringEquals", "Key": "aws:PrincipalOrgID", "Value": "o-1234567890"}'</code> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Condition {
-    /// <p>Specifies the type of condition. Currently the only supported value is
-    /// <code>StringEquals</code>.</p>
+    /// <p>Specifies the type of condition. Currently the only supported value is <code>StringEquals</code>.</p>
     pub r#type: std::option::Option<std::string::String>,
-    /// <p>Specifies the key for the condition. Currently the only supported key is
-    /// <code>aws:PrincipalOrgID</code>.</p>
+    /// <p>Specifies the key for the condition. Currently the only supported key is <code>aws:PrincipalOrgID</code>.</p>
     pub key: std::option::Option<std::string::String>,
-    /// <p>Specifies the value for the key. Currently, this must be the ID of the
-    /// organization.</p>
+    /// <p>Specifies the value for the key. Currently, this must be the ID of the organization.</p>
     pub value: std::option::Option<std::string::String>,
 }
 impl Condition {
-    /// <p>Specifies the type of condition. Currently the only supported value is
-    /// <code>StringEquals</code>.</p>
+    /// <p>Specifies the type of condition. Currently the only supported value is <code>StringEquals</code>.</p>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
-    /// <p>Specifies the key for the condition. Currently the only supported key is
-    /// <code>aws:PrincipalOrgID</code>.</p>
+    /// <p>Specifies the key for the condition. Currently the only supported key is <code>aws:PrincipalOrgID</code>.</p>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
-    /// <p>Specifies the value for the key. Currently, this must be the ID of the
-    /// organization.</p>
+    /// <p>Specifies the value for the key. Currently, this must be the ID of the organization.</p>
     pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
@@ -5284,38 +4671,32 @@ pub mod condition {
         pub(crate) value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies the type of condition. Currently the only supported value is
-        /// <code>StringEquals</code>.</p>
+        /// <p>Specifies the type of condition. Currently the only supported value is <code>StringEquals</code>.</p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.r#type = Some(input.into());
             self
         }
-        /// <p>Specifies the type of condition. Currently the only supported value is
-        /// <code>StringEquals</code>.</p>
+        /// <p>Specifies the type of condition. Currently the only supported value is <code>StringEquals</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
         }
-        /// <p>Specifies the key for the condition. Currently the only supported key is
-        /// <code>aws:PrincipalOrgID</code>.</p>
+        /// <p>Specifies the key for the condition. Currently the only supported key is <code>aws:PrincipalOrgID</code>.</p>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
             self
         }
-        /// <p>Specifies the key for the condition. Currently the only supported key is
-        /// <code>aws:PrincipalOrgID</code>.</p>
+        /// <p>Specifies the key for the condition. Currently the only supported key is <code>aws:PrincipalOrgID</code>.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
         }
-        /// <p>Specifies the value for the key. Currently, this must be the ID of the
-        /// organization.</p>
+        /// <p>Specifies the value for the key. Currently, this must be the ID of the organization.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             self.value = Some(input.into());
             self
         }
-        /// <p>Specifies the value for the key. Currently, this must be the ID of the
-        /// organization.</p>
+        /// <p>Specifies the value for the key. Currently, this must be the ID of the organization.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -5440,13 +4821,11 @@ pub struct PutPartnerEventsRequestEntry {
     pub time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The event source that is generating the entry.</p>
     pub source: std::option::Option<std::string::String>,
-    /// <p>Amazon Web Services resources, identified by Amazon Resource Name (ARN), which the event primarily
-    /// concerns. Any number, including zero, may be present.</p>
+    /// <p>Amazon Web Services resources, identified by Amazon Resource Name (ARN), which the event primarily concerns. Any number, including zero, may be present.</p>
     pub resources: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A free-form string used to decide what fields to expect in the event detail.</p>
     pub detail_type: std::option::Option<std::string::String>,
-    /// <p>A valid JSON string. There is no other schema imposed. The JSON string may contain fields
-    /// and nested subobjects.</p>
+    /// <p>A valid JSON string. There is no other schema imposed. The JSON string may contain fields and nested subobjects.</p>
     pub detail: std::option::Option<std::string::String>,
 }
 impl PutPartnerEventsRequestEntry {
@@ -5458,8 +4837,7 @@ impl PutPartnerEventsRequestEntry {
     pub fn source(&self) -> std::option::Option<&str> {
         self.source.as_deref()
     }
-    /// <p>Amazon Web Services resources, identified by Amazon Resource Name (ARN), which the event primarily
-    /// concerns. Any number, including zero, may be present.</p>
+    /// <p>Amazon Web Services resources, identified by Amazon Resource Name (ARN), which the event primarily concerns. Any number, including zero, may be present.</p>
     pub fn resources(&self) -> std::option::Option<&[std::string::String]> {
         self.resources.as_deref()
     }
@@ -5467,8 +4845,7 @@ impl PutPartnerEventsRequestEntry {
     pub fn detail_type(&self) -> std::option::Option<&str> {
         self.detail_type.as_deref()
     }
-    /// <p>A valid JSON string. There is no other schema imposed. The JSON string may contain fields
-    /// and nested subobjects.</p>
+    /// <p>A valid JSON string. There is no other schema imposed. The JSON string may contain fields and nested subobjects.</p>
     pub fn detail(&self) -> std::option::Option<&str> {
         self.detail.as_deref()
     }
@@ -5521,16 +4898,14 @@ pub mod put_partner_events_request_entry {
         ///
         /// To override the contents of this collection use [`set_resources`](Self::set_resources).
         ///
-        /// <p>Amazon Web Services resources, identified by Amazon Resource Name (ARN), which the event primarily
-        /// concerns. Any number, including zero, may be present.</p>
+        /// <p>Amazon Web Services resources, identified by Amazon Resource Name (ARN), which the event primarily concerns. Any number, including zero, may be present.</p>
         pub fn resources(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resources.unwrap_or_default();
             v.push(input.into());
             self.resources = Some(v);
             self
         }
-        /// <p>Amazon Web Services resources, identified by Amazon Resource Name (ARN), which the event primarily
-        /// concerns. Any number, including zero, may be present.</p>
+        /// <p>Amazon Web Services resources, identified by Amazon Resource Name (ARN), which the event primarily concerns. Any number, including zero, may be present.</p>
         pub fn set_resources(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5548,14 +4923,12 @@ pub mod put_partner_events_request_entry {
             self.detail_type = input;
             self
         }
-        /// <p>A valid JSON string. There is no other schema imposed. The JSON string may contain fields
-        /// and nested subobjects.</p>
+        /// <p>A valid JSON string. There is no other schema imposed. The JSON string may contain fields and nested subobjects.</p>
         pub fn detail(mut self, input: impl Into<std::string::String>) -> Self {
             self.detail = Some(input.into());
             self
         }
-        /// <p>A valid JSON string. There is no other schema imposed. The JSON string may contain fields
-        /// and nested subobjects.</p>
+        /// <p>A valid JSON string. There is no other schema imposed. The JSON string may contain fields and nested subobjects.</p>
         pub fn set_detail(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detail = input;
             self
@@ -5682,20 +5055,15 @@ pub struct PutEventsRequestEntry {
     pub time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The source of the event.</p>
     pub source: std::option::Option<std::string::String>,
-    /// <p>Amazon Web Services resources, identified by Amazon Resource Name (ARN), which the event primarily
-    /// concerns. Any number, including zero, may be present.</p>
+    /// <p>Amazon Web Services resources, identified by Amazon Resource Name (ARN), which the event primarily concerns. Any number, including zero, may be present.</p>
     pub resources: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Free-form string used to decide what fields to expect in the event detail.</p>
     pub detail_type: std::option::Option<std::string::String>,
-    /// <p>A valid JSON string. There is no other schema imposed. The JSON string may contain fields
-    /// and nested subobjects.</p>
+    /// <p>A valid JSON string. There is no other schema imposed. The JSON string may contain fields and nested subobjects.</p>
     pub detail: std::option::Option<std::string::String>,
-    /// <p>The name or ARN of the event bus to receive the event. Only the rules that are associated
-    /// with this event bus are used to match the event. If you omit this, the default event bus is
-    /// used.</p>
+    /// <p>The name or ARN of the event bus to receive the event. Only the rules that are associated with this event bus are used to match the event. If you omit this, the default event bus is used.</p>
     pub event_bus_name: std::option::Option<std::string::String>,
-    /// <p>An X-Ray trade header, which is an http header (X-Amzn-Trace-Id) that contains the
-    /// trace-id associated with the event.</p>
+    /// <p>An X-Ray trade header, which is an http header (X-Amzn-Trace-Id) that contains the trace-id associated with the event.</p>
     /// <p>To learn more about X-Ray trace headers, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader">Tracing header</a> in the X-Ray Developer Guide.</p>
     pub trace_header: std::option::Option<std::string::String>,
 }
@@ -5708,8 +5076,7 @@ impl PutEventsRequestEntry {
     pub fn source(&self) -> std::option::Option<&str> {
         self.source.as_deref()
     }
-    /// <p>Amazon Web Services resources, identified by Amazon Resource Name (ARN), which the event primarily
-    /// concerns. Any number, including zero, may be present.</p>
+    /// <p>Amazon Web Services resources, identified by Amazon Resource Name (ARN), which the event primarily concerns. Any number, including zero, may be present.</p>
     pub fn resources(&self) -> std::option::Option<&[std::string::String]> {
         self.resources.as_deref()
     }
@@ -5717,19 +5084,15 @@ impl PutEventsRequestEntry {
     pub fn detail_type(&self) -> std::option::Option<&str> {
         self.detail_type.as_deref()
     }
-    /// <p>A valid JSON string. There is no other schema imposed. The JSON string may contain fields
-    /// and nested subobjects.</p>
+    /// <p>A valid JSON string. There is no other schema imposed. The JSON string may contain fields and nested subobjects.</p>
     pub fn detail(&self) -> std::option::Option<&str> {
         self.detail.as_deref()
     }
-    /// <p>The name or ARN of the event bus to receive the event. Only the rules that are associated
-    /// with this event bus are used to match the event. If you omit this, the default event bus is
-    /// used.</p>
+    /// <p>The name or ARN of the event bus to receive the event. Only the rules that are associated with this event bus are used to match the event. If you omit this, the default event bus is used.</p>
     pub fn event_bus_name(&self) -> std::option::Option<&str> {
         self.event_bus_name.as_deref()
     }
-    /// <p>An X-Ray trade header, which is an http header (X-Amzn-Trace-Id) that contains the
-    /// trace-id associated with the event.</p>
+    /// <p>An X-Ray trade header, which is an http header (X-Amzn-Trace-Id) that contains the trace-id associated with the event.</p>
     /// <p>To learn more about X-Ray trace headers, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader">Tracing header</a> in the X-Ray Developer Guide.</p>
     pub fn trace_header(&self) -> std::option::Option<&str> {
         self.trace_header.as_deref()
@@ -5787,16 +5150,14 @@ pub mod put_events_request_entry {
         ///
         /// To override the contents of this collection use [`set_resources`](Self::set_resources).
         ///
-        /// <p>Amazon Web Services resources, identified by Amazon Resource Name (ARN), which the event primarily
-        /// concerns. Any number, including zero, may be present.</p>
+        /// <p>Amazon Web Services resources, identified by Amazon Resource Name (ARN), which the event primarily concerns. Any number, including zero, may be present.</p>
         pub fn resources(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resources.unwrap_or_default();
             v.push(input.into());
             self.resources = Some(v);
             self
         }
-        /// <p>Amazon Web Services resources, identified by Amazon Resource Name (ARN), which the event primarily
-        /// concerns. Any number, including zero, may be present.</p>
+        /// <p>Amazon Web Services resources, identified by Amazon Resource Name (ARN), which the event primarily concerns. Any number, including zero, may be present.</p>
         pub fn set_resources(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5814,28 +5175,22 @@ pub mod put_events_request_entry {
             self.detail_type = input;
             self
         }
-        /// <p>A valid JSON string. There is no other schema imposed. The JSON string may contain fields
-        /// and nested subobjects.</p>
+        /// <p>A valid JSON string. There is no other schema imposed. The JSON string may contain fields and nested subobjects.</p>
         pub fn detail(mut self, input: impl Into<std::string::String>) -> Self {
             self.detail = Some(input.into());
             self
         }
-        /// <p>A valid JSON string. There is no other schema imposed. The JSON string may contain fields
-        /// and nested subobjects.</p>
+        /// <p>A valid JSON string. There is no other schema imposed. The JSON string may contain fields and nested subobjects.</p>
         pub fn set_detail(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.detail = input;
             self
         }
-        /// <p>The name or ARN of the event bus to receive the event. Only the rules that are associated
-        /// with this event bus are used to match the event. If you omit this, the default event bus is
-        /// used.</p>
+        /// <p>The name or ARN of the event bus to receive the event. Only the rules that are associated with this event bus are used to match the event. If you omit this, the default event bus is used.</p>
         pub fn event_bus_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.event_bus_name = Some(input.into());
             self
         }
-        /// <p>The name or ARN of the event bus to receive the event. Only the rules that are associated
-        /// with this event bus are used to match the event. If you omit this, the default event bus is
-        /// used.</p>
+        /// <p>The name or ARN of the event bus to receive the event. Only the rules that are associated with this event bus are used to match the event. If you omit this, the default event bus is used.</p>
         pub fn set_event_bus_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5843,15 +5198,13 @@ pub mod put_events_request_entry {
             self.event_bus_name = input;
             self
         }
-        /// <p>An X-Ray trade header, which is an http header (X-Amzn-Trace-Id) that contains the
-        /// trace-id associated with the event.</p>
+        /// <p>An X-Ray trade header, which is an http header (X-Amzn-Trace-Id) that contains the trace-id associated with the event.</p>
         /// <p>To learn more about X-Ray trace headers, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader">Tracing header</a> in the X-Ray Developer Guide.</p>
         pub fn trace_header(mut self, input: impl Into<std::string::String>) -> Self {
             self.trace_header = Some(input.into());
             self
         }
-        /// <p>An X-Ray trade header, which is an http header (X-Amzn-Trace-Id) that contains the
-        /// trace-id associated with the event.</p>
+        /// <p>An X-Ray trade header, which is an http header (X-Amzn-Trace-Id) that contains the trace-id associated with the event.</p>
         /// <p>To learn more about X-Ray trace headers, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader">Tracing header</a> in the X-Ray Developer Guide.</p>
         pub fn set_trace_header(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.trace_header = input;
@@ -5886,8 +5239,7 @@ pub struct Rule {
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The event pattern of the rule. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event
-    /// Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    /// <p>The event pattern of the rule. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub event_pattern: std::option::Option<std::string::String>,
     /// <p>The state of the rule.</p>
     pub state: std::option::Option<crate::model::RuleState>,
@@ -5896,16 +5248,11 @@ pub struct Rule {
     /// <p>The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5 minutes)". For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-create-rule-schedule.html">Creating an Amazon EventBridge rule that runs on a schedule</a>.</p>
     pub schedule_expression: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the role that is used for target invocation.</p>
-    /// <p>If you're setting an event bus in another account as the target and that account granted
-    /// permission to your account through an organization instead of directly by the account ID, you
-    /// must specify a <code>RoleArn</code> with proper permissions in the <code>Target</code>
-    /// structure, instead of here in this parameter.</p>
+    /// <p>If you're setting an event bus in another account as the target and that account granted permission to your account through an organization instead of directly by the account ID, you must specify a <code>RoleArn</code> with proper permissions in the <code>Target</code> structure, instead of here in this parameter.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>If the rule was created on behalf of your account by an Amazon Web Services service, this field displays
-    /// the principal name of the service that created the rule.</p>
+    /// <p>If the rule was created on behalf of your account by an Amazon Web Services service, this field displays the principal name of the service that created the rule.</p>
     pub managed_by: std::option::Option<std::string::String>,
-    /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
-    /// event bus is used.</p>
+    /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
     pub event_bus_name: std::option::Option<std::string::String>,
 }
 impl Rule {
@@ -5917,8 +5264,7 @@ impl Rule {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The event pattern of the rule. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event
-    /// Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    /// <p>The event pattern of the rule. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub fn event_pattern(&self) -> std::option::Option<&str> {
         self.event_pattern.as_deref()
     }
@@ -5935,20 +5281,15 @@ impl Rule {
         self.schedule_expression.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the role that is used for target invocation.</p>
-    /// <p>If you're setting an event bus in another account as the target and that account granted
-    /// permission to your account through an organization instead of directly by the account ID, you
-    /// must specify a <code>RoleArn</code> with proper permissions in the <code>Target</code>
-    /// structure, instead of here in this parameter.</p>
+    /// <p>If you're setting an event bus in another account as the target and that account granted permission to your account through an organization instead of directly by the account ID, you must specify a <code>RoleArn</code> with proper permissions in the <code>Target</code> structure, instead of here in this parameter.</p>
     pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>If the rule was created on behalf of your account by an Amazon Web Services service, this field displays
-    /// the principal name of the service that created the rule.</p>
+    /// <p>If the rule was created on behalf of your account by an Amazon Web Services service, this field displays the principal name of the service that created the rule.</p>
     pub fn managed_by(&self) -> std::option::Option<&str> {
         self.managed_by.as_deref()
     }
-    /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
-    /// event bus is used.</p>
+    /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
     pub fn event_bus_name(&self) -> std::option::Option<&str> {
         self.event_bus_name.as_deref()
     }
@@ -6005,14 +5346,12 @@ pub mod rule {
             self.arn = input;
             self
         }
-        /// <p>The event pattern of the rule. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event
-        /// Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+        /// <p>The event pattern of the rule. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
         pub fn event_pattern(mut self, input: impl Into<std::string::String>) -> Self {
             self.event_pattern = Some(input.into());
             self
         }
-        /// <p>The event pattern of the rule. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event
-        /// Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+        /// <p>The event pattern of the rule. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
         pub fn set_event_pattern(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6054,43 +5393,33 @@ pub mod rule {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the role that is used for target invocation.</p>
-        /// <p>If you're setting an event bus in another account as the target and that account granted
-        /// permission to your account through an organization instead of directly by the account ID, you
-        /// must specify a <code>RoleArn</code> with proper permissions in the <code>Target</code>
-        /// structure, instead of here in this parameter.</p>
+        /// <p>If you're setting an event bus in another account as the target and that account granted permission to your account through an organization instead of directly by the account ID, you must specify a <code>RoleArn</code> with proper permissions in the <code>Target</code> structure, instead of here in this parameter.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the role that is used for target invocation.</p>
-        /// <p>If you're setting an event bus in another account as the target and that account granted
-        /// permission to your account through an organization instead of directly by the account ID, you
-        /// must specify a <code>RoleArn</code> with proper permissions in the <code>Target</code>
-        /// structure, instead of here in this parameter.</p>
+        /// <p>If you're setting an event bus in another account as the target and that account granted permission to your account through an organization instead of directly by the account ID, you must specify a <code>RoleArn</code> with proper permissions in the <code>Target</code> structure, instead of here in this parameter.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
         }
-        /// <p>If the rule was created on behalf of your account by an Amazon Web Services service, this field displays
-        /// the principal name of the service that created the rule.</p>
+        /// <p>If the rule was created on behalf of your account by an Amazon Web Services service, this field displays the principal name of the service that created the rule.</p>
         pub fn managed_by(mut self, input: impl Into<std::string::String>) -> Self {
             self.managed_by = Some(input.into());
             self
         }
-        /// <p>If the rule was created on behalf of your account by an Amazon Web Services service, this field displays
-        /// the principal name of the service that created the rule.</p>
+        /// <p>If the rule was created on behalf of your account by an Amazon Web Services service, this field displays the principal name of the service that created the rule.</p>
         pub fn set_managed_by(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.managed_by = input;
             self
         }
-        /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
-        /// event bus is used.</p>
+        /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
         pub fn event_bus_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.event_bus_name = Some(input.into());
             self
         }
-        /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
-        /// event bus is used.</p>
+        /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
         pub fn set_event_bus_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6133,11 +5462,9 @@ pub struct Replay {
     pub state: std::option::Option<crate::model::ReplayState>,
     /// <p>A description of why the replay is in the current state.</p>
     pub state_reason: std::option::Option<std::string::String>,
-    /// <p>A time stamp for the time to start replaying events. This is determined by the time in the
-    /// event as described in <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutEventsRequestEntry.html#eventbridge-Type-PutEventsRequestEntry-Time">Time</a>.</p>
+    /// <p>A time stamp for the time to start replaying events. This is determined by the time in the event as described in <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutEventsRequestEntry.html#eventbridge-Type-PutEventsRequestEntry-Time">Time</a>.</p>
     pub event_start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>A time stamp for the time to start replaying events. Any event with a creation time prior
-    /// to the <code>EventEndTime</code> specified is replayed.</p>
+    /// <p>A time stamp for the time to start replaying events. Any event with a creation time prior to the <code>EventEndTime</code> specified is replayed.</p>
     pub event_end_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A time stamp for the time that the last event was replayed.</p>
     pub event_last_replayed_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -6163,13 +5490,11 @@ impl Replay {
     pub fn state_reason(&self) -> std::option::Option<&str> {
         self.state_reason.as_deref()
     }
-    /// <p>A time stamp for the time to start replaying events. This is determined by the time in the
-    /// event as described in <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutEventsRequestEntry.html#eventbridge-Type-PutEventsRequestEntry-Time">Time</a>.</p>
+    /// <p>A time stamp for the time to start replaying events. This is determined by the time in the event as described in <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutEventsRequestEntry.html#eventbridge-Type-PutEventsRequestEntry-Time">Time</a>.</p>
     pub fn event_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.event_start_time.as_ref()
     }
-    /// <p>A time stamp for the time to start replaying events. Any event with a creation time prior
-    /// to the <code>EventEndTime</code> specified is replayed.</p>
+    /// <p>A time stamp for the time to start replaying events. Any event with a creation time prior to the <code>EventEndTime</code> specified is replayed.</p>
     pub fn event_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.event_end_time.as_ref()
     }
@@ -6261,14 +5586,12 @@ pub mod replay {
             self.state_reason = input;
             self
         }
-        /// <p>A time stamp for the time to start replaying events. This is determined by the time in the
-        /// event as described in <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutEventsRequestEntry.html#eventbridge-Type-PutEventsRequestEntry-Time">Time</a>.</p>
+        /// <p>A time stamp for the time to start replaying events. This is determined by the time in the event as described in <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutEventsRequestEntry.html#eventbridge-Type-PutEventsRequestEntry-Time">Time</a>.</p>
         pub fn event_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.event_start_time = Some(input);
             self
         }
-        /// <p>A time stamp for the time to start replaying events. This is determined by the time in the
-        /// event as described in <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutEventsRequestEntry.html#eventbridge-Type-PutEventsRequestEntry-Time">Time</a>.</p>
+        /// <p>A time stamp for the time to start replaying events. This is determined by the time in the event as described in <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutEventsRequestEntry.html#eventbridge-Type-PutEventsRequestEntry-Time">Time</a>.</p>
         pub fn set_event_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -6276,14 +5599,12 @@ pub mod replay {
             self.event_start_time = input;
             self
         }
-        /// <p>A time stamp for the time to start replaying events. Any event with a creation time prior
-        /// to the <code>EventEndTime</code> specified is replayed.</p>
+        /// <p>A time stamp for the time to start replaying events. Any event with a creation time prior to the <code>EventEndTime</code> specified is replayed.</p>
         pub fn event_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.event_end_time = Some(input);
             self
         }
-        /// <p>A time stamp for the time to start replaying events. Any event with a creation time prior
-        /// to the <code>EventEndTime</code> specified is replayed.</p>
+        /// <p>A time stamp for the time to start replaying events. Any event with a creation time prior to the <code>EventEndTime</code> specified is replayed.</p>
         pub fn set_event_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -6353,9 +5674,7 @@ impl Replay {
     }
 }
 
-/// <p>A partner event source is created by an SaaS partner. If a customer creates a partner
-/// event bus that matches this event source, that Amazon Web Services account can receive events from the
-/// partner's applications or services.</p>
+/// <p>A partner event source is created by an SaaS partner. If a customer creates a partner event bus that matches this event source, that Amazon Web Services account can receive events from the partner's applications or services.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PartnerEventSource {
@@ -6436,13 +5755,9 @@ pub struct PartnerEventSourceAccount {
     pub account: std::option::Option<std::string::String>,
     /// <p>The date and time the event source was created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The date and time that the event source will expire, if the Amazon Web Services account doesn't create a
-    /// matching event bus for it.</p>
+    /// <p>The date and time that the event source will expire, if the Amazon Web Services account doesn't create a matching event bus for it.</p>
     pub expiration_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The state of the event source. If it is ACTIVE, you have already created a matching event
-    /// bus for this event source, and that event bus is active. If it is PENDING, either you haven't
-    /// yet created a matching event bus, or that event bus is deactivated. If it is DELETED, you have
-    /// created a matching event bus, but the event source has since been deleted.</p>
+    /// <p>The state of the event source. If it is ACTIVE, you have already created a matching event bus for this event source, and that event bus is active. If it is PENDING, either you haven't yet created a matching event bus, or that event bus is deactivated. If it is DELETED, you have created a matching event bus, but the event source has since been deleted.</p>
     pub state: std::option::Option<crate::model::EventSourceState>,
 }
 impl PartnerEventSourceAccount {
@@ -6454,15 +5769,11 @@ impl PartnerEventSourceAccount {
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>The date and time that the event source will expire, if the Amazon Web Services account doesn't create a
-    /// matching event bus for it.</p>
+    /// <p>The date and time that the event source will expire, if the Amazon Web Services account doesn't create a matching event bus for it.</p>
     pub fn expiration_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expiration_time.as_ref()
     }
-    /// <p>The state of the event source. If it is ACTIVE, you have already created a matching event
-    /// bus for this event source, and that event bus is active. If it is PENDING, either you haven't
-    /// yet created a matching event bus, or that event bus is deactivated. If it is DELETED, you have
-    /// created a matching event bus, but the event source has since been deleted.</p>
+    /// <p>The state of the event source. If it is ACTIVE, you have already created a matching event bus for this event source, and that event bus is active. If it is PENDING, either you haven't yet created a matching event bus, or that event bus is deactivated. If it is DELETED, you have created a matching event bus, but the event source has since been deleted.</p>
     pub fn state(&self) -> std::option::Option<&crate::model::EventSourceState> {
         self.state.as_ref()
     }
@@ -6512,14 +5823,12 @@ pub mod partner_event_source_account {
             self.creation_time = input;
             self
         }
-        /// <p>The date and time that the event source will expire, if the Amazon Web Services account doesn't create a
-        /// matching event bus for it.</p>
+        /// <p>The date and time that the event source will expire, if the Amazon Web Services account doesn't create a matching event bus for it.</p>
         pub fn expiration_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.expiration_time = Some(input);
             self
         }
-        /// <p>The date and time that the event source will expire, if the Amazon Web Services account doesn't create a
-        /// matching event bus for it.</p>
+        /// <p>The date and time that the event source will expire, if the Amazon Web Services account doesn't create a matching event bus for it.</p>
         pub fn set_expiration_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -6527,18 +5836,12 @@ pub mod partner_event_source_account {
             self.expiration_time = input;
             self
         }
-        /// <p>The state of the event source. If it is ACTIVE, you have already created a matching event
-        /// bus for this event source, and that event bus is active. If it is PENDING, either you haven't
-        /// yet created a matching event bus, or that event bus is deactivated. If it is DELETED, you have
-        /// created a matching event bus, but the event source has since been deleted.</p>
+        /// <p>The state of the event source. If it is ACTIVE, you have already created a matching event bus for this event source, and that event bus is active. If it is PENDING, either you haven't yet created a matching event bus, or that event bus is deactivated. If it is DELETED, you have created a matching event bus, but the event source has since been deleted.</p>
         pub fn state(mut self, input: crate::model::EventSourceState) -> Self {
             self.state = Some(input);
             self
         }
-        /// <p>The state of the event source. If it is ACTIVE, you have already created a matching event
-        /// bus for this event source, and that event bus is active. If it is PENDING, either you haven't
-        /// yet created a matching event bus, or that event bus is deactivated. If it is DELETED, you have
-        /// created a matching event bus, but the event source has since been deleted.</p>
+        /// <p>The state of the event source. If it is ACTIVE, you have already created a matching event bus for this event source, and that event bus is active. If it is PENDING, either you haven't yet created a matching event bus, or that event bus is deactivated. If it is DELETED, you have created a matching event bus, but the event source has since been deleted.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::EventSourceState>,
@@ -6623,9 +5926,7 @@ impl AsRef<str> for EventSourceState {
     }
 }
 
-/// <p>A partner event source is created by an SaaS partner. If a customer creates a partner
-/// event bus that matches this event source, that Amazon Web Services account can receive events from the
-/// partner's applications or services.</p>
+/// <p>A partner event source is created by an SaaS partner. If a customer creates a partner event bus that matches this event source, that Amazon Web Services account can receive events from the partner's applications or services.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventSource {
@@ -6635,15 +5936,11 @@ pub struct EventSource {
     pub created_by: std::option::Option<std::string::String>,
     /// <p>The date and time the event source was created.</p>
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The date and time that the event source will expire, if the Amazon Web Services account doesn't create a
-    /// matching event bus for it.</p>
+    /// <p>The date and time that the event source will expire, if the Amazon Web Services account doesn't create a matching event bus for it.</p>
     pub expiration_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The name of the event source.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The state of the event source. If it is ACTIVE, you have already created a matching event
-    /// bus for this event source, and that event bus is active. If it is PENDING, either you haven't
-    /// yet created a matching event bus, or that event bus is deactivated. If it is DELETED, you have
-    /// created a matching event bus, but the event source has since been deleted.</p>
+    /// <p>The state of the event source. If it is ACTIVE, you have already created a matching event bus for this event source, and that event bus is active. If it is PENDING, either you haven't yet created a matching event bus, or that event bus is deactivated. If it is DELETED, you have created a matching event bus, but the event source has since been deleted.</p>
     pub state: std::option::Option<crate::model::EventSourceState>,
 }
 impl EventSource {
@@ -6659,8 +5956,7 @@ impl EventSource {
     pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>The date and time that the event source will expire, if the Amazon Web Services account doesn't create a
-    /// matching event bus for it.</p>
+    /// <p>The date and time that the event source will expire, if the Amazon Web Services account doesn't create a matching event bus for it.</p>
     pub fn expiration_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expiration_time.as_ref()
     }
@@ -6668,10 +5964,7 @@ impl EventSource {
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The state of the event source. If it is ACTIVE, you have already created a matching event
-    /// bus for this event source, and that event bus is active. If it is PENDING, either you haven't
-    /// yet created a matching event bus, or that event bus is deactivated. If it is DELETED, you have
-    /// created a matching event bus, but the event source has since been deleted.</p>
+    /// <p>The state of the event source. If it is ACTIVE, you have already created a matching event bus for this event source, and that event bus is active. If it is PENDING, either you haven't yet created a matching event bus, or that event bus is deactivated. If it is DELETED, you have created a matching event bus, but the event source has since been deleted.</p>
     pub fn state(&self) -> std::option::Option<&crate::model::EventSourceState> {
         self.state.as_ref()
     }
@@ -6735,14 +6028,12 @@ pub mod event_source {
             self.creation_time = input;
             self
         }
-        /// <p>The date and time that the event source will expire, if the Amazon Web Services account doesn't create a
-        /// matching event bus for it.</p>
+        /// <p>The date and time that the event source will expire, if the Amazon Web Services account doesn't create a matching event bus for it.</p>
         pub fn expiration_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.expiration_time = Some(input);
             self
         }
-        /// <p>The date and time that the event source will expire, if the Amazon Web Services account doesn't create a
-        /// matching event bus for it.</p>
+        /// <p>The date and time that the event source will expire, if the Amazon Web Services account doesn't create a matching event bus for it.</p>
         pub fn set_expiration_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -6760,18 +6051,12 @@ pub mod event_source {
             self.name = input;
             self
         }
-        /// <p>The state of the event source. If it is ACTIVE, you have already created a matching event
-        /// bus for this event source, and that event bus is active. If it is PENDING, either you haven't
-        /// yet created a matching event bus, or that event bus is deactivated. If it is DELETED, you have
-        /// created a matching event bus, but the event source has since been deleted.</p>
+        /// <p>The state of the event source. If it is ACTIVE, you have already created a matching event bus for this event source, and that event bus is active. If it is PENDING, either you haven't yet created a matching event bus, or that event bus is deactivated. If it is DELETED, you have created a matching event bus, but the event source has since been deleted.</p>
         pub fn state(mut self, input: crate::model::EventSourceState) -> Self {
             self.state = Some(input);
             self
         }
-        /// <p>The state of the event source. If it is ACTIVE, you have already created a matching event
-        /// bus for this event source, and that event bus is active. If it is PENDING, either you haven't
-        /// yet created a matching event bus, or that event bus is deactivated. If it is DELETED, you have
-        /// created a matching event bus, but the event source has since been deleted.</p>
+        /// <p>The state of the event source. If it is ACTIVE, you have already created a matching event bus for this event source, and that event bus is active. If it is PENDING, either you haven't yet created a matching event bus, or that event bus is deactivated. If it is DELETED, you have created a matching event bus, but the event source has since been deleted.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::EventSourceState>,
@@ -6799,11 +6084,7 @@ impl EventSource {
     }
 }
 
-/// <p>An event bus receives events from a source and routes them to rules associated with that
-/// event bus. Your account's default event bus receives events from Amazon Web Services services. A custom event
-/// bus can receive events from your custom applications and services. A partner event bus
-/// receives events from an event source created by an SaaS partner. These events come from the
-/// partners services or applications.</p>
+/// <p>An event bus receives events from a source and routes them to rules associated with that event bus. Your account's default event bus receives events from Amazon Web Services services. A custom event bus can receive events from your custom applications and services. A partner event bus receives events from an event source created by an SaaS partner. These events come from the partners services or applications.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventBus {
@@ -6811,8 +6092,7 @@ pub struct EventBus {
     pub name: std::option::Option<std::string::String>,
     /// <p>The ARN of the event bus.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The permissions policy of the event bus, describing which other Amazon Web Services accounts can write
-    /// events to this event bus.</p>
+    /// <p>The permissions policy of the event bus, describing which other Amazon Web Services accounts can write events to this event bus.</p>
     pub policy: std::option::Option<std::string::String>,
 }
 impl EventBus {
@@ -6824,8 +6104,7 @@ impl EventBus {
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The permissions policy of the event bus, describing which other Amazon Web Services accounts can write
-    /// events to this event bus.</p>
+    /// <p>The permissions policy of the event bus, describing which other Amazon Web Services accounts can write events to this event bus.</p>
     pub fn policy(&self) -> std::option::Option<&str> {
         self.policy.as_deref()
     }
@@ -6870,14 +6149,12 @@ pub mod event_bus {
             self.arn = input;
             self
         }
-        /// <p>The permissions policy of the event bus, describing which other Amazon Web Services accounts can write
-        /// events to this event bus.</p>
+        /// <p>The permissions policy of the event bus, describing which other Amazon Web Services accounts can write events to this event bus.</p>
         pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy = Some(input.into());
             self
         }
-        /// <p>The permissions policy of the event bus, describing which other Amazon Web Services accounts can write
-        /// events to this event bus.</p>
+        /// <p>The permissions policy of the event bus, describing which other Amazon Web Services accounts can write events to this event bus.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy = input;
             self
@@ -7116,8 +6393,7 @@ impl Connection {
 pub struct Archive {
     /// <p>The name of the archive.</p>
     pub archive_name: std::option::Option<std::string::String>,
-    /// <p>The ARN of the event bus associated with the archive. Only events from this event bus are
-    /// sent to the archive.</p>
+    /// <p>The ARN of the event bus associated with the archive. Only events from this event bus are sent to the archive.</p>
     pub event_source_arn: std::option::Option<std::string::String>,
     /// <p>The current state of the archive.</p>
     pub state: std::option::Option<crate::model::ArchiveState>,
@@ -7137,8 +6413,7 @@ impl Archive {
     pub fn archive_name(&self) -> std::option::Option<&str> {
         self.archive_name.as_deref()
     }
-    /// <p>The ARN of the event bus associated with the archive. Only events from this event bus are
-    /// sent to the archive.</p>
+    /// <p>The ARN of the event bus associated with the archive. Only events from this event bus are sent to the archive.</p>
     pub fn event_source_arn(&self) -> std::option::Option<&str> {
         self.event_source_arn.as_deref()
     }
@@ -7207,14 +6482,12 @@ pub mod archive {
             self.archive_name = input;
             self
         }
-        /// <p>The ARN of the event bus associated with the archive. Only events from this event bus are
-        /// sent to the archive.</p>
+        /// <p>The ARN of the event bus associated with the archive. Only events from this event bus are sent to the archive.</p>
         pub fn event_source_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.event_source_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the event bus associated with the archive. Only events from this event bus are
-        /// sent to the archive.</p>
+        /// <p>The ARN of the event bus associated with the archive. Only events from this event bus are sent to the archive.</p>
         pub fn set_event_source_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7552,8 +6825,7 @@ pub struct ConnectionAuthResponseParameters {
     /// <p>The API Key parameters to use for authorization.</p>
     pub api_key_auth_parameters:
         std::option::Option<crate::model::ConnectionApiKeyAuthResponseParameters>,
-    /// <p>Additional parameters for the connection that are passed through with every invocation to
-    /// the HTTP endpoint.</p>
+    /// <p>Additional parameters for the connection that are passed through with every invocation to the HTTP endpoint.</p>
     pub invocation_http_parameters: std::option::Option<crate::model::ConnectionHttpParameters>,
 }
 impl ConnectionAuthResponseParameters {
@@ -7575,8 +6847,7 @@ impl ConnectionAuthResponseParameters {
     ) -> std::option::Option<&crate::model::ConnectionApiKeyAuthResponseParameters> {
         self.api_key_auth_parameters.as_ref()
     }
-    /// <p>Additional parameters for the connection that are passed through with every invocation to
-    /// the HTTP endpoint.</p>
+    /// <p>Additional parameters for the connection that are passed through with every invocation to the HTTP endpoint.</p>
     pub fn invocation_http_parameters(
         &self,
     ) -> std::option::Option<&crate::model::ConnectionHttpParameters> {
@@ -7660,8 +6931,7 @@ pub mod connection_auth_response_parameters {
             self.api_key_auth_parameters = input;
             self
         }
-        /// <p>Additional parameters for the connection that are passed through with every invocation to
-        /// the HTTP endpoint.</p>
+        /// <p>Additional parameters for the connection that are passed through with every invocation to the HTTP endpoint.</p>
         pub fn invocation_http_parameters(
             mut self,
             input: crate::model::ConnectionHttpParameters,
@@ -7669,8 +6939,7 @@ pub mod connection_auth_response_parameters {
             self.invocation_http_parameters = Some(input);
             self
         }
-        /// <p>Additional parameters for the connection that are passed through with every invocation to
-        /// the HTTP endpoint.</p>
+        /// <p>Additional parameters for the connection that are passed through with every invocation to the HTTP endpoint.</p>
         pub fn set_invocation_http_parameters(
             mut self,
             input: std::option::Option<crate::model::ConnectionHttpParameters>,
@@ -7696,18 +6965,15 @@ impl ConnectionAuthResponseParameters {
     }
 }
 
-/// <p>Contains the authorization parameters for the connection if API Key is specified as the
-/// authorization type.</p>
+/// <p>Contains the authorization parameters for the connection if API Key is specified as the authorization type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectionApiKeyAuthResponseParameters {
-    /// <p>The name of the header to use for the <code>APIKeyValue</code> used for
-    /// authorization.</p>
+    /// <p>The name of the header to use for the <code>APIKeyValue</code> used for authorization.</p>
     pub api_key_name: std::option::Option<std::string::String>,
 }
 impl ConnectionApiKeyAuthResponseParameters {
-    /// <p>The name of the header to use for the <code>APIKeyValue</code> used for
-    /// authorization.</p>
+    /// <p>The name of the header to use for the <code>APIKeyValue</code> used for authorization.</p>
     pub fn api_key_name(&self) -> std::option::Option<&str> {
         self.api_key_name.as_deref()
     }
@@ -7728,14 +6994,12 @@ pub mod connection_api_key_auth_response_parameters {
         pub(crate) api_key_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the header to use for the <code>APIKeyValue</code> used for
-        /// authorization.</p>
+        /// <p>The name of the header to use for the <code>APIKeyValue</code> used for authorization.</p>
         pub fn api_key_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.api_key_name = Some(input.into());
             self
         }
-        /// <p>The name of the header to use for the <code>APIKeyValue</code> used for
-        /// authorization.</p>
+        /// <p>The name of the header to use for the <code>APIKeyValue</code> used for authorization.</p>
         pub fn set_api_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api_key_name = input;
             self
@@ -7759,8 +7023,7 @@ impl ConnectionApiKeyAuthResponseParameters {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectionOAuthResponseParameters {
-    /// <p>A <code>ConnectionOAuthClientResponseParameters</code> object that contains details about
-    /// the client parameters returned when OAuth is specified as the authorization type.</p>
+    /// <p>A <code>ConnectionOAuthClientResponseParameters</code> object that contains details about the client parameters returned when OAuth is specified as the authorization type.</p>
     pub client_parameters:
         std::option::Option<crate::model::ConnectionOAuthClientResponseParameters>,
     /// <p>The URL to the HTTP endpoint that authorized the request.</p>
@@ -7771,8 +7034,7 @@ pub struct ConnectionOAuthResponseParameters {
     pub o_auth_http_parameters: std::option::Option<crate::model::ConnectionHttpParameters>,
 }
 impl ConnectionOAuthResponseParameters {
-    /// <p>A <code>ConnectionOAuthClientResponseParameters</code> object that contains details about
-    /// the client parameters returned when OAuth is specified as the authorization type.</p>
+    /// <p>A <code>ConnectionOAuthClientResponseParameters</code> object that contains details about the client parameters returned when OAuth is specified as the authorization type.</p>
     pub fn client_parameters(
         &self,
     ) -> std::option::Option<&crate::model::ConnectionOAuthClientResponseParameters> {
@@ -7817,8 +7079,7 @@ pub mod connection_o_auth_response_parameters {
             std::option::Option<crate::model::ConnectionHttpParameters>,
     }
     impl Builder {
-        /// <p>A <code>ConnectionOAuthClientResponseParameters</code> object that contains details about
-        /// the client parameters returned when OAuth is specified as the authorization type.</p>
+        /// <p>A <code>ConnectionOAuthClientResponseParameters</code> object that contains details about the client parameters returned when OAuth is specified as the authorization type.</p>
         pub fn client_parameters(
             mut self,
             input: crate::model::ConnectionOAuthClientResponseParameters,
@@ -7826,8 +7087,7 @@ pub mod connection_o_auth_response_parameters {
             self.client_parameters = Some(input);
             self
         }
-        /// <p>A <code>ConnectionOAuthClientResponseParameters</code> object that contains details about
-        /// the client parameters returned when OAuth is specified as the authorization type.</p>
+        /// <p>A <code>ConnectionOAuthClientResponseParameters</code> object that contains details about the client parameters returned when OAuth is specified as the authorization type.</p>
         pub fn set_client_parameters(
             mut self,
             input: std::option::Option<crate::model::ConnectionOAuthClientResponseParameters>,
@@ -7895,8 +7155,7 @@ impl ConnectionOAuthResponseParameters {
     }
 }
 
-/// <p>Contains the client response parameters for the connection when OAuth is specified as the
-/// authorization type.</p>
+/// <p>Contains the client response parameters for the connection when OAuth is specified as the authorization type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectionOAuthClientResponseParameters {
@@ -7950,8 +7209,7 @@ impl ConnectionOAuthClientResponseParameters {
     }
 }
 
-/// <p>Contains the authorization parameters for the connection if Basic is specified as the
-/// authorization type.</p>
+/// <p>Contains the authorization parameters for the connection if Basic is specified as the authorization type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConnectionBasicAuthResponseParameters {
@@ -8009,50 +7267,38 @@ impl ConnectionBasicAuthResponseParameters {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConnectionAuthRequestParameters {
-    /// <p>A <code>CreateConnectionBasicAuthRequestParameters</code> object that contains the Basic
-    /// authorization parameters to use for the connection.</p>
+    /// <p>A <code>CreateConnectionBasicAuthRequestParameters</code> object that contains the Basic authorization parameters to use for the connection.</p>
     pub basic_auth_parameters:
         std::option::Option<crate::model::CreateConnectionBasicAuthRequestParameters>,
-    /// <p>A <code>CreateConnectionOAuthRequestParameters</code> object that contains the OAuth
-    /// authorization parameters to use for the connection.</p>
+    /// <p>A <code>CreateConnectionOAuthRequestParameters</code> object that contains the OAuth authorization parameters to use for the connection.</p>
     pub o_auth_parameters:
         std::option::Option<crate::model::CreateConnectionOAuthRequestParameters>,
-    /// <p>A <code>CreateConnectionApiKeyAuthRequestParameters</code> object that contains the API
-    /// key authorization parameters to use for the connection.</p>
+    /// <p>A <code>CreateConnectionApiKeyAuthRequestParameters</code> object that contains the API key authorization parameters to use for the connection.</p>
     pub api_key_auth_parameters:
         std::option::Option<crate::model::CreateConnectionApiKeyAuthRequestParameters>,
-    /// <p>A <code>ConnectionHttpParameters</code> object that contains the API key authorization
-    /// parameters to use for the connection. Note that if you include additional parameters for the
-    /// target of a rule via <code>HttpParameters</code>, including query strings, the parameters
-    /// added for the connection take precedence.</p>
+    /// <p>A <code>ConnectionHttpParameters</code> object that contains the API key authorization parameters to use for the connection. Note that if you include additional parameters for the target of a rule via <code>HttpParameters</code>, including query strings, the parameters added for the connection take precedence.</p>
     pub invocation_http_parameters: std::option::Option<crate::model::ConnectionHttpParameters>,
 }
 impl CreateConnectionAuthRequestParameters {
-    /// <p>A <code>CreateConnectionBasicAuthRequestParameters</code> object that contains the Basic
-    /// authorization parameters to use for the connection.</p>
+    /// <p>A <code>CreateConnectionBasicAuthRequestParameters</code> object that contains the Basic authorization parameters to use for the connection.</p>
     pub fn basic_auth_parameters(
         &self,
     ) -> std::option::Option<&crate::model::CreateConnectionBasicAuthRequestParameters> {
         self.basic_auth_parameters.as_ref()
     }
-    /// <p>A <code>CreateConnectionOAuthRequestParameters</code> object that contains the OAuth
-    /// authorization parameters to use for the connection.</p>
+    /// <p>A <code>CreateConnectionOAuthRequestParameters</code> object that contains the OAuth authorization parameters to use for the connection.</p>
     pub fn o_auth_parameters(
         &self,
     ) -> std::option::Option<&crate::model::CreateConnectionOAuthRequestParameters> {
         self.o_auth_parameters.as_ref()
     }
-    /// <p>A <code>CreateConnectionApiKeyAuthRequestParameters</code> object that contains the API
-    /// key authorization parameters to use for the connection.</p>
+    /// <p>A <code>CreateConnectionApiKeyAuthRequestParameters</code> object that contains the API key authorization parameters to use for the connection.</p>
     pub fn api_key_auth_parameters(
         &self,
     ) -> std::option::Option<&crate::model::CreateConnectionApiKeyAuthRequestParameters> {
         self.api_key_auth_parameters.as_ref()
     }
-    /// <p>A <code>ConnectionHttpParameters</code> object that contains the API key authorization
-    /// parameters to use for the connection. Note that if you include additional parameters for the
-    /// target of a rule via <code>HttpParameters</code>, including query strings, the parameters
-    /// added for the connection take precedence.</p>
+    /// <p>A <code>ConnectionHttpParameters</code> object that contains the API key authorization parameters to use for the connection. Note that if you include additional parameters for the target of a rule via <code>HttpParameters</code>, including query strings, the parameters added for the connection take precedence.</p>
     pub fn invocation_http_parameters(
         &self,
     ) -> std::option::Option<&crate::model::ConnectionHttpParameters> {
@@ -8088,8 +7334,7 @@ pub mod create_connection_auth_request_parameters {
             std::option::Option<crate::model::ConnectionHttpParameters>,
     }
     impl Builder {
-        /// <p>A <code>CreateConnectionBasicAuthRequestParameters</code> object that contains the Basic
-        /// authorization parameters to use for the connection.</p>
+        /// <p>A <code>CreateConnectionBasicAuthRequestParameters</code> object that contains the Basic authorization parameters to use for the connection.</p>
         pub fn basic_auth_parameters(
             mut self,
             input: crate::model::CreateConnectionBasicAuthRequestParameters,
@@ -8097,8 +7342,7 @@ pub mod create_connection_auth_request_parameters {
             self.basic_auth_parameters = Some(input);
             self
         }
-        /// <p>A <code>CreateConnectionBasicAuthRequestParameters</code> object that contains the Basic
-        /// authorization parameters to use for the connection.</p>
+        /// <p>A <code>CreateConnectionBasicAuthRequestParameters</code> object that contains the Basic authorization parameters to use for the connection.</p>
         pub fn set_basic_auth_parameters(
             mut self,
             input: std::option::Option<crate::model::CreateConnectionBasicAuthRequestParameters>,
@@ -8106,8 +7350,7 @@ pub mod create_connection_auth_request_parameters {
             self.basic_auth_parameters = input;
             self
         }
-        /// <p>A <code>CreateConnectionOAuthRequestParameters</code> object that contains the OAuth
-        /// authorization parameters to use for the connection.</p>
+        /// <p>A <code>CreateConnectionOAuthRequestParameters</code> object that contains the OAuth authorization parameters to use for the connection.</p>
         pub fn o_auth_parameters(
             mut self,
             input: crate::model::CreateConnectionOAuthRequestParameters,
@@ -8115,8 +7358,7 @@ pub mod create_connection_auth_request_parameters {
             self.o_auth_parameters = Some(input);
             self
         }
-        /// <p>A <code>CreateConnectionOAuthRequestParameters</code> object that contains the OAuth
-        /// authorization parameters to use for the connection.</p>
+        /// <p>A <code>CreateConnectionOAuthRequestParameters</code> object that contains the OAuth authorization parameters to use for the connection.</p>
         pub fn set_o_auth_parameters(
             mut self,
             input: std::option::Option<crate::model::CreateConnectionOAuthRequestParameters>,
@@ -8124,8 +7366,7 @@ pub mod create_connection_auth_request_parameters {
             self.o_auth_parameters = input;
             self
         }
-        /// <p>A <code>CreateConnectionApiKeyAuthRequestParameters</code> object that contains the API
-        /// key authorization parameters to use for the connection.</p>
+        /// <p>A <code>CreateConnectionApiKeyAuthRequestParameters</code> object that contains the API key authorization parameters to use for the connection.</p>
         pub fn api_key_auth_parameters(
             mut self,
             input: crate::model::CreateConnectionApiKeyAuthRequestParameters,
@@ -8133,8 +7374,7 @@ pub mod create_connection_auth_request_parameters {
             self.api_key_auth_parameters = Some(input);
             self
         }
-        /// <p>A <code>CreateConnectionApiKeyAuthRequestParameters</code> object that contains the API
-        /// key authorization parameters to use for the connection.</p>
+        /// <p>A <code>CreateConnectionApiKeyAuthRequestParameters</code> object that contains the API key authorization parameters to use for the connection.</p>
         pub fn set_api_key_auth_parameters(
             mut self,
             input: std::option::Option<crate::model::CreateConnectionApiKeyAuthRequestParameters>,
@@ -8142,10 +7382,7 @@ pub mod create_connection_auth_request_parameters {
             self.api_key_auth_parameters = input;
             self
         }
-        /// <p>A <code>ConnectionHttpParameters</code> object that contains the API key authorization
-        /// parameters to use for the connection. Note that if you include additional parameters for the
-        /// target of a rule via <code>HttpParameters</code>, including query strings, the parameters
-        /// added for the connection take precedence.</p>
+        /// <p>A <code>ConnectionHttpParameters</code> object that contains the API key authorization parameters to use for the connection. Note that if you include additional parameters for the target of a rule via <code>HttpParameters</code>, including query strings, the parameters added for the connection take precedence.</p>
         pub fn invocation_http_parameters(
             mut self,
             input: crate::model::ConnectionHttpParameters,
@@ -8153,10 +7390,7 @@ pub mod create_connection_auth_request_parameters {
             self.invocation_http_parameters = Some(input);
             self
         }
-        /// <p>A <code>ConnectionHttpParameters</code> object that contains the API key authorization
-        /// parameters to use for the connection. Note that if you include additional parameters for the
-        /// target of a rule via <code>HttpParameters</code>, including query strings, the parameters
-        /// added for the connection take precedence.</p>
+        /// <p>A <code>ConnectionHttpParameters</code> object that contains the API key authorization parameters to use for the connection. Note that if you include additional parameters for the target of a rule via <code>HttpParameters</code>, including query strings, the parameters added for the connection take precedence.</p>
         pub fn set_invocation_http_parameters(
             mut self,
             input: std::option::Option<crate::model::ConnectionHttpParameters>,
@@ -8262,29 +7496,24 @@ impl CreateConnectionApiKeyAuthRequestParameters {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateConnectionOAuthRequestParameters {
-    /// <p>A <code>CreateConnectionOAuthClientRequestParameters</code> object that contains the
-    /// client parameters for OAuth authorization.</p>
+    /// <p>A <code>CreateConnectionOAuthClientRequestParameters</code> object that contains the client parameters for OAuth authorization.</p>
     pub client_parameters:
         std::option::Option<crate::model::CreateConnectionOAuthClientRequestParameters>,
-    /// <p>The URL to the authorization endpoint when OAuth is specified as the authorization
-    /// type.</p>
+    /// <p>The URL to the authorization endpoint when OAuth is specified as the authorization type.</p>
     pub authorization_endpoint: std::option::Option<std::string::String>,
     /// <p>The method to use for the authorization request.</p>
     pub http_method: std::option::Option<crate::model::ConnectionOAuthHttpMethod>,
-    /// <p>A <code>ConnectionHttpParameters</code> object that contains details about the additional
-    /// parameters to use for the connection.</p>
+    /// <p>A <code>ConnectionHttpParameters</code> object that contains details about the additional parameters to use for the connection.</p>
     pub o_auth_http_parameters: std::option::Option<crate::model::ConnectionHttpParameters>,
 }
 impl CreateConnectionOAuthRequestParameters {
-    /// <p>A <code>CreateConnectionOAuthClientRequestParameters</code> object that contains the
-    /// client parameters for OAuth authorization.</p>
+    /// <p>A <code>CreateConnectionOAuthClientRequestParameters</code> object that contains the client parameters for OAuth authorization.</p>
     pub fn client_parameters(
         &self,
     ) -> std::option::Option<&crate::model::CreateConnectionOAuthClientRequestParameters> {
         self.client_parameters.as_ref()
     }
-    /// <p>The URL to the authorization endpoint when OAuth is specified as the authorization
-    /// type.</p>
+    /// <p>The URL to the authorization endpoint when OAuth is specified as the authorization type.</p>
     pub fn authorization_endpoint(&self) -> std::option::Option<&str> {
         self.authorization_endpoint.as_deref()
     }
@@ -8292,8 +7521,7 @@ impl CreateConnectionOAuthRequestParameters {
     pub fn http_method(&self) -> std::option::Option<&crate::model::ConnectionOAuthHttpMethod> {
         self.http_method.as_ref()
     }
-    /// <p>A <code>ConnectionHttpParameters</code> object that contains details about the additional
-    /// parameters to use for the connection.</p>
+    /// <p>A <code>ConnectionHttpParameters</code> object that contains details about the additional parameters to use for the connection.</p>
     pub fn o_auth_http_parameters(
         &self,
     ) -> std::option::Option<&crate::model::ConnectionHttpParameters> {
@@ -8324,8 +7552,7 @@ pub mod create_connection_o_auth_request_parameters {
             std::option::Option<crate::model::ConnectionHttpParameters>,
     }
     impl Builder {
-        /// <p>A <code>CreateConnectionOAuthClientRequestParameters</code> object that contains the
-        /// client parameters for OAuth authorization.</p>
+        /// <p>A <code>CreateConnectionOAuthClientRequestParameters</code> object that contains the client parameters for OAuth authorization.</p>
         pub fn client_parameters(
             mut self,
             input: crate::model::CreateConnectionOAuthClientRequestParameters,
@@ -8333,8 +7560,7 @@ pub mod create_connection_o_auth_request_parameters {
             self.client_parameters = Some(input);
             self
         }
-        /// <p>A <code>CreateConnectionOAuthClientRequestParameters</code> object that contains the
-        /// client parameters for OAuth authorization.</p>
+        /// <p>A <code>CreateConnectionOAuthClientRequestParameters</code> object that contains the client parameters for OAuth authorization.</p>
         pub fn set_client_parameters(
             mut self,
             input: std::option::Option<crate::model::CreateConnectionOAuthClientRequestParameters>,
@@ -8342,14 +7568,12 @@ pub mod create_connection_o_auth_request_parameters {
             self.client_parameters = input;
             self
         }
-        /// <p>The URL to the authorization endpoint when OAuth is specified as the authorization
-        /// type.</p>
+        /// <p>The URL to the authorization endpoint when OAuth is specified as the authorization type.</p>
         pub fn authorization_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
             self.authorization_endpoint = Some(input.into());
             self
         }
-        /// <p>The URL to the authorization endpoint when OAuth is specified as the authorization
-        /// type.</p>
+        /// <p>The URL to the authorization endpoint when OAuth is specified as the authorization type.</p>
         pub fn set_authorization_endpoint(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8370,8 +7594,7 @@ pub mod create_connection_o_auth_request_parameters {
             self.http_method = input;
             self
         }
-        /// <p>A <code>ConnectionHttpParameters</code> object that contains details about the additional
-        /// parameters to use for the connection.</p>
+        /// <p>A <code>ConnectionHttpParameters</code> object that contains details about the additional parameters to use for the connection.</p>
         pub fn o_auth_http_parameters(
             mut self,
             input: crate::model::ConnectionHttpParameters,
@@ -8379,8 +7602,7 @@ pub mod create_connection_o_auth_request_parameters {
             self.o_auth_http_parameters = Some(input);
             self
         }
-        /// <p>A <code>ConnectionHttpParameters</code> object that contains details about the additional
-        /// parameters to use for the connection.</p>
+        /// <p>A <code>ConnectionHttpParameters</code> object that contains details about the additional parameters to use for the connection.</p>
         pub fn set_o_auth_http_parameters(
             mut self,
             input: std::option::Option<crate::model::ConnectionHttpParameters>,
@@ -8412,8 +7634,7 @@ impl CreateConnectionOAuthRequestParameters {
 pub struct CreateConnectionOAuthClientRequestParameters {
     /// <p>The client ID to use for OAuth authorization for the connection.</p>
     pub client_id: std::option::Option<std::string::String>,
-    /// <p>The client secret associated with the client ID to use for OAuth authorization for the
-    /// connection.</p>
+    /// <p>The client secret associated with the client ID to use for OAuth authorization for the connection.</p>
     pub client_secret: std::option::Option<std::string::String>,
 }
 impl CreateConnectionOAuthClientRequestParameters {
@@ -8421,8 +7642,7 @@ impl CreateConnectionOAuthClientRequestParameters {
     pub fn client_id(&self) -> std::option::Option<&str> {
         self.client_id.as_deref()
     }
-    /// <p>The client secret associated with the client ID to use for OAuth authorization for the
-    /// connection.</p>
+    /// <p>The client secret associated with the client ID to use for OAuth authorization for the connection.</p>
     pub fn client_secret(&self) -> std::option::Option<&str> {
         self.client_secret.as_deref()
     }
@@ -8455,14 +7675,12 @@ pub mod create_connection_o_auth_client_request_parameters {
             self.client_id = input;
             self
         }
-        /// <p>The client secret associated with the client ID to use for OAuth authorization for the
-        /// connection.</p>
+        /// <p>The client secret associated with the client ID to use for OAuth authorization for the connection.</p>
         pub fn client_secret(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_secret = Some(input.into());
             self
         }
-        /// <p>The client secret associated with the client ID to use for OAuth authorization for the
-        /// connection.</p>
+        /// <p>The client secret associated with the client ID to use for OAuth authorization for the connection.</p>
         pub fn set_client_secret(
             mut self,
             input: std::option::Option<std::string::String>,

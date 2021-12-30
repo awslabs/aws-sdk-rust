@@ -12,16 +12,13 @@ pub struct CopyBackupToRegionError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CopyBackupToRegionErrorKind {
-    /// <p>The request was rejected because the requester does not have permission to perform the
-    /// requested operation.</p>
+    /// <p>The request was rejected because the requester does not have permission to perform the requested operation.</p>
     CloudHsmAccessDeniedException(crate::error::CloudHsmAccessDeniedException),
-    /// <p>The request was rejected because of an AWS CloudHSM internal failure. The request can
-    /// be retried.</p>
+    /// <p>The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.</p>
     CloudHsmInternalFailureException(crate::error::CloudHsmInternalFailureException),
     /// <p>The request was rejected because it is not a valid request.</p>
     CloudHsmInvalidRequestException(crate::error::CloudHsmInvalidRequestException),
-    /// <p>The request was rejected because it refers to a resource that cannot be
-    /// found.</p>
+    /// <p>The request was rejected because it refers to a resource that cannot be found.</p>
     CloudHsmResourceNotFoundException(crate::error::CloudHsmResourceNotFoundException),
     /// <p>The request was rejected because an error occurred.</p>
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
@@ -163,16 +160,13 @@ pub struct CreateClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateClusterErrorKind {
-    /// <p>The request was rejected because the requester does not have permission to perform the
-    /// requested operation.</p>
+    /// <p>The request was rejected because the requester does not have permission to perform the requested operation.</p>
     CloudHsmAccessDeniedException(crate::error::CloudHsmAccessDeniedException),
-    /// <p>The request was rejected because of an AWS CloudHSM internal failure. The request can
-    /// be retried.</p>
+    /// <p>The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.</p>
     CloudHsmInternalFailureException(crate::error::CloudHsmInternalFailureException),
     /// <p>The request was rejected because it is not a valid request.</p>
     CloudHsmInvalidRequestException(crate::error::CloudHsmInvalidRequestException),
-    /// <p>The request was rejected because it refers to a resource that cannot be
-    /// found.</p>
+    /// <p>The request was rejected because it refers to a resource that cannot be found.</p>
     CloudHsmResourceNotFoundException(crate::error::CloudHsmResourceNotFoundException),
     /// <p>The request was rejected because an error occurred.</p>
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
@@ -311,16 +305,13 @@ pub struct CreateHsmError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateHsmErrorKind {
-    /// <p>The request was rejected because the requester does not have permission to perform the
-    /// requested operation.</p>
+    /// <p>The request was rejected because the requester does not have permission to perform the requested operation.</p>
     CloudHsmAccessDeniedException(crate::error::CloudHsmAccessDeniedException),
-    /// <p>The request was rejected because of an AWS CloudHSM internal failure. The request can
-    /// be retried.</p>
+    /// <p>The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.</p>
     CloudHsmInternalFailureException(crate::error::CloudHsmInternalFailureException),
     /// <p>The request was rejected because it is not a valid request.</p>
     CloudHsmInvalidRequestException(crate::error::CloudHsmInvalidRequestException),
-    /// <p>The request was rejected because it refers to a resource that cannot be
-    /// found.</p>
+    /// <p>The request was rejected because it refers to a resource that cannot be found.</p>
     CloudHsmResourceNotFoundException(crate::error::CloudHsmResourceNotFoundException),
     /// <p>The request was rejected because an error occurred.</p>
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
@@ -448,16 +439,13 @@ pub struct DeleteBackupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteBackupErrorKind {
-    /// <p>The request was rejected because the requester does not have permission to perform the
-    /// requested operation.</p>
+    /// <p>The request was rejected because the requester does not have permission to perform the requested operation.</p>
     CloudHsmAccessDeniedException(crate::error::CloudHsmAccessDeniedException),
-    /// <p>The request was rejected because of an AWS CloudHSM internal failure. The request can
-    /// be retried.</p>
+    /// <p>The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.</p>
     CloudHsmInternalFailureException(crate::error::CloudHsmInternalFailureException),
     /// <p>The request was rejected because it is not a valid request.</p>
     CloudHsmInvalidRequestException(crate::error::CloudHsmInvalidRequestException),
-    /// <p>The request was rejected because it refers to a resource that cannot be
-    /// found.</p>
+    /// <p>The request was rejected because it refers to a resource that cannot be found.</p>
     CloudHsmResourceNotFoundException(crate::error::CloudHsmResourceNotFoundException),
     /// <p>The request was rejected because an error occurred.</p>
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
@@ -588,16 +576,13 @@ pub struct DeleteClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteClusterErrorKind {
-    /// <p>The request was rejected because the requester does not have permission to perform the
-    /// requested operation.</p>
+    /// <p>The request was rejected because the requester does not have permission to perform the requested operation.</p>
     CloudHsmAccessDeniedException(crate::error::CloudHsmAccessDeniedException),
-    /// <p>The request was rejected because of an AWS CloudHSM internal failure. The request can
-    /// be retried.</p>
+    /// <p>The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.</p>
     CloudHsmInternalFailureException(crate::error::CloudHsmInternalFailureException),
     /// <p>The request was rejected because it is not a valid request.</p>
     CloudHsmInvalidRequestException(crate::error::CloudHsmInvalidRequestException),
-    /// <p>The request was rejected because it refers to a resource that cannot be
-    /// found.</p>
+    /// <p>The request was rejected because it refers to a resource that cannot be found.</p>
     CloudHsmResourceNotFoundException(crate::error::CloudHsmResourceNotFoundException),
     /// <p>The request was rejected because an error occurred.</p>
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
@@ -736,16 +721,13 @@ pub struct DeleteHsmError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteHsmErrorKind {
-    /// <p>The request was rejected because the requester does not have permission to perform the
-    /// requested operation.</p>
+    /// <p>The request was rejected because the requester does not have permission to perform the requested operation.</p>
     CloudHsmAccessDeniedException(crate::error::CloudHsmAccessDeniedException),
-    /// <p>The request was rejected because of an AWS CloudHSM internal failure. The request can
-    /// be retried.</p>
+    /// <p>The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.</p>
     CloudHsmInternalFailureException(crate::error::CloudHsmInternalFailureException),
     /// <p>The request was rejected because it is not a valid request.</p>
     CloudHsmInvalidRequestException(crate::error::CloudHsmInvalidRequestException),
-    /// <p>The request was rejected because it refers to a resource that cannot be
-    /// found.</p>
+    /// <p>The request was rejected because it refers to a resource that cannot be found.</p>
     CloudHsmResourceNotFoundException(crate::error::CloudHsmResourceNotFoundException),
     /// <p>The request was rejected because an error occurred.</p>
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
@@ -873,16 +855,13 @@ pub struct DescribeBackupsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeBackupsErrorKind {
-    /// <p>The request was rejected because the requester does not have permission to perform the
-    /// requested operation.</p>
+    /// <p>The request was rejected because the requester does not have permission to perform the requested operation.</p>
     CloudHsmAccessDeniedException(crate::error::CloudHsmAccessDeniedException),
-    /// <p>The request was rejected because of an AWS CloudHSM internal failure. The request can
-    /// be retried.</p>
+    /// <p>The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.</p>
     CloudHsmInternalFailureException(crate::error::CloudHsmInternalFailureException),
     /// <p>The request was rejected because it is not a valid request.</p>
     CloudHsmInvalidRequestException(crate::error::CloudHsmInvalidRequestException),
-    /// <p>The request was rejected because it refers to a resource that cannot be
-    /// found.</p>
+    /// <p>The request was rejected because it refers to a resource that cannot be found.</p>
     CloudHsmResourceNotFoundException(crate::error::CloudHsmResourceNotFoundException),
     /// <p>The request was rejected because an error occurred.</p>
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
@@ -1024,11 +1003,9 @@ pub struct DescribeClustersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeClustersErrorKind {
-    /// <p>The request was rejected because the requester does not have permission to perform the
-    /// requested operation.</p>
+    /// <p>The request was rejected because the requester does not have permission to perform the requested operation.</p>
     CloudHsmAccessDeniedException(crate::error::CloudHsmAccessDeniedException),
-    /// <p>The request was rejected because of an AWS CloudHSM internal failure. The request can
-    /// be retried.</p>
+    /// <p>The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.</p>
     CloudHsmInternalFailureException(crate::error::CloudHsmInternalFailureException),
     /// <p>The request was rejected because it is not a valid request.</p>
     CloudHsmInvalidRequestException(crate::error::CloudHsmInvalidRequestException),
@@ -1163,16 +1140,13 @@ pub struct InitializeClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum InitializeClusterErrorKind {
-    /// <p>The request was rejected because the requester does not have permission to perform the
-    /// requested operation.</p>
+    /// <p>The request was rejected because the requester does not have permission to perform the requested operation.</p>
     CloudHsmAccessDeniedException(crate::error::CloudHsmAccessDeniedException),
-    /// <p>The request was rejected because of an AWS CloudHSM internal failure. The request can
-    /// be retried.</p>
+    /// <p>The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.</p>
     CloudHsmInternalFailureException(crate::error::CloudHsmInternalFailureException),
     /// <p>The request was rejected because it is not a valid request.</p>
     CloudHsmInvalidRequestException(crate::error::CloudHsmInvalidRequestException),
-    /// <p>The request was rejected because it refers to a resource that cannot be
-    /// found.</p>
+    /// <p>The request was rejected because it refers to a resource that cannot be found.</p>
     CloudHsmResourceNotFoundException(crate::error::CloudHsmResourceNotFoundException),
     /// <p>The request was rejected because an error occurred.</p>
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
@@ -1303,16 +1277,13 @@ pub struct ListTagsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsErrorKind {
-    /// <p>The request was rejected because the requester does not have permission to perform the
-    /// requested operation.</p>
+    /// <p>The request was rejected because the requester does not have permission to perform the requested operation.</p>
     CloudHsmAccessDeniedException(crate::error::CloudHsmAccessDeniedException),
-    /// <p>The request was rejected because of an AWS CloudHSM internal failure. The request can
-    /// be retried.</p>
+    /// <p>The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.</p>
     CloudHsmInternalFailureException(crate::error::CloudHsmInternalFailureException),
     /// <p>The request was rejected because it is not a valid request.</p>
     CloudHsmInvalidRequestException(crate::error::CloudHsmInvalidRequestException),
-    /// <p>The request was rejected because it refers to a resource that cannot be
-    /// found.</p>
+    /// <p>The request was rejected because it refers to a resource that cannot be found.</p>
     CloudHsmResourceNotFoundException(crate::error::CloudHsmResourceNotFoundException),
     /// <p>The request was rejected because an error occurred.</p>
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
@@ -1448,16 +1419,13 @@ pub struct ModifyBackupAttributesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyBackupAttributesErrorKind {
-    /// <p>The request was rejected because the requester does not have permission to perform the
-    /// requested operation.</p>
+    /// <p>The request was rejected because the requester does not have permission to perform the requested operation.</p>
     CloudHsmAccessDeniedException(crate::error::CloudHsmAccessDeniedException),
-    /// <p>The request was rejected because of an AWS CloudHSM internal failure. The request can
-    /// be retried.</p>
+    /// <p>The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.</p>
     CloudHsmInternalFailureException(crate::error::CloudHsmInternalFailureException),
     /// <p>The request was rejected because it is not a valid request.</p>
     CloudHsmInvalidRequestException(crate::error::CloudHsmInvalidRequestException),
-    /// <p>The request was rejected because it refers to a resource that cannot be
-    /// found.</p>
+    /// <p>The request was rejected because it refers to a resource that cannot be found.</p>
     CloudHsmResourceNotFoundException(crate::error::CloudHsmResourceNotFoundException),
     /// <p>The request was rejected because an error occurred.</p>
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
@@ -1600,16 +1568,13 @@ pub struct ModifyClusterError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ModifyClusterErrorKind {
-    /// <p>The request was rejected because the requester does not have permission to perform the
-    /// requested operation.</p>
+    /// <p>The request was rejected because the requester does not have permission to perform the requested operation.</p>
     CloudHsmAccessDeniedException(crate::error::CloudHsmAccessDeniedException),
-    /// <p>The request was rejected because of an AWS CloudHSM internal failure. The request can
-    /// be retried.</p>
+    /// <p>The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.</p>
     CloudHsmInternalFailureException(crate::error::CloudHsmInternalFailureException),
     /// <p>The request was rejected because it is not a valid request.</p>
     CloudHsmInvalidRequestException(crate::error::CloudHsmInvalidRequestException),
-    /// <p>The request was rejected because it refers to a resource that cannot be
-    /// found.</p>
+    /// <p>The request was rejected because it refers to a resource that cannot be found.</p>
     CloudHsmResourceNotFoundException(crate::error::CloudHsmResourceNotFoundException),
     /// <p>The request was rejected because an error occurred.</p>
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
@@ -1740,16 +1705,13 @@ pub struct RestoreBackupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RestoreBackupErrorKind {
-    /// <p>The request was rejected because the requester does not have permission to perform the
-    /// requested operation.</p>
+    /// <p>The request was rejected because the requester does not have permission to perform the requested operation.</p>
     CloudHsmAccessDeniedException(crate::error::CloudHsmAccessDeniedException),
-    /// <p>The request was rejected because of an AWS CloudHSM internal failure. The request can
-    /// be retried.</p>
+    /// <p>The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.</p>
     CloudHsmInternalFailureException(crate::error::CloudHsmInternalFailureException),
     /// <p>The request was rejected because it is not a valid request.</p>
     CloudHsmInvalidRequestException(crate::error::CloudHsmInvalidRequestException),
-    /// <p>The request was rejected because it refers to a resource that cannot be
-    /// found.</p>
+    /// <p>The request was rejected because it refers to a resource that cannot be found.</p>
     CloudHsmResourceNotFoundException(crate::error::CloudHsmResourceNotFoundException),
     /// <p>The request was rejected because an error occurred.</p>
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
@@ -1880,16 +1842,13 @@ pub struct TagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum TagResourceErrorKind {
-    /// <p>The request was rejected because the requester does not have permission to perform the
-    /// requested operation.</p>
+    /// <p>The request was rejected because the requester does not have permission to perform the requested operation.</p>
     CloudHsmAccessDeniedException(crate::error::CloudHsmAccessDeniedException),
-    /// <p>The request was rejected because of an AWS CloudHSM internal failure. The request can
-    /// be retried.</p>
+    /// <p>The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.</p>
     CloudHsmInternalFailureException(crate::error::CloudHsmInternalFailureException),
     /// <p>The request was rejected because it is not a valid request.</p>
     CloudHsmInvalidRequestException(crate::error::CloudHsmInvalidRequestException),
-    /// <p>The request was rejected because it refers to a resource that cannot be
-    /// found.</p>
+    /// <p>The request was rejected because it refers to a resource that cannot be found.</p>
     CloudHsmResourceNotFoundException(crate::error::CloudHsmResourceNotFoundException),
     /// <p>The request was rejected because an error occurred.</p>
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
@@ -2028,16 +1987,13 @@ pub struct UntagResourceError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UntagResourceErrorKind {
-    /// <p>The request was rejected because the requester does not have permission to perform the
-    /// requested operation.</p>
+    /// <p>The request was rejected because the requester does not have permission to perform the requested operation.</p>
     CloudHsmAccessDeniedException(crate::error::CloudHsmAccessDeniedException),
-    /// <p>The request was rejected because of an AWS CloudHSM internal failure. The request can
-    /// be retried.</p>
+    /// <p>The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.</p>
     CloudHsmInternalFailureException(crate::error::CloudHsmInternalFailureException),
     /// <p>The request was rejected because it is not a valid request.</p>
     CloudHsmInvalidRequestException(crate::error::CloudHsmInvalidRequestException),
-    /// <p>The request was rejected because it refers to a resource that cannot be
-    /// found.</p>
+    /// <p>The request was rejected because it refers to a resource that cannot be found.</p>
     CloudHsmResourceNotFoundException(crate::error::CloudHsmResourceNotFoundException),
     /// <p>The request was rejected because an error occurred.</p>
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
@@ -2291,8 +2247,7 @@ impl CloudHsmServiceException {
     }
 }
 
-/// <p>The request was rejected because it refers to a resource that cannot be
-/// found.</p>
+/// <p>The request was rejected because it refers to a resource that cannot be found.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudHsmResourceNotFoundException {
@@ -2420,8 +2375,7 @@ impl CloudHsmInvalidRequestException {
     }
 }
 
-/// <p>The request was rejected because of an AWS CloudHSM internal failure. The request can
-/// be retried.</p>
+/// <p>The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudHsmInternalFailureException {
@@ -2485,8 +2439,7 @@ impl CloudHsmInternalFailureException {
     }
 }
 
-/// <p>The request was rejected because the requester does not have permission to perform the
-/// requested operation.</p>
+/// <p>The request was rejected because the requester does not have permission to perform the requested operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudHsmAccessDeniedException {

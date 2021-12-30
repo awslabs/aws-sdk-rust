@@ -266,8 +266,7 @@ pub struct GetAssessmentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetAssessmentErrorKind {
-    /// <p> The AWS user account does not have permission to perform the action. Check the
-    /// AWS Identity and Access Management (IAM) policy associated with this account.</p>
+    /// <p> The AWS user account does not have permission to perform the action. Check the AWS Identity and Access Management (IAM) policy associated with this account.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p> The server experienced an internal error. Try again. </p>
     InternalServerException(crate::error::InternalServerException),
@@ -387,8 +386,7 @@ pub struct GetImportFileTaskError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetImportFileTaskErrorKind {
-    /// <p> The AWS user account does not have permission to perform the action. Check the
-    /// AWS Identity and Access Management (IAM) policy associated with this account.</p>
+    /// <p> The AWS user account does not have permission to perform the action. Check the AWS Identity and Access Management (IAM) policy associated with this account.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p> The server experienced an internal error. Try again. </p>
     InternalServerException(crate::error::InternalServerException),
@@ -525,8 +523,7 @@ pub struct GetPortfolioPreferencesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetPortfolioPreferencesErrorKind {
-    /// <p> The AWS user account does not have permission to perform the action. Check the
-    /// AWS Identity and Access Management (IAM) policy associated with this account.</p>
+    /// <p> The AWS user account does not have permission to perform the action. Check the AWS Identity and Access Management (IAM) policy associated with this account.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p> The server experienced an internal error. Try again. </p>
     InternalServerException(crate::error::InternalServerException),
@@ -652,8 +649,7 @@ pub struct GetPortfolioSummaryError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetPortfolioSummaryErrorKind {
-    /// <p> The AWS user account does not have permission to perform the action. Check the
-    /// AWS Identity and Access Management (IAM) policy associated with this account.</p>
+    /// <p> The AWS user account does not have permission to perform the action. Check the AWS Identity and Access Management (IAM) policy associated with this account.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p> The server experienced an internal error. Try again. </p>
     InternalServerException(crate::error::InternalServerException),
@@ -768,8 +764,7 @@ pub struct GetRecommendationReportDetailsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetRecommendationReportDetailsErrorKind {
-    /// <p> The AWS user account does not have permission to perform the action. Check the
-    /// AWS Identity and Access Management (IAM) policy associated with this account.</p>
+    /// <p> The AWS user account does not have permission to perform the action. Check the AWS Identity and Access Management (IAM) policy associated with this account.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p> The server experienced an internal error. Try again. </p>
     InternalServerException(crate::error::InternalServerException),
@@ -917,8 +912,7 @@ pub struct GetServerDetailsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetServerDetailsErrorKind {
-    /// <p> The AWS user account does not have permission to perform the action. Check the
-    /// AWS Identity and Access Management (IAM) policy associated with this account.</p>
+    /// <p> The AWS user account does not have permission to perform the action. Check the AWS Identity and Access Management (IAM) policy associated with this account.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p> The server experienced an internal error. Try again. </p>
     InternalServerException(crate::error::InternalServerException),
@@ -1055,8 +1049,7 @@ pub struct GetServerStrategiesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetServerStrategiesErrorKind {
-    /// <p> The AWS user account does not have permission to perform the action. Check the
-    /// AWS Identity and Access Management (IAM) policy associated with this account.</p>
+    /// <p> The AWS user account does not have permission to perform the action. Check the AWS Identity and Access Management (IAM) policy associated with this account.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p> The server experienced an internal error. Try again. </p>
     InternalServerException(crate::error::InternalServerException),
@@ -1193,14 +1186,11 @@ pub struct ListApplicationComponentsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListApplicationComponentsErrorKind {
-    /// <p> The AWS user account does not have permission to perform the action. Check the
-    /// AWS Identity and Access Management (IAM) policy associated with this account.</p>
+    /// <p> The AWS user account does not have permission to perform the action. Check the AWS Identity and Access Management (IAM) policy associated with this account.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p> The server experienced an internal error. Try again. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>
-    /// Exception to indicate that the service-linked role (SLR) is locked.
-    /// </p>
+    /// <p> Exception to indicate that the service-linked role (SLR) is locked. </p>
     ServiceLinkedRoleLockClientException(crate::error::ServiceLinkedRoleLockClientException),
     /// <p> The request body isn't valid. </p>
     ValidationException(crate::error::ValidationException),
@@ -1326,8 +1316,7 @@ pub struct ListCollectorsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListCollectorsErrorKind {
-    /// <p> The AWS user account does not have permission to perform the action. Check the
-    /// AWS Identity and Access Management (IAM) policy associated with this account.</p>
+    /// <p> The AWS user account does not have permission to perform the action. Check the AWS Identity and Access Management (IAM) policy associated with this account.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p> The server experienced an internal error. Try again. </p>
     InternalServerException(crate::error::InternalServerException),
@@ -1447,8 +1436,7 @@ pub struct ListImportFileTaskError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListImportFileTaskErrorKind {
-    /// <p> The AWS user account does not have permission to perform the action. Check the
-    /// AWS Identity and Access Management (IAM) policy associated with this account.</p>
+    /// <p> The AWS user account does not have permission to perform the action. Check the AWS Identity and Access Management (IAM) policy associated with this account.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p> The server experienced an internal error. Try again. </p>
     InternalServerException(crate::error::InternalServerException),
@@ -1574,8 +1562,7 @@ pub struct ListServersError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListServersErrorKind {
-    /// <p> The AWS user account does not have permission to perform the action. Check the
-    /// AWS Identity and Access Management (IAM) policy associated with this account.</p>
+    /// <p> The AWS user account does not have permission to perform the action. Check the AWS Identity and Access Management (IAM) policy associated with this account.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p> The server experienced an internal error. Try again. </p>
     InternalServerException(crate::error::InternalServerException),
@@ -1689,13 +1676,9 @@ pub struct PutPortfolioPreferencesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutPortfolioPreferencesErrorKind {
-    /// <p> The AWS user account does not have permission to perform the action. Check the
-    /// AWS Identity and Access Management (IAM) policy associated with this account.</p>
+    /// <p> The AWS user account does not have permission to perform the action. Check the AWS Identity and Access Management (IAM) policy associated with this account.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// Exception to indicate that there is an ongoing task when a new task is created.
-    /// Return when once the existing tasks are complete.
-    /// </p>
+    /// <p> Exception to indicate that there is an ongoing task when a new task is created. Return when once the existing tasks are complete. </p>
     ConflictException(crate::error::ConflictException),
     /// <p> The server experienced an internal error. Try again. </p>
     InternalServerException(crate::error::InternalServerException),
@@ -1830,13 +1813,11 @@ pub struct StartAssessmentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartAssessmentErrorKind {
-    /// <p> The AWS user account does not have permission to perform the action. Check the
-    /// AWS Identity and Access Management (IAM) policy associated with this account.</p>
+    /// <p> The AWS user account does not have permission to perform the action. Check the AWS Identity and Access Management (IAM) policy associated with this account.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p> The server experienced an internal error. Try again. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The AWS account has reached its quota of imports. Contact AWS Support to increase the
-    /// quota for this account. </p>
+    /// <p> The AWS account has reached its quota of imports. Contact AWS Support to increase the quota for this account. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p> The request was denied due to request throttling. </p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -1955,13 +1936,11 @@ pub struct StartImportFileTaskError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartImportFileTaskErrorKind {
-    /// <p> The AWS user account does not have permission to perform the action. Check the
-    /// AWS Identity and Access Management (IAM) policy associated with this account.</p>
+    /// <p> The AWS user account does not have permission to perform the action. Check the AWS Identity and Access Management (IAM) policy associated with this account.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p> The server experienced an internal error. Try again. </p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p> The AWS account has reached its quota of imports. Contact AWS Support to increase the
-    /// quota for this account. </p>
+    /// <p> The AWS account has reached its quota of imports. Contact AWS Support to increase the quota for this account. </p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p> The request was denied due to request throttling. </p>
     ThrottlingException(crate::error::ThrottlingException),
@@ -2094,13 +2073,9 @@ pub struct StartRecommendationReportGenerationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartRecommendationReportGenerationErrorKind {
-    /// <p> The AWS user account does not have permission to perform the action. Check the
-    /// AWS Identity and Access Management (IAM) policy associated with this account.</p>
+    /// <p> The AWS user account does not have permission to perform the action. Check the AWS Identity and Access Management (IAM) policy associated with this account.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>
-    /// Exception to indicate that there is an ongoing task when a new task is created.
-    /// Return when once the existing tasks are complete.
-    /// </p>
+    /// <p> Exception to indicate that there is an ongoing task when a new task is created. Return when once the existing tasks are complete. </p>
     ConflictException(crate::error::ConflictException),
     /// <p> The server experienced an internal error. Try again. </p>
     InternalServerException(crate::error::InternalServerException),
@@ -2258,8 +2233,7 @@ pub struct StopAssessmentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StopAssessmentErrorKind {
-    /// <p> The AWS user account does not have permission to perform the action. Check the
-    /// AWS Identity and Access Management (IAM) policy associated with this account.</p>
+    /// <p> The AWS user account does not have permission to perform the action. Check the AWS Identity and Access Management (IAM) policy associated with this account.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p> The server experienced an internal error. Try again. </p>
     InternalServerException(crate::error::InternalServerException),
@@ -2885,8 +2859,7 @@ impl InternalServerException {
     }
 }
 
-/// <p> The AWS user account does not have permission to perform the action. Check the
-/// AWS Identity and Access Management (IAM) policy associated with this account.</p>
+/// <p> The AWS user account does not have permission to perform the action. Check the AWS Identity and Access Management (IAM) policy associated with this account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedException {
@@ -2950,10 +2923,7 @@ impl AccessDeniedException {
     }
 }
 
-/// <p>
-/// Exception to indicate that there is an ongoing task when a new task is created.
-/// Return when once the existing tasks are complete.
-/// </p>
+/// <p> Exception to indicate that there is an ongoing task when a new task is created. Return when once the existing tasks are complete. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {
@@ -3017,8 +2987,7 @@ impl ConflictException {
     }
 }
 
-/// <p> The AWS account has reached its quota of imports. Contact AWS Support to increase the
-/// quota for this account. </p>
+/// <p> The AWS account has reached its quota of imports. Contact AWS Support to increase the quota for this account. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceQuotaExceededException {
@@ -3082,9 +3051,7 @@ impl ServiceQuotaExceededException {
     }
 }
 
-/// <p>
-/// Exception to indicate that the service-linked role (SLR) is locked.
-/// </p>
+/// <p> Exception to indicate that the service-linked role (SLR) is locked. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceLinkedRoleLockClientException {

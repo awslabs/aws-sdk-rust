@@ -12,16 +12,13 @@ pub struct DeleteAlternateContactError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteAlternateContactErrorKind {
-    /// <p>The operation failed because the calling identity doesn't have the minimum required
-    /// permissions.</p>
+    /// <p>The operation failed because the calling identity doesn't have the minimum required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The operation failed because of an error internal to Amazon Web Services. Try your operation again
-    /// later.</p>
+    /// <p>The operation failed because of an error internal to Amazon Web Services. Try your operation again later.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The operation failed because it specified a resource that can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The operation failed because it was called too frequently and exceeded a throttle
-    /// limit.</p>
+    /// <p>The operation failed because it was called too frequently and exceeded a throttle limit.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>The operation failed because one of the input parameters was invalid.</p>
     ValidationException(crate::error::ValidationException),
@@ -160,16 +157,13 @@ pub struct GetAlternateContactError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetAlternateContactErrorKind {
-    /// <p>The operation failed because the calling identity doesn't have the minimum required
-    /// permissions.</p>
+    /// <p>The operation failed because the calling identity doesn't have the minimum required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The operation failed because of an error internal to Amazon Web Services. Try your operation again
-    /// later.</p>
+    /// <p>The operation failed because of an error internal to Amazon Web Services. Try your operation again later.</p>
     InternalServerException(crate::error::InternalServerException),
     /// <p>The operation failed because it specified a resource that can't be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The operation failed because it was called too frequently and exceeded a throttle
-    /// limit.</p>
+    /// <p>The operation failed because it was called too frequently and exceeded a throttle limit.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>The operation failed because one of the input parameters was invalid.</p>
     ValidationException(crate::error::ValidationException),
@@ -308,14 +302,11 @@ pub struct PutAlternateContactError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutAlternateContactErrorKind {
-    /// <p>The operation failed because the calling identity doesn't have the minimum required
-    /// permissions.</p>
+    /// <p>The operation failed because the calling identity doesn't have the minimum required permissions.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>The operation failed because of an error internal to Amazon Web Services. Try your operation again
-    /// later.</p>
+    /// <p>The operation failed because of an error internal to Amazon Web Services. Try your operation again later.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The operation failed because it was called too frequently and exceeded a throttle
-    /// limit.</p>
+    /// <p>The operation failed because it was called too frequently and exceeded a throttle limit.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>The operation failed because one of the input parameters was invalid.</p>
     ValidationException(crate::error::ValidationException),
@@ -496,8 +487,7 @@ impl ValidationException {
     }
 }
 
-/// <p>The operation failed because it was called too frequently and exceeded a throttle
-/// limit.</p>
+/// <p>The operation failed because it was called too frequently and exceeded a throttle limit.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyRequestsException {
@@ -565,8 +555,7 @@ impl TooManyRequestsException {
     }
 }
 
-/// <p>The operation failed because of an error internal to Amazon Web Services. Try your operation again
-/// later.</p>
+/// <p>The operation failed because of an error internal to Amazon Web Services. Try your operation again later.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerException {
@@ -634,8 +623,7 @@ impl InternalServerException {
     }
 }
 
-/// <p>The operation failed because the calling identity doesn't have the minimum required
-/// permissions.</p>
+/// <p>The operation failed because the calling identity doesn't have the minimum required permissions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedException {

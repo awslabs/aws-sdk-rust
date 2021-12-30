@@ -12,8 +12,7 @@ pub struct AcceptResourceShareInvitationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AcceptResourceShareInvitationErrorKind {
-    /// <p>A client token input parameter was reused with an operation, but at least one of the
-    /// other input parameters is different from the previous call to the operation.</p>
+    /// <p>A client token input parameter was reused with an operation, but at least one of the other input parameters is different from the previous call to the operation.</p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
     /// <p>A client token is not valid.</p>
     InvalidClientTokenException(crate::error::InvalidClientTokenException),
@@ -262,8 +261,7 @@ pub struct AssociateResourceShareError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AssociateResourceShareErrorKind {
-    /// <p>A client token input parameter was reused with an operation, but at least one of the
-    /// other input parameters is different from the previous call to the operation.</p>
+    /// <p>A client token input parameter was reused with an operation, but at least one of the other input parameters is different from the previous call to the operation.</p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
     /// <p>A client token is not valid.</p>
     InvalidClientTokenException(crate::error::InvalidClientTokenException),
@@ -659,8 +657,7 @@ pub struct CreateResourceShareError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateResourceShareErrorKind {
-    /// <p>A client token input parameter was reused with an operation, but at least one of the
-    /// other input parameters is different from the previous call to the operation.</p>
+    /// <p>A client token input parameter was reused with an operation, but at least one of the other input parameters is different from the previous call to the operation.</p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
     /// <p>A client token is not valid.</p>
     InvalidClientTokenException(crate::error::InvalidClientTokenException),
@@ -871,8 +868,7 @@ pub struct DeleteResourceShareError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteResourceShareErrorKind {
-    /// <p>A client token input parameter was reused with an operation, but at least one of the
-    /// other input parameters is different from the previous call to the operation.</p>
+    /// <p>A client token input parameter was reused with an operation, but at least one of the other input parameters is different from the previous call to the operation.</p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
     /// <p>A client token is not valid.</p>
     InvalidClientTokenException(crate::error::InvalidClientTokenException),
@@ -1057,8 +1053,7 @@ pub struct DisassociateResourceShareError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisassociateResourceShareErrorKind {
-    /// <p>A client token input parameter was reused with an operation, but at least one of the
-    /// other input parameters is different from the previous call to the operation.</p>
+    /// <p>A client token input parameter was reused with an operation, but at least one of the other input parameters is different from the previous call to the operation.</p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
     /// <p>A client token is not valid.</p>
     InvalidClientTokenException(crate::error::InvalidClientTokenException),
@@ -3589,8 +3584,7 @@ pub struct RejectResourceShareInvitationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum RejectResourceShareInvitationErrorKind {
-    /// <p>A client token input parameter was reused with an operation, but at least one of the
-    /// other input parameters is different from the previous call to the operation.</p>
+    /// <p>A client token input parameter was reused with an operation, but at least one of the other input parameters is different from the previous call to the operation.</p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
     /// <p>A client token is not valid.</p>
     InvalidClientTokenException(crate::error::InvalidClientTokenException),
@@ -4118,8 +4112,7 @@ pub struct UpdateResourceShareError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateResourceShareErrorKind {
-    /// <p>A client token input parameter was reused with an operation, but at least one of the
-    /// other input parameters is different from the previous call to the operation.</p>
+    /// <p>A client token input parameter was reused with an operation, but at least one of the other input parameters is different from the previous call to the operation.</p>
     IdempotentParameterMismatchException(crate::error::IdempotentParameterMismatchException),
     /// <p>A client token is not valid.</p>
     InvalidClientTokenException(crate::error::InvalidClientTokenException),
@@ -4805,8 +4798,7 @@ impl InvalidClientTokenException {
     }
 }
 
-/// <p>A client token input parameter was reused with an operation, but at least one of the
-/// other input parameters is different from the previous call to the operation.</p>
+/// <p>A client token input parameter was reused with an operation, but at least one of the other input parameters is different from the previous call to the operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IdempotentParameterMismatchException {

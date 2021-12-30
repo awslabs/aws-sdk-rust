@@ -137,13 +137,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchExecuteStatement`.
     ///
     /// <p>Runs a batch SQL statement over an array of data.</p>
-    /// <p>You can run bulk update and insert operations for multiple records using a DML
-    /// statement with different parameter sets. Bulk operations can provide a significant
-    /// performance improvement over individual insert and update operations.</p>
-    /// <important>    
-    /// <p>If a call isn't part of a transaction because it doesn't include the
-    /// <code>transactionID</code> parameter, changes that result from the call are
-    /// committed automatically.</p>    
+    /// <p>You can run bulk update and insert operations for multiple records using a DML statement with different parameter sets. Bulk operations can provide a significant performance improvement over individual insert and update operations.</p> <important>
+    /// <p>If a call isn't part of a transaction because it doesn't include the <code>transactionID</code> parameter, changes that result from the call are committed automatically.</p>
     /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchExecuteStatement<
@@ -256,17 +251,11 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_parameter_sets`](Self::set_parameter_sets).
         ///
         /// <p>The parameter set for the batch operation.</p>
-        /// <p>The SQL statement is executed as many times as the number of parameter sets provided.
-        /// To execute a SQL statement with no parameters, use one of the following options:</p>
+        /// <p>The SQL statement is executed as many times as the number of parameter sets provided. To execute a SQL statement with no parameters, use one of the following options:</p>
         /// <ul>
-        /// <li>
-        /// <p>Specify one or more empty parameter sets.</p>
-        /// </li>
-        /// <li>
-        /// <p>Use the <code>ExecuteStatement</code> operation instead of the <code>BatchExecuteStatement</code> operation.</p>
-        /// </li>
-        /// </ul>
-        /// <note>
+        /// <li> <p>Specify one or more empty parameter sets.</p> </li>
+        /// <li> <p>Use the <code>ExecuteStatement</code> operation instead of the <code>BatchExecuteStatement</code> operation.</p> </li>
+        /// </ul> <note>
         /// <p>Array parameters are not supported.</p>
         /// </note>
         pub fn parameter_sets(mut self, input: std::vec::Vec<crate::model::SqlParameter>) -> Self {
@@ -274,17 +263,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>The parameter set for the batch operation.</p>
-        /// <p>The SQL statement is executed as many times as the number of parameter sets provided.
-        /// To execute a SQL statement with no parameters, use one of the following options:</p>
+        /// <p>The SQL statement is executed as many times as the number of parameter sets provided. To execute a SQL statement with no parameters, use one of the following options:</p>
         /// <ul>
-        /// <li>
-        /// <p>Specify one or more empty parameter sets.</p>
-        /// </li>
-        /// <li>
-        /// <p>Use the <code>ExecuteStatement</code> operation instead of the <code>BatchExecuteStatement</code> operation.</p>
-        /// </li>
-        /// </ul>
-        /// <note>
+        /// <li> <p>Specify one or more empty parameter sets.</p> </li>
+        /// <li> <p>Use the <code>ExecuteStatement</code> operation instead of the <code>BatchExecuteStatement</code> operation.</p> </li>
+        /// </ul> <note>
         /// <p>Array parameters are not supported.</p>
         /// </note>
         pub fn set_parameter_sets(
@@ -294,20 +277,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_parameter_sets(input);
             self
         }
-        /// <p>The identifier of a transaction that was started by using the
-        /// <code>BeginTransaction</code> operation. Specify the transaction ID of the
-        /// transaction that you want to include the SQL statement in.</p>
-        /// <p>If the SQL statement is not part of a transaction, don't set this
-        /// parameter.</p>
+        /// <p>The identifier of a transaction that was started by using the <code>BeginTransaction</code> operation. Specify the transaction ID of the transaction that you want to include the SQL statement in.</p>
+        /// <p>If the SQL statement is not part of a transaction, don't set this parameter.</p>
         pub fn transaction_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.transaction_id(input.into());
             self
         }
-        /// <p>The identifier of a transaction that was started by using the
-        /// <code>BeginTransaction</code> operation. Specify the transaction ID of the
-        /// transaction that you want to include the SQL statement in.</p>
-        /// <p>If the SQL statement is not part of a transaction, don't set this
-        /// parameter.</p>
+        /// <p>The identifier of a transaction that was started by using the <code>BeginTransaction</code> operation. Specify the transaction ID of the transaction that you want to include the SQL statement in.</p>
+        /// <p>If the SQL statement is not part of a transaction, don't set this parameter.</p>
         pub fn set_transaction_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -318,17 +295,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BeginTransaction`.
     ///
-    /// <p>Starts a SQL transaction.</p>
-    ///
-    /// <important>
-    /// <p>A transaction can run for a maximum of 24 hours. A transaction is terminated and
-    /// rolled back automatically after 24 hours.</p>
-    /// <p>A transaction times out if no calls use its transaction ID in three minutes.
-    /// If a transaction times out before it's committed, it's rolled back
-    /// automatically.</p>
-    /// <p>DDL statements inside a transaction cause an implicit commit. We recommend
-    /// that you run each DDL statement in a separate <code>ExecuteStatement</code> call with
-    /// <code>continueAfterTimeout</code> enabled.</p>
+    /// <p>Starts a SQL transaction.</p> <important>
+    /// <p>A transaction can run for a maximum of 24 hours. A transaction is terminated and rolled back automatically after 24 hours.</p>
+    /// <p>A transaction times out if no calls use its transaction ID in three minutes. If a transaction times out before it's committed, it's rolled back automatically.</p>
+    /// <p>DDL statements inside a transaction cause an implicit commit. We recommend that you run each DDL statement in a separate <code>ExecuteStatement</code> call with <code>continueAfterTimeout</code> enabled.</p>
     /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BeginTransaction<
@@ -429,8 +399,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CommitTransaction`.
     ///
-    /// <p>Ends a SQL transaction started with the <code>BeginTransaction</code> operation and
-    /// commits the changes.</p>
+    /// <p>Ends a SQL transaction started with the <code>BeginTransaction</code> operation and commits the changes.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CommitTransaction<
         C = aws_smithy_client::erase::DynConnector,
@@ -523,10 +492,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ExecuteSql`.
     ///
-    /// <p>Runs one or more SQL statements.</p>
-    /// <important>
-    /// <p>This operation is deprecated. Use the <code>BatchExecuteStatement</code> or
-    /// <code>ExecuteStatement</code> operation.</p>
+    /// <p>Runs one or more SQL statements.</p> <important>
+    /// <p>This operation is deprecated. Use the <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> operation.</p>
     /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ExecuteSql<
@@ -611,17 +578,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>One or more SQL statements to run on the DB cluster.</p>
-        /// <p>You can separate SQL statements from each other with a semicolon (;). Any valid SQL
-        /// statement is permitted, including data definition, data manipulation, and commit
-        /// statements. </p>
+        /// <p>You can separate SQL statements from each other with a semicolon (;). Any valid SQL statement is permitted, including data definition, data manipulation, and commit statements. </p>
         pub fn sql_statements(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.sql_statements(input.into());
             self
         }
         /// <p>One or more SQL statements to run on the DB cluster.</p>
-        /// <p>You can separate SQL statements from each other with a semicolon (;). Any valid SQL
-        /// statement is permitted, including data definition, data manipulation, and commit
-        /// statements. </p>
+        /// <p>You can separate SQL statements from each other with a semicolon (;). Any valid SQL statement is permitted, including data definition, data manipulation, and commit statements. </p>
         pub fn set_sql_statements(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -652,11 +615,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ExecuteStatement`.
     ///
-    /// <p>Runs a SQL statement against a database.</p>
-    /// <important>    
-    /// <p>If a call isn't part of a transaction because it doesn't include the
-    /// <code>transactionID</code> parameter, changes that result from the call are
-    /// committed automatically.</p>    
+    /// <p>Runs a SQL statement against a database.</p> <important>
+    /// <p>If a call isn't part of a transaction because it doesn't include the <code>transactionID</code> parameter, changes that result from the call are committed automatically.</p>
     /// </important>
     /// <p>The response size limit is 1 MB. If the call returns more than 1 MB of response data, the call is terminated.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
@@ -755,16 +715,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_database(input);
             self
         }
-        /// <p>The name of the database schema.</p>
-        /// <note>
+        /// <p>The name of the database schema.</p> <note>
         /// <p>Currently, the <code>schema</code> parameter isn't supported.</p>
         /// </note>
         pub fn schema(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.schema(input.into());
             self
         }
-        /// <p>The name of the database schema.</p>
-        /// <note>
+        /// <p>The name of the database schema.</p> <note>
         /// <p>Currently, the <code>schema</code> parameter isn't supported.</p>
         /// </note>
         pub fn set_schema(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -775,16 +733,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
-        /// <p>The parameters for the SQL statement.</p>
-        /// <note>
+        /// <p>The parameters for the SQL statement.</p> <note>
         /// <p>Array parameters are not supported.</p>
         /// </note>
         pub fn parameters(mut self, input: crate::model::SqlParameter) -> Self {
             self.inner = self.inner.parameters(input);
             self
         }
-        /// <p>The parameters for the SQL statement.</p>
-        /// <note>
+        /// <p>The parameters for the SQL statement.</p> <note>
         /// <p>Array parameters are not supported.</p>
         /// </note>
         pub fn set_parameters(
@@ -794,17 +750,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_parameters(input);
             self
         }
-        /// <p>The identifier of a transaction that was started by using the
-        /// <code>BeginTransaction</code> operation. Specify the transaction ID of the
-        /// transaction that you want to include the SQL statement in.</p>
+        /// <p>The identifier of a transaction that was started by using the <code>BeginTransaction</code> operation. Specify the transaction ID of the transaction that you want to include the SQL statement in.</p>
         /// <p>If the SQL statement is not part of a transaction, don't set this parameter.</p>
         pub fn transaction_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.transaction_id(input.into());
             self
         }
-        /// <p>The identifier of a transaction that was started by using the
-        /// <code>BeginTransaction</code> operation. Specify the transaction ID of the
-        /// transaction that you want to include the SQL statement in.</p>
+        /// <p>The identifier of a transaction that was started by using the <code>BeginTransaction</code> operation. Specify the transaction ID of the transaction that you want to include the SQL statement in.</p>
         /// <p>If the SQL statement is not part of a transaction, don't set this parameter.</p>
         pub fn set_transaction_id(
             mut self,
@@ -823,25 +775,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_include_result_metadata(input);
             self
         }
-        /// <p>A value that indicates whether to continue running the statement after
-        /// the call times out. By default, the statement stops running when the call
-        /// times out.</p>
-        /// <important>
-        /// <p>For DDL statements, we recommend continuing to run the statement after
-        /// the call times out. When a DDL statement terminates before it is finished
-        /// running, it can result in errors and possibly corrupted data structures.</p>
+        /// <p>A value that indicates whether to continue running the statement after the call times out. By default, the statement stops running when the call times out.</p> <important>
+        /// <p>For DDL statements, we recommend continuing to run the statement after the call times out. When a DDL statement terminates before it is finished running, it can result in errors and possibly corrupted data structures.</p>
         /// </important>
         pub fn continue_after_timeout(mut self, input: bool) -> Self {
             self.inner = self.inner.continue_after_timeout(input);
             self
         }
-        /// <p>A value that indicates whether to continue running the statement after
-        /// the call times out. By default, the statement stops running when the call
-        /// times out.</p>
-        /// <important>
-        /// <p>For DDL statements, we recommend continuing to run the statement after
-        /// the call times out. When a DDL statement terminates before it is finished
-        /// running, it can result in errors and possibly corrupted data structures.</p>
+        /// <p>A value that indicates whether to continue running the statement after the call times out. By default, the statement stops running when the call times out.</p> <important>
+        /// <p>For DDL statements, we recommend continuing to run the statement after the call times out. When a DDL statement terminates before it is finished running, it can result in errors and possibly corrupted data structures.</p>
         /// </important>
         pub fn set_continue_after_timeout(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_continue_after_timeout(input);

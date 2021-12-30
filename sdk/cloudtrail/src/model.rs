@@ -3,15 +3,13 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
-    /// <p>The key in a key-value pair. The key must be must be no longer than 128 Unicode characters.
-    /// The key must be unique for the resource to which it applies.</p>
+    /// <p>The key in a key-value pair. The key must be must be no longer than 128 Unicode characters. The key must be unique for the resource to which it applies.</p>
     pub key: std::option::Option<std::string::String>,
     /// <p>The value in a key-value pair of a tag. The value must be no longer than 256 Unicode characters.</p>
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
-    /// <p>The key in a key-value pair. The key must be must be no longer than 128 Unicode characters.
-    /// The key must be unique for the resource to which it applies.</p>
+    /// <p>The key in a key-value pair. The key must be must be no longer than 128 Unicode characters. The key must be unique for the resource to which it applies.</p>
     pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
@@ -38,14 +36,12 @@ pub mod tag {
         pub(crate) value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The key in a key-value pair. The key must be must be no longer than 128 Unicode characters.
-        /// The key must be unique for the resource to which it applies.</p>
+        /// <p>The key in a key-value pair. The key must be must be no longer than 128 Unicode characters. The key must be unique for the resource to which it applies.</p>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
             self
         }
-        /// <p>The key in a key-value pair. The key must be must be no longer than 128 Unicode characters.
-        /// The key must be unique for the resource to which it applies.</p>
+        /// <p>The key in a key-value pair. The key must be must be no longer than 128 Unicode characters. The key must be unique for the resource to which it applies.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -188,54 +184,26 @@ impl AsRef<str> for InsightType {
     }
 }
 
-/// <p>Advanced event selectors let you create fine-grained selectors for the following CloudTrail
-/// event record ﬁelds. They help you control costs by logging only those events
-/// that are important to you. For more information about advanced event selectors, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging data events for trails</a> in the <i>CloudTrail User Guide</i>.</p>
+/// <p>Advanced event selectors let you create fine-grained selectors for the following CloudTrail event record ﬁelds. They help you control costs by logging only those events that are important to you. For more information about advanced event selectors, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging data events for trails</a> in the <i>CloudTrail User Guide</i>.</p>
 /// <ul>
-/// <li>
-/// <p>
-/// <code>readOnly</code>
-/// </p>
-/// </li>
-/// <li>
-/// <p>
-/// <code>eventSource</code>
-/// </p>
-/// </li>
-/// <li>
-/// <p>
-/// <code>eventName</code>
-/// </p>
-/// </li>
-/// <li>
-/// <p>
-/// <code>eventCategory</code>
-/// </p>
-/// </li>
-/// <li>
-/// <p>
-/// <code>resources.type</code>
-/// </p>
-/// </li>
-/// <li>
-/// <p>
-/// <code>resources.ARN</code>
-/// </p>
-/// </li>
+/// <li> <p> <code>readOnly</code> </p> </li>
+/// <li> <p> <code>eventSource</code> </p> </li>
+/// <li> <p> <code>eventName</code> </p> </li>
+/// <li> <p> <code>eventCategory</code> </p> </li>
+/// <li> <p> <code>resources.type</code> </p> </li>
+/// <li> <p> <code>resources.ARN</code> </p> </li>
 /// </ul>
 /// <p>You cannot apply both event selectors and advanced event selectors to a trail.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdvancedEventSelector {
-    /// <p>An optional, descriptive name for an advanced event selector, such as "Log data events
-    /// for only two S3 buckets".</p>
+    /// <p>An optional, descriptive name for an advanced event selector, such as "Log data events for only two S3 buckets".</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>Contains all selector statements in an advanced event selector.</p>
     pub field_selectors: std::option::Option<std::vec::Vec<crate::model::AdvancedFieldSelector>>,
 }
 impl AdvancedEventSelector {
-    /// <p>An optional, descriptive name for an advanced event selector, such as "Log data events
-    /// for only two S3 buckets".</p>
+    /// <p>An optional, descriptive name for an advanced event selector, such as "Log data events for only two S3 buckets".</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -263,14 +231,12 @@ pub mod advanced_event_selector {
             std::option::Option<std::vec::Vec<crate::model::AdvancedFieldSelector>>,
     }
     impl Builder {
-        /// <p>An optional, descriptive name for an advanced event selector, such as "Log data events
-        /// for only two S3 buckets".</p>
+        /// <p>An optional, descriptive name for an advanced event selector, such as "Log data events for only two S3 buckets".</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>An optional, descriptive name for an advanced event selector, such as "Log data events
-        /// for only two S3 buckets".</p>
+        /// <p>An optional, descriptive name for an advanced event selector, such as "Log data events for only two S3 buckets".</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -314,479 +280,359 @@ impl AdvancedEventSelector {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdvancedFieldSelector {
-    /// <p>
-    /// A field in an event record on which to filter events to be logged. Supported fields include <code>readOnly</code>, <code>eventCategory</code>,
-    /// <code>eventSource</code> (for management events), <code>eventName</code>, <code>resources.type</code>, and <code>resources.ARN</code>.
-    /// </p>
+    /// <p> A field in an event record on which to filter events to be logged. Supported fields include <code>readOnly</code>, <code>eventCategory</code>, <code>eventSource</code> (for management events), <code>eventName</code>, <code>resources.type</code>, and <code>resources.ARN</code>. </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>
-    /// <code>readOnly</code>
-    /// </b> - Optional. Can be set to <code>Equals</code> a value of <code>true</code>
-    /// or <code>false</code>. A value of <code>false</code> logs both <code>read</code> and
-    /// <code>write</code> events.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>
-    /// <code>eventSource</code>
-    /// </b> - For filtering management events only.
-    /// This can be set only to <code>NotEquals</code>
-    /// <code>kms.amazonaws.com</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>
-    /// <code>eventName</code>
-    /// </b> - Can use any operator. You can use it to ﬁlter in
-    /// or ﬁlter out any data event logged to CloudTrail, such as <code>PutBucket</code> or <code>GetSnapshotBlock</code>. You can have multiple values
-    /// for this ﬁeld, separated by commas.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>
-    /// <code>eventCategory</code>
-    /// </b> - This is required. It must be set to <code>Equals</code>, and
-    /// the value must be <code>Management</code> or <code>Data</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>
-    /// <code>resources.type</code>
-    /// </b> - This ﬁeld is required.
-    /// <code>resources.type</code> can only use the <code>Equals</code> operator, and the
-    /// value can be one of the following:</p>
+    /// <li> <p> <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a value of <code>true</code> or <code>false</code>. A value of <code>false</code> logs both <code>read</code> and <code>write</code> events.</p> </li>
+    /// <li> <p> <b> <code>eventSource</code> </b> - For filtering management events only. This can be set only to <code>NotEquals</code> <code>kms.amazonaws.com</code>.</p> </li>
+    /// <li> <p> <b> <code>eventName</code> </b> - Can use any operator. You can use it to ﬁlter in or ﬁlter out any data event logged to CloudTrail, such as <code>PutBucket</code> or <code>GetSnapshotBlock</code>. You can have multiple values for this ﬁeld, separated by commas.</p> </li>
+    /// <li> <p> <b> <code>eventCategory</code> </b> - This is required. It must be set to <code>Equals</code>, and the value must be <code>Management</code> or <code>Data</code>.</p> </li>
+    /// <li> <p> <b> <code>resources.type</code> </b> - This ﬁeld is required. <code>resources.type</code> can only use the <code>Equals</code> operator, and the value can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>AWS::S3::Object</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AWS::Lambda::Function</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AWS::DynamoDB::Table</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AWS::S3Outposts::Object</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AWS::ManagedBlockchain::Node</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AWS::S3ObjectLambda::AccessPoint</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AWS::EC2::Snapshot</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AWS::S3::AccessPoint</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AWS::DynamoDB::Stream</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <p>
-    /// You can have only one <code>resources.type</code> ﬁeld per selector. To log data
-    /// events on more than one resource type, add another selector.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>
-    /// <code>resources.ARN</code>
-    /// </b> - You can use any operator with
-    /// <code>resources.ARN</code>, but if you use <code>Equals</code> or <code>NotEquals</code>, the
-    /// value must exactly match the ARN of a valid resource of the type you've speciﬁed in
-    /// the template as the value of resources.type. For example, if resources.type equals
-    /// <code>AWS::S3::Object</code>, the ARN must be in one of the following formats. To
-    /// log all data events for all objects in a specific S3 bucket, use the
-    /// <code>StartsWith</code> operator, and include only the bucket ARN as the matching value.</p>
-    /// <p>The trailing slash is intentional; do not exclude it. Replace the text between
-    /// less than and greater than symbols (<>) with resource-specific information. </p>
+    /// <li> <p> <code>AWS::S3::Object</code> </p> </li>
+    /// <li> <p> <code>AWS::Lambda::Function</code> </p> </li>
+    /// <li> <p> <code>AWS::DynamoDB::Table</code> </p> </li>
+    /// <li> <p> <code>AWS::S3Outposts::Object</code> </p> </li>
+    /// <li> <p> <code>AWS::ManagedBlockchain::Node</code> </p> </li>
+    /// <li> <p> <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li>
+    /// <li> <p> <code>AWS::EC2::Snapshot</code> </p> </li>
+    /// <li> <p> <code>AWS::S3::AccessPoint</code> </p> </li>
+    /// <li> <p> <code>AWS::DynamoDB::Stream</code> </p> </li>
+    /// </ul> <p> You can have only one <code>resources.type</code> ﬁeld per selector. To log data events on more than one resource type, add another selector.</p> </li>
+    /// <li> <p> <b> <code>resources.ARN</code> </b> - You can use any operator with <code>resources.ARN</code>, but if you use <code>Equals</code> or <code>NotEquals</code>, the value must exactly match the ARN of a valid resource of the type you've speciﬁed in the template as the value of resources.type. For example, if resources.type equals <code>AWS::S3::Object</code>, the ARN must be in one of the following formats. To log all data events for all objects in a specific S3 bucket, use the <code>StartsWith</code> operator, and include only the bucket ARN as the matching value.</p> <p>The trailing slash is intentional; do not exclude it. Replace the text between less than and greater than symbols (&lt;&gt;) with resource-specific information. </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>arn:<partition>:s3:::<bucket_name>/</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>arn:<partition>:s3:::<bucket_name>/<object_path>/</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <p>When <code>resources.type</code> equals <code>AWS::S3::AccessPoint</code>, and the
-    /// operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in
-    /// one of the following formats. To log events on all objects in an S3 access point, we
-    /// recommend that you use only the access point ARN, don’t include the object path, and
-    /// use the <code>StartsWith</code> or <code>NotStartsWith</code> operators.</p>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :s3:::
+    /// <bucket_name>
+    /// /
+    /// </bucket_name>
+    /// </partition></code> </p> </li>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :s3:::
+    /// <bucket_name>
+    /// /
+    /// <object_path>
+    /// /
+    /// </object_path>
+    /// </bucket_name>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::S3::AccessPoint</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in one of the following formats. To log events on all objects in an S3 access point, we recommend that you use only the access point ARN, don’t include the object path, and use the <code>StartsWith</code> or <code>NotStartsWith</code> operators.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>arn:<partition>:s3:<region>:<account_ID>:accesspoint/<access_point_name></code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>arn:<partition>:s3:<region>:<account_ID>:accesspoint/<access_point_name>/object/<object_path></code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <p>When resources.type equals <code>AWS::Lambda::Function</code>, and the operator is set
-    /// to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :s3:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :accesspoint/
+    /// <access_point_name></access_point_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :s3:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :accesspoint/
+    /// <access_point_name>
+    /// /object/
+    /// <object_path></object_path>
+    /// </access_point_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When resources.type equals <code>AWS::Lambda::Function</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>arn:<partition>:lambda:<region>:<account_ID>:function:<function_name></code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <p>When resources.type equals <code>AWS::DynamoDB::Table</code>, and the operator is
-    /// set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the
-    /// following format:</p>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :lambda:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :function:
+    /// <function_name></function_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When resources.type equals <code>AWS::DynamoDB::Table</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>arn:<partition>:dynamodb:<region>:<account_ID>:table/<table_name></code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <p>When <code>resources.type</code> equals <code>AWS::S3Outposts::Object</code>, and the operator
-    /// is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :dynamodb:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :table/
+    /// <table_name></table_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::S3Outposts::Object</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>arn:<partition>:s3-outposts:<region>:<account_ID>:<object_path></code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <p>When <code>resources.type</code> equals <code>AWS::ManagedBlockchain::Node</code>,
-    /// and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN
-    /// must be in the following format:</p>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :s3-outposts:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :
+    /// <object_path></object_path>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::ManagedBlockchain::Node</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>arn:<partition>:managedblockchain:<region>:<account_ID>:nodes/<node_ID></code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <p>When <code>resources.type</code> equals
-    /// <code>AWS::S3ObjectLambda::AccessPoint</code>, and the operator is set to
-    /// <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
-    /// format:</p>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :managedblockchain:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :nodes/
+    /// <node_id></node_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::S3ObjectLambda::AccessPoint</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>arn:<partition>:s3-object-lambda:<region>:<account_ID>:accesspoint/<access_point_name></code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <p>When <code>resources.type</code> equals <code>AWS::EC2::Snapshot</code>, and the
-    /// operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in
-    /// the following format:</p>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :s3-object-lambda:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :accesspoint/
+    /// <access_point_name></access_point_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::EC2::Snapshot</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>arn:<partition>:ec2:<region>::snapshot/<snapshot_ID></code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <p>When <code>resources.type</code> equals <code>AWS::DynamoDB::Stream</code>, and the operator is set to
-    /// <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :ec2:
+    /// <region>
+    /// ::snapshot/
+    /// <snapshot_id></snapshot_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::DynamoDB::Stream</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>arn:<partition>:dynamodb:<region>:<account_ID>:table/<table_name>/stream/<date_time></code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :dynamodb:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :table/
+    /// <table_name>
+    /// /stream/
+    /// <date_time></date_time>
+    /// </table_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> </li>
     /// </ul>
     pub field: std::option::Option<std::string::String>,
-    /// <p> An operator that includes events that match the exact value of the event record field
-    /// specified as the value of <code>Field</code>. This is the only valid operator that you can
-    /// use with the <code>readOnly</code>, <code>eventCategory</code>, and
-    /// <code>resources.type</code> fields.</p>
+    /// <p> An operator that includes events that match the exact value of the event record field specified as the value of <code>Field</code>. This is the only valid operator that you can use with the <code>readOnly</code>, <code>eventCategory</code>, and <code>resources.type</code> fields.</p>
     pub equals: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>An operator that includes events that match the first few characters of the event record
-    /// field specified as the value of <code>Field</code>.</p>
+    /// <p>An operator that includes events that match the first few characters of the event record field specified as the value of <code>Field</code>.</p>
     pub starts_with: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>An operator that includes events that match the last few characters of the event record
-    /// field specified as the value of <code>Field</code>.</p>
+    /// <p>An operator that includes events that match the last few characters of the event record field specified as the value of <code>Field</code>.</p>
     pub ends_with: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>
-    /// An operator that excludes events that match the exact value of the event record field specified as the value of <code>Field</code>.
-    /// </p>
+    /// <p> An operator that excludes events that match the exact value of the event record field specified as the value of <code>Field</code>. </p>
     pub not_equals: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>
-    /// An operator that excludes events that match the first few characters of the event record field specified as the value of <code>Field</code>.
-    /// </p>
+    /// <p> An operator that excludes events that match the first few characters of the event record field specified as the value of <code>Field</code>. </p>
     pub not_starts_with: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>
-    /// An operator that excludes events that match the last few characters of the event record field specified as the value of <code>Field</code>.
-    /// </p>
+    /// <p> An operator that excludes events that match the last few characters of the event record field specified as the value of <code>Field</code>. </p>
     pub not_ends_with: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AdvancedFieldSelector {
-    /// <p>
-    /// A field in an event record on which to filter events to be logged. Supported fields include <code>readOnly</code>, <code>eventCategory</code>,
-    /// <code>eventSource</code> (for management events), <code>eventName</code>, <code>resources.type</code>, and <code>resources.ARN</code>.
-    /// </p>
+    /// <p> A field in an event record on which to filter events to be logged. Supported fields include <code>readOnly</code>, <code>eventCategory</code>, <code>eventSource</code> (for management events), <code>eventName</code>, <code>resources.type</code>, and <code>resources.ARN</code>. </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>
-    /// <code>readOnly</code>
-    /// </b> - Optional. Can be set to <code>Equals</code> a value of <code>true</code>
-    /// or <code>false</code>. A value of <code>false</code> logs both <code>read</code> and
-    /// <code>write</code> events.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>
-    /// <code>eventSource</code>
-    /// </b> - For filtering management events only.
-    /// This can be set only to <code>NotEquals</code>
-    /// <code>kms.amazonaws.com</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>
-    /// <code>eventName</code>
-    /// </b> - Can use any operator. You can use it to ﬁlter in
-    /// or ﬁlter out any data event logged to CloudTrail, such as <code>PutBucket</code> or <code>GetSnapshotBlock</code>. You can have multiple values
-    /// for this ﬁeld, separated by commas.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>
-    /// <code>eventCategory</code>
-    /// </b> - This is required. It must be set to <code>Equals</code>, and
-    /// the value must be <code>Management</code> or <code>Data</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>
-    /// <code>resources.type</code>
-    /// </b> - This ﬁeld is required.
-    /// <code>resources.type</code> can only use the <code>Equals</code> operator, and the
-    /// value can be one of the following:</p>
+    /// <li> <p> <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a value of <code>true</code> or <code>false</code>. A value of <code>false</code> logs both <code>read</code> and <code>write</code> events.</p> </li>
+    /// <li> <p> <b> <code>eventSource</code> </b> - For filtering management events only. This can be set only to <code>NotEquals</code> <code>kms.amazonaws.com</code>.</p> </li>
+    /// <li> <p> <b> <code>eventName</code> </b> - Can use any operator. You can use it to ﬁlter in or ﬁlter out any data event logged to CloudTrail, such as <code>PutBucket</code> or <code>GetSnapshotBlock</code>. You can have multiple values for this ﬁeld, separated by commas.</p> </li>
+    /// <li> <p> <b> <code>eventCategory</code> </b> - This is required. It must be set to <code>Equals</code>, and the value must be <code>Management</code> or <code>Data</code>.</p> </li>
+    /// <li> <p> <b> <code>resources.type</code> </b> - This ﬁeld is required. <code>resources.type</code> can only use the <code>Equals</code> operator, and the value can be one of the following:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>AWS::S3::Object</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AWS::Lambda::Function</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AWS::DynamoDB::Table</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AWS::S3Outposts::Object</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AWS::ManagedBlockchain::Node</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AWS::S3ObjectLambda::AccessPoint</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AWS::EC2::Snapshot</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AWS::S3::AccessPoint</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AWS::DynamoDB::Stream</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <p>
-    /// You can have only one <code>resources.type</code> ﬁeld per selector. To log data
-    /// events on more than one resource type, add another selector.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>
-    /// <code>resources.ARN</code>
-    /// </b> - You can use any operator with
-    /// <code>resources.ARN</code>, but if you use <code>Equals</code> or <code>NotEquals</code>, the
-    /// value must exactly match the ARN of a valid resource of the type you've speciﬁed in
-    /// the template as the value of resources.type. For example, if resources.type equals
-    /// <code>AWS::S3::Object</code>, the ARN must be in one of the following formats. To
-    /// log all data events for all objects in a specific S3 bucket, use the
-    /// <code>StartsWith</code> operator, and include only the bucket ARN as the matching value.</p>
-    /// <p>The trailing slash is intentional; do not exclude it. Replace the text between
-    /// less than and greater than symbols (<>) with resource-specific information. </p>
+    /// <li> <p> <code>AWS::S3::Object</code> </p> </li>
+    /// <li> <p> <code>AWS::Lambda::Function</code> </p> </li>
+    /// <li> <p> <code>AWS::DynamoDB::Table</code> </p> </li>
+    /// <li> <p> <code>AWS::S3Outposts::Object</code> </p> </li>
+    /// <li> <p> <code>AWS::ManagedBlockchain::Node</code> </p> </li>
+    /// <li> <p> <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li>
+    /// <li> <p> <code>AWS::EC2::Snapshot</code> </p> </li>
+    /// <li> <p> <code>AWS::S3::AccessPoint</code> </p> </li>
+    /// <li> <p> <code>AWS::DynamoDB::Stream</code> </p> </li>
+    /// </ul> <p> You can have only one <code>resources.type</code> ﬁeld per selector. To log data events on more than one resource type, add another selector.</p> </li>
+    /// <li> <p> <b> <code>resources.ARN</code> </b> - You can use any operator with <code>resources.ARN</code>, but if you use <code>Equals</code> or <code>NotEquals</code>, the value must exactly match the ARN of a valid resource of the type you've speciﬁed in the template as the value of resources.type. For example, if resources.type equals <code>AWS::S3::Object</code>, the ARN must be in one of the following formats. To log all data events for all objects in a specific S3 bucket, use the <code>StartsWith</code> operator, and include only the bucket ARN as the matching value.</p> <p>The trailing slash is intentional; do not exclude it. Replace the text between less than and greater than symbols (&lt;&gt;) with resource-specific information. </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>arn:<partition>:s3:::<bucket_name>/</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>arn:<partition>:s3:::<bucket_name>/<object_path>/</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <p>When <code>resources.type</code> equals <code>AWS::S3::AccessPoint</code>, and the
-    /// operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in
-    /// one of the following formats. To log events on all objects in an S3 access point, we
-    /// recommend that you use only the access point ARN, don’t include the object path, and
-    /// use the <code>StartsWith</code> or <code>NotStartsWith</code> operators.</p>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :s3:::
+    /// <bucket_name>
+    /// /
+    /// </bucket_name>
+    /// </partition></code> </p> </li>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :s3:::
+    /// <bucket_name>
+    /// /
+    /// <object_path>
+    /// /
+    /// </object_path>
+    /// </bucket_name>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::S3::AccessPoint</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in one of the following formats. To log events on all objects in an S3 access point, we recommend that you use only the access point ARN, don’t include the object path, and use the <code>StartsWith</code> or <code>NotStartsWith</code> operators.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>arn:<partition>:s3:<region>:<account_ID>:accesspoint/<access_point_name></code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>arn:<partition>:s3:<region>:<account_ID>:accesspoint/<access_point_name>/object/<object_path></code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <p>When resources.type equals <code>AWS::Lambda::Function</code>, and the operator is set
-    /// to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :s3:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :accesspoint/
+    /// <access_point_name></access_point_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :s3:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :accesspoint/
+    /// <access_point_name>
+    /// /object/
+    /// <object_path></object_path>
+    /// </access_point_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When resources.type equals <code>AWS::Lambda::Function</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>arn:<partition>:lambda:<region>:<account_ID>:function:<function_name></code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <p>When resources.type equals <code>AWS::DynamoDB::Table</code>, and the operator is
-    /// set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the
-    /// following format:</p>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :lambda:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :function:
+    /// <function_name></function_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When resources.type equals <code>AWS::DynamoDB::Table</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>arn:<partition>:dynamodb:<region>:<account_ID>:table/<table_name></code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <p>When <code>resources.type</code> equals <code>AWS::S3Outposts::Object</code>, and the operator
-    /// is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :dynamodb:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :table/
+    /// <table_name></table_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::S3Outposts::Object</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>arn:<partition>:s3-outposts:<region>:<account_ID>:<object_path></code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <p>When <code>resources.type</code> equals <code>AWS::ManagedBlockchain::Node</code>,
-    /// and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN
-    /// must be in the following format:</p>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :s3-outposts:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :
+    /// <object_path></object_path>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::ManagedBlockchain::Node</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>arn:<partition>:managedblockchain:<region>:<account_ID>:nodes/<node_ID></code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <p>When <code>resources.type</code> equals
-    /// <code>AWS::S3ObjectLambda::AccessPoint</code>, and the operator is set to
-    /// <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
-    /// format:</p>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :managedblockchain:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :nodes/
+    /// <node_id></node_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::S3ObjectLambda::AccessPoint</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>arn:<partition>:s3-object-lambda:<region>:<account_ID>:accesspoint/<access_point_name></code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <p>When <code>resources.type</code> equals <code>AWS::EC2::Snapshot</code>, and the
-    /// operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in
-    /// the following format:</p>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :s3-object-lambda:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :accesspoint/
+    /// <access_point_name></access_point_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::EC2::Snapshot</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>arn:<partition>:ec2:<region>::snapshot/<snapshot_ID></code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <p>When <code>resources.type</code> equals <code>AWS::DynamoDB::Stream</code>, and the operator is set to
-    /// <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :ec2:
+    /// <region>
+    /// ::snapshot/
+    /// <snapshot_id></snapshot_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> <p>When <code>resources.type</code> equals <code>AWS::DynamoDB::Stream</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>arn:<partition>:dynamodb:<region>:<account_ID>:table/<table_name>/stream/<date_time></code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p> <code>arn:
+    /// <partition>
+    /// :dynamodb:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :table/
+    /// <table_name>
+    /// /stream/
+    /// <date_time></date_time>
+    /// </table_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code> </p> </li>
+    /// </ul> </li>
     /// </ul>
     pub fn field(&self) -> std::option::Option<&str> {
         self.field.as_deref()
     }
-    /// <p> An operator that includes events that match the exact value of the event record field
-    /// specified as the value of <code>Field</code>. This is the only valid operator that you can
-    /// use with the <code>readOnly</code>, <code>eventCategory</code>, and
-    /// <code>resources.type</code> fields.</p>
+    /// <p> An operator that includes events that match the exact value of the event record field specified as the value of <code>Field</code>. This is the only valid operator that you can use with the <code>readOnly</code>, <code>eventCategory</code>, and <code>resources.type</code> fields.</p>
     pub fn equals(&self) -> std::option::Option<&[std::string::String]> {
         self.equals.as_deref()
     }
-    /// <p>An operator that includes events that match the first few characters of the event record
-    /// field specified as the value of <code>Field</code>.</p>
+    /// <p>An operator that includes events that match the first few characters of the event record field specified as the value of <code>Field</code>.</p>
     pub fn starts_with(&self) -> std::option::Option<&[std::string::String]> {
         self.starts_with.as_deref()
     }
-    /// <p>An operator that includes events that match the last few characters of the event record
-    /// field specified as the value of <code>Field</code>.</p>
+    /// <p>An operator that includes events that match the last few characters of the event record field specified as the value of <code>Field</code>.</p>
     pub fn ends_with(&self) -> std::option::Option<&[std::string::String]> {
         self.ends_with.as_deref()
     }
-    /// <p>
-    /// An operator that excludes events that match the exact value of the event record field specified as the value of <code>Field</code>.
-    /// </p>
+    /// <p> An operator that excludes events that match the exact value of the event record field specified as the value of <code>Field</code>. </p>
     pub fn not_equals(&self) -> std::option::Option<&[std::string::String]> {
         self.not_equals.as_deref()
     }
-    /// <p>
-    /// An operator that excludes events that match the first few characters of the event record field specified as the value of <code>Field</code>.
-    /// </p>
+    /// <p> An operator that excludes events that match the first few characters of the event record field specified as the value of <code>Field</code>. </p>
     pub fn not_starts_with(&self) -> std::option::Option<&[std::string::String]> {
         self.not_starts_with.as_deref()
     }
-    /// <p>
-    /// An operator that excludes events that match the last few characters of the event record field specified as the value of <code>Field</code>.
-    /// </p>
+    /// <p> An operator that excludes events that match the last few characters of the event record field specified as the value of <code>Field</code>. </p>
     pub fn not_ends_with(&self) -> std::option::Option<&[std::string::String]> {
         self.not_ends_with.as_deref()
     }
@@ -819,421 +665,323 @@ pub mod advanced_field_selector {
         pub(crate) not_ends_with: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>
-        /// A field in an event record on which to filter events to be logged. Supported fields include <code>readOnly</code>, <code>eventCategory</code>,
-        /// <code>eventSource</code> (for management events), <code>eventName</code>, <code>resources.type</code>, and <code>resources.ARN</code>.
-        /// </p>
+        /// <p> A field in an event record on which to filter events to be logged. Supported fields include <code>readOnly</code>, <code>eventCategory</code>, <code>eventSource</code> (for management events), <code>eventName</code>, <code>resources.type</code>, and <code>resources.ARN</code>. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>readOnly</code>
-        /// </b> - Optional. Can be set to <code>Equals</code> a value of <code>true</code>
-        /// or <code>false</code>. A value of <code>false</code> logs both <code>read</code> and
-        /// <code>write</code> events.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>eventSource</code>
-        /// </b> - For filtering management events only.
-        /// This can be set only to <code>NotEquals</code>
-        /// <code>kms.amazonaws.com</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>eventName</code>
-        /// </b> - Can use any operator. You can use it to ﬁlter in
-        /// or ﬁlter out any data event logged to CloudTrail, such as <code>PutBucket</code> or <code>GetSnapshotBlock</code>. You can have multiple values
-        /// for this ﬁeld, separated by commas.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>eventCategory</code>
-        /// </b> - This is required. It must be set to <code>Equals</code>, and
-        /// the value must be <code>Management</code> or <code>Data</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>resources.type</code>
-        /// </b> - This ﬁeld is required.
-        /// <code>resources.type</code> can only use the <code>Equals</code> operator, and the
-        /// value can be one of the following:</p>
+        /// <li> <p> <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a value of <code>true</code> or <code>false</code>. A value of <code>false</code> logs both <code>read</code> and <code>write</code> events.</p> </li>
+        /// <li> <p> <b> <code>eventSource</code> </b> - For filtering management events only. This can be set only to <code>NotEquals</code> <code>kms.amazonaws.com</code>.</p> </li>
+        /// <li> <p> <b> <code>eventName</code> </b> - Can use any operator. You can use it to ﬁlter in or ﬁlter out any data event logged to CloudTrail, such as <code>PutBucket</code> or <code>GetSnapshotBlock</code>. You can have multiple values for this ﬁeld, separated by commas.</p> </li>
+        /// <li> <p> <b> <code>eventCategory</code> </b> - This is required. It must be set to <code>Equals</code>, and the value must be <code>Management</code> or <code>Data</code>.</p> </li>
+        /// <li> <p> <b> <code>resources.type</code> </b> - This ﬁeld is required. <code>resources.type</code> can only use the <code>Equals</code> operator, and the value can be one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AWS::S3::Object</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AWS::Lambda::Function</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AWS::DynamoDB::Table</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AWS::S3Outposts::Object</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AWS::ManagedBlockchain::Node</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AWS::S3ObjectLambda::AccessPoint</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AWS::EC2::Snapshot</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AWS::S3::AccessPoint</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AWS::DynamoDB::Stream</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <p>
-        /// You can have only one <code>resources.type</code> ﬁeld per selector. To log data
-        /// events on more than one resource type, add another selector.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>resources.ARN</code>
-        /// </b> - You can use any operator with
-        /// <code>resources.ARN</code>, but if you use <code>Equals</code> or <code>NotEquals</code>, the
-        /// value must exactly match the ARN of a valid resource of the type you've speciﬁed in
-        /// the template as the value of resources.type. For example, if resources.type equals
-        /// <code>AWS::S3::Object</code>, the ARN must be in one of the following formats. To
-        /// log all data events for all objects in a specific S3 bucket, use the
-        /// <code>StartsWith</code> operator, and include only the bucket ARN as the matching value.</p>
-        /// <p>The trailing slash is intentional; do not exclude it. Replace the text between
-        /// less than and greater than symbols (<>) with resource-specific information. </p>
+        /// <li> <p> <code>AWS::S3::Object</code> </p> </li>
+        /// <li> <p> <code>AWS::Lambda::Function</code> </p> </li>
+        /// <li> <p> <code>AWS::DynamoDB::Table</code> </p> </li>
+        /// <li> <p> <code>AWS::S3Outposts::Object</code> </p> </li>
+        /// <li> <p> <code>AWS::ManagedBlockchain::Node</code> </p> </li>
+        /// <li> <p> <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li>
+        /// <li> <p> <code>AWS::EC2::Snapshot</code> </p> </li>
+        /// <li> <p> <code>AWS::S3::AccessPoint</code> </p> </li>
+        /// <li> <p> <code>AWS::DynamoDB::Stream</code> </p> </li>
+        /// </ul> <p> You can have only one <code>resources.type</code> ﬁeld per selector. To log data events on more than one resource type, add another selector.</p> </li>
+        /// <li> <p> <b> <code>resources.ARN</code> </b> - You can use any operator with <code>resources.ARN</code>, but if you use <code>Equals</code> or <code>NotEquals</code>, the value must exactly match the ARN of a valid resource of the type you've speciﬁed in the template as the value of resources.type. For example, if resources.type equals <code>AWS::S3::Object</code>, the ARN must be in one of the following formats. To log all data events for all objects in a specific S3 bucket, use the <code>StartsWith</code> operator, and include only the bucket ARN as the matching value.</p> <p>The trailing slash is intentional; do not exclude it. Replace the text between less than and greater than symbols (&lt;&gt;) with resource-specific information. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>arn:<partition>:s3:::<bucket_name>/</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>arn:<partition>:s3:::<bucket_name>/<object_path>/</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <p>When <code>resources.type</code> equals <code>AWS::S3::AccessPoint</code>, and the
-        /// operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in
-        /// one of the following formats. To log events on all objects in an S3 access point, we
-        /// recommend that you use only the access point ARN, don’t include the object path, and
-        /// use the <code>StartsWith</code> or <code>NotStartsWith</code> operators.</p>
+        /// <li> <p> <code>arn:
+        /// <partition>
+        /// :s3:::
+        /// <bucket_name>
+        /// /
+        /// </bucket_name>
+        /// </partition></code> </p> </li>
+        /// <li> <p> <code>arn:
+        /// <partition>
+        /// :s3:::
+        /// <bucket_name>
+        /// /
+        /// <object_path>
+        /// /
+        /// </object_path>
+        /// </bucket_name>
+        /// </partition></code> </p> </li>
+        /// </ul> <p>When <code>resources.type</code> equals <code>AWS::S3::AccessPoint</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in one of the following formats. To log events on all objects in an S3 access point, we recommend that you use only the access point ARN, don’t include the object path, and use the <code>StartsWith</code> or <code>NotStartsWith</code> operators.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>arn:<partition>:s3:<region>:<account_ID>:accesspoint/<access_point_name></code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>arn:<partition>:s3:<region>:<account_ID>:accesspoint/<access_point_name>/object/<object_path></code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <p>When resources.type equals <code>AWS::Lambda::Function</code>, and the operator is set
-        /// to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+        /// <li> <p> <code>arn:
+        /// <partition>
+        /// :s3:
+        /// <region>
+        /// :
+        /// <account_id>
+        /// :accesspoint/
+        /// <access_point_name></access_point_name>
+        /// </account_id>
+        /// </region>
+        /// </partition></code> </p> </li>
+        /// <li> <p> <code>arn:
+        /// <partition>
+        /// :s3:
+        /// <region>
+        /// :
+        /// <account_id>
+        /// :accesspoint/
+        /// <access_point_name>
+        /// /object/
+        /// <object_path></object_path>
+        /// </access_point_name>
+        /// </account_id>
+        /// </region>
+        /// </partition></code> </p> </li>
+        /// </ul> <p>When resources.type equals <code>AWS::Lambda::Function</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>arn:<partition>:lambda:<region>:<account_ID>:function:<function_name></code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <p>When resources.type equals <code>AWS::DynamoDB::Table</code>, and the operator is
-        /// set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the
-        /// following format:</p>
+        /// <li> <p> <code>arn:
+        /// <partition>
+        /// :lambda:
+        /// <region>
+        /// :
+        /// <account_id>
+        /// :function:
+        /// <function_name></function_name>
+        /// </account_id>
+        /// </region>
+        /// </partition></code> </p> </li>
+        /// </ul> <p>When resources.type equals <code>AWS::DynamoDB::Table</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>arn:<partition>:dynamodb:<region>:<account_ID>:table/<table_name></code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <p>When <code>resources.type</code> equals <code>AWS::S3Outposts::Object</code>, and the operator
-        /// is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+        /// <li> <p> <code>arn:
+        /// <partition>
+        /// :dynamodb:
+        /// <region>
+        /// :
+        /// <account_id>
+        /// :table/
+        /// <table_name></table_name>
+        /// </account_id>
+        /// </region>
+        /// </partition></code> </p> </li>
+        /// </ul> <p>When <code>resources.type</code> equals <code>AWS::S3Outposts::Object</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>arn:<partition>:s3-outposts:<region>:<account_ID>:<object_path></code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <p>When <code>resources.type</code> equals <code>AWS::ManagedBlockchain::Node</code>,
-        /// and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN
-        /// must be in the following format:</p>
+        /// <li> <p> <code>arn:
+        /// <partition>
+        /// :s3-outposts:
+        /// <region>
+        /// :
+        /// <account_id>
+        /// :
+        /// <object_path></object_path>
+        /// </account_id>
+        /// </region>
+        /// </partition></code> </p> </li>
+        /// </ul> <p>When <code>resources.type</code> equals <code>AWS::ManagedBlockchain::Node</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>arn:<partition>:managedblockchain:<region>:<account_ID>:nodes/<node_ID></code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <p>When <code>resources.type</code> equals
-        /// <code>AWS::S3ObjectLambda::AccessPoint</code>, and the operator is set to
-        /// <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
-        /// format:</p>
+        /// <li> <p> <code>arn:
+        /// <partition>
+        /// :managedblockchain:
+        /// <region>
+        /// :
+        /// <account_id>
+        /// :nodes/
+        /// <node_id></node_id>
+        /// </account_id>
+        /// </region>
+        /// </partition></code> </p> </li>
+        /// </ul> <p>When <code>resources.type</code> equals <code>AWS::S3ObjectLambda::AccessPoint</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>arn:<partition>:s3-object-lambda:<region>:<account_ID>:accesspoint/<access_point_name></code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <p>When <code>resources.type</code> equals <code>AWS::EC2::Snapshot</code>, and the
-        /// operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in
-        /// the following format:</p>
+        /// <li> <p> <code>arn:
+        /// <partition>
+        /// :s3-object-lambda:
+        /// <region>
+        /// :
+        /// <account_id>
+        /// :accesspoint/
+        /// <access_point_name></access_point_name>
+        /// </account_id>
+        /// </region>
+        /// </partition></code> </p> </li>
+        /// </ul> <p>When <code>resources.type</code> equals <code>AWS::EC2::Snapshot</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>arn:<partition>:ec2:<region>::snapshot/<snapshot_ID></code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <p>When <code>resources.type</code> equals <code>AWS::DynamoDB::Stream</code>, and the operator is set to
-        /// <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+        /// <li> <p> <code>arn:
+        /// <partition>
+        /// :ec2:
+        /// <region>
+        /// ::snapshot/
+        /// <snapshot_id></snapshot_id>
+        /// </region>
+        /// </partition></code> </p> </li>
+        /// </ul> <p>When <code>resources.type</code> equals <code>AWS::DynamoDB::Stream</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>arn:<partition>:dynamodb:<region>:<account_ID>:table/<table_name>/stream/<date_time></code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p> <code>arn:
+        /// <partition>
+        /// :dynamodb:
+        /// <region>
+        /// :
+        /// <account_id>
+        /// :table/
+        /// <table_name>
+        /// /stream/
+        /// <date_time></date_time>
+        /// </table_name>
+        /// </account_id>
+        /// </region>
+        /// </partition></code> </p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn field(mut self, input: impl Into<std::string::String>) -> Self {
             self.field = Some(input.into());
             self
         }
-        /// <p>
-        /// A field in an event record on which to filter events to be logged. Supported fields include <code>readOnly</code>, <code>eventCategory</code>,
-        /// <code>eventSource</code> (for management events), <code>eventName</code>, <code>resources.type</code>, and <code>resources.ARN</code>.
-        /// </p>
+        /// <p> A field in an event record on which to filter events to be logged. Supported fields include <code>readOnly</code>, <code>eventCategory</code>, <code>eventSource</code> (for management events), <code>eventName</code>, <code>resources.type</code>, and <code>resources.ARN</code>. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>readOnly</code>
-        /// </b> - Optional. Can be set to <code>Equals</code> a value of <code>true</code>
-        /// or <code>false</code>. A value of <code>false</code> logs both <code>read</code> and
-        /// <code>write</code> events.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>eventSource</code>
-        /// </b> - For filtering management events only.
-        /// This can be set only to <code>NotEquals</code>
-        /// <code>kms.amazonaws.com</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>eventName</code>
-        /// </b> - Can use any operator. You can use it to ﬁlter in
-        /// or ﬁlter out any data event logged to CloudTrail, such as <code>PutBucket</code> or <code>GetSnapshotBlock</code>. You can have multiple values
-        /// for this ﬁeld, separated by commas.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>eventCategory</code>
-        /// </b> - This is required. It must be set to <code>Equals</code>, and
-        /// the value must be <code>Management</code> or <code>Data</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>resources.type</code>
-        /// </b> - This ﬁeld is required.
-        /// <code>resources.type</code> can only use the <code>Equals</code> operator, and the
-        /// value can be one of the following:</p>
+        /// <li> <p> <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a value of <code>true</code> or <code>false</code>. A value of <code>false</code> logs both <code>read</code> and <code>write</code> events.</p> </li>
+        /// <li> <p> <b> <code>eventSource</code> </b> - For filtering management events only. This can be set only to <code>NotEquals</code> <code>kms.amazonaws.com</code>.</p> </li>
+        /// <li> <p> <b> <code>eventName</code> </b> - Can use any operator. You can use it to ﬁlter in or ﬁlter out any data event logged to CloudTrail, such as <code>PutBucket</code> or <code>GetSnapshotBlock</code>. You can have multiple values for this ﬁeld, separated by commas.</p> </li>
+        /// <li> <p> <b> <code>eventCategory</code> </b> - This is required. It must be set to <code>Equals</code>, and the value must be <code>Management</code> or <code>Data</code>.</p> </li>
+        /// <li> <p> <b> <code>resources.type</code> </b> - This ﬁeld is required. <code>resources.type</code> can only use the <code>Equals</code> operator, and the value can be one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AWS::S3::Object</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AWS::Lambda::Function</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AWS::DynamoDB::Table</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AWS::S3Outposts::Object</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AWS::ManagedBlockchain::Node</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AWS::S3ObjectLambda::AccessPoint</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AWS::EC2::Snapshot</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AWS::S3::AccessPoint</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AWS::DynamoDB::Stream</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <p>
-        /// You can have only one <code>resources.type</code> ﬁeld per selector. To log data
-        /// events on more than one resource type, add another selector.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>
-        /// <code>resources.ARN</code>
-        /// </b> - You can use any operator with
-        /// <code>resources.ARN</code>, but if you use <code>Equals</code> or <code>NotEquals</code>, the
-        /// value must exactly match the ARN of a valid resource of the type you've speciﬁed in
-        /// the template as the value of resources.type. For example, if resources.type equals
-        /// <code>AWS::S3::Object</code>, the ARN must be in one of the following formats. To
-        /// log all data events for all objects in a specific S3 bucket, use the
-        /// <code>StartsWith</code> operator, and include only the bucket ARN as the matching value.</p>
-        /// <p>The trailing slash is intentional; do not exclude it. Replace the text between
-        /// less than and greater than symbols (<>) with resource-specific information. </p>
+        /// <li> <p> <code>AWS::S3::Object</code> </p> </li>
+        /// <li> <p> <code>AWS::Lambda::Function</code> </p> </li>
+        /// <li> <p> <code>AWS::DynamoDB::Table</code> </p> </li>
+        /// <li> <p> <code>AWS::S3Outposts::Object</code> </p> </li>
+        /// <li> <p> <code>AWS::ManagedBlockchain::Node</code> </p> </li>
+        /// <li> <p> <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li>
+        /// <li> <p> <code>AWS::EC2::Snapshot</code> </p> </li>
+        /// <li> <p> <code>AWS::S3::AccessPoint</code> </p> </li>
+        /// <li> <p> <code>AWS::DynamoDB::Stream</code> </p> </li>
+        /// </ul> <p> You can have only one <code>resources.type</code> ﬁeld per selector. To log data events on more than one resource type, add another selector.</p> </li>
+        /// <li> <p> <b> <code>resources.ARN</code> </b> - You can use any operator with <code>resources.ARN</code>, but if you use <code>Equals</code> or <code>NotEquals</code>, the value must exactly match the ARN of a valid resource of the type you've speciﬁed in the template as the value of resources.type. For example, if resources.type equals <code>AWS::S3::Object</code>, the ARN must be in one of the following formats. To log all data events for all objects in a specific S3 bucket, use the <code>StartsWith</code> operator, and include only the bucket ARN as the matching value.</p> <p>The trailing slash is intentional; do not exclude it. Replace the text between less than and greater than symbols (&lt;&gt;) with resource-specific information. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>arn:<partition>:s3:::<bucket_name>/</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>arn:<partition>:s3:::<bucket_name>/<object_path>/</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <p>When <code>resources.type</code> equals <code>AWS::S3::AccessPoint</code>, and the
-        /// operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in
-        /// one of the following formats. To log events on all objects in an S3 access point, we
-        /// recommend that you use only the access point ARN, don’t include the object path, and
-        /// use the <code>StartsWith</code> or <code>NotStartsWith</code> operators.</p>
+        /// <li> <p> <code>arn:
+        /// <partition>
+        /// :s3:::
+        /// <bucket_name>
+        /// /
+        /// </bucket_name>
+        /// </partition></code> </p> </li>
+        /// <li> <p> <code>arn:
+        /// <partition>
+        /// :s3:::
+        /// <bucket_name>
+        /// /
+        /// <object_path>
+        /// /
+        /// </object_path>
+        /// </bucket_name>
+        /// </partition></code> </p> </li>
+        /// </ul> <p>When <code>resources.type</code> equals <code>AWS::S3::AccessPoint</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in one of the following formats. To log events on all objects in an S3 access point, we recommend that you use only the access point ARN, don’t include the object path, and use the <code>StartsWith</code> or <code>NotStartsWith</code> operators.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>arn:<partition>:s3:<region>:<account_ID>:accesspoint/<access_point_name></code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>arn:<partition>:s3:<region>:<account_ID>:accesspoint/<access_point_name>/object/<object_path></code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <p>When resources.type equals <code>AWS::Lambda::Function</code>, and the operator is set
-        /// to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+        /// <li> <p> <code>arn:
+        /// <partition>
+        /// :s3:
+        /// <region>
+        /// :
+        /// <account_id>
+        /// :accesspoint/
+        /// <access_point_name></access_point_name>
+        /// </account_id>
+        /// </region>
+        /// </partition></code> </p> </li>
+        /// <li> <p> <code>arn:
+        /// <partition>
+        /// :s3:
+        /// <region>
+        /// :
+        /// <account_id>
+        /// :accesspoint/
+        /// <access_point_name>
+        /// /object/
+        /// <object_path></object_path>
+        /// </access_point_name>
+        /// </account_id>
+        /// </region>
+        /// </partition></code> </p> </li>
+        /// </ul> <p>When resources.type equals <code>AWS::Lambda::Function</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>arn:<partition>:lambda:<region>:<account_ID>:function:<function_name></code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <p>When resources.type equals <code>AWS::DynamoDB::Table</code>, and the operator is
-        /// set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the
-        /// following format:</p>
+        /// <li> <p> <code>arn:
+        /// <partition>
+        /// :lambda:
+        /// <region>
+        /// :
+        /// <account_id>
+        /// :function:
+        /// <function_name></function_name>
+        /// </account_id>
+        /// </region>
+        /// </partition></code> </p> </li>
+        /// </ul> <p>When resources.type equals <code>AWS::DynamoDB::Table</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>arn:<partition>:dynamodb:<region>:<account_ID>:table/<table_name></code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <p>When <code>resources.type</code> equals <code>AWS::S3Outposts::Object</code>, and the operator
-        /// is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+        /// <li> <p> <code>arn:
+        /// <partition>
+        /// :dynamodb:
+        /// <region>
+        /// :
+        /// <account_id>
+        /// :table/
+        /// <table_name></table_name>
+        /// </account_id>
+        /// </region>
+        /// </partition></code> </p> </li>
+        /// </ul> <p>When <code>resources.type</code> equals <code>AWS::S3Outposts::Object</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>arn:<partition>:s3-outposts:<region>:<account_ID>:<object_path></code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <p>When <code>resources.type</code> equals <code>AWS::ManagedBlockchain::Node</code>,
-        /// and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN
-        /// must be in the following format:</p>
+        /// <li> <p> <code>arn:
+        /// <partition>
+        /// :s3-outposts:
+        /// <region>
+        /// :
+        /// <account_id>
+        /// :
+        /// <object_path></object_path>
+        /// </account_id>
+        /// </region>
+        /// </partition></code> </p> </li>
+        /// </ul> <p>When <code>resources.type</code> equals <code>AWS::ManagedBlockchain::Node</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>arn:<partition>:managedblockchain:<region>:<account_ID>:nodes/<node_ID></code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <p>When <code>resources.type</code> equals
-        /// <code>AWS::S3ObjectLambda::AccessPoint</code>, and the operator is set to
-        /// <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
-        /// format:</p>
+        /// <li> <p> <code>arn:
+        /// <partition>
+        /// :managedblockchain:
+        /// <region>
+        /// :
+        /// <account_id>
+        /// :nodes/
+        /// <node_id></node_id>
+        /// </account_id>
+        /// </region>
+        /// </partition></code> </p> </li>
+        /// </ul> <p>When <code>resources.type</code> equals <code>AWS::S3ObjectLambda::AccessPoint</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>arn:<partition>:s3-object-lambda:<region>:<account_ID>:accesspoint/<access_point_name></code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <p>When <code>resources.type</code> equals <code>AWS::EC2::Snapshot</code>, and the
-        /// operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in
-        /// the following format:</p>
+        /// <li> <p> <code>arn:
+        /// <partition>
+        /// :s3-object-lambda:
+        /// <region>
+        /// :
+        /// <account_id>
+        /// :accesspoint/
+        /// <access_point_name></access_point_name>
+        /// </account_id>
+        /// </region>
+        /// </partition></code> </p> </li>
+        /// </ul> <p>When <code>resources.type</code> equals <code>AWS::EC2::Snapshot</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>arn:<partition>:ec2:<region>::snapshot/<snapshot_ID></code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <p>When <code>resources.type</code> equals <code>AWS::DynamoDB::Stream</code>, and the operator is set to
-        /// <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+        /// <li> <p> <code>arn:
+        /// <partition>
+        /// :ec2:
+        /// <region>
+        /// ::snapshot/
+        /// <snapshot_id></snapshot_id>
+        /// </region>
+        /// </partition></code> </p> </li>
+        /// </ul> <p>When <code>resources.type</code> equals <code>AWS::DynamoDB::Stream</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>arn:<partition>:dynamodb:<region>:<account_ID>:table/<table_name>/stream/<date_time></code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p> <code>arn:
+        /// <partition>
+        /// :dynamodb:
+        /// <region>
+        /// :
+        /// <account_id>
+        /// :table/
+        /// <table_name>
+        /// /stream/
+        /// <date_time></date_time>
+        /// </table_name>
+        /// </account_id>
+        /// </region>
+        /// </partition></code> </p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn set_field(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.field = input;
@@ -1243,20 +991,14 @@ pub mod advanced_field_selector {
         ///
         /// To override the contents of this collection use [`set_equals`](Self::set_equals).
         ///
-        /// <p> An operator that includes events that match the exact value of the event record field
-        /// specified as the value of <code>Field</code>. This is the only valid operator that you can
-        /// use with the <code>readOnly</code>, <code>eventCategory</code>, and
-        /// <code>resources.type</code> fields.</p>
+        /// <p> An operator that includes events that match the exact value of the event record field specified as the value of <code>Field</code>. This is the only valid operator that you can use with the <code>readOnly</code>, <code>eventCategory</code>, and <code>resources.type</code> fields.</p>
         pub fn equals(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.equals.unwrap_or_default();
             v.push(input.into());
             self.equals = Some(v);
             self
         }
-        /// <p> An operator that includes events that match the exact value of the event record field
-        /// specified as the value of <code>Field</code>. This is the only valid operator that you can
-        /// use with the <code>readOnly</code>, <code>eventCategory</code>, and
-        /// <code>resources.type</code> fields.</p>
+        /// <p> An operator that includes events that match the exact value of the event record field specified as the value of <code>Field</code>. This is the only valid operator that you can use with the <code>readOnly</code>, <code>eventCategory</code>, and <code>resources.type</code> fields.</p>
         pub fn set_equals(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1268,16 +1010,14 @@ pub mod advanced_field_selector {
         ///
         /// To override the contents of this collection use [`set_starts_with`](Self::set_starts_with).
         ///
-        /// <p>An operator that includes events that match the first few characters of the event record
-        /// field specified as the value of <code>Field</code>.</p>
+        /// <p>An operator that includes events that match the first few characters of the event record field specified as the value of <code>Field</code>.</p>
         pub fn starts_with(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.starts_with.unwrap_or_default();
             v.push(input.into());
             self.starts_with = Some(v);
             self
         }
-        /// <p>An operator that includes events that match the first few characters of the event record
-        /// field specified as the value of <code>Field</code>.</p>
+        /// <p>An operator that includes events that match the first few characters of the event record field specified as the value of <code>Field</code>.</p>
         pub fn set_starts_with(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1289,16 +1029,14 @@ pub mod advanced_field_selector {
         ///
         /// To override the contents of this collection use [`set_ends_with`](Self::set_ends_with).
         ///
-        /// <p>An operator that includes events that match the last few characters of the event record
-        /// field specified as the value of <code>Field</code>.</p>
+        /// <p>An operator that includes events that match the last few characters of the event record field specified as the value of <code>Field</code>.</p>
         pub fn ends_with(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ends_with.unwrap_or_default();
             v.push(input.into());
             self.ends_with = Some(v);
             self
         }
-        /// <p>An operator that includes events that match the last few characters of the event record
-        /// field specified as the value of <code>Field</code>.</p>
+        /// <p>An operator that includes events that match the last few characters of the event record field specified as the value of <code>Field</code>.</p>
         pub fn set_ends_with(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1310,18 +1048,14 @@ pub mod advanced_field_selector {
         ///
         /// To override the contents of this collection use [`set_not_equals`](Self::set_not_equals).
         ///
-        /// <p>
-        /// An operator that excludes events that match the exact value of the event record field specified as the value of <code>Field</code>.
-        /// </p>
+        /// <p> An operator that excludes events that match the exact value of the event record field specified as the value of <code>Field</code>. </p>
         pub fn not_equals(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.not_equals.unwrap_or_default();
             v.push(input.into());
             self.not_equals = Some(v);
             self
         }
-        /// <p>
-        /// An operator that excludes events that match the exact value of the event record field specified as the value of <code>Field</code>.
-        /// </p>
+        /// <p> An operator that excludes events that match the exact value of the event record field specified as the value of <code>Field</code>. </p>
         pub fn set_not_equals(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1333,18 +1067,14 @@ pub mod advanced_field_selector {
         ///
         /// To override the contents of this collection use [`set_not_starts_with`](Self::set_not_starts_with).
         ///
-        /// <p>
-        /// An operator that excludes events that match the first few characters of the event record field specified as the value of <code>Field</code>.
-        /// </p>
+        /// <p> An operator that excludes events that match the first few characters of the event record field specified as the value of <code>Field</code>. </p>
         pub fn not_starts_with(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.not_starts_with.unwrap_or_default();
             v.push(input.into());
             self.not_starts_with = Some(v);
             self
         }
-        /// <p>
-        /// An operator that excludes events that match the first few characters of the event record field specified as the value of <code>Field</code>.
-        /// </p>
+        /// <p> An operator that excludes events that match the first few characters of the event record field specified as the value of <code>Field</code>. </p>
         pub fn set_not_starts_with(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1356,18 +1086,14 @@ pub mod advanced_field_selector {
         ///
         /// To override the contents of this collection use [`set_not_ends_with`](Self::set_not_ends_with).
         ///
-        /// <p>
-        /// An operator that excludes events that match the last few characters of the event record field specified as the value of <code>Field</code>.
-        /// </p>
+        /// <p> An operator that excludes events that match the last few characters of the event record field specified as the value of <code>Field</code>. </p>
         pub fn not_ends_with(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.not_ends_with.unwrap_or_default();
             v.push(input.into());
             self.not_ends_with = Some(v);
             self
         }
-        /// <p>
-        /// An operator that excludes events that match the last few characters of the event record field specified as the value of <code>Field</code>.
-        /// </p>
+        /// <p> An operator that excludes events that match the last few characters of the event record field specified as the value of <code>Field</code>. </p>
         pub fn set_not_ends_with(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1396,80 +1122,45 @@ impl AdvancedFieldSelector {
     }
 }
 
-/// <p>Use event selectors to further specify the management and data event settings for your trail. By
-/// default, trails created without specific event selectors will be configured to log all read and
-/// write management events, and no data events. When an event occurs in your account, CloudTrail evaluates the event selector
-/// for all trails. For each trail, if the event matches any event selector, the trail
-/// processes and logs the event. If the event doesn't match any event selector, the trail
-/// doesn't log the event.</p>
+/// <p>Use event selectors to further specify the management and data event settings for your trail. By default, trails created without specific event selectors will be configured to log all read and write management events, and no data events. When an event occurs in your account, CloudTrail evaluates the event selector for all trails. For each trail, if the event matches any event selector, the trail processes and logs the event. If the event doesn't match any event selector, the trail doesn't log the event.</p>
 /// <p>You can configure up to five event selectors for a trail.</p>
 /// <p>You cannot apply both event selectors and advanced event selectors to a trail.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventSelector {
-    /// <p>Specify if you want your trail to log read-only events, write-only events, or all. For example,
-    /// the EC2 <code>GetConsoleOutput</code> is a read-only API operation and
-    /// <code>RunInstances</code> is a write-only API operation.</p>
+    /// <p>Specify if you want your trail to log read-only events, write-only events, or all. For example, the EC2 <code>GetConsoleOutput</code> is a read-only API operation and <code>RunInstances</code> is a write-only API operation.</p>
     /// <p> By default, the value is <code>All</code>.</p>
     pub read_write_type: std::option::Option<crate::model::ReadWriteType>,
     /// <p>Specify if you want your event selector to include management events for your trail.</p>
-    /// <p>
-    /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events">Management Events</a> in the <i>CloudTrail User Guide</i>.</p>
-    ///
+    /// <p> For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events">Management Events</a> in the <i>CloudTrail User Guide</i>.</p>
     /// <p>By default, the value is <code>true</code>.</p>
-    /// <p>The first copy of management events is free. You are charged for additional copies of management
-    /// events that you are logging on any subsequent trail in the same region. For more information about
-    /// CloudTrail pricing, see <a href="http://aws.amazon.com/cloudtrail/pricing/">CloudTrail Pricing</a>.</p>
+    /// <p>The first copy of management events is free. You are charged for additional copies of management events that you are logging on any subsequent trail in the same region. For more information about CloudTrail pricing, see <a href="http://aws.amazon.com/cloudtrail/pricing/">CloudTrail Pricing</a>.</p>
     pub include_management_events: std::option::Option<bool>,
-    /// <p>CloudTrail supports data event logging for Amazon S3 objects, Lambda functions,
-    /// and Amazon DynamoDB tables
-    /// with basic event selectors. You can specify up to 250 resources for an individual event
-    /// selector, but the total number of data resources cannot exceed 250 across all event
-    /// selectors in a trail. This limit does not apply if you configure resource logging for all
-    /// data events.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events">Data Events</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits in CloudTrail</a>
-    /// in the <i>CloudTrail User Guide</i>.</p>
+    /// <p>CloudTrail supports data event logging for Amazon S3 objects, Lambda functions, and Amazon DynamoDB tables with basic event selectors. You can specify up to 250 resources for an individual event selector, but the total number of data resources cannot exceed 250 across all event selectors in a trail. This limit does not apply if you configure resource logging for all data events.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events">Data Events</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits in CloudTrail</a> in the <i>CloudTrail User Guide</i>.</p>
     pub data_resources: std::option::Option<std::vec::Vec<crate::model::DataResource>>,
-    /// <p>An optional list of service event sources from which you do not want management events to be logged on your trail. In this release, the list can be empty (disables the filter),
-    /// or it can filter out Key Management Service or Amazon RDS Data API events by
-    /// containing <code>kms.amazonaws.com</code> or <code>rdsdata.amazonaws.com</code>. By default, <code>ExcludeManagementEventSources</code> is empty, and KMS and
-    /// Amazon RDS Data API events are logged to your trail.</p>
+    /// <p>An optional list of service event sources from which you do not want management events to be logged on your trail. In this release, the list can be empty (disables the filter), or it can filter out Key Management Service or Amazon RDS Data API events by containing <code>kms.amazonaws.com</code> or <code>rdsdata.amazonaws.com</code>. By default, <code>ExcludeManagementEventSources</code> is empty, and KMS and Amazon RDS Data API events are logged to your trail.</p>
     pub exclude_management_event_sources: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl EventSelector {
-    /// <p>Specify if you want your trail to log read-only events, write-only events, or all. For example,
-    /// the EC2 <code>GetConsoleOutput</code> is a read-only API operation and
-    /// <code>RunInstances</code> is a write-only API operation.</p>
+    /// <p>Specify if you want your trail to log read-only events, write-only events, or all. For example, the EC2 <code>GetConsoleOutput</code> is a read-only API operation and <code>RunInstances</code> is a write-only API operation.</p>
     /// <p> By default, the value is <code>All</code>.</p>
     pub fn read_write_type(&self) -> std::option::Option<&crate::model::ReadWriteType> {
         self.read_write_type.as_ref()
     }
     /// <p>Specify if you want your event selector to include management events for your trail.</p>
-    /// <p>
-    /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events">Management Events</a> in the <i>CloudTrail User Guide</i>.</p>
-    ///
+    /// <p> For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events">Management Events</a> in the <i>CloudTrail User Guide</i>.</p>
     /// <p>By default, the value is <code>true</code>.</p>
-    /// <p>The first copy of management events is free. You are charged for additional copies of management
-    /// events that you are logging on any subsequent trail in the same region. For more information about
-    /// CloudTrail pricing, see <a href="http://aws.amazon.com/cloudtrail/pricing/">CloudTrail Pricing</a>.</p>
+    /// <p>The first copy of management events is free. You are charged for additional copies of management events that you are logging on any subsequent trail in the same region. For more information about CloudTrail pricing, see <a href="http://aws.amazon.com/cloudtrail/pricing/">CloudTrail Pricing</a>.</p>
     pub fn include_management_events(&self) -> std::option::Option<bool> {
         self.include_management_events
     }
-    /// <p>CloudTrail supports data event logging for Amazon S3 objects, Lambda functions,
-    /// and Amazon DynamoDB tables
-    /// with basic event selectors. You can specify up to 250 resources for an individual event
-    /// selector, but the total number of data resources cannot exceed 250 across all event
-    /// selectors in a trail. This limit does not apply if you configure resource logging for all
-    /// data events.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events">Data Events</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits in CloudTrail</a>
-    /// in the <i>CloudTrail User Guide</i>.</p>
+    /// <p>CloudTrail supports data event logging for Amazon S3 objects, Lambda functions, and Amazon DynamoDB tables with basic event selectors. You can specify up to 250 resources for an individual event selector, but the total number of data resources cannot exceed 250 across all event selectors in a trail. This limit does not apply if you configure resource logging for all data events.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events">Data Events</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits in CloudTrail</a> in the <i>CloudTrail User Guide</i>.</p>
     pub fn data_resources(&self) -> std::option::Option<&[crate::model::DataResource]> {
         self.data_resources.as_deref()
     }
-    /// <p>An optional list of service event sources from which you do not want management events to be logged on your trail. In this release, the list can be empty (disables the filter),
-    /// or it can filter out Key Management Service or Amazon RDS Data API events by
-    /// containing <code>kms.amazonaws.com</code> or <code>rdsdata.amazonaws.com</code>. By default, <code>ExcludeManagementEventSources</code> is empty, and KMS and
-    /// Amazon RDS Data API events are logged to your trail.</p>
+    /// <p>An optional list of service event sources from which you do not want management events to be logged on your trail. In this release, the list can be empty (disables the filter), or it can filter out Key Management Service or Amazon RDS Data API events by containing <code>kms.amazonaws.com</code> or <code>rdsdata.amazonaws.com</code>. By default, <code>ExcludeManagementEventSources</code> is empty, and KMS and Amazon RDS Data API events are logged to your trail.</p>
     pub fn exclude_management_event_sources(&self) -> std::option::Option<&[std::string::String]> {
         self.exclude_management_event_sources.as_deref()
     }
@@ -1500,17 +1191,13 @@ pub mod event_selector {
             std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>Specify if you want your trail to log read-only events, write-only events, or all. For example,
-        /// the EC2 <code>GetConsoleOutput</code> is a read-only API operation and
-        /// <code>RunInstances</code> is a write-only API operation.</p>
+        /// <p>Specify if you want your trail to log read-only events, write-only events, or all. For example, the EC2 <code>GetConsoleOutput</code> is a read-only API operation and <code>RunInstances</code> is a write-only API operation.</p>
         /// <p> By default, the value is <code>All</code>.</p>
         pub fn read_write_type(mut self, input: crate::model::ReadWriteType) -> Self {
             self.read_write_type = Some(input);
             self
         }
-        /// <p>Specify if you want your trail to log read-only events, write-only events, or all. For example,
-        /// the EC2 <code>GetConsoleOutput</code> is a read-only API operation and
-        /// <code>RunInstances</code> is a write-only API operation.</p>
+        /// <p>Specify if you want your trail to log read-only events, write-only events, or all. For example, the EC2 <code>GetConsoleOutput</code> is a read-only API operation and <code>RunInstances</code> is a write-only API operation.</p>
         /// <p> By default, the value is <code>All</code>.</p>
         pub fn set_read_write_type(
             mut self,
@@ -1520,25 +1207,17 @@ pub mod event_selector {
             self
         }
         /// <p>Specify if you want your event selector to include management events for your trail.</p>
-        /// <p>
-        /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events">Management Events</a> in the <i>CloudTrail User Guide</i>.</p>
-        ///
+        /// <p> For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events">Management Events</a> in the <i>CloudTrail User Guide</i>.</p>
         /// <p>By default, the value is <code>true</code>.</p>
-        /// <p>The first copy of management events is free. You are charged for additional copies of management
-        /// events that you are logging on any subsequent trail in the same region. For more information about
-        /// CloudTrail pricing, see <a href="http://aws.amazon.com/cloudtrail/pricing/">CloudTrail Pricing</a>.</p>
+        /// <p>The first copy of management events is free. You are charged for additional copies of management events that you are logging on any subsequent trail in the same region. For more information about CloudTrail pricing, see <a href="http://aws.amazon.com/cloudtrail/pricing/">CloudTrail Pricing</a>.</p>
         pub fn include_management_events(mut self, input: bool) -> Self {
             self.include_management_events = Some(input);
             self
         }
         /// <p>Specify if you want your event selector to include management events for your trail.</p>
-        /// <p>
-        /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events">Management Events</a> in the <i>CloudTrail User Guide</i>.</p>
-        ///
+        /// <p> For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events">Management Events</a> in the <i>CloudTrail User Guide</i>.</p>
         /// <p>By default, the value is <code>true</code>.</p>
-        /// <p>The first copy of management events is free. You are charged for additional copies of management
-        /// events that you are logging on any subsequent trail in the same region. For more information about
-        /// CloudTrail pricing, see <a href="http://aws.amazon.com/cloudtrail/pricing/">CloudTrail Pricing</a>.</p>
+        /// <p>The first copy of management events is free. You are charged for additional copies of management events that you are logging on any subsequent trail in the same region. For more information about CloudTrail pricing, see <a href="http://aws.amazon.com/cloudtrail/pricing/">CloudTrail Pricing</a>.</p>
         pub fn set_include_management_events(mut self, input: std::option::Option<bool>) -> Self {
             self.include_management_events = input;
             self
@@ -1547,28 +1226,16 @@ pub mod event_selector {
         ///
         /// To override the contents of this collection use [`set_data_resources`](Self::set_data_resources).
         ///
-        /// <p>CloudTrail supports data event logging for Amazon S3 objects, Lambda functions,
-        /// and Amazon DynamoDB tables
-        /// with basic event selectors. You can specify up to 250 resources for an individual event
-        /// selector, but the total number of data resources cannot exceed 250 across all event
-        /// selectors in a trail. This limit does not apply if you configure resource logging for all
-        /// data events.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events">Data Events</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits in CloudTrail</a>
-        /// in the <i>CloudTrail User Guide</i>.</p>
+        /// <p>CloudTrail supports data event logging for Amazon S3 objects, Lambda functions, and Amazon DynamoDB tables with basic event selectors. You can specify up to 250 resources for an individual event selector, but the total number of data resources cannot exceed 250 across all event selectors in a trail. This limit does not apply if you configure resource logging for all data events.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events">Data Events</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits in CloudTrail</a> in the <i>CloudTrail User Guide</i>.</p>
         pub fn data_resources(mut self, input: crate::model::DataResource) -> Self {
             let mut v = self.data_resources.unwrap_or_default();
             v.push(input);
             self.data_resources = Some(v);
             self
         }
-        /// <p>CloudTrail supports data event logging for Amazon S3 objects, Lambda functions,
-        /// and Amazon DynamoDB tables
-        /// with basic event selectors. You can specify up to 250 resources for an individual event
-        /// selector, but the total number of data resources cannot exceed 250 across all event
-        /// selectors in a trail. This limit does not apply if you configure resource logging for all
-        /// data events.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events">Data Events</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits in CloudTrail</a>
-        /// in the <i>CloudTrail User Guide</i>.</p>
+        /// <p>CloudTrail supports data event logging for Amazon S3 objects, Lambda functions, and Amazon DynamoDB tables with basic event selectors. You can specify up to 250 resources for an individual event selector, but the total number of data resources cannot exceed 250 across all event selectors in a trail. This limit does not apply if you configure resource logging for all data events.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events">Data Events</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits in CloudTrail</a> in the <i>CloudTrail User Guide</i>.</p>
         pub fn set_data_resources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DataResource>>,
@@ -1580,10 +1247,7 @@ pub mod event_selector {
         ///
         /// To override the contents of this collection use [`set_exclude_management_event_sources`](Self::set_exclude_management_event_sources).
         ///
-        /// <p>An optional list of service event sources from which you do not want management events to be logged on your trail. In this release, the list can be empty (disables the filter),
-        /// or it can filter out Key Management Service or Amazon RDS Data API events by
-        /// containing <code>kms.amazonaws.com</code> or <code>rdsdata.amazonaws.com</code>. By default, <code>ExcludeManagementEventSources</code> is empty, and KMS and
-        /// Amazon RDS Data API events are logged to your trail.</p>
+        /// <p>An optional list of service event sources from which you do not want management events to be logged on your trail. In this release, the list can be empty (disables the filter), or it can filter out Key Management Service or Amazon RDS Data API events by containing <code>kms.amazonaws.com</code> or <code>rdsdata.amazonaws.com</code>. By default, <code>ExcludeManagementEventSources</code> is empty, and KMS and Amazon RDS Data API events are logged to your trail.</p>
         pub fn exclude_management_event_sources(
             mut self,
             input: impl Into<std::string::String>,
@@ -1593,10 +1257,7 @@ pub mod event_selector {
             self.exclude_management_event_sources = Some(v);
             self
         }
-        /// <p>An optional list of service event sources from which you do not want management events to be logged on your trail. In this release, the list can be empty (disables the filter),
-        /// or it can filter out Key Management Service or Amazon RDS Data API events by
-        /// containing <code>kms.amazonaws.com</code> or <code>rdsdata.amazonaws.com</code>. By default, <code>ExcludeManagementEventSources</code> is empty, and KMS and
-        /// Amazon RDS Data API events are logged to your trail.</p>
+        /// <p>An optional list of service event sources from which you do not want management events to be logged on your trail. In this release, the list can be empty (disables the filter), or it can filter out Key Management Service or Amazon RDS Data API events by containing <code>kms.amazonaws.com</code> or <code>rdsdata.amazonaws.com</code>. By default, <code>ExcludeManagementEventSources</code> is empty, and KMS and Amazon RDS Data API events are logged to your trail.</p>
         pub fn set_exclude_management_event_sources(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1622,261 +1283,92 @@ impl EventSelector {
     }
 }
 
-/// <p>The Amazon S3 buckets, Lambda functions, or Amazon DynamoDB tables that you specify
-/// in your event selectors for your trail to log data events. Data events provide information
-/// about the resource operations performed on or within a resource itself. These are also
-/// known as data plane operations. You can specify up to 250 data resources for a
-/// trail.</p>
-/// <note>
-/// <p>The total number of allowed data resources is 250. This number can be distributed between 1 and 5 event selectors,
-/// but the total cannot exceed 250 across all selectors.</p>
-/// <p>If you are using advanced event selectors, the maximum total number of values for
-/// all conditions, across all advanced event selectors for the trail, is 500.</p>
+/// <p>The Amazon S3 buckets, Lambda functions, or Amazon DynamoDB tables that you specify in your event selectors for your trail to log data events. Data events provide information about the resource operations performed on or within a resource itself. These are also known as data plane operations. You can specify up to 250 data resources for a trail.</p> <note>
+/// <p>The total number of allowed data resources is 250. This number can be distributed between 1 and 5 event selectors, but the total cannot exceed 250 across all selectors.</p>
+/// <p>If you are using advanced event selectors, the maximum total number of values for all conditions, across all advanced event selectors for the trail, is 500.</p>
 /// </note>
-/// <p>The following example demonstrates how logging works when you configure logging of all data events
-/// for an S3 bucket named <code>bucket-1</code>. In this example, the CloudTrail user specified an empty prefix,
-/// and the option to log both <code>Read</code> and <code>Write</code> data events.</p>
+/// <p>The following example demonstrates how logging works when you configure logging of all data events for an S3 bucket named <code>bucket-1</code>. In this example, the CloudTrail user specified an empty prefix, and the option to log both <code>Read</code> and <code>Write</code> data events.</p>
 /// <ol>
-/// <li>
-/// <p>A user uploads an image file to <code>bucket-1</code>.</p>
-/// </li>
-/// <li>
-/// <p>The <code>PutObject</code> API operation is an Amazon S3 object-level API.
-/// It is recorded as a data event in CloudTrail. Because the CloudTrail user specified an S3 bucket
-/// with an empty prefix, events that occur on any object in that bucket are logged. The trail processes and logs the
-/// event.</p>
-/// </li>
-/// <li>
-/// <p>A user uploads an object to an Amazon S3 bucket named
-/// <code>arn:aws:s3:::bucket-2</code>.</p>
-/// </li>
-/// <li>
-/// <p>The <code>PutObject</code> API operation occurred for an object in an S3 bucket that the CloudTrail
-/// user didn't specify for the trail. The trail doesn’t log the event.</p>
-/// </li>
+/// <li> <p>A user uploads an image file to <code>bucket-1</code>.</p> </li>
+/// <li> <p>The <code>PutObject</code> API operation is an Amazon S3 object-level API. It is recorded as a data event in CloudTrail. Because the CloudTrail user specified an S3 bucket with an empty prefix, events that occur on any object in that bucket are logged. The trail processes and logs the event.</p> </li>
+/// <li> <p>A user uploads an object to an Amazon S3 bucket named <code>arn:aws:s3:::bucket-2</code>.</p> </li>
+/// <li> <p>The <code>PutObject</code> API operation occurred for an object in an S3 bucket that the CloudTrail user didn't specify for the trail. The trail doesn’t log the event.</p> </li>
 /// </ol>
-/// <p>The following example demonstrates how logging works when you configure logging of Lambda data events for a
-/// Lambda function named <i>MyLambdaFunction</i>, but not for all Lambda functions.</p>
+/// <p>The following example demonstrates how logging works when you configure logging of Lambda data events for a Lambda function named <i>MyLambdaFunction</i>, but not for all Lambda functions.</p>
 /// <ol>
-/// <li>
-/// <p>A user runs a script that includes a call to the <i>MyLambdaFunction</i> function and the
-/// <i>MyOtherLambdaFunction</i> function.</p>
-/// </li>
-/// <li>
-/// <p>The <code>Invoke</code> API operation on <i>MyLambdaFunction</i> is an Lambda API.
-/// It is recorded as a data event in CloudTrail. Because the CloudTrail user specified logging data events for
-/// <i>MyLambdaFunction</i>, any invocations of that function are logged. The trail processes and logs the event.</p>
-/// </li>
-/// <li>
-/// <p>The <code>Invoke</code> API operation on <i>MyOtherLambdaFunction</i> is an Lambda API.
-/// Because the CloudTrail user did not specify logging data events for all Lambda functions,
-/// the <code>Invoke</code> operation for <i>MyOtherLambdaFunction</i> does not match the function specified for the trail.
-/// The trail doesn’t log the event. </p>
-/// </li>
+/// <li> <p>A user runs a script that includes a call to the <i>MyLambdaFunction</i> function and the <i>MyOtherLambdaFunction</i> function.</p> </li>
+/// <li> <p>The <code>Invoke</code> API operation on <i>MyLambdaFunction</i> is an Lambda API. It is recorded as a data event in CloudTrail. Because the CloudTrail user specified logging data events for <i>MyLambdaFunction</i>, any invocations of that function are logged. The trail processes and logs the event.</p> </li>
+/// <li> <p>The <code>Invoke</code> API operation on <i>MyOtherLambdaFunction</i> is an Lambda API. Because the CloudTrail user did not specify logging data events for all Lambda functions, the <code>Invoke</code> operation for <i>MyOtherLambdaFunction</i> does not match the function specified for the trail. The trail doesn’t log the event. </p> </li>
 /// </ol>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataResource {
-    /// <p>The resource type in which you want to log data events. You can specify
-    /// the following <i>basic</i> event selector resource types:</p>
+    /// <p>The resource type in which you want to log data events. You can specify the following <i>basic</i> event selector resource types:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>AWS::S3::Object</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AWS::Lambda::Function</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AWS::DynamoDB::Table</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>AWS::S3::Object</code> </p> </li>
+    /// <li> <p> <code>AWS::Lambda::Function</code> </p> </li>
+    /// <li> <p> <code>AWS::DynamoDB::Table</code> </p> </li>
     /// </ul>
-    /// <p>The following resource types are also availble through <i>advanced</i> event selectors.
-    /// Basic event selector resource types are valid in advanced event selectors, but
-    /// advanced event selector resource types are not valid in basic event selectors.
-    /// For more information, see <a>AdvancedFieldSelector$Field</a>.</p>
+    /// <p>The following resource types are also availble through <i>advanced</i> event selectors. Basic event selector resource types are valid in advanced event selectors, but advanced event selector resource types are not valid in basic event selectors. For more information, see <code>AdvancedFieldSelector$Field</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>AWS::S3Outposts::Object</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AWS::ManagedBlockchain::Node</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AWS::S3ObjectLambda::AccessPoint</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AWS::EC2::Snapshot</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AWS::S3::AccessPoint</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AWS::DynamoDB::Stream</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>AWS::S3Outposts::Object</code> </p> </li>
+    /// <li> <p> <code>AWS::ManagedBlockchain::Node</code> </p> </li>
+    /// <li> <p> <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li>
+    /// <li> <p> <code>AWS::EC2::Snapshot</code> </p> </li>
+    /// <li> <p> <code>AWS::S3::AccessPoint</code> </p> </li>
+    /// <li> <p> <code>AWS::DynamoDB::Stream</code> </p> </li>
     /// </ul>
     pub r#type: std::option::Option<std::string::String>,
     /// <p>An array of Amazon Resource Name (ARN) strings or partial ARN strings for the specified objects.</p>
     /// <ul>
-    /// <li>
-    /// <p>To log data events for all objects in all S3 buckets in your Amazon Web Services account, specify the
-    /// prefix as <code>arn:aws:s3:::</code>.</p>
-    /// <note>
-    /// <p>This also enables logging of data event activity performed by any user or role in your Amazon Web Services account,
-    /// even if that activity is performed on a bucket that belongs to another Amazon Web Services account.</p>
-    /// </note>
-    /// </li>
-    /// <li>
-    /// <p>To log data events for all objects in an S3 bucket, specify the bucket and an empty
-    /// object prefix such as <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for
-    /// all objects in this S3 bucket.</p>
-    /// </li>
-    /// <li>
-    /// <p>To log data events for specific objects, specify the S3 bucket and object prefix such
-    /// as <code>arn:aws:s3:::bucket-1/example-images</code>. The trail logs data events for
-    /// objects in this S3 bucket that match the prefix.</p>
-    /// </li>
-    /// <li>
-    /// <p>To log data events for all Lambda functions in your Amazon Web Services account, specify the prefix as
-    /// <code>arn:aws:lambda</code>.</p>
-    /// <note>
-    /// <p>This also enables logging of <code>Invoke</code> activity performed by any user or role in your Amazon Web Services account,
-    /// even if that activity is performed on a function that belongs to another Amazon Web Services account. </p>
-    /// </note>
-    /// </li>
-    /// <li>
-    /// <p>To log data events for a specific Lambda function, specify the function ARN.</p>
-    /// <note>
-    /// <p>Lambda function ARNs are exact. For example, if you specify a
-    /// function ARN <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>, data events will
-    /// only be logged for <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>. They will
-    /// not be logged for <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld2</i>.</p>
-    /// </note>
-    /// </li>
-    /// <li>
-    /// <p>To log data events for all DynamoDB tables in your Amazon Web Services account, specify the prefix
-    /// as <code>arn:aws:dynamodb</code>.</p>
-    /// </li>
+    /// <li> <p>To log data events for all objects in all S3 buckets in your Amazon Web Services account, specify the prefix as <code>arn:aws:s3:::</code>.</p> <note>
+    /// <p>This also enables logging of data event activity performed by any user or role in your Amazon Web Services account, even if that activity is performed on a bucket that belongs to another Amazon Web Services account.</p>
+    /// </note> </li>
+    /// <li> <p>To log data events for all objects in an S3 bucket, specify the bucket and an empty object prefix such as <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for all objects in this S3 bucket.</p> </li>
+    /// <li> <p>To log data events for specific objects, specify the S3 bucket and object prefix such as <code>arn:aws:s3:::bucket-1/example-images</code>. The trail logs data events for objects in this S3 bucket that match the prefix.</p> </li>
+    /// <li> <p>To log data events for all Lambda functions in your Amazon Web Services account, specify the prefix as <code>arn:aws:lambda</code>.</p> <note>
+    /// <p>This also enables logging of <code>Invoke</code> activity performed by any user or role in your Amazon Web Services account, even if that activity is performed on a function that belongs to another Amazon Web Services account. </p>
+    /// </note> </li>
+    /// <li> <p>To log data events for a specific Lambda function, specify the function ARN.</p> <note>
+    /// <p>Lambda function ARNs are exact. For example, if you specify a function ARN <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>, data events will only be logged for <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>. They will not be logged for <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld2</i>.</p>
+    /// </note> </li>
+    /// <li> <p>To log data events for all DynamoDB tables in your Amazon Web Services account, specify the prefix as <code>arn:aws:dynamodb</code>.</p> </li>
     /// </ul>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DataResource {
-    /// <p>The resource type in which you want to log data events. You can specify
-    /// the following <i>basic</i> event selector resource types:</p>
+    /// <p>The resource type in which you want to log data events. You can specify the following <i>basic</i> event selector resource types:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>AWS::S3::Object</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AWS::Lambda::Function</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AWS::DynamoDB::Table</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>AWS::S3::Object</code> </p> </li>
+    /// <li> <p> <code>AWS::Lambda::Function</code> </p> </li>
+    /// <li> <p> <code>AWS::DynamoDB::Table</code> </p> </li>
     /// </ul>
-    /// <p>The following resource types are also availble through <i>advanced</i> event selectors.
-    /// Basic event selector resource types are valid in advanced event selectors, but
-    /// advanced event selector resource types are not valid in basic event selectors.
-    /// For more information, see <a>AdvancedFieldSelector$Field</a>.</p>
+    /// <p>The following resource types are also availble through <i>advanced</i> event selectors. Basic event selector resource types are valid in advanced event selectors, but advanced event selector resource types are not valid in basic event selectors. For more information, see <code>AdvancedFieldSelector$Field</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>AWS::S3Outposts::Object</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AWS::ManagedBlockchain::Node</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AWS::S3ObjectLambda::AccessPoint</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AWS::EC2::Snapshot</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AWS::S3::AccessPoint</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>AWS::DynamoDB::Stream</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>AWS::S3Outposts::Object</code> </p> </li>
+    /// <li> <p> <code>AWS::ManagedBlockchain::Node</code> </p> </li>
+    /// <li> <p> <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li>
+    /// <li> <p> <code>AWS::EC2::Snapshot</code> </p> </li>
+    /// <li> <p> <code>AWS::S3::AccessPoint</code> </p> </li>
+    /// <li> <p> <code>AWS::DynamoDB::Stream</code> </p> </li>
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
     /// <p>An array of Amazon Resource Name (ARN) strings or partial ARN strings for the specified objects.</p>
     /// <ul>
-    /// <li>
-    /// <p>To log data events for all objects in all S3 buckets in your Amazon Web Services account, specify the
-    /// prefix as <code>arn:aws:s3:::</code>.</p>
-    /// <note>
-    /// <p>This also enables logging of data event activity performed by any user or role in your Amazon Web Services account,
-    /// even if that activity is performed on a bucket that belongs to another Amazon Web Services account.</p>
-    /// </note>
-    /// </li>
-    /// <li>
-    /// <p>To log data events for all objects in an S3 bucket, specify the bucket and an empty
-    /// object prefix such as <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for
-    /// all objects in this S3 bucket.</p>
-    /// </li>
-    /// <li>
-    /// <p>To log data events for specific objects, specify the S3 bucket and object prefix such
-    /// as <code>arn:aws:s3:::bucket-1/example-images</code>. The trail logs data events for
-    /// objects in this S3 bucket that match the prefix.</p>
-    /// </li>
-    /// <li>
-    /// <p>To log data events for all Lambda functions in your Amazon Web Services account, specify the prefix as
-    /// <code>arn:aws:lambda</code>.</p>
-    /// <note>
-    /// <p>This also enables logging of <code>Invoke</code> activity performed by any user or role in your Amazon Web Services account,
-    /// even if that activity is performed on a function that belongs to another Amazon Web Services account. </p>
-    /// </note>
-    /// </li>
-    /// <li>
-    /// <p>To log data events for a specific Lambda function, specify the function ARN.</p>
-    /// <note>
-    /// <p>Lambda function ARNs are exact. For example, if you specify a
-    /// function ARN <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>, data events will
-    /// only be logged for <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>. They will
-    /// not be logged for <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld2</i>.</p>
-    /// </note>
-    /// </li>
-    /// <li>
-    /// <p>To log data events for all DynamoDB tables in your Amazon Web Services account, specify the prefix
-    /// as <code>arn:aws:dynamodb</code>.</p>
-    /// </li>
+    /// <li> <p>To log data events for all objects in all S3 buckets in your Amazon Web Services account, specify the prefix as <code>arn:aws:s3:::</code>.</p> <note>
+    /// <p>This also enables logging of data event activity performed by any user or role in your Amazon Web Services account, even if that activity is performed on a bucket that belongs to another Amazon Web Services account.</p>
+    /// </note> </li>
+    /// <li> <p>To log data events for all objects in an S3 bucket, specify the bucket and an empty object prefix such as <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for all objects in this S3 bucket.</p> </li>
+    /// <li> <p>To log data events for specific objects, specify the S3 bucket and object prefix such as <code>arn:aws:s3:::bucket-1/example-images</code>. The trail logs data events for objects in this S3 bucket that match the prefix.</p> </li>
+    /// <li> <p>To log data events for all Lambda functions in your Amazon Web Services account, specify the prefix as <code>arn:aws:lambda</code>.</p> <note>
+    /// <p>This also enables logging of <code>Invoke</code> activity performed by any user or role in your Amazon Web Services account, even if that activity is performed on a function that belongs to another Amazon Web Services account. </p>
+    /// </note> </li>
+    /// <li> <p>To log data events for a specific Lambda function, specify the function ARN.</p> <note>
+    /// <p>Lambda function ARNs are exact. For example, if you specify a function ARN <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>, data events will only be logged for <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>. They will not be logged for <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld2</i>.</p>
+    /// </note> </li>
+    /// <li> <p>To log data events for all DynamoDB tables in your Amazon Web Services account, specify the prefix as <code>arn:aws:dynamodb</code>.</p> </li>
     /// </ul>
     pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
@@ -1900,119 +1392,39 @@ pub mod data_resource {
         pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The resource type in which you want to log data events. You can specify
-        /// the following <i>basic</i> event selector resource types:</p>
+        /// <p>The resource type in which you want to log data events. You can specify the following <i>basic</i> event selector resource types:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AWS::S3::Object</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AWS::Lambda::Function</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AWS::DynamoDB::Table</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>AWS::S3::Object</code> </p> </li>
+        /// <li> <p> <code>AWS::Lambda::Function</code> </p> </li>
+        /// <li> <p> <code>AWS::DynamoDB::Table</code> </p> </li>
         /// </ul>
-        /// <p>The following resource types are also availble through <i>advanced</i> event selectors.
-        /// Basic event selector resource types are valid in advanced event selectors, but
-        /// advanced event selector resource types are not valid in basic event selectors.
-        /// For more information, see <a>AdvancedFieldSelector$Field</a>.</p>
+        /// <p>The following resource types are also availble through <i>advanced</i> event selectors. Basic event selector resource types are valid in advanced event selectors, but advanced event selector resource types are not valid in basic event selectors. For more information, see <code>AdvancedFieldSelector$Field</code>.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AWS::S3Outposts::Object</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AWS::ManagedBlockchain::Node</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AWS::S3ObjectLambda::AccessPoint</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AWS::EC2::Snapshot</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AWS::S3::AccessPoint</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AWS::DynamoDB::Stream</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>AWS::S3Outposts::Object</code> </p> </li>
+        /// <li> <p> <code>AWS::ManagedBlockchain::Node</code> </p> </li>
+        /// <li> <p> <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li>
+        /// <li> <p> <code>AWS::EC2::Snapshot</code> </p> </li>
+        /// <li> <p> <code>AWS::S3::AccessPoint</code> </p> </li>
+        /// <li> <p> <code>AWS::DynamoDB::Stream</code> </p> </li>
         /// </ul>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.r#type = Some(input.into());
             self
         }
-        /// <p>The resource type in which you want to log data events. You can specify
-        /// the following <i>basic</i> event selector resource types:</p>
+        /// <p>The resource type in which you want to log data events. You can specify the following <i>basic</i> event selector resource types:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AWS::S3::Object</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AWS::Lambda::Function</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AWS::DynamoDB::Table</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>AWS::S3::Object</code> </p> </li>
+        /// <li> <p> <code>AWS::Lambda::Function</code> </p> </li>
+        /// <li> <p> <code>AWS::DynamoDB::Table</code> </p> </li>
         /// </ul>
-        /// <p>The following resource types are also availble through <i>advanced</i> event selectors.
-        /// Basic event selector resource types are valid in advanced event selectors, but
-        /// advanced event selector resource types are not valid in basic event selectors.
-        /// For more information, see <a>AdvancedFieldSelector$Field</a>.</p>
+        /// <p>The following resource types are also availble through <i>advanced</i> event selectors. Basic event selector resource types are valid in advanced event selectors, but advanced event selector resource types are not valid in basic event selectors. For more information, see <code>AdvancedFieldSelector$Field</code>.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>AWS::S3Outposts::Object</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AWS::ManagedBlockchain::Node</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AWS::S3ObjectLambda::AccessPoint</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AWS::EC2::Snapshot</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AWS::S3::AccessPoint</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AWS::DynamoDB::Stream</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>AWS::S3Outposts::Object</code> </p> </li>
+        /// <li> <p> <code>AWS::ManagedBlockchain::Node</code> </p> </li>
+        /// <li> <p> <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li>
+        /// <li> <p> <code>AWS::EC2::Snapshot</code> </p> </li>
+        /// <li> <p> <code>AWS::S3::AccessPoint</code> </p> </li>
+        /// <li> <p> <code>AWS::DynamoDB::Stream</code> </p> </li>
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
@@ -2024,45 +1436,18 @@ pub mod data_resource {
         ///
         /// <p>An array of Amazon Resource Name (ARN) strings or partial ARN strings for the specified objects.</p>
         /// <ul>
-        /// <li>
-        /// <p>To log data events for all objects in all S3 buckets in your Amazon Web Services account, specify the
-        /// prefix as <code>arn:aws:s3:::</code>.</p>
-        /// <note>
-        /// <p>This also enables logging of data event activity performed by any user or role in your Amazon Web Services account,
-        /// even if that activity is performed on a bucket that belongs to another Amazon Web Services account.</p>
-        /// </note>
-        /// </li>
-        /// <li>
-        /// <p>To log data events for all objects in an S3 bucket, specify the bucket and an empty
-        /// object prefix such as <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for
-        /// all objects in this S3 bucket.</p>
-        /// </li>
-        /// <li>
-        /// <p>To log data events for specific objects, specify the S3 bucket and object prefix such
-        /// as <code>arn:aws:s3:::bucket-1/example-images</code>. The trail logs data events for
-        /// objects in this S3 bucket that match the prefix.</p>
-        /// </li>
-        /// <li>
-        /// <p>To log data events for all Lambda functions in your Amazon Web Services account, specify the prefix as
-        /// <code>arn:aws:lambda</code>.</p>
-        /// <note>
-        /// <p>This also enables logging of <code>Invoke</code> activity performed by any user or role in your Amazon Web Services account,
-        /// even if that activity is performed on a function that belongs to another Amazon Web Services account. </p>
-        /// </note>
-        /// </li>
-        /// <li>
-        /// <p>To log data events for a specific Lambda function, specify the function ARN.</p>
-        /// <note>
-        /// <p>Lambda function ARNs are exact. For example, if you specify a
-        /// function ARN <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>, data events will
-        /// only be logged for <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>. They will
-        /// not be logged for <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld2</i>.</p>
-        /// </note>
-        /// </li>
-        /// <li>
-        /// <p>To log data events for all DynamoDB tables in your Amazon Web Services account, specify the prefix
-        /// as <code>arn:aws:dynamodb</code>.</p>
-        /// </li>
+        /// <li> <p>To log data events for all objects in all S3 buckets in your Amazon Web Services account, specify the prefix as <code>arn:aws:s3:::</code>.</p> <note>
+        /// <p>This also enables logging of data event activity performed by any user or role in your Amazon Web Services account, even if that activity is performed on a bucket that belongs to another Amazon Web Services account.</p>
+        /// </note> </li>
+        /// <li> <p>To log data events for all objects in an S3 bucket, specify the bucket and an empty object prefix such as <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for all objects in this S3 bucket.</p> </li>
+        /// <li> <p>To log data events for specific objects, specify the S3 bucket and object prefix such as <code>arn:aws:s3:::bucket-1/example-images</code>. The trail logs data events for objects in this S3 bucket that match the prefix.</p> </li>
+        /// <li> <p>To log data events for all Lambda functions in your Amazon Web Services account, specify the prefix as <code>arn:aws:lambda</code>.</p> <note>
+        /// <p>This also enables logging of <code>Invoke</code> activity performed by any user or role in your Amazon Web Services account, even if that activity is performed on a function that belongs to another Amazon Web Services account. </p>
+        /// </note> </li>
+        /// <li> <p>To log data events for a specific Lambda function, specify the function ARN.</p> <note>
+        /// <p>Lambda function ARNs are exact. For example, if you specify a function ARN <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>, data events will only be logged for <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>. They will not be logged for <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld2</i>.</p>
+        /// </note> </li>
+        /// <li> <p>To log data events for all DynamoDB tables in your Amazon Web Services account, specify the prefix as <code>arn:aws:dynamodb</code>.</p> </li>
         /// </ul>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
@@ -2072,45 +1457,18 @@ pub mod data_resource {
         }
         /// <p>An array of Amazon Resource Name (ARN) strings or partial ARN strings for the specified objects.</p>
         /// <ul>
-        /// <li>
-        /// <p>To log data events for all objects in all S3 buckets in your Amazon Web Services account, specify the
-        /// prefix as <code>arn:aws:s3:::</code>.</p>
-        /// <note>
-        /// <p>This also enables logging of data event activity performed by any user or role in your Amazon Web Services account,
-        /// even if that activity is performed on a bucket that belongs to another Amazon Web Services account.</p>
-        /// </note>
-        /// </li>
-        /// <li>
-        /// <p>To log data events for all objects in an S3 bucket, specify the bucket and an empty
-        /// object prefix such as <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for
-        /// all objects in this S3 bucket.</p>
-        /// </li>
-        /// <li>
-        /// <p>To log data events for specific objects, specify the S3 bucket and object prefix such
-        /// as <code>arn:aws:s3:::bucket-1/example-images</code>. The trail logs data events for
-        /// objects in this S3 bucket that match the prefix.</p>
-        /// </li>
-        /// <li>
-        /// <p>To log data events for all Lambda functions in your Amazon Web Services account, specify the prefix as
-        /// <code>arn:aws:lambda</code>.</p>
-        /// <note>
-        /// <p>This also enables logging of <code>Invoke</code> activity performed by any user or role in your Amazon Web Services account,
-        /// even if that activity is performed on a function that belongs to another Amazon Web Services account. </p>
-        /// </note>
-        /// </li>
-        /// <li>
-        /// <p>To log data events for a specific Lambda function, specify the function ARN.</p>
-        /// <note>
-        /// <p>Lambda function ARNs are exact. For example, if you specify a
-        /// function ARN <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>, data events will
-        /// only be logged for <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>. They will
-        /// not be logged for <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld2</i>.</p>
-        /// </note>
-        /// </li>
-        /// <li>
-        /// <p>To log data events for all DynamoDB tables in your Amazon Web Services account, specify the prefix
-        /// as <code>arn:aws:dynamodb</code>.</p>
-        /// </li>
+        /// <li> <p>To log data events for all objects in all S3 buckets in your Amazon Web Services account, specify the prefix as <code>arn:aws:s3:::</code>.</p> <note>
+        /// <p>This also enables logging of data event activity performed by any user or role in your Amazon Web Services account, even if that activity is performed on a bucket that belongs to another Amazon Web Services account.</p>
+        /// </note> </li>
+        /// <li> <p>To log data events for all objects in an S3 bucket, specify the bucket and an empty object prefix such as <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for all objects in this S3 bucket.</p> </li>
+        /// <li> <p>To log data events for specific objects, specify the S3 bucket and object prefix such as <code>arn:aws:s3:::bucket-1/example-images</code>. The trail logs data events for objects in this S3 bucket that match the prefix.</p> </li>
+        /// <li> <p>To log data events for all Lambda functions in your Amazon Web Services account, specify the prefix as <code>arn:aws:lambda</code>.</p> <note>
+        /// <p>This also enables logging of <code>Invoke</code> activity performed by any user or role in your Amazon Web Services account, even if that activity is performed on a function that belongs to another Amazon Web Services account. </p>
+        /// </note> </li>
+        /// <li> <p>To log data events for a specific Lambda function, specify the function ARN.</p> <note>
+        /// <p>Lambda function ARNs are exact. For example, if you specify a function ARN <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>, data events will only be logged for <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>. They will not be logged for <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld2</i>.</p>
+        /// </note> </li>
+        /// <li> <p>To log data events for all DynamoDB tables in your Amazon Web Services account, specify the prefix as <code>arn:aws:dynamodb</code>.</p> </li>
         /// </ul>
         pub fn set_values(
             mut self,
@@ -2204,8 +1562,7 @@ pub struct Event {
     pub event_name: std::option::Option<std::string::String>,
     /// <p>Information about whether the event is a write event or a read event. </p>
     pub read_only: std::option::Option<std::string::String>,
-    /// <p>The Amazon Web Services access key ID that was used to sign the request. If the request was made
-    /// with temporary security credentials, this is the access key ID of the temporary credentials.</p>
+    /// <p>The Amazon Web Services access key ID that was used to sign the request. If the request was made with temporary security credentials, this is the access key ID of the temporary credentials.</p>
     pub access_key_id: std::option::Option<std::string::String>,
     /// <p>The date and time of the event returned.</p>
     pub event_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -2231,8 +1588,7 @@ impl Event {
     pub fn read_only(&self) -> std::option::Option<&str> {
         self.read_only.as_deref()
     }
-    /// <p>The Amazon Web Services access key ID that was used to sign the request. If the request was made
-    /// with temporary security credentials, this is the access key ID of the temporary credentials.</p>
+    /// <p>The Amazon Web Services access key ID that was used to sign the request. If the request was made with temporary security credentials, this is the access key ID of the temporary credentials.</p>
     pub fn access_key_id(&self) -> std::option::Option<&str> {
         self.access_key_id.as_deref()
     }
@@ -2319,14 +1675,12 @@ pub mod event {
             self.read_only = input;
             self
         }
-        /// <p>The Amazon Web Services access key ID that was used to sign the request. If the request was made
-        /// with temporary security credentials, this is the access key ID of the temporary credentials.</p>
+        /// <p>The Amazon Web Services access key ID that was used to sign the request. If the request was made with temporary security credentials, this is the access key ID of the temporary credentials.</p>
         pub fn access_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.access_key_id = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services access key ID that was used to sign the request. If the request was made
-        /// with temporary security credentials, this is the access key ID of the temporary credentials.</p>
+        /// <p>The Amazon Web Services access key ID that was used to sign the request. If the request was made with temporary security credentials, this is the access key ID of the temporary credentials.</p>
         pub fn set_access_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2426,19 +1780,13 @@ impl Event {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Resource {
-    /// <p>The type of a resource referenced by the event returned. When the resource type cannot be
-    /// determined, null is returned. Some examples of resource types are: <b>Instance</b> for EC2,
-    /// <b>Trail</b> for CloudTrail, <b>DBInstance</b> for Amazon RDS, and <b>AccessKey</b> for IAM.
-    /// To learn more about how to look up and filter events by the resource types supported for a service, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/view-cloudtrail-events-console.html#filtering-cloudtrail-events">Filtering CloudTrail Events</a>.</p>
+    /// <p>The type of a resource referenced by the event returned. When the resource type cannot be determined, null is returned. Some examples of resource types are: <b>Instance</b> for EC2, <b>Trail</b> for CloudTrail, <b>DBInstance</b> for Amazon RDS, and <b>AccessKey</b> for IAM. To learn more about how to look up and filter events by the resource types supported for a service, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/view-cloudtrail-events-console.html#filtering-cloudtrail-events">Filtering CloudTrail Events</a>.</p>
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The name of the resource referenced by the event returned. These are user-created names whose values will depend on the environment. For example, the resource name might be "auto-scaling-test-group" for an Auto Scaling Group or "i-1234567" for an EC2 Instance.</p>
     pub resource_name: std::option::Option<std::string::String>,
 }
 impl Resource {
-    /// <p>The type of a resource referenced by the event returned. When the resource type cannot be
-    /// determined, null is returned. Some examples of resource types are: <b>Instance</b> for EC2,
-    /// <b>Trail</b> for CloudTrail, <b>DBInstance</b> for Amazon RDS, and <b>AccessKey</b> for IAM.
-    /// To learn more about how to look up and filter events by the resource types supported for a service, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/view-cloudtrail-events-console.html#filtering-cloudtrail-events">Filtering CloudTrail Events</a>.</p>
+    /// <p>The type of a resource referenced by the event returned. When the resource type cannot be determined, null is returned. Some examples of resource types are: <b>Instance</b> for EC2, <b>Trail</b> for CloudTrail, <b>DBInstance</b> for Amazon RDS, and <b>AccessKey</b> for IAM. To learn more about how to look up and filter events by the resource types supported for a service, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/view-cloudtrail-events-console.html#filtering-cloudtrail-events">Filtering CloudTrail Events</a>.</p>
     pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
     }
@@ -2465,18 +1813,12 @@ pub mod resource {
         pub(crate) resource_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The type of a resource referenced by the event returned. When the resource type cannot be
-        /// determined, null is returned. Some examples of resource types are: <b>Instance</b> for EC2,
-        /// <b>Trail</b> for CloudTrail, <b>DBInstance</b> for Amazon RDS, and <b>AccessKey</b> for IAM.
-        /// To learn more about how to look up and filter events by the resource types supported for a service, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/view-cloudtrail-events-console.html#filtering-cloudtrail-events">Filtering CloudTrail Events</a>.</p>
+        /// <p>The type of a resource referenced by the event returned. When the resource type cannot be determined, null is returned. Some examples of resource types are: <b>Instance</b> for EC2, <b>Trail</b> for CloudTrail, <b>DBInstance</b> for Amazon RDS, and <b>AccessKey</b> for IAM. To learn more about how to look up and filter events by the resource types supported for a service, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/view-cloudtrail-events-console.html#filtering-cloudtrail-events">Filtering CloudTrail Events</a>.</p>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_type = Some(input.into());
             self
         }
-        /// <p>The type of a resource referenced by the event returned. When the resource type cannot be
-        /// determined, null is returned. Some examples of resource types are: <b>Instance</b> for EC2,
-        /// <b>Trail</b> for CloudTrail, <b>DBInstance</b> for Amazon RDS, and <b>AccessKey</b> for IAM.
-        /// To learn more about how to look up and filter events by the resource types supported for a service, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/view-cloudtrail-events-console.html#filtering-cloudtrail-events">Filtering CloudTrail Events</a>.</p>
+        /// <p>The type of a resource referenced by the event returned. When the resource type cannot be determined, null is returned. Some examples of resource types are: <b>Instance</b> for EC2, <b>Trail</b> for CloudTrail, <b>DBInstance</b> for Amazon RDS, and <b>AccessKey</b> for IAM. To learn more about how to look up and filter events by the resource types supported for a service, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/view-cloudtrail-events-console.html#filtering-cloudtrail-events">Filtering CloudTrail Events</a>.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3026,34 +2368,25 @@ impl PublicKey {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Trail {
-    /// <p>Name of the trail set by calling <a>CreateTrail</a>. The maximum length is 128
-    /// characters.</p>
+    /// <p>Name of the trail set by calling <code>CreateTrail</code>. The maximum length is 128 characters.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>Name of the Amazon S3 bucket into which CloudTrail delivers your trail files. See <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon S3 Bucket Naming Requirements</a>.</p>
     pub s3_bucket_name: std::option::Option<std::string::String>,
-    /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated
-    /// for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>.
-    /// The maximum length is 200 characters.</p>
+    /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
     pub s3_key_prefix: std::option::Option<std::string::String>,
     /// <p>This field is no longer in use. Use SnsTopicARN.</p>
     pub sns_topic_name: std::option::Option<std::string::String>,
-    /// <p>Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send notifications
-    /// when log files are delivered. The following is the format of a topic ARN.</p>
-    /// <p>
-    /// <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code>
-    /// </p>
+    /// <p>Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send notifications when log files are delivered. The following is the format of a topic ARN.</p>
+    /// <p> <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code> </p>
     pub sns_topic_arn: std::option::Option<std::string::String>,
-    /// <p>Set to <b>True</b> to include Amazon Web Services API calls from Amazon Web Services global services such as IAM.
-    /// Otherwise, <b>False</b>.</p>
+    /// <p>Set to <b>True</b> to include Amazon Web Services API calls from Amazon Web Services global services such as IAM. Otherwise, <b>False</b>.</p>
     pub include_global_service_events: std::option::Option<bool>,
     /// <p>Specifies whether the trail exists only in one region or exists in all regions.</p>
     pub is_multi_region_trail: std::option::Option<bool>,
     /// <p>The region in which the trail was created.</p>
     pub home_region: std::option::Option<std::string::String>,
     /// <p>Specifies the ARN of the trail. The following is the format of a trail ARN.</p>
-    /// <p>
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-    /// </p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     pub trail_arn: std::option::Option<std::string::String>,
     /// <p>Specifies whether log file validation is enabled.</p>
     pub log_file_validation_enabled: std::option::Option<bool>,
@@ -3061,11 +2394,8 @@ pub struct Trail {
     pub cloud_watch_logs_log_group_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group.</p>
     pub cloud_watch_logs_role_arn: std::option::Option<std::string::String>,
-    /// <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail.
-    /// The value is a fully specified ARN to a KMS key in the following format.</p>
-    /// <p>
-    /// <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
-    /// </p>
+    /// <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>
+    /// <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>Specifies if the trail has custom event selectors.</p>
     pub has_custom_event_selectors: std::option::Option<bool>,
@@ -3075,8 +2405,7 @@ pub struct Trail {
     pub is_organization_trail: std::option::Option<bool>,
 }
 impl Trail {
-    /// <p>Name of the trail set by calling <a>CreateTrail</a>. The maximum length is 128
-    /// characters.</p>
+    /// <p>Name of the trail set by calling <code>CreateTrail</code>. The maximum length is 128 characters.</p>
     pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -3084,9 +2413,7 @@ impl Trail {
     pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
         self.s3_bucket_name.as_deref()
     }
-    /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated
-    /// for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>.
-    /// The maximum length is 200 characters.</p>
+    /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
     pub fn s3_key_prefix(&self) -> std::option::Option<&str> {
         self.s3_key_prefix.as_deref()
     }
@@ -3094,16 +2421,12 @@ impl Trail {
     pub fn sns_topic_name(&self) -> std::option::Option<&str> {
         self.sns_topic_name.as_deref()
     }
-    /// <p>Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send notifications
-    /// when log files are delivered. The following is the format of a topic ARN.</p>
-    /// <p>
-    /// <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code>
-    /// </p>
+    /// <p>Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send notifications when log files are delivered. The following is the format of a topic ARN.</p>
+    /// <p> <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code> </p>
     pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
         self.sns_topic_arn.as_deref()
     }
-    /// <p>Set to <b>True</b> to include Amazon Web Services API calls from Amazon Web Services global services such as IAM.
-    /// Otherwise, <b>False</b>.</p>
+    /// <p>Set to <b>True</b> to include Amazon Web Services API calls from Amazon Web Services global services such as IAM. Otherwise, <b>False</b>.</p>
     pub fn include_global_service_events(&self) -> std::option::Option<bool> {
         self.include_global_service_events
     }
@@ -3116,9 +2439,7 @@ impl Trail {
         self.home_region.as_deref()
     }
     /// <p>Specifies the ARN of the trail. The following is the format of a trail ARN.</p>
-    /// <p>
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-    /// </p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     pub fn trail_arn(&self) -> std::option::Option<&str> {
         self.trail_arn.as_deref()
     }
@@ -3134,11 +2455,8 @@ impl Trail {
     pub fn cloud_watch_logs_role_arn(&self) -> std::option::Option<&str> {
         self.cloud_watch_logs_role_arn.as_deref()
     }
-    /// <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail.
-    /// The value is a fully specified ARN to a KMS key in the following format.</p>
-    /// <p>
-    /// <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
-    /// </p>
+    /// <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>
+    /// <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
@@ -3213,14 +2531,12 @@ pub mod trail {
         pub(crate) is_organization_trail: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>Name of the trail set by calling <a>CreateTrail</a>. The maximum length is 128
-        /// characters.</p>
+        /// <p>Name of the trail set by calling <code>CreateTrail</code>. The maximum length is 128 characters.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>Name of the trail set by calling <a>CreateTrail</a>. The maximum length is 128
-        /// characters.</p>
+        /// <p>Name of the trail set by calling <code>CreateTrail</code>. The maximum length is 128 characters.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3238,16 +2554,12 @@ pub mod trail {
             self.s3_bucket_name = input;
             self
         }
-        /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated
-        /// for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>.
-        /// The maximum length is 200 characters.</p>
+        /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
         pub fn s3_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_key_prefix = Some(input.into());
             self
         }
-        /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated
-        /// for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>.
-        /// The maximum length is 200 characters.</p>
+        /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
         pub fn set_s3_key_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3268,20 +2580,14 @@ pub mod trail {
             self.sns_topic_name = input;
             self
         }
-        /// <p>Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send notifications
-        /// when log files are delivered. The following is the format of a topic ARN.</p>
-        /// <p>
-        /// <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code>
-        /// </p>
+        /// <p>Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send notifications when log files are delivered. The following is the format of a topic ARN.</p>
+        /// <p> <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code> </p>
         pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.sns_topic_arn = Some(input.into());
             self
         }
-        /// <p>Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send notifications
-        /// when log files are delivered. The following is the format of a topic ARN.</p>
-        /// <p>
-        /// <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code>
-        /// </p>
+        /// <p>Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send notifications when log files are delivered. The following is the format of a topic ARN.</p>
+        /// <p> <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code> </p>
         pub fn set_sns_topic_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3289,14 +2595,12 @@ pub mod trail {
             self.sns_topic_arn = input;
             self
         }
-        /// <p>Set to <b>True</b> to include Amazon Web Services API calls from Amazon Web Services global services such as IAM.
-        /// Otherwise, <b>False</b>.</p>
+        /// <p>Set to <b>True</b> to include Amazon Web Services API calls from Amazon Web Services global services such as IAM. Otherwise, <b>False</b>.</p>
         pub fn include_global_service_events(mut self, input: bool) -> Self {
             self.include_global_service_events = Some(input);
             self
         }
-        /// <p>Set to <b>True</b> to include Amazon Web Services API calls from Amazon Web Services global services such as IAM.
-        /// Otherwise, <b>False</b>.</p>
+        /// <p>Set to <b>True</b> to include Amazon Web Services API calls from Amazon Web Services global services such as IAM. Otherwise, <b>False</b>.</p>
         pub fn set_include_global_service_events(
             mut self,
             input: std::option::Option<bool>,
@@ -3325,17 +2629,13 @@ pub mod trail {
             self
         }
         /// <p>Specifies the ARN of the trail. The following is the format of a trail ARN.</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn trail_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.trail_arn = Some(input.into());
             self
         }
         /// <p>Specifies the ARN of the trail. The following is the format of a trail ARN.</p>
-        /// <p>
-        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// </p>
+        /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
         pub fn set_trail_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.trail_arn = input;
             self
@@ -3379,20 +2679,14 @@ pub mod trail {
             self.cloud_watch_logs_role_arn = input;
             self
         }
-        /// <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail.
-        /// The value is a fully specified ARN to a KMS key in the following format.</p>
-        /// <p>
-        /// <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
-        /// </p>
+        /// <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>
+        /// <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail.
-        /// The value is a fully specified ARN to a KMS key in the following format.</p>
-        /// <p>
-        /// <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
-        /// </p>
+        /// <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>
+        /// <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self

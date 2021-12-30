@@ -709,8 +709,7 @@ pub enum DeleteBudgetActionErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>We can’t locate the resource that you specified.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p> The request was received and recognized by the server, but the server rejected that
-    /// particular method for the requested resource. </p>
+    /// <p> The request was received and recognized by the server, but the server rejected that particular method for the requested resource. </p>
     ResourceLockedException(crate::error::ResourceLockedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2438,8 +2437,7 @@ pub enum ExecuteBudgetActionErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>We can’t locate the resource that you specified.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p> The request was received and recognized by the server, but the server rejected that
-    /// particular method for the requested resource. </p>
+    /// <p> The request was received and recognized by the server, but the server rejected that particular method for the requested resource. </p>
     ResourceLockedException(crate::error::ResourceLockedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2693,8 +2691,7 @@ pub enum UpdateBudgetActionErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>We can’t locate the resource that you specified.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p> The request was received and recognized by the server, but the server rejected that
-    /// particular method for the requested resource. </p>
+    /// <p> The request was received and recognized by the server, but the server rejected that particular method for the requested resource. </p>
     ResourceLockedException(crate::error::ResourceLockedException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3401,8 +3398,7 @@ impl AccessDeniedException {
     }
 }
 
-/// <p> The request was received and recognized by the server, but the server rejected that
-/// particular method for the requested resource. </p>
+/// <p> The request was received and recognized by the server, but the server rejected that particular method for the requested resource. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceLockedException {

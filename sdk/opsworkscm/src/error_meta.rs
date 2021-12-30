@@ -3,23 +3,17 @@
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum Error {
-    /// <p>This occurs when the provided nextToken is not valid.
-    /// </p>
+    /// <p>This occurs when the provided nextToken is not valid. </p>
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
-    /// <p>The resource is in a state that does not allow you to perform a specified action.
-    /// </p>
+    /// <p>The resource is in a state that does not allow you to perform a specified action. </p>
     InvalidStateException(crate::error::InvalidStateException),
-    /// <p>The limit of servers or backups has been reached.
-    /// </p>
+    /// <p>The limit of servers or backups has been reached. </p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The requested resource cannot be created because it already exists.
-    /// </p>
+    /// <p>The requested resource cannot be created because it already exists. </p>
     ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
-    /// <p>The requested resource does not exist, or access was denied.
-    /// </p>
+    /// <p>The requested resource does not exist, or access was denied. </p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>One or more of the provided request parameters are not valid.
-    /// </p>
+    /// <p>One or more of the provided request parameters are not valid. </p>
     ValidationException(crate::error::ValidationException),
     /// An unhandled error occurred.
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),

@@ -186,14 +186,24 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The path (including the file name) where the object is stored in the container.
-        /// Format: <folder name>/<folder name>/<file name></p>
+        /// <p>The path (including the file name) where the object is stored in the container. Format: <folder name>
+        /// /
+        /// <folder name>
+        /// /
+        /// <file name></file>
+        /// </folder>
+        /// </folder></p>
         pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.path(input.into());
             self
         }
-        /// <p>The path (including the file name) where the object is stored in the container.
-        /// Format: <folder name>/<folder name>/<file name></p>
+        /// <p>The path (including the file name) where the object is stored in the container. Format: <folder name>
+        /// /
+        /// <folder name>
+        /// /
+        /// <file name></file>
+        /// </folder>
+        /// </folder></p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_path(input);
             self
@@ -258,14 +268,24 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The path (including the file name) where the object is stored in the container.
-        /// Format: <folder name>/<folder name>/<file name></p>
+        /// <p>The path (including the file name) where the object is stored in the container. Format: <folder name>
+        /// /
+        /// <folder name>
+        /// /
+        /// <file name></file>
+        /// </folder>
+        /// </folder></p>
         pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.path(input.into());
             self
         }
-        /// <p>The path (including the file name) where the object is stored in the container.
-        /// Format: <folder name>/<folder name>/<file name></p>
+        /// <p>The path (including the file name) where the object is stored in the container. Format: <folder name>
+        /// /
+        /// <folder name>
+        /// /
+        /// <file name></file>
+        /// </folder>
+        /// </folder></p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_path(input);
             self
@@ -330,58 +350,46 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The path (including the file name) where the object is stored in the container.
-        /// Format: <folder name>/<folder name>/<file name></p>
-        /// <p>For example, to upload the file <code>mlaw.avi</code> to the folder path
-        /// <code>premium\canada</code> in the container <code>movies</code>, enter the path
-        /// <code>premium/canada/mlaw.avi</code>.</p>
+        /// <p>The path (including the file name) where the object is stored in the container. Format: <folder name>
+        /// /
+        /// <folder name>
+        /// /
+        /// <file name></file>
+        /// </folder>
+        /// </folder></p>
+        /// <p>For example, to upload the file <code>mlaw.avi</code> to the folder path <code>premium\canada</code> in the container <code>movies</code>, enter the path <code>premium/canada/mlaw.avi</code>.</p>
         /// <p>Do not include the container name in this path.</p>
-        /// <p>If the path includes any folders that don't exist yet, the service creates them. For
-        /// example, suppose you have an existing <code>premium/usa</code> subfolder. If you specify
-        /// <code>premium/canada</code>, the service creates a <code>canada</code> subfolder in the
-        /// <code>premium</code> folder. You then have two subfolders, <code>usa</code> and
-        /// <code>canada</code>, in the <code>premium</code> folder. </p>
-        /// <p>There is no correlation between the path to the source and the path (folders) in the
-        /// container in AWS Elemental MediaStore.</p>
-        /// <p>For more information about folders and how they exist in a container, see the <a href="http://docs.aws.amazon.com/mediastore/latest/ug/">AWS Elemental MediaStore User
-        /// Guide</a>.</p>
-        /// <p>The file name is the name that is assigned to the file that you upload. The file can
-        /// have the same name inside and outside of AWS Elemental MediaStore, or it can have the same
-        /// name. The file name can include or omit an extension. </p>
+        /// <p>If the path includes any folders that don't exist yet, the service creates them. For example, suppose you have an existing <code>premium/usa</code> subfolder. If you specify <code>premium/canada</code>, the service creates a <code>canada</code> subfolder in the <code>premium</code> folder. You then have two subfolders, <code>usa</code> and <code>canada</code>, in the <code>premium</code> folder. </p>
+        /// <p>There is no correlation between the path to the source and the path (folders) in the container in AWS Elemental MediaStore.</p>
+        /// <p>For more information about folders and how they exist in a container, see the <a href="http://docs.aws.amazon.com/mediastore/latest/ug/">AWS Elemental MediaStore User Guide</a>.</p>
+        /// <p>The file name is the name that is assigned to the file that you upload. The file can have the same name inside and outside of AWS Elemental MediaStore, or it can have the same name. The file name can include or omit an extension. </p>
         pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.path(input.into());
             self
         }
-        /// <p>The path (including the file name) where the object is stored in the container.
-        /// Format: <folder name>/<folder name>/<file name></p>
-        /// <p>For example, to upload the file <code>mlaw.avi</code> to the folder path
-        /// <code>premium\canada</code> in the container <code>movies</code>, enter the path
-        /// <code>premium/canada/mlaw.avi</code>.</p>
+        /// <p>The path (including the file name) where the object is stored in the container. Format: <folder name>
+        /// /
+        /// <folder name>
+        /// /
+        /// <file name></file>
+        /// </folder>
+        /// </folder></p>
+        /// <p>For example, to upload the file <code>mlaw.avi</code> to the folder path <code>premium\canada</code> in the container <code>movies</code>, enter the path <code>premium/canada/mlaw.avi</code>.</p>
         /// <p>Do not include the container name in this path.</p>
-        /// <p>If the path includes any folders that don't exist yet, the service creates them. For
-        /// example, suppose you have an existing <code>premium/usa</code> subfolder. If you specify
-        /// <code>premium/canada</code>, the service creates a <code>canada</code> subfolder in the
-        /// <code>premium</code> folder. You then have two subfolders, <code>usa</code> and
-        /// <code>canada</code>, in the <code>premium</code> folder. </p>
-        /// <p>There is no correlation between the path to the source and the path (folders) in the
-        /// container in AWS Elemental MediaStore.</p>
-        /// <p>For more information about folders and how they exist in a container, see the <a href="http://docs.aws.amazon.com/mediastore/latest/ug/">AWS Elemental MediaStore User
-        /// Guide</a>.</p>
-        /// <p>The file name is the name that is assigned to the file that you upload. The file can
-        /// have the same name inside and outside of AWS Elemental MediaStore, or it can have the same
-        /// name. The file name can include or omit an extension. </p>
+        /// <p>If the path includes any folders that don't exist yet, the service creates them. For example, suppose you have an existing <code>premium/usa</code> subfolder. If you specify <code>premium/canada</code>, the service creates a <code>canada</code> subfolder in the <code>premium</code> folder. You then have two subfolders, <code>usa</code> and <code>canada</code>, in the <code>premium</code> folder. </p>
+        /// <p>There is no correlation between the path to the source and the path (folders) in the container in AWS Elemental MediaStore.</p>
+        /// <p>For more information about folders and how they exist in a container, see the <a href="http://docs.aws.amazon.com/mediastore/latest/ug/">AWS Elemental MediaStore User Guide</a>.</p>
+        /// <p>The file name is the name that is assigned to the file that you upload. The file can have the same name inside and outside of AWS Elemental MediaStore, or it can have the same name. The file name can include or omit an extension. </p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_path(input);
             self
         }
-        /// <p>The range bytes of an object to retrieve. For more information about the
-        /// <code>Range</code> header, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>. AWS Elemental MediaStore ignores this header for partially uploaded objects that have streaming upload availability.</p>
+        /// <p>The range bytes of an object to retrieve. For more information about the <code>Range</code> header, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>. AWS Elemental MediaStore ignores this header for partially uploaded objects that have streaming upload availability.</p>
         pub fn range(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.range(input.into());
             self
         }
-        /// <p>The range bytes of an object to retrieve. For more information about the
-        /// <code>Range</code> header, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>. AWS Elemental MediaStore ignores this header for partially uploaded objects that have streaming upload availability.</p>
+        /// <p>The range bytes of an object to retrieve. For more information about the <code>Range</code> header, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>. AWS Elemental MediaStore ignores this header for partially uploaded objects that have streaming upload availability.</p>
         pub fn set_range(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_range(input);
             self
@@ -389,8 +397,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListItems`.
     ///
-    /// <p>Provides a list of metadata entries about folders and objects in the specified
-    /// folder.</p>
+    /// <p>Provides a list of metadata entries about folders and objects in the specified folder.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListItems<
         C = aws_smithy_client::erase::DynConnector,
@@ -447,57 +454,47 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The path in the container from which to retrieve items. Format: <folder
-        /// name>/<folder name>/<file name></p>
+        /// <p>The path in the container from which to retrieve items. Format: <folder name>
+        /// /
+        /// <folder name>
+        /// /
+        /// <file name></file>
+        /// </folder>
+        /// </folder></p>
         pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.path(input.into());
             self
         }
-        /// <p>The path in the container from which to retrieve items. Format: <folder
-        /// name>/<folder name>/<file name></p>
+        /// <p>The path in the container from which to retrieve items. Format: <folder name>
+        /// /
+        /// <folder name>
+        /// /
+        /// <file name></file>
+        /// </folder>
+        /// </folder></p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_path(input);
             self
         }
-        /// <p>The maximum number of results to return per API request. For example, you submit a
-        /// <code>ListItems</code> request with <code>MaxResults</code> set at 500. Although 2,000
-        /// items match your request, the service returns no more than the first 500 items. (The
-        /// service also returns a <code>NextToken</code> value that you can use to fetch the next
-        /// batch of results.) The service might return fewer results than the <code>MaxResults</code>
-        /// value.</p>
-        /// <p>If <code>MaxResults</code> is not included in the request, the service defaults to
-        /// pagination with a maximum of 1,000 results per page.</p>
+        /// <p>The maximum number of results to return per API request. For example, you submit a <code>ListItems</code> request with <code>MaxResults</code> set at 500. Although 2,000 items match your request, the service returns no more than the first 500 items. (The service also returns a <code>NextToken</code> value that you can use to fetch the next batch of results.) The service might return fewer results than the <code>MaxResults</code> value.</p>
+        /// <p>If <code>MaxResults</code> is not included in the request, the service defaults to pagination with a maximum of 1,000 results per page.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of results to return per API request. For example, you submit a
-        /// <code>ListItems</code> request with <code>MaxResults</code> set at 500. Although 2,000
-        /// items match your request, the service returns no more than the first 500 items. (The
-        /// service also returns a <code>NextToken</code> value that you can use to fetch the next
-        /// batch of results.) The service might return fewer results than the <code>MaxResults</code>
-        /// value.</p>
-        /// <p>If <code>MaxResults</code> is not included in the request, the service defaults to
-        /// pagination with a maximum of 1,000 results per page.</p>
+        /// <p>The maximum number of results to return per API request. For example, you submit a <code>ListItems</code> request with <code>MaxResults</code> set at 500. Although 2,000 items match your request, the service returns no more than the first 500 items. (The service also returns a <code>NextToken</code> value that you can use to fetch the next batch of results.) The service might return fewer results than the <code>MaxResults</code> value.</p>
+        /// <p>If <code>MaxResults</code> is not included in the request, the service defaults to pagination with a maximum of 1,000 results per page.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token that identifies which batch of results that you want to see. For example,
-        /// you submit a <code>ListItems</code> request with <code>MaxResults</code> set at 500. The
-        /// service returns the first batch of results (up to 500) and a <code>NextToken</code> value.
-        /// To see the next batch of results, you can submit the <code>ListItems</code> request a
-        /// second time and specify the <code>NextToken</code> value.</p>
+        /// <p>The token that identifies which batch of results that you want to see. For example, you submit a <code>ListItems</code> request with <code>MaxResults</code> set at 500. The service returns the first batch of results (up to 500) and a <code>NextToken</code> value. To see the next batch of results, you can submit the <code>ListItems</code> request a second time and specify the <code>NextToken</code> value.</p>
         /// <p>Tokens expire after 15 minutes.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token that identifies which batch of results that you want to see. For example,
-        /// you submit a <code>ListItems</code> request with <code>MaxResults</code> set at 500. The
-        /// service returns the first batch of results (up to 500) and a <code>NextToken</code> value.
-        /// To see the next batch of results, you can submit the <code>ListItems</code> request a
-        /// second time and specify the <code>NextToken</code> value.</p>
+        /// <p>The token that identifies which batch of results that you want to see. For example, you submit a <code>ListItems</code> request with <code>MaxResults</code> set at 500. The service returns the first batch of results (up to 500) and a <code>NextToken</code> value. To see the next batch of results, you can submit the <code>ListItems</code> request a second time and specify the <code>NextToken</code> value.</p>
         /// <p>Tokens expire after 15 minutes.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
@@ -576,46 +573,36 @@ pub mod fluent_builders {
             self.inner = self.inner.set_body(input);
             self
         }
-        /// <p>The path (including the file name) where the object is stored in the container.
-        /// Format: <folder name>/<folder name>/<file name></p>
-        /// <p>For example, to upload the file <code>mlaw.avi</code> to the folder path
-        /// <code>premium\canada</code> in the container <code>movies</code>, enter the path
-        /// <code>premium/canada/mlaw.avi</code>.</p>
+        /// <p>The path (including the file name) where the object is stored in the container. Format: <folder name>
+        /// /
+        /// <folder name>
+        /// /
+        /// <file name></file>
+        /// </folder>
+        /// </folder></p>
+        /// <p>For example, to upload the file <code>mlaw.avi</code> to the folder path <code>premium\canada</code> in the container <code>movies</code>, enter the path <code>premium/canada/mlaw.avi</code>.</p>
         /// <p>Do not include the container name in this path.</p>
-        /// <p>If the path includes any folders that don't exist yet, the service creates them. For
-        /// example, suppose you have an existing <code>premium/usa</code> subfolder. If you specify
-        /// <code>premium/canada</code>, the service creates a <code>canada</code> subfolder in the
-        /// <code>premium</code> folder. You then have two subfolders, <code>usa</code> and
-        /// <code>canada</code>, in the <code>premium</code> folder. </p>
-        /// <p>There is no correlation between the path to the source and the path (folders) in the
-        /// container in AWS Elemental MediaStore.</p>
-        /// <p>For more information about folders and how they exist in a container, see the <a href="http://docs.aws.amazon.com/mediastore/latest/ug/">AWS Elemental MediaStore User
-        /// Guide</a>.</p>
-        /// <p>The file name is the name that is assigned to the file that you upload. The file can
-        /// have the same name inside and outside of AWS Elemental MediaStore, or it can have the same
-        /// name. The file name can include or omit an extension. </p>
+        /// <p>If the path includes any folders that don't exist yet, the service creates them. For example, suppose you have an existing <code>premium/usa</code> subfolder. If you specify <code>premium/canada</code>, the service creates a <code>canada</code> subfolder in the <code>premium</code> folder. You then have two subfolders, <code>usa</code> and <code>canada</code>, in the <code>premium</code> folder. </p>
+        /// <p>There is no correlation between the path to the source and the path (folders) in the container in AWS Elemental MediaStore.</p>
+        /// <p>For more information about folders and how they exist in a container, see the <a href="http://docs.aws.amazon.com/mediastore/latest/ug/">AWS Elemental MediaStore User Guide</a>.</p>
+        /// <p>The file name is the name that is assigned to the file that you upload. The file can have the same name inside and outside of AWS Elemental MediaStore, or it can have the same name. The file name can include or omit an extension. </p>
         pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.path(input.into());
             self
         }
-        /// <p>The path (including the file name) where the object is stored in the container.
-        /// Format: <folder name>/<folder name>/<file name></p>
-        /// <p>For example, to upload the file <code>mlaw.avi</code> to the folder path
-        /// <code>premium\canada</code> in the container <code>movies</code>, enter the path
-        /// <code>premium/canada/mlaw.avi</code>.</p>
+        /// <p>The path (including the file name) where the object is stored in the container. Format: <folder name>
+        /// /
+        /// <folder name>
+        /// /
+        /// <file name></file>
+        /// </folder>
+        /// </folder></p>
+        /// <p>For example, to upload the file <code>mlaw.avi</code> to the folder path <code>premium\canada</code> in the container <code>movies</code>, enter the path <code>premium/canada/mlaw.avi</code>.</p>
         /// <p>Do not include the container name in this path.</p>
-        /// <p>If the path includes any folders that don't exist yet, the service creates them. For
-        /// example, suppose you have an existing <code>premium/usa</code> subfolder. If you specify
-        /// <code>premium/canada</code>, the service creates a <code>canada</code> subfolder in the
-        /// <code>premium</code> folder. You then have two subfolders, <code>usa</code> and
-        /// <code>canada</code>, in the <code>premium</code> folder. </p>
-        /// <p>There is no correlation between the path to the source and the path (folders) in the
-        /// container in AWS Elemental MediaStore.</p>
-        /// <p>For more information about folders and how they exist in a container, see the <a href="http://docs.aws.amazon.com/mediastore/latest/ug/">AWS Elemental MediaStore User
-        /// Guide</a>.</p>
-        /// <p>The file name is the name that is assigned to the file that you upload. The file can
-        /// have the same name inside and outside of AWS Elemental MediaStore, or it can have the same
-        /// name. The file name can include or omit an extension. </p>
+        /// <p>If the path includes any folders that don't exist yet, the service creates them. For example, suppose you have an existing <code>premium/usa</code> subfolder. If you specify <code>premium/canada</code>, the service creates a <code>canada</code> subfolder in the <code>premium</code> folder. You then have two subfolders, <code>usa</code> and <code>canada</code>, in the <code>premium</code> folder. </p>
+        /// <p>There is no correlation between the path to the source and the path (folders) in the container in AWS Elemental MediaStore.</p>
+        /// <p>For more information about folders and how they exist in a container, see the <a href="http://docs.aws.amazon.com/mediastore/latest/ug/">AWS Elemental MediaStore User Guide</a>.</p>
+        /// <p>The file name is the name that is assigned to the file that you upload. The file can have the same name inside and outside of AWS Elemental MediaStore, or it can have the same name. The file name can include or omit an extension. </p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_path(input);
             self
@@ -630,15 +617,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_content_type(input);
             self
         }
-        /// <p>An optional <code>CacheControl</code> header that allows the caller to control the
-        /// object's cache behavior. Headers can be passed in as specified in the HTTP at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
+        /// <p>An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
         /// <p>Headers with a custom user-defined value are also accepted.</p>
         pub fn cache_control(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.cache_control(input.into());
             self
         }
-        /// <p>An optional <code>CacheControl</code> header that allows the caller to control the
-        /// object's cache behavior. Headers can be passed in as specified in the HTTP at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
+        /// <p>An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
         /// <p>Headers with a custom user-defined value are also accepted.</p>
         pub fn set_cache_control(
             mut self,
@@ -647,16 +632,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_cache_control(input);
             self
         }
-        /// <p>Indicates the storage class of a <code>Put</code> request. Defaults to
-        /// high-performance temporal storage class, and objects are persisted into durable storage
-        /// shortly after being received.</p>
+        /// <p>Indicates the storage class of a <code>Put</code> request. Defaults to high-performance temporal storage class, and objects are persisted into durable storage shortly after being received.</p>
         pub fn storage_class(mut self, input: crate::model::StorageClass) -> Self {
             self.inner = self.inner.storage_class(input);
             self
         }
-        /// <p>Indicates the storage class of a <code>Put</code> request. Defaults to
-        /// high-performance temporal storage class, and objects are persisted into durable storage
-        /// shortly after being received.</p>
+        /// <p>Indicates the storage class of a <code>Put</code> request. Defaults to high-performance temporal storage class, and objects are persisted into durable storage shortly after being received.</p>
         pub fn set_storage_class(
             mut self,
             input: std::option::Option<crate::model::StorageClass>,
@@ -664,17 +645,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_storage_class(input);
             self
         }
-        /// <p>Indicates the availability of an object while it is still uploading. If the value is set to <code>streaming</code>, the object is available for
-        /// downloading after some initial buffering but before the object is uploaded completely. If the value is set to <code>standard</code>, the object is
-        /// available for downloading only when it is uploaded completely. The default value for this header is <code>standard</code>.</p>
+        /// <p>Indicates the availability of an object while it is still uploading. If the value is set to <code>streaming</code>, the object is available for downloading after some initial buffering but before the object is uploaded completely. If the value is set to <code>standard</code>, the object is available for downloading only when it is uploaded completely. The default value for this header is <code>standard</code>.</p>
         /// <p>To use this header, you must also set the HTTP <code>Transfer-Encoding</code> header to <code>chunked</code>.</p>
         pub fn upload_availability(mut self, input: crate::model::UploadAvailability) -> Self {
             self.inner = self.inner.upload_availability(input);
             self
         }
-        /// <p>Indicates the availability of an object while it is still uploading. If the value is set to <code>streaming</code>, the object is available for
-        /// downloading after some initial buffering but before the object is uploaded completely. If the value is set to <code>standard</code>, the object is
-        /// available for downloading only when it is uploaded completely. The default value for this header is <code>standard</code>.</p>
+        /// <p>Indicates the availability of an object while it is still uploading. If the value is set to <code>streaming</code>, the object is available for downloading after some initial buffering but before the object is uploaded completely. If the value is set to <code>standard</code>, the object is available for downloading only when it is uploaded completely. The default value for this header is <code>standard</code>.</p>
         /// <p>To use this header, you must also set the HTTP <code>Transfer-Encoding</code> header to <code>chunked</code>.</p>
         pub fn set_upload_availability(
             mut self,

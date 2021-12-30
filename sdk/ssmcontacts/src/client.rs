@@ -396,26 +396,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_accept_code(input);
             self
         }
-        /// <p>An optional field that Incident Manager uses to <code>ENFORCE</code>
-        /// <code>AcceptCode</code> validation when acknowledging an page. Acknowledgement can occur by
-        /// replying to a page, or when entering the AcceptCode in the console. Enforcing AcceptCode
-        /// validation causes Incident Manager to verify that the code entered by the user matches the
-        /// code sent by Incident Manager with the page.</p>
-        /// <p>Incident Manager can also <code>IGNORE</code>
-        /// <code>AcceptCode</code> validation. Ignoring <code>AcceptCode</code> validation causes
-        /// Incident Manager to accept any value entered for the <code>AcceptCode</code>.</p>
+        /// <p>An optional field that Incident Manager uses to <code>ENFORCE</code> <code>AcceptCode</code> validation when acknowledging an page. Acknowledgement can occur by replying to a page, or when entering the AcceptCode in the console. Enforcing AcceptCode validation causes Incident Manager to verify that the code entered by the user matches the code sent by Incident Manager with the page.</p>
+        /// <p>Incident Manager can also <code>IGNORE</code> <code>AcceptCode</code> validation. Ignoring <code>AcceptCode</code> validation causes Incident Manager to accept any value entered for the <code>AcceptCode</code>.</p>
         pub fn accept_code_validation(mut self, input: crate::model::AcceptCodeValidation) -> Self {
             self.inner = self.inner.accept_code_validation(input);
             self
         }
-        /// <p>An optional field that Incident Manager uses to <code>ENFORCE</code>
-        /// <code>AcceptCode</code> validation when acknowledging an page. Acknowledgement can occur by
-        /// replying to a page, or when entering the AcceptCode in the console. Enforcing AcceptCode
-        /// validation causes Incident Manager to verify that the code entered by the user matches the
-        /// code sent by Incident Manager with the page.</p>
-        /// <p>Incident Manager can also <code>IGNORE</code>
-        /// <code>AcceptCode</code> validation. Ignoring <code>AcceptCode</code> validation causes
-        /// Incident Manager to accept any value entered for the <code>AcceptCode</code>.</p>
+        /// <p>An optional field that Incident Manager uses to <code>ENFORCE</code> <code>AcceptCode</code> validation when acknowledging an page. Acknowledgement can occur by replying to a page, or when entering the AcceptCode in the console. Enforcing AcceptCode validation causes Incident Manager to verify that the code entered by the user matches the code sent by Incident Manager with the page.</p>
+        /// <p>Incident Manager can also <code>IGNORE</code> <code>AcceptCode</code> validation. Ignoring <code>AcceptCode</code> validation causes Incident Manager to accept any value entered for the <code>AcceptCode</code>.</p>
         pub fn set_accept_code_validation(
             mut self,
             input: std::option::Option<crate::model::AcceptCodeValidation>,
@@ -426,8 +414,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ActivateContactChannel`.
     ///
-    /// <p>Activates a contact's contact channel. Incident Manager can't engage a contact until the
-    /// contact channel has been activated.</p>
+    /// <p>Activates a contact's contact channel. Incident Manager can't engage a contact until the contact channel has been activated.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ActivateContactChannel<
         C = aws_smithy_client::erase::DynConnector,
@@ -513,9 +500,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateContact`.
     ///
-    /// <p>Contacts are either the contacts that Incident Manager engages during an incident or the
-    /// escalation plans that Incident Manager uses to engage contacts in phases during an
-    /// incident. </p>
+    /// <p>Contacts are either the contacts that Incident Manager engages during an incident or the escalation plans that Incident Manager uses to engage contacts in phases during an incident. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateContact<
         C = aws_smithy_client::erase::DynConnector,
@@ -572,48 +557,42 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The short name to quickly identify a contact or escalation plan. The contact alias must
-        /// be unique and identifiable. </p>
+        /// <p>The short name to quickly identify a contact or escalation plan. The contact alias must be unique and identifiable. </p>
         pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.alias(input.into());
             self
         }
-        /// <p>The short name to quickly identify a contact or escalation plan. The contact alias must
-        /// be unique and identifiable. </p>
+        /// <p>The short name to quickly identify a contact or escalation plan. The contact alias must be unique and identifiable. </p>
         pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_alias(input);
             self
         }
-        /// <p>The full name of the contact or escalation plan.  </p>
+        /// <p>The full name of the contact or escalation plan. </p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.display_name(input.into());
             self
         }
-        /// <p>The full name of the contact or escalation plan.  </p>
+        /// <p>The full name of the contact or escalation plan. </p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_display_name(input);
             self
         }
-        /// <p>To create an escalation plan use <code>ESCALATION</code>. To create a contact use
-        /// <code>PERSONAL</code>.</p>
+        /// <p>To create an escalation plan use <code>ESCALATION</code>. To create a contact use <code>PERSONAL</code>.</p>
         pub fn r#type(mut self, input: crate::model::ContactType) -> Self {
             self.inner = self.inner.r#type(input);
             self
         }
-        /// <p>To create an escalation plan use <code>ESCALATION</code>. To create a contact use
-        /// <code>PERSONAL</code>.</p>
+        /// <p>To create an escalation plan use <code>ESCALATION</code>. To create a contact use <code>PERSONAL</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ContactType>) -> Self {
             self.inner = self.inner.set_type(input);
             self
         }
-        /// <p>A list of stages. A contact has an engagement plan with stages that contact specified
-        /// contact channels. An escalation plan uses stages that contact specified contacts. </p>
+        /// <p>A list of stages. A contact has an engagement plan with stages that contact specified contact channels. An escalation plan uses stages that contact specified contacts. </p>
         pub fn plan(mut self, input: crate::model::Plan) -> Self {
             self.inner = self.inner.plan(input);
             self
         }
-        /// <p>A list of stages. A contact has an engagement plan with stages that contact specified
-        /// contact channels. An escalation plan uses stages that contact specified contacts. </p>
+        /// <p>A list of stages. A contact has an engagement plan with stages that contact specified contact channels. An escalation plan uses stages that contact specified contacts. </p>
         pub fn set_plan(mut self, input: std::option::Option<crate::model::Plan>) -> Self {
             self.inner = self.inner.set_plan(input);
             self
@@ -622,14 +601,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Adds a tag to the target. You can only tag resources created in the first Region of your
-        /// replication set. </p>
+        /// <p>Adds a tag to the target. You can only tag resources created in the first Region of your replication set. </p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>Adds a tag to the target. You can only tag resources created in the first Region of your
-        /// replication set. </p>
+        /// <p>Adds a tag to the target. You can only tag resources created in the first Region of your replication set. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -637,14 +614,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>A token ensuring that the operation is called only once with the specified
-        /// details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.idempotency_token(input.into());
             self
         }
-        /// <p>A token ensuring that the operation is called only once with the specified
-        /// details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -734,21 +709,9 @@ pub mod fluent_builders {
         }
         /// <p>Incident Manager supports three types of contact channels:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SMS</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>VOICE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EMAIL</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>SMS</code> </p> </li>
+        /// <li> <p> <code>VOICE</code> </p> </li>
+        /// <li> <p> <code>EMAIL</code> </p> </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::ChannelType) -> Self {
             self.inner = self.inner.r#type(input);
@@ -756,57 +719,29 @@ pub mod fluent_builders {
         }
         /// <p>Incident Manager supports three types of contact channels:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SMS</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>VOICE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EMAIL</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>SMS</code> </p> </li>
+        /// <li> <p> <code>VOICE</code> </p> </li>
+        /// <li> <p> <code>EMAIL</code> </p> </li>
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ChannelType>) -> Self {
             self.inner = self.inner.set_type(input);
             self
         }
-        /// <p>The details that Incident Manager uses when trying to engage the contact channel. The format
-        /// is dependent on the type of the contact channel. The following are the expected
-        /// formats:</p>
+        /// <p>The details that Incident Manager uses when trying to engage the contact channel. The format is dependent on the type of the contact channel. The following are the expected formats:</p>
         /// <ul>
-        /// <li>
-        /// <p>SMS - '+' followed by the country code and phone number</p>
-        /// </li>
-        /// <li>
-        /// <p>VOICE - '+' followed by the country code and phone number</p>
-        /// </li>
-        /// <li>
-        /// <p>EMAIL - any standard email format</p>
-        /// </li>
+        /// <li> <p>SMS - '+' followed by the country code and phone number</p> </li>
+        /// <li> <p>VOICE - '+' followed by the country code and phone number</p> </li>
+        /// <li> <p>EMAIL - any standard email format</p> </li>
         /// </ul>
         pub fn delivery_address(mut self, input: crate::model::ContactChannelAddress) -> Self {
             self.inner = self.inner.delivery_address(input);
             self
         }
-        /// <p>The details that Incident Manager uses when trying to engage the contact channel. The format
-        /// is dependent on the type of the contact channel. The following are the expected
-        /// formats:</p>
+        /// <p>The details that Incident Manager uses when trying to engage the contact channel. The format is dependent on the type of the contact channel. The following are the expected formats:</p>
         /// <ul>
-        /// <li>
-        /// <p>SMS - '+' followed by the country code and phone number</p>
-        /// </li>
-        /// <li>
-        /// <p>VOICE - '+' followed by the country code and phone number</p>
-        /// </li>
-        /// <li>
-        /// <p>EMAIL - any standard email format</p>
-        /// </li>
+        /// <li> <p>SMS - '+' followed by the country code and phone number</p> </li>
+        /// <li> <p>VOICE - '+' followed by the country code and phone number</p> </li>
+        /// <li> <p>EMAIL - any standard email format</p> </li>
         /// </ul>
         pub fn set_delivery_address(
             mut self,
@@ -815,26 +750,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_delivery_address(input);
             self
         }
-        /// <p>If you want to activate the channel at a later time, you can choose to defer activation.
-        /// Incident Manager can't engage your contact channel until it has been activated.</p>
+        /// <p>If you want to activate the channel at a later time, you can choose to defer activation. Incident Manager can't engage your contact channel until it has been activated.</p>
         pub fn defer_activation(mut self, input: bool) -> Self {
             self.inner = self.inner.defer_activation(input);
             self
         }
-        /// <p>If you want to activate the channel at a later time, you can choose to defer activation.
-        /// Incident Manager can't engage your contact channel until it has been activated.</p>
+        /// <p>If you want to activate the channel at a later time, you can choose to defer activation. Incident Manager can't engage your contact channel until it has been activated.</p>
         pub fn set_defer_activation(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_defer_activation(input);
             self
         }
-        /// <p>A token ensuring that the operation is called only once with the specified
-        /// details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.idempotency_token(input.into());
             self
         }
-        /// <p>A token ensuring that the operation is called only once with the specified
-        /// details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -845,8 +776,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeactivateContactChannel`.
     ///
-    /// <p>To no longer receive Incident Manager engagements to a contact channel, you can deactivate
-    /// the channel.</p>
+    /// <p>To no longer receive Incident Manager engagements to a contact channel, you can deactivate the channel.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeactivateContactChannel<
         C = aws_smithy_client::erase::DynConnector,
@@ -919,10 +849,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteContact`.
     ///
-    /// <p>To remove a contact from Incident Manager, you can delete the contact. Deleting a contact
-    /// removes them from all escalation plans and related response plans. Deleting an escalation
-    /// plan removes it from all related response plans. You will have to recreate the contact and
-    /// its contact channels before you can use it again.</p>
+    /// <p>To remove a contact from Incident Manager, you can delete the contact. Deleting a contact removes them from all escalation plans and related response plans. Deleting an escalation plan removes it from all related response plans. You will have to recreate the contact and its contact channels before you can use it again.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteContact<
         C = aws_smithy_client::erase::DynConnector,
@@ -992,10 +919,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteContactChannel`.
     ///
-    /// <p>To no longer receive engagements on a contact channel, you can delete the channel from a
-    /// contact. Deleting the contact channel removes it from the contact's engagement plan. If you
-    /// delete the only contact channel for a contact, you won't be able to engage that contact
-    /// during an incident.</p>
+    /// <p>To no longer receive engagements on a contact channel, you can delete the channel from a contact. Deleting the contact channel removes it from the contact's engagement plan. If you delete the only contact channel for a contact, you won't be able to engage that contact during an incident.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteContactChannel<
         C = aws_smithy_client::erase::DynConnector,
@@ -1068,8 +992,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeEngagement`.
     ///
-    /// <p>Incident Manager uses engagements to engage contacts and escalation plans during an incident.
-    /// Use this command to describe the engagement that occurred during an incident.</p>
+    /// <p>Incident Manager uses engagements to engage contacts and escalation plans during an incident. Use this command to describe the engagement that occurred during an incident.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeEngagement<
         C = aws_smithy_client::erase::DynConnector,
@@ -1355,8 +1278,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetContactPolicy`.
     ///
-    /// <p>Retrieves the resource policies attached to the specified contact or escalation
-    /// plan.</p>
+    /// <p>Retrieves the resource policies attached to the specified contact or escalation plan.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetContactPolicy<
         C = aws_smithy_client::erase::DynConnector,
@@ -1603,14 +1525,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_alias_prefix(input);
             self
         }
-        /// <p>The type of contact. A contact is type <code>PERSONAL</code> and an escalation plan is
-        /// type <code>ESCALATION</code>.</p>
+        /// <p>The type of contact. A contact is type <code>PERSONAL</code> and an escalation plan is type <code>ESCALATION</code>.</p>
         pub fn r#type(mut self, input: crate::model::ContactType) -> Self {
             self.inner = self.inner.r#type(input);
             self
         }
-        /// <p>The type of contact. A contact is type <code>PERSONAL</code> and an escalation plan is
-        /// type <code>ESCALATION</code>.</p>
+        /// <p>The type of contact. A contact is type <code>PERSONAL</code> and an escalation plan is type <code>ESCALATION</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ContactType>) -> Self {
             self.inner = self.inner.set_type(input);
             self
@@ -1981,14 +1901,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of engagements to contact channels to list per page of
-        /// results.</p>
+        /// <p>The maximum number of engagements to contact channels to list per page of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
         }
-        /// <p>The maximum number of engagements to contact channels to list per page of
-        /// results.</p>
+        /// <p>The maximum number of engagements to contact channels to list per page of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
             self
@@ -2146,9 +2064,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SendActivationCode`.
     ///
-    /// <p>Sends an activation code to a contact channel. The contact can use this code to activate
-    /// the contact channel in the console or with the <code>ActivateChannel</code> operation.
-    /// Incident Manager can't engage a contact channel until it has been activated.</p>
+    /// <p>Sends an activation code to a contact channel. The contact can use this code to activate the contact channel in the console or with the <code>ActivateChannel</code> operation. Incident Manager can't engage a contact channel until it has been activated.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendActivationCode<
         C = aws_smithy_client::erase::DynConnector,
@@ -2221,8 +2137,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartEngagement`.
     ///
-    /// <p>Starts an engagement to a contact or escalation plan. The engagement engages each
-    /// contact specified in the incident.</p>
+    /// <p>Starts an engagement to a contact or escalation plan. The engagement engages each contact specified in the incident.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartEngagement<
         C = aws_smithy_client::erase::DynConnector,
@@ -2299,38 +2214,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sender(input);
             self
         }
-        /// <p>The secure subject of the message that was sent to the contact. Use this field for
-        /// engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
+        /// <p>The secure subject of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
         pub fn subject(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.subject(input.into());
             self
         }
-        /// <p>The secure subject of the message that was sent to the contact. Use this field for
-        /// engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
+        /// <p>The secure subject of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
         pub fn set_subject(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_subject(input);
             self
         }
-        /// <p>The secure content of the message that was sent to the contact. Use this field for
-        /// engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
+        /// <p>The secure content of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
         pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.content(input.into());
             self
         }
-        /// <p>The secure content of the message that was sent to the contact. Use this field for
-        /// engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
+        /// <p>The secure content of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_content(input);
             self
         }
-        /// <p>The insecure subject of the message that was sent to the contact. Use this field for
-        /// engagements to <code>SMS</code>.</p>
+        /// <p>The insecure subject of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
         pub fn public_subject(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.public_subject(input.into());
             self
         }
-        /// <p>The insecure subject of the message that was sent to the contact. Use this field for
-        /// engagements to <code>SMS</code>.</p>
+        /// <p>The insecure subject of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
         pub fn set_public_subject(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2338,14 +2247,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_public_subject(input);
             self
         }
-        /// <p>The insecure content of the message that was sent to the contact. Use this field for
-        /// engagements to <code>SMS</code>.</p>
+        /// <p>The insecure content of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
         pub fn public_content(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.public_content(input.into());
             self
         }
-        /// <p>The insecure content of the message that was sent to the contact. Use this field for
-        /// engagements to <code>SMS</code>.</p>
+        /// <p>The insecure content of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
         pub fn set_public_content(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2363,14 +2270,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_incident_id(input);
             self
         }
-        /// <p>A token ensuring that the operation is called only once with the specified
-        /// details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.idempotency_token(input.into());
             self
         }
-        /// <p>A token ensuring that the operation is called only once with the specified
-        /// details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2381,8 +2286,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StopEngagement`.
     ///
-    /// <p>Stops an engagement before it finishes the final stage of the escalation plan or
-    /// engagement plan. Further contacts aren't engaged.</p>
+    /// <p>Stops an engagement before it finishes the final stage of the escalation plan or engagement plan. Further contacts aren't engaged.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopEngagement<
         C = aws_smithy_client::erase::DynConnector,
@@ -2465,8 +2369,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Tags a contact or escalation plan. You can tag only contacts and escalation plans in the
-    /// first region of your replication set. </p>
+    /// <p>Tags a contact or escalation plan. You can tag only contacts and escalation plans in the first region of your replication set. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -2717,14 +2620,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_display_name(input);
             self
         }
-        /// <p>A list of stages. A contact has an engagement plan with stages for specified contact
-        /// channels. An escalation plan uses these stages to contact specified contacts. </p>
+        /// <p>A list of stages. A contact has an engagement plan with stages for specified contact channels. An escalation plan uses these stages to contact specified contacts. </p>
         pub fn plan(mut self, input: crate::model::Plan) -> Self {
             self.inner = self.inner.plan(input);
             self
         }
-        /// <p>A list of stages. A contact has an engagement plan with stages for specified contact
-        /// channels. An escalation plan uses these stages to contact specified contacts. </p>
+        /// <p>A list of stages. A contact has an engagement plan with stages for specified contact channels. An escalation plan uses these stages to contact specified contacts. </p>
         pub fn set_plan(mut self, input: std::option::Option<crate::model::Plan>) -> Self {
             self.inner = self.inner.set_plan(input);
             self

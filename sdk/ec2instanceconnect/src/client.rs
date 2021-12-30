@@ -110,10 +110,7 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `SendSerialConsoleSSHPublicKey`.
     ///
-    /// <p>Pushes an SSH public key to the specified EC2 instance. The key remains for 60
-    /// seconds, which gives you 60 seconds to establish a serial console connection to the
-    /// instance using SSH. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-serial-console.html">EC2 Serial Console</a> in
-    /// the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>Pushes an SSH public key to the specified EC2 instance. The key remains for 60 seconds, which gives you 60 seconds to establish a serial console connection to the instance using SSH. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-serial-console.html">EC2 Serial Console</a> in the <i>Amazon EC2 User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendSerialConsoleSSHPublicKey<
         C = aws_smithy_client::erase::DynConnector,
@@ -192,16 +189,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_serial_port(input);
             self
         }
-        /// <p>The public key material. To use the public key, you must have the matching private
-        /// key. For information about the supported key formats and lengths, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#how-to-generate-your-own-key-and-import-it-to-aws">Requirements for key pairs</a> in the <i>Amazon EC2 User
-        /// Guide</i>.</p>
+        /// <p>The public key material. To use the public key, you must have the matching private key. For information about the supported key formats and lengths, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#how-to-generate-your-own-key-and-import-it-to-aws">Requirements for key pairs</a> in the <i>Amazon EC2 User Guide</i>.</p>
         pub fn ssh_public_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.ssh_public_key(input.into());
             self
         }
-        /// <p>The public key material. To use the public key, you must have the matching private
-        /// key. For information about the supported key formats and lengths, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#how-to-generate-your-own-key-and-import-it-to-aws">Requirements for key pairs</a> in the <i>Amazon EC2 User
-        /// Guide</i>.</p>
+        /// <p>The public key material. To use the public key, you must have the matching private key. For information about the supported key formats and lengths, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#how-to-generate-your-own-key-and-import-it-to-aws">Requirements for key pairs</a> in the <i>Amazon EC2 User Guide</i>.</p>
         pub fn set_ssh_public_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -212,10 +205,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SendSSHPublicKey`.
     ///
-    /// <p>Pushes an SSH public key to the specified EC2 instance for use by the specified user.
-    /// The key remains for 60 seconds. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Connect-using-EC2-Instance-Connect.html">Connect to
-    /// your Linux instance using EC2 Instance Connect</a> in the <i>Amazon EC2
-    /// User Guide</i>.</p>
+    /// <p>Pushes an SSH public key to the specified EC2 instance for use by the specified user. The key remains for 60 seconds. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Connect-using-EC2-Instance-Connect.html">Connect to your Linux instance using EC2 Instance Connect</a> in the <i>Amazon EC2 User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendSSHPublicKey<
         C = aws_smithy_client::erase::DynConnector,

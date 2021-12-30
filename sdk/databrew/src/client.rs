@@ -407,46 +407,22 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `BatchDeleteRecipeVersion`.
     ///
     /// <p>Deletes one or more versions of a recipe at a time.</p>
-    ///
     /// <p>The entire request will be rejected if:</p>
     /// <ul>
-    /// <li>
-    /// <p>The recipe does not exist.</p>
-    /// </li>
-    /// <li>
-    /// <p>There is an invalid version identifier in the list of versions.</p>
-    /// </li>
-    /// <li>
-    /// <p>The version list is empty.</p>
-    /// </li>
-    /// <li>
-    /// <p>The version list size exceeds 50.</p>
-    /// </li>
-    /// <li>
-    /// <p>The version list contains duplicate entries.</p>
-    /// </li>
+    /// <li> <p>The recipe does not exist.</p> </li>
+    /// <li> <p>There is an invalid version identifier in the list of versions.</p> </li>
+    /// <li> <p>The version list is empty.</p> </li>
+    /// <li> <p>The version list size exceeds 50.</p> </li>
+    /// <li> <p>The version list contains duplicate entries.</p> </li>
     /// </ul>
-    ///
     /// <p>The request will complete successfully, but with partial failures, if:</p>
     /// <ul>
-    /// <li>
-    /// <p>A version does not exist.</p>
-    /// </li>
-    /// <li>
-    /// <p>A version is being used by a job.</p>
-    /// </li>
-    /// <li>
-    /// <p>You specify <code>LATEST_WORKING</code>, but it's being used by a
-    /// project.</p>
-    /// </li>
-    /// <li>
-    /// <p>The version fails to be deleted.</p>
-    /// </li>
+    /// <li> <p>A version does not exist.</p> </li>
+    /// <li> <p>A version is being used by a job.</p> </li>
+    /// <li> <p>You specify <code>LATEST_WORKING</code>, but it's being used by a project.</p> </li>
+    /// <li> <p>The version fails to be deleted.</p> </li>
     /// </ul>
-    /// <p>The <code>LATEST_WORKING</code> version will only be deleted if the recipe has no
-    /// other versions. If you try to delete <code>LATEST_WORKING</code> while other versions
-    /// exist (or if they can't be deleted), then <code>LATEST_WORKING</code> will be listed as
-    /// partial failure in the response.</p>
+    /// <p>The <code>LATEST_WORKING</code> version will only be deleted if the recipe has no other versions. If you try to delete <code>LATEST_WORKING</code> while other versions exist (or if they can't be deleted), then <code>LATEST_WORKING</code> will be listed as partial failure in the response.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchDeleteRecipeVersion<
         C = aws_smithy_client::erase::DynConnector,
@@ -517,16 +493,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_recipe_versions`](Self::set_recipe_versions).
         ///
-        /// <p>An array of version identifiers, for the recipe versions to be deleted. You can
-        /// specify numeric versions (<code>X.Y</code>) or <code>LATEST_WORKING</code>.
-        /// <code>LATEST_PUBLISHED</code> is not supported.</p>
+        /// <p>An array of version identifiers, for the recipe versions to be deleted. You can specify numeric versions (<code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.</p>
         pub fn recipe_versions(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.recipe_versions(input.into());
             self
         }
-        /// <p>An array of version identifiers, for the recipe versions to be deleted. You can
-        /// specify numeric versions (<code>X.Y</code>) or <code>LATEST_WORKING</code>.
-        /// <code>LATEST_PUBLISHED</code> is not supported.</p>
+        /// <p>An array of version identifiers, for the recipe versions to be deleted. You can specify numeric versions (<code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.</p>
         pub fn set_recipe_versions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -594,14 +566,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the dataset to be created. Valid characters are alphanumeric (A-Z, a-z,
-        /// 0-9), hyphen (-), period (.), and space.</p>
+        /// <p>The name of the dataset to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the dataset to be created. Valid characters are alphanumeric (A-Z, a-z,
-        /// 0-9), hyphen (-), period (.), and space.</p>
+        /// <p>The name of the dataset to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -616,14 +586,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_format(input);
             self
         }
-        /// <p>Represents a set of options that define the structure of either comma-separated value (CSV),
-        /// Excel, or JSON input.</p>
+        /// <p>Represents a set of options that define the structure of either comma-separated value (CSV), Excel, or JSON input.</p>
         pub fn format_options(mut self, input: crate::model::FormatOptions) -> Self {
             self.inner = self.inner.format_options(input);
             self
         }
-        /// <p>Represents a set of options that define the structure of either comma-separated value (CSV),
-        /// Excel, or JSON input.</p>
+        /// <p>Represents a set of options that define the structure of either comma-separated value (CSV), Excel, or JSON input.</p>
         pub fn set_format_options(
             mut self,
             input: std::option::Option<crate::model::FormatOptions>,
@@ -631,14 +599,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_format_options(input);
             self
         }
-        /// <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or
-        /// Amazon S3.</p>
+        /// <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or Amazon S3.</p>
         pub fn input(mut self, input: crate::model::Input) -> Self {
             self.inner = self.inner.input(input);
             self
         }
-        /// <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or
-        /// Amazon S3.</p>
+        /// <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or Amazon S3.</p>
         pub fn set_input(mut self, input: std::option::Option<crate::model::Input>) -> Self {
             self.inner = self.inner.set_input(input);
             self
@@ -749,14 +715,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dataset_name(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the
-        /// job.</p>
+        /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
         pub fn encryption_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.encryption_key_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the
-        /// job.</p>
+        /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
         pub fn set_encryption_key_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -766,15 +730,8 @@ pub mod fluent_builders {
         }
         /// <p>The encryption mode for the job, which can be one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SSE-KMS</code> - <code>SSE-KMS</code> - Server-side encryption with
-        /// KMS-managed keys.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p>
-        /// </li>
+        /// <li> <p> <code>SSE-KMS</code> - <code>SSE-KMS</code> - Server-side encryption with KMS-managed keys.</p> </li>
+        /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
         /// </ul>
         pub fn encryption_mode(mut self, input: crate::model::EncryptionMode) -> Self {
             self.inner = self.inner.encryption_mode(input);
@@ -782,15 +739,8 @@ pub mod fluent_builders {
         }
         /// <p>The encryption mode for the job, which can be one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SSE-KMS</code> - <code>SSE-KMS</code> - Server-side encryption with
-        /// KMS-managed keys.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p>
-        /// </li>
+        /// <li> <p> <code>SSE-KMS</code> - <code>SSE-KMS</code> - Server-side encryption with KMS-managed keys.</p> </li>
+        /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
         /// </ul>
         pub fn set_encryption_mode(
             mut self,
@@ -799,26 +749,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_encryption_mode(input);
             self
         }
-        /// <p>The name of the job to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9),
-        /// hyphen (-), period (.), and space.</p>
+        /// <p>The name of the job to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the job to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9),
-        /// hyphen (-), period (.), and space.</p>
+        /// <p>The name of the job to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled,
-        /// CloudWatch writes one log stream for each job run.</p>
+        /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>
         pub fn log_subscription(mut self, input: crate::model::LogSubscription) -> Self {
             self.inner = self.inner.log_subscription(input);
             self
         }
-        /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled,
-        /// CloudWatch writes one log stream for each job run.</p>
+        /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>
         pub fn set_log_subscription(
             mut self,
             input: std::option::Option<crate::model::LogSubscription>,
@@ -846,14 +792,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_retries(input);
             self
         }
-        /// <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can read
-        /// input data, or write output from a job.</p>
+        /// <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can read input data, or write output from a job.</p>
         pub fn output_location(mut self, input: crate::model::S3Location) -> Self {
             self.inner = self.inner.output_location(input);
             self
         }
-        /// <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can read
-        /// input data, or write output from a job.</p>
+        /// <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can read input data, or write output from a job.</p>
         pub fn set_output_location(
             mut self,
             input: std::option::Option<crate::model::S3Location>,
@@ -861,16 +805,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_output_location(input);
             self
         }
-        /// <p>Configuration for profile jobs. Used to select columns, do evaluations,
-        /// and override default parameters of evaluations. When configuration is null, the
-        /// profile job will run with default settings.</p>
+        /// <p>Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of evaluations. When configuration is null, the profile job will run with default settings.</p>
         pub fn configuration(mut self, input: crate::model::ProfileConfiguration) -> Self {
             self.inner = self.inner.configuration(input);
             self
         }
-        /// <p>Configuration for profile jobs. Used to select columns, do evaluations,
-        /// and override default parameters of evaluations. When configuration is null, the
-        /// profile job will run with default settings.</p>
+        /// <p>Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of evaluations. When configuration is null, the profile job will run with default settings.</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<crate::model::ProfileConfiguration>,
@@ -898,14 +838,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_validation_configurations(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to
-        /// be assumed when DataBrew runs the job.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to
-        /// be assumed when DataBrew runs the job.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
@@ -933,30 +871,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout
-        /// period ends with a status of <code>TIMEOUT</code>.</p>
+        /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
         pub fn timeout(mut self, input: i32) -> Self {
             self.inner = self.inner.timeout(input);
             self
         }
-        /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout
-        /// period ends with a status of <code>TIMEOUT</code>.</p>
+        /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
         pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_timeout(input);
             self
         }
-        /// <p>Sample configuration for profile jobs only. Determines the number of rows on which the
-        /// profile job will be executed. If a JobSample value is not provided, the default value
-        /// will be used. The default value is CUSTOM_ROWS for the mode parameter and 20000 for the
-        /// size parameter.</p>
+        /// <p>Sample configuration for profile jobs only. Determines the number of rows on which the profile job will be executed. If a JobSample value is not provided, the default value will be used. The default value is CUSTOM_ROWS for the mode parameter and 20000 for the size parameter.</p>
         pub fn job_sample(mut self, input: crate::model::JobSample) -> Self {
             self.inner = self.inner.job_sample(input);
             self
         }
-        /// <p>Sample configuration for profile jobs only. Determines the number of rows on which the
-        /// profile job will be executed. If a JobSample value is not provided, the default value
-        /// will be used. The default value is CUSTOM_ROWS for the mode parameter and 20000 for the
-        /// size parameter.</p>
+        /// <p>Sample configuration for profile jobs only. Determines the number of rows on which the profile job will be executed. If a JobSample value is not provided, the default value will be used. The default value is CUSTOM_ROWS for the mode parameter and 20000 for the size parameter.</p>
         pub fn set_job_sample(
             mut self,
             input: std::option::Option<crate::model::JobSample>,
@@ -1034,14 +964,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dataset_name(input);
             self
         }
-        /// <p>A unique name for the new project. Valid characters are alphanumeric (A-Z, a-z, 0-9),
-        /// hyphen (-), period (.), and space.</p>
+        /// <p>A unique name for the new project. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>A unique name for the new project. Valid characters are alphanumeric (A-Z, a-z, 0-9),
-        /// hyphen (-), period (.), and space.</p>
+        /// <p>A unique name for the new project. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -1056,26 +984,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_recipe_name(input);
             self
         }
-        /// <p>Represents the sample size and sampling type for DataBrew to use for interactive data
-        /// analysis.</p>
+        /// <p>Represents the sample size and sampling type for DataBrew to use for interactive data analysis.</p>
         pub fn sample(mut self, input: crate::model::Sample) -> Self {
             self.inner = self.inner.sample(input);
             self
         }
-        /// <p>Represents the sample size and sampling type for DataBrew to use for interactive data
-        /// analysis.</p>
+        /// <p>Represents the sample size and sampling type for DataBrew to use for interactive data analysis.</p>
         pub fn set_sample(mut self, input: std::option::Option<crate::model::Sample>) -> Self {
             self.inner = self.inner.set_sample(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to
-        /// be assumed for this request.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed for this request.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to
-        /// be assumed for this request.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed for this request.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
@@ -1173,14 +1097,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>A unique name for the recipe. Valid characters are alphanumeric (A-Z, a-z, 0-9),
-        /// hyphen (-), period (.), and space.</p>
+        /// <p>A unique name for the recipe. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>A unique name for the recipe. Valid characters are alphanumeric (A-Z, a-z, 0-9),
-        /// hyphen (-), period (.), and space.</p>
+        /// <p>A unique name for the recipe. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -1189,14 +1111,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_steps`](Self::set_steps).
         ///
-        /// <p>An array containing the steps to be performed by the recipe. Each recipe step consists
-        /// of one recipe action and (optionally) an array of condition expressions.</p>
+        /// <p>An array containing the steps to be performed by the recipe. Each recipe step consists of one recipe action and (optionally) an array of condition expressions.</p>
         pub fn steps(mut self, input: crate::model::RecipeStep) -> Self {
             self.inner = self.inner.steps(input);
             self
         }
-        /// <p>An array containing the steps to be performed by the recipe. Each recipe step consists
-        /// of one recipe action and (optionally) an array of condition expressions.</p>
+        /// <p>An array containing the steps to be performed by the recipe. Each recipe step consists of one recipe action and (optionally) an array of condition expressions.</p>
         pub fn set_steps(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RecipeStep>>,
@@ -1297,14 +1217,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dataset_name(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the
-        /// job.</p>
+        /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
         pub fn encryption_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.encryption_key_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the
-        /// job.</p>
+        /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
         pub fn set_encryption_key_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1314,14 +1232,8 @@ pub mod fluent_builders {
         }
         /// <p>The encryption mode for the job, which can be one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p>
-        /// </li>
+        /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
+        /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
         /// </ul>
         pub fn encryption_mode(mut self, input: crate::model::EncryptionMode) -> Self {
             self.inner = self.inner.encryption_mode(input);
@@ -1329,14 +1241,8 @@ pub mod fluent_builders {
         }
         /// <p>The encryption mode for the job, which can be one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p>
-        /// </li>
+        /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
+        /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
         /// </ul>
         pub fn set_encryption_mode(
             mut self,
@@ -1345,26 +1251,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_encryption_mode(input);
             self
         }
-        /// <p>A unique name for the job. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen
-        /// (-), period (.), and space.</p>
+        /// <p>A unique name for the job. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>A unique name for the job. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen
-        /// (-), period (.), and space.</p>
+        /// <p>A unique name for the job. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled,
-        /// CloudWatch writes one log stream for each job run.</p>
+        /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>
         pub fn log_subscription(mut self, input: crate::model::LogSubscription) -> Self {
             self.inner = self.inner.log_subscription(input);
             self
         }
-        /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled,
-        /// CloudWatch writes one log stream for each job run.</p>
+        /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>
         pub fn set_log_subscription(
             mut self,
             input: std::option::Option<crate::model::LogSubscription>,
@@ -1372,14 +1274,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_log_subscription(input);
             self
         }
-        /// <p>The maximum number of nodes that DataBrew can consume when the job processes
-        /// data.</p>
+        /// <p>The maximum number of nodes that DataBrew can consume when the job processes data.</p>
         pub fn max_capacity(mut self, input: i32) -> Self {
             self.inner = self.inner.max_capacity(input);
             self
         }
-        /// <p>The maximum number of nodes that DataBrew can consume when the job processes
-        /// data.</p>
+        /// <p>The maximum number of nodes that DataBrew can consume when the job processes data.</p>
         pub fn set_max_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_capacity(input);
             self
@@ -1432,14 +1332,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_database_outputs`](Self::set_database_outputs).
         ///
-        /// <p>Represents a list of JDBC database output objects which defines the output destination for
-        /// a DataBrew recipe job to write to. </p>
+        /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write to. </p>
         pub fn database_outputs(mut self, input: crate::model::DatabaseOutput) -> Self {
             self.inner = self.inner.database_outputs(input);
             self
         }
-        /// <p>Represents a list of JDBC database output objects which defines the output destination for
-        /// a DataBrew recipe job to write to. </p>
+        /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write to. </p>
         pub fn set_database_outputs(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DatabaseOutput>>,
@@ -1447,14 +1345,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_database_outputs(input);
             self
         }
-        /// <p>Either the name of an existing project, or a combination of a recipe and a dataset to
-        /// associate with the recipe.</p>
+        /// <p>Either the name of an existing project, or a combination of a recipe and a dataset to associate with the recipe.</p>
         pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.project_name(input.into());
             self
         }
-        /// <p>Either the name of an existing project, or a combination of a recipe and a dataset to
-        /// associate with the recipe.</p>
+        /// <p>Either the name of an existing project, or a combination of a recipe and a dataset to associate with the recipe.</p>
         pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_project_name(input);
             self
@@ -1472,14 +1368,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_recipe_reference(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to
-        /// be assumed when DataBrew runs the job.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to
-        /// be assumed when DataBrew runs the job.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
@@ -1507,14 +1401,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout
-        /// period ends with a status of <code>TIMEOUT</code>.</p>
+        /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
         pub fn timeout(mut self, input: i32) -> Self {
             self.inner = self.inner.timeout(input);
             self
         }
-        /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout
-        /// period ends with a status of <code>TIMEOUT</code>.</p>
+        /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
         pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_timeout(input);
             self
@@ -1522,8 +1414,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateRuleset`.
     ///
-    /// <p>Creates a new ruleset that can be used in a profile job to validate
-    /// the data quality of a dataset.</p>
+    /// <p>Creates a new ruleset that can be used in a profile job to validate the data quality of a dataset.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateRuleset<
         C = aws_smithy_client::erase::DynConnector,
@@ -1580,14 +1471,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the ruleset to be created. Valid characters are alphanumeric
-        /// (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
+        /// <p>The name of the ruleset to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the ruleset to be created. Valid characters are alphanumeric
-        /// (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
+        /// <p>The name of the ruleset to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -1602,14 +1491,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a resource (dataset) that the
-        /// ruleset is associated with.</p>
+        /// <p>The Amazon Resource Name (ARN) of a resource (dataset) that the ruleset is associated with.</p>
         pub fn target_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.target_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a resource (dataset) that the
-        /// ruleset is associated with.</p>
+        /// <p>The Amazon Resource Name (ARN) of a resource (dataset) that the ruleset is associated with.</p>
         pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_target_arn(input);
             self
@@ -1618,14 +1505,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
-        /// <p>A list of rules that are defined with the ruleset. A rule includes
-        /// one or more checks to be validated on a DataBrew dataset.</p>
+        /// <p>A list of rules that are defined with the ruleset. A rule includes one or more checks to be validated on a DataBrew dataset.</p>
         pub fn rules(mut self, input: crate::model::Rule) -> Self {
             self.inner = self.inner.rules(input);
             self
         }
-        /// <p>A list of rules that are defined with the ruleset. A rule includes
-        /// one or more checks to be validated on a DataBrew dataset.</p>
+        /// <p>A list of rules that are defined with the ruleset. A rule includes one or more checks to be validated on a DataBrew dataset.</p>
         pub fn set_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Rule>>,
@@ -1659,8 +1544,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateSchedule`.
     ///
-    /// <p>Creates a new schedule for one or more DataBrew jobs. Jobs can be run at a specific
-    /// date and time, or at regular intervals.</p>
+    /// <p>Creates a new schedule for one or more DataBrew jobs. Jobs can be run at a specific date and time, or at regular intervals.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateSchedule<
         C = aws_smithy_client::erase::DynConnector,
@@ -1734,18 +1618,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_job_names(input);
             self
         }
-        /// <p>The date or dates and time or times when the jobs are to be run. For more information,
-        /// see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron
-        /// expressions</a> in the <i>Glue DataBrew Developer
-        /// Guide</i>.</p>
+        /// <p>The date or dates and time or times when the jobs are to be run. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
         pub fn cron_expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.cron_expression(input.into());
             self
         }
-        /// <p>The date or dates and time or times when the jobs are to be run. For more information,
-        /// see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron
-        /// expressions</a> in the <i>Glue DataBrew Developer
-        /// Guide</i>.</p>
+        /// <p>The date or dates and time or times when the jobs are to be run. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
         pub fn set_cron_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1776,14 +1654,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>A unique name for the schedule. Valid characters are alphanumeric (A-Z, a-z, 0-9),
-        /// hyphen (-), period (.), and space.</p>
+        /// <p>A unique name for the schedule. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>A unique name for the schedule. Valid characters are alphanumeric (A-Z, a-z, 0-9),
-        /// hyphen (-), period (.), and space.</p>
+        /// <p>A unique name for the schedule. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -2068,16 +1944,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The version of the recipe to be deleted. You can specify a numeric versions
-        /// (<code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is
-        /// not supported.</p>
+        /// <p>The version of the recipe to be deleted. You can specify a numeric versions (<code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.</p>
         pub fn recipe_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.recipe_version(input.into());
             self
         }
-        /// <p>The version of the recipe to be deleted. You can specify a numeric versions
-        /// (<code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is
-        /// not supported.</p>
+        /// <p>The version of the recipe to be deleted. You can specify a numeric versions (<code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.</p>
         pub fn set_recipe_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2518,8 +2390,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeRecipe`.
     ///
-    /// <p>Returns the definition of a specific DataBrew recipe corresponding to a particular
-    /// version.</p>
+    /// <p>Returns the definition of a specific DataBrew recipe corresponding to a particular version.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeRecipe<
         C = aws_smithy_client::erase::DynConnector,
@@ -2586,14 +2457,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The recipe version identifier. If this parameter isn't specified, then the latest
-        /// published version is returned.</p>
+        /// <p>The recipe version identifier. If this parameter isn't specified, then the latest published version is returned.</p>
         pub fn recipe_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.recipe_version(input.into());
             self
         }
-        /// <p>The recipe version identifier. If this parameter isn't specified, then the latest
-        /// published version is returned.</p>
+        /// <p>The recipe version identifier. If this parameter isn't specified, then the latest published version is returned.</p>
         pub fn set_recipe_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2971,14 +2840,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of a dataset. Using this parameter indicates to return only those jobs that
-        /// act on the specified dataset.</p>
+        /// <p>The name of a dataset. Using this parameter indicates to return only those jobs that act on the specified dataset.</p>
         pub fn dataset_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.dataset_name(input.into());
             self
         }
-        /// <p>The name of a dataset. Using this parameter indicates to return only those jobs that
-        /// act on the specified dataset.</p>
+        /// <p>The name of a dataset. Using this parameter indicates to return only those jobs that act on the specified dataset.</p>
         pub fn set_dataset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_dataset_name(input);
             self
@@ -2993,28 +2860,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A token generated by DataBrew that specifies where to continue pagination if a
-        /// previous request was truncated. To get the next set of pages, pass in the NextToken
-        /// value from the response object of the previous page call. </p>
+        /// <p>A token generated by DataBrew that specifies where to continue pagination if a previous request was truncated. To get the next set of pages, pass in the NextToken value from the response object of the previous page call. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token generated by DataBrew that specifies where to continue pagination if a
-        /// previous request was truncated. To get the next set of pages, pass in the NextToken
-        /// value from the response object of the previous page call. </p>
+        /// <p>A token generated by DataBrew that specifies where to continue pagination if a previous request was truncated. To get the next set of pages, pass in the NextToken value from the response object of the previous page call. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The name of a project. Using this parameter indicates to return only those jobs that
-        /// are associated with the specified project.</p>
+        /// <p>The name of a project. Using this parameter indicates to return only those jobs that are associated with the specified project.</p>
         pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.project_name(input.into());
             self
         }
-        /// <p>The name of a project. Using this parameter indicates to return only those jobs that
-        /// are associated with the specified project.</p>
+        /// <p>The name of a project. Using this parameter indicates to return only those jobs that are associated with the specified project.</p>
         pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_project_name(input);
             self
@@ -3179,22 +3040,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>Return only those recipes with a version identifier of <code>LATEST_WORKING</code> or
-        /// <code>LATEST_PUBLISHED</code>. If <code>RecipeVersion</code> is omitted,
-        /// <code>ListRecipes</code> returns all of the <code>LATEST_PUBLISHED</code> recipe
-        /// versions.</p>
-        /// <p>Valid values: <code>LATEST_WORKING</code> | <code>LATEST_PUBLISHED</code>
-        /// </p>
+        /// <p>Return only those recipes with a version identifier of <code>LATEST_WORKING</code> or <code>LATEST_PUBLISHED</code>. If <code>RecipeVersion</code> is omitted, <code>ListRecipes</code> returns all of the <code>LATEST_PUBLISHED</code> recipe versions.</p>
+        /// <p>Valid values: <code>LATEST_WORKING</code> | <code>LATEST_PUBLISHED</code> </p>
         pub fn recipe_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.recipe_version(input.into());
             self
         }
-        /// <p>Return only those recipes with a version identifier of <code>LATEST_WORKING</code> or
-        /// <code>LATEST_PUBLISHED</code>. If <code>RecipeVersion</code> is omitted,
-        /// <code>ListRecipes</code> returns all of the <code>LATEST_PUBLISHED</code> recipe
-        /// versions.</p>
-        /// <p>Valid values: <code>LATEST_WORKING</code> | <code>LATEST_PUBLISHED</code>
-        /// </p>
+        /// <p>Return only those recipes with a version identifier of <code>LATEST_WORKING</code> or <code>LATEST_PUBLISHED</code>. If <code>RecipeVersion</code> is omitted, <code>ListRecipes</code> returns all of the <code>LATEST_PUBLISHED</code> recipe versions.</p>
+        /// <p>Valid values: <code>LATEST_WORKING</code> | <code>LATEST_PUBLISHED</code> </p>
         pub fn set_recipe_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3205,8 +3058,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListRecipeVersions`.
     ///
-    /// <p>Lists the versions of a particular DataBrew recipe, except for
-    /// <code>LATEST_WORKING</code>.</p>
+    /// <p>Lists the versions of a particular DataBrew recipe, except for <code>LATEST_WORKING</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRecipeVersions<
         C = aws_smithy_client::erase::DynConnector,
@@ -3296,8 +3148,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListRulesets`.
     ///
-    /// <p>List all rulesets available in the current account or rulesets associated
-    /// with a specific resource (dataset).</p>
+    /// <p>List all rulesets available in the current account or rulesets associated with a specific resource (dataset).</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListRulesets<
         C = aws_smithy_client::erase::DynConnector,
@@ -3354,14 +3205,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of a resource (dataset). Using this parameter
-        /// indicates to return only those rulesets that are associated with the specified resource.</p>
+        /// <p>The Amazon Resource Name (ARN) of a resource (dataset). Using this parameter indicates to return only those rulesets that are associated with the specified resource.</p>
         pub fn target_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.target_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a resource (dataset). Using this parameter
-        /// indicates to return only those rulesets that are associated with the specified resource.</p>
+        /// <p>The Amazon Resource Name (ARN) of a resource (dataset). Using this parameter indicates to return only those rulesets that are associated with the specified resource.</p>
         pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_target_arn(input);
             self
@@ -3376,16 +3225,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>A token generated by DataBrew that specifies where to continue pagination
-        /// if a previous request was truncated. To get the next set of pages, pass in
-        /// the NextToken value from the response object of the previous page call.</p>
+        /// <p>A token generated by DataBrew that specifies where to continue pagination if a previous request was truncated. To get the next set of pages, pass in the NextToken value from the response object of the previous page call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A token generated by DataBrew that specifies where to continue pagination
-        /// if a previous request was truncated. To get the next set of pages, pass in
-        /// the NextToken value from the response object of the previous page call.</p>
+        /// <p>A token generated by DataBrew that specifies where to continue pagination if a previous request was truncated. To get the next set of pages, pass in the NextToken value from the response object of the previous page call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3540,14 +3385,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the DataBrew resource.
-        /// </p>
+        /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the DataBrew resource. </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the DataBrew resource.
-        /// </p>
+        /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the DataBrew resource. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -3635,8 +3478,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SendProjectSessionAction`.
     ///
-    /// <p>Performs a recipe step within an interactive DataBrew session that's currently
-    /// open.</p>
+    /// <p>Performs a recipe step within an interactive DataBrew session that's currently open.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SendProjectSessionAction<
         C = aws_smithy_client::erase::DynConnector,
@@ -3726,28 +3568,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_recipe_step(input);
             self
         }
-        /// <p>The index from which to preview a step. This index is used to preview the result of
-        /// steps that have already been applied, so that the resulting view frame is from earlier
-        /// in the view frame stack.</p>
+        /// <p>The index from which to preview a step. This index is used to preview the result of steps that have already been applied, so that the resulting view frame is from earlier in the view frame stack.</p>
         pub fn step_index(mut self, input: i32) -> Self {
             self.inner = self.inner.step_index(input);
             self
         }
-        /// <p>The index from which to preview a step. This index is used to preview the result of
-        /// steps that have already been applied, so that the resulting view frame is from earlier
-        /// in the view frame stack.</p>
+        /// <p>The index from which to preview a step. This index is used to preview the result of steps that have already been applied, so that the resulting view frame is from earlier in the view frame stack.</p>
         pub fn set_step_index(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_step_index(input);
             self
         }
-        /// <p>A unique identifier for an interactive session that's currently open and ready for
-        /// work. The action will be performed on this session.</p>
+        /// <p>A unique identifier for an interactive session that's currently open and ready for work. The action will be performed on this session.</p>
         pub fn client_session_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_session_id(input.into());
             self
         }
-        /// <p>A unique identifier for an interactive session that's currently open and ready for
-        /// work. The action will be performed on this session.</p>
+        /// <p>A unique identifier for an interactive session that's currently open and ready for work. The action will be performed on this session.</p>
         pub fn set_client_session_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3841,8 +3677,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartProjectSession`.
     ///
-    /// <p>Creates an interactive session, enabling you to manipulate data in a DataBrew
-    /// project.</p>
+    /// <p>Creates an interactive session, enabling you to manipulate data in a DataBrew project.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartProjectSession<
         C = aws_smithy_client::erase::DynConnector,
@@ -3909,14 +3744,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>A value that, if true, enables you to take control of a session, even if a different
-        /// client is currently accessing the project.</p>
+        /// <p>A value that, if true, enables you to take control of a session, even if a different client is currently accessing the project.</p>
         pub fn assume_control(mut self, input: bool) -> Self {
             self.inner = self.inner.assume_control(input);
             self
         }
-        /// <p>A value that, if true, enables you to take control of a session, even if a different
-        /// client is currently accessing the project.</p>
+        /// <p>A value that, if true, enables you to take control of a session, even if a different client is currently accessing the project.</p>
         pub fn set_assume_control(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_assume_control(input);
             self
@@ -4004,8 +3837,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Adds metadata tags to a DataBrew resource, such as a dataset, project, recipe, job, or
-    /// schedule.</p>
+    /// <p>Adds metadata tags to a DataBrew resource, such as a dataset, project, recipe, job, or schedule.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -4062,16 +3894,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The DataBrew resource to which tags should be added. The value for this parameter is
-        /// an Amazon Resource Name (ARN). For DataBrew, you can tag a dataset, a job, a project, or
-        /// a recipe.</p>
+        /// <p>The DataBrew resource to which tags should be added. The value for this parameter is an Amazon Resource Name (ARN). For DataBrew, you can tag a dataset, a job, a project, or a recipe.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The DataBrew resource to which tags should be added. The value for this parameter is
-        /// an Amazon Resource Name (ARN). For DataBrew, you can tag a dataset, a job, a project, or
-        /// a recipe.</p>
+        /// <p>The DataBrew resource to which tags should be added. The value for this parameter is an Amazon Resource Name (ARN). For DataBrew, you can tag a dataset, a job, a project, or a recipe.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -4159,14 +3987,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A DataBrew resource from which you want to remove a tag or tags. The value for this
-        /// parameter is an Amazon Resource Name (ARN). </p>
+        /// <p>A DataBrew resource from which you want to remove a tag or tags. The value for this parameter is an Amazon Resource Name (ARN). </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>A DataBrew resource from which you want to remove a tag or tags. The value for this
-        /// parameter is an Amazon Resource Name (ARN). </p>
+        /// <p>A DataBrew resource from which you want to remove a tag or tags. The value for this parameter is an Amazon Resource Name (ARN). </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -4268,14 +4094,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_format(input);
             self
         }
-        /// <p>Represents a set of options that define the structure of either comma-separated value (CSV),
-        /// Excel, or JSON input.</p>
+        /// <p>Represents a set of options that define the structure of either comma-separated value (CSV), Excel, or JSON input.</p>
         pub fn format_options(mut self, input: crate::model::FormatOptions) -> Self {
             self.inner = self.inner.format_options(input);
             self
         }
-        /// <p>Represents a set of options that define the structure of either comma-separated value (CSV),
-        /// Excel, or JSON input.</p>
+        /// <p>Represents a set of options that define the structure of either comma-separated value (CSV), Excel, or JSON input.</p>
         pub fn set_format_options(
             mut self,
             input: std::option::Option<crate::model::FormatOptions>,
@@ -4283,14 +4107,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_format_options(input);
             self
         }
-        /// <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or
-        /// Amazon S3.</p>
+        /// <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or Amazon S3.</p>
         pub fn input(mut self, input: crate::model::Input) -> Self {
             self.inner = self.inner.input(input);
             self
         }
-        /// <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or
-        /// Amazon S3.</p>
+        /// <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or Amazon S3.</p>
         pub fn set_input(mut self, input: std::option::Option<crate::model::Input>) -> Self {
             self.inner = self.inner.set_input(input);
             self
@@ -4368,16 +4190,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Configuration for profile jobs. Used to select columns, do evaluations,
-        /// and override default parameters of evaluations. When configuration is null, the
-        /// profile job will run with default settings.</p>
+        /// <p>Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of evaluations. When configuration is null, the profile job will run with default settings.</p>
         pub fn configuration(mut self, input: crate::model::ProfileConfiguration) -> Self {
             self.inner = self.inner.configuration(input);
             self
         }
-        /// <p>Configuration for profile jobs. Used to select columns, do evaluations,
-        /// and override default parameters of evaluations. When configuration is null, the
-        /// profile job will run with default settings.</p>
+        /// <p>Configuration for profile jobs. Used to select columns, do evaluations, and override default parameters of evaluations. When configuration is null, the profile job will run with default settings.</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<crate::model::ProfileConfiguration>,
@@ -4385,14 +4203,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_configuration(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the
-        /// job.</p>
+        /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
         pub fn encryption_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.encryption_key_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the
-        /// job.</p>
+        /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
         pub fn set_encryption_key_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4402,15 +4218,8 @@ pub mod fluent_builders {
         }
         /// <p>The encryption mode for the job, which can be one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon
-        /// S3.</p>
-        /// </li>
+        /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
+        /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
         /// </ul>
         pub fn encryption_mode(mut self, input: crate::model::EncryptionMode) -> Self {
             self.inner = self.inner.encryption_mode(input);
@@ -4418,15 +4227,8 @@ pub mod fluent_builders {
         }
         /// <p>The encryption mode for the job, which can be one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon
-        /// S3.</p>
-        /// </li>
+        /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
+        /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
         /// </ul>
         pub fn set_encryption_mode(
             mut self,
@@ -4445,14 +4247,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled,
-        /// CloudWatch writes one log stream for each job run.</p>
+        /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>
         pub fn log_subscription(mut self, input: crate::model::LogSubscription) -> Self {
             self.inner = self.inner.log_subscription(input);
             self
         }
-        /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled,
-        /// CloudWatch writes one log stream for each job run.</p>
+        /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>
         pub fn set_log_subscription(
             mut self,
             input: std::option::Option<crate::model::LogSubscription>,
@@ -4460,14 +4260,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_log_subscription(input);
             self
         }
-        /// <p>The maximum number of compute nodes that DataBrew can use when the job processes
-        /// data.</p>
+        /// <p>The maximum number of compute nodes that DataBrew can use when the job processes data.</p>
         pub fn max_capacity(mut self, input: i32) -> Self {
             self.inner = self.inner.max_capacity(input);
             self
         }
-        /// <p>The maximum number of compute nodes that DataBrew can use when the job processes
-        /// data.</p>
+        /// <p>The maximum number of compute nodes that DataBrew can use when the job processes data.</p>
         pub fn set_max_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_capacity(input);
             self
@@ -4482,14 +4280,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_retries(input);
             self
         }
-        /// <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can read
-        /// input data, or write output from a job.</p>
+        /// <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can read input data, or write output from a job.</p>
         pub fn output_location(mut self, input: crate::model::S3Location) -> Self {
             self.inner = self.inner.output_location(input);
             self
         }
-        /// <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can read
-        /// input data, or write output from a job.</p>
+        /// <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can read input data, or write output from a job.</p>
         pub fn set_output_location(
             mut self,
             input: std::option::Option<crate::model::S3Location>,
@@ -4517,42 +4313,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_validation_configurations(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to
-        /// be assumed when DataBrew runs the job.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to
-        /// be assumed when DataBrew runs the job.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
         }
-        /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout
-        /// period ends with a status of <code>TIMEOUT</code>.</p>
+        /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
         pub fn timeout(mut self, input: i32) -> Self {
             self.inner = self.inner.timeout(input);
             self
         }
-        /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout
-        /// period ends with a status of <code>TIMEOUT</code>.</p>
+        /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
         pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_timeout(input);
             self
         }
-        /// <p>Sample configuration for Profile Jobs only. Determines the number of rows on which the
-        /// Profile job will be executed. If a JobSample value is not provided for profile jobs, the
-        /// default value will be used. The default value is CUSTOM_ROWS for the mode parameter and
-        /// 20000 for the size parameter.</p>
+        /// <p>Sample configuration for Profile Jobs only. Determines the number of rows on which the Profile job will be executed. If a JobSample value is not provided for profile jobs, the default value will be used. The default value is CUSTOM_ROWS for the mode parameter and 20000 for the size parameter.</p>
         pub fn job_sample(mut self, input: crate::model::JobSample) -> Self {
             self.inner = self.inner.job_sample(input);
             self
         }
-        /// <p>Sample configuration for Profile Jobs only. Determines the number of rows on which the
-        /// Profile job will be executed. If a JobSample value is not provided for profile jobs, the
-        /// default value will be used. The default value is CUSTOM_ROWS for the mode parameter and
-        /// 20000 for the size parameter.</p>
+        /// <p>Sample configuration for Profile Jobs only. Determines the number of rows on which the Profile job will be executed. If a JobSample value is not provided for profile jobs, the default value will be used. The default value is CUSTOM_ROWS for the mode parameter and 20000 for the size parameter.</p>
         pub fn set_job_sample(
             mut self,
             input: std::option::Option<crate::model::JobSample>,
@@ -4620,14 +4406,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Represents the sample size and sampling type for DataBrew to use for interactive data
-        /// analysis.</p>
+        /// <p>Represents the sample size and sampling type for DataBrew to use for interactive data analysis.</p>
         pub fn sample(mut self, input: crate::model::Sample) -> Self {
             self.inner = self.inner.sample(input);
             self
         }
-        /// <p>Represents the sample size and sampling type for DataBrew to use for interactive data
-        /// analysis.</p>
+        /// <p>Represents the sample size and sampling type for DataBrew to use for interactive data analysis.</p>
         pub fn set_sample(mut self, input: std::option::Option<crate::model::Sample>) -> Self {
             self.inner = self.inner.set_sample(input);
             self
@@ -4655,8 +4439,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateRecipe`.
     ///
-    /// <p>Modifies the definition of the <code>LATEST_WORKING</code> version of a DataBrew
-    /// recipe.</p>
+    /// <p>Modifies the definition of the <code>LATEST_WORKING</code> version of a DataBrew recipe.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRecipe<
         C = aws_smithy_client::erase::DynConnector,
@@ -4737,14 +4520,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_steps`](Self::set_steps).
         ///
-        /// <p>One or more steps to be performed by the recipe. Each step consists of an action, and
-        /// the conditions under which the action should succeed.</p>
+        /// <p>One or more steps to be performed by the recipe. Each step consists of an action, and the conditions under which the action should succeed.</p>
         pub fn steps(mut self, input: crate::model::RecipeStep) -> Self {
             self.inner = self.inner.steps(input);
             self
         }
-        /// <p>One or more steps to be performed by the recipe. Each step consists of an action, and
-        /// the conditions under which the action should succeed.</p>
+        /// <p>One or more steps to be performed by the recipe. Each step consists of an action, and the conditions under which the action should succeed.</p>
         pub fn set_steps(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RecipeStep>>,
@@ -4812,14 +4593,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the
-        /// job.</p>
+        /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
         pub fn encryption_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.encryption_key_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the
-        /// job.</p>
+        /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
         pub fn set_encryption_key_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4829,14 +4608,8 @@ pub mod fluent_builders {
         }
         /// <p>The encryption mode for the job, which can be one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p>
-        /// </li>
+        /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
+        /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
         /// </ul>
         pub fn encryption_mode(mut self, input: crate::model::EncryptionMode) -> Self {
             self.inner = self.inner.encryption_mode(input);
@@ -4844,14 +4617,8 @@ pub mod fluent_builders {
         }
         /// <p>The encryption mode for the job, which can be one of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p>
-        /// </li>
+        /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
+        /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
         /// </ul>
         pub fn set_encryption_mode(
             mut self,
@@ -4870,14 +4637,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled,
-        /// CloudWatch writes one log stream for each job run.</p>
+        /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>
         pub fn log_subscription(mut self, input: crate::model::LogSubscription) -> Self {
             self.inner = self.inner.log_subscription(input);
             self
         }
-        /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled,
-        /// CloudWatch writes one log stream for each job run.</p>
+        /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>
         pub fn set_log_subscription(
             mut self,
             input: std::option::Option<crate::model::LogSubscription>,
@@ -4885,14 +4650,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_log_subscription(input);
             self
         }
-        /// <p>The maximum number of nodes that DataBrew can consume when the job processes
-        /// data.</p>
+        /// <p>The maximum number of nodes that DataBrew can consume when the job processes data.</p>
         pub fn max_capacity(mut self, input: i32) -> Self {
             self.inner = self.inner.max_capacity(input);
             self
         }
-        /// <p>The maximum number of nodes that DataBrew can consume when the job processes
-        /// data.</p>
+        /// <p>The maximum number of nodes that DataBrew can consume when the job processes data.</p>
         pub fn set_max_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_capacity(input);
             self
@@ -4945,14 +4708,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_database_outputs`](Self::set_database_outputs).
         ///
-        /// <p>Represents a list of JDBC database output objects which defines the output destination for a
-        /// DataBrew recipe job to write into.</p>
+        /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write into.</p>
         pub fn database_outputs(mut self, input: crate::model::DatabaseOutput) -> Self {
             self.inner = self.inner.database_outputs(input);
             self
         }
-        /// <p>Represents a list of JDBC database output objects which defines the output destination for a
-        /// DataBrew recipe job to write into.</p>
+        /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write into.</p>
         pub fn set_database_outputs(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DatabaseOutput>>,
@@ -4960,26 +4721,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_database_outputs(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to
-        /// be assumed when DataBrew runs the job.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to
-        /// be assumed when DataBrew runs the job.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
         }
-        /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout
-        /// period ends with a status of <code>TIMEOUT</code>.</p>
+        /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
         pub fn timeout(mut self, input: i32) -> Self {
             self.inner = self.inner.timeout(input);
             self
         }
-        /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout
-        /// period ends with a status of <code>TIMEOUT</code>.</p>
+        /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
         pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_timeout(input);
             self
@@ -5068,14 +4825,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_rules`](Self::set_rules).
         ///
-        /// <p>A list of rules that are defined with the ruleset. A rule includes one or more
-        /// checks to be validated on a DataBrew dataset.</p>
+        /// <p>A list of rules that are defined with the ruleset. A rule includes one or more checks to be validated on a DataBrew dataset.</p>
         pub fn rules(mut self, input: crate::model::Rule) -> Self {
             self.inner = self.inner.rules(input);
             self
         }
-        /// <p>A list of rules that are defined with the ruleset. A rule includes one or more
-        /// checks to be validated on a DataBrew dataset.</p>
+        /// <p>A list of rules that are defined with the ruleset. A rule includes one or more checks to be validated on a DataBrew dataset.</p>
         pub fn set_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Rule>>,
@@ -5160,18 +4915,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_job_names(input);
             self
         }
-        /// <p>The date or dates and time or times when the jobs are to be run. For more information,
-        /// see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron
-        /// expressions</a> in the <i>Glue DataBrew Developer
-        /// Guide</i>.</p>
+        /// <p>The date or dates and time or times when the jobs are to be run. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
         pub fn cron_expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.cron_expression(input.into());
             self
         }
-        /// <p>The date or dates and time or times when the jobs are to be run. For more information,
-        /// see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron
-        /// expressions</a> in the <i>Glue DataBrew Developer
-        /// Guide</i>.</p>
+        /// <p>The date or dates and time or times when the jobs are to be run. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
         pub fn set_cron_expression(
             mut self,
             input: std::option::Option<std::string::String>,

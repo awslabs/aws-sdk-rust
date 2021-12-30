@@ -70,26 +70,14 @@ pub mod accept_page_input {
             self.accept_code = input;
             self
         }
-        /// <p>An optional field that Incident Manager uses to <code>ENFORCE</code>
-        /// <code>AcceptCode</code> validation when acknowledging an page. Acknowledgement can occur by
-        /// replying to a page, or when entering the AcceptCode in the console. Enforcing AcceptCode
-        /// validation causes Incident Manager to verify that the code entered by the user matches the
-        /// code sent by Incident Manager with the page.</p>
-        /// <p>Incident Manager can also <code>IGNORE</code>
-        /// <code>AcceptCode</code> validation. Ignoring <code>AcceptCode</code> validation causes
-        /// Incident Manager to accept any value entered for the <code>AcceptCode</code>.</p>
+        /// <p>An optional field that Incident Manager uses to <code>ENFORCE</code> <code>AcceptCode</code> validation when acknowledging an page. Acknowledgement can occur by replying to a page, or when entering the AcceptCode in the console. Enforcing AcceptCode validation causes Incident Manager to verify that the code entered by the user matches the code sent by Incident Manager with the page.</p>
+        /// <p>Incident Manager can also <code>IGNORE</code> <code>AcceptCode</code> validation. Ignoring <code>AcceptCode</code> validation causes Incident Manager to accept any value entered for the <code>AcceptCode</code>.</p>
         pub fn accept_code_validation(mut self, input: crate::model::AcceptCodeValidation) -> Self {
             self.accept_code_validation = Some(input);
             self
         }
-        /// <p>An optional field that Incident Manager uses to <code>ENFORCE</code>
-        /// <code>AcceptCode</code> validation when acknowledging an page. Acknowledgement can occur by
-        /// replying to a page, or when entering the AcceptCode in the console. Enforcing AcceptCode
-        /// validation causes Incident Manager to verify that the code entered by the user matches the
-        /// code sent by Incident Manager with the page.</p>
-        /// <p>Incident Manager can also <code>IGNORE</code>
-        /// <code>AcceptCode</code> validation. Ignoring <code>AcceptCode</code> validation causes
-        /// Incident Manager to accept any value entered for the <code>AcceptCode</code>.</p>
+        /// <p>An optional field that Incident Manager uses to <code>ENFORCE</code> <code>AcceptCode</code> validation when acknowledging an page. Acknowledgement can occur by replying to a page, or when entering the AcceptCode in the console. Enforcing AcceptCode validation causes Incident Manager to verify that the code entered by the user matches the code sent by Incident Manager with the page.</p>
+        /// <p>Incident Manager can also <code>IGNORE</code> <code>AcceptCode</code> validation. Ignoring <code>AcceptCode</code> validation causes Incident Manager to accept any value entered for the <code>AcceptCode</code>.</p>
         pub fn set_accept_code_validation(
             mut self,
             input: std::option::Option<crate::model::AcceptCodeValidation>,
@@ -424,48 +412,42 @@ pub mod create_contact_input {
         pub(crate) idempotency_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The short name to quickly identify a contact or escalation plan. The contact alias must
-        /// be unique and identifiable. </p>
+        /// <p>The short name to quickly identify a contact or escalation plan. The contact alias must be unique and identifiable. </p>
         pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.alias = Some(input.into());
             self
         }
-        /// <p>The short name to quickly identify a contact or escalation plan. The contact alias must
-        /// be unique and identifiable. </p>
+        /// <p>The short name to quickly identify a contact or escalation plan. The contact alias must be unique and identifiable. </p>
         pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alias = input;
             self
         }
-        /// <p>The full name of the contact or escalation plan.  </p>
+        /// <p>The full name of the contact or escalation plan. </p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.display_name = Some(input.into());
             self
         }
-        /// <p>The full name of the contact or escalation plan.  </p>
+        /// <p>The full name of the contact or escalation plan. </p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.display_name = input;
             self
         }
-        /// <p>To create an escalation plan use <code>ESCALATION</code>. To create a contact use
-        /// <code>PERSONAL</code>.</p>
+        /// <p>To create an escalation plan use <code>ESCALATION</code>. To create a contact use <code>PERSONAL</code>.</p>
         pub fn r#type(mut self, input: crate::model::ContactType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>To create an escalation plan use <code>ESCALATION</code>. To create a contact use
-        /// <code>PERSONAL</code>.</p>
+        /// <p>To create an escalation plan use <code>ESCALATION</code>. To create a contact use <code>PERSONAL</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ContactType>) -> Self {
             self.r#type = input;
             self
         }
-        /// <p>A list of stages. A contact has an engagement plan with stages that contact specified
-        /// contact channels. An escalation plan uses stages that contact specified contacts. </p>
+        /// <p>A list of stages. A contact has an engagement plan with stages that contact specified contact channels. An escalation plan uses stages that contact specified contacts. </p>
         pub fn plan(mut self, input: crate::model::Plan) -> Self {
             self.plan = Some(input);
             self
         }
-        /// <p>A list of stages. A contact has an engagement plan with stages that contact specified
-        /// contact channels. An escalation plan uses stages that contact specified contacts. </p>
+        /// <p>A list of stages. A contact has an engagement plan with stages that contact specified contact channels. An escalation plan uses stages that contact specified contacts. </p>
         pub fn set_plan(mut self, input: std::option::Option<crate::model::Plan>) -> Self {
             self.plan = input;
             self
@@ -474,16 +456,14 @@ pub mod create_contact_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Adds a tag to the target. You can only tag resources created in the first Region of your
-        /// replication set. </p>
+        /// <p>Adds a tag to the target. You can only tag resources created in the first Region of your replication set. </p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input);
             self.tags = Some(v);
             self
         }
-        /// <p>Adds a tag to the target. You can only tag resources created in the first Region of your
-        /// replication set. </p>
+        /// <p>Adds a tag to the target. You can only tag resources created in the first Region of your replication set. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -491,14 +471,12 @@ pub mod create_contact_input {
             self.tags = input;
             self
         }
-        /// <p>A token ensuring that the operation is called only once with the specified
-        /// details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.idempotency_token = Some(input.into());
             self
         }
-        /// <p>A token ensuring that the operation is called only once with the specified
-        /// details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -684,21 +662,9 @@ pub mod create_contact_channel_input {
         }
         /// <p>Incident Manager supports three types of contact channels:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SMS</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>VOICE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EMAIL</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>SMS</code> </p> </li>
+        /// <li> <p> <code>VOICE</code> </p> </li>
+        /// <li> <p> <code>EMAIL</code> </p> </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::ChannelType) -> Self {
             self.r#type = Some(input);
@@ -706,57 +672,29 @@ pub mod create_contact_channel_input {
         }
         /// <p>Incident Manager supports three types of contact channels:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SMS</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>VOICE</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>EMAIL</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>SMS</code> </p> </li>
+        /// <li> <p> <code>VOICE</code> </p> </li>
+        /// <li> <p> <code>EMAIL</code> </p> </li>
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ChannelType>) -> Self {
             self.r#type = input;
             self
         }
-        /// <p>The details that Incident Manager uses when trying to engage the contact channel. The format
-        /// is dependent on the type of the contact channel. The following are the expected
-        /// formats:</p>
+        /// <p>The details that Incident Manager uses when trying to engage the contact channel. The format is dependent on the type of the contact channel. The following are the expected formats:</p>
         /// <ul>
-        /// <li>
-        /// <p>SMS - '+' followed by the country code and phone number</p>
-        /// </li>
-        /// <li>
-        /// <p>VOICE - '+' followed by the country code and phone number</p>
-        /// </li>
-        /// <li>
-        /// <p>EMAIL - any standard email format</p>
-        /// </li>
+        /// <li> <p>SMS - '+' followed by the country code and phone number</p> </li>
+        /// <li> <p>VOICE - '+' followed by the country code and phone number</p> </li>
+        /// <li> <p>EMAIL - any standard email format</p> </li>
         /// </ul>
         pub fn delivery_address(mut self, input: crate::model::ContactChannelAddress) -> Self {
             self.delivery_address = Some(input);
             self
         }
-        /// <p>The details that Incident Manager uses when trying to engage the contact channel. The format
-        /// is dependent on the type of the contact channel. The following are the expected
-        /// formats:</p>
+        /// <p>The details that Incident Manager uses when trying to engage the contact channel. The format is dependent on the type of the contact channel. The following are the expected formats:</p>
         /// <ul>
-        /// <li>
-        /// <p>SMS - '+' followed by the country code and phone number</p>
-        /// </li>
-        /// <li>
-        /// <p>VOICE - '+' followed by the country code and phone number</p>
-        /// </li>
-        /// <li>
-        /// <p>EMAIL - any standard email format</p>
-        /// </li>
+        /// <li> <p>SMS - '+' followed by the country code and phone number</p> </li>
+        /// <li> <p>VOICE - '+' followed by the country code and phone number</p> </li>
+        /// <li> <p>EMAIL - any standard email format</p> </li>
         /// </ul>
         pub fn set_delivery_address(
             mut self,
@@ -765,26 +703,22 @@ pub mod create_contact_channel_input {
             self.delivery_address = input;
             self
         }
-        /// <p>If you want to activate the channel at a later time, you can choose to defer activation.
-        /// Incident Manager can't engage your contact channel until it has been activated.</p>
+        /// <p>If you want to activate the channel at a later time, you can choose to defer activation. Incident Manager can't engage your contact channel until it has been activated.</p>
         pub fn defer_activation(mut self, input: bool) -> Self {
             self.defer_activation = Some(input);
             self
         }
-        /// <p>If you want to activate the channel at a later time, you can choose to defer activation.
-        /// Incident Manager can't engage your contact channel until it has been activated.</p>
+        /// <p>If you want to activate the channel at a later time, you can choose to defer activation. Incident Manager can't engage your contact channel until it has been activated.</p>
         pub fn set_defer_activation(mut self, input: std::option::Option<bool>) -> Self {
             self.defer_activation = input;
             self
         }
-        /// <p>A token ensuring that the operation is called only once with the specified
-        /// details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.idempotency_token = Some(input.into());
             self
         }
-        /// <p>A token ensuring that the operation is called only once with the specified
-        /// details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2403,14 +2337,12 @@ pub mod list_contacts_input {
             self.alias_prefix = input;
             self
         }
-        /// <p>The type of contact. A contact is type <code>PERSONAL</code> and an escalation plan is
-        /// type <code>ESCALATION</code>.</p>
+        /// <p>The type of contact. A contact is type <code>PERSONAL</code> and an escalation plan is type <code>ESCALATION</code>.</p>
         pub fn r#type(mut self, input: crate::model::ContactType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The type of contact. A contact is type <code>PERSONAL</code> and an escalation plan is
-        /// type <code>ESCALATION</code>.</p>
+        /// <p>The type of contact. A contact is type <code>PERSONAL</code> and an escalation plan is type <code>ESCALATION</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ContactType>) -> Self {
             self.r#type = input;
             self
@@ -3135,14 +3067,12 @@ pub mod list_pages_by_engagement_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of engagements to contact channels to list per page of
-        /// results.</p>
+        /// <p>The maximum number of engagements to contact channels to list per page of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of engagements to contact channels to list per page of
-        /// results.</p>
+        /// <p>The maximum number of engagements to contact channels to list per page of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3801,38 +3731,32 @@ pub mod start_engagement_input {
             self.sender = input;
             self
         }
-        /// <p>The secure subject of the message that was sent to the contact. Use this field for
-        /// engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
+        /// <p>The secure subject of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
         pub fn subject(mut self, input: impl Into<std::string::String>) -> Self {
             self.subject = Some(input.into());
             self
         }
-        /// <p>The secure subject of the message that was sent to the contact. Use this field for
-        /// engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
+        /// <p>The secure subject of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
         pub fn set_subject(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.subject = input;
             self
         }
-        /// <p>The secure content of the message that was sent to the contact. Use this field for
-        /// engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
+        /// <p>The secure content of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
         pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
             self.content = Some(input.into());
             self
         }
-        /// <p>The secure content of the message that was sent to the contact. Use this field for
-        /// engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
+        /// <p>The secure content of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content = input;
             self
         }
-        /// <p>The insecure subject of the message that was sent to the contact. Use this field for
-        /// engagements to <code>SMS</code>.</p>
+        /// <p>The insecure subject of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
         pub fn public_subject(mut self, input: impl Into<std::string::String>) -> Self {
             self.public_subject = Some(input.into());
             self
         }
-        /// <p>The insecure subject of the message that was sent to the contact. Use this field for
-        /// engagements to <code>SMS</code>.</p>
+        /// <p>The insecure subject of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
         pub fn set_public_subject(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3840,14 +3764,12 @@ pub mod start_engagement_input {
             self.public_subject = input;
             self
         }
-        /// <p>The insecure content of the message that was sent to the contact. Use this field for
-        /// engagements to <code>SMS</code>.</p>
+        /// <p>The insecure content of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
         pub fn public_content(mut self, input: impl Into<std::string::String>) -> Self {
             self.public_content = Some(input.into());
             self
         }
-        /// <p>The insecure content of the message that was sent to the contact. Use this field for
-        /// engagements to <code>SMS</code>.</p>
+        /// <p>The insecure content of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
         pub fn set_public_content(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3865,14 +3787,12 @@ pub mod start_engagement_input {
             self.incident_id = input;
             self
         }
-        /// <p>A token ensuring that the operation is called only once with the specified
-        /// details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.idempotency_token = Some(input.into());
             self
         }
-        /// <p>A token ensuring that the operation is called only once with the specified
-        /// details.</p>
+        /// <p>A token ensuring that the operation is called only once with the specified details.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4573,14 +4493,12 @@ pub mod update_contact_input {
             self.display_name = input;
             self
         }
-        /// <p>A list of stages. A contact has an engagement plan with stages for specified contact
-        /// channels. An escalation plan uses these stages to contact specified contacts. </p>
+        /// <p>A list of stages. A contact has an engagement plan with stages for specified contact channels. An escalation plan uses these stages to contact specified contacts. </p>
         pub fn plan(mut self, input: crate::model::Plan) -> Self {
             self.plan = Some(input);
             self
         }
-        /// <p>A list of stages. A contact has an engagement plan with stages for specified contact
-        /// channels. An escalation plan uses these stages to contact specified contacts. </p>
+        /// <p>A list of stages. A contact has an engagement plan with stages for specified contact channels. An escalation plan uses these stages to contact specified contacts. </p>
         pub fn set_plan(mut self, input: std::option::Option<crate::model::Plan>) -> Self {
             self.plan = input;
             self
@@ -4950,8 +4868,7 @@ pub struct UpdateContactInput {
     pub contact_id: std::option::Option<std::string::String>,
     /// <p>The full name of the contact or escalation plan.</p>
     pub display_name: std::option::Option<std::string::String>,
-    /// <p>A list of stages. A contact has an engagement plan with stages for specified contact
-    /// channels. An escalation plan uses these stages to contact specified contacts. </p>
+    /// <p>A list of stages. A contact has an engagement plan with stages for specified contact channels. An escalation plan uses these stages to contact specified contacts. </p>
     pub plan: std::option::Option<crate::model::Plan>,
 }
 impl UpdateContactInput {
@@ -4963,8 +4880,7 @@ impl UpdateContactInput {
     pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
     }
-    /// <p>A list of stages. A contact has an engagement plan with stages for specified contact
-    /// channels. An escalation plan uses these stages to contact specified contacts. </p>
+    /// <p>A list of stages. A contact has an engagement plan with stages for specified contact channels. An escalation plan uses these stages to contact specified contacts. </p>
     pub fn plan(&self) -> std::option::Option<&crate::model::Plan> {
         self.plan.as_ref()
     }
@@ -5071,22 +4987,17 @@ pub struct StartEngagementInput {
     pub contact_id: std::option::Option<std::string::String>,
     /// <p>The user that started the engagement.</p>
     pub sender: std::option::Option<std::string::String>,
-    /// <p>The secure subject of the message that was sent to the contact. Use this field for
-    /// engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
+    /// <p>The secure subject of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
     pub subject: std::option::Option<std::string::String>,
-    /// <p>The secure content of the message that was sent to the contact. Use this field for
-    /// engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
+    /// <p>The secure content of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
     pub content: std::option::Option<std::string::String>,
-    /// <p>The insecure subject of the message that was sent to the contact. Use this field for
-    /// engagements to <code>SMS</code>.</p>
+    /// <p>The insecure subject of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
     pub public_subject: std::option::Option<std::string::String>,
-    /// <p>The insecure content of the message that was sent to the contact. Use this field for
-    /// engagements to <code>SMS</code>.</p>
+    /// <p>The insecure content of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
     pub public_content: std::option::Option<std::string::String>,
     /// <p>The ARN of the incident that the engagement is part of.</p>
     pub incident_id: std::option::Option<std::string::String>,
-    /// <p>A token ensuring that the operation is called only once with the specified
-    /// details.</p>
+    /// <p>A token ensuring that the operation is called only once with the specified details.</p>
     pub idempotency_token: std::option::Option<std::string::String>,
 }
 impl StartEngagementInput {
@@ -5098,23 +5009,19 @@ impl StartEngagementInput {
     pub fn sender(&self) -> std::option::Option<&str> {
         self.sender.as_deref()
     }
-    /// <p>The secure subject of the message that was sent to the contact. Use this field for
-    /// engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
+    /// <p>The secure subject of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
     pub fn subject(&self) -> std::option::Option<&str> {
         self.subject.as_deref()
     }
-    /// <p>The secure content of the message that was sent to the contact. Use this field for
-    /// engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
+    /// <p>The secure content of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> or <code>EMAIL</code>.</p>
     pub fn content(&self) -> std::option::Option<&str> {
         self.content.as_deref()
     }
-    /// <p>The insecure subject of the message that was sent to the contact. Use this field for
-    /// engagements to <code>SMS</code>.</p>
+    /// <p>The insecure subject of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
     pub fn public_subject(&self) -> std::option::Option<&str> {
         self.public_subject.as_deref()
     }
-    /// <p>The insecure content of the message that was sent to the contact. Use this field for
-    /// engagements to <code>SMS</code>.</p>
+    /// <p>The insecure content of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
     pub fn public_content(&self) -> std::option::Option<&str> {
         self.public_content.as_deref()
     }
@@ -5122,8 +5029,7 @@ impl StartEngagementInput {
     pub fn incident_id(&self) -> std::option::Option<&str> {
         self.incident_id.as_deref()
     }
-    /// <p>A token ensuring that the operation is called only once with the specified
-    /// details.</p>
+    /// <p>A token ensuring that the operation is called only once with the specified details.</p>
     pub fn idempotency_token(&self) -> std::option::Option<&str> {
         self.idempotency_token.as_deref()
     }
@@ -5221,8 +5127,7 @@ pub struct ListPagesByEngagementInput {
     pub engagement_id: std::option::Option<std::string::String>,
     /// <p>The pagination token to continue to the next page of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of engagements to contact channels to list per page of
-    /// results.</p>
+    /// <p>The maximum number of engagements to contact channels to list per page of results.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl ListPagesByEngagementInput {
@@ -5234,8 +5139,7 @@ impl ListPagesByEngagementInput {
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of engagements to contact channels to list per page of
-    /// results.</p>
+    /// <p>The maximum number of engagements to contact channels to list per page of results.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
@@ -5372,8 +5276,7 @@ pub struct ListContactsInput {
     pub max_results: std::option::Option<i32>,
     /// <p>Used to list only contacts who's aliases start with the specified prefix.</p>
     pub alias_prefix: std::option::Option<std::string::String>,
-    /// <p>The type of contact. A contact is type <code>PERSONAL</code> and an escalation plan is
-    /// type <code>ESCALATION</code>.</p>
+    /// <p>The type of contact. A contact is type <code>PERSONAL</code> and an escalation plan is type <code>ESCALATION</code>.</p>
     pub r#type: std::option::Option<crate::model::ContactType>,
 }
 impl ListContactsInput {
@@ -5389,8 +5292,7 @@ impl ListContactsInput {
     pub fn alias_prefix(&self) -> std::option::Option<&str> {
         self.alias_prefix.as_deref()
     }
-    /// <p>The type of contact. A contact is type <code>PERSONAL</code> and an escalation plan is
-    /// type <code>ESCALATION</code>.</p>
+    /// <p>The type of contact. A contact is type <code>PERSONAL</code> and an escalation plan is type <code>ESCALATION</code>.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ContactType> {
         self.r#type.as_ref()
     }
@@ -5619,43 +5521,21 @@ pub struct CreateContactChannelInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>Incident Manager supports three types of contact channels:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>SMS</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>VOICE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>EMAIL</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>SMS</code> </p> </li>
+    /// <li> <p> <code>VOICE</code> </p> </li>
+    /// <li> <p> <code>EMAIL</code> </p> </li>
     /// </ul>
     pub r#type: std::option::Option<crate::model::ChannelType>,
-    /// <p>The details that Incident Manager uses when trying to engage the contact channel. The format
-    /// is dependent on the type of the contact channel. The following are the expected
-    /// formats:</p>
+    /// <p>The details that Incident Manager uses when trying to engage the contact channel. The format is dependent on the type of the contact channel. The following are the expected formats:</p>
     /// <ul>
-    /// <li>
-    /// <p>SMS - '+' followed by the country code and phone number</p>
-    /// </li>
-    /// <li>
-    /// <p>VOICE - '+' followed by the country code and phone number</p>
-    /// </li>
-    /// <li>
-    /// <p>EMAIL - any standard email format</p>
-    /// </li>
+    /// <li> <p>SMS - '+' followed by the country code and phone number</p> </li>
+    /// <li> <p>VOICE - '+' followed by the country code and phone number</p> </li>
+    /// <li> <p>EMAIL - any standard email format</p> </li>
     /// </ul>
     pub delivery_address: std::option::Option<crate::model::ContactChannelAddress>,
-    /// <p>If you want to activate the channel at a later time, you can choose to defer activation.
-    /// Incident Manager can't engage your contact channel until it has been activated.</p>
+    /// <p>If you want to activate the channel at a later time, you can choose to defer activation. Incident Manager can't engage your contact channel until it has been activated.</p>
     pub defer_activation: std::option::Option<bool>,
-    /// <p>A token ensuring that the operation is called only once with the specified
-    /// details.</p>
+    /// <p>A token ensuring that the operation is called only once with the specified details.</p>
     pub idempotency_token: std::option::Option<std::string::String>,
 }
 impl CreateContactChannelInput {
@@ -5669,49 +5549,27 @@ impl CreateContactChannelInput {
     }
     /// <p>Incident Manager supports three types of contact channels:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>SMS</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>VOICE</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>EMAIL</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>SMS</code> </p> </li>
+    /// <li> <p> <code>VOICE</code> </p> </li>
+    /// <li> <p> <code>EMAIL</code> </p> </li>
     /// </ul>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ChannelType> {
         self.r#type.as_ref()
     }
-    /// <p>The details that Incident Manager uses when trying to engage the contact channel. The format
-    /// is dependent on the type of the contact channel. The following are the expected
-    /// formats:</p>
+    /// <p>The details that Incident Manager uses when trying to engage the contact channel. The format is dependent on the type of the contact channel. The following are the expected formats:</p>
     /// <ul>
-    /// <li>
-    /// <p>SMS - '+' followed by the country code and phone number</p>
-    /// </li>
-    /// <li>
-    /// <p>VOICE - '+' followed by the country code and phone number</p>
-    /// </li>
-    /// <li>
-    /// <p>EMAIL - any standard email format</p>
-    /// </li>
+    /// <li> <p>SMS - '+' followed by the country code and phone number</p> </li>
+    /// <li> <p>VOICE - '+' followed by the country code and phone number</p> </li>
+    /// <li> <p>EMAIL - any standard email format</p> </li>
     /// </ul>
     pub fn delivery_address(&self) -> std::option::Option<&crate::model::ContactChannelAddress> {
         self.delivery_address.as_ref()
     }
-    /// <p>If you want to activate the channel at a later time, you can choose to defer activation.
-    /// Incident Manager can't engage your contact channel until it has been activated.</p>
+    /// <p>If you want to activate the channel at a later time, you can choose to defer activation. Incident Manager can't engage your contact channel until it has been activated.</p>
     pub fn defer_activation(&self) -> std::option::Option<bool> {
         self.defer_activation
     }
-    /// <p>A token ensuring that the operation is called only once with the specified
-    /// details.</p>
+    /// <p>A token ensuring that the operation is called only once with the specified details.</p>
     pub fn idempotency_token(&self) -> std::option::Option<&str> {
         self.idempotency_token.as_deref()
     }
@@ -5733,51 +5591,41 @@ impl std::fmt::Debug for CreateContactChannelInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateContactInput {
-    /// <p>The short name to quickly identify a contact or escalation plan. The contact alias must
-    /// be unique and identifiable. </p>
+    /// <p>The short name to quickly identify a contact or escalation plan. The contact alias must be unique and identifiable. </p>
     pub alias: std::option::Option<std::string::String>,
-    /// <p>The full name of the contact or escalation plan.  </p>
+    /// <p>The full name of the contact or escalation plan. </p>
     pub display_name: std::option::Option<std::string::String>,
-    /// <p>To create an escalation plan use <code>ESCALATION</code>. To create a contact use
-    /// <code>PERSONAL</code>.</p>
+    /// <p>To create an escalation plan use <code>ESCALATION</code>. To create a contact use <code>PERSONAL</code>.</p>
     pub r#type: std::option::Option<crate::model::ContactType>,
-    /// <p>A list of stages. A contact has an engagement plan with stages that contact specified
-    /// contact channels. An escalation plan uses stages that contact specified contacts. </p>
+    /// <p>A list of stages. A contact has an engagement plan with stages that contact specified contact channels. An escalation plan uses stages that contact specified contacts. </p>
     pub plan: std::option::Option<crate::model::Plan>,
-    /// <p>Adds a tag to the target. You can only tag resources created in the first Region of your
-    /// replication set. </p>
+    /// <p>Adds a tag to the target. You can only tag resources created in the first Region of your replication set. </p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>A token ensuring that the operation is called only once with the specified
-    /// details.</p>
+    /// <p>A token ensuring that the operation is called only once with the specified details.</p>
     pub idempotency_token: std::option::Option<std::string::String>,
 }
 impl CreateContactInput {
-    /// <p>The short name to quickly identify a contact or escalation plan. The contact alias must
-    /// be unique and identifiable. </p>
+    /// <p>The short name to quickly identify a contact or escalation plan. The contact alias must be unique and identifiable. </p>
     pub fn alias(&self) -> std::option::Option<&str> {
         self.alias.as_deref()
     }
-    /// <p>The full name of the contact or escalation plan.  </p>
+    /// <p>The full name of the contact or escalation plan. </p>
     pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
     }
-    /// <p>To create an escalation plan use <code>ESCALATION</code>. To create a contact use
-    /// <code>PERSONAL</code>.</p>
+    /// <p>To create an escalation plan use <code>ESCALATION</code>. To create a contact use <code>PERSONAL</code>.</p>
     pub fn r#type(&self) -> std::option::Option<&crate::model::ContactType> {
         self.r#type.as_ref()
     }
-    /// <p>A list of stages. A contact has an engagement plan with stages that contact specified
-    /// contact channels. An escalation plan uses stages that contact specified contacts. </p>
+    /// <p>A list of stages. A contact has an engagement plan with stages that contact specified contact channels. An escalation plan uses stages that contact specified contacts. </p>
     pub fn plan(&self) -> std::option::Option<&crate::model::Plan> {
         self.plan.as_ref()
     }
-    /// <p>Adds a tag to the target. You can only tag resources created in the first Region of your
-    /// replication set. </p>
+    /// <p>Adds a tag to the target. You can only tag resources created in the first Region of your replication set. </p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>A token ensuring that the operation is called only once with the specified
-    /// details.</p>
+    /// <p>A token ensuring that the operation is called only once with the specified details.</p>
     pub fn idempotency_token(&self) -> std::option::Option<&str> {
         self.idempotency_token.as_deref()
     }
@@ -5837,14 +5685,8 @@ pub struct AcceptPageInput {
     pub note: std::option::Option<std::string::String>,
     /// <p>The accept code is a 6-digit code used to acknowledge the page.</p>
     pub accept_code: std::option::Option<std::string::String>,
-    /// <p>An optional field that Incident Manager uses to <code>ENFORCE</code>
-    /// <code>AcceptCode</code> validation when acknowledging an page. Acknowledgement can occur by
-    /// replying to a page, or when entering the AcceptCode in the console. Enforcing AcceptCode
-    /// validation causes Incident Manager to verify that the code entered by the user matches the
-    /// code sent by Incident Manager with the page.</p>
-    /// <p>Incident Manager can also <code>IGNORE</code>
-    /// <code>AcceptCode</code> validation. Ignoring <code>AcceptCode</code> validation causes
-    /// Incident Manager to accept any value entered for the <code>AcceptCode</code>.</p>
+    /// <p>An optional field that Incident Manager uses to <code>ENFORCE</code> <code>AcceptCode</code> validation when acknowledging an page. Acknowledgement can occur by replying to a page, or when entering the AcceptCode in the console. Enforcing AcceptCode validation causes Incident Manager to verify that the code entered by the user matches the code sent by Incident Manager with the page.</p>
+    /// <p>Incident Manager can also <code>IGNORE</code> <code>AcceptCode</code> validation. Ignoring <code>AcceptCode</code> validation causes Incident Manager to accept any value entered for the <code>AcceptCode</code>.</p>
     pub accept_code_validation: std::option::Option<crate::model::AcceptCodeValidation>,
 }
 impl AcceptPageInput {
@@ -5868,14 +5710,8 @@ impl AcceptPageInput {
     pub fn accept_code(&self) -> std::option::Option<&str> {
         self.accept_code.as_deref()
     }
-    /// <p>An optional field that Incident Manager uses to <code>ENFORCE</code>
-    /// <code>AcceptCode</code> validation when acknowledging an page. Acknowledgement can occur by
-    /// replying to a page, or when entering the AcceptCode in the console. Enforcing AcceptCode
-    /// validation causes Incident Manager to verify that the code entered by the user matches the
-    /// code sent by Incident Manager with the page.</p>
-    /// <p>Incident Manager can also <code>IGNORE</code>
-    /// <code>AcceptCode</code> validation. Ignoring <code>AcceptCode</code> validation causes
-    /// Incident Manager to accept any value entered for the <code>AcceptCode</code>.</p>
+    /// <p>An optional field that Incident Manager uses to <code>ENFORCE</code> <code>AcceptCode</code> validation when acknowledging an page. Acknowledgement can occur by replying to a page, or when entering the AcceptCode in the console. Enforcing AcceptCode validation causes Incident Manager to verify that the code entered by the user matches the code sent by Incident Manager with the page.</p>
+    /// <p>Incident Manager can also <code>IGNORE</code> <code>AcceptCode</code> validation. Ignoring <code>AcceptCode</code> validation causes Incident Manager to accept any value entered for the <code>AcceptCode</code>.</p>
     pub fn accept_code_validation(
         &self,
     ) -> std::option::Option<&crate::model::AcceptCodeValidation> {

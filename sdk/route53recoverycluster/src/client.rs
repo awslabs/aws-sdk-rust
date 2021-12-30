@@ -119,16 +119,9 @@ pub mod fluent_builders {
     //!
     /// Fluent builder constructing a request to `GetRoutingControlState`.
     ///
-    /// <p>Get the state for a routing control. A routing control is a simple on/off switch
-    /// that you can use to route traffic to cells. When the state is On, traffic flows to a cell. When it's off, traffic does not flow. </p>
-    /// <p>Before you can create a routing control, you first must create a cluster to host the control.
-    /// For more information, see
-    /// <a href="https://docs.aws.amazon.com/recovery-cluster/latest/api/cluster.html">CreateCluster</a>.
-    /// Access one of the endpoints for the cluster to get or update the routing control state to
-    /// redirect traffic.</p>
-    /// <p>For more information about working with routing controls, see
-    /// <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.html">Routing control</a>
-    /// in the Route 53 Application Recovery Controller Developer Guide.</p>
+    /// <p>Get the state for a routing control. A routing control is a simple on/off switch that you can use to route traffic to cells. When the state is On, traffic flows to a cell. When it's off, traffic does not flow. </p>
+    /// <p>Before you can create a routing control, you first must create a cluster to host the control. For more information, see <a href="https://docs.aws.amazon.com/recovery-cluster/latest/api/cluster.html">CreateCluster</a>. Access one of the endpoints for the cluster to get or update the routing control state to redirect traffic.</p>
+    /// <p>For more information about working with routing controls, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.html">Routing control</a> in the Route 53 Application Recovery Controller Developer Guide.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetRoutingControlState<
         C = aws_smithy_client::erase::DynConnector,
@@ -201,11 +194,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateRoutingControlState`.
     ///
-    /// <p>Set the state of the routing control to reroute traffic. You can set the value to be On or Off.
-    /// When the state is On, traffic flows to a cell. When it's off, traffic does not flow.</p>
-    /// <p>For more information about working with routing controls, see
-    /// <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.html">Routing control</a>
-    /// in the Route 53 Application Recovery Controller Developer Guide.</p>
+    /// <p>Set the state of the routing control to reroute traffic. You can set the value to be On or Off. When the state is On, traffic flows to a cell. When it's off, traffic does not flow.</p>
+    /// <p>For more information about working with routing controls, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.html">Routing control</a> in the Route 53 Application Recovery Controller Developer Guide.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRoutingControlState<
         C = aws_smithy_client::erase::DynConnector,
@@ -291,11 +281,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateRoutingControlStates`.
     ///
-    /// <p>Set multiple routing control states. You can set the value for each state to be On or Off.
-    /// When the state is On, traffic flows to a cell. When it's off, traffic does not flow.</p>
-    /// <p>For more information about working with routing controls, see
-    /// <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.html">Routing control</a>
-    /// in the Route 53 Application Recovery Controller Developer Guide.</p>
+    /// <p>Set multiple routing control states. You can set the value for each state to be On or Off. When the state is On, traffic flows to a cell. When it's off, traffic does not flow.</p>
+    /// <p>For more information about working with routing controls, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.html">Routing control</a> in the Route 53 Application Recovery Controller Developer Guide.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateRoutingControlStates<
         C = aws_smithy_client::erase::DynConnector,

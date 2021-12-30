@@ -173,8 +173,7 @@ impl Webhook {
     }
 }
 
-/// <p> Describes a domain association that associates a custom domain with an Amplify app.
-/// </p>
+/// <p> Describes a domain association that associates a custom domain with an Amplify app. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DomainAssociation {
@@ -186,8 +185,7 @@ pub struct DomainAssociation {
     pub enable_auto_sub_domain: std::option::Option<bool>,
     /// <p> Sets branch patterns for automatic subdomain creation. </p>
     pub auto_sub_domain_creation_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon
-    /// Resource Name (ARN) for automatically creating subdomains. </p>
+    /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for automatically creating subdomains. </p>
     pub auto_sub_domain_iam_role: std::option::Option<std::string::String>,
     /// <p> The current status of the domain association. </p>
     pub domain_status: std::option::Option<crate::model::DomainStatus>,
@@ -215,8 +213,7 @@ impl DomainAssociation {
     pub fn auto_sub_domain_creation_patterns(&self) -> std::option::Option<&[std::string::String]> {
         self.auto_sub_domain_creation_patterns.as_deref()
     }
-    /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon
-    /// Resource Name (ARN) for automatically creating subdomains. </p>
+    /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for automatically creating subdomains. </p>
     pub fn auto_sub_domain_iam_role(&self) -> std::option::Option<&str> {
         self.auto_sub_domain_iam_role.as_deref()
     }
@@ -331,14 +328,12 @@ pub mod domain_association {
             self.auto_sub_domain_creation_patterns = input;
             self
         }
-        /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon
-        /// Resource Name (ARN) for automatically creating subdomains. </p>
+        /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for automatically creating subdomains. </p>
         pub fn auto_sub_domain_iam_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.auto_sub_domain_iam_role = Some(input.into());
             self
         }
-        /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon
-        /// Resource Name (ARN) for automatically creating subdomains. </p>
+        /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for automatically creating subdomains. </p>
         pub fn set_auto_sub_domain_iam_role(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -731,8 +726,7 @@ pub struct Branch {
     pub thumbnail_url: std::option::Option<std::string::String>,
     /// <p> The basic authorization credentials for a branch of an Amplify app. </p>
     pub basic_auth_credentials: std::option::Option<std::string::String>,
-    /// <p> The build specification (build spec) content for the branch of an Amplify app.
-    /// </p>
+    /// <p> The build specification (build spec) content for the branch of an Amplify app. </p>
     pub build_spec: std::option::Option<std::string::String>,
     /// <p> The content Time to Live (TTL) for the website in seconds. </p>
     pub ttl: std::option::Option<std::string::String>,
@@ -746,8 +740,7 @@ pub struct Branch {
     pub destination_branch: std::option::Option<std::string::String>,
     /// <p> The source branch if the branch is a pull request branch. </p>
     pub source_branch: std::option::Option<std::string::String>,
-    /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify
-    /// app. </p>
+    /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
     pub backend_environment_arn: std::option::Option<std::string::String>,
 }
 impl Branch {
@@ -834,8 +827,7 @@ impl Branch {
     pub fn basic_auth_credentials(&self) -> std::option::Option<&str> {
         self.basic_auth_credentials.as_deref()
     }
-    /// <p> The build specification (build spec) content for the branch of an Amplify app.
-    /// </p>
+    /// <p> The build specification (build spec) content for the branch of an Amplify app. </p>
     pub fn build_spec(&self) -> std::option::Option<&str> {
         self.build_spec.as_deref()
     }
@@ -863,8 +855,7 @@ impl Branch {
     pub fn source_branch(&self) -> std::option::Option<&str> {
         self.source_branch.as_deref()
     }
-    /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify
-    /// app. </p>
+    /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
     pub fn backend_environment_arn(&self) -> std::option::Option<&str> {
         self.backend_environment_arn.as_deref()
     }
@@ -1196,14 +1187,12 @@ pub mod branch {
             self.basic_auth_credentials = input;
             self
         }
-        /// <p> The build specification (build spec) content for the branch of an Amplify app.
-        /// </p>
+        /// <p> The build specification (build spec) content for the branch of an Amplify app. </p>
         pub fn build_spec(mut self, input: impl Into<std::string::String>) -> Self {
             self.build_spec = Some(input.into());
             self
         }
-        /// <p> The build specification (build spec) content for the branch of an Amplify app.
-        /// </p>
+        /// <p> The build specification (build spec) content for the branch of an Amplify app. </p>
         pub fn set_build_spec(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.build_spec = input;
             self
@@ -1289,14 +1278,12 @@ pub mod branch {
             self.source_branch = input;
             self
         }
-        /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify
-        /// app. </p>
+        /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
         pub fn backend_environment_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.backend_environment_arn = Some(input.into());
             self
         }
-        /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify
-        /// app. </p>
+        /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
         pub fn set_backend_environment_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1418,8 +1405,7 @@ impl AsRef<str> for Stage {
     }
 }
 
-/// <p> Represents the different branches of a repository for building, deploying, and
-/// hosting an Amplify app. </p>
+/// <p> Represents the different branches of a repository for building, deploying, and hosting an Amplify app. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct App {
@@ -1442,8 +1428,7 @@ pub struct App {
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p> Updates the date and time for the Amplify app. </p>
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p> The AWS Identity and Access Management (IAM) service role for the Amazon Resource
-    /// Name (ARN) of the Amplify app. </p>
+    /// <p> The AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) of the Amplify app. </p>
     pub iam_service_role_arn: std::option::Option<std::string::String>,
     /// <p> The environment variables for the Amplify app. </p>
     pub environment_variables:
@@ -1452,8 +1437,7 @@ pub struct App {
     pub default_domain: std::option::Option<std::string::String>,
     /// <p> Enables the auto-building of branches for the Amplify app. </p>
     pub enable_branch_auto_build: std::option::Option<bool>,
-    /// <p> Automatically disconnect a branch in the Amplify Console when you delete a branch
-    /// from your Git repository. </p>
+    /// <p> Automatically disconnect a branch in the Amplify Console when you delete a branch from your Git repository. </p>
     pub enable_branch_auto_deletion: std::option::Option<bool>,
     /// <p> Enables basic authorization for the Amplify app's branches. </p>
     pub enable_basic_auth: std::option::Option<bool>,
@@ -1463,8 +1447,7 @@ pub struct App {
     pub custom_rules: std::option::Option<std::vec::Vec<crate::model::CustomRule>>,
     /// <p> Describes the information about a production branch of the Amplify app. </p>
     pub production_branch: std::option::Option<crate::model::ProductionBranch>,
-    /// <p> Describes the content of the build specification (build spec) for the Amplify app.
-    /// </p>
+    /// <p> Describes the content of the build specification (build spec) for the Amplify app. </p>
     pub build_spec: std::option::Option<std::string::String>,
     /// <p>Describes the custom HTTP headers for the Amplify app.</p>
     pub custom_headers: std::option::Option<std::string::String>,
@@ -1515,8 +1498,7 @@ impl App {
     pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
-    /// <p> The AWS Identity and Access Management (IAM) service role for the Amazon Resource
-    /// Name (ARN) of the Amplify app. </p>
+    /// <p> The AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) of the Amplify app. </p>
     pub fn iam_service_role_arn(&self) -> std::option::Option<&str> {
         self.iam_service_role_arn.as_deref()
     }
@@ -1535,8 +1517,7 @@ impl App {
     pub fn enable_branch_auto_build(&self) -> std::option::Option<bool> {
         self.enable_branch_auto_build
     }
-    /// <p> Automatically disconnect a branch in the Amplify Console when you delete a branch
-    /// from your Git repository. </p>
+    /// <p> Automatically disconnect a branch in the Amplify Console when you delete a branch from your Git repository. </p>
     pub fn enable_branch_auto_deletion(&self) -> std::option::Option<bool> {
         self.enable_branch_auto_deletion
     }
@@ -1556,8 +1537,7 @@ impl App {
     pub fn production_branch(&self) -> std::option::Option<&crate::model::ProductionBranch> {
         self.production_branch.as_ref()
     }
-    /// <p> Describes the content of the build specification (build spec) for the Amplify app.
-    /// </p>
+    /// <p> Describes the content of the build specification (build spec) for the Amplify app. </p>
     pub fn build_spec(&self) -> std::option::Option<&str> {
         self.build_spec.as_deref()
     }
@@ -1769,14 +1749,12 @@ pub mod app {
             self.update_time = input;
             self
         }
-        /// <p> The AWS Identity and Access Management (IAM) service role for the Amazon Resource
-        /// Name (ARN) of the Amplify app. </p>
+        /// <p> The AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) of the Amplify app. </p>
         pub fn iam_service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.iam_service_role_arn = Some(input.into());
             self
         }
-        /// <p> The AWS Identity and Access Management (IAM) service role for the Amazon Resource
-        /// Name (ARN) of the Amplify app. </p>
+        /// <p> The AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) of the Amplify app. </p>
         pub fn set_iam_service_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1832,14 +1810,12 @@ pub mod app {
             self.enable_branch_auto_build = input;
             self
         }
-        /// <p> Automatically disconnect a branch in the Amplify Console when you delete a branch
-        /// from your Git repository. </p>
+        /// <p> Automatically disconnect a branch in the Amplify Console when you delete a branch from your Git repository. </p>
         pub fn enable_branch_auto_deletion(mut self, input: bool) -> Self {
             self.enable_branch_auto_deletion = Some(input);
             self
         }
-        /// <p> Automatically disconnect a branch in the Amplify Console when you delete a branch
-        /// from your Git repository. </p>
+        /// <p> Automatically disconnect a branch in the Amplify Console when you delete a branch from your Git repository. </p>
         pub fn set_enable_branch_auto_deletion(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_branch_auto_deletion = input;
             self
@@ -1899,14 +1875,12 @@ pub mod app {
             self.production_branch = input;
             self
         }
-        /// <p> Describes the content of the build specification (build spec) for the Amplify app.
-        /// </p>
+        /// <p> Describes the content of the build specification (build spec) for the Amplify app. </p>
         pub fn build_spec(mut self, input: impl Into<std::string::String>) -> Self {
             self.build_spec = Some(input.into());
             self
         }
-        /// <p> Describes the content of the build specification (build spec) for the Amplify app.
-        /// </p>
+        /// <p> Describes the content of the build specification (build spec) for the Amplify app. </p>
         pub fn set_build_spec(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.build_spec = input;
             self
@@ -2400,25 +2374,34 @@ pub struct CustomRule {
     /// <p> The target pattern for a URL rewrite or redirect rule. </p>
     pub target: std::option::Option<std::string::String>,
     /// <p> The status code for a URL rewrite or redirect rule. </p>
-    ///
     /// <dl>
-    /// <dt>200</dt>
+    /// <dt>
+    /// 200
+    /// </dt>
     /// <dd>
     /// <p>Represents a 200 rewrite rule.</p>
     /// </dd>
-    /// <dt>301</dt>
+    /// <dt>
+    /// 301
+    /// </dt>
     /// <dd>
     /// <p>Represents a 301 (moved pemanently) redirect rule. This and all future requests should be directed to the target URL. </p>
     /// </dd>
-    /// <dt>302</dt>
+    /// <dt>
+    /// 302
+    /// </dt>
     /// <dd>
     /// <p>Represents a 302 temporary redirect rule.</p>
     /// </dd>
-    /// <dt>404</dt>
+    /// <dt>
+    /// 404
+    /// </dt>
     /// <dd>
     /// <p>Represents a 404 redirect rule.</p>
     /// </dd>
-    /// <dt>404-200</dt>
+    /// <dt>
+    /// 404-200
+    /// </dt>
     /// <dd>
     /// <p>Represents a 404 rewrite rule.</p>
     /// </dd>
@@ -2437,25 +2420,34 @@ impl CustomRule {
         self.target.as_deref()
     }
     /// <p> The status code for a URL rewrite or redirect rule. </p>
-    ///
     /// <dl>
-    /// <dt>200</dt>
+    /// <dt>
+    /// 200
+    /// </dt>
     /// <dd>
     /// <p>Represents a 200 rewrite rule.</p>
     /// </dd>
-    /// <dt>301</dt>
+    /// <dt>
+    /// 301
+    /// </dt>
     /// <dd>
     /// <p>Represents a 301 (moved pemanently) redirect rule. This and all future requests should be directed to the target URL. </p>
     /// </dd>
-    /// <dt>302</dt>
+    /// <dt>
+    /// 302
+    /// </dt>
     /// <dd>
     /// <p>Represents a 302 temporary redirect rule.</p>
     /// </dd>
-    /// <dt>404</dt>
+    /// <dt>
+    /// 404
+    /// </dt>
     /// <dd>
     /// <p>Represents a 404 redirect rule.</p>
     /// </dd>
-    /// <dt>404-200</dt>
+    /// <dt>
+    /// 404-200
+    /// </dt>
     /// <dd>
     /// <p>Represents a 404 rewrite rule.</p>
     /// </dd>
@@ -2511,25 +2503,34 @@ pub mod custom_rule {
             self
         }
         /// <p> The status code for a URL rewrite or redirect rule. </p>
-        ///
         /// <dl>
-        /// <dt>200</dt>
+        /// <dt>
+        /// 200
+        /// </dt>
         /// <dd>
         /// <p>Represents a 200 rewrite rule.</p>
         /// </dd>
-        /// <dt>301</dt>
+        /// <dt>
+        /// 301
+        /// </dt>
         /// <dd>
         /// <p>Represents a 301 (moved pemanently) redirect rule. This and all future requests should be directed to the target URL. </p>
         /// </dd>
-        /// <dt>302</dt>
+        /// <dt>
+        /// 302
+        /// </dt>
         /// <dd>
         /// <p>Represents a 302 temporary redirect rule.</p>
         /// </dd>
-        /// <dt>404</dt>
+        /// <dt>
+        /// 404
+        /// </dt>
         /// <dd>
         /// <p>Represents a 404 redirect rule.</p>
         /// </dd>
-        /// <dt>404-200</dt>
+        /// <dt>
+        /// 404-200
+        /// </dt>
         /// <dd>
         /// <p>Represents a 404 rewrite rule.</p>
         /// </dd>
@@ -2539,25 +2540,34 @@ pub mod custom_rule {
             self
         }
         /// <p> The status code for a URL rewrite or redirect rule. </p>
-        ///
         /// <dl>
-        /// <dt>200</dt>
+        /// <dt>
+        /// 200
+        /// </dt>
         /// <dd>
         /// <p>Represents a 200 rewrite rule.</p>
         /// </dd>
-        /// <dt>301</dt>
+        /// <dt>
+        /// 301
+        /// </dt>
         /// <dd>
         /// <p>Represents a 301 (moved pemanently) redirect rule. This and all future requests should be directed to the target URL. </p>
         /// </dd>
-        /// <dt>302</dt>
+        /// <dt>
+        /// 302
+        /// </dt>
         /// <dd>
         /// <p>Represents a 302 temporary redirect rule.</p>
         /// </dd>
-        /// <dt>404</dt>
+        /// <dt>
+        /// 404
+        /// </dt>
         /// <dd>
         /// <p>Represents a 404 redirect rule.</p>
         /// </dd>
-        /// <dt>404-200</dt>
+        /// <dt>
+        /// 404-200
+        /// </dt>
         /// <dd>
         /// <p>Represents a 404 rewrite rule.</p>
         /// </dd>
@@ -2665,11 +2675,7 @@ pub struct JobSummary {
     pub status: std::option::Option<crate::model::JobStatus>,
     /// <p> The end date and time for the job. </p>
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p> The type for the job. If the value is <code>RELEASE</code>, the job was manually
-    /// released from its source by using the <code>StartJob</code> API. If the value is
-    /// <code>RETRY</code>, the job was manually retried using the <code>StartJob</code>
-    /// API. If the value is <code>WEB_HOOK</code>, the job was automatically triggered by
-    /// webhooks. </p>
+    /// <p> The type for the job. If the value is <code>RELEASE</code>, the job was manually released from its source by using the <code>StartJob</code> API. If the value is <code>RETRY</code>, the job was manually retried using the <code>StartJob</code> API. If the value is <code>WEB_HOOK</code>, the job was automatically triggered by webhooks. </p>
     pub job_type: std::option::Option<crate::model::JobType>,
 }
 impl JobSummary {
@@ -2705,11 +2711,7 @@ impl JobSummary {
     pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
-    /// <p> The type for the job. If the value is <code>RELEASE</code>, the job was manually
-    /// released from its source by using the <code>StartJob</code> API. If the value is
-    /// <code>RETRY</code>, the job was manually retried using the <code>StartJob</code>
-    /// API. If the value is <code>WEB_HOOK</code>, the job was automatically triggered by
-    /// webhooks. </p>
+    /// <p> The type for the job. If the value is <code>RELEASE</code>, the job was manually released from its source by using the <code>StartJob</code> API. If the value is <code>RETRY</code>, the job was manually retried using the <code>StartJob</code> API. If the value is <code>WEB_HOOK</code>, the job was automatically triggered by webhooks. </p>
     pub fn job_type(&self) -> std::option::Option<&crate::model::JobType> {
         self.job_type.as_ref()
     }
@@ -2838,20 +2840,12 @@ pub mod job_summary {
             self.end_time = input;
             self
         }
-        /// <p> The type for the job. If the value is <code>RELEASE</code>, the job was manually
-        /// released from its source by using the <code>StartJob</code> API. If the value is
-        /// <code>RETRY</code>, the job was manually retried using the <code>StartJob</code>
-        /// API. If the value is <code>WEB_HOOK</code>, the job was automatically triggered by
-        /// webhooks. </p>
+        /// <p> The type for the job. If the value is <code>RELEASE</code>, the job was manually released from its source by using the <code>StartJob</code> API. If the value is <code>RETRY</code>, the job was manually retried using the <code>StartJob</code> API. If the value is <code>WEB_HOOK</code>, the job was automatically triggered by webhooks. </p>
         pub fn job_type(mut self, input: crate::model::JobType) -> Self {
             self.job_type = Some(input);
             self
         }
-        /// <p> The type for the job. If the value is <code>RELEASE</code>, the job was manually
-        /// released from its source by using the <code>StartJob</code> API. If the value is
-        /// <code>RETRY</code>, the job was manually retried using the <code>StartJob</code>
-        /// API. If the value is <code>WEB_HOOK</code>, the job was automatically triggered by
-        /// webhooks. </p>
+        /// <p> The type for the job. If the value is <code>RELEASE</code>, the job was manually released from its source by using the <code>StartJob</code> API. If the value is <code>RETRY</code>, the job was manually retried using the <code>StartJob</code> API. If the value is <code>WEB_HOOK</code>, the job was automatically triggered by webhooks. </p>
         pub fn set_job_type(mut self, input: std::option::Option<crate::model::JobType>) -> Self {
             self.job_type = input;
             self
@@ -3029,8 +3023,7 @@ impl AsRef<str> for JobStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BackendEnvironment {
-    /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify
-    /// app. </p>
+    /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
     pub backend_environment_arn: std::option::Option<std::string::String>,
     /// <p> The name for a backend environment that is part of an Amplify app. </p>
     pub environment_name: std::option::Option<std::string::String>,
@@ -3038,16 +3031,13 @@ pub struct BackendEnvironment {
     pub stack_name: std::option::Option<std::string::String>,
     /// <p> The name of deployment artifacts. </p>
     pub deployment_artifacts: std::option::Option<std::string::String>,
-    /// <p> The creation date and time for a backend environment that is part of an Amplify app.
-    /// </p>
+    /// <p> The creation date and time for a backend environment that is part of an Amplify app. </p>
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p> The last updated date and time for a backend environment that is part of an Amplify
-    /// app. </p>
+    /// <p> The last updated date and time for a backend environment that is part of an Amplify app. </p>
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl BackendEnvironment {
-    /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify
-    /// app. </p>
+    /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
     pub fn backend_environment_arn(&self) -> std::option::Option<&str> {
         self.backend_environment_arn.as_deref()
     }
@@ -3063,13 +3053,11 @@ impl BackendEnvironment {
     pub fn deployment_artifacts(&self) -> std::option::Option<&str> {
         self.deployment_artifacts.as_deref()
     }
-    /// <p> The creation date and time for a backend environment that is part of an Amplify app.
-    /// </p>
+    /// <p> The creation date and time for a backend environment that is part of an Amplify app. </p>
     pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
-    /// <p> The last updated date and time for a backend environment that is part of an Amplify
-    /// app. </p>
+    /// <p> The last updated date and time for a backend environment that is part of an Amplify app. </p>
     pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
@@ -3100,14 +3088,12 @@ pub mod backend_environment {
         pub(crate) update_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify
-        /// app. </p>
+        /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
         pub fn backend_environment_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.backend_environment_arn = Some(input.into());
             self
         }
-        /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify
-        /// app. </p>
+        /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
         pub fn set_backend_environment_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3151,14 +3137,12 @@ pub mod backend_environment {
             self.deployment_artifacts = input;
             self
         }
-        /// <p> The creation date and time for a backend environment that is part of an Amplify app.
-        /// </p>
+        /// <p> The creation date and time for a backend environment that is part of an Amplify app. </p>
         pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.create_time = Some(input);
             self
         }
-        /// <p> The creation date and time for a backend environment that is part of an Amplify app.
-        /// </p>
+        /// <p> The creation date and time for a backend environment that is part of an Amplify app. </p>
         pub fn set_create_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -3166,14 +3150,12 @@ pub mod backend_environment {
             self.create_time = input;
             self
         }
-        /// <p> The last updated date and time for a backend environment that is part of an Amplify
-        /// app. </p>
+        /// <p> The last updated date and time for a backend environment that is part of an Amplify app. </p>
         pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.update_time = Some(input);
             self
         }
-        /// <p> The last updated date and time for a backend environment that is part of an Amplify
-        /// app. </p>
+        /// <p> The last updated date and time for a backend environment that is part of an Amplify app. </p>
         pub fn set_update_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -3384,8 +3366,7 @@ pub struct Step {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p> The reason for the current step status. </p>
     pub status_reason: std::option::Option<std::string::String>,
-    /// <p> The context for the current step. Includes a build image if the step is build.
-    /// </p>
+    /// <p> The context for the current step. Includes a build image if the step is build. </p>
     pub context: std::option::Option<std::string::String>,
 }
 impl Step {
@@ -3432,8 +3413,7 @@ impl Step {
     pub fn status_reason(&self) -> std::option::Option<&str> {
         self.status_reason.as_deref()
     }
-    /// <p> The context for the current step. Includes a build image if the step is build.
-    /// </p>
+    /// <p> The context for the current step. Includes a build image if the step is build. </p>
     pub fn context(&self) -> std::option::Option<&str> {
         self.context.as_deref()
     }
@@ -3609,14 +3589,12 @@ pub mod step {
             self.status_reason = input;
             self
         }
-        /// <p> The context for the current step. Includes a build image if the step is build.
-        /// </p>
+        /// <p> The context for the current step. Includes a build image if the step is build. </p>
         pub fn context(mut self, input: impl Into<std::string::String>) -> Self {
             self.context = Some(input.into());
             self
         }
-        /// <p> The context for the current step. Includes a build image if the step is build.
-        /// </p>
+        /// <p> The context for the current step. Includes a build image if the step is build. </p>
         pub fn set_context(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.context = input;
             self

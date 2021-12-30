@@ -1575,20 +1575,11 @@ pub struct GetQueryStateOutput {
     /// <p>An error message when the operation fails.</p>
     pub error: std::option::Option<std::string::String>,
     /// <p>The state of a query previously submitted. The possible states are:</p>
-    ///
     /// <ul>
-    /// <li>
-    /// <p>PENDING: the query is pending.</p>
-    /// </li>
-    /// <li>
-    /// <p>WORKUNITS_AVAILABLE: some work units are ready for retrieval and execution.</p>
-    /// </li>
-    /// <li>
-    /// <p>FINISHED: the query planning finished successfully, and all work units are ready for retrieval and execution.</p>
-    /// </li>
-    /// <li>
-    /// <p>ERROR: an error occurred with the query, such as an invalid query ID or a backend error.</p>
-    /// </li>
+    /// <li> <p>PENDING: the query is pending.</p> </li>
+    /// <li> <p>WORKUNITS_AVAILABLE: some work units are ready for retrieval and execution.</p> </li>
+    /// <li> <p>FINISHED: the query planning finished successfully, and all work units are ready for retrieval and execution.</p> </li>
+    /// <li> <p>ERROR: an error occurred with the query, such as an invalid query ID or a backend error.</p> </li>
     /// </ul>
     pub state: std::option::Option<crate::model::QueryStateString>,
 }
@@ -1598,20 +1589,11 @@ impl GetQueryStateOutput {
         self.error.as_deref()
     }
     /// <p>The state of a query previously submitted. The possible states are:</p>
-    ///
     /// <ul>
-    /// <li>
-    /// <p>PENDING: the query is pending.</p>
-    /// </li>
-    /// <li>
-    /// <p>WORKUNITS_AVAILABLE: some work units are ready for retrieval and execution.</p>
-    /// </li>
-    /// <li>
-    /// <p>FINISHED: the query planning finished successfully, and all work units are ready for retrieval and execution.</p>
-    /// </li>
-    /// <li>
-    /// <p>ERROR: an error occurred with the query, such as an invalid query ID or a backend error.</p>
-    /// </li>
+    /// <li> <p>PENDING: the query is pending.</p> </li>
+    /// <li> <p>WORKUNITS_AVAILABLE: some work units are ready for retrieval and execution.</p> </li>
+    /// <li> <p>FINISHED: the query planning finished successfully, and all work units are ready for retrieval and execution.</p> </li>
+    /// <li> <p>ERROR: an error occurred with the query, such as an invalid query ID or a backend error.</p> </li>
     /// </ul>
     pub fn state(&self) -> std::option::Option<&crate::model::QueryStateString> {
         self.state.as_ref()
@@ -1646,40 +1628,22 @@ pub mod get_query_state_output {
             self
         }
         /// <p>The state of a query previously submitted. The possible states are:</p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>PENDING: the query is pending.</p>
-        /// </li>
-        /// <li>
-        /// <p>WORKUNITS_AVAILABLE: some work units are ready for retrieval and execution.</p>
-        /// </li>
-        /// <li>
-        /// <p>FINISHED: the query planning finished successfully, and all work units are ready for retrieval and execution.</p>
-        /// </li>
-        /// <li>
-        /// <p>ERROR: an error occurred with the query, such as an invalid query ID or a backend error.</p>
-        /// </li>
+        /// <li> <p>PENDING: the query is pending.</p> </li>
+        /// <li> <p>WORKUNITS_AVAILABLE: some work units are ready for retrieval and execution.</p> </li>
+        /// <li> <p>FINISHED: the query planning finished successfully, and all work units are ready for retrieval and execution.</p> </li>
+        /// <li> <p>ERROR: an error occurred with the query, such as an invalid query ID or a backend error.</p> </li>
         /// </ul>
         pub fn state(mut self, input: crate::model::QueryStateString) -> Self {
             self.state = Some(input);
             self
         }
         /// <p>The state of a query previously submitted. The possible states are:</p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>PENDING: the query is pending.</p>
-        /// </li>
-        /// <li>
-        /// <p>WORKUNITS_AVAILABLE: some work units are ready for retrieval and execution.</p>
-        /// </li>
-        /// <li>
-        /// <p>FINISHED: the query planning finished successfully, and all work units are ready for retrieval and execution.</p>
-        /// </li>
-        /// <li>
-        /// <p>ERROR: an error occurred with the query, such as an invalid query ID or a backend error.</p>
-        /// </li>
+        /// <li> <p>PENDING: the query is pending.</p> </li>
+        /// <li> <p>WORKUNITS_AVAILABLE: some work units are ready for retrieval and execution.</p> </li>
+        /// <li> <p>FINISHED: the query planning finished successfully, and all work units are ready for retrieval and execution.</p> </li>
+        /// <li> <p>ERROR: an error occurred with the query, such as an invalid query ID or a backend error.</p> </li>
         /// </ul>
         pub fn set_state(
             mut self,

@@ -5,8 +5,7 @@
 pub struct DetectorSummary {
     /// <p>The name of the detector model that created this detector (instance).</p>
     pub detector_model_name: std::option::Option<std::string::String>,
-    /// <p>The value of the key (identifying the device or system) that caused the creation of this
-    /// detector (instance).</p>
+    /// <p>The value of the key (identifying the device or system) that caused the creation of this detector (instance).</p>
     pub key_value: std::option::Option<std::string::String>,
     /// <p>The version of the detector model that created this detector (instance).</p>
     pub detector_model_version: std::option::Option<std::string::String>,
@@ -22,8 +21,7 @@ impl DetectorSummary {
     pub fn detector_model_name(&self) -> std::option::Option<&str> {
         self.detector_model_name.as_deref()
     }
-    /// <p>The value of the key (identifying the device or system) that caused the creation of this
-    /// detector (instance).</p>
+    /// <p>The value of the key (identifying the device or system) that caused the creation of this detector (instance).</p>
     pub fn key_value(&self) -> std::option::Option<&str> {
         self.key_value.as_deref()
     }
@@ -83,14 +81,12 @@ pub mod detector_summary {
             self.detector_model_name = input;
             self
         }
-        /// <p>The value of the key (identifying the device or system) that caused the creation of this
-        /// detector (instance).</p>
+        /// <p>The value of the key (identifying the device or system) that caused the creation of this detector (instance).</p>
         pub fn key_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_value = Some(input.into());
             self
         }
-        /// <p>The value of the key (identifying the device or system) that caused the creation of this
-        /// detector (instance).</p>
+        /// <p>The value of the key (identifying the device or system) that caused the creation of this detector (instance).</p>
         pub fn set_key_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_value = input;
             self
@@ -229,44 +225,16 @@ pub struct AlarmSummary {
     pub alarm_model_name: std::option::Option<std::string::String>,
     /// <p>The version of the alarm model.</p>
     pub alarm_model_version: std::option::Option<std::string::String>,
-    /// <p>The value of the key used as a filter to select only the alarms associated with the
-    /// <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
+    /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
     pub key_value: std::option::Option<std::string::String>,
     /// <p>The name of the alarm state. The state name can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>DISABLED</code> - When the alarm is in the <code>DISABLED</code> state,
-    /// it isn't ready to evaluate data. To enable the alarm,
-    /// you must change the alarm to the <code>NORMAL</code> state.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NORMAL</code> - When the alarm is in the <code>NORMAL</code> state,
-    /// it's ready to evaluate data.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code> - If the alarm is in the <code>ACTIVE</code> state,
-    /// the alarm is invoked.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACKNOWLEDGED</code> - When the alarm is in the <code>ACKNOWLEDGED</code> state,
-    /// the alarm was invoked and you acknowledged the alarm.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SNOOZE_DISABLED</code> - When the alarm is in the <code>SNOOZE_DISABLED</code> state,
-    /// the alarm is disabled for a specified period of time. After the snooze time,
-    /// the alarm automatically changes to the <code>NORMAL</code> state. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LATCHED</code> - When the alarm is in the <code>LATCHED</code> state,
-    /// the alarm was invoked. However, the data that the alarm is currently evaluating is within the specified range.
-    /// To change the alarm to the <code>NORMAL</code> state, you must acknowledge the alarm.</p>
-    /// </li>
+    /// <li> <p> <code>DISABLED</code> - When the alarm is in the <code>DISABLED</code> state, it isn't ready to evaluate data. To enable the alarm, you must change the alarm to the <code>NORMAL</code> state.</p> </li>
+    /// <li> <p> <code>NORMAL</code> - When the alarm is in the <code>NORMAL</code> state, it's ready to evaluate data.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> - If the alarm is in the <code>ACTIVE</code> state, the alarm is invoked.</p> </li>
+    /// <li> <p> <code>ACKNOWLEDGED</code> - When the alarm is in the <code>ACKNOWLEDGED</code> state, the alarm was invoked and you acknowledged the alarm.</p> </li>
+    /// <li> <p> <code>SNOOZE_DISABLED</code> - When the alarm is in the <code>SNOOZE_DISABLED</code> state, the alarm is disabled for a specified period of time. After the snooze time, the alarm automatically changes to the <code>NORMAL</code> state. </p> </li>
+    /// <li> <p> <code>LATCHED</code> - When the alarm is in the <code>LATCHED</code> state, the alarm was invoked. However, the data that the alarm is currently evaluating is within the specified range. To change the alarm to the <code>NORMAL</code> state, you must acknowledge the alarm.</p> </li>
     /// </ul>
     pub state_name: std::option::Option<crate::model::AlarmStateName>,
     /// <p>The time the alarm was created, in the Unix epoch format.</p>
@@ -283,46 +251,18 @@ impl AlarmSummary {
     pub fn alarm_model_version(&self) -> std::option::Option<&str> {
         self.alarm_model_version.as_deref()
     }
-    /// <p>The value of the key used as a filter to select only the alarms associated with the
-    /// <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
+    /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
     pub fn key_value(&self) -> std::option::Option<&str> {
         self.key_value.as_deref()
     }
     /// <p>The name of the alarm state. The state name can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>DISABLED</code> - When the alarm is in the <code>DISABLED</code> state,
-    /// it isn't ready to evaluate data. To enable the alarm,
-    /// you must change the alarm to the <code>NORMAL</code> state.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NORMAL</code> - When the alarm is in the <code>NORMAL</code> state,
-    /// it's ready to evaluate data.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code> - If the alarm is in the <code>ACTIVE</code> state,
-    /// the alarm is invoked.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACKNOWLEDGED</code> - When the alarm is in the <code>ACKNOWLEDGED</code> state,
-    /// the alarm was invoked and you acknowledged the alarm.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SNOOZE_DISABLED</code> - When the alarm is in the <code>SNOOZE_DISABLED</code> state,
-    /// the alarm is disabled for a specified period of time. After the snooze time,
-    /// the alarm automatically changes to the <code>NORMAL</code> state. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LATCHED</code> - When the alarm is in the <code>LATCHED</code> state,
-    /// the alarm was invoked. However, the data that the alarm is currently evaluating is within the specified range.
-    /// To change the alarm to the <code>NORMAL</code> state, you must acknowledge the alarm.</p>
-    /// </li>
+    /// <li> <p> <code>DISABLED</code> - When the alarm is in the <code>DISABLED</code> state, it isn't ready to evaluate data. To enable the alarm, you must change the alarm to the <code>NORMAL</code> state.</p> </li>
+    /// <li> <p> <code>NORMAL</code> - When the alarm is in the <code>NORMAL</code> state, it's ready to evaluate data.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> - If the alarm is in the <code>ACTIVE</code> state, the alarm is invoked.</p> </li>
+    /// <li> <p> <code>ACKNOWLEDGED</code> - When the alarm is in the <code>ACKNOWLEDGED</code> state, the alarm was invoked and you acknowledged the alarm.</p> </li>
+    /// <li> <p> <code>SNOOZE_DISABLED</code> - When the alarm is in the <code>SNOOZE_DISABLED</code> state, the alarm is disabled for a specified period of time. After the snooze time, the alarm automatically changes to the <code>NORMAL</code> state. </p> </li>
+    /// <li> <p> <code>LATCHED</code> - When the alarm is in the <code>LATCHED</code> state, the alarm was invoked. However, the data that the alarm is currently evaluating is within the specified range. To change the alarm to the <code>NORMAL</code> state, you must acknowledge the alarm.</p> </li>
     /// </ul>
     pub fn state_name(&self) -> std::option::Option<&crate::model::AlarmStateName> {
         self.state_name.as_ref()
@@ -388,53 +328,24 @@ pub mod alarm_summary {
             self.alarm_model_version = input;
             self
         }
-        /// <p>The value of the key used as a filter to select only the alarms associated with the
-        /// <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
+        /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
         pub fn key_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_value = Some(input.into());
             self
         }
-        /// <p>The value of the key used as a filter to select only the alarms associated with the
-        /// <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
+        /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
         pub fn set_key_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_value = input;
             self
         }
         /// <p>The name of the alarm state. The state name can be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DISABLED</code> - When the alarm is in the <code>DISABLED</code> state,
-        /// it isn't ready to evaluate data. To enable the alarm,
-        /// you must change the alarm to the <code>NORMAL</code> state.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NORMAL</code> - When the alarm is in the <code>NORMAL</code> state,
-        /// it's ready to evaluate data.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code> - If the alarm is in the <code>ACTIVE</code> state,
-        /// the alarm is invoked.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACKNOWLEDGED</code> - When the alarm is in the <code>ACKNOWLEDGED</code> state,
-        /// the alarm was invoked and you acknowledged the alarm.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SNOOZE_DISABLED</code> - When the alarm is in the <code>SNOOZE_DISABLED</code> state,
-        /// the alarm is disabled for a specified period of time. After the snooze time,
-        /// the alarm automatically changes to the <code>NORMAL</code> state. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LATCHED</code> - When the alarm is in the <code>LATCHED</code> state,
-        /// the alarm was invoked. However, the data that the alarm is currently evaluating is within the specified range.
-        /// To change the alarm to the <code>NORMAL</code> state, you must acknowledge the alarm.</p>
-        /// </li>
+        /// <li> <p> <code>DISABLED</code> - When the alarm is in the <code>DISABLED</code> state, it isn't ready to evaluate data. To enable the alarm, you must change the alarm to the <code>NORMAL</code> state.</p> </li>
+        /// <li> <p> <code>NORMAL</code> - When the alarm is in the <code>NORMAL</code> state, it's ready to evaluate data.</p> </li>
+        /// <li> <p> <code>ACTIVE</code> - If the alarm is in the <code>ACTIVE</code> state, the alarm is invoked.</p> </li>
+        /// <li> <p> <code>ACKNOWLEDGED</code> - When the alarm is in the <code>ACKNOWLEDGED</code> state, the alarm was invoked and you acknowledged the alarm.</p> </li>
+        /// <li> <p> <code>SNOOZE_DISABLED</code> - When the alarm is in the <code>SNOOZE_DISABLED</code> state, the alarm is disabled for a specified period of time. After the snooze time, the alarm automatically changes to the <code>NORMAL</code> state. </p> </li>
+        /// <li> <p> <code>LATCHED</code> - When the alarm is in the <code>LATCHED</code> state, the alarm was invoked. However, the data that the alarm is currently evaluating is within the specified range. To change the alarm to the <code>NORMAL</code> state, you must acknowledge the alarm.</p> </li>
         /// </ul>
         pub fn state_name(mut self, input: crate::model::AlarmStateName) -> Self {
             self.state_name = Some(input);
@@ -442,39 +353,12 @@ pub mod alarm_summary {
         }
         /// <p>The name of the alarm state. The state name can be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DISABLED</code> - When the alarm is in the <code>DISABLED</code> state,
-        /// it isn't ready to evaluate data. To enable the alarm,
-        /// you must change the alarm to the <code>NORMAL</code> state.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NORMAL</code> - When the alarm is in the <code>NORMAL</code> state,
-        /// it's ready to evaluate data.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code> - If the alarm is in the <code>ACTIVE</code> state,
-        /// the alarm is invoked.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACKNOWLEDGED</code> - When the alarm is in the <code>ACKNOWLEDGED</code> state,
-        /// the alarm was invoked and you acknowledged the alarm.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SNOOZE_DISABLED</code> - When the alarm is in the <code>SNOOZE_DISABLED</code> state,
-        /// the alarm is disabled for a specified period of time. After the snooze time,
-        /// the alarm automatically changes to the <code>NORMAL</code> state. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LATCHED</code> - When the alarm is in the <code>LATCHED</code> state,
-        /// the alarm was invoked. However, the data that the alarm is currently evaluating is within the specified range.
-        /// To change the alarm to the <code>NORMAL</code> state, you must acknowledge the alarm.</p>
-        /// </li>
+        /// <li> <p> <code>DISABLED</code> - When the alarm is in the <code>DISABLED</code> state, it isn't ready to evaluate data. To enable the alarm, you must change the alarm to the <code>NORMAL</code> state.</p> </li>
+        /// <li> <p> <code>NORMAL</code> - When the alarm is in the <code>NORMAL</code> state, it's ready to evaluate data.</p> </li>
+        /// <li> <p> <code>ACTIVE</code> - If the alarm is in the <code>ACTIVE</code> state, the alarm is invoked.</p> </li>
+        /// <li> <p> <code>ACKNOWLEDGED</code> - When the alarm is in the <code>ACKNOWLEDGED</code> state, the alarm was invoked and you acknowledged the alarm.</p> </li>
+        /// <li> <p> <code>SNOOZE_DISABLED</code> - When the alarm is in the <code>SNOOZE_DISABLED</code> state, the alarm is disabled for a specified period of time. After the snooze time, the alarm automatically changes to the <code>NORMAL</code> state. </p> </li>
+        /// <li> <p> <code>LATCHED</code> - When the alarm is in the <code>LATCHED</code> state, the alarm was invoked. However, the data that the alarm is currently evaluating is within the specified range. To change the alarm to the <code>NORMAL</code> state, you must acknowledge the alarm.</p> </li>
         /// </ul>
         pub fn set_state_name(
             mut self,
@@ -613,8 +497,7 @@ impl AsRef<str> for AlarmStateName {
 pub struct Detector {
     /// <p>The name of the detector model that created this detector (instance).</p>
     pub detector_model_name: std::option::Option<std::string::String>,
-    /// <p>The value of the key (identifying the device or system) that caused the creation of this
-    /// detector (instance).</p>
+    /// <p>The value of the key (identifying the device or system) that caused the creation of this detector (instance).</p>
     pub key_value: std::option::Option<std::string::String>,
     /// <p>The version of the detector model that created this detector (instance).</p>
     pub detector_model_version: std::option::Option<std::string::String>,
@@ -630,8 +513,7 @@ impl Detector {
     pub fn detector_model_name(&self) -> std::option::Option<&str> {
         self.detector_model_name.as_deref()
     }
-    /// <p>The value of the key (identifying the device or system) that caused the creation of this
-    /// detector (instance).</p>
+    /// <p>The value of the key (identifying the device or system) that caused the creation of this detector (instance).</p>
     pub fn key_value(&self) -> std::option::Option<&str> {
         self.key_value.as_deref()
     }
@@ -691,14 +573,12 @@ pub mod detector {
             self.detector_model_name = input;
             self
         }
-        /// <p>The value of the key (identifying the device or system) that caused the creation of this
-        /// detector (instance).</p>
+        /// <p>The value of the key (identifying the device or system) that caused the creation of this detector (instance).</p>
         pub fn key_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_value = Some(input.into());
             self
         }
-        /// <p>The value of the key (identifying the device or system) that caused the creation of this
-        /// detector (instance).</p>
+        /// <p>The value of the key (identifying the device or system) that caused the creation of this detector (instance).</p>
         pub fn set_key_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_value = input;
             self
@@ -1042,8 +922,7 @@ pub struct Alarm {
     pub alarm_model_name: std::option::Option<std::string::String>,
     /// <p>The version of the alarm model.</p>
     pub alarm_model_version: std::option::Option<std::string::String>,
-    /// <p>The value of the key used as a filter to select only the alarms associated with the
-    /// <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
+    /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
     pub key_value: std::option::Option<std::string::String>,
     /// <p>Contains information about the current state of the alarm.</p>
     pub alarm_state: std::option::Option<crate::model::AlarmState>,
@@ -1063,8 +942,7 @@ impl Alarm {
     pub fn alarm_model_version(&self) -> std::option::Option<&str> {
         self.alarm_model_version.as_deref()
     }
-    /// <p>The value of the key used as a filter to select only the alarms associated with the
-    /// <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
+    /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
     pub fn key_value(&self) -> std::option::Option<&str> {
         self.key_value.as_deref()
     }
@@ -1139,14 +1017,12 @@ pub mod alarm {
             self.alarm_model_version = input;
             self
         }
-        /// <p>The value of the key used as a filter to select only the alarms associated with the
-        /// <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
+        /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
         pub fn key_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_value = Some(input.into());
             self
         }
-        /// <p>The value of the key used as a filter to select only the alarms associated with the
-        /// <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
+        /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
         pub fn set_key_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_value = input;
             self
@@ -1227,39 +1103,12 @@ impl Alarm {
 pub struct AlarmState {
     /// <p>The name of the alarm state. The state name can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>DISABLED</code> - When the alarm is in the <code>DISABLED</code> state,
-    /// it isn't ready to evaluate data. To enable the alarm,
-    /// you must change the alarm to the <code>NORMAL</code> state.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NORMAL</code> - When the alarm is in the <code>NORMAL</code> state,
-    /// it's ready to evaluate data.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code> - If the alarm is in the <code>ACTIVE</code> state,
-    /// the alarm is invoked.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACKNOWLEDGED</code> - When the alarm is in the <code>ACKNOWLEDGED</code> state,
-    /// the alarm was invoked and you acknowledged the alarm.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SNOOZE_DISABLED</code> - When the alarm is in the <code>SNOOZE_DISABLED</code> state,
-    /// the alarm is disabled for a specified period of time. After the snooze time,
-    /// the alarm automatically changes to the <code>NORMAL</code> state. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LATCHED</code> - When the alarm is in the <code>LATCHED</code> state,
-    /// the alarm was invoked. However, the data that the alarm is currently evaluating is within the specified range.
-    /// To change the alarm to the <code>NORMAL</code> state, you must acknowledge the alarm.</p>
-    /// </li>
+    /// <li> <p> <code>DISABLED</code> - When the alarm is in the <code>DISABLED</code> state, it isn't ready to evaluate data. To enable the alarm, you must change the alarm to the <code>NORMAL</code> state.</p> </li>
+    /// <li> <p> <code>NORMAL</code> - When the alarm is in the <code>NORMAL</code> state, it's ready to evaluate data.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> - If the alarm is in the <code>ACTIVE</code> state, the alarm is invoked.</p> </li>
+    /// <li> <p> <code>ACKNOWLEDGED</code> - When the alarm is in the <code>ACKNOWLEDGED</code> state, the alarm was invoked and you acknowledged the alarm.</p> </li>
+    /// <li> <p> <code>SNOOZE_DISABLED</code> - When the alarm is in the <code>SNOOZE_DISABLED</code> state, the alarm is disabled for a specified period of time. After the snooze time, the alarm automatically changes to the <code>NORMAL</code> state. </p> </li>
+    /// <li> <p> <code>LATCHED</code> - When the alarm is in the <code>LATCHED</code> state, the alarm was invoked. However, the data that the alarm is currently evaluating is within the specified range. To change the alarm to the <code>NORMAL</code> state, you must acknowledge the alarm.</p> </li>
     /// </ul>
     pub state_name: std::option::Option<crate::model::AlarmStateName>,
     /// <p>Information needed to evaluate data.</p>
@@ -1272,39 +1121,12 @@ pub struct AlarmState {
 impl AlarmState {
     /// <p>The name of the alarm state. The state name can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>DISABLED</code> - When the alarm is in the <code>DISABLED</code> state,
-    /// it isn't ready to evaluate data. To enable the alarm,
-    /// you must change the alarm to the <code>NORMAL</code> state.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>NORMAL</code> - When the alarm is in the <code>NORMAL</code> state,
-    /// it's ready to evaluate data.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACTIVE</code> - If the alarm is in the <code>ACTIVE</code> state,
-    /// the alarm is invoked.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACKNOWLEDGED</code> - When the alarm is in the <code>ACKNOWLEDGED</code> state,
-    /// the alarm was invoked and you acknowledged the alarm.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SNOOZE_DISABLED</code> - When the alarm is in the <code>SNOOZE_DISABLED</code> state,
-    /// the alarm is disabled for a specified period of time. After the snooze time,
-    /// the alarm automatically changes to the <code>NORMAL</code> state. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>LATCHED</code> - When the alarm is in the <code>LATCHED</code> state,
-    /// the alarm was invoked. However, the data that the alarm is currently evaluating is within the specified range.
-    /// To change the alarm to the <code>NORMAL</code> state, you must acknowledge the alarm.</p>
-    /// </li>
+    /// <li> <p> <code>DISABLED</code> - When the alarm is in the <code>DISABLED</code> state, it isn't ready to evaluate data. To enable the alarm, you must change the alarm to the <code>NORMAL</code> state.</p> </li>
+    /// <li> <p> <code>NORMAL</code> - When the alarm is in the <code>NORMAL</code> state, it's ready to evaluate data.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> - If the alarm is in the <code>ACTIVE</code> state, the alarm is invoked.</p> </li>
+    /// <li> <p> <code>ACKNOWLEDGED</code> - When the alarm is in the <code>ACKNOWLEDGED</code> state, the alarm was invoked and you acknowledged the alarm.</p> </li>
+    /// <li> <p> <code>SNOOZE_DISABLED</code> - When the alarm is in the <code>SNOOZE_DISABLED</code> state, the alarm is disabled for a specified period of time. After the snooze time, the alarm automatically changes to the <code>NORMAL</code> state. </p> </li>
+    /// <li> <p> <code>LATCHED</code> - When the alarm is in the <code>LATCHED</code> state, the alarm was invoked. However, the data that the alarm is currently evaluating is within the specified range. To change the alarm to the <code>NORMAL</code> state, you must acknowledge the alarm.</p> </li>
     /// </ul>
     pub fn state_name(&self) -> std::option::Option<&crate::model::AlarmStateName> {
         self.state_name.as_ref()
@@ -1346,39 +1168,12 @@ pub mod alarm_state {
     impl Builder {
         /// <p>The name of the alarm state. The state name can be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DISABLED</code> - When the alarm is in the <code>DISABLED</code> state,
-        /// it isn't ready to evaluate data. To enable the alarm,
-        /// you must change the alarm to the <code>NORMAL</code> state.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NORMAL</code> - When the alarm is in the <code>NORMAL</code> state,
-        /// it's ready to evaluate data.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code> - If the alarm is in the <code>ACTIVE</code> state,
-        /// the alarm is invoked.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACKNOWLEDGED</code> - When the alarm is in the <code>ACKNOWLEDGED</code> state,
-        /// the alarm was invoked and you acknowledged the alarm.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SNOOZE_DISABLED</code> - When the alarm is in the <code>SNOOZE_DISABLED</code> state,
-        /// the alarm is disabled for a specified period of time. After the snooze time,
-        /// the alarm automatically changes to the <code>NORMAL</code> state. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LATCHED</code> - When the alarm is in the <code>LATCHED</code> state,
-        /// the alarm was invoked. However, the data that the alarm is currently evaluating is within the specified range.
-        /// To change the alarm to the <code>NORMAL</code> state, you must acknowledge the alarm.</p>
-        /// </li>
+        /// <li> <p> <code>DISABLED</code> - When the alarm is in the <code>DISABLED</code> state, it isn't ready to evaluate data. To enable the alarm, you must change the alarm to the <code>NORMAL</code> state.</p> </li>
+        /// <li> <p> <code>NORMAL</code> - When the alarm is in the <code>NORMAL</code> state, it's ready to evaluate data.</p> </li>
+        /// <li> <p> <code>ACTIVE</code> - If the alarm is in the <code>ACTIVE</code> state, the alarm is invoked.</p> </li>
+        /// <li> <p> <code>ACKNOWLEDGED</code> - When the alarm is in the <code>ACKNOWLEDGED</code> state, the alarm was invoked and you acknowledged the alarm.</p> </li>
+        /// <li> <p> <code>SNOOZE_DISABLED</code> - When the alarm is in the <code>SNOOZE_DISABLED</code> state, the alarm is disabled for a specified period of time. After the snooze time, the alarm automatically changes to the <code>NORMAL</code> state. </p> </li>
+        /// <li> <p> <code>LATCHED</code> - When the alarm is in the <code>LATCHED</code> state, the alarm was invoked. However, the data that the alarm is currently evaluating is within the specified range. To change the alarm to the <code>NORMAL</code> state, you must acknowledge the alarm.</p> </li>
         /// </ul>
         pub fn state_name(mut self, input: crate::model::AlarmStateName) -> Self {
             self.state_name = Some(input);
@@ -1386,39 +1181,12 @@ pub mod alarm_state {
         }
         /// <p>The name of the alarm state. The state name can be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>DISABLED</code> - When the alarm is in the <code>DISABLED</code> state,
-        /// it isn't ready to evaluate data. To enable the alarm,
-        /// you must change the alarm to the <code>NORMAL</code> state.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>NORMAL</code> - When the alarm is in the <code>NORMAL</code> state,
-        /// it's ready to evaluate data.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACTIVE</code> - If the alarm is in the <code>ACTIVE</code> state,
-        /// the alarm is invoked.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACKNOWLEDGED</code> - When the alarm is in the <code>ACKNOWLEDGED</code> state,
-        /// the alarm was invoked and you acknowledged the alarm.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SNOOZE_DISABLED</code> - When the alarm is in the <code>SNOOZE_DISABLED</code> state,
-        /// the alarm is disabled for a specified period of time. After the snooze time,
-        /// the alarm automatically changes to the <code>NORMAL</code> state. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>LATCHED</code> - When the alarm is in the <code>LATCHED</code> state,
-        /// the alarm was invoked. However, the data that the alarm is currently evaluating is within the specified range.
-        /// To change the alarm to the <code>NORMAL</code> state, you must acknowledge the alarm.</p>
-        /// </li>
+        /// <li> <p> <code>DISABLED</code> - When the alarm is in the <code>DISABLED</code> state, it isn't ready to evaluate data. To enable the alarm, you must change the alarm to the <code>NORMAL</code> state.</p> </li>
+        /// <li> <p> <code>NORMAL</code> - When the alarm is in the <code>NORMAL</code> state, it's ready to evaluate data.</p> </li>
+        /// <li> <p> <code>ACTIVE</code> - If the alarm is in the <code>ACTIVE</code> state, the alarm is invoked.</p> </li>
+        /// <li> <p> <code>ACKNOWLEDGED</code> - When the alarm is in the <code>ACKNOWLEDGED</code> state, the alarm was invoked and you acknowledged the alarm.</p> </li>
+        /// <li> <p> <code>SNOOZE_DISABLED</code> - When the alarm is in the <code>SNOOZE_DISABLED</code> state, the alarm is disabled for a specified period of time. After the snooze time, the alarm automatically changes to the <code>NORMAL</code> state. </p> </li>
+        /// <li> <p> <code>LATCHED</code> - When the alarm is in the <code>LATCHED</code> state, the alarm was invoked. However, the data that the alarm is currently evaluating is within the specified range. To change the alarm to the <code>NORMAL</code> state, you must acknowledge the alarm.</p> </li>
         /// </ul>
         pub fn set_state_name(
             mut self,
@@ -1488,15 +1256,13 @@ impl AlarmState {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SystemEvent {
-    /// <p>The event type. If the value is <code>STATE_CHANGE</code>, the event contains information
-    /// about alarm state changes.</p>
+    /// <p>The event type. If the value is <code>STATE_CHANGE</code>, the event contains information about alarm state changes.</p>
     pub event_type: std::option::Option<crate::model::EventType>,
     /// <p>Contains the configuration information of alarm state changes.</p>
     pub state_change_configuration: std::option::Option<crate::model::StateChangeConfiguration>,
 }
 impl SystemEvent {
-    /// <p>The event type. If the value is <code>STATE_CHANGE</code>, the event contains information
-    /// about alarm state changes.</p>
+    /// <p>The event type. If the value is <code>STATE_CHANGE</code>, the event contains information about alarm state changes.</p>
     pub fn event_type(&self) -> std::option::Option<&crate::model::EventType> {
         self.event_type.as_ref()
     }
@@ -1529,14 +1295,12 @@ pub mod system_event {
             std::option::Option<crate::model::StateChangeConfiguration>,
     }
     impl Builder {
-        /// <p>The event type. If the value is <code>STATE_CHANGE</code>, the event contains information
-        /// about alarm state changes.</p>
+        /// <p>The event type. If the value is <code>STATE_CHANGE</code>, the event contains information about alarm state changes.</p>
         pub fn event_type(mut self, input: crate::model::EventType) -> Self {
             self.event_type = Some(input);
             self
         }
-        /// <p>The event type. If the value is <code>STATE_CHANGE</code>, the event contains information
-        /// about alarm state changes.</p>
+        /// <p>The event type. If the value is <code>STATE_CHANGE</code>, the event contains information about alarm state changes.</p>
         pub fn set_event_type(
             mut self,
             input: std::option::Option<crate::model::EventType>,
@@ -1580,13 +1344,11 @@ impl SystemEvent {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StateChangeConfiguration {
-    /// <p>The trigger type. If the value is <code>SNOOZE_TIMEOUT</code>, the snooze duration ends
-    /// and the alarm automatically changes to the <code>NORMAL</code> state.</p>
+    /// <p>The trigger type. If the value is <code>SNOOZE_TIMEOUT</code>, the snooze duration ends and the alarm automatically changes to the <code>NORMAL</code> state.</p>
     pub trigger_type: std::option::Option<crate::model::TriggerType>,
 }
 impl StateChangeConfiguration {
-    /// <p>The trigger type. If the value is <code>SNOOZE_TIMEOUT</code>, the snooze duration ends
-    /// and the alarm automatically changes to the <code>NORMAL</code> state.</p>
+    /// <p>The trigger type. If the value is <code>SNOOZE_TIMEOUT</code>, the snooze duration ends and the alarm automatically changes to the <code>NORMAL</code> state.</p>
     pub fn trigger_type(&self) -> std::option::Option<&crate::model::TriggerType> {
         self.trigger_type.as_ref()
     }
@@ -1607,14 +1369,12 @@ pub mod state_change_configuration {
         pub(crate) trigger_type: std::option::Option<crate::model::TriggerType>,
     }
     impl Builder {
-        /// <p>The trigger type. If the value is <code>SNOOZE_TIMEOUT</code>, the snooze duration ends
-        /// and the alarm automatically changes to the <code>NORMAL</code> state.</p>
+        /// <p>The trigger type. If the value is <code>SNOOZE_TIMEOUT</code>, the snooze duration ends and the alarm automatically changes to the <code>NORMAL</code> state.</p>
         pub fn trigger_type(mut self, input: crate::model::TriggerType) -> Self {
             self.trigger_type = Some(input);
             self
         }
-        /// <p>The trigger type. If the value is <code>SNOOZE_TIMEOUT</code>, the snooze duration ends
-        /// and the alarm automatically changes to the <code>NORMAL</code> state.</p>
+        /// <p>The trigger type. If the value is <code>SNOOZE_TIMEOUT</code>, the snooze duration ends and the alarm automatically changes to the <code>NORMAL</code> state.</p>
         pub fn set_trigger_type(
             mut self,
             input: std::option::Option<crate::model::TriggerType>,
@@ -1745,26 +1505,11 @@ impl AsRef<str> for EventType {
 pub struct CustomerAction {
     /// <p>The name of the action. The action name can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>SNOOZE</code> - When you snooze the alarm, the alarm state changes to <code>SNOOZE_DISABLED</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ENABLE</code> - When you enable the alarm, the alarm state changes to <code>NORMAL</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DISABLE</code> - When you disable the alarm, the alarm state changes to <code>DISABLED</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACKNOWLEDGE</code> - When you acknowledge the alarm, the alarm state changes to <code>ACKNOWLEDGED</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RESET</code> - When you reset the alarm, the alarm state changes to <code>NORMAL</code>.</p>
-    /// </li>
+    /// <li> <p> <code>SNOOZE</code> - When you snooze the alarm, the alarm state changes to <code>SNOOZE_DISABLED</code>.</p> </li>
+    /// <li> <p> <code>ENABLE</code> - When you enable the alarm, the alarm state changes to <code>NORMAL</code>.</p> </li>
+    /// <li> <p> <code>DISABLE</code> - When you disable the alarm, the alarm state changes to <code>DISABLED</code>.</p> </li>
+    /// <li> <p> <code>ACKNOWLEDGE</code> - When you acknowledge the alarm, the alarm state changes to <code>ACKNOWLEDGED</code>.</p> </li>
+    /// <li> <p> <code>RESET</code> - When you reset the alarm, the alarm state changes to <code>NORMAL</code>.</p> </li>
     /// </ul>
     /// <p>For more information, see the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_AlarmState.html">AlarmState</a> API.</p>
     pub action_name: std::option::Option<crate::model::CustomerActionName>,
@@ -1783,26 +1528,11 @@ pub struct CustomerAction {
 impl CustomerAction {
     /// <p>The name of the action. The action name can be one of the following values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>SNOOZE</code> - When you snooze the alarm, the alarm state changes to <code>SNOOZE_DISABLED</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ENABLE</code> - When you enable the alarm, the alarm state changes to <code>NORMAL</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DISABLE</code> - When you disable the alarm, the alarm state changes to <code>DISABLED</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ACKNOWLEDGE</code> - When you acknowledge the alarm, the alarm state changes to <code>ACKNOWLEDGED</code>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>RESET</code> - When you reset the alarm, the alarm state changes to <code>NORMAL</code>.</p>
-    /// </li>
+    /// <li> <p> <code>SNOOZE</code> - When you snooze the alarm, the alarm state changes to <code>SNOOZE_DISABLED</code>.</p> </li>
+    /// <li> <p> <code>ENABLE</code> - When you enable the alarm, the alarm state changes to <code>NORMAL</code>.</p> </li>
+    /// <li> <p> <code>DISABLE</code> - When you disable the alarm, the alarm state changes to <code>DISABLED</code>.</p> </li>
+    /// <li> <p> <code>ACKNOWLEDGE</code> - When you acknowledge the alarm, the alarm state changes to <code>ACKNOWLEDGED</code>.</p> </li>
+    /// <li> <p> <code>RESET</code> - When you reset the alarm, the alarm state changes to <code>NORMAL</code>.</p> </li>
     /// </ul>
     /// <p>For more information, see the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_AlarmState.html">AlarmState</a> API.</p>
     pub fn action_name(&self) -> std::option::Option<&crate::model::CustomerActionName> {
@@ -1887,26 +1617,11 @@ pub mod customer_action {
     impl Builder {
         /// <p>The name of the action. The action name can be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SNOOZE</code> - When you snooze the alarm, the alarm state changes to <code>SNOOZE_DISABLED</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ENABLE</code> - When you enable the alarm, the alarm state changes to <code>NORMAL</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DISABLE</code> - When you disable the alarm, the alarm state changes to <code>DISABLED</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACKNOWLEDGE</code> - When you acknowledge the alarm, the alarm state changes to <code>ACKNOWLEDGED</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RESET</code> - When you reset the alarm, the alarm state changes to <code>NORMAL</code>.</p>
-        /// </li>
+        /// <li> <p> <code>SNOOZE</code> - When you snooze the alarm, the alarm state changes to <code>SNOOZE_DISABLED</code>.</p> </li>
+        /// <li> <p> <code>ENABLE</code> - When you enable the alarm, the alarm state changes to <code>NORMAL</code>.</p> </li>
+        /// <li> <p> <code>DISABLE</code> - When you disable the alarm, the alarm state changes to <code>DISABLED</code>.</p> </li>
+        /// <li> <p> <code>ACKNOWLEDGE</code> - When you acknowledge the alarm, the alarm state changes to <code>ACKNOWLEDGED</code>.</p> </li>
+        /// <li> <p> <code>RESET</code> - When you reset the alarm, the alarm state changes to <code>NORMAL</code>.</p> </li>
         /// </ul>
         /// <p>For more information, see the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_AlarmState.html">AlarmState</a> API.</p>
         pub fn action_name(mut self, input: crate::model::CustomerActionName) -> Self {
@@ -1915,26 +1630,11 @@ pub mod customer_action {
         }
         /// <p>The name of the action. The action name can be one of the following values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>SNOOZE</code> - When you snooze the alarm, the alarm state changes to <code>SNOOZE_DISABLED</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ENABLE</code> - When you enable the alarm, the alarm state changes to <code>NORMAL</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DISABLE</code> - When you disable the alarm, the alarm state changes to <code>DISABLED</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ACKNOWLEDGE</code> - When you acknowledge the alarm, the alarm state changes to <code>ACKNOWLEDGED</code>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>RESET</code> - When you reset the alarm, the alarm state changes to <code>NORMAL</code>.</p>
-        /// </li>
+        /// <li> <p> <code>SNOOZE</code> - When you snooze the alarm, the alarm state changes to <code>SNOOZE_DISABLED</code>.</p> </li>
+        /// <li> <p> <code>ENABLE</code> - When you enable the alarm, the alarm state changes to <code>NORMAL</code>.</p> </li>
+        /// <li> <p> <code>DISABLE</code> - When you disable the alarm, the alarm state changes to <code>DISABLED</code>.</p> </li>
+        /// <li> <p> <code>ACKNOWLEDGE</code> - When you acknowledge the alarm, the alarm state changes to <code>ACKNOWLEDGED</code>.</p> </li>
+        /// <li> <p> <code>RESET</code> - When you reset the alarm, the alarm state changes to <code>NORMAL</code>.</p> </li>
         /// </ul>
         /// <p>For more information, see the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_AlarmState.html">AlarmState</a> API.</p>
         pub fn set_action_name(
@@ -2634,8 +2334,7 @@ impl AsRef<str> for ComparisonOperator {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchUpdateDetectorErrorEntry {
-    /// <p>The <code>"messageId"</code> of the update request that caused the error. (The value of
-    /// the <code>"messageId"</code> in the update request <code>"Detector"</code> object.)</p>
+    /// <p>The <code>"messageId"</code> of the update request that caused the error. (The value of the <code>"messageId"</code> in the update request <code>"Detector"</code> object.)</p>
     pub message_id: std::option::Option<std::string::String>,
     /// <p>The error code.</p>
     pub error_code: std::option::Option<crate::model::ErrorCode>,
@@ -2643,8 +2342,7 @@ pub struct BatchUpdateDetectorErrorEntry {
     pub error_message: std::option::Option<std::string::String>,
 }
 impl BatchUpdateDetectorErrorEntry {
-    /// <p>The <code>"messageId"</code> of the update request that caused the error. (The value of
-    /// the <code>"messageId"</code> in the update request <code>"Detector"</code> object.)</p>
+    /// <p>The <code>"messageId"</code> of the update request that caused the error. (The value of the <code>"messageId"</code> in the update request <code>"Detector"</code> object.)</p>
     pub fn message_id(&self) -> std::option::Option<&str> {
         self.message_id.as_deref()
     }
@@ -2677,14 +2375,12 @@ pub mod batch_update_detector_error_entry {
         pub(crate) error_message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <code>"messageId"</code> of the update request that caused the error. (The value of
-        /// the <code>"messageId"</code> in the update request <code>"Detector"</code> object.)</p>
+        /// <p>The <code>"messageId"</code> of the update request that caused the error. (The value of the <code>"messageId"</code> in the update request <code>"Detector"</code> object.)</p>
         pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.message_id = Some(input.into());
             self
         }
-        /// <p>The <code>"messageId"</code> of the update request that caused the error. (The value of
-        /// the <code>"messageId"</code> in the update request <code>"Detector"</code> object.)</p>
+        /// <p>The <code>"messageId"</code> of the update request that caused the error. (The value of the <code>"messageId"</code> in the update request <code>"Detector"</code> object.)</p>
         pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message_id = input;
             self
@@ -2809,20 +2505,17 @@ impl AsRef<str> for ErrorCode {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDetectorRequest {
-    /// <p>The ID to assign to the detector update <code>"message"</code>. Each
-    /// <code>"messageId"</code> must be unique within each batch sent.</p>
+    /// <p>The ID to assign to the detector update <code>"message"</code>. Each <code>"messageId"</code> must be unique within each batch sent.</p>
     pub message_id: std::option::Option<std::string::String>,
     /// <p>The name of the detector model that created the detectors (instances).</p>
     pub detector_model_name: std::option::Option<std::string::String>,
-    /// <p>The value of the input key attribute (identifying the device or system) that caused the
-    /// creation of this detector (instance).</p>
+    /// <p>The value of the input key attribute (identifying the device or system) that caused the creation of this detector (instance).</p>
     pub key_value: std::option::Option<std::string::String>,
     /// <p>The new state, variable values, and timer settings of the detector (instance).</p>
     pub state: std::option::Option<crate::model::DetectorStateDefinition>,
 }
 impl UpdateDetectorRequest {
-    /// <p>The ID to assign to the detector update <code>"message"</code>. Each
-    /// <code>"messageId"</code> must be unique within each batch sent.</p>
+    /// <p>The ID to assign to the detector update <code>"message"</code>. Each <code>"messageId"</code> must be unique within each batch sent.</p>
     pub fn message_id(&self) -> std::option::Option<&str> {
         self.message_id.as_deref()
     }
@@ -2830,8 +2523,7 @@ impl UpdateDetectorRequest {
     pub fn detector_model_name(&self) -> std::option::Option<&str> {
         self.detector_model_name.as_deref()
     }
-    /// <p>The value of the input key attribute (identifying the device or system) that caused the
-    /// creation of this detector (instance).</p>
+    /// <p>The value of the input key attribute (identifying the device or system) that caused the creation of this detector (instance).</p>
     pub fn key_value(&self) -> std::option::Option<&str> {
         self.key_value.as_deref()
     }
@@ -2862,14 +2554,12 @@ pub mod update_detector_request {
         pub(crate) state: std::option::Option<crate::model::DetectorStateDefinition>,
     }
     impl Builder {
-        /// <p>The ID to assign to the detector update <code>"message"</code>. Each
-        /// <code>"messageId"</code> must be unique within each batch sent.</p>
+        /// <p>The ID to assign to the detector update <code>"message"</code>. Each <code>"messageId"</code> must be unique within each batch sent.</p>
         pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.message_id = Some(input.into());
             self
         }
-        /// <p>The ID to assign to the detector update <code>"message"</code>. Each
-        /// <code>"messageId"</code> must be unique within each batch sent.</p>
+        /// <p>The ID to assign to the detector update <code>"message"</code>. Each <code>"messageId"</code> must be unique within each batch sent.</p>
         pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message_id = input;
             self
@@ -2887,14 +2577,12 @@ pub mod update_detector_request {
             self.detector_model_name = input;
             self
         }
-        /// <p>The value of the input key attribute (identifying the device or system) that caused the
-        /// creation of this detector (instance).</p>
+        /// <p>The value of the input key attribute (identifying the device or system) that caused the creation of this detector (instance).</p>
         pub fn key_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_value = Some(input.into());
             self
         }
-        /// <p>The value of the input key attribute (identifying the device or system) that caused the
-        /// creation of this detector (instance).</p>
+        /// <p>The value of the input key attribute (identifying the device or system) that caused the creation of this detector (instance).</p>
         pub fn set_key_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_value = input;
             self
@@ -2936,11 +2624,9 @@ impl UpdateDetectorRequest {
 pub struct DetectorStateDefinition {
     /// <p>The name of the new state of the detector (instance).</p>
     pub state_name: std::option::Option<std::string::String>,
-    /// <p>The new values of the detector's variables. Any variable whose value isn't specified is
-    /// cleared.</p>
+    /// <p>The new values of the detector's variables. Any variable whose value isn't specified is cleared.</p>
     pub variables: std::option::Option<std::vec::Vec<crate::model::VariableDefinition>>,
-    /// <p>The new values of the detector's timers. Any timer whose value isn't specified is cleared,
-    /// and its timeout event won't occur.</p>
+    /// <p>The new values of the detector's timers. Any timer whose value isn't specified is cleared, and its timeout event won't occur.</p>
     pub timers: std::option::Option<std::vec::Vec<crate::model::TimerDefinition>>,
 }
 impl DetectorStateDefinition {
@@ -2948,13 +2634,11 @@ impl DetectorStateDefinition {
     pub fn state_name(&self) -> std::option::Option<&str> {
         self.state_name.as_deref()
     }
-    /// <p>The new values of the detector's variables. Any variable whose value isn't specified is
-    /// cleared.</p>
+    /// <p>The new values of the detector's variables. Any variable whose value isn't specified is cleared.</p>
     pub fn variables(&self) -> std::option::Option<&[crate::model::VariableDefinition]> {
         self.variables.as_deref()
     }
-    /// <p>The new values of the detector's timers. Any timer whose value isn't specified is cleared,
-    /// and its timeout event won't occur.</p>
+    /// <p>The new values of the detector's timers. Any timer whose value isn't specified is cleared, and its timeout event won't occur.</p>
     pub fn timers(&self) -> std::option::Option<&[crate::model::TimerDefinition]> {
         self.timers.as_deref()
     }
@@ -2993,16 +2677,14 @@ pub mod detector_state_definition {
         ///
         /// To override the contents of this collection use [`set_variables`](Self::set_variables).
         ///
-        /// <p>The new values of the detector's variables. Any variable whose value isn't specified is
-        /// cleared.</p>
+        /// <p>The new values of the detector's variables. Any variable whose value isn't specified is cleared.</p>
         pub fn variables(mut self, input: crate::model::VariableDefinition) -> Self {
             let mut v = self.variables.unwrap_or_default();
             v.push(input);
             self.variables = Some(v);
             self
         }
-        /// <p>The new values of the detector's variables. Any variable whose value isn't specified is
-        /// cleared.</p>
+        /// <p>The new values of the detector's variables. Any variable whose value isn't specified is cleared.</p>
         pub fn set_variables(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::VariableDefinition>>,
@@ -3014,16 +2696,14 @@ pub mod detector_state_definition {
         ///
         /// To override the contents of this collection use [`set_timers`](Self::set_timers).
         ///
-        /// <p>The new values of the detector's timers. Any timer whose value isn't specified is cleared,
-        /// and its timeout event won't occur.</p>
+        /// <p>The new values of the detector's timers. Any timer whose value isn't specified is cleared, and its timeout event won't occur.</p>
         pub fn timers(mut self, input: crate::model::TimerDefinition) -> Self {
             let mut v = self.timers.unwrap_or_default();
             v.push(input);
             self.timers = Some(v);
             self
         }
-        /// <p>The new values of the detector's timers. Any timer whose value isn't specified is cleared,
-        /// and its timeout event won't occur.</p>
+        /// <p>The new values of the detector's timers. Any timer whose value isn't specified is cleared, and its timeout event won't occur.</p>
         pub fn set_timers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TimerDefinition>>,
@@ -3196,31 +2876,11 @@ impl VariableDefinition {
 
 /// <p>Contains error messages associated with one of the following requests:</p>
 /// <ul>
-/// <li>
-/// <p>
-/// <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchAcknowledgeAlarm.html">BatchAcknowledgeAlarm</a>
-/// </p>
-/// </li>
-/// <li>
-/// <p>
-/// <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchDisableAlarm.html">BatchDisableAlarm</a>
-/// </p>
-/// </li>
-/// <li>
-/// <p>
-/// <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchEnableAlarm.html">BatchEnableAlarm</a>
-/// </p>
-/// </li>
-/// <li>
-/// <p>
-/// <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchResetAlarm.html">BatchResetAlarm</a>
-/// </p>
-/// </li>
-/// <li>
-/// <p>
-/// <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchSnoozeAlarm.html">BatchSnoozeAlarm</a>
-/// </p>
-/// </li>
+/// <li> <p> <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchAcknowledgeAlarm.html">BatchAcknowledgeAlarm</a> </p> </li>
+/// <li> <p> <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchDisableAlarm.html">BatchDisableAlarm</a> </p> </li>
+/// <li> <p> <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchEnableAlarm.html">BatchEnableAlarm</a> </p> </li>
+/// <li> <p> <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchResetAlarm.html">BatchResetAlarm</a> </p> </li>
+/// <li> <p> <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchSnoozeAlarm.html">BatchSnoozeAlarm</a> </p> </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -3327,8 +2987,7 @@ pub struct SnoozeAlarmActionRequest {
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The name of the alarm model.</p>
     pub alarm_model_name: std::option::Option<std::string::String>,
-    /// <p>The value of the key used as a filter to select only the alarms associated with the
-    /// <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
+    /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
     pub key_value: std::option::Option<std::string::String>,
     /// <p>The note that you can leave when you snooze the alarm.</p>
     pub note: std::option::Option<std::string::String>,
@@ -3344,8 +3003,7 @@ impl SnoozeAlarmActionRequest {
     pub fn alarm_model_name(&self) -> std::option::Option<&str> {
         self.alarm_model_name.as_deref()
     }
-    /// <p>The value of the key used as a filter to select only the alarms associated with the
-    /// <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
+    /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
     pub fn key_value(&self) -> std::option::Option<&str> {
         self.key_value.as_deref()
     }
@@ -3405,14 +3063,12 @@ pub mod snooze_alarm_action_request {
             self.alarm_model_name = input;
             self
         }
-        /// <p>The value of the key used as a filter to select only the alarms associated with the
-        /// <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
+        /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
         pub fn key_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_value = Some(input.into());
             self
         }
-        /// <p>The value of the key used as a filter to select only the alarms associated with the
-        /// <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
+        /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
         pub fn set_key_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_value = input;
             self
@@ -3464,8 +3120,7 @@ pub struct ResetAlarmActionRequest {
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The name of the alarm model.</p>
     pub alarm_model_name: std::option::Option<std::string::String>,
-    /// <p>The value of the key used as a filter to select only the alarms associated with the
-    /// <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
+    /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
     pub key_value: std::option::Option<std::string::String>,
     /// <p>The note that you can leave when you reset the alarm.</p>
     pub note: std::option::Option<std::string::String>,
@@ -3479,8 +3134,7 @@ impl ResetAlarmActionRequest {
     pub fn alarm_model_name(&self) -> std::option::Option<&str> {
         self.alarm_model_name.as_deref()
     }
-    /// <p>The value of the key used as a filter to select only the alarms associated with the
-    /// <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
+    /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
     pub fn key_value(&self) -> std::option::Option<&str> {
         self.key_value.as_deref()
     }
@@ -3534,14 +3188,12 @@ pub mod reset_alarm_action_request {
             self.alarm_model_name = input;
             self
         }
-        /// <p>The value of the key used as a filter to select only the alarms associated with the
-        /// <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
+        /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
         pub fn key_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_value = Some(input.into());
             self
         }
-        /// <p>The value of the key used as a filter to select only the alarms associated with the
-        /// <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
+        /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
         pub fn set_key_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_value = input;
             self
@@ -3578,8 +3230,7 @@ impl ResetAlarmActionRequest {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchPutMessageErrorEntry {
-    /// <p>The ID of the message that caused the error. (See the value corresponding to the
-    /// <code>"messageId"</code> key in the <code>"message"</code> object.)</p>
+    /// <p>The ID of the message that caused the error. (See the value corresponding to the <code>"messageId"</code> key in the <code>"message"</code> object.)</p>
     pub message_id: std::option::Option<std::string::String>,
     /// <p>The error code.</p>
     pub error_code: std::option::Option<crate::model::ErrorCode>,
@@ -3587,8 +3238,7 @@ pub struct BatchPutMessageErrorEntry {
     pub error_message: std::option::Option<std::string::String>,
 }
 impl BatchPutMessageErrorEntry {
-    /// <p>The ID of the message that caused the error. (See the value corresponding to the
-    /// <code>"messageId"</code> key in the <code>"message"</code> object.)</p>
+    /// <p>The ID of the message that caused the error. (See the value corresponding to the <code>"messageId"</code> key in the <code>"message"</code> object.)</p>
     pub fn message_id(&self) -> std::option::Option<&str> {
         self.message_id.as_deref()
     }
@@ -3621,14 +3271,12 @@ pub mod batch_put_message_error_entry {
         pub(crate) error_message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the message that caused the error. (See the value corresponding to the
-        /// <code>"messageId"</code> key in the <code>"message"</code> object.)</p>
+        /// <p>The ID of the message that caused the error. (See the value corresponding to the <code>"messageId"</code> key in the <code>"message"</code> object.)</p>
         pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.message_id = Some(input.into());
             self
         }
-        /// <p>The ID of the message that caused the error. (See the value corresponding to the
-        /// <code>"messageId"</code> key in the <code>"message"</code> object.)</p>
+        /// <p>The ID of the message that caused the error. (See the value corresponding to the <code>"messageId"</code> key in the <code>"message"</code> object.)</p>
         pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message_id = input;
             self
@@ -3680,20 +3328,17 @@ impl BatchPutMessageErrorEntry {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Message {
-    /// <p>The ID to assign to the message. Within each batch sent, each <code>"messageId"</code>
-    /// must be unique.</p>
+    /// <p>The ID to assign to the message. Within each batch sent, each <code>"messageId"</code> must be unique.</p>
     pub message_id: std::option::Option<std::string::String>,
     /// <p>The name of the input into which the message payload is transformed.</p>
     pub input_name: std::option::Option<std::string::String>,
-    /// <p>The payload of the message. This can be a JSON string or a Base-64-encoded string
-    /// representing binary data (in which case you must decode it).</p>
+    /// <p>The payload of the message. This can be a JSON string or a Base-64-encoded string representing binary data (in which case you must decode it).</p>
     pub payload: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The timestamp associated with the message.</p>
     pub timestamp: std::option::Option<crate::model::TimestampValue>,
 }
 impl Message {
-    /// <p>The ID to assign to the message. Within each batch sent, each <code>"messageId"</code>
-    /// must be unique.</p>
+    /// <p>The ID to assign to the message. Within each batch sent, each <code>"messageId"</code> must be unique.</p>
     pub fn message_id(&self) -> std::option::Option<&str> {
         self.message_id.as_deref()
     }
@@ -3701,8 +3346,7 @@ impl Message {
     pub fn input_name(&self) -> std::option::Option<&str> {
         self.input_name.as_deref()
     }
-    /// <p>The payload of the message. This can be a JSON string or a Base-64-encoded string
-    /// representing binary data (in which case you must decode it).</p>
+    /// <p>The payload of the message. This can be a JSON string or a Base-64-encoded string representing binary data (in which case you must decode it).</p>
     pub fn payload(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.payload.as_ref()
     }
@@ -3733,14 +3377,12 @@ pub mod message {
         pub(crate) timestamp: std::option::Option<crate::model::TimestampValue>,
     }
     impl Builder {
-        /// <p>The ID to assign to the message. Within each batch sent, each <code>"messageId"</code>
-        /// must be unique.</p>
+        /// <p>The ID to assign to the message. Within each batch sent, each <code>"messageId"</code> must be unique.</p>
         pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.message_id = Some(input.into());
             self
         }
-        /// <p>The ID to assign to the message. Within each batch sent, each <code>"messageId"</code>
-        /// must be unique.</p>
+        /// <p>The ID to assign to the message. Within each batch sent, each <code>"messageId"</code> must be unique.</p>
         pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message_id = input;
             self
@@ -3755,14 +3397,12 @@ pub mod message {
             self.input_name = input;
             self
         }
-        /// <p>The payload of the message. This can be a JSON string or a Base-64-encoded string
-        /// representing binary data (in which case you must decode it).</p>
+        /// <p>The payload of the message. This can be a JSON string or a Base-64-encoded string representing binary data (in which case you must decode it).</p>
         pub fn payload(mut self, input: aws_smithy_types::Blob) -> Self {
             self.payload = Some(input);
             self
         }
-        /// <p>The payload of the message. This can be a JSON string or a Base-64-encoded string
-        /// representing binary data (in which case you must decode it).</p>
+        /// <p>The payload of the message. This can be a JSON string or a Base-64-encoded string representing binary data (in which case you must decode it).</p>
         pub fn set_payload(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.payload = input;
             self
@@ -3860,8 +3500,7 @@ pub struct EnableAlarmActionRequest {
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The name of the alarm model.</p>
     pub alarm_model_name: std::option::Option<std::string::String>,
-    /// <p>The value of the key used as a filter to select only the alarms associated with the
-    /// <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
+    /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
     pub key_value: std::option::Option<std::string::String>,
     /// <p>The note that you can leave when you enable the alarm.</p>
     pub note: std::option::Option<std::string::String>,
@@ -3875,8 +3514,7 @@ impl EnableAlarmActionRequest {
     pub fn alarm_model_name(&self) -> std::option::Option<&str> {
         self.alarm_model_name.as_deref()
     }
-    /// <p>The value of the key used as a filter to select only the alarms associated with the
-    /// <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
+    /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
     pub fn key_value(&self) -> std::option::Option<&str> {
         self.key_value.as_deref()
     }
@@ -3930,14 +3568,12 @@ pub mod enable_alarm_action_request {
             self.alarm_model_name = input;
             self
         }
-        /// <p>The value of the key used as a filter to select only the alarms associated with the
-        /// <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
+        /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
         pub fn key_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_value = Some(input.into());
             self
         }
-        /// <p>The value of the key used as a filter to select only the alarms associated with the
-        /// <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
+        /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
         pub fn set_key_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_value = input;
             self
@@ -3978,8 +3614,7 @@ pub struct DisableAlarmActionRequest {
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The name of the alarm model.</p>
     pub alarm_model_name: std::option::Option<std::string::String>,
-    /// <p>The value of the key used as a filter to select only the alarms associated with the
-    /// <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
+    /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
     pub key_value: std::option::Option<std::string::String>,
     /// <p>The note that you can leave when you disable the alarm.</p>
     pub note: std::option::Option<std::string::String>,
@@ -3993,8 +3628,7 @@ impl DisableAlarmActionRequest {
     pub fn alarm_model_name(&self) -> std::option::Option<&str> {
         self.alarm_model_name.as_deref()
     }
-    /// <p>The value of the key used as a filter to select only the alarms associated with the
-    /// <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
+    /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
     pub fn key_value(&self) -> std::option::Option<&str> {
         self.key_value.as_deref()
     }
@@ -4048,14 +3682,12 @@ pub mod disable_alarm_action_request {
             self.alarm_model_name = input;
             self
         }
-        /// <p>The value of the key used as a filter to select only the alarms associated with the
-        /// <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
+        /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
         pub fn key_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_value = Some(input.into());
             self
         }
-        /// <p>The value of the key used as a filter to select only the alarms associated with the
-        /// <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
+        /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
         pub fn set_key_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_value = input;
             self
@@ -4096,8 +3728,7 @@ pub struct AcknowledgeAlarmActionRequest {
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The name of the alarm model.</p>
     pub alarm_model_name: std::option::Option<std::string::String>,
-    /// <p>The value of the key used as a filter to select only the alarms associated with the
-    /// <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
+    /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
     pub key_value: std::option::Option<std::string::String>,
     /// <p>The note that you can leave when you acknowledge the alarm.</p>
     pub note: std::option::Option<std::string::String>,
@@ -4111,8 +3742,7 @@ impl AcknowledgeAlarmActionRequest {
     pub fn alarm_model_name(&self) -> std::option::Option<&str> {
         self.alarm_model_name.as_deref()
     }
-    /// <p>The value of the key used as a filter to select only the alarms associated with the
-    /// <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
+    /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
     pub fn key_value(&self) -> std::option::Option<&str> {
         self.key_value.as_deref()
     }
@@ -4166,14 +3796,12 @@ pub mod acknowledge_alarm_action_request {
             self.alarm_model_name = input;
             self
         }
-        /// <p>The value of the key used as a filter to select only the alarms associated with the
-        /// <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
+        /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
         pub fn key_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_value = Some(input.into());
             self
         }
-        /// <p>The value of the key used as a filter to select only the alarms associated with the
-        /// <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
+        /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
         pub fn set_key_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_value = input;
             self

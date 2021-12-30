@@ -16,8 +16,7 @@ pub enum CompleteSnapshotErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal error has occurred.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The number of API requests has exceed the maximum allowed API request throttling
-    /// limit.</p>
+    /// <p>The number of API requests has exceed the maximum allowed API request throttling limit.</p>
     RequestThrottledException(crate::error::RequestThrottledException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -165,8 +164,7 @@ pub enum GetSnapshotBlockErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal error has occurred.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The number of API requests has exceed the maximum allowed API request throttling
-    /// limit.</p>
+    /// <p>The number of API requests has exceed the maximum allowed API request throttling limit.</p>
     RequestThrottledException(crate::error::RequestThrottledException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -314,8 +312,7 @@ pub enum ListChangedBlocksErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal error has occurred.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The number of API requests has exceed the maximum allowed API request throttling
-    /// limit.</p>
+    /// <p>The number of API requests has exceed the maximum allowed API request throttling limit.</p>
     RequestThrottledException(crate::error::RequestThrottledException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -463,8 +460,7 @@ pub enum ListSnapshotBlocksErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal error has occurred.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The number of API requests has exceed the maximum allowed API request throttling
-    /// limit.</p>
+    /// <p>The number of API requests has exceed the maximum allowed API request throttling limit.</p>
     RequestThrottledException(crate::error::RequestThrottledException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -612,8 +608,7 @@ pub enum PutSnapshotBlockErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal error has occurred.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The number of API requests has exceed the maximum allowed API request throttling
-    /// limit.</p>
+    /// <p>The number of API requests has exceed the maximum allowed API request throttling limit.</p>
     RequestThrottledException(crate::error::RequestThrottledException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -759,17 +754,13 @@ pub struct StartSnapshotError {
 pub enum StartSnapshotErrorKind {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>You have reached the limit for concurrent API requests. For more information, see
-    /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-accessing-snapshot.html#ebsapi-performance">Optimizing performance of the EBS direct APIs</a> in the <i>Amazon Elastic Compute Cloud
-    /// User Guide</i>.</p>
+    /// <p>You have reached the limit for concurrent API requests. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-accessing-snapshot.html#ebsapi-performance">Optimizing performance of the EBS direct APIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     ConcurrentLimitExceededException(crate::error::ConcurrentLimitExceededException),
-    /// <p>The request uses the same client token as a previous, but non-identical
-    /// request.</p>
+    /// <p>The request uses the same client token as a previous, but non-identical request.</p>
     ConflictException(crate::error::ConflictException),
     /// <p>An internal error has occurred.</p>
     InternalServerException(crate::error::InternalServerException),
-    /// <p>The number of API requests has exceed the maximum allowed API request throttling
-    /// limit.</p>
+    /// <p>The number of API requests has exceed the maximum allowed API request throttling limit.</p>
     RequestThrottledException(crate::error::RequestThrottledException),
     /// <p>The specified resource does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -1175,8 +1166,7 @@ impl ResourceNotFoundException {
     }
 }
 
-/// <p>The number of API requests has exceed the maximum allowed API request throttling
-/// limit.</p>
+/// <p>The number of API requests has exceed the maximum allowed API request throttling limit.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RequestThrottledException {
@@ -1328,8 +1318,7 @@ impl InternalServerException {
     }
 }
 
-/// <p>The request uses the same client token as a previous, but non-identical
-/// request.</p>
+/// <p>The request uses the same client token as a previous, but non-identical request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {
@@ -1393,9 +1382,7 @@ impl ConflictException {
     }
 }
 
-/// <p>You have reached the limit for concurrent API requests. For more information, see
-/// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-accessing-snapshot.html#ebsapi-performance">Optimizing performance of the EBS direct APIs</a> in the <i>Amazon Elastic Compute Cloud
-/// User Guide</i>.</p>
+/// <p>You have reached the limit for concurrent API requests. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-accessing-snapshot.html#ebsapi-performance">Optimizing performance of the EBS direct APIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConcurrentLimitExceededException {

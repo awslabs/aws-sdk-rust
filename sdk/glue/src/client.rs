@@ -1361,26 +1361,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the catalog in which the partition is to be created. Currently, this should be
-        /// the Amazon Web Services account ID.</p>
+        /// <p>The ID of the catalog in which the partition is to be created. Currently, this should be the Amazon Web Services account ID.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the catalog in which the partition is to be created. Currently, this should be
-        /// the Amazon Web Services account ID.</p>
+        /// <p>The ID of the catalog in which the partition is to be created. Currently, this should be the Amazon Web Services account ID.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
-        /// <p>The name of the metadata database in which the partition is
-        /// to be created.</p>
+        /// <p>The name of the metadata database in which the partition is to be created.</p>
         pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.database_name(input.into());
             self
         }
-        /// <p>The name of the metadata database in which the partition is
-        /// to be created.</p>
+        /// <p>The name of the metadata database in which the partition is to be created.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1402,14 +1398,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_partition_input_list`](Self::set_partition_input_list).
         ///
-        /// <p>A list of <code>PartitionInput</code> structures that define
-        /// the partitions to be created.</p>
+        /// <p>A list of <code>PartitionInput</code> structures that define the partitions to be created.</p>
         pub fn partition_input_list(mut self, input: crate::model::PartitionInput) -> Self {
             self.inner = self.inner.partition_input_list(input);
             self
         }
-        /// <p>A list of <code>PartitionInput</code> structures that define
-        /// the partitions to be created.</p>
+        /// <p>A list of <code>PartitionInput</code> structures that define the partitions to be created.</p>
         pub fn set_partition_input_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PartitionInput>>,
@@ -1477,14 +1471,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog in which the connections reside. If none is provided, the Amazon Web Services
-        /// account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog in which the connections reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog in which the connections reside. If none is provided, the Amazon Web Services
-        /// account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog in which the connections reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
@@ -1566,26 +1558,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog where the partition to be deleted resides. If none is provided,
-        /// the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the partition to be deleted resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the partition to be deleted resides. If none is provided,
-        /// the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the partition to be deleted resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
-        /// <p>The name of the catalog database in which the table in question
-        /// resides.</p>
+        /// <p>The name of the catalog database in which the table in question resides.</p>
         pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.database_name(input.into());
             self
         }
-        /// <p>The name of the catalog database in which the table in question
-        /// resides.</p>
+        /// <p>The name of the catalog database in which the table in question resides.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1607,14 +1595,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_partitions_to_delete`](Self::set_partitions_to_delete).
         ///
-        /// <p>A list of <code>PartitionInput</code> structures that define
-        /// the partitions to be deleted.</p>
+        /// <p>A list of <code>PartitionInput</code> structures that define the partitions to be deleted.</p>
         pub fn partitions_to_delete(mut self, input: crate::model::PartitionValueList) -> Self {
             self.inner = self.inner.partitions_to_delete(input);
             self
         }
-        /// <p>A list of <code>PartitionInput</code> structures that define
-        /// the partitions to be deleted.</p>
+        /// <p>A list of <code>PartitionInput</code> structures that define the partitions to be deleted.</p>
         pub fn set_partitions_to_delete(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PartitionValueList>>,
@@ -1625,16 +1611,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BatchDeleteTable`.
     ///
-    /// <p>Deletes multiple tables at once.</p>
-    /// <note>
-    /// <p>After completing this operation, you no longer have access to the table versions and
-    /// partitions that belong to the deleted table. Glue deletes these "orphaned" resources
-    /// asynchronously in a timely manner, at the discretion of the service.</p>
-    /// <p>To ensure the immediate deletion of all related resources, before calling
-    /// <code>BatchDeleteTable</code>, use <code>DeleteTableVersion</code> or
-    /// <code>BatchDeleteTableVersion</code>, and <code>DeletePartition</code> or
-    /// <code>BatchDeletePartition</code>, to delete any resources that belong to the
-    /// table.</p>
+    /// <p>Deletes multiple tables at once.</p> <note>
+    /// <p>After completing this operation, you no longer have access to the table versions and partitions that belong to the deleted table. Glue deletes these "orphaned" resources asynchronously in a timely manner, at the discretion of the service.</p>
+    /// <p>To ensure the immediate deletion of all related resources, before calling <code>BatchDeleteTable</code>, use <code>DeleteTableVersion</code> or <code>BatchDeleteTableVersion</code>, and <code>DeletePartition</code> or <code>BatchDeletePartition</code>, to delete any resources that belong to the table.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchDeleteTable<
@@ -1692,26 +1671,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account
-        /// ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account
-        /// ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
-        /// <p>The name of the catalog database in which the tables to delete reside. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
+        /// <p>The name of the catalog database in which the tables to delete reside. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.database_name(input.into());
             self
         }
-        /// <p>The name of the catalog database in which the tables to delete reside. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
+        /// <p>The name of the catalog database in which the tables to delete reside. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1809,26 +1784,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account
-        /// ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account
-        /// ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
-        /// <p>The database in the catalog in which the table resides. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
+        /// <p>The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.database_name(input.into());
             self
         }
-        /// <p>The database in the catalog in which the table resides. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
+        /// <p>The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1836,14 +1807,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_database_name(input);
             self
         }
-        /// <p>The name of the table. For Hive compatibility,
-        /// this name is entirely lowercase.</p>
+        /// <p>The name of the table. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.table_name(input.into());
             self
         }
-        /// <p>The name of the table. For Hive compatibility,
-        /// this name is entirely lowercase.</p>
+        /// <p>The name of the table. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_table_name(input);
             self
@@ -2026,14 +1995,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_crawler_names`](Self::set_crawler_names).
         ///
-        /// <p>A list of crawler names, which might be the names returned from the
-        /// <code>ListCrawlers</code> operation.</p>
+        /// <p>A list of crawler names, which might be the names returned from the <code>ListCrawlers</code> operation.</p>
         pub fn crawler_names(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.crawler_names(input.into());
             self
         }
-        /// <p>A list of crawler names, which might be the names returned from the
-        /// <code>ListCrawlers</code> operation.</p>
+        /// <p>A list of crawler names, which might be the names returned from the <code>ListCrawlers</code> operation.</p>
         pub fn set_crawler_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2044,10 +2011,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BatchGetDevEndpoints`.
     ///
-    /// <p>Returns a list of resource metadata for a given list of development endpoint names. After
-    /// calling the <code>ListDevEndpoints</code> operation, you can call this operation to access the
-    /// data to which you have been granted permissions. This operation supports all IAM permissions,
-    /// including permission conditions that uses tags.</p>
+    /// <p>Returns a list of resource metadata for a given list of development endpoint names. After calling the <code>ListDevEndpoints</code> operation, you can call this operation to access the data to which you have been granted permissions. This operation supports all IAM permissions, including permission conditions that uses tags.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetDevEndpoints<
         C = aws_smithy_client::erase::DynConnector,
@@ -2108,14 +2072,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_dev_endpoint_names`](Self::set_dev_endpoint_names).
         ///
-        /// <p>The list of <code>DevEndpoint</code> names, which might be the names returned from the
-        /// <code>ListDevEndpoint</code> operation.</p>
+        /// <p>The list of <code>DevEndpoint</code> names, which might be the names returned from the <code>ListDevEndpoint</code> operation.</p>
         pub fn dev_endpoint_names(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.dev_endpoint_names(input.into());
             self
         }
-        /// <p>The list of <code>DevEndpoint</code> names, which might be the names returned from the
-        /// <code>ListDevEndpoint</code> operation.</p>
+        /// <p>The list of <code>DevEndpoint</code> names, which might be the names returned from the <code>ListDevEndpoint</code> operation.</p>
         pub fn set_dev_endpoint_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2126,8 +2088,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `BatchGetJobs`.
     ///
-    /// <p>Returns a list of resource metadata for a given list of job names. After calling the <code>ListJobs</code> operation, you can call this operation to access the data to which you have been granted permissions. This operation supports all IAM permissions, including permission conditions that uses tags.
-    /// </p>
+    /// <p>Returns a list of resource metadata for a given list of job names. After calling the <code>ListJobs</code> operation, you can call this operation to access the data to which you have been granted permissions. This operation supports all IAM permissions, including permission conditions that uses tags. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct BatchGetJobs<
         C = aws_smithy_client::erase::DynConnector,
@@ -2188,14 +2149,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_job_names`](Self::set_job_names).
         ///
-        /// <p>A list of job names, which might be the names returned from the <code>ListJobs</code>
-        /// operation.</p>
+        /// <p>A list of job names, which might be the names returned from the <code>ListJobs</code> operation.</p>
         pub fn job_names(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.job_names(input.into());
             self
         }
-        /// <p>A list of job names, which might be the names returned from the <code>ListJobs</code>
-        /// operation.</p>
+        /// <p>A list of job names, which might be the names returned from the <code>ListJobs</code> operation.</p>
         pub fn set_job_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2263,14 +2222,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog where the partitions in question reside.
-        /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the partitions in question reside.
-        /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
@@ -2553,14 +2510,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_job_run_ids`](Self::set_job_run_ids).
         ///
-        /// <p>A list of the <code>JobRunIds</code> that should be stopped for that job
-        /// definition.</p>
+        /// <p>A list of the <code>JobRunIds</code> that should be stopped for that job definition.</p>
         pub fn job_run_ids(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.job_run_ids(input.into());
             self
         }
-        /// <p>A list of the <code>JobRunIds</code> that should be stopped for that job
-        /// definition.</p>
+        /// <p>A list of the <code>JobRunIds</code> that should be stopped for that job definition.</p>
         pub fn set_job_run_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2628,26 +2583,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the catalog in which the partition is to be updated. Currently, this should be
-        /// the Amazon Web Services account ID.</p>
+        /// <p>The ID of the catalog in which the partition is to be updated. Currently, this should be the Amazon Web Services account ID.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the catalog in which the partition is to be updated. Currently, this should be
-        /// the Amazon Web Services account ID.</p>
+        /// <p>The ID of the catalog in which the partition is to be updated. Currently, this should be the Amazon Web Services account ID.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
-        /// <p>The name of the metadata database in which the partition is
-        /// to be updated.</p>
+        /// <p>The name of the metadata database in which the partition is to be updated.</p>
         pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.database_name(input.into());
             self
         }
-        /// <p>The name of the metadata database in which the partition is
-        /// to be updated.</p>
+        /// <p>The name of the metadata database in which the partition is to be updated.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2687,9 +2638,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CancelMLTaskRun`.
     ///
-    /// <p>Cancels (stops) a task run. Machine learning task runs are asynchronous tasks that Glue runs on your behalf as part of various machine learning workflows. You can cancel a
-    /// machine learning task run at any time by calling <code>CancelMLTaskRun</code> with a task
-    /// run's parent transform's <code>TransformID</code> and the task run's <code>TaskRunId</code>. </p>
+    /// <p>Cancels (stops) a task run. Machine learning task runs are asynchronous tasks that Glue runs on your behalf as part of various machine learning workflows. You can cancel a machine learning task run at any time by calling <code>CancelMLTaskRun</code> with a task run's parent transform's <code>TransformID</code> and the task run's <code>TaskRunId</code>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelMLTaskRun<
         C = aws_smithy_client::erase::DynConnector,
@@ -2971,9 +2920,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateClassifier`.
     ///
-    /// <p>Creates a classifier in the user's account. This can be a <code>GrokClassifier</code>, an
-    /// <code>XMLClassifier</code>, a <code>JsonClassifier</code>, or a <code>CsvClassifier</code>,
-    /// depending on which field of the request is present.</p>
+    /// <p>Creates a classifier in the user's account. This can be a <code>GrokClassifier</code>, an <code>XMLClassifier</code>, a <code>JsonClassifier</code>, or a <code>CsvClassifier</code>, depending on which field of the request is present.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateClassifier<
         C = aws_smithy_client::erase::DynConnector,
@@ -3030,14 +2977,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A <code>GrokClassifier</code> object specifying the classifier
-        /// to create.</p>
+        /// <p>A <code>GrokClassifier</code> object specifying the classifier to create.</p>
         pub fn grok_classifier(mut self, input: crate::model::CreateGrokClassifierRequest) -> Self {
             self.inner = self.inner.grok_classifier(input);
             self
         }
-        /// <p>A <code>GrokClassifier</code> object specifying the classifier
-        /// to create.</p>
+        /// <p>A <code>GrokClassifier</code> object specifying the classifier to create.</p>
         pub fn set_grok_classifier(
             mut self,
             input: std::option::Option<crate::model::CreateGrokClassifierRequest>,
@@ -3045,14 +2990,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_grok_classifier(input);
             self
         }
-        /// <p>An <code>XMLClassifier</code> object specifying the classifier
-        /// to create.</p>
+        /// <p>An <code>XMLClassifier</code> object specifying the classifier to create.</p>
         pub fn xml_classifier(mut self, input: crate::model::CreateXmlClassifierRequest) -> Self {
             self.inner = self.inner.xml_classifier(input);
             self
         }
-        /// <p>An <code>XMLClassifier</code> object specifying the classifier
-        /// to create.</p>
+        /// <p>An <code>XMLClassifier</code> object specifying the classifier to create.</p>
         pub fn set_xml_classifier(
             mut self,
             input: std::option::Option<crate::model::CreateXmlClassifierRequest>,
@@ -3060,14 +3003,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_xml_classifier(input);
             self
         }
-        /// <p>A <code>JsonClassifier</code> object specifying the classifier
-        /// to create.</p>
+        /// <p>A <code>JsonClassifier</code> object specifying the classifier to create.</p>
         pub fn json_classifier(mut self, input: crate::model::CreateJsonClassifierRequest) -> Self {
             self.inner = self.inner.json_classifier(input);
             self
         }
-        /// <p>A <code>JsonClassifier</code> object specifying the classifier
-        /// to create.</p>
+        /// <p>A <code>JsonClassifier</code> object specifying the classifier to create.</p>
         pub fn set_json_classifier(
             mut self,
             input: std::option::Option<crate::model::CreateJsonClassifierRequest>,
@@ -3075,14 +3016,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_json_classifier(input);
             self
         }
-        /// <p>A <code>CsvClassifier</code> object specifying the classifier
-        /// to create.</p>
+        /// <p>A <code>CsvClassifier</code> object specifying the classifier to create.</p>
         pub fn csv_classifier(mut self, input: crate::model::CreateCsvClassifierRequest) -> Self {
             self.inner = self.inner.csv_classifier(input);
             self
         }
-        /// <p>A <code>CsvClassifier</code> object specifying the classifier
-        /// to create.</p>
+        /// <p>A <code>CsvClassifier</code> object specifying the classifier to create.</p>
         pub fn set_csv_classifier(
             mut self,
             input: std::option::Option<crate::model::CreateCsvClassifierRequest>,
@@ -3150,26 +3089,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog in which to create the connection. If none is provided, the Amazon Web Services
-        /// account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog in which to create the connection. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog in which to create the connection. If none is provided, the Amazon Web Services
-        /// account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog in which to create the connection. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
-        /// <p>A <code>ConnectionInput</code> object defining the connection
-        /// to create.</p>
+        /// <p>A <code>ConnectionInput</code> object defining the connection to create.</p>
         pub fn connection_input(mut self, input: crate::model::ConnectionInput) -> Self {
             self.inner = self.inner.connection_input(input);
             self
         }
-        /// <p>A <code>ConnectionInput</code> object defining the connection
-        /// to create.</p>
+        /// <p>A <code>ConnectionInput</code> object defining the connection to create.</p>
         pub fn set_connection_input(
             mut self,
             input: std::option::Option<crate::model::ConnectionInput>,
@@ -3203,9 +3138,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateCrawler`.
     ///
-    /// <p>Creates a new crawler with specified targets, role, configuration, and optional schedule.
-    /// At least one crawl target must be specified, in the <code>s3Targets</code> field, the
-    /// <code>jdbcTargets</code> field, or the <code>DynamoDBTargets</code> field.</p>
+    /// <p>Creates a new crawler with specified targets, role, configuration, and optional schedule. At least one crawl target must be specified, in the <code>s3Targets</code> field, the <code>jdbcTargets</code> field, or the <code>DynamoDBTargets</code> field.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateCrawler<
         C = aws_smithy_client::erase::DynConnector,
@@ -3272,26 +3205,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The IAM role or Amazon Resource Name (ARN) of an IAM role used by the new crawler to
-        /// access customer resources.</p>
+        /// <p>The IAM role or Amazon Resource Name (ARN) of an IAM role used by the new crawler to access customer resources.</p>
         pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role(input.into());
             self
         }
-        /// <p>The IAM role or Amazon Resource Name (ARN) of an IAM role used by the new crawler to
-        /// access customer resources.</p>
+        /// <p>The IAM role or Amazon Resource Name (ARN) of an IAM role used by the new crawler to access customer resources.</p>
         pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role(input);
             self
         }
-        /// <p>The Glue database where results are written, such as:
-        /// <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.</p>
+        /// <p>The Glue database where results are written, such as: <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.</p>
         pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.database_name(input.into());
             self
         }
-        /// <p>The Glue database where results are written, such as:
-        /// <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.</p>
+        /// <p>The Glue database where results are written, such as: <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3322,16 +3251,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_targets(input);
             self
         }
-        /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run
-        /// something every day at 12:15 UTC, you would specify:
-        /// <code>cron(15 12 * * ? *)</code>.</p>
+        /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
         pub fn schedule(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.schedule(input.into());
             self
         }
-        /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run
-        /// something every day at 12:15 UTC, you would specify:
-        /// <code>cron(15 12 * * ? *)</code>.</p>
+        /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
         pub fn set_schedule(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_schedule(input);
             self
@@ -3340,16 +3265,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_classifiers`](Self::set_classifiers).
         ///
-        /// <p>A list of custom classifiers that the user has registered. By default, all built-in
-        /// classifiers are included in a crawl, but these custom classifiers always override the default
-        /// classifiers for a given classification.</p>
+        /// <p>A list of custom classifiers that the user has registered. By default, all built-in classifiers are included in a crawl, but these custom classifiers always override the default classifiers for a given classification.</p>
         pub fn classifiers(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.classifiers(input.into());
             self
         }
-        /// <p>A list of custom classifiers that the user has registered. By default, all built-in
-        /// classifiers are included in a crawl, but these custom classifiers always override the default
-        /// classifiers for a given classification.</p>
+        /// <p>A list of custom classifiers that the user has registered. By default, all built-in classifiers are included in a crawl, but these custom classifiers always override the default classifiers for a given classification.</p>
         pub fn set_classifiers(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3406,16 +3327,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_lineage_configuration(input);
             self
         }
-        /// <p>Crawler configuration information. This versioned JSON
-        /// string allows users to specify aspects of a crawler's behavior.
-        /// For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.</p>
+        /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.</p>
         pub fn configuration(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.configuration(input.into());
             self
         }
-        /// <p>Crawler configuration information. This versioned JSON
-        /// string allows users to specify aspects of a crawler's behavior.
-        /// For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.</p>
+        /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3423,8 +3340,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_configuration(input);
             self
         }
-        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this
-        /// crawler.</p>
+        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this crawler.</p>
         pub fn crawler_security_configuration(
             mut self,
             input: impl Into<std::string::String>,
@@ -3432,8 +3348,7 @@ pub mod fluent_builders {
             self.inner = self.inner.crawler_security_configuration(input.into());
             self
         }
-        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this
-        /// crawler.</p>
+        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this crawler.</p>
         pub fn set_crawler_security_configuration(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3445,9 +3360,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags to use with this crawler request. You may use tags to limit access to the
-        /// crawler. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer
-        /// guide.</p>
+        /// <p>The tags to use with this crawler request. You may use tags to limit access to the crawler. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -3456,9 +3369,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>The tags to use with this crawler request. You may use tags to limit access to the
-        /// crawler. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer
-        /// guide.</p>
+        /// <p>The tags to use with this crawler request. You may use tags to limit access to the crawler. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -3528,14 +3439,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog in which to create the database. If none is provided, the Amazon Web Services
-        /// account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog in which to create the database. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog in which to create the database. If none is provided, the Amazon Web Services
-        /// account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog in which to create the database. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
@@ -3640,14 +3549,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
         ///
-        /// <p>Security group IDs for the security groups to be used by the new
-        /// <code>DevEndpoint</code>.</p>
+        /// <p>Security group IDs for the security groups to be used by the new <code>DevEndpoint</code>.</p>
         pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.security_group_ids(input.into());
             self
         }
-        /// <p>Security group IDs for the security groups to be used by the new
-        /// <code>DevEndpoint</code>.</p>
+        /// <p>Security group IDs for the security groups to be used by the new <code>DevEndpoint</code>.</p>
         pub fn set_security_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3665,16 +3572,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_subnet_id(input);
             self
         }
-        /// <p>The public key to be used by this <code>DevEndpoint</code> for authentication. This
-        /// attribute is provided for backward compatibility because the recommended attribute to use is
-        /// public keys.</p>
+        /// <p>The public key to be used by this <code>DevEndpoint</code> for authentication. This attribute is provided for backward compatibility because the recommended attribute to use is public keys.</p>
         pub fn public_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.public_key(input.into());
             self
         }
-        /// <p>The public key to be used by this <code>DevEndpoint</code> for authentication. This
-        /// attribute is provided for backward compatibility because the recommended attribute to use is
-        /// public keys.</p>
+        /// <p>The public key to be used by this <code>DevEndpoint</code> for authentication. This attribute is provided for backward compatibility because the recommended attribute to use is public keys.</p>
         pub fn set_public_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_public_key(input);
             self
@@ -3683,29 +3586,15 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_public_keys`](Self::set_public_keys).
         ///
-        /// <p>A list of public keys to be used by the development endpoints for authentication. The use
-        /// of this attribute is preferred over a single public key because the public keys allow you to
-        /// have a different private key per client.</p>
-        ///
-        /// <note>
-        /// <p>If you previously created an endpoint with a public key, you must remove that key to be able
-        /// to set a list of public keys. Call the <code>UpdateDevEndpoint</code> API with the public
-        /// key content in the <code>deletePublicKeys</code> attribute, and the list of new keys in the
-        /// <code>addPublicKeys</code> attribute.</p>
+        /// <p>A list of public keys to be used by the development endpoints for authentication. The use of this attribute is preferred over a single public key because the public keys allow you to have a different private key per client.</p> <note>
+        /// <p>If you previously created an endpoint with a public key, you must remove that key to be able to set a list of public keys. Call the <code>UpdateDevEndpoint</code> API with the public key content in the <code>deletePublicKeys</code> attribute, and the list of new keys in the <code>addPublicKeys</code> attribute.</p>
         /// </note>
         pub fn public_keys(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.public_keys(input.into());
             self
         }
-        /// <p>A list of public keys to be used by the development endpoints for authentication. The use
-        /// of this attribute is preferred over a single public key because the public keys allow you to
-        /// have a different private key per client.</p>
-        ///
-        /// <note>
-        /// <p>If you previously created an endpoint with a public key, you must remove that key to be able
-        /// to set a list of public keys. Call the <code>UpdateDevEndpoint</code> API with the public
-        /// key content in the <code>deletePublicKeys</code> attribute, and the list of new keys in the
-        /// <code>addPublicKeys</code> attribute.</p>
+        /// <p>A list of public keys to be used by the development endpoints for authentication. The use of this attribute is preferred over a single public key because the public keys allow you to have a different private key per client.</p> <note>
+        /// <p>If you previously created an endpoint with a public key, you must remove that key to be able to set a list of public keys. Call the <code>UpdateDevEndpoint</code> API with the public key content in the <code>deletePublicKeys</code> attribute, and the list of new keys in the <code>addPublicKeys</code> attribute.</p>
         /// </note>
         pub fn set_public_keys(
             mut self,
@@ -3714,50 +3603,34 @@ pub mod fluent_builders {
             self.inner = self.inner.set_public_keys(input);
             self
         }
-        /// <p>The number of Glue Data Processing Units (DPUs) to allocate to this
-        /// <code>DevEndpoint</code>.</p>
+        /// <p>The number of Glue Data Processing Units (DPUs) to allocate to this <code>DevEndpoint</code>.</p>
         pub fn number_of_nodes(mut self, input: i32) -> Self {
             self.inner = self.inner.number_of_nodes(input);
             self
         }
-        /// <p>The number of Glue Data Processing Units (DPUs) to allocate to this
-        /// <code>DevEndpoint</code>.</p>
+        /// <p>The number of Glue Data Processing Units (DPUs) to allocate to this <code>DevEndpoint</code>.</p>
         pub fn set_number_of_nodes(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_number_of_nodes(input);
             self
         }
         /// <p>The type of predefined worker that is allocated to the development endpoint. Accepts a value of Standard, G.1X, or G.2X.</p>
         /// <ul>
-        /// <li>
-        /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
-        /// </li>
+        /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+        /// <li> <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
+        /// <li> <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
         /// </ul>
-        /// <p>Known issue: when a development endpoint is created with the <code>G.2X</code>
-        /// <code>WorkerType</code> configuration, the Spark drivers for the development endpoint will run on 4 vCPU, 16 GB of memory, and a 64 GB disk. </p>
+        /// <p>Known issue: when a development endpoint is created with the <code>G.2X</code> <code>WorkerType</code> configuration, the Spark drivers for the development endpoint will run on 4 vCPU, 16 GB of memory, and a 64 GB disk. </p>
         pub fn worker_type(mut self, input: crate::model::WorkerType) -> Self {
             self.inner = self.inner.worker_type(input);
             self
         }
         /// <p>The type of predefined worker that is allocated to the development endpoint. Accepts a value of Standard, G.1X, or G.2X.</p>
         /// <ul>
-        /// <li>
-        /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
-        /// </li>
+        /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+        /// <li> <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
+        /// <li> <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
         /// </ul>
-        /// <p>Known issue: when a development endpoint is created with the <code>G.2X</code>
-        /// <code>WorkerType</code> configuration, the Spark drivers for the development endpoint will run on 4 vCPU, 16 GB of memory, and a 64 GB disk. </p>
+        /// <p>Known issue: when a development endpoint is created with the <code>G.2X</code> <code>WorkerType</code> configuration, the Spark drivers for the development endpoint will run on 4 vCPU, 16 GB of memory, and a 64 GB disk. </p>
         pub fn set_worker_type(
             mut self,
             input: std::option::Option<crate::model::WorkerType>,
@@ -3766,60 +3639,42 @@ pub mod fluent_builders {
             self
         }
         /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for running your ETL scripts on development endpoints. </p>
-        ///
         /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
-        ///
-        /// <p>Development endpoints that are created without specifying a Glue version default to Glue 0.9.</p>  
-        ///
+        /// <p>Development endpoints that are created without specifying a Glue version default to Glue 0.9.</p>
         /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
         pub fn glue_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.glue_version(input.into());
             self
         }
         /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for running your ETL scripts on development endpoints. </p>
-        ///
         /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
-        ///
-        /// <p>Development endpoints that are created without specifying a Glue version default to Glue 0.9.</p>  
-        ///
+        /// <p>Development endpoints that are created without specifying a Glue version default to Glue 0.9.</p>
         /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
         pub fn set_glue_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_glue_version(input);
             self
         }
         /// <p>The number of workers of a defined <code>workerType</code> that are allocated to the development endpoint.</p>
-        ///
         /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
         pub fn number_of_workers(mut self, input: i32) -> Self {
             self.inner = self.inner.number_of_workers(input);
             self
         }
         /// <p>The number of workers of a defined <code>workerType</code> that are allocated to the development endpoint.</p>
-        ///
         /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
         pub fn set_number_of_workers(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_number_of_workers(input);
             self
         }
-        /// <p>The paths to one or more Python libraries in an Amazon S3 bucket that should be loaded in
-        /// your <code>DevEndpoint</code>. Multiple values must be complete paths separated by a
-        /// comma.</p>
-        /// <note>
-        /// <p>You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries that rely on
-        /// C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data
-        /// analysis library, are not yet supported.</p>
+        /// <p>The paths to one or more Python libraries in an Amazon S3 bucket that should be loaded in your <code>DevEndpoint</code>. Multiple values must be complete paths separated by a comma.</p> <note>
+        /// <p>You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries that rely on C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are not yet supported.</p>
         /// </note>
         pub fn extra_python_libs_s3_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.extra_python_libs_s3_path(input.into());
             self
         }
-        /// <p>The paths to one or more Python libraries in an Amazon S3 bucket that should be loaded in
-        /// your <code>DevEndpoint</code>. Multiple values must be complete paths separated by a
-        /// comma.</p>
-        /// <note>
-        /// <p>You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries that rely on
-        /// C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data
-        /// analysis library, are not yet supported.</p>
+        /// <p>The paths to one or more Python libraries in an Amazon S3 bucket that should be loaded in your <code>DevEndpoint</code>. Multiple values must be complete paths separated by a comma.</p> <note>
+        /// <p>You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries that rely on C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are not yet supported.</p>
         /// </note>
         pub fn set_extra_python_libs_s3_path(
             mut self,
@@ -3828,14 +3683,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_extra_python_libs_s3_path(input);
             self
         }
-        /// <p>The path to one or more Java <code>.jar</code> files in an S3 bucket that should be loaded
-        /// in your <code>DevEndpoint</code>.</p>
+        /// <p>The path to one or more Java <code>.jar</code> files in an S3 bucket that should be loaded in your <code>DevEndpoint</code>.</p>
         pub fn extra_jars_s3_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.extra_jars_s3_path(input.into());
             self
         }
-        /// <p>The path to one or more Java <code>.jar</code> files in an S3 bucket that should be loaded
-        /// in your <code>DevEndpoint</code>.</p>
+        /// <p>The path to one or more Java <code>.jar</code> files in an S3 bucket that should be loaded in your <code>DevEndpoint</code>.</p>
         pub fn set_extra_jars_s3_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3843,14 +3696,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_extra_jars_s3_path(input);
             self
         }
-        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this
-        /// <code>DevEndpoint</code>.</p>
+        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this <code>DevEndpoint</code>.</p>
         pub fn security_configuration(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.security_configuration(input.into());
             self
         }
-        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this
-        /// <code>DevEndpoint</code>.</p>
+        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this <code>DevEndpoint</code>.</p>
         pub fn set_security_configuration(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4004,14 +3855,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_role(input);
             self
         }
-        /// <p>An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs allowed
-        /// for this job.</p>
+        /// <p>An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs allowed for this job.</p>
         pub fn execution_property(mut self, input: crate::model::ExecutionProperty) -> Self {
             self.inner = self.inner.execution_property(input);
             self
         }
-        /// <p>An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs allowed
-        /// for this job.</p>
+        /// <p>An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs allowed for this job.</p>
         pub fn set_execution_property(
             mut self,
             input: std::option::Option<crate::model::ExecutionProperty>,
@@ -4034,8 +3883,7 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_default_arguments`](Self::set_default_arguments).
         ///
         /// <p>The default arguments for this job.</p>
-        /// <p>You can specify arguments here that your own job-execution script
-        /// consumes, as well as arguments that Glue itself consumes.</p>
+        /// <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p>
         /// <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
         /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
         pub fn default_arguments(
@@ -4047,8 +3895,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The default arguments for this job.</p>
-        /// <p>You can specify arguments here that your own job-execution script
-        /// consumes, as well as arguments that Glue itself consumes.</p>
+        /// <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p>
         /// <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
         /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
         pub fn set_default_arguments(
@@ -4107,99 +3954,57 @@ pub mod fluent_builders {
             self
         }
         /// <p>This parameter is deprecated. Use <code>MaxCapacity</code> instead.</p>
-        ///
-        /// <p>The number of Glue data processing units (DPUs) to allocate to this Job. You can
-        /// allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing
-        /// power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information,
-        /// see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing
-        /// page</a>.</p>
+        /// <p>The number of Glue data processing units (DPUs) to allocate to this Job. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
         pub fn allocated_capacity(mut self, input: i32) -> Self {
             self.inner = self.inner.allocated_capacity(input);
             self
         }
         /// <p>This parameter is deprecated. Use <code>MaxCapacity</code> instead.</p>
-        ///
-        /// <p>The number of Glue data processing units (DPUs) to allocate to this Job. You can
-        /// allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing
-        /// power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information,
-        /// see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing
-        /// page</a>.</p>
+        /// <p>The number of Glue data processing units (DPUs) to allocate to this Job. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
         pub fn set_allocated_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_allocated_capacity(input);
             self
         }
-        /// <p>The job timeout in minutes.  This is the maximum time that a job run
-        /// can consume resources before it is terminated and enters <code>TIMEOUT</code>
-        /// status. The default is 2,880 minutes (48 hours).</p>
+        /// <p>The job timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
         pub fn timeout(mut self, input: i32) -> Self {
             self.inner = self.inner.timeout(input);
             self
         }
-        /// <p>The job timeout in minutes.  This is the maximum time that a job run
-        /// can consume resources before it is terminated and enters <code>TIMEOUT</code>
-        /// status. The default is 2,880 minutes (48 hours).</p>
+        /// <p>The job timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
         pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_timeout(input);
             self
         }
-        /// <p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure
-        /// of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.
-        /// For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue
-        /// pricing page</a>.</p>
-        ///
+        /// <p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
         /// <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>
-        ///
-        /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are
-        /// running a Python shell job or an Apache Spark ETL job:</p>
+        /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell job or an Apache Spark ETL job:</p>
         /// <ul>
-        /// <li>
-        /// <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can
-        /// allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p>
-        /// </li>
-        /// <li>
-        /// <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache
-        /// Spark streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs.
-        /// The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p>
-        /// </li>
+        /// <li> <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li>
+        /// <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li>
         /// </ul>
         /// <p>For Glue version 2.0 jobs, you cannot instead specify a <code>Maximum capacity</code>. Instead, you should specify a <code>Worker type</code> and the <code>Number of workers</code>.</p>
         pub fn max_capacity(mut self, input: f64) -> Self {
             self.inner = self.inner.max_capacity(input);
             self
         }
-        /// <p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure
-        /// of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.
-        /// For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue
-        /// pricing page</a>.</p>
-        ///
+        /// <p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
         /// <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>
-        ///
-        /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are
-        /// running a Python shell job or an Apache Spark ETL job:</p>
+        /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell job or an Apache Spark ETL job:</p>
         /// <ul>
-        /// <li>
-        /// <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can
-        /// allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p>
-        /// </li>
-        /// <li>
-        /// <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache
-        /// Spark streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs.
-        /// The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p>
-        /// </li>
+        /// <li> <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li>
+        /// <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li>
         /// </ul>
         /// <p>For Glue version 2.0 jobs, you cannot instead specify a <code>Maximum capacity</code>. Instead, you should specify a <code>Worker type</code> and the <code>Number of workers</code>.</p>
         pub fn set_max_capacity(mut self, input: std::option::Option<f64>) -> Self {
             self.inner = self.inner.set_max_capacity(input);
             self
         }
-        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this
-        /// job.</p>
+        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this job.</p>
         pub fn security_configuration(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.security_configuration(input.into());
             self
         }
-        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this
-        /// job.</p>
+        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this job.</p>
         pub fn set_security_configuration(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4244,32 +4049,26 @@ pub mod fluent_builders {
             self
         }
         /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for jobs of type Spark. </p>
-        ///
         /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
-        ///
         /// <p>Jobs that are created without specifying a Glue version default to Glue 0.9.</p>
         pub fn glue_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.glue_version(input.into());
             self
         }
         /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for jobs of type Spark. </p>
-        ///
         /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
-        ///
         /// <p>Jobs that are created without specifying a Glue version default to Glue 0.9.</p>
         pub fn set_glue_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_glue_version(input);
             self
         }
         /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
-        ///
         /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
         pub fn number_of_workers(mut self, input: i32) -> Self {
             self.inner = self.inner.number_of_workers(input);
             self
         }
         /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
-        ///
         /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
         pub fn set_number_of_workers(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_number_of_workers(input);
@@ -4277,15 +4076,9 @@ pub mod fluent_builders {
         }
         /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.</p>
         /// <ul>
-        /// <li>
-        /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
-        /// </li>
+        /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+        /// <li> <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
+        /// <li> <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
         /// </ul>
         pub fn worker_type(mut self, input: crate::model::WorkerType) -> Self {
             self.inner = self.inner.worker_type(input);
@@ -4293,15 +4086,9 @@ pub mod fluent_builders {
         }
         /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.</p>
         /// <ul>
-        /// <li>
-        /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
-        /// </li>
+        /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+        /// <li> <p>For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
+        /// <li> <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p> </li>
         /// </ul>
         pub fn set_worker_type(
             mut self,
@@ -4313,19 +4100,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateMLTransform`.
     ///
-    /// <p>Creates an Glue machine learning transform. This operation creates the transform and
-    /// all the necessary parameters to train it.</p>
-    ///
-    /// <p>Call this operation as the first step in the process of using a machine learning transform
-    /// (such as the <code>FindMatches</code> transform) for deduplicating data. You can provide an
-    /// optional <code>Description</code>, in addition to the parameters that you want to use for your
-    /// algorithm.</p>
-    ///
-    /// <p>You must also specify certain parameters for the tasks that Glue runs on your
-    /// behalf as part of learning from your data and creating a high-quality machine learning
-    /// transform. These parameters include <code>Role</code>, and optionally,
-    /// <code>AllocatedCapacity</code>, <code>Timeout</code>, and <code>MaxRetries</code>. For more
-    /// information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html">Jobs</a>.</p>
+    /// <p>Creates an Glue machine learning transform. This operation creates the transform and all the necessary parameters to train it.</p>
+    /// <p>Call this operation as the first step in the process of using a machine learning transform (such as the <code>FindMatches</code> transform) for deduplicating data. You can provide an optional <code>Description</code>, in addition to the parameters that you want to use for your algorithm.</p>
+    /// <p>You must also specify certain parameters for the tasks that Glue runs on your behalf as part of learning from your data and creating a high-quality machine learning transform. These parameters include <code>Role</code>, and optionally, <code>AllocatedCapacity</code>, <code>Timeout</code>, and <code>MaxRetries</code>. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html">Jobs</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateMLTransform<
         C = aws_smithy_client::erase::DynConnector,
@@ -4392,14 +4169,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>A description of the machine learning transform that is being defined. The default is an
-        /// empty string.</p>
+        /// <p>A description of the machine learning transform that is being defined. The default is an empty string.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.description(input.into());
             self
         }
-        /// <p>A description of the machine learning transform that is being defined. The default is an
-        /// empty string.</p>
+        /// <p>A description of the machine learning transform that is being defined. The default is an empty string.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
             self
@@ -4421,14 +4196,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_input_record_tables(input);
             self
         }
-        /// <p>The algorithmic parameters that are specific to the transform type used. Conditionally
-        /// dependent on the transform type.</p>
+        /// <p>The algorithmic parameters that are specific to the transform type used. Conditionally dependent on the transform type.</p>
         pub fn parameters(mut self, input: crate::model::TransformParameters) -> Self {
             self.inner = self.inner.parameters(input);
             self
         }
-        /// <p>The algorithmic parameters that are specific to the transform type used. Conditionally
-        /// dependent on the transform type.</p>
+        /// <p>The algorithmic parameters that are specific to the transform type used. Conditionally dependent on the transform type.</p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<crate::model::TransformParameters>,
@@ -4437,100 +4210,56 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required permissions. The required permissions include both Glue service role permissions to Glue resources, and Amazon S3 permissions required by the transform. </p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>This role needs Glue service role permissions to allow access to resources in Glue. See <a href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach a Policy to IAM Users That Access Glue</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>This role needs permission to your Amazon Simple Storage Service (Amazon S3) sources, targets, temporary directory, scripts, and any libraries used by the task run for this transform.</p>
-        /// </li>
+        /// <li> <p>This role needs Glue service role permissions to allow access to resources in Glue. See <a href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach a Policy to IAM Users That Access Glue</a>.</p> </li>
+        /// <li> <p>This role needs permission to your Amazon Simple Storage Service (Amazon S3) sources, targets, temporary directory, scripts, and any libraries used by the task run for this transform.</p> </li>
         /// </ul>
         pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role(input.into());
             self
         }
         /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required permissions. The required permissions include both Glue service role permissions to Glue resources, and Amazon S3 permissions required by the transform. </p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>This role needs Glue service role permissions to allow access to resources in Glue. See <a href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach a Policy to IAM Users That Access Glue</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>This role needs permission to your Amazon Simple Storage Service (Amazon S3) sources, targets, temporary directory, scripts, and any libraries used by the task run for this transform.</p>
-        /// </li>
+        /// <li> <p>This role needs Glue service role permissions to allow access to resources in Glue. See <a href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach a Policy to IAM Users That Access Glue</a>.</p> </li>
+        /// <li> <p>This role needs permission to your Amazon Simple Storage Service (Amazon S3) sources, targets, temporary directory, scripts, and any libraries used by the task run for this transform.</p> </li>
         /// </ul>
         pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role(input);
             self
         }
-        /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9.  For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
+        /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
         pub fn glue_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.glue_version(input.into());
             self
         }
-        /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9.  For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
+        /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
         pub fn set_glue_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_glue_version(input);
             self
         }
-        /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of
-        /// processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more
-        /// information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing
-        /// page</a>. </p>
-        ///
-        /// <p>
-        /// <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p>
+        /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>. </p>
+        /// <p> <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p>
         /// <ul>
-        /// <li>
-        /// <p>If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be set.</p>
-        /// </li>
-        /// <li>
-        /// <p>If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be set.</p>
-        /// </li>
-        /// <li>
-        /// <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p>
-        /// </li>
+        /// <li> <p>If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be set.</p> </li>
+        /// <li> <p>If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be set.</p> </li>
+        /// <li> <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p> </li>
+        /// <li> <p> <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p> </li>
         /// </ul>
-        ///
-        /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>    
-        ///
-        ///
+        /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>
         /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>
         pub fn max_capacity(mut self, input: f64) -> Self {
             self.inner = self.inner.max_capacity(input);
             self
         }
-        /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of
-        /// processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more
-        /// information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing
-        /// page</a>. </p>
-        ///
-        /// <p>
-        /// <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p>
+        /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>. </p>
+        /// <p> <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p>
         /// <ul>
-        /// <li>
-        /// <p>If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be set.</p>
-        /// </li>
-        /// <li>
-        /// <p>If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be set.</p>
-        /// </li>
-        /// <li>
-        /// <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p>
-        /// </li>
+        /// <li> <p>If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be set.</p> </li>
+        /// <li> <p>If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be set.</p> </li>
+        /// <li> <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p> </li>
+        /// <li> <p> <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p> </li>
         /// </ul>
-        ///
-        /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>    
-        ///
-        ///
+        /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>
         /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>
         pub fn set_max_capacity(mut self, input: std::option::Option<f64>) -> Self {
             self.inner = self.inner.set_max_capacity(input);
@@ -4538,33 +4267,16 @@ pub mod fluent_builders {
         }
         /// <p>The type of predefined worker that is allocated when this task runs. Accepts a value of Standard, G.1X, or G.2X.</p>
         /// <ul>
-        /// <li>
-        /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p>
-        /// </li>
+        /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+        /// <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li>
+        /// <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li>
         /// </ul>
-        ///
-        /// <p>
-        /// <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p>
+        /// <p> <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p>
         /// <ul>
-        /// <li>
-        /// <p>If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be set.</p>
-        /// </li>
-        /// <li>
-        /// <p>If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be set.</p>
-        /// </li>
-        /// <li>
-        /// <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p>
-        /// </li>
+        /// <li> <p>If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be set.</p> </li>
+        /// <li> <p>If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be set.</p> </li>
+        /// <li> <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p> </li>
+        /// <li> <p> <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p> </li>
         /// </ul>
         pub fn worker_type(mut self, input: crate::model::WorkerType) -> Self {
             self.inner = self.inner.worker_type(input);
@@ -4572,33 +4284,16 @@ pub mod fluent_builders {
         }
         /// <p>The type of predefined worker that is allocated when this task runs. Accepts a value of Standard, G.1X, or G.2X.</p>
         /// <ul>
-        /// <li>
-        /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p>
-        /// </li>
+        /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+        /// <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li>
+        /// <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li>
         /// </ul>
-        ///
-        /// <p>
-        /// <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p>
+        /// <p> <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p>
         /// <ul>
-        /// <li>
-        /// <p>If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be set.</p>
-        /// </li>
-        /// <li>
-        /// <p>If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be set.</p>
-        /// </li>
-        /// <li>
-        /// <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p>
-        /// </li>
+        /// <li> <p>If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code> cannot be set.</p> </li>
+        /// <li> <p>If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code> can be set.</p> </li>
+        /// <li> <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p> </li>
+        /// <li> <p> <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p> </li>
         /// </ul>
         pub fn set_worker_type(
             mut self,
@@ -4608,14 +4303,12 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of workers of a defined <code>workerType</code> that are allocated when this task runs.</p>
-        ///
         /// <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p>
         pub fn number_of_workers(mut self, input: i32) -> Self {
             self.inner = self.inner.number_of_workers(input);
             self
         }
         /// <p>The number of workers of a defined <code>workerType</code> that are allocated when this task runs.</p>
-        ///
         /// <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p>
         pub fn set_number_of_workers(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_number_of_workers(input);
@@ -4747,14 +4440,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
-        /// <p>The name of the metadata database in which the partition is
-        /// to be created.</p>
+        /// <p>The name of the metadata database in which the partition is to be created.</p>
         pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.database_name(input.into());
             self
         }
-        /// <p>The name of the metadata database in which the partition is
-        /// to be created.</p>
+        /// <p>The name of the metadata database in which the partition is to be created.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4772,14 +4463,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_table_name(input);
             self
         }
-        /// <p>A <code>PartitionInput</code> structure defining the partition
-        /// to be created.</p>
+        /// <p>A <code>PartitionInput</code> structure defining the partition to be created.</p>
         pub fn partition_input(mut self, input: crate::model::PartitionInput) -> Self {
             self.inner = self.inner.partition_input(input);
             self
         }
-        /// <p>A <code>PartitionInput</code> structure defining the partition
-        /// to be created.</p>
+        /// <p>A <code>PartitionInput</code> structure defining the partition to be created.</p>
         pub fn set_partition_input(
             mut self,
             input: std::option::Option<crate::model::PartitionInput>,
@@ -4953,12 +4642,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Name of the registry to be created of max length of 255, and may only contain letters, numbers, hyphen, underscore, dollar sign, or hash mark.  No whitespace.</p>
+        /// <p>Name of the registry to be created of max length of 255, and may only contain letters, numbers, hyphen, underscore, dollar sign, or hash mark. No whitespace.</p>
         pub fn registry_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.registry_name(input.into());
             self
         }
-        /// <p>Name of the registry to be created of max length of 255, and may only contain letters, numbers, hyphen, underscore, dollar sign, or hash mark.  No whitespace.</p>
+        /// <p>Name of the registry to be created of max length of 255, and may only contain letters, numbers, hyphen, underscore, dollar sign, or hash mark. No whitespace.</p>
         pub fn set_registry_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5061,12 +4750,18 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p> This is a wrapper shape to contain the registry identity fields. If this is not provided, the default registry will be used. The ARN format for the same will be: <code>arn:aws:glue:us-east-2:<customer id>:registry/default-registry:random-5-letter-id</code>.</p>
+        /// <p> This is a wrapper shape to contain the registry identity fields. If this is not provided, the default registry will be used. The ARN format for the same will be: <code>arn:aws:glue:us-east-2:
+        /// <customer id>
+        /// :registry/default-registry:random-5-letter-id
+        /// </customer></code>.</p>
         pub fn registry_id(mut self, input: crate::model::RegistryId) -> Self {
             self.inner = self.inner.registry_id(input);
             self
         }
-        /// <p> This is a wrapper shape to contain the registry identity fields. If this is not provided, the default registry will be used. The ARN format for the same will be: <code>arn:aws:glue:us-east-2:<customer id>:registry/default-registry:random-5-letter-id</code>.</p>
+        /// <p> This is a wrapper shape to contain the registry identity fields. If this is not provided, the default registry will be used. The ARN format for the same will be: <code>arn:aws:glue:us-east-2:
+        /// <customer id>
+        /// :registry/default-registry:random-5-letter-id
+        /// </customer></code>.</p>
         pub fn set_registry_id(
             mut self,
             input: std::option::Option<crate::model::RegistryId>,
@@ -5098,80 +4793,30 @@ pub mod fluent_builders {
             self
         }
         /// <p>The compatibility mode of the schema. The possible values are:</p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>NONE</i>: No compatibility mode applies. You can use this choice in development scenarios or if you do not know the compatibility mode that you want to apply to schemas. Any new version added will be accepted without undergoing a compatibility check.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>DISABLED</i>: This compatibility choice prevents versioning for a particular schema. You can use this choice to prevent future versioning of a schema.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>BACKWARD</i>: This compatibility choice is recommended as it allows data receivers to read both the current and one previous schema version. This means that for instance, a new schema version cannot drop data fields or change the type of these fields, so they can't be read by readers using the previous version.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>BACKWARD_ALL</i>: This compatibility choice allows data receivers to read both the current and all previous schema versions. You can use this choice when you need to delete fields or add optional fields, and check compatibility against all previous schema versions. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>FORWARD</i>: This compatibility choice allows data receivers to read both the current and one next schema version, but not necessarily later versions. You can use this choice when you need to add fields or delete optional fields, but only check compatibility against the last schema version.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>FORWARD_ALL</i>: This compatibility choice allows data receivers to read written by producers of any new registered schema. You can use this choice when you need to add fields or delete optional fields, and check compatibility against all previous schema versions.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>FULL</i>: This compatibility choice allows data receivers to read data written by producers using the previous or next version of the schema, but not necessarily earlier or later versions. You can use this choice when you need to add or remove optional fields, but only check compatibility against the last schema version.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>FULL_ALL</i>: This compatibility choice allows data receivers to read data written by producers using all previous schema versions. You can use this choice when you need to add or remove optional fields, and check compatibility against all previous schema versions.</p>
-        /// </li>
+        /// <li> <p> <i>NONE</i>: No compatibility mode applies. You can use this choice in development scenarios or if you do not know the compatibility mode that you want to apply to schemas. Any new version added will be accepted without undergoing a compatibility check.</p> </li>
+        /// <li> <p> <i>DISABLED</i>: This compatibility choice prevents versioning for a particular schema. You can use this choice to prevent future versioning of a schema.</p> </li>
+        /// <li> <p> <i>BACKWARD</i>: This compatibility choice is recommended as it allows data receivers to read both the current and one previous schema version. This means that for instance, a new schema version cannot drop data fields or change the type of these fields, so they can't be read by readers using the previous version.</p> </li>
+        /// <li> <p> <i>BACKWARD_ALL</i>: This compatibility choice allows data receivers to read both the current and all previous schema versions. You can use this choice when you need to delete fields or add optional fields, and check compatibility against all previous schema versions. </p> </li>
+        /// <li> <p> <i>FORWARD</i>: This compatibility choice allows data receivers to read both the current and one next schema version, but not necessarily later versions. You can use this choice when you need to add fields or delete optional fields, but only check compatibility against the last schema version.</p> </li>
+        /// <li> <p> <i>FORWARD_ALL</i>: This compatibility choice allows data receivers to read written by producers of any new registered schema. You can use this choice when you need to add fields or delete optional fields, and check compatibility against all previous schema versions.</p> </li>
+        /// <li> <p> <i>FULL</i>: This compatibility choice allows data receivers to read data written by producers using the previous or next version of the schema, but not necessarily earlier or later versions. You can use this choice when you need to add or remove optional fields, but only check compatibility against the last schema version.</p> </li>
+        /// <li> <p> <i>FULL_ALL</i>: This compatibility choice allows data receivers to read data written by producers using all previous schema versions. You can use this choice when you need to add or remove optional fields, and check compatibility against all previous schema versions.</p> </li>
         /// </ul>
         pub fn compatibility(mut self, input: crate::model::Compatibility) -> Self {
             self.inner = self.inner.compatibility(input);
             self
         }
         /// <p>The compatibility mode of the schema. The possible values are:</p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <i>NONE</i>: No compatibility mode applies. You can use this choice in development scenarios or if you do not know the compatibility mode that you want to apply to schemas. Any new version added will be accepted without undergoing a compatibility check.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>DISABLED</i>: This compatibility choice prevents versioning for a particular schema. You can use this choice to prevent future versioning of a schema.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>BACKWARD</i>: This compatibility choice is recommended as it allows data receivers to read both the current and one previous schema version. This means that for instance, a new schema version cannot drop data fields or change the type of these fields, so they can't be read by readers using the previous version.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>BACKWARD_ALL</i>: This compatibility choice allows data receivers to read both the current and all previous schema versions. You can use this choice when you need to delete fields or add optional fields, and check compatibility against all previous schema versions. </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>FORWARD</i>: This compatibility choice allows data receivers to read both the current and one next schema version, but not necessarily later versions. You can use this choice when you need to add fields or delete optional fields, but only check compatibility against the last schema version.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>FORWARD_ALL</i>: This compatibility choice allows data receivers to read written by producers of any new registered schema. You can use this choice when you need to add fields or delete optional fields, and check compatibility against all previous schema versions.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>FULL</i>: This compatibility choice allows data receivers to read data written by producers using the previous or next version of the schema, but not necessarily earlier or later versions. You can use this choice when you need to add or remove optional fields, but only check compatibility against the last schema version.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <i>FULL_ALL</i>: This compatibility choice allows data receivers to read data written by producers using all previous schema versions. You can use this choice when you need to add or remove optional fields, and check compatibility against all previous schema versions.</p>
-        /// </li>
+        /// <li> <p> <i>NONE</i>: No compatibility mode applies. You can use this choice in development scenarios or if you do not know the compatibility mode that you want to apply to schemas. Any new version added will be accepted without undergoing a compatibility check.</p> </li>
+        /// <li> <p> <i>DISABLED</i>: This compatibility choice prevents versioning for a particular schema. You can use this choice to prevent future versioning of a schema.</p> </li>
+        /// <li> <p> <i>BACKWARD</i>: This compatibility choice is recommended as it allows data receivers to read both the current and one previous schema version. This means that for instance, a new schema version cannot drop data fields or change the type of these fields, so they can't be read by readers using the previous version.</p> </li>
+        /// <li> <p> <i>BACKWARD_ALL</i>: This compatibility choice allows data receivers to read both the current and all previous schema versions. You can use this choice when you need to delete fields or add optional fields, and check compatibility against all previous schema versions. </p> </li>
+        /// <li> <p> <i>FORWARD</i>: This compatibility choice allows data receivers to read both the current and one next schema version, but not necessarily later versions. You can use this choice when you need to add fields or delete optional fields, but only check compatibility against the last schema version.</p> </li>
+        /// <li> <p> <i>FORWARD_ALL</i>: This compatibility choice allows data receivers to read written by producers of any new registered schema. You can use this choice when you need to add fields or delete optional fields, and check compatibility against all previous schema versions.</p> </li>
+        /// <li> <p> <i>FULL</i>: This compatibility choice allows data receivers to read data written by producers using the previous or next version of the schema, but not necessarily earlier or later versions. You can use this choice when you need to add or remove optional fields, but only check compatibility against the last schema version.</p> </li>
+        /// <li> <p> <i>FULL_ALL</i>: This compatibility choice allows data receivers to read data written by producers using all previous schema versions. You can use this choice when you need to add or remove optional fields, and check compatibility against all previous schema versions.</p> </li>
         /// </ul>
         pub fn set_compatibility(
             mut self,
@@ -5476,26 +5121,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog in which to create the <code>Table</code>.
-        /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog in which to create the <code>Table</code>. If none is supplied, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog in which to create the <code>Table</code>.
-        /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog in which to create the <code>Table</code>. If none is supplied, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
-        /// <p>The catalog database in which to create the new table. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
+        /// <p>The catalog database in which to create the new table. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.database_name(input.into());
             self
         }
-        /// <p>The catalog database in which to create the new table. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
+        /// <p>The catalog database in which to create the new table. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5503,14 +5144,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_database_name(input);
             self
         }
-        /// <p>The <code>TableInput</code> object that defines the metadata table
-        /// to create in the catalog.</p>
+        /// <p>The <code>TableInput</code> object that defines the metadata table to create in the catalog.</p>
         pub fn table_input(mut self, input: crate::model::TableInput) -> Self {
             self.inner = self.inner.table_input(input);
             self
         }
-        /// <p>The <code>TableInput</code> object that defines the metadata table
-        /// to create in the catalog.</p>
+        /// <p>The <code>TableInput</code> object that defines the metadata table to create in the catalog.</p>
         pub fn set_table_input(
             mut self,
             input: std::option::Option<crate::model::TableInput>,
@@ -5641,17 +5280,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_type(input);
             self
         }
-        /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run
-        /// something every day at 12:15 UTC, you would specify:
-        /// <code>cron(15 12 * * ? *)</code>.</p>
+        /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
         /// <p>This field is required when the trigger type is SCHEDULED.</p>
         pub fn schedule(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.schedule(input.into());
             self
         }
-        /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run
-        /// something every day at 12:15 UTC, you would specify:
-        /// <code>cron(15 12 * * ? *)</code>.</p>
+        /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
         /// <p>This field is required when the trigger type is SCHEDULED.</p>
         pub fn set_schedule(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_schedule(input);
@@ -5699,14 +5334,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>Set to <code>true</code> to start <code>SCHEDULED</code> and <code>CONDITIONAL</code>
-        /// triggers when created. True is not supported for <code>ON_DEMAND</code> triggers.</p>
+        /// <p>Set to <code>true</code> to start <code>SCHEDULED</code> and <code>CONDITIONAL</code> triggers when created. True is not supported for <code>ON_DEMAND</code> triggers.</p>
         pub fn start_on_creation(mut self, input: bool) -> Self {
             self.inner = self.inner.start_on_creation(input);
             self
         }
-        /// <p>Set to <code>true</code> to start <code>SCHEDULED</code> and <code>CONDITIONAL</code>
-        /// triggers when created. True is not supported for <code>ON_DEMAND</code> triggers.</p>
+        /// <p>Set to <code>true</code> to start <code>SCHEDULED</code> and <code>CONDITIONAL</code> triggers when created. True is not supported for <code>ON_DEMAND</code> triggers.</p>
         pub fn set_start_on_creation(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_start_on_creation(input);
             self
@@ -5715,9 +5348,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The tags to use with this trigger. You may use tags to limit access to the trigger.
-        /// For more information about tags in Glue, see
-        /// <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide. </p>
+        /// <p>The tags to use with this trigger. You may use tags to limit access to the trigger. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide. </p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -5726,9 +5357,7 @@ pub mod fluent_builders {
             self.inner = self.inner.tags(k.into(), v.into());
             self
         }
-        /// <p>The tags to use with this trigger. You may use tags to limit access to the trigger.
-        /// For more information about tags in Glue, see
-        /// <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide. </p>
+        /// <p>The tags to use with this trigger. You may use tags to limit access to the trigger. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -5738,8 +5367,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>Batch condition that must be met (specified number of events received or batch time window expired)
-        /// before EventBridge event trigger fires.</p>
+        /// <p>Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires.</p>
         pub fn event_batching_condition(
             mut self,
             input: crate::model::EventBatchingCondition,
@@ -5747,8 +5375,7 @@ pub mod fluent_builders {
             self.inner = self.inner.event_batching_condition(input);
             self
         }
-        /// <p>Batch condition that must be met (specified number of events received or batch time window expired)
-        /// before EventBridge event trigger fires.</p>
+        /// <p>Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires.</p>
         pub fn set_event_batching_condition(
             mut self,
             input: std::option::Option<crate::model::EventBatchingCondition>,
@@ -5816,14 +5443,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog in which to create the function. If none is provided, the Amazon Web Services
-        /// account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog in which to create the function. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog in which to create the function. If none is provided, the Amazon Web Services
-        /// account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog in which to create the function. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
@@ -5841,14 +5466,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_database_name(input);
             self
         }
-        /// <p>A <code>FunctionInput</code> object that defines the function
-        /// to create in the Data Catalog.</p>
+        /// <p>A <code>FunctionInput</code> object that defines the function to create in the Data Catalog.</p>
         pub fn function_input(mut self, input: crate::model::UserDefinedFunctionInput) -> Self {
             self.inner = self.inner.function_input(input);
             self
         }
-        /// <p>A <code>FunctionInput</code> object that defines the function
-        /// to create in the Data Catalog.</p>
+        /// <p>A <code>FunctionInput</code> object that defines the function to create in the Data Catalog.</p>
         pub fn set_function_input(
             mut self,
             input: std::option::Option<crate::model::UserDefinedFunctionInput>,
@@ -6136,7 +5759,6 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteColumnStatisticsForPartition`.
     ///
     /// <p>Delete the partition column statistics of a column.</p>
-    ///
     /// <p>The Identity and Access Management (IAM) permission required for this operation is <code>DeletePartition</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteColumnStatisticsForPartition<
@@ -6196,14 +5818,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog where the partitions in question reside.
-        /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the partitions in question reside.
-        /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
@@ -6262,7 +5882,6 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteColumnStatisticsForTable`.
     ///
     /// <p>Retrieves table statistics of columns.</p>
-    ///
     /// <p>The Identity and Access Management (IAM) permission required for this operation is <code>DeleteTable</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteColumnStatisticsForTable<
@@ -6320,14 +5939,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog where the partitions in question reside.
-        /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the partitions in question reside.
-        /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
@@ -6425,14 +6042,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services
-        /// account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services
-        /// account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
@@ -6453,8 +6068,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteCrawler`.
     ///
-    /// <p>Removes a specified crawler from the Glue Data Catalog, unless the crawler state is
-    /// <code>RUNNING</code>.</p>
+    /// <p>Removes a specified crawler from the Glue Data Catalog, unless the crawler state is <code>RUNNING</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteCrawler<
         C = aws_smithy_client::erase::DynConnector,
@@ -6524,18 +6138,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteDatabase`.
     ///
-    /// <p>Removes a specified database from a Data Catalog.</p>
-    /// <note>
-    /// <p>After completing this operation, you no longer have access to the tables (and all table
-    /// versions and partitions that might belong to the tables) and the user-defined functions in
-    /// the deleted database. Glue deletes these "orphaned" resources asynchronously in a timely
-    /// manner, at the discretion of the service.</p>
-    /// <p>To ensure the immediate deletion of all related resources, before calling
-    /// <code>DeleteDatabase</code>, use <code>DeleteTableVersion</code> or
-    /// <code>BatchDeleteTableVersion</code>, <code>DeletePartition</code> or
-    /// <code>BatchDeletePartition</code>, <code>DeleteUserDefinedFunction</code>, and
-    /// <code>DeleteTable</code> or <code>BatchDeleteTable</code>, to delete any resources that
-    /// belong to the database.</p>
+    /// <p>Removes a specified database from a Data Catalog.</p> <note>
+    /// <p>After completing this operation, you no longer have access to the tables (and all table versions and partitions that might belong to the tables) and the user-defined functions in the deleted database. Glue deletes these "orphaned" resources asynchronously in a timely manner, at the discretion of the service.</p>
+    /// <p>To ensure the immediate deletion of all related resources, before calling <code>DeleteDatabase</code>, use <code>DeleteTableVersion</code> or <code>BatchDeleteTableVersion</code>, <code>DeletePartition</code> or <code>BatchDeletePartition</code>, <code>DeleteUserDefinedFunction</code>, and <code>DeleteTable</code> or <code>BatchDeleteTable</code>, to delete any resources that belong to the database.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteDatabase<
@@ -6593,26 +6198,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog in which the database resides. If none is provided, the Amazon Web Services
-        /// account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog in which the database resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog in which the database resides. If none is provided, the Amazon Web Services
-        /// account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog in which the database resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
-        /// <p>The name of the database to delete. For Hive compatibility, this must be all
-        /// lowercase.</p>
+        /// <p>The name of the database to delete. For Hive compatibility, this must be all lowercase.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the database to delete. For Hive compatibility, this must be all
-        /// lowercase.</p>
+        /// <p>The name of the database to delete. For Hive compatibility, this must be all lowercase.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -6693,8 +6294,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteJob`.
     ///
-    /// <p>Deletes a specified job definition. If the job definition
-    /// is not found, no exception is thrown.</p>
+    /// <p>Deletes a specified job definition. If the job definition is not found, no exception is thrown.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteJob<
         C = aws_smithy_client::erase::DynConnector,
@@ -6764,12 +6364,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteMLTransform`.
     ///
-    /// <p>Deletes an Glue machine learning transform. Machine learning transforms are a special
-    /// type of transform that use machine learning to learn the details of the transformation to be
-    /// performed by learning from examples provided by humans. These transformations are then saved
-    /// by Glue. If you no longer need a transform, you can delete it by calling
-    /// <code>DeleteMLTransforms</code>. However, any Glue jobs that still reference the deleted
-    /// transform will no longer succeed.</p>
+    /// <p>Deletes an Glue machine learning transform. Machine learning transforms are a special type of transform that use machine learning to learn the details of the transformation to be performed by learning from examples provided by humans. These transformations are then saved by Glue. If you no longer need a transform, you can delete it by calling <code>DeleteMLTransforms</code>. However, any Glue jobs that still reference the deleted transform will no longer succeed.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteMLTransform<
         C = aws_smithy_client::erase::DynConnector,
@@ -6896,26 +6491,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog where the partition to be deleted resides. If none is provided,
-        /// the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the partition to be deleted resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the partition to be deleted resides. If none is provided,
-        /// the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the partition to be deleted resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
-        /// <p>The name of the catalog database in which the table in question
-        /// resides.</p>
+        /// <p>The name of the catalog database in which the table in question resides.</p>
         pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.database_name(input.into());
             self
         }
-        /// <p>The name of the catalog database in which the table in question
-        /// resides.</p>
+        /// <p>The name of the catalog database in which the table in question resides.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7282,7 +6873,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteSchemaVersions`.
     ///
-    /// <p>Remove versions from the specified schema. A version number or range may be supplied. If the compatibility mode forbids deleting of a version that is necessary, such as BACKWARDS_FULL, an error is returned.  Calling the <code>GetSchemaVersions</code> API after this call will list the status of the deleted versions.</p>
+    /// <p>Remove versions from the specified schema. A version number or range may be supplied. If the compatibility mode forbids deleting of a version that is necessary, such as BACKWARDS_FULL, an error is returned. Calling the <code>GetSchemaVersions</code> API after this call will list the status of the deleted versions.</p>
     /// <p>When the range of version numbers contain check pointed version, the API will return a 409 conflict and will not proceed with the deletion. You have to remove the checkpoint first using the <code>DeleteSchemaCheckpoint</code> API before using this API.</p>
     /// <p>You cannot use the <code>DeleteSchemaVersions</code> API to delete the first schema version in the schema set. The first schema version can only be deleted by the <code>DeleteSchema</code> API. This operation will also delete the attached <code>SchemaVersionMetadata</code> under the schema versions. Hard deletes will be enforced on the database.</p>
     /// <p>If the compatibility mode forbids deleting of a version that is necessary, such as BACKWARDS_FULL, an error is returned.</p>
@@ -7354,12 +6945,8 @@ pub mod fluent_builders {
         }
         /// <p>A version range may be supplied which may be of the format:</p>
         /// <ul>
-        /// <li>
-        /// <p>a single version number, 5</p>
-        /// </li>
-        /// <li>
-        /// <p>a range, 5-8 : deletes versions 5, 6, 7, 8</p>
-        /// </li>
+        /// <li> <p>a single version number, 5</p> </li>
+        /// <li> <p>a range, 5-8 : deletes versions 5, 6, 7, 8</p> </li>
         /// </ul>
         pub fn versions(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.versions(input.into());
@@ -7367,12 +6954,8 @@ pub mod fluent_builders {
         }
         /// <p>A version range may be supplied which may be of the format:</p>
         /// <ul>
-        /// <li>
-        /// <p>a single version number, 5</p>
-        /// </li>
-        /// <li>
-        /// <p>a range, 5-8 : deletes versions 5, 6, 7, 8</p>
-        /// </li>
+        /// <li> <p>a single version number, 5</p> </li>
+        /// <li> <p>a range, 5-8 : deletes versions 5, 6, 7, 8</p> </li>
         /// </ul>
         pub fn set_versions(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_versions(input);
@@ -7451,16 +7034,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteTable`.
     ///
-    /// <p>Removes a table definition from the Data Catalog.</p>
-    /// <note>
-    /// <p>After completing this operation, you no longer have access to the table versions and
-    /// partitions that belong to the deleted table. Glue deletes these "orphaned" resources
-    /// asynchronously in a timely manner, at the discretion of the service.</p>
-    /// <p>To ensure the immediate deletion of all related resources, before calling
-    /// <code>DeleteTable</code>, use <code>DeleteTableVersion</code> or
-    /// <code>BatchDeleteTableVersion</code>, and <code>DeletePartition</code> or
-    /// <code>BatchDeletePartition</code>, to delete any resources that belong to the
-    /// table.</p>
+    /// <p>Removes a table definition from the Data Catalog.</p> <note>
+    /// <p>After completing this operation, you no longer have access to the table versions and partitions that belong to the deleted table. Glue deletes these "orphaned" resources asynchronously in a timely manner, at the discretion of the service.</p>
+    /// <p>To ensure the immediate deletion of all related resources, before calling <code>DeleteTable</code>, use <code>DeleteTableVersion</code> or <code>BatchDeleteTableVersion</code>, and <code>DeletePartition</code> or <code>BatchDeletePartition</code>, to delete any resources that belong to the table.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTable<
@@ -7518,26 +7094,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account
-        /// ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account
-        /// ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
-        /// <p>The name of the catalog database in which the table resides. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
+        /// <p>The name of the catalog database in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.database_name(input.into());
             self
         }
-        /// <p>The name of the catalog database in which the table resides. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
+        /// <p>The name of the catalog database in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7545,14 +7117,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_database_name(input);
             self
         }
-        /// <p>The name of the table to be deleted. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
+        /// <p>The name of the table to be deleted. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the table to be deleted. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
+        /// <p>The name of the table to be deleted. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -7630,26 +7200,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account
-        /// ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account
-        /// ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
-        /// <p>The database in the catalog in which the table resides. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
+        /// <p>The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.database_name(input.into());
             self
         }
-        /// <p>The database in the catalog in which the table resides. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
+        /// <p>The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7657,14 +7223,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_database_name(input);
             self
         }
-        /// <p>The name of the table. For Hive compatibility,
-        /// this name is entirely lowercase.</p>
+        /// <p>The name of the table. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.table_name(input.into());
             self
         }
-        /// <p>The name of the table. For Hive compatibility,
-        /// this name is entirely lowercase.</p>
+        /// <p>The name of the table. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_table_name(input);
             self
@@ -7682,8 +7246,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteTrigger`.
     ///
-    /// <p>Deletes a specified trigger. If the trigger is not found, no
-    /// exception is thrown.</p>
+    /// <p>Deletes a specified trigger. If the trigger is not found, no exception is thrown.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteTrigger<
         C = aws_smithy_client::erase::DynConnector,
@@ -7810,14 +7373,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog where the function to be deleted is
-        /// located. If none is supplied, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the function to be deleted is located. If none is supplied, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the function to be deleted is
-        /// located. If none is supplied, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the function to be deleted is located. If none is supplied, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
@@ -8408,7 +7969,6 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetColumnStatisticsForPartition`.
     ///
     /// <p>Retrieves partition statistics of columns.</p>
-    ///
     /// <p>The Identity and Access Management (IAM) permission required for this operation is <code>GetPartition</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetColumnStatisticsForPartition<
@@ -8466,14 +8026,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog where the partitions in question reside.
-        /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the partitions in question reside.
-        /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
@@ -8539,7 +8097,6 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetColumnStatisticsForTable`.
     ///
     /// <p>Retrieves table statistics of columns.</p>
-    ///
     /// <p>The Identity and Access Management (IAM) permission required for this operation is <code>GetTable</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetColumnStatisticsForTable<
@@ -8597,14 +8154,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog where the partitions in question reside.
-        /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the partitions in question reside.
-        /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
@@ -8709,14 +8264,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services
-        /// account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services
-        /// account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
@@ -8731,20 +8284,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>Allows you to retrieve the connection metadata without returning the password. For
-        /// instance, the AWS Glue console uses this flag to retrieve the connection, and does not display
-        /// the password. Set this parameter when the caller might not have permission to use the KMS
-        /// key to decrypt the password, but it does have permission to access the rest of the connection
-        /// properties.</p>
+        /// <p>Allows you to retrieve the connection metadata without returning the password. For instance, the AWS Glue console uses this flag to retrieve the connection, and does not display the password. Set this parameter when the caller might not have permission to use the KMS key to decrypt the password, but it does have permission to access the rest of the connection properties.</p>
         pub fn hide_password(mut self, input: bool) -> Self {
             self.inner = self.inner.hide_password(input);
             self
         }
-        /// <p>Allows you to retrieve the connection metadata without returning the password. For
-        /// instance, the AWS Glue console uses this flag to retrieve the connection, and does not display
-        /// the password. Set this parameter when the caller might not have permission to use the KMS
-        /// key to decrypt the password, but it does have permission to access the rest of the connection
-        /// properties.</p>
+        /// <p>Allows you to retrieve the connection metadata without returning the password. For instance, the AWS Glue console uses this flag to retrieve the connection, and does not display the password. Set this parameter when the caller might not have permission to use the KMS key to decrypt the password, but it does have permission to access the rest of the connection properties.</p>
         pub fn set_hide_password(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_hide_password(input);
             self
@@ -8809,14 +8354,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog in which the connections reside. If none is provided, the Amazon Web Services
-        /// account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog in which the connections reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog in which the connections reside. If none is provided, the Amazon Web Services
-        /// account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog in which the connections reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
@@ -8834,20 +8377,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filter(input);
             self
         }
-        /// <p>Allows you to retrieve the connection metadata without returning the password. For
-        /// instance, the AWS Glue console uses this flag to retrieve the connection, and does not display
-        /// the password. Set this parameter when the caller might not have permission to use the KMS
-        /// key to decrypt the password, but it does have permission to access the rest of the connection
-        /// properties.</p>
+        /// <p>Allows you to retrieve the connection metadata without returning the password. For instance, the AWS Glue console uses this flag to retrieve the connection, and does not display the password. Set this parameter when the caller might not have permission to use the KMS key to decrypt the password, but it does have permission to access the rest of the connection properties.</p>
         pub fn hide_password(mut self, input: bool) -> Self {
             self.inner = self.inner.hide_password(input);
             self
         }
-        /// <p>Allows you to retrieve the connection metadata without returning the password. For
-        /// instance, the AWS Glue console uses this flag to retrieve the connection, and does not display
-        /// the password. Set this parameter when the caller might not have permission to use the KMS
-        /// key to decrypt the password, but it does have permission to access the rest of the connection
-        /// properties.</p>
+        /// <p>Allows you to retrieve the connection metadata without returning the password. For instance, the AWS Glue console uses this flag to retrieve the connection, and does not display the password. Set this parameter when the caller might not have permission to use the KMS key to decrypt the password, but it does have permission to access the rest of the connection properties.</p>
         pub fn set_hide_password(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_hide_password(input);
             self
@@ -9042,8 +8577,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetCrawlers`.
     ///
-    /// <p>Retrieves metadata for all crawlers defined in the customer
-    /// account.</p>
+    /// <p>Retrieves metadata for all crawlers defined in the customer account.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetCrawlers<
         C = aws_smithy_client::erase::DynConnector,
@@ -9180,26 +8714,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog in which the database resides. If none is provided, the Amazon Web Services
-        /// account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog in which the database resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog in which the database resides. If none is provided, the Amazon Web Services
-        /// account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog in which the database resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
-        /// <p>The name of the database to retrieve. For Hive compatibility, this
-        /// should be all lowercase.</p>
+        /// <p>The name of the database to retrieve. For Hive compatibility, this should be all lowercase.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the database to retrieve. For Hive compatibility, this
-        /// should be all lowercase.</p>
+        /// <p>The name of the database to retrieve. For Hive compatibility, this should be all lowercase.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -9264,14 +8794,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog from which to retrieve <code>Databases</code>. If none is
-        /// provided, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog from which to retrieve <code>Databases</code>. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog from which to retrieve <code>Databases</code>. If none is
-        /// provided, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog from which to retrieve <code>Databases</code>. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
@@ -9297,28 +8825,18 @@ pub mod fluent_builders {
             self
         }
         /// <p>Allows you to specify that you want to list the databases shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>. </p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>If set to <code>FOREIGN</code>, will list the databases shared with your account. </p>
-        /// </li>
-        /// <li>
-        /// <p>If set to <code>ALL</code>, will list the databases shared with your account, as well as the databases in yor local account. </p>
-        /// </li>
+        /// <li> <p>If set to <code>FOREIGN</code>, will list the databases shared with your account. </p> </li>
+        /// <li> <p>If set to <code>ALL</code>, will list the databases shared with your account, as well as the databases in yor local account. </p> </li>
         /// </ul>
         pub fn resource_share_type(mut self, input: crate::model::ResourceShareType) -> Self {
             self.inner = self.inner.resource_share_type(input);
             self
         }
         /// <p>Allows you to specify that you want to list the databases shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>. </p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>If set to <code>FOREIGN</code>, will list the databases shared with your account. </p>
-        /// </li>
-        /// <li>
-        /// <p>If set to <code>ALL</code>, will list the databases shared with your account, as well as the databases in yor local account. </p>
-        /// </li>
+        /// <li> <p>If set to <code>FOREIGN</code>, will list the databases shared with your account. </p> </li>
+        /// <li> <p>If set to <code>ALL</code>, will list the databases shared with your account, as well as the databases in yor local account. </p> </li>
         /// </ul>
         pub fn set_resource_share_type(
             mut self,
@@ -9387,14 +8905,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog to retrieve the security configuration for. If none is
-        /// provided, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog to retrieve the security configuration for. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog to retrieve the security configuration for. If none is
-        /// provided, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog to retrieve the security configuration for. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
@@ -9475,11 +8991,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetDevEndpoint`.
     ///
-    /// <p>Retrieves information about a specified development endpoint.</p>
-    /// <note>
-    /// <p>When you create a development endpoint in a virtual private cloud (VPC), Glue returns only
-    /// a private IP address, and the public IP address field is not populated. When you create a
-    /// non-VPC development endpoint, Glue returns only a public IP address.</p>
+    /// <p>Retrieves information about a specified development endpoint.</p> <note>
+    /// <p>When you create a development endpoint in a virtual private cloud (VPC), Glue returns only a private IP address, and the public IP address field is not populated. When you create a non-VPC development endpoint, Glue returns only a public IP address.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDevEndpoint<
@@ -9553,11 +9066,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetDevEndpoints`.
     ///
-    /// <p>Retrieves all the development endpoints in this AWS account.</p>
-    /// <note>
-    /// <p>When you create a development endpoint in a virtual private cloud (VPC), Glue returns only a private IP address
-    /// and the public IP address field is not populated. When you create a non-VPC development
-    /// endpoint, Glue returns only a public IP address.</p>
+    /// <p>Retrieves all the development endpoints in this AWS account.</p> <note>
+    /// <p>When you create a development endpoint in a virtual private cloud (VPC), Glue returns only a private IP address and the public IP address field is not populated. When you create a non-VPC development endpoint, Glue returns only a public IP address.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetDevEndpoints<
@@ -10148,11 +9658,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetMLTaskRun`.
     ///
-    /// <p>Gets details for a specific task run on a machine learning transform. Machine learning
-    /// task runs are asynchronous tasks that Glue runs on your behalf as part of various machine
-    /// learning workflows. You can check the stats of any task run by calling
-    /// <code>GetMLTaskRun</code> with the <code>TaskRunID</code> and its parent transform's
-    /// <code>TransformID</code>.</p>
+    /// <p>Gets details for a specific task run on a machine learning transform. Machine learning task runs are asynchronous tasks that Glue runs on your behalf as part of various machine learning workflows. You can check the stats of any task run by calling <code>GetMLTaskRun</code> with the <code>TaskRunID</code> and its parent transform's <code>TransformID</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMLTaskRun<
         C = aws_smithy_client::erase::DynConnector,
@@ -10232,12 +9738,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetMLTaskRuns`.
     ///
-    /// <p>Gets a list of runs for a machine learning transform. Machine learning task runs are
-    /// asynchronous tasks that Glue runs on your behalf as part of various machine learning
-    /// workflows. You can get a sortable, filterable list of machine learning task runs by calling
-    /// <code>GetMLTaskRuns</code> with their parent transform's <code>TransformID</code> and other
-    /// optional parameters as documented in this section.</p>
-    ///
+    /// <p>Gets a list of runs for a machine learning transform. Machine learning task runs are asynchronous tasks that Glue runs on your behalf as part of various machine learning workflows. You can get a sortable, filterable list of machine learning task runs by calling <code>GetMLTaskRuns</code> with their parent transform's <code>TransformID</code> and other optional parameters as documented in this section.</p>
     /// <p>This operation returns a list of historic runs and must be paginated.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMLTaskRuns<
@@ -10354,11 +9855,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetMLTransform`.
     ///
-    /// <p>Gets an Glue machine learning transform artifact and all its corresponding metadata.
-    /// Machine learning transforms are a special type of transform that use machine learning to learn
-    /// the details of the transformation to be performed by learning from examples provided by
-    /// humans. These transformations are then saved by Glue. You can retrieve their metadata by
-    /// calling <code>GetMLTransform</code>.</p>
+    /// <p>Gets an Glue machine learning transform artifact and all its corresponding metadata. Machine learning transforms are a special type of transform that use machine learning to learn the details of the transformation to be performed by learning from examples provided by humans. These transformations are then saved by Glue. You can retrieve their metadata by calling <code>GetMLTransform</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMLTransform<
         C = aws_smithy_client::erase::DynConnector,
@@ -10415,14 +9912,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The unique identifier of the transform, generated at the time that the transform was
-        /// created.</p>
+        /// <p>The unique identifier of the transform, generated at the time that the transform was created.</p>
         pub fn transform_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.transform_id(input.into());
             self
         }
-        /// <p>The unique identifier of the transform, generated at the time that the transform was
-        /// created.</p>
+        /// <p>The unique identifier of the transform, generated at the time that the transform was created.</p>
         pub fn set_transform_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_transform_id(input);
             self
@@ -10430,11 +9925,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetMLTransforms`.
     ///
-    /// <p>Gets a sortable, filterable list of existing Glue machine learning transforms. Machine
-    /// learning transforms are a special type of transform that use machine learning to learn the
-    /// details of the transformation to be performed by learning from examples provided by humans.
-    /// These transformations are then saved by Glue, and you can retrieve their metadata by
-    /// calling <code>GetMLTransforms</code>.</p>
+    /// <p>Gets a sortable, filterable list of existing Glue machine learning transforms. Machine learning transforms are a special type of transform that use machine learning to learn the details of the transformation to be performed by learning from examples provided by humans. These transformations are then saved by Glue, and you can retrieve their metadata by calling <code>GetMLTransforms</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetMLTransforms<
         C = aws_smithy_client::erase::DynConnector,
@@ -10597,14 +10088,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog where the partition in question resides. If none is provided,
-        /// the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the partition in question resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the partition in question resides. If none is provided,
-        /// the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the partition in question resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
@@ -10812,14 +10301,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog where the partitions in question reside. If none is provided,
-        /// the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the partitions in question reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the partitions in question reside. If none is provided,
-        /// the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the partitions in question reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
@@ -10848,233 +10335,157 @@ pub mod fluent_builders {
             self
         }
         /// <p>An expression that filters the partitions to be returned.</p>
-        /// <p>The expression uses SQL syntax similar to the SQL <code>WHERE</code> filter clause. The
-        /// SQL statement parser <a href="http://jsqlparser.sourceforge.net/home.php">JSQLParser</a> parses the expression. </p>
-        /// <p>
-        /// <i>Operators</i>: The following are the operators that you can use in the
-        /// <code>Expression</code> API call:</p>
+        /// <p>The expression uses SQL syntax similar to the SQL <code>WHERE</code> filter clause. The SQL statement parser <a href="http://jsqlparser.sourceforge.net/home.php">JSQLParser</a> parses the expression. </p>
+        /// <p> <i>Operators</i>: The following are the operators that you can use in the <code>Expression</code> API call:</p>
         /// <dl>
-        /// <dt>=</dt>
+        /// <dt>
+        /// =
+        /// </dt>
         /// <dd>
-        /// <p>Checks whether the values of the two operands are equal; if yes, then the condition becomes
-        /// true.</p>
+        /// <p>Checks whether the values of the two operands are equal; if yes, then the condition becomes true.</p>
         /// <p>Example: Assume 'variable a' holds 10 and 'variable b' holds 20. </p>
         /// <p>(a = b) is not true.</p>
         /// </dd>
-        /// <dt>< ></dt>
+        /// <dt>
+        /// &lt; &gt;
+        /// </dt>
         /// <dd>
-        /// <p>Checks whether the values of two operands are equal; if the values are not equal,
-        /// then the condition becomes true.</p>
-        /// <p>Example: (a < > b) is true.</p>
+        /// <p>Checks whether the values of two operands are equal; if the values are not equal, then the condition becomes true.</p>
+        /// <p>Example: (a &lt; &gt; b) is true.</p>
         /// </dd>
-        /// <dt>></dt>
+        /// <dt>
+        /// &gt;
+        /// </dt>
         /// <dd>
-        /// <p>Checks whether the value of the left operand is greater than the value of the right
-        /// operand; if yes, then the condition becomes true.</p>
-        /// <p>Example: (a > b) is not true.</p>
+        /// <p>Checks whether the value of the left operand is greater than the value of the right operand; if yes, then the condition becomes true.</p>
+        /// <p>Example: (a &gt; b) is not true.</p>
         /// </dd>
-        /// <dt><</dt>
+        /// <dt>
+        /// &lt;
+        /// </dt>
         /// <dd>
-        /// <p>Checks whether the value of the left operand is less than the value of the right
-        /// operand; if yes, then the condition becomes true.</p>
-        /// <p>Example: (a < b) is true.</p>
+        /// <p>Checks whether the value of the left operand is less than the value of the right operand; if yes, then the condition becomes true.</p>
+        /// <p>Example: (a &lt; b) is true.</p>
         /// </dd>
-        /// <dt>>=</dt>
+        /// <dt>
+        /// &gt;=
+        /// </dt>
         /// <dd>
-        /// <p>Checks whether the value of the left operand is greater than or equal to the value
-        /// of the right operand; if yes, then the condition becomes true.</p>
-        /// <p>Example: (a >= b) is not true.</p>
+        /// <p>Checks whether the value of the left operand is greater than or equal to the value of the right operand; if yes, then the condition becomes true.</p>
+        /// <p>Example: (a &gt;= b) is not true.</p>
         /// </dd>
-        /// <dt><=</dt>
+        /// <dt>
+        /// &lt;=
+        /// </dt>
         /// <dd>
-        /// <p>Checks whether the value of the left operand is less than or equal to the value of
-        /// the right operand; if yes, then the condition becomes true.</p>
-        /// <p>Example: (a <= b) is true.</p>
+        /// <p>Checks whether the value of the left operand is less than or equal to the value of the right operand; if yes, then the condition becomes true.</p>
+        /// <p>Example: (a &lt;= b) is true.</p>
         /// </dd>
-        /// <dt>AND, OR, IN, BETWEEN, LIKE, NOT, IS NULL</dt>
+        /// <dt>
+        /// AND, OR, IN, BETWEEN, LIKE, NOT, IS NULL
+        /// </dt>
         /// <dd>
         /// <p>Logical operators.</p>
         /// </dd>
         /// </dl>
-        /// <p>
-        /// <i>Supported Partition Key Types</i>: The following are the supported
-        /// partition keys.</p>
+        /// <p> <i>Supported Partition Key Types</i>: The following are the supported partition keys.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>string</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>date</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>timestamp</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>int</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>bigint</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>long</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>tinyint</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>smallint</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>decimal</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>string</code> </p> </li>
+        /// <li> <p> <code>date</code> </p> </li>
+        /// <li> <p> <code>timestamp</code> </p> </li>
+        /// <li> <p> <code>int</code> </p> </li>
+        /// <li> <p> <code>bigint</code> </p> </li>
+        /// <li> <p> <code>long</code> </p> </li>
+        /// <li> <p> <code>tinyint</code> </p> </li>
+        /// <li> <p> <code>smallint</code> </p> </li>
+        /// <li> <p> <code>decimal</code> </p> </li>
         /// </ul>
         /// <p>If an type is encountered that is not valid, an exception is thrown. </p>
-        /// <p>The following list shows the valid operators on each type. When you define a crawler, the
-        /// <code>partitionKey</code> type is created as a <code>STRING</code>, to be compatible with the catalog
-        /// partitions. </p>
-        ///
-        /// <p>
-        /// <i>Sample API Call</i>: </p>
+        /// <p>The following list shows the valid operators on each type. When you define a crawler, the <code>partitionKey</code> type is created as a <code>STRING</code>, to be compatible with the catalog partitions. </p>
+        /// <p> <i>Sample API Call</i>: </p>
         pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.expression(input.into());
             self
         }
         /// <p>An expression that filters the partitions to be returned.</p>
-        /// <p>The expression uses SQL syntax similar to the SQL <code>WHERE</code> filter clause. The
-        /// SQL statement parser <a href="http://jsqlparser.sourceforge.net/home.php">JSQLParser</a> parses the expression. </p>
-        /// <p>
-        /// <i>Operators</i>: The following are the operators that you can use in the
-        /// <code>Expression</code> API call:</p>
+        /// <p>The expression uses SQL syntax similar to the SQL <code>WHERE</code> filter clause. The SQL statement parser <a href="http://jsqlparser.sourceforge.net/home.php">JSQLParser</a> parses the expression. </p>
+        /// <p> <i>Operators</i>: The following are the operators that you can use in the <code>Expression</code> API call:</p>
         /// <dl>
-        /// <dt>=</dt>
+        /// <dt>
+        /// =
+        /// </dt>
         /// <dd>
-        /// <p>Checks whether the values of the two operands are equal; if yes, then the condition becomes
-        /// true.</p>
+        /// <p>Checks whether the values of the two operands are equal; if yes, then the condition becomes true.</p>
         /// <p>Example: Assume 'variable a' holds 10 and 'variable b' holds 20. </p>
         /// <p>(a = b) is not true.</p>
         /// </dd>
-        /// <dt>< ></dt>
+        /// <dt>
+        /// &lt; &gt;
+        /// </dt>
         /// <dd>
-        /// <p>Checks whether the values of two operands are equal; if the values are not equal,
-        /// then the condition becomes true.</p>
-        /// <p>Example: (a < > b) is true.</p>
+        /// <p>Checks whether the values of two operands are equal; if the values are not equal, then the condition becomes true.</p>
+        /// <p>Example: (a &lt; &gt; b) is true.</p>
         /// </dd>
-        /// <dt>></dt>
+        /// <dt>
+        /// &gt;
+        /// </dt>
         /// <dd>
-        /// <p>Checks whether the value of the left operand is greater than the value of the right
-        /// operand; if yes, then the condition becomes true.</p>
-        /// <p>Example: (a > b) is not true.</p>
+        /// <p>Checks whether the value of the left operand is greater than the value of the right operand; if yes, then the condition becomes true.</p>
+        /// <p>Example: (a &gt; b) is not true.</p>
         /// </dd>
-        /// <dt><</dt>
+        /// <dt>
+        /// &lt;
+        /// </dt>
         /// <dd>
-        /// <p>Checks whether the value of the left operand is less than the value of the right
-        /// operand; if yes, then the condition becomes true.</p>
-        /// <p>Example: (a < b) is true.</p>
+        /// <p>Checks whether the value of the left operand is less than the value of the right operand; if yes, then the condition becomes true.</p>
+        /// <p>Example: (a &lt; b) is true.</p>
         /// </dd>
-        /// <dt>>=</dt>
+        /// <dt>
+        /// &gt;=
+        /// </dt>
         /// <dd>
-        /// <p>Checks whether the value of the left operand is greater than or equal to the value
-        /// of the right operand; if yes, then the condition becomes true.</p>
-        /// <p>Example: (a >= b) is not true.</p>
+        /// <p>Checks whether the value of the left operand is greater than or equal to the value of the right operand; if yes, then the condition becomes true.</p>
+        /// <p>Example: (a &gt;= b) is not true.</p>
         /// </dd>
-        /// <dt><=</dt>
+        /// <dt>
+        /// &lt;=
+        /// </dt>
         /// <dd>
-        /// <p>Checks whether the value of the left operand is less than or equal to the value of
-        /// the right operand; if yes, then the condition becomes true.</p>
-        /// <p>Example: (a <= b) is true.</p>
+        /// <p>Checks whether the value of the left operand is less than or equal to the value of the right operand; if yes, then the condition becomes true.</p>
+        /// <p>Example: (a &lt;= b) is true.</p>
         /// </dd>
-        /// <dt>AND, OR, IN, BETWEEN, LIKE, NOT, IS NULL</dt>
+        /// <dt>
+        /// AND, OR, IN, BETWEEN, LIKE, NOT, IS NULL
+        /// </dt>
         /// <dd>
         /// <p>Logical operators.</p>
         /// </dd>
         /// </dl>
-        /// <p>
-        /// <i>Supported Partition Key Types</i>: The following are the supported
-        /// partition keys.</p>
+        /// <p> <i>Supported Partition Key Types</i>: The following are the supported partition keys.</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>string</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>date</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>timestamp</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>int</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>bigint</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>long</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>tinyint</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>smallint</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>decimal</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>string</code> </p> </li>
+        /// <li> <p> <code>date</code> </p> </li>
+        /// <li> <p> <code>timestamp</code> </p> </li>
+        /// <li> <p> <code>int</code> </p> </li>
+        /// <li> <p> <code>bigint</code> </p> </li>
+        /// <li> <p> <code>long</code> </p> </li>
+        /// <li> <p> <code>tinyint</code> </p> </li>
+        /// <li> <p> <code>smallint</code> </p> </li>
+        /// <li> <p> <code>decimal</code> </p> </li>
         /// </ul>
         /// <p>If an type is encountered that is not valid, an exception is thrown. </p>
-        /// <p>The following list shows the valid operators on each type. When you define a crawler, the
-        /// <code>partitionKey</code> type is created as a <code>STRING</code>, to be compatible with the catalog
-        /// partitions. </p>
-        ///
-        /// <p>
-        /// <i>Sample API Call</i>: </p>
+        /// <p>The following list shows the valid operators on each type. When you define a crawler, the <code>partitionKey</code> type is created as a <code>STRING</code>, to be compatible with the catalog partitions. </p>
+        /// <p> <i>Sample API Call</i>: </p>
         pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_expression(input);
             self
         }
-        /// <p>A continuation token, if this is not the first call to retrieve
-        /// these partitions.</p>
+        /// <p>A continuation token, if this is not the first call to retrieve these partitions.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>A continuation token, if this is not the first call to retrieve
-        /// these partitions.</p>
+        /// <p>A continuation token, if this is not the first call to retrieve these partitions.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -11267,17 +10678,9 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_additional_plan_options_map`](Self::set_additional_plan_options_map).
         ///
         /// <p>A map to hold additional optional key-value parameters.</p>
-        ///
         /// <p>Currently, these key-value pairs are supported:</p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>inferSchema</code>  —  Specifies whether to set <code>inferSchema</code> to true or false for the default script generated by an Glue job. For example, to set <code>inferSchema</code> to true, pass the following key value pair:</p>
-        /// <p>
-        /// <code>--additional-plan-options-map '{"inferSchema":"true"}'</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>inferSchema</code>&nbsp; — &nbsp;Specifies whether to set <code>inferSchema</code> to true or false for the default script generated by an Glue job. For example, to set <code>inferSchema</code> to true, pass the following key value pair:</p> <p> <code>--additional-plan-options-map '{"inferSchema":"true"}'</code> </p> </li>
         /// </ul>
         pub fn additional_plan_options_map(
             mut self,
@@ -11288,17 +10691,9 @@ pub mod fluent_builders {
             self
         }
         /// <p>A map to hold additional optional key-value parameters.</p>
-        ///
         /// <p>Currently, these key-value pairs are supported:</p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>inferSchema</code>  —  Specifies whether to set <code>inferSchema</code> to true or false for the default script generated by an Glue job. For example, to set <code>inferSchema</code> to true, pass the following key value pair:</p>
-        /// <p>
-        /// <code>--additional-plan-options-map '{"inferSchema":"true"}'</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>inferSchema</code>&nbsp; — &nbsp;Specifies whether to set <code>inferSchema</code> to true or false for the default script generated by an Glue job. For example, to set <code>inferSchema</code> to true, pass the following key value pair:</p> <p> <code>--additional-plan-options-map '{"inferSchema":"true"}'</code> </p> </li>
         /// </ul>
         pub fn set_additional_plan_options_map(
             mut self,
@@ -11385,12 +10780,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetResourcePolicies`.
     ///
-    /// <p>Retrieves the resource policies set on individual resources by Resource Access Manager
-    /// during cross-account permission grants. Also retrieves the Data Catalog resource
-    /// policy.</p>
-    /// <p>If you enabled metadata encryption in Data Catalog settings, and you do not have
-    /// permission on the KMS key, the operation can't return the Data Catalog resource
-    /// policy.</p>
+    /// <p>Retrieves the resource policies set on individual resources by Resource Access Manager during cross-account permission grants. Also retrieves the Data Catalog resource policy.</p>
+    /// <p>If you enabled metadata encryption in Data Catalog settings, and you do not have permission on the KMS key, the operation can't return the Data Catalog resource policy.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetResourcePolicies<
         C = aws_smithy_client::erase::DynConnector,
@@ -11527,18 +10918,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the Glue resource for which to retrieve the resource policy. If not
-        /// supplied, the Data Catalog resource policy is returned. Use <code>GetResourcePolicies</code>
-        /// to view all existing resource policies. For more information see <a href="https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html">Specifying Glue Resource ARNs</a>.
-        /// </p>
+        /// <p>The ARN of the Glue resource for which to retrieve the resource policy. If not supplied, the Data Catalog resource policy is returned. Use <code>GetResourcePolicies</code> to view all existing resource policies. For more information see <a href="https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html">Specifying Glue Resource ARNs</a>. </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The ARN of the Glue resource for which to retrieve the resource policy. If not
-        /// supplied, the Data Catalog resource policy is returned. Use <code>GetResourcePolicies</code>
-        /// to view all existing resource policies. For more information see <a href="https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html">Specifying Glue Resource ARNs</a>.
-        /// </p>
+        /// <p>The ARN of the Glue resource for which to retrieve the resource policy. If not supplied, the Data Catalog resource policy is returned. Use <code>GetResourcePolicies</code> to view all existing resource policies. For more information see <a href="https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html">Specifying Glue Resource ARNs</a>. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -11605,12 +10990,8 @@ pub mod fluent_builders {
         }
         /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
         /// <ul>
-        /// <li>
-        /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-        /// </li>
-        /// <li>
-        /// <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-        /// </li>
+        /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
+        /// <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
         /// </ul>
         pub fn schema_id(mut self, input: crate::model::SchemaId) -> Self {
             self.inner = self.inner.schema_id(input);
@@ -11618,12 +10999,8 @@ pub mod fluent_builders {
         }
         /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
         /// <ul>
-        /// <li>
-        /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-        /// </li>
-        /// <li>
-        /// <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-        /// </li>
+        /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
+        /// <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
         /// </ul>
         pub fn set_schema_id(mut self, input: std::option::Option<crate::model::SchemaId>) -> Self {
             self.inner = self.inner.set_schema_id(input);
@@ -11691,12 +11068,8 @@ pub mod fluent_builders {
         }
         /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
         /// <ul>
-        /// <li>
-        /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
-        /// </li>
-        /// <li>
-        /// <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
-        /// </li>
+        /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
+        /// <li> <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
         /// </ul>
         pub fn schema_id(mut self, input: crate::model::SchemaId) -> Self {
             self.inner = self.inner.schema_id(input);
@@ -11704,12 +11077,8 @@ pub mod fluent_builders {
         }
         /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
         /// <ul>
-        /// <li>
-        /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
-        /// </li>
-        /// <li>
-        /// <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
-        /// </li>
+        /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
+        /// <li> <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
         /// </ul>
         pub fn set_schema_id(mut self, input: std::option::Option<crate::model::SchemaId>) -> Self {
             self.inner = self.inner.set_schema_id(input);
@@ -11790,12 +11159,8 @@ pub mod fluent_builders {
         }
         /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
         /// <ul>
-        /// <li>
-        /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-        /// </li>
-        /// <li>
-        /// <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-        /// </li>
+        /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
+        /// <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
         /// </ul>
         pub fn schema_id(mut self, input: crate::model::SchemaId) -> Self {
             self.inner = self.inner.schema_id(input);
@@ -11803,12 +11168,8 @@ pub mod fluent_builders {
         }
         /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
         /// <ul>
-        /// <li>
-        /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-        /// </li>
-        /// <li>
-        /// <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-        /// </li>
+        /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
+        /// <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
         /// </ul>
         pub fn set_schema_id(mut self, input: std::option::Option<crate::model::SchemaId>) -> Self {
             self.inner = self.inner.set_schema_id(input);
@@ -11903,12 +11264,8 @@ pub mod fluent_builders {
         }
         /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
         /// <ul>
-        /// <li>
-        /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
-        /// </li>
-        /// <li>
-        /// <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
-        /// </li>
+        /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
+        /// <li> <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
         /// </ul>
         pub fn schema_id(mut self, input: crate::model::SchemaId) -> Self {
             self.inner = self.inner.schema_id(input);
@@ -11916,12 +11273,8 @@ pub mod fluent_builders {
         }
         /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
         /// <ul>
-        /// <li>
-        /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
-        /// </li>
-        /// <li>
-        /// <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
-        /// </li>
+        /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
+        /// <li> <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
         /// </ul>
         pub fn set_schema_id(mut self, input: std::option::Option<crate::model::SchemaId>) -> Self {
             self.inner = self.inner.set_schema_id(input);
@@ -12125,8 +11478,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetTable`.
     ///
-    /// <p>Retrieves the <code>Table</code> definition in a Data Catalog for
-    /// a specified table.</p>
+    /// <p>Retrieves the <code>Table</code> definition in a Data Catalog for a specified table.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTable<
         C = aws_smithy_client::erase::DynConnector,
@@ -12183,26 +11535,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account
-        /// ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account
-        /// ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
-        /// <p>The name of the database in the catalog in which the table resides.
-        /// For Hive compatibility, this name is entirely lowercase.</p>
+        /// <p>The name of the database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.database_name(input.into());
             self
         }
-        /// <p>The name of the database in the catalog in which the table resides.
-        /// For Hive compatibility, this name is entirely lowercase.</p>
+        /// <p>The name of the database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12210,14 +11558,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_database_name(input);
             self
         }
-        /// <p>The name of the table for which to retrieve the definition. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
+        /// <p>The name of the table for which to retrieve the definition. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the table for which to retrieve the definition. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
+        /// <p>The name of the table for which to retrieve the definition. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
@@ -12251,8 +11597,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetTables`.
     ///
-    /// <p>Retrieves the definitions of some or all of the tables in a given
-    /// <code>Database</code>.</p>
+    /// <p>Retrieves the definitions of some or all of the tables in a given <code>Database</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTables<
         C = aws_smithy_client::erase::DynConnector,
@@ -12309,26 +11654,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account
-        /// ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account
-        /// ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
-        /// <p>The database in the catalog whose tables to list. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
+        /// <p>The database in the catalog whose tables to list. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.database_name(input.into());
             self
         }
-        /// <p>The database in the catalog whose tables to list. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
+        /// <p>The database in the catalog whose tables to list. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12336,14 +11677,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_database_name(input);
             self
         }
-        /// <p>A regular expression pattern. If present, only those tables
-        /// whose names match the pattern are returned.</p>
+        /// <p>A regular expression pattern. If present, only those tables whose names match the pattern are returned.</p>
         pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.expression(input.into());
             self
         }
-        /// <p>A regular expression pattern. If present, only those tables
-        /// whose names match the pattern are returned.</p>
+        /// <p>A regular expression pattern. If present, only those tables whose names match the pattern are returned.</p>
         pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_expression(input);
             self
@@ -12454,26 +11793,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account
-        /// ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account
-        /// ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
-        /// <p>The database in the catalog in which the table resides. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
+        /// <p>The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.database_name(input.into());
             self
         }
-        /// <p>The database in the catalog in which the table resides. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
+        /// <p>The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12481,14 +11816,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_database_name(input);
             self
         }
-        /// <p>The name of the table. For Hive compatibility,
-        /// this name is entirely lowercase.</p>
+        /// <p>The name of the table. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.table_name(input.into());
             self
         }
-        /// <p>The name of the table. For Hive compatibility,
-        /// this name is entirely lowercase.</p>
+        /// <p>The name of the table. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_table_name(input);
             self
@@ -12506,8 +11839,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `GetTableVersions`.
     ///
-    /// <p>Retrieves a list of strings that identify available versions of
-    /// a specified table.</p>
+    /// <p>Retrieves a list of strings that identify available versions of a specified table.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetTableVersions<
         C = aws_smithy_client::erase::DynConnector,
@@ -12564,26 +11896,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account
-        /// ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account
-        /// ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
-        /// <p>The database in the catalog in which the table resides. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
+        /// <p>The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.database_name(input.into());
             self
         }
-        /// <p>The database in the catalog in which the table resides. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
+        /// <p>The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12591,14 +11919,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_database_name(input);
             self
         }
-        /// <p>The name of the table. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
+        /// <p>The name of the table. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.table_name(input.into());
             self
         }
-        /// <p>The name of the table. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
+        /// <p>The name of the table. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_table_name(input);
             self
@@ -12833,14 +12159,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The name of the job to retrieve triggers for. The trigger that can start this job is
-        /// returned, and if there is no such trigger, all triggers are returned.</p>
+        /// <p>The name of the job to retrieve triggers for. The trigger that can start this job is returned, and if there is no such trigger, all triggers are returned.</p>
         pub fn dependent_job_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.dependent_job_name(input.into());
             self
         }
-        /// <p>The name of the job to retrieve triggers for. The trigger that can start this job is
-        /// returned, and if there is no such trigger, all triggers are returned.</p>
+        /// <p>The name of the job to retrieve triggers for. The trigger that can start this job is returned, and if there is no such trigger, all triggers are returned.</p>
         pub fn set_dependent_job_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12918,14 +12242,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog where the function to be retrieved is located. If none is
-        /// provided, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the function to be retrieved is located. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the function to be retrieved is located. If none is
-        /// provided, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the function to be retrieved is located. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
@@ -13016,26 +12338,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog where the functions to be retrieved are located. If none is
-        /// provided, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the functions to be retrieved are located. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the functions to be retrieved are located. If none is
-        /// provided, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the functions to be retrieved are located. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
-        /// <p>The name of the catalog database where the functions are located. If none is provided, functions from all the
-        /// databases across the catalog will be returned.</p>
+        /// <p>The name of the catalog database where the functions are located. If none is provided, functions from all the databases across the catalog will be returned.</p>
         pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.database_name(input.into());
             self
         }
-        /// <p>The name of the catalog database where the functions are located. If none is provided, functions from all the
-        /// databases across the catalog will be returned.</p>
+        /// <p>The name of the catalog database where the functions are located. If none is provided, functions from all the databases across the catalog will be returned.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13043,14 +12361,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_database_name(input);
             self
         }
-        /// <p>An optional function-name pattern string that filters the function
-        /// definitions returned.</p>
+        /// <p>An optional function-name pattern string that filters the function definitions returned.</p>
         pub fn pattern(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.pattern(input.into());
             self
         }
-        /// <p>An optional function-name pattern string that filters the function
-        /// definitions returned.</p>
+        /// <p>An optional function-name pattern string that filters the function definitions returned.</p>
         pub fn set_pattern(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_pattern(input);
             self
@@ -13601,13 +12917,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListCrawlers`.
     ///
-    /// <p>Retrieves the names of all crawler resources in this Amazon Web Services account, or the
-    /// resources with the specified tag. This operation allows you to see which
-    /// resources are available in your account, and their names.</p>
-    ///
-    /// <p>This operation takes the optional <code>Tags</code> field, which you can use as a filter on
-    /// the response so that tagged resources can be retrieved as a group. If you choose to use tags
-    /// filtering, only resources with the tag are retrieved.</p>
+    /// <p>Retrieves the names of all crawler resources in this Amazon Web Services account, or the resources with the specified tag. This operation allows you to see which resources are available in your account, and their names.</p>
+    /// <p>This operation takes the optional <code>Tags</code> field, which you can use as a filter on the response so that tagged resources can be retrieved as a group. If you choose to use tags filtering, only resources with the tag are retrieved.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListCrawlers<
         C = aws_smithy_client::erase::DynConnector,
@@ -13710,13 +13021,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListDevEndpoints`.
     ///
-    /// <p>Retrieves the names of all <code>DevEndpoint</code> resources in this Amazon Web Services account, or the
-    /// resources with the specified tag. This operation allows you to see which resources are
-    /// available in your account, and their names.</p>
-    ///
-    /// <p>This operation takes the optional <code>Tags</code> field, which you can use as a filter on
-    /// the response so that tagged resources can be retrieved as a group. If you choose to use tags
-    /// filtering, only resources with the tag are retrieved.</p>
+    /// <p>Retrieves the names of all <code>DevEndpoint</code> resources in this Amazon Web Services account, or the resources with the specified tag. This operation allows you to see which resources are available in your account, and their names.</p>
+    /// <p>This operation takes the optional <code>Tags</code> field, which you can use as a filter on the response so that tagged resources can be retrieved as a group. If you choose to use tags filtering, only resources with the tag are retrieved.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListDevEndpoints<
         C = aws_smithy_client::erase::DynConnector,
@@ -13820,10 +13126,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListJobs`.
     ///
     /// <p>Retrieves the names of all job resources in this Amazon Web Services account, or the resources with the specified tag. This operation allows you to see which resources are available in your account, and their names.</p>
-    ///
-    /// <p>This operation takes the optional <code>Tags</code> field, which you can use as a filter on
-    /// the response so that tagged resources can be retrieved as a group. If you choose to use tags
-    /// filtering, only resources with the tag are retrieved.</p>
+    /// <p>This operation takes the optional <code>Tags</code> field, which you can use as a filter on the response so that tagged resources can be retrieved as a group. If you choose to use tags filtering, only resources with the tag are retrieved.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListJobs<
         C = aws_smithy_client::erase::DynConnector,
@@ -13926,11 +13229,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListMLTransforms`.
     ///
-    /// <p> Retrieves a sortable, filterable list of existing Glue machine learning transforms in this Amazon Web Services account,
-    /// or the resources with the specified tag. This operation takes the optional <code>Tags</code> field, which you can use as
-    /// a filter of the responses so that tagged resources can be retrieved as a group. If you choose to use tag
-    /// filtering, only resources with the tags are retrieved.
-    /// </p>
+    /// <p> Retrieves a sortable, filterable list of existing Glue machine learning transforms in this Amazon Web Services account, or the resources with the specified tag. This operation takes the optional <code>Tags</code> field, which you can use as a filter of the responses so that tagged resources can be retrieved as a group. If you choose to use tag filtering, only resources with the tags are retrieved. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListMLTransforms<
         C = aws_smithy_client::erase::DynConnector,
@@ -14292,12 +13591,8 @@ pub mod fluent_builders {
         }
         /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
         /// <ul>
-        /// <li>
-        /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-        /// </li>
-        /// <li>
-        /// <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-        /// </li>
+        /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
+        /// <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
         /// </ul>
         pub fn schema_id(mut self, input: crate::model::SchemaId) -> Self {
             self.inner = self.inner.schema_id(input);
@@ -14305,12 +13600,8 @@ pub mod fluent_builders {
         }
         /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
         /// <ul>
-        /// <li>
-        /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-        /// </li>
-        /// <li>
-        /// <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-        /// </li>
+        /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
+        /// <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
         /// </ul>
         pub fn set_schema_id(mut self, input: std::option::Option<crate::model::SchemaId>) -> Self {
             self.inner = self.inner.set_schema_id(input);
@@ -14340,10 +13631,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListTriggers`.
     ///
     /// <p>Retrieves the names of all trigger resources in this Amazon Web Services account, or the resources with the specified tag. This operation allows you to see which resources are available in your account, and their names.</p>
-    ///
-    /// <p>This operation takes the optional <code>Tags</code> field, which you can use as a filter on
-    /// the response so that tagged resources can be retrieved as a group. If you choose to use tags
-    /// filtering, only resources with the tag are retrieved.</p>
+    /// <p>This operation takes the optional <code>Tags</code> field, which you can use as a filter on the response so that tagged resources can be retrieved as a group. If you choose to use tags filtering, only resources with the tag are retrieved.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListTriggers<
         C = aws_smithy_client::erase::DynConnector,
@@ -14410,14 +13698,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p> The name of the job for which to retrieve triggers. The trigger that can start this job
-        /// is returned. If there is no such trigger, all triggers are returned.</p>
+        /// <p> The name of the job for which to retrieve triggers. The trigger that can start this job is returned. If there is no such trigger, all triggers are returned.</p>
         pub fn dependent_job_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.dependent_job_name(input.into());
             self
         }
-        /// <p> The name of the job for which to retrieve triggers. The trigger that can start this job
-        /// is returned. If there is no such trigger, all triggers are returned.</p>
+        /// <p> The name of the job for which to retrieve triggers. The trigger that can start this job is returned. If there is no such trigger, all triggers are returned.</p>
         pub fn set_dependent_job_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14541,8 +13827,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutDataCatalogEncryptionSettings`.
     ///
-    /// <p>Sets the security configuration for a specified catalog. After the configuration has been
-    /// set, the specified encryption is applied to every catalog write thereafter.</p>
+    /// <p>Sets the security configuration for a specified catalog. After the configuration has been set, the specified encryption is applied to every catalog write thereafter.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutDataCatalogEncryptionSettings<
         C = aws_smithy_client::erase::DynConnector,
@@ -14599,14 +13884,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog to set the security configuration for. If none is provided, the
-        /// Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog to set the security configuration for. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog to set the security configuration for. If none is provided, the
-        /// Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog to set the security configuration for. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
@@ -14710,16 +13993,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_arn(input);
             self
         }
-        /// <p>The hash value returned when the previous policy was set using
-        /// <code>PutResourcePolicy</code>. Its purpose is to prevent concurrent modifications of a
-        /// policy. Do not use this parameter if no previous policy has been set.</p>
+        /// <p>The hash value returned when the previous policy was set using <code>PutResourcePolicy</code>. Its purpose is to prevent concurrent modifications of a policy. Do not use this parameter if no previous policy has been set.</p>
         pub fn policy_hash_condition(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.policy_hash_condition(input.into());
             self
         }
-        /// <p>The hash value returned when the previous policy was set using
-        /// <code>PutResourcePolicy</code>. Its purpose is to prevent concurrent modifications of a
-        /// policy. Do not use this parameter if no previous policy has been set.</p>
+        /// <p>The hash value returned when the previous policy was set using <code>PutResourcePolicy</code>. Its purpose is to prevent concurrent modifications of a policy. Do not use this parameter if no previous policy has been set.</p>
         pub fn set_policy_hash_condition(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14727,16 +14006,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_policy_hash_condition(input);
             self
         }
-        /// <p>A value of <code>MUST_EXIST</code> is used to update a policy. A value of
-        /// <code>NOT_EXIST</code> is used to create a new policy. If a value of <code>NONE</code> or a
-        /// null value is used, the call does not depend on the existence of a policy.</p>
+        /// <p>A value of <code>MUST_EXIST</code> is used to update a policy. A value of <code>NOT_EXIST</code> is used to create a new policy. If a value of <code>NONE</code> or a null value is used, the call does not depend on the existence of a policy.</p>
         pub fn policy_exists_condition(mut self, input: crate::model::ExistCondition) -> Self {
             self.inner = self.inner.policy_exists_condition(input);
             self
         }
-        /// <p>A value of <code>MUST_EXIST</code> is used to update a policy. A value of
-        /// <code>NOT_EXIST</code> is used to create a new policy. If a value of <code>NONE</code> or a
-        /// null value is used, the call does not depend on the existence of a policy.</p>
+        /// <p>A value of <code>MUST_EXIST</code> is used to update a policy. A value of <code>NOT_EXIST</code> is used to create a new policy. If a value of <code>NONE</code> or a null value is used, the call does not depend on the existence of a policy.</p>
         pub fn set_policy_exists_condition(
             mut self,
             input: std::option::Option<crate::model::ExistCondition>,
@@ -14744,36 +14019,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_policy_exists_condition(input);
             self
         }
-        /// <p>If <code>'TRUE'</code>, indicates that you are using both methods to grant cross-account
-        /// access to Data Catalog resources:</p>
+        /// <p>If <code>'TRUE'</code>, indicates that you are using both methods to grant cross-account access to Data Catalog resources:</p>
         /// <ul>
-        /// <li>
-        /// <p>By directly updating the resource policy with <code>PutResourePolicy</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>By using the <b>Grant permissions</b> command on the Amazon Web Services Management Console.</p>
-        /// </li>
+        /// <li> <p>By directly updating the resource policy with <code>PutResourePolicy</code> </p> </li>
+        /// <li> <p>By using the <b>Grant permissions</b> command on the Amazon Web Services Management Console.</p> </li>
         /// </ul>
-        /// <p>Must be set to <code>'TRUE'</code> if you have already used the Management Console to
-        /// grant cross-account access, otherwise the call fails. Default is 'FALSE'.</p>
+        /// <p>Must be set to <code>'TRUE'</code> if you have already used the Management Console to grant cross-account access, otherwise the call fails. Default is 'FALSE'.</p>
         pub fn enable_hybrid(mut self, input: crate::model::EnableHybridValues) -> Self {
             self.inner = self.inner.enable_hybrid(input);
             self
         }
-        /// <p>If <code>'TRUE'</code>, indicates that you are using both methods to grant cross-account
-        /// access to Data Catalog resources:</p>
+        /// <p>If <code>'TRUE'</code>, indicates that you are using both methods to grant cross-account access to Data Catalog resources:</p>
         /// <ul>
-        /// <li>
-        /// <p>By directly updating the resource policy with <code>PutResourePolicy</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>By using the <b>Grant permissions</b> command on the Amazon Web Services Management Console.</p>
-        /// </li>
+        /// <li> <p>By directly updating the resource policy with <code>PutResourePolicy</code> </p> </li>
+        /// <li> <p>By using the <b>Grant permissions</b> command on the Amazon Web Services Management Console.</p> </li>
         /// </ul>
-        /// <p>Must be set to <code>'TRUE'</code> if you have already used the Management Console to
-        /// grant cross-account access, otherwise the call fails. Default is 'FALSE'.</p>
+        /// <p>Must be set to <code>'TRUE'</code> if you have already used the Management Console to grant cross-account access, otherwise the call fails. Default is 'FALSE'.</p>
         pub fn set_enable_hybrid(
             mut self,
             input: std::option::Option<crate::model::EnableHybridValues>,
@@ -15190,12 +14451,8 @@ pub mod fluent_builders {
         }
         /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
         /// <ul>
-        /// <li>
-        /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-        /// </li>
-        /// <li>
-        /// <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-        /// </li>
+        /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
+        /// <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
         /// </ul>
         pub fn schema_id(mut self, input: crate::model::SchemaId) -> Self {
             self.inner = self.inner.schema_id(input);
@@ -15203,12 +14460,8 @@ pub mod fluent_builders {
         }
         /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
         /// <ul>
-        /// <li>
-        /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-        /// </li>
-        /// <li>
-        /// <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
-        /// </li>
+        /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
+        /// <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
         /// </ul>
         pub fn set_schema_id(mut self, input: std::option::Option<crate::model::SchemaId>) -> Self {
             self.inner = self.inner.set_schema_id(input);
@@ -15574,16 +14827,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A unique identifier, consisting of <code>
-        /// <i>account_id</i>
-        /// </code>.</p>
+        /// <p>A unique identifier, consisting of <code> <i>account_id</i> </code>.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>A unique identifier, consisting of <code>
-        /// <i>account_id</i>
-        /// </code>.</p>
+        /// <p>A unique identifier, consisting of <code> <i>account_id</i> </code>.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
@@ -15603,14 +14852,12 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
         /// <p>A list of key-value pairs, and a comparator used to filter the search results. Returns all entities matching the predicate.</p>
-        ///
         /// <p>The <code>Comparator</code> member of the <code>PropertyPredicate</code> struct is used only for time fields, and can be omitted for other field types. Also, when comparing string values, such as when <code>Key=Name</code>, a fuzzy match algorithm is used. The <code>Key</code> field (for example, the value of the <code>Name</code> field) is split on certain punctuation characters, for example, -, :, #, etc. into tokens. Then each token is exact-match compared with the <code>Value</code> member of <code>PropertyPredicate</code>. For example, if <code>Key=Name</code> and <code>Value=link</code>, tables named <code>customer-link</code> and <code>xx-link-yy</code> are returned, but <code>xxlinkyy</code> is not returned.</p>
         pub fn filters(mut self, input: crate::model::PropertyPredicate) -> Self {
             self.inner = self.inner.filters(input);
             self
         }
         /// <p>A list of key-value pairs, and a comparator used to filter the search results. Returns all entities matching the predicate.</p>
-        ///
         /// <p>The <code>Comparator</code> member of the <code>PropertyPredicate</code> struct is used only for time fields, and can be omitted for other field types. Also, when comparing string values, such as when <code>Key=Name</code>, a fuzzy match algorithm is used. The <code>Key</code> field (for example, the value of the <code>Name</code> field) is split on certain punctuation characters, for example, -, :, #, etc. into tokens. Then each token is exact-match compared with the <code>Value</code> member of <code>PropertyPredicate</code>. For example, if <code>Key=Name</code> and <code>Value=link</code>, tables named <code>customer-link</code> and <code>xx-link-yy</code> are returned, but <code>xxlinkyy</code> is not returned.</p>
         pub fn set_filters(
             mut self,
@@ -15659,28 +14906,18 @@ pub mod fluent_builders {
             self
         }
         /// <p>Allows you to specify that you want to search the tables shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>. </p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>If set to <code>FOREIGN</code>, will search the tables shared with your account. </p>
-        /// </li>
-        /// <li>
-        /// <p>If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor local account. </p>
-        /// </li>
+        /// <li> <p>If set to <code>FOREIGN</code>, will search the tables shared with your account. </p> </li>
+        /// <li> <p>If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor local account. </p> </li>
         /// </ul>
         pub fn resource_share_type(mut self, input: crate::model::ResourceShareType) -> Self {
             self.inner = self.inner.resource_share_type(input);
             self
         }
         /// <p>Allows you to specify that you want to search the tables shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>. </p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>If set to <code>FOREIGN</code>, will search the tables shared with your account. </p>
-        /// </li>
-        /// <li>
-        /// <p>If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor local account. </p>
-        /// </li>
+        /// <li> <p>If set to <code>FOREIGN</code>, will search the tables shared with your account. </p> </li>
+        /// <li> <p>If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor local account. </p> </li>
         /// </ul>
         pub fn set_resource_share_type(
             mut self,
@@ -15785,9 +15022,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartCrawler`.
     ///
-    /// <p>Starts a crawl using the specified crawler, regardless
-    /// of what is scheduled. If the crawler is already running, returns a
-    /// <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-exceptions.html#aws-glue-api-exceptions-CrawlerRunningException">CrawlerRunningException</a>.</p>
+    /// <p>Starts a crawl using the specified crawler, regardless of what is scheduled. If the crawler is already running, returns a <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-exceptions.html#aws-glue-api-exceptions-CrawlerRunningException">CrawlerRunningException</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartCrawler<
         C = aws_smithy_client::erase::DynConnector,
@@ -15857,9 +15092,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartCrawlerSchedule`.
     ///
-    /// <p>Changes the schedule state of the specified crawler to
-    /// <code>SCHEDULED</code>, unless the crawler is already running or the
-    /// schedule state is already <code>SCHEDULED</code>.</p>
+    /// <p>Changes the schedule state of the specified crawler to <code>SCHEDULED</code>, unless the crawler is already running or the schedule state is already <code>SCHEDULED</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartCrawlerSchedule<
         C = aws_smithy_client::erase::DynConnector,
@@ -15929,15 +15162,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartExportLabelsTaskRun`.
     ///
-    /// <p>Begins an asynchronous task to export all labeled data for a particular transform. This
-    /// task is the only label-related API call that is not part of the typical active learning
-    /// workflow. You typically use <code>StartExportLabelsTaskRun</code> when you want to work with
-    /// all of your existing labels at the same time, such as when you want to remove or change labels
-    /// that were previously submitted as truth. This API operation accepts the
-    /// <code>TransformId</code> whose labels you want to export and an Amazon Simple Storage
-    /// Service (Amazon S3) path to export the labels to. The operation returns a
-    /// <code>TaskRunId</code>. You can check on the status of your task run by calling the
-    /// <code>GetMLTaskRun</code> API.</p>
+    /// <p>Begins an asynchronous task to export all labeled data for a particular transform. This task is the only label-related API call that is not part of the typical active learning workflow. You typically use <code>StartExportLabelsTaskRun</code> when you want to work with all of your existing labels at the same time, such as when you want to remove or change labels that were previously submitted as truth. This API operation accepts the <code>TransformId</code> whose labels you want to export and an Amazon Simple Storage Service (Amazon S3) path to export the labels to. The operation returns a <code>TaskRunId</code>. You can check on the status of your task run by calling the <code>GetMLTaskRun</code> API.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartExportLabelsTaskRun<
         C = aws_smithy_client::erase::DynConnector,
@@ -16020,31 +15245,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartImportLabelsTaskRun`.
     ///
-    /// <p>Enables you to provide additional labels (examples of truth) to be used to teach the
-    /// machine learning transform and improve its quality. This API operation is generally used as
-    /// part of the active learning workflow that starts with the
-    /// <code>StartMLLabelingSetGenerationTaskRun</code> call and that ultimately results in
-    /// improving the quality of your machine learning transform. </p>
-    ///
-    /// <p>After the <code>StartMLLabelingSetGenerationTaskRun</code> finishes, Glue machine learning
-    /// will have generated a series of questions for humans to answer. (Answering these questions is
-    /// often called 'labeling' in the machine learning workflows). In the case of the
-    /// <code>FindMatches</code> transform, these questions are of the form, “What is the correct
-    /// way to group these rows together into groups composed entirely of matching records?” After the
-    /// labeling process is finished, users upload their answers/labels with a call to
-    /// <code>StartImportLabelsTaskRun</code>. After <code>StartImportLabelsTaskRun</code> finishes,
-    /// all future runs of the machine learning transform use the new and improved labels and perform
-    /// a higher-quality transformation.</p>
-    ///
-    /// <p>By default, <code>StartMLLabelingSetGenerationTaskRun</code> continually learns from and
-    /// combines all labels that you upload unless you set <code>Replace</code> to true. If you set
-    /// <code>Replace</code> to true, <code>StartImportLabelsTaskRun</code> deletes and forgets all
-    /// previously uploaded labels and learns only from the exact set that you upload. Replacing
-    /// labels can be helpful if you realize that you previously uploaded incorrect labels, and you
-    /// believe that they are having a negative effect on your transform quality.</p>
-    ///
-    /// <p>You can check on the status of your task run by calling the <code>GetMLTaskRun</code>
-    /// operation. </p>
+    /// <p>Enables you to provide additional labels (examples of truth) to be used to teach the machine learning transform and improve its quality. This API operation is generally used as part of the active learning workflow that starts with the <code>StartMLLabelingSetGenerationTaskRun</code> call and that ultimately results in improving the quality of your machine learning transform. </p>
+    /// <p>After the <code>StartMLLabelingSetGenerationTaskRun</code> finishes, Glue machine learning will have generated a series of questions for humans to answer. (Answering these questions is often called 'labeling' in the machine learning workflows). In the case of the <code>FindMatches</code> transform, these questions are of the form, “What is the correct way to group these rows together into groups composed entirely of matching records?” After the labeling process is finished, users upload their answers/labels with a call to <code>StartImportLabelsTaskRun</code>. After <code>StartImportLabelsTaskRun</code> finishes, all future runs of the machine learning transform use the new and improved labels and perform a higher-quality transformation.</p>
+    /// <p>By default, <code>StartMLLabelingSetGenerationTaskRun</code> continually learns from and combines all labels that you upload unless you set <code>Replace</code> to true. If you set <code>Replace</code> to true, <code>StartImportLabelsTaskRun</code> deletes and forgets all previously uploaded labels and learns only from the exact set that you upload. Replacing labels can be helpful if you realize that you previously uploaded incorrect labels, and you believe that they are having a negative effect on your transform quality.</p>
+    /// <p>You can check on the status of your task run by calling the <code>GetMLTaskRun</code> operation. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartImportLabelsTaskRun<
         C = aws_smithy_client::erase::DynConnector,
@@ -16111,14 +15315,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_transform_id(input);
             self
         }
-        /// <p>The Amazon Simple Storage Service (Amazon S3) path from where you import the
-        /// labels.</p>
+        /// <p>The Amazon Simple Storage Service (Amazon S3) path from where you import the labels.</p>
         pub fn input_s3_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.input_s3_path(input.into());
             self
         }
-        /// <p>The Amazon Simple Storage Service (Amazon S3) path from where you import the
-        /// labels.</p>
+        /// <p>The Amazon Simple Storage Service (Amazon S3) path from where you import the labels.</p>
         pub fn set_input_s3_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16221,8 +15423,7 @@ pub mod fluent_builders {
         /// To override the contents of this collection use [`set_arguments`](Self::set_arguments).
         ///
         /// <p>The job arguments specifically for this run. For this job run, they replace the default arguments set in the job definition itself.</p>
-        /// <p>You can specify arguments here that your own job-execution script
-        /// consumes, as well as arguments that Glue itself consumes.</p>
+        /// <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p>
         /// <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
         /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
         pub fn arguments(
@@ -16234,8 +15435,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The job arguments specifically for this run. For this job run, they replace the default arguments set in the job definition itself.</p>
-        /// <p>You can specify arguments here that your own job-execution script
-        /// consumes, as well as arguments that Glue itself consumes.</p>
+        /// <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p>
         /// <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
         /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
         pub fn set_arguments(
@@ -16248,93 +15448,55 @@ pub mod fluent_builders {
             self
         }
         /// <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
-        ///
-        /// <p>The number of Glue data processing units (DPUs) to allocate to this JobRun.
-        /// From 2 to 100 DPUs can be allocated; the default is 10. A DPU is a relative measure
-        /// of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.
-        /// For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue
-        /// pricing page</a>.</p>
+        /// <p>The number of Glue data processing units (DPUs) to allocate to this JobRun. From 2 to 100 DPUs can be allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
         pub fn allocated_capacity(mut self, input: i32) -> Self {
             self.inner = self.inner.allocated_capacity(input);
             self
         }
         /// <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
-        ///
-        /// <p>The number of Glue data processing units (DPUs) to allocate to this JobRun.
-        /// From 2 to 100 DPUs can be allocated; the default is 10. A DPU is a relative measure
-        /// of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.
-        /// For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue
-        /// pricing page</a>.</p>
+        /// <p>The number of Glue data processing units (DPUs) to allocate to this JobRun. From 2 to 100 DPUs can be allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
         pub fn set_allocated_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_allocated_capacity(input);
             self
         }
-        /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can
-        /// consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default
-        /// is 2,880 minutes (48 hours). This overrides the timeout value set in the parent job.</p>
+        /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This overrides the timeout value set in the parent job.</p>
         pub fn timeout(mut self, input: i32) -> Self {
             self.inner = self.inner.timeout(input);
             self
         }
-        /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can
-        /// consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default
-        /// is 2,880 minutes (48 hours). This overrides the timeout value set in the parent job.</p>
+        /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This overrides the timeout value set in the parent job.</p>
         pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_timeout(input);
             self
         }
-        /// <p>The number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure
-        /// of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.
-        /// For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue
-        /// pricing page</a>.</p>
-        ///
+        /// <p>The number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
         /// <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>
-        ///
-        /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are
-        /// running a Python shell job, or an Apache Spark ETL job:</p>
+        /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell job, or an Apache Spark ETL job:</p>
         /// <ul>
-        /// <li>
-        /// <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can
-        /// allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p>
-        /// </li>
-        /// <li>
-        /// <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p>
-        /// </li>
+        /// <li> <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li>
+        /// <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li>
         /// </ul>
         pub fn max_capacity(mut self, input: f64) -> Self {
             self.inner = self.inner.max_capacity(input);
             self
         }
-        /// <p>The number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure
-        /// of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.
-        /// For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue
-        /// pricing page</a>.</p>
-        ///
+        /// <p>The number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
         /// <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p>
-        ///
-        /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are
-        /// running a Python shell job, or an Apache Spark ETL job:</p>
+        /// <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell job, or an Apache Spark ETL job:</p>
         /// <ul>
-        /// <li>
-        /// <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can
-        /// allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p>
-        /// </li>
-        /// <li>
-        /// <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p>
-        /// </li>
+        /// <li> <p>When you specify a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li>
+        /// <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li>
         /// </ul>
         pub fn set_max_capacity(mut self, input: std::option::Option<f64>) -> Self {
             self.inner = self.inner.set_max_capacity(input);
             self
         }
-        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this job
-        /// run.</p>
+        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this job run.</p>
         pub fn security_configuration(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.security_configuration(input.into());
             self
         }
-        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this job
-        /// run.</p>
+        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this job run.</p>
         pub fn set_security_configuration(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16357,15 +15519,9 @@ pub mod fluent_builders {
         }
         /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.</p>
         /// <ul>
-        /// <li>
-        /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p>
-        /// </li>
+        /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+        /// <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li>
+        /// <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li>
         /// </ul>
         pub fn worker_type(mut self, input: crate::model::WorkerType) -> Self {
             self.inner = self.inner.worker_type(input);
@@ -16373,15 +15529,9 @@ pub mod fluent_builders {
         }
         /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.</p>
         /// <ul>
-        /// <li>
-        /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p>
-        /// </li>
+        /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+        /// <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li>
+        /// <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li>
         /// </ul>
         pub fn set_worker_type(
             mut self,
@@ -16391,14 +15541,12 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
-        ///
         /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
         pub fn number_of_workers(mut self, input: i32) -> Self {
             self.inner = self.inner.number_of_workers(input);
             self
         }
         /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
-        ///
         /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
         pub fn set_number_of_workers(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_number_of_workers(input);
@@ -16408,13 +15556,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `StartMLEvaluationTaskRun`.
     ///
     /// <p>Starts a task to estimate the quality of the transform. </p>
-    ///
-    /// <p>When you provide label sets as examples of truth, Glue machine learning uses some of
-    /// those examples to learn from them. The rest of the labels are used as a test to estimate
-    /// quality.</p>
-    ///
-    /// <p>Returns a unique identifier for the run. You can call <code>GetMLTaskRun</code> to get more
-    /// information about the stats of the <code>EvaluationTaskRun</code>.</p>
+    /// <p>When you provide label sets as examples of truth, Glue machine learning uses some of those examples to learn from them. The rest of the labels are used as a test to estimate quality.</p>
+    /// <p>Returns a unique identifier for the run. You can call <code>GetMLTaskRun</code> to get more information about the stats of the <code>EvaluationTaskRun</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartMLEvaluationTaskRun<
         C = aws_smithy_client::erase::DynConnector,
@@ -16484,20 +15627,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartMLLabelingSetGenerationTaskRun`.
     ///
-    /// <p>Starts the active learning workflow for your machine learning transform to improve the
-    /// transform's quality by generating label sets and adding labels.</p>
-    ///
-    /// <p>When the <code>StartMLLabelingSetGenerationTaskRun</code> finishes, Glue will have
-    /// generated a "labeling set" or a set of questions for humans to answer.</p>
-    ///
-    /// <p>In the case of the <code>FindMatches</code> transform, these questions are of the form,
-    /// “What is the correct way to group these rows together into groups composed entirely of
-    /// matching records?” </p>
-    ///
-    /// <p>After the labeling process is finished, you can upload your labels with a call to
-    /// <code>StartImportLabelsTaskRun</code>. After <code>StartImportLabelsTaskRun</code> finishes,
-    /// all future runs of the machine learning transform will use the new and improved labels and
-    /// perform a higher-quality transformation.</p>
+    /// <p>Starts the active learning workflow for your machine learning transform to improve the transform's quality by generating label sets and adding labels.</p>
+    /// <p>When the <code>StartMLLabelingSetGenerationTaskRun</code> finishes, Glue will have generated a "labeling set" or a set of questions for humans to answer.</p>
+    /// <p>In the case of the <code>FindMatches</code> transform, these questions are of the form, “What is the correct way to group these rows together into groups composed entirely of matching records?” </p>
+    /// <p>After the labeling process is finished, you can upload your labels with a call to <code>StartImportLabelsTaskRun</code>. After <code>StartImportLabelsTaskRun</code> finishes, all future runs of the machine learning transform will use the new and improved labels and perform a higher-quality transformation.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartMLLabelingSetGenerationTaskRun<
         C = aws_smithy_client::erase::DynConnector,
@@ -16566,14 +15699,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_transform_id(input);
             self
         }
-        /// <p>The Amazon Simple Storage Service (Amazon S3) path where you generate the labeling
-        /// set.</p>
+        /// <p>The Amazon Simple Storage Service (Amazon S3) path where you generate the labeling set.</p>
         pub fn output_s3_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.output_s3_path(input.into());
             self
         }
-        /// <p>The Amazon Simple Storage Service (Amazon S3) path where you generate the labeling
-        /// set.</p>
+        /// <p>The Amazon Simple Storage Service (Amazon S3) path where you generate the labeling set.</p>
         pub fn set_output_s3_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16584,9 +15715,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartTrigger`.
     ///
-    /// <p>Starts an existing trigger. See <a href="https://docs.aws.amazon.com/glue/latest/dg/trigger-job.html">Triggering
-    /// Jobs</a> for information about how different types of trigger are
-    /// started.</p>
+    /// <p>Starts an existing trigger. See <a href="https://docs.aws.amazon.com/glue/latest/dg/trigger-job.html">Triggering Jobs</a> for information about how different types of trigger are started.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartTrigger<
         C = aws_smithy_client::erase::DynConnector,
@@ -16796,9 +15925,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StopCrawlerSchedule`.
     ///
-    /// <p>Sets the schedule state of the specified crawler to
-    /// <code>NOT_SCHEDULED</code>, but does not stop the crawler if it is
-    /// already running.</p>
+    /// <p>Sets the schedule state of the specified crawler to <code>NOT_SCHEDULED</code>, but does not stop the crawler if it is already running.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StopCrawlerSchedule<
         C = aws_smithy_client::erase::DynConnector,
@@ -17018,9 +16145,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TagResource`.
     ///
-    /// <p>Adds tags to a resource. A tag is a label you can assign to an Amazon Web Services resource.
-    /// In Glue, you can tag only certain resources. For information about what
-    /// resources you can tag, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a>.</p>
+    /// <p>Adds tags to a resource. A tag is a label you can assign to an Amazon Web Services resource. In Glue, you can tag only certain resources. For information about what resources you can tag, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TagResource<
         C = aws_smithy_client::erase::DynConnector,
@@ -17077,14 +16202,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the Glue resource to which to add the tags. For more
-        /// information about Glue resource ARNs, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">Glue ARN string pattern</a>.</p>
+        /// <p>The ARN of the Glue resource to which to add the tags. For more information about Glue resource ARNs, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">Glue ARN string pattern</a>.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input.into());
             self
         }
-        /// <p>The ARN of the Glue resource to which to add the tags. For more
-        /// information about Glue resource ARNs, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">Glue ARN string pattern</a>.</p>
+        /// <p>The ARN of the Glue resource to which to add the tags. For more information about Glue resource ARNs, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">Glue ARN string pattern</a>.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_resource_arn(input);
             self
@@ -17295,9 +16418,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateClassifier`.
     ///
-    /// <p>Modifies an existing classifier (a <code>GrokClassifier</code>,
-    /// an <code>XMLClassifier</code>, a <code>JsonClassifier</code>, or a <code>CsvClassifier</code>, depending on
-    /// which field is present).</p>
+    /// <p>Modifies an existing classifier (a <code>GrokClassifier</code>, an <code>XMLClassifier</code>, a <code>JsonClassifier</code>, or a <code>CsvClassifier</code>, depending on which field is present).</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateClassifier<
         C = aws_smithy_client::erase::DynConnector,
@@ -17410,7 +16531,6 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateColumnStatisticsForPartition`.
     ///
     /// <p>Creates or updates partition statistics of columns.</p>
-    ///
     /// <p>The Identity and Access Management (IAM) permission required for this operation is <code>UpdatePartition</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateColumnStatisticsForPartition<
@@ -17470,14 +16590,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog where the partitions in question reside.
-        /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the partitions in question reside.
-        /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
@@ -17543,7 +16661,6 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateColumnStatisticsForTable`.
     ///
     /// <p>Creates or updates table statistics of columns.</p>
-    ///
     /// <p>The Identity and Access Management (IAM) permission required for this operation is <code>UpdateTable</code>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateColumnStatisticsForTable<
@@ -17601,14 +16718,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog where the partitions in question reside.
-        /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the partitions in question reside.
-        /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
@@ -17713,14 +16828,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services
-        /// account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services
-        /// account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
@@ -17735,14 +16848,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>A <code>ConnectionInput</code> object that redefines the connection
-        /// in question.</p>
+        /// <p>A <code>ConnectionInput</code> object that redefines the connection in question.</p>
         pub fn connection_input(mut self, input: crate::model::ConnectionInput) -> Self {
             self.inner = self.inner.connection_input(input);
             self
         }
-        /// <p>A <code>ConnectionInput</code> object that redefines the connection
-        /// in question.</p>
+        /// <p>A <code>ConnectionInput</code> object that redefines the connection in question.</p>
         pub fn set_connection_input(
             mut self,
             input: std::option::Option<crate::model::ConnectionInput>,
@@ -17753,9 +16864,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateCrawler`.
     ///
-    /// <p>Updates a crawler. If a crawler is
-    /// running, you must stop it using <code>StopCrawler</code> before updating
-    /// it.</p>
+    /// <p>Updates a crawler. If a crawler is running, you must stop it using <code>StopCrawler</code> before updating it.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateCrawler<
         C = aws_smithy_client::erase::DynConnector,
@@ -17822,26 +16931,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The IAM role or Amazon Resource Name (ARN) of an IAM role that is used by the new crawler
-        /// to access customer resources.</p>
+        /// <p>The IAM role or Amazon Resource Name (ARN) of an IAM role that is used by the new crawler to access customer resources.</p>
         pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role(input.into());
             self
         }
-        /// <p>The IAM role or Amazon Resource Name (ARN) of an IAM role that is used by the new crawler
-        /// to access customer resources.</p>
+        /// <p>The IAM role or Amazon Resource Name (ARN) of an IAM role that is used by the new crawler to access customer resources.</p>
         pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role(input);
             self
         }
-        /// <p>The Glue database where results are stored, such as:
-        /// <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.</p>
+        /// <p>The Glue database where results are stored, such as: <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.</p>
         pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.database_name(input.into());
             self
         }
-        /// <p>The Glue database where results are stored, such as:
-        /// <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.</p>
+        /// <p>The Glue database where results are stored, such as: <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17872,16 +16977,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_targets(input);
             self
         }
-        /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run
-        /// something every day at 12:15 UTC, you would specify:
-        /// <code>cron(15 12 * * ? *)</code>.</p>
+        /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
         pub fn schedule(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.schedule(input.into());
             self
         }
-        /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run
-        /// something every day at 12:15 UTC, you would specify:
-        /// <code>cron(15 12 * * ? *)</code>.</p>
+        /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
         pub fn set_schedule(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_schedule(input);
             self
@@ -17890,18 +16991,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_classifiers`](Self::set_classifiers).
         ///
-        /// <p>A list of custom classifiers that the user
-        /// has registered. By default, all built-in classifiers are included in a crawl,
-        /// but these custom classifiers always override the default classifiers
-        /// for a given classification.</p>
+        /// <p>A list of custom classifiers that the user has registered. By default, all built-in classifiers are included in a crawl, but these custom classifiers always override the default classifiers for a given classification.</p>
         pub fn classifiers(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.classifiers(input.into());
             self
         }
-        /// <p>A list of custom classifiers that the user
-        /// has registered. By default, all built-in classifiers are included in a crawl,
-        /// but these custom classifiers always override the default classifiers
-        /// for a given classification.</p>
+        /// <p>A list of custom classifiers that the user has registered. By default, all built-in classifiers are included in a crawl, but these custom classifiers always override the default classifiers for a given classification.</p>
         pub fn set_classifiers(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -17958,16 +17053,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_lineage_configuration(input);
             self
         }
-        /// <p>Crawler configuration information. This versioned JSON string allows users
-        /// to specify aspects of a crawler's behavior.
-        /// For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.</p>
+        /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.</p>
         pub fn configuration(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.configuration(input.into());
             self
         }
-        /// <p>Crawler configuration information. This versioned JSON string allows users
-        /// to specify aspects of a crawler's behavior.
-        /// For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.</p>
+        /// <p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17975,8 +17066,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_configuration(input);
             self
         }
-        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this
-        /// crawler.</p>
+        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this crawler.</p>
         pub fn crawler_security_configuration(
             mut self,
             input: impl Into<std::string::String>,
@@ -17984,8 +17074,7 @@ pub mod fluent_builders {
             self.inner = self.inner.crawler_security_configuration(input.into());
             self
         }
-        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this
-        /// crawler.</p>
+        /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this crawler.</p>
         pub fn set_crawler_security_configuration(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -18063,16 +17152,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_crawler_name(input);
             self
         }
-        /// <p>The updated <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run
-        /// something every day at 12:15 UTC, you would specify:
-        /// <code>cron(15 12 * * ? *)</code>.</p>
+        /// <p>The updated <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
         pub fn schedule(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.schedule(input.into());
             self
         }
-        /// <p>The updated <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run
-        /// something every day at 12:15 UTC, you would specify:
-        /// <code>cron(15 12 * * ? *)</code>.</p>
+        /// <p>The updated <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
         pub fn set_schedule(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_schedule(input);
             self
@@ -18137,38 +17222,32 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog in which the metadata database resides. If none is provided,
-        /// the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog in which the metadata database resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog in which the metadata database resides. If none is provided,
-        /// the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog in which the metadata database resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
-        /// <p>The name of the database to update in the catalog. For Hive
-        /// compatibility, this is folded to lowercase.</p>
+        /// <p>The name of the database to update in the catalog. For Hive compatibility, this is folded to lowercase.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of the database to update in the catalog. For Hive
-        /// compatibility, this is folded to lowercase.</p>
+        /// <p>The name of the database to update in the catalog. For Hive compatibility, this is folded to lowercase.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>A <code>DatabaseInput</code> object specifying the new definition
-        /// of the metadata database in the catalog.</p>
+        /// <p>A <code>DatabaseInput</code> object specifying the new definition of the metadata database in the catalog.</p>
         pub fn database_input(mut self, input: crate::model::DatabaseInput) -> Self {
             self.inner = self.inner.database_input(input);
             self
         }
-        /// <p>A <code>DatabaseInput</code> object specifying the new definition
-        /// of the metadata database in the catalog.</p>
+        /// <p>A <code>DatabaseInput</code> object specifying the new definition of the metadata database in the catalog.</p>
         pub fn set_database_input(
             mut self,
             input: std::option::Option<crate::model::DatabaseInput>,
@@ -18306,16 +17385,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_custom_libraries(input);
             self
         }
-        /// <p>
-        /// <code>True</code> if the list of custom libraries to be loaded in the development endpoint
-        /// needs to be updated, or <code>False</code> if otherwise.</p>
+        /// <p> <code>True</code> if the list of custom libraries to be loaded in the development endpoint needs to be updated, or <code>False</code> if otherwise.</p>
         pub fn update_etl_libraries(mut self, input: bool) -> Self {
             self.inner = self.inner.update_etl_libraries(input);
             self
         }
-        /// <p>
-        /// <code>True</code> if the list of custom libraries to be loaded in the development endpoint
-        /// needs to be updated, or <code>False</code> if otherwise.</p>
+        /// <p> <code>True</code> if the list of custom libraries to be loaded in the development endpoint needs to be updated, or <code>False</code> if otherwise.</p>
         pub fn set_update_etl_libraries(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_update_etl_libraries(input);
             self
@@ -18324,14 +17399,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_delete_arguments`](Self::set_delete_arguments).
         ///
-        /// <p>The list of argument keys to be deleted from the map of arguments used to configure the
-        /// <code>DevEndpoint</code>.</p>
+        /// <p>The list of argument keys to be deleted from the map of arguments used to configure the <code>DevEndpoint</code>.</p>
         pub fn delete_arguments(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.delete_arguments(input.into());
             self
         }
-        /// <p>The list of argument keys to be deleted from the map of arguments used to configure the
-        /// <code>DevEndpoint</code>.</p>
+        /// <p>The list of argument keys to be deleted from the map of arguments used to configure the <code>DevEndpoint</code>.</p>
         pub fn set_delete_arguments(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -18343,18 +17416,11 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_add_arguments`](Self::set_add_arguments).
         ///
-        /// <p>The map of arguments to add the map of arguments used to configure the
-        /// <code>DevEndpoint</code>.</p>
-        ///
+        /// <p>The map of arguments to add the map of arguments used to configure the <code>DevEndpoint</code>.</p>
         /// <p>Valid arguments are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>"--enable-glue-datacatalog": ""</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>"--enable-glue-datacatalog": ""</code> </p> </li>
         /// </ul>
-        ///
         /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
         pub fn add_arguments(
             mut self,
@@ -18364,18 +17430,11 @@ pub mod fluent_builders {
             self.inner = self.inner.add_arguments(k.into(), v.into());
             self
         }
-        /// <p>The map of arguments to add the map of arguments used to configure the
-        /// <code>DevEndpoint</code>.</p>
-        ///
+        /// <p>The map of arguments to add the map of arguments used to configure the <code>DevEndpoint</code>.</p>
         /// <p>Valid arguments are:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>"--enable-glue-datacatalog": ""</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>"--enable-glue-datacatalog": ""</code> </p> </li>
         /// </ul>
-        ///
         /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
         pub fn set_add_arguments(
             mut self,
@@ -18473,10 +17532,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateMLTransform`.
     ///
     /// <p>Updates an existing machine learning transform. Call this operation to tune the algorithm parameters to achieve better results.</p>
-    ///
-    /// <p>After calling this operation, you can call the <code>StartMLEvaluationTaskRun</code>
-    /// operation to assess how well your new parameters achieved your goals (such as improving the
-    /// quality of your machine learning transform, or making it more cost-effective).</p>
+    /// <p>After calling this operation, you can call the <code>StartMLEvaluationTaskRun</code> operation to assess how well your new parameters achieved your goals (such as improving the quality of your machine learning transform, or making it more cost-effective).</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateMLTransform<
         C = aws_smithy_client::erase::DynConnector,
@@ -18563,14 +17619,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The configuration parameters that are specific to the transform type (algorithm) used.
-        /// Conditionally dependent on the transform type.</p>
+        /// <p>The configuration parameters that are specific to the transform type (algorithm) used. Conditionally dependent on the transform type.</p>
         pub fn parameters(mut self, input: crate::model::TransformParameters) -> Self {
             self.inner = self.inner.parameters(input);
             self
         }
-        /// <p>The configuration parameters that are specific to the transform type (algorithm) used.
-        /// Conditionally dependent on the transform type.</p>
+        /// <p>The configuration parameters that are specific to the transform type (algorithm) used. Conditionally dependent on the transform type.</p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<crate::model::TransformParameters>,
@@ -18578,43 +17632,33 @@ pub mod fluent_builders {
             self.inner = self.inner.set_parameters(input);
             self
         }
-        /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required
-        /// permissions.</p>
+        /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required permissions.</p>
         pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role(input.into());
             self
         }
-        /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required
-        /// permissions.</p>
+        /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required permissions.</p>
         pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role(input);
             self
         }
-        /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9.  For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
+        /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
         pub fn glue_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.glue_version(input.into());
             self
         }
-        /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9.  For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
+        /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
         pub fn set_glue_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_glue_version(input);
             self
         }
-        /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of
-        /// processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more
-        /// information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing
-        /// page</a>. </p>
-        ///
+        /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>. </p>
         /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>
         pub fn max_capacity(mut self, input: f64) -> Self {
             self.inner = self.inner.max_capacity(input);
             self
         }
-        /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of
-        /// processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more
-        /// information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing
-        /// page</a>. </p>
-        ///
+        /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>. </p>
         /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>
         pub fn set_max_capacity(mut self, input: std::option::Option<f64>) -> Self {
             self.inner = self.inner.set_max_capacity(input);
@@ -18622,15 +17666,9 @@ pub mod fluent_builders {
         }
         /// <p>The type of predefined worker that is allocated when this task runs. Accepts a value of Standard, G.1X, or G.2X.</p>
         /// <ul>
-        /// <li>
-        /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p>
-        /// </li>
+        /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+        /// <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li>
+        /// <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li>
         /// </ul>
         pub fn worker_type(mut self, input: crate::model::WorkerType) -> Self {
             self.inner = self.inner.worker_type(input);
@@ -18638,15 +17676,9 @@ pub mod fluent_builders {
         }
         /// <p>The type of predefined worker that is allocated when this task runs. Accepts a value of Standard, G.1X, or G.2X.</p>
         /// <ul>
-        /// <li>
-        /// <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p>
-        /// </li>
-        /// <li>
-        /// <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p>
-        /// </li>
+        /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
+        /// <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li>
+        /// <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li>
         /// </ul>
         pub fn set_worker_type(
             mut self,
@@ -18745,26 +17777,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog where the partition to be updated resides. If none is provided,
-        /// the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the partition to be updated resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the partition to be updated resides. If none is provided,
-        /// the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the partition to be updated resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
-        /// <p>The name of the catalog database in which the table in question
-        /// resides.</p>
+        /// <p>The name of the catalog database in which the table in question resides.</p>
         pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.database_name(input.into());
             self
         }
-        /// <p>The name of the catalog database in which the table in question
-        /// resides.</p>
+        /// <p>The name of the catalog database in which the table in question resides.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -18800,14 +17828,12 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new partition object to update the partition to.</p>
-        ///
         /// <p>The <code>Values</code> property can't be changed. If you want to change the partition key values for a partition, delete and recreate the partition.</p>
         pub fn partition_input(mut self, input: crate::model::PartitionInput) -> Self {
             self.inner = self.inner.partition_input(input);
             self
         }
         /// <p>The new partition object to update the partition to.</p>
-        ///
         /// <p>The <code>Values</code> property can't be changed. If you want to change the partition key values for a partition, delete and recreate the partition.</p>
         pub fn set_partition_input(
             mut self,
@@ -18964,12 +17990,8 @@ pub mod fluent_builders {
         }
         /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
         /// <ul>
-        /// <li>
-        /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
-        /// </li>
-        /// <li>
-        /// <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
-        /// </li>
+        /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
+        /// <li> <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
         /// </ul>
         pub fn schema_id(mut self, input: crate::model::SchemaId) -> Self {
             self.inner = self.inner.schema_id(input);
@@ -18977,12 +17999,8 @@ pub mod fluent_builders {
         }
         /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
         /// <ul>
-        /// <li>
-        /// <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
-        /// </li>
-        /// <li>
-        /// <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
-        /// </li>
+        /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
+        /// <li> <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
         /// </ul>
         pub fn set_schema_id(mut self, input: std::option::Option<crate::model::SchemaId>) -> Self {
             self.inner = self.inner.set_schema_id(input);
@@ -19084,26 +18102,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account
-        /// ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account
-        /// ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
-        /// <p>The name of the catalog database in which the table resides. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
+        /// <p>The name of the catalog database in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.database_name(input.into());
             self
         }
-        /// <p>The name of the catalog database in which the table resides. For Hive
-        /// compatibility, this name is entirely lowercase.</p>
+        /// <p>The name of the catalog database in which the table resides. For Hive compatibility, this name is entirely lowercase.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19111,14 +18125,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_database_name(input);
             self
         }
-        /// <p>An updated <code>TableInput</code> object to define the metadata table
-        /// in the catalog.</p>
+        /// <p>An updated <code>TableInput</code> object to define the metadata table in the catalog.</p>
         pub fn table_input(mut self, input: crate::model::TableInput) -> Self {
             self.inner = self.inner.table_input(input);
             self
         }
-        /// <p>An updated <code>TableInput</code> object to define the metadata table
-        /// in the catalog.</p>
+        /// <p>An updated <code>TableInput</code> object to define the metadata table in the catalog.</p>
         pub fn set_table_input(
             mut self,
             input: std::option::Option<crate::model::TableInput>,
@@ -19126,16 +18138,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_table_input(input);
             self
         }
-        /// <p>By default, <code>UpdateTable</code> always creates an archived version of the table
-        /// before updating it. However, if <code>skipArchive</code> is set to true,
-        /// <code>UpdateTable</code> does not create the archived version.</p>
+        /// <p>By default, <code>UpdateTable</code> always creates an archived version of the table before updating it. However, if <code>skipArchive</code> is set to true, <code>UpdateTable</code> does not create the archived version.</p>
         pub fn skip_archive(mut self, input: bool) -> Self {
             self.inner = self.inner.skip_archive(input);
             self
         }
-        /// <p>By default, <code>UpdateTable</code> always creates an archived version of the table
-        /// before updating it. However, if <code>skipArchive</code> is set to true,
-        /// <code>UpdateTable</code> does not create the archived version.</p>
+        /// <p>By default, <code>UpdateTable</code> always creates an archived version of the table before updating it. However, if <code>skipArchive</code> is set to true, <code>UpdateTable</code> does not create the archived version.</p>
         pub fn set_skip_archive(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_skip_archive(input);
             self
@@ -19296,26 +18304,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the Data Catalog where the function to be updated is located. If none is
-        /// provided, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the function to be updated is located. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.catalog_id(input.into());
             self
         }
-        /// <p>The ID of the Data Catalog where the function to be updated is located. If none is
-        /// provided, the Amazon Web Services account ID is used by default.</p>
+        /// <p>The ID of the Data Catalog where the function to be updated is located. If none is provided, the Amazon Web Services account ID is used by default.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_catalog_id(input);
             self
         }
-        /// <p>The name of the catalog database where the function to be updated is
-        /// located.</p>
+        /// <p>The name of the catalog database where the function to be updated is located.</p>
         pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.database_name(input.into());
             self
         }
-        /// <p>The name of the catalog database where the function to be updated is
-        /// located.</p>
+        /// <p>The name of the catalog database where the function to be updated is located.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19336,14 +18340,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_function_name(input);
             self
         }
-        /// <p>A <code>FunctionInput</code> object that redefines the function in the Data
-        /// Catalog.</p>
+        /// <p>A <code>FunctionInput</code> object that redefines the function in the Data Catalog.</p>
         pub fn function_input(mut self, input: crate::model::UserDefinedFunctionInput) -> Self {
             self.inner = self.inner.function_input(input);
             self
         }
-        /// <p>A <code>FunctionInput</code> object that redefines the function in the Data
-        /// Catalog.</p>
+        /// <p>A <code>FunctionInput</code> object that redefines the function in the Data Catalog.</p>
         pub fn set_function_input(
             mut self,
             input: std::option::Option<crate::model::UserDefinedFunctionInput>,

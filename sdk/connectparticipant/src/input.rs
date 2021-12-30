@@ -30,14 +30,12 @@ pub mod complete_attachment_upload_input {
             self.attachment_ids = input;
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -249,15 +247,13 @@ pub mod create_participant_connection_input {
             self
         }
         /// <p>This is a header parameter.</p>
-        /// <p>The ParticipantToken as obtained from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a>
-        /// API response.</p>
+        /// <p>The ParticipantToken as obtained from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a> API response.</p>
         pub fn participant_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.participant_token = Some(input.into());
             self
         }
         /// <p>This is a header parameter.</p>
-        /// <p>The ParticipantToken as obtained from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a>
-        /// API response.</p>
+        /// <p>The ParticipantToken as obtained from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a> API response.</p>
         pub fn set_participant_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -265,14 +261,12 @@ pub mod create_participant_connection_input {
             self.participant_token = input;
             self
         }
-        /// <p>Amazon Connect Participant is used to mark the participant as connected for message
-        /// streaming.</p>
+        /// <p>Amazon Connect Participant is used to mark the participant as connected for message streaming.</p>
         pub fn connect_participant(mut self, input: bool) -> Self {
             self.connect_participant = Some(input);
             self
         }
-        /// <p>Amazon Connect Participant is used to mark the participant as connected for message
-        /// streaming.</p>
+        /// <p>Amazon Connect Participant is used to mark the participant as connected for message streaming.</p>
         pub fn set_connect_participant(mut self, input: std::option::Option<bool>) -> Self {
             self.connect_participant = input;
             self
@@ -445,14 +439,12 @@ pub mod disconnect_participant_input {
         pub(crate) connection_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -855,26 +847,22 @@ pub mod get_transcript_input {
             self.max_results = input;
             self
         }
-        /// <p>The pagination token. Use the value returned previously in the next subsequent request
-        /// to retrieve the next set of results.</p>
+        /// <p>The pagination token. Use the value returned previously in the next subsequent request to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token. Use the value returned previously in the next subsequent request
-        /// to retrieve the next set of results.</p>
+        /// <p>The pagination token. Use the value returned previously in the next subsequent request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>The direction from StartPosition from which to retrieve message. Default: BACKWARD
-        /// when no StartPosition is provided, FORWARD with StartPosition. </p>
+        /// <p>The direction from StartPosition from which to retrieve message. Default: BACKWARD when no StartPosition is provided, FORWARD with StartPosition. </p>
         pub fn scan_direction(mut self, input: crate::model::ScanDirection) -> Self {
             self.scan_direction = Some(input);
             self
         }
-        /// <p>The direction from StartPosition from which to retrieve message. Default: BACKWARD
-        /// when no StartPosition is provided, FORWARD with StartPosition. </p>
+        /// <p>The direction from StartPosition from which to retrieve message. Default: BACKWARD when no StartPosition is provided, FORWARD with StartPosition. </p>
         pub fn set_scan_direction(
             mut self,
             input: std::option::Option<crate::model::ScanDirection>,
@@ -1090,53 +1078,39 @@ pub mod send_event_input {
     }
     impl Builder {
         /// <p>The content type of the request. Supported types are:</p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>application/vnd.amazonaws.connect.event.typing</p>
-        /// </li>
-        /// <li>
-        /// <p>application/vnd.amazonaws.connect.event.connection.acknowledged</p>
-        /// </li>
+        /// <li> <p>application/vnd.amazonaws.connect.event.typing</p> </li>
+        /// <li> <p>application/vnd.amazonaws.connect.event.connection.acknowledged</p> </li>
         /// </ul>
         pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.content_type = Some(input.into());
             self
         }
         /// <p>The content type of the request. Supported types are:</p>
-        ///
         /// <ul>
-        /// <li>
-        /// <p>application/vnd.amazonaws.connect.event.typing</p>
-        /// </li>
-        /// <li>
-        /// <p>application/vnd.amazonaws.connect.event.connection.acknowledged</p>
-        /// </li>
+        /// <li> <p>application/vnd.amazonaws.connect.event.typing</p> </li>
+        /// <li> <p>application/vnd.amazonaws.connect.event.connection.acknowledged</p> </li>
         /// </ul>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_type = input;
             self
         }
-        /// <p>The content of the event to be sent (for example, message text). This is not yet
-        /// supported.</p>
+        /// <p>The content of the event to be sent (for example, message text). This is not yet supported.</p>
         pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
             self.content = Some(input.into());
             self
         }
-        /// <p>The content of the event to be sent (for example, message text). This is not yet
-        /// supported.</p>
+        /// <p>The content of the event to be sent (for example, message text). This is not yet supported.</p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content = input;
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -1341,14 +1315,12 @@ pub mod send_message_input {
             self.content = input;
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
             self
         }
-        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request.</p>
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -1815,8 +1787,7 @@ pub struct SendMessageInput {
     pub content_type: std::option::Option<std::string::String>,
     /// <p>The content of the message.</p>
     pub content: std::option::Option<std::string::String>,
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The authentication token associated with the connection.</p>
     pub connection_token: std::option::Option<std::string::String>,
@@ -1830,8 +1801,7 @@ impl SendMessageInput {
     pub fn content(&self) -> std::option::Option<&str> {
         self.content.as_deref()
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -1856,46 +1826,32 @@ impl std::fmt::Debug for SendMessageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendEventInput {
     /// <p>The content type of the request. Supported types are:</p>
-    ///
     /// <ul>
-    /// <li>
-    /// <p>application/vnd.amazonaws.connect.event.typing</p>
-    /// </li>
-    /// <li>
-    /// <p>application/vnd.amazonaws.connect.event.connection.acknowledged</p>
-    /// </li>
+    /// <li> <p>application/vnd.amazonaws.connect.event.typing</p> </li>
+    /// <li> <p>application/vnd.amazonaws.connect.event.connection.acknowledged</p> </li>
     /// </ul>
     pub content_type: std::option::Option<std::string::String>,
-    /// <p>The content of the event to be sent (for example, message text). This is not yet
-    /// supported.</p>
+    /// <p>The content of the event to be sent (for example, message text). This is not yet supported.</p>
     pub content: std::option::Option<std::string::String>,
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The authentication token associated with the participant's connection.</p>
     pub connection_token: std::option::Option<std::string::String>,
 }
 impl SendEventInput {
     /// <p>The content type of the request. Supported types are:</p>
-    ///
     /// <ul>
-    /// <li>
-    /// <p>application/vnd.amazonaws.connect.event.typing</p>
-    /// </li>
-    /// <li>
-    /// <p>application/vnd.amazonaws.connect.event.connection.acknowledged</p>
-    /// </li>
+    /// <li> <p>application/vnd.amazonaws.connect.event.typing</p> </li>
+    /// <li> <p>application/vnd.amazonaws.connect.event.connection.acknowledged</p> </li>
     /// </ul>
     pub fn content_type(&self) -> std::option::Option<&str> {
         self.content_type.as_deref()
     }
-    /// <p>The content of the event to be sent (for example, message text). This is not yet
-    /// supported.</p>
+    /// <p>The content of the event to be sent (for example, message text). This is not yet supported.</p>
     pub fn content(&self) -> std::option::Option<&str> {
         self.content.as_deref()
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -1923,11 +1879,9 @@ pub struct GetTranscriptInput {
     pub contact_id: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in the page. Default: 10. </p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The pagination token. Use the value returned previously in the next subsequent request
-    /// to retrieve the next set of results.</p>
+    /// <p>The pagination token. Use the value returned previously in the next subsequent request to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The direction from StartPosition from which to retrieve message. Default: BACKWARD
-    /// when no StartPosition is provided, FORWARD with StartPosition. </p>
+    /// <p>The direction from StartPosition from which to retrieve message. Default: BACKWARD when no StartPosition is provided, FORWARD with StartPosition. </p>
     pub scan_direction: std::option::Option<crate::model::ScanDirection>,
     /// <p>The sort order for the records. Default: DESCENDING.</p>
     pub sort_order: std::option::Option<crate::model::SortKey>,
@@ -1945,13 +1899,11 @@ impl GetTranscriptInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The pagination token. Use the value returned previously in the next subsequent request
-    /// to retrieve the next set of results.</p>
+    /// <p>The pagination token. Use the value returned previously in the next subsequent request to retrieve the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The direction from StartPosition from which to retrieve message. Default: BACKWARD
-    /// when no StartPosition is provided, FORWARD with StartPosition. </p>
+    /// <p>The direction from StartPosition from which to retrieve message. Default: BACKWARD when no StartPosition is provided, FORWARD with StartPosition. </p>
     pub fn scan_direction(&self) -> std::option::Option<&crate::model::ScanDirection> {
         self.scan_direction.as_ref()
     }
@@ -2014,15 +1966,13 @@ impl std::fmt::Debug for GetAttachmentInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisconnectParticipantInput {
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The authentication token associated with the participant's connection.</p>
     pub connection_token: std::option::Option<std::string::String>,
 }
 impl DisconnectParticipantInput {
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -2047,11 +1997,9 @@ pub struct CreateParticipantConnectionInput {
     /// <p>Type of connection information required.</p>
     pub r#type: std::option::Option<std::vec::Vec<crate::model::ConnectionType>>,
     /// <p>This is a header parameter.</p>
-    /// <p>The ParticipantToken as obtained from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a>
-    /// API response.</p>
+    /// <p>The ParticipantToken as obtained from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a> API response.</p>
     pub participant_token: std::option::Option<std::string::String>,
-    /// <p>Amazon Connect Participant is used to mark the participant as connected for message
-    /// streaming.</p>
+    /// <p>Amazon Connect Participant is used to mark the participant as connected for message streaming.</p>
     pub connect_participant: std::option::Option<bool>,
 }
 impl CreateParticipantConnectionInput {
@@ -2060,13 +2008,11 @@ impl CreateParticipantConnectionInput {
         self.r#type.as_deref()
     }
     /// <p>This is a header parameter.</p>
-    /// <p>The ParticipantToken as obtained from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a>
-    /// API response.</p>
+    /// <p>The ParticipantToken as obtained from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a> API response.</p>
     pub fn participant_token(&self) -> std::option::Option<&str> {
         self.participant_token.as_deref()
     }
-    /// <p>Amazon Connect Participant is used to mark the participant as connected for message
-    /// streaming.</p>
+    /// <p>Amazon Connect Participant is used to mark the participant as connected for message streaming.</p>
     pub fn connect_participant(&self) -> std::option::Option<bool> {
         self.connect_participant
     }
@@ -2087,8 +2033,7 @@ impl std::fmt::Debug for CreateParticipantConnectionInput {
 pub struct CompleteAttachmentUploadInput {
     /// <p>A list of unique identifiers for the attachments.</p>
     pub attachment_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The authentication token associated with the participant's connection.</p>
     pub connection_token: std::option::Option<std::string::String>,
@@ -2098,8 +2043,7 @@ impl CompleteAttachmentUploadInput {
     pub fn attachment_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.attachment_ids.as_deref()
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-    /// request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }

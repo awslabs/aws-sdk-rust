@@ -640,8 +640,7 @@ pub struct CreateTestGridProjectError {
 pub enum CreateTestGridProjectErrorKind {
     /// <p>An invalid argument was specified.</p>
     ArgumentException(crate::error::ArgumentException),
-    /// <p>An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this
-    /// error. </p>
+    /// <p>An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this error. </p>
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>A limit was exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -756,8 +755,7 @@ pub struct CreateTestGridUrlError {
 pub enum CreateTestGridUrlErrorKind {
     /// <p>An invalid argument was specified.</p>
     ArgumentException(crate::error::ArgumentException),
-    /// <p>An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this
-    /// error. </p>
+    /// <p>An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this error. </p>
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>The specified entity was not found.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -1832,8 +1830,7 @@ pub enum DeleteTestGridProjectErrorKind {
     ArgumentException(crate::error::ArgumentException),
     /// <p>The requested object could not be deleted.</p>
     CannotDeleteException(crate::error::CannotDeleteException),
-    /// <p>An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this
-    /// error. </p>
+    /// <p>An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this error. </p>
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>The specified entity was not found.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -2074,8 +2071,7 @@ pub struct DeleteVPCEConfigurationError {
 pub enum DeleteVPCEConfigurationErrorKind {
     /// <p>An invalid argument was specified.</p>
     ArgumentException(crate::error::ArgumentException),
-    /// <p>There was an error with the update request, or you do not have sufficient permissions
-    /// to update this VPC endpoint configuration.</p>
+    /// <p>There was an error with the update request, or you do not have sufficient permissions to update this VPC endpoint configuration.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>The specified entity was not found.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -3169,8 +3165,7 @@ pub enum GetOfferingStatusErrorKind {
     ArgumentException(crate::error::ArgumentException),
     /// <p>A limit was exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>Exception gets thrown when a user is not eligible to perform the specified
-    /// transaction.</p>
+    /// <p>Exception gets thrown when a user is not eligible to perform the specified transaction.</p>
     NotEligibleException(crate::error::NotEligibleException),
     /// <p>The specified entity was not found.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -3881,8 +3876,7 @@ pub struct GetTestGridProjectError {
 pub enum GetTestGridProjectErrorKind {
     /// <p>An invalid argument was specified.</p>
     ArgumentException(crate::error::ArgumentException),
-    /// <p>An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this
-    /// error. </p>
+    /// <p>An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this error. </p>
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>The specified entity was not found.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -3997,8 +3991,7 @@ pub struct GetTestGridSessionError {
 pub enum GetTestGridSessionErrorKind {
     /// <p>An invalid argument was specified.</p>
     ArgumentException(crate::error::ArgumentException),
-    /// <p>An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this
-    /// error. </p>
+    /// <p>An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this error. </p>
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>The specified entity was not found.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -5316,8 +5309,7 @@ pub enum ListOfferingPromotionsErrorKind {
     ArgumentException(crate::error::ArgumentException),
     /// <p>A limit was exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>Exception gets thrown when a user is not eligible to perform the specified
-    /// transaction.</p>
+    /// <p>Exception gets thrown when a user is not eligible to perform the specified transaction.</p>
     NotEligibleException(crate::error::NotEligibleException),
     /// <p>The specified entity was not found.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -5454,8 +5446,7 @@ pub enum ListOfferingsErrorKind {
     ArgumentException(crate::error::ArgumentException),
     /// <p>A limit was exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>Exception gets thrown when a user is not eligible to perform the specified
-    /// transaction.</p>
+    /// <p>Exception gets thrown when a user is not eligible to perform the specified transaction.</p>
     NotEligibleException(crate::error::NotEligibleException),
     /// <p>The specified entity was not found.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -5583,8 +5574,7 @@ pub enum ListOfferingTransactionsErrorKind {
     ArgumentException(crate::error::ArgumentException),
     /// <p>A limit was exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>Exception gets thrown when a user is not eligible to perform the specified
-    /// transaction.</p>
+    /// <p>Exception gets thrown when a user is not eligible to perform the specified transaction.</p>
     NotEligibleException(crate::error::NotEligibleException),
     /// <p>The specified entity was not found.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -6419,8 +6409,7 @@ pub struct ListTestGridProjectsError {
 pub enum ListTestGridProjectsErrorKind {
     /// <p>An invalid argument was specified.</p>
     ArgumentException(crate::error::ArgumentException),
-    /// <p>An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this
-    /// error. </p>
+    /// <p>An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this error. </p>
     InternalServiceException(crate::error::InternalServiceException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -6524,8 +6513,7 @@ pub struct ListTestGridSessionActionsError {
 pub enum ListTestGridSessionActionsErrorKind {
     /// <p>An invalid argument was specified.</p>
     ArgumentException(crate::error::ArgumentException),
-    /// <p>An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this
-    /// error. </p>
+    /// <p>An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this error. </p>
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>The specified entity was not found.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -6640,8 +6628,7 @@ pub struct ListTestGridSessionArtifactsError {
 pub enum ListTestGridSessionArtifactsErrorKind {
     /// <p>An invalid argument was specified.</p>
     ArgumentException(crate::error::ArgumentException),
-    /// <p>An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this
-    /// error. </p>
+    /// <p>An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this error. </p>
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>The specified entity was not found.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -6758,8 +6745,7 @@ pub struct ListTestGridSessionsError {
 pub enum ListTestGridSessionsErrorKind {
     /// <p>An invalid argument was specified.</p>
     ArgumentException(crate::error::ArgumentException),
-    /// <p>An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this
-    /// error. </p>
+    /// <p>An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this error. </p>
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>The specified entity was not found.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -7334,8 +7320,7 @@ pub enum PurchaseOfferingErrorKind {
     ArgumentException(crate::error::ArgumentException),
     /// <p>A limit was exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>Exception gets thrown when a user is not eligible to perform the specified
-    /// transaction.</p>
+    /// <p>Exception gets thrown when a user is not eligible to perform the specified transaction.</p>
     NotEligibleException(crate::error::NotEligibleException),
     /// <p>The specified entity was not found.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -7466,8 +7451,7 @@ pub enum RenewOfferingErrorKind {
     ArgumentException(crate::error::ArgumentException),
     /// <p>A limit was exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>Exception gets thrown when a user is not eligible to perform the specified
-    /// transaction.</p>
+    /// <p>Exception gets thrown when a user is not eligible to perform the specified transaction.</p>
     NotEligibleException(crate::error::NotEligibleException),
     /// <p>The specified entity was not found.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -8073,11 +8057,9 @@ pub enum TagResourceErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The operation was not successful. Try again.</p>
     TagOperationException(crate::error::TagOperationException),
-    /// <p>The request doesn't comply with the AWS Identity and Access Management (IAM) tag
-    /// policy. Correct your request and then retry it.</p>
+    /// <p>The request doesn't comply with the AWS Identity and Access Management (IAM) tag policy. Correct your request and then retry it.</p>
     TagPolicyException(crate::error::TagPolicyException),
-    /// <p>The list of tags on the repository is over the limit. The maximum number of tags that
-    /// can be applied to a repository is 50. </p>
+    /// <p>The list of tags on the repository is over the limit. The maximum number of tags that can be applied to a repository is 50. </p>
     TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -8917,8 +8899,7 @@ pub struct UpdateTestGridProjectError {
 pub enum UpdateTestGridProjectErrorKind {
     /// <p>An invalid argument was specified.</p>
     ArgumentException(crate::error::ArgumentException),
-    /// <p>An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this
-    /// error. </p>
+    /// <p>An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this error. </p>
     InternalServiceException(crate::error::InternalServiceException),
     /// <p>A limit was exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
@@ -9161,8 +9142,7 @@ pub struct UpdateVPCEConfigurationError {
 pub enum UpdateVPCEConfigurationErrorKind {
     /// <p>An invalid argument was specified.</p>
     ArgumentException(crate::error::ArgumentException),
-    /// <p>There was an error with the update request, or you do not have sufficient permissions
-    /// to update this VPC endpoint configuration.</p>
+    /// <p>There was an error with the update request, or you do not have sufficient permissions to update this VPC endpoint configuration.</p>
     InvalidOperationException(crate::error::InvalidOperationException),
     /// <p>The specified entity was not found.</p>
     NotFoundException(crate::error::NotFoundException),
@@ -9401,8 +9381,7 @@ impl NotFoundException {
     }
 }
 
-/// <p>There was an error with the update request, or you do not have sufficient permissions
-/// to update this VPC endpoint configuration.</p>
+/// <p>There was an error with the update request, or you do not have sufficient permissions to update this VPC endpoint configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidOperationException {
@@ -9594,8 +9573,7 @@ impl LimitExceededException {
     }
 }
 
-/// <p>An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this
-/// error. </p>
+/// <p>An internal exception was raised in the service. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this error. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServiceException {
@@ -9747,8 +9725,7 @@ impl TagOperationException {
     }
 }
 
-/// <p>The list of tags on the repository is over the limit. The maximum number of tags that
-/// can be applied to a repository is 50. </p>
+/// <p>The list of tags on the repository is over the limit. The maximum number of tags that can be applied to a repository is 50. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyTagsException {
@@ -9836,8 +9813,7 @@ impl TooManyTagsException {
     }
 }
 
-/// <p>The request doesn't comply with the AWS Identity and Access Management (IAM) tag
-/// policy. Correct your request and then retry it.</p>
+/// <p>The request doesn't comply with the AWS Identity and Access Management (IAM) tag policy. Correct your request and then retry it.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagPolicyException {
@@ -9989,8 +9965,7 @@ impl IdempotencyException {
     }
 }
 
-/// <p>Exception gets thrown when a user is not eligible to perform the specified
-/// transaction.</p>
+/// <p>Exception gets thrown when a user is not eligible to perform the specified transaction.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotEligibleException {

@@ -516,8 +516,7 @@ impl Logs {
 pub struct LdapServerMetadataOutput {
     /// <p>Specifies the location of the LDAP server such as AWS Directory Service for Microsoft Active Directory . Optional failover server.</p>
     pub hosts: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The distinguished name of the node in the directory information tree (DIT) to search for roles or groups. For example, ou=group, ou=corp, dc=corp,
-    /// dc=example, dc=com.</p>
+    /// <p>The distinguished name of the node in the directory information tree (DIT) to search for roles or groups. For example, ou=group, ou=corp, dc=corp, dc=example, dc=com.</p>
     pub role_base: std::option::Option<std::string::String>,
     /// <p>Specifies the LDAP attribute that identifies the group name attribute in the object returned from the group membership query.</p>
     pub role_name: std::option::Option<std::string::String>,
@@ -525,16 +524,13 @@ pub struct LdapServerMetadataOutput {
     pub role_search_matching: std::option::Option<std::string::String>,
     /// <p>The directory search scope for the role. If set to true, scope is to search the entire subtree.</p>
     pub role_search_subtree: bool,
-    /// <p>Service account username. A service account is an account in your LDAP server that has access to initiate a connection. For example, cn=admin,dc=corp, dc=example,
-    /// dc=com.</p>
+    /// <p>Service account username. A service account is an account in your LDAP server that has access to initiate a connection. For example, cn=admin,dc=corp, dc=example, dc=com.</p>
     pub service_account_username: std::option::Option<std::string::String>,
-    /// <p>Select a particular subtree of the directory information tree (DIT) to search for user entries. The subtree is specified by a DN, which specifies the base node of the subtree. For example, by setting this option to ou=Users,ou=corp, dc=corp,
-    /// dc=example, dc=com, the search for user entries is restricted to the subtree beneath ou=Users, ou=corp, dc=corp, dc=example, dc=com.</p>
+    /// <p>Select a particular subtree of the directory information tree (DIT) to search for user entries. The subtree is specified by a DN, which specifies the base node of the subtree. For example, by setting this option to ou=Users,ou=corp, dc=corp, dc=example, dc=com, the search for user entries is restricted to the subtree beneath ou=Users, ou=corp, dc=corp, dc=example, dc=com.</p>
     pub user_base: std::option::Option<std::string::String>,
     /// <p>Specifies the name of the LDAP attribute for the user group membership.</p>
     pub user_role_name: std::option::Option<std::string::String>,
-    /// <p>The LDAP search filter used to find users within the userBase. The client's username is substituted into the {0} placeholder in the search filter. For example, if this option is set to (uid={0}) and the received username is janedoe, the search filter becomes (uid=janedoe) after string substitution. It will result in matching an entry like uid=janedoe, ou=Users,ou=corp, dc=corp, dc=example,
-    /// dc=com.</p>
+    /// <p>The LDAP search filter used to find users within the userBase. The client's username is substituted into the {0} placeholder in the search filter. For example, if this option is set to (uid={0}) and the received username is janedoe, the search filter becomes (uid=janedoe) after string substitution. It will result in matching an entry like uid=janedoe, ou=Users,ou=corp, dc=corp, dc=example, dc=com.</p>
     pub user_search_matching: std::option::Option<std::string::String>,
     /// <p>The directory search scope for the user. If set to true, scope is to search the entire subtree.</p>
     pub user_search_subtree: bool,
@@ -544,8 +540,7 @@ impl LdapServerMetadataOutput {
     pub fn hosts(&self) -> std::option::Option<&[std::string::String]> {
         self.hosts.as_deref()
     }
-    /// <p>The distinguished name of the node in the directory information tree (DIT) to search for roles or groups. For example, ou=group, ou=corp, dc=corp,
-    /// dc=example, dc=com.</p>
+    /// <p>The distinguished name of the node in the directory information tree (DIT) to search for roles or groups. For example, ou=group, ou=corp, dc=corp, dc=example, dc=com.</p>
     pub fn role_base(&self) -> std::option::Option<&str> {
         self.role_base.as_deref()
     }
@@ -561,13 +556,11 @@ impl LdapServerMetadataOutput {
     pub fn role_search_subtree(&self) -> bool {
         self.role_search_subtree
     }
-    /// <p>Service account username. A service account is an account in your LDAP server that has access to initiate a connection. For example, cn=admin,dc=corp, dc=example,
-    /// dc=com.</p>
+    /// <p>Service account username. A service account is an account in your LDAP server that has access to initiate a connection. For example, cn=admin,dc=corp, dc=example, dc=com.</p>
     pub fn service_account_username(&self) -> std::option::Option<&str> {
         self.service_account_username.as_deref()
     }
-    /// <p>Select a particular subtree of the directory information tree (DIT) to search for user entries. The subtree is specified by a DN, which specifies the base node of the subtree. For example, by setting this option to ou=Users,ou=corp, dc=corp,
-    /// dc=example, dc=com, the search for user entries is restricted to the subtree beneath ou=Users, ou=corp, dc=corp, dc=example, dc=com.</p>
+    /// <p>Select a particular subtree of the directory information tree (DIT) to search for user entries. The subtree is specified by a DN, which specifies the base node of the subtree. For example, by setting this option to ou=Users,ou=corp, dc=corp, dc=example, dc=com, the search for user entries is restricted to the subtree beneath ou=Users, ou=corp, dc=corp, dc=example, dc=com.</p>
     pub fn user_base(&self) -> std::option::Option<&str> {
         self.user_base.as_deref()
     }
@@ -575,8 +568,7 @@ impl LdapServerMetadataOutput {
     pub fn user_role_name(&self) -> std::option::Option<&str> {
         self.user_role_name.as_deref()
     }
-    /// <p>The LDAP search filter used to find users within the userBase. The client's username is substituted into the {0} placeholder in the search filter. For example, if this option is set to (uid={0}) and the received username is janedoe, the search filter becomes (uid=janedoe) after string substitution. It will result in matching an entry like uid=janedoe, ou=Users,ou=corp, dc=corp, dc=example,
-    /// dc=com.</p>
+    /// <p>The LDAP search filter used to find users within the userBase. The client's username is substituted into the {0} placeholder in the search filter. For example, if this option is set to (uid={0}) and the received username is janedoe, the search filter becomes (uid=janedoe) after string substitution. It will result in matching an entry like uid=janedoe, ou=Users,ou=corp, dc=corp, dc=example, dc=com.</p>
     pub fn user_search_matching(&self) -> std::option::Option<&str> {
         self.user_search_matching.as_deref()
     }
@@ -638,14 +630,12 @@ pub mod ldap_server_metadata_output {
             self.hosts = input;
             self
         }
-        /// <p>The distinguished name of the node in the directory information tree (DIT) to search for roles or groups. For example, ou=group, ou=corp, dc=corp,
-        /// dc=example, dc=com.</p>
+        /// <p>The distinguished name of the node in the directory information tree (DIT) to search for roles or groups. For example, ou=group, ou=corp, dc=corp, dc=example, dc=com.</p>
         pub fn role_base(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_base = Some(input.into());
             self
         }
-        /// <p>The distinguished name of the node in the directory information tree (DIT) to search for roles or groups. For example, ou=group, ou=corp, dc=corp,
-        /// dc=example, dc=com.</p>
+        /// <p>The distinguished name of the node in the directory information tree (DIT) to search for roles or groups. For example, ou=group, ou=corp, dc=corp, dc=example, dc=com.</p>
         pub fn set_role_base(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_base = input;
             self
@@ -683,14 +673,12 @@ pub mod ldap_server_metadata_output {
             self.role_search_subtree = input;
             self
         }
-        /// <p>Service account username. A service account is an account in your LDAP server that has access to initiate a connection. For example, cn=admin,dc=corp, dc=example,
-        /// dc=com.</p>
+        /// <p>Service account username. A service account is an account in your LDAP server that has access to initiate a connection. For example, cn=admin,dc=corp, dc=example, dc=com.</p>
         pub fn service_account_username(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_account_username = Some(input.into());
             self
         }
-        /// <p>Service account username. A service account is an account in your LDAP server that has access to initiate a connection. For example, cn=admin,dc=corp, dc=example,
-        /// dc=com.</p>
+        /// <p>Service account username. A service account is an account in your LDAP server that has access to initiate a connection. For example, cn=admin,dc=corp, dc=example, dc=com.</p>
         pub fn set_service_account_username(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -698,14 +686,12 @@ pub mod ldap_server_metadata_output {
             self.service_account_username = input;
             self
         }
-        /// <p>Select a particular subtree of the directory information tree (DIT) to search for user entries. The subtree is specified by a DN, which specifies the base node of the subtree. For example, by setting this option to ou=Users,ou=corp, dc=corp,
-        /// dc=example, dc=com, the search for user entries is restricted to the subtree beneath ou=Users, ou=corp, dc=corp, dc=example, dc=com.</p>
+        /// <p>Select a particular subtree of the directory information tree (DIT) to search for user entries. The subtree is specified by a DN, which specifies the base node of the subtree. For example, by setting this option to ou=Users,ou=corp, dc=corp, dc=example, dc=com, the search for user entries is restricted to the subtree beneath ou=Users, ou=corp, dc=corp, dc=example, dc=com.</p>
         pub fn user_base(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_base = Some(input.into());
             self
         }
-        /// <p>Select a particular subtree of the directory information tree (DIT) to search for user entries. The subtree is specified by a DN, which specifies the base node of the subtree. For example, by setting this option to ou=Users,ou=corp, dc=corp,
-        /// dc=example, dc=com, the search for user entries is restricted to the subtree beneath ou=Users, ou=corp, dc=corp, dc=example, dc=com.</p>
+        /// <p>Select a particular subtree of the directory information tree (DIT) to search for user entries. The subtree is specified by a DN, which specifies the base node of the subtree. For example, by setting this option to ou=Users,ou=corp, dc=corp, dc=example, dc=com, the search for user entries is restricted to the subtree beneath ou=Users, ou=corp, dc=corp, dc=example, dc=com.</p>
         pub fn set_user_base(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_base = input;
             self
@@ -723,14 +709,12 @@ pub mod ldap_server_metadata_output {
             self.user_role_name = input;
             self
         }
-        /// <p>The LDAP search filter used to find users within the userBase. The client's username is substituted into the {0} placeholder in the search filter. For example, if this option is set to (uid={0}) and the received username is janedoe, the search filter becomes (uid=janedoe) after string substitution. It will result in matching an entry like uid=janedoe, ou=Users,ou=corp, dc=corp, dc=example,
-        /// dc=com.</p>
+        /// <p>The LDAP search filter used to find users within the userBase. The client's username is substituted into the {0} placeholder in the search filter. For example, if this option is set to (uid={0}) and the received username is janedoe, the search filter becomes (uid=janedoe) after string substitution. It will result in matching an entry like uid=janedoe, ou=Users,ou=corp, dc=corp, dc=example, dc=com.</p>
         pub fn user_search_matching(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_search_matching = Some(input.into());
             self
         }
-        /// <p>The LDAP search filter used to find users within the userBase. The client's username is substituted into the {0} placeholder in the search filter. For example, if this option is set to (uid={0}) and the received username is janedoe, the search filter becomes (uid=janedoe) after string substitution. It will result in matching an entry like uid=janedoe, ou=Users,ou=corp, dc=corp, dc=example,
-        /// dc=com.</p>
+        /// <p>The LDAP search filter used to find users within the userBase. The client's username is substituted into the {0} placeholder in the search filter. For example, if this option is set to (uid={0}) and the received username is janedoe, the search filter becomes (uid=janedoe) after string substitution. It will result in matching an entry like uid=janedoe, ou=Users,ou=corp, dc=corp, dc=example, dc=com.</p>
         pub fn set_user_search_matching(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -772,7 +756,9 @@ impl LdapServerMetadataOutput {
     }
 }
 
-/// <p>A list of information about the configuration.</p> <important><p>Does not apply to RabbitMQ brokers.</p></important>
+/// <p>A list of information about the configuration.</p> <important>
+/// <p>Does not apply to RabbitMQ brokers.</p>
+/// </important>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfigurationId {
@@ -900,14 +886,15 @@ impl AsRef<str> for AuthenticationStrategy {
     }
 }
 
-/// <p>Optional. The metadata of the LDAP server used to authenticate and authorize connections to the broker.</p> <important><p>Does not apply to RabbitMQ brokers.</p></important>
+/// <p>Optional. The metadata of the LDAP server used to authenticate and authorize connections to the broker.</p> <important>
+/// <p>Does not apply to RabbitMQ brokers.</p>
+/// </important>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LdapServerMetadataInput {
     /// <p>Specifies the location of the LDAP server such as AWS Directory Service for Microsoft Active Directory . Optional failover server.</p>
     pub hosts: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The distinguished name of the node in the directory information tree (DIT) to search for roles or groups. For example, ou=group, ou=corp, dc=corp,
-    /// dc=example, dc=com.</p>
+    /// <p>The distinguished name of the node in the directory information tree (DIT) to search for roles or groups. For example, ou=group, ou=corp, dc=corp, dc=example, dc=com.</p>
     pub role_base: std::option::Option<std::string::String>,
     /// <p>Specifies the LDAP attribute that identifies the group name attribute in the object returned from the group membership query.</p>
     pub role_name: std::option::Option<std::string::String>,
@@ -915,19 +902,15 @@ pub struct LdapServerMetadataInput {
     pub role_search_matching: std::option::Option<std::string::String>,
     /// <p>The directory search scope for the role. If set to true, scope is to search the entire subtree.</p>
     pub role_search_subtree: bool,
-    /// <p>Service account password. A service account is an account in your LDAP server that has access to initiate a connection. For example, cn=admin,dc=corp, dc=example,
-    /// dc=com.</p>
+    /// <p>Service account password. A service account is an account in your LDAP server that has access to initiate a connection. For example, cn=admin,dc=corp, dc=example, dc=com.</p>
     pub service_account_password: std::option::Option<std::string::String>,
-    /// <p>Service account username. A service account is an account in your LDAP server that has access to initiate a connection. For example, cn=admin,dc=corp, dc=example,
-    /// dc=com.</p>
+    /// <p>Service account username. A service account is an account in your LDAP server that has access to initiate a connection. For example, cn=admin,dc=corp, dc=example, dc=com.</p>
     pub service_account_username: std::option::Option<std::string::String>,
-    /// <p>Select a particular subtree of the directory information tree (DIT) to search for user entries. The subtree is specified by a DN, which specifies the base node of the subtree. For example, by setting this option to ou=Users,ou=corp, dc=corp,
-    /// dc=example, dc=com, the search for user entries is restricted to the subtree beneath ou=Users, ou=corp, dc=corp, dc=example, dc=com.</p>
+    /// <p>Select a particular subtree of the directory information tree (DIT) to search for user entries. The subtree is specified by a DN, which specifies the base node of the subtree. For example, by setting this option to ou=Users,ou=corp, dc=corp, dc=example, dc=com, the search for user entries is restricted to the subtree beneath ou=Users, ou=corp, dc=corp, dc=example, dc=com.</p>
     pub user_base: std::option::Option<std::string::String>,
     /// <p>Specifies the name of the LDAP attribute for the user group membership.</p>
     pub user_role_name: std::option::Option<std::string::String>,
-    /// <p>The LDAP search filter used to find users within the userBase. The client's username is substituted into the {0} placeholder in the search filter. For example, if this option is set to (uid={0}) and the received username is janedoe, the search filter becomes (uid=janedoe) after string substitution. It will result in matching an entry like uid=janedoe, ou=Users,ou=corp, dc=corp, dc=example,
-    /// dc=com.</p>
+    /// <p>The LDAP search filter used to find users within the userBase. The client's username is substituted into the {0} placeholder in the search filter. For example, if this option is set to (uid={0}) and the received username is janedoe, the search filter becomes (uid=janedoe) after string substitution. It will result in matching an entry like uid=janedoe, ou=Users,ou=corp, dc=corp, dc=example, dc=com.</p>
     pub user_search_matching: std::option::Option<std::string::String>,
     /// <p>The directory search scope for the user. If set to true, scope is to search the entire subtree.</p>
     pub user_search_subtree: bool,
@@ -937,8 +920,7 @@ impl LdapServerMetadataInput {
     pub fn hosts(&self) -> std::option::Option<&[std::string::String]> {
         self.hosts.as_deref()
     }
-    /// <p>The distinguished name of the node in the directory information tree (DIT) to search for roles or groups. For example, ou=group, ou=corp, dc=corp,
-    /// dc=example, dc=com.</p>
+    /// <p>The distinguished name of the node in the directory information tree (DIT) to search for roles or groups. For example, ou=group, ou=corp, dc=corp, dc=example, dc=com.</p>
     pub fn role_base(&self) -> std::option::Option<&str> {
         self.role_base.as_deref()
     }
@@ -954,18 +936,15 @@ impl LdapServerMetadataInput {
     pub fn role_search_subtree(&self) -> bool {
         self.role_search_subtree
     }
-    /// <p>Service account password. A service account is an account in your LDAP server that has access to initiate a connection. For example, cn=admin,dc=corp, dc=example,
-    /// dc=com.</p>
+    /// <p>Service account password. A service account is an account in your LDAP server that has access to initiate a connection. For example, cn=admin,dc=corp, dc=example, dc=com.</p>
     pub fn service_account_password(&self) -> std::option::Option<&str> {
         self.service_account_password.as_deref()
     }
-    /// <p>Service account username. A service account is an account in your LDAP server that has access to initiate a connection. For example, cn=admin,dc=corp, dc=example,
-    /// dc=com.</p>
+    /// <p>Service account username. A service account is an account in your LDAP server that has access to initiate a connection. For example, cn=admin,dc=corp, dc=example, dc=com.</p>
     pub fn service_account_username(&self) -> std::option::Option<&str> {
         self.service_account_username.as_deref()
     }
-    /// <p>Select a particular subtree of the directory information tree (DIT) to search for user entries. The subtree is specified by a DN, which specifies the base node of the subtree. For example, by setting this option to ou=Users,ou=corp, dc=corp,
-    /// dc=example, dc=com, the search for user entries is restricted to the subtree beneath ou=Users, ou=corp, dc=corp, dc=example, dc=com.</p>
+    /// <p>Select a particular subtree of the directory information tree (DIT) to search for user entries. The subtree is specified by a DN, which specifies the base node of the subtree. For example, by setting this option to ou=Users,ou=corp, dc=corp, dc=example, dc=com, the search for user entries is restricted to the subtree beneath ou=Users, ou=corp, dc=corp, dc=example, dc=com.</p>
     pub fn user_base(&self) -> std::option::Option<&str> {
         self.user_base.as_deref()
     }
@@ -973,8 +952,7 @@ impl LdapServerMetadataInput {
     pub fn user_role_name(&self) -> std::option::Option<&str> {
         self.user_role_name.as_deref()
     }
-    /// <p>The LDAP search filter used to find users within the userBase. The client's username is substituted into the {0} placeholder in the search filter. For example, if this option is set to (uid={0}) and the received username is janedoe, the search filter becomes (uid=janedoe) after string substitution. It will result in matching an entry like uid=janedoe, ou=Users,ou=corp, dc=corp, dc=example,
-    /// dc=com.</p>
+    /// <p>The LDAP search filter used to find users within the userBase. The client's username is substituted into the {0} placeholder in the search filter. For example, if this option is set to (uid={0}) and the received username is janedoe, the search filter becomes (uid=janedoe) after string substitution. It will result in matching an entry like uid=janedoe, ou=Users,ou=corp, dc=corp, dc=example, dc=com.</p>
     pub fn user_search_matching(&self) -> std::option::Option<&str> {
         self.user_search_matching.as_deref()
     }
@@ -1038,14 +1016,12 @@ pub mod ldap_server_metadata_input {
             self.hosts = input;
             self
         }
-        /// <p>The distinguished name of the node in the directory information tree (DIT) to search for roles or groups. For example, ou=group, ou=corp, dc=corp,
-        /// dc=example, dc=com.</p>
+        /// <p>The distinguished name of the node in the directory information tree (DIT) to search for roles or groups. For example, ou=group, ou=corp, dc=corp, dc=example, dc=com.</p>
         pub fn role_base(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_base = Some(input.into());
             self
         }
-        /// <p>The distinguished name of the node in the directory information tree (DIT) to search for roles or groups. For example, ou=group, ou=corp, dc=corp,
-        /// dc=example, dc=com.</p>
+        /// <p>The distinguished name of the node in the directory information tree (DIT) to search for roles or groups. For example, ou=group, ou=corp, dc=corp, dc=example, dc=com.</p>
         pub fn set_role_base(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_base = input;
             self
@@ -1083,14 +1059,12 @@ pub mod ldap_server_metadata_input {
             self.role_search_subtree = input;
             self
         }
-        /// <p>Service account password. A service account is an account in your LDAP server that has access to initiate a connection. For example, cn=admin,dc=corp, dc=example,
-        /// dc=com.</p>
+        /// <p>Service account password. A service account is an account in your LDAP server that has access to initiate a connection. For example, cn=admin,dc=corp, dc=example, dc=com.</p>
         pub fn service_account_password(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_account_password = Some(input.into());
             self
         }
-        /// <p>Service account password. A service account is an account in your LDAP server that has access to initiate a connection. For example, cn=admin,dc=corp, dc=example,
-        /// dc=com.</p>
+        /// <p>Service account password. A service account is an account in your LDAP server that has access to initiate a connection. For example, cn=admin,dc=corp, dc=example, dc=com.</p>
         pub fn set_service_account_password(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1098,14 +1072,12 @@ pub mod ldap_server_metadata_input {
             self.service_account_password = input;
             self
         }
-        /// <p>Service account username. A service account is an account in your LDAP server that has access to initiate a connection. For example, cn=admin,dc=corp, dc=example,
-        /// dc=com.</p>
+        /// <p>Service account username. A service account is an account in your LDAP server that has access to initiate a connection. For example, cn=admin,dc=corp, dc=example, dc=com.</p>
         pub fn service_account_username(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_account_username = Some(input.into());
             self
         }
-        /// <p>Service account username. A service account is an account in your LDAP server that has access to initiate a connection. For example, cn=admin,dc=corp, dc=example,
-        /// dc=com.</p>
+        /// <p>Service account username. A service account is an account in your LDAP server that has access to initiate a connection. For example, cn=admin,dc=corp, dc=example, dc=com.</p>
         pub fn set_service_account_username(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1113,14 +1085,12 @@ pub mod ldap_server_metadata_input {
             self.service_account_username = input;
             self
         }
-        /// <p>Select a particular subtree of the directory information tree (DIT) to search for user entries. The subtree is specified by a DN, which specifies the base node of the subtree. For example, by setting this option to ou=Users,ou=corp, dc=corp,
-        /// dc=example, dc=com, the search for user entries is restricted to the subtree beneath ou=Users, ou=corp, dc=corp, dc=example, dc=com.</p>
+        /// <p>Select a particular subtree of the directory information tree (DIT) to search for user entries. The subtree is specified by a DN, which specifies the base node of the subtree. For example, by setting this option to ou=Users,ou=corp, dc=corp, dc=example, dc=com, the search for user entries is restricted to the subtree beneath ou=Users, ou=corp, dc=corp, dc=example, dc=com.</p>
         pub fn user_base(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_base = Some(input.into());
             self
         }
-        /// <p>Select a particular subtree of the directory information tree (DIT) to search for user entries. The subtree is specified by a DN, which specifies the base node of the subtree. For example, by setting this option to ou=Users,ou=corp, dc=corp,
-        /// dc=example, dc=com, the search for user entries is restricted to the subtree beneath ou=Users, ou=corp, dc=corp, dc=example, dc=com.</p>
+        /// <p>Select a particular subtree of the directory information tree (DIT) to search for user entries. The subtree is specified by a DN, which specifies the base node of the subtree. For example, by setting this option to ou=Users,ou=corp, dc=corp, dc=example, dc=com, the search for user entries is restricted to the subtree beneath ou=Users, ou=corp, dc=corp, dc=example, dc=com.</p>
         pub fn set_user_base(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_base = input;
             self
@@ -1138,14 +1108,12 @@ pub mod ldap_server_metadata_input {
             self.user_role_name = input;
             self
         }
-        /// <p>The LDAP search filter used to find users within the userBase. The client's username is substituted into the {0} placeholder in the search filter. For example, if this option is set to (uid={0}) and the received username is janedoe, the search filter becomes (uid=janedoe) after string substitution. It will result in matching an entry like uid=janedoe, ou=Users,ou=corp, dc=corp, dc=example,
-        /// dc=com.</p>
+        /// <p>The LDAP search filter used to find users within the userBase. The client's username is substituted into the {0} placeholder in the search filter. For example, if this option is set to (uid={0}) and the received username is janedoe, the search filter becomes (uid=janedoe) after string substitution. It will result in matching an entry like uid=janedoe, ou=Users,ou=corp, dc=corp, dc=example, dc=com.</p>
         pub fn user_search_matching(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_search_matching = Some(input.into());
             self
         }
-        /// <p>The LDAP search filter used to find users within the userBase. The client's username is substituted into the {0} placeholder in the search filter. For example, if this option is set to (uid={0}) and the received username is janedoe, the search filter becomes (uid=janedoe) after string substitution. It will result in matching an entry like uid=janedoe, ou=Users,ou=corp, dc=corp, dc=example,
-        /// dc=com.</p>
+        /// <p>The LDAP search filter used to find users within the userBase. The client's username is substituted into the {0} placeholder in the search filter. For example, if this option is set to (uid={0}) and the received username is janedoe, the search filter becomes (uid=janedoe) after string substitution. It will result in matching an entry like uid=janedoe, ou=Users,ou=corp, dc=corp, dc=example, dc=com.</p>
         pub fn set_user_search_matching(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2737,7 +2705,10 @@ impl PendingLogs {
     }
 }
 
-/// <important><p>Does not apply to RabbitMQ brokers.</p></important> <p>Encryption options for the broker.</p>
+/// <important>
+/// <p>Does not apply to RabbitMQ brokers.</p>
+/// </important>
+/// <p>Encryption options for the broker.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EncryptionOptions {
@@ -3028,7 +2999,12 @@ pub struct User {
     pub groups: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Required. The password of the user. This value must be at least 12 characters long, must contain at least 4 unique characters, and must not contain commas, colons, or equal signs (,:=).</p>
     pub password: std::option::Option<std::string::String>,
-    /// <p>important><title>Amazon MQ for ActiveMQ</title> <para>For ActiveMQ brokers, this value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>/important> <important><title>Amazon MQ for RabbitMQ</title> <p>For RabbitMQ brokers, this value can contain only alphanumeric characters, dashes, periods, underscores (- . _). This value must not contain a tilde (~) character. Amazon MQ prohibts using guest as a valid usename. This value must be 2-100 characters long.</p></important></para>
+    /// <p>important&gt;<title>Amazon MQ for ActiveMQ</title> <para>
+    /// For ActiveMQ brokers, this value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+    /// </para></p>/important&gt; <important>
+    /// <title>Amazon MQ for RabbitMQ</title>
+    /// <p>For RabbitMQ brokers, this value can contain only alphanumeric characters, dashes, periods, underscores (- . _). This value must not contain a tilde (~) character. Amazon MQ prohibts using guest as a valid usename. This value must be 2-100 characters long.</p>
+    /// </important>
     pub username: std::option::Option<std::string::String>,
 }
 impl User {
@@ -3044,7 +3020,12 @@ impl User {
     pub fn password(&self) -> std::option::Option<&str> {
         self.password.as_deref()
     }
-    /// <p>important><title>Amazon MQ for ActiveMQ</title> <para>For ActiveMQ brokers, this value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>/important> <important><title>Amazon MQ for RabbitMQ</title> <p>For RabbitMQ brokers, this value can contain only alphanumeric characters, dashes, periods, underscores (- . _). This value must not contain a tilde (~) character. Amazon MQ prohibts using guest as a valid usename. This value must be 2-100 characters long.</p></important></para>
+    /// <p>important&gt;<title>Amazon MQ for ActiveMQ</title> <para>
+    /// For ActiveMQ brokers, this value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+    /// </para></p>/important&gt; <important>
+    /// <title>Amazon MQ for RabbitMQ</title>
+    /// <p>For RabbitMQ brokers, this value can contain only alphanumeric characters, dashes, periods, underscores (- . _). This value must not contain a tilde (~) character. Amazon MQ prohibts using guest as a valid usename. This value must be 2-100 characters long.</p>
+    /// </important>
     pub fn username(&self) -> std::option::Option<&str> {
         self.username.as_deref()
     }
@@ -3110,12 +3091,22 @@ pub mod user {
             self.password = input;
             self
         }
-        /// <p>important><title>Amazon MQ for ActiveMQ</title> <para>For ActiveMQ brokers, this value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>/important> <important><title>Amazon MQ for RabbitMQ</title> <p>For RabbitMQ brokers, this value can contain only alphanumeric characters, dashes, periods, underscores (- . _). This value must not contain a tilde (~) character. Amazon MQ prohibts using guest as a valid usename. This value must be 2-100 characters long.</p></important></para>
+        /// <p>important&gt;<title>Amazon MQ for ActiveMQ</title> <para>
+        /// For ActiveMQ brokers, this value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+        /// </para></p>/important&gt; <important>
+        /// <title>Amazon MQ for RabbitMQ</title>
+        /// <p>For RabbitMQ brokers, this value can contain only alphanumeric characters, dashes, periods, underscores (- . _). This value must not contain a tilde (~) character. Amazon MQ prohibts using guest as a valid usename. This value must be 2-100 characters long.</p>
+        /// </important>
         pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
             self.username = Some(input.into());
             self
         }
-        /// <p>important><title>Amazon MQ for ActiveMQ</title> <para>For ActiveMQ brokers, this value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>/important> <important><title>Amazon MQ for RabbitMQ</title> <p>For RabbitMQ brokers, this value can contain only alphanumeric characters, dashes, periods, underscores (- . _). This value must not contain a tilde (~) character. Amazon MQ prohibts using guest as a valid usename. This value must be 2-100 characters long.</p></important></para>
+        /// <p>important&gt;<title>Amazon MQ for ActiveMQ</title> <para>
+        /// For ActiveMQ brokers, this value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+        /// </para></p>/important&gt; <important>
+        /// <title>Amazon MQ for RabbitMQ</title>
+        /// <p>For RabbitMQ brokers, this value can contain only alphanumeric characters, dashes, periods, underscores (- . _). This value must not contain a tilde (~) character. Amazon MQ prohibts using guest as a valid usename. This value must be 2-100 characters long.</p>
+        /// </important>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
             self

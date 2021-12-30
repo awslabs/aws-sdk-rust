@@ -445,8 +445,7 @@ impl NotifyAppValidationOutputOutput {
 pub struct ListAppsOutput {
     /// <p>The application summaries.</p>
     pub apps: std::option::Option<std::vec::Vec<crate::model::AppSummary>>,
-    /// <p>The token required to retrieve the next set of results. This value is null when there
-    /// are no more results to return.</p>
+    /// <p>The token required to retrieve the next set of results. This value is null when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAppsOutput {
@@ -454,8 +453,7 @@ impl ListAppsOutput {
     pub fn apps(&self) -> std::option::Option<&[crate::model::AppSummary]> {
         self.apps.as_deref()
     }
-    /// <p>The token required to retrieve the next set of results. This value is null when there
-    /// are no more results to return.</p>
+    /// <p>The token required to retrieve the next set of results. This value is null when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -497,14 +495,12 @@ pub mod list_apps_output {
             self.apps = input;
             self
         }
-        /// <p>The token required to retrieve the next set of results. This value is null when there
-        /// are no more results to return.</p>
+        /// <p>The token required to retrieve the next set of results. This value is null when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token required to retrieve the next set of results. This value is null when there
-        /// are no more results to return.</p>
+        /// <p>The token required to retrieve the next set of results. This value is null when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -625,8 +621,7 @@ pub struct GetServersOutput {
     pub server_catalog_status: std::option::Option<crate::model::ServerCatalogStatus>,
     /// <p>Information about the servers.</p>
     pub server_list: std::option::Option<std::vec::Vec<crate::model::Server>>,
-    /// <p>The token required to retrieve the next set of results. This value is null when
-    /// there are no more results to return.</p>
+    /// <p>The token required to retrieve the next set of results. This value is null when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetServersOutput {
@@ -642,8 +637,7 @@ impl GetServersOutput {
     pub fn server_list(&self) -> std::option::Option<&[crate::model::Server]> {
         self.server_list.as_deref()
     }
-    /// <p>The token required to retrieve the next set of results. This value is null when
-    /// there are no more results to return.</p>
+    /// <p>The token required to retrieve the next set of results. This value is null when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -715,14 +709,12 @@ pub mod get_servers_output {
             self.server_list = input;
             self
         }
-        /// <p>The token required to retrieve the next set of results. This value is null when
-        /// there are no more results to return.</p>
+        /// <p>The token required to retrieve the next set of results. This value is null when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token required to retrieve the next set of results. This value is null when
-        /// there are no more results to return.</p>
+        /// <p>The token required to retrieve the next set of results. This value is null when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -753,8 +745,7 @@ pub struct GetReplicationRunsOutput {
     pub replication_job: std::option::Option<crate::model::ReplicationJob>,
     /// <p>Information about the replication runs.</p>
     pub replication_run_list: std::option::Option<std::vec::Vec<crate::model::ReplicationRun>>,
-    /// <p>The token required to retrieve the next set of results. This value is null when
-    /// there are no more results to return.</p>
+    /// <p>The token required to retrieve the next set of results. This value is null when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetReplicationRunsOutput {
@@ -766,8 +757,7 @@ impl GetReplicationRunsOutput {
     pub fn replication_run_list(&self) -> std::option::Option<&[crate::model::ReplicationRun]> {
         self.replication_run_list.as_deref()
     }
-    /// <p>The token required to retrieve the next set of results. This value is null when
-    /// there are no more results to return.</p>
+    /// <p>The token required to retrieve the next set of results. This value is null when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -825,14 +815,12 @@ pub mod get_replication_runs_output {
             self.replication_run_list = input;
             self
         }
-        /// <p>The token required to retrieve the next set of results. This value is null when
-        /// there are no more results to return.</p>
+        /// <p>The token required to retrieve the next set of results. This value is null when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token required to retrieve the next set of results. This value is null when
-        /// there are no more results to return.</p>
+        /// <p>The token required to retrieve the next set of results. This value is null when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -860,8 +848,7 @@ impl GetReplicationRunsOutput {
 pub struct GetReplicationJobsOutput {
     /// <p>Information about the replication jobs.</p>
     pub replication_job_list: std::option::Option<std::vec::Vec<crate::model::ReplicationJob>>,
-    /// <p>The token required to retrieve the next set of results. This value is null when
-    /// there are no more results to return.</p>
+    /// <p>The token required to retrieve the next set of results. This value is null when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetReplicationJobsOutput {
@@ -869,8 +856,7 @@ impl GetReplicationJobsOutput {
     pub fn replication_job_list(&self) -> std::option::Option<&[crate::model::ReplicationJob]> {
         self.replication_job_list.as_deref()
     }
-    /// <p>The token required to retrieve the next set of results. This value is null when
-    /// there are no more results to return.</p>
+    /// <p>The token required to retrieve the next set of results. This value is null when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -913,14 +899,12 @@ pub mod get_replication_jobs_output {
             self.replication_job_list = input;
             self
         }
-        /// <p>The token required to retrieve the next set of results. This value is null when
-        /// there are no more results to return.</p>
+        /// <p>The token required to retrieve the next set of results. This value is null when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token required to retrieve the next set of results. This value is null when
-        /// there are no more results to return.</p>
+        /// <p>The token required to retrieve the next set of results. This value is null when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -947,8 +931,7 @@ impl GetReplicationJobsOutput {
 pub struct GetConnectorsOutput {
     /// <p>Information about the registered connectors.</p>
     pub connector_list: std::option::Option<std::vec::Vec<crate::model::Connector>>,
-    /// <p>The token required to retrieve the next set of results. This value is null when
-    /// there are no more results to return.</p>
+    /// <p>The token required to retrieve the next set of results. This value is null when there are no more results to return.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetConnectorsOutput {
@@ -956,8 +939,7 @@ impl GetConnectorsOutput {
     pub fn connector_list(&self) -> std::option::Option<&[crate::model::Connector]> {
         self.connector_list.as_deref()
     }
-    /// <p>The token required to retrieve the next set of results. This value is null when
-    /// there are no more results to return.</p>
+    /// <p>The token required to retrieve the next set of results. This value is null when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -999,14 +981,12 @@ pub mod get_connectors_output {
             self.connector_list = input;
             self
         }
-        /// <p>The token required to retrieve the next set of results. This value is null when
-        /// there are no more results to return.</p>
+        /// <p>The token required to retrieve the next set of results. This value is null when there are no more results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token required to retrieve the next set of results. This value is null when
-        /// there are no more results to return.</p>
+        /// <p>The token required to retrieve the next set of results. This value is null when there are no more results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1290,8 +1270,7 @@ impl GetAppReplicationConfigurationOutput {
 pub struct GetAppLaunchConfigurationOutput {
     /// <p>The ID of the application.</p>
     pub app_id: std::option::Option<std::string::String>,
-    /// <p>The name of the service role in the customer's account that AWS CloudFormation uses to launch the
-    /// application.</p>
+    /// <p>The name of the service role in the customer's account that AWS CloudFormation uses to launch the application.</p>
     pub role_name: std::option::Option<std::string::String>,
     /// <p>Indicates whether the application is configured to launch automatically after replication is complete.</p>
     pub auto_launch: std::option::Option<bool>,
@@ -1304,8 +1283,7 @@ impl GetAppLaunchConfigurationOutput {
     pub fn app_id(&self) -> std::option::Option<&str> {
         self.app_id.as_deref()
     }
-    /// <p>The name of the service role in the customer's account that AWS CloudFormation uses to launch the
-    /// application.</p>
+    /// <p>The name of the service role in the customer's account that AWS CloudFormation uses to launch the application.</p>
     pub fn role_name(&self) -> std::option::Option<&str> {
         self.role_name.as_deref()
     }
@@ -1356,14 +1334,12 @@ pub mod get_app_launch_configuration_output {
             self.app_id = input;
             self
         }
-        /// <p>The name of the service role in the customer's account that AWS CloudFormation uses to launch the
-        /// application.</p>
+        /// <p>The name of the service role in the customer's account that AWS CloudFormation uses to launch the application.</p>
         pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_name = Some(input.into());
             self
         }
-        /// <p>The name of the service role in the customer's account that AWS CloudFormation uses to launch the
-        /// application.</p>
+        /// <p>The name of the service role in the customer's account that AWS CloudFormation uses to launch the application.</p>
         pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_name = input;
             self

@@ -570,15 +570,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AttachInstances`.
     ///
     /// <p>Attaches one or more EC2 instances to the specified Auto Scaling group.</p>
-    /// <p>When you attach instances, Amazon EC2 Auto Scaling increases the desired capacity of the group by the
-    /// number of instances being attached. If the number of instances being attached plus the
-    /// desired capacity of the group exceeds the maximum size of the group, the operation
-    /// fails.</p>
-    /// <p>If there is a Classic Load Balancer attached to your Auto Scaling group, the instances are
-    /// also registered with the load balancer. If there are target groups attached to your Auto Scaling
-    /// group, the instances are also registered with the target groups.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/attach-instance-asg.html">Attach EC2 instances to
-    /// your Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    /// <p>When you attach instances, Amazon EC2 Auto Scaling increases the desired capacity of the group by the number of instances being attached. If the number of instances being attached plus the desired capacity of the group exceeds the maximum size of the group, the operation fails.</p>
+    /// <p>If there is a Classic Load Balancer attached to your Auto Scaling group, the instances are also registered with the load balancer. If there are target groups attached to your Auto Scaling group, the instances are also registered with the target groups.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/attach-instance-asg.html">Attach EC2 instances to your Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AttachInstances<
         C = aws_smithy_client::erase::DynConnector,
@@ -669,18 +663,12 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `AttachLoadBalancers`.
     ///
     /// <note>
-    /// <p>To attach an Application Load Balancer, Network Load Balancer, or Gateway Load
-    /// Balancer, use the <a>AttachLoadBalancerTargetGroups</a> API operation
-    /// instead.</p>
+    /// <p>To attach an Application Load Balancer, Network Load Balancer, or Gateway Load Balancer, use the <code>AttachLoadBalancerTargetGroups</code> API operation instead.</p>
     /// </note>
-    /// <p>Attaches one or more Classic Load Balancers to the specified Auto Scaling group. Amazon EC2 Auto Scaling
-    /// registers the running instances with these Classic Load Balancers.</p>
-    /// <p>To describe the load balancers for an Auto Scaling group, call the <a>DescribeLoadBalancers</a> API. To detach the load balancer from the Auto Scaling
-    /// group, call the <a>DetachLoadBalancers</a> API.</p>
-    /// <p>This operation is additive and does not detach existing Classic Load Balancers or
-    /// target groups from the Auto Scaling group.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Elastic Load Balancing and
-    /// Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
+    /// <p>Attaches one or more Classic Load Balancers to the specified Auto Scaling group. Amazon EC2 Auto Scaling registers the running instances with these Classic Load Balancers.</p>
+    /// <p>To describe the load balancers for an Auto Scaling group, call the <code>DescribeLoadBalancers</code> API. To detach the load balancer from the Auto Scaling group, call the <code>DetachLoadBalancers</code> API.</p>
+    /// <p>This operation is additive and does not detach existing Classic Load Balancers or target groups from the Auto Scaling group.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Elastic Load Balancing and Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AttachLoadBalancers<
         C = aws_smithy_client::erase::DynConnector,
@@ -773,24 +761,13 @@ pub mod fluent_builders {
     /// <p>Attaches one or more target groups to the specified Auto Scaling group.</p>
     /// <p>This operation is used with the following load balancer types: </p>
     /// <ul>
-    /// <li>
-    /// <p> Application Load Balancer - Operates at the application layer (layer 7) and
-    /// supports HTTP and HTTPS. </p>
-    /// </li>
-    /// <li>
-    /// <p> Network Load Balancer - Operates at the transport layer (layer 4) and
-    /// supports TCP, TLS, and UDP. </p>
-    /// </li>
-    /// <li>
-    /// <p> Gateway Load Balancer - Operates at the network layer (layer 3).</p>
-    /// </li>
+    /// <li> <p> Application Load Balancer - Operates at the application layer (layer 7) and supports HTTP and HTTPS. </p> </li>
+    /// <li> <p> Network Load Balancer - Operates at the transport layer (layer 4) and supports TCP, TLS, and UDP. </p> </li>
+    /// <li> <p> Gateway Load Balancer - Operates at the network layer (layer 3).</p> </li>
     /// </ul>
-    /// <p>To describe the target groups for an Auto Scaling group, call the <a>DescribeLoadBalancerTargetGroups</a> API. To detach the target group from
-    /// the Auto Scaling group, call the <a>DetachLoadBalancerTargetGroups</a> API.</p>
-    /// <p>This operation is additive and does not detach existing target groups or Classic Load
-    /// Balancers from the Auto Scaling group.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Elastic Load Balancing and
-    /// Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
+    /// <p>To describe the target groups for an Auto Scaling group, call the <code>DescribeLoadBalancerTargetGroups</code> API. To detach the target group from the Auto Scaling group, call the <code>DetachLoadBalancerTargetGroups</code> API.</p>
+    /// <p>This operation is additive and does not detach existing target groups or Classic Load Balancers from the Auto Scaling group.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Elastic Load Balancing and Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct AttachLoadBalancerTargetGroups<
         C = aws_smithy_client::erase::DynConnector,
@@ -864,14 +841,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_target_group_ar_ns`](Self::set_target_group_ar_ns).
         ///
-        /// <p>The Amazon Resource Names (ARN) of the target groups. You can specify up to 10 target
-        /// groups. To get the ARN of a target group, use the Elastic Load Balancing <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
+        /// <p>The Amazon Resource Names (ARN) of the target groups. You can specify up to 10 target groups. To get the ARN of a target group, use the Elastic Load Balancing <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
         pub fn target_group_ar_ns(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.target_group_ar_ns(input.into());
             self
         }
-        /// <p>The Amazon Resource Names (ARN) of the target groups. You can specify up to 10 target
-        /// groups. To get the ARN of a target group, use the Elastic Load Balancing <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
+        /// <p>The Amazon Resource Names (ARN) of the target groups. You can specify up to 10 target groups. To get the ARN of a target group, use the Elastic Load Balancing <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
         pub fn set_target_group_ar_ns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -956,14 +931,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_scheduled_action_names`](Self::set_scheduled_action_names).
         ///
-        /// <p>The names of the scheduled actions to delete. The maximum number allowed is 50.
-        /// </p>
+        /// <p>The names of the scheduled actions to delete. The maximum number allowed is 50. </p>
         pub fn scheduled_action_names(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.scheduled_action_names(input.into());
             self
         }
-        /// <p>The names of the scheduled actions to delete. The maximum number allowed is 50.
-        /// </p>
+        /// <p>The names of the scheduled actions to delete. The maximum number allowed is 50. </p>
         pub fn set_scheduled_action_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1071,12 +1044,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CancelInstanceRefresh`.
     ///
-    /// <p>Cancels an instance refresh operation in progress. Cancellation does not roll back any
-    /// replacements that have already been completed, but it prevents new replacements from
-    /// being started. </p>
-    /// <p>This operation is part of the <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">instance refresh
-    /// feature</a> in Amazon EC2 Auto Scaling, which helps you update instances in your Auto Scaling group
-    /// after you make configuration changes.</p>
+    /// <p>Cancels an instance refresh operation in progress. Cancellation does not roll back any replacements that have already been completed, but it prevents new replacements from being started. </p>
+    /// <p>This operation is part of the <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">instance refresh feature</a> in Amazon EC2 Auto Scaling, which helps you update instances in your Auto Scaling group after you make configuration changes.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelInstanceRefresh<
         C = aws_smithy_client::erase::DynConnector,
@@ -1149,39 +1118,16 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CompleteLifecycleAction`.
     ///
-    /// <p>Completes the lifecycle action for the specified token or instance with the specified
-    /// result.</p>
-    /// <p>This step is a part of the procedure for adding a lifecycle hook to an Auto Scaling
-    /// group:</p>
+    /// <p>Completes the lifecycle action for the specified token or instance with the specified result.</p>
+    /// <p>This step is a part of the procedure for adding a lifecycle hook to an Auto Scaling group:</p>
     /// <ol>
-    /// <li>
-    /// <p>(Optional) Create a Lambda function and a rule that allows Amazon EventBridge to
-    /// invoke your Lambda function when Amazon EC2 Auto Scaling launches or terminates
-    /// instances.</p>
-    /// </li>
-    /// <li>
-    /// <p>(Optional) Create a notification target and an IAM role. The target can be
-    /// either an Amazon SQS queue or an Amazon SNS topic. The role allows Amazon EC2 Auto Scaling to publish
-    /// lifecycle notifications to the target.</p>
-    /// </li>
-    /// <li>
-    /// <p>Create the lifecycle hook. Specify whether the hook is used when the instances
-    /// launch or terminate.</p>
-    /// </li>
-    /// <li>
-    /// <p>If you need more time, record the lifecycle action heartbeat to keep the
-    /// instance in a pending state.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>If you finish before the timeout period ends, send a
-    /// callback by using the <a>CompleteLifecycleAction</a> API
-    /// call.</b>
-    /// </p>
-    /// </li>
+    /// <li> <p>(Optional) Create a Lambda function and a rule that allows Amazon EventBridge to invoke your Lambda function when Amazon EC2 Auto Scaling launches or terminates instances.</p> </li>
+    /// <li> <p>(Optional) Create a notification target and an IAM role. The target can be either an Amazon SQS queue or an Amazon SNS topic. The role allows Amazon EC2 Auto Scaling to publish lifecycle notifications to the target.</p> </li>
+    /// <li> <p>Create the lifecycle hook. Specify whether the hook is used when the instances launch or terminate.</p> </li>
+    /// <li> <p>If you need more time, record the lifecycle action heartbeat to keep the instance in a pending state.</p> </li>
+    /// <li> <p> <b>If you finish before the timeout period ends, send a callback by using the <code>CompleteLifecycleAction</code> API call.</b> </p> </li>
     /// </ol>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Amazon EC2 Auto Scaling lifecycle
-    /// hooks</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Amazon EC2 Auto Scaling lifecycle hooks</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CompleteLifecycleAction<
         C = aws_smithy_client::erase::DynConnector,
@@ -1264,16 +1210,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_auto_scaling_group_name(input);
             self
         }
-        /// <p>A universally unique identifier (UUID) that identifies a specific lifecycle action
-        /// associated with an instance. Amazon EC2 Auto Scaling sends this token to the notification target you
-        /// specified when you created the lifecycle hook.</p>
+        /// <p>A universally unique identifier (UUID) that identifies a specific lifecycle action associated with an instance. Amazon EC2 Auto Scaling sends this token to the notification target you specified when you created the lifecycle hook.</p>
         pub fn lifecycle_action_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.lifecycle_action_token(input.into());
             self
         }
-        /// <p>A universally unique identifier (UUID) that identifies a specific lifecycle action
-        /// associated with an instance. Amazon EC2 Auto Scaling sends this token to the notification target you
-        /// specified when you created the lifecycle hook.</p>
+        /// <p>A universally unique identifier (UUID) that identifies a specific lifecycle action associated with an instance. Amazon EC2 Auto Scaling sends this token to the notification target you specified when you created the lifecycle hook.</p>
         pub fn set_lifecycle_action_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1281,14 +1223,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_lifecycle_action_token(input);
             self
         }
-        /// <p>The action for the group to take. This parameter can be either <code>CONTINUE</code>
-        /// or <code>ABANDON</code>.</p>
+        /// <p>The action for the group to take. This parameter can be either <code>CONTINUE</code> or <code>ABANDON</code>.</p>
         pub fn lifecycle_action_result(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.lifecycle_action_result(input.into());
             self
         }
-        /// <p>The action for the group to take. This parameter can be either <code>CONTINUE</code>
-        /// or <code>ABANDON</code>.</p>
+        /// <p>The action for the group to take. This parameter can be either <code>CONTINUE</code> or <code>ABANDON</code>.</p>
         pub fn set_lifecycle_action_result(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1309,25 +1249,11 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateAutoScalingGroup`.
     ///
-    /// <p>
-    /// <b>We strongly recommend using a launch template when calling this operation to ensure full functionality for Amazon EC2 Auto Scaling and Amazon EC2.</b>
-    /// </p>
-    /// <p>Creates an Auto Scaling group with
-    /// the specified name and attributes. </p>
-    /// <p>If you exceed your maximum limit of Auto Scaling groups, the call fails. To query this limit,
-    /// call the <a>DescribeAccountLimits</a> API. For information about updating
-    /// this limit, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon EC2 Auto Scaling service
-    /// quotas</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    /// <p>For introductory exercises for creating an Auto Scaling group, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/GettingStartedTutorial.html">Getting started with
-    /// Amazon EC2 Auto Scaling</a> and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-register-lbs-with-asg.html">Tutorial: Set up a
-    /// scaled and load-balanced application</a> in the
-    /// <i>Amazon EC2 Auto Scaling User Guide</i>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroup.html">Auto Scaling
-    /// groups</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    /// <p>Every Auto Scaling group has three size parameters (<code>DesiredCapacity</code>,
-    /// <code>MaxSize</code>, and <code>MinSize</code>). Usually, you set these sizes based
-    /// on a specific number of instances. However, if you configure a mixed instances policy
-    /// that defines weights for the instance types, you must specify these sizes with the same
-    /// units that you use for weighting instances.</p>
+    /// <p> <b>We strongly recommend using a launch template when calling this operation to ensure full functionality for Amazon EC2 Auto Scaling and Amazon EC2.</b> </p>
+    /// <p>Creates an Auto Scaling group with the specified name and attributes. </p>
+    /// <p>If you exceed your maximum limit of Auto Scaling groups, the call fails. To query this limit, call the <code>DescribeAccountLimits</code> API. For information about updating this limit, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon EC2 Auto Scaling service quotas</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    /// <p>For introductory exercises for creating an Auto Scaling group, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/GettingStartedTutorial.html">Getting started with Amazon EC2 Auto Scaling</a> and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-register-lbs-with-asg.html">Tutorial: Set up a scaled and load-balanced application</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroup.html">Auto Scaling groups</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    /// <p>Every Auto Scaling group has three size parameters (<code>DesiredCapacity</code>, <code>MaxSize</code>, and <code>MinSize</code>). Usually, you set these sizes based on a specific number of instances. However, if you configure a mixed instances policy that defines weights for the instance types, you must specify these sizes with the same units that you use for weighting instances.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAutoScalingGroup<
         C = aws_smithy_client::erase::DynConnector,
@@ -1398,17 +1324,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the launch configuration to use to launch instances. </p>
-        /// <p>Conditional: You must specify either a launch template (<code>LaunchTemplate</code> or
-        /// <code>MixedInstancesPolicy</code>) or a launch configuration
-        /// (<code>LaunchConfigurationName</code> or <code>InstanceId</code>).</p>
+        /// <p>Conditional: You must specify either a launch template (<code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>) or a launch configuration (<code>LaunchConfigurationName</code> or <code>InstanceId</code>).</p>
         pub fn launch_configuration_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.launch_configuration_name(input.into());
             self
         }
         /// <p>The name of the launch configuration to use to launch instances. </p>
-        /// <p>Conditional: You must specify either a launch template (<code>LaunchTemplate</code> or
-        /// <code>MixedInstancesPolicy</code>) or a launch configuration
-        /// (<code>LaunchConfigurationName</code> or <code>InstanceId</code>).</p>
+        /// <p>Conditional: You must specify either a launch template (<code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>) or a launch configuration (<code>LaunchConfigurationName</code> or <code>InstanceId</code>).</p>
         pub fn set_launch_configuration_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1417,28 +1339,16 @@ pub mod fluent_builders {
             self
         }
         /// <p>Parameters used to specify the launch template and version to use to launch instances. </p>
-        /// <p>Conditional: You must specify either a launch template (<code>LaunchTemplate</code> or
-        /// <code>MixedInstancesPolicy</code>) or a launch configuration
-        /// (<code>LaunchConfigurationName</code> or <code>InstanceId</code>).</p>
-        /// <note>
-        /// <p>The launch template that is specified must be configured for use with an Auto Scaling
-        /// group. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating a launch
-        /// template for an Auto Scaling group</a> in the
-        /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>Conditional: You must specify either a launch template (<code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>) or a launch configuration (<code>LaunchConfigurationName</code> or <code>InstanceId</code>).</p> <note>
+        /// <p>The launch template that is specified must be configured for use with an Auto Scaling group. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating a launch template for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         /// </note>
         pub fn launch_template(mut self, input: crate::model::LaunchTemplateSpecification) -> Self {
             self.inner = self.inner.launch_template(input);
             self
         }
         /// <p>Parameters used to specify the launch template and version to use to launch instances. </p>
-        /// <p>Conditional: You must specify either a launch template (<code>LaunchTemplate</code> or
-        /// <code>MixedInstancesPolicy</code>) or a launch configuration
-        /// (<code>LaunchConfigurationName</code> or <code>InstanceId</code>).</p>
-        /// <note>
-        /// <p>The launch template that is specified must be configured for use with an Auto Scaling
-        /// group. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating a launch
-        /// template for an Auto Scaling group</a> in the
-        /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>Conditional: You must specify either a launch template (<code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>) or a launch configuration (<code>LaunchConfigurationName</code> or <code>InstanceId</code>).</p> <note>
+        /// <p>The launch template that is specified must be configured for use with an Auto Scaling group. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating a launch template for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         /// </note>
         pub fn set_launch_template(
             mut self,
@@ -1448,23 +1358,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>An embedded object that specifies a mixed instances policy.</p>
-        ///
-        ///
-        ///
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto Scaling groups with multiple
-        /// instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User
-        /// Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto Scaling groups with multiple instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn mixed_instances_policy(mut self, input: crate::model::MixedInstancesPolicy) -> Self {
             self.inner = self.inner.mixed_instances_policy(input);
             self
         }
         /// <p>An embedded object that specifies a mixed instances policy.</p>
-        ///
-        ///
-        ///
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto Scaling groups with multiple
-        /// instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User
-        /// Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto Scaling groups with multiple instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_mixed_instances_policy(
             mut self,
             input: std::option::Option<crate::model::MixedInstancesPolicy>,
@@ -1472,18 +1372,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_mixed_instances_policy(input);
             self
         }
-        /// <p>The ID of the instance used to base the launch configuration on. If specified, Amazon
-        /// EC2 Auto Scaling uses the configuration values from the specified instance to create a
-        /// new launch configuration. To get the instance ID, use the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> API operation. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-from-instance.html">Creating an Auto Scaling group using an EC2 instance</a> in the
-        /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>The ID of the instance used to base the launch configuration on. If specified, Amazon EC2 Auto Scaling uses the configuration values from the specified instance to create a new launch configuration. To get the instance ID, use the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> API operation. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-from-instance.html">Creating an Auto Scaling group using an EC2 instance</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_id(input.into());
             self
         }
-        /// <p>The ID of the instance used to base the launch configuration on. If specified, Amazon
-        /// EC2 Auto Scaling uses the configuration values from the specified instance to create a
-        /// new launch configuration. To get the instance ID, use the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> API operation. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-from-instance.html">Creating an Auto Scaling group using an EC2 instance</a> in the
-        /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>The ID of the instance used to base the launch configuration on. If specified, Amazon EC2 Auto Scaling uses the configuration values from the specified instance to create a new launch configuration. To get the instance ID, use the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> API operation. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-from-instance.html">Creating an Auto Scaling group using an EC2 instance</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_id(input);
             self
@@ -1498,62 +1392,36 @@ pub mod fluent_builders {
             self.inner = self.inner.set_min_size(input);
             self
         }
-        /// <p>The maximum size of the group.</p>
-        /// <note>
-        /// <p>With a mixed instances policy that uses instance weighting, Amazon EC2 Auto Scaling may need to
-        /// go above <code>MaxSize</code> to meet your capacity requirements. In this event,
-        /// Amazon EC2 Auto Scaling will never go above <code>MaxSize</code> by more than your largest instance
-        /// weight (weights that define how many units each instance contributes to the desired
-        /// capacity of the group).</p>
+        /// <p>The maximum size of the group.</p> <note>
+        /// <p>With a mixed instances policy that uses instance weighting, Amazon EC2 Auto Scaling may need to go above <code>MaxSize</code> to meet your capacity requirements. In this event, Amazon EC2 Auto Scaling will never go above <code>MaxSize</code> by more than your largest instance weight (weights that define how many units each instance contributes to the desired capacity of the group).</p>
         /// </note>
         pub fn max_size(mut self, input: i32) -> Self {
             self.inner = self.inner.max_size(input);
             self
         }
-        /// <p>The maximum size of the group.</p>
-        /// <note>
-        /// <p>With a mixed instances policy that uses instance weighting, Amazon EC2 Auto Scaling may need to
-        /// go above <code>MaxSize</code> to meet your capacity requirements. In this event,
-        /// Amazon EC2 Auto Scaling will never go above <code>MaxSize</code> by more than your largest instance
-        /// weight (weights that define how many units each instance contributes to the desired
-        /// capacity of the group).</p>
+        /// <p>The maximum size of the group.</p> <note>
+        /// <p>With a mixed instances policy that uses instance weighting, Amazon EC2 Auto Scaling may need to go above <code>MaxSize</code> to meet your capacity requirements. In this event, Amazon EC2 Auto Scaling will never go above <code>MaxSize</code> by more than your largest instance weight (weights that define how many units each instance contributes to the desired capacity of the group).</p>
         /// </note>
         pub fn set_max_size(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_size(input);
             self
         }
-        /// <p>The desired capacity is the initial capacity of the Auto Scaling group at the time of its
-        /// creation and the capacity it attempts to maintain. It can scale beyond this capacity if
-        /// you configure auto scaling. This number must be greater than or equal to the minimum
-        /// size of the group and less than or equal to the maximum size of the group. If you do not
-        /// specify a desired capacity, the default is the minimum size of the group.</p>
+        /// <p>The desired capacity is the initial capacity of the Auto Scaling group at the time of its creation and the capacity it attempts to maintain. It can scale beyond this capacity if you configure auto scaling. This number must be greater than or equal to the minimum size of the group and less than or equal to the maximum size of the group. If you do not specify a desired capacity, the default is the minimum size of the group.</p>
         pub fn desired_capacity(mut self, input: i32) -> Self {
             self.inner = self.inner.desired_capacity(input);
             self
         }
-        /// <p>The desired capacity is the initial capacity of the Auto Scaling group at the time of its
-        /// creation and the capacity it attempts to maintain. It can scale beyond this capacity if
-        /// you configure auto scaling. This number must be greater than or equal to the minimum
-        /// size of the group and less than or equal to the maximum size of the group. If you do not
-        /// specify a desired capacity, the default is the minimum size of the group.</p>
+        /// <p>The desired capacity is the initial capacity of the Auto Scaling group at the time of its creation and the capacity it attempts to maintain. It can scale beyond this capacity if you configure auto scaling. This number must be greater than or equal to the minimum size of the group and less than or equal to the maximum size of the group. If you do not specify a desired capacity, the default is the minimum size of the group.</p>
         pub fn set_desired_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_desired_capacity(input);
             self
         }
-        /// <p>The amount of time, in seconds, after a scaling activity completes before another
-        /// scaling activity can start. The default value is <code>300</code>. This setting applies
-        /// when using simple scaling policies, but not when using other scaling policies or
-        /// scheduled scaling. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling cooldowns for Amazon EC2 Auto Scaling</a>
-        /// in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>The amount of time, in seconds, after a scaling activity completes before another scaling activity can start. The default value is <code>300</code>. This setting applies when using simple scaling policies, but not when using other scaling policies or scheduled scaling. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn default_cooldown(mut self, input: i32) -> Self {
             self.inner = self.inner.default_cooldown(input);
             self
         }
-        /// <p>The amount of time, in seconds, after a scaling activity completes before another
-        /// scaling activity can start. The default value is <code>300</code>. This setting applies
-        /// when using simple scaling policies, but not when using other scaling policies or
-        /// scheduled scaling. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling cooldowns for Amazon EC2 Auto Scaling</a>
-        /// in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>The amount of time, in seconds, after a scaling activity completes before another scaling activity can start. The default value is <code>300</code>. This setting applies when using simple scaling policies, but not when using other scaling policies or scheduled scaling. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_default_cooldown(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_default_cooldown(input);
             self
@@ -1562,20 +1430,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
         ///
-        /// <p>A list of Availability Zones where instances in the Auto Scaling group can be created. This
-        /// parameter is optional if you specify one or more subnets for
-        /// <code>VPCZoneIdentifier</code>.</p>
-        /// <p>Conditional: If your account supports EC2-Classic and VPC, this parameter is required
-        /// to launch instances into EC2-Classic.</p>
+        /// <p>A list of Availability Zones where instances in the Auto Scaling group can be created. This parameter is optional if you specify one or more subnets for <code>VPCZoneIdentifier</code>.</p>
+        /// <p>Conditional: If your account supports EC2-Classic and VPC, this parameter is required to launch instances into EC2-Classic.</p>
         pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.availability_zones(input.into());
             self
         }
-        /// <p>A list of Availability Zones where instances in the Auto Scaling group can be created. This
-        /// parameter is optional if you specify one or more subnets for
-        /// <code>VPCZoneIdentifier</code>.</p>
-        /// <p>Conditional: If your account supports EC2-Classic and VPC, this parameter is required
-        /// to launch instances into EC2-Classic.</p>
+        /// <p>A list of Availability Zones where instances in the Auto Scaling group can be created. This parameter is optional if you specify one or more subnets for <code>VPCZoneIdentifier</code>.</p>
+        /// <p>Conditional: If your account supports EC2-Classic and VPC, this parameter is required to launch instances into EC2-Classic.</p>
         pub fn set_availability_zones(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1587,16 +1449,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_load_balancer_names`](Self::set_load_balancer_names).
         ///
-        /// <p>A list of Classic Load Balancers associated with this Auto Scaling group. For
-        /// Application Load Balancers, Network Load Balancers, and Gateway Load Balancers, specify
-        /// the <code>TargetGroupARNs</code> property instead.</p>
+        /// <p>A list of Classic Load Balancers associated with this Auto Scaling group. For Application Load Balancers, Network Load Balancers, and Gateway Load Balancers, specify the <code>TargetGroupARNs</code> property instead.</p>
         pub fn load_balancer_names(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.load_balancer_names(input.into());
             self
         }
-        /// <p>A list of Classic Load Balancers associated with this Auto Scaling group. For
-        /// Application Load Balancers, Network Load Balancers, and Gateway Load Balancers, specify
-        /// the <code>TargetGroupARNs</code> property instead.</p>
+        /// <p>A list of Classic Load Balancers associated with this Auto Scaling group. For Application Load Balancers, Network Load Balancers, and Gateway Load Balancers, specify the <code>TargetGroupARNs</code> property instead.</p>
         pub fn set_load_balancer_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1608,18 +1466,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_target_group_ar_ns`](Self::set_target_group_ar_ns).
         ///
-        /// <p>The Amazon Resource Names (ARN) of the target groups to associate with the Auto Scaling group.
-        /// Instances are registered as targets in a target group, and traffic is routed to the
-        /// target group. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Elastic Load Balancing and
-        /// Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>The Amazon Resource Names (ARN) of the target groups to associate with the Auto Scaling group. Instances are registered as targets in a target group, and traffic is routed to the target group. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Elastic Load Balancing and Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn target_group_ar_ns(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.target_group_ar_ns(input.into());
             self
         }
-        /// <p>The Amazon Resource Names (ARN) of the target groups to associate with the Auto Scaling group.
-        /// Instances are registered as targets in a target group, and traffic is routed to the
-        /// target group. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Elastic Load Balancing and
-        /// Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>The Amazon Resource Names (ARN) of the target groups to associate with the Auto Scaling group. Instances are registered as targets in a target group, and traffic is routed to the target group. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Elastic Load Balancing and Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_target_group_ar_ns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1627,20 +1479,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_target_group_ar_ns(input);
             self
         }
-        /// <p>The service to use for the health checks. The valid values are <code>EC2</code>
-        /// (default) and <code>ELB</code>. If you configure an Auto Scaling group to use load balancer
-        /// (ELB) health checks, it considers the instance unhealthy if it fails either the EC2
-        /// status checks or the load balancer health checks. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health checks
-        /// for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>The service to use for the health checks. The valid values are <code>EC2</code> (default) and <code>ELB</code>. If you configure an Auto Scaling group to use load balancer (ELB) health checks, it considers the instance unhealthy if it fails either the EC2 status checks or the load balancer health checks. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health checks for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn health_check_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.health_check_type(input.into());
             self
         }
-        /// <p>The service to use for the health checks. The valid values are <code>EC2</code>
-        /// (default) and <code>ELB</code>. If you configure an Auto Scaling group to use load balancer
-        /// (ELB) health checks, it considers the instance unhealthy if it fails either the EC2
-        /// status checks or the load balancer health checks. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health checks
-        /// for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>The service to use for the health checks. The valid values are <code>EC2</code> (default) and <code>ELB</code>. If you configure an Auto Scaling group to use load balancer (ELB) health checks, it considers the instance unhealthy if it fails either the EC2 status checks or the load balancer health checks. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health checks for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_health_check_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1648,38 +1492,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_health_check_type(input);
             self
         }
-        /// <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status
-        /// of an EC2 instance that has come into service and marking it unhealthy due to a failed
-        /// health check. The default value is <code>0</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
-        /// check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status of an EC2 instance that has come into service and marking it unhealthy due to a failed health check. The default value is <code>0</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         /// <p>Conditional: Required if you are adding an <code>ELB</code> health check.</p>
         pub fn health_check_grace_period(mut self, input: i32) -> Self {
             self.inner = self.inner.health_check_grace_period(input);
             self
         }
-        /// <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status
-        /// of an EC2 instance that has come into service and marking it unhealthy due to a failed
-        /// health check. The default value is <code>0</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
-        /// check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status of an EC2 instance that has come into service and marking it unhealthy due to a failed health check. The default value is <code>0</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         /// <p>Conditional: Required if you are adding an <code>ELB</code> health check.</p>
         pub fn set_health_check_grace_period(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_health_check_grace_period(input);
             self
         }
-        /// <p>The name of an existing placement group into which to launch your instances, if any. A
-        /// placement group is a logical grouping of instances within a single Availability Zone.
-        /// You cannot specify multiple Availability Zones and a placement group. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
-        /// <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+        /// <p>The name of an existing placement group into which to launch your instances, if any. A placement group is a logical grouping of instances within a single Availability Zone. You cannot specify multiple Availability Zones and a placement group. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
         pub fn placement_group(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.placement_group(input.into());
             self
         }
-        /// <p>The name of an existing placement group into which to launch your instances, if any. A
-        /// placement group is a logical grouping of instances within a single Availability Zone.
-        /// You cannot specify multiple Availability Zones and a placement group. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
-        /// <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+        /// <p>The name of an existing placement group into which to launch your instances, if any. A placement group is a logical grouping of instances within a single Availability Zone. You cannot specify multiple Availability Zones and a placement group. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
         pub fn set_placement_group(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1687,22 +1517,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_placement_group(input);
             self
         }
-        /// <p>A comma-separated list of subnet IDs for a virtual private cloud (VPC) where instances
-        /// in the Auto Scaling group can be created. If you specify <code>VPCZoneIdentifier</code> with
-        /// <code>AvailabilityZones</code>, the subnets that you specify for this parameter must
-        /// reside in those Availability Zones.</p>
-        /// <p>Conditional: If your account supports EC2-Classic and VPC, this parameter is required
-        /// to launch instances into a VPC.</p>
+        /// <p>A comma-separated list of subnet IDs for a virtual private cloud (VPC) where instances in the Auto Scaling group can be created. If you specify <code>VPCZoneIdentifier</code> with <code>AvailabilityZones</code>, the subnets that you specify for this parameter must reside in those Availability Zones.</p>
+        /// <p>Conditional: If your account supports EC2-Classic and VPC, this parameter is required to launch instances into a VPC.</p>
         pub fn vpc_zone_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.vpc_zone_identifier(input.into());
             self
         }
-        /// <p>A comma-separated list of subnet IDs for a virtual private cloud (VPC) where instances
-        /// in the Auto Scaling group can be created. If you specify <code>VPCZoneIdentifier</code> with
-        /// <code>AvailabilityZones</code>, the subnets that you specify for this parameter must
-        /// reside in those Availability Zones.</p>
-        /// <p>Conditional: If your account supports EC2-Classic and VPC, this parameter is required
-        /// to launch instances into a VPC.</p>
+        /// <p>A comma-separated list of subnet IDs for a virtual private cloud (VPC) where instances in the Auto Scaling group can be created. If you specify <code>VPCZoneIdentifier</code> with <code>AvailabilityZones</code>, the subnets that you specify for this parameter must reside in those Availability Zones.</p>
+        /// <p>Conditional: If your account supports EC2-Classic and VPC, this parameter is required to launch instances into a VPC.</p>
         pub fn set_vpc_zone_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1714,20 +1536,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_termination_policies`](Self::set_termination_policies).
         ///
-        /// <p>A policy or a list of policies that are used to select the instance to terminate.
-        /// These policies are executed in the order that you list them. For more information, see
-        /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling which Auto Scaling
-        /// instances terminate during scale in</a> in the
-        /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>A policy or a list of policies that are used to select the instance to terminate. These policies are executed in the order that you list them. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling which Auto Scaling instances terminate during scale in</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn termination_policies(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.termination_policies(input.into());
             self
         }
-        /// <p>A policy or a list of policies that are used to select the instance to terminate.
-        /// These policies are executed in the order that you list them. For more information, see
-        /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling which Auto Scaling
-        /// instances terminate during scale in</a> in the
-        /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>A policy or a list of policies that are used to select the instance to terminate. These policies are executed in the order that you list them. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling which Auto Scaling instances terminate during scale in</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_termination_policies(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1735,20 +1549,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_termination_policies(input);
             self
         }
-        /// <p>Indicates whether newly launched instances are protected from termination by Amazon EC2 Auto Scaling
-        /// when scaling in. For more information about preventing instances from terminating on
-        /// scale in, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-protection.html">Using
-        /// instance scale-in protection</a> in the
-        /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>Indicates whether newly launched instances are protected from termination by Amazon EC2 Auto Scaling when scaling in. For more information about preventing instances from terminating on scale in, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-protection.html">Using instance scale-in protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn new_instances_protected_from_scale_in(mut self, input: bool) -> Self {
             self.inner = self.inner.new_instances_protected_from_scale_in(input);
             self
         }
-        /// <p>Indicates whether newly launched instances are protected from termination by Amazon EC2 Auto Scaling
-        /// when scaling in. For more information about preventing instances from terminating on
-        /// scale in, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-protection.html">Using
-        /// instance scale-in protection</a> in the
-        /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>Indicates whether newly launched instances are protected from termination by Amazon EC2 Auto Scaling when scaling in. For more information about preventing instances from terminating on scale in, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-protection.html">Using instance scale-in protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_new_instances_protected_from_scale_in(
             mut self,
             input: std::option::Option<bool>,
@@ -1756,22 +1562,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_new_instances_protected_from_scale_in(input);
             self
         }
-        /// <p>Indicates whether Capacity Rebalancing is enabled. Otherwise, Capacity Rebalancing is
-        /// disabled. When you turn on Capacity Rebalancing, Amazon EC2 Auto Scaling attempts to launch a Spot
-        /// Instance whenever Amazon EC2 notifies that a Spot Instance is at an elevated risk of
-        /// interruption. After launching a new instance, it then terminates an old instance. For
-        /// more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-capacity-rebalancing.html">Amazon EC2 Auto Scaling
-        /// Capacity Rebalancing</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>Indicates whether Capacity Rebalancing is enabled. Otherwise, Capacity Rebalancing is disabled. When you turn on Capacity Rebalancing, Amazon EC2 Auto Scaling attempts to launch a Spot Instance whenever Amazon EC2 notifies that a Spot Instance is at an elevated risk of interruption. After launching a new instance, it then terminates an old instance. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-capacity-rebalancing.html">Amazon EC2 Auto Scaling Capacity Rebalancing</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn capacity_rebalance(mut self, input: bool) -> Self {
             self.inner = self.inner.capacity_rebalance(input);
             self
         }
-        /// <p>Indicates whether Capacity Rebalancing is enabled. Otherwise, Capacity Rebalancing is
-        /// disabled. When you turn on Capacity Rebalancing, Amazon EC2 Auto Scaling attempts to launch a Spot
-        /// Instance whenever Amazon EC2 notifies that a Spot Instance is at an elevated risk of
-        /// interruption. After launching a new instance, it then terminates an old instance. For
-        /// more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-capacity-rebalancing.html">Amazon EC2 Auto Scaling
-        /// Capacity Rebalancing</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>Indicates whether Capacity Rebalancing is enabled. Otherwise, Capacity Rebalancing is disabled. When you turn on Capacity Rebalancing, Amazon EC2 Auto Scaling attempts to launch a Spot Instance whenever Amazon EC2 notifies that a Spot Instance is at an elevated risk of interruption. After launching a new instance, it then terminates an old instance. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-capacity-rebalancing.html">Amazon EC2 Auto Scaling Capacity Rebalancing</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_capacity_rebalance(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_capacity_rebalance(input);
             self
@@ -1780,8 +1576,7 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_lifecycle_hook_specification_list`](Self::set_lifecycle_hook_specification_list).
         ///
-        /// <p>One or more lifecycle hooks for the group, which specify actions to perform when
-        /// Amazon EC2 Auto Scaling launches or terminates instances.</p>
+        /// <p>One or more lifecycle hooks for the group, which specify actions to perform when Amazon EC2 Auto Scaling launches or terminates instances.</p>
         pub fn lifecycle_hook_specification_list(
             mut self,
             input: crate::model::LifecycleHookSpecification,
@@ -1789,8 +1584,7 @@ pub mod fluent_builders {
             self.inner = self.inner.lifecycle_hook_specification_list(input);
             self
         }
-        /// <p>One or more lifecycle hooks for the group, which specify actions to perform when
-        /// Amazon EC2 Auto Scaling launches or terminates instances.</p>
+        /// <p>One or more lifecycle hooks for the group, which specify actions to perform when Amazon EC2 Auto Scaling launches or terminates instances.</p>
         pub fn set_lifecycle_hook_specification_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LifecycleHookSpecification>>,
@@ -1802,24 +1596,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>One or more tags. You can tag your Auto Scaling group and propagate the tags to the Amazon EC2
-        /// instances it launches. Tags are not propagated to Amazon EBS volumes. To add tags to Amazon EBS
-        /// volumes, specify the tags in a launch template but use caution. If the launch template
-        /// specifies an instance tag with a key that is also specified for the Auto Scaling group, Amazon EC2 Auto Scaling
-        /// overrides the value of that instance tag with the value specified by the Auto Scaling group. For
-        /// more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-tagging.html">Tagging Auto Scaling groups and
-        /// instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>One or more tags. You can tag your Auto Scaling group and propagate the tags to the Amazon EC2 instances it launches. Tags are not propagated to Amazon EBS volumes. To add tags to Amazon EBS volumes, specify the tags in a launch template but use caution. If the launch template specifies an instance tag with a key that is also specified for the Auto Scaling group, Amazon EC2 Auto Scaling overrides the value of that instance tag with the value specified by the Auto Scaling group. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-tagging.html">Tagging Auto Scaling groups and instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>One or more tags. You can tag your Auto Scaling group and propagate the tags to the Amazon EC2
-        /// instances it launches. Tags are not propagated to Amazon EBS volumes. To add tags to Amazon EBS
-        /// volumes, specify the tags in a launch template but use caution. If the launch template
-        /// specifies an instance tag with a key that is also specified for the Auto Scaling group, Amazon EC2 Auto Scaling
-        /// overrides the value of that instance tag with the value specified by the Auto Scaling group. For
-        /// more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-tagging.html">Tagging Auto Scaling groups and
-        /// instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>One or more tags. You can tag your Auto Scaling group and propagate the tags to the Amazon EC2 instances it launches. Tags are not propagated to Amazon EBS volumes. To add tags to Amazon EBS volumes, specify the tags in a launch template but use caution. If the launch template specifies an instance tag with a key that is also specified for the Auto Scaling group, Amazon EC2 Auto Scaling overrides the value of that instance tag with the value specified by the Auto Scaling group. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-tagging.html">Tagging Auto Scaling groups and instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1827,20 +1609,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto Scaling group uses to
-        /// call other Amazon Web Services on your behalf. By default, Amazon EC2 Auto Scaling uses a service-linked role
-        /// named <code>AWSServiceRoleForAutoScaling</code>, which it creates if it does not exist.
-        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-linked
-        /// roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto Scaling group uses to call other Amazon Web Services on your behalf. By default, Amazon EC2 Auto Scaling uses a service-linked role named <code>AWSServiceRoleForAutoScaling</code>, which it creates if it does not exist. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-linked roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn service_linked_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.service_linked_role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto Scaling group uses to
-        /// call other Amazon Web Services on your behalf. By default, Amazon EC2 Auto Scaling uses a service-linked role
-        /// named <code>AWSServiceRoleForAutoScaling</code>, which it creates if it does not exist.
-        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-linked
-        /// roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto Scaling group uses to call other Amazon Web Services on your behalf. By default, Amazon EC2 Auto Scaling uses a service-linked role named <code>AWSServiceRoleForAutoScaling</code>, which it creates if it does not exist. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-linked roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_service_linked_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1848,18 +1622,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_service_linked_role_arn(input);
             self
         }
-        /// <p>The maximum amount of time, in seconds, that an instance can be in service. The
-        /// default is null. If specified, the value must be either 0 or a number equal to or
-        /// greater than 86,400 seconds (1 day). For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-max-instance-lifetime.html">Replacing Auto Scaling instances based on maximum instance lifetime</a> in the
-        /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>The maximum amount of time, in seconds, that an instance can be in service. The default is null. If specified, the value must be either 0 or a number equal to or greater than 86,400 seconds (1 day). For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-max-instance-lifetime.html">Replacing Auto Scaling instances based on maximum instance lifetime</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn max_instance_lifetime(mut self, input: i32) -> Self {
             self.inner = self.inner.max_instance_lifetime(input);
             self
         }
-        /// <p>The maximum amount of time, in seconds, that an instance can be in service. The
-        /// default is null. If specified, the value must be either 0 or a number equal to or
-        /// greater than 86,400 seconds (1 day). For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-max-instance-lifetime.html">Replacing Auto Scaling instances based on maximum instance lifetime</a> in the
-        /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>The maximum amount of time, in seconds, that an instance can be in service. The default is null. If specified, the value must be either 0 or a number equal to or greater than 86,400 seconds (1 day). For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-max-instance-lifetime.html">Replacing Auto Scaling instances based on maximum instance lifetime</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_max_instance_lifetime(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_instance_lifetime(input);
             self
@@ -1874,30 +1642,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_context(input);
             self
         }
-        /// <p>The unit of measurement for the value specified for desired capacity. Amazon EC2 Auto Scaling
-        /// supports <code>DesiredCapacityType</code> for attribute-based instance type selection
-        /// only. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html">Creating
-        /// an Auto Scaling group using attribute-based instance type selection</a> in the
-        /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-        /// <p>By default, Amazon EC2 Auto Scaling specifies <code>units</code>, which translates into number of
-        /// instances.</p>
-        ///
-        /// <p>Valid values: <code>units</code> | <code>vcpu</code> | <code>memory-mib</code>
-        /// </p>
+        /// <p>The unit of measurement for the value specified for desired capacity. Amazon EC2 Auto Scaling supports <code>DesiredCapacityType</code> for attribute-based instance type selection only. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html">Creating an Auto Scaling group using attribute-based instance type selection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>By default, Amazon EC2 Auto Scaling specifies <code>units</code>, which translates into number of instances.</p>
+        /// <p>Valid values: <code>units</code> | <code>vcpu</code> | <code>memory-mib</code> </p>
         pub fn desired_capacity_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.desired_capacity_type(input.into());
             self
         }
-        /// <p>The unit of measurement for the value specified for desired capacity. Amazon EC2 Auto Scaling
-        /// supports <code>DesiredCapacityType</code> for attribute-based instance type selection
-        /// only. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html">Creating
-        /// an Auto Scaling group using attribute-based instance type selection</a> in the
-        /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-        /// <p>By default, Amazon EC2 Auto Scaling specifies <code>units</code>, which translates into number of
-        /// instances.</p>
-        ///
-        /// <p>Valid values: <code>units</code> | <code>vcpu</code> | <code>memory-mib</code>
-        /// </p>
+        /// <p>The unit of measurement for the value specified for desired capacity. Amazon EC2 Auto Scaling supports <code>DesiredCapacityType</code> for attribute-based instance type selection only. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html">Creating an Auto Scaling group using attribute-based instance type selection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>By default, Amazon EC2 Auto Scaling specifies <code>units</code>, which translates into number of instances.</p>
+        /// <p>Valid values: <code>units</code> | <code>vcpu</code> | <code>memory-mib</code> </p>
         pub fn set_desired_capacity_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1909,12 +1663,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateLaunchConfiguration`.
     ///
     /// <p>Creates a launch configuration.</p>
-    /// <p>If you exceed your maximum limit of launch configurations, the call fails. To query
-    /// this limit, call the <a>DescribeAccountLimits</a> API. For information about
-    /// updating this limit, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon EC2 Auto Scaling service
-    /// quotas</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/LaunchConfiguration.html">Launch
-    /// configurations</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    /// <p>If you exceed your maximum limit of launch configurations, the call fails. To query this limit, call the <code>DescribeAccountLimits</code> API. For information about updating this limit, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon EC2 Auto Scaling service quotas</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/LaunchConfiguration.html">Launch configurations</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLaunchConfiguration<
         C = aws_smithy_client::erase::DynConnector,
@@ -1971,14 +1721,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the launch configuration. This name must be unique per Region per
-        /// account.</p>
+        /// <p>The name of the launch configuration. This name must be unique per Region per account.</p>
         pub fn launch_configuration_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.launch_configuration_name(input.into());
             self
         }
-        /// <p>The name of the launch configuration. This name must be unique per Region per
-        /// account.</p>
+        /// <p>The name of the launch configuration. This name must be unique per Region per account.</p>
         pub fn set_launch_configuration_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1986,32 +1734,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_launch_configuration_name(input);
             self
         }
-        /// <p>The ID of the Amazon Machine Image (AMI) that was assigned during registration. For
-        /// more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding an AMI</a> in the
-        /// <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
-        /// <p>If you do not specify <code>InstanceId</code>, you must specify
-        /// <code>ImageId</code>.</p>
+        /// <p>The ID of the Amazon Machine Image (AMI) that was assigned during registration. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding an AMI</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+        /// <p>If you do not specify <code>InstanceId</code>, you must specify <code>ImageId</code>.</p>
         pub fn image_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.image_id(input.into());
             self
         }
-        /// <p>The ID of the Amazon Machine Image (AMI) that was assigned during registration. For
-        /// more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding an AMI</a> in the
-        /// <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
-        /// <p>If you do not specify <code>InstanceId</code>, you must specify
-        /// <code>ImageId</code>.</p>
+        /// <p>The ID of the Amazon Machine Image (AMI) that was assigned during registration. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding an AMI</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+        /// <p>If you do not specify <code>InstanceId</code>, you must specify <code>ImageId</code>.</p>
         pub fn set_image_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_image_id(input);
             self
         }
-        /// <p>The name of the key pair. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 Key Pairs</a> in the
-        /// <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+        /// <p>The name of the key pair. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 Key Pairs</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
         pub fn key_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.key_name(input.into());
             self
         }
-        /// <p>The name of the key pair. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 Key Pairs</a> in the
-        /// <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+        /// <p>The name of the key pair. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 Key Pairs</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
         pub fn set_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_key_name(input);
             self
@@ -2020,24 +1760,16 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
         ///
-        /// <p>A list that contains the security groups to assign to the instances in the Auto Scaling
-        /// group.</p>
-        /// <p>[EC2-VPC] Specify the security group IDs. For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud
-        /// User Guide</i>.</p>
-        /// <p>[EC2-Classic] Specify either the security group names or the security group IDs. For
-        /// more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon EC2 Security
-        /// Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+        /// <p>A list that contains the security groups to assign to the instances in the Auto Scaling group.</p>
+        /// <p>[EC2-VPC] Specify the security group IDs. For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+        /// <p>[EC2-Classic] Specify either the security group names or the security group IDs. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon EC2 Security Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
         pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.security_groups(input.into());
             self
         }
-        /// <p>A list that contains the security groups to assign to the instances in the Auto Scaling
-        /// group.</p>
-        /// <p>[EC2-VPC] Specify the security group IDs. For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud
-        /// User Guide</i>.</p>
-        /// <p>[EC2-Classic] Specify either the security group names or the security group IDs. For
-        /// more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon EC2 Security
-        /// Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+        /// <p>A list that contains the security groups to assign to the instances in the Auto Scaling group.</p>
+        /// <p>[EC2-VPC] Specify the security group IDs. For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+        /// <p>[EC2-Classic] Specify either the security group names or the security group IDs. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon EC2 Security Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
         pub fn set_security_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2045,19 +1777,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_security_groups(input);
             self
         }
-        /// <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the
-        /// <i>Amazon EC2 User Guide for Linux Instances</i> and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking EC2-Classic
-        /// instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking EC2-Classic instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         /// <p>This parameter can only be used if you are launching EC2-Classic instances.</p>
         pub fn classic_link_vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.classic_link_vpc_id(input.into());
             self
         }
-        /// <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the
-        /// <i>Amazon EC2 User Guide for Linux Instances</i> and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking EC2-Classic
-        /// instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking EC2-Classic instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         /// <p>This parameter can only be used if you are launching EC2-Classic instances.</p>
         pub fn set_classic_link_vpc_id(
             mut self,
@@ -2070,12 +1796,8 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_classic_link_vpc_security_groups`](Self::set_classic_link_vpc_security_groups).
         ///
-        /// <p>The IDs of one or more security groups for the specified ClassicLink-enabled VPC. For
-        /// more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the
-        /// <i>Amazon EC2 User Guide for Linux Instances</i> and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking EC2-Classic
-        /// instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-        /// <p>If you specify the <code>ClassicLinkVPCId</code> parameter, you must specify this
-        /// parameter.</p>
+        /// <p>The IDs of one or more security groups for the specified ClassicLink-enabled VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking EC2-Classic instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>If you specify the <code>ClassicLinkVPCId</code> parameter, you must specify this parameter.</p>
         pub fn classic_link_vpc_security_groups(
             mut self,
             input: impl Into<std::string::String>,
@@ -2083,12 +1805,8 @@ pub mod fluent_builders {
             self.inner = self.inner.classic_link_vpc_security_groups(input.into());
             self
         }
-        /// <p>The IDs of one or more security groups for the specified ClassicLink-enabled VPC. For
-        /// more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the
-        /// <i>Amazon EC2 User Guide for Linux Instances</i> and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking EC2-Classic
-        /// instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-        /// <p>If you specify the <code>ClassicLinkVPCId</code> parameter, you must specify this
-        /// parameter.</p>
+        /// <p>The IDs of one or more security groups for the specified ClassicLink-enabled VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking EC2-Classic instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>If you specify the <code>ClassicLinkVPCId</code> parameter, you must specify this parameter.</p>
         pub fn set_classic_link_vpc_security_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2096,66 +1814,42 @@ pub mod fluent_builders {
             self.inner = self.inner.set_classic_link_vpc_security_groups(input);
             self
         }
-        /// <p>The user data to make available to the launched EC2 instances. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user data</a> (Linux) and <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html">Instance metadata and
-        /// user data</a> (Windows). If you are using a command line tool, base64-encoding
-        /// is performed for you, and you can load the text from a file. Otherwise, you must provide
-        /// base64-encoded text. User data is limited to 16 KB.</p>
+        /// <p>The user data to make available to the launched EC2 instances. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user data</a> (Linux) and <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html">Instance metadata and user data</a> (Windows). If you are using a command line tool, base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide base64-encoded text. User data is limited to 16 KB.</p>
         pub fn user_data(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.user_data(input.into());
             self
         }
-        /// <p>The user data to make available to the launched EC2 instances. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user data</a> (Linux) and <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html">Instance metadata and
-        /// user data</a> (Windows). If you are using a command line tool, base64-encoding
-        /// is performed for you, and you can load the text from a file. Otherwise, you must provide
-        /// base64-encoded text. User data is limited to 16 KB.</p>
+        /// <p>The user data to make available to the launched EC2 instances. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user data</a> (Linux) and <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html">Instance metadata and user data</a> (Windows). If you are using a command line tool, base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide base64-encoded text. User data is limited to 16 KB.</p>
         pub fn set_user_data(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_user_data(input);
             self
         }
-        /// <p>The ID of the instance to use to create the launch configuration. The new launch
-        /// configuration derives attributes from the instance, except for the block device
-        /// mapping.</p>
-        /// <p>To create a launch configuration with a block device mapping or override any other
-        /// instance attributes, specify them as part of the same request.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-lc-with-instanceID.html">Creating a launch
-        /// configuration using an EC2 instance</a> in the
-        /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-        /// <p>If you do not specify <code>InstanceId</code>, you must specify both
-        /// <code>ImageId</code> and <code>InstanceType</code>.</p>
+        /// <p>The ID of the instance to use to create the launch configuration. The new launch configuration derives attributes from the instance, except for the block device mapping.</p>
+        /// <p>To create a launch configuration with a block device mapping or override any other instance attributes, specify them as part of the same request.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-lc-with-instanceID.html">Creating a launch configuration using an EC2 instance</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>If you do not specify <code>InstanceId</code>, you must specify both <code>ImageId</code> and <code>InstanceType</code>.</p>
         pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_id(input.into());
             self
         }
-        /// <p>The ID of the instance to use to create the launch configuration. The new launch
-        /// configuration derives attributes from the instance, except for the block device
-        /// mapping.</p>
-        /// <p>To create a launch configuration with a block device mapping or override any other
-        /// instance attributes, specify them as part of the same request.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-lc-with-instanceID.html">Creating a launch
-        /// configuration using an EC2 instance</a> in the
-        /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-        /// <p>If you do not specify <code>InstanceId</code>, you must specify both
-        /// <code>ImageId</code> and <code>InstanceType</code>.</p>
+        /// <p>The ID of the instance to use to create the launch configuration. The new launch configuration derives attributes from the instance, except for the block device mapping.</p>
+        /// <p>To create a launch configuration with a block device mapping or override any other instance attributes, specify them as part of the same request.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-lc-with-instanceID.html">Creating a launch configuration using an EC2 instance</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>If you do not specify <code>InstanceId</code>, you must specify both <code>ImageId</code> and <code>InstanceType</code>.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_id(input);
             self
         }
         /// <p>Specifies the instance type of the EC2 instance.</p>
-        /// <p>For information about available instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-        /// Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
-        /// <p>If you do not specify <code>InstanceId</code>, you must specify
-        /// <code>InstanceType</code>.</p>
+        /// <p>For information about available instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+        /// <p>If you do not specify <code>InstanceId</code>, you must specify <code>InstanceType</code>.</p>
         pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_type(input.into());
             self
         }
         /// <p>Specifies the instance type of the EC2 instance.</p>
-        /// <p>For information about available instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-        /// Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
-        /// <p>If you do not specify <code>InstanceId</code>, you must specify
-        /// <code>InstanceType</code>.</p>
+        /// <p>For information about available instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+        /// <p>If you do not specify <code>InstanceId</code>, you must specify <code>InstanceType</code>.</p>
         pub fn set_instance_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2187,16 +1881,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_block_device_mappings`](Self::set_block_device_mappings).
         ///
-        /// <p>A block device mapping, which specifies the block devices for the instance. You can
-        /// specify virtual devices and EBS volumes. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device
-        /// Mapping</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+        /// <p>A block device mapping, which specifies the block devices for the instance. You can specify virtual devices and EBS volumes. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device Mapping</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
         pub fn block_device_mappings(mut self, input: crate::model::BlockDeviceMapping) -> Self {
             self.inner = self.inner.block_device_mappings(input);
             self
         }
-        /// <p>A block device mapping, which specifies the block devices for the instance. You can
-        /// specify virtual devices and EBS volumes. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device
-        /// Mapping</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+        /// <p>A block device mapping, which specifies the block devices for the instance. You can specify virtual devices and EBS volumes. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device Mapping</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
         pub fn set_block_device_mappings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BlockDeviceMapping>>,
@@ -2204,29 +1894,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_block_device_mappings(input);
             self
         }
-        /// <p>Controls whether instances in this group are launched with detailed
-        /// (<code>true</code>) or basic (<code>false</code>) monitoring.</p>
-        /// <p>The default value is <code>true</code> (enabled).</p>
-        /// <important>
-        /// <p>When detailed monitoring is enabled, Amazon CloudWatch generates metrics every minute and
-        /// your account is charged a fee. When you disable detailed monitoring, CloudWatch generates
-        /// metrics every 5 minutes. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/latest/userguide/enable-as-instance-metrics.html">Configure
-        /// Monitoring for Auto Scaling Instances</a> in the
-        /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>Controls whether instances in this group are launched with detailed (<code>true</code>) or basic (<code>false</code>) monitoring.</p>
+        /// <p>The default value is <code>true</code> (enabled).</p> <important>
+        /// <p>When detailed monitoring is enabled, Amazon CloudWatch generates metrics every minute and your account is charged a fee. When you disable detailed monitoring, CloudWatch generates metrics every 5 minutes. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/latest/userguide/enable-as-instance-metrics.html">Configure Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         /// </important>
         pub fn instance_monitoring(mut self, input: crate::model::InstanceMonitoring) -> Self {
             self.inner = self.inner.instance_monitoring(input);
             self
         }
-        /// <p>Controls whether instances in this group are launched with detailed
-        /// (<code>true</code>) or basic (<code>false</code>) monitoring.</p>
-        /// <p>The default value is <code>true</code> (enabled).</p>
-        /// <important>
-        /// <p>When detailed monitoring is enabled, Amazon CloudWatch generates metrics every minute and
-        /// your account is charged a fee. When you disable detailed monitoring, CloudWatch generates
-        /// metrics every 5 minutes. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/latest/userguide/enable-as-instance-metrics.html">Configure
-        /// Monitoring for Auto Scaling Instances</a> in the
-        /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>Controls whether instances in this group are launched with detailed (<code>true</code>) or basic (<code>false</code>) monitoring.</p>
+        /// <p>The default value is <code>true</code> (enabled).</p> <important>
+        /// <p>When detailed monitoring is enabled, Amazon CloudWatch generates metrics every minute and your account is charged a fee. When you disable detailed monitoring, CloudWatch generates metrics every 5 minutes. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/latest/userguide/enable-as-instance-metrics.html">Configure Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         /// </important>
         pub fn set_instance_monitoring(
             mut self,
@@ -2235,44 +1913,28 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_monitoring(input);
             self
         }
-        /// <p>The maximum hourly price to be paid for any Spot Instance launched to fulfill the
-        /// request. Spot Instances are launched when the price you specify exceeds the current Spot
-        /// price. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-spot-instances.html">Requesting Spot
-        /// Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-        /// <note>
-        /// <p>When you change your maximum price by creating a new launch configuration, running
-        /// instances will continue to run as long as the maximum price for those running
-        /// instances is higher than the current Spot price.</p>
+        /// <p>The maximum hourly price to be paid for any Spot Instance launched to fulfill the request. Spot Instances are launched when the price you specify exceeds the current Spot price. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-spot-instances.html">Requesting Spot Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <note>
+        /// <p>When you change your maximum price by creating a new launch configuration, running instances will continue to run as long as the maximum price for those running instances is higher than the current Spot price.</p>
         /// </note>
         pub fn spot_price(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.spot_price(input.into());
             self
         }
-        /// <p>The maximum hourly price to be paid for any Spot Instance launched to fulfill the
-        /// request. Spot Instances are launched when the price you specify exceeds the current Spot
-        /// price. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-spot-instances.html">Requesting Spot
-        /// Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-        /// <note>
-        /// <p>When you change your maximum price by creating a new launch configuration, running
-        /// instances will continue to run as long as the maximum price for those running
-        /// instances is higher than the current Spot price.</p>
+        /// <p>The maximum hourly price to be paid for any Spot Instance launched to fulfill the request. Spot Instances are launched when the price you specify exceeds the current Spot price. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-spot-instances.html">Requesting Spot Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <note>
+        /// <p>When you change your maximum price by creating a new launch configuration, running instances will continue to run as long as the maximum price for those running instances is higher than the current Spot price.</p>
         /// </note>
         pub fn set_spot_price(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_spot_price(input);
             self
         }
-        /// <p>The name or the Amazon Resource Name (ARN) of the instance profile associated with the
-        /// IAM role for the instance. The instance profile contains the IAM role.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">IAM role for applications that run
-        /// on Amazon EC2 instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>The name or the Amazon Resource Name (ARN) of the instance profile associated with the IAM role for the instance. The instance profile contains the IAM role.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">IAM role for applications that run on Amazon EC2 instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn iam_instance_profile(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.iam_instance_profile(input.into());
             self
         }
-        /// <p>The name or the Amazon Resource Name (ARN) of the instance profile associated with the
-        /// IAM role for the instance. The instance profile contains the IAM role.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">IAM role for applications that run
-        /// on Amazon EC2 instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>The name or the Amazon Resource Name (ARN) of the instance profile associated with the IAM role for the instance. The instance profile contains the IAM role.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">IAM role for applications that run on Amazon EC2 instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_iam_instance_profile(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2280,94 +1942,48 @@ pub mod fluent_builders {
             self.inner = self.inner.set_iam_instance_profile(input);
             self
         }
-        /// <p>Specifies whether the launch configuration is optimized for EBS I/O
-        /// (<code>true</code>) or not (<code>false</code>). The optimization provides dedicated
-        /// throughput to Amazon EBS and an optimized configuration stack to provide optimal I/O
-        /// performance. This optimization is not available with all instance types. Additional fees
-        /// are incurred when you enable EBS optimization for an instance type that is not
-        /// EBS-optimized by default. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-optimized instances</a> in
-        /// the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+        /// <p>Specifies whether the launch configuration is optimized for EBS I/O (<code>true</code>) or not (<code>false</code>). The optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal I/O performance. This optimization is not available with all instance types. Additional fees are incurred when you enable EBS optimization for an instance type that is not EBS-optimized by default. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-optimized instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
         /// <p>The default value is <code>false</code>.</p>
         pub fn ebs_optimized(mut self, input: bool) -> Self {
             self.inner = self.inner.ebs_optimized(input);
             self
         }
-        /// <p>Specifies whether the launch configuration is optimized for EBS I/O
-        /// (<code>true</code>) or not (<code>false</code>). The optimization provides dedicated
-        /// throughput to Amazon EBS and an optimized configuration stack to provide optimal I/O
-        /// performance. This optimization is not available with all instance types. Additional fees
-        /// are incurred when you enable EBS optimization for an instance type that is not
-        /// EBS-optimized by default. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-optimized instances</a> in
-        /// the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+        /// <p>Specifies whether the launch configuration is optimized for EBS I/O (<code>true</code>) or not (<code>false</code>). The optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal I/O performance. This optimization is not available with all instance types. Additional fees are incurred when you enable EBS optimization for an instance type that is not EBS-optimized by default. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-optimized instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
         /// <p>The default value is <code>false</code>.</p>
         pub fn set_ebs_optimized(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_ebs_optimized(input);
             self
         }
-        /// <p>For Auto Scaling groups that are running in a virtual private cloud (VPC), specifies whether
-        /// to assign a public IP address to the group's instances. If you specify
-        /// <code>true</code>, each instance in the Auto Scaling group receives a unique public IP address.
-        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching Auto Scaling instances in a
-        /// VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-        /// <p>If you specify this parameter, you must specify at least one subnet for
-        /// <code>VPCZoneIdentifier</code> when you create your group.</p>
-        /// <note>
-        /// <p>If the instance is launched into a default subnet, the default is to assign a
-        /// public IP address, unless you disabled the option to assign a public IP address on
-        /// the subnet. If the instance is launched into a nondefault subnet, the default is not
-        /// to assign a public IP address, unless you enabled the option to assign a public IP
-        /// address on the subnet.</p>
+        /// <p>For Auto Scaling groups that are running in a virtual private cloud (VPC), specifies whether to assign a public IP address to the group's instances. If you specify <code>true</code>, each instance in the Auto Scaling group receives a unique public IP address. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching Auto Scaling instances in a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>If you specify this parameter, you must specify at least one subnet for <code>VPCZoneIdentifier</code> when you create your group.</p> <note>
+        /// <p>If the instance is launched into a default subnet, the default is to assign a public IP address, unless you disabled the option to assign a public IP address on the subnet. If the instance is launched into a nondefault subnet, the default is not to assign a public IP address, unless you enabled the option to assign a public IP address on the subnet.</p>
         /// </note>
         pub fn associate_public_ip_address(mut self, input: bool) -> Self {
             self.inner = self.inner.associate_public_ip_address(input);
             self
         }
-        /// <p>For Auto Scaling groups that are running in a virtual private cloud (VPC), specifies whether
-        /// to assign a public IP address to the group's instances. If you specify
-        /// <code>true</code>, each instance in the Auto Scaling group receives a unique public IP address.
-        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching Auto Scaling instances in a
-        /// VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-        /// <p>If you specify this parameter, you must specify at least one subnet for
-        /// <code>VPCZoneIdentifier</code> when you create your group.</p>
-        /// <note>
-        /// <p>If the instance is launched into a default subnet, the default is to assign a
-        /// public IP address, unless you disabled the option to assign a public IP address on
-        /// the subnet. If the instance is launched into a nondefault subnet, the default is not
-        /// to assign a public IP address, unless you enabled the option to assign a public IP
-        /// address on the subnet.</p>
+        /// <p>For Auto Scaling groups that are running in a virtual private cloud (VPC), specifies whether to assign a public IP address to the group's instances. If you specify <code>true</code>, each instance in the Auto Scaling group receives a unique public IP address. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching Auto Scaling instances in a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>If you specify this parameter, you must specify at least one subnet for <code>VPCZoneIdentifier</code> when you create your group.</p> <note>
+        /// <p>If the instance is launched into a default subnet, the default is to assign a public IP address, unless you disabled the option to assign a public IP address on the subnet. If the instance is launched into a nondefault subnet, the default is not to assign a public IP address, unless you enabled the option to assign a public IP address on the subnet.</p>
         /// </note>
         pub fn set_associate_public_ip_address(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_associate_public_ip_address(input);
             self
         }
-        /// <p>The tenancy of the instance. An instance with <code>dedicated</code> tenancy runs on
-        /// isolated, single-tenant hardware and can only be launched into a VPC.</p>
-        /// <p>To launch dedicated instances into a shared tenancy VPC (a VPC with the instance
-        /// placement tenancy attribute set to <code>default</code>), you must set the value of this
-        /// parameter to <code>dedicated</code>.</p>
-        /// <p>If you specify <code>PlacementTenancy</code>, you must specify at least one subnet for
-        /// <code>VPCZoneIdentifier</code> when you create your group.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/auto-scaling-dedicated-instances.html">Configuring
-        /// instance tenancy with Amazon EC2 Auto Scaling</a> in the
-        /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-        /// <p>Valid Values: <code>default</code> | <code>dedicated</code>
-        /// </p>
+        /// <p>The tenancy of the instance. An instance with <code>dedicated</code> tenancy runs on isolated, single-tenant hardware and can only be launched into a VPC.</p>
+        /// <p>To launch dedicated instances into a shared tenancy VPC (a VPC with the instance placement tenancy attribute set to <code>default</code>), you must set the value of this parameter to <code>dedicated</code>.</p>
+        /// <p>If you specify <code>PlacementTenancy</code>, you must specify at least one subnet for <code>VPCZoneIdentifier</code> when you create your group.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/auto-scaling-dedicated-instances.html">Configuring instance tenancy with Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>Valid Values: <code>default</code> | <code>dedicated</code> </p>
         pub fn placement_tenancy(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.placement_tenancy(input.into());
             self
         }
-        /// <p>The tenancy of the instance. An instance with <code>dedicated</code> tenancy runs on
-        /// isolated, single-tenant hardware and can only be launched into a VPC.</p>
-        /// <p>To launch dedicated instances into a shared tenancy VPC (a VPC with the instance
-        /// placement tenancy attribute set to <code>default</code>), you must set the value of this
-        /// parameter to <code>dedicated</code>.</p>
-        /// <p>If you specify <code>PlacementTenancy</code>, you must specify at least one subnet for
-        /// <code>VPCZoneIdentifier</code> when you create your group.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/auto-scaling-dedicated-instances.html">Configuring
-        /// instance tenancy with Amazon EC2 Auto Scaling</a> in the
-        /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-        /// <p>Valid Values: <code>default</code> | <code>dedicated</code>
-        /// </p>
+        /// <p>The tenancy of the instance. An instance with <code>dedicated</code> tenancy runs on isolated, single-tenant hardware and can only be launched into a VPC.</p>
+        /// <p>To launch dedicated instances into a shared tenancy VPC (a VPC with the instance placement tenancy attribute set to <code>default</code>), you must set the value of this parameter to <code>dedicated</code>.</p>
+        /// <p>If you specify <code>PlacementTenancy</code>, you must specify at least one subnet for <code>VPCZoneIdentifier</code> when you create your group.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/auto-scaling-dedicated-instances.html">Configuring instance tenancy with Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>Valid Values: <code>default</code> | <code>dedicated</code> </p>
         pub fn set_placement_tenancy(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2375,14 +1991,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_placement_tenancy(input);
             self
         }
-        /// <p>The metadata options for the instances. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-config.html#launch-configurations-imds">Configuring the Instance Metadata Options</a> in the
-        /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>The metadata options for the instances. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-config.html#launch-configurations-imds">Configuring the Instance Metadata Options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn metadata_options(mut self, input: crate::model::InstanceMetadataOptions) -> Self {
             self.inner = self.inner.metadata_options(input);
             self
         }
-        /// <p>The metadata options for the instances. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-config.html#launch-configurations-imds">Configuring the Instance Metadata Options</a> in the
-        /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>The metadata options for the instances. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-config.html#launch-configurations-imds">Configuring the Instance Metadata Options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_metadata_options(
             mut self,
             input: std::option::Option<crate::model::InstanceMetadataOptions>,
@@ -2394,10 +2008,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateOrUpdateTags`.
     ///
     /// <p>Creates or updates tags for the specified Auto Scaling group.</p>
-    /// <p>When you specify a tag with a key that already exists, the operation overwrites the
-    /// previous tag definition, and you do not get an error message.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-tagging.html">Tagging Auto Scaling groups and
-    /// instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    /// <p>When you specify a tag with a key that already exists, the operation overwrites the previous tag definition, and you do not get an error message.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-tagging.html">Tagging Auto Scaling groups and instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateOrUpdateTags<
         C = aws_smithy_client::erase::DynConnector,
@@ -2475,15 +2087,10 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteAutoScalingGroup`.
     ///
     /// <p>Deletes the specified Auto Scaling group.</p>
-    /// <p>If the group has instances or scaling activities in progress, you must specify the
-    /// option to force the deletion in order for it to succeed.</p>
-    /// <p>If the group has policies, deleting the group deletes the policies, the underlying
-    /// alarm actions, and any alarm that no longer has an associated action.</p>
-    /// <p>To remove instances from the Auto Scaling group before deleting it, call the <a>DetachInstances</a> API with the list of instances and the option to
-    /// decrement the desired capacity. This ensures that Amazon EC2 Auto Scaling does not launch replacement
-    /// instances.</p>
-    /// <p>To terminate all instances before deleting the Auto Scaling group, call the <a>UpdateAutoScalingGroup</a> API and set the minimum size and desired capacity
-    /// of the Auto Scaling group to zero.</p>
+    /// <p>If the group has instances or scaling activities in progress, you must specify the option to force the deletion in order for it to succeed.</p>
+    /// <p>If the group has policies, deleting the group deletes the policies, the underlying alarm actions, and any alarm that no longer has an associated action.</p>
+    /// <p>To remove instances from the Auto Scaling group before deleting it, call the <code>DetachInstances</code> API with the list of instances and the option to decrement the desired capacity. This ensures that Amazon EC2 Auto Scaling does not launch replacement instances.</p>
+    /// <p>To terminate all instances before deleting the Auto Scaling group, call the <code>UpdateAutoScalingGroup</code> API and set the minimum size and desired capacity of the Auto Scaling group to zero.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAutoScalingGroup<
         C = aws_smithy_client::erase::DynConnector,
@@ -2553,16 +2160,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_auto_scaling_group_name(input);
             self
         }
-        /// <p>Specifies that the group is to be deleted along with all instances associated with the
-        /// group, without waiting for all instances to be terminated. This parameter also deletes
-        /// any outstanding lifecycle actions associated with the group.</p>
+        /// <p>Specifies that the group is to be deleted along with all instances associated with the group, without waiting for all instances to be terminated. This parameter also deletes any outstanding lifecycle actions associated with the group.</p>
         pub fn force_delete(mut self, input: bool) -> Self {
             self.inner = self.inner.force_delete(input);
             self
         }
-        /// <p>Specifies that the group is to be deleted along with all instances associated with the
-        /// group, without waiting for all instances to be terminated. This parameter also deletes
-        /// any outstanding lifecycle actions associated with the group.</p>
+        /// <p>Specifies that the group is to be deleted along with all instances associated with the group, without waiting for all instances to be terminated. This parameter also deletes any outstanding lifecycle actions associated with the group.</p>
         pub fn set_force_delete(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_force_delete(input);
             self
@@ -2571,8 +2174,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteLaunchConfiguration`.
     ///
     /// <p>Deletes the specified launch configuration.</p>
-    /// <p>The launch configuration must not be attached to an Auto Scaling group. When this call
-    /// completes, the launch configuration is no longer available for use.</p>
+    /// <p>The launch configuration must not be attached to an Auto Scaling group. When this call completes, the launch configuration is no longer available for use.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteLaunchConfiguration<
         C = aws_smithy_client::erase::DynConnector,
@@ -2646,9 +2248,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteLifecycleHook`.
     ///
     /// <p>Deletes the specified lifecycle hook.</p>
-    /// <p>If there are any outstanding lifecycle actions, they are completed first
-    /// (<code>ABANDON</code> for launching instances, <code>CONTINUE</code> for terminating
-    /// instances).</p>
+    /// <p>If there are any outstanding lifecycle actions, they are completed first (<code>ABANDON</code> for launching instances, <code>CONTINUE</code> for terminating instances).</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteLifecycleHook<
         C = aws_smithy_client::erase::DynConnector,
@@ -2818,11 +2418,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeletePolicy`.
     ///
     /// <p>Deletes the specified scaling policy.</p>
-    /// <p>Deleting either a step scaling policy or a simple scaling policy deletes the
-    /// underlying alarm action, but does not delete the alarm, even if it no longer has an
-    /// associated action.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/deleting-scaling-policy.html">Deleting a scaling
-    /// policy</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    /// <p>Deleting either a step scaling policy or a simple scaling policy deletes the underlying alarm action, but does not delete the alarm, even if it no longer has an associated action.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/deleting-scaling-policy.html">Deleting a scaling policy</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeletePolicy<
         C = aws_smithy_client::erase::DynConnector,
@@ -3069,8 +2666,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DeleteWarmPool`.
     ///
     /// <p>Deletes the warm pool for the specified Auto Scaling group.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-warm-pools.html">Warm pools for
-    /// Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-warm-pools.html">Warm pools for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteWarmPool<
         C = aws_smithy_client::erase::DynConnector,
@@ -3140,18 +2736,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_auto_scaling_group_name(input);
             self
         }
-        /// <p>Specifies that the warm pool is to be deleted along with all of its associated
-        /// instances, without waiting for all instances to be terminated. This parameter also
-        /// deletes any outstanding lifecycle actions associated with the warm pool
-        /// instances.</p>
+        /// <p>Specifies that the warm pool is to be deleted along with all of its associated instances, without waiting for all instances to be terminated. This parameter also deletes any outstanding lifecycle actions associated with the warm pool instances.</p>
         pub fn force_delete(mut self, input: bool) -> Self {
             self.inner = self.inner.force_delete(input);
             self
         }
-        /// <p>Specifies that the warm pool is to be deleted along with all of its associated
-        /// instances, without waiting for all instances to be terminated. This parameter also
-        /// deletes any outstanding lifecycle actions associated with the warm pool
-        /// instances.</p>
+        /// <p>Specifies that the warm pool is to be deleted along with all of its associated instances, without waiting for all instances to be terminated. This parameter also deletes any outstanding lifecycle actions associated with the warm pool instances.</p>
         pub fn set_force_delete(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_force_delete(input);
             self
@@ -3160,10 +2750,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAccountLimits`.
     ///
     /// <p>Describes the current Amazon EC2 Auto Scaling resource quotas for your account.</p>
-    /// <p>When you establish an Amazon Web Services account, the account has initial quotas on the maximum
-    /// number of Auto Scaling groups and launch configurations that you can create in a given Region.
-    /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon EC2 Auto Scaling service
-    /// quotas</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    /// <p>When you establish an Amazon Web Services account, the account has initial quotas on the maximum number of Auto Scaling groups and launch configurations that you can create in a given Region. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon EC2 Auto Scaling service quotas</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAccountLimits<
         C = aws_smithy_client::erase::DynConnector,
@@ -3223,25 +2810,12 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeAdjustmentTypes`.
     ///
-    /// <p>Describes the available adjustment types for step scaling and simple scaling
-    /// policies.</p>
+    /// <p>Describes the available adjustment types for step scaling and simple scaling policies.</p>
     /// <p>The following adjustment types are supported:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ChangeInCapacity</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ExactCapacity</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PercentChangeInCapacity</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>ChangeInCapacity</code> </p> </li>
+    /// <li> <p> <code>ExactCapacity</code> </p> </li>
+    /// <li> <p> <code>PercentChangeInCapacity</code> </p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAdjustmentTypes<
@@ -3303,12 +2877,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeAutoScalingGroups`.
     ///
     /// <p>Gets information about the Auto Scaling groups in the account and Region.</p>
-    /// <p>If you specify Auto Scaling group names, the output includes information for only the
-    /// specified Auto Scaling groups. If you specify filters, the output includes information for only
-    /// those Auto Scaling groups that meet the filter criteria. If you do not specify group names or
-    /// filters, the output includes information for all Auto Scaling groups. </p>
-    /// <p>This operation also returns information about instances in Auto Scaling groups. To retrieve
-    /// information about the instances in a warm pool, you must call the <a>DescribeWarmPool</a> API. </p>
+    /// <p>If you specify Auto Scaling group names, the output includes information for only the specified Auto Scaling groups. If you specify filters, the output includes information for only those Auto Scaling groups that meet the filter criteria. If you do not specify group names or filters, the output includes information for all Auto Scaling groups. </p>
+    /// <p>This operation also returns information about instances in Auto Scaling groups. To retrieve information about the instances in a warm pool, you must call the <code>DescribeWarmPool</code> API. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAutoScalingGroups<
         C = aws_smithy_client::erase::DynConnector,
@@ -3369,15 +2939,13 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_auto_scaling_group_names`](Self::set_auto_scaling_group_names).
         ///
-        /// <p>The names of the Auto Scaling groups. By default, you can only specify up to 50 names. You can
-        /// optionally increase this limit using the <code>MaxRecords</code> parameter.</p>
+        /// <p>The names of the Auto Scaling groups. By default, you can only specify up to 50 names. You can optionally increase this limit using the <code>MaxRecords</code> parameter.</p>
         /// <p>If you omit this parameter, all Auto Scaling groups are described.</p>
         pub fn auto_scaling_group_names(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.auto_scaling_group_names(input.into());
             self
         }
-        /// <p>The names of the Auto Scaling groups. By default, you can only specify up to 50 names. You can
-        /// optionally increase this limit using the <code>MaxRecords</code> parameter.</p>
+        /// <p>The names of the Auto Scaling groups. By default, you can only specify up to 50 names. You can optionally increase this limit using the <code>MaxRecords</code> parameter.</p>
         /// <p>If you omit this parameter, all Auto Scaling groups are described.</p>
         pub fn set_auto_scaling_group_names(
             mut self,
@@ -3386,26 +2954,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_auto_scaling_group_names(input);
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a
-        /// previous call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a
-        /// previous call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of items to return with this call. The default value is
-        /// <code>50</code> and the maximum value is <code>100</code>.</p>
+        /// <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p>
         pub fn max_records(mut self, input: i32) -> Self {
             self.inner = self.inner.max_records(input);
             self
         }
-        /// <p>The maximum number of items to return with this call. The default value is
-        /// <code>50</code> and the maximum value is <code>100</code>.</p>
+        /// <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_records(input);
             self
@@ -3414,14 +2978,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>One or more filters to limit the results based on specific tags.
-        /// </p>
+        /// <p>One or more filters to limit the results based on specific tags. </p>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             self.inner = self.inner.filters(input);
             self
         }
-        /// <p>One or more filters to limit the results based on specific tags.
-        /// </p>
+        /// <p>One or more filters to limit the results based on specific tags. </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -3493,15 +3055,13 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_instance_ids`](Self::set_instance_ids).
         ///
-        /// <p>The IDs of the instances. If you omit this parameter, all Auto Scaling instances are
-        /// described. If you specify an ID that does not exist, it is ignored with no error.</p>
+        /// <p>The IDs of the instances. If you omit this parameter, all Auto Scaling instances are described. If you specify an ID that does not exist, it is ignored with no error.</p>
         /// <p>Array Members: Maximum number of 50 items.</p>
         pub fn instance_ids(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_ids(input.into());
             self
         }
-        /// <p>The IDs of the instances. If you omit this parameter, all Auto Scaling instances are
-        /// described. If you specify an ID that does not exist, it is ignored with no error.</p>
+        /// <p>The IDs of the instances. If you omit this parameter, all Auto Scaling instances are described. If you specify an ID that does not exist, it is ignored with no error.</p>
         /// <p>Array Members: Maximum number of 50 items.</p>
         pub fn set_instance_ids(
             mut self,
@@ -3510,26 +3070,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_ids(input);
             self
         }
-        /// <p>The maximum number of items to return with this call. The default value is
-        /// <code>50</code> and the maximum value is <code>50</code>.</p>
+        /// <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>50</code>.</p>
         pub fn max_records(mut self, input: i32) -> Self {
             self.inner = self.inner.max_records(input);
             self
         }
-        /// <p>The maximum number of items to return with this call. The default value is
-        /// <code>50</code> and the maximum value is <code>50</code>.</p>
+        /// <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>50</code>.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_records(input);
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a
-        /// previous call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a
-        /// previous call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3600,43 +3156,16 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeInstanceRefreshes`.
     ///
     /// <p>Gets information about the instance refreshes for the specified Auto Scaling group.</p>
-    /// <p>This operation is part of the <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">instance refresh
-    /// feature</a> in Amazon EC2 Auto Scaling, which helps you update instances in your Auto Scaling group
-    /// after you make configuration changes.</p>
-    /// <p>To help you determine the status of an instance refresh, this operation returns
-    /// information about the instance refreshes you previously initiated, including their
-    /// status, end time, the percentage of the instance refresh that is complete, and the
-    /// number of instances remaining to update before the instance refresh is complete.</p>
+    /// <p>This operation is part of the <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">instance refresh feature</a> in Amazon EC2 Auto Scaling, which helps you update instances in your Auto Scaling group after you make configuration changes.</p>
+    /// <p>To help you determine the status of an instance refresh, this operation returns information about the instance refreshes you previously initiated, including their status, end time, the percentage of the instance refresh that is complete, and the number of instances remaining to update before the instance refresh is complete.</p>
     /// <p>The following are the possible statuses: </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Pending</code> - The request was created, but the operation has not
-    /// started.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>InProgress</code> - The operation is in progress.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Successful</code> - The operation completed successfully.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Failed</code> - The operation failed to complete. You can troubleshoot
-    /// using the status reason and the scaling activities. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Cancelling</code> - An ongoing operation is being cancelled.
-    /// Cancellation does not roll back any replacements that have already been
-    /// completed, but it prevents new replacements from being started. </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Cancelled</code> - The operation is cancelled. </p>
-    /// </li>
+    /// <li> <p> <code>Pending</code> - The request was created, but the operation has not started.</p> </li>
+    /// <li> <p> <code>InProgress</code> - The operation is in progress.</p> </li>
+    /// <li> <p> <code>Successful</code> - The operation completed successfully.</p> </li>
+    /// <li> <p> <code>Failed</code> - The operation failed to complete. You can troubleshoot using the status reason and the scaling activities. </p> </li>
+    /// <li> <p> <code>Cancelling</code> - An ongoing operation is being cancelled. Cancellation does not roll back any replacements that have already been completed, but it prevents new replacements from being started. </p> </li>
+    /// <li> <p> <code>Cancelled</code> - The operation is cancelled. </p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeInstanceRefreshes<
@@ -3724,26 +3253,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_refresh_ids(input);
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a
-        /// previous call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a
-        /// previous call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of items to return with this call. The default value is
-        /// <code>50</code> and the maximum value is <code>100</code>.</p>
+        /// <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p>
         pub fn max_records(mut self, input: i32) -> Self {
             self.inner = self.inner.max_records(input);
             self
         }
-        /// <p>The maximum number of items to return with this call. The default value is
-        /// <code>50</code> and the maximum value is <code>100</code>.</p>
+        /// <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_records(input);
             self
@@ -3812,15 +3337,13 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_launch_configuration_names`](Self::set_launch_configuration_names).
         ///
-        /// <p>The launch configuration names. If you omit this parameter, all launch configurations
-        /// are described.</p>
+        /// <p>The launch configuration names. If you omit this parameter, all launch configurations are described.</p>
         /// <p>Array Members: Maximum number of 50 items.</p>
         pub fn launch_configuration_names(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.launch_configuration_names(input.into());
             self
         }
-        /// <p>The launch configuration names. If you omit this parameter, all launch configurations
-        /// are described.</p>
+        /// <p>The launch configuration names. If you omit this parameter, all launch configurations are described.</p>
         /// <p>Array Members: Maximum number of 50 items.</p>
         pub fn set_launch_configuration_names(
             mut self,
@@ -3829,26 +3352,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_launch_configuration_names(input);
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a
-        /// previous call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a
-        /// previous call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of items to return with this call. The default value is
-        /// <code>50</code> and the maximum value is <code>100</code>.</p>
+        /// <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p>
         pub fn max_records(mut self, input: i32) -> Self {
             self.inner = self.inner.max_records(input);
             self
         }
-        /// <p>The maximum number of items to return with this call. The default value is
-        /// <code>50</code> and the maximum value is <code>100</code>.</p>
+        /// <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_records(input);
             self
@@ -3930,14 +3449,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_lifecycle_hook_names`](Self::set_lifecycle_hook_names).
         ///
-        /// <p>The names of one or more lifecycle hooks. If you omit this parameter, all lifecycle
-        /// hooks are described.</p>
+        /// <p>The names of one or more lifecycle hooks. If you omit this parameter, all lifecycle hooks are described.</p>
         pub fn lifecycle_hook_names(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.lifecycle_hook_names(input.into());
             self
         }
-        /// <p>The names of one or more lifecycle hooks. If you omit this parameter, all lifecycle
-        /// hooks are described.</p>
+        /// <p>The names of one or more lifecycle hooks. If you omit this parameter, all lifecycle hooks are described.</p>
         pub fn set_lifecycle_hook_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3951,16 +3468,8 @@ pub mod fluent_builders {
     /// <p>Describes the available types of lifecycle hooks.</p>
     /// <p>The following hook types are supported:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>autoscaling:EC2_INSTANCE_LAUNCHING</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>autoscaling:EC2_INSTANCE_TERMINATING</code>
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>autoscaling:EC2_INSTANCE_LAUNCHING</code> </p> </li>
+    /// <li> <p> <code>autoscaling:EC2_INSTANCE_TERMINATING</code> </p> </li>
     /// </ul>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLifecycleHookTypes<
@@ -4022,27 +3531,10 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeLoadBalancers`.
     ///
     /// <p>Gets information about the load balancers for the specified Auto Scaling group.</p>
-    /// <p>This operation describes only Classic Load Balancers. If you have Application Load
-    /// Balancers, Network Load Balancers, or Gateway Load Balancers, use the <a>DescribeLoadBalancerTargetGroups</a> API instead.</p>
-    /// <p>To determine the availability of registered instances, use the <code>State</code>
-    /// element in the response. When you attach a load balancer to an Auto Scaling group, the initial
-    /// <code>State</code> value is <code>Adding</code>. The state transitions to
-    /// <code>Added</code> after all Auto Scaling instances are registered with the load balancer.
-    /// If Elastic Load Balancing health checks are enabled for the Auto Scaling group, the state transitions to
-    /// <code>InService</code> after at least one Auto Scaling instance passes the health check.
-    /// When the load balancer is in the <code>InService</code> state, Amazon EC2 Auto Scaling can terminate
-    /// and replace any instances that are reported as unhealthy. If no registered instances
-    /// pass the health checks, the load balancer doesn't enter the <code>InService</code>
-    /// state. </p>
-    /// <p>Load balancers also have an <code>InService</code> state if you attach them in the
-    /// <a>CreateAutoScalingGroup</a> API call. If your load balancer state is
-    /// <code>InService</code>, but it is not working properly, check the scaling activities
-    /// by calling <a>DescribeScalingActivities</a> and take any corrective actions
-    /// necessary.</p>
-    /// <p>For help with failed health checks, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ts-as-healthchecks.html">Troubleshooting Amazon EC2 Auto Scaling:
-    /// Health checks</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. For more
-    /// information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Elastic Load Balancing and
-    /// Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
+    /// <p>This operation describes only Classic Load Balancers. If you have Application Load Balancers, Network Load Balancers, or Gateway Load Balancers, use the <code>DescribeLoadBalancerTargetGroups</code> API instead.</p>
+    /// <p>To determine the availability of registered instances, use the <code>State</code> element in the response. When you attach a load balancer to an Auto Scaling group, the initial <code>State</code> value is <code>Adding</code>. The state transitions to <code>Added</code> after all Auto Scaling instances are registered with the load balancer. If Elastic Load Balancing health checks are enabled for the Auto Scaling group, the state transitions to <code>InService</code> after at least one Auto Scaling instance passes the health check. When the load balancer is in the <code>InService</code> state, Amazon EC2 Auto Scaling can terminate and replace any instances that are reported as unhealthy. If no registered instances pass the health checks, the load balancer doesn't enter the <code>InService</code> state. </p>
+    /// <p>Load balancers also have an <code>InService</code> state if you attach them in the <code>CreateAutoScalingGroup</code> API call. If your load balancer state is <code>InService</code>, but it is not working properly, check the scaling activities by calling <code>DescribeScalingActivities</code> and take any corrective actions necessary.</p>
+    /// <p>For help with failed health checks, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ts-as-healthchecks.html">Troubleshooting Amazon EC2 Auto Scaling: Health checks</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Elastic Load Balancing and Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLoadBalancers<
         C = aws_smithy_client::erase::DynConnector,
@@ -4112,26 +3604,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_auto_scaling_group_name(input);
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a
-        /// previous call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a
-        /// previous call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of items to return with this call. The default value is
-        /// <code>100</code> and the maximum value is <code>100</code>.</p>
+        /// <p>The maximum number of items to return with this call. The default value is <code>100</code> and the maximum value is <code>100</code>.</p>
         pub fn max_records(mut self, input: i32) -> Self {
             self.inner = self.inner.max_records(input);
             self
         }
-        /// <p>The maximum number of items to return with this call. The default value is
-        /// <code>100</code> and the maximum value is <code>100</code>.</p>
+        /// <p>The maximum number of items to return with this call. The default value is <code>100</code> and the maximum value is <code>100</code>.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_records(input);
             self
@@ -4139,26 +3627,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeLoadBalancerTargetGroups`.
     ///
-    /// <p>Gets information about the load balancer target groups for the specified Auto Scaling
-    /// group.</p>
-    /// <p>To determine the availability of registered instances, use the <code>State</code>
-    /// element in the response. When you attach a target group to an Auto Scaling group, the initial
-    /// <code>State</code> value is <code>Adding</code>. The state transitions to
-    /// <code>Added</code> after all Auto Scaling instances are registered with the target group. If
-    /// Elastic Load Balancing health checks are enabled for the Auto Scaling group, the state transitions to
-    /// <code>InService</code> after at least one Auto Scaling instance passes the health check.
-    /// When the target group is in the <code>InService</code> state, Amazon EC2 Auto Scaling can terminate and
-    /// replace any instances that are reported as unhealthy. If no registered instances pass
-    /// the health checks, the target group doesn't enter the <code>InService</code> state. </p>
-    /// <p>Target groups also have an <code>InService</code> state if you attach them in the
-    /// <a>CreateAutoScalingGroup</a> API call. If your target group state is
-    /// <code>InService</code>, but it is not working properly, check the scaling activities
-    /// by calling <a>DescribeScalingActivities</a> and take any corrective actions
-    /// necessary.</p>
-    /// <p>For help with failed health checks, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ts-as-healthchecks.html">Troubleshooting Amazon EC2 Auto Scaling:
-    /// Health checks</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. For more
-    /// information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Elastic Load Balancing and
-    /// Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
+    /// <p>Gets information about the load balancer target groups for the specified Auto Scaling group.</p>
+    /// <p>To determine the availability of registered instances, use the <code>State</code> element in the response. When you attach a target group to an Auto Scaling group, the initial <code>State</code> value is <code>Adding</code>. The state transitions to <code>Added</code> after all Auto Scaling instances are registered with the target group. If Elastic Load Balancing health checks are enabled for the Auto Scaling group, the state transitions to <code>InService</code> after at least one Auto Scaling instance passes the health check. When the target group is in the <code>InService</code> state, Amazon EC2 Auto Scaling can terminate and replace any instances that are reported as unhealthy. If no registered instances pass the health checks, the target group doesn't enter the <code>InService</code> state. </p>
+    /// <p>Target groups also have an <code>InService</code> state if you attach them in the <code>CreateAutoScalingGroup</code> API call. If your target group state is <code>InService</code>, but it is not working properly, check the scaling activities by calling <code>DescribeScalingActivities</code> and take any corrective actions necessary.</p>
+    /// <p>For help with failed health checks, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ts-as-healthchecks.html">Troubleshooting Amazon EC2 Auto Scaling: Health checks</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Elastic Load Balancing and Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLoadBalancerTargetGroups<
         C = aws_smithy_client::erase::DynConnector,
@@ -4228,26 +3700,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_auto_scaling_group_name(input);
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a
-        /// previous call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a
-        /// previous call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of items to return with this call. The default value is
-        /// <code>100</code> and the maximum value is <code>100</code>.</p>
+        /// <p>The maximum number of items to return with this call. The default value is <code>100</code> and the maximum value is <code>100</code>.</p>
         pub fn max_records(mut self, input: i32) -> Self {
             self.inner = self.inner.max_records(input);
             self
         }
-        /// <p>The maximum number of items to return with this call. The default value is
-        /// <code>100</code> and the maximum value is <code>100</code>.</p>
+        /// <p>The maximum number of items to return with this call. The default value is <code>100</code> and the maximum value is <code>100</code>.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_records(input);
             self
@@ -4256,8 +3724,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeMetricCollectionTypes`.
     ///
     /// <p>Describes the available CloudWatch metrics for Amazon EC2 Auto Scaling.</p>
-    /// <p>The <code>GroupStandbyInstances</code> metric is not returned by default. You must
-    /// explicitly request this metric when calling the <a>EnableMetricsCollection</a> API.</p>
+    /// <p>The <code>GroupStandbyInstances</code> metric is not returned by default. You must explicitly request this metric when calling the <code>EnableMetricsCollection</code> API.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeMetricCollectionTypes<
         C = aws_smithy_client::erase::DynConnector,
@@ -4317,8 +3784,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeNotificationConfigurations`.
     ///
-    /// <p>Gets information about the Amazon SNS notifications that are configured for one or more
-    /// Auto Scaling groups.</p>
+    /// <p>Gets information about the Amazon SNS notifications that are configured for one or more Auto Scaling groups.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeNotificationConfigurations<
         C = aws_smithy_client::erase::DynConnector,
@@ -4394,26 +3860,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_auto_scaling_group_names(input);
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a
-        /// previous call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a
-        /// previous call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of items to return with this call. The default value is
-        /// <code>50</code> and the maximum value is <code>100</code>.</p>
+        /// <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p>
         pub fn max_records(mut self, input: i32) -> Self {
             self.inner = self.inner.max_records(input);
             self
         }
-        /// <p>The maximum number of items to return with this call. The default value is
-        /// <code>50</code> and the maximum value is <code>100</code>.</p>
+        /// <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_records(input);
             self
@@ -4495,17 +3957,13 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_policy_names`](Self::set_policy_names).
         ///
-        /// <p>The names of one or more policies. If you omit this parameter, all policies are
-        /// described. If a group name is provided, the results are limited to that group. If you
-        /// specify an unknown policy name, it is ignored with no error.</p>
+        /// <p>The names of one or more policies. If you omit this parameter, all policies are described. If a group name is provided, the results are limited to that group. If you specify an unknown policy name, it is ignored with no error.</p>
         /// <p>Array Members: Maximum number of 50 items.</p>
         pub fn policy_names(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.policy_names(input.into());
             self
         }
-        /// <p>The names of one or more policies. If you omit this parameter, all policies are
-        /// described. If a group name is provided, the results are limited to that group. If you
-        /// specify an unknown policy name, it is ignored with no error.</p>
+        /// <p>The names of one or more policies. If you omit this parameter, all policies are described. If a group name is provided, the results are limited to that group. If you specify an unknown policy name, it is ignored with no error.</p>
         /// <p>Array Members: Maximum number of 50 items.</p>
         pub fn set_policy_names(
             mut self,
@@ -4518,16 +3976,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_policy_types`](Self::set_policy_types).
         ///
-        /// <p>One or more policy types. The valid values are <code>SimpleScaling</code>,
-        /// <code>StepScaling</code>, <code>TargetTrackingScaling</code>, and
-        /// <code>PredictiveScaling</code>.</p>
+        /// <p>One or more policy types. The valid values are <code>SimpleScaling</code>, <code>StepScaling</code>, <code>TargetTrackingScaling</code>, and <code>PredictiveScaling</code>.</p>
         pub fn policy_types(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.policy_types(input.into());
             self
         }
-        /// <p>One or more policy types. The valid values are <code>SimpleScaling</code>,
-        /// <code>StepScaling</code>, <code>TargetTrackingScaling</code>, and
-        /// <code>PredictiveScaling</code>.</p>
+        /// <p>One or more policy types. The valid values are <code>SimpleScaling</code>, <code>StepScaling</code>, <code>TargetTrackingScaling</code>, and <code>PredictiveScaling</code>.</p>
         pub fn set_policy_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4535,26 +3989,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_policy_types(input);
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a
-        /// previous call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a
-        /// previous call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of items to be returned with each call. The default value is
-        /// <code>50</code> and the maximum value is <code>100</code>.</p>
+        /// <p>The maximum number of items to be returned with each call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p>
         pub fn max_records(mut self, input: i32) -> Self {
             self.inner = self.inner.max_records(input);
             self
         }
-        /// <p>The maximum number of items to be returned with each call. The default value is
-        /// <code>50</code> and the maximum value is <code>100</code>.</p>
+        /// <p>The maximum number of items to be returned with each call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_records(input);
             self
@@ -4563,14 +4013,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeScalingActivities`.
     ///
     /// <p>Gets information about the scaling activities in the account and Region.</p>
-    /// <p>When scaling events occur, you see a record of the scaling activity in the scaling
-    /// activities. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-verify-scaling-activity.html">Verifying a scaling
-    /// activity for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    /// <p>If the scaling event succeeds, the value of the <code>StatusCode</code> element in the
-    /// response is <code>Successful</code>. If an attempt to launch instances failed, the
-    /// <code>StatusCode</code> value is <code>Failed</code> or <code>Cancelled</code> and
-    /// the <code>StatusMessage</code> element in the response indicates the cause of the
-    /// failure. For help interpreting the <code>StatusMessage</code>, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/CHAP_Troubleshooting.html">Troubleshooting Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
+    /// <p>When scaling events occur, you see a record of the scaling activity in the scaling activities. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-verify-scaling-activity.html">Verifying a scaling activity for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    /// <p>If the scaling event succeeds, the value of the <code>StatusCode</code> element in the response is <code>Successful</code>. If an attempt to launch instances failed, the <code>StatusCode</code> value is <code>Failed</code> or <code>Cancelled</code> and the <code>StatusMessage</code> element in the response indicates the cause of the failure. For help interpreting the <code>StatusMessage</code>, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/CHAP_Troubleshooting.html">Troubleshooting Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeScalingActivities<
         C = aws_smithy_client::erase::DynConnector,
@@ -4631,19 +4075,13 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_activity_ids`](Self::set_activity_ids).
         ///
-        /// <p>The activity IDs of the desired scaling activities. If you omit this parameter, all
-        /// activities for the past six weeks are described. If unknown activities are requested,
-        /// they are ignored with no error. If you specify an Auto Scaling group, the results are limited to
-        /// that group.</p>
+        /// <p>The activity IDs of the desired scaling activities. If you omit this parameter, all activities for the past six weeks are described. If unknown activities are requested, they are ignored with no error. If you specify an Auto Scaling group, the results are limited to that group.</p>
         /// <p>Array Members: Maximum number of 50 IDs.</p>
         pub fn activity_ids(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.activity_ids(input.into());
             self
         }
-        /// <p>The activity IDs of the desired scaling activities. If you omit this parameter, all
-        /// activities for the past six weeks are described. If unknown activities are requested,
-        /// they are ignored with no error. If you specify an Auto Scaling group, the results are limited to
-        /// that group.</p>
+        /// <p>The activity IDs of the desired scaling activities. If you omit this parameter, all activities for the past six weeks are described. If unknown activities are requested, they are ignored with no error. If you specify an Auto Scaling group, the results are limited to that group.</p>
         /// <p>Array Members: Maximum number of 50 IDs.</p>
         pub fn set_activity_ids(
             mut self,
@@ -4675,26 +4113,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_include_deleted_groups(input);
             self
         }
-        /// <p>The maximum number of items to return with this call. The default value is
-        /// <code>100</code> and the maximum value is <code>100</code>.</p>
+        /// <p>The maximum number of items to return with this call. The default value is <code>100</code> and the maximum value is <code>100</code>.</p>
         pub fn max_records(mut self, input: i32) -> Self {
             self.inner = self.inner.max_records(input);
             self
         }
-        /// <p>The maximum number of items to return with this call. The default value is
-        /// <code>100</code> and the maximum value is <code>100</code>.</p>
+        /// <p>The maximum number of items to return with this call. The default value is <code>100</code> and the maximum value is <code>100</code>.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_records(input);
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a
-        /// previous call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a
-        /// previous call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -4702,8 +4136,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeScalingProcessTypes`.
     ///
-    /// <p>Describes the scaling process types for use with the <a>ResumeProcesses</a>
-    /// and <a>SuspendProcesses</a> APIs.</p>
+    /// <p>Describes the scaling process types for use with the <code>ResumeProcesses</code> and <code>SuspendProcesses</code> APIs.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeScalingProcessTypes<
         C = aws_smithy_client::erase::DynConnector,
@@ -4763,10 +4196,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeScheduledActions`.
     ///
-    /// <p>Gets information about the scheduled actions that haven't run or that have not reached
-    /// their end time.</p>
-    /// <p>To describe the scaling activities for scheduled actions that have already run, call
-    /// the <a>DescribeScalingActivities</a> API.</p>
+    /// <p>Gets information about the scheduled actions that haven't run or that have not reached their end time.</p>
+    /// <p>To describe the scaling activities for scheduled actions that have already run, call the <code>DescribeScalingActivities</code> API.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeScheduledActions<
         C = aws_smithy_client::erase::DynConnector,
@@ -4840,17 +4271,13 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_scheduled_action_names`](Self::set_scheduled_action_names).
         ///
-        /// <p>The names of one or more scheduled actions. If you omit this parameter, all scheduled
-        /// actions are described. If you specify an unknown scheduled action, it is ignored with no
-        /// error.</p>
+        /// <p>The names of one or more scheduled actions. If you omit this parameter, all scheduled actions are described. If you specify an unknown scheduled action, it is ignored with no error.</p>
         /// <p>Array Members: Maximum number of 50 actions.</p>
         pub fn scheduled_action_names(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.scheduled_action_names(input.into());
             self
         }
-        /// <p>The names of one or more scheduled actions. If you omit this parameter, all scheduled
-        /// actions are described. If you specify an unknown scheduled action, it is ignored with no
-        /// error.</p>
+        /// <p>The names of one or more scheduled actions. If you omit this parameter, all scheduled actions are described. If you specify an unknown scheduled action, it is ignored with no error.</p>
         /// <p>Array Members: Maximum number of 50 actions.</p>
         pub fn set_scheduled_action_names(
             mut self,
@@ -4859,14 +4286,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_scheduled_action_names(input);
             self
         }
-        /// <p>The earliest scheduled start time to return. If scheduled action names are provided,
-        /// this parameter is ignored.</p>
+        /// <p>The earliest scheduled start time to return. If scheduled action names are provided, this parameter is ignored.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.start_time(input);
             self
         }
-        /// <p>The earliest scheduled start time to return. If scheduled action names are provided,
-        /// this parameter is ignored.</p>
+        /// <p>The earliest scheduled start time to return. If scheduled action names are provided, this parameter is ignored.</p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -4874,14 +4299,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_start_time(input);
             self
         }
-        /// <p>The latest scheduled start time to return. If scheduled action names are provided,
-        /// this parameter is ignored.</p>
+        /// <p>The latest scheduled start time to return. If scheduled action names are provided, this parameter is ignored.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.end_time(input);
             self
         }
-        /// <p>The latest scheduled start time to return. If scheduled action names are provided,
-        /// this parameter is ignored.</p>
+        /// <p>The latest scheduled start time to return. If scheduled action names are provided, this parameter is ignored.</p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -4889,26 +4312,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_end_time(input);
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a
-        /// previous call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a
-        /// previous call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of items to return with this call. The default value is
-        /// <code>50</code> and the maximum value is <code>100</code>.</p>
+        /// <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p>
         pub fn max_records(mut self, input: i32) -> Self {
             self.inner = self.inner.max_records(input);
             self
         }
-        /// <p>The maximum number of items to return with this call. The default value is
-        /// <code>50</code> and the maximum value is <code>100</code>.</p>
+        /// <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_records(input);
             self
@@ -4917,14 +4336,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeTags`.
     ///
     /// <p>Describes the specified tags.</p>
-    /// <p>You can use filters to limit the results. For example, you can query for the tags for
-    /// a specific Auto Scaling group. You can specify multiple values for a filter. A tag must match at
-    /// least one of the specified values for it to be included in the results.</p>
-    /// <p>You can also specify multiple filters. The result includes information for a
-    /// particular tag only if it matches all the filters. If there's no match, no special
-    /// message is returned.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-tagging.html">Tagging Auto Scaling groups and
-    /// instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    /// <p>You can use filters to limit the results. For example, you can query for the tags for a specific Auto Scaling group. You can specify multiple values for a filter. A tag must match at least one of the specified values for it to be included in the results.</p>
+    /// <p>You can also specify multiple filters. The result includes information for a particular tag only if it matches all the filters. If there's no match, no special message is returned.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-tagging.html">Tagging Auto Scaling groups and instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTags<
         C = aws_smithy_client::erase::DynConnector,
@@ -4985,14 +4399,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>One or more filters to scope the tags to return. The maximum number of filters per
-        /// filter type (for example, <code>auto-scaling-group</code>) is 1000.</p>
+        /// <p>One or more filters to scope the tags to return. The maximum number of filters per filter type (for example, <code>auto-scaling-group</code>) is 1000.</p>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             self.inner = self.inner.filters(input);
             self
         }
-        /// <p>One or more filters to scope the tags to return. The maximum number of filters per
-        /// filter type (for example, <code>auto-scaling-group</code>) is 1000.</p>
+        /// <p>One or more filters to scope the tags to return. The maximum number of filters per filter type (for example, <code>auto-scaling-group</code>) is 1000.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -5000,26 +4412,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a
-        /// previous call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of items to return. (You received this token from a
-        /// previous call.)</p>
+        /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>The maximum number of items to return with this call. The default value is
-        /// <code>50</code> and the maximum value is <code>100</code>.</p>
+        /// <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p>
         pub fn max_records(mut self, input: i32) -> Self {
             self.inner = self.inner.max_records(input);
             self
         }
-        /// <p>The maximum number of items to return with this call. The default value is
-        /// <code>50</code> and the maximum value is <code>100</code>.</p>
+        /// <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_records(input);
             self
@@ -5028,9 +4436,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeTerminationPolicyTypes`.
     ///
     /// <p>Describes the termination policies supported by Amazon EC2 Auto Scaling.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling which Auto Scaling
-    /// instances terminate during scale in</a> in the
-    /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling which Auto Scaling instances terminate during scale in</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeTerminationPolicyTypes<
         C = aws_smithy_client::erase::DynConnector,
@@ -5091,8 +4497,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DescribeWarmPool`.
     ///
     /// <p>Gets information about a warm pool and its instances.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-warm-pools.html">Warm pools for
-    /// Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-warm-pools.html">Warm pools for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeWarmPool<
         C = aws_smithy_client::erase::DynConnector,
@@ -5162,26 +4567,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_auto_scaling_group_name(input);
             self
         }
-        /// <p>The maximum number of instances to return with this call. The maximum value is
-        /// <code>50</code>.</p>
+        /// <p>The maximum number of instances to return with this call. The maximum value is <code>50</code>.</p>
         pub fn max_records(mut self, input: i32) -> Self {
             self.inner = self.inner.max_records(input);
             self
         }
-        /// <p>The maximum number of instances to return with this call. The maximum value is
-        /// <code>50</code>.</p>
+        /// <p>The maximum number of instances to return with this call. The maximum value is <code>50</code>.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_records(input);
             self
         }
-        /// <p>The token for the next set of instances to return. (You received this token from a
-        /// previous call.)</p>
+        /// <p>The token for the next set of instances to return. (You received this token from a previous call.)</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>The token for the next set of instances to return. (You received this token from a
-        /// previous call.)</p>
+        /// <p>The token for the next set of instances to return. (You received this token from a previous call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -5190,15 +4591,10 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DetachInstances`.
     ///
     /// <p>Removes one or more instances from the specified Auto Scaling group.</p>
-    /// <p>After the instances are detached, you can manage them independent of the Auto Scaling
-    /// group.</p>
-    /// <p>If you do not specify the option to decrement the desired capacity, Amazon EC2 Auto Scaling launches
-    /// instances to replace the ones that are detached.</p>
-    /// <p>If there is a Classic Load Balancer attached to the Auto Scaling group, the instances are
-    /// deregistered from the load balancer. If there are target groups attached to the Auto Scaling
-    /// group, the instances are deregistered from the target groups.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/detach-instance-asg.html">Detach EC2 instances from
-    /// your Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    /// <p>After the instances are detached, you can manage them independent of the Auto Scaling group.</p>
+    /// <p>If you do not specify the option to decrement the desired capacity, Amazon EC2 Auto Scaling launches instances to replace the ones that are detached.</p>
+    /// <p>If there is a Classic Load Balancer attached to the Auto Scaling group, the instances are deregistered from the load balancer. If there are target groups attached to the Auto Scaling group, the instances are deregistered from the target groups.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/detach-instance-asg.html">Detach EC2 instances from your Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetachInstances<
         C = aws_smithy_client::erase::DynConnector,
@@ -5285,14 +4681,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_auto_scaling_group_name(input);
             self
         }
-        /// <p>Indicates whether the Auto Scaling group decrements the desired capacity value by the number
-        /// of instances detached.</p>
+        /// <p>Indicates whether the Auto Scaling group decrements the desired capacity value by the number of instances detached.</p>
         pub fn should_decrement_desired_capacity(mut self, input: bool) -> Self {
             self.inner = self.inner.should_decrement_desired_capacity(input);
             self
         }
-        /// <p>Indicates whether the Auto Scaling group decrements the desired capacity value by the number
-        /// of instances detached.</p>
+        /// <p>Indicates whether the Auto Scaling group decrements the desired capacity value by the number of instances detached.</p>
         pub fn set_should_decrement_desired_capacity(
             mut self,
             input: std::option::Option<bool>,
@@ -5304,11 +4698,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `DetachLoadBalancers`.
     ///
     /// <p>Detaches one or more Classic Load Balancers from the specified Auto Scaling group.</p>
-    /// <p>This operation detaches only Classic Load Balancers. If you have Application Load
-    /// Balancers, Network Load Balancers, or Gateway Load Balancers, use the <a>DetachLoadBalancerTargetGroups</a> API instead.</p>
-    /// <p>When you detach a load balancer, it enters the <code>Removing</code> state while
-    /// deregistering the instances in the group. When all instances are deregistered, then you
-    /// can no longer describe the load balancer using the <a>DescribeLoadBalancers</a> API call. The instances remain running.</p>
+    /// <p>This operation detaches only Classic Load Balancers. If you have Application Load Balancers, Network Load Balancers, or Gateway Load Balancers, use the <code>DetachLoadBalancerTargetGroups</code> API instead.</p>
+    /// <p>When you detach a load balancer, it enters the <code>Removing</code> state while deregistering the instances in the group. When all instances are deregistered, then you can no longer describe the load balancer using the <code>DescribeLoadBalancers</code> API call. The instances remain running.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DetachLoadBalancers<
         C = aws_smithy_client::erase::DynConnector,
@@ -5472,14 +4863,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_target_group_ar_ns`](Self::set_target_group_ar_ns).
         ///
-        /// <p>The Amazon Resource Names (ARN) of the target groups. You can specify up to 10 target
-        /// groups.</p>
+        /// <p>The Amazon Resource Names (ARN) of the target groups. You can specify up to 10 target groups.</p>
         pub fn target_group_ar_ns(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.target_group_ar_ns(input.into());
             self
         }
-        /// <p>The Amazon Resource Names (ARN) of the target groups. You can specify up to 10 target
-        /// groups.</p>
+        /// <p>The Amazon Resource Names (ARN) of the target groups. You can specify up to 10 target groups.</p>
         pub fn set_target_group_ar_ns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5566,106 +4955,26 @@ pub mod fluent_builders {
         ///
         /// <p>Specifies one or more of the following metrics:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>GroupMinSize</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GroupMaxSize</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GroupDesiredCapacity</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GroupInServiceInstances</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GroupPendingInstances</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GroupStandbyInstances</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GroupTerminatingInstances</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GroupTotalInstances</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GroupInServiceCapacity</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GroupPendingCapacity</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GroupStandbyCapacity</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GroupTerminatingCapacity</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GroupTotalCapacity</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>WarmPoolDesiredCapacity</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>WarmPoolWarmedCapacity</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>WarmPoolPendingCapacity</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>WarmPoolTerminatingCapacity</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>WarmPoolTotalCapacity</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GroupAndWarmPoolDesiredCapacity</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GroupAndWarmPoolTotalCapacity</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>GroupMinSize</code> </p> </li>
+        /// <li> <p> <code>GroupMaxSize</code> </p> </li>
+        /// <li> <p> <code>GroupDesiredCapacity</code> </p> </li>
+        /// <li> <p> <code>GroupInServiceInstances</code> </p> </li>
+        /// <li> <p> <code>GroupPendingInstances</code> </p> </li>
+        /// <li> <p> <code>GroupStandbyInstances</code> </p> </li>
+        /// <li> <p> <code>GroupTerminatingInstances</code> </p> </li>
+        /// <li> <p> <code>GroupTotalInstances</code> </p> </li>
+        /// <li> <p> <code>GroupInServiceCapacity</code> </p> </li>
+        /// <li> <p> <code>GroupPendingCapacity</code> </p> </li>
+        /// <li> <p> <code>GroupStandbyCapacity</code> </p> </li>
+        /// <li> <p> <code>GroupTerminatingCapacity</code> </p> </li>
+        /// <li> <p> <code>GroupTotalCapacity</code> </p> </li>
+        /// <li> <p> <code>WarmPoolDesiredCapacity</code> </p> </li>
+        /// <li> <p> <code>WarmPoolWarmedCapacity</code> </p> </li>
+        /// <li> <p> <code>WarmPoolPendingCapacity</code> </p> </li>
+        /// <li> <p> <code>WarmPoolTerminatingCapacity</code> </p> </li>
+        /// <li> <p> <code>WarmPoolTotalCapacity</code> </p> </li>
+        /// <li> <p> <code>GroupAndWarmPoolDesiredCapacity</code> </p> </li>
+        /// <li> <p> <code>GroupAndWarmPoolTotalCapacity</code> </p> </li>
         /// </ul>
         /// <p>If you omit this parameter, all metrics are disabled. </p>
         pub fn metrics(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5674,106 +4983,26 @@ pub mod fluent_builders {
         }
         /// <p>Specifies one or more of the following metrics:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>GroupMinSize</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GroupMaxSize</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GroupDesiredCapacity</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GroupInServiceInstances</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GroupPendingInstances</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GroupStandbyInstances</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GroupTerminatingInstances</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GroupTotalInstances</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GroupInServiceCapacity</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GroupPendingCapacity</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GroupStandbyCapacity</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GroupTerminatingCapacity</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GroupTotalCapacity</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>WarmPoolDesiredCapacity</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>WarmPoolWarmedCapacity</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>WarmPoolPendingCapacity</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>WarmPoolTerminatingCapacity</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>WarmPoolTotalCapacity</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GroupAndWarmPoolDesiredCapacity</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GroupAndWarmPoolTotalCapacity</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>GroupMinSize</code> </p> </li>
+        /// <li> <p> <code>GroupMaxSize</code> </p> </li>
+        /// <li> <p> <code>GroupDesiredCapacity</code> </p> </li>
+        /// <li> <p> <code>GroupInServiceInstances</code> </p> </li>
+        /// <li> <p> <code>GroupPendingInstances</code> </p> </li>
+        /// <li> <p> <code>GroupStandbyInstances</code> </p> </li>
+        /// <li> <p> <code>GroupTerminatingInstances</code> </p> </li>
+        /// <li> <p> <code>GroupTotalInstances</code> </p> </li>
+        /// <li> <p> <code>GroupInServiceCapacity</code> </p> </li>
+        /// <li> <p> <code>GroupPendingCapacity</code> </p> </li>
+        /// <li> <p> <code>GroupStandbyCapacity</code> </p> </li>
+        /// <li> <p> <code>GroupTerminatingCapacity</code> </p> </li>
+        /// <li> <p> <code>GroupTotalCapacity</code> </p> </li>
+        /// <li> <p> <code>WarmPoolDesiredCapacity</code> </p> </li>
+        /// <li> <p> <code>WarmPoolWarmedCapacity</code> </p> </li>
+        /// <li> <p> <code>WarmPoolPendingCapacity</code> </p> </li>
+        /// <li> <p> <code>WarmPoolTerminatingCapacity</code> </p> </li>
+        /// <li> <p> <code>WarmPoolTotalCapacity</code> </p> </li>
+        /// <li> <p> <code>GroupAndWarmPoolDesiredCapacity</code> </p> </li>
+        /// <li> <p> <code>GroupAndWarmPoolTotalCapacity</code> </p> </li>
         /// </ul>
         /// <p>If you omit this parameter, all metrics are disabled. </p>
         pub fn set_metrics(
@@ -5786,8 +5015,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `EnableMetricsCollection`.
     ///
-    /// <p>Enables group metrics for the specified Auto Scaling group. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-monitoring.html">Monitoring CloudWatch metrics for your Auto Scaling groups and instances</a> in the
-    /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    /// <p>Enables group metrics for the specified Auto Scaling group. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-monitoring.html">Monitoring CloudWatch metrics for your Auto Scaling groups and instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnableMetricsCollection<
         C = aws_smithy_client::erase::DynConnector,
@@ -5861,230 +5089,68 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
         ///
-        /// <p>Specifies which group-level metrics to start collecting. You can specify one or more
-        /// of the following metrics:</p>
+        /// <p>Specifies which group-level metrics to start collecting. You can specify one or more of the following metrics:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>GroupMinSize</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GroupMaxSize</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GroupDesiredCapacity</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GroupInServiceInstances</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GroupPendingInstances</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GroupStandbyInstances</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GroupTerminatingInstances</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GroupTotalInstances</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>GroupMinSize</code> </p> </li>
+        /// <li> <p> <code>GroupMaxSize</code> </p> </li>
+        /// <li> <p> <code>GroupDesiredCapacity</code> </p> </li>
+        /// <li> <p> <code>GroupInServiceInstances</code> </p> </li>
+        /// <li> <p> <code>GroupPendingInstances</code> </p> </li>
+        /// <li> <p> <code>GroupStandbyInstances</code> </p> </li>
+        /// <li> <p> <code>GroupTerminatingInstances</code> </p> </li>
+        /// <li> <p> <code>GroupTotalInstances</code> </p> </li>
         /// </ul>
         /// <p>The instance weighting feature supports the following additional metrics: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>GroupInServiceCapacity</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GroupPendingCapacity</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GroupStandbyCapacity</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GroupTerminatingCapacity</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GroupTotalCapacity</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>GroupInServiceCapacity</code> </p> </li>
+        /// <li> <p> <code>GroupPendingCapacity</code> </p> </li>
+        /// <li> <p> <code>GroupStandbyCapacity</code> </p> </li>
+        /// <li> <p> <code>GroupTerminatingCapacity</code> </p> </li>
+        /// <li> <p> <code>GroupTotalCapacity</code> </p> </li>
         /// </ul>
         /// <p>The warm pools feature supports the following additional metrics: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>WarmPoolDesiredCapacity</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>WarmPoolWarmedCapacity</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>WarmPoolPendingCapacity</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>WarmPoolTerminatingCapacity</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>WarmPoolTotalCapacity</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GroupAndWarmPoolDesiredCapacity</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GroupAndWarmPoolTotalCapacity</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>WarmPoolDesiredCapacity</code> </p> </li>
+        /// <li> <p> <code>WarmPoolWarmedCapacity</code> </p> </li>
+        /// <li> <p> <code>WarmPoolPendingCapacity</code> </p> </li>
+        /// <li> <p> <code>WarmPoolTerminatingCapacity</code> </p> </li>
+        /// <li> <p> <code>WarmPoolTotalCapacity</code> </p> </li>
+        /// <li> <p> <code>GroupAndWarmPoolDesiredCapacity</code> </p> </li>
+        /// <li> <p> <code>GroupAndWarmPoolTotalCapacity</code> </p> </li>
         /// </ul>
         /// <p>If you omit this parameter, all metrics are enabled. </p>
         pub fn metrics(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.metrics(input.into());
             self
         }
-        /// <p>Specifies which group-level metrics to start collecting. You can specify one or more
-        /// of the following metrics:</p>
+        /// <p>Specifies which group-level metrics to start collecting. You can specify one or more of the following metrics:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>GroupMinSize</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GroupMaxSize</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GroupDesiredCapacity</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GroupInServiceInstances</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GroupPendingInstances</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GroupStandbyInstances</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GroupTerminatingInstances</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GroupTotalInstances</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>GroupMinSize</code> </p> </li>
+        /// <li> <p> <code>GroupMaxSize</code> </p> </li>
+        /// <li> <p> <code>GroupDesiredCapacity</code> </p> </li>
+        /// <li> <p> <code>GroupInServiceInstances</code> </p> </li>
+        /// <li> <p> <code>GroupPendingInstances</code> </p> </li>
+        /// <li> <p> <code>GroupStandbyInstances</code> </p> </li>
+        /// <li> <p> <code>GroupTerminatingInstances</code> </p> </li>
+        /// <li> <p> <code>GroupTotalInstances</code> </p> </li>
         /// </ul>
         /// <p>The instance weighting feature supports the following additional metrics: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>GroupInServiceCapacity</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GroupPendingCapacity</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GroupStandbyCapacity</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GroupTerminatingCapacity</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GroupTotalCapacity</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>GroupInServiceCapacity</code> </p> </li>
+        /// <li> <p> <code>GroupPendingCapacity</code> </p> </li>
+        /// <li> <p> <code>GroupStandbyCapacity</code> </p> </li>
+        /// <li> <p> <code>GroupTerminatingCapacity</code> </p> </li>
+        /// <li> <p> <code>GroupTotalCapacity</code> </p> </li>
         /// </ul>
         /// <p>The warm pools feature supports the following additional metrics: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>WarmPoolDesiredCapacity</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>WarmPoolWarmedCapacity</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>WarmPoolPendingCapacity</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>WarmPoolTerminatingCapacity</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>WarmPoolTotalCapacity</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GroupAndWarmPoolDesiredCapacity</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>GroupAndWarmPoolTotalCapacity</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>WarmPoolDesiredCapacity</code> </p> </li>
+        /// <li> <p> <code>WarmPoolWarmedCapacity</code> </p> </li>
+        /// <li> <p> <code>WarmPoolPendingCapacity</code> </p> </li>
+        /// <li> <p> <code>WarmPoolTerminatingCapacity</code> </p> </li>
+        /// <li> <p> <code>WarmPoolTotalCapacity</code> </p> </li>
+        /// <li> <p> <code>GroupAndWarmPoolDesiredCapacity</code> </p> </li>
+        /// <li> <p> <code>GroupAndWarmPoolTotalCapacity</code> </p> </li>
         /// </ul>
         /// <p>If you omit this parameter, all metrics are enabled. </p>
         pub fn set_metrics(
@@ -6094,14 +5160,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_metrics(input);
             self
         }
-        /// <p>The granularity to associate with the metrics to collect. The only valid value is
-        /// <code>1Minute</code>.</p>
+        /// <p>The granularity to associate with the metrics to collect. The only valid value is <code>1Minute</code>.</p>
         pub fn granularity(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.granularity(input.into());
             self
         }
-        /// <p>The granularity to associate with the metrics to collect. The only valid value is
-        /// <code>1Minute</code>.</p>
+        /// <p>The granularity to associate with the metrics to collect. The only valid value is <code>1Minute</code>.</p>
         pub fn set_granularity(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_granularity(input);
             self
@@ -6110,15 +5174,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `EnterStandby`.
     ///
     /// <p>Moves the specified instances into the standby state.</p>
-    /// <p>If you choose to decrement the desired capacity of the Auto Scaling group, the instances can
-    /// enter standby as long as the desired capacity of the Auto Scaling group after the instances are
-    /// placed into standby is equal to or greater than the minimum capacity of the
-    /// group.</p>
-    /// <p>If you choose not to decrement the desired capacity of the Auto Scaling group, the Auto Scaling group
-    /// launches new instances to replace the instances on standby.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enter-exit-standby.html">Temporarily removing
-    /// instances from your Auto Scaling group</a> in the
-    /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    /// <p>If you choose to decrement the desired capacity of the Auto Scaling group, the instances can enter standby as long as the desired capacity of the Auto Scaling group after the instances are placed into standby is equal to or greater than the minimum capacity of the group.</p>
+    /// <p>If you choose not to decrement the desired capacity of the Auto Scaling group, the Auto Scaling group launches new instances to replace the instances on standby.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enter-exit-standby.html">Temporarily removing instances from your Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct EnterStandby<
         C = aws_smithy_client::erase::DynConnector,
@@ -6205,14 +5263,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_auto_scaling_group_name(input);
             self
         }
-        /// <p>Indicates whether to decrement the desired capacity of the Auto Scaling group by the number of
-        /// instances moved to <code>Standby</code> mode.</p>
+        /// <p>Indicates whether to decrement the desired capacity of the Auto Scaling group by the number of instances moved to <code>Standby</code> mode.</p>
         pub fn should_decrement_desired_capacity(mut self, input: bool) -> Self {
             self.inner = self.inner.should_decrement_desired_capacity(input);
             self
         }
-        /// <p>Indicates whether to decrement the desired capacity of the Auto Scaling group by the number of
-        /// instances moved to <code>Standby</code> mode.</p>
+        /// <p>Indicates whether to decrement the desired capacity of the Auto Scaling group by the number of instances moved to <code>Standby</code> mode.</p>
         pub fn set_should_decrement_desired_capacity(
             mut self,
             input: std::option::Option<bool>,
@@ -6223,8 +5279,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ExecutePolicy`.
     ///
-    /// <p>Executes the specified policy. This can be useful for testing the design of your
-    /// scaling policy.</p>
+    /// <p>Executes the specified policy. This can be useful for testing the design of your scaling policy.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ExecutePolicy<
         C = aws_smithy_client::erase::DynConnector,
@@ -6304,60 +5359,40 @@ pub mod fluent_builders {
             self.inner = self.inner.set_policy_name(input);
             self
         }
-        /// <p>Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete before executing
-        /// the policy.</p>
-        /// <p>Valid only if the policy type is <code>SimpleScaling</code>. For more information, see
-        /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
-        /// cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete before executing the policy.</p>
+        /// <p>Valid only if the policy type is <code>SimpleScaling</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn honor_cooldown(mut self, input: bool) -> Self {
             self.inner = self.inner.honor_cooldown(input);
             self
         }
-        /// <p>Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete before executing
-        /// the policy.</p>
-        /// <p>Valid only if the policy type is <code>SimpleScaling</code>. For more information, see
-        /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
-        /// cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete before executing the policy.</p>
+        /// <p>Valid only if the policy type is <code>SimpleScaling</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_honor_cooldown(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_honor_cooldown(input);
             self
         }
-        /// <p>The metric value to compare to <code>BreachThreshold</code>. This enables you to
-        /// execute a policy of type <code>StepScaling</code> and determine which step adjustment to
-        /// use. For example, if the breach threshold is 50 and you want to use a step adjustment
-        /// with a lower bound of 0 and an upper bound of 10, you can set the metric value to
-        /// 59.</p>
-        /// <p>If you specify a metric value that doesn't correspond to a step adjustment for the
-        /// policy, the call returns an error.</p>
-        /// <p>Required if the policy type is <code>StepScaling</code> and not supported
-        /// otherwise.</p>
+        /// <p>The metric value to compare to <code>BreachThreshold</code>. This enables you to execute a policy of type <code>StepScaling</code> and determine which step adjustment to use. For example, if the breach threshold is 50 and you want to use a step adjustment with a lower bound of 0 and an upper bound of 10, you can set the metric value to 59.</p>
+        /// <p>If you specify a metric value that doesn't correspond to a step adjustment for the policy, the call returns an error.</p>
+        /// <p>Required if the policy type is <code>StepScaling</code> and not supported otherwise.</p>
         pub fn metric_value(mut self, input: f64) -> Self {
             self.inner = self.inner.metric_value(input);
             self
         }
-        /// <p>The metric value to compare to <code>BreachThreshold</code>. This enables you to
-        /// execute a policy of type <code>StepScaling</code> and determine which step adjustment to
-        /// use. For example, if the breach threshold is 50 and you want to use a step adjustment
-        /// with a lower bound of 0 and an upper bound of 10, you can set the metric value to
-        /// 59.</p>
-        /// <p>If you specify a metric value that doesn't correspond to a step adjustment for the
-        /// policy, the call returns an error.</p>
-        /// <p>Required if the policy type is <code>StepScaling</code> and not supported
-        /// otherwise.</p>
+        /// <p>The metric value to compare to <code>BreachThreshold</code>. This enables you to execute a policy of type <code>StepScaling</code> and determine which step adjustment to use. For example, if the breach threshold is 50 and you want to use a step adjustment with a lower bound of 0 and an upper bound of 10, you can set the metric value to 59.</p>
+        /// <p>If you specify a metric value that doesn't correspond to a step adjustment for the policy, the call returns an error.</p>
+        /// <p>Required if the policy type is <code>StepScaling</code> and not supported otherwise.</p>
         pub fn set_metric_value(mut self, input: std::option::Option<f64>) -> Self {
             self.inner = self.inner.set_metric_value(input);
             self
         }
         /// <p>The breach threshold for the alarm.</p>
-        /// <p>Required if the policy type is <code>StepScaling</code> and not supported
-        /// otherwise.</p>
+        /// <p>Required if the policy type is <code>StepScaling</code> and not supported otherwise.</p>
         pub fn breach_threshold(mut self, input: f64) -> Self {
             self.inner = self.inner.breach_threshold(input);
             self
         }
         /// <p>The breach threshold for the alarm.</p>
-        /// <p>Required if the policy type is <code>StepScaling</code> and not supported
-        /// otherwise.</p>
+        /// <p>Required if the policy type is <code>StepScaling</code> and not supported otherwise.</p>
         pub fn set_breach_threshold(mut self, input: std::option::Option<f64>) -> Self {
             self.inner = self.inner.set_breach_threshold(input);
             self
@@ -6366,11 +5401,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ExitStandby`.
     ///
     /// <p>Moves the specified instances out of the standby state.</p>
-    /// <p>After you put the instances back in service, the desired capacity is
-    /// incremented.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enter-exit-standby.html">Temporarily removing
-    /// instances from your Auto Scaling group</a> in the
-    /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    /// <p>After you put the instances back in service, the desired capacity is incremented.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enter-exit-standby.html">Temporarily removing instances from your Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ExitStandby<
         C = aws_smithy_client::erase::DynConnector,
@@ -6461,14 +5493,9 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `GetPredictiveScalingForecast`.
     ///
     /// <p>Retrieves the forecast data for a predictive scaling policy.</p>
-    /// <p>Load forecasts are predictions of the hourly load values using historical load data
-    /// from CloudWatch and an analysis of historical trends. Capacity forecasts are represented as
-    /// predicted values for the minimum capacity that is needed on an hourly basis, based on
-    /// the hourly load forecast.</p>
-    /// <p>A minimum of 24 hours of data is required to create the initial forecasts. However,
-    /// having a full 14 days of historical data results in more accurate forecasts.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-predictive-scaling.html">Predictive
-    /// scaling for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    /// <p>Load forecasts are predictions of the hourly load values using historical load data from CloudWatch and an analysis of historical trends. Capacity forecasts are represented as predicted values for the minimum capacity that is needed on an hourly basis, based on the hourly load forecast.</p>
+    /// <p>A minimum of 24 hours of data is required to create the initial forecasts. However, having a full 14 days of historical data results in more accurate forecasts.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-predictive-scaling.html">Predictive scaling for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct GetPredictiveScalingForecast<
         C = aws_smithy_client::erase::DynConnector,
@@ -6548,14 +5575,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_policy_name(input);
             self
         }
-        /// <p>The inclusive start time of the time range for the forecast data to get. At most, the
-        /// date and time can be one year before the current date and time.</p>
+        /// <p>The inclusive start time of the time range for the forecast data to get. At most, the date and time can be one year before the current date and time.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.start_time(input);
             self
         }
-        /// <p>The inclusive start time of the time range for the forecast data to get. At most, the
-        /// date and time can be one year before the current date and time.</p>
+        /// <p>The inclusive start time of the time range for the forecast data to get. At most, the date and time can be one year before the current date and time.</p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -6563,20 +5588,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_start_time(input);
             self
         }
-        /// <p>The exclusive end time of the time range for the forecast data to get. The maximum
-        /// time duration between the start and end time is 30 days. </p>
-        /// <p>Although this parameter can accept a date and time that is more than two days in the
-        /// future, the availability of forecast data has limits. Amazon EC2 Auto Scaling only issues forecasts for
-        /// periods of two days in advance.</p>
+        /// <p>The exclusive end time of the time range for the forecast data to get. The maximum time duration between the start and end time is 30 days. </p>
+        /// <p>Although this parameter can accept a date and time that is more than two days in the future, the availability of forecast data has limits. Amazon EC2 Auto Scaling only issues forecasts for periods of two days in advance.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.end_time(input);
             self
         }
-        /// <p>The exclusive end time of the time range for the forecast data to get. The maximum
-        /// time duration between the start and end time is 30 days. </p>
-        /// <p>Although this parameter can accept a date and time that is more than two days in the
-        /// future, the availability of forecast data has limits. Amazon EC2 Auto Scaling only issues forecasts for
-        /// periods of two days in advance.</p>
+        /// <p>The exclusive end time of the time range for the forecast data to get. The maximum time duration between the start and end time is 30 days. </p>
+        /// <p>Although this parameter can accept a date and time that is more than two days in the future, the availability of forecast data has limits. Amazon EC2 Auto Scaling only issues forecasts for periods of two days in advance.</p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -6588,43 +5607,18 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutLifecycleHook`.
     ///
     /// <p>Creates or updates a lifecycle hook for the specified Auto Scaling group.</p>
-    /// <p>A lifecycle hook enables an Auto Scaling group to be aware of events in the Auto Scaling instance
-    /// lifecycle, and then perform a custom action when the corresponding lifecycle event
-    /// occurs.</p>
-    /// <p>This step is a part of the procedure for adding a lifecycle hook to an Auto Scaling
-    /// group:</p>
+    /// <p>A lifecycle hook enables an Auto Scaling group to be aware of events in the Auto Scaling instance lifecycle, and then perform a custom action when the corresponding lifecycle event occurs.</p>
+    /// <p>This step is a part of the procedure for adding a lifecycle hook to an Auto Scaling group:</p>
     /// <ol>
-    /// <li>
-    /// <p>(Optional) Create a Lambda function and a rule that allows Amazon EventBridge to
-    /// invoke your Lambda function when Amazon EC2 Auto Scaling launches or terminates
-    /// instances.</p>
-    /// </li>
-    /// <li>
-    /// <p>(Optional) Create a notification target and an IAM role. The target can be
-    /// either an Amazon SQS queue or an Amazon SNS topic. The role allows Amazon EC2 Auto Scaling to publish
-    /// lifecycle notifications to the target.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>Create the lifecycle hook. Specify whether the hook is
-    /// used when the instances launch or terminate.</b>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>If you need more time, record the lifecycle action heartbeat to keep the
-    /// instance in a pending state using the <a>RecordLifecycleActionHeartbeat</a> API call.</p>
-    /// </li>
-    /// <li>
-    /// <p>If you finish before the timeout period ends, send a callback by using the
-    /// <a>CompleteLifecycleAction</a> API call.</p>
-    /// </li>
+    /// <li> <p>(Optional) Create a Lambda function and a rule that allows Amazon EventBridge to invoke your Lambda function when Amazon EC2 Auto Scaling launches or terminates instances.</p> </li>
+    /// <li> <p>(Optional) Create a notification target and an IAM role. The target can be either an Amazon SQS queue or an Amazon SNS topic. The role allows Amazon EC2 Auto Scaling to publish lifecycle notifications to the target.</p> </li>
+    /// <li> <p> <b>Create the lifecycle hook. Specify whether the hook is used when the instances launch or terminate.</b> </p> </li>
+    /// <li> <p>If you need more time, record the lifecycle action heartbeat to keep the instance in a pending state using the <code>RecordLifecycleActionHeartbeat</code> API call.</p> </li>
+    /// <li> <p>If you finish before the timeout period ends, send a callback by using the <code>CompleteLifecycleAction</code> API call.</p> </li>
     /// </ol>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Amazon EC2 Auto Scaling lifecycle
-    /// hooks</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    /// <p>If you exceed your maximum limit of lifecycle hooks, which by default is 50 per Auto Scaling
-    /// group, the call fails.</p>
-    /// <p>You can view the lifecycle hooks for an Auto Scaling group using the <a>DescribeLifecycleHooks</a> API call. If you are no longer using a lifecycle
-    /// hook, you can delete it by calling the <a>DeleteLifecycleHook</a> API.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Amazon EC2 Auto Scaling lifecycle hooks</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    /// <p>If you exceed your maximum limit of lifecycle hooks, which by default is 50 per Auto Scaling group, the call fails.</p>
+    /// <p>You can view the lifecycle hooks for an Auto Scaling group using the <code>DescribeLifecycleHooks</code> API call. If you are no longer using a lifecycle hook, you can delete it by calling the <code>DeleteLifecycleHook</code> API.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutLifecycleHook<
         C = aws_smithy_client::erase::DynConnector,
@@ -6707,30 +5701,20 @@ pub mod fluent_builders {
             self.inner = self.inner.set_auto_scaling_group_name(input);
             self
         }
-        /// <p>The instance state to which you want to attach the lifecycle hook. The valid values
-        /// are:</p>
+        /// <p>The instance state to which you want to attach the lifecycle hook. The valid values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>autoscaling:EC2_INSTANCE_LAUNCHING</p>
-        /// </li>
-        /// <li>
-        /// <p>autoscaling:EC2_INSTANCE_TERMINATING</p>
-        /// </li>
+        /// <li> <p>autoscaling:EC2_INSTANCE_LAUNCHING</p> </li>
+        /// <li> <p>autoscaling:EC2_INSTANCE_TERMINATING</p> </li>
         /// </ul>
         /// <p>Required for new lifecycle hooks, but optional when updating existing hooks.</p>
         pub fn lifecycle_transition(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.lifecycle_transition(input.into());
             self
         }
-        /// <p>The instance state to which you want to attach the lifecycle hook. The valid values
-        /// are:</p>
+        /// <p>The instance state to which you want to attach the lifecycle hook. The valid values are:</p>
         /// <ul>
-        /// <li>
-        /// <p>autoscaling:EC2_INSTANCE_LAUNCHING</p>
-        /// </li>
-        /// <li>
-        /// <p>autoscaling:EC2_INSTANCE_TERMINATING</p>
-        /// </li>
+        /// <li> <p>autoscaling:EC2_INSTANCE_LAUNCHING</p> </li>
+        /// <li> <p>autoscaling:EC2_INSTANCE_TERMINATING</p> </li>
         /// </ul>
         /// <p>Required for new lifecycle hooks, but optional when updating existing hooks.</p>
         pub fn set_lifecycle_transition(
@@ -6740,42 +5724,30 @@ pub mod fluent_builders {
             self.inner = self.inner.set_lifecycle_transition(input);
             self
         }
-        /// <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the specified
-        /// notification target, for example, an Amazon SNS topic or an Amazon SQS queue.</p>
+        /// <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification target, for example, an Amazon SNS topic or an Amazon SQS queue.</p>
         /// <p>Required for new lifecycle hooks, but optional when updating existing hooks.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input.into());
             self
         }
-        /// <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the specified
-        /// notification target, for example, an Amazon SNS topic or an Amazon SQS queue.</p>
+        /// <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the specified notification target, for example, an Amazon SNS topic or an Amazon SQS queue.</p>
         /// <p>Required for new lifecycle hooks, but optional when updating existing hooks.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_role_arn(input);
             self
         }
-        /// <p>The ARN of the notification target that Amazon EC2 Auto Scaling uses to notify you when an instance
-        /// is in the transition state for the lifecycle hook. This target can be either an SQS
-        /// queue or an SNS topic.</p>
+        /// <p>The ARN of the notification target that Amazon EC2 Auto Scaling uses to notify you when an instance is in the transition state for the lifecycle hook. This target can be either an SQS queue or an SNS topic.</p>
         /// <p>If you specify an empty string, this overrides the current ARN.</p>
-        /// <p>This operation uses the JSON format when sending notifications to an Amazon SQS queue, and
-        /// an email key-value pair format when sending notifications to an Amazon SNS topic.</p>
-        /// <p>When you specify a notification target, Amazon EC2 Auto Scaling sends it a test message. Test
-        /// messages contain the following additional key-value pair: <code>"Event":
-        /// "autoscaling:TEST_NOTIFICATION"</code>.</p>
+        /// <p>This operation uses the JSON format when sending notifications to an Amazon SQS queue, and an email key-value pair format when sending notifications to an Amazon SNS topic.</p>
+        /// <p>When you specify a notification target, Amazon EC2 Auto Scaling sends it a test message. Test messages contain the following additional key-value pair: <code>"Event": "autoscaling:TEST_NOTIFICATION"</code>.</p>
         pub fn notification_target_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.notification_target_arn(input.into());
             self
         }
-        /// <p>The ARN of the notification target that Amazon EC2 Auto Scaling uses to notify you when an instance
-        /// is in the transition state for the lifecycle hook. This target can be either an SQS
-        /// queue or an SNS topic.</p>
+        /// <p>The ARN of the notification target that Amazon EC2 Auto Scaling uses to notify you when an instance is in the transition state for the lifecycle hook. This target can be either an SQS queue or an SNS topic.</p>
         /// <p>If you specify an empty string, this overrides the current ARN.</p>
-        /// <p>This operation uses the JSON format when sending notifications to an Amazon SQS queue, and
-        /// an email key-value pair format when sending notifications to an Amazon SNS topic.</p>
-        /// <p>When you specify a notification target, Amazon EC2 Auto Scaling sends it a test message. Test
-        /// messages contain the following additional key-value pair: <code>"Event":
-        /// "autoscaling:TEST_NOTIFICATION"</code>.</p>
+        /// <p>This operation uses the JSON format when sending notifications to an Amazon SQS queue, and an email key-value pair format when sending notifications to an Amazon SNS topic.</p>
+        /// <p>When you specify a notification target, Amazon EC2 Auto Scaling sends it a test message. Test messages contain the following additional key-value pair: <code>"Event": "autoscaling:TEST_NOTIFICATION"</code>.</p>
         pub fn set_notification_target_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6783,14 +5755,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_notification_target_arn(input);
             self
         }
-        /// <p>Additional information that you want to include any time Amazon EC2 Auto Scaling sends a message to
-        /// the notification target.</p>
+        /// <p>Additional information that you want to include any time Amazon EC2 Auto Scaling sends a message to the notification target.</p>
         pub fn notification_metadata(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.notification_metadata(input.into());
             self
         }
-        /// <p>Additional information that you want to include any time Amazon EC2 Auto Scaling sends a message to
-        /// the notification target.</p>
+        /// <p>Additional information that you want to include any time Amazon EC2 Auto Scaling sends a message to the notification target.</p>
         pub fn set_notification_metadata(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6798,36 +5768,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_notification_metadata(input);
             self
         }
-        /// <p>The maximum time, in seconds, that can elapse before the lifecycle hook times out. The
-        /// range is from <code>30</code> to <code>7200</code> seconds. The default value is
-        /// <code>3600</code> seconds (1 hour).</p>
-        /// <p>If the lifecycle hook times out, Amazon EC2 Auto Scaling performs the action that you specified in
-        /// the <code>DefaultResult</code> parameter. You can prevent the lifecycle hook from timing
-        /// out by calling the <a>RecordLifecycleActionHeartbeat</a> API.</p>
+        /// <p>The maximum time, in seconds, that can elapse before the lifecycle hook times out. The range is from <code>30</code> to <code>7200</code> seconds. The default value is <code>3600</code> seconds (1 hour).</p>
+        /// <p>If the lifecycle hook times out, Amazon EC2 Auto Scaling performs the action that you specified in the <code>DefaultResult</code> parameter. You can prevent the lifecycle hook from timing out by calling the <code>RecordLifecycleActionHeartbeat</code> API.</p>
         pub fn heartbeat_timeout(mut self, input: i32) -> Self {
             self.inner = self.inner.heartbeat_timeout(input);
             self
         }
-        /// <p>The maximum time, in seconds, that can elapse before the lifecycle hook times out. The
-        /// range is from <code>30</code> to <code>7200</code> seconds. The default value is
-        /// <code>3600</code> seconds (1 hour).</p>
-        /// <p>If the lifecycle hook times out, Amazon EC2 Auto Scaling performs the action that you specified in
-        /// the <code>DefaultResult</code> parameter. You can prevent the lifecycle hook from timing
-        /// out by calling the <a>RecordLifecycleActionHeartbeat</a> API.</p>
+        /// <p>The maximum time, in seconds, that can elapse before the lifecycle hook times out. The range is from <code>30</code> to <code>7200</code> seconds. The default value is <code>3600</code> seconds (1 hour).</p>
+        /// <p>If the lifecycle hook times out, Amazon EC2 Auto Scaling performs the action that you specified in the <code>DefaultResult</code> parameter. You can prevent the lifecycle hook from timing out by calling the <code>RecordLifecycleActionHeartbeat</code> API.</p>
         pub fn set_heartbeat_timeout(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_heartbeat_timeout(input);
             self
         }
-        /// <p>Defines the action the Auto Scaling group should take when the lifecycle hook timeout elapses
-        /// or if an unexpected failure occurs. This parameter can be either <code>CONTINUE</code>
-        /// or <code>ABANDON</code>. The default value is <code>ABANDON</code>.</p>
+        /// <p>Defines the action the Auto Scaling group should take when the lifecycle hook timeout elapses or if an unexpected failure occurs. This parameter can be either <code>CONTINUE</code> or <code>ABANDON</code>. The default value is <code>ABANDON</code>.</p>
         pub fn default_result(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.default_result(input.into());
             self
         }
-        /// <p>Defines the action the Auto Scaling group should take when the lifecycle hook timeout elapses
-        /// or if an unexpected failure occurs. This parameter can be either <code>CONTINUE</code>
-        /// or <code>ABANDON</code>. The default value is <code>ABANDON</code>.</p>
+        /// <p>Defines the action the Auto Scaling group should take when the lifecycle hook timeout elapses or if an unexpected failure occurs. This parameter can be either <code>CONTINUE</code> or <code>ABANDON</code>. The default value is <code>ABANDON</code>.</p>
         pub fn set_default_result(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6838,15 +5796,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutNotificationConfiguration`.
     ///
-    /// <p>Configures an Auto Scaling group to send notifications when specified events take place.
-    /// Subscribers to the specified topic can have messages delivered to an endpoint such as a
-    /// web server or an email address.</p>
+    /// <p>Configures an Auto Scaling group to send notifications when specified events take place. Subscribers to the specified topic can have messages delivered to an endpoint such as a web server or an email address.</p>
     /// <p>This configuration overwrites any existing configuration.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ASGettingNotifications.html">Getting Amazon SNS
-    /// notifications when your Auto Scaling group scales</a> in the
-    /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    /// <p>If you exceed your maximum limit of SNS topics, which is 10 per Auto Scaling group, the call
-    /// fails.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ASGettingNotifications.html">Getting Amazon SNS notifications when your Auto Scaling group scales</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    /// <p>If you exceed your maximum limit of SNS topics, which is 10 per Auto Scaling group, the call fails.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutNotificationConfiguration<
         C = aws_smithy_client::erase::DynConnector,
@@ -6930,14 +5883,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_notification_types`](Self::set_notification_types).
         ///
-        /// <p>The type of event that causes the notification to be sent. To query the notification
-        /// types supported by Amazon EC2 Auto Scaling, call the <a>DescribeAutoScalingNotificationTypes</a> API.</p>
+        /// <p>The type of event that causes the notification to be sent. To query the notification types supported by Amazon EC2 Auto Scaling, call the <code>DescribeAutoScalingNotificationTypes</code> API.</p>
         pub fn notification_types(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.notification_types(input.into());
             self
         }
-        /// <p>The type of event that causes the notification to be sent. To query the notification
-        /// types supported by Amazon EC2 Auto Scaling, call the <a>DescribeAutoScalingNotificationTypes</a> API.</p>
+        /// <p>The type of event that causes the notification to be sent. To query the notification types supported by Amazon EC2 Auto Scaling, call the <code>DescribeAutoScalingNotificationTypes</code> API.</p>
         pub fn set_notification_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6948,16 +5899,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutScalingPolicy`.
     ///
-    /// <p>Creates or updates a scaling policy for an Auto Scaling group. Scaling policies are used to
-    /// scale an Auto Scaling group based on configurable metrics. If no policies are defined, the
-    /// dynamic scaling and predictive scaling features are not used. </p>
-    /// <p>For more information about using dynamic scaling, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target tracking
-    /// scaling policies</a> and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step and simple scaling
-    /// policies</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    /// <p>For more information about using predictive scaling, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-predictive-scaling.html">Predictive
-    /// scaling for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    /// <p>You can view the scaling policies for an Auto Scaling group using the <a>DescribePolicies</a> API call. If you are no longer using a scaling policy,
-    /// you can delete it by calling the <a>DeletePolicy</a> API.</p>
+    /// <p>Creates or updates a scaling policy for an Auto Scaling group. Scaling policies are used to scale an Auto Scaling group based on configurable metrics. If no policies are defined, the dynamic scaling and predictive scaling features are not used. </p>
+    /// <p>For more information about using dynamic scaling, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target tracking scaling policies</a> and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step and simple scaling policies</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    /// <p>For more information about using predictive scaling, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-predictive-scaling.html">Predictive scaling for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    /// <p>You can view the scaling policies for an Auto Scaling group using the <code>DescribePolicies</code> API call. If you are no longer using a scaling policy, you can delete it by calling the <code>DeletePolicy</code> API.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutScalingPolicy<
         C = aws_smithy_client::erase::DynConnector,
@@ -7039,25 +5984,10 @@ pub mod fluent_builders {
         }
         /// <p>One of the following policy types: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>TargetTrackingScaling</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>StepScaling</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SimpleScaling</code> (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PredictiveScaling</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>TargetTrackingScaling</code> </p> </li>
+        /// <li> <p> <code>StepScaling</code> </p> </li>
+        /// <li> <p> <code>SimpleScaling</code> (default)</p> </li>
+        /// <li> <p> <code>PredictiveScaling</code> </p> </li>
         /// </ul>
         pub fn policy_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.policy_type(input.into());
@@ -7065,44 +5995,23 @@ pub mod fluent_builders {
         }
         /// <p>One of the following policy types: </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>TargetTrackingScaling</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>StepScaling</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SimpleScaling</code> (default)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PredictiveScaling</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>TargetTrackingScaling</code> </p> </li>
+        /// <li> <p> <code>StepScaling</code> </p> </li>
+        /// <li> <p> <code>SimpleScaling</code> (default)</p> </li>
+        /// <li> <p> <code>PredictiveScaling</code> </p> </li>
         /// </ul>
         pub fn set_policy_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_policy_type(input);
             self
         }
-        /// <p>Specifies how the scaling adjustment is interpreted (for example, an absolute number
-        /// or a percentage). The valid values are <code>ChangeInCapacity</code>,
-        /// <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
-        /// <p>Required if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code>.
-        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment">Scaling adjustment types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>Specifies how the scaling adjustment is interpreted (for example, an absolute number or a percentage). The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
+        /// <p>Required if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment">Scaling adjustment types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn adjustment_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.adjustment_type(input.into());
             self
         }
-        /// <p>Specifies how the scaling adjustment is interpreted (for example, an absolute number
-        /// or a percentage). The valid values are <code>ChangeInCapacity</code>,
-        /// <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
-        /// <p>Required if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code>.
-        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment">Scaling adjustment types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>Specifies how the scaling adjustment is interpreted (for example, an absolute number or a percentage). The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
+        /// <p>Required if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment">Scaling adjustment types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_adjustment_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7110,105 +6019,63 @@ pub mod fluent_builders {
             self.inner = self.inner.set_adjustment_type(input);
             self
         }
-        /// <p>Available for backward compatibility. Use <code>MinAdjustmentMagnitude</code>
-        /// instead.</p>
+        /// <p>Available for backward compatibility. Use <code>MinAdjustmentMagnitude</code> instead.</p>
         pub fn min_adjustment_step(mut self, input: i32) -> Self {
             self.inner = self.inner.min_adjustment_step(input);
             self
         }
-        /// <p>Available for backward compatibility. Use <code>MinAdjustmentMagnitude</code>
-        /// instead.</p>
+        /// <p>Available for backward compatibility. Use <code>MinAdjustmentMagnitude</code> instead.</p>
         pub fn set_min_adjustment_step(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_min_adjustment_step(input);
             self
         }
-        /// <p>The minimum value to scale by when the adjustment type is
-        /// <code>PercentChangeInCapacity</code>. For example, suppose that you create a step
-        /// scaling policy to scale out an Auto Scaling group by 25 percent and you specify a
-        /// <code>MinAdjustmentMagnitude</code> of 2. If the group has 4 instances and the
-        /// scaling policy is performed, 25 percent of 4 is 1. However, because you specified a
-        /// <code>MinAdjustmentMagnitude</code> of 2, Amazon EC2 Auto Scaling scales out the group by 2
-        /// instances.</p>
-        /// <p>Valid only if the policy type is <code>StepScaling</code> or
-        /// <code>SimpleScaling</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment">Scaling adjustment types</a> in the <i>Amazon EC2 Auto Scaling User
-        /// Guide</i>.</p>
-        /// <note>
-        /// <p>Some Auto Scaling groups use instance weights. In this case, set the
-        /// <code>MinAdjustmentMagnitude</code> to a value that is at least as large as your
-        /// largest instance weight.</p>
+        /// <p>The minimum value to scale by when the adjustment type is <code>PercentChangeInCapacity</code>. For example, suppose that you create a step scaling policy to scale out an Auto Scaling group by 25 percent and you specify a <code>MinAdjustmentMagnitude</code> of 2. If the group has 4 instances and the scaling policy is performed, 25 percent of 4 is 1. However, because you specified a <code>MinAdjustmentMagnitude</code> of 2, Amazon EC2 Auto Scaling scales out the group by 2 instances.</p>
+        /// <p>Valid only if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment">Scaling adjustment types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <note>
+        /// <p>Some Auto Scaling groups use instance weights. In this case, set the <code>MinAdjustmentMagnitude</code> to a value that is at least as large as your largest instance weight.</p>
         /// </note>
         pub fn min_adjustment_magnitude(mut self, input: i32) -> Self {
             self.inner = self.inner.min_adjustment_magnitude(input);
             self
         }
-        /// <p>The minimum value to scale by when the adjustment type is
-        /// <code>PercentChangeInCapacity</code>. For example, suppose that you create a step
-        /// scaling policy to scale out an Auto Scaling group by 25 percent and you specify a
-        /// <code>MinAdjustmentMagnitude</code> of 2. If the group has 4 instances and the
-        /// scaling policy is performed, 25 percent of 4 is 1. However, because you specified a
-        /// <code>MinAdjustmentMagnitude</code> of 2, Amazon EC2 Auto Scaling scales out the group by 2
-        /// instances.</p>
-        /// <p>Valid only if the policy type is <code>StepScaling</code> or
-        /// <code>SimpleScaling</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment">Scaling adjustment types</a> in the <i>Amazon EC2 Auto Scaling User
-        /// Guide</i>.</p>
-        /// <note>
-        /// <p>Some Auto Scaling groups use instance weights. In this case, set the
-        /// <code>MinAdjustmentMagnitude</code> to a value that is at least as large as your
-        /// largest instance weight.</p>
+        /// <p>The minimum value to scale by when the adjustment type is <code>PercentChangeInCapacity</code>. For example, suppose that you create a step scaling policy to scale out an Auto Scaling group by 25 percent and you specify a <code>MinAdjustmentMagnitude</code> of 2. If the group has 4 instances and the scaling policy is performed, 25 percent of 4 is 1. However, because you specified a <code>MinAdjustmentMagnitude</code> of 2, Amazon EC2 Auto Scaling scales out the group by 2 instances.</p>
+        /// <p>Valid only if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment">Scaling adjustment types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <note>
+        /// <p>Some Auto Scaling groups use instance weights. In this case, set the <code>MinAdjustmentMagnitude</code> to a value that is at least as large as your largest instance weight.</p>
         /// </note>
         pub fn set_min_adjustment_magnitude(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_min_adjustment_magnitude(input);
             self
         }
-        /// <p>The amount by which to scale, based on the specified adjustment type. A positive value
-        /// adds to the current capacity while a negative number removes from the current capacity.
-        /// For exact capacity, you must specify a positive value.</p>
-        /// <p>Required if the policy type is <code>SimpleScaling</code>. (Not used with any other
-        /// policy type.) </p>
+        /// <p>The amount by which to scale, based on the specified adjustment type. A positive value adds to the current capacity while a negative number removes from the current capacity. For exact capacity, you must specify a positive value.</p>
+        /// <p>Required if the policy type is <code>SimpleScaling</code>. (Not used with any other policy type.) </p>
         pub fn scaling_adjustment(mut self, input: i32) -> Self {
             self.inner = self.inner.scaling_adjustment(input);
             self
         }
-        /// <p>The amount by which to scale, based on the specified adjustment type. A positive value
-        /// adds to the current capacity while a negative number removes from the current capacity.
-        /// For exact capacity, you must specify a positive value.</p>
-        /// <p>Required if the policy type is <code>SimpleScaling</code>. (Not used with any other
-        /// policy type.) </p>
+        /// <p>The amount by which to scale, based on the specified adjustment type. A positive value adds to the current capacity while a negative number removes from the current capacity. For exact capacity, you must specify a positive value.</p>
+        /// <p>Required if the policy type is <code>SimpleScaling</code>. (Not used with any other policy type.) </p>
         pub fn set_scaling_adjustment(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_scaling_adjustment(input);
             self
         }
-        /// <p>The duration of the policy's cooldown period, in seconds. When a cooldown period is
-        /// specified here, it overrides the default cooldown period defined for the Auto Scaling
-        /// group.</p>
-        /// <p>Valid only if the policy type is <code>SimpleScaling</code>. For more information, see
-        /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
-        /// cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>The duration of the policy's cooldown period, in seconds. When a cooldown period is specified here, it overrides the default cooldown period defined for the Auto Scaling group.</p>
+        /// <p>Valid only if the policy type is <code>SimpleScaling</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn cooldown(mut self, input: i32) -> Self {
             self.inner = self.inner.cooldown(input);
             self
         }
-        /// <p>The duration of the policy's cooldown period, in seconds. When a cooldown period is
-        /// specified here, it overrides the default cooldown period defined for the Auto Scaling
-        /// group.</p>
-        /// <p>Valid only if the policy type is <code>SimpleScaling</code>. For more information, see
-        /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
-        /// cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>The duration of the policy's cooldown period, in seconds. When a cooldown period is specified here, it overrides the default cooldown period defined for the Auto Scaling group.</p>
+        /// <p>Valid only if the policy type is <code>SimpleScaling</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_cooldown(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_cooldown(input);
             self
         }
-        /// <p>The aggregation type for the CloudWatch metrics. The valid values are <code>Minimum</code>,
-        /// <code>Maximum</code>, and <code>Average</code>. If the aggregation type is null, the
-        /// value is treated as <code>Average</code>.</p>
+        /// <p>The aggregation type for the CloudWatch metrics. The valid values are <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code>. If the aggregation type is null, the value is treated as <code>Average</code>.</p>
         /// <p>Valid only if the policy type is <code>StepScaling</code>.</p>
         pub fn metric_aggregation_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.metric_aggregation_type(input.into());
             self
         }
-        /// <p>The aggregation type for the CloudWatch metrics. The valid values are <code>Minimum</code>,
-        /// <code>Maximum</code>, and <code>Average</code>. If the aggregation type is null, the
-        /// value is treated as <code>Average</code>.</p>
+        /// <p>The aggregation type for the CloudWatch metrics. The valid values are <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code>. If the aggregation type is null, the value is treated as <code>Average</code>.</p>
         /// <p>Valid only if the policy type is <code>StepScaling</code>.</p>
         pub fn set_metric_aggregation_type(
             mut self,
@@ -7221,18 +6088,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_step_adjustments`](Self::set_step_adjustments).
         ///
-        /// <p>A set of adjustments that enable you to scale based on the size of the alarm
-        /// breach.</p>
-        /// <p>Required if the policy type is <code>StepScaling</code>. (Not used with any other
-        /// policy type.) </p>
+        /// <p>A set of adjustments that enable you to scale based on the size of the alarm breach.</p>
+        /// <p>Required if the policy type is <code>StepScaling</code>. (Not used with any other policy type.) </p>
         pub fn step_adjustments(mut self, input: crate::model::StepAdjustment) -> Self {
             self.inner = self.inner.step_adjustments(input);
             self
         }
-        /// <p>A set of adjustments that enable you to scale based on the size of the alarm
-        /// breach.</p>
-        /// <p>Required if the policy type is <code>StepScaling</code>. (Not used with any other
-        /// policy type.) </p>
+        /// <p>A set of adjustments that enable you to scale based on the size of the alarm breach.</p>
+        /// <p>Required if the policy type is <code>StepScaling</code>. (Not used with any other policy type.) </p>
         pub fn set_step_adjustments(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::StepAdjustment>>,
@@ -7240,54 +6103,28 @@ pub mod fluent_builders {
             self.inner = self.inner.set_step_adjustments(input);
             self
         }
-        /// <p>The estimated time, in seconds, until a newly launched instance can contribute to the
-        /// CloudWatch metrics. If not provided, the default is to use the value from the default cooldown
-        /// period for the Auto Scaling group.</p>
-        /// <p>Valid only if the policy type is <code>TargetTrackingScaling</code> or
-        /// <code>StepScaling</code>.</p>
+        /// <p>The estimated time, in seconds, until a newly launched instance can contribute to the CloudWatch metrics. If not provided, the default is to use the value from the default cooldown period for the Auto Scaling group.</p>
+        /// <p>Valid only if the policy type is <code>TargetTrackingScaling</code> or <code>StepScaling</code>.</p>
         pub fn estimated_instance_warmup(mut self, input: i32) -> Self {
             self.inner = self.inner.estimated_instance_warmup(input);
             self
         }
-        /// <p>The estimated time, in seconds, until a newly launched instance can contribute to the
-        /// CloudWatch metrics. If not provided, the default is to use the value from the default cooldown
-        /// period for the Auto Scaling group.</p>
-        /// <p>Valid only if the policy type is <code>TargetTrackingScaling</code> or
-        /// <code>StepScaling</code>.</p>
+        /// <p>The estimated time, in seconds, until a newly launched instance can contribute to the CloudWatch metrics. If not provided, the default is to use the value from the default cooldown period for the Auto Scaling group.</p>
+        /// <p>Valid only if the policy type is <code>TargetTrackingScaling</code> or <code>StepScaling</code>.</p>
         pub fn set_estimated_instance_warmup(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_estimated_instance_warmup(input);
             self
         }
-        /// <p>A target tracking scaling policy. Provides support for predefined or custom
-        /// metrics.</p>
+        /// <p>A target tracking scaling policy. Provides support for predefined or custom metrics.</p>
         /// <p>The following predefined metrics are available:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ASGAverageCPUUtilization</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ASGAverageNetworkIn</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ASGAverageNetworkOut</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ALBRequestCountPerTarget</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>ASGAverageCPUUtilization</code> </p> </li>
+        /// <li> <p> <code>ASGAverageNetworkIn</code> </p> </li>
+        /// <li> <p> <code>ASGAverageNetworkOut</code> </p> </li>
+        /// <li> <p> <code>ALBRequestCountPerTarget</code> </p> </li>
         /// </ul>
-        /// <p>If you specify <code>ALBRequestCountPerTarget</code> for the metric, you must specify
-        /// the <code>ResourceLabel</code> parameter with the
-        /// <code>PredefinedMetricSpecification</code>.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_TargetTrackingConfiguration.html">TargetTrackingConfiguration</a> in the <i>Amazon EC2 Auto Scaling API
-        /// Reference</i>.</p>
+        /// <p>If you specify <code>ALBRequestCountPerTarget</code> for the metric, you must specify the <code>ResourceLabel</code> parameter with the <code>PredefinedMetricSpecification</code>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_TargetTrackingConfiguration.html">TargetTrackingConfiguration</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
         /// <p>Required if the policy type is <code>TargetTrackingScaling</code>.</p>
         pub fn target_tracking_configuration(
             mut self,
@@ -7296,36 +6133,16 @@ pub mod fluent_builders {
             self.inner = self.inner.target_tracking_configuration(input);
             self
         }
-        /// <p>A target tracking scaling policy. Provides support for predefined or custom
-        /// metrics.</p>
+        /// <p>A target tracking scaling policy. Provides support for predefined or custom metrics.</p>
         /// <p>The following predefined metrics are available:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ASGAverageCPUUtilization</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ASGAverageNetworkIn</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ASGAverageNetworkOut</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ALBRequestCountPerTarget</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>ASGAverageCPUUtilization</code> </p> </li>
+        /// <li> <p> <code>ASGAverageNetworkIn</code> </p> </li>
+        /// <li> <p> <code>ASGAverageNetworkOut</code> </p> </li>
+        /// <li> <p> <code>ALBRequestCountPerTarget</code> </p> </li>
         /// </ul>
-        /// <p>If you specify <code>ALBRequestCountPerTarget</code> for the metric, you must specify
-        /// the <code>ResourceLabel</code> parameter with the
-        /// <code>PredefinedMetricSpecification</code>.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_TargetTrackingConfiguration.html">TargetTrackingConfiguration</a> in the <i>Amazon EC2 Auto Scaling API
-        /// Reference</i>.</p>
+        /// <p>If you specify <code>ALBRequestCountPerTarget</code> for the metric, you must specify the <code>ResourceLabel</code> parameter with the <code>PredefinedMetricSpecification</code>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_TargetTrackingConfiguration.html">TargetTrackingConfiguration</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
         /// <p>Required if the policy type is <code>TargetTrackingScaling</code>.</p>
         pub fn set_target_tracking_configuration(
             mut self,
@@ -7334,28 +6151,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_target_tracking_configuration(input);
             self
         }
-        /// <p>Indicates whether the scaling policy is enabled or disabled. The default is enabled.
-        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enable-disable-scaling-policy.html">Disabling a
-        /// scaling policy for an Auto Scaling group</a> in the
-        /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>Indicates whether the scaling policy is enabled or disabled. The default is enabled. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enable-disable-scaling-policy.html">Disabling a scaling policy for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn enabled(mut self, input: bool) -> Self {
             self.inner = self.inner.enabled(input);
             self
         }
-        /// <p>Indicates whether the scaling policy is enabled or disabled. The default is enabled.
-        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enable-disable-scaling-policy.html">Disabling a
-        /// scaling policy for an Auto Scaling group</a> in the
-        /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>Indicates whether the scaling policy is enabled or disabled. The default is enabled. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enable-disable-scaling-policy.html">Disabling a scaling policy for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_enabled(input);
             self
         }
-        /// <p>A predictive scaling policy. Provides support for predefined and custom
-        /// metrics.</p>
-        /// <p>Predefined metrics include CPU utilization, network in/out, and the Application Load
-        /// Balancer request count.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_PredictiveScalingConfiguration.html">PredictiveScalingConfiguration</a> in the <i>Amazon EC2 Auto Scaling API
-        /// Reference</i>.</p>
+        /// <p>A predictive scaling policy. Provides support for predefined and custom metrics.</p>
+        /// <p>Predefined metrics include CPU utilization, network in/out, and the Application Load Balancer request count.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_PredictiveScalingConfiguration.html">PredictiveScalingConfiguration</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
         /// <p>Required if the policy type is <code>PredictiveScaling</code>.</p>
         pub fn predictive_scaling_configuration(
             mut self,
@@ -7364,12 +6172,9 @@ pub mod fluent_builders {
             self.inner = self.inner.predictive_scaling_configuration(input);
             self
         }
-        /// <p>A predictive scaling policy. Provides support for predefined and custom
-        /// metrics.</p>
-        /// <p>Predefined metrics include CPU utilization, network in/out, and the Application Load
-        /// Balancer request count.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_PredictiveScalingConfiguration.html">PredictiveScalingConfiguration</a> in the <i>Amazon EC2 Auto Scaling API
-        /// Reference</i>.</p>
+        /// <p>A predictive scaling policy. Provides support for predefined and custom metrics.</p>
+        /// <p>Predefined metrics include CPU utilization, network in/out, and the Application Load Balancer request count.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_PredictiveScalingConfiguration.html">PredictiveScalingConfiguration</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
         /// <p>Required if the policy type is <code>PredictiveScaling</code>.</p>
         pub fn set_predictive_scaling_configuration(
             mut self,
@@ -7382,10 +6187,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `PutScheduledUpdateGroupAction`.
     ///
     /// <p>Creates or updates a scheduled scaling action for an Auto Scaling group.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/schedule_time.html">Scheduled scaling</a> in the
-    /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    /// <p>You can view the scheduled actions for an Auto Scaling group using the <a>DescribeScheduledActions</a> API call. If you are no longer using a
-    /// scheduled action, you can delete it by calling the <a>DeleteScheduledAction</a> API.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/schedule_time.html">Scheduled scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    /// <p>You can view the scheduled actions for an Auto Scaling group using the <code>DescribeScheduledActions</code> API call. If you are no longer using a scheduled action, you can delete it by calling the <code>DeleteScheduledAction</code> API.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutScheduledUpdateGroupAction<
         C = aws_smithy_client::erase::DynConnector,
@@ -7478,24 +6281,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_time(input);
             self
         }
-        /// <p>The date and time for this action to start, in YYYY-MM-DDThh:mm:ssZ format in UTC/GMT
-        /// only and in quotes (for example, <code>"2019-06-01T00:00:00Z"</code>).</p>
-        /// <p>If you specify <code>Recurrence</code> and <code>StartTime</code>, Amazon EC2 Auto Scaling performs
-        /// the action at this time, and then performs the action based on the specified
-        /// recurrence.</p>
-        /// <p>If you try to schedule your action in the past, Amazon EC2 Auto Scaling returns an error
-        /// message.</p>
+        /// <p>The date and time for this action to start, in YYYY-MM-DDThh:mm:ssZ format in UTC/GMT only and in quotes (for example, <code>"2019-06-01T00:00:00Z"</code>).</p>
+        /// <p>If you specify <code>Recurrence</code> and <code>StartTime</code>, Amazon EC2 Auto Scaling performs the action at this time, and then performs the action based on the specified recurrence.</p>
+        /// <p>If you try to schedule your action in the past, Amazon EC2 Auto Scaling returns an error message.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.inner = self.inner.start_time(input);
             self
         }
-        /// <p>The date and time for this action to start, in YYYY-MM-DDThh:mm:ssZ format in UTC/GMT
-        /// only and in quotes (for example, <code>"2019-06-01T00:00:00Z"</code>).</p>
-        /// <p>If you specify <code>Recurrence</code> and <code>StartTime</code>, Amazon EC2 Auto Scaling performs
-        /// the action at this time, and then performs the action based on the specified
-        /// recurrence.</p>
-        /// <p>If you try to schedule your action in the past, Amazon EC2 Auto Scaling returns an error
-        /// message.</p>
+        /// <p>The date and time for this action to start, in YYYY-MM-DDThh:mm:ssZ format in UTC/GMT only and in quotes (for example, <code>"2019-06-01T00:00:00Z"</code>).</p>
+        /// <p>If you specify <code>Recurrence</code> and <code>StartTime</code>, Amazon EC2 Auto Scaling performs the action at this time, and then performs the action based on the specified recurrence.</p>
+        /// <p>If you try to schedule your action in the past, Amazon EC2 Auto Scaling returns an error message.</p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<aws_smithy_types::DateTime>,
@@ -7516,25 +6311,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_end_time(input);
             self
         }
-        /// <p>The recurring schedule for this action. This format consists of five fields separated
-        /// by white spaces: [Minute] [Hour] [Day_of_Month] [Month_of_Year] [Day_of_Week]. The value
-        /// must be in quotes (for example, <code>"30 0 1 1,6,12 *"</code>). For more information
-        /// about this format, see <a href="http://crontab.org">Crontab</a>.</p>
-        /// <p>When <code>StartTime</code> and <code>EndTime</code> are specified with
-        /// <code>Recurrence</code>, they form the boundaries of when the recurring action
-        /// starts and stops.</p>
+        /// <p>The recurring schedule for this action. This format consists of five fields separated by white spaces: [Minute] [Hour] [Day_of_Month] [Month_of_Year] [Day_of_Week]. The value must be in quotes (for example, <code>"30 0 1 1,6,12 *"</code>). For more information about this format, see <a href="http://crontab.org">Crontab</a>.</p>
+        /// <p>When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>, they form the boundaries of when the recurring action starts and stops.</p>
         /// <p>Cron expressions use Universal Coordinated Time (UTC) by default.</p>
         pub fn recurrence(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.recurrence(input.into());
             self
         }
-        /// <p>The recurring schedule for this action. This format consists of five fields separated
-        /// by white spaces: [Minute] [Hour] [Day_of_Month] [Month_of_Year] [Day_of_Week]. The value
-        /// must be in quotes (for example, <code>"30 0 1 1,6,12 *"</code>). For more information
-        /// about this format, see <a href="http://crontab.org">Crontab</a>.</p>
-        /// <p>When <code>StartTime</code> and <code>EndTime</code> are specified with
-        /// <code>Recurrence</code>, they form the boundaries of when the recurring action
-        /// starts and stops.</p>
+        /// <p>The recurring schedule for this action. This format consists of five fields separated by white spaces: [Minute] [Hour] [Day_of_Month] [Month_of_Year] [Day_of_Week]. The value must be in quotes (for example, <code>"30 0 1 1,6,12 *"</code>). For more information about this format, see <a href="http://crontab.org">Crontab</a>.</p>
+        /// <p>When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>, they form the boundaries of when the recurring action starts and stops.</p>
         /// <p>Cron expressions use Universal Coordinated Time (UTC) by default.</p>
         pub fn set_recurrence(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_recurrence(input);
@@ -7560,34 +6345,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_size(input);
             self
         }
-        /// <p>The desired capacity is the initial capacity of the Auto Scaling group after the scheduled
-        /// action runs and the capacity it attempts to maintain. It can scale beyond this capacity
-        /// if you add more scaling conditions. </p>
+        /// <p>The desired capacity is the initial capacity of the Auto Scaling group after the scheduled action runs and the capacity it attempts to maintain. It can scale beyond this capacity if you add more scaling conditions. </p>
         pub fn desired_capacity(mut self, input: i32) -> Self {
             self.inner = self.inner.desired_capacity(input);
             self
         }
-        /// <p>The desired capacity is the initial capacity of the Auto Scaling group after the scheduled
-        /// action runs and the capacity it attempts to maintain. It can scale beyond this capacity
-        /// if you add more scaling conditions. </p>
+        /// <p>The desired capacity is the initial capacity of the Auto Scaling group after the scheduled action runs and the capacity it attempts to maintain. It can scale beyond this capacity if you add more scaling conditions. </p>
         pub fn set_desired_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_desired_capacity(input);
             self
         }
-        /// <p>Specifies the time zone for a cron expression. If a time zone is not provided, UTC is
-        /// used by default. </p>
-        /// <p>Valid values are the canonical names of the IANA time zones, derived from the IANA
-        /// Time Zone Database (such as <code>Etc/GMT+9</code> or <code>Pacific/Tahiti</code>). For
-        /// more information, see <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">https://en.wikipedia.org/wiki/List_of_tz_database_time_zones</a>.</p>
+        /// <p>Specifies the time zone for a cron expression. If a time zone is not provided, UTC is used by default. </p>
+        /// <p>Valid values are the canonical names of the IANA time zones, derived from the IANA Time Zone Database (such as <code>Etc/GMT+9</code> or <code>Pacific/Tahiti</code>). For more information, see <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">https://en.wikipedia.org/wiki/List_of_tz_database_time_zones</a>.</p>
         pub fn time_zone(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.time_zone(input.into());
             self
         }
-        /// <p>Specifies the time zone for a cron expression. If a time zone is not provided, UTC is
-        /// used by default. </p>
-        /// <p>Valid values are the canonical names of the IANA time zones, derived from the IANA
-        /// Time Zone Database (such as <code>Etc/GMT+9</code> or <code>Pacific/Tahiti</code>). For
-        /// more information, see <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">https://en.wikipedia.org/wiki/List_of_tz_database_time_zones</a>.</p>
+        /// <p>Specifies the time zone for a cron expression. If a time zone is not provided, UTC is used by default. </p>
+        /// <p>Valid values are the canonical names of the IANA time zones, derived from the IANA Time Zone Database (such as <code>Etc/GMT+9</code> or <code>Pacific/Tahiti</code>). For more information, see <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">https://en.wikipedia.org/wiki/List_of_tz_database_time_zones</a>.</p>
         pub fn set_time_zone(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_time_zone(input);
             self
@@ -7595,16 +6370,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `PutWarmPool`.
     ///
-    /// <p>Creates or updates a warm pool for the specified Auto Scaling group. A warm pool is a pool of
-    /// pre-initialized EC2 instances that sits alongside the Auto Scaling group. Whenever your
-    /// application needs to scale out, the Auto Scaling group can draw on the warm pool to meet its new
-    /// desired capacity. For more information and example configurations, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-warm-pools.html">Warm pools for
-    /// Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    /// <p>This operation must be called from the Region in which the Auto Scaling group was created.
-    /// This operation cannot be called on an Auto Scaling group that has a mixed instances policy or a
-    /// launch template or launch configuration that requests Spot Instances.</p>
-    /// <p>You can view the instances in the warm pool using the <a>DescribeWarmPool</a> API call. If you are no longer using a warm pool, you can delete it by calling the
-    /// <a>DeleteWarmPool</a> API.</p>
+    /// <p>Creates or updates a warm pool for the specified Auto Scaling group. A warm pool is a pool of pre-initialized EC2 instances that sits alongside the Auto Scaling group. Whenever your application needs to scale out, the Auto Scaling group can draw on the warm pool to meet its new desired capacity. For more information and example configurations, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-warm-pools.html">Warm pools for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    /// <p>This operation must be called from the Region in which the Auto Scaling group was created. This operation cannot be called on an Auto Scaling group that has a mixed instances policy or a launch template or launch configuration that requests Spot Instances.</p>
+    /// <p>You can view the instances in the warm pool using the <code>DescribeWarmPool</code> API call. If you are no longer using a warm pool, you can delete it by calling the <code>DeleteWarmPool</code> API.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct PutWarmPool<
         C = aws_smithy_client::erase::DynConnector,
@@ -7674,72 +6442,40 @@ pub mod fluent_builders {
             self.inner = self.inner.set_auto_scaling_group_name(input);
             self
         }
-        /// <p>Specifies the maximum number of instances that are allowed to be in the warm pool or
-        /// in any state except <code>Terminated</code> for the Auto Scaling group. This is an optional
-        /// property. Specify it only if you do not want the warm pool size to be determined by the
-        /// difference between the group's maximum capacity and its desired capacity. </p>
-        /// <important>
-        /// <p>If a value for <code>MaxGroupPreparedCapacity</code> is not specified, Amazon EC2 Auto Scaling
-        /// launches and maintains the difference between the group's maximum capacity and its
-        /// desired capacity. If you specify a value for <code>MaxGroupPreparedCapacity</code>,
-        /// Amazon EC2 Auto Scaling uses the difference between the <code>MaxGroupPreparedCapacity</code> and
-        /// the desired capacity instead. </p>
-        /// <p>The size of the warm pool is dynamic. Only when
-        /// <code>MaxGroupPreparedCapacity</code> and <code>MinSize</code> are set to the
-        /// same value does the warm pool have an absolute size.</p>
+        /// <p>Specifies the maximum number of instances that are allowed to be in the warm pool or in any state except <code>Terminated</code> for the Auto Scaling group. This is an optional property. Specify it only if you do not want the warm pool size to be determined by the difference between the group's maximum capacity and its desired capacity. </p> <important>
+        /// <p>If a value for <code>MaxGroupPreparedCapacity</code> is not specified, Amazon EC2 Auto Scaling launches and maintains the difference between the group's maximum capacity and its desired capacity. If you specify a value for <code>MaxGroupPreparedCapacity</code>, Amazon EC2 Auto Scaling uses the difference between the <code>MaxGroupPreparedCapacity</code> and the desired capacity instead. </p>
+        /// <p>The size of the warm pool is dynamic. Only when <code>MaxGroupPreparedCapacity</code> and <code>MinSize</code> are set to the same value does the warm pool have an absolute size.</p>
         /// </important>
-        /// <p>If the desired capacity of the Auto Scaling group is higher than the
-        /// <code>MaxGroupPreparedCapacity</code>, the capacity of the warm pool is 0, unless
-        /// you specify a value for <code>MinSize</code>. To remove a value that you previously set,
-        /// include the property but specify -1 for the value. </p>
+        /// <p>If the desired capacity of the Auto Scaling group is higher than the <code>MaxGroupPreparedCapacity</code>, the capacity of the warm pool is 0, unless you specify a value for <code>MinSize</code>. To remove a value that you previously set, include the property but specify -1 for the value. </p>
         pub fn max_group_prepared_capacity(mut self, input: i32) -> Self {
             self.inner = self.inner.max_group_prepared_capacity(input);
             self
         }
-        /// <p>Specifies the maximum number of instances that are allowed to be in the warm pool or
-        /// in any state except <code>Terminated</code> for the Auto Scaling group. This is an optional
-        /// property. Specify it only if you do not want the warm pool size to be determined by the
-        /// difference between the group's maximum capacity and its desired capacity. </p>
-        /// <important>
-        /// <p>If a value for <code>MaxGroupPreparedCapacity</code> is not specified, Amazon EC2 Auto Scaling
-        /// launches and maintains the difference between the group's maximum capacity and its
-        /// desired capacity. If you specify a value for <code>MaxGroupPreparedCapacity</code>,
-        /// Amazon EC2 Auto Scaling uses the difference between the <code>MaxGroupPreparedCapacity</code> and
-        /// the desired capacity instead. </p>
-        /// <p>The size of the warm pool is dynamic. Only when
-        /// <code>MaxGroupPreparedCapacity</code> and <code>MinSize</code> are set to the
-        /// same value does the warm pool have an absolute size.</p>
+        /// <p>Specifies the maximum number of instances that are allowed to be in the warm pool or in any state except <code>Terminated</code> for the Auto Scaling group. This is an optional property. Specify it only if you do not want the warm pool size to be determined by the difference between the group's maximum capacity and its desired capacity. </p> <important>
+        /// <p>If a value for <code>MaxGroupPreparedCapacity</code> is not specified, Amazon EC2 Auto Scaling launches and maintains the difference between the group's maximum capacity and its desired capacity. If you specify a value for <code>MaxGroupPreparedCapacity</code>, Amazon EC2 Auto Scaling uses the difference between the <code>MaxGroupPreparedCapacity</code> and the desired capacity instead. </p>
+        /// <p>The size of the warm pool is dynamic. Only when <code>MaxGroupPreparedCapacity</code> and <code>MinSize</code> are set to the same value does the warm pool have an absolute size.</p>
         /// </important>
-        /// <p>If the desired capacity of the Auto Scaling group is higher than the
-        /// <code>MaxGroupPreparedCapacity</code>, the capacity of the warm pool is 0, unless
-        /// you specify a value for <code>MinSize</code>. To remove a value that you previously set,
-        /// include the property but specify -1 for the value. </p>
+        /// <p>If the desired capacity of the Auto Scaling group is higher than the <code>MaxGroupPreparedCapacity</code>, the capacity of the warm pool is 0, unless you specify a value for <code>MinSize</code>. To remove a value that you previously set, include the property but specify -1 for the value. </p>
         pub fn set_max_group_prepared_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_group_prepared_capacity(input);
             self
         }
-        /// <p>Specifies the minimum number of instances to maintain in the warm pool. This helps you
-        /// to ensure that there is always a certain number of warmed instances available to handle
-        /// traffic spikes. Defaults to 0 if not specified.</p>
+        /// <p>Specifies the minimum number of instances to maintain in the warm pool. This helps you to ensure that there is always a certain number of warmed instances available to handle traffic spikes. Defaults to 0 if not specified.</p>
         pub fn min_size(mut self, input: i32) -> Self {
             self.inner = self.inner.min_size(input);
             self
         }
-        /// <p>Specifies the minimum number of instances to maintain in the warm pool. This helps you
-        /// to ensure that there is always a certain number of warmed instances available to handle
-        /// traffic spikes. Defaults to 0 if not specified.</p>
+        /// <p>Specifies the minimum number of instances to maintain in the warm pool. This helps you to ensure that there is always a certain number of warmed instances available to handle traffic spikes. Defaults to 0 if not specified.</p>
         pub fn set_min_size(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_min_size(input);
             self
         }
-        /// <p>Sets the instance state to transition to after the lifecycle actions are complete.
-        /// Default is <code>Stopped</code>.</p>
+        /// <p>Sets the instance state to transition to after the lifecycle actions are complete. Default is <code>Stopped</code>.</p>
         pub fn pool_state(mut self, input: crate::model::WarmPoolState) -> Self {
             self.inner = self.inner.pool_state(input);
             self
         }
-        /// <p>Sets the instance state to transition to after the lifecycle actions are complete.
-        /// Default is <code>Stopped</code>.</p>
+        /// <p>Sets the instance state to transition to after the lifecycle actions are complete. Default is <code>Stopped</code>.</p>
         pub fn set_pool_state(
             mut self,
             input: std::option::Option<crate::model::WarmPoolState>,
@@ -7750,38 +6486,16 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `RecordLifecycleActionHeartbeat`.
     ///
-    /// <p>Records a heartbeat for the lifecycle action associated with the specified token or
-    /// instance. This extends the timeout by the length of time defined using the <a>PutLifecycleHook</a> API call.</p>
-    /// <p>This step is a part of the procedure for adding a lifecycle hook to an Auto Scaling
-    /// group:</p>
+    /// <p>Records a heartbeat for the lifecycle action associated with the specified token or instance. This extends the timeout by the length of time defined using the <code>PutLifecycleHook</code> API call.</p>
+    /// <p>This step is a part of the procedure for adding a lifecycle hook to an Auto Scaling group:</p>
     /// <ol>
-    /// <li>
-    /// <p>(Optional) Create a Lambda function and a rule that allows Amazon EventBridge to
-    /// invoke your Lambda function when Amazon EC2 Auto Scaling launches or terminates
-    /// instances.</p>
-    /// </li>
-    /// <li>
-    /// <p>(Optional) Create a notification target and an IAM role. The target can be
-    /// either an Amazon SQS queue or an Amazon SNS topic. The role allows Amazon EC2 Auto Scaling to publish
-    /// lifecycle notifications to the target.</p>
-    /// </li>
-    /// <li>
-    /// <p>Create the lifecycle hook. Specify whether the hook is used when the instances
-    /// launch or terminate.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>If you need more time, record the lifecycle action
-    /// heartbeat to keep the instance in a pending state.</b>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>If you finish before the timeout period ends, send a callback by using the
-    /// <a>CompleteLifecycleAction</a> API call.</p>
-    /// </li>
+    /// <li> <p>(Optional) Create a Lambda function and a rule that allows Amazon EventBridge to invoke your Lambda function when Amazon EC2 Auto Scaling launches or terminates instances.</p> </li>
+    /// <li> <p>(Optional) Create a notification target and an IAM role. The target can be either an Amazon SQS queue or an Amazon SNS topic. The role allows Amazon EC2 Auto Scaling to publish lifecycle notifications to the target.</p> </li>
+    /// <li> <p>Create the lifecycle hook. Specify whether the hook is used when the instances launch or terminate.</p> </li>
+    /// <li> <p> <b>If you need more time, record the lifecycle action heartbeat to keep the instance in a pending state.</b> </p> </li>
+    /// <li> <p>If you finish before the timeout period ends, send a callback by using the <code>CompleteLifecycleAction</code> API call.</p> </li>
     /// </ol>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Amazon EC2 Auto Scaling lifecycle
-    /// hooks</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Amazon EC2 Auto Scaling lifecycle hooks</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct RecordLifecycleActionHeartbeat<
         C = aws_smithy_client::erase::DynConnector,
@@ -7864,16 +6578,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_auto_scaling_group_name(input);
             self
         }
-        /// <p>A token that uniquely identifies a specific lifecycle action associated with an
-        /// instance. Amazon EC2 Auto Scaling sends this token to the notification target that you specified when
-        /// you created the lifecycle hook.</p>
+        /// <p>A token that uniquely identifies a specific lifecycle action associated with an instance. Amazon EC2 Auto Scaling sends this token to the notification target that you specified when you created the lifecycle hook.</p>
         pub fn lifecycle_action_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.lifecycle_action_token(input.into());
             self
         }
-        /// <p>A token that uniquely identifies a specific lifecycle action associated with an
-        /// instance. Amazon EC2 Auto Scaling sends this token to the notification target that you specified when
-        /// you created the lifecycle hook.</p>
+        /// <p>A token that uniquely identifies a specific lifecycle action associated with an instance. Amazon EC2 Auto Scaling sends this token to the notification target that you specified when you created the lifecycle hook.</p>
         pub fn set_lifecycle_action_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7894,10 +6604,8 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ResumeProcesses`.
     ///
-    /// <p>Resumes the specified suspended auto scaling processes, or all suspended process, for
-    /// the specified Auto Scaling group.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html">Suspending and
-    /// resuming scaling processes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    /// <p>Resumes the specified suspended auto scaling processes, or all suspended process, for the specified Auto Scaling group.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html">Suspending and resuming scaling processes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ResumeProcesses<
         C = aws_smithy_client::erase::DynConnector,
@@ -7973,51 +6681,15 @@ pub mod fluent_builders {
         ///
         /// <p>One or more of the following processes:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Launch</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Terminate</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AddToLoadBalancer</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AlarmNotification</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AZRebalance</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>HealthCheck</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>InstanceRefresh</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ReplaceUnhealthy</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ScheduledActions</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Launch</code> </p> </li>
+        /// <li> <p> <code>Terminate</code> </p> </li>
+        /// <li> <p> <code>AddToLoadBalancer</code> </p> </li>
+        /// <li> <p> <code>AlarmNotification</code> </p> </li>
+        /// <li> <p> <code>AZRebalance</code> </p> </li>
+        /// <li> <p> <code>HealthCheck</code> </p> </li>
+        /// <li> <p> <code>InstanceRefresh</code> </p> </li>
+        /// <li> <p> <code>ReplaceUnhealthy</code> </p> </li>
+        /// <li> <p> <code>ScheduledActions</code> </p> </li>
         /// </ul>
         /// <p>If you omit this parameter, all processes are specified.</p>
         pub fn scaling_processes(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8026,51 +6698,15 @@ pub mod fluent_builders {
         }
         /// <p>One or more of the following processes:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Launch</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Terminate</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AddToLoadBalancer</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AlarmNotification</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AZRebalance</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>HealthCheck</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>InstanceRefresh</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ReplaceUnhealthy</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ScheduledActions</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Launch</code> </p> </li>
+        /// <li> <p> <code>Terminate</code> </p> </li>
+        /// <li> <p> <code>AddToLoadBalancer</code> </p> </li>
+        /// <li> <p> <code>AlarmNotification</code> </p> </li>
+        /// <li> <p> <code>AZRebalance</code> </p> </li>
+        /// <li> <p> <code>HealthCheck</code> </p> </li>
+        /// <li> <p> <code>InstanceRefresh</code> </p> </li>
+        /// <li> <p> <code>ReplaceUnhealthy</code> </p> </li>
+        /// <li> <p> <code>ScheduledActions</code> </p> </li>
         /// </ul>
         /// <p>If you omit this parameter, all processes are specified.</p>
         pub fn set_scaling_processes(
@@ -8084,11 +6720,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SetDesiredCapacity`.
     ///
     /// <p>Sets the size of the specified Auto Scaling group.</p>
-    /// <p>If a scale-in activity occurs as a result of a new <code>DesiredCapacity</code> value
-    /// that is lower than the current size of the group, the Auto Scaling group uses its termination
-    /// policy to determine which instances to terminate. </p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-manual-scaling.html">Manual scaling</a> in the
-    /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    /// <p>If a scale-in activity occurs as a result of a new <code>DesiredCapacity</code> value that is lower than the current size of the group, the Auto Scaling group uses its termination policy to determine which instances to terminate. </p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-manual-scaling.html">Manual scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetDesiredCapacity<
         C = aws_smithy_client::erase::DynConnector,
@@ -8158,28 +6791,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_auto_scaling_group_name(input);
             self
         }
-        /// <p>The desired capacity is the initial capacity of the Auto Scaling group after this operation
-        /// completes and the capacity it attempts to maintain.</p>
+        /// <p>The desired capacity is the initial capacity of the Auto Scaling group after this operation completes and the capacity it attempts to maintain.</p>
         pub fn desired_capacity(mut self, input: i32) -> Self {
             self.inner = self.inner.desired_capacity(input);
             self
         }
-        /// <p>The desired capacity is the initial capacity of the Auto Scaling group after this operation
-        /// completes and the capacity it attempts to maintain.</p>
+        /// <p>The desired capacity is the initial capacity of the Auto Scaling group after this operation completes and the capacity it attempts to maintain.</p>
         pub fn set_desired_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_desired_capacity(input);
             self
         }
-        /// <p>Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete before initiating
-        /// a scaling activity to set your Auto Scaling group to its new capacity. By default, Amazon EC2 Auto Scaling does
-        /// not honor the cooldown period during manual scaling activities.</p>
+        /// <p>Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete before initiating a scaling activity to set your Auto Scaling group to its new capacity. By default, Amazon EC2 Auto Scaling does not honor the cooldown period during manual scaling activities.</p>
         pub fn honor_cooldown(mut self, input: bool) -> Self {
             self.inner = self.inner.honor_cooldown(input);
             self
         }
-        /// <p>Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete before initiating
-        /// a scaling activity to set your Auto Scaling group to its new capacity. By default, Amazon EC2 Auto Scaling does
-        /// not honor the cooldown period during manual scaling activities.</p>
+        /// <p>Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete before initiating a scaling activity to set your Auto Scaling group to its new capacity. By default, Amazon EC2 Auto Scaling does not honor the cooldown period during manual scaling activities.</p>
         pub fn set_honor_cooldown(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_honor_cooldown(input);
             self
@@ -8188,8 +6815,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `SetInstanceHealth`.
     ///
     /// <p>Sets the health status of the specified instance.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health checks for Auto Scaling
-    /// instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health checks for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetInstanceHealth<
         C = aws_smithy_client::erase::DynConnector,
@@ -8256,16 +6882,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_id(input);
             self
         }
-        /// <p>The health status of the instance. Set to <code>Healthy</code> to have the instance
-        /// remain in service. Set to <code>Unhealthy</code> to have the instance be out of service.
-        /// Amazon EC2 Auto Scaling terminates and replaces the unhealthy instance.</p>
+        /// <p>The health status of the instance. Set to <code>Healthy</code> to have the instance remain in service. Set to <code>Unhealthy</code> to have the instance be out of service. Amazon EC2 Auto Scaling terminates and replaces the unhealthy instance.</p>
         pub fn health_status(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.health_status(input.into());
             self
         }
-        /// <p>The health status of the instance. Set to <code>Healthy</code> to have the instance
-        /// remain in service. Set to <code>Unhealthy</code> to have the instance be out of service.
-        /// Amazon EC2 Auto Scaling terminates and replaces the unhealthy instance.</p>
+        /// <p>The health status of the instance. Set to <code>Healthy</code> to have the instance remain in service. Set to <code>Unhealthy</code> to have the instance be out of service. Amazon EC2 Auto Scaling terminates and replaces the unhealthy instance.</p>
         pub fn set_health_status(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8273,26 +6895,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_health_status(input);
             self
         }
-        /// <p>If the Auto Scaling group of the specified instance has a <code>HealthCheckGracePeriod</code>
-        /// specified for the group, by default, this call respects the grace period. Set this to
-        /// <code>False</code>, to have the call not respect the grace period associated with
-        /// the group.</p>
-        ///
-        /// <p>For more information about the health check grace
-        /// period, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_CreateAutoScalingGroup.html">CreateAutoScalingGroup</a> in the <i>Amazon EC2 Auto Scaling API
-        /// Reference</i>.</p>
+        /// <p>If the Auto Scaling group of the specified instance has a <code>HealthCheckGracePeriod</code> specified for the group, by default, this call respects the grace period. Set this to <code>False</code>, to have the call not respect the grace period associated with the group.</p>
+        /// <p>For more information about the health check grace period, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_CreateAutoScalingGroup.html">CreateAutoScalingGroup</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
         pub fn should_respect_grace_period(mut self, input: bool) -> Self {
             self.inner = self.inner.should_respect_grace_period(input);
             self
         }
-        /// <p>If the Auto Scaling group of the specified instance has a <code>HealthCheckGracePeriod</code>
-        /// specified for the group, by default, this call respects the grace period. Set this to
-        /// <code>False</code>, to have the call not respect the grace period associated with
-        /// the group.</p>
-        ///
-        /// <p>For more information about the health check grace
-        /// period, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_CreateAutoScalingGroup.html">CreateAutoScalingGroup</a> in the <i>Amazon EC2 Auto Scaling API
-        /// Reference</i>.</p>
+        /// <p>If the Auto Scaling group of the specified instance has a <code>HealthCheckGracePeriod</code> specified for the group, by default, this call respects the grace period. Set this to <code>False</code>, to have the call not respect the grace period associated with the group.</p>
+        /// <p>For more information about the health check grace period, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_CreateAutoScalingGroup.html">CreateAutoScalingGroup</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
         pub fn set_should_respect_grace_period(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_should_respect_grace_period(input);
             self
@@ -8300,14 +6910,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SetInstanceProtection`.
     ///
-    /// <p>Updates the instance protection settings of the specified instances. This operation
-    /// cannot be called on instances in a warm pool.</p>
-    /// <p>For more information about preventing instances that are part of an Auto Scaling group from
-    /// terminating on scale in, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-protection.html">Using
-    /// instance scale-in protection</a> in the
-    /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    /// <p>If you exceed your maximum limit of instance IDs, which is 50 per Auto Scaling group, the call
-    /// fails.</p>
+    /// <p>Updates the instance protection settings of the specified instances. This operation cannot be called on instances in a warm pool.</p>
+    /// <p>For more information about preventing instances that are part of an Auto Scaling group from terminating on scale in, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-protection.html">Using instance scale-in protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    /// <p>If you exceed your maximum limit of instance IDs, which is 50 per Auto Scaling group, the call fails.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SetInstanceProtection<
         C = aws_smithy_client::erase::DynConnector,
@@ -8394,14 +6999,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_auto_scaling_group_name(input);
             self
         }
-        /// <p>Indicates whether the instance is protected from termination by Amazon EC2 Auto Scaling when scaling
-        /// in.</p>
+        /// <p>Indicates whether the instance is protected from termination by Amazon EC2 Auto Scaling when scaling in.</p>
         pub fn protected_from_scale_in(mut self, input: bool) -> Self {
             self.inner = self.inner.protected_from_scale_in(input);
             self
         }
-        /// <p>Indicates whether the instance is protected from termination by Amazon EC2 Auto Scaling when scaling
-        /// in.</p>
+        /// <p>Indicates whether the instance is protected from termination by Amazon EC2 Auto Scaling when scaling in.</p>
         pub fn set_protected_from_scale_in(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_protected_from_scale_in(input);
             self
@@ -8409,21 +7012,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartInstanceRefresh`.
     ///
-    /// <p>Starts a new instance refresh operation. An instance refresh performs a rolling
-    /// replacement of all or some instances in an Auto Scaling group. Each instance is terminated first
-    /// and then replaced, which temporarily reduces the capacity available within your Auto Scaling
-    /// group.</p>
-    /// <p>This operation is part of the <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">instance refresh
-    /// feature</a> in Amazon EC2 Auto Scaling, which helps you update instances in your Auto Scaling group.
-    /// This feature is helpful, for example, when you have a new AMI or a new user data script.
-    /// You just need to create a new launch template that specifies the new AMI or user data
-    /// script. Then start an instance refresh to immediately begin the process of updating
-    /// instances in the group. </p>
-    /// <p>If the call succeeds, it creates a new instance refresh request with a unique ID that
-    /// you can use to track its progress. To query its status, call the <a>DescribeInstanceRefreshes</a> API. To describe the instance refreshes that
-    /// have already run, call the <a>DescribeInstanceRefreshes</a> API. To cancel an
-    /// instance refresh operation in progress, use the <a>CancelInstanceRefresh</a>
-    /// API. </p>
+    /// <p>Starts a new instance refresh operation. An instance refresh performs a rolling replacement of all or some instances in an Auto Scaling group. Each instance is terminated first and then replaced, which temporarily reduces the capacity available within your Auto Scaling group.</p>
+    /// <p>This operation is part of the <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">instance refresh feature</a> in Amazon EC2 Auto Scaling, which helps you update instances in your Auto Scaling group. This feature is helpful, for example, when you have a new AMI or a new user data script. You just need to create a new launch template that specifies the new AMI or user data script. Then start an instance refresh to immediately begin the process of updating instances in the group. </p>
+    /// <p>If the call succeeds, it creates a new instance refresh request with a unique ID that you can use to track its progress. To query its status, call the <code>DescribeInstanceRefreshes</code> API. To describe the instance refreshes that have already run, call the <code>DescribeInstanceRefreshes</code> API. To cancel an instance refresh operation in progress, use the <code>CancelInstanceRefresh</code> API. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartInstanceRefresh<
         C = aws_smithy_client::erase::DynConnector,
@@ -8493,22 +7084,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_auto_scaling_group_name(input);
             self
         }
-        /// <p>The strategy to use for the instance refresh. The only valid value is
-        /// <code>Rolling</code>.</p>
-        /// <p>A rolling update helps you update your instances gradually. A rolling update can fail
-        /// due to failed health checks or if instances are on standby or are protected from scale
-        /// in. If the rolling update process fails, any instances that are replaced are not rolled
-        /// back to their previous configuration. </p>
+        /// <p>The strategy to use for the instance refresh. The only valid value is <code>Rolling</code>.</p>
+        /// <p>A rolling update helps you update your instances gradually. A rolling update can fail due to failed health checks or if instances are on standby or are protected from scale in. If the rolling update process fails, any instances that are replaced are not rolled back to their previous configuration. </p>
         pub fn strategy(mut self, input: crate::model::RefreshStrategy) -> Self {
             self.inner = self.inner.strategy(input);
             self
         }
-        /// <p>The strategy to use for the instance refresh. The only valid value is
-        /// <code>Rolling</code>.</p>
-        /// <p>A rolling update helps you update your instances gradually. A rolling update can fail
-        /// due to failed health checks or if instances are on standby or are protected from scale
-        /// in. If the rolling update process fails, any instances that are replaced are not rolled
-        /// back to their previous configuration. </p>
+        /// <p>The strategy to use for the instance refresh. The only valid value is <code>Rolling</code>.</p>
+        /// <p>A rolling update helps you update your instances gradually. A rolling update can fail due to failed health checks or if instances are on standby or are protected from scale in. If the rolling update process fails, any instances that are replaced are not rolled back to their previous configuration. </p>
         pub fn set_strategy(
             mut self,
             input: std::option::Option<crate::model::RefreshStrategy>,
@@ -8516,33 +7099,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_strategy(input);
             self
         }
-        /// <p>The desired configuration. For example, the desired configuration can specify a new
-        /// launch template or a new version of the current launch template.</p>
-        /// <p>Once the instance refresh succeeds, Amazon EC2 Auto Scaling updates the settings of the Auto Scaling group to
-        /// reflect the new desired configuration. </p>
-        /// <note>
-        /// <p>When you specify a new launch template or a new version of the current launch
-        /// template for your desired configuration, consider enabling the
-        /// <code>SkipMatching</code> property in preferences. If it's enabled, Amazon EC2 Auto Scaling
-        /// skips replacing instances that already use the specified launch template and
-        /// version. This can help you reduce the number of replacements that are required to
-        /// apply updates. </p>
+        /// <p>The desired configuration. For example, the desired configuration can specify a new launch template or a new version of the current launch template.</p>
+        /// <p>Once the instance refresh succeeds, Amazon EC2 Auto Scaling updates the settings of the Auto Scaling group to reflect the new desired configuration. </p> <note>
+        /// <p>When you specify a new launch template or a new version of the current launch template for your desired configuration, consider enabling the <code>SkipMatching</code> property in preferences. If it's enabled, Amazon EC2 Auto Scaling skips replacing instances that already use the specified launch template and version. This can help you reduce the number of replacements that are required to apply updates. </p>
         /// </note>
         pub fn desired_configuration(mut self, input: crate::model::DesiredConfiguration) -> Self {
             self.inner = self.inner.desired_configuration(input);
             self
         }
-        /// <p>The desired configuration. For example, the desired configuration can specify a new
-        /// launch template or a new version of the current launch template.</p>
-        /// <p>Once the instance refresh succeeds, Amazon EC2 Auto Scaling updates the settings of the Auto Scaling group to
-        /// reflect the new desired configuration. </p>
-        /// <note>
-        /// <p>When you specify a new launch template or a new version of the current launch
-        /// template for your desired configuration, consider enabling the
-        /// <code>SkipMatching</code> property in preferences. If it's enabled, Amazon EC2 Auto Scaling
-        /// skips replacing instances that already use the specified launch template and
-        /// version. This can help you reduce the number of replacements that are required to
-        /// apply updates. </p>
+        /// <p>The desired configuration. For example, the desired configuration can specify a new launch template or a new version of the current launch template.</p>
+        /// <p>Once the instance refresh succeeds, Amazon EC2 Auto Scaling updates the settings of the Auto Scaling group to reflect the new desired configuration. </p> <note>
+        /// <p>When you specify a new launch template or a new version of the current launch template for your desired configuration, consider enabling the <code>SkipMatching</code> property in preferences. If it's enabled, Amazon EC2 Auto Scaling skips replacing instances that already use the specified launch template and version. This can help you reduce the number of replacements that are required to apply updates. </p>
         /// </note>
         pub fn set_desired_configuration(
             mut self,
@@ -8551,14 +7118,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_desired_configuration(input);
             self
         }
-        /// <p>Set of preferences associated with the instance refresh request. If not provided, the
-        /// default values are used.</p>
+        /// <p>Set of preferences associated with the instance refresh request. If not provided, the default values are used.</p>
         pub fn preferences(mut self, input: crate::model::RefreshPreferences) -> Self {
             self.inner = self.inner.preferences(input);
             self
         }
-        /// <p>Set of preferences associated with the instance refresh request. If not provided, the
-        /// default values are used.</p>
+        /// <p>Set of preferences associated with the instance refresh request. If not provided, the default values are used.</p>
         pub fn set_preferences(
             mut self,
             input: std::option::Option<crate::model::RefreshPreferences>,
@@ -8569,13 +7134,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `SuspendProcesses`.
     ///
-    /// <p>Suspends the specified auto scaling processes, or all processes, for the specified
-    /// Auto Scaling group.</p>
-    /// <p>If you suspend either the <code>Launch</code> or <code>Terminate</code> process types,
-    /// it can prevent other process types from functioning properly. For more information, see
-    /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html">Suspending and
-    /// resuming scaling processes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    /// <p>To resume processes that have been suspended, call the <a>ResumeProcesses</a> API.</p>
+    /// <p>Suspends the specified auto scaling processes, or all processes, for the specified Auto Scaling group.</p>
+    /// <p>If you suspend either the <code>Launch</code> or <code>Terminate</code> process types, it can prevent other process types from functioning properly. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html">Suspending and resuming scaling processes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    /// <p>To resume processes that have been suspended, call the <code>ResumeProcesses</code> API.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct SuspendProcesses<
         C = aws_smithy_client::erase::DynConnector,
@@ -8651,51 +7212,15 @@ pub mod fluent_builders {
         ///
         /// <p>One or more of the following processes:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Launch</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Terminate</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AddToLoadBalancer</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AlarmNotification</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AZRebalance</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>HealthCheck</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>InstanceRefresh</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ReplaceUnhealthy</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ScheduledActions</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Launch</code> </p> </li>
+        /// <li> <p> <code>Terminate</code> </p> </li>
+        /// <li> <p> <code>AddToLoadBalancer</code> </p> </li>
+        /// <li> <p> <code>AlarmNotification</code> </p> </li>
+        /// <li> <p> <code>AZRebalance</code> </p> </li>
+        /// <li> <p> <code>HealthCheck</code> </p> </li>
+        /// <li> <p> <code>InstanceRefresh</code> </p> </li>
+        /// <li> <p> <code>ReplaceUnhealthy</code> </p> </li>
+        /// <li> <p> <code>ScheduledActions</code> </p> </li>
         /// </ul>
         /// <p>If you omit this parameter, all processes are specified.</p>
         pub fn scaling_processes(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8704,51 +7229,15 @@ pub mod fluent_builders {
         }
         /// <p>One or more of the following processes:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Launch</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Terminate</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AddToLoadBalancer</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AlarmNotification</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>AZRebalance</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>HealthCheck</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>InstanceRefresh</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ReplaceUnhealthy</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ScheduledActions</code>
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>Launch</code> </p> </li>
+        /// <li> <p> <code>Terminate</code> </p> </li>
+        /// <li> <p> <code>AddToLoadBalancer</code> </p> </li>
+        /// <li> <p> <code>AlarmNotification</code> </p> </li>
+        /// <li> <p> <code>AZRebalance</code> </p> </li>
+        /// <li> <p> <code>HealthCheck</code> </p> </li>
+        /// <li> <p> <code>InstanceRefresh</code> </p> </li>
+        /// <li> <p> <code>ReplaceUnhealthy</code> </p> </li>
+        /// <li> <p> <code>ScheduledActions</code> </p> </li>
         /// </ul>
         /// <p>If you omit this parameter, all processes are specified.</p>
         pub fn set_scaling_processes(
@@ -8761,18 +7250,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `TerminateInstanceInAutoScalingGroup`.
     ///
-    /// <p>Terminates the specified instance and optionally adjusts the desired group size. This
-    /// operation cannot be called on instances in a warm pool.</p>
-    /// <p>This call simply makes a termination request. The instance is not terminated
-    /// immediately. When an instance is terminated, the instance status changes to
-    /// <code>terminated</code>. You can't connect to or start an instance after you've
-    /// terminated it.</p>
-    /// <p>If you do not specify the option to decrement the desired capacity, Amazon EC2 Auto Scaling launches
-    /// instances to replace the ones that are terminated. </p>
-    /// <p>By default, Amazon EC2 Auto Scaling balances instances across all Availability Zones. If you
-    /// decrement the desired capacity, your Auto Scaling group can become unbalanced between
-    /// Availability Zones. Amazon EC2 Auto Scaling tries to rebalance the group, and rebalancing might
-    /// terminate instances in other zones. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/auto-scaling-benefits.html#AutoScalingBehavior.InstanceUsage">Rebalancing activities</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    /// <p>Terminates the specified instance and optionally adjusts the desired group size. This operation cannot be called on instances in a warm pool.</p>
+    /// <p>This call simply makes a termination request. The instance is not terminated immediately. When an instance is terminated, the instance status changes to <code>terminated</code>. You can't connect to or start an instance after you've terminated it.</p>
+    /// <p>If you do not specify the option to decrement the desired capacity, Amazon EC2 Auto Scaling launches instances to replace the ones that are terminated. </p>
+    /// <p>By default, Amazon EC2 Auto Scaling balances instances across all Availability Zones. If you decrement the desired capacity, your Auto Scaling group can become unbalanced between Availability Zones. Amazon EC2 Auto Scaling tries to rebalance the group, and rebalancing might terminate instances in other zones. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/auto-scaling-benefits.html#AutoScalingBehavior.InstanceUsage">Rebalancing activities</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct TerminateInstanceInAutoScalingGroup<
         C = aws_smithy_client::erase::DynConnector,
@@ -8841,14 +7322,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_id(input);
             self
         }
-        /// <p>Indicates whether terminating the instance also decrements the size of the Auto Scaling
-        /// group.</p>
+        /// <p>Indicates whether terminating the instance also decrements the size of the Auto Scaling group.</p>
         pub fn should_decrement_desired_capacity(mut self, input: bool) -> Self {
             self.inner = self.inner.should_decrement_desired_capacity(input);
             self
         }
-        /// <p>Indicates whether terminating the instance also decrements the size of the Auto Scaling
-        /// group.</p>
+        /// <p>Indicates whether terminating the instance also decrements the size of the Auto Scaling group.</p>
         pub fn set_should_decrement_desired_capacity(
             mut self,
             input: std::option::Option<bool>,
@@ -8859,51 +7338,17 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateAutoScalingGroup`.
     ///
-    /// <p>
-    /// <b>We strongly recommend that all Auto Scaling groups use launch templates to ensure full functionality for Amazon EC2 Auto Scaling and Amazon EC2.</b>
-    /// </p>
-    /// <p>Updates the configuration for
-    /// the specified Auto Scaling group.</p>
-    /// <p>To update an Auto Scaling group, specify the name of the group and the parameter that you want
-    /// to change. Any parameters that you don't specify are not changed by this update request.
-    /// The new settings take effect on any scaling activities after this call returns.
-    /// </p>
-    /// <p>If you associate a new launch configuration or template with an Auto Scaling group, all new
-    /// instances will get the updated configuration. Existing instances continue to run with
-    /// the configuration that they were originally launched with. When you update a group to
-    /// specify a mixed instances policy instead of a launch configuration or template, existing
-    /// instances may be replaced to match the new purchasing options that you specified in the
-    /// policy. For example, if the group currently has 100% On-Demand capacity and the policy
-    /// specifies 50% Spot capacity, this means that half of your instances will be gradually
-    /// terminated and relaunched as Spot Instances. When replacing instances, Amazon EC2 Auto Scaling launches
-    /// new instances before terminating the old ones, so that updating your group does not
-    /// compromise the performance or availability of your application.</p>
-    /// <p>Note the following about changing <code>DesiredCapacity</code>, <code>MaxSize</code>,
-    /// or <code>MinSize</code>:</p>
+    /// <p> <b>We strongly recommend that all Auto Scaling groups use launch templates to ensure full functionality for Amazon EC2 Auto Scaling and Amazon EC2.</b> </p>
+    /// <p>Updates the configuration for the specified Auto Scaling group.</p>
+    /// <p>To update an Auto Scaling group, specify the name of the group and the parameter that you want to change. Any parameters that you don't specify are not changed by this update request. The new settings take effect on any scaling activities after this call returns. </p>
+    /// <p>If you associate a new launch configuration or template with an Auto Scaling group, all new instances will get the updated configuration. Existing instances continue to run with the configuration that they were originally launched with. When you update a group to specify a mixed instances policy instead of a launch configuration or template, existing instances may be replaced to match the new purchasing options that you specified in the policy. For example, if the group currently has 100% On-Demand capacity and the policy specifies 50% Spot capacity, this means that half of your instances will be gradually terminated and relaunched as Spot Instances. When replacing instances, Amazon EC2 Auto Scaling launches new instances before terminating the old ones, so that updating your group does not compromise the performance or availability of your application.</p>
+    /// <p>Note the following about changing <code>DesiredCapacity</code>, <code>MaxSize</code>, or <code>MinSize</code>:</p>
     /// <ul>
-    /// <li>
-    /// <p>If a scale-in activity occurs as a result of a new
-    /// <code>DesiredCapacity</code> value that is lower than the current size of
-    /// the group, the Auto Scaling group uses its termination policy to determine which
-    /// instances to terminate.</p>
-    /// </li>
-    /// <li>
-    /// <p>If you specify a new value for <code>MinSize</code> without specifying a value
-    /// for <code>DesiredCapacity</code>, and the new <code>MinSize</code> is larger
-    /// than the current size of the group, this sets the group's
-    /// <code>DesiredCapacity</code> to the new <code>MinSize</code> value.</p>
-    /// </li>
-    /// <li>
-    /// <p>If you specify a new value for <code>MaxSize</code> without specifying a value
-    /// for <code>DesiredCapacity</code>, and the new <code>MaxSize</code> is smaller
-    /// than the current size of the group, this sets the group's
-    /// <code>DesiredCapacity</code> to the new <code>MaxSize</code> value.</p>
-    /// </li>
+    /// <li> <p>If a scale-in activity occurs as a result of a new <code>DesiredCapacity</code> value that is lower than the current size of the group, the Auto Scaling group uses its termination policy to determine which instances to terminate.</p> </li>
+    /// <li> <p>If you specify a new value for <code>MinSize</code> without specifying a value for <code>DesiredCapacity</code>, and the new <code>MinSize</code> is larger than the current size of the group, this sets the group's <code>DesiredCapacity</code> to the new <code>MinSize</code> value.</p> </li>
+    /// <li> <p>If you specify a new value for <code>MaxSize</code> without specifying a value for <code>DesiredCapacity</code>, and the new <code>MaxSize</code> is smaller than the current size of the group, this sets the group's <code>DesiredCapacity</code> to the new <code>MaxSize</code> value.</p> </li>
     /// </ul>
-    /// <p>To see which parameters have been set, call the <a>DescribeAutoScalingGroups</a> API. To view the scaling policies for an Auto Scaling
-    /// group, call the <a>DescribePolicies</a> API. If the group has scaling
-    /// policies, you can update them by calling the <a>PutScalingPolicy</a>
-    /// API.</p>
+    /// <p>To see which parameters have been set, call the <code>DescribeAutoScalingGroups</code> API. To view the scaling policies for an Auto Scaling group, call the <code>DescribePolicies</code> API. If the group has scaling policies, you can update them by calling the <code>PutScalingPolicy</code> API.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateAutoScalingGroup<
         C = aws_smithy_client::erase::DynConnector,
@@ -8973,16 +7418,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_auto_scaling_group_name(input);
             self
         }
-        /// <p>The name of the launch configuration. If you specify
-        /// <code>LaunchConfigurationName</code> in your update request, you can't specify
-        /// <code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>.</p>
+        /// <p>The name of the launch configuration. If you specify <code>LaunchConfigurationName</code> in your update request, you can't specify <code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>.</p>
         pub fn launch_configuration_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.launch_configuration_name(input.into());
             self
         }
-        /// <p>The name of the launch configuration. If you specify
-        /// <code>LaunchConfigurationName</code> in your update request, you can't specify
-        /// <code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>.</p>
+        /// <p>The name of the launch configuration. If you specify <code>LaunchConfigurationName</code> in your update request, you can't specify <code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>.</p>
         pub fn set_launch_configuration_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8990,16 +7431,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_launch_configuration_name(input);
             self
         }
-        /// <p>The launch template and version to use to specify the updates. If you specify
-        /// <code>LaunchTemplate</code> in your update request, you can't specify
-        /// <code>LaunchConfigurationName</code> or <code>MixedInstancesPolicy</code>.</p>
+        /// <p>The launch template and version to use to specify the updates. If you specify <code>LaunchTemplate</code> in your update request, you can't specify <code>LaunchConfigurationName</code> or <code>MixedInstancesPolicy</code>.</p>
         pub fn launch_template(mut self, input: crate::model::LaunchTemplateSpecification) -> Self {
             self.inner = self.inner.launch_template(input);
             self
         }
-        /// <p>The launch template and version to use to specify the updates. If you specify
-        /// <code>LaunchTemplate</code> in your update request, you can't specify
-        /// <code>LaunchConfigurationName</code> or <code>MixedInstancesPolicy</code>.</p>
+        /// <p>The launch template and version to use to specify the updates. If you specify <code>LaunchTemplate</code> in your update request, you can't specify <code>LaunchConfigurationName</code> or <code>MixedInstancesPolicy</code>.</p>
         pub fn set_launch_template(
             mut self,
             input: std::option::Option<crate::model::LaunchTemplateSpecification>,
@@ -9007,18 +7444,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_launch_template(input);
             self
         }
-        /// <p>An embedded object that specifies a mixed instances policy. For more information, see
-        /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto Scaling groups with multiple
-        /// instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User
-        /// Guide</i>.</p>
+        /// <p>An embedded object that specifies a mixed instances policy. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto Scaling groups with multiple instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn mixed_instances_policy(mut self, input: crate::model::MixedInstancesPolicy) -> Self {
             self.inner = self.inner.mixed_instances_policy(input);
             self
         }
-        /// <p>An embedded object that specifies a mixed instances policy. For more information, see
-        /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto Scaling groups with multiple
-        /// instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User
-        /// Guide</i>.</p>
+        /// <p>An embedded object that specifies a mixed instances policy. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto Scaling groups with multiple instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_mixed_instances_policy(
             mut self,
             input: std::option::Option<crate::model::MixedInstancesPolicy>,
@@ -9036,60 +7467,36 @@ pub mod fluent_builders {
             self.inner = self.inner.set_min_size(input);
             self
         }
-        /// <p>The maximum size of the Auto Scaling group.</p>
-        /// <note>
-        /// <p>With a mixed instances policy that uses instance weighting, Amazon EC2 Auto Scaling may need to
-        /// go above <code>MaxSize</code> to meet your capacity requirements. In this event,
-        /// Amazon EC2 Auto Scaling will never go above <code>MaxSize</code> by more than your largest instance
-        /// weight (weights that define how many units each instance contributes to the desired
-        /// capacity of the group).</p>
+        /// <p>The maximum size of the Auto Scaling group.</p> <note>
+        /// <p>With a mixed instances policy that uses instance weighting, Amazon EC2 Auto Scaling may need to go above <code>MaxSize</code> to meet your capacity requirements. In this event, Amazon EC2 Auto Scaling will never go above <code>MaxSize</code> by more than your largest instance weight (weights that define how many units each instance contributes to the desired capacity of the group).</p>
         /// </note>
         pub fn max_size(mut self, input: i32) -> Self {
             self.inner = self.inner.max_size(input);
             self
         }
-        /// <p>The maximum size of the Auto Scaling group.</p>
-        /// <note>
-        /// <p>With a mixed instances policy that uses instance weighting, Amazon EC2 Auto Scaling may need to
-        /// go above <code>MaxSize</code> to meet your capacity requirements. In this event,
-        /// Amazon EC2 Auto Scaling will never go above <code>MaxSize</code> by more than your largest instance
-        /// weight (weights that define how many units each instance contributes to the desired
-        /// capacity of the group).</p>
+        /// <p>The maximum size of the Auto Scaling group.</p> <note>
+        /// <p>With a mixed instances policy that uses instance weighting, Amazon EC2 Auto Scaling may need to go above <code>MaxSize</code> to meet your capacity requirements. In this event, Amazon EC2 Auto Scaling will never go above <code>MaxSize</code> by more than your largest instance weight (weights that define how many units each instance contributes to the desired capacity of the group).</p>
         /// </note>
         pub fn set_max_size(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_size(input);
             self
         }
-        /// <p>The desired capacity is the initial capacity of the Auto Scaling group after this operation
-        /// completes and the capacity it attempts to maintain. This number must be greater than or
-        /// equal to the minimum size of the group and less than or equal to the maximum size of the
-        /// group.</p>
+        /// <p>The desired capacity is the initial capacity of the Auto Scaling group after this operation completes and the capacity it attempts to maintain. This number must be greater than or equal to the minimum size of the group and less than or equal to the maximum size of the group.</p>
         pub fn desired_capacity(mut self, input: i32) -> Self {
             self.inner = self.inner.desired_capacity(input);
             self
         }
-        /// <p>The desired capacity is the initial capacity of the Auto Scaling group after this operation
-        /// completes and the capacity it attempts to maintain. This number must be greater than or
-        /// equal to the minimum size of the group and less than or equal to the maximum size of the
-        /// group.</p>
+        /// <p>The desired capacity is the initial capacity of the Auto Scaling group after this operation completes and the capacity it attempts to maintain. This number must be greater than or equal to the minimum size of the group and less than or equal to the maximum size of the group.</p>
         pub fn set_desired_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_desired_capacity(input);
             self
         }
-        /// <p>The amount of time, in seconds, after a scaling activity completes before another
-        /// scaling activity can start. The default value is <code>300</code>. This setting applies
-        /// when using simple scaling policies, but not when using other scaling policies or
-        /// scheduled scaling. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling cooldowns for Amazon EC2 Auto Scaling</a>
-        /// in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>The amount of time, in seconds, after a scaling activity completes before another scaling activity can start. The default value is <code>300</code>. This setting applies when using simple scaling policies, but not when using other scaling policies or scheduled scaling. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn default_cooldown(mut self, input: i32) -> Self {
             self.inner = self.inner.default_cooldown(input);
             self
         }
-        /// <p>The amount of time, in seconds, after a scaling activity completes before another
-        /// scaling activity can start. The default value is <code>300</code>. This setting applies
-        /// when using simple scaling policies, but not when using other scaling policies or
-        /// scheduled scaling. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling cooldowns for Amazon EC2 Auto Scaling</a>
-        /// in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>The amount of time, in seconds, after a scaling activity completes before another scaling activity can start. The default value is <code>300</code>. This setting applies when using simple scaling policies, but not when using other scaling policies or scheduled scaling. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_default_cooldown(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_default_cooldown(input);
             self
@@ -9111,18 +7518,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_availability_zones(input);
             self
         }
-        /// <p>The service to use for the health checks. The valid values are <code>EC2</code> and
-        /// <code>ELB</code>. If you configure an Auto Scaling group to use <code>ELB</code> health
-        /// checks, it considers the instance unhealthy if it fails either the EC2 status checks or
-        /// the load balancer health checks.</p>
+        /// <p>The service to use for the health checks. The valid values are <code>EC2</code> and <code>ELB</code>. If you configure an Auto Scaling group to use <code>ELB</code> health checks, it considers the instance unhealthy if it fails either the EC2 status checks or the load balancer health checks.</p>
         pub fn health_check_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.health_check_type(input.into());
             self
         }
-        /// <p>The service to use for the health checks. The valid values are <code>EC2</code> and
-        /// <code>ELB</code>. If you configure an Auto Scaling group to use <code>ELB</code> health
-        /// checks, it considers the instance unhealthy if it fails either the EC2 status checks or
-        /// the load balancer health checks.</p>
+        /// <p>The service to use for the health checks. The valid values are <code>EC2</code> and <code>ELB</code>. If you configure an Auto Scaling group to use <code>ELB</code> health checks, it considers the instance unhealthy if it fails either the EC2 status checks or the load balancer health checks.</p>
         pub fn set_health_check_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9130,38 +7531,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_health_check_type(input);
             self
         }
-        /// <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status
-        /// of an EC2 instance that has come into service and marking it unhealthy due to a failed
-        /// health check. The default value is <code>0</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
-        /// check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status of an EC2 instance that has come into service and marking it unhealthy due to a failed health check. The default value is <code>0</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         /// <p>Conditional: Required if you are adding an <code>ELB</code> health check.</p>
         pub fn health_check_grace_period(mut self, input: i32) -> Self {
             self.inner = self.inner.health_check_grace_period(input);
             self
         }
-        /// <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status
-        /// of an EC2 instance that has come into service and marking it unhealthy due to a failed
-        /// health check. The default value is <code>0</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
-        /// check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status of an EC2 instance that has come into service and marking it unhealthy due to a failed health check. The default value is <code>0</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         /// <p>Conditional: Required if you are adding an <code>ELB</code> health check.</p>
         pub fn set_health_check_grace_period(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_health_check_grace_period(input);
             self
         }
-        /// <p>The name of an existing placement group into which to launch your instances, if any. A
-        /// placement group is a logical grouping of instances within a single Availability Zone.
-        /// You cannot specify multiple Availability Zones and a placement group. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
-        /// <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+        /// <p>The name of an existing placement group into which to launch your instances, if any. A placement group is a logical grouping of instances within a single Availability Zone. You cannot specify multiple Availability Zones and a placement group. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
         pub fn placement_group(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.placement_group(input.into());
             self
         }
-        /// <p>The name of an existing placement group into which to launch your instances, if any. A
-        /// placement group is a logical grouping of instances within a single Availability Zone.
-        /// You cannot specify multiple Availability Zones and a placement group. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
-        /// <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+        /// <p>The name of an existing placement group into which to launch your instances, if any. A placement group is a logical grouping of instances within a single Availability Zone. You cannot specify multiple Availability Zones and a placement group. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
         pub fn set_placement_group(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9169,16 +7556,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_placement_group(input);
             self
         }
-        /// <p>A comma-separated list of subnet IDs for a virtual private cloud (VPC). If you specify
-        /// <code>VPCZoneIdentifier</code> with <code>AvailabilityZones</code>, the subnets that
-        /// you specify for this parameter must reside in those Availability Zones.</p>
+        /// <p>A comma-separated list of subnet IDs for a virtual private cloud (VPC). If you specify <code>VPCZoneIdentifier</code> with <code>AvailabilityZones</code>, the subnets that you specify for this parameter must reside in those Availability Zones.</p>
         pub fn vpc_zone_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.vpc_zone_identifier(input.into());
             self
         }
-        /// <p>A comma-separated list of subnet IDs for a virtual private cloud (VPC). If you specify
-        /// <code>VPCZoneIdentifier</code> with <code>AvailabilityZones</code>, the subnets that
-        /// you specify for this parameter must reside in those Availability Zones.</p>
+        /// <p>A comma-separated list of subnet IDs for a virtual private cloud (VPC). If you specify <code>VPCZoneIdentifier</code> with <code>AvailabilityZones</code>, the subnets that you specify for this parameter must reside in those Availability Zones.</p>
         pub fn set_vpc_zone_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9190,16 +7573,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_termination_policies`](Self::set_termination_policies).
         ///
-        /// <p>A policy or a list of policies that are used to select the instances to terminate. The
-        /// policies are executed in the order that you list them. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling which Auto Scaling instances terminate during scale in</a> in the
-        /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>A policy or a list of policies that are used to select the instances to terminate. The policies are executed in the order that you list them. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling which Auto Scaling instances terminate during scale in</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn termination_policies(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.termination_policies(input.into());
             self
         }
-        /// <p>A policy or a list of policies that are used to select the instances to terminate. The
-        /// policies are executed in the order that you list them. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling which Auto Scaling instances terminate during scale in</a> in the
-        /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>A policy or a list of policies that are used to select the instances to terminate. The policies are executed in the order that you list them. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling which Auto Scaling instances terminate during scale in</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_termination_policies(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9207,20 +7586,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_termination_policies(input);
             self
         }
-        /// <p>Indicates whether newly launched instances are protected from termination by Amazon EC2 Auto Scaling
-        /// when scaling in. For more information about preventing instances from terminating on
-        /// scale in, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-protection.html">Using
-        /// instance scale-in protection</a> in the
-        /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>Indicates whether newly launched instances are protected from termination by Amazon EC2 Auto Scaling when scaling in. For more information about preventing instances from terminating on scale in, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-protection.html">Using instance scale-in protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn new_instances_protected_from_scale_in(mut self, input: bool) -> Self {
             self.inner = self.inner.new_instances_protected_from_scale_in(input);
             self
         }
-        /// <p>Indicates whether newly launched instances are protected from termination by Amazon EC2 Auto Scaling
-        /// when scaling in. For more information about preventing instances from terminating on
-        /// scale in, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-protection.html">Using
-        /// instance scale-in protection</a> in the
-        /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>Indicates whether newly launched instances are protected from termination by Amazon EC2 Auto Scaling when scaling in. For more information about preventing instances from terminating on scale in, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-protection.html">Using instance scale-in protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_new_instances_protected_from_scale_in(
             mut self,
             input: std::option::Option<bool>,
@@ -9228,16 +7599,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_new_instances_protected_from_scale_in(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto Scaling group uses to
-        /// call other Amazon Web Services on your behalf. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-linked
-        /// roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto Scaling group uses to call other Amazon Web Services on your behalf. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-linked roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn service_linked_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.service_linked_role_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto Scaling group uses to
-        /// call other Amazon Web Services on your behalf. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-linked
-        /// roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto Scaling group uses to call other Amazon Web Services on your behalf. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-linked roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_service_linked_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9245,34 +7612,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_service_linked_role_arn(input);
             self
         }
-        /// <p>The maximum amount of time, in seconds, that an instance can be in service. The
-        /// default is null. If specified, the value must be either 0 or a number equal to or
-        /// greater than 86,400 seconds (1 day). To clear a previously set value, specify a new
-        /// value of 0. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-max-instance-lifetime.html">Replacing Auto Scaling
-        /// instances based on maximum instance lifetime</a> in the
-        /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>The maximum amount of time, in seconds, that an instance can be in service. The default is null. If specified, the value must be either 0 or a number equal to or greater than 86,400 seconds (1 day). To clear a previously set value, specify a new value of 0. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-max-instance-lifetime.html">Replacing Auto Scaling instances based on maximum instance lifetime</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn max_instance_lifetime(mut self, input: i32) -> Self {
             self.inner = self.inner.max_instance_lifetime(input);
             self
         }
-        /// <p>The maximum amount of time, in seconds, that an instance can be in service. The
-        /// default is null. If specified, the value must be either 0 or a number equal to or
-        /// greater than 86,400 seconds (1 day). To clear a previously set value, specify a new
-        /// value of 0. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-max-instance-lifetime.html">Replacing Auto Scaling
-        /// instances based on maximum instance lifetime</a> in the
-        /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>The maximum amount of time, in seconds, that an instance can be in service. The default is null. If specified, the value must be either 0 or a number equal to or greater than 86,400 seconds (1 day). To clear a previously set value, specify a new value of 0. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-max-instance-lifetime.html">Replacing Auto Scaling instances based on maximum instance lifetime</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_max_instance_lifetime(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_instance_lifetime(input);
             self
         }
-        /// <p>Enables or disables Capacity Rebalancing. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-capacity-rebalancing.html">Amazon EC2 Auto Scaling
-        /// Capacity Rebalancing</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>Enables or disables Capacity Rebalancing. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-capacity-rebalancing.html">Amazon EC2 Auto Scaling Capacity Rebalancing</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn capacity_rebalance(mut self, input: bool) -> Self {
             self.inner = self.inner.capacity_rebalance(input);
             self
         }
-        /// <p>Enables or disables Capacity Rebalancing. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-capacity-rebalancing.html">Amazon EC2 Auto Scaling
-        /// Capacity Rebalancing</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>Enables or disables Capacity Rebalancing. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-capacity-rebalancing.html">Amazon EC2 Auto Scaling Capacity Rebalancing</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_capacity_rebalance(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_capacity_rebalance(input);
             self
@@ -9287,28 +7642,16 @@ pub mod fluent_builders {
             self.inner = self.inner.set_context(input);
             self
         }
-        /// <p>The unit of measurement for the value specified for desired capacity. Amazon EC2 Auto Scaling
-        /// supports <code>DesiredCapacityType</code> for attribute-based instance type selection
-        /// only. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html">Creating
-        /// an Auto Scaling group using attribute-based instance type selection</a> in the
-        /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-        /// <p>By default, Amazon EC2 Auto Scaling specifies <code>units</code>, which translates into number of
-        /// instances.</p>
-        /// <p>Valid values: <code>units</code> | <code>vcpu</code> | <code>memory-mib</code>
-        /// </p>
+        /// <p>The unit of measurement for the value specified for desired capacity. Amazon EC2 Auto Scaling supports <code>DesiredCapacityType</code> for attribute-based instance type selection only. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html">Creating an Auto Scaling group using attribute-based instance type selection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>By default, Amazon EC2 Auto Scaling specifies <code>units</code>, which translates into number of instances.</p>
+        /// <p>Valid values: <code>units</code> | <code>vcpu</code> | <code>memory-mib</code> </p>
         pub fn desired_capacity_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.desired_capacity_type(input.into());
             self
         }
-        /// <p>The unit of measurement for the value specified for desired capacity. Amazon EC2 Auto Scaling
-        /// supports <code>DesiredCapacityType</code> for attribute-based instance type selection
-        /// only. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html">Creating
-        /// an Auto Scaling group using attribute-based instance type selection</a> in the
-        /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-        /// <p>By default, Amazon EC2 Auto Scaling specifies <code>units</code>, which translates into number of
-        /// instances.</p>
-        /// <p>Valid values: <code>units</code> | <code>vcpu</code> | <code>memory-mib</code>
-        /// </p>
+        /// <p>The unit of measurement for the value specified for desired capacity. Amazon EC2 Auto Scaling supports <code>DesiredCapacityType</code> for attribute-based instance type selection only. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html">Creating an Auto Scaling group using attribute-based instance type selection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>By default, Amazon EC2 Auto Scaling specifies <code>units</code>, which translates into number of instances.</p>
+        /// <p>Valid values: <code>units</code> | <code>vcpu</code> | <code>memory-mib</code> </p>
         pub fn set_desired_capacity_type(
             mut self,
             input: std::option::Option<std::string::String>,

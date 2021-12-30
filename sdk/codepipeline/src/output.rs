@@ -207,13 +207,11 @@ impl StopPipelineExecutionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartPipelineExecutionOutput {
-    /// <p>The unique system-generated ID of the pipeline execution that was
-    /// started.</p>
+    /// <p>The unique system-generated ID of the pipeline execution that was started.</p>
     pub pipeline_execution_id: std::option::Option<std::string::String>,
 }
 impl StartPipelineExecutionOutput {
-    /// <p>The unique system-generated ID of the pipeline execution that was
-    /// started.</p>
+    /// <p>The unique system-generated ID of the pipeline execution that was started.</p>
     pub fn pipeline_execution_id(&self) -> std::option::Option<&str> {
         self.pipeline_execution_id.as_deref()
     }
@@ -234,14 +232,12 @@ pub mod start_pipeline_execution_output {
         pub(crate) pipeline_execution_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique system-generated ID of the pipeline execution that was
-        /// started.</p>
+        /// <p>The unique system-generated ID of the pipeline execution that was started.</p>
         pub fn pipeline_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.pipeline_execution_id = Some(input.into());
             self
         }
-        /// <p>The unique system-generated ID of the pipeline execution that was
-        /// started.</p>
+        /// <p>The unique system-generated ID of the pipeline execution that was started.</p>
         pub fn set_pipeline_execution_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -355,13 +351,11 @@ impl RegisterWebhookWithThirdPartyOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutWebhookOutput {
-    /// <p>The detail returned from creating the webhook, such as the webhook name, webhook
-    /// URL, and webhook ARN.</p>
+    /// <p>The detail returned from creating the webhook, such as the webhook name, webhook URL, and webhook ARN.</p>
     pub webhook: std::option::Option<crate::model::ListWebhookItem>,
 }
 impl PutWebhookOutput {
-    /// <p>The detail returned from creating the webhook, such as the webhook name, webhook
-    /// URL, and webhook ARN.</p>
+    /// <p>The detail returned from creating the webhook, such as the webhook name, webhook URL, and webhook ARN.</p>
     pub fn webhook(&self) -> std::option::Option<&crate::model::ListWebhookItem> {
         self.webhook.as_ref()
     }
@@ -382,14 +376,12 @@ pub mod put_webhook_output {
         pub(crate) webhook: std::option::Option<crate::model::ListWebhookItem>,
     }
     impl Builder {
-        /// <p>The detail returned from creating the webhook, such as the webhook name, webhook
-        /// URL, and webhook ARN.</p>
+        /// <p>The detail returned from creating the webhook, such as the webhook name, webhook URL, and webhook ARN.</p>
         pub fn webhook(mut self, input: crate::model::ListWebhookItem) -> Self {
             self.webhook = Some(input);
             self
         }
-        /// <p>The detail returned from creating the webhook, such as the webhook name, webhook
-        /// URL, and webhook ARN.</p>
+        /// <p>The detail returned from creating the webhook, such as the webhook name, webhook URL, and webhook ARN.</p>
         pub fn set_webhook(
             mut self,
             input: std::option::Option<crate::model::ListWebhookItem>,
@@ -593,15 +585,13 @@ impl PutApprovalResultOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutActionRevisionOutput {
-    /// <p>Indicates whether the artifact revision was previously used in an execution of the
-    /// specified pipeline.</p>
+    /// <p>Indicates whether the artifact revision was previously used in an execution of the specified pipeline.</p>
     pub new_revision: bool,
     /// <p>The ID of the current workflow state of the pipeline.</p>
     pub pipeline_execution_id: std::option::Option<std::string::String>,
 }
 impl PutActionRevisionOutput {
-    /// <p>Indicates whether the artifact revision was previously used in an execution of the
-    /// specified pipeline.</p>
+    /// <p>Indicates whether the artifact revision was previously used in an execution of the specified pipeline.</p>
     pub fn new_revision(&self) -> bool {
         self.new_revision
     }
@@ -628,14 +618,12 @@ pub mod put_action_revision_output {
         pub(crate) pipeline_execution_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Indicates whether the artifact revision was previously used in an execution of the
-        /// specified pipeline.</p>
+        /// <p>Indicates whether the artifact revision was previously used in an execution of the specified pipeline.</p>
         pub fn new_revision(mut self, input: bool) -> Self {
             self.new_revision = Some(input);
             self
         }
-        /// <p>Indicates whether the artifact revision was previously used in an execution of the
-        /// specified pipeline.</p>
+        /// <p>Indicates whether the artifact revision was previously used in an execution of the specified pipeline.</p>
         pub fn set_new_revision(mut self, input: std::option::Option<bool>) -> Self {
             self.new_revision = input;
             self
@@ -795,23 +783,17 @@ impl PollForJobsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWebhooksOutput {
-    /// <p>The JSON detail returned for each webhook in the list output for the ListWebhooks
-    /// call.</p>
+    /// <p>The JSON detail returned for each webhook in the list output for the ListWebhooks call.</p>
     pub webhooks: std::option::Option<std::vec::Vec<crate::model::ListWebhookItem>>,
-    /// <p>If the amount of returned information is significantly large, an identifier is also
-    /// returned and can be used in a subsequent ListWebhooks call to return the next set of
-    /// webhooks in the list. </p>
+    /// <p>If the amount of returned information is significantly large, an identifier is also returned and can be used in a subsequent ListWebhooks call to return the next set of webhooks in the list. </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListWebhooksOutput {
-    /// <p>The JSON detail returned for each webhook in the list output for the ListWebhooks
-    /// call.</p>
+    /// <p>The JSON detail returned for each webhook in the list output for the ListWebhooks call.</p>
     pub fn webhooks(&self) -> std::option::Option<&[crate::model::ListWebhookItem]> {
         self.webhooks.as_deref()
     }
-    /// <p>If the amount of returned information is significantly large, an identifier is also
-    /// returned and can be used in a subsequent ListWebhooks call to return the next set of
-    /// webhooks in the list. </p>
+    /// <p>If the amount of returned information is significantly large, an identifier is also returned and can be used in a subsequent ListWebhooks call to return the next set of webhooks in the list. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -838,16 +820,14 @@ pub mod list_webhooks_output {
         ///
         /// To override the contents of this collection use [`set_webhooks`](Self::set_webhooks).
         ///
-        /// <p>The JSON detail returned for each webhook in the list output for the ListWebhooks
-        /// call.</p>
+        /// <p>The JSON detail returned for each webhook in the list output for the ListWebhooks call.</p>
         pub fn webhooks(mut self, input: crate::model::ListWebhookItem) -> Self {
             let mut v = self.webhooks.unwrap_or_default();
             v.push(input);
             self.webhooks = Some(v);
             self
         }
-        /// <p>The JSON detail returned for each webhook in the list output for the ListWebhooks
-        /// call.</p>
+        /// <p>The JSON detail returned for each webhook in the list output for the ListWebhooks call.</p>
         pub fn set_webhooks(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ListWebhookItem>>,
@@ -855,16 +835,12 @@ pub mod list_webhooks_output {
             self.webhooks = input;
             self
         }
-        /// <p>If the amount of returned information is significantly large, an identifier is also
-        /// returned and can be used in a subsequent ListWebhooks call to return the next set of
-        /// webhooks in the list. </p>
+        /// <p>If the amount of returned information is significantly large, an identifier is also returned and can be used in a subsequent ListWebhooks call to return the next set of webhooks in the list. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the amount of returned information is significantly large, an identifier is also
-        /// returned and can be used in a subsequent ListWebhooks call to return the next set of
-        /// webhooks in the list. </p>
+        /// <p>If the amount of returned information is significantly large, an identifier is also returned and can be used in a subsequent ListWebhooks call to return the next set of webhooks in the list. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -891,10 +867,7 @@ impl ListWebhooksOutput {
 pub struct ListTagsForResourceOutput {
     /// <p>The tags for the resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>If the amount of returned information is significantly large, an identifier is also
-    /// returned and can be used in a subsequent API call to return the next page of the list.
-    /// The ListTagsforResource call lists all available tags in one call and does not use
-    /// pagination.</p>
+    /// <p>If the amount of returned information is significantly large, an identifier is also returned and can be used in a subsequent API call to return the next page of the list. The ListTagsforResource call lists all available tags in one call and does not use pagination.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceOutput {
@@ -902,10 +875,7 @@ impl ListTagsForResourceOutput {
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>If the amount of returned information is significantly large, an identifier is also
-    /// returned and can be used in a subsequent API call to return the next page of the list.
-    /// The ListTagsforResource call lists all available tags in one call and does not use
-    /// pagination.</p>
+    /// <p>If the amount of returned information is significantly large, an identifier is also returned and can be used in a subsequent API call to return the next page of the list. The ListTagsforResource call lists all available tags in one call and does not use pagination.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -947,18 +917,12 @@ pub mod list_tags_for_resource_output {
             self.tags = input;
             self
         }
-        /// <p>If the amount of returned information is significantly large, an identifier is also
-        /// returned and can be used in a subsequent API call to return the next page of the list.
-        /// The ListTagsforResource call lists all available tags in one call and does not use
-        /// pagination.</p>
+        /// <p>If the amount of returned information is significantly large, an identifier is also returned and can be used in a subsequent API call to return the next page of the list. The ListTagsforResource call lists all available tags in one call and does not use pagination.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the amount of returned information is significantly large, an identifier is also
-        /// returned and can be used in a subsequent API call to return the next page of the list.
-        /// The ListTagsforResource call lists all available tags in one call and does not use
-        /// pagination.</p>
+        /// <p>If the amount of returned information is significantly large, an identifier is also returned and can be used in a subsequent API call to return the next page of the list. The ListTagsforResource call lists all available tags in one call and does not use pagination.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -985,9 +949,7 @@ impl ListTagsForResourceOutput {
 pub struct ListPipelinesOutput {
     /// <p>The list of pipelines.</p>
     pub pipelines: std::option::Option<std::vec::Vec<crate::model::PipelineSummary>>,
-    /// <p>If the amount of returned information is significantly large, an identifier is also
-    /// returned. It can be used in a subsequent list pipelines call to return the next set of
-    /// pipelines in the list.</p>
+    /// <p>If the amount of returned information is significantly large, an identifier is also returned. It can be used in a subsequent list pipelines call to return the next set of pipelines in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPipelinesOutput {
@@ -995,9 +957,7 @@ impl ListPipelinesOutput {
     pub fn pipelines(&self) -> std::option::Option<&[crate::model::PipelineSummary]> {
         self.pipelines.as_deref()
     }
-    /// <p>If the amount of returned information is significantly large, an identifier is also
-    /// returned. It can be used in a subsequent list pipelines call to return the next set of
-    /// pipelines in the list.</p>
+    /// <p>If the amount of returned information is significantly large, an identifier is also returned. It can be used in a subsequent list pipelines call to return the next set of pipelines in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1039,16 +999,12 @@ pub mod list_pipelines_output {
             self.pipelines = input;
             self
         }
-        /// <p>If the amount of returned information is significantly large, an identifier is also
-        /// returned. It can be used in a subsequent list pipelines call to return the next set of
-        /// pipelines in the list.</p>
+        /// <p>If the amount of returned information is significantly large, an identifier is also returned. It can be used in a subsequent list pipelines call to return the next set of pipelines in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the amount of returned information is significantly large, an identifier is also
-        /// returned. It can be used in a subsequent list pipelines call to return the next set of
-        /// pipelines in the list.</p>
+        /// <p>If the amount of returned information is significantly large, an identifier is also returned. It can be used in a subsequent list pipelines call to return the next set of pipelines in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1076,9 +1032,7 @@ pub struct ListPipelineExecutionsOutput {
     /// <p>A list of executions in the history of a pipeline.</p>
     pub pipeline_execution_summaries:
         std::option::Option<std::vec::Vec<crate::model::PipelineExecutionSummary>>,
-    /// <p>A token that can be used in the next <code>ListPipelineExecutions</code> call. To
-    /// view all items in the list, continue to call this operation with each subsequent token
-    /// until no more nextToken values are returned.</p>
+    /// <p>A token that can be used in the next <code>ListPipelineExecutions</code> call. To view all items in the list, continue to call this operation with each subsequent token until no more nextToken values are returned.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPipelineExecutionsOutput {
@@ -1088,9 +1042,7 @@ impl ListPipelineExecutionsOutput {
     ) -> std::option::Option<&[crate::model::PipelineExecutionSummary]> {
         self.pipeline_execution_summaries.as_deref()
     }
-    /// <p>A token that can be used in the next <code>ListPipelineExecutions</code> call. To
-    /// view all items in the list, continue to call this operation with each subsequent token
-    /// until no more nextToken values are returned.</p>
+    /// <p>A token that can be used in the next <code>ListPipelineExecutions</code> call. To view all items in the list, continue to call this operation with each subsequent token until no more nextToken values are returned.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1139,16 +1091,12 @@ pub mod list_pipeline_executions_output {
             self.pipeline_execution_summaries = input;
             self
         }
-        /// <p>A token that can be used in the next <code>ListPipelineExecutions</code> call. To
-        /// view all items in the list, continue to call this operation with each subsequent token
-        /// until no more nextToken values are returned.</p>
+        /// <p>A token that can be used in the next <code>ListPipelineExecutions</code> call. To view all items in the list, continue to call this operation with each subsequent token until no more nextToken values are returned.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>A token that can be used in the next <code>ListPipelineExecutions</code> call. To
-        /// view all items in the list, continue to call this operation with each subsequent token
-        /// until no more nextToken values are returned.</p>
+        /// <p>A token that can be used in the next <code>ListPipelineExecutions</code> call. To view all items in the list, continue to call this operation with each subsequent token until no more nextToken values are returned.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1175,9 +1123,7 @@ impl ListPipelineExecutionsOutput {
 pub struct ListActionTypesOutput {
     /// <p>Provides details of the action types.</p>
     pub action_types: std::option::Option<std::vec::Vec<crate::model::ActionType>>,
-    /// <p>If the amount of returned information is significantly large, an identifier is also
-    /// returned. It can be used in a subsequent list action types call to return the next set
-    /// of action types in the list.</p>
+    /// <p>If the amount of returned information is significantly large, an identifier is also returned. It can be used in a subsequent list action types call to return the next set of action types in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListActionTypesOutput {
@@ -1185,9 +1131,7 @@ impl ListActionTypesOutput {
     pub fn action_types(&self) -> std::option::Option<&[crate::model::ActionType]> {
         self.action_types.as_deref()
     }
-    /// <p>If the amount of returned information is significantly large, an identifier is also
-    /// returned. It can be used in a subsequent list action types call to return the next set
-    /// of action types in the list.</p>
+    /// <p>If the amount of returned information is significantly large, an identifier is also returned. It can be used in a subsequent list action types call to return the next set of action types in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1229,16 +1173,12 @@ pub mod list_action_types_output {
             self.action_types = input;
             self
         }
-        /// <p>If the amount of returned information is significantly large, an identifier is also
-        /// returned. It can be used in a subsequent list action types call to return the next set
-        /// of action types in the list.</p>
+        /// <p>If the amount of returned information is significantly large, an identifier is also returned. It can be used in a subsequent list action types call to return the next set of action types in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the amount of returned information is significantly large, an identifier is also
-        /// returned. It can be used in a subsequent list action types call to return the next set
-        /// of action types in the list.</p>
+        /// <p>If the amount of returned information is significantly large, an identifier is also returned. It can be used in a subsequent list action types call to return the next set of action types in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1266,9 +1206,7 @@ pub struct ListActionExecutionsOutput {
     /// <p>The details for a list of recent executions, such as action execution ID.</p>
     pub action_execution_details:
         std::option::Option<std::vec::Vec<crate::model::ActionExecutionDetail>>,
-    /// <p>If the amount of returned information is significantly large, an identifier is also
-    /// returned and can be used in a subsequent <code>ListActionExecutions</code> call to
-    /// return the next set of action executions in the list.</p>
+    /// <p>If the amount of returned information is significantly large, an identifier is also returned and can be used in a subsequent <code>ListActionExecutions</code> call to return the next set of action executions in the list.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListActionExecutionsOutput {
@@ -1278,9 +1216,7 @@ impl ListActionExecutionsOutput {
     ) -> std::option::Option<&[crate::model::ActionExecutionDetail]> {
         self.action_execution_details.as_deref()
     }
-    /// <p>If the amount of returned information is significantly large, an identifier is also
-    /// returned and can be used in a subsequent <code>ListActionExecutions</code> call to
-    /// return the next set of action executions in the list.</p>
+    /// <p>If the amount of returned information is significantly large, an identifier is also returned and can be used in a subsequent <code>ListActionExecutions</code> call to return the next set of action executions in the list.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -1326,16 +1262,12 @@ pub mod list_action_executions_output {
             self.action_execution_details = input;
             self
         }
-        /// <p>If the amount of returned information is significantly large, an identifier is also
-        /// returned and can be used in a subsequent <code>ListActionExecutions</code> call to
-        /// return the next set of action executions in the list.</p>
+        /// <p>If the amount of returned information is significantly large, an identifier is also returned and can be used in a subsequent <code>ListActionExecutions</code> call to return the next set of action executions in the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If the amount of returned information is significantly large, an identifier is also
-        /// returned and can be used in a subsequent <code>ListActionExecutions</code> call to
-        /// return the next set of action executions in the list.</p>
+        /// <p>If the amount of returned information is significantly large, an identifier is also returned and can be used in a subsequent <code>ListActionExecutions</code> call to return the next set of action executions in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1360,13 +1292,11 @@ impl ListActionExecutionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetThirdPartyJobDetailsOutput {
-    /// <p>The details of the job, including any protected values defined for the
-    /// job.</p>
+    /// <p>The details of the job, including any protected values defined for the job.</p>
     pub job_details: std::option::Option<crate::model::ThirdPartyJobDetails>,
 }
 impl GetThirdPartyJobDetailsOutput {
-    /// <p>The details of the job, including any protected values defined for the
-    /// job.</p>
+    /// <p>The details of the job, including any protected values defined for the job.</p>
     pub fn job_details(&self) -> std::option::Option<&crate::model::ThirdPartyJobDetails> {
         self.job_details.as_ref()
     }
@@ -1387,14 +1317,12 @@ pub mod get_third_party_job_details_output {
         pub(crate) job_details: std::option::Option<crate::model::ThirdPartyJobDetails>,
     }
     impl Builder {
-        /// <p>The details of the job, including any protected values defined for the
-        /// job.</p>
+        /// <p>The details of the job, including any protected values defined for the job.</p>
         pub fn job_details(mut self, input: crate::model::ThirdPartyJobDetails) -> Self {
             self.job_details = Some(input);
             self
         }
-        /// <p>The details of the job, including any protected values defined for the
-        /// job.</p>
+        /// <p>The details of the job, including any protected values defined for the job.</p>
         pub fn set_job_details(
             mut self,
             input: std::option::Option<crate::model::ThirdPartyJobDetails>,
@@ -1423,14 +1351,11 @@ impl GetThirdPartyJobDetailsOutput {
 pub struct GetPipelineStateOutput {
     /// <p>The name of the pipeline for which you want to get the state.</p>
     pub pipeline_name: std::option::Option<std::string::String>,
-    /// <p>The version number of the pipeline.</p>
-    /// <note>
-    /// <p>A newly created pipeline is always assigned a version number of
-    /// <code>1</code>.</p>
+    /// <p>The version number of the pipeline.</p> <note>
+    /// <p>A newly created pipeline is always assigned a version number of <code>1</code>.</p>
     /// </note>
     pub pipeline_version: std::option::Option<i32>,
-    /// <p>A list of the pipeline stage output information, including stage name, state, most
-    /// recent run details, whether the stage is disabled, and other data.</p>
+    /// <p>A list of the pipeline stage output information, including stage name, state, most recent run details, whether the stage is disabled, and other data.</p>
     pub stage_states: std::option::Option<std::vec::Vec<crate::model::StageState>>,
     /// <p>The date and time the pipeline was created, in timestamp format.</p>
     pub created: std::option::Option<aws_smithy_types::DateTime>,
@@ -1442,16 +1367,13 @@ impl GetPipelineStateOutput {
     pub fn pipeline_name(&self) -> std::option::Option<&str> {
         self.pipeline_name.as_deref()
     }
-    /// <p>The version number of the pipeline.</p>
-    /// <note>
-    /// <p>A newly created pipeline is always assigned a version number of
-    /// <code>1</code>.</p>
+    /// <p>The version number of the pipeline.</p> <note>
+    /// <p>A newly created pipeline is always assigned a version number of <code>1</code>.</p>
     /// </note>
     pub fn pipeline_version(&self) -> std::option::Option<i32> {
         self.pipeline_version
     }
-    /// <p>A list of the pipeline stage output information, including stage name, state, most
-    /// recent run details, whether the stage is disabled, and other data.</p>
+    /// <p>A list of the pipeline stage output information, including stage name, state, most recent run details, whether the stage is disabled, and other data.</p>
     pub fn stage_states(&self) -> std::option::Option<&[crate::model::StageState]> {
         self.stage_states.as_deref()
     }
@@ -1501,19 +1423,15 @@ pub mod get_pipeline_state_output {
             self.pipeline_name = input;
             self
         }
-        /// <p>The version number of the pipeline.</p>
-        /// <note>
-        /// <p>A newly created pipeline is always assigned a version number of
-        /// <code>1</code>.</p>
+        /// <p>The version number of the pipeline.</p> <note>
+        /// <p>A newly created pipeline is always assigned a version number of <code>1</code>.</p>
         /// </note>
         pub fn pipeline_version(mut self, input: i32) -> Self {
             self.pipeline_version = Some(input);
             self
         }
-        /// <p>The version number of the pipeline.</p>
-        /// <note>
-        /// <p>A newly created pipeline is always assigned a version number of
-        /// <code>1</code>.</p>
+        /// <p>The version number of the pipeline.</p> <note>
+        /// <p>A newly created pipeline is always assigned a version number of <code>1</code>.</p>
         /// </note>
         pub fn set_pipeline_version(mut self, input: std::option::Option<i32>) -> Self {
             self.pipeline_version = input;
@@ -1523,16 +1441,14 @@ pub mod get_pipeline_state_output {
         ///
         /// To override the contents of this collection use [`set_stage_states`](Self::set_stage_states).
         ///
-        /// <p>A list of the pipeline stage output information, including stage name, state, most
-        /// recent run details, whether the stage is disabled, and other data.</p>
+        /// <p>A list of the pipeline stage output information, including stage name, state, most recent run details, whether the stage is disabled, and other data.</p>
         pub fn stage_states(mut self, input: crate::model::StageState) -> Self {
             let mut v = self.stage_states.unwrap_or_default();
             v.push(input);
             self.stage_states = Some(v);
             self
         }
-        /// <p>A list of the pipeline stage output information, including stage name, state, most
-        /// recent run details, whether the stage is disabled, and other data.</p>
+        /// <p>A list of the pipeline stage output information, including stage name, state, most recent run details, whether the stage is disabled, and other data.</p>
         pub fn set_stage_states(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::StageState>>,
@@ -1646,21 +1562,17 @@ impl GetPipelineExecutionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPipelineOutput {
-    /// <p>Represents the structure of actions and stages to be performed in the pipeline.
-    /// </p>
+    /// <p>Represents the structure of actions and stages to be performed in the pipeline. </p>
     pub pipeline: std::option::Option<crate::model::PipelineDeclaration>,
-    /// <p>Represents the pipeline metadata information returned as part of the output of a
-    /// <code>GetPipeline</code> action.</p>
+    /// <p>Represents the pipeline metadata information returned as part of the output of a <code>GetPipeline</code> action.</p>
     pub metadata: std::option::Option<crate::model::PipelineMetadata>,
 }
 impl GetPipelineOutput {
-    /// <p>Represents the structure of actions and stages to be performed in the pipeline.
-    /// </p>
+    /// <p>Represents the structure of actions and stages to be performed in the pipeline. </p>
     pub fn pipeline(&self) -> std::option::Option<&crate::model::PipelineDeclaration> {
         self.pipeline.as_ref()
     }
-    /// <p>Represents the pipeline metadata information returned as part of the output of a
-    /// <code>GetPipeline</code> action.</p>
+    /// <p>Represents the pipeline metadata information returned as part of the output of a <code>GetPipeline</code> action.</p>
     pub fn metadata(&self) -> std::option::Option<&crate::model::PipelineMetadata> {
         self.metadata.as_ref()
     }
@@ -1683,14 +1595,12 @@ pub mod get_pipeline_output {
         pub(crate) metadata: std::option::Option<crate::model::PipelineMetadata>,
     }
     impl Builder {
-        /// <p>Represents the structure of actions and stages to be performed in the pipeline.
-        /// </p>
+        /// <p>Represents the structure of actions and stages to be performed in the pipeline. </p>
         pub fn pipeline(mut self, input: crate::model::PipelineDeclaration) -> Self {
             self.pipeline = Some(input);
             self
         }
-        /// <p>Represents the structure of actions and stages to be performed in the pipeline.
-        /// </p>
+        /// <p>Represents the structure of actions and stages to be performed in the pipeline. </p>
         pub fn set_pipeline(
             mut self,
             input: std::option::Option<crate::model::PipelineDeclaration>,
@@ -1698,14 +1608,12 @@ pub mod get_pipeline_output {
             self.pipeline = input;
             self
         }
-        /// <p>Represents the pipeline metadata information returned as part of the output of a
-        /// <code>GetPipeline</code> action.</p>
+        /// <p>Represents the pipeline metadata information returned as part of the output of a <code>GetPipeline</code> action.</p>
         pub fn metadata(mut self, input: crate::model::PipelineMetadata) -> Self {
             self.metadata = Some(input);
             self
         }
-        /// <p>Represents the pipeline metadata information returned as part of the output of a
-        /// <code>GetPipeline</code> action.</p>
+        /// <p>Represents the pipeline metadata information returned as part of the output of a <code>GetPipeline</code> action.</p>
         pub fn set_metadata(
             mut self,
             input: std::option::Option<crate::model::PipelineMetadata>,
@@ -1733,18 +1641,14 @@ impl GetPipelineOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetJobDetailsOutput {
-    /// <p>The details of the job.</p>
-    /// <note>
-    /// <p>If AWSSessionCredentials is used, a long-running job can call
-    /// <code>GetJobDetails</code> again to obtain new credentials.</p>
+    /// <p>The details of the job.</p> <note>
+    /// <p>If AWSSessionCredentials is used, a long-running job can call <code>GetJobDetails</code> again to obtain new credentials.</p>
     /// </note>
     pub job_details: std::option::Option<crate::model::JobDetails>,
 }
 impl GetJobDetailsOutput {
-    /// <p>The details of the job.</p>
-    /// <note>
-    /// <p>If AWSSessionCredentials is used, a long-running job can call
-    /// <code>GetJobDetails</code> again to obtain new credentials.</p>
+    /// <p>The details of the job.</p> <note>
+    /// <p>If AWSSessionCredentials is used, a long-running job can call <code>GetJobDetails</code> again to obtain new credentials.</p>
     /// </note>
     pub fn job_details(&self) -> std::option::Option<&crate::model::JobDetails> {
         self.job_details.as_ref()
@@ -1766,19 +1670,15 @@ pub mod get_job_details_output {
         pub(crate) job_details: std::option::Option<crate::model::JobDetails>,
     }
     impl Builder {
-        /// <p>The details of the job.</p>
-        /// <note>
-        /// <p>If AWSSessionCredentials is used, a long-running job can call
-        /// <code>GetJobDetails</code> again to obtain new credentials.</p>
+        /// <p>The details of the job.</p> <note>
+        /// <p>If AWSSessionCredentials is used, a long-running job can call <code>GetJobDetails</code> again to obtain new credentials.</p>
         /// </note>
         pub fn job_details(mut self, input: crate::model::JobDetails) -> Self {
             self.job_details = Some(input);
             self
         }
-        /// <p>The details of the job.</p>
-        /// <note>
-        /// <p>If AWSSessionCredentials is used, a long-running job can call
-        /// <code>GetJobDetails</code> again to obtain new credentials.</p>
+        /// <p>The details of the job.</p> <note>
+        /// <p>If AWSSessionCredentials is used, a long-running job can call <code>GetJobDetails</code> again to obtain new credentials.</p>
         /// </note>
         pub fn set_job_details(
             mut self,
@@ -1806,13 +1706,11 @@ impl GetJobDetailsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetActionTypeOutput {
-    /// <p>The action type information for the requested action type, such as the action type
-    /// ID.</p>
+    /// <p>The action type information for the requested action type, such as the action type ID.</p>
     pub action_type: std::option::Option<crate::model::ActionTypeDeclaration>,
 }
 impl GetActionTypeOutput {
-    /// <p>The action type information for the requested action type, such as the action type
-    /// ID.</p>
+    /// <p>The action type information for the requested action type, such as the action type ID.</p>
     pub fn action_type(&self) -> std::option::Option<&crate::model::ActionTypeDeclaration> {
         self.action_type.as_ref()
     }
@@ -1833,14 +1731,12 @@ pub mod get_action_type_output {
         pub(crate) action_type: std::option::Option<crate::model::ActionTypeDeclaration>,
     }
     impl Builder {
-        /// <p>The action type information for the requested action type, such as the action type
-        /// ID.</p>
+        /// <p>The action type information for the requested action type, such as the action type ID.</p>
         pub fn action_type(mut self, input: crate::model::ActionTypeDeclaration) -> Self {
             self.action_type = Some(input);
             self
         }
-        /// <p>The action type information for the requested action type, such as the action type
-        /// ID.</p>
+        /// <p>The action type information for the requested action type, such as the action type ID.</p>
         pub fn set_action_type(
             mut self,
             input: std::option::Option<crate::model::ActionTypeDeclaration>,
@@ -2047,15 +1943,13 @@ impl DeleteCustomActionTypeOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePipelineOutput {
-    /// <p>Represents the structure of actions and stages to be performed in the pipeline.
-    /// </p>
+    /// <p>Represents the structure of actions and stages to be performed in the pipeline. </p>
     pub pipeline: std::option::Option<crate::model::PipelineDeclaration>,
     /// <p>Specifies the tags applied to the pipeline.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreatePipelineOutput {
-    /// <p>Represents the structure of actions and stages to be performed in the pipeline.
-    /// </p>
+    /// <p>Represents the structure of actions and stages to be performed in the pipeline. </p>
     pub fn pipeline(&self) -> std::option::Option<&crate::model::PipelineDeclaration> {
         self.pipeline.as_ref()
     }
@@ -2082,14 +1976,12 @@ pub mod create_pipeline_output {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>Represents the structure of actions and stages to be performed in the pipeline.
-        /// </p>
+        /// <p>Represents the structure of actions and stages to be performed in the pipeline. </p>
         pub fn pipeline(mut self, input: crate::model::PipelineDeclaration) -> Self {
             self.pipeline = Some(input);
             self
         }
-        /// <p>Represents the structure of actions and stages to be performed in the pipeline.
-        /// </p>
+        /// <p>Represents the structure of actions and stages to be performed in the pipeline. </p>
         pub fn set_pipeline(
             mut self,
             input: std::option::Option<crate::model::PipelineDeclaration>,

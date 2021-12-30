@@ -371,13 +371,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CancelTaskExecution`.
     ///
     /// <p>Cancels execution of a task. </p>
-    /// <p>When you cancel a task execution, the transfer of some files is abruptly interrupted.
-    /// The contents of files that are transferred to the destination might be incomplete or
-    /// inconsistent with the source files. However, if you start a new task execution on the same
-    /// task and you allow the task execution to complete, file content on the destination is complete
-    /// and consistent. This applies to other unexpected failures that interrupt a task execution. In
-    /// all of these cases, DataSync successfully complete the transfer when you start the next
-    /// task execution.</p>
+    /// <p>When you cancel a task execution, the transfer of some files is abruptly interrupted. The contents of files that are transferred to the destination might be incomplete or inconsistent with the source files. However, if you start a new task execution on the same task and you allow the task execution to complete, file content on the destination is complete and consistent. This applies to other unexpected failures that interrupt a task execution. In all of these cases, DataSync successfully complete the transfer when you start the next task execution.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CancelTaskExecution<
         C = aws_smithy_client::erase::DynConnector,
@@ -450,20 +444,10 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateAgent`.
     ///
-    /// <p>Activates an DataSync agent that you have deployed on your host. The activation
-    /// process associates your agent with your account. In the activation process, you specify
-    /// information such as the Amazon Web Services Region that you want to activate the agent in. You activate the
-    /// agent in the Amazon Web Services Region where your target locations (in Amazon S3 or Amazon EFS) reside. Your
-    /// tasks are created in this Amazon Web Services Region.</p>
-    /// <p>You can activate the agent in a VPC (virtual private cloud) or provide the agent access to
-    /// a VPC endpoint so you can run tasks without going over the public internet.</p>
-    /// <p>You can use an agent for more than one location. If a task uses multiple agents, all of
-    /// them need to have status AVAILABLE for the task to run. If you use multiple agents for a
-    /// source location, the status of all the agents must be AVAILABLE for the task to run. </p>
-    ///
-    ///
-    /// <p>Agents are automatically updated by Amazon Web Services on a regular basis, using a mechanism that
-    /// ensures minimal interruption to your tasks.</p>
+    /// <p>Activates an DataSync agent that you have deployed on your host. The activation process associates your agent with your account. In the activation process, you specify information such as the Amazon Web Services Region that you want to activate the agent in. You activate the agent in the Amazon Web Services Region where your target locations (in Amazon S3 or Amazon EFS) reside. Your tasks are created in this Amazon Web Services Region.</p>
+    /// <p>You can activate the agent in a VPC (virtual private cloud) or provide the agent access to a VPC endpoint so you can run tasks without going over the public internet.</p>
+    /// <p>You can use an agent for more than one location. If a task uses multiple agents, all of them need to have status AVAILABLE for the task to run. If you use multiple agents for a source location, the status of all the agents must be AVAILABLE for the task to run. </p>
+    /// <p>Agents are automatically updated by Amazon Web Services on a regular basis, using a mechanism that ensures minimal interruption to your tasks.</p>
     /// <p></p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateAgent<
@@ -521,34 +505,16 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Your agent activation key. You can get the activation key either by sending an HTTP GET
-        /// request with redirects that enable you to get the agent IP address (port 80). Alternatively,
-        /// you can get it from the DataSync console.</p>
-        /// <p>The redirect URL returned in the response provides you the activation key for your
-        /// agent in the query string parameter <code>activationKey</code>. It might also include other
-        /// activation-related parameters; however, these are merely defaults. The arguments you pass to
-        /// this API call determine the actual configuration of your agent.</p>
-        ///
-        ///
-        /// <p>For more information, see Activating an Agent in the <i>DataSync
-        /// User Guide.</i>
-        /// </p>
+        /// <p>Your agent activation key. You can get the activation key either by sending an HTTP GET request with redirects that enable you to get the agent IP address (port 80). Alternatively, you can get it from the DataSync console.</p>
+        /// <p>The redirect URL returned in the response provides you the activation key for your agent in the query string parameter <code>activationKey</code>. It might also include other activation-related parameters; however, these are merely defaults. The arguments you pass to this API call determine the actual configuration of your agent.</p>
+        /// <p>For more information, see Activating an Agent in the <i>DataSync User Guide.</i> </p>
         pub fn activation_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.activation_key(input.into());
             self
         }
-        /// <p>Your agent activation key. You can get the activation key either by sending an HTTP GET
-        /// request with redirects that enable you to get the agent IP address (port 80). Alternatively,
-        /// you can get it from the DataSync console.</p>
-        /// <p>The redirect URL returned in the response provides you the activation key for your
-        /// agent in the query string parameter <code>activationKey</code>. It might also include other
-        /// activation-related parameters; however, these are merely defaults. The arguments you pass to
-        /// this API call determine the actual configuration of your agent.</p>
-        ///
-        ///
-        /// <p>For more information, see Activating an Agent in the <i>DataSync
-        /// User Guide.</i>
-        /// </p>
+        /// <p>Your agent activation key. You can get the activation key either by sending an HTTP GET request with redirects that enable you to get the agent IP address (port 80). Alternatively, you can get it from the DataSync console.</p>
+        /// <p>The redirect URL returned in the response provides you the activation key for your agent in the query string parameter <code>activationKey</code>. It might also include other activation-related parameters; however, these are merely defaults. The arguments you pass to this API call determine the actual configuration of your agent.</p>
+        /// <p>For more information, see Activating an Agent in the <i>DataSync User Guide.</i> </p>
         pub fn set_activation_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -556,14 +522,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_activation_key(input);
             self
         }
-        /// <p>The name you configured for your agent. This value is a text reference that is used to
-        /// identify the agent in the console.</p>
+        /// <p>The name you configured for your agent. This value is a text reference that is used to identify the agent in the console.</p>
         pub fn agent_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.agent_name(input.into());
             self
         }
-        /// <p>The name you configured for your agent. This value is a text reference that is used to
-        /// identify the agent in the console.</p>
+        /// <p>The name you configured for your agent. This value is a text reference that is used to identify the agent in the console.</p>
         pub fn set_agent_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_agent_name(input);
             self
@@ -572,23 +536,15 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The key-value pair that represents the tag that you want to associate with the agent.
-        /// The value can be an empty string. This value helps you manage, filter, and search for your
-        /// agents.</p>
-        /// <note>
-        /// <p>Valid characters for key and value are letters, spaces, and numbers representable in
-        /// UTF-8 format, and the following special characters: + - = . _ : / @. </p>
+        /// <p>The key-value pair that represents the tag that you want to associate with the agent. The value can be an empty string. This value helps you manage, filter, and search for your agents.</p> <note>
+        /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. </p>
         /// </note>
         pub fn tags(mut self, input: crate::model::TagListEntry) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>The key-value pair that represents the tag that you want to associate with the agent.
-        /// The value can be an empty string. This value helps you manage, filter, and search for your
-        /// agents.</p>
-        /// <note>
-        /// <p>Valid characters for key and value are letters, spaces, and numbers representable in
-        /// UTF-8 format, and the following special characters: + - = . _ : / @. </p>
+        /// <p>The key-value pair that represents the tag that you want to associate with the agent. The value can be an empty string. This value helps you manage, filter, and search for your agents.</p> <note>
+        /// <p>Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the following special characters: + - = . _ : / @. </p>
         /// </note>
         pub fn set_tags(
             mut self,
@@ -597,17 +553,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>The ID of the VPC (virtual private cloud) endpoint that the agent has access to. This is
-        /// the client-side VPC endpoint, also called a PrivateLink. If you don't have a PrivateLink VPC
-        /// endpoint, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html#create-endpoint-service">Creating a VPC Endpoint Service Configuration</a> in the Amazon VPC User Guide.</p>
+        /// <p>The ID of the VPC (virtual private cloud) endpoint that the agent has access to. This is the client-side VPC endpoint, also called a PrivateLink. If you don't have a PrivateLink VPC endpoint, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html#create-endpoint-service">Creating a VPC Endpoint Service Configuration</a> in the Amazon VPC User Guide.</p>
         /// <p>VPC endpoint ID looks like this: <code>vpce-01234d5aff67890e1</code>.</p>
         pub fn vpc_endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.vpc_endpoint_id(input.into());
             self
         }
-        /// <p>The ID of the VPC (virtual private cloud) endpoint that the agent has access to. This is
-        /// the client-side VPC endpoint, also called a PrivateLink. If you don't have a PrivateLink VPC
-        /// endpoint, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html#create-endpoint-service">Creating a VPC Endpoint Service Configuration</a> in the Amazon VPC User Guide.</p>
+        /// <p>The ID of the VPC (virtual private cloud) endpoint that the agent has access to. This is the client-side VPC endpoint, also called a PrivateLink. If you don't have a PrivateLink VPC endpoint, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html#create-endpoint-service">Creating a VPC Endpoint Service Configuration</a> in the Amazon VPC User Guide.</p>
         /// <p>VPC endpoint ID looks like this: <code>vpce-01234d5aff67890e1</code>.</p>
         pub fn set_vpc_endpoint_id(
             mut self,
@@ -620,22 +572,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_subnet_arns`](Self::set_subnet_arns).
         ///
-        /// <p>The Amazon Resource Names (ARNs) of the subnets in which DataSync will create elastic
-        /// network interfaces for each data transfer task. The agent that runs a task must be private.
-        /// When you start a task that is associated with an agent created in a VPC, or one that has
-        /// access to an IP address in a VPC, then the task is also private. In this case, DataSync
-        /// creates four network interfaces for each task in your subnet. For a data transfer to work, the
-        /// agent must be able to route to all these four network interfaces.</p>
+        /// <p>The Amazon Resource Names (ARNs) of the subnets in which DataSync will create elastic network interfaces for each data transfer task. The agent that runs a task must be private. When you start a task that is associated with an agent created in a VPC, or one that has access to an IP address in a VPC, then the task is also private. In this case, DataSync creates four network interfaces for each task in your subnet. For a data transfer to work, the agent must be able to route to all these four network interfaces.</p>
         pub fn subnet_arns(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.subnet_arns(input.into());
             self
         }
-        /// <p>The Amazon Resource Names (ARNs) of the subnets in which DataSync will create elastic
-        /// network interfaces for each data transfer task. The agent that runs a task must be private.
-        /// When you start a task that is associated with an agent created in a VPC, or one that has
-        /// access to an IP address in a VPC, then the task is also private. In this case, DataSync
-        /// creates four network interfaces for each task in your subnet. For a data transfer to work, the
-        /// agent must be able to route to all these four network interfaces.</p>
+        /// <p>The Amazon Resource Names (ARNs) of the subnets in which DataSync will create elastic network interfaces for each data transfer task. The agent that runs a task must be private. When you start a task that is associated with an agent created in a VPC, or one that has access to an IP address in a VPC, then the task is also private. In this case, DataSync creates four network interfaces for each task in your subnet. For a data transfer to work, the agent must be able to route to all these four network interfaces.</p>
         pub fn set_subnet_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -720,25 +662,15 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A subdirectory in the location’s path. This subdirectory in the EFS file system is used
-        /// to read data from the EFS source location or write data to the EFS destination. By default,
-        /// DataSync uses the root directory.</p>
-        /// <note>
-        /// <p>
-        /// <code>Subdirectory</code> must be specified with forward slashes. For example,
-        /// <code>/path/to/folder</code>.</p>
+        /// <p>A subdirectory in the location’s path. This subdirectory in the EFS file system is used to read data from the EFS source location or write data to the EFS destination. By default, DataSync uses the root directory.</p> <note>
+        /// <p> <code>Subdirectory</code> must be specified with forward slashes. For example, <code>/path/to/folder</code>.</p>
         /// </note>
         pub fn subdirectory(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.subdirectory(input.into());
             self
         }
-        /// <p>A subdirectory in the location’s path. This subdirectory in the EFS file system is used
-        /// to read data from the EFS source location or write data to the EFS destination. By default,
-        /// DataSync uses the root directory.</p>
-        /// <note>
-        /// <p>
-        /// <code>Subdirectory</code> must be specified with forward slashes. For example,
-        /// <code>/path/to/folder</code>.</p>
+        /// <p>A subdirectory in the location’s path. This subdirectory in the EFS file system is used to read data from the EFS source location or write data to the EFS destination. By default, DataSync uses the root directory.</p> <note>
+        /// <p> <code>Subdirectory</code> must be specified with forward slashes. For example, <code>/path/to/folder</code>.</p>
         /// </note>
         pub fn set_subdirectory(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_subdirectory(input);
@@ -757,57 +689,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_efs_filesystem_arn(input);
             self
         }
-        /// <p>The subnet and security group that the Amazon EFS file system uses. The security group
-        /// that you provide needs to be able to communicate with the security group on the mount target
-        /// in the subnet specified.</p>
-        /// <p>The exact relationship between security group M (of the mount target) and security
-        /// group S (which you provide for DataSync to use at this stage) is as follows: </p>
+        /// <p>The subnet and security group that the Amazon EFS file system uses. The security group that you provide needs to be able to communicate with the security group on the mount target in the subnet specified.</p>
+        /// <p>The exact relationship between security group M (of the mount target) and security group S (which you provide for DataSync to use at this stage) is as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p> Security group M (which you associate with the mount target) must allow inbound
-        /// access for the Transmission Control Protocol (TCP) on the NFS port (2049) from security
-        /// group S. You can enable inbound connections either by IP address (CIDR range) or security
-        /// group. </p>
-        /// </li>
-        /// <li>
-        /// <p>Security group S (provided to DataSync to access EFS) should have a rule that
-        /// enables outbound connections to the NFS port on one of the file system’s mount targets.
-        /// You can enable outbound connections either by IP address (CIDR range) or security
-        /// group.</p>
-        ///
-        /// <p>For information about security groups and mount targets, see Security
-        /// Groups for Amazon EC2 Instances and Mount Targets in the <i>Amazon EFS User
-        /// Guide.</i>
-        /// </p>
-        /// </li>
+        /// <li> <p> Security group M (which you associate with the mount target) must allow inbound access for the Transmission Control Protocol (TCP) on the NFS port (2049) from security group S. You can enable inbound connections either by IP address (CIDR range) or security group. </p> </li>
+        /// <li> <p>Security group S (provided to DataSync to access EFS) should have a rule that enables outbound connections to the NFS port on one of the file system’s mount targets. You can enable outbound connections either by IP address (CIDR range) or security group.</p> <p>For information about security groups and mount targets, see Security Groups for Amazon EC2 Instances and Mount Targets in the <i>Amazon EFS User Guide.</i> </p> </li>
         /// </ul>
         pub fn ec2_config(mut self, input: crate::model::Ec2Config) -> Self {
             self.inner = self.inner.ec2_config(input);
             self
         }
-        /// <p>The subnet and security group that the Amazon EFS file system uses. The security group
-        /// that you provide needs to be able to communicate with the security group on the mount target
-        /// in the subnet specified.</p>
-        /// <p>The exact relationship between security group M (of the mount target) and security
-        /// group S (which you provide for DataSync to use at this stage) is as follows: </p>
+        /// <p>The subnet and security group that the Amazon EFS file system uses. The security group that you provide needs to be able to communicate with the security group on the mount target in the subnet specified.</p>
+        /// <p>The exact relationship between security group M (of the mount target) and security group S (which you provide for DataSync to use at this stage) is as follows: </p>
         /// <ul>
-        /// <li>
-        /// <p> Security group M (which you associate with the mount target) must allow inbound
-        /// access for the Transmission Control Protocol (TCP) on the NFS port (2049) from security
-        /// group S. You can enable inbound connections either by IP address (CIDR range) or security
-        /// group. </p>
-        /// </li>
-        /// <li>
-        /// <p>Security group S (provided to DataSync to access EFS) should have a rule that
-        /// enables outbound connections to the NFS port on one of the file system’s mount targets.
-        /// You can enable outbound connections either by IP address (CIDR range) or security
-        /// group.</p>
-        ///
-        /// <p>For information about security groups and mount targets, see Security
-        /// Groups for Amazon EC2 Instances and Mount Targets in the <i>Amazon EFS User
-        /// Guide.</i>
-        /// </p>
-        /// </li>
+        /// <li> <p> Security group M (which you associate with the mount target) must allow inbound access for the Transmission Control Protocol (TCP) on the NFS port (2049) from security group S. You can enable inbound connections either by IP address (CIDR range) or security group. </p> </li>
+        /// <li> <p>Security group S (provided to DataSync to access EFS) should have a rule that enables outbound connections to the NFS port on one of the file system’s mount targets. You can enable outbound connections either by IP address (CIDR range) or security group.</p> <p>For information about security groups and mount targets, see Security Groups for Amazon EC2 Instances and Mount Targets in the <i>Amazon EFS User Guide.</i> </p> </li>
         /// </ul>
         pub fn set_ec2_config(
             mut self,
@@ -820,16 +716,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The key-value pair that represents a tag that you want to add to the resource. The
-        /// value can be an empty string. This value helps you manage, filter, and search for your
-        /// resources. We recommend that you create a name tag for your location.</p>
+        /// <p>The key-value pair that represents a tag that you want to add to the resource. The value can be an empty string. This value helps you manage, filter, and search for your resources. We recommend that you create a name tag for your location.</p>
         pub fn tags(mut self, input: crate::model::TagListEntry) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>The key-value pair that represents a tag that you want to add to the resource. The
-        /// value can be an empty string. This value helps you manage, filter, and search for your
-        /// resources. We recommend that you create a name tag for your location.</p>
+        /// <p>The key-value pair that represents a tag that you want to add to the resource. The value can be an empty string. This value helps you manage, filter, and search for your resources. We recommend that you create a name tag for your location.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
@@ -897,16 +789,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A subdirectory in the location’s path. This subdirectory in the Amazon FSx for Windows
-        /// File Server file system is used to read data from the Amazon FSx for Windows File Server
-        /// source location or write data to the FSx for Windows File Server destination.</p>
+        /// <p>A subdirectory in the location’s path. This subdirectory in the Amazon FSx for Windows File Server file system is used to read data from the Amazon FSx for Windows File Server source location or write data to the FSx for Windows File Server destination.</p>
         pub fn subdirectory(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.subdirectory(input.into());
             self
         }
-        /// <p>A subdirectory in the location’s path. This subdirectory in the Amazon FSx for Windows
-        /// File Server file system is used to read data from the Amazon FSx for Windows File Server
-        /// source location or write data to the FSx for Windows File Server destination.</p>
+        /// <p>A subdirectory in the location’s path. This subdirectory in the Amazon FSx for Windows File Server file system is used to read data from the Amazon FSx for Windows File Server source location or write data to the FSx for Windows File Server destination.</p>
         pub fn set_subdirectory(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_subdirectory(input);
             self
@@ -928,14 +816,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_security_group_arns`](Self::set_security_group_arns).
         ///
-        /// <p>The Amazon Resource Names (ARNs) of the security groups that are to use to configure the
-        /// FSx for Windows File Server file system.</p>
+        /// <p>The Amazon Resource Names (ARNs) of the security groups that are to use to configure the FSx for Windows File Server file system.</p>
         pub fn security_group_arns(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.security_group_arns(input.into());
             self
         }
-        /// <p>The Amazon Resource Names (ARNs) of the security groups that are to use to configure the
-        /// FSx for Windows File Server file system.</p>
+        /// <p>The Amazon Resource Names (ARNs) of the security groups that are to use to configure the FSx for Windows File Server file system.</p>
         pub fn set_security_group_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -947,16 +833,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The key-value pair that represents a tag that you want to add to the resource. The
-        /// value can be an empty string. This value helps you manage, filter, and search for your
-        /// resources. We recommend that you create a name tag for your location.</p>
+        /// <p>The key-value pair that represents a tag that you want to add to the resource. The value can be an empty string. This value helps you manage, filter, and search for your resources. We recommend that you create a name tag for your location.</p>
         pub fn tags(mut self, input: crate::model::TagListEntry) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>The key-value pair that represents a tag that you want to add to the resource. The
-        /// value can be an empty string. This value helps you manage, filter, and search for your
-        /// resources. We recommend that you create a name tag for your location.</p>
+        /// <p>The key-value pair that represents a tag that you want to add to the resource. The value can be an empty string. This value helps you manage, filter, and search for your resources. We recommend that you create a name tag for your location.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
@@ -964,18 +846,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>The user who has the permissions to access files and folders in the FSx for Windows File
-        /// Server file system.</p>
-        /// <p>For information about choosing a user name that ensures sufficient permissions to files,
-        /// folders, and metadata, see <a href="create-fsx-location.html#FSxWuser">user</a>.</p>
+        /// <p>The user who has the permissions to access files and folders in the FSx for Windows File Server file system.</p>
+        /// <p>For information about choosing a user name that ensures sufficient permissions to files, folders, and metadata, see <a href="create-fsx-location.html#FSxWuser">user</a>.</p>
         pub fn user(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.user(input.into());
             self
         }
-        /// <p>The user who has the permissions to access files and folders in the FSx for Windows File
-        /// Server file system.</p>
-        /// <p>For information about choosing a user name that ensures sufficient permissions to files,
-        /// folders, and metadata, see <a href="create-fsx-location.html#FSxWuser">user</a>.</p>
+        /// <p>The user who has the permissions to access files and folders in the FSx for Windows File Server file system.</p>
+        /// <p>For information about choosing a user name that ensures sufficient permissions to files, folders, and metadata, see <a href="create-fsx-location.html#FSxWuser">user</a>.</p>
         pub fn set_user(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_user(input);
             self
@@ -990,14 +868,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p>The password of the user who has the permissions to access files and folders in the FSx
-        /// for Windows File Server file system.</p>
+        /// <p>The password of the user who has the permissions to access files and folders in the FSx for Windows File Server file system.</p>
         pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.password(input.into());
             self
         }
-        /// <p>The password of the user who has the permissions to access files and folders in the FSx
-        /// for Windows File Server file system.</p>
+        /// <p>The password of the user who has the permissions to access files and folders in the FSx for Windows File Server file system.</p>
         pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_password(input);
             self
@@ -1062,16 +938,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A subdirectory in the HDFS cluster. This subdirectory is used to read data from or write
-        /// data to the HDFS cluster. If the subdirectory isn't specified, it will default to
-        /// <code>/</code>.</p>
+        /// <p>A subdirectory in the HDFS cluster. This subdirectory is used to read data from or write data to the HDFS cluster. If the subdirectory isn't specified, it will default to <code>/</code>.</p>
         pub fn subdirectory(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.subdirectory(input.into());
             self
         }
-        /// <p>A subdirectory in the HDFS cluster. This subdirectory is used to read data from or write
-        /// data to the HDFS cluster. If the subdirectory isn't specified, it will default to
-        /// <code>/</code>.</p>
+        /// <p>A subdirectory in the HDFS cluster. This subdirectory is used to read data from or write data to the HDFS cluster. If the subdirectory isn't specified, it will default to <code>/</code>.</p>
         pub fn set_subdirectory(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_subdirectory(input);
             self
@@ -1080,16 +952,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_name_nodes`](Self::set_name_nodes).
         ///
-        /// <p>The NameNode that manages the HDFS namespace. The NameNode performs operations such as
-        /// opening, closing, and renaming files and directories. The NameNode contains the information to
-        /// map blocks of data to the DataNodes. You can use only one NameNode.</p>
+        /// <p>The NameNode that manages the HDFS namespace. The NameNode performs operations such as opening, closing, and renaming files and directories. The NameNode contains the information to map blocks of data to the DataNodes. You can use only one NameNode.</p>
         pub fn name_nodes(mut self, input: crate::model::HdfsNameNode) -> Self {
             self.inner = self.inner.name_nodes(input);
             self
         }
-        /// <p>The NameNode that manages the HDFS namespace. The NameNode performs operations such as
-        /// opening, closing, and renaming files and directories. The NameNode contains the information to
-        /// map blocks of data to the DataNodes. You can use only one NameNode.</p>
+        /// <p>The NameNode that manages the HDFS namespace. The NameNode performs operations such as opening, closing, and renaming files and directories. The NameNode contains the information to map blocks of data to the DataNodes. You can use only one NameNode.</p>
         pub fn set_name_nodes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::HdfsNameNode>>,
@@ -1097,26 +965,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name_nodes(input);
             self
         }
-        /// <p>The size of data blocks to write into the HDFS cluster. The block size must be a multiple
-        /// of 512 bytes. The default block size is 128 mebibytes (MiB).</p>
+        /// <p>The size of data blocks to write into the HDFS cluster. The block size must be a multiple of 512 bytes. The default block size is 128 mebibytes (MiB).</p>
         pub fn block_size(mut self, input: i32) -> Self {
             self.inner = self.inner.block_size(input);
             self
         }
-        /// <p>The size of data blocks to write into the HDFS cluster. The block size must be a multiple
-        /// of 512 bytes. The default block size is 128 mebibytes (MiB).</p>
+        /// <p>The size of data blocks to write into the HDFS cluster. The block size must be a multiple of 512 bytes. The default block size is 128 mebibytes (MiB).</p>
         pub fn set_block_size(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_block_size(input);
             self
         }
-        /// <p>The number of DataNodes to replicate the data to when writing to the HDFS cluster. By
-        /// default, data is replicated to three DataNodes.</p>
+        /// <p>The number of DataNodes to replicate the data to when writing to the HDFS cluster. By default, data is replicated to three DataNodes.</p>
         pub fn replication_factor(mut self, input: i32) -> Self {
             self.inner = self.inner.replication_factor(input);
             self
         }
-        /// <p>The number of DataNodes to replicate the data to when writing to the HDFS cluster. By
-        /// default, data is replicated to three DataNodes.</p>
+        /// <p>The number of DataNodes to replicate the data to when writing to the HDFS cluster. By default, data is replicated to three DataNodes.</p>
         pub fn set_replication_factor(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_replication_factor(input);
             self
@@ -1134,22 +998,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_kms_key_provider_uri(input);
             self
         }
-        /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC)
-        /// and data transfer protection settings configured on the Hadoop Distributed File System (HDFS)
-        /// cluster. If <code>QopConfiguration</code> isn't specified, <code>RpcProtection</code> and
-        /// <code>DataTransferProtection</code> default to <code>PRIVACY</code>. If you set
-        /// <code>RpcProtection</code> or <code>DataTransferProtection</code>, the other parameter
-        /// assumes the same value. </p>
+        /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC) and data transfer protection settings configured on the Hadoop Distributed File System (HDFS) cluster. If <code>QopConfiguration</code> isn't specified, <code>RpcProtection</code> and <code>DataTransferProtection</code> default to <code>PRIVACY</code>. If you set <code>RpcProtection</code> or <code>DataTransferProtection</code>, the other parameter assumes the same value. </p>
         pub fn qop_configuration(mut self, input: crate::model::QopConfiguration) -> Self {
             self.inner = self.inner.qop_configuration(input);
             self
         }
-        /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC)
-        /// and data transfer protection settings configured on the Hadoop Distributed File System (HDFS)
-        /// cluster. If <code>QopConfiguration</code> isn't specified, <code>RpcProtection</code> and
-        /// <code>DataTransferProtection</code> default to <code>PRIVACY</code>. If you set
-        /// <code>RpcProtection</code> or <code>DataTransferProtection</code>, the other parameter
-        /// assumes the same value. </p>
+        /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC) and data transfer protection settings configured on the Hadoop Distributed File System (HDFS) cluster. If <code>QopConfiguration</code> isn't specified, <code>RpcProtection</code> and <code>DataTransferProtection</code> default to <code>PRIVACY</code>. If you set <code>RpcProtection</code> or <code>DataTransferProtection</code>, the other parameter assumes the same value. </p>
         pub fn set_qop_configuration(
             mut self,
             input: std::option::Option<crate::model::QopConfiguration>,
@@ -1170,37 +1024,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_authentication_type(input);
             self
         }
-        /// <p>The user name used to identify the client on the host operating system. </p>
-        /// <note>
-        /// <p>If <code>SIMPLE</code> is specified for <code>AuthenticationType</code>, this parameter
-        /// is required. </p>
+        /// <p>The user name used to identify the client on the host operating system. </p> <note>
+        /// <p>If <code>SIMPLE</code> is specified for <code>AuthenticationType</code>, this parameter is required. </p>
         /// </note>
         pub fn simple_user(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.simple_user(input.into());
             self
         }
-        /// <p>The user name used to identify the client on the host operating system. </p>
-        /// <note>
-        /// <p>If <code>SIMPLE</code> is specified for <code>AuthenticationType</code>, this parameter
-        /// is required. </p>
+        /// <p>The user name used to identify the client on the host operating system. </p> <note>
+        /// <p>If <code>SIMPLE</code> is specified for <code>AuthenticationType</code>, this parameter is required. </p>
         /// </note>
         pub fn set_simple_user(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_simple_user(input);
             self
         }
-        /// <p>The Kerberos principal with access to the files and folders on the HDFS cluster. </p>
-        /// <note>
-        /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this
-        /// parameter is required.</p>
+        /// <p>The Kerberos principal with access to the files and folders on the HDFS cluster. </p> <note>
+        /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this parameter is required.</p>
         /// </note>
         pub fn kerberos_principal(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kerberos_principal(input.into());
             self
         }
-        /// <p>The Kerberos principal with access to the files and folders on the HDFS cluster. </p>
-        /// <note>
-        /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this
-        /// parameter is required.</p>
+        /// <p>The Kerberos principal with access to the files and folders on the HDFS cluster. </p> <note>
+        /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this parameter is required.</p>
         /// </note>
         pub fn set_kerberos_principal(
             mut self,
@@ -1209,25 +1055,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_kerberos_principal(input);
             self
         }
-        /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos
-        /// principal and the encrypted keys. You can load the keytab from a file by providing the file's
-        /// address. If you're using the CLI, it performs base64 encoding for you.
-        /// Otherwise, provide the base64-encoded text. </p>
-        /// <note>
-        /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this
-        /// parameter is required. </p>
+        /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos principal and the encrypted keys. You can load the keytab from a file by providing the file's address. If you're using the CLI, it performs base64 encoding for you. Otherwise, provide the base64-encoded text. </p> <note>
+        /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this parameter is required. </p>
         /// </note>
         pub fn kerberos_keytab(mut self, input: aws_smithy_types::Blob) -> Self {
             self.inner = self.inner.kerberos_keytab(input);
             self
         }
-        /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos
-        /// principal and the encrypted keys. You can load the keytab from a file by providing the file's
-        /// address. If you're using the CLI, it performs base64 encoding for you.
-        /// Otherwise, provide the base64-encoded text. </p>
-        /// <note>
-        /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this
-        /// parameter is required. </p>
+        /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos principal and the encrypted keys. You can load the keytab from a file by providing the file's address. If you're using the CLI, it performs base64 encoding for you. Otherwise, provide the base64-encoded text. </p> <note>
+        /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this parameter is required. </p>
         /// </note>
         pub fn set_kerberos_keytab(
             mut self,
@@ -1236,25 +1072,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_kerberos_keytab(input);
             self
         }
-        /// <p>The <code>krb5.conf</code> file that contains the Kerberos configuration information. You
-        /// can load the <code>krb5.conf</code> file by providing the file's address. If you're using the
-        /// CLI, it performs the base64 encoding for you. Otherwise, provide the
-        /// base64-encoded text. </p>
-        /// <note>
-        /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this
-        /// parameter is required.</p>
+        /// <p>The <code>krb5.conf</code> file that contains the Kerberos configuration information. You can load the <code>krb5.conf</code> file by providing the file's address. If you're using the CLI, it performs the base64 encoding for you. Otherwise, provide the base64-encoded text. </p> <note>
+        /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this parameter is required.</p>
         /// </note>
         pub fn kerberos_krb5_conf(mut self, input: aws_smithy_types::Blob) -> Self {
             self.inner = self.inner.kerberos_krb5_conf(input);
             self
         }
-        /// <p>The <code>krb5.conf</code> file that contains the Kerberos configuration information. You
-        /// can load the <code>krb5.conf</code> file by providing the file's address. If you're using the
-        /// CLI, it performs the base64 encoding for you. Otherwise, provide the
-        /// base64-encoded text. </p>
-        /// <note>
-        /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this
-        /// parameter is required.</p>
+        /// <p>The <code>krb5.conf</code> file that contains the Kerberos configuration information. You can load the <code>krb5.conf</code> file by providing the file's address. If you're using the CLI, it performs the base64 encoding for you. Otherwise, provide the base64-encoded text. </p> <note>
+        /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this parameter is required.</p>
         /// </note>
         pub fn set_kerberos_krb5_conf(
             mut self,
@@ -1267,14 +1093,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_agent_arns`](Self::set_agent_arns).
         ///
-        /// <p>The Amazon Resource Names (ARNs) of the agents that are used to connect to the HDFS
-        /// cluster.</p>
+        /// <p>The Amazon Resource Names (ARNs) of the agents that are used to connect to the HDFS cluster.</p>
         pub fn agent_arns(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.agent_arns(input.into());
             self
         }
-        /// <p>The Amazon Resource Names (ARNs) of the agents that are used to connect to the HDFS
-        /// cluster.</p>
+        /// <p>The Amazon Resource Names (ARNs) of the agents that are used to connect to the HDFS cluster.</p>
         pub fn set_agent_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1286,14 +1110,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The key-value pair that represents the tag that you want to add to the location. The value
-        /// can be an empty string. We recommend using tags to name your resources. </p>
+        /// <p>The key-value pair that represents the tag that you want to add to the location. The value can be an empty string. We recommend using tags to name your resources. </p>
         pub fn tags(mut self, input: crate::model::TagListEntry) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>The key-value pair that represents the tag that you want to add to the location. The value
-        /// can be an empty string. We recommend using tags to name your resources. </p>
+        /// <p>The key-value pair that represents the tag that you want to add to the location. The value can be an empty string. We recommend using tags to name your resources. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
@@ -1304,8 +1126,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateLocationNfs`.
     ///
-    /// <p>Defines a file system on a Network File System (NFS) server that can be read from or
-    /// written to.</p>
+    /// <p>Defines a file system on a Network File System (NFS) server that can be read from or written to.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLocationNfs<
         C = aws_smithy_client::erase::DynConnector,
@@ -1362,69 +1183,35 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The subdirectory in the NFS file system that is used to read data from the NFS source
-        /// location or write data to the NFS destination. The NFS path should be a path that's
-        /// exported by the NFS server, or a subdirectory of that path. The path should be such that it
-        /// can be mounted by other NFS clients in your network. </p>
-        /// <p>To see all the paths exported by your NFS server, run "<code>showmount -e
-        /// nfs-server-name</code>" from an NFS client that has access to your server. You can specify
-        /// any directory that appears in the results, and any subdirectory of that directory. Ensure that
-        /// the NFS export is accessible without Kerberos authentication. </p>
-        /// <p>To transfer all the data in the folder you specified, DataSync needs to have
-        /// permissions to read all the data. To ensure this, either configure the NFS export with
-        /// <code>no_root_squash,</code> or ensure that the permissions for all of the files that you
-        /// want DataSync allow read access for all users. Doing either enables the agent to read the
-        /// files. For the agent to access directories, you must additionally enable all execute
-        /// access.</p>
+        /// <p>The subdirectory in the NFS file system that is used to read data from the NFS source location or write data to the NFS destination. The NFS path should be a path that's exported by the NFS server, or a subdirectory of that path. The path should be such that it can be mounted by other NFS clients in your network. </p>
+        /// <p>To see all the paths exported by your NFS server, run "<code>showmount -e nfs-server-name</code>" from an NFS client that has access to your server. You can specify any directory that appears in the results, and any subdirectory of that directory. Ensure that the NFS export is accessible without Kerberos authentication. </p>
+        /// <p>To transfer all the data in the folder you specified, DataSync needs to have permissions to read all the data. To ensure this, either configure the NFS export with <code>no_root_squash,</code> or ensure that the permissions for all of the files that you want DataSync allow read access for all users. Doing either enables the agent to read the files. For the agent to access directories, you must additionally enable all execute access.</p>
         /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p>
-        ///
-        /// <p>For information about NFS export configuration, see 18.7. The /etc/exports
-        /// Configuration File in the Red Hat Enterprise Linux documentation.</p>
+        /// <p>For information about NFS export configuration, see 18.7. The /etc/exports Configuration File in the Red Hat Enterprise Linux documentation.</p>
         pub fn subdirectory(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.subdirectory(input.into());
             self
         }
-        /// <p>The subdirectory in the NFS file system that is used to read data from the NFS source
-        /// location or write data to the NFS destination. The NFS path should be a path that's
-        /// exported by the NFS server, or a subdirectory of that path. The path should be such that it
-        /// can be mounted by other NFS clients in your network. </p>
-        /// <p>To see all the paths exported by your NFS server, run "<code>showmount -e
-        /// nfs-server-name</code>" from an NFS client that has access to your server. You can specify
-        /// any directory that appears in the results, and any subdirectory of that directory. Ensure that
-        /// the NFS export is accessible without Kerberos authentication. </p>
-        /// <p>To transfer all the data in the folder you specified, DataSync needs to have
-        /// permissions to read all the data. To ensure this, either configure the NFS export with
-        /// <code>no_root_squash,</code> or ensure that the permissions for all of the files that you
-        /// want DataSync allow read access for all users. Doing either enables the agent to read the
-        /// files. For the agent to access directories, you must additionally enable all execute
-        /// access.</p>
+        /// <p>The subdirectory in the NFS file system that is used to read data from the NFS source location or write data to the NFS destination. The NFS path should be a path that's exported by the NFS server, or a subdirectory of that path. The path should be such that it can be mounted by other NFS clients in your network. </p>
+        /// <p>To see all the paths exported by your NFS server, run "<code>showmount -e nfs-server-name</code>" from an NFS client that has access to your server. You can specify any directory that appears in the results, and any subdirectory of that directory. Ensure that the NFS export is accessible without Kerberos authentication. </p>
+        /// <p>To transfer all the data in the folder you specified, DataSync needs to have permissions to read all the data. To ensure this, either configure the NFS export with <code>no_root_squash,</code> or ensure that the permissions for all of the files that you want DataSync allow read access for all users. Doing either enables the agent to read the files. For the agent to access directories, you must additionally enable all execute access.</p>
         /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p>
-        ///
-        /// <p>For information about NFS export configuration, see 18.7. The /etc/exports
-        /// Configuration File in the Red Hat Enterprise Linux documentation.</p>
+        /// <p>For information about NFS export configuration, see 18.7. The /etc/exports Configuration File in the Red Hat Enterprise Linux documentation.</p>
         pub fn set_subdirectory(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_subdirectory(input);
             self
         }
-        /// <p>The name of the NFS server. This value is the IP address or Domain Name Service (DNS)
-        /// name of the NFS server. An agent that is installed on-premises uses this host name to mount
-        /// the NFS server in a network. </p>
-        /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p>
-        /// <note>
-        /// <p>This name must either be DNS-compliant or must be an IP version 4 (IPv4)
-        /// address.</p>
+        /// <p>The name of the NFS server. This value is the IP address or Domain Name Service (DNS) name of the NFS server. An agent that is installed on-premises uses this host name to mount the NFS server in a network. </p>
+        /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p> <note>
+        /// <p>This name must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p>
         /// </note>
         pub fn server_hostname(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.server_hostname(input.into());
             self
         }
-        /// <p>The name of the NFS server. This value is the IP address or Domain Name Service (DNS)
-        /// name of the NFS server. An agent that is installed on-premises uses this host name to mount
-        /// the NFS server in a network. </p>
-        /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p>
-        /// <note>
-        /// <p>This name must either be DNS-compliant or must be an IP version 4 (IPv4)
-        /// address.</p>
+        /// <p>The name of the NFS server. This value is the IP address or Domain Name Service (DNS) name of the NFS server. An agent that is installed on-premises uses this host name to mount the NFS server in a network. </p>
+        /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p> <note>
+        /// <p>This name must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p>
         /// </note>
         pub fn set_server_hostname(
             mut self,
@@ -1433,15 +1220,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_server_hostname(input);
             self
         }
-        /// <p>Contains a list of Amazon Resource Names (ARNs) of agents that are used to connect to
-        /// an NFS server. </p>
+        /// <p>Contains a list of Amazon Resource Names (ARNs) of agents that are used to connect to an NFS server. </p>
         /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p>
         pub fn on_prem_config(mut self, input: crate::model::OnPremConfig) -> Self {
             self.inner = self.inner.on_prem_config(input);
             self
         }
-        /// <p>Contains a list of Amazon Resource Names (ARNs) of agents that are used to connect to
-        /// an NFS server. </p>
+        /// <p>Contains a list of Amazon Resource Names (ARNs) of agents that are used to connect to an NFS server. </p>
         /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p>
         pub fn set_on_prem_config(
             mut self,
@@ -1467,14 +1252,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The key-value pair that represents the tag that you want to add to the location. The
-        /// value can be an empty string. We recommend using tags to name your resources.</p>
+        /// <p>The key-value pair that represents the tag that you want to add to the location. The value can be an empty string. We recommend using tags to name your resources.</p>
         pub fn tags(mut self, input: crate::model::TagListEntry) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>The key-value pair that represents the tag that you want to add to the location. The
-        /// value can be an empty string. We recommend using tags to name your resources.</p>
+        /// <p>The key-value pair that represents the tag that you want to add to the location. The value can be an empty string. We recommend using tags to name your resources.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
@@ -1485,8 +1268,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateLocationObjectStorage`.
     ///
-    /// <p>Creates an endpoint for a self-managed object storage bucket. For more information
-    /// about self-managed object storage locations, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-object-location.html">Creating a location for object storage</a>.</p>
+    /// <p>Creates an endpoint for a self-managed object storage bucket. For more information about self-managed object storage locations, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-object-location.html">Creating a location for object storage</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLocationObjectStorage<
         C = aws_smithy_client::erase::DynConnector,
@@ -1543,16 +1325,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the self-managed object storage server. This value is the
-        /// IP address or Domain Name Service (DNS) name of the object storage server.
-        /// An agent uses this host name to mount the object storage server in a network. </p>
+        /// <p>The name of the self-managed object storage server. This value is the IP address or Domain Name Service (DNS) name of the object storage server. An agent uses this host name to mount the object storage server in a network. </p>
         pub fn server_hostname(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.server_hostname(input.into());
             self
         }
-        /// <p>The name of the self-managed object storage server. This value is the
-        /// IP address or Domain Name Service (DNS) name of the object storage server.
-        /// An agent uses this host name to mount the object storage server in a network. </p>
+        /// <p>The name of the self-managed object storage server. This value is the IP address or Domain Name Service (DNS) name of the object storage server. An agent uses this host name to mount the object storage server in a network. </p>
         pub fn set_server_hostname(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1560,28 +1338,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_server_hostname(input);
             self
         }
-        /// <p>The port that your self-managed object storage server accepts inbound network traffic on.
-        /// The server port is set by default to TCP 80 (HTTP) or TCP 443 (HTTPS). You can
-        /// specify a custom port if your self-managed object storage server requires one.</p>
+        /// <p>The port that your self-managed object storage server accepts inbound network traffic on. The server port is set by default to TCP 80 (HTTP) or TCP 443 (HTTPS). You can specify a custom port if your self-managed object storage server requires one.</p>
         pub fn server_port(mut self, input: i32) -> Self {
             self.inner = self.inner.server_port(input);
             self
         }
-        /// <p>The port that your self-managed object storage server accepts inbound network traffic on.
-        /// The server port is set by default to TCP 80 (HTTP) or TCP 443 (HTTPS). You can
-        /// specify a custom port if your self-managed object storage server requires one.</p>
+        /// <p>The port that your self-managed object storage server accepts inbound network traffic on. The server port is set by default to TCP 80 (HTTP) or TCP 443 (HTTPS). You can specify a custom port if your self-managed object storage server requires one.</p>
         pub fn set_server_port(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_server_port(input);
             self
         }
-        /// <p>The protocol that the object storage server uses to communicate.
-        /// Valid values are HTTP or HTTPS.</p>
+        /// <p>The protocol that the object storage server uses to communicate. Valid values are HTTP or HTTPS.</p>
         pub fn server_protocol(mut self, input: crate::model::ObjectStorageServerProtocol) -> Self {
             self.inner = self.inner.server_protocol(input);
             self
         }
-        /// <p>The protocol that the object storage server uses to communicate.
-        /// Valid values are HTTP or HTTPS.</p>
+        /// <p>The protocol that the object storage server uses to communicate. Valid values are HTTP or HTTPS.</p>
         pub fn set_server_protocol(
             mut self,
             input: std::option::Option<crate::model::ObjectStorageServerProtocol>,
@@ -1589,58 +1361,42 @@ pub mod fluent_builders {
             self.inner = self.inner.set_server_protocol(input);
             self
         }
-        /// <p>The subdirectory in the self-managed object storage server that is used
-        /// to read data from.</p>
+        /// <p>The subdirectory in the self-managed object storage server that is used to read data from.</p>
         pub fn subdirectory(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.subdirectory(input.into());
             self
         }
-        /// <p>The subdirectory in the self-managed object storage server that is used
-        /// to read data from.</p>
+        /// <p>The subdirectory in the self-managed object storage server that is used to read data from.</p>
         pub fn set_subdirectory(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_subdirectory(input);
             self
         }
-        /// <p>The bucket on the self-managed object storage server that is used
-        /// to read data from.</p>
+        /// <p>The bucket on the self-managed object storage server that is used to read data from.</p>
         pub fn bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.bucket_name(input.into());
             self
         }
-        /// <p>The bucket on the self-managed object storage server that is used
-        /// to read data from.</p>
+        /// <p>The bucket on the self-managed object storage server that is used to read data from.</p>
         pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_bucket_name(input);
             self
         }
-        /// <p>Optional. The access key is used if credentials are required to access the self-managed
-        /// object storage server. If your object storage requires a user name and password to
-        /// authenticate, use <code>AccessKey</code> and <code>SecretKey</code> to provide the user name
-        /// and password, respectively.</p>
+        /// <p>Optional. The access key is used if credentials are required to access the self-managed object storage server. If your object storage requires a user name and password to authenticate, use <code>AccessKey</code> and <code>SecretKey</code> to provide the user name and password, respectively.</p>
         pub fn access_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.access_key(input.into());
             self
         }
-        /// <p>Optional. The access key is used if credentials are required to access the self-managed
-        /// object storage server. If your object storage requires a user name and password to
-        /// authenticate, use <code>AccessKey</code> and <code>SecretKey</code> to provide the user name
-        /// and password, respectively.</p>
+        /// <p>Optional. The access key is used if credentials are required to access the self-managed object storage server. If your object storage requires a user name and password to authenticate, use <code>AccessKey</code> and <code>SecretKey</code> to provide the user name and password, respectively.</p>
         pub fn set_access_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_access_key(input);
             self
         }
-        /// <p>Optional. The secret key is used if credentials are required to access the self-managed
-        /// object storage server. If your object storage requires a user name and password to
-        /// authenticate, use <code>AccessKey</code> and <code>SecretKey</code> to provide the user name
-        /// and password, respectively.</p>
+        /// <p>Optional. The secret key is used if credentials are required to access the self-managed object storage server. If your object storage requires a user name and password to authenticate, use <code>AccessKey</code> and <code>SecretKey</code> to provide the user name and password, respectively.</p>
         pub fn secret_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.secret_key(input.into());
             self
         }
-        /// <p>Optional. The secret key is used if credentials are required to access the self-managed
-        /// object storage server. If your object storage requires a user name and password to
-        /// authenticate, use <code>AccessKey</code> and <code>SecretKey</code> to provide the user name
-        /// and password, respectively.</p>
+        /// <p>Optional. The secret key is used if credentials are required to access the self-managed object storage server. If your object storage requires a user name and password to authenticate, use <code>AccessKey</code> and <code>SecretKey</code> to provide the user name and password, respectively.</p>
         pub fn set_secret_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_secret_key(input);
             self
@@ -1649,14 +1405,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_agent_arns`](Self::set_agent_arns).
         ///
-        /// <p>The Amazon Resource Name (ARN) of the agents associated with the
-        /// self-managed object storage server location.</p>
+        /// <p>The Amazon Resource Name (ARN) of the agents associated with the self-managed object storage server location.</p>
         pub fn agent_arns(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.agent_arns(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the agents associated with the
-        /// self-managed object storage server location.</p>
+        /// <p>The Amazon Resource Name (ARN) of the agents associated with the self-managed object storage server location.</p>
         pub fn set_agent_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1668,14 +1422,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The key-value pair that represents the tag that you want to add to the location. The
-        /// value can be an empty string. We recommend using tags to name your resources.</p>
+        /// <p>The key-value pair that represents the tag that you want to add to the location. The value can be an empty string. We recommend using tags to name your resources.</p>
         pub fn tags(mut self, input: crate::model::TagListEntry) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>The key-value pair that represents the tag that you want to add to the location. The
-        /// value can be an empty string. We recommend using tags to name your resources.</p>
+        /// <p>The key-value pair that represents the tag that you want to add to the location. The value can be an empty string. We recommend using tags to name your resources.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
@@ -1687,12 +1439,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateLocationS3`.
     ///
     /// <p>Creates an endpoint for an Amazon S3 bucket.</p>
-    ///
-    ///
-    /// <p>For
-    /// more information, see
-    /// <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-locations-cli.html#create-location-s3-cli">Create an Amazon S3 location</a>
-    /// in the <i>DataSync User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-locations-cli.html#create-location-s3-cli">Create an Amazon S3 location</a> in the <i>DataSync User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLocationS3<
         C = aws_smithy_client::erase::DynConnector,
@@ -1749,26 +1496,22 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>A subdirectory in the Amazon S3 bucket. This subdirectory in Amazon S3 is used to read
-        /// data from the S3 source location or write data to the S3 destination.</p>
+        /// <p>A subdirectory in the Amazon S3 bucket. This subdirectory in Amazon S3 is used to read data from the S3 source location or write data to the S3 destination.</p>
         pub fn subdirectory(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.subdirectory(input.into());
             self
         }
-        /// <p>A subdirectory in the Amazon S3 bucket. This subdirectory in Amazon S3 is used to read
-        /// data from the S3 source location or write data to the S3 destination.</p>
+        /// <p>A subdirectory in the Amazon S3 bucket. This subdirectory in Amazon S3 is used to read data from the S3 source location or write data to the S3 destination.</p>
         pub fn set_subdirectory(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_subdirectory(input);
             self
         }
-        /// <p>The ARN of the Amazon S3 bucket. If the bucket is on an Amazon Web Services Outpost, this must be an
-        /// access point ARN.</p>
+        /// <p>The ARN of the Amazon S3 bucket. If the bucket is on an Amazon Web Services Outpost, this must be an access point ARN.</p>
         pub fn s3_bucket_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.s3_bucket_arn(input.into());
             self
         }
-        /// <p>The ARN of the Amazon S3 bucket. If the bucket is on an Amazon Web Services Outpost, this must be an
-        /// access point ARN.</p>
+        /// <p>The ARN of the Amazon S3 bucket. If the bucket is on an Amazon Web Services Outpost, this must be an access point ARN.</p>
         pub fn set_s3_bucket_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1776,22 +1519,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_s3_bucket_arn(input);
             self
         }
-        /// <p>The Amazon S3 storage class that you want to store your files in when this location is
-        /// used as a task destination. For buckets in Amazon Web Services Regions, the storage class defaults to Standard.
-        /// For buckets on Outposts, the storage class defaults to Amazon Web Services S3 Outposts.</p>
-        ///
-        /// <p>For more information about S3 storage classes, see <a href="http://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a>. Some storage classes have behaviors that
-        /// can affect your S3 storage cost. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with S3 storage classes in DataSync</a>.</p>
+        /// <p>The Amazon S3 storage class that you want to store your files in when this location is used as a task destination. For buckets in Amazon Web Services Regions, the storage class defaults to Standard. For buckets on Outposts, the storage class defaults to Amazon Web Services S3 Outposts.</p>
+        /// <p>For more information about S3 storage classes, see <a href="http://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a>. Some storage classes have behaviors that can affect your S3 storage cost. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with S3 storage classes in DataSync</a>.</p>
         pub fn s3_storage_class(mut self, input: crate::model::S3StorageClass) -> Self {
             self.inner = self.inner.s3_storage_class(input);
             self
         }
-        /// <p>The Amazon S3 storage class that you want to store your files in when this location is
-        /// used as a task destination. For buckets in Amazon Web Services Regions, the storage class defaults to Standard.
-        /// For buckets on Outposts, the storage class defaults to Amazon Web Services S3 Outposts.</p>
-        ///
-        /// <p>For more information about S3 storage classes, see <a href="http://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a>. Some storage classes have behaviors that
-        /// can affect your S3 storage cost. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with S3 storage classes in DataSync</a>.</p>
+        /// <p>The Amazon S3 storage class that you want to store your files in when this location is used as a task destination. For buckets in Amazon Web Services Regions, the storage class defaults to Standard. For buckets on Outposts, the storage class defaults to Amazon Web Services S3 Outposts.</p>
+        /// <p>For more information about S3 storage classes, see <a href="http://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a>. Some storage classes have behaviors that can affect your S3 storage cost. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with S3 storage classes in DataSync</a>.</p>
         pub fn set_s3_storage_class(
             mut self,
             input: std::option::Option<crate::model::S3StorageClass>,
@@ -1799,20 +1534,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_s3_storage_class(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role
-        /// that is used to access an Amazon S3 bucket.</p>
-        ///
-        /// <p>For detailed information about using such a role, see Creating a Location for
-        /// Amazon S3 in the <i>DataSync User Guide</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that is used to access an Amazon S3 bucket.</p>
+        /// <p>For detailed information about using such a role, see Creating a Location for Amazon S3 in the <i>DataSync User Guide</i>.</p>
         pub fn s3_config(mut self, input: crate::model::S3Config) -> Self {
             self.inner = self.inner.s3_config(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role
-        /// that is used to access an Amazon S3 bucket.</p>
-        ///
-        /// <p>For detailed information about using such a role, see Creating a Location for
-        /// Amazon S3 in the <i>DataSync User Guide</i>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that is used to access an Amazon S3 bucket.</p>
+        /// <p>For detailed information about using such a role, see Creating a Location for Amazon S3 in the <i>DataSync User Guide</i>.</p>
         pub fn set_s3_config(mut self, input: std::option::Option<crate::model::S3Config>) -> Self {
             self.inner = self.inner.set_s3_config(input);
             self
@@ -1821,16 +1550,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_agent_arns`](Self::set_agent_arns).
         ///
-        /// <p>If you are using DataSync on an Amazon Web Services Outpost, specify the Amazon Resource Names (ARNs) of
-        /// the DataSync agents deployed on your Outpost. For more information about launching a DataSync
-        /// agent on an Amazon Web Services Outpost, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy your DataSync agent on Outposts</a>.</p>
+        /// <p>If you are using DataSync on an Amazon Web Services Outpost, specify the Amazon Resource Names (ARNs) of the DataSync agents deployed on your Outpost. For more information about launching a DataSync agent on an Amazon Web Services Outpost, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy your DataSync agent on Outposts</a>.</p>
         pub fn agent_arns(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.agent_arns(input.into());
             self
         }
-        /// <p>If you are using DataSync on an Amazon Web Services Outpost, specify the Amazon Resource Names (ARNs) of
-        /// the DataSync agents deployed on your Outpost. For more information about launching a DataSync
-        /// agent on an Amazon Web Services Outpost, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy your DataSync agent on Outposts</a>.</p>
+        /// <p>If you are using DataSync on an Amazon Web Services Outpost, specify the Amazon Resource Names (ARNs) of the DataSync agents deployed on your Outpost. For more information about launching a DataSync agent on an Amazon Web Services Outpost, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy your DataSync agent on Outposts</a>.</p>
         pub fn set_agent_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1842,14 +1567,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The key-value pair that represents the tag that you want to add to the location. The
-        /// value can be an empty string. We recommend using tags to name your resources.</p>
+        /// <p>The key-value pair that represents the tag that you want to add to the location. The value can be an empty string. We recommend using tags to name your resources.</p>
         pub fn tags(mut self, input: crate::model::TagListEntry) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>The key-value pair that represents the tag that you want to add to the location. The
-        /// value can be an empty string. We recommend using tags to name your resources.</p>
+        /// <p>The key-value pair that represents the tag that you want to add to the location. The value can be an empty string. We recommend using tags to name your resources.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
@@ -1860,8 +1583,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `CreateLocationSmb`.
     ///
-    /// <p>Defines a file system on a Server Message Block (SMB) server that can be read from or
-    /// written to.</p>
+    /// <p>Defines a file system on a Server Message Block (SMB) server that can be read from or written to.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateLocationSmb<
         C = aws_smithy_client::erase::DynConnector,
@@ -1918,62 +1640,30 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The subdirectory in the SMB file system that is used to read data from the SMB source
-        /// location or write data to the SMB destination. The SMB path should be a path that's
-        /// exported by the SMB server, or a subdirectory of that path. The path should be such that it
-        /// can be mounted by other SMB clients in your network.</p>
-        /// <note>
-        /// <p>
-        /// <code>Subdirectory</code> must be specified with forward slashes. For example,
-        /// <code>/path/to/folder</code>.</p>
+        /// <p>The subdirectory in the SMB file system that is used to read data from the SMB source location or write data to the SMB destination. The SMB path should be a path that's exported by the SMB server, or a subdirectory of that path. The path should be such that it can be mounted by other SMB clients in your network.</p> <note>
+        /// <p> <code>Subdirectory</code> must be specified with forward slashes. For example, <code>/path/to/folder</code>.</p>
         /// </note>
-        ///
-        /// <p>To transfer all the data in the folder you specified, DataSync needs to have permissions
-        /// to mount the SMB share, as well as to access all the data in that share. To ensure this,
-        /// either ensure that the user/password specified belongs to the user who can mount the share,
-        /// and who has the appropriate permissions for all of the files and directories that you want
-        /// DataSync to access, or use credentials of a member of the Backup Operators group to mount
-        /// the share. Doing either enables the agent to access the data. For the agent to access
-        /// directories, you must additionally enable all execute access.</p>
+        /// <p>To transfer all the data in the folder you specified, DataSync needs to have permissions to mount the SMB share, as well as to access all the data in that share. To ensure this, either ensure that the user/password specified belongs to the user who can mount the share, and who has the appropriate permissions for all of the files and directories that you want DataSync to access, or use credentials of a member of the Backup Operators group to mount the share. Doing either enables the agent to access the data. For the agent to access directories, you must additionally enable all execute access.</p>
         pub fn subdirectory(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.subdirectory(input.into());
             self
         }
-        /// <p>The subdirectory in the SMB file system that is used to read data from the SMB source
-        /// location or write data to the SMB destination. The SMB path should be a path that's
-        /// exported by the SMB server, or a subdirectory of that path. The path should be such that it
-        /// can be mounted by other SMB clients in your network.</p>
-        /// <note>
-        /// <p>
-        /// <code>Subdirectory</code> must be specified with forward slashes. For example,
-        /// <code>/path/to/folder</code>.</p>
+        /// <p>The subdirectory in the SMB file system that is used to read data from the SMB source location or write data to the SMB destination. The SMB path should be a path that's exported by the SMB server, or a subdirectory of that path. The path should be such that it can be mounted by other SMB clients in your network.</p> <note>
+        /// <p> <code>Subdirectory</code> must be specified with forward slashes. For example, <code>/path/to/folder</code>.</p>
         /// </note>
-        ///
-        /// <p>To transfer all the data in the folder you specified, DataSync needs to have permissions
-        /// to mount the SMB share, as well as to access all the data in that share. To ensure this,
-        /// either ensure that the user/password specified belongs to the user who can mount the share,
-        /// and who has the appropriate permissions for all of the files and directories that you want
-        /// DataSync to access, or use credentials of a member of the Backup Operators group to mount
-        /// the share. Doing either enables the agent to access the data. For the agent to access
-        /// directories, you must additionally enable all execute access.</p>
+        /// <p>To transfer all the data in the folder you specified, DataSync needs to have permissions to mount the SMB share, as well as to access all the data in that share. To ensure this, either ensure that the user/password specified belongs to the user who can mount the share, and who has the appropriate permissions for all of the files and directories that you want DataSync to access, or use credentials of a member of the Backup Operators group to mount the share. Doing either enables the agent to access the data. For the agent to access directories, you must additionally enable all execute access.</p>
         pub fn set_subdirectory(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_subdirectory(input);
             self
         }
-        /// <p>The name of the SMB server. This value is the IP address or Domain Name Service (DNS) name
-        /// of the SMB server. An agent that is installed on-premises uses this hostname to mount the SMB
-        /// server in a network.</p>
-        /// <note>
+        /// <p>The name of the SMB server. This value is the IP address or Domain Name Service (DNS) name of the SMB server. An agent that is installed on-premises uses this hostname to mount the SMB server in a network.</p> <note>
         /// <p>This name must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p>
         /// </note>
         pub fn server_hostname(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.server_hostname(input.into());
             self
         }
-        /// <p>The name of the SMB server. This value is the IP address or Domain Name Service (DNS) name
-        /// of the SMB server. An agent that is installed on-premises uses this hostname to mount the SMB
-        /// server in a network.</p>
-        /// <note>
+        /// <p>The name of the SMB server. This value is the IP address or Domain Name Service (DNS) name of the SMB server. An agent that is installed on-premises uses this hostname to mount the SMB server in a network.</p> <note>
         /// <p>This name must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p>
         /// </note>
         pub fn set_server_hostname(
@@ -1983,20 +1673,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_server_hostname(input);
             self
         }
-        /// <p>The user who can mount the share, has the permissions to access files and folders in the
-        /// SMB share.</p>
-        ///
-        /// <p>For information about choosing a user name that ensures sufficient permissions to files,
-        /// folders, and metadata, see <a href="create-smb-location.html#SMBuser">user</a>.</p>
+        /// <p>The user who can mount the share, has the permissions to access files and folders in the SMB share.</p>
+        /// <p>For information about choosing a user name that ensures sufficient permissions to files, folders, and metadata, see <a href="create-smb-location.html#SMBuser">user</a>.</p>
         pub fn user(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.user(input.into());
             self
         }
-        /// <p>The user who can mount the share, has the permissions to access files and folders in the
-        /// SMB share.</p>
-        ///
-        /// <p>For information about choosing a user name that ensures sufficient permissions to files,
-        /// folders, and metadata, see <a href="create-smb-location.html#SMBuser">user</a>.</p>
+        /// <p>The user who can mount the share, has the permissions to access files and folders in the SMB share.</p>
+        /// <p>For information about choosing a user name that ensures sufficient permissions to files, folders, and metadata, see <a href="create-smb-location.html#SMBuser">user</a>.</p>
         pub fn set_user(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_user(input);
             self
@@ -2011,14 +1695,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p>The password of the user who can mount the share, has the permissions to access files and
-        /// folders in the SMB share.</p>
+        /// <p>The password of the user who can mount the share, has the permissions to access files and folders in the SMB share.</p>
         pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.password(input.into());
             self
         }
-        /// <p>The password of the user who can mount the share, has the permissions to access files and
-        /// folders in the SMB share.</p>
+        /// <p>The password of the user who can mount the share, has the permissions to access files and folders in the SMB share.</p>
         pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_password(input);
             self
@@ -2027,14 +1709,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_agent_arns`](Self::set_agent_arns).
         ///
-        /// <p>The Amazon Resource Names (ARNs) of agents to use for a Simple Message Block (SMB)
-        /// location. </p>
+        /// <p>The Amazon Resource Names (ARNs) of agents to use for a Simple Message Block (SMB) location. </p>
         pub fn agent_arns(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.agent_arns(input.into());
             self
         }
-        /// <p>The Amazon Resource Names (ARNs) of agents to use for a Simple Message Block (SMB)
-        /// location. </p>
+        /// <p>The Amazon Resource Names (ARNs) of agents to use for a Simple Message Block (SMB) location. </p>
         pub fn set_agent_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2059,14 +1739,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The key-value pair that represents the tag that you want to add to the location. The value
-        /// can be an empty string. We recommend using tags to name your resources.</p>
+        /// <p>The key-value pair that represents the tag that you want to add to the location. The value can be an empty string. We recommend using tags to name your resources.</p>
         pub fn tags(mut self, input: crate::model::TagListEntry) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>The key-value pair that represents the tag that you want to add to the location. The value
-        /// can be an empty string. We recommend using tags to name your resources.</p>
+        /// <p>The key-value pair that represents the tag that you want to add to the location. The value can be an empty string. We recommend using tags to name your resources.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
@@ -2078,23 +1756,10 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `CreateTask`.
     ///
     /// <p>Creates a task.</p>
-    /// <p>A task includes a source location and a destination location, and a configuration
-    /// that specifies how data is transferred. A task always transfers data from the source
-    /// location to the destination location. The configuration specifies options such as
-    /// task scheduling, bandwidth limits, etc. A task is the complete definition of a data
-    /// transfer.</p>
-    /// <p>When you create a task that transfers data between Amazon Web Services services in different Amazon Web Services Regions,
-    /// one of the two locations that you specify must reside in the Region where DataSync is being
-    /// used. The other location must be specified in a different Region.</p>
-    /// <p>You can transfer data between commercial Amazon Web Services Regions except for China, or between
-    /// Amazon Web Services GovCloud (US) Regions.</p>
-    ///
-    /// <important>
-    /// <p>When you use DataSync to copy files or objects between Amazon Web Services Regions,
-    /// you pay for data transfer between Regions. This is billed as data transfer OUT
-    /// from your source Region to your destination Region. For more information,
-    /// see <a href="http://aws.amazon.com/ec2/pricing/on-demand/#Data_Transfer">Data Transfer pricing</a>.
-    /// </p>
+    /// <p>A task includes a source location and a destination location, and a configuration that specifies how data is transferred. A task always transfers data from the source location to the destination location. The configuration specifies options such as task scheduling, bandwidth limits, etc. A task is the complete definition of a data transfer.</p>
+    /// <p>When you create a task that transfers data between Amazon Web Services services in different Amazon Web Services Regions, one of the two locations that you specify must reside in the Region where DataSync is being used. The other location must be specified in a different Region.</p>
+    /// <p>You can transfer data between commercial Amazon Web Services Regions except for China, or between Amazon Web Services GovCloud (US) Regions.</p> <important>
+    /// <p>When you use DataSync to copy files or objects between Amazon Web Services Regions, you pay for data transfer between Regions. This is billed as data transfer OUT from your source Region to your destination Region. For more information, see <a href="http://aws.amazon.com/ec2/pricing/on-demand/#Data_Transfer">Data Transfer pricing</a>. </p>
     /// </important>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct CreateTask<
@@ -2178,14 +1843,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_destination_location_arn(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to
-        /// monitor and log events in the task. </p>
+        /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to monitor and log events in the task. </p>
         pub fn cloud_watch_log_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.cloud_watch_log_group_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to
-        /// monitor and log events in the task. </p>
+        /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to monitor and log events in the task. </p>
         pub fn set_cloud_watch_log_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2193,36 +1856,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_cloud_watch_log_group_arn(input);
             self
         }
-        /// <p>The name of a task. This value is a text reference that is used to identify the task in
-        /// the console. </p>
+        /// <p>The name of a task. This value is a text reference that is used to identify the task in the console. </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input.into());
             self
         }
-        /// <p>The name of a task. This value is a text reference that is used to identify the task in
-        /// the console. </p>
+        /// <p>The name of a task. This value is a text reference that is used to identify the task in the console. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The set of configuration options that control the behavior of a single execution of the
-        /// task that occurs when you call <code>StartTaskExecution</code>. You can configure these
-        /// options to preserve metadata such as user ID (UID) and group ID (GID), file permissions, data
-        /// integrity verification, and so on.</p>
-        /// <p>For each individual task execution, you can override these options by specifying the
-        /// <code>OverrideOptions</code> before starting the task execution. For more information, see
-        /// the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. </p>
+        /// <p>The set of configuration options that control the behavior of a single execution of the task that occurs when you call <code>StartTaskExecution</code>. You can configure these options to preserve metadata such as user ID (UID) and group ID (GID), file permissions, data integrity verification, and so on.</p>
+        /// <p>For each individual task execution, you can override these options by specifying the <code>OverrideOptions</code> before starting the task execution. For more information, see the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. </p>
         pub fn options(mut self, input: crate::model::Options) -> Self {
             self.inner = self.inner.options(input);
             self
         }
-        /// <p>The set of configuration options that control the behavior of a single execution of the
-        /// task that occurs when you call <code>StartTaskExecution</code>. You can configure these
-        /// options to preserve metadata such as user ID (UID) and group ID (GID), file permissions, data
-        /// integrity verification, and so on.</p>
-        /// <p>For each individual task execution, you can override these options by specifying the
-        /// <code>OverrideOptions</code> before starting the task execution. For more information, see
-        /// the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. </p>
+        /// <p>The set of configuration options that control the behavior of a single execution of the task that occurs when you call <code>StartTaskExecution</code>. You can configure these options to preserve metadata such as user ID (UID) and group ID (GID), file permissions, data integrity verification, and so on.</p>
+        /// <p>For each individual task execution, you can override these options by specifying the <code>OverrideOptions</code> before starting the task execution. For more information, see the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. </p>
         pub fn set_options(mut self, input: std::option::Option<crate::model::Options>) -> Self {
             self.inner = self.inner.set_options(input);
             self
@@ -2231,20 +1882,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_excludes`](Self::set_excludes).
         ///
-        /// <p>A list of filter rules that determines which files to exclude from a task. The list should
-        /// contain a single filter string that consists of the patterns to exclude. The patterns are
-        /// delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
-        /// <p>
-        /// </p>
+        /// <p>A list of filter rules that determines which files to exclude from a task. The list should contain a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
+        /// <p> </p>
         pub fn excludes(mut self, input: crate::model::FilterRule) -> Self {
             self.inner = self.inner.excludes(input);
             self
         }
-        /// <p>A list of filter rules that determines which files to exclude from a task. The list should
-        /// contain a single filter string that consists of the patterns to exclude. The patterns are
-        /// delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
-        /// <p>
-        /// </p>
+        /// <p>A list of filter rules that determines which files to exclude from a task. The list should contain a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
+        /// <p> </p>
         pub fn set_excludes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
@@ -2252,14 +1897,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_excludes(input);
             self
         }
-        /// <p>Specifies a schedule used to periodically transfer files from a source to a destination
-        /// location. The schedule should be specified in UTC time. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.</p>
+        /// <p>Specifies a schedule used to periodically transfer files from a source to a destination location. The schedule should be specified in UTC time. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.</p>
         pub fn schedule(mut self, input: crate::model::TaskSchedule) -> Self {
             self.inner = self.inner.schedule(input);
             self
         }
-        /// <p>Specifies a schedule used to periodically transfer files from a source to a destination
-        /// location. The schedule should be specified in UTC time. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.</p>
+        /// <p>Specifies a schedule used to periodically transfer files from a source to a destination location. The schedule should be specified in UTC time. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.</p>
         pub fn set_schedule(
             mut self,
             input: std::option::Option<crate::model::TaskSchedule>,
@@ -2271,14 +1914,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>The key-value pair that represents the tag that you want to add to the resource. The
-        /// value can be an empty string. </p>
+        /// <p>The key-value pair that represents the tag that you want to add to the resource. The value can be an empty string. </p>
         pub fn tags(mut self, input: crate::model::TagListEntry) -> Self {
             self.inner = self.inner.tags(input);
             self
         }
-        /// <p>The key-value pair that represents the tag that you want to add to the resource. The
-        /// value can be an empty string. </p>
+        /// <p>The key-value pair that represents the tag that you want to add to the resource. The value can be an empty string. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TagListEntry>>,
@@ -2290,16 +1931,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_includes`](Self::set_includes).
         ///
-        /// <p>A list of filter rules that determines which files to include when running a task. The
-        /// pattern contains a single filter string that consists of the patterns to include. The patterns
-        /// are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
+        /// <p>A list of filter rules that determines which files to include when running a task. The pattern contains a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
         pub fn includes(mut self, input: crate::model::FilterRule) -> Self {
             self.inner = self.inner.includes(input);
             self
         }
-        /// <p>A list of filter rules that determines which files to include when running a task. The
-        /// pattern contains a single filter string that consists of the patterns to include. The patterns
-        /// are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
+        /// <p>A list of filter rules that determines which files to include when running a task. The pattern contains a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
         pub fn set_includes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
@@ -2310,10 +1947,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DeleteAgent`.
     ///
-    /// <p>Deletes an agent. To specify which agent to delete, use the Amazon Resource Name (ARN)
-    /// of the agent in your request. The operation disassociates the agent from your Amazon Web Services account.
-    /// However, it doesn't delete the agent virtual machine (VM) from your on-premises
-    /// environment.</p>
+    /// <p>Deletes an agent. To specify which agent to delete, use the Amazon Resource Name (ARN) of the agent in your request. The operation disassociates the agent from your Amazon Web Services account. However, it doesn't delete the agent virtual machine (VM) from your on-premises environment.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DeleteAgent<
         C = aws_smithy_client::erase::DynConnector,
@@ -2370,14 +2004,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the agent to delete. Use the <code>ListAgents</code>
-        /// operation to return a list of agents for your account and Amazon Web Services Region.</p>
+        /// <p>The Amazon Resource Name (ARN) of the agent to delete. Use the <code>ListAgents</code> operation to return a list of agents for your account and Amazon Web Services Region.</p>
         pub fn agent_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.agent_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the agent to delete. Use the <code>ListAgents</code>
-        /// operation to return a list of agents for your account and Amazon Web Services Region.</p>
+        /// <p>The Amazon Resource Name (ARN) of the agent to delete. Use the <code>ListAgents</code> operation to return a list of agents for your account and Amazon Web Services Region.</p>
         pub fn set_agent_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_agent_arn(input);
             self
@@ -2525,9 +2157,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeAgent`.
     ///
-    /// <p>Returns metadata such as the name, the network interfaces, and the status (that is,
-    /// whether the agent is running or not) for an agent. To specify which agent to describe, use the
-    /// Amazon Resource Name (ARN) of the agent in your request. </p>
+    /// <p>Returns metadata such as the name, the network interfaces, and the status (that is, whether the agent is running or not) for an agent. To specify which agent to describe, use the Amazon Resource Name (ARN) of the agent in your request. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeAgent<
         C = aws_smithy_client::erase::DynConnector,
@@ -2667,8 +2297,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeLocationFsxWindows`.
     ///
-    /// <p>Returns metadata, such as the path information about an Amazon FSx for Windows File Server
-    /// location.</p>
+    /// <p>Returns metadata, such as the path information about an Amazon FSx for Windows File Server location.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLocationFsxWindows<
         C = aws_smithy_client::erase::DynConnector,
@@ -2725,14 +2354,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the FSx for Windows File Server location to
-        /// describe.</p>
+        /// <p>The Amazon Resource Name (ARN) of the FSx for Windows File Server location to describe.</p>
         pub fn location_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.location_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the FSx for Windows File Server location to
-        /// describe.</p>
+        /// <p>The Amazon Resource Name (ARN) of the FSx for Windows File Server location to describe.</p>
         pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_location_arn(input);
             self
@@ -2740,8 +2367,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeLocationHdfs`.
     ///
-    /// <p>Returns metadata, such as the authentication information about the Hadoop Distributed File
-    /// System (HDFS) location. </p>
+    /// <p>Returns metadata, such as the authentication information about the Hadoop Distributed File System (HDFS) location. </p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLocationHdfs<
         C = aws_smithy_client::erase::DynConnector,
@@ -2881,8 +2507,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `DescribeLocationObjectStorage`.
     ///
-    /// <p>Returns metadata about a self-managed object storage server location. For more information
-    /// about self-managed object storage locations, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-object-location.html">Creating a location for object storage</a>.</p>
+    /// <p>Returns metadata about a self-managed object storage server location. For more information about self-managed object storage locations, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-object-location.html">Creating a location for object storage</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct DescribeLocationObjectStorage<
         C = aws_smithy_client::erase::DynConnector,
@@ -3235,14 +2860,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListAgents`.
     ///
-    /// <p>Returns a list of agents owned by an Amazon Web Services account in the Amazon Web Services Region specified in the
-    /// request. The returned list is ordered by agent Amazon Resource Name (ARN).</p>
-    /// <p>By default, this operation returns a maximum of 100 agents. This operation supports
-    /// pagination that enables you to optionally reduce the number of agents returned in a
-    /// response.</p>
-    /// <p>If you have more agents than are returned in a response (that is, the response returns
-    /// only a truncated list of your agents), the response contains a marker that you can specify in
-    /// your next request to fetch the next page of agents.</p>
+    /// <p>Returns a list of agents owned by an Amazon Web Services account in the Amazon Web Services Region specified in the request. The returned list is ordered by agent Amazon Resource Name (ARN).</p>
+    /// <p>By default, this operation returns a maximum of 100 agents. This operation supports pagination that enables you to optionally reduce the number of agents returned in a response.</p>
+    /// <p>If you have more agents than are returned in a response (that is, the response returns only a truncated list of your agents), the response contains a marker that you can specify in your next request to fetch the next page of agents.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListAgents<
         C = aws_smithy_client::erase::DynConnector,
@@ -3309,14 +2929,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>An opaque string that indicates the position at which to begin the next list of
-        /// agents.</p>
+        /// <p>An opaque string that indicates the position at which to begin the next list of agents.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An opaque string that indicates the position at which to begin the next list of
-        /// agents.</p>
+        /// <p>An opaque string that indicates the position at which to begin the next list of agents.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3325,9 +2943,7 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `ListLocations`.
     ///
     /// <p>Returns a list of source and destination locations.</p>
-    /// <p>If you have more locations than are returned in a response (that is, the response
-    /// returns only a truncated list of your agents), the response contains a token that you can
-    /// specify in your next request to fetch the next page of locations.</p>
+    /// <p>If you have more locations than are returned in a response (that is, the response returns only a truncated list of your agents), the response contains a token that you can specify in your next request to fetch the next page of locations.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListLocations<
         C = aws_smithy_client::erase::DynConnector,
@@ -3394,14 +3010,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>An opaque string that indicates the position at which to begin the next list of
-        /// locations.</p>
+        /// <p>An opaque string that indicates the position at which to begin the next list of locations.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An opaque string that indicates the position at which to begin the next list of
-        /// locations.</p>
+        /// <p>An opaque string that indicates the position at which to begin the next list of locations.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3410,16 +3024,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>You can use API filters to narrow down the list of resources returned by <code>ListLocations</code>.
-        /// For example, to retrieve all tasks on a specific source location, you can use <code>ListLocations</code>
-        /// with filter name <code>LocationType S3</code> and <code>Operator Equals</code>.</p>
+        /// <p>You can use API filters to narrow down the list of resources returned by <code>ListLocations</code>. For example, to retrieve all tasks on a specific source location, you can use <code>ListLocations</code> with filter name <code>LocationType S3</code> and <code>Operator Equals</code>.</p>
         pub fn filters(mut self, input: crate::model::LocationFilter) -> Self {
             self.inner = self.inner.filters(input);
             self
         }
-        /// <p>You can use API filters to narrow down the list of resources returned by <code>ListLocations</code>.
-        /// For example, to retrieve all tasks on a specific source location, you can use <code>ListLocations</code>
-        /// with filter name <code>LocationType S3</code> and <code>Operator Equals</code>.</p>
+        /// <p>You can use API filters to narrow down the list of resources returned by <code>ListLocations</code>. For example, to retrieve all tasks on a specific source location, you can use <code>ListLocations</code> with filter name <code>LocationType S3</code> and <code>Operator Equals</code>.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LocationFilter>>,
@@ -3507,14 +3117,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>An opaque string that indicates the position at which to begin the next list of
-        /// locations.</p>
+        /// <p>An opaque string that indicates the position at which to begin the next list of locations.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An opaque string that indicates the position at which to begin the next list of
-        /// locations.</p>
+        /// <p>An opaque string that indicates the position at which to begin the next list of locations.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3599,14 +3207,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>An opaque string that indicates the position at which to begin the next list of the
-        /// executed tasks.</p>
+        /// <p>An opaque string that indicates the position at which to begin the next list of the executed tasks.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An opaque string that indicates the position at which to begin the next list of the
-        /// executed tasks.</p>
+        /// <p>An opaque string that indicates the position at which to begin the next list of the executed tasks.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3681,14 +3287,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>An opaque string that indicates the position at which to begin the next list of
-        /// tasks.</p>
+        /// <p>An opaque string that indicates the position at which to begin the next list of tasks.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input.into());
             self
         }
-        /// <p>An opaque string that indicates the position at which to begin the next list of
-        /// tasks.</p>
+        /// <p>An opaque string that indicates the position at which to begin the next list of tasks.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
             self
@@ -3697,18 +3301,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>You can use API filters to narrow down the list of resources returned by <code>ListTasks</code>.
-        /// For example, to retrieve all tasks on a specific source location, you can use <code>ListTasks</code>
-        /// with filter name <code>LocationId</code> and <code>Operator Equals</code> with the ARN for the
-        /// location.</p>
+        /// <p>You can use API filters to narrow down the list of resources returned by <code>ListTasks</code>. For example, to retrieve all tasks on a specific source location, you can use <code>ListTasks</code> with filter name <code>LocationId</code> and <code>Operator Equals</code> with the ARN for the location.</p>
         pub fn filters(mut self, input: crate::model::TaskFilter) -> Self {
             self.inner = self.inner.filters(input);
             self
         }
-        /// <p>You can use API filters to narrow down the list of resources returned by <code>ListTasks</code>.
-        /// For example, to retrieve all tasks on a specific source location, you can use <code>ListTasks</code>
-        /// with filter name <code>LocationId</code> and <code>Operator Equals</code> with the ARN for the
-        /// location.</p>
+        /// <p>You can use API filters to narrow down the list of resources returned by <code>ListTasks</code>. For example, to retrieve all tasks on a specific source location, you can use <code>ListTasks</code> with filter name <code>LocationId</code> and <code>Operator Equals</code> with the ARN for the location.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TaskFilter>>,
@@ -3719,15 +3317,9 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `StartTaskExecution`.
     ///
-    /// <p>Starts a specific invocation of a task. A <code>TaskExecution</code> value represents
-    /// an individual run of a task. Each task can have at most one <code>TaskExecution</code> at a
-    /// time.</p>
-    /// <p>
-    /// <code>TaskExecution</code> has the following transition phases: INITIALIZING |
-    /// PREPARING | TRANSFERRING | VERIFYING | SUCCESS/FAILURE. </p>
-    ///
-    /// <p>For detailed information, see the Task Execution section in the Components and
-    /// Terminology topic in the <i>DataSync User Guide</i>.</p>
+    /// <p>Starts a specific invocation of a task. A <code>TaskExecution</code> value represents an individual run of a task. Each task can have at most one <code>TaskExecution</code> at a time.</p>
+    /// <p> <code>TaskExecution</code> has the following transition phases: INITIALIZING | PREPARING | TRANSFERRING | VERIFYING | SUCCESS/FAILURE. </p>
+    /// <p>For detailed information, see the Task Execution section in the Components and Terminology topic in the <i>DataSync User Guide</i>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct StartTaskExecution<
         C = aws_smithy_client::erase::DynConnector,
@@ -3794,30 +3386,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_task_arn(input);
             self
         }
-        /// <p>Represents the options that are available to control the behavior of a
-        /// <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>
-        /// operation. Behavior includes preserving metadata such as user
-        /// ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination,
-        /// data integrity verification, and so on.</p>
-        /// <p>A task has a set of default options associated with it. If you don't specify an option
-        /// in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>,
-        /// the default value is used. You can override the
-        /// defaults options on each task execution by specifying an overriding <code>Options</code> value
-        /// to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
+        /// <p>Represents the options that are available to control the behavior of a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p>
+        /// <p>A task has a set of default options associated with it. If you don't specify an option in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
         pub fn override_options(mut self, input: crate::model::Options) -> Self {
             self.inner = self.inner.override_options(input);
             self
         }
-        /// <p>Represents the options that are available to control the behavior of a
-        /// <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>
-        /// operation. Behavior includes preserving metadata such as user
-        /// ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination,
-        /// data integrity verification, and so on.</p>
-        /// <p>A task has a set of default options associated with it. If you don't specify an option
-        /// in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>,
-        /// the default value is used. You can override the
-        /// defaults options on each task execution by specifying an overriding <code>Options</code> value
-        /// to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
+        /// <p>Represents the options that are available to control the behavior of a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p>
+        /// <p>A task has a set of default options associated with it. If you don't specify an option in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
         pub fn set_override_options(
             mut self,
             input: std::option::Option<crate::model::Options>,
@@ -3829,24 +3405,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_includes`](Self::set_includes).
         ///
-        /// <p>A list of filter rules that determines which files to include when running a task. The
-        /// pattern should contain a single filter string that consists of the patterns to include. The
-        /// patterns are delimited by "|" (that is, a pipe), for example,
-        /// <code>"/folder1|/folder2"</code>. </p>
-        ///
-        /// <p>
-        /// </p>
+        /// <p>A list of filter rules that determines which files to include when running a task. The pattern should contain a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
+        /// <p> </p>
         pub fn includes(mut self, input: crate::model::FilterRule) -> Self {
             self.inner = self.inner.includes(input);
             self
         }
-        /// <p>A list of filter rules that determines which files to include when running a task. The
-        /// pattern should contain a single filter string that consists of the patterns to include. The
-        /// patterns are delimited by "|" (that is, a pipe), for example,
-        /// <code>"/folder1|/folder2"</code>. </p>
-        ///
-        /// <p>
-        /// </p>
+        /// <p>A list of filter rules that determines which files to include when running a task. The pattern should contain a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
+        /// <p> </p>
         pub fn set_includes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
@@ -3858,16 +3424,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_excludes`](Self::set_excludes).
         ///
-        /// <p>A list of filter rules that determines which files to exclude from a task. The list
-        /// contains a single filter string that consists of the patterns to exclude. The patterns are
-        /// delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
+        /// <p>A list of filter rules that determines which files to exclude from a task. The list contains a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
         pub fn excludes(mut self, input: crate::model::FilterRule) -> Self {
             self.inner = self.inner.excludes(input);
             self
         }
-        /// <p>A list of filter rules that determines which files to exclude from a task. The list
-        /// contains a single filter string that consists of the patterns to exclude. The patterns are
-        /// delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
+        /// <p>A list of filter rules that determines which files to exclude from a task. The list contains a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
         pub fn set_excludes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
@@ -4132,8 +3694,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateLocationHdfs`.
     ///
-    /// <p>Updates some parameters of a previously created location for a Hadoop Distributed File
-    /// System cluster.</p>
+    /// <p>Updates some parameters of a previously created location for a Hadoop Distributed File System cluster.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateLocationHdfs<
         C = aws_smithy_client::erase::DynConnector,
@@ -4200,14 +3761,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_location_arn(input);
             self
         }
-        /// <p>A subdirectory in the HDFS cluster. This subdirectory is used to read data from or write
-        /// data to the HDFS cluster.</p>
+        /// <p>A subdirectory in the HDFS cluster. This subdirectory is used to read data from or write data to the HDFS cluster.</p>
         pub fn subdirectory(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.subdirectory(input.into());
             self
         }
-        /// <p>A subdirectory in the HDFS cluster. This subdirectory is used to read data from or write
-        /// data to the HDFS cluster.</p>
+        /// <p>A subdirectory in the HDFS cluster. This subdirectory is used to read data from or write data to the HDFS cluster.</p>
         pub fn set_subdirectory(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_subdirectory(input);
             self
@@ -4216,16 +3775,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_name_nodes`](Self::set_name_nodes).
         ///
-        /// <p>The NameNode that manages the HDFS namespace. The NameNode performs operations such as
-        /// opening, closing, and renaming files and directories. The NameNode contains the information to
-        /// map blocks of data to the DataNodes. You can use only one NameNode.</p>
+        /// <p>The NameNode that manages the HDFS namespace. The NameNode performs operations such as opening, closing, and renaming files and directories. The NameNode contains the information to map blocks of data to the DataNodes. You can use only one NameNode.</p>
         pub fn name_nodes(mut self, input: crate::model::HdfsNameNode) -> Self {
             self.inner = self.inner.name_nodes(input);
             self
         }
-        /// <p>The NameNode that manages the HDFS namespace. The NameNode performs operations such as
-        /// opening, closing, and renaming files and directories. The NameNode contains the information to
-        /// map blocks of data to the DataNodes. You can use only one NameNode.</p>
+        /// <p>The NameNode that manages the HDFS namespace. The NameNode performs operations such as opening, closing, and renaming files and directories. The NameNode contains the information to map blocks of data to the DataNodes. You can use only one NameNode.</p>
         pub fn set_name_nodes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::HdfsNameNode>>,
@@ -4266,16 +3821,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_kms_key_provider_uri(input);
             self
         }
-        /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC)
-        /// and data transfer privacy settings configured on the Hadoop Distributed File System (HDFS)
-        /// cluster. </p>
+        /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC) and data transfer privacy settings configured on the Hadoop Distributed File System (HDFS) cluster. </p>
         pub fn qop_configuration(mut self, input: crate::model::QopConfiguration) -> Self {
             self.inner = self.inner.qop_configuration(input);
             self
         }
-        /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC)
-        /// and data transfer privacy settings configured on the Hadoop Distributed File System (HDFS)
-        /// cluster. </p>
+        /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC) and data transfer privacy settings configured on the Hadoop Distributed File System (HDFS) cluster. </p>
         pub fn set_qop_configuration(
             mut self,
             input: std::option::Option<crate::model::QopConfiguration>,
@@ -4319,18 +3870,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_kerberos_principal(input);
             self
         }
-        /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos
-        /// principal and the encrypted keys. You can load the keytab from a file by providing the file's
-        /// address. If you use the AWS CLI, it performs base64 encoding for you. Otherwise, provide the
-        /// base64-encoded text.</p>
+        /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos principal and the encrypted keys. You can load the keytab from a file by providing the file's address. If you use the AWS CLI, it performs base64 encoding for you. Otherwise, provide the base64-encoded text.</p>
         pub fn kerberos_keytab(mut self, input: aws_smithy_types::Blob) -> Self {
             self.inner = self.inner.kerberos_keytab(input);
             self
         }
-        /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos
-        /// principal and the encrypted keys. You can load the keytab from a file by providing the file's
-        /// address. If you use the AWS CLI, it performs base64 encoding for you. Otherwise, provide the
-        /// base64-encoded text.</p>
+        /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos principal and the encrypted keys. You can load the keytab from a file by providing the file's address. If you use the AWS CLI, it performs base64 encoding for you. Otherwise, provide the base64-encoded text.</p>
         pub fn set_kerberos_keytab(
             mut self,
             input: std::option::Option<aws_smithy_types::Blob>,
@@ -4338,18 +3883,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_kerberos_keytab(input);
             self
         }
-        /// <p>The <code>krb5.conf</code> file that contains the Kerberos configuration information. You
-        /// can load the <code>krb5.conf</code> file by providing the file's address. If you're using the
-        /// AWS CLI, it performs the base64 encoding for you. Otherwise, provide the base64-encoded
-        /// text.</p>
+        /// <p>The <code>krb5.conf</code> file that contains the Kerberos configuration information. You can load the <code>krb5.conf</code> file by providing the file's address. If you're using the AWS CLI, it performs the base64 encoding for you. Otherwise, provide the base64-encoded text.</p>
         pub fn kerberos_krb5_conf(mut self, input: aws_smithy_types::Blob) -> Self {
             self.inner = self.inner.kerberos_krb5_conf(input);
             self
         }
-        /// <p>The <code>krb5.conf</code> file that contains the Kerberos configuration information. You
-        /// can load the <code>krb5.conf</code> file by providing the file's address. If you're using the
-        /// AWS CLI, it performs the base64 encoding for you. Otherwise, provide the base64-encoded
-        /// text.</p>
+        /// <p>The <code>krb5.conf</code> file that contains the Kerberos configuration information. You can load the <code>krb5.conf</code> file by providing the file's address. If you're using the AWS CLI, it performs the base64 encoding for you. Otherwise, provide the base64-encoded text.</p>
         pub fn set_kerberos_krb5_conf(
             mut self,
             input: std::option::Option<aws_smithy_types::Blob>,
@@ -4377,8 +3916,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateLocationNfs`.
     ///
-    /// <p>Updates some of the parameters of a previously created location for Network File System (NFS) access.
-    /// For information about creating an NFS location, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html">Creating a location for NFS</a>.</p>
+    /// <p>Updates some of the parameters of a previously created location for Network File System (NFS) access. For information about creating an NFS location, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html">Creating a location for NFS</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateLocationNfs<
         C = aws_smithy_client::erase::DynConnector,
@@ -4445,60 +3983,30 @@ pub mod fluent_builders {
             self.inner = self.inner.set_location_arn(input);
             self
         }
-        /// <p>The subdirectory in the NFS file system that is used to read data from the NFS source
-        /// location or write data to the NFS destination. The NFS path should be a path that's
-        /// exported by the NFS server, or a subdirectory of that path. The path should be such that it
-        /// can be mounted by other NFS clients in your network.</p>
-        ///
-        /// <p>To see all the paths exported by your NFS server, run "<code>showmount -e
-        /// nfs-server-name</code>" from an NFS client that has access to your server. You can specify
-        /// any directory that appears in the results, and any subdirectory of that directory. Ensure that
-        /// the NFS export is accessible without Kerberos authentication. </p>
-        /// <p>To transfer all the data in the folder that you specified, DataSync must have
-        /// permissions to read all the data. To ensure this, either configure the NFS export with
-        /// <code>no_root_squash</code>, or ensure that the files you want DataSync to
-        /// access have permissions that allow read access for all users. Doing either option enables the
-        /// agent to read the files. For the agent to access directories, you must additionally enable all
-        /// execute access.</p>
+        /// <p>The subdirectory in the NFS file system that is used to read data from the NFS source location or write data to the NFS destination. The NFS path should be a path that's exported by the NFS server, or a subdirectory of that path. The path should be such that it can be mounted by other NFS clients in your network.</p>
+        /// <p>To see all the paths exported by your NFS server, run "<code>showmount -e nfs-server-name</code>" from an NFS client that has access to your server. You can specify any directory that appears in the results, and any subdirectory of that directory. Ensure that the NFS export is accessible without Kerberos authentication. </p>
+        /// <p>To transfer all the data in the folder that you specified, DataSync must have permissions to read all the data. To ensure this, either configure the NFS export with <code>no_root_squash</code>, or ensure that the files you want DataSync to access have permissions that allow read access for all users. Doing either option enables the agent to read the files. For the agent to access directories, you must additionally enable all execute access.</p>
         /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p>
-        ///
-        /// <p>For information about NFS export configuration, see 18.7. The /etc/exports
-        /// Configuration File in the Red Hat Enterprise Linux documentation.</p>
+        /// <p>For information about NFS export configuration, see 18.7. The /etc/exports Configuration File in the Red Hat Enterprise Linux documentation.</p>
         pub fn subdirectory(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.subdirectory(input.into());
             self
         }
-        /// <p>The subdirectory in the NFS file system that is used to read data from the NFS source
-        /// location or write data to the NFS destination. The NFS path should be a path that's
-        /// exported by the NFS server, or a subdirectory of that path. The path should be such that it
-        /// can be mounted by other NFS clients in your network.</p>
-        ///
-        /// <p>To see all the paths exported by your NFS server, run "<code>showmount -e
-        /// nfs-server-name</code>" from an NFS client that has access to your server. You can specify
-        /// any directory that appears in the results, and any subdirectory of that directory. Ensure that
-        /// the NFS export is accessible without Kerberos authentication. </p>
-        /// <p>To transfer all the data in the folder that you specified, DataSync must have
-        /// permissions to read all the data. To ensure this, either configure the NFS export with
-        /// <code>no_root_squash</code>, or ensure that the files you want DataSync to
-        /// access have permissions that allow read access for all users. Doing either option enables the
-        /// agent to read the files. For the agent to access directories, you must additionally enable all
-        /// execute access.</p>
+        /// <p>The subdirectory in the NFS file system that is used to read data from the NFS source location or write data to the NFS destination. The NFS path should be a path that's exported by the NFS server, or a subdirectory of that path. The path should be such that it can be mounted by other NFS clients in your network.</p>
+        /// <p>To see all the paths exported by your NFS server, run "<code>showmount -e nfs-server-name</code>" from an NFS client that has access to your server. You can specify any directory that appears in the results, and any subdirectory of that directory. Ensure that the NFS export is accessible without Kerberos authentication. </p>
+        /// <p>To transfer all the data in the folder that you specified, DataSync must have permissions to read all the data. To ensure this, either configure the NFS export with <code>no_root_squash</code>, or ensure that the files you want DataSync to access have permissions that allow read access for all users. Doing either option enables the agent to read the files. For the agent to access directories, you must additionally enable all execute access.</p>
         /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p>
-        ///
-        /// <p>For information about NFS export configuration, see 18.7. The /etc/exports
-        /// Configuration File in the Red Hat Enterprise Linux documentation.</p>
+        /// <p>For information about NFS export configuration, see 18.7. The /etc/exports Configuration File in the Red Hat Enterprise Linux documentation.</p>
         pub fn set_subdirectory(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_subdirectory(input);
             self
         }
-        /// <p>A list of Amazon Resource Names (ARNs) of agents to use for a Network File System (NFS)
-        /// location.</p>
+        /// <p>A list of Amazon Resource Names (ARNs) of agents to use for a Network File System (NFS) location.</p>
         pub fn on_prem_config(mut self, input: crate::model::OnPremConfig) -> Self {
             self.inner = self.inner.on_prem_config(input);
             self
         }
-        /// <p>A list of Amazon Resource Names (ARNs) of agents to use for a Network File System (NFS)
-        /// location.</p>
+        /// <p>A list of Amazon Resource Names (ARNs) of agents to use for a Network File System (NFS) location.</p>
         pub fn set_on_prem_config(
             mut self,
             input: std::option::Option<crate::model::OnPremConfig>,
@@ -4506,14 +4014,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_on_prem_config(input);
             self
         }
-        /// <p>Represents the mount options that are available for DataSync to access an NFS
-        /// location.</p>
+        /// <p>Represents the mount options that are available for DataSync to access an NFS location.</p>
         pub fn mount_options(mut self, input: crate::model::NfsMountOptions) -> Self {
             self.inner = self.inner.mount_options(input);
             self
         }
-        /// <p>Represents the mount options that are available for DataSync to access an NFS
-        /// location.</p>
+        /// <p>Represents the mount options that are available for DataSync to access an NFS location.</p>
         pub fn set_mount_options(
             mut self,
             input: std::option::Option<crate::model::NfsMountOptions>,
@@ -4524,9 +4030,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateLocationObjectStorage`.
     ///
-    /// <p>Updates some of the parameters of a previously created location for self-managed object
-    /// storage server access. For information about creating a self-managed object storage location,
-    /// see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-object-location.html">Creating a location for object storage</a>.</p>
+    /// <p>Updates some of the parameters of a previously created location for self-managed object storage server access. For information about creating a self-managed object storage location, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-object-location.html">Creating a location for object storage</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateLocationObjectStorage<
         C = aws_smithy_client::erase::DynConnector,
@@ -4593,28 +4097,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_location_arn(input);
             self
         }
-        /// <p>The port that your self-managed object storage server accepts inbound network traffic on.
-        /// The server port is set by default to TCP 80 (HTTP) or TCP 443 (HTTPS). You can
-        /// specify a custom port if your self-managed object storage server requires one.</p>
+        /// <p>The port that your self-managed object storage server accepts inbound network traffic on. The server port is set by default to TCP 80 (HTTP) or TCP 443 (HTTPS). You can specify a custom port if your self-managed object storage server requires one.</p>
         pub fn server_port(mut self, input: i32) -> Self {
             self.inner = self.inner.server_port(input);
             self
         }
-        /// <p>The port that your self-managed object storage server accepts inbound network traffic on.
-        /// The server port is set by default to TCP 80 (HTTP) or TCP 443 (HTTPS). You can
-        /// specify a custom port if your self-managed object storage server requires one.</p>
+        /// <p>The port that your self-managed object storage server accepts inbound network traffic on. The server port is set by default to TCP 80 (HTTP) or TCP 443 (HTTPS). You can specify a custom port if your self-managed object storage server requires one.</p>
         pub fn set_server_port(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_server_port(input);
             self
         }
-        /// <p>The protocol that the object storage server uses to communicate. Valid values are
-        /// <code>HTTP</code> or <code>HTTPS</code>.</p>
+        /// <p>The protocol that the object storage server uses to communicate. Valid values are <code>HTTP</code> or <code>HTTPS</code>.</p>
         pub fn server_protocol(mut self, input: crate::model::ObjectStorageServerProtocol) -> Self {
             self.inner = self.inner.server_protocol(input);
             self
         }
-        /// <p>The protocol that the object storage server uses to communicate. Valid values are
-        /// <code>HTTP</code> or <code>HTTPS</code>.</p>
+        /// <p>The protocol that the object storage server uses to communicate. Valid values are <code>HTTP</code> or <code>HTTPS</code>.</p>
         pub fn set_server_protocol(
             mut self,
             input: std::option::Option<crate::model::ObjectStorageServerProtocol>,
@@ -4622,46 +4120,32 @@ pub mod fluent_builders {
             self.inner = self.inner.set_server_protocol(input);
             self
         }
-        /// <p>The subdirectory in the self-managed object storage server that is used
-        /// to read data from.</p>
+        /// <p>The subdirectory in the self-managed object storage server that is used to read data from.</p>
         pub fn subdirectory(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.subdirectory(input.into());
             self
         }
-        /// <p>The subdirectory in the self-managed object storage server that is used
-        /// to read data from.</p>
+        /// <p>The subdirectory in the self-managed object storage server that is used to read data from.</p>
         pub fn set_subdirectory(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_subdirectory(input);
             self
         }
-        /// <p>Optional. The access key is used if credentials are required to access the self-managed
-        /// object storage server. If your object storage requires a user name and password to
-        /// authenticate, use <code>AccessKey</code> and <code>SecretKey</code> to provide the user name
-        /// and password, respectively.</p>
+        /// <p>Optional. The access key is used if credentials are required to access the self-managed object storage server. If your object storage requires a user name and password to authenticate, use <code>AccessKey</code> and <code>SecretKey</code> to provide the user name and password, respectively.</p>
         pub fn access_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.access_key(input.into());
             self
         }
-        /// <p>Optional. The access key is used if credentials are required to access the self-managed
-        /// object storage server. If your object storage requires a user name and password to
-        /// authenticate, use <code>AccessKey</code> and <code>SecretKey</code> to provide the user name
-        /// and password, respectively.</p>
+        /// <p>Optional. The access key is used if credentials are required to access the self-managed object storage server. If your object storage requires a user name and password to authenticate, use <code>AccessKey</code> and <code>SecretKey</code> to provide the user name and password, respectively.</p>
         pub fn set_access_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_access_key(input);
             self
         }
-        /// <p>Optional. The secret key is used if credentials are required to access the self-managed
-        /// object storage server. If your object storage requires a user name and password to
-        /// authenticate, use <code>AccessKey</code> and <code>SecretKey</code> to provide the user name
-        /// and password, respectively.</p>
+        /// <p>Optional. The secret key is used if credentials are required to access the self-managed object storage server. If your object storage requires a user name and password to authenticate, use <code>AccessKey</code> and <code>SecretKey</code> to provide the user name and password, respectively.</p>
         pub fn secret_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.secret_key(input.into());
             self
         }
-        /// <p>Optional. The secret key is used if credentials are required to access the self-managed
-        /// object storage server. If your object storage requires a user name and password to
-        /// authenticate, use <code>AccessKey</code> and <code>SecretKey</code> to provide the user name
-        /// and password, respectively.</p>
+        /// <p>Optional. The secret key is used if credentials are required to access the self-managed object storage server. If your object storage requires a user name and password to authenticate, use <code>AccessKey</code> and <code>SecretKey</code> to provide the user name and password, respectively.</p>
         pub fn set_secret_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_secret_key(input);
             self
@@ -4670,14 +4154,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_agent_arns`](Self::set_agent_arns).
         ///
-        /// <p>The Amazon Resource Name (ARN) of the agents associated with the
-        /// self-managed object storage server location.</p>
+        /// <p>The Amazon Resource Name (ARN) of the agents associated with the self-managed object storage server location.</p>
         pub fn agent_arns(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.agent_arns(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the agents associated with the
-        /// self-managed object storage server location.</p>
+        /// <p>The Amazon Resource Name (ARN) of the agents associated with the self-managed object storage server location.</p>
         pub fn set_agent_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4688,9 +4170,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `UpdateLocationSmb`.
     ///
-    /// <p>Updates some of the parameters of a previously created location for Server Message Block
-    /// (SMB) file system access. For information about creating an SMB location, see
-    /// <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html">Creating a location for SMB</a>.</p>
+    /// <p>Updates some of the parameters of a previously created location for Server Message Block (SMB) file system access. For information about creating an SMB location, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html">Creating a location for SMB</a>.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateLocationSmb<
         C = aws_smithy_client::erase::DynConnector,
@@ -4757,72 +4237,38 @@ pub mod fluent_builders {
             self.inner = self.inner.set_location_arn(input);
             self
         }
-        /// <p>The subdirectory in the SMB file system that is used to read data from the SMB source
-        /// location or write data to the SMB destination. The SMB path should be a path that's
-        /// exported by the SMB server, or a subdirectory of that path. The path should be such that it
-        /// can be mounted by other SMB clients in your network.</p>
-        /// <note>
-        /// <p>
-        /// <code>Subdirectory</code> must be specified with forward slashes. For example,
-        /// <code>/path/to/folder</code>.</p>
+        /// <p>The subdirectory in the SMB file system that is used to read data from the SMB source location or write data to the SMB destination. The SMB path should be a path that's exported by the SMB server, or a subdirectory of that path. The path should be such that it can be mounted by other SMB clients in your network.</p> <note>
+        /// <p> <code>Subdirectory</code> must be specified with forward slashes. For example, <code>/path/to/folder</code>.</p>
         /// </note>
-        ///
-        /// <p>To transfer all the data in the folder that you specified, DataSync must have
-        /// permissions to mount the SMB share and to access all the data in that share. To ensure this,
-        /// do either of the following:</p>
+        /// <p>To transfer all the data in the folder that you specified, DataSync must have permissions to mount the SMB share and to access all the data in that share. To ensure this, do either of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>Ensure that the user/password specified belongs to the user who can mount the share
-        /// and who has the appropriate permissions for all of the files and directories that you want
-        /// DataSync to access.</p>
-        /// </li>
-        /// <li>
-        /// <p>Use credentials of a member of the Backup Operators group to mount the share. </p>
-        /// </li>
+        /// <li> <p>Ensure that the user/password specified belongs to the user who can mount the share and who has the appropriate permissions for all of the files and directories that you want DataSync to access.</p> </li>
+        /// <li> <p>Use credentials of a member of the Backup Operators group to mount the share. </p> </li>
         /// </ul>
-        /// <p>Doing either of these options enables the agent to access the data. For the agent to
-        /// access directories, you must also enable all execute access.</p>
+        /// <p>Doing either of these options enables the agent to access the data. For the agent to access directories, you must also enable all execute access.</p>
         pub fn subdirectory(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.subdirectory(input.into());
             self
         }
-        /// <p>The subdirectory in the SMB file system that is used to read data from the SMB source
-        /// location or write data to the SMB destination. The SMB path should be a path that's
-        /// exported by the SMB server, or a subdirectory of that path. The path should be such that it
-        /// can be mounted by other SMB clients in your network.</p>
-        /// <note>
-        /// <p>
-        /// <code>Subdirectory</code> must be specified with forward slashes. For example,
-        /// <code>/path/to/folder</code>.</p>
+        /// <p>The subdirectory in the SMB file system that is used to read data from the SMB source location or write data to the SMB destination. The SMB path should be a path that's exported by the SMB server, or a subdirectory of that path. The path should be such that it can be mounted by other SMB clients in your network.</p> <note>
+        /// <p> <code>Subdirectory</code> must be specified with forward slashes. For example, <code>/path/to/folder</code>.</p>
         /// </note>
-        ///
-        /// <p>To transfer all the data in the folder that you specified, DataSync must have
-        /// permissions to mount the SMB share and to access all the data in that share. To ensure this,
-        /// do either of the following:</p>
+        /// <p>To transfer all the data in the folder that you specified, DataSync must have permissions to mount the SMB share and to access all the data in that share. To ensure this, do either of the following:</p>
         /// <ul>
-        /// <li>
-        /// <p>Ensure that the user/password specified belongs to the user who can mount the share
-        /// and who has the appropriate permissions for all of the files and directories that you want
-        /// DataSync to access.</p>
-        /// </li>
-        /// <li>
-        /// <p>Use credentials of a member of the Backup Operators group to mount the share. </p>
-        /// </li>
+        /// <li> <p>Ensure that the user/password specified belongs to the user who can mount the share and who has the appropriate permissions for all of the files and directories that you want DataSync to access.</p> </li>
+        /// <li> <p>Use credentials of a member of the Backup Operators group to mount the share. </p> </li>
         /// </ul>
-        /// <p>Doing either of these options enables the agent to access the data. For the agent to
-        /// access directories, you must also enable all execute access.</p>
+        /// <p>Doing either of these options enables the agent to access the data. For the agent to access directories, you must also enable all execute access.</p>
         pub fn set_subdirectory(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_subdirectory(input);
             self
         }
-        /// <p>The user who can mount the share has the permissions to access files and folders in the
-        /// SMB share.</p>
+        /// <p>The user who can mount the share has the permissions to access files and folders in the SMB share.</p>
         pub fn user(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.user(input.into());
             self
         }
-        /// <p>The user who can mount the share has the permissions to access files and folders in the
-        /// SMB share.</p>
+        /// <p>The user who can mount the share has the permissions to access files and folders in the SMB share.</p>
         pub fn set_user(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_user(input);
             self
@@ -4837,14 +4283,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain(input);
             self
         }
-        /// <p>The password of the user who can mount the share has the permissions to access files and
-        /// folders in the SMB share.</p>
+        /// <p>The password of the user who can mount the share has the permissions to access files and folders in the SMB share.</p>
         pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.password(input.into());
             self
         }
-        /// <p>The password of the user who can mount the share has the permissions to access files and
-        /// folders in the SMB share.</p>
+        /// <p>The password of the user who can mount the share has the permissions to access files and folders in the SMB share.</p>
         pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_password(input);
             self
@@ -4853,14 +4297,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_agent_arns`](Self::set_agent_arns).
         ///
-        /// <p>The Amazon Resource Names (ARNs) of agents to use for a Simple Message Block (SMB)
-        /// location.</p>
+        /// <p>The Amazon Resource Names (ARNs) of agents to use for a Simple Message Block (SMB) location.</p>
         pub fn agent_arns(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.agent_arns(input.into());
             self
         }
-        /// <p>The Amazon Resource Names (ARNs) of agents to use for a Simple Message Block (SMB)
-        /// location.</p>
+        /// <p>The Amazon Resource Names (ARNs) of agents to use for a Simple Message Block (SMB) location.</p>
         pub fn set_agent_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4868,14 +4310,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_agent_arns(input);
             self
         }
-        /// <p>Represents the mount options that are available for DataSync to access an SMB
-        /// location.</p>
+        /// <p>Represents the mount options that are available for DataSync to access an SMB location.</p>
         pub fn mount_options(mut self, input: crate::model::SmbMountOptions) -> Self {
             self.inner = self.inner.mount_options(input);
             self
         }
-        /// <p>Represents the mount options that are available for DataSync to access an SMB
-        /// location.</p>
+        /// <p>Represents the mount options that are available for DataSync to access an SMB location.</p>
         pub fn set_mount_options(
             mut self,
             input: std::option::Option<crate::model::SmbMountOptions>,
@@ -4953,30 +4393,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_task_arn(input);
             self
         }
-        /// <p>Represents the options that are available to control the behavior of a
-        /// <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>
-        /// operation. Behavior includes preserving metadata such as user
-        /// ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination,
-        /// data integrity verification, and so on.</p>
-        /// <p>A task has a set of default options associated with it. If you don't specify an option
-        /// in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>,
-        /// the default value is used. You can override the
-        /// defaults options on each task execution by specifying an overriding <code>Options</code> value
-        /// to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
+        /// <p>Represents the options that are available to control the behavior of a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p>
+        /// <p>A task has a set of default options associated with it. If you don't specify an option in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
         pub fn options(mut self, input: crate::model::Options) -> Self {
             self.inner = self.inner.options(input);
             self
         }
-        /// <p>Represents the options that are available to control the behavior of a
-        /// <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>
-        /// operation. Behavior includes preserving metadata such as user
-        /// ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination,
-        /// data integrity verification, and so on.</p>
-        /// <p>A task has a set of default options associated with it. If you don't specify an option
-        /// in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>,
-        /// the default value is used. You can override the
-        /// defaults options on each task execution by specifying an overriding <code>Options</code> value
-        /// to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
+        /// <p>Represents the options that are available to control the behavior of a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p>
+        /// <p>A task has a set of default options associated with it. If you don't specify an option in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
         pub fn set_options(mut self, input: std::option::Option<crate::model::Options>) -> Self {
             self.inner = self.inner.set_options(input);
             self
@@ -4985,20 +4409,14 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_excludes`](Self::set_excludes).
         ///
-        /// <p>A list of filter rules that determines which files to exclude from a task. The list should
-        /// contain a single filter string that consists of the patterns to exclude. The patterns are
-        /// delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
-        /// <p>
-        /// </p>
+        /// <p>A list of filter rules that determines which files to exclude from a task. The list should contain a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
+        /// <p> </p>
         pub fn excludes(mut self, input: crate::model::FilterRule) -> Self {
             self.inner = self.inner.excludes(input);
             self
         }
-        /// <p>A list of filter rules that determines which files to exclude from a task. The list should
-        /// contain a single filter string that consists of the patterns to exclude. The patterns are
-        /// delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
-        /// <p>
-        /// </p>
+        /// <p>A list of filter rules that determines which files to exclude from a task. The list should contain a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
+        /// <p> </p>
         pub fn set_excludes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
@@ -5006,18 +4424,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_excludes(input);
             self
         }
-        /// <p>Specifies a schedule used to periodically transfer files from a source to a destination
-        /// location. You can configure your task to execute hourly, daily, weekly or on specific days of
-        /// the week. You control when in the day or hour you want the task to execute. The time you
-        /// specify is UTC time. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.</p>
+        /// <p>Specifies a schedule used to periodically transfer files from a source to a destination location. You can configure your task to execute hourly, daily, weekly or on specific days of the week. You control when in the day or hour you want the task to execute. The time you specify is UTC time. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.</p>
         pub fn schedule(mut self, input: crate::model::TaskSchedule) -> Self {
             self.inner = self.inner.schedule(input);
             self
         }
-        /// <p>Specifies a schedule used to periodically transfer files from a source to a destination
-        /// location. You can configure your task to execute hourly, daily, weekly or on specific days of
-        /// the week. You control when in the day or hour you want the task to execute. The time you
-        /// specify is UTC time. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.</p>
+        /// <p>Specifies a schedule used to periodically transfer files from a source to a destination location. You can configure your task to execute hourly, daily, weekly or on specific days of the week. You control when in the day or hour you want the task to execute. The time you specify is UTC time. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.</p>
         pub fn set_schedule(
             mut self,
             input: std::option::Option<crate::model::TaskSchedule>,
@@ -5035,14 +4447,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource name of the Amazon CloudWatch log
-        /// group.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource name of the Amazon CloudWatch log group.</p>
         pub fn cloud_watch_log_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.cloud_watch_log_group_arn(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the resource name of the Amazon CloudWatch log
-        /// group.</p>
+        /// <p>The Amazon Resource Name (ARN) of the resource name of the Amazon CloudWatch log group.</p>
         pub fn set_cloud_watch_log_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5054,16 +4464,12 @@ pub mod fluent_builders {
         ///
         /// To override the contents of this collection use [`set_includes`](Self::set_includes).
         ///
-        /// <p>A list of filter rules that determines which files to include when running a task. The
-        /// pattern contains a single filter string that consists of the patterns to include. The patterns
-        /// are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
+        /// <p>A list of filter rules that determines which files to include when running a task. The pattern contains a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
         pub fn includes(mut self, input: crate::model::FilterRule) -> Self {
             self.inner = self.inner.includes(input);
             self
         }
-        /// <p>A list of filter rules that determines which files to include when running a task. The
-        /// pattern contains a single filter string that consists of the patterns to include. The patterns
-        /// are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
+        /// <p>A list of filter rules that determines which files to include when running a task. The pattern contains a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
         pub fn set_includes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
@@ -5075,14 +4481,8 @@ pub mod fluent_builders {
     /// Fluent builder constructing a request to `UpdateTaskExecution`.
     ///
     /// <p>Updates execution of a task.</p>
-    /// <p>You can modify bandwidth throttling for a task execution that is running or queued.
-    /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/working-with-task-executions.html#adjust-bandwidth-throttling">Adjusting Bandwidth Throttling for a Task Execution</a>.</p>
-    ///
-    /// <note>
-    /// <p>The only <code>Option</code> that can be modified by <code>UpdateTaskExecution</code>
-    /// is <code>
-    /// <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Options.html#DataSync-Type-Options-BytesPerSecond">BytesPerSecond</a>
-    /// </code>.</p>
+    /// <p>You can modify bandwidth throttling for a task execution that is running or queued. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/working-with-task-executions.html#adjust-bandwidth-throttling">Adjusting Bandwidth Throttling for a Task Execution</a>.</p> <note>
+    /// <p>The only <code>Option</code> that can be modified by <code>UpdateTaskExecution</code> is <code> <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Options.html#DataSync-Type-Options-BytesPerSecond">BytesPerSecond</a> </code>.</p>
     /// </note>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct UpdateTaskExecution<
@@ -5153,30 +4553,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_task_execution_arn(input);
             self
         }
-        /// <p>Represents the options that are available to control the behavior of a
-        /// <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>
-        /// operation. Behavior includes preserving metadata such as user
-        /// ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination,
-        /// data integrity verification, and so on.</p>
-        /// <p>A task has a set of default options associated with it. If you don't specify an option
-        /// in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>,
-        /// the default value is used. You can override the
-        /// defaults options on each task execution by specifying an overriding <code>Options</code> value
-        /// to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
+        /// <p>Represents the options that are available to control the behavior of a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p>
+        /// <p>A task has a set of default options associated with it. If you don't specify an option in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
         pub fn options(mut self, input: crate::model::Options) -> Self {
             self.inner = self.inner.options(input);
             self
         }
-        /// <p>Represents the options that are available to control the behavior of a
-        /// <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>
-        /// operation. Behavior includes preserving metadata such as user
-        /// ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination,
-        /// data integrity verification, and so on.</p>
-        /// <p>A task has a set of default options associated with it. If you don't specify an option
-        /// in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>,
-        /// the default value is used. You can override the
-        /// defaults options on each task execution by specifying an overriding <code>Options</code> value
-        /// to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
+        /// <p>Represents the options that are available to control the behavior of a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on.</p>
+        /// <p>A task has a set of default options associated with it. If you don't specify an option in <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
         pub fn set_options(mut self, input: std::option::Option<crate::model::Options>) -> Self {
             self.inner = self.inner.set_options(input);
             self

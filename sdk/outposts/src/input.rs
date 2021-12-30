@@ -9,16 +9,12 @@ pub mod cancel_order_input {
         pub(crate) order_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The ID of the order to cancel.
-        /// </p>
+        /// <p> The ID of the order to cancel. </p>
         pub fn order_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.order_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The ID of the order to cancel.
-        /// </p>
+        /// <p> The ID of the order to cancel. </p>
         pub fn set_order_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.order_id = input;
             self
@@ -167,16 +163,12 @@ pub mod create_order_input {
         pub(crate) payment_term: std::option::Option<crate::model::PaymentTerm>,
     }
     impl Builder {
-        /// <p>
-        /// The ID or the Amazon Resource Name (ARN) of the Outpost.
-        /// </p>
+        /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
         pub fn outpost_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.outpost_identifier = Some(input.into());
             self
         }
-        /// <p>
-        /// The ID or the Amazon Resource Name (ARN) of the Outpost.
-        /// </p>
+        /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
         pub fn set_outpost_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -460,9 +452,7 @@ pub mod create_outpost_input {
             self.tags = input;
             self
         }
-        /// <p>
-        /// The type of hardware for this Outpost.
-        /// </p>
+        /// <p> The type of hardware for this Outpost. </p>
         pub fn supported_hardware_type(
             mut self,
             input: crate::model::SupportedHardwareType,
@@ -470,9 +460,7 @@ pub mod create_outpost_input {
             self.supported_hardware_type = Some(input);
             self
         }
-        /// <p>
-        /// The type of hardware for this Outpost.
-        /// </p>
+        /// <p> The type of hardware for this Outpost. </p>
         pub fn set_supported_hardware_type(
             mut self,
             input: std::option::Option<crate::model::SupportedHardwareType>,
@@ -653,16 +641,12 @@ pub mod create_site_input {
             self.description = input;
             self
         }
-        /// <p>Additional information that you provide about site access requirements, electrician
-        /// scheduling, personal protective equipment, or regulation of equipment materials that could
-        /// affect your installation process. </p>
+        /// <p>Additional information that you provide about site access requirements, electrician scheduling, personal protective equipment, or regulation of equipment materials that could affect your installation process. </p>
         pub fn notes(mut self, input: impl Into<std::string::String>) -> Self {
             self.notes = Some(input.into());
             self
         }
-        /// <p>Additional information that you provide about site access requirements, electrician
-        /// scheduling, personal protective equipment, or regulation of equipment materials that could
-        /// affect your installation process. </p>
+        /// <p>Additional information that you provide about site access requirements, electrician scheduling, personal protective equipment, or regulation of equipment materials that could affect your installation process. </p>
         pub fn set_notes(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.notes = input;
             self
@@ -671,9 +655,7 @@ pub mod create_site_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>
-        /// The tags to apply to a site.
-        /// </p>
+        /// <p> The tags to apply to a site. </p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -684,9 +666,7 @@ pub mod create_site_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>
-        /// The tags to apply to a site.
-        /// </p>
+        /// <p> The tags to apply to a site. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -696,18 +676,12 @@ pub mod create_site_input {
             self.tags = input;
             self
         }
-        /// <p>
-        /// The location to install and power on the hardware. This address might be
-        /// different from the shipping address.
-        /// </p>
+        /// <p> The location to install and power on the hardware. This address might be different from the shipping address. </p>
         pub fn operating_address(mut self, input: crate::model::Address) -> Self {
             self.operating_address = Some(input);
             self
         }
-        /// <p>
-        /// The location to install and power on the hardware. This address might be
-        /// different from the shipping address.
-        /// </p>
+        /// <p> The location to install and power on the hardware. This address might be different from the shipping address. </p>
         pub fn set_operating_address(
             mut self,
             input: std::option::Option<crate::model::Address>,
@@ -715,18 +689,12 @@ pub mod create_site_input {
             self.operating_address = input;
             self
         }
-        /// <p>
-        /// The location to ship the hardware. This address might be different
-        /// from the operating address.
-        /// </p>
+        /// <p> The location to ship the hardware. This address might be different from the operating address. </p>
         pub fn shipping_address(mut self, input: crate::model::Address) -> Self {
             self.shipping_address = Some(input);
             self
         }
-        /// <p>
-        /// The location to ship the hardware. This address might be different
-        /// from the operating address.
-        /// </p>
+        /// <p> The location to ship the hardware. This address might be different from the operating address. </p>
         pub fn set_shipping_address(
             mut self,
             input: std::option::Option<crate::model::Address>,
@@ -734,11 +702,7 @@ pub mod create_site_input {
             self.shipping_address = input;
             self
         }
-        /// <p> Information about the physical and logistical details for the rack at this site.
-        /// For more information
-        /// about hardware requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#checklist">Network
-        /// readiness checklist</a> in the Amazon Web Services Outposts User Guide.
-        /// </p>
+        /// <p> Information about the physical and logistical details for the rack at this site. For more information about hardware requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#checklist">Network readiness checklist</a> in the Amazon Web Services Outposts User Guide. </p>
         pub fn rack_physical_properties(
             mut self,
             input: crate::model::RackPhysicalProperties,
@@ -746,11 +710,7 @@ pub mod create_site_input {
             self.rack_physical_properties = Some(input);
             self
         }
-        /// <p> Information about the physical and logistical details for the rack at this site.
-        /// For more information
-        /// about hardware requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#checklist">Network
-        /// readiness checklist</a> in the Amazon Web Services Outposts User Guide.
-        /// </p>
+        /// <p> Information about the physical and logistical details for the rack at this site. For more information about hardware requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#checklist">Network readiness checklist</a> in the Amazon Web Services Outposts User Guide. </p>
         pub fn set_rack_physical_properties(
             mut self,
             input: std::option::Option<crate::model::RackPhysicalProperties>,
@@ -902,16 +862,12 @@ pub mod delete_outpost_input {
         pub(crate) outpost_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The ID of the Outpost.
-        /// </p>
+        /// <p> The ID of the Outpost. </p>
         pub fn outpost_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.outpost_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The ID of the Outpost.
-        /// </p>
+        /// <p> The ID of the Outpost. </p>
         pub fn set_outpost_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.outpost_id = input;
             self
@@ -1511,16 +1467,12 @@ pub mod get_outpost_input {
         pub(crate) outpost_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The ID of the Outpost.
-        /// </p>
+        /// <p> The ID of the Outpost. </p>
         pub fn outpost_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.outpost_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The ID of the Outpost.
-        /// </p>
+        /// <p> The ID of the Outpost. </p>
         pub fn set_outpost_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.outpost_id = input;
             self
@@ -1668,16 +1620,12 @@ pub mod get_outpost_instance_types_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>
-        /// The ID of the Outpost.
-        /// </p>
+        /// <p> The ID of the Outpost. </p>
         pub fn outpost_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.outpost_id = Some(input.into());
             self
         }
-        /// <p>
-        /// The ID of the Outpost.
-        /// </p>
+        /// <p> The ID of the Outpost. </p>
         pub fn set_outpost_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.outpost_id = input;
             self
@@ -2222,24 +2170,16 @@ pub mod list_catalog_items_input {
         ///
         /// To override the contents of this collection use [`set_item_class_filter`](Self::set_item_class_filter).
         ///
-        /// <p>
-        /// A filter for the class of items in the catalog.
-        /// </p>
-        /// <p>Filter values are case sensitive. If you specify multiple
-        /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
-        /// all results that match any of the specified values.</p>
+        /// <p> A filter for the class of items in the catalog. </p>
+        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
         pub fn item_class_filter(mut self, input: crate::model::CatalogItemClass) -> Self {
             let mut v = self.item_class_filter.unwrap_or_default();
             v.push(input);
             self.item_class_filter = Some(v);
             self
         }
-        /// <p>
-        /// A filter for the class of items in the catalog.
-        /// </p>
-        /// <p>Filter values are case sensitive. If you specify multiple
-        /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
-        /// all results that match any of the specified values.</p>
+        /// <p> A filter for the class of items in the catalog. </p>
+        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
         pub fn set_item_class_filter(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CatalogItemClass>>,
@@ -2251,12 +2191,8 @@ pub mod list_catalog_items_input {
         ///
         /// To override the contents of this collection use [`set_supported_storage_filter`](Self::set_supported_storage_filter).
         ///
-        /// <p>
-        /// A filter for the storage options of items in the catalog.
-        /// </p>
-        /// <p>Filter values are case sensitive. If you specify multiple
-        /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
-        /// all results that match any of the specified values.</p>
+        /// <p> A filter for the storage options of items in the catalog. </p>
+        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
         pub fn supported_storage_filter(
             mut self,
             input: crate::model::SupportedStorageEnum,
@@ -2266,12 +2202,8 @@ pub mod list_catalog_items_input {
             self.supported_storage_filter = Some(v);
             self
         }
-        /// <p>
-        /// A filter for the storage options of items in the catalog.
-        /// </p>
-        /// <p>Filter values are case sensitive. If you specify multiple
-        /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
-        /// all results that match any of the specified values.</p>
+        /// <p> A filter for the storage options of items in the catalog. </p>
+        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
         pub fn set_supported_storage_filter(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SupportedStorageEnum>>,
@@ -2283,24 +2215,16 @@ pub mod list_catalog_items_input {
         ///
         /// To override the contents of this collection use [`set_ec2_family_filter`](Self::set_ec2_family_filter).
         ///
-        /// <p>
-        /// A filter for EC2 family options for items in the catalog.
-        /// </p>
-        /// <p>Filter values are case sensitive. If you specify multiple
-        /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
-        /// all results that match any of the specified values.</p>
+        /// <p> A filter for EC2 family options for items in the catalog. </p>
+        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
         pub fn ec2_family_filter(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ec2_family_filter.unwrap_or_default();
             v.push(input.into());
             self.ec2_family_filter = Some(v);
             self
         }
-        /// <p>
-        /// A filter for EC2 family options for items in the catalog.
-        /// </p>
-        /// <p>Filter values are case sensitive. If you specify multiple
-        /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
-        /// all results that match any of the specified values.</p>
+        /// <p> A filter for EC2 family options for items in the catalog. </p>
+        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
         pub fn set_ec2_family_filter(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2480,16 +2404,12 @@ pub mod list_orders_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>
-        /// The ID or the Amazon Resource Name (ARN) of the Outpost.
-        /// </p>
+        /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
         pub fn outpost_identifier_filter(mut self, input: impl Into<std::string::String>) -> Self {
             self.outpost_identifier_filter = Some(input.into());
             self
         }
-        /// <p>
-        /// The ID or the Amazon Resource Name (ARN) of the Outpost.
-        /// </p>
+        /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
         pub fn set_outpost_identifier_filter(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2698,24 +2618,16 @@ pub mod list_outposts_input {
         ///
         /// To override the contents of this collection use [`set_life_cycle_status_filter`](Self::set_life_cycle_status_filter).
         ///
-        /// <p>
-        /// A filter for the lifecycle status of the Outpost.
-        /// </p>
-        /// <p>Filter values are case sensitive. If you specify multiple
-        /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
-        /// all results that match any of the specified values.</p>
+        /// <p> A filter for the lifecycle status of the Outpost. </p>
+        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
         pub fn life_cycle_status_filter(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.life_cycle_status_filter.unwrap_or_default();
             v.push(input.into());
             self.life_cycle_status_filter = Some(v);
             self
         }
-        /// <p>
-        /// A filter for the lifecycle status of the Outpost.
-        /// </p>
-        /// <p>Filter values are case sensitive. If you specify multiple
-        /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
-        /// all results that match any of the specified values.</p>
+        /// <p> A filter for the lifecycle status of the Outpost. </p>
+        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
         pub fn set_life_cycle_status_filter(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2728,10 +2640,7 @@ pub mod list_outposts_input {
         /// To override the contents of this collection use [`set_availability_zone_filter`](Self::set_availability_zone_filter).
         ///
         /// <p> A filter for the Availability Zone (<code>us-east-1a</code>) of the Outpost. </p>
-        ///
-        /// <p>Filter values are case sensitive. If you specify multiple
-        /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
-        /// all results that match any of the specified values.</p>
+        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
         pub fn availability_zone_filter(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.availability_zone_filter.unwrap_or_default();
             v.push(input.into());
@@ -2739,10 +2648,7 @@ pub mod list_outposts_input {
             self
         }
         /// <p> A filter for the Availability Zone (<code>us-east-1a</code>) of the Outpost. </p>
-        ///
-        /// <p>Filter values are case sensitive. If you specify multiple
-        /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
-        /// all results that match any of the specified values.</p>
+        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
         pub fn set_availability_zone_filter(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2754,13 +2660,8 @@ pub mod list_outposts_input {
         ///
         /// To override the contents of this collection use [`set_availability_zone_id_filter`](Self::set_availability_zone_id_filter).
         ///
-        /// <p>
-        /// A filter for the AZ IDs (<code>use1-az1</code>) of the Outpost.
-        /// </p>
-        ///
-        /// <p>Filter values are case sensitive. If you specify multiple
-        /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
-        /// all results that match any of the specified values.</p>
+        /// <p> A filter for the AZ IDs (<code>use1-az1</code>) of the Outpost. </p>
+        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
         pub fn availability_zone_id_filter(
             mut self,
             input: impl Into<std::string::String>,
@@ -2770,13 +2671,8 @@ pub mod list_outposts_input {
             self.availability_zone_id_filter = Some(v);
             self
         }
-        /// <p>
-        /// A filter for the AZ IDs (<code>use1-az1</code>) of the Outpost.
-        /// </p>
-        ///
-        /// <p>Filter values are case sensitive. If you specify multiple
-        /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
-        /// all results that match any of the specified values.</p>
+        /// <p> A filter for the AZ IDs (<code>use1-az1</code>) of the Outpost. </p>
+        /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
         pub fn set_availability_zone_id_filter(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3676,16 +3572,12 @@ pub mod update_site_input {
             self.description = input;
             self
         }
-        /// <p>
-        /// Notes about a site.
-        /// </p>
+        /// <p> Notes about a site. </p>
         pub fn notes(mut self, input: impl Into<std::string::String>) -> Self {
             self.notes = Some(input.into());
             self
         }
-        /// <p>
-        /// Notes about a site.
-        /// </p>
+        /// <p> Notes about a site. </p>
         pub fn set_notes(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.notes = input;
             self
@@ -3858,16 +3750,12 @@ pub mod update_site_address_input {
             self.site_id = input;
             self
         }
-        /// <p>
-        /// The type of the address.
-        /// </p>
+        /// <p> The type of the address. </p>
         pub fn address_type(mut self, input: crate::model::AddressType) -> Self {
             self.address_type = Some(input);
             self
         }
-        /// <p>
-        /// The type of the address.
-        /// </p>
+        /// <p> The type of the address. </p>
         pub fn set_address_type(
             mut self,
             input: std::option::Option<crate::model::AddressType>,
@@ -3875,16 +3763,12 @@ pub mod update_site_address_input {
             self.address_type = input;
             self
         }
-        /// <p>
-        /// The address for the site.
-        /// </p>
+        /// <p> The address for the site. </p>
         pub fn address(mut self, input: crate::model::Address) -> Self {
             self.address = Some(input);
             self
         }
-        /// <p>
-        /// The address for the site.
-        /// </p>
+        /// <p> The address for the site. </p>
         pub fn set_address(mut self, input: std::option::Option<crate::model::Address>) -> Self {
             self.address = input;
             self
@@ -4066,14 +3950,12 @@ pub mod update_site_rack_physical_properties_input {
             self.site_id = input;
             self
         }
-        /// <p>Specify in kVA the power draw available at the hardware placement position for the
-        /// rack.</p>
+        /// <p>Specify in kVA the power draw available at the hardware placement position for the rack.</p>
         pub fn power_draw_kva(mut self, input: crate::model::PowerDrawKva) -> Self {
             self.power_draw_kva = Some(input);
             self
         }
-        /// <p>Specify in kVA the power draw available at the hardware placement position for the
-        /// rack.</p>
+        /// <p>Specify in kVA the power draw available at the hardware placement position for the rack.</p>
         pub fn set_power_draw_kva(
             mut self,
             input: std::option::Option<crate::model::PowerDrawKva>,
@@ -4083,12 +3965,8 @@ pub mod update_site_rack_physical_properties_input {
         }
         /// <p> Specify the power option that you can provide for hardware. </p>
         /// <ul>
-        /// <li>
-        /// <p>Single-phase AC feed: 200 V to 277 V, 50 Hz or 60 Hz</p>
-        /// </li>
-        /// <li>
-        /// <p>Three-phase AC feed: 346 V to 480 V, 50 Hz or 60 Hz</p>
-        /// </li>
+        /// <li> <p>Single-phase AC feed: 200 V to 277 V, 50 Hz or 60 Hz</p> </li>
+        /// <li> <p>Three-phase AC feed: 346 V to 480 V, 50 Hz or 60 Hz</p> </li>
         /// </ul>
         pub fn power_phase(mut self, input: crate::model::PowerPhase) -> Self {
             self.power_phase = Some(input);
@@ -4096,12 +3974,8 @@ pub mod update_site_rack_physical_properties_input {
         }
         /// <p> Specify the power option that you can provide for hardware. </p>
         /// <ul>
-        /// <li>
-        /// <p>Single-phase AC feed: 200 V to 277 V, 50 Hz or 60 Hz</p>
-        /// </li>
-        /// <li>
-        /// <p>Three-phase AC feed: 346 V to 480 V, 50 Hz or 60 Hz</p>
-        /// </li>
+        /// <li> <p>Single-phase AC feed: 200 V to 277 V, 50 Hz or 60 Hz</p> </li>
+        /// <li> <p>Three-phase AC feed: 346 V to 480 V, 50 Hz or 60 Hz</p> </li>
         /// </ul>
         pub fn set_power_phase(
             mut self,
@@ -4110,77 +3984,35 @@ pub mod update_site_rack_physical_properties_input {
             self.power_phase = input;
             self
         }
-        /// <p> Specify the power connector that Amazon Web Services should plan to provide for connections to the
-        /// hardware. Note the correlation between <code>PowerPhase</code> and
-        /// <code>PowerConnector</code>. </p>
+        /// <p> Specify the power connector that Amazon Web Services should plan to provide for connections to the hardware. Note the correlation between <code>PowerPhase</code> and <code>PowerConnector</code>. </p>
         /// <ul>
-        /// <li>
-        /// <p>Single-phase AC feed</p>
+        /// <li> <p>Single-phase AC feed</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>L6-30P</b> – (common in US); 30A; single phase</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>IEC309 (blue)</b> – P+N+E, 6hr; 32 A; single
-        /// phase</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>Three-phase AC feed</p>
+        /// <li> <p> <b>L6-30P</b> – (common in US); 30A; single phase</p> </li>
+        /// <li> <p> <b>IEC309 (blue)</b> – P+N+E, 6hr; 32 A; single phase</p> </li>
+        /// </ul> </li>
+        /// <li> <p>Three-phase AC feed</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>AH530P7W (red)</b> – 3P+N+E, 7hr; 30A; three
-        /// phase</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>AH532P6W (red)</b> – 3P+N+E, 6hr; 32A; three
-        /// phase</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p> <b>AH530P7W (red)</b> – 3P+N+E, 7hr; 30A; three phase</p> </li>
+        /// <li> <p> <b>AH532P6W (red)</b> – 3P+N+E, 6hr; 32A; three phase</p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn power_connector(mut self, input: crate::model::PowerConnector) -> Self {
             self.power_connector = Some(input);
             self
         }
-        /// <p> Specify the power connector that Amazon Web Services should plan to provide for connections to the
-        /// hardware. Note the correlation between <code>PowerPhase</code> and
-        /// <code>PowerConnector</code>. </p>
+        /// <p> Specify the power connector that Amazon Web Services should plan to provide for connections to the hardware. Note the correlation between <code>PowerPhase</code> and <code>PowerConnector</code>. </p>
         /// <ul>
-        /// <li>
-        /// <p>Single-phase AC feed</p>
+        /// <li> <p>Single-phase AC feed</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>L6-30P</b> – (common in US); 30A; single phase</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>IEC309 (blue)</b> – P+N+E, 6hr; 32 A; single
-        /// phase</p>
-        /// </li>
-        /// </ul>
-        /// </li>
-        /// <li>
-        /// <p>Three-phase AC feed</p>
+        /// <li> <p> <b>L6-30P</b> – (common in US); 30A; single phase</p> </li>
+        /// <li> <p> <b>IEC309 (blue)</b> – P+N+E, 6hr; 32 A; single phase</p> </li>
+        /// </ul> </li>
+        /// <li> <p>Three-phase AC feed</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <b>AH530P7W (red)</b> – 3P+N+E, 7hr; 30A; three
-        /// phase</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <b>AH532P6W (red)</b> – 3P+N+E, 6hr; 32A; three
-        /// phase</p>
-        /// </li>
-        /// </ul>
-        /// </li>
+        /// <li> <p> <b>AH530P7W (red)</b> – 3P+N+E, 7hr; 30A; three phase</p> </li>
+        /// <li> <p> <b>AH532P6W (red)</b> – 3P+N+E, 6hr; 32A; three phase</p> </li>
+        /// </ul> </li>
         /// </ul>
         pub fn set_power_connector(
             mut self,
@@ -4202,14 +4034,12 @@ pub mod update_site_rack_physical_properties_input {
             self.power_feed_drop = input;
             self
         }
-        /// <p> Specify the uplink speed the rack should support for the connection to the Region.
-        /// </p>
+        /// <p> Specify the uplink speed the rack should support for the connection to the Region. </p>
         pub fn uplink_gbps(mut self, input: crate::model::UplinkGbps) -> Self {
             self.uplink_gbps = Some(input);
             self
         }
-        /// <p> Specify the uplink speed the rack should support for the connection to the Region.
-        /// </p>
+        /// <p> Specify the uplink speed the rack should support for the connection to the Region. </p>
         pub fn set_uplink_gbps(
             mut self,
             input: std::option::Option<crate::model::UplinkGbps>,
@@ -4217,39 +4047,21 @@ pub mod update_site_rack_physical_properties_input {
             self.uplink_gbps = input;
             self
         }
-        /// <p>Racks come with two Outpost network devices. Depending on the supported uplink speed at
-        /// the site, the Outpost network devices provide a variable number of uplinks. Specify the number
-        /// of uplinks for each Outpost network device that you intend to use to connect the rack to your
-        /// network. Note the correlation between <code>UplinkGbps</code> and <code>UplinkCount</code>. </p>
+        /// <p>Racks come with two Outpost network devices. Depending on the supported uplink speed at the site, the Outpost network devices provide a variable number of uplinks. Specify the number of uplinks for each Outpost network device that you intend to use to connect the rack to your network. Note the correlation between <code>UplinkGbps</code> and <code>UplinkCount</code>. </p>
         /// <ul>
-        /// <li>
-        /// <p>1Gbps - Uplinks available: 1, 2, 4, 6, 8</p>
-        /// </li>
-        /// <li>
-        /// <p>10Gbps - Uplinks available: 1, 2, 4, 8, 12, 16</p>
-        /// </li>
-        /// <li>
-        /// <p>40 and 100 Gbps- Uplinks available: 1, 2, 4</p>
-        /// </li>
+        /// <li> <p>1Gbps - Uplinks available: 1, 2, 4, 6, 8</p> </li>
+        /// <li> <p>10Gbps - Uplinks available: 1, 2, 4, 8, 12, 16</p> </li>
+        /// <li> <p>40 and 100 Gbps- Uplinks available: 1, 2, 4</p> </li>
         /// </ul>
         pub fn uplink_count(mut self, input: crate::model::UplinkCount) -> Self {
             self.uplink_count = Some(input);
             self
         }
-        /// <p>Racks come with two Outpost network devices. Depending on the supported uplink speed at
-        /// the site, the Outpost network devices provide a variable number of uplinks. Specify the number
-        /// of uplinks for each Outpost network device that you intend to use to connect the rack to your
-        /// network. Note the correlation between <code>UplinkGbps</code> and <code>UplinkCount</code>. </p>
+        /// <p>Racks come with two Outpost network devices. Depending on the supported uplink speed at the site, the Outpost network devices provide a variable number of uplinks. Specify the number of uplinks for each Outpost network device that you intend to use to connect the rack to your network. Note the correlation between <code>UplinkGbps</code> and <code>UplinkCount</code>. </p>
         /// <ul>
-        /// <li>
-        /// <p>1Gbps - Uplinks available: 1, 2, 4, 6, 8</p>
-        /// </li>
-        /// <li>
-        /// <p>10Gbps - Uplinks available: 1, 2, 4, 8, 12, 16</p>
-        /// </li>
-        /// <li>
-        /// <p>40 and 100 Gbps- Uplinks available: 1, 2, 4</p>
-        /// </li>
+        /// <li> <p>1Gbps - Uplinks available: 1, 2, 4, 6, 8</p> </li>
+        /// <li> <p>10Gbps - Uplinks available: 1, 2, 4, 8, 12, 16</p> </li>
+        /// <li> <p>40 and 100 Gbps- Uplinks available: 1, 2, 4</p> </li>
         /// </ul>
         pub fn set_uplink_count(
             mut self,
@@ -4258,14 +4070,12 @@ pub mod update_site_rack_physical_properties_input {
             self.uplink_count = input;
             self
         }
-        /// <p> Specify the type of fiber that you will use to attach the Outpost to your network.
-        /// </p>
+        /// <p> Specify the type of fiber that you will use to attach the Outpost to your network. </p>
         pub fn fiber_optic_cable_type(mut self, input: crate::model::FiberOpticCableType) -> Self {
             self.fiber_optic_cable_type = Some(input);
             self
         }
-        /// <p> Specify the type of fiber that you will use to attach the Outpost to your network.
-        /// </p>
+        /// <p> Specify the type of fiber that you will use to attach the Outpost to your network. </p>
         pub fn set_fiber_optic_cable_type(
             mut self,
             input: std::option::Option<crate::model::FiberOpticCableType>,
@@ -4273,129 +4083,41 @@ pub mod update_site_rack_physical_properties_input {
             self.fiber_optic_cable_type = input;
             self
         }
-        /// <p>Specify the type of optical standard that you will use to attach the Outpost to your
-        /// network. This field is dependent on uplink speed, fiber type, and distance to the upstream
-        /// device. For more information
-        /// about networking requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking">Network</a>
-        /// in the Amazon Web Services Outposts User Guide.
-        /// </p>
+        /// <p>Specify the type of optical standard that you will use to attach the Outpost to your network. This field is dependent on uplink speed, fiber type, and distance to the upstream device. For more information about networking requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking">Network</a> in the Amazon Web Services Outposts User Guide. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_10GBASE_SR</code>: 10GBASE-SR</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_10GBASE_IR</code>: 10GBASE-IR</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_10GBASE_LR</code>: 10GBASE-LR</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_40GBASE_SR</code>: 40GBASE-SR</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_40GBASE_ESR</code>: 40GBASE-ESR</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_40GBASE_IR4_LR4L</code>: 40GBASE-IR (LR4L)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_40GBASE_LR4</code>: 40GBASE-LR4</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_100GBASE_SR4</code>: 100GBASE-SR4</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_100GBASE_CWDM4</code>: 100GBASE-CWDM4</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_100GBASE_LR4</code>: 100GBASE-LR4</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_100G_PSM4_MSA</code>: 100G PSM4 MSA</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_1000BASE_LX</code>: 1000Base-LX</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_1000BASE_SX</code> : 1000Base-SX</p>
-        /// </li>
+        /// <li> <p> <code>OPTIC_10GBASE_SR</code>: 10GBASE-SR</p> </li>
+        /// <li> <p> <code>OPTIC_10GBASE_IR</code>: 10GBASE-IR</p> </li>
+        /// <li> <p> <code>OPTIC_10GBASE_LR</code>: 10GBASE-LR</p> </li>
+        /// <li> <p> <code>OPTIC_40GBASE_SR</code>: 40GBASE-SR</p> </li>
+        /// <li> <p> <code>OPTIC_40GBASE_ESR</code>: 40GBASE-ESR</p> </li>
+        /// <li> <p> <code>OPTIC_40GBASE_IR4_LR4L</code>: 40GBASE-IR (LR4L)</p> </li>
+        /// <li> <p> <code>OPTIC_40GBASE_LR4</code>: 40GBASE-LR4</p> </li>
+        /// <li> <p> <code>OPTIC_100GBASE_SR4</code>: 100GBASE-SR4</p> </li>
+        /// <li> <p> <code>OPTIC_100GBASE_CWDM4</code>: 100GBASE-CWDM4</p> </li>
+        /// <li> <p> <code>OPTIC_100GBASE_LR4</code>: 100GBASE-LR4</p> </li>
+        /// <li> <p> <code>OPTIC_100G_PSM4_MSA</code>: 100G PSM4 MSA</p> </li>
+        /// <li> <p> <code>OPTIC_1000BASE_LX</code>: 1000Base-LX</p> </li>
+        /// <li> <p> <code>OPTIC_1000BASE_SX</code> : 1000Base-SX</p> </li>
         /// </ul>
         pub fn optical_standard(mut self, input: crate::model::OpticalStandard) -> Self {
             self.optical_standard = Some(input);
             self
         }
-        /// <p>Specify the type of optical standard that you will use to attach the Outpost to your
-        /// network. This field is dependent on uplink speed, fiber type, and distance to the upstream
-        /// device. For more information
-        /// about networking requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking">Network</a>
-        /// in the Amazon Web Services Outposts User Guide.
-        /// </p>
+        /// <p>Specify the type of optical standard that you will use to attach the Outpost to your network. This field is dependent on uplink speed, fiber type, and distance to the upstream device. For more information about networking requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking">Network</a> in the Amazon Web Services Outposts User Guide. </p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_10GBASE_SR</code>: 10GBASE-SR</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_10GBASE_IR</code>: 10GBASE-IR</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_10GBASE_LR</code>: 10GBASE-LR</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_40GBASE_SR</code>: 40GBASE-SR</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_40GBASE_ESR</code>: 40GBASE-ESR</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_40GBASE_IR4_LR4L</code>: 40GBASE-IR (LR4L)</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_40GBASE_LR4</code>: 40GBASE-LR4</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_100GBASE_SR4</code>: 100GBASE-SR4</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_100GBASE_CWDM4</code>: 100GBASE-CWDM4</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_100GBASE_LR4</code>: 100GBASE-LR4</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_100G_PSM4_MSA</code>: 100G PSM4 MSA</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_1000BASE_LX</code>: 1000Base-LX</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>OPTIC_1000BASE_SX</code> : 1000Base-SX</p>
-        /// </li>
+        /// <li> <p> <code>OPTIC_10GBASE_SR</code>: 10GBASE-SR</p> </li>
+        /// <li> <p> <code>OPTIC_10GBASE_IR</code>: 10GBASE-IR</p> </li>
+        /// <li> <p> <code>OPTIC_10GBASE_LR</code>: 10GBASE-LR</p> </li>
+        /// <li> <p> <code>OPTIC_40GBASE_SR</code>: 40GBASE-SR</p> </li>
+        /// <li> <p> <code>OPTIC_40GBASE_ESR</code>: 40GBASE-ESR</p> </li>
+        /// <li> <p> <code>OPTIC_40GBASE_IR4_LR4L</code>: 40GBASE-IR (LR4L)</p> </li>
+        /// <li> <p> <code>OPTIC_40GBASE_LR4</code>: 40GBASE-LR4</p> </li>
+        /// <li> <p> <code>OPTIC_100GBASE_SR4</code>: 100GBASE-SR4</p> </li>
+        /// <li> <p> <code>OPTIC_100GBASE_CWDM4</code>: 100GBASE-CWDM4</p> </li>
+        /// <li> <p> <code>OPTIC_100GBASE_LR4</code>: 100GBASE-LR4</p> </li>
+        /// <li> <p> <code>OPTIC_100G_PSM4_MSA</code>: 100G PSM4 MSA</p> </li>
+        /// <li> <p> <code>OPTIC_1000BASE_LX</code>: 1000Base-LX</p> </li>
+        /// <li> <p> <code>OPTIC_1000BASE_SX</code> : 1000Base-SX</p> </li>
         /// </ul>
         pub fn set_optical_standard(
             mut self,
@@ -4404,8 +4126,7 @@ pub mod update_site_rack_physical_properties_input {
             self.optical_standard = input;
             self
         }
-        /// <p> Specify the maximum rack weight that this site can support. <code>NO_LIMIT</code> is over
-        /// 2000lbs. </p>
+        /// <p> Specify the maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000lbs. </p>
         pub fn maximum_supported_weight_lbs(
             mut self,
             input: crate::model::MaximumSupportedWeightLbs,
@@ -4413,8 +4134,7 @@ pub mod update_site_rack_physical_properties_input {
             self.maximum_supported_weight_lbs = Some(input);
             self
         }
-        /// <p> Specify the maximum rack weight that this site can support. <code>NO_LIMIT</code> is over
-        /// 2000lbs. </p>
+        /// <p> Specify the maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000lbs. </p>
         pub fn set_maximum_supported_weight_lbs(
             mut self,
             input: std::option::Option<crate::model::MaximumSupportedWeightLbs>,
@@ -4590,141 +4310,59 @@ impl UpdateSiteRackPhysicalPropertiesInput {
 pub struct UpdateSiteRackPhysicalPropertiesInput {
     /// <p>The ID of the site.</p>
     pub site_id: std::option::Option<std::string::String>,
-    /// <p>Specify in kVA the power draw available at the hardware placement position for the
-    /// rack.</p>
+    /// <p>Specify in kVA the power draw available at the hardware placement position for the rack.</p>
     pub power_draw_kva: std::option::Option<crate::model::PowerDrawKva>,
     /// <p> Specify the power option that you can provide for hardware. </p>
     /// <ul>
-    /// <li>
-    /// <p>Single-phase AC feed: 200 V to 277 V, 50 Hz or 60 Hz</p>
-    /// </li>
-    /// <li>
-    /// <p>Three-phase AC feed: 346 V to 480 V, 50 Hz or 60 Hz</p>
-    /// </li>
+    /// <li> <p>Single-phase AC feed: 200 V to 277 V, 50 Hz or 60 Hz</p> </li>
+    /// <li> <p>Three-phase AC feed: 346 V to 480 V, 50 Hz or 60 Hz</p> </li>
     /// </ul>
     pub power_phase: std::option::Option<crate::model::PowerPhase>,
-    /// <p> Specify the power connector that Amazon Web Services should plan to provide for connections to the
-    /// hardware. Note the correlation between <code>PowerPhase</code> and
-    /// <code>PowerConnector</code>. </p>
+    /// <p> Specify the power connector that Amazon Web Services should plan to provide for connections to the hardware. Note the correlation between <code>PowerPhase</code> and <code>PowerConnector</code>. </p>
     /// <ul>
-    /// <li>
-    /// <p>Single-phase AC feed</p>
+    /// <li> <p>Single-phase AC feed</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>L6-30P</b> – (common in US); 30A; single phase</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>IEC309 (blue)</b> – P+N+E, 6hr; 32 A; single
-    /// phase</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>Three-phase AC feed</p>
+    /// <li> <p> <b>L6-30P</b> – (common in US); 30A; single phase</p> </li>
+    /// <li> <p> <b>IEC309 (blue)</b> – P+N+E, 6hr; 32 A; single phase</p> </li>
+    /// </ul> </li>
+    /// <li> <p>Three-phase AC feed</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>AH530P7W (red)</b> – 3P+N+E, 7hr; 30A; three
-    /// phase</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>AH532P6W (red)</b> – 3P+N+E, 6hr; 32A; three
-    /// phase</p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p> <b>AH530P7W (red)</b> – 3P+N+E, 7hr; 30A; three phase</p> </li>
+    /// <li> <p> <b>AH532P6W (red)</b> – 3P+N+E, 6hr; 32A; three phase</p> </li>
+    /// </ul> </li>
     /// </ul>
     pub power_connector: std::option::Option<crate::model::PowerConnector>,
     /// <p> Specify whether the power feed comes above or below the rack. </p>
     pub power_feed_drop: std::option::Option<crate::model::PowerFeedDrop>,
-    /// <p> Specify the uplink speed the rack should support for the connection to the Region.
-    /// </p>
+    /// <p> Specify the uplink speed the rack should support for the connection to the Region. </p>
     pub uplink_gbps: std::option::Option<crate::model::UplinkGbps>,
-    /// <p>Racks come with two Outpost network devices. Depending on the supported uplink speed at
-    /// the site, the Outpost network devices provide a variable number of uplinks. Specify the number
-    /// of uplinks for each Outpost network device that you intend to use to connect the rack to your
-    /// network. Note the correlation between <code>UplinkGbps</code> and <code>UplinkCount</code>. </p>
+    /// <p>Racks come with two Outpost network devices. Depending on the supported uplink speed at the site, the Outpost network devices provide a variable number of uplinks. Specify the number of uplinks for each Outpost network device that you intend to use to connect the rack to your network. Note the correlation between <code>UplinkGbps</code> and <code>UplinkCount</code>. </p>
     /// <ul>
-    /// <li>
-    /// <p>1Gbps - Uplinks available: 1, 2, 4, 6, 8</p>
-    /// </li>
-    /// <li>
-    /// <p>10Gbps - Uplinks available: 1, 2, 4, 8, 12, 16</p>
-    /// </li>
-    /// <li>
-    /// <p>40 and 100 Gbps- Uplinks available: 1, 2, 4</p>
-    /// </li>
+    /// <li> <p>1Gbps - Uplinks available: 1, 2, 4, 6, 8</p> </li>
+    /// <li> <p>10Gbps - Uplinks available: 1, 2, 4, 8, 12, 16</p> </li>
+    /// <li> <p>40 and 100 Gbps- Uplinks available: 1, 2, 4</p> </li>
     /// </ul>
     pub uplink_count: std::option::Option<crate::model::UplinkCount>,
-    /// <p> Specify the type of fiber that you will use to attach the Outpost to your network.
-    /// </p>
+    /// <p> Specify the type of fiber that you will use to attach the Outpost to your network. </p>
     pub fiber_optic_cable_type: std::option::Option<crate::model::FiberOpticCableType>,
-    /// <p>Specify the type of optical standard that you will use to attach the Outpost to your
-    /// network. This field is dependent on uplink speed, fiber type, and distance to the upstream
-    /// device. For more information
-    /// about networking requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking">Network</a>
-    /// in the Amazon Web Services Outposts User Guide.
-    /// </p>
+    /// <p>Specify the type of optical standard that you will use to attach the Outpost to your network. This field is dependent on uplink speed, fiber type, and distance to the upstream device. For more information about networking requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking">Network</a> in the Amazon Web Services Outposts User Guide. </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>OPTIC_10GBASE_SR</code>: 10GBASE-SR</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OPTIC_10GBASE_IR</code>: 10GBASE-IR</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OPTIC_10GBASE_LR</code>: 10GBASE-LR</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OPTIC_40GBASE_SR</code>: 40GBASE-SR</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OPTIC_40GBASE_ESR</code>: 40GBASE-ESR</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OPTIC_40GBASE_IR4_LR4L</code>: 40GBASE-IR (LR4L)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OPTIC_40GBASE_LR4</code>: 40GBASE-LR4</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OPTIC_100GBASE_SR4</code>: 100GBASE-SR4</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OPTIC_100GBASE_CWDM4</code>: 100GBASE-CWDM4</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OPTIC_100GBASE_LR4</code>: 100GBASE-LR4</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OPTIC_100G_PSM4_MSA</code>: 100G PSM4 MSA</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OPTIC_1000BASE_LX</code>: 1000Base-LX</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OPTIC_1000BASE_SX</code> : 1000Base-SX</p>
-    /// </li>
+    /// <li> <p> <code>OPTIC_10GBASE_SR</code>: 10GBASE-SR</p> </li>
+    /// <li> <p> <code>OPTIC_10GBASE_IR</code>: 10GBASE-IR</p> </li>
+    /// <li> <p> <code>OPTIC_10GBASE_LR</code>: 10GBASE-LR</p> </li>
+    /// <li> <p> <code>OPTIC_40GBASE_SR</code>: 40GBASE-SR</p> </li>
+    /// <li> <p> <code>OPTIC_40GBASE_ESR</code>: 40GBASE-ESR</p> </li>
+    /// <li> <p> <code>OPTIC_40GBASE_IR4_LR4L</code>: 40GBASE-IR (LR4L)</p> </li>
+    /// <li> <p> <code>OPTIC_40GBASE_LR4</code>: 40GBASE-LR4</p> </li>
+    /// <li> <p> <code>OPTIC_100GBASE_SR4</code>: 100GBASE-SR4</p> </li>
+    /// <li> <p> <code>OPTIC_100GBASE_CWDM4</code>: 100GBASE-CWDM4</p> </li>
+    /// <li> <p> <code>OPTIC_100GBASE_LR4</code>: 100GBASE-LR4</p> </li>
+    /// <li> <p> <code>OPTIC_100G_PSM4_MSA</code>: 100G PSM4 MSA</p> </li>
+    /// <li> <p> <code>OPTIC_1000BASE_LX</code>: 1000Base-LX</p> </li>
+    /// <li> <p> <code>OPTIC_1000BASE_SX</code> : 1000Base-SX</p> </li>
     /// </ul>
     pub optical_standard: std::option::Option<crate::model::OpticalStandard>,
-    /// <p> Specify the maximum rack weight that this site can support. <code>NO_LIMIT</code> is over
-    /// 2000lbs. </p>
+    /// <p> Specify the maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000lbs. </p>
     pub maximum_supported_weight_lbs: std::option::Option<crate::model::MaximumSupportedWeightLbs>,
 }
 impl UpdateSiteRackPhysicalPropertiesInput {
@@ -4732,56 +4370,30 @@ impl UpdateSiteRackPhysicalPropertiesInput {
     pub fn site_id(&self) -> std::option::Option<&str> {
         self.site_id.as_deref()
     }
-    /// <p>Specify in kVA the power draw available at the hardware placement position for the
-    /// rack.</p>
+    /// <p>Specify in kVA the power draw available at the hardware placement position for the rack.</p>
     pub fn power_draw_kva(&self) -> std::option::Option<&crate::model::PowerDrawKva> {
         self.power_draw_kva.as_ref()
     }
     /// <p> Specify the power option that you can provide for hardware. </p>
     /// <ul>
-    /// <li>
-    /// <p>Single-phase AC feed: 200 V to 277 V, 50 Hz or 60 Hz</p>
-    /// </li>
-    /// <li>
-    /// <p>Three-phase AC feed: 346 V to 480 V, 50 Hz or 60 Hz</p>
-    /// </li>
+    /// <li> <p>Single-phase AC feed: 200 V to 277 V, 50 Hz or 60 Hz</p> </li>
+    /// <li> <p>Three-phase AC feed: 346 V to 480 V, 50 Hz or 60 Hz</p> </li>
     /// </ul>
     pub fn power_phase(&self) -> std::option::Option<&crate::model::PowerPhase> {
         self.power_phase.as_ref()
     }
-    /// <p> Specify the power connector that Amazon Web Services should plan to provide for connections to the
-    /// hardware. Note the correlation between <code>PowerPhase</code> and
-    /// <code>PowerConnector</code>. </p>
+    /// <p> Specify the power connector that Amazon Web Services should plan to provide for connections to the hardware. Note the correlation between <code>PowerPhase</code> and <code>PowerConnector</code>. </p>
     /// <ul>
-    /// <li>
-    /// <p>Single-phase AC feed</p>
+    /// <li> <p>Single-phase AC feed</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>L6-30P</b> – (common in US); 30A; single phase</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>IEC309 (blue)</b> – P+N+E, 6hr; 32 A; single
-    /// phase</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>Three-phase AC feed</p>
+    /// <li> <p> <b>L6-30P</b> – (common in US); 30A; single phase</p> </li>
+    /// <li> <p> <b>IEC309 (blue)</b> – P+N+E, 6hr; 32 A; single phase</p> </li>
+    /// </ul> </li>
+    /// <li> <p>Three-phase AC feed</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <b>AH530P7W (red)</b> – 3P+N+E, 7hr; 30A; three
-    /// phase</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <b>AH532P6W (red)</b> – 3P+N+E, 6hr; 32A; three
-    /// phase</p>
-    /// </li>
-    /// </ul>
-    /// </li>
+    /// <li> <p> <b>AH530P7W (red)</b> – 3P+N+E, 7hr; 30A; three phase</p> </li>
+    /// <li> <p> <b>AH532P6W (red)</b> – 3P+N+E, 6hr; 32A; three phase</p> </li>
+    /// </ul> </li>
     /// </ul>
     pub fn power_connector(&self) -> std::option::Option<&crate::model::PowerConnector> {
         self.power_connector.as_ref()
@@ -4790,101 +4402,45 @@ impl UpdateSiteRackPhysicalPropertiesInput {
     pub fn power_feed_drop(&self) -> std::option::Option<&crate::model::PowerFeedDrop> {
         self.power_feed_drop.as_ref()
     }
-    /// <p> Specify the uplink speed the rack should support for the connection to the Region.
-    /// </p>
+    /// <p> Specify the uplink speed the rack should support for the connection to the Region. </p>
     pub fn uplink_gbps(&self) -> std::option::Option<&crate::model::UplinkGbps> {
         self.uplink_gbps.as_ref()
     }
-    /// <p>Racks come with two Outpost network devices. Depending on the supported uplink speed at
-    /// the site, the Outpost network devices provide a variable number of uplinks. Specify the number
-    /// of uplinks for each Outpost network device that you intend to use to connect the rack to your
-    /// network. Note the correlation between <code>UplinkGbps</code> and <code>UplinkCount</code>. </p>
+    /// <p>Racks come with two Outpost network devices. Depending on the supported uplink speed at the site, the Outpost network devices provide a variable number of uplinks. Specify the number of uplinks for each Outpost network device that you intend to use to connect the rack to your network. Note the correlation between <code>UplinkGbps</code> and <code>UplinkCount</code>. </p>
     /// <ul>
-    /// <li>
-    /// <p>1Gbps - Uplinks available: 1, 2, 4, 6, 8</p>
-    /// </li>
-    /// <li>
-    /// <p>10Gbps - Uplinks available: 1, 2, 4, 8, 12, 16</p>
-    /// </li>
-    /// <li>
-    /// <p>40 and 100 Gbps- Uplinks available: 1, 2, 4</p>
-    /// </li>
+    /// <li> <p>1Gbps - Uplinks available: 1, 2, 4, 6, 8</p> </li>
+    /// <li> <p>10Gbps - Uplinks available: 1, 2, 4, 8, 12, 16</p> </li>
+    /// <li> <p>40 and 100 Gbps- Uplinks available: 1, 2, 4</p> </li>
     /// </ul>
     pub fn uplink_count(&self) -> std::option::Option<&crate::model::UplinkCount> {
         self.uplink_count.as_ref()
     }
-    /// <p> Specify the type of fiber that you will use to attach the Outpost to your network.
-    /// </p>
+    /// <p> Specify the type of fiber that you will use to attach the Outpost to your network. </p>
     pub fn fiber_optic_cable_type(
         &self,
     ) -> std::option::Option<&crate::model::FiberOpticCableType> {
         self.fiber_optic_cable_type.as_ref()
     }
-    /// <p>Specify the type of optical standard that you will use to attach the Outpost to your
-    /// network. This field is dependent on uplink speed, fiber type, and distance to the upstream
-    /// device. For more information
-    /// about networking requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking">Network</a>
-    /// in the Amazon Web Services Outposts User Guide.
-    /// </p>
+    /// <p>Specify the type of optical standard that you will use to attach the Outpost to your network. This field is dependent on uplink speed, fiber type, and distance to the upstream device. For more information about networking requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#facility-networking">Network</a> in the Amazon Web Services Outposts User Guide. </p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>OPTIC_10GBASE_SR</code>: 10GBASE-SR</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OPTIC_10GBASE_IR</code>: 10GBASE-IR</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OPTIC_10GBASE_LR</code>: 10GBASE-LR</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OPTIC_40GBASE_SR</code>: 40GBASE-SR</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OPTIC_40GBASE_ESR</code>: 40GBASE-ESR</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OPTIC_40GBASE_IR4_LR4L</code>: 40GBASE-IR (LR4L)</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OPTIC_40GBASE_LR4</code>: 40GBASE-LR4</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OPTIC_100GBASE_SR4</code>: 100GBASE-SR4</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OPTIC_100GBASE_CWDM4</code>: 100GBASE-CWDM4</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OPTIC_100GBASE_LR4</code>: 100GBASE-LR4</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OPTIC_100G_PSM4_MSA</code>: 100G PSM4 MSA</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OPTIC_1000BASE_LX</code>: 1000Base-LX</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OPTIC_1000BASE_SX</code> : 1000Base-SX</p>
-    /// </li>
+    /// <li> <p> <code>OPTIC_10GBASE_SR</code>: 10GBASE-SR</p> </li>
+    /// <li> <p> <code>OPTIC_10GBASE_IR</code>: 10GBASE-IR</p> </li>
+    /// <li> <p> <code>OPTIC_10GBASE_LR</code>: 10GBASE-LR</p> </li>
+    /// <li> <p> <code>OPTIC_40GBASE_SR</code>: 40GBASE-SR</p> </li>
+    /// <li> <p> <code>OPTIC_40GBASE_ESR</code>: 40GBASE-ESR</p> </li>
+    /// <li> <p> <code>OPTIC_40GBASE_IR4_LR4L</code>: 40GBASE-IR (LR4L)</p> </li>
+    /// <li> <p> <code>OPTIC_40GBASE_LR4</code>: 40GBASE-LR4</p> </li>
+    /// <li> <p> <code>OPTIC_100GBASE_SR4</code>: 100GBASE-SR4</p> </li>
+    /// <li> <p> <code>OPTIC_100GBASE_CWDM4</code>: 100GBASE-CWDM4</p> </li>
+    /// <li> <p> <code>OPTIC_100GBASE_LR4</code>: 100GBASE-LR4</p> </li>
+    /// <li> <p> <code>OPTIC_100G_PSM4_MSA</code>: 100G PSM4 MSA</p> </li>
+    /// <li> <p> <code>OPTIC_1000BASE_LX</code>: 1000Base-LX</p> </li>
+    /// <li> <p> <code>OPTIC_1000BASE_SX</code> : 1000Base-SX</p> </li>
     /// </ul>
     pub fn optical_standard(&self) -> std::option::Option<&crate::model::OpticalStandard> {
         self.optical_standard.as_ref()
     }
-    /// <p> Specify the maximum rack weight that this site can support. <code>NO_LIMIT</code> is over
-    /// 2000lbs. </p>
+    /// <p> Specify the maximum rack weight that this site can support. <code>NO_LIMIT</code> is over 2000lbs. </p>
     pub fn maximum_supported_weight_lbs(
         &self,
     ) -> std::option::Option<&crate::model::MaximumSupportedWeightLbs> {
@@ -4917,13 +4473,9 @@ impl std::fmt::Debug for UpdateSiteRackPhysicalPropertiesInput {
 pub struct UpdateSiteAddressInput {
     /// <p>The ID of the site.</p>
     pub site_id: std::option::Option<std::string::String>,
-    /// <p>
-    /// The type of the address.
-    /// </p>
+    /// <p> The type of the address. </p>
     pub address_type: std::option::Option<crate::model::AddressType>,
-    /// <p>
-    /// The address for the site.
-    /// </p>
+    /// <p> The address for the site. </p>
     pub address: std::option::Option<crate::model::Address>,
 }
 impl UpdateSiteAddressInput {
@@ -4931,15 +4483,11 @@ impl UpdateSiteAddressInput {
     pub fn site_id(&self) -> std::option::Option<&str> {
         self.site_id.as_deref()
     }
-    /// <p>
-    /// The type of the address.
-    /// </p>
+    /// <p> The type of the address. </p>
     pub fn address_type(&self) -> std::option::Option<&crate::model::AddressType> {
         self.address_type.as_ref()
     }
-    /// <p>
-    /// The address for the site.
-    /// </p>
+    /// <p> The address for the site. </p>
     pub fn address(&self) -> std::option::Option<&crate::model::Address> {
         self.address.as_ref()
     }
@@ -4964,9 +4512,7 @@ pub struct UpdateSiteInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the site.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>
-    /// Notes about a site.
-    /// </p>
+    /// <p> Notes about a site. </p>
     pub notes: std::option::Option<std::string::String>,
 }
 impl UpdateSiteInput {
@@ -4982,9 +4528,7 @@ impl UpdateSiteInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>
-    /// Notes about a site.
-    /// </p>
+    /// <p> Notes about a site. </p>
     pub fn notes(&self) -> std::option::Option<&str> {
         self.notes.as_deref()
     }
@@ -5117,26 +4661,14 @@ pub struct ListOutpostsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum page size.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>
-    /// A filter for the lifecycle status of the Outpost.
-    /// </p>
-    /// <p>Filter values are case sensitive. If you specify multiple
-    /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
-    /// all results that match any of the specified values.</p>
+    /// <p> A filter for the lifecycle status of the Outpost. </p>
+    /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
     pub life_cycle_status_filter: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> A filter for the Availability Zone (<code>us-east-1a</code>) of the Outpost. </p>
-    ///
-    /// <p>Filter values are case sensitive. If you specify multiple
-    /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
-    /// all results that match any of the specified values.</p>
+    /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
     pub availability_zone_filter: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>
-    /// A filter for the AZ IDs (<code>use1-az1</code>) of the Outpost.
-    /// </p>
-    ///
-    /// <p>Filter values are case sensitive. If you specify multiple
-    /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
-    /// all results that match any of the specified values.</p>
+    /// <p> A filter for the AZ IDs (<code>use1-az1</code>) of the Outpost. </p>
+    /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
     pub availability_zone_id_filter: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ListOutpostsInput {
@@ -5148,30 +4680,18 @@ impl ListOutpostsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>
-    /// A filter for the lifecycle status of the Outpost.
-    /// </p>
-    /// <p>Filter values are case sensitive. If you specify multiple
-    /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
-    /// all results that match any of the specified values.</p>
+    /// <p> A filter for the lifecycle status of the Outpost. </p>
+    /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
     pub fn life_cycle_status_filter(&self) -> std::option::Option<&[std::string::String]> {
         self.life_cycle_status_filter.as_deref()
     }
     /// <p> A filter for the Availability Zone (<code>us-east-1a</code>) of the Outpost. </p>
-    ///
-    /// <p>Filter values are case sensitive. If you specify multiple
-    /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
-    /// all results that match any of the specified values.</p>
+    /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
     pub fn availability_zone_filter(&self) -> std::option::Option<&[std::string::String]> {
         self.availability_zone_filter.as_deref()
     }
-    /// <p>
-    /// A filter for the AZ IDs (<code>use1-az1</code>) of the Outpost.
-    /// </p>
-    ///
-    /// <p>Filter values are case sensitive. If you specify multiple
-    /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
-    /// all results that match any of the specified values.</p>
+    /// <p> A filter for the AZ IDs (<code>use1-az1</code>) of the Outpost. </p>
+    /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
     pub fn availability_zone_id_filter(&self) -> std::option::Option<&[std::string::String]> {
         self.availability_zone_id_filter.as_deref()
     }
@@ -5195,9 +4715,7 @@ impl std::fmt::Debug for ListOutpostsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOrdersInput {
-    /// <p>
-    /// The ID or the Amazon Resource Name (ARN) of the Outpost.
-    /// </p>
+    /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
     pub outpost_identifier_filter: std::option::Option<std::string::String>,
     /// <p>The pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -5205,9 +4723,7 @@ pub struct ListOrdersInput {
     pub max_results: std::option::Option<i32>,
 }
 impl ListOrdersInput {
-    /// <p>
-    /// The ID or the Amazon Resource Name (ARN) of the Outpost.
-    /// </p>
+    /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
     pub fn outpost_identifier_filter(&self) -> std::option::Option<&str> {
         self.outpost_identifier_filter.as_deref()
     }
@@ -5238,27 +4754,15 @@ pub struct ListCatalogItemsInput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum page size.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>
-    /// A filter for the class of items in the catalog.
-    /// </p>
-    /// <p>Filter values are case sensitive. If you specify multiple
-    /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
-    /// all results that match any of the specified values.</p>
+    /// <p> A filter for the class of items in the catalog. </p>
+    /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
     pub item_class_filter: std::option::Option<std::vec::Vec<crate::model::CatalogItemClass>>,
-    /// <p>
-    /// A filter for the storage options of items in the catalog.
-    /// </p>
-    /// <p>Filter values are case sensitive. If you specify multiple
-    /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
-    /// all results that match any of the specified values.</p>
+    /// <p> A filter for the storage options of items in the catalog. </p>
+    /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
     pub supported_storage_filter:
         std::option::Option<std::vec::Vec<crate::model::SupportedStorageEnum>>,
-    /// <p>
-    /// A filter for EC2 family options for items in the catalog.
-    /// </p>
-    /// <p>Filter values are case sensitive. If you specify multiple
-    /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
-    /// all results that match any of the specified values.</p>
+    /// <p> A filter for EC2 family options for items in the catalog. </p>
+    /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
     pub ec2_family_filter: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ListCatalogItemsInput {
@@ -5270,32 +4774,20 @@ impl ListCatalogItemsInput {
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>
-    /// A filter for the class of items in the catalog.
-    /// </p>
-    /// <p>Filter values are case sensitive. If you specify multiple
-    /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
-    /// all results that match any of the specified values.</p>
+    /// <p> A filter for the class of items in the catalog. </p>
+    /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
     pub fn item_class_filter(&self) -> std::option::Option<&[crate::model::CatalogItemClass]> {
         self.item_class_filter.as_deref()
     }
-    /// <p>
-    /// A filter for the storage options of items in the catalog.
-    /// </p>
-    /// <p>Filter values are case sensitive. If you specify multiple
-    /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
-    /// all results that match any of the specified values.</p>
+    /// <p> A filter for the storage options of items in the catalog. </p>
+    /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
     pub fn supported_storage_filter(
         &self,
     ) -> std::option::Option<&[crate::model::SupportedStorageEnum]> {
         self.supported_storage_filter.as_deref()
     }
-    /// <p>
-    /// A filter for EC2 family options for items in the catalog.
-    /// </p>
-    /// <p>Filter values are case sensitive. If you specify multiple
-    /// values for a filter, the values are joined with an <code>OR</code>, and the request returns
-    /// all results that match any of the specified values.</p>
+    /// <p> A filter for EC2 family options for items in the catalog. </p>
+    /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
     pub fn ec2_family_filter(&self) -> std::option::Option<&[std::string::String]> {
         self.ec2_family_filter.as_deref()
     }
@@ -5365,9 +4857,7 @@ impl std::fmt::Debug for GetSiteInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetOutpostInstanceTypesInput {
-    /// <p>
-    /// The ID of the Outpost.
-    /// </p>
+    /// <p> The ID of the Outpost. </p>
     pub outpost_id: std::option::Option<std::string::String>,
     /// <p>The pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -5375,9 +4865,7 @@ pub struct GetOutpostInstanceTypesInput {
     pub max_results: std::option::Option<i32>,
 }
 impl GetOutpostInstanceTypesInput {
-    /// <p>
-    /// The ID of the Outpost.
-    /// </p>
+    /// <p> The ID of the Outpost. </p>
     pub fn outpost_id(&self) -> std::option::Option<&str> {
         self.outpost_id.as_deref()
     }
@@ -5404,15 +4892,11 @@ impl std::fmt::Debug for GetOutpostInstanceTypesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetOutpostInput {
-    /// <p>
-    /// The ID of the Outpost.
-    /// </p>
+    /// <p> The ID of the Outpost. </p>
     pub outpost_id: std::option::Option<std::string::String>,
 }
 impl GetOutpostInput {
-    /// <p>
-    /// The ID of the Outpost.
-    /// </p>
+    /// <p> The ID of the Outpost. </p>
     pub fn outpost_id(&self) -> std::option::Option<&str> {
         self.outpost_id.as_deref()
     }
@@ -5492,15 +4976,11 @@ impl std::fmt::Debug for DeleteSiteInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteOutpostInput {
-    /// <p>
-    /// The ID of the Outpost.
-    /// </p>
+    /// <p> The ID of the Outpost. </p>
     pub outpost_id: std::option::Option<std::string::String>,
 }
 impl DeleteOutpostInput {
-    /// <p>
-    /// The ID of the Outpost.
-    /// </p>
+    /// <p> The ID of the Outpost. </p>
     pub fn outpost_id(&self) -> std::option::Option<&str> {
         self.outpost_id.as_deref()
     }
@@ -5521,30 +5001,16 @@ pub struct CreateSiteInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the site.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>Additional information that you provide about site access requirements, electrician
-    /// scheduling, personal protective equipment, or regulation of equipment materials that could
-    /// affect your installation process. </p>
+    /// <p>Additional information that you provide about site access requirements, electrician scheduling, personal protective equipment, or regulation of equipment materials that could affect your installation process. </p>
     pub notes: std::option::Option<std::string::String>,
-    /// <p>
-    /// The tags to apply to a site.
-    /// </p>
+    /// <p> The tags to apply to a site. </p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>
-    /// The location to install and power on the hardware. This address might be
-    /// different from the shipping address.
-    /// </p>
+    /// <p> The location to install and power on the hardware. This address might be different from the shipping address. </p>
     pub operating_address: std::option::Option<crate::model::Address>,
-    /// <p>
-    /// The location to ship the hardware. This address might be different
-    /// from the operating address.
-    /// </p>
+    /// <p> The location to ship the hardware. This address might be different from the operating address. </p>
     pub shipping_address: std::option::Option<crate::model::Address>,
-    /// <p> Information about the physical and logistical details for the rack at this site.
-    /// For more information
-    /// about hardware requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#checklist">Network
-    /// readiness checklist</a> in the Amazon Web Services Outposts User Guide.
-    /// </p>
+    /// <p> Information about the physical and logistical details for the rack at this site. For more information about hardware requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#checklist">Network readiness checklist</a> in the Amazon Web Services Outposts User Guide. </p>
     pub rack_physical_properties: std::option::Option<crate::model::RackPhysicalProperties>,
 }
 impl CreateSiteInput {
@@ -5556,40 +5022,26 @@ impl CreateSiteInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Additional information that you provide about site access requirements, electrician
-    /// scheduling, personal protective equipment, or regulation of equipment materials that could
-    /// affect your installation process. </p>
+    /// <p>Additional information that you provide about site access requirements, electrician scheduling, personal protective equipment, or regulation of equipment materials that could affect your installation process. </p>
     pub fn notes(&self) -> std::option::Option<&str> {
         self.notes.as_deref()
     }
-    /// <p>
-    /// The tags to apply to a site.
-    /// </p>
+    /// <p> The tags to apply to a site. </p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
     }
-    /// <p>
-    /// The location to install and power on the hardware. This address might be
-    /// different from the shipping address.
-    /// </p>
+    /// <p> The location to install and power on the hardware. This address might be different from the shipping address. </p>
     pub fn operating_address(&self) -> std::option::Option<&crate::model::Address> {
         self.operating_address.as_ref()
     }
-    /// <p>
-    /// The location to ship the hardware. This address might be different
-    /// from the operating address.
-    /// </p>
+    /// <p> The location to ship the hardware. This address might be different from the operating address. </p>
     pub fn shipping_address(&self) -> std::option::Option<&crate::model::Address> {
         self.shipping_address.as_ref()
     }
-    /// <p> Information about the physical and logistical details for the rack at this site.
-    /// For more information
-    /// about hardware requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#checklist">Network
-    /// readiness checklist</a> in the Amazon Web Services Outposts User Guide.
-    /// </p>
+    /// <p> Information about the physical and logistical details for the rack at this site. For more information about hardware requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#checklist">Network readiness checklist</a> in the Amazon Web Services Outposts User Guide. </p>
     pub fn rack_physical_properties(
         &self,
     ) -> std::option::Option<&crate::model::RackPhysicalProperties> {
@@ -5627,9 +5079,7 @@ pub struct CreateOutpostInput {
     /// <p>The tags to apply to the Outpost.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>
-    /// The type of hardware for this Outpost.
-    /// </p>
+    /// <p> The type of hardware for this Outpost. </p>
     pub supported_hardware_type: std::option::Option<crate::model::SupportedHardwareType>,
 }
 impl CreateOutpostInput {
@@ -5660,9 +5110,7 @@ impl CreateOutpostInput {
     {
         self.tags.as_ref()
     }
-    /// <p>
-    /// The type of hardware for this Outpost.
-    /// </p>
+    /// <p> The type of hardware for this Outpost. </p>
     pub fn supported_hardware_type(
         &self,
     ) -> std::option::Option<&crate::model::SupportedHardwareType> {
@@ -5687,9 +5135,7 @@ impl std::fmt::Debug for CreateOutpostInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateOrderInput {
-    /// <p>
-    /// The ID or the Amazon Resource Name (ARN) of the Outpost.
-    /// </p>
+    /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
     pub outpost_identifier: std::option::Option<std::string::String>,
     /// <p>The line items that make up the order.</p>
     pub line_items: std::option::Option<std::vec::Vec<crate::model::LineItemRequest>>,
@@ -5699,9 +5145,7 @@ pub struct CreateOrderInput {
     pub payment_term: std::option::Option<crate::model::PaymentTerm>,
 }
 impl CreateOrderInput {
-    /// <p>
-    /// The ID or the Amazon Resource Name (ARN) of the Outpost.
-    /// </p>
+    /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
     pub fn outpost_identifier(&self) -> std::option::Option<&str> {
         self.outpost_identifier.as_deref()
     }
@@ -5733,15 +5177,11 @@ impl std::fmt::Debug for CreateOrderInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelOrderInput {
-    /// <p>
-    /// The ID of the order to cancel.
-    /// </p>
+    /// <p> The ID of the order to cancel. </p>
     pub order_id: std::option::Option<std::string::String>,
 }
 impl CancelOrderInput {
-    /// <p>
-    /// The ID of the order to cancel.
-    /// </p>
+    /// <p> The ID of the order to cancel. </p>
     pub fn order_id(&self) -> std::option::Option<&str> {
         self.order_id.as_deref()
     }

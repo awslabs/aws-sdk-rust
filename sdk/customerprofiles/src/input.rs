@@ -250,16 +250,12 @@ pub mod create_domain_input {
             self.default_expiration_days = input;
             self
         }
-        /// <p>The default encryption key, which is an AWS managed key, is used when no specific type
-        /// of encryption key is specified. It is used to encrypt all data before it is placed in
-        /// permanent or semi-permanent storage.</p>
+        /// <p>The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage.</p>
         pub fn default_encryption_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_encryption_key = Some(input.into());
             self
         }
-        /// <p>The default encryption key, which is an AWS managed key, is used when no specific type
-        /// of encryption key is specified. It is used to encrypt all data before it is placed in
-        /// permanent or semi-permanent storage.</p>
+        /// <p>The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage.</p>
         pub fn set_default_encryption_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -267,18 +263,12 @@ pub mod create_domain_input {
             self.default_encryption_key = input;
             self
         }
-        /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with
-        /// ingesting data from third party applications. You must set up a policy on the
-        /// DeadLetterQueue for the SendMessage operation to enable Amazon Connect Customer Profiles to send
-        /// messages to the DeadLetterQueue.</p>
+        /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications. You must set up a policy on the DeadLetterQueue for the SendMessage operation to enable Amazon Connect Customer Profiles to send messages to the DeadLetterQueue.</p>
         pub fn dead_letter_queue_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.dead_letter_queue_url = Some(input.into());
             self
         }
-        /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with
-        /// ingesting data from third party applications. You must set up a policy on the
-        /// DeadLetterQueue for the SendMessage operation to enable Amazon Connect Customer Profiles to send
-        /// messages to the DeadLetterQueue.</p>
+        /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications. You must set up a policy on the DeadLetterQueue for the SendMessage operation to enable Amazon Connect Customer Profiles to send messages to the DeadLetterQueue.</p>
         pub fn set_dead_letter_queue_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -286,24 +276,14 @@ pub mod create_domain_input {
             self.dead_letter_queue_url = input;
             self
         }
-        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly
-        /// batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every
-        /// Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
-        /// <p>After the Identity Resolution Job completes, use the
-        /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
-        /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from
-        /// S3.</p>
+        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+        /// <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
         pub fn matching(mut self, input: crate::model::MatchingRequest) -> Self {
             self.matching = Some(input);
             self
         }
-        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly
-        /// batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every
-        /// Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
-        /// <p>After the Identity Resolution Job completes, use the
-        /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
-        /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from
-        /// S3.</p>
+        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+        /// <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
         pub fn set_matching(
             mut self,
             input: std::option::Option<crate::model::MatchingRequest>,
@@ -630,14 +610,12 @@ pub mod create_profile_input {
             self.gender = input;
             self
         }
-        /// <p>The customer’s phone number, which has not been specified as a mobile, home, or business
-        /// number. </p>
+        /// <p>The customer’s phone number, which has not been specified as a mobile, home, or business number. </p>
         pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
             self.phone_number = Some(input.into());
             self
         }
-        /// <p>The customer’s phone number, which has not been specified as a mobile, home, or business
-        /// number. </p>
+        /// <p>The customer’s phone number, which has not been specified as a mobile, home, or business number. </p>
         pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.phone_number = input;
             self
@@ -681,14 +659,12 @@ pub mod create_profile_input {
             self.business_phone_number = input;
             self
         }
-        /// <p>The customer’s email address, which has not been specified as a personal or business
-        /// address. </p>
+        /// <p>The customer’s email address, which has not been specified as a personal or business address. </p>
         pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
             self.email_address = Some(input.into());
             self
         }
-        /// <p>The customer’s email address, which has not been specified as a personal or business
-        /// address. </p>
+        /// <p>The customer’s email address, which has not been specified as a personal or business address. </p>
         pub fn set_email_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -722,14 +698,12 @@ pub mod create_profile_input {
             self.business_email_address = input;
             self
         }
-        /// <p>A generic address associated with the customer that is not mailing, shipping, or
-        /// billing.</p>
+        /// <p>A generic address associated with the customer that is not mailing, shipping, or billing.</p>
         pub fn address(mut self, input: crate::model::Address) -> Self {
             self.address = Some(input);
             self
         }
-        /// <p>A generic address associated with the customer that is not mailing, shipping, or
-        /// billing.</p>
+        /// <p>A generic address associated with the customer that is not mailing, shipping, or billing.</p>
         pub fn set_address(mut self, input: std::option::Option<crate::model::Address>) -> Self {
             self.address = input;
             self
@@ -2816,14 +2790,12 @@ pub mod get_matches_input {
         pub(crate) domain_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3720,14 +3692,12 @@ pub mod list_identity_resolution_jobs_input {
             self.domain_name = input;
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The token for the next set of results. Use the value returned in the previous
-        /// response in the next request to retrieve the next set of results.</p>
+        /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4161,14 +4131,12 @@ pub mod list_profile_objects_input {
             self.profile_id = input;
             self
         }
-        /// <p>Applies a filter to the response to include profile objects with the specified index
-        /// values. This filter is only supported for ObjectTypeName _asset and _case.</p>
+        /// <p>Applies a filter to the response to include profile objects with the specified index values. This filter is only supported for ObjectTypeName _asset and _case.</p>
         pub fn object_filter(mut self, input: crate::model::ObjectFilter) -> Self {
             self.object_filter = Some(input);
             self
         }
-        /// <p>Applies a filter to the response to include profile objects with the specified index
-        /// values. This filter is only supported for ObjectTypeName _asset and _case.</p>
+        /// <p>Applies a filter to the response to include profile objects with the specified index values. This filter is only supported for ObjectTypeName _asset and _case.</p>
         pub fn set_object_filter(
             mut self,
             input: std::option::Option<crate::model::ObjectFilter>,
@@ -4917,9 +4885,7 @@ pub mod merge_profiles_input {
             self.profile_ids_to_be_merged = input;
             self
         }
-        /// <p>The identifiers of the fields in the profile that has the information you want to apply
-        /// to the merge. For example, say you want to merge EmailAddress from Profile1 into
-        /// MainProfile. This would be the identifier of the EmailAddress field in Profile1. </p>
+        /// <p>The identifiers of the fields in the profile that has the information you want to apply to the merge. For example, say you want to merge EmailAddress from Profile1 into MainProfile. This would be the identifier of the EmailAddress field in Profile1. </p>
         pub fn field_source_profile_ids(
             mut self,
             input: crate::model::FieldSourceProfileIds,
@@ -4927,9 +4893,7 @@ pub mod merge_profiles_input {
             self.field_source_profile_ids = Some(input);
             self
         }
-        /// <p>The identifiers of the fields in the profile that has the information you want to apply
-        /// to the merge. For example, say you want to merge EmailAddress from Profile1 into
-        /// MainProfile. This would be the identifier of the EmailAddress field in Profile1. </p>
+        /// <p>The identifiers of the fields in the profile that has the information you want to apply to the merge. For example, say you want to merge EmailAddress from Profile1 into MainProfile. This would be the identifier of the EmailAddress field in Profile1. </p>
         pub fn set_field_source_profile_ids(
             mut self,
             input: std::option::Option<crate::model::FieldSourceProfileIds>,
@@ -5162,14 +5126,12 @@ pub mod put_integration_input {
             self.tags = input;
             self
         }
-        /// <p>The configuration that controls how Customer Profiles retrieves data from the
-        /// source.</p>
+        /// <p>The configuration that controls how Customer Profiles retrieves data from the source.</p>
         pub fn flow_definition(mut self, input: crate::model::FlowDefinition) -> Self {
             self.flow_definition = Some(input);
             self
         }
-        /// <p>The configuration that controls how Customer Profiles retrieves data from the
-        /// source.</p>
+        /// <p>The configuration that controls how Customer Profiles retrieves data from the source.</p>
         pub fn set_flow_definition(
             mut self,
             input: std::option::Option<crate::model::FlowDefinition>,
@@ -5608,14 +5570,12 @@ pub mod put_profile_object_type_input {
             self.expiration_days = input;
             self
         }
-        /// <p>The customer-provided key to encrypt the profile object that will be created in this
-        /// profile object type.</p>
+        /// <p>The customer-provided key to encrypt the profile object that will be created in this profile object type.</p>
         pub fn encryption_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.encryption_key = Some(input.into());
             self
         }
-        /// <p>The customer-provided key to encrypt the profile object that will be created in this
-        /// profile object type.</p>
+        /// <p>The customer-provided key to encrypt the profile object that will be created in this profile object type.</p>
         pub fn set_encryption_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5623,26 +5583,17 @@ pub mod put_profile_object_type_input {
             self.encryption_key = input;
             self
         }
-        /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist
-        /// for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation
-        /// flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and
-        /// associate this object with the profile. If it is set to <code>TRUE</code>, and if no match
-        /// is found, then the service creates a new standard profile.</p>
+        /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and associate this object with the profile. If it is set to <code>TRUE</code>, and if no match is found, then the service creates a new standard profile.</p>
         pub fn allow_profile_creation(mut self, input: bool) -> Self {
             self.allow_profile_creation = Some(input);
             self
         }
-        /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist
-        /// for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation
-        /// flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and
-        /// associate this object with the profile. If it is set to <code>TRUE</code>, and if no match
-        /// is found, then the service creates a new standard profile.</p>
+        /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and associate this object with the profile. If it is set to <code>TRUE</code>, and if no match is found, then the service creates a new standard profile.</p>
         pub fn set_allow_profile_creation(mut self, input: std::option::Option<bool>) -> Self {
             self.allow_profile_creation = input;
             self
         }
-        /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up.
-        /// </p>
+        /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up. </p>
         pub fn source_last_updated_timestamp_format(
             mut self,
             input: impl Into<std::string::String>,
@@ -5650,8 +5601,7 @@ pub mod put_profile_object_type_input {
             self.source_last_updated_timestamp_format = Some(input.into());
             self
         }
-        /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up.
-        /// </p>
+        /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up. </p>
         pub fn set_source_last_updated_timestamp_format(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5958,16 +5908,12 @@ pub mod search_profiles_input {
             self.domain_name = input;
             self
         }
-        /// <p>A searchable identifier of a customer profile. The predefined keys you can use to search include: _account, _profileId,
-        /// _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId,
-        /// _salesforceContactId, _zendeskUserId, _zendeskExternalId, _serviceNowSystemId.</p>
+        /// <p>A searchable identifier of a customer profile. The predefined keys you can use to search include: _account, _profileId, _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId, _salesforceContactId, _zendeskUserId, _zendeskExternalId, _serviceNowSystemId.</p>
         pub fn key_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_name = Some(input.into());
             self
         }
-        /// <p>A searchable identifier of a customer profile. The predefined keys you can use to search include: _account, _profileId,
-        /// _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId,
-        /// _salesforceContactId, _zendeskUserId, _zendeskExternalId, _serviceNowSystemId.</p>
+        /// <p>A searchable identifier of a customer profile. The predefined keys you can use to search include: _account, _profileId, _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId, _salesforceContactId, _zendeskUserId, _zendeskExternalId, _serviceNowSystemId.</p>
         pub fn set_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_name = input;
             self
@@ -6576,18 +6522,12 @@ pub mod update_domain_input {
             self.default_expiration_days = input;
             self
         }
-        /// <p>The default encryption key, which is an AWS managed key, is used when no specific type
-        /// of encryption key is specified. It is used to encrypt all data before it is placed in
-        /// permanent or semi-permanent storage. If specified as an empty string, it will clear any
-        /// existing value.</p>
+        /// <p>The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage. If specified as an empty string, it will clear any existing value.</p>
         pub fn default_encryption_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_encryption_key = Some(input.into());
             self
         }
-        /// <p>The default encryption key, which is an AWS managed key, is used when no specific type
-        /// of encryption key is specified. It is used to encrypt all data before it is placed in
-        /// permanent or semi-permanent storage. If specified as an empty string, it will clear any
-        /// existing value.</p>
+        /// <p>The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage. If specified as an empty string, it will clear any existing value.</p>
         pub fn set_default_encryption_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6595,20 +6535,12 @@ pub mod update_domain_input {
             self.default_encryption_key = input;
             self
         }
-        /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with
-        /// ingesting data from third party applications. If specified as an empty string, it will
-        /// clear any existing value. You must set up a policy on the DeadLetterQueue for the
-        /// SendMessage operation to enable Amazon Connect Customer Profiles to send messages to the
-        /// DeadLetterQueue.</p>
+        /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications. If specified as an empty string, it will clear any existing value. You must set up a policy on the DeadLetterQueue for the SendMessage operation to enable Amazon Connect Customer Profiles to send messages to the DeadLetterQueue.</p>
         pub fn dead_letter_queue_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.dead_letter_queue_url = Some(input.into());
             self
         }
-        /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with
-        /// ingesting data from third party applications. If specified as an empty string, it will
-        /// clear any existing value. You must set up a policy on the DeadLetterQueue for the
-        /// SendMessage operation to enable Amazon Connect Customer Profiles to send messages to the
-        /// DeadLetterQueue.</p>
+        /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications. If specified as an empty string, it will clear any existing value. You must set up a policy on the DeadLetterQueue for the SendMessage operation to enable Amazon Connect Customer Profiles to send messages to the DeadLetterQueue.</p>
         pub fn set_dead_letter_queue_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6616,24 +6548,14 @@ pub mod update_domain_input {
             self.dead_letter_queue_url = input;
             self
         }
-        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly
-        /// batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every
-        /// Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
-        /// <p>After the Identity Resolution Job completes, use the
-        /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
-        /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from
-        /// S3.</p>
+        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+        /// <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
         pub fn matching(mut self, input: crate::model::MatchingRequest) -> Self {
             self.matching = Some(input);
             self
         }
-        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly
-        /// batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every
-        /// Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
-        /// <p>After the Identity Resolution Job completes, use the
-        /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
-        /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from
-        /// S3.</p>
+        /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+        /// <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
         pub fn set_matching(
             mut self,
             input: std::option::Option<crate::model::MatchingRequest>,
@@ -6971,14 +6893,12 @@ pub mod update_profile_input {
             self.gender = input;
             self
         }
-        /// <p>The customer’s phone number, which has not been specified as a mobile, home, or business
-        /// number. </p>
+        /// <p>The customer’s phone number, which has not been specified as a mobile, home, or business number. </p>
         pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
             self.phone_number = Some(input.into());
             self
         }
-        /// <p>The customer’s phone number, which has not been specified as a mobile, home, or business
-        /// number. </p>
+        /// <p>The customer’s phone number, which has not been specified as a mobile, home, or business number. </p>
         pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.phone_number = input;
             self
@@ -7022,14 +6942,12 @@ pub mod update_profile_input {
             self.business_phone_number = input;
             self
         }
-        /// <p>The customer’s email address, which has not been specified as a personal or business
-        /// address. </p>
+        /// <p>The customer’s email address, which has not been specified as a personal or business address. </p>
         pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
             self.email_address = Some(input.into());
             self
         }
-        /// <p>The customer’s email address, which has not been specified as a personal or business
-        /// address. </p>
+        /// <p>The customer’s email address, which has not been specified as a personal or business address. </p>
         pub fn set_email_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7063,14 +6981,12 @@ pub mod update_profile_input {
             self.business_email_address = input;
             self
         }
-        /// <p>A generic address associated with the customer that is not mailing, shipping, or
-        /// billing.</p>
+        /// <p>A generic address associated with the customer that is not mailing, shipping, or billing.</p>
         pub fn address(mut self, input: crate::model::UpdateAddress) -> Self {
             self.address = Some(input);
             self
         }
-        /// <p>A generic address associated with the customer that is not mailing, shipping, or
-        /// billing.</p>
+        /// <p>A generic address associated with the customer that is not mailing, shipping, or billing.</p>
         pub fn set_address(
             mut self,
             input: std::option::Option<crate::model::UpdateAddress>,
@@ -7339,8 +7255,7 @@ pub struct UpdateProfileInput {
     pub birth_date: std::option::Option<std::string::String>,
     /// <p>The gender with which the customer identifies. </p>
     pub gender: std::option::Option<crate::model::Gender>,
-    /// <p>The customer’s phone number, which has not been specified as a mobile, home, or business
-    /// number. </p>
+    /// <p>The customer’s phone number, which has not been specified as a mobile, home, or business number. </p>
     pub phone_number: std::option::Option<std::string::String>,
     /// <p>The customer’s mobile phone number.</p>
     pub mobile_phone_number: std::option::Option<std::string::String>,
@@ -7348,15 +7263,13 @@ pub struct UpdateProfileInput {
     pub home_phone_number: std::option::Option<std::string::String>,
     /// <p>The customer’s business phone number.</p>
     pub business_phone_number: std::option::Option<std::string::String>,
-    /// <p>The customer’s email address, which has not been specified as a personal or business
-    /// address. </p>
+    /// <p>The customer’s email address, which has not been specified as a personal or business address. </p>
     pub email_address: std::option::Option<std::string::String>,
     /// <p>The customer’s personal email address.</p>
     pub personal_email_address: std::option::Option<std::string::String>,
     /// <p>The customer’s business email address.</p>
     pub business_email_address: std::option::Option<std::string::String>,
-    /// <p>A generic address associated with the customer that is not mailing, shipping, or
-    /// billing.</p>
+    /// <p>A generic address associated with the customer that is not mailing, shipping, or billing.</p>
     pub address: std::option::Option<crate::model::UpdateAddress>,
     /// <p>The customer’s shipping address.</p>
     pub shipping_address: std::option::Option<crate::model::UpdateAddress>,
@@ -7413,8 +7326,7 @@ impl UpdateProfileInput {
     pub fn gender(&self) -> std::option::Option<&crate::model::Gender> {
         self.gender.as_ref()
     }
-    /// <p>The customer’s phone number, which has not been specified as a mobile, home, or business
-    /// number. </p>
+    /// <p>The customer’s phone number, which has not been specified as a mobile, home, or business number. </p>
     pub fn phone_number(&self) -> std::option::Option<&str> {
         self.phone_number.as_deref()
     }
@@ -7430,8 +7342,7 @@ impl UpdateProfileInput {
     pub fn business_phone_number(&self) -> std::option::Option<&str> {
         self.business_phone_number.as_deref()
     }
-    /// <p>The customer’s email address, which has not been specified as a personal or business
-    /// address. </p>
+    /// <p>The customer’s email address, which has not been specified as a personal or business address. </p>
     pub fn email_address(&self) -> std::option::Option<&str> {
         self.email_address.as_deref()
     }
@@ -7443,8 +7354,7 @@ impl UpdateProfileInput {
     pub fn business_email_address(&self) -> std::option::Option<&str> {
         self.business_email_address.as_deref()
     }
-    /// <p>A generic address associated with the customer that is not mailing, shipping, or
-    /// billing.</p>
+    /// <p>A generic address associated with the customer that is not mailing, shipping, or billing.</p>
     pub fn address(&self) -> std::option::Option<&crate::model::UpdateAddress> {
         self.address.as_ref()
     }
@@ -7506,24 +7416,12 @@ pub struct UpdateDomainInput {
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The default number of days until the data within the domain expires.</p>
     pub default_expiration_days: std::option::Option<i32>,
-    /// <p>The default encryption key, which is an AWS managed key, is used when no specific type
-    /// of encryption key is specified. It is used to encrypt all data before it is placed in
-    /// permanent or semi-permanent storage. If specified as an empty string, it will clear any
-    /// existing value.</p>
+    /// <p>The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage. If specified as an empty string, it will clear any existing value.</p>
     pub default_encryption_key: std::option::Option<std::string::String>,
-    /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with
-    /// ingesting data from third party applications. If specified as an empty string, it will
-    /// clear any existing value. You must set up a policy on the DeadLetterQueue for the
-    /// SendMessage operation to enable Amazon Connect Customer Profiles to send messages to the
-    /// DeadLetterQueue.</p>
+    /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications. If specified as an empty string, it will clear any existing value. You must set up a policy on the DeadLetterQueue for the SendMessage operation to enable Amazon Connect Customer Profiles to send messages to the DeadLetterQueue.</p>
     pub dead_letter_queue_url: std::option::Option<std::string::String>,
-    /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly
-    /// batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every
-    /// Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
-    /// <p>After the Identity Resolution Job completes, use the
-    /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
-    /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from
-    /// S3.</p>
+    /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+    /// <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
     pub matching: std::option::Option<crate::model::MatchingRequest>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags:
@@ -7538,28 +7436,16 @@ impl UpdateDomainInput {
     pub fn default_expiration_days(&self) -> std::option::Option<i32> {
         self.default_expiration_days
     }
-    /// <p>The default encryption key, which is an AWS managed key, is used when no specific type
-    /// of encryption key is specified. It is used to encrypt all data before it is placed in
-    /// permanent or semi-permanent storage. If specified as an empty string, it will clear any
-    /// existing value.</p>
+    /// <p>The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage. If specified as an empty string, it will clear any existing value.</p>
     pub fn default_encryption_key(&self) -> std::option::Option<&str> {
         self.default_encryption_key.as_deref()
     }
-    /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with
-    /// ingesting data from third party applications. If specified as an empty string, it will
-    /// clear any existing value. You must set up a policy on the DeadLetterQueue for the
-    /// SendMessage operation to enable Amazon Connect Customer Profiles to send messages to the
-    /// DeadLetterQueue.</p>
+    /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications. If specified as an empty string, it will clear any existing value. You must set up a policy on the DeadLetterQueue for the SendMessage operation to enable Amazon Connect Customer Profiles to send messages to the DeadLetterQueue.</p>
     pub fn dead_letter_queue_url(&self) -> std::option::Option<&str> {
         self.dead_letter_queue_url.as_deref()
     }
-    /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly
-    /// batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every
-    /// Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
-    /// <p>After the Identity Resolution Job completes, use the
-    /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
-    /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from
-    /// S3.</p>
+    /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+    /// <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
     pub fn matching(&self) -> std::option::Option<&crate::model::MatchingRequest> {
         self.matching.as_ref()
     }
@@ -7654,9 +7540,7 @@ pub struct SearchProfilesInput {
     pub max_results: std::option::Option<i32>,
     /// <p>The unique name of the domain.</p>
     pub domain_name: std::option::Option<std::string::String>,
-    /// <p>A searchable identifier of a customer profile. The predefined keys you can use to search include: _account, _profileId,
-    /// _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId,
-    /// _salesforceContactId, _zendeskUserId, _zendeskExternalId, _serviceNowSystemId.</p>
+    /// <p>A searchable identifier of a customer profile. The predefined keys you can use to search include: _account, _profileId, _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId, _salesforceContactId, _zendeskUserId, _zendeskExternalId, _serviceNowSystemId.</p>
     pub key_name: std::option::Option<std::string::String>,
     /// <p>A list of key values.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7674,9 +7558,7 @@ impl SearchProfilesInput {
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
-    /// <p>A searchable identifier of a customer profile. The predefined keys you can use to search include: _account, _profileId,
-    /// _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId,
-    /// _salesforceContactId, _zendeskUserId, _zendeskExternalId, _serviceNowSystemId.</p>
+    /// <p>A searchable identifier of a customer profile. The predefined keys you can use to search include: _account, _profileId, _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId, _salesforceContactId, _zendeskUserId, _zendeskExternalId, _serviceNowSystemId.</p>
     pub fn key_name(&self) -> std::option::Option<&str> {
         self.key_name.as_deref()
     }
@@ -7711,17 +7593,11 @@ pub struct PutProfileObjectTypeInput {
     pub template_id: std::option::Option<std::string::String>,
     /// <p>The number of days until the data in the object expires.</p>
     pub expiration_days: std::option::Option<i32>,
-    /// <p>The customer-provided key to encrypt the profile object that will be created in this
-    /// profile object type.</p>
+    /// <p>The customer-provided key to encrypt the profile object that will be created in this profile object type.</p>
     pub encryption_key: std::option::Option<std::string::String>,
-    /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist
-    /// for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation
-    /// flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and
-    /// associate this object with the profile. If it is set to <code>TRUE</code>, and if no match
-    /// is found, then the service creates a new standard profile.</p>
+    /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and associate this object with the profile. If it is set to <code>TRUE</code>, and if no match is found, then the service creates a new standard profile.</p>
     pub allow_profile_creation: bool,
-    /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up.
-    /// </p>
+    /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up. </p>
     pub source_last_updated_timestamp_format: std::option::Option<std::string::String>,
     /// <p>A map of the name and ObjectType field.</p>
     pub fields: std::option::Option<
@@ -7756,21 +7632,15 @@ impl PutProfileObjectTypeInput {
     pub fn expiration_days(&self) -> std::option::Option<i32> {
         self.expiration_days
     }
-    /// <p>The customer-provided key to encrypt the profile object that will be created in this
-    /// profile object type.</p>
+    /// <p>The customer-provided key to encrypt the profile object that will be created in this profile object type.</p>
     pub fn encryption_key(&self) -> std::option::Option<&str> {
         self.encryption_key.as_deref()
     }
-    /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist
-    /// for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation
-    /// flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and
-    /// associate this object with the profile. If it is set to <code>TRUE</code>, and if no match
-    /// is found, then the service creates a new standard profile.</p>
+    /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and associate this object with the profile. If it is set to <code>TRUE</code>, and if no match is found, then the service creates a new standard profile.</p>
     pub fn allow_profile_creation(&self) -> bool {
         self.allow_profile_creation
     }
-    /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up.
-    /// </p>
+    /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up. </p>
     pub fn source_last_updated_timestamp_format(&self) -> std::option::Option<&str> {
         self.source_last_updated_timestamp_format.as_deref()
     }
@@ -7867,8 +7737,7 @@ pub struct PutIntegrationInput {
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The configuration that controls how Customer Profiles retrieves data from the
-    /// source.</p>
+    /// <p>The configuration that controls how Customer Profiles retrieves data from the source.</p>
     pub flow_definition: std::option::Option<crate::model::FlowDefinition>,
 }
 impl PutIntegrationInput {
@@ -7891,8 +7760,7 @@ impl PutIntegrationInput {
     {
         self.tags.as_ref()
     }
-    /// <p>The configuration that controls how Customer Profiles retrieves data from the
-    /// source.</p>
+    /// <p>The configuration that controls how Customer Profiles retrieves data from the source.</p>
     pub fn flow_definition(&self) -> std::option::Option<&crate::model::FlowDefinition> {
         self.flow_definition.as_ref()
     }
@@ -7919,9 +7787,7 @@ pub struct MergeProfilesInput {
     pub main_profile_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the profile to be merged into MainProfileId.</p>
     pub profile_ids_to_be_merged: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The identifiers of the fields in the profile that has the information you want to apply
-    /// to the merge. For example, say you want to merge EmailAddress from Profile1 into
-    /// MainProfile. This would be the identifier of the EmailAddress field in Profile1. </p>
+    /// <p>The identifiers of the fields in the profile that has the information you want to apply to the merge. For example, say you want to merge EmailAddress from Profile1 into MainProfile. This would be the identifier of the EmailAddress field in Profile1. </p>
     pub field_source_profile_ids: std::option::Option<crate::model::FieldSourceProfileIds>,
 }
 impl MergeProfilesInput {
@@ -7937,9 +7803,7 @@ impl MergeProfilesInput {
     pub fn profile_ids_to_be_merged(&self) -> std::option::Option<&[std::string::String]> {
         self.profile_ids_to_be_merged.as_deref()
     }
-    /// <p>The identifiers of the fields in the profile that has the information you want to apply
-    /// to the merge. For example, say you want to merge EmailAddress from Profile1 into
-    /// MainProfile. This would be the identifier of the EmailAddress field in Profile1. </p>
+    /// <p>The identifiers of the fields in the profile that has the information you want to apply to the merge. For example, say you want to merge EmailAddress from Profile1 into MainProfile. This would be the identifier of the EmailAddress field in Profile1. </p>
     pub fn field_source_profile_ids(
         &self,
     ) -> std::option::Option<&crate::model::FieldSourceProfileIds> {
@@ -8055,8 +7919,7 @@ pub struct ListProfileObjectsInput {
     pub object_type_name: std::option::Option<std::string::String>,
     /// <p>The unique identifier of a customer profile.</p>
     pub profile_id: std::option::Option<std::string::String>,
-    /// <p>Applies a filter to the response to include profile objects with the specified index
-    /// values. This filter is only supported for ObjectTypeName _asset and _case.</p>
+    /// <p>Applies a filter to the response to include profile objects with the specified index values. This filter is only supported for ObjectTypeName _asset and _case.</p>
     pub object_filter: std::option::Option<crate::model::ObjectFilter>,
 }
 impl ListProfileObjectsInput {
@@ -8080,8 +7943,7 @@ impl ListProfileObjectsInput {
     pub fn profile_id(&self) -> std::option::Option<&str> {
         self.profile_id.as_deref()
     }
-    /// <p>Applies a filter to the response to include profile objects with the specified index
-    /// values. This filter is only supported for ObjectTypeName _asset and _case.</p>
+    /// <p>Applies a filter to the response to include profile objects with the specified index values. This filter is only supported for ObjectTypeName _asset and _case.</p>
     pub fn object_filter(&self) -> std::option::Option<&crate::model::ObjectFilter> {
         self.object_filter.as_ref()
     }
@@ -8140,8 +8002,7 @@ impl std::fmt::Debug for ListIntegrationsInput {
 pub struct ListIdentityResolutionJobsInput {
     /// <p>The unique name of the domain.</p>
     pub domain_name: std::option::Option<std::string::String>,
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: std::option::Option<i32>,
@@ -8151,8 +8012,7 @@ impl ListIdentityResolutionJobsInput {
     pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -8287,8 +8147,7 @@ impl std::fmt::Debug for GetProfileObjectTypeInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMatchesInput {
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: std::option::Option<i32>,
@@ -8296,8 +8155,7 @@ pub struct GetMatchesInput {
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl GetMatchesInput {
-    /// <p>The token for the next set of results. Use the value returned in the previous
-    /// response in the next request to retrieve the next set of results.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -8645,8 +8503,7 @@ pub struct CreateProfileInput {
     pub birth_date: std::option::Option<std::string::String>,
     /// <p>The gender with which the customer identifies. </p>
     pub gender: std::option::Option<crate::model::Gender>,
-    /// <p>The customer’s phone number, which has not been specified as a mobile, home, or business
-    /// number. </p>
+    /// <p>The customer’s phone number, which has not been specified as a mobile, home, or business number. </p>
     pub phone_number: std::option::Option<std::string::String>,
     /// <p>The customer’s mobile phone number.</p>
     pub mobile_phone_number: std::option::Option<std::string::String>,
@@ -8654,15 +8511,13 @@ pub struct CreateProfileInput {
     pub home_phone_number: std::option::Option<std::string::String>,
     /// <p>The customer’s business phone number.</p>
     pub business_phone_number: std::option::Option<std::string::String>,
-    /// <p>The customer’s email address, which has not been specified as a personal or business
-    /// address. </p>
+    /// <p>The customer’s email address, which has not been specified as a personal or business address. </p>
     pub email_address: std::option::Option<std::string::String>,
     /// <p>The customer’s personal email address.</p>
     pub personal_email_address: std::option::Option<std::string::String>,
     /// <p>The customer’s business email address.</p>
     pub business_email_address: std::option::Option<std::string::String>,
-    /// <p>A generic address associated with the customer that is not mailing, shipping, or
-    /// billing.</p>
+    /// <p>A generic address associated with the customer that is not mailing, shipping, or billing.</p>
     pub address: std::option::Option<crate::model::Address>,
     /// <p>The customer’s shipping address.</p>
     pub shipping_address: std::option::Option<crate::model::Address>,
@@ -8715,8 +8570,7 @@ impl CreateProfileInput {
     pub fn gender(&self) -> std::option::Option<&crate::model::Gender> {
         self.gender.as_ref()
     }
-    /// <p>The customer’s phone number, which has not been specified as a mobile, home, or business
-    /// number. </p>
+    /// <p>The customer’s phone number, which has not been specified as a mobile, home, or business number. </p>
     pub fn phone_number(&self) -> std::option::Option<&str> {
         self.phone_number.as_deref()
     }
@@ -8732,8 +8586,7 @@ impl CreateProfileInput {
     pub fn business_phone_number(&self) -> std::option::Option<&str> {
         self.business_phone_number.as_deref()
     }
-    /// <p>The customer’s email address, which has not been specified as a personal or business
-    /// address. </p>
+    /// <p>The customer’s email address, which has not been specified as a personal or business address. </p>
     pub fn email_address(&self) -> std::option::Option<&str> {
         self.email_address.as_deref()
     }
@@ -8745,8 +8598,7 @@ impl CreateProfileInput {
     pub fn business_email_address(&self) -> std::option::Option<&str> {
         self.business_email_address.as_deref()
     }
-    /// <p>A generic address associated with the customer that is not mailing, shipping, or
-    /// billing.</p>
+    /// <p>A generic address associated with the customer that is not mailing, shipping, or billing.</p>
     pub fn address(&self) -> std::option::Option<&crate::model::Address> {
         self.address.as_ref()
     }
@@ -8807,22 +8659,12 @@ pub struct CreateDomainInput {
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The default number of days until the data within the domain expires.</p>
     pub default_expiration_days: std::option::Option<i32>,
-    /// <p>The default encryption key, which is an AWS managed key, is used when no specific type
-    /// of encryption key is specified. It is used to encrypt all data before it is placed in
-    /// permanent or semi-permanent storage.</p>
+    /// <p>The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage.</p>
     pub default_encryption_key: std::option::Option<std::string::String>,
-    /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with
-    /// ingesting data from third party applications. You must set up a policy on the
-    /// DeadLetterQueue for the SendMessage operation to enable Amazon Connect Customer Profiles to send
-    /// messages to the DeadLetterQueue.</p>
+    /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications. You must set up a policy on the DeadLetterQueue for the SendMessage operation to enable Amazon Connect Customer Profiles to send messages to the DeadLetterQueue.</p>
     pub dead_letter_queue_url: std::option::Option<std::string::String>,
-    /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly
-    /// batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every
-    /// Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
-    /// <p>After the Identity Resolution Job completes, use the
-    /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
-    /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from
-    /// S3.</p>
+    /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+    /// <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
     pub matching: std::option::Option<crate::model::MatchingRequest>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags:
@@ -8837,26 +8679,16 @@ impl CreateDomainInput {
     pub fn default_expiration_days(&self) -> std::option::Option<i32> {
         self.default_expiration_days
     }
-    /// <p>The default encryption key, which is an AWS managed key, is used when no specific type
-    /// of encryption key is specified. It is used to encrypt all data before it is placed in
-    /// permanent or semi-permanent storage.</p>
+    /// <p>The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage.</p>
     pub fn default_encryption_key(&self) -> std::option::Option<&str> {
         self.default_encryption_key.as_deref()
     }
-    /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with
-    /// ingesting data from third party applications. You must set up a policy on the
-    /// DeadLetterQueue for the SendMessage operation to enable Amazon Connect Customer Profiles to send
-    /// messages to the DeadLetterQueue.</p>
+    /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications. You must set up a policy on the DeadLetterQueue for the SendMessage operation to enable Amazon Connect Customer Profiles to send messages to the DeadLetterQueue.</p>
     pub fn dead_letter_queue_url(&self) -> std::option::Option<&str> {
         self.dead_letter_queue_url.as_deref()
     }
-    /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly
-    /// batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every
-    /// Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
-    /// <p>After the Identity Resolution Job completes, use the
-    /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
-    /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from
-    /// S3.</p>
+    /// <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p>
+    /// <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p>
     pub fn matching(&self) -> std::option::Option<&crate::model::MatchingRequest> {
         self.matching.as_ref()
     }

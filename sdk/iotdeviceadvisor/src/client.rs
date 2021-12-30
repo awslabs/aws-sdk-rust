@@ -785,8 +785,7 @@ pub mod fluent_builders {
     }
     /// Fluent builder constructing a request to `ListSuiteRuns`.
     ///
-    /// <p>Lists runs of the specified Device Advisor test suite. You can list all runs of the test
-    /// suite, or the runs of a specific version of the test suite.</p>
+    /// <p>Lists runs of the specified Device Advisor test suite. You can list all runs of the test suite, or the runs of a specific version of the test suite.</p>
     /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListSuiteRuns</a> action.</p>
     #[derive(std::clone::Clone, std::fmt::Debug)]
     pub struct ListSuiteRuns<
@@ -844,14 +843,12 @@ pub mod fluent_builders {
                 })?;
             self.handle.client.call(op).await
         }
-        /// <p>Lists the test suite runs of the specified test suite based on suite definition
-        /// ID.</p>
+        /// <p>Lists the test suite runs of the specified test suite based on suite definition ID.</p>
         pub fn suite_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.suite_definition_id(input.into());
             self
         }
-        /// <p>Lists the test suite runs of the specified test suite based on suite definition
-        /// ID.</p>
+        /// <p>Lists the test suite runs of the specified test suite based on suite definition ID.</p>
         pub fn set_suite_definition_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -859,14 +856,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_suite_definition_id(input);
             self
         }
-        /// <p>Must be passed along with <code>suiteDefinitionId</code>. Lists the test suite runs of
-        /// the specified test suite based on suite definition version.</p>
+        /// <p>Must be passed along with <code>suiteDefinitionId</code>. Lists the test suite runs of the specified test suite based on suite definition version.</p>
         pub fn suite_definition_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.suite_definition_version(input.into());
             self
         }
-        /// <p>Must be passed along with <code>suiteDefinitionId</code>. Lists the test suite runs of
-        /// the specified test suite based on suite definition version.</p>
+        /// <p>Must be passed along with <code>suiteDefinitionId</code>. Lists the test suite runs of the specified test suite based on suite definition version.</p>
         pub fn set_suite_definition_version(
             mut self,
             input: std::option::Option<std::string::String>,

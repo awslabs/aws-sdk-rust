@@ -20,27 +20,17 @@ pub mod associate_tracker_consumer_input {
             self.tracker_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the geofence collection to be associated to tracker
-        /// resource. Used when you need to specify a resource across all AWS.</p>
+        /// <p>The Amazon Resource Name (ARN) for the geofence collection to be associated to tracker resource. Used when you need to specify a resource across all AWS.</p>
         /// <ul>
-        /// <li>
-        /// <p>Format example:
-        /// <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code> </p> </li>
         /// </ul>
         pub fn consumer_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.consumer_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the geofence collection to be associated to tracker
-        /// resource. Used when you need to specify a resource across all AWS.</p>
+        /// <p>The Amazon Resource Name (ARN) for the geofence collection to be associated to tracker resource. Used when you need to specify a resource across all AWS.</p>
         /// <ul>
-        /// <li>
-        /// <p>Format example:
-        /// <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code> </p> </li>
         /// </ul>
         pub fn set_consumer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.consumer_arn = input;
@@ -228,11 +218,7 @@ pub mod batch_delete_device_position_history_input {
         ///
         /// <p>Devices whose position history you want to delete.</p>
         /// <ul>
-        /// <li>
-        /// <p>For example, for two devices:
-        /// <code>“DeviceIds” : [DeviceId1,DeviceId2]</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>For example, for two devices: <code>“DeviceIds” : [DeviceId1,DeviceId2]</code> </p> </li>
         /// </ul>
         pub fn device_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.device_ids.unwrap_or_default();
@@ -242,11 +228,7 @@ pub mod batch_delete_device_position_history_input {
         }
         /// <p>Devices whose position history you want to delete.</p>
         /// <ul>
-        /// <li>
-        /// <p>For example, for two devices:
-        /// <code>“DeviceIds” : [DeviceId1,DeviceId2]</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>For example, for two devices: <code>“DeviceIds” : [DeviceId1,DeviceId2]</code> </p> </li>
         /// </ul>
         pub fn set_device_ids(
             mut self,
@@ -617,14 +599,12 @@ pub mod batch_evaluate_geofences_input {
             std::option::Option<std::vec::Vec<crate::model::DevicePositionUpdate>>,
     }
     impl Builder {
-        /// <p>The geofence collection used in evaluating the position of devices against its
-        /// geofences.</p>
+        /// <p>The geofence collection used in evaluating the position of devices against its geofences.</p>
         pub fn collection_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.collection_name = Some(input.into());
             self
         }
-        /// <p>The geofence collection used in evaluating the position of devices against its
-        /// geofences.</p>
+        /// <p>The geofence collection used in evaluating the position of devices against its geofences.</p>
         pub fn set_collection_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -636,8 +616,7 @@ pub mod batch_evaluate_geofences_input {
         ///
         /// To override the contents of this collection use [`set_device_position_updates`](Self::set_device_position_updates).
         ///
-        /// <p>Contains device details for each device to be evaluated against the given geofence
-        /// collection.</p>
+        /// <p>Contains device details for each device to be evaluated against the given geofence collection.</p>
         pub fn device_position_updates(
             mut self,
             input: crate::model::DevicePositionUpdate,
@@ -647,8 +626,7 @@ pub mod batch_evaluate_geofences_input {
             self.device_position_updates = Some(v);
             self
         }
-        /// <p>Contains device details for each device to be evaluated against the given geofence
-        /// collection.</p>
+        /// <p>Contains device details for each device to be evaluated against the given geofence collection.</p>
         pub fn set_device_position_updates(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DevicePositionUpdate>>,
@@ -838,11 +816,7 @@ pub mod batch_get_device_position_input {
         ///
         /// <p>Devices whose position you want to retrieve.</p>
         /// <ul>
-        /// <li>
-        /// <p>For example, for two devices:
-        /// <code>device-ids=DeviceId1&amp;device-ids=DeviceId2</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>For example, for two devices: <code>device-ids=DeviceId1&amp;device-ids=DeviceId2</code> </p> </li>
         /// </ul>
         pub fn device_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.device_ids.unwrap_or_default();
@@ -852,11 +826,7 @@ pub mod batch_get_device_position_input {
         }
         /// <p>Devices whose position you want to retrieve.</p>
         /// <ul>
-        /// <li>
-        /// <p>For example, for two devices:
-        /// <code>device-ids=DeviceId1&amp;device-ids=DeviceId2</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>For example, for two devices: <code>device-ids=DeviceId1&amp;device-ids=DeviceId2</code> </p> </li>
         /// </ul>
         pub fn set_device_ids(
             mut self,
@@ -1449,42 +1419,26 @@ pub mod calculate_route_input {
         ///
         /// To override the contents of this collection use [`set_departure_position`](Self::set_departure_position).
         ///
-        /// <p>The start position for the route. Defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format:
-        /// <code>[longitude, latitude]</code>.</p>
+        /// <p>The start position for the route. Defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>[longitude, latitude]</code>.</p>
         /// <ul>
-        /// <li>
-        /// <p>For example, <code>[-123.115, 49.285]</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>If you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves the
-        /// position to the nearest road</a>. If Esri is the provider for your route calculator,
-        /// specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
+        /// <li> <p>For example, <code>[-123.115, 49.285]</code> </p> </li>
+        /// </ul> <note>
+        /// <p>If you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves the position to the nearest road</a>. If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
         /// </note>
-        /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code>
-        /// </p>
+        /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
         pub fn departure_position(mut self, input: f64) -> Self {
             let mut v = self.departure_position.unwrap_or_default();
             v.push(input);
             self.departure_position = Some(v);
             self
         }
-        /// <p>The start position for the route. Defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format:
-        /// <code>[longitude, latitude]</code>.</p>
+        /// <p>The start position for the route. Defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>[longitude, latitude]</code>.</p>
         /// <ul>
-        /// <li>
-        /// <p>For example, <code>[-123.115, 49.285]</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <note>
-        /// <p>If you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves the
-        /// position to the nearest road</a>. If Esri is the provider for your route calculator,
-        /// specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
+        /// <li> <p>For example, <code>[-123.115, 49.285]</code> </p> </li>
+        /// </ul> <note>
+        /// <p>If you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves the position to the nearest road</a>. If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
         /// </note>
-        /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code>
-        /// </p>
+        /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
         pub fn set_departure_position(
             mut self,
             input: std::option::Option<std::vec::Vec<f64>>,
@@ -1496,38 +1450,26 @@ pub mod calculate_route_input {
         ///
         /// To override the contents of this collection use [`set_destination_position`](Self::set_destination_position).
         ///
-        /// <p>The finish position for the route. Defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format:
-        /// <code>[longitude, latitude]</code>.</p>
+        /// <p>The finish position for the route. Defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>[longitude, latitude]</code>.</p>
         /// <ul>
-        /// <li>
-        /// <p> For example, <code>[-122.339, 47.615]</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <note>
+        /// <li> <p> For example, <code>[-122.339, 47.615]</code> </p> </li>
+        /// </ul> <note>
         /// <p>If you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves the position to the nearest road</a>. </p>
         /// </note>
-        /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code>
-        /// </p>
+        /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
         pub fn destination_position(mut self, input: f64) -> Self {
             let mut v = self.destination_position.unwrap_or_default();
             v.push(input);
             self.destination_position = Some(v);
             self
         }
-        /// <p>The finish position for the route. Defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format:
-        /// <code>[longitude, latitude]</code>.</p>
+        /// <p>The finish position for the route. Defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>[longitude, latitude]</code>.</p>
         /// <ul>
-        /// <li>
-        /// <p> For example, <code>[-122.339, 47.615]</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <note>
+        /// <li> <p> For example, <code>[-122.339, 47.615]</code> </p> </li>
+        /// </ul> <note>
         /// <p>If you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves the position to the nearest road</a>. </p>
         /// </note>
-        /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code>
-        /// </p>
+        /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
         pub fn set_destination_position(
             mut self,
             input: std::option::Option<std::vec::Vec<f64>>,
@@ -1539,50 +1481,30 @@ pub mod calculate_route_input {
         ///
         /// To override the contents of this collection use [`set_waypoint_positions`](Self::set_waypoint_positions).
         ///
-        /// <p>Specifies an ordered list of up to 23 intermediate positions to include along a route
-        /// between the departure position and destination position. </p>
+        /// <p>Specifies an ordered list of up to 23 intermediate positions to include along a route between the departure position and destination position. </p>
         /// <ul>
-        /// <li>
-        /// <p>For example, from the <code>DeparturePosition</code>
-        /// <code>[-123.115, 49.285]</code>, the route follows the order that the waypoint
-        /// positions are given <code>[[-122.757, 49.0021],[-122.349, 47.620]]</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <note>
+        /// <li> <p>For example, from the <code>DeparturePosition</code> <code>[-123.115, 49.285]</code>, the route follows the order that the waypoint positions are given <code>[[-122.757, 49.0021],[-122.349, 47.620]]</code> </p> </li>
+        /// </ul> <note>
         /// <p>If you specify a waypoint position that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves the position to the nearest road</a>. </p>
-        /// <p>Specifying more than 23 waypoints returns a <code>400 ValidationException</code>
-        /// error.</p>
-        /// <p>If Esri is the provider for your route calculator, specifying a
-        /// route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
+        /// <p>Specifying more than 23 waypoints returns a <code>400 ValidationException</code> error.</p>
+        /// <p>If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
         /// </note>
-        /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code>
-        /// </p>
+        /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
         pub fn waypoint_positions(mut self, input: std::vec::Vec<f64>) -> Self {
             let mut v = self.waypoint_positions.unwrap_or_default();
             v.push(input);
             self.waypoint_positions = Some(v);
             self
         }
-        /// <p>Specifies an ordered list of up to 23 intermediate positions to include along a route
-        /// between the departure position and destination position. </p>
+        /// <p>Specifies an ordered list of up to 23 intermediate positions to include along a route between the departure position and destination position. </p>
         /// <ul>
-        /// <li>
-        /// <p>For example, from the <code>DeparturePosition</code>
-        /// <code>[-123.115, 49.285]</code>, the route follows the order that the waypoint
-        /// positions are given <code>[[-122.757, 49.0021],[-122.349, 47.620]]</code>
-        /// </p>
-        /// </li>
-        /// </ul>
-        /// <note>
+        /// <li> <p>For example, from the <code>DeparturePosition</code> <code>[-123.115, 49.285]</code>, the route follows the order that the waypoint positions are given <code>[[-122.757, 49.0021],[-122.349, 47.620]]</code> </p> </li>
+        /// </ul> <note>
         /// <p>If you specify a waypoint position that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves the position to the nearest road</a>. </p>
-        /// <p>Specifying more than 23 waypoints returns a <code>400 ValidationException</code>
-        /// error.</p>
-        /// <p>If Esri is the provider for your route calculator, specifying a
-        /// route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
+        /// <p>Specifying more than 23 waypoints returns a <code>400 ValidationException</code> error.</p>
+        /// <p>If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
         /// </note>
-        /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code>
-        /// </p>
+        /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
         pub fn set_waypoint_positions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::vec::Vec<f64>>>,
@@ -1590,40 +1512,24 @@ pub mod calculate_route_input {
             self.waypoint_positions = input;
             self
         }
-        /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed
-        /// of travel and road compatibility.</p>
+        /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility.</p>
         /// <p>The <code>TravelMode</code> you specify determines how you specify route preferences: </p>
         /// <ul>
-        /// <li>
-        /// <p>If traveling by <code>Car</code> use the <code>CarModeOptions</code>
-        /// parameter.</p>
-        /// </li>
-        /// <li>
-        /// <p>If traveling by <code>Truck</code> use the <code>TruckModeOptions</code>
-        /// parameter.</p>
-        /// </li>
+        /// <li> <p>If traveling by <code>Car</code> use the <code>CarModeOptions</code> parameter.</p> </li>
+        /// <li> <p>If traveling by <code>Truck</code> use the <code>TruckModeOptions</code> parameter.</p> </li>
         /// </ul>
-        /// <p>Default Value: <code>Car</code>
-        /// </p>
+        /// <p>Default Value: <code>Car</code> </p>
         pub fn travel_mode(mut self, input: crate::model::TravelMode) -> Self {
             self.travel_mode = Some(input);
             self
         }
-        /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed
-        /// of travel and road compatibility.</p>
+        /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility.</p>
         /// <p>The <code>TravelMode</code> you specify determines how you specify route preferences: </p>
         /// <ul>
-        /// <li>
-        /// <p>If traveling by <code>Car</code> use the <code>CarModeOptions</code>
-        /// parameter.</p>
-        /// </li>
-        /// <li>
-        /// <p>If traveling by <code>Truck</code> use the <code>TruckModeOptions</code>
-        /// parameter.</p>
-        /// </li>
+        /// <li> <p>If traveling by <code>Car</code> use the <code>CarModeOptions</code> parameter.</p> </li>
+        /// <li> <p>If traveling by <code>Truck</code> use the <code>TruckModeOptions</code> parameter.</p> </li>
         /// </ul>
-        /// <p>Default Value: <code>Car</code>
-        /// </p>
+        /// <p>Default Value: <code>Car</code> </p>
         pub fn set_travel_mode(
             mut self,
             input: std::option::Option<crate::model::TravelMode>,
@@ -1631,39 +1537,21 @@ pub mod calculate_route_input {
             self.travel_mode = input;
             self
         }
-        /// <p>Specifies the desired time of departure. Uses the given time to calculate the route.
-        /// Otherwise, the best time of day to travel with the best traffic conditions is used to
-        /// calculate the route.</p>
-        /// <note>
-        /// <p>Setting a departure time in the past returns a <code>400
-        /// ValidationException</code> error.</p>
+        /// <p>Specifies the desired time of departure. Uses the given time to calculate the route. Otherwise, the best time of day to travel with the best traffic conditions is used to calculate the route.</p> <note>
+        /// <p>Setting a departure time in the past returns a <code>400 ValidationException</code> error.</p>
         /// </note>
         /// <ul>
-        /// <li>
-        /// <p>In <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO
-        /// 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example,
-        /// <code>2020–07-2T12:15:20.000Z+01:00</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>In <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>
         /// </ul>
         pub fn departure_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.departure_time = Some(input);
             self
         }
-        /// <p>Specifies the desired time of departure. Uses the given time to calculate the route.
-        /// Otherwise, the best time of day to travel with the best traffic conditions is used to
-        /// calculate the route.</p>
-        /// <note>
-        /// <p>Setting a departure time in the past returns a <code>400
-        /// ValidationException</code> error.</p>
+        /// <p>Specifies the desired time of departure. Uses the given time to calculate the route. Otherwise, the best time of day to travel with the best traffic conditions is used to calculate the route.</p> <note>
+        /// <p>Setting a departure time in the past returns a <code>400 ValidationException</code> error.</p>
         /// </note>
         /// <ul>
-        /// <li>
-        /// <p>In <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO
-        /// 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example,
-        /// <code>2020–07-2T12:15:20.000Z+01:00</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>In <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>
         /// </ul>
         pub fn set_departure_time(
             mut self,
@@ -1672,38 +1560,28 @@ pub mod calculate_route_input {
             self.departure_time = input;
             self
         }
-        /// <p>Sets the time of departure as the current time. Uses the current time to calculate a
-        /// route. Otherwise, the best time of day to travel with the best traffic conditions is
-        /// used to calculate the route.</p>
-        /// <p>Default Value: <code>false</code>
-        /// </p>
-        /// <p>Valid Values: <code>false</code> | <code>true</code>
-        /// </p>
+        /// <p>Sets the time of departure as the current time. Uses the current time to calculate a route. Otherwise, the best time of day to travel with the best traffic conditions is used to calculate the route.</p>
+        /// <p>Default Value: <code>false</code> </p>
+        /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
         pub fn depart_now(mut self, input: bool) -> Self {
             self.depart_now = Some(input);
             self
         }
-        /// <p>Sets the time of departure as the current time. Uses the current time to calculate a
-        /// route. Otherwise, the best time of day to travel with the best traffic conditions is
-        /// used to calculate the route.</p>
-        /// <p>Default Value: <code>false</code>
-        /// </p>
-        /// <p>Valid Values: <code>false</code> | <code>true</code>
-        /// </p>
+        /// <p>Sets the time of departure as the current time. Uses the current time to calculate a route. Otherwise, the best time of day to travel with the best traffic conditions is used to calculate the route.</p>
+        /// <p>Default Value: <code>false</code> </p>
+        /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
         pub fn set_depart_now(mut self, input: std::option::Option<bool>) -> Self {
             self.depart_now = input;
             self
         }
         /// <p>Set the unit system to specify the distance.</p>
-        /// <p>Default Value: <code>Kilometers</code>
-        /// </p>
+        /// <p>Default Value: <code>Kilometers</code> </p>
         pub fn distance_unit(mut self, input: crate::model::DistanceUnit) -> Self {
             self.distance_unit = Some(input);
             self
         }
         /// <p>Set the unit system to specify the distance.</p>
-        /// <p>Default Value: <code>Kilometers</code>
-        /// </p>
+        /// <p>Default Value: <code>Kilometers</code> </p>
         pub fn set_distance_unit(
             mut self,
             input: std::option::Option<crate::model::DistanceUnit>,
@@ -1711,28 +1589,21 @@ pub mod calculate_route_input {
             self.distance_unit = input;
             self
         }
-        /// <p>Set to include the geometry details in the result for each path between a pair of
-        /// positions.</p>
-        /// <p>Default Value: <code>false</code>
-        /// </p>
-        /// <p>Valid Values: <code>false</code> | <code>true</code>
-        /// </p>
+        /// <p>Set to include the geometry details in the result for each path between a pair of positions.</p>
+        /// <p>Default Value: <code>false</code> </p>
+        /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
         pub fn include_leg_geometry(mut self, input: bool) -> Self {
             self.include_leg_geometry = Some(input);
             self
         }
-        /// <p>Set to include the geometry details in the result for each path between a pair of
-        /// positions.</p>
-        /// <p>Default Value: <code>false</code>
-        /// </p>
-        /// <p>Valid Values: <code>false</code> | <code>true</code>
-        /// </p>
+        /// <p>Set to include the geometry details in the result for each path between a pair of positions.</p>
+        /// <p>Default Value: <code>false</code> </p>
+        /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
         pub fn set_include_leg_geometry(mut self, input: std::option::Option<bool>) -> Self {
             self.include_leg_geometry = input;
             self
         }
-        /// <p>Specifies route preferences when traveling by <code>Car</code>, such as avoiding
-        /// routes that use ferries or tolls.</p>
+        /// <p>Specifies route preferences when traveling by <code>Car</code>, such as avoiding routes that use ferries or tolls.</p>
         /// <p>Requirements: <code>TravelMode</code> must be specified as <code>Car</code>.</p>
         pub fn car_mode_options(
             mut self,
@@ -1741,8 +1612,7 @@ pub mod calculate_route_input {
             self.car_mode_options = Some(input);
             self
         }
-        /// <p>Specifies route preferences when traveling by <code>Car</code>, such as avoiding
-        /// routes that use ferries or tolls.</p>
+        /// <p>Specifies route preferences when traveling by <code>Car</code>, such as avoiding routes that use ferries or tolls.</p>
         /// <p>Requirements: <code>TravelMode</code> must be specified as <code>Car</code>.</p>
         pub fn set_car_mode_options(
             mut self,
@@ -1751,9 +1621,7 @@ pub mod calculate_route_input {
             self.car_mode_options = input;
             self
         }
-        /// <p>Specifies route preferences when traveling by <code>Truck</code>, such as avoiding
-        /// routes that use ferries or tolls, and truck specifications to consider when choosing an
-        /// optimal road.</p>
+        /// <p>Specifies route preferences when traveling by <code>Truck</code>, such as avoiding routes that use ferries or tolls, and truck specifications to consider when choosing an optimal road.</p>
         /// <p>Requirements: <code>TravelMode</code> must be specified as <code>Truck</code>.</p>
         pub fn truck_mode_options(
             mut self,
@@ -1762,9 +1630,7 @@ pub mod calculate_route_input {
             self.truck_mode_options = Some(input);
             self
         }
-        /// <p>Specifies route preferences when traveling by <code>Truck</code>, such as avoiding
-        /// routes that use ferries or tolls, and truck specifications to consider when choosing an
-        /// optimal road.</p>
+        /// <p>Specifies route preferences when traveling by <code>Truck</code>, such as avoiding routes that use ferries or tolls, and truck specifications to consider when choosing an optimal road.</p>
         /// <p>Requirements: <code>TravelMode</code> must be specified as <code>Truck</code>.</p>
         pub fn set_truck_mode_options(
             mut self,
@@ -1954,16 +1820,9 @@ pub mod create_geofence_collection_input {
         /// <p>A custom name for the geofence collection.</p>
         /// <p>Requirements:</p>
         /// <ul>
-        /// <li>
-        /// <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods
-        /// (.), and underscores (_). </p>
-        /// </li>
-        /// <li>
-        /// <p>Must be a unique geofence collection name.</p>
-        /// </li>
-        /// <li>
-        /// <p>No spaces allowed. For example, <code>ExampleGeofenceCollection</code>.</p>
-        /// </li>
+        /// <li> <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_). </p> </li>
+        /// <li> <p>Must be a unique geofence collection name.</p> </li>
+        /// <li> <p>No spaces allowed. For example, <code>ExampleGeofenceCollection</code>.</p> </li>
         /// </ul>
         pub fn collection_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.collection_name = Some(input.into());
@@ -1972,16 +1831,9 @@ pub mod create_geofence_collection_input {
         /// <p>A custom name for the geofence collection.</p>
         /// <p>Requirements:</p>
         /// <ul>
-        /// <li>
-        /// <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods
-        /// (.), and underscores (_). </p>
-        /// </li>
-        /// <li>
-        /// <p>Must be a unique geofence collection name.</p>
-        /// </li>
-        /// <li>
-        /// <p>No spaces allowed. For example, <code>ExampleGeofenceCollection</code>.</p>
-        /// </li>
+        /// <li> <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_). </p> </li>
+        /// <li> <p>Must be a unique geofence collection name.</p> </li>
+        /// <li> <p>No spaces allowed. For example, <code>ExampleGeofenceCollection</code>.</p> </li>
         /// </ul>
         pub fn set_collection_name(
             mut self,
@@ -1991,15 +1843,13 @@ pub mod create_geofence_collection_input {
             self
         }
         /// <p>Specifies the pricing plan for the geofence collection.</p>
-        /// <p>For additional details and restrictions on each pricing plan option, see the <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
-        /// page</a>.</p>
+        /// <p>For additional details and restrictions on each pricing plan option, see the <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.</p>
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.pricing_plan = Some(input);
             self
         }
         /// <p>Specifies the pricing plan for the geofence collection.</p>
-        /// <p>For additional details and restrictions on each pricing plan option, see the <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
-        /// page</a>.</p>
+        /// <p>For additional details and restrictions on each pricing plan option, see the <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.</p>
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -2009,42 +1859,24 @@ pub mod create_geofence_collection_input {
         }
         /// <p>Specifies the data provider for the geofence collection.</p>
         /// <ul>
-        /// <li>
-        /// <p>Required value for the following pricing plans: <code>MobileAssetTracking
-        /// </code>| <code>MobileAssetManagement</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Required value for the following pricing plans: <code>MobileAssetTracking </code>| <code>MobileAssetManagement</code> </p> </li>
         /// </ul>
-        /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">Data Providers</a>, and <a href="https://aws.amazon.com/location/pricing/">Pricing plans</a>, see the Amazon Location
-        /// Service product page.</p>
-        /// <note>
-        /// <p>Amazon Location Service only uses <code>PricingPlanDataSource</code> to calculate billing for
-        /// your geofence collection. Your data won't be shared with the data provider, and will
-        /// remain in your AWS account or Region unless you move it.</p>
+        /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">Data Providers</a>, and <a href="https://aws.amazon.com/location/pricing/">Pricing plans</a>, see the Amazon Location Service product page.</p> <note>
+        /// <p>Amazon Location Service only uses <code>PricingPlanDataSource</code> to calculate billing for your geofence collection. Your data won't be shared with the data provider, and will remain in your AWS account or Region unless you move it.</p>
         /// </note>
-        /// <p>Valid Values: <code>Esri </code>| <code>Here</code>
-        /// </p>
+        /// <p>Valid Values: <code>Esri </code>| <code>Here</code> </p>
         pub fn pricing_plan_data_source(mut self, input: impl Into<std::string::String>) -> Self {
             self.pricing_plan_data_source = Some(input.into());
             self
         }
         /// <p>Specifies the data provider for the geofence collection.</p>
         /// <ul>
-        /// <li>
-        /// <p>Required value for the following pricing plans: <code>MobileAssetTracking
-        /// </code>| <code>MobileAssetManagement</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Required value for the following pricing plans: <code>MobileAssetTracking </code>| <code>MobileAssetManagement</code> </p> </li>
         /// </ul>
-        /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">Data Providers</a>, and <a href="https://aws.amazon.com/location/pricing/">Pricing plans</a>, see the Amazon Location
-        /// Service product page.</p>
-        /// <note>
-        /// <p>Amazon Location Service only uses <code>PricingPlanDataSource</code> to calculate billing for
-        /// your geofence collection. Your data won't be shared with the data provider, and will
-        /// remain in your AWS account or Region unless you move it.</p>
+        /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">Data Providers</a>, and <a href="https://aws.amazon.com/location/pricing/">Pricing plans</a>, see the Amazon Location Service product page.</p> <note>
+        /// <p>Amazon Location Service only uses <code>PricingPlanDataSource</code> to calculate billing for your geofence collection. Your data won't be shared with the data provider, and will remain in your AWS account or Region unless you move it.</p>
         /// </note>
-        /// <p>Valid Values: <code>Esri </code>| <code>Here</code>
-        /// </p>
+        /// <p>Valid Values: <code>Esri </code>| <code>Here</code> </p>
         pub fn set_pricing_plan_data_source(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2066,31 +1898,16 @@ pub mod create_geofence_collection_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Applies one or more tags to the geofence collection. A tag is a key-value pair helps
-        /// manage, identify, search, and filter your resources by labelling them.</p>
-        /// <p>Format: <code>"key" : "value"</code>
-        /// </p>
+        /// <p>Applies one or more tags to the geofence collection. A tag is a key-value pair helps manage, identify, search, and filter your resources by labelling them.</p>
+        /// <p>Format: <code>"key" : "value"</code> </p>
         /// <p>Restrictions:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum 50 tags per resource</p>
-        /// </li>
-        /// <li>
-        /// <p>Each resource tag must be unique with a maximum of one value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length: 128 Unicode characters in UTF-8</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length: 256 Unicode characters in UTF-8</p>
-        /// </li>
-        /// <li>
-        /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters:
-        /// + - = . _ : / @. </p>
-        /// </li>
-        /// <li>
-        /// <p>Cannot use "aws:" as a prefix for a key.</p>
-        /// </li>
+        /// <li> <p>Maximum 50 tags per resource</p> </li>
+        /// <li> <p>Each resource tag must be unique with a maximum of one value.</p> </li>
+        /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8</p> </li>
+        /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8</p> </li>
+        /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @. </p> </li>
+        /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
         /// </ul>
         pub fn tags(
             mut self,
@@ -2102,31 +1919,16 @@ pub mod create_geofence_collection_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>Applies one or more tags to the geofence collection. A tag is a key-value pair helps
-        /// manage, identify, search, and filter your resources by labelling them.</p>
-        /// <p>Format: <code>"key" : "value"</code>
-        /// </p>
+        /// <p>Applies one or more tags to the geofence collection. A tag is a key-value pair helps manage, identify, search, and filter your resources by labelling them.</p>
+        /// <p>Format: <code>"key" : "value"</code> </p>
         /// <p>Restrictions:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum 50 tags per resource</p>
-        /// </li>
-        /// <li>
-        /// <p>Each resource tag must be unique with a maximum of one value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length: 128 Unicode characters in UTF-8</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length: 256 Unicode characters in UTF-8</p>
-        /// </li>
-        /// <li>
-        /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters:
-        /// + - = . _ : / @. </p>
-        /// </li>
-        /// <li>
-        /// <p>Cannot use "aws:" as a prefix for a key.</p>
-        /// </li>
+        /// <li> <p>Maximum 50 tags per resource</p> </li>
+        /// <li> <p>Each resource tag must be unique with a maximum of one value.</p> </li>
+        /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8</p> </li>
+        /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8</p> </li>
+        /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @. </p> </li>
+        /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
         /// </ul>
         pub fn set_tags(
             mut self,
@@ -2137,14 +1939,12 @@ pub mod create_geofence_collection_input {
             self.tags = input;
             self
         }
-        /// <p>A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS customer managed key</a>. Enter a key ID, key ARN, alias name, or alias ARN.
-        /// </p>
+        /// <p>A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS customer managed key</a>. Enter a key ID, key ARN, alias name, or alias ARN. </p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS customer managed key</a>. Enter a key ID, key ARN, alias name, or alias ARN.
-        /// </p>
+        /// <p>A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS customer managed key</a>. Enter a key ID, key ARN, alias name, or alias ARN. </p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -2307,15 +2107,9 @@ pub mod create_map_input {
         /// <p>The name for the map resource.</p>
         /// <p>Requirements:</p>
         /// <ul>
-        /// <li>
-        /// <p>Must contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_). </p>
-        /// </li>
-        /// <li>
-        /// <p>Must be a unique map resource name. </p>
-        /// </li>
-        /// <li>
-        /// <p>No spaces allowed. For example, <code>ExampleMap</code>.</p>
-        /// </li>
+        /// <li> <p>Must contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_). </p> </li>
+        /// <li> <p>Must be a unique map resource name. </p> </li>
+        /// <li> <p>No spaces allowed. For example, <code>ExampleMap</code>.</p> </li>
         /// </ul>
         pub fn map_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.map_name = Some(input.into());
@@ -2324,15 +2118,9 @@ pub mod create_map_input {
         /// <p>The name for the map resource.</p>
         /// <p>Requirements:</p>
         /// <ul>
-        /// <li>
-        /// <p>Must contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_). </p>
-        /// </li>
-        /// <li>
-        /// <p>Must be a unique map resource name. </p>
-        /// </li>
-        /// <li>
-        /// <p>No spaces allowed. For example, <code>ExampleMap</code>.</p>
-        /// </li>
+        /// <li> <p>Must contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_). </p> </li>
+        /// <li> <p>Must be a unique map resource name. </p> </li>
+        /// <li> <p>No spaces allowed. For example, <code>ExampleMap</code>.</p> </li>
         /// </ul>
         pub fn set_map_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.map_name = input;
@@ -2380,31 +2168,16 @@ pub mod create_map_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Applies one or more tags to the map resource. A tag is a key-value pair helps manage,
-        /// identify, search, and filter your resources by labelling them.</p>
-        /// <p>Format: <code>"key" : "value"</code>
-        /// </p>
+        /// <p>Applies one or more tags to the map resource. A tag is a key-value pair helps manage, identify, search, and filter your resources by labelling them.</p>
+        /// <p>Format: <code>"key" : "value"</code> </p>
         /// <p>Restrictions:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum 50 tags per resource</p>
-        /// </li>
-        /// <li>
-        /// <p>Each resource tag must be unique with a maximum of one value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length: 128 Unicode characters in UTF-8</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length:  256 Unicode characters in UTF-8</p>
-        /// </li>
-        /// <li>
-        /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : /
-        /// @. </p>
-        /// </li>
-        /// <li>
-        /// <p>Cannot use "aws:" as a prefix for a key.</p>
-        /// </li>
+        /// <li> <p>Maximum 50 tags per resource</p> </li>
+        /// <li> <p>Each resource tag must be unique with a maximum of one value.</p> </li>
+        /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8</p> </li>
+        /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8</p> </li>
+        /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @. </p> </li>
+        /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
         /// </ul>
         pub fn tags(
             mut self,
@@ -2416,31 +2189,16 @@ pub mod create_map_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>Applies one or more tags to the map resource. A tag is a key-value pair helps manage,
-        /// identify, search, and filter your resources by labelling them.</p>
-        /// <p>Format: <code>"key" : "value"</code>
-        /// </p>
+        /// <p>Applies one or more tags to the map resource. A tag is a key-value pair helps manage, identify, search, and filter your resources by labelling them.</p>
+        /// <p>Format: <code>"key" : "value"</code> </p>
         /// <p>Restrictions:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum 50 tags per resource</p>
-        /// </li>
-        /// <li>
-        /// <p>Each resource tag must be unique with a maximum of one value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length: 128 Unicode characters in UTF-8</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length:  256 Unicode characters in UTF-8</p>
-        /// </li>
-        /// <li>
-        /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : /
-        /// @. </p>
-        /// </li>
-        /// <li>
-        /// <p>Cannot use "aws:" as a prefix for a key.</p>
-        /// </li>
+        /// <li> <p>Maximum 50 tags per resource</p> </li>
+        /// <li> <p>Each resource tag must be unique with a maximum of one value.</p> </li>
+        /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8</p> </li>
+        /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8</p> </li>
+        /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @. </p> </li>
+        /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
         /// </ul>
         pub fn set_tags(
             mut self,
@@ -2602,16 +2360,9 @@ pub mod create_place_index_input {
         /// <p>The name of the place index resource. </p>
         /// <p>Requirements:</p>
         /// <ul>
-        /// <li>
-        /// <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and
-        /// underscores (_).</p>
-        /// </li>
-        /// <li>
-        /// <p>Must be a unique place index resource name.</p>
-        /// </li>
-        /// <li>
-        /// <p>No spaces allowed. For example, <code>ExamplePlaceIndex</code>.</p>
-        /// </li>
+        /// <li> <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_).</p> </li>
+        /// <li> <p>Must be a unique place index resource name.</p> </li>
+        /// <li> <p>No spaces allowed. For example, <code>ExamplePlaceIndex</code>.</p> </li>
         /// </ul>
         pub fn index_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.index_name = Some(input.into());
@@ -2620,77 +2371,40 @@ pub mod create_place_index_input {
         /// <p>The name of the place index resource. </p>
         /// <p>Requirements:</p>
         /// <ul>
-        /// <li>
-        /// <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and
-        /// underscores (_).</p>
-        /// </li>
-        /// <li>
-        /// <p>Must be a unique place index resource name.</p>
-        /// </li>
-        /// <li>
-        /// <p>No spaces allowed. For example, <code>ExamplePlaceIndex</code>.</p>
-        /// </li>
+        /// <li> <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_).</p> </li>
+        /// <li> <p>Must be a unique place index resource name.</p> </li>
+        /// <li> <p>No spaces allowed. For example, <code>ExamplePlaceIndex</code>.</p> </li>
         /// </ul>
         pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_name = input;
             self
         }
-        /// <p>Specifies the geospatial data provider for the new place index.</p>
-        /// <note>
-        /// <p>This field is case-sensitive. Enter the valid values as shown. For example, entering
-        /// <code>HERE</code> returns an error.</p>
+        /// <p>Specifies the geospatial data provider for the new place index.</p> <note>
+        /// <p>This field is case-sensitive. Enter the valid values as shown. For example, entering <code>HERE</code> returns an error.</p>
         /// </note>
         /// <p>Valid values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Esri</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s coverage in your
-        /// region of interest, see <a href="https://developers.arcgis.com/rest/geocode/api-reference/geocode-coverage.htm">Esri details on geocoding coverage</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>'
-        /// coverage in your region of interest, see <a href="https://developer.here.com/documentation/geocoder/dev_guide/topics/coverage-geocoder.html">HERE details on goecoding coverage</a>.</p>
-        /// <important>
-        /// <p>If you specify HERE Technologies (<code>Here</code>) as the data provider,
-        /// you may not <a href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store results</a> for locations in Japan. For more information, see the
-        /// <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a>
-        /// for Amazon Location Service.</p>
-        /// </important>
-        /// </li>
+        /// <li> <p> <code>Esri</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s coverage in your region of interest, see <a href="https://developers.arcgis.com/rest/geocode/api-reference/geocode-coverage.htm">Esri details on geocoding coverage</a>.</p> </li>
+        /// <li> <p> <code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>' coverage in your region of interest, see <a href="https://developer.here.com/documentation/geocoder/dev_guide/topics/coverage-geocoder.html">HERE details on goecoding coverage</a>.</p> <important>
+        /// <p>If you specify HERE Technologies (<code>Here</code>) as the data provider, you may not <a href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store results</a> for locations in Japan. For more information, see the <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon Location Service.</p>
+        /// </important> </li>
         /// </ul>
-        /// <p>For additional information , see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data providers</a>
-        /// on the <i>Amazon Location Service Developer Guide</i>.</p>
+        /// <p>For additional information , see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
         pub fn data_source(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_source = Some(input.into());
             self
         }
-        /// <p>Specifies the geospatial data provider for the new place index.</p>
-        /// <note>
-        /// <p>This field is case-sensitive. Enter the valid values as shown. For example, entering
-        /// <code>HERE</code> returns an error.</p>
+        /// <p>Specifies the geospatial data provider for the new place index.</p> <note>
+        /// <p>This field is case-sensitive. Enter the valid values as shown. For example, entering <code>HERE</code> returns an error.</p>
         /// </note>
         /// <p>Valid values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Esri</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s coverage in your
-        /// region of interest, see <a href="https://developers.arcgis.com/rest/geocode/api-reference/geocode-coverage.htm">Esri details on geocoding coverage</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>'
-        /// coverage in your region of interest, see <a href="https://developer.here.com/documentation/geocoder/dev_guide/topics/coverage-geocoder.html">HERE details on goecoding coverage</a>.</p>
-        /// <important>
-        /// <p>If you specify HERE Technologies (<code>Here</code>) as the data provider,
-        /// you may not <a href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store results</a> for locations in Japan. For more information, see the
-        /// <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a>
-        /// for Amazon Location Service.</p>
-        /// </important>
-        /// </li>
+        /// <li> <p> <code>Esri</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s coverage in your region of interest, see <a href="https://developers.arcgis.com/rest/geocode/api-reference/geocode-coverage.htm">Esri details on geocoding coverage</a>.</p> </li>
+        /// <li> <p> <code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>' coverage in your region of interest, see <a href="https://developer.here.com/documentation/geocoder/dev_guide/topics/coverage-geocoder.html">HERE details on goecoding coverage</a>.</p> <important>
+        /// <p>If you specify HERE Technologies (<code>Here</code>) as the data provider, you may not <a href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store results</a> for locations in Japan. For more information, see the <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon Location Service.</p>
+        /// </important> </li>
         /// </ul>
-        /// <p>For additional information , see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data providers</a>
-        /// on the <i>Amazon Location Service Developer Guide</i>.</p>
+        /// <p>For additional information , see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
         pub fn set_data_source(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.data_source = input;
             self
@@ -2740,31 +2454,16 @@ pub mod create_place_index_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Applies one or more tags to the place index resource. A tag is a key-value pair that helps you
-        /// manage, identify, search, and filter your resources.</p>
-        /// <p>Format: <code>"key" : "value"</code>
-        /// </p>
+        /// <p>Applies one or more tags to the place index resource. A tag is a key-value pair that helps you manage, identify, search, and filter your resources.</p>
+        /// <p>Format: <code>"key" : "value"</code> </p>
         /// <p>Restrictions:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum 50 tags per resource.</p>
-        /// </li>
-        /// <li>
-        /// <p>Each tag key must be unique and must have exactly one associated value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + -
-        /// = . _ : / @</p>
-        /// </li>
-        /// <li>
-        /// <p>Cannot use "aws:" as a prefix for a key.</p>
-        /// </li>
+        /// <li> <p>Maximum 50 tags per resource.</p> </li>
+        /// <li> <p>Each tag key must be unique and must have exactly one associated value.</p> </li>
+        /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @</p> </li>
+        /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
         /// </ul>
         pub fn tags(
             mut self,
@@ -2776,31 +2475,16 @@ pub mod create_place_index_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>Applies one or more tags to the place index resource. A tag is a key-value pair that helps you
-        /// manage, identify, search, and filter your resources.</p>
-        /// <p>Format: <code>"key" : "value"</code>
-        /// </p>
+        /// <p>Applies one or more tags to the place index resource. A tag is a key-value pair that helps you manage, identify, search, and filter your resources.</p>
+        /// <p>Format: <code>"key" : "value"</code> </p>
         /// <p>Restrictions:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum 50 tags per resource.</p>
-        /// </li>
-        /// <li>
-        /// <p>Each tag key must be unique and must have exactly one associated value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + -
-        /// = . _ : / @</p>
-        /// </li>
-        /// <li>
-        /// <p>Cannot use "aws:" as a prefix for a key.</p>
-        /// </li>
+        /// <li> <p>Maximum 50 tags per resource.</p> </li>
+        /// <li> <p>Each tag key must be unique and must have exactly one associated value.</p> </li>
+        /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @</p> </li>
+        /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
         /// </ul>
         pub fn set_tags(
             mut self,
@@ -2966,16 +2650,9 @@ pub mod create_route_calculator_input {
         /// <p>The name of the route calculator resource. </p>
         /// <p>Requirements:</p>
         /// <ul>
-        /// <li>
-        /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9) , hyphens (-), periods (.), and underscores
-        /// (_).</p>
-        /// </li>
-        /// <li>
-        /// <p>Must be a unique Route calculator resource name.</p>
-        /// </li>
-        /// <li>
-        /// <p>No spaces allowed. For example, <code>ExampleRouteCalculator</code>.</p>
-        /// </li>
+        /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9) , hyphens (-), periods (.), and underscores (_).</p> </li>
+        /// <li> <p>Must be a unique Route calculator resource name.</p> </li>
+        /// <li> <p>No spaces allowed. For example, <code>ExampleRouteCalculator</code>.</p> </li>
         /// </ul>
         pub fn calculator_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.calculator_name = Some(input.into());
@@ -2984,16 +2661,9 @@ pub mod create_route_calculator_input {
         /// <p>The name of the route calculator resource. </p>
         /// <p>Requirements:</p>
         /// <ul>
-        /// <li>
-        /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9) , hyphens (-), periods (.), and underscores
-        /// (_).</p>
-        /// </li>
-        /// <li>
-        /// <p>Must be a unique Route calculator resource name.</p>
-        /// </li>
-        /// <li>
-        /// <p>No spaces allowed. For example, <code>ExampleRouteCalculator</code>.</p>
-        /// </li>
+        /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9) , hyphens (-), periods (.), and underscores (_).</p> </li>
+        /// <li> <p>Must be a unique Route calculator resource name.</p> </li>
+        /// <li> <p>No spaces allowed. For example, <code>ExampleRouteCalculator</code>.</p> </li>
         /// </ul>
         pub fn set_calculator_name(
             mut self,
@@ -3002,50 +2672,28 @@ pub mod create_route_calculator_input {
             self.calculator_name = input;
             self
         }
-        /// <p>Specifies the data provider of traffic and road network data.</p>
-        /// <note>
-        /// <p>This field is case-sensitive. Enter the valid values as shown. For example,
-        /// entering <code>HERE</code> returns an error. Route calculators that use Esri as a data source
-        /// only calculate routes that are shorter than 400 km.</p>
+        /// <p>Specifies the data provider of traffic and road network data.</p> <note>
+        /// <p>This field is case-sensitive. Enter the valid values as shown. For example, entering <code>HERE</code> returns an error. Route calculators that use Esri as a data source only calculate routes that are shorter than 400 km.</p>
         /// </note>
         /// <p>Valid values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Esri</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s coverage in your region of interest, see <a href="https://doc.arcgis.com/en/arcgis-online/reference/network-coverage.htm">Esri details on street networks and traffic coverage</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
-        /// Technologies</a>' coverage in your region of interest, see <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html">HERE car routing coverage</a> and <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/truck-routing.html">HERE truck routing coverage</a>.</p>
-        /// </li>
+        /// <li> <p> <code>Esri</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s coverage in your region of interest, see <a href="https://doc.arcgis.com/en/arcgis-online/reference/network-coverage.htm">Esri details on street networks and traffic coverage</a>.</p> </li>
+        /// <li> <p> <code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>' coverage in your region of interest, see <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html">HERE car routing coverage</a> and <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/truck-routing.html">HERE truck routing coverage</a>.</p> </li>
         /// </ul>
-        /// <p>For additional information , see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data
-        /// providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
+        /// <p>For additional information , see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
         pub fn data_source(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_source = Some(input.into());
             self
         }
-        /// <p>Specifies the data provider of traffic and road network data.</p>
-        /// <note>
-        /// <p>This field is case-sensitive. Enter the valid values as shown. For example,
-        /// entering <code>HERE</code> returns an error. Route calculators that use Esri as a data source
-        /// only calculate routes that are shorter than 400 km.</p>
+        /// <p>Specifies the data provider of traffic and road network data.</p> <note>
+        /// <p>This field is case-sensitive. Enter the valid values as shown. For example, entering <code>HERE</code> returns an error. Route calculators that use Esri as a data source only calculate routes that are shorter than 400 km.</p>
         /// </note>
         /// <p>Valid values include:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>Esri</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s coverage in your region of interest, see <a href="https://doc.arcgis.com/en/arcgis-online/reference/network-coverage.htm">Esri details on street networks and traffic coverage</a>.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
-        /// Technologies</a>' coverage in your region of interest, see <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html">HERE car routing coverage</a> and <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/truck-routing.html">HERE truck routing coverage</a>.</p>
-        /// </li>
+        /// <li> <p> <code>Esri</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s coverage in your region of interest, see <a href="https://doc.arcgis.com/en/arcgis-online/reference/network-coverage.htm">Esri details on street networks and traffic coverage</a>.</p> </li>
+        /// <li> <p> <code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>' coverage in your region of interest, see <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html">HERE car routing coverage</a> and <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/truck-routing.html">HERE truck routing coverage</a>.</p> </li>
         /// </ul>
-        /// <p>For additional information , see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data
-        /// providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
+        /// <p>For additional information , see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
         pub fn set_data_source(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.data_source = input;
             self
@@ -3079,37 +2727,19 @@ pub mod create_route_calculator_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Applies one or more tags to the route calculator resource. A tag is a key-value pair
-        /// helps manage, identify, search, and filter your resources by labelling them.</p>
+        /// <p>Applies one or more tags to the route calculator resource. A tag is a key-value pair helps manage, identify, search, and filter your resources by labelling them.</p>
         /// <ul>
-        /// <li>
-        /// <p>For example: { <code>"tag1" : "value1"</code>, <code>"tag2" :
-        /// "value2"</code>}</p>
-        /// </li>
+        /// <li> <p>For example: { <code>"tag1" : "value1"</code>, <code>"tag2" : "value2"</code>}</p> </li>
         /// </ul>
-        /// <p>Format: <code>"key" : "value"</code>
-        /// </p>
+        /// <p>Format: <code>"key" : "value"</code> </p>
         /// <p>Restrictions:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum 50 tags per resource</p>
-        /// </li>
-        /// <li>
-        /// <p>Each resource tag must be unique with a maximum of one value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length: 128 Unicode characters in UTF-8</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length: 256 Unicode characters in UTF-8</p>
-        /// </li>
-        /// <li>
-        /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters:
-        /// + - = . _ : / @. </p>
-        /// </li>
-        /// <li>
-        /// <p>Cannot use "aws:" as a prefix for a key.</p>
-        /// </li>
+        /// <li> <p>Maximum 50 tags per resource</p> </li>
+        /// <li> <p>Each resource tag must be unique with a maximum of one value.</p> </li>
+        /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8</p> </li>
+        /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8</p> </li>
+        /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @. </p> </li>
+        /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
         /// </ul>
         pub fn tags(
             mut self,
@@ -3121,37 +2751,19 @@ pub mod create_route_calculator_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>Applies one or more tags to the route calculator resource. A tag is a key-value pair
-        /// helps manage, identify, search, and filter your resources by labelling them.</p>
+        /// <p>Applies one or more tags to the route calculator resource. A tag is a key-value pair helps manage, identify, search, and filter your resources by labelling them.</p>
         /// <ul>
-        /// <li>
-        /// <p>For example: { <code>"tag1" : "value1"</code>, <code>"tag2" :
-        /// "value2"</code>}</p>
-        /// </li>
+        /// <li> <p>For example: { <code>"tag1" : "value1"</code>, <code>"tag2" : "value2"</code>}</p> </li>
         /// </ul>
-        /// <p>Format: <code>"key" : "value"</code>
-        /// </p>
+        /// <p>Format: <code>"key" : "value"</code> </p>
         /// <p>Restrictions:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum 50 tags per resource</p>
-        /// </li>
-        /// <li>
-        /// <p>Each resource tag must be unique with a maximum of one value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length: 128 Unicode characters in UTF-8</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length: 256 Unicode characters in UTF-8</p>
-        /// </li>
-        /// <li>
-        /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters:
-        /// + - = . _ : / @. </p>
-        /// </li>
-        /// <li>
-        /// <p>Cannot use "aws:" as a prefix for a key.</p>
-        /// </li>
+        /// <li> <p>Maximum 50 tags per resource</p> </li>
+        /// <li> <p>Each resource tag must be unique with a maximum of one value.</p> </li>
+        /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8</p> </li>
+        /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8</p> </li>
+        /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @. </p> </li>
+        /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
         /// </ul>
         pub fn set_tags(
             mut self,
@@ -3320,15 +2932,9 @@ pub mod create_tracker_input {
         /// <p>The name for the tracker resource.</p>
         /// <p>Requirements:</p>
         /// <ul>
-        /// <li>
-        /// <p>Contain only alphanumeric characters (A-Z, a-z, 0-9) , hyphens (-), periods (.), and underscores (_).</p>
-        /// </li>
-        /// <li>
-        /// <p>Must be a unique tracker resource name.</p>
-        /// </li>
-        /// <li>
-        /// <p>No spaces allowed. For example, <code>ExampleTracker</code>.</p>
-        /// </li>
+        /// <li> <p>Contain only alphanumeric characters (A-Z, a-z, 0-9) , hyphens (-), periods (.), and underscores (_).</p> </li>
+        /// <li> <p>Must be a unique tracker resource name.</p> </li>
+        /// <li> <p>No spaces allowed. For example, <code>ExampleTracker</code>.</p> </li>
         /// </ul>
         pub fn tracker_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.tracker_name = Some(input.into());
@@ -3337,15 +2943,9 @@ pub mod create_tracker_input {
         /// <p>The name for the tracker resource.</p>
         /// <p>Requirements:</p>
         /// <ul>
-        /// <li>
-        /// <p>Contain only alphanumeric characters (A-Z, a-z, 0-9) , hyphens (-), periods (.), and underscores (_).</p>
-        /// </li>
-        /// <li>
-        /// <p>Must be a unique tracker resource name.</p>
-        /// </li>
-        /// <li>
-        /// <p>No spaces allowed. For example, <code>ExampleTracker</code>.</p>
-        /// </li>
+        /// <li> <p>Contain only alphanumeric characters (A-Z, a-z, 0-9) , hyphens (-), periods (.), and underscores (_).</p> </li>
+        /// <li> <p>Must be a unique tracker resource name.</p> </li>
+        /// <li> <p>No spaces allowed. For example, <code>ExampleTracker</code>.</p> </li>
         /// </ul>
         pub fn set_tracker_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.tracker_name = input;
@@ -3378,38 +2978,24 @@ pub mod create_tracker_input {
         }
         /// <p>Specifies the data provider for the tracker resource.</p>
         /// <ul>
-        /// <li>
-        /// <p>Required value for the following pricing plans: <code>MobileAssetTracking
-        /// </code>| <code>MobileAssetManagement</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Required value for the following pricing plans: <code>MobileAssetTracking </code>| <code>MobileAssetManagement</code> </p> </li>
         /// </ul>
-        /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">Data Providers</a>, and <a href="https://aws.amazon.com/location/pricing/">Pricing plans</a>, see the Amazon Location
-        /// Service product page.</p>
-        /// <note>
+        /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">Data Providers</a>, and <a href="https://aws.amazon.com/location/pricing/">Pricing plans</a>, see the Amazon Location Service product page.</p> <note>
         /// <p>Amazon Location Service only uses <code>PricingPlanDataSource</code> to calculate billing for your tracker resource. Your data will not be shared with the data provider, and will remain in your AWS account or Region unless you move it.</p>
         /// </note>
-        /// <p>Valid values: <code>Esri</code> | <code>Here</code>
-        /// </p>
+        /// <p>Valid values: <code>Esri</code> | <code>Here</code> </p>
         pub fn pricing_plan_data_source(mut self, input: impl Into<std::string::String>) -> Self {
             self.pricing_plan_data_source = Some(input.into());
             self
         }
         /// <p>Specifies the data provider for the tracker resource.</p>
         /// <ul>
-        /// <li>
-        /// <p>Required value for the following pricing plans: <code>MobileAssetTracking
-        /// </code>| <code>MobileAssetManagement</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Required value for the following pricing plans: <code>MobileAssetTracking </code>| <code>MobileAssetManagement</code> </p> </li>
         /// </ul>
-        /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">Data Providers</a>, and <a href="https://aws.amazon.com/location/pricing/">Pricing plans</a>, see the Amazon Location
-        /// Service product page.</p>
-        /// <note>
+        /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">Data Providers</a>, and <a href="https://aws.amazon.com/location/pricing/">Pricing plans</a>, see the Amazon Location Service product page.</p> <note>
         /// <p>Amazon Location Service only uses <code>PricingPlanDataSource</code> to calculate billing for your tracker resource. Your data will not be shared with the data provider, and will remain in your AWS account or Region unless you move it.</p>
         /// </note>
-        /// <p>Valid values: <code>Esri</code> | <code>Here</code>
-        /// </p>
+        /// <p>Valid values: <code>Esri</code> | <code>Here</code> </p>
         pub fn set_pricing_plan_data_source(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3431,31 +3017,16 @@ pub mod create_tracker_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Applies one or more tags to the tracker resource. A tag is a key-value pair helps
-        /// manage, identify, search, and filter your resources by labelling them.</p>
-        /// <p>Format: <code>"key" : "value"</code>
-        /// </p>
+        /// <p>Applies one or more tags to the tracker resource. A tag is a key-value pair helps manage, identify, search, and filter your resources by labelling them.</p>
+        /// <p>Format: <code>"key" : "value"</code> </p>
         /// <p>Restrictions:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum 50 tags per resource</p>
-        /// </li>
-        /// <li>
-        /// <p>Each resource tag must be unique with a maximum of one value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length: 128 Unicode characters in UTF-8</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length: 256 Unicode characters in UTF-8</p>
-        /// </li>
-        /// <li>
-        /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters:
-        /// + - = . _ : / @. </p>
-        /// </li>
-        /// <li>
-        /// <p>Cannot use "aws:" as a prefix for a key.</p>
-        /// </li>
+        /// <li> <p>Maximum 50 tags per resource</p> </li>
+        /// <li> <p>Each resource tag must be unique with a maximum of one value.</p> </li>
+        /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8</p> </li>
+        /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8</p> </li>
+        /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @. </p> </li>
+        /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
         /// </ul>
         pub fn tags(
             mut self,
@@ -3467,31 +3038,16 @@ pub mod create_tracker_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>Applies one or more tags to the tracker resource. A tag is a key-value pair helps
-        /// manage, identify, search, and filter your resources by labelling them.</p>
-        /// <p>Format: <code>"key" : "value"</code>
-        /// </p>
+        /// <p>Applies one or more tags to the tracker resource. A tag is a key-value pair helps manage, identify, search, and filter your resources by labelling them.</p>
+        /// <p>Format: <code>"key" : "value"</code> </p>
         /// <p>Restrictions:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum 50 tags per resource</p>
-        /// </li>
-        /// <li>
-        /// <p>Each resource tag must be unique with a maximum of one value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length: 128 Unicode characters in UTF-8</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length: 256 Unicode characters in UTF-8</p>
-        /// </li>
-        /// <li>
-        /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters:
-        /// + - = . _ : / @. </p>
-        /// </li>
-        /// <li>
-        /// <p>Cannot use "aws:" as a prefix for a key.</p>
-        /// </li>
+        /// <li> <p>Maximum 50 tags per resource</p> </li>
+        /// <li> <p>Each resource tag must be unique with a maximum of one value.</p> </li>
+        /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8</p> </li>
+        /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8</p> </li>
+        /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @. </p> </li>
+        /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
         /// </ul>
         pub fn set_tags(
             mut self,
@@ -3505,21 +3061,8 @@ pub mod create_tracker_input {
         /// <p>Specifies the position filtering for the tracker resource.</p>
         /// <p>Valid values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>TimeBased</code> - Location updates are evaluated against linked geofence collections,
-        /// but not every location update is stored. If your update frequency is more often than 30 seconds,
-        /// only one update per 30 seconds is stored for each unique device ID.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DistanceBased</code> - If the device has moved less than 30 m (98.4 ft), location updates are
-        /// ignored. Location updates within this area are neither evaluated against linked geofence collections, nor stored.
-        /// This helps control costs by reducing the number of geofence evaluations and historical device positions to paginate through.
-        /// Distance-based filtering can also reduce the effects of GPS noise when displaying device trajectories on a map.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>TimeBased</code> - Location updates are evaluated against linked geofence collections, but not every location update is stored. If your update frequency is more often than 30 seconds, only one update per 30 seconds is stored for each unique device ID. </p> </li>
+        /// <li> <p> <code>DistanceBased</code> - If the device has moved less than 30 m (98.4 ft), location updates are ignored. Location updates within this area are neither evaluated against linked geofence collections, nor stored. This helps control costs by reducing the number of geofence evaluations and historical device positions to paginate through. Distance-based filtering can also reduce the effects of GPS noise when displaying device trajectories on a map. </p> </li>
         /// </ul>
         /// <p>This field is optional. If not specified, the default value is <code>TimeBased</code>.</p>
         pub fn position_filtering(mut self, input: crate::model::PositionFiltering) -> Self {
@@ -3529,21 +3072,8 @@ pub mod create_tracker_input {
         /// <p>Specifies the position filtering for the tracker resource.</p>
         /// <p>Valid values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>TimeBased</code> - Location updates are evaluated against linked geofence collections,
-        /// but not every location update is stored. If your update frequency is more often than 30 seconds,
-        /// only one update per 30 seconds is stored for each unique device ID.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DistanceBased</code> - If the device has moved less than 30 m (98.4 ft), location updates are
-        /// ignored. Location updates within this area are neither evaluated against linked geofence collections, nor stored.
-        /// This helps control costs by reducing the number of geofence evaluations and historical device positions to paginate through.
-        /// Distance-based filtering can also reduce the effects of GPS noise when displaying device trajectories on a map.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>TimeBased</code> - Location updates are evaluated against linked geofence collections, but not every location update is stored. If your update frequency is more often than 30 seconds, only one update per 30 seconds is stored for each unique device ID. </p> </li>
+        /// <li> <p> <code>DistanceBased</code> - If the device has moved less than 30 m (98.4 ft), location updates are ignored. Location updates within this area are neither evaluated against linked geofence collections, nor stored. This helps control costs by reducing the number of geofence evaluations and historical device positions to paginate through. Distance-based filtering can also reduce the effects of GPS noise when displaying device trajectories on a map. </p> </li>
         /// </ul>
         /// <p>This field is optional. If not specified, the default value is <code>TimeBased</code>.</p>
         pub fn set_position_filtering(
@@ -5288,27 +4818,17 @@ pub mod disassociate_tracker_consumer_input {
             self.tracker_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the geofence collection to be disassociated from
-        /// the tracker resource. Used when you need to specify a resource across all AWS. </p>
+        /// <p>The Amazon Resource Name (ARN) for the geofence collection to be disassociated from the tracker resource. Used when you need to specify a resource across all AWS. </p>
         /// <ul>
-        /// <li>
-        /// <p>Format example:
-        /// <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code> </p> </li>
         /// </ul>
         pub fn consumer_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.consumer_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the geofence collection to be disassociated from
-        /// the tracker resource. Used when you need to specify a resource across all AWS. </p>
+        /// <p>The Amazon Resource Name (ARN) for the geofence collection to be disassociated from the tracker resource. Used when you need to specify a resource across all AWS. </p>
         /// <ul>
-        /// <li>
-        /// <p>Format example:
-        /// <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code> </p> </li>
         /// </ul>
         pub fn set_consumer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.consumer_arn = input;
@@ -5688,45 +5208,31 @@ pub mod get_device_position_history_input {
             self.device_id = input;
             self
         }
-        /// <p>The pagination token specifying which page of results to return in the response. If no
-        /// token is provided, the default page is the first page. </p>
-        /// <p>Default value: <code>null</code>
-        /// </p>
+        /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p>
+        /// <p>Default value: <code>null</code> </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token specifying which page of results to return in the response. If no
-        /// token is provided, the default page is the first page. </p>
-        /// <p>Default value: <code>null</code>
-        /// </p>
+        /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p>
+        /// <p>Default value: <code>null</code> </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
-        /// <p>Specify the start time for the position history in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be 24 hours
-        /// prior to the time that the request is made.</p>
+        /// <p>Specify the start time for the position history in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be 24 hours prior to the time that the request is made.</p>
         /// <p>Requirement:</p>
         /// <ul>
-        /// <li>
-        /// <p>The time specified for <code>StartTimeInclusive</code> must be before
-        /// <code>EndTimeExclusive</code>.</p>
-        /// </li>
+        /// <li> <p>The time specified for <code>StartTimeInclusive</code> must be before <code>EndTimeExclusive</code>.</p> </li>
         /// </ul>
         pub fn start_time_inclusive(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time_inclusive = Some(input);
             self
         }
-        /// <p>Specify the start time for the position history in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be 24 hours
-        /// prior to the time that the request is made.</p>
+        /// <p>Specify the start time for the position history in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be 24 hours prior to the time that the request is made.</p>
         /// <p>Requirement:</p>
         /// <ul>
-        /// <li>
-        /// <p>The time specified for <code>StartTimeInclusive</code> must be before
-        /// <code>EndTimeExclusive</code>.</p>
-        /// </li>
+        /// <li> <p>The time specified for <code>StartTimeInclusive</code> must be before <code>EndTimeExclusive</code>.</p> </li>
         /// </ul>
         pub fn set_start_time_inclusive(
             mut self,
@@ -5735,29 +5241,19 @@ pub mod get_device_position_history_input {
             self.start_time_inclusive = input;
             self
         }
-        /// <p>Specify the end time for the position history in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be the time
-        /// that the request is made.</p>
+        /// <p>Specify the end time for the position history in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be the time that the request is made.</p>
         /// <p>Requirement:</p>
         /// <ul>
-        /// <li>
-        /// <p>The time specified for <code>EndTimeExclusive</code> must be after the time for
-        /// <code>StartTimeInclusive</code>.</p>
-        /// </li>
+        /// <li> <p>The time specified for <code>EndTimeExclusive</code> must be after the time for <code>StartTimeInclusive</code>.</p> </li>
         /// </ul>
         pub fn end_time_exclusive(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time_exclusive = Some(input);
             self
         }
-        /// <p>Specify the end time for the position history in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be the time
-        /// that the request is made.</p>
+        /// <p>Specify the end time for the position history in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be the time that the request is made.</p>
         /// <p>Requirement:</p>
         /// <ul>
-        /// <li>
-        /// <p>The time specified for <code>EndTimeExclusive</code> must be after the time for
-        /// <code>StartTimeInclusive</code>.</p>
-        /// </li>
+        /// <li> <p>The time specified for <code>EndTimeExclusive</code> must be after the time for <code>StartTimeInclusive</code>.</p> </li>
         /// </ul>
         pub fn set_end_time_exclusive(
             mut self,
@@ -6150,104 +5646,46 @@ pub mod get_map_glyphs_input {
             self.map_name = input;
             self
         }
-        /// <p>A comma-separated list of fonts to load glyphs from in order of preference. For
-        /// example, <code>Noto Sans Regular, Arial Unicode</code>.</p>
+        /// <p>A comma-separated list of fonts to load glyphs from in order of preference. For example, <code>Noto Sans Regular, Arial Unicode</code>.</p>
         /// <p>Valid fonts stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a> styles: </p>
         /// <ul>
-        /// <li>
-        /// <p>VectorEsriDarkGrayCanvas – <code>Ubuntu Medium Italic</code> | <code>Ubuntu
-        /// Medium</code> | <code>Ubuntu Italic</code> | <code>Ubuntu Regular</code> |
-        /// <code>Ubuntu Bold</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>VectorEsriLightGrayCanvas – <code>Ubuntu Italic</code> | <code>Ubuntu
-        /// Regular</code> | <code>Ubuntu Light</code> | <code>Ubuntu Bold</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>VectorEsriTopographic – <code>Noto Sans Italic</code> | <code>Noto Sans
-        /// Regular</code> | <code>Noto Sans Bold</code> | <code>Noto Serif
-        /// Regular</code> | <code>Roboto Condensed Light Italic</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>VectorEsriStreets – <code>Arial Regular</code> | <code>Arial Italic</code> |
-        /// <code>Arial Bold</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>VectorEsriNavigation – <code>Arial Regular</code> | <code>Arial Italic</code>
-        /// | <code>Arial Bold</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>VectorEsriDarkGrayCanvas – <code>Ubuntu Medium Italic</code> | <code>Ubuntu Medium</code> | <code>Ubuntu Italic</code> | <code>Ubuntu Regular</code> | <code>Ubuntu Bold</code> </p> </li>
+        /// <li> <p>VectorEsriLightGrayCanvas – <code>Ubuntu Italic</code> | <code>Ubuntu Regular</code> | <code>Ubuntu Light</code> | <code>Ubuntu Bold</code> </p> </li>
+        /// <li> <p>VectorEsriTopographic – <code>Noto Sans Italic</code> | <code>Noto Sans Regular</code> | <code>Noto Sans Bold</code> | <code>Noto Serif Regular</code> | <code>Roboto Condensed Light Italic</code> </p> </li>
+        /// <li> <p>VectorEsriStreets – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial Bold</code> </p> </li>
+        /// <li> <p>VectorEsriNavigation – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial Bold</code> </p> </li>
         /// </ul>
         /// <p>Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a> styles: </p>
         /// <ul>
-        /// <li>
-        /// <p>VectorHereBerlin – <code>Fira GO Regular</code> | <code>Fira GO
-        /// Bold</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>VectorHereBerlin – <code>Fira GO Regular</code> | <code>Fira GO Bold</code> </p> </li>
         /// </ul>
         pub fn font_stack(mut self, input: impl Into<std::string::String>) -> Self {
             self.font_stack = Some(input.into());
             self
         }
-        /// <p>A comma-separated list of fonts to load glyphs from in order of preference. For
-        /// example, <code>Noto Sans Regular, Arial Unicode</code>.</p>
+        /// <p>A comma-separated list of fonts to load glyphs from in order of preference. For example, <code>Noto Sans Regular, Arial Unicode</code>.</p>
         /// <p>Valid fonts stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a> styles: </p>
         /// <ul>
-        /// <li>
-        /// <p>VectorEsriDarkGrayCanvas – <code>Ubuntu Medium Italic</code> | <code>Ubuntu
-        /// Medium</code> | <code>Ubuntu Italic</code> | <code>Ubuntu Regular</code> |
-        /// <code>Ubuntu Bold</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>VectorEsriLightGrayCanvas – <code>Ubuntu Italic</code> | <code>Ubuntu
-        /// Regular</code> | <code>Ubuntu Light</code> | <code>Ubuntu Bold</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>VectorEsriTopographic – <code>Noto Sans Italic</code> | <code>Noto Sans
-        /// Regular</code> | <code>Noto Sans Bold</code> | <code>Noto Serif
-        /// Regular</code> | <code>Roboto Condensed Light Italic</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>VectorEsriStreets – <code>Arial Regular</code> | <code>Arial Italic</code> |
-        /// <code>Arial Bold</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>VectorEsriNavigation – <code>Arial Regular</code> | <code>Arial Italic</code>
-        /// | <code>Arial Bold</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>VectorEsriDarkGrayCanvas – <code>Ubuntu Medium Italic</code> | <code>Ubuntu Medium</code> | <code>Ubuntu Italic</code> | <code>Ubuntu Regular</code> | <code>Ubuntu Bold</code> </p> </li>
+        /// <li> <p>VectorEsriLightGrayCanvas – <code>Ubuntu Italic</code> | <code>Ubuntu Regular</code> | <code>Ubuntu Light</code> | <code>Ubuntu Bold</code> </p> </li>
+        /// <li> <p>VectorEsriTopographic – <code>Noto Sans Italic</code> | <code>Noto Sans Regular</code> | <code>Noto Sans Bold</code> | <code>Noto Serif Regular</code> | <code>Roboto Condensed Light Italic</code> </p> </li>
+        /// <li> <p>VectorEsriStreets – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial Bold</code> </p> </li>
+        /// <li> <p>VectorEsriNavigation – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial Bold</code> </p> </li>
         /// </ul>
         /// <p>Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a> styles: </p>
         /// <ul>
-        /// <li>
-        /// <p>VectorHereBerlin – <code>Fira GO Regular</code> | <code>Fira GO
-        /// Bold</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>VectorHereBerlin – <code>Fira GO Regular</code> | <code>Fira GO Bold</code> </p> </li>
         /// </ul>
         pub fn set_font_stack(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.font_stack = input;
             self
         }
-        /// <p>A Unicode range of characters to download glyphs for. Each response will contain 256
-        /// characters. For example, 0–255 includes all characters from range <code>U+0000</code> to
-        /// <code>00FF</code>. Must be aligned to multiples of 256.</p>
+        /// <p>A Unicode range of characters to download glyphs for. Each response will contain 256 characters. For example, 0–255 includes all characters from range <code>U+0000</code> to <code>00FF</code>. Must be aligned to multiples of 256.</p>
         pub fn font_unicode_range(mut self, input: impl Into<std::string::String>) -> Self {
             self.font_unicode_range = Some(input.into());
             self
         }
-        /// <p>A Unicode range of characters to download glyphs for. Each response will contain 256
-        /// characters. For example, 0–255 includes all characters from range <code>U+0000</code> to
-        /// <code>00FF</code>. Must be aligned to multiples of 256.</p>
+        /// <p>A Unicode range of characters to download glyphs for. Each response will contain 256 characters. For example, 0–255 includes all characters from range <code>U+0000</code> to <code>00FF</code>. Must be aligned to multiples of 256.</p>
         pub fn set_font_unicode_range(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6449,27 +5887,13 @@ pub mod get_map_sprites_input {
         }
         /// <p>The name of the sprite ﬁle. Use the following ﬁle names for the sprite sheet:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>sprites.png</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>sprites@2x.png</code> for high pixel density displays</p>
-        /// </li>
+        /// <li> <p> <code>sprites.png</code> </p> </li>
+        /// <li> <p> <code>sprites@2x.png</code> for high pixel density displays</p> </li>
         /// </ul>
         /// <p>For the JSON document contain image offsets. Use the following ﬁle names:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>sprites.json</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>sprites@2x.json</code> for high pixel density displays</p>
-        /// </li>
+        /// <li> <p> <code>sprites.json</code> </p> </li>
+        /// <li> <p> <code>sprites@2x.json</code> for high pixel density displays</p> </li>
         /// </ul>
         pub fn file_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.file_name = Some(input.into());
@@ -6477,27 +5901,13 @@ pub mod get_map_sprites_input {
         }
         /// <p>The name of the sprite ﬁle. Use the following ﬁle names for the sprite sheet:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>sprites.png</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>sprites@2x.png</code> for high pixel density displays</p>
-        /// </li>
+        /// <li> <p> <code>sprites.png</code> </p> </li>
+        /// <li> <p> <code>sprites@2x.png</code> for high pixel density displays</p> </li>
         /// </ul>
         /// <p>For the JSON document contain image offsets. Use the following ﬁle names:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>sprites.json</code>
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>sprites@2x.json</code> for high pixel density displays</p>
-        /// </li>
+        /// <li> <p> <code>sprites.json</code> </p> </li>
+        /// <li> <p> <code>sprites@2x.json</code> for high pixel density displays</p> </li>
         /// </ul>
         pub fn set_file_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.file_name = input;
@@ -7078,31 +6488,25 @@ pub mod list_device_positions_input {
             self
         }
         /// <p>An optional limit for the number of entries returned in a single call.</p>
-        /// <p>Default value: <code>100</code>
-        /// </p>
+        /// <p>Default value: <code>100</code> </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
         /// <p>An optional limit for the number of entries returned in a single call.</p>
-        /// <p>Default value: <code>100</code>
-        /// </p>
+        /// <p>Default value: <code>100</code> </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>The pagination token specifying which page of results to return in the response. If no
-        /// token is provided, the default page is the first page.</p>
-        /// <p>Default value: <code>null</code>
-        /// </p>
+        /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.</p>
+        /// <p>Default value: <code>null</code> </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token specifying which page of results to return in the response. If no
-        /// token is provided, the default page is the first page.</p>
-        /// <p>Default value: <code>null</code>
-        /// </p>
+        /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.</p>
+        /// <p>Default value: <code>null</code> </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7272,31 +6676,25 @@ pub mod list_geofence_collections_input {
     }
     impl Builder {
         /// <p>An optional limit for the number of resources returned in a single call. </p>
-        /// <p>Default value: <code>100</code>
-        /// </p>
+        /// <p>Default value: <code>100</code> </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
         /// <p>An optional limit for the number of resources returned in a single call. </p>
-        /// <p>Default value: <code>100</code>
-        /// </p>
+        /// <p>Default value: <code>100</code> </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>The pagination token specifying which page of results to return in the response. If no
-        /// token is provided, the default page is the first page. </p>
-        /// <p>Default value: <code>null</code>
-        /// </p>
+        /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p>
+        /// <p>Default value: <code>null</code> </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token specifying which page of results to return in the response. If no
-        /// token is provided, the default page is the first page. </p>
-        /// <p>Default value: <code>null</code>
-        /// </p>
+        /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p>
+        /// <p>Default value: <code>null</code> </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7460,18 +6858,14 @@ pub mod list_geofences_input {
             self.collection_name = input;
             self
         }
-        /// <p>The pagination token specifying which page of results to return in the response. If no
-        /// token is provided, the default page is the first page. </p>
-        /// <p>Default value: <code>null</code>
-        /// </p>
+        /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p>
+        /// <p>Default value: <code>null</code> </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token specifying which page of results to return in the response. If no
-        /// token is provided, the default page is the first page. </p>
-        /// <p>Default value: <code>null</code>
-        /// </p>
+        /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p>
+        /// <p>Default value: <code>null</code> </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7639,31 +7033,25 @@ pub mod list_maps_input {
     }
     impl Builder {
         /// <p>An optional limit for the number of resources returned in a single call. </p>
-        /// <p>Default value: <code>100</code>
-        /// </p>
+        /// <p>Default value: <code>100</code> </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
         /// <p>An optional limit for the number of resources returned in a single call. </p>
-        /// <p>Default value: <code>100</code>
-        /// </p>
+        /// <p>Default value: <code>100</code> </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>The pagination token specifying which page of results to return in the response. If no
-        /// token is provided, the default page is the first page.</p>
-        /// <p>Default value: <code>null</code>
-        /// </p>
+        /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.</p>
+        /// <p>Default value: <code>null</code> </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token specifying which page of results to return in the response. If no
-        /// token is provided, the default page is the first page.</p>
-        /// <p>Default value: <code>null</code>
-        /// </p>
+        /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.</p>
+        /// <p>Default value: <code>null</code> </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7806,31 +7194,25 @@ pub mod list_place_indexes_input {
     }
     impl Builder {
         /// <p>An optional limit for the maximum number of results returned in a single call.</p>
-        /// <p>Default value: <code>100</code>
-        /// </p>
+        /// <p>Default value: <code>100</code> </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
         /// <p>An optional limit for the maximum number of results returned in a single call.</p>
-        /// <p>Default value: <code>100</code>
-        /// </p>
+        /// <p>Default value: <code>100</code> </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>The pagination token specifying which page of results to return in the response. If no
-        /// token is provided, the default page is the first page.</p>
-        /// <p>Default value: <code>null</code>
-        /// </p>
+        /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.</p>
+        /// <p>Default value: <code>null</code> </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token specifying which page of results to return in the response. If no
-        /// token is provided, the default page is the first page.</p>
-        /// <p>Default value: <code>null</code>
-        /// </p>
+        /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.</p>
+        /// <p>Default value: <code>null</code> </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7979,31 +7361,25 @@ pub mod list_route_calculators_input {
     }
     impl Builder {
         /// <p>An optional maximum number of results returned in a single call.</p>
-        /// <p>Default Value: <code>100</code>
-        /// </p>
+        /// <p>Default Value: <code>100</code> </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
         /// <p>An optional maximum number of results returned in a single call.</p>
-        /// <p>Default Value: <code>100</code>
-        /// </p>
+        /// <p>Default Value: <code>100</code> </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>The pagination token specifying which page of results to return in the response. If no
-        /// token is provided, the default page is the first page.</p>
-        /// <p>Default Value: <code>null</code>
-        /// </p>
+        /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.</p>
+        /// <p>Default Value: <code>null</code> </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token specifying which page of results to return in the response. If no
-        /// token is provided, the default page is the first page.</p>
-        /// <p>Default Value: <code>null</code>
-        /// </p>
+        /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.</p>
+        /// <p>Default Value: <code>null</code> </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8154,10 +7530,7 @@ pub mod list_tags_for_resource_input {
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the resource whose tags you want to retrieve.</p>
         /// <ul>
-        /// <li>
-        /// <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code> </p> </li>
         /// </ul>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
@@ -8165,10 +7538,7 @@ pub mod list_tags_for_resource_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource whose tags you want to retrieve.</p>
         /// <ul>
-        /// <li>
-        /// <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code> </p> </li>
         /// </ul>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
@@ -8330,31 +7700,25 @@ pub mod list_tracker_consumers_input {
             self
         }
         /// <p>An optional limit for the number of resources returned in a single call. </p>
-        /// <p>Default value: <code>100</code>
-        /// </p>
+        /// <p>Default value: <code>100</code> </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
         /// <p>An optional limit for the number of resources returned in a single call. </p>
-        /// <p>Default value: <code>100</code>
-        /// </p>
+        /// <p>Default value: <code>100</code> </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>The pagination token specifying which page of results to return in the response. If no
-        /// token is provided, the default page is the first page. </p>
-        /// <p>Default value: <code>null</code>
-        /// </p>
+        /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p>
+        /// <p>Default value: <code>null</code> </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token specifying which page of results to return in the response. If no
-        /// token is provided, the default page is the first page. </p>
-        /// <p>Default value: <code>null</code>
-        /// </p>
+        /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p>
+        /// <p>Default value: <code>null</code> </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8526,31 +7890,25 @@ pub mod list_trackers_input {
     }
     impl Builder {
         /// <p>An optional limit for the number of resources returned in a single call. </p>
-        /// <p>Default value: <code>100</code>
-        /// </p>
+        /// <p>Default value: <code>100</code> </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
         /// <p>An optional limit for the number of resources returned in a single call. </p>
-        /// <p>Default value: <code>100</code>
-        /// </p>
+        /// <p>Default value: <code>100</code> </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>The pagination token specifying which page of results to return in the response. If no
-        /// token is provided, the default page is the first page. </p>
-        /// <p>Default value: <code>null</code>
-        /// </p>
+        /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p>
+        /// <p>Default value: <code>null</code> </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>The pagination token specifying which page of results to return in the response. If no
-        /// token is provided, the default page is the first page. </p>
-        /// <p>Default value: <code>null</code>
-        /// </p>
+        /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p>
+        /// <p>Default value: <code>null</code> </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8721,16 +8079,14 @@ pub mod put_geofence_input {
             self.geofence_id = input;
             self
         }
-        /// <p>Contains the polygon details to specify the position of the geofence.</p>
-        /// <note>
+        /// <p>Contains the polygon details to specify the position of the geofence.</p> <note>
         /// <p>Each <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html">geofence polygon</a> can have a maximum of 1,000 vertices.</p>
         /// </note>
         pub fn geometry(mut self, input: crate::model::GeofenceGeometry) -> Self {
             self.geometry = Some(input);
             self
         }
-        /// <p>Contains the polygon details to specify the position of the geofence.</p>
-        /// <note>
+        /// <p>Contains the polygon details to specify the position of the geofence.</p> <note>
         /// <p>Each <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html">geofence polygon</a> can have a maximum of 1,000 vertices.</p>
         /// </note>
         pub fn set_geometry(
@@ -8936,12 +8292,8 @@ pub mod search_place_index_for_position_input {
         /// To override the contents of this collection use [`set_position`](Self::set_position).
         ///
         /// <p>Specifies the longitude and latitude of the position to query.</p>
-        /// <p>
-        /// This parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude;
-        /// the second number represents the Y coordinate, or latitude.</p>
-        /// <p>For example, <code>[-123.1174, 49.2847]</code> represents a position with
-        /// longitude <code>-123.1174</code> and
-        /// latitude <code>49.2847</code>.</p>
+        /// <p> This parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
+        /// <p>For example, <code>[-123.1174, 49.2847]</code> represents a position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
         pub fn position(mut self, input: f64) -> Self {
             let mut v = self.position.unwrap_or_default();
             v.push(input);
@@ -8949,44 +8301,32 @@ pub mod search_place_index_for_position_input {
             self
         }
         /// <p>Specifies the longitude and latitude of the position to query.</p>
-        /// <p>
-        /// This parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude;
-        /// the second number represents the Y coordinate, or latitude.</p>
-        /// <p>For example, <code>[-123.1174, 49.2847]</code> represents a position with
-        /// longitude <code>-123.1174</code> and
-        /// latitude <code>49.2847</code>.</p>
+        /// <p> This parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
+        /// <p>For example, <code>[-123.1174, 49.2847]</code> represents a position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
         pub fn set_position(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
             self.position = input;
             self
         }
         /// <p>An optional parameter. The maximum number of results returned per request.</p>
-        /// <p>Default value: <code>50</code>
-        /// </p>
+        /// <p>Default value: <code>50</code> </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
         /// <p>An optional parameter. The maximum number of results returned per request.</p>
-        /// <p>Default value: <code>50</code>
-        /// </p>
+        /// <p>Default value: <code>50</code> </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example,
-        /// <code>en</code> for English.</p>
-        /// <p>This setting affects the languages used in the results. It does not change which
-        /// results are returned. If the language is not specified, or not supported for a
-        /// particular result, the partner automatically chooses a language for the result.</p>
+        /// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
+        /// <p>This setting affects the languages used in the results. It does not change which results are returned. If the language is not specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p>
         pub fn language(mut self, input: impl Into<std::string::String>) -> Self {
             self.language = Some(input.into());
             self
         }
-        /// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example,
-        /// <code>en</code> for English.</p>
-        /// <p>This setting affects the languages used in the results. It does not change which
-        /// results are returned. If the language is not specified, or not supported for a
-        /// particular result, the partner automatically chooses a language for the result.</p>
+        /// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
+        /// <p>This setting affects the languages used in the results. It does not change which results are returned. If the language is not specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p>
         pub fn set_language(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.language = input;
             self
@@ -9173,16 +8513,12 @@ pub mod search_place_index_for_text_input {
             self.index_name = input;
             self
         }
-        /// <p>The address, name,
-        /// city, or region to be used in the search in free-form text format. For example, <code>123 Any
-        /// Street</code>.</p>
+        /// <p>The address, name, city, or region to be used in the search in free-form text format. For example, <code>123 Any Street</code>.</p>
         pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
             self.text = Some(input.into());
             self
         }
-        /// <p>The address, name,
-        /// city, or region to be used in the search in free-form text format. For example, <code>123 Any
-        /// Street</code>.</p>
+        /// <p>The address, name, city, or region to be used in the search in free-form text format. For example, <code>123 Any Street</code>.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.text = input;
             self
@@ -9192,17 +8528,9 @@ pub mod search_place_index_for_text_input {
         /// To override the contents of this collection use [`set_bias_position`](Self::set_bias_position).
         ///
         /// <p>An optional parameter that indicates a preference for places that are closer to a specified position.</p>
-        /// <p>
-        /// If provided, this parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the
-        /// second number represents the Y coordinate, or latitude.</p>
-        /// <p>For example, <code>[-123.1174, 49.2847]</code> represents the position with
-        /// longitude <code>-123.1174</code> and
-        /// latitude <code>49.2847</code>.</p>
-        /// <note>
-        /// <p>
-        /// <code>BiasPosition</code> and <code>FilterBBox</code> are mutually exclusive. Specifying both options
-        /// results in an error.
-        /// </p>
+        /// <p> If provided, this parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
+        /// <p>For example, <code>[-123.1174, 49.2847]</code> represents the position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p> <note>
+        /// <p> <code>BiasPosition</code> and <code>FilterBBox</code> are mutually exclusive. Specifying both options results in an error. </p>
         /// </note>
         pub fn bias_position(mut self, input: f64) -> Self {
             let mut v = self.bias_position.unwrap_or_default();
@@ -9211,17 +8539,9 @@ pub mod search_place_index_for_text_input {
             self
         }
         /// <p>An optional parameter that indicates a preference for places that are closer to a specified position.</p>
-        /// <p>
-        /// If provided, this parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the
-        /// second number represents the Y coordinate, or latitude.</p>
-        /// <p>For example, <code>[-123.1174, 49.2847]</code> represents the position with
-        /// longitude <code>-123.1174</code> and
-        /// latitude <code>49.2847</code>.</p>
-        /// <note>
-        /// <p>
-        /// <code>BiasPosition</code> and <code>FilterBBox</code> are mutually exclusive. Specifying both options
-        /// results in an error.
-        /// </p>
+        /// <p> If provided, this parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
+        /// <p>For example, <code>[-123.1174, 49.2847]</code> represents the position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p> <note>
+        /// <p> <code>BiasPosition</code> and <code>FilterBBox</code> are mutually exclusive. Specifying both options results in an error. </p>
         /// </note>
         pub fn set_bias_position(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
             self.bias_position = input;
@@ -9232,18 +8552,9 @@ pub mod search_place_index_for_text_input {
         /// To override the contents of this collection use [`set_filter_b_box`](Self::set_filter_b_box).
         ///
         /// <p>An optional parameter that limits the search results by returning only places that are within the provided bounding box.</p>
-        /// <p>
-        /// If provided, this parameter must contain a total of four consecutive numbers in two pairs.
-        /// The first pair of numbers represents the X and Y coordinates (longitude and latitude, respectively)
-        /// of the southwest corner of the bounding box; the second pair of numbers represents the X and Y coordinates (longitude and latitude, respectively)
-        /// of the northeast corner of the bounding box.</p>
-        /// <p>For example, <code>[-12.7935, -37.4835, -12.0684, -36.9542]</code> represents
-        /// a bounding box where the southwest corner has longitude <code>-12.7935</code> and latitude <code>-37.4835</code>,
-        /// and the northeast corner has longitude <code>-12.0684</code> and latitude <code>-36.9542</code>.</p>
-        /// <note>
-        /// <p>
-        /// <code>FilterBBox</code> and <code>BiasPosition</code> are mutually exclusive. Specifying both options results in an error.
-        /// </p>
+        /// <p> If provided, this parameter must contain a total of four consecutive numbers in two pairs. The first pair of numbers represents the X and Y coordinates (longitude and latitude, respectively) of the southwest corner of the bounding box; the second pair of numbers represents the X and Y coordinates (longitude and latitude, respectively) of the northeast corner of the bounding box.</p>
+        /// <p>For example, <code>[-12.7935, -37.4835, -12.0684, -36.9542]</code> represents a bounding box where the southwest corner has longitude <code>-12.7935</code> and latitude <code>-37.4835</code>, and the northeast corner has longitude <code>-12.0684</code> and latitude <code>-36.9542</code>.</p> <note>
+        /// <p> <code>FilterBBox</code> and <code>BiasPosition</code> are mutually exclusive. Specifying both options results in an error. </p>
         /// </note>
         pub fn filter_b_box(mut self, input: f64) -> Self {
             let mut v = self.filter_b_box.unwrap_or_default();
@@ -9252,18 +8563,9 @@ pub mod search_place_index_for_text_input {
             self
         }
         /// <p>An optional parameter that limits the search results by returning only places that are within the provided bounding box.</p>
-        /// <p>
-        /// If provided, this parameter must contain a total of four consecutive numbers in two pairs.
-        /// The first pair of numbers represents the X and Y coordinates (longitude and latitude, respectively)
-        /// of the southwest corner of the bounding box; the second pair of numbers represents the X and Y coordinates (longitude and latitude, respectively)
-        /// of the northeast corner of the bounding box.</p>
-        /// <p>For example, <code>[-12.7935, -37.4835, -12.0684, -36.9542]</code> represents
-        /// a bounding box where the southwest corner has longitude <code>-12.7935</code> and latitude <code>-37.4835</code>,
-        /// and the northeast corner has longitude <code>-12.0684</code> and latitude <code>-36.9542</code>.</p>
-        /// <note>
-        /// <p>
-        /// <code>FilterBBox</code> and <code>BiasPosition</code> are mutually exclusive. Specifying both options results in an error.
-        /// </p>
+        /// <p> If provided, this parameter must contain a total of four consecutive numbers in two pairs. The first pair of numbers represents the X and Y coordinates (longitude and latitude, respectively) of the southwest corner of the bounding box; the second pair of numbers represents the X and Y coordinates (longitude and latitude, respectively) of the northeast corner of the bounding box.</p>
+        /// <p>For example, <code>[-12.7935, -37.4835, -12.0684, -36.9542]</code> represents a bounding box where the southwest corner has longitude <code>-12.7935</code> and latitude <code>-37.4835</code>, and the northeast corner has longitude <code>-12.0684</code> and latitude <code>-36.9542</code>.</p> <note>
+        /// <p> <code>FilterBBox</code> and <code>BiasPosition</code> are mutually exclusive. Specifying both options results in an error. </p>
         /// </note>
         pub fn set_filter_b_box(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
             self.filter_b_box = input;
@@ -9275,11 +8577,7 @@ pub mod search_place_index_for_text_input {
         ///
         /// <p>An optional parameter that limits the search results by returning only places that are in a specified list of countries.</p>
         /// <ul>
-        /// <li>
-        /// <p>Valid values include <a href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166</a> 3-digit
-        /// country codes. For example, Australia uses three upper-case characters:
-        /// <code>AUS</code>.</p>
-        /// </li>
+        /// <li> <p>Valid values include <a href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166</a> 3-digit country codes. For example, Australia uses three upper-case characters: <code>AUS</code>.</p> </li>
         /// </ul>
         pub fn filter_countries(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.filter_countries.unwrap_or_default();
@@ -9289,11 +8587,7 @@ pub mod search_place_index_for_text_input {
         }
         /// <p>An optional parameter that limits the search results by returning only places that are in a specified list of countries.</p>
         /// <ul>
-        /// <li>
-        /// <p>Valid values include <a href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166</a> 3-digit
-        /// country codes. For example, Australia uses three upper-case characters:
-        /// <code>AUS</code>.</p>
-        /// </li>
+        /// <li> <p>Valid values include <a href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166</a> 3-digit country codes. For example, Australia uses three upper-case characters: <code>AUS</code>.</p> </li>
         /// </ul>
         pub fn set_filter_countries(
             mut self,
@@ -9303,33 +8597,25 @@ pub mod search_place_index_for_text_input {
             self
         }
         /// <p>An optional parameter. The maximum number of results returned per request. </p>
-        /// <p>The default: <code>50</code>
-        /// </p>
+        /// <p>The default: <code>50</code> </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
         /// <p>An optional parameter. The maximum number of results returned per request. </p>
-        /// <p>The default: <code>50</code>
-        /// </p>
+        /// <p>The default: <code>50</code> </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
-        /// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example,
-        /// <code>en</code> for English.</p>
-        /// <p>This setting affects the languages used in the results. It does not change which
-        /// results are returned. If the language is not specified, or not supported for a
-        /// particular result, the partner automatically chooses a language for the result.</p>
+        /// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
+        /// <p>This setting affects the languages used in the results. It does not change which results are returned. If the language is not specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p>
         pub fn language(mut self, input: impl Into<std::string::String>) -> Self {
             self.language = Some(input.into());
             self
         }
-        /// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example,
-        /// <code>en</code> for English.</p>
-        /// <p>This setting affects the languages used in the results. It does not change which
-        /// results are returned. If the language is not specified, or not supported for a
-        /// particular result, the partner automatically chooses a language for the result.</p>
+        /// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
+        /// <p>This setting affects the languages used in the results. It does not change which results are returned. If the language is not specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p>
         pub fn set_language(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.language = input;
             self
@@ -9509,10 +8795,7 @@ pub mod tag_resource_input {
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the resource whose tags you want to update.</p>
         /// <ul>
-        /// <li>
-        /// <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code> </p> </li>
         /// </ul>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
@@ -9520,10 +8803,7 @@ pub mod tag_resource_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource whose tags you want to update.</p>
         /// <ul>
-        /// <li>
-        /// <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code> </p> </li>
         /// </ul>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
@@ -9533,31 +8813,16 @@ pub mod tag_resource_input {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>Applies one or more tags to specific resource. A tag is a key-value pair that helps you
-        /// manage, identify, search, and filter your resources.</p>
-        /// <p>Format: <code>"key" : "value"</code>
-        /// </p>
+        /// <p>Applies one or more tags to specific resource. A tag is a key-value pair that helps you manage, identify, search, and filter your resources.</p>
+        /// <p>Format: <code>"key" : "value"</code> </p>
         /// <p>Restrictions:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum 50 tags per resource.</p>
-        /// </li>
-        /// <li>
-        /// <p>Each tag key must be unique and must have exactly one associated value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + -
-        /// = . _ : / @</p>
-        /// </li>
-        /// <li>
-        /// <p>Cannot use "aws:" as a prefix for a key.</p>
-        /// </li>
+        /// <li> <p>Maximum 50 tags per resource.</p> </li>
+        /// <li> <p>Each tag key must be unique and must have exactly one associated value.</p> </li>
+        /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @</p> </li>
+        /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
         /// </ul>
         pub fn tags(
             mut self,
@@ -9569,31 +8834,16 @@ pub mod tag_resource_input {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>Applies one or more tags to specific resource. A tag is a key-value pair that helps you
-        /// manage, identify, search, and filter your resources.</p>
-        /// <p>Format: <code>"key" : "value"</code>
-        /// </p>
+        /// <p>Applies one or more tags to specific resource. A tag is a key-value pair that helps you manage, identify, search, and filter your resources.</p>
+        /// <p>Format: <code>"key" : "value"</code> </p>
         /// <p>Restrictions:</p>
         /// <ul>
-        /// <li>
-        /// <p>Maximum 50 tags per resource.</p>
-        /// </li>
-        /// <li>
-        /// <p>Each tag key must be unique and must have exactly one associated value.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p>
-        /// </li>
-        /// <li>
-        /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + -
-        /// = . _ : / @</p>
-        /// </li>
-        /// <li>
-        /// <p>Cannot use "aws:" as a prefix for a key.</p>
-        /// </li>
+        /// <li> <p>Maximum 50 tags per resource.</p> </li>
+        /// <li> <p>Each tag key must be unique and must have exactly one associated value.</p> </li>
+        /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>
+        /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @</p> </li>
+        /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
         /// </ul>
         pub fn set_tags(
             mut self,
@@ -9764,10 +9014,7 @@ pub mod untag_resource_input {
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the resource from which you want to remove tags.</p>
         /// <ul>
-        /// <li>
-        /// <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code> </p> </li>
         /// </ul>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
@@ -9775,10 +9022,7 @@ pub mod untag_resource_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource from which you want to remove tags.</p>
         /// <ul>
-        /// <li>
-        /// <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code>
-        /// </p>
-        /// </li>
+        /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code> </p> </li>
         /// </ul>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
@@ -9977,15 +9221,13 @@ pub mod update_geofence_collection_input {
             self
         }
         /// <p>Updates the pricing plan for the geofence collection.</p>
-        /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service
-        /// pricing</a>.</p>
+        /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.pricing_plan = Some(input);
             self
         }
         /// <p>Updates the pricing plan for the geofence collection.</p>
-        /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service
-        /// pricing</a>.</p>
+        /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -9994,36 +9236,20 @@ pub mod update_geofence_collection_input {
             self
         }
         /// <p>Updates the data provider for the geofence collection. </p>
-        /// <p>A required value for the following pricing plans: <code>MobileAssetTracking</code>|
-        /// <code>MobileAssetManagement</code>
-        /// </p>
-        /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">data providers</a> and
-        /// <a href="https://aws.amazon.com/location/pricing/">pricing plans</a>, see the
-        /// Amazon Location Service product page.</p>
-        /// <note>
-        /// <p>This can only be updated when updating the <code>PricingPlan</code> in the same
-        /// request.</p>
-        /// <p>Amazon Location Service uses <code>PricingPlanDataSource</code> to calculate
-        /// billing for your geofence collection. Your data won't be shared with the data
-        /// provider, and will remain in your AWS account and Region unless you move it.</p>
+        /// <p>A required value for the following pricing plans: <code>MobileAssetTracking</code>| <code>MobileAssetManagement</code> </p>
+        /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">data providers</a> and <a href="https://aws.amazon.com/location/pricing/">pricing plans</a>, see the Amazon Location Service product page.</p> <note>
+        /// <p>This can only be updated when updating the <code>PricingPlan</code> in the same request.</p>
+        /// <p>Amazon Location Service uses <code>PricingPlanDataSource</code> to calculate billing for your geofence collection. Your data won't be shared with the data provider, and will remain in your AWS account and Region unless you move it.</p>
         /// </note>
         pub fn pricing_plan_data_source(mut self, input: impl Into<std::string::String>) -> Self {
             self.pricing_plan_data_source = Some(input.into());
             self
         }
         /// <p>Updates the data provider for the geofence collection. </p>
-        /// <p>A required value for the following pricing plans: <code>MobileAssetTracking</code>|
-        /// <code>MobileAssetManagement</code>
-        /// </p>
-        /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">data providers</a> and
-        /// <a href="https://aws.amazon.com/location/pricing/">pricing plans</a>, see the
-        /// Amazon Location Service product page.</p>
-        /// <note>
-        /// <p>This can only be updated when updating the <code>PricingPlan</code> in the same
-        /// request.</p>
-        /// <p>Amazon Location Service uses <code>PricingPlanDataSource</code> to calculate
-        /// billing for your geofence collection. Your data won't be shared with the data
-        /// provider, and will remain in your AWS account and Region unless you move it.</p>
+        /// <p>A required value for the following pricing plans: <code>MobileAssetTracking</code>| <code>MobileAssetManagement</code> </p>
+        /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">data providers</a> and <a href="https://aws.amazon.com/location/pricing/">pricing plans</a>, see the Amazon Location Service product page.</p> <note>
+        /// <p>This can only be updated when updating the <code>PricingPlan</code> in the same request.</p>
+        /// <p>Amazon Location Service uses <code>PricingPlanDataSource</code> to calculate billing for your geofence collection. Your data won't be shared with the data provider, and will remain in your AWS account and Region unless you move it.</p>
         /// </note>
         pub fn set_pricing_plan_data_source(
             mut self,
@@ -10635,15 +9861,13 @@ pub mod update_route_calculator_input {
             self
         }
         /// <p>Updates the pricing plan for the route calculator resource.</p>
-        /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location
-        /// Service pricing</a>.</p>
+        /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.pricing_plan = Some(input);
             self
         }
         /// <p>Updates the pricing plan for the route calculator resource.</p>
-        /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location
-        /// Service pricing</a>.</p>
+        /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -10841,15 +10065,13 @@ pub mod update_tracker_input {
             self
         }
         /// <p>Updates the pricing plan for the tracker resource.</p>
-        /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service
-        /// pricing</a>.</p>
+        /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
         pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
             self.pricing_plan = Some(input);
             self
         }
         /// <p>Updates the pricing plan for the tracker resource.</p>
-        /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service
-        /// pricing</a>.</p>
+        /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -10858,32 +10080,20 @@ pub mod update_tracker_input {
             self
         }
         /// <p>Updates the data provider for the tracker resource. </p>
-        /// <p>A required value for the following pricing plans: <code>MobileAssetTracking</code>| <code>MobileAssetManagement</code>
-        /// </p>
-        /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">data providers</a> and <a href="https://aws.amazon.com/location/pricing/">pricing plans</a>, see the Amazon Location Service product
-        /// page</p>
-        /// <note>
-        /// <p>This can only be updated when updating the <code>PricingPlan</code> in the same
-        /// request.</p>
-        /// <p>Amazon Location Service uses <code>PricingPlanDataSource</code> to calculate
-        /// billing for your tracker resource. Your data won't be shared with the data provider,
-        /// and will remain in your AWS account and Region unless you move it.</p>
+        /// <p>A required value for the following pricing plans: <code>MobileAssetTracking</code>| <code>MobileAssetManagement</code> </p>
+        /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">data providers</a> and <a href="https://aws.amazon.com/location/pricing/">pricing plans</a>, see the Amazon Location Service product page</p> <note>
+        /// <p>This can only be updated when updating the <code>PricingPlan</code> in the same request.</p>
+        /// <p>Amazon Location Service uses <code>PricingPlanDataSource</code> to calculate billing for your tracker resource. Your data won't be shared with the data provider, and will remain in your AWS account and Region unless you move it.</p>
         /// </note>
         pub fn pricing_plan_data_source(mut self, input: impl Into<std::string::String>) -> Self {
             self.pricing_plan_data_source = Some(input.into());
             self
         }
         /// <p>Updates the data provider for the tracker resource. </p>
-        /// <p>A required value for the following pricing plans: <code>MobileAssetTracking</code>| <code>MobileAssetManagement</code>
-        /// </p>
-        /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">data providers</a> and <a href="https://aws.amazon.com/location/pricing/">pricing plans</a>, see the Amazon Location Service product
-        /// page</p>
-        /// <note>
-        /// <p>This can only be updated when updating the <code>PricingPlan</code> in the same
-        /// request.</p>
-        /// <p>Amazon Location Service uses <code>PricingPlanDataSource</code> to calculate
-        /// billing for your tracker resource. Your data won't be shared with the data provider,
-        /// and will remain in your AWS account and Region unless you move it.</p>
+        /// <p>A required value for the following pricing plans: <code>MobileAssetTracking</code>| <code>MobileAssetManagement</code> </p>
+        /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">data providers</a> and <a href="https://aws.amazon.com/location/pricing/">pricing plans</a>, see the Amazon Location Service product page</p> <note>
+        /// <p>This can only be updated when updating the <code>PricingPlan</code> in the same request.</p>
+        /// <p>Amazon Location Service uses <code>PricingPlanDataSource</code> to calculate billing for your tracker resource. Your data won't be shared with the data provider, and will remain in your AWS account and Region unless you move it.</p>
         /// </note>
         pub fn set_pricing_plan_data_source(
             mut self,
@@ -10905,21 +10115,8 @@ pub mod update_tracker_input {
         /// <p>Updates the position filtering for the tracker resource.</p>
         /// <p>Valid values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>TimeBased</code> - Location updates are evaluated against linked geofence collections,
-        /// but not every location update is stored. If your update frequency is more often than 30 seconds,
-        /// only one update per 30 seconds is stored for each unique device ID.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DistanceBased</code> - If the device has moved less than 30 m (98.4 ft), location updates are
-        /// ignored. Location updates within this distance are neither evaluated against linked geofence collections, nor stored.
-        /// This helps control costs by reducing the number of geofence evaluations and device positions to retrieve.
-        /// Distance-based filtering can also reduce the jitter effect when displaying device trajectory on a map.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>TimeBased</code> - Location updates are evaluated against linked geofence collections, but not every location update is stored. If your update frequency is more often than 30 seconds, only one update per 30 seconds is stored for each unique device ID. </p> </li>
+        /// <li> <p> <code>DistanceBased</code> - If the device has moved less than 30 m (98.4 ft), location updates are ignored. Location updates within this distance are neither evaluated against linked geofence collections, nor stored. This helps control costs by reducing the number of geofence evaluations and device positions to retrieve. Distance-based filtering can also reduce the jitter effect when displaying device trajectory on a map. </p> </li>
         /// </ul>
         pub fn position_filtering(mut self, input: crate::model::PositionFiltering) -> Self {
             self.position_filtering = Some(input);
@@ -10928,21 +10125,8 @@ pub mod update_tracker_input {
         /// <p>Updates the position filtering for the tracker resource.</p>
         /// <p>Valid values:</p>
         /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>TimeBased</code> - Location updates are evaluated against linked geofence collections,
-        /// but not every location update is stored. If your update frequency is more often than 30 seconds,
-        /// only one update per 30 seconds is stored for each unique device ID.
-        /// </p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DistanceBased</code> - If the device has moved less than 30 m (98.4 ft), location updates are
-        /// ignored. Location updates within this distance are neither evaluated against linked geofence collections, nor stored.
-        /// This helps control costs by reducing the number of geofence evaluations and device positions to retrieve.
-        /// Distance-based filtering can also reduce the jitter effect when displaying device trajectory on a map.
-        /// </p>
-        /// </li>
+        /// <li> <p> <code>TimeBased</code> - Location updates are evaluated against linked geofence collections, but not every location update is stored. If your update frequency is more often than 30 seconds, only one update per 30 seconds is stored for each unique device ID. </p> </li>
+        /// <li> <p> <code>DistanceBased</code> - If the device has moved less than 30 m (98.4 ft), location updates are ignored. Location updates within this distance are neither evaluated against linked geofence collections, nor stored. This helps control costs by reducing the number of geofence evaluations and device positions to retrieve. Distance-based filtering can also reduce the jitter effect when displaying device trajectory on a map. </p> </li>
         /// </ul>
         pub fn set_position_filtering(
             mut self,
@@ -11113,13 +10297,10 @@ pub struct ListTrackerConsumersInput {
     /// <p>The tracker resource whose associated geofence collections you want to list.</p>
     pub tracker_name: std::option::Option<std::string::String>,
     /// <p>An optional limit for the number of resources returned in a single call. </p>
-    /// <p>Default value: <code>100</code>
-    /// </p>
+    /// <p>Default value: <code>100</code> </p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The pagination token specifying which page of results to return in the response. If no
-    /// token is provided, the default page is the first page. </p>
-    /// <p>Default value: <code>null</code>
-    /// </p>
+    /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p>
+    /// <p>Default value: <code>null</code> </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTrackerConsumersInput {
@@ -11128,15 +10309,12 @@ impl ListTrackerConsumersInput {
         self.tracker_name.as_deref()
     }
     /// <p>An optional limit for the number of resources returned in a single call. </p>
-    /// <p>Default value: <code>100</code>
-    /// </p>
+    /// <p>Default value: <code>100</code> </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The pagination token specifying which page of results to return in the response. If no
-    /// token is provided, the default page is the first page. </p>
-    /// <p>Default value: <code>null</code>
-    /// </p>
+    /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p>
+    /// <p>Default value: <code>null</code> </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -11158,13 +10336,10 @@ pub struct ListDevicePositionsInput {
     /// <p>The tracker resource containing the requested devices.</p>
     pub tracker_name: std::option::Option<std::string::String>,
     /// <p>An optional limit for the number of entries returned in a single call.</p>
-    /// <p>Default value: <code>100</code>
-    /// </p>
+    /// <p>Default value: <code>100</code> </p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The pagination token specifying which page of results to return in the response. If no
-    /// token is provided, the default page is the first page.</p>
-    /// <p>Default value: <code>null</code>
-    /// </p>
+    /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.</p>
+    /// <p>Default value: <code>null</code> </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDevicePositionsInput {
@@ -11173,15 +10348,12 @@ impl ListDevicePositionsInput {
         self.tracker_name.as_deref()
     }
     /// <p>An optional limit for the number of entries returned in a single call.</p>
-    /// <p>Default value: <code>100</code>
-    /// </p>
+    /// <p>Default value: <code>100</code> </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The pagination token specifying which page of results to return in the response. If no
-    /// token is provided, the default page is the first page.</p>
-    /// <p>Default value: <code>null</code>
-    /// </p>
+    /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.</p>
+    /// <p>Default value: <code>null</code> </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -11204,31 +10376,19 @@ pub struct GetDevicePositionHistoryInput {
     pub tracker_name: std::option::Option<std::string::String>,
     /// <p>The device whose position history you want to retrieve.</p>
     pub device_id: std::option::Option<std::string::String>,
-    /// <p>The pagination token specifying which page of results to return in the response. If no
-    /// token is provided, the default page is the first page. </p>
-    /// <p>Default value: <code>null</code>
-    /// </p>
+    /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p>
+    /// <p>Default value: <code>null</code> </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>Specify the start time for the position history in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be 24 hours
-    /// prior to the time that the request is made.</p>
+    /// <p>Specify the start time for the position history in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be 24 hours prior to the time that the request is made.</p>
     /// <p>Requirement:</p>
     /// <ul>
-    /// <li>
-    /// <p>The time specified for <code>StartTimeInclusive</code> must be before
-    /// <code>EndTimeExclusive</code>.</p>
-    /// </li>
+    /// <li> <p>The time specified for <code>StartTimeInclusive</code> must be before <code>EndTimeExclusive</code>.</p> </li>
     /// </ul>
     pub start_time_inclusive: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Specify the end time for the position history in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be the time
-    /// that the request is made.</p>
+    /// <p>Specify the end time for the position history in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be the time that the request is made.</p>
     /// <p>Requirement:</p>
     /// <ul>
-    /// <li>
-    /// <p>The time specified for <code>EndTimeExclusive</code> must be after the time for
-    /// <code>StartTimeInclusive</code>.</p>
-    /// </li>
+    /// <li> <p>The time specified for <code>EndTimeExclusive</code> must be after the time for <code>StartTimeInclusive</code>.</p> </li>
     /// </ul>
     pub end_time_exclusive: std::option::Option<aws_smithy_types::DateTime>,
 }
@@ -11241,35 +10401,23 @@ impl GetDevicePositionHistoryInput {
     pub fn device_id(&self) -> std::option::Option<&str> {
         self.device_id.as_deref()
     }
-    /// <p>The pagination token specifying which page of results to return in the response. If no
-    /// token is provided, the default page is the first page. </p>
-    /// <p>Default value: <code>null</code>
-    /// </p>
+    /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p>
+    /// <p>Default value: <code>null</code> </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Specify the start time for the position history in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be 24 hours
-    /// prior to the time that the request is made.</p>
+    /// <p>Specify the start time for the position history in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be 24 hours prior to the time that the request is made.</p>
     /// <p>Requirement:</p>
     /// <ul>
-    /// <li>
-    /// <p>The time specified for <code>StartTimeInclusive</code> must be before
-    /// <code>EndTimeExclusive</code>.</p>
-    /// </li>
+    /// <li> <p>The time specified for <code>StartTimeInclusive</code> must be before <code>EndTimeExclusive</code>.</p> </li>
     /// </ul>
     pub fn start_time_inclusive(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time_inclusive.as_ref()
     }
-    /// <p>Specify the end time for the position history in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
-    /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be the time
-    /// that the request is made.</p>
+    /// <p>Specify the end time for the position history in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be the time that the request is made.</p>
     /// <p>Requirement:</p>
     /// <ul>
-    /// <li>
-    /// <p>The time specified for <code>EndTimeExclusive</code> must be after the time for
-    /// <code>StartTimeInclusive</code>.</p>
-    /// </li>
+    /// <li> <p>The time specified for <code>EndTimeExclusive</code> must be after the time for <code>StartTimeInclusive</code>.</p> </li>
     /// </ul>
     pub fn end_time_exclusive(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time_exclusive.as_ref()
@@ -11321,14 +10469,9 @@ impl std::fmt::Debug for GetDevicePositionInput {
 pub struct DisassociateTrackerConsumerInput {
     /// <p>The name of the tracker resource to be dissociated from the consumer.</p>
     pub tracker_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) for the geofence collection to be disassociated from
-    /// the tracker resource. Used when you need to specify a resource across all AWS. </p>
+    /// <p>The Amazon Resource Name (ARN) for the geofence collection to be disassociated from the tracker resource. Used when you need to specify a resource across all AWS. </p>
     /// <ul>
-    /// <li>
-    /// <p>Format example:
-    /// <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code> </p> </li>
     /// </ul>
     pub consumer_arn: std::option::Option<std::string::String>,
 }
@@ -11337,14 +10480,9 @@ impl DisassociateTrackerConsumerInput {
     pub fn tracker_name(&self) -> std::option::Option<&str> {
         self.tracker_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) for the geofence collection to be disassociated from
-    /// the tracker resource. Used when you need to specify a resource across all AWS. </p>
+    /// <p>The Amazon Resource Name (ARN) for the geofence collection to be disassociated from the tracker resource. Used when you need to specify a resource across all AWS. </p>
     /// <ul>
-    /// <li>
-    /// <p>Format example:
-    /// <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code> </p> </li>
     /// </ul>
     pub fn consumer_arn(&self) -> std::option::Option<&str> {
         self.consumer_arn.as_deref()
@@ -11395,11 +10533,7 @@ pub struct BatchGetDevicePositionInput {
     pub tracker_name: std::option::Option<std::string::String>,
     /// <p>Devices whose position you want to retrieve.</p>
     /// <ul>
-    /// <li>
-    /// <p>For example, for two devices:
-    /// <code>device-ids=DeviceId1&amp;device-ids=DeviceId2</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>For example, for two devices: <code>device-ids=DeviceId1&amp;device-ids=DeviceId2</code> </p> </li>
     /// </ul>
     pub device_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
@@ -11410,11 +10544,7 @@ impl BatchGetDevicePositionInput {
     }
     /// <p>Devices whose position you want to retrieve.</p>
     /// <ul>
-    /// <li>
-    /// <p>For example, for two devices:
-    /// <code>device-ids=DeviceId1&amp;device-ids=DeviceId2</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>For example, for two devices: <code>device-ids=DeviceId1&amp;device-ids=DeviceId2</code> </p> </li>
     /// </ul>
     pub fn device_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.device_ids.as_deref()
@@ -11437,11 +10567,7 @@ pub struct BatchDeleteDevicePositionHistoryInput {
     pub tracker_name: std::option::Option<std::string::String>,
     /// <p>Devices whose position history you want to delete.</p>
     /// <ul>
-    /// <li>
-    /// <p>For example, for two devices:
-    /// <code>“DeviceIds” : [DeviceId1,DeviceId2]</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>For example, for two devices: <code>“DeviceIds” : [DeviceId1,DeviceId2]</code> </p> </li>
     /// </ul>
     pub device_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
@@ -11452,11 +10578,7 @@ impl BatchDeleteDevicePositionHistoryInput {
     }
     /// <p>Devices whose position history you want to delete.</p>
     /// <ul>
-    /// <li>
-    /// <p>For example, for two devices:
-    /// <code>“DeviceIds” : [DeviceId1,DeviceId2]</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>For example, for two devices: <code>“DeviceIds” : [DeviceId1,DeviceId2]</code> </p> </li>
     /// </ul>
     pub fn device_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.device_ids.as_deref()
@@ -11477,14 +10599,9 @@ impl std::fmt::Debug for BatchDeleteDevicePositionHistoryInput {
 pub struct AssociateTrackerConsumerInput {
     /// <p>The name of the tracker resource to be associated with a geofence collection.</p>
     pub tracker_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) for the geofence collection to be associated to tracker
-    /// resource. Used when you need to specify a resource across all AWS.</p>
+    /// <p>The Amazon Resource Name (ARN) for the geofence collection to be associated to tracker resource. Used when you need to specify a resource across all AWS.</p>
     /// <ul>
-    /// <li>
-    /// <p>Format example:
-    /// <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code> </p> </li>
     /// </ul>
     pub consumer_arn: std::option::Option<std::string::String>,
 }
@@ -11493,14 +10610,9 @@ impl AssociateTrackerConsumerInput {
     pub fn tracker_name(&self) -> std::option::Option<&str> {
         self.tracker_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) for the geofence collection to be associated to tracker
-    /// resource. Used when you need to specify a resource across all AWS.</p>
+    /// <p>The Amazon Resource Name (ARN) for the geofence collection to be associated to tracker resource. Used when you need to specify a resource across all AWS.</p>
     /// <ul>
-    /// <li>
-    /// <p>Format example:
-    /// <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code> </p> </li>
     /// </ul>
     pub fn consumer_arn(&self) -> std::option::Option<&str> {
         self.consumer_arn.as_deref()
@@ -11520,26 +10632,20 @@ impl std::fmt::Debug for AssociateTrackerConsumerInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTrackersInput {
     /// <p>An optional limit for the number of resources returned in a single call. </p>
-    /// <p>Default value: <code>100</code>
-    /// </p>
+    /// <p>Default value: <code>100</code> </p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The pagination token specifying which page of results to return in the response. If no
-    /// token is provided, the default page is the first page. </p>
-    /// <p>Default value: <code>null</code>
-    /// </p>
+    /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p>
+    /// <p>Default value: <code>null</code> </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTrackersInput {
     /// <p>An optional limit for the number of resources returned in a single call. </p>
-    /// <p>Default value: <code>100</code>
-    /// </p>
+    /// <p>Default value: <code>100</code> </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The pagination token specifying which page of results to return in the response. If no
-    /// token is provided, the default page is the first page. </p>
-    /// <p>Default value: <code>null</code>
-    /// </p>
+    /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p>
+    /// <p>Default value: <code>null</code> </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -11560,15 +10666,9 @@ pub struct CreateTrackerInput {
     /// <p>The name for the tracker resource.</p>
     /// <p>Requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only alphanumeric characters (A-Z, a-z, 0-9) , hyphens (-), periods (.), and underscores (_).</p>
-    /// </li>
-    /// <li>
-    /// <p>Must be a unique tracker resource name.</p>
-    /// </li>
-    /// <li>
-    /// <p>No spaces allowed. For example, <code>ExampleTracker</code>.</p>
-    /// </li>
+    /// <li> <p>Contain only alphanumeric characters (A-Z, a-z, 0-9) , hyphens (-), periods (.), and underscores (_).</p> </li>
+    /// <li> <p>Must be a unique tracker resource name.</p> </li>
+    /// <li> <p>No spaces allowed. For example, <code>ExampleTracker</code>.</p> </li>
     /// </ul>
     pub tracker_name: std::option::Option<std::string::String>,
     /// <p>Specifies the pricing plan for the tracker resource.</p>
@@ -11578,68 +10678,33 @@ pub struct CreateTrackerInput {
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>Specifies the data provider for the tracker resource.</p>
     /// <ul>
-    /// <li>
-    /// <p>Required value for the following pricing plans: <code>MobileAssetTracking
-    /// </code>| <code>MobileAssetManagement</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Required value for the following pricing plans: <code>MobileAssetTracking </code>| <code>MobileAssetManagement</code> </p> </li>
     /// </ul>
-    /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">Data Providers</a>, and <a href="https://aws.amazon.com/location/pricing/">Pricing plans</a>, see the Amazon Location
-    /// Service product page.</p>
-    /// <note>
+    /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">Data Providers</a>, and <a href="https://aws.amazon.com/location/pricing/">Pricing plans</a>, see the Amazon Location Service product page.</p> <note>
     /// <p>Amazon Location Service only uses <code>PricingPlanDataSource</code> to calculate billing for your tracker resource. Your data will not be shared with the data provider, and will remain in your AWS account or Region unless you move it.</p>
     /// </note>
-    /// <p>Valid values: <code>Esri</code> | <code>Here</code>
-    /// </p>
+    /// <p>Valid values: <code>Esri</code> | <code>Here</code> </p>
     pub pricing_plan_data_source: std::option::Option<std::string::String>,
     /// <p>An optional description for the tracker resource.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>Applies one or more tags to the tracker resource. A tag is a key-value pair helps
-    /// manage, identify, search, and filter your resources by labelling them.</p>
-    /// <p>Format: <code>"key" : "value"</code>
-    /// </p>
+    /// <p>Applies one or more tags to the tracker resource. A tag is a key-value pair helps manage, identify, search, and filter your resources by labelling them.</p>
+    /// <p>Format: <code>"key" : "value"</code> </p>
     /// <p>Restrictions:</p>
     /// <ul>
-    /// <li>
-    /// <p>Maximum 50 tags per resource</p>
-    /// </li>
-    /// <li>
-    /// <p>Each resource tag must be unique with a maximum of one value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum key length: 128 Unicode characters in UTF-8</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum value length: 256 Unicode characters in UTF-8</p>
-    /// </li>
-    /// <li>
-    /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters:
-    /// + - = . _ : / @. </p>
-    /// </li>
-    /// <li>
-    /// <p>Cannot use "aws:" as a prefix for a key.</p>
-    /// </li>
+    /// <li> <p>Maximum 50 tags per resource</p> </li>
+    /// <li> <p>Each resource tag must be unique with a maximum of one value.</p> </li>
+    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @. </p> </li>
+    /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
     /// </ul>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Specifies the position filtering for the tracker resource.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>TimeBased</code> - Location updates are evaluated against linked geofence collections,
-    /// but not every location update is stored. If your update frequency is more often than 30 seconds,
-    /// only one update per 30 seconds is stored for each unique device ID.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DistanceBased</code> - If the device has moved less than 30 m (98.4 ft), location updates are
-    /// ignored. Location updates within this area are neither evaluated against linked geofence collections, nor stored.
-    /// This helps control costs by reducing the number of geofence evaluations and historical device positions to paginate through.
-    /// Distance-based filtering can also reduce the effects of GPS noise when displaying device trajectories on a map.
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>TimeBased</code> - Location updates are evaluated against linked geofence collections, but not every location update is stored. If your update frequency is more often than 30 seconds, only one update per 30 seconds is stored for each unique device ID. </p> </li>
+    /// <li> <p> <code>DistanceBased</code> - If the device has moved less than 30 m (98.4 ft), location updates are ignored. Location updates within this area are neither evaluated against linked geofence collections, nor stored. This helps control costs by reducing the number of geofence evaluations and historical device positions to paginate through. Distance-based filtering can also reduce the effects of GPS noise when displaying device trajectories on a map. </p> </li>
     /// </ul>
     /// <p>This field is optional. If not specified, the default value is <code>TimeBased</code>.</p>
     pub position_filtering: std::option::Option<crate::model::PositionFiltering>,
@@ -11648,15 +10713,9 @@ impl CreateTrackerInput {
     /// <p>The name for the tracker resource.</p>
     /// <p>Requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only alphanumeric characters (A-Z, a-z, 0-9) , hyphens (-), periods (.), and underscores (_).</p>
-    /// </li>
-    /// <li>
-    /// <p>Must be a unique tracker resource name.</p>
-    /// </li>
-    /// <li>
-    /// <p>No spaces allowed. For example, <code>ExampleTracker</code>.</p>
-    /// </li>
+    /// <li> <p>Contain only alphanumeric characters (A-Z, a-z, 0-9) , hyphens (-), periods (.), and underscores (_).</p> </li>
+    /// <li> <p>Must be a unique tracker resource name.</p> </li>
+    /// <li> <p>No spaces allowed. For example, <code>ExampleTracker</code>.</p> </li>
     /// </ul>
     pub fn tracker_name(&self) -> std::option::Option<&str> {
         self.tracker_name.as_deref()
@@ -11672,19 +10731,12 @@ impl CreateTrackerInput {
     }
     /// <p>Specifies the data provider for the tracker resource.</p>
     /// <ul>
-    /// <li>
-    /// <p>Required value for the following pricing plans: <code>MobileAssetTracking
-    /// </code>| <code>MobileAssetManagement</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Required value for the following pricing plans: <code>MobileAssetTracking </code>| <code>MobileAssetManagement</code> </p> </li>
     /// </ul>
-    /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">Data Providers</a>, and <a href="https://aws.amazon.com/location/pricing/">Pricing plans</a>, see the Amazon Location
-    /// Service product page.</p>
-    /// <note>
+    /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">Data Providers</a>, and <a href="https://aws.amazon.com/location/pricing/">Pricing plans</a>, see the Amazon Location Service product page.</p> <note>
     /// <p>Amazon Location Service only uses <code>PricingPlanDataSource</code> to calculate billing for your tracker resource. Your data will not be shared with the data provider, and will remain in your AWS account or Region unless you move it.</p>
     /// </note>
-    /// <p>Valid values: <code>Esri</code> | <code>Here</code>
-    /// </p>
+    /// <p>Valid values: <code>Esri</code> | <code>Here</code> </p>
     pub fn pricing_plan_data_source(&self) -> std::option::Option<&str> {
         self.pricing_plan_data_source.as_deref()
     }
@@ -11692,31 +10744,16 @@ impl CreateTrackerInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Applies one or more tags to the tracker resource. A tag is a key-value pair helps
-    /// manage, identify, search, and filter your resources by labelling them.</p>
-    /// <p>Format: <code>"key" : "value"</code>
-    /// </p>
+    /// <p>Applies one or more tags to the tracker resource. A tag is a key-value pair helps manage, identify, search, and filter your resources by labelling them.</p>
+    /// <p>Format: <code>"key" : "value"</code> </p>
     /// <p>Restrictions:</p>
     /// <ul>
-    /// <li>
-    /// <p>Maximum 50 tags per resource</p>
-    /// </li>
-    /// <li>
-    /// <p>Each resource tag must be unique with a maximum of one value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum key length: 128 Unicode characters in UTF-8</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum value length: 256 Unicode characters in UTF-8</p>
-    /// </li>
-    /// <li>
-    /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters:
-    /// + - = . _ : / @. </p>
-    /// </li>
-    /// <li>
-    /// <p>Cannot use "aws:" as a prefix for a key.</p>
-    /// </li>
+    /// <li> <p>Maximum 50 tags per resource</p> </li>
+    /// <li> <p>Each resource tag must be unique with a maximum of one value.</p> </li>
+    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @. </p> </li>
+    /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
     /// </ul>
     pub fn tags(
         &self,
@@ -11727,21 +10764,8 @@ impl CreateTrackerInput {
     /// <p>Specifies the position filtering for the tracker resource.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>TimeBased</code> - Location updates are evaluated against linked geofence collections,
-    /// but not every location update is stored. If your update frequency is more often than 30 seconds,
-    /// only one update per 30 seconds is stored for each unique device ID.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DistanceBased</code> - If the device has moved less than 30 m (98.4 ft), location updates are
-    /// ignored. Location updates within this area are neither evaluated against linked geofence collections, nor stored.
-    /// This helps control costs by reducing the number of geofence evaluations and historical device positions to paginate through.
-    /// Distance-based filtering can also reduce the effects of GPS noise when displaying device trajectories on a map.
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>TimeBased</code> - Location updates are evaluated against linked geofence collections, but not every location update is stored. If your update frequency is more often than 30 seconds, only one update per 30 seconds is stored for each unique device ID. </p> </li>
+    /// <li> <p> <code>DistanceBased</code> - If the device has moved less than 30 m (98.4 ft), location updates are ignored. Location updates within this area are neither evaluated against linked geofence collections, nor stored. This helps control costs by reducing the number of geofence evaluations and historical device positions to paginate through. Distance-based filtering can also reduce the effects of GPS noise when displaying device trajectories on a map. </p> </li>
     /// </ul>
     /// <p>This field is optional. If not specified, the default value is <code>TimeBased</code>.</p>
     pub fn position_filtering(&self) -> std::option::Option<&crate::model::PositionFiltering> {
@@ -11790,20 +10814,13 @@ pub struct UpdateTrackerInput {
     /// <p>The name of the tracker resource to update.</p>
     pub tracker_name: std::option::Option<std::string::String>,
     /// <p>Updates the pricing plan for the tracker resource.</p>
-    /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service
-    /// pricing</a>.</p>
+    /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>Updates the data provider for the tracker resource. </p>
-    /// <p>A required value for the following pricing plans: <code>MobileAssetTracking</code>| <code>MobileAssetManagement</code>
-    /// </p>
-    /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">data providers</a> and <a href="https://aws.amazon.com/location/pricing/">pricing plans</a>, see the Amazon Location Service product
-    /// page</p>
-    /// <note>
-    /// <p>This can only be updated when updating the <code>PricingPlan</code> in the same
-    /// request.</p>
-    /// <p>Amazon Location Service uses <code>PricingPlanDataSource</code> to calculate
-    /// billing for your tracker resource. Your data won't be shared with the data provider,
-    /// and will remain in your AWS account and Region unless you move it.</p>
+    /// <p>A required value for the following pricing plans: <code>MobileAssetTracking</code>| <code>MobileAssetManagement</code> </p>
+    /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">data providers</a> and <a href="https://aws.amazon.com/location/pricing/">pricing plans</a>, see the Amazon Location Service product page</p> <note>
+    /// <p>This can only be updated when updating the <code>PricingPlan</code> in the same request.</p>
+    /// <p>Amazon Location Service uses <code>PricingPlanDataSource</code> to calculate billing for your tracker resource. Your data won't be shared with the data provider, and will remain in your AWS account and Region unless you move it.</p>
     /// </note>
     pub pricing_plan_data_source: std::option::Option<std::string::String>,
     /// <p>Updates the description for the tracker resource.</p>
@@ -11811,21 +10828,8 @@ pub struct UpdateTrackerInput {
     /// <p>Updates the position filtering for the tracker resource.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>TimeBased</code> - Location updates are evaluated against linked geofence collections,
-    /// but not every location update is stored. If your update frequency is more often than 30 seconds,
-    /// only one update per 30 seconds is stored for each unique device ID.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DistanceBased</code> - If the device has moved less than 30 m (98.4 ft), location updates are
-    /// ignored. Location updates within this distance are neither evaluated against linked geofence collections, nor stored.
-    /// This helps control costs by reducing the number of geofence evaluations and device positions to retrieve.
-    /// Distance-based filtering can also reduce the jitter effect when displaying device trajectory on a map.
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>TimeBased</code> - Location updates are evaluated against linked geofence collections, but not every location update is stored. If your update frequency is more often than 30 seconds, only one update per 30 seconds is stored for each unique device ID. </p> </li>
+    /// <li> <p> <code>DistanceBased</code> - If the device has moved less than 30 m (98.4 ft), location updates are ignored. Location updates within this distance are neither evaluated against linked geofence collections, nor stored. This helps control costs by reducing the number of geofence evaluations and device positions to retrieve. Distance-based filtering can also reduce the jitter effect when displaying device trajectory on a map. </p> </li>
     /// </ul>
     pub position_filtering: std::option::Option<crate::model::PositionFiltering>,
 }
@@ -11835,22 +10839,15 @@ impl UpdateTrackerInput {
         self.tracker_name.as_deref()
     }
     /// <p>Updates the pricing plan for the tracker resource.</p>
-    /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service
-    /// pricing</a>.</p>
+    /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
     pub fn pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
         self.pricing_plan.as_ref()
     }
     /// <p>Updates the data provider for the tracker resource. </p>
-    /// <p>A required value for the following pricing plans: <code>MobileAssetTracking</code>| <code>MobileAssetManagement</code>
-    /// </p>
-    /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">data providers</a> and <a href="https://aws.amazon.com/location/pricing/">pricing plans</a>, see the Amazon Location Service product
-    /// page</p>
-    /// <note>
-    /// <p>This can only be updated when updating the <code>PricingPlan</code> in the same
-    /// request.</p>
-    /// <p>Amazon Location Service uses <code>PricingPlanDataSource</code> to calculate
-    /// billing for your tracker resource. Your data won't be shared with the data provider,
-    /// and will remain in your AWS account and Region unless you move it.</p>
+    /// <p>A required value for the following pricing plans: <code>MobileAssetTracking</code>| <code>MobileAssetManagement</code> </p>
+    /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">data providers</a> and <a href="https://aws.amazon.com/location/pricing/">pricing plans</a>, see the Amazon Location Service product page</p> <note>
+    /// <p>This can only be updated when updating the <code>PricingPlan</code> in the same request.</p>
+    /// <p>Amazon Location Service uses <code>PricingPlanDataSource</code> to calculate billing for your tracker resource. Your data won't be shared with the data provider, and will remain in your AWS account and Region unless you move it.</p>
     /// </note>
     pub fn pricing_plan_data_source(&self) -> std::option::Option<&str> {
         self.pricing_plan_data_source.as_deref()
@@ -11862,21 +10859,8 @@ impl UpdateTrackerInput {
     /// <p>Updates the position filtering for the tracker resource.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>TimeBased</code> - Location updates are evaluated against linked geofence collections,
-    /// but not every location update is stored. If your update frequency is more often than 30 seconds,
-    /// only one update per 30 seconds is stored for each unique device ID.
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DistanceBased</code> - If the device has moved less than 30 m (98.4 ft), location updates are
-    /// ignored. Location updates within this distance are neither evaluated against linked geofence collections, nor stored.
-    /// This helps control costs by reducing the number of geofence evaluations and device positions to retrieve.
-    /// Distance-based filtering can also reduce the jitter effect when displaying device trajectory on a map.
-    /// </p>
-    /// </li>
+    /// <li> <p> <code>TimeBased</code> - Location updates are evaluated against linked geofence collections, but not every location update is stored. If your update frequency is more often than 30 seconds, only one update per 30 seconds is stored for each unique device ID. </p> </li>
+    /// <li> <p> <code>DistanceBased</code> - If the device has moved less than 30 m (98.4 ft), location updates are ignored. Location updates within this distance are neither evaluated against linked geofence collections, nor stored. This helps control costs by reducing the number of geofence evaluations and device positions to retrieve. Distance-based filtering can also reduce the jitter effect when displaying device trajectory on a map. </p> </li>
     /// </ul>
     pub fn position_filtering(&self) -> std::option::Option<&crate::model::PositionFiltering> {
         self.position_filtering.as_ref()
@@ -11921,114 +10905,62 @@ impl std::fmt::Debug for DescribeTrackerInput {
 pub struct CalculateRouteInput {
     /// <p>The name of the route calculator resource that you want to use to calculate the route. </p>
     pub calculator_name: std::option::Option<std::string::String>,
-    /// <p>The start position for the route. Defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format:
-    /// <code>[longitude, latitude]</code>.</p>
+    /// <p>The start position for the route. Defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>[longitude, latitude]</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p>For example, <code>[-123.115, 49.285]</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <note>
-    /// <p>If you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves the
-    /// position to the nearest road</a>. If Esri is the provider for your route calculator,
-    /// specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
+    /// <li> <p>For example, <code>[-123.115, 49.285]</code> </p> </li>
+    /// </ul> <note>
+    /// <p>If you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves the position to the nearest road</a>. If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
     /// </note>
-    /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code>
-    /// </p>
+    /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
     pub departure_position: std::option::Option<std::vec::Vec<f64>>,
-    /// <p>The finish position for the route. Defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format:
-    /// <code>[longitude, latitude]</code>.</p>
+    /// <p>The finish position for the route. Defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>[longitude, latitude]</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p> For example, <code>[-122.339, 47.615]</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <note>
+    /// <li> <p> For example, <code>[-122.339, 47.615]</code> </p> </li>
+    /// </ul> <note>
     /// <p>If you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves the position to the nearest road</a>. </p>
     /// </note>
-    /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code>
-    /// </p>
+    /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
     pub destination_position: std::option::Option<std::vec::Vec<f64>>,
-    /// <p>Specifies an ordered list of up to 23 intermediate positions to include along a route
-    /// between the departure position and destination position. </p>
+    /// <p>Specifies an ordered list of up to 23 intermediate positions to include along a route between the departure position and destination position. </p>
     /// <ul>
-    /// <li>
-    /// <p>For example, from the <code>DeparturePosition</code>
-    /// <code>[-123.115, 49.285]</code>, the route follows the order that the waypoint
-    /// positions are given <code>[[-122.757, 49.0021],[-122.349, 47.620]]</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <note>
+    /// <li> <p>For example, from the <code>DeparturePosition</code> <code>[-123.115, 49.285]</code>, the route follows the order that the waypoint positions are given <code>[[-122.757, 49.0021],[-122.349, 47.620]]</code> </p> </li>
+    /// </ul> <note>
     /// <p>If you specify a waypoint position that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves the position to the nearest road</a>. </p>
-    /// <p>Specifying more than 23 waypoints returns a <code>400 ValidationException</code>
-    /// error.</p>
-    /// <p>If Esri is the provider for your route calculator, specifying a
-    /// route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
+    /// <p>Specifying more than 23 waypoints returns a <code>400 ValidationException</code> error.</p>
+    /// <p>If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
     /// </note>
-    /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code>
-    /// </p>
+    /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
     pub waypoint_positions: std::option::Option<std::vec::Vec<std::vec::Vec<f64>>>,
-    /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed
-    /// of travel and road compatibility.</p>
+    /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility.</p>
     /// <p>The <code>TravelMode</code> you specify determines how you specify route preferences: </p>
     /// <ul>
-    /// <li>
-    /// <p>If traveling by <code>Car</code> use the <code>CarModeOptions</code>
-    /// parameter.</p>
-    /// </li>
-    /// <li>
-    /// <p>If traveling by <code>Truck</code> use the <code>TruckModeOptions</code>
-    /// parameter.</p>
-    /// </li>
+    /// <li> <p>If traveling by <code>Car</code> use the <code>CarModeOptions</code> parameter.</p> </li>
+    /// <li> <p>If traveling by <code>Truck</code> use the <code>TruckModeOptions</code> parameter.</p> </li>
     /// </ul>
-    /// <p>Default Value: <code>Car</code>
-    /// </p>
+    /// <p>Default Value: <code>Car</code> </p>
     pub travel_mode: std::option::Option<crate::model::TravelMode>,
-    /// <p>Specifies the desired time of departure. Uses the given time to calculate the route.
-    /// Otherwise, the best time of day to travel with the best traffic conditions is used to
-    /// calculate the route.</p>
-    /// <note>
-    /// <p>Setting a departure time in the past returns a <code>400
-    /// ValidationException</code> error.</p>
+    /// <p>Specifies the desired time of departure. Uses the given time to calculate the route. Otherwise, the best time of day to travel with the best traffic conditions is used to calculate the route.</p> <note>
+    /// <p>Setting a departure time in the past returns a <code>400 ValidationException</code> error.</p>
     /// </note>
     /// <ul>
-    /// <li>
-    /// <p>In <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO
-    /// 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example,
-    /// <code>2020–07-2T12:15:20.000Z+01:00</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>In <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>
     /// </ul>
     pub departure_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Sets the time of departure as the current time. Uses the current time to calculate a
-    /// route. Otherwise, the best time of day to travel with the best traffic conditions is
-    /// used to calculate the route.</p>
-    /// <p>Default Value: <code>false</code>
-    /// </p>
-    /// <p>Valid Values: <code>false</code> | <code>true</code>
-    /// </p>
+    /// <p>Sets the time of departure as the current time. Uses the current time to calculate a route. Otherwise, the best time of day to travel with the best traffic conditions is used to calculate the route.</p>
+    /// <p>Default Value: <code>false</code> </p>
+    /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
     pub depart_now: std::option::Option<bool>,
     /// <p>Set the unit system to specify the distance.</p>
-    /// <p>Default Value: <code>Kilometers</code>
-    /// </p>
+    /// <p>Default Value: <code>Kilometers</code> </p>
     pub distance_unit: std::option::Option<crate::model::DistanceUnit>,
-    /// <p>Set to include the geometry details in the result for each path between a pair of
-    /// positions.</p>
-    /// <p>Default Value: <code>false</code>
-    /// </p>
-    /// <p>Valid Values: <code>false</code> | <code>true</code>
-    /// </p>
+    /// <p>Set to include the geometry details in the result for each path between a pair of positions.</p>
+    /// <p>Default Value: <code>false</code> </p>
+    /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
     pub include_leg_geometry: std::option::Option<bool>,
-    /// <p>Specifies route preferences when traveling by <code>Car</code>, such as avoiding
-    /// routes that use ferries or tolls.</p>
+    /// <p>Specifies route preferences when traveling by <code>Car</code>, such as avoiding routes that use ferries or tolls.</p>
     /// <p>Requirements: <code>TravelMode</code> must be specified as <code>Car</code>.</p>
     pub car_mode_options: std::option::Option<crate::model::CalculateRouteCarModeOptions>,
-    /// <p>Specifies route preferences when traveling by <code>Truck</code>, such as avoiding
-    /// routes that use ferries or tolls, and truck specifications to consider when choosing an
-    /// optimal road.</p>
+    /// <p>Specifies route preferences when traveling by <code>Truck</code>, such as avoiding routes that use ferries or tolls, and truck specifications to consider when choosing an optimal road.</p>
     /// <p>Requirements: <code>TravelMode</code> must be specified as <code>Truck</code>.</p>
     pub truck_mode_options: std::option::Option<crate::model::CalculateRouteTruckModeOptions>,
 }
@@ -12037,134 +10969,82 @@ impl CalculateRouteInput {
     pub fn calculator_name(&self) -> std::option::Option<&str> {
         self.calculator_name.as_deref()
     }
-    /// <p>The start position for the route. Defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format:
-    /// <code>[longitude, latitude]</code>.</p>
+    /// <p>The start position for the route. Defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>[longitude, latitude]</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p>For example, <code>[-123.115, 49.285]</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <note>
-    /// <p>If you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves the
-    /// position to the nearest road</a>. If Esri is the provider for your route calculator,
-    /// specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
+    /// <li> <p>For example, <code>[-123.115, 49.285]</code> </p> </li>
+    /// </ul> <note>
+    /// <p>If you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves the position to the nearest road</a>. If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
     /// </note>
-    /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code>
-    /// </p>
+    /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
     pub fn departure_position(&self) -> std::option::Option<&[f64]> {
         self.departure_position.as_deref()
     }
-    /// <p>The finish position for the route. Defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format:
-    /// <code>[longitude, latitude]</code>.</p>
+    /// <p>The finish position for the route. Defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format: <code>[longitude, latitude]</code>.</p>
     /// <ul>
-    /// <li>
-    /// <p> For example, <code>[-122.339, 47.615]</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <note>
+    /// <li> <p> For example, <code>[-122.339, 47.615]</code> </p> </li>
+    /// </ul> <note>
     /// <p>If you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves the position to the nearest road</a>. </p>
     /// </note>
-    /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code>
-    /// </p>
+    /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
     pub fn destination_position(&self) -> std::option::Option<&[f64]> {
         self.destination_position.as_deref()
     }
-    /// <p>Specifies an ordered list of up to 23 intermediate positions to include along a route
-    /// between the departure position and destination position. </p>
+    /// <p>Specifies an ordered list of up to 23 intermediate positions to include along a route between the departure position and destination position. </p>
     /// <ul>
-    /// <li>
-    /// <p>For example, from the <code>DeparturePosition</code>
-    /// <code>[-123.115, 49.285]</code>, the route follows the order that the waypoint
-    /// positions are given <code>[[-122.757, 49.0021],[-122.349, 47.620]]</code>
-    /// </p>
-    /// </li>
-    /// </ul>
-    /// <note>
+    /// <li> <p>For example, from the <code>DeparturePosition</code> <code>[-123.115, 49.285]</code>, the route follows the order that the waypoint positions are given <code>[[-122.757, 49.0021],[-122.349, 47.620]]</code> </p> </li>
+    /// </ul> <note>
     /// <p>If you specify a waypoint position that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves the position to the nearest road</a>. </p>
-    /// <p>Specifying more than 23 waypoints returns a <code>400 ValidationException</code>
-    /// error.</p>
-    /// <p>If Esri is the provider for your route calculator, specifying a
-    /// route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
+    /// <p>Specifying more than 23 waypoints returns a <code>400 ValidationException</code> error.</p>
+    /// <p>If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
     /// </note>
-    /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code>
-    /// </p>
+    /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
     pub fn waypoint_positions(&self) -> std::option::Option<&[std::vec::Vec<f64>]> {
         self.waypoint_positions.as_deref()
     }
-    /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed
-    /// of travel and road compatibility.</p>
+    /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility.</p>
     /// <p>The <code>TravelMode</code> you specify determines how you specify route preferences: </p>
     /// <ul>
-    /// <li>
-    /// <p>If traveling by <code>Car</code> use the <code>CarModeOptions</code>
-    /// parameter.</p>
-    /// </li>
-    /// <li>
-    /// <p>If traveling by <code>Truck</code> use the <code>TruckModeOptions</code>
-    /// parameter.</p>
-    /// </li>
+    /// <li> <p>If traveling by <code>Car</code> use the <code>CarModeOptions</code> parameter.</p> </li>
+    /// <li> <p>If traveling by <code>Truck</code> use the <code>TruckModeOptions</code> parameter.</p> </li>
     /// </ul>
-    /// <p>Default Value: <code>Car</code>
-    /// </p>
+    /// <p>Default Value: <code>Car</code> </p>
     pub fn travel_mode(&self) -> std::option::Option<&crate::model::TravelMode> {
         self.travel_mode.as_ref()
     }
-    /// <p>Specifies the desired time of departure. Uses the given time to calculate the route.
-    /// Otherwise, the best time of day to travel with the best traffic conditions is used to
-    /// calculate the route.</p>
-    /// <note>
-    /// <p>Setting a departure time in the past returns a <code>400
-    /// ValidationException</code> error.</p>
+    /// <p>Specifies the desired time of departure. Uses the given time to calculate the route. Otherwise, the best time of day to travel with the best traffic conditions is used to calculate the route.</p> <note>
+    /// <p>Setting a departure time in the past returns a <code>400 ValidationException</code> error.</p>
     /// </note>
     /// <ul>
-    /// <li>
-    /// <p>In <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO
-    /// 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example,
-    /// <code>2020–07-2T12:15:20.000Z+01:00</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>In <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>
     /// </ul>
     pub fn departure_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.departure_time.as_ref()
     }
-    /// <p>Sets the time of departure as the current time. Uses the current time to calculate a
-    /// route. Otherwise, the best time of day to travel with the best traffic conditions is
-    /// used to calculate the route.</p>
-    /// <p>Default Value: <code>false</code>
-    /// </p>
-    /// <p>Valid Values: <code>false</code> | <code>true</code>
-    /// </p>
+    /// <p>Sets the time of departure as the current time. Uses the current time to calculate a route. Otherwise, the best time of day to travel with the best traffic conditions is used to calculate the route.</p>
+    /// <p>Default Value: <code>false</code> </p>
+    /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
     pub fn depart_now(&self) -> std::option::Option<bool> {
         self.depart_now
     }
     /// <p>Set the unit system to specify the distance.</p>
-    /// <p>Default Value: <code>Kilometers</code>
-    /// </p>
+    /// <p>Default Value: <code>Kilometers</code> </p>
     pub fn distance_unit(&self) -> std::option::Option<&crate::model::DistanceUnit> {
         self.distance_unit.as_ref()
     }
-    /// <p>Set to include the geometry details in the result for each path between a pair of
-    /// positions.</p>
-    /// <p>Default Value: <code>false</code>
-    /// </p>
-    /// <p>Valid Values: <code>false</code> | <code>true</code>
-    /// </p>
+    /// <p>Set to include the geometry details in the result for each path between a pair of positions.</p>
+    /// <p>Default Value: <code>false</code> </p>
+    /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
     pub fn include_leg_geometry(&self) -> std::option::Option<bool> {
         self.include_leg_geometry
     }
-    /// <p>Specifies route preferences when traveling by <code>Car</code>, such as avoiding
-    /// routes that use ferries or tolls.</p>
+    /// <p>Specifies route preferences when traveling by <code>Car</code>, such as avoiding routes that use ferries or tolls.</p>
     /// <p>Requirements: <code>TravelMode</code> must be specified as <code>Car</code>.</p>
     pub fn car_mode_options(
         &self,
     ) -> std::option::Option<&crate::model::CalculateRouteCarModeOptions> {
         self.car_mode_options.as_ref()
     }
-    /// <p>Specifies route preferences when traveling by <code>Truck</code>, such as avoiding
-    /// routes that use ferries or tolls, and truck specifications to consider when choosing an
-    /// optimal road.</p>
+    /// <p>Specifies route preferences when traveling by <code>Truck</code>, such as avoiding routes that use ferries or tolls, and truck specifications to consider when choosing an optimal road.</p>
     /// <p>Requirements: <code>TravelMode</code> must be specified as <code>Truck</code>.</p>
     pub fn truck_mode_options(
         &self,
@@ -12195,26 +11075,20 @@ impl std::fmt::Debug for CalculateRouteInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRouteCalculatorsInput {
     /// <p>An optional maximum number of results returned in a single call.</p>
-    /// <p>Default Value: <code>100</code>
-    /// </p>
+    /// <p>Default Value: <code>100</code> </p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The pagination token specifying which page of results to return in the response. If no
-    /// token is provided, the default page is the first page.</p>
-    /// <p>Default Value: <code>null</code>
-    /// </p>
+    /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.</p>
+    /// <p>Default Value: <code>null</code> </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRouteCalculatorsInput {
     /// <p>An optional maximum number of results returned in a single call.</p>
-    /// <p>Default Value: <code>100</code>
-    /// </p>
+    /// <p>Default Value: <code>100</code> </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The pagination token specifying which page of results to return in the response. If no
-    /// token is provided, the default page is the first page.</p>
-    /// <p>Default Value: <code>null</code>
-    /// </p>
+    /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.</p>
+    /// <p>Default Value: <code>null</code> </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -12235,75 +11109,39 @@ pub struct CreateRouteCalculatorInput {
     /// <p>The name of the route calculator resource. </p>
     /// <p>Requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9) , hyphens (-), periods (.), and underscores
-    /// (_).</p>
-    /// </li>
-    /// <li>
-    /// <p>Must be a unique Route calculator resource name.</p>
-    /// </li>
-    /// <li>
-    /// <p>No spaces allowed. For example, <code>ExampleRouteCalculator</code>.</p>
-    /// </li>
+    /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9) , hyphens (-), periods (.), and underscores (_).</p> </li>
+    /// <li> <p>Must be a unique Route calculator resource name.</p> </li>
+    /// <li> <p>No spaces allowed. For example, <code>ExampleRouteCalculator</code>.</p> </li>
     /// </ul>
     pub calculator_name: std::option::Option<std::string::String>,
-    /// <p>Specifies the data provider of traffic and road network data.</p>
-    /// <note>
-    /// <p>This field is case-sensitive. Enter the valid values as shown. For example,
-    /// entering <code>HERE</code> returns an error. Route calculators that use Esri as a data source
-    /// only calculate routes that are shorter than 400 km.</p>
+    /// <p>Specifies the data provider of traffic and road network data.</p> <note>
+    /// <p>This field is case-sensitive. Enter the valid values as shown. For example, entering <code>HERE</code> returns an error. Route calculators that use Esri as a data source only calculate routes that are shorter than 400 km.</p>
     /// </note>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Esri</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s coverage in your region of interest, see <a href="https://doc.arcgis.com/en/arcgis-online/reference/network-coverage.htm">Esri details on street networks and traffic coverage</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
-    /// Technologies</a>' coverage in your region of interest, see <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html">HERE car routing coverage</a> and <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/truck-routing.html">HERE truck routing coverage</a>.</p>
-    /// </li>
+    /// <li> <p> <code>Esri</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s coverage in your region of interest, see <a href="https://doc.arcgis.com/en/arcgis-online/reference/network-coverage.htm">Esri details on street networks and traffic coverage</a>.</p> </li>
+    /// <li> <p> <code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>' coverage in your region of interest, see <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html">HERE car routing coverage</a> and <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/truck-routing.html">HERE truck routing coverage</a>.</p> </li>
     /// </ul>
-    /// <p>For additional information , see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data
-    /// providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
+    /// <p>For additional information , see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
     pub data_source: std::option::Option<std::string::String>,
     /// <p>Specifies the pricing plan for your route calculator resource.</p>
     /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>The optional description for the route calculator resource.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>Applies one or more tags to the route calculator resource. A tag is a key-value pair
-    /// helps manage, identify, search, and filter your resources by labelling them.</p>
+    /// <p>Applies one or more tags to the route calculator resource. A tag is a key-value pair helps manage, identify, search, and filter your resources by labelling them.</p>
     /// <ul>
-    /// <li>
-    /// <p>For example: { <code>"tag1" : "value1"</code>, <code>"tag2" :
-    /// "value2"</code>}</p>
-    /// </li>
+    /// <li> <p>For example: { <code>"tag1" : "value1"</code>, <code>"tag2" : "value2"</code>}</p> </li>
     /// </ul>
-    /// <p>Format: <code>"key" : "value"</code>
-    /// </p>
+    /// <p>Format: <code>"key" : "value"</code> </p>
     /// <p>Restrictions:</p>
     /// <ul>
-    /// <li>
-    /// <p>Maximum 50 tags per resource</p>
-    /// </li>
-    /// <li>
-    /// <p>Each resource tag must be unique with a maximum of one value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum key length: 128 Unicode characters in UTF-8</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum value length: 256 Unicode characters in UTF-8</p>
-    /// </li>
-    /// <li>
-    /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters:
-    /// + - = . _ : / @. </p>
-    /// </li>
-    /// <li>
-    /// <p>Cannot use "aws:" as a prefix for a key.</p>
-    /// </li>
+    /// <li> <p>Maximum 50 tags per resource</p> </li>
+    /// <li> <p>Each resource tag must be unique with a maximum of one value.</p> </li>
+    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @. </p> </li>
+    /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
     /// </ul>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -12312,40 +11150,22 @@ impl CreateRouteCalculatorInput {
     /// <p>The name of the route calculator resource. </p>
     /// <p>Requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9) , hyphens (-), periods (.), and underscores
-    /// (_).</p>
-    /// </li>
-    /// <li>
-    /// <p>Must be a unique Route calculator resource name.</p>
-    /// </li>
-    /// <li>
-    /// <p>No spaces allowed. For example, <code>ExampleRouteCalculator</code>.</p>
-    /// </li>
+    /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9) , hyphens (-), periods (.), and underscores (_).</p> </li>
+    /// <li> <p>Must be a unique Route calculator resource name.</p> </li>
+    /// <li> <p>No spaces allowed. For example, <code>ExampleRouteCalculator</code>.</p> </li>
     /// </ul>
     pub fn calculator_name(&self) -> std::option::Option<&str> {
         self.calculator_name.as_deref()
     }
-    /// <p>Specifies the data provider of traffic and road network data.</p>
-    /// <note>
-    /// <p>This field is case-sensitive. Enter the valid values as shown. For example,
-    /// entering <code>HERE</code> returns an error. Route calculators that use Esri as a data source
-    /// only calculate routes that are shorter than 400 km.</p>
+    /// <p>Specifies the data provider of traffic and road network data.</p> <note>
+    /// <p>This field is case-sensitive. Enter the valid values as shown. For example, entering <code>HERE</code> returns an error. Route calculators that use Esri as a data source only calculate routes that are shorter than 400 km.</p>
     /// </note>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Esri</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s coverage in your region of interest, see <a href="https://doc.arcgis.com/en/arcgis-online/reference/network-coverage.htm">Esri details on street networks and traffic coverage</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
-    /// Technologies</a>' coverage in your region of interest, see <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html">HERE car routing coverage</a> and <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/truck-routing.html">HERE truck routing coverage</a>.</p>
-    /// </li>
+    /// <li> <p> <code>Esri</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s coverage in your region of interest, see <a href="https://doc.arcgis.com/en/arcgis-online/reference/network-coverage.htm">Esri details on street networks and traffic coverage</a>.</p> </li>
+    /// <li> <p> <code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>' coverage in your region of interest, see <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html">HERE car routing coverage</a> and <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/truck-routing.html">HERE truck routing coverage</a>.</p> </li>
     /// </ul>
-    /// <p>For additional information , see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data
-    /// providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
+    /// <p>For additional information , see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
     pub fn data_source(&self) -> std::option::Option<&str> {
         self.data_source.as_deref()
     }
@@ -12358,37 +11178,19 @@ impl CreateRouteCalculatorInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Applies one or more tags to the route calculator resource. A tag is a key-value pair
-    /// helps manage, identify, search, and filter your resources by labelling them.</p>
+    /// <p>Applies one or more tags to the route calculator resource. A tag is a key-value pair helps manage, identify, search, and filter your resources by labelling them.</p>
     /// <ul>
-    /// <li>
-    /// <p>For example: { <code>"tag1" : "value1"</code>, <code>"tag2" :
-    /// "value2"</code>}</p>
-    /// </li>
+    /// <li> <p>For example: { <code>"tag1" : "value1"</code>, <code>"tag2" : "value2"</code>}</p> </li>
     /// </ul>
-    /// <p>Format: <code>"key" : "value"</code>
-    /// </p>
+    /// <p>Format: <code>"key" : "value"</code> </p>
     /// <p>Restrictions:</p>
     /// <ul>
-    /// <li>
-    /// <p>Maximum 50 tags per resource</p>
-    /// </li>
-    /// <li>
-    /// <p>Each resource tag must be unique with a maximum of one value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum key length: 128 Unicode characters in UTF-8</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum value length: 256 Unicode characters in UTF-8</p>
-    /// </li>
-    /// <li>
-    /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters:
-    /// + - = . _ : / @. </p>
-    /// </li>
-    /// <li>
-    /// <p>Cannot use "aws:" as a prefix for a key.</p>
-    /// </li>
+    /// <li> <p>Maximum 50 tags per resource</p> </li>
+    /// <li> <p>Each resource tag must be unique with a maximum of one value.</p> </li>
+    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @. </p> </li>
+    /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
     /// </ul>
     pub fn tags(
         &self,
@@ -12437,8 +11239,7 @@ pub struct UpdateRouteCalculatorInput {
     /// <p>The name of the route calculator resource to update.</p>
     pub calculator_name: std::option::Option<std::string::String>,
     /// <p>Updates the pricing plan for the route calculator resource.</p>
-    /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location
-    /// Service pricing</a>.</p>
+    /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>Updates the description for the route calculator resource.</p>
     pub description: std::option::Option<std::string::String>,
@@ -12449,8 +11250,7 @@ impl UpdateRouteCalculatorInput {
         self.calculator_name.as_deref()
     }
     /// <p>Updates the pricing plan for the route calculator resource.</p>
-    /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location
-    /// Service pricing</a>.</p>
+    /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
     pub fn pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
         self.pricing_plan.as_ref()
     }
@@ -12496,57 +11296,30 @@ impl std::fmt::Debug for DescribeRouteCalculatorInput {
 pub struct SearchPlaceIndexForTextInput {
     /// <p>The name of the place index resource you want to use for the search.</p>
     pub index_name: std::option::Option<std::string::String>,
-    /// <p>The address, name,
-    /// city, or region to be used in the search in free-form text format. For example, <code>123 Any
-    /// Street</code>.</p>
+    /// <p>The address, name, city, or region to be used in the search in free-form text format. For example, <code>123 Any Street</code>.</p>
     pub text: std::option::Option<std::string::String>,
     /// <p>An optional parameter that indicates a preference for places that are closer to a specified position.</p>
-    /// <p>
-    /// If provided, this parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the
-    /// second number represents the Y coordinate, or latitude.</p>
-    /// <p>For example, <code>[-123.1174, 49.2847]</code> represents the position with
-    /// longitude <code>-123.1174</code> and
-    /// latitude <code>49.2847</code>.</p>
-    /// <note>
-    /// <p>
-    /// <code>BiasPosition</code> and <code>FilterBBox</code> are mutually exclusive. Specifying both options
-    /// results in an error.
-    /// </p>
+    /// <p> If provided, this parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
+    /// <p>For example, <code>[-123.1174, 49.2847]</code> represents the position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p> <note>
+    /// <p> <code>BiasPosition</code> and <code>FilterBBox</code> are mutually exclusive. Specifying both options results in an error. </p>
     /// </note>
     pub bias_position: std::option::Option<std::vec::Vec<f64>>,
     /// <p>An optional parameter that limits the search results by returning only places that are within the provided bounding box.</p>
-    /// <p>
-    /// If provided, this parameter must contain a total of four consecutive numbers in two pairs.
-    /// The first pair of numbers represents the X and Y coordinates (longitude and latitude, respectively)
-    /// of the southwest corner of the bounding box; the second pair of numbers represents the X and Y coordinates (longitude and latitude, respectively)
-    /// of the northeast corner of the bounding box.</p>
-    /// <p>For example, <code>[-12.7935, -37.4835, -12.0684, -36.9542]</code> represents
-    /// a bounding box where the southwest corner has longitude <code>-12.7935</code> and latitude <code>-37.4835</code>,
-    /// and the northeast corner has longitude <code>-12.0684</code> and latitude <code>-36.9542</code>.</p>
-    /// <note>
-    /// <p>
-    /// <code>FilterBBox</code> and <code>BiasPosition</code> are mutually exclusive. Specifying both options results in an error.
-    /// </p>
+    /// <p> If provided, this parameter must contain a total of four consecutive numbers in two pairs. The first pair of numbers represents the X and Y coordinates (longitude and latitude, respectively) of the southwest corner of the bounding box; the second pair of numbers represents the X and Y coordinates (longitude and latitude, respectively) of the northeast corner of the bounding box.</p>
+    /// <p>For example, <code>[-12.7935, -37.4835, -12.0684, -36.9542]</code> represents a bounding box where the southwest corner has longitude <code>-12.7935</code> and latitude <code>-37.4835</code>, and the northeast corner has longitude <code>-12.0684</code> and latitude <code>-36.9542</code>.</p> <note>
+    /// <p> <code>FilterBBox</code> and <code>BiasPosition</code> are mutually exclusive. Specifying both options results in an error. </p>
     /// </note>
     pub filter_b_box: std::option::Option<std::vec::Vec<f64>>,
     /// <p>An optional parameter that limits the search results by returning only places that are in a specified list of countries.</p>
     /// <ul>
-    /// <li>
-    /// <p>Valid values include <a href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166</a> 3-digit
-    /// country codes. For example, Australia uses three upper-case characters:
-    /// <code>AUS</code>.</p>
-    /// </li>
+    /// <li> <p>Valid values include <a href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166</a> 3-digit country codes. For example, Australia uses three upper-case characters: <code>AUS</code>.</p> </li>
     /// </ul>
     pub filter_countries: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An optional parameter. The maximum number of results returned per request. </p>
-    /// <p>The default: <code>50</code>
-    /// </p>
+    /// <p>The default: <code>50</code> </p>
     pub max_results: i32,
-    /// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example,
-    /// <code>en</code> for English.</p>
-    /// <p>This setting affects the languages used in the results. It does not change which
-    /// results are returned. If the language is not specified, or not supported for a
-    /// particular result, the partner automatically chooses a language for the result.</p>
+    /// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
+    /// <p>This setting affects the languages used in the results. It does not change which results are returned. If the language is not specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p>
     pub language: std::option::Option<std::string::String>,
 }
 impl SearchPlaceIndexForTextInput {
@@ -12554,67 +11327,40 @@ impl SearchPlaceIndexForTextInput {
     pub fn index_name(&self) -> std::option::Option<&str> {
         self.index_name.as_deref()
     }
-    /// <p>The address, name,
-    /// city, or region to be used in the search in free-form text format. For example, <code>123 Any
-    /// Street</code>.</p>
+    /// <p>The address, name, city, or region to be used in the search in free-form text format. For example, <code>123 Any Street</code>.</p>
     pub fn text(&self) -> std::option::Option<&str> {
         self.text.as_deref()
     }
     /// <p>An optional parameter that indicates a preference for places that are closer to a specified position.</p>
-    /// <p>
-    /// If provided, this parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the
-    /// second number represents the Y coordinate, or latitude.</p>
-    /// <p>For example, <code>[-123.1174, 49.2847]</code> represents the position with
-    /// longitude <code>-123.1174</code> and
-    /// latitude <code>49.2847</code>.</p>
-    /// <note>
-    /// <p>
-    /// <code>BiasPosition</code> and <code>FilterBBox</code> are mutually exclusive. Specifying both options
-    /// results in an error.
-    /// </p>
+    /// <p> If provided, this parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
+    /// <p>For example, <code>[-123.1174, 49.2847]</code> represents the position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p> <note>
+    /// <p> <code>BiasPosition</code> and <code>FilterBBox</code> are mutually exclusive. Specifying both options results in an error. </p>
     /// </note>
     pub fn bias_position(&self) -> std::option::Option<&[f64]> {
         self.bias_position.as_deref()
     }
     /// <p>An optional parameter that limits the search results by returning only places that are within the provided bounding box.</p>
-    /// <p>
-    /// If provided, this parameter must contain a total of four consecutive numbers in two pairs.
-    /// The first pair of numbers represents the X and Y coordinates (longitude and latitude, respectively)
-    /// of the southwest corner of the bounding box; the second pair of numbers represents the X and Y coordinates (longitude and latitude, respectively)
-    /// of the northeast corner of the bounding box.</p>
-    /// <p>For example, <code>[-12.7935, -37.4835, -12.0684, -36.9542]</code> represents
-    /// a bounding box where the southwest corner has longitude <code>-12.7935</code> and latitude <code>-37.4835</code>,
-    /// and the northeast corner has longitude <code>-12.0684</code> and latitude <code>-36.9542</code>.</p>
-    /// <note>
-    /// <p>
-    /// <code>FilterBBox</code> and <code>BiasPosition</code> are mutually exclusive. Specifying both options results in an error.
-    /// </p>
+    /// <p> If provided, this parameter must contain a total of four consecutive numbers in two pairs. The first pair of numbers represents the X and Y coordinates (longitude and latitude, respectively) of the southwest corner of the bounding box; the second pair of numbers represents the X and Y coordinates (longitude and latitude, respectively) of the northeast corner of the bounding box.</p>
+    /// <p>For example, <code>[-12.7935, -37.4835, -12.0684, -36.9542]</code> represents a bounding box where the southwest corner has longitude <code>-12.7935</code> and latitude <code>-37.4835</code>, and the northeast corner has longitude <code>-12.0684</code> and latitude <code>-36.9542</code>.</p> <note>
+    /// <p> <code>FilterBBox</code> and <code>BiasPosition</code> are mutually exclusive. Specifying both options results in an error. </p>
     /// </note>
     pub fn filter_b_box(&self) -> std::option::Option<&[f64]> {
         self.filter_b_box.as_deref()
     }
     /// <p>An optional parameter that limits the search results by returning only places that are in a specified list of countries.</p>
     /// <ul>
-    /// <li>
-    /// <p>Valid values include <a href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166</a> 3-digit
-    /// country codes. For example, Australia uses three upper-case characters:
-    /// <code>AUS</code>.</p>
-    /// </li>
+    /// <li> <p>Valid values include <a href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166</a> 3-digit country codes. For example, Australia uses three upper-case characters: <code>AUS</code>.</p> </li>
     /// </ul>
     pub fn filter_countries(&self) -> std::option::Option<&[std::string::String]> {
         self.filter_countries.as_deref()
     }
     /// <p>An optional parameter. The maximum number of results returned per request. </p>
-    /// <p>The default: <code>50</code>
-    /// </p>
+    /// <p>The default: <code>50</code> </p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example,
-    /// <code>en</code> for English.</p>
-    /// <p>This setting affects the languages used in the results. It does not change which
-    /// results are returned. If the language is not specified, or not supported for a
-    /// particular result, the partner automatically chooses a language for the result.</p>
+    /// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
+    /// <p>This setting affects the languages used in the results. It does not change which results are returned. If the language is not specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p>
     pub fn language(&self) -> std::option::Option<&str> {
         self.language.as_deref()
     }
@@ -12640,22 +11386,14 @@ pub struct SearchPlaceIndexForPositionInput {
     /// <p>The name of the place index resource you want to use for the search.</p>
     pub index_name: std::option::Option<std::string::String>,
     /// <p>Specifies the longitude and latitude of the position to query.</p>
-    /// <p>
-    /// This parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude;
-    /// the second number represents the Y coordinate, or latitude.</p>
-    /// <p>For example, <code>[-123.1174, 49.2847]</code> represents a position with
-    /// longitude <code>-123.1174</code> and
-    /// latitude <code>49.2847</code>.</p>
+    /// <p> This parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
+    /// <p>For example, <code>[-123.1174, 49.2847]</code> represents a position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
     pub position: std::option::Option<std::vec::Vec<f64>>,
     /// <p>An optional parameter. The maximum number of results returned per request.</p>
-    /// <p>Default value: <code>50</code>
-    /// </p>
+    /// <p>Default value: <code>50</code> </p>
     pub max_results: i32,
-    /// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example,
-    /// <code>en</code> for English.</p>
-    /// <p>This setting affects the languages used in the results. It does not change which
-    /// results are returned. If the language is not specified, or not supported for a
-    /// particular result, the partner automatically chooses a language for the result.</p>
+    /// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
+    /// <p>This setting affects the languages used in the results. It does not change which results are returned. If the language is not specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p>
     pub language: std::option::Option<std::string::String>,
 }
 impl SearchPlaceIndexForPositionInput {
@@ -12664,26 +11402,18 @@ impl SearchPlaceIndexForPositionInput {
         self.index_name.as_deref()
     }
     /// <p>Specifies the longitude and latitude of the position to query.</p>
-    /// <p>
-    /// This parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude;
-    /// the second number represents the Y coordinate, or latitude.</p>
-    /// <p>For example, <code>[-123.1174, 49.2847]</code> represents a position with
-    /// longitude <code>-123.1174</code> and
-    /// latitude <code>49.2847</code>.</p>
+    /// <p> This parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
+    /// <p>For example, <code>[-123.1174, 49.2847]</code> represents a position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
     pub fn position(&self) -> std::option::Option<&[f64]> {
         self.position.as_deref()
     }
     /// <p>An optional parameter. The maximum number of results returned per request.</p>
-    /// <p>Default value: <code>50</code>
-    /// </p>
+    /// <p>Default value: <code>50</code> </p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example,
-    /// <code>en</code> for English.</p>
-    /// <p>This setting affects the languages used in the results. It does not change which
-    /// results are returned. If the language is not specified, or not supported for a
-    /// particular result, the partner automatically chooses a language for the result.</p>
+    /// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
+    /// <p>This setting affects the languages used in the results. It does not change which results are returned. If the language is not specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p>
     pub fn language(&self) -> std::option::Option<&str> {
         self.language.as_deref()
     }
@@ -12704,26 +11434,20 @@ impl std::fmt::Debug for SearchPlaceIndexForPositionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPlaceIndexesInput {
     /// <p>An optional limit for the maximum number of results returned in a single call.</p>
-    /// <p>Default value: <code>100</code>
-    /// </p>
+    /// <p>Default value: <code>100</code> </p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The pagination token specifying which page of results to return in the response. If no
-    /// token is provided, the default page is the first page.</p>
-    /// <p>Default value: <code>null</code>
-    /// </p>
+    /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.</p>
+    /// <p>Default value: <code>null</code> </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPlaceIndexesInput {
     /// <p>An optional limit for the maximum number of results returned in a single call.</p>
-    /// <p>Default value: <code>100</code>
-    /// </p>
+    /// <p>Default value: <code>100</code> </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The pagination token specifying which page of results to return in the response. If no
-    /// token is provided, the default page is the first page.</p>
-    /// <p>Default value: <code>null</code>
-    /// </p>
+    /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.</p>
+    /// <p>Default value: <code>null</code> </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -12744,44 +11468,22 @@ pub struct CreatePlaceIndexInput {
     /// <p>The name of the place index resource. </p>
     /// <p>Requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and
-    /// underscores (_).</p>
-    /// </li>
-    /// <li>
-    /// <p>Must be a unique place index resource name.</p>
-    /// </li>
-    /// <li>
-    /// <p>No spaces allowed. For example, <code>ExamplePlaceIndex</code>.</p>
-    /// </li>
+    /// <li> <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_).</p> </li>
+    /// <li> <p>Must be a unique place index resource name.</p> </li>
+    /// <li> <p>No spaces allowed. For example, <code>ExamplePlaceIndex</code>.</p> </li>
     /// </ul>
     pub index_name: std::option::Option<std::string::String>,
-    /// <p>Specifies the geospatial data provider for the new place index.</p>
-    /// <note>
-    /// <p>This field is case-sensitive. Enter the valid values as shown. For example, entering
-    /// <code>HERE</code> returns an error.</p>
+    /// <p>Specifies the geospatial data provider for the new place index.</p> <note>
+    /// <p>This field is case-sensitive. Enter the valid values as shown. For example, entering <code>HERE</code> returns an error.</p>
     /// </note>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Esri</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s coverage in your
-    /// region of interest, see <a href="https://developers.arcgis.com/rest/geocode/api-reference/geocode-coverage.htm">Esri details on geocoding coverage</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>'
-    /// coverage in your region of interest, see <a href="https://developer.here.com/documentation/geocoder/dev_guide/topics/coverage-geocoder.html">HERE details on goecoding coverage</a>.</p>
-    /// <important>
-    /// <p>If you specify HERE Technologies (<code>Here</code>) as the data provider,
-    /// you may not <a href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store results</a> for locations in Japan. For more information, see the
-    /// <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a>
-    /// for Amazon Location Service.</p>
-    /// </important>
-    /// </li>
+    /// <li> <p> <code>Esri</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s coverage in your region of interest, see <a href="https://developers.arcgis.com/rest/geocode/api-reference/geocode-coverage.htm">Esri details on geocoding coverage</a>.</p> </li>
+    /// <li> <p> <code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>' coverage in your region of interest, see <a href="https://developer.here.com/documentation/geocoder/dev_guide/topics/coverage-geocoder.html">HERE details on goecoding coverage</a>.</p> <important>
+    /// <p>If you specify HERE Technologies (<code>Here</code>) as the data provider, you may not <a href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store results</a> for locations in Japan. For more information, see the <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon Location Service.</p>
+    /// </important> </li>
     /// </ul>
-    /// <p>For additional information , see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data providers</a>
-    /// on the <i>Amazon Location Service Developer Guide</i>.</p>
+    /// <p>For additional information , see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
     pub data_source: std::option::Option<std::string::String>,
     /// <p>Specifies the pricing plan for your place index resource.</p>
     /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
@@ -12790,31 +11492,16 @@ pub struct CreatePlaceIndexInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>Specifies the data storage option requesting Places.</p>
     pub data_source_configuration: std::option::Option<crate::model::DataSourceConfiguration>,
-    /// <p>Applies one or more tags to the place index resource. A tag is a key-value pair that helps you
-    /// manage, identify, search, and filter your resources.</p>
-    /// <p>Format: <code>"key" : "value"</code>
-    /// </p>
+    /// <p>Applies one or more tags to the place index resource. A tag is a key-value pair that helps you manage, identify, search, and filter your resources.</p>
+    /// <p>Format: <code>"key" : "value"</code> </p>
     /// <p>Restrictions:</p>
     /// <ul>
-    /// <li>
-    /// <p>Maximum 50 tags per resource.</p>
-    /// </li>
-    /// <li>
-    /// <p>Each tag key must be unique and must have exactly one associated value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p>
-    /// </li>
-    /// <li>
-    /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + -
-    /// = . _ : / @</p>
-    /// </li>
-    /// <li>
-    /// <p>Cannot use "aws:" as a prefix for a key.</p>
-    /// </li>
+    /// <li> <p>Maximum 50 tags per resource.</p> </li>
+    /// <li> <p>Each tag key must be unique and must have exactly one associated value.</p> </li>
+    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @</p> </li>
+    /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
     /// </ul>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -12823,46 +11510,24 @@ impl CreatePlaceIndexInput {
     /// <p>The name of the place index resource. </p>
     /// <p>Requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and
-    /// underscores (_).</p>
-    /// </li>
-    /// <li>
-    /// <p>Must be a unique place index resource name.</p>
-    /// </li>
-    /// <li>
-    /// <p>No spaces allowed. For example, <code>ExamplePlaceIndex</code>.</p>
-    /// </li>
+    /// <li> <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_).</p> </li>
+    /// <li> <p>Must be a unique place index resource name.</p> </li>
+    /// <li> <p>No spaces allowed. For example, <code>ExamplePlaceIndex</code>.</p> </li>
     /// </ul>
     pub fn index_name(&self) -> std::option::Option<&str> {
         self.index_name.as_deref()
     }
-    /// <p>Specifies the geospatial data provider for the new place index.</p>
-    /// <note>
-    /// <p>This field is case-sensitive. Enter the valid values as shown. For example, entering
-    /// <code>HERE</code> returns an error.</p>
+    /// <p>Specifies the geospatial data provider for the new place index.</p> <note>
+    /// <p>This field is case-sensitive. Enter the valid values as shown. For example, entering <code>HERE</code> returns an error.</p>
     /// </note>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>Esri</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s coverage in your
-    /// region of interest, see <a href="https://developers.arcgis.com/rest/geocode/api-reference/geocode-coverage.htm">Esri details on geocoding coverage</a>.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>'
-    /// coverage in your region of interest, see <a href="https://developer.here.com/documentation/geocoder/dev_guide/topics/coverage-geocoder.html">HERE details on goecoding coverage</a>.</p>
-    /// <important>
-    /// <p>If you specify HERE Technologies (<code>Here</code>) as the data provider,
-    /// you may not <a href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store results</a> for locations in Japan. For more information, see the
-    /// <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a>
-    /// for Amazon Location Service.</p>
-    /// </important>
-    /// </li>
+    /// <li> <p> <code>Esri</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s coverage in your region of interest, see <a href="https://developers.arcgis.com/rest/geocode/api-reference/geocode-coverage.htm">Esri details on geocoding coverage</a>.</p> </li>
+    /// <li> <p> <code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>' coverage in your region of interest, see <a href="https://developer.here.com/documentation/geocoder/dev_guide/topics/coverage-geocoder.html">HERE details on goecoding coverage</a>.</p> <important>
+    /// <p>If you specify HERE Technologies (<code>Here</code>) as the data provider, you may not <a href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store results</a> for locations in Japan. For more information, see the <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon Location Service.</p>
+    /// </important> </li>
     /// </ul>
-    /// <p>For additional information , see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data providers</a>
-    /// on the <i>Amazon Location Service Developer Guide</i>.</p>
+    /// <p>For additional information , see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
     pub fn data_source(&self) -> std::option::Option<&str> {
         self.data_source.as_deref()
     }
@@ -12881,31 +11546,16 @@ impl CreatePlaceIndexInput {
     ) -> std::option::Option<&crate::model::DataSourceConfiguration> {
         self.data_source_configuration.as_ref()
     }
-    /// <p>Applies one or more tags to the place index resource. A tag is a key-value pair that helps you
-    /// manage, identify, search, and filter your resources.</p>
-    /// <p>Format: <code>"key" : "value"</code>
-    /// </p>
+    /// <p>Applies one or more tags to the place index resource. A tag is a key-value pair that helps you manage, identify, search, and filter your resources.</p>
+    /// <p>Format: <code>"key" : "value"</code> </p>
     /// <p>Restrictions:</p>
     /// <ul>
-    /// <li>
-    /// <p>Maximum 50 tags per resource.</p>
-    /// </li>
-    /// <li>
-    /// <p>Each tag key must be unique and must have exactly one associated value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p>
-    /// </li>
-    /// <li>
-    /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + -
-    /// = . _ : / @</p>
-    /// </li>
-    /// <li>
-    /// <p>Cannot use "aws:" as a prefix for a key.</p>
-    /// </li>
+    /// <li> <p>Maximum 50 tags per resource.</p> </li>
+    /// <li> <p>Each tag key must be unique and must have exactly one associated value.</p> </li>
+    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @</p> </li>
+    /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
     /// </ul>
     pub fn tags(
         &self,
@@ -13086,27 +11736,13 @@ pub struct GetMapSpritesInput {
     pub map_name: std::option::Option<std::string::String>,
     /// <p>The name of the sprite ﬁle. Use the following ﬁle names for the sprite sheet:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>sprites.png</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>sprites@2x.png</code> for high pixel density displays</p>
-    /// </li>
+    /// <li> <p> <code>sprites.png</code> </p> </li>
+    /// <li> <p> <code>sprites@2x.png</code> for high pixel density displays</p> </li>
     /// </ul>
     /// <p>For the JSON document contain image offsets. Use the following ﬁle names:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>sprites.json</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>sprites@2x.json</code> for high pixel density displays</p>
-    /// </li>
+    /// <li> <p> <code>sprites.json</code> </p> </li>
+    /// <li> <p> <code>sprites@2x.json</code> for high pixel density displays</p> </li>
     /// </ul>
     pub file_name: std::option::Option<std::string::String>,
 }
@@ -13117,27 +11753,13 @@ impl GetMapSpritesInput {
     }
     /// <p>The name of the sprite ﬁle. Use the following ﬁle names for the sprite sheet:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>sprites.png</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>sprites@2x.png</code> for high pixel density displays</p>
-    /// </li>
+    /// <li> <p> <code>sprites.png</code> </p> </li>
+    /// <li> <p> <code>sprites@2x.png</code> for high pixel density displays</p> </li>
     /// </ul>
     /// <p>For the JSON document contain image offsets. Use the following ﬁle names:</p>
     /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>sprites.json</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>sprites@2x.json</code> for high pixel density displays</p>
-    /// </li>
+    /// <li> <p> <code>sprites.json</code> </p> </li>
+    /// <li> <p> <code>sprites@2x.json</code> for high pixel density displays</p> </li>
     /// </ul>
     pub fn file_name(&self) -> std::option::Option<&str> {
         self.file_name.as_deref()
@@ -13158,50 +11780,21 @@ impl std::fmt::Debug for GetMapSpritesInput {
 pub struct GetMapGlyphsInput {
     /// <p>The map resource associated with the glyph ﬁle.</p>
     pub map_name: std::option::Option<std::string::String>,
-    /// <p>A comma-separated list of fonts to load glyphs from in order of preference. For
-    /// example, <code>Noto Sans Regular, Arial Unicode</code>.</p>
+    /// <p>A comma-separated list of fonts to load glyphs from in order of preference. For example, <code>Noto Sans Regular, Arial Unicode</code>.</p>
     /// <p>Valid fonts stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a> styles: </p>
     /// <ul>
-    /// <li>
-    /// <p>VectorEsriDarkGrayCanvas – <code>Ubuntu Medium Italic</code> | <code>Ubuntu
-    /// Medium</code> | <code>Ubuntu Italic</code> | <code>Ubuntu Regular</code> |
-    /// <code>Ubuntu Bold</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>VectorEsriLightGrayCanvas – <code>Ubuntu Italic</code> | <code>Ubuntu
-    /// Regular</code> | <code>Ubuntu Light</code> | <code>Ubuntu Bold</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>VectorEsriTopographic – <code>Noto Sans Italic</code> | <code>Noto Sans
-    /// Regular</code> | <code>Noto Sans Bold</code> | <code>Noto Serif
-    /// Regular</code> | <code>Roboto Condensed Light Italic</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>VectorEsriStreets – <code>Arial Regular</code> | <code>Arial Italic</code> |
-    /// <code>Arial Bold</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>VectorEsriNavigation – <code>Arial Regular</code> | <code>Arial Italic</code>
-    /// | <code>Arial Bold</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>VectorEsriDarkGrayCanvas – <code>Ubuntu Medium Italic</code> | <code>Ubuntu Medium</code> | <code>Ubuntu Italic</code> | <code>Ubuntu Regular</code> | <code>Ubuntu Bold</code> </p> </li>
+    /// <li> <p>VectorEsriLightGrayCanvas – <code>Ubuntu Italic</code> | <code>Ubuntu Regular</code> | <code>Ubuntu Light</code> | <code>Ubuntu Bold</code> </p> </li>
+    /// <li> <p>VectorEsriTopographic – <code>Noto Sans Italic</code> | <code>Noto Sans Regular</code> | <code>Noto Sans Bold</code> | <code>Noto Serif Regular</code> | <code>Roboto Condensed Light Italic</code> </p> </li>
+    /// <li> <p>VectorEsriStreets – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial Bold</code> </p> </li>
+    /// <li> <p>VectorEsriNavigation – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial Bold</code> </p> </li>
     /// </ul>
     /// <p>Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a> styles: </p>
     /// <ul>
-    /// <li>
-    /// <p>VectorHereBerlin – <code>Fira GO Regular</code> | <code>Fira GO
-    /// Bold</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>VectorHereBerlin – <code>Fira GO Regular</code> | <code>Fira GO Bold</code> </p> </li>
     /// </ul>
     pub font_stack: std::option::Option<std::string::String>,
-    /// <p>A Unicode range of characters to download glyphs for. Each response will contain 256
-    /// characters. For example, 0–255 includes all characters from range <code>U+0000</code> to
-    /// <code>00FF</code>. Must be aligned to multiples of 256.</p>
+    /// <p>A Unicode range of characters to download glyphs for. Each response will contain 256 characters. For example, 0–255 includes all characters from range <code>U+0000</code> to <code>00FF</code>. Must be aligned to multiples of 256.</p>
     pub font_unicode_range: std::option::Option<std::string::String>,
 }
 impl GetMapGlyphsInput {
@@ -13209,52 +11802,23 @@ impl GetMapGlyphsInput {
     pub fn map_name(&self) -> std::option::Option<&str> {
         self.map_name.as_deref()
     }
-    /// <p>A comma-separated list of fonts to load glyphs from in order of preference. For
-    /// example, <code>Noto Sans Regular, Arial Unicode</code>.</p>
+    /// <p>A comma-separated list of fonts to load glyphs from in order of preference. For example, <code>Noto Sans Regular, Arial Unicode</code>.</p>
     /// <p>Valid fonts stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a> styles: </p>
     /// <ul>
-    /// <li>
-    /// <p>VectorEsriDarkGrayCanvas – <code>Ubuntu Medium Italic</code> | <code>Ubuntu
-    /// Medium</code> | <code>Ubuntu Italic</code> | <code>Ubuntu Regular</code> |
-    /// <code>Ubuntu Bold</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>VectorEsriLightGrayCanvas – <code>Ubuntu Italic</code> | <code>Ubuntu
-    /// Regular</code> | <code>Ubuntu Light</code> | <code>Ubuntu Bold</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>VectorEsriTopographic – <code>Noto Sans Italic</code> | <code>Noto Sans
-    /// Regular</code> | <code>Noto Sans Bold</code> | <code>Noto Serif
-    /// Regular</code> | <code>Roboto Condensed Light Italic</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>VectorEsriStreets – <code>Arial Regular</code> | <code>Arial Italic</code> |
-    /// <code>Arial Bold</code>
-    /// </p>
-    /// </li>
-    /// <li>
-    /// <p>VectorEsriNavigation – <code>Arial Regular</code> | <code>Arial Italic</code>
-    /// | <code>Arial Bold</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>VectorEsriDarkGrayCanvas – <code>Ubuntu Medium Italic</code> | <code>Ubuntu Medium</code> | <code>Ubuntu Italic</code> | <code>Ubuntu Regular</code> | <code>Ubuntu Bold</code> </p> </li>
+    /// <li> <p>VectorEsriLightGrayCanvas – <code>Ubuntu Italic</code> | <code>Ubuntu Regular</code> | <code>Ubuntu Light</code> | <code>Ubuntu Bold</code> </p> </li>
+    /// <li> <p>VectorEsriTopographic – <code>Noto Sans Italic</code> | <code>Noto Sans Regular</code> | <code>Noto Sans Bold</code> | <code>Noto Serif Regular</code> | <code>Roboto Condensed Light Italic</code> </p> </li>
+    /// <li> <p>VectorEsriStreets – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial Bold</code> </p> </li>
+    /// <li> <p>VectorEsriNavigation – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial Bold</code> </p> </li>
     /// </ul>
     /// <p>Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a> styles: </p>
     /// <ul>
-    /// <li>
-    /// <p>VectorHereBerlin – <code>Fira GO Regular</code> | <code>Fira GO
-    /// Bold</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>VectorHereBerlin – <code>Fira GO Regular</code> | <code>Fira GO Bold</code> </p> </li>
     /// </ul>
     pub fn font_stack(&self) -> std::option::Option<&str> {
         self.font_stack.as_deref()
     }
-    /// <p>A Unicode range of characters to download glyphs for. Each response will contain 256
-    /// characters. For example, 0–255 includes all characters from range <code>U+0000</code> to
-    /// <code>00FF</code>. Must be aligned to multiples of 256.</p>
+    /// <p>A Unicode range of characters to download glyphs for. Each response will contain 256 characters. For example, 0–255 includes all characters from range <code>U+0000</code> to <code>00FF</code>. Must be aligned to multiples of 256.</p>
     pub fn font_unicode_range(&self) -> std::option::Option<&str> {
         self.font_unicode_range.as_deref()
     }
@@ -13274,26 +11838,20 @@ impl std::fmt::Debug for GetMapGlyphsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMapsInput {
     /// <p>An optional limit for the number of resources returned in a single call. </p>
-    /// <p>Default value: <code>100</code>
-    /// </p>
+    /// <p>Default value: <code>100</code> </p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The pagination token specifying which page of results to return in the response. If no
-    /// token is provided, the default page is the first page.</p>
-    /// <p>Default value: <code>null</code>
-    /// </p>
+    /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.</p>
+    /// <p>Default value: <code>null</code> </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListMapsInput {
     /// <p>An optional limit for the number of resources returned in a single call. </p>
-    /// <p>Default value: <code>100</code>
-    /// </p>
+    /// <p>Default value: <code>100</code> </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The pagination token specifying which page of results to return in the response. If no
-    /// token is provided, the default page is the first page.</p>
-    /// <p>Default value: <code>null</code>
-    /// </p>
+    /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.</p>
+    /// <p>Default value: <code>null</code> </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -13314,15 +11872,9 @@ pub struct CreateMapInput {
     /// <p>The name for the map resource.</p>
     /// <p>Requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_). </p>
-    /// </li>
-    /// <li>
-    /// <p>Must be a unique map resource name. </p>
-    /// </li>
-    /// <li>
-    /// <p>No spaces allowed. For example, <code>ExampleMap</code>.</p>
-    /// </li>
+    /// <li> <p>Must contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_). </p> </li>
+    /// <li> <p>Must be a unique map resource name. </p> </li>
+    /// <li> <p>No spaces allowed. For example, <code>ExampleMap</code>.</p> </li>
     /// </ul>
     pub map_name: std::option::Option<std::string::String>,
     /// <p>Specifies the map style selected from an available data provider.</p>
@@ -13332,31 +11884,16 @@ pub struct CreateMapInput {
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>An optional description for the map resource.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>Applies one or more tags to the map resource. A tag is a key-value pair helps manage,
-    /// identify, search, and filter your resources by labelling them.</p>
-    /// <p>Format: <code>"key" : "value"</code>
-    /// </p>
+    /// <p>Applies one or more tags to the map resource. A tag is a key-value pair helps manage, identify, search, and filter your resources by labelling them.</p>
+    /// <p>Format: <code>"key" : "value"</code> </p>
     /// <p>Restrictions:</p>
     /// <ul>
-    /// <li>
-    /// <p>Maximum 50 tags per resource</p>
-    /// </li>
-    /// <li>
-    /// <p>Each resource tag must be unique with a maximum of one value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum key length: 128 Unicode characters in UTF-8</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum value length:  256 Unicode characters in UTF-8</p>
-    /// </li>
-    /// <li>
-    /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : /
-    /// @. </p>
-    /// </li>
-    /// <li>
-    /// <p>Cannot use "aws:" as a prefix for a key.</p>
-    /// </li>
+    /// <li> <p>Maximum 50 tags per resource</p> </li>
+    /// <li> <p>Each resource tag must be unique with a maximum of one value.</p> </li>
+    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @. </p> </li>
+    /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
     /// </ul>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -13365,15 +11902,9 @@ impl CreateMapInput {
     /// <p>The name for the map resource.</p>
     /// <p>Requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Must contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_). </p>
-    /// </li>
-    /// <li>
-    /// <p>Must be a unique map resource name. </p>
-    /// </li>
-    /// <li>
-    /// <p>No spaces allowed. For example, <code>ExampleMap</code>.</p>
-    /// </li>
+    /// <li> <p>Must contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_). </p> </li>
+    /// <li> <p>Must be a unique map resource name. </p> </li>
+    /// <li> <p>No spaces allowed. For example, <code>ExampleMap</code>.</p> </li>
     /// </ul>
     pub fn map_name(&self) -> std::option::Option<&str> {
         self.map_name.as_deref()
@@ -13391,31 +11922,16 @@ impl CreateMapInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Applies one or more tags to the map resource. A tag is a key-value pair helps manage,
-    /// identify, search, and filter your resources by labelling them.</p>
-    /// <p>Format: <code>"key" : "value"</code>
-    /// </p>
+    /// <p>Applies one or more tags to the map resource. A tag is a key-value pair helps manage, identify, search, and filter your resources by labelling them.</p>
+    /// <p>Format: <code>"key" : "value"</code> </p>
     /// <p>Restrictions:</p>
     /// <ul>
-    /// <li>
-    /// <p>Maximum 50 tags per resource</p>
-    /// </li>
-    /// <li>
-    /// <p>Each resource tag must be unique with a maximum of one value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum key length: 128 Unicode characters in UTF-8</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum value length:  256 Unicode characters in UTF-8</p>
-    /// </li>
-    /// <li>
-    /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : /
-    /// @. </p>
-    /// </li>
-    /// <li>
-    /// <p>Cannot use "aws:" as a prefix for a key.</p>
-    /// </li>
+    /// <li> <p>Maximum 50 tags per resource</p> </li>
+    /// <li> <p>Each resource tag must be unique with a maximum of one value.</p> </li>
+    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @. </p> </li>
+    /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
     /// </ul>
     pub fn tags(
         &self,
@@ -13523,8 +12039,7 @@ pub struct PutGeofenceInput {
     pub collection_name: std::option::Option<std::string::String>,
     /// <p>An identifier for the geofence. For example, <code>ExampleGeofence-1</code>.</p>
     pub geofence_id: std::option::Option<std::string::String>,
-    /// <p>Contains the polygon details to specify the position of the geofence.</p>
-    /// <note>
+    /// <p>Contains the polygon details to specify the position of the geofence.</p> <note>
     /// <p>Each <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html">geofence polygon</a> can have a maximum of 1,000 vertices.</p>
     /// </note>
     pub geometry: std::option::Option<crate::model::GeofenceGeometry>,
@@ -13538,8 +12053,7 @@ impl PutGeofenceInput {
     pub fn geofence_id(&self) -> std::option::Option<&str> {
         self.geofence_id.as_deref()
     }
-    /// <p>Contains the polygon details to specify the position of the geofence.</p>
-    /// <note>
+    /// <p>Contains the polygon details to specify the position of the geofence.</p> <note>
     /// <p>Each <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html">geofence polygon</a> can have a maximum of 1,000 vertices.</p>
     /// </note>
     pub fn geometry(&self) -> std::option::Option<&crate::model::GeofenceGeometry> {
@@ -13562,10 +12076,8 @@ impl std::fmt::Debug for PutGeofenceInput {
 pub struct ListGeofencesInput {
     /// <p>The name of the geofence collection storing the list of geofences.</p>
     pub collection_name: std::option::Option<std::string::String>,
-    /// <p>The pagination token specifying which page of results to return in the response. If no
-    /// token is provided, the default page is the first page. </p>
-    /// <p>Default value: <code>null</code>
-    /// </p>
+    /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p>
+    /// <p>Default value: <code>null</code> </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListGeofencesInput {
@@ -13573,10 +12085,8 @@ impl ListGeofencesInput {
     pub fn collection_name(&self) -> std::option::Option<&str> {
         self.collection_name.as_deref()
     }
-    /// <p>The pagination token specifying which page of results to return in the response. If no
-    /// token is provided, the default page is the first page. </p>
-    /// <p>Default value: <code>null</code>
-    /// </p>
+    /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p>
+    /// <p>Default value: <code>null</code> </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -13650,22 +12160,18 @@ impl std::fmt::Debug for BatchPutGeofenceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchEvaluateGeofencesInput {
-    /// <p>The geofence collection used in evaluating the position of devices against its
-    /// geofences.</p>
+    /// <p>The geofence collection used in evaluating the position of devices against its geofences.</p>
     pub collection_name: std::option::Option<std::string::String>,
-    /// <p>Contains device details for each device to be evaluated against the given geofence
-    /// collection.</p>
+    /// <p>Contains device details for each device to be evaluated against the given geofence collection.</p>
     pub device_position_updates:
         std::option::Option<std::vec::Vec<crate::model::DevicePositionUpdate>>,
 }
 impl BatchEvaluateGeofencesInput {
-    /// <p>The geofence collection used in evaluating the position of devices against its
-    /// geofences.</p>
+    /// <p>The geofence collection used in evaluating the position of devices against its geofences.</p>
     pub fn collection_name(&self) -> std::option::Option<&str> {
         self.collection_name.as_deref()
     }
-    /// <p>Contains device details for each device to be evaluated against the given geofence
-    /// collection.</p>
+    /// <p>Contains device details for each device to be evaluated against the given geofence collection.</p>
     pub fn device_position_updates(
         &self,
     ) -> std::option::Option<&[crate::model::DevicePositionUpdate]> {
@@ -13714,26 +12220,20 @@ impl std::fmt::Debug for BatchDeleteGeofenceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGeofenceCollectionsInput {
     /// <p>An optional limit for the number of resources returned in a single call. </p>
-    /// <p>Default value: <code>100</code>
-    /// </p>
+    /// <p>Default value: <code>100</code> </p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The pagination token specifying which page of results to return in the response. If no
-    /// token is provided, the default page is the first page. </p>
-    /// <p>Default value: <code>null</code>
-    /// </p>
+    /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p>
+    /// <p>Default value: <code>null</code> </p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListGeofenceCollectionsInput {
     /// <p>An optional limit for the number of resources returned in a single call. </p>
-    /// <p>Default value: <code>100</code>
-    /// </p>
+    /// <p>Default value: <code>100</code> </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The pagination token specifying which page of results to return in the response. If no
-    /// token is provided, the default page is the first page. </p>
-    /// <p>Default value: <code>null</code>
-    /// </p>
+    /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p>
+    /// <p>Default value: <code>null</code> </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -13754,115 +12254,65 @@ pub struct CreateGeofenceCollectionInput {
     /// <p>A custom name for the geofence collection.</p>
     /// <p>Requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods
-    /// (.), and underscores (_). </p>
-    /// </li>
-    /// <li>
-    /// <p>Must be a unique geofence collection name.</p>
-    /// </li>
-    /// <li>
-    /// <p>No spaces allowed. For example, <code>ExampleGeofenceCollection</code>.</p>
-    /// </li>
+    /// <li> <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_). </p> </li>
+    /// <li> <p>Must be a unique geofence collection name.</p> </li>
+    /// <li> <p>No spaces allowed. For example, <code>ExampleGeofenceCollection</code>.</p> </li>
     /// </ul>
     pub collection_name: std::option::Option<std::string::String>,
     /// <p>Specifies the pricing plan for the geofence collection.</p>
-    /// <p>For additional details and restrictions on each pricing plan option, see the <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
-    /// page</a>.</p>
+    /// <p>For additional details and restrictions on each pricing plan option, see the <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.</p>
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>Specifies the data provider for the geofence collection.</p>
     /// <ul>
-    /// <li>
-    /// <p>Required value for the following pricing plans: <code>MobileAssetTracking
-    /// </code>| <code>MobileAssetManagement</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Required value for the following pricing plans: <code>MobileAssetTracking </code>| <code>MobileAssetManagement</code> </p> </li>
     /// </ul>
-    /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">Data Providers</a>, and <a href="https://aws.amazon.com/location/pricing/">Pricing plans</a>, see the Amazon Location
-    /// Service product page.</p>
-    /// <note>
-    /// <p>Amazon Location Service only uses <code>PricingPlanDataSource</code> to calculate billing for
-    /// your geofence collection. Your data won't be shared with the data provider, and will
-    /// remain in your AWS account or Region unless you move it.</p>
+    /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">Data Providers</a>, and <a href="https://aws.amazon.com/location/pricing/">Pricing plans</a>, see the Amazon Location Service product page.</p> <note>
+    /// <p>Amazon Location Service only uses <code>PricingPlanDataSource</code> to calculate billing for your geofence collection. Your data won't be shared with the data provider, and will remain in your AWS account or Region unless you move it.</p>
     /// </note>
-    /// <p>Valid Values: <code>Esri </code>| <code>Here</code>
-    /// </p>
+    /// <p>Valid Values: <code>Esri </code>| <code>Here</code> </p>
     pub pricing_plan_data_source: std::option::Option<std::string::String>,
     /// <p>An optional description for the geofence collection.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>Applies one or more tags to the geofence collection. A tag is a key-value pair helps
-    /// manage, identify, search, and filter your resources by labelling them.</p>
-    /// <p>Format: <code>"key" : "value"</code>
-    /// </p>
+    /// <p>Applies one or more tags to the geofence collection. A tag is a key-value pair helps manage, identify, search, and filter your resources by labelling them.</p>
+    /// <p>Format: <code>"key" : "value"</code> </p>
     /// <p>Restrictions:</p>
     /// <ul>
-    /// <li>
-    /// <p>Maximum 50 tags per resource</p>
-    /// </li>
-    /// <li>
-    /// <p>Each resource tag must be unique with a maximum of one value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum key length: 128 Unicode characters in UTF-8</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum value length: 256 Unicode characters in UTF-8</p>
-    /// </li>
-    /// <li>
-    /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters:
-    /// + - = . _ : / @. </p>
-    /// </li>
-    /// <li>
-    /// <p>Cannot use "aws:" as a prefix for a key.</p>
-    /// </li>
+    /// <li> <p>Maximum 50 tags per resource</p> </li>
+    /// <li> <p>Each resource tag must be unique with a maximum of one value.</p> </li>
+    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @. </p> </li>
+    /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
     /// </ul>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS customer managed key</a>. Enter a key ID, key ARN, alias name, or alias ARN.
-    /// </p>
+    /// <p>A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS customer managed key</a>. Enter a key ID, key ARN, alias name, or alias ARN. </p>
     pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl CreateGeofenceCollectionInput {
     /// <p>A custom name for the geofence collection.</p>
     /// <p>Requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods
-    /// (.), and underscores (_). </p>
-    /// </li>
-    /// <li>
-    /// <p>Must be a unique geofence collection name.</p>
-    /// </li>
-    /// <li>
-    /// <p>No spaces allowed. For example, <code>ExampleGeofenceCollection</code>.</p>
-    /// </li>
+    /// <li> <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_). </p> </li>
+    /// <li> <p>Must be a unique geofence collection name.</p> </li>
+    /// <li> <p>No spaces allowed. For example, <code>ExampleGeofenceCollection</code>.</p> </li>
     /// </ul>
     pub fn collection_name(&self) -> std::option::Option<&str> {
         self.collection_name.as_deref()
     }
     /// <p>Specifies the pricing plan for the geofence collection.</p>
-    /// <p>For additional details and restrictions on each pricing plan option, see the <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
-    /// page</a>.</p>
+    /// <p>For additional details and restrictions on each pricing plan option, see the <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.</p>
     pub fn pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
         self.pricing_plan.as_ref()
     }
     /// <p>Specifies the data provider for the geofence collection.</p>
     /// <ul>
-    /// <li>
-    /// <p>Required value for the following pricing plans: <code>MobileAssetTracking
-    /// </code>| <code>MobileAssetManagement</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Required value for the following pricing plans: <code>MobileAssetTracking </code>| <code>MobileAssetManagement</code> </p> </li>
     /// </ul>
-    /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">Data Providers</a>, and <a href="https://aws.amazon.com/location/pricing/">Pricing plans</a>, see the Amazon Location
-    /// Service product page.</p>
-    /// <note>
-    /// <p>Amazon Location Service only uses <code>PricingPlanDataSource</code> to calculate billing for
-    /// your geofence collection. Your data won't be shared with the data provider, and will
-    /// remain in your AWS account or Region unless you move it.</p>
+    /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">Data Providers</a>, and <a href="https://aws.amazon.com/location/pricing/">Pricing plans</a>, see the Amazon Location Service product page.</p> <note>
+    /// <p>Amazon Location Service only uses <code>PricingPlanDataSource</code> to calculate billing for your geofence collection. Your data won't be shared with the data provider, and will remain in your AWS account or Region unless you move it.</p>
     /// </note>
-    /// <p>Valid Values: <code>Esri </code>| <code>Here</code>
-    /// </p>
+    /// <p>Valid Values: <code>Esri </code>| <code>Here</code> </p>
     pub fn pricing_plan_data_source(&self) -> std::option::Option<&str> {
         self.pricing_plan_data_source.as_deref()
     }
@@ -13870,31 +12320,16 @@ impl CreateGeofenceCollectionInput {
     pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Applies one or more tags to the geofence collection. A tag is a key-value pair helps
-    /// manage, identify, search, and filter your resources by labelling them.</p>
-    /// <p>Format: <code>"key" : "value"</code>
-    /// </p>
+    /// <p>Applies one or more tags to the geofence collection. A tag is a key-value pair helps manage, identify, search, and filter your resources by labelling them.</p>
+    /// <p>Format: <code>"key" : "value"</code> </p>
     /// <p>Restrictions:</p>
     /// <ul>
-    /// <li>
-    /// <p>Maximum 50 tags per resource</p>
-    /// </li>
-    /// <li>
-    /// <p>Each resource tag must be unique with a maximum of one value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum key length: 128 Unicode characters in UTF-8</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum value length: 256 Unicode characters in UTF-8</p>
-    /// </li>
-    /// <li>
-    /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters:
-    /// + - = . _ : / @. </p>
-    /// </li>
-    /// <li>
-    /// <p>Cannot use "aws:" as a prefix for a key.</p>
-    /// </li>
+    /// <li> <p>Maximum 50 tags per resource</p> </li>
+    /// <li> <p>Each resource tag must be unique with a maximum of one value.</p> </li>
+    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @. </p> </li>
+    /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
     /// </ul>
     pub fn tags(
         &self,
@@ -13902,8 +12337,7 @@ impl CreateGeofenceCollectionInput {
     {
         self.tags.as_ref()
     }
-    /// <p>A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS customer managed key</a>. Enter a key ID, key ARN, alias name, or alias ARN.
-    /// </p>
+    /// <p>A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS customer managed key</a>. Enter a key ID, key ARN, alias name, or alias ARN. </p>
     pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
@@ -13949,22 +12383,13 @@ pub struct UpdateGeofenceCollectionInput {
     /// <p>The name of the geofence collection to update.</p>
     pub collection_name: std::option::Option<std::string::String>,
     /// <p>Updates the pricing plan for the geofence collection.</p>
-    /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service
-    /// pricing</a>.</p>
+    /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>Updates the data provider for the geofence collection. </p>
-    /// <p>A required value for the following pricing plans: <code>MobileAssetTracking</code>|
-    /// <code>MobileAssetManagement</code>
-    /// </p>
-    /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">data providers</a> and
-    /// <a href="https://aws.amazon.com/location/pricing/">pricing plans</a>, see the
-    /// Amazon Location Service product page.</p>
-    /// <note>
-    /// <p>This can only be updated when updating the <code>PricingPlan</code> in the same
-    /// request.</p>
-    /// <p>Amazon Location Service uses <code>PricingPlanDataSource</code> to calculate
-    /// billing for your geofence collection. Your data won't be shared with the data
-    /// provider, and will remain in your AWS account and Region unless you move it.</p>
+    /// <p>A required value for the following pricing plans: <code>MobileAssetTracking</code>| <code>MobileAssetManagement</code> </p>
+    /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">data providers</a> and <a href="https://aws.amazon.com/location/pricing/">pricing plans</a>, see the Amazon Location Service product page.</p> <note>
+    /// <p>This can only be updated when updating the <code>PricingPlan</code> in the same request.</p>
+    /// <p>Amazon Location Service uses <code>PricingPlanDataSource</code> to calculate billing for your geofence collection. Your data won't be shared with the data provider, and will remain in your AWS account and Region unless you move it.</p>
     /// </note>
     pub pricing_plan_data_source: std::option::Option<std::string::String>,
     /// <p>Updates the description for the geofence collection.</p>
@@ -13976,24 +12401,15 @@ impl UpdateGeofenceCollectionInput {
         self.collection_name.as_deref()
     }
     /// <p>Updates the pricing plan for the geofence collection.</p>
-    /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service
-    /// pricing</a>.</p>
+    /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
     pub fn pricing_plan(&self) -> std::option::Option<&crate::model::PricingPlan> {
         self.pricing_plan.as_ref()
     }
     /// <p>Updates the data provider for the geofence collection. </p>
-    /// <p>A required value for the following pricing plans: <code>MobileAssetTracking</code>|
-    /// <code>MobileAssetManagement</code>
-    /// </p>
-    /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">data providers</a> and
-    /// <a href="https://aws.amazon.com/location/pricing/">pricing plans</a>, see the
-    /// Amazon Location Service product page.</p>
-    /// <note>
-    /// <p>This can only be updated when updating the <code>PricingPlan</code> in the same
-    /// request.</p>
-    /// <p>Amazon Location Service uses <code>PricingPlanDataSource</code> to calculate
-    /// billing for your geofence collection. Your data won't be shared with the data
-    /// provider, and will remain in your AWS account and Region unless you move it.</p>
+    /// <p>A required value for the following pricing plans: <code>MobileAssetTracking</code>| <code>MobileAssetManagement</code> </p>
+    /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">data providers</a> and <a href="https://aws.amazon.com/location/pricing/">pricing plans</a>, see the Amazon Location Service product page.</p> <note>
+    /// <p>This can only be updated when updating the <code>PricingPlan</code> in the same request.</p>
+    /// <p>Amazon Location Service uses <code>PricingPlanDataSource</code> to calculate billing for your geofence collection. Your data won't be shared with the data provider, and will remain in your AWS account and Region unless you move it.</p>
     /// </note>
     pub fn pricing_plan_data_source(&self) -> std::option::Option<&str> {
         self.pricing_plan_data_source.as_deref()
@@ -14041,10 +12457,7 @@ impl std::fmt::Debug for DescribeGeofenceCollectionInput {
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource from which you want to remove tags.</p>
     /// <ul>
-    /// <li>
-    /// <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code> </p> </li>
     /// </ul>
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The list of tag keys to remove from the specified resource.</p>
@@ -14053,10 +12466,7 @@ pub struct UntagResourceInput {
 impl UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource from which you want to remove tags.</p>
     /// <ul>
-    /// <li>
-    /// <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code> </p> </li>
     /// </ul>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
@@ -14081,37 +12491,19 @@ impl std::fmt::Debug for UntagResourceInput {
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource whose tags you want to update.</p>
     /// <ul>
-    /// <li>
-    /// <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code> </p> </li>
     /// </ul>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>Applies one or more tags to specific resource. A tag is a key-value pair that helps you
-    /// manage, identify, search, and filter your resources.</p>
-    /// <p>Format: <code>"key" : "value"</code>
-    /// </p>
+    /// <p>Applies one or more tags to specific resource. A tag is a key-value pair that helps you manage, identify, search, and filter your resources.</p>
+    /// <p>Format: <code>"key" : "value"</code> </p>
     /// <p>Restrictions:</p>
     /// <ul>
-    /// <li>
-    /// <p>Maximum 50 tags per resource.</p>
-    /// </li>
-    /// <li>
-    /// <p>Each tag key must be unique and must have exactly one associated value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p>
-    /// </li>
-    /// <li>
-    /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + -
-    /// = . _ : / @</p>
-    /// </li>
-    /// <li>
-    /// <p>Cannot use "aws:" as a prefix for a key.</p>
-    /// </li>
+    /// <li> <p>Maximum 50 tags per resource.</p> </li>
+    /// <li> <p>Each tag key must be unique and must have exactly one associated value.</p> </li>
+    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @</p> </li>
+    /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
     /// </ul>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -14119,39 +12511,21 @@ pub struct TagResourceInput {
 impl TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource whose tags you want to update.</p>
     /// <ul>
-    /// <li>
-    /// <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code> </p> </li>
     /// </ul>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>Applies one or more tags to specific resource. A tag is a key-value pair that helps you
-    /// manage, identify, search, and filter your resources.</p>
-    /// <p>Format: <code>"key" : "value"</code>
-    /// </p>
+    /// <p>Applies one or more tags to specific resource. A tag is a key-value pair that helps you manage, identify, search, and filter your resources.</p>
+    /// <p>Format: <code>"key" : "value"</code> </p>
     /// <p>Restrictions:</p>
     /// <ul>
-    /// <li>
-    /// <p>Maximum 50 tags per resource.</p>
-    /// </li>
-    /// <li>
-    /// <p>Each tag key must be unique and must have exactly one associated value.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p>
-    /// </li>
-    /// <li>
-    /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p>
-    /// </li>
-    /// <li>
-    /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + -
-    /// = . _ : / @</p>
-    /// </li>
-    /// <li>
-    /// <p>Cannot use "aws:" as a prefix for a key.</p>
-    /// </li>
+    /// <li> <p>Maximum 50 tags per resource.</p> </li>
+    /// <li> <p>Each tag key must be unique and must have exactly one associated value.</p> </li>
+    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8.</p> </li>
+    /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @</p> </li>
+    /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
     /// </ul>
     pub fn tags(
         &self,
@@ -14175,20 +12549,14 @@ impl std::fmt::Debug for TagResourceInput {
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource whose tags you want to retrieve.</p>
     /// <ul>
-    /// <li>
-    /// <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code> </p> </li>
     /// </ul>
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource whose tags you want to retrieve.</p>
     /// <ul>
-    /// <li>
-    /// <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code>
-    /// </p>
-    /// </li>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code> </p> </li>
     /// </ul>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()

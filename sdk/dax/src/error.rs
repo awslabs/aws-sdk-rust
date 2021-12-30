@@ -14,14 +14,11 @@ pub struct CreateClusterError {
 pub enum CreateClusterErrorKind {
     /// <p>You already have a DAX cluster with the given identifier.</p>
     ClusterAlreadyExistsFault(crate::error::ClusterAlreadyExistsFault),
-    /// <p>You have attempted to exceed the maximum number of DAX clusters for your AWS
-    /// account.</p>
+    /// <p>You have attempted to exceed the maximum number of DAX clusters for your AWS account.</p>
     ClusterQuotaForCustomerExceededFault(crate::error::ClusterQuotaForCustomerExceededFault),
-    /// <p>There are not enough system resources to create the cluster you requested (or to
-    /// resize an already-existing cluster). </p>
+    /// <p>There are not enough system resources to create the cluster you requested (or to resize an already-existing cluster). </p>
     InsufficientClusterCapacityFault(crate::error::InsufficientClusterCapacityFault),
-    /// <p>The requested DAX cluster is not in the <i>available</i>
-    /// state.</p>
+    /// <p>The requested DAX cluster is not in the <i>available</i> state.</p>
     InvalidClusterStateFault(crate::error::InvalidClusterStateFault),
     /// <p>Two or more incompatible parameters were specified.</p>
     InvalidParameterCombinationException(crate::error::InvalidParameterCombinationException),
@@ -31,22 +28,17 @@ pub enum CreateClusterErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The VPC network is in an invalid state.</p>
     InvalidVpcNetworkStateFault(crate::error::InvalidVpcNetworkStateFault),
-    /// <p>You have attempted to exceed the maximum number of nodes for a DAX
-    /// cluster.</p>
+    /// <p>You have attempted to exceed the maximum number of nodes for a DAX cluster.</p>
     NodeQuotaForClusterExceededFault(crate::error::NodeQuotaForClusterExceededFault),
-    /// <p>You have attempted to exceed the maximum number of nodes for your AWS
-    /// account.</p>
+    /// <p>You have attempted to exceed the maximum number of nodes for your AWS account.</p>
     NodeQuotaForCustomerExceededFault(crate::error::NodeQuotaForCustomerExceededFault),
     /// <p>The specified parameter group does not exist.</p>
     ParameterGroupNotFoundFault(crate::error::ParameterGroupNotFoundFault),
     /// <p>The specified service linked role (SLR) was not found.</p>
     ServiceLinkedRoleNotFoundFault(crate::error::ServiceLinkedRoleNotFoundFault),
-    /// <p>You have reached the maximum number of x509 certificates that can be created for
-    /// encrypted clusters in a 30 day period. Contact AWS customer support to discuss options
-    /// for continuing to create encrypted clusters.</p>
+    /// <p>You have reached the maximum number of x509 certificates that can be created for encrypted clusters in a 30 day period. Contact AWS customer support to discuss options for continuing to create encrypted clusters.</p>
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
-    /// <p>The requested subnet group name does not refer to an existing subnet
-    /// group.</p>
+    /// <p>The requested subnet group name does not refer to an existing subnet group.</p>
     SubnetGroupNotFoundFault(crate::error::SubnetGroupNotFoundFault),
     /// <p>You have exceeded the maximum number of tags for this DAX cluster.</p>
     TagQuotaPerResourceExceeded(crate::error::TagQuotaPerResourceExceeded),
@@ -429,11 +421,9 @@ pub enum CreateSubnetGroupErrorKind {
     ServiceLinkedRoleNotFoundFault(crate::error::ServiceLinkedRoleNotFoundFault),
     /// <p>The specified subnet group already exists.</p>
     SubnetGroupAlreadyExistsFault(crate::error::SubnetGroupAlreadyExistsFault),
-    /// <p>The request cannot be processed because it would exceed the allowed number of
-    /// subnets in a subnet group.</p>
+    /// <p>The request cannot be processed because it would exceed the allowed number of subnets in a subnet group.</p>
     SubnetGroupQuotaExceededFault(crate::error::SubnetGroupQuotaExceededFault),
-    /// <p>The request cannot be processed because it would exceed the allowed number of
-    /// subnets in a subnet group.</p>
+    /// <p>The request cannot be processed because it would exceed the allowed number of subnets in a subnet group.</p>
     SubnetQuotaExceededFault(crate::error::SubnetQuotaExceededFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -561,8 +551,7 @@ pub struct DecreaseReplicationFactorError {
 pub enum DecreaseReplicationFactorErrorKind {
     /// <p>The requested cluster ID does not refer to an existing DAX cluster.</p>
     ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
-    /// <p>The requested DAX cluster is not in the <i>available</i>
-    /// state.</p>
+    /// <p>The requested DAX cluster is not in the <i>available</i> state.</p>
     InvalidClusterStateFault(crate::error::InvalidClusterStateFault),
     /// <p>Two or more incompatible parameters were specified.</p>
     InvalidParameterCombinationException(crate::error::InvalidParameterCombinationException),
@@ -722,8 +711,7 @@ pub struct DeleteClusterError {
 pub enum DeleteClusterErrorKind {
     /// <p>The requested cluster ID does not refer to an existing DAX cluster.</p>
     ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
-    /// <p>The requested DAX cluster is not in the <i>available</i>
-    /// state.</p>
+    /// <p>The requested DAX cluster is not in the <i>available</i> state.</p>
     InvalidClusterStateFault(crate::error::InvalidClusterStateFault),
     /// <p>Two or more incompatible parameters were specified.</p>
     InvalidParameterCombinationException(crate::error::InvalidParameterCombinationException),
@@ -1000,8 +988,7 @@ pub enum DeleteSubnetGroupErrorKind {
     ServiceLinkedRoleNotFoundFault(crate::error::ServiceLinkedRoleNotFoundFault),
     /// <p>The specified subnet group is currently in use.</p>
     SubnetGroupInUseFault(crate::error::SubnetGroupInUseFault),
-    /// <p>The requested subnet group name does not refer to an existing subnet
-    /// group.</p>
+    /// <p>The requested subnet group name does not refer to an existing subnet group.</p>
     SubnetGroupNotFoundFault(crate::error::SubnetGroupNotFoundFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1752,8 +1739,7 @@ pub struct DescribeSubnetGroupsError {
 pub enum DescribeSubnetGroupsErrorKind {
     /// <p>The specified service linked role (SLR) was not found.</p>
     ServiceLinkedRoleNotFoundFault(crate::error::ServiceLinkedRoleNotFoundFault),
-    /// <p>The requested subnet group name does not refer to an existing subnet
-    /// group.</p>
+    /// <p>The requested subnet group name does not refer to an existing subnet group.</p>
     SubnetGroupNotFoundFault(crate::error::SubnetGroupNotFoundFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1857,11 +1843,9 @@ pub struct IncreaseReplicationFactorError {
 pub enum IncreaseReplicationFactorErrorKind {
     /// <p>The requested cluster ID does not refer to an existing DAX cluster.</p>
     ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
-    /// <p>There are not enough system resources to create the cluster you requested (or to
-    /// resize an already-existing cluster). </p>
+    /// <p>There are not enough system resources to create the cluster you requested (or to resize an already-existing cluster). </p>
     InsufficientClusterCapacityFault(crate::error::InsufficientClusterCapacityFault),
-    /// <p>The requested DAX cluster is not in the <i>available</i>
-    /// state.</p>
+    /// <p>The requested DAX cluster is not in the <i>available</i> state.</p>
     InvalidClusterStateFault(crate::error::InvalidClusterStateFault),
     /// <p>Two or more incompatible parameters were specified.</p>
     InvalidParameterCombinationException(crate::error::InvalidParameterCombinationException),
@@ -1869,11 +1853,9 @@ pub enum IncreaseReplicationFactorErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
     /// <p>The VPC network is in an invalid state.</p>
     InvalidVpcNetworkStateFault(crate::error::InvalidVpcNetworkStateFault),
-    /// <p>You have attempted to exceed the maximum number of nodes for a DAX
-    /// cluster.</p>
+    /// <p>You have attempted to exceed the maximum number of nodes for a DAX cluster.</p>
     NodeQuotaForClusterExceededFault(crate::error::NodeQuotaForClusterExceededFault),
-    /// <p>You have attempted to exceed the maximum number of nodes for your AWS
-    /// account.</p>
+    /// <p>You have attempted to exceed the maximum number of nodes for your AWS account.</p>
     NodeQuotaForCustomerExceededFault(crate::error::NodeQuotaForCustomerExceededFault),
     /// <p>The specified service linked role (SLR) was not found.</p>
     ServiceLinkedRoleNotFoundFault(crate::error::ServiceLinkedRoleNotFoundFault),
@@ -2070,8 +2052,7 @@ pub enum ListTagsErrorKind {
     ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
     /// <p>The Amazon Resource Name (ARN) supplied in the request is not valid.</p>
     InvalidArnFault(crate::error::InvalidArnFault),
-    /// <p>The requested DAX cluster is not in the <i>available</i>
-    /// state.</p>
+    /// <p>The requested DAX cluster is not in the <i>available</i> state.</p>
     InvalidClusterStateFault(crate::error::InvalidClusterStateFault),
     /// <p>Two or more incompatible parameters were specified.</p>
     InvalidParameterCombinationException(crate::error::InvalidParameterCombinationException),
@@ -2208,8 +2189,7 @@ pub struct RebootNodeError {
 pub enum RebootNodeErrorKind {
     /// <p>The requested cluster ID does not refer to an existing DAX cluster.</p>
     ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
-    /// <p>The requested DAX cluster is not in the <i>available</i>
-    /// state.</p>
+    /// <p>The requested DAX cluster is not in the <i>available</i> state.</p>
     InvalidClusterStateFault(crate::error::InvalidClusterStateFault),
     /// <p>Two or more incompatible parameters were specified.</p>
     InvalidParameterCombinationException(crate::error::InvalidParameterCombinationException),
@@ -2350,8 +2330,7 @@ pub enum TagResourceErrorKind {
     ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
     /// <p>The Amazon Resource Name (ARN) supplied in the request is not valid.</p>
     InvalidArnFault(crate::error::InvalidArnFault),
-    /// <p>The requested DAX cluster is not in the <i>available</i>
-    /// state.</p>
+    /// <p>The requested DAX cluster is not in the <i>available</i> state.</p>
     InvalidClusterStateFault(crate::error::InvalidClusterStateFault),
     /// <p>Two or more incompatible parameters were specified.</p>
     InvalidParameterCombinationException(crate::error::InvalidParameterCombinationException),
@@ -2504,8 +2483,7 @@ pub enum UntagResourceErrorKind {
     ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
     /// <p>The Amazon Resource Name (ARN) supplied in the request is not valid.</p>
     InvalidArnFault(crate::error::InvalidArnFault),
-    /// <p>The requested DAX cluster is not in the <i>available</i>
-    /// state.</p>
+    /// <p>The requested DAX cluster is not in the <i>available</i> state.</p>
     InvalidClusterStateFault(crate::error::InvalidClusterStateFault),
     /// <p>Two or more incompatible parameters were specified.</p>
     InvalidParameterCombinationException(crate::error::InvalidParameterCombinationException),
@@ -2653,8 +2631,7 @@ pub struct UpdateClusterError {
 pub enum UpdateClusterErrorKind {
     /// <p>The requested cluster ID does not refer to an existing DAX cluster.</p>
     ClusterNotFoundFault(crate::error::ClusterNotFoundFault),
-    /// <p>The requested DAX cluster is not in the <i>available</i>
-    /// state.</p>
+    /// <p>The requested DAX cluster is not in the <i>available</i> state.</p>
     InvalidClusterStateFault(crate::error::InvalidClusterStateFault),
     /// <p>Two or more incompatible parameters were specified.</p>
     InvalidParameterCombinationException(crate::error::InvalidParameterCombinationException),
@@ -2953,13 +2930,11 @@ pub enum UpdateSubnetGroupErrorKind {
     InvalidSubnet(crate::error::InvalidSubnet),
     /// <p>The specified service linked role (SLR) was not found.</p>
     ServiceLinkedRoleNotFoundFault(crate::error::ServiceLinkedRoleNotFoundFault),
-    /// <p>The requested subnet group name does not refer to an existing subnet
-    /// group.</p>
+    /// <p>The requested subnet group name does not refer to an existing subnet group.</p>
     SubnetGroupNotFoundFault(crate::error::SubnetGroupNotFoundFault),
     /// <p>The requested subnet is being used by another subnet group.</p>
     SubnetInUse(crate::error::SubnetInUse),
-    /// <p>The request cannot be processed because it would exceed the allowed number of
-    /// subnets in a subnet group.</p>
+    /// <p>The request cannot be processed because it would exceed the allowed number of subnets in a subnet group.</p>
     SubnetQuotaExceededFault(crate::error::SubnetQuotaExceededFault),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3069,8 +3044,7 @@ impl std::error::Error for UpdateSubnetGroupError {
     }
 }
 
-/// <p>The request cannot be processed because it would exceed the allowed number of
-/// subnets in a subnet group.</p>
+/// <p>The request cannot be processed because it would exceed the allowed number of subnets in a subnet group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubnetQuotaExceededFault {
@@ -3198,8 +3172,7 @@ impl SubnetInUse {
     }
 }
 
-/// <p>The requested subnet group name does not refer to an existing subnet
-/// group.</p>
+/// <p>The requested subnet group name does not refer to an existing subnet group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubnetGroupNotFoundFault {
@@ -3647,8 +3620,7 @@ impl InvalidParameterCombinationException {
     }
 }
 
-/// <p>The requested DAX cluster is not in the <i>available</i>
-/// state.</p>
+/// <p>The requested DAX cluster is not in the <i>available</i> state.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidClusterStateFault {
@@ -4032,8 +4004,7 @@ impl NodeNotFoundFault {
     }
 }
 
-/// <p>You have attempted to exceed the maximum number of nodes for your AWS
-/// account.</p>
+/// <p>You have attempted to exceed the maximum number of nodes for your AWS account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NodeQuotaForCustomerExceededFault {
@@ -4097,8 +4068,7 @@ impl NodeQuotaForCustomerExceededFault {
     }
 }
 
-/// <p>You have attempted to exceed the maximum number of nodes for a DAX
-/// cluster.</p>
+/// <p>You have attempted to exceed the maximum number of nodes for a DAX cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NodeQuotaForClusterExceededFault {
@@ -4229,8 +4199,7 @@ impl InvalidVpcNetworkStateFault {
     }
 }
 
-/// <p>There are not enough system resources to create the cluster you requested (or to
-/// resize an already-existing cluster). </p>
+/// <p>There are not enough system resources to create the cluster you requested (or to resize an already-existing cluster). </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InsufficientClusterCapacityFault {
@@ -4358,8 +4327,7 @@ impl SubnetGroupInUseFault {
     }
 }
 
-/// <p>The request cannot be processed because it would exceed the allowed number of
-/// subnets in a subnet group.</p>
+/// <p>The request cannot be processed because it would exceed the allowed number of subnets in a subnet group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SubnetGroupQuotaExceededFault {
@@ -4615,9 +4583,7 @@ impl ParameterGroupAlreadyExistsFault {
     }
 }
 
-/// <p>You have reached the maximum number of x509 certificates that can be created for
-/// encrypted clusters in a 30 day period. Contact AWS customer support to discuss options
-/// for continuing to create encrypted clusters.</p>
+/// <p>You have reached the maximum number of x509 certificates that can be created for encrypted clusters in a 30 day period. Contact AWS customer support to discuss options for continuing to create encrypted clusters.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceQuotaExceededException {
@@ -4681,8 +4647,7 @@ impl ServiceQuotaExceededException {
     }
 }
 
-/// <p>You have attempted to exceed the maximum number of DAX clusters for your AWS
-/// account.</p>
+/// <p>You have attempted to exceed the maximum number of DAX clusters for your AWS account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClusterQuotaForCustomerExceededFault {

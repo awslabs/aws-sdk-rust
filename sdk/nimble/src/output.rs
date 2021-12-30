@@ -633,7 +633,7 @@ impl ListStudioComponentsOutput {
     }
 }
 
-/// <p/>
+/// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStudioComponentOutput {
@@ -865,13 +865,11 @@ impl GetStudioComponentOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopStreamingSessionOutput {
-    /// <p>A streaming session is a virtual workstation created using a particular launch
-    /// profile.</p>
+    /// <p>A streaming session is a virtual workstation created using a particular launch profile.</p>
     pub session: std::option::Option<crate::model::StreamingSession>,
 }
 impl StopStreamingSessionOutput {
-    /// <p>A streaming session is a virtual workstation created using a particular launch
-    /// profile.</p>
+    /// <p>A streaming session is a virtual workstation created using a particular launch profile.</p>
     pub fn session(&self) -> std::option::Option<&crate::model::StreamingSession> {
         self.session.as_ref()
     }
@@ -892,14 +890,12 @@ pub mod stop_streaming_session_output {
         pub(crate) session: std::option::Option<crate::model::StreamingSession>,
     }
     impl Builder {
-        /// <p>A streaming session is a virtual workstation created using a particular launch
-        /// profile.</p>
+        /// <p>A streaming session is a virtual workstation created using a particular launch profile.</p>
         pub fn session(mut self, input: crate::model::StreamingSession) -> Self {
             self.session = Some(input);
             self
         }
-        /// <p>A streaming session is a virtual workstation created using a particular launch
-        /// profile.</p>
+        /// <p>A streaming session is a virtual workstation created using a particular launch profile.</p>
         pub fn set_session(
             mut self,
             input: std::option::Option<crate::model::StreamingSession>,
@@ -926,13 +922,11 @@ impl StopStreamingSessionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartStreamingSessionOutput {
-    /// <p>A streaming session is a virtual workstation created using a particular launch
-    /// profile.</p>
+    /// <p>A streaming session is a virtual workstation created using a particular launch profile.</p>
     pub session: std::option::Option<crate::model::StreamingSession>,
 }
 impl StartStreamingSessionOutput {
-    /// <p>A streaming session is a virtual workstation created using a particular launch
-    /// profile.</p>
+    /// <p>A streaming session is a virtual workstation created using a particular launch profile.</p>
     pub fn session(&self) -> std::option::Option<&crate::model::StreamingSession> {
         self.session.as_ref()
     }
@@ -953,14 +947,12 @@ pub mod start_streaming_session_output {
         pub(crate) session: std::option::Option<crate::model::StreamingSession>,
     }
     impl Builder {
-        /// <p>A streaming session is a virtual workstation created using a particular launch
-        /// profile.</p>
+        /// <p>A streaming session is a virtual workstation created using a particular launch profile.</p>
         pub fn session(mut self, input: crate::model::StreamingSession) -> Self {
             self.session = Some(input);
             self
         }
-        /// <p>A streaming session is a virtual workstation created using a particular launch
-        /// profile.</p>
+        /// <p>A streaming session is a virtual workstation created using a particular launch profile.</p>
         pub fn set_session(
             mut self,
             input: std::option::Option<crate::model::StreamingSession>,
@@ -1547,15 +1539,15 @@ impl DeleteStreamingImageOutput {
     }
 }
 
-/// <p/>
+/// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateStreamingImageOutput {
-    /// <p/>
+    /// <p></p>
     pub streaming_image: std::option::Option<crate::model::StreamingImage>,
 }
 impl UpdateStreamingImageOutput {
-    /// <p/>
+    /// <p></p>
     pub fn streaming_image(&self) -> std::option::Option<&crate::model::StreamingImage> {
         self.streaming_image.as_ref()
     }
@@ -1576,12 +1568,12 @@ pub mod update_streaming_image_output {
         pub(crate) streaming_image: std::option::Option<crate::model::StreamingImage>,
     }
     impl Builder {
-        /// <p/>
+        /// <p></p>
         pub fn streaming_image(mut self, input: crate::model::StreamingImage) -> Self {
             self.streaming_image = Some(input);
             self
         }
-        /// <p/>
+        /// <p></p>
         pub fn set_streaming_image(
             mut self,
             input: std::option::Option<crate::model::StreamingImage>,
@@ -2553,7 +2545,7 @@ impl GetEulaOutput {
     }
 }
 
-/// <p/>
+/// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEulaAcceptancesOutput {
@@ -2764,14 +2756,12 @@ impl TagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
-    /// <p>A collection of labels, in the form of key:value pairs, that apply to this
-    /// resource.</p>
+    /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
-    /// <p>A collection of labels, in the form of key:value pairs, that apply to this
-    /// resource.</p>
+    /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -2801,8 +2791,7 @@ pub mod list_tags_for_resource_output {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this
-        /// resource.</p>
+        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2813,8 +2802,7 @@ pub mod list_tags_for_resource_output {
             self.tags = Some(hash_map);
             self
         }
-        /// <p>A collection of labels, in the form of key:value pairs, that apply to this
-        /// resource.</p>
+        /// <p>A collection of labels, in the form of key:value pairs, that apply to this resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<

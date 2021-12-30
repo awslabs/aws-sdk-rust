@@ -206,16 +206,12 @@ pub mod start_configuration_session_input {
             self.configuration_profile_identifier = input;
             self
         }
-        /// <p>The interval at which your client will poll for configuration. If provided, the service
-        /// will throw a BadRequestException if the client polls before the specified poll interval. By default,
-        /// client poll intervals are not enforced.</p>
+        /// <p>The interval at which your client will poll for configuration. If provided, the service will throw a BadRequestException if the client polls before the specified poll interval. By default, client poll intervals are not enforced.</p>
         pub fn required_minimum_poll_interval_in_seconds(mut self, input: i32) -> Self {
             self.required_minimum_poll_interval_in_seconds = Some(input);
             self
         }
-        /// <p>The interval at which your client will poll for configuration. If provided, the service
-        /// will throw a BadRequestException if the client polls before the specified poll interval. By default,
-        /// client poll intervals are not enforced.</p>
+        /// <p>The interval at which your client will poll for configuration. If provided, the service will throw a BadRequestException if the client polls before the specified poll interval. By default, client poll intervals are not enforced.</p>
         pub fn set_required_minimum_poll_interval_in_seconds(
             mut self,
             input: std::option::Option<i32>,
@@ -370,9 +366,7 @@ pub struct StartConfigurationSessionInput {
     pub environment_identifier: std::option::Option<std::string::String>,
     /// <p>The configuration profile ID or the configuration profile name.</p>
     pub configuration_profile_identifier: std::option::Option<std::string::String>,
-    /// <p>The interval at which your client will poll for configuration. If provided, the service
-    /// will throw a BadRequestException if the client polls before the specified poll interval. By default,
-    /// client poll intervals are not enforced.</p>
+    /// <p>The interval at which your client will poll for configuration. If provided, the service will throw a BadRequestException if the client polls before the specified poll interval. By default, client poll intervals are not enforced.</p>
     pub required_minimum_poll_interval_in_seconds: std::option::Option<i32>,
 }
 impl StartConfigurationSessionInput {
@@ -388,9 +382,7 @@ impl StartConfigurationSessionInput {
     pub fn configuration_profile_identifier(&self) -> std::option::Option<&str> {
         self.configuration_profile_identifier.as_deref()
     }
-    /// <p>The interval at which your client will poll for configuration. If provided, the service
-    /// will throw a BadRequestException if the client polls before the specified poll interval. By default,
-    /// client poll intervals are not enforced.</p>
+    /// <p>The interval at which your client will poll for configuration. If provided, the service will throw a BadRequestException if the client polls before the specified poll interval. By default, client poll intervals are not enforced.</p>
     pub fn required_minimum_poll_interval_in_seconds(&self) -> std::option::Option<i32> {
         self.required_minimum_poll_interval_in_seconds
     }

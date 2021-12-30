@@ -16,11 +16,9 @@ pub enum AddAttributesToFindingsErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it referenced an entity that does not exist. The
-    /// error code describes the entity.</p>
+    /// <p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
     /// <p>The serice is temporary unavailable.</p>
     ServiceTemporarilyUnavailableException(crate::error::ServiceTemporarilyUnavailableException),
@@ -159,17 +157,13 @@ pub enum CreateAssessmentTargetErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>Amazon Inspector cannot assume the cross-account role that it needs to list your EC2
-    /// instances during the assessment run.</p>
+    /// <p>Amazon Inspector cannot assume the cross-account role that it needs to list your EC2 instances during the assessment run.</p>
     InvalidCrossAccountRoleException(crate::error::InvalidCrossAccountRoleException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current
-    /// AWS account limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current AWS account limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because it referenced an entity that does not exist. The
-    /// error code describes the entity.</p>
+    /// <p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
     /// <p>The serice is temporary unavailable.</p>
     ServiceTemporarilyUnavailableException(crate::error::ServiceTemporarilyUnavailableException),
@@ -330,14 +324,11 @@ pub enum CreateAssessmentTemplateErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current
-    /// AWS account limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current AWS account limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because it referenced an entity that does not exist. The
-    /// error code describes the entity.</p>
+    /// <p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
     /// <p>The serice is temporary unavailable.</p>
     ServiceTemporarilyUnavailableException(crate::error::ServiceTemporarilyUnavailableException),
@@ -485,14 +476,11 @@ pub enum CreateExclusionsPreviewErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it referenced an entity that does not exist. The
-    /// error code describes the entity.</p>
+    /// <p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
-    /// <p>The request is rejected. The specified assessment template is currently generating an
-    /// exclusions preview.</p>
+    /// <p>The request is rejected. The specified assessment template is currently generating an exclusions preview.</p>
     PreviewGenerationInProgressException(crate::error::PreviewGenerationInProgressException),
     /// <p>The serice is temporary unavailable.</p>
     ServiceTemporarilyUnavailableException(crate::error::ServiceTemporarilyUnavailableException),
@@ -644,11 +632,9 @@ pub enum CreateResourceGroupErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current
-    /// AWS account limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current AWS account limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The serice is temporary unavailable.</p>
     ServiceTemporarilyUnavailableException(crate::error::ServiceTemporarilyUnavailableException),
@@ -785,16 +771,13 @@ pub struct DeleteAssessmentRunError {
 pub enum DeleteAssessmentRunErrorKind {
     /// <p>You do not have required permissions to access the requested resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>You cannot perform a specified action if an assessment run is currently in
-    /// progress.</p>
+    /// <p>You cannot perform a specified action if an assessment run is currently in progress.</p>
     AssessmentRunInProgressException(crate::error::AssessmentRunInProgressException),
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it referenced an entity that does not exist. The
-    /// error code describes the entity.</p>
+    /// <p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
     /// <p>The serice is temporary unavailable.</p>
     ServiceTemporarilyUnavailableException(crate::error::ServiceTemporarilyUnavailableException),
@@ -940,16 +923,13 @@ pub struct DeleteAssessmentTargetError {
 pub enum DeleteAssessmentTargetErrorKind {
     /// <p>You do not have required permissions to access the requested resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>You cannot perform a specified action if an assessment run is currently in
-    /// progress.</p>
+    /// <p>You cannot perform a specified action if an assessment run is currently in progress.</p>
     AssessmentRunInProgressException(crate::error::AssessmentRunInProgressException),
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it referenced an entity that does not exist. The
-    /// error code describes the entity.</p>
+    /// <p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
     /// <p>The serice is temporary unavailable.</p>
     ServiceTemporarilyUnavailableException(crate::error::ServiceTemporarilyUnavailableException),
@@ -1099,16 +1079,13 @@ pub struct DeleteAssessmentTemplateError {
 pub enum DeleteAssessmentTemplateErrorKind {
     /// <p>You do not have required permissions to access the requested resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>You cannot perform a specified action if an assessment run is currently in
-    /// progress.</p>
+    /// <p>You cannot perform a specified action if an assessment run is currently in progress.</p>
     AssessmentRunInProgressException(crate::error::AssessmentRunInProgressException),
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it referenced an entity that does not exist. The
-    /// error code describes the entity.</p>
+    /// <p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
     /// <p>The serice is temporary unavailable.</p>
     ServiceTemporarilyUnavailableException(crate::error::ServiceTemporarilyUnavailableException),
@@ -1258,8 +1235,7 @@ pub struct DescribeAssessmentRunsError {
 pub enum DescribeAssessmentRunsErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1363,8 +1339,7 @@ pub struct DescribeAssessmentTargetsError {
 pub enum DescribeAssessmentTargetsErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1468,8 +1443,7 @@ pub struct DescribeAssessmentTemplatesError {
 pub enum DescribeAssessmentTemplatesErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1669,8 +1643,7 @@ pub struct DescribeExclusionsError {
 pub enum DescribeExclusionsErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1774,8 +1747,7 @@ pub struct DescribeFindingsError {
 pub enum DescribeFindingsErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1876,8 +1848,7 @@ pub struct DescribeResourceGroupsError {
 pub enum DescribeResourceGroupsErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -1981,8 +1952,7 @@ pub struct DescribeRulesPackagesError {
 pub enum DescribeRulesPackagesErrorKind {
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2086,24 +2056,17 @@ pub struct GetAssessmentReportError {
 pub enum GetAssessmentReportErrorKind {
     /// <p>You do not have required permissions to access the requested resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>You cannot perform a specified action if an assessment run is currently in
-    /// progress.</p>
+    /// <p>You cannot perform a specified action if an assessment run is currently in progress.</p>
     AssessmentRunInProgressException(crate::error::AssessmentRunInProgressException),
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it referenced an entity that does not exist. The
-    /// error code describes the entity.</p>
+    /// <p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
     /// <p>The serice is temporary unavailable.</p>
     ServiceTemporarilyUnavailableException(crate::error::ServiceTemporarilyUnavailableException),
-    /// <p>Used by the <a>GetAssessmentReport</a> API. The request was rejected
-    /// because you tried to generate a report for an assessment run that existed before reporting
-    /// was supported in Amazon Inspector. You can only generate reports for assessment runs that
-    /// took place or will take place after generating reports in Amazon Inspector became
-    /// available.</p>
+    /// <p>Used by the <code>GetAssessmentReport</code> API. The request was rejected because you tried to generate a report for an assessment run that existed before reporting was supported in Amazon Inspector. You can only generate reports for assessment runs that took place or will take place after generating reports in Amazon Inspector became available.</p>
     UnsupportedFeatureException(crate::error::UnsupportedFeatureException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2258,11 +2221,9 @@ pub enum GetExclusionsPreviewErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it referenced an entity that does not exist. The
-    /// error code describes the entity.</p>
+    /// <p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2386,11 +2347,9 @@ pub enum GetTelemetryMetadataErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it referenced an entity that does not exist. The
-    /// error code describes the entity.</p>
+    /// <p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2514,11 +2473,9 @@ pub enum ListAssessmentRunAgentsErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it referenced an entity that does not exist. The
-    /// error code describes the entity.</p>
+    /// <p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2642,11 +2599,9 @@ pub enum ListAssessmentRunsErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it referenced an entity that does not exist. The
-    /// error code describes the entity.</p>
+    /// <p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2770,8 +2725,7 @@ pub enum ListAssessmentTargetsErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -2886,11 +2840,9 @@ pub enum ListAssessmentTemplatesErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it referenced an entity that does not exist. The
-    /// error code describes the entity.</p>
+    /// <p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3014,11 +2966,9 @@ pub enum ListEventSubscriptionsErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it referenced an entity that does not exist. The
-    /// error code describes the entity.</p>
+    /// <p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3142,11 +3092,9 @@ pub enum ListExclusionsErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it referenced an entity that does not exist. The
-    /// error code describes the entity.</p>
+    /// <p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3267,11 +3215,9 @@ pub enum ListFindingsErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it referenced an entity that does not exist. The
-    /// error code describes the entity.</p>
+    /// <p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3383,8 +3329,7 @@ pub enum ListRulesPackagesErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3496,11 +3441,9 @@ pub enum ListTagsForResourceErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it referenced an entity that does not exist. The
-    /// error code describes the entity.</p>
+    /// <p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3624,14 +3567,11 @@ pub enum PreviewAgentsErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>Amazon Inspector cannot assume the cross-account role that it needs to list your EC2
-    /// instances during the assessment run.</p>
+    /// <p>Amazon Inspector cannot assume the cross-account role that it needs to list your EC2 instances during the assessment run.</p>
     InvalidCrossAccountRoleException(crate::error::InvalidCrossAccountRoleException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it referenced an entity that does not exist. The
-    /// error code describes the entity.</p>
+    /// <p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
     /// An unexpected error, e.g. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -3752,11 +3692,9 @@ pub enum RegisterCrossAccountAccessRoleErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>Amazon Inspector cannot assume the cross-account role that it needs to list your EC2
-    /// instances during the assessment run.</p>
+    /// <p>Amazon Inspector cannot assume the cross-account role that it needs to list your EC2 instances during the assessment run.</p>
     InvalidCrossAccountRoleException(crate::error::InvalidCrossAccountRoleException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>The serice is temporary unavailable.</p>
     ServiceTemporarilyUnavailableException(crate::error::ServiceTemporarilyUnavailableException),
@@ -3902,11 +3840,9 @@ pub enum RemoveAttributesFromFindingsErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it referenced an entity that does not exist. The
-    /// error code describes the entity.</p>
+    /// <p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
     /// <p>The serice is temporary unavailable.</p>
     ServiceTemporarilyUnavailableException(crate::error::ServiceTemporarilyUnavailableException),
@@ -4045,11 +3981,9 @@ pub enum SetTagsForResourceErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it referenced an entity that does not exist. The
-    /// error code describes the entity.</p>
+    /// <p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
     /// <p>The serice is temporary unavailable.</p>
     ServiceTemporarilyUnavailableException(crate::error::ServiceTemporarilyUnavailableException),
@@ -4186,22 +4120,17 @@ pub struct StartAssessmentRunError {
 pub enum StartAssessmentRunErrorKind {
     /// <p>You do not have required permissions to access the requested resource.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>You started an assessment run, but one of the instances is already participating in
-    /// another assessment run.</p>
+    /// <p>You started an assessment run, but one of the instances is already participating in another assessment run.</p>
     AgentsAlreadyRunningAssessmentException(crate::error::AgentsAlreadyRunningAssessmentException),
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>Amazon Inspector cannot assume the cross-account role that it needs to list your EC2
-    /// instances during the assessment run.</p>
+    /// <p>Amazon Inspector cannot assume the cross-account role that it needs to list your EC2 instances during the assessment run.</p>
     InvalidCrossAccountRoleException(crate::error::InvalidCrossAccountRoleException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current
-    /// AWS account limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current AWS account limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because it referenced an entity that does not exist. The
-    /// error code describes the entity.</p>
+    /// <p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
     /// <p>The serice is temporary unavailable.</p>
     ServiceTemporarilyUnavailableException(crate::error::ServiceTemporarilyUnavailableException),
@@ -4371,11 +4300,9 @@ pub enum StopAssessmentRunErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it referenced an entity that does not exist. The
-    /// error code describes the entity.</p>
+    /// <p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
     /// <p>The serice is temporary unavailable.</p>
     ServiceTemporarilyUnavailableException(crate::error::ServiceTemporarilyUnavailableException),
@@ -4511,14 +4438,11 @@ pub enum SubscribeToEventErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it attempted to create resources beyond the current
-    /// AWS account limits. The error code describes the limit exceeded.</p>
+    /// <p>The request was rejected because it attempted to create resources beyond the current AWS account limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    /// <p>The request was rejected because it referenced an entity that does not exist. The
-    /// error code describes the entity.</p>
+    /// <p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
     /// <p>The serice is temporary unavailable.</p>
     ServiceTemporarilyUnavailableException(crate::error::ServiceTemporarilyUnavailableException),
@@ -4663,11 +4587,9 @@ pub enum UnsubscribeFromEventErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it referenced an entity that does not exist. The
-    /// error code describes the entity.</p>
+    /// <p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
     /// <p>The serice is temporary unavailable.</p>
     ServiceTemporarilyUnavailableException(crate::error::ServiceTemporarilyUnavailableException),
@@ -4806,11 +4728,9 @@ pub enum UpdateAssessmentTargetErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>Internal server error.</p>
     InternalException(crate::error::InternalException),
-    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-    /// input parameter.</p>
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
     InvalidInputException(crate::error::InvalidInputException),
-    /// <p>The request was rejected because it referenced an entity that does not exist. The
-    /// error code describes the entity.</p>
+    /// <p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>
     NoSuchEntityException(crate::error::NoSuchEntityException),
     /// <p>The serice is temporary unavailable.</p>
     ServiceTemporarilyUnavailableException(crate::error::ServiceTemporarilyUnavailableException),
@@ -5017,8 +4937,7 @@ impl ServiceTemporarilyUnavailableException {
     }
 }
 
-/// <p>The request was rejected because it referenced an entity that does not exist. The
-/// error code describes the entity.</p>
+/// <p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NoSuchEntityException {
@@ -5125,8 +5044,7 @@ impl NoSuchEntityException {
     }
 }
 
-/// <p>The request was rejected because an invalid or out-of-range value was supplied for an
-/// input parameter.</p>
+/// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidInputException {
@@ -5425,8 +5343,7 @@ impl AccessDeniedException {
     }
 }
 
-/// <p>The request was rejected because it attempted to create resources beyond the current
-/// AWS account limits. The error code describes the limit exceeded.</p>
+/// <p>The request was rejected because it attempted to create resources beyond the current AWS account limits. The error code describes the limit exceeded.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {
@@ -5533,8 +5450,7 @@ impl LimitExceededException {
     }
 }
 
-/// <p>Amazon Inspector cannot assume the cross-account role that it needs to list your EC2
-/// instances during the assessment run.</p>
+/// <p>Amazon Inspector cannot assume the cross-account role that it needs to list your EC2 instances during the assessment run.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidCrossAccountRoleException {
@@ -5643,8 +5559,7 @@ impl InvalidCrossAccountRoleException {
     }
 }
 
-/// <p>You started an assessment run, but one of the instances is already participating in
-/// another assessment run.</p>
+/// <p>You started an assessment run, but one of the instances is already participating in another assessment run.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AgentsAlreadyRunningAssessmentException {
@@ -5777,11 +5692,7 @@ impl AgentsAlreadyRunningAssessmentException {
     }
 }
 
-/// <p>Used by the <a>GetAssessmentReport</a> API. The request was rejected
-/// because you tried to generate a report for an assessment run that existed before reporting
-/// was supported in Amazon Inspector. You can only generate reports for assessment runs that
-/// took place or will take place after generating reports in Amazon Inspector became
-/// available.</p>
+/// <p>Used by the <code>GetAssessmentReport</code> API. The request was rejected because you tried to generate a report for an assessment run that existed before reporting was supported in Amazon Inspector. You can only generate reports for assessment runs that took place or will take place after generating reports in Amazon Inspector became available.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedFeatureException {
@@ -5866,8 +5777,7 @@ impl UnsupportedFeatureException {
     }
 }
 
-/// <p>You cannot perform a specified action if an assessment run is currently in
-/// progress.</p>
+/// <p>You cannot perform a specified action if an assessment run is currently in progress.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssessmentRunInProgressException {
@@ -5875,8 +5785,7 @@ pub struct AssessmentRunInProgressException {
     pub message: std::option::Option<std::string::String>,
     /// <p>The ARNs of the assessment runs that are currently in progress.</p>
     pub assessment_run_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Boolean value that indicates whether the ARN list of the assessment runs is
-    /// truncated.</p>
+    /// <p>Boolean value that indicates whether the ARN list of the assessment runs is truncated.</p>
     pub assessment_run_arns_truncated: std::option::Option<bool>,
     /// <p>You can immediately retry your request.</p>
     pub can_retry: std::option::Option<bool>,
@@ -5886,8 +5795,7 @@ impl AssessmentRunInProgressException {
     pub fn assessment_run_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.assessment_run_arns.as_deref()
     }
-    /// <p>Boolean value that indicates whether the ARN list of the assessment runs is
-    /// truncated.</p>
+    /// <p>Boolean value that indicates whether the ARN list of the assessment runs is truncated.</p>
     pub fn assessment_run_arns_truncated(&self) -> std::option::Option<bool> {
         self.assessment_run_arns_truncated
     }
@@ -5966,14 +5874,12 @@ pub mod assessment_run_in_progress_exception {
             self.assessment_run_arns = input;
             self
         }
-        /// <p>Boolean value that indicates whether the ARN list of the assessment runs is
-        /// truncated.</p>
+        /// <p>Boolean value that indicates whether the ARN list of the assessment runs is truncated.</p>
         pub fn assessment_run_arns_truncated(mut self, input: bool) -> Self {
             self.assessment_run_arns_truncated = Some(input);
             self
         }
-        /// <p>Boolean value that indicates whether the ARN list of the assessment runs is
-        /// truncated.</p>
+        /// <p>Boolean value that indicates whether the ARN list of the assessment runs is truncated.</p>
         pub fn set_assessment_run_arns_truncated(
             mut self,
             input: std::option::Option<bool>,
@@ -6009,8 +5915,7 @@ impl AssessmentRunInProgressException {
     }
 }
 
-/// <p>The request is rejected. The specified assessment template is currently generating an
-/// exclusions preview.</p>
+/// <p>The request is rejected. The specified assessment template is currently generating an exclusions preview.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PreviewGenerationInProgressException {

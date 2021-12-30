@@ -20,8 +20,7 @@ pub enum CreateIdentityPoolErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>Thrown when a user is not authorized to access the requested resource.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>Thrown when a user tries to use a login which is already linked to another
-    /// account.</p>
+    /// <p>Thrown when a user tries to use a login which is already linked to another account.</p>
     ResourceConflictException(crate::error::ResourceConflictException),
     /// <p>Thrown when a request is throttled.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
@@ -282,8 +281,7 @@ pub enum DeleteIdentityPoolErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Thrown when a user is not authorized to access the requested resource.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>Thrown when the requested resource (for example, a dataset or record) does not
-    /// exist.</p>
+    /// <p>Thrown when the requested resource (for example, a dataset or record) does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Thrown when a request is throttled.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
@@ -420,8 +418,7 @@ pub enum DescribeIdentityErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Thrown when a user is not authorized to access the requested resource.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>Thrown when the requested resource (for example, a dataset or record) does not
-    /// exist.</p>
+    /// <p>Thrown when the requested resource (for example, a dataset or record) does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Thrown when a request is throttled.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
@@ -558,8 +555,7 @@ pub enum DescribeIdentityPoolErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Thrown when a user is not authorized to access the requested resource.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>Thrown when the requested resource (for example, a dataset or record) does not
-    /// exist.</p>
+    /// <p>Thrown when the requested resource (for example, a dataset or record) does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Thrown when a request is throttled.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
@@ -690,13 +686,11 @@ pub struct GetCredentialsForIdentityError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetCredentialsForIdentityErrorKind {
-    /// <p>An exception thrown when a dependent service such as Facebook or Twitter is not
-    /// responding</p>
+    /// <p>An exception thrown when a dependent service such as Facebook or Twitter is not responding</p>
     ExternalServiceException(crate::error::ExternalServiceException),
     /// <p>Thrown when the service encounters an error during processing the request.</p>
     InternalErrorException(crate::error::InternalErrorException),
-    /// <p>Thrown if the identity pool has no role associated for the given auth type
-    /// (auth/unauth) or if the AssumeRole fails.</p>
+    /// <p>Thrown if the identity pool has no role associated for the given auth type (auth/unauth) or if the AssumeRole fails.</p>
     InvalidIdentityPoolConfigurationException(
         crate::error::InvalidIdentityPoolConfigurationException,
     ),
@@ -704,11 +698,9 @@ pub enum GetCredentialsForIdentityErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Thrown when a user is not authorized to access the requested resource.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>Thrown when a user tries to use a login which is already linked to another
-    /// account.</p>
+    /// <p>Thrown when a user tries to use a login which is already linked to another account.</p>
     ResourceConflictException(crate::error::ResourceConflictException),
-    /// <p>Thrown when the requested resource (for example, a dataset or record) does not
-    /// exist.</p>
+    /// <p>Thrown when the requested resource (for example, a dataset or record) does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Thrown when a request is throttled.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
@@ -870,8 +862,7 @@ pub struct GetIdError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetIdErrorKind {
-    /// <p>An exception thrown when a dependent service such as Facebook or Twitter is not
-    /// responding</p>
+    /// <p>An exception thrown when a dependent service such as Facebook or Twitter is not responding</p>
     ExternalServiceException(crate::error::ExternalServiceException),
     /// <p>Thrown when the service encounters an error during processing the request.</p>
     InternalErrorException(crate::error::InternalErrorException),
@@ -881,11 +872,9 @@ pub enum GetIdErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>Thrown when a user is not authorized to access the requested resource.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>Thrown when a user tries to use a login which is already linked to another
-    /// account.</p>
+    /// <p>Thrown when a user tries to use a login which is already linked to another account.</p>
     ResourceConflictException(crate::error::ResourceConflictException),
-    /// <p>Thrown when the requested resource (for example, a dataset or record) does not
-    /// exist.</p>
+    /// <p>Thrown when the requested resource (for example, a dataset or record) does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Thrown when a request is throttled.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
@@ -1025,11 +1014,9 @@ pub enum GetIdentityPoolRolesErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Thrown when a user is not authorized to access the requested resource.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>Thrown when a user tries to use a login which is already linked to another
-    /// account.</p>
+    /// <p>Thrown when a user tries to use a login which is already linked to another account.</p>
     ResourceConflictException(crate::error::ResourceConflictException),
-    /// <p>Thrown when the requested resource (for example, a dataset or record) does not
-    /// exist.</p>
+    /// <p>Thrown when the requested resource (for example, a dataset or record) does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Thrown when a request is throttled.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
@@ -1169,8 +1156,7 @@ pub struct GetOpenIdTokenError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetOpenIdTokenErrorKind {
-    /// <p>An exception thrown when a dependent service such as Facebook or Twitter is not
-    /// responding</p>
+    /// <p>An exception thrown when a dependent service such as Facebook or Twitter is not responding</p>
     ExternalServiceException(crate::error::ExternalServiceException),
     /// <p>Thrown when the service encounters an error during processing the request.</p>
     InternalErrorException(crate::error::InternalErrorException),
@@ -1178,11 +1164,9 @@ pub enum GetOpenIdTokenErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Thrown when a user is not authorized to access the requested resource.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>Thrown when a user tries to use a login which is already linked to another
-    /// account.</p>
+    /// <p>Thrown when a user tries to use a login which is already linked to another account.</p>
     ResourceConflictException(crate::error::ResourceConflictException),
-    /// <p>Thrown when the requested resource (for example, a dataset or record) does not
-    /// exist.</p>
+    /// <p>Thrown when the requested resource (for example, a dataset or record) does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Thrown when a request is throttled.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
@@ -1331,8 +1315,7 @@ pub struct GetOpenIdTokenForDeveloperIdentityError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetOpenIdTokenForDeveloperIdentityErrorKind {
-    /// <p>The provided developer user identifier is already registered with Cognito under a
-    /// different identity ID.</p>
+    /// <p>The provided developer user identifier is already registered with Cognito under a different identity ID.</p>
     DeveloperUserAlreadyRegisteredException(crate::error::DeveloperUserAlreadyRegisteredException),
     /// <p>Thrown when the service encounters an error during processing the request.</p>
     InternalErrorException(crate::error::InternalErrorException),
@@ -1340,11 +1323,9 @@ pub enum GetOpenIdTokenForDeveloperIdentityErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Thrown when a user is not authorized to access the requested resource.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>Thrown when a user tries to use a login which is already linked to another
-    /// account.</p>
+    /// <p>Thrown when a user tries to use a login which is already linked to another account.</p>
     ResourceConflictException(crate::error::ResourceConflictException),
-    /// <p>Thrown when the requested resource (for example, a dataset or record) does not
-    /// exist.</p>
+    /// <p>Thrown when the requested resource (for example, a dataset or record) does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Thrown when a request is throttled.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
@@ -1534,8 +1515,7 @@ pub enum GetPrincipalTagAttributeMapErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Thrown when a user is not authorized to access the requested resource.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>Thrown when the requested resource (for example, a dataset or record) does not
-    /// exist.</p>
+    /// <p>Thrown when the requested resource (for example, a dataset or record) does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Thrown when a request is throttled.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
@@ -1676,8 +1656,7 @@ pub enum ListIdentitiesErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Thrown when a user is not authorized to access the requested resource.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>Thrown when the requested resource (for example, a dataset or record) does not
-    /// exist.</p>
+    /// <p>Thrown when the requested resource (for example, a dataset or record) does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Thrown when a request is throttled.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
@@ -1814,8 +1793,7 @@ pub enum ListIdentityPoolsErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Thrown when a user is not authorized to access the requested resource.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>Thrown when the requested resource (for example, a dataset or record) does not
-    /// exist.</p>
+    /// <p>Thrown when the requested resource (for example, a dataset or record) does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Thrown when a request is throttled.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
@@ -1952,8 +1930,7 @@ pub enum ListTagsForResourceErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Thrown when a user is not authorized to access the requested resource.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>Thrown when the requested resource (for example, a dataset or record) does not
-    /// exist.</p>
+    /// <p>Thrown when the requested resource (for example, a dataset or record) does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Thrown when a request is throttled.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
@@ -2090,11 +2067,9 @@ pub enum LookupDeveloperIdentityErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Thrown when a user is not authorized to access the requested resource.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>Thrown when a user tries to use a login which is already linked to another
-    /// account.</p>
+    /// <p>Thrown when a user tries to use a login which is already linked to another account.</p>
     ResourceConflictException(crate::error::ResourceConflictException),
-    /// <p>Thrown when the requested resource (for example, a dataset or record) does not
-    /// exist.</p>
+    /// <p>Thrown when the requested resource (for example, a dataset or record) does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Thrown when a request is throttled.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
@@ -2240,11 +2215,9 @@ pub enum MergeDeveloperIdentitiesErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Thrown when a user is not authorized to access the requested resource.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>Thrown when a user tries to use a login which is already linked to another
-    /// account.</p>
+    /// <p>Thrown when a user tries to use a login which is already linked to another account.</p>
     ResourceConflictException(crate::error::ResourceConflictException),
-    /// <p>Thrown when the requested resource (for example, a dataset or record) does not
-    /// exist.</p>
+    /// <p>Thrown when the requested resource (for example, a dataset or record) does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Thrown when a request is throttled.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
@@ -2392,11 +2365,9 @@ pub enum SetIdentityPoolRolesErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Thrown when a user is not authorized to access the requested resource.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>Thrown when a user tries to use a login which is already linked to another
-    /// account.</p>
+    /// <p>Thrown when a user tries to use a login which is already linked to another account.</p>
     ResourceConflictException(crate::error::ResourceConflictException),
-    /// <p>Thrown when the requested resource (for example, a dataset or record) does not
-    /// exist.</p>
+    /// <p>Thrown when the requested resource (for example, a dataset or record) does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Thrown when a request is throttled.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
@@ -2551,8 +2522,7 @@ pub enum SetPrincipalTagAttributeMapErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Thrown when a user is not authorized to access the requested resource.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>Thrown when the requested resource (for example, a dataset or record) does not
-    /// exist.</p>
+    /// <p>Thrown when the requested resource (for example, a dataset or record) does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Thrown when a request is throttled.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
@@ -2693,8 +2663,7 @@ pub enum TagResourceErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Thrown when a user is not authorized to access the requested resource.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>Thrown when the requested resource (for example, a dataset or record) does not
-    /// exist.</p>
+    /// <p>Thrown when the requested resource (for example, a dataset or record) does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Thrown when a request is throttled.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
@@ -2825,11 +2794,9 @@ pub enum UnlinkDeveloperIdentityErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Thrown when a user is not authorized to access the requested resource.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>Thrown when a user tries to use a login which is already linked to another
-    /// account.</p>
+    /// <p>Thrown when a user tries to use a login which is already linked to another account.</p>
     ResourceConflictException(crate::error::ResourceConflictException),
-    /// <p>Thrown when the requested resource (for example, a dataset or record) does not
-    /// exist.</p>
+    /// <p>Thrown when the requested resource (for example, a dataset or record) does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Thrown when a request is throttled.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
@@ -2969,8 +2936,7 @@ pub struct UnlinkIdentityError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UnlinkIdentityErrorKind {
-    /// <p>An exception thrown when a dependent service such as Facebook or Twitter is not
-    /// responding</p>
+    /// <p>An exception thrown when a dependent service such as Facebook or Twitter is not responding</p>
     ExternalServiceException(crate::error::ExternalServiceException),
     /// <p>Thrown when the service encounters an error during processing the request.</p>
     InternalErrorException(crate::error::InternalErrorException),
@@ -2978,11 +2944,9 @@ pub enum UnlinkIdentityErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Thrown when a user is not authorized to access the requested resource.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>Thrown when a user tries to use a login which is already linked to another
-    /// account.</p>
+    /// <p>Thrown when a user tries to use a login which is already linked to another account.</p>
     ResourceConflictException(crate::error::ResourceConflictException),
-    /// <p>Thrown when the requested resource (for example, a dataset or record) does not
-    /// exist.</p>
+    /// <p>Thrown when the requested resource (for example, a dataset or record) does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Thrown when a request is throttled.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
@@ -3137,8 +3101,7 @@ pub enum UntagResourceErrorKind {
     InvalidParameterException(crate::error::InvalidParameterException),
     /// <p>Thrown when a user is not authorized to access the requested resource.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>Thrown when the requested resource (for example, a dataset or record) does not
-    /// exist.</p>
+    /// <p>Thrown when the requested resource (for example, a dataset or record) does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Thrown when a request is throttled.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
@@ -3279,11 +3242,9 @@ pub enum UpdateIdentityPoolErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>Thrown when a user is not authorized to access the requested resource.</p>
     NotAuthorizedException(crate::error::NotAuthorizedException),
-    /// <p>Thrown when a user tries to use a login which is already linked to another
-    /// account.</p>
+    /// <p>Thrown when a user tries to use a login which is already linked to another account.</p>
     ResourceConflictException(crate::error::ResourceConflictException),
-    /// <p>Thrown when the requested resource (for example, a dataset or record) does not
-    /// exist.</p>
+    /// <p>Thrown when the requested resource (for example, a dataset or record) does not exist.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Thrown when a request is throttled.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
@@ -3492,8 +3453,7 @@ impl TooManyRequestsException {
     }
 }
 
-/// <p>Thrown when the requested resource (for example, a dataset or record) does not
-/// exist.</p>
+/// <p>Thrown when the requested resource (for example, a dataset or record) does not exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
@@ -3557,8 +3517,7 @@ impl ResourceNotFoundException {
     }
 }
 
-/// <p>Thrown when a user tries to use a login which is already linked to another
-/// account.</p>
+/// <p>Thrown when a user tries to use a login which is already linked to another account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceConflictException {
@@ -3942,8 +3901,7 @@ impl ConcurrentModificationException {
     }
 }
 
-/// <p>An exception thrown when a dependent service such as Facebook or Twitter is not
-/// responding</p>
+/// <p>An exception thrown when a dependent service such as Facebook or Twitter is not responding</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExternalServiceException {
@@ -4007,8 +3965,7 @@ impl ExternalServiceException {
     }
 }
 
-/// <p>The provided developer user identifier is already registered with Cognito under a
-/// different identity ID.</p>
+/// <p>The provided developer user identifier is already registered with Cognito under a different identity ID.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeveloperUserAlreadyRegisteredException {
@@ -4072,13 +4029,11 @@ impl DeveloperUserAlreadyRegisteredException {
     }
 }
 
-/// <p>Thrown if the identity pool has no role associated for the given auth type
-/// (auth/unauth) or if the AssumeRole fails.</p>
+/// <p>Thrown if the identity pool has no role associated for the given auth type (auth/unauth) or if the AssumeRole fails.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidIdentityPoolConfigurationException {
-    /// <p>The message returned for an <code>InvalidIdentityPoolConfigurationException</code>
-    /// </p>
+    /// <p>The message returned for an <code>InvalidIdentityPoolConfigurationException</code> </p>
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidIdentityPoolConfigurationException {
@@ -4113,14 +4068,12 @@ pub mod invalid_identity_pool_configuration_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The message returned for an <code>InvalidIdentityPoolConfigurationException</code>
-        /// </p>
+        /// <p>The message returned for an <code>InvalidIdentityPoolConfigurationException</code> </p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
-        /// <p>The message returned for an <code>InvalidIdentityPoolConfigurationException</code>
-        /// </p>
+        /// <p>The message returned for an <code>InvalidIdentityPoolConfigurationException</code> </p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self

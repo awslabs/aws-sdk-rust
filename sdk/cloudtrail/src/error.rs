@@ -13,36 +13,20 @@ pub struct AddTagsError {
 #[derive(std::fmt::Debug)]
 pub enum AddTagsErrorKind {
     /// <p>This exception is thrown when an operation is called with a trail ARN that is not valid. The following is the format of a trail ARN.</p>
-    /// <p>
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-    /// </p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     CloudTrailArnInvalidException(crate::error::CloudTrailArnInvalidException),
-    /// <p>This exception is thrown when the specified tag key or values are not valid.
-    /// It can also occur if there are duplicate tags or too many tags on the resource.</p>
+    /// <p>This exception is thrown when the specified tag key or values are not valid. It can also occur if there are duplicate tags or too many tags on the resource.</p>
     InvalidTagParameterException(crate::error::InvalidTagParameterException),
     /// <p>This exception is thrown when the provided trail name is not valid. Trail names must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-    /// </li>
-    /// <li>
-    /// <p>Start with a letter or number, and end with a letter or number</p>
-    /// </li>
-    /// <li>
-    /// <p>Be between 3 and 128 characters</p>
-    /// </li>
-    /// <li>
-    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-    /// and <code>my--namespace</code> are not valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-    /// </li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+    /// <li> <p>Be between 3 and 128 characters</p> </li>
+    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     InvalidTrailNameException(crate::error::InvalidTrailNameException),
-    /// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail is not the management account for an
-    /// organization in Organizations. For more information, see
-    /// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
+    /// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail is not the management account for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
     NotOrganizationMasterAccountException(crate::error::NotOrganizationMasterAccountException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
@@ -208,21 +192,15 @@ pub struct CreateTrailError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateTrailErrorKind {
-    /// <p>This exception is thrown when trusted access has not been enabled between CloudTrail and Organizations. For more information,
-    /// see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Enabling Trusted Access with Other Amazon Web Services Services</a>
-    /// and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>. </p>
+    /// <p>This exception is thrown when trusted access has not been enabled between CloudTrail and Organizations. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Enabling Trusted Access with Other Amazon Web Services Services</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>. </p>
     CloudTrailAccessNotEnabledException(crate::error::CloudTrailAccessNotEnabledException),
-    /// <p>This exception is thrown when a call results in the <code>InvalidClientTokenId</code> error code.
-    /// This can occur when you are creating or updating a trail to send notifications to an Amazon SNS topic that
-    /// is in a suspended Amazon Web Services account.</p>
+    /// <p>This exception is thrown when a call results in the <code>InvalidClientTokenId</code> error code. This can occur when you are creating or updating a trail to send notifications to an Amazon SNS topic that is in a suspended Amazon Web Services account.</p>
     CloudTrailInvalidClientTokenIdException(crate::error::CloudTrailInvalidClientTokenIdException),
     /// <p>Cannot set a CloudWatch Logs delivery for this region.</p>
     CloudWatchLogsDeliveryUnavailableException(
         crate::error::CloudWatchLogsDeliveryUnavailableException,
     ),
-    /// <p>This exception is thrown when the IAM user or role that is used to create the organization trail is lacking one or more required permissions for
-    /// creating an organization trail in a required service. For more information, see
-    /// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
+    /// <p>This exception is thrown when the IAM user or role that is used to create the organization trail is lacking one or more required permissions for creating an organization trail in a required service. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
     InsufficientDependencyServiceAccessPermissionException(
         crate::error::InsufficientDependencyServiceAccessPermissionException,
     ),
@@ -248,53 +226,34 @@ pub enum CreateTrailErrorKind {
     InvalidS3PrefixException(crate::error::InvalidS3PrefixException),
     /// <p>This exception is thrown when the provided SNS topic name is not valid.</p>
     InvalidSnsTopicNameException(crate::error::InvalidSnsTopicNameException),
-    /// <p>This exception is thrown when the specified tag key or values are not valid.
-    /// It can also occur if there are duplicate tags or too many tags on the resource.</p>
+    /// <p>This exception is thrown when the specified tag key or values are not valid. It can also occur if there are duplicate tags or too many tags on the resource.</p>
     InvalidTagParameterException(crate::error::InvalidTagParameterException),
     /// <p>This exception is thrown when the provided trail name is not valid. Trail names must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-    /// </li>
-    /// <li>
-    /// <p>Start with a letter or number, and end with a letter or number</p>
-    /// </li>
-    /// <li>
-    /// <p>Be between 3 and 128 characters</p>
-    /// </li>
-    /// <li>
-    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-    /// and <code>my--namespace</code> are not valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-    /// </li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+    /// <li> <p>Be between 3 and 128 characters</p> </li>
+    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     InvalidTrailNameException(crate::error::InvalidTrailNameException),
     /// <p>This exception is thrown when there is an issue with the specified KMS key and the trail can’t be updated.</p>
     KmsException(crate::error::KmsException),
     /// <p>This exception is no longer in use.</p>
     KmsKeyDisabledException(crate::error::KmsKeyDisabledException),
-    /// <p>This exception is thrown when the KMS key does not exist, when the S3 bucket and the
-    /// KMS key are not in the same region, or when the KMS key associated with the Amazon SNS
-    /// topic either does not exist or is not in the same region.</p>
+    /// <p>This exception is thrown when the KMS key does not exist, when the S3 bucket and the KMS key are not in the same region, or when the KMS key associated with the Amazon SNS topic either does not exist or is not in the same region.</p>
     KmsKeyNotFoundException(crate::error::KmsKeyNotFoundException),
     /// <p>This exception is thrown when the maximum number of trails is reached.</p>
     MaximumNumberOfTrailsExceededException(crate::error::MaximumNumberOfTrailsExceededException),
-    /// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail is not the management account for an
-    /// organization in Organizations. For more information, see
-    /// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
+    /// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail is not the management account for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
     NotOrganizationMasterAccountException(crate::error::NotOrganizationMasterAccountException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>This exception is thrown when Organizations is not configured to support all features. All features must be enabled in Organizations to support
-    /// creating an organization trail. For more information, see
-    /// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
+    /// <p>This exception is thrown when Organizations is not configured to support all features. All features must be enabled in Organizations to support creating an organization trail. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
     OrganizationNotInAllFeaturesModeException(
         crate::error::OrganizationNotInAllFeaturesModeException,
     ),
-    /// <p>This exception is thrown when the request is made from an Amazon Web Services account that is not a member of an organization.
-    /// To make this request, sign in using the credentials of an account that belongs to an organization.</p>
+    /// <p>This exception is thrown when the request is made from an Amazon Web Services account that is not a member of an organization. To make this request, sign in using the credentials of an account that belongs to an organization.</p>
     OrganizationsNotInUseException(crate::error::OrganizationsNotInUseException),
     /// <p>This exception is thrown when the specified S3 bucket does not exist.</p>
     S3BucketDoesNotExistException(crate::error::S3BucketDoesNotExistException),
@@ -641,13 +600,9 @@ pub struct DeleteTrailError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteTrailErrorKind {
-    /// <p>This exception is thrown when the specified resource is not ready for an operation.
-    /// This can occur when you try to run an operation on a trail before CloudTrail has time to fully load the trail.
-    /// If this exception occurs, wait a few minutes, and then try the operation again.</p>
+    /// <p>This exception is thrown when the specified resource is not ready for an operation. This can occur when you try to run an operation on a trail before CloudTrail has time to fully load the trail. If this exception occurs, wait a few minutes, and then try the operation again.</p>
     ConflictException(crate::error::ConflictException),
-    /// <p>This exception is thrown when the IAM user or role that is used to create the organization trail is lacking one or more required permissions for
-    /// creating an organization trail in a required service. For more information, see
-    /// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
+    /// <p>This exception is thrown when the IAM user or role that is used to create the organization trail is lacking one or more required permissions for creating an organization trail in a required service. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
     InsufficientDependencyServiceAccessPermissionException(
         crate::error::InsufficientDependencyServiceAccessPermissionException,
     ),
@@ -655,27 +610,14 @@ pub enum DeleteTrailErrorKind {
     InvalidHomeRegionException(crate::error::InvalidHomeRegionException),
     /// <p>This exception is thrown when the provided trail name is not valid. Trail names must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-    /// </li>
-    /// <li>
-    /// <p>Start with a letter or number, and end with a letter or number</p>
-    /// </li>
-    /// <li>
-    /// <p>Be between 3 and 128 characters</p>
-    /// </li>
-    /// <li>
-    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-    /// and <code>my--namespace</code> are not valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-    /// </li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+    /// <li> <p>Be between 3 and 128 characters</p> </li>
+    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     InvalidTrailNameException(crate::error::InvalidTrailNameException),
-    /// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail is not the management account for an
-    /// organization in Organizations. For more information, see
-    /// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
+    /// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail is not the management account for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
     NotOrganizationMasterAccountException(crate::error::NotOrganizationMasterAccountException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
@@ -837,22 +779,11 @@ pub struct DescribeTrailsError {
 pub enum DescribeTrailsErrorKind {
     /// <p>This exception is thrown when the provided trail name is not valid. Trail names must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-    /// </li>
-    /// <li>
-    /// <p>Start with a letter or number, and end with a letter or number</p>
-    /// </li>
-    /// <li>
-    /// <p>Be between 3 and 128 characters</p>
-    /// </li>
-    /// <li>
-    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-    /// and <code>my--namespace</code> are not valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-    /// </li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+    /// <li> <p>Be between 3 and 128 characters</p> </li>
+    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     InvalidTrailNameException(crate::error::InvalidTrailNameException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
@@ -970,22 +901,11 @@ pub struct GetEventSelectorsError {
 pub enum GetEventSelectorsErrorKind {
     /// <p>This exception is thrown when the provided trail name is not valid. Trail names must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-    /// </li>
-    /// <li>
-    /// <p>Start with a letter or number, and end with a letter or number</p>
-    /// </li>
-    /// <li>
-    /// <p>Be between 3 and 128 characters</p>
-    /// </li>
-    /// <li>
-    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-    /// and <code>my--namespace</code> are not valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-    /// </li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+    /// <li> <p>Be between 3 and 128 characters</p> </li>
+    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     InvalidTrailNameException(crate::error::InvalidTrailNameException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
@@ -1116,22 +1036,11 @@ pub enum GetInsightSelectorsErrorKind {
     InsightNotEnabledException(crate::error::InsightNotEnabledException),
     /// <p>This exception is thrown when the provided trail name is not valid. Trail names must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-    /// </li>
-    /// <li>
-    /// <p>Start with a letter or number, and end with a letter or number</p>
-    /// </li>
-    /// <li>
-    /// <p>Be between 3 and 128 characters</p>
-    /// </li>
-    /// <li>
-    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-    /// and <code>my--namespace</code> are not valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-    /// </li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+    /// <li> <p>Be between 3 and 128 characters</p> </li>
+    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     InvalidTrailNameException(crate::error::InvalidTrailNameException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
@@ -1269,22 +1178,11 @@ pub struct GetTrailError {
 pub enum GetTrailErrorKind {
     /// <p>This exception is thrown when the provided trail name is not valid. Trail names must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-    /// </li>
-    /// <li>
-    /// <p>Start with a letter or number, and end with a letter or number</p>
-    /// </li>
-    /// <li>
-    /// <p>Be between 3 and 128 characters</p>
-    /// </li>
-    /// <li>
-    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-    /// and <code>my--namespace</code> are not valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-    /// </li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+    /// <li> <p>Be between 3 and 128 characters</p> </li>
+    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     InvalidTrailNameException(crate::error::InvalidTrailNameException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
@@ -1407,22 +1305,11 @@ pub struct GetTrailStatusError {
 pub enum GetTrailStatusErrorKind {
     /// <p>This exception is thrown when the provided trail name is not valid. Trail names must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-    /// </li>
-    /// <li>
-    /// <p>Start with a letter or number, and end with a letter or number</p>
-    /// </li>
-    /// <li>
-    /// <p>Be between 3 and 128 characters</p>
-    /// </li>
-    /// <li>
-    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-    /// and <code>my--namespace</code> are not valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-    /// </li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+    /// <li> <p>Be between 3 and 128 characters</p> </li>
+    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     InvalidTrailNameException(crate::error::InvalidTrailNameException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
@@ -1676,30 +1563,17 @@ pub struct ListTagsError {
 #[derive(std::fmt::Debug)]
 pub enum ListTagsErrorKind {
     /// <p>This exception is thrown when an operation is called with a trail ARN that is not valid. The following is the format of a trail ARN.</p>
-    /// <p>
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-    /// </p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     CloudTrailArnInvalidException(crate::error::CloudTrailArnInvalidException),
     /// <p>Reserved for future use.</p>
     InvalidTokenException(crate::error::InvalidTokenException),
     /// <p>This exception is thrown when the provided trail name is not valid. Trail names must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-    /// </li>
-    /// <li>
-    /// <p>Start with a letter or number, and end with a letter or number</p>
-    /// </li>
-    /// <li>
-    /// <p>Be between 3 and 128 characters</p>
-    /// </li>
-    /// <li>
-    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-    /// and <code>my--namespace</code> are not valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-    /// </li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+    /// <li> <p>Be between 3 and 128 characters</p> </li>
+    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     InvalidTrailNameException(crate::error::InvalidTrailNameException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
@@ -2109,61 +1983,31 @@ pub struct PutEventSelectorsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutEventSelectorsErrorKind {
-    /// <p>This exception is thrown when the IAM user or role that is used to create the organization trail is lacking one or more required permissions for
-    /// creating an organization trail in a required service. For more information, see
-    /// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
+    /// <p>This exception is thrown when the IAM user or role that is used to create the organization trail is lacking one or more required permissions for creating an organization trail in a required service. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
     InsufficientDependencyServiceAccessPermissionException(
         crate::error::InsufficientDependencyServiceAccessPermissionException,
     ),
-    /// <p>This exception is thrown when the <code>PutEventSelectors</code> operation is called with a number of event
-    /// selectors, advanced event selectors, or data resources that is not valid. The combination of event selectors or advanced event selectors and
-    /// data resources is not valid. A trail can have up to 5 event selectors. If a trail uses advanced event selectors, a maximum
-    /// of 500 total values for all conditions in all advanced event selectors is allowed. A trail is limited to 250 data resources. These data resources can be distributed across event selectors, but the overall total cannot exceed 250.</p>
+    /// <p>This exception is thrown when the <code>PutEventSelectors</code> operation is called with a number of event selectors, advanced event selectors, or data resources that is not valid. The combination of event selectors or advanced event selectors and data resources is not valid. A trail can have up to 5 event selectors. If a trail uses advanced event selectors, a maximum of 500 total values for all conditions in all advanced event selectors is allowed. A trail is limited to 250 data resources. These data resources can be distributed across event selectors, but the overall total cannot exceed 250.</p>
     /// <p>You can:</p>
     /// <ul>
-    /// <li>
-    /// <p>Specify a valid number of event selectors (1 to 5) for a trail.</p>
-    /// </li>
-    /// <li>
-    /// <p>Specify a valid number of data resources (1 to 250) for an event selector.
-    /// The limit of number of resources on an individual event selector is configurable up to 250.
-    /// However, this upper limit is allowed only if the total number of data resources does not
-    /// exceed 250 across all event selectors for a trail.</p>
-    /// </li>
-    /// <li>
-    /// <p>Specify up to 500 values for all conditions in all advanced event selectors for a trail.</p>
-    /// </li>
-    /// <li>
-    /// <p>Specify a valid value for a parameter. For example, specifying the <code>ReadWriteType</code>
-    /// parameter with a value of <code>read-only</code> is not valid.</p>
-    /// </li>
+    /// <li> <p>Specify a valid number of event selectors (1 to 5) for a trail.</p> </li>
+    /// <li> <p>Specify a valid number of data resources (1 to 250) for an event selector. The limit of number of resources on an individual event selector is configurable up to 250. However, this upper limit is allowed only if the total number of data resources does not exceed 250 across all event selectors for a trail.</p> </li>
+    /// <li> <p>Specify up to 500 values for all conditions in all advanced event selectors for a trail.</p> </li>
+    /// <li> <p>Specify a valid value for a parameter. For example, specifying the <code>ReadWriteType</code> parameter with a value of <code>read-only</code> is not valid.</p> </li>
     /// </ul>
     InvalidEventSelectorsException(crate::error::InvalidEventSelectorsException),
     /// <p>This exception is thrown when an operation is called on a trail from a region other than the region in which the trail was created.</p>
     InvalidHomeRegionException(crate::error::InvalidHomeRegionException),
     /// <p>This exception is thrown when the provided trail name is not valid. Trail names must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-    /// </li>
-    /// <li>
-    /// <p>Start with a letter or number, and end with a letter or number</p>
-    /// </li>
-    /// <li>
-    /// <p>Be between 3 and 128 characters</p>
-    /// </li>
-    /// <li>
-    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-    /// and <code>my--namespace</code> are not valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-    /// </li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+    /// <li> <p>Be between 3 and 128 characters</p> </li>
+    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     InvalidTrailNameException(crate::error::InvalidTrailNameException),
-    /// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail is not the management account for an
-    /// organization in Organizations. For more information, see
-    /// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
+    /// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail is not the management account for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
     NotOrganizationMasterAccountException(crate::error::NotOrganizationMasterAccountException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
@@ -2339,34 +2183,20 @@ pub enum PutInsightSelectorsErrorKind {
     InsufficientS3BucketPolicyException(crate::error::InsufficientS3BucketPolicyException),
     /// <p>This exception is thrown when an operation is called on a trail from a region other than the region in which the trail was created.</p>
     InvalidHomeRegionException(crate::error::InvalidHomeRegionException),
-    /// <p>The formatting or syntax of the <code>InsightSelectors</code> JSON statement in your <code>PutInsightSelectors</code> or <code>GetInsightSelectors</code> request
-    /// is not valid, or the specified insight type in the <code>InsightSelectors</code> statement is not a valid insight type.</p>
+    /// <p>The formatting or syntax of the <code>InsightSelectors</code> JSON statement in your <code>PutInsightSelectors</code> or <code>GetInsightSelectors</code> request is not valid, or the specified insight type in the <code>InsightSelectors</code> statement is not a valid insight type.</p>
     InvalidInsightSelectorsException(crate::error::InvalidInsightSelectorsException),
     /// <p>This exception is thrown when the provided trail name is not valid. Trail names must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-    /// </li>
-    /// <li>
-    /// <p>Start with a letter or number, and end with a letter or number</p>
-    /// </li>
-    /// <li>
-    /// <p>Be between 3 and 128 characters</p>
-    /// </li>
-    /// <li>
-    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-    /// and <code>my--namespace</code> are not valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-    /// </li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+    /// <li> <p>Be between 3 and 128 characters</p> </li>
+    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     InvalidTrailNameException(crate::error::InvalidTrailNameException),
     /// <p>This exception is thrown when there is an issue with the specified KMS key and the trail can’t be updated.</p>
     KmsException(crate::error::KmsException),
-    /// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail is not the management account for an
-    /// organization in Organizations. For more information, see
-    /// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
+    /// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail is not the management account for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
     NotOrganizationMasterAccountException(crate::error::NotOrganizationMasterAccountException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
@@ -2567,36 +2397,20 @@ pub struct RemoveTagsError {
 #[derive(std::fmt::Debug)]
 pub enum RemoveTagsErrorKind {
     /// <p>This exception is thrown when an operation is called with a trail ARN that is not valid. The following is the format of a trail ARN.</p>
-    /// <p>
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-    /// </p>
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     CloudTrailArnInvalidException(crate::error::CloudTrailArnInvalidException),
-    /// <p>This exception is thrown when the specified tag key or values are not valid.
-    /// It can also occur if there are duplicate tags or too many tags on the resource.</p>
+    /// <p>This exception is thrown when the specified tag key or values are not valid. It can also occur if there are duplicate tags or too many tags on the resource.</p>
     InvalidTagParameterException(crate::error::InvalidTagParameterException),
     /// <p>This exception is thrown when the provided trail name is not valid. Trail names must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-    /// </li>
-    /// <li>
-    /// <p>Start with a letter or number, and end with a letter or number</p>
-    /// </li>
-    /// <li>
-    /// <p>Be between 3 and 128 characters</p>
-    /// </li>
-    /// <li>
-    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-    /// and <code>my--namespace</code> are not valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-    /// </li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+    /// <li> <p>Be between 3 and 128 characters</p> </li>
+    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     InvalidTrailNameException(crate::error::InvalidTrailNameException),
-    /// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail is not the management account for an
-    /// organization in Organizations. For more information, see
-    /// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
+    /// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail is not the management account for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
     NotOrganizationMasterAccountException(crate::error::NotOrganizationMasterAccountException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
@@ -2760,9 +2574,7 @@ pub struct StartLoggingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StartLoggingErrorKind {
-    /// <p>This exception is thrown when the IAM user or role that is used to create the organization trail is lacking one or more required permissions for
-    /// creating an organization trail in a required service. For more information, see
-    /// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
+    /// <p>This exception is thrown when the IAM user or role that is used to create the organization trail is lacking one or more required permissions for creating an organization trail in a required service. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
     InsufficientDependencyServiceAccessPermissionException(
         crate::error::InsufficientDependencyServiceAccessPermissionException,
     ),
@@ -2770,27 +2582,14 @@ pub enum StartLoggingErrorKind {
     InvalidHomeRegionException(crate::error::InvalidHomeRegionException),
     /// <p>This exception is thrown when the provided trail name is not valid. Trail names must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-    /// </li>
-    /// <li>
-    /// <p>Start with a letter or number, and end with a letter or number</p>
-    /// </li>
-    /// <li>
-    /// <p>Be between 3 and 128 characters</p>
-    /// </li>
-    /// <li>
-    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-    /// and <code>my--namespace</code> are not valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-    /// </li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+    /// <li> <p>Be between 3 and 128 characters</p> </li>
+    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     InvalidTrailNameException(crate::error::InvalidTrailNameException),
-    /// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail is not the management account for an
-    /// organization in Organizations. For more information, see
-    /// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
+    /// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail is not the management account for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
     NotOrganizationMasterAccountException(crate::error::NotOrganizationMasterAccountException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
@@ -2944,9 +2743,7 @@ pub struct StopLoggingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum StopLoggingErrorKind {
-    /// <p>This exception is thrown when the IAM user or role that is used to create the organization trail is lacking one or more required permissions for
-    /// creating an organization trail in a required service. For more information, see
-    /// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
+    /// <p>This exception is thrown when the IAM user or role that is used to create the organization trail is lacking one or more required permissions for creating an organization trail in a required service. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
     InsufficientDependencyServiceAccessPermissionException(
         crate::error::InsufficientDependencyServiceAccessPermissionException,
     ),
@@ -2954,27 +2751,14 @@ pub enum StopLoggingErrorKind {
     InvalidHomeRegionException(crate::error::InvalidHomeRegionException),
     /// <p>This exception is thrown when the provided trail name is not valid. Trail names must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-    /// </li>
-    /// <li>
-    /// <p>Start with a letter or number, and end with a letter or number</p>
-    /// </li>
-    /// <li>
-    /// <p>Be between 3 and 128 characters</p>
-    /// </li>
-    /// <li>
-    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-    /// and <code>my--namespace</code> are not valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-    /// </li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+    /// <li> <p>Be between 3 and 128 characters</p> </li>
+    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     InvalidTrailNameException(crate::error::InvalidTrailNameException),
-    /// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail is not the management account for an
-    /// organization in Organizations. For more information, see
-    /// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
+    /// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail is not the management account for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
     NotOrganizationMasterAccountException(crate::error::NotOrganizationMasterAccountException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
@@ -3128,21 +2912,15 @@ pub struct UpdateTrailError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateTrailErrorKind {
-    /// <p>This exception is thrown when trusted access has not been enabled between CloudTrail and Organizations. For more information,
-    /// see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Enabling Trusted Access with Other Amazon Web Services Services</a>
-    /// and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>. </p>
+    /// <p>This exception is thrown when trusted access has not been enabled between CloudTrail and Organizations. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Enabling Trusted Access with Other Amazon Web Services Services</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>. </p>
     CloudTrailAccessNotEnabledException(crate::error::CloudTrailAccessNotEnabledException),
-    /// <p>This exception is thrown when a call results in the <code>InvalidClientTokenId</code> error code.
-    /// This can occur when you are creating or updating a trail to send notifications to an Amazon SNS topic that
-    /// is in a suspended Amazon Web Services account.</p>
+    /// <p>This exception is thrown when a call results in the <code>InvalidClientTokenId</code> error code. This can occur when you are creating or updating a trail to send notifications to an Amazon SNS topic that is in a suspended Amazon Web Services account.</p>
     CloudTrailInvalidClientTokenIdException(crate::error::CloudTrailInvalidClientTokenIdException),
     /// <p>Cannot set a CloudWatch Logs delivery for this region.</p>
     CloudWatchLogsDeliveryUnavailableException(
         crate::error::CloudWatchLogsDeliveryUnavailableException,
     ),
-    /// <p>This exception is thrown when the IAM user or role that is used to create the organization trail is lacking one or more required permissions for
-    /// creating an organization trail in a required service. For more information, see
-    /// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
+    /// <p>This exception is thrown when the IAM user or role that is used to create the organization trail is lacking one or more required permissions for creating an organization trail in a required service. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
     InsufficientDependencyServiceAccessPermissionException(
         crate::error::InsufficientDependencyServiceAccessPermissionException,
     ),
@@ -3158,28 +2936,13 @@ pub enum UpdateTrailErrorKind {
     ),
     /// <p>This exception is thrown when the provided role is not valid.</p>
     InvalidCloudWatchLogsRoleArnException(crate::error::InvalidCloudWatchLogsRoleArnException),
-    /// <p>This exception is thrown when the <code>PutEventSelectors</code> operation is called with a number of event
-    /// selectors, advanced event selectors, or data resources that is not valid. The combination of event selectors or advanced event selectors and
-    /// data resources is not valid. A trail can have up to 5 event selectors. If a trail uses advanced event selectors, a maximum
-    /// of 500 total values for all conditions in all advanced event selectors is allowed. A trail is limited to 250 data resources. These data resources can be distributed across event selectors, but the overall total cannot exceed 250.</p>
+    /// <p>This exception is thrown when the <code>PutEventSelectors</code> operation is called with a number of event selectors, advanced event selectors, or data resources that is not valid. The combination of event selectors or advanced event selectors and data resources is not valid. A trail can have up to 5 event selectors. If a trail uses advanced event selectors, a maximum of 500 total values for all conditions in all advanced event selectors is allowed. A trail is limited to 250 data resources. These data resources can be distributed across event selectors, but the overall total cannot exceed 250.</p>
     /// <p>You can:</p>
     /// <ul>
-    /// <li>
-    /// <p>Specify a valid number of event selectors (1 to 5) for a trail.</p>
-    /// </li>
-    /// <li>
-    /// <p>Specify a valid number of data resources (1 to 250) for an event selector.
-    /// The limit of number of resources on an individual event selector is configurable up to 250.
-    /// However, this upper limit is allowed only if the total number of data resources does not
-    /// exceed 250 across all event selectors for a trail.</p>
-    /// </li>
-    /// <li>
-    /// <p>Specify up to 500 values for all conditions in all advanced event selectors for a trail.</p>
-    /// </li>
-    /// <li>
-    /// <p>Specify a valid value for a parameter. For example, specifying the <code>ReadWriteType</code>
-    /// parameter with a value of <code>read-only</code> is not valid.</p>
-    /// </li>
+    /// <li> <p>Specify a valid number of event selectors (1 to 5) for a trail.</p> </li>
+    /// <li> <p>Specify a valid number of data resources (1 to 250) for an event selector. The limit of number of resources on an individual event selector is configurable up to 250. However, this upper limit is allowed only if the total number of data resources does not exceed 250 across all event selectors for a trail.</p> </li>
+    /// <li> <p>Specify up to 500 values for all conditions in all advanced event selectors for a trail.</p> </li>
+    /// <li> <p>Specify a valid value for a parameter. For example, specifying the <code>ReadWriteType</code> parameter with a value of <code>read-only</code> is not valid.</p> </li>
     /// </ul>
     InvalidEventSelectorsException(crate::error::InvalidEventSelectorsException),
     /// <p>This exception is thrown when an operation is called on a trail from a region other than the region in which the trail was created.</p>
@@ -3196,46 +2959,28 @@ pub enum UpdateTrailErrorKind {
     InvalidSnsTopicNameException(crate::error::InvalidSnsTopicNameException),
     /// <p>This exception is thrown when the provided trail name is not valid. Trail names must meet the following requirements:</p>
     /// <ul>
-    /// <li>
-    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-    /// </li>
-    /// <li>
-    /// <p>Start with a letter or number, and end with a letter or number</p>
-    /// </li>
-    /// <li>
-    /// <p>Be between 3 and 128 characters</p>
-    /// </li>
-    /// <li>
-    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-    /// and <code>my--namespace</code> are not valid.</p>
-    /// </li>
-    /// <li>
-    /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-    /// </li>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+    /// <li> <p>Be between 3 and 128 characters</p> </li>
+    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
     InvalidTrailNameException(crate::error::InvalidTrailNameException),
     /// <p>This exception is thrown when there is an issue with the specified KMS key and the trail can’t be updated.</p>
     KmsException(crate::error::KmsException),
     /// <p>This exception is no longer in use.</p>
     KmsKeyDisabledException(crate::error::KmsKeyDisabledException),
-    /// <p>This exception is thrown when the KMS key does not exist, when the S3 bucket and the
-    /// KMS key are not in the same region, or when the KMS key associated with the Amazon SNS
-    /// topic either does not exist or is not in the same region.</p>
+    /// <p>This exception is thrown when the KMS key does not exist, when the S3 bucket and the KMS key are not in the same region, or when the KMS key associated with the Amazon SNS topic either does not exist or is not in the same region.</p>
     KmsKeyNotFoundException(crate::error::KmsKeyNotFoundException),
-    /// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail is not the management account for an
-    /// organization in Organizations. For more information, see
-    /// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
+    /// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail is not the management account for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
     NotOrganizationMasterAccountException(crate::error::NotOrganizationMasterAccountException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
     OperationNotPermittedException(crate::error::OperationNotPermittedException),
-    /// <p>This exception is thrown when Organizations is not configured to support all features. All features must be enabled in Organizations to support
-    /// creating an organization trail. For more information, see
-    /// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
+    /// <p>This exception is thrown when Organizations is not configured to support all features. All features must be enabled in Organizations to support creating an organization trail. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
     OrganizationNotInAllFeaturesModeException(
         crate::error::OrganizationNotInAllFeaturesModeException,
     ),
-    /// <p>This exception is thrown when the request is made from an Amazon Web Services account that is not a member of an organization.
-    /// To make this request, sign in using the credentials of an account that belongs to an organization.</p>
+    /// <p>This exception is thrown when the request is made from an Amazon Web Services account that is not a member of an organization. To make this request, sign in using the credentials of an account that belongs to an organization.</p>
     OrganizationsNotInUseException(crate::error::OrganizationsNotInUseException),
     /// <p>This exception is thrown when the specified S3 bucket does not exist.</p>
     S3BucketDoesNotExistException(crate::error::S3BucketDoesNotExistException),
@@ -3822,8 +3567,7 @@ impl S3BucketDoesNotExistException {
     }
 }
 
-/// <p>This exception is thrown when the request is made from an Amazon Web Services account that is not a member of an organization.
-/// To make this request, sign in using the credentials of an account that belongs to an organization.</p>
+/// <p>This exception is thrown when the request is made from an Amazon Web Services account that is not a member of an organization. To make this request, sign in using the credentials of an account that belongs to an organization.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OrganizationsNotInUseException {
@@ -3887,9 +3631,7 @@ impl OrganizationsNotInUseException {
     }
 }
 
-/// <p>This exception is thrown when Organizations is not configured to support all features. All features must be enabled in Organizations to support
-/// creating an organization trail. For more information, see
-/// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
+/// <p>This exception is thrown when Organizations is not configured to support all features. All features must be enabled in Organizations to support creating an organization trail. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OrganizationNotInAllFeaturesModeException {
@@ -4017,9 +3759,7 @@ impl OperationNotPermittedException {
     }
 }
 
-/// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail is not the management account for an
-/// organization in Organizations. For more information, see
-/// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
+/// <p>This exception is thrown when the Amazon Web Services account making the request to create or update an organization trail is not the management account for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotOrganizationMasterAccountException {
@@ -4083,9 +3823,7 @@ impl NotOrganizationMasterAccountException {
     }
 }
 
-/// <p>This exception is thrown when the KMS key does not exist, when the S3 bucket and the
-/// KMS key are not in the same region, or when the KMS key associated with the Amazon SNS
-/// topic either does not exist or is not in the same region.</p>
+/// <p>This exception is thrown when the KMS key does not exist, when the S3 bucket and the KMS key are not in the same region, or when the KMS key associated with the Amazon SNS topic either does not exist or is not in the same region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsKeyNotFoundException {
@@ -4279,22 +4017,11 @@ impl KmsException {
 
 /// <p>This exception is thrown when the provided trail name is not valid. Trail names must meet the following requirements:</p>
 /// <ul>
-/// <li>
-/// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p>
-/// </li>
-/// <li>
-/// <p>Start with a letter or number, and end with a letter or number</p>
-/// </li>
-/// <li>
-/// <p>Be between 3 and 128 characters</p>
-/// </li>
-/// <li>
-/// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-/// and <code>my--namespace</code> are not valid.</p>
-/// </li>
-/// <li>
-/// <p>Not be in IP address format (for example, 192.168.5.4)</p>
-/// </li>
+/// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+/// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+/// <li> <p>Be between 3 and 128 characters</p> </li>
+/// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+/// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -4743,28 +4470,13 @@ impl InvalidHomeRegionException {
     }
 }
 
-/// <p>This exception is thrown when the <code>PutEventSelectors</code> operation is called with a number of event
-/// selectors, advanced event selectors, or data resources that is not valid. The combination of event selectors or advanced event selectors and
-/// data resources is not valid. A trail can have up to 5 event selectors. If a trail uses advanced event selectors, a maximum
-/// of 500 total values for all conditions in all advanced event selectors is allowed. A trail is limited to 250 data resources. These data resources can be distributed across event selectors, but the overall total cannot exceed 250.</p>
+/// <p>This exception is thrown when the <code>PutEventSelectors</code> operation is called with a number of event selectors, advanced event selectors, or data resources that is not valid. The combination of event selectors or advanced event selectors and data resources is not valid. A trail can have up to 5 event selectors. If a trail uses advanced event selectors, a maximum of 500 total values for all conditions in all advanced event selectors is allowed. A trail is limited to 250 data resources. These data resources can be distributed across event selectors, but the overall total cannot exceed 250.</p>
 /// <p>You can:</p>
 /// <ul>
-/// <li>
-/// <p>Specify a valid number of event selectors (1 to 5) for a trail.</p>
-/// </li>
-/// <li>
-/// <p>Specify a valid number of data resources (1 to 250) for an event selector.
-/// The limit of number of resources on an individual event selector is configurable up to 250.
-/// However, this upper limit is allowed only if the total number of data resources does not
-/// exceed 250 across all event selectors for a trail.</p>
-/// </li>
-/// <li>
-/// <p>Specify up to 500 values for all conditions in all advanced event selectors for a trail.</p>
-/// </li>
-/// <li>
-/// <p>Specify a valid value for a parameter. For example, specifying the <code>ReadWriteType</code>
-/// parameter with a value of <code>read-only</code> is not valid.</p>
-/// </li>
+/// <li> <p>Specify a valid number of event selectors (1 to 5) for a trail.</p> </li>
+/// <li> <p>Specify a valid number of data resources (1 to 250) for an event selector. The limit of number of resources on an individual event selector is configurable up to 250. However, this upper limit is allowed only if the total number of data resources does not exceed 250 across all event selectors for a trail.</p> </li>
+/// <li> <p>Specify up to 500 values for all conditions in all advanced event selectors for a trail.</p> </li>
+/// <li> <p>Specify a valid value for a parameter. For example, specifying the <code>ReadWriteType</code> parameter with a value of <code>read-only</code> is not valid.</p> </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -5149,9 +4861,7 @@ impl InsufficientEncryptionPolicyException {
     }
 }
 
-/// <p>This exception is thrown when the IAM user or role that is used to create the organization trail is lacking one or more required permissions for
-/// creating an organization trail in a required service. For more information, see
-/// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
+/// <p>This exception is thrown when the IAM user or role that is used to create the organization trail is lacking one or more required permissions for creating an organization trail in a required service. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InsufficientDependencyServiceAccessPermissionException {
@@ -5282,9 +4992,7 @@ impl CloudWatchLogsDeliveryUnavailableException {
     }
 }
 
-/// <p>This exception is thrown when a call results in the <code>InvalidClientTokenId</code> error code.
-/// This can occur when you are creating or updating a trail to send notifications to an Amazon SNS topic that
-/// is in a suspended Amazon Web Services account.</p>
+/// <p>This exception is thrown when a call results in the <code>InvalidClientTokenId</code> error code. This can occur when you are creating or updating a trail to send notifications to an Amazon SNS topic that is in a suspended Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudTrailInvalidClientTokenIdException {
@@ -5348,9 +5056,7 @@ impl CloudTrailInvalidClientTokenIdException {
     }
 }
 
-/// <p>This exception is thrown when trusted access has not been enabled between CloudTrail and Organizations. For more information,
-/// see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Enabling Trusted Access with Other Amazon Web Services Services</a>
-/// and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>. </p>
+/// <p>This exception is thrown when trusted access has not been enabled between CloudTrail and Organizations. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Enabling Trusted Access with Other Amazon Web Services Services</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare For Creating a Trail For Your Organization</a>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudTrailAccessNotEnabledException {
@@ -5542,8 +5248,7 @@ impl ResourceNotFoundException {
     }
 }
 
-/// <p>This exception is thrown when the specified tag key or values are not valid.
-/// It can also occur if there are duplicate tags or too many tags on the resource.</p>
+/// <p>This exception is thrown when the specified tag key or values are not valid. It can also occur if there are duplicate tags or too many tags on the resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidTagParameterException {
@@ -5608,9 +5313,7 @@ impl InvalidTagParameterException {
 }
 
 /// <p>This exception is thrown when an operation is called with a trail ARN that is not valid. The following is the format of a trail ARN.</p>
-/// <p>
-/// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-/// </p>
+/// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudTrailArnInvalidException {
@@ -5677,8 +5380,7 @@ impl CloudTrailArnInvalidException {
     }
 }
 
-/// <p>The formatting or syntax of the <code>InsightSelectors</code> JSON statement in your <code>PutInsightSelectors</code> or <code>GetInsightSelectors</code> request
-/// is not valid, or the specified insight type in the <code>InsightSelectors</code> statement is not a valid insight type.</p>
+/// <p>The formatting or syntax of the <code>InsightSelectors</code> JSON statement in your <code>PutInsightSelectors</code> or <code>GetInsightSelectors</code> request is not valid, or the specified insight type in the <code>InsightSelectors</code> statement is not a valid insight type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidInsightSelectorsException {
@@ -6190,9 +5892,7 @@ impl InsightNotEnabledException {
     }
 }
 
-/// <p>This exception is thrown when the specified resource is not ready for an operation.
-/// This can occur when you try to run an operation on a trail before CloudTrail has time to fully load the trail.
-/// If this exception occurs, wait a few minutes, and then try the operation again.</p>
+/// <p>This exception is thrown when the specified resource is not ready for an operation. This can occur when you try to run an operation on a trail before CloudTrail has time to fully load the trail. If this exception occurs, wait a few minutes, and then try the operation again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {

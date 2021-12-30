@@ -41,11 +41,8 @@ pub mod create_app_monitor_input {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Assigns one or more tags (key-value pairs) to the app monitor.</p>
-        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user
-        /// permissions by granting a user
-        /// permission to access or change only resources with certain tag values.</p>
+        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
         /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
-        ///
         /// <p>You can associate as many as 50 tags with an app monitor.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
         pub fn tags(
@@ -59,11 +56,8 @@ pub mod create_app_monitor_input {
             self
         }
         /// <p>Assigns one or more tags (key-value pairs) to the app monitor.</p>
-        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user
-        /// permissions by granting a user
-        /// permission to access or change only resources with certain tag values.</p>
+        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
         /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
-        ///
         /// <p>You can associate as many as 50 tags with an app monitor.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
         pub fn set_tags(
@@ -75,12 +69,7 @@ pub mod create_app_monitor_input {
             self.tags = input;
             self
         }
-        /// <p>A structure that contains much of the configuration data for the app monitor. If you are using
-        /// Amazon Cognito for authorization, you must include this structure in your request, and it must include the ID of the
-        /// Amazon Cognito identity pool to use for authorization. If you don't include <code>AppMonitorConfiguration</code>, you must set up your own
-        /// authorization method. For more information, see
-        /// <a href="https://docs.aws.amazon.com/monitoring/CloudWatch-RUM-get-started-authorization.html">Authorize your application
-        /// to send data to Amazon Web Services</a>.</p>
+        /// <p>A structure that contains much of the configuration data for the app monitor. If you are using Amazon Cognito for authorization, you must include this structure in your request, and it must include the ID of the Amazon Cognito identity pool to use for authorization. If you don't include <code>AppMonitorConfiguration</code>, you must set up your own authorization method. For more information, see <a href="https://docs.aws.amazon.com/monitoring/CloudWatch-RUM-get-started-authorization.html">Authorize your application to send data to Amazon Web Services</a>.</p>
         /// <p>If you omit this argument, the sample rate used for RUM is set to 10% of the user sessions.</p>
         pub fn app_monitor_configuration(
             mut self,
@@ -89,12 +78,7 @@ pub mod create_app_monitor_input {
             self.app_monitor_configuration = Some(input);
             self
         }
-        /// <p>A structure that contains much of the configuration data for the app monitor. If you are using
-        /// Amazon Cognito for authorization, you must include this structure in your request, and it must include the ID of the
-        /// Amazon Cognito identity pool to use for authorization. If you don't include <code>AppMonitorConfiguration</code>, you must set up your own
-        /// authorization method. For more information, see
-        /// <a href="https://docs.aws.amazon.com/monitoring/CloudWatch-RUM-get-started-authorization.html">Authorize your application
-        /// to send data to Amazon Web Services</a>.</p>
+        /// <p>A structure that contains much of the configuration data for the app monitor. If you are using Amazon Cognito for authorization, you must include this structure in your request, and it must include the ID of the Amazon Cognito identity pool to use for authorization. If you don't include <code>AppMonitorConfiguration</code>, you must set up your own authorization method. For more information, see <a href="https://docs.aws.amazon.com/monitoring/CloudWatch-RUM-get-started-authorization.html">Authorize your application to send data to Amazon Web Services</a>.</p>
         /// <p>If you omit this argument, the sample rate used for RUM is set to 10% of the user sessions.</p>
         pub fn set_app_monitor_configuration(
             mut self,
@@ -103,19 +87,13 @@ pub mod create_app_monitor_input {
             self.app_monitor_configuration = input;
             self
         }
-        /// <p>Data collected by RUM is kept by RUM for 30 days and then deleted. This parameter specifies whether RUM
-        /// sends a copy of this telemetry data to Amazon CloudWatch Logs
-        /// in your account. This enables you to keep the telemetry data for more than 30 days, but it does incur
-        /// Amazon CloudWatch Logs charges.</p>
+        /// <p>Data collected by RUM is kept by RUM for 30 days and then deleted. This parameter specifies whether RUM sends a copy of this telemetry data to Amazon CloudWatch Logs in your account. This enables you to keep the telemetry data for more than 30 days, but it does incur Amazon CloudWatch Logs charges.</p>
         /// <p>If you omit this parameter, the default is <code>false</code>.</p>
         pub fn cw_log_enabled(mut self, input: bool) -> Self {
             self.cw_log_enabled = Some(input);
             self
         }
-        /// <p>Data collected by RUM is kept by RUM for 30 days and then deleted. This parameter specifies whether RUM
-        /// sends a copy of this telemetry data to Amazon CloudWatch Logs
-        /// in your account. This enables you to keep the telemetry data for more than 30 days, but it does incur
-        /// Amazon CloudWatch Logs charges.</p>
+        /// <p>Data collected by RUM is kept by RUM for 30 days and then deleted. This parameter specifies whether RUM sends a copy of this telemetry data to Amazon CloudWatch Logs in your account. This enables you to keep the telemetry data for more than 30 days, but it does incur Amazon CloudWatch Logs charges.</p>
         /// <p>If you omit this parameter, the default is <code>false</code>.</p>
         pub fn set_cw_log_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.cw_log_enabled = input;
@@ -591,16 +569,14 @@ pub mod get_app_monitor_data_input {
         ///
         /// To override the contents of this collection use [`set_filters`](Self::set_filters).
         ///
-        /// <p>An array of structures that you can use to filter the results to those that match one or
-        /// more sets of key-value pairs that you specify.</p>
+        /// <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify.</p>
         pub fn filters(mut self, input: crate::model::QueryFilter) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input);
             self.filters = Some(v);
             self
         }
-        /// <p>An array of structures that you can use to filter the results to those that match one or
-        /// more sets of key-value pairs that you specify.</p>
+        /// <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::QueryFilter>>,
@@ -1732,12 +1708,7 @@ pub mod update_app_monitor_input {
             self.domain = input;
             self
         }
-        /// <p>A structure that contains much of the configuration data for the app monitor. If you are using
-        /// Amazon Cognito for authorization, you must include this structure in your request, and it must include the ID of the
-        /// Amazon Cognito identity pool to use for authorization. If you don't include <code>AppMonitorConfiguration</code>, you must set up your own
-        /// authorization method. For more information, see
-        /// <a href="https://docs.aws.amazon.com/monitoring/CloudWatch-RUM-get-started-authorization.html">Authorize your application
-        /// to send data to Amazon Web Services</a>.</p>
+        /// <p>A structure that contains much of the configuration data for the app monitor. If you are using Amazon Cognito for authorization, you must include this structure in your request, and it must include the ID of the Amazon Cognito identity pool to use for authorization. If you don't include <code>AppMonitorConfiguration</code>, you must set up your own authorization method. For more information, see <a href="https://docs.aws.amazon.com/monitoring/CloudWatch-RUM-get-started-authorization.html">Authorize your application to send data to Amazon Web Services</a>.</p>
         pub fn app_monitor_configuration(
             mut self,
             input: crate::model::AppMonitorConfiguration,
@@ -1745,12 +1716,7 @@ pub mod update_app_monitor_input {
             self.app_monitor_configuration = Some(input);
             self
         }
-        /// <p>A structure that contains much of the configuration data for the app monitor. If you are using
-        /// Amazon Cognito for authorization, you must include this structure in your request, and it must include the ID of the
-        /// Amazon Cognito identity pool to use for authorization. If you don't include <code>AppMonitorConfiguration</code>, you must set up your own
-        /// authorization method. For more information, see
-        /// <a href="https://docs.aws.amazon.com/monitoring/CloudWatch-RUM-get-started-authorization.html">Authorize your application
-        /// to send data to Amazon Web Services</a>.</p>
+        /// <p>A structure that contains much of the configuration data for the app monitor. If you are using Amazon Cognito for authorization, you must include this structure in your request, and it must include the ID of the Amazon Cognito identity pool to use for authorization. If you don't include <code>AppMonitorConfiguration</code>, you must set up your own authorization method. For more information, see <a href="https://docs.aws.amazon.com/monitoring/CloudWatch-RUM-get-started-authorization.html">Authorize your application to send data to Amazon Web Services</a>.</p>
         pub fn set_app_monitor_configuration(
             mut self,
             input: std::option::Option<crate::model::AppMonitorConfiguration>,
@@ -1758,18 +1724,12 @@ pub mod update_app_monitor_input {
             self.app_monitor_configuration = input;
             self
         }
-        /// <p>Data collected by RUM is kept by RUM for 30 days and then deleted. This parameter specifies whether RUM
-        /// sends a copy of this telemetry data to Amazon CloudWatch Logs
-        /// in your account. This enables you to keep the telemetry data for more than 30 days, but it does incur
-        /// Amazon CloudWatch Logs charges.</p>
+        /// <p>Data collected by RUM is kept by RUM for 30 days and then deleted. This parameter specifies whether RUM sends a copy of this telemetry data to Amazon CloudWatch Logs in your account. This enables you to keep the telemetry data for more than 30 days, but it does incur Amazon CloudWatch Logs charges.</p>
         pub fn cw_log_enabled(mut self, input: bool) -> Self {
             self.cw_log_enabled = Some(input);
             self
         }
-        /// <p>Data collected by RUM is kept by RUM for 30 days and then deleted. This parameter specifies whether RUM
-        /// sends a copy of this telemetry data to Amazon CloudWatch Logs
-        /// in your account. This enables you to keep the telemetry data for more than 30 days, but it does incur
-        /// Amazon CloudWatch Logs charges.</p>
+        /// <p>Data collected by RUM is kept by RUM for 30 days and then deleted. This parameter specifies whether RUM sends a copy of this telemetry data to Amazon CloudWatch Logs in your account. This enables you to keep the telemetry data for more than 30 days, but it does incur Amazon CloudWatch Logs charges.</p>
         pub fn set_cw_log_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.cw_log_enabled = input;
             self
@@ -1930,8 +1890,7 @@ pub struct GetAppMonitorDataInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>A structure that defines the time range that you want to retrieve results from.</p>
     pub time_range: std::option::Option<crate::model::TimeRange>,
-    /// <p>An array of structures that you can use to filter the results to those that match one or
-    /// more sets of key-value pairs that you specify.</p>
+    /// <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::QueryFilter>>,
     /// <p>The maximum number of results to return in one operation. </p>
     pub max_results: i32,
@@ -1947,8 +1906,7 @@ impl GetAppMonitorDataInput {
     pub fn time_range(&self) -> std::option::Option<&crate::model::TimeRange> {
         self.time_range.as_ref()
     }
-    /// <p>An array of structures that you can use to filter the results to those that match one or
-    /// more sets of key-value pairs that you specify.</p>
+    /// <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify.</p>
     pub fn filters(&self) -> std::option::Option<&[crate::model::QueryFilter]> {
         self.filters.as_deref()
     }
@@ -1982,27 +1940,16 @@ pub struct CreateAppMonitorInput {
     /// <p>The top-level internet domain name for which your application has administrative authority.</p>
     pub domain: std::option::Option<std::string::String>,
     /// <p>Assigns one or more tags (key-value pairs) to the app monitor.</p>
-    /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user
-    /// permissions by granting a user
-    /// permission to access or change only resources with certain tag values.</p>
+    /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
     /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
-    ///
     /// <p>You can associate as many as 50 tags with an app monitor.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>A structure that contains much of the configuration data for the app monitor. If you are using
-    /// Amazon Cognito for authorization, you must include this structure in your request, and it must include the ID of the
-    /// Amazon Cognito identity pool to use for authorization. If you don't include <code>AppMonitorConfiguration</code>, you must set up your own
-    /// authorization method. For more information, see
-    /// <a href="https://docs.aws.amazon.com/monitoring/CloudWatch-RUM-get-started-authorization.html">Authorize your application
-    /// to send data to Amazon Web Services</a>.</p>
+    /// <p>A structure that contains much of the configuration data for the app monitor. If you are using Amazon Cognito for authorization, you must include this structure in your request, and it must include the ID of the Amazon Cognito identity pool to use for authorization. If you don't include <code>AppMonitorConfiguration</code>, you must set up your own authorization method. For more information, see <a href="https://docs.aws.amazon.com/monitoring/CloudWatch-RUM-get-started-authorization.html">Authorize your application to send data to Amazon Web Services</a>.</p>
     /// <p>If you omit this argument, the sample rate used for RUM is set to 10% of the user sessions.</p>
     pub app_monitor_configuration: std::option::Option<crate::model::AppMonitorConfiguration>,
-    /// <p>Data collected by RUM is kept by RUM for 30 days and then deleted. This parameter specifies whether RUM
-    /// sends a copy of this telemetry data to Amazon CloudWatch Logs
-    /// in your account. This enables you to keep the telemetry data for more than 30 days, but it does incur
-    /// Amazon CloudWatch Logs charges.</p>
+    /// <p>Data collected by RUM is kept by RUM for 30 days and then deleted. This parameter specifies whether RUM sends a copy of this telemetry data to Amazon CloudWatch Logs in your account. This enables you to keep the telemetry data for more than 30 days, but it does incur Amazon CloudWatch Logs charges.</p>
     /// <p>If you omit this parameter, the default is <code>false</code>.</p>
     pub cw_log_enabled: std::option::Option<bool>,
 }
@@ -2016,11 +1963,8 @@ impl CreateAppMonitorInput {
         self.domain.as_deref()
     }
     /// <p>Assigns one or more tags (key-value pairs) to the app monitor.</p>
-    /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user
-    /// permissions by granting a user
-    /// permission to access or change only resources with certain tag values.</p>
+    /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
     /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
-    ///
     /// <p>You can associate as many as 50 tags with an app monitor.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
     pub fn tags(
@@ -2029,22 +1973,14 @@ impl CreateAppMonitorInput {
     {
         self.tags.as_ref()
     }
-    /// <p>A structure that contains much of the configuration data for the app monitor. If you are using
-    /// Amazon Cognito for authorization, you must include this structure in your request, and it must include the ID of the
-    /// Amazon Cognito identity pool to use for authorization. If you don't include <code>AppMonitorConfiguration</code>, you must set up your own
-    /// authorization method. For more information, see
-    /// <a href="https://docs.aws.amazon.com/monitoring/CloudWatch-RUM-get-started-authorization.html">Authorize your application
-    /// to send data to Amazon Web Services</a>.</p>
+    /// <p>A structure that contains much of the configuration data for the app monitor. If you are using Amazon Cognito for authorization, you must include this structure in your request, and it must include the ID of the Amazon Cognito identity pool to use for authorization. If you don't include <code>AppMonitorConfiguration</code>, you must set up your own authorization method. For more information, see <a href="https://docs.aws.amazon.com/monitoring/CloudWatch-RUM-get-started-authorization.html">Authorize your application to send data to Amazon Web Services</a>.</p>
     /// <p>If you omit this argument, the sample rate used for RUM is set to 10% of the user sessions.</p>
     pub fn app_monitor_configuration(
         &self,
     ) -> std::option::Option<&crate::model::AppMonitorConfiguration> {
         self.app_monitor_configuration.as_ref()
     }
-    /// <p>Data collected by RUM is kept by RUM for 30 days and then deleted. This parameter specifies whether RUM
-    /// sends a copy of this telemetry data to Amazon CloudWatch Logs
-    /// in your account. This enables you to keep the telemetry data for more than 30 days, but it does incur
-    /// Amazon CloudWatch Logs charges.</p>
+    /// <p>Data collected by RUM is kept by RUM for 30 days and then deleted. This parameter specifies whether RUM sends a copy of this telemetry data to Amazon CloudWatch Logs in your account. This enables you to keep the telemetry data for more than 30 days, but it does incur Amazon CloudWatch Logs charges.</p>
     /// <p>If you omit this parameter, the default is <code>false</code>.</p>
     pub fn cw_log_enabled(&self) -> std::option::Option<bool> {
         self.cw_log_enabled
@@ -2119,17 +2055,9 @@ pub struct UpdateAppMonitorInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The top-level internet domain name for which your application has administrative authority.</p>
     pub domain: std::option::Option<std::string::String>,
-    /// <p>A structure that contains much of the configuration data for the app monitor. If you are using
-    /// Amazon Cognito for authorization, you must include this structure in your request, and it must include the ID of the
-    /// Amazon Cognito identity pool to use for authorization. If you don't include <code>AppMonitorConfiguration</code>, you must set up your own
-    /// authorization method. For more information, see
-    /// <a href="https://docs.aws.amazon.com/monitoring/CloudWatch-RUM-get-started-authorization.html">Authorize your application
-    /// to send data to Amazon Web Services</a>.</p>
+    /// <p>A structure that contains much of the configuration data for the app monitor. If you are using Amazon Cognito for authorization, you must include this structure in your request, and it must include the ID of the Amazon Cognito identity pool to use for authorization. If you don't include <code>AppMonitorConfiguration</code>, you must set up your own authorization method. For more information, see <a href="https://docs.aws.amazon.com/monitoring/CloudWatch-RUM-get-started-authorization.html">Authorize your application to send data to Amazon Web Services</a>.</p>
     pub app_monitor_configuration: std::option::Option<crate::model::AppMonitorConfiguration>,
-    /// <p>Data collected by RUM is kept by RUM for 30 days and then deleted. This parameter specifies whether RUM
-    /// sends a copy of this telemetry data to Amazon CloudWatch Logs
-    /// in your account. This enables you to keep the telemetry data for more than 30 days, but it does incur
-    /// Amazon CloudWatch Logs charges.</p>
+    /// <p>Data collected by RUM is kept by RUM for 30 days and then deleted. This parameter specifies whether RUM sends a copy of this telemetry data to Amazon CloudWatch Logs in your account. This enables you to keep the telemetry data for more than 30 days, but it does incur Amazon CloudWatch Logs charges.</p>
     pub cw_log_enabled: std::option::Option<bool>,
 }
 impl UpdateAppMonitorInput {
@@ -2141,21 +2069,13 @@ impl UpdateAppMonitorInput {
     pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p>A structure that contains much of the configuration data for the app monitor. If you are using
-    /// Amazon Cognito for authorization, you must include this structure in your request, and it must include the ID of the
-    /// Amazon Cognito identity pool to use for authorization. If you don't include <code>AppMonitorConfiguration</code>, you must set up your own
-    /// authorization method. For more information, see
-    /// <a href="https://docs.aws.amazon.com/monitoring/CloudWatch-RUM-get-started-authorization.html">Authorize your application
-    /// to send data to Amazon Web Services</a>.</p>
+    /// <p>A structure that contains much of the configuration data for the app monitor. If you are using Amazon Cognito for authorization, you must include this structure in your request, and it must include the ID of the Amazon Cognito identity pool to use for authorization. If you don't include <code>AppMonitorConfiguration</code>, you must set up your own authorization method. For more information, see <a href="https://docs.aws.amazon.com/monitoring/CloudWatch-RUM-get-started-authorization.html">Authorize your application to send data to Amazon Web Services</a>.</p>
     pub fn app_monitor_configuration(
         &self,
     ) -> std::option::Option<&crate::model::AppMonitorConfiguration> {
         self.app_monitor_configuration.as_ref()
     }
-    /// <p>Data collected by RUM is kept by RUM for 30 days and then deleted. This parameter specifies whether RUM
-    /// sends a copy of this telemetry data to Amazon CloudWatch Logs
-    /// in your account. This enables you to keep the telemetry data for more than 30 days, but it does incur
-    /// Amazon CloudWatch Logs charges.</p>
+    /// <p>Data collected by RUM is kept by RUM for 30 days and then deleted. This parameter specifies whether RUM sends a copy of this telemetry data to Amazon CloudWatch Logs in your account. This enables you to keep the telemetry data for more than 30 days, but it does incur Amazon CloudWatch Logs charges.</p>
     pub fn cw_log_enabled(&self) -> std::option::Option<bool> {
         self.cw_log_enabled
     }

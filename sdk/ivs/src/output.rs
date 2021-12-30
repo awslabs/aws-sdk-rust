@@ -177,12 +177,12 @@ impl PutMetadataOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
-    /// <p/>
+    /// <p></p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
-    /// <p/>
+    /// <p></p>
     pub fn tags(
         &self,
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
@@ -212,7 +212,7 @@ pub mod list_tags_for_resource_output {
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p/>
+        /// <p></p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -223,7 +223,7 @@ pub mod list_tags_for_resource_output {
             self.tags = Some(hash_map);
             self
         }
-        /// <p/>
+        /// <p></p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -250,19 +250,17 @@ impl ListTagsForResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStreamSessionsOutput {
-    /// <p/>
+    /// <p></p>
     pub stream_sessions: std::option::Option<std::vec::Vec<crate::model::StreamSessionSummary>>,
-    /// <p>If there are more streams than <code>maxResults</code>, use <code>nextToken</code> in the
-    /// request to get the next set.</p>
+    /// <p>If there are more streams than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListStreamSessionsOutput {
-    /// <p/>
+    /// <p></p>
     pub fn stream_sessions(&self) -> std::option::Option<&[crate::model::StreamSessionSummary]> {
         self.stream_sessions.as_deref()
     }
-    /// <p>If there are more streams than <code>maxResults</code>, use <code>nextToken</code> in the
-    /// request to get the next set.</p>
+    /// <p>If there are more streams than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -290,14 +288,14 @@ pub mod list_stream_sessions_output {
         ///
         /// To override the contents of this collection use [`set_stream_sessions`](Self::set_stream_sessions).
         ///
-        /// <p/>
+        /// <p></p>
         pub fn stream_sessions(mut self, input: crate::model::StreamSessionSummary) -> Self {
             let mut v = self.stream_sessions.unwrap_or_default();
             v.push(input);
             self.stream_sessions = Some(v);
             self
         }
-        /// <p/>
+        /// <p></p>
         pub fn set_stream_sessions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::StreamSessionSummary>>,
@@ -305,14 +303,12 @@ pub mod list_stream_sessions_output {
             self.stream_sessions = input;
             self
         }
-        /// <p>If there are more streams than <code>maxResults</code>, use <code>nextToken</code> in the
-        /// request to get the next set.</p>
+        /// <p>If there are more streams than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If there are more streams than <code>maxResults</code>, use <code>nextToken</code> in the
-        /// request to get the next set.</p>
+        /// <p>If there are more streams than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -339,8 +335,7 @@ impl ListStreamSessionsOutput {
 pub struct ListStreamsOutput {
     /// <p>List of streams.</p>
     pub streams: std::option::Option<std::vec::Vec<crate::model::StreamSummary>>,
-    /// <p>If there are more streams than <code>maxResults</code>, use <code>nextToken</code> in the
-    /// request to get the next set.</p>
+    /// <p>If there are more streams than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListStreamsOutput {
@@ -348,8 +343,7 @@ impl ListStreamsOutput {
     pub fn streams(&self) -> std::option::Option<&[crate::model::StreamSummary]> {
         self.streams.as_deref()
     }
-    /// <p>If there are more streams than <code>maxResults</code>, use <code>nextToken</code> in the
-    /// request to get the next set.</p>
+    /// <p>If there are more streams than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -391,14 +385,12 @@ pub mod list_streams_output {
             self.streams = input;
             self
         }
-        /// <p>If there are more streams than <code>maxResults</code>, use <code>nextToken</code> in the
-        /// request to get the next set.</p>
+        /// <p>If there are more streams than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If there are more streams than <code>maxResults</code>, use <code>nextToken</code> in the
-        /// request to get the next set.</p>
+        /// <p>If there are more streams than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -425,8 +417,7 @@ impl ListStreamsOutput {
 pub struct ListStreamKeysOutput {
     /// <p>List of stream keys.</p>
     pub stream_keys: std::option::Option<std::vec::Vec<crate::model::StreamKeySummary>>,
-    /// <p>If there are more stream keys than <code>maxResults</code>, use <code>nextToken</code> in
-    /// the request to get the next set.</p>
+    /// <p>If there are more stream keys than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListStreamKeysOutput {
@@ -434,8 +425,7 @@ impl ListStreamKeysOutput {
     pub fn stream_keys(&self) -> std::option::Option<&[crate::model::StreamKeySummary]> {
         self.stream_keys.as_deref()
     }
-    /// <p>If there are more stream keys than <code>maxResults</code>, use <code>nextToken</code> in
-    /// the request to get the next set.</p>
+    /// <p>If there are more stream keys than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -477,14 +467,12 @@ pub mod list_stream_keys_output {
             self.stream_keys = input;
             self
         }
-        /// <p>If there are more stream keys than <code>maxResults</code>, use <code>nextToken</code> in
-        /// the request to get the next set.</p>
+        /// <p>If there are more stream keys than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If there are more stream keys than <code>maxResults</code>, use <code>nextToken</code> in
-        /// the request to get the next set.</p>
+        /// <p>If there are more stream keys than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -512,8 +500,7 @@ pub struct ListRecordingConfigurationsOutput {
     /// <p>List of the matching recording configurations.</p>
     pub recording_configurations:
         std::option::Option<std::vec::Vec<crate::model::RecordingConfigurationSummary>>,
-    /// <p>If there are more recording configurations than <code>maxResults</code>, use
-    /// <code>nextToken</code> in the request to get the next set.</p>
+    /// <p>If there are more recording configurations than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRecordingConfigurationsOutput {
@@ -523,8 +510,7 @@ impl ListRecordingConfigurationsOutput {
     ) -> std::option::Option<&[crate::model::RecordingConfigurationSummary]> {
         self.recording_configurations.as_deref()
     }
-    /// <p>If there are more recording configurations than <code>maxResults</code>, use
-    /// <code>nextToken</code> in the request to get the next set.</p>
+    /// <p>If there are more recording configurations than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -570,14 +556,12 @@ pub mod list_recording_configurations_output {
             self.recording_configurations = input;
             self
         }
-        /// <p>If there are more recording configurations than <code>maxResults</code>, use
-        /// <code>nextToken</code> in the request to get the next set.</p>
+        /// <p>If there are more recording configurations than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If there are more recording configurations than <code>maxResults</code>, use
-        /// <code>nextToken</code> in the request to get the next set.</p>
+        /// <p>If there are more recording configurations than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -604,8 +588,7 @@ impl ListRecordingConfigurationsOutput {
 pub struct ListPlaybackKeyPairsOutput {
     /// <p>List of key pairs.</p>
     pub key_pairs: std::option::Option<std::vec::Vec<crate::model::PlaybackKeyPairSummary>>,
-    /// <p>If there are more key pairs than <code>maxResults</code>, use <code>nextToken</code> in
-    /// the request to get the next set.</p>
+    /// <p>If there are more key pairs than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPlaybackKeyPairsOutput {
@@ -613,8 +596,7 @@ impl ListPlaybackKeyPairsOutput {
     pub fn key_pairs(&self) -> std::option::Option<&[crate::model::PlaybackKeyPairSummary]> {
         self.key_pairs.as_deref()
     }
-    /// <p>If there are more key pairs than <code>maxResults</code>, use <code>nextToken</code> in
-    /// the request to get the next set.</p>
+    /// <p>If there are more key pairs than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -657,14 +639,12 @@ pub mod list_playback_key_pairs_output {
             self.key_pairs = input;
             self
         }
-        /// <p>If there are more key pairs than <code>maxResults</code>, use <code>nextToken</code> in
-        /// the request to get the next set.</p>
+        /// <p>If there are more key pairs than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If there are more key pairs than <code>maxResults</code>, use <code>nextToken</code> in
-        /// the request to get the next set.</p>
+        /// <p>If there are more key pairs than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -691,8 +671,7 @@ impl ListPlaybackKeyPairsOutput {
 pub struct ListChannelsOutput {
     /// <p>List of the matching channels.</p>
     pub channels: std::option::Option<std::vec::Vec<crate::model::ChannelSummary>>,
-    /// <p>If there are more channels than <code>maxResults</code>, use <code>nextToken</code> in the
-    /// request to get the next set.</p>
+    /// <p>If there are more channels than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListChannelsOutput {
@@ -700,8 +679,7 @@ impl ListChannelsOutput {
     pub fn channels(&self) -> std::option::Option<&[crate::model::ChannelSummary]> {
         self.channels.as_deref()
     }
-    /// <p>If there are more channels than <code>maxResults</code>, use <code>nextToken</code> in the
-    /// request to get the next set.</p>
+    /// <p>If there are more channels than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -743,14 +721,12 @@ pub mod list_channels_output {
             self.channels = input;
             self
         }
-        /// <p>If there are more channels than <code>maxResults</code>, use <code>nextToken</code> in the
-        /// request to get the next set.</p>
+        /// <p>If there are more channels than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>If there are more channels than <code>maxResults</code>, use <code>nextToken</code> in the
-        /// request to get the next set.</p>
+        /// <p>If there are more channels than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -775,11 +751,11 @@ impl ListChannelsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportPlaybackKeyPairOutput {
-    /// <p/>
+    /// <p></p>
     pub key_pair: std::option::Option<crate::model::PlaybackKeyPair>,
 }
 impl ImportPlaybackKeyPairOutput {
-    /// <p/>
+    /// <p></p>
     pub fn key_pair(&self) -> std::option::Option<&crate::model::PlaybackKeyPair> {
         self.key_pair.as_ref()
     }
@@ -800,12 +776,12 @@ pub mod import_playback_key_pair_output {
         pub(crate) key_pair: std::option::Option<crate::model::PlaybackKeyPair>,
     }
     impl Builder {
-        /// <p/>
+        /// <p></p>
         pub fn key_pair(mut self, input: crate::model::PlaybackKeyPair) -> Self {
             self.key_pair = Some(input);
             self
         }
-        /// <p/>
+        /// <p></p>
         pub fn set_key_pair(
             mut self,
             input: std::option::Option<crate::model::PlaybackKeyPair>,
@@ -946,11 +922,11 @@ impl GetStreamKeyOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetStreamOutput {
-    /// <p/>
+    /// <p></p>
     pub stream: std::option::Option<crate::model::Stream>,
 }
 impl GetStreamOutput {
-    /// <p/>
+    /// <p></p>
     pub fn stream(&self) -> std::option::Option<&crate::model::Stream> {
         self.stream.as_ref()
     }
@@ -971,12 +947,12 @@ pub mod get_stream_output {
         pub(crate) stream: std::option::Option<crate::model::Stream>,
     }
     impl Builder {
-        /// <p/>
+        /// <p></p>
         pub fn stream(mut self, input: crate::model::Stream) -> Self {
             self.stream = Some(input);
             self
         }
-        /// <p/>
+        /// <p></p>
         pub fn set_stream(mut self, input: std::option::Option<crate::model::Stream>) -> Self {
             self.stream = input;
             self
@@ -1120,11 +1096,11 @@ impl GetPlaybackKeyPairOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetChannelOutput {
-    /// <p/>
+    /// <p></p>
     pub channel: std::option::Option<crate::model::Channel>,
 }
 impl GetChannelOutput {
-    /// <p/>
+    /// <p></p>
     pub fn channel(&self) -> std::option::Option<&crate::model::Channel> {
         self.channel.as_ref()
     }
@@ -1145,12 +1121,12 @@ pub mod get_channel_output {
         pub(crate) channel: std::option::Option<crate::model::Channel>,
     }
     impl Builder {
-        /// <p/>
+        /// <p></p>
         pub fn channel(mut self, input: crate::model::Channel) -> Self {
             self.channel = Some(input);
             self
         }
-        /// <p/>
+        /// <p></p>
         pub fn set_channel(mut self, input: std::option::Option<crate::model::Channel>) -> Self {
             self.channel = input;
             self
@@ -1414,17 +1390,17 @@ impl CreateRecordingConfigurationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateChannelOutput {
-    /// <p/>
+    /// <p></p>
     pub channel: std::option::Option<crate::model::Channel>,
-    /// <p/>
+    /// <p></p>
     pub stream_key: std::option::Option<crate::model::StreamKey>,
 }
 impl CreateChannelOutput {
-    /// <p/>
+    /// <p></p>
     pub fn channel(&self) -> std::option::Option<&crate::model::Channel> {
         self.channel.as_ref()
     }
-    /// <p/>
+    /// <p></p>
     pub fn stream_key(&self) -> std::option::Option<&crate::model::StreamKey> {
         self.stream_key.as_ref()
     }
@@ -1447,22 +1423,22 @@ pub mod create_channel_output {
         pub(crate) stream_key: std::option::Option<crate::model::StreamKey>,
     }
     impl Builder {
-        /// <p/>
+        /// <p></p>
         pub fn channel(mut self, input: crate::model::Channel) -> Self {
             self.channel = Some(input);
             self
         }
-        /// <p/>
+        /// <p></p>
         pub fn set_channel(mut self, input: std::option::Option<crate::model::Channel>) -> Self {
             self.channel = input;
             self
         }
-        /// <p/>
+        /// <p></p>
         pub fn stream_key(mut self, input: crate::model::StreamKey) -> Self {
             self.stream_key = Some(input);
             self
         }
-        /// <p/>
+        /// <p></p>
         pub fn set_stream_key(
             mut self,
             input: std::option::Option<crate::model::StreamKey>,
@@ -1490,17 +1466,17 @@ impl CreateChannelOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetStreamKeyOutput {
-    /// <p/>
+    /// <p></p>
     pub stream_keys: std::option::Option<std::vec::Vec<crate::model::StreamKey>>,
-    /// <p/>
+    /// <p></p>
     pub errors: std::option::Option<std::vec::Vec<crate::model::BatchError>>,
 }
 impl BatchGetStreamKeyOutput {
-    /// <p/>
+    /// <p></p>
     pub fn stream_keys(&self) -> std::option::Option<&[crate::model::StreamKey]> {
         self.stream_keys.as_deref()
     }
-    /// <p/>
+    /// <p></p>
     pub fn errors(&self) -> std::option::Option<&[crate::model::BatchError]> {
         self.errors.as_deref()
     }
@@ -1527,14 +1503,14 @@ pub mod batch_get_stream_key_output {
         ///
         /// To override the contents of this collection use [`set_stream_keys`](Self::set_stream_keys).
         ///
-        /// <p/>
+        /// <p></p>
         pub fn stream_keys(mut self, input: crate::model::StreamKey) -> Self {
             let mut v = self.stream_keys.unwrap_or_default();
             v.push(input);
             self.stream_keys = Some(v);
             self
         }
-        /// <p/>
+        /// <p></p>
         pub fn set_stream_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::StreamKey>>,
@@ -1546,14 +1522,14 @@ pub mod batch_get_stream_key_output {
         ///
         /// To override the contents of this collection use [`set_errors`](Self::set_errors).
         ///
-        /// <p/>
+        /// <p></p>
         pub fn errors(mut self, input: crate::model::BatchError) -> Self {
             let mut v = self.errors.unwrap_or_default();
             v.push(input);
             self.errors = Some(v);
             self
         }
-        /// <p/>
+        /// <p></p>
         pub fn set_errors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BatchError>>,
@@ -1581,13 +1557,13 @@ impl BatchGetStreamKeyOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetChannelOutput {
-    /// <p/>
+    /// <p></p>
     pub channels: std::option::Option<std::vec::Vec<crate::model::Channel>>,
     /// <p>Each error object is related to a specific ARN in the request.</p>
     pub errors: std::option::Option<std::vec::Vec<crate::model::BatchError>>,
 }
 impl BatchGetChannelOutput {
-    /// <p/>
+    /// <p></p>
     pub fn channels(&self) -> std::option::Option<&[crate::model::Channel]> {
         self.channels.as_deref()
     }
@@ -1618,14 +1594,14 @@ pub mod batch_get_channel_output {
         ///
         /// To override the contents of this collection use [`set_channels`](Self::set_channels).
         ///
-        /// <p/>
+        /// <p></p>
         pub fn channels(mut self, input: crate::model::Channel) -> Self {
             let mut v = self.channels.unwrap_or_default();
             v.push(input);
             self.channels = Some(v);
             self
         }
-        /// <p/>
+        /// <p></p>
         pub fn set_channels(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Channel>>,
